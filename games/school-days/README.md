@@ -739,6 +739,27 @@ All of them are on the big map (G).
   school hours it starts at the school gate. A trip that was not finished
   is dropped.
 
+## Vehicles and more to do in every city (v55)
+
+- A vehicle stand outside every airport and station: a 🚕 taxi to any place
+  in the city (₹80, any age), a 🚲 bicycle (₹20, any age), a 🛵 scooter
+  (₹60, age 16 and a licence) and a 🚗 rental car (₹150, age 18 and a
+  licence, roads only, with the driver's view). Rentals come with a full
+  tank.
+- New places in every city, all on the city map and the taxi list:
+  - a Mall with a food court, a toy store and a gift shop;
+  - a Cinema with a film that fits the city;
+  - a place of worship that fits the city (Mandir, Gurudwara in Amritsar,
+    Masjid in Dubai and Cairo, Church in Europe and America, Monastery in
+    the hills, Temple in East Asia);
+  - a Museum with three exhibits about the city, its landmark and its food;
+  - a Park with a fountain, benches and an ice cream cart.
+- Near the landmark: a street food cart with the local dish (chole bhature
+  in Delhi, shawarma in Dubai, fish and chips in London, sushi in Tokyo),
+  a souvenir stall, and a sightseeing bus that tours the landmark.
+- Fix: two cities with similar names could share a room inside. Each city
+  now has its own rooms.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

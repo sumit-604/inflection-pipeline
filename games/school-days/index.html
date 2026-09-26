@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v54";
+const GAME_VERSION = "v55";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -2996,6 +2996,7 @@ class World {
     for (let i = 0; i < points.length - 1; i++) this.roadSegs.push({ x1: points[i][0], z1: points[i][1], x2: points[i + 1][0], z2: points[i + 1][1], half: width / 2 });
   }
   onRoad(x, z, margin = 3.4) {
+    const zn = this.zone; if (zn && zn.roads && Math.abs(x - zn.x) <= zn.half + 5 && Math.abs(z - zn.z) <= zn.half + 5) { const lx = x - zn.x, lz = z - zn.z; return zn.roads.some((q) => (q.z1 === q.z2 ? Math.abs(lz - q.z1) <= q.h + 0.5 && lx >= Math.min(q.x1, q.x2) - 1 && lx <= Math.max(q.x1, q.x2) + 1 : Math.abs(lx - q.x1) <= q.h + 0.5 && lz >= Math.min(q.z1, q.z2) - 1 && lz <= Math.max(q.z1, q.z2) + 1)); }
     for (const sg of this.roadSegs) {
       const dx = sg.x2 - sg.x1, dz = sg.z2 - sg.z1;
       const len2 = dx * dx + dz * dz || 1;
@@ -7016,7 +7017,8 @@ class Game {
     if (door.label === "FitZone Gym") this._gymSetup(room);
     if (room.type === "haveli") this._haveliSetup(room);
     if (room.type === "landmark") this._landmarkInside(room);
-    if (this._stay && door.index >= 9100) this._stayRoomSetup(room);
+    if (door.cityKind && this._zone) this._cityPlaceInside(room, door);
+    if (this._stay && door.index >= 9100 && door.index < 9500) this._stayRoomSetup(room);
     if (this._zone && !this._stay && door.label === "Grand Hotel") this._awayHotel(room);
     if (door.label === "Our Home") this._giftBox(room);
     if (door.label === "Our Home") this._homeExtras(room);
@@ -10513,7 +10515,7 @@ class Game {
     // The little dashboard line: speed, petrol, radio, delivery and race timers.
     let hud = document.getElementById("drive-hud"); const want = !!(R && out && !this._cut && !this._sim);
     if (want && !hud) { try { hud = document.createElement("div"); hud.id = "drive-hud"; hud.style.cssText = "position:fixed;left:50%;bottom:132px;transform:translateX(-50%);z-index:30;background:rgba(10,16,30,.8);color:#fff;border-radius:12px;padding:6px 14px;font:700 15px ui-monospace,monospace;text-align:center;pointer-events:none;max-width:92vw"; document.body.appendChild(hud); } catch (e) { hud = null; } }
-    if (hud) { hud.hidden = !want; if (want) { this._hudT = (this._hudT || 0) - dt; if (this._hudT <= 0) { this._hudT = 0.15; const pr = this.progress; hud.innerHTML = `🏎️ ${Math.round(P.speedKmh || 0)} km/h${R.kind !== "bike" ? ` · ⛽ ${fmtFuel(pr.fuel)}` : ""}${this._radioOn ? ` · 📻 ${this._radioSt.name}` : ""}${this._deliv ? ` · 🍕 ${this._deliv.n}/3 · ⏱️ ${Math.max(0, Math.ceil(this._deliv.left))}s` : ""}${this._race ? ` · 🏁 ${this._race.i}/${this._race.pts.length} · ⏱️ ${this._race.t.toFixed(1)}s` : ""}<br><small style="font-weight:600">${dv ? L("V outside view · R radio") : L("V driver's view · R radio")}</small>`; } } }
+    if (hud) { hud.hidden = !want; if (want) { this._hudT = (this._hudT || 0) - dt; if (this._hudT <= 0) { this._hudT = 0.15; const pr = this.progress; hud.innerHTML = `🏎️ ${Math.round(P.speedKmh || 0)} km/h${R.kind !== "bike" ? ` · ⛽ ${this.player.riding && this.player.riding.rent ? L("full tank (rental)") : fmtFuel(pr.fuel || 0)}` : ""}${this._radioOn ? ` · 📻 ${this._radioSt.name}` : ""}${this._deliv ? ` · 🍕 ${this._deliv.n}/3 · ⏱️ ${Math.max(0, Math.ceil(this._deliv.left))}s` : ""}${this._race ? ` · 🏁 ${this._race.i}/${this._race.pts.length} · ⏱️ ${this._race.t.toFixed(1)}s` : ""}<br><small style="font-weight:600">${dv ? L("V outside view · R radio") : L("V driver's view · R radio")}</small>`; } } }
     this._tickRadio(dt); this._tickDelivery(dt); this._tickRace(dt);
   }
   // ---- Radio ----
@@ -10757,7 +10759,7 @@ class Game {
       desert: { ground: 0xe8c98f, walk: 0xe0c9a0, wall: [0xd9b779, 0xe8d5b5, 0xc9a26b, 0xf4efe6], h: [5, 14], tree: "palm", cars: [0xffffff, 0xd9b779, 0x111111], shops: ["Papyrus Art", "Spice Bazaar", "Falafel", "Camel Tours", "Lanterns"], people: [0xffffff, 0xd9b779, 0x3a86ff] },
     };
     const k = { Jaipur: "pink", Udaipur: "pink", Shimla: "hills", Darjeeling: "hills", Rishikesh: "hills", Jammu: "hills", Kathmandu: "hills", Goa: "beach", Kochi: "beach", Puri: "beach", Kanyakumari: "beach", Colombo: "beach", Chennai: "beach", Mumbai: "india", Dubai: "gulf", London: "europe", Paris: "europe", Rome: "europe", Moscow: "europe", "New York": "us", Toronto: "us", Tokyo: "asia", Singapore: "asia", Bangkok: "asia", Sydney: "beach", Cairo: "desert", "Cape Town": "beach" }[city] || "india";
-    return S[k];
+    return { ...S[k], key: k };
   }
   _enterCityZone(city, via) {
     if (this._zone && this._zone.city === city) return this._zone;
@@ -10775,11 +10777,18 @@ class Game {
     // Places (local coordinates). Doors face the nearest street.
     const P = Z.places, ap = via === "rail";
     P.arrive = { x: -125, z: -12, label: ap ? L("{c} Railway Station", { c: city }) : L("{c} Airport", { c: city }), icon: ap ? "🚉" : "✈️" };
-    const place = (id, label, icon, x, z, w, d, h, col, doorZ, dlabel) => { box(w, h, d, col, x, h / 2, z); box(w + 0.4, 0.5, d + 0.4, 0x333333, x, h + 0.25, z); solid(x, z, w, d); const dz = doorZ > z ? z + d / 2 + 0.1 : z - d / 2 - 0.1; box(2.2, 3, 0.2, 0x5a3a24, x, 1.5, dz); try { const s = makeTextSprite(`${icon} ${label}`, { size: 50, scale: 2.2 }); s.position.set(x, h + 3, z); G.add(s); } catch (e) { /* label optional */ } const dw = { x: ZX + x, z: ZZ + dz + (doorZ > z ? 1.2 : -1.2), rot: doorZ > z ? 0 : Math.PI, label: dlabel || label, type: roomTypeFor(dlabel || label), floors: 1, index: 9500 + (Math.abs(city.length * 37 + city.charCodeAt(0) * 3) % 300) * 10 + Object.keys(P).length }; P[id] = { x: dw.x - ZX, z: dw.z - ZZ, label, icon, door: dw }; Z.its.push({ pos: { x: dw.x, z: dw.z }, radius: 2.6, prompt: () => L("Enter the {p}", { p: label }), activate: () => this._enterRoom(dw), _zone: true }); return dw; };
+    const place = (id, label, icon, x, z, w, d, h, col, doorZ, dlabel) => { box(w, h, d, col, x, h / 2, z); box(w + 0.4, 0.5, d + 0.4, 0x333333, x, h + 0.25, z); solid(x, z, w, d); const dz = doorZ > z ? z + d / 2 + 0.1 : z - d / 2 - 0.1; box(2.2, 3, 0.2, 0x5a3a24, x, 1.5, dz); try { const s = makeTextSprite(`${icon} ${label}`, { size: 50, scale: 2.2 }); s.position.set(x, h + 3, z); G.add(s); } catch (e) { /* label optional */ } const dw = { x: ZX + x, z: ZZ + dz + (doorZ > z ? 1.2 : -1.2), rot: doorZ > z ? 0 : Math.PI, label: dlabel || label, type: roomTypeFor(dlabel || label), floors: 1, index: 9500 + this._cityNo(city) * 20 + Object.keys(P).length }; P[id] = { x: dw.x - ZX, z: dw.z - ZZ, label, icon, door: dw }; Z.its.push({ pos: { x: dw.x, z: dw.z }, radius: 2.6, prompt: () => L("Enter the {p}", { p: label }), activate: () => this._enterRoom(dw), _zone: true }); return dw; };
     box(40, 9, 18, ap ? 0xc9b79c : 0xbfe3f2, -125, 4.5, -32); solid(-125, -32, 40, 18); box(40.4, 0.6, 18.4, 0x555555, -125, 9.3, -32); try { const s = makeTextSprite(`${P.arrive.icon} ${P.arrive.label}`, { size: 54, scale: 3 }); s.position.set(-125, 12, -32); G.add(s); } catch (e) { /* label optional */ }
     place("hotel", L("Grand Hotel"), "🏨", -45, -35, 16, 12, 34, 0xe8d5b5, 0, "Grand Hotel");
     place("food", L("Food Street"), "🍢", -45, 36, 14, 9, 5, st.wall[1], 0, "Pizza Corner");
     if (this.job) place("office", `${this.job.name} ${L("office")}`, this.job.icon || "💼", 45, 36, 16, 10, 12, 0xcfd8dc, 0, this.job.place);
+    // More to do: a mall, a cinema, a place of worship, a museum, a park, street food, souvenirs and a sightseeing bus.
+    const loc = this._cityLocal(city, st.key);
+    place("mall", L("{c} Mall", { c: city }), "🛍️", -45, 110, 22, 14, 10, st.wall[2 % st.wall.length], 0, `${city} Mall`).cityKind = "mall";
+    place("cinema", L("{c} Cinema", { c: city }), "🎬", 45, 110, 16, 12, 8, 0x3d405b, 0, `${city} Cinema`).cityKind = "cinema";
+    place("worship", `${city} ${loc.worship[0]}`, loc.worship[1], -45, -110, 14, 12, 9, loc.worship[2], 200, `${city} ${loc.worship[0]}`).cityKind = "worship";
+    place("museum", L("{c} Museum", { c: city }), "🏺", 45, -110, 18, 12, 9, 0xe8e2d0, 200, `${city} Museum Hall`).cityKind = "museum";
+    this._cityOutdoor(Z, G, st, loc, box, solid);
     // The stadium, with stands and a pitch, for matches and missions.
     const sx1 = 102, sx2 = 148, sz1 = 88, sz2 = 140; box(sx2 - sx1, 0.04, sz2 - sz1, 0x4f9d3a, (sx1 + sx2) / 2, 0.04, (sz1 + sz2) / 2); box(3, 0.05, 20, 0xd9c7a8, (sx1 + sx2) / 2 - 8, 0.06, (sz1 + sz2) / 2);
     for (const [x, z, w, d] of [[(sx1 + sx2) / 2, sz2 + 3, sx2 - sx1 + 6, 4], [sx2 + 3, (sz1 + sz2) / 2, 4, sz2 - sz1]]) { for (let k = 0; k < 3; k++) box(w, 1, d, [0xd62828, 0xffb703, 0x1d3557][k], x + (w > d ? 0 : k * 1.2), 0.5 + k, z + (w > d ? k * 1.2 : 0)); solid(x, z, w + 2, d + 2); }
@@ -10791,7 +10800,7 @@ class Game {
     // A welcome arch over the avenue.
     for (const s of [-1, 1]) { box(0.6, 7, 0.6, 0xd62828, -95 + 0, 3.5, s * 9); } box(1, 1.4, 19, 0x111111, -95, 7.4, 0); try { const s = makeTextSprite(`👋 ${L("Welcome to {c}!", { c: city })}`, { size: 56, scale: 2.6 }); s.position.set(-95, 9.5, 0); G.add(s); } catch (e) { /* label optional */ }
     // Buildings along the streets in this city's own style, with shop signs.
-    const reserved = [[-125, -32, 26], [-45, -35, 14], [-45, 36, 12], [45, 36, 12], [45, -38, 27], [125, 114, 34], [-95, 0, 12]];
+    const reserved = [[-125, -32, 26], [-45, -35, 14], [-45, 36, 12], [45, 36, 12], [45, -38, 27], [125, 114, 34], [-95, 0, 12], [-45, 110, 16], [45, 110, 13], [-45, -110, 12], [45, -110, 13], [125, -38, 24], [18, -13, 4], [-72, -13, 4], [70, -13, 5]];
     const free = (x, z, r) => Math.abs(x) < 150 && Math.abs(z) < 150 && !reserved.some(([a, b, rr]) => Math.hypot(a - x, b - z) < rr + r) && !Z.roads.some((q) => { const hor = q.z1 === q.z2; return hor ? Math.abs(z - q.z1) < q.h + 2 + r * 0.7 : Math.abs(x - q.x1) < q.h + 2 + r * 0.7; });
     let shopI = 0;
     for (const q of Z.roads) { const hor = q.z1 === q.z2, len = hor ? q.x2 - q.x1 : q.z2 - q.z1;
@@ -10810,17 +10819,107 @@ class Game {
     for (let i = 0; i < 16; i++) { const h = makeVillager({ shirt: st.people[i % st.people.length], trousers: [0x333333, 0x1d3557, 0x8b5a2b][i % 3], dress: i % 3 === 0, hair: [0x1d1410, 0x111111, 0xd9b779, 0x8b3a2b][i % 4] }); const alongX = i % 2 === 0, lane = (i % 4 < 2 ? 1 : -1) * (alongX ? 8 : 7.5); h.position.set(alongX ? -140 + (i * 19) % 280 : lane, 0, alongX ? lane : -140 + (i * 23) % 280); G.add(h); Z.walkers.push({ h, alongX, lane, v: (i % 3 ? 1 : -1) * (1.2 + (i % 4) * 0.25) }); }
     { const hx = ZX + P.arrive.x, hz = ZZ + P.arrive.z - 7; Z.its.push({ pos: { x: hx, z: hz }, radius: 3.5, priority: 1, visible: () => !this._layover, prompt: () => (ap ? L("🚆 Take the train home to Suryanagar") : L("✈️ Fly home to Suryanagar")), activate: () => this._awayGoHome(), _zone: true }); }
     this.progress.away = { city, via }; saveProgress(this.profile, this.progress);
-    W.zone = { x: ZX, z: ZZ, half: 158 }; this._zoneOldStadium = W.stadium; W.stadium = Z.stadium; this.interactables.push(...Z.its);
+    this._zoneVehicles(Z, st, ap);
+    W.zone = { x: ZX, z: ZZ, half: 158, roads: Z.roads }; this._zoneOldStadium = W.stadium; W.stadium = Z.stadium; this.interactables.push(...Z.its);
     const mm = document.getElementById("minimap"); if (mm) mm.hidden = true; this._cityMiniShow(true);
     return Z;
   }
   _leaveCityZone(quiet) {
-    const Z = this._zone; if (!Z) return; this._zone = null; if (this.progress.away) { delete this.progress.away; saveProgress(this.profile, this.progress); }
+    const Z = this._zone; if (!Z) return; if (this.player.riding && (Z.vehs || []).some((v) => v.group === this.player.riding.group)) this.player.dismount(); for (const v of Z.vehs || []) this.world.scene.remove(v.group); this._zone = null; if (this.progress.away) { delete this.progress.away; saveProgress(this.profile, this.progress); }
     this.world.scene.remove(Z.group); for (const c of Z.colliders) c.off = true; this.interactables = this.interactables.filter((i) => !i._zone && !i._lm);
     if (this._landmark) { this.world.scene.remove(this._landmark); this._landmark = null; } if (this._lmCollider) { this._lmCollider.off = true; this._lmCollider = null; }
     this.world.zone = null; if (this._zoneOldStadium) this.world.stadium = this._zoneOldStadium; this._zoneOldStadium = null;
     const mm = document.getElementById("minimap"); if (mm && !this.world.currentRoom) mm.hidden = false; this._cityMiniShow(false); this._cityMapClose();
     if (!quiet) showToast(L("🏠 Back in Suryanagar!"), 2400, "good");
+  }
+  // The vehicle stand outside the airport or station: taxi for anyone, bicycle for anyone, scooter and car with a licence.
+  _zoneVehicles(Z, st, ap) {
+    Z.vehs = []; const W = this.world, city = Z.city, pr = this.progress;
+    const put = (g, x, z, rot) => { g.position.set(Z.x + x, 0, Z.z + z); g.rotation.y = rot; W.scene.add(g); return g; };
+    const tag = (g, t) => { try { const s = makeTextSprite(t, { size: 38, scale: 0.9 }); s.position.set(0, 2.6, 0); g.add(s); } catch (e) { /* tag optional */ } };
+    const own = (v, need, say) => { Z.vehs.push(v); this.interactables.push({ pos: v.group.position, radius: 2.6, _zone: true, visible: () => !(this.player.riding && this.player.riding.group === v.group), prompt: () => L("{v} (rent: ₹{r})", { v: v.label, r: v.rent }), activate: () => {
+      if (this.player.riding) return; if (need && (pr.age || 0) < need) { showToast(L("You must be {a} to drive this. Take the 🚕 taxi or the 🚲 bicycle.", { a: need }), 3000); return; } if (need && !pr.licence) { showToast(L("No driving licence. Take the 🚕 taxi or the 🚲 bicycle."), 3000, "bad"); return; }
+      if (!v.paid) { if ((pr.money || 0) < v.rent) { showToast(L("You need ₹{r}.", { r: v.rent }), 2400, "bad"); return; } this.addMoney(-v.rent, L("rent in {c}", { c: city })); v.paid = true; }
+      this.player.mount(v); try { playHorn(); } catch (e) { /* sound optional */ } showToast(say, 3400, "good"); } }); };
+    const bike = put(makeBicycle(0xffb703), -121, -7, Math.PI / 2); const vb = { group: bike, speed: 9, kind: "bike", label: L("🚲 City bicycle"), controlled: true, rent: 20 }; tag(bike, "🚲"); own(vb, 0, L("🚲 Ride around {c}! Press E to get off. G shows the city map.", { c: city }));
+    let sc; try { sc = makeScooty(0xe63946); } catch (e) { sc = new THREE.Group(); } put(sc, -117, -7, Math.PI / 2); const vs = { group: sc, speed: 11, kind: "scooty", label: L("🛵 Rental scooter"), controlled: true, rent: 60 }; tag(sc, "🛵"); own(vs, 16, L("🛵 Helmet on. Scooters go anywhere. Press E to get off."));
+    let car; try { car = makeRideCar(st.cars ? st.cars[1 % st.cars.length] : 0x3a86ff); } catch (e) { car = new THREE.Group(); } put(car, -110, -3, Math.PI / 2); const vc = { group: car, speed: 15, kind: "car", label: L("🚗 Rental car"), controlled: true, rent: 150 }; tag(car, "🚗 RENT"); own(vc, 18, L("🚗 Seatbelt on. Cars stay on the roads. Press E to get off."));
+    let taxi; try { taxi = makeRideCar(0xffd21e); } catch (e) { taxi = new THREE.Group(); } put(taxi, -101, -3, Math.PI / 2); tag(taxi, "🚕 TAXI"); Z.vehs.push({ group: taxi });
+    this.interactables.push({ pos: taxi.position, radius: 3, priority: 1, _zone: true, prompt: () => L("🚕 Taxi: go anywhere in {c}", { c: city }), activate: () => this._zoneTaxi() });
+  }
+  _zoneTaxi() {
+    const Z = this._zone; if (!Z) return; const pr = this.progress; if (this.player.riding) { showToast(L("Get off first (E), then take the taxi."), 2400); return; }
+    const list = Object.values(Z.places).filter((p) => p.icon && p.door).concat(this._lmDoor && this._landmark ? [{ icon: "🏛️", label: this._landmark.userData.name, door: this._lmDoor }] : []);
+    const card = openPanel(`<h2>🚕 ${L("Taxi in {c}", { c: Z.city })}</h2><p class="job-brief">${L("Where to? Each ride costs ₹80.")}</p><div class="btn-row">${list.map((p, i) => `<button class="big-btn" id="tx-${i}">${p.icon} ${p.label}</button>`).join("")}</div>`);
+    list.forEach((p, i) => card.querySelector(`#tx-${i}`).addEventListener("click", () => {
+      closePanel(); if ((pr.money || 0) < 80) { showToast(L("You need ₹80 for the taxi."), 2400, "bad"); return; } this.addMoney(-80, L("taxi in {c}", { c: Z.city }));
+      const d = p.door, x = d.x + Math.sin(d.rot || 0) * 2.5, z = d.z + Math.cos(d.rot || 0) * 2.5; this.player.group.position.set(x, 0, z); this.player._placeCamera(1);
+      try { playHorn(); } catch (e) { /* sound optional */ } showToast(L("🚕 The taxi drops you at {p}.", { p: p.label }), 2800, "good");
+    }));
+  }
+  // A fixed number per city, so no two cities share a room.
+  _cityNo(city) { const keys = Object.keys(LANDMARK_INFO); let i = keys.indexOf(city); if (i < 0) { this._extraCities = this._extraCities || []; if (!this._extraCities.includes(city)) this._extraCities.push(city); i = keys.length + this._extraCities.indexOf(city); } return i; }
+  // What makes each city its own: the local dish, souvenir, film and place of worship.
+  _cityLocal(city, key) {
+    const dish = { Delhi: "chole bhature", "New Delhi": "chole bhature", Mumbai: "vada pav", Kolkata: "rosogolla", Chennai: "masala dosa", Hyderabad: "biryani", Bengaluru: "idli and filter coffee", Amritsar: "Amritsari kulcha", Lucknow: "kebabs", Jaipur: "dal baati churma", Goa: "fish curry rice", Paris: "a warm croissant", London: "fish and chips", Rome: "a pizza slice", Tokyo: "sushi", "New York": "a hot dog", Dubai: "shawarma", Sydney: "a meat pie", Singapore: "chilli crab", Bangkok: "pad thai", Cairo: "koshari", Moscow: "blini pancakes", Toronto: "poutine" }[city] || { india: "samosa and chai", pink: "kachori", hills: "hot momos", beach: "coconut water and fried fish", gulf: "shawarma and dates", europe: "a sandwich", us: "a burger", asia: "noodles", desert: "falafel" }[key] || "a local snack";
+    const souv = { india: "a brass diya", pink: "a block-print scarf", hills: "a woollen cap", beach: "a seashell necklace", gulf: "a tiny gold camel", europe: "a snow globe", us: "an 'I love NY' cap", asia: "a paper fan", desert: "a tiny pyramid" }[key] || "a fridge magnet";
+    const film = { india: "a Hindi action film", pink: "a Rajasthani folk musical", hills: "a mountain adventure film", beach: "a sea rescue film", gulf: "an Arabic desert adventure", europe: "a funny European cartoon", us: "a Hollywood superhero film", asia: "a Japanese anime film", desert: "a film about the pharaohs" }[key] || "a family film";
+    const worship = city === "Amritsar" ? ["Gurudwara", "🙏", 0xf2e8cf] : ["gulf", "desert"].includes(key) ? ["Masjid", "🕌", 0xf4f1e8] : ["europe", "us"].includes(key) || ["Goa", "Sydney", "Cape Town"].includes(city) ? ["Church", "⛪", 0xd9d2bf] : key === "hills" ? ["Monastery", "☸️", 0xc0392b] : key === "asia" ? ["Temple", "⛩️", 0xd62828] : ["Mandir", "🛕", 0xf4a261];
+    return { dish, souv, film, worship };
+  }
+  // Outside: a park with a fountain, a street food cart, a souvenir stall and a sightseeing bus.
+  _cityOutdoor(Z, G, st, loc, box, solid) {
+    const city = Z.city, pr = this.progress, it = (x, z, r, prompt, act) => Z.its.push({ pos: { x: Z.x + x, z: Z.z + z }, radius: r, priority: 1, prompt, activate: act, _zone: true });
+    const pay = (n, why) => { if ((pr.money || 0) < n) { showToast(L("You need ₹{n}.", { n }), 2200, "bad"); return false; } this.addMoney(-n, why); return true; };
+    // Park
+    const grass = new THREE.Mesh(new THREE.CircleGeometry(20, 28), new THREE.MeshStandardMaterial({ color: 0x5fae4a })); grass.rotation.x = -Math.PI / 2; grass.position.set(125, 0.05, -38); G.add(grass);
+    const pool = new THREE.Mesh(new THREE.CylinderGeometry(3.2, 3.4, 0.7, 20), new THREE.MeshStandardMaterial({ color: 0x9aa6ad })); pool.position.set(125, 0.35, -38); G.add(pool); const water = new THREE.Mesh(new THREE.CylinderGeometry(2.9, 2.9, 0.1, 20), new THREE.MeshStandardMaterial({ color: 0x4cc9f0 })); water.position.set(125, 0.72, -38); G.add(water); box(0.5, 2.4, 0.5, 0xdddddd, 125, 1.2, -38); solid(125, -38, 7, 7);
+    for (const [bx, bz, r] of [[113, -28, 0], [137, -28, 0], [113, -48, 0], [137, -48, 0]]) { box(2.6, 0.5, 0.8, 0x8b5a2b, bx, 0.5, bz); r; }
+    for (let i = 0; i < 8; i++) { const a = i * 0.8, x = 125 + Math.cos(a) * 17, z = -38 + Math.sin(a) * 17; box(0.4, 2.6, 0.4, 0x6b4a2b, x, 1.3, z); const t = new THREE.Mesh(new THREE.SphereGeometry(1.8, 8, 6), new THREE.MeshStandardMaterial({ color: 0x2f8f3a })); t.position.set(x, 3.6, z); G.add(t); }
+    box(1.6, 1.2, 1, 0xffffff, 132, 0.6, -24); box(1.8, 0.1, 1.2, 0xff8fab, 132, 1.9, -24); box(0.1, 0.7, 0.1, 0x999999, 132, 1.5, -24);
+    try { const s = makeTextSprite(`🌳 ${L("{c} Park", { c: city })}`, { size: 50, scale: 2.2 }); s.position.set(125, 7, -38); G.add(s); } catch (e) { /* label optional */ }
+    Z.places.park = { x: 125, z: -20, label: L("{c} Park", { c: city }), icon: "🌳", door: { x: Z.x + 125, z: Z.z - 22, rot: 0 } };
+    it(125, -33, 3, () => L("⛲ Toss a coin in the fountain and wish (₹1)"), () => { if (!pay(1, L("fountain wish"))) return; try { playChirp(); } catch (e) { /* sound optional */ } showToast(L("⛲ Plop! You close your eyes and make a wish..."), 2800, "good"); });
+    it(113, -30, 2, () => L("🪑 Sit on the bench and rest"), () => { this.addEnergy && this.addEnergy(10); showToast(L("🪑 You rest and watch the pigeons in {c}. Energy +10.", { c: city }), 2800, "good"); });
+    it(132, -22, 2.4, () => L("🍦 Ice cream (₹30)"), () => { if (!pay(30, L("ice cream in {c}", { c: city }))) return; this.player.eatT = 3; this.addEnergy && this.addEnergy(8); showToast(L("🍦 Cold and sweet! The best ice cream in {c}.", { c: city }), 2600, "good"); });
+    // Street food cart near the plaza
+    box(2.4, 1.1, 1.3, 0xd62828, 18, 0.55, -13); box(2.8, 0.1, 1.6, 0xffd166, 18, 2.3, -13); for (const sx of [-1.2, 1.2]) box(0.08, 1.1, 0.08, 0x777777, 18 + sx, 1.7, -13);
+    try { const s = makeTextSprite(`🍴 ${loc.dish}`, { size: 40, scale: 1.4 }); s.position.set(18, 3.4, -13); G.add(s); } catch (e) { /* label optional */ }
+    it(18, -11, 2.6, () => L("🍴 Eat {d} (₹50)", { d: loc.dish }), () => { if (!pay(50, L("street food in {c}", { c: city }))) return; this.player.eatT = 4; this.addEnergy && this.addEnergy(20); this._snap && this._snap("🍴", `Ate ${loc.dish} in ${city}.`); showToast(L("😋 {d}! Now you know what {c} tastes like. Energy +20.", { d: loc.dish, c: city }), 3000, "good"); });
+    // Souvenir stall by the arch
+    box(3, 1, 1.4, 0x8d6e63, -72, 0.5, -13); box(3.4, 0.1, 1.8, 0x2a9d8f, -72, 2.3, -13); try { const s = makeTextSprite(`🎁 ${L("Souvenirs")}`, { size: 40, scale: 1.2 }); s.position.set(-72, 3.3, -13); G.add(s); } catch (e) { /* label optional */ }
+    it(-72, -11, 2.6, () => L("🎁 Buy {s} (₹80)", { s: loc.souv }), () => { if (!pay(80, L("souvenir from {c}", { c: city }))) return; pr.souvenirs = [...new Set([...(pr.souvenirs || []), `${loc.souv} (${city})`])]; saveProgress(this.profile, pr); showToast(L("🎁 {s} from {c}. Souvenirs collected: {n}.", { s: loc.souv, c: city, n: pr.souvenirs.length }), 3200, "good"); });
+    // Sightseeing bus by the plaza
+    const bus = new THREE.Group(); const body = new THREE.Mesh(new THREE.BoxGeometry(8, 3.2, 2.6), new THREE.MeshStandardMaterial({ color: 0xe63946 })); body.position.y = 1.9; bus.add(body); const top = new THREE.Mesh(new THREE.BoxGeometry(8, 0.2, 2.6), new THREE.MeshStandardMaterial({ color: 0xffffff })); top.position.y = 3.6; bus.add(top); for (const wx of [-2.6, 2.6]) for (const wz of [-1.35, 1.35]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.3, 12), new THREE.MeshStandardMaterial({ color: 0x111111 })); w.rotation.x = Math.PI / 2; w.position.set(wx, 0.6, wz); bus.add(w); }
+    bus.position.set(70, 0, -13); G.add(bus); solid(70, -13, 8.4, 3); try { const s = makeTextSprite(`🚌 ${L("City Tour")}`, { size: 40, scale: 1.4 }); s.position.set(70, 5, -13); G.add(s); } catch (e) { /* label optional */ }
+    it(70, -10, 3.4, () => L("🚌 Sightseeing tour of {c} (₹100)", { c: city }), () => { const lm = this._landmark; if (!lm) { showToast(L("The tour bus waits for the landmark to open."), 2400); return; } if (!pay(100, L("city tour of {c}", { c: city }))) return; let H = 40; try { const b = new THREE.Box3().setFromObject(lm), sz = new THREE.Vector3(); b.getSize(sz); H = Math.max(20, Math.min(120, sz.y)); } catch (e) { /* default size */ } const { bar, skip, fade } = this._cutUI(); this._cut = { kind: "tour", t: 0, lm, H, bar, skip, fade, focus: { x: lm.position.x, y: 0, z: lm.position.z }, onDone: () => showToast(L("🚌 Tour over! Guide: 'Thank you for visiting {c}!'", { c: city }), 3000, "good") }; this._cutSay(`🚌 ${L("Guide")}: ${lm.userData.name}. ${lm.userData.fact}`, true); });
+  }
+  // Inside the new city places.
+  _cityPlaceInside(room, door) {
+    const Z = this._zone, city = Z.city, loc = this._cityLocal(city, this._cityStyle(city).key), pr = this.progress, k = door.cityKind;
+    const at = (lx, lz) => (this._nearSpot ? this._nearSpot(room, room.x0 + lx, room.z0 + lz, [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [1.5, 1.5]]) : { x: room.x0 + lx, z: room.z0 + lz });
+    const add = (lx, lz, prompt, act) => this.roomInteractables.push({ pos: at(lx, lz), radius: 2.4, priority: 1, prompt, activate: act });
+    const pay = (n, why) => { if ((pr.money || 0) < n) { showToast(L("You need ₹{n}.", { n }), 2200, "bad"); return false; } this.addMoney(-n, why); return true; };
+    const say = (who, lines) => this.dialogue.say(who, lines, null, { pitch: 420 });
+    if (k === "mall") {
+      showToast(L("🛍️ Welcome to the {c} Mall! Shops, a food court and a toy store.", { c: city }), 3200, "good");
+      add(-6, -2, () => L("🍔 Food court: {d} (₹70)", { d: loc.dish }), () => { if (!pay(70, L("food court"))) return; this.player.eatT = 4; this.addEnergy && this.addEnergy(25); showToast(L("😋 {d} at the food court. Energy +25.", { d: loc.dish }), 2800, "good"); });
+      add(6, -2, () => L("🧸 Toy store: a {c} toy (₹150)", { c: city }), () => { if (!pay(150, L("toy from {c}", { c: city }))) return; pr.souvenirs = [...new Set([...(pr.souvenirs || []), `a toy (${city})`])]; saveProgress(this.profile, pr); showToast(L("🧸 A new toy from {c}!", { c: city }), 2600, "good"); });
+      add(0, -5, () => L("🎁 Gift shop: {s} (₹80)", { s: loc.souv }), () => { if (!pay(80, L("gift shop"))) return; pr.souvenirs = [...new Set([...(pr.souvenirs || []), `${loc.souv} (${city})`])]; saveProgress(this.profile, pr); showToast(L("🎁 {s}. Maa will love it!", { s: loc.souv }), 2600, "good"); });
+    } else if (k === "cinema") {
+      add(0, -2, () => L("🎬 Watch {f} (₹120)", { f: loc.film }), () => { if (!pay(120, L("cinema ticket"))) return; say(L("{c} Cinema", { c: city }), [L("(The lights go down. Popcorn crunches all around you.)"), L("🎬 Today: {f}.", { f: loc.film }), L("(The hero almost falls... and is saved at the last second! Everyone claps.)"), L("🍿 What a film! You walk out smiling.")]); this._snap && this._snap("🎬", `Watched a film in ${city}.`); });
+      add(5, 3, () => L("🍿 Popcorn (₹40)"), () => { if (!pay(40, L("popcorn"))) return; this.player.eatT = 3; showToast(L("🍿 Crunchy and salty!"), 2000, "good"); });
+    } else if (k === "worship") {
+      const w = loc.worship[0], act = { Mandir: L("🪔 Light a diya and pray"), Gurudwara: L("🙏 Cover your head and bow"), Masjid: L("🤲 Sit quietly and make a wish"), Church: L("🕯️ Light a candle"), Monastery: L("☸️ Spin the prayer wheels"), Temple: L("🔔 Ring the bell and bow") }[w];
+      showToast(L("🤫 A peaceful place. Shoes off, speak softly.") , 3000);
+      add(0, -3, () => act, () => { this.addEnergy && this.addEnergy(10); this.addRep && this.addRep(1, L("respect in {c}", { c: city })); showToast(L("🙏 You feel calm and happy. Every faith asks us to be kind."), 3000, "good"); });
+      if (w === "Gurudwara") add(5, 2, () => L("🍛 Langar: free food for everyone"), () => { this.player.eatT = 4; this.addEnergy && this.addEnergy(30); showToast(L("🍛 Dal, roti and kheer. Everyone sits together on the floor. Free, for all."), 3200, "good"); });
+    } else if (k === "museum") {
+      const info = (typeof LANDMARK_INFO !== "undefined" && LANDMARK_INFO[city]) ? LANDMARK_INFO[city] : [L("the city"), ""];
+      add(-6, -3, () => L("🖼️ Exhibit 1: the story of {c}", { c: city }), () => say(L("Museum guide"), [L("This is {c}. People have lived here for hundreds of years.", { c: city }), L("Look at the old maps: small villages grew into a big city.")]));
+      add(0, -4, () => L("🏛️ Exhibit 2: the {n}", { n: info[0] }), () => say(L("Museum guide"), [L("A model of the {n}.", { n: info[0] }), info[1] || L("It is the pride of {c}.", { c: city })]));
+      add(6, -3, () => L("🍽️ Exhibit 3: food of {c}", { c: city }), () => say(L("Museum guide"), [L("The famous food here is {d}.", { d: loc.dish }), L("Try it at the street food cart near the landmark!")]));
+    }
   }
   // Going home from any city at any time, from the airport or station terminal.
   _awayGoHome() {

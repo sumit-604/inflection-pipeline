@@ -1,0 +1,35 @@
+stage: B01-gate0
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Capex FY19-FY24 not broken out in standalone screener cash-flow exports; B2/B3 computed on FY25-FY26 only"
+  - "Trade Payables FY19-FY24 not in screener exports; B4 computed on FY25-FY26 only (1-year change)"
+  - "Contingent liabilities note not found in Annual_Report_2026.txt or Annual_Report_2025.txt; E4 = N/A, scored 0"
+  - "Peer (INDGN/ENTERO/POLYMED) financials not part of this stage's injected input set; M2, M5, peer leg of M9 = PEER DATA NEEDED"
+  - "R&D disclosure, distribution-reach metrics, segment player-count not disclosed anywhere in provided data; M6, M7, M8 = NOT FOUND"
+flags:
+  - {type: FLAG-GATE0, reason: "Core score 53/100 (AVERAGE). Block A ROCE/ROE medians (A1=5, A3=5) are inflated by FY19-FY22 pre-scale standalone years (ROCE 33-121%, net worth under Rs 35 Cr); latest-year (FY26) ROCE is 9.62% and ROE 6.42%. Downstream stages should treat A1/A3 as an artefact, not a strong-returns signal."}
+  - {type: FLAG-CASH, reason: "block_b_trend deteriorating: standalone CFO fell Rs 26.09 Cr (FY25) to Rs 18.77 Cr (FY26), -28% YoY; PAT fell Rs 10.42 Cr to Rs 6.69 Cr, -36% YoY; WC days rose 15.8 days in the same year (193 to 209). Interest cover (consolidated FY26) fell to 3.51x."}
+data_years: 8
+fy_range: "FY19 to FY26"
+blocks: {A: 11, B: 11, C: 11, D: 10, E: 10}
+core_score: 53
+moat_score: 8
+grand_total: 61
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers: []
+history_downgrade: false
+data_notes:
+  - "A1/A3 medians (25.12% ROCE, 23.15% ROE) computed mechanically over FY19-FY26 standalone; driven entirely by FY19-FY22 tiny-capital-base years, not representative of current returns (FY26 ROCE 9.62%, ROE 6.42%)."
+  - "Blocks A/B/C computed on STANDALONE series (FY19-FY26, 8yr); Block D computed on CONSOLIDATED FY26 balance sheet (includes Saarathi subsidiary debt); Block E is entity-level, basis-neutral."
+  - "B2/B3 (FCF-based) computed over FY25-FY26 only; capex not broken out for FY19-FY24 in provided screener exports."
+  - "B4 (WC days change) is a 1-year change (FY25 to FY26), not the 8-year window; Trade Payables only available for those two years from Annual_Report_2026.txt."
+  - "E2 promoter holding change (-5.56pp) is a 1-year change (Jun-2025 to Jun-2026), not 3 years, given short listing history; attributable to Sep-2025 rights issue dilution per B00-inputs.yaml, not necessarily a promoter sale."
+  - "M2, M5, and the peer leg of M9 marked PEER DATA NEEDED: no peer (INDGN/ENTERO/POLYMED) financial data was part of this stage's injected input set."
+  - "No loss-to-profit swing observed; PAT positive in all 8 standalone years (FY19-FY26) and in all of the last 3 (FY24/FY25/FY26)."
+block_b_trend: "deteriorating - standalone CFO Rs 26.09 Cr (FY25) to Rs 18.77 Cr (FY26), -28% YoY"
+analyst_note: "Classification AVERAGE on a flat Core 40-59 band, moat MODERATE. The scorecard's headline weakness is not growth (16.6% revenue CAGR, 1 down year in 8) but a FY26 run-rate that softened across every dimension at once: ROCE 9.62% vs an 8-year median of 25%+ that is itself an artefact of pre-scale years, CFO down 28% YoY, PAT down 36% YoY, WC days up 15.8, and interest cover down to 3.51x on the newly consolidated (Saarathi-inclusive) balance sheet. No single number is a deal-breaker, but the direction of travel in the latest audited year is uniformly negative, and Block D sits one band above two separate deal-breaker thresholds (ND/EBITDA 2.83x vs >3x, IC 3.51x vs <3x). Downstream stages should treat FY26, not the multi-year average, as the base case starting point."

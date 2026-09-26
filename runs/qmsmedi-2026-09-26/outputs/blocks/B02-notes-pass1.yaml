@@ -1,0 +1,87 @@
+stage: B02-notes
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: pass1_complete
+pass: 1
+note: "Pass 1 of the notes triple-pass only (full extraction). Pass 2 (what
+  was missed) and Pass 3 (pattern pass + consolidation) have not yet run.
+  This block is a checkpoint for pass 2/3 continuity, not the final B02-notes
+  block; accounting_quality, red_flags and flags below are PRELIMINARY,
+  drawn from Pass 1 only, and must be revisited after Pass 3."
+input_gaps:
+  - "No Significant Accounting Policies note found anywhere in the extracted
+    AR text (standalone or consolidated), despite both auditor's reports
+    referencing one; verify against the source PDF directly before treating
+    as a true omission."
+  - "No Ind AS 116 lease/ROU disclosure found (standalone or consolidated)."
+  - "No goodwill impairment test disclosed for the Rs 2,885.28 lakh
+    consolidated goodwill."
+  - "No effective-vs-statutory tax rate reconciliation, MAT credit note, or
+    unrecognised DTA note found."
+  - "No single-customer concentration or top-customer revenue disclosure
+    found in the receivables or revenue notes."
+  - "No covenant terms or fixed-vs-floating rate labelling found in the
+    borrowings notes."
+  - "No capital commitments note found."
+  - "No inventory category breakdown or write-down disclosure found (single
+    line 'Traded Goods')."
+  - "Interest rate on the parent's ICD from Saarathi (standalone Note 3,
+    p.99) not disclosed, unlike the 9% p.a. rate disclosed on the One
+    Billion Diagnostics loan (Note 32, p.109)."
+flags:
+  - {type: FLAG-CASH, reason: "Receivables >6 months share of due
+      receivables roughly doubled 14.5%->30.6% YoY (consolidated Note 36,
+      p.143); standalone receivables turnover fell 3.51x->2.70x and DSCR
+      fell 2.54x->0.79x (Note 46, p.114); trade payables turnover rose
+      23.9% (paying faster) while receivables/inventory turnover fell
+      (collecting/selling slower) - an asymmetric working capital squeeze
+      funded partly by a new Rs 1,968.60 lakh bill-discounting facility
+      with zero FY25 balance (standalone Note 6, p.100)."}
+  - {type: FLAG-DISCLOSURE, reason: "No segment result (Ind AS 108) note
+      exists at standalone (Note 40, p.112) or consolidated (Note 38,
+      p.144) level; both state only 'single segment, no separate
+      reportable business segments.' Blocks a note-sourced answer to
+      whether services or products carries the higher margin (LBF1)."}
+  - {type: FLAG-DISCLOSURE, reason: "No Significant Accounting Policies note
+      found in the extracted text despite both auditor's reports
+      referencing one; verify against source PDF before treating as a true
+      omission."}
+accounting_quality: 0        # not assessed; Pass 3 required before scoring
+pass_2_empty: false          # not yet run
+pass_3_empty: false          # not yet run
+top_findings:                # PASS 1 ONLY, preliminary, max 15 per schema
+  - {rank: 1, finding: "No segment result note exists (standalone/consolidated); only single-segment boilerplate. Note-level cost cross-reference (Note 21/23/24/28) suggests products gross margin compressed ~2.7pp FY25->FY26 while services direct-cost ratio improved, opposite of a naive services-mix-hurts-margin read.", note_ref: "Standalone Note 40 p.112; Consolidated Note 38 p.144; cost cross-ref Note 21/23/24 p.104, Note 28 p.105", rating: "RED", why: "Directly blocks a note-sourced answer to LBF1 (services vs products margin)"}
+  - {rank: 2, finding: "Receivables quality deteriorated sharply: >6-month share of due receivables roughly doubled 14.5%->30.6% YoY; standalone receivables turnover fell 3.51x->2.70x; zero ECL provisioning against a worsening book.", note_ref: "Standalone Note 38 p.111; Consolidated Note 36 p.143; Note 46 p.114", rating: "RED", why: "Feeds FLAG-CASH / LBF2 directly, company-sourced quantification"}
+  - {rank: 3, finding: "Standalone debt service coverage ratio fell below 1x to 0.79x from 2.54x (-69%), company's own computed ratio with management's own remark that profit fell and finance cost rose.", note_ref: "Standalone Note 46, p.114", rating: "RED", why: "Direct, company-sourced evidence of standalone debt-service strain"}
+  - {rank: 4, finding: "Asymmetric working capital squeeze: receivables and inventory turnover both deteriorated while trade payables turnover rose 23.9% (paying suppliers faster); funded partly by a new Rs 1,968.60 lakh bill-discounting facility with zero FY25 balance.", note_ref: "Standalone Note 46 p.114; Standalone Note 6 p.100", rating: "RED", why: "Central to LBF2; collecting slower and paying faster simultaneously is a classic strain signature"}
+  - {rank: 5, finding: "Saarathi stake-increase consideration is Rs 14.54 Cr (Rs 1,454.00 lakh), not the ~Rs 10 Cr in company memory's LBF3.", note_ref: "Standalone/Consolidated KAM p.84/p.117; Standalone Note 11 p.101", rating: "WATCH", why: "Numeric discrepancy vs prior memory needing reconciliation against the rights issue Letter of Offer"}
+  - {rank: 6, finding: "Saarathi standalone net margin ~20.7% (PAT Rs 522.59 lakh on total income Rs 2,520.43 lakh) vs QMS-parent standalone net margin ~4.4%; Saarathi drives ~44% of consolidated PAT.", note_ref: "Independent Auditor's Report Other Matter p.118; Consolidated Note 45 p.147; Standalone Note 29/21/22 p.106/104", rating: "WATCH", why: "Direct evidence the services/PSP subsidiary is far more profitable per rupee than the parent's product-distribution business"}
+  - {rank: 7, finding: "No Significant Accounting Policies note found anywhere in the document, standalone or consolidated, despite both auditor's reports referencing one; also no Ind AS 116 lease note and no goodwill impairment test for Rs 2,885.28 lakh consolidated goodwill.", note_ref: "Auditor's reports p.84/p.116; Consolidated Note 9 schedule p.134", rating: "WATCH", why: "Completeness gap; verify against source PDF before treating as a true omission"}
+  - {rank: 8, finding: "Parent borrows from its own 24%-minority-held subsidiary (ICD Rs 1,644.09 lakh from Saarathi, interest paid Rs 136.61 lakh, year-end payable Rs 1,885.95 lakh); no interest rate disclosed for this facility, unlike the 9% p.a. disclosed on the unrelated One Billion Diagnostics loan.", note_ref: "Standalone Note 3 p.99; Note 31 p.108-109; Note 32 p.109", rating: "WATCH", why: "Related-party fairness question given Saarathi's minority shareholders"}
+  - {rank: 9, finding: "Direct Rs 513.76 lakh debit to consolidated reserves bypassing the P&L for the FY26 Saarathi stake increase (51%->76%).", note_ref: "Consolidated Note 2, p.129", rating: "WATCH", why: "Standard Ind AS 110 mechanics but invisible to a P&L-only reader"}
+  - {rank: 10, finding: "MSME payables grew 82.6% while total payables grew 9.1%; ageing note shows some MSME dues in the 1-2 year bucket even though the MSME note states no principal was paid beyond the appointed date this year, an apparent internal tension.", note_ref: "Standalone/Consolidated Note 34/36 p.141-142/p.110; Note 35 ageing p.143", rating: "WATCH", why: "Needs reconciliation; flagged for Pass 3 pattern review"}
+red_flags:
+  - "No segment result note at standalone or consolidated level (Note 40 p.112 / Note 38 p.144)"
+  - "Receivables >6-month share doubled YoY, zero ECL provisioning (Note 38 p.111 / Note 36 p.143)"
+  - "Standalone DSCR fell below 1x to 0.79x (Note 46 p.114)"
+  - "Asymmetric working capital squeeze: receivables/inventory turnover down, payables turnover up (Note 46 p.114; Note 6 p.100)"
+questions_for_mgmt:
+  - "The notes carry no segment result by product vs services. Given the products COGS bridge (Note 23/24) implies a ~2.7pp products gross-margin compression while services direct costs improved, what is driving the FY26 consolidated EBITDA margin decline: products, services, or something below the gross-margin line?"
+  - "What is the interest rate on the ICD the parent holds from Saarathi Healthcare (Note 3, standalone, Rs 1,644.09 lakh), and how was it set given Saarathi carries minority shareholders?"
+  - "Note 11/KAM state the FY26 additional stake in Saarathi cost Rs 1,454.00 lakh (Rs 14.54 Cr); please reconcile this against the rights issue Letter of Offer use-of-proceeds figure of approximately Rs 10 Cr."
+  - "What is the commercial rationale for the Section 186(4) loan to One Billion Diagnostics Pvt Ltd (Rs 132.56 lakh at 9% p.a.), an entity outside the disclosed related-party universe?"
+  - "Note 34(b) states no MSME principal was paid beyond the appointed date in FY26, yet Note 35's ageing schedule shows Rs 80.90 lakh of MSME dues in the 1-2 year bucket. Please reconcile."
+receivables_trend: "deteriorating: consolidated >6-month share of due receivables 14.5% (FY25) -> 30.6% (FY26), roughly doubled (Note 36 p.143 / Note 38 p.111); standalone receivables turnover 3.51x (FY25) -> 2.70x (FY26), -23.1% (Note 46 p.114); unbilled revenue (contract asset within trade receivables) grew 61.2% YoY vs 10.8% consolidated revenue growth"
+restatements_found:
+  - "Note 45 (standalone p.113) / Note 43 (consolidated p.145): 'Previous year figures have been regrouped to comply with current period groupings' - no detail on what was regrouped or its quantum; flagged as unquantified, not confirmed material"
+going_concern_language: "NONE"
+analyst_note: "Pass 1 (full extraction) only; Pass 2 and Pass 3 have not run
+  in this call. accounting_quality is left at 0/unassessed pending the Pass
+  3 consolidated analysis, which also requires a full second read-through
+  for missed items (footnotes, cross-references, 'significant'/'restated'
+  language) and a pattern pass (contradictions, notes-vs-statements
+  mismatches). The single largest open item carried into Pass 2/3: whether
+  the missing accounting-policies note is a real filing gap or an
+  extraction artifact of this corpus, since it gates several other findings
+  (ECL policy, lease policy, impairment methodology)."

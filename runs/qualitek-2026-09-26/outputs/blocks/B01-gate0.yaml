@@ -1,0 +1,35 @@
+stage: B01-gate0
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No filed shareholding pattern in the corpus (shareholding/ empty per B00): promoter pledge (E3) and the FII+DII split are both unconfirmed. E3 scored 0 as N/A, not as a >15% pledge finding."
+  - "Peer screener financial sheets (VIMTALABS, METROPOLIS, KRSNAA: Profit & Loss, Balance Sheet, Cash Flow, Quarters) came back empty per B00 collector warning; M2, M5, M6, M9 scored 0 / PEER DATA NEEDED, not a finding of no moat."
+  - "No credit rating in the corpus or on BSE filings per B00; Block D has no rating cross-check."
+  - "Final prospectus (RHP) absent; DRHP restated FY21-23 financials used, unconfirmed against any later restatement."
+  - "Consolidated basis has only 2 annual data points (FY25, FY26); no consolidated CAGR/trend is computable. This stage scores standalone FY21-FY26 (6 years) instead, per LBF1."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE. Depressor is Block B (cash conversion, cumulative FCF/PAT -3.15x, 0 of 6 years FCF-positive), not Block A or C (growth 20/20, EBITDA margin +8pp). Likely GROWTH-INDUCED (capex ramp, IPO/pref-issue funded) per LBF2's own framing, but unconfirmed without receivables ageing and PPP/government customer share, neither in this stage's corpus."}
+  - {type: FLAG-CASH, reason: "Deteriorating. WC days moved -65.49 (FY21) to +80.27 (FY26), a +145.76 day swing; FCF worsened every year in absolute terms (-470.95 lakh FY21 to -3,095.74 lakh FY26) as standalone capex accelerated 6.3x over the period."}
+  - {type: FLAG-DATA-CONFIDENCE, reason: "6 years of history (FY21-FY26), all inside a single post-IPO (listed Jan-2024) rising-investment regime. No downcycle or flat year observed. 'May not have seen full cycle.'"}
+data_years: 6
+fy_range: "FY21 to FY26"
+blocks: {A: 10, B: 5, C: 20, D: 6, E: 7}
+core_score: 48
+moat_score: 12
+grand_total: 60
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block B <8 (actual 5) -> max GOOD. Non-binding: matrix outcome AVERAGE already sits below the GOOD cap."
+history_downgrade: false
+data_notes:
+  - "Screener FY21/FY22 standalone P&L (net profit Rs 0.16 Cr / Rs 0.42 Cr) conflicts with DRHP restated standalone PAT (Rs 46.11 lakh / Rs 113.57 lakh) for the same years. DRHP restated figures used throughout; screener FY21-23 P&L/BS not used."
+  - "FY24 CFO (Rs 553.51 lakh) reconstructed from FY25 results filing cash-flow components (operating profit before WC changes 570.83 less tax paid 17.32); the printed FY24 CFO total is OCR-garbled in the extraction and was not used directly."
+  - "ROCE basis not uniform across the series: FY21-23 and FY25-26 use the company's/DRHP's own EBIT/(equity+borrowings) definition (source-anchored); FY24 alone computed under the stage's EBIT/(Total Assets-Current Liabilities) formula, no source figure existed. Qualitative trend (rise to FY24, fall since) unaffected."
+  - "E4 used the standalone-only contingent liability (Rs 2,133.00 lakh corporate guarantee to ITCPL); the consolidated note's larger, partly cross-guaranteed figure (Rs 4,911.00 lakh reverse guarantee plus Rs 96.69 lakh subsidiary tax demands) was not double-counted."
+  - "PEER DATA NEEDED: M2 (cost advantage), M5 (scale/dominance), M6 (tech/R&D), M9 (brand) all scored 0 because peer screener P&L/BS/CF/Quarters sheets were empty per B00; only qualitative peer concall transcripts exist in the corpus."
+block_b_trend: "deteriorating - WC days -65.49 (FY21) to +80.27 (FY26), a +145.76 day swing; FCF negative and worsening every year, 0 of 6 years FCF-positive"
+analyst_note: "Standalone (parent-only, organic) growth is strong: 60% revenue CAGR, EBITDA margin +8pp, zero decline years, D/E still 0.45. The AVERAGE classification and its one deal-breaker both trace to one cause: capex (IPO/pref-issue funded) outrunning standalone cash generation, the exact GROWTH-INDUCED-vs-STRUCTURAL question LBF2 already raises and this stage cannot resolve (no receivables ageing or PPP/government customer share in this corpus). ROCE rose FY21-FY24 (6.4% to 15.4%) then fell to 7.4% by FY26: could be a J-curve on FY25-26 capital deployed, or durable dilution as the base grows. Six years, all inside one post-listing investment ramp since Jan-2024, cannot distinguish the two - hence the full-cycle flag."

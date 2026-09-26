@@ -1,0 +1,66 @@
+stage: B12b
+company: "FABTECH"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 31
+caught: 9
+partially_caught: 10
+missed:
+  - {severity: "MAJOR", item: "Founder admits discretionary revenue timing: Q3 revenue pulled into Q2, shipments held even when the LC permits shipping", anchor: "Concall_Feb_2026 [page 12], Aasif Khan"}
+  - {severity: "MAJOR", item: "Revenue recognition described three different ways by different speakers (project progress, bill of lading, milestones and customer approvals)", anchor: "Concall_Apr_2026 [page 16] Aman Anavkar vs Ashwani Singh; Concall_Aug_2026 [page 3] Ashwani Singh vs [page 8] Karan Doshi vs [page 9] Aman Anavkar"}
+  - {severity: "MAJOR", item: "Retention terms contradicted across calls: 'no retention over 6 months' (Feb) vs 'retention period of one to two years, 10 to 15%' (Aug)", anchor: "Concall_Feb_2026 [page 13] Aman Anavkar; Concall_Aug_2026 [page 11] Karan Doshi"}
+  - {severity: "MAJOR", item: "Hot-lead pipeline figure swings: USD 455m (Feb) to 'close to 200 million odd USD' (Apr) to Rs 3,800 Cr hot leads plus Rs 9,300 Cr inquiries (Aug)", anchor: "Concall_Feb_2026 [page 7] Aasif Khan; Concall_Apr_2026 [page 11] Aman Anavkar; Concall_Aug_2026 [page 4], [page 7]"}
+  - {severity: "MAJOR", item: "SACE described by the CEO as an incorporation with the Saudi acquisition still 'proposed', but by the CGO as 'acquired'; B05 credits a closed acquisition", anchor: "Concall_Aug_2026 [page 4]-[page 5] Ashwani Singh vs [page 6] and [page 19] Aman Anavkar"}
+  - {severity: "MAJOR", item: "Nov-2025 margin promise 'better than last year, for sure' broken; FY26 EBITDA margin fell and management conceded margins shrank", anchor: "Concall_Nov_2025 [page 15] Aman Anavkar; Concall_Apr_2026 [page 3], [page 9]"}
+  - {severity: "MAJOR", item: "Earnings quality: FY26 other income ~Rs 21 Cr of which ~Rs 12 Cr forex, against PAT Rs 38.36 Cr; Q3 FY26 other income Rs 7 Cr ~10% of revenue", anchor: "Concall_Apr_2026 [page 18] Karan Doshi; Concall_Feb_2026 [page 22] Karan Doshi"}
+  - {severity: "MINOR", item: "Rs 20-22 Cr of goods at the port at quarter end recurs (Q3 FY26 and Q1 FY27)", anchor: "Concall_Feb_2026 [page 6], [page 8]; Concall_Aug_2026 [page 16] Karan Doshi"}
+  - {severity: "MINOR", item: "Execution tenor drifts: 9-18 months 'speeding' (Feb) to 18-24 and 24-27 months (Apr) to 12-36 months (Aug)", anchor: "Concall_Feb_2026 [page 7]; Concall_Apr_2026 [page 12]; Concall_Aug_2026 [page 9]"}
+  - {severity: "MINOR", item: "Ticket-size unit confusion: '30, $40 million... orders worth $70 million' vs '30 to 40... more than 50 crores, 60 crores' in the same call", anchor: "Concall_Apr_2026 [page 6] and [page 8] Karan Doshi"}
+  - {severity: "MINOR", item: "CGO says no civil contract closed; CEO corrects him in the same answer", anchor: "Concall_Aug_2026 [page 14]"}
+  - {severity: "MINOR", item: "Unusual analyst insistence on margin/growth guidance (five questioners) met with refusals in the first listed call", anchor: "Concall_Nov_2025 [page 4]-[page 5], [page 9]-[page 10], [page 15]-[page 16]"}
+pipeline_flags_not_supported:
+  - "B06 Q2/flags: 'magnitude gap, Fabtech RMC +33%/execution +43% cost inflation vs PRAJIND 1-1.5%'. The transcript says RMC cost 'grew up by close to 33%' and 'rose faster than the revenue' (revenue +28%): a rupee growth figure, not a price-inflation rate. The order-of-magnitude comparison rests on a misread (Concall_Apr_2026 [page 9], [page 21])."
+  - "B06 2E(i) / risks_peers_raise: 'Fabtech's calls attribute delay only to war/donor-funding, never to routine client-side slippage'. Fabtech cites client civil-readiness and customer approvals repeatedly (Concall_Feb_2026 [page 12]; Concall_Apr_2026 [page 12], [page 19]; Concall_Aug_2026 [page 7])."
+promise_delivery_spot_checks: {checked: 6, confirmed: 3, wrong: 3}
+credibility_grade_concur: "lower: C to D. Seven material contradictions were missed, and two promise rows credit deliveries that did not happen (SACE acquisition, Nov-2025 deleveraging)."
+findings:
+  - {severity: "MAJOR", location: "B05 overall", item: "MISSED: founder admission of discretionary shipment/revenue timing", anchor: "Concall_Feb_2026 [page 12]"}
+  - {severity: "MAJOR", location: "B05 overall", item: "MISSED: contradictory revenue-recognition descriptions across speakers and calls", anchor: "Concall_Apr_2026 [page 16]; Concall_Aug_2026 [page 3], [page 8], [page 9]"}
+  - {severity: "MAJOR", location: "B05 4B peer question 4", item: "MISSED: retention terms contradiction; B05 adopts the Aug version as fact", anchor: "Concall_Feb_2026 [page 13]; Concall_Aug_2026 [page 11]"}
+  - {severity: "MAJOR", location: "B05 1B", item: "MISSED: hot-lead pipeline figure swings USD 455m to USD ~200m to Rs 3,800 Cr", anchor: "Concall_Feb_2026 [page 7]; Concall_Apr_2026 [page 11]; Concall_Aug_2026 [page 4]"}
+  - {severity: "MAJOR", location: "B05 1B, 2A row 4, 3D, trigger 1", item: "MISSED contradiction and misread: SACE incorporated per CEO, Saudi acquisition still proposed; B05 states 'closed'", anchor: "Concall_Aug_2026 [page 4]-[page 5] vs [page 6], [page 19]"}
+  - {severity: "MAJOR", location: "B05 2A", item: "MISSED broken promise: FY26 margins 'better than last year, for sure'", anchor: "Concall_Nov_2025 [page 15]; Concall_Apr_2026 [page 9]"}
+  - {severity: "MAJOR", location: "B05 overall", item: "MISSED: forex-heavy other income (~Rs 12 Cr of ~Rs 21 Cr) against PAT Rs 38.36 Cr", anchor: "Concall_Apr_2026 [page 18]"}
+  - {severity: "MAJOR", location: "B05 4D", item: "UNDER-WEIGHTED: order-book/segment split refused in all four calls (repeated evasion) graded LOW-MEDIUM; Apr 'I'll just pull up the data' never delivered", anchor: "Concall_Nov_2025 [page 11]; Concall_Feb_2026 [page 12]; Concall_Apr_2026 [page 14]; Concall_Aug_2026 [page 13], [page 15]"}
+  - {severity: "MAJOR", location: "B05 2D", item: "PARTIAL: related-party procurement 11% FTCL panels plus ~15% AHU via Advantek (Apr) restated as 'not more than 11%' (Aug); B05 misattributes the 15% to FTCL and misses the Aug understatement", anchor: "Concall_Apr_2026 [page 17]; Concall_Aug_2026 [page 19]"}
+  - {severity: "MAJOR", location: "B06 Part 1 Q2, flags", item: "NOT SUPPORTED: 33%/43% read as cost inflation; it is rupee cost growth vs revenue +28%", anchor: "Concall_Apr_2026 [page 9], [page 21]"}
+  - {severity: "MAJOR", location: "B06 Part 2E(i), risks_peers_raise", item: "NOT SUPPORTED: claim that Fabtech never cites client-side slippage", anchor: "Concall_Feb_2026 [page 12]; Concall_Apr_2026 [page 12], [page 19]; Concall_Aug_2026 [page 7]"}
+  - {severity: "MAJOR", location: "B06 Part 1 Q3 VERIFIED", item: "OVERSTATED: HLEGLAS deferral is domestic CDMO/agro; PRAJIND delays are domestic CBG plus Praj's own deferral on RM-cost uncertainty; only SETL May-2026 is export/war-linked. 'Meaningfully de-risks LBF1' does not follow", anchor: "HLEGLAS-Concall_Jun_2026 L588-596; PRAJIND-Concall_Jun_2026 L162-165, L188-190, L306-309; SETL-Concall_May_2026 L443"}
+  - {severity: "MAJOR", location: "B05 2A row 4", item: "PROMISE ROW WRONG: 'Apr-2026: two acquisitions in next 2-3 quarters' is not in the Apr call; outcome 'Saudi closed' contradicts CEO", anchor: "Concall_Apr_2026 [page 15]; Concall_Aug_2026 [page 4]-[page 5], [page 19]"}
+  - {severity: "MAJOR", location: "B05 2A row 10", item: "PROMISE ROW WRONG: Nov-2025 promised receivable improvement only, not deleveraging; row marks Delivered while row 7 marks the same Nov promise Missed", anchor: "Concall_Nov_2025 [page 7]; Concall_Apr_2026 [page 3]"}
+  - {severity: "MINOR", location: "B05 2A", item: "PARTIAL: Apr promise 'Q1 and Q2 the receivable will be reduced immediately' broken (Rs 211 to 215 Cr); Saudi receivable Rs 72.57 Cr vs Saudi Q1 revenue Rs 17.14 Cr, one ~Rs 120 Cr contract", anchor: "Concall_Apr_2026 [page 18]; Concall_Aug_2026 [page 3]-[page 4], [page 11]"}
+  - {severity: "MINOR", location: "B05 trigger 5, B06 Part 5", item: "PARTIAL: Africa called margin-dilutive (Apr) then a higher-margin growth driver (Aug); PRAJIND says construction-heavy Africa orders dilute margin", anchor: "Concall_Apr_2026 [page 8]-[page 9]; Concall_Aug_2026 [page 6]; PRAJIND-Concall_Mar_2026 L358-367"}
+  - {severity: "MINOR", location: "B05 3B, B06 Q2", item: "PARTIAL: same-call contradiction on cost impact ('very small... compensated' vs RMC +33%, execution +43%) and on pass-through (Apr 'I would not say pass on' vs Aug '>5% passing over')", anchor: "Concall_Apr_2026 [page 10], [page 11], [page 21]; Concall_Aug_2026 [page 16]-[page 17]; SETL-Concall_Aug_2026 L258-263"}
+  - {severity: "MINOR", location: "B05 2D", item: "PARTIAL: FY28 PAT 12-14% 'we're on track' (Aman) vs Karan's PAT 9-11% target in the same call", anchor: "Concall_Apr_2026 [page 20], [page 21]"}
+  - {severity: "MINOR", location: "B05 3D", item: "PARTIAL: repeat-customer share ~10% accepted as a 'deliberate strategy' reframe; it cuts against the Nov-2025 repeat-client moat narrative", anchor: "Concall_Aug_2026 [page 13]-[page 14]; Concall_Nov_2025 [page 6]"}
+  - {severity: "MINOR", location: "B06 Part 1 Q6", item: "OVERSTATED: CONTRADICTED verdict rests on equipment makers' competitive sets; none operates in turnkey pharma-plant EPC", anchor: "Concall_Aug_2026 [page 18]; SETL-Concall_Nov_2025 L263-273"}
+  - {severity: "MINOR", location: "B05 2A row 6", item: "Misstatement: 9-11% is a higher ceiling than 9.9-10.5%, not lower; Apr call itself also gives 9-11%", anchor: "Concall_Apr_2026 [page 4], [page 21]"}
+  - {severity: "MINOR", location: "B05 overall", item: "MISSED: recurring Rs 20-22 Cr quarter-end port inventory", anchor: "Concall_Feb_2026 [page 6]; Concall_Aug_2026 [page 16]"}
+  - {severity: "MINOR", location: "B05 overall", item: "MISSED: execution-tenor drift 9-18 to 12-36 months", anchor: "Concall_Feb_2026 [page 7]; Concall_Aug_2026 [page 9]"}
+  - {severity: "MINOR", location: "B05 3D", item: "MISSED: ticket-size unit confusion (USD vs Rs Cr)", anchor: "Concall_Apr_2026 [page 6], [page 8]"}
+  - {severity: "MINOR", location: "B05 3D", item: "MISSED: CGO/CEO contradiction on civil contracts", anchor: "Concall_Aug_2026 [page 14]"}
+  - {severity: "MINOR", location: "B05 overall", item: "MISSED: Nov-2025 analyst insistence on guidance", anchor: "Concall_Nov_2025 [page 4]-[page 5], [page 15]-[page 16]"}
+  - {severity: "MINOR", location: "B05 1C", item: "PARTIAL: win rate 15% (Feb) falls to 'now 11%' (Apr); noted only as 'basis shifts'", anchor: "Concall_Feb_2026 [page 9]; Concall_Apr_2026 [page 13]"}
+  - {severity: "MINOR", location: "B05 trigger 1", item: "PARTIAL: scope drift from 'not focused on non-pharma' (Nov) to non-pharma MEP/civil via SACE (Aug) treated as positive trigger only", anchor: "Concall_Nov_2025 [page 12]; Concall_Aug_2026 [page 4], [page 19]"}
+  - {severity: "MINOR", location: "B05 2C", item: "PARTIAL: FY23 revenue-fall question dodged and 'not discussing in a forum' not logged", anchor: "Concall_Feb_2026 [page 21], [page 22]"}
+  - {severity: "MINOR", location: "B05 2D", item: "OVERSTATED: Company Secretary resignation (24-Sep-2026) post-dates every call; its absence from transcripts is not a disclosure failure", anchor: "Concall_Aug_2026 cover letter dated 03-Aug-2026"}
+  - {severity: "MINOR", location: "B06 Part 1 Q4, Part 3", item: "Misattribution: 220-240 days is the analyst's figure in SETL Aug-2026 (not May-2026); SETL management said 320 days last year", anchor: "SETL-Concall_Aug_2026 L558-566"}
+  - {severity: "MINOR", location: "B05 1B", item: "Nov-2025 '120 to 150 days' was a market-average receivable range, not the company WC cycle", anchor: "Concall_Nov_2025 [page 7]"}
+critical_count: 0
+major_count: 14
+minor_count: 18
+material_found: 21
+material_caught: 14
+acceptance_rate: 67
+coverage_basis: "31 independent items listed (1 CRITICAL, 20 MAJOR, 10 MINOR); 21 material. Of the 21: 7 CAUGHT, 7 PARTIALLY CAUGHT, 7 MISSED. material_caught counts CAUGHT plus PARTIALLY CAUGHT (found, under-weighted) = 14, so 67%. On CAUGHT-only the rate is 7/21 = 33%. Across all 31 items: 9 caught, 10 partial, 12 missed. 16 transcripts read (4 main in full, SETL Nov-2025 and Aug-2026 in full, other 10 peers by targeted search plus context reads)."

@@ -1,0 +1,67 @@
+stage: B12c
+company: "FABTECH"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+scope: "phase 1 (Gate 0 B01 + Emerging Moat B07 only); valuation audit pending phase 3"
+gate0:
+  rules_checked: 41
+  fails:
+    - {rule: "A3 ROE formula (earliest-year closing-NW fallback)", severity: MINOR, stated: "median 26.2% on FY21-FY26, FY20 omitted", recomputed: "FY20 ROE = 12.39/38.29 = 32.4% (Data_Sheet rows 24, 39-40); 7-yr median 27.8%; score 5 unchanged"}
+    - {rule: "B3 FCF formula (FCF = CFO - purchase of PPE)", severity: MAJOR, stated: "screener FCF row; FY26 FCF +5 vs CFO +0.48; B3 = 1", recomputed: "FCF cannot exceed CFO under the fixed formula; cumulative FCF/PAT <= 35.5/176 = ~0.20 boundary; B3 1 -> 0 unless FY26 PPE purchases < 0.3 Cr; B2 stays 0"}
+    - {rule: "B4 WC days formula (Receivable + Inventory - Payable days)", severity: MAJOR, stated: "screener Working Capital Days FY20 -19 to FY26 90, +109, B4 = 0", recomputed: "formula-shaped screener Cash Conversion Cycle FY20 51 to FY26 55, +4 days -> B4 = 3; Block B 1 -> 3 (4 if B3 holds)"}
+    - {rule: "D2 EBIT basis", severity: MINOR, stated: "EBIT = OP - Dep = 29.7; IC 7.1x; D2 = 4", recomputed: "basis undeclared, inconsistent with Block A screener ROCE basis; PBT + Int = 52.44 / 4.16 = 12.6x -> 5"}
+    - {rule: "D1/D3 debt basis consistency", severity: MINOR, stated: "D1 borrowings 42.73 Cr ex-lease; D3 69.64 Cr incl. lease", recomputed: "D/E 0.10 or 0.17, both in 0.1-0.5 band -> 4; net cash either way; declare one basis"}
+    - {rule: "E2 grounded-claims rule", severity: MINOR, stated: "N/A; RHP named as stage source but not read", recomputed: "N/A allowed only for data not provided; score likely 0 either way (IPO dilution)"}
+    - {rule: "M1 pricing-power window", severity: MINOR, stated: "peak FY24 15% to FY26 9%, score 0", recomputed: "endpoints FY20 10.66% to FY26 8.52% = -2.1pp with revenue CAGR 20.6% -> 1"}
+    - {rule: "M11 network-effects test and grounded-claims rule", severity: MAJOR, stated: "3, sole moat present", recomputed: "windows are 2-yr CAGRs mislabelled 3-yr (true FY23-26 28.4% vs FY20-23 13.3%); FY26 selling line blank; selling% FY20 8.8% to FY25 14.4%. Missing component -> 0 strict (5 if FY23-25 accepted); tier 3 has no rule basis. Moats present 1 -> 0, class THIN -> NONE (strict)"}
+    - {rule: "Deal-breaker year attribution", severity: MAJOR, stated: "FY25 and FY26 called post-IPO / post-listing window", recomputed: "listing 07-Oct-2025; FY25 is pre-listing, FY26 straddles; label feeds the post-IPO rebase sizing override"}
+  recomputed_scores: {A: 13, B: "3 (4 if B3 holds at 1)", C: 14, D: "18 (19 on PBT+interest EBIT)", E: 10, core: "58 (range 58-60)", moat_score: "4 (M11=0) or 9 (M11=5)", moats_confirmed: "0 or 1", moat_class: "NONE or THIN"}
+  classification_concur: true
+  classification_note: "AVERAGE survives every recomputation. Core 58-59 is in the 40-59 band; at 60 the matrix gives GOOD but deal-breaker #4 (CFO/PAT 0.35 < 0.50) caps at AVERAGE. Deal-breaker #2 still triggers (Block B 3-4 < 8)."
+emoat:
+  rules_checked: 27
+  fails:
+    - {rule: "R1 evidence multiplier", severity: MAJOR, stated: "HM=3 x 1.0 = 3.0", recomputed: "Section 4B tags both tailwinds 🎙️; 4A no approvals; funded projects are E1 evidence. 3 x 0.7 = 2.1"}
+    - {rule: "Optionality register never scored (H3)", severity: MAJOR, stated: "LL=1 x 0.7 = 0.7 while text routes H3 to the register", recomputed: "0.0; KP Group also credited in H2"}
+    - {rule: "H2 raw score vs stated strength", severity: MAJOR, stated: "HH=4 x 0.7 = 2.8; text says SACE alone = MODERATE", recomputed: "SACE already carries H1; KP Group (📄 named) + Optech (🎙️) = ML=1 x 1.0 = 1.0"}
+    - {rule: "One improvement, one mechanism", severity: MAJOR, stated: "SACE in H1, H2, R1; KP Group in H2, H3; Djibouti/Botswana in E1, R1", recomputed: "captured in H2, H3, R1 rows; no separate delta"}
+    - {rule: "E1 evidence multiplier", severity: MINOR, stated: "HM=3 x 1.0", recomputed: "first-mover status rests on 🎙️ Djibouti claim; 3 x 0.7 = 2.1 on the stricter reading"}
+    - {rule: "Completionist recount accuracy", severity: MINOR, stated: "9 items across 6 categories", recomputed: "list names 7 categories and counts Djibouti, not located as a filing"}
+    - {rule: "Strong/Moderate count line", severity: MINOR, stated: "5 incl. G1 Weak-Moderate", recomputed: "4 (E1, H1, H2, R1)"}
+    - {rule: "Report vs YAML consistency", severity: MINOR, stated: "E1/H2 Moderate-Strong vs Moderate; H3 documented vs 🎙️ 0.7; register 8 vs 7 rows", recomputed: "align block to report"}
+    - {rule: "active_categories schema (Strong/Moderate only)", severity: MINOR, stated: "C1, G1, H3 Weak rows listed", recomputed: "remove or relabel"}
+    - {rule: "Missing-number discipline (2C)", severity: MINOR, stated: "capex_embedded_growth_pct: 0", recomputed: "NOT FOUND / NOT APPLICABLE, not numeric 0"}
+  em_score_stated: 13.3
+  em_score_recomputed: "9.9 (11.7 on R1 and H3 fixes alone; 9.0 with E1 at 0.7)"
+  em_classification_stated: "MODEST"
+  em_classification_recomputed: "NONE (NO MEANINGFUL EMERGING MOAT, < 12)"
+  combined_assessment_concur: true
+  combined_note: "Combined AVERAGE unchanged. EM >= 25 UA qualifier fails either way. Stage 11 Pillar 3 must use NONE or state why MODEST stands."
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+expectation_ledger: {status: "pending phase 3"}
+business_understanding_narrative: {status: "pending stage 13"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+findings:
+  - {id: G-B3, severity: MAJOR, location: "01-gate0.md B3/B2", note: "screener FCF used; FY26 FCF 5 > CFO 0.48 impossible under fixed formula; B3 likely 1 -> 0"}
+  - {id: G-B4, severity: MAJOR, location: "01-gate0.md B4", note: "Working Capital Days substituted for fixed formula; CCC row +4 days -> B4 = 3"}
+  - {id: G-M11, severity: MAJOR, location: "01-gate0.md M11", note: "sole moat awarded on unconfirmed component, mislabelled windows; strict 0, moat class NONE"}
+  - {id: G-DB-YEARS, severity: MAJOR, location: "01-gate0.md deal-breakers; B01 analyst_note", note: "FY25 labelled post-listing; it is pre-listing (listing 07-Oct-2025)"}
+  - {id: G-A3, severity: MINOR, location: "01-gate0.md A3", note: "FY20 ROE omitted; median 27.8%; score unchanged"}
+  - {id: G-D2, severity: MINOR, location: "01-gate0.md D2", note: "EBIT basis undeclared; 4 -> 5 on PBT + interest"}
+  - {id: G-D1D3, severity: MINOR, location: "01-gate0.md D1, D3", note: "two debt bases in one block; no score change"}
+  - {id: G-E2, severity: MINOR, location: "01-gate0.md E2", note: "RHP provided but not read; N/A misapplied"}
+  - {id: G-M1, severity: MINOR, location: "01-gate0.md M1", note: "peak-to-latest instead of endpoints; 0 -> 1"}
+  - {id: E-R1, severity: MAJOR, location: "07-emoat.md Section 5 R1 vs 4B", note: "🎙️ tailwinds scored 📄 1.0; 3.0 -> 2.1"}
+  - {id: E-H3, severity: MAJOR, location: "07-emoat.md H3", note: "registered optionality scored; KP double credit; 0.7 -> 0"}
+  - {id: E-H2, severity: MAJOR, location: "07-emoat.md H2", note: "SACE credited in H1, H2, R1; HH contradicts Moderate; 2.8 -> 1.0; with E-R1, E-H3: MODEST -> NONE"}
+  - {id: E-E1, severity: MINOR, location: "07-emoat.md E1", note: "first-mover rests on 🎙️ Djibouti; 1.0x generous"}
+  - {id: E-RECOUNT, severity: MINOR, location: "07-emoat.md Section 3 recount", note: "6 vs 7 categories; Djibouti counted 📄"}
+  - {id: E-YAML-CONSIST, severity: MINOR, location: "B07-emoat.yaml", note: "labels differ from report; register 7 vs 8 rows; Weak rows listed"}
+  - {id: E-2C, severity: MINOR, location: "B07-emoat.yaml capex_embedded_growth_pct", note: "numeric 0 where NOT FOUND belongs"}
+  - {id: E-SM-COUNT, severity: MINOR, location: "07-emoat.md Section 3 count line", note: "G1 counted as Moderate; true count 4"}
+critical_count: 0
+major_count: 7
+minor_count: 10
+acceptance_rate: 72.1   # 49 of 68 rules passed (gate0 32/41, emoat 17/27); phase-1 scope only

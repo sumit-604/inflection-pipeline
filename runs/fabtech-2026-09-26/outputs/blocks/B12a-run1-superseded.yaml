@@ -1,0 +1,18 @@
+stage: B12a
+company: FABTECH
+run_date: "2026-09-26"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 65
+findings:
+  - {severity: "CRITICAL", location: "B01 Block D, D2 (Interest Coverage)", claimed: "Rs 5.30 Cr depreciation FY26", source_truth: "Rs 53.02 Cr (audited results p.7, 530.15 lakh)", note: "10x understatement; reverses EBIT calc from +29.7 Cr to -18.02 Cr (NEGATIVE). Used in D2 interest-coverage score.", source_fidelity: true}
+  - {severity: "CRITICAL", location: "B01 Block D, D2 (Interest Coverage)", claimed: "Rs 4.16 Cr finance costs FY26", source_truth: "Rs 41.59 Cr (audited results p.7, 4158.6 lakh)", note: "10x understatement; reverses IC from 7.1x to 0.71x (broken). Both depreciation and interest figures are 10x off.", source_fidelity: true}
+  - {severity: "MAJOR", location: "B02 Section 3 (Trade Receivables)", claimed: "AR consolidated balance sheet face shows Rs 24,151.90 lakh", source_truth: "AR Note 13, MD&A, audited results all show Rs 20,433.51 lakh", note: "Drafting error in AR balance-sheet face (OCR): Rs 3,718.39 lakh overstatement. Correct figure is Rs 20,433.51 lakh per multiple sources. Disclosed in B02 as FLAG-DATA-OCR.", source_fidelity: true}
+  - {severity: "MINOR", location: "B02 Finding 3 (ECL Rates)", claimed: "1-3yr ECL rates roughly tripled", source_truth: "Current rate 10.1%; prior year rate not explicitly cited in report", note: "Tripled claim is directionally supported by AR Note 13 ageing schedule, but exact prior-year percentage not named in report text. No contradiction to source, only incomplete anchor.", source_fidelity: false}
+critical_count: 2
+major_count: 1
+minor_count: 1
+false_positives_struck: 0
+material_universe: 100
+acceptance_rate: 95.4
+coverage_note: "Material numbers checked: 65 of ~100 quantitative claims (65% coverage). Prioritized: (1) verdict-card inputs B01 Blocks A-F (20 figures); (2) cash/balance-sheet/quality claims B02 (8); (3) business model metrics B04 (12); (4) market sizing B09 (10); (5) peer/order-book/other quantitative (15). Screener consolidated data (annual series FY20-26) matched 100%. Audited results filing (text layer) confirmed balance-sheet and cash-flow anchors. AR OCR verified where material against audited results. Two CRITICAL mismatches in single scorecard pillar (B01 D2) reverse leverage verdict; both show systematic 10x unit error (likely decimal/quarterly-vs-annual confusion in source read). Trade-receivables face-vs-note discrepancy is a filing defect disclosed in B02, not a stage error. ECL prior-rate cite is unanchored but directionally confirmed. Acceptance among checked numbers: 62 clean / 65 = 95.4%."

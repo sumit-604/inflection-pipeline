@@ -1,0 +1,18 @@
+stage: B12d
+company: "FABTECH"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 10
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "HLEGLAS Q4 FY25 (May-2025)", missed_item: "Kinam heat-transfer sub-business competitor remark ('no competitor in India which has all of these platforms available under any one single roof') not used; tangential to Q6, different product line and geography, not claim-relevant enough to be MAJOR", anchor: "HLEGLAS-Concall_May_2025_Transcript.txt, p.~14 (line ~670)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Part 3 peer coverage map, HLEGLAS Q4 FY25 row", claimed: "CITED-ONLY, general receivables-improvement and macro remarks only", source_truth: "transcript also contains an unused tangential domestic-competitor remark (Kinam sub-business)", note: "industry-context miss, not claim-relevant; correctly low severity"}
+critical_count: 0
+major_count: 0
+minor_count: 1
+acceptance_rate: 100

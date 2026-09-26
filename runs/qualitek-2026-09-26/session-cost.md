@@ -10,3 +10,4 @@ not split input/output, so in_tok/out_tok read n/a).
 | 2 | notes triple-pass, pass 1 | claude-sonnet-5 | default | n/a | n/a | 196032 | 8m52s | 1 |
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 111718 | 9m06s | 2 |
 | 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5 | default | n/a | n/a | 102220 | 5m42s | 3 |
+| 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 231648 | 12m51s | 1 |

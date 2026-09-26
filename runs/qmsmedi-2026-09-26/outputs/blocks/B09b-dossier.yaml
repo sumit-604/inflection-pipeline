@@ -1,0 +1,59 @@
+stage: B09b-dossier
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Credit rating (any agency)"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "Q3 FY26 earnings call transcript"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Broker/research notes"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "2022 SME IPO prospectus"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "FY24 and earlier annual reports (fewer than 3 years held)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+archetypes:
+  - line: "Products (device distribution, ~69% FY26 revenue)"
+    archetype: "Licence/scarcity business (weak fit: CDSCO licence + exclusive brand tie-ups gate entry, but no regulated price or hard capacity cap)"
+  - line: "Services (camps + PSP incl. Saarathi, ~31% FY26 revenue, 41% Q1 FY27)"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services)"
+transition:
+  - line: "Services (camps + PSP)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER-like (project-based, fee-for-service camps)"
+    to_tier: "R3/R4 VALUE-ADDED / FRANCHISE-like (recurring PSP retainer, CRM lock-in, SOC 2 certified)"
+    engine: "Mix shift Products to Services (31% to 41% of revenue) via Saarathi buyout and organic PSP signings; conversion of one-off camps into signed multi-month PSP retainer contracts with escalators, funded by front-loaded call-centre headcount"
+    proof_gate: "Consolidated EBITDA margin turns up (not merely holds) above the FY26 15.0% baseline for 2+ consecutive quarters while Services stays >=40% of consolidated revenue; Q1 FY27 print is 41% Services at 14.6% margin, moving apart not together"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11: whether the market already prices QMS as a higher-margin services business (post mainboard migration, services-led narrative since Q1 FY26) or still as an AVERAGE-graded device distributor. No number stated here."
+    ugliness: "UNRESOLVED IN CORPUS - two live readings (ARTIFACT-OF-CLIMB: hiring ahead of signed cost-plus programmes, fades as they bill; STRUCTURAL-FEATURE: ~181 inventory days, doubling aged receivables and weak Products pricing power carry the drag permanently). Separating observation: H1 FY27 normalized CFO and Q2 FY27 margin at reported services share."
+    transition_falsifier: "Margin fails to turn up while Services crosses 40-45% for 2 more quarters, and/or H1 FY27 normalized operating cash flow (ex short-term borrowing change) prints at or below zero; separately, if the Services undertaking transfers out of listed QMSMEDI under the 25-Sep-2026 scheme, the thesis must re-point to a different listed entity"
+dominant_variables:
+  - "Services % of revenue vs consolidated EBITDA margin, moving together or apart"
+  - "Normalized operating cash flow (ex short-term borrowing draw) as a multiple of PAT"
+  - "Entity boundary of the 25-Sep-2026 Saarathi/HCAH composite scheme (which listed entity ends up holding the Services undertaking)"
+  - "GLP-1-linked PSP pipeline conversion into signed cost-plus contracts vs headcount already committed"
+business_falsifier: "Interest cover falls below 3x (currently 3.51x) or audited DSCR stays below 1.0x (currently 0.79x) while receivables ageing keeps deteriorating, forcing a liquidity/covenant event that would re-declare QMS a distressed distributor under funding strain rather than a GARP transition candidate"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "3 of 6 externally observable"
+  single_point_failure: "the Sep-2026 scheme's entity outcome - if the Services undertaking transfers out of listed QMSMEDI into a separately listed Saarathi on the filed 1-for-1 share-entitlement terms, the transition thesis for QMSMEDI fails regardless of other variables"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "baa9adc51fd2652a36db08823e6c48e5e610b987"

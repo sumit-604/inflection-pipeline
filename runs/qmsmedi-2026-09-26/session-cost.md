@@ -23,3 +23,33 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 74801 | 2m28s | 1 |
 | 12a | verifier A numerical (coverage addendum; governs) | claude-haiku-4-5 | default | n/a | n/a | 148793 | 2m49s | 2 |
 | 13 | synthesis-lite (phase 1) | claude-opus-5-5 | default | n/a | n/a | 205889 | 9m50s | 1 |
+| 9b | Halt 1 understanding dossier | claude-sonnet-5 | default | n/a | n/a | 148477 | 7m08s | 1 |
+
+## CLOSE-OUT SUMMARY
+
+Run total (sum of ledger rows with token counts): 2,890,503 tokens.
+
+(a) TOP FIVE BY TOKENS (retries summed per stage)
+| rank | stage | total_tok | share |
+|---|---|---|---|
+| 1 | 12b verifier B red flags | 437,736 | 15.1% |
+| 2 | 2 notes triple-pass (3 runs) | 355,060 | 12.3% |
+| 3 | 6 peer concall verification | 326,189 | 11.3% |
+| 4 | 12a verifier A numerical (2 runs; run 1 superseded on coverage) | 236,077 | 8.2% |
+| 5 | 13 synthesis-lite | 205,889 | 7.1% |
+
+Avoidable spend: verifier A run 1 (87,284 tokens, 3.0%), re-run because it
+sampled Gate 0 figures only and declared a 21-figure universe for nine reports.
+
+(b) DOWNSHIFT FAILURES
+- DOWNSHIFT FAILURE: stage 0 (input validation ran inline in the Opus
+  orchestrator session, as run-pipeline step 1 directs "do this yourself"; no
+  haiku stage-0 agent exists, so the downshift cannot take on this path).
+  Verifier A ran on haiku as routed (both runs).
+
+(c) COST SPIKES
+- none (no prior QMSMEDI run ledger exists).
+
+(d) OPERATOR SNAPSHOT
+- Operator: run /cost and /usage now and paste the cache hit ratio and loop
+  totals under an "Operator snapshot" heading here.

@@ -1,0 +1,26 @@
+stage: B02-notes-pass1
+company: FABTECH
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: interim_pass1_complete
+note: "This is Pass 1 of 3. No final YAML block is required by the prompt at this stage; this file is an interim carry-forward only. The authoritative B02-notes block is emitted after Pass 3."
+known_item_settled:
+  item: "consolidated trade receivables face-vs-note discrepancy"
+  resolution: "AR consolidated balance sheet FACE (Trade receivables Rs 24,151.90 lakh; Total Assets Rs 69,088.68 lakh) is a drafting/printing error. Correct FY26 consolidated figures are Trade receivables Rs 20,433.51 lakh and Total Assets Rs 65,370.29 lakh, confirmed by AR Note 13 total, AR MD&A (txt p.44), AR financial-instruments note (txt p.192), and the FY26 audited results filing (text layer, exchange-filed, authoritative). Internal arithmetic check: 69,088.68 - 65,370.29 = 3,718.39 = 24,151.90 - 20,433.51 exactly; the AR face's own current-asset subtotal only ties if 24,151.90 is used, meaning the error was carried through the face's own totals, ruling out a single-cell OCR misread."
+  anchor_downstream_to: "Rs 20,433.51 lakh trade receivables / Rs 65,370.29 lakh total assets, FY26 consolidated"
+top_findings_preview:
+  - {rank: 1, finding: "Consolidated BS face overstates trade receivables/total assets by Rs 3,718.39 lakh", note_ref: "Note 13 / BS face, AR p.150 & p.173 (txt)", rating: "RED"}
+  - {rank: 2, finding: "Receivables ageing deteriorating; auditor KAM on Rs 5,887.55 lakh overdue >365 days", note_ref: "Note 13 consolidated; Auditor's Report p.139-140 (txt)", rating: "RED"}
+  - {rank: 3, finding: "58% of other income is net FX gain, under-hedged exposure", note_ref: "Note 32 consolidated; Note 48", rating: "RED"}
+  - {rank: 4, finding: "Severe customer rotation, no segment profitability disclosed", note_ref: "Note 44 consolidated", rating: "RED"}
+  - {rank: 5, finding: "CARO Clause (vii)(a) qualified for holding co + subsidiary + associate", note_ref: "Auditor's Report p.144 (txt)", rating: "RED"}
+  - {rank: 6, finding: "Two consecutive years of exceptional gains from group-entity stake sales", note_ref: "Note 40 consolidated", rating: "YELLOW"}
+  - {rank: 7, finding: "MSME payment-delay interest up 149% YoY", note_ref: "Note 26/27", rating: "YELLOW"}
+  - {rank: 8, finding: "Rs 2,350.83 lakh related-party-labelled loan untraceable to named counterparty", note_ref: "Note 26 consolidated", rating: "YELLOW"}
+  - {rank: 9, finding: "0% utilisation of Rs 3,000 lakh IPO inorganic-growth allocation at FY26 close", note_ref: "Note 53/60", rating: "YELLOW"}
+  - {rank: 10, finding: "Saudi entity name/ownership mismatch vs company memory Spear line", note_ref: "Note 52/53 consolidated", rating: "YELLOW"}
+input_gaps_carried_forward:
+  - "CARO annexure full statutory-dues qualification text not itself in Notes to FS; pull separately in stage 3 if in scope."
+  - "Jun-2026 acquisition filings (post-FY26 balance sheet date) not addressable from FY26 AR notes; carry to stage 3/8."
+  - "Saudi 51% entity name (Specialized Contracting Activities LLC per companies/FABTECH.md) vs AR-disclosed Fabtech Lifecare Company KSA (100% via UAE sub) needs reconciliation."
+full_report_path: "runs/fabtech-2026-09-26/outputs/reports/02-notes-pass1.md"

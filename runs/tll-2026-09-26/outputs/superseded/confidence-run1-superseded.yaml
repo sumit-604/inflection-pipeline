@@ -1,0 +1,25 @@
+stage: confidence
+company: TLL
+run_date: "2026-09-26"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 93        # B12a: 26 of 28 checked figures clean (items 28, >= 4, applicable)
+  redflag_coverage: 50            # B12b: 6 of 12 MATERIAL (2 CRITICAL + 10 MAJOR) caught upstream, partial catches counted as caught; full catches only 3 of 12 (25%)
+  framework_adherence: 78.8       # B12c PHASE 1 PORTION ONLY: 52 of 66 rules (Gate 0 35/43, Emerging Moat 17/23). Valuation half pending phase 3.
+  peer_utilisation: 91.7          # B06 peer_coverage_map: 11 of 12 peer-quarter transcripts SUBSTANTIVE (SENORES Jan-2026 CITED-ONLY; B12d says it should have been substantive)
+  overall: 50
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  band: "FORCED REWORK (< 60). Orchestrator Section 4: any verifier acceptance_rate below 60% makes the synthesis verdict REWORK regardless of company quality. The analysis, not the company, is judged."
+verifier_a_identity_check:
+  critical_rows: 1
+  struck: 1
+  struck_rows:
+    - location: "B05 Section 1B revenue mismatch"
+      reason: "claimed and source_truth hold the SAME value (Rs 10,607.05 lakh stated in the H2/FY26 deck p27 as 'Revenue from Operations'). Stage 5 reported the company's own mislabel faithfully and flagged it; the row is a clerical error in the finding, not a misread figure. Struck under the run-pipeline step 5 identity check. The underlying company disclosure defect stays live (B05 FLAG-DISCLOSURE; B12b partially-caught row)."
+  surviving_critical: 0
+source_fidelity_flags_live:
+  - "B12a MAJOR: FY25 CFO -10.24 Cr (FY25 AR) vs -3.99 Cr (FY26 AR comparative); swing unanchored to any restatement note. Both figures exist; the reclassification line is the issue."
+  - "B12a MAJOR: segment-note receivables 4,947.50 lakh vs consolidated Note 17 7,365.39 lakh, unreconciled."
+  - "B12a MAJOR: Rs 500 lakh guarantees to non-consolidated director-interest LLPs (disclosure cross-link)."
+verifier_disagreements: "none this phase. The one Verifier A row struck was struck on the identity check (a clerical row), not cleared against a source; no downstream step has used a flagged number."

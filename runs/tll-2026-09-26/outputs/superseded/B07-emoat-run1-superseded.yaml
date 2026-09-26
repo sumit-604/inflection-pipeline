@@ -1,0 +1,52 @@
+stage: B07-emoat
+company: "TLL"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No filed shareholding pattern; screener aggregation only (non-filing), weighed not anchored (carried from B00)."
+  - "NO-CONCALL MODE: no company earnings-call transcripts exist for scrip 543616; F2 tested via AR-timeline capex/commissioning evidence per orchestrator substitution rule."
+  - "Purchase-of-Fixed-Assets not cleanly disaggregated from acquisition-of-subsidiary outflows in the extracted AR text; capex_embedded_growth_pct (Section 2C) could not be computed, NOT FOUND rather than estimated."
+  - "Registration-to-revenue conversion rate not disclosed anywhere in the corpus; the core E1 asset (registration pipeline) has no verifiable monetisation metric."
+  - "Facility-by-facility WHO-GMP certification status NOT FOUND in the FY26 AR."
+  - "Nature of 'Claim Income' (Rs 5.41 Cr FY26, 58% of Other Income), AR Note 22, NOT FOUND, carried from B01/B02."
+flags:
+  - {type: FLAG-EVIDENCE-CONFLICT, reason: "Aug-2026 deck claims '350+ Products with IPR' and a rising R&D-investment chart (Rs 0.5-0.8 Cr FY23-FY26, deck p16/19), directly contradicted by the FY26 AR's own statutory Technology Absorption disclosure: 'efforts made towards technology absorption: NIL' and 'expenditure incurred on Research and Development: Not applicable'. Scored A2 as None, not an active category."}
+  - {type: FLAG-SUBSIDIARY-GAP, reason: "Carried from B04: three of five subsidiaries (TLL Parenterals, TLL Wellness, TLL Elements) are pre-revenue or near-zero-revenue against materially larger deck-claimed peaks (Rs 200/10/20 Cr); this is the platform's clearest emerging-moat candidate (subsidiary diversification) but rests on undelivered capacity, not documented moat. LBF3."}
+  - {type: FLAG-EXECUTION, reason: "F2 tested negative: TLL Parenterals moved from 'Under Construction' to 'commercial implementation' in the Aug-2026 deck's own timeline with no matching revenue (Q1 FY27 results and FY26 AOC-1 both show nil turnover); Chairman's own FY26 AR language calls subsidiary utilisation 'currently modest'. Evidence of execution risk, not an execution moat."}
+  - {type: FLAG-COUNTER-EVIDENCE, reason: "G1/G2 (war chest, WC improvement) both carry documented counter-evidence rather than absence: Chairman's unsecured loan to the company accelerated (Rs 491L FY25 to Rs 1,353L FY26, repayable on demand) and Working Capital Days rose 151 (FY24) to 203 (FY26), the opposite of the categories' definitions."}
+em_score: 8
+em_classification: "NONE"
+active_categories:
+  - {id: "E1", name: "Geographic first-mover (registration pipeline)", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "1.5-3yr (per deck, unverified conversion rate)"}
+  - {id: "C2", name: "Customer/segment concentration improving", strength: "Weak-Moderate", evidence_type: "documented", time_to_materialise: "already partly delivered (FY26 mix shift)"}
+  - {id: "H3", name: "ESG moat (solar power plant)", strength: "Weak-Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "H2", name: "Strategic partnership (NIPER-Ahmedabad tech transfer)", strength: "Weak", evidence_type: "documented", time_to_materialise: "undated, CSR-framed"}
+  - {id: "C1", name: "Customer ecosystem / cross-sell", strength: "Weak", evidence_type: "claim", time_to_materialise: "12-24m"}
+  - {id: "A4", name: "Product platform breadth", strength: "Weak", evidence_type: "inference", time_to_materialise: "already reflected in current revenue"}
+evidence_mix: {documented: 4, claim: 2, inference: 1}
+completionist_recount: "📄 recount performed: 4 documented items across 4 categories (E1: capitalised registration intangible + country/registration counts; C2: domestic/export mix shift; H2: NIPER-Ahmedabad Reg 30 MoU; H3: solar power plant capex). Within the 3-6 category base rate; no over-crediting of 🎙️ claims as 📄 found."
+catalysts_12m:
+  - {catalyst: "TLL Parenterals first booked revenue (>Rs 0) vs Rs 200 Cr deck peak", window: "FY27 (in progress)", evidence_type: "documented (AOC-1/quarterly results test)", anchor: "B05 trigger priority 1; AOC-1 nil turnover FY26"}
+  - {catalyst: "TLL Wellness commercialisation and first booked revenue vs Rs 10 Cr deck peak", window: "FY27", evidence_type: "documented", anchor: "AOC-1; Aug-2026 deck p14"}
+  - {catalyst: "IPO product-registration allocation (Rs 5.14 Cr) utilisation step-up beyond ~10.1%", window: "12m", evidence_type: "documented", anchor: "Statement of Deviation 28-Jul-2025"}
+  - {catalyst: "FY27 AR resolution of the undisclosed 'Changes in Working Capital Facilities' cash-flow reclassification", window: "12m (FY27 AR)", evidence_type: "documented", anchor: "B02/B03 FLAG-CASH"}
+capex_embedded_growth_pct: 0  # NOT FOUND: Purchase-of-Fixed-Assets not disaggregated from acquisition outflows; not estimated per house rule
+optionality_register:
+  - {optionality: "'Triple consolidated business in 3 years' (Aug-2026 deck only, not in AR Outlook)", converting_evidence: "Milestone path carried into the AR MD&A/Outlook itself", first_appears: "FY27 AR Outlook or a dedicated Reg 30 milestone filing", window: "12-36m"}
+  - {optionality: "TLL Parenterals Rs 200 Cr peak revenue claim", converting_evidence: "Booked revenue >Rs 0 plus a disclosed off-take/customer agreement", first_appears: "Q2/Q3 FY27 results, FY27 AOC-1", window: "FY27 (in progress)"}
+  - {optionality: "TLL Wellness Rs 10 Cr peak revenue claim", converting_evidence: "Booked revenue >Rs 0 and a named distribution/customer agreement", first_appears: "FY27 quarterly results", window: "FY27"}
+  - {optionality: "TNS Pharma Rs 40 Cr peak (vs Rs 5.77 Cr FY26, loss-making, negative net worth)", converting_evidence: "Turnaround to positive net worth plus revenue growth toward the claimed peak", first_appears: "FY27/FY28 AOC-1", window: "2-3 years"}
+  - {optionality: "Registration pipeline 'intrinsic value ~Rs 80 Cr' (deck claim)", converting_evidence: "Disclosed valuation methodology, third-party appraisal, or a licensing/monetisation transaction", first_appears: "AR note or exchange filing", window: "undated"}
+  - {optionality: "'350+ Products with IPR' / rising R&D-investment claim (deck), contradicted by AR's own R&D 'Not applicable' disclosure", converting_evidence: "Named patent filings (ipindia.gov.in/Espacenet) or a disclosed R&D expenditure line in the AR's own Technology Absorption section", first_appears: "Future AR Technology Absorption section, or a patent-grant Reg 30 filing", window: "unclear, currently contradicted"}
+  - {optionality: "Talent asymmetry (I1): experienced board/management team", converting_evidence: "Named technical hires with above-sector remuneration (AR annexure), or named ex-major-company/institution staff with a documented competitor-pay-ceiling argument", first_appears: "AR remuneration annexure, professional-network verification", window: "unclear"}
+  - {optionality: "NIPER-Ahmedabad Vorinostat technology transfer", converting_evidence: "Commercial product launch with a disclosed revenue line, distinct from the stated CSR/free-of-charge framing", first_appears: "Future AR product-launch note or Reg 30 filing", window: "unclear, currently non-commercial framing"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0's AVERAGE (capped by the cash-conversion deal-breaker, not by choice) is not lifted by this stage: the forward scan finds continuation of the one existing confirmed moat (registration/subsidiary platform) rather than a new or accelerating emerging moat, em_score 8 falls in the NO MEANINGFUL EMERGING MOAT band, and several categories that would normally support a transition case (execution delivery, war chest, working capital) carry documented negative findings instead."
+top_moat_risks:
+  - "Subsidiary build-vs-delivery gap (LBF3): three of five subsidiaries pre-revenue or near-zero-revenue against materially larger deck-claimed peaks; the clearest candidate emerging moat rests on unbuilt capacity."
+  - "Registration-to-revenue conversion rate undisclosed; the core existing moat (registration pipeline) has no verifiable monetisation metric to show it is strengthening, not just growing in count."
+  - "Deck-vs-AR evidentiary conflict on R&D/IPR: promotional claims contradicted by the AR's own statutory Technology Absorption disclosure (R&D 'Not applicable', tech absorption 'NIL')."
+  - "Execution risk already documented: TLL Parenterals commissioning status reclassified in the deck without matching revenue; Chairman's own words call utilisation 'currently modest'."
+  - "Working capital deterioration (Gate 0 deal-breaker) and an accelerating chairman-loan dependency could constrain funding of the capex-heavy subsidiary buildout the emerging-moat case depends on."
+analyst_note: "The registration/subsidiary platform is TLL's one real existing moat (Gate 0 moat_score 10), and this stage's job was to test whether it is EMERGING into something new. It largely is not: E1 (Moderate) is an extension of the same registration engine, not a new advantage, and the categories that would mark genuine emergence (execution delivery, talent, war chest, working capital) carry documented negative findings this stage surfaced independently of B01-B05. The single most useful addition this stage makes is the A2 conflict: the promotional deck's IPR/R&D claims are directly contradicted by the AR's own statutory Technology Absorption section, a conflict the earlier stages did not test because it sits outside their scope. Recommend synthesis treat TLL's growth story as real but almost entirely backward-looking (already-delivered registration/domestic-mix growth) rather than forward-emerging."

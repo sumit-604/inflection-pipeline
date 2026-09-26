@@ -1,0 +1,18 @@
+company: Avience Biomedicals Ltd
+ticker: AVIENCE
+cmp: 342.0
+market_cap_cr: 188.0
+run_date: 2026-09-26
+run_type: full
+listed_date: "2026-06-25"   # NSE Emerge (SME) listing; IPO Rs 208, fresh issue Rs 30.24 Cr. Recently listed: prospectus MANDATORY (held: inputs/prospectus/)
+concalls_available: false   # ONE transcript only (H2 FY26 call, 24-Jul-2026; first call since listing). NO-CONCALL MODE per orchestrator; stage 5 reads that transcript plus AR MD&A and results
+sector_cap_row: "Pharma / CDMO"   # set at /step1 Step D from section-1b chunk 05 (38x); stage 0 confirms. FLAG: 72% traded revenue, Amendment 27.2 SOTP with a 'Distribution / trading' 20x slice is live for phase 3
+sector_cap_row_guess: "Pharma / CDMO"   # collector keyword guess only, never consumed
+collector_warnings:
+  - "BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing."
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, QLINE:Profit & Loss, QLINE:Quarters, QLINE:Balance Sheet, QLINE:Cash Flow, QLINE:Customization, MOLBIO:Profit & Loss, MOLBIO:Quarters, MOLBIO:Balance Sheet, MOLBIO:Cash Flow, MOLBIO:Customization, TARSONS:Profit & Loss, TARSONS:Quarters, TARSONS:Balance Sheet, TARSONS:Cash Flow, TARSONS:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "only 1 concalls -> no-concall mode"
+notes: "Main URL is screener CONSOLIDATED (/company/AVIENCE/consolidated/): one wholly owned subsidiary, DR Meditech Surgical and Diagnostics (India) Pvt Ltd (from 08-Aug-2023). NSE-only SME (symbol AVIENCE, ISIN INE0V9I01017); announcements, results, shareholding, AR and RHP pulled by hand from NSE at /step1 intake. Peers QLINE, MOLBIO, TARSONS (Hemant Surgical rejected: no transcripts). Collected from screener.in by collect_to_repo.py v3, repaired at intake (see B00.input_gaps)."

@@ -1,0 +1,44 @@
+stage: B12b
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+no_concall_mode: true
+independent_flags_found: 19
+caught: 6
+partially_caught: 5
+missed:
+  - {severity: "MAJOR", item: "H2 FY26, the half the call was held for, grew revenue +5.0% YoY (Rs 2,568.65 vs 2,447.04 lakh) and fell -4.2% vs H1 (Rs 2,681.93 lakh); H2 PAT fell -1.3% YoY (Rs 421.50 vs 426.89 lakh). The call cited only full-year figures, the CFO called it 'consistent improvement', FY26 revenue growth (16.07%) was never stated as a percentage, and >=60% FY27 guidance was set off this decelerating base. B05 never mentions the H2 figures.", anchor: "Revised consolidated results 25-Aug-2026 p.11 (lines 564, 590); original results 27-Jul-2026 OCR line 863/886; transcript p.4 (CFO remarks); AR Board's Report p.39 (16.07%)"}
+  - {severity: "MAJOR", item: "Guidance arithmetic does not close: a 50:50 manufacturing mix at >Rs 100 Cr needs ~Rs 50 Cr manufactured revenue vs FY26 ~Rs 14.2 Cr (26.99% x Rs 52.51 Cr), while the new plant starts only Oct-2026 at 15-20% utilisation and the Rs 47-50 Cr order (about half of FY27 guidance) is equipment-heavy per the analyst, not denied by management; high-end instruments are traded (Mindray). [INFERENCE] mix lands nearer 33-40% unless the order is manufactured goods. B05 rates the mix trigger L-M with no reason and does not flag the tension.", anchor: "Transcript p.6 (50:50 target, capacity), p.7 (26.99% mfg, 15-20% utilisation, equipment-heavy order Q), p.4 (Mindray high-end sourcing)"}
+  - {severity: "MINOR", item: "Consolidated results revised 25-Aug-2026 (Note 8: Excel workbook links removed, inter-company balances of Rs 337.55 lakh not eliminated; no P&L impact) one month after the call, while AR MD&A sec.6 asserts internal controls ensure reliability of financial reporting. Third reporting-control error alongside CARO ii(b) and Note 40.", anchor: "Revised CFS results p.1 item 3, Note 8 (lines 744-751), auditor para 3 (p.9-10); AR MD&A sec.6 p.65"}
+  - {severity: "MINOR", item: "CMD volunteered the share price on the results call (issue Rs 208, traded ~Rs 414.95, 'nearly double'), a promotional aside.", anchor: "Transcript p.4, Dharam Deo Choudhary"}
+  - {severity: "MINOR", item: "Three soft dodges: approval success rate asked and not answered (p.5, Praneeth); FY28 utilisation asked, FY27 figure given (p.7, Manav Kothari); revenue breakup deferred offline (p.5), partly supplied later (p.7). B05 2C says management 'answered every question asked (no visible deflection)', which the transcript does not support.", anchor: "Transcript p.5, p.7"}
+  - {severity: "MINOR", item: "'The large order relates to Uttarakhand, so it also takes us into a new territory', but the RHP state-wise table shows Uttarakhand standalone revenue of Rs 110.22 lakh (6.78%) in FY24 and Rs 21.74 lakh in 10M FY26. B05 1A repeats 'new territory' without challenge.", anchor: "Transcript p.5; RHP pdf p.160 state-wise revenue table"}
+  - {severity: "MINOR", item: "RHP strategy/SWOT speaks of a WHO and US FDA approved plant; the call narrows this to 'designed with WHO prequalification requirements in mind, subject to audit'; US FDA is not mentioned. Quiet narrowing of a pre-listing claim.", anchor: "RHP pdf p.210 SWOT (line 11412), strategy lines 11325-11366; transcript p.8"}
+  - {severity: "MINOR", item: "AR Note 13 labels the YEIDA CWIP 'Biochemistry Analyser Plant' and the YEIDA lease was taken 'for setting up Biochemistry Analyser Plant', while the call frames the unit as broad reagent/consumable capacity worth Rs 250-265 Cr of revenue. Scope framing differs between filings and call.", anchor: "AR Note 13 (line 3711), Note on leasehold land (line 3681); transcript p.6"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur - C holds; the undisclosed H2 slowdown and the order/'confirmed orders' contradiction argue for low-C, but no delivery has been tested yet"
+findings:
+  - {severity: "MAJOR", location: "B05 Sections 2A/2D/4D", item: "MISSED: H2 FY26 revenue +5.0% YoY, -4.2% HoH, PAT -1.3% YoY; call discussed full year only; not in B05", anchor: "Revised CFS results p.11; transcript p.4"}
+  - {severity: "MAJOR", location: "B05 Section 1B/4A trigger 3", item: "MISSED: 50:50 mix target vs Rs 100 Cr guidance vs equipment-heavy order vs Oct-2026 plant start do not reconcile [INFERENCE]", anchor: "Transcript p.6-7"}
+  - {severity: "MINOR", location: "B05 Section 3C/4D", item: "PARTIAL: order 'in hand' (p.3, p.5) vs 'once confirmed orders are in place, banks... can support' (p.6), and AR Board's Report sec.4 (07-Sep-2026) 'no material changes and commitments'; B05 flags the order as unverified but misses both contradictions", anchor: "Transcript p.3, p.5, p.6; AR p.39-40"}
+  - {severity: "MINOR", location: "B05 Section 3C (not in 4D)", item: "PARTIAL: RHP certified WC plan (28-May-2026) assumes FY27 receivable days of 80 (from 128), WC need Rs 2,049.39 lakh, IPO WC Rs 500 lakh; the call cites 90-120 days on large government projects and concedes 'the entire requirement is not available today'. B05 grades the answer unsatisfactory but never sets it against the RHP plan and leaves it off the red-flag list. [INFERENCE] RHP receivables imply FY27 standalone revenue of ~Rs 60 Cr (1,317.50 x 365 / 80).", anchor: "RHP pdf p.125-126 (lines 6971-7008); transcript p.6"}
+  - {severity: "MINOR", location: "B05 3C / B06 Q3", item: "PARTIAL: 'higher contribution margin' on the equipment-heavy order is contradicted by peer QLINE (instrument manufacturing GM 15-20%, domestic traded instruments 10-15%, large instruments placed at cost) and by Avience's own statement that 80-85% of instruments earn no direct revenue; B06 holds the QLINE figure but never ties it to the order", anchor: "QLINE H2/FY26 call 23-Jun-2026 p.12, p.17, p.19; transcript p.7"}
+  - {severity: "MINOR", location: "B05 1B", item: "PARTIAL: >=60% (~Rs 84 Cr) and >Rs 100 Cr (~+90%) are listed as separate guidance lines without reconciliation; Rs 52.51 Cr + Rs 47 Cr ~ Rs 99.5 Cr means the Rs 100 Cr figure needs a flat base plus the full order", anchor: "Transcript p.3, p.5"}
+  - {severity: "MINOR", location: "B05 1A/2B", item: "PARTIAL: AR MD&A (07-Sep-2026) carries none of the call's numbers (no order, no growth target, no YEIDA plant); B05 calls it generic but does not flag the gap between call and statutory document", anchor: "AR Annexure-4 MD&A p.63-66"}
+  - {severity: "MINOR", location: "B05 2A row 2", item: "Period mismatch: FY26 CWIP additions (Rs 823.37 lakh, pre-IPO, funded by accruals/debt) are called 'directionally consistent' with the FY27 net-proceeds tranche (Rs 1,595.53 lakh); the IPO closed in Jun-2026 (FY27), so FY26 spend cannot evidence proceeds use", anchor: "AR Note 13; RHP pdf p.130"}
+  - {severity: "MINOR", location: "B05 2C", item: "Statement 'management answered every question asked (no visible deflection)' not supported by transcript p.5 and p.7", anchor: "Transcript p.5, p.7"}
+  - {severity: "MINOR", location: "B05 (source list only)", item: "MISSED: 25-Aug-2026 revision of consolidated results (inter-company elimination, Rs 337.55 lakh) not flagged", anchor: "Revised CFS results Note 8"}
+  - {severity: "MINOR", location: "B05", item: "MISSED: CMD share-price remark on call", anchor: "Transcript p.4"}
+  - {severity: "MINOR", location: "B05 1A", item: "MISSED: Uttarakhand 'new territory' contradicted by RHP state-wise revenue", anchor: "RHP pdf p.160; transcript p.5"}
+  - {severity: "MINOR", location: "B05 3B", item: "MISSED: US FDA plant claim in RHP dropped on call", anchor: "RHP pdf p.210; transcript p.8"}
+  - {severity: "MINOR", location: "B05", item: "MISSED: CWIP/lease labelled Biochemistry Analyser Plant vs broad-capacity framing on call", anchor: "AR Note 13; transcript p.6"}
+  - {severity: "MINOR", location: "B06 Q2 table", item: "Internal inconsistency: QLINE receivables described as '~134 trending toward 90-120' in one cell and '120-150-day range' in the net read; transcript supports both figures (134 FY26; 'currently 120 to 150'; target 'within 90 to 120'), so the cells should be reconciled", anchor: "QLINE call p.12-13 (lines 911-949)"}
+critical_count: 0
+major_count: 2
+minor_count: 13
+material_found: 7
+material_caught: 5
+acceptance_rate: 71
+coverage_basis: "7 material (0 CRITICAL, 7 MAJOR) of 19 listed; 2 CAUGHT + 3 PARTIALLY CAUGHT = 5 the pipeline had, 2 MISSED. Rate 5/7 = 71.4%. If partial catches are excluded the strict rate is 2/7 = 28.6%. Denominator >= 4, so rule 7 does not null the rate. No CRITICAL is possible from a repeated-evasion test with one transcript."

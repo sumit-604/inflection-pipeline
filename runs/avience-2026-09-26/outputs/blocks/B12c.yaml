@@ -1,0 +1,30 @@
+stage: B12c
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+scope: "phase-1 (Gate 0 + Emerging Moat only); valuation audit PENDING PHASE 3"
+gate0: {rules_checked: 42, fails: ["G6/G7 FY24 ROCE estimated via identity + unevidenced assumption; RHP p.132 own FY24 consolidated ROCE 17.96% available (MINOR, F-G1)", "G9 FY24 capex proxied by total CFI -3.90 Cr instead of N/A (MINOR, F-G2)"]}
+emoat: {rules_checked: 23, fails: ["E15 Section 2C: (99.6/52.51)-1 = 90% applied to an incremental figure; correct 99.6/52.51 = 189.7% -> capex_embedded_growth_pct 190 (MAJOR, F-E1)", "E10 B2 scored H/H=4 x0.7=2.8 while stated emerging strength is Weak and existing mechanic sits in Gate 0; recomputed B2 0.7-1.4, em_score 9.3-10.0, class NONE unchanged (MAJOR, F-E2)", "E8 recount omits F2 documented item; >=6 items across 5 categories (MINOR, F-E3)", "E17 YAML optionality_register omits mix-shift row carried in report (MINOR, F-E4)", "E21 active_categories carries 4 Weak rows against Strong/Moderate-only schema (MINOR, F-E5)"]}
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 (B10/B11 not yet produced)"}
+expectation_ledger: {status: "PENDING PHASE 3", present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}
+business_understanding_narrative: {status: "PENDING STAGE 13", present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_phase1:
+  gate0_classification: "GOOD (concur)"
+  em_score: "9.3-10.0 (B07 stated 11.4); em_classification NONE (concur)"
+  capex_embedded_growth_pct: "190 (B07 stated 90)"
+  combined_assessment: "GOOD (concur)"
+findings:
+  - {id: "F-E1", severity: "MAJOR", location: "07-emoat.md Section 2C; B07 capex_embedded_growth_pct", finding: "2C formula misapplied: -1 subtracted from an incremental-revenue ratio", recomputed: "190 (99.6/52.51 = 189.7%)", note: "feeds stage 11; correct before phase 3; escalates to CRITICAL if stage 11 consumes 90 as a base input"}
+  - {id: "F-E2", severity: "MAJOR", location: "07-emoat.md Section 5 row B2; analyst_note", finding: "B2 scored H/H against stated Weak emerging strength; double-credits existing Gate 0 moat", recomputed: "B2 0.7-1.4; em_score 9.3-10.0; NONE unchanged; drop 'borderline / swing item' framing", note: "classification survives"}
+  - {id: "F-G1", severity: "MINOR", location: "01-gate0.md Block A FY24 ROCE; data_note 2", finding: "FY24 ROCE estimated; anchored RHP own figure 17.96% (RHP p.132) available", recomputed: "A1-A4 unchanged on RHP figure; N/A reading gives A4=3, Core 67, GOOD", note: "procedural only"}
+  - {id: "F-G2", severity: "MINOR", location: "01-gate0.md Block B FY24 capex; data_note 3", finding: "FY24 capex proxied by total CFI instead of N/A", recomputed: "B2=0, B3=0 unchanged for any FY24 capex >= 0", note: "DR Meditech acquisition paid in shares (RHP p.131 region, txt lines 5172-5176)"}
+  - {id: "F-E3", severity: "MINOR", location: "07-emoat.md Section 3 recount; B07 completionist_recount", finding: "recount omits F2 documented item (RHP pdf p.106)", recomputed: ">=6 documented items across 5 categories", note: "guard outcome unchanged"}
+  - {id: "F-E4", severity: "MINOR", location: "B07-emoat.yaml optionality_register", finding: "7 of 8 report rows carried; mix-shift row missing", recomputed: "add row", note: "synthesis would drop a watch item"}
+  - {id: "F-E5", severity: "MINOR", location: "B07-emoat.yaml active_categories", finding: "4 Weak rows in a Strong/Moderate-only field", recomputed: "B1, B2, R1 only", note: "downstream active-category count reads 7 not 3"}
+critical_count: 0
+major_count: 2
+minor_count: 5
+acceptance_rate: 87.7             # 57 rule rows passed / 65 checked (phase-1 scope)

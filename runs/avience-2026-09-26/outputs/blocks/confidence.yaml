@@ -1,0 +1,23 @@
+stage: confidence-delta
+company: AVIENCE
+run_date: 2026-09-26
+phase: 1
+verifier_a_identity_check: "B12a carries 0 CRITICAL rows; nothing to strike. No Verifier A finding struck."
+confidence_delta:
+  numerical_acceptance: 100      # B12a: 35 of 35 material figures clean (coverage: Gate 0 scorecard figures plus three B02/B03 spot-checks; stated in B12a coverage_note)
+  redflag_coverage: 71           # B12b: 5 of 7 MATERIAL flags had by the pipeline (2 caught + 3 partially caught). Strict caught-only 2/7 = 28.6%, recorded, not the number of record (same rule as prior runs: partially caught counts as had).
+  framework_adherence: 87.7      # B12c phase-1 half: 57 of 65 Gate 0 + EM rules passed; valuation half pending phase 3
+  peer_utilisation: 100          # B12d: 6 of 6 peer transcripts substantive and supported (no fabrication); citation-anchor drift logged as 2 MAJOR + 6 MINOR
+  overall: 71
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  pending_phase_3: ["framework_adherence valuation half (B10/B11)"]
+band: "60-74: PROCEED verdicts downgrade one level (set by redflag_coverage)"
+notes:
+  - "No CRITICAL findings in any verifier; no REWORK trigger on the rule of record (no acceptance_rate below 60 on the counted basis)."
+  - "B12b strict caught-only rate (28.6%) sits below the 60% line; the rule of record counts partially caught as had, giving 71%. Flagged for the operator at Halt 1, not applied as REWORK."
+  - "B12b MISSED (MAJOR): H2 FY26 slowed. Revenue +5.0% YoY (Rs 2,568.65 vs 2,447.04 lakh) and -4.2% vs H1; H2 PAT -1.3% YoY (Rs 421.50 vs 426.89 lakh), revised consolidated results p.11. B05 carries no H2 figure; the >=60% FY27 guidance sits on this base."
+  - "B12b MISSED (MAJOR, INFERENCE): a ~50:50 mix at >Rs 100 Cr needs ~Rs 50 Cr manufactured revenue vs ~Rs 14.2 Cr in FY26, with the plant starting Oct-2026 at 15-20% and the Rs 47 Cr order equipment-heavy (high-end equipment is traded)."
+  - "B12c F-E1 (MAJOR): B07 capex_embedded_growth_pct should be 190 (99.6/52.51), not 90. Stage 11 reads this field; correct before phase 3. F-E2 (MAJOR): B2 double-credit; em_score 9.3-10.0, not 11.4; EM class NONE unchanged; drop the 'borderline' framing."
+  - "B12d: two MAJOR page-anchor drifts in B06 (MOLBIO closed-system quote at p.12 not p.16-17; TARSONS export quote at p.6 not p.2-3). Quotes real and correctly attributed."
+  - "B12a coverage is narrow (Gate 0 figures plus spot-checks). Stage-report figures outside the scorecard (B04-B09) were not sampled by Verifier A."

@@ -1,0 +1,25 @@
+stage: B12d
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+peers_audited: 6
+substantive_confirmed: 6
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "TARSONS", missed_item: "Feb-2026 call (Q3/9M FY26) also names the GeM/L1 government-procurement setback, ~6 months before the Aug-2026 call B06 sources it from; a second independent occurrence of the same structural risk not credited", anchor: "TARSONS-Concall_Feb_2026_Transcript.txt [page 12]"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MAJOR", location: "B06 Q3 (margin/closed-loop), MOLBIO citation", claimed: "transcript p.16-17 for the closed-system quote (\"our reagents, our consumables work only on our devices... no third-party kits can be used on the device\")", source_truth: "quote is at [page 12]; only the paired 60-63% margin figure is genuinely at p.17", note: "Quote is real and correctly attributed to MOLBIO's Q1 FY27 call; page anchor for this half of the citation is off by 4-5 pages, landing in a different Q&A exchange (device life-cycle, not margins)."}
+  - {severity: "MAJOR", location: "B06 Q1 (export collapse), TARSONS Q4/FY26 citation", claimed: "transcript p.2-3 for \"-13.4% decline in export during the quarter\"", source_truth: "quote is at [page 6]", note: "Quote is real and correctly attributed to the Q4/FY26 (25-May-2026) call's CFO remarks; page anchor points to the call's opening pages instead."}
+  - {severity: "MINOR", location: "B06 Q1, MOLBIO citation", claimed: "transcript p.20 for the two-year rate contract", source_truth: "[page 19]", note: "adjacent-page drift, same closing exchange"}
+  - {severity: "MINOR", location: "B06 Part 2A/5, MOLBIO citation", claimed: "transcript p.5 for 17.9% CAGR TAM", source_truth: "[page 6]", note: "adjacent-page drift"}
+  - {severity: "MINOR", location: "B06 Q4, TARSONS Nov-2025 citation", claimed: "transcript p.11-12 for Rs550-650 Cr capex plan", source_truth: "[page 13]", note: "figure is 1-2 pages later than cited, same capex Q&A block"}
+  - {severity: "MINOR", location: "B06 Q4, TARSONS Nov-2025 citation", claimed: "transcript p.11-12 for 3-5yr/2-3yr ramp timeline language", source_truth: "[page 12-13]", note: "1-page overrun"}
+  - {severity: "MINOR", location: "B06 Q4/Part 3, TARSONS Aug-2026 citation", claimed: "transcript p.7-8, p.16 for 20-25% of standalone revenue by FY28", source_truth: "[page 15]", note: "1-page drift from the p.16 tag"}
+  - {severity: "MINOR", location: "B06 Q5, QLINE citation", claimed: "transcript p.10 for India diagnostic market growing 8-9%", source_truth: "[page 11]", note: "adjacent-page drift"}
+critical_count: 0
+major_count: 2
+minor_count: 6
+acceptance_rate: 100

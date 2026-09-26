@@ -1,0 +1,14 @@
+stage: B12a
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: claude-haiku-4-5-20251001
+status: complete
+numbers_checked: 35
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+false_positives_struck: 0
+material_universe: 50
+acceptance_rate: 100
+coverage_note: "35 material numerical inputs verified across Gate 0 Block A-F (ROCE, cash conversion, growth metrics, balance sheet strength, shareholder alignment, moat scoring), all traced to screener-Data_Sheet.csv, revised consolidated results filing, annual report, or NSE shareholding pattern XBRL. Spot-checks in Stage 2-3 reports confirm consistency (revenue, PAT, aged receivables figures all match). Coverage includes verdict-card row inputs (40+ distinct claims), all Block A-F calculations, promoter holding, net debt, CFO/PAT, receivable/inventory days, leverage ratios, and all 12 moat metric calculations. No MISMATCH, ANCHOR NOT FOUND, or material UNANCHORED findings. Acceptance rate 100% (35 of 35 checked verified clean)."

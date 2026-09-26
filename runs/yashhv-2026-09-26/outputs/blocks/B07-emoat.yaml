@@ -4,45 +4,49 @@ run_date: "2026-09-26"
 model: claude-sonnet-5
 status: complete
 input_gaps:
-  - "Blended fixed-asset-turnover figure needed for standard Section 2C arithmetic NOT FOUND; capacity-unit-growth proxy (67%) used instead and labelled as such, not the turnover-method figure."
+  - "Section 2C prescribed formula now run (153 x FAT 4.54x [B01 injected] = 694.6cr = 295% of FY26 revenue); flagged as a mechanical ceiling on a mature-asset FAT applied to a new greenfield plant, not a forecast."
+  - "Run-1 unit-capacity proxy (9,000 to 15,000 units/yr, +67%) dropped: conflicts with this stage's own 2A OIP-alone figure of 10,000 units/yr; base NOT RECONCILABLE from the corpus read at this stage."
   - "A2 patent/IP pipeline: NO EVIDENCE FOUND anywhere in AR FY25/FY26 or RHP by full-text search; genuine absence, not a search gap."
   - "F1 talent density: R&D headcount, specialist count and retention mechanics NOT FOUND; DSIR/SIRO recognition documented but headcount is not disclosed."
   - "I1 talent-asymmetry leg (a) evidence (named inventors, ex-DRDO/ex-HAL staff, traceable employment history) NOT FOUND in corpus available to this stage."
   - "Post-07-Aug-2026 preferential-allotment shareholding pattern not in corpus (carried from B00/B01, immaterial to this stage)."
+  - "B01 (Gate 0) under parallel correction for ROCE-formula-substitution and E2-dilution-note findings (12c-verifier-framework-run1.md MJ-2, MJ-3); this stage used B01 run-1 values (core 70, GOOD) as injected input and takes no position on those two findings, out of this stage's scope."
 flags:
   - {type: FLAG-GATE0-OVERRIDE, reason: "B01 M10 (switching costs) CONFIRMED with a disclosed mechanism (multi-year utility/OEM qualification cycles, named PGCIL/NTPC/NPCIL/DRDO approvals, AR p.47/p.49). B01 M11 (network effects) OVERRIDDEN to NO EVIDENCE FOUND: no platform/hub-and-spoke/multi-sided-market mechanism exists for this build-to-order component maker."}
   - {type: FLAG-EXECUTION, reason: "F2 execution moat scored Moderate not Strong: revenue/EBITDA/PAT guidance beaten every period tested, but Vadodara plant commissioning slipped ~6-9 months and capex escalated ~70% (Rs90cr to Rs153cr), neither ever named as a slip or overrun on any of three concalls (cross-referenced against B05)."}
-em_score: 25.7
-em_classification: "STRENGTHENING"
+  - {type: FLAG-CORRECTION, reason: "Run-2 correction against 12c-verifier-framework-run1.md: removed a double credit of the Ensales/Weidmann/Electrolink agreements across E2 and H2 (CR-1), and an inconsistent existing-vs-emerging test on A1/B2 that shared evidence with the confirmed B01 M10 mechanism (MJ-1). em_score falls from run-1's 25.7 (STRENGTHENING) to 17.7 (MODEST). Combined assessment falls from GOOD+ to GOOD. See Correction log in 07-emoat.md for full disposition of every verifier finding."}
+em_score: 17.7
+em_classification: "MODEST"
 active_categories:
-  - {id: "A1", name: "Rare manufacturing capability", strength: "Strong", evidence_type: "DOC", time_to_materialise: "active"}
-  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "active"}
   - {id: "B1", name: "Backward integration and RM security", strength: "Strong", evidence_type: "DOC", time_to_materialise: "12-24m"}
-  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "DOC", time_to_materialise: "active"}
   - {id: "E2", name: "China+1 beneficiary", strength: "Strong", evidence_type: "DOC/MGMT", time_to_materialise: "12-24m"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "active"}
+  - {id: "B2", name: "Qualification lock-in (new-market pipeline)", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "6-18m"}
   - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "DOC (mixed)", time_to_materialise: "active, two-sided"}
-  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "DOC", time_to_materialise: "active/12-24m"}
-evidence_mix: {documented: 13, claim: 8, inference: 2}
-completionist_recount: "📄 recount performed: 13 documented items across 7 categories (A1, A3, B1, B2, E2, F2, H2); no 🎙️ claim upgraded to documented; category count is above the 3-6 base rate but per-category anchor depth is thin (1-2 anchors each) and Weak/None rows (C1, A4, C2, G1, G2, H1, I1, I2) were deliberately not upgraded."
+  - {id: "H2", name: "Strategic partnerships (Sukrut JV only)", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 14, claim: 4, inference: 2}
+completionist_recount: "📄 recount performed: 14 unique documented items across 6 categories (A3, B1, B2, E2, F2, H2), no item counted in two categories; category count (6) within the 3-6 base rate; no 🎙️ claim upgraded to documented."
 catalysts_12m:
   - {catalyst: "Vadodara (Jarod) RIP/RIS trial production", window: "targeted Oct-2026", evidence_type: "MGMT (re-guided from original Mar-2026)", anchor: "Concall May-2026, lines 588-602; Reg 30 vastu pujan filing 2026-05-26"}
-  - {catalyst: "FY27 invoicing tracking Rs360-400cr guide (decoupled from plant success)", window: "H1FY27/FY27 results", evidence_type: "MGMT", anchor: "Concall May-2026, 'Exactly, exactly, exactly' response, B05 analyst_note"}
+  - {catalyst: "IEEE US seismic validation for 138kV/230kV OIP bushings", window: "targeted ready Sep-2026", evidence_type: "DOC", anchor: "Board's Report, AR"}
   - {catalyst: "Ensales US representation agreement activation (19 states)", window: "effective 11-Sep-2026, 36 months", evidence_type: "DOC", anchor: "Reg 30 filing 20260912; press release 2026-09-14"}
-capex_embedded_growth_pct: 67
+capex_embedded_growth_pct: 295
 optionality_register:
   - {optionality: "PLI scheme benefit for RIP bushings", converting_evidence: "Formal Ministry of Power/CEA notification with confirmed incentive rate", first_appears: "Gazette notification / exchange filing / Board's Report", window: "uncertain, stalled since Jan-2025 call"}
   - {optionality: "In-house RIP/RIS core localisation succeeding at scale", converting_evidence: "Type-test pass and commercial shipment of in-house cores without quality escalation", first_appears: "BSE announcement, next AR Board's Report", window: "6-12 months (trial from Oct-2026)"}
+  - {optionality: "New-market qualification (IEEE US / CENELEC Europe / 550kV) actually clearing", converting_evidence: "Passed type test or certification with a named date", first_appears: "Board's Report, exchange filing", window: "6-18 months"}
   - {optionality: "FY28 margin step-change from import substitution", converting_evidence: "FY28 EBITDA margin disclosed meaningfully above 25.7% FY26 base on non-price-recovery basis", first_appears: "FY28 AR / FY28 results", window: "12-24 months, already pushed once"}
   - {optionality: "Export share reaching 20%+ of revenue", converting_evidence: "Segment/geography note showing export % crossing 20%", first_appears: "FY28/FY29 AR or interim results", window: "2-3 years"}
   - {optionality: "Sukrut JV scaling to Rs150-160cr revenue", converting_evidence: "Sukrut segment revenue/EBITDA disclosed in consolidated financials tracking stated multiple", first_appears: "FY27/FY28 AR segment note", window: "4-5 years"}
   - {optionality: "Talent asymmetry from Swiss-trained core engineering team", converting_evidence: "Named technical hires with traceable Swiss-collaboration/DRDO background; competitor pay-scale comparison", first_appears: "AR remuneration annexure, Role 5.5 verification", window: "long, unconfirmed"}
   - {optionality: "HVDC/765kV expansion beyond Vadodara", converting_evidence: "Board-approved capex/exchange filing for further EHV-class capacity", first_appears: "Board's Report / Reg 30 filing", window: "3-5 years, management explicitly deferred 18-24 months"}
-combined_assessment: "GOOD+"
-combined_reasoning: "GOOD backward (STRONG existing moat, capped only by the Block B cash deal-breaker) plus a genuinely STRENGTHENING (not yet EXPANSION) forward moat layer: documented backward integration, extending qualification lock-in, and four signed FY26 partnership agreements, still short of full re-rating because the core localisation lever is pre-commercial with one slip and one cost overrun already on record."
+combined_assessment: "GOOD"
+combined_reasoning: "GOOD backward (STRONG existing moat on this stage's own 4/60=16 corrected count, capped only by the Block B cash deal-breaker) plus a MODEST, not STRENGTHENING, forward layer after correction: only backward integration (B1, pre-commercial) and China+1 distribution (E2, no disclosed orders yet) remain Strong; the rest is Moderate and thin on independent anchors. Does not clear the bar for GOOD+."
 top_moat_risks:
   - "Vadodara core localisation delay or type-test failure past the Oct-2026 trial date"
+  - "B2 new-market qualification pipeline (IEEE US, CENELEC Europe, 550kV testing) fails or slips, reverting an emerging category to zero"
   - "Sukrut JV underperformance under 50-50 shared control with no EBITDA guidance given to date"
   - "Customer concentration (18.8% single customer) sits in tension with the qualification-lock-in thesis, which assumes a diversified base"
   - "Signed China+1 distribution/representation agreements are not guaranteed order flow"
   - "Recurrence of the reframing pattern (slips/overruns not named as such) on the next milestone would leave the market under-warned"
-analyst_note: "B01's M10/M11 mechanical pass was addressed as instructed: M10 switching costs is CONFIRMED with a disclosed qualification-cycle mechanism; M11 network effects is OVERRIDDEN to no evidence, since this is a point-to-point build-to-order business with no platform dynamic. I1 and I2 both score 0 by design (structural tests not met), so the 25.7 threshold crossing is via standard categories only, not an I1/I2 artefact requiring the operator's 10-15-scan review checkpoint. The Section 2C capex-to-revenue arithmetic could not be run on the specified fixed-asset-turnover method (input NOT FOUND); a capacity-unit-growth proxy of 67% is substituted and flagged, not estimated in place of the missing ratio."
+analyst_note: "Run-2 correction against 12c-verifier-framework-run1.md. CR-1 fixed: Ensales/Weidmann/Electrolink now score under E2 only; H2 rescored on its unique evidence (Sukrut JV, Rs5.24cr), HH to HL, 4.0 to 2.0. MJ-1 fixed: A1's evidence (2016-2018 approvals) is the same existing-moat fact already used to confirm B01 M10 and already scored in B2; applying the same existing-vs-emerging test used on E1/H1, A1 drops to 0 and B2 is rescoped to the genuinely new 2026-vintage qualification pipeline (IEEE US, CENELEC Europe, 550kV), HH to MM, 4.0 to 2.0. MJ-4 fixed: Section 2C now runs 153 x 4.54 FAT = 694.6cr = 295% of revenue, caveated as a mechanical ceiling; the unreconcilable unit-capacity proxy is dropped. MN-3/4/5 fixed: 6C moat count updated to 4/16, Strong/Moderate counts and recount rebuilt to 14 unique items, evidence_mix enumerated. Net: em_score 25.7 to 17.7, STRENGTHENING to MODEST, combined GOOD+ to GOOD. MJ-2/MJ-3 (B01 findings) are out of this stage's scope; B01 run-1 values used as injected input pending its parallel correction."

@@ -18,3 +18,6 @@
 | 13 | verifier-b-redflags | opus | default | n/a | n/a | 266770 | 8m53s | 1 |
 | 14 | verifier-c-framework (phase 1 half) | opus | default | n/a | n/a | 114640 | 5m05s | 1 |
 | 15 | verifier-d-peers | sonnet | default | n/a | n/a | 93074 | 3m48s | 1 |
+| 16 | stage-01-gate0 (correction) | sonnet | default | n/a | n/a | 94995 | 5m03s | 2 |
+| 17 | stage-05-concall (correction) | sonnet | default | n/a | n/a | 136754 | 7m19s | 2 |
+| 18 | stage-07-emoat (correction) | sonnet | default | n/a | n/a | 106847 | 6m52s | 2 |

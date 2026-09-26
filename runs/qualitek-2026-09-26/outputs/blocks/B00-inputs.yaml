@@ -1,0 +1,102 @@
+stage: B00-inputs
+company: QUALITEK
+run_date: 2026-09-26
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+corpus_commit: 93ec0142ba45775595b019c34720e768803aff8e
+spear_gate: "PASS. companies/QUALITEK.md carries 'Spear: OVERRIDE 2026-09-26 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/QUALITEK.md SPEAR)
+  - "LBF1 ORGANIC VS ACQUIRED GROWTH: consolidated revenue Rs 124.5 Cr FY26 (+77%) vs standalone Rs 67.6 Cr. Split FY26 growth into standalone, Interstellar Testing Centre Pvt Ltd (ITCPL; ~50% for Rs 3,299.26 lakh cash Jul-2024, remaining 50.01% by share swap of 16,72,531 shares allotted 10-Sep-2025), Quality & Testing India Pvt Ltd (QTIPL, Rs 500 lakh, Sep-2024), a Sep-2025 acquisition for Rs 882 lakh (goodwill Rs 219.86 lakh), and LabOps Global Pvt Ltd (74%, Aug-2025). Goodwill Rs 33.0 Cr FY25 to Rs 78.1 Cr FY26. Minority interest in consolidated PAT (AR FY26 line IX)."
+  - "LBF2 CASH CONVERSION: CFO Rs 14 Cr on EBITDA Rs 29 Cr FY26 (screener); trade receivables Rs 4,214.04 lakh vs Rs 2,885.75 lakh; debtor days 124-150; FCF Rs -31 Cr; D/E 1.25; FY27 capex plan Rs 63 Cr. Read receivables ageing and government/PPP share. Classify GROWTH-INDUCED vs STRUCTURAL. No credit rating is in the corpus."
+  - "LBF3 GUIDANCE VS DELIVERY: FY27 guide revenue +35-40%, EBITDA 25-26%, PAT 15-17% (FY26 deck); Jun-2026 USFDA pharma lab and Hyderabad food-lab acquisition milestones; 'delivered commitment of Rs 125 Crore' claim (FY26 deck PDF p4); test against the H1 FY26 MD&A, the FY25 deck, the DRHP objects of issue and the Reg 32 deviation statement."
+  - "LBF4 PROMOTER AND CAPITAL: promoter TIC Services Pvt Ltd 73.35% (Mar-2024) to 54.19% (Mar-2025) to 56.46% (Mar-2026); TIC Services received 11,70,881 of the 16,72,531 swap shares for ITCPL (AR FY26 shareholding note F): the ITCPL second leg was bought largely from the promoter entity (related-party acquisition, valuation basis to verify). Rs 47 Cr preferential issue at Rs 518.55 with 5.20 lakh warrants to TIC Services (board 22-Sep-2026, EGM 16-Oct-2026); repayment of unsecured loan to promoter Rs 818.16 lakh (AR FY26 RPT table); company-secretary cessation/resignation filings Apr-2025, Feb-2026, Jul-2026; LabOps Global described as 'a Group company'."
+sector_cap_row: "Consulting / Engineering services"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Consulting / Engineering services | 25x'). The company describes itself
+  as providing "testing, inspection, homologation, certification, and
+  consulting services" (screener about; FY26 AR corporate overview). The cap
+  table has no TIC row. The business is technical services against product
+  standards for manufacturers (transport/defence/mechanical 40-45%, food and
+  feed 25-30%, pharma 15-20% per the FY26 deck), not healthcare delivery and
+  not drug manufacture. 'Hospitals / dialysis / healthcare services' (35x) and
+  the collector guess 'Pharma / CDMO' (38x) are rejected. FLAG for phase 3:
+  a TIC-specific row is an operator ruling; no default, no round number.
+reporting_units:
+  annual_report: "INR lakh (FY26 and FY25 AR financial statements, 'All amounts in Rs Lakh, unless otherwise stated')"
+  results: "INR lakh (FY26 audited results 20-May-2026, '(Rs Lakh)'; H1 FY26 and FY25 results same filer, confirm on face)"
+  presentation: "INR Cr (FY26 deck 21-May-2026, 'Particulars (INR Crore)'); MD&A filings mix Cr and lakh, read the face"
+  prospectus: "INR lakh (DRHP restated financials, confirm on face)"
+  screener: "INR Cr (screener Data_Sheet)"
+  note: "Filings report in INR lakh; decks and screener in INR Cr. 100 lakh = 1 Cr. Conversion happens once, at stage 10."
+listed_date: "2024-01-29"
+recently_listed: true
+recently_listed_evidence: "BSE new-listing notice: equity shares of Qualitek Labs Ltd (scrip 544091) listed effective 29-Jan-2024 (BSE announcements list, fetched 2026-09-26). 2.7 years before run_date: the prospectus is MANDATORY."
+reporting_frequency: "Half-yearly (BSE SME, Reg 33 half-year results). Screener 'quarters' are halves (Sep and Mar)."
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, VIMTALABS:Profit & Loss, VIMTALABS:Quarters, VIMTALABS:Balance Sheet, VIMTALABS:Cash Flow, VIMTALABS:Customization, METROPOLIS:Profit & Loss, METROPOLIS:Quarters, METROPOLIS:Balance Sheet, METROPOLIS:Cash Flow, METROPOLIS:Customization, KRSNAA:Profit & Loss, KRSNAA:Quarters, KRSNAA:Balance Sheet, KRSNAA:Cash Flow, KRSNAA:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RESOLVED AT INTAKE: results/ filled from BSE (AttachHis): FY26 audited standalone + consolidated (board 20-May-2026), H1 FY26 unaudited + limited review (12-Nov-2025), FY25 audited (29-May-2025). The FY25 results corrigendum (18-Jun-2025, filed after a BSE email on Reg 33 non-compliance; date 'March 31, 2015' corrected to 2025) is in inputs/other/ as a backward check."
+  - "RATING: EMPTY. No credit rating found on BSE filings (Jul-2024 to Sep-2026) or by web search; the DRHP states no rating was required for the issue. Whether the bank facilities carry a rating is unconfirmed: stages check the FY26 AR borrowings note. HIGH for the cash-conversion determination (no rating rationale to quote)."
+  - "concalls: NONE. concalls_available: false. The company files no earnings-call transcripts on BSE (only investor-meet and IR-interaction intimations, Feb-Mar 2026; IR agency appointed 02-Jun-2026). NO-CONCALL MODE: stage 5 reads AR MD&A, chairman's letter, the H1 FY26 and FY26 MD&A filings and the decks; credibility grade defaults to C, may rise to B only on documented guidance-vs-delivery. Declared absence, not a gap."
+  - "prospectus/: HOLDS THE DRHP (Draft Prospectus dated 04-Sep-2023, BSE-hosted, 393 pages; 62 pages carry no text layer). The FINAL prospectus/RHP is NOT held. Restated financials and objects of issue come from the DRHP; any change between DRHP and final prospectus is unverified. MEDIUM gap."
+  - "RESOLVED AT INTAKE (PARTIAL): shareholding/ holds the screener shareholding table as text (Mar-2024 to Mar-2026; promoter 56.46%, FII 1.60%, DII 0.10% at Mar-2026). SCREENER AGGREGATION, NOT A FILING: weigh, do not anchor. The filed promoter holding at 31-Mar-2026 is in the FY26 AR (note F, shares held by promoters). The FII+DII split for the UA qualifier needs the filed pattern; the AR shareholding distribution may carry it."
+  - "screening: EMPTY-CSV defect present. Profit & Loss, Balance Sheet, Cash Flow and Quarters sheets absent for the subject and all peers. The four Data_Sheet CSVs (screener-Data_Sheet.csv for QUALITEK consolidated; VIMTALABS, METROPOLIS, KRSNAA) are populated. QUALITEK consolidated Data_Sheet carries only FY21, FY22, FY25, FY26 (no consolidated accounts FY23-FY24); the standalone series FY21-FY26 is on the standalone screener page and in the ARs/DRHP. Stage 1 reads Data_Sheet plus the results PDFs."
+  - "screener basis: main URL is CONSOLIDATED (/company/544091/consolidated/, price and data present). Standalone and consolidated both filed from FY25; FY26 standalone revenue Rs 67.62 Cr vs consolidated Rs 124.52 Cr. Stages must name the basis on every figure."
+  - "annual-report/: TWO ARs held, FY26 (Reg 34 filing 03-Sep-2026, 191 pages) and FY25 (Reg 34 filing 03-Sep-2025, 183 pages). Contract is 0-1: FY26 is primary; FY25 is the backward-check AR. The FY26 AR duplicate in announcements/ was removed."
+  - "presentation/: FY26 deck (H2 & FY26, filed 21-May-2026, 42 slides), FY25 deck (H2 FY25 & FY25, filed 30-May-2025, 38 slides), H1 FY25 financial highlights (14-Nov-2024, 9 slides), MD&A filings for H1 FY26 (14-Nov-2025) and FY26 (20-May-2026). No H1 FY26 deck was filed. The collector's Investor_Presentation_1.pdf was a byte duplicate of the FY26 deck and was removed."
+  - "announcements/: 42 Reg 30 / SAST filings Jul-2024 to Sep-2026 staged from BSE (collector fetched 12; 30 added by month-window query). Curated: routine trading-window, Reg 74(5), newspaper and board-intimation filings mostly excluded. 15 byte-duplicate filings removed. Includes: ITCPL acquisition (26-Jul-2024), preferential allotment (31-Aug-2024), IPO fund-use deviation statement (05-Nov-2024), director changes (29-Mar-2025), share swap approval (29-May-2025), EGM (03/25-Jun-2025), board 05-Jul-2025, LabOps 74% (29-Aug-2025), swap allotment (10-Sep-2025), ITCPL accreditation (17-Sep-2025), AGM results (26-Sep-2025), boards 10-Dec-2025, 20-Dec-2025, 20-Apr-2026, 03-Jun-2026, 29-Aug-2026, CS cessations (09/11-Feb-2026, 30-Jul-2026), IOCL work order and press release (25-Jun-2026), preferential issue (22/23-Sep-2026), EGM notice (24-Sep-2026), AGM proceedings (25-Sep-2026)."
+  - "peer-concalls: 12 transcripts, 4 per peer. VIMTALABS: Q2 FY26 (03-Nov-2025), Q3 FY26 (28-Jan-2026), Q4 FY26 (06-May-2026), Q1 FY27 (20-Jul-2026). METROPOLIS: Q3 FY26 (05-Feb-2026), Q4 FY26 (14-May-2026), Q1 FY27 (05-Aug-2026), Investors & Analyst Meet (27-Aug-2026; not an earnings call; filename says Sep-2026). KRSNAA: Q2 FY26 (10-Nov-2025), Q3 FY26 (06-Feb-2026), Q4 FY26 (26-May-2026), Q1 FY27 (14-Aug-2026)."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "TOOLING: pdftoppm absent; the Read tool cannot render PDF pages. Every input PDF is pre-extracted with pymupdf (sort=True) to a page-marked .txt BESIDE the PDF (same basename, '[page N]' markers = PDF page numbers). Stages and verifiers read the .txt; anchors cite the PDF with the page number. Pages wider than 1.3x their height in non-deck documents are split into LEFT HALF / RIGHT HALF under the page marker; decks are extracted whole. DRHP: 62 of 393 pages carry no text layer (UNREADABLE by the text route; stages name any page they need that is blank)."
+  - "operator_pause: EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders: rating/, concalls/ (declared: concalls_available false), research/. Prospectus holds the DRHP only (final prospectus absent)."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/20260520-dc0311a3-a98d-4699-a9a5-cc8f0292bda1.pdf (FY26 / H2 FY26 audited)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "SKIPPED: manifest.concalls_available is false; the company holds no earnings calls."
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No rating bulletin in the corpus, so no pair to test. The absence of any rating is recorded under input_gaps."
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none found at stage 0"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No SEBI order referenced in the files read at stage 0. The FY25 results corrigendum cites a BSE email on Reg 33 non-compliance (an exchange query, not a SEBI order). Stages 2, 3 and 8 re-check the secretarial audit report for any order; one found makes this pair FAIL."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/20260520-dc0311a3-a98d-4699-a9a5-cc8f0292bda1.pdf (FY26 audited, 20-May-2026)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/Annual_Report_2026.pdf (FY2025-26, Reg 34 filing 03-Sep-2026)"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (no rating, no final prospectus, no filed shareholding pattern, no research; screener CSV sheets empty); freshness pairs OK"
+corpus_manifest:
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: Qualitek Labs Ltd, type: "Integrated Annual Report FY2025-26 + 8th AGM notice (Reg 34 filing 03-Sep-2026)", period: FY26, folder_match: yes}
+  - {path: inputs/annual-report/Annual_Report_2025.pdf, issuer: Qualitek Labs Ltd, type: "Integrated Annual Report FY2024-25 + 7th AGM notice (filing 03-Sep-2025)", period: FY25, folder_match: "yes (backward check)"}
+  - {path: inputs/results/20260520-dc0311a3-a98d-4699-a9a5-cc8f0292bda1.pdf, issuer: Qualitek Labs Ltd, type: "Board outcome + audited standalone and consolidated results + auditor reports", period: "H2 / FY26", folder_match: yes}
+  - {path: inputs/results/20251112-d1d63f49-19cd-4840-9a26-2e58ce595a74.pdf, issuer: Qualitek Labs Ltd, type: "Board outcome + unaudited results + limited review", period: "H1 FY26", folder_match: yes}
+  - {path: inputs/results/20250529-39690bb1-6b72-407a-a380-ba733e16a5dd.pdf, issuer: Qualitek Labs Ltd, type: "Board outcome + audited results", period: "H2 / FY25", folder_match: yes}
+  - {path: inputs/other/20250618-55b634a5-fb21-4b5d-b64b-8a96e68bd06b.pdf, issuer: Qualitek Labs Ltd, type: "Corrigendum to FY25 audited results (BSE Reg 33 query)", period: FY25, folder_match: "other (backward check)"}
+  - {path: inputs/presentation/20260521-f77bb66f-b5db-43ab-a28e-74902b506abf.pdf, issuer: Qualitek Labs Ltd, type: investor presentation, period: "H2 FY26 & FY26", folder_match: yes}
+  - {path: inputs/presentation/20250530-dc5c4a4e-5781-4d29-9e57-2d8d19007a75.pdf, issuer: Qualitek Labs Ltd, type: investor presentation, period: "H2 FY25 & FY25", folder_match: yes}
+  - {path: inputs/presentation/20241114-4b3ba8fd-929c-49c8-af7c-c4f7fef9e390.pdf, issuer: Qualitek Labs Ltd, type: "financial highlights deck", period: "H1 FY25", folder_match: yes}
+  - {path: inputs/presentation/20260520-78cbc582-e5c2-400d-b9a9-0e6e2cd444b1.pdf, issuer: Qualitek Labs Ltd, type: "MD&A filing", period: "FY26", folder_match: "yes (results commentary)"}
+  - {path: inputs/presentation/20251114-3c930ab9-e84c-4bee-881c-becb108f29e5.pdf, issuer: Qualitek Labs Ltd, type: "MD&A filing", period: "H1 FY26", folder_match: "yes (results commentary)"}
+  - {path: inputs/prospectus/Qualitek_DRHP_2023.pdf, issuer: Qualitek Labs Ltd, type: "Draft Prospectus (SME IPO), BSE-hosted", period: "dated 04-Sep-2023; restated to FY23 / stub", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (42)", issuer: Qualitek Labs Ltd, type: "Reg 30 / SAST / AGM / EGM filings", period: "Jul-2024 to Sep-2026", folder_match: yes}
+  - {path: "inputs/peer-concalls/VIMTALABS-*.pdf (4)", issuer: Vimta Labs Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/METROPOLIS-*.pdf (4)", issuer: Metropolis Healthcare Ltd, type: "3 transcripts Q3 FY26 to Q1 FY27 + investor meet 27-Aug-2026", period: "Q3 FY26 to Aug-2026", folder_match: yes}
+  - {path: "inputs/peer-concalls/KRSNAA-*.pdf (4)", issuer: Krsnaa Diagnostics Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27", folder_match: yes}
+  - {path: inputs/shareholding/screener-shareholding-pattern-2026-09-26.txt, issuer: "screener.in (aggregation)", type: "shareholding table, NOT A FILING", period: "Mar-2024 to Mar-2026", folder_match: "partial (non-filing)"}
+  - {path: "inputs/screening/{screener,VIMTALABS,METROPOLIS,KRSNAA}-Data_Sheet.csv", issuer: screener.in, type: "raw financial data sheet", period: "annual + half-yearly rows", folder_match: yes}
+flags: []
+analyst_note: "BSE SME half-yearly reporter listed Jan-2024; growth FY25-FY26 is heavily acquisition-assisted (four entities bought Jul-2024 to Sep-2025, one partly from the promoter entity). Filings in INR lakh; decks and screener in INR Cr. No rating, no concalls. Peers are structural comps: no listed Indian TIC pure-play of scale exists."

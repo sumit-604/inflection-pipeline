@@ -1,0 +1,91 @@
+stage: B09-tam
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "3M and Rossmax India-specific brand revenue not disclosed anywhere in the corpus or found via web search; Products bottom-up TAM extrapolates from the single HEINE anchor (Rs 30 Cr 2026 to Rs 70 Cr 2031) to the full named-brand portfolio, flagged as [INFERENCE]."
+  - "No source (corpus or web) splits India's medical device market into third-party-distributor channel share vs direct/OEM/hospital-tender channel share; the top-down India-device-market figure (Rs 1,61,000 Cr) is held as unreachable context only, not used as the Products TAM headline."
+  - "HCAH/Saarathi composite scheme's own completion date is not stated (carried from B07); the M&A-driven upside to Services SOM is treated qualitatively, not folded into the base-case SOM arithmetic."
+  - "Current CMP/P/E for QMSMEDI not available from the run corpus; web search returned inconsistent PE readings (16.6x-29.6x) as of 25-Jun-2026, pre-run-date and not corpus-anchored. Stage 11 should re-pull at valuation time."
+flags:
+  - {type: FLAG-TAM-SCOPE, reason: "Management's own investor deck juxtaposes the global PSP '$70B market' figure against QMS's India-only P&L on the same slide (Investor_Presentation_1.txt lines 808-815), inviting a TAM=SAM misread. The India-specific claim (~$1bn by 2030, 15-20% CAGR, 25-Sep-2026 HCAH press release) is the only geographically relevant management TAM claim and is used as the Services TAM anchor instead."}
+  - {type: FLAG-TAM-DIVERGENCE, reason: "The Rs 1,613 Cr (2024, IQVIA-sourced) 'Patient Programs, Screening Camps' pharma-promotional-spend slice and the back-solved ~Rs 4,240-5,030 Cr (2026) India PSP market diverge ~3x. Explained as a scope difference (narrow promotional-budget camps slice vs the wider disease-management-platform PSP market QMS is actually building via Saarathi/HCAH), not averaged; Services TAM confidence held at M, not H."}
+  - {type: FLAG-SOM-VS-GUIDANCE, reason: "Base-case SOM-implied revenue CAGR (25.3% at 3yr, 26.2% at 5yr, non-aggressive 2-4pp share-gain path) sits well below management's own implied 3-year CAGR from the Rs 500 Cr by FY29 target (~42.6%). Stage 11/FTTCP should treat Rs 500 Cr/FY29 as management's upper-bound ambition, not the base case, unless the HCAH-scheme acquisition delivers an outsized step-change in Services share."}
+market_definition: "India-only: (A) exclusive-brand device distribution to pharma/hospitals (3M, HEINE, Rossmax, Q-Devices) and (B) pharma-funded patient screening camps and PSPs (incl. Saarathi/HCAH), excluding the global PSP market QMS has no disclosed revenue in."
+tam_cr: {conservative: 4490, realistic: 5430}
+sam_cr: 3218
+sam_pct_of_tam: 72
+som_3yr_cr: 344
+som_5yr_cr: 557
+som_implied_revenue_cagr: {yr3: 25.3, yr5: 26.2}
+current_sam_share_pct: 5.4
+revenue_headroom_x: 18.6
+tam_growth_pct: 13.0
+runway_class: "STRONG"
+mgmt_claim_cr: 616000
+mgmt_claim_ratio: 137
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient in principle - capex_embedded_growth_pct 0%/NOT FOUND (B07, asset-light, no capex programme to compare against); capacity scales via headcount, already front-loaded per B04's Q1 FY27 employee-cost flag (Rs 3.2 Cr to Rs 11.2 Cr YoY, 3.5x, against only 1.22x revenue growth) - a margin risk, not a hard physical ceiling on SOM."
+methods_used:
+  - "top-down (India medical device market, context/ceiling only - not used as Products TAM headline)"
+  - "top-down (India PSP market, back-solved from management's 15-20% CAGR-to-2030 claim)"
+  - "bottom-up (brand-tie-up model, anchored to the disclosed HEINE India revenue path)"
+  - "bottom-up (camps + PSP unit economics vs IQVIA promotional-spend slice, cross-check only)"
+  - "peer revenue aggregation (context/scale sanity check only, scope mismatch flagged, not averaged)"
+stale_data_flags:
+  - {datapoint: "Total Indian Pharma Market ~Rs 2.4 lakh Cr and the Rs 1,613 Cr 'Patient Programs, Screening Camps' promotional-spend slice", source: "QMS Investor_Presentation_1.txt lines 864-880, citing IQVIA report", year: 2024}
+searches_performed:
+  - "India medical device market size 2026 CRISIL IBEF Rs crore"
+  - "patient support program market size India billion 2030"
+  - "global patient support services market size $70 billion"
+  - "India pharmaceutical marketing promotional spend market size Rs crore IQVIA"
+  - "India preventive healthcare screening market size corporate health checkup camps"
+  - "India medical device distribution market unorganized organized share 2026"
+  - "Entero Healthcare Solutions FY26 revenue crore annual"
+  - "Poly Medicure FY26 revenue crore annual report"
+  - "Indegene FY26 revenue crore commercialization services India pharma"
+  - "QMS Medical Allied Services QMSMEDI share price PE ratio NSE"
+searches_skipped:
+  - "Dedicated search for % of India medical device sales flowing through third-party distributors vs direct/OEM channels - the two organised/unorganised searches run returned no usable split; not pursued further given time budget."
+  - "CDSCO-licensed device-distributor count as a market-structure competitor-count proxy - not searched."
+  - "Independent verification of HEINE Optotechnik's global or India revenue outside the QMS press release - single-source risk on this bottom-up anchor not resolved."
+downstream_candidates:
+  - signal: "HCAH/Saarathi composite scheme NCLT and shareholder approval progress"
+    entity_type: "regulatory"
+    demand_link: "Gates the largest quantified Services-SAM step change (160+ PSPs, 1.2mn+ patients)"
+    likely_source: "NCLT cause-list / MCA filing portal; QMS Reg 30 filings"
+    cadence: "event-driven"
+    shared: false
+  - signal: "HEINE Optotechnik India revenue delivery vs Rs 30 Cr (2026) to Rs 70 Cr (2031) path"
+    entity_type: "counterparty"
+    demand_link: "Direct proof point for the Products bottom-up TAM/SOM anchor"
+    likely_source: "QMS Reg 30 updates; HEINE Optotechnik GmbH disclosures if public"
+    cadence: "annual"
+    shared: false
+  - signal: "GLP-1/anti-obesity drug India launches and generic entries"
+    entity_type: "macro"
+    demand_link: "Primary named driver of the PSP pipeline QMS and peers ENTERO/INDGN cite for FY27 growth"
+    likely_source: "Company press releases (Novo Nordisk India, generic manufacturers); IQVIA India monthly data"
+    cadence: "quarterly"
+    shared: false
+  - signal: "IQVIA Indian Pharmaceutical Market size and promotional-spend %"
+    entity_type: "macro"
+    demand_link: "Underlies the Rs 1,613 Cr patient-programs TAM cross-check and the Rs 2.4 lakh Cr IPM figure"
+    likely_source: "IQVIA India Quarterly Insights reports"
+    cadence: "quarterly"
+    shared: false
+  - signal: "CDSCO import/distribution licence status"
+    entity_type: "regulatory"
+    demand_link: "Gates the Products-distribution moat and the exclusivity-based TAM/SOM boundary"
+    likely_source: "CDSCO portal"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Named pharma-client relationship count and renewal (50+ companies per HEINE press release)"
+    entity_type: "end-customer"
+    demand_link: "Concentration and renewal-rate proxy funding camps, PSP and product-promotion revenue jointly"
+    likely_source: "Individual pharma-company investor disclosures; QMS AR client references if disclosed"
+    cadence: "quarterly"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "Structural finding for Stage 11: Products TAM/SOM converge brand-by-brand under the exclusive-tie-up model (HEINE the one disclosed anchor), so Products growth is a new-brand-signing story, not open-market share gain. Services SOM (base case, non-aggressive share-gain) implies 25-26% CAGR at 3yr and 5yr, close to the strategy's 25% hurdle but well below management's implied ~43% 3yr CAGR from the Rs 500 Cr/FY29 target; treat FY29 target as upper-bound ambition. HCAH-scheme completion could justify a faster path per the framework's own >5pp-on-acquisition rule, but its completion date is unstated, so this stays a qualitative upside, not part of the base-case SOM handoff."

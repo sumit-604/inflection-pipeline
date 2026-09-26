@@ -11,3 +11,6 @@
 | 6 | stage-04-bizmodel | sonnet | default | n/a | n/a | 114278 | 5m20s | 1 |
 | 7 | stage-05-concall | sonnet | default | n/a | n/a | 163549 | 7m24s | 1 |
 | 8 | stage-08-promoter | sonnet | default | n/a | n/a | 157420 | 6m32s | 1 |
+| 9 | stage-06-peers | sonnet | default | n/a | n/a | 268527 | 7m03s | 1 |
+| 10 | stage-07-emoat | sonnet | default | n/a | n/a | 144111 | 7m25s | 1 |
+| 11 | stage-09-tam | sonnet | default | n/a | n/a | 123272 | 7m38s | 1 |

@@ -1,0 +1,50 @@
+stage: B06-peers
+company: "YASHHV"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-COMPETITOR, reason: "VILAS Transcore's May-2026 call (H2FY26) discloses that Yash Highvoltage's own founder-promoter, Mr. Ramachandran, is now CEO of a new listed-peer-backed bushing venture (OIP now, RIP later, 12-400kV), announced 12-May-2026, two days before Yash's own Call-3 (14-May-2026). Never mentioned on any Yash concall in this corpus."}
+  - {type: FLAG-COMPLICATING-EVIDENCE, reason: "VILAS's own CRGO lamination business shows a 'protected' transformer-component margin compressing 15-20% fast once Chinese mills obtained BIS approval, a live counter-example to Yash's claimed 7-8 year insulation of bushings/components from a transformer-side price war."}
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "Global bushing/insulator supply is genuinely tight (direction only; 12-13 makers/250+ OEMs/6-10yr magnitude unconfirmed)", peers: [QPOWER, VILAS]}
+  - {claim: "Sukrut Electric JV turnaround and growth trajectory real; QPOWER discloses more detail than Yash (revenue, order book, loss quantum) but does not confirm Yash's Rs150-160cr/4-5yr target", peers: [QPOWER]}
+  - {claim: "OIP now the more acutely supply-constrained bushing product (narrative reversal); corroborated only via VILAS's own market-entry rationale, not by the named peer POWERINDIA which is silent", peers: [VILAS]}
+  - {claim: "RIP/RIS core localisation is capital-intensive and collaboration-gated, not a quick win (direction only; no cost/lead-time numbers)", peers: [VILAS]}
+  - {claim: "OEM customers moving toward longer, framework/blanket-style commitments (direction only; 24-36 month duration unconfirmed)", peers: [QPOWER]}
+  - {claim: "Bushing/component layer currently insulated from a transformer-side price war (mixed: QPOWER/POWERINDIA describe a scarcity regime supporting the claim; VILAS's CRGO experience is a live counter-example of a related component NOT staying insulated)", peers: [QPOWER, POWERINDIA, VILAS]}
+contradicted: []
+unverifiable:
+  - {claim: "Global bushing TAM of Rs25,000-26,000cr growing 5.6% CAGR through 2034", peers_checked: [QPOWER, POWERINDIA]}
+  - {claim: "Yash's self-reported domestic market share (30-35% addressable range; ~70% RIP up to 245kV)", peers_checked: [QPOWER, POWERINDIA]}
+peer_coverage_map:
+  - {peer: "QPOWER", quarter: "Q2FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "First independent bushing/insulator global-supply-tight statement; early Sukrut revenue figure"}
+  - {peer: "QPOWER", quarter: "Q3FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Names Sukrut JV with Yash Highvoltage explicitly; Sukrut order book and legacy-loss detail; continued insulator-shortage commentary"}
+  - {peer: "QPOWER", quarter: "Q4FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Sukrut turnaround/growth detail; Trench/Arteche competitor-scale colour for TAM cross-check"}
+  - {peer: "QPOWER", quarter: "Q1FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Winwin Insulators acquisition ties insulator scarcity directly to bushings; 'framework orders' language; Sukrut 'extremely profitable' update"}
+  - {peer: "POWERINDIA", quarter: "Q2FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "Record order backlog for demand cross-read; 'affordability challenge' risk not raised by Yash; no bushing-specific content"}
+  - {peer: "POWERINDIA", quarter: "Q3FY26 (Feb-2026)", usage: "CITED-ONLY", contribution: "General localisation/royalty discussion; no bushing-specific or load-bearing new evidence"}
+  - {peer: "POWERINDIA", quarter: "Q1FY27 (Jun-2026)", usage: "SUBSTANTIVE", contribution: "Rs2,000cr capex incl. greenfield large power transformer facility, used for capex-cycle cross-read"}
+  - {peer: "POWERINDIA", quarter: "Q1FY27 (Aug-2026)", usage: "CITED-ONLY", contribution: "BESS/PCS localisation discussion; general growth commentary, no bushing content"}
+  - {peer: "VILAS", quarter: "H1FY25 (Nov-2024)", usage: "UNUSED", contribution: "Pre-dates VILAS's bushing venture; CRGO-only, no bushing/RIP/OIP relevance"}
+  - {peer: "VILAS", quarter: "FY25 (May-2025)", usage: "UNUSED", contribution: "Same as above; CRGO shortage/pricing only"}
+  - {peer: "VILAS", quarter: "H1FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "'No slowdown in transformer industries... shortage of transformers' supports demand cross-read; still pre-bushing-venture"}
+  - {peer: "VILAS", quarter: "FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Bushing-venture announcement, OIP-shortage entry rationale, Yash Highvoltage founder-promoter (Ramachandran) named as co-venture CEO, CRGO price-war counter-example"}
+industry_cross_read:
+  demand: "Strong, broad-based, and independently confirmed across all three peers in the same period Yash reports its own growth (QPOWER revenue +112% to +157% YoY across calls; POWERINDIA record order backlog Rs29,412cr; VILAS 41-64% volume growth, 'no slowdown in transformer industries'); confirms the HV/transformer ecosystem tailwind Yash cites, though at the ecosystem level, not bushings narrowly."
+  pricing_inputs: "All three peers pass through raw-material volatility (copper, aluminium, CRGO steel) with a lag, consistent with Yash's own margin narrative; VILAS's CRGO price reversal (15-20% correction after Chinese BIS-approved mills entered) is a live example that an import-substitution/shortage dynamic can flip direction, a caution against treating Yash's own import-substitution margin story as a one-way tailwind."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: QPOWER (Sangli, HVDC magnet wire, Mehru, Endoks PCS, Winwin Insulators), POWERINDIA (Rs2,000cr incl. greenfield power transformer facility on top of Rs750cr/yr programme), and VILAS (Unit 3 tripling CRGO capacity, radiators, copper conductors, now bushings) are all expanding simultaneously across the whole transformer/HV component value chain."
+peer_mentions_of_company:
+  - "VILAS Transcore, H2FY26 call (12-May-2026, p.14): analyst asks how the new bushing venture will 'benchmark ourselves against the incumbents like Hitachi Energy and even like Yash Highvoltage' — neutral confirmation Yash is regarded as a bushing incumbent."
+  - "VILAS Transcore, H2FY26 call (12-May-2026, p.14-15): 'Mr. Ramachandran who has found[ed] the Yash Highvoltage, that founder promoter is joining with us... he has set up the Yash Highvoltage and now we have joined hands with him to set up the new plant... we have appointed Mr. Ramachandran as [the] CEO' of VILAS's new OIP/RIP bushing venture (12-400kV) — the highest-value single finding in this stage; never addressed on any Yash concall."
+  - "QPOWER, Q3FY26 call (Feb-2026, p.3): 'completing the acquisition of 50% stake in Sukrut Electric Company Private Limited converting into a joint venture of the company along with Yash Highvoltage Limited' — neutral, confirming mention of the JV structure Yash itself describes."
+risks_peers_raise:
+  - "Liquidated-damages (LD) exposure on late delivery in the high-voltage/utility customer base (QPOWER, Nov-2025 call, p.10: 'they lost more than INR 2.5 crores in one single order in LDs'); Yash's own concalls never discuss LD exposure despite discussing order-book growth repeatedly."
+  - "Customer affordability ceiling limiting pricing power even amid genuine shortage (POWERINDIA, Nov-2025 call, p.19); Yash's own narrative implies near-unqualified pricing power from scarcity, with no demand-side ceiling ever named."
+  - "Import-substitution/BIS-renewal policy dependency cutting both ways on input pricing (VILAS, May-2026 call, p.6-7, re: Chinese CRGO mill BIS renewals); Yash's own RIP/RIS import-substitution story never names an equivalent renewal or policy dependency."
+  - "A new, insider-founded domestic bushing competitor (VILAS's venture, co-led by Yash's own founder-promoter) entering the same 12-400kV range Yash operates in and is extending toward (550kV); by construction unaddressed on the Yash concalls in this corpus, but notable given the timing overlap with Yash's own most recent call."
+net_narrative_effect: "complicates"
+analyst_note: "The VILAS finding (Yash's founder-promoter now CEO of a competing bushing venture backed by a listed peer) is the load-bearing item this stage produced and should be treated as a first-order verification priority in any subsequent stage, not a footnote: it bears directly on the durability of Yash's claimed ~70% RIP-up-to-245kV share and its 6-10 year supply-constraint thesis, from a source with genuine insider knowledge of Yash's own technology and operations. Flagged FLAG-COMPETITOR above; downstream stages should treat this as PENDING LIVE VERIFICATION for corporate-registry confirmation of Ramachandran's identity and role history at Yash Highvoltage, which this container cannot check."

@@ -1,0 +1,48 @@
+stage: B07-emoat
+company: "YASHHV"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Blended fixed-asset-turnover figure needed for standard Section 2C arithmetic NOT FOUND; capacity-unit-growth proxy (67%) used instead and labelled as such, not the turnover-method figure."
+  - "A2 patent/IP pipeline: NO EVIDENCE FOUND anywhere in AR FY25/FY26 or RHP by full-text search; genuine absence, not a search gap."
+  - "F1 talent density: R&D headcount, specialist count and retention mechanics NOT FOUND; DSIR/SIRO recognition documented but headcount is not disclosed."
+  - "I1 talent-asymmetry leg (a) evidence (named inventors, ex-DRDO/ex-HAL staff, traceable employment history) NOT FOUND in corpus available to this stage."
+  - "Post-07-Aug-2026 preferential-allotment shareholding pattern not in corpus (carried from B00/B01, immaterial to this stage)."
+flags:
+  - {type: FLAG-GATE0-OVERRIDE, reason: "B01 M10 (switching costs) CONFIRMED with a disclosed mechanism (multi-year utility/OEM qualification cycles, named PGCIL/NTPC/NPCIL/DRDO approvals, AR p.47/p.49). B01 M11 (network effects) OVERRIDDEN to NO EVIDENCE FOUND: no platform/hub-and-spoke/multi-sided-market mechanism exists for this build-to-order component maker."}
+  - {type: FLAG-EXECUTION, reason: "F2 execution moat scored Moderate not Strong: revenue/EBITDA/PAT guidance beaten every period tested, but Vadodara plant commissioning slipped ~6-9 months and capex escalated ~70% (Rs90cr to Rs153cr), neither ever named as a slip or overrun on any of three concalls (cross-referenced against B05)."}
+em_score: 25.7
+em_classification: "STRENGTHENING"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Strong", evidence_type: "DOC", time_to_materialise: "active"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "active"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Strong", evidence_type: "DOC", time_to_materialise: "12-24m"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Strong", evidence_type: "DOC", time_to_materialise: "active"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Strong", evidence_type: "DOC/MGMT", time_to_materialise: "12-24m"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "DOC (mixed)", time_to_materialise: "active, two-sided"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "DOC", time_to_materialise: "active/12-24m"}
+evidence_mix: {documented: 13, claim: 8, inference: 2}
+completionist_recount: "📄 recount performed: 13 documented items across 7 categories (A1, A3, B1, B2, E2, F2, H2); no 🎙️ claim upgraded to documented; category count is above the 3-6 base rate but per-category anchor depth is thin (1-2 anchors each) and Weak/None rows (C1, A4, C2, G1, G2, H1, I1, I2) were deliberately not upgraded."
+catalysts_12m:
+  - {catalyst: "Vadodara (Jarod) RIP/RIS trial production", window: "targeted Oct-2026", evidence_type: "MGMT (re-guided from original Mar-2026)", anchor: "Concall May-2026, lines 588-602; Reg 30 vastu pujan filing 2026-05-26"}
+  - {catalyst: "FY27 invoicing tracking Rs360-400cr guide (decoupled from plant success)", window: "H1FY27/FY27 results", evidence_type: "MGMT", anchor: "Concall May-2026, 'Exactly, exactly, exactly' response, B05 analyst_note"}
+  - {catalyst: "Ensales US representation agreement activation (19 states)", window: "effective 11-Sep-2026, 36 months", evidence_type: "DOC", anchor: "Reg 30 filing 20260912; press release 2026-09-14"}
+capex_embedded_growth_pct: 67
+optionality_register:
+  - {optionality: "PLI scheme benefit for RIP bushings", converting_evidence: "Formal Ministry of Power/CEA notification with confirmed incentive rate", first_appears: "Gazette notification / exchange filing / Board's Report", window: "uncertain, stalled since Jan-2025 call"}
+  - {optionality: "In-house RIP/RIS core localisation succeeding at scale", converting_evidence: "Type-test pass and commercial shipment of in-house cores without quality escalation", first_appears: "BSE announcement, next AR Board's Report", window: "6-12 months (trial from Oct-2026)"}
+  - {optionality: "FY28 margin step-change from import substitution", converting_evidence: "FY28 EBITDA margin disclosed meaningfully above 25.7% FY26 base on non-price-recovery basis", first_appears: "FY28 AR / FY28 results", window: "12-24 months, already pushed once"}
+  - {optionality: "Export share reaching 20%+ of revenue", converting_evidence: "Segment/geography note showing export % crossing 20%", first_appears: "FY28/FY29 AR or interim results", window: "2-3 years"}
+  - {optionality: "Sukrut JV scaling to Rs150-160cr revenue", converting_evidence: "Sukrut segment revenue/EBITDA disclosed in consolidated financials tracking stated multiple", first_appears: "FY27/FY28 AR segment note", window: "4-5 years"}
+  - {optionality: "Talent asymmetry from Swiss-trained core engineering team", converting_evidence: "Named technical hires with traceable Swiss-collaboration/DRDO background; competitor pay-scale comparison", first_appears: "AR remuneration annexure, Role 5.5 verification", window: "long, unconfirmed"}
+  - {optionality: "HVDC/765kV expansion beyond Vadodara", converting_evidence: "Board-approved capex/exchange filing for further EHV-class capacity", first_appears: "Board's Report / Reg 30 filing", window: "3-5 years, management explicitly deferred 18-24 months"}
+combined_assessment: "GOOD+"
+combined_reasoning: "GOOD backward (STRONG existing moat, capped only by the Block B cash deal-breaker) plus a genuinely STRENGTHENING (not yet EXPANSION) forward moat layer: documented backward integration, extending qualification lock-in, and four signed FY26 partnership agreements, still short of full re-rating because the core localisation lever is pre-commercial with one slip and one cost overrun already on record."
+top_moat_risks:
+  - "Vadodara core localisation delay or type-test failure past the Oct-2026 trial date"
+  - "Sukrut JV underperformance under 50-50 shared control with no EBITDA guidance given to date"
+  - "Customer concentration (18.8% single customer) sits in tension with the qualification-lock-in thesis, which assumes a diversified base"
+  - "Signed China+1 distribution/representation agreements are not guaranteed order flow"
+  - "Recurrence of the reframing pattern (slips/overruns not named as such) on the next milestone would leave the market under-warned"
+analyst_note: "B01's M10/M11 mechanical pass was addressed as instructed: M10 switching costs is CONFIRMED with a disclosed qualification-cycle mechanism; M11 network effects is OVERRIDDEN to no evidence, since this is a point-to-point build-to-order business with no platform dynamic. I1 and I2 both score 0 by design (structural tests not met), so the 25.7 threshold crossing is via standard categories only, not an I1/I2 artefact requiring the operator's 10-15-scan review checkpoint. The Section 2C capex-to-revenue arithmetic could not be run on the specified fixed-asset-turnover method (input NOT FOUND); a capacity-unit-growth proxy of 67% is substituted and flagged, not estimated in place of the missing ratio."

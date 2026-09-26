@@ -1,0 +1,103 @@
+stage: B00-inputs
+company: QMSMEDI
+run_date: 2026-09-26
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+corpus_commit: 3f625855b095c9053250cfd24a4e85c112bf3cc9
+spear_gate: "PASS. companies/QMSMEDI.md carries 'Spear: OVERRIDE 2026-09-26 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/QMSMEDI.md SPEAR)
+  - "LBF1 SERVICES MIX SHIFT AND MARGIN: services 31% of FY26 revenue (Rs 53.9 Cr of Rs 172.9 Cr; B2B camps Rs 22.9 Cr, PSP incl. Saarathi Rs 30.0 Cr) and 41% of Q1 FY27, yet consolidated EBITDA margin fell to 15.0% FY26 from 16.3% FY25. Verify the segment note (revenue and result by segment) and whether services earn a higher or lower margin than products."
+  - "LBF2 CASH AND WORKING CAPITAL: receivables Rs 67.3 Cr, inventory Rs 45.9 Cr (inventory days ~181), borrowings Rs 74.5 Cr (short-term Rs 67.5 Cr vs Rs 50.8 Cr FY25), interest cover 3.5x vs 5.0x, CFO Rs 19.4 Cr FY26 (screener). Verify from FY26 AR cash flow, receivables ageing and borrowing notes; classify GROWTH-INDUCED vs STRUCTURAL."
+  - "LBF3 SAARATHI PRICE LADDER AND THE SEP-2026 SCHEME: 51% for Rs 45 Cr (Jul-2024), 25% more for about Rs 10 Cr from the Rs 12.5 Cr rights issue (Oct-2025), balance 24% (17-Sep-2026). Implied equity value fell from ~Rs 88 Cr to ~Rs 40 Cr. Verify each tranche, goodwill, Saarathi standalone figures, related-party links, and the 25-Sep-2026 board outcome (composite scheme of arrangement, acquisition, agreements)."
+  - "LBF4 GUIDANCE VS DELIVERY: Rs 500 Cr revenue by FY29; Q-Devices own brand 10-15% of product revenue FY27 and 20-25% in ~3 years (Rs 14 Cr FY26), against Q3 and Q4 FY26 standalone PAT of ~Rs 0.6 Cr per quarter. Test the FY26 promises across the transcripts."
+sector_cap_row: "Distribution / trading"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Distribution / trading | 20x (A27.4)'). Products are ~69% of FY26
+  revenue (step1 brief; stages 1/4 verify from the segment note) and are
+  mostly third-party devices (3M, Heine, Rossmax) resold to pharma companies
+  and hospitals; own-brand Q-Devices is ~Rs 14 Cr. The collector guess
+  'Pharma / CDMO' is wrong: QMS makes no drug and runs no contract
+  manufacturing, and is discarded. FLAG for phase 3: the services slice
+  (camps, patient support programmes, Saarathi; ~31% FY26, ~41% Q1 FY27) may
+  earn its own SOTP multiple under A27.2 (candidate rows 'Consulting /
+  Engineering services 25x' or 'Hospitals / dialysis / healthcare services
+  35x'). That is an operator ruling at stage 11, not a stage-0 decision.
+reporting_units:
+  annual_report: "INR lakh (FY26 and FY25 AR financial statements, '₹ in lakhs' / 'Rs. in Lakhs')"
+  results: "INR lakh (Q3 FY26, FY26 audited, Q1 FY27 results, 'Rs. in Lakhs' / 'Rs. in Lacs')"
+  presentation: "INR Cr (Nov-2025 to Aug-2026 decks, 'Rs Cr')"
+  screener: "INR Cr (screener CSVs)"
+  note: "Filings report in INR lakh; decks and screener in INR Cr. 100 INR lakh = 1 INR Cr. Conversion happens once, at stage 10."
+listed_date: ""
+recently_listed: false
+recently_listed_evidence: "SME IPO on NSE Emerge in Sep/Oct 2022 (step1 brief; lock-up ending 06-Oct-2023 per MarketScreener); exact listing date not printed in the corpus. That is ~4 years before run_date, outside the ~3-year window. NSE Mainboard migration 18-Jun-2026 (announcements 20260616, 20260618) is a migration, not an IPO. Prospectus not mandatory; the Sep-2025 rights issue Letter of Offer (inputs/prospectus/) carries risk factors, group and restated financial disclosures and partly fills the backward baseline."
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing."
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, INDGN:Profit & Loss, INDGN:Quarters, INDGN:Balance Sheet, INDGN:Cash Flow, INDGN:Customization, ENTERO:Profit & Loss, ENTERO:Quarters, ENTERO:Balance Sheet, ENTERO:Cash Flow, ENTERO:Customization, NURECA:Profit & Loss, NURECA:Quarters, NURECA:Balance Sheet, NURECA:Cash Flow, NURECA:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RESOLVED AT INTAKE: announcements/ filled from the NSE corporate-announcements API (company is NSE-only; no BSE scrip exists): 51 Reg 30 filings Jul-2025 to 25-Sep-2026, deduplicated by hash, curated (trading-window, newspaper, Reg 74(5), SDD, record-date, call-schedule and recording-link intimations excluded). Includes: exchange clarification replies on financial results (04-Aug-2025 for quarter ended 31-Mar-2025; 27-Nov-2025 on Sep-2025 financials; 04-Jun-2026 clarification letter), withdrawal letter (19-Aug-2025), rights issue outcomes and allotment, EGM notice and results (Nov-Dec 2025), statements of deviation and Monitoring Agency reports (Nov-2025, Feb-2026, May-2026), Saarathi acquisition intimations (28-Oct-2025, 19-Feb-2026 amended, 17-Sep-2026), annual secretarial compliance report (25-Mar-2026), mainboard migration (Mar-Jun 2026), SAST Reg 31(4) (05-Jun-2026), SOC 2 (21-Jul-2026), press releases, FY26 AGM notice (07-Sep-2026), and the 25-Sep-2026 board outcome (scheme of arrangement, acquisition, agreements; 19pp) with its press release."
+  - "RESOLVED AT INTAKE: results/ filled from NSE: Q3 FY26 (board outcome 14-Feb-2026), FY26 audited (30-May-2026, 18pp), Q1 FY27 (14-Aug-2026). Q2 FY26 results (13-Nov-2025) remain in announcements/ as a backward check (beyond the 0-3 contract)."
+  - "RESOLVED AT INTAKE: shareholding/ holds three NSE shareholding-pattern XBRL filings (30-Jun-2026, 31-Mar-2026, 30-Jun-2025) as .xml (filings, anchored). Promoter 68.11% at Jun-2026 (73.67% Jun-2025, diluted by the Sep-2025 rights issue); the Jun-2026 XBRL records no promoter pledge or encumbrance."
+  - "RESOLVED AT INTAKE: screening/ formula sheets recalculated in Excel; Profit_Loss, Balance_Sheet, Cash_Flow, Quarters and Data_Sheet CSVs are populated for QMSMEDI consolidated (screener-*), QMSMEDI standalone (screener-standalone-*), INDGN, ENTERO and POLYMED. Consolidated covers FY24-FY26 only (subsidiary from Jul-2024); standalone covers FY18-FY26. The Customization sheet is empty for all and carries no data."
+  - "rating/: EMPTY. No credit rating found on the screener documents page (fetch_ratings.py: no links) or by web search; the FY26 AR text carries no rating reference. Stage 10 marks rating_wc_quote unresolved; the FLAG-CASH determination runs without rating evidence."
+  - "research/: EMPTY. No broker notes. No effect on anchored evidence."
+  - "prospectus/: holds the Sep-2025 rights issue Letter of Offer (101pp, filed 03-Sep-2025). The 2022 SME IPO prospectus was NOT collected; not mandatory (listed >3 years) and not a HIGH gap."
+  - "concalls: 4 transcripts held; quarter read from page 1: Concall_Aug_2025 = Q1 FY26; Concall_Nov_2025 = Q2 FY26; Concall_Jun_2026 = Q4 FY26 (call 04-Jun-2026, filed 10-Jun-2026); Concall_Aug_2026 = Q1 FY27. NO Q3 FY26 earnings call transcript exists on NSE: the company filed a Q3 investor presentation (20-Feb-2026) and an investor-meet schedule (02-Mar-2026), not a call transcript. Stage 5 uses the three most recent (Q2 FY26, Q4 FY26, Q1 FY27) with Q1 FY26 as the backward check."
+  - "peer-concalls: 12 transcripts, 4 per peer, Q2 FY26 to Q1 FY27 (page 1): INDGN Nov-2025 (Q2), Feb-2026 (Q3), May-2026 (Q4), Aug-2026 (Q1 FY27); ENTERO Nov-2025 (Q2), Feb-2026 (Q3), Jun-2026 (Q4), Aug-2026 (Q1 FY27); POLYMED Nov-2025 (Q2), Mar-2026 (Q3), May-2026 (Q4), Aug-2026 (Q1 FY27). PEER SET CHANGED AT INTAKE: NURECA picked first as the Q-Devices mirror but screener shows no transcripts for it (PPT only); POLYMED replaced it. NURECA screener CSVs sit in inputs/other/ as a financial comp only."
+  - "presentation: 4 company decks, Q2 FY26 (17-Nov-2025), Q3 FY26 (20-Feb-2026), Q4 FY26 (04-Jun-2026), Q1 FY27 revised (17-Aug-2026, Investor_Presentation_1.pdf)."
+  - "annual-report/: TWO ARs held, FY26 (Annual Report 2025-26, 9th AGM, 147pp) and FY25 (Annual Report 2024-25, 120pp). FY26 is primary; FY25 is the backward check. An 88pp NSE copy of the FY25 AR moved to inputs/other/ (duplicate). The FY26 AR duplicate in announcements/ was removed."
+  - "TOOLING: every input PDF pre-extracted with PyMuPDF to a page-marked .txt BESIDE the PDF (same basename, '[page N]' markers = PDF page numbers). All PDFs carry a text layer (min ~250 chars/page, SAST Reg 31(4) file). Stages and verifiers read the .txt; anchors cite the PDF with the page number."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/20260814-Outcome-of-Board-Meeting-QMS_14082026162251_FinancialsJune26.pdf (Q1 FY27, quarter ended 30-Jun-2026)"
+    mate_expected: "Q1 FY27 earnings call transcript"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/concalls/Concall_Aug_2026_Transcript.pdf (Q1 FY27, quarter ended 30-Jun-2026)"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "none (no rating held)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No rating bulletin in the corpus, so no pair to fail. The absence of any rating is recorded above as an input gap."
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none identified at stage 0"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No SEBI order found in the filing titles. Stages 3 and 8 must re-check the AR secretarial audit report, the annual secretarial compliance report (25-Mar-2026) and the three exchange clarification replies; any referenced SEBI or exchange order without its text is a new gap."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/20260530-FY26-audited-results-outcome-QMS_30052026164320_NSE_Outcome.pdf (FY26 audited, 30-May-2026)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/Annual_Report_2026.pdf (Annual Report 2025-26)"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (no credit rating exists in any source found; no Q3 FY26 call transcript because none was held; research absent; 2022 IPO prospectus not collected); freshness pairs OK"
+operator_pause: "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders: rating/, research/. Repeat this list in the Halt 1 dossier."
+corpus_manifest:
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: QMS Medical Allied Services Ltd, type: "Annual Report 2025-26 + 9th AGM notice", period: FY26, folder_match: yes}
+  - {path: inputs/annual-report/Annual_Report_2025.pdf, issuer: QMS Medical Allied Services Ltd, type: "Annual Report 2024-25", period: FY25, folder_match: "yes (backward check)"}
+  - {path: inputs/results/20260814-Outcome-of-Board-Meeting-QMS_14082026162251_FinancialsJune26.pdf, issuer: QMS Medical Allied Services Ltd, type: "board outcome + unaudited results (standalone and consolidated)", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/results/20260530-FY26-audited-results-outcome-QMS_30052026164320_NSE_Outcome.pdf, issuer: QMS Medical Allied Services Ltd, type: "board outcome + audited results + auditor report + dividend", period: "H2 / FY26", folder_match: yes}
+  - {path: inputs/results/20260214-Outcome-of-Board-Meeting-QMS_14022026153512_SdOutcome.pdf, issuer: QMS Medical Allied Services Ltd, type: "board outcome + unaudited results", period: "Q3 FY26 (quarter ended 31-Dec-2025)", folder_match: yes}
+  - {path: inputs/announcements/20251113-Outcome-of-Board-Meeting-QMS_13112025212702_OutcomeFinancialsSd.pdf, issuer: QMS Medical Allied Services Ltd, type: "H1 FY26 results", period: "Q2 / H1 FY26", folder_match: "announcements (4th results filing, beyond the 0-3 contract)"}
+  - {path: inputs/concalls/Concall_Aug_2026_Transcript.pdf, issuer: QMS Medical Allied Services Ltd, type: transcript, period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/concalls/Concall_Jun_2026_Transcript.pdf, issuer: QMS Medical Allied Services Ltd, type: transcript, period: "Q4 FY26 (call 04-Jun-2026)", folder_match: yes}
+  - {path: inputs/concalls/Concall_Nov_2025_Transcript.pdf, issuer: QMS Medical Allied Services Ltd, type: transcript, period: "Q2 FY26", folder_match: yes}
+  - {path: inputs/concalls/Concall_Aug_2025_Transcript.pdf, issuer: QMS Medical Allied Services Ltd, type: transcript, period: "Q1 FY26", folder_match: "yes (backward check)"}
+  - {path: "inputs/presentation/*.pdf (4)", issuer: QMS Medical Allied Services Ltd, type: investor presentations, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: inputs/prospectus/20250903-Rights-Issue-Letter-of-Offer-QMS_03092025204344_SdIntimationLOF.pdf, issuer: QMS Medical Allied Services Ltd, type: "rights issue Letter of Offer", period: "03-Sep-2025", folder_match: "yes (offer document; not the IPO prospectus)"}
+  - {path: "inputs/shareholding/QMSMEDI-SHP-*.xml (3)", issuer: "QMS Medical Allied Services Ltd (NSE XBRL)", type: "shareholding pattern filings", period: "30-Jun-2025, 31-Mar-2026, 30-Jun-2026", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (51)", issuer: QMS Medical Allied Services Ltd, type: "Reg 30 / SEBI LODR filings", period: "Jul-2025 to 25-Sep-2026", folder_match: yes}
+  - {path: "inputs/peer-concalls/INDGN-*.pdf (4)", issuer: Indegene Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/ENTERO-*.pdf (4)", issuer: Entero Healthcare Solutions Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/POLYMED-*.pdf (4)", issuer: Poly Medicure Ltd, type: transcripts, period: "Q2 FY26 to Q1 FY27", folder_match: yes}
+  - {path: "inputs/screening/*.csv (25)", issuer: screener.in, type: "screener exports (QMSMEDI consolidated + standalone, INDGN, ENTERO, POLYMED)", period: "annual + 10 quarters", folder_match: yes}
+  - {path: "inputs/other/NURECA-*.csv (5)", issuer: screener.in, type: "rejected-peer financial comp", period: "annual + quarters", folder_match: "other (never consumed as a peer)"}
+  - {path: inputs/other/FY25-AR-NSE-88pp-copy-SdAnnualReport.pdf, issuer: QMS Medical Allied Services Ltd, type: "FY25 AR, NSE-filed copy (duplicate)", period: FY25, folder_match: "other (duplicate)"}
+flags: []
+analyst_note: "NSE-only company (no BSE scrip); filings pulled from the NSE API. Peer set changed at intake (NURECA out for want of transcripts, POLYMED in). Filings report in INR lakh; decks and screener in INR Cr. No credit rating exists in any source found."

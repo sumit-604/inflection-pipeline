@@ -11,8 +11,8 @@ input_gaps:
   - "No separate revenue disclosure for the new inspection/audit/certification vertical, QTIPL, or LabOps Global (all bundled or undisclosed)."
   - "Peer moat evidence (cost advantage, scale, tech/R&D, brand) could not be scored: peer screener P&L/BS/CF/Quarters sheets are empty per B00/B01."
 flags:
-  - {type: FLAG-DISCLOSURE, reason: "Organic-vs-acquired revenue growth is not disaggregated anywhere in the AR MD&A (B03 missing_risks), and this stage independently confirms no segment or entity-level revenue table exists to do that disaggregation from filed data alone; ITCPL's approx. 45.4% share of FY26 consolidated revenue is the only entity-level anchor available (B02 finding 6, AR Note 33(d)(i))."
-  - {type: FLAG-LEVERAGE-POINT, reason: "Gross margin rose 78% to 87% (FY23-FY26) while EBITDA margin fell from 28% to 23-24% over the same years (Inv. Pres. Income Statement table, [page 11]): new lab capacity is currently a cost, not yet a margin lever. Operating-leverage capture, not revenue growth, is the single metric that would confirm or kill the transition thesis."
+  - {type: FLAG-DISCLOSURE, reason: "Organic-vs-acquired revenue growth is not disaggregated anywhere in the AR MD&A (B03 missing_risks), and this stage independently confirms no segment or entity-level revenue table exists to do that disaggregation from filed data alone; ITCPL's approx. 45.4% share of FY26 consolidated revenue is the only entity-level anchor available (B02 finding 6, AR Note 33(d)(i))."}
+  - {type: FLAG-LEVERAGE-POINT, reason: "Gross margin rose 78% to 87% (FY23-FY26) while EBITDA margin fell from 28% to 23-24% over the same years (Inv. Pres. Income Statement table, [page 11]): new lab capacity is currently a cost, not yet a margin lever. Operating-leverage capture, not revenue growth, is the single metric that would confirm or kill the transition thesis."}
 business_type: "services"
 revenue_streams:
   - {name: "Testing services (standalone + ITCPL labs: transport/defence/mechanical, food & feed, pharma/lifesciences)", type: "fee-for-service, project/PO-based", pct_of_revenue: 85, predictability: "M"}

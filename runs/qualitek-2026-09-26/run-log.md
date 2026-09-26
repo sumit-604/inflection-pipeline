@@ -7,3 +7,4 @@
 - stage 0: B00 written inline, corpus commit 93ec0142.
 - stage 5: block says the PAT-margin conflict was resolved to the deck figure 'per operator instruction'. No operator ruling exists: the orchestrator task message asked the stage to resolve the band from the deck page. The label is wrong; both bands stand, the conflict is a finding.
 - stage 8: status partial (searches_skipped named in B08). Verdict CONCERN -> FLAG-PROMOTER applies at synthesis.
+- stage 4: block file had two flag flow-mappings missing the closing brace; orchestrator added the braces (content unchanged), now parses.

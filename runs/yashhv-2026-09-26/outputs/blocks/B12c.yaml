@@ -3,26 +3,27 @@ company: "YASHHV"
 run_date: "2026-09-26"
 model: "claude-opus-5-5"
 status: complete
-scope: "PHASE 1 ONLY: Gate 0 (B01) + Emerging Moat (B07). Valuation audit pending phase 3."
-gate0: {rules_checked: 42, fails: ["A4 ROCE trend: B01 3, recomputed 0 (formula-compliant FY24-26 series 42.3% to 27.5% = -14.8pp); Block A 18 -> 15; core 70 -> 67; grand total 91 -> 88; classification GOOD unchanged", "ROCE formula substituted (NW+Debt proxy FY20-23) against 'fixed, do not substitute' rule", "FCF formula: FY20-21 capex proxied by total investing cash flow; no score change", "E2 data_note 'dilution, not sell-down' ungrounded: B01's own share counts show promoter shares 1,76,03,595 -> 1,65,43,595 (-10,60,000), 3.72pp of the 21.5pp decline; Aug-2026 allotment post-dates the 31-Mar-2026 measurement; score 0 unchanged"]}
-emoat: {rules_checked: 27, fails: ["Rule 15 double credit: Ensales/Weidmann/Electrolink agreements scored in both E2 and H2; H2 on unique evidence HM/MM, -1 to -2", "Rule 15 double credit: A1 and B2 on the same approval/qualification evidence (AR p.47/p.49); A1 unique evidence MGMT-only, -1.2 to -4; existing-vs-emerging test applied to E1/H1 but not A1/B2", "Recomputed em_score 19.7 to 24.7 vs stated 25.7; class MODEST vs stated STRENGTHENING; EM>=25 UA qualifier fails on every recompute", "Rule 18 Section 2C: prescribed capex x FAT not run though FAT 4.54x exists in B01; prescribed arithmetic 153 x 4.54 = 694.6cr = 295% of FY26 revenue; proxy 9,000-unit base conflicts with B07's own OIP 10,000 units/yr; YAML value 67 carries no inline caveat", "Rule 13 counts: 'Strong x4' vs table Strong x5; recount 13 inflated by double counts (about 9 unique)", "Rule 23 6C: moats_confirmed 5 / 21/60 stale after B07's own M11 override (4, 16/60, still STRONG)", "Rule 27 evidence_mix claim 8 / inference 2 not enumerated in report"]}
-valuation: {rules_checked: 0, fails: []}  # PENDING PHASE 3, not in scope for this invocation
-expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # NOT CHECKED: phase 3 scope; field values are schema defaults, not findings
-business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # NOT CHECKED: stage 13 not in phase 1 scope; field values are schema defaults, not findings
-recomputed_destination_pe: ""  # not in scope (phase 3)
-recomputed_decision: ""        # not in scope (phase 3); Gate 0 classification GOOD concur
+scope: "phase 1 (Gate 0 + Emerging Moat); valuation audit pending phase 3"
+gate0: {rules_checked: 19, fails: ["F-G1 MINOR FY20-21 capex proxied by CFI against the fixed capex formula; no score effect", "F-G2 MINOR E4 anchor placeholder '[page in extracted text]' and bracketed page guesses", "F-G3 MINOR FY24 CE 47.13 stated vs 47.71 from stated inputs (7117.73L-2346.98L); FY24 ROCE 41.8% not 42.3%; A4 -14.3pp, score 0 unchanged", "F-G4 MINOR M8 scored 0; rubric 'mentioned unquantified = 1' fits disclosed agency agreements; moat 22/60, grand total 89, class unchanged", "F-G5 MINOR M11 uses selling-and-admin ratio for 'selling exp %' without a data_notes proxy label", "F-G6 MINOR E2 note overclaims 'CAUSE FOUND/not ongoing': 70,000-share gap vs 11,30,000 OFS unexplained; listing to 30-Sep-2025 window unobserved"]}
+emoat: {rules_checked: 17, fails: ["F-E1 MINOR 550kV test infra (inside Rs153cr Vadodara capex credited in B1) also counted as a B2 documented item; recount 13 not 14; score unchanged", "F-E2 MINOR evidence_mix documented=14 omits documented items in scored Weak rows A4, C1 and E2 export-geography count", "F-E3 MINOR 'Board's Report' anchors without page; secondary-stage anchors (B03/B05)", "F-E4 MINOR 6C carries B01 run-1 Core 70; current B01 Core 67; band and GOOD unchanged", "F-E5 MINOR A1 zeroed by importing the Family I leg-(a) bar; valid ground is existing-vs-emerging; worst case 18.4, still MODEST"]}
+valuation: {rules_checked: 0, fails: []}   # PENDING PHASE 3
+expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # PENDING PHASE 3, not audited
+business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # PENDING PHASE 3 / finalize, not audited
+recomputed_destination_pe: ""
+recomputed_decision: ""
 findings:
-  - {severity: CRITICAL, location: "07-emoat.md L106/L127/L171; B07 em_score", finding: "E2 and H2 both credit the same three agreements (Ensales, Weidmann, Electrolink); em_score 25.7 is 0.7 above the 25 band edge and the EM>=25 UA qualifier; removing the duplicate drops H2 by 1-2 and the score to 24.7-23.7, class MODEST", recomputed: "em_score 19.7-24.7, MODEST (with MJ-1)"}
-  - {severity: MAJOR, location: "07-emoat.md L10/L68/L84/L103/L124", finding: "A1 and B2 rest on the same approval/qualification evidence; A1's unique item is MGMT-only; E1/H1 zeroed as existing-moat facts while A1/B2 (active since 2016-2018) score 4 each", recomputed: "A1 2.8 (MGMT) or 0"}
-  - {severity: MAJOR, location: "01-gate0.md L20-27/L60", finding: "ROCE CE proxy for FY20-23 breaks the fixed-formula rule; A4 compares proxy FY20 with exact FY26", recomputed: "A4 0; Block A 15; core 67; grand total 88; classification GOOD unchanged"}
-  - {severity: MAJOR, location: "01-gate0.md L192-201; B01 data_notes", finding: "E2 'not a sell-down' note conflicts with B01's own share counts (-10,60,000 promoter shares, 3.72pp of the decline) and cites an Aug-2026 allotment for a 31-Mar-2026 figure", recomputed: "score 0 unchanged; note to be corrected"}
-  - {severity: MAJOR, location: "07-emoat.md L54-59; B07 capex_embedded_growth_pct", finding: "Section 2C prescribed formula not run though FAT 4.54x exists in B01; proxy base 9,000 units conflicts with B07 2A OIP 10,000 units/yr; YAML 67 uncaveated", recomputed: "prescribed: 153 x 4.54 = 694.6cr = 295% of FY26 revenue (mechanical, caveat required)"}
-  - {severity: MINOR, location: "01-gate0.md L79-81", finding: "FY20-21 capex proxied by total investing cash flow", recomputed: "no score change (B2 3/5 = 60% -> 2; B3 -72.57 -> 0)"}
-  - {severity: MINOR, location: "01-gate0.md L240", finding: "M6 R&D search terms narrow; B07 documents DSIR-recognised R&D; a spend >=3% would add a moat (other M6 legs pass)", recomputed: "no classification change (deal-breaker #2 cap)"}
-  - {severity: MINOR, location: "07-emoat.md L250/L256", finding: "6C carries 5 moats, 21/60 after B07's own M11 override", recomputed: "4 moats, 16/60, STRONG"}
-  - {severity: MINOR, location: "07-emoat.md L169/L171", finding: "'Strong x4' vs table Strong x5; recount 13 includes double counts", recomputed: "about 9 unique documented items"}
-  - {severity: MINOR, location: "B07-emoat.yaml evidence_mix", finding: "claim 8 / inference 2 not enumerated in report", recomputed: "NOT FOUND"}
-critical_count: 1
-major_count: 4
-minor_count: 5
-acceptance_rate: 87.0             # 60 passed / 69 checked (Gate 0 38/42, EM 22/27)
+  - {id: F-G1, severity: MINOR, location: "01-gate0.md Block B capex FY20-21", rule: "Gate 0 rule 5 / capex formula", recomputed: "none (B2=2, B3=0 either way)"}
+  - {id: F-G2, severity: MINOR, location: "01-gate0.md E4, Block B/B4 anchors", rule: "Gate 0 rule 4 anchors", recomputed: "fill page numbers"}
+  - {id: F-G3, severity: MINOR, location: "01-gate0.md Block A table FY24", rule: "ROCE formula re-derivation", recomputed: "CE 47.71cr, ROCE 41.8%, A4 -14.3pp, score 0"}
+  - {id: F-G4, severity: MINOR, location: "01-gate0.md M8", rule: "M8 rubric band 1", recomputed: "M8=1, moat 22/60, grand 89, STRONG, GOOD"}
+  - {id: F-G5, severity: MINOR, location: "01-gate0.md M11, data_notes", rule: "proxy basis disclosure", recomputed: "label selling-and-admin as proxy"}
+  - {id: F-G6, severity: MINOR, location: "01-gate0.md E2 note, B01 data_notes", rule: "Gate 0 rules 2 and 5 grounded claims", recomputed: "reword to consistent-with-OFS; gaps NOT VERIFIED"}
+  - {id: F-E1, severity: MINOR, location: "07-emoat.md B2, recount line", rule: "one evidence one credit", recomputed: "recount 13; em_score 17.7 unchanged"}
+  - {id: F-E2, severity: MINOR, location: "B07 evidence_mix", rule: "evidence_mix item counts", recomputed: "documented about 19, not 14"}
+  - {id: F-E3, severity: MINOR, location: "07-emoat.md 1A, B2, catalysts", rule: "B07 rule 3 anchors", recomputed: "add AR pages"}
+  - {id: F-E4, severity: MINOR, location: "07-emoat.md 6C", rule: "6C injected Gate 0 block", recomputed: "Core 67"}
+  - {id: F-E5, severity: MINOR, location: "07-emoat.md A1", rule: "Section 5 multipliers / Family I scope", recomputed: "zero holds on existing-vs-emerging ground; worst case 18.4 MODEST"}
+critical_count: 0
+major_count: 0
+minor_count: 11
+acceptance_rate: 69.4

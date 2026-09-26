@@ -1,0 +1,31 @@
+stage: confidence
+company: YASHHV
+run_date: 2026-09-26
+phase: 1
+basis: "final verifier run: B12a run 1 (not re-run; stage-1 correction changed scores, not source numbers), B12b run 2, B12c run 2 (phase-1 half), B12d run 1 (B06 not re-run)"
+confidence_delta:
+  numerical_acceptance: 100      # B12a: 35 of 35 numbers verified clean (35 of 85 material numbers checked, 41% coverage)
+  redflag_coverage: 88           # B12b run 2 acceptance_rate: 15 of 17 MATERIAL items caught (9 caught + 6 partially caught). Strict caught-only reading 9/17 = 53%, recorded, not used (Verifier B rule 3 defines partial as found but under-weighted; run 1 used the same basis).
+  framework_adherence: 69.4      # B12c run 2, PHASE 1 PORTION ONLY (Gate 0 + Emerging Moat, 25 of 36 rules, all 11 fails MINOR); valuation-adherence component PENDING PHASE 3
+  peer_utilisation: 66.7         # B12d: 8 of 12 peer transcripts SUBSTANTIVE (POWERINDIA Feb-2026 and Aug-2026 CITED-ONLY; VILAS Nov-2024 and May-2025 UNUSED, pre-date its bushing venture)
+  overall: 66.7                  # min of the four applicable components
+  overall_set_by: peer_utilisation
+  not_applicable: []             # every component has a denominator of 4 or more
+band: "60-74: PROCEED verdicts downgrade one level (orchestrator Section 5), set by peer_utilisation"
+rework_gate:
+  verifier_a_critical_final_run: 0
+  identity_check_strikes: 0      # no Verifier A CRITICAL rows to test
+  any_acceptance_below_60_final_run: false
+  status: "NOT TRIGGERED. Note: Verifier B strict caught-only reading is 53%, below 60; the block acceptance_rate (88) is the governed figure."
+open_material_findings_final_run:
+  - "B12b MAJOR (missed): export price premium drift, OIP export 2.2-2.4x domestic (Call-1 p11-12) vs 30-40% delta (Call-2 p22)."
+  - "B12b MAJOR (missed): Chinese transformer/GIS players allowed to bid with 60-65% local content (POWERINDIA Aug-2026 l.508-514; QPOWER Aug-2026 l.762-772)."
+  - "B12b MAJOR (partial): B06 never adjudicated the Chinese-restriction peer question; peers contradict Yash's 'never restricted' claim (Call-3 p23; POWERINDIA Feb-2026 l.558-561; QPOWER Nov-2025 l.654)."
+  - "B12b MAJOR (partial): insulator scarcity is an input risk for bushings (QPOWER Aug-2026 l.902-904), contradicting the 'buttoned up' supply chain claim (Call-3 p25)."
+  - "B12b MAJOR (partial): FY27 margin guided 24-25% below FY26 25.7% against the Call-2 maintain/increase promise."
+  - "B12b MAJOR (partial): disclosure regression from Call-A segment EBITDA to refusals on realisations, retrofit margin, Sukrut EBITDA."
+  - "B12b MAJOR (partial): RIP scarcity easing and four domestic RIP localisers; pricing effect on RIP (83% of revenue) not drawn."
+  - "B12b MAJOR (partial): RIP core technology-source accounts partly overstated in B05 (Call-A and Call-1 name two different parties)."
+run_history:
+  run1: {numerical_acceptance: 100, redflag_coverage: 71, framework_adherence: 87.0, peer_utilisation: 66.7, overall: 66.7}
+  run2: {numerical_acceptance: 100, redflag_coverage: 88, framework_adherence: 69.4, peer_utilisation: 66.7, overall: 66.7}

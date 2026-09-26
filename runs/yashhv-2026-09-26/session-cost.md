@@ -21,3 +21,5 @@
 | 16 | stage-01-gate0 (correction) | sonnet | default | n/a | n/a | 94995 | 5m03s | 2 |
 | 17 | stage-05-concall (correction) | sonnet | default | n/a | n/a | 136754 | 7m19s | 2 |
 | 18 | stage-07-emoat (correction) | sonnet | default | n/a | n/a | 106847 | 6m52s | 2 |
+| 19 | verifier-b-redflags | opus | default | n/a | n/a | 289998 | 8m31s | 2 |
+| 20 | verifier-c-framework (phase 1 half) | opus | default | n/a | n/a | 120280 | 4m26s | 2 |

@@ -1,0 +1,92 @@
+stage: B05-concall
+company: FABTECH
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "Order book effectively flat (Rs 904.42 Cr 31-Jul-2025 to Rs 926 Cr 31-Jan-2026 to '900+' 31-Mar-2026 and 30-Jun-2026) despite continuously claimed new wins (Feb/Apr/Aug-2026 calls). Feeds LBF1."
+  - "FY27 growth guidance cut across three consecutive calls: '30-40%' (Feb-2026) to '~25% or more' (Apr-2026) to '20-25%' (Aug-2026), never framed as a guidance cut."
+  - "Rs 530-600 Cr FY27 revenue figure reportedly given at investor conferences (Vivro, Arihant per analyst Rahil) unreconciled with official 20-25% growth guidance; management's 'standalone vs consolidated' explanation given no supporting numbers (Apr-2026 call)."
+  - "Percentage-of-completion accounting transition promised as imminent (6mo-1yr, Feb-2026) then pushed to 'next few years' (Aug-2026); ties to LBF2/LBF4 earnings quality."
+  - "Executive Chairman transition announced (Apr-2026 call) with no name or detail given; coincides with the KMP/director-change pattern at LBF3."
+quarters_analysed: ["Q3 FY26", "Q4 FY26 / FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Saudi localisation (SACE 51% stake) converting to MEP/civil orders beyond pharma cleanrooms", type: "INORGANIC/REGULATORY-POLICY", timeframe: "near", conviction: "M", confirm_signal: "Further named Saudi civil/MEP order wins via exchange filing", kill_signal: "No further Saudi order flow within 2 quarters of SACE closing"}
+  - {priority: 2, name: "Africa diversification (Kenya, Morocco, Botswana, Djibouti) offsetting Middle East war drag", type: "SECTORAL", timeframe: "near-medium", conviction: "M", confirm_signal: "Africa revenue share continues rising as % of consolidated total in Q2/Q3 FY27", kill_signal: "Africa revenue growth stalls or margin compresses to Middle East levels"}
+  - {priority: 3, name: "H2-weighted order book (Rs 900+ Cr book, Rs 3,800 Cr hot leads) converting into FY27 revenue", type: "VOLUME", timeframe: "medium", conviction: "M", confirm_signal: "Q3/Q4 FY27 revenue re-accelerates to the 20-25% guidance band", kill_signal: "Q2 FY27 growth stays near Q1's 10.3%, forcing another guidance cut"}
+  - {priority: 4, name: "Italy acquisition closing (twice-slipped)", type: "INORGANIC", timeframe: "medium, repeatedly slipped", conviction: "L", confirm_signal: "Acquisition announced via exchange filing before FY27-end (Mar-2027)", kill_signal: "Further slippage past a third promised date"}
+  - {priority: 5, name: "Contribution-margin expansion via geography mix (Q1 FY27: 37.6% to 46.7%) sustaining into H2", type: "PRICE-MIX/COST", timeframe: "near", conviction: "M", confirm_signal: "EBITDA margin trends toward 13-14% internal target in Q2/Q3 FY27", kill_signal: "Margin reverts as UAE/Middle East mix returns"}
+  - {priority: 6, name: "Percentage-of-completion accounting transition", type: "REGULATORY-POLICY/COST", timeframe: "long, repeatedly deferred", conviction: "L", confirm_signal: "A specific contract disclosed as switched to milestone/percentage billing", kill_signal: "Fourth consecutive call with no contract-level progress"}
+  - {priority: 7, name: "Rs 1,000 Cr by 2030 organic revenue target", type: "SECTORAL/VOLUME", timeframe: "long", conviction: "L", confirm_signal: "Target repeated with interim milestones in FY27/FY28 calls", kill_signal: "Target dropped without explanation, as happened to the Rs 530-600 Cr FY27 figure"}
+guidance:
+  - {item: "FY26 revenue", number: "Rs 380-400 Cr", timeframe: "FY26", stated_in: "Feb-2026 call (Q3 FY26)"}
+  - {item: "FY26 PAT", number: "Rs 39-41 Cr", timeframe: "FY26", stated_in: "Feb-2026 call (Q3 FY26)"}
+  - {item: "FY27 growth (initial)", number: "30-40%, 30% target", timeframe: "FY27", stated_in: "Feb-2026 call (Q3 FY26)"}
+  - {item: "Order book", number: "Rs 904.42 Cr", timeframe: "as of 31-Jul-2025", stated_in: "Nov-2025 call (earliest context)"}
+  - {item: "Order book", number: "Rs 926 Cr", timeframe: "as of 31-Jan-2026", stated_in: "Feb-2026 call (Q3 FY26)"}
+  - {item: "FY26 actual revenue", number: "Rs 431.33 Cr, +28.4% YoY", timeframe: "FY26", stated_in: "Apr-2026 call (Q4 FY26/FY26)"}
+  - {item: "FY26 actual PAT", number: "Rs 38.36 Cr vs Rs 46.45 Cr FY25", timeframe: "FY26", stated_in: "Apr-2026 call (Q4 FY26/FY26)"}
+  - {item: "Debt reduction", number: "Rs 54 Cr to Rs 42 Cr", timeframe: "FY26", stated_in: "Apr-2026 call (Q4 FY26/FY26)"}
+  - {item: "Operating cash flow", number: "Rs -36 Cr to Rs +0.5 Cr", timeframe: "FY26", stated_in: "Apr-2026 call (Q4 FY26/FY26)"}
+  - {item: "Order book", number: "more than Rs 900 Cr", timeframe: "as of 31-Mar-2026", stated_in: "Apr-2026 call (Q4 FY26/FY26)"}
+  - {item: "FY27 growth (revised)", number: "~25% or more", timeframe: "FY27", stated_in: "Apr-2026 call (Q4 FY26/FY26)"}
+  - {item: "FY27 PAT margin", number: "9.9%-10.5%", timeframe: "FY27", stated_in: "Apr-2026 call (Q4 FY26/FY26)"}
+  - {item: "FY28 PAT margin", number: "12-14%, 'on track'", timeframe: "FY28", stated_in: "Apr-2026 call (Q4 FY26/FY26)"}
+  - {item: "Q1 FY27 actual revenue", number: "Rs 74.98 Cr, +10.3% YoY", timeframe: "Q1 FY27", stated_in: "Aug-2026 call (Q1 FY27)"}
+  - {item: "Q1 FY27 actual PAT", number: "Rs 4.21 Cr vs loss Rs 6.13 Cr Q1 FY26", timeframe: "Q1 FY27", stated_in: "Aug-2026 call (Q1 FY27)"}
+  - {item: "FY27 growth (reaffirmed)", number: "20-25% organic", timeframe: "FY27", stated_in: "Aug-2026 call (Q1 FY27)"}
+  - {item: "FY27 PAT margin (restated)", number: "9-11%", timeframe: "FY27", stated_in: "Aug-2026 call (Q1 FY27)"}
+  - {item: "Order book", number: "over Rs 900 Cr (ideally 920+)", timeframe: "as of 30-Jun-2026", stated_in: "Aug-2026 call (Q1 FY27)"}
+  - {item: "Active inquiries / hot leads", number: "Rs 9,300 Cr / Rs 3,800 Cr", timeframe: "as of Q1 FY27", stated_in: "Aug-2026 call (Q1 FY27)"}
+  - {item: "2030 revenue target", number: "Rs 1,000 Cr plus, organic", timeframe: "by 2030", stated_in: "Aug-2026 call (Q1 FY27)"}
+  - {item: "Saudi acquisition (SACE)", number: "51% stake, closed", timeframe: "Q1 FY27", stated_in: "Aug-2026 call (Q1 FY27)"}
+  - {item: "Italy acquisition", number: "due diligence underway", timeframe: "before end of FY27 (Mar-2027)", stated_in: "Aug-2026 call (Q1 FY27)"}
+  - {item: "Working capital cycle", number: "~120 days", timeframe: "ongoing", stated_in: "Nov-2025 and Aug-2026 calls"}
+promise_delivery:
+  delivered: 2
+  partial: 4
+  missed: 4
+  rows:
+    - {promised_in: "Feb-2026 call (Q3 FY26)", promise: "Rs 20-22 Cr of Q3 shipment delay will show up as Q4 revenue", outcome: "Delivered", explanation: "Apr-2026 call: Q4 FY26 total income Rs 168.24 Cr, +22% YoY, 'highest sales in March'"}
+    - {promised_in: "Feb-2026 call (Q3 FY26)", promise: "FY26 revenue Rs 380-400 Cr, PAT Rs 39-41 Cr", outcome: "Partial", explanation: "Apr-2026 call: revenue Rs 431.33 Cr beat the range; PAT Rs 38.36 Cr fell below the Rs 39 Cr floor, not directly acknowledged as a miss"}
+    - {promised_in: "Feb-2026 call (Q3 FY26)", promise: "European acquisition to close within 6 months, possibly before 31-Mar-2026", outcome: "Missed", explanation: "Apr-2026 call: 'has not gone through', due diligence ongoing, reframed as deliberate caution"}
+    - {promised_in: "Apr-2026 call (Q4 FY26)", promise: "Two acquisitions (Europe + Saudi) in next 2-3 quarters", outcome: "Partial", explanation: "Aug-2026 call: Saudi SACE 51% closed; Italy still in diligence, retimed to before FY27-end"}
+    - {promised_in: "Feb-2026 call (Q3 FY26)", promise: "FY27 growth 30-40%, 30% target", outcome: "Missed", explanation: "Apr-2026 call: revised down to ~25% or more, not framed as a guidance cut"}
+    - {promised_in: "Apr-2026 call (Q4 FY26)", promise: "FY27 PAT margin target 9.9%-10.5%", outcome: "Partial", explanation: "Aug-2026 call: restated as 9-11%, a lower ceiling, presented inconsistently"}
+    - {promised_in: "Nov-2025 and Feb-2026 calls", promise: "Working capital / receivable days will improve with scale", outcome: "Missed", explanation: "Apr-2026 call: receivables Rs 204.34 Cr rising; Aug-2026 call: Rs 211-215 Cr, still rising, explained by LC/retention structure"}
+    - {promised_in: "Feb-2026 call (Q3 FY26)", promise: "Percentage-of-completion accounting under evaluation, could transition in 6mo-1yr", outcome: "Missed", explanation: "Aug-2026 call: still under evaluation, 'will see changes in next few years'"}
+    - {promised_in: "Nov-2025 call", promise: "Order book to grow ~7-9% per quarter, sustaining 20-25% growth", outcome: "Partial", explanation: "Order book roughly flat Rs 904 Cr (Jul-25) to Rs 926 Cr (Jan-26) to '900+' (Mar-26, Jun-26); management attributes to conservative FX rounding, not shown with a number"}
+    - {promised_in: "Nov-2025 call", promise: "Working capital efficiency improvement will support cash flow and deleveraging", outcome: "Delivered", explanation: "Apr-2026 call: debt Rs 54 Cr to Rs 42 Cr, CFO Rs -36 Cr to Rs +0.5 Cr FY26"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Why not move to percentage-of-completion revenue recognition", quarters_asked: ["Q3 FY26 (Feb-2026)", "Q1 FY27 (Aug-2026)"], classification: "deflected every time (answer softened to a more distant, non-committal timeline)"}
+  - {question: "What concrete, time-bound steps will management take to restore investor confidence / stock price", quarters_asked: ["Q4 FY26 (Apr-2026)", "Q1 FY27 (Aug-2026)"], classification: "deflected every time"}
+  - {question: "Numeric breakdown of the ~Rs 900 Cr order book by geography/end-segment", quarters_asked: ["Q3 FY26 (Feb-2026)", "Q4 FY26 (Apr-2026)", "Q1 FY27 (Aug-2026)"], classification: "deflected every time (only qualitative splits given)"}
+credibility_grade: "C"
+credibility_basis: "FY26 revenue guidance beaten but PAT missed the stated floor; acquisition timeline slipped twice across three calls (one of two eventually closed); FY27 growth guidance walked back from 30-40% to 25% to 20-25% before/during the year it targets, never framed as a cut; order book stagnant at ~900-926 Cr for eleven months despite continuously claimed new wins; genuine deliveries limited to FY26 revenue growth, debt reduction and the operating-cash-flow turnaround."
+peer_questions:
+  - {question: "Fabtech cites a $30bn (MENA/Africa) and $70bn (West) 10-year pharma infrastructure opportunity, and says Saudi/GCC localisation has moved from preference to hard tender qualification. Do you see similar capex momentum and local-content requirements in your own MENA/Africa export pipeline?", why: "Tests whether the sectoral growth trigger and localisation-as-moat claim are market-wide or Fabtech-specific positioning.", check_peers: ["SETL", "HLEGLAS", "PRAJIND"]}
+  - {question: "Fabtech reports RMC cost inflation of ~33% YoY and execution/remobilisation cost inflation of ~43% YoY in FY26, attributed to geopolitical disruption and freight, with a contractual variation clause passing some of it through. Do you see comparable input-cost inflation in export project execution, and how effectively do your contracts pass it through?", why: "Tests whether the margin-pressure narrative reflects a sector-wide cost shock or company-specific procurement/contract weakness.", check_peers: ["SETL", "HLEGLAS", "PRAJIND"]}
+  - {question: "Fabtech says order finalisation (not execution) has been delayed by the Middle East war and donor/government funding-cycle disruption, with no cancellations. Have you seen similar order-finalisation delays (versus outright cancellations) in your Middle East/Africa order book over the same period?", why: "Cross-checks whether the 'delay not cancellation' framing, used to explain a stagnant order book, holds across the sector.", check_peers: ["SETL", "HLEGLAS", "PRAJIND"]}
+  - {question: "Fabtech's export receivables carry 1-2 year retention periods (10-15% of contract value) plus LC-at-sight terms, with consolidated receivable days around 180. What retention and receivable structures do you see on comparable pharma-equipment or process-plant export/turnkey contracts?", why: "Anchors LBF2 cash-conversion assessment against sector norms rather than Fabtech's self-description alone.", check_peers: ["SETL", "HLEGLAS", "PRAJIND"]}
+  - {question: "Fabtech claims win-rate improvement from 10-12% to 15-17% of its hot-lead pipeline, partly attributed to becoming a 'local' entity in Saudi/UAE. Do you see win-rate or conversion-rate trends moving in the same direction in your own GCC/Africa pharma-capex bidding?", why: "Tests whether the win-rate improvement is a genuine industry tailwind or a company-specific and possibly overstated claim (no consistent measurement basis was given across the three calls).", check_peers: ["SETL", "HLEGLAS", "PRAJIND"]}
+  - {question: "Fabtech says it competes only against unnamed European turnkey players, not Indian or Chinese firms, in pharma-emerging-market design-build. Do you compete with Fabtech, or with the same unnamed European players, in any tender in these geographies?", why: "Tests the credibility of Fabtech's claimed competitive positioning and whether the 'no Indian peer' claim actually holds.", check_peers: ["SETL", "HLEGLAS", "PRAJIND"]}
+red_flags:
+  - {flag: "Order book effectively flat Rs 904.42 Cr (Jul-25) to Rs 926 Cr (Jan-26) to '900+' (Mar-26, Jun-26) despite continuously claimed new wins", severity: "MEDIUM"}
+  - {flag: "FY27 growth guidance cut across three calls: 30-40% to ~25%+ to 20-25%, never acknowledged as a cut", severity: "MEDIUM"}
+  - {flag: "Rs 530-600 Cr FY27 revenue figure reportedly given at investor conferences unreconciled with official 20-25% guidance", severity: "MEDIUM"}
+  - {flag: "Percentage-of-completion accounting transition promised imminent then pushed to 'next few years'", severity: "LOW-MEDIUM"}
+  - {flag: "Executive Chairman transition announced with no name or detail, coincides with the LBF3 KMP/director-change pattern", severity: "MEDIUM"}
+  - {flag: "IPO monitoring agency restricted Rs 50 Cr of working-capital reimbursement in Q1 post-IPO for a 'technical reason'", severity: "LOW-MEDIUM"}
+  - {flag: "New 'Rs 1,000 Cr by 2030' target introduced in the third call with no prior groundwork", severity: "LOW"}
+  - {flag: "Order book breakdown by geography/segment requested in every call, never given numerically", severity: "LOW-MEDIUM"}
+dropped_triggers:
+  - "Data centre / semicon adjacency (raised Nov-2025 and Feb-2026 calls as an eventual optionality) not mentioned at all in the Aug-2026 call"
+  - "Rs 530-600 Cr FY27 revenue figure cited at investor conferences (per analyst Rahil, Apr-2026 call) never revisited or reconciled in the Aug-2026 call"
+timeline_slippages:
+  - "European/Italy acquisition: 'within 6 months, possibly before 31-Mar-2026' (Feb-2026) to 'not closed, next 2-3 quarters' (Apr-2026) to 'due diligence underway, before FY27-end i.e. Mar-2027' (Aug-2026) — two consecutive slips"
+  - "Percentage-of-completion accounting: 'deciding within 6mo-1yr' (Feb-2026) to 'changes in next few years' (Aug-2026)"
+  - "FY27 growth guidance: '30-40%' (Feb-2026) to '~25% or more' (Apr-2026) to '20-25%' (Aug-2026)"
+analyst_note: "The order book has not moved off roughly Rs 900-926 Cr in eleven months despite continuously claimed new wins in Saudi, Africa and elsewhere; management's explanation (conservative FX rounding) is never shown with a reconciling number, which is the single most important unresolved fact for LBF1. FY27 growth guidance was cut three times across three consecutive calls without ever being framed as a cut. Two mitigating signals keep this from a D grade: FY26 revenue growth of 28.4% was real and delivered, and management does proactively surface bad news (UAE war drag, RMC inflation, receivable build-up) rather than only responding under analyst pressure. The stock-price and percentage-of-completion questions are the clearest repeated-evasion evidence, with identical non-committal answers recurring quarter after quarter."
+no_concall_mode: false

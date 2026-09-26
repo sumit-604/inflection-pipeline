@@ -1,0 +1,66 @@
+stage: B04-bizmodel
+company: "FABTECH"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Direct named competitors NOT FOUND in AR/RHP/either investor presentation; both describe competition generically ('domestic and international engineering companies')."
+  - "FY26 Related-Entity vs third-party procurement cost split NOT updated in the AR (RHP table covers only FY23-FY25); check concall or post-listing filing."
+  - "Post-listing order-booking / offer-submission / proposal-to-order conversion-ratio KPIs NOT disclosed in the FY26 AR (RHP-era table not repeated); check concalls."
+  - "FY26 employee headcount NOT FOUND: 'The exact number of employees has not been disclosed in the audited financial statements provided' (AR p.45 txt)."
+  - "Inv. Pres. Q1FY27 p.12 states international revenue ~55%, inconsistent with the audited AR FY26 geography split (~89% international, India 11%, AR p.44 txt). Flagged, not resolved, at this stage."
+flags:
+  - {type: FLAG-SECTOR-CAP, reason: "Sector cap row CONFIRMED as 'EPC / Civil construction' (20x), not 'Consulting / Engineering services' (25x). Products (procured equipment) are 90.6% of FY26 consolidated revenue (AR p.179 txt, Note 31) recognised on a shipment basis (AR p.158 txt); design/engineering is embedded, un-billed as a separate fee. Company self-classifies as 'Turnkey EPC' (Inv. Pres. Q1FY27 p.14)."}
+  - {type: FLAG-DATA-INCONSISTENCY, reason: "Inv. Pres. Q1FY27 slide 12 international revenue ~55% conflicts with AR MD&A FY26 geography (~89% international ex-India). AR is authoritative; presentation slide flagged for stage 8/synthesis."}
+business_type: "hybrid"   # equipment trading (procured, not manufactured) bundled with engineering/installation services under fixed-price turnkey contracts
+revenue_streams:
+  - {name: "Sale of products (turnkey/standalone equipment supply)", type: "project/EPC milestone-billed", pct_of_revenue: 90.6, predictability: "M"}
+  - {name: "Sale of services (installation & commissioning)", type: "time-and-service fee", pct_of_revenue: 8.9, predictability: "M"}
+  - {name: "Export incentives", type: "government scheme credit", pct_of_revenue: 0.4, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "Long-standing customer relationships", durability: "low", evidence: "B01 moat_score 6/60, moats_confirmed 1 of 12; FY26 customer rotation undercuts durability (B02 rank 4, Note 44 consol.)"}
+valuation_methods:
+  primary: {method: "P/E on Section 1B destination multiple (EPC / Civil construction row, 20x sector cap)", why: "Order-book EPC business; Section 1B is the sole exit-multiple authority per CLAUDE.md and the sector cap row is confirmed above"}
+  secondary: {method: "EV/EBITDA", why: "Controls for the post-IPO leverage shift (D/E 0.34x to 0.10x, AR p.47 txt) that distorts EPS-based multiples across the IPO transition year"}
+  tertiary: {method: "Order-book / book-to-bill forward-revenue cross-check", why: "Only reliable near-term revenue-visibility check given shipment-based, lumpy quarterly recognition (Inv. Pres. Q1FY27 p.7-8)"}
+  not_applicable:
+    - "DCF: cash conversion INDETERMINATE per B01/B03 (CFO/PAT far below 0.5x two years running); would encode an unproven assumption"
+    - "Dividend discount: no stable dividend history, recent listing reinvesting IPO proceeds"
+    - "Asset-based / NAV / SOTP: asset-light model by design (RHP p.208 txt), no meaningful asset backing"
+irrelevant_ratios:
+  - {ratio: "Inventory turnover", why: "FY26's +46.5% improvement is a mechanical FABL-deconsolidation artefact, not operating (B02 rank 14)"}
+  - {ratio: "Payables turnover", why: "Same deconsolidation distorts FY26 -18%; not comparable to FY25 (B02 rank 14)"}
+  - {ratio: "Unadjusted ROE/RONW trend", why: "FY26 fall reflects the ~Rs 207 Cr IPO equity infusion diluting the denominator, not declining profitability (AR p.47-48 txt)"}
+  - {ratio: "Standalone-only ratios", why: "Understate the business; subsidiaries carry ~35% of consolidated revenue"}
+  - {ratio: "Single-year CFO/PAT read in isolation", why: "FY26's near-zero CFO is itself propped up by the deconsolidation's mechanical inventory swing (B03); the two-year trend is the real signal"}
+must_track_metrics:
+  - {metric: "Order book (Rs Cr) / book-to-bill ratio", healthy: ">1.3x book-to-bill, order book growing", red_flag: "book-to-bill <1.0x for 2+ periods"}
+  - {metric: "CFO/PAT ratio", healthy: ">0.5x sustained", red_flag: "<0.3x for 2+ consecutive years (FY25 -77.8%, FY26 1.2%)"}
+  - {metric: "Trade receivables >365-day share of gross receivables", healthy: "falling or stable", red_flag: "rising past FY26's 43.6% / Rs 5,887.55 lakh"}
+  - {metric: "Other income as % of PBT", healthy: "<15%", red_flag: ">30% (FY26 was 42.6%)"}
+  - {metric: "Contribution/gross margin", healthy: "stable ~45-50%", red_flag: "compression below ~40%"}
+unit_economics:
+  unit: "one turnkey project (12-36 months typical cycle, Inv. Pres. Q1FY27 p.14)"
+  revenue_per_unit: "~Rs 761 lakh (~Rs 7.6 Cr) average, FY25: Rs 24,350.14 lakh turnkey revenue / 32 ongoing+completed projects (RHP p.207-208 txt, derived)"
+  margin_per_unit: "~47.3% gross margin proxy FY26 consol. (Revenue 41,077.18 less Purchase of stock-in-trade 21,634.75, AR p.180 txt Note 34); screener alternate proxy 53.7% FY26 (B01 data_notes M9), methodology differs, both anchored"
+  key_lever: "Procurement cost control (Related-Entity vs third-party mix) and project/bid selection quality; contribution margin expanded ~910bps YoY in Q1 FY27 on better project selection and procurement efficiency (Inv. Pres. Q1FY27 p.9-10)"
+first_deterioration_signals:
+  - {risk: "Revenue model: shipment/milestone lumpiness, rotating customer base", first_signal: "Book-to-bill ratio falling below 1.0x; quarterly revenue swinging against guided seasonality"}
+  - {risk: "Margin: procurement/FX reliance, other-income-propped PBT", first_signal: "Contribution/gross margin compression; other income % of PBT rising further"}
+  - {risk: "Balance sheet: ageing receivables, weak cash conversion", first_signal: "CFO/PAT ratio failing to cross 0.5x; >365-day receivables rising past Rs 5,887.55 lakh"}
+  - {risk: "Execution: multi-country delivery, contractor dependence, geopolitical exposure", first_signal: "Rising project-erection/commissioning cost as % of revenue; new delay-driven cost overruns in MD&A"}
+  - {risk: "Structural: low entry barriers, no durable moat, related-party procurement dependence", first_signal: "Gross margin erosion from competitive bidding; further growth in unresolved related-party balances"}
+mgmt_questions:
+  - "What share of contract value is procured equipment (own and third-party) versus in-house design and engineering hours, and how has that mix shifted over three years?"
+  - "Of the Rs 900+ Cr open order book, how much is signed fixed-price contract versus letter-of-intent or preferred-vendor status?"
+  - "Why did trade receivables aged beyond 365 days rise to Rs 5,887.55 lakh, and what concrete collection actions are underway?"
+  - "What is the realistic path and timeline for CFO/PAT to normalise above 0.5x?"
+  - "What share of FY27's guided 20-25% organic growth is already covered by the signed order book versus pipeline conversion still required?"
+  - "What share of FY26 procurement came from Related Entities versus third parties, and how is arm's-length pricing verified?"
+  - "Who is the counterparty behind the Rs 2,350.83 lakh 'Loan from related party' current borrowing, and why does it not appear in the Note 49 related-party balances table?"
+one_line_verdict: "Asset-light pharma-EPC turnkey builder with a real order book and a THIN moat, whose cash conversion has not yet proven itself."
+analyst_note: "Sector cap row is CONFIRMED, not merely retained: 90.6% of FY26 consolidated revenue is 'Sale of products' recognised on a shipment basis (AR Note 31, p.158/179 txt), and the RHP shows design/engineering is embedded in a fixed-price turnkey contract, never billed as a standalone fee. The company's own Q1 FY27 presentation self-labels the business 'Turnkey EPC' and names Q4 seasonality as 'characteristic of the sector' (EPC). Archetype is Order-book business, not Outsourcing partner: customer concentration is falling but rotating, not building repeat wallet share. The single most important number for Role 1 is not in this stage's remit to interpret further, but is flagged here for continuity: order book near-flat at Rs 900+ Cr across three post-listing checkpoints (RHP Jul-2025, Mar-2026, Jun-2026 per LBF1) against 25.8% booked FY26 revenue growth. That combination (flat book, growing billed revenue) is arithmetically consistent with either strong new inflow offsetting burn, or inflow failing to keep pace with delivery; this stage's document read cannot distinguish the two from the AR/RHP/presentations alone and defers to stage 5/8 concall-based reconciliation."

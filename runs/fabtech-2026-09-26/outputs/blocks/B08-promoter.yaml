@@ -1,0 +1,64 @@
+stage: B08-promoter
+company: "FABTECH"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Exact rupee amounts of leave-and-license rent paid to Fabtech Turnkey Projects LLP and to Naseem Ahsan Khan (guest house) NOT FOUND IN DOCUMENT within the RHP/AR pages read; valuation basis for the Rs 1,859.00 lakh FTIPL land purchase not independently stated."
+  - "'Fabtech Technologies KSA' (AR Note 49) probably = 'Fabtech Technologies, Saudi Arabia (Branch Office)' (RHP Promoter Group list #31) but not conclusively matched across the two filings; Role 5.5 to confirm."
+  - "'Alanar One Health Equity Fund' (AR Note 49, Rs 660 lakh FY26) link to Aasif Ahsan Khan's 'Alanar Alternative Investment Management Private Limited' directorship (RHP) is a name-similarity inference only, not proven from documents in hand."
+  - "SCORES complaint history could not be checked (no live SCORES database access from this container); named PENDING LIVE VERIFICATION."
+  - "Current status of the Akums Drugs civil suit and the Pawan Kumar Ramakrishna counter-complaint (eCourts case status) not checked beyond RHP disclosure as of 22-Sep-2025; live case-status portals inaccessible from this container."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers:
+  - {check: "SEBI market ban", status: "NOT TRIGGERED"}
+  - {check: "Economic offence conviction", status: "NOT TRIGGERED"}
+  - {check: "Live SFIO", status: "NOT TRIGGERED"}
+  - {check: "PMLA with attached assets", status: "NOT TRIGGERED"}
+  - {check: "Auditor resignation within 3 years", status: "NOT TRIGGERED — full 5-year reappointment, Ajmera & Ajmera, unqualified both years"}
+  - {check: "Pledge >40%", status: "NOT TRIGGERED — 0% at 31-Mar-2026 and 30-Jun-2026"}
+  - {check: "Multiple mid-term independent-director exits within 3 years", status: "NOT TRIGGERED VERBATIM — both exits (Sharma Apr-2026, Khante Jun-2026) were scheduled term completions, not mid-term resignations, though both fell within a quarter of AR signing (near-miss, named per B03)"}
+  - {check: "Restatement cutting past profits >10%", status: "NOT TRIGGERED — none found"}
+adverse_findings:
+  - {finding: "Promoter Aasif Ahsan Khan (56.98% pre-issue, largest single promoter) is named, alongside FTIPL and director Amjad Adam Arbani, in a criminal counter-complaint (Metropolitan Magistrate 65th Court, Andheri) alleging fabricated invoices; the complaint arose after FTIPL won the underlying NI Act cheque-dishonour case; a Sessions Court stayed the complaint 28-Mar-2025; still pending.", evidence_tier: "VERIFIED", source: "RHP p.416-417, Outstanding Litigation and Material Developments", date: "2025-09-22 (RHP date; matter pending as of that date)"}
+  - {finding: "Civil suit by Akums Drugs and Pharmaceuticals Ltd (Rs 792.43 lakh claimed) names FTIPL, Promoters Aasif Ahsan Khan and Hemant Mohan Anavkar, and Promoter Group member Naseem Ahsan Khan personally, alleging failure to supply/install two ampoule injectable lines; pending, no admission of liability.", evidence_tier: "VERIFIED", source: "RHP p.417-418, Outstanding Litigation and Material Developments", date: "2025-09-22"}
+  - {finding: "G7 Universal LLC (Sharjah), of which Promoter Aasif Ahsan Khan is disclosed Director, is a related-party sales-commission counterparty paid Rs 359.84 lakh in FY26 with a Rs 215.31 lakh trade payable outstanding at year-end.", evidence_tier: "VERIFIED", source: "RHP p.291 (directorship) cross-referenced with AR Note 49 consol. (transaction)", date: "RHP 2025-09-22 / AR FY26 signed 2026-07-31"}
+  - {finding: "The unnamed buyer of the 51% FABL International Technologies LLP stake (flagged unresolved by B02/B03) is confirmed to be FTIPL, a Promoter Group company in which Aasif Ahsan Khan, Hemant Mohan Anavkar and Aarif Ahsan Khan are directors/shareholders.", evidence_tier: "VERIFIED", source: "RHP p.293, 'Payment or benefits to Promoters or Promoter Group'", date: "2025-09-22"}
+  - {finding: "Aasif Ahsan Khan, the company's single largest promoter (56.98% pre-issue), holds no board seat or executive role at FABTECH; he is Chairperson of Fabtech Technologies Cleanrooms Ltd, the listed related-party trading and guarantee counterparty.", evidence_tier: "VERIFIED", source: "RHP 'Our Management' p.267-269 (board list omits Aasif Khan); fabtechnologies.com/board-of-directors (fetched 2026-09-26); Bloomberg profile page", date: "2026-09-26 (current as fetched)"}
+  - {finding: "Cross-board overlap with Fabtech Technologies Cleanrooms Ltd (the largest related-party trading/guarantee counterparty) was 3 of 6 FABTECH directors at FY26 year-end (Arbani, Doshi, Khante); narrowed to 2 of 6 (Arbani, Doshi) once Khante's FABTECH term lapsed 25-Jun-2026 — overlap reduced but not resolved.", evidence_tier: "VERIFIED", source: "RHP 'Our Management' directorship tables; AR Corporate Governance Report; announcement 20260625-BoardOutcome", date: "2026-06-25"}
+  - {finding: "0% of the IPO's Rs 3,000 lakh inorganic-growth bucket deployed, and only 22% of total IPO proceeds deployed, at FY26 year-end (carried from B02/B03).", evidence_tier: "VERIFIED", source: "AR Note 53/60; monitoring agency reports and deviation statements in inputs/announcements/", date: "FY26 year-end, 31-Mar-2026"}
+transition_evidence:
+  - {item: "Two Independent Directors whose fixed 2-year terms expired (Aparna Sharma, Shyam Khante) were replaced with credentialed professionals: Rupal Dhiren Haria (FCA since 1993, tax/audit specialist) and Bharti Khanna (30 years pharma R&D/regulatory experience) — a genuine credential upgrade on scheduled rotation.", evidence_tier: "VERIFIED", source: "announcements 20260327, 20260525; Postal Ballot Outcome 20260702; AR Corporate Governance Report", date: "2026-04-03 / 2026-05-25"}
+  - {item: "First-ever dividend declared post-listing: Rs 0.60/share final for FY26 and Rs 0.60/share for Q1 FY27 — a capital-return signal alongside the IPO non-deployment finding.", evidence_tier: "MEDIA REPORTED", source: "multiple independent corporate-news aggregators (Whalesbook, ScanX)", date: "2026-04-27 (recommended) / 2026-07-28 (Q1 FY27)"}
+  - {item: "External, credentialed hire into Senior Management (Ajaj Abdul Rahiman Kazi, ex-Reliance/Voltas, 27 years MEP experience) replacing two retiring long-tenure insiders same day.", evidence_tier: "VERIFIED", source: "announcement 20260525-BoardOutcome_Directorate_Management_Retirement", date: "2026-05-25"}
+  - {item: "CEO (Ashwani Singh) and CFO (Kalpesh Chauhan) both stable through a difficult cash-conversion year, no distress-linked exit.", evidence_tier: "VERIFIED", source: "AR Annexure F, Section 197(12) remuneration disclosure", date: "FY26"}
+  - {item: "Cross-board overlap with Cleanrooms Ltd narrowed from 3-of-6 to 2-of-6 directors when Khante's FABTECH term lapsed.", evidence_tier: "VERIFIED", source: "AR Corporate Governance Report; announcement 20260625-BoardOutcome", date: "2026-06-25"}
+  - {item: "No institutional investor entry, no pledge reduction (already at zero floor), no exit of a problematic family member, no Big-4 auditor upgrade found or claimed."}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% — encumbrance flag false in NSE shareholding filings at both 31-Mar-2026 and 30-Jun-2026; independently corroborated by a Sep-2026 press item confirming no promoter-share encumbrance for FY26"
+searches_performed:
+  - "\"Aasif Ahsan Khan\" Fabtech Technologies SEBI OR court OR fraud"
+  - "Fabtech Technologies Limited FABTECH BSE 544558 SEBI order OR adjudication"
+  - "\"Hemant Anavkar\" Fabtech Technologies"
+  - "Fabtech Technologies Limited IPO promoter controversy news 2026"
+  - "Fabtech Technologies Limited AmbitionBox OR Glassdoor employee reviews"
+  - "\"Fabtech Technologies\" IiAS OR SES OR InGovern proxy advisory"
+  - "Fabtech Technologies Limited stock price crash OR investigation OR resignation 2026"
+  - "fabtechnologies.com/board-of-directors (fetch)"
+  - "\"Fabtech Technologies Cleanrooms\" SEBI action OR penalty OR fraud OR SME IPO controversy"
+  - "Aasif Ahsan Khan zaubacorp director disqualified companies"
+  - "Fabtech Technologies Limited annual general meeting related party transaction limit 2026 shareholders"
+  - "scanx.trade Advantek Air Systems acquisition and preferential equity issue (fetch, confirmed Cleanrooms Ltd, excluded)"
+  - "scanx.trade 8th AGM August 24 (fetch, confirmed FABTECH)"
+  - "\"Fabtech Technologies\" dividend FY26 first dividend declared"
+  - "Fabtech Technologies Limited AGM notice 2026 special resolution related party Cleanrooms sales ceiling"
+  - "scanx.trade preferential convertible warrants (fetch, confirmed Cleanrooms Ltd, excluded)"
+searches_skipped:
+  - "Direct SCORES database query (no live SCORES access from this container)"
+  - "Direct MCA disqualified-directors portal query (relied on ZaubaCorp/web summaries instead)"
+  - "eCourts live case-status check for the Akums suit and the Pawan Kumar Ramakrishna counter-complaint"
+  - "Dedicated Glassdoor/AmbitionBox search for the listed FABTECH entity by its post-2024 corporate name specifically (only group-predecessor-brand listings found)"
+verdict_basis: "No deal-breaker fires (clean SEBI/criminal/pledge/auditor record at the company level), but related-party structure runs deep and this stage adds two confirmed new facts: a Promoter-directed entity (G7 Universal LLC) earns a commission stream from the listed company, and the previously unnamed buyer of the 51% FABL stake is confirmed as a promoter-group company (FTIPL) — both sharpen, not resolve, B02/B03's LBF3 related-party concern."
+analyst_note: "Two structural findings for downstream stages to weigh together: (1) the company's largest single economic owner, Aasif Ahsan Khan, holds no board seat at FABTECH and chairs the related-party trading counterparty (Cleanrooms Ltd) instead — an unusual separation of economic control from fiduciary duty at this specific listed entity; (2) the promoter group's related-party web (G7 Universal LLC commission, FTIPL as FABL buyer, cross-collateralised guarantees, narrowing-but-persistent cross-board seats) is now confirmed rather than merely suspected. Neither rises to a deal-breaker, but both belong in the synthesis verdict line alongside B02/B03's LBF3 finding, not as a separate footnote. Transition evidence (credentialed ID rotation, first dividend, stable CEO/CFO, narrowing board overlap) is genuine and should let synthesis distinguish this CAUTION from a static one."

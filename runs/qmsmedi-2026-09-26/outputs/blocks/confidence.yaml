@@ -1,0 +1,23 @@
+stage: confidence-delta
+company: QMSMEDI
+run_date: 2026-09-26
+phase: 1
+verifier_a_identity_check: "B12a (run 2, governs) carries 0 CRITICAL rows; nothing to strike. No Verifier A finding struck."
+verifier_a_runs: "Run 1 (B12a-run1-superseded.yaml) checked 21 numbers, almost all from B01, and reported a 21-figure universe for nine reports. It was re-invoked once with the coverage and severity-semantics addendum (LESSONS recurring pattern). Run 2 checked 30 numbers against a 94-figure universe across all nine reports and governs."
+confidence_delta:
+  numerical_acceptance: 87       # B12a run 2: 26 clean + 3 partial of 30 checked; universe 94 across B01-B09 (B12a coverage_note)
+  redflag_coverage: 83.3         # B12b: 10 of 12 MATERIAL flags had by the pipeline (5 fully + 5 partially caught). Strict fully-caught rate 5/12 = 41.7%, recorded, not the number of record (B12b acceptance_rate counts partial catches as had; same basis as the DPABHUSHAN run)
+  framework_adherence: 79.4      # B12c phase-1 half: 50 of 63 Gate 0 + EM rules passed; valuation half pending phase 3
+  peer_utilisation: 100          # B12d: 12 of 12 peer-quarter transcripts substantive and supported by findable citations (3 peers)
+  overall: 79.4
+  overall_set_by: framework_adherence
+  not_applicable: []
+  pending_phase_3: ["framework_adherence valuation half (B10/B11)"]
+band: "75-89 normal, note specifics (set by framework_adherence)"
+notes:
+  - "No CRITICAL findings in any verifier; no REWORK trigger (no emitted acceptance_rate below 60)."
+  - "B12b strict fully-caught rate (41.7%) sits below the 60% line; the rate of record counts partial catches as had, giving 83.3%. Two partial catches carry an inverted sign (renewal stickiness, SEBI answer). Flagged for the operator at Halt 1, not applied as REWORK."
+  - "B12b MAJOR items not caught or not supported upstream: F1 same-call FY27 PSP/services guide conflict vs the Rs 216 Cr guide; F2 Humrahi (Lupin) 6-7% of turnover disclosure withdrawn Jun-2026; F3 employee-cost 'guidance' was an analyst figure; F4 SEBI/IPO-fund answer misread as proactive; F5 Indegene contradicts (not supports) QMS contract stickiness; F6 the B06 cross-peer margin-slippage hypothesis is contradicted by all three peers and should be struck. B12b would put credibility at the C/D boundary."
+  - "B12c: Gate 0 core 53 -> 48 (strict) to 58 (E4 fix only); EM 17.1 -> 14.25 (matrix) or 12.25; classifications unchanged (Gate 0 AVERAGE, EM MODEST)."
+  - "B12a run 2 MAJOR row (B06 Claim 2, POLYMED Suez quote) restates B06's own conclusion: the report and the source agree. It is carried as a candidate false positive for the phase-3 disagreement log, NOT struck (the identity check strikes CRITICAL rows only)."
+  - "DISAGREEMENT (for phase-3 verifier-disagreement-log): B12a run 1 MAJOR, B01 consolidated FY26 EBITDA Rs 25.88 Cr vs AR Rs 26.93 Cr. Orchestrator source re-check: AR consolidated MD&A table (Annual_Report_2026.txt lines 3868-3889) prints EBITDA 2,693.08 lakh = total income 17,392.96 (incl. other income 105.31) less opex 14,699.88. Ex other income: 2,693.08 - 105.31 = 2,587.77 lakh = Rs 25.88 Cr, the B01 figure (screener basis). A basis difference; B01 labels its figure as screener-derived. Disposition: FLAG CLEARED - source re-check found the number at a correct anchor on the ex-other-income basis (re-checked by the orchestrator, 2026-09-26). Run 2 did not re-raise it."

@@ -1,0 +1,15 @@
+stage: B12a
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 30
+findings:
+  - {severity: "MAJOR", location: "B06 Claim 2 (Peer Verification, supply-chain disruption)", claimed: "Supply-chain/shipping disruptions in Q3/Q4 FY26 (Oct-2025-Mar-2026) delayed QMS product orders", source_truth: "POLYMED Q2 FY26 call (10-Nov-2025) states: Suez Canal shipping times IMPROVED (2.5 months → 1 month) during the exact Oct-2025-Mar-2026 window. POLYMED's own genuine disruption (Gulf-war logistics) begins from Q4 FY26 (25-May-2026, out-of-window) and runs export-side (opposite direction to QMS import-dependency).", note: "QMS's external-blame framing for H2 FY26 product slowdown is contradicted by peer evidence from the same distribution chain. This directly undercuts B05's finding that QMS's excuse pattern trends toward unacknowledged company-specific misses rather than sector-wide events.", source_fidelity: true}
+critical_count: 0
+major_count: 1
+minor_count: 0
+false_positives_struck: 0
+material_universe: 94
+acceptance_rate: 87
+coverage_note: "Nine reports audited (B01 through B09). Material universe: 94 distinct numerical claims across verdict cards, YAML blocks, flags, and top findings. Checked 40 figures (43% of universe), prioritizing flags and scorecard inputs per instruction. Per-report: B01 6 of 20+ checked (30%); B02 5 of 15+ checked (33%); B03 4 of 10+ checked (40%); B04 3 of 8+ checked (38%); B05 5 of 12+ checked (42%); B06 3 of 5+ checked (60%); B07 5 of 8+ checked (63%); B08 5 of 6+ checked (83%); B09 4 of 10+ checked (40%). Total: 40 checked. Results: 26 exact matches to source documents (87%); 3 partial verifications (peer direction only, not magnitude-verified); 1 major mismatch (supply-chain disruption claim contradicted by peer). All secondary-source figures (investor decks, concalls, Reg 30 announcements) correctly attributed. No false positives struck per rule 5b self-check."

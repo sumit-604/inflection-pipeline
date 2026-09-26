@@ -1,0 +1,53 @@
+stage: B02-notes
+company: TLL
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "shareholding/ empty of filed pattern; screener shareholding table held instead (non-filing, weigh not anchor). No effect on notes-based findings."
+  - "screener export sheets (P&L, Quarters, Balance Sheet, Cash Flow, Customization) empty for TLL and peers; Data_Sheet CSVs used instead. No effect on notes-based findings."
+  - "rating/ empty: not a collection gap, company holds no credit rating (FY26 AR Directors' Report item 10)."
+  - "concalls/ empty: NO-CONCALL MODE, company files no earnings-call transcripts. No effect on notes-based findings."
+  - "research/ empty: no broker notes. No effect on anchored evidence."
+flags:
+  - type: FLAG-CASH
+    reason: "Consolidated trade receivables grew 166% vs revenue growth of 48.4% (Note 17, Note 21); CFO Rs 469.07L against PAT Rs 1,931.88L; undisclosed retroactive cash-flow reclassification (Changes in Working Capital Facilities line, Rs 945.65L FY26 / Rs 625.67L FY25 addback) flatters reported CFO in both years and is absent from the FY25 AR and the H1 FY26 refiled results."
+  - type: FLAG-GOVERNANCE
+    reason: "Corporate guarantees extended to two non-consolidated, director-interest LLPs (Talon Healthcare LLP, Tench Life Sciences LLP), Note 32 pp.80/124; Section 197 excess director remuneration for Ashish Bafna taken without prior member approval, pending FY26 AGM ratification, Directors' Report p.25 / Auditor's Report pp.89/91."
+  - type: FLAG-DISCLOSURE
+    reason: "Goodwill jumped 10.6x (Rs 52.37L to Rs 555.15L) with zero explanatory or computation note; three unreconciled cross-note figures found (segment-note receivables vs balance sheet, Shareholders Funds ratio-note denominator vs balance sheet, undisclosed cash-flow line); IT audit trail not maintained at one subsidiary for the full year (Consolidated Auditor's Report Rule 11(g), p.90)."
+accounting_quality: 4
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Undisclosed, retroactive Changes in Working Capital Facilities cash-flow reclassification, introduced only in the FY26 AR, absent from the FY25 AR and the H1 FY26 refiled results; flatters CFO both years, no note, no audit qualification", note_ref: "Cash Flow Statement, p.96 vs FY25 AR p.84", rating: "RED FLAG"}
+  - {rank: 2, finding: "Corporate guarantees for non-subsidiary, director-interest LLPs (Talon Healthcare LLP, Tench Life Sciences LLP): Rs 500L consolidated / Rs 2,855L standalone", note_ref: "Note 32, pp.80/124", rating: "RED FLAG"}
+  - {rank: 3, finding: "Segment note (Note 31) consolidated trade-receivable total does not reconcile to Balance Sheet/Note 17 consolidated receivables (Rs 4,947.50L vs Rs 7,365.39L, gap Rs 2,417.89L); reconciles near-exactly to STANDALONE receivables instead, with a small unexplained residual (Rs 13.39L)", note_ref: "Notes 17 & 31, pp.108/123", rating: "RED FLAG"}
+  - {rank: 4, finding: "Goodwill jumped 10.6x (Rs 52.37L to Rs 555.15L) with zero explanatory or purchase-consideration/fair-value note; dated to Trident Mediquip share tranches and bonus issue but not accounted for in any note", note_ref: "Balance Sheet p.107; corporate-history note p.125", rating: "RED FLAG"}
+  - {rank: 5, finding: "AOC-1 confirms the deck-vs-delivery gap from audited data: TNS Pharma loss-making, negative net worth, Rs 5.77 Cr turnover (deck peak Rs 40 Cr); TLL Parenterals not yet commenced (deck peak Rs 200 Cr); Trident Mediquip Rs 27.32 Cr (deck peak Rs 70 Cr)", note_ref: "AOC-1, p.41", rating: "RED FLAG"}
+  - {rank: 6, finding: "TNS Pharma investment carried at increased cost (Rs 153L to Rs 255L via a further share purchase) despite negative net worth and widening loss, no impairment disclosed", note_ref: "Note 11 vs AOC-1, pp.65/41", rating: "RED FLAG"}
+  - {rank: 7, finding: "Section 197 excess director remuneration: Ashish Bafna's excess (Rs 6.37L) taken without prior member approval, pending FY26 AGM shareholder ratification, separately qualified by the statutory auditor", note_ref: "Auditor's Report pp.89/91; Directors' Report p.25", rating: "RED FLAG"}
+  - {rank: 8, finding: "IT audit trail (edit log) not maintained at one unnamed subsidiary, database and application level, for the full year", note_ref: "Auditor's Report Rule 11(g), p.90", rating: "RED FLAG"}
+  - {rank: 9, finding: "Preferential warrant proceeds utilisation only 57.5% (Rs 1,526.57L of Rs 2,657.34L) by year-end, disclosed in one vague line with no category breakdown unlike the itemised IPO utilisation table", note_ref: "Directors' Report item 5, p.24", rating: "RED FLAG"}
+  - {rank: 10, finding: "Shareholders Funds in the consolidated Ratio Analysis Note (Rs 10,416.58L FY26) does not match Balance-Sheet-derived net worth (Rs 9,667.56L FY26); FY25 figures match exactly, gap unexplained", note_ref: "Ratio Analysis Note p.116-117; Balance Sheet p.107", rating: "WATCH"}
+  - {rank: 11, finding: "Consolidated trade receivables grew 166% vs revenue growth of 48.4%, CFO Rs 469.07L against PAT Rs 1,931.88L; BUT company's own ratio note shows receivable AND payable turnover both slowed ~40%, a symmetric growth-induced signature", note_ref: "Cash Flow p.97-98; Note 17 p.108-109; Ratio Analysis p.116-117", rating: "WATCH, boundary RED FLAG"}
+  - {rank: 12, finding: "Zero doubtful-debt provisioning against a fast-tripling, largely export receivables book (Ghana, Kenya, Peru, Venezuela); no ECL matrix required or disclosed", note_ref: "Note 17.1/17.2, pp.67, 108-109", rating: "WATCH"}
+  - {rank: 13, finding: "Unsecured loan from Chairman Hardik Desai accelerating (Rs 1,353.37L FY26 drawn vs Rs 491.00L FY25), repayable on demand, outside normal maturity/covenant discipline", note_ref: "Note 30B/C, pp.120-121; Note 3.2", rating: "WATCH"}
+  - {rank: 14, finding: "Claim Income Rs 541.05L (58% of consolidated Other Income) is recurring (Rs 522.17L FY25, +3.6% YoY) but its nature and counterparty are never disclosed anywhere in the AR", note_ref: "Note 22, p.110-111", rating: "WATCH"}
+  - {rank: 15, finding: "Debt-funding of a pre-revenue subsidiary: TLL Parenterals not commenced operations carries a Yes Bank term loan of Rs 1,067.47L non-current plus Rs 186.44L current", note_ref: "Note 3, consolidated p.100", rating: "WATCH"}
+red_flags:
+  - "Undisclosed, retroactive cash-flow reclassification (Changes in Working Capital Facilities) that flatters CFO in both the current and comparative year, introduced only at the annual-audit stage, absent from the interim filing and the prior year's AR."
+  - "No impairment recognised against a negative-net-worth, loss-making subsidiary (TNS Pharma) into which the company added further capital in the year losses widened."
+  - "Corporate guarantees for two non-consolidated, director-interest LLPs disclosed only as a quantum with no qualitative business rationale."
+  - "Three separate cross-note number mismatches in the same AR (segment receivables vs balance sheet, Shareholders Funds ratio denominator vs balance sheet, undisclosed cash-flow line) consistent with the auditor's own KAM naming a DOS-based accounting system needing strengthening."
+  - "Goodwill Rs 555.15L on the consolidated balance sheet with zero supporting note, computation, or acquisition-accounting disclosure anywhere in the AR."
+questions_for_mgmt:
+  - "What is the accounting basis for the Changes in Working Capital Facilities line introduced in the FY26 cash flow statement and applied retroactively to the FY25 comparative, and why does it not appear in the H1 FY26 refiled results or the FY25 Annual Report?"
+  - "What purchase consideration and fair-value-of-net-assets computation underlie the Rs 502.78L consolidation goodwill increase from the Trident Mediquip stake changes, and why is there no goodwill note in the AR?"
+  - "What is the commercial nature, counterparty, and legal basis of the Claim Income line (Rs 541.05L FY26, Rs 522.17L FY25) inside Other Income?"
+  - "Why does the Note 31 segment-assets-by-geography receivables total reconcile to the standalone book rather than the consolidated Group receivables, and why does Shareholders Funds in the Ratio Analysis Note not match the Balance-Sheet-derived net worth in FY26?"
+  - "What is the business rationale and exit plan for the corporate guarantees extended to Talon Healthcare LLP and Tench Life Sciences LLP, entities the company does not consolidate or control?"
+receivables_trend: "deteriorating on quantum, improving on ageing composition: consolidated trade receivables grew 166% (Rs 27.68 Cr to Rs 73.65 Cr) against 48.4% revenue growth (Note 17, Note 21), but the greater-than-6-months bucket fell from 13.1% to 6.1% of the book, and the company's own ratio-analysis note shows receivable AND payable turnover both slowed ~40% symmetrically (Ratio Analysis Note p.116-117), supporting a growth-induced rather than purely structural read pending customer-level terms evidence."
+restatements_found: []
+going_concern_language: "NONE. Both standalone and consolidated auditor's reports explicitly conclude no material uncertainty exists (Standalone CARO xix, p.51; auditor's responsibilities section, both reports)."
+analyst_note: "Three cross-note mismatches (segment receivables, Shareholders Funds ratio denominator, undisclosed cash-flow line) are not independent glitches: all three surface at the consolidation layer, where the standalone book and Group book diverge without a bridging note. Combined with the auditor's own KAM naming a DOS-based accounting system, this points to a systems/consolidation-process weakness rather than three unrelated errors. The retroactive cash-flow reclassification is the single most material item: it changed a headline metric (CFO) for two reported years, was never disclosed as a change, and was introduced specifically between the H1 FY26 filing and FY26 audit sign-off, a timing that narrows management's window for the decision to a checkable few months."

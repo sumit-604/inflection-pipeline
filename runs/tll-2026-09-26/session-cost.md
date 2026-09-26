@@ -9,3 +9,4 @@ not split input/output, so in_tok/out_tok read n/a).
 | 1 | gate 0 scorecard | claude-sonnet-5 | default | n/a | n/a | 123710 | 11m07s | 1 |
 | 2 | notes triple-pass, pass 1 | claude-sonnet-5 | default | n/a | n/a | 189099 | 9m06s | 1 |
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 132881 | 5m31s | 2 |
+| 2 | notes triple-pass, pass 3 (consolidation) | claude-sonnet-5 | default | n/a | n/a | 72124 | 3m10s | 3 |

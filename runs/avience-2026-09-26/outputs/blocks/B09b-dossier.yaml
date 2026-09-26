@@ -1,0 +1,62 @@
+stage: B09b-dossier
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Credit rating rationale (bank facilities)"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "Broker/research notes"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Object-wise IPO proceeds utilisation table"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Reg 30 filing confirming ~Rs 47 Cr Uttarakhand order"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Additional peer transcripts (6 of 12 held; QLINE/MOLBIO thin by construction)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Second+ own concall transcript"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+archetypes:
+  - line: "Traded reagents, instruments, consumables (72% of FY26 revenue)"
+    archetype: "fits no known archetype (nearest: Outsourcing partner, inverted relationship to principal Mindray)"
+  - line: "Manufactured reagents, rapid cards, instruments (28% of FY26 revenue)"
+    archetype: "Licence/scarcity business, with Build-to-spec component maker elements (reagent-rental design-in)"
+transition:
+  - line: "Consolidated business (traded engine funding a manufacturing/reagent-rental build-out)"
+    from_tier: "R1 COMMODITY PRICE-TAKER (on the 72% traded, non-exclusive-supplier revenue)"
+    to_tier: "R2/R3 boundary (COST-ADVANTAGED CONVERTER moving toward VALUE-ADDED / SPEC'D SUPPLIER via reagent-rental lock-in)"
+    engine: "YEIDA plant utilisation scale-up (15-20% FY27 toward Rs 250-265 Cr peak) plus growth of the placed-instrument reagent-rental installed base"
+    proof_gate: "Manufacturing share of consolidated revenue sustaining a rise past ~35% by FY27-end, with YEIDA CWIP capitalised to PPE and commercial production underway"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11: whether AVIENCE is already priced for the claimed manufacturing/reagent-rental TO state or still priced as the traded-reseller FROM state, contingent on an unresolved Section 1B sector-cap-row ruling (Pharma/CDMO vs a Distribution/trading SOTP slice)"
+    ugliness: "ARTIFACT-OF-CLIMB and STRUCTURAL-FEATURE both evidenced; corpus does not resolve which (carried as FLAG-CASH INDETERMINATE)"
+    transition_falsifier: "Manufacturing:trading mix still near 27:72 past FY27-end, or YEIDA CWIP still uncapitalised/non-commercial past the Dec-2026 half"
+dominant_variables:
+  - "Manufacturing:trading revenue mix (currently ~27:72)"
+  - "YEIDA plant CWIP-to-PPE capitalisation and commissioning date (Rs 1,285.28 lakh CWIP, zero capitalised; Oct-2026 target with an observed ~3-month intermediate slip)"
+  - "Consolidated CFO/PAT and aged-receivables share (0.675x FY26; 38.9% standalone aged share, 8.3% provisioning coverage)"
+  - "~Rs 47 Cr Uttarakhand order conversion to filed, confirmed revenue (unfiled, unnamed customer)"
+business_falsifier: "Mindray narrows, reallocates, or effectively ends the non-exclusive North India regional channel-partner territory, since the traded line built on that relationship is 72% of current revenue"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "2 of 6 externally observable"
+  single_point_failure: "the ~Rs 47 Cr Uttarakhand order, for the FY27 guidance specifically (overall transition thesis has no single point of failure; failure requires conjunction)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 3
+  confirm_by_observations: 2
+research_brief_items: 9
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "9588b8f3759c1f86840b15e7d17545be7f42af2b"

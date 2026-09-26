@@ -742,3 +742,26 @@ Recorded here against the shallow-screen commits of 2026-09-21.
 - A Bash heredoc followed by python -c with nested quotes failed to parse; the
   Write tool is safer for YAML blocks.
 - About 4.58M subagent tokens over 28 runs. Not a clean run.
+
+## 2026-09-26 — AVIENCE (Avience Biomedicals Ltd) — /step1 intake, phase 1 to Halt 1
+- NSE-only SME (listed 25-Jun-2026, no BSE code): collector's BSE Reg 30 fetch cannot
+  reach it. AR, RHP, three FY26 results filings, 11 Reg 30 filings and the SHP XBRL
+  were pulled from the NSE corporate-announcements and shareholding APIs (JSON works
+  with a plain browser UA plus referer; the homepage cookie call returned 403 and was
+  not needed). Candidate collector fix: an NSE fallback when bse_code is empty.
+- collect_to_repo: both screener "Annual Report 2026" PDFs were 3-page Reg 30
+  intimations (AR web-link letter, newspaper ad), not the AR. The AR-year rule
+  cannot catch this; a page-count floor (<10 pp is never an AR) would.
+- Tooling: Git mingw64 pdftotext exits 127; pymupdf extraction used. The only
+  transcript used zero-width spaces as word separators; replace U+200B with a space,
+  not with nothing. RHP restated statements (84 pp) and 23 of 29 deck slides were
+  image-only; rendered to PNG under inputs/_render/ (git-excluded) for visual reads.
+- Worktree isolation held: the shared checkout carried the operator's staged v3.11
+  framework files and other same-day /step1 sessions; this run lived in its own
+  worktree off origin/main and committed with pathspecs only.
+- Stage agents wrapped block files in markdown fences in several stages; the
+  orchestrator stripped fence lines before parsing. Worth a line in the agent files.
+- Verifier C caught a formula slip in B07 (capex_embedded_growth_pct 90 vs 190);
+  left in B07, correction carried in confidence.yaml; fix before phase 3.
+- DOWNSHIFT FAILURE: stage 0 ran inline on Opus (no haiku stage-0 agent), as on
+  prior /step1 runs. Not a clean run on intake; phase 1 stages clean (no re-runs).

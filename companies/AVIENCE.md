@@ -37,7 +37,7 @@ Brief: runs/avience-2026-09-26/step1-business-brief.md
 
 ## HALT 1 GATE
 - Mental Model signed: NOT SIGNED
-- Halt 1 decision (KILL/SHALLOW/PROCEED): pending
+- Halt 1 decision (KILL/SHALLOW/PROCEED): pending (phase 1 dossier ready 2026-09-26: CORPUS GAPPED, fragility FRAGILE, gate PROCEED WITH FLAGS)
 
 ## OPERATOR RULINGS
 - 2026-09-26: Step-1 intake run; peers auto-selected (QLINE, MOLBIO,

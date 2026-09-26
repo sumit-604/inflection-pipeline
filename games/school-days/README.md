@@ -689,6 +689,24 @@ All of them are on the big map (G).
   the box counter reused the save field that remembers your gifts to them.
   The counter has its own name now, and damaged saves repair themselves.
 
+## Every city is its own place (v51)
+
+- Trips (match, family, friends, duty, missions, stays) now go to a separate
+  3D city, not the Suryanagar map. Each city has its own look: sandy Dubai
+  with glass towers and palms, green London with brick buildings and red
+  buses, pink Jaipur, neon Tokyo, beach towns, hill towns, New York with
+  yellow taxis, and more. Shop signs fit the city.
+- Every city has its airport or railway station, a Grand Hotel, a Food
+  Street, your office (if you have a job), a cricket stadium, a welcome
+  arch, traffic and people walking.
+- The landmark stands in the city square and you can go inside: an
+  observation deck with telescopes (Burj Khalifa, Eiffel Tower, CN Tower),
+  a concert hall with a show (Opera House, Colosseum), a sacred place where
+  you light a diya (Golden Temple has a free langar), or a palace with
+  history boards and a guide (Taj Mahal, Pyramids).
+- Each city has its own minimap and big map (G). Tap a place on the big
+  map and the compass points to it. Back home, Suryanagar's maps return.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

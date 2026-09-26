@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v50";
+const GAME_VERSION = "v51";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -2911,6 +2911,7 @@ class World {
 
   isWalkable(x, z) {
     if (this.currentRoom) return this.currentRoom.walkable(x, z);
+    if (this.zone && Math.abs(x - this.zone.x) <= this.zone.half && Math.abs(z - this.zone.z) <= this.zone.half) return !this.blockedBySolid(x, z);
     if (Math.abs(x) > WORLD_HALF - 4 || Math.abs(z) > WORLD_HALF - 4) return false;
     if (this.blockedBySolid(x, z)) return false;
     return true;
@@ -6750,7 +6751,7 @@ class Game {
     this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
-    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (this._sim) return; if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v" && this.player.riding) { this.player.driveView = this.player.driveView === false; showToast(this.player.driveView ? L("🎥 Driver's view: you see through the windscreen. Press V for the outside view.") : L("🎥 Outside view. Press V for the driver's view."), 2400); } else if (e.key.toLowerCase() === "r" && this.player.riding && !panelOpen()) { this._radio(); } else if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "o" && this.world.currentRoom && !panelOpen() && !this.dialogue.active && !this._lockPanel) { standPose(this.player.group); this._exitRoom(); showToast(L("🚪 You step outside."), 1500); } if (e.key.toLowerCase() === "r" && this._partner) { if (panelOpen()) closePanel(); else if (!this.dialogue.active) this._partnerMenu(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
+    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (this._sim) return; if (e.key.toLowerCase() === "g" && this._zone) { const m = document.getElementById("city-map"); if (m && !m.hidden) this._cityMapClose(); else this._cityMapOpen(); } else if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v" && this.player.riding) { this.player.driveView = this.player.driveView === false; showToast(this.player.driveView ? L("🎥 Driver's view: you see through the windscreen. Press V for the outside view.") : L("🎥 Outside view. Press V for the driver's view."), 2400); } else if (e.key.toLowerCase() === "r" && this.player.riding && !panelOpen()) { this._radio(); } else if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "o" && this.world.currentRoom && !panelOpen() && !this.dialogue.active && !this._lockPanel) { standPose(this.player.group); this._exitRoom(); showToast(L("🚪 You step outside."), 1500); } if (e.key.toLowerCase() === "r" && this._partner) { if (panelOpen()) closePanel(); else if (!this.dialogue.active) this._partnerMenu(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
     this._ambient = { chirp: 3, horn: 5, bell: 30 };
     startAmbient();
     this.clock = new THREE.Clock();
@@ -7005,6 +7006,7 @@ class Game {
     if (door.label === "Suryanagar Mall") this._mallSetup(room);
     if (door.label === "FitZone Gym") this._gymSetup(room);
     if (room.type === "haveli") this._haveliSetup(room);
+    if (room.type === "landmark") this._landmarkInside(room);
     if (this._stay && door.index >= 9100) this._stayRoomSetup(room);
     if (door.label === "Our Home") this._giftBox(room);
     if (door.label === "Our Home") this._homeExtras(room);
@@ -7459,7 +7461,7 @@ class Game {
   }
   // Every room with no desk of yours gets a seat for you, front right by the door, with an arrow.
   _visitorSeat(room) {
-    if (["home", "mainbuilding", "rooftop"].includes(room.type) || (this._stay && room.type === "hotelroom")) return;
+    if (["home", "mainbuilding", "rooftop", "landmark"].includes(room.type) || (this._stay && room.type === "hotelroom") || (this.insideDoor && this.insideDoor.index >= 9000)) return;
     if (room.playerDesk || (room._openJobs && room._openJobs.length)) return;
     if (!room.visitorSeat) { const lx = room.w / 2 - 1.8, lz = room.d / 2 - 3; room._box(0.55, 0.45, 0.55, 0x3f6f9f, lx, 0.22, lz, false); room._box(0.55, 0.6, 0.08, 0x3f6f9f, lx, 0.7, lz + 0.25, false); const arrow = room._label("▼ " + L("YOUR SEAT"), lx, lz, 2.4, 0.6); room.visitorSeat = { x: room.x0 + lx, z: room.z0 + lz, arrow }; }
     const s = room.visitorSeat; this._seatArrow = s.arrow;
@@ -8208,7 +8210,7 @@ class Game {
     return { bar, skip, fade };
   }
   // Every family vehicle goes back to its own spot by the house (not the one you are riding).
-  _parkVehiclesHome() { if (this._landmark) { this.world.scene.remove(this._landmark); this._landmark = null; }
+  _parkVehiclesHome() { if (this._zone) this._leaveCityZone(); if (this._landmark) { this.world.scene.remove(this._landmark); this._landmark = null; }
     const R = this.player.riding;
     for (const [v, x, z, rot] of this._vehHome || []) { if (!v || !v.group || (R && R.group === v.group)) continue; if (v === this.car && (v.driving || v.atSchool)) continue; v.group.position.set(x, 0, z); v.group.rotation.set(0, rot, 0); }
   }
@@ -8274,10 +8276,10 @@ class Game {
   // You step out in the new city: the place name, the compass to the stadium, and spoken directions.
   _arriveCity(city, s3, via = "air", purpose = "match") {
     if (purpose === "mission" && this._braveM) { this._missionArrive(city, s3, via); return; }
-    const S = this.world.stadium, ap = this.world.doors.find((d) => d.label === (via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
+    const Z = this._enterCityZone(city, via), S = this.world.stadium, ap = { x: Z.x + Z.places.arrive.x, z: Z.z + Z.places.arrive.z - 2.5 }; if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
     if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); }
     if (purpose === "duty" && !this.job) purpose = "family";
-    const doorFor = { duty: this.job && this.job.place, family: "Grand Hotel", friends: "Pizza Corner" }[purpose], door = doorFor && this.world.doors.find((d) => d.label === doorFor);
+    const doorFor = { duty: this.job && this.job.place, family: "Grand Hotel", friends: "Pizza Corner" }[purpose], zp = { duty: Z.places.office, family: Z.places.hotel, friends: Z.places.food }[purpose], door = doorFor && zp && zp.door ? { ...zp.door, z: zp.door.z - 2 } : null;
     const place = purpose === "match" || !door ? L("{c} Cricket Stadium", { c: city }) : purpose === "duty" ? `${city} ${doorFor}` : purpose === "family" ? L("{c} Grand Hotel", { c: city }) : L("{c} Food Street", { c: city });
     const gx = door && purpose !== "match" ? door.x : (S.x1 + S.x2) / 2, gz = door && purpose !== "match" ? door.z + 2 : (S.z1 + S.z2) / 2;
     let banner = null; try { banner = makeTextSprite(`${{ match: "🏟️", duty: "💼", family: "🏨", friends: "🍢" }[purpose] || "📍"} ${place}`, { size: 48, scale: 2.4 }); banner.position.set(gx, 9, gz); this.world.scene.add(banner); } catch (e) { /* the compass still points there */ }
@@ -9090,7 +9092,7 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed); this._tickHaveli(dt); this._tickMission && this._tickMission(dt); this._tickDayClock(dt); this._tickDuty(dt); this._tickStay(dt); this._tickExtras(dt);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed); this._tickHaveli(dt); this._tickMission && this._tickMission(dt); this._tickDayClock(dt); this._tickDuty(dt); this._tickCityZone(dt); this._tickStay(dt); this._tickExtras(dt);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
     if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? (this.world.currentRoom.type === "haveli" ? "haunt" : this.phase === "night" ? "nightroom" : "school") : this.phase);
     musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);
@@ -10024,7 +10026,7 @@ class Game {
     }, { pitch: 420 });
   }
   _missionArrive(city, s3, via) {
-    const m = this._braveM, S = this.world.stadium, ap = this.world.doors.find((d) => d.label === (via === "rail" ? "Railway Station" : "Suryanagar Airport")); if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
+    const Zc = this._enterCityZone(city, via), m = this._braveM, S = this.world.stadium, ap = { x: Zc.x + Zc.places.arrive.x, z: Zc.z + Zc.places.arrive.z - 2.5 }; if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
     if (ap) { this.player.group.position.set(ap.x, 0, ap.z + 2.5); this.player._placeCamera(1); }
     const gx = (S.x1 + S.x2) / 2, gz = (S.z1 + S.z2) / 2, scene = this._missionScene(m.scene, gx, gz);
     let banner = null; try { banner = makeTextSprite(`${m.icon} ${m.site}`, { size: 48, scale: 2.4 }); banner.position.set(gx, 11, gz); this.world.scene.add(banner); } catch (e) { /* the compass still points there */ }
@@ -10038,6 +10040,7 @@ class Game {
   // The city's famous attraction on the skyline, and a short camera tour of it.
   _showLandmark(city, via) {
     if (this._landmark) { this.world.scene.remove(this._landmark); this._landmark = null; }
+    if (this._zone && this._zoneLandmark(city)) { const lm = this._landmark; let H = 50; try { const b = new THREE.Box3().setFromObject(lm), sz = new THREE.Vector3(); b.getSize(sz); H = Math.max(20, Math.min(160, sz.y)); } catch (e) { /* default size */ } const pr = this.progress; pr.landmarks = [...new Set([...(pr.landmarks || []), lm.userData.name])]; saveProgress(this.profile, pr); const { bar, skip, fade } = this._cutUI(); this._cut = { kind: "tour", t: 0, lm, H, bar, skip, fade, focus: { x: lm.position.x, y: 0, z: lm.position.z }, onDone: () => showToast(L("🏙️ The {n} is in the city square. Walk there and go inside! (G: city map)", { n: lm.userData.name }), 4200, "good") }; this._cutSay(`🏙️ ${city}: ${lm.userData.name}. ${lm.userData.fact}`, true); return; }
     let lm; try { lm = makeLandmark(city); } catch (e) { return; }
     const x = via === "rail" ? -110 : 255, z = via === "rail" ? -255 : 105, ap = this.world.doors.find((d) => d.label === (via === "rail" ? "Railway Station" : "Suryanagar Airport"));
     lm.position.set(x, 0, z); if (ap) lm.rotation.y = Math.atan2(ap.x - x, ap.z - z); this.world.scene.add(lm); this._landmark = lm;
@@ -10619,11 +10622,11 @@ class Game {
     const pool = this._stayPool(abroad), picks = []; let seed = ((pr.day || 1) * 7 + (pr.stays || 0) * 3) % pool.length;
     while (picks.length < n && picks.length < pool.length) { const e = pool[seed % pool.length]; if (!picks.includes(e)) picks.push(e); seed += 5; }
     while (picks.length < n) picks.push(pool[picks.length % pool.length]);
-    const hd = this.world.doors.find((d) => d.label === "Grand Hotel"); if (!hd) { then(); return; }
+    const Zs = this._zone || this._enterCityZone(city, mt && mt.via), hd = Zs && Zs.places.hotel ? Zs.places.hotel.door : this.world.doors.find((d) => d.label === "Grand Hotel"); if (!hd) { then(); return; }
     this._stayDoor = { x: hd.x, z: hd.z, rot: hd.rot, label: L("{c} Grand Hotel · Room 204", { c: city }), type: "hotelroom", floors: 1, index: 9100 + (pr.stays || 0) };
     this._stay = { city, n, day: 1, picks, wise: 0, then, s3, abroad, evDone: false, evT: 6, npc: null }; this._staying = true;
     if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
-    this.player.group.position.set(hd.x, 0, hd.z + 2); this._enterRoom(hd);
+    this.player.group.position.set(hd.x, 0, hd.z); this._enterRoom({ ...hd, label: "Grand Hotel" });
     this.dialogue.say(L("Hotel reception"), [L("Welcome to the {c} Grand Hotel! Room 204 is yours for {n} days.", { c: city, n }), L("Your bed, your suitcase, a TV and a window. Go out and explore {c} every day. Come back here to sleep.", { c: city }), L("🔑 Here is your key card. Enjoy your stay!")], null, { pitch: 450 });
   }
   _stayRoomSetup(room) {
@@ -10839,7 +10842,7 @@ class Game {
     const half = Math.min(19, (foot * sc) / 2); const c = { x, z, hw: half * 0.8, hd: half * 0.8, rot: 0 }; this.world._addCollider(c); this._lmCollider = c;
     const ex = x, ez = z + half * 0.8 + 3, name = lm.userData.name; let hsh = 0; for (const ch of city) hsh = (hsh * 7 + ch.charCodeAt(0)) % 997;
     this._lmDoor = { x: ex, z: ez, rot: 0, label: `${name} · ${city}`, type: "landmark", floors: 1, index: 12000 + hsh };
-    try { const s = makeTextSprite(`🚪 ${L("Entrance")}`, { size: 44, scale: 1 }); s.position.set(ex, 3.2, ez - 0.5); this.world.scene.add(s); lm.userData.entSign = s; } catch (e) { /* sign optional */ }
+    try { const s = makeTextSprite(`🚪 ${L("Entrance")}`, { size: 44, scale: 1 }); s.position.set(ex - Z.x, 3.2, ez - 0.5 - Z.z); Z.group.add(s); } catch (e) { /* sign optional */ }
     this.interactables.push({ pos: { x: ex, z: ez }, radius: 3, priority: 1, prompt: () => L("🏛️ Enter the {n}", { n: name }), activate: () => this._enterRoom(this._lmDoor), _lm: true });
     return true;
   }

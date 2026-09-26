@@ -1,0 +1,51 @@
+stage: "B07-emoat"
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: "claude-sonnet-5"
+status: "complete"
+input_gaps:
+  - "No R&D headcount, PhD/specialist count, or R&D-to-revenue figure disclosed anywhere in the corpus (carried from B00 M6); blocks A4 and F1 from scoring above Weak/None."
+  - "No placed-instrument count or average reagent revenue per placed instrument disclosed (carried from B04 unit_economics); blocks B2's incremental piece from a documented tier."
+  - "No rupee quantum for the YEIDA Medical Device Park subsidies (interest subsidy, concessional power, ESI/PF support) disclosed in the AR or RHP; only qualitative management description on the call (R1 optionality item)."
+  - "No Reg 30 filing corroborates the ~Rs 47 / Rs 47.46 Cr Uttarakhand/PSU order anywhere in the 18-filing NSE announcements list since listing (carried from B00/B05 FLAG-UNVERIFIED-ORDER)."
+  - "No object-wise IPO proceeds utilisation table exists to test the capex programme against actual object-wise deployment (carried from B03/B05)."
+flags:
+  - {type: "FLAG-EXPORT-BASE", severity: "MAJOR", reason: "FY27 export guidance (Rs 5-7 Cr) is set against a FY26 base that collapsed -89.9% YoY (Rs 524.30 lakh to Rs 53.11 lakh); the investor deck's own Revenue Mix slide confirms exports fell from 18.15% to 1.01% of total revenue FY25 to FY26. No analyst on the single call asked about it (carried and re-confirmed from B02/B05)."}
+  - {type: "FLAG-UNVERIFIED-ORDER", severity: "MAJOR", reason: "The ~Rs 47/47.46 Cr Uttarakhand/PSU order, the single largest quantified input behind FY27 guidance, has no Reg 30 filing, customer name, or tender reference anywhere in the post-listing NSE announcements list (carried from B05)."}
+  - {type: "FLAG-DOUBLE-COUNT-GUARD", severity: "MINOR", reason: "The reagent-rental/closed-loop mechanic (B2) is already ~74% of FY26 revenue and is counted in Gate 0's moat_score (18, STRONG); only its incremental new-plant-driven scale-up is scored as emerging in this stage, to avoid crediting one moat mechanic through two pipeline stages."}
+  - {type: "FLAG-SHARED-POLICY", severity: "MINOR", reason: "YEIDA Medical Device Park incentives are explicitly shared with at least three other competing medical device parks (Ujjain, Visakhapatnam, Nalagarh) named by management on the same call; not an Avience-specific regulatory edge. The national PLI scheme for pharmaceuticals covers IVD devices but Avience is not named among the five selected applicants."}
+em_score: 11
+em_classification: "NONE"
+active_categories:
+  - {id: "B1", name: "Backward integration and RM security", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "B2", name: "Qualification lock-in (reagent-rental, existing mechanic)", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "ongoing/near (incremental piece)"}
+  - {id: "R1", name: "Regulatory/policy tailwinds", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "near-medium"}
+  - {id: "A4", name: "Product platform / modular architecture", strength: "Weak", evidence_type: "claim", time_to_materialise: "near-medium"}
+  - {id: "F2", name: "Execution moat", strength: "Weak", evidence_type: "documented+claim", time_to_materialise: "near (H1 FY27 test)"}
+  - {id: "H2", name: "Strategic partnerships (Mindray exclusivity/OEM)", strength: "Weak", evidence_type: "claim", time_to_materialise: "medium"}
+  - {id: "H3", name: "ESG moat (ZED Gold certificate)", strength: "Weak", evidence_type: "documented", time_to_materialise: "already in place"}
+evidence_mix: {documented: 5, claim: 9, inference: 3}
+completionist_recount: "5 documented items across 4 categories (B1: country-wise procurement table showing China share collapse 31.33%->22.47%->2.99%; B2: ISO/CE/WHO-GMP certificate suite for the existing facility; H3: ZED Gold certificate; R1: YEIDA land allotment plus CDSCO 88-licence count). Well inside the 3-6-category base rate; completionist guard not triggered."
+catalysts_12m:
+  - {catalyst: "YEIDA plant commercial production and PPE capitalisation", window: "Oct-2026", evidence_type: "documented (RHP schedule) + claim (reaffirmed on call, with a 3-month intermediate slip already observed)", anchor: "RHP pdf p.131; call p.3; AR Note 13, p.95"}
+  - {catalyst: "H1 FY27 half-yearly results, first test of all FY27 guidance", window: "due by Nov-2026", evidence_type: "documented (SME half-yearly filing requirement)", anchor: "B05 first-testable-print finding"}
+  - {catalyst: "Reg 30 filing (or continued absence) confirming the ~Rs 47/47.46 Cr Uttarakhand/PSU order", window: "near", evidence_type: "claim, unverified", anchor: "call p.92-95, p.157-160; Inv. Pres. slide 23"}
+  - {catalyst: "Manufacturing:trading mix disclosure (target ~27:72 to ~50:50)", window: "H1 FY27", evidence_type: "claim", anchor: "call p.237-240, p.266-268"}
+  - {catalyst: "FY27 export FOB value against the collapsed Rs 53.11 lakh FY26 base", window: "next AR / results", evidence_type: "claim, set against documented base", anchor: "call p.4; AR Note 39(b); Inv. Pres. slide 28"}
+capex_embedded_growth_pct: 90
+optionality_register:
+  - {optionality: "Mindray North-India exclusive distribution + OEM/private-label arrangement", converting_evidence: "Signed distribution/OEM agreement disclosed with territory and product scope", first_appears: "Reg 30 filing; next AR related-party/major-contract note", window: "Medium (kill signal: no deal by FY28)"}
+  - {optionality: "~Rs 47/47.46 Cr Uttarakhand/PSU order 'in hand'", converting_evidence: "Reg 30 order-win filing, named customer/tender reference, or a Uttarakhand/govt-linked revenue line", first_appears: "NSE Reg 30 filing; H1 FY27 half-yearly results", window: "Near (H1 FY27 results due by Nov-2026)"}
+  - {optionality: "Managed-laboratory / CGHS-rate testing-service model", converting_evidence: "Signed contract or MOU with a hospital/lab operator, with committed funding disclosed", first_appears: "Reg 30 filing; next AR Business Performance section", window: "Medium-long (explicitly funding-gated)"}
+  - {optionality: "WHO Prequalification for the new YEIDA plant (2 products)", converting_evidence: "WHO-PQ certificate issued and disclosed", first_appears: "Company website/AR/investor deck", window: "Medium (post-Oct-2026 commissioning plus undated trial run; realistically FY28+)"}
+  - {optionality: "YEIDA Medical Device Park subsidy quantum (interest subsidy, concessional power, ESI/PF support)", converting_evidence: "Rupee figure disclosed as subsidy income or interest-subsidy credit", first_appears: "Next AR notes to accounts (Finance Cost / Other Income)", window: "Near-medium (FY27 AR, once plant is commercial)"}
+  - {optionality: "Reagent-rental installed-base scale (placed-instrument count, per-instrument reagent run-rate)", converting_evidence: "Disclosed placed-instrument count and per-instrument reagent revenue", first_appears: "Investor deck; AR", window: "Medium"}
+  - {optionality: "FY27 export ramp (Rs 5-7 Cr guided) off a collapsed Rs 53.11 lakh FY26 base", converting_evidence: "FY27 export FOB value disclosed in the next AR/results", first_appears: "Next AR export note; results filing", window: "Near (FY27 AR)"}
+combined_assessment: "GOOD"
+combined_reasoning: "Backward GOOD (Gate 0, deal-breaker-capped by FCF negative three straight years) plus forward NO MEANINGFUL EMERGING MOAT (em_score 11, below the 12-24 MODEST band) does not fit the transition-alpha setup; the combined read is GOOD, unchanged from Gate 0, because the forward scan finds mostly pipeline/claim-tier evidence rather than documented moat expansion large enough to offset the backward cap."
+top_moat_risks:
+  - "Entire forward narrative concentrated in one unverified order (Uttarakhand/PSU, no Reg 30 filing) and one capex project on a fixed October-2026 deadline that has already shown a 3-month intermediate slip."
+  - "Cash-conversion metrics (WC days, receivables ageing, provisioning coverage) are moving in the wrong direction even as the growth story is being told, and FCF has been negative for three straight years, leaving no internal war chest to fund any delay."
+  - "FY27 export guidance is framed against a base that collapsed 89.9% YoY, unacknowledged on the only call held to date."
+  - "The two Moderate-scoring categories (B1 RM-sourcing shift, R1 regulatory tailwind) are narrow and partly shared with named competitors (other medical device parks), not durable Avience-specific edges."
+analyst_note: "The reagent-rental/closed-loop mechanic (B2) is already ~74% of FY26 revenue and sits inside Gate 0's existing moat_score; only its incremental new-plant-driven scale-up is treated as emerging here, to avoid double-crediting one moat mechanic across two pipeline stages. em_score of 11 is a genuine borderline case, one point below the MODEST MOAT DEVELOPMENT band (12-24); if placement counts and per-instrument reagent revenue are disclosed once the YEIDA plant is commercial and independently support a documented-tier B2 incremental score, this could move into MODEST. Today the evidence does not support that tier. Both I1 and I2 (Family I) scored 0 by design; no threshold crossing via I1/I2 occurred on this run."

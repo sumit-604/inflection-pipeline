@@ -1,0 +1,37 @@
+stage: B06-peers
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps: ["Only 6 of a possible 12 peer transcripts exist: QLINE and MOLBIO are recent listings with one call each by construction, not a sourcing gap. No peer discloses CDSCO/regulatory approval-timeline data, so B05 peer_question 5's approval-speed sub-claim stays fully untestable from this corpus."]
+flags: []
+peers_provided: 6
+verified: []
+partially_verified:
+  - {claim: "Government/health-department tender payment-cycle terms comparable to Avience's cited 45-120 days", peers: ["QLINE"]}
+  - {claim: "Molbio/peer reagent-rental closed-system margin range and closed-loop revenue share comparable to Avience's 80-90% mix and 40-60% margin claim", peers: ["MOLBIO", "QLINE"]}
+  - {claim: "Tarsons capex-to-utilisation ramp timeline for a new plant vs Avience's YEIDA 15-20% FY27 utilisation guidance", peers: ["TARSONS"]}
+  - {claim: "IVD/diagnostics industry growth rate broadly comparable to peer disclosure", peers: ["QLINE", "MOLBIO"]}
+contradicted: []
+unverifiable:
+  - {claim: "Export revenue swing comparable in scale to Avience's FY25 Rs524.30 lakh to FY26 Rs53.11 lakh (-89.9%) collapse", peers_checked: ["QLINE", "TARSONS", "MOLBIO"]}
+  - {claim: "CDSCO approval-timeline average (~3 months) comparable to a stated sector-normal 6-9 months", peers_checked: ["QLINE", "MOLBIO", "TARSONS"]}
+peer_coverage_map:
+  - {peer: "QLINE", quarter: "H2/FY26 (23-Jun-2026)", usage: "SUBSTANTIVE", contribution: "Reagent/instrument margin bands, 75-80% closed-loop mix, receivable days, related-party distributor risk, 8-9% India diagnostic market growth"}
+  - {peer: "MOLBIO", quarter: "Q1 FY27 (08-Sep-2026)", usage: "SUBSTANTIVE", contribution: "Closed-system reagent economics, receivable days ~87, minimal-capex growth path, two-year government rate-contract structure"}
+  - {peer: "TARSONS", quarter: "Q2/H1 FY26 (13-Nov-2025)", usage: "SUBSTANTIVE", contribution: "Baseline Panchla/Amta capex plan and initial 3-5yr new-product ramp timeline"}
+  - {peer: "TARSONS", quarter: "Q3/9M FY26 (06-Feb-2026)", usage: "SUBSTANTIVE", contribution: "Explicit ramp curve: 15-20% year1, 30-35% year2 utilisation, directly comparable to Avience's YEIDA guidance"}
+  - {peer: "TARSONS", quarter: "Q4/FY26 (25-May-2026)", usage: "SUBSTANTIVE", contribution: "First disclosed commissioning slippage (Q4 FY26 to H1 FY27) and raw-material margin compression"}
+  - {peer: "TARSONS", quarter: "Q1 FY27 (11-Aug-2026)", usage: "SUBSTANTIVE", contribution: "Second disclosed commissioning slippage (H1 FY27 to H2 FY27); GeM government-procurement structural risk; FY28 revenue-contribution guidance of only 20-25% from the new plants"}
+industry_cross_read:
+  demand: "All three peers guide FY27 growth (QLINE 30-35%, MOLBIO ~25%, TARSONS ~15%+ with a 21% Q1 print), a sector-wide recovery narrative that loosely supports Avience's optimism in direction but not in the >=60% scale Avience guides."
+  pricing_inputs: "No peer discloses diagnostic-reagent-specific input costs; TARSONS (plastics) reports sharp, geopolitically driven raw-material spikes with only partial pass-through, while QLINE and MOLBIO show margin expansion over the same window; no direct read on Avience's own inputs."
+  capex_cycle: "Industry-wide capacity-building period, not a lone-expander situation: QLINE and TARSONS are both mid-capex-cycle like Avience; MOLBIO explicitly needs minimal new capex. Tarsons's own commissioning timeline slipped twice in nine months, a direct evidenced risk to Avience's Oct-2026 YEIDA date."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "TARSONS: Government e-Marketplace (GeM) L1 lowest-bid procurement has structurally eroded government-linked lab-consumable revenue over 5-7 years, with rate contracts abolished in favour of per-purchase bidding (Q1 FY27 call, 11-Aug-2026, transcript p.17-18) -- directly relevant to B00 LBF1's Uttarakhand-order plausibility test."
+  - "MOLBIO: TB testing revenue runs on a periodically renegotiated two-year government rate contract, a renewal-risk structure Avience's Uttarakhand order narrative does not address (contract duration/terms undisclosed)."
+  - "QLINE: material related-party distributor concentration (largest UP distributor is a promoter entity) plus historical related-party corporate guarantees being wound down -- a governance risk category structurally analogous to Avience's own related-party exposure to subsidiary DR Meditech (B00 LBF3)."
+  - "TARSONS: acute, externally driven raw-material and logistics volatility (Middle East conflict, container/freight availability, US tariffs) as a recurring multi-quarter risk; Avience's call does not address import/logistics risk on its Mindray-sourced traded goods despite ~72% of FY26 revenue being traded."
+net_narrative_effect: "complicates"
+analyst_note: "Tarsons across its four transcripts is the single most load-bearing peer in this run: its explicit 15-20%/30-35% year-1/year-2 utilisation curve makes Avience's own YEIDA guidance look sector-plausible in shape, but its own commissioning date slipped twice in nine months on a plant that was already substantially built, which is direct, evidenced grounds to discount the reliability of Avience's Oct-2026 date independent of the eventual utilisation percentage. No peer touches the Uttarakhand order at all; it remains as unverified after this stage as it was entering it. The Part 5 hypothesis (peers disclose per-unit reagent/instrument economics as standard practice at this business-model stage; Avience discloses none) is a concrete, testable management question, not yet asked on any transcript in this corpus."

@@ -1,0 +1,94 @@
+stage: B09-tam
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No sourced count of currently placed instruments or average reagent revenue per placed instrument exists anywhere in the corpus or in public search; Method 2 (bottom-up) could not be built to full rigor (NOT FOUND)."
+  - "No numeric test-type segmentation (clinical chemistry vs molecular vs haematology vs immunoassay percentage split) is sourced for the India IVD market; only the ordinal ranking (chemistry largest, then molecular, then haematology) is sourced."
+  - "No state-by-state (UP/Uttarakhand/Delhi vs Punjab/Haryana/Rajasthan) split of the 32% North India diagnostics-market share figure exists; the geography filter uses the full-region figure as an outer bound."
+  - "No India-specific IVD organised-vs-unorganised split is sourced; the 30-60% range used is a stated pipeline-methodology estimate, not a filed number."
+  - "No India-specific IVD segment revenue exists for MNC subsidiaries (Roche, Abbott, Siemens Healthineers, Beckman Coulter, Mindray India) for Method 3 peer aggregation."
+flags:
+  - {type: FLAG-TAM-DIVERGENCE, reason: "RHP Industry Overview chapter cites two internally inconsistent Indian medical-devices market figures in the same chapter (USD 15.35bn to USD 20.51bn by 2029 at RHP p148, vs USD 14bn to USD 30bn by 2030 at RHP p149); a third-party search also found India IVD 2030 estimated at USD 6.2bn vs the RHP-cited Mordor figure of USD 2.66bn by 2031, a ~2.3x divergence. Conservative (lower, Mordor/RHP) figure used per pipeline methodology."}
+  - {type: FLAG-SAM-JUDGMENT, reason: "SAM derivation applies a 50% channel/capability discount that is an analyst judgment, not a sourced percentage; no filing or report gives a channel-penetration rate for Avience's Mindray-partner/government-tender footprint. Named explicitly in the report, not presented as evidence."}
+  - {type: FLAG-GUIDANCE-VS-SOM, reason: "Management's FY26-FY28 guided revenue CAGR (75.9%, to Rs 160-165 Cr) runs materially ahead of the aggressive-case, evidence-based SOM3yr CAGR (43.4%) over a longer window. Most likely explanation: the ~Rs 47 Cr Uttarakhand order is a lumpy, largely one-off government contract with a hardware-heavy component (call p7), not a repeatable market-share gain. Stage 11 should treat FY27/28 guidance as order-driven, not share-driven, pending a second comparable order."}
+  - {type: FLAG-CAPACITY-MIX, reason: "The Rs 250-265 Cr peak-revenue capacity management cites is a MANUFACTURING-only ceiling; it does not constrain the traded/Mindray-distribution engine (72% of FY26 revenue), which is capacity-free from Avience's own balance sheet. Capacity is sufficient for the SOM figures; the binding constraint is mix-shift execution and unfunded working capital (Rs 35-40 Cr gap at Rs 100 Cr revenue, call p6), not physical capacity."}
+market_definition: "Indian IVD reagents, consumables, rapid tests and analysers (clinical chemistry, haematology, basic immunoassay) distributed via a regional Mindray channel partnership and own CDSCO-licensed manufacturing to hospitals, labs and government health departments, filtered to Avience's Delhi NCR / eastern UP / Uttarakhand footprint."
+tam_cr: {conservative: 12065, realistic: 12848}
+sam_cr: 1900
+sam_pct_of_tam: 10.2
+som_3yr_cr: 155
+som_5yr_cr: 270
+som_implied_revenue_cagr: {yr3: 43.4, yr5: 38.7}
+current_sam_share_pct: 2.76
+revenue_headroom_x: 36.2
+tam_growth_pct: 6.49
+runway_class: "STRONG"
+mgmt_claim_cr: 257.5
+mgmt_claim_ratio: 0.14
+mgmt_claim_read: "conservative"
+capacity_check: "sufficient — YEIDA peak capacity (Rs 250-265 Cr, manufacturing-only) exceeds the required manufacturing-revenue slice under both SOM and management scenarios through year 5; binding constraint is manufacturing-mix-shift execution and unfunded working capital for the trading/tender engine, not physical capacity."
+methods_used:
+  - "Method 1: top-down (Mordor/RHP India IVD market, product-filtered via reagents/kits revenue share)"
+  - "Method 2: bottom-up (attempted; not producible — no sourced unit denominators, named as a gap)"
+  - "Method 3: peer revenue aggregation (Transasia/Erba, Molbio, QLINE, Tarsons; flagged as an understated floor given unquantified MNC subsidiaries)"
+  - "Method 4: import substitution (70-80% medical-device import reliance applied directionally; IVD-specific ratio NOT FOUND)"
+  - "Method 5: global benchmark (China vs India per-capita IVD spend gap, ~10x; used for direction only, no Rs Cr figure produced)"
+stale_data_flags:
+  - {datapoint: "Indian diagnostics market ~USD 13bn", source: "RHP p150/[page 155], Statista citation", year: "2023"}
+  - {datapoint: "India healthcare sector Rs 31,87,668 Cr / GDP 3.3% healthcare spend", source: "RHP p145/[page 150]", year: "2022-2023"}
+  - {datapoint: "Indian medical devices market USD 15.35bn / USD 14bn (two conflicting RHP citations)", source: "RHP p148-149/[page 153-154]", year: "2023"}
+searches_performed:
+  - "India in vitro diagnostics market segmentation clinical chemistry hematology immunoassay point of care share 2025 2026"
+  - "USD INR exchange rate September 2026"
+  - "Transasia Bio-Medicals Agappe Diagnostics Erba Diagnostics India revenue crore 2025"
+  - "Uttar Pradesh Uttarakhand government hospital diagnostic reagent tender crore healthcare budget"
+  - "India IVD reagent rental placement model organized unorganized market share regional distributors"
+  - "number of pathology labs hospitals Uttar Pradesh Delhi NCR clinical laboratories count"
+  - "North India share of India diagnostics market percent region wise"
+  - "global in vitro diagnostics market size 2026 billion per capita spending China India comparison"
+searches_skipped:
+  - "Individual standalone financials for Agappe Diagnostics and Erba Diagnostics India: search returned no company-specific figures on first pass; not re-attempted with narrower queries given diminishing marginal value to the peer-aggregation floor already established."
+  - "State-by-state (Punjab/Haryana/Rajasthan vs UP/Uttarakhand/Delhi) breakdown of the 32% North India diagnostics share: no market report surfaced this granularity; would require a paid/proprietary report beyond this run's search access."
+  - "Mindray Bio-Medical Electronics India-specific standalone revenue: not searched directly, as Mindray is Avience's principal/supplier not a competitor, and disaggregated India subsidiary financials for a Chinese multinational are unlikely to be publicly disclosed."
+  - "Manual state e-procurement portal aggregation (UP, Uttarakhand) for cumulative historical diagnostic-reagent tender values: out of scope for a single web-search pass; named as a downstream signal candidate (Section 6, row 2) for Role 5.5 verification instead."
+downstream_candidates:
+  - signal: "Mindray territory/exclusivity decisions for North India"
+    entity_type: "counterparty"
+    demand_link: "Determines geography-filter expansion and is the source of 72% of FY26 revenue"
+    likely_source: "Company Reg 30 filings (NSE); Mindray India distributor announcements"
+    cadence: "event-driven"
+    shared: true
+  - signal: "State government diagnostic-reagent tender awards (UP, Uttarakhand, new states)"
+    entity_type: "end-customer"
+    demand_link: "Direct source of order-driven growth flagged as distinct from durable share gain"
+    likely_source: "State e-procurement portals (UP/Uttarakhand eProcurement); GeM"
+    cadence: "event-driven"
+    shared: false
+  - signal: "CDSCO product-licence grants toward 175-product FY27 target"
+    entity_type: "regulatory"
+    demand_link: "Gates which manufactured SKUs Avience can sell; caps the manufacturing-mix-shift thesis"
+    likely_source: "CDSCO SUGAM portal / CDSCO licence database"
+    cadence: "quarterly"
+    shared: true
+  - signal: "YEIDA plant commissioning and medical-device-park incentive notifications"
+    entity_type: "regulatory"
+    demand_link: "Gates the Rs 250-265 Cr manufacturing capacity ceiling used in the 3C cross-check"
+    likely_source: "Yamuna Expressway Industrial Development Authority notifications; UP medical device park circulars"
+    cadence: "event-driven"
+    shared: false
+  - signal: "GST Council / CBIC notifications on medical-device and diagnostic-kit rates"
+    entity_type: "macro"
+    demand_link: "GST 2.0's 5% rate is a live pricing/margin variable for the whole product range"
+    likely_source: "GST Council press releases; CBIC notifications"
+    cadence: "event-driven"
+    shared: false
+  - signal: "PLI Scheme for Pharmaceuticals (IVD category) disbursement/participation updates"
+    entity_type: "macro"
+    demand_link: "Government incentive directly tied to Avience's own incremental-manufacturing-sales strategy"
+    likely_source: "Department of Pharmaceuticals (Ministry of Chemicals and Fertilizers) scheme disclosures"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Central finding: management's FY26-FY28 guided CAGR (75.9%) outruns the evidence-based aggressive-case SOM3yr CAGR (43.4%) over a longer window, most likely because the ~Rs 47 Cr Uttarakhand order is a lumpy, largely one-off government contract, not a repeatable share gain. Stage 11 should carry the SOM-implied CAGR (43.4% yr3 / 38.7% yr5) as the cross-check and treat guidance growth as order-driven pending a second comparable win. SAM rests on two named judgment calls (32% North-India geography proxy from a diagnostics-SERVICES market share, and a 50% channel/capability discount) rather than filed percentages; both are disclosed in-line rather than smoothed into the headline numbers."

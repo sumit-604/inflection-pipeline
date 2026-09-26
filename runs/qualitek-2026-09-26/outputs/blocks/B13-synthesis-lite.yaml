@@ -1,0 +1,35 @@
+stage: B13-synthesis
+mode: PHASE-1-LITE
+company: "QUALITEK"
+run_date: "2026-09-26"
+model: "claude-opus-5-5"
+status: complete
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0, FLAG-RPT, FLAG-GOODWILL, FLAG-CARO-NEW, FLAG-GOVERNANCE, FLAG-DISCLOSURE, FLAG-LEVERAGE-POINT, FLAG-TARGETS-DROPPED, FLAG-CAPITAL-RAISE-OMISSION, FLAG-INTERNAL-CONFLICT, FLAG-GUIDANCE-SILENCE, FLAG-SAME-WEEK-CONTRADICTION, FLAG-CAPACITY-GAP, FLAG-METHOD-DIVERGENCE, FLAG-DATA-CONFIDENCE]
+confidence_delta: {numerical: 100, redflag: 67, framework: 90.3, peer: 100, overall: 67}
+rework_sensitivity_ruling: "Number of record is B12b's declared half-credit rate, 67%; REWORK not triggered. Caught-only 42% would force REWORK on stage 5; convention unfixed in prompts/12-verifiers-pipeline.md; routed to operator at Halt 1 and to /compost."
+promoter_verdict: "CONCERN"
+cash_determination: "INDETERMINATE"
+cash_determination_basis: "Capex leg GROWTH-INDUCED (FCF negative 6 of 6 years on 6.3x capex ramp; cumulative CFO/PAT 1.09). Operating leg unresolved: consolidated CFO/EBITDA 0.46 FY26; 1-2yr and 2-3yr receivable buckets +120.7% and +142.7% vs +77% revenue; >6-month share flat at 22.3%. No credit rating exists, so no rating quote."
+cash_missing_evidence: ["government/PPP share of revenue and receivables", "receivables ageing by entity and customer class", "H1 FY27 cash flow statement if filed, else FY27 audited results", "any rating rationale on new HDFC or NCD facilities"]
+gate0_recomputed: {grand: 58, core: 46, moat: 12, blocks: {A: 8, B: 5, C: 20, D: 6, E: 7}, classification: "AVERAGE"}
+em_recomputed: {em_score: 12.5, classification: "MODEST", if_E1_struck: "11.5 NONE", capex_embedded_growth_pct: "NOT DETERMINABLE (B07 88 not consumed)"}
+transition_posture: "PARTIAL: proof gate not fired; ugliness unclassified; recognition gap pending Stage 11"
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Accredited lab network grows faster than cash"
+falsification_metric: "H1 FY27 consolidated EBITDA margin below the 25.7% H2 FY26 exit rate, toward H1 FY26's 20.7%"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+verifier_disagreement_log: "none (Verifier A 0 findings, both cycles); file not written"
+files_written:
+  - "runs/qualitek-2026-09-26/outputs/final/business-narrative.md"
+  - "runs/qualitek-2026-09-26/outputs/final/gate-recommendation.md"
+  - "runs/qualitek-2026-09-26/outputs/final/verifier-summary.md"
+notion_save:
+  page_title: "Qualitek Labs Ltd (QUALITEK) - phase 1 evidence run, 2026-09-26"
+  summary: "Accredited lab network grows faster than cash. PROCEED WITH FLAGS (promoter CONCERN, cash INDETERMINATE, Gate 0 AVERAGE 58/160). No valuation ran; no decision, no entry range."
+  drive_link: "not applicable; this run lives in the repository at runs/qualitek-2026-09-26 on branch run/qualitek-2026-09-26"
+  mode: append-never-overwrite-status

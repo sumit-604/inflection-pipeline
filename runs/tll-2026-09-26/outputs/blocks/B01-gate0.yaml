@@ -1,0 +1,41 @@
+```yaml
+stage: B01-gate0
+company: "TLL"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY22/FY23 current-liability and trade-payable breakdown not in corpus (no FY23 results filing or AR held); A1/A2/A4/B4 computed on the 3-year FY24-FY26 sub-window only, not the full 5-year window."
+  - "Promoter pledge % NOT FOUND (shareholding/ holds only a non-filing screener aggregation with no pledge column; AR note 1.6 promoter table also carries no pledge column; formal SEBI SHP-I filing not in corpus). E3 scored 0, not assumed."
+  - "AR note 1.6 promoter shareholding table's summed 'Total promoter %' row not cleanly captured by text extraction; E1/E2 anchored to screener-shareholding-pattern.csv (non-filing aggregation) instead, per B00 note."
+  - "Purchase-of-Fixed-Assets line in the AR consolidated cash flow statement could not be cleanly disaggregated from acquisition-of-subsidiary outflows in the extracted text; B2/B3 FCF proxied as CFO + net Investing CF, which is more punitive than true organic capex would be."
+  - "Nature of 'Claim Income' Rs 5.41 Cr FY26 (58% of Other Income, 20% of PBT), AR Note 22, not defined in the extracted note text. NOT FOUND."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE, capped by two deal-breakers (Block B <8; cumulative CFO/PAT <0.50), not by the Core-score band alone though both agree. Growth (Block C 16/20) is the strongest block; cash conversion (Block B 0/20) is the weakest, the widest spread on the scorecard."}
+  - {type: FLAG-DATA-CONFIDENCE, reason: "5 years of P&L history (FY22-FY26): band '5-6 lower, may not have seen a full cycle'."}
+  - {type: FLAG-CASH, reason: "block_b_trend DETERIORATING: cumulative CFO -Rs 22.5 Cr vs cumulative PAT +Rs 47.1 Cr FY22-26; Working Capital Days rose 151 (FY24) to 203 (FY26), +52 days in two years. Confirms LBF1."}
+  - {type: FLAG-DATA-QUALITY, reason: "FY25 consolidated CFO restated between the FY25 AR (-Rs 10.24 Cr, audited then) and the FY26 AR's FY25 comparative column (-Rs 3.99 Cr): a Rs 6.26 Cr swing with no restatement note located in the text searched. Gate 0 scored on the screener/originally-filed figure. Found while checking LBF2; unresolved, forwarded."}
+  - {type: FLAG-OTHER-INCOME, reason: "Other Income is 60.4% of PBT (FY25) and 34.1% of PBT (FY26); FY26's largest component is an unexplained 'Claim Income' line, Rs 5.41 Cr, AR Note 22. Forwarded per LBF2."}
+data_years: 5
+fy_range: "FY22 to FY26"
+blocks: {A: 12, B: 0, C: 16, D: 12, E: 8}
+core_score: 48
+moat_score: 10
+grand_total: 58
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVERAGE"
+deal_breakers:
+  - "#2 Block B <8 (B=0) -> max GOOD"
+  - "#4 Cumulative CFO/PAT <0.50 (-0.478) -> max AVERAGE (binding cap)"
+history_downgrade: false
+data_notes:
+  - "EBIT computed as PBT + Interest - Other Income (operating basis) for ROCE (A1/A2/A4) and interest coverage (D2), since Other Income is 34-60% of PBT in FY25-26. All-in EBIT (PBT+Interest) would raise A1 to band 3 (median 17.33%) and A2 to band 3; footnoted, not used."
+  - "FCF (B2/B3) proxied as CFO + net Investing CF; overstates true capex by folding in TNS Pharma/Trident Mediquip/TLL Parenterals acquisition outflows (LBF3). All 5 years negative on this proxy."
+  - "ROCE/WC-Days sub-metrics (A1/A2/A4/B4) run on FY24-FY26 only (3 years); Current Liabilities sourced from AR consolidated balance sheet, not the screener sheet (which does not split current from non-current liabilities)."
+  - "E4 boundary-sensitive: 5.17% (excl. minority interest, used, band 5-15=3) vs 4.80% (incl. minority interest, band <5=5)."
+  - "M4 and M10 (moat tests) scored by judgment call, stated in-report: TLL's zero-revenue-decline-year-but-blown-out-receivables profile does not literally match any listed tier."
+  - "Peer EBITDA-margin (M2) and gross-margin-proxy (M9) medians computed from CAPLIPOINT/SENORES/INNOVACAP Data_Sheet.csv FY26 columns, same operating basis as TLL."
+block_b_trend: "deteriorating -- cumulative CFO -Rs 22.5 Cr vs cumulative PAT +Rs 47.1 Cr FY22-26 (screener-Data_Sheet.csv); Working Capital Days 151 (FY24) to 203 (FY26), +52 days (AR trade payables notes)."
+analyst_note: "LBF1 confirmed exactly against AR and screener: receivables 27.7->73.7 Cr, debtor days 116->208, CFO +4.7 Cr vs PAT 19.0 Cr FY26. LBF2 produced two new findings while checking: (1) FY26 AR Note 22's largest Other Income item is an unexplained Rs 5.41 Cr 'Claim Income' line, 58% of Other Income; (2) FY25 CFO is restated between the FY25 AR (-10.24 Cr) and the FY26 AR's FY25 comparative (-3.99 Cr), a Rs 6.26 Cr swing with no located restatement note. Both are forwarded, not resolved, per Gate 0's no-qualitative-judgment mandate. Scoring used EBIT excluding Other Income throughout (Block A, D2, M2, M3) given Other Income's large share of PBT; the all-in alternative is shown in the report and would raise A1/A2 by two bands each -- material enough that the verifier should confirm the choice."
+```

@@ -1,0 +1,55 @@
+stage: B02-notes-pass1
+company: "TLL"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, LINCOLN:Profit & Loss, LINCOLN:Quarters, LINCOLN:Balance Sheet, LINCOLN:Cash Flow, LINCOLN:Customization, INNOVACAP:Profit & Loss, INNOVACAP:Quarters, INNOVACAP:Balance Sheet, INNOVACAP:Cash Flow, INNOVACAP:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "rating/: EMPTY and NOT A COLLECTION GAP. FY26 AR Directors' Report item 10: company holds no credit rating."
+  - "concalls/: EMPTY, DECLARED. No earnings-call transcript filed on BSE for scrip 543616. NO-CONCALL MODE."
+  - "consolidated Note 31 (segment reporting) trade-receivable total (Rs 4,947.50L) does not reconcile to consolidated Note 17 / Balance Sheet trade receivables (Rs 7,365.39L), a Rs 2,417.89L gap. Not a corpus gap, an AR internal-consistency defect. Carried forward for Pass 3 pattern check and for claude.ai verification."
+  - "consolidated Balance Sheet Goodwill line (Rs 555.15L, up from Rs 52.37L) has no supporting note anywhere in the AR. Not a corpus gap, an AR disclosure gap. Carried forward."
+pass: 1
+pass_2_done: false
+pass_3_done: false
+source_document: "Annual_Report_2026.pdf (FY2025-26 AR, 150 PDF pages, standalone + consolidated)"
+reporting_basis: "Indian GAAP / Accounting Standards (AS-18, AS-3), NOT Ind AS. Source unit INR lakh throughout; 100 lakh = Rs 1 Cr."
+full_report_path: "runs/tll-2026-09-26/outputs/reports/02-notes-pass1.md"
+notes_covered:
+  standalone: "Notes 1-32 (pp.57-80)"
+  consolidated: "Notes 1-33 (pp.97-124)"
+top_findings_pass1:               # ranked, feeds Pass 3 consolidation; max 15 in final B02-notes
+  - {rank: 1, finding: "Corporate guarantees (Rs 500L consol / Rs 2,855L standalone) given for two non-subsidiary director-interest LLPs, Talon Healthcare LLP and Tench Life Sciences LLP", note_ref: "Note 32, pp.80/124", rating: "RED", why: "Company balance sheet stands behind entities it does not own or control"}
+  - {rank: 2, finding: "Consolidated segment note (Note 31) trade-receivable total Rs 4,947.50L does not reconcile to consolidated Note 17 / Balance Sheet trade receivables Rs 7,365.39L (Rs 2,417.89L gap); standalone reconciles exactly", note_ref: "Notes 17 & 31, pp.108/123", rating: "RED", why: "Internal inconsistency inside the audited consolidated notes"}
+  - {rank: 3, finding: "Consolidated Goodwill jumped 10.6x (Rs 52.37L to Rs 555.15L) with zero explanatory note", note_ref: "Balance Sheet, p.107", rating: "RED", why: "Material intangible with no acquisition-accounting or impairment disclosure"}
+  - {rank: 4, finding: "AOC-1 confirms LBF3 deck-vs-delivery gap from audited data: TNS Pharma turnover Rs 5.77 Cr and loss-making with negative net worth (deck peak Rs 40 Cr); TLL Parenterals turnover nil, 'yet to commence operations' (deck peak Rs 200 Cr); Trident Mediquip Rs 27.32 Cr (deck peak Rs 70 Cr)", note_ref: "AOC-1, p.41", rating: "RED", why: "Directly evidences the subsidiary build-vs-delivery gap named in companies/TLL.md LBF3"}
+  - {rank: 5, finding: "TNS Pharma investment carried at increased cost (Rs 153L to Rs 255L) despite negative net worth and widening loss, no impairment disclosed", note_ref: "Note 11 vs AOC-1, pp.65/41", rating: "RED", why: "Impairment policy exists but was apparently not applied to this holding"}
+  - {rank: 6, finding: "Section 197 excess director remuneration, explicitly qualified by the statutory auditor; Ashish Bafna's Rs 6.37L excess still pending shareholder ratification at the FY26 AGM", note_ref: "Consolidated Auditor's Report pp.89/91; Directors' Report p.25", rating: "RED", why: "Live, checkable governance item with a pending shareholder vote"}
+  - {rank: 7, finding: "IT audit trail (edit log) not maintained in one (unnamed) subsidiary company, database and application level, for the full year", note_ref: "Consolidated Auditor's Report Rule 11(g), p.90", rating: "RED", why: "Named, unremediated internal-control gap under the statutory audit-trail mandate"}
+  - {rank: 8, finding: "Unexplained 'Claim Income' of Rs 541.05L is 58% of consolidated Other Income (Rs 927.15L), no note anywhere describes its nature", note_ref: "Note 22, p.110-111", rating: "RED", why: "Answers LBF2's other-income-source question with an opaque, undisclosed line item"}
+  - {rank: 9, finding: "Preferential warrant proceeds utilisation deviation: only 57.5% (Rs 1,526.57L of Rs 2,657.34L) utilised by year-end, one vague disclosure line, no category breakdown unlike the IPO table", note_ref: "Directors' Report item 5, p.24", rating: "RED", why: "Partially answers LBF3/LBF4 funding-plan question but withholds the category split investors need"}
+  - {rank: 10, finding: "Consolidated trade receivables grew 3.4x faster than revenue (166% vs 48.4%); CFO only Rs 469.07L against PAT Rs 1,931.88L, driven by Rs 4,597.13L receivables increase; but ageing composition improved (>6-months share fell 13.1% to 6.1%)", note_ref: "Cash Flow Statement p.97-98; Note 17 p.108-109", rating: "YELLOW/RED boundary", why: "Quantifies LBF1 exactly; growth-induced vs structural classification still needs customer-concentration/terms evidence from claude.ai"}
+  - {rank: 11, finding: "RPT sales to two non-subsidiary director-interest LLPs (Tench, Talon) = 13.9% of consolidated revenue, up 43% YoY; combined trade receivable balance from them = 15.3% of total consolidated receivables", note_ref: "Note 30B/C, pp.118-121", rating: "YELLOW", why: "Material, growing dependency on related-party counterparties outside the consolidation perimeter"}
+  - {rank: 12, finding: "Unsecured loan taken FROM Chairman Hardik Desai grew from Rs 491.00L to Rs 1,353.37L during the year, all repayable on demand", note_ref: "Note 30B/C and Note 3.2, pp.100/120-121", rating: "YELLOW", why: "Accelerating promoter funding of the company outside normal covenant/maturity discipline"}
+  - {rank: 13, finding: "Zero doubtful-debt provisioning against a fast-growing, largely export receivables book (Ghana, Kenya, Peru, Venezuela) in either year", note_ref: "Note 17.1/17.2, pp.67/108-109", rating: "YELLOW", why: "AS-framework choice, not itself wrong, but removes an early-warning signal on a book that tripled"}
+  - {rank: 14, finding: "Venezuela revenue collapsed 78.8% (Rs 2,212.89L to Rs 469.49L), replaced by an undisclosed 'Rest of World' bucket that grew 8.7x with no country breakdown", note_ref: "Note 31, p.123", rating: "YELLOW", why: "Masks which new markets are replacing a major lost export market"}
+  - {rank: 15, finding: "Both auditor's reports (standalone and consolidated) name a KAM that the company's DOS-based accounting system 'needs to be further strengthened'", note_ref: "p.44 standalone / p.87 consolidated", rating: "YELLOW", why: "Auditor-flagged IT infrastructure weakness at a company that tripled revenue and added 5 subsidiaries in three years"}
+receivables_trend_pass1: "deteriorating in scale, improving in ageing composition: consolidated trade receivables Rs 27.68 Cr (FY25) to Rs 73.65 Cr (FY26), +166% vs revenue +48.4%; but >6-months share of the book fell from 13.1% to 6.1%. CFO Rs 469.07L (FY26) vs Rs -398.50L (FY25) on PAT Rs 1,931.88L, gap driven by Rs 4,597.13L working-capital increase in trade receivables. Matches companies/TLL.md LBF1 exactly. GROWTH-INDUCED vs STRUCTURAL not yet resolvable from the AR alone."
+going_concern_language_pass1: "NONE. Both standalone and consolidated auditor's reports explicitly conclude no material uncertainty exists (CARO xix / auditor's responsibilities sections)."
+restatements_found_pass1: []
+analyst_note_pass1: >
+  Pass 1 covered both standalone (Notes 1-32) and consolidated (Notes 1-33)
+  note sets end to end. Two internal-consistency defects (segment-note
+  receivables mismatch; unexplained goodwill jump) and one opaque income
+  line (Claim Income, 58% of Other Income) are AR-quality findings, not
+  corpus gaps, and should be pressed directly with management. The AOC-1
+  subsidiary table is the strongest evidence yet for LBF3's deck-vs-delivery
+  gap because it is audited data, not a deck claim. Pass 2 should re-check
+  sub-notes/footnotes on borrowings (full maturity schedule tables were
+  skimmed for repetition), MSME ageing at the consolidated level (not
+  located as a separate reconciled table), and the bonus-share-to-P&L
+  direct reserve adjustment (Rs 155.60L) tied to Trident Mediquip's stake
+  restructuring.

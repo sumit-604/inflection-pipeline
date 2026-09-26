@@ -1,0 +1,16 @@
+company: Trident Lifeline Ltd
+ticker: TLL
+cmp: 408.0
+market_cap_cr: 487.0
+run_date: 2026-09-26
+run_type: full
+listed_date: "2022-09-09"   # BSE SME IPO listing (FY26 AR, company overview). 4 years before run_date: prospectus not mandatory; held anyway in inputs/prospectus/
+concalls_available: false   # no earnings-call transcript filed on BSE (scrip 543616) Sep-2024 to Sep-2026; screener lists PPTs only. NO-CONCALL MODE.
+sector_cap_row: "Pharma / CDMO"   # set at /step1 Step D from section-1b chunk 05 (38x); stage 0 confirms
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, LINCOLN:Profit & Loss, LINCOLN:Quarters, LINCOLN:Balance Sheet, LINCOLN:Cash Flow, LINCOLN:Customization, INNOVACAP:Profit & Loss, INNOVACAP:Quarters, INNOVACAP:Balance Sheet, INNOVACAP:Cash Flow, INNOVACAP:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Main URL is screener CONSOLIDATED (/company/543616/consolidated/): five subsidiaries report into it. BSE SME listed; results are half-yearly with a voluntary Q1. Peers CAPLIPOINT, SENORES, INNOVACAP (LINCOLN rejected: one transcript in 12 months). Collected from screener.in by collect_to_repo.py v3, repaired at /step1 intake from BSE and SEBI."

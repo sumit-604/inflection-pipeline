@@ -1,0 +1,68 @@
+stage: B08-promoter
+company: "TLL"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "Pledge % NOT FOUND: no pledge column in FY26 AR Note 1.6 shareholding table; the corpus's only shareholding source is a non-filing screener aggregate (B00/B03 gap, carried forward). Cannot evaluate the pledge >40% deal-breaker test."
+  - "Ashish Anandsingh Bafna (Executive Director/CFO, DIN 01796556) vs statutory auditor 'A Bafna & Associates' (FRN 121901W): same-surname lead investigated via web search and AR Reg 30 disclosures; NOT FOUND either way. Needs an ICAI/MCA firm-partner lookup, not available this session."
+  - "FY26 AR's own Board-of-Directors table (item 14) swaps Shravan H Patel and Rupaben Chetan Jariwala's titles/DINs versus the signature block, KMP list, and remuneration Annexure-A (all three of which agree Shravan Patel is MD, DIN 08629141). Internal AR inconsistency, not resolved this pass; MCA DIN lookup would settle it."
+  - "No direct-tool access this session to the SEBI enforcement/adjudication order database, MCA/RoC litigation and DIN-master lookup, NCLT case database, SCORES complaint database, or ICAI firm registry. General web search substituted throughout; absence-of-hit findings from general web search carry lower confidence than a direct database negative."
+  - "Hardik Desai's educational background (B.Com, Veer Narmad South Gujarat University) sourced only from an aggregator (rocketreach.co), UNVERIFIED tier, not cross-checked against a primary filing."
+  - "Glassdoor/AmbitionBox employee-reputation data: NOT FOUND, company likely too small (46 employees) for a meaningful review base."
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CAUTION"
+    top_findings:
+      - "Rs 5 Cr corporate guarantees (Rs 2.5 Cr each) plus RPT sales at 12.2% of FY26 consolidated revenue routed through two non-consolidated, promoter-partner LLPs, Talon Healthcare LLP and Tench Life Sciences LLP (VERIFIED, Reg 30 filing 12-Mar-2025: 'Promoters of the Company are also partner in the LLP')"
+      - "Two Section 197 excess director-remuneration breaches in FY26 (Hardik Desai Rs 22.62L, Ashish Bafna Rs 6.37L pending AGM ratification), self-flagged by the statutory auditor rather than the company"
+      - "NRC understaffed below the Section 178 minimum for ~7 months (22-Nov-2025 to 13-Jun-2026)"
+      - "Rising unsecured loan from Chairman Hardik Desai, repayable on demand (Rs 491L FY25 to Rs 1,353L FY26 drawn per Note 30, carried from B02/B03)"
+      - "Genuine, dated transition evidence exists: two credentialed outside Independent Directors added 13-Jun-2026 (ex-Yes Bank Fellow CA; pharma-industry veteran ex Sun Pharma/GSK/Boehringer/UCB/Reckitt), a professionally qualified CFO (Fellow ICAI, IBBI insolvency professional), one family board seat vacated (Maniya Desai resigned Nov-2025), and insiders (Hardik Desai, Family Trust, his mother Anjanaben Desai) net ADDING shares through the FY26 dilution rather than selling"
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 6, red: 1}
+deal_breakers:
+  - "SEBI market ban: NOT TRIGGERED (none found)"
+  - "Economic-offence conviction: NOT TRIGGERED (none found)"
+  - "Live SFIO: NOT TRIGGERED (none found)"
+  - "PMLA with attached assets: NOT TRIGGERED (none found)"
+  - "Auditor resignation within 3 years: NOT TRIGGERED (current auditor A Bafna & Associates on a running 5-year term to the 2027 AGM, no resignation)"
+  - "Pledge >40%: CANNOT BE EVALUATED, pledge % NOT FOUND this run (see input_gaps); not to be read as cleared"
+  - "Multiple mid-term independent-director exits within 3 years: NOT TRIGGERED (the one board exit in the window, Maniya Desai, was Non-Executive family, not Independent; two Independent Directors were ADDED, none exited)"
+  - "Restatement cutting past profits >10%: NOT TRIGGERED (B02 restatements_found: [])"
+adverse_findings:
+  - {finding: "Corporate guarantees Rs 2.5 Cr each to Talon Healthcare LLP and Tench Life Sciences LLP, both director-interest LLPs, self-disclosed as 'arm's length' without independent substantiation", evidence_tier: "VERIFIED", source: "inputs/announcements/20250312-corporate-guarantee.txt", date: "2025-03-12"}
+  - {finding: "Two Section 197 excess director-remuneration breaches in FY26 (Hardik Desai Rs 22.62L, Ashish Bafna Rs 6.37L), the latter without prior approval and pending FY26 AGM ratification", evidence_tier: "VERIFIED", source: "Annual_Report_2026.txt, Directors' Report/Auditor's Report, p.26-27", date: "FY26 AR, filed 2026-09-04"}
+  - {finding: "NRC understaffed below the Section 178 minimum (2 of required 3 members) for approximately 7 months", evidence_tier: "VERIFIED", source: "Annual_Report_2026.txt, Secretarial Audit Report observation, p.28", date: "2025-11-22 to 2026-06-13"}
+  - {finding: "Promoter-group entity count (5 body corporates, 4 LLPs, 8 partnership firms, 4 HUFs, 3+ proprietorships) disproportionate to company size, disclosed since the 2022 prospectus", evidence_tier: "VERIFIED", source: "TLL-prospectus-2022.txt, p.212-214", date: "2022 (pre-IPO, standing since)"}
+  - {finding: "Warrant-proceeds utilisation only 57.5% by FY26 year-end, disclosed in one vague line with no category breakdown", evidence_tier: "VERIFIED", source: "Annual_Report_2026.txt, Directors' Report item 5, p.20", date: "FY26 AR"}
+  - {finding: "FY26 AR's own Board-of-Directors table swaps Shravan Patel/Rupaben Jariwala titles and DINs versus the signature block, KMP list, and remuneration table in the same document", evidence_tier: "VERIFIED", source: "Annual_Report_2026.txt, Directors' Report item 14 vs signature block/Annexure-A", date: "FY26 AR"}
+  - {finding: "Rising unsecured, on-demand loan from Chairman Hardik Desai (Rs 491L FY25 to Rs 1,353L FY26 drawn)", evidence_tier: "VERIFIED (carried from B02/B03, Note 30B/C)", source: "Annual_Report_2026.txt, Note 30B/C", date: "FY26 AR"}
+transition_evidence:
+  - "Two new Independent Directors with genuine external, sector-relevant credentials appointed 13-Jun-2026: Smita Kiran Davda (Fellow CA, ex-Yes Bank senior credit/risk leadership) and Sachin Bhandari (pharma-industry veteran, prior roles at Sun Pharmaceutical Industries, GSK, Boehringer Ingelheim, UCB Pharma, Reckitt Benckiser). Source: inputs/announcements/20260613-change-in-management.txt."
+  - "Professionally credentialed CFO (Fellow ICAI, DISA, CAAT, IBBI-registered Insolvency Professional) elevated to Executive Director, a qualified outside hire into a family-controlled board, appointed 01-Sep-2025. Source: inputs/announcements/20250901-change-in-directorate.txt."
+  - "One family board seat vacated: Maniya Hardik Desai (Chairman's spouse) resigned as Non-Executive Director 21-Nov-2025; the NRC was subsequently reconstituted with the new outside Independent Director, not a family replacement. Source: inputs/announcements/20251121-allotment-and-director-resignation.txt."
+  - "Insiders (Hardik Desai personally, the Hardik Desai Family Trust, and Hardik's mother Anjanaben Desai) show documented warrant-conversion and open-market/off-market share ACQUISITIONS through 2025-2026, net adding rather than selling through the FY26 promoter dilution. Source: inputs/announcements/20250703-reg29-2.txt; scanx.trade (MEDIA REPORTED tier for the Mar-2026 item)."
+  - "Main-board migration from BSE SME to BSE/NSE main board approved by postal ballot (outcome 17-Jul-2026), which removes the Reg 15(2)(b) SME Corporate Governance exemption once effective. Source: B00-inputs.yaml exchange_status; inputs/announcements/20260615-postal-ballot-notice.txt."
+pledge_pct_latest: "NOT FOUND"
+pledge_trend: "NOT FOUND - no pledge column in the FY26 AR Note 1.6 shareholding table or the screener aggregation table; the filed shareholding pattern with a pledge column is absent from this run's corpus (carried from B00/B03 input_gaps). Do not treat as zero; treat as unresolved."
+searches_performed:
+  - "Hardik Desai Trident Lifeline promoter SEBI"
+  - "\"Trident Lifeline\" SEBI order OR NCLT OR fraud OR litigation"
+  - "\"A Bafna & Associates\" chartered accountant Surat \"Ashish Bafna\""
+  - "\"Ashish Anandsingh Bafna\" director CFO"
+  - "WebFetch: marketscreener.com insider network page for Ashish Anandsingh Bafna (result assessed unreliable/likely fabricated, discarded)"
+  - "\"Trident Lifeline\" Glassdoor OR AmbitionBox employee reviews"
+  - "\"Trident Lifeline\" promoter pledge shares"
+  - "\"Trident Lifeline\" IiAS OR SES OR InGovern OR proxy advisory"
+  - "Trident Lifeline BSE price movement clarification September 2026"
+  - "\"Hardik Desai\" \"Trident Lifeline\" interview career background founder"
+searches_skipped:
+  - "Direct SEBI enforcement/adjudication-order database query (no tool access; general web search substituted)"
+  - "Direct MCA/RoC litigation and DIN-master-data lookup (would resolve both the Board-table DIN swap and the Bafna surname question definitively; no tool access)"
+  - "Direct NCLT case database query (no tool access)"
+  - "Direct SCORES complaint database query (no tool access)"
+  - "ICAI firm-partner registry lookup for FRN 121901W, A Bafna & Associates (no tool access)"
+  - "Targeted court-record database search (indiankanoon.org or equivalent) beyond the general web searches already run"
+verdict_basis: "RPT/guarantee concentration with two director-interest LLPs (Rs 5 Cr guarantees, 12.2% of FY26 revenue in RPT sales) plus two Section 197 remuneration breaches and a 7-month NRC understaffing outweigh the absence of any SEBI/criminal/NCLT/PMLA/SFIO hit; genuine, dated transition evidence (credentialed new independent directors, professional CFO, insiders adding not selling, one family board seat vacated) keeps this a CAUTION rather than a CONCERN, pending resolution of the pledge-% and auditor-surname gaps."
+analyst_note: "Two items need operator follow-up before Halt 1 sign-off, both unresolved by any tool available this session: (1) whether Executive Director/CFO Ashish Anandsingh Bafna has any family or professional relationship to statutory auditor A Bafna & Associates (FRN 121901W) beyond the shared surname; a confirmed relationship would compound every accounting-quality flag B02/B03 already raised. (2) the FY26 AR's own internal Board-table inconsistency, which reverses Shravan Patel and Rupaben Jariwala's DINs and titles against three other places in the same document; an MCA DIN lookup settles it in minutes. Neither is treated as a deal-breaker here because deal-breakers require confirmed fact, not an open question, per this stage's pipeline-mode rule."

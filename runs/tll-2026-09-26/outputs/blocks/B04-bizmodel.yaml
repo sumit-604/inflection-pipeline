@@ -1,0 +1,76 @@
+stage: B04-bizmodel
+company: "TLL"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Per-unit (per-tablet/per-pack) revenue and cost NOT FOUND in AR or decks; unit economics 3D price/margin-per-unit is qualitative only."
+  - "Facility-by-facility WHO-GMP certification status NOT FOUND in the FY26 AR."
+  - "Registration-to-revenue conversion rate is not a disclosed ratio; no company figure exists to anchor a conversion percentage."
+  - "Explicit distributor credit-period terms (days) NOT FOUND; only the Note 17.1/17.2 ageing schedule and the qualitative Credit and Receivables Risk statement (AR p.22-23) exist."
+  - "Q1 FY27 deck subsidiary pages (Trident Mediquip p.13, TLL Wellness p.15) carry residual 'Lorem ipsum' placeholder text beside real numbers; all deck figures are labelled company claims, not audited."
+  - "Carried from B00-B03: no filed shareholding pattern (screener aggregation only, non-filing); no company concall transcripts (NO-CONCALL MODE); no credit rating exists (FY26 AR Directors' Report item 10)."
+flags:
+  - {type: FLAG-CASH-CARRYFORWARD, reason: "3A/3B name reported CFO as MISLEADING: the undisclosed FY26 AR 'Changes in Working Capital Facilities' addback (Rs 9.46 Cr FY26 / Rs 6.26 Cr FY25) flatters printed CFO in both years; true recomputed CFO is negative both years (B02 rank-1, B03). This caps how DCF can be used (4B: not applicable as primary)."}
+  - {type: FLAG-SUBSIDIARY-GAP, reason: "AOC-1 confirms the deck-vs-delivery gap by subsidiary: Trident Mediquip Rs 27.32 Cr FY26 vs Rs 70 Cr deck peak (~39%, delivering); TNS Pharma Rs 5.77 Cr vs Rs 40 Cr deck peak (~14%, loss-making, negative net worth); TLL Parenterals Rs 0 vs Rs 200 Cr deck peak; TLL Wellness Rs 0.12 Cr vs Rs 10 Cr deck peak; TLL Elements Rs 0.02 Cr vs Rs 20 Cr deck peak, loss-making, negative net worth. Three of five subsidiaries are pre-revenue or near-zero-revenue against materially larger deck-claimed peaks."}
+  - {type: FLAG-MARGIN-SOURCE, reason: "FY26 EBITDA margin gain (+470bps to 21.8%) came entirely from overhead absorption (employee costs -11%, other expenses -5%) while gross margin fell 690bps to 40.7% (AR MD&A p.17); this margin-gain source is finite and not pricing-power-driven, relevant to any forward margin assumption downstream."}
+business_type: manufacturing
+revenue_streams:
+  - {name: "Pharma formulations, export (parent + TNS Pharma)", type: "product sale, transactional", pct_of_revenue: 51, predictability: "M"}
+  - {name: "Pharma formulations, domestic (parent)", type: "product sale, transactional", pct_of_revenue: 49, predictability: "M"}
+  - {name: "Medical devices (Trident Mediquip, 59.77-60% owned)", type: "product sale, transactional", pct_of_revenue: 21.2, predictability: "M"}
+  - {name: "Injectables (TLL Parenterals, 51% owned, pre-revenue)", type: "product sale, pre-revenue", pct_of_revenue: 0, predictability: "L"}
+  - {name: "Herbal/nutraceutical (TLL Wellness, 51% owned)", type: "product sale, pre-revenue", pct_of_revenue: 0.1, predictability: "L"}
+  - {name: "Cosmetics (TLL Elements, 100% owned, YES brand)", type: "product sale, nascent brand, loss-making", pct_of_revenue: 0.02, predictability: "L"}
+asset_intensity: medium
+wc_intensity: high
+pricing_power: weak
+cyclicality: secular-growth
+moats_present:
+  - {moat: "Registrations/intangible-asset base (1,091 products registered, 2,534 in process, 46 countries, AR p.6/27)", durability: "strongest of eight standard types; multi-year to replicate"}
+  - {moat: "Regulatory/legal barriers (WHO-GMP certification, country-by-country registration)", durability: "moderate, not exclusive to TLL"}
+  - {moat: "Distribution/channel access (46-country distributor network)", durability: "moderate, offset by named customer-concentration risk"}
+valuation_methods:
+  primary: {method: "P/E, relative to CAPLIPOINT/SENORES/INNOVACAP peer set", why: "Genuine, audited, multi-year revenue/EBITDA/PAT growth (+48%/+89%/+84% FY26); earnings is the least-disputed line in this AR, cash flow is the disputed one"}
+  secondary: {method: "EV/EBITDA cross-check vs same peer set", why: "Strips out minority-interest/consolidation noise across five part-owned subsidiaries"}
+  tertiary: {method: "SOTP (sum-of-the-parts)", why: "Five subsidiaries at materially different delivery stages (one near-peak, one loss-making, two pre-revenue, one loss-making pre-revenue); a blended multiple over/under-credits the group"}
+  not_applicable:
+    - "DCF as primary: true consolidated CFO is negative both FY25 and FY26 once the undisclosed cash-flow reclassification is removed, an accounting-artifact base to project from"
+    - "Dividend discount model: zero dividend declared or paid at parent or any of the five subsidiaries (AOC-1)"
+    - "Asset-based/NAV: not a holding-company or asset-revaluation story; value sits in the registration pipeline and subsidiary earnings power"
+irrelevant_ratios:
+  - "Reported headline CFO as printed: flattered by an undisclosed reclassification line in both FY25 and FY26 (B02/B03)"
+  - "Standalone-only P&L ratios: understate the group story carried by five subsidiaries against the consolidated Rs 129.0 Cr base"
+  - "Gross margin trend read alone: inverts the real signal without the offsetting overhead-leverage move (EBITDA margin rose while gross margin fell FY26)"
+  - "Domestic-peer receivable-turnover benchmarks: TLL's book is semi-regulated export-distributor credit, not comparable to a domestic norm"
+  - "AR's own printed Return on Equity Ratio line (0.31/31%, MD&A p.28): internally inconsistent with the AR's own 22.2% ROE figure elsewhere, apparent PBT vs PAT basis mismatch"
+  - "The AR's single-operating-segment framing: masks real economic differentiation across five subsidiaries at very different delivery stages"
+  - "Promoter shareholding stability as a comfort signal: moved continuously ~70% to ~62.6% through repeated warrant/preferential allotments, not a stable base"
+must_track_metrics:
+  - {metric: "True CFO (ex the undisclosed reclassification line) vs PAT", healthy: "CFO/PAT approaching 0.7-0.8 on a like-for-like recomputation", red_flag: "stays negative or the reclassification line recurs/grows without a restatement note"}
+  - {metric: "Debtor days / >6-month receivables ageing bucket", healthy: ">6-month bucket stable or falling as % of book", red_flag: "debtor days expand past 208 or the >6-month bucket reverses above FY26's 6.1%"}
+  - {metric: "Revenue actually booked at TLL Parenterals and TLL Wellness", healthy: "any revenue > Rs 0 within FY27", red_flag: "still Rs 0 by H1/H2 FY27 against the company's own FY27 commissioning claim"}
+  - {metric: "Cost of materials as % of revenue", healthy: "growing in line with or slower than revenue", red_flag: "materials cost growth continues to outpace revenue growth (already true FY26: 68% vs 48%)"}
+  - {metric: "Corporate guarantee quantum to Talon Healthcare LLP / Tench Lifesciences LLP", healthy: "no growth in outstanding guarantee quantum", red_flag: "any drawdown or expansion of these non-consolidated related-party guarantees"}
+unit_economics:
+  unit: "one registered product in one country (best available unit; per-tablet/per-pack pricing not disclosed)"
+  revenue_per_unit: "NOT FOUND"
+  margin_per_unit: "NOT FOUND"
+  key_lever: "Registration-to-revenue conversion and subsidiary capacity utilisation; FY26 EBITDA margin gain came entirely from overhead absorption (employee costs -11%, other expenses -5%) while gross margin fell 690bps, a finite margin-gain source distinct from pricing power (AR MD&A p.17)"
+first_deterioration_signals:
+  - {risk: "Revenue model: distributor/geography concentration swing", first_signal: "sudden swing in single-country revenue share in the Note 31 geography table"}
+  - {risk: "Margin: competitive/generic pricing pressure", first_signal: "cost of materials % of revenue rising past FY26's ~59.3%"}
+  - {risk: "Balance sheet: receivables/debtor days expansion", first_signal: ">6-month ageing bucket reversing its FY26 improvement (13.1% to 6.1%)"}
+  - {risk: "Execution: subsidiary commissioning delay", first_signal: "zero/near-zero revenue from Parenterals/Wellness in Q1-Q2 FY27 results"}
+  - {risk: "Structural: registration/regulatory setback in a key market", first_signal: "drop in countries served (currently 46) or a de-registration event in a future AR"}
+  - {risk: "Earnings-quality: cash-flow presentation risk (added, load-bearing per B01-B03)", first_signal: "the 'Changes in Working Capital Facilities' line (or successor) recurring in the FY27 AR without a restatement note"}
+mgmt_questions:
+  - "What are the actual credit terms offered to export distributors (Venezuela/Africa), and why has consolidated debtor days risen from 116 to 208?"
+  - "What is the realistic, committed (not peak-target) revenue trajectory for TLL Parenterals in FY27, and what off-take is already signed against the debt already drawn on the plant?"
+  - "Of the 1,091 registered products, how many generated any revenue in FY26, and what is the average lag from registration to first commercial sale?"
+  - "Is FY26's overhead-driven EBITDA margin gain (employee costs -11%) repeatable, or was it a one-off cut against a 690bps gross margin decline?"
+  - "What is the true, restated FY25/FY26 operating cash flow excluding the Changes in Working Capital Facilities line, and will FY27 disclose this as a named, explained line?"
+  - "What is the business rationale, exit plan, and cap on the corporate guarantees to Talon Healthcare LLP and Tench Lifesciences LLP?"
+  - "Does management expect the domestic segment (now 49% of revenue, up from 30%) to converge with or diverge from the export segment's margin and working-capital profile?"
+one_line_verdict: "A registration-driven export grower whose reported cash conversion is an accounting artifact and whose four newer subsidiaries mostly have not yet delivered."
+analyst_note: "Business-model read leans on AOC-1 (subsidiary-level audited figures) more than the Q1 FY27 deck, because two deck pages carry literal placeholder text beside the real numbers. AOC-1 independently confirms the B02/B03 subsidiary build-vs-delivery gap at the individual-subsidiary level, which B02/B03 stated only at the aggregate/AR level: Mediquip is the one real delivery story (~39% of its own deck-claimed peak already), TNS Pharma is loss-making with negative net worth despite fresh capital injected in the year, and Parenterals/Wellness/Elements are effectively pre-revenue. This sharpens rather than repeats the earlier flags: the valuation handoff (4B) should not apply one blended multiple across all five subsidiaries. Pricing power is classified weak, not price-taker, because the registration base does give TLL some country-level exclusivity even though it cannot raise price on the product itself; this is a judgment call the verifier should check against Section 1B's converter-vs-non-converter classification test."

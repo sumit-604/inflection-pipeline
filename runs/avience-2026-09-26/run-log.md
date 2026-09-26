@@ -5,3 +5,4 @@
 - collector (dry-run): screener "Annual Report 2026" x2 were 3-page Reg 30 intimations, not the AR; announcements/ empty (no BSE code). Repaired by hand from NSE (AR, RHP, three FY26 results filings, 11 Reg 30 filings, SHP XBRL). Two byte-identical intimation duplicates removed in the phase 1 commit.
 - tooling: pdftotext exit 127; pymupdf extraction to page-marked .txt; image-only pages (RHP pdf 279-362 restated statements, 23 deck slides, 17-Jul results) rendered to PNG under inputs/_render/ (local, git-excluded).
 - stage 0: run inline by the orchestrator. Corpus commit 9ae79ec7.
+- stage 1: block file wrapped in markdown code fences; orchestrator removed the fence lines (content unchanged), now parses.

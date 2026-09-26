@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v53";
+const GAME_VERSION = "v54";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -4114,7 +4114,11 @@ class Player {
       if (!steep && ok(nx, body.position.z)) body.position.x = nx;
       if (!steep && ok(body.position.x, nz)) body.position.z = nz;
 
-      if (!this.world.currentRoom) {
+      const zn = this.world.zone;
+      if (!this.world.currentRoom && zn) {
+        body.position.x = THREE.MathUtils.clamp(body.position.x, zn.x - zn.half + 2, zn.x + zn.half - 2);
+        body.position.z = THREE.MathUtils.clamp(body.position.z, zn.z - zn.half + 2, zn.z + zn.half - 2);
+      } else if (!this.world.currentRoom) {
         body.position.x = THREE.MathUtils.clamp(body.position.x, -(WORLD_HALF - 5), WORLD_HALF - 5);
         body.position.z = THREE.MathUtils.clamp(body.position.z, -(WORLD_HALF - 5), WORLD_HALF - 5);
       }
@@ -6758,9 +6762,10 @@ class Game {
     this._loop = this._loop.bind(this);
     this._startPhase(this.phase, true);
     // Picking up a saved day: start where the day left off.
-    if (this.phase === "school" || this.phase === "over") { this.player.group.position.set(SCHOOL.gate.x, 0, SCHOOL.gate.z + 4); this.player._placeCamera(1); }
-    else if (this.phase === "evening" || this.phase === "night") { if (!this.world.currentRoom) this._enterRoom(this.world.doors.find((d) => d.label === "Our Home")); }
-    if (this.progress.away && this.progress.away.city) { try { const aw = this.progress.away; if (this.world.currentRoom) this._exitRoom(); const Z = this._enterCityZone(aw.city, aw.via); const h = Z.places.hotel.door; this.player.group.position.set(h.x, 0, h.z + 2); this.player._placeCamera(1); this._showLandmark && this._zoneLandmark(aw.city); this._awayObjective(); showToast(L("📍 You are still in {c}.", { c: aw.city }), 3000, "good"); } catch (e) { delete this.progress.away; } }
+    if (this.phase === "school") { this.player.group.position.set(SCHOOL.gate.x, 0, SCHOOL.gate.z + 4); this.player._placeCamera(1); }
+    else if (!this.world.currentRoom) this._enterRoom(this.world.doors.find((d) => d.label === "Our Home"));
+    if (this.progress.away) { delete this.progress.away; saveProgress(this.profile, this.progress); }
+    if (false) { try { const aw = this.progress.away; if (this.world.currentRoom) this._exitRoom(); const Z = this._enterCityZone(aw.city, aw.via); const h = Z.places.hotel.door; this.player.group.position.set(h.x, 0, h.z + 2); this.player._placeCamera(1); this._showLandmark && this._zoneLandmark(aw.city); this._awayObjective(); showToast(L("📍 You are still in {c}.", { c: aw.city }), 3000, "good"); } catch (e) { delete this.progress.away; } }
     this.ui.refreshRank();
     requestAnimationFrame(this._loop);
     window.addEventListener("resize", () => this._onResize());

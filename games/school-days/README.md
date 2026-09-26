@@ -711,7 +711,7 @@ All of them are on the big map (G).
 
 - Sleeping in another city no longer sends you home. At night, the Grand
   Hotel in that city has a room (₹300). You wake up in the same city.
-- Close or reload the game while away, and you come back in that city.
+- (v54 changed this: opening the game always starts at home.)
 - While away, the clock says "In <city>" and the goals are about that
   city, never "go to work" in Suryanagar.
 - The airport or station in every city has a "Fly home" or "Take the
@@ -728,6 +728,16 @@ All of them are on the big map (G).
   the Suryanagar one.
 - If anything moves you out of the city you are visiting, the game brings
   you back to that city's Grand Hotel at once.
+
+## Walking in other cities fixed; the game starts at home (v54)
+
+- Walking in a visited city was broken. The movement code held the player
+  inside the Suryanagar map edges, so the first step threw the player out of
+  the city. Now each city uses its own edges. You walk freely in Delhi,
+  Dubai, London and every other city.
+- Opening or reloading the game always starts you in Our Home. During
+  school hours it starts at the school gate. A trip that was not finished
+  is dropped.
 
 ## Files
 

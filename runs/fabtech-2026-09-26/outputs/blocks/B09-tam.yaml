@@ -1,0 +1,92 @@
+stage: B09-tam
+company: "FABTECH"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Share of MEA pharma facility capex actually channelled through third-party turnkey EPC providers (vs in-house/self-build by pharma majors) NOT FOUND; caps Method 1/SAM at the capex-eligible pool, not a further-refined addressable-to-turnkey share."
+  - "R&D share of capex (~20%) applied to net facility-eligible capex is a US-specific CRISIL benchmark, not an MEA-specific figure; applied as a directional proxy only, flagged."
+  - "Revenue for 9 of 10 CRISIL-named competitors (all except Fabtech) NOT FOUND; Method 3 peer-revenue aggregation not usable as a standalone TAM estimate."
+  - "Management's $30bn (MENA/Africa) / $70bn (West) 10-year claim (Aug-2026 call) has no cited source and is not reproduced in the company's own commissioned CRISIL report; NON-ANCHORED, could not be independently verified in this search pass."
+  - "FX rate (~Rs 85/USD) used to convert CRISIL's USD figures to INR Cr is an illustrative approximation, not independently anchored to a dated source."
+  - "Saudi general MEP/civil (SACE) SAM addition and any West-geography revenue are unquantified; not folded into the headline SAM/SOM numbers."
+flags:
+  - {type: FLAG-TAM-MGMT-CLAIM-BORDERLINE, reason: "Management's $30bn MENA/Africa 10yr claim (~Rs 25,500 Cr/yr) is 1.73x the conservative MEA SAM estimate (Rs 14,700 Cr/yr) -- above the 1.5x reasonable threshold, below the 2x inflated threshold; borderline, BROAD credibility read, and not reproduced in the company's own commissioned CRISIL report."}
+  - {type: FLAG-SOM-BELOW-HURDLE, reason: "Normal-band, evidence-consistent SOM growth (13.6% 5yr / 15.4% 3yr CAGR) sits below both FY27 guidance (20-25%) and the strategy's 25% CAGR hurdle. Reaching guidance requires either an aggressive 3-5pp share-gain rate (unevidenced given the flat order book, B07 FLAG-ORDER-BOOK-PLATEAU) or unmodelled SAM-expansion levers (Section 5D) converting to disclosed revenue."}
+  - {type: FLAG-METHOD3-GAP, reason: "Peer revenue aggregation (Method 3) not usable: 9 of 10 CRISIL-named competitors are private with no disclosed financials; the one data point found (Exyte GmbH, ~EUR 7.4bn) is 150x+ Fabtech's scale and spans a broader semiconductor/data-centre mandate, illustrating the competitive tier spread rather than sizing the TAM."}
+em_score_reference: "n/a -- stage 9 does not compute em_score; see B07"
+market_definition: "MEA turnkey EPIV of pharma/biotech/vaccine/animal-health manufacturing facilities (cleanrooms, process, utility/PAW systems), ~89% international revenue concentration, excluding West geography (zero disclosed revenue) and the newly disclosed Saudi general MEP/civil line."
+tam_cr: {conservative: 680000, realistic: 748000}
+sam_cr: 14700
+sam_pct_of_tam: 2.2
+som_3yr_cr: 632
+som_5yr_cr: 779
+som_implied_revenue_cagr: {yr3: 15.4, yr5: 13.6}
+current_sam_share_pct: 2.80
+revenue_headroom_x: 35.8
+tam_growth_pct: 4.5
+runway_class: "STRONG"
+mgmt_claim_cr: 25500
+mgmt_claim_ratio: 1.73
+mgmt_claim_read: "reasonable"
+capacity_check: "B07 capex_embedded_growth_pct NOT APPLICABLE (asset-light EPC, no physical-capacity ceiling). Real constraint is execution/working-capital: order book flat Rs 900-926 Cr for 11 months despite claimed Rs 9,300+ Cr enquiry pipeline (conversion/delivery capacity, not demand, appears binding); FY26 CFO approx Rs 0 on debtor days 182 would need to fund an estimated Rs 100-165 Cr incremental receivables build to reach the SOM 3-5yr revenue band, unevidenced as self-funded. SOM is the optimistic side of this cross-check pending cash-conversion improvement (B00 LBF2)."
+methods_used:
+  - "Method 1: top-down, global and MEA pharma capex (CRISIL MI&A, company-commissioned, Sep-2025), R&D-share subtraction"
+  - "Method 2: bottom-up, project-unit (avg Rs 60 Cr/project from 3 disclosed contract values) x project-equivalents in the MEA capex pool"
+  - "Method 3: peer revenue aggregation -- attempted, NOT USABLE (named gap, see flags)"
+  - "Method 4: import substitution / localisation -- qualitative only, no TAM figure (Saudi Vision 2030 local-content mechanism)"
+  - "Method 5: global benchmark (cleanroom construction market, web search) -- direction-only cross-check, STALE-flagged"
+stale_data_flags:
+  - {datapoint: "CRISIL MI&A industry report (all MEA/global capex figures used in Methods 1-2)", source: "research/CRISIL_Industry_Report_2025-09_company_commissioned.txt", year: 2025}
+  - {datapoint: "Global cleanroom construction market size ($5.4bn base)", source: "web search (MarketsandMarkets/Grand View Research summaries)", year: 2023}
+searches_performed:
+  - "Exyte GmbH annual revenue 2024 2025 billion pharma cleanroom EPC"
+  - "global cleanroom construction market size 2029 pharmaceutical CAGR"
+searches_skipped:
+  - "Independent third-party source for management's $30bn/$70bn 10-year claim: not run: the originating concall cited no source to verify against; treated as NON-ANCHORED per B05 rather than re-searched."
+  - "Revenue for 9 of 10 CRISIL-named private competitors (Telstar/Azbil, ADI, Pharma Access, Nicomac Taikisha, Hvax, Airtech, Integrated Cleanroom, Lotus Technicals): not exhaustively searched given low expected yield for private-company financials; named as a Method 3 gap instead."
+downstream_candidates:
+  - signal: "Saudi Vision 2030 pharma-localisation program milestones (LCGPA/NUPCO local-content rules)"
+    entity_type: "regulatory"
+    demand_link: "Gates whether Saudi tenders require local-entity qualification, directly affecting SACE-entity order eligibility"
+    likely_source: "Saudi Local Content & Government Procurement Authority (LCGPA) / Ministry of Investment Saudi Arabia updates"
+    cadence: "event-driven"
+    shared: false
+  - signal: "AfDB Continental Pharmaceutical and Vaccine Manufacturing Vision (2030) disbursements"
+    entity_type: "macro"
+    demand_link: "$11bn earmarked for African pharma-industry development through 2030, funding the facility-capex pool Fabtech bids into"
+    likely_source: "African Development Bank (AfDB) project database / press releases"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Gavi African Vaccine Manufacturing Accelerator (AVMA) fund disbursements"
+    entity_type: "counterparty"
+    demand_link: "~$1.5bn programme financing African vaccine-plant capex, a plausible funder behind Fabtech's African project wins"
+    likely_source: "Gavi (the Vaccine Alliance) press releases / AVMA programme updates"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Second SACE-linked Saudi civil/MEP order, exchange-filed"
+    entity_type: "counterparty"
+    demand_link: "Directly tests whether the 11-month order-book plateau is resolving; management-claimed, not yet filed"
+    likely_source: "BSE/NSE Reg 30 exchange filing (order-win announcement)"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Named end-customer project awards (West Africa OSD, Saudi Animal Vaccine, North Africa veterinary counterparties)"
+    entity_type: "end-customer"
+    demand_link: "Individual contract awards convert the claimed Rs 9,300+ Cr enquiry / Rs 3,800+ Cr hot-lead pipeline into order-book growth"
+    likely_source: "BSE/NSE Reg 30 exchange filings (order-win announcements)"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Global/MEA pharmaceutical capex tracking refresh"
+    entity_type: "macro"
+    demand_link: "Sets the ceiling on facility-build demand this stage's TAM is built from; CRISIL base (Sep-2025) approaches 2-year staleness"
+    likely_source: "IQVIA Institute / EvaluatePharma industry reports, or a CRISIL/ICRA refresh"
+    cadence: "monthly"
+    shared: false
+  - signal: "KSA National Biotechnology Strategy (2024) implementation milestones"
+    entity_type: "regulatory"
+    demand_link: "Drives biotech/vaccine facility investment in Saudi Arabia, Fabtech's second-largest revenue geography (18.2%, Q1 FY27)"
+    likely_source: "Saudi government / Vision 2030 program office announcements"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Two independent methods (top-down MEA capex, bottom-up project-unit count) converge within 6% on a Rs 14,700-16,900 Cr/yr MEA SAM, which is the load-bearing number here, not the large low-precision global TAM. The resulting SOM CAGR (13.6-15.4%) sits below both FY27 guidance (20-25%) and the strategy's 25% hurdle -- a formal finding for Stage 11, not a quality verdict. Reconciliation requires either disclosed SAM-expansion (West, Saudi civil/MEP, animal health scale) or an aggressive share-gain rate the flat 11-month order book does not yet support."

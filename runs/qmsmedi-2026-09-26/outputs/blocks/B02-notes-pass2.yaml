@@ -1,0 +1,92 @@
+stage: B02-notes
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: pass2_complete
+pass: 2
+note: "Pass 2 of the notes triple-pass (what was missed). Pass 3 (pattern
+  pass + consolidation) has not yet run. This block is a checkpoint for
+  pass 3 continuity, not the final B02-notes block; accounting_quality,
+  red_flags and flags below are PRELIMINARY (pass 1 + pass 2 combined) and
+  must be revisited after Pass 3."
+input_gaps:
+  - "Significant Accounting Policies note confirmed absent by page-by-page
+    trace (auditor's report ends p.92/94, balance sheet opens directly at
+    p.95, notes proper open at p.98 with no policy section in between);
+    no longer flagged as a possible extraction artifact, though a final
+    check against the source PDF page images is still prudent."
+  - "No financial instruments / fair value hierarchy / financial risk
+    management / capital management note found anywhere (standalone or
+    consolidated) - zero hits for fair value hierarchy, Ind AS 107, Ind AS
+    109, categories of financial instruments, or capital management."
+  - "Standalone Note 37 (trade payables ageing) FY26 table is entirely
+    blank (nil in every bucket) despite a real Rs 1,800.39 lakh FY26
+    standalone trade payables balance (Note 7); only the FY25 table in
+    the same note is populated. Consolidated Note 35 is correctly
+    populated for FY26."
+flags:
+  - {type: FLAG-DISCLOSURE, reason: "CARO Annexure A para (i)(c),
+      standalone Independent Auditor's Report p.90, confirms leased
+      buildings exist with duly executed lease agreements, yet zero Ind
+      AS 116 ROU asset, lease liability, or lease note exists anywhere in
+      the balance sheet or notes (standalone or consolidated). Upgraded
+      from Pass 1 Watch to Red Flag: lease existence is now
+      auditor-confirmed, not merely unresolved."}
+  - {type: FLAG-DISCLOSURE, reason: "Accounting policies note confirmed
+      genuinely absent from the filed AR as extracted (page-by-page trace
+      leaves no gap for it), not an extraction artifact."}
+  - {type: FLAG-CASH, reason: "MSME ageing tension reconciled but
+      recharacterised as worse: Note 34(b) (consolidated) states nil
+      principal paid beyond the appointed date, while Note 35 ageing
+      shows Rs 80.90 lakh of MSME dues aged 1-2 years (38.3% of the Rs
+      211.12 lakh consolidated MSME-due total) - the amounts are not late
+      payments, they are unpaid balances still outstanding beyond a year,
+      a worse fact than a mere disclosure inconsistency."}
+accounting_quality: 0        # not assessed; Pass 3 required before scoring
+pass_2_empty: false
+pass_3_empty: false          # not yet run
+top_findings:                # PASS 1 + PASS 2 combined, preliminary, max 15
+  - {rank: 1, finding: "No segment result note exists (standalone/consolidated); only single-segment boilerplate. Note-level cost cross-reference (Note 21/23/24/28) suggests products gross margin compressed ~2.7pp FY25->FY26 while services direct-cost ratio improved, opposite of a naive services-mix-hurts-margin read.", note_ref: "Standalone Note 40 p.112; Consolidated Note 38 p.144; cost cross-ref Note 21/23/24 p.104, Note 28 p.105", rating: "RED", why: "Directly blocks a note-sourced answer to LBF1 (services vs products margin)"}
+  - {rank: 2, finding: "Receivables quality deteriorated sharply: >6-month share of due receivables roughly doubled 14.5%->30.6% YoY; standalone receivables turnover fell 3.51x->2.70x; zero ECL provisioning against a worsening book.", note_ref: "Standalone Note 38 p.111; Consolidated Note 36 p.143; Note 46 p.114", rating: "RED", why: "Feeds FLAG-CASH / LBF2 directly, company-sourced quantification"}
+  - {rank: 3, finding: "Standalone debt service coverage ratio fell below 1x to 0.79x from 2.54x (-69%), company's own computed ratio with management's own remark that profit fell and finance cost rose.", note_ref: "Standalone Note 46, p.114", rating: "RED", why: "Direct, company-sourced evidence of standalone debt-service strain"}
+  - {rank: 4, finding: "Asymmetric working capital squeeze: receivables and inventory turnover both deteriorated while trade payables turnover rose 23.9% (paying suppliers faster); funded partly by a new Rs 1,968.60 lakh bill-discounting facility with zero FY25 balance.", note_ref: "Standalone Note 46 p.114; Standalone Note 6 p.100", rating: "RED", why: "Central to LBF2; collecting slower and paying faster simultaneously is a classic strain signature"}
+  - {rank: 5, finding: "Accounting policies note confirmed genuinely absent (not extraction artifact): page-by-page trace from auditor's report through balance sheet to Note 1 leaves no gap for a policy section. No Ind AS 116 lease note despite CARO confirming leased buildings exist with executed lease agreements; no goodwill impairment test for Rs 2,885.28 lakh consolidated goodwill; no financial instruments/fair value/risk management note anywhere.", note_ref: "Auditor's report p.84/90/92/116; balance sheet p.95; Note 1 p.98; Consolidated Note 9 schedule p.134", rating: "RED", why: "Compounding disclosure-completeness gap across policies, leases, goodwill and financial-instrument risk; CARO's lease confirmation makes the Ind AS 116 gap a live compliance question, not a hypothetical"}
+  - {rank: 6, finding: "Standalone Note 37 (trade payables ageing) FY26 table entirely blank across every bucket despite a real Rs 1,800.39 lakh FY26 standalone trade payables balance; only the FY25 table in the same note is populated. Consolidated Note 35 is correctly populated for FY26, and its 1-2yr MSME-due bucket (Rs 80.90 lakh of Rs 211.12 lakh total) shows aged MSME dues sitting unpaid beyond a year even though Note 34(b) reports nil principal paid beyond the appointed date (a reconciled, not contradictory, but worse fact: unpaid, not merely late).", note_ref: "Standalone Note 37 p.111; Consolidated Note 34 p.141-142, Note 35 p.143", rating: "RED", why: "Standalone-level disclosure gap distinct from the consolidated note, plus confirms a material share of MSME dues has gone entirely unpaid beyond a year"}
+  - {rank: 7, finding: "Saarathi stake-increase consideration reconciled: rights issue LOF states planned Tranche 2 total of Rs 1,400.00 lakh (Rs 10.00 Cr rights-funded + Rs 4.00 Cr internal accruals); actual AR-reported consideration is Rs 1,454.00 lakh, Rs 54 lakh (3.9%) above plan. Company memory's ~Rs 10 Cr described only the funding source, not the full consideration.", note_ref: "Rights Issue LOF p.42 (Objects of Issue); Standalone/Consolidated KAM p.85/p.117; Standalone Note 11 p.101", rating: "GREEN", why: "Fully reconciled, no residual discrepancy; update company memory LBF3 at finalize"}
+  - {rank: 8, finding: "Saarathi standalone net margin ~20.7% (PAT Rs 522.59 lakh on total income Rs 2,520.43 lakh) vs QMS-parent standalone net margin ~4.4%; Saarathi drives ~44% of consolidated PAT.", note_ref: "Independent Auditor's Report Other Matter p.118; Consolidated Note 45 p.147; Standalone Note 29/21/22 p.106/104", rating: "WATCH", why: "Direct evidence the services/PSP subsidiary is far more profitable per rupee than the parent's product-distribution business"}
+  - {rank: 9, finding: "Parent borrows from its own 24%-minority-held subsidiary (ICD Rs 1,644.09 lakh from Saarathi, interest paid Rs 136.61 lakh, year-end payable Rs 1,885.95 lakh); no interest rate disclosed for this facility, unlike the 9% p.a. disclosed on the unrelated One Billion Diagnostics loan.", note_ref: "Standalone Note 3 p.99; Note 31 p.108-109; Note 32 p.109", rating: "WATCH", why: "Related-party fairness question given Saarathi's minority shareholders"}
+  - {rank: 10, finding: "Direct Rs 513.76 lakh debit to consolidated reserves bypassing the P&L for the FY26 Saarathi stake increase (51%->76%).", note_ref: "Consolidated Note 2, p.129", rating: "WATCH", why: "Standard Ind AS 110 mechanics but invisible to a P&L-only reader"}
+red_flags:
+  - "No segment result note at standalone or consolidated level (Note 40 p.112 / Note 38 p.144)"
+  - "Receivables >6-month share doubled YoY, zero ECL provisioning (Note 38 p.111 / Note 36 p.143)"
+  - "Standalone DSCR fell below 1x to 0.79x (Note 46 p.114)"
+  - "Asymmetric working capital squeeze: receivables/inventory turnover down, payables turnover up (Note 46 p.114; Note 6 p.100)"
+  - "Accounting policies note confirmed genuinely absent (not extraction artifact); no Ind AS 116 lease note despite CARO-confirmed leased buildings; no goodwill impairment test; no financial instruments/risk management note"
+  - "Standalone Note 37 FY26 trade payables ageing table entirely blank despite a real Rs 1,800.39 lakh balance; ~Rs 80.90 lakh (consolidated) of MSME dues confirmed unpaid beyond a year"
+questions_for_mgmt:
+  - "The notes carry no segment result by product vs services. Given the products COGS bridge (Note 23/24) implies a ~2.7pp products gross-margin compression while services direct costs improved, what is driving the FY26 consolidated EBITDA margin decline: products, services, or something below the gross-margin line?"
+  - "What is the interest rate on the ICD the parent holds from Saarathi Healthcare (Note 3, standalone, Rs 1,644.09 lakh), and how was it set given Saarathi carries minority shareholders?"
+  - "CARO confirms the Company holds leased buildings under executed lease agreements. Why does no Ind AS 116 right-of-use asset or lease liability appear anywhere in the balance sheet or notes?"
+  - "Standalone Note 37's FY26 trade payables ageing table shows nil in every bucket despite a Rs 1,800.39 lakh year-end balance (Note 7). Please provide the correct FY26 standalone ageing breakdown."
+  - "Consolidated Note 35 shows Rs 80.90 lakh of MSME dues aged 1-2 years, still unpaid at year end. What is the plan and timeline to clear these, and why have they remained unpaid this long?"
+receivables_trend: "deteriorating: consolidated >6-month share of due receivables 14.5% (FY25) -> 30.6% (FY26), roughly doubled (Note 36 p.143 / Note 38 p.111); standalone receivables turnover 3.51x (FY25) -> 2.70x (FY26), -23.1% (Note 46 p.114); unbilled revenue (contract asset within trade receivables) grew 61.2% YoY vs 10.8% consolidated revenue growth"
+restatements_found:
+  - "Note 45 (standalone p.113) / Note 43 (consolidated p.145): 'Previous year figures have been regrouped to comply with current period groupings' - no detail on what was regrouped or its quantum; flagged as unquantified, not confirmed material"
+going_concern_language: "NONE - re-confirmed on pass 2 re-read; only boilerplate Board's Report, CARO, and auditor's-responsibility language, no emphasis of matter or material uncertainty paragraph"
+analyst_note: "Pass 2 (what was missed) complete; Pass 3 (pattern pass +
+  consolidation) has not run in this call. All three items Pass 1 left
+  open are now settled: (1) the accounting policies/Ind AS 116/goodwill
+  impairment absences are confirmed genuine via a page-by-page trace, not
+  extraction artifacts, and the Ind AS 116 gap is now stronger evidence
+  since CARO confirms leased buildings exist; (2) the Saarathi
+  consideration discrepancy is fully reconciled against the rights issue
+  LOF, no residual gap; (3) the MSME ageing tension is reconciled but
+  recharacterised as a worse fact (unpaid beyond a year, not merely paid
+  late), plus a note-attribution correction (the 80.90 lakh figure is
+  consolidated Note 35, not standalone Note 37) and a new standalone-only
+  finding that Note 37's FY26 ageing table is entirely blank. One new
+  category-level gap surfaced this pass: no financial instruments/fair
+  value/risk management/capital management note exists anywhere in the
+  document, despite a material borrowings book and deteriorating
+  receivables. Pass 3 should test all of these against main-statement
+  numbers and look for further contradictions."

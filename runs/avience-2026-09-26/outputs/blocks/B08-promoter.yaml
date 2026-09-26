@@ -1,0 +1,55 @@
+stage: B08-promoter
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Web search cannot reach MCA director-master-data by DIN, SEBI SCORES, or SEBI enforcement full-text search; SEBI/MCA-disqualification clearance rests on RHP's own ICDR-mandated self-declaration plus general web-search corroboration, not a direct portal check."
+  - "RHP litigation figures are as of the May-2026 DD Report date; no live court-record refresh performed for individual case status as of 2026-09-26."
+  - "AIF category holder(s) in the 24-Jun-2026 shareholding pattern (7.2% of post-issue capital) not resolved to named fund(s); the XBRL flat dump aggregates by category only."
+  - "Incoming statutory auditor M.A.M and Associates (FRN 015680N): no track record, size, or client history found via web search."
+  - "Independent directors Om Prakash Pal (DIN 10841456) and Pankaj Sharma (DIN 07077130): other board memberships / domain-expertise track record not cross-checked beyond Avience."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Group Company Imperative Healthcare Pvt Ltd (Deepa Choudhary/Geeta Choudhary, same business line) is NOT covered by the Nov-2024 non-compete agreements that bind the two smaller proprietorships (Ayush Diagnostics, Biocorn Healthcare)", evidence_tier: "VERIFIED", source: "RHP pdf p.272-274", date: "as of RHP, May/Jun-2026"}
+  - {finding: "New Rs 500.00 lakh parent corporate guarantee for subsidiary DR Meditech's ICICI cash-credit facility (Nil FY25), 15.9-18.4% of standalone net worth; advance from subsidiary to parent grew Rs 160.09 lakh to Rs 337.54 lakh (+110.9%)", evidence_tier: "VERIFIED", source: "FY26 AR Note 41/36 standalone p.104-105", date: "FY26 (year ended 31-Mar-2026)"}
+  - {finding: "Rs 51.77 lakh of related-party trade receivables (Ayush Diagnostics, Imperative Healthcare, Biocorn Healthcare) disclosed only at the consolidated level; standalone note states no such receivables exist", evidence_tier: "VERIFIED", source: "FY26 AR Note 20.1/36 consolidated p.135,141-142 vs Note 18.1 standalone p.97", date: "FY26"}
+  - {finding: "Note 40 consolidated FY26 profit-split labels transposed (Holding company generated ~76-77% of group profit, not 24% as printed); Board's Report Section 26a claims the Auditor's Report carries no qualification/adverse remark, directly contradicted by the Auditor's own CARO Annexure 1 summary table listing clause (ii)(b) against the Holding Company", evidence_tier: "VERIFIED", source: "FY26 AR Note 40 p.143-144; Board's Report Sec 26a p.50; Auditor's Annexure 1 p.115-116", date: "FY26 AR, filed 08-Sep-2026"}
+  - {finding: "Non-audit (Special Purpose Audit) fee exceeds statutory audit fee in both FY25 and FY26, gap widening in FY26 (Rs 3.00 lakh audit vs Rs 4.50 lakh special-purpose FY26; Rs 3.00 lakh vs Rs 2.50 lakh FY25)", evidence_tier: "VERIFIED", source: "FY26 AR Note 31 standalone p.100-101", date: "FY25-FY26"}
+  - {finding: "Family holds 4 of 6 board seats plus both executive leadership roles (CMD and Whole-Time Director); no named professional non-family successor to the 58-year-old CMD, who is the sole promoter with a professional finance credential", evidence_tier: "VERIFIED", source: "FY26 AR p.3, RHP pdf p.267-269", date: "as of listing, 2026"}
+  - {finding: "One minor criminal (NI Act, cheque) proceeding against the Company, Rs 81,791, pending; ~16 NI Act/civil-recovery suits filed by the Company/subsidiary against debtors, Rs 18,615 to Rs 8,18,956 per case, corroborating the FLAG-CASH receivables-deterioration finding", evidence_tier: "VERIFIED", source: "RHP pdf p.384-398", date: "as of RHP, May-2026"}
+  - {finding: "Incoming statutory auditor M.A.M and Associates (FRN 015680N) replaces Haribhakti & Co. LLP at term-end (5-year appointment from the 2nd AGM in 2021 through the 7th AGM in 2026); Reg 30 filing frames this as Appointment, not resignation -- this is a clean rotation, named here only because it was tested against the deal-breaker bar and did not trigger it", evidence_tier: "VERIFIED", source: "AGM Notice Item 4, AR pdf p.7-8; Reg 30 filing AVIENBIO_07092026184854 lines 100-105", date: "AGM 30-Sep-2026"}
+transition_evidence:
+  - "New professional CFO (Saurabh Verma, appointed 21-Aug-2024) and Company Secretary/Compliance Officer (Manoj Kumar, appointed 24-Sep-2024), both from outside the promoter family, hired ahead of the public-company conversion (RHP pdf p.266)"
+  - "Alternative Investment Funds hold 395,000 shares (7.2% of post-issue capital) per the 24-Jun-2026 shareholding pattern; individual fund names not resolved from this filing (SHP XBRL AlternativeInvestmentFunds_ContextI)"
+  - "Two independent directors (Om Prakash Pal, Pankaj Sharma) plus new secretarial auditor (GR Gupta & Associates) and new internal auditor (V C A N & CO LLP), all first-time appointments disclosed in the FY26 AR, coincident with listing (AR pdf p.7-8, 50)"
+  - "Zero promoter pledge and no promoter selling in the IPO; pre-IPO private placement (03-Aug-2024) priced identically (Rs 125/share) for the promoters' loan-conversion allotment and the 19 outside investors, no evidence of promoter-favourable cheap allotment (RHP pdf p.86-88)"
+  - "NOTE: statutory auditor transition is from a recognised mid-tier firm (Haribhakti & Co. LLP) to an unverified smaller firm (M.A.M and Associates), which is a neutral-to-negative item on this scan, not an upgrade"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0%; only one shareholding pattern filed since listing (as on 24-Jun-2026), all four encumbrance-type flags (pledge, NDU, other) read false for the promoter/promoter-group category; no history to trend beyond this single point"
+searches_performed:
+  - "Dharam Deo Choudhary Avience Biomedicals promoter"
+  - "Avience Biomedicals SEBI complaint OR fraud OR CDSCO OR blacklist"
+  - "\"Avience Biomedicals\" Janakpuri office closed Justdial"
+  - "\"NPRS Financial Services\" OR \"Stockify Fintech\" SME IPO pre-IPO investor"
+  - "\"Dharam Deo Choudhary\" director companies MCA OR Tofler OR Zauba"
+  - "\"Ram Nagina Choudhary\" OR \"Janardan Pal\" director Avience OR Meditech companies"
+  - "\"M.A.M and Associates\" chartered accountants FRN 015680N"
+  - "Avience Biomedicals IPO GMP listing gain loss investor review 2026"
+  - "DIN 02804625 Dharam Deo Choudhary director"
+  - "Avience Biomedicals Molbio Mindray channel partner distribution agreement diagnostics India"
+  - "Avience Biomedicals AGM 2026 auditor resignation change reason"
+  - "\"Avience Biomedicals\" Glassdoor OR AmbitionBox reviews employees"
+  - "Avience Biomedicals IiAS OR proxy advisory OR SES governance report"
+  - "\"Choudhary Corporation Private Limited\" Odisha struck off OR dormant (spurious match, unrelated entity, ruled out)"
+searches_skipped:
+  - "Direct MCA (mca.gov.in) director-master-data lookup by DIN: no portal-session access from this container"
+  - "SEBI SCORES complaint database and SEBI enforcement-order full-text search: no direct API access"
+  - "Live e-Courts / Delhi HC / District Court record refresh on individual RHP-listed litigation items' current status: RHP figures are as of May-2026 DD Report date only"
+  - "Full Glassdoor/AmbitionBox review text and rating aggregation: search snippets returned page titles only, not review content or scores"
+  - "Name-level identification of the AIF category holder(s) in the shareholding pattern: needs the full SHP Annexure or RTA register, not the XBRL flat dump"
+verdict_basis: "Clean SEBI/criminal/tax record, zero pledge, no promoter selling, and an arm's-length-priced pre-IPO round set a solid floor; a non-compete gap on the one true Group Company, a growing intra-group guarantee and advance, and this AR's own first-year disclosure-integrity gaps (Note 40 transposition; Board's Report vs CARO contradiction) hold this at CAUTION rather than TRUSTWORTHY, with no deal-breaker triggered."
+analyst_note: "The dominant frame is a young, first-year-listed company assembling governance infrastructure (new CFO, CS, two independent directors, new secretarial/internal auditors, all 2024-2026), not a legacy problem promoter proving a turnaround. Every caution item traces to either brand-new infrastructure or a first-year filing slip, not a repeated pattern. The one item worth the operator's own direct check beyond this run: incoming statutory auditor M.A.M and Associates has no findable public track record, taking over from an auditor whose own CARO Annexure already carries an unquantified qualification the Board's Report denies exists."

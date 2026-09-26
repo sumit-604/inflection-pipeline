@@ -11,3 +11,6 @@ does not split input/output; in_tok/out_tok then read n/a).
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 146916 | 9m42s | 2 |
 | 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5 | default | n/a | n/a | 115564 | 7m34s | 3 |
 | 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 185012 | 10m59s | 1 |
+| 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 159733 | 5m58s | 1 |
+| 5 | concall analysis (no-concall mode, 1 transcript) | claude-sonnet-5 | default | n/a | n/a | 128005 | 6m27s | 1 |
+| 8 | promoter check (web) | claude-sonnet-5 | default | n/a | n/a | 166102 | 8m20s | 1 |

@@ -1,0 +1,72 @@
+stage: B04-bizmodel
+company: "AVIENCE"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Investor deck text layer covers only 6 of 29 pages; 23 pages (pdf pp 5-11, 13-28) read as PNG renders per task brief."
+  - "No per-instrument reagent revenue, absolute placed-instrument count, or separately disclosed rental-segment margin exists anywhere in the corpus; only ranges/percentages given by management (call p.6-7)."
+  - "No Reg 30 filing confirms the ~Rs 47 Cr Uttarakhand order (B00 LBF1); rests entirely on the concall and deck."
+  - "No top-10-customer names disclosed (RHP p.34, confidentiality)."
+  - "AR MD&A/Business Performance narrative not independently re-read this stage; AR-sourced figures cited via B02/B03 anchors rather than direct AR page numbers."
+flags:
+  - {type: FLAG-ARCHETYPE, reason: "No CLAUDE.md archetype library entry cleanly fits the embedded reagent-rental (razor-and-blade) placement model nested inside a distribution/agency relationship; named as a library gap for Role 2, not force-fit."}
+  - {type: FLAG-VALUATION, reason: "Sector cap row question is live and unresolved: Pharma/CDMO (38x) is the nearest row for the manufacturing engine, but 72% of FY26 revenue is traded (call p.7), making an Amendment 27.2 SOTP 'Distribution/trading' (20x) slice arguable; Amendment 27.4's 'pure buy-and-sell' boundary text is in tension with the traded slice's AMC/CMC service layer and reagent-rental placement. Operator must rule at /fttcp (carried from B00)."}
+  - {type: FLAG-CONCENTRATION, reason: "Traded engine (72% of FY26 revenue) rides one non-exclusive regional principal, Mindray (63.0% of purchases 10M-FY26, 66.3% FY25, 72.7% FY24, RHP p.36); territory could be reallocated at Mindray's discretion (call p.4)."}
+business_type: "hybrid"
+revenue_streams:
+  - {name: "Traded reagents & consumables (Mindray)", type: "distribution/resale, closed-loop", pct_of_revenue: 59.83, predictability: "M"}
+  - {name: "Traded instruments (Mindray)", type: "one-time sale / capex placement", pct_of_revenue: 12.55, predictability: "L"}
+  - {name: "Manufactured reagents & consumables", type: "manufacturing, own brand", pct_of_revenue: 14.62, predictability: "M"}
+  - {name: "Manufactured rapid cards", type: "manufacturing, transactional", pct_of_revenue: 9.15, predictability: "L/M"}
+  - {name: "Manufactured instruments", type: "manufacturing, one-time/capex", pct_of_revenue: 3.21, predictability: "L"}
+  - {name: "Service (AMC/CMC)", type: "recurring service fee", pct_of_revenue: 0.64, predictability: "M"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "Regulatory/licence (88 CDSCO licences, 9-12mo approval cycle)", durability: "moderate"}
+  - {moat: "Switching cost (5-year reagent-rental lock-in on placed instruments)", durability: "moderate, contract-term-bounded"}
+  - {moat: "Distribution relationship (regional Mindray channel partner)", durability: "weak, explicitly non-exclusive"}
+valuation_methods:
+  primary: {method: "DCF anchored to Section 1B destination-PE cross-check", why: "Thesis is an explicit multi-year mix-shift and margin-transition story; DCF is the only method that carries that path, with Section 1B governing the exit multiple per CLAUDE.md"}
+  secondary: {method: "Peer multiple triangulation (QLINE closest structural mirror; MOLBIO destination-model mirror)", why: "Anchors to real, recently-listed Indian IVD comparables rather than a generic sector average"}
+  tertiary: {method: "SOTP (trading slice vs manufacturing slice)", why: "Live per B00's Amendment 27.2/27.4 question; becomes primary/secondary only if operator rules the 72% traded revenue should be split out at the Distribution/trading row"}
+  not_applicable: ["Asset-based/replacement cost (placed-instrument base is a working asset, not a valuation floor)", "Dividend discount (no stated dividend policy; recently listed, growth-stage)"]
+irrelevant_ratios:
+  - {ratio: "Blended gross margin (single number)", why: "Mixes ~40-60% reagent-rental margin, 30-70% manufacturing margin, and lower-margin pure-trading slice (call p.6-7); hides which engine drives change"}
+  - {ratio: "Revenue growth alone, without mix disclosure", why: "60%+ FY27 guidance driven largely by one Uttarakhand order reads very differently from manufactured-reagent-volume-driven growth"}
+  - {ratio: "Standard manufacturer inventory-turn benchmarks", why: "218 consolidated inventory days partly reflects placement-linked reagent stocking, not pure sell-through inventory"}
+  - {ratio: "PPE/fixed-asset turnover", why: "72% of net standalone PPE sits at third-party customer sites as placed instruments (B02), conflating owned manufacturing assets with placement assets"}
+  - {ratio: "Days payable outstanding as a standalone strength signal", why: "MSME payables grew +314% standalone (B02); may reflect supplier-financing stretch, not negotiating power"}
+must_track_metrics:
+  - {metric: "Manufacturing:trading revenue mix", healthy: "moving toward ~50:50 from ~27:72", red_flag: "stuck near 27:72 past FY27"}
+  - {metric: "Consolidated CFO/PAT ratio", healthy: ">=0.70x sustained", red_flag: "below 0.70x a third straight year (0.478x FY25, 0.675x FY26)"}
+  - {metric: "Trade receivables >6-month aged share (standalone)", healthy: "reversal toward FY25's ~10-18%", red_flag: "further rise past ~40% (was 38.9% FY26)"}
+  - {metric: "YEIDA CWIP-to-PPE capitalisation / commissioning date", healthy: "capitalised and commercial by Oct-2026 per guidance", red_flag: "slippage while SIDBI debt service continues"}
+  - {metric: "Mindray purchase concentration", healthy: "stable or diversifying from 63.0% (10M FY26)", red_flag: "rises back toward FY24's 72.7%"}
+unit_economics:
+  unit: "one placed diagnostic instrument under a 5-year reagent-rental contract"
+  revenue_per_unit: "NOT FOUND (no average contract value or reagent run-rate per placed instrument disclosed)"
+  margin_per_unit: "NOT FOUND at per-unit level; management gives only ranges — rental margins 40-60%, manufacturing margins 30-70% by product (call p.6-7)"
+  key_lever: "number of instruments placed and their attached reagent run-rate, gated near-term by FY27 YEIDA utilisation guided at only 15-20% (call p.6)"
+first_deterioration_signals:
+  - {risk: "Mindray narrows/reallocates the regional channel-partner territory", first_signal: "traded reagents/instruments revenue line (72% of turnover)"}
+  - {risk: "Uttarakhand order slips or undersizes vs guidance", first_signal: "FY27 half-yearly revenue vs the >=60% growth guidance"}
+  - {risk: "Manufacturing:trading mix shift stalls", first_signal: "EBITDA margin flattening or falling despite revenue growth"}
+  - {risk: "YEIDA plant ramps slower than guided", first_signal: "depreciation/finance cost rising ahead of matching revenue"}
+  - {risk: "Cash conversion stays weak", first_signal: "operating cash flow vs reported PAT (CFO/PAT ratio)"}
+  - {risk: "Receivables ageing continues to deteriorate", first_signal: "trade receivables >6-month aged bucket"}
+  - {risk: "Placed-instrument base outgrows verification/collection discipline", first_signal: "CARO qualification language in next audit report; aged-receivable provisioning coverage"}
+  - {risk: "Auditor transition coincides with ramp-year restatement risk", first_signal: "any restated/revised results filing"}
+mgmt_questions:
+  - "Average reagent revenue per placed instrument, and how many instruments are currently placed under active rental contracts?"
+  - "Is the ~Rs 47 Cr Uttarakhand order confirmed in writing, and why no Reg 30 order-win filing since listing?"
+  - "Reagent-rental margin vs manufacturing margin, quarter by quarter, as manufacturing mix rises?"
+  - "Exact rupee amount of the CARO clause (ii)(b) bank stock-statement discrepancy, and has it recurred in H1 FY27?"
+  - "How much of FY26's finished-goods inventory build (+80.9%) has sold through in H1 FY27?"
+  - "Is the Mindray exclusivity/OEM private-label discussion moving to a signed term sheet, and on what timeline?"
+  - "Expected FY27 collection period on government-linked orders, and is the Rs 35-40 Cr working-capital requirement at Rs 100 Cr revenue already arranged?"
+one_line_verdict: "A small, growing IVD hybrid whose margin story depends on a mix shift not yet proven, funded so far by working capital and capex, not cash."
+analyst_note: "No CLAUDE.md archetype library entry cleanly names this business: it is a distribution/agency relationship (Avience as regional Mindray channel partner, non-exclusive) with an embedded razor-and-blade reagent-rental model (free-placed instruments, 5-year locked-in consumables) layered on top of a smaller CDSCO-licensed manufacturing operation. The library's 'Outsourcing partner' archetype describes client concentration from the service-provider side; here Avience depends on Mindray as its PRINCIPAL/supplier, the reverse relationship, so that archetype only partially fits. Flagging this as a genuine library gap for Role 2 rather than forcing a fit. Separately, the sector-cap row question B00 already raised (Pharma/CDMO 38x vs a Distribution/trading 20x SOTP slice for the 72% traded revenue) is the single highest-leverage unresolved question for Stage 11: it alone could swing the destination multiple by roughly half, and Amendment 27.4's 'pure buy-and-sell' boundary text sits in real tension with the traded slice's AMC/CMC service layer and reagent-rental placement structure. Both flags need an explicit operator ruling at /fttcp, not a stage-11 default."

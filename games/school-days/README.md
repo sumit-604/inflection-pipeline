@@ -655,6 +655,18 @@ All of them are on the big map (G).
 - Daily surprise box at home: a new gift every day. Standing at the box,
   E always opens it, even when Gudiya walks close (v46 fix).
 
+## Living in the city: hotel guest room (v47)
+
+- A 3-day or one-week stay is now lived in 3D. You check in at the city's
+  Grand Hotel and get Room 204: a bed, TV, minibar and your suitcase.
+- Each day, go out and explore. The day's event happens in the town: a
+  person walks up (or follows you), or something just happens. Choose.
+- Go back to the Grand Hotel (the compass points to it) and sleep in your bed
+  to start the next day. Check out any time with the suitcase.
+- Events now fit the place: monkeys, weddings and fort guides only in India;
+  abroad you may lose your passport, meet a money-exchange cheat, a seagull
+  chip thief, a language problem, or a castle 'ghost'.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

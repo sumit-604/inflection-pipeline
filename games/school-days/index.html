@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v46";
+const GAME_VERSION = "v47";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -6934,9 +6934,10 @@ class Game {
 
   // ---- Rooms ----
   _enterRoom(door, floor = 0) {
+    if (this._stay && door && door.label === "Grand Hotel" && this._stayDoor) door = this._stayDoor;
     if (this.player.riding) this.player.dismount();
     const room = this.world.getRoom(door, floor);
-    if (!room.occupant && !["mainbuilding", "home", "haveli"].includes(room.type)) {
+    if (!room.occupant && !["mainbuilding", "home", "haveli"].includes(room.type) && !(door.index >= 9000)) {
       const names = OCCUPANTS[room.type] || OCCUPANTS.house;
       const def = { id: "room" + this.world.rooms.size, name: names[this.world.rooms.size % names.length], look: { shirt: [0xe75480, 0x4f772d, 0x3a86ff, 0xffb703][this.world.rooms.size % 4], dress: this.world.rooms.size % 2 === 0, hair: 0x1d1410 }, greet: OCC_GREETS[room.type] || OCC_GREETS.house, pitch: 400 };
       room.occupant = new Npc(def, this.world, { pos: room.occupantPos(), fixed: true }); this.npcs.push(room.occupant);
@@ -6962,6 +6963,7 @@ class Game {
     if (door.label === "Suryanagar Mall") this._mallSetup(room);
     if (door.label === "FitZone Gym") this._gymSetup(room);
     if (room.type === "haveli") this._haveliSetup(room);
+    if (this._stay && door.index >= 9100) this._stayRoomSetup(room);
     if (door.label === "Our Home") this._giftBox(room);
     if (door.label === "Our Home") this._telescopeAt(room);
     if (door.label === "City Hospital") this._bloodCamp(room);
@@ -7414,7 +7416,7 @@ class Game {
   }
   // Every room with no desk of yours gets a seat for you, front right by the door, with an arrow.
   _visitorSeat(room) {
-    if (["home", "mainbuilding", "rooftop"].includes(room.type)) return;
+    if (["home", "mainbuilding", "rooftop"].includes(room.type) || (this._stay && room.type === "hotelroom")) return;
     if (room.playerDesk || (room._openJobs && room._openJobs.length)) return;
     if (!room.visitorSeat) { const lx = room.w / 2 - 1.8, lz = room.d / 2 - 3; room._box(0.55, 0.45, 0.55, 0x3f6f9f, lx, 0.22, lz, false); room._box(0.55, 0.6, 0.08, 0x3f6f9f, lx, 0.7, lz + 0.25, false); const arrow = room._label("▼ " + L("YOUR SEAT"), lx, lz, 2.4, 0.6); room.visitorSeat = { x: room.x0 + lx, z: room.z0 + lz, arrow }; }
     const s = room.visitorSeat; this._seatArrow = s.arrow;
@@ -9045,7 +9047,7 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed); this._tickHaveli(dt); this._tickMission && this._tickMission(dt); this._tickDayClock(dt); this._tickDuty(dt); this._tickExtras(dt);
+    this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed); this._tickHaveli(dt); this._tickMission && this._tickMission(dt); this._tickDayClock(dt); this._tickDuty(dt); this._tickStay(dt); this._tickExtras(dt);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
     if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? (this.world.currentRoom.type === "haveli" ? "haunt" : this.phase === "night" ? "nightroom" : "school") : this.phase);
     musicTick(this._trial ? "stadium" : this.world.currentRoom ? (["canteen", "eatery", "shop", "supermarket"].includes(this.world.currentRoom.type) ? "market" : null) : this.phase === "school" ? "school" : this.phase === "over" ? "evening" : Math.hypot(pp.x - 40, pp.z - 80) < 45 ? "market" : this.phase, dt);
@@ -9834,7 +9836,7 @@ class Game {
   _tickDayClock(dt) {
     const p = this.phase, W = this.working;
     if (p !== this._clkPhase) { this._clkPhase = p; this._dinnerCalled = false; this._tmin = p === "over" ? (W ? 17 * 60 : 12 * 60 + 15) : p === "evening" ? Math.max(this._tmin || 0, W ? 18 * 60 : 17 * 60) : null; if (p === "evening" && this._tmin > 20 * 60) this._tmin = 17 * 60; }
-    if (this._tmin == null || this._cut || this._sim || this._staying || this._uiBlocking() || (this.dialogue && this.dialogue.active)) return;
+    if (this._tmin == null || this._cut || this._sim || this._staying || this._stay || this._uiBlocking() || (this.dialogue && this.dialogue.active)) return;
     if (p === "over") {
       this._tmin += dt * (W ? 1 : 1.6);
       if (this._tmin >= (W ? 18 * 60 : 17 * 60)) { this._tmin = W ? 18 * 60 : 17 * 60; showToast(L("🌇 Evening! The sun is going down. Homework, play, then dinner at 8."), 3800, "good"); this._startPhase("evening"); }
@@ -10107,7 +10109,7 @@ class Game {
     const card = openPanel(`<h2>🏨 ${L("How long will you stay in {c}?", { c: city })}</h2><p class="job-brief">${L("Explore the city, eat the food, see the sights. Keep your eyes open: strange things happen in new places...")}</p><div class="btn-row"><button class="big-btn" id="sy-3">🗓️ ${L("3 days")}</button><button class="big-btn" id="sy-7">📅 ${L("One week")}</button><button class="ghost-btn" id="sy-0">${L("Go home now")}</button></div>`);
     card.querySelector("#sy-0").addEventListener("click", () => { closePanel(); then(); });
     const go = (n) => {
-      closePanel(); this._staying = true; const pool = this._stayEvents(), picks = []; let seed = (pr.day * 7 + (pr.stays || 0) * 3) % pool.length;
+      closePanel(); if (this._stayStart) { this._stayStart(mt, n, then); return; } this._staying = true; const pool = this._stayEvents(), picks = []; let seed = (pr.day * 7 + (pr.stays || 0) * 3) % pool.length;
       while (picks.length < n) { const e = pool[seed % pool.length]; if (!picks.includes(e)) picks.push(e); seed += 5; if (picks.length >= pool.length) break; }
       let wise = 0;
       const day = (k) => {
@@ -10552,6 +10554,75 @@ class Game {
     const gifts = [[L("₹100 from Dadi's secret tin!"), () => this.addMoney(100, L("surprise box"))], [L("A shiny sticker: ⭐ SUPERSTAR. It goes in your album."), () => { pr.stickers = (pr.stickers || 0) + 1; }], [L("A glucose biscuit pack: energy +30!"), () => this.addEnergy && this.addEnergy(30)], [L("A toy car for Gudiya. She hugs you: 'Best brother-sister ever!'"), () => this.addFriendship && this.addFriendship("family", 2, L("gift"))], [L("₹50 and a note from Papa: 'Proud of you.'"), () => this.addMoney(50, L("surprise box"))], [L("A mystery comic book! Story time tonight."), () => { pr.comics = (pr.comics || 0) + 1; }]];
     const [msg, fn] = gifts[k]; fn(); saveProgress(this.profile, pr); if (room._gift) room._gift.g.visible = false; playSuccess(); this._snap && this._snap("🎁", "Opened the daily surprise box."); this._scareFlash && 0;
     this.dialogue.say(L("🎁 Surprise box"), [L("(You pull the ribbon... the lid pops open!)"), msg, L("Come back tomorrow for another surprise!")], null, { pitch: 480 });
+  }
+  // ---- Living in a city: a real hotel guest room, going out, meeting the day's event, sleeping ----
+  _stayPool(abroad) {
+    const inIcons = ["🐒", "💃", "🧭", "👰"], E = (icon, kind, s, o) => ({ icon, kind, s, o, where: "ab" });
+    const base = this._stayEvents().map((e) => ({ ...e, where: inIcons.includes(e.icon) ? "in" : "both" }));
+    const ab = [
+      E("🛂", "serious", L("Oh no! You cannot find your passport!"), [[L("Stay calm, check your bag and the hotel safe, then tell the hotel and the Indian Embassy"), true, L("It was in the hotel safe! Always keep the passport locked and a photocopy with you.")], [L("Panic and cry in the street"), false, L("Crying does not find passports. You calm down and check the hotel safe: there it is.")]]),
+      E("💱", "serious", L("A man offers: '1 pound for 50 rupees, very good rate!' The bank board says 1 pound = 105 rupees."), [[L("Change money only at the bank or an official counter"), true, L("The bank gives the fair rate. The man was cheating tourists.")], [L("Take his 'good' offer"), false, L("You lose half your money! Always use official exchange counters.")]]),
+      E("🐦", "funny", L("A big seagull swoops down and steals your chips!"), [[L("Laugh, and eat inside next time"), true, L("Seagulls are chip thieves! Eat inside or cover your food.")], [L("Chase the seagull down the street"), false, L("It flies over the river. The chips are gone. Everyone laughs.")]]),
+      E("🗣️", "funny", L("You need the washroom, but nobody understands Hindi!"), [[L("Use simple English: 'Where is the toilet, please?'"), true, L("'Just there, on the left!' Simple English and a smile work everywhere.")], [L("Act it out with big dance moves"), false, L("People are very confused... but one kind lady points the way. Phew!")]]),
+      E("🏰", "ghost", L("Night tour of an old castle. A suit of armour... MOVES!"), [[L("Stay with the group and ask the guide"), true, L("It was an actor inside the armour! 'BOO! Welcome to the castle tour!' Everyone screams, then laughs.")], [L("Run off alone into the dark corridors"), false, L("You get lost in the corridors! The guide finds you with a torch. Always stay with the group.")]]),
+      E("🚶", "following", L("Someone keeps walking behind you near the metro. You feel uneasy."), [[L("Walk into a busy shop and tell the staff"), true, L("The staff watch the door. The person goes away. Stay where people are.")], [L("Take an empty back street"), false, L("Wrong way! You run back to the busy main road. Empty streets are never safer.")]]),
+    ];
+    return [...base, ...ab].filter((e) => e.where === "both" || e.where === (abroad ? "ab" : "in"));
+  }
+  _stayStart(mt, n, then) {
+    const city = (mt && mt.city) || "the city", s3 = (mt && mt.s3) || ["The sights.", "The streets.", "The food."], pr = this.progress, abroad = ABROAD_CITIES.some((c) => c[0] === city);
+    const pool = this._stayPool(abroad), picks = []; let seed = ((pr.day || 1) * 7 + (pr.stays || 0) * 3) % pool.length;
+    while (picks.length < n && picks.length < pool.length) { const e = pool[seed % pool.length]; if (!picks.includes(e)) picks.push(e); seed += 5; }
+    while (picks.length < n) picks.push(pool[picks.length % pool.length]);
+    const hd = this.world.doors.find((d) => d.label === "Grand Hotel"); if (!hd) { then(); return; }
+    this._stayDoor = { x: hd.x, z: hd.z, rot: hd.rot, label: L("{c} Grand Hotel · Room 204", { c: city }), type: "hotelroom", floors: 1, index: 9100 + (pr.stays || 0) };
+    this._stay = { city, n, day: 1, picks, wise: 0, then, s3, abroad, evDone: false, evT: 6, npc: null }; this._staying = true;
+    if (this.world.currentRoom) this._exitRoom(); if (this.player.riding) this.player.dismount();
+    this.player.group.position.set(hd.x, 0, hd.z + 2); this._enterRoom(hd);
+    this.dialogue.say(L("Hotel reception"), [L("Welcome to the {c} Grand Hotel! Room 204 is yours for {n} days.", { c: city, n }), L("Your bed, your suitcase, a TV and a window. Go out and explore {c} every day. Come back here to sleep.", { c: city }), L("🔑 Here is your key card. Enjoy your stay!")], null, { pitch: 450 });
+  }
+  _stayRoomSetup(room) {
+    const S = this._stay; if (!S) return; const at = (lx, lz) => this._nearSpot(room, room.x0 + lx, room.z0 + lz, [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [1.5, 1.5]]);
+    if (!room._stayBag) { try { const bag = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.9, 0.35), new THREE.MeshStandardMaterial({ color: 0x9b2226 })); const sp = at(3, 2); bag.position.set(sp.x - room.x0, 0.45, sp.z - room.z0); room.group.add(bag); room._stayBag = sp; } catch (e) { room._stayBag = at(3, 2); } }
+    const bed = at(-2.8, -0.6);
+    this.roomInteractables.push({ pos: bed, radius: 2.2, priority: 1, prompt: () => (this._stay ? L("🛏️ Sleep: end Day {d} of {n}", { d: this._stay.day, n: this._stay.n }) : ""), activate: () => this._staySleep() });
+    this.roomInteractables.push({ pos: room._stayBag, radius: 2.0, priority: 1, prompt: () => (this._stay ? L("🧳 Check out and go home") : ""), activate: () => this._stayCheckout() });
+    this.roomInteractables.push({ pos: at(1.8, -2.2), radius: 1.8, prompt: () => L("📺 Watch the local TV"), activate: () => showToast(S.abroad ? L("📺 The weather man says: 'Rain later, take a brolly!' (A brolly is an umbrella.)") : L("📺 A cooking show: how to make the city's famous street food!"), 3600) });
+    this.setObjective(this._stay.evDone ? L("🛏️ Day {d}: sleep in your bed when you are ready", { d: this._stay.day }) : L("🚪 Day {d} of {n}: go out and explore {c}!", { d: this._stay.day, n: this._stay.n, c: this._stay.city }), null);
+  }
+  _tickStay(dt) {
+    const S = this._stay; if (!S) return; const out = !this.world.currentRoom, pp = this.player.position;
+    if (!out || S.evDone || this._cut || this._sim || this._uiBlocking()) return;
+    if (!S.npc) { S.evT -= dt; if (S.evT > 0) return; const e = S.picks[S.day - 1];
+      if (["🔋", "🛂", "🗣️", "🌶️", "🚿", "👣", "🏰"].includes(e.icon)) { this._stayEvent(e); return; }
+      const cy = this.player.camYaw || 0, vx = -Math.sin(cy), vz = -Math.cos(cy); let x = pp.x + vx * 10, z = pp.z + vz * 10; if (!this.world.isWalkable(x, z)) { x = pp.x + 4; z = pp.z + 4; }
+      const small = ["🐒", "🐶", "🐦"].includes(e.icon), g = makeVillager({ shirt: small ? 0x8b5a2b : [0x111111, 0x3a86ff, 0xe75480, 0x6a994e][S.day % 4], trousers: small ? 0x8b5a2b : 0x333333, hair: 0x1d1410 }); if (small) g.scale.setScalar(0.45);
+      try { const t = makeTextSprite(e.icon, { size: 90, scale: 0.9 }); t.position.y = small ? 5.5 : 2.9; g.add(t); } catch (err) { /* icon optional */ }
+      g.position.set(x, 0, z); this.world.scene.add(g); S.npc = { g, e, x, z };
+      const tag = { following: L("🕵️ Someone is following you..."), ghost: L("👻 Something spooky ahead..."), funny: L("😂 Something funny is happening ahead!"), serious: L("⚠️ Something serious ahead!") }[e.kind];
+      showToast(tag + " " + L("Walk up to it."), 3600, e.kind === "funny" ? "good" : "bad"); this.setObjective(tag, x, z); return; }
+    const n = S.npc, g = n.g; if (n.e.kind === "following") { const dx = pp.x - n.x, dz = pp.z - n.z, d = Math.hypot(dx, dz); if (d > 5) { n.x += dx / d * 3 * dt; n.z += dz / d * 3 * dt; } }
+    g.position.set(n.x, Math.abs(Math.sin(performance.now() / 300)) * 0.1, n.z); g.rotation.y = Math.atan2(pp.x - n.x, pp.z - n.z); animateHuman && animateHuman(g, dt, n.e.kind === "following", 0.8);
+    if (Math.hypot(pp.x - n.x, pp.z - n.z) < (n.e.kind === "following" ? 6 : 3)) this._stayEvent(n.e);
+  }
+  _stayEvent(e) {
+    const S = this._stay; if (!S || S.evOpen) return; S.evOpen = true;
+    const c = openPanel(`<h2>📅 ${L("Day {d} of {n} in {c}", { d: S.day, n: S.n, c: S.city })}</h2><p class="job-brief">${e.icon} ${e.s}</p><div class="btn-row">${e.o.map((o, i) => `<button class="big-btn" id="se-${i}">${o[0]}</button>`).join("")}</div><div class="job-goal" id="se-out" hidden></div><div class="btn-row"><button class="big-btn" id="se-next" hidden>${L("OK")}</button></div>`);
+    e.o.forEach((o, i) => c.querySelector(`#se-${i}`).addEventListener("click", () => { if (c._done) return; c._done = true; if (o[1]) { S.wise++; playSuccess(); } else Audio.playRetry(); if (e.kind === "ghost") this._scareFlash(); const out = c.querySelector("#se-out"); out.hidden = false; out.textContent = (o[1] ? "✅ " : "❌ ") + o[2]; for (let j = 0; j < e.o.length; j++) { const b = c.querySelector(`#se-${j}`); if (b) b.disabled = true; } c.querySelector("#se-next").hidden = false; }));
+    c.querySelector("#se-next").addEventListener("click", () => { closePanel(); S.evOpen = false; S.evDone = true; if (S.npc) { this.world.scene.remove(S.npc.g); S.npc = null; } const hd = this._stayDoor; this.setObjective(L("🏨 Explore more, then back to the Grand Hotel to sleep"), hd.x, hd.z + 2); showToast(L("🏙️ Enjoy {c}! When you are tired, go back to the Grand Hotel and sleep in Room 204.", { c: S.city }), 3800, "good"); });
+  }
+  _staySleep() {
+    const S = this._stay; if (!S) return; if (!S.evDone && S.npc) { this.world.scene.remove(S.npc.g); S.npc = null; }
+    S.day++; this.addEnergy && this.addEnergy(40); this._scareFlash && this._scareFlash();
+    if (S.day > S.n) { this._stayCheckout(true); return; }
+    S.evDone = false; S.evT = 6; S.evOpen = false; const sight = L(S.s3[(S.day - 1) % S.s3.length]);
+    this.dialogue.say(L("Room 204"), [L("🌙 You brush your teeth and sleep in the soft hotel bed..."), L("☀️ Good morning! Day {d} of {n} in {c}.", { d: S.day, n: S.n, c: S.city }), L("Today: {s}", { s: sight }), L("🚪 Go out and explore. Keep your eyes open!")], () => this.setObjective(L("🚪 Day {d} of {n}: go out and explore {c}!", { d: S.day, n: S.n, c: S.city }), null), { pitch: 420 });
+  }
+  _stayCheckout(done) {
+    const S = this._stay; if (!S) return; const pr = this.progress, days = done ? S.n : S.day;
+    const fin = () => { if (S.npc) this.world.scene.remove(S.npc.g); this._stay = null; this._staying = false; pr.stays = (pr.stays || 0) + 1; pr.stayDays = (pr.stayDays || 0) + days; pr.stayWisdom = (pr.stayWisdom || 0) + S.wise; saveProgress(this.profile, pr); this._snap && this._snap("🏨", `Stayed ${days} days in ${S.city}.`); this.diary(L("{n} days in {c}, in Room 204 of the Grand Hotel. Smart choices: {w}.", { n: days, c: S.city, w: S.wise })); if (this.world.currentRoom) this._exitRoom(); S.then(); };
+    const card = openPanel(`<h2>🧳 ${L("Check out")}</h2><p class="job-brief">${done ? L("Your {n} days in {c} are over.", { n: S.n, c: S.city }) : L("Leave {c} after {d} of {n} days?", { c: S.city, d: S.day, n: S.n })} ${L("Smart choices: {w}.", { w: S.wise })}</p><div class="btn-row"><button class="big-btn" id="co-yes">${L("Pack up and travel home")}</button>${done ? "" : `<button class="ghost-btn" id="co-no">${L("Stay longer")}</button>`}</div>`);
+    card.querySelector("#co-yes").addEventListener("click", () => { closePanel(); fin(); }); const no = card.querySelector("#co-no"); if (no) no.addEventListener("click", () => closePanel());
   }
 }
 

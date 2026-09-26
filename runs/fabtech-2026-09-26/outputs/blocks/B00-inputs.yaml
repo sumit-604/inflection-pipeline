@@ -1,0 +1,96 @@
+stage: B00-inputs
+company: FABTECH
+run_date: 2026-09-26
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+corpus_commit: d981c6b7dafb40d3e0859bedde85a6cf1e61b6ba   # AR OCR text layer added in a follow-up corpus commit
+spear_gate: "PASS. companies/FABTECH.md carries 'Spear: OVERRIDE 2026-09-26 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/FABTECH.md SPEAR)
+  - "LBF1 ORDER BOOK AND GUIDANCE VS DELIVERY: order book Rs 904.42 Cr at 31-Jul-2025 (RHP) vs '>Rs 900 Cr' at Mar-2026 and Jun-2026, on FY26 consolidated revenue ~Rs 411 Cr (screener). FY27 guide 20-25% organic growth, H2-weighted, PAT margin 9-11%; Q1 FY27 revenue +10.3% YoY. Rebuild inflow and burn from filed figures (opening book + inflow - revenue = closing book); test RHP and FY26-call promises against delivery."
+  - "LBF2 CASH CONVERSION: consolidated CFO Rs -36 Cr FY25 and ~Rs 0 FY26 on PAT Rs 46 / 38 Cr (screener); debtor days 182 FY26; trade receivables Rs 24,151.90 lakh FY26 vs Rs 15,073.61 lakh FY25 (AR consolidated balance sheet). Contract assets, retention money, receivables ageing, CRISIL rationale WC comments. Classify GROWTH-INDUCED vs STRUCTURAL."
+  - "LBF3 RELATED PARTIES AND GROUP: transactions with Fabtech Technologies Cleanrooms Ltd (separately listed, BSE SME 544332), Fabtech Turnkey Projects LLP, Fabtech Technologies International Pvt Ltd (2020 demerger of its export division into the company), F Plus Healthcare Technologies; the Saudi 51% structure (Specialized Contracting Activities LLC); goodwill Rs 3,699.81 lakh FY25 to Rs 2,296.83 lakh FY26 (AR); Company Secretary resignation 24-Sep-2026; KMP/director changes Mar, May, Jun, Jul, Aug 2026."
+  - "LBF4 EARNINGS QUALITY AND IPO PROCEEDS: other income ~Rs 23 Cr of PBT ~Rs 48 Cr FY26 (screener); OPM 15% FY24 to 9% FY26; IPO proceeds deployment vs RHP objects (three monitoring agency reports and four deviation statements in announcements/)."
+sector_cap_row: "EPC / Civil construction"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'EPC / Civil construction | 20x'). The company executes turnkey pharma,
+  biotech and vaccine plant projects: design, engineering, procurement,
+  installation and validation, with revenue on shipment and milestones
+  (RHP business section; Q1 FY27 call). It is an order-book project business
+  with WC-heavy receivables (debtor days 182, screener). No pharma-plant EPC
+  row exists. 'Consulting / Engineering services | 25x' is the alternative
+  read (design and validation content); stage 4 should state the procured
+  equipment share of contract value, which decides between the two. The
+  collector guess 'Pharma / CDMO' is wrong (Fabtech does not make drugs) and
+  is discarded. FLAG for phase 3 confirmation.
+reporting_units:
+  annual_report: "INR lakh (FY26 AR consolidated balance sheet: 'Amount in lakhs unless otherwise stated')"
+  results: "INR lakh (Q1 FY27 results: 'Amount in INR lakhs unless otherwise stated')"
+  prospectus: "INR lakh (RHP restated financials; stages confirm on the page)"
+  presentation: "INR Cr (stages confirm on the slide)"
+  rating: "INR crore (CRISIL rationale, '1 crore = 10 million')"
+  screener: "INR Cr (screener Data_Sheet and page snapshots)"
+  note: "Filings report in INR lakh; decks, CRISIL and screener in INR Cr. 100 INR lakh = 1 INR Cr. Conversion happens once, at stage 10."
+listed_date: "2025-10-07"
+recently_listed: true
+recently_listed_evidence: "IPO 29-Sep to 01-Oct-2025 at Rs 181-191 band (RHP dated 22-Sep-2025, inputs/prospectus/FABTECH_RHP_2025-09-22.pdf p1); pre-listing shareholding pattern dated 06-Oct-2025 (NSE). Listed within 3 years of run_date: prospectus MANDATORY, collected."
+concalls_available: true
+concall_quarter_map:   # oldest first; stage 5 uses the three most recent
+  - "inputs/concalls/Concall_Nov_2025_Transcript.pdf = Q1+Q2 FY26 (call 10-Nov-2025; results for quarters ended 30-Jun-2025 and 30-Sep-2025) [context only]"
+  - "inputs/concalls/Concall_Feb_2026_Transcript.pdf = Q3 FY26 (call 10-Feb-2026)"
+  - "inputs/concalls/Concall_Apr_2026_Transcript.pdf = Q4 FY26 / FY26 (call 28-Apr-2026)"
+  - "inputs/concalls/Concall_Aug_2026_Transcript.pdf = Q1 FY27 (call 28-Jul-2026; filed 03-Aug-2026)"
+peers:
+  - {ticker: SETL, name: "Standard Engineering Technology Ltd (ex Standard Glass Lining Technology)", transcripts: "Q2 FY26 (06-Nov-2025), Q3 FY26 (05-Feb-2026), Q4 FY26 (15-May-2026), Q1 FY27 (06-Aug-2026)"}
+  - {ticker: HLEGLAS, name: "HLE Glascoat Ltd", transcripts: "Q4 FY25 (May-2025), Omeras GmbH acquisition call (Aug-2025, not a results call), Q2 FY26 (Nov-2025), Q4 FY26 (Jun-2026)"}
+  - {ticker: PRAJIND, name: "Praj Industries Ltd", transcripts: "Q2 FY26 (06-Nov-2025), Q3 FY26 (13-Feb-2026), Q4 FY26 (29-May-2026), Q1 FY27 (14-Aug-2026)"}
+  - {excluded: "Fabtech Technologies Cleanrooms Ltd (BSE SME 544332): promoter-group related party, not an independent peer; related-party verification target"}
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, SETL:Profit & Loss, SETL:Quarters, SETL:Balance Sheet, SETL:Cash Flow, SETL:Customization, HLEGLAS:Profit & Loss, HLEGLAS:Quarters, HLEGLAS:Balance Sheet, HLEGLAS:Cash Flow, HLEGLAS:Customization, PRAJIND:Profit & Loss, PRAJIND:Quarters, PRAJIND:Balance Sheet, PRAJIND:Cash Flow, PRAJIND:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RESOLVED AT INTAKE: shareholding/ holds the NSE XBRL shareholding pattern filings for 30-Jun-2026 (NSE_SHP_30JUN2026.xml) and 31-Mar-2026 (NSE_SHP_31MAR2026.xml). These ARE filings. Promoter and promoter group 68.94% at both dates (NSE master list). XML only; stages read the tag values."
+  - "RESOLVED AT INTAKE (PARTIAL): screening/ Profit & Loss, Balance Sheet, Cash Flow and Quarters CSVs remain ABSENT for the subject and all peers (empty export). Filled with screener.in public-page text snapshots dated 2026-09-26 (screening/FABTECH-screener-consolidated-2026-09-26.txt, FABTECH-screener-standalone-2026-09-26.txt, and one consolidated snapshot per peer) carrying annual P&L FY20-FY26 + TTM, balance sheet, cash flow, ratios, eight quarters and shareholding. Screener aggregations in INR Cr; the filed statements govern where they differ. Data_Sheet CSVs (screener-Data_Sheet.csv = FABTECH, and one per peer) are populated."
+  - "RESOLVED AT INTAKE: results/ filled from BSE: Q1 FY27 (24-Jul-2026), FY26 audited (27-Apr-2026), Q3 FY26 (02-Feb-2026). Q1 FY26 and Q2 FY26 results (04-Nov-2025 filings) held in announcements/ as extra backward checks; the Q1 FY26 filing is an image scan with almost no text layer."
+  - "RESOLVED AT INTAKE: rating/ holds the full CRISIL rating rationale dated 15-Oct-2025 (Crisil BBB+/Stable long term, Crisil A2 short term, reaffirmed; bank facilities Rs 100.25 Cr) as HTML with a text copy. The 12-Aug-2025 rationale and 11-Sep-2025 credit bulletin are in other/. No 2026 rating action was found on screener or CRISIL; the rationale is ~11 months old at run_date (staleness noted, LOW)."
+  - "RESOLVED AT INTAKE: prospectus/ holds the RHP dated 22-Sep-2025 (521pp, chittorgarh.net mirror of the filed RHP) and the final Prospectus (Oct-2025, 518pp, company site). The DRHP dated 14-Sep-2024 (NSE archives) is in other/."
+  - "annual-report/: FY26 AR (Reg 34 BSE filing 31-Jul-2026, 224pp) is an IMAGE SCAN with no text layer. The company-site copy of the same report (523 MB, not committed) is also image/outline-only. Annual_Report_2026.txt is OCR text (Windows OCR engine, 200 dpi) of the company-site copy; its page N equals site-copy PDF page N, which is BSE-filing page N+1 (the BSE filing carries one extra leading page). See annual-report/README-AR-TEXT.md. OCR can misread digits: stages confirm any load-bearing figure against a second source (results filing, RHP, screener) or against the PDF image, and say which."
+  - "other/: FY25 AR (company site, 177pp, text layer present; pre-listing year) held as a backward-baseline source, never consumed by the contract but available to stages 2 and 3 for FY25 comparatives."
+  - "research/: CRISIL MI&A industry report Sep-2025, company-commissioned for the IPO (56pp image scan; OCR text beside it if produced). NON-ANCHORED for company facts; industry sizing is a third-party lead for stage 9."
+  - "announcements/: collector fetched only 10 filings (Jul-Sep 2026). 35 further material filings since listing added by hand from BSE: results Q1/Q2 FY26, three monitoring agency reports (Feb, May, Jul 2026), four deviation statements, acquisition filings (02-Jun-2026, 25-Jun-2026), director/KMP changes (27-Mar, 25-May, 25-Jun, 24-Aug 2026), order wins, press releases, postal ballot notice and outcome, secretarial compliance report, NSE price-movement clarification (11-Mar-2026), Reg 31(1)(b) clarification. Duplicates of the AR and the Q1 FY27 transcript removed."
+  - "concalls/: four transcripts held (Nov-2025, Feb-2026, Apr-2026, Aug-2026). Stage 5 uses the three most recent. Screener lists a 'Jun 2026' transcript entry not downloaded by the collector (cap of 4); identity unknown."
+  - "screener basis: main URL is CONSOLIDATED (/company/FABTECH/consolidated/). FY26 consolidated sales Rs 411 Cr vs standalone Rs 268 Cr: subsidiaries (UAE, Saudi and others) carry about 35% of revenue. Consolidated is the analytical basis; standalone snapshot also held."
+  - "NAME COLLISION: Fabtech Technologies Cleanrooms Ltd (BSE SME 544332) is a different listed company in the same promoter group. Web material about 'Fabtech' can refer to either. Every stage checks the issuer on the page it cites."
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/20260724-Results_Q1FY27.pdf (quarter ended 30-Jun-2026)", mate_expected: "Q1 FY27 earnings call transcript", status: PASS, missing_doc: "", note: "inputs/concalls/Concall_Aug_2026_Transcript.pdf, call held 28-Jul-2026 on results for the quarter ended 30-Jun-2026 (p1)"}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/CRISIL_Fabtech_2025-10-15_RatingRationale.html", mate_expected: "full rating rationale", status: PASS, missing_doc: "", note: "the held document is the full rationale, not a bulletin; the 11-Sep-2025 credit bulletin in other/ is backed by the 12-Aug-2025 full rationale, also in other/"}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none referenced in the corpus inventory read at stage 0", mate_expected: "n/a", status: PASS, missing_doc: "", note: "stages 2, 3 and 8 report any SEBI order they find; an unreferenced order found later reopens this pair"}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/20260427-Results_FY26_audited.pdf (FY26)", mate_expected: "FY26 annual report", status: PASS, missing_doc: "", note: "inputs/annual-report/Annual_Report_2026.pdf is the FY26 AR (Reg 34, 31-Jul-2026)"}
+freshness_verdict: "FRESHNESS PAIRS OK"
+empty_folder_confirmation: "Suppressed by /step1 AUTONOMY CONTRACT (standing answer: proceed with the gaps). After intake repairs no contract folder is empty: prospectus 2, annual-report 1, results 3, rating 1, concalls 4, peer-concalls 12, announcements 45, shareholding 2, research 1, screening 9, presentation 2. Remaining gaps are content gaps (image-scan AR read through OCR; empty screener formula sheets), listed above."
+tooling: "Session-start PDF preflight not reported in this Windows session. pypdf verified on a real file; pymupdf 1.28.2 present. Switched the whole run to pre-extracted page-marked .txt beside every PDF (one '[page N]' marker per page), per LESSONS reliable default. Every stage and verifier receives .txt paths; PDFs stay available for image checks. Unreadable PDFs: none; image-only PDFs: FY26 AR (OCR'd), Q1 FY26 results (announcements/, image scan), CRISIL industry report (research/)."
+corpus_manifest:
+  - {path: inputs/prospectus/FABTECH_RHP_2025-09-22.pdf, issuer: Fabtech Technologies Ltd, type: Red Herring Prospectus, period: "dated 22-Sep-2025; restated FY23-FY25 and interim", folder_match: true}
+  - {path: inputs/prospectus/FABTECH_Prospectus_Final_2025-10.pdf, issuer: Fabtech Technologies Ltd, type: Prospectus (final), period: "Oct-2025", folder_match: true}
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: Fabtech Technologies Ltd, type: Annual Report, period: FY26 (year ended 31-Mar-2026), folder_match: true}
+  - {path: inputs/results/20260724-Results_Q1FY27.pdf, issuer: Fabtech Technologies Ltd, type: quarterly results (Reg 33), period: Q1 FY27 (quarter ended 30-Jun-2026), folder_match: true}
+  - {path: inputs/results/20260427-Results_FY26_audited.pdf, issuer: Fabtech Technologies Ltd, type: audited annual results, period: Q4 FY26 / FY26, folder_match: true}
+  - {path: inputs/results/20260202-Results_Q3FY26.pdf, issuer: Fabtech Technologies Ltd, type: quarterly results, period: Q3 FY26 (quarter ended 31-Dec-2025), folder_match: true}
+  - {path: inputs/rating/CRISIL_Fabtech_2025-10-15_RatingRationale.html, issuer: Crisil Ratings, type: rating rationale, period: 15-Oct-2025, folder_match: true}
+  - {path: inputs/concalls/Concall_Nov_2025_Transcript.pdf, issuer: Fabtech Technologies Ltd, type: earnings call transcript, period: Q1+Q2 FY26, folder_match: true}
+  - {path: inputs/concalls/Concall_Feb_2026_Transcript.pdf, issuer: Fabtech Technologies Ltd, type: earnings call transcript, period: Q3 FY26, folder_match: true}
+  - {path: inputs/concalls/Concall_Apr_2026_Transcript.pdf, issuer: Fabtech Technologies Ltd, type: earnings call transcript, period: Q4 FY26, folder_match: true}
+  - {path: inputs/concalls/Concall_Aug_2026_Transcript.pdf, issuer: Fabtech Technologies Ltd, type: earnings call transcript, period: Q1 FY27, folder_match: true}
+  - {path: inputs/presentation/20260428-InvestorPresentation_FY26.pdf, issuer: Fabtech Technologies Ltd, type: investor presentation, period: Q4 FY26 / FY26, folder_match: true}
+  - {path: inputs/presentation/20260728-InvestorPresentation_Q1FY27.pdf, issuer: Fabtech Technologies Ltd, type: investor presentation, period: Q1 FY27, folder_match: true}
+  - {path: "inputs/peer-concalls/SETL-*.pdf (4)", issuer: Standard Engineering Technology Ltd, type: earnings call transcripts, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27", folder_match: true}
+  - {path: "inputs/peer-concalls/HLEGLAS-*.pdf (4)", issuer: HLE Glascoat Ltd, type: "earnings call transcripts (Aug-2025 file is an acquisition call)", period: "Q4 FY25, Aug-2025 Omeras acquisition, Q2 FY26, Q4 FY26", folder_match: true}
+  - {path: "inputs/peer-concalls/PRAJIND-*.pdf (4)", issuer: Praj Industries Ltd, type: earnings call transcripts, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27", folder_match: true}
+  - {path: "inputs/announcements/*.pdf (45)", issuer: Fabtech Technologies Ltd, type: "Reg 30 / Reg 33 / Reg 32 exchange filings", period: "Oct-2025 to 25-Sep-2026", folder_match: true}
+  - {path: "inputs/shareholding/NSE_SHP_30JUN2026.xml, NSE_SHP_31MAR2026.xml", issuer: Fabtech Technologies Ltd (NSE XBRL), type: shareholding pattern, period: "30-Jun-2026, 31-Mar-2026", folder_match: true}
+  - {path: inputs/research/CRISIL_Industry_Report_2025-09_company_commissioned.pdf, issuer: "Crisil MI&A (commissioned by the company)", type: industry report, period: Sep-2025, folder_match: true, note: NON-ANCHORED}
+  - {path: inputs/other/Annual_Report_FY2024-25_company_site.pdf, issuer: Fabtech Technologies Ltd, type: Annual Report, period: FY25, folder_match: "true (other/, preserved)"}
+  - {path: inputs/other/FABTECH_DRHP_NSE_2024-09-14.pdf, issuer: Fabtech Technologies Ltd, type: Draft Red Herring Prospectus, period: 14-Sep-2024, folder_match: "true (other/, superseded by RHP)"}
+flags: []
+analyst_note: "Recently listed (Oct-2025) turnkey pharma-plant EPC. Corpus is complete by folder after intake repairs. The one material content risk is the FY26 AR, an image scan read through OCR: any figure that feeds a flag or a Section 1B pillar must be cross-checked against the audited FY26 results filing (text layer) or the image. Consolidated is the basis; subsidiaries carry ~35% of revenue."

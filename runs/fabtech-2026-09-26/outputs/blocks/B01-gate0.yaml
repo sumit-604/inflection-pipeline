@@ -1,0 +1,35 @@
+stage: B01-gate0
+company: "FABTECH"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (core 56/100, moat THIN 6/60). Depressors: Block B cash generation 1/20 (cumulative CFO/PAT 0.35, WC days +109 peak-to-latest, only 3/7 years FCF-positive), A4 ROCE trend -12pp (FY21 26% to FY26 14%), moat 1 of 12 tests present. Deal-breakers #2 (Block B<8, max GOOD) and #4 (cumulative CFO/PAT<0.50, max AVERAGE) both triggered by FY25 (CFO -36 Cr) and FY26 (CFO ~0 Cr vs PAT 38 Cr)."}
+  - {type: FLAG-CASH, reason: "CFO fell from Rs 60 Cr (FY24) to Rs -36 Cr (FY25), partial rebound to ~Rs 0 Cr (FY26) vs PAT Rs 38 Cr; WC days rose from 63 (FY24) to 90 (FY26), a 7-year high. Confirms LBF2 cash-conversion concern; GROWTH-INDUCED vs STRUCTURAL classification not resolved at this stage."}
+  - {type: FLAG-DATA-OCR, reason: "companies/FABTECH.md LBF2 cites FY26 consolidated trade receivables of Rs 24,151.90 lakh sourced to the OCR'd AR image scan. The audited FY26 results filing (text layer) and screener both show Rs 20,433.51 lakh (= Rs 204.34 Cr). Downstream stages should use the results-filing/screener figure, not the AR OCR figure."}
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 13, B: 1, C: 14, D: 18, E: 10}
+core_score: 56
+moat_score: 6
+grand_total: 62
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVERAGE"
+deal_breakers:
+  - "#2 Block B <8 (actual 1) -> max GOOD"
+  - "#4 cumulative CFO/PAT <0.50 (actual 0.35) -> max AVERAGE"
+history_downgrade: false
+data_notes:
+  - "A3 ROE: FY26 ROE (12.94%) computed on formula is depressed by the ~Rs 207 Cr IPO equity infusion (Oct-2025) diluting average net worth; no adjustment applied, formula used mechanically."
+  - "E2 promoter holding change over 3 years: N/A (not in provided data). Fabtech listed 07-Oct-2025; only 3 post-listing quarters exist (Dec-2025/Mar-2026/Jun-2026), all flat at 68.94%. Pre-IPO promoter % not extracted at this stage (RHP shareholding section not read here)."
+  - "E4 contingent liabilities / net worth: N/A (not in provided data). Annual report is not among this stage's designated data sources."
+  - "M5 Scale & Dominance: PEER DATA NEEDED. Only 3 named peers' mcap available (SETL Rs 8,031 Cr, HLEGLAS Rs 3,064 Cr, PRAJIND Rs 5,807 Cr vs Fabtech Rs 648 Cr); insufficient for full segment ranking."
+  - "M6 Technology/R&D: N/A (not in provided data), no R&D/Revenue line disclosed in screener P&L."
+  - "M9 Brand: gross margin proxy used, (Revenue - Material Cost)/Revenue = 53.7% FY26 (screener Data_Sheet.csv). Peer gross-margin proxy PEER DATA NEEDED, peer raw-material-cost lines not extracted at this stage."
+  - "M11 Network Effects: FY26 'Selling and admin' line is blank in screener Data_Sheet.csv, re-bucketed into a lump 'Other Expenses' (Rs 89.87 Cr, likely including IPO/one-off items); the selling-expense-% component of the top-tier test could not be cleanly confirmed for FY26, scored conservatively at tier 3 using FY24-FY25 selling% trend (14.9% to 14.35%) plus the CAGR comparison."
+  - "No loss-to-profit swing in annual PAT FY20-FY26 (all years positive); quarterly PAT was negative in Q1 FY26 (Jun-2025, Rs -6.13 Cr) and Q3 FY26 (Dec-2025, Rs -5.68 Cr) per screener quarterly block, outside the annual CAGR calculation."
+block_b_trend: "deteriorating, with a tentative FY26 stabilization: CFO Rs 60 Cr (FY24) to Rs -36 Cr (FY25) to ~Rs 0 Cr (FY26) against FY26 PAT of Rs 38 Cr; WC days rose from 63 (FY24) to 90 (FY26), a 7-year high."
+analyst_note: "LBF2 and LBF4 both confirmed against filed data before scoring. Found and flagged a receivables discrepancy: companies/FABTECH.md LBF2 cites Rs 24,151.90 lakh FY26 trade receivables from the OCR'd AR; the audited results filing (text layer) and screener both show Rs 20,433.51 lakh (Rs 204.34 Cr). Use the latter downstream. Classification AVERAGE is driven almost entirely by Block B (cash conversion) and moat THIN; growth (Block C, 14/20) and balance sheet (Block D, 18/20, post-IPO net cash) are both strong. The cash-conversion weakness sits inside the FY25-FY26 post-listing window and coincides with rising WC days, consistent with a growth-induced (not yet proven structural) drag per LBF2, but this stage does not resolve that classification."
+

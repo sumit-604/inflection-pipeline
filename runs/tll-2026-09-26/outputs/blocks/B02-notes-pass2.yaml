@@ -1,0 +1,66 @@
+stage: B02-notes-pass2
+company: "TLL"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+pass: 2
+pass_2_done: true
+pass_3_done: false
+pass_2_empty: false
+sources_used:
+  - "Annual_Report_2026.txt (primary, FY26 consolidated + standalone notes, re-read end to end)"
+  - "Annual_Report_2025.txt (backward-check, Consolidated Cash Flow Statement p.84)"
+  - "announcements/20251111-H1FY26-results-ORIGINAL.txt vs results/20251114-H1FY26-results-REVISED.txt"
+  - "announcements/20241019-H1FY25-results-ORIGINAL.txt vs announcements/20241220-H1FY25-results-REVISED.txt"
+full_report_path: "runs/tll-2026-09-26/outputs/reports/02-notes-pass2.md"
+open_items_resolution:
+  - item: "FY25 consolidated CFO: -Rs 10.24 Cr (FY25 AR) vs -Rs 3.99 Cr (FY26 AR comparative)"
+    status: "RESOLVED - mechanism found"
+    finding: "Total-A (cash from operations before WC changes) is identical in both ARs for FY25 (Rs 2,047.05L, p.84 FY25 AR / p.96 FY26 AR). The gap lives entirely in the WC-changes block: FY25 AR shows Total-B = -Rs 2,482.07L (7 line items, no working-capital-facilities line); FY26 AR's FY25 comparative shows Total-B = -Rs 1,856.40L (8 line items, adding 'Changes in Working Capital Facilities' = +Rs 625.67L). -2,482.07 + 625.67 = -1,856.40 exactly. No restatement/regrouping note anywhere discloses this reclassification."
+    rating: "RED"
+  - item: "Claim Income Rs 541.05L (Note 22): nature, counterparty, recurrence"
+    status: "PARTIALLY RESOLVED"
+    finding: "Recurring, not one-off: Rs 541.05L FY26 vs Rs 522.17L FY25 (+3.6% YoY), both under 'Indirect Incomes' in Note 22. Nature, counterparty, and underlying agreement remain NOT FOUND IN DOCUMENT anywhere in the AR."
+    rating: "YELLOW (downgraded from Pass 1's RED, which had not checked the prior year)"
+  - item: "Segment-note receivables (Rs 4,947.50L) vs balance-sheet consolidated trade receivables (Rs 7,365.39L)"
+    status: "REFINED, not fully resolved"
+    finding: "Segment note (Note 31) is close to but does not exactly equal the STANDALONE Note 17 receivables total in either year: FY26 gap Rs 13.39L (4,947.50 vs 4,934.11); FY25 gap Rs 9.22L (2,049.38 vs 2,040.16). Confirms the segment note is built substantially off parent-only receivables despite sitting in the consolidated statements, but a small unexplained residual remains."
+    rating: "RED (unchanged from Pass 1)"
+  - item: "Goodwill Rs 52.37L to Rs 555.15L: which acquisition"
+    status: "REFINED, not fully resolved"
+    finding: "Corporate-history note (p.125 area) dates the Trident Mediquip stake increase to 59.77% to three FY26 share tranches (30.12.2025, 31.12.2025, 16.03.2026) plus a 01.02.2026 bonus issue -- all FY26 events, consistent with Pass 1's inference. No consolidation-goodwill computation note found anywhere (searched 'Excess of cost', 'Capital Reserve on Consolidation', 'Goodwill on Consolidation' -- all NOT FOUND). A related TNS Pharma share purchase on 16.04.2025 is also newly identified, explaining that investment's carrying-value increase in the same year its losses widened, sharpening the no-impairment red flag."
+    rating: "RED (unchanged from Pass 1)"
+  - item: "Refiled H1 FY25 / H1 FY26 results: did any figure change, or only format?"
+    status: "RESOLVED"
+    finding: "Both refilings are confirmed cosmetic. H1 FY26 (11-Nov-2025 original vs 14-Nov-2025 revised) and H1 FY25 (19-Oct-2024 original vs 20-Dec-2024 revised) were each triggered by an identical BSE discrepancy notice: trade-payable bifurcation not provided per Division I format. Every P&L, balance sheet, and cash flow figure is identical between original and revised in both instances; only a two-line MSME/Others trade-payable sub-split was added. The identical gap recurring 13 months apart is a new mild filing-hygiene watch item."
+    rating: "GREEN (figures unchanged); YELLOW (recurring filing-hygiene gap, new observation)"
+new_findings_second_sweep:
+  - finding: "Consolidated Ratio Analysis note (p.116-117) shows Trade Receivable Turnover falling 4.23x to 2.55x (-39.79%) and Trade Payable Turnover falling 4.78x to 2.78x (-41.93%) in the same year, both explicitly attributed by management to 'increase in business' -- supports a growth-induced, not receivables-only, reading of the working-capital stretch."
+    note_ref: "Ratio Analysis Note, Consolidated, p.116-117"
+    rating: "YELLOW"
+  - finding: "'Shareholders Funds' used as the ratio-note denominator (Rs 10,416.58L FY26) does not match Balance-Sheet-derived net worth (Rs 9,667.56L FY26) that Pass 1 anchored; FY25 figures match exactly (Rs 6,964.96L both places). No note explains the FY26-only gap of Rs 749.02L."
+    note_ref: "Ratio Analysis Note p.116-117 vs Balance Sheet p.107"
+    rating: "YELLOW"
+  - finding: "The H1 FY26 revised filing's own cash flow statement (30-Sep-2025) does NOT contain the 'Changes in Working Capital Facilities' line that appears in the FY26 Annual Report. The reclassification identified in the CFO resolution above was introduced between the H1 filing (14-Nov-2025) and the FY26 audit sign-off (07-May-2026), applied retroactively to the FY25 comparative, with no disclosure anywhere."
+    note_ref: "H1 FY26 revised Consolidated Cash Flow Statement vs FY26 AR Consolidated Cash Flow Statement, p.96"
+    rating: "RED"
+restatements_found_pass2:
+  - "Undisclosed reclassification: 'Changes in Working Capital Facilities' line (+Rs 625.67L FY25 comparative / +Rs 945.65L FY26) added to the operating working-capital block in the FY26 AR only, absent from the FY25 AR and from the H1 FY26 filing, with no restatement note. Explains the entire FY25 CFO gap between the two ARs."
+receivables_trend_pass2: "unchanged from Pass 1 in direction (growth-induced, ageing composition improving); newly corroborated by management's own disclosed ~40% decline in BOTH trade receivable AND trade payable turnover ratios in the same year, which weighs toward growth-induced rather than structural."
+going_concern_language_pass2: "NONE - unchanged from Pass 1."
+analyst_note_pass2: >
+  The single highest-value Pass 2 finding is the CFO reconciliation: the
+  gap between the two ARs is not a typo or a corpus artefact but a specific,
+  undisclosed presentation change (an operating-vs-financing reclassification
+  of working-capital-facility movement) introduced between the H1 FY26
+  filing and the FY26 annual audit, applied retroactively to FY25 with zero
+  note. This flatters both years' reported operating cash generation and
+  should be pressed with management/auditor directly: what is "Changes in
+  Working Capital Facilities," why was it introduced only at the annual
+  stage, and why does no note disclose the change per AS-5 prior-period-item
+  and comparability norms. The Claim Income and segment-receivable findings
+  are downgraded/refined in severity but not closed; Pass 3 should run the
+  pattern check (numbers not matching across notes) across the "Shareholders
+  Funds" denominator mismatch newly found here, which follows the same
+  family as the segment-note/balance-sheet receivables gap already flagged.

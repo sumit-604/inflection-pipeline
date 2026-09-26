@@ -22,3 +22,29 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 127233 | 2m53s | 1 |
 | 12a | verifier A numerical (re-invoked with severity addendum; incremental tokens) | claude-haiku-4-5 | default | n/a | n/a | 46121 | 4m19s | 2 |
 | 13 | synthesis-lite (phase 1) | claude-opus-5-5 | default | n/a | n/a | 212616 | 9m11s | 1 |
+| 9b | Halt 1 understanding dossier | claude-sonnet-5 | default | n/a | n/a | 161841 | 5m51s | 1 |
+| 9b | Halt 1 dossier re-run (mechanical check: sign-off marker em-dash; incremental tokens) | claude-sonnet-5 | default | n/a | n/a | 47715 | 3m06s | 2 |
+
+## CLOSE-OUT SUMMARY
+
+Run total (sum of ledger rows with token counts): 2,889,811 tokens.
+
+(a) TOP FIVE BY TOKENS (retries summed per stage)
+| rank | stage | total_tok | share |
+|---|---|---|---|
+| 1 | 2 notes triple-pass (3 runs) | 387,398 | 13.4% |
+| 2 | 12b verifier B red flags | 299,026 | 10.3% |
+| 3 | 3 AR backward deep dive | 267,827 | 9.3% |
+| 4 | 13 synthesis-lite | 212,616 | 7.4% |
+| 5 | 8 promoter check (web) | 210,579 | 7.3% |
+
+Avoidable spend: verifier A run 2 (46,121) caused by the verifier's own 10x lakh-to-crore conversion; 09b run 2 (47,715) caused by an em-dash in the sign-off marker. 93,836 tokens (3.2%).
+
+(b) DOWNSHIFT FAILURES
+- DOWNSHIFT FAILURE: stage 0 (input validation ran inline in the Opus orchestrator session, as run-pipeline step 1 directs "do this yourself"; no haiku stage-0 agent exists). Structural, as in DPABHUSHAN 2026-09-19. Verifier A ran on haiku as routed.
+
+(c) COST SPIKES
+- none (no prior FABTECH run ledger exists).
+
+(d) OPERATOR SNAPSHOT
+- Operator: run /cost and /usage now and paste the cache hit ratio and loop totals under an "Operator snapshot" heading here.

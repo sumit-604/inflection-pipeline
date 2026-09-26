@@ -742,3 +742,35 @@ Recorded here against the shallow-screen commits of 2026-09-21.
 - A Bash heredoc followed by python -c with nested quotes failed to parse; the
   Write tool is safer for YAML blocks.
 - About 4.58M subagent tokens over 28 runs. Not a clean run.
+
+## 2026-09-26 — FABTECH (Fabtech Technologies) — /step1 intake, phase 1 to Halt 1
+
+Run: runs/fabtech-2026-09-26, branch run/fabtech-2026-09-26. Peers SETL,
+HLEGLAS, PRAJIND. Gate PROCEED WITH FLAGS (FLAG-CASH INDETERMINATE, confidence
+band downgrade). Confidence overall 67 (set by redflag_coverage). Dossier
+CORPUS GAPPED, FRAGILE.
+- Name collision: Fabtech Technologies Cleanrooms Ltd (BSE SME 544332) is a
+  separate promoter-group listing; one web article described a third company.
+  Check the issuer on every web source.
+- FY26 AR is an image scan on BSE and on the company site (523 MB copy). OCR
+  fix: pymupdf render at 200 dpi plus Windows.Media.Ocr (~0.3 s a page).
+  RapidOCR with 6 workers thrashed a 5.8 GB machine (0.1 GB free); do not use
+  it in parallel here.
+- Collector deleted _download before the Excel recalculation could run, so the
+  empty-sheet fix (open and save Financials.xlsx) was impossible; screener page
+  text snapshots filled the gap.
+- Collector fetched only 10 BSE announcements (Jul-Sep 2026); 35 more added by
+  quarter-window queries. NSE corporate-share-holdings-master API returns the
+  SHP XBRL links (fills shareholding/ for NSE names).
+- Setup: a git worktree under .claude/worktrees took ~15 min to check out on
+  this machine.
+- Verifier A run 1 converted lakh to crore by 10 and raised two false CRITICALs;
+  struck by the identity check, re-run clean (98.6%). Same haiku pattern.
+- Verifier B redflag_coverage split again: 67 with partial catches, 33 strict.
+  Third occurrence (AWFIS, DPABHUSHAN, FABTECH); /compost candidate.
+- Stage block files arrive in markdown fences (B01); stage 09b wrote an em-dash
+  in the sign-off marker and re-ran once. Task messages now say "plain YAML, no
+  fences" and should also quote the exact marker string.
+- AR consolidated balance-sheet face misprints receivables (Rs 24,151.90 lakh vs
+  Note 13 Rs 20,433.51 lakh): a company drafting error, not OCR.
+- DOWNSHIFT FAILURE: stage 0 ran inline on the Opus orchestrator (structural).

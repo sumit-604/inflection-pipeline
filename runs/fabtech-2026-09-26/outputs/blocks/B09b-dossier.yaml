@@ -1,0 +1,50 @@
+stage: B09b-dossier
+company: "FABTECH"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "FY24 and earlier annual reports", expected_source: "BSE / company IR page", kind: "findable-missing"}
+  - {document: "FY26 employee headcount", expected_source: "company IR page (Section 197(12) disclosure route)", kind: "plausibly-nonexistent"}
+  - {document: "Named competitor list (company-disclosed, not CRISIL third-party)", expected_source: "company IR page", kind: "plausibly-nonexistent"}
+  - {document: "CARO annexure statutory-dues detail for FT Institutions Pvt Ltd and Mark Maker Engineering Pvt Ltd", expected_source: "those entities' own MCA filings", kind: "findable-missing"}
+  - {document: "Counterparty name behind Rs 2,350.83 lakh related-party-labelled current borrowing", expected_source: "company IR page / MCA charge filings / direct management query", kind: "findable-missing"}
+  - {document: "CRISIL rationale (15-Oct-2025) working-capital paragraph, verbatim extraction", expected_source: "held document, unextracted by any stage", kind: "findable-missing"}
+  - {document: "SACE closing status resolution (contested within Aug-2026 call)", expected_source: "BSE / NSE Reg 30 exchange filings dated 02-Jun-2026 and 25-Jun-2026", kind: "findable-missing"}
+  - {document: "Live litigation/complaint status (Akums suit, stayed criminal counter-complaint, SCORES history)", expected_source: "rating agency site / SCORES / eCourts (live-web only)", kind: "findable-missing"}
+  - {document: "Named new Company Secretary and named Executive Chairman", expected_source: "BSE / company IR page (future filing)", kind: "findable-missing"}
+archetypes:
+  - {line: "Turnkey pharma/biotech/vaccine plant EPC (products + installation services)", archetype: "Order-book business (EPC / capital goods)"}
+transition:
+  - line: "Turnkey pharma/biotech/vaccine plant EPC"
+    from_tier: "R1 COMMODITY PRICE-TAKER neighbourhood (weak pricing power, ROCE cyclical 26% FY21 to 14% FY26, moat THIN-to-NONE)"
+    to_tier: "R2/R3 neighbourhood (claimed, unproven): Saudi localisation qualification plus African donor-funded first-mover position"
+    engine: "SACE 51% Saudi stake converting to local-content tender qualification; African donor-funded (AfDB/Gavi) pipeline converting to signed, delivered contracts faster than Middle East book runs off"
+    proof_gate: "Order book closing value must exceed opening value plus that quarter's billed revenue, for 2 consecutive quarters, with a numeric reconciliation; not fired as of Q1 FY27 (book flat Rs 900-926 Cr for 11 months)"
+    recognition_gap: "OPEN QUESTION, resolved at Stage 11 via the destination-PE gap: whether the market already prices in the claimed Saudi/Africa TO state"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Order book stays at or below the Rs 900-926 Cr band for 2 further quarters despite continued claimed wins, and/or CFO/PAT stays below 0.3x through FY27"
+dominant_variables:
+  - "Order book net movement (inflow minus delivery burn), reconciled with a number"
+  - "CFO/PAT ratio and receivables ageing (>365-day share, ECL rates)"
+  - "Saudi SACE order flow (closing confirmation, second civil/MEP win)"
+  - "Contribution margin sustain (Q1 FY27 step-up 37.6% to 46.7%) into H2 FY27"
+business_falsifier: "Crystallised write-off of a material share of the Rs 5,887.55 lakh receivables aged beyond 365 days, or a second consecutive year of CFO/PAT below zero with no deconsolidation explanation available"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "3 of 5 externally observable"
+  single_point_failure: "Order book failing to move net of delivery burn"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "343e48cc56cbfba662e359f6e06d5a5993bdc57d"

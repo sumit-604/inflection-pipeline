@@ -1,0 +1,30 @@
+company: QMS Medical Allied Services Ltd
+ticker: QMSMEDI
+cmp: 197.0
+market_cap_cr: 380.0
+run_date: 2026-09-26
+run_type: full
+listed_date: ""        # SME IPO on NSE Emerge Sep/Oct 2022 (exact date NOT FOUND in corpus at intake); NSE Mainboard migration 2026-06-18
+exchange: NSE only (no BSE listing; BSE scrip code does not exist)
+concalls_available: true
+sector_cap_row: "Distribution / trading"      # Step D pick (step1 intake 2026-09-26); stage 0 confirms against chunk 05
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing."
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, INDGN:Profit & Loss, INDGN:Quarters, INDGN:Balance Sheet, INDGN:Cash Flow, INDGN:Customization, ENTERO:Profit & Loss, ENTERO:Quarters, ENTERO:Balance Sheet, ENTERO:Cash Flow, ENTERO:Customization, NURECA:Profit & Loss, NURECA:Quarters, NURECA:Balance Sheet, NURECA:Cash Flow, NURECA:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+intake_repairs: |
+  step1 intake 2026-09-26 (orchestrator, before stage 0):
+  - screener formula sheets recalculated in Excel; P&L, BS, CF, Quarters CSVs now populated for QMSMEDI (consolidated and standalone), INDGN, ENTERO, POLYMED.
+  - standalone screener export added (screener-standalone-*.csv): consolidated history covers FY24-FY26 only.
+  - announcements/, results/, shareholding/ fetched from the NSE corporate-announcements and shareholding APIs (company is NSE-only).
+  - results/: Q3 FY26 (14-Feb-2026), FY26 audited (30-May-2026), Q1 FY27 (14-Aug-2026) board outcomes.
+  - presentation/: Nov-2025, Feb-2026, Jun-2026, Aug-2026 (revised) investor presentations.
+  - prospectus/: Sep-2025 rights issue Letter of Offer (101pp). The 2022 SME IPO prospectus was not collected.
+  - peer NURECA publishes no transcripts on screener (only PPTs): kept as a financial comp in inputs/other/; POLYMED (Poly Medicure) added as the third transcript peer.
+  - rating/: no rating found on screener or by web search; the FY26 AR text carries no rating reference.
+  - no Q3 FY26 (Feb-2026) earnings-call transcript exists on NSE: an investor presentation (20-Feb-2026) and an investor meet (02-Mar-2026) only.
+  - every PDF pre-extracted to a page-marked .txt beside it.

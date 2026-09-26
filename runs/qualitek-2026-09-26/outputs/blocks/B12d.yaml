@@ -6,17 +6,13 @@ status: complete
 peers_audited: 12
 substantive_confirmed: 12
 substantive_unsupported: []
-unused_but_relevant: []
+unused_but_relevant:
+  - {peer: "VIMTALABS May-2026", missed_item: "second attrition mention (\"talent availability and attrition remain industry-wide challenges\") not cited alongside the Feb-2026 attrition quote already used for the same point; industry-context reinforcement only, not a new fact", anchor: "VIMTALABS-Concall_May_2026_Transcript.txt l.222"}
 claims_all_addressed: true
-verdict_discipline_fails:
-  - {claim: "Q1 debtor days (peer_questions #1)", issue: "Verdict VERIFIED rests on a single peer (KRSNAA only, across 4 quarters/one mechanism); METROPOLIS confirmed silent on DSO in all 4 transcripts, VIMTALABS never discussed. Per rule 4 should be PARTIALLY VERIFIED.", severity: "MAJOR"}
+verdict_discipline_fails: []
 findings:
-  - {severity: "MAJOR", location: "B06 Part 1, Q1 verdict", claim: "Debtor-days claim VERIFIED", issue: "Single-peer verdict overgraded; should be PARTIALLY VERIFIED per rule 4"}
-  - {severity: "MAJOR", location: "B06 Part 1, Q1 peer-evidence narrative", claim: "'our receivable currently stands around 150 days (repeated)' attributed to Feb-2026 (Q3 FY26) call", issue: "Quote not found in Feb-2026 transcript (verified by full-text search); belongs to Nov-2025 (Q2 FY26) call, which is separately and correctly cited for the same figure"}
-  - {severity: "MAJOR", location: "B06 Part 3 coverage map, row 'METROPOLIS | Investor Meet (Aug-27-2026)'", claim: "'<2x revenue, ... effective 10x EBITDA' listed as this transcript's key contribution", issue: "Quote not found in the investor-meet transcript (verified by full-text search); belongs to the Aug-05-2026 Q1 FY27 earnings call, which B06 Part 1 Q2 correctly cites separately"}
-  - {severity: "MINOR", location: "B06 Part 1, Q4 narrative", claim: "Vimta sector CAGR paraphrased as '7% to 9%'", issue: "Transcript says '7.5% to around 9%'; cosmetic rounding, not material"}
-  - {severity: "MINOR", location: "B06 Part 1, Q6 narrative", claim: "Input-cost quote attributed to '(May-2026, Jul-2026 calls)'", issue: "The specific quoted sentence is found only in Jul-2026; May-2026 has a different, also-supportive quote on manpower cost, not this one"}
+  - {severity: "MINOR", location: "B06 Part 2E / attrition bullet", claimed: "attrition risk parity discussed only via Vimta Feb-2026 quote", source_truth: "a second, later Vimta attrition mention exists (May-2026, l.222) making the same point; not cited", note: "reinforcement miss, not a new claim-relevant fact; no verdict changes", source_fidelity: false}
 critical_count: 0
-major_count: 3
-minor_count: 2
+major_count: 0
+minor_count: 1
 acceptance_rate: 100

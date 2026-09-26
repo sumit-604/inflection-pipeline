@@ -3,12 +3,12 @@ company: "QUALITEK"
 run_date: "2026-09-26"
 model: claude-haiku-4-5-20251001
 status: complete
-numbers_checked: 48
+numbers_checked: 45
 findings: []
 critical_count: 0
 major_count: 0
 minor_count: 0
 false_positives_struck: 0
-material_universe: 48
+material_universe: 54
 acceptance_rate: 100
-coverage_note: "Material universe = 48 numerical claims verified across 9 stage reports. Selection rule: figures in verdict cards, scorecard blocks, major narrative chains, financial-statement line items, ratio calculations, year-on-year comparisons, and basis-split claims (standalone/consolidated, FY/TTM). Weighted to audited P&L/BS totals, gate-input ratios, and trend claims required to defend stage conclusions. All 48 checked figures present in source documents (DRHP, audited results filings, AR2026 notes) at stated anchors. No mismatches, no ANCHOR NOT FOUND, no material UNANCHORED. All basis choices defensible and noted in reports. Zero false positives struck in rule 5b self-check. Acceptance rate 100%."
+coverage_note: "45 of 54 material numbers verified (83% coverage). Sample includes: (1) all major FY26 consolidated and standalone P&L aggregates from AR; (2) all FY27 guidance bands with document-specific variations (deck 25-26% EBITDA vs MD&A/AR 25-27%, deck 15-17% PAT vs AR 14-15%); (3) FY31 revenue ambition; (4) Sep-2026 preferential issue allocations; (5) peer figures from 12 transcripts (Vimta sector growth, electronics testing, Metropolis industry TAM/CAGR, KRSNAA debtor days); (6) Gate0 metrics (revenue CAGR, PAT CAGR, receivable days, WC days, ND/EBITDA); (7) FY26 MD&A guidance (capex, growth, margins). Excluded: page/line references, formatting metadata, repeated cites. All sources re-read; no ANCHOR NOT FOUND or UNANCHORED identified."

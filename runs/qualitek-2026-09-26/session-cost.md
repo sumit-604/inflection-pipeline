@@ -23,3 +23,6 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 353830 | 4m15s | 1 |
 | 5 | concall analysis rework (cycle 1, B12b findings) | claude-sonnet-5 | default | n/a | n/a | 189126 | 9m57s | 2 |
 | 6 | peer concall verification rework (cycle 1, B12b/B12d findings) | claude-sonnet-5 | default | n/a | n/a | 132266 | 5m59s | 2 |
+| 12a | verifier A numerical (cycle 2) | claude-haiku-4-5 | default | n/a | n/a | 114858 | 4m16s | 2 |
+| 12b | verifier B red flags (cycle 2, no-concall mode) | claude-opus-5-5 | default | n/a | n/a | 299202 | 11m14s | 2 |
+| 12d | verifier D peers (cycle 2) | claude-sonnet-5 | default | n/a | n/a | 82620 | 2m15s | 2 |

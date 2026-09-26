@@ -1,0 +1,23 @@
+stage: confidence-delta
+company: QUALITEK
+run_date: 2026-09-26
+phase: 1
+verification_cycle: 2   # cycle 1: B12b 43% (REWORK trigger) -> stages 5 and 6 reworked -> A, B, D re-run fresh; C not re-run (its scope, B01/B07, did not change)
+verifier_a_identity_check: "B12a carries 0 CRITICAL rows (cycle 1: 48 figures; cycle 2: 45 of 54, 20+ from the reworked B05/B06). Nothing to strike. No Verifier A finding struck."
+confidence_delta:
+  numerical_acceptance: 100      # B12a cycle 2: 45 of 45 checked figures clean (material universe 54); cycle 1 also 48/48
+  redflag_coverage: 67           # B12b cycle 2: 12 material items; 5 caught, 6 partially caught, 1 missed; B12b's own declared rule CAUGHT=1, PARTIAL=0.5 -> 8/12. Caught-only 42%; partials-as-had 92% (the DPABHUSHAN convention). Number of record = B12b's declared rate.
+  framework_adherence: 90.3      # B12c phase-1 half: 56 of 62 Gate 0 + EM rules passed; valuation half pending phase 3
+  peer_utilisation: 100          # B12d cycle 2: 12 of 12 peer transcripts substantive, 0 unsupported, 0 verdict-discipline fails (3 peers, 12 transcripts; denominator counted in transcripts as in prior runs)
+  overall: 67
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  pending_phase_3: ["framework_adherence valuation half (B10/B11)"]
+band: "60-74: PROCEED verdicts downgrade one level (set by redflag_coverage)"
+notes:
+  - "No CRITICAL finding in any verifier. No acceptance_rate below 60 on the number of record."
+  - "REWORK SENSITIVITY: B12b caught-only rate is 42%, below the 60% line. The number of record is B12b's own half-credit rate (67%). Under the DPABHUSHAN partials-as-had convention it is 92%. The convention is not fixed in prompts/12-verifiers-pipeline.md; flagged for the operator at Halt 1 and for /compost."
+  - "PIPELINE-WIDE CATCH: the one item B12b scores MISSED (managerial remuneration cap 28% -> 35% proposed 29-Aug-2026, withdrawn 07-Sep-2026) is in B08 adverse_findings and transition_evidence. The Rs 65 Cr NCD with contemplated share pledge is in B08; the CS turnover is in B08; the QTIPL promoter-common purchase is in B02/B03. Verifier B sees only B05/B06 and cannot credit them."
+  - "Correction cycle capped at one (run-log). Cycle-1 B12b was 43% on 7 material items; stage 5 and 6 reworks accepted the verifier corrections from source (REWORK LOG sections in 05-concall.md and 06-peers.md)."
+  - "B12c recomputes carried to synthesis: Gate 0 A1 band -> Block A 8, core 46, grand 58 (AVERAGE unchanged; deal-breaker 1 at its line); EM tiers and recount -> em_score 12.5 MODEST (11.5 NONE if E1 is struck as duplicate); B07 capex_embedded_growth_pct 88 not to be consumed (NOT DETERMINABLE on one basis)."
+  - "B12b cycle-2 open items for Halt 1: standalone FY26 includes the Mumbai lab bought by slump sale (Rs 882 lakh, w.e.f. 01-Sep-2025), so 'standalone = organic' is false; the Bengaluru USFDA lab has no Reg 30 filing and no audited acquisition note; like-for-like FY26 growth ~46.5% on the company's own FY25 walk-through base; 2X promise met at ~2.03x on the combined FY24 base, not 4.27x."

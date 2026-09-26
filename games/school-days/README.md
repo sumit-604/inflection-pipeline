@@ -637,6 +637,23 @@ All of them are on the big map (G).
   (and the Captain's booth for the Pilot), even if the room was set up
   before.
 
+## Driver's view and new fun (v45)
+
+- Driver's view: on the bicycle, scooty, motorbike or car you see the road
+  from the rider's eyes, through the windscreen (car) or helmet visor
+  (scooty), with the dashboard, steering wheel or handlebars, mirrors and a
+  speed and petrol display. Press V for the outside view and back.
+- Radio: press R while riding. Suryanagar FM, Cricket Live, News 24, Story
+  Time, then off.
+- Zippy Delivery at Pizza Corner: deliver 3 orders to houses before the
+  timer ends. Fast = tips.
+- Suryanagar Grand Prix: ride a vehicle through the red start gate on the
+  main road, then through 8 gold rings. Gold under 45 s, silver under 60 s,
+  bronze under 90 s. Your best time is saved.
+- Paint Shop at the Auto Garage: a new colour for the bicycle, scooty,
+  motorbike or car (Rs 150).
+- Daily surprise box at home: a new gift every day.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

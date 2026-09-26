@@ -1,0 +1,66 @@
+stage: B09b-dossier
+company: "TLL"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "research/ broker notes"
+    expected_source: "BSE / company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "rating/ rating rationale"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "concalls/ earnings-call transcripts"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "shareholding/ filed SEBI SHP-I pattern with pledge column"
+    expected_source: "BSE"
+    kind: "findable-missing"
+archetypes:
+  - line: "Formulations (parent + TNS Pharma, ~51% FY26 revenue)"
+    archetype: "Licence/scarcity business, blended with Outsourcing partner (historically loan-licence/CMO)"
+  - line: "Trident Mediquip (devices, ~21% FY26 revenue)"
+    archetype: "Build-to-spec component maker"
+  - line: "TLL Parenterals / TLL Wellness / TLL Elements (pre-revenue)"
+    archetype: "fits no known archetype (pre-revenue capacity, not yet classifiable)"
+transition:
+  - line: "Formulations (parent + TNS Pharma)"
+    from_tier: "R1/R2 boundary"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Owned-plant capacity conversion from installed to utilised, plus registration-pipeline conversion to booked distributor revenue"
+    proof_gate: "Any TLL Parenterals revenue line > Rs 0 in a results filing or AOC-1, against the Rs 200 Cr deck peak and Rs 12.54 Cr Yes Bank term debt already drawn; not fired as of Q1 FY27"
+    recognition_gap: "OPEN QUESTION: whether the market already prices in the claimed climb to R3; resolved at Stage 11 via the PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB (leaning), with a STRUCTURAL-FEATURE warning: peer-contradicted debtor days and an undisclosed cash-flow addback recurring two years running"
+    transition_falsifier: "TLL Parenterals Rs 0 revenue again through H2 FY27/FY27 AOC-1 with growing Yes Bank debt, or the working-capital-facilities line recurring unexplained in the FY27 AR"
+  - line: "Trident Mediquip"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed)"
+    engine: "Post-acquisition utilisation and device-margin uplift; acquired shrinking (Rs 35.08 Cr FY22 to Rs 20.58 Cr FY24) before TLL bought in"
+    proof_gate: "FY26 turnover Rs 27.32 Cr must clear its own FY22 level (Rs 35.08 Cr) and progress toward the Rs 70 Cr deck peak on a documented basis"
+    recognition_gap: "OPEN QUESTION: resolved at Stage 11"
+    ugliness: "ARTIFACT-OF-CLIMB (partially): the one subsidiary with real delivery, ~39% of its own deck peak, but still below its pre-acquisition FY22 revenue"
+    transition_falsifier: "FY27 turnover falling back toward FY24 levels (Rs 20.58 Cr) rather than continuing toward the peak"
+dominant_variables:
+  - "Capacity utilisation at the four newer subsidiaries, especially TLL Parenterals (0% booked revenue vs Rs 200 Cr peak)"
+  - "Registration-to-revenue conversion pace and region alignment (registrations Africa 64%/Asia 21% vs FY26 export revenue Asia-led 57%)"
+  - "True operating cash conversion ex the undisclosed working-capital-facilities addback (true FY26 CFO approx -Rs 4.77 Cr vs printed +Rs 4.69 Cr)"
+  - "Debtor-day trajectory against the CAPLIPOINT 117-136 day peer band (TLL at 208 days FY26)"
+business_falsifier: "A reversal of the improving >6-month receivables-ageing trend combined with a confirmed export de-registration event, or confirmation that the CFO/Executive Director's identity link to the audit firm influenced the accounting judgments already flagged (the working-capital-facilities addback, Claim Income)"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 4
+  verifiability_ratio: "2 of 4 externally observable"
+  single_point_failure: "none - failure requires conjunction (though the cash-conversion basis is close to a kill-switch if it recurs unexplained)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "ba8cc9e1c0b38989abbb31b37c24761656db7494"

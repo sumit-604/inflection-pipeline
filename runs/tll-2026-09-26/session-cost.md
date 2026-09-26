@@ -32,3 +32,28 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12c | verifier C framework, phase 1 half (re-run) | claude-opus-5-5 | default | n/a | n/a | 144445 | 6m27s | 2 |
 | 12d | verifier D peers (re-run) | claude-sonnet-5 | default | n/a | n/a | 93350 | 11m57s | 2 |
 | 13 | synthesis-lite (phase 1, round 2) | claude-opus-5-5 | default | n/a | n/a | 187340 | 7m13s | 2 |
+| 09b | Halt 1 dossier | claude-sonnet-5 | default | n/a | n/a | 148463 | 5m52s | 1 |
+
+## CLOSE-OUT SUMMARY
+
+Run total (sum of ledger rows with token counts): 4,030,010 tokens.
+
+(a) TOP FIVE BY TOKENS (retries and rework runs summed per stage)
+| rank | stage | total_tok | share |
+|---|---|---|---|
+| 1 | 12b verifier B red flags (2 runs; round 1 forced REWORK) | 587,310 | 14.6% |
+| 2 | 2 notes triple-pass (3 passes) | 394,104 | 9.8% |
+| 3 | 5 concall analysis, NO-CONCALL MODE (2 runs; rework) | 370,638 | 9.2% |
+| 4 | 13 synthesis-lite (2 runs; round 1 REWORK) | 356,922 | 8.9% |
+| 5 | 8 promoter check (2 runs; rework) | 294,245 | 7.3% |
+
+Rework round cost: stages 1, 5, 6, 7, 8 re-runs (690,538) plus the four verifier re-runs (667,854) plus synthesis round 2 (187,340) = 1,545,732 tokens (38.4% of the run). The trigger was an analysis miss, not an intake defect: round-1 stages 5 and 8 missed material items (auditor-to-CFO link in the prospectus signature pages; deck-level CFO basis change; results arithmetic).
+
+(b) DOWNSHIFT FAILURES
+- DOWNSHIFT FAILURE: stage 0 (input validation ran inline in the Opus orchestrator session, as run-pipeline step 1 directs "do this yourself"; no haiku stage-0 agent exists). Structural, same as DPABHUSHAN. Verifier A ran on haiku as routed (both runs).
+
+(c) COST SPIKES
+- none (no prior TLL run ledger exists).
+
+(d) OPERATOR SNAPSHOT
+- Operator: run /cost and /usage now and paste the cache hit ratio and loop totals under an "Operator snapshot" heading here.

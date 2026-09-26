@@ -1,0 +1,56 @@
+stage: B03-ardeep
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No Chairman's Letter / Message to Shareholders section exists in the FY26 AR (Contents page, PDF p.3); Phase 6 substituted the MD&A opening (Opportunities and Threats) as the functional front-matter narrative."
+  - "FY26 AR shareholding pattern section not read in depth this stage (out of the primary pages examined); Phase 5D relies on B00's independently-sourced NSE XBRL finding (promoter 68.11% Jun-2026 vs 73.67% Jun-2025)."
+  - "10 of the triple-pass Top 15 findings accepted on the triple-pass's own internal three-pass cross-check rather than independently re-derived line-by-line this stage, given time constraints; the 5 independently re-derived (receivables turnover, DSCR, payables turnover, goodwill, MSME payables growth) all matched exactly with no discrepancy."
+  - "LBF4 guidance figures (Rs 500 Cr by FY29; Q-Devices 10-15% of product revenue FY27) are concall-sourced per B00/company memory and do NOT appear anywhere in this FY26 AR text; marked NOT FOUND IN THIS DOCUMENT rather than estimated."
+  - "Saarathi (subsidiary) auditor identity not confirmed from the extract read; consolidated auditor's report names reliance on 'the other auditor' without printing the firm name in the pages examined."
+flags:
+  - {type: FLAG-CASH, reason: "Both standalone and consolidated Cash Flow Statements (AR p.94/p.124) classify the year's increase in short-term borrowings inside operating activities, not financing. Normalized for this (removing Rs 1,666.31 lakh standalone / Rs 1,666.92 lakh consolidated FY26 borrowings draw from CFO), CFO/PAT falls to 0.31x standalone / 0.23x consolidated FY26 (from 2.81x / 1.63x as reported), versus 1.13x / 0.36x FY25 on the same normalized basis. This is a materially worse and more structural cash-quality finding than B01's screener-level 'CFO fell 28% YoY' read."}
+phase_verdicts: {p1: "WATCH", p2: "RED FLAG", p3: "RED FLAG", p4: "RED FLAG", p5: "WATCH", p6: "WATCH", p7_best_fit: "GARP (WATCHLIST)"}
+overall_quality: 4.5
+quality_components: {governance: 6, accounting: 4, balance_sheet: 5, earnings: 3}
+kill_switch_notes:
+  - "Phase 1: would NOT stop — unqualified opinion, no fraud, no going-concern language; the four-year-rolling unpaid TDS demand (CARO vii(a), Rs 5,30,403) and undocumented KAM-2 impairment basis are watch items only."
+  - "Phase 2: would pause to seek the correct DSCR and the missing policy/segment/risk notes from management before relying on self-reported ratios; not a halt trigger."
+  - "Phase 3: would pause specifically on cash quality — reported CFO cannot be taken at face value without adjusting for the short-term-borrowings misclassification; not a halt trigger, no going-concern language exists."
+  - "Phase 4: would independently verify the company's true debt-service position given the MD&A/Note DSCR contradiction before trusting any AR-stated ratio; diligence flag, not a halt."
+  - "Phase 5: would not stop on governance mechanics (clean); would want the Saarathi ICD interest rate disclosed and the MD pay-rise-against-falling-PAT explained before calling governance fully clean."
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Receivables/cash-conversion deterioration and true operating cash generation weakness", evidence: "Phase 3 cash flow statement normalization (CFO/PAT 0.23x-0.31x FY26 ex-borrowings), AR p.94/p.124; Phase 2 receivables turnover -23.1% and DSCR -69.05%, AR p.114"}
+  - {risk: "Rising leverage / interest coverage approaching stress zone", evidence: "Interest coverage 3.51x (Gate-0 deal-breaker line is <3x); finance cost +32.5% YoY standalone, AR p.93/p.101"}
+  - {risk: "Related-party funding dependency, parent borrowing from 24%-minority-held subsidiary at an undisclosed rate", evidence: "Saarathi ICD payable Rs 1,885.95 lakh, interest paid Rs 136.61 lakh, no rate disclosed (per B02 Note 31/32); contrast with disclosed 9% p.a. on the unrelated One Billion Diagnostics loan"}
+  - {risk: "Import/FX exposure on a scaling import book", evidence: "CIF import value +61.3% YoY, zero disclosed hedging (per B02 triple-pass Finding 15)"}
+  - {risk: "Concentration/segment risk cannot be assessed at all", evidence: "No segment note anywhere in the financial statements (Phase 2 Finding 1; MD&A p.51 gives operational counts only, no segment revenue)"}
+guidance_table:
+  - {claim: "Hospital-segment expansion for product distribution and state-government service projects", number: "none quantified", timeframe: "unstated", credibility: "NOT CREDIBLE AS STATED — identical language repeated verbatim in substance from the FY25 AR (Annual_Report_2025.txt lines 4509-4556) with zero operational evidence of progress in either year"}
+  - {claim: "First to acquire prime and innovative medical technologies", number: "none quantified", timeframe: "unstated", credibility: "NOT CREDIBLE AS STATED — the only FY26 acquisition-type capital action was the Saarathi stake increase in an EXISTING subsidiary (51%->76%, Rs 14.54 Cr), not a new technology acquisition; opening ambition and actual action not reconciled"}
+  - {claim: "Q Devices maintained a positive growth trajectory", number: "none quantified", timeframe: "unstated", credibility: "UNVERIFIABLE — no Q Devices revenue figure disclosed anywhere in this AR, either year"}
+  - {claim: "National-scale business expansion", number: "none quantified", timeframe: "unstated", credibility: "UNVERIFIABLE — no geography/branch disclosure exists to test the claim"}
+monitorables:
+  - {metric: "CFO excluding short-term borrowings movement (normalized operating cash flow)", threshold: "should turn positive and cover a growing share of PAT", where: "Q2/Q3 FY27 results cash flow statement if disclosed, or FY27 AR", why: "tests whether FY26's ~0.2-0.3x normalized CFO/PAT was a one-year working-capital build or a structural feature"}
+  - {metric: "Debt Service Coverage Ratio, audited financial-statement note basis (not MD&A basis)", threshold: "recovery above 1.0x", where: "FY27 AR standalone financial-ratio note (Note 46 equivalent)", why: "fell to 0.79x in FY26 per the audited note; a further fall moves covenant risk from a watch item toward a deal-breaker"}
+  - {metric: "Interest coverage = (PBT + Finance cost) / Finance cost", threshold: "Gate-0 deal-breaker line is <3x", where: "quarterly results, finance cost and PBT lines", why: "currently 3.51x, one bad quarter of rising finance cost or flat EBITDA from the threshold"}
+  - {metric: "Segment or products-vs-services revenue split, if ever disclosed", threshold: "any disclosure at all", where: "FY27 AR, or investor presentations/concalls (outside this AR stage)", why: "directly resolves LBF1; currently impossible to test from the AR itself"}
+  - {metric: "Saarathi ICD interest rate", threshold: "any disclosed, market-benchmarked rate", where: "FY27 AR related-party note", why: "resolves the 24%-minority-fairness question this stage could not close"}
+ar_new_downstream_entities:
+  - {name: "Pranav Manhar Badheka", where_in_ar: "Corporate Information / Board of Directors, p.1 and p.4 (PDF p.4, p.8); appointed Additional Non-Executive Independent Director w.e.f. 03-Sep-2026", entity_type: "new independent director (post-FY26 year-end appointment)"}
+  - {name: "One Billion Diagnostics", where_in_ar: "referenced per Stage 2 (B02) Note 32 as a contrast loan carrying a disclosed 9% p.a. rate, versus the undisclosed-rate Saarathi ICD", entity_type: "RPT/loan counterparty named for the first time in this AR's notes (per B02 extraction; not independently re-verified against raw note text this stage)"}
+strengths_top3:
+  - "Unqualified audit opinion at both standalone and consolidated levels, two consecutive years, with a freshly appointed (2nd year of a 5-year term) auditor at a proportionate fee (Auditor's Reports, AR p.85/p.117; fee note p.101-102)."
+  - "Clean board mechanics: 100% attendance across 12 board meetings in FY26, independent-majority Audit Committee, unqualified secretarial audit, no board composition changes, no promoter pledge on record (Corporate Governance Report, AR p.58-61; B00 XBRL cross-check)."
+  - "Revenue growth is real and continuing (+10.8% consolidated, +5.1% standalone) with no exceptional-item smoothing or EPS-dilution masking in either year's P&L (Statements of Profit and Loss, AR p.93/p.123)."
+red_flags_top3:
+  - "Cash flow quality: both cash flow statements embed the year's short-term-borrowings increase inside operating activities; normalized CFO/PAT falls to 0.23x-0.31x FY26 (from 1.63x-2.81x as reported) (Cash Flow Statements, AR p.94/p.124)."
+  - "Same-document ratio contradiction: MD&A's self-reported DSCR (1.99x FY26) directly contradicts the audited financial-statement note's DSCR (0.79x FY26, -69% YoY) for the identical metric and year (MD&A p.53-54 vs standalone ratio note p.114)."
+  - "Disclosure completeness cluster: no Significant Accounting Policies note, no segment result (blocking any test of the products-vs-services margin question central to LBF1), and no financial-instruments/risk note exist anywhere in the 147-page filing (Phase 2, confirming and extending B02's triple-pass)."
+best_fit_strategy: "GARP (WATCHLIST) — revenue growth intact but earnings/cash quality and disclosure candor both need resolution before qualifying"
+one_line_verdict: "QMS MAS: FY26 profit growth intact on paper, but operating cash generation and disclosure candor both need a straight answer before this qualifies as GARP."
+analyst_note: "The single highest-value finding this stage adds beyond B02's triple-pass is the cash flow statement's own construction: short-term borrowings movements sit inside operating activities in both the standalone and consolidated cash flow statements, with no policy note anywhere explaining the classification. This means the reported CFO figures B00/B01 pulled from the screener (Rs 18.77 Cr standalone, Rs 19.44 Cr consolidated FY26) substantially reflect new borrowing, not operating cash generation; normalized CFO/PAT is 0.2-0.3x, far below the 0.7x flag threshold, in BOTH FY25 and FY26, and deteriorating. Combined with the MD&A/Note DSCR self-contradiction (1.99x vs 0.79x, same document, same year), this stage's central recommendation is that Stage 8/11 treat the reported cash and coverage ratios in this AR as unreliable without independent recomputation from the primary statements, which this stage has already done and anchored above."

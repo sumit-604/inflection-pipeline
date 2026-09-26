@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v52";
+const GAME_VERSION = "v53";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -6751,7 +6751,7 @@ class Game {
     this._gearChanged();
     this.minimap = new Minimap(this.world);
     this.bigmap = new BigMap(this);
-    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (this._sim) return; if (e.key.toLowerCase() === "g" && this._zone) { const m = document.getElementById("city-map"); if (m && !m.hidden) this._cityMapClose(); else this._cityMapOpen(); } else if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") this.bigmap.close(); if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v" && this.player.riding) { this.player.driveView = this.player.driveView === false; showToast(this.player.driveView ? L("🎥 Driver's view: you see through the windscreen. Press V for the outside view.") : L("🎥 Outside view. Press V for the driver's view."), 2400); } else if (e.key.toLowerCase() === "r" && this.player.riding && !panelOpen()) { this._radio(); } else if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "o" && this.world.currentRoom && !panelOpen() && !this.dialogue.active && !this._lockPanel) { standPose(this.player.group); this._exitRoom(); showToast(L("🚪 You step outside."), 1500); } if (e.key.toLowerCase() === "r" && this._partner) { if (panelOpen()) closePanel(); else if (!this.dialogue.active) this._partnerMenu(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
+    window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (this._sim) return; if (e.key.toLowerCase() === "g" && this._zone) { if (this._cityMapIsOpen()) this._cityMapClose(); else this._cityMapOpen(); } else if (e.key.toLowerCase() === "g") { if (this.bigmap.isOpen) this.bigmap.close(); else this.bigmap.open(); } if (e.key.toLowerCase() === "m") { if (panelOpen()) closePanel(); else this._phone(); } if (e.key === "Escape") { this.bigmap.close(); this._cityMapClose(); } if (e.key.toLowerCase() === "j") { if (panelOpen()) closePanel(); else this._openJobs(); }  if (e.key === "2") this._toggleP2(); if (e.key.toLowerCase() === "v" && this.player.riding) { this.player.driveView = this.player.driveView === false; showToast(this.player.driveView ? L("🎥 Driver's view: you see through the windscreen. Press V for the outside view.") : L("🎥 Outside view. Press V for the driver's view."), 2400); } else if (e.key.toLowerCase() === "r" && this.player.riding && !panelOpen()) { this._radio(); } else if (e.key.toLowerCase() === "v") { this.player.fpv = !this.player.fpv; this.progress.fpv = this.player.fpv; showToast(this.player.fpv ? L("👁️ First person. Press V to go back.") : L("🎥 Third person."), 2000); } if (e.key.toLowerCase() === "c") { this._wantShot = true; } if (e.key.toLowerCase() === "o" && this.world.currentRoom && !panelOpen() && !this.dialogue.active && !this._lockPanel) { standPose(this.player.group); this._exitRoom(); showToast(L("🚪 You step outside."), 1500); } if (e.key.toLowerCase() === "r" && this._partner) { if (panelOpen()) closePanel(); else if (!this.dialogue.active) this._partnerMenu(); } if (e.key.toLowerCase() === "t") { if (this.dialogue.active) this._chatFromDialogue(); else if (!panelOpen()) { const near = this._nearestInteractable(); if (near && near.npc) this._chat(near.npc); } } });
     this._ambient = { chirp: 3, horn: 5, bell: 30 };
     startAmbient();
     this.clock = new THREE.Clock();
@@ -7076,10 +7076,11 @@ class Game {
   _exitRoom() {
     const door = this.insideDoor;
     this.world.currentRoom = null; this.world.roomLight.visible = false; if (this._wearing) { this.insideDoor = null; this.applyUniform(); this.insideDoor = door; }
-    const x = door.x + Math.sin(door.rot) * 1.6, z = door.z + Math.cos(door.rot) * 1.6;
+    let x = door.x + Math.sin(door.rot) * 1.6, z = door.z + Math.cos(door.rot) * 1.6;
+    const ZZ = this._zone; if (ZZ && (Math.abs(x - ZZ.x) > ZZ.half || Math.abs(z - ZZ.z) > ZZ.half)) { const h = ZZ.places.hotel.door; x = h.x; z = h.z + 2; }
     this.player.group.position.set(x, 0, z); this.player.group.rotation.y = door.rot;
     this.player._placeCamera(1);
-    document.getElementById("minimap").hidden = false;
+    document.getElementById("minimap").hidden = !!ZZ;
     this.roomInteractables = null;
     for (const t of Object.values(this.teachers)) if (t._inRoom) { t.group.visible = false; t._inRoom = false; }
     for (const k of Object.values(this._kin || {})) { k.group.visible = false; k._inRoom = false; }
@@ -7366,7 +7367,7 @@ class Game {
       <div class="btn-row"><button class="big-btn" id="jobs-nets">🏏 ${L("Practice: cricket nets at the Stadium Ground")}</button><button class="big-btn" id="jobs-pens">⚽ ${L("Practice: penalties at the Stadium Ground")}</button></div>
       <div class="shop-list">${JOBS.map((j) => `<div class="cart-row"><div>${j.icon} <b>${j.name}</b>${pr.job === j.id ? " ✔ " + L("your job") : pr.hired.includes(j.id) ? " · " + L("hired") : ""}<small>${j.desc} · ${L("Place")}: ${j.place} · ${L("Salary")} ₹${j.salary}/${L("day")}</small></div>${canWork ? (pr.stream && JOB_STREAM[j.id] && JOB_STREAM[j.id] !== pr.stream && !pr.hired.includes(j.id) ? `<small>🔒 ${L("needs {s} stream", { s: JOB_STREAM[j.id] })}</small>` : `<button class="use-btn" data-id="${j.id}">${pr.hired.includes(j.id) ? L("Go") : L("Apply")}</button>`) : ""}</div>`).join("")}</div>`);
     const goGround = (fn) => this._goGround(fn);
-    const gw = card.querySelector("#jobs-work"); if (gw) gw.addEventListener("click", () => { const job = this.job; if (!job) return; closePanel(); const d = this.world.doors.find((x) => x.label === job.place); if (this.world.currentRoom) this._exitRoom(); this._enterRoom(d); showToast(L("You are at {p}. Your seat is marked with the arrow.", { p: job.place }), 3200, "good"); });
+    const gw = card.querySelector("#jobs-work"); if (gw) gw.addEventListener("click", () => { const job = this.job; if (!job) return; closePanel(); const Zw = this._zone, d = Zw && Zw.places.office ? Zw.places.office.door : this.world.doors.find((x) => x.label === job.place); if (this.world.currentRoom) this._exitRoom(); this._enterRoom(d); showToast(L("You are at {p}. Your seat is marked with the arrow.", { p: job.place }), 3200, "good"); });
     card.querySelector("#jobs-nets").addEventListener("click", () => goGround(() => this._sundayCricket()));
     card.querySelector("#jobs-pens").addEventListener("click", () => goGround(() => this._funPenalties()));
     card.querySelector("#jobs-close").addEventListener("click", () => closePanel());
@@ -9067,7 +9068,7 @@ class Game {
     if (onRoad && !onZebra) { if (elapsed - (this._roadToast || -99) > 4) { this._roadToast = elapsed; playHorn(); showToast("🚗 Not here! Cross only at the zebra crossing. Look right, left, right.", 2600, "bad"); } }
   }
 
-  _uiBlocking() { return !!this._cut || this.dialogue.active || panelOpen() || !document.getElementById("notebook").hidden || !document.getElementById("controls-board").hidden || !document.getElementById("bigmap").hidden || !document.getElementById("parent-view").hidden; }
+  _uiBlocking() { return !!this._cut || this.dialogue.active || panelOpen() || !document.getElementById("notebook").hidden || !document.getElementById("controls-board").hidden || !document.getElementById("bigmap").hidden || !document.getElementById("parent-view").hidden || (this._cityMapIsOpen && this._cityMapIsOpen()); }
 
   // Any runtime error shows on screen so it can be reported, instead of silently freezing a feature.
   _reportError(e) {
@@ -9344,7 +9345,7 @@ class Game {
       closePanel(); return;
     }
     if (how === "read") {
-      if (b.value === "atlas") { closePanel(); this.bigmap.open(); return; }
+      if (b.value === "atlas") { closePanel(); if (this._zone) this._cityMapOpen(); else this.bigmap.open(); return; }
       this._readStory(b.value); return;
     }
     // Other things.
@@ -10842,6 +10843,7 @@ class Game {
   }
   _tickCityZone(dt) {
     const Z = this._zone; if (!Z) return;
+    { const P = this.player.position; if (!this.world.currentRoom && !this._cut && !this._sim && (Math.abs(P.x - Z.x) > Z.half + 15 || Math.abs(P.z - Z.z) > Z.half + 15)) { const h = Z.places.hotel.door; this.player.group.position.set(h.x, 0, h.z + 2); this.player._placeCamera(1); showToast(L("📍 You are in {c}. Back at the Grand Hotel.", { c: Z.city }), 2600, "good"); } }
     for (const c of Z.cars) { c.c.position.x += c.v * dt; if (c.c.position.x > 158) c.c.position.x = -158; if (c.c.position.x < -158) c.c.position.x = 158; }
     for (const w of Z.walkers) { const p = w.h.position; if (w.alongX) { p.x += w.v * dt; if (Math.abs(p.x) > 150) w.v = -w.v; w.h.rotation.y = w.v > 0 ? Math.PI / 2 : -Math.PI / 2; } else { p.z += w.v * dt; if (Math.abs(p.z) > 150) w.v = -w.v; w.h.rotation.y = w.v > 0 ? 0 : Math.PI; } try { animateHuman(w.h, dt, true, 0.7); } catch (e) { /* static is fine */ } }
     this._cityMiniT = (this._cityMiniT || 0) - dt; if (this._cityMiniT <= 0) { this._cityMiniT = 0.25; this._cityMiniDraw(); }
@@ -10867,14 +10869,15 @@ class Game {
   _cityMiniDraw() { const c = document.getElementById("city-mini"); if (!c) return; c.hidden = !!this.world.currentRoom; if (c.hidden) return; try { this._cityDraw(c.getContext("2d"), 160, false); } catch (e) { /* no canvas */ } const m = document.getElementById("city-map"); if (m && !m.hidden) this._cityMapDraw(); }
   _cityMapOpen() {
     const Z = this._zone; if (!Z) return; let m = document.getElementById("city-map");
-    if (!m) { try { m = document.createElement("div"); m.id = "city-map"; m.style.cssText = "position:fixed;inset:0;z-index:70;background:rgba(10,16,30,.75);display:flex;align-items:center;justify-content:center"; m.innerHTML = `<div style="background:#fff;border-radius:16px;padding:12px;max-width:96vw"><div style="display:flex;justify-content:space-between;align-items:center;font:800 18px system-ui"><span id="cm-title"></span><button id="cm-x" style="border:none;background:#eee;border-radius:8px;padding:6px 12px;font:700 14px system-ui;cursor:pointer">✕</button></div><canvas id="cm-c" width="420" height="420" style="width:min(420px,86vw);height:min(420px,86vw);display:block;margin:8px auto"></canvas><div id="cm-go" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center"></div></div>`; document.body.appendChild(m); m.querySelector("#cm-x").addEventListener("click", () => this._cityMapClose()); } catch (e) { return; } }
-    m.hidden = false; m.querySelector("#cm-title").textContent = `🗺️ ${Z.city}`; const go = m.querySelector("#cm-go"); go.innerHTML = "";
+    if (!m) { try { m = document.createElement("div"); m.id = "city-map"; m.style.cssText = "position:fixed;inset:0;z-index:70;background:rgba(10,16,30,.75);display:flex;align-items:center;justify-content:center"; m.innerHTML = `<div style="background:#fff;border-radius:16px;padding:12px;max-width:96vw"><div style="display:flex;justify-content:space-between;align-items:center;font:800 18px system-ui"><span id="cm-title"></span><button id="cm-x" style="border:none;background:#eee;border-radius:8px;padding:6px 12px;font:700 14px system-ui;cursor:pointer">✕</button></div><canvas id="cm-c" width="420" height="420" style="width:min(420px,86vw);height:min(420px,86vw);display:block;margin:8px auto"></canvas><div id="cm-go" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center"></div></div>`; document.body.appendChild(m); m.querySelector("#cm-x").addEventListener("click", () => this._cityMapClose()); m.addEventListener("click", (e) => { if (e.target === m) this._cityMapClose(); }); } catch (e) { return; } }
+    m.hidden = false; m.style.display = "flex"; m.querySelector("#cm-title").textContent = `🗺️ ${Z.city}`; const go = m.querySelector("#cm-go"); go.innerHTML = "";
     const list = Object.values(Z.places).filter((p) => p.icon).concat(this._landmark ? [{ icon: "🏙️", label: this._landmark.userData.name, x: this._lmDoor ? this._lmDoor.x - Z.x : 45, z: this._lmDoor ? this._lmDoor.z - Z.z : -10 }] : []);
     for (const p of list) { const b = document.createElement("button"); b.textContent = `${p.icon} ${p.label}`; b.style.cssText = "border:none;border-radius:10px;padding:8px 10px;font:700 13px system-ui;background:#2a9d8f;color:#fff;cursor:pointer"; b.addEventListener("click", () => { this.setObjective(`${p.icon} ${p.label}`, Z.x + p.x, Z.z + p.z); this._cityMapClose(); showToast(L("🧭 The compass now points to {p}.", { p: p.label }), 2400, "good"); }); go.appendChild(b); }
     this._cityMapDraw();
   }
-  _cityMapDraw() { const m = document.getElementById("city-map"); if (!m || m.hidden) return; try { this._cityDraw(m.querySelector("#cm-c").getContext("2d"), 420, true); } catch (e) { /* no canvas */ } }
-  _cityMapClose() { const m = document.getElementById("city-map"); if (m) m.hidden = true; }
+  _cityMapIsOpen() { const m = document.getElementById("city-map"); return !!(m && !m.hidden && m.style && m.style.display === "flex"); }
+  _cityMapDraw() { const m = document.getElementById("city-map"); if (!m || !this._cityMapIsOpen()) return; try { this._cityDraw(m.querySelector("#cm-c").getContext("2d"), 420, true); } catch (e) { /* no canvas */ } }
+  _cityMapClose() { const m = document.getElementById("city-map"); if (m) { m.hidden = true; m.style.display = "none"; } }
   // ---- The landmark in the city: stand in its plaza, walk in through the entrance ----
   _zoneLandmark(city) {
     const Z = this._zone; if (!Z) return false; let lm; try { lm = makeLandmark(city); } catch (e) { return false; }

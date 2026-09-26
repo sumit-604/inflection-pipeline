@@ -720,6 +720,15 @@ All of them are on the big map (G).
   the real city, go inside its landmark, then go back to the cockpit or
   engine for the return trip.
 
+## City maps close, and you stay inside the city (v53)
+
+- The city map now closes with ✕, G, Esc, a tap outside, or a place
+  button. The Suryanagar map already closed fine and still does.
+- "Go to work" (J) in another city takes you to that city's office, not
+  the Suryanagar one.
+- If anything moves you out of the city you are visiting, the game brings
+  you back to that city's Grand Hotel at once.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

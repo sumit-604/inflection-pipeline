@@ -1,0 +1,44 @@
+stage: B07-emoat
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No capex programme, project list, or facility utilisation data exists anywhere in the corpus (2A/2B); business is asset-light distribution/services, confirmed not an extraction gap."
+  - "No segment result note exists (carried from B02/B03); C1/C2/D1/D2 rest on management claims because no audited products-vs-services or platform-level metric can independently test them."
+  - "Top-client/customer concentration percentage not disclosed anywhere in the corpus (carried from B04); C2 scored NO EVIDENCE FOUND rather than estimated."
+  - "HCAH/Saarathi composite scheme's own completion date is not separately stated in the 25-Sep-2026 filing (only the linked BeamOptics indicative date, 30-Nov-2027, is given); scheme timeline in Section 6A is an inference from the adjacent BeamOptics date, flagged as such."
+flags:
+  - {type: FLAG-EMOAT-CONCENTRATION, reason: "3 of 5 Strong/Moderate scored rows (H1 bolt-on M&A, H2's scheme leg, B2's SOC2-to-contract causal link) are unproven-in-cash-flow, recently announced/completed actions (Jul-Sep 2026) layered on a company already showing deteriorating cash conversion (B01/B02/B03: CFO -28% YoY, interest cover 3.51x, DSCR 0.79x audited). A funding or execution stumble on any one deal removes most of this scan's scored evidence at once."}
+em_score: 17
+em_classification: "MODEST"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Moderate", evidence_type: "claim", time_to_materialise: "ongoing"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented+claim", time_to_materialise: "ongoing"}
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24m"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Strong", evidence_type: "documented", time_to_materialise: "near-term to 12-24m"}
+evidence_mix: {documented: 5, claim: 6, inference: 2}
+completionist_recount: "5 documented items across 4 scored categories (B2, H1, H2 x2 sub-items, plus the non-moat 2C capex figure); well inside the realistic 3-6 category base rate."
+catalysts_12m:
+  - {catalyst: "HEINE Optotechnik exclusive distribution ramp from 1-Jan-2027 start", window: "0-12m", evidence_type: "documented", anchor: "20260827-Press-Release-QMS_27082026112553_NSE_intimationSd.txt"}
+  - {catalyst: "HCAH/Saarathi composite scheme NCLT and shareholder approval progress", window: "0-24m", evidence_type: "documented", anchor: "20260925-Acquisition-QMS_25092026185825_Outcome250926.txt"}
+  - {catalyst: "Saarathi SOC 2 Type II first surveillance audit and any named pharma-client win attributable to it", window: "0-12m (due by 15-Jul-2027)", evidence_type: "documented", anchor: "20260721-General-Updates-QMS_21072026154035_Sd_Regulation_30_QMS.txt"}
+  - {catalyst: "Q-Devices FY27 print against reset 10-15%-of-product-revenue target", window: "0-12m", evidence_type: "claim", anchor: "Concall_Jun_2026_Transcript.txt lines 667-680"}
+  - {catalyst: "GLP-1 patent-cliff PSP pipeline converting to named signed contracts", window: "0-9m", evidence_type: "claim", anchor: "Concall_Aug_2026_Transcript.txt lines 287, 728-751"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "BeamOptics gives QMS in-house optics/diagnostics manufacturing capability", converting_evidence: "BeamOptics FY27 revenue scaling beyond its Rs 1.14 Cr FY26 base, or a named product/customer win under the QMS brand", first_appears: "FY27 AR segment/subsidiary note, or a Reg 30 product-launch filing", window: "12-24 months"}
+  - {optionality: "Proprietary technology platform (eGramin/QMS MEDS/Saarathi CRM) becomes a disclosed, metric-backed data asset", converting_evidence: "A disclosed participant count, transaction volume, or digital-revenue % tied to the platform", first_appears: "Investor presentation with a platform-specific KPI slide, or an AR technology note", window: "12-24 months"}
+  - {optionality: "GLP-1 patent-cliff tailwind converts into a named, quantified PSP contract pipeline", converting_evidence: "A signed contract or investor-disclosed pipeline value specifically tied to GLP-1-linked programmes", first_appears: "Q2/Q3 FY27 concall or investor deck", window: "2-3 quarters"}
+  - {optionality: "Q-Devices product pipeline (unnamed 'unique products')", converting_evidence: "A named new SKU, its launch date, or a patent/design registration filed under the Q-Devices brand", first_appears: "Concall Q&A or Reg 30 filing", window: "12-24 months"}
+  - {optionality: "HCAH/Saarathi scheme's promised combined scale (160+ PSPs, 1.2mn+ patients)", converting_evidence: "NCLT and shareholder approval completing the scheme, followed by a disclosed combined-entity revenue/margin figure", first_appears: "Reg 30 scheme-effective filing; subsequent AR/concall", window: "12-24 months"}
+  - {optionality: "Contract renewal rate (60-70%) becomes a disclosed, audited metric", converting_evidence: "A stated renewal rate or client-retention KPI in an AR note or investor deck", first_appears: "FY27 AR or investor presentation", window: "12-24 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (Core 53, softening FY26 run-rate) plus Emerging Moat MODEST (17, below the 25-point UA qualifier); real documented forward evidence exists (HEINE, HCAH/Saarathi scheme, SOC 2) but not yet at the threshold that would flag this as the AVERAGE-backward-plus-EXPANSION-forward transition setup the strategy hunts for."
+top_moat_risks:
+  - "3 of 5 Strong/Moderate rows (H1, H2's scheme leg, B2's SOC2-to-contract link) are unproven-in-cash-flow, recently announced/completed actions layered on deteriorating cash conversion (interest cover 3.51x, DSCR 0.79x audited)."
+  - "HEINE agreement is a distribution contract QMS does not own; exclusivity protects only for the 5-year term and HEINE can decline renewal."
+  - "BeamOptics is a near-zero-revenue entity (Rs 1.14 Cr FY26); if FY27 revenue does not scale, this row's evidence disappears at the next scan."
+  - "B05 credibility grade C (unacknowledged Q-Devices miss, slipping margin guidance, twice-restated camps revenue) is a leading indicator that verbal claims underlying C1/D1/D2 may not hold under scrutiny."
+analyst_note: "The scan's evidence is unusually concentrated in one 6-week window (21-Jul-2026 SOC2 to 25-Sep-2026 scheme): every Strong/Moderate row except F2's Saarathi-tranche history was signed or completed within that span, none has yet shown up in a full reporting quarter, and all sit against a backward financial picture (B01/B02/B03) that is simultaneously deteriorating on cash and working capital. This is a genuine cluster of forward-facing corporate actions, not a fabricated one, but its newness is itself the reason the adjusted score (17) stays well short of the 25-point threshold: none of it has survived a quarter of results yet."

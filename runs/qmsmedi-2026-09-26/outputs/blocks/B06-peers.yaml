@@ -1,0 +1,44 @@
+stage: B06-peers
+company: "QMSMEDI"
+run_date: "2026-09-26"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - "MEDIUM: Peer evidence (POLYMED Q2 FY26) shows global shipping conditions EASING, not disrupting, during the exact Oct-2025-Mar-2026 window QMS cited as the cause of its H2 FY26 product-revenue slowdown; this contradicts QMS's external-blame framing and should be tested directly with management."
+  - "LOW-MEDIUM: No QMS concall (Q1 FY26 through Q1 FY27) has ever raised Chinese import dumping or zero-duty ASEAN device imports as a risk, despite this being a live, government-escalated issue for two device-adjacent peers (POLYMED, ENTERO) whose Products-segment analogue (third-party device resale) shares the same import-competition exposure."
+peers_provided: 3
+verified: []
+partially_verified:
+  - {claim: "Contract renewal/rollover rates and annual price-escalation clauses (5-12%) are an industry norm, not QMS-specific", peers: ["INDGN"]}
+  - {claim: "GLP-1 (semaglutide) generic launch is creating a genuine, industry-wide patient-engagement/PSP demand tailwind", peers: ["INDGN", "ENTERO"]}
+contradicted:
+  - {claim: "Supply-chain or shipping disruptions specific to Q3/Q4 FY26 (Oct-2025 to Mar-2026) delayed QMS product orders", contradicting_peer: "POLYMED", quote_anchor: "POLYMED Q2 FY26 call (10-Nov-2025): 'The Suez Canal channel is open now... earlier the goods were taking 2-1/2 months to reach there, they are reaching in now around 1 month' (transit times improving, not disrupting, in-window; POLYMED's own genuine Gulf-war logistics disruption begins only from its Q4 FY26 call, 25-May-2026, and runs export-side, opposite direction to QMS's claim)"}
+unverifiable:
+  - {claim: "Global PSP market is genuinely ~$70 billion and doctor-facing-to-patient-facing ad spend has shifted ~90-95% to ~20-25% over 2-3 years", peers_checked: ["INDGN"]}
+  - {claim: "Practo or an online-only patient-engagement platform is taking measurable share from pharma-funded PSP or B2B distribution relationships", peers_checked: ["ENTERO", "POLYMED"]}
+peer_coverage_map:
+  - {peer: "INDGN", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Establishes HCP-facing (not patient-facing) business model, informing Claim 1 UNVERIFIABLE"}
+  - {peer: "INDGN", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Renewal stability and COLA mechanics feed Claim 3"}
+  - {peer: "INDGN", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Industry growth stats and GTM/M&A capex feed 2A/2C"}
+  - {peer: "INDGN", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Anti-obesity primary-growth-driver statement feeds Claim 5; >100% net retention feeds Claim 3"}
+  - {peer: "ENTERO", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Detailed GLP-1/Eli Lilly/Wegovy commentary, core Claim 5 evidence"}
+  - {peer: "ENTERO", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "GLP-1 market-share quantification; labour-code exceptional cost feeds 2E"}
+  - {peer: "ENTERO", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "GLP-1 built into FY27 guidance; M&A-pause strategy feeds 2C; margin-mix data feeds LBF1"}
+  - {peer: "ENTERO", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "GLP-1 quantified ~5% of category; minority-interest disclosure practice feeds 2E governance comparison"}
+  - {peer: "POLYMED", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Suez Canal transit-time improvement directly contradicts Claim 2; China dumping and US FDA delay feed 2E"}
+  - {peer: "POLYMED", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Continuing China dumping and trade-deal context feed 2E; capex feeds 2C"}
+  - {peer: "POLYMED", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Gulf-war logistics disruption onset is key counter-evidence timing detail for Claim 2; RM cost shock feeds 2B"}
+  - {peer: "POLYMED", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Middle East disruption quantified (32% ROW degrowth), confirming later/different-direction timing vs QMS's claim"}
+industry_cross_read:
+  demand: "All three peers describe improving CY2025/FY26 demand (pharma 9% vs 6.4% CY2024 per INDGN; IPM back to 10-12% per ENTERO; Indian private-hospital growth 20-25%+ per POLYMED), but none attributes it primarily to a GLP-1-driven patient-support boom the way QMS's guidance implies; the tailwind is real but broader and less concentrated than QMS's framing."
+  pricing_inputs: "Heterogeneous across peers: POLYMED faces a genuine ~20% crude-linked raw-material cost shock (manufacturer); ENTERO's margin gain is mix-driven (MedTech commercial-role premium, 10%+ EBITDA vs pure distribution's 4-5%); INDGN's margin moves are wage-cycle and discretionary-investment driven. ENTERO's distribution-vs-commercial-role margin split corroborates QMS's own SOTP logic (services earn structurally higher margin than distribution) even though QMS has not yet delivered the mix-shift margin uplift."
+  capex_cycle: "Industry-wide capacity/investment race, not a lone expander: INDGN (GTM/GenAI/M&A), ENTERO (~Rs 1,000 Cr FY26 MedTech M&A then a deliberate FY27 pause), and POLYMED (Rs 200-296 Cr/year capex plus cross-border M&A under a 2030 doubling plan) are all investing simultaneously, funded by recent IPO/QIP or accumulated cash. QMS's own front-loaded investment sits inside this broader pattern, though at two to three orders of magnitude smaller scale."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Chinese dumping / zero-duty ASEAN import competition on medical devices (POLYMED, all 4 calls; ENTERO indirectly via MedTech commentary) - never raised by QMS management despite QMS's Products segment reselling comparable third-party imported devices."
+  - "New labour code implementation one-time cost impact (ENTERO Rs 6.1 Cr and POLYMED Rs 6.8 Cr exceptional items, both Q3 FY26) - never named by QMS as a driver of its own Q1 FY27 employee-cost jump (Rs 3.2 Cr to Rs 11.2 Cr YoY, per B04), which remains attributed only to 'front-loaded hiring.'"
+  - "Middle East / Gulf-war shipping and logistics disruption (POLYMED, from Q4 FY26 onward, 32% ROW degrowth by Q1 FY27) - a genuine, quantified, ongoing disruption, but export-side and later-onset than QMS's own claimed Oct-2025-Mar-2026 product-slowdown window."
+  - "Working-capital intensity benchmark: ENTERO (pure distribution) runs ~59-66 net-working-capital days; even POLYMED (a full device manufacturer) runs ~140-day cash-conversion cycle. QMS's own ~181 inventory days (B00 LBF2) looks structurally elevated against both comparators, reinforcing B04's 'high' WC-intensity flag with an external cross-check."
+net_narrative_effect: "complicates"
+analyst_note: "The peer set's most load-bearing contribution is negative evidence: POLYMED's Q2 FY26 call shows shipping conditions improving, not worsening, during the exact window QMS blamed for its product-revenue miss, which should be put to QMS management directly at the next opportunity. The GLP-1 partial-verification (ENTERO detailed, INDGN macro) is genuine support for QMS's growth thesis but does not reach QMS's specific PSP-programme framing. The Chinese-dumping risk that two peers raise repeatedly and QMS has never mentioned is a new, unprompted finding worth carrying into the missing-risks section of synthesis."

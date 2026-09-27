@@ -1,0 +1,44 @@
+stage: B07-emoat
+company: "KROSS"
+run_date: "2026-09-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "R&D headcount, PhD/specialist counts, ESOP-to-technical-staff data: NOT FOUND (F1/I1)."
+  - "No patent, IP filing, or licensing revenue disclosure found in this run's corpus (A2)."
+  - "Capex figure for robotic forging facility and HPML foundry doubling: NOT FOUND (no rupee amount disclosed)."
+  - "Axle beam capacity-addition percentage conflicts between the Reg 30 filing (60%, 5,000->8,000) and the AR Strategic Priorities text (50%, 5,000->7,500); not reconciled in this run."
+flags:
+  - {type: FLAG-SINGLE-ENGINE-MOAT, reason: "Adjusted emerging-moat score of ~15/92 is concentrated almost entirely in A1 (rare manufacturing capability, 4.0) and B1 (backward integration, 4.0); every other family scores 0 or negative (customer concentration worsening, cash conversion negative, execution track record poor per B05)."}
+  - {type: FLAG-EXECUTION-CREDIBILITY, reason: "The two 📄-documented capex projects underpinning the entire emerging-moat score (axle beam extrusion, seamless tube) both carry documented timeline slippage or unreconciled walk-backs per the injected B05 promise-delivery record (credibility_grade C)."}
+data_years: null
+em_score: 15
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Strong", evidence_type: "documented", time_to_materialise: "live (axle beam); 12-18mo (seamless tube)"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "claim", time_to_materialise: "live to 12mo"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Strong", evidence_type: "documented", time_to_materialise: "live to 18mo"}
+evidence_mix: {documented: 6, claim: 5, inference: 0}
+completionist_recount: "📄 recount performed: 6 documented items across 4 categories (A1, A3-capex-leg, B1, F2-negative-pattern, G1-capital-structure, H3-solar-PPA); categories scored Strong or Moderate: 3 (A1, A3, B1), consistent with the 3-6 base rate."
+catalysts_12m:
+  - {catalyst: "Robotic forging facility commissioning confirmation", window: "0-3 months (targeted Sep-2026, imminent as of this run date)", evidence_type: "documented", anchor: "AR PDF p.20 (printed p.35); Inv. Pres. Q1 FY27 slide line 135, 161-162"}
+  - {catalyst: "Consolidated EBITDA margin recovery toward 14-15% guidance vs staying sub-13%", window: "Q2/Q3 FY27 results", evidence_type: "claim (guidance) tested against documented actuals", anchor: "B05-concall guidance table and FLAG-MARGIN-MISS"}
+  - {catalyst: "Seamless tube commissioning on/near reaffirmed Q4 FY27 date", window: "12-18 months", evidence_type: "documented (construction progress) / claim (date)", anchor: "AR PDF p.30 (printed p.58); Inv. Pres. line 132; B05 guidance table"}
+  - {catalyst: "Export % of revenue rising toward diluted 8% target without further dilution", window: "24 months", evidence_type: "claim", anchor: "B05 FLAG-GUIDANCE-DILUTION; AR PDF p.23 (printed p.40)"}
+capex_embedded_growth_pct: 81
+optionality_register:
+  - {optionality: "Seamless tube surplus capacity sold into oil and gas as a new revenue stream", converting_evidence: "Named customer contract or disclosed order value for oil and gas offtake", first_appears: "Exchange filing (Reg 30) or next AR segment note", window: "18-24 months post seamless-tube commissioning"}
+  - {optionality: "Export share reaching 8% of revenue in two years", converting_evidence: "A quarter with consistent export % disclosure and no further target dilution, or a signed European Tier-1 order value", first_appears: "Quarterly results / investor presentation", window: "24 months, WATCH given 3x prior dilution"}
+  - {optionality: "Tractor segment reaching 15% of revenue", converting_evidence: "Reconciled quarterly tractor-segment % showing sustained rise from ~9.5-9.9% base", first_appears: "Quarterly results / AR MD&A", window: "24 months"}
+  - {optionality: "Robotic forging facility operational by September 2026", converting_evidence: "Confirmed commissioning announcement or post-commissioning capacity/output figure", first_appears: "Exchange filing or Q2 FY27 concall", window: "0-3 months, imminent"}
+  - {optionality: "Axle-beam-extrusion margin upside above 50% utilisation", converting_evidence: "Disclosed utilisation figure for the 8,000-unit/month line plus a matching margin print", first_appears: "Quarterly results, MD&A", window: "6-12 months"}
+  - {optionality: "Tipping Jack scaling to 500 units/month by Q3 FY27", converting_evidence: "Actual volume disclosure at or near the revised target", first_appears: "Quarterly results, concall", window: "WATCH, already twice-missed"}
+  - {optionality: "V-Rod and Torsion Rod Assemblies commercial launch", converting_evidence: "Reg 30 product-launch filing with stated capacity/date", first_appears: "Exchange filing", window: "before Q2 FY27, imminent"}
+  - {optionality: "HPML foundry doubling casting capacity", converting_evidence: "Confirmed completion announcement and post-expansion utilisation/output figure", first_appears: "Exchange filing, AR, or Inv. Pres.", window: "Sep-2026, near-term"}
+combined_assessment: "GOOD"
+combined_reasoning: "GOOD (B01) backward score paired with MODEST (this stage) forward score, concentrated in one vertical-integration engine (A1/B1) that itself carries a documented execution-credibility flag (B05); not a HIGH POTENTIAL or TURNAROUND setup on this run's evidence."
+top_moat_risks:
+  - "Execution credibility: both capex projects underpinning the score (axle beam extrusion, seamless tube) already show timeline slippage or unreconciled walk-backs (B05 timeline_slippages)."
+  - "Capex outrunning cash generation: FCF -Rs72.43 Cr FY26, CFO/PAT 0.503x, borrowings up 60.3% YoY (B01/B02/B03), raising funding-gap risk for the remaining seamless-tube spend."
+  - "Customer concentration worsening, not improving, while the emerging moat scan finds no offsetting customer-ecosystem or diversification evidence (C1/C2 both score 0)."
+analyst_note: "The emerging-moat score is unusually concentrated: A1 and B1 together are ~8.0 of the ~14.8 raw-equivalent adjusted total (before R1/G1/H3/E2/A3/B2 residual points), i.e. this is a one-engine thesis, not a portfolio of independent forward advantages. Stage 9 should carry forward the Rs167 Cr seamless tube capex figure (AR PDF p.30, printed p.58) as the capex-under-execution anchor; the Rs25 Cr axle beam extrusion spend is materially complete and commercially operating, not forward capex. The 81% capex-embedded-growth figure (2C) is a mechanical ceiling per the instructed arithmetic, not a base case: new-plant turnover ramps below the blended historical ratio, part of seamless-tube output is captive (already counted in the trailer-axle 1C row), and B01/B03 already flag a capex-outrunning-cash pattern arguing for a longer gestation lag."

@@ -1,0 +1,43 @@
+stage: B06-peers
+company: "KROSS"
+run_date: "2026-09-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-TRAILER-GROWTH-DRIVER-DISPUTED, reason: "RKFORGE MD explicitly denies trailer/long-haul is the M&HCV growth segment ('I don't think that is growing significantly... growth is coming from the tipper vehicle,' RKFORGE-Concall_Feb_2026.pdf p.18-19), complicating a read of Kross's 34% YoY trailer-segment growth as industry-wide rather than share-specific."}
+  - {type: FLAG-DEMAND-SEGMENT-SPLIT, reason: "AUTOAXLES guides FY27 industry M&HCV volume down 5-10% (best case flat) even after upward revision (AUTOAXLES-Concall_Aug_2026.pdf p.9-10), while RKFORGE and HAPPYFORGE report strengthening domestic CV demand in the same Q1 FY27 window; the M&HCV recovery Kross cites is segment-specific, not uniform."}
+peers_provided: 3
+verified:
+  - {claim: "Steel/commodity cost trajectory, LPG shortage impact, and ~one-quarter OEM settlement lag structure", peers: ["AUTOAXLES", "HAPPYFORGE", "RKFORGE"], anchor_count: 6}
+partially_verified:
+  - {claim: "Kross's 26-28% trailer axle/suspension market share vs peer-described competitive landscape and implied Q1 FY27 share gain", peers: ["RKFORGE", "AUTOAXLES"]}
+  - {claim: "Peer capex-cycle utilisation levels (60-75%) and 'demand exceeds capacity' commentary in trailer axle/suspension", peers: ["AUTOAXLES", "HAPPYFORGE", "RKFORGE"]}
+contradicted:
+  - {claim: "Same M&HCV/tipper/prime-mover demand recovery and 'high single-digit' FY27 OEM volume guidance", contradicting_peer: "AUTOAXLES", quote_anchor: "AUTOAXLES-Concall_Aug_2026.pdf p.9-10: 'Beginning of this year, we had a projection, which was 15%-20% lower than last year. Now, the revised forecast... is it could be less than 5%-10% dip compared to last year... Best case, same as last year.'"}
+unverifiable:
+  - {claim: "Comparable EU Tier-1 export ramp and similar export-target dilution pattern among peers", peers_checked: ["HAPPYFORGE", "RKFORGE", "AUTOAXLES"]}
+peer_coverage_map:
+  - {peer: "AUTOAXLES", quarter: "Q2 FY26 (Concall_Nov_2025)", usage: "SUBSTANTIVE", contribution: "Baseline market-share-question pattern (answered directly every call), contrasted with Kross's Q1 FY27 refusal."}
+  - {peer: "AUTOAXLES", quarter: "Q3 FY26 (Concall_Feb_2026)", usage: "SUBSTANTIVE", contribution: "FY27 volume guidance (5-7% down), 80% capacity utilisation with explicit 'not capacity constrained' statement."}
+  - {peer: "AUTOAXLES", quarter: "Q4 FY26 (Concall_May_2026)", usage: "CITED-ONLY", contribution: "Market-share Q&A on Tata Motors/brakes wallet share; did not change a Part 1 verdict beyond Feb/Aug calls."}
+  - {peer: "AUTOAXLES", quarter: "Q1 FY27 (Concall_Aug_2026)", usage: "SUBSTANTIVE", contribution: "Steel/gas pass-through and LPG availability language in the same quarter as Kross's margin miss; revised but still-negative FY27 volume guidance; direct market-share answers."}
+  - {peer: "HAPPYFORGE", quarter: "Q2 FY26 (Concall_Nov_2025)", usage: "SUBSTANTIVE", contribution: "Establishes 1-month/1-quarter steel pass-through lag structure and FX hedge-loss risk not disclosed by Kross."}
+  - {peer: "HAPPYFORGE", quarter: "Q3 FY26 (Concall_Feb_2026)", usage: "SUBSTANTIVE", contribution: "Retrospective alloy-steel settlement mechanics and a named 12-15 month commodity up-cycle call."}
+  - {peer: "HAPPYFORGE", quarter: "Q4 FY26 (Concall_May_2026)", usage: "SUBSTANTIVE", contribution: "Quantifies LPG/fuel cost hike (30-40%, ~1% of cost base) in the period Kross cites an LPG shortage."}
+  - {peer: "HAPPYFORGE", quarter: "Q1 FY27 (Concall_Aug_2026)", usage: "SUBSTANTIVE", contribution: "Segment CV growth (single-digit blended, 18% domestic) and utilisation figures (59% forging/78% machining)."}
+  - {peer: "RKFORGE", quarter: "Q2 FY26 (Concall_Nov_2025)", usage: "CITED-ONLY", contribution: "General commodity/one-timer commentary; no standalone verdict-changing figure."}
+  - {peer: "RKFORGE", quarter: "Q3 FY26 (Concall_Feb_2026)", usage: "SUBSTANTIVE", contribution: "MD directly rebuts the trailer-segment-is-the-growth-driver premise; the most consequential complicating data point."}
+  - {peer: "RKFORGE", quarter: "Q4 FY26 (Concall_May_2026)", usage: "SUBSTANTIVE", contribution: "Discloses its own competing trailer axle business (Rs.120cr, 4-5% share, target Rs.250cr/10%) and utilisation figures (70% forging, 40% cold forging, 80% casting)."}
+  - {peer: "RKFORGE", quarter: "Q1 FY27 (Concall_Jul_2026)", usage: "SUBSTANTIVE", contribution: "Explicit one-quarter steel pass-on lag named in the exact quarter Kross's margin missed; ring-rolling at 127% utilisation."}
+industry_cross_read:
+  demand: "Segment-specific, not industry-wide: RKFORGE/HAPPYFORGE report strengthening tipper/tractor/replacement-cycle CV demand through Q1 FY27; AUTOAXLES (heavy-tonnage, single/dual-source OEM axle) guides FY27 industry volume flat-to-down 5-10%."
+  pricing_inputs: "All three peers confirm steel is a contractual pass-through with a ~1-month domestic / ~1-quarter export-or-settlement lag, and LPG/fuel cost pressure in the same Q1 FY27 window Kross cites; this materially corroborates Kross's margin-miss excuse as sector-standard, not company-specific."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: AUTOAXLES, HAPPYFORGE and RKFORGE are all adding capacity concurrently (axle/M&HCV outlook, general expansion, casting/aerospace/ring-rolling respectively)."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Export freight/logistics volatility named as an ongoing risk (AUTOAXLES-Concall_Aug_2026.pdf p.14: 'Sea freights rates are changing kind of randomly... non-predictable'); not surfaced in Kross's own concall record."
+  - "FX hedge losses on export revenue (HAPPYFORGE-Concall_Nov_2025.pdf p.13: EUR hedges booked at INR 95-96 produced losses); Kross's record shows no FX hedge exposure discussion for its own export book."
+  - "Regulatory product-spec risk (low-floor bus mandate forcing redesign) discussed at length by AUTOAXLES across three calls as a dated compliance risk with concrete redesign cost; Kross's own validation-driven slippage (Tipping Jack) is analogous in shape but not framed as a sector-wide regulatory pattern in its own disclosure."
+net_narrative_effect: "complicates"
+analyst_note: "RKFORGE discloses a live, competing trailer axle business with hard market-share figures (4-5% rising to a targeted 10%) in the same product line Kross claims 26-28% of. Treat RKFORGE as a genuine competitive threat name in the trailer axle category, not only a margin/commodity comparator, when assessing Kross's moat durability downstream."

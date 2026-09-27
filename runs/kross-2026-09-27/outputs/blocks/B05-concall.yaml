@@ -1,0 +1,75 @@
+stage: B05-concall
+company: "KROSS"
+run_date: "2026-09-27"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-GUIDANCE-DILUTION, reason: "Export 'double-digit share' target diluted three consecutive calls (Q2 FY26: by FY27; Q3 FY26 Q&A: by FY28, contradicting the same call's opening remarks; Q1 FY27: revised down to 8% in two years) with no acknowledgment of the change in any call."}
+  - {type: FLAG-MARGIN-MISS, reason: "Q1 FY27 EBITDA margin 12.23% vs 14-15% guidance reaffirmed one quarter earlier (Q4 FY26 call, Kunal Rai); LBF1 confirmed."}
+  - {type: FLAG-NEW-PRODUCT-MISS, reason: "Tipping Jack: 75-80 kits actual in Q4 FY26 vs 300-unit quarter target (Q3 FY26) and 600-unit FY26 full-year target (Q2 FY26); 226 vs 200 unit internal inconsistency within the Q1 FY27 call."}
+  - {type: FLAG-MARKET-SHARE-SILENCE, reason: "Management stopped answering market-share questions in Q1 FY27 ('I can't really comment on it right now') at the quarter the trailer segment grew 34% YoY against a claimed single-digit industry rate."}
+  - {type: FLAG-CONCENTRATION-UNRESOLVED, reason: "Analyst's specific top-5-customer rupee-decline calculation (Q1 FY27) not directly confirmed or refuted by management; ties to COMPANY MEMORY LBF4."}
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "M&HCV cyclical volume recovery", type: "SECTORAL", timeframe: "near-term", conviction: "H", confirm_signal: "Continued OEM production growth in Q2/Q3 FY27 results", kill_signal: "OEM schedules soften below guided high-single-digit pace"}
+  - {priority: 2, name: "Axle beam extrusion ramp and margin benefit", type: "VOLUME/COST", timeframe: "near-term-medium", conviction: "M", confirm_signal: "Rising axle volumes at 7,500/month utilisation with stable/rising realisation", kill_signal: "Persistent 'too early to comment' on market/pricing feedback beyond 2-3 quarters"}
+  - {priority: 3, name: "FY27 margin recovery to guided 14-15% band", type: "MARGIN", timeframe: "near-term", conviction: "M", confirm_signal: "Q2/Q3 FY27 margin prints back above 14% as steel/conversion settlements land", kill_signal: "Margin stays sub-13% for two-plus more quarters"}
+  - {priority: 4, name: "Export ramp (new Tier-1, Leax expansion)", type: "VOLUME/REGULATORY-POLICY", timeframe: "medium-term", conviction: "L-M", confirm_signal: "Export % of revenue rising toward the diluted 8%-in-two-years target", kill_signal: "Target dilutes again, or export % stays flat near 4-5%"}
+  - {priority: 5, name: "Seamless tube commissioning", type: "COST", timeframe: "medium-term FY27-28", conviction: "M", confirm_signal: "Commissioning confirmed on/near 'Q4 FY27' with no further slip", kill_signal: "Further timeline slippage beyond FY27"}
+  - {priority: 6, name: "Tipping Jack volume ramp", type: "VOLUME", timeframe: "medium-term", conviction: "L", confirm_signal: "Kit volumes reach 65-70% of 800/month capacity by Q4 FY27 as now guided", kill_signal: "Volumes stay in the 200-300/quarter range seen in Q1 FY27"}
+  - {priority: 7, name: "Tractor segment mix expansion to ~15%", type: "VOLUME", timeframe: "medium-term 2yr", conviction: "L-M", confirm_signal: "A reconciled, rising current-quarter % disclosed consistently", kill_signal: "Base % keeps moving without explanation, or stalls below 10%"}
+guidance:
+  - {item: "FY26 export contribution", number: "5%", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Export share double-digit target", number: "double-digit % (later diluted to 8%)", timeframe: "FY27 -> FY28 -> next two years", stated_in: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27 calls"}
+  - {item: "Tractor segment revenue contribution", number: "~15%", timeframe: "next two years", stated_in: "Q2 FY26 call"}
+  - {item: "Tipping Jack FY27 revenue", number: "₹45-50 crore", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Tipping Jack FY26 volume", number: "600 units", timeframe: "by Mar-2026", stated_in: "Q2 FY26 call"}
+  - {item: "Axle beam extrusion capacity", number: "7,500 axle beams/month", timeframe: "installed, ramping through FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Extruded axle market share target", number: "35% (from 26-28%)", timeframe: "not dated", stated_in: "Q3 FY26 call"}
+  - {item: "Seamless tube commissioning", number: "n/a", timeframe: "around Q4 FY27", stated_in: "Q4 FY26 call, reaffirmed Q1 FY27"}
+  - {item: "FY27 revenue growth guidance", number: "~22%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 EBITDA margin guidance", number: "14-15%", timeframe: "further quarters of FY27", stated_in: "Q4 FY26 call"}
+  - {item: "IPO proceeds utilisation", number: "100%", timeframe: "by Q4 FY26", stated_in: "Q4 FY26 call"}
+promise_delivery:
+  delivered: 3
+  partial: 3
+  missed: 4
+  rows:
+    - {promised_in: "Q2 FY26", promise: "Extrusion plant commercial production by end Q3 FY26", outcome: "Partial", explanation: "Slipped ~2-3 months; commissioned Q4 FY26, selling from May-2026; equipment/China inspection timelines"}
+    - {promised_in: "Q2 FY26", promise: "Tipping Jack 600 units FY26 (by March)", outcome: "Missed", explanation: "Internal validation cycle for a safety-critical part; no external validating agency"}
+    - {promised_in: "Q3 FY26", promise: "Tipping Jack 300 units in Q4 FY26", outcome: "Missed", explanation: "Same validation-cycle explanation; 75-80 kits actual"}
+    - {promised_in: "Q2/Q3 FY26", promise: "Export 'double-digit' share by FY27", outcome: "Missed", explanation: "No acknowledgment of change; diluted to 8% in two years by Q1 FY27"}
+    - {promised_in: "Q3 FY26", promise: "Q4 FY26 EBITDA margin ~14-15%", outcome: "Delivered", explanation: "14.9% actual"}
+    - {promised_in: "Q4 FY26", promise: "FY27 quarterly EBITDA margin 14-15%", outcome: "Missed", explanation: "Retrospective commodity/conversion-cost settlement lag; 12.23% actual in Q1 FY27, exceeding the flagged soft caveat"}
+    - {promised_in: "Q4 FY26", promise: "FY27 revenue growth ~22%", outcome: "Delivered", explanation: "32% actual in Q1 FY27, exceeded"}
+    - {promised_in: "Q2 FY26", promise: "IPO proceeds 84% deployed, balance 16% within FY26", outcome: "Delivered", explanation: "90% by Q3 FY26, 100% by Q4 FY26"}
+    - {promised_in: "Q3 FY26", promise: "Seamless tube construction completed", outcome: "Partial", explanation: "Walked back to 'almost complete' in Q4 FY26 call, no reconciliation given"}
+    - {promised_in: "Q2 FY26", promise: "Trailer axle market share rising from 26-28% toward 35% via extruded-axle tech", outcome: "Partial", explanation: "Management stopped commenting on market share by Q1 FY27"}
+excuse_pattern: "balanced (external-blame on margin/commodity, honest-admission-leaning on the growth-slowdown investor challenge, but deflection-by-omission on the export-target dilution and silence on the customer-concentration question)"
+repeated_evasions:
+  - {question: "Are you gaining trailer-axle market share, or is growth purely industry-driven?", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q1 FY27"], classification: "answer changed between quarters (confident static number in Q2/Q3 FY26 to explicit refusal to answer in Q1 FY27, the quarter it mattered most)"}
+credibility_grade: "C"
+credibility_basis: "Mixed delivery evidence: revenue growth and IPO-fund utilisation delivered/exceeded, one clean margin quarter met exactly, but the export target was diluted three consecutive calls without acknowledgment, Tipping Jack missed its own targets twice, tractor-base % moved unexplained, and the Q1 FY27 margin print broke freshly reaffirmed guidance."
+peer_questions:
+  - {question: "Is Kross's claimed 26-28% trailer axle/suspension market share (market leader ~45%) consistent with how peers describe the competitive landscape, and can peers independently confirm or contradict an implied Q1 FY27 share gain?", why: "Kross's own market-share commentary weakened to an explicit refusal to comment at the exact quarter its segment outgrew the industry.", check_peers: ["AUTOAXLES", "HAPPYFORGE", "RKFORGE"]}
+  - {question: "Do peer concalls describe the same M&HCV/tipper/prime-mover demand recovery and the same 'high single-digit' FY27 OEM volume guidance?", why: "This is Kross's largest near-term trigger; independent confirmation materially changes conviction.", check_peers: ["AUTOAXLES", "RKFORGE"]}
+  - {question: "Do peers report the same steel/commodity cost trajectory, LPG shortage impact, and ~one-quarter OEM settlement lag structure?", why: "Kross's Q1 FY27 margin miss rests entirely on this explanation; peer corroboration or contradiction changes how much credit the excuse deserves.", check_peers: ["AUTOAXLES", "HAPPYFORGE", "RKFORGE"]}
+  - {question: "Have peers cited a comparable EU Tier-1 export ramp, and do their export-share trajectories show similar target dilution?", why: "Tests whether Kross's export-narrative slippage is company-specific or industry-wide.", check_peers: ["HAPPYFORGE", "RKFORGE"]}
+  - {question: "Do peer capex-cycle discussions show similar utilisation levels (60-75%) and 'demand exceeds capacity' commentary in trailer axle/suspension?", why: "Corroborates or contradicts Kross's claim that growth outperformance was capacity-constrained rather than share-driven.", check_peers: ["AUTOAXLES", "RKFORGE"]}
+red_flags:
+  - {severity: HIGH, flag: "Export 'double-digit' target diluted three consecutive calls to 8% in two years, never acknowledged as a change"}
+  - {severity: HIGH, flag: "Q1 FY27 EBITDA margin 12.23% missed the 14-15% guidance reaffirmed one quarter earlier"}
+  - {severity: MEDIUM, flag: "Tipping Jack: 75-80 kits actual vs 300-unit Q4 target and 600-unit FY26 target; internal 226-vs-200-unit inconsistency in Q1 FY27 call"}
+  - {severity: MEDIUM, flag: "Management stopped answering market-share questions in Q1 FY27, the quarter segment growth (34% YoY) most invited the question"}
+  - {severity: MEDIUM, flag: "Top-5 customer concentration rupee-decline calculation raised by an analyst not directly confirmed or refuted"}
+  - {severity: LOW, flag: "Tractor segment current-base % moved 11% to 9% across calls without reconciliation"}
+  - {severity: LOW, flag: "Seamless tube 'construction completed' (Q3 FY26) walked back to 'almost complete' (Q4 FY26)"}
+  - {severity: LOW, flag: "AC-cabin-mandate anti-roll-bar growth driver, prominent in Q3 FY26, dropped from later calls with no explanation"}
+dropped_triggers:
+  - "AC-cabin-mandate-driven anti-roll-bar demand (prominent Q3 FY26, absent Q4 FY26 and Q1 FY27)"
+timeline_slippages:
+  - "Axle beam extrusion: 'end Q3 FY26' target (Q2 FY26) slipped to commissioning Feb-2026 / selling from May-2026 (~2-3 months)"
+  - "Export double-digit share: FY27 (Q2/Q3 FY26) -> FY28 (Q3 FY26 Q&A) -> diluted to 8% in 'next two years' (Q1 FY27)"
+  - "Seamless tube: 'construction completed' (Q3 FY26) softened to 'almost complete' (Q4 FY26); commissioning consistently placed 'around Q4 of FY27'"
+analyst_note: "The export-target dilution (double-digit by FY27, quietly down to 8% in two years by Q1 FY27, never named as a revision) is the single most load-bearing pattern for downstream credibility weighting: it is repeated across three consecutive calls, larger in magnitude than the margin miss, and unlike the margin miss carries no external-shock cover story. The Q3 FY26 call itself contains a live internal contradiction (opening remarks say 'double-digit by FY27,' Q&A says 'by FY28'), suggesting the dilution began earlier than it was first admitted. Grade C reflects this pattern outweighing the genuinely strong revenue-growth and capital-deployment delivery record."

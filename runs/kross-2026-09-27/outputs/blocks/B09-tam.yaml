@@ -1,0 +1,49 @@
+stage: B09-tam
+company: "KROSS"
+run_date: "2026-09-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "No rupee-denominated top-down trailer axle/suspension market size found in the CRISIL Report excerpts (Method 1); volumes only, feeding Method 2 instead."
+  - "CV-components-only and tractor-components-only market sizes not independently found; total-company TAM built via an explicit, flagged gross-up from the trailer-axle segment using the FY26 revenue mix ratio (2.347x)."
+  - "Current CMP and trailing P/E NOT FOUND in injected inputs; Section 5E valuation implication line is qualitative only."
+  - "Axles-per-trailer (2-3, midpoint 2.5) is a general AIS-113/web-sourced industry convention, not a Kross- or CRISIL-specific disclosed figure."
+flags:
+  - {type: FLAG-TRIANGULATION-DIVERGENCE, reason: "Peer-implied trailer axle/suspension market size (RKFORGE Rs120cr at 4-5% share -> ~Rs2,400-3,000 Cr) is 2.3-2.9x the Kross-claim-implied and independent bottom-up estimates (~Rs1,024-1,595 Cr); lower band adopted per conservative-bias rule, divergence named and not averaged."}
+  - {type: FLAG-SOM-GUIDANCE-GAP, reason: "SOM-implied revenue CAGR (~7.0% 3yr / ~7.4% 5yr, normal credibility-adjusted share-gain band) sits far below management's FY27 guidance (~22%, exceeded at 32% actual Q1 FY27) and the mechanical capex-embedded-growth ceiling (81%, B07). Formal handoff: stage 11 should treat ~7-7.4% as the floor and the gap above it as an unverified faster-share-gain bet, consistent with B05 FLAG-MARKET-SHARE-SILENCE."}
+market_definition: "India (96%+) forged/cast/machined safety-critical driveline, suspension and steering components for M&HCV and tractor OEMs and trailer fabricators, plus a small Europe export book; excludes electronics/tyres/batteries/cabins and the broader auto-component universe."
+tam_cr: {conservative: 2450, realistic: 3750}
+sam_cr: 2700
+sam_pct_of_tam: 72
+som_3yr_cr: 825
+som_5yr_cr: 962
+som_implied_revenue_cagr: {yr3: 7.0, yr5: 7.4}
+current_sam_share_pct: 24.9
+revenue_headroom_x: 4.01
+tam_growth_pct: 5
+runway_class: "GOOD"
+mgmt_claim_cr: 1050
+mgmt_claim_ratio: 1.16
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient (81% mechanical capex-embedded-growth ceiling, B07, comfortably exceeds the 5-year SOM's implied Rs289 Cr incremental revenue need; market-share-gain credibility, not capacity, is the binding constraint on faster growth paths)"
+methods_used: ["top-down (volumes only, no rupee figure found)", "bottom-up (units x ASP)", "peer revenue aggregation (Kross-claim and RKFORGE-implied)", "import substitution (qualitative, unquantified)", "global benchmark (context ceiling only)"]
+stale_data_flags:
+  - {datapoint: "CRISIL CV/tractor volume projections (Figures 30, 43) and trailer axle/suspension capacity-utilisation table", source: "2024-09_Kross_Prospectus.txt (CRISIL Report, dated August 2024)", year: 2024}
+searches_performed:
+  - "India auto forging industry market size 2025 2026 crore ACMA"
+  - "Ramkrishna Forgings trailer axle market share Rs 120 crore Q4 FY26 concall"
+  - "India commercial vehicle auto components market size crore 2026 axle forging"
+  - "India tractor components market size crore PTO shaft axle 2026"
+  - "semi trailer India axle configuration 2 axle 3 axle standard number of axles per trailer"
+  - "Ramkrishna Forgings FY26 annual revenue crore Automotive Axles Ltd FY26 revenue Happy Forgings FY26 revenue"
+searches_skipped: []
+downstream_candidates:
+  - {signal: "Tata Motors / Ashok Leyland M&HCV production and dispatch volumes", entity_type: "end-customer", demand_link: "Two largest, longest-tenured named OEM relationships; their production pace sets CV-component/trailer-axle offtake", likely_source: "SIAM monthly wholesale dispatch data / company investor releases", cadence: "monthly", shared: false}
+  - {signal: "SIAM CV segment (M&HCV, tractor-trailer, tipper) wholesale volume data", entity_type: "counterparty", demand_link: "Independent confirmation/contradiction of the M&HCV upcycle Kross cites; peer set already diverges (AUTOAXLES vs RKFORGE/HAPPYFORGE)", likely_source: "SIAM monthly release", cadence: "monthly", shared: true}
+  - {signal: "Domestic steel (HRC/alloy) price index", entity_type: "macro", demand_link: "Direct input to the margin bridge cited as the Q1 FY27 miss driver; sector-wide pass-through confirmed by all three peers", likely_source: "Ministry of Steel / SteelMint / CRISIL commodity tracker", cadence: "monthly", shared: true}
+  - {signal: "TMA domestic tractor sales data", entity_type: "counterparty", demand_link: "Direct read on the tractor-component revenue stream and the disputed 9%->15% tractor-mix target", likely_source: "Tractor Manufacturers Association (TMA) monthly release", cadence: "monthly", shared: false}
+  - {signal: "Ramkrishna Forgings trailer-axle segment disclosure (Rs120cr->Rs250cr, 4-5%->10% share trajectory)", entity_type: "counterparty", demand_link: "Only independent named competitor disclosure in Kross's core niche; tests whether Kross's 26-28% claim still holds", likely_source: "RKFORGE quarterly concall transcripts and investor presentations", cadence: "quarterly", shared: false}
+  - {signal: "Leax Falun AB / second European Tier-1 export order confirmation", entity_type: "end-customer", demand_link: "Named counterparty behind the entire export growth narrative; a confirmed order tests the guidance-dilution flag", likely_source: "Company Reg 30 exchange filing / investor presentation", cadence: "event-driven", shared: false}
+  - {signal: "Delhi NCR Parivartan scheme / BS4 CV phase-out implementation (30-Oct-2026)", entity_type: "regulatory", demand_link: "New replacement-demand catalyst cited once by management; implementation is independently verifiable", likely_source: "Delhi Transport Department / MoRTH notification", cadence: "event-driven", shared: false}
+demand_externally_verifiable: true
+analyst_note: "The management market-share claim (26-28% trailer axle/suspension) is, contrary to the usual pattern this framework screens for, NOT read as inflated: it sits within 1.16x of the independent bottom-up floor. The larger risk this stage surfaces is the opposite one -- that the SOM-implied organic growth floor (~7-7.4% CAGR) is far below both management guidance (22%, exceeded at 32%) and what a re-rating thesis would need, and the concall record shows management stopped defending the one claim (market share) that would resolve whether the gap is real share gain or a segment-specific cyclical tailwind. Total-company TAM/SAM/SOM figures rest on a single explicit gross-up assumption (2.347x, from the trailer-axle segment to total company) flagged as an input gap; stage 11 should treat the trailer-axle-segment figures as the harder-anchored numbers and the total-company figures as a modelled extension."

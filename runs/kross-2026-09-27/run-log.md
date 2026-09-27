@@ -10,3 +10,8 @@
 - tooling: ARs are two-page landscape spreads; AR .txt re-extracted with left/right halves carrying printed folios; page map recorded in B00.
 - stage 2 pass 3: B02-notes complete, accounting_quality 6/10, one red flag (Note 52 ROE formula), FLAG-CASH (receivables ageing). Anchors converted to 'AR PDF p.N (printed p.X)'.
 - stage 3: B03 complete, overall_quality 5.5/10, best fit Capex-Led Growth (WATCHLIST); flags CASH, ROCE-BASE-EFFECT, DISCLOSURE-QUALITY (8 defects), GOVERNANCE (24-Jul-2026 same-day exits).
+- stages 4, 5, 8 (parallel): B04 build-to-spec component maker (runner-up commodity converter; Amendment 17 check for phase 3). B05 credibility C; LBF1 verified verbatim (14-15% FY27 margin guide, Q4 FY26 call; Q1 FY27 12.23%). B08 CAUTION, no deal-breakers.
+- anchor defect (stages 4, 8): prospectus anchors were .txt LINE numbers (e.g. 'p.18569'). Both agents resumed and re-anchored to '[page N]' markers. Stage 8 also re-verified DII/FII from the SHP XBRL: DII 6.03% -> 6.05%, FII 2.62% -> 2.51% (Mar -> Jun 2026); the screener 9.72% Mar-2025 figure is unverifiable in-corpus. Later task messages carry an explicit ANCHOR RULE.
+- stage 6: B06 block had two flow mappings missing the closing brace (lines 8, 9); orchestrator added them (content unchanged), now parses. 12/12 peer transcripts used; RKFORGE discloses its own trailer axle line (4-5% share, ~Rs 120 Cr FY26).
+- stage 7: EM ~15/92 MODEST; combined GOOD. Capex figure for stage 9: Rs 167 Cr seamless tube.
+- stage 9: TAM Rs 2,450-3,750 Cr; SOM 3y Rs 825 Cr, CAGR ~7%. Note for phase 3: stage 9 adopted the lower TAM band "per conservative-bias rule"; check against v3.9 Amendment 25 (no shading) when stage 11 consumes it.

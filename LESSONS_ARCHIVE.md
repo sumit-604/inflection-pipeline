@@ -742,3 +742,13 @@ Recorded here against the shallow-screen commits of 2026-09-21.
 - A Bash heredoc followed by python -c with nested quotes failed to parse; the
   Write tool is safer for YAML blocks.
 - About 4.58M subagent tokens over 28 runs. Not a clean run.
+
+### 2026-09-27 KROSS (step1 intake + phase 1, Halt 1)
+- Collector: consolidated screener page empty (standalone filer); standalone URL used. Empty-CSV defect recurred (Data_Sheet only). Sector guess "Pharma / CDMO" wrong again; set to Recycling / Manufacturing (no auto components row in the cap table). results/, rating/, prospectus/, shareholding/ all empty from the collector; filled by hand (BSE results and Reg 30, SEBI prospectus, NSE SHP XBRL via the corporate-share-holdings-master API). The BSE announcements query returned 0 rows for a 26-month window (same >12-month limit as the prior entry); a 12-month window worked.
+- Peer JAMNAAUTO held no earnings call in 12 months; swapped for RKFORGE at intake. Check call availability before writing companies.txt.
+- Orchestrator omitted peer Data_Sheets from the stage 1 task; three peer moat tests scored 0 until the agent was resumed with them. Stage 1 task message should always carry the peer Data_Sheets.
+- AR PDFs were landscape two-page spreads; stages cited printed folios against PDF-page markers. Re-extracted with left/right halves carrying printed folios mid-run.
+- Anchor defect: stages 4 and 8 cited prospectus .txt LINE numbers as pages (p.18569 on a 435-page PDF); both resumed and re-anchored. Later task messages carried an explicit ANCHOR RULE; no recurrence. RULE candidate for /compost: put the anchor rule (nearest preceding [page N], never a Grep line) in every stage agent file.
+- Stage 6 block had two flow mappings missing the closing brace; fixed by the orchestrator (content unchanged).
+- Verifier A: 0 CRITICAL; two MAJORs were screener basis differences (borrowings incl. lease liabilities; cash incl. other bank balances), cleared on AR re-read and logged. Its acceptance figure (97.9) did not match its own two mismatches (95.8).
+- Confidence 73.0 (redflag_coverage); no rework. About 2.80M subagent tokens over 26 ledger rows. Not a clean run.

@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v58";
+const GAME_VERSION = "v59";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -3646,18 +3646,18 @@ function openLiftPanel(door, currentFloor, onPick) {
       <h2>Lift: ${door.label}</h2>
       <button class="ghost-btn" id="lift-close">Stay here</button>
     </div>
-    <p class="job-brief">You are on ${currentFloor === 0 ? "the ground floor" : "floor " + currentFloor} of ${floors}. Press a button.</p>
+    <p class="job-brief">You are on ${currentFloor === 0 ? "the ground floor" : "floor " + currentFloor} of ${floors}. Type the floor number (G or 0 for ground, top is ${floors - 1}) and press Go, or press a button.</p>
+    <div class="btn-row"><input id="lift-in" type="text" inputmode="numeric" maxlength="3" placeholder="Floor no." style="font-size:20px;width:120px;padding:8px 10px;border:2px solid #e2c7a8;border-radius:12px;text-align:center"><button class="big-btn" id="lift-go">Go</button></div>
     <div class="lift-grid">${buttons}</div>
     <div class="hint" id="lift-msg" hidden></div>
   `);
   card.querySelector("#lift-close").addEventListener("click", () => closePanel());
-  card.querySelectorAll(".lift-btn").forEach((b) => b.addEventListener("click", () => {
-    const f = Number(b.dataset.floor);
-    if (f === currentFloor) { const m = card.querySelector("#lift-msg"); m.hidden = false; m.textContent = "You are already on this floor."; return; }
+  const msg = card.querySelector("#lift-msg");
+  const ride = (f) => {
+    if (f === currentFloor) { msg.hidden = false; msg.textContent = "You are already on this floor."; return; }
     // Ride: show the floors counting past, then arrive.
-    const msg = card.querySelector("#lift-msg");
     msg.hidden = false;
-    card.querySelectorAll(".lift-btn").forEach((x) => (x.disabled = true));
+    card.querySelectorAll(".lift-btn, #lift-go").forEach((x) => (x.disabled = true));
     let cur = currentFloor;
     const dir = f > currentFloor ? 1 : -1;
     playPick();
@@ -3666,7 +3666,17 @@ function openLiftPanel(door, currentFloor, onPick) {
       msg.textContent = `${dir > 0 ? "Going up" : "Going down"}… floor ${cur === 0 ? "G" : cur}`;
       if (cur === f) { clearInterval(timer); playDing(); setTimeout(() => { closePanel(); onPick(f); }, 350); }
     }, 220);
-  }));
+  };
+  const inp = card.querySelector("#lift-in");
+  const typed = () => {
+    const t = (inp.value || "").trim().toUpperCase(); const f = t === "G" ? 0 : Number(t);
+    if (t === "" || !Number.isInteger(f) || f < 0 || f > floors - 1) { msg.hidden = false; msg.textContent = `No floor "${t}". Type G or a number from 0 to ${floors - 1}.`; return; }
+    ride(f);
+  };
+  card.querySelector("#lift-go").addEventListener("click", typed);
+  inp.addEventListener("keydown", (e) => { if (e.key === "Enter") typed(); e.stopPropagation(); });
+  setTimeout(() => { try { inp.focus(); } catch (e) { /* focus optional */ } }, 50);
+  card.querySelectorAll(".lift-btn").forEach((b) => b.addEventListener("click", () => ride(Number(b.dataset.floor))));
 }
 
 
@@ -7058,6 +7068,7 @@ class Game {
     if (this._stay && door.index >= 9100 && door.index < 9500) this._stayRoomSetup(room);
     if (this._zone && !this._stay && door.label === "Grand Hotel") this._awayHotel(room);
     if (door.label === "Our Home" && this._pcut) this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 }, radius: 4, priority: 1, _pc: true, prompt: () => (this._pcut && !this._pcut.candle ? L("🕯️ Light a candle") : ""), activate: () => { if (!this._pcut) return; this._pcut.candle = true; showToast(L("🕯️ A small warm light. Shadows dance on the wall. Dadi starts a story..."), 3400, "good"); } });
+    if (this._myst && this._myst.m.site === door.label) showToast(L("🕵️ The crime scene is outside this building, behind the yellow police tape."), 3600);
     if (door.label === "Our Home") this._giftBox(room);
     if (door.label === "Our Home") this._homeExtras(room);
     if (door.label === "Our Home") this._telescopeAt(room);
@@ -7239,13 +7250,14 @@ class Game {
     if (def.id === "kaka" && !this.progress.treasureMap) { this.progress.treasureMap = true; saveProgress(this.profile, this.progress); this._engagedNpc = npc; return this.dialogue.say("Kaka", [L("Come close. When I was a boy I hid five old coins in this city. Here is the map: park bench, City Park fountain, behind the school slide, beside the Old Town Library, under the stadium stands."), L("Find them all and the last one is a gold one. Go, before my memory goes.")], () => { this._engagedNpc = null; this._snap("🗺️", "Kaka gave me a treasure map."); }, { pitch: 310, speaker: npc.id }); }
     { const oj = ODD_JOBS[def.id], pr = this.progress, key = pr.day + ":" + def.id; if (oj && !pr.oddJobs[key] && (def.id !== "chhotu" || this.isSunday()) && this.stage < stageIndex("college")) { this._engagedNpc = npc; const q = oj.q(makeRng(pr.day * 13 + def.id.length)); const pay = oj.pay || 40; return this.dialogue.say(npc.name, [def.greet || "Hello!", L("{j}? ₹{p} for you if you get it right.", { j: oj.name, p: pay })], () => { runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, pr, "oddjob"), onSolve: () => { pr.oddJobs[key] = true; this.addMoney(pay, oj.name); this.addRep(1, oj.name); this._engagedNpc = null; } }, { title: `🧹 ${L(oj.name)}`, intro: `${npc.name}: "${q.q}"`, goal: L("Pocket money job. ₹{p}.", { p: pay }), steps: [{ q: q.q, answer: q.answer, unit: q.unit || "", hint: L("Count carefully.") }], doneBtn: L("Thank you!"), doneHtml: `<b>${npc.name}:</b> "${L("Good work. Same time tomorrow?")}"`, onLeave: () => { this._engagedNpc = null; } }); }, { pitch: def.pitch || 400, speaker: npc.id }); } }
     this._engagedNpc = npc; setMood(npc.group, "happy", 3);
-    const small = ["Nice weather today, no?", "Did you have your breakfast?", "Study well, beta. Studies first.", "My nephew is in Class 5 too. Do you know him?", "Careful on the road, so many cars these days.", "Have you seen the new park by the market?"];
+    const adult = this.working || (this.progress.age || 0) >= 18, sir = this.player.girl ? "Madam" : "Sir";
+    const small = adult ? ["Nice weather today, no?", `Good day, ${sir}. Busy at work?`, "Prices have gone up again, no?", "Careful on the road, so many cars these days.", "Have you seen the new park by the market?", `${sir}, you are doing well in life. Nice to see.`] : ["Nice weather today, no?", "Did you have your breakfast?", "Study well, beta. Studies first.", "My nephew is in Class 5 too. Do you know him?", "Careful on the road, so many cars these days.", "Have you seen the new park by the market?"];
     if (Math.random() < 0.5) { this.dialogue.say(npc.name, [def.greet || "Hello!", small[Math.floor(Math.random() * small.length)]], () => { this._engagedNpc = null; }, { pitch: def.pitch || 400, speaker: npc.id }); return; }
     const subj = SUBJECT_IDS[Math.floor(Math.random() * SUBJECT_IDS.length)], q = drawSubject(subj, 1, this.big)[0];
     const steps = [q.choices ? { q: q.q, choices: q.choices, answer: q.answer, hint: q.hint } : { q: q.q, answer: q.answer, unit: q.unit, hint: q.hint }];
-    this.dialogue.say(npc.name, [def.greet || "Hello!", "You are a school child, no? Let me test you. Get it right and there is ₹10 for a toffee."], () => {
+    this.dialogue.say(npc.name, [def.greet || "Hello!", adult ? `${sir}, a quick puzzle while you wait? Get it right and your chai is on me, ₹10.` : "You are a school child, no? Let me test you. Get it right and there is ₹10 for a toffee."], () => {
       runStepQuiz({ profile: this.profile, level: 1, world: this.world, audio: Audio, countAttempt: () => countAttempt(this.profile, this.progress, "town:" + subj), onSolve: () => { this.addMoney(10, `${npc.name}'s quiz`); setMood(npc.group, "happy", 3); this._engagedNpc = null; } },
-        { title: `${npc.name} asks`, intro: `${npc.name}: "${q.q}"`, goal: `A ${SUBJECTS[subj].name} question. ₹10 if you get it.`, steps, doneBtn: "Thank you!", doneHtml: `<b>${npc.name}:</b> "Sharp! Here, buy yourself a toffee."`, onLeave: () => { this._engagedNpc = null; } });
+        { title: `${npc.name} asks`, intro: `${npc.name}: "${q.q}"`, goal: `A ${SUBJECTS[subj].name} question. ₹10 if you get it.`, steps, doneBtn: "Thank you!", doneHtml: `<b>${npc.name}:</b> "${adult ? "Sharp! Chai money, as promised." : "Sharp! Here, buy yourself a toffee."}"`, onLeave: () => { this._engagedNpc = null; } });
     }, { pitch: def.pitch || 400, speaker: npc.id });
   }
   _talkTeacher(npc) {
@@ -7461,7 +7473,8 @@ class Game {
     }
     room._jobPlace = true; room._openJobs = [];
     if (this.stage >= stageIndex("c12")) {
-      const open = here.filter((j) => !pr.hired.includes(j.id)); room._openJobs = open;
+      const hunting = !this._myst && !this._onDuty && (!this.job || !!this._applying);
+      const open = hunting ? here.filter((j) => !pr.hired.includes(j.id) && (!this._applying || j.id === this._applying)) : []; room._openJobs = open;
       const occ = room.occupantPos(); room.interviewDesks = room.interviewDesks || {};
       open.forEach((job, n) => {
         // The interviewer's desk, the boss behind it, and YOUR chair in front, with a bobbing arrow.

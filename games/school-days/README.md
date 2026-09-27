@@ -800,6 +800,18 @@ All of them are on the big map (G).
 - While a case is open, the daily goal stays on the case. It no longer
   switches to "Go to work".
 
+## Lift typing box; no job interviews for people with a job (v59)
+
+- Every lift has a box: type the floor number (G or 0 for ground) and
+  press Go or Enter. A wrong number shows the floors that exist. The
+  buttons still work.
+- Job interviews show only when you are looking for a job (no job yet, or
+  you applied from the J menu). Never during a murder case or on duty.
+- People talk to grown-ups as grown-ups (Sir or Madam, chai money), not as
+  school children.
+- Entering the building of a murder case says the crime scene is outside,
+  behind the police tape.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

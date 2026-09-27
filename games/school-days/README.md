@@ -770,6 +770,29 @@ All of them are on the big map (G).
 - Fix: Suryanagar job desks (like GM Kapoor's hotel manager seat) no
   longer appear inside places in other cities.
 
+## Just live it: boy or girl, bath, water and power cuts, real crime scenes (v57)
+
+- Start screen: pick 👦 Boy or 👧 Girl next to your name, face colour and
+  glasses. A girl has long hair with a ponytail and a pink bow, and wears a
+  skirt with the school uniform, home, summer, party and kurta outfits.
+- Bath: the screen goes black while you bathe, then you come out in a
+  towel. Choose clothes at the cupboard. Step out in a towel and Maa sends
+  you back to get dressed.
+- Some mornings there is no water in the taps. The Jal Board tanker waits
+  in the lane: queue up and fill a bucket before your bath.
+- Some evenings there is a power cut (6:30 to 7:30 PM). Lamps go off, the
+  house goes dark, Dadi asks you to light a candle. Then "Light aa gayi!"
+  (Not in cities abroad.)
+- Police and firefighter calls now look real on site: a crash with two
+  smashed cars, one on fire with smoke, broken glass and an injured driver;
+  a burgled shop with police tape, broken glass, an empty cash box,
+  footprints and evidence markers; fires with flames and smoke.
+- Murder mysteries for the police (4 cases): police tape, a chalk outline,
+  four clue markers, three people to question, a jeep with flashing
+  lights. Name the culprit and the two clues that prove it. They come in
+  police shifts, and any day as a file at the Police Station (₹2,000
+  reward).
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

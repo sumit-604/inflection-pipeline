@@ -1,0 +1,27 @@
+company: Kross Ltd
+ticker: KROSS
+cmp: 268.0
+market_cap_cr: 1728.0
+run_date: 2026-09-27
+run_type: full
+listed_date: 2024-09-16   # NSE/BSE listing after the Rs 500 Cr IPO (prospectus in inputs/prospectus/)
+screener_url: https://www.screener.in/company/KROSS/   # standalone; the /consolidated/ page carries no figures
+concalls_available: true
+sector_cap_row: "Recycling / Manufacturing"   # set at /step1 Step D from section-1b chunk 05 (25x); the table has no auto components row; trailer axles + forged/cast/machined CV and tractor components are discrete manufacturing; alternative read Cables / Industrial products (25x, same cap); stage 0 confirms
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, AUTOAXLES:Profit & Loss, AUTOAXLES:Quarters, AUTOAXLES:Balance Sheet, AUTOAXLES:Cash Flow, AUTOAXLES:Customization, JAMNAAUTO:Profit & Loss, JAMNAAUTO:Quarters, JAMNAAUTO:Balance Sheet, JAMNAAUTO:Cash Flow, JAMNAAUTO:Customization, HAPPYFORGE:Profit & Loss, HAPPYFORGE:Quarters, HAPPYFORGE:Balance Sheet, HAPPYFORGE:Cash Flow, HAPPYFORGE:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+peers: [AUTOAXLES, HAPPYFORGE, RKFORGE]   # JAMNAAUTO swapped out at intake (no earnings call in 12 months); its Data_Sheet kept as numbers-only reference
+step1_repairs:
+  - "results/ filled by hand from BSE: Q1 FY27, Q4 FY26 (audited), Q3 FY26 results PDFs"
+  - "rating/ filled from BSE Reg 30: India Ratings 01-Jun-2026 letter with full rationale; CARE withdrawal 04-Dec-2025 filed in announcements/"
+  - "prospectus/ filled from SEBI: final Prospectus Sep-2024 (435 pp)"
+  - "shareholding/ filled from NSE: SHP XBRL Jun-2026 and Mar-2026 plus a verbatim fact extract (.txt)"
+  - "announcements/ supplemented from BSE: monitoring agency reports Q2-Q4 FY26, deviation statement, Jul-2026 management changes, capacity addition, product launch, SAST 29(2), secretarial compliance, Q1 FY27 press release"
+  - "presentation/: Q1 FY27 and Q4 FY26 investor presentations (collector duplicate removed)"
+  - "screener P&L/BS/CF/Quarters sheets empty; Data_Sheet CSVs hold the full raw figures for main and peers"
+  - "sector_cap_row set from Pharma / CDMO guess to Recycling / Manufacturing"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

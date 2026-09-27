@@ -20,3 +20,7 @@ not split input/output, so in_tok/out_tok read n/a).
 | 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 187195 | 5m33s | 1 |
 | 7 | emerging moat scan | claude-sonnet-5 | default | n/a | n/a | 122699 | 6m01s | 1 |
 | 9 | TAM/SAM/SOM | claude-sonnet-5 | default | n/a | n/a | 167602 | 9m56s | 1 |
+| 12a | verifier A numerical | claude-haiku-4-5 | default | n/a | n/a | 94889 | 4m27s | 1 |
+| 12b | verifier B red flags | claude-opus-5-5 | default | n/a | n/a | 230638 | 7m02s | 1 |
+| 12c | verifier C framework (phase 1 half) | claude-opus-5-5 | default | n/a | n/a | 151622 | 8m08s | 1 |
+| 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 106899 | 3m22s | 1 |

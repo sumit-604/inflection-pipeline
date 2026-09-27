@@ -1,0 +1,43 @@
+stage: B12b
+company: "KROSS"
+run_date: "2026-09-27"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 24
+caught: 9
+partially_caught: 6
+missed:
+  - {severity: "MAJOR", item: "CMD volunteered that the trailer axle engine has plateaued at the number-two position and will now grow only with the segment; this contradicts the later 26-28% to 35% share target and the axle-led growth narrative", anchor: "Concall_Nov_2025_Transcript.pdf p.13, Sudhir Rai"}
+  - {severity: "MAJOR", item: "Working capital stress: fabricator receivables above 90 days, OCF constrained in H1 FY26. B05 2D wrongly states cash conversion was never discussed on any call", anchor: "Concall_Nov_2025_Transcript.pdf p.10-11, Lakshminarayanan / Kunal Rai"}
+  - {severity: "MAJOR", item: "Other expenses creep pressed by two analysts: 26.5-28% of sales vs 24.5%; semi-fixed costs at 35% CAGR vs 30% revenue CAGR FY22-25; management promised a revert to 22-23%", anchor: "Concall_Feb_2026_Transcript.pdf p.7 (Aakash), p.12-13 (Shubham)"}
+  - {severity: "MAJOR", item: "Peer contradiction on the margin excuse: AUTOAXLES Q1 FY27 EBITDA rose to 13.6% from 12.4% QoQ under the same LPG and steel headwinds (commodities back-to-back); HAPPYFORGE domestic steel lag is 1 month. Kross fell from 14.9% to 12.23%. B06 instead upgraded the excuse to VERIFIED", anchor: "AUTOAXLES-Concall_Aug_2026_Transcript.pdf p.4, p.13; HAPPYFORGE-Concall_May_2026_Transcript.pdf p.8; Concall_Jul_2026_Transcript.pdf p.4"}
+  - {severity: "MINOR", item: "AUTOAXLES is evaluating entry into trailer axles plus suspension and has the product on drawing", anchor: "AUTOAXLES-Concall_Nov_2025_Transcript.pdf p.8-9, Kishan Kumar"}
+  - {severity: "MINOR", item: "Extruded-beam economics depend on a continuing anti-dumping duty on imports", anchor: "Concall_Nov_2025_Transcript.pdf p.15, Sudhir Rai"}
+  - {severity: "MINOR", item: "Q1 FY27 revenue given two ways (Rs 185.35 cr vs Rs 184.3 cr) in one call; FY26 EBITDA read as 87.9%", anchor: "Concall_Jul_2026_Transcript.pdf p.3-4; Concall_May_2026_Transcript.pdf p.5"}
+  - {severity: "MINOR", item: "IR advisor changed from SGA to Kaptify between the Q3 and Q4 FY26 calls, with no comment", anchor: "Concall_Feb_2026_Transcript.pdf p.16; Concall_May_2026_Transcript.pdf p.3"}
+  - {severity: "MINOR", item: "Analyst cites a Rs 100 cr export order; management gives a Leax FY26 run-rate of Rs 28-30 cr and does not reconcile the two", anchor: "Concall_Feb_2026_Transcript.pdf p.10-11, Pritesh / Kunal Rai"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
+credibility_grade_concur: "lower (C-): the evasion on industry-relative performance spans three calls, not one; the extrusion slip is about 6 months, not 2-3; the FY27 Tipping Jack target was orphaned; AUTOAXLES margin expansion in the same quarter removes part of the margin excuse"
+findings:
+  - {severity: "MAJOR", location: "B05 (missed)", item: "Trailer axle plateau admission by CMD not captured", anchor: "Concall_Nov_2025_Transcript.pdf p.13"}
+  - {severity: "MAJOR", location: "B05 2D (missed, factual error)", item: "Receivables above 90 days and constrained OCF were discussed; B05 says cash conversion is never a topic", anchor: "Concall_Nov_2025_Transcript.pdf p.10-11"}
+  - {severity: "MAJOR", location: "B05 (missed)", item: "Other-expenses creep under two-analyst insistence, with a 22-23% revert promise, not tracked", anchor: "Concall_Feb_2026_Transcript.pdf p.7, p.12-13"}
+  - {severity: "MAJOR", location: "B06 Claim 3 / 2B (overstated)", item: "Peer margin outcome contradicts Kross; the excuse was upgraded to VERIFIED on mechanism alone", anchor: "AUTOAXLES-Concall_Aug_2026_Transcript.pdf p.4, p.13"}
+  - {severity: "MAJOR", location: "B05 4D (under-weighted)", item: "Repeated evasion on industry-relative performance across Q2 FY26, Q3 FY26 and Q1 FY27 graded MEDIUM. The unmet 'I'll let you know' on the tractor split (Q2 FY26) and the Q3 FY26 tractor lag vs industry are not tracked", anchor: "Concall_Nov_2025_Transcript.pdf p.7-9; Concall_Feb_2026_Transcript.pdf p.14; Concall_Jul_2026_Transcript.pdf p.6"}
+  - {severity: "MAJOR", location: "B05/B06 (partially caught)", item: "Capacity-capped claim contradicts stated utilisation: axles about 3,500/month against a 5,000/month capacity; forging 60-70%. The Q4 order book of 4,000 axles/month was not met", anchor: "Concall_Jul_2026_Transcript.pdf p.6, p.9; Concall_May_2026_Transcript.pdf p.7-8; Concall_Feb_2026_Transcript.pdf p.8-9"}
+  - {severity: "MAJOR", location: "B06 Claim 1 (under-weighted)", item: "RKFORGE Rs 120 cr = 4-5% share implies a Rs 2,400-3,000 cr market. Kross trailer revenue of about Rs 289 cr is then about 10-12%, not 26-28%. B06 calls the figures consistent", anchor: "RKFORGE-Concall_May_2026_Transcript.pdf p.9; Concall_May_2026_Transcript.pdf p.5"}
+  - {severity: "MINOR", location: "B05 1C/2A", item: "Extrusion slip understated as 2-3 months and labelled STRENGTHENING then DELIVERED. Actual path: end Q3 FY26, then Feb, Mar, May/June, then 'finally' productionised in Jul-2026 (about 6 months)", anchor: "Concall_Nov_2025_Transcript.pdf p.3; Concall_May_2026_Transcript.pdf p.10; Concall_Jul_2026_Transcript.pdf p.3, p.8"}
+  - {severity: "MINOR", location: "B05 1B/1C", item: "FY27 Tipping Jack Rs 45-50 cr (about 4,000 kits) left as live guidance. It was never restated after Q3 FY26, and the Q1 FY27 figure of 226 kits makes it unreachable. The May-call inconsistency (150-200 kits vs 'already sold 300') is not noted", anchor: "Concall_Feb_2026_Transcript.pdf p.11; Concall_May_2026_Transcript.pdf p.4, p.7; Concall_Jul_2026_Transcript.pdf p.4"}
+  - {severity: "MINOR", location: "B05 2A/4D", item: "Seamless-tube walkback overstated: the same Q4 FY26 call has Sudhir Rai saying 'the construction work is completed'", anchor: "Concall_May_2026_Transcript.pdf p.4, p.7"}
+  - {severity: "MINOR", location: "B06 Claim 2", item: "AUTOAXLES '5% to 7% down' is anchored to Feb-2026 p.11 but appears in the Nov-2025 call", anchor: "AUTOAXLES-Concall_Nov_2025_Transcript.pdf p.12"}
+  - {severity: "MINOR", location: "B05 1B/3B", item: "Steel settlement 'Rs 4,700/kg' carried without a unit caution. May call talks Rs 3-5/kg, so per tonne is implied", anchor: "Concall_Jul_2026_Transcript.pdf p.5; Concall_May_2026_Transcript.pdf p.11"}
+  - {severity: "MINOR", location: "B05 3A/2A", item: "Misattributions: the 45% leader and the 35% target were first stated in Q3 FY26, not Q2 FY26. 'Peak capacity within a year' was Q3 FY26", anchor: "Concall_Feb_2026_Transcript.pdf p.6, p.10"}
+  - {severity: "MINOR", location: "B05 (missed)", item: "AUTOAXLES trailer-axle entry evaluation; anti-dumping duty dependency; dual revenue figure; IR switch; Rs 100 cr export order reference", anchor: "see missed list"}
+critical_count: 0
+major_count: 7
+minor_count: 11
+material_found: 15
+material_caught: 11
+acceptance_rate: 73
+coverage_basis: "15 material of 24 listed (1 CRITICAL, 14 MAJOR); 6 caught plus 5 partially caught = 11; 4 missed. All 16 transcripts read (4 company in full; 12 peer: AUTOAXLES Nov-2025 in full, the rest by targeted search plus section reads)"

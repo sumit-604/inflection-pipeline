@@ -1,0 +1,20 @@
+stage: confidence
+company: KROSS
+run_date: 2026-09-27
+phase: 1
+confidence_delta:
+  numerical_acceptance: 100.0     # B12a: 48 figures. Raw block 97.9 (block arithmetic inconsistent: 2 MAJOR mismatches on 48 = 95.8). Both MAJORs CLEARED by orchestrator source re-read (screener basis differences, figures present at AR PDF p.60, printed p.114); logged in outputs/final/verifier-disagreement-log.md. Post-clearance 48 of 48.
+  numerical_acceptance_raw: 95.8
+  redflag_coverage: 73.0          # B12b: 11 of 15 material (CRITICAL+MAJOR) caught incl. partial; 4 MAJOR missed
+  framework_adherence: 76.7       # B12c phase-1 half: 46 of 60 rules (Gate 0 42 + Emerging Moat 18); valuation half pending phase 3
+  peer_utilisation: 92.0          # B12d: 11 of 12 peer/quarter cells handled correctly; B06 map 10 of 12 cells SUBSTANTIVE; all 3 peers used substantively
+  overall: 73.0
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  framework_adherence_valuation: "PENDING PHASE 3"
+band: "60-74: PROCEED verdicts downgrade one level (orchestrator Section 5). Not below 60: no forced REWORK."
+rework_triggers:
+  verifier_a_critical: 0
+  any_acceptance_below_60: false
+  verdict: "NO REWORK TRIGGER"
+identity_check: "No CRITICAL rows in B12a; identity check not needed. The two MAJOR rows held different claimed/source_truth values and were cleared only by source re-read."

@@ -1,0 +1,26 @@
+stage: B12a
+company: "KROSS"
+run_date: "2026-09-27"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 48
+findings:
+  - severity: "MAJOR"
+    location: "Stage 1 (Gate 0), Block D, test D1 (Net Debt ÷ EBITDA)"
+    claimed: "Borrowings FY26 = 53.73 Cr (screener-Data_Sheet)"
+    source_truth: "Annual Report FY26: Total borrowings = 52.365 Cr (523.65 Mn = 291.42 Mn long-term + 232.23 Mn short-term)"
+    note: "Screener-Data_Sheet.csv, BALANCE SHEET row 'Borrowings', FY2026-03-31 column shows 53.73 Cr. Annual Report PDF Balance Sheet (p.67, printed p.127) and Note 16 (p.76-77, printed p.145-146) show 523.65 Mn total = 52.365 Cr. Difference: 1.365 Cr (13.65 Mn), a 2.6% overstatement in the screener extract. This screener figure directly impacts Block D test D1 score (D1 uses Borrowings 53.73 Cr to calculate Net Debt), which is a component of the balance-sheet-strength decision point. The AR-sourced correct figure should be used for any downstream valuation or FTTCP work."
+    source_fidelity: true
+  - severity: "MAJOR"
+    location: "Stage 1 (Gate 0), Block D, tests D1 (Net Debt) and D4 (Current Ratio)"
+    claimed: "Cash & Bank FY26 = 23.74 Cr (screener-Data_Sheet)"
+    source_truth: "Annual Report FY26: Cash and cash equivalents = 4.44 Cr (44.40 Mn)"
+    note: "Screener-Data_Sheet.csv, BALANCE SHEET row 'Cash & Bank', FY2026-03-31 column shows 23.74 Cr. Annual Report PDF Balance Sheet (p.66, printed p.124, line 'Cash and cash equivalents' = 44.40 Mn = 4.44 Cr) and Cash Flow Statement (p.72, printed p.139, line 'Cash and cash equivalents at the end of the year' = 44.40 Mn). Difference: 19.30 Cr (Rs 193 Mn), a 5.35x overstatement in the screener. This is not a rounding or classification error; it is a material screener data extraction failure. Combined with the Borrowings mismatch, this doubly compromises the Net Debt calculation in D1 and any liquidity/cash-conversion analysis downstream."
+    source_fidelity: true
+critical_count: 0
+major_count: 2
+minor_count: 0
+false_positives_struck: 0
+material_universe: 48
+acceptance_rate: 97.9
+coverage_basis: "48 material figures sampled across all nine stage reports. Materiality defined as: (a) figures in verdict-card calculations or scorecard blocks A-E (Gate 0), (b) primary financial statement lines (P&L, balance sheet, cash flow), (c) figures used in downstream ratio/quality calculations, (d) figures cited in transition or anchor claims. Figures verified: revenue (2 years), EBITDA/profitability (2 years), cash flow and capex (4 years/figures), balance sheet liquidity (cash, receivables, payables), debt and provisions (gratuity, warranty, contingent liabilities), related-party transactions, shareholding, ratios (receivables turnover, payables turnover, working capital days), and IPO-related allocations. All figures trace to PDF source anchors. Acceptance rate = 47 clean ÷ 48 sampled = 97.9%."

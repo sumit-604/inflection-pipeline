@@ -1,0 +1,34 @@
+stage: B12c
+company: "KROSS"
+run_date: "2026-09-27"
+model: "claude-opus-5-5"
+status: complete
+scope: "PHASE 1 (Gate 0 B01 + Emerging Moat B07). Valuation audit pending phase 3."
+gate0: {rules_checked: 42, fails: ["G-1 M11 band ladder not evaluated (0 or 3)", "G-2 E2 listing baseline used; 3-year window gives 99.99% to 68.57% (score 0)", "G-3 M5 set-size pass (score 0)", "G-4 M10 literal lower band vs M4 ceiling reading (score 1)", "G-5 M8 mention band missed (score 1)", "G-6 M6 labelled NOT FOUND; AR discloses NIL (score unchanged)", "G-7 proxies used where rule directs N/A (no score change)", "G-8 anchor form offsets not pages"]}
+emoat: {rules_checked: 18, fails: ["E-1 A1 rarity scored 📄 while the stage's A3 claim rule gives 🎙️ (A1 2.8)", "E-2 B2 and G1 scored against own no-evidence text (G1 0)", "E-3 completionist recount inconsistent", "E-4 catalysts_12m holds 12-18m and 24m items", "E-5 anchor form line numbers not slides/pages", "E-6 block em_score 15 vs computed 14.8"]}
+valuation: {status: "PENDING PHASE 3", rules_checked: null, fails: []}
+expectation_ledger: {status: "PENDING PHASE 3", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}
+business_understanding_narrative: {status: "NOT IN PHASE 1 SCOPE", present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: []}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_gate0: {core_score: 65, moat_score: "14 or 17 (M11 reading)", grand_total: "79 or 82", moats_confirmed: "3 or 4", moat_class: "MODERATE or STRONG", classification: "GOOD (unchanged under every reading; deal-breaker 2 caps GOOD+)"}
+recomputed_emoat: {em_score_range: "11.6 to 15.7", em_classification: "MODEST on each finding alone and on E-1 plus E-2 as recomputed (12.6); NONE (11.6) only if B2 is also zeroed"}
+findings:
+  - {id: G-1, framework: gate0, rule: "M11 band ladder", severity: MAJOR, claimed: "0 (stopped after top band)", recomputed: "3 on full-period CAGR 27.08% with S&A share 8.91% to 2.48%; 0 on latest-window CAGR 11.28% with S&A share 1.47% to 2.48%", effect: "moats 3 to 4, class MODERATE to STRONG under reading 1; classification GOOD holds via deal-breaker 2", anchor: "screener-Data_Sheet.csv rows 11 and 17; prompts/01-gate-0-pipeline.md lines 129-133"}
+  - {id: G-2, framework: gate0, rule: "E2 promoter change over 3 years", severity: MAJOR, claimed: "+0.87pp, score 3 (post-Offer baseline)", recomputed: "99.99% pre-Offer to 68.57% Jun-2026 = -31.42pp, score 0; Block E 13, Core 65", effect: "classification GOOD holds", anchor: "2024-09_Kross_Prospectus.txt lines 2020-2025"}
+  - {id: G-3, framework: gate0, rule: "M5 scale and dominance", severity: MINOR, claimed: "1 (top 5 of a 5-name set)", recomputed: "0 (smallest of set; segment rank not in provided data)", anchor: "screener-Data_Sheet.csv row 8 and peer sheets row 8"}
+  - {id: G-4, framework: gate0, rule: "M10 switching costs", severity: MINOR, claimed: "0", recomputed: "1 (monotone reading consistent with M4)", anchor: "01-gate0.md lines 293 and 327-331"}
+  - {id: G-5, framework: gate0, rule: "M8 distribution", severity: MINOR, claimed: "0", recomputed: "1 (dealers and fabricators mentioned, unquantified)", anchor: "Annual_Report_2026.txt lines 206-208 and 1837"}
+  - {id: G-6, framework: gate0, rule: "M6 label", severity: MINOR, claimed: "R&D NOT FOUND", recomputed: "R&D expenditure NIL disclosed; score 0 unchanged", anchor: "Annual_Report_2026.txt line 3530"}
+  - {id: G-7, framework: gate0, rule: "N/A rule for missing data", severity: MINOR, claimed: "FY20-FY21 CE and capex proxies", recomputed: "Block A 13 and B2/B3 0 under every reading; mixed CE basis noted", anchor: "prompts/01-gate-0-pipeline.md lines 19-22"}
+  - {id: G-8, framework: gate0, rule: "anchor form", severity: MINOR, claimed: "offset and approximate page anchors", recomputed: "page and note anchors required", anchor: "prompts/01-gate-0-pipeline.md lines 15-18"}
+  - {id: E-1, framework: emoat, rule: "evidence tier consistency", severity: MAJOR, claimed: "A1 HH x 1.0 = 4.0", recomputed: "2.8 under the stage's own A3 rule; total 13.6; 12.6 with E-2; 11.6 (NONE) if B2 also zeroed", anchor: "2026-02-27_capacity_addition.txt line 81; Annual_Report_2026.txt lines 505-508; 07-emoat.md lines 144-146 and 379"}
+  - {id: E-2, framework: emoat, rule: "no force-fit", severity: MINOR, claimed: "B2 1.0, G1 1.0", recomputed: "B2 1.0 defensible via IATF marker; G1 0; total 13.8 alone", anchor: "07-emoat.md lines 182-183 and 249-251"}
+  - {id: E-3, framework: emoat, rule: "completionist recount", severity: MINOR, claimed: "6 items across 4 categories", recomputed: "6 categories scored at 📄 (A1, B1, B2, G1, H3, R1); list and count disagree", anchor: "07-emoat.md lines 324-329"}
+  - {id: E-4, framework: emoat, rule: "catalysts_12m window", severity: MINOR, claimed: "4 catalysts", recomputed: "2 within 12 months", anchor: "B07-emoat.yaml lines 24-27"}
+  - {id: E-5, framework: emoat, rule: "anchor form", severity: MINOR, claimed: "extracted-text line anchors", recomputed: "slide and page anchors required", anchor: "prompts/07-emerging-moat-pipeline.md lines 35-36"}
+  - {id: E-6, framework: emoat, rule: "block equals report", severity: MINOR, claimed: "em_score 15", recomputed: "14.8", anchor: "07-emoat.md line 400; B07-emoat.yaml line 15"}
+critical_count: 0
+major_count: 3
+minor_count: 11
+acceptance_rate: 76.7

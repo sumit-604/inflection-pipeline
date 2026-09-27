@@ -856,6 +856,14 @@ All of them are on the big map (G).
   rises step by step. At the top you arrive in the upstairs room. No
   button needed (E still works at the bottom).
 
+## "Who is the murderer?" always appears (v64)
+
+- The name panel opens as soon as all three people are questioned, even
+  if you walk away before the last line ends.
+- A purple "🕵️ Who is the murderer?" button stays on screen during every
+  case. Tap it any time.
+- After a wrong guess, the name panel opens again by itself.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

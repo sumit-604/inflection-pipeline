@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v63";
+const GAME_VERSION = "v64";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -11114,7 +11114,7 @@ class Game {
       const p0 = spotFn ? spotFn(sp2[k][0] * (w / 8), sp2[k][1] * (d / 8)) : { x: ox + sp2[k][0], z: oz + sp2[k][1] + 2 }, x = p0.x, z = p0.z;
       let h; try { h = makeHuman({ shirt: sp[1], trousers: 0x333333, hair: 0x1d1410 }); } catch (e) { h = new THREE.Group(); } h.position.set(x, 0, z); h.rotation.y = Math.PI; G.add(h);
       try { const s = makeTextSprite(`🗣️ ${sp[0]}`, { size: 34, scale: 1.0 }); s.position.set(x, 2.5, z); G.add(s); } catch (e) { /* label optional */ }
-      list.push({ pos: at(x, z), radius: 2.2, priority: 5, _myst: true, prompt: () => L("🗣️ Question {n}", { n: sp[0] }), activate: () => { const S2 = this._myst; if (!S2) return; S2.asked.add(k); this.dialogue.say(sp[0], sp[2].map((x2) => L(x2)).concat([L("📝 People questioned: {a} of 3.", { a: S2.asked.size })]), () => { const S3 = this._myst; if (S3 && S3.asked.size === 3 && !S3.autoAsked) { S3.autoAsked = true; this._mysterySolve(); } }, { pitch: 330 + k * 30 }); } });
+      list.push({ pos: at(x, z), radius: 2.2, priority: 5, _myst: true, prompt: () => L("🗣️ Question {n}", { n: sp[0] }), activate: () => { const S2 = this._myst; if (!S2) return; S2.asked.add(k); this.dialogue.say(sp[0], sp[2].map((x2) => L(x2)).concat([L("📝 People questioned: {a} of 3.", { a: S2.asked.size })]), () => { const S3 = this._myst; if (S3 && S3.asked.size === 3 && !S3.pickerShown && (!S3.hard || S3.found.size >= 3)) { S3.pickerShown = true; this._mysterySolve(); } }, { pitch: 330 + k * 30 }); } });
     });
   }
   // Inside the building of the case: put the scene in the room.
@@ -11138,6 +11138,10 @@ class Game {
     this._mysteryCase(m, (ok) => { if (ok) this.addMoney(2000, L("case solved: {t}", { t: m.title })); onDone && onDone(ok); }, n % 3 === 2);
   }
   _tickMystery() {
+    { let b = document.getElementById("myst-btn"); const S0 = this._myst;
+      if (S0 && !b) { b = document.createElement("button"); b.id = "myst-btn"; b.style.cssText = "position:fixed;left:50%;transform:translateX(-50%);bottom:86px;z-index:60;border:none;border-radius:14px;padding:10px 16px;font:800 16px system-ui;background:#7b2cbf;color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.3);cursor:pointer"; b.addEventListener("click", () => this._mysterySolve()); document.body.appendChild(b); }
+      if (b) { b.hidden = !S0 || this._uiBlocking(); if (S0) b.textContent = `🕵️ ${L("Who is the murderer?")} (${L("questioned {c}/3", { c: S0.asked.size })})`; }
+      if (S0 && S0.asked.size >= 3 && (!S0.hard || S0.found.size >= 3) && (!S0.pickerShown || (S0.reopenAt && performance.now() > S0.reopenAt)) && !this.dialogue.active && !panelOpen() && !this._cut) { S0.pickerShown = true; S0.reopenAt = null; this._mysterySolve(); return; } }
     const S = this._myst; if (!S || S.arrived || S.door || this.world.currentRoom || this.dialogue.active || panelOpen()) return;
     const p = this.player.position; if (Math.hypot(p.x - S.cx, p.z - S.cz) > 14) return; S.arrived = true; this._mysteryIntro();
   }
@@ -11150,13 +11154,13 @@ class Game {
       closePanel(); const right = who === m.culprit && (need === 2 ? m.proof.every((k) => pick.has(k)) : true);
       if (right) { playSuccess(); this.addRep && this.addRep(S.hard ? 6 : 4, L(m.title)); const pr = this.progress; pr.mysteries = (pr.mysteries || 0) + 1; saveProgress(this.profile, pr); this._snap && this._snap("🕵️", `Solved ${m.title}.`); this.diary && this.diary(L("I solved {t}. The culprit: {c}.", { t: L(m.title), c: L(m.suspects[m.culprit][0]) })); this.dialogue.say(L("Case solved"), m.win.map((x) => L(x)).concat([L("🏅 Mysteries solved: {n}. The Commissioner shakes your hand.", { n: pr.mysteries })]), () => this._mysteryEnd(true), { pitch: 320 }); return; }
       S.tries++; Audio.playRetry();
-      if (S.tries < (S.hard ? 2 : 3)) { showToast(who !== m.culprit ? L("❌ {n}'s story checks out. Think again: who lied? (Solve again by the door.)", { n: L(m.suspects[who][0]) }) : L("❌ Right person, weak proof. Which clues point only to them?"), 4200, "bad"); return; }
+      if (S.tries < (S.hard ? 2 : 3)) { S.reopenAt = performance.now() + 3500; showToast(who !== m.culprit ? L("❌ {n}'s story checks out. Think again: who lied? (Solve again by the door.)", { n: L(m.suspects[who][0]) }) : L("❌ Right person, weak proof. Which clues point only to them?"), 4200, "bad"); return; }
       this.dialogue.say(L("Commissioner"), [L("The case goes to a senior detective."), L("The truth: {c} did it.", { c: L(m.suspects[m.culprit][0]) }), L("The proof: {a} and {b}.", { a: L(m.clues[m.proof[0]][0]), b: L(m.clues[m.proof[1]][0]) }), L("Every liar leaves a mistake. Next time, check each story against the clues.")], () => this._mysteryEnd(false), { pitch: 300 });
     };
     m.suspects.forEach((s, k) => card.querySelector(`#ms-s${k}`).addEventListener("click", () => { who = k; if (!S.hard) { arrest(); return; } m.suspects.forEach((s2, k2) => card.querySelector(`#ms-s${k2}`).classList.toggle("on", k2 === k)); }));
     if (S.hard) { m.clues.forEach((c, k) => card.querySelector(`#ms-c${k}`).addEventListener("click", () => { if (pick.has(k)) pick.delete(k); else { if (pick.size >= 2) return; pick.add(k); } card.querySelector(`#ms-c${k}`).classList.toggle("on", pick.has(k)); }));
       card.querySelector("#ms-go").addEventListener("click", () => { if (who == null || pick.size !== 2) { showToast(L("Tap one name and two clues."), 2200); return; } arrest(); }); }
-    card.querySelector("#ms-no").addEventListener("click", () => closePanel());
+    card.querySelector("#ms-no").addEventListener("click", () => { S.reopenAt = null; closePanel(); showToast(L("Look again. Tap the purple 'Who is the murderer?' button when you are ready."), 3200); });
     const hb = card.querySelector("#ms-hint"); if (hb) hb.addEventListener("click", () => { S.hints++; const msg = card.querySelector("#ms-msg"); msg.hidden = false; const pk = m.proof[0]; msg.textContent = S.hints === 1 ? L("Ramesh: 'Check who LIED. One person's story does not match the clues.'") : S.hints === 2 ? L("Ramesh: 'Look hard at clue {n}: {c}.'", { n: pk + 1, c: L(m.clues[pk][0]) }) : L("Ramesh: 'I think it is {c}. But you must be sure!'", { c: L(m.suspects[m.culprit][0]) }); });
   }
 

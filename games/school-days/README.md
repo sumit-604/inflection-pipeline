@@ -826,6 +826,16 @@ All of them are on the big map (G).
   clues that prove it, no hints.
 - During a case the clock says "On a murder case", and no seat arrow shows.
 
+## Every suspect can be questioned (v61)
+
+- In the Tech Park case, Mr. Sinha stood near the "Solve the case" spot,
+  and E always picked Solve. Now people and clues always come first, the
+  three people stand in the back half of the room, and the Solve spot sits
+  to the side of the door. Checked in all four cases: every person and
+  every clue can be reached.
+- Fix: ending a case or a power cut while outside no longer causes an
+  error.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

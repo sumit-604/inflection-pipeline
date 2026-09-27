@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v60";
+const GAME_VERSION = "v61";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -11079,14 +11079,14 @@ class Game {
       const mk = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.45, 0.35), new THREE.MeshStandardMaterial({ color: 0xffd000, emissive: 0xffd000, emissiveIntensity: 0.8 })); mk.position.set(lx, 0.23, lz); G.add(mk);
       try { const s = makeTextSprite(`🔎 ${k + 1}`, { size: 44, scale: 0.7 }); s.position.set(lx, 1.8, lz); G.add(s); G.userData.bob.push(s); } catch (e) { /* label optional */ }
       const wp = at(lx, lz);
-      list.push({ pos: wp, radius: 2.2, priority: 2, _myst: true, prompt: () => (this._myst && this._myst.found.has(k) ? L("✅ Clue {n} (read again): {c}", { n: k + 1, c: cl[0] }) : L("🔎 Examine clue {n}: {c}", { n: k + 1, c: cl[0] })), activate: () => { const S2 = this._myst; if (!S2) return; S2.found.add(k); this.dialogue.say(L("Clue {n}", { n: k + 1 }), [cl[0], cl[1], L("📝 Clues found: {a} of {b}.", { a: S2.found.size, b: m.clues.length })], null, { pitch: 360 }); } });
+      list.push({ pos: wp, radius: 2.2, priority: 4, _myst: true, prompt: () => (this._myst && this._myst.found.has(k) ? L("✅ Clue {n} (read again): {c}", { n: k + 1, c: cl[0] }) : L("🔎 Examine clue {n}: {c}", { n: k + 1, c: cl[0] })), activate: () => { const S2 = this._myst; if (!S2) return; S2.found.add(k); this.dialogue.say(L("Clue {n}", { n: k + 1 }), [cl[0], cl[1], L("📝 Clues found: {a} of {b}.", { a: S2.found.size, b: m.clues.length })], null, { pitch: 360 }); } });
     });
-    const sp2 = [[-2.5, 1.5], [0, 2.5], [2.5, 1.5]];
+    const sp2 = [[-2.5, -1], [0, -2], [2.5, -1]];
     m.suspects.forEach((sp, k) => {
       const p0 = spotFn ? spotFn(sp2[k][0] * (w / 8), sp2[k][1] * (d / 8)) : { x: ox + sp2[k][0], z: oz + sp2[k][1] + 2 }, x = p0.x, z = p0.z;
       let h; try { h = makeHuman({ shirt: sp[1], trousers: 0x333333, hair: 0x1d1410 }); } catch (e) { h = new THREE.Group(); } h.position.set(x, 0, z); h.rotation.y = Math.PI; G.add(h);
       try { const s = makeTextSprite(`🗣️ ${sp[0]}`, { size: 34, scale: 1.0 }); s.position.set(x, 2.5, z); G.add(s); } catch (e) { /* label optional */ }
-      list.push({ pos: at(x, z), radius: 2, priority: 2, _myst: true, prompt: () => L("🗣️ Question {n}", { n: sp[0] }), activate: () => { const S2 = this._myst; if (!S2) return; S2.asked.add(k); this.dialogue.say(sp[0], sp[2].map((x2) => L(x2)).concat([L("📝 People questioned: {a} of 3.", { a: S2.asked.size })]), () => { const S3 = this._myst; if (S3 && S3.asked.size === 3 && !S3.autoAsked) { S3.autoAsked = true; this._mysterySolve(); } }, { pitch: 330 + k * 30 }); } });
+      list.push({ pos: at(x, z), radius: 2.2, priority: 5, _myst: true, prompt: () => L("🗣️ Question {n}", { n: sp[0] }), activate: () => { const S2 = this._myst; if (!S2) return; S2.asked.add(k); this.dialogue.say(sp[0], sp[2].map((x2) => L(x2)).concat([L("📝 People questioned: {a} of 3.", { a: S2.asked.size })]), () => { const S3 = this._myst; if (S3 && S3.asked.size === 3 && !S3.autoAsked) { S3.autoAsked = true; this._mysterySolve(); } }, { pitch: 330 + k * 30 }); } });
     });
   }
   // Inside the building of the case: put the scene in the room.
@@ -11096,7 +11096,7 @@ class Game {
     const G = new THREE.Group(); room.group.add(G); room._mystG = G; S.roomG = G; S.room = room;
     const spot = (lx, lz) => { const p = this._nearSpot ? this._nearSpot(room, room.x0 + lx, room.z0 + lz, [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [1.5, 1.5], [-1.5, 1.5], [2, 0], [-2, 0]]) : null; return p ? { x: p.x - room.x0, z: p.z - room.z0 } : { x: lx, z: lz }; };
     this._mysteryBuild(G, 0, 0, room.w, room.d, (lx, lz) => ({ x: room.x0 + lx, z: room.z0 + lz }), this.roomInteractables, spot);
-    this.roomInteractables.push({ pos: { x: room.exitPos.x, z: room.exitPos.z - 2.5 }, radius: 2.2, priority: 3, _myst: true, prompt: () => this._mystSolvePrompt(), activate: () => this._mysterySolve() });
+    this.roomInteractables.push({ pos: { x: room.exitPos.x + Math.min(4, room.w / 2 - 2), z: room.exitPos.z - 1.5 }, radius: 1.8, priority: 0, _myst: true, prompt: () => this._mystSolvePrompt(), activate: () => this._mysterySolve() });
     if (!S.arrived) { S.arrived = true; this._mysteryIntro(); } else showToast(L("🔎 Yellow markers = clues. 🗣️ Question the three people. 📋 Solve by the door."), 3200, "good");
   }
   _mysteryIntro() {
@@ -11132,7 +11132,7 @@ class Game {
     const hb = card.querySelector("#ms-hint"); if (hb) hb.addEventListener("click", () => { S.hints++; const msg = card.querySelector("#ms-msg"); msg.hidden = false; const pk = m.proof[0]; msg.textContent = S.hints === 1 ? L("Ramesh: 'Check who LIED. One person's story does not match the clues.'") : S.hints === 2 ? L("Ramesh: 'Look hard at clue {n}: {c}.'", { n: pk + 1, c: L(m.clues[pk][0]) }) : L("Ramesh: 'I think it is {c}. But you must be sure!'", { c: L(m.suspects[m.culprit][0]) }); });
   }
 
-  _mysteryEnd(ok) { const S = this._myst; if (!S) return; this._myst = null; this.world.scene.remove(S.G); if (S.roomG && S.roomG.parent) S.roomG.parent.remove(S.roomG); if (S.room) S.room._mystG = null; this.interactables = this.interactables.filter((i) => !i._myst); this.roomInteractables = this.roomInteractables.filter((i) => !i._myst); S.onResult && S.onResult(ok); }
+  _mysteryEnd(ok) { const S = this._myst; if (!S) return; this._myst = null; this.world.scene.remove(S.G); if (S.roomG && S.roomG.parent) S.roomG.parent.remove(S.roomG); if (S.room) S.room._mystG = null; this.interactables = this.interactables.filter((i) => !i._myst); if (this.roomInteractables) this.roomInteractables = this.roomInteractables.filter((i) => !i._myst); S.onResult && S.onResult(ok); }
   // ---- Daily life: no water some mornings, a power cut some evenings. Just live it. ----
   _waterCutMorning() {
     const pr = this.progress; if (this._tanker) { this.world.scene.remove(this._tanker); this._tanker = null; this.interactables = this.interactables.filter((i) => !i._tank); }
@@ -11160,7 +11160,7 @@ class Game {
       const r = W.currentRoom; if (r && this.insideDoor && this.insideDoor.label === "Our Home") this.dialogue.say(L("Dadi"), [L("Arre! Light chali gayi! (The light has gone!)"), L("Beta, the candles and the matchbox are in the kitchen drawer. Careful with the flame.")], null, { pitch: 380 });
       this.roomInteractables.push({ pos: r ? { x: r.x0, z: r.z0 } : this.player.position, radius: 4, priority: 1, _pc: true, prompt: () => (this._pcut && !this._pcut.candle ? L("🕯️ Light a candle") : ""), activate: () => { if (!this._pcut) return; this._pcut.candle = true; showToast(L("🕯️ A small warm light. Shadows dance on the wall. Dadi starts a story..."), 3400, "good"); } });
     }
-    if (pc && !want) { this._pcut = null; this.roomInteractables = this.roomInteractables.filter((i) => !i._pc); for (const l of W.lampLights || []) l.visible = this.phase === "night" || this.phase === "evening"; if (W.roomLight && !(W.currentRoom && W.currentRoom.type === "haveli")) W.roomLight.intensity = 18; showToast(L("💡 'LIGHT AA GAYI!' The whole colony cheers. The fan starts again."), 3600, "good"); return; }
+    if (pc && !want) { this._pcut = null; if (this.roomInteractables) this.roomInteractables = this.roomInteractables.filter((i) => !i._pc); for (const l of W.lampLights || []) l.visible = this.phase === "night" || this.phase === "evening"; if (W.roomLight && !(W.currentRoom && W.currentRoom.type === "haveli")) W.roomLight.intensity = 18; showToast(L("💡 'LIGHT AA GAYI!' The whole colony cheers. The fan starts again."), 3600, "good"); return; }
     if (this._pcut) { for (const l of W.lampLights || []) l.visible = false; if (W.roomLight && W.currentRoom && W.currentRoom.type !== "haveli") W.roomLight.intensity = this._pcut.candle ? 6 : 1.5; }
   }
   // Going home from any city at any time, from the airport or station terminal.

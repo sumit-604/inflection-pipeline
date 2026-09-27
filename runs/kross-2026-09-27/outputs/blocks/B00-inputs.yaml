@@ -1,0 +1,103 @@
+stage: B00-inputs
+company: KROSS
+run_date: 2026-09-27
+model: orchestrator (stage 0 run inline by the orchestrator session, /step1 intake)
+status: complete
+corpus_commit: 022306e4ca936250d1a17ec30818295fa686b366
+spear_gate: "PASS. companies/KROSS.md carries 'Spear: OVERRIDE 2026-09-27 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/KROSS.md SPEAR; web-derived at intake, NOT anchored)
+  - "LBF1 GUIDANCE VS DELIVERY: FY27 revenue growth ~22% at 14-15% EBITDA margin (Q4 FY26 call, May-2026) against Q1 FY27 EBITDA margin 12.2% and FY24-FY26 margins of ~13%. Verify the stated guidance in concalls/Concall_May_2026 and Concall_Jul_2026 and the margin path in results/."
+  - "LBF2 CASH CONVERSION: CFO Rs 9 Cr (FY25) and Rs 28 Cr (FY26) against PAT Rs 48 Cr and Rs 55 Cr; FCF negative FY24-FY26; working-capital days 30 -> 106 -> 124; debtor days 107, inventory days 105 (screener Data_Sheet). Verify from the FY26 AR cash flow, trade receivables ageing and inventory notes; classify STRUCTURAL / GROWTH-INDUCED / INDETERMINATE. The Ind-Ra rationale (rating/) carries the agency's WC read."
+  - "LBF3 IPO PROCEEDS AND CAPEX: Rs 250 Cr fresh issue (Sep-2024) objects (capex, debt repayment, working capital, GCP) versus actual use (monitoring agency reports Q2-Q4 FY26 and deviation statement in announcements/); seamless tube plant capex quoted at Rs 167 Cr and ~Rs 100 Cr in two web sources; its funding (borrowings Rs 34 Cr -> Rs 54 Cr in FY26)."
+  - "LBF4 CONCENTRATION AND EQUITY RAISE: top five customers 59.5% of Q1 FY27 revenue (Tata Motors, Ashok Leyland named); verify names and shares in AR / prospectus and related-party sales. Board 31-Aug-2026 approved up to 15 lakh equity shares plus up to 15 lakh convertible warrants at Rs 212 (Rs 31.8 Cr each; CMP Rs 268); postal ballot e-voting 01-30 Sep-2026, result due by 03-Oct-2026. Verify allottees (Annexures A/B), promoter participation, and stated use of funds."
+sector_cap_row: "Recycling / Manufacturing"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Recycling / Manufacturing | 25x'). Kross makes trailer axles and
+  suspension assemblies and forged, cast and machined components for M&HCV
+  and tractor OEMs (prospectus cover and business section; FY26 AR). The cap
+  table carries no auto components row. The business is discrete
+  engineering manufacturing, which the 'Recycling / Manufacturing' row
+  covers; 'Cables / Industrial products' (25x) is the alternative read and
+  carries the same cap, so the choice does not move the ceiling. The
+  collector guess 'Pharma / CDMO' is wrong and was overridden at intake.
+  FLAG for phase 3: confirm the row; no auto components row exists.
+reporting_units:
+  annual_report: "INR million (FY26 and FY25 ARs, 'Amount (₹ in million)')"
+  results: "INR million (Q1 FY27, Q4 FY26, Q3 FY26 results, 'Rs. in millions')"
+  prospectus: "INR million (restated financials and offer figures, '₹ million')"
+  rating: "INR million (Ind-Ra facility sizes, 'Size of Issue (million)')"
+  presentation: "INR Cr on most slides; stage confirms on the slide face"
+  concalls: "mixed; management speaks in INR Cr"
+  screener: "INR Cr (screener Data_Sheet)"
+  note: "Filings report in INR million; screener and decks in INR Cr. 10 INR million = 1 INR Cr. Conversion happens once, at stage 10."
+listed_date: "2024-09-16"
+recently_listed: true
+recently_listed_evidence: "IPO Rs 500 Cr (Rs 250 Cr fresh, Rs 250 Cr OFS), bidding 9-11 Sep-2024, listed NSE/BSE 16-Sep-2024; 2.0 years before run_date, inside the ~3-year window. Prospectus HELD: inputs/prospectus/2024-09_Kross_Prospectus.pdf (435 pp, SEBI attachment sep-2024/1726137870168.pdf)."
+standalone_basis: "Company files standalone statements only; the screener /consolidated/ page carries no figures. Every stage reads standalone."
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, AUTOAXLES:Profit & Loss, AUTOAXLES:Quarters, AUTOAXLES:Balance Sheet, AUTOAXLES:Cash Flow, AUTOAXLES:Customization, JAMNAAUTO:Profit & Loss, JAMNAAUTO:Quarters, JAMNAAUTO:Balance Sheet, JAMNAAUTO:Cash Flow, JAMNAAUTO:Customization, HAPPYFORGE:Profit & Loss, HAPPYFORGE:Quarters, HAPPYFORGE:Balance Sheet, HAPPYFORGE:Cash Flow, HAPPYFORGE:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RESOLVED AT INTAKE: shareholding/ filled from NSE: SHP XBRL for 30-Jun-2026 and 31-Mar-2026 (filings) with a verbatim fact extract (.txt beside each) and the NSE shareholding master JSON. Promoter 68.57% at Jun-2026, no pledge or encumbrance (XBRL 'WhetherAnySharesHeldByPromotersAreEncumberedUnderPledged' = false)."
+  - "RESOLVED AT INTAKE: results/ filled from BSE: Q1 FY27 unaudited (board 24-Jul-2026), Q4/FY26 audited (board 12-May-2026), Q3 FY26 unaudited (board 29-Jan-2026). Q2 FY26 results not held (the three most recent satisfy the contract)."
+  - "RESOLVED AT INTAKE: rating/ holds the 02-Jun-2026 Reg 30 letter with the full India Ratings rationale of 01-Jun-2026 enclosed (IND A/Stable/IND A1 affirmed on INR 1,115 mn; INR 179.5 mn added). CARE withdrawal (04-Dec-2025, facilities surrendered) is in announcements/."
+  - "RESOLVED AT INTAKE: prospectus/ holds the final Prospectus (Sep-2024) from SEBI."
+  - "screening: EMPTY-CSV defect present for P&L, Balance Sheet, Cash Flow, Quarters sheets (subject and peers). The Data_Sheet CSVs are populated: screener-Data_Sheet.csv = KROSS standalone (FY20-FY26 annual, 10 quarters to Jun-2026), AUTOAXLES, HAPPYFORGE, RKFORGE, and JAMNAAUTO (numbers-only reference, not a stage-6 peer). Stage 1 reads Data_Sheet. Screener history begins FY20, 7 annual columns."
+  - "PEER SET CHANGED AT INTAKE: JAMNAAUTO (CV suspension, the natural suspension comp) held no earnings call in the 12 months to Sep-2026 (none on BSE scrip 520051 or screener); RKFORGE (Ramkrishna Forgings, Jamshedpur CV forgings) swapped in. Peers: AUTOAXLES (standalone URL; consolidated page empty), HAPPYFORGE, RKFORGE."
+  - "peer-concalls: 12 transcripts, 4 per peer: AUTOAXLES (Nov-2025, Feb-2026, May-2026, Aug-2026), HAPPYFORGE (Nov-2025, Feb-2026, May-2026, Aug-2026), RKFORGE (Nov-2025, Feb-2026, May-2026, Jul-2026). Stage 6 confirms each quarter from page 1."
+  - "concalls/: 4 transcripts held (contract 0-3). Quarter map from page 1: Concall_Nov_2025 = Q2 FY26; Concall_Feb_2026 = Q3 FY26; Concall_May_2026 = Q4 FY26; Concall_Jul_2026 = Q1 FY27. The three most recent (Q3 FY26, Q4 FY26, Q1 FY27) are primary for stage 5; Q2 FY26 is the backward guidance baseline."
+  - "annual-report/: TWO ARs held, FY26 (Annual_Report_2026.pdf, 97 pp, Reg 34 FY2025-26) primary, FY25 (Annual_Report_2025.pdf, 88 pp, FY2024-25) backward check. Contract is 0-1; FY26 governs."
+  - "announcements/: 23 filings Nov-2025 to Sep-2026 (collector 7 after one duplicate removed, plus 16 hand-picked from the BSE listing): monitoring agency reports Q2/Q3/Q4 FY26, statement of deviation Q4 FY26, CARE withdrawal, product launch (tipping jacks, Dec-2025), capacity addition and axle beam extrusion plant update (27-Feb-2026), SAST 29(2) (27/31-Mar-2026), annual secretarial compliance (May-2026), 24-Jul-2026 resignations (Head Accounts and Finance Dhirendra Jena; independent director Mukesh Kumar Agarwal) and directorate change, Q1 FY27 press release, AR weblink letter, preferential issue board outcome and postal ballot notice (31-Aug-2026), AGM outcome and scrutinizer report (16-Sep-2026), postal ballot corrigendum (23/24-Sep-2026), newspaper publication (01-Sep-2026). Q1 and Q2 FY26 filings and pre-Nov-2025 filings are not held: a PARTIAL documented-ACTION record."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "presentation: 2 decks, Q4 FY26 (12-May-2026) and Q1 FY27 (25-Jul-2026). Collector's Investor_Presentation_1.pdf removed as a byte-identical duplicate of the Q1 FY27 deck. Q3 FY26 and Q2 FY26 decks not held."
+  - "TOOLING: every input PDF pre-extracted with PyMuPDF to a page-marked .txt BESIDE the PDF (same basename, '[page N]' = PDF page number). All 49 PDFs open. Image-only pages OCR'd with RapidOCR and marked '(OCR, RapidOCR)': monitoring agency report Q4 FY26 pp 2-10; scrutinizer report 16-Sep-2026 pp 3-9. A few decorative image pages in the decks, ARs and prospectus (lowtext) were not OCR'd. Stages and verifiers read the .txt; anchors cite the PDF with its page number."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/2026-07-24_Q1FY27_unaudited_results.pdf (quarter ended 30-Jun-2026)"
+    mate_expected: "Q1 FY27 earnings call transcript"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/concalls/Concall_Jul_2026_Transcript.pdf (Kross Limited Q1 FY27 Results Conference Call, page 1)"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "inputs/rating/2026-06-02_credit_rating_reg30.pdf (Reg 30 letter)"
+    mate_expected: "full India Ratings rationale"
+    status: PASS
+    missing_doc: ""
+    mate_found: "same PDF, pp 2-9: 'India Ratings Affirms Kross's Bank Loan Facilities at IND A/Stable; Rates Additional Limits', 01-Jun-2026, with detailed rationale"
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none found at intake"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No SEBI order seen in the announcements, rating or AR director's report at intake. Stage 8 re-checks."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/2026-05-12_Q4FY26_audited_results.pdf (FY26 audited, 12-May-2026)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/Annual_Report_2026.pdf (FY2025-26, Reg 34 filing Aug-2026)"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (minor: research absent; announcements partial before Nov-2025; Q2 FY26 results and older decks not held); freshness pairs OK; prospectus, rating rationale and shareholding filings held"
+operator_pause: "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders after intake: research/ only."
+pending_events:
+  - "Postal ballot on the preferential shares and warrants closes 30-Sep-2026; result due on or before 03-Oct-2026 (postal ballot notice 31-Aug-2026, corrigendum 23-Sep-2026). In-principle exchange approval pending per the corrigendum."
+corpus_manifest:
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: Kross Ltd, type: "Annual Report FY2025-26 (Reg 34 cover)", period: FY26, folder_match: yes}
+  - {path: inputs/annual-report/Annual_Report_2025.pdf, issuer: Kross Ltd, type: "Annual Report FY2024-25 (Reg 34 cover)", period: FY25, folder_match: "yes (backward check)"}
+  - {path: inputs/results/2026-07-24_Q1FY27_unaudited_results.pdf, issuer: Kross Ltd, type: "unaudited results + limited review", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/results/2026-05-12_Q4FY26_audited_results.pdf, issuer: Kross Ltd, type: "board outcome + audited results + audit report (S. K. Naredi & Co LLP)", period: "Q4 / FY26", folder_match: yes}
+  - {path: inputs/results/2026-01-29_Q3FY26_unaudited_results.pdf, issuer: Kross Ltd, type: "unaudited results + limited review", period: "Q3 FY26", folder_match: yes}
+  - {path: inputs/rating/2026-06-02_credit_rating_reg30.pdf, issuer: "Kross Ltd letter enclosing India Ratings rationale", type: "rating letter + full rationale", period: "01-Jun-2026", folder_match: yes}
+  - {path: inputs/prospectus/2024-09_Kross_Prospectus.pdf, issuer: Kross Ltd, type: "final Prospectus (IPO)", period: "Sep-2024", folder_match: yes}
+  - {path: "inputs/concalls/Concall_{Nov_2025,Feb_2026,May_2026,Jul_2026}_Transcript.pdf", issuer: Kross Ltd, type: "earnings call transcripts", period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27 (page 1)", folder_match: yes}
+  - {path: "inputs/presentation/2026-05-12_investor_presentation_Q4FY26.pdf, 2026-07-25_investor_presentation_Q1FY27.pdf", issuer: Kross Ltd, type: investor presentations, period: "Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (23)", issuer: "Kross Ltd (monitoring agency reports issued by India Ratings as MA; CARE withdrawal press release enclosed)", type: "Reg 30 / Reg 32 / SAST / AGM filings", period: "Nov-2025 to Sep-2026", folder_match: yes}
+  - {path: "inputs/shareholding/SHP_{30-JUN-2026,31-MAR-2026}_KROSS_NSE_xbrl.xml (+ .txt extracts, NSE_shareholding_master_KROSS.json)", issuer: "Kross Ltd filing via NSE", type: "shareholding pattern XBRL", period: "Jun-2026, Mar-2026", folder_match: yes}
+  - {path: "inputs/peer-concalls/AUTOAXLES-*.pdf (4)", issuer: Automotive Axles Ltd, type: transcripts, period: "Nov-2025 to Aug-2026 (stage 6 confirms quarter)", folder_match: yes}
+  - {path: "inputs/peer-concalls/HAPPYFORGE-*.pdf (4)", issuer: Happy Forgings Ltd, type: transcripts, period: "Nov-2025 to Aug-2026 (stage 6 confirms quarter)", folder_match: yes}
+  - {path: "inputs/peer-concalls/RKFORGE-*.pdf (4)", issuer: Ramkrishna Forgings Ltd, type: transcripts, period: "Nov-2025 to Jul-2026 (stage 6 confirms quarter)", folder_match: yes}
+  - {path: "inputs/screening/{screener,AUTOAXLES,HAPPYFORGE,RKFORGE,JAMNAAUTO}-Data_Sheet.csv", issuer: screener.in, type: "raw financial data sheet", period: "annual + 10 quarters", folder_match: yes}
+flags: []
+analyst_note: "Recently listed (Sep-2024): the prospectus is held and carries the restated FY22-FY24 base and promoter/group history. Filings report in INR million, screener in INR Cr. Two governance events fall inside the run window: the Jul-2026 exit of the Head of Accounts and Finance and an independent director, and the Aug-2026 preferential shares plus warrants at Rs 212, two years after a Rs 250 Cr fresh issue. Postal ballot result on the issue is due by 03-Oct-2026, after this run."

@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v61";
+const GAME_VERSION = "v62";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -9163,7 +9163,7 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickGirl && this._tickGirl(); this._tickUtilities && this._tickUtilities(dt); this._tickCaseFx && this._tickCaseFx(dt); this._tickMystery && this._tickMystery();
+    this._tickUnstick && this._tickUnstick(dt); this._tickGirl && this._tickGirl(); this._tickUtilities && this._tickUtilities(dt); this._tickCaseFx && this._tickCaseFx(dt); this._tickMystery && this._tickMystery();
     this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed); this._tickHaveli(dt); this._tickMission && this._tickMission(dt); this._tickDayClock(dt); this._tickDuty(dt); this._tickCityZone(dt); this._tickStay(dt); this._tickExtras(dt);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
     if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? (this.world.currentRoom.type === "haveli" ? "haunt" : this.phase === "night" ? "nightroom" : "school") : this.phase);
@@ -9876,10 +9876,13 @@ class Game {
   }
   // Inside the haveli: each place is a spot you walk to; they unlock in order.
   _haveliSetup(room) {
-    const st = this._hv = { room, stage: 0, courage: 5, clues: [], proof: false, chase: null, jump: false }, spots = room.haveliSpots || [], stages = this._haveliStages();
+    const kept = this._hvUpKeep && this._hvUpKeep.room === room ? this._hvUpKeep : null; this._hvUpKeep = null;
+    const st = this._hv = kept || { room, stage: 0, courage: 5, clues: [], proof: false, chase: null, jump: false }, spots = room.haveliSpots || [], stages = this._haveliStages();
     this.world.roomLight.intensity = 2;
     if (!room._balc) { const b = this._ghost.group.clone(); b.visible = true; b.position.set(0, 3.5, -4.6); room.group.add(b); room._balc = b; }
-    room._balc.visible = true; if (room._gang) for (const m of room._gang) m.visible = false;
+    room._balc.visible = st.stage <= 1; if (room._gang) for (const m of room._gang) m.visible = false;
+    if (!room._hvBeacon) { const g = new THREE.Group(); try { const s = makeTextSprite("🔦 ⬇", { size: 56, scale: 0.9 }); s.position.y = 2.6; g.add(s); g.userData.s = s; } catch (e) { /* label optional */ } const ring = new THREE.Mesh(new THREE.RingGeometry(0.8, 1.0, 24), new THREE.MeshBasicMaterial({ color: 0xffd27a, side: THREE.DoubleSide })); ring.rotation.x = -Math.PI / 2; ring.position.y = 0.04; g.add(ring); try { const l = new THREE.PointLight(0xffd27a, 2.2, 9, 2); l.position.y = 2; g.add(l); } catch (e) { /* no light */ } room.group.add(g); room._hvBeacon = g; }
+    this.roomInteractables.push({ pos: { x: room.x0 + 17, z: room.z0 + 9.4 }, radius: 2.2, priority: 1, prompt: () => (this._hv && this._hv.chase ? "" : L("🪜 Climb the stairs")), activate: () => this._haveliUp() });
     spots.forEach(([lx, lz], i) => this.roomInteractables.push({ pos: { x: room.x0 + lx, z: room.z0 + lz }, radius: 2.4,
       prompt: () => (!this._hv ? "" : i < this._hv.stage ? `✔️ ${stages[i].t}` : i === this._hv.stage ? `🔦 ${stages[i].t}: ${L("look closer")}` : `🌑 ${L("Too dark here. Find the {p} first.", { p: stages[this._hv.stage] ? stages[this._hv.stage].t : "" })}`),
       activate: () => { const h = this._hv; if (!h || h.chase) return; if (i === h.stage) this._haveliStage(i, h); else if (i > h.stage) showToast(L("🌑 Something tells you to look somewhere else first..."), 2400, "bad"); } }));
@@ -9888,6 +9891,8 @@ class Game {
   _hvNext() {
     const h = this._hv; if (!h) return; const sp = (h.room.haveliSpots || [])[h.stage], S = this._haveliStages()[h.stage];
     if (sp && S) this.setObjective(`🔦 ${L("Haveli")}: ${S.t} (${h.stage + 1}/6) · 💪${h.courage}`, h.room.x0 + sp[0], h.room.z0 + sp[1]);
+    const bc = h.room._hvBeacon; if (bc) { bc.visible = !!(sp && S); if (sp) bc.position.set(sp[0], 0, sp[1]); }
+    if (h.stage === 5) showToast(L("🔦 Last clue: the CELLAR DOOR, in the far back RIGHT corner behind the wall. Follow the footprints and the glowing ring."), 5000, "good");
   }
   _haveliStages() {
     return [
@@ -9898,6 +9903,22 @@ class Game {
       { t: "👻 " + L("The dark corridor"), s: L("BOO!! A ghost jumps out, right in front of your face!"), scare: true, o: [[L("Grab its white sheet and pull"), 1, L("The sheet slips off. It is a teenage boy! He yelps and runs to the cellar. The sheet has a laundry tag: 'BABLU'."), L("🔍 Clue: a bedsheet with a name tag")], [L("Freeze like a statue"), 0, L("It laughs 'Hoo-haa-haa!' and floats away. Your knees wobble.")], [L("Run back the way you came"), -1, L("You trip on a broken tile. Ouch. You get up.")]] },
       { t: "🚨 " + L("The cellar door"), s: L("Through the crack: three people with bedsheets pulled off. Piles of phones, gold chains, a TV. 'Scare the town, rob the houses. Nobody checks a haunted house!' It is a robbery gang!"), last: true, o: [[L("Quietly call 100 and whisper the address"), 1, L("'Police control room. We are coming. Get out of there NOW!' ... CREAK. The floor board under your foot!")], [L("Take a photo for proof, silently"), 2, L("Click. No flash. The photo shows all three faces and the stolen things. Now what?")], [L("Burst in and shout 'Caught you!'"), -1, L("They chase you out of the corridor! You hide behind a pillar till they go back. Robbers are for the police.")]] },
     ];
+  }
+  // The stairs: a dusty upstairs bedroom with the 'ghost' at the window and an old trunk. The mystery waits for you downstairs.
+  _haveliUp() {
+    const h = this._hv; if (!h || h.chase) return; this._hvUpKeep = h; this._hv = null;
+    const d = this._haveliDoor, up = { x: d.x, z: d.z, rot: d.rot, label: "Old Haveli · Upstairs", type: "house", floors: 1, index: 9003 };
+    this._exitRoom(); this._enterRoom(up); this.world.roomLight.intensity = 3;
+    const room = this.world.currentRoom, pr = this.progress, say = (w, l) => this.dialogue.say(w, l, null, { pitch: 380 });
+    if (!room._hvUp) { room._hvUp = true; try { const M = (c, o = 1) => new THREE.MeshStandardMaterial({ color: c, transparent: o < 1, opacity: o }); const line = new THREE.Mesh(new THREE.BoxGeometry(4, 0.04, 0.04), M(0x999999)); line.position.set(-2, 2.4, -room.d / 2 + 1); room.group.add(line); const sheet = new THREE.Mesh(new THREE.PlaneGeometry(1.4, 1.8), M(0xf4f4f4, 0.9)); sheet.position.set(-2.4, 1.5, -room.d / 2 + 1.05); room.group.add(sheet); room._sheet = sheet; room._box(1.6, 0.8, 0.9, 0x5a3a24, 4, 0.4, -room.d / 2 + 1.4, false); room._box(1.7, 0.1, 1.0, 0x3b2a1a, 4, 0.85, -room.d / 2 + 1.4, false); room._label(L("🪜 Stairs down"), -room.w / 2 + 2, room.d / 2 - 1.5, 2.2, 0.7); } catch (e) { /* props optional */ } }
+    showToast(L("🪜 Creak... creak... You climb up into the dusty top floor. Cold wind. Something white flaps by the window!"), 4000, "bad"); this._scareFlash && this._scareFlash();
+    this.roomInteractables.push({ pos: { x: room.x0 - 2.4, z: room.z0 - room.d / 2 + 2.4 }, radius: 2.4, priority: 2, prompt: () => L("🔦 Look at the white thing by the window"), activate: () => { const k = this._hvUpKeep; say(L("Upstairs"), [L("(You shine the torch. It is... a bedsheet on a clothes line, flapping in the wind!)"), L("(Two holes are cut in it, like eyes. A laundry tag says: 'Kaalu'.)"), L("This is the 'ghost' people see at the window from the road!")]); if (k && !k.clues.includes("🔍 Clue: a ghost-sheet on a clothes line")) k.clues.push("🔍 Clue: a ghost-sheet on a clothes line"); } });
+    this.roomInteractables.push({ pos: { x: room.x0 + 4, z: room.z0 - room.d / 2 + 2.6 }, radius: 2.2, priority: 2, prompt: () => (pr.hvTrunk ? L("The old trunk (empty now)") : L("🧳 Open the old trunk")), activate: () => { if (pr.hvTrunk) { showToast(L("Only dust and an old photo now."), 2000); return; } pr.hvTrunk = true; saveProgress(this.profile, pr); this.addMoney(200, L("old coins in the haveli trunk")); say(L("The old trunk"), [L("(Creeak... the lid opens.)"), L("An old black-and-white photo: a big family in front of this haveli, in 1947."), L("🪙 Some old coins at the bottom. The museum will pay ₹200 for them!")]); } });
+    this.roomInteractables.push({ pos: { x: room.x0 - room.w / 2 + 2, z: room.z0 + room.d / 2 - 2.5 }, radius: 2.4, priority: 2, prompt: () => L("🪜 Go back down the stairs"), activate: () => this._haveliDown() });
+  }
+  _haveliDown() {
+    const d = this._haveliDoor; this._exitRoom(); this._enterRoom(d); const room = this.world.currentRoom;
+    this.player.group.position.set(room.x0 + 17, 0, room.z0 + 9.6); this.player._placeCamera(1); showToast(L("🪜 Back down. The mystery is waiting."), 2400);
   }
   _haveliStage(i, st) {
     const stages = this._haveliStages(), S = stages[i]; if (!S) return;
@@ -9928,7 +9949,8 @@ class Game {
   }
   _tickHaveli(dt) {
     const h = this._hv; if (!h) return; const room = h.room, pp = this.player.position;
-    if (this.world.currentRoom !== room) { if (!h.done) { this._hv = null; this.setObjective(L("The haveli mystery is still waiting... (night only)"), -154, 143); } return; }
+    if (room._hvBeacon && room._hvBeacon.userData.s) room._hvBeacon.userData.s.position.y = 2.6 + Math.sin(performance.now() / 250) * 0.2;
+    if (this.world.currentRoom !== room) { if (this._hvUpKeep === h) return; if (!h.done) { this._hv = null; this.setObjective(L("The haveli mystery is still waiting... (night only)"), -154, 143); } return; }
     if (this._torch) { this._torch.intensity = 1.8; this._torch.position.set(pp.x, 2.4, pp.z); }
     this.world.roomLight.intensity = 2; if (room.candles) for (const c of room.candles) c.visible = Math.random() > 0.08;
     if (room._balc && room._balc.visible) { room._balc.position.x = Math.sin(performance.now() / 900) * 3; room._balc.position.y = 3.5 + Math.sin(performance.now() / 400) * 0.12; }
@@ -11162,6 +11184,14 @@ class Game {
     }
     if (pc && !want) { this._pcut = null; if (this.roomInteractables) this.roomInteractables = this.roomInteractables.filter((i) => !i._pc); for (const l of W.lampLights || []) l.visible = this.phase === "night" || this.phase === "evening"; if (W.roomLight && !(W.currentRoom && W.currentRoom.type === "haveli")) W.roomLight.intensity = 18; showToast(L("💡 'LIGHT AA GAYI!' The whole colony cheers. The fan starts again."), 3600, "good"); return; }
     if (this._pcut) { for (const l of W.lampLights || []) l.visible = false; if (W.roomLight && W.currentRoom && W.currentRoom.type !== "haveli") W.roomLight.intensity = this._pcut.candle ? 6 : 1.5; }
+  }
+  // Safety net: if the player ever ends up inside a wall or a solid thing, slide them out to the nearest open spot.
+  _tickUnstick(dt) {
+    if (this.player.riding || this._cut || this._sim || this._park || this._uiBlocking()) { this._stuckT = 0; return; }
+    const W = this.world, R = W.currentRoom, P = this.player.position, ok = (x, z) => (R ? R.walkable(x, z) : W.isWalkable(x, z));
+    if (ok(P.x, P.z)) { this._stuckT = 0; return; }
+    this._stuckT = (this._stuckT || 0) + dt; if (this._stuckT < 0.4) return; this._stuckT = 0;
+    for (let r = 0.5; r <= 14; r += 0.5) for (let k = 0; k < 16; k++) { const a = (k / 16) * Math.PI * 2, x = P.x + Math.cos(a) * r, z = P.z + Math.sin(a) * r; if (ok(x, z) && ok(x + 0.6, z) && ok(x - 0.6, z) && ok(x, z + 0.6) && ok(x, z - 0.6)) { this.player.group.position.set(x, 0, z); this.player._placeCamera && this.player._placeCamera(1); showToast(L("🧍 You were stuck. You squeeze out."), 2000); return; } }
   }
   // Going home from any city at any time, from the airport or station terminal.
   _awayGoHome() {

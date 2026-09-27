@@ -836,6 +836,18 @@ All of them are on the big map (G).
 - Fix: ending a case or a power cut while outside no longer causes an
   error.
 
+## Haveli: marker, upstairs, and never stuck (v62)
+
+- A glowing ring with a bobbing 🔦 marks the next haveli puzzle. At puzzle
+  6 a message says where it is: the cellar door, far back right corner,
+  behind the wall.
+- The haveli stairs work: "Climb the stairs" takes you to a dusty upstairs
+  room. The white "ghost" at the window is a bedsheet with eye holes (an
+  extra clue), and an old trunk has coins worth ₹200. Come back down and
+  the mystery waits where you left it.
+- Safety net everywhere: if the player ever ends up inside a wall or a
+  solid thing, the game slides them out to the nearest open spot.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

@@ -9,3 +9,4 @@
 - stage 2 pass 1 / pass 2: complete. Red-flag tier: Note 52 ROE computed on share capital (171%); Bull Auto Parts RPT (Kunal Rai proprietorship). Stage anchors use PRINTED AR folios.
 - tooling: ARs are two-page landscape spreads; AR .txt re-extracted with left/right halves carrying printed folios; page map recorded in B00.
 - stage 2 pass 3: B02-notes complete, accounting_quality 6/10, one red flag (Note 52 ROE formula), FLAG-CASH (receivables ageing). Anchors converted to 'AR PDF p.N (printed p.X)'.
+- stage 3: B03 complete, overall_quality 5.5/10, best fit Capex-Led Growth (WATCHLIST); flags CASH, ROCE-BASE-EFFECT, DISCLOSURE-QUALITY (8 defects), GOVERNANCE (24-Jul-2026 same-day exits).

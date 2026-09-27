@@ -8,3 +8,4 @@
 - stage 1: Core 68/100, moat 11/60, grand 79, GOOD (deal-breaker 2, Block B 1/20). Orchestrator omitted the peer Data_Sheets from the task; resumed the same agent with them: M2 0->1, M5 0->1 (weak pass, 5-name set), M9 stays 0; moat 13/60, grand 81/160, GOOD unchanged. Ledger run#2 tokens = 154009 cumulative - 111540 = 42469.
 - stage 2 pass 1 / pass 2: complete. Red-flag tier: Note 52 ROE computed on share capital (171%); Bull Auto Parts RPT (Kunal Rai proprietorship). Stage anchors use PRINTED AR folios.
 - tooling: ARs are two-page landscape spreads; AR .txt re-extracted with left/right halves carrying printed folios; page map recorded in B00.
+- stage 2 pass 3: B02-notes complete, accounting_quality 6/10, one red flag (Note 52 ROE formula), FLAG-CASH (receivables ageing). Anchors converted to 'AR PDF p.N (printed p.X)'.

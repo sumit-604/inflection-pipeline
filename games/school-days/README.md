@@ -793,6 +793,13 @@ All of them are on the big map (G).
   police shifts, and any day as a file at the Police Station (₹2,000
   reward).
 
+## Murder mysteries for everyone (v58)
+
+- The Police Station now offers "Help the police: solve a murder mystery"
+  to every player. No police job needed.
+- While a case is open, the daily goal stays on the case. It no longer
+  switches to "Go to work".
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

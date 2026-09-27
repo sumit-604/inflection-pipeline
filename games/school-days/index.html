@@ -9877,7 +9877,9 @@ class Game {
   // Inside the haveli: each place is a spot you walk to; they unlock in order.
   _haveliSetup(room) {
     const kept = this._hvUpKeep && this._hvUpKeep.room === room ? this._hvUpKeep : null; this._hvUpKeep = null;
-    const st = this._hv = kept || { room, stage: 0, courage: 5, clues: [], proof: false, chase: null, jump: false }, spots = room.haveliSpots || [], stages = this._haveliStages();
+    const pr0 = this.progress, resume = !kept && (pr0.hvStage || 0) > 0 && (pr0.hvStage || 0) < 6;
+    const st = this._hv = kept || { room, stage: resume ? pr0.hvStage : 0, courage: 5, clues: resume ? (pr0.hvClues || []).slice() : [], proof: false, chase: null, jump: false }, spots = room.haveliSpots || [], stages = this._haveliStages();
+    if (resume) setTimeout(() => showToast(L("🔦 You continue from puzzle {n} of 6.", { n: st.stage + 1 }), 3200, "good"), 600);
     this.world.roomLight.intensity = 2;
     if (!room._balc) { const b = this._ghost.group.clone(); b.visible = true; b.position.set(0, 3.5, -4.6); room.group.add(b); room._balc = b; }
     room._balc.visible = st.stage <= 1; if (room._gang) for (const m of room._gang) m.visible = false;
@@ -9950,7 +9952,7 @@ class Game {
   _tickHaveli(dt) {
     const h = this._hv; if (!h) return; const room = h.room, pp = this.player.position;
     if (room._hvBeacon && room._hvBeacon.userData.s) room._hvBeacon.userData.s.position.y = 2.6 + Math.sin(performance.now() / 250) * 0.2;
-    if (this.world.currentRoom !== room) { if (this._hvUpKeep === h) return; if (!h.done) { this._hv = null; this.setObjective(L("The haveli mystery is still waiting... (night only)"), -154, 143); } return; }
+    if (this.world.currentRoom !== room) { if (this._hvUpKeep === h) return; if (!h.done) { this.progress.hvStage = h.chase ? 5 : h.stage; this.progress.hvClues = h.clues.slice(); saveProgress(this.profile, this.progress); this._hv = null; this.setObjective(L("The haveli mystery is still waiting... (night only)"), -154, 143); } return; }
     if (this._torch) { this._torch.intensity = 1.8; this._torch.position.set(pp.x, 2.4, pp.z); }
     this.world.roomLight.intensity = 2; if (room.candles) for (const c of room.candles) c.visible = Math.random() > 0.08;
     if (room._balc && room._balc.visible) { room._balc.position.x = Math.sin(performance.now() / 900) * 3; room._balc.position.y = 3.5 + Math.sin(performance.now() / 400) * 0.12; }
@@ -9980,7 +9982,7 @@ class Game {
     this.dialogue.say(L("The haveli"), [L("(Too scary! You run out of the gate and all the way home without stopping.)"), L("Dadi: 'Arre! Where were you? Sit, drink water. Fear is not shameful, beta. Come back when you are ready.'"), L("💪 Courage comes back after a night's sleep. Try again another night.")], null, { pitch: 300 });
   }
   _haveliCaught(st) {
-    const pr = this.progress; pr.ghostGangDone = true; pr.haveliDone = true; pr.brave = (pr.brave || 0) + 2; this._missionDone && this._missionDone("ghost"); saveProgress(this.profile, pr);
+    const pr = this.progress; pr.ghostGangDone = true; pr.haveliDone = true; pr.hvStage = 0; pr.hvClues = []; pr.brave = (pr.brave || 0) + 2; this._missionDone && this._missionDone("ghost"); saveProgress(this.profile, pr);
     const reward = 500 + (st.proof ? 200 : 0); this.addMoney && this.addMoney(reward, L("reward: Kaalu gang caught")); this.addRep && this.addRep(5, L("caught the fake ghost gang"));
     this._snap && this._snap("🚨", "Caught the fake ghost gang in the old haveli."); this.diary(L("The haveli ghosts were fake! The Kaalu gang used bedsheets and a speaker to scare people and rob houses. Kaalu chased me but I escaped, and the police caught them."));
     this.dialogue.say(L("Inspector Rathore"), [L("(You burst out of the front door, gasping. Sirens! Blue and red lights flash on the haveli walls.)"), L("(Kaalu runs out after you, straight into six constables.)"), L("Inspector: 'Hands up! Kaalu, Bablu, Pinky: wanted for 12 house robberies!'"), L("Kaalu: 'Arre! Our ghost show was perfect! Who told you?'"), L("Inspector: 'This brave kid. Chappals, a speaker, shoe prints, a name tag on the sheet. Ghosts do not leave clues. Robbers do.'"), st.proof ? L("Inspector: 'And your photo is proof for the court. Excellent work!'") : L("Inspector: 'Next time, a silent photo helps the court too.'"), L(`🏆 Reward ₹${reward}. The stolen phones and jewellery go back to the families.`), L("📰 Tomorrow's paper: 'BRAVE KID BUSTS FAKE GHOST GANG!'"), L("🏅 Badge: Ghost Buster."), L("Inspector: 'The Government needs brave people like you. Visit the 🎖️ Bravery Missions desk outside the Police Station.'")], null, { pitch: 260 });

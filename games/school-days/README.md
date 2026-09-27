@@ -845,6 +845,8 @@ All of them are on the big map (G).
   room. The white "ghost" at the window is a bedsheet with eye holes (an
   extra clue), and an old trunk has coins worth ₹200. Come back down and
   the mystery waits where you left it.
+- Leave the haveli halfway and it remembers: next night you continue from
+  the same puzzle with your clues.
 - Safety net everywhere: if the player ever ends up inside a wall or a
   solid thing, the game slides them out to the nearest open spot.
 

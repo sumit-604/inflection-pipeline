@@ -812,6 +812,20 @@ All of them are on the big map (G).
 - Entering the building of a murder case says the crime scene is outside,
   behind the police tape.
 
+## Murder cases inside the building; tap the murderer (v60)
+
+- The clues and the three people are now INSIDE the building of the case
+  (the Tea House, Tech Park, Sunrise Apartments, the Grand Hotel). Outside
+  there is police tape, a jeep and a sign: "Crime scene inside".
+- Each clue is a glowing yellow marker with a bobbing 🔎 and its number.
+- The Hotel Room 305 case is on floor 3: take the lift and type 3.
+- When you have questioned all three people, a panel opens with their
+  names. Tap the one you think is the murderer.
+- Most cases are easy: the name is enough, and Constable Ramesh gives up
+  to three hints. Every third case is HARD: tap the name and pick the two
+  clues that prove it, no hints.
+- During a case the clock says "On a murder case", and no seat arrow shows.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

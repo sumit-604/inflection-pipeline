@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v59";
+const GAME_VERSION = "v60";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -5964,7 +5964,7 @@ const MYSTERIES = [
     clues: [["🛗 The lift log", "The lift went up to her floor at 8:05 PM and came down at 8:15 PM."], ["📜 Her new will", "Signed last week: 'My flat goes to my nurse Meena, who cared for me.' Her nephew gets nothing now."], ["🧾 A chemist's bill", "In Meena's name, paid at 8:02 PM at the chemist, far away."], ["🚗 A car parked outside", "Nephew Tony's car. Something shines under the seat: a gold chain!"]],
     suspects: [["Tony, the nephew", 0xc1121f, ["I did not see my aunt today. I was at the cinema.", "The will? She changed it? ...I did not know.", "(He cannot show a cinema ticket.)"]], ["Meena, the nurse", 0xffffff, ["I went to buy her medicines at 8. When I came back, she was on the floor.", "Here is my bill from the chemist."]], ["Mr. Kapoor, the neighbour", 0x6c757d, ["We argued about parking, yes. But at 8 I was on a video call with my son in Canada.", "I heard someone shouting at 8:10."]]],
     culprit: 0, proof: [0, 3], win: ["Tony: 'She gave the flat to the nurse! I only wanted to talk... I got angry.'", "The lift log and the necklace in his car prove it. Case closed!"] },
-  { title: "The Hotel Room 305 Mystery", site: "Grand Hotel", x: 60, z: -20, victim: "Sonia, a famous singer",
+  { title: "The Hotel Room 305 Mystery", site: "Grand Hotel", floor: 3, x: 60, z: -20, victim: "Sonia, a famous singer",
     brief: "The singer Sonia was found dead in Room 305 of the Grand Hotel after her show. The door was not broken.",
     clues: [["🍽️ Room service tray", "Tea for TWO, ordered at 11:20 PM. She had a visitor she knew."], ["☂️ A wet umbrella", "Left by the door. It started to rain only at 11 PM. The visitor came AFTER 11."], ["🔑 Housekeeping board", "The master key hangs in its place. Nobody used it."], ["💌 A torn letter", "'You stole my song and my fame. Tonight we talk. - R'"]],
     suspects: [["Mr. Bhalla, the manager", 0x333333, ["I was at the front desk all night. The staff saw me.", "The master key? It is on the board, see."]], ["Rina, the rival singer", 0xff4f8b, ["I left the hotel at 10 PM, before the rain.", "Sonia and I? Old friends... sort of.", "(Her shoes are wet. Her name starts with R.)"]], ["Chotu, the bellboy", 0x8b5a2b, ["I carried the tea tray at 11:20. A lady in a pink shawl opened the door.", "I did not see her face."]]],
@@ -6846,6 +6846,7 @@ class Game {
   isTermDay() { const d = this.progress.day; return d === 10 || d === 20; }
   clockText() {
     const p = this.phase;
+    if (this._myst) return `🕵️ ${L("On a murder case")}`;
     if (this.working && this._onDuty) return `${L("On duty")} · ${L("Case {n} of 5", { n: this._onDuty })}`;
     if (this._zone) { const t = (p === "over" || p === "evening") && this._tmin != null ? this._clockFmt().split(" · ")[0] : p === "night" ? "9:00 PM" : "8:00 AM"; return `${t} · 📍 ${L("In {c}", { c: this._zone.city })}`; }
     if ((p === "over" || p === "evening") && this._tmin != null) return this._clockFmt();
@@ -7068,7 +7069,7 @@ class Game {
     if (this._stay && door.index >= 9100 && door.index < 9500) this._stayRoomSetup(room);
     if (this._zone && !this._stay && door.label === "Grand Hotel") this._awayHotel(room);
     if (door.label === "Our Home" && this._pcut) this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 }, radius: 4, priority: 1, _pc: true, prompt: () => (this._pcut && !this._pcut.candle ? L("🕯️ Light a candle") : ""), activate: () => { if (!this._pcut) return; this._pcut.candle = true; showToast(L("🕯️ A small warm light. Shadows dance on the wall. Dadi starts a story..."), 3400, "good"); } });
-    if (this._myst && this._myst.m.site === door.label) showToast(L("🕵️ The crime scene is outside this building, behind the yellow police tape."), 3600);
+    if (this._myst && this._myst.door && this._myst.m.site === door.label) { const mf = this._myst.m.floor || 0; if (floor === mf) this._mysteryRoom(room); else showToast(L("🕵️ The crime scene is on floor {f}. Take the lift and type {f}.", { f: mf }), 3800); }
     if (door.label === "Our Home") this._giftBox(room);
     if (door.label === "Our Home") this._homeExtras(room);
     if (door.label === "Our Home") this._telescopeAt(room);
@@ -7528,6 +7529,7 @@ class Game {
   }
   // Every room with no desk of yours gets a seat for you, front right by the door, with an arrow.
   _visitorSeat(room) {
+    if (this._myst && this.insideDoor && this._myst.m.site === this.insideDoor.label) { if (room.visitorSeat && room.visitorSeat.arrow) room.visitorSeat.arrow.visible = false; return; }
     if (["home", "mainbuilding", "rooftop", "landmark"].includes(room.type) || (this._stay && room.type === "hotelroom") || (this.insideDoor && this.insideDoor.index >= 9000)) return;
     if (room.playerDesk || (room._openJobs && room._openJobs.length)) return;
     if (!room.visitorSeat) { const lx = room.w / 2 - 1.8, lz = room.d / 2 - 3; room._box(0.55, 0.45, 0.55, 0x3f6f9f, lx, 0.22, lz, false); room._box(0.55, 0.6, 0.08, 0x3f6f9f, lx, 0.7, lz + 0.25, false); const arrow = room._label("▼ " + L("YOUR SEAT"), lx, lz, 2.4, 0.6); room.visitorSeat = { x: room.x0 + lx, z: room.z0 + lz, arrow }; }
@@ -7561,7 +7563,7 @@ class Game {
     let score = 0, i = 0;
     const next = () => {
       this._clearCaseScene && this._clearCaseScene();
-      if (i === 2 && job.id === "police" && ((this.progress.shifts || 0) % 2 === 0)) { this._onDuty = i + 1; this._mysteryCase(MYSTERIES[Math.floor((this.progress.shifts || 0) / 2) % MYSTERIES.length], (ok) => { if (ok) score++; i++; next(); }); return; }
+      if (i === 2 && job.id === "police" && ((this.progress.shifts || 0) % 2 === 0)) { this._onDuty = i + 1; this._mysteryCase(MYSTERIES[Math.floor((this.progress.shifts || 0) / 2) % MYSTERIES.length], (ok) => { if (ok) score++; i++; next(); }, Math.floor((this.progress.shifts || 0) / 2) % 3 === 2); return; }
       if (i < field.length && i === 1 && CHASE_CALLS[job.id] && !this.gentle) { this._onDuty = i + 1; this._startChase(CHASE_STORIES[(this.progress.shifts || 0) % CHASE_STORIES.length], (ok) => { if (ok) score++; i++; next(); }); return; }
       if (i < field.length) { const c0 = field[i]; const door = this.world.doors.find((d) => d.label.length > 3 && c0.site.toLowerCase().includes(d.label.toLowerCase())); const c = door ? { ...c0, x: door.x, z: door.z + 2.5, doorLabel: door.label } : c0; this._caseScene && this._caseScene(c, job); this._fieldCase = { c, job, onResult: (ok) => { if (ok) score++; i++; next(); } }; this._onDuty = i + 1; this.setObjective(`${job.icon} ${L("Case {n} of 5", { n: i + 1 })}: ${c.site}. ${L("Go there now.")}`, c.x, c.z); showToast(`📻 ${L(c.t)}`, 5200, "good"); speakLine(L(c.t), 340); if (this.world.currentRoom) { standPose(this.player.group); } }
       else { this._onDuty = 0; this.setObjective(`${job.icon} ${L("Back to the desk at {p} for two files.", { p: job.place })}`, this.world.doors.find((d) => d.label === job.place).x, this.world.doors.find((d) => d.label === job.place).z + 2); this._runPaper(`${job.icon} ${L("Back at the desk")}: ${rankName(job, this.progress.shifts)}`, desk, (s2) => onDone(score + s2)); }
@@ -11038,71 +11040,99 @@ class Game {
   }
   _tickCaseFx() {
     const t = performance.now() / 1000;
-    for (const G of [this._caseProps, this._myst && this._myst.G]) { if (!G) continue;
+    for (const G of [this._caseProps, this._myst && this._myst.G, this._myst && this._myst.roomG]) { if (!G) continue;
       for (const f of G.userData.flicker || []) { if (f.isLight) f.intensity = 1.8 + Math.random() * 1.6; else f.scale.y = 0.8 + Math.random() * 0.5; }
       for (const s of G.userData.smoke || []) { const b = s.userData.base, ph = (t * 0.5 + b.k / 6) % 1; s.position.set(b.x + Math.sin(t + b.k) * 0.4, b.y + ph * 6, b.z); s.scale.setScalar(0.6 + ph * 1.4); }
+      for (const sp of G.userData.bob || []) { if (sp.userData.by == null) sp.userData.by = sp.position.y; sp.position.y = sp.userData.by + Math.sin(t * 3) * 0.15; }
       for (const l of G.userData.siren || []) l.visible = Math.floor(t * 3) % 2 === (l.userData.odd ? 1 : 0);
     }
   }
-  // ---- Murder mystery: a taped scene, a chalk outline, clue markers, three people to question, then name the culprit and the proof ----
-  _mysteryCase(m, onResult) {
-    const door = this.world.doors.find((d) => d.label === m.site), cx = door ? door.x : m.x, cz = door ? door.z + 8 : m.z;
-    const G = new THREE.Group(); G.position.set(cx, 0, cz); G.userData.flicker = []; G.userData.siren = []; this.world.scene.add(G);
+  // ---- Murder mystery: taped building outside; inside, a chalk outline, glowing clue markers and three people to question ----
+  // Easy cases (most): name the culprit and ONE proof, with hints. Hard cases (every third): TWO proofs, no hints.
+  _mysteryCase(m, onResult, hard) {
+    const door = this.world.doors.find((d) => d.label === m.site), cx = door ? door.x : m.x, cz = door ? door.z + 6 : m.z;
+    const G = new THREE.Group(); G.position.set(cx, 0, cz); G.userData.flicker = []; G.userData.siren = []; G.userData.bob = []; this.world.scene.add(G);
     const M = (col, e = 0) => new THREE.MeshStandardMaterial({ color: col, emissive: e ? col : 0, emissiveIntensity: e });
-    const box = (w, h, d, col, x, y, z, m2) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m2 || M(col)); b.position.set(x, y, z); G.add(b); return b; };
-    const r = 4.5; for (const [x1, z1, x2, z2] of [[-r, -r, r, -r], [r, -r, r, r], [r, r, -r, r], [-r, r, -r, -r]]) { const len = Math.hypot(x2 - x1, z2 - z1), b = box(len, 0.12, 0.03, 0xffd000, (x1 + x2) / 2, 1, (z1 + z2) / 2, M(0xffd000, 0.3)); b.rotation.y = -Math.atan2(z2 - z1, x2 - x1); }
+    const box = (w, h, d, col, x, y, z, m2) => { const b2 = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m2 || M(col)); b2.position.set(x, y, z); G.add(b2); return b2; };
+    const r = 3.5; for (const [x1, z1, x2, z2] of [[-r, -r, r, -r], [r, -r, r, r], [r, r, -r, r]]) { const len = Math.hypot(x2 - x1, z2 - z1), b2 = box(len, 0.12, 0.03, 0xffd000, (x1 + x2) / 2, 1, (z1 + z2) / 2, M(0xffd000, 0.3)); b2.rotation.y = -Math.atan2(z2 - z1, x2 - x1); }
     for (const [x, z] of [[-r, -r], [r, -r], [r, r], [-r, r]]) box(0.1, 1.1, 0.1, 0x777777, x, 0.55, z);
-    try { const s = makeTextSprite(L("POLICE LINE · DO NOT CROSS"), { size: 36, scale: 1.1 }); s.position.set(0, 1.6, r); G.add(s); } catch (e) { /* label optional */ }
-    // The chalk outline of where the victim was found.
-    const W = M(0xf2f2f2, 0.3), line = (w, d, x, z, ry = 0) => { const b = box(w, 0.015, d, 0xffffff, x, 0.02, z, W); b.rotation.y = ry; };
-    const ring = new THREE.Mesh(new THREE.RingGeometry(0.22, 0.27, 20), W); ring.rotation.x = -Math.PI / 2; ring.position.set(0, 0.02, -1.25); G.add(ring);
-    line(0.05, 1.0, -0.3, -0.5); line(0.05, 1.0, 0.3, -0.5); line(0.6, 0.05, 0, -0.98); line(0.05, 1.1, -0.2, 0.5); line(0.05, 1.1, 0.2, 0.5); line(0.05, 1.0, -0.12, 0.6, 0.2); line(0.05, 0.9, -0.7, -0.6, 0.8); line(0.05, 0.9, 0.7, -0.6, -0.8);
-    box(0.5, 0.5, 0.5, 0x8b5a2b, 1.6, 0.25, -1.8).rotation.set(0, 0.4, 1.5);
-    // Clue markers.
-    const spots = [[-2.8, -2.6], [2.6, -2.4], [-2.6, 2.4], [2.8, 2.6]], its = [];
-    m.clues.forEach((cl, k) => { const [x, z] = spots[k]; box(0.3, 0.35, 0.3, 0xffd000, x, 0.18, z, M(0xffd000, 0.25)); try { const s = makeTextSprite(`${k + 1}`, { size: 36, scale: 0.35 }); s.position.set(x, 0.62, z); G.add(s); } catch (e) { /* label optional */ }
-      its.push({ pos: { x: cx + x, z: cz + z }, radius: 1.7, priority: 2, _myst: true, prompt: () => L("🔎 Examine clue {n}: {c}", { n: k + 1, c: cl[0] }), activate: () => { const S = this._myst; if (!S) return; S.found.add(k); this.dialogue.say(L("Clue {n}", { n: k + 1 }), [cl[0], cl[1], L("📝 Clues found: {a} of {b}.", { a: S.found.size, b: m.clues.length })], null, { pitch: 360 }); } }); });
-    // Three people to question, standing outside the tape.
-    m.suspects.forEach((sp, k) => { const x = -3 + k * 3, z = r + 2.2; let h; try { h = makeHuman({ shirt: sp[1], trousers: 0x333333, hair: 0x1d1410 }); } catch (e) { h = new THREE.Group(); } h.position.set(x, 0, z); h.rotation.y = Math.PI; G.add(h); try { const s = makeTextSprite(sp[0], { size: 34, scale: 1.0 }); s.position.set(x, 2.5, z); G.add(s); } catch (e) { /* label optional */ }
-      its.push({ pos: { x: cx + x, z: cz + z - 0.8 }, radius: 1.8, priority: 2, _myst: true, prompt: () => L("🗣️ Question {n}", { n: sp[0] }), activate: () => { const S = this._myst; if (!S) return; S.asked.add(k); this.dialogue.say(sp[0], sp[2].map((x2) => L(x2)).concat([L("📝 People questioned: {a} of 3.", { a: S.asked.size })]), null, { pitch: 330 + k * 30 }); } }); });
-    // The police jeep with flashing lights: solve the case here.
+    try { const s = makeTextSprite(door ? L("🔎 CRIME SCENE INSIDE · go in (E at the door)") : L("POLICE LINE · DO NOT CROSS"), { size: 36, scale: 1.4 }); s.position.set(0, 3, 0); G.add(s); G.userData.bob.push(s); } catch (e) { /* label optional */ }
     let jeep; try { jeep = makeRideCar(0xffffff); } catch (e) { jeep = new THREE.Group(); } jeep.position.set(r + 3.2, 0, 0); jeep.rotation.y = Math.PI / 2; G.add(jeep);
     const red = box(0.4, 0.15, 0.3, 0xff2020, r + 3.2, 1.5, -0.3, M(0xff2020, 1)), blue = box(0.4, 0.15, 0.3, 0x2060ff, r + 3.2, 1.5, 0.3, M(0x2060ff, 1)); blue.userData.odd = true; G.userData.siren.push(red, blue);
-    its.push({ pos: { x: cx + r + 2, z: cz + 1.8 }, radius: 2.2, priority: 3, _myst: true, prompt: () => { const S = this._myst; return S ? L("📋 Solve the case (clues {a}/{b}, questioned {c}/3)", { a: S.found.size, b: m.clues.length, c: S.asked.size }) : ""; }, activate: () => this._mysterySolve() });
-    this.interactables.push(...its);
-    this._myst = { m, G, onResult, found: new Set(), asked: new Set(), tries: 0, arrived: false, cx, cz };
-    this.setObjective(`🕵️ ${L(m.title)}: ${L("go to {s}", { s: L(m.site) })}`, cx, cz);
-    try { playBell(); } catch (e) { /* sound optional */ } showToast(`📻 ${L("Control room: 'Murder reported at {s}. Detective, go now!'", { s: L(m.site) })}`, 4200, "bad");
+    this._myst = { m, G, onResult, hard: !!hard, found: new Set(), asked: new Set(), tries: 0, hints: 0, arrived: false, cx, cz, door };
+    this.interactables.push({ pos: { x: cx + r + 2, z: cz + 1.8 }, radius: 2.2, priority: 3, _myst: true, prompt: () => this._mystSolvePrompt(), activate: () => this._mysterySolve() });
+    if (!door) this._mysteryBuild(G, 0, 0, 7, 7, (x, z) => ({ x: cx + x, z: cz + z }), this.interactables);
+    this.setObjective(`🕵️ ${L(m.title)}: ${L("go to {s}", { s: L(m.site) })}${m.floor ? " · " + L("floor {f}", { f: m.floor }) : ""}`, door ? door.x : cx, door ? door.z : cz);
+    try { playBell(); } catch (e) { /* sound optional */ } showToast(`📻 ${L("Control room: 'Murder reported at {s}. Detective, go now!'", { s: L(m.site) })} ${hard ? L("(HARD case)") : L("(easy case)")}`, 4200, "bad");
+  }
+  _mystSolvePrompt() { const S = this._myst; return S ? L("📋 Solve the case (clues {a}/{b}, questioned {c}/3)", { a: S.found.size, b: S.m.clues.length, c: S.asked.size }) : ""; }
+  // Builds the chalk outline, clue markers and suspects into a group; `at` turns local spots into world spots; `list` gets the interactables.
+  _mysteryBuild(G, ox, oz, w, d, at, list, spotFn) {
+    const S = this._myst, m = S.m; G.userData.bob = G.userData.bob || [];
+    const W = new THREE.MeshStandardMaterial({ color: 0xf2f2f2, emissive: 0xf2f2f2, emissiveIntensity: 0.3 });
+    const line = (lw, ld, x, z, ry = 0) => { const b2 = new THREE.Mesh(new THREE.BoxGeometry(lw, 0.015, ld), W); b2.position.set(ox + x, 0.03, oz + z); b2.rotation.y = ry; G.add(b2); };
+    const ring = new THREE.Mesh(new THREE.RingGeometry(0.22, 0.27, 20), W); ring.rotation.x = -Math.PI / 2; ring.position.set(ox, 0.03, oz - 1.25); G.add(ring);
+    line(0.05, 1.0, -0.3, -0.5); line(0.05, 1.0, 0.3, -0.5); line(0.6, 0.05, 0, -0.98); line(0.05, 1.1, -0.2, 0.5); line(0.05, 1.1, 0.2, 0.5); line(0.05, 0.9, -0.7, -0.6, 0.8); line(0.05, 0.9, 0.7, -0.6, -0.8);
+    const spots = [[-w / 2 + 2, -d / 2 + 2], [w / 2 - 2, -d / 2 + 2], [-w / 2 + 2, d / 2 - 3], [w / 2 - 2, d / 2 - 3]];
+    m.clues.forEach((cl, k) => {
+      const p0 = spotFn ? spotFn(spots[k][0], spots[k][1]) : { x: ox + spots[k][0], z: oz + spots[k][1] }, lx = p0.x, lz = p0.z;
+      const mk = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.45, 0.35), new THREE.MeshStandardMaterial({ color: 0xffd000, emissive: 0xffd000, emissiveIntensity: 0.8 })); mk.position.set(lx, 0.23, lz); G.add(mk);
+      try { const s = makeTextSprite(`🔎 ${k + 1}`, { size: 44, scale: 0.7 }); s.position.set(lx, 1.8, lz); G.add(s); G.userData.bob.push(s); } catch (e) { /* label optional */ }
+      const wp = at(lx, lz);
+      list.push({ pos: wp, radius: 2.2, priority: 2, _myst: true, prompt: () => (this._myst && this._myst.found.has(k) ? L("✅ Clue {n} (read again): {c}", { n: k + 1, c: cl[0] }) : L("🔎 Examine clue {n}: {c}", { n: k + 1, c: cl[0] })), activate: () => { const S2 = this._myst; if (!S2) return; S2.found.add(k); this.dialogue.say(L("Clue {n}", { n: k + 1 }), [cl[0], cl[1], L("📝 Clues found: {a} of {b}.", { a: S2.found.size, b: m.clues.length })], null, { pitch: 360 }); } });
+    });
+    const sp2 = [[-2.5, 1.5], [0, 2.5], [2.5, 1.5]];
+    m.suspects.forEach((sp, k) => {
+      const p0 = spotFn ? spotFn(sp2[k][0] * (w / 8), sp2[k][1] * (d / 8)) : { x: ox + sp2[k][0], z: oz + sp2[k][1] + 2 }, x = p0.x, z = p0.z;
+      let h; try { h = makeHuman({ shirt: sp[1], trousers: 0x333333, hair: 0x1d1410 }); } catch (e) { h = new THREE.Group(); } h.position.set(x, 0, z); h.rotation.y = Math.PI; G.add(h);
+      try { const s = makeTextSprite(`🗣️ ${sp[0]}`, { size: 34, scale: 1.0 }); s.position.set(x, 2.5, z); G.add(s); } catch (e) { /* label optional */ }
+      list.push({ pos: at(x, z), radius: 2, priority: 2, _myst: true, prompt: () => L("🗣️ Question {n}", { n: sp[0] }), activate: () => { const S2 = this._myst; if (!S2) return; S2.asked.add(k); this.dialogue.say(sp[0], sp[2].map((x2) => L(x2)).concat([L("📝 People questioned: {a} of 3.", { a: S2.asked.size })]), () => { const S3 = this._myst; if (S3 && S3.asked.size === 3 && !S3.autoAsked) { S3.autoAsked = true; this._mysterySolve(); } }, { pitch: 330 + k * 30 }); } });
+    });
+  }
+  // Inside the building of the case: put the scene in the room.
+  _mysteryRoom(room) {
+    const S = this._myst; if (!S) return;
+    if (room._mystG) { room.group.remove(room._mystG); room._mystG = null; }
+    const G = new THREE.Group(); room.group.add(G); room._mystG = G; S.roomG = G; S.room = room;
+    const spot = (lx, lz) => { const p = this._nearSpot ? this._nearSpot(room, room.x0 + lx, room.z0 + lz, [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [1.5, 1.5], [-1.5, 1.5], [2, 0], [-2, 0]]) : null; return p ? { x: p.x - room.x0, z: p.z - room.z0 } : { x: lx, z: lz }; };
+    this._mysteryBuild(G, 0, 0, room.w, room.d, (lx, lz) => ({ x: room.x0 + lx, z: room.z0 + lz }), this.roomInteractables, spot);
+    this.roomInteractables.push({ pos: { x: room.exitPos.x, z: room.exitPos.z - 2.5 }, radius: 2.2, priority: 3, _myst: true, prompt: () => this._mystSolvePrompt(), activate: () => this._mysterySolve() });
+    if (!S.arrived) { S.arrived = true; this._mysteryIntro(); } else showToast(L("🔎 Yellow markers = clues. 🗣️ Question the three people. 📋 Solve by the door."), 3200, "good");
+  }
+  _mysteryIntro() {
+    const S = this._myst; if (!S) return; if (this.player.riding) this.player.dismount();
+    this.dialogue.say(L("Constable Ramesh"), [L("Detective, over here. {v}.", { v: L(S.m.victim) }), L(S.m.brief), L("🔎 Look for the four glowing yellow markers with a magnifying glass above them. Press E near each one."), L("🗣️ Question the three people. 📋 When you are sure, solve the case by the door."), S.hard ? L("⚠️ This is a HARD case: after questioning all three, tap the murderer AND pick TWO clues that prove it. No hints.") : L("🙂 This is an easy case. After you question all three, tap the name of the murderer. You can ask me for a hint.")], () => this.setObjective(`🕵️ ${L(S.m.title)}: ${L("clues and questions")}`, S.door ? S.door.x : S.cx, S.door ? S.door.z : S.cz), { pitch: 330 });
   }
   // A mystery file from the police station, any day: solve it for a ₹2,000 reward.
   _mysteryFile(onDone) {
     if (this._myst) { showToast(L("Solve the case you have first!"), 2400); return; }
-    const pr = this.progress, m = MYSTERIES[(pr.mystN || 0) % MYSTERIES.length]; pr.mystN = (pr.mystN || 0) + 1; saveProgress(this.profile, pr);
-    this._mysteryCase(m, (ok) => { if (ok) this.addMoney(2000, L("case solved: {t}", { t: m.title })); onDone && onDone(ok); });
+    const pr = this.progress, n = pr.mystN || 0, m = MYSTERIES[n % MYSTERIES.length]; pr.mystN = n + 1; saveProgress(this.profile, pr);
+    this._mysteryCase(m, (ok) => { if (ok) this.addMoney(2000, L("case solved: {t}", { t: m.title })); onDone && onDone(ok); }, n % 3 === 2);
   }
   _tickMystery() {
-    const S = this._myst; if (!S || S.arrived || this.world.currentRoom || this.dialogue.active || panelOpen()) return;
-    const p = this.player.position; if (Math.hypot(p.x - S.cx, p.z - S.cz) > 14) return; S.arrived = true; if (this.player.riding) this.player.dismount();
-    this.dialogue.say(L("Constable Ramesh"), [L("Detective, over here. {v}.", { v: L(S.m.victim) }), L(S.m.brief), L("🔎 Look at the four yellow clue markers. 🗣️ Question the three people by the tape."), L("📋 When you are sure, come to the jeep and name the culprit AND the proof.")], () => this.setObjective(`🕵️ ${L(S.m.title)}: ${L("clues and questions")}`, S.cx, S.cz), { pitch: 330 });
+    const S = this._myst; if (!S || S.arrived || S.door || this.world.currentRoom || this.dialogue.active || panelOpen()) return;
+    const p = this.player.position; if (Math.hypot(p.x - S.cx, p.z - S.cz) > 14) return; S.arrived = true; this._mysteryIntro();
   }
   _mysterySolve() {
-    const S = this._myst; if (!S) return; const m = S.m;
-    if (S.found.size < 3 || S.asked.size < 3) { showToast(L("Not yet. Find at least 3 clues and question all 3 people. (Clues {a}/4, questioned {c}/3)", { a: S.found.size, c: S.asked.size }), 3400); return; }
+    const S = this._myst; if (!S) return; const m = S.m, need = S.hard ? 2 : 0;
+    if (S.asked.size < 3 || (S.hard && S.found.size < 3)) { showToast(S.hard ? L("Not yet. Find at least 3 clues and question all 3 people. (Clues {a}/4, questioned {c}/3)", { a: S.found.size, c: S.asked.size }) : L("Not yet. Question all 3 people first. (Questioned {c}/3)", { c: S.asked.size }), 3400); return; }
     let who = null; const pick = new Set();
-    const card = openPanel(`<h2>🕵️ ${L(m.title)}</h2><p class="job-brief">${L("1. Who did it?")}</p><div class="btn-row">${m.suspects.map((s, k) => `<button class="big-btn" id="ms-s${k}">${L(s[0])}</button>`).join("")}</div><p class="job-brief">${L("2. Which TWO clues prove it?")}</p><div class="btn-row">${m.clues.map((c, k) => `<button class="lang-btn" id="ms-c${k}">${k + 1}. ${L(c[0])}</button>`).join("")}</div><div class="btn-row"><button class="big-btn" id="ms-go">${L("⚖️ Arrest")}</button><button class="ghost-btn" id="ms-no">${L("Look again")}</button></div>`);
-    m.suspects.forEach((s, k) => card.querySelector(`#ms-s${k}`).addEventListener("click", () => { who = k; m.suspects.forEach((s2, k2) => card.querySelector(`#ms-s${k2}`).classList.toggle("on", k2 === k)); }));
-    m.clues.forEach((c, k) => card.querySelector(`#ms-c${k}`).addEventListener("click", () => { if (pick.has(k)) pick.delete(k); else { if (pick.size >= 2) return; pick.add(k); } card.querySelector(`#ms-c${k}`).classList.toggle("on", pick.has(k)); }));
-    card.querySelector("#ms-no").addEventListener("click", () => closePanel());
-    card.querySelector("#ms-go").addEventListener("click", () => {
-      if (who == null || pick.size !== 2) { showToast(L("Pick one person and two clues."), 2200); return; }
-      closePanel(); const right = who === m.culprit && m.proof.every((k) => pick.has(k));
-      if (right) { playSuccess(); this.addRep && this.addRep(5, L(m.title)); const pr = this.progress; pr.mysteries = (pr.mysteries || 0) + 1; saveProgress(this.profile, pr); this._snap && this._snap("🕵️", `Solved ${m.title}.`); this.diary && this.diary(L("I solved {t}. The culprit: {c}.", { t: L(m.title), c: L(m.suspects[m.culprit][0]) })); this.dialogue.say(L("Case solved"), m.win.map((x) => L(x)).concat([L("🏅 Mysteries solved: {n}. The Commissioner shakes your hand.", { n: pr.mysteries })]), () => this._mysteryEnd(true), { pitch: 320 }); return; }
+    const card = openPanel(`<h2>🕵️ ${L("Who is the murderer?")}</h2><p class="job-brief">${L(m.title)} ${S.hard ? L("· HARD: tap a name, then pick TWO clues that prove it.") : L("· Tap the name of the person you think did it.")}</p><div class="btn-row">${m.suspects.map((s, k) => `<button class="big-btn" id="ms-s${k}">🧑 ${L(s[0])}</button>`).join("")}</div>${S.hard ? `<p class="job-brief">${L("Which TWO clues prove it?")}</p><div class="btn-row">${m.clues.map((c, k) => `<button class="lang-btn" id="ms-c${k}" ${S.found.has(k) ? "" : "disabled"}>${k + 1}. ${S.found.has(k) ? L(c[0]) : L("(not found yet)")}</button>`).join("")}</div><div class="btn-row"><button class="big-btn" id="ms-go">${L("⚖️ Arrest")}</button></div>` : ""}<div class="btn-row">${S.hard ? "" : `<button class="ghost-btn" id="ms-hint">${L("💡 Ask Ramesh for a hint")}</button>`}<button class="ghost-btn" id="ms-no">${L("Not sure yet: look for more clues")}</button></div><div class="hint" id="ms-msg" hidden></div>`);
+    const arrest = () => {
+      closePanel(); const right = who === m.culprit && (need === 2 ? m.proof.every((k) => pick.has(k)) : true);
+      if (right) { playSuccess(); this.addRep && this.addRep(S.hard ? 6 : 4, L(m.title)); const pr = this.progress; pr.mysteries = (pr.mysteries || 0) + 1; saveProgress(this.profile, pr); this._snap && this._snap("🕵️", `Solved ${m.title}.`); this.diary && this.diary(L("I solved {t}. The culprit: {c}.", { t: L(m.title), c: L(m.suspects[m.culprit][0]) })); this.dialogue.say(L("Case solved"), m.win.map((x) => L(x)).concat([L("🏅 Mysteries solved: {n}. The Commissioner shakes your hand.", { n: pr.mysteries })]), () => this._mysteryEnd(true), { pitch: 320 }); return; }
       S.tries++; Audio.playRetry();
-      if (S.tries < 2) { showToast(who !== m.culprit ? L("❌ That person has an alibi that holds. Think again: who lied?") : L("❌ Right person, weak proof. Which two clues point only to them?"), 3800, "bad"); return; }
-      this.dialogue.say(L("Commissioner"), [L("The case goes to a senior detective."), L("The truth: {c} did it.", { c: L(m.suspects[m.culprit][0]) }), L("The proof: {a} and {b}.", { a: L(m.clues[m.proof[0]][0]), b: L(m.clues[m.proof[1]][0]) }), L("Every liar leaves a mistake. Next time, check each alibi against the clues.")], () => this._mysteryEnd(false), { pitch: 300 });
-    });
+      if (S.tries < (S.hard ? 2 : 3)) { showToast(who !== m.culprit ? L("❌ {n}'s story checks out. Think again: who lied? (Solve again by the door.)", { n: L(m.suspects[who][0]) }) : L("❌ Right person, weak proof. Which clues point only to them?"), 4200, "bad"); return; }
+      this.dialogue.say(L("Commissioner"), [L("The case goes to a senior detective."), L("The truth: {c} did it.", { c: L(m.suspects[m.culprit][0]) }), L("The proof: {a} and {b}.", { a: L(m.clues[m.proof[0]][0]), b: L(m.clues[m.proof[1]][0]) }), L("Every liar leaves a mistake. Next time, check each story against the clues.")], () => this._mysteryEnd(false), { pitch: 300 });
+    };
+    m.suspects.forEach((s, k) => card.querySelector(`#ms-s${k}`).addEventListener("click", () => { who = k; if (!S.hard) { arrest(); return; } m.suspects.forEach((s2, k2) => card.querySelector(`#ms-s${k2}`).classList.toggle("on", k2 === k)); }));
+    if (S.hard) { m.clues.forEach((c, k) => card.querySelector(`#ms-c${k}`).addEventListener("click", () => { if (pick.has(k)) pick.delete(k); else { if (pick.size >= 2) return; pick.add(k); } card.querySelector(`#ms-c${k}`).classList.toggle("on", pick.has(k)); }));
+      card.querySelector("#ms-go").addEventListener("click", () => { if (who == null || pick.size !== 2) { showToast(L("Tap one name and two clues."), 2200); return; } arrest(); }); }
+    card.querySelector("#ms-no").addEventListener("click", () => closePanel());
+    const hb = card.querySelector("#ms-hint"); if (hb) hb.addEventListener("click", () => { S.hints++; const msg = card.querySelector("#ms-msg"); msg.hidden = false; const pk = m.proof[0]; msg.textContent = S.hints === 1 ? L("Ramesh: 'Check who LIED. One person's story does not match the clues.'") : S.hints === 2 ? L("Ramesh: 'Look hard at clue {n}: {c}.'", { n: pk + 1, c: L(m.clues[pk][0]) }) : L("Ramesh: 'I think it is {c}. But you must be sure!'", { c: L(m.suspects[m.culprit][0]) }); });
   }
-  _mysteryEnd(ok) { const S = this._myst; if (!S) return; this._myst = null; this.world.scene.remove(S.G); this.interactables = this.interactables.filter((i) => !i._myst); S.onResult && S.onResult(ok); }
+
+  _mysteryEnd(ok) { const S = this._myst; if (!S) return; this._myst = null; this.world.scene.remove(S.G); if (S.roomG && S.roomG.parent) S.roomG.parent.remove(S.roomG); if (S.room) S.room._mystG = null; this.interactables = this.interactables.filter((i) => !i._myst); this.roomInteractables = this.roomInteractables.filter((i) => !i._myst); S.onResult && S.onResult(ok); }
   // ---- Daily life: no water some mornings, a power cut some evenings. Just live it. ----
   _waterCutMorning() {
     const pr = this.progress; if (this._tanker) { this.world.scene.remove(this._tanker); this._tanker = null; this.interactables = this.interactables.filter((i) => !i._tank); }

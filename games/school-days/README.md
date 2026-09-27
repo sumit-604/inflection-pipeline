@@ -850,6 +850,12 @@ All of them are on the big map (G).
 - Safety net everywhere: if the player ever ends up inside a wall or a
   solid thing, the game slides them out to the nearest open spot.
 
+## Walk up the haveli stairs (v63)
+
+- The haveli stairs are real steps now. Walk onto them and your player
+  rises step by step. At the top you arrive in the upstairs room. No
+  button needed (E still works at the bottom).
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

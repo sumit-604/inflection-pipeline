@@ -53,6 +53,7 @@ input_gaps:
   - "research: EMPTY. No broker notes. No effect on anchored evidence."
   - "presentation: 2 decks, Q4 FY26 (12-May-2026) and Q1 FY27 (25-Jul-2026). Collector's Investor_Presentation_1.pdf removed as a byte-identical duplicate of the Q1 FY27 deck. Q3 FY26 and Q2 FY26 decks not held."
   - "TOOLING: every input PDF pre-extracted with PyMuPDF to a page-marked .txt BESIDE the PDF (same basename, '[page N]' = PDF page number). All 49 PDFs open. Image-only pages OCR'd with RapidOCR and marked '(OCR, RapidOCR)': monitoring agency report Q4 FY26 pp 2-10; scrutinizer report 16-Sep-2026 pp 3-9. A few decorative image pages in the decks, ARs and prospectus (lowtext) were not OCR'd. Stages and verifiers read the .txt; anchors cite the PDF with its page number."
+  - "AR PAGE MAP: both ARs are landscape two-page spreads (FY26: 93 of 97 PDF pages; FY25: 85 of 88). After stages 1 and 2 (passes 1-2) ran, the AR .txt files were re-extracted with each spread split into halves: '[page N | left half | printed p.X]' / '[page N | right half | printed p.Y]'. Printed folio = 2N-6 (left) / 2N-5 (right) in the FY26 AR financial section (e.g. PDF p.60 = printed pp.114-115, Balance Sheet). Stage anchors of the form 'p.150' refer to PRINTED folios; cite as 'AR PDF p.N (printed p.X)' from here on."
 freshness_pairs:
   - pair: "RESULTS to CONCALL"
     trigger_doc: "inputs/results/2026-07-24_Q1FY27_unaudited_results.pdf (quarter ended 30-Jun-2026)"

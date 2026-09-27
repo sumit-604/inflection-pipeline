@@ -1,0 +1,35 @@
+stage: B01-gate0
+company: "KROSS"
+run_date: "2026-09-27"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Trade Payables not in provided data for FY20-FY21 (prospectus restates only FY22-FY24); WC Days, B4, M4, M10, M12 use FY22 as the earliest year instead of FY20."
+  - "Capex (PP&E + intangibles) not in provided data for FY20-FY21; proxied with total investing-activity cash outflow for those two years only, flagged in the report."
+  - "R&D/Revenue (M6) and distribution reach (M8) NOT FOUND in provided quantitative data (KROSS or peers)."
+  - "Screener's own P&L/Balance Sheet/Cash Flow/Quarters CSV sheets came out empty; no screener-native ROCE/ROE anchor exists. All ratios are computed."
+flags:
+  - {type: FLAG-CASH, reason: "Block B cash-generation score is 1/20 and triggers deal-breaker #2 (Block B<8, caps classification at GOOD). Cumulative CFO/PAT 0.614x over 7 years; FCF negative in 4 of last 5 years, worsening from +Rs23.16 Cr (FY23) to -Rs72.43 Cr (FY26) as capex ramped; WC days rose 42.7 days FY22-FY26 (89.01 to 131.73). Consistent with company memory LBF2."}
+  - {type: FLAG-ROCE-BASE-EFFECT, reason: "A4 scores 5 (latest ROCE 15.55% >= earliest 10.19%) but masks a real decline: ROCE peaked 42.17% in FY24 and fell to 15.55% by FY26 as the IPO more than tripled the capital base (Net Worth Rs146.81 Cr FY24 to Rs489.77 Cr FY26) while EBIT grew only ~9% over the same two years. Consistent with the post-IPO-rebase caution flagged in COMPANY MEMORY / B00-inputs.yaml."}
+  - {type: FLAG-GROWTH-DECELERATION, reason: "M11 (Network Effects) shows latest 3yr revenue CAGR (FY23-FY26) of 11.28% versus prior 3yr CAGR (FY20-FY23) of 45.12%, a sharp deceleration the 6-year C1/C2 CAGRs (27.08%/74.57%) do not surface on their own."}
+  - {type: FLAG-MARGIN-BELOW-PEER, reason: "Peer rescore (M2, M9): KROSS FY26 EBITDA margin 13.08% is 1.71pp below the 3-peer median (14.79%, AUTOAXLES/HAPPYFORGE/RKFORGE); KROSS FY26 gross-margin proxy 45.86% is 5.65pp below the 3-peer median (51.51%). Kross's growth is not yet accompanied by margin leadership in its own peer set."}
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 13, B: 1, C: 20, D: 18, E: 16}
+core_score: 68
+moat_score: 13
+grand_total: 81
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "GOOD"
+deal_breakers: [2]
+history_downgrade: false
+data_notes:
+  - "PAT CAGR (C2, 74.57%) and PAT-minus-Revenue CAGR (C4, +47.49pp) are inflated by a near-zero FY20 PAT base (Rs1.95 Cr); real but not a repeatable growth rate. No loss-to-profit swing occurred (PAT positive every year FY20-FY26)."
+  - "Peer rescore applied (same run, correction from orchestrator): M2 moved 0->1 (KROSS FY26 EBITDA margin 13.08% vs 3-peer median 14.79%, -1.71pp, inside the +-2pp band); M5 moved 0->1 (KROSS is smallest of 5 names by market cap; 'top 5 mcap' band is trivially satisfied only because the comparison set has exactly 5 names, flagged as a weak pass); M9 stays 0 but is now backed by an actual number (GM proxy 45.86% vs 3-peer median 51.51%, -5.65pp, below peer median). JAMNAAUTO used as reference comp only, not folded into peer median. Moat score moved 11->13/60; grand total 79->81; moat class (MODERATE, 3 present) and final classification (GOOD) unchanged."
+  - "Gross margin proxy used for M9: (Revenue - Raw Material Cost) / Revenue, screener-Data_Sheet, applied identically to KROSS and all three peers."
+  - "EBITDA/Operating Profit formula (PBT - Other Income + Depreciation + Interest) validated against screener-Data_Sheet Quarters block, where Operating Profit is given directly and matches exactly (e.g. Q4 FY26: 33.58 computed = 33.58 stated); same formula applied to peer Data_Sheets for M2/M5."
+  - "E2 (promoter holding change) uses a ~2-year window (listing Sep-2024 to Jun-2026), not 3 years, because Kross listed 16-Sep-2024. Promoter+group holding rose 67.70% (post-Offer, prospectus) to 68.57% (Jun-2026 XBRL), +0.87pp."
+  - "Capital Employed for FY20-FY21 (Block A) is an approximation (Total Assets minus Data_Sheet 'Other Liabilities', which is not confirmed to be current-liabilities-only); FY22-FY26 use the classified balance sheet's actual Total Current Liabilities from the Prospectus and FY26 Annual Report, which is more precise."
+block_b_trend: "deteriorating: FCF swung from +Rs23.16 Cr (FY23) to -Rs72.43 Cr (FY26) as capex ramped past CFO; WC days rose from 89.01 (FY22) to 131.73 (FY26)"
+analyst_note: "GOOD is driven by growth (20/20) and balance-sheet strength (18/20, near-zero net debt), not by returns, cash quality, or margin leadership. Block B (1/20) is the scorecard's clearest signal and matches company memory LBF2 (cash conversion). Two mechanical scores understate real trends: A4 (ROCE trend) scores 5 on a latest-vs-earliest test but ROCE actually fell from a 42% FY24 peak to 15.55% FY26 as the IPO tripled capital employed while EBIT grew ~9%; M11 shows revenue CAGR decelerating from ~45% (FY20-23) to ~11% (FY23-26), which the smoothed 6-year C1 figure (27%) does not show. The peer rescore adds one more finding: KROSS's FY26 EBITDA margin and gross-margin proxy both sit below the 3-peer median (AUTOAXLES, HAPPYFORGE, RKFORGE) by 1.71pp and 5.65pp respectively, so growth is not yet paired with margin leadership. All are quant-screen findings only; downstream stages (mental model, Section 1B, FTTCP) should treat the post-IPO ROCE base, growth deceleration, and sub-peer margin as verification priorities, consistent with LBF1 (guidance vs delivery) already flagged in COMPANY MEMORY."

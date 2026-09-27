@@ -864,6 +864,12 @@ All of them are on the big map (G).
   case. Tap it any time.
 - After a wrong guess, the name panel opens again by itself.
 
+## Trips put a murder case on hold (v65)
+
+- Leaving town on any trip (bravery mission, match, family, duty) puts an
+  open murder case on hold. The trip gets its own goal and compass. Back
+  home, the same case file opens again at the Police Station.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

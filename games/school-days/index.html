@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v64";
+const GAME_VERSION = "v65";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -6878,7 +6878,7 @@ class Game {
   }
   diary(text) { this.progress.diary.push(`Day ${this.progress.day}: ${text}`); saveProgress(this.profile, this.progress); }
   setObjective(label, x, z) {
-    if (this._myst && !(label && String(label).includes("🕵️"))) return; // a murder case keeps its goal until it is solved
+    if (this._myst && !this._zone && !(label && String(label).includes("🕵️"))) return; // a murder case keeps its goal until it is solved
     this.objective = label ? { label, x, z } : null;
     document.getElementById("objective-text").textContent = label || "";
     if (label && x != null) this.bigmap.setWaypoint(x, z, label, true); else { this.bigmap.waypoint = null; this.bigmap._refreshCompass(); }
@@ -10870,6 +10870,7 @@ class Game {
     return { ...S[k], key: k };
   }
   _enterCityZone(city, via) {
+    if (this._myst) this._mysteryHold();
     if (this._zone && this._zone.city === city) return this._zone;
     if (this._zone) this._leaveCityZone(true);
     const ZX = -8000, ZZ = 0, W = this.world, st = this._cityStyle(city), G = new THREE.Group(); G.position.set(ZX, 0, ZZ); W.scene.add(G);
@@ -11164,6 +11165,14 @@ class Game {
     const hb = card.querySelector("#ms-hint"); if (hb) hb.addEventListener("click", () => { S.hints++; const msg = card.querySelector("#ms-msg"); msg.hidden = false; const pk = m.proof[0]; msg.textContent = S.hints === 1 ? L("Ramesh: 'Check who LIED. One person's story does not match the clues.'") : S.hints === 2 ? L("Ramesh: 'Look hard at clue {n}: {c}.'", { n: pk + 1, c: L(m.clues[pk][0]) }) : L("Ramesh: 'I think it is {c}. But you must be sure!'", { c: L(m.suspects[m.culprit][0]) }); });
   }
 
+  // Leaving town on a trip: the murder case waits. It is not lost; the same file opens again at the Police Station.
+  _mysteryHold() {
+    const S = this._myst; if (!S) return; this._myst = null; this.world.scene.remove(S.G); if (S.roomG && S.roomG.parent) S.roomG.parent.remove(S.roomG); if (S.room) S.room._mystG = null;
+    this.interactables = this.interactables.filter((i) => !i._myst); if (this.roomInteractables) this.roomInteractables = this.roomInteractables.filter((i) => !i._myst);
+    const pr = this.progress; if ((pr.mystN || 0) > 0) pr.mystN--; saveProgress(this.profile, pr); if (this._onDuty) this._onDuty = 0;
+    const b = document.getElementById("myst-btn"); if (b) b.hidden = true; if (panelOpen && panelOpen() && document.querySelector("#ms-s0")) closePanel();
+    showToast(L("🕵️ Your murder case ({t}) is on hold while you travel. Open it again at the Police Station.", { t: L(S.m.title) }), 4200);
+  }
   _mysteryEnd(ok) { const S = this._myst; if (!S) return; this._myst = null; this.world.scene.remove(S.G); if (S.roomG && S.roomG.parent) S.roomG.parent.remove(S.roomG); if (S.room) S.room._mystG = null; this.interactables = this.interactables.filter((i) => !i._myst); if (this.roomInteractables) this.roomInteractables = this.roomInteractables.filter((i) => !i._myst); S.onResult && S.onResult(ok); }
   // ---- Daily life: no water some mornings, a power cut some evenings. Just live it. ----
   _waterCutMorning() {

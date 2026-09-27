@@ -1,0 +1,66 @@
+stage: B09b-dossier
+company: "KROSS"
+run_date: "2026-09-27"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Broker/research notes"
+    expected_source: "BSE / company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Q2 FY26 results filing"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Pre-Nov-2025 announcement filings"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Q2 FY26 and Q3 FY26 investor presentations"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Shareholding-pattern filings before 31-Mar-2026 (verify DII 9.72% Mar-2025 claim)"
+    expected_source: "NSE"
+    kind: "findable-missing"
+  - document: "FY25 Bull Auto Parts related-party amount (held in Annual_Report_2025.pdf, not extracted this run)"
+    expected_source: "company IR page (already held)"
+    kind: "findable-missing"
+  - document: "Identity of 3 of 4 Aug-2026 preferential-issue non-promoter allottees"
+    expected_source: "claude.ai live check"
+    kind: "findable-missing"
+  - document: "Postal ballot result and allotment outcome (due 03-Oct-2026)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+archetypes:
+  - line: "Whole company (single operating segment, Note 45)"
+    archetype: "Build-to-spec component maker"
+transition:
+  - line: "Whole company (single operating segment, Note 45)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER-adjacent build-to-spec supplier (mid-teens ROCE, weak general pricing power, moderate OEM-requalification switching costs)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (most evidenced path, via completed backward integration plus proprietary axle design; alternate reading not ruled out: stays at R2)"
+    engine: "(1) Backward integration into steel shapes (axle beam extrusion, seamless tube) replacing purchased input with self-made input; (2) proprietary trailer axle/suspension design and first-in-India axle-beam-extrusion process"
+    proof_gate: "Standalone EBITDA margin at or above 14.0% for two consecutive quarters once axle beam extrusion utilisation clears 50% of the 7,500 units/month line"
+    recognition_gap: "Open question, resolved at Stage 11 via the Section 1B PE gap: does current pricing already reflect the margin-recovery / spec'd-supplier TO state, or does it still sit at the FROM-state converter/build-to-spec level"
+    ugliness: "ARTIFACT-OF-CLIMB (most evidenced: FCF gap tracks the IPO-funded capex ramp and the company's own Note 52 remark ties WC rise to revenue growth); STRUCTURAL-FEATURE reading not ruled out (three straight years of falling receivables turnover, flat ECL against a rising aged bucket, rising recourse bill discounting)"
+    transition_falsifier: "EBITDA margin stays below 13% for two or more quarters after BOTH the axle beam extrusion line and the seamless tube plant are fully commissioned and running above 50% utilisation"
+dominant_variables:
+  - "EBITDA margin trajectory vs the 14-15% FY27 guide (Q1 FY27 delivered 12.23%, missing guidance reaffirmed one quarter earlier)"
+  - "Axle beam extrusion utilisation (7,500 units/month capacity; actual ~3,500-4,000/month, under 50%)"
+  - "Seamless tube commissioning against the 'around Q4 FY27' target (walked back from 'completed' to 'almost complete', no reconciliation)"
+  - "Cash conversion / working-capital days (CFO/PAT 0.503x FY26; WC days 131.73 FY26, both deteriorating)"
+business_falsifier: "Loss of a named top-5 OEM program (Tata Motors or Ashok Leyland) or documented evidence of OEM in-sourcing/de-qualification, given 59.47% top-five customer concentration and no long-term contracts on any revenue line"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 8
+  verifiability_ratio: "3 of 8 externally observable (M&HCV/OEM volumes via SIAM, RKFORGE's own trailer-axle disclosure, Delhi Parivartan/BS4 notification); the other 5 rest on company disclosure alone"
+  single_point_failure: "EBITDA margin failing to recover toward 14% even after both backward-integration plants run above 50% utilisation (a second, largely independent single point: cash conversion turning STRUCTURAL)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 1
+  confirm_by_observations: 2
+research_brief_items: 10
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "0f7744a4e776690d7bb53fba71b5630d9c9316e2"

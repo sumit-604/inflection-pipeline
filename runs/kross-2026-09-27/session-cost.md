@@ -25,3 +25,24 @@ not split input/output, so in_tok/out_tok read n/a).
 | 12c | verifier C framework (phase 1 half) | claude-opus-5-5 | default | n/a | n/a | 151622 | 8m08s | 1 |
 | 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 106899 | 3m22s | 1 |
 | 13 | synthesis-lite (phase 1) | claude-opus-5-5 | default | n/a | n/a | 184904 | 9m21s | 1 |
+| 09b | Halt 1 dossier | claude-sonnet-5 | default | n/a | n/a | 198443 | 8m24s | 1 |
+
+## CLOSE-OUT SUMMARY
+
+Run total (sum of ledger rows with token counts): 2,803,180 tokens.
+
+(a) TOP FIVE BY TOKENS (retries summed per stage):
+- 8 promoter check: 277,768 (9.9%)
+- 12b verifier B red flags: 230,638 (8.2%)
+- 3 AR deep dive: 225,702 (8.1%)
+- 09b Halt 1 dossier: 198,443 (7.1%)
+- 4 business model decoder: 190,529 (6.8%)
+
+(b) DOWNSHIFT FAILURES: none. Verifier A ran on claude-haiku-4-5. Stage 0 ran inline in the orchestrator session (step1 intake; no separate haiku dispatch exists for stage 0 in this flow), as in prior step1 runs. Stage 10 assembly does not run in phase 1.
+
+(c) COST SPIKES: none (no prior runs/kross-* ledger exists).
+
+(d) OPERATOR SNAPSHOT: run /cost and /usage now and paste the cache hit ratio and loop totals below under 'Operator snapshot'.
+
+### Operator snapshot
+(pending operator)

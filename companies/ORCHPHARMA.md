@@ -2,18 +2,20 @@
 
 Company memory. Created at run start to record the operator's spear
 override. Updated at Halt 1 (2026-09-28) with the signed mental model and
-the SHALLOW WATCH decision. Remaining sections are filled at /finalize close.
+the Halt 1 decision (SHALLOW WATCH, then changed to PROCEED the same day).
+Remaining sections are filled at /finalize close.
 
 ## THESIS (one line)
-SHALLOW WATCH at Halt 1 (2026-09-28). A price-taking cephalosporin API
-converter building its own 7-ACA plant in Jammu. The edge the plant can buy
+PROCEED at Halt 1 (2026-09-28; SHALLOW WATCH superseded same day).
+A price-taking cephalosporin API converter building its own 7-ACA plant in Jammu. The edge the plant can buy
 is location plus a subsidy that ends after FY29, not technology. Cash and
 debt service tighten in FY27 and FY28 before the plant earns. Gate 0 core
 29/100 defaults to WATCHLIST. Revisit on the proof points in the tracker.
 
 ## DECISION STATUS AND ENTRY ZONE
-- Halt 1 decision (operator, 2026-09-28): SHALLOW WATCH. No FTTCP, no
-  valuation run now. Operator approval text: "Okay, everything is approved."
+- Halt 1 decision (operator, 2026-09-28): PROCEED. Supersedes the same-day
+  SHALLOW WATCH decision (approval text then: "Okay, everything is
+  approved."). FTTCP authorised; valuation follows FTTCP.
 - No entry zone set. No valuation has run.
 - Market reference only: CMP about Rs 1,021 (28-Sep-2026, secondary,
   ScanX), about 5.99 cr shares post merger, market cap about Rs 6,100 cr.
@@ -29,7 +31,8 @@ standard evidence order.
 ## HALT 1 GATE
 Mental Model signed: SIGNED 2026-09-28 (operator), as drafted by Claude web
 on 2026-09-28, with correction 37 below applied.
-Halt 1 decision: SHALLOW WATCH.
+Halt 1 decision: PROCEED (2026-09-28, operator). Supersedes SHALLOW WATCH
+of the same day.
 
 ## SIGNED MENTAL MODEL DECLARATION
 Lines and archetypes:
@@ -114,6 +117,10 @@ Fragility: FRAGILE (cash wall precedes the plant's proof).
   removed [INFERENCE from FILED]. Rs 28 cr aged receivables are unprovided.
   Jammu and cefiderocol: capex-phase drag, not a working-capital flag.
   Judged again after COD.
+- 2026-09-28: Halt 1 decision changed from SHALLOW WATCH to PROCEED
+  (operator, in Claude Code session, answering the FTTCP gate question).
+  /fttcp authorised on the signed mental model. The signed model, the
+  promoter rulings and the FLAG-CASH split stand unchanged.
 
 ## ACTIVE TRIPWIRES
 - Exblifep US licence: target expired 30-Sep-2026 [MGMT, May call]. No

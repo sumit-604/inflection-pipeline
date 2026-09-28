@@ -870,6 +870,48 @@ All of them are on the big map (G).
   open murder case on hold. The trip gets its own goal and compass. Back
   home, the same case file opens again at the Police Station.
 
+## Superhit pack: daily life, streaks, sharing, stocks, polish (v66)
+
+Start screen
+- 🧍 1 Player or 🧍🧍 2 Players (next to Boy and Girl). With 2 players,
+  Player 2 joins at the start (moved with I J K L): Gudiya, or Chintu when
+  Player 1 is a girl.
+- 🆕 New game: erases only the chosen save slot, after asking.
+- A 5-step "How to play" for new players (also in 🏆).
+
+Everyday life
+- ☔ The umbrella opens by itself in the rain outdoors, like the uniform.
+- Monsoon: puddles in the lane (float a paper boat), a leaking roof bucket
+  at home, and some heavy-rain days are school holidays.
+- Mornings: Ramu Milkman at the gate, the newspaper on the doorstep.
+  Some days: the gas cylinder runs out (book it, then carry it in with the
+  delivery man), traffic jams for workers, a late school bus.
+- Winter cold wind can bring a fever the next day (the sick day).
+- A colony wedding: a baraat with a white horse, dhol and lights. Dance!
+
+Come back every day
+- 🔥 Play streak on real dates: rewards at 3, 7, 14 and 30 days. At 30,
+  Sheru the puppy arrives and follows you.
+- Real festivals on their real dates (New Year, Republic Day,
+  Independence Day, Diwali, Holi, Eid, Christmas and more) with a gift
+  and lights on the house.
+- ⭐ Weekly special murder case at the Police Station, double reward.
+- Detective ranks: Rookie, Detective, Inspector, CBI Officer, Legend.
+
+Buttons on the right
+- 🏆 My life: 15 life goals, streak, detective rank, money diary, a
+  leaderboard of the saves on this device, share my card, colony election
+  (age 21+), low graphics, music on or off.
+- 📸 Photo: a picture with your name, city and day. Save or share.
+- 📈 Stock market: five made-up companies whose prices move with game
+  news (power cuts, festivals, holidays, cricket). Buy and sell, see
+  profit and loss, learn not to panic.
+- 🐞 Report a problem: write it, copy it with the version and place.
+
+Also: soft mood music (calm, tense in cases, bright at festivals).
+Not possible in a single-file game: playing online with friends and
+cloud saves (both need a server). Use the export code to move a save.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

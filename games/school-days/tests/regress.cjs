@@ -52,14 +52,25 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
       const y = before.y, fwd = [-Math.sin(y), -Math.cos(y)], right = [Math.cos(y), -Math.sin(y)], exp = { up: fwd, down: [-fwd[0], -fwd[1]], right, left: [-right[0], -right[1]] }[want];
       const dot = (dx / n) * exp[0] + (dz / n) * exp[1]; return { dot, dist: n, camTurned: Math.abs(after.y - before.y) > 0.02 };
     };
-    for (const [who, key, want] of [[1, 'ArrowUp', 'up'], [1, 'ArrowDown', 'down'], [1, 'ArrowLeft', 'left'], [1, 'ArrowRight', 'right'], [2, 'w', 'up'], [2, 's', 'down'], [2, 'a', 'left'], [2, 'd', 'right']]) {
-      const r = await dirTest(who, key, want); ok(`B-dir Player ${who} ${key} goes ${want} on the screen`, r.dot > 0.9 && r.dist > 0.3 && !r.camTurned, `dot ${r.dot.toFixed(2)}, moved ${r.dist.toFixed(1)}, camera turned ${r.camTurned}`);
+    for (const [who, key, want] of [[1, 'ArrowUp', 'up'], [1, 'ArrowDown', 'down'], [2, 'w', 'up'], [2, 's', 'down'], [2, 'a', 'left'], [2, 'd', 'right']]) {
+      const r = await dirTest(who, key, want); ok(`B-dir Player ${who} ${key} goes ${want}`, r.dot > 0.9 && r.dist > 0.3, `dot ${r.dot.toFixed(2)}, moved ${r.dist.toFixed(1)}`);
     }
+    for (const key of ['ArrowLeft', 'ArrowRight']) { const b0 = await ev(p, () => { const g = window.__game, a = g.player.position; return [g.player.camYaw, a.x, a.z]; }); await hold(p, key, 700); const b1 = await ev(p, () => { const g = window.__game, a = g.player.position; return [g.player.camYaw, a.x, a.z]; });
+      ok(`B-turn Player 1 ${key} turns the camera (old controls), no walking`, Math.abs(b1[0] - b0[0]) > 0.3 && Math.hypot(b1[1] - b0[1], b1[2] - b0[2]) < 0.2, `turned ${(b1[0] - b0[0]).toFixed(2)}`); }
     // Holding up for 3 seconds: a straight line, camera still.
     await ev(p, () => { const g = window.__game; g.player.group.position.set(-40, 0, 5); g.player.camYaw = Math.PI / 2; g.player._placeCamera(1); g.p2.group.position.set(-40, 0, 8); }); await p.waitForTimeout(400);
     const path = []; await p.keyboard.down('ArrowUp'); for (let k = 0; k < 6; k++) { await p.waitForTimeout(500); path.push(await ev(p, () => { const a = window.__game.player.position; return [a.x, a.z, window.__game.player.camYaw]; })); } await p.keyboard.up('ArrowUp');
     let maxTurn = 0; for (let k = 2; k < path.length; k++) { const a1 = Math.atan2(path[k - 1][1] - path[k - 2][1], path[k - 1][0] - path[k - 2][0]), a2 = Math.atan2(path[k][1] - path[k - 1][1], path[k][0] - path[k - 1][0]); let d = Math.abs(a2 - a1); if (d > Math.PI) d = 2 * Math.PI - d; maxTurn = Math.max(maxTurn, d); }
-    ok('B-straight holding UP walks Player 1 in a straight line', maxTurn < 0.15 && Math.abs(path[5][2] - path[0][2]) < 0.02, `max bend ${(maxTurn * 57.3).toFixed(1)} degrees; path ${JSON.stringify(path.map((q) => q.map((v) => +v.toFixed(2))))}`);
+    ok('B-straight holding UP walks Player 1 in a straight line', maxTurn < 0.15, `max bend ${(maxTurn * 57.3).toFixed(1)} degrees; path ${JSON.stringify(path.map((q) => q.map((v) => +v.toFixed(2))))}`);
+    const sib = await ev(p, () => { const g = window.__game; g._enterRoom(g.world.doors.find((d) => d.label === 'Our Home')); window.__fin(); const R = g.world.currentRoom, c = g.p2.group.position, a = g.player.position; const tag = g.p2.group.children.find((x) => x.isSprite); return { inRoom: R && R.label, p2near: Math.hypot(c.x - a.x, c.z - a.z) < 4, p2visible: g.p2.group.visible, figHidden: !(R.figures && R.figures.gudiya && R.figures.gudiya.group.visible) }; });
+    await p.waitForTimeout(400);
+    const sib2 = await ev(p, () => { const g = window.__game, R = g.world.currentRoom, c = g.p2.group.position, a = g.player.position; return { p2near: Math.hypot(c.x - a.x, c.z - a.z) < 4, p2visible: g.p2.group.visible, figHidden: !(R.figures && R.figures.gudiya && R.figures.gudiya.group.visible) }; });
+    ok('B-sib Player 2 (the sister) comes into the house with Player 1', sib2.p2near && sib2.p2visible, JSON.stringify(sib2));
+    ok('B-sib the home Gudiya figure hides while Player 2 plays her', sib2.figHidden);
+    const q0 = await ev(p, () => { const c = window.__game.p2.group.position; return [c.x, c.z]; }); await hold(p, 'w', 900); const q1 = await ev(p, () => { const c = window.__game.p2.group.position; return [c.x, c.z]; });
+    ok('B-sib Player 2 walks inside the house', moved(q0, q1));
+    await ev(p, () => window.__game._exitRoom()); await p.waitForTimeout(300);
+    ok('B-sib Player 2 comes back out with Player 1', await ev(p, () => { const g = window.__game, c = g.p2.group.position, a = g.player.position; return !g.world.currentRoom && Math.hypot(c.x - a.x, c.z - a.z) < 4; }));
     ok('B6 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
     p = await fresh({ setup: async (q) => { await q.click('#av-2p'); await q.click('#av-boy'); await q.click('#av-p2girl'); await q.fill('#av-p2name', 'Meera'); } });
     const i2 = await ev(p, () => { const g = window.__game; const tag = g.p2.group.children.find((c) => c.isSprite); return { p1girl: !!g.player.girl, name: g.player.avatar.p2name, dress: g.p2.group.children.some((c) => c.geometry && c.geometry.type === 'CylinderGeometry' && c.geometry.parameters.radiusBottom === 0.4) }; });

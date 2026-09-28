@@ -959,6 +959,17 @@ cloud saves (both need a server). Use the export code to move a save.
   for both players against the screen direction, and checks that holding
   up walks a straight line.
 
+## Player 2 is your brother or sister; Player 1 keeps the old controls (v72)
+
+- Player 2 is the family sibling: Gudiya (sister) or Chintu (brother), or
+  the name you type. The label says "sister" or "brother". Player 2 goes in
+  and out of buildings with Player 1 and walks inside too, and the home
+  Gudiya figure hides while Player 2 plays her.
+- Player 1 has the old controls again: up and down arrows walk, left and
+  right arrows turn the camera, and the camera follows behind.
+- Player 2 keeps W A S D, always matching the screen.
+- The automatic check has 78 checks, all passing.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

@@ -32,7 +32,8 @@ First verification priority (Step-1 load-bearing facts; brief at runs/syngene-20
 - 2026-09-15: Step-1 intake run; peers auto-selected (ANTHEM, SAILIFE, PPLPHARMA); empty folders accepted as gaps. Sector cap row Pharma / CDMO (38x) set at intake, to confirm at Phase 3. Subject market cap Rs 15,446 cr is above the small/micro-cap mandate; run at operator request.
 - 2026-09-28: Mental model signed. Promoter CONCERN (structure), ledger Option A
   (heads a, c credited; b, d not) -> size ceiling Small (2-3%). Halt 1 = SHALLOW WATCH.
-- 2026-09-28: OR-11 raised (Rule C bear for margin-reset names). Pending.
+- 2026-09-28: OR-11 raised (Rule C bear for margin-reset names). APPROVED by operator the
+  same day. The framework amendment rides a separate framework branch and PR.
 
 ## ACTIVE TRIPWIRES
 T1 Q2/Q3 FY27 research < Rs 580 cr | T2 third FY27 guidance cut | T3 H1 FY27 CFO < 70% of

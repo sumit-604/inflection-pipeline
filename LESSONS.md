@@ -130,5 +130,6 @@ _Pending framework edits Keerti maintains._
      filed 1% sensitivity (Note 28 "INR million" was USD million).
   4. Prompt fix: every management causal claim gets one counterparty or peer
      check before it enters a mental model.
-  5. OR-11 (proposed): for margin-reset names, set the Rule C bear margin from
-     the evidence bridge, not the trailing 3-yr average. Operator ruling needed.
+  5. OR-11 APPROVED 2026-09-28 (operator): for margin-reset names, set the Rule C
+     bear margin from the evidence bridge, not the trailing 3-yr average.
+     Framework amendment and section-1b chunk 07 alignment still to write.

@@ -756,7 +756,7 @@ Mental model signed 28-Sep-2026; Halt 1 = SHALLOW WATCH; no /fttcp or valuation 
 | 4 | Hedge table unit mislabel in the AR itself (INR mn vs USD mn) went unflagged by verifiers | Verifier A | Sanity-check derivative notional against revenue scale and the filed sensitivity | OPEN (verifier check) |
 | 5 | CRISIL's FY26 61/39 mix accepted though quarterly splits imply ~65/35 | B04 | Agency restatements of company KPIs are cross-checked against filed or management splits | CLOSED |
 | 6 | SAST scans presumed promoter filings before OCR | B00/B08 | Do not infer filer identity from filing type | CLOSED |
-| 7 | Rule C bear = trailing 3-yr margin misfires for margin-reset names | Framework | OR-11 raised | OPEN (operator ruling) |
+| 7 | Rule C bear = trailing 3-yr margin misfires for margin-reset names | Framework | OR-11 raised; APPROVED by operator 28-Sep-2026 | OPEN (framework amendment to write) |
 | 8 | Management causal claims (attrition "on price"; "prevalent among all CROs") accepted in draft without counterparty test | 09b / Stage 5 | Every management causal explanation gets one counterparty or peer check before entering a mental model | OPEN (prompt fix) |
 
 Orchestrator note (28-Sep-2026): LESSONS.md OPEN ACTIONS now carries rows 1, 2, 4, 7 (OR-11)

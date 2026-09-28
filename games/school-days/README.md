@@ -948,6 +948,17 @@ cloud saves (both need a server). Use the export code to move a save.
   unstick), lift, stocks, goals, photo, bug report, election, new game,
   pilot break. Run it before every release.
 
+## Two players: every key goes the right way (v71)
+
+- In 2-player mode the camera stays still, so up is always up the screen.
+  Player 1 (arrows) and Player 2 (W A S D) use the same direction rule:
+  up = forward, down = back, left = left, right = right.
+- Player 2's direction math had two flipped signs, so keys went the wrong
+  way. Fixed.
+- The automatic check (tests/regress.cjs, now 74 checks) measures each key
+  for both players against the screen direction, and checks that holding
+  up walks a straight line.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

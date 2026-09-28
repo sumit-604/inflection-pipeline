@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v70";
+const GAME_VERSION = "v71";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -4076,7 +4076,8 @@ class Player {
       this.camYaw += camDelta;
       // Gentle auto-follow behind the player. It never changes your direction of
       // travel, because the movement reference below is frozen while you hold a key.
-      if (walking && camIdle > 2 && controlled) this.camYaw = this._lerpAngle(this.camYaw, this.facing + Math.PI, Math.min(1, dt * 0.5));
+      // Two players share one screen: the camera stays still so "up" is always up the screen for both.
+      if (walking && camIdle > 2 && controlled && !this.fixedCam) this.camYaw = this._lerpAngle(this.camYaw, this.facing + Math.PI, Math.min(1, dt * 0.5));
     }
     const camDist = this.world.currentRoom ? 13 : 11, camUp = this.world.currentRoom ? 8.5 : 6.5;
     this.camOffset.set(Math.sin(this.camYaw) * camDist, camUp, Math.cos(this.camYaw) * camDist);
@@ -4085,7 +4086,7 @@ class Player {
       // The direction reference is the camera yaw at the moment you START
       // moving (or when you turn the camera by hand). It stays fixed while the
       // key or stick is held, so the auto-follow cannot make you drift.
-      if (!this._moving || camDelta !== 0) this.basisYaw = this.camYaw;
+      if (!this._moving || camDelta !== 0 || this.fixedCam) this.basisYaw = this.camYaw;
       this._moving = true;
       const fwd = this._forward.set(-Math.sin(this.basisYaw), 0, -Math.cos(this.basisYaw));
       const right = this._right.set(-fwd.z, 0, fwd.x);
@@ -8699,10 +8700,10 @@ class Game {
     if (this.p2.on) { const pp = this.player.position; this.p2.group.position.set(pp.x + 1.5, 0, pp.z); showToast(L("{i} Player 2 joins: {n}. Player 1: ARROW keys. Player 2 ({n}): W A S D. Press 2 again to send {h} home.", { i: p2boy ? "👦" : "👧", n: p2name, h: p2boy ? L("him") : L("her") }), 5000, "good"); } else showToast(L("{n} went home.", { n: p2name }), 2000);
   }
   _tickP2(dt) {
-    { const two = !!(this.p2 && this.p2.on); if (this.input.twoPlayer !== two) { this.input.twoPlayer = two; this.input._recomputeKeyboardMove && this.input._recomputeKeyboardMove(); } }
+    { const two = !!(this.p2 && this.p2.on); this.player.fixedCam = two; if (this.input.twoPlayer !== two) { this.input.twoPlayer = two; this.input._recomputeKeyboardMove && this.input._recomputeKeyboardMove(); } }
     const p = this.p2; if (!p || !p.on) return; const g = p.group; g.visible = !this.world.currentRoom; if (!g.visible) return;
     const k = this.input.keys || new Set(); let dx = (k.has("d") ? 1 : 0) - (k.has("a") ? 1 : 0), dz = (k.has("s") ? 1 : 0) - (k.has("w") ? 1 : 0);
-    const yaw = this.player.camYaw || 0; const wx = dx * Math.cos(yaw) - dz * Math.sin(yaw), wz = dx * Math.sin(yaw) + dz * Math.cos(yaw);
+    const yaw = this.player.camYaw || 0, fx = -Math.sin(yaw), fz = -Math.cos(yaw), rx = -fz, rz = fx; const wx = fx * -dz + rx * dx, wz = fz * -dz + rz * dx;
     const moving = dx || dz; if (moving) { const n = Math.hypot(wx, wz) || 1, sp = (k.has("shift") ? 7 : 4.6) * dt, nx = g.position.x + (wx / n) * sp, nz = g.position.z + (wz / n) * sp; if (this.world.isWalkable(nx, nz)) { g.position.x = nx; g.position.z = nz; } g.rotation.y = Math.atan2(wx, wz); }
     animateHuman(g, dt, !!moving, 0.8);
     const far = Math.hypot(g.position.x - this.player.position.x, g.position.z - this.player.position.z); if (far > 60) { g.position.set(this.player.position.x + 1.5, 0, this.player.position.z); }

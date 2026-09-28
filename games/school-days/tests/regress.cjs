@@ -43,6 +43,23 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     await hold(p, 'ArrowUp'); let s2 = await pos(); ok('B3 arrow keys move Player 1 only', moved(s1[0], s2[0]) && !moved(s1[1], s2[1]));
     await hold(p, 'd'); let s3 = await pos(); ok('B4 D moves Player 2 sideways', moved(s2[1], s3[1]) && !moved(s2[0], s3[0]));
     const j = await ev(p, () => { const g = window.__game; return !document.querySelector('.panel-open') && !g._uiBlocking(); }); ok('B5 no menu opened by Player 2 keys', j);
+    // Screen directions: up = camera forward on the ground, right = camera right.
+    const dirTest = async (who, key, want) => {
+      const before = await ev(p, () => { const g = window.__game, y = g.player.camYaw, a = g.player.position, c = g.p2.group.position; return { y, p1: [a.x, a.z], p2: [c.x, c.z] }; });
+      await hold(p, key, 1100);
+      const after = await ev(p, () => { const g = window.__game, y = g.player.camYaw, a = g.player.position, c = g.p2.group.position; return { y, p1: [a.x, a.z], p2: [c.x, c.z] }; });
+      const A = who === 1 ? before.p1 : before.p2, B = who === 1 ? after.p1 : after.p2, dx = B[0] - A[0], dz = B[1] - A[1], n = Math.hypot(dx, dz) || 1;
+      const y = before.y, fwd = [-Math.sin(y), -Math.cos(y)], right = [Math.cos(y), -Math.sin(y)], exp = { up: fwd, down: [-fwd[0], -fwd[1]], right, left: [-right[0], -right[1]] }[want];
+      const dot = (dx / n) * exp[0] + (dz / n) * exp[1]; return { dot, dist: n, camTurned: Math.abs(after.y - before.y) > 0.02 };
+    };
+    for (const [who, key, want] of [[1, 'ArrowUp', 'up'], [1, 'ArrowDown', 'down'], [1, 'ArrowLeft', 'left'], [1, 'ArrowRight', 'right'], [2, 'w', 'up'], [2, 's', 'down'], [2, 'a', 'left'], [2, 'd', 'right']]) {
+      const r = await dirTest(who, key, want); ok(`B-dir Player ${who} ${key} goes ${want} on the screen`, r.dot > 0.9 && r.dist > 0.3 && !r.camTurned, `dot ${r.dot.toFixed(2)}, moved ${r.dist.toFixed(1)}, camera turned ${r.camTurned}`);
+    }
+    // Holding up for 3 seconds: a straight line, camera still.
+    await ev(p, () => { const g = window.__game; g.player.group.position.set(-40, 0, 5); g.player.camYaw = Math.PI / 2; g.player._placeCamera(1); g.p2.group.position.set(-40, 0, 8); }); await p.waitForTimeout(400);
+    const path = []; await p.keyboard.down('ArrowUp'); for (let k = 0; k < 6; k++) { await p.waitForTimeout(500); path.push(await ev(p, () => { const a = window.__game.player.position; return [a.x, a.z, window.__game.player.camYaw]; })); } await p.keyboard.up('ArrowUp');
+    let maxTurn = 0; for (let k = 2; k < path.length; k++) { const a1 = Math.atan2(path[k - 1][1] - path[k - 2][1], path[k - 1][0] - path[k - 2][0]), a2 = Math.atan2(path[k][1] - path[k - 1][1], path[k][0] - path[k - 1][0]); let d = Math.abs(a2 - a1); if (d > Math.PI) d = 2 * Math.PI - d; maxTurn = Math.max(maxTurn, d); }
+    ok('B-straight holding UP walks Player 1 in a straight line', maxTurn < 0.15 && Math.abs(path[5][2] - path[0][2]) < 0.02, `max bend ${(maxTurn * 57.3).toFixed(1)} degrees; path ${JSON.stringify(path.map((q) => q.map((v) => +v.toFixed(2))))}`);
     ok('B6 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
     p = await fresh({ setup: async (q) => { await q.click('#av-2p'); await q.click('#av-boy'); await q.click('#av-p2girl'); await q.fill('#av-p2name', 'Meera'); } });
     const i2 = await ev(p, () => { const g = window.__game; const tag = g.p2.group.children.find((c) => c.isSprite); return { p1girl: !!g.player.girl, name: g.player.avatar.p2name, dress: g.p2.group.children.some((c) => c.geometry && c.geometry.type === 'CylinderGeometry' && c.geometry.parameters.radiusBottom === 0.4) }; });

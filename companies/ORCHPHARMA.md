@@ -149,7 +149,19 @@ succession; technology partner and country; whether the PLI claim assumes
 90% local value; lock-in on the 4.46 cr merger shares.
 
 ## TRACKER PROOF
-PENDING. Rows drafted by Claude web 2026-09-28. Not yet written.
+- WRITTEN 2026-09-28 (Role 5.5, claude.ai), operator instruction "Yes, write the rows".
+- COMPANIES MASTER row: Orchid Pharma (ORCHPHARMA) https://www.notion.so/3e9bb2b9d3ab81c89befecdec79e1c78
+- DOWNSTREAM SIGNAL TRACKER rows (9), each linked to the master row:
+  1. Exblifep US licence (Tier 1) https://www.notion.so/3e9bb2b9d3ab812492b5d1821a5ab593
+  2. Core gross margin (Tier 1) https://www.notion.so/3e9bb2b9d3ab813db524e9de2f3f15cd
+  3. Jammu 7-ACA build and COD (Tier 1) https://www.notion.so/3e9bb2b9d3ab811a9a15f55ae06203fc
+  4. Material cost after Jammu COD, model falsifier (Tier 1) https://www.notion.so/3e9bb2b9d3ab815c8248f070cadc3c3c
+  5. Cash and debt wall (Tier 1) https://www.notion.so/3e9bb2b9d3ab8178b86ad59b9780769e
+  6. Shareholding and merger share supply (Tier 2) https://www.notion.so/3e9bb2b9d3ab8181bface656a3bb4ce8
+  7. Cefiderocol start (Tier 2) https://www.notion.so/3e9bb2b9d3ab81c98211d6f067e9ed86
+  8. Governance tripwires (Tier 2) https://www.notion.so/3e9bb2b9d3ab817eb4a6d707dfd69f8b
+  9. Cefixime price and rival capacity (Tier 2) https://www.notion.so/3e9bb2b9d3ab817fa99bf5d6e4dc4ac1
+- URL verification: BSE URLs not live-verified in session (stated in each row's Notes); ICRA URL verified live 28-Sep-2026.
 
 ## RUN FOLDERS
 - runs/orchpharma-2026-09-06/

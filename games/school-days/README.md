@@ -874,7 +874,7 @@ All of them are on the big map (G).
 
 Start screen
 - 🧍 1 Player or 🧍🧍 2 Players (next to Boy and Girl). With 2 players,
-  Player 2 joins at the start (moved with I J K L): Gudiya, or Chintu when
+  Player 2 joins at the start (moved with W A S D; Player 1 uses the arrow keys): Gudiya, or Chintu when
   Player 1 is a girl.
 - 🆕 New game: erases only the chosen save slot, after asking.
 - A 5-step "How to play" for new players (also in 🏆).
@@ -911,6 +911,12 @@ Buttons on the right
 Also: soft mood music (calm, tense in cases, bright at festivals).
 Not possible in a single-file game: playing online with friends and
 cloud saves (both need a server). Use the export code to move a save.
+
+## Two-player keys (v67)
+
+- In 2-player mode, Player 1 walks with the ARROW keys and Player 2 with
+  W A S D (Shift to run). With one player, both sets work as before.
+- The old Player 2 keys (I J K L) clashed with J, which opens the jobs menu.
 
 ## Files
 

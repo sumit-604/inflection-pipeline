@@ -265,3 +265,48 @@ than after:
 
 Two names returned zero guidance records, which is itself a finding recorded on
 both cards: **MARINE** and **AVTNPL**.
+
+## Fourth run, 2026-09-28
+
+Thirteen operator picks: Whirlpool of India, Bombay Metrics Supply Chain, Namo
+eWaste Management, Curis Lifesciences, Holmarc Opto-Mechatronics, Sahasra
+Electronic Solutions, DCG Cables & Wires, Patil Automation, Rolex Rings, Poojaa
+Precision Engg, Merritronix, Ugar Sugar Works, Lohia Corp. The operator asked
+for FY27 expected topline, bottom line and forward PE, from Bull AI. Step 13
+therefore carries FY27E revenue as well as PAT. Run table:
+`screens/forward-view-2026-09-28.md`.
+
+**Verdicts.** PROCEED to `/step1` on LCL. WATCH on NAMOEWASTE, PATILAUTOM,
+ROLEXRINGS, SAHASRA and MERRITRONIX. PASS on WHIRLPOOL, CURIS, DCG, POOJAA and
+UGARSUGAR. HOLMARC is a WATCH for documents: its FY26 results and annual
+report are indexed but the chunk reader returns empty for both.
+
+**Bombay Metrics Supply Chain got no card.** `search_companies` on "Bombay
+Metrics", "Bombay Metric Supply Chain" and "BMSCL" did not return it. Same
+class as LIBAS in the third run.
+
+**Corpus rule.** Same operator ruling as the second and third runs: the corpus
+is Bull AI's chunk reader, page numbers are the source PDF's own, no PDF is on
+disk. Four agents wrote the cards in parallel, three names each, capped at 20
+billable Bull AI calls per company. About 122 billable calls were used.
+
+**Credit rating found on two names only.** ROLEXRINGS (IND A/Stable, upgraded)
+and UGARSUGAR (CARE BBB-/Stable, upgraded from BB+/Negative on 13-Aug-2026; the
+company's own cover letter misstates it as BBB+).
+
+### Reader defects worth carrying
+
+- **The guidance tool fabricated figures for SAHASRA.** `get_company_guidance`
+  returned revenue Rs 410.20 crore, PAT Rs 48.50 crore and a Rs 600 crore
+  target citing deck 6c7e86b9. None appear on the cited pages. Every guidance
+  record must be read on its page before use.
+- The chunk reader returned reader-written summaries instead of verbatim text
+  on some transcript pages (SAHASRA p10 to 11, PATILAUTOM p14, ROLEXRINGS p7).
+- Invented deck text: NAMOEWASTE deck p2, ROLEXRINGS Q1 deck p1, MERRITRONIX
+  deck p4 and p24.
+- Fiscal-label errors again: ROLEXRINGS 51cc5ff6 ("FY2027 Q2" is the Q4 FY26
+  deck), LCL Q1 FY27 results, PATILAUTOM FY26 transcript, HOLMARC 5fdf428a.
+- Company-document findings, not reader errors: DCG consolidated cash flow
+  opening and closing cash differ from its balance sheet by about Rs 305.6
+  lakh at both ends; CURIS audit report refers to Ind AS while the company
+  follows AS.

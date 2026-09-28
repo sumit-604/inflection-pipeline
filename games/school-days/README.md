@@ -928,6 +928,26 @@ cloud saves (both need a server). Use the export code to move a save.
   after a match at the Stadium Ground.
 - In police shifts, a murder case comes 1 shift in 3 (was every second).
 
+## Choose each player; the full automatic check (v70)
+
+- Start screen: P1 Boy or Girl, and in 2-player mode P2 Boy or Girl plus
+  a name for Player 2. Player 2 matches Player 1 unless you choose.
+  Girl + girl, boy + boy, and mixed pairs all work.
+- The key split (Player 1 arrows, Player 2 W A S D) is kept in sync every
+  frame whenever Player 2 is on.
+- Fixes found by the automatic check: a power cut starting outdoors could
+  crash; Our Home could be entered from another city after a trip goal
+  was done; the haveli now saves each solved puzzle at once; the
+  "unstick" safety net now uses real time, so it works fast on slow
+  computers too.
+- tests/regress.cjs: the full automatic check (65 checks in a real
+  browser) of everything asked for so far: start screen, two players,
+  umbrella and daily life, bath and towel, water and power cuts, other
+  cities (walking, maps, vehicles, taxi, landmark, hotel, home lock),
+  police cases and murder mysteries, haveli (marker, stairs, resume,
+  unstick), lift, stocks, goals, photo, bug report, election, new game,
+  pilot break. Run it before every release.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

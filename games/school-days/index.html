@@ -608,7 +608,7 @@ body.gentle #dialogue-text { font-size: 20px; }
       <p class="pick-label" id="stage-label">Which class?</p>
       <div class="stage-buttons" id="stage-buttons"></div>
       <p class="pick-label">Your name and face</p>
-      <div class="lang-buttons"><button class="lang-btn" id="av-1p">🧍 1 Player</button><button class="lang-btn" id="av-2p">🧍🧍 2 Players</button><button class="lang-btn" id="av-boy">👦 Boy</button><button class="lang-btn" id="av-girl">👧 Girl</button><input id="av-name" type="text" maxlength="14" placeholder="Your name" style="font-size:15px;padding:7px 10px;border:2px solid #e2c7a8;border-radius:12px;font-family:inherit"><span id="av-skins"></span><span id="av-hair"></span><button class="lang-btn" id="av-glasses">👓 Glasses</button></div>
+      <div class="lang-buttons"><button class="lang-btn" id="av-1p">🧍 1 Player</button><button class="lang-btn" id="av-2p">🧍🧍 2 Players</button><span style="font-weight:800;align-self:center">P1:</span><button class="lang-btn" id="av-boy">👦 Boy</button><button class="lang-btn" id="av-girl">👧 Girl</button><span id="av-p2row" style="display:inline-flex;gap:6px;align-items:center"><span style="font-weight:800">P2:</span><button class="lang-btn" id="av-p2boy">👦 Boy</button><button class="lang-btn" id="av-p2girl">👧 Girl</button><input id="av-p2name" type="text" maxlength="12" placeholder="Player 2 name" style="font-size:15px;padding:7px 10px;border:2px solid #e2c7a8;border-radius:12px;font-family:inherit;width:130px"></span><input id="av-name" type="text" maxlength="14" placeholder="Your name" style="font-size:15px;padding:7px 10px;border:2px solid #e2c7a8;border-radius:12px;font-family:inherit"><span id="av-skins"></span><span id="av-hair"></span><button class="lang-btn" id="av-glasses">👓 Glasses</button></div>
       <div class="lang-buttons"><button class="lang-btn" id="gentle-btn">🧸 Gentle mode (small children)</button><span class="tiny-note" style="margin:0">Save slot:</span><button class="lang-btn slot-btn" data-slot="1">1</button><button class="lang-btn slot-btn" data-slot="2">2</button><button class="lang-btn slot-btn" data-slot="3">3</button><button class="lang-btn" id="new-game">🆕 New game</button></div>
       <div class="chat-row"><input id="import-code" type="text" placeholder="Paste a life code from another device…"><button class="lang-btn" id="import-btn">Import</button></div>
       <button class="big-btn" id="start-btn">Start</button>
@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v68";
+const GAME_VERSION = "v70";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -7042,7 +7042,7 @@ class Game {
   // ---- Rooms ----
   _enterRoom(door, floor = 0) {
     if (this._stay && door && door.label === "Grand Hotel" && this._stayDoor) door = this._stayDoor;
-    if (door && door.label === "Our Home" && (this._stay || this._matchTrip || this._braveM)) { const city = (this._stay && this._stay.city) || (this._matchTrip && this._matchTrip.city) || (this._braveM && this._braveM.city) || L("another city"); if (!this._awayT || performance.now() - this._awayT > 5000) { this._awayT = performance.now(); showToast(L("🏠 This house is not yours! You are in {c}. Your family is at home in Suryanagar. Stay at the Grand Hotel.", { c: city }), 4200, "bad"); } return; }
+    if (door && door.label === "Our Home" && (this._stay || this._matchTrip || this._braveM || this._zone)) { const city = (this._stay && this._stay.city) || (this._matchTrip && this._matchTrip.city) || (this._braveM && this._braveM.city) || (this._zone && this._zone.city) || L("another city"); if (!this._awayT || performance.now() - this._awayT > 5000) { this._awayT = performance.now(); showToast(L("🏠 This house is not yours! You are in {c}. Your family is at home in Suryanagar. Stay at the Grand Hotel.", { c: city }), 4200, "bad"); } return; }
     if (this.player.riding) this.player.dismount();
     const room = this.world.getRoom(door, floor);
     if (!room.occupant && !["mainbuilding", "home", "haveli"].includes(room.type) && !(door.index >= 9000)) {
@@ -8692,12 +8692,14 @@ class Game {
   }
   // ---- Player two: Gudiya on I J K L ----
   _toggleP2() {
-    const p2boy = !!this.player.girl, p2name = p2boy ? "Chintu" : "Gudiya";
-    if (!this.p2) { const g = makeHuman({ skin: 0xe8b98a, shirt: p2boy ? 0x3a86ff : 0xff8fab, dress: !p2boy, hair: 0x1d1410 }); g.scale.setScalar(0.72); const tag = makeTextSprite(L("Player 2 · {n}", { n: p2name }), { size: 46, scale: 0.5 }); tag.position.y = 2.6; g.add(tag); this.world.scene.add(g); this.p2 = { group: g, on: false }; }
+    const av = this.player.avatar || {}, p2g = av.p2gender || (this.player.girl ? "girl" : "boy"), p2boy = p2g === "boy", p2name = av.p2name || (p2boy ? "Chintu" : "Gudiya");
+    if (!this.p2) { const g = makeHuman({ skin: 0xe8b98a, shirt: p2boy ? 0x3a86ff : 0xff8fab, dress: !p2boy, hair: 0x1d1410 });
+      if (!p2boy) { try { const head = g.userData.parts.head, hm = humanMat(0x1d1410); const back = new THREE.Mesh(new THREE.BoxGeometry(0.46, 0.5, 0.14), hm); back.position.set(0, -0.14, -0.16); head.add(back); const tail = new THREE.Mesh(new THREE.SphereGeometry(0.11, 8, 6), hm); tail.scale.set(1, 1.8, 1); tail.position.set(0, -0.36, -0.22); head.add(tail); const bow = new THREE.Mesh(new THREE.BoxGeometry(0.2, 0.08, 0.06), humanMat(0xff4f8b)); bow.position.set(0, 0.06, -0.24); head.add(bow); } catch (e) { /* hair optional */ } } g.scale.setScalar(0.72); const tag = makeTextSprite(L("Player 2 · {n}", { n: p2name }), { size: 46, scale: 0.5 }); tag.position.y = 2.6; g.add(tag); this.world.scene.add(g); this.p2 = { group: g, on: false }; }
     this.p2.on = !this.p2.on; this.p2.group.visible = this.p2.on && !this.world.currentRoom; this.input.twoPlayer = this.p2.on; this.input._recomputeKeyboardMove && this.input._recomputeKeyboardMove();
-    if (this.p2.on) { const pp = this.player.position; this.p2.group.position.set(pp.x + 1.5, 0, pp.z); showToast(p2boy ? L("👦 Player 2 joins: Chintu. Player 1: ARROW keys. Player 2 (Chintu): W A S D. Press 2 again to send him home.") : L("👧 Player 2 joins: Gudiya. Player 1: ARROW keys. Player 2 (Gudiya): W A S D. Press 2 again to send her home."), 5000, "good"); } else showToast(L("{n} went home.", { n: p2name }), 2000);
+    if (this.p2.on) { const pp = this.player.position; this.p2.group.position.set(pp.x + 1.5, 0, pp.z); showToast(L("{i} Player 2 joins: {n}. Player 1: ARROW keys. Player 2 ({n}): W A S D. Press 2 again to send {h} home.", { i: p2boy ? "👦" : "👧", n: p2name, h: p2boy ? L("him") : L("her") }), 5000, "good"); } else showToast(L("{n} went home.", { n: p2name }), 2000);
   }
   _tickP2(dt) {
+    { const two = !!(this.p2 && this.p2.on); if (this.input.twoPlayer !== two) { this.input.twoPlayer = two; this.input._recomputeKeyboardMove && this.input._recomputeKeyboardMove(); } }
     const p = this.p2; if (!p || !p.on) return; const g = p.group; g.visible = !this.world.currentRoom; if (!g.visible) return;
     const k = this.input.keys || new Set(); let dx = (k.has("d") ? 1 : 0) - (k.has("a") ? 1 : 0), dz = (k.has("s") ? 1 : 0) - (k.has("w") ? 1 : 0);
     const yaw = this.player.camYaw || 0; const wx = dx * Math.cos(yaw) - dz * Math.sin(yaw), wz = dx * Math.sin(yaw) + dz * Math.cos(yaw);
@@ -9940,7 +9942,7 @@ class Game {
     for (const x of opts) card.querySelector(`#hv-${x.k}`).addEventListener("click", () => {
       const [, v, said, clue] = x.o, msg = card.querySelector("#hv-msg");
       if (v === 2) { st.proof = true; closePanel(); showToast("📸 " + said, 3600, "good"); this._haveliStage(i, st); return; }
-      if (v === 1) { if (clue) st.clues.push(clue); closePanel(); playSuccess(); showToast(said + (clue ? "  " + clue : ""), 4200, "good"); st.stage = i + 1;
+      if (v === 1) { if (clue) st.clues.push(clue); closePanel(); playSuccess(); showToast(said + (clue ? "  " + clue : ""), 4200, "good"); st.stage = i + 1; this.progress.hvStage = Math.min(5, st.stage); this.progress.hvClues = st.clues.slice(); saveProgress(this.profile, this.progress);
         if (i === 1 && st.room && st.room._balc) st.room._balc.visible = false;
         if (S.last) this._haveliChase(st); else this._hvNext(); return; }
       st.courage -= v === 0 ? 1 : 2; Audio.playRetry(); if (v < 0) this._scareFlash();
@@ -11231,17 +11233,17 @@ class Game {
       try { playWhoosh(); } catch (e) { /* sound optional */ }
       showToast(L("⚡ POWER CUT! Everything goes dark. The fan stops. Somewhere a dog barks."), 4200, "bad");
       const r = W.currentRoom; if (r && this.insideDoor && this.insideDoor.label === "Our Home") this.dialogue.say(L("Dadi"), [L("Arre! Light chali gayi! (The light has gone!)"), L("Beta, the candles and the matchbox are in the kitchen drawer. Careful with the flame.")], null, { pitch: 380 });
-      this.roomInteractables.push({ pos: r ? { x: r.x0, z: r.z0 } : this.player.position, radius: 4, priority: 1, _pc: true, prompt: () => (this._pcut && !this._pcut.candle ? L("🕯️ Light a candle") : ""), activate: () => { if (!this._pcut) return; this._pcut.candle = true; showToast(L("🕯️ A small warm light. Shadows dance on the wall. Dadi starts a story..."), 3400, "good"); } });
+      if (r && this.roomInteractables) this.roomInteractables.push({ pos: { x: r.x0, z: r.z0 }, radius: 4, priority: 1, _pc: true, prompt: () => (this._pcut && !this._pcut.candle ? L("🕯️ Light a candle") : ""), activate: () => { if (!this._pcut) return; this._pcut.candle = true; showToast(L("🕯️ A small warm light. Shadows dance on the wall. Dadi starts a story..."), 3400, "good"); } });
     }
     if (pc && !want) { this._pcut = null; if (this.roomInteractables) this.roomInteractables = this.roomInteractables.filter((i) => !i._pc); for (const l of W.lampLights || []) l.visible = this.phase === "night" || this.phase === "evening"; if (W.roomLight && !(W.currentRoom && W.currentRoom.type === "haveli")) W.roomLight.intensity = 18; showToast(L("💡 'LIGHT AA GAYI!' The whole colony cheers. The fan starts again."), 3600, "good"); return; }
     if (this._pcut) { for (const l of W.lampLights || []) l.visible = false; if (W.roomLight && W.currentRoom && W.currentRoom.type !== "haveli") W.roomLight.intensity = this._pcut.candle ? 6 : 1.5; }
   }
   // Safety net: if the player ever ends up inside a wall or a solid thing, slide them out to the nearest open spot.
   _tickUnstick(dt) {
-    if (this.player.riding || this._cut || this._sim || this._park || this._uiBlocking()) { this._stuckT = 0; return; }
+    if (this.player.riding || this._cut || this._sim || this._park || this._uiBlocking()) { this._stuckSince = 0; return; }
     const W = this.world, R = W.currentRoom, P = this.player.position, ok = (x, z) => (R ? R.walkable(x, z) : W.isWalkable(x, z));
-    if (ok(P.x, P.z)) { this._stuckT = 0; return; }
-    this._stuckT = (this._stuckT || 0) + dt; if (this._stuckT < 0.4) return; this._stuckT = 0;
+    if (ok(P.x, P.z)) { this._stuckSince = 0; return; }
+    const now = performance.now(); if (!this._stuckSince) { this._stuckSince = now; return; } if (now - this._stuckSince < 400) return; this._stuckSince = 0;
     for (let r = 0.5; r <= 14; r += 0.5) for (let k = 0; k < 16; k++) { const a = (k / 16) * Math.PI * 2, x = P.x + Math.cos(a) * r, z = P.z + Math.sin(a) * r; if (ok(x, z) && ok(x + 0.6, z) && ok(x - 0.6, z) && ok(x, z + 0.6) && ok(x, z - 0.6)) { this.player.group.position.set(x, 0, z); this.player._placeCamera && this.player._placeCamera(1); showToast(L("🧍 You were stuck. You squeeze out."), 2000); return; } }
   }
   // Going home from any city at any time, from the airport or station terminal.
@@ -11713,8 +11715,14 @@ function boot() {
   const nameIn = document.getElementById("av-name"); nameIn.value = avatar.name || ""; nameIn.addEventListener("input", () => { avatar.name = nameIn.value.trim().slice(0, 14); saveAv(); });
   const dots = (host, list, key) => { const el = document.getElementById(host); el.innerHTML = ""; for (const [nm, col] of list) { const d = document.createElement("span"); d.className = "av-dot" + (avatar[key] === col ? " on" : ""); d.title = nm; d.style.background = "#" + col.toString(16).padStart(6, "0"); d.addEventListener("click", () => { avatar[key] = col; saveAv(); dots(host, list, key); }); el.appendChild(d); } };
   dots("av-skins", AVATAR_SKINS, "skin"); dots("av-hair", AVATAR_HAIR, "hair");
-  { const p1 = document.getElementById("av-1p"), p2 = document.getElementById("av-2p"); const paintP = () => { p1.classList.toggle("on", avatar.players !== 2); p2.classList.toggle("on", avatar.players === 2); }; paintP(); p1.addEventListener("click", () => { avatar.players = 1; saveAv(); paintP(); }); p2.addEventListener("click", () => { avatar.players = 2; saveAv(); paintP(); }); }
-  { const bb = document.getElementById("av-boy"), gg = document.getElementById("av-girl"); const paintSex = () => { bb.classList.toggle("on", avatar.gender !== "girl"); gg.classList.toggle("on", avatar.gender === "girl"); }; paintSex(); bb.addEventListener("click", () => { avatar.gender = "boy"; saveAv(); paintSex(); }); gg.addEventListener("click", () => { avatar.gender = "girl"; saveAv(); paintSex(); }); }
+  { const p1 = document.getElementById("av-1p"), p2 = document.getElementById("av-2p"), row = document.getElementById("av-p2row"), pb = document.getElementById("av-p2boy"), pg = document.getElementById("av-p2girl"), pn = document.getElementById("av-p2name");
+    const p2g = () => avatar.p2gender || (avatar.gender === "girl" ? "girl" : "boy");
+    const paintP2 = () => { pb.classList.toggle("on", p2g() === "boy"); pg.classList.toggle("on", p2g() === "girl"); };
+    pb.addEventListener("click", () => { avatar.p2gender = "boy"; saveAv(); paintP2(); }); pg.addEventListener("click", () => { avatar.p2gender = "girl"; saveAv(); paintP2(); });
+    pn.value = avatar.p2name || ""; pn.addEventListener("input", () => { avatar.p2name = pn.value.trim().slice(0, 12); saveAv(); });
+    window.__paintP2 = paintP2;
+    const paintP = () => { p1.classList.toggle("on", avatar.players !== 2); p2.classList.toggle("on", avatar.players === 2); row.style.display = avatar.players === 2 ? "inline-flex" : "none"; paintP2(); }; paintP(); p1.addEventListener("click", () => { avatar.players = 1; saveAv(); paintP(); }); p2.addEventListener("click", () => { avatar.players = 2; saveAv(); paintP(); }); }
+  { const bb = document.getElementById("av-boy"), gg = document.getElementById("av-girl"); const paintSex = () => { bb.classList.toggle("on", avatar.gender !== "girl"); gg.classList.toggle("on", avatar.gender === "girl"); }; paintSex(); bb.addEventListener("click", () => { avatar.gender = "boy"; saveAv(); paintSex(); window.__paintP2 && window.__paintP2(); }); gg.addEventListener("click", () => { avatar.gender = "girl"; saveAv(); paintSex(); window.__paintP2 && window.__paintP2(); }); }
   const gl = document.getElementById("av-glasses"); const paintGl = () => gl.classList.toggle("on", !!avatar.glasses); paintGl(); gl.addEventListener("click", () => { avatar.glasses = !avatar.glasses; saveAv(); paintGl(); });
   let gentle = false; try { gentle = localStorage.getItem("school-days.gentle") === "1"; } catch (e) {}
   const gb = document.getElementById("gentle-btn"); const paintG = () => gb.classList.toggle("on", gentle); paintG(); gb.addEventListener("click", () => { gentle = !gentle; try { localStorage.setItem("school-days.gentle", gentle ? "1" : "0"); } catch (e) {} paintG(); });

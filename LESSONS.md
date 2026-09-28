@@ -121,3 +121,14 @@ _Pending framework edits Keerti maintains._
   3. OR-9 (proposed): Amendment 24 caps size at starter when the residual
      exceeds 25% of CMP; Amendment 25 permits a starter only at 25% or less.
      Reading A: size zero. Reading B: a 2-3% starter. Operator ruling needed.
+- SYNGENE 2026-09-28 (from web handover Section 11), all OPEN:
+  1. Prompt fix: results tables have 4 columns; state the column header with
+     every number (V4 read the prior-year Rs 48mn as Q1 FY27's Rs 501mn).
+  2. Collector: also fetch the prior-year same-quarter transcript for every
+     quarter held (Q1 FY26 split was missing, so no research YoY).
+  3. Verifier A check: test derivative notional against revenue scale and the
+     filed 1% sensitivity (Note 28 "INR million" was USD million).
+  4. Prompt fix: every management causal claim gets one counterparty or peer
+     check before it enters a mental model.
+  5. OR-11 (proposed): for margin-reset names, set the Rule C bear margin from
+     the evidence bridge, not the trailing 3-yr average. Operator ruling needed.

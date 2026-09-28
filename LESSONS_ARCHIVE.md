@@ -790,3 +790,22 @@ They contributed nothing to the FABCLEAN card and the whole card was rebuilt
 from Bull AI instead. `tools/collector/` should fail loudly when an export
 comes back with no rows, rather than writing the header and exiting clean.
 Recorded here against the shallow-screen commits of 2026-09-21.
+
+## 2026-09-28 — SYNGENE Halt 1 close-out (claude.ai web handover; SHALLOW WATCH)
+
+Source: runs/syngene-2026-09-15/inputs/research/web-handover-dossier.md, Section 11.
+Mental model signed 28-Sep-2026; Halt 1 = SHALLOW WATCH; no /fttcp or valuation run.
+
+| # | What went wrong or was corrected | Stage | File / rule | Status |
+|---|---|---|---|---|
+| 1 | Extraction read the prior-year comparative column (Rs 48mn) as the current-quarter FX loss; the actual was Rs 501mn | V4 extraction Q9 | Results tables carry 4 columns (Q current / Q previous / Q prior-year / FY); state the column header with every number | OPEN (prompt fix) |
+| 2 | Corpus began at the Nov-2025 call, so the prior-year same-quarter split (Q1 FY26) was missing and research YoY could not be computed | Collector | Collect the prior-year same-quarter transcript for every quarter held | OPEN (collector) |
+| 3 | 09b said "no customer at any site"; management had disclosed clinical customers at Unit 3 and Mangalore | 09b | Distinguish "no named customer" from "no customer" | CLOSED (this dossier) |
+| 4 | Hedge table unit mislabel in the AR itself (INR mn vs USD mn) went unflagged by verifiers | Verifier A | Sanity-check derivative notional against revenue scale and the filed sensitivity | OPEN (verifier check) |
+| 5 | CRISIL's FY26 61/39 mix accepted though quarterly splits imply ~65/35 | B04 | Agency restatements of company KPIs are cross-checked against filed or management splits | CLOSED |
+| 6 | SAST scans presumed promoter filings before OCR | B00/B08 | Do not infer filer identity from filing type | CLOSED |
+| 7 | Rule C bear = trailing 3-yr margin misfires for margin-reset names | Framework | OR-11 raised; APPROVED by operator 28-Sep-2026 | OPEN (framework amendment to write) |
+| 8 | Management causal claims (attrition "on price"; "prevalent among all CROs") accepted in draft without counterparty test | 09b / Stage 5 | Every management causal explanation gets one counterparty or peer check before entering a mental model | OPEN (prompt fix) |
+
+Orchestrator note (28-Sep-2026): LESSONS.md OPEN ACTIONS now carries rows 1, 2, 4, 7 (OR-11)
+and 8. The active file is over its 1,500-token budget after this addition; /compost should run.

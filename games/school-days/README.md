@@ -918,6 +918,16 @@ cloud saves (both need a server). Use the export code to move a save.
   W A S D (Shift to run). With one player, both sets work as before.
 - The old Player 2 keys (I J K L) clashed with J, which opens the jobs menu.
 
+## Police cases: thieves, fights and murders (v68)
+
+- The Police Station case file now takes turns: catch a thief (a chase
+  with clues from witnesses), stop a fight (two angry men, a stick, a
+  crowd and a broken chair), then a murder mystery. Rewards: ₹1,500,
+  ₹1,000 and ₹2,000 (₹4,000 for the weekly case).
+- Two new fight calls: a parking fight in Shanti Nagar and a bat fight
+  after a match at the Stadium Ground.
+- In police shifts, a murder case comes 1 shift in 3 (was every second).
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

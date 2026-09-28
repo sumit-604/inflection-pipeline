@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v67";
+const GAME_VERSION = "v68";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -5981,6 +5981,8 @@ const FIELD_CASES = {
     FC("Control room: 'Cash box snatched at the Sweet Shop on the market street. Reach the shop.'", "Sweet Shop, market street", 31, 52, "The owner points down the street: two men on a scooter. Action?", "Radio the checkpost with the scooter's number and colour, then take the statement", "Run after the scooter", "Blame the owner", "Close the shop"),
     FC("Control room: 'Accident at the school road crossing. Injured driver.'", "School road crossing", 100, 0, "One driver holds his arm, cars pile up. Action?", "Call the ambulance, move people back, then clear traffic, then statements", "Ask who was at fault first", "Drive away", "Take photos for fun"),
     FC("Control room: 'A small girl is alone at the Shanti Nagar bus stop, crying.'", "Shanti Nagar bus stop", -100, 50, "She knows her name, not her address. Action?", "Stay with her, calm her, announce at the station and market, find the mother", "Leave her", "Scold her", "Send her in an auto"),
+    FC("Control room: 'Two neighbours fighting over a parking spot in Shanti Nagar. A crowd has gathered.'", "Shanti Nagar bus stop", -100, 50, "One man grabs the other's collar. Both shout. Children are watching. Action?", "Step between them calmly, separate them, hear both, and settle the parking with a written rule", "Take one side", "Shout louder than them", "Walk away"),
+    FC("Control room: 'Fight after the cricket match at the Stadium Ground. Bats are out!'", "Stadium Ground", 158, 180, "Two teams argue about a run-out. Someone swings a bat in the air. Action?", "Blow the whistle, take the bats away, send the teams to opposite ends, then talk to the captains", "Join the argument", "Arrest both teams", "Let them fight it out"),
     FC("Control room: 'Fight at the Old Town Tea House, a stick involved.'", "Old Town Tea House", -70, -62, "Two men shouting, one raises a stick. Action?", "Step in with your partner, take the stick, separate and hear both", "Watch", "Hit first", "Arrest the whole tea house"),
     FC("Control room: 'Burglary reported at the Chemist last night. Inspect the scene.'", "Chemist, market street", 49, 76, "A broken window, a footprint in the mud, the cash drawer open. Action?", "Photograph, measure the footprint, check the neighbours' cameras, question calmly", "Arrest the neighbour's boy", "Clean the mud", "Close the case"),
     FC("Control room: 'Speeding near Sunrise School at 8:00, children on the zebra.'", "School gate crossing", 100, -14, "A car races past the zebra. Action?", "Stop the car, fine, and post a constable at the crossing this week", "Fine the children", "Shout", "Leave"),
@@ -7088,7 +7090,7 @@ class Game {
     if (door.label === "Railway Station" && this.progress.job === "locopilot") this._dutySpot(room, "🚆 " + L("DRIVER'S SEAT (E)"), () => L("🚆 Sit in the driver's seat: start today's train"), () => this._locoQuick());
     if (this._fieldCase && this._fieldCase.c.doorLabel === door.label) setTimeout(() => this._openFieldScene(), 400);
     if (door.label === "City Hospital") this.roomInteractables.push({ pos: { x: room.x0 + 6, z: room.z0 + 2 }, radius: 2.6, prompt: () => L("Dr. Mehta: yearly check-up (₹30)"), activate: () => this._checkup() });
-    if (door.label === "Police Station") this.roomInteractables.push({ pos: { x: room.x0 + 5, z: room.z0 + 3 }, radius: 2.4, priority: 3, prompt: () => (this.job && this.job.id === "police" ? L("🕵️ Open a murder mystery file") : L("🕵️ Help the police: solve a murder mystery (no job needed)")), activate: () => { this._exitRoom(); this._mysteryFile(); } });
+    if (door.label === "Police Station") this.roomInteractables.push({ pos: { x: room.x0 + 5, z: room.z0 + 3 }, radius: 2.4, priority: 3, prompt: () => (this.job && this.job.id === "police" ? L("🚨 Take a police case (thief, fight or murder)") : L("🚨 Help the police with a case: thief, fight or murder (no job needed)")), activate: () => { this._exitRoom(); this._policeFile(); } });
     if (door.label === "Police Station") this.roomInteractables.push({ pos: { x: room.x0 - 6, z: room.z0 + 4 }, radius: 2.4, prompt: () => L("Notice: driving licences at the RTO Office, Old Town road"), activate: () => { showToast(L("Constable: 'Licences are at the RTO Office now, Old Town road, next to the Fish Market. Officer Verma sits there.'"), 4200); this.setObjective(L("Go to the RTO Office"), -52, -86); } });
     if (door.label === "Railway Station") {
       const tk = () => this.progress.ticket;
@@ -7569,7 +7571,7 @@ class Game {
     let score = 0, i = 0;
     const next = () => {
       this._clearCaseScene && this._clearCaseScene();
-      if (i === 2 && job.id === "police" && ((this.progress.shifts || 0) % 2 === 0)) { this._onDuty = i + 1; this._mysteryCase(MYSTERIES[Math.floor((this.progress.shifts || 0) / 2) % MYSTERIES.length], (ok) => { if (ok) score++; i++; next(); }, Math.floor((this.progress.shifts || 0) / 2) % 3 === 2); return; }
+      if (i === 2 && job.id === "police" && ((this.progress.shifts || 0) % 3 === 2)) { this._onDuty = i + 1; this._mysteryCase(MYSTERIES[Math.floor((this.progress.shifts || 0) / 2) % MYSTERIES.length], (ok) => { if (ok) score++; i++; next(); }, Math.floor((this.progress.shifts || 0) / 2) % 3 === 2); return; }
       if (i < field.length && i === 1 && CHASE_CALLS[job.id] && !this.gentle) { this._onDuty = i + 1; this._startChase(CHASE_STORIES[(this.progress.shifts || 0) % CHASE_STORIES.length], (ok) => { if (ok) score++; i++; next(); }); return; }
       if (i < field.length) { const c0 = field[i]; const door = this.world.doors.find((d) => d.label.length > 3 && c0.site.toLowerCase().includes(d.label.toLowerCase())); const c = door ? { ...c0, x: door.x, z: door.z + 2.5, doorLabel: door.label } : c0; this._caseScene && this._caseScene(c, job); this._fieldCase = { c, job, onResult: (ok) => { if (ok) score++; i++; next(); } }; this._onDuty = i + 1; this.setObjective(`${job.icon} ${L("Case {n} of 5", { n: i + 1 })}: ${c.site}. ${L("Go there now.")}`, c.x, c.z); showToast(`📻 ${L(c.t)}`, 5200, "good"); speakLine(L(c.t), 340); if (this.world.currentRoom) { standPose(this.player.group); } }
       else { this._onDuty = 0; this.setObjective(`${job.icon} ${L("Back to the desk at {p} for two files.", { p: job.place })}`, this.world.doors.find((d) => d.label === job.place).x, this.world.doors.find((d) => d.label === job.place).z + 2); this._runPaper(`${job.icon} ${L("Back at the desk")}: ${rankName(job, this.progress.shifts)}`, desk, (s2) => onDone(score + s2)); }
@@ -11045,7 +11047,7 @@ class Game {
   // ---- Real-looking case sites: a crash with fire, a burgled shop, a fire ----
   _clearCaseScene() { if (this._caseProps) { this.world.scene.remove(this._caseProps); this._caseProps = null; } }
   _caseScene(c, job) {
-    this._clearCaseScene(); const t = `${c.t} ${c.q}`.toLowerCase(), kind = /accident|crash|collid/.test(t) ? "crash" : /snatch|burglar|theft|stole|rob|broken window/.test(t) ? "theft" : /fire|smoke|flame/.test(t) ? "fire" : null; if (!kind) return;
+    this._clearCaseScene(); const t = `${c.t} ${c.q}`.toLowerCase(), kind = /accident|crash|collid/.test(t) ? "crash" : /snatch|burglar|theft|stole|rob|broken window/.test(t) ? "theft" : /fight|stick|collar|swings a bat|shout/.test(t) ? "fight" : /fire|smoke|flame/.test(t) ? "fire" : null; if (!kind) return;
     const G = new THREE.Group(); G.position.set(c.x, 0, c.z + 4); G.userData.flicker = []; G.userData.smoke = []; this.world.scene.add(G); this._caseProps = G;
     const M = (col, e = 0, o = 1) => new THREE.MeshStandardMaterial({ color: col, emissive: e ? col : 0, emissiveIntensity: e, transparent: o < 1, opacity: o });
     const box = (w, h, d, col, x, y, z, m) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m || M(col)); b.position.set(x, y, z); G.add(b); return b; };
@@ -11069,6 +11071,14 @@ class Game {
       for (let k = 0; k < 6; k++) { const f = box(0.16, 0.02, 0.32, 0x3b2a1a, -0.6 + (k % 2) * 0.35, 0.02, 0.4 + k * 0.55); f.rotation.y = 0.1; }
       marker(1, -0.6, -2.2); marker(2, 0.8, 0.1); marker(3, -0.3, 2.4);
       showToast(L("🚓 The scene is taped off: broken glass, an empty cash box, muddy footprints. Evidence markers 1, 2, 3."), 3800, "good");
+    } else if (kind === "fight") {
+      const man = (col, x, z, ry) => { try { const h = makeHuman({ shirt: col, trousers: 0x333333 }); h.position.set(x, 0, z); h.rotation.y = ry; G.add(h); if (typeof setMood === "function") setMood(h, "angry", 999); return h; } catch (e) { return null; } };
+      const a = man(0xd62828, -0.7, 0, Math.PI / 2), b = man(0x1d4e89, 0.7, 0, -Math.PI / 2);
+      if (a && a.userData.parts && a.userData.parts.armR) { a.userData.parts.armR.rotation.x = -2.6; const stick = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.05, 1.3, 6), M(0x6b4a2b)); stick.position.set(0, -0.75, 0.3); stick.rotation.x = 1.2; a.userData.parts.armR.add(stick); }
+      for (let k = 0; k < 6; k++) { const ang = k / 6 * Math.PI * 2; man([0x9d4edd, 0x2a9d8f, 0xffd166, 0xe76f51, 0x6c757d, 0x06d6a0][k], Math.cos(ang) * 3.4, Math.sin(ang) * 3.4, Math.atan2(-Math.cos(ang), -Math.sin(ang))); }
+      box(0.5, 0.05, 0.5, 0x8b5a2b, -1.8, 0.03, 1.2).rotation.y = 0.7; box(0.08, 0.5, 0.08, 0x8b5a2b, -1.5, 0.05, 1.5).rotation.z = 1.4; for (let k = 0; k < 4; k++) box(0.1, 0.06, 0.1, 0xf4f1e8, 1.2 + k * 0.2, 0.03, -1.4 + k * 0.1);
+      try { const s = makeTextSprite(L("😡 FIGHT! Shouting and a crowd"), { size: 38, scale: 1.0 }); s.position.set(0, 3.2, 0); G.add(s); } catch (e) { /* label optional */ }
+      showToast(L("🚨 Two men fighting, a crowd around them, a broken chair. Calm it down before someone gets hurt!"), 3800, "bad");
     } else if (kind === "fire") { fire(0, 0.2, -1, 1.6); fire(1.5, 0.2, -0.5, 1.1); tape(4); }
   }
   _tickCaseFx() {
@@ -11135,6 +11145,23 @@ class Game {
   _mysteryIntro() {
     const S = this._myst; if (!S) return; if (this.player.riding) this.player.dismount();
     this.dialogue.say(L("Constable Ramesh"), [L("Detective, over here. {v}.", { v: L(S.m.victim) }), L(S.m.brief), L("🔎 Look for the four glowing yellow markers with a magnifying glass above them. Press E near each one."), L("🗣️ Question the three people. 📋 When you are sure, solve the case by the door."), S.hard ? L("⚠️ This is a HARD case: after questioning all three, tap the murderer AND pick TWO clues that prove it. No hints.") : L("🙂 This is an easy case. After you question all three, tap the name of the murderer. You can ask me for a hint.")], () => this.setObjective(`🕵️ ${L(S.m.title)}: ${L("clues and questions")}`, S.door ? S.door.x : S.cx, S.door ? S.door.z : S.cz), { pitch: 330 });
+  }
+  // A police case from the station, in turn: catch a thief, stop a fight, or solve a murder.
+  _policeFile() {
+    if (this._myst || this._chase || this._fieldCase) { showToast(L("Finish the case you have first!"), 2400); return; }
+    const pr = this.progress, n = pr.caseN || 0, kind = ["thief", "fight", "murder"][n % 3]; pr.caseN = n + 1; saveProgress(this.profile, pr);
+    const pol = (typeof JOBS !== "undefined" && JOBS.find((j) => j.id === "police")) || { id: "police", icon: "🚔", name: "Police" };
+    if (kind === "murder") { this._mysteryFile(); return; }
+    if (kind === "thief" && typeof CHASE_STORIES !== "undefined" && this._startChase) {
+      const call = CHASE_STORIES[Math.floor(n / 3) % CHASE_STORIES.length];
+      this._startChase(call, (ok) => { if (ok) { this.addMoney(1500, L("thief caught")); const p2 = this.progress; p2.thievesCaught = (p2.thievesCaught || 0) + 1; saveProgress(this.profile, p2); showToast(L("🚔 Thief caught! Reward ₹1,500. Thieves caught: {n}.", { n: p2.thievesCaught }), 3600, "good"); } });
+      return;
+    }
+    const fights = FIELD_CASES.police.filter((c) => /fight|stick/i.test(c.t)), c0 = fights[Math.floor(n / 3) % fights.length];
+    const door = this.world.doors.find((d) => d.label.length > 3 && c0.site.toLowerCase().includes(d.label.toLowerCase())), c = door ? { ...c0, x: door.x, z: door.z + 2.5 } : c0;
+    this._caseScene(c, pol);
+    this._fieldCase = { c, job: pol, onResult: (ok) => { this._clearCaseScene(); if (ok) { this.addMoney(1000, L("fight stopped")); const p2 = this.progress; p2.fightsStopped = (p2.fightsStopped || 0) + 1; saveProgress(this.profile, p2); } } };
+    try { playBell(); } catch (e) { /* sound optional */ } showToast(`📻 ${L(c.t)}`, 4800, "bad"); this.setObjective(`🚨 ${L("Fight")}: ${L(c.site)}`, c.x, c.z);
   }
   // A mystery file from the police station, any day: solve it for a ₹2,000 reward.
   _mysteryFile(onDone) {

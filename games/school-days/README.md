@@ -970,6 +970,18 @@ cloud saves (both need a server). Use the export code to move a save.
 - Player 2 keeps W A S D, always matching the screen.
 - The automatic check has 78 checks, all passing.
 
+## 30 new things to do: the 🎲 button (v73)
+
+A new 🎲 button sits on the right, above 🏆. It opens every new activity.
+
+- With your brother or sister: two-hand chore (lift together on NOW, or Player 1 up arrow plus Player 2 W), gully cricket (one over each; in 2 players, Player 2 bowls with A S D), hide and seek with hot and cold hints, race to the bus stop for the window seat, the TV remote fight and making up, Rakhi and Bhai Dooj on the real dates (Bhai Dooj: 10 or 11 November 2026), teach the tables, Saanp Seedi with Dadi.
+- Stories: a week-long mystery with one clue per game day (3 cases), annual day (practise on 3 days, then perform), the lost puppy paw-print trail, a surprise party for Maa, a letter to Nani that she answers the next day.
+- Learn and earn: run the kirana shop and count the change, save for a bicycle (Papa adds ₹250 at half way; the cycle then stands at the door), the Kaun Banega Gyani quiz show (50:50 and Ask Dadi), sabzi mandi bargaining, the cycle safety licence test.
+- Hobbies and home: decorate my room (the corner shows in the home), the pet shop (rabbit, tortoise, goldfish, budgies; feed them every day), the star map (tap the stars yourself), the music room (harmonium, tabla, guitar; record and play your song), rangoli at the door, make chai with Maa, plant a tree that grows only on real days of watering, clean the colony lane, Dadi's morning tablet.
+- Sports and seasons: sports day (sprint, long jump, tug of war, medals), the kite fight, and seasons from the real calendar (kites in January, Holi cart in March, mango cart April to June, bonfire in December and February).
+- The build now stops if two game functions share one name. This caught three clashes before release.
+- The automatic check has 41 new checks (groups K and L). Result: 119 of 119 pass.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

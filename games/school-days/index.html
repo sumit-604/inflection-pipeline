@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v72";
+const GAME_VERSION = "v73";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -7079,6 +7079,7 @@ class Game {
     if (door.label === "Our Home" && this._pcut) this.roomInteractables.push({ pos: { x: room.x0, z: room.z0 }, radius: 4, priority: 1, _pc: true, prompt: () => (this._pcut && !this._pcut.candle ? L("🕯️ Light a candle") : ""), activate: () => { if (!this._pcut) return; this._pcut.candle = true; showToast(L("🕯️ A small warm light. Shadows dance on the wall. Dadi starts a story..."), 3400, "good"); } });
     if (this._myst && this._myst.door && this._myst.m.site === door.label) { const mf = this._myst.m.floor || 0; if (floor === mf) this._mysteryRoom(room); else showToast(L("🕵️ The crime scene is on floor {f}. Take the lift and type {f}.", { f: mf }), 3800); }
     if (door.label === "Our Home" && this._homeDaily) this._homeDaily(room);
+    if (door.label === "Our Home" && this._funHome) { try { this._funHome(room); } catch (e) { this._reportError && this._reportError(e); } }
     if (door.label === "Our Home") this._giftBox(room);
     if (door.label === "Our Home") this._homeExtras(room);
     if (door.label === "Our Home") this._telescopeAt(room);
@@ -11376,6 +11377,7 @@ class Game {
   _tickDaily(dt) {
     if (!this._dailyReady) { this._dailyReady = true; try { this._dailyStart(); } catch (e) { this._reportError && this._reportError(e); } }
     this._tickUmbrella();
+    try { this._tickFun && this._tickFun(dt); } catch (e) { this._reportError && this._reportError(e); }
     this._lifeButtons();
     this._tickMusic(dt);
     const pr = this.progress, t = performance.now() / 1000;
@@ -11521,7 +11523,7 @@ class Game {
   _lifeButtons() {
     let box = document.getElementById("life-btns");
     if (!box) { box = document.createElement("div"); box.id = "life-btns"; box.style.cssText = "position:fixed;right:12px;top:250px;z-index:40;display:flex;flex-direction:column;gap:8px";
-      for (const [id, icon, title, fn] of [["lb-goals", "🏆", "My life: goals and trophies", () => this._goalsBoard()], ["lb-photo", "📸", "Take a photo", () => this._photo()], ["lb-stock", "📈", "Stock market app", () => this._stocks()], ["lb-bug", "🐞", "Report a problem", () => this._bugReport()]]) {
+      for (const [id, icon, title, fn] of [["lb-fun", "🎲", "Just live it: games and things to do", () => this._funHub()], ["lb-goals", "🏆", "My life: goals and trophies", () => this._goalsBoard()], ["lb-photo", "📸", "Take a photo", () => this._photo()], ["lb-stock", "📈", "Stock market app", () => this._stocks()], ["lb-bug", "🐞", "Report a problem", () => this._bugReport()]]) {
         const b = document.createElement("button"); b.id = id; b.textContent = icon; b.title = L(title); b.style.cssText = "width:46px;height:46px;border:none;border-radius:14px;background:rgba(255,255,255,.92);font-size:22px;box-shadow:0 2px 8px rgba(0,0,0,.18);cursor:pointer"; b.addEventListener("click", (e) => { e.stopPropagation(); fn(); }); box.appendChild(b); }
       document.body.appendChild(box); }
     box.hidden = !!(this._cut || this._sim);
@@ -11661,6 +11663,571 @@ class Game {
     const card = openPanel(`<h2>${s[0]} ${s[1]} <small>(${i + 1}/${steps.length})</small></h2><p class="job-brief" style="font-size:17px">${s[2]}</p><div class="btn-row"><button class="big-btn" id="tu-n">${i < steps.length - 1 ? L("Next") : L("Let's play!")}</button><button class="ghost-btn" id="tu-s">${L("Skip")}</button></div>`);
     card.querySelector("#tu-n").addEventListener("click", () => { closePanel(); this._tutorial(i + 1); });
     card.querySelector("#tu-s").addEventListener("click", () => { closePanel(); this._tutorial(99); });
+  }
+
+  // ================= v73 · Just live it: games with your brother or sister, week stories, learn and earn, hobbies, seasons =================
+  // All state lives in progress.jl so it never collides with older save fields.
+  _jl() { const pr = this.progress; if (!pr.jl || typeof pr.jl !== "object") pr.jl = {}; return pr.jl; }
+  _jsave() { saveProgress(this.profile, this.progress); }
+  _sib() { const av = (this.player && this.player.avatar) || {}, g = av.p2gender || (av.players === 2 ? (this.player.girl ? "girl" : "boy") : "girl"), boy = g === "boy"; return { name: av.p2name || (boy ? "Chintu" : "Gudiya"), boy, rel: boy ? L("brother") : L("sister"), two: !!(this.p2 && this.p2.on) }; }
+  _month() { return this._monthOverride || new Date().getMonth() + 1; }
+  _todayKey() { const x = new Date(); return `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`; }
+  _funHomeSpot() { const d = HOME.door; return { x: d.x + 1, z: d.z - 4 }; }
+  _funOutdoorHome() {
+    if (this._zone) { showToast(L("This one is at home in Suryanagar. Travel home first."), 3000, "bad"); return false; }
+    if (this.world.currentRoom) { showToast(L("Go outside first. This game is played in the colony lane."), 2800, "bad"); return false; }
+    if (this.player.riding) { showToast(L("Get off the vehicle first."), 2200, "bad"); return false; }
+    return true;
+  }
+  // Panel helpers: a tag per panel so old timers and keys stop when a new panel opens.
+  _fOpen(html) { if (panelOpen()) closePanel(); this._fTag = (this._fTag || 0) + 1; const tag = this._fTag; if (this._funKeyOff) this._funKeyOff(); const card = openPanel(html); const F = { card, alive: () => panelOpen() && this._fTag === tag, q: (s) => card.querySelector(s) }; const x = card.querySelector("#f-x"); if (x) x.addEventListener("click", () => closePanel()); return F; }
+  _fEvery(F, ms, fn) { const id = setInterval(() => { if (!F.alive()) { clearInterval(id); return; } try { fn(); } catch (e) { clearInterval(id); this._reportError && this._reportError(e); } }, ms); return id; }
+  _fKeys(F, map) { const h = (e) => { if (!F.alive()) { off(); return; } const k = e.key && e.key.length === 1 ? e.key.toLowerCase() : e.key; const f = map[k]; if (!f) return; e.preventDefault(); e.stopImmediatePropagation(); if (!e.repeat) f(); }; const off = () => window.removeEventListener("keydown", h, true); window.addEventListener("keydown", h, true); this._funKeyOff = off; }
+  _fHead(icon, title) { return `<div class="job-title-row"><h2>${icon} ${title}</h2><button class="ghost-btn" id="f-x">${L("Close")}</button></div>`; }
+  _fDone(F, big, lines, onOk) { const r = F.q("#f-res") || F.card; r.innerHTML = `${big ? `<div class="score-big">${big}</div>` : ""}<div class="solved-banner">${lines.join("<br>")}</div><div class="btn-row"><button class="big-btn" id="f-ok">${L("Okay")}</button></div>`; r.querySelector("#f-ok").addEventListener("click", () => { closePanel(); onOk && onOk(); }); }
+  _sfx(kind) { try { if (kind === "win") playSuccess(); else if (kind === "bad") Audio.playRetry(); else if (kind === "bell") playBell(); else playPick(); } catch (e) { /* sound optional */ } }
+
+  // ---------- 🎲 The fun hub: one button, every activity ----------
+  _funList() {
+    const S = this._sib(), fest = this._sibFest();
+    return [
+      ["👫 " + L("With your {r} {n}", { r: S.rel, n: S.name }), [["chore", "🛏️", L("Two-hand chore")], ["cricket", "🏏", L("Two-player cricket")], ["hide", "🙈", L("Hide and seek")], ["race", "🏃", L("Race to the bus stop")], ["remote", "📺", L("TV remote fight")], ["fest", "🧵", fest ? fest.name : L("Rakhi and Bhai Dooj")], ["tables", "✖️", L("Teach {n} tables", { n: S.name })], ["saanp", "🐍", L("Saanp Seedi")]]],
+      ["📖 " + L("Stories"), [["week", "🕵️", L("Week-long mystery")], ["annual", "🎭", L("Annual day")], ["paw", "🐾", L("Lost puppy trail")], ["bday", "🎂", L("Surprise party for Maa")], ["letter", "✉️", L("Letter to Nani")]]],
+      ["🧠 " + L("Learn and earn"), [["shop", "🏪", L("Run the kirana shop")], ["cycle", "🚲", L("Save for a bicycle")], ["gk", "📺", L("Kaun Banega Gyani")], ["bargain", "🥕", L("Sabzi mandi")], ["licence", "🚦", L("Cycle safety licence")]]],
+      ["🎨 " + L("Hobbies and home"), [["room", "🛏️", L("Decorate my room")], ["pets", "🐰", L("Pet shop")], ["stars", "🔭", L("Star map")], ["music", "🎹", L("Music room")], ["rangoli", "🌸", L("Rangoli")], ["chai", "☕", L("Make chai with Maa")], ["trees", "🌳", L("Plant a tree")], ["litter", "🧹", L("Clean the colony")], ["dadi", "💊", L("Dadi's tablet")]]],
+      ["🏅 " + L("Sports and seasons"), [["sports", "🏅", L("Sports day")], ["kite", "🪁", L("Kite fight")], ["season", "🌦️", L("This season")]]],
+    ];
+  }
+  _funRun(k) {
+    const M = { chore: () => this._coChore(), cricket: () => this._cricket2(), hide: () => this._hideSeek(), race: () => this._sibRaceStart(), remote: () => this._remoteFight(), fest: () => this._sibFestival(), tables: () => this._teachTables(), saanp: () => this._saanpSeedi(),
+      week: () => this._weekMystery(), annual: () => this._annualDay(), paw: () => this._pawTrail(), bday: () => this._maaBirthday(), letter: () => this._letterNani(),
+      shop: () => this._shopMaths(), cycle: () => this._cycleGoal(), gk: () => this._gkQuiz(), bargain: () => this._bargain(), licence: () => this._cycleLicence(),
+      room: () => this._roomDecor(), pets: () => this._petShop(), stars: () => this._starMap(), music: () => this._musicRoom(), rangoli: () => this._rangoli(), chai: () => this._makeChai(), trees: () => this._plantTree(), litter: () => this._litterStart(), dadi: () => this._dadiTablet(),
+      sports: () => this._sportsDay(), kite: () => this._kiteFight(), season: () => this._seasonInfo() };
+    const f = M[k]; if (!f) return; try { f(); } catch (e) { this._reportError && this._reportError(e); showToast(L("Oops, that game had a problem. Please press 🐞 and tell us."), 3000, "bad"); }
+  }
+  _funHub() {
+    const F = this._fOpen(`${this._fHead("🎲", L("Just live it: things to do"))}<p class="job-brief" style="font-size:13px">${L("Tap a game. Some need you outside near home, some need a real date or a night sky.")}</p>${this._funList().map(([h, list]) => `<div class="job-goal" style="margin-top:8px"><b>${h}</b></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:5px">${list.map(([k, i, t]) => `<button class="lang-btn" id="fh-${k}" style="text-align:left;padding:7px 9px">${i} ${t}</button>`).join("")}</div>`).join("")}`);
+    for (const [, list] of this._funList()) for (const [k] of list) F.q(`#fh-${k}`).addEventListener("click", () => { closePanel(); this._funRun(k); });
+  }
+
+  // ---------- The fun tick: live 3D games and season scenery ----------
+  _tickFun(dt) {
+    const t = performance.now() / 1000;
+    if (this._hs) this._tickHide(dt, t);
+    if (this._sibRace) this._tickSibRace(dt);
+    if (this._paw) this._tickPaw(dt);
+    if (this._swachh) this._tickLitter();
+    this._funT = (this._funT || 0) - dt; if (this._funT > 0) return; this._funT = 1;
+    if (!this._zone) { this._treesBuild(); this._rangoliBuild(); this._cycleBuild(); this._seasonBuild(); }
+    if (this._kites) { const on = !this._zone && !this.world.currentRoom; this._kites.visible = on; }
+    if (this._seasonTick) this._seasonTick(t);
+  }
+  _seasonTick(t) { if (this._kites && this._kites.visible) this._kites.children.forEach((k, i) => { k.position.y = 18 + Math.sin(t * 0.8 + i) * 2; k.rotation.z = Math.sin(t + i) * 0.4; }); }
+
+  // ---------- 1. Two-hand chore with your brother or sister ----------
+  _coChore() {
+    const jl = this._jl(), pr = this.progress, S = this._sib();
+    if (jl.choreDay === pr.day) { showToast(L("You did the big chore today. Rest your arms!"), 2400); return; }
+    const C = [["🛏️", L("Carry the big mattress up to the roof")], ["🧺", L("Fold Maa's big double bedsheet")], ["🛋️", L("Push the heavy sofa to sweep under it")], ["🧳", L("Lift Dadi's steel trunk onto the loft")]][pr.day % 4];
+    const F = this._fOpen(`${this._fHead(C[0], L("Two-hand chore"))}<p class="job-brief">${C[1]}. ${L("It is too heavy for one. Lift together with {n}!", { n: S.name })}</p><p class="job-brief" style="font-size:14px">${S.two ? L("Player 1 presses the up arrow. Player 2 presses W. Press at the same time!") : L("Wait for {n} to shout NOW, then press the up arrow or tap Lift.", { n: S.name })}</p><div class="job-goal" id="co-cue" style="font-size:22px;text-align:center">${L("Get ready...")}</div><div style="height:16px;background:#eee;border-radius:8px;overflow:hidden"><div id="co-bar" style="height:100%;width:0;background:#2a9d8f"></div></div><div class="btn-row" id="co-btns"><button class="big-btn" id="co-a">⬆️ ${L("Lift")} (P1)</button>${S.two ? `<button class="big-btn" id="co-b">W ${L("Lift")} (P2)</button>` : ""}</div><div id="f-res"></div>`);
+    const need = 5, tol = S.two ? 450 : 750, cue = F.q("#co-cue"), bar = F.q("#co-bar"), t0 = performance.now(); let lifts = 0, tA = 0, tB = 0, cueAt = 0, gap = 1600, done = false;
+    const finish = (ok) => { if (done) return; done = true; F.q("#co-btns").innerHTML = ""; jl.choreDay = pr.day; if (ok) { jl.chores = (jl.chores || 0) + 1; this.addFriendship && this.addFriendship("family", 2, L("a chore together")); this.addMoney(20, L("pocket money from Maa")); this._sfx("win"); this.diary(L("Did a heavy chore with {n}: {c}.", { n: S.name, c: C[1] })); this._snap && this._snap(C[0], `Teamwork chore with ${S.name}.`); } this._jsave(); this._fDone(F, ok ? "💪" : "😅", ok ? [L("Maa: 'Wah! Teamwork! Here is ₹20 each.'"), L("{n}: 'We are the strongest team in the colony!'", { n: S.name })] : [L("Too slow! The mattress slips. Maa laughs: 'Try again tomorrow.'")]); };
+    const check = () => { if (!tA || !tB || done) return; if (Math.abs(tA - tB) <= tol) { lifts++; tA = tB = 0; cueAt = 0; bar.style.width = `${(lifts / need) * 100}%`; cue.textContent = L("💪 Heave-ho! {a} of {b}", { a: lifts, b: need }); this._sfx(); if (lifts >= need) finish(true); } };
+    const press = (w) => { if (done) return; const now = performance.now(); if (!S.two && (!cueAt || now - cueAt > tol)) { cue.textContent = L("Too early! Wait for NOW!"); this._sfx("bad"); return; } if (w === "a") tA = now; else tB = now; check(); };
+    this._fEvery(F, 100, () => { if (done) return; const now = performance.now(); if (now - t0 > 35000) { finish(false); return; } if (tA && now - tA > tol) tA = 0; if (tB && now - tB > tol) { tB = 0; if (!S.two) cue.textContent = "…"; }
+      if (!S.two && !cueAt && now - (this._coLast || 0) > gap) { cueAt = now; tB = now; this._coLast = now; gap = 1300 + Math.random() * 1200; cue.textContent = L("{n}: NOW!", { n: S.name }); } else if (!S.two && cueAt && now - cueAt > tol) cueAt = 0; });
+    F.q("#co-a").addEventListener("click", () => press("a")); const b = F.q("#co-b"); if (b) b.addEventListener("click", () => press("b"));
+    this._fKeys(F, S.two ? { ArrowUp: () => press("a"), w: () => press("b") } : { ArrowUp: () => press("a"), w: () => press("a"), " ": () => press("a") });
+  }
+
+  // ---------- 2. Two-player cricket: one over each ----------
+  _cricket2() {
+    const jl = this._jl(), S = this._sib(), two = S.two;
+    const F = this._fOpen(`${this._fHead("🏏", L("Gully cricket with {n}", { n: S.name }))}<div class="job-goal" id="c2-s"></div><div style="position:relative;height:36px;border-radius:10px;background:linear-gradient(90deg,#9ccc65 0 72%,#ffd166 72% 92%,#9ccc65 92%)"><div style="position:absolute;left:92%;top:2px;font-size:24px">🏏</div><div id="c2-ball" style="position:absolute;top:8px;left:0;width:20px;height:20px;border-radius:50%;background:#d62828;box-shadow:0 0 0 2px #fff"></div></div><div class="job-goal" id="c2-m" style="text-align:center;font-size:18px"></div><div class="btn-row" id="c2-b"></div><p class="job-brief" id="c2-help" style="font-size:13px"></p><div id="f-res"></div>`);
+    const R = [0, 0], W = [0, 0], TYPES = [["slow", "🐢", L("Slow"), 1.7], ["fast", "⚡", L("Fast"), 0.95], ["spin", "🌀", L("Spin"), 1.3]]; let inn = 0, balls = 0, st = "wait", ty = null, t0 = 0, done = false, simSib = 0;
+    const who = (i) => (i === 0 ? (this.playerName || L("Player 1")) : S.name), bowlKeys = () => (inn === 0 ? { a: 0, s: 1, d: 2 } : { ArrowLeft: 0, ArrowDown: 1, ArrowRight: 2 });
+    const show = () => { F.q("#c2-s").textContent = `${who(inn)} ${L("bats")} · ${L("Ball")} ${Math.min(balls + 1, 6)}/6 · ${R[inn]}/${W[inn]}${two && inn === 1 ? " · " + L("Target {t}", { t: R[0] + 1 }) : ""}`; };
+    const help = () => { F.q("#c2-help").textContent = two ? (inn === 0 ? L("Player 1 bats with the up arrow. Player 2 bowls: A slow, S fast, D spin.") : L("Player 2 bats with W. Player 1 bowls: left arrow slow, down arrow fast, right arrow spin.")) : L("Hit when the ball is in the yellow zone. Up arrow, space, or the Bat button."); };
+    const bowl = (k) => { if (st !== "wait" || done) return; ty = TYPES[k]; st = "fly"; t0 = performance.now(); F.q("#c2-m").textContent = `${ty[1]} ${ty[2]} ${L("ball!")}`; F.q("#c2-b").innerHTML = `<button class="big-btn" id="c2-hit">🏏 ${L("Bat")}</button>`; F.q("#c2-hit").addEventListener("click", () => bat()); };
+    const wait = () => { st = "wait"; show(); F.q("#c2-ball").style.left = "0"; if (two) { F.q("#c2-b").innerHTML = TYPES.map((x, i) => `<button class="big-btn" id="c2-t${i}">${x[1]} ${x[2]}</button>`).join(""); TYPES.forEach((x, i) => F.q(`#c2-t${i}`).addEventListener("click", () => bowl(i))); F.q("#c2-m").textContent = L("{n}, choose your ball!", { n: who(1 - inn) }); } else { F.q("#c2-b").innerHTML = ""; F.q("#c2-m").textContent = L("{n} runs in to bowl...", { n: S.name }); setTimeout(() => { if (F.alive() && st === "wait") bowl(Math.floor(Math.random() * 3)); }, 900); } };
+    const result = (runs, out, msg) => { st = "res"; balls++; R[inn] += runs; if (out) W[inn]++; F.q("#c2-m").textContent = msg; runs >= 4 ? this._sfx("win") : out ? this._sfx("bad") : this._sfx(); show();
+      setTimeout(() => { if (!F.alive() || done) return; const chased = two && inn === 1 && R[1] > R[0]; if (balls >= 6 || W[inn] >= 2 || chased) { if (two && inn === 0) { inn = 1; balls = 0; help(); showToast(L("Innings break! Now {n} bats. Target: {t}", { n: who(1), t: R[0] + 1 }), 3000); wait(); } else end(); } else wait(); }, 1100); };
+    const bat = () => { if (st !== "fly") return; const pos = (performance.now() - t0) / 1000 / ty[3], e = Math.abs(pos - 0.82);
+      if (e < 0.025) result(6, false, L("💥 SIXER! Over the neighbour's roof!")); else if (e < 0.05) result(4, false, L("🏏 FOUR! Past the scooty!")); else if (e < 0.08) result(2, false, L("Two runs!")); else if (e < 0.11) result(1, false, L("One run, quick!")); else if (pos < 0.72) result(0, ty[0] === "spin", ty[0] === "spin" ? L("Too early! Caught by the wall! OUT!") : L("Too early! Dot ball.")); else result(0, false, L("Late! Dot ball.")); };
+    const end = () => { done = true; F.q("#c2-b").innerHTML = ""; let win; if (!two) { simSib = [0, 1, 2, 4, 1, 0, 6, 1].sort(() => Math.random() - 0.5).slice(0, 6).reduce((a, b) => a + b, 0); win = R[0] > simSib; } else win = R[0] !== R[1] ? (R[0] > R[1] ? 0 : 1) : -1;
+      jl.cricket = (jl.cricket || 0) + 1; if (!two && win) jl.cricketWins = (jl.cricketWins || 0) + 1; this._jsave(); this.diary(two ? L("Gully cricket: {a} {x}, {b} {y}.", { a: who(0), x: R[0], b: who(1), y: R[1] }) : L("Gully cricket: I scored {x}, {n} scored {y}.", { x: R[0], n: S.name, y: simSib }));
+      const lines = two ? [`${who(0)}: ${R[0]}/${W[0]} · ${who(1)}: ${R[1]}/${W[1]}`, win === -1 ? L("A TIE! Super over tomorrow!") : L("🏆 {n} wins the gully match!", { n: who(win) })] : [L("You: {a} runs. {n}: {b} runs.", { a: R[0], n: S.name, b: simSib }), win ? L("🏆 You win! {n} wants a rematch.", { n: S.name }) : L("{n} wins this time! Rematch tomorrow.", { n: S.name })];
+      this._fDone(F, `${R[0]}${two ? " : " + R[1] : ""}`, lines); };
+    this._fEvery(F, 30, () => { if (st !== "fly") return; const pos = (performance.now() - t0) / 1000 / ty[3], b = F.q("#c2-ball"); b.style.left = `calc(${Math.min(100, pos * 100)}% - 10px)`; b.style.top = ty[0] === "spin" ? `${8 + Math.sin(pos * 14) * 7}px` : "8px"; if (pos >= 1) result(0, true, L("🎯 BOWLED! The stumps fly! OUT!")); });
+    const keys = {}; const bk = () => bowlKeys(); ["a", "s", "d", "ArrowLeft", "ArrowDown", "ArrowRight"].forEach((k) => { keys[k] = () => { if (!two) { if (k === "a" || k === "s" || k === "d") return; } const m = bk(); if (k in m) bowl(m[k]); }; });
+    keys.ArrowUp = () => { if (!two || inn === 0) bat(); }; keys[" "] = () => { if (!two) bat(); }; keys.w = () => { if (two ? inn === 1 : true) bat(); };
+    this._fKeys(F, keys); help(); wait();
+  }
+
+  // ---------- 3. Hide and seek in the colony lane ----------
+  _hideSeek() {
+    if (!this._funOutdoorHome() || this._hs) return; const S = this._sib(), d = HOME.door;
+    const cand = [[6, -8, L("behind the car")], [-8, -6, L("behind the water drum")], [3, -20, L("behind the neighbour's wall")], [-6, -26, L("behind the parked scooty")], [10, -30, L("behind the big neem tree")], [-12, -14, L("behind the old boxes")], [4, -34, L("behind the milk booth")]];
+    const ok = cand.map(([x, z, w]) => ({ x: d.x + x, z: d.z + z, w })).filter((c) => this.world.isWalkable(c.x, c.z)); if (!ok.length) { showToast(L("No good hiding places here. Go near your home door."), 2600, "bad"); return; }
+    this._hsN = (this._hsN || 0) + 1; const sp = ok[(this.progress.day * 3 + this._hsN) % ok.length], hider = S.two ? L("cousin Pinky") : S.name, G = new THREE.Group();
+    try { const f = makeHuman({ skin: 0xe8b98a, shirt: 0xff8fab, dress: S.two || !S.boy, hair: 0x1d1410 }); f.scale.setScalar(0.62); f.rotation.y = Math.PI; G.add(f); } catch (e) { /* figure optional */ }
+    const box = new THREE.Mesh(new THREE.BoxGeometry(1.4, 1.0, 0.5), new THREE.MeshStandardMaterial({ color: 0x8d6e63 })); box.position.set(0, 0.5, -0.7); G.add(box); G.position.set(sp.x, 0, sp.z); G.visible = false; this.world.scene.add(G);
+    this._hs = { G, sp, t: -6, hot: 0, hider }; this.setObjective(L("Hide and seek: find {n}!", { n: hider }), null);
+    showToast(L("🙈 Close your eyes and count! 1, 2, 3... {n} runs to hide!", { n: hider }), 4000); this._sfx("bell");
+    setTimeout(() => { if (this._hs) { this._hs.G.visible = true; showToast(L("Ready or not, here I come! Walk around. I will say hot or cold."), 3500, "good"); } }, 5500);
+  }
+  _tickHide(dt) {
+    const H = this._hs; H.t += dt; if (H.t < 0) return; if (this._zone || this.world.currentRoom) { this._hideEnd(null); return; }
+    const pp = this.player.position, dp = Math.hypot(pp.x - H.sp.x, pp.z - H.sp.z), q = this.p2 && this.p2.on ? this.p2.group.position : null, dq = q ? Math.hypot(q.x - H.sp.x, q.z - H.sp.z) : 999, dm = Math.min(dp, dq);
+    if (dm < 2.6) { this._hideEnd(dp <= dq ? 1 : 2); return; }
+    if (H.t > 90) { this._hideEnd(0); return; }
+    H.hot -= dt; if (H.hot <= 0) { H.hot = 3.5; showToast(dm < 6 ? L("🔥🔥 Very HOT! Look {w}?", { w: H.sp.w }) : dm < 12 ? L("🔥 Warm... getting close!") : dm < 25 ? L("🌬️ Cold. Try another way.") : L("🧊 Ice cold! Far away!"), 1800); }
+  }
+  _hideEnd(who) {
+    const H = this._hs; if (!H) return; this._hs = null; this.world.scene.remove(H.G); this.setObjective(L("Well played!"), null); const jl = this._jl();
+    if (!who) { showToast(who === 0 ? L("⏱️ Time up! {n} jumps out: 'I win! I was {w}!'", { n: H.hider, w: H.sp.w }) : L("The game stops."), 3500); return; }
+    jl.hideFound = (jl.hideFound || 0) + 1; this._jsave(); this._sfx("win"); this.diary(L("Hide and seek: found {n} {w}.", { n: H.hider, w: H.sp.w }));
+    showToast(who === 2 ? L("👀 Player 2 found {n} {w} first!", { n: H.hider, w: H.sp.w }) : L("👀 FOUND YOU! {n} was {w}. {s} seconds!", { n: H.hider, w: H.sp.w, s: Math.round(H.t) }), 4000, "good");
+  }
+
+  // ---------- 4. Race to the bus stop for the window seat ----------
+  _sibRaceStart() {
+    if (!this._funOutdoorHome() || this._sibRace) return; const S = this._sib(), d = HOME.door, pp = this.player.position;
+    if (Math.hypot(pp.x - d.x, pp.z - d.z) > 30) { showToast(L("Stand near your home door to start the race."), 2600, "bad"); return; }
+    let T = null; for (const [x, z] of [[2, -40], [2, -34], [0, -30], [-2, -26], [2, -22]]) if (this.world.isWalkable(d.x + x, d.z + z)) { T = { x: d.x + x, z: d.z + z }; break; } if (!T) { showToast(L("The lane is blocked today."), 2400, "bad"); return; }
+    const st = this._funHomeSpot(); if (this.world.isWalkable(st.x, st.z)) { this.player.position.x = st.x; this.player.position.z = st.z; }
+    let rival = null; if (!S.two) { try { rival = makeHuman({ skin: 0xe8b98a, shirt: S.boy ? 0x3a86ff : 0xff8fab, dress: !S.boy, hair: 0x1d1410 }); rival.scale.setScalar(0.72); rival.position.set(this.player.position.x + 1.5, 0, this.player.position.z); this.world.scene.add(rival); } catch (e) { rival = null; } } else this.p2.group.position.set(this.player.position.x + 1.5, 0, this.player.position.z);
+    const flag = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.6, 0.05), new THREE.MeshStandardMaterial({ color: 0xffd21e, emissive: 0xffd21e, emissiveIntensity: 0.4 })); flag.position.set(T.x, 2.2, T.z); this.world.scene.add(flag);
+    const dist = Math.hypot(T.x - this.player.position.x, T.z - this.player.position.z);
+    this._sibRace = { T, rival, flag, t: -3, speed: dist / 7.2, S }; this.setObjective(L("Race! Run to the bus stop flag (hold Shift)"), T.x, T.z);
+    showToast(L("🏃 3... 2... 1... The first one to the bus stop gets the window seat!"), 3000, "good"); this._sfx("bell");
+  }
+  _tickSibRace(dt) {
+    const Rc = this._sibRace; Rc.t += dt; const T = Rc.T, pp = this.player.position; if (this._zone || this.world.currentRoom) { this._sibRaceEnd(null); return; }
+    if (Rc.t < 0) { if (Rc.rival) animateHuman(Rc.rival, dt, false); return; }
+    if (Rc.rival) { const g = Rc.rival, dx = T.x - g.position.x, dz = T.z - g.position.z, dd = Math.hypot(dx, dz); if (dd > 0.4) { const s = Math.min(dd, Rc.speed * dt); g.position.x += (dx / dd) * s; g.position.z += (dz / dd) * s; g.rotation.y = Math.atan2(dx, dz); animateHuman(g, dt, true, 1.3); } }
+    const d1 = Math.hypot(pp.x - T.x, pp.z - T.z), q = Rc.rival ? Rc.rival.position : Rc.S.two && this.p2 ? this.p2.group.position : null, d2 = q ? Math.hypot(q.x - T.x, q.z - T.z) : 999;
+    if (d1 < 2.5) this._sibRaceEnd(1); else if (d2 < (Rc.rival ? 0.6 : 2.5)) this._sibRaceEnd(2); else if (Rc.t > 60) this._sibRaceEnd(null);
+  }
+  _sibRaceEnd(w) {
+    const Rc = this._sibRace; if (!Rc) return; this._sibRace = null; if (Rc.rival) this.world.scene.remove(Rc.rival); this.world.scene.remove(Rc.flag); this.setObjective(L("Race over"), null); const jl = this._jl(), S = Rc.S;
+    if (w === 1) { jl.raceWins = (jl.raceWins || 0) + 1; this._jsave(); this._sfx("win"); showToast(S.two ? L("🥇 Player 1 wins! Window seat for {n}!", { n: this.playerName || L("Player 1") }) : L("🥇 You win in {s} seconds! The window seat is yours. {n}: 'Not fair, my shoe was loose!'", { s: Rc.t.toFixed(1), n: S.name }), 4200, "good"); this.diary(L("Won the race to the bus stop.")); }
+    else if (w === 2) { this._sfx("bad"); showToast(S.two ? L("🥇 Player 2 ({n}) wins the window seat!", { n: S.name }) : L("{n} wins! 'Window seat is MINE!' Hold Shift to run faster next time.", { n: S.name }), 4200); }
+    else showToast(L("The race is off."), 2000);
+  }
+
+  // ---------- 5. The TV remote fight, and making up ----------
+  _remoteFight() {
+    const S = this._sib(), jl = this._jl(), pr = this.progress;
+    const step = (title, text, opts, cb) => { const F = this._fOpen(`${this._fHead("📺", title)}<p class="job-brief">${text}</p><div class="btn-row" style="flex-direction:column">${opts.map((o, i) => `<button class="big-btn" id="rf-${i}">${o}</button>`).join("")}</div>`); opts.forEach((o, i) => F.q(`#rf-${i}`).addEventListener("click", () => { closePanel(); cb(i); })); };
+    const makeUp = () => step(L("Making up"), L("{n} sits in the corner with a sad face. Maa looks at you. What do you do?", { n: S.name }), [L("🍫 Say sorry and share your chocolate"), L("🤙 Pinky promise: turns, 30 minutes each"), L("🎨 Draw a funny sorry card")], (i) => { jl.madeUp = (jl.madeUp || 0) + 1; this._jsave(); this.addFriendship && this.addFriendship("family", 2, L("made up")); this._sfx("win");
+      this.dialogue.say(S.name, [[L("(Munch munch) Okay... sorry from me too. Half-half?"), L("Pinky promise! You first, then me. Fair is fair."), L("(Giggles) You drew me with a monkey tail! Okay, friends again!")][i], L("Maa: 'That is my family. Fight in five minutes, friends in ten.'")], () => this.diary(L("Fought with {n} over the TV remote, then made up.", { n: S.name })), { pitch: 520 }); });
+    step(L("Who gets the remote?"), L("Evening. You want the cricket match. {n} wants cartoons. Both hands grab the remote at the same time!", { n: S.name }), [L("💪 Pull it harder!"), L("✊✋✌️ Rock, paper, scissors for it"), L("🙂 Let {n} watch first. I watch after.", { n: S.name })], (i) => {
+      if (i === 0) { jl.fights = (jl.fights || 0) + 1; this._jsave(); this._sfx("bad"); this.dialogue.say("Maa", [L("(The remote flies and the battery cover breaks!)"), L("ENOUGH! Remote is mine now. Nobody watches TV today!"), L("{n} is crying. Hmm...", { n: S.name })], () => makeUp(), { pitch: 450 }); }
+      else if (i === 1) { const me = Math.floor(Math.random() * 3), sb = Math.floor(Math.random() * 3), I = ["✊", "✋", "✌️"], win = (me - sb + 3) % 3 === 1, tie = me === sb; this.dialogue.say(L("Rock, paper, scissors"), [L("You: {a}  {n}: {b}", { a: I[me], n: S.name, b: I[sb] }), tie ? L("A tie! You both laugh and watch half-half.") : win ? L("You win! Cricket first. {n} gets the remote after.", { n: S.name }) : L("{n} wins! Cartoons first. Fair game.", { n: S.name })], () => { jl.madeUp = (jl.madeUp || 0) + 1; this._jsave(); }, { pitch: 480 }); }
+      else { jl.madeUp = (jl.madeUp || 0) + 1; this.addFriendship && this.addFriendship("family", 3, L("shared the TV")); this._jsave(); this._sfx("win"); this.dialogue.say(S.name, [L("Really?! You are the best {r} in the world!", { r: S.rel }), L("(After the cartoon, {n} brings you chai and switches to the cricket.)", { n: S.name })], null, { pitch: 520 }); }
+    });
+  }
+
+  // ---------- 6. Rakhi and Bhai Dooj on the real dates ----------
+  _sibFestDates() { return [["2026-08-28", "rakhi"], ["2026-11-10", "dooj"], ["2026-11-11", "dooj"], ["2027-08-17", "rakhi"]]; }
+  _sibFest() { const k = this._forceFest || this._todayKey(), hit = this._sibFestDates().find((x) => x[0] === k); return hit ? { date: hit[0], kind: hit[1], name: hit[1] === "rakhi" ? L("Raksha Bandhan today!") : L("Bhai Dooj today!") } : null; }
+  _sibFestival() {
+    const f = this._sibFest(), S = this._sib(), jl = this._jl();
+    if (!f) { const next = this._sibFestDates().find((x) => x[0] > this._todayKey()); showToast(next ? L("🧵 The next one is {w} on {d}. Come back on that real day!", { w: next[1] === "rakhi" ? L("Raksha Bandhan") : L("Bhai Dooj"), d: next[0] }) : L("No date in the calendar yet."), 4200); return; }
+    jl.fest = jl.fest || {}; const fk = f.kind + f.date.slice(0, 4); if (jl.fest[fk]) { showToast(L("You celebrated today already. Happy festival!"), 2600); return; }
+    const girl = !!this.player.girl, rakhi = f.kind === "rakhi";
+    const steps = rakhi ? [["🪔", L("Light the diya on the thali")], ["🔴", L("Put the red tilak")], ["🍚", L("Put rice grains on the tilak")], ["🧵", L("Tie the rakhi on the wrist")], ["🍬", L("Feed a sweet")], ["🎁", L("Give the gift")]] : [["🪔", L("Do the aarti")], ["🔴", L("Put the tilak on the forehead")], ["🍬", L("Feed a sweet")], ["🙏", L("Pray for a long life")], ["🎁", L("Give the gift")]];
+    this._orderGame(rakhi ? "🧵 " + L("Raksha Bandhan") : "🪔 " + L("Bhai Dooj"), rakhi ? (girl || !S.boy ? L("You and {n} do the rakhi puja together. Do the steps in order.", { n: S.name }) : L("{n} ties a rakhi on your wrist. Help with the steps in order.", { n: S.name })) : L("Bhai Dooj: sisters pray for their brothers. Do the steps in order."), steps, (miss) => {
+      const gifts = [[L("₹101 in an envelope"), 101], [L("A new pencil box"), 60], [L("Chocolates"), 40]]; const F = this._fOpen(`${this._fHead("🎁", L("Choose a gift for {n}", { n: S.name }))}<div class="btn-row" style="flex-direction:column">${gifts.map((g, i) => `<button class="big-btn" id="sg-${i}">${g[0]} (₹${g[1]})</button>`).join("")}</div>`);
+      gifts.forEach((g, i) => F.q(`#sg-${i}`).addEventListener("click", () => { closePanel(); if ((this.progress.money || 0) >= g[1]) this.addMoney(-g[1], L("festival gift")); else showToast(L("Papa pays for the gift this time."), 2200); jl.fest[fk] = true; this._jsave(); this.addFriendship && this.addFriendship("family", 3, f.name); this._sfx("win"); this._snap && this._snap(rakhi ? "🧵" : "🪔", `${f.name} with ${S.name}.`); this.diary(L("{f} with {n}. Gift: {g}.", { f: rakhi ? L("Raksha Bandhan") : L("Bhai Dooj"), n: S.name, g: g[0] }));
+        this.dialogue.say(S.name, [L("Thank you! I will keep it forever!"), L("Promise: we always protect each other. Always!"), L("Dadi: 'Bless you both. May you never fight... too much!'")], null, { pitch: 520 }); }));
+    });
+  }
+  // A reusable "do the steps in the right order" card.
+  _orderGame(title, intro, steps, onDone) {
+    const order = steps.map((s, i) => i).sort(() => Math.random() - 0.5); let next = 0, miss = 0;
+    const F = this._fOpen(`${this._fHead("", title)}<p class="job-brief">${intro}</p><div class="btn-row" style="flex-wrap:wrap">${order.map((k) => `<button class="big-btn" id="og-${k}">${steps[k][0]} ${steps[k][1]}</button>`).join("")}</div><div class="job-goal" id="og-m">${L("Step {a} of {b}", { a: 1, b: steps.length })}</div>`);
+    steps.forEach((s, k) => F.q(`#og-${k}`).addEventListener("click", () => { if (k !== next) { miss++; F.q("#og-m").textContent = L("Not yet! What comes first?"); this._sfx("bad"); return; } next++; this._sfx(); F.q(`#og-${k}`).disabled = true; if (next < steps.length) { F.q("#og-m").textContent = L("Good! Step {a} of {b}", { a: next + 1, b: steps.length }); return; } closePanel(); onDone(miss); }));
+  }
+
+  // ---------- 7. A week-long mystery: one new clue each game day ----------
+  _weekCases() {
+    return [
+      { icon: "🏆", title: L("The missing colony cricket trophy"), clues: [L("Monday night: the trophy vanished from the clubhouse shelf. The window was open."), L("Small muddy paw prints on the shelf. Not a person's feet!"), L("Pappu the scrap dealer was in Indore that night. His bus ticket proves it."), L("Captain Raju was at his Nani's wedding. Forty photos prove it."), L("Mrs. Sharma: 'Tommy loves shiny things. He digs in the park sandpit.'")], sus: [L("Raju, the team captain"), L("Pappu, the scrap dealer"), L("Tommy, Mrs. Sharma's dog"), L("Coach Vikram")], ans: 2, end: L("You dig in the sandpit. CLINK! The trophy! Tommy wags his tail. Guilty!") },
+      { icon: "🥭", title: L("Who steals Dadi's mangoes?"), clues: [L("Every morning, three mangoes are gone from Dadi's tree."), L("Half-eaten mangoes lie on the roof. Nobody can climb there at night."), L("Bunty next door was sick in bed all week. His Maa says so."), L("The fruit seller sells only Alphonso. Dadi's mangoes are Langda."), L("The temple priest: 'The monkey family moved to your street this week.'")], sus: [L("Bunty from next door"), L("The fruit seller"), L("The monkey family"), L("The night watchman")], ans: 2, end: L("At dawn you watch from the window. A mother monkey and her baby! Dadi laughs: 'Leave them two. Share!'") },
+      { icon: "🔔", title: L("The ghost bell at midnight"), clues: [L("Every night at 12: ting... ting... A bell rings on the roof!"), L("It rings more on windy nights. Hmm."), L("Nobody goes to the roof. The door is locked from inside."), L("Gudiya's school craft project was a wind chime. It is missing!"), L("A new cat sleeps on the roof and plays with things that move.")], sus: [L("A real ghost"), L("The cat and the wind chime"), L("Papa snoring"), L("The neighbour's radio")], ans: 1, end: L("On the roof: the lost wind chime on the water tank, and a cat batting it! No ghost. Mystery solved!") },
+    ];
+  }
+  _weekMystery() {
+    const jl = this._jl(), pr = this.progress, C = this._weekCases(); jl.wm = jl.wm || { n: 0, got: 0, last: -1 }; const W = jl.wm, c = C[W.n % C.length];
+    if (W.last !== pr.day && W.got < c.clues.length) { W.got++; W.last = pr.day; this._jsave(); this._sfx("bell"); }
+    const all = W.got >= c.clues.length;
+    const F = this._fOpen(`${this._fHead(c.icon, c.title)}<p class="job-brief">${L("One new clue every game day. Read them all, then name the culprit.")}</p><ol style="margin:4px 0 8px 18px">${c.clues.slice(0, W.got).map((x) => `<li>${x}</li>`).join("")}</ol><div class="job-goal">${all ? L("All clues found! Who did it?") : L("Clue {a} of {b}. Come back tomorrow (next game day) for the next clue.", { a: W.got, b: c.clues.length })}</div>${all ? `<div class="btn-row" style="flex-direction:column">${c.sus.map((s, i) => `<button class="big-btn" id="wm-${i}">${s}</button>`).join("")}</div>` : ""}<div id="f-res"></div>`);
+    if (all) c.sus.forEach((s, i) => F.q(`#wm-${i}`).addEventListener("click", () => { if (i !== c.ans) { this._sfx("bad"); showToast(L("Hmm, a clue says that is not right. Read them again."), 2800, "bad"); return; } W.n++; W.got = 0; W.last = pr.day; jl.wmSolved = (jl.wmSolved || 0) + 1; this.addMoney(200, L("week mystery solved")); this._jsave(); this._sfx("win"); this._snap && this._snap(c.icon, `Solved the week mystery: ${c.title}.`); this.diary(L("Solved the week-long mystery: {t}.", { t: c.title })); F.q(".btn-row").innerHTML = ""; this._fDone(F, "🕵️", [c.end, L("The colony gives you ₹200 and calls you Detective!"), L("A new mystery starts tomorrow.")]); }));
+  }
+
+  // ---------- 8. School annual day: practise on 3 days, then perform ----------
+  _annualDay() {
+    const jl = this._jl(), pr = this.progress; jl.ad = jl.ad || { act: null, prac: [], days: [] }; const A = jl.ad;
+    const acts = [["dance", "💃", L("Group dance: Ghoomar")], ["play", "🎭", L("School play: Birbal's wisdom")], ["song", "🎤", L("Song: Vande Mataram")], ["drum", "🥁", L("Dhol band")]];
+    if (!A.act) { const F = this._fOpen(`${this._fHead("🎭", L("Annual day is coming!"))}<p class="job-brief">${L("Pick your act. Practise on three different days. Then perform on stage for all the parents.")}</p><div class="btn-row" style="flex-direction:column">${acts.map((a, i) => `<button class="big-btn" id="ad-${i}">${a[1]} ${a[2]}</button>`).join("")}</div>`); acts.forEach((a, i) => F.q(`#ad-${i}`).addEventListener("click", () => { A.act = a[0]; this._jsave(); closePanel(); showToast(L("Your act: {a}. Practise today!", { a: a[2] }), 2600, "good"); })); return; }
+    const a = acts.find((x) => x[0] === A.act) || acts[0];
+    if (A.days.length < 3) { if (A.days.includes(pr.day)) { showToast(L("Practice done today. Come back on the next game day ({n} of 3).", { n: A.days.length }), 2800); return; }
+      this._timingGame({ name: L("Practice: {a}", { a: a[2] }), icon: a[1], cue: "Hit the beat in the green!", hit: "Nice!", miss: "Oops!", verb: "Go" }, 5, (h) => { A.days.push(pr.day); A.prac.push(h); this._jsave(); showToast(A.days.length < 3 ? L("Practice {n} of 3 done. The teacher smiles.", { n: A.days.length }) : L("All 3 practices done! Open Annual day to perform on stage."), 3000, "good"); }, L("Music teacher")); return; }
+    this._timingGame({ name: L("ANNUAL DAY: {a}", { a: a[2] }), icon: a[1], cue: "Lights! The parents watch. Hit the green!", hit: "Claps!", miss: "Keep smiling!", verb: "Perform" }, 5, (h) => {
+      const prac = A.prac.reduce((x, y) => x + y, 0) / 3, score = Math.round((h + prac) * 10), stars = score >= 80 ? 3 : score >= 50 ? 2 : 1; jl.annualBest = Math.max(jl.annualBest || 0, score); jl.shows = (jl.shows || 0) + 1; jl.ad = { act: null, prac: [], days: [] }; this._jsave(); this.addMoney(stars * 50, L("annual day prize")); this._snap && this._snap(a[1], `Annual day: ${a[2]}, ${stars} stars.`); this.diary(L("Annual day: {a}. {s} stars!", { a: a[2], s: stars }));
+      this.dialogue.say(L("Principal Mrs. Verma"), [L("Wah! What a show! {s} stars out of 3!", { s: stars }), L("Practice made it shine. Maa is crying happy tears. Papa is filming on his phone."), L("A prize of ₹{m}. Take a bow!", { m: stars * 50 })], null, { pitch: 400 });
+    }, L("The audience"));
+  }
+
+  // ---------- 9. Lost puppy: follow the paw prints ----------
+  _pawTrail() {
+    if (!this._funOutdoorHome() || this._paw) return; const jl = this._jl(), pr = this.progress; if (jl.pawDay === pr.day) { showToast(L("Tuffy is safe at home today. Maybe another day."), 2400); return; }
+    const pp = this.player.position; let path = null;
+    for (let k = 0; k < 48 && !path; k++) { const a = (pr.day * 1.7 + k * 0.9) % (Math.PI * 2), L2 = [30, 24, 18][Math.floor(k / 16)], pts = []; let ok = true; for (let s = 2; s <= L2; s += 1.6) { const x = pp.x + Math.sin(a) * s + Math.sin(s * 0.3) * 1.2, z = pp.z + Math.cos(a) * s; if (!this.world.isWalkable(x, z)) { ok = false; break; } pts.push({ x, z }); } if (ok) path = pts; }
+    if (!path) { showToast(L("No trail here. Try in the open lane near home."), 2600, "bad"); return; }
+    const G = new THREE.Group(), M = new THREE.MeshBasicMaterial({ color: 0x4e342e }); path.forEach((p, i) => { const m = new THREE.Mesh(new THREE.CircleGeometry(0.12, 8), M); m.rotation.x = -Math.PI / 2; m.position.set(p.x + (i % 2 ? 0.18 : -0.18), 0.06, p.z); G.add(m); });
+    const end = path[path.length - 1]; let dog = null; try { dog = makeDog(0xf4e3c1); dog.scale.setScalar(0.7); dog.position.set(end.x, 0, end.z); G.add(dog); } catch (e) { /* dog optional */ }
+    this.world.scene.add(G); const owner = { x: pp.x, z: pp.z }; this._paw = { G, end, dog, owner, found: false, t: 0 };
+    this.dialogue.say(L("Mrs. Sharma"), [L("Beta! My puppy Tuffy ran away! He is so small!"), L("Look, paw prints in the dust! Please follow them and bring him back.")], () => this.setObjective(L("Follow the paw prints to find Tuffy"), end.x, end.z), { pitch: 450 });
+  }
+  _tickPaw(dt) {
+    const P = this._paw, pp = this.player.position; P.t += dt; if (this._zone || this.world.currentRoom || P.t > 240) { this.world.scene.remove(P.G); this._paw = null; this.setObjective(L("The puppy trail ended"), null); return; }
+    if (!P.found) { if (Math.hypot(pp.x - P.end.x, pp.z - P.end.z) < 2.4) { P.found = true; this._sfx("win"); showToast(L("🐶 Found Tuffy! He is shivering under a cart. He licks your face! Take him back to Mrs. Sharma."), 4000, "good"); this.setObjective(L("Take Tuffy back to Mrs. Sharma"), P.owner.x, P.owner.z); } return; }
+    if (P.dog) { const g = P.dog, dx = pp.x - g.position.x, dz = pp.z - g.position.z, d = Math.hypot(dx, dz); if (d > 1.8) { const s = Math.min(d - 1.5, 6 * dt); g.position.x += (dx / d) * s; g.position.z += (dz / d) * s; g.rotation.y = Math.atan2(dx, dz); } }
+    if (Math.hypot(pp.x - P.owner.x, pp.z - P.owner.z) < 3) { this.world.scene.remove(P.G); this._paw = null; const jl = this._jl(); jl.pawDay = this.progress.day; jl.puppiesFound = (jl.puppiesFound || 0) + 1; this.addMoney(100, L("reward for finding Tuffy")); this.addRep && this.addRep(2, L("found a lost puppy")); this._jsave(); this.setObjective(L("Tuffy is home!"), null); this._snap && this._snap("🐶", "Found Tuffy the lost puppy."); this.diary(L("Followed paw prints and found Mrs. Sharma's puppy Tuffy."));
+      this.dialogue.say(L("Mrs. Sharma"), [L("TUFFY! My baby! (She hugs him and cries.)"), L("Thank you, beta. Here is ₹100, and come for ladoos on Sunday!")], null, { pitch: 450 }); }
+  }
+
+  // ---------- 10. Surprise birthday party for Maa ----------
+  _maaBirthday() {
+    const jl = this._jl(), pr = this.progress, S = this._sib(); if (jl.bdDay != null && pr.day - jl.bdDay < 30) { showToast(L("Maa's party was on day {d}. Her next birthday is far away.", { d: jl.bdDay }), 2800); return; }
+    const plan = { cost: 0, bits: [] }, stages = [
+      [L("🎂 The cake"), [[L("Chocolate cake from the bakery"), 300], [L("Pineapple cake"), 250], [L("Bake one at home with Dadi"), 80]]],
+      [L("🎈 Decoration"), [[L("20 balloons"), 50], [L("Paper chains you make yourself"), 0], [L("Fairy lights"), 120]]],
+      [L("🎁 The gift"), [[L("A handmade card with a poem"), 0], [L("A new saree (with Papa's help)"), 400], [L("Her favourite flowers"), 60]]],
+    ];
+    const ask = (i) => { if (i >= stages.length) return secret(); const [t, o] = stages[i]; const F = this._fOpen(`${this._fHead("🤫", L("Secret party plan with {n} and Papa", { n: S.name }))}<p class="job-brief">${t}. ${L("Spent so far: ₹{c}", { c: plan.cost })}</p><div class="btn-row" style="flex-direction:column">${o.map((x, k) => `<button class="big-btn" id="bd-${k}">${x[0]} (₹${x[1]})</button>`).join("")}</div>`); o.forEach((x, k) => F.q(`#bd-${k}`).addEventListener("click", () => { closePanel(); plan.cost += x[1]; plan.bits.push(x[0]); ask(i + 1); })); };
+    const secret = () => { const F = this._fOpen(`${this._fHead("🤫", L("Keep the secret!"))}<p class="job-brief">${L("Maa: 'Why are you two whispering? And why is the fridge locked?'")}</p><div class="btn-row" style="flex-direction:column"><button class="big-btn" id="bs-0">${L("'We are doing a science project, Maa!'")}</button><button class="big-btn" id="bs-1">${L("'It is a surprise for your birthday!'")}</button><button class="big-btn" id="bs-2">${L("'Nothing! Go away!'")}</button></div>`);
+      [0, 1, 2].forEach((k) => F.q(`#bs-${k}`).addEventListener("click", () => { closePanel(); party(k === 0 ? 2 : k === 2 ? 1 : 0); })); };
+    const party = (sneaky) => { const pay = Math.min(plan.cost, pr.money || 0); if (pay > 0) this.addMoney(-pay, L("Maa's birthday party")); jl.bdDay = pr.day; jl.parties = (jl.parties || 0) + 1; this._jsave(); this.addFriendship && this.addFriendship("family", 4, L("birthday surprise")); this._sfx("win"); this._snap && this._snap("🎂", "Threw a surprise party for Maa."); this.diary(L("Surprise birthday party for Maa: {b}.", { b: plan.bits.join(", ") }));
+      this.dialogue.say(L("SURPRISE!"), [sneaky === 0 ? L("Oops, you told her! Maa laughs: 'I will act surprised, okay?'") : sneaky === 1 ? L("Maa is a little hurt by 'go away'... but wait for the evening!") : L("Maa believes the science project story!"), L("Evening. Lights off. Maa walks in. SURPRISE!!! 🎉"), L("Maa sees {b}. Her eyes fill with tears.", { b: plan.bits.join(", ") }), pay < plan.cost ? L("(Papa quietly paid ₹{r} more. Family is a team.)", { r: plan.cost - pay }) : L("(You paid ₹{c} from your own money. Papa is proud.)", { c: pay }), L("Maa: 'This is the best birthday of my whole life.'")], null, { pitch: 450 }); };
+    ask(0);
+  }
+
+  // ---------- 11. Run the kirana shop: count the change ----------
+  _shopMaths() {
+    const jl = this._jl(), pr = this.progress; if (jl.shopDay === pr.day) { showToast(L("Sharma Uncle's shop is closed now. Come tomorrow!"), 2400); return; }
+    const items = [["🥛", L("Milk packet"), 28], ["🍞", L("Bread"), 40], ["🥚", L("6 eggs"), 42], ["🍪", L("Biscuits"), 10], ["🧼", L("Soap"), 35], ["🍫", L("Chocolate"), 20], ["🍚", L("1 kg rice"), 60], ["🧂", L("Salt"), 25]];
+    let n = 0, right = 0; const total = 5;
+    const F = this._fOpen(`${this._fHead("🏪", L("Run Sharma Uncle's kirana shop"))}<p class="job-brief">${L("Add the bill. Take the note. Give back the right change.")}</p><div class="job-goal" id="sm-q"></div><div class="chat-row"><input id="sm-in" type="number" min="0" placeholder="${L("Change in ₹")}"><button class="big-btn" id="sm-go">${L("Give change")}</button></div><div class="job-goal" id="sm-m"></div><div id="f-res"></div>`);
+    let cur = null; const inp = F.q("#sm-in"); inp.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter") go(); });
+    const next = () => { if (n >= total) return finish(); const k = 1 + (n % 3), buy = []; for (let i = 0; i < k; i++) buy.push(items[(pr.day * 5 + n * 3 + i * 7) % items.length]); const bill = buy.reduce((a, b) => a + b[2], 0), note = bill <= 50 ? 50 : bill <= 100 ? 100 : bill <= 200 ? 200 : 500; cur = { bill, note, change: note - bill };
+      F.q("#sm-q").innerHTML = `${L("Customer {a} of {b}", { a: n + 1, b: total })}: ${buy.map((x) => `${x[0]} ${x[1]} ₹${x[2]}`).join(" + ")}<br><b>${L("Bill")}: ₹${bill}</b> · ${L("They give a ₹{n} note.", { n: note })}`; inp.value = ""; inp.focus(); };
+    const go = () => { if (!cur) return; const v = Number(inp.value); n++; if (v === cur.change) { right++; this._sfx(); F.q("#sm-m").textContent = L("✅ Correct! ₹{c} change. 'Thank you, little shopkeeper!'", { c: cur.change }); } else { this._sfx("bad"); F.q("#sm-m").textContent = L("❌ Oops! ₹{n} minus ₹{b} is ₹{c}.", { n: cur.note, b: cur.bill, c: cur.change }); } cur = null; setTimeout(() => F.alive() && next(), 900); };
+    const finish = () => { jl.shopDay = pr.day; jl.shopBest = Math.max(jl.shopBest || 0, right); const pay = right * 10; if (pay) this.addMoney(pay, L("kirana shop helper")); this._jsave(); this.diary(L("Ran the kirana shop: {r} of {t} change right.", { r: right, t: total })); F.q(".chat-row").remove(); this._fDone(F, `${right} / ${total}`, [L("Sharma Uncle: 'You earned ₹{p}. Good maths makes a good businessman!'", { p: pay })]); };
+    F.q("#sm-go").addEventListener("click", go); next();
+  }
+
+  // ---------- 12. Savings goal: a new bicycle ----------
+  _cycleGoal() {
+    const jl = this._jl(), pr = this.progress, goal = 2500; jl.cyc = jl.cyc || 0;
+    if (jl.cycle) { showToast(L("🚲 Your Hero cycle is parked at the door. Ring ring!"), 2600, "good"); return; }
+    const F = this._fOpen(`${this._fHead("🚲", L("Save for a new bicycle"))}<p class="job-brief">${L("A new Hero cycle costs ₹{g}. Save a little every day. At half way, Papa adds ₹250!", { g: goal })}</p><div style="height:22px;background:#eee;border-radius:11px;overflow:hidden"><div id="cg-bar" style="height:100%;background:#2a9d8f;width:0"></div></div><div class="job-goal" id="cg-t"></div><div class="btn-row">${[20, 50, 100, 500].map((v) => `<button class="big-btn" id="cg-${v}">+₹${v}</button>`).join("")}</div><div id="f-res"></div>`);
+    const draw = () => { F.q("#cg-bar").style.width = `${Math.min(100, (jl.cyc / goal) * 100)}%`; F.q("#cg-t").textContent = L("Saved ₹{a} of ₹{g}. Wallet ₹{w}.", { a: jl.cyc, g: goal, w: Math.round(pr.money || 0) }); };
+    for (const v of [20, 50, 100, 500]) F.q(`#cg-${v}`).addEventListener("click", () => { if ((pr.money || 0) < v) { showToast(L("Not enough in the wallet."), 1800, "bad"); return; } this.addMoney(-v, L("bicycle savings")); const before = jl.cyc; jl.cyc += v; if (before < goal / 2 && jl.cyc >= goal / 2 && !jl.cycMatch) { jl.cycMatch = true; jl.cyc += 250; showToast(L("🎉 Half way! Papa adds ₹250: 'I am proud of your saving.'"), 3500, "good"); } this._sfx(); this._jsave();
+      if (jl.cyc >= goal) { jl.cycle = true; this._jsave(); this._sfx("win"); this._snap && this._snap("🚲", "Bought my own bicycle with my savings."); this.diary(L("Bought a new bicycle with my own savings!")); F.q(".btn-row").innerHTML = ""; this._fDone(F, "🚲", [L("You did it! A shiny new Hero cycle with a bell and a basket."), L("It is parked at your door. Money saved slowly buys big dreams.")]); this._cycleBuild(); return; } draw(); });
+    draw();
+  }
+  _cycleBuild() {
+    if (!this._jl().cycle || typeof HOME === "undefined") return; if (this._cyc3d && this.interactables.some((x) => x._cyc)) return; if (this._cyc3d) this.world.scene.remove(this._cyc3d); const d = HOME.door, G = new THREE.Group(), M = (c) => new THREE.MeshStandardMaterial({ color: c });
+    for (const z of [-0.55, 0.55]) { const w = new THREE.Mesh(new THREE.TorusGeometry(0.33, 0.04, 6, 16), M(0x222222)); w.position.set(0, 0.35, z); w.rotation.y = Math.PI / 2; G.add(w); }
+    const fr = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.06, 1.1), M(0xd62828)); fr.position.y = 0.6; G.add(fr); const bar = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.05, 0.05), M(0x999999)); bar.position.set(0, 0.95, 0.5); G.add(bar); const seat = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.06, 0.28), M(0x111111)); seat.position.set(0, 0.85, -0.35); G.add(seat);
+    G.position.set(d.x - 2.4, 0, d.z - 1.6); this.world.scene.add(G); this._cyc3d = G;
+    this.interactables.push({ _cyc: true, pos: { x: G.position.x, z: G.position.z }, radius: 1.8, priority: 1, visible: () => !this._zone, prompt: () => L("🚲 My own cycle: ring the bell"), activate: () => { this._sfx("bell"); showToast(L("🚲 Tring tring! Your own cycle, bought with your savings."), 2400, "good"); } });
+  }
+
+  // ---------- 13. Kaun Banega Gyani: the TV quiz show ----------
+  _gkBank() {
+    return [[L("What is the capital of India?"), [L("New Delhi"), L("Mumbai"), L("Kolkata"), L("Chennai")]], [L("Which is the national animal of India?"), [L("Tiger"), L("Lion"), L("Elephant"), L("Peacock")]], [L("How many days are in a leap year?"), ["366", "365", "364", "360"]], [L("Which planet is called the red planet?"), [L("Mars"), L("Venus"), L("Jupiter"), L("Saturn")]], [L("Who wrote the national anthem Jana Gana Mana?"), [L("Rabindranath Tagore"), L("Mahatma Gandhi"), L("Premchand"), L("Sarojini Naidu")]],
+      [L("Which is the longest river in India?"), [L("Ganga"), L("Yamuna"), L("Godavari"), L("Narmada")]], [L("What do bees make?"), [L("Honey"), L("Milk"), L("Silk"), L("Wax paper")]], [L("How many colours are in a rainbow?"), ["7", "5", "6", "8"]], [L("Which festival is called the festival of lights?"), [L("Diwali"), L("Holi"), L("Eid"), L("Onam")]], [L("What is 12 x 12?"), ["144", "124", "142", "132"]],
+      [L("Which gas do plants take in from the air?"), [L("Carbon dioxide"), L("Oxygen"), L("Nitrogen"), L("Helium")]], [L("Who was the first Indian in space?"), [L("Rakesh Sharma"), L("Kalpana Chawla"), L("APJ Abdul Kalam"), L("Vikram Sarabhai")]], [L("Which is the largest ocean?"), [L("Pacific"), L("Indian"), L("Atlantic"), L("Arctic")]], [L("In which city is the Taj Mahal?"), [L("Agra"), L("Delhi"), L("Jaipur"), L("Lucknow")]], [L("How many players are in a cricket team?"), ["11", "10", "12", "9"]],
+      [L("Which is the national bird of India?"), [L("Peacock"), L("Parrot"), L("Sparrow"), L("Crow")]], [L("What is water made of?"), [L("Hydrogen and oxygen"), L("Only oxygen"), L("Salt and air"), L("Carbon and iron")]], [L("Which is the smallest prime number?"), ["2", "1", "3", "0"]], [L("On which date is Republic Day?"), [L("26 January"), L("15 August"), L("2 October"), L("14 November")]], [L("Which organ pumps blood?"), [L("Heart"), L("Lungs"), L("Liver"), L("Brain")]],
+      [L("Which instrument did Ustad Zakir Hussain play?"), [L("Tabla"), L("Sitar"), L("Flute"), L("Sarod")]], [L("Who is called the Missile Man of India?"), [L("APJ Abdul Kalam"), L("Homi Bhabha"), L("CV Raman"), L("Satyendra Bose")]], [L("What is the freezing point of water?"), ["0°C", "100°C", "10°C", "-10°C"]], [L("How many states does India have?"), ["28", "29", "25", "30"]]];
+  }
+  _gkQuiz() {
+    const jl = this._jl(), pr = this.progress; if (jl.gkDay === pr.day) { showToast(L("The show is over for today. Next episode tomorrow!"), 2400); return; }
+    const ladder = [10, 20, 50, 100, 200, 300, 500, 700, 1000, 2000], safe = [2, 5], bank = this._gkBank().slice().sort(() => Math.random() - 0.5).slice(0, 10); let i = 0, fifty = true, dadi = true;
+    const F = this._fOpen(`${this._fHead("📺", L("Kaun Banega Gyani"))}<div class="job-goal" id="gk-l"></div><p class="job-brief" id="gk-q" style="font-size:17px"></p><div class="btn-row" id="gk-o" style="flex-direction:column"></div><div class="btn-row"><button class="ghost-btn" id="gk-50">50:50</button><button class="ghost-btn" id="gk-d">📞 ${L("Ask Dadi")}</button><button class="ghost-btn" id="gk-q2">${L("Quit and take the money")}</button></div><div id="f-res"></div>`);
+    let opts = []; const won = () => (i ? ladder[i - 1] : 0), safeWon = () => { let s = 0; for (const k of safe) if (i > k) s = ladder[k]; return s; };
+    const end = (amt, msg) => { jl.gkDay = pr.day; jl.gkBest = Math.max(jl.gkBest || 0, amt); if (amt) this.addMoney(amt, L("quiz show prize")); this._jsave(); this.diary(L("Kaun Banega Gyani: won ₹{a}.", { a: amt })); F.q("#gk-o").innerHTML = ""; const lb = F.q("#gk-50"); if (lb) lb.parentNode.innerHTML = ""; this._fDone(F, `₹${amt}`, [msg]); amt >= 500 && this._sfx("win"); };
+    const ask = () => { if (i >= bank.length) { end(ladder[9], L("🎉 CROREPATI... no, GYANIPATI! You answered all 10!")); return; } const [q, o] = bank[i]; opts = o.map((t, k) => ({ t, ok: k === 0 })).sort(() => Math.random() - 0.5); F.q("#gk-l").textContent = L("Question {a} of 10 for ₹{m} · Safe: ₹{s}", { a: i + 1, m: ladder[i], s: safeWon() }); F.q("#gk-q").textContent = q; F.q("#gk-o").innerHTML = opts.map((x, k) => `<button class="big-btn" id="gk-${k}">${"ABCD"[k]}. ${x.t}</button>`).join(""); opts.forEach((x, k) => F.q(`#gk-${k}`).addEventListener("click", () => pick(k))); };
+    const pick = (k) => { if (opts[k].ok) { this._sfx(); i++; showToast(L("✅ Correct! ₹{m}", { m: ladder[i - 1] }), 1400, "good"); ask(); } else { this._sfx("bad"); const right = opts.find((x) => x.ok).t; end(safeWon(), L("❌ Wrong! The answer was {r}. You take home the safe money.", { r: right })); } };
+    F.q("#gk-50").addEventListener("click", () => { if (!fifty) return; fifty = false; F.q("#gk-50").disabled = true; let gone = 0; opts.forEach((x, k) => { if (!x.ok && gone < 2) { gone++; const b = F.q(`#gk-${k}`); if (b) b.disabled = true; } }); });
+    F.q("#gk-d").addEventListener("click", () => { if (!dadi) return; dadi = false; F.q("#gk-d").disabled = true; const sure = Math.random() < 0.8, g = sure ? opts.find((x) => x.ok) : opts[Math.floor(Math.random() * 4)]; showToast(L("📞 Dadi: 'Beta, I think it is... {a}. Ninety per cent sure!'", { a: g.t }), 4000); });
+    F.q("#gk-q2").addEventListener("click", () => end(won(), L("Smart! You quit with ₹{m}.", { m: won() })));
+    ask();
+  }
+
+  // ---------- 14. Plant a tree that grows over real days ----------
+  _plantTree() {
+    if (!this._funOutdoorHome()) return; const jl = this._jl(), today = this._todayKey(); jl.trees = jl.trees || [];
+    const t = jl.trees.find((x) => x.last !== today); if (jl.trees.length && !t && jl.trees.length >= 5) { showToast(L("All your trees have water today. Come back tomorrow (a real day)."), 3000); return; }
+    if (t && jl.trees.length) { this._waterRealTree(jl.trees.indexOf(t)); return; }
+    const kinds = [["neem", "🌳", L("Neem")], ["peepal", "🌲", L("Peepal")], ["gulmohar", "🌺", L("Gulmohar")], ["jamun", "🫐", L("Jamun")], ["amla", "🍈", L("Amla")]], k = kinds[jl.trees.length % kinds.length];
+    jl.trees.push({ kind: k[0], days: 1, last: today }); this._jsave(); this._treesBuild(true); this._sfx("win"); this._snap && this._snap("🌱", `Planted a ${k[2]} sapling.`); this.diary(L("Planted a {k} sapling by the lane. It grows one step every real day I water it.", { k: k[2] }));
+    this.dialogue.say("Dadi", [L("A {k} tree! Trees give shade, fruit and fresh air.", { k: k[2] }), L("Water it once every real day. Tomorrow, the day after... Watch it grow over the real weeks!")], null, { pitch: 420 });
+  }
+  _waterRealTree(i) {
+    const jl = this._jl(), today = this._todayKey(), t = jl.trees && jl.trees[i]; if (!t) return; if (t.last === today) { showToast(L("Watered today already. See you tomorrow!"), 2200); return; }
+    t.last = today; t.days = (t.days || 1) + 1; this._jsave(); this._treesBuild(true); this._sfx(); const st = this._treeStage(t.days);
+    showToast(L("💧 Watered! Real days of care: {d}. Your tree is now: {s}.", { d: t.days, s: st[1] }), 3000, "good"); if (t.days === 10) { this.addRep && this.addRep(2, L("grew a big tree")); this._snap && this._snap("🌳", "My tree is big now."); }
+  }
+  _treeStage(n) { return n >= 10 ? [1, L("a big tree")] : n >= 6 ? [0.7, L("a young tree")] : n >= 3 ? [0.45, L("a sapling")] : [0.22, L("a tiny sprout")]; }
+  _treesBuild(force) {
+    const jl = this._jl(); if (!jl.trees || !jl.trees.length || typeof HOME === "undefined") return; const sig = jl.trees.map((t) => t.days).join(","); if (!force && this._treeSig === sig && this.interactables.some((x) => x._rtree)) return; this._treeSig = sig;
+    if (this._trees3d) { this.world.scene.remove(this._trees3d); this.interactables = this.interactables.filter((x) => !x._rtree); }
+    const G = new THREE.Group(), d = HOME.door, cols = { neem: 0x2f7d32, peepal: 0x388e3c, gulmohar: 0xe63946, jamun: 0x1b5e20, amla: 0x7cb342 };
+    jl.trees.forEach((t, i) => { let x = d.x - 10 + i * 3, z = d.z - 10; if (!this.world.isWalkable(x, z)) { x = d.x - 10 + i * 3; z = d.z - 16; } const s = this._treeStage(t.days)[0], g = new THREE.Group();
+      const tr = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.2, 2.4, 7), new THREE.MeshStandardMaterial({ color: 0x6d4c41 })); tr.position.y = 1.2; g.add(tr); const cr = new THREE.Mesh(new THREE.SphereGeometry(1.4, 10, 8), new THREE.MeshStandardMaterial({ color: cols[t.kind] || 0x2f7d32 })); cr.position.y = 2.9; g.add(cr);
+      const guard = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.9, 8, 1, true), new THREE.MeshStandardMaterial({ color: 0xb0bec5, wireframe: true })); guard.position.y = 0.45; guard.visible = s < 0.5; g.add(guard);
+      g.scale.setScalar(s); guard.scale.setScalar(1 / s); g.position.set(x, 0, z); G.add(g);
+      this.interactables.push({ _rtree: true, pos: { x, z }, radius: 2.2, priority: 1, visible: () => !this._zone, prompt: () => (t.last === this._todayKey() ? L("🌳 My {k} tree ({d} real days)", { k: t.kind, d: t.days }) : L("💧 Water my {k} tree (real day {d})", { k: t.kind, d: t.days + 1 })), activate: () => this._waterRealTree(i) }); });
+    this.world.scene.add(G); this._trees3d = G;
+  }
+
+  // ---------- 15. Decorate my room ----------
+  _roomDecor() {
+    const jl = this._jl(); jl.room = jl.room || { poster: 0, sheet: 0, lamp: 0, rug: 0 }; const R = jl.room;
+    const opts = { poster: [L("🏏 Cricket star"), L("🚀 Space rocket"), L("🦁 Jungle animals"), L("🗺️ World map")], sheet: [L("💙 Blue"), L("💗 Pink"), L("💚 Green"), L("⭐ Stars")], lamp: [L("🌙 Moon lamp"), L("💡 Study lamp"), L("✨ Fairy lights")], rug: [L("No rug"), L("🟥 Red rug"), L("🟦 Round blue rug")] }, names = { poster: L("Poster"), sheet: L("Bedsheet"), lamp: L("Lamp"), rug: L("Rug") };
+    const draw = () => { const F = this._fOpen(`${this._fHead("🛏️", L("Decorate my room"))}<p class="job-brief">${L("Choose. It shows in the corner of your home, near your bed.")}</p>${Object.keys(opts).map((k) => `<div class="job-goal"><b>${names[k]}</b></div><div class="btn-row" style="flex-wrap:wrap">${opts[k].map((o, i) => `<button class="lang-btn" id="rd-${k}-${i}" style="${R[k] === i ? "outline:3px solid #2a9d8f" : ""}">${o}</button>`).join("")}</div>`).join("")}`);
+      for (const k of Object.keys(opts)) opts[k].forEach((o, i) => F.q(`#rd-${k}-${i}`).addEventListener("click", () => { R[k] = i; R.set = true; this._jsave(); this._sfx(); const rm = this.world.currentRoom; if (rm && rm._myCorner) { rm.group.remove(rm._myCorner); rm._myCorner = null; this._funHome(rm, true); } draw(); })); };
+    draw();
+  }
+  // Home room extras: my bed corner, pets, Dadi's tablet.
+  _funHome(room, rebuildOnly) {
+    const jl = this._jl(), pr = this.progress, R = jl.room;
+    if (!room._myCornerSpot) room._myCornerSpot = this._nearSpot ? this._nearSpot(room, room.x0 + 6, room.z0 - 3, [[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1], [2, 1], [-2, 1], [2, -1]]) : { x: room.x0 + 6, z: room.z0 - 3 };
+    const sp = room._myCornerSpot, lx = sp.x - room.x0, lz = sp.z - room.z0;
+    if (R && R.set && !room._myCorner) { const G = new THREE.Group(), M = (c, e = 0) => new THREE.MeshStandardMaterial({ color: c, emissive: e ? c : 0, emissiveIntensity: e });
+      const bed = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.45, 2), M(0x8d6e63)); bed.position.y = 0.22; G.add(bed); const sheet = new THREE.Mesh(new THREE.BoxGeometry(1.12, 0.08, 1.6), M([0x3a86ff, 0xff8fab, 0x52b788, 0x1d3557][R.sheet || 0])); sheet.position.set(0, 0.48, 0.2); G.add(sheet); const pil = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.14, 0.35), M(0xffffff)); pil.position.set(0, 0.52, -0.75); G.add(pil);
+      const board = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.7, 0.05), M([0x2a9d8f, 0x1d3557, 0xf4a261, 0x90e0ef][R.poster || 0])); board.position.set(0, 1.6, -1.05); G.add(board); const leg = new THREE.Mesh(new THREE.BoxGeometry(0.05, 1.3, 0.05), M(0x5d4037)); leg.position.set(0, 0.65, -1.07); G.add(leg);
+      const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.14, 8, 6), M([0xfff3b0, 0xffffff, 0xffd166][R.lamp || 0], 0.9)); lamp.position.set(0.8, 0.95, -0.7); G.add(lamp); const lst = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.06, 0.5, 6), M(0x333333)); lst.position.set(0.8, 0.7, -0.7); G.add(lst);
+      if (R.rug) { const rug = new THREE.Mesh(R.rug === 2 ? new THREE.CircleGeometry(0.9, 20) : new THREE.PlaneGeometry(1.6, 1.1), M(R.rug === 2 ? 0x3a86ff : 0xd62828)); rug.rotation.x = -Math.PI / 2; rug.position.set(-1.1, 0.03, 0.3); G.add(rug); }
+      try { const lb = makeTextSprite(["🏏", "🚀", "🦁", "🗺️"][R.poster || 0] + " " + L("My corner"), { size: 36, scale: 0.55 }); lb.position.set(0, 2.3, -1.05); G.add(lb); } catch (e) { /* label optional */ }
+      G.position.set(lx, 0, lz); room.group.add(G); room._myCorner = G; }
+    if (rebuildOnly) return;
+    // Pets from the pet shop.
+    const pets = jl.pets || []; if (pets.length && !room._myPets) { const G = new THREE.Group(), M = (c) => new THREE.MeshStandardMaterial({ color: c }); pets.forEach((p, i) => { const g = new THREE.Group(); if (p === "fish") { const b = new THREE.Mesh(new THREE.SphereGeometry(0.28, 12, 10), new THREE.MeshStandardMaterial({ color: 0x9fd3ea, transparent: true, opacity: 0.6 })); b.position.y = 0.8; g.add(b); const f = new THREE.Mesh(new THREE.ConeGeometry(0.06, 0.16, 5), M(0xff8c00)); f.rotation.z = Math.PI / 2; f.position.y = 0.8; g.add(f); const st = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.52, 0.5), M(0x8d6e63)); st.position.y = 0.26; g.add(st); } else if (p === "rabbit") { const b = new THREE.Mesh(new THREE.SphereGeometry(0.2, 10, 8), M(0xf5f5f5)); b.position.y = 0.2; g.add(b); for (const s of [-1, 1]) { const e = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.22, 0.04), M(0xf5f5f5)); e.position.set(s * 0.06, 0.48, 0.08); g.add(e); } } else if (p === "tortoise") { const sh = new THREE.Mesh(new THREE.SphereGeometry(0.22, 10, 6, 0, Math.PI * 2, 0, Math.PI / 2), M(0x6b8e23)); g.add(sh); const h = new THREE.Mesh(new THREE.SphereGeometry(0.07, 8, 6), M(0x9acd32)); h.position.set(0, 0.06, 0.26); g.add(h); } else { const cage = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.6, 10, 1, true), new THREE.MeshStandardMaterial({ color: 0xcfd8dc, wireframe: true })); cage.position.y = 1.2; g.add(cage); for (const [c, x] of [[0x2ec4b6, -0.08], [0xffd166, 0.08]]) { const b = new THREE.Mesh(new THREE.SphereGeometry(0.07, 8, 6), M(c)); b.position.set(x, 1.1, 0); g.add(b); } }
+        g.position.set(-1.6 + i * 0.7, 0, 1.3); G.add(g); }); G.position.set(lx, 0, lz); room.group.add(G); room._myPets = G; }
+    if (pets.length) this.roomInteractables.push({ pos: { x: sp.x - 0.8, z: sp.z + 1.3 }, radius: 1.8, priority: 1, prompt: () => (jl.petFed === pr.day ? L("🐾 My pets (fed today)") : L("🥕 Feed my pets")), activate: () => this._feedPets() });
+    // Dadi's morning tablet.
+    this.roomInteractables.push({ pos: { x: sp.x - 2.5, z: sp.z }, radius: 1.6, priority: 0, visible: () => this.phase === "morning", prompt: () => (jl.medDay === pr.day ? L("💊 Dadi took her tablet today") : L("💊 Give Dadi her morning BP tablet")), activate: () => this._dadiTablet() });
+  }
+
+  // ---------- 16. Pet shop ----------
+  _petShop() {
+    const jl = this._jl(), pr = this.progress; jl.pets = jl.pets || []; const list = [["rabbit", "🐰", L("Rabbit"), 800, L("Eats carrots and grass. Loves to hop.")], ["tortoise", "🐢", L("Tortoise"), 600, L("Slow and calm. Lives for many, many years.")], ["fish", "🐠", L("Goldfish bowl"), 200, L("Change the water every week.")], ["budgie", "🐦", L("Two budgies"), 500, L("They chirp all day. Never keep one alone.")]];
+    const draw = () => { const F = this._fOpen(`${this._fHead("🐾", L("Happy Paws pet shop"))}<p class="job-brief">${L("A pet is a promise. Feed it every day. Wallet: ₹{m}", { m: Math.round(pr.money || 0) })}</p><div class="shop-list">${list.map((p, i) => `<div class="cart-row"><div><b>${p[1]} ${p[2]}</b><small>₹${p[3]} · ${p[4]}</small></div>${jl.pets.includes(p[0]) ? `<span>✅ ${L("Yours")}</span>` : `<button class="use-btn" id="ps-${i}">${L("Buy")}</button>`}</div>`).join("")}</div>`);
+      list.forEach((p, i) => { const b = F.q(`#ps-${i}`); if (b) b.addEventListener("click", () => { if ((pr.money || 0) < p[3]) { showToast(L("You need ₹{p}. Save a little more.", { p: p[3] }), 2200, "bad"); return; } this.addMoney(-p[3], L("pet: {p}", { p: p[2] })); jl.pets.push(p[0]); jl.petFed = pr.day; this._jsave(); this._sfx("win"); this._snap && this._snap(p[1], `Brought home a ${p[2]}.`); this.diary(L("Brought home a pet: {p}.", { p: p[2] })); showToast(L("{i} Welcome home! Your new pet waits in your room corner at home.", { i: p[1] }), 3200, "good"); const rm = this.world.currentRoom; if (rm && rm._myPets) { rm.group.remove(rm._myPets); rm._myPets = null; } draw(); }); }); };
+    draw();
+  }
+  _feedPets() {
+    const jl = this._jl(), pr = this.progress; if (!(jl.pets || []).length) { showToast(L("No pets yet. Visit the pet shop in 🎲."), 2400); return; } if (jl.petFed === pr.day) { showToast(L("Your pets are full and happy."), 2000); return; }
+    const hungry = jl.petFed != null && pr.day - jl.petFed >= 3; jl.petFed = pr.day; jl.petCare = (jl.petCare || 0) + 1; this._jsave(); this._sfx();
+    showToast(hungry ? L("🥺 They were so hungry! Three days! A pet needs food every day.") : L("🥕 Crunch crunch! Your pets are happy. Care streak: {n}.", { n: jl.petCare }), 3000, hungry ? "bad" : "good");
+  }
+
+  // ---------- 17. Star map: find the stars yourself ----------
+  _starMap() {
+    if (!(this.phase === "night" || this.phase === "evening")) { showToast(L("Stars come out after sunset. Come back in the evening or at night."), 2600); return; }
+    const jl = this._jl(), W = 340, H = 220, dip = [[40, 60], [70, 55], [95, 65], [120, 70], [135, 100], [170, 100], [165, 70]], orion = [[235, 120], [250, 115], [265, 110]];
+    const targets = [[L("Saptarishi (the Big Dipper): seven stars like a big spoon"), dip], [L("Dhruv Tara, the Pole Star"), [[200, 30]]], [L("Orion's belt: three stars in a row"), orion], [L("Mars, the red planet"), [[300, 170]]], [L("The Moon"), [[60, 170]]]];
+    const F = this._fOpen(`${this._fHead("🔭", L("Star map"))}<p class="job-brief" id="sm2-q"></p><canvas id="sm2-c" width="${W}" height="${H}" style="width:100%;max-width:${W}px;background:#0b1a33;border-radius:12px;cursor:crosshair"></canvas><div class="job-goal" id="sm2-m">${L("Tap the right place in the sky.")}</div><div id="f-res"></div>`);
+    const cv = F.q("#sm2-c"), x = cv.getContext("2d"); let i = 0, right = 0;
+    const draw = () => { x.fillStyle = "#0b1a33"; x.fillRect(0, 0, W, H); for (let k = 0; k < 70; k++) { x.fillStyle = "rgba(255,255,255,.45)"; x.fillRect((k * 97) % W, (k * 53) % H, 1.5, 1.5); } x.fillStyle = "#fff"; for (const [a, b] of [...dip, ...orion, [200, 30], [220, 140], [280, 100]]) { x.beginPath(); x.arc(a, b, 2.6, 0, 7); x.fill(); } x.fillStyle = "#e76f51"; x.beginPath(); x.arc(300, 170, 4, 0, 7); x.fill(); x.fillStyle = "#f1f1e6"; x.beginPath(); x.arc(60, 170, 16, 0, 7); x.fill(); };
+    const ask = () => { if (i >= targets.length) { jl.starMaps = (jl.starMaps || 0) + 1; this._jsave(); this.diary(L("Star map: found {r} of 5 sky objects.", { r: right })); this._fDone(F, `${right} / 5`, [right >= 4 ? L("Papa: 'You know the sky better than me!'") : L("Papa: 'Look again tomorrow night. The sky is a big book.'")]); if (right >= 4) this._sfx("win"); return; } F.q("#sm2-q").textContent = L("Find: {t}", { t: targets[i][0] }); };
+    cv.addEventListener("click", (e) => { if (i >= targets.length) return; const r = cv.getBoundingClientRect(), px = (e.clientX - r.left) * (W / r.width), py = (e.clientY - r.top) * (H / r.height), hit = targets[i][1].some(([a, b]) => Math.hypot(a - px, b - py) < 22);
+      if (hit) { right++; this._sfx(); x.strokeStyle = "#ffd166"; x.lineWidth = 2; const P = targets[i][1]; x.beginPath(); P.forEach(([a, b], k) => (k ? x.lineTo(a, b) : x.moveTo(a, b))); if (P.length === 1) x.arc(P[0][0], P[0][1], 12, 0, 7); x.stroke(); F.q("#sm2-m").textContent = L("✅ Yes! There it is!"); } else { this._sfx("bad"); F.q("#sm2-m").textContent = L("❌ Not there. The answer is now circled."); x.strokeStyle = "#e63946"; const [a, b] = targets[i][1][0]; x.beginPath(); x.arc(a, b, 14, 0, 7); x.stroke(); }
+      i++; setTimeout(() => F.alive() && ask(), 900); });
+    draw(); ask();
+  }
+
+  // ---------- 18. Seasons that follow the real calendar ----------
+  _seasonInfo() {
+    const m = this._month(), S = m === 1 ? [L("🪁 January: kite season! Look up, kites fill the sky over the colony."), L("Play the Kite fight in 🎲.")] : m === 3 ? [L("🎨 March: Holi! A colour cart stands near your home. Play Holi there.")] : m >= 4 && m <= 6 ? [L("🥭 Summer: mango season! The mango cart is near your home door.")] : m >= 7 && m <= 9 ? [L("🌧️ Monsoon: umbrellas, puddles and paper boats.")] : m === 10 || m === 11 ? [L("🪔 Festival season: Dussehra, Diwali, and Bhai Dooj.")] : [L("🔥 Winter: a bonfire in the lane at night. Warm your hands!")];
+    this._fOpen(`${this._fHead("🌦️", L("This season"))}<p class="job-brief">${S.join("<br>")}</p><p class="job-brief" style="font-size:13px">${L("The seasons follow the real calendar on your phone or computer.")}</p>`);
+  }
+  _seasonBuild() {
+    const m = this._month(); if (typeof HOME === "undefined" || (this._seasonM === m && (!this._seasonIts || this.interactables.some((x) => x._season)))) return; this._seasonM = m; const d = HOME.door;
+    if (this._season3d) { this.world.scene.remove(this._season3d); this.interactables = this.interactables.filter((x) => !x._season); } if (this._kites) { this.world.scene.remove(this._kites); this._kites = null; }
+    const G = new THREE.Group(), M = (c, e = 0) => new THREE.MeshStandardMaterial({ color: c, emissive: e ? c : 0, emissiveIntensity: e }); this.world.scene.add(G); this._season3d = G; this._seasonIts = 0;
+    const cart = (label, col, x, z) => { const c = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.8, 1), M(col)); c.position.set(x, 0.8, z); G.add(c); for (const s of [-0.6, 0.6]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.1, 12), M(0x333333)); w.rotation.x = Math.PI / 2; w.rotation.z = Math.PI / 2; w.position.set(x + s, 0.3, z + 0.55); G.add(w); } try { const t = makeTextSprite(label, { size: 38, scale: 0.7 }); t.position.set(x, 2.2, z); G.add(t); } catch (e) { /* label optional */ } };
+    const spot = [[5, -6], [-5, -6], [6, -12], [-6, -12]].map(([a, b]) => ({ x: d.x + a, z: d.z + b })).find((p) => this.world.isWalkable(p.x, p.z)) || { x: d.x + 5, z: d.z - 6 };
+    if (m === 1) { const K = new THREE.Group(); [0xd62828, 0xffd166, 0x06d6a0, 0x118ab2, 0x9d4edd, 0xff8fab].forEach((c, i) => { const k = new THREE.Mesh(new THREE.PlaneGeometry(1.4, 1.4), new THREE.MeshBasicMaterial({ color: c, side: THREE.DoubleSide })); k.rotation.y = 0.4 * i; k.position.set(d.x - 20 + i * 8, 18, d.z - 20 - (i % 3) * 10); K.add(k); }); this.world.scene.add(K); this._kites = K; }
+    if (m === 3) { cart(L("🎨 Holi colours"), 0xff4f8b, spot.x, spot.z); this._seasonIts++; this.interactables.push({ _season: true, pos: spot, radius: 2.6, priority: 1, visible: () => !this._zone, prompt: () => L("🎨 Play Holi: throw gulal!"), activate: () => this._playHoli() }); }
+    if (m >= 4 && m <= 6) { cart(L("🥭 Mangoes ₹40"), 0xffb703, spot.x, spot.z); this._seasonIts++; this.interactables.push({ _season: true, pos: spot, radius: 2.6, priority: 1, visible: () => !this._zone, prompt: () => L("🥭 Buy mangoes (₹40)"), activate: () => { if ((this.progress.money || 0) < 40) { showToast(L("You need ₹40."), 1800, "bad"); return; } this.addMoney(-40, L("mangoes")); this.addEnergy && this.addEnergy(8); this._sfx(); showToast(L("🥭 Sweet Alphonso! The juice runs down to your elbow. Summer!"), 3000, "good"); } }); }
+    if (m === 12 || m === 2) { const f = new THREE.Mesh(new THREE.ConeGeometry(0.5, 1, 8), M(0xff7b00, 1)); f.position.set(spot.x, 0.5, spot.z); G.add(f); for (let i = 0; i < 5; i++) { const l = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 1, 6), M(0x5d4037)); l.rotation.z = Math.PI / 2; l.rotation.y = i * 1.2; l.position.set(spot.x, 0.1, spot.z); G.add(l); } this._seasonIts++; this.interactables.push({ _season: true, pos: spot, radius: 2.8, priority: 1, visible: () => !this._zone && (this.phase === "evening" || this.phase === "night"), prompt: () => L("🔥 Warm your hands at the bonfire"), activate: () => { this.addEnergy && this.addEnergy(5); this._sfx(); showToast(L("🔥 Ahh, warm! Uncle roasts peanuts. Everyone tells ghost stories."), 3000, "good"); } }); }
+  }
+  _playHoli() {
+    const jl = this._jl(), pr = this.progress, S = this._sib(), pp = this.player.position; const G = new THREE.Group(); [0xff4f8b, 0xffd166, 0x06d6a0, 0x118ab2, 0x9d4edd].forEach((c, i) => { const p = new THREE.Mesh(new THREE.SphereGeometry(0.6 + i * 0.1, 8, 6), new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: 0.55 })); p.position.set(pp.x + Math.sin(i * 1.3) * 1.2, 1.3 + i * 0.2, pp.z + Math.cos(i * 1.3) * 1.2); G.add(p); }); this.world.scene.add(G); setTimeout(() => this.world.scene.remove(G), 4000);
+    jl.holi = (jl.holi || 0) + 1; this._jsave(); this._sfx("win"); showToast(L("🎨 HOLI HAI! Pink, green, yellow! {n} gets you with a water balloon! Bura na mano, Holi hai!", { n: S.name }), 4000, "good"); this._snap && this._snap("🎨", "Played Holi in the lane.");
+  }
+
+  // ---------- 19. Music room: harmonium, tabla, guitar, and record a song ----------
+  _tone(f, type = "sine", dur = 0.5, vol = 0.18, drop = 0) { try { const A = this._actx || (this._actx = new (window.AudioContext || window.webkitAudioContext)()); if (A.state === "suspended") A.resume(); const o = A.createOscillator(), g = A.createGain(); o.type = type; o.frequency.setValueAtTime(f, A.currentTime); if (drop) o.frequency.exponentialRampToValueAtTime(Math.max(30, f * drop), A.currentTime + dur); g.gain.setValueAtTime(0.0001, A.currentTime); g.gain.exponentialRampToValueAtTime(vol, A.currentTime + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, A.currentTime + dur); o.connect(g); g.connect(A.destination); o.start(); o.stop(A.currentTime + dur + 0.05); } catch (e) { /* audio optional */ } }
+  _musicRoom() {
+    const jl = this._jl(), I = { harmonium: [["Sa", 261.6], ["Re", 293.7], ["Ga", 329.6], ["Ma", 349.2], ["Pa", 392], ["Dha", 440], ["Ni", 493.9], ["Sa'", 523.3]], tabla: [["Dha", 110], ["Dhin", 150], ["Ta", 330], ["Na", 420], ["Ge", 80]], guitar: [["E", 82.4], ["A", 110], ["D", 146.8], ["G", 196], ["B", 246.9], ["e", 329.6]] }, keys = "asdfghjk";
+    let inst = "harmonium", rec = null, t0 = 0;
+    const play = (n) => { const f = n[1]; if (inst === "harmonium") { this._tone(f, "sawtooth", 0.6, 0.06); this._tone(f * 2, "square", 0.5, 0.02); } else if (inst === "tabla") this._tone(f, "sine", 0.35, 0.35, 0.55); else { this._tone(f * 2, "triangle", 1.2, 0.2); this._tone(f * 4, "sine", 0.6, 0.05); } if (rec) rec.push([inst, n[0], n[1], Math.round(performance.now() - t0)]); };
+    const F = this._fOpen(`${this._fHead("🎹", L("Music room"))}<div class="btn-row">${Object.keys(I).map((k) => `<button class="lang-btn" id="mu-i-${k}">${{ harmonium: "🪗", tabla: "🥁", guitar: "🎸" }[k]} ${L(k[0].toUpperCase() + k.slice(1))}</button>`).join("")}</div><div class="btn-row" id="mu-k" style="flex-wrap:wrap"></div><p class="job-brief" style="font-size:13px">${L("Tap the keys, or use A S D F G H J K on the keyboard.")}</p><div class="btn-row"><button class="big-btn" id="mu-rec">⏺️ ${L("Record")}</button><button class="big-btn" id="mu-play">▶️ ${L("Play my song")}</button></div><div class="job-goal" id="mu-m">${jl.song && jl.song.length ? L("Saved song: {n} notes.", { n: jl.song.length }) : L("No song saved yet.")}</div>`);
+    const draw = () => { F.q("#mu-k").innerHTML = I[inst].map((n, i) => `<button class="big-btn" id="mu-n${i}" style="min-width:58px">${n[0]}<br><small>${keys[i] ? keys[i].toUpperCase() : ""}</small></button>`).join(""); I[inst].forEach((n, i) => F.q(`#mu-n${i}`).addEventListener("click", () => play(n))); Object.keys(I).forEach((k) => (F.q(`#mu-i-${k}`).style.outline = k === inst ? "3px solid #2a9d8f" : "")); };
+    Object.keys(I).forEach((k) => F.q(`#mu-i-${k}`).addEventListener("click", () => { inst = k; draw(); }));
+    F.q("#mu-rec").addEventListener("click", () => { if (!rec) { rec = []; t0 = performance.now(); F.q("#mu-rec").textContent = "⏹️ " + L("Stop and save"); F.q("#mu-m").textContent = L("🔴 Recording... play your song!"); } else { jl.song = rec.slice(0, 80); rec = null; jl.songs = (jl.songs || 0) + 1; this._jsave(); F.q("#mu-rec").textContent = "⏺️ " + L("Record"); F.q("#mu-m").textContent = L("💾 Saved! {n} notes. Press Play to hear it.", { n: jl.song.length }); this.diary(L("Recorded my own song in the music room.")); } });
+    F.q("#mu-play").addEventListener("click", () => { const s = jl.song || []; if (!s.length) { showToast(L("Record a song first."), 1800); return; } const was = inst; s.forEach(([ins, , f, t]) => setTimeout(() => { if (!F.alive()) return; inst = ins; play([null, f]); inst = was; }, t)); });
+    const km = {}; for (let i = 0; i < keys.length; i++) km[keys[i]] = () => { const n = I[inst][i]; if (n) play(n); }; this._fKeys(F, km); draw();
+  }
+
+  // ---------- 20. School sports day: sprint, long jump, tug of war ----------
+  _sportsDay() {
+    const jl = this._jl(), pr = this.progress; jl.medals = jl.medals || { g: 0, s: 0, b: 0 };
+    const F = this._fOpen(`${this._fHead("🏅", L("School sports day"))}<p class="job-brief">${L("Three events. Win medals! Medals so far: 🥇{g} 🥈{s} 🥉{b}", { g: jl.medals.g, s: jl.medals.s, b: jl.medals.b })}</p><div class="btn-row" style="flex-direction:column"><button class="big-btn" id="sd-0">🏃 ${L("100 metre sprint")}</button><button class="big-btn" id="sd-1">🦘 ${L("Long jump")}</button><button class="big-btn" id="sd-2">🪢 ${L("Tug of war")}</button></div>`);
+    F.q("#sd-0").addEventListener("click", () => this._sprint()); F.q("#sd-1").addEventListener("click", () => this._longJump()); F.q("#sd-2").addEventListener("click", () => this._tugWar());
+  }
+  _sdMedal(place, ev) { const jl = this._jl(); jl.medals = jl.medals || { g: 0, s: 0, b: 0 }; const k = ["g", "s", "b"][place - 1]; if (k) jl.medals[k]++; this._jsave(); if (place === 1) this._sfx("win"); const m = [L("🥇 GOLD"), L("🥈 SILVER"), L("🥉 BRONZE")][place - 1] || L("No medal"); if (place <= 3) { this._snap && this._snap("🏅", `Sports day ${ev}: ${m}.`); this.diary(L("Sports day, {e}: {m}.", { e: ev, m })); } return m; }
+  _sprint() {
+    const F = this._fOpen(`${this._fHead("🏃", L("100 metre sprint"))}<p class="job-brief">${L("Press left arrow and right arrow one after the other, fast! Or tap the two feet.")}</p><div id="sp-lanes"></div><div class="btn-row"><button class="big-btn" id="sp-l">👣 ${L("Left")}</button><button class="big-btn" id="sp-r">👣 ${L("Right")}</button></div><div class="job-goal" id="sp-m">${L("On your marks... get set...")}</div><div id="f-res"></div>`);
+    const names = [this.playerName || L("You"), "Rohan", "Priya", "Aman"], pos = [0, 0, 0, 0], speed = [0, 7.6 + Math.random(), 7.2 + Math.random(), 6.8 + Math.random()]; let go = false, last = "", done = false, t0 = 0;
+    const draw = () => { F.q("#sp-lanes").innerHTML = names.map((n, i) => `<div style="position:relative;height:26px;margin:3px 0;background:${i ? "#f4e1c1" : "#ffe8a3"};border-radius:6px"><span style="position:absolute;left:calc(${Math.min(100, pos[i])}% - 24px);top:1px">🏃 <small>${n}</small></span></div>`).join(""); };
+    const step = (s) => { if (!go || done || s === last) return; last = s; pos[0] += 2.1; draw(); };
+    setTimeout(() => { if (!F.alive()) return; go = true; t0 = performance.now(); F.q("#sp-m").textContent = L("GO!!!"); this._sfx("bell"); }, 1600);
+    this._fEvery(F, 50, () => { if (!go || done) return; for (let i = 1; i < 4; i++) pos[i] += speed[i] * 0.05; draw(); if (pos.some((p) => p >= 100)) { done = true; const order = pos.map((p, i) => [p, i]).sort((a, b) => b[0] - a[0]), place = order.findIndex((x) => x[1] === 0) + 1; this._fDone(F, `#${place}`, [this._sdMedal(place, L("sprint")), L("Time: {t} seconds.", { t: ((performance.now() - t0) / 1000).toFixed(1) })]); } });
+    F.q("#sp-l").addEventListener("click", () => step("l")); F.q("#sp-r").addEventListener("click", () => step("r")); this._fKeys(F, { ArrowLeft: () => step("l"), ArrowRight: () => step("r"), a: () => step("l"), d: () => step("r") }); draw();
+  }
+  _longJump() {
+    let tries = 0, best = 0, pos = 0, dir = 1, jumping = false; const F = this._fOpen(`${this._fHead("🦘", L("Long jump"))}<p class="job-brief">${L("Jump when the runner reaches the white board. Too late is a foul! Three tries.")}</p><div style="position:relative;height:30px;background:linear-gradient(90deg,#c1666b 0 80%,#fff 80% 84%,#e9c46a 84%);border-radius:8px"><span id="lj-r" style="position:absolute;top:2px;left:0">🏃</span></div><div class="job-goal" id="lj-m"></div><div class="btn-row"><button class="big-btn" id="lj-j">🦘 ${L("Jump!")}</button></div><div id="f-res"></div>`);
+    const reset = () => { pos = 0; jumping = false; }; reset();
+    const jump = () => { if (jumping || tries >= 3) return; jumping = true; tries++; const e = pos - 0.8; let m = 0; if (e > 0.04) F.q("#lj-m").textContent = L("❌ FOUL! Your foot crossed the board."); else { m = +(5.8 - Math.abs(e) * 30).toFixed(2); m = Math.max(2.1, m); best = Math.max(best, m); F.q("#lj-m").textContent = L("Try {t}: {m} metres!", { t: tries, m }); } this._sfx(m >= 5 ? "win" : m ? "" : "bad");
+      setTimeout(() => { if (!F.alive()) return; if (tries >= 3) { const place = best >= 5.2 ? 1 : best >= 4.5 ? 2 : best >= 3.5 ? 3 : 4; F.q(".btn-row").innerHTML = ""; this._fDone(F, `${best} m`, [this._sdMedal(place, L("long jump"))]); } else reset(); }, 1000); };
+    this._fEvery(F, 30, () => { if (jumping) return; pos += 0.012 * dir + 0.004; if (pos > 0.95) { pos = 0.95; jump(); } F.q("#lj-r").style.left = `calc(${pos * 100}% - 12px)`; });
+    F.q("#lj-j").addEventListener("click", jump); this._fKeys(F, { " ": jump, ArrowUp: jump, w: jump });
+  }
+  _tugWar() {
+    const S = this._sib(), two = S.two; let rope = 0, done = false, go = false; const F = this._fOpen(`${this._fHead("🪢", L("Tug of war"))}<p class="job-brief">${two ? L("Player 1 (left team): tap the up arrow fast. Player 2 (right team): tap W fast!") : L("Your team is on the left. Tap PULL as fast as you can!")}</p><div style="position:relative;height:40px;background:#eee;border-radius:10px"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:#d62828"></div><span id="tw-f" style="position:absolute;top:6px;font-size:22px">🎀</span></div><div class="job-goal" id="tw-m">${L("Ready... PULL!")}</div><div class="btn-row"><button class="big-btn" id="tw-a">💪 ${L("PULL")} (P1)</button>${two ? `<button class="big-btn" id="tw-b">💪 ${L("PULL")} (P2)</button>` : ""}</div><div id="f-res"></div>`);
+    const pull = (s) => { if (!go || done) return; rope += s * 2.4; };
+    setTimeout(() => { go = true; }, 800);
+    this._fEvery(F, 60, () => { if (done) return; if (go && !two) rope += 0.9 + Math.random() * 0.5; F.q("#tw-f").style.left = `calc(${50 + rope}% - 12px)`; if (Math.abs(rope) >= 40) { done = true; const leftWins = rope < 0; this._fDone(F, leftWins ? "💪" : "😵", two ? [leftWins ? L("Player 1's team wins!") : L("Player 2's team wins!")] : [leftWins ? this._sdMedal(1, L("tug of war")) : L("The other team wins. Your hands are red! Next year.")]); } });
+    F.q("#tw-a").addEventListener("click", () => pull(-1)); const b = F.q("#tw-b"); if (b) b.addEventListener("click", () => pull(1)); this._fKeys(F, two ? { ArrowUp: () => pull(-1), w: () => pull(1) } : { ArrowUp: () => pull(-1), " ": () => pull(-1), w: () => pull(-1) });
+  }
+
+  // ---------- 21. Kite fight on the roof ----------
+  _kiteFight() {
+    const jl = this._jl(); this._timingGame({ name: L("Kite fight (Patang)"), icon: "🪁", cue: "Pull the string when the rival kite crosses the green!", hit: "Kai po che! Cut!", miss: "Your kite wobbles!", verb: "Pull" }, 5, (h) => { jl.kitesCut = (jl.kitesCut || 0) + h; this._jsave(); this.diary(L("Kite fight: cut {n} kites. Kai po che!", { n: h })); if (h >= 3) this._snap && this._snap("🪁", `Cut ${h} kites in a kite fight.`); }, L("Chacha on the next roof"));
+  }
+
+  // ---------- 22. Saanp Seedi with Dadi (and your brother or sister) ----------
+  _saanpSeedi() {
+    const S = this._sib(), jl = this._jl(), J = { 3: 17, 8: 26, 20: 38, 28: 44 }, SN = { 19: 5, 33: 12, 41: 23, 48: 30 }, P = [{ n: this.playerName || L("You"), i: "🔵", p: 1 }, { n: S.two ? S.name : "Dadi", i: "🔴", p: 1 }]; let turn = 0, done = false, busy = false;
+    const F = this._fOpen(`${this._fHead("🐍", L("Saanp Seedi"))}<p class="job-brief">${L("Snakes and ladders to 50. Ladders go up, snakes bite you down!")} ${S.two ? L("Player 1: up arrow. Player 2: W.") : L("Up arrow or tap Roll.")}</p><div id="ss-b" style="display:grid;grid-template-columns:repeat(10,1fr);gap:2px;font-size:11px"></div><div class="job-goal" id="ss-m"></div><div class="btn-row"><button class="big-btn" id="ss-r">🎲 ${L("Roll")}</button></div><div id="f-res"></div>`);
+    const draw = () => { const cells = []; for (let r = 4; r >= 0; r--) for (let c = 0; c < 10; c++) { const n = r * 10 + (r % 2 ? 9 - c : c) + 1; cells.push(`<div style="height:26px;border-radius:4px;background:${J[n] ? "#b7e4c7" : SN[n] ? "#ffccd5" : "#f1f1f1"};text-align:center">${n}${J[n] ? "🪜" : SN[n] ? "🐍" : ""}${P.map((p) => (p.p === n ? p.i : "")).join("")}</div>`); } F.q("#ss-b").innerHTML = cells.join(""); };
+    const roll = (who) => { if (done || busy || who !== turn) return; busy = true; const d = 1 + Math.floor(Math.random() * 6), p = P[who]; let msg = `${p.i} ${p.n} ${L("rolls")} ${d}.`; if (p.p + d <= 50) p.p += d; else msg += " " + L("Too high, stay."); if (J[p.p]) { msg += " " + L("🪜 A ladder! Up to {n}!", { n: J[p.p] }); p.p = J[p.p]; } else if (SN[p.p]) { msg += " " + L("🐍 A snake! Down to {n}.", { n: SN[p.p] }); p.p = SN[p.p]; } this._sfx(); F.q("#ss-m").textContent = msg; draw();
+      if (p.p === 50) { done = true; if (who === 0) jl.saanpWins = (jl.saanpWins || 0) + 1; this._jsave(); this.diary(L("Saanp Seedi: {n} won.", { n: p.n })); this._fDone(F, p.i, [L("{n} reaches 50 and wins!", { n: p.n }), who === 0 ? L("Dadi: 'Arre! Beaten by a child again!'") : L("Dadi: 'Experience wins, beta! One more game?'")]); return; }
+      turn = 1 - turn; busy = false; if (turn === 1 && !S.two) { busy = true; setTimeout(() => { busy = false; if (F.alive()) roll(1); }, 1000); } };
+    F.q("#ss-r").addEventListener("click", () => roll(S.two ? turn : 0)); this._fKeys(F, S.two ? { ArrowUp: () => roll(0), w: () => roll(1) } : { ArrowUp: () => roll(0), " ": () => roll(0) }); draw();
+  }
+
+  // ---------- 23. Make chai with Maa ----------
+  _makeChai() {
+    const jl = this._jl(), pr = this.progress; if (jl.chaiDay === pr.day) { showToast(L("Chai is done for today. Too much chai, no sleep!"), 2200); return; }
+    this._orderGame("☕ " + L("Make chai with Maa"), L("Maa: 'Today you make the chai. I only watch. Steps in order!'"), [["💧", L("Put water in the pan")], ["🔥", L("Light the gas and boil")], ["🍃", L("Add the tea leaves")], ["🫚", L("Crush ginger and add it")], ["🥛", L("Pour the milk")], ["🍬", L("Add sugar")], ["♨️", L("Boil it up two times")], ["🫖", L("Strain into cups")]], (miss) => {
+      jl.chaiDay = pr.day; jl.chai = (jl.chai || 0) + 1; this._jsave(); this.addEnergy && this.addEnergy(10); this.addFriendship && this.addFriendship("family", 1, L("made chai")); this._sfx("win"); this.diary(L("Made chai for the whole family."));
+      this.dialogue.say("Maa", [miss ? L("({m} mix-ups, but) not bad at all!", { m: miss }) : L("Perfect! Just like my chai!"), L("Papa: 'Who made this? Five stars!' Dadi dips her rusk in it and smiles.")], null, { pitch: 450 });
+    });
+  }
+
+  // ---------- 24. Sabzi mandi: bargain for a fair price ----------
+  _bargain() {
+    const jl = this._jl(), pr = this.progress; if (jl.mandiDay === pr.day) { showToast(L("You bought the vegetables today. Maa is happy."), 2200); return; }
+    const veg = [["🍅", L("1 kg tomatoes"), 60, 40], ["🧅", L("1 kg onions"), 50, 35], ["🥔", L("2 kg potatoes"), 70, 50]]; let i = 0, saved = 0, spent = 0;
+    const F = this._fOpen(`${this._fHead("🥕", L("Sabzi mandi"))}<p class="job-brief">${L("Maa gave you a list. The sellers ask a high price. Offer a fair price. Too low, and they get angry!")}</p><div class="job-goal" id="bg-q"></div><div class="btn-row" id="bg-o" style="flex-wrap:wrap"></div><div class="job-goal" id="bg-m"></div><div id="f-res"></div>`);
+    const ask = () => { if (i >= veg.length) { jl.mandiDay = pr.day; jl.mandiSaved = (jl.mandiSaved || 0) + saved; this._jsave(); if (spent && (pr.money || 0) >= 0) this.addMoney(saved, L("Maa's reward: money you saved at the mandi")); this.diary(L("Sabzi mandi: saved ₹{s} by fair bargaining.", { s: saved })); this._fDone(F, `₹${saved}`, [L("You saved ₹{s}. Maa: 'Keep what you saved. You are a smart shopper!'", { s: saved })]); return; }
+      const [ic, name, ask0, fair] = veg[i], offers = [Math.round(fair * 0.5), fair, Math.round((fair + ask0) / 2), ask0]; F.q("#bg-q").textContent = `${ic} ${name}: ${L("the seller says ₹{a}", { a: ask0 })}`; F.q("#bg-o").innerHTML = offers.map((o, k) => `<button class="big-btn" id="bg-${k}">${L("Offer ₹{o}", { o })}</button>`).join("");
+      offers.forEach((o, k) => F.q(`#bg-${k}`).addEventListener("click", () => { let msg; if (k === 0) { msg = L("😠 'Ha! Go grow your own tomatoes!' Now he wants ₹{a}.", { a: ask0 }); spent++; } else { spent++; saved += ask0 - o; msg = k === 1 ? L("🤝 'Okay, okay, for you ₹{o}. Come again!' Great deal!", { o }) : k === 2 ? L("🙂 Deal at ₹{o}. You saved a little.", { o }) : L("You paid the full price. The seller smiles very wide..."); } F.q("#bg-m").textContent = msg; this._sfx(k === 0 ? "bad" : ""); i++; ask(); })); };
+    ask();
+  }
+
+  // ---------- 25. Swachh colony: pick up litter ----------
+  _litterStart() {
+    if (!this._funOutdoorHome() || this._swachh) return; const jl = this._jl(), pr = this.progress; if (jl.litterDay === pr.day) { showToast(L("The lane is clean today. Thank you, Swachh hero!"), 2400); return; }
+    const d = HOME.door, G = new THREE.Group(), items = [], cols = [0xe0e0e0, 0x4caf50, 0x2196f3, 0xff9800, 0x9e9e9e];
+    for (let k = 0; items.length < 8 && k < 40; k++) { const x = d.x - 14 + ((k * 37) % 28), z = d.z - 4 - ((k * 23) % 30); if (!this.world.isWalkable(x, z)) continue; const m = new THREE.Mesh(k % 2 ? new THREE.CylinderGeometry(0.1, 0.1, 0.3, 8) : new THREE.BoxGeometry(0.3, 0.1, 0.25), new THREE.MeshStandardMaterial({ color: cols[k % cols.length] })); m.rotation.z = k % 2 ? Math.PI / 2 : 0.3; m.position.set(x, 0.1, z); G.add(m); items.push(m); }
+    const bin = new THREE.Mesh(new THREE.CylinderGeometry(0.4, 0.35, 0.9, 10), new THREE.MeshStandardMaterial({ color: 0x2e7d32 })); bin.position.set(d.x + 2.5, 0.45, d.z - 2.2); G.add(bin); try { const s = makeTextSprite(L("🗑️ Dustbin"), { size: 36, scale: 0.6 }); s.position.set(d.x + 2.5, 1.6, d.z - 2.2); G.add(s); } catch (e) { /* label optional */ }
+    if (!items.length) { showToast(L("The lane is already clean!"), 2000); return; } this.world.scene.add(G); this._swachh = { G, items, bag: 0, bin: { x: d.x + 2.5, z: d.z - 2.2 } };
+    this.setObjective(L("Clean the lane: pick up {n} pieces of litter", { n: items.length }), null); showToast(L("🧹 Chips packets and bottles in the lane! Walk over each one to pick it up. Then put it all in the green dustbin."), 4200);
+  }
+  _tickLitter() {
+    const Lt = this._swachh, pp = this.player.position; if (this._zone || this.world.currentRoom) return;
+    for (const m of Lt.items) if (m.visible && Math.hypot(pp.x - m.position.x, pp.z - m.position.z) < 1.4) { m.visible = false; Lt.bag++; this._sfx(); const left = Lt.items.filter((x) => x.visible).length; this.setObjective(left ? L("Litter left: {n}", { n: left }) : L("Put the bag in the green dustbin"), left ? null : Lt.bin.x, left ? null : Lt.bin.z); }
+    if (Lt.items.every((m) => !m.visible) && Math.hypot(pp.x - Lt.bin.x, pp.z - Lt.bin.z) < 2.2) { this.world.scene.remove(Lt.G); this._swachh = null; const jl = this._jl(); jl.litterDay = this.progress.day; jl.cleanups = (jl.cleanups || 0) + 1; this.addRep && this.addRep(2, L("cleaned the colony")); this._jsave(); this._sfx("win"); this.setObjective(L("The lane is clean!"), null); this._snap && this._snap("🧹", "Cleaned the colony lane."); this.diary(L("Picked up litter in the lane. Swachh colony!")); showToast(L("🌟 Sparkling lane! Sharma Aunty: 'Such good children in this colony!'"), 3800, "good"); }
+  }
+
+  // ---------- 26. Letter to Nani ----------
+  _letterNani() {
+    const jl = this._jl(), pr = this.progress, L2 = jl.letter;
+    if (L2 && !L2.replied && pr.day > L2.day) { L2.replied = true; jl.letters = (jl.letters || 0) + 1; this._jsave(); this.addMoney(100, L("Nani's letter")); this._sfx("win"); this.diary(L("Got a letter back from Nani, with ₹100 inside!")); this.dialogue.say(L("Postman"), [L("Dak aayi hai! A letter from Nani's village!"), L("Nani: 'My dear, your letter made me cry happy tears. The mango tree here is full.'"), L("'I am sending ₹100. Buy books, not only sweets! Come in the summer holidays. Your Nani.'")], null, { pitch: 380 }); return; }
+    if (L2 && !L2.replied) { showToast(L("✉️ The letter is on its way to Nani's village. The reply comes on the next game day."), 3000); return; }
+    const lines = [L("How is your knee pain, Nani?"), L("I got full marks in maths!"), L("I miss your aloo parathas."), L("Our puppy learned to sit!"), L("Please come for Diwali."), L("I planted a tree by our lane.")], pick = new Set();
+    const F = this._fOpen(`${this._fHead("✉️", L("Write to Nani"))}<p class="job-brief">${L("Pick up to 3 lines, or write your own. Then post it.")}</p><div class="btn-row" style="flex-wrap:wrap">${lines.map((l, i) => `<button class="lang-btn" id="ln-${i}">${l}</button>`).join("")}</div><textarea id="ln-t" rows="2" style="width:100%;border-radius:10px;padding:6px" placeholder="${L("My own line...")}"></textarea><div class="btn-row"><button class="big-btn" id="ln-p">📮 ${L("Post it (₹5 stamp)")}</button></div>`);
+    lines.forEach((l, i) => F.q(`#ln-${i}`).addEventListener("click", () => { const b = F.q(`#ln-${i}`); if (pick.has(i)) { pick.delete(i); b.style.outline = ""; } else if (pick.size < 3) { pick.add(i); b.style.outline = "3px solid #2a9d8f"; } })); const ta = F.q("#ln-t"); ta.addEventListener("keydown", (e) => e.stopPropagation());
+    F.q("#ln-p").addEventListener("click", () => { const own = (ta.value || "").trim().slice(0, 120); if (!pick.size && !own) { showToast(L("Write something first."), 1800); return; } if ((pr.money || 0) >= 5) this.addMoney(-5, L("postage stamp")); jl.letter = { day: pr.day, text: [...pick].map((i) => lines[i]).concat(own ? [own] : []) }; this._jsave(); closePanel(); this._sfx(); showToast(L("📮 Posted! The red post box swallows your letter. Nani will reply on the next game day."), 3500, "good"); this.diary(L("Wrote a letter to Nani.")); });
+  }
+
+  // ---------- 27. Cycle safety licence ----------
+  _cycleLicence() {
+    const jl = this._jl(); if (jl.licence) { showToast(L("🪪 You already have your Cycle Safety Licence. Ride safe!"), 2400, "good"); return; }
+    const Q = [[L("The light is red. What do you do?"), [L("Stop behind the line"), L("Ride fast before it changes"), L("Ring the bell and go")]], [L("Which side of the road do we ride on in India?"), [L("The left side"), L("The right side"), L("The middle")]], [L("It is dark. What must your cycle have?"), [L("A front light and a back reflector"), L("A horn only"), L("Nothing")]], [L("You want to turn right. What do you do?"), [L("Look back and show your right hand"), L("Just turn quickly"), L("Close your eyes")]], [L("A zebra crossing means..."), [L("People walking have the right to cross"), L("Cycles go first"), L("Race zone")]], [L("What do you wear on your head?"), [L("A helmet"), L("A cap only"), L("Headphones")]], [L("Can two friends ride one cycle?"), [L("No, only one rider"), L("Yes, always"), L("Only downhill")]], [L("The school bus stops with its sign out. You...?"), [L("Stop and wait"), L("Overtake it fast"), L("Ride on the footpath")]]];
+    let i = 0, right = 0; const F = this._fOpen(`${this._fHead("🚦", L("Cycle safety licence test"))}<div class="job-goal" id="cl-n"></div><p class="job-brief" id="cl-q" style="font-size:17px"></p><div class="btn-row" id="cl-o" style="flex-direction:column"></div><div id="f-res"></div>`);
+    const ask = () => { if (i >= Q.length) { const pass = right >= 6; if (pass) { jl.licence = true; this._snap && this._snap("🪪", "Got my Cycle Safety Licence."); this.diary(L("Passed the Cycle Safety Licence test: {r}/8.", { r: right })); this._sfx("win"); } this._jsave(); this._fDone(F, `${right} / 8`, [pass ? L("🪪 PASSED! Traffic Inspector Singh gives you a real-looking licence card.") : L("Not yet. You need 6 right. Read the rules and try again.")]); return; }
+      const [q, o] = Q[i], opts = o.map((t, k) => ({ t, ok: k === 0 })).sort(() => Math.random() - 0.5); F.q("#cl-n").textContent = L("Question {a} of 8", { a: i + 1 }); F.q("#cl-q").textContent = q; F.q("#cl-o").innerHTML = opts.map((x, k) => `<button class="big-btn" id="cl-${k}">${x.t}</button>`).join(""); opts.forEach((x, k) => F.q(`#cl-${k}`).addEventListener("click", () => { if (x.ok) { right++; this._sfx(); } else { this._sfx("bad"); showToast(L("The safe answer: {a}", { a: o[0] }), 2400, "bad"); } i++; ask(); })); };
+    ask();
+  }
+
+  // ---------- 28. Teach your brother or sister the tables ----------
+  _teachTables() {
+    const S = this._sib(), jl = this._jl(), pr = this.progress; if (jl.teachDay === pr.day) { showToast(L("{n} is tired of tables today. Tomorrow!", { n: S.name }), 2200); return; }
+    const t = 2 + (pr.day % 8); let k = 0, right = 0; const Qs = [3, 7, 5, 9, 6, 8].map((m) => [t, m]);
+    const F = this._fOpen(`${this._fHead("✖️", L("Teach {n} the {t} times table", { n: S.name, t }))}<p class="job-brief">${L("{n} asks. You check the answer. Type the right answer.", { n: S.name })}</p><div class="job-goal" id="tt-q" style="font-size:20px"></div><div class="chat-row"><input id="tt-in" type="number"><button class="big-btn" id="tt-go">${L("Tell")}</button></div><div class="job-goal" id="tt-m"></div><div id="f-res"></div>`);
+    const inp = F.q("#tt-in"); inp.addEventListener("keydown", (e) => { e.stopPropagation(); if (e.key === "Enter") go(); });
+    const ask = () => { if (k >= Qs.length) { jl.teachDay = pr.day; jl.taught = (jl.taught || 0) + 1; this.addFriendship && this.addFriendship("family", 2, L("taught tables")); this._jsave(); this.diary(L("Taught {n} the {t} times table.", { n: S.name, t })); F.q(".chat-row").remove(); this._fDone(F, `${right} / ${Qs.length}`, [right >= 5 ? L("{n}: 'Now I know it! You are a better teacher than Mrs. Rao!'", { n: S.name }) : L("{n}: 'Hmm, let us practise again tomorrow.'", { n: S.name })]); if (right >= 5) this._sfx("win"); return; } const [a, b] = Qs[k], guess = k % 2 ? a * b + (k % 3 ? a : -a) : a * b; F.q("#tt-q").textContent = L("{n}: '{a} times {b} is {g}. Right?'", { n: S.name, a, b, g: guess }); inp.value = ""; inp.focus(); };
+    const go = () => { if (k >= Qs.length) return; const [a, b] = Qs[k], v = Number(inp.value); if (v === a * b) { right++; this._sfx(); F.q("#tt-m").textContent = L("✅ You explain: {a} × {b} = {c}. {n} writes it down.", { a, b, c: a * b, n: S.name }); } else { this._sfx("bad"); F.q("#tt-m").textContent = L("❌ Oops, {a} × {b} = {c}. Count it on fingers together.", { a, b, c: a * b }); } k++; setTimeout(() => F.alive() && ask(), 900); };
+    F.q("#tt-go").addEventListener("click", go); ask();
+  }
+
+  // ---------- 29. Rangoli at the door ----------
+  _rangoli() {
+    const jl = this._jl(), N = 5, pal = ["#ffffff", "#e63946", "#ffd166", "#06d6a0", "#118ab2", "#9d4edd", "#ff8fab"]; let col = 1; const grid = (jl.rangoli && jl.rangoli.length === N * N) ? jl.rangoli.slice() : new Array(N * N).fill(0);
+    const F = this._fOpen(`${this._fHead("🌸", L("Rangoli at the door"))}<p class="job-brief">${L("Pick a colour, tap a square. Mirror magic makes it pretty on all sides!")}</p><div class="btn-row">${pal.map((c, i) => `<button id="rg-c${i}" style="width:34px;height:34px;border-radius:50%;border:2px solid #333;background:${c}"></button>`).join("")}</div><div id="rg-g" style="display:grid;grid-template-columns:repeat(${N},1fr);gap:3px;max-width:260px;margin:8px auto"></div><div class="btn-row"><button class="big-btn" id="rg-s">✨ ${L("Put it at my door")}</button><button class="ghost-btn" id="rg-clr">${L("Clear")}</button></div>`);
+    const draw = () => { F.q("#rg-g").innerHTML = grid.map((v, i) => `<div id="rg-${i}" style="aspect-ratio:1;border-radius:6px;background:${pal[v]};border:1px solid #ccc;cursor:pointer"></div>`).join(""); grid.forEach((v, i) => F.q(`#rg-${i}`).addEventListener("click", () => { const r = Math.floor(i / N), c = i % N; for (const [rr, cc] of [[r, c], [r, N - 1 - c], [N - 1 - r, c], [N - 1 - r, N - 1 - c], [c, r], [N - 1 - c, r], [c, N - 1 - r], [N - 1 - c, N - 1 - r]]) grid[rr * N + cc] = col; this._sfx(); draw(); })); pal.forEach((c, k) => (F.q(`#rg-c${k}`).style.outline = k === col ? "3px solid #2a9d8f" : "")); };
+    pal.forEach((c, k) => F.q(`#rg-c${k}`).addEventListener("click", () => { col = k; draw(); }));
+    F.q("#rg-clr").addEventListener("click", () => { grid.fill(0); draw(); });
+    F.q("#rg-s").addEventListener("click", () => { if (!grid.some((v) => v)) { showToast(L("Colour some squares first."), 1800); return; } jl.rangoli = grid.slice(); jl.rangolis = (jl.rangolis || 0) + 1; this._jsave(); this._rangoliBuild(true); closePanel(); this._sfx("win"); this._snap && this._snap("🌸", "Made a rangoli at my door."); this.diary(L("Made a rangoli at the door.")); showToast(L("🌸 Your rangoli shines at the front door! Neighbours stop to look."), 3200, "good"); });
+    draw();
+  }
+  _rangoliBuild(force) {
+    const jl = this._jl(); if (!jl.rangoli || typeof HOME === "undefined") return; const sig = jl.rangoli.join(""); if (!force && this._rgSig === sig) return; this._rgSig = sig; if (this._rg3d) this.world.scene.remove(this._rg3d);
+    const pal = [0xffffff, 0xe63946, 0xffd166, 0x06d6a0, 0x118ab2, 0x9d4edd, 0xff8fab], G = new THREE.Group(), d = HOME.door, s = 0.36;
+    jl.rangoli.forEach((v, i) => { if (!v) return; const m = new THREE.Mesh(new THREE.PlaneGeometry(s * 0.95, s * 0.95), new THREE.MeshBasicMaterial({ color: pal[v] })); m.rotation.x = -Math.PI / 2; m.position.set(d.x - 0.9 + (i % 5) * s, 0.04, d.z - 2.6 + Math.floor(i / 5) * s); G.add(m); });
+    this.world.scene.add(G); this._rg3d = G;
+  }
+
+  // ---------- 30. Dadi's morning BP tablet ----------
+  _dadiTablet() {
+    const jl = this._jl(), pr = this.progress; if (jl.medDay === pr.day) { showToast(L("Dadi took her tablet today. Good job, little nurse!"), 2200); return; }
+    if (this.phase !== "morning") { showToast(L("Dadi's tablet is in the morning, after breakfast. Remind her tomorrow!"), 2600); return; }
+    const F = this._fOpen(`${this._fHead("💊", L("Dadi's morning tablet"))}<p class="job-brief">${L("Dadi: 'Which one is mine, beta? My eyes are weak.' The doctor wrote: ONE white round tablet, after breakfast, with water.")}</p><div class="btn-row" style="flex-direction:column"><button class="big-btn" id="dt-0">⚪ ${L("One white round tablet, with a glass of water")}</button><button class="big-btn" id="dt-1">🟡 ${L("Two yellow tablets, with tea")}</button><button class="big-btn" id="dt-2">🍬 ${L("A sweet instead, she will not know")}</button></div>`);
+    [0, 1, 2].forEach((k) => F.q(`#dt-${k}`).addEventListener("click", () => { closePanel(); if (k) { this._sfx("bad"); showToast(k === 1 ? L("❌ Wrong medicine can be dangerous! Always read the doctor's paper.") : L("❌ Medicine is serious. Never swap it for a sweet!"), 3200, "bad"); return; } const yest = jl.medDay === pr.day - 1; jl.medDay = pr.day; jl.medStreak = yest ? (jl.medStreak || 0) + 1 : 1; this._jsave(); this._sfx("win"); this.addFriendship && this.addFriendship("family", 1, L("cared for Dadi")); this.dialogue.say("Dadi", [L("Gulp. Thank you, my little doctor!"), L("You remembered {n} days in a row. My BP is happy!", { n: jl.medStreak })], null, { pitch: 420 }); }));
   }
 }
 

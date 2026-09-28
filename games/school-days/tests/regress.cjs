@@ -1,4 +1,4 @@
-// Full regression: every feature and fix the operator asked for, in a real browser, with real keys where it matters.
+// Full regression (v73: groups K and L cover the 30 new activities): every feature and fix the operator asked for, in a real browser, with real keys where it matters.
 const { chromium } = require('playwright');
 const results = []; const ok = (name, pass, info = '') => { results.push([pass ? 'PASS' : 'FAIL', name, info]); console.log(`${pass ? 'PASS' : 'FAIL'}  ${name}${info ? '  -- ' + info : ''}`); };
 const FIN = `window.__fin = () => { const g = window.__game; let n = 0; while (g.dialogue.active && n++ < 40) { const f = g.dialogue.onDone; g.dialogue.onDone = null; g.dialogue.close(); if (f) f(); } };`;
@@ -197,6 +197,131 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     ok('J1 pilot break: walk Sydney, Opera House in the city, back-to-cockpit spot', r.city === 'Sydney' && !!r.lm && r.back, JSON.stringify(r));
     ok('J2 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
   } catch (e) { ok('J pilot break', false, e.message); }
+
+  // ---------- K. v73 fun hub: 30 new things to do ----------
+  try {
+    p = await fresh();
+    await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.money = 20000; const s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); });
+    await p.click('#lb-fun'); const nb = await ev(p, () => document.querySelectorAll('[id^="fh-"]').length); ok('K1 🎲 hub opens with 30 activities', nb === 30, `${nb}`); await p.click('#f-x');
+    const J = () => ev(p, () => JSON.parse(JSON.stringify(window.__game.progress.jl || {})));
+    const next = () => ev(p, () => { const g = window.__game; g.progress.day++; window.__fin(); });
+    // K2 chore, one player: press up when the sister shouts NOW.
+    await ev(p, () => { window.__game._coLast = 0; window.__game._coChore(); });
+    for (let k = 0; k < 160; k++) { const t = await ev(p, () => { const c = document.querySelector('#co-cue'); return c ? c.textContent : 'gone'; }); if (t === 'gone') break; if (/NOW/.test(t)) await p.keyboard.press('ArrowUp'); if (await ev(p, () => !!document.querySelector('#f-ok'))) break; await p.waitForTimeout(100); }
+    ok('K2 two-hand chore done by lifting on NOW', (await J()).chores === 1, JSON.stringify((await J()).chores)); await ev(p, () => { const b = document.querySelector('#f-ok'); if (b) b.click(); });
+    // K3 cricket, one player: let every ball go past.
+    await ev(p, () => window.__game._cricket2()); await p.waitForFunction(() => !!document.querySelector('#f-ok'), null, { timeout: 45000 }).catch(() => {});
+    ok('K3 gully cricket over finishes with a result', (await J()).cricket === 1); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    // K4 hide and seek.
+    await ev(p, () => window.__game._hideSeek()); await p.waitForFunction(() => window.__game._hs && window.__game._hs.t > 0.2, null, { timeout: 40000 }).catch(() => {}); const hs = await ev(p, () => { const g = window.__game; if (!g._hs) return 'no game'; const s = g._hs.sp; g.player.position.set(s.x + 1, 0, s.z); return 'ok'; }); await p.waitForTimeout(600);
+    ok('K4 hide and seek: walk to the hiding place and find her', hs === 'ok' && (await J()).hideFound === 1, hs);
+    // K5 race.
+    await ev(p, () => { const g = window.__game, s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); g._sibRaceStart(); }); await p.waitForFunction(() => window.__game._sibRace && window.__game._sibRace.t > 0.1, null, { timeout: 30000 }); await ev(p, () => { const g = window.__game; const T = g._sibRace.T; g.player.position.set(T.x, 0, T.z + 1); }); await p.waitForTimeout(500);
+    ok('K5 race to the bus stop is won by getting there first', (await J()).raceWins === 1);
+    // K6 remote fight: share.
+    await ev(p, () => { window.__game._remoteFight(); document.querySelector('#rf-2').click(); window.__fin(); }); ok('K6 TV remote fight: share and make up', (await J()).madeUp === 1);
+    await ev(p, () => { window.__game._remoteFight(); document.querySelector('#rf-0').click(); window.__fin(); document.querySelector('#rf-0').click(); window.__fin(); }); ok('K6b remote fight: pull, Maa scolds, then make up', (await J()).fights === 1 && (await J()).madeUp === 2);
+    // K7 Bhai Dooj on its real date.
+    const f0 = await ev(p, () => { const g = window.__game; g._forceFest = null; return g._sibFest(); }); await ev(p, () => { const g = window.__game; g._forceFest = '2026-11-10'; g._sibFestival(); for (let k = 0; k < 5; k++) document.querySelector('#og-' + k).click(); document.querySelector('#sg-2').click(); window.__fin(); g._forceFest = null; });
+    ok('K7 Bhai Dooj only on the real date, then the puja in order', f0 === null && !!(await J()).fest.dooj2026);
+    // K8 week mystery: one clue per day.
+    for (let k = 0; k < 5; k++) { await ev(p, () => window.__game._weekMystery()); if (k < 4) { await p.click('#f-x'); await next(); } }
+    const m0 = await ev(p, () => window.__game.progress.money); await p.click('#wm-2'); ok('K8 week mystery: 5 clues on 5 days, then the right culprit', (await J()).wmSolved === 1 && (await ev(p, () => window.__game.progress.money)) === m0 + 200); await p.click('#f-ok');
+    // K9 annual day.
+    await ev(p, () => { window.__game._annualDay(); document.querySelector('#ad-0').click(); });
+    for (let d = 0; d < 4; d++) { await ev(p, () => window.__game._annualDay()); for (let k = 0; k < 5; k++) await ev(p, () => document.querySelector('#sp-hit').click()); await ev(p, () => document.querySelector('#sp-ok').click()); await ev(p, () => window.__fin()); await next(); }
+    ok('K9 annual day: 3 practice days, then the show', (await J()).shows === 1 && !(await J()).ad.act);
+    // K10 paw prints.
+    await ev(p, () => { const g = window.__game, s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); g._pawTrail(); window.__fin(); const P = g._paw; g.player.position.set(P.end.x, 0, P.end.z); }); await p.waitForTimeout(500);
+    await ev(p, () => { const g = window.__game, P = g._paw; g.player.position.set(P.owner.x, 0, P.owner.z); }); await p.waitForTimeout(500); await ev(p, () => window.__fin());
+    ok('K10 lost puppy: follow the prints, bring Tuffy back', (await J()).puppiesFound === 1);
+    // K11 birthday.
+    await ev(p, () => { window.__game._maaBirthday(); for (let k = 0; k < 3; k++) document.querySelector('#bd-0').click(); document.querySelector('#bs-0').click(); window.__fin(); }); ok('K11 surprise party for Maa', (await J()).parties === 1);
+    // K12 shop maths.
+    for (let k = 0; k < 5; k++) { if (k === 0) await ev(p, () => window.__game._shopMaths()); const a = await ev(p, () => { const t = document.querySelector('#sm-q').innerText, b = +t.match(/Bill: ₹(\d+)/)[1], n = +t.match(/₹(\d+) note/)[1]; return n - b; }); await p.fill('#sm-in', String(a)); await p.click('#sm-go'); await p.waitForTimeout(1000); }
+    ok('K12 kirana shop: 5 of 5 change right', (await J()).shopBest === 5); await p.click('#f-ok');
+    // K13 cycle.
+    await ev(p, () => { window.__game._cycleGoal(); for (let k = 0; k < 5; k++) { const b = document.querySelector('#cg-500'); if (b) b.click(); } }); ok('K13 bicycle bought with savings, parked at the door', (await J()).cycle === true && await ev(p, () => !!window.__game._cyc3d)); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    // K14 GK quiz.
+    const gk = await ev(p, () => { const g = window.__game; g._gkQuiz(); document.querySelector('#gk-50').click(); const off = [...document.querySelectorAll('[id^="gk-"]')].filter((b) => /^gk-\d$/.test(b.id) && b.disabled).length; document.querySelector('#gk-q2').click(); return off; }); ok('K14 quiz show: 50:50 removes two answers, quit takes the money', gk === 2 && (await J()).gkDay != null, `${gk}`); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    // K15 trees on real days.
+    await ev(p, () => { const g = window.__game, s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); g._plantTree(); window.__fin(); g.progress.jl.trees[0].last = '2000-01-01'; g._waterRealTree(0); });
+    ok('K15 tree planted, grows only with real-day watering', (await J()).trees[0].days === 2 && await ev(p, () => !!window.__game._trees3d && window.__game.interactables.some((i) => i._rtree)));
+    // K16 + K17 room decor and pets show at home.
+    await ev(p, () => { const g = window.__game; g._roomDecor(); document.querySelector('#rd-poster-1').click(); document.querySelector('#f-x').click(); g._petShop(); document.querySelector('#ps-0').click(); document.querySelector('#f-x').click(); const d = g.world.doors.find((x) => x.label === 'Our Home'); g.player.group.position.set(d.x, 0, d.z); g._enterRoom(d); window.__fin(); });
+    const home = await ev(p, () => { const g = window.__game, r = g.world.currentRoom; return { corner: !!(r && r._myCorner), pets: !!(r && r._myPets), feed: g.roomInteractables.some((i) => /pets/.test(i.prompt() || '')) }; });
+    ok('K16 decorated corner shows in my home', home.corner, JSON.stringify(home)); ok('K17 pet from the shop lives at home, with a feed spot', home.pets && home.feed, JSON.stringify(home));
+    await ev(p, () => { const g = window.__game; g.roomInteractables.find((i) => /pets/.test(i.prompt() || '')).activate(); }); ok('K17b feed the pets', (await J()).petFed === await ev(p, () => window.__game.progress.day));
+    // K31 Dadi tablet (morning).
+    await ev(p, () => { const g = window.__game; g.phase = 'morning'; g._dadiTablet(); document.querySelector('#dt-0').click(); window.__fin(); }); ok('K31 Dadi gets the right tablet in the morning', (await J()).medDay === await ev(p, () => window.__game.progress.day));
+    await ev(p, () => window.__game._exitRoom());
+    // K18 star map.
+    await ev(p, () => { const g = window.__game; g.phase = 'night'; g._starMap(); });
+    for (const [x, y] of [[40, 60], [200, 30], [250, 115], [300, 170], [60, 170]]) { const b = await ev(p, () => { document.querySelector('#sm2-c').scrollIntoView({ block: 'center' }); const r = document.querySelector('#sm2-c').getBoundingClientRect(); return [r.left, r.top, r.width / 340, r.height / 220]; }); const q0 = await ev(p, () => document.querySelector('#sm2-q').textContent); await p.mouse.click(b[0] + x * b[2], b[1] + y * b[3]); await p.waitForFunction((q) => !document.querySelector('#sm2-q') || document.querySelector('#sm2-q').textContent !== q || !!document.querySelector('#f-ok'), q0, { timeout: 8000 }).catch(() => {}); }
+    await p.waitForFunction(() => /\d \/ 5/.test(document.body.innerText), null, { timeout: 8000 }).catch(() => {}); ok('K18 star map: find all 5 in the sky', (await J()).starMaps === 1 && await ev(p, () => /5 \/ 5/.test(document.body.innerText)), await ev(p, () => { const s = document.querySelector('.score-big'); return s ? s.textContent : 'no score'; })); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    // K19 seasons.
+    const se = await ev(p, () => { const g = window.__game, out = {}; for (const m of [1, 3, 5, 12, 9]) { g._monthOverride = m; g._seasonBuild(); out[m] = { kites: !!g._kites, its: g.interactables.filter((i) => i._season).map((i) => i.prompt()).join('|') }; } g._monthOverride = null; g._seasonBuild(); return out; });
+    ok('K19 seasons: kites in January, Holi in March, mangoes in May, bonfire in December', se[1].kites && /Holi/.test(se[3].its) && /mango/.test(se[5].its) && /bonfire/.test(se[12].its) && !se[9].kites && !se[9].its, JSON.stringify(se));
+    // K20 music room.
+    await ev(p, () => window.__game._musicRoom()); await p.click('#mu-rec'); for (const k of ['a', 's', 'd', 'f', 'g']) { await p.keyboard.press(k); await p.waitForTimeout(80); } await p.click('#mu-rec');
+    ok('K20 music room: keys play, song is recorded and saved', ((await J()).song || []).length === 5 && await ev(p, () => !window.__game._uiBlocking() || !!document.querySelector('#mu-play')));
+    await p.click('#f-x');
+    // K21 sports day.
+    await ev(p, () => { window.__game._sportsDay(); document.querySelector('#sd-0').click(); }); await p.waitForTimeout(1700);
+    for (let k = 0; k < 60; k++) { await p.keyboard.press(k % 2 ? 'ArrowRight' : 'ArrowLeft'); if (await ev(p, () => !!document.querySelector('#f-ok'))) break; }
+    await p.waitForFunction(() => !!document.querySelector('#f-ok'), null, { timeout: 15000 }).catch(() => {});
+    const md = (await J()).medals || {}; ok('K21 sports day sprint: fast feet win gold', md.g === 1, JSON.stringify(md)); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    await ev(p, () => { window.__game._longJump(); }); for (let k = 0; k < 3; k++) { await p.waitForTimeout(400); await ev(p, () => document.querySelector('#lj-j') && document.querySelector('#lj-j').click()); await p.waitForTimeout(1100); }
+    await p.waitForFunction(() => !!document.querySelector('#f-ok'), null, { timeout: 12000 }).catch(() => {}); ok('K21b long jump: 3 tries give a result', await ev(p, () => !!document.querySelector('#f-ok'))); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    await ev(p, () => window.__game._tugWar()); await p.waitForTimeout(900); for (let k = 0; k < 40; k++) { await ev(p, () => { const b = document.querySelector('#tw-a'); if (b) b.click(); }); await p.waitForTimeout(40); if (await ev(p, () => !!document.querySelector('#f-ok'))) break; }
+    ok('K21c tug of war: pull fast and win', ((await J()).medals || {}).g === 2); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    // K22 kite fight.
+    await ev(p, () => { window.__game._kiteFight(); for (let k = 0; k < 5; k++) document.querySelector('#sp-hit').click(); document.querySelector('#sp-ok').click(); window.__fin(); }); ok('K22 kite fight', (await J()).kitesCut != null);
+    // K23 Saanp Seedi: rolls move the tokens, Dadi rolls by herself.
+    await ev(p, () => window.__game._saanpSeedi()); await p.keyboard.press('ArrowUp'); await p.waitForTimeout(1300); const ss = await ev(p, () => document.querySelector('#ss-m').textContent);
+    ok('K23 Saanp Seedi: you roll, then Dadi rolls', /Dadi rolls/.test(ss), ss); await p.click('#f-x');
+    // K24 chai.
+    await ev(p, () => { window.__game._makeChai(); for (let k = 0; k < 8; k++) document.querySelector('#og-' + k).click(); window.__fin(); }); ok('K24 chai made in the right order', (await J()).chai === 1);
+    // K25 bargain.
+    await ev(p, () => { window.__game._bargain(); for (let k = 0; k < 3; k++) document.querySelector('#bg-1').click(); }); ok('K25 sabzi mandi: fair offers save money', (await J()).mandiSaved === 55, String((await J()).mandiSaved)); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    // K26 litter.
+    await ev(p, () => { const g = window.__game, s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); g._litterStart(); });
+    const nl = await ev(p, () => window.__game._swachh ? window.__game._swachh.items.length : 0);
+    for (let k = 0; k < nl; k++) { await ev(p, (k) => { const g = window.__game, m = g._swachh.items[k]; g.player.position.set(m.position.x, 0, m.position.z); }, k); await p.waitForTimeout(250); }
+    await ev(p, () => { const g = window.__game, b = g._swachh.bin; g.player.position.set(b.x, 0, b.z + 1); }); await p.waitForTimeout(400);
+    ok('K26 clean the colony: pick up all litter, then the dustbin', nl >= 4 && (await J()).cleanups === 1, `${nl} pieces`);
+    // K27 letter.
+    await ev(p, () => { const g = window.__game; g._letterNani(); document.querySelector('#ln-0').click(); document.querySelector('#ln-p').click(); }); await next(); await ev(p, () => { window.__game._letterNani(); window.__fin(); });
+    ok('K27 letter to Nani, reply the next day', (await J()).letters === 1);
+    // K28 licence.
+    const RIGHT = ['Stop behind the line', 'The left side', 'A front light and a back reflector', 'Look back and show your right hand', 'People walking have the right to cross', 'A helmet', 'No, only one rider', 'Stop and wait'];
+    await ev(p, () => window.__game._cycleLicence()); for (let k = 0; k < 8; k++) await ev(p, (R) => { const b = [...document.querySelectorAll('#cl-o button')].find((x) => R.includes(x.textContent)); b.click(); }, RIGHT);
+    ok('K28 cycle safety licence passed', (await J()).licence === true); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    // K29 teach tables.
+    await ev(p, () => window.__game._teachTables()); for (let k = 0; k < 6; k++) { const a = await ev(p, () => { const m = document.querySelector('#tt-q').textContent.match(/(\d+) times (\d+)/); return m[1] * m[2]; }); await p.fill('#tt-in', String(a)); await p.keyboard.press('Enter'); await p.waitForTimeout(1000); }
+    ok('K29 teach the tables: 6 of 6', (await J()).taught === 1 && await ev(p, () => /6 \/ 6/.test(document.body.innerText))); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    // K30 rangoli.
+    await ev(p, () => { window.__game._rangoli(); document.querySelector('#rg-0').click(); document.querySelector('#rg-s').click(); }); ok('K30 rangoli at the door (mirrored)', ((await J()).rangoli || []).filter((v) => v).length === 4 && await ev(p, () => !!window.__game._rg3d));
+    // Every hub button opens without an error.
+    const bad = await ev(p, () => { const g = window.__game, out = []; for (const [, list] of g._funList()) for (const [k] of list) { g._lastErr = null; try { g._funRun(k); } catch (e) { out.push(k + ':' + e.message); } if (g._lastErr) out.push(k + ':' + g._lastErr); window.__fin(); if (document.querySelector('#f-x')) document.querySelector('#f-x').click(); if (g._hs) g._hideEnd(null); if (g._sibRace) g._sibRaceEnd(null); if (g._paw) { g.world.scene.remove(g._paw.G); g._paw = null; } if (g._swachh) { g.world.scene.remove(g._swachh.G); g._swachh = null; } } return out; });
+    ok('K32 all 30 hub buttons run with no error', bad.length === 0, bad.join(' | '));
+    ok('K33 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
+  } catch (e) { ok('K fun hub', false, e.message.slice(0, 300)); }
+
+  // ---------- L. Two players in the fun games ----------
+  try {
+    p = await fresh({ setup: async (q) => { await q.click('#av-2p'); await q.click('#av-boy'); await q.click('#av-p2girl'); } });
+    await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); });
+    await ev(p, () => window.__game._coChore()); for (let k = 0; k < 5; k++) { await ev(p, () => { for (const key of ['ArrowUp', 'w']) window.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true })); }); await p.waitForTimeout(250); }
+    ok('L1 two-player chore: up arrow and W together lift it', (await ev(p, () => (window.__game.progress.jl || {}).chores)) === 1);
+    await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    await ev(p, () => window.__game._tugWar()); await p.waitForTimeout(900); for (let k = 0; k < 30; k++) { await p.keyboard.press('w'); if (await ev(p, () => !!document.querySelector('#f-ok'))) break; } await p.waitForTimeout(400);
+    ok('L2 two-player tug of war: Player 2 pulls with W and wins', await ev(p, () => /Player 2's team wins/.test(document.body.innerText)));
+    await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
+    const cr = await ev(p, () => { window.__game._cricket2(); return document.querySelector('#c2-help').textContent; }); await p.keyboard.press('s'); await p.waitForTimeout(300); const m2 = await ev(p, () => document.querySelector('#c2-m').textContent);
+    ok('L3 two-player cricket: Player 2 bowls with S (fast)', /Player 2 bowls/.test(cr) && /Fast/.test(m2), m2); await p.click('#f-x');
+    ok('L4 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
+  } catch (e) { ok('L two players', false, e.message.slice(0, 300)); }
 
   await browser.close();
   const fails = results.filter((r) => r[0] === 'FAIL'); console.log(`\n==== ${results.length - fails.length} PASS, ${fails.length} FAIL ====`); fails.forEach((f) => console.log('FAIL: ' + f[1] + ' -- ' + f[2]));

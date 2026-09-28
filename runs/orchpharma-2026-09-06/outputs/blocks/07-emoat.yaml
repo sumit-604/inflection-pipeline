@@ -1,0 +1,58 @@
+stage: B07-emoat
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results: no quarterly or annual results filing in corpus"
+  - "rating: no credit rating bulletin or rationale in corpus"
+  - "announcements: no exchange / Reg 30 filings in corpus"
+  - "shareholding: no quarterly shareholding pattern in corpus"
+  - "research: no broker notes in corpus (non-anchored; no evidence effect)"
+  - "screening: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters CSVs are empty templates (collect_to_repo v3 defect); Data_Sheet used in their place"
+  - "presentation: image-based, 3124 chars over 14 pages; unusable, treated as not provided"
+  - "FY2026 primary filings absent: no FY2026 annual report and no FY2026 audited annual results filing"
+  - "annual report PDFs carry a corrupt OCR text layer across the financial statements"
+  - "no peer in the corpus makes cephalosporins or 7-ACA; peer corroboration of product-specific moats is unavailable"
+flags:
+  - {type: "FLAG-CLAIM-UNVERIFIED", reason: "the AR's own claim of being 'one of only three USFDA-approved sterile Cephalosporin facilities worldwide' (AR p.29) is company-stated and could not be corroborated against any third-party source in this corpus; scored as management claim, not documented fact"}
+  - {type: "FLAG-PROCESS-TECH-SHARED", reason: "the 7-ACA process/strain technology is licensed from an external technology partner who also supplies the named Chinese manufacturers Orchid competes against (Concall_Aug_2026 lines 383-390); undercuts any claim of a proprietary process moat under A3"}
+  - {type: "FLAG-SCALEUP-UNCERTAIN", reason: "management directly describes the 20x-to-800x pilot-to-commercial 7-ACA scale-up as 'a little unpredictable,' with yield and quality outcomes known only at first commercial batch, guided Feb-March 2027 (Concall_Aug_2026 lines 396-406)"}
+  - {type: "FLAG-BELOW-THRESHOLD", reason: "em_score of 23 is below the EM>=25 UA-multiplier qualifier threshold; this name does not clear the emerging-moat gate on the evidence in this corpus"}
+  - {type: "FLAG-NO-ANNOUNCEMENTS", reason: "no exchange announcements (Reg 30 filings) exist in this corpus; F2 promise-delivery and catalyst falsification run on concall/AR evidence only and cannot grade documented Reg 30 actions"}
+  - {type: "FLAG-PEER-GAP", reason: "no peer in the corpus makes cephalosporins or 7-ACA (Correction 5); category-specific claims (7-ACA pricing, competing capacity, US Ceftazidime-Avibactam market size) remain unverifiable by peer cross-check in this corpus"}
+em_score: 23
+em_classification: "MODEST"
+active_categories:
+  - {id: "R1", name: "Regulatory & policy tailwinds", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing through FY29 (PLI scheme window)"}
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-36m"}
+  - {id: "A2", name: "Patent and IP pipeline", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-36m"}
+  - {id: "B1", name: "Backward integration and RM security", strength: "Moderate", evidence_type: "documented", time_to_materialise: "6-24m"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-36m"}
+evidence_mix: {documented: 16, claim: 10, inference: 4}
+completionist_recount: "recount performed: 16 documented items across 7 categories (A1, A2, B1, G2, H2, H3, R1); 5 categories scored Strong/Moderate (R1, A1, A2, B1, H2), within the 3-6 realistic base rate; no 🎙️ claim was found credited as 📄 documented on recount"
+catalysts_12m:
+  - {catalyst: "7-ACA mechanical completion / first commercial batch", window: "by ~March 2027 (Q1 CY2027), reaffirmed Q4 FY26 and Q1 FY27 calls; date already moved twice (AR: Dec 2026 -> Q3 FY26 call: Sept 2026 -> Q4 FY26 call: March 2027)", evidence_type: "claim", anchor: "Concall_Aug_2026_Transcript.pdf p.9-10; Annual_Report_2025.pdf p.15"}
+  - {catalyst: "Cefiderocol validation batches / production readiness", window: "guided late 2026 (AR p.15) / December 2026 (Q3 FY26 call); ~9-month chronology conflict vs Q2 FY26's 'Q4 of FY26' wording, flagged not resolved", evidence_type: "claim", anchor: "Concall_Feb_2026_Transcript.pdf; Annual_Report_2025.pdf p.15"}
+  - {catalyst: "A second Enmetazobactam ex-India licensing deal (notably US)", window: "undated as of Q1 FY27 call; last specific date given was 'this/next quarter' on the Q4 FY26 call, already missed; 4 consecutive quarters of slipping specificity", evidence_type: "claim", anchor: "Concall_Aug_2026_Transcript.pdf; B05 repeated_evasions"}
+  - {catalyst: "Orchid AMS quarterly EBITDA breakeven", window: "FY27 target (by March 2027), guided on the Q2 FY26 call; drag narrowed to Rs 0.5 cr/qtr by Q1 FY27 but not yet zero", evidence_type: "claim", anchor: "Concall_Nov_2025_Transcript.pdf; Concall_Aug_2026_Transcript.pdf"}
+  - {catalyst: "Base-business EBITDA margin sustaining above the ~12% guided level", window: "FY27 (by March 2027); guided ~12% on the Q4 FY26 call, actual Q1 FY27 came in at ~8.2%, below both prior targets, and management declined to reaffirm a number when asked directly", evidence_type: "claim", anchor: "Concall_Jun_2026_Transcript.pdf; Concall_Aug_2026_Transcript.pdf"}
+capex_embedded_growth_pct: 161
+optionality_register:
+  - {optionality: "Enmetazobactam US (and China) out-licensing deal", converting_evidence: "a signed definitive licensing agreement with disclosed economics", first_appears: "concall opening remarks; no exchange filing exists in this corpus to check against", window: "FY27, already 4 quarters overdue on original 12-month guidance"}
+  - {optionality: "Cefiderocol India DCGI clinical-trial waiver and commercial launch", converting_evidence: "DCGI waiver grant, then a first commercial sale", first_appears: "concall / next AR", window: "Q3 FY28 (~Oct-Dec 2027), slipped three times already"}
+  - {optionality: "7-ACA commercial-scale yield and quality proof", converting_evidence: "first commercial batch data (yield %, quality spec) disclosed by management", first_appears: "concall following the March 2027 commissioning target", window: "~12 months from mechanical completion, through FY28"}
+  - {optionality: "Orchid AMS full breakeven and a disclosed FY revenue run-rate", converting_evidence: "a full financial year of AMS segment P&L with at least one positive-EBITDA quarter", first_appears: "concall / a future AR segment note", window: "FY27-28"}
+  - {optionality: "Dhanuka merger synergy (guided 'nearly 1-2%' EBITDA margin)", converting_evidence: "a reported EBITDA-margin bridge naming the specific synergy line items and bps delivered", first_appears: "post-merger quarterly concalls", window: "FY28"}
+  - {optionality: "'One of only three USFDA-approved sterile Cephalosporin facilities worldwide' claim", converting_evidence: "independent third-party corroboration (industry report, competitor filing, USFDA facility database cross-check)", first_appears: "outside this corpus; a live-web verification task", window: "unresolved in this corpus"}
+  - {optionality: "Base-business capital-employed/ROCE split from the pre-revenue growth engine", converting_evidence: "a voluntary segment disclosure separating Engine 1 and Engine 2 capital employed", first_appears: "next annual report (FY26 AR, not yet published)", window: "FY26 AR filing date, unknown"}
+  - {optionality: "War chest / balance-sheet strength trend", converting_evidence: "reintroduced total debt and cash disclosure with net debt/EBITDA on a clean, comparable consolidation basis", first_appears: "next quarterly concall", window: "next call"}
+combined_assessment: "AVOID"
+combined_reasoning: "Backward AVOID stands on the audited FY22-25 core score alone (29/100, ROCE never cleared 8.33%) independent of the FY2026 scope-mixed ratio (Correction 2); forward score of 23/92 stays in MODEST because the two largest emerging items, 7-ACA yield and Enmetazobactam ex-India monetisation, remain unproven claims management itself calls unpredictable, with a four-quarter delivery record graded B, so this is not the GOOD/AVERAGE-plus-EXPANSION transition setup the strategy hunts."
+top_moat_risks:
+  - "7-ACA pilot-to-commercial scale-up (20x done, ~800x remaining) is 'a little unpredictable' by management's own words; yield/quality unknown until first batch, guided Feb-March 2027"
+  - "The process/strain technology enabling 7-ACA is licensed from a partner that also supplies the Chinese competitors named as the threat, undercutting any proprietary-process claim"
+  - "Enmetazobactam US out-licensing has missed 4 consecutive quarters with decreasing specificity, undated as of the most recent call"
+  - "PBT/PAT and total debt/cash disclosure both dropped from the two most recent calls during a period leverage reportedly built"
+  - "Single operating segment reporting means no filed number ever separates the earning base business's returns from the growth engine's drag"
+analyst_note: "Two findings shape this scan's discipline beyond what the fields above carry. First, the 7-ACA process technology comes from an external partner who also supplies the Chinese manufacturers named as competitive threats (Concall_Aug_2026 lines 383-390); this is a documented relationship that actively undercuts, rather than supports, any claim of proprietary process advantage, and is why A3 scores 0 despite the scale of the 7-ACA capex. Second, em_score 23 sits below the EM>=25 UA qualifier the strategy uses; this name should NOT appear on any list of names crossing a threshold via I1/I2 (it crosses no threshold, and I1/I2 both scored 0 on their own structural tests). Section 2C's naive capex-embedded-growth arithmetic (161%, carried in the YAML field per the literal formula) is a mechanical overstatement flagged in the report body; the adjusted, captive-use-corrected figure is ~63% of FY25 revenue, itself still an unverified multi-year target with no company-stated number to check it against."

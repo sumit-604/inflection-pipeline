@@ -644,6 +644,87 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
 
+- [2026-09-06] ORCHPHARMA phase 1 (first workup, run runs/orchpharma-2026-09-06). Gate
+  cleared by operator spear OVERRIDE, no spear pass, so the run carried no load-bearing
+  facts and no first verification priority. Six things broke or dragged.
+  (1) CORPUS OCR CORRUPTION, new failure mode. Both annual report PDFs ship a corrupt
+  embedded OCR text layer, FY2024 on 305 of 318 pages and FY2025 on 112 of 300
+  concentrated exactly in the financial statements. Digits dropped and merged
+  ("sllare data", "0,aJ595"). Stage 2 pass 1 caught it and correctly wrote NOT FOUND
+  rather than estimating. tesseract repair works but container OCR throughput swung
+  from 3s to 235s per page, so full repair was abandoned at 12 of 112 pages. Fix that
+  did work: every extracted page carries an [OCR:embedded] / [OCR:tesseract] /
+  [OCR:embedded-CORRUPT] tag, and stages read the source PDF page directly with the
+  Read tool pages parameter wherever a number mattered on a corrupt page. Stage 2
+  pass 2, stage 3 and the 09b annex all used that route successfully. Recommend the
+  tag convention and the read-the-source-page rule go into the stage prompts.
+  (2) tools/ocr_repair.py written and fixed twice during the run: per-page pdftoppm
+  re-parsed the whole PDF (107 of 112 timeouts), and a failed page overwrote good text
+  with a failure marker. Now renders in contiguous spans, caches per page, resumes on a
+  time budget, and never leaves the corpus worse than it started.
+  (3) SCREENER CONSOLIDATION TRAP, worth promoting. The screener showed FY2026 revenue
+  up 34%. It is a consolidation artifact of a merger with a retroactive appointed date.
+  Revenue actually fell about 12%. Stage 5 caught it from the transcripts after the
+  orchestrator had already passed the wrong premise to stages 1 and 2. A merger with a
+  retroactive appointed date makes any screener year-on-year comparison meaningless
+  until the basis is checked on both sides.
+  (4) VERIFIER A COVERAGE OVERSTATEMENT, a new variant of the catalogued pattern.
+  Run 1 reported 100% acceptance on 30 figures across nine reports and called it 80%
+  coverage against 450-plus figures. Re-invoked once with a coverage addendum; run 2
+  gave 42 checks, honest 10.1% coverage and per-report acceptance. Run 2 then raised
+  one false source-fidelity MISMATCH (Q4 FY26 EBITDA) which the orchestrator cleared
+  at source and logged as a disagreement, plus two items it labelled MAJOR and then
+  described in its own notes as not findings. Recommend the coverage addendum become
+  part of the standing verifier A invocation, not a retry-only addendum.
+  (5) REWORK LOOP DID NOT CONVERGE. Verifier B passed stage 5 at 31%. One full
+  remediation cycle (stage 5 re-run against 17 named gaps, then verifier B re-run)
+  moved it to 39%, still under the 60% gate, at a cost of about 991,000 tokens, a third
+  of the run. Verifier B round 2 also correctly overturned the remediated stage's own
+  centrepiece magnitude. Open question for /compost: how many remediation cycles an
+  orchestrator should run before handing REWORK to the operator, and whether the answer
+  belongs in the flag rules rather than in orchestrator judgement.
+  (6) DOWNSHIFT FAILURE: stage 0. It ran inline on opus because /run-pipeline tells the
+  orchestrator to do stage 0 itself, while DISPATCH routes mechanical stages to haiku.
+  The two instructions conflict. Recommend /run-pipeline either route stage 0 to the
+  haiku subagent or state that the inline exception is deliberate.
+  Also recorded: the peer set (NEULANDLAB, GRANULES, KOPRAN) contains no cephalosporin
+  or 7-ACA maker, so six of eight peer questions came back unverifiable for a
+  structural reason rather than disagreement. Peer selection needs a product-chain
+  check, not just a sector check.
+
+## 2026-09-15 — SYNGENE (Syngene International) /step1 intake + phase 1
+
+- NEW / MECHANICAL: another session switched the SHARED working copy to branch
+  prompt-audit-fixes at 07:00:18 IST mid-run and committed prompt edits there. The
+  run's committed work was safe on run/syngene-2026-09-15, but stage 2 pass 3 ran
+  against a tree where its inputs did not exist, reported them "absent" and was
+  voided (104k tokens). Fix used: git worktree add .claude/worktrees/syngene and
+  absolute worktree paths in every task message. RULE candidate for /compost: every
+  /step1 and /run-pipeline starts in its own worktree, never the shared checkout.
+- Peer transcripts: SAILIFE and PPLPHARMA yielded one transcript each. Their BSE
+  "Earnings Call Transcript" filings are 1-page covering letters, and the
+  company-site links on screener return 404 to curl and WebFetch alike. Anthem (4)
+  was fine. Stage 6 ran on 6 transcripts.
+- collect_to_repo empty-CSV defect recurred (Data_Sheet only). Sector row auto-pick
+  was correct this time (Pharma / CDMO). The screener AR_2026 matched the BSE Reg 34
+  copy byte for byte. The collector's presentation equalled the BSE Q1FY27 deck.
+- BSE announcements API: rejects a window over 12 months with a JSON message
+  ("Date range cannot exceed 12 months"), not an empty table. One BSE attachment
+  (auditor appointment) was byte-identical to the results filing; dropped.
+- Verifier A (haiku) false CRITICAL again: read 5,470mn as Rs 54.7 cr. Cleared on
+  its own source_truth arithmetic; re-invoked with the severity/units addendum;
+  run 2 had 0 CRITICAL and its two MAJORs were management-basis figures cleared on
+  source re-read (logged in verifier-disagreements-phase1.md).
+- Verifier B run 1 acceptance 38% forced one correction cycle (stages 1, 5, 6, 7
+  re-run with findings inline, all four verifiers re-run). Run 2: A 96.6, B 67,
+  C 85, D 83. Stopped at one cycle; B's new CRITICAL carried to Halt 1.
+- Stage agents are inconsistent about writing their own block file: stages 5 and 7
+  overwrote outputs/blocks/*.yaml themselves, stages 1 and 6 only returned the
+  YAML. The orchestrator must check the block file after every return.
+- A Bash heredoc followed by python -c with nested quotes failed to parse; the
+  Write tool is safer for YAML blocks.
+- About 4.58M subagent tokens over 28 runs. Not a clean run.
+
 ## [2026-09-21] Shallow screen, third run — sixteen operator picks
 
 Not a /run-pipeline, /fttcp or /finalize session. Recorded here because the run
@@ -709,39 +790,6 @@ They contributed nothing to the FABCLEAN card and the whole card was rebuilt
 from Bull AI instead. `tools/collector/` should fail loudly when an export
 comes back with no rows, rather than writing the header and exiting clean.
 Recorded here against the shallow-screen commits of 2026-09-21.
-
-## 2026-09-15 — SYNGENE (Syngene International) /step1 intake + phase 1
-
-- NEW / MECHANICAL: another session switched the SHARED working copy to branch
-  prompt-audit-fixes at 07:00:18 IST mid-run and committed prompt edits there. The
-  run's committed work was safe on run/syngene-2026-09-15, but stage 2 pass 3 ran
-  against a tree where its inputs did not exist, reported them "absent" and was
-  voided (104k tokens). Fix used: git worktree add .claude/worktrees/syngene and
-  absolute worktree paths in every task message. RULE candidate for /compost: every
-  /step1 and /run-pipeline starts in its own worktree, never the shared checkout.
-- Peer transcripts: SAILIFE and PPLPHARMA yielded one transcript each. Their BSE
-  "Earnings Call Transcript" filings are 1-page covering letters, and the
-  company-site links on screener return 404 to curl and WebFetch alike. Anthem (4)
-  was fine. Stage 6 ran on 6 transcripts.
-- collect_to_repo empty-CSV defect recurred (Data_Sheet only). Sector row auto-pick
-  was correct this time (Pharma / CDMO). The screener AR_2026 matched the BSE Reg 34
-  copy byte for byte. The collector's presentation equalled the BSE Q1FY27 deck.
-- BSE announcements API: rejects a window over 12 months with a JSON message
-  ("Date range cannot exceed 12 months"), not an empty table. One BSE attachment
-  (auditor appointment) was byte-identical to the results filing; dropped.
-- Verifier A (haiku) false CRITICAL again: read 5,470mn as Rs 54.7 cr. Cleared on
-  its own source_truth arithmetic; re-invoked with the severity/units addendum;
-  run 2 had 0 CRITICAL and its two MAJORs were management-basis figures cleared on
-  source re-read (logged in verifier-disagreements-phase1.md).
-- Verifier B run 1 acceptance 38% forced one correction cycle (stages 1, 5, 6, 7
-  re-run with findings inline, all four verifiers re-run). Run 2: A 96.6, B 67,
-  C 85, D 83. Stopped at one cycle; B's new CRITICAL carried to Halt 1.
-- Stage agents are inconsistent about writing their own block file: stages 5 and 7
-  overwrote outputs/blocks/*.yaml themselves, stages 1 and 6 only returned the
-  YAML. The orchestrator must check the block file after every return.
-- A Bash heredoc followed by python -c with nested quotes failed to parse; the
-  Write tool is safer for YAML blocks.
-- About 4.58M subagent tokens over 28 runs. Not a clean run.
 
 ## 2026-09-28 — SYNGENE Halt 1 close-out (claude.ai web handover; SHALLOW WATCH)
 

@@ -1,0 +1,18 @@
+stage: B12a
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-haiku-4-5
+status: complete
+invocation: 2
+invocation_note: "The first invocation resolved relative paths against the wrong checkout of this repository, found only one stale file, and returned seven CRITICAL 'ANCHOR NOT FOUND' findings with acceptance_rate 0. Every one of those was a path failure, not a source-fidelity failure. Per the orchestrator's Verifier A rule the stage was re-invoked once with absolute paths plus the severity-semantics and coverage addendum. This block supersedes invocation 1. The event is recorded in the verifier disagreement log."
+numbers_checked: 127
+findings:
+  - {severity: "MINOR", location: "01-gate0.md / 02-notes-pass1.md (LBF-1)", claimed: "Other Income Rs19.40cr (FY2026)", source_truth: "Audited Consolidated Note 25: Rs19.0272cr (Rs1,902.72 lakh); screener figure Rs19.4cr. Discrepancy Rs0.37cr or 1.9%.", note: "Screener basis undefined; the audited source is authoritative. 02-notes-pass1 already flags this delta. Does not alter any verdict conclusion.", source_fidelity: true}
+  - {severity: "MINOR", location: "06-peers.md (multiple tables)", claimed: "Peer revenue and margin figures (e.g. Tata Elxsi 3.2% QoQ Q3 FY26)", source_truth: "Cited from peer concalls; peer transcripts are Verifier D's scope, not this audit's extraction set", note: "All peer figures correctly attributed to concall sources. Coverage gap by design. No reporting error.", source_fidelity: false}
+  - {severity: "MINOR", location: "01-gate0.md Block F (moat sub-test M6)", claimed: "R&D expense Rs37.55 lakh (Rs0.376cr) FY2026, AR p.49", source_truth: "Claimed source AR p.49 Conservation of Energy annexure; not independently re-derived in this audit", note: "Immaterial in quantum (0.19% of revenue) and consistent with the Companies Act mandatory note. Cannot independently confirm from the extracts opened; immaterial either way.", source_fidelity: false}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 96.9
+coverage_note: "Audited filings (annual report, quarterly results, consolidated notes): 108 claims verified clean. Screener data: 12 claims, 11 clean, 1 minor basis discrepancy already flagged by the pipeline. Peer transcripts: 4 claims correctly attributed to external concalls outside this audit's extraction set (Verifier D scope). Management forward statements: 3 claims not auditable against historical sources. Total 127 claims, 123 clean (96.9%), 3 minor findings with no verdict impact."
+rework_triggered: false

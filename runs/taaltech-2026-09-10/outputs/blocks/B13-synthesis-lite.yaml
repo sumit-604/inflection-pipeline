@@ -1,0 +1,35 @@
+stage: B13-synthesis
+mode: PHASE-1-LITE
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-opus-4-8
+status: complete
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0, FLAG-MARGIN-SOURCE, FLAG-CONCENTRATION, FLAG-DISCLOSURE, FLAG-SILENCE, FLAG-FILING-CONTROL, FLAG-DEMAND-GAP, FLAG-WC-GAP, FLAG-MARGIN-UNEXPLAINED, FLAG-CONCENTRATION-DUAL-READ, FLAG-ZERO-CAPEX, FLAG-RPT, FLAG-SEARCH-FAILURE, FLAG-SOM-BASIS, FLAG-SAM-SHARE-TENSION, FLAG-AI-UNRESOLVED]
+confidence_delta: {numerical: 96.9, redflag: 64, framework: 88, peer: 81.8, overall: 64}
+cash_determination: "INDETERMINATE"
+cash_determination_basis: "Not growth-induced: working capital grew about eight times faster than sales over FY26 and all three peers moved the other way in the same window. Not structural: the ageing tail is 2.0% of gross and the 31 March 2026 balance sheet date sits one month after a 24.6% sequential revenue step. Verdict therefore caps at PROCEED WITH CAVEATS on cash grounds alone; the run's verdict is PROCEED WITH FLAGS, which is a different axis."
+cash_missing_evidence: ["the contract-asset rollforward, absent from both note sets", "the H1 FY27 cash flow statement, due November 2026", "any management statement on the billing cycle; none exists in any filed document", "no rating agency rationale is obtainable: the FY2025-26 AR states no credit rating was required because fund-based and non-fund-based facilities were NIL"]
+margin_mechanism_partly_settled: "The US subsidiary's turnover is Rs5,350.15 lakh with PAT Rs303.90 lakh (5.68% net). It bills the parent Rs4,734.48 lakh, 88.5% of its own turnover, and that figure equals the parent's Cost of technical services line exactly. The onshore arm is a thin billing conduit, not a delivery organisation. Delivery sits offshore at Indian cost and the parent takes the residual at 28.3%. The 27.84% group operating margin already carries the US arm's 5.68% inside it, so consolidation inflates nothing. Anchors: AOC-1 p.162; Note 37(B) p.98."
+margin_mechanism_still_open: ["whether 28.3% in India survives a US transfer-pricing challenge; no transfer-pricing study and no advance pricing agreement is disclosed anywhere", "the residual gap against Onward Technologies, also offshore-heavy at similar size and earning about 13%", "the three-quarter revenue acceleration, a separate question and still unexplained"]
+peer_conclusions_withdrawn:
+  - "B06's 'genuinely anomalous margin' framing. Tata Elxsi's CFO calls 27-28% a band the company previously held and is working back to, on the same transcript page as the quote B06 used."
+  - "B06's 'modest, not alarming' concentration reframe. A top-25 aggregate is not a single-customer benchmark."
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Growth accelerating, cash falling, disclosure nearly absent"
+falsification_metric: "Q2 FY27 (Nov 2026) consolidated revenue below Rs57cr with unbilled revenue still above 20% of that quarter's revenue"
+monitorables_count: 8
+publish_candidate: true
+publish_candidate_summary: "Note 41 'Summarised Consolidated' table inside the audited consolidated statements is the standalone accounts with one expense line deleted: PBT overstated 57%, PAT 77.6%, CFO 54%, and Note 41(a) lists the parent as its own subsidiary. A smaller error in the same filing drew a next-day corrigendum; this one was never corrected."
+files_written:
+  - "runs/taaltech-2026-09-10/outputs/final/business-narrative.md"
+  - "runs/taaltech-2026-09-10/outputs/final/gate-recommendation.md"
+  - "runs/taaltech-2026-09-10/outputs/final/verifier-summary.md"
+  - "runs/taaltech-2026-09-10/outputs/final/verifier-disagreement-log.md"
+notion_save:
+  page_title: "TAAL Tech Ltd (TAALTECH) - phase 1 evidence run, 2026-09-10"
+  drive_link: "not applicable; this run lives in the repository at runs/taaltech-2026-09-10 on branch run/taaltech-2026-09-10"
+  mode: append-never-overwrite-status
+  note: "PHASE 1 LITE. The Notion save is the operator's to execute in claude.ai. No Decision Status is set by a pipeline run."

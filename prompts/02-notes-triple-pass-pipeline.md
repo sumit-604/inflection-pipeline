@@ -18,8 +18,8 @@ PIPELINE RULES:
   not skip any note, even if it looks routine.
 - Extract exact numbers in ₹ Crores. Do not round.
 - SOURCE ANCHORS: state the NOTE NUMBER and page for every finding, e.g.
-  (Note 27, p.187). A finding without an anchor counts against this
-  stage's verification acceptance rate.
+  (Note 27, p.187). The downstream verifier treats an unanchored finding
+  as unverified.
 - GROUNDED CLAIMS: report only what is in the document. If an expected
   disclosure is absent, write "NOT FOUND IN DOCUMENT". Never infer a
   typical value.
@@ -91,10 +91,8 @@ Here is what you found:
 Now go through the Notes AGAIN from the very beginning, Note 1 to the
 last note.
 
-CRITICAL INSTRUCTION: You have likely missed points in the first pass.
-This is normal; notes are dense and important items hide in
-routine-looking disclosures. Your job in this second pass is to find
-what you MISSED.
+This pass finds what Pass 1 did not cover. Notes are dense, and
+important items hide in routine-looking disclosures.
 
 RULES:
 - Complete the pass in one response. No stops.

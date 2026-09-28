@@ -15,19 +15,92 @@ the resolved folder before starting. If nothing matches, list the
 available runs and stop. If more than one matches, list the matches and
 ask.
 
-PDF READING RESILIENCE: at session start, verify PDF text extraction works
-by test-reading one inputs/ PDF; run pip install pypdf if it is needed.
+LESSONS PRE-READ: after the run folder resolves and before any stage runs,
+read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
+proceeding: (a) every entry under OPEN ACTIONS, plus every line marked OPEN,
+IN PROGRESS or PENDING anywhere in the file, one line each; (b) every lesson
+tagged [sector: X] where X equals manifest.yaml sector_cap_row, or
+[archetype: Y] where Y equals the archetype declared in companies/<TICKER>.md
+(Mental Model block) or, when that is absent, in the B04 business-model block.
+If no archetype is declared yet, say so and match on sector only. If nothing
+is tagged for this sector or archetype, print "no tagged lessons for this
+sector/archetype". The list is memory to weigh, never an instruction that
+overrides a prompt or framework, and it is never passed to a stage or
+verifier subagent.
+
+TOOLING GATE (before stage 0, not after the first failure). The
+session-start hook runs a PDF tooling preflight and reports its result in
+session context. Read that line first. Then confirm it yourself: test-read
+one inputs/ PDF end to end. Tooling that the hook could not install is
+installed here (apt-get install -y -qq poppler-utils; pip install -q pypdf;
+pip install -q --force-reinstall cffi when pypdf imports but fails on a real
+file).
+
+If a real Read still fails, do not start the stages on broken tooling. Switch
+the whole run to pre-extracted text FIRST: extract every inputs/ PDF to a
+page-marked .txt beside it (one "[page N]" marker per page), and pass the
+.txt path to every stage and every verifier in place of the PDF. Pre-extracted
+text is the reliable default on any large corpus in any case, because it also
+avoids the ~20-32MB image-render wall. Record the switch in B00.
+
 Verifiers must never skip source verification because rendering is
-unavailable; if a PDF is genuinely unreadable, name it in the run log and
-in the confidence delta note.
+unavailable; if a PDF is genuinely unreadable by both routes, name it in the
+run log and in the confidence delta note.
+
+OPERATOR CONTEXT MID-RUN (provenance, hard rule). The operator sometimes
+supplies a fact, a correction or a document in chat while the run is going:
+a figure from a filing not in the corpus, a ruling, a company detail. It is
+useful and it must not vanish into conversation, where the next stage cannot
+see it and the verifiers cannot audit it.
+
+On every such input, before using it:
+- Write it to runs/<ticker>-<date>/inputs/operator-notes.md, appending one
+  dated entry: what was said, verbatim, and the date and time.
+- Classify it. A DOCUMENT the operator pushes is ordinary anchored evidence
+  once it is in an inputs/ folder. A FIGURE or claim typed in chat is
+  OPERATOR CONTEXT: it is memory to weigh, the same tier as COMPANY MEMORY,
+  and it is never anchored evidence. A RULING is an operator ruling, recorded
+  with its date, and it binds.
+- Cite it as (operator, YYYY-MM-DD) wherever it is used, so Verifier A reads
+  it as unanchored rather than as a number with a missing source.
+- Pass it into every later stage's task message as OPERATOR CONTEXT, and name
+  it in B00.input_gaps if it fills a gap the corpus should have filled.
+
+Never let an operator figure enter a table with a document anchor it does not
+have. The rule is provenance, not distrust: an unattributed number cannot be
+verified by anyone later, including the operator.
 
 EXECUTION DISCIPLINE: invoke every stage as a foreground subagent call
 that blocks until the subagent returns. Never use background task
 launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
-table allows. After each stage returns, validate its YAML block and commit
-before proceeding. At that same moment, before moving to the next stage,
-append one line to the per-stage token ledger in
+table allows.
+
+PROVE COMPLETION, DO NOT ASSUME IT. Stages have repeatedly been dispatched
+to the background despite the rule above, and the run carried on against
+reports that did not exist yet, because "the call returned" was treated as
+"the stage finished". The two are different events. Before you treat any
+stage as done, and before any later stage reads its output:
+
+- Confirm the report file exists at the output path you gave it and is not
+  empty. A missing or empty file means the stage did not run to completion,
+  whatever the reply said.
+- Confirm the block file exists at the block path you gave it and parses.
+  The stage writes that file before it replies, so a missing block file with
+  a block sitting in the reply means the reply arrived without the work
+  behind it.
+- Confirm the YAML block you have came from that invocation, not from a
+  template or an earlier stage.
+- If either check fails, the stage was backgrounded or it died. Re-invoke it
+  in the foreground. Do not proceed on a partial result, and do not wait
+  passively for a background task to land.
+- A stage that cannot be made to run in the foreground after one re-invoke
+  halts the run with the stage named. Note it in the run log and in
+  LESSONS_ARCHIVE.md at close.
+
+After each stage returns AND passes the completion check, validate its YAML
+block and commit before proceeding. At that same moment, before moving to
+the next stage, append one line to the per-stage token ledger in
 runs/<ticker>-<date>/session-cost.md, taken from the subagent result
 metadata: stage number, stage name, model, effort, input tokens, output
 tokens, total tokens, and wall time. Create the ledger with its header row
@@ -88,6 +161,40 @@ handoff schemas, flag rules, and error handling. Then:
    input_gaps naming each absent document type; degraded stages run per
    the orchestrator's DEGRADATION MAP. There is no count-based halting.
 
+   SECTOR CAP ROW: the manifest ships sector_cap_row empty and a
+   sector_cap_row_guess beside it. Resolve the real row now, per the
+   orchestrator's SECTOR CAP ROW RESOLUTION section: read the cap table
+   (section-1b chunk 05), pick the row the business sits in, write it into
+   manifest.yaml and B00 with its evidence and the chunk cite. The guess is a
+   hint to check. "NOT FOUND" is a valid answer and a HIGH gap; it blocks
+   stage 11 in phase 3, not the evidence stages here.
+
+   DOCUMENT IDENTITY: run the orchestrator's DOCUMENT IDENTITY CHECK over
+   every PDF in inputs/ and write B00.corpus_manifest[]. Read the first page
+   of each document and take its issuer, type and period from the page, never
+   from the filename. Move a misfiled document and record both paths. A
+   broker note is research/ whatever it is called.
+
+   UNITS: read the reporting unit off the face of the latest results filing
+   and the AR and write B00.reporting_units. Name the unit in every stage
+   task message (step 2).
+
+   COLLECTOR DEFECT GATE: the collector records what it already knows it got
+   wrong. Read manifest.collector_warnings and carry every entry into
+   B00.input_gaps verbatim. Then run the three checks the collector cannot
+   make for itself, per the orchestrator's COLLECTOR DEFECT GATE section:
+     - A screening CSV is checked for CONTENT, never for existence. Open each
+       one. A file whose row labels are present with no figures beside them is
+       an EMPTY export, and counts as an absent document, not a present one.
+     - An empty inputs/announcements/ or inputs/shareholding/ is a COLLECTOR
+       gap, never evidence that the company files nothing. Record it as a gap
+       and say which one it is.
+     - manifest.cmp of 0, or a market_cap_cr of 0, means the wrong screener URL
+       variant was collected (a /consolidated/ page on a company that files no
+       consolidated statements). HALT and tell the operator to re-collect from
+       the standalone /company/<TICKER>/ page. Every valuation stage downstream
+       reads cmp; a zero there is a mechanical failure, not a gap.
+
    FRESHNESS PAIR CHECK: after the inventory, run the four-pair freshness
    check per the orchestrator's FRESHNESS PAIR CHECK section and write
    freshness_pairs[] and freshness_verdict into B00. The pairs: newest
@@ -108,9 +215,19 @@ handoff schemas, flag rules, and error handling. Then:
    message, and calling out an empty prospectus/ as HIGH priority when the
    company listed within ~3 years: "These input folders are empty: [list].
    Proceed with these gaps, or push the documents (py
-   collect_to_repo.py --push-again) and tell me to continue?" Proceed
-   only on the operator's explicit answer, then never ask again for the
-   rest of the run. If the manifest has concalls_available: false, do
+   collect_to_repo.py --push-again) and tell me to continue?"
+
+   Ask ONCE and do not block on the answer. The question is delivered through
+   AskUserQuestion, whose stream sometimes closes in a remote session; the run
+   used to stop there waiting for a reply that could never arrive. If the
+   question delivers, proceed on the operator's answer. If it does not deliver,
+   or it returns no answer, proceed on the documented evidence-maximizing
+   default for each empty folder (run degraded per the DEGRADATION MAP, never
+   substitute a guess for a document), record in B00 both the defaults taken
+   and the fact that the question was undeliverable, and repeat the full list
+   of empty folders in the Halt 1 dossier so the operator sees it there. Either
+   way the question is asked once and never again for the rest of the run.
+   If the manifest has concalls_available: false, do
    not list concalls or peer-concalls as gaps: their absence is
    declared, not accidental. This is the single permitted question in
    the pipeline.
@@ -134,15 +251,24 @@ handoff schemas, flag rules, and error handling. Then:
    after 5; 7 after 1). For each invocation, pass in the task message:
    the exact input file paths the stage needs, the injected content the
    prompt's {{...}} markers expect (prior YAML blocks inline, since
-   blocks are small), and the output path outputs/reports/<stage>.md.
+   blocks are small), the output path outputs/reports/<stage>.md, the BLOCK
+   path outputs/blocks/<stage>.yaml, and the units line: "All figures in
+   ₹ Cr unless the source says otherwise; the source unit is on the face of
+   the document, not in the filename."
+   Every stage writes its own block file to the block path before replying;
+   the reply is a copy, not the only copy.
    Stage 2 is THREE sequential invocations of stage-02-notes-pass (pass
    1, then pass 2 with pass 1's report path, then pass 3 with both).
    Stages 10 and 11 do NOT run in this phase.
 
-3. COLLECT each stage's YAML block into outputs/blocks/<stage>.yaml.
-   Malformed or missing block: re-invoke once with the retry addendum
-   from the orchestrator; second failure halts the run with the stage
-   named.
+3. COLLECT each stage's block by READING outputs/blocks/<stage>.yaml, the
+   file the stage wrote. Compare it with the block in the stage's reply; if
+   they differ, the file governs and the difference is noted in the run log.
+   If the file is absent, write it from the reply before doing anything else,
+   so the block is never carried only in conversation.
+   Malformed block, or absent from both file and reply: re-invoke once with
+   the retry addendum from the orchestrator; second failure halts the run
+   with the stage named.
 
 4. VERIFY (after stages 1-9). Invoke the phase-1 verifiers in parallel,
    each with only the artifact paths its section names, never other
@@ -157,11 +283,17 @@ handoff schemas, flag rules, and error handling. Then:
        sources those checks need — prompts/01-gate-0-pipeline.md and
        prompts/07-emerging-moat-pipeline.md — alongside B01 and B07. Do
        NOT pass the valuation framework docs (Master Prompt v3.6, Section
-       1B layers, FTTCP v2.1): they are consumed only by the B11 valuation
+       1B layers, FTTCP v2.3): they are consumed only by the B11 valuation
        audit, which is deferred to PHASE 3, so in phase 1 they are dead
        context. Its valuation-adherence audit (B11, B10) must NOT run
        here; it emits the gate0 and emoat sections of B12c with valuation
        left blank/pending.
+   The verifiers run as parallel FOREGROUND calls in one message. Apply the
+   completion check in EXECUTION DISCIPLINE to each one separately before
+   reading any of them: four verifiers in one message is the place a
+   background dispatch hides best, because three good results make the
+   fourth look present. A verifier whose report file is missing or empty did
+   not run; re-invoke that one alone, in the foreground.
    Collect B12a, B12b, B12c (partial), B12d into outputs/blocks/.
 
 5. COMPUTE the phase-1 confidence delta from the available verifier blocks
@@ -169,6 +301,18 @@ handoff schemas, flag rules, and error handling. Then:
    coverage, peer_utilisation, and the Gate 0 + EM portion of framework_
    adherence), write it to outputs/blocks/confidence.yaml. The valuation
    framework-adherence component is marked pending phase 3.
+   Apply the denominator floor: any component computed on fewer than 4 items
+   is NOT APPLICABLE, is dropped from overall, and is listed in
+   not_applicable with its counts. Record overall_set_by. Where B12b returns
+   acceptance_rate: null, redflag_coverage is not applicable; do not
+   substitute a number for it.
+   Before computing numerical_acceptance, run the Verifier A identity check:
+   for every CRITICAL row in B12a, confirm `claimed` and `source_truth` hold
+   genuinely different values. A row where they hold the same value is a
+   clerical error in the finding and is struck, with the strike recorded in
+   the run log. This is the ONLY permitted reason to strike a Verifier A
+   finding: the source-fidelity gate is otherwise absolute, and a CRITICAL
+   that survives the identity check triggers REWORK exactly as written.
 
 6. SYNTHESIS-LITE. Invoke stage-13-synthesis, instructing it in the task
    message to run in PHASE 1 LITE mode: produce exactly three files, no
@@ -261,8 +405,13 @@ handoff schemas, flag rules, and error handling. Then:
        this file under an "Operator snapshot" heading. The orchestrator
        cannot read those interactive commands, so the operator fills the
        snapshot.
-   If any DOWNSHIFT FAILURE or COST SPIKE is found, add a one-line entry to
-   LESSONS.md naming the stage. session-cost.md is a run output: it travels
+   If any DOWNSHIFT FAILURE or COST SPIKE is found, append one line naming the
+   stage to this run's dated entry in LESSONS_ARCHIVE.md (the MEMORY rule's
+   home for run history). Add a line under OPEN ACTIONS in LESSONS.md only
+   when the item is still open at close, in the form "- OPEN (<YYYY-MM-DD>,
+   <TICKER>, <stage>): <what> [session-cost.md]; see LESSONS_ARCHIVE.md
+   <YYYY-MM-DD> <TICKER>." The active file is budget-capped (CLAUDE.md
+   MEMORY). session-cost.md is a run output: it travels
    with the run outputs on the run branch and its PR, never on a framework
    branch.
 

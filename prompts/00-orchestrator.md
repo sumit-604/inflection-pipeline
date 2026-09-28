@@ -3,7 +3,7 @@
 
 Replaces the Gemini (Jaimini) upstream pipeline. One model family end to end.
 Valuation authority: Master Project Prompt v3.7, Section 1B layer set (v3.3
-Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name) (Four-Pillar
+Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name) (Four-Pillar
 Framework, RRM dual-track, Hurdle Ratio), FTTCP v2.3. No other exit PE source
 is permitted anywhere in the pipeline.
 
@@ -130,9 +130,17 @@ cmp: 412.50            # as of run date
 market_cap_cr: 1240
 run_date: 2026-07-09
 run_type: full         # full | refresh | valuation-only
-sector_cap_row: "Specialty chemicals"   # from Section 1B cap table
+sector_cap_row: ""     # EMPTY as collected. Stage 0 resolves it against the
+                       # Section 1B cap table and writes it back here. See
+                       # SECTOR CAP ROW RESOLUTION below.
+sector_cap_row_guess: "Specialty chemicals"   # collector keyword guess, a
+                       # hint to check, consumed by nothing
 listed_date: ""        # optional YYYY-MM-DD; if within ~3y of run_date the
                        # IPO prospectus is a MANDATORY collect + HIGH gap
+collector_warnings: [] # written by collect_to_repo.py: defects the collector
+                       # already detected (empty screener sheets, an empty
+                       # announcements/, a standalone fallback). Stage 0 copies
+                       # every entry into B00.input_gaps verbatim.
 notes: ""              # free text, passed to synthesis
 ```
 
@@ -208,6 +216,109 @@ This is a corpus-completeness gate, not a company-quality flag: it caps the
 gate on missing evidence, never on the business. It does not halt the run
 (no mechanical failure); the run proceeds degraded per the DEGRADATION MAP,
 and the named document goes on the operator's upload list at Halt 1.
+
+### COLLECTOR DEFECT GATE (stage 0 corpus audit, hard rule)
+
+A present file is not a present document. The collector ships known defects,
+and each one used to be rediscovered mid-run by the stage that needed the
+data. Stage 0 runs these checks with the folder inventory and records every
+result in `B00.input_gaps`.
+
+1. **manifest.collector_warnings.** The collector records the defects it
+   detected during collection. Copy every entry into `B00.input_gaps`
+   verbatim. An empty list is a clean collection, not a missing field.
+2. **Screening CSV content, never existence.** Open every file in
+   `inputs/screening/`. Screener's export holds raw values on Data Sheet and
+   formulas on Profit & Loss, Balance Sheet, Cash Flow and Quarters; when the
+   workbook carries no cached formula results, those sheets export with their
+   row labels intact and every figure blank. A CSV whose labels are present
+   with no numbers beside them is an ABSENT document. Record it as absent and
+   name the sheet. Never report a row count as evidence that a CSV is
+   populated.
+3. **Empty `announcements/` or `shareholding/` is a collector gap.** Neither
+   folder is evidence about the company. An empty `announcements/` means the
+   Reg 30 fetch found nothing or did not run, and it must never be read as "no
+   material events were filed"; the intent-and-action cross-check in stages 5,
+   7 and 8 degrades and says so. An empty `shareholding/` leaves the FII+DII
+   UA qualifier and the promoter pledge trend open, and the UA multiplier
+   (Amendment 3) cannot be applied on an unevidenced qualifier.
+4. **`cmp` or `market_cap_cr` of 0 is a MECHANICAL FAILURE, not a gap.** It
+   means the wrong screener URL variant was collected: a `/consolidated/` page
+   on a company that files no consolidated statements returns no price, no
+   market cap and no Financials export, and the main-company CSVs are missing
+   with it. This HALTS the run under MECHANICAL HALT AND RETRY RULES. Tell the
+   operator to re-collect from the standalone `/company/<TICKER>/` page. Every
+   valuation stage reads `cmp`; a run carrying zero there produces a verdict
+   against a price that does not exist.
+
+Checks 1 to 3 do not halt: they degrade per the DEGRADATION MAP with the gap
+named. Check 4 halts, because it is a collection failure, not a thin corpus.
+
+### SECTOR CAP ROW RESOLUTION (stage 0, hard rule)
+
+`manifest.sector_cap_row` must name an EXACT row of the Section 1B sector cap
+table. The collector no longer fills it: it writes `sector_cap_row: ""` and
+puts its keyword guess in `sector_cap_row_guess`, which nothing consumes.
+
+Stage 0 resolves the row and writes it into the manifest and into
+`B00.sector_cap_row`:
+
+1. Read the cap table (section-1b chunk 05, the resolved cap list).
+2. Pick the row the business actually sits in, from B04's business model where
+   B04 has run, else from the company's own description of what it sells.
+   `sector_cap_row_guess` is a hint to check, never an answer to accept.
+3. Record the row, the evidence for it, and the chunk cite in `B00`.
+4. If no row fits, write `sector_cap_row: "NOT FOUND"` and record it as a HIGH
+   gap. A missing row does not stop the evidence stages. It DOES block stage
+   11: there is no default row and no round-number substitute, and an ad hoc
+   cap is an operator ruling, not a stage decision.
+
+A wrong cap row silently caps or uncaps the destination PE, which is why it
+carried into roughly twenty runs before anyone saw it. The row is evidence
+like any other: it carries its reason.
+
+### DOCUMENT IDENTITY CHECK (stage 0 corpus audit, hard rule)
+
+A filename is a hint. The document's own first page is the fact. Documents
+arrive mislabelled and misfiled often enough that no stage may trust the
+folder it found a file in: broker notes filed as company presentations, an
+AR labelled with the wrong year, a peer's results in the main company folder.
+
+For every PDF in `inputs/`, stage 0 reads the first page and confirms three
+things, then records them in `B00.corpus_manifest[]` (one row per document:
+path, issuer, document type, period, and whether it matched the folder):
+
+1. **Issuer.** Whose document is this? A peer's filing in a main-company
+   folder is a misfile, and a broker note about the company is the broker's
+   document, NON-ANCHORED, never the company's own.
+2. **Document type.** Does it match the folder it sits in? A note written by
+   a brokerage is `research/`, whatever its filename says.
+3. **Period.** Which FY or quarter does it cover? Take the period from the
+   document, never from the filename. A wrong AR year propagates into every
+   backward baseline downstream.
+
+On a mismatch, move the document to the correct folder, record the move in
+`B00.input_gaps` with both paths, and use the corrected location everywhere.
+Where the document cannot be identified from its own pages, leave it where it
+is and mark it UNIDENTIFIED in the corpus manifest; an unidentified document
+is never anchored evidence.
+
+### UNITS DECLARATION (stage 0, and every task message)
+
+Indian filings mix ₹ lakh, ₹ million, ₹ crore and occasionally USD inside one
+corpus, and a single missed conversion moves a valuation by 10x or 100x.
+
+- Stage 0 reads the reporting unit off the face of the latest results filing
+  and the AR, and writes `B00.reporting_units` as, for example,
+  `{results: "INR Cr", annual_report: "INR Cr", screener: "INR Cr"}`. Where
+  two sources report in different units, both are recorded.
+- The orchestrator names the unit in EVERY stage task message:
+  "All figures in ₹ Cr unless the source says otherwise; the source unit is
+  on the face of the document, not in the filename."
+- Every figure a stage writes carries its unit in the anchor. A bare number
+  is an unanchored number.
+- Conversion happens ONCE, at stage 10 assembly, with the arithmetic shown.
+  No stage converts silently, and no stage converts a figure twice.
 
 ### NO-CONCALL MODE
 
@@ -322,12 +433,12 @@ support this override?" and leaves the answer to Keerti.
 | 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5 + web search | web + AR governance | `B08-promoter` |
 | 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5 + web search | web + AR + B04 | `B09-tam` |
 | 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
-| 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus 4.8 | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
+| 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus (agent alias) | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
 | 12a | Verifier A: numerical | verifier-a-numerical.md | Haiku 4.5 | all source PDFs + all reports | `B12a` |
-| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus 4.8 | 15 transcripts + B05 + B06 | `B12b` |
-| 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus 4.8 | B01, B07, B11 + framework docs | `B12c` |
+| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus (agent alias) | 15 transcripts + B05 + B06 | `B12b` |
+| 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus (agent alias) | B01, B07, B11 + framework docs | `B12c` |
 | 12d | Verifier D: peer coverage | verifier-d-peers.md | Sonnet 5 | peer transcripts + B06 | `B12d` |
-| 13 | Synthesis | 13-synthesis-pipeline.md | Opus 4.8 | everything | final outputs |
+| 13 | Synthesis | 13-synthesis-pipeline.md | Opus (agent alias) | everything | final outputs |
 
 Stages 1 and 2 may run in parallel. Stages 4, 5, 8, 9 may run in parallel
 after stage 3. Stage 6 requires stage 5. Stage 7 requires stage 1. Stages
@@ -341,8 +452,13 @@ prompt anchors every promise/delivery pair to named quarters.
 
 ## 3. HANDOFF BLOCK SCHEMA
 
-Every stage ends its output with a fenced YAML block. The orchestrator
-extracts it to `outputs/blocks/`. Prose above the block is the full report
+Every stage ends its output with a fenced YAML block AND writes that same
+block, by itself, to `outputs/blocks/<stage>.yaml` before it replies. The
+orchestrator passes the block path in the task message and reads the block
+from that FILE; the reply is a copy used only to confirm the two agree. A
+block that exists only in a chat reply is lost the moment the reply is
+truncated or the transcript is compacted, and the run then re-invokes a stage
+that already did its work. Prose above the block is the full report
 for `outputs/reports/`. The block is the handoff downstream stages read; the
 prose report is the archive and Verifier A's source-fidelity audit target
 (it must stay complete and anchored, never stripped). Reader-facing narrative
@@ -409,6 +525,25 @@ Stage-specific payload fields (the fields downstream stages actually read):
 
 No stage output ever halts the pipeline on company-quality grounds. Flags
 propagate; they never gate. The only halt conditions are mechanical (Section 7).
+
+**FLAG-DISAGREEMENT (cross-block figure conflict).** Two blocks reporting
+different values for the SAME audited figure is a reading error in one of
+them, not a range. Exactly one number was printed in the source. Whenever the
+orchestrator or stage 10 finds the same audited figure carried at two values:
+
+- Record both in `conflicts[]` with both anchors.
+- Go to the source document and settle it. The printed figure wins, and the
+  block that read it wrong is corrected at its anchor.
+- If the source cannot settle it inside the run, the figure is UNRESOLVED and
+  goes to `B10.unresolved[]`. It is never averaged, never split, and never
+  settled by picking the smaller of the two: a wrong number is not made safe
+  by being low.
+- Every unresolved audited figure that feeds a Section 1B pillar input is
+  carried into the verdict as a named limitation.
+
+This is a figure conflict rule. It does not touch conflicting JUDGMENTS
+(classifications, determinations), which stage 10 handles under its own
+rules.
 
 **FLAG-PROMOTER.** If B08.verdict is CONCERN or AVOID, synthesis must place
 this block inside the verdict line itself, not an appendix:
@@ -498,15 +633,36 @@ Before synthesis, the orchestrator computes from B12a-d:
 ```
 confidence_delta:
   numerical_acceptance: %      # from B12a
-  redflag_coverage: %          # B12b: share of verifier-found flags already caught upstream
+  redflag_coverage: %          # B12b.acceptance_rate: MATERIAL verifier-found
+                               # flags already caught upstream. null when
+                               # B12b.material_found < 4
   framework_adherence: %       # B12c
   peer_utilisation: %          # B12d: peers used substantively / peers provided
-  overall: min of the four
+  overall: min of the APPLICABLE components
+  overall_set_by: ""           # which component produced overall
+  not_applicable: []           # components dropped, each with its reason
 ```
+
+EVERY RATIO NEEDS A DENOMINATOR THAT CAN CARRY IT. A component computed on
+fewer than 4 items is NOT APPLICABLE: it is dropped from `overall`, listed in
+`not_applicable` with its counts, and reported to the operator as a count
+rather than a percentage. One item must not move a confidence score by 25
+points, and `overall: min of the four` let exactly that decide a verdict.
+
+`redflag_coverage` runs on Verifier B's MATERIAL findings (CRITICAL + MAJOR),
+never on the length of its list. Verifier B is asked for a thorough
+independent read, and scoring it on every minor observation made
+thoroughness lower the pipeline's confidence: an auditor who listed fifteen
+items and missed none scored below one who listed three. A MISSED item still
+binds through its own severity, which is the correct channel for it: a missed
+repeated evasion is CRITICAL and carries the weight of a CRITICAL.
 
 Interpretation bands for synthesis: overall ≥ 90 high confidence; 75-89
 normal, note specifics; 60-74 PROCEED verdicts downgrade one level; < 60
-forced REWORK.
+forced REWORK. Name `overall_set_by` wherever the band is quoted, so the
+reader sees which audit set the number. If fewer than two components are
+applicable, `overall` is NOT COMPUTED and the synthesis reports the component
+counts instead of a confidence band; it never fills the gap with a guess.
 
 ---
 
@@ -578,7 +734,7 @@ roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
 - Never lets any stage assume a number from conversation memory: stage 10
   is the only assembler of valuation inputs, and it must anchor every value.
 - Never lets any exit PE enter from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name).
+  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name).
 - Never conflates the Emerging Moat scan (stage 7) with FTTCP: FTTCP runs
   inside stage 11's framework inputs as final synthesis, per project
   taxonomy.

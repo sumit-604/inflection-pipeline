@@ -17,7 +17,71 @@ set -uo pipefail
 # stdout carries ONLY the final JSON. All logs go to stderr.
 log() { echo "$@" >&2; }
 
+emit() {
+  python3 - "$1" <<'PY'
+import json, sys
+print(json.dumps({
+    "hookSpecificOutput": {
+        "hookEventName": "SessionStart",
+        "additionalContext": sys.argv[1],
+    }
+}))
+PY
+}
+
+# PDF tooling preflight. The Read tool renders PDF pages with poppler
+# (pdftoppm) and pypdf needs a working cffi. A fresh web container ships
+# neither, and the failure surfaces late, as a verifier that "could not read
+# the source" long after the stage that needed it. Twenty-odd sessions paid
+# for this by hand. Install both here and verify with a real import.
+#
+# Web only: the operator's machine has its own tooling and must not have
+# packages installed under it by a hook. Never blocks: a failure is reported
+# so the session pre-extracts text instead of skipping source verification.
+pdf_preflight() {
+  local out=""
+  if command -v pdftoppm >/dev/null 2>&1; then
+    out="pdftoppm present"
+  else
+    apt-get update -qq >&2 2>&1 || true
+    apt-get install -y -qq poppler-utils >&2 2>&1 || true
+    if command -v pdftoppm >/dev/null 2>&1; then
+      out="poppler-utils installed"
+    else
+      out="POPPLER MISSING (pdftoppm could not be installed). Read cannot render PDF pages this session. Pre-extract every inputs/ PDF to page-marked .txt up front and point every stage and verifier at the .txt."
+    fi
+  fi
+  if python3 -c "import pypdf, cffi" >/dev/null 2>&1; then
+    out="$out; pypdf+cffi ok"
+  else
+    pip install -q --force-reinstall cffi >&2 2>&1 || true
+    pip install -q pypdf >&2 2>&1 || true
+    if python3 -c "import pypdf, cffi" >/dev/null 2>&1; then
+      out="$out; pypdf+cffi repaired"
+    else
+      out="$out; PYPDF/CFFI BROKEN: text extraction is unavailable. Name every unreadable PDF in the run log and in the confidence delta note. A verifier never skips source verification silently."
+    fi
+  fi
+  echo "PDF tooling preflight: $out"
+}
+
+# Deferred-work check (CLAUDE.md FERRY AND COMMIT HYGIENE). Read-only, so it
+# runs locally and on the web. It reports; it never blocks the session.
+lessons_check() {
+  # gh runs here in bash, where its sign-in is visible, and pipes the PR
+  # list to the checker. No gh or no sign-in: the checker says PRs were
+  # not checked.
+  { gh pr list --state all --limit 100 --search "created:>=2026-09-15" \
+      --json number,title,body 2>/dev/null || true; } |
+    python3 "${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/lessons-phrase-check.py" \
+      "${CLAUDE_PROJECT_DIR:-.}" --prs-json - 2>/dev/null || true
+}
+
 if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
+  LESSONS_CHECK="$(lessons_check)"
+  if [ -n "$LESSONS_CHECK" ]; then
+    emit "$LESSONS_CHECK"
+  fi
   exit 0
 fi
 
@@ -71,12 +135,15 @@ CTX="$CTX
 frameworks/ SHAs (git blob, HEAD after sync):
 $SHAS"
 
-python3 - "$CTX" <<'PY'
-import json, sys
-print(json.dumps({
-    "hookSpecificOutput": {
-        "hookEventName": "SessionStart",
-        "additionalContext": sys.argv[1],
-    }
-}))
-PY
+CTX="$CTX
+
+$(pdf_preflight)"
+
+LESSONS_CHECK="$(lessons_check)"
+if [ -n "$LESSONS_CHECK" ]; then
+  CTX="$CTX
+
+$LESSONS_CHECK"
+fi
+
+emit "$CTX"

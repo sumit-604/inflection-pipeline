@@ -20,10 +20,30 @@ analyse, judge, or estimate. You locate, copy, and anchor.
    structural"). Copy the upstream determination and its anchor. If
    upstream stages disagree on a value, record BOTH with anchors under
    conflicts[] and put the more conservative one in the table, marked.
+3a. RULE 3 COVERS JUDGMENTS ONLY. For an AUDITED FIGURE (anything printed in
+   a results filing, an annual report or a rating rationale) two blocks
+   cannot both be right: one number was printed. Do not apply rule 3's
+   conservative pick to it. Instead, open the source, read the printed
+   figure, and put THAT in the table anchored to the page. Record the
+   disagreement and the block that misread it in conflicts[]. If the source
+   is not in the corpus or does not settle it, the figure goes to
+   unresolved[] and stays out of the table. Never average two readings,
+   never split the difference, and never take the lower value as the safe
+   one: a misread number is not made safe by being small.
 4. NEVER estimate. A missing value is unresolved, full stop.
 5. Latest-period priority: where results PDFs are fresher than the AR
    (they will be), the results figure wins for latest FY / TTM fields;
    anchor accordingly.
+6. UNITS. This stage is the ONE place a unit conversion happens, and it
+   happens once. Read the reporting unit off the face of each source, never
+   off a filename and never by assuming: Indian filings mix ₹ lakh, ₹ million
+   and ₹ crore, and a US-listed peer reports in USD. The table is in ₹ Cr
+   throughout. For every figure whose source is not already ₹ Cr, show the
+   arithmetic in the anchor, for example
+   "1,240.5 (results Q1 FY27 p.3: ₹12,405 lakh / 10)". A figure whose source
+   unit you cannot establish is unresolved, not assumed. Carry
+   B00.reporting_units into the table header so the next reader sees what
+   each source reports in.
 
 ## THE TABLE TO FILL
 

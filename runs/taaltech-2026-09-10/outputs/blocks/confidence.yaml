@@ -1,0 +1,23 @@
+stage: confidence-delta
+company: "TAALTECH"
+run_date: "2026-09-10"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 96.9      # B12a, invocation 2, 127 numeric claims checked, 123 clean
+  redflag_coverage: 64            # B12b, (10 caught + 3 partial at half credit) / 18 in-scope flags
+  framework_adherence: 88         # B12c, phase-1 portion only: 86 of 98 Gate 0 + Emerging Moat rule checks
+  peer_utilisation: 81.8          # B12d, 9 of 11 transcripts mined substantively
+  overall: 64                     # the minimum of the four
+band: "60-74"
+band_rule: "PROCEED verdicts downgrade one level. Not a REWORK trigger: REWORK requires a Verifier A CRITICAL or an acceptance_rate below 60."
+rework_triggered: false
+rework_check:
+  verifier_a_critical_count: 0
+  lowest_acceptance_rate: 64
+  floor: 60
+  verdict: "no REWORK. Verifier A returned zero CRITICAL findings on 127 checked numbers, and the lowest acceptance rate (64, Verifier B) sits above the 60 floor."
+valuation_framework_adherence: "PENDING PHASE 3. Verifier C's B10/B11 audit does not run in phase 1."
+binding_component: "redflag_coverage at 64 sets the overall. Verifier B independently found 34 red flags, 18 of them inside the stage 5 and stage 6 scope, and the stages had caught 10 outright and 3 in part. The five missed MAJOR items are named in B12b. Two of Verifier B's own findings are CRITICAL and both are governance items it routed to stage 8, which had already reached CONCERN on overlapping evidence."
+notes:
+  - "B08 (promoter) and B09 (TAM) both carry status: partial. WebSearch failed on roughly 75-80% of stage 8 calls and on 20 of 20 stage 9 calls. Neither partial status feeds the four confidence components, but the synthesis must name both in the verdict block."
+  - "Verifier A's first invocation resolved relative paths against the wrong checkout, found one stale file, and returned seven false CRITICAL 'ANCHOR NOT FOUND' findings with acceptance_rate 0. It was re-invoked once with absolute paths per the orchestrator's standing Verifier A rule. Invocation 2 supersedes it and is the block of record. Logged in verifier-disagreement-log.md."

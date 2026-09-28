@@ -8,8 +8,7 @@
   "request": {
     "system": "You are a fixed calibration probe. Answer exactly as asked, with no preamble.",
     "prompt": "Write a single twelve-word sentence about a canary in a coal mine. Output only the sentence, no quotes, no trailing punctuation beyond a full stop.",
-    "max_tokens": 64,
-    "temperature": 0
+    "max_tokens": 64
   },
   "calibrated_at": null,
   "accepted": [],

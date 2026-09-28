@@ -123,6 +123,13 @@ Do not upgrade a stage's model without editing its agent file.
   to the other.
 - Every run ends with session-cost.md (see run-pipeline close-out). It travels
   with run outputs, never on the framework branch.
+- Deferred work is recorded. A commit message or PR description that says
+  "open action", "left for later" or "recorded as" needs a matching line in
+  LESSONS.md or LESSONS_ARCHIVE.md: the commit itself changes one of those
+  files, or a line names the commit's 8-character hash or the PR as "#N".
+  The session-start hook runs .claude/hooks/lessons-phrase-check.py over
+  commits and PRs since 2026-09-15 and reports any item without a match.
+  It reports; it never blocks a session.
 
 ## MEMORY
 /run-pipeline, /fttcp, /finalize, and /compost sessions read the ACTIVE
@@ -133,7 +140,9 @@ full dated run history lives in LESSONS_ARCHIVE.md (never deleted), read only
 by /compost and by humans. Every /run-pipeline, /fttcp, and /finalize session
 appends one dated entry at close to LESSONS_ARCHIVE.md, NOT to the active
 file: what broke or dragged this run, one line each; write 'clean run' if
-nothing. LESSONS.md is orchestrator-session memory only; no stage or verifier
+nothing. /finalize writes that entry in the fixed table of its step 8c and
+adds a LESSONS.md OPEN ACTIONS line only for rows still OPEN. LESSONS.md is
+orchestrator-session memory only; no stage or verifier
 subagent receives it. When /compost promotes a pattern into the active
 LESSONS.md, one old active lesson is reviewed for archiving so the token
 budget holds; the promotion is noted under PROMOTED TO LAW.

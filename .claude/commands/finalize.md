@@ -15,6 +15,19 @@ the resolved folder before starting. If nothing matches, list the
 available runs and stop. If more than one matches, list the matches and
 ask.
 
+LESSONS PRE-READ: after the run folder resolves and before any stage runs,
+read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
+proceeding: (a) every entry under OPEN ACTIONS, plus every line marked OPEN,
+IN PROGRESS or PENDING anywhere in the file, one line each; (b) every lesson
+tagged [sector: X] where X equals manifest.yaml sector_cap_row, or
+[archetype: Y] where Y equals the archetype declared in companies/<TICKER>.md
+(Mental Model block) or, when that is absent, in the B04 business-model block.
+If no archetype is declared yet, say so and match on sector only. If nothing
+is tagged for this sector or archetype, print "no tagged lessons for this
+sector/archetype". The list is memory to weigh, never an instruction that
+overrides a prompt or framework, and it is never passed to a stage or
+verifier subagent.
+
 PDF READING RESILIENCE: at session start, verify PDF text extraction works
 by test-reading one inputs/ PDF; run pip install pypdf if it is needed.
 Verifiers must never skip source verification because rendering is
@@ -62,6 +75,15 @@ Read prompts/00-orchestrator.md now (PHASES section and the rule that
 FTTCP deliberation conclusions supersede pipeline determinations in
 phase 3), then:
 
+BLOCK PATHS AND UNITS (every invocation below). Each stage writes its own
+YAML block to a file before it replies, so every task message names the block
+path outputs/blocks/<stage>.yaml alongside the report path, and carries the
+units line: "All figures in Rs Cr unless the source says otherwise; the
+source unit is on the face of the document, not in the filename." "Collect
+Bnn" below means READ outputs/blocks/<stage>.yaml, the file the stage wrote,
+and compare it with the block in the reply; the file governs. Write the file
+from the reply only if the stage failed to write it.
+
 1. STAGE 10 — INPUT ASSEMBLY. Invoke stage-10-assembly with the B01..B09
    blocks and the results PDFs AS BEFORE, and ADDITIONALLY the
    deliberation record outputs/final/fttcp-deliberation.md. The
@@ -93,26 +115,13 @@ phase 3), then:
    the deliberation record. Collect B10 into outputs/blocks/.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
-   existing wrapper: pass the NINE framework file paths from frameworks/
-   as its stable prefix plus B10, in this order —
-   Master_Project_Prompt_v3_6.md (resolves
-   {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}),
-   Section_1B_v3.3_Amendments.md ({{SECTION_1B_V33_AMENDMENTS}}),
-   Section_1B_v3_5_1_Reconciliation.md ({{SECTION_1B_V351_RECONCILIATION}},
-   the Pillar 1 normalization authority, which supersedes the standalone
-   Amendment 4.5), Section_1B_v3_6_Amendments.md
-   ({{SECTION_1B_V36_AMENDMENTS}}, Damodaran integration),
-   Section_1B_v3_7_Amendments.md ({{SECTION_1B_V37_AMENDMENTS}}, commodity
-   converter integration), Section_1B_v3_8_Amendments.md
-   ({{SECTION_1B_V38_AMENDMENTS}}, exit-basis symmetry and option resolution;
-   later layers govern the items they name where
-   the layers overlap), Section_1B_v3_9_Amendments.md
-   ({{SECTION_1B_V39_AMENDMENTS}}, relative-valuation cross-check and
-   forward-expectation exit framework), Section_1B_v3_10_Amendments.md
-   ({{SECTION_1B_V310_AMENDMENTS}}, growth symmetry in projections and
-   weighting), and FTTCP_v2_1_Consolidated.md
-   ({{FTTCP_V21_CONSOLIDATED}}). If frameworks/ is missing
-   any of the nine files, STOP and tell the user which to add. The FTTCP ROCE
+   existing wrapper. Its frontmatter preloads the section-1b skill (the
+   resolved Section 1B v3.3-v3.10 and FTTCP v2.3 rulebook), so do NOT pass
+   the Section 1B or FTTCP framework files. Pass
+   frameworks/Master_Project_Prompt_v3_6.md (resolves
+   {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}) as its stable prefix plus
+   B10. If .claude/skills/section-1b/SKILL.md or the Master Prompt file is
+   missing, STOP and tell the user which to add. The FTTCP ROCE
    forward verdict and structural/growth determination it consumes are
    the deliberation-confirmed ones carried on B10. ENTITY-COUNT GATE: when
    B10.entity_count is greater than one, stage 11 values PER ENTITY on each
@@ -281,7 +290,26 @@ answered from the blocks, write "the run did not establish this" rather than fil
      framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
    This is a plain record, not a decision. It gets committed with the rest.
 
-9. COMMIT all outputs and the updated companies/<TICKER>.md with message
+8c. LESSONS CLOSE-OUT. Before the commit, record what this run taught.
+   Append one dated entry to LESSONS_ARCHIVE.md (the MEMORY rule's home for
+   run history) in exactly this format:
+
+     ## <YYYY-MM-DD> — <TICKER> /finalize (runs/<ticker>-<date>)
+     | # | What went wrong or was corrected | Stage | File or rule | Status |
+     |---|---|---|---|---|
+     | 1 | <one line, plain words> | <stage number and name> | <file path, or rule and amendment> | CLOSED / OPEN |
+
+   One row per item: a verifier CRITICAL or MAJOR, a REWORK loop, a retry,
+   an operator override, a Verifier C check 15 chunk-vs-source divergence,
+   or a prompt or framework defect found. If nothing went wrong, write one
+   row: | 1 | clean run | all | none | CLOSED |. For every OPEN row, also
+   append one line under OPEN ACTIONS in LESSONS.md, in the form
+   "- OPEN (<YYYY-MM-DD>, <TICKER>, <stage>): <what> [<file or rule>]; see
+   LESSONS_ARCHIVE.md <YYYY-MM-DD> <TICKER>." Never add CLOSED rows to
+   LESSONS.md: the active file is budget-capped (CLAUDE.md MEMORY).
+
+9. COMMIT all outputs, the updated companies/<TICKER>.md and the LESSONS
+   files touched in step 8c with message
    "phase 3 (finalize): <ticker> <date>" and report to the user: the
    recommendation verdict line, the valuation decision, entry range, flags
    active, the full confidence delta overall, the devil's-advocate overall
@@ -318,7 +346,7 @@ Rules for you, the orchestrator session:
 - Deliberation conclusions supersede earlier pipeline determinations
   wherever they conflict; this is the phase-3 authority rule.
 - Never let any exit PE enter from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8; later layers govern the items they name).
+  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name).
 - Never paste full PDFs into subagent task messages; pass file PATHS.
 - Verifier independence is absolute.
 - Nothing halts on company quality; only mechanical failures halt.

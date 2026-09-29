@@ -203,7 +203,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   if (want('K')) try {
     p = await fresh();
     await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.money = 20000; const s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); });
-    await p.click('#lb-fun'); const nb = await ev(p, () => document.querySelectorAll('[id^="fh-"]').length); ok('K1 🎲 hub opens with 30 activities', nb === 30, `${nb}`); await p.click('#f-x');
+    await p.click('#lb-fun'); const nb = await ev(p, () => document.querySelectorAll('[id^="fh-"]').length); ok('K1 🎲 hub opens with 36 activities', nb === 36, `${nb}`); await p.click('#f-x');
     const J = () => ev(p, () => JSON.parse(JSON.stringify(window.__game.progress.jl || {})));
     const next = () => ev(p, () => { const g = window.__game; g.progress.day++; window.__fin(); });
     // K2 chore, one player: press up when the sister shouts NOW.
@@ -307,7 +307,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     await ev(p, () => { window.__game._rangoli(); document.querySelector('#rg-0').click(); document.querySelector('#rg-s').click(); }); ok('K30 rangoli at the door (mirrored)', ((await J()).rangoli || []).filter((v) => v).length === 4 && await ev(p, () => !!window.__game._rg3d));
     // Every hub button opens without an error.
     const bad = await ev(p, () => { const g = window.__game, out = []; for (const [, list] of g._funList()) for (const [k] of list) { g._lastErr = null; try { g._funRun(k); } catch (e) { out.push(k + ':' + e.message); } if (g._lastErr) out.push(k + ':' + g._lastErr); window.__fin(); if (document.querySelector('#f-x')) document.querySelector('#f-x').click(); if (g._hs) g._hideEnd(null); if (g._sibRace) g._sibRaceEnd(null); if (g._paw) { g.world.scene.remove(g._paw.G); g._paw = null; } if (g._swachh) { g.world.scene.remove(g._swachh.G); g._swachh = null; } } return out; });
-    ok('K32 all 30 hub buttons run with no error', bad.length === 0, bad.join(' | '));
+    ok('K32 all 36 hub buttons run with no error', bad.length === 0, bad.join(' | '));
     ok('K33 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
   } catch (e) { ok('K fun hub', false, e.message.slice(0, 300)); }
 
@@ -340,7 +340,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     await hub(22); for (let d = 0; d < 2; d++) { for (const k of ['talk', 'chai', 'film']) await click(`#fd-priya-${k}`); await G(() => { window.__game.progress.day++; window.__game._familyHub(); }); }
     const dl = (await F()).dating.priya, ring22 = await has('#fd-priya-ring'); await hub(25); const ring25 = await has('#fd-priya-ring');
     ok('M2 dating fills love to 70+, but Propose waits for age 25', dl >= 70 && !ring22 && ring25, `love ${dl}, at 22 ${ring22}, at 25 ${ring25}`);
-    await click('#fd-priya-ring'); await G(() => window.__fin()); await click('#wp-ok'); await p.waitForTimeout(200); await click('#wd-ok'); await G(() => window.__fin());
+    await click('#fd-priya-ring'); await G(() => window.__fin()); await click('#wp-ok'); await G(() => { const g = window.__game; if (g._cut && g._cut.kind === 'temple') g._endFlight(); }); await p.waitForTimeout(200); await click('#wd-ok'); await G(() => window.__fin());
     ok('M3 wedding at 25: Priya is the spouse', await G(() => (window.__game.progress.spouse || {}).name === 'Priya' && window.__game.progress.marriedAt === 25));
     await hub(); const l0 = (await F()).love; await click('#fs-cook'); const l1 = (await F()).love; await hub(); ok('M4 cook together raises love; once a day', l1 > l0 && !(await has('#fs-cook')), `${l0} -> ${l1}`);
     await G(() => { window.__game.progress.fam.love = 90; }); await hub(29); const b29 = await has('#fs-baby'); await hub(30); const b30 = await has('#fs-baby');
@@ -447,7 +447,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     await p.close();
     // Two players: the sister's own family line.
     p = await fresh({ setup: async (q) => { await q.click('#av-2p'); await q.click('#av-boy'); await q.click('#av-p2girl'); } });
-    const step = (age) => ev(p, (a) => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); window.__fin(); g.progress.age = a; g._famT = 0; g._tickFamily(); const t = g.dialogue.active ? g.dialogue.lines.join(' ') : ''; window.__fin(); const S = (g.progress.fam || {}).sib || {}; return { m: !!S.married, sp: S.spouse, kids: (S.kids || []).length, gk: (S.kids || [])[0] ? S.kids[0].kids.length : 0, t: t.slice(0, 90) }; }, age);
+    const step = (age) => ev(p, (a) => { const g = window.__game; if (g._cut) g._endFlight(); if (g.world.currentRoom) g._exitRoom(); window.__fin(); g.progress.age = a; g._famT = 0; g._tickFamily(); if (g._cut && g._cut.kind === 'temple') g._endFlight(); const t = g.dialogue.active ? g.dialogue.lines.join(' ') : ''; window.__fin(); const S = (g.progress.fam || {}).sib || {}; return { m: !!S.married, sp: S.spouse, kids: (S.kids || []).length, gk: (S.kids || [])[0] ? S.kids[0].kids.length : 0, t: t.slice(0, 90) }; }, age);
     const s29 = await step(29), s30 = await step(30), s39 = await step(39), s40 = await step(40), s59 = await step(59), s60 = await step(60);
     ok('O11 two players: the sister marries when Player 1 is 30 (a groom)', !s29.m && s30.m && ['Vikram', 'Aditya', 'Sahil'].includes(s30.sp), JSON.stringify([s29, s30]));
     ok('O12 her baby comes when Player 1 is 40', s39.kids === 0 && s40.kids === 1, JSON.stringify([s39.kids, s40.kids]));
@@ -456,6 +456,70 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     ok('O14 family panel and tree show the sister\'s family', /Ishaan|Siya/.test(hubT) && /Rudra|Aadhya/.test(hubT), '');
     ok('O15 no page errors', p.errs.length === 0 && !(await ev(p, () => window.__game._lastErr)), p.errs.join(' | ')); await p.close();
   } catch (e) { ok('O v75', false, e.message.slice(0, 300)); }
+  // ---------- P. v76: the temple wedding (garlands, mantras, seven pheras) ----------
+  if (want('P')) try {
+    p = await fresh();
+    const G = (fn, a) => ev(p, fn, a);
+    await G(() => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.age = 25; g._wedding(); document.querySelector('.use-btn[data-id="priya"]').click(); document.querySelector('#wp-ok').click(); });
+    const c0 = await G(() => { const g = window.__game, c = g._cut; return c ? { kind: c.kind, groom: c.opts.groom.name, bride: c.opts.bride.name, me: g.playerName, cap: document.getElementById('cut-bar').textContent, spouse: !!g.progress.spouse } : null; });
+    ok('P1 a boy\'s wedding plays at the temple: he is the groom, Priya the bride', c0 && c0.kind === 'temple' && c0.groom === c0.me && c0.bride === 'Priya' && /Shiv Mandir/.test(c0.cap) && !c0.spouse, JSON.stringify(c0));
+    await G(() => { window.__game._cut.t = 4.5; }); await p.waitForFunction(() => /Ganeshaya/.test((document.getElementById('cut-bar') || {}).textContent || ''), null, { timeout: 20000 }).catch(() => {});
+    ok('P2 Panditji chants the mantra', await G(() => /Om Shri Ganeshaya Namah/.test(document.getElementById('cut-bar').textContent)));
+    await G(() => { window.__game._cut.t = 16; }); await p.waitForFunction(() => /garland on/.test((document.getElementById('cut-bar') || {}).textContent || '') && window.__game._cut.t > 16.1, null, { timeout: 20000 }).catch(() => {});
+    const gar = await G(() => { const c = window.__game._cut, d = (m, f) => Math.hypot(m.position.x - f.position.x, m.position.z - f.position.z); return { onGroom: d(c.gB, c.groom), onBride: d(c.gG, c.bride), y: c.gB.position.y }; });
+    ok('P3 varmala: each garland ends on the other\'s neck', gar.onGroom < 0.2 && gar.onBride < 0.2 && gar.y > 1.9, JSON.stringify(gar));
+    await G(() => { window.__game._cut.t = 20; }); await p.waitForFunction(() => window.__game._cut.t > 20.2, null, { timeout: 20000 }).catch(() => {});
+    const ph = await G(() => { const c = window.__game._cut; return { r: Math.hypot(c.groom.position.x, c.groom.position.z), cap: document.getElementById('cut-bar').textContent }; });
+    ok('P4 seven pheras around the sacred fire', Math.abs(ph.r - 1.7) < 0.05 && /pheras/.test(ph.cap), JSON.stringify(ph));
+    await p.click('#cut-skip'); await p.waitForTimeout(300); const after = await G(() => ({ cut: !!window.__game._cut, card: !!document.querySelector('#wd-ok') }));
+    await G(() => { document.querySelector('#wd-ok').click(); window.__fin(); });
+    ok('P5 Skip ends the scene; then the wedding card; Priya is the wife', !after.cut && after.card && await G(() => window.__game.progress.spouse.name === 'Priya'), JSON.stringify(after));
+    ok('P6 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ')); await p.close();
+    p = await fresh({ setup: async (q) => { await q.click('#av-girl'); } });
+    const c1 = await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.age = 26; g._wedding(); document.querySelector('.use-btn').click(); document.querySelector('#wp-ok').click(); const c = g._cut; return c ? { groom: c.opts.groom.name, bride: c.opts.bride.name, me: g.playerName } : null; });
+    ok('P7 a girl at 26: she is the bride, the groom is her partner', c1 && c1.bride === c1.me && ['Arjun', 'Kabir', 'Rohit'].includes(c1.groom), JSON.stringify(c1)); await p.close();
+    p = await fresh({ setup: async (q) => { await q.click('#av-2p'); await q.click('#av-boy'); await q.click('#av-p2girl'); } });
+    const c2 = await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); window.__fin(); g.progress.age = 30; g._famT = 0; g._tickFamily(); const c = g._cut; const r = c ? { kind: c.kind, bride: c.opts.bride.name, groom: c.opts.groom.name, cap: document.getElementById('cut-bar').textContent } : null; if (c) g._endFlight(); const talk = g.dialogue.active; window.__fin(); return Object.assign({}, r, { talk }); });
+    ok('P8 two players: the sister\'s wedding at 30 also plays at the temple, then the family talks', c2 && c2.kind === 'temple' && c2.bride === 'Gudiya' && ['Vikram', 'Aditya', 'Sahil'].includes(c2.groom) && c2.talk, JSON.stringify(c2));
+    ok('P9 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
+  } catch (e) { ok('P temple wedding', false, e.message.slice(0, 300)); }
+
+  // ---------- Q. v77: only in School Days ----------
+  if (want('Q')) try {
+    p = await fresh();
+    const G = (fn, a) => ev(p, fn, a); const J = () => G(() => JSON.parse(JSON.stringify(window.__game.progress.jl || {})));
+    await G(() => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.money = 5000; const s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); });
+    await p.waitForFunction(() => !!document.getElementById('mood-chip') && (window.__game.progress.jl || {}).wa, null, { timeout: 20000 }).catch(() => {});
+    await G(() => window.__game._whatsapp()); const wa = await G(() => ({ n: document.querySelectorAll('#job-card b').length, dadi: /Dadi/.test(document.body.innerText) && /Good morning|Suprabhat/.test(document.body.innerText) }));
+    await G(() => document.querySelector('#wa-0').click()); ok('Q1 family WhatsApp group: Dadi\'s good morning, and you reply', wa.dadi && (await J()).wa.replied === '🙏', JSON.stringify(wa));
+    const q1 = await G(() => { window.__game._dailyQ(); return document.querySelector('#dq-q').textContent; });
+    for (let k = 0; k < 5; k++) await G(() => document.querySelector('#dq-o button').click());
+    const dq = (await J()).dq; await G(() => window.__game._dailyQ()); const again = await G(() => !!document.querySelector('#dq-share') && !document.querySelector('#dq-q'));
+    ok('Q2 Aaj ka Sawaal: 5 questions, a 🟩🟥 grid, one try a day, share button', dq && [...dq.grid].length === 5 && again, JSON.stringify(dq));
+    const p2 = await browser.newPage({ viewport: { width: 1280, height: 720 } }); openPages.push(p2); await p2.goto('http://localhost:8765/game.html'); await p2.evaluate(() => { localStorage.clear(); localStorage.setItem('school-days.profile', 'nursery'); }); await p2.reload(); await p2.waitForSelector('#start-btn'); await p2.click('#start-btn'); await p2.waitForFunction(() => window.__game && window.__game.player, null, { timeout: 60000 });
+    const q2 = await p2.evaluate(() => { window.__game._dailyQ(); return document.querySelector('#dq-q').textContent; }); await p2.close();
+    ok('Q3 another player on the same day gets the same first question', q1 === q2, `${q1} | ${q2}`);
+    await G(() => { const x = document.querySelector('#f-x'); if (x) x.click(); const g = window.__game; g._makeChai(); document.querySelector('#f-x') && document.querySelector('#f-x').click(); g._makeChai(); document.querySelector('#f-x') && document.querySelector('#f-x').click(); });
+    const c1 = ((await J()).sk || {}).cook; await G(() => { const g = window.__game; g.progress.day++; g._makeChai(); document.querySelector('#f-x') && document.querySelector('#f-x').click(); }); const c2 = ((await J()).sk || {}).cook;
+    await G(() => window.__game._skillsPanel()); const bars = await G(() => document.querySelectorAll('#job-card [style*="background:#2a9d8f"]').length);
+    ok('Q4 skills grow once a day per activity; the panel shows 7 skills', c1 === 1 && c2 === 2 && bars === 7, `${c1} ${c2} ${bars}`);
+    await G(() => { const g = window.__game; g._remoteFight(); document.querySelector('#rf-2').click(); window.__fin(); }); const pu = (await J()).punya;
+    await G(() => { const g = window.__game, pr = g.progress; pr.jl.punya = 12; pr.day = 3; pr.age = 21; g._luck(); }); const lk = (await J()).lucky;
+    ok('Q5 Punya: sharing the TV adds Punya; high Punya brings good luck', pu === 2 && lk === 1, `${pu} ${lk}`);
+    await G(() => { const g = window.__game; g._garden(); document.querySelector('#gd-0-p-tomato').click(); for (let k = 0; k < 4; k++) { g.progress.jl.garden[0].last = '2000-01-0' + (k + 1); g._garden(); document.querySelector('#gd-0-w').click(); } });
+    const m0 = await G(() => window.__game.progress.money); await G(() => { document.querySelector('#gd-0-h').click(); document.querySelector('#gd-sell').click(); }); const m1 = await G(() => window.__game.progress.money);
+    ok('Q6 kitchen garden: plant, water on 4 real days, harvest, sell', m1 - m0 === 90 && await G(() => !!window.__game._gd3d && window.__game.interactables.some((i) => i._garden)), `${m1 - m0}`);
+    const md = await G(() => { const g = window.__game; g.progress.energy = 10; const m = g._mood(); g._moodChip(); return { face: m.face, r: m.reasons.join('|'), chip: document.getElementById('mood-chip').textContent }; });
+    ok('Q7 mood face with reasons (tired)', /tired/.test(md.r) && /Mood/.test(md.chip), JSON.stringify(md));
+    await G(() => { const g = window.__game; g.progress.energy = 90; g.phase = 'night'; g._dadiStory(); window.__fin(); const want = g._storyCards()[0][4][0]; [...document.querySelectorAll('[id^="sc-"]')].find((b) => b.textContent === want).click(); window.__fin(); });
+    const cards = (await J()).cards || []; await G(() => { window.__game._dadiStory(); }); const once = await G(() => /story cards/.test(document.body.innerText));
+    ok('Q8 Dadi\'s story at night, answer right, win the card; one story a night', cards.length === 1 && once, JSON.stringify(cards));
+    await G(() => { const x = document.querySelector('#f-x'); if (x) x.click(); const g = window.__game; g.progress.album = [{ icon: '👶', text: 'Born', age: 0, day: 1 }, { icon: '🎒', text: 'First day at school', age: 4, day: 2 }]; g._lifeMovie(); });
+    await p.waitForTimeout(3500); const mv = await G(() => document.getElementById('lm-t') && document.getElementById('lm-t').textContent);
+    ok('Q9 life movie plays the album', /Born|First day|life of/.test(mv || ''), mv);
+    ok('Q10 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ') + (await G(() => window.__game._lastErr || ''))); await p.close();
+  } catch (e) { ok('Q only in School Days', false, e.message.slice(0, 300)); }
+
   await browser.close();
   const fails = results.filter((r) => r[0] === 'FAIL'); console.log(`\n==== ${results.length - fails.length} PASS, ${fails.length} FAIL ====`); fails.forEach((f) => console.log('FAIL: ' + f[1] + ' -- ' + f[2]));
 })();

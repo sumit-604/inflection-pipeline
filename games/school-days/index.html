@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v75";
+const GAME_VERSION = "v77";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -8271,6 +8271,7 @@ class Game {
     const c = this._cut; if (!c) return; this._cut = null;
     for (const el of [c.bar, c.skip, c.fade]) try { el.remove(); } catch (e) { /* already gone */ }
     if (c.kind === "tour") { this.player._placeCamera(1); if (c.onDone) c.onDone(); return; }
+    if (c.kind === "temple") { this.world.scene.remove(c.G); this.player._placeCamera(1); if (c.onDone) c.onDone(); return; }
     if (this._cabin) this._cabin.group.visible = false;
     if (c.kind === "train") { if (this._coachIn) this._coachIn.group.visible = false; if (this._country) this._country.group.visible = false; const P = this.player.group; this.world.scene.add(P); P.position.set(-79, 0, RAIL.platformZ + 1.5); P.rotation.set(0, 0, 0); standPose(P); this.player._placeCamera(1); playSuccess(); c.onDone(); return; }
     const pl = c.plane, h = this._parkedHome; pl.position.set(h.x, h.y, h.z); pl.rotation.set(0, Math.PI / 2, 0); pl.visible = true;
@@ -8872,7 +8873,7 @@ class Game {
     const pr = this.progress;
     const card = openPanel(`<div class="job-title-row"><h2>💍 ${L("Maa has a question")}</h2></div><p class="job-brief">${L("Maa: 'You are {a}, settled, with a good job. Three families have sent proposals. Meet them at the tea house and tell me who feels like home.'", { a: pr.age })}</p><div class="shop-list">${partnersFor(!!this.player.girl).map((p) => `<div class="cart-row"><div><b>${p.name}</b>, ${L(p.job)}<small>"${L(p.line)}"</small></div><button class="use-btn" data-id="${p.id}">${L("Choose")}</button></div>`).join("")}</div>`);
     card.querySelectorAll(".use-btn").forEach((b) => b.addEventListener("click", () => {
-      const p = PARTNERS.find((x) => x.id === b.dataset.id); closePanel(); this._weddingPlan(p, () => this._weddingDay(p)); }));
+      const p = PARTNERS.find((x) => x.id === b.dataset.id); closePanel(); this._weddingPlan(p, () => this._p1Temple(p, () => this._weddingDay(p))); }));
   }
   _weddingDay(p) {
     const pr = this.progress; const card = openPanel(`<div class="job-title-row"><h2>💍 ${L("The wedding")}</h2></div>`); { pr.spouse = { id: p.id, name: p.name, job: p.job, look: p.look, pitch: p.pitch }; pr.marriedAt = pr.age; pr.generations = Math.max(pr.generations || 1, 1);
@@ -9173,7 +9174,7 @@ class Game {
     requestAnimationFrame(this._loop);
     const dt = Math.min(this.clock.getDelta(), 0.05), elapsed = this.clock.elapsedTime;
     if (this._sim) { try { this._tickSim(dt); } catch (e) { this._reportError(e); this._simClean(); } this.world.update(dt, elapsed, this._sim ? this._sim.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
-    if (this._cut) { try { if (this._cut.kind === "train") this._tickTrain(dt, elapsed); else if (this._cut.kind === "tour") this._tickTour(dt); else this._tickFlight(dt, elapsed); } catch (e) { this._reportError(e); this._endFlight(); } this.world.update(dt, elapsed, this._cut ? this._cut.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
+    if (this._cut) { try { if (this._cut.kind === "train") this._tickTrain(dt, elapsed); else if (this._cut.kind === "tour") this._tickTour(dt); else if (this._cut.kind === "temple") this._tickTemple(dt); else this._tickFlight(dt, elapsed); } catch (e) { this._reportError(e); this._endFlight(); } this.world.update(dt, elapsed, this._cut ? this._cut.focus : this.player.position); if (!this._contextLost) this.renderer.render(this.world.scene, this.camera); return; }
     if (this._park && !this._uiBlocking()) { const mv = this.input.move || { x: 0, y: 0 }; if (this.ui.setInteractPrompt) this.ui.setInteractPrompt(L("Get off the {k}", { k: L(this._park.kind === "seesaw" ? "see-saw" : this._park.kind) }) + (this.input.isTouch ? "" : "  (E)")); if (this.input.interactPressed() || (this._park.t > 0.6 && (Math.abs(mv.x) > 0.5 || Math.abs(mv.y) > 0.5))) this._endPark(); }
     const blocked = this._uiBlocking() || !!this._park;
     this.player.update(dt, blocked ? { x: 0, y: 0 } : this.input.move, this.input.running, blocked ? 0 : this.input.cameraDelta(dt), this.input.cameraIdleFor());
@@ -11418,6 +11419,7 @@ class Game {
     this._tickUmbrella();
     try { this._tickFun && this._tickFun(dt); } catch (e) { this._reportError && this._reportError(e); }
     try { this._tickFamily && this._tickFamily(); } catch (e) { this._reportError && this._reportError(e); }
+    try { this._tickUnique && this._tickUnique(dt); } catch (e) { this._reportError && this._reportError(e); }
     this._lifeButtons();
     this._tickMusic(dt);
     const pr = this.progress, t = performance.now() / 1000;
@@ -11732,6 +11734,7 @@ class Game {
   _funList() {
     const S = this._sib(), fest = this._sibFest();
     return [
+      ["✨ " + L("Only in School Days"), [["wa", "📱", L("Family WhatsApp group")], ["dq", "🗓️", L("Aaj ka Sawaal (daily)")], ["skills", "📊", L("My skills and Punya")], ["garden", "🌱", L("Kitchen garden")], ["story", "📖", L("Dadi's story cards")], ["movie", "📽️", L("My life movie")]]],
       ["👫 " + L("With your {r} {n}", { r: S.rel, n: S.name }), [["chore", "🛏️", L("Two-hand chore")], ["cricket", "🏏", L("Two-player cricket")], ["hide", "🙈", L("Hide and seek")], ["race", "🏃", L("Race to the bus stop")], ["remote", "📺", L("TV remote fight")], ["fest", "🧵", fest ? fest.name : L("Rakhi and Bhai Dooj")], ["tables", "✖️", L("Teach {n} tables", { n: S.name })], ["saanp", "🐍", L("Saanp Seedi")]]],
       ["📖 " + L("Stories"), [["week", "🕵️", L("Week-long mystery")], ["annual", "🎭", L("Annual day")], ["paw", "🐾", L("Lost puppy trail")], ["bday", "🎂", L("Surprise party for Maa")], ["letter", "✉️", L("Letter to Nani")]]],
       ["🧠 " + L("Learn and earn"), [["shop", "🏪", L("Run the kirana shop")], ["cycle", "🚲", L("Save for a bicycle")], ["gk", "📺", L("Kaun Banega Gyani")], ["bargain", "🥕", L("Sabzi mandi")], ["licence", "🚦", L("Cycle safety licence")]]],
@@ -11740,7 +11743,7 @@ class Game {
     ];
   }
   _funRun(k) {
-    const M = { chore: () => this._coChore(), cricket: () => this._cricket2(), hide: () => this._hideSeek(), race: () => this._sibRaceStart(), remote: () => this._remoteFight(), fest: () => this._sibFestival(), tables: () => this._teachTables(), saanp: () => this._saanpSeedi(),
+    const M = { wa: () => this._whatsapp(), dq: () => this._dailyQ(), skills: () => this._skillsPanel(), garden: () => this._garden(), story: () => this._dadiStory(), movie: () => this._lifeMovie(), chore: () => this._coChore(), cricket: () => this._cricket2(), hide: () => this._hideSeek(), race: () => this._sibRaceStart(), remote: () => this._remoteFight(), fest: () => this._sibFestival(), tables: () => this._teachTables(), saanp: () => this._saanpSeedi(),
       week: () => this._weekMystery(), annual: () => this._annualDay(), paw: () => this._pawTrail(), bday: () => this._maaBirthday(), letter: () => this._letterNani(),
       shop: () => this._shopMaths(), cycle: () => this._cycleGoal(), gk: () => this._gkQuiz(), bargain: () => this._bargain(), licence: () => this._cycleLicence(),
       room: () => this._roomDecor(), pets: () => this._petShop(), stars: () => this._starMap(), music: () => this._musicRoom(), rangoli: () => this._rangoli(), chai: () => this._makeChai(), trees: () => this._plantTree(), litter: () => this._litterStart(), dadi: () => this._dadiTablet(),
@@ -11865,9 +11868,9 @@ class Game {
     const makeUp = () => step(L("Making up"), L("{n} sits in the corner with a sad face. Maa looks at you. What do you do?", { n: S.name }), [L("🍫 Say sorry and share your chocolate"), L("🤙 Pinky promise: turns, 30 minutes each"), L("🎨 Draw a funny sorry card")], (i) => { jl.madeUp = (jl.madeUp || 0) + 1; this._jsave(); this.addFriendship && this.addFriendship("family", 2, L("made up")); this._sfx("win");
       this.dialogue.say(S.name, [[L("(Munch munch) Okay... sorry from me too. Half-half?"), L("Pinky promise! You first, then me. Fair is fair."), L("(Giggles) You drew me with a monkey tail! Okay, friends again!")][i], L("Maa: 'That is my family. Fight in five minutes, friends in ten.'")], () => this.diary(L("Fought with {n} over the TV remote, then made up.", { n: S.name })), { pitch: 520 }); });
     step(L("Who gets the remote?"), L("Evening. You want the cricket match. {n} wants cartoons. Both hands grab the remote at the same time!", { n: S.name }), [L("💪 Pull it harder!"), L("✊✋✌️ Rock, paper, scissors for it"), L("🙂 Let {n} watch first. I watch after.", { n: S.name })], (i) => {
-      if (i === 0) { jl.fights = (jl.fights || 0) + 1; this._jsave(); this._sfx("bad"); this.dialogue.say("Maa", [L("(The remote flies and the battery cover breaks!)"), L("ENOUGH! Remote is mine now. Nobody watches TV today!"), L("{n} is crying. Hmm...", { n: S.name })], () => makeUp(), { pitch: 450 }); }
+      if (i === 0) { jl.fights = (jl.fights || 0) + 1; this._punya && this._punya(-2, L("fought over the remote")); this._jsave(); this._sfx("bad"); this.dialogue.say("Maa", [L("(The remote flies and the battery cover breaks!)"), L("ENOUGH! Remote is mine now. Nobody watches TV today!"), L("{n} is crying. Hmm...", { n: S.name })], () => makeUp(), { pitch: 450 }); }
       else if (i === 1) { const me = Math.floor(Math.random() * 3), sb = Math.floor(Math.random() * 3), I = ["✊", "✋", "✌️"], win = (me - sb + 3) % 3 === 1, tie = me === sb; this.dialogue.say(L("Rock, paper, scissors"), [L("You: {a}  {n}: {b}", { a: I[me], n: S.name, b: I[sb] }), tie ? L("A tie! You both laugh and watch half-half.") : win ? L("You win! Cricket first. {n} gets the remote after.", { n: S.name }) : L("{n} wins! Cartoons first. Fair game.", { n: S.name })], () => { jl.madeUp = (jl.madeUp || 0) + 1; this._jsave(); }, { pitch: 480 }); }
-      else { jl.madeUp = (jl.madeUp || 0) + 1; this.addFriendship && this.addFriendship("family", 3, L("shared the TV")); this._jsave(); this._sfx("win"); this.dialogue.say(S.name, [L("Really?! You are the best {r} in the world!", { r: S.rel }), L("(After the cartoon, {n} brings you chai and switches to the cricket.)", { n: S.name })], null, { pitch: 520 }); }
+      else { jl.madeUp = (jl.madeUp || 0) + 1; this.addFriendship && this.addFriendship("family", 3, L("shared the TV")); this._punya && this._punya(2, L("shared the TV")); this._jsave(); this._sfx("win"); this.dialogue.say(S.name, [L("Really?! You are the best {r} in the world!", { r: S.rel }), L("(After the cartoon, {n} brings you chai and switches to the cricket.)", { n: S.name })], null, { pitch: 520 }); }
     });
   }
 
@@ -11938,7 +11941,7 @@ class Game {
     const P = this._paw, pp = this.player.position; P.t += dt; if (this._zone || this.world.currentRoom || P.t > 240) { this.world.scene.remove(P.G); this._paw = null; this.setObjective(L("The puppy trail ended"), null); return; }
     if (!P.found) { if (Math.hypot(pp.x - P.end.x, pp.z - P.end.z) < 2.4) { P.found = true; this._sfx("win"); showToast(L("🐶 Found Tuffy! He is shivering under a cart. He licks your face! Take him back to Mrs. Sharma."), 4000, "good"); this.setObjective(L("Take Tuffy back to Mrs. Sharma"), P.owner.x, P.owner.z); } return; }
     if (P.dog) { const g = P.dog, dx = pp.x - g.position.x, dz = pp.z - g.position.z, d = Math.hypot(dx, dz); if (d > 1.8) { const s = Math.min(d - 1.5, 6 * dt); g.position.x += (dx / d) * s; g.position.z += (dz / d) * s; g.rotation.y = Math.atan2(dx, dz); } }
-    if (Math.hypot(pp.x - P.owner.x, pp.z - P.owner.z) < 3) { this.world.scene.remove(P.G); this._paw = null; const jl = this._jl(); jl.pawDay = this.progress.day; jl.puppiesFound = (jl.puppiesFound || 0) + 1; this.addMoney(100, L("reward for finding Tuffy")); this.addRep && this.addRep(2, L("found a lost puppy")); this._jsave(); this.setObjective(L("Tuffy is home!"), null); this._snap && this._snap("🐶", "Found Tuffy the lost puppy."); this.diary(L("Followed paw prints and found Mrs. Sharma's puppy Tuffy."));
+    if (Math.hypot(pp.x - P.owner.x, pp.z - P.owner.z) < 3) { this.world.scene.remove(P.G); this._paw = null; const jl = this._jl(); jl.pawDay = this.progress.day; jl.puppiesFound = (jl.puppiesFound || 0) + 1; this._punya && this._punya(3, L("saved a lost puppy")); this.addMoney(100, L("reward for finding Tuffy")); this.addRep && this.addRep(2, L("found a lost puppy")); this._jsave(); this.setObjective(L("Tuffy is home!"), null); this._snap && this._snap("🐶", "Found Tuffy the lost puppy."); this.diary(L("Followed paw prints and found Mrs. Sharma's puppy Tuffy."));
       this.dialogue.say(L("Mrs. Sharma"), [L("TUFFY! My baby! (She hugs him and cries.)"), L("Thank you, beta. Here is ₹100, and come for ladoos on Sunday!")], null, { pitch: 450 }); }
   }
 
@@ -12211,7 +12214,7 @@ class Game {
   _tickLitter() {
     const Lt = this._swachh, pp = this.player.position; if (this._zone || this.world.currentRoom) return;
     for (const m of Lt.items) if (m.visible && Math.hypot(pp.x - m.position.x, pp.z - m.position.z) < 1.4) { m.visible = false; Lt.bag++; this._sfx(); const left = Lt.items.filter((x) => x.visible).length; this.setObjective(left ? L("Litter left: {n}", { n: left }) : L("Put the bag in the green dustbin"), left ? null : Lt.bin.x, left ? null : Lt.bin.z); }
-    if (Lt.items.every((m) => !m.visible) && Math.hypot(pp.x - Lt.bin.x, pp.z - Lt.bin.z) < 2.2) { this.world.scene.remove(Lt.G); this._swachh = null; const jl = this._jl(); jl.litterDay = this.progress.day; jl.cleanups = (jl.cleanups || 0) + 1; this.addRep && this.addRep(2, L("cleaned the colony")); this._jsave(); this._sfx("win"); this.setObjective(L("The lane is clean!"), null); this._snap && this._snap("🧹", "Cleaned the colony lane."); this.diary(L("Picked up litter in the lane. Swachh colony!")); showToast(L("🌟 Sparkling lane! Sharma Aunty: 'Such good children in this colony!'"), 3800, "good"); }
+    if (Lt.items.every((m) => !m.visible) && Math.hypot(pp.x - Lt.bin.x, pp.z - Lt.bin.z) < 2.2) { this.world.scene.remove(Lt.G); this._swachh = null; const jl = this._jl(); jl.litterDay = this.progress.day; jl.cleanups = (jl.cleanups || 0) + 1; this._punya && this._punya(3, L("cleaned the colony")); this.addRep && this.addRep(2, L("cleaned the colony")); this._jsave(); this._sfx("win"); this.setObjective(L("The lane is clean!"), null); this._snap && this._snap("🧹", "Cleaned the colony lane."); this.diary(L("Picked up litter in the lane. Swachh colony!")); showToast(L("🌟 Sparkling lane! Sharma Aunty: 'Such good children in this colony!'"), 3800, "good"); }
   }
 
   // ---------- 26. Letter to Nani ----------
@@ -12268,7 +12271,7 @@ class Game {
     const jl = this._jl(), pr = this.progress; if (jl.medDay === pr.day) { showToast(L("Dadi took her tablet today. Good job, little nurse!"), 2200); return; }
     if (this.phase !== "morning") { showToast(L("Dadi's tablet is in the morning, after breakfast. Remind her tomorrow!"), 2600); return; }
     const F = this._fOpen(`${this._fHead("💊", L("Dadi's morning tablet"))}<p class="job-brief">${L("Dadi: 'Which one is mine, beta? My eyes are weak.' The doctor wrote: ONE white round tablet, after breakfast, with water.")}</p><div class="btn-row" style="flex-direction:column"><button class="big-btn" id="dt-0">⚪ ${L("One white round tablet, with a glass of water")}</button><button class="big-btn" id="dt-1">🟡 ${L("Two yellow tablets, with tea")}</button><button class="big-btn" id="dt-2">🍬 ${L("A sweet instead, she will not know")}</button></div>`);
-    [0, 1, 2].forEach((k) => F.q(`#dt-${k}`).addEventListener("click", () => { closePanel(); if (k) { this._sfx("bad"); showToast(k === 1 ? L("❌ Wrong medicine can be dangerous! Always read the doctor's paper.") : L("❌ Medicine is serious. Never swap it for a sweet!"), 3200, "bad"); return; } const yest = jl.medDay === pr.day - 1; jl.medDay = pr.day; jl.medStreak = yest ? (jl.medStreak || 0) + 1 : 1; this._jsave(); this._sfx("win"); this.addFriendship && this.addFriendship("family", 1, L("cared for Dadi")); this.dialogue.say("Dadi", [L("Gulp. Thank you, my little doctor!"), L("You remembered {n} days in a row. My BP is happy!", { n: jl.medStreak })], null, { pitch: 420 }); }));
+    [0, 1, 2].forEach((k) => F.q(`#dt-${k}`).addEventListener("click", () => { closePanel(); if (k) { this._sfx("bad"); showToast(k === 1 ? L("❌ Wrong medicine can be dangerous! Always read the doctor's paper.") : L("❌ Medicine is serious. Never swap it for a sweet!"), 3200, "bad"); return; } const yest = jl.medDay === pr.day - 1; jl.medDay = pr.day; jl.medStreak = yest ? (jl.medStreak || 0) + 1 : 1; this._punya && this._punya(1); this._jsave(); this._sfx("win"); this.addFriendship && this.addFriendship("family", 1, L("cared for Dadi")); this.dialogue.say("Dadi", [L("Gulp. Thank you, my little doctor!"), L("You remembered {n} days in a row. My BP is happy!", { n: jl.medStreak })], null, { pitch: 420 }); }));
   }
 
   // ================= v74 · Family sim: dating and marriage, children, grandchildren. Three generations you care for. =================
@@ -12334,12 +12337,20 @@ class Game {
   _sibLife() {
     if (this._uiBlocking() || this._cut || this._sim) return; const pr = this.progress, age = pr.age || 0; if (age < 30) return; const Sb = this._sibFam(), S = this._sib(), n = S.name;
     if (!Sb.married) { const sp = (S.boy ? ["Kavya", "Neha", "Pooja"] : ["Vikram", "Aditya", "Sahil"])[(pr.day || 0) % 3]; Object.assign(Sb, { married: true, spouse: sp, marriedAt: age }); this._jsave(); this._sfx("win"); this._snap && this._snap("💍", `${n} married ${sp}.`); this.diary(L("My {r} {n} married {s}.", { r: S.rel, n, s: sp }));
-      this.dialogue.say(L("{n}'s wedding", { n }), [L("Your {r} {n} is getting married to {s}!", { r: S.rel, n, s: sp }), L("You dance at the sangeet till 2 am. At the vidaai, you cry more than anyone."), L("Maa: 'My two children, both settled. Now I can rest.'")], null, { pitch: 480 }); return; }
+      const talk = () => this.dialogue.say(L("{n}'s wedding", { n }), [L("Your {r} {n} is married to {s}!", { r: S.rel, n, s: sp }), L("You danced at the sangeet till 2 am. At the vidaai, you cried more than anyone."), L("Maa: 'My two children, both settled. Now I can rest.'")], null, { pitch: 480 });
+      const spLook = S.boy ? { shirt: 0xc1121f, dress: true } : { shirt: 0xf6e7c1 }, sLook = S.boy ? {} : { dress: true }; this._templeWedding({ title: L("{n}'s wedding at the Shiv Mandir", { n }), groom: S.boy ? { name: n, look: sLook } : { name: sp, look: spLook }, bride: S.boy ? { name: sp, look: spLook } : { name: n, look: sLook }, family: this._weddingGuests(true) }, talk); return; }
     if (age >= 40 && !Sb.kids.length) { const boy = age % 2 === 0, kn = boy ? "Ishaan" : "Siya"; Sb.kids.push({ name: kn, boy, born: age, married: false, partner: null, kids: [] }); this._jsave(); this._sfx("win"); this._snap && this._snap("👶", `${n}'s baby ${kn} was born.`); this.diary(L("{n} had a baby: {k}. I am now {w}!", { n, k: kn, w: S.boy ? L("an uncle or aunt (chacha or bua)") : L("an uncle or aunt (mama or mausi)") }));
       this.dialogue.say(n, [L("Meet {k}! Hold {h} carefully.", { k: kn, h: boy ? L("him") : L("her") }), L("(A tiny hand holds your finger. You are an uncle or aunt now!)"), L("{s}: 'The baby has your family's nose.'", { s: Sb.spouse })], null, { pitch: 480 }); return; }
     const k0 = Sb.kids[0]; if (age >= 60 && k0 && !k0.kids.length) { k0.married = true; k0.partner = k0.partner || (k0.boy ? "Anvi" : "Kunal"); const gn = age % 2 ? "Rudra" : "Aadhya"; k0.kids.push({ name: gn, boy: gn === "Rudra", born: age }); this._jsave(); this._sfx("win"); this._snap && this._snap("👶", `${n} became a grandparent: ${gn}.`); this.diary(L("{k} married {p}, and their baby {g} was born. {n} is a grandparent now!", { k: k0.name, p: k0.partner, g: gn, n }));
       this.dialogue.say(n, [L("{k} is 20 now, and married to {p}.", { k: k0.name, p: k0.partner }), L("And look: their baby, {g}! I am a grandparent, just like you!", { g: gn }), L("Two old siblings on one sofa, with the grandchildren. Life is good.")], null, { pitch: 470 }); }
   }
+
+  // Player 1's own wedding: the temple ceremony, then the reception card. A boy is the groom, a girl is the bride.
+  _p1Temple(p, done) {
+    const me = this.playerName || L("You"), girl = !!this.player.girl, meLook = girl ? { dress: true } : {};
+    this._templeWedding({ title: L("Your wedding at the Shiv Mandir"), groom: girl ? { name: p.name, look: p.look } : { name: me, look: meLook }, bride: girl ? { name: me, look: meLook } : { name: p.name, look: p.look }, family: this._weddingGuests(false) }, done);
+  }
+  _weddingGuests(forSibling) { const S = this._sib(), me = this.playerName || L("You"); return [["Dadi", { shirt: 0xffffff, dress: true, hair: 0xdddddd }], ["Papa", { shirt: 0x1d3557 }], ["Maa", { shirt: 0x9d4edd, dress: true }], forSibling ? [me, this.player.girl ? { dress: true, shirt: 0xff8fab } : { shirt: 0x3a86ff }] : [S.name, S.boy ? { shirt: 0x3a86ff } : { dress: true, shirt: 0xff8fab }]]; }
 
   // ---------- The family panel ----------
   _familyHub() {
@@ -12382,7 +12393,7 @@ class Game {
     showToast({ talk: L("💬 You talk with {n} for an hour. Time flies!", { n: p.name }), chai: L("☕ Chai and samosas with {n} at the tea house. {n} laughs at your jokes.", { n: p.name }), film: L("🎬 A movie with {n}. You share the popcorn.", { n: p.name }) }[k] + ` ❤️ ${F.dating[p.id]}`, 3000, "good"); this._famRefresh();
   }
   _famPropose(p) {
-    if ((this.progress.age || 0) < 25) { showToast(L("Weddings happen at 25 or 26. Keep dating!"), 2600); return; } closePanel(); this.dialogue.say(p.name, [L("(You kneel at the park, under the mango tree, holding a ring.)"), L("Yes! YES! Now we tell both our families!"), L("Maa cries. Papa hugs you. Dadi says: 'Finally!'")], () => { const done = () => this._weddingDay(p); if (this._weddingPlan) this._weddingPlan(p, done); else done(); }, { pitch: p.pitch || 460 });
+    if ((this.progress.age || 0) < 25) { showToast(L("Weddings happen at 25 or 26. Keep dating!"), 2600); return; } closePanel(); this.dialogue.say(p.name, [L("(You kneel at the park, under the mango tree, holding a ring.)"), L("Yes! YES! Now we tell both our families!"), L("Maa cries. Papa hugs you. Dadi says: 'Finally!'")], () => { const done = () => this._p1Temple(p, () => this._weddingDay(p)); if (this._weddingPlan) this._weddingPlan(p, done); else done(); }, { pitch: p.pitch || 460 });
   }
   _famSpouse(k) {
     const pr = this.progress, F = this._fam(), n = pr.spouse.name; if (this._famDone("sp", k)) return; const cost = { gift: 300, date: 500 }[k] || 0; if (!this._famPay(cost, L("for {n}", { n }))) return;
@@ -12395,7 +12406,7 @@ class Game {
   _famQuarrel() {
     const pr = this.progress, F = this._fam(), n = pr.spouse.name, Q = [[L("the monthly budget"), L("You bought a new phone without asking.")], [L("the TV"), L("Cricket or the serial?")], [L("visiting relatives"), L("Your side or {n}'s side this Diwali?", { n })]][(F.spouseActs || 0) % 3];
     const Fp = this._fOpen(`${this._fHead("😤", L("A small quarrel about {t}", { t: Q[0] }))}<p class="job-brief">${Q[1]} ${L("How do you fix it?")}</p><div class="btn-row" style="flex-direction:column"><button class="big-btn" id="fq-0">🙏 ${L("Listen first, then say sorry")}</button><button class="big-btn" id="fq-1">🤝 ${L("Find a middle way together")}</button><button class="big-btn" id="fq-2">🙄 ${L("Walk away and sulk")}</button></div>`);
-    [0, 1, 2].forEach((i) => Fp.q(`#fq-${i}`).addEventListener("click", () => { closePanel(); F.love = this._clamp(F.love + [10, 12, -15][i]); F.quarrels = (F.quarrels || 0) + 1; this._jsave();
+    [0, 1, 2].forEach((i) => Fp.q(`#fq-${i}`).addEventListener("click", () => { closePanel(); F.love = this._clamp(F.love + [10, 12, -15][i]); F.quarrels = (F.quarrels || 0) + 1; this._punya && this._punya(i < 2 ? 1 : -1); this._jsave();
       this.dialogue.say(n, [[L("Thank you for listening. I am sorry too."), L("Okay. Half-half. Deal!"), L("(A cold dinner. Nobody talks. Try again tomorrow.)")][i], i < 2 ? L("Every couple fights. Good couples fix it before bed.") : L("Dadi whispers: 'Never sleep angry, beta.'")], null, { pitch: pr.spouse.pitch || 460 }); }));
   }
   _famBaby() {
@@ -12519,9 +12530,9 @@ class Game {
   _evBus() {
     this._famMark("ev", "bus"); const S = this._sib ? this._sib() : { name: "Gudiya" };
     this._storySteps("🚌", L("The school bus"), [
-      { text: L("Rohan is in YOUR window seat. Again."), opts: [[L("😤 Push him out"), L("The driver shouts: 'SIT DOWN!' Both of you stand at the front for the ride."), () => this.addFriendship && this.addFriendship("rohan", -1, L("seat fight"))], [L("🤝 Take turns: you in the morning, him after school"), L("Rohan: 'Deal!' He shares his chips with you."), () => this.addFriendship && this.addFriendship("rohan", 1, L("shared the seat"))]] },
+      { text: L("Rohan is in YOUR window seat. Again."), opts: [[L("😤 Push him out"), L("The driver shouts: 'SIT DOWN!' Both of you stand at the front for the ride."), () => { this.addFriendship && this.addFriendship("rohan", -1, L("seat fight")); this._punya(-1); }], [L("🤝 Take turns: you in the morning, him after school"), L("Rohan: 'Deal!' He shares his chips with you."), () => { this.addFriendship && this.addFriendship("rohan", 1, L("shared the seat")); this._punya(1); }]] },
       { text: L("The whole bus starts antakshari. The song must start with 'M'!"), opts: [[L("🎤 'Mere sapnon ki rani...'"), L("The bus sings with you. Even the driver hums.")], [L("🎤 'Maa tujhe salaam'"), L("Everyone claps. A proud song.")]] },
-      { text: L("Oh no! {n} left the tiffin box on the seat.", { n: S.name }), opts: [[L("🍱 Pick it up and give it back"), L("{n}: 'You saved my lunch! Half my paratha is yours.'", { n: S.name }), () => this.addFriendship && this.addFriendship("family", 1, L("found the tiffin"))], [L("😋 Eat it"), L("Delicious... but {n} cries at lunch. Not nice. Share yours.", { n: S.name })]] },
+      { text: L("Oh no! {n} left the tiffin box on the seat.", { n: S.name }), opts: [[L("🍱 Pick it up and give it back"), L("{n}: 'You saved my lunch! Half my paratha is yours.'", { n: S.name }), () => { this.addFriendship && this.addFriendship("family", 1, L("found the tiffin")); this._punya(1); }], [L("😋 Eat it"), L("Delicious... but {n} cries at lunch. Not nice. Share yours.", { n: S.name }), () => this._punya(-2, L("ate the tiffin"))]] },
     ], () => this.diary(L("A school bus ride: seat fight, songs and a tiffin rescue.")));
   }
   // 3. Parent-teacher meeting for your own child.
@@ -12529,7 +12540,7 @@ class Game {
     const F = this._fam(), k = F.kids.find((x) => this._kidAge(x) >= 5 && this._kidAge(x) <= 17); if (!k) return; this._evMark("ptm");
     const good = k.needs.study >= 60 || k.skill.study >= 3, n = k.name;
     this._storySteps("👩‍🏫", L("PTM for {n}", { n }), [
-      { text: good ? L("Mrs. Rao: '{n} is doing very well. Neat notebooks, good questions in class.'", { n }) : L("Mrs. Rao: '{n} is a sweet child, but the homework is often missing. Maths is weak.'", { n }), opts: [[L("🙏 'Thank you. How can we help at home?'"), L("Mrs. Rao: 'Twenty minutes of reading every night. And praise the effort, not only the marks.'"), () => { k.needs.study = this._clamp(k.needs.study + 15); k.skill.study++; }], [L("😠 Scold {n} in front of the teacher", { n }), L("{n} looks at the floor. Mrs. Rao: 'Please, talk to the child at home, gently.'", { n }), () => { k.needs.love = this._clamp(k.needs.love - 20); }]] },
+      { text: good ? L("Mrs. Rao: '{n} is doing very well. Neat notebooks, good questions in class.'", { n }) : L("Mrs. Rao: '{n} is a sweet child, but the homework is often missing. Maths is weak.'", { n }), opts: [[L("🙏 'Thank you. How can we help at home?'"), L("Mrs. Rao: 'Twenty minutes of reading every night. And praise the effort, not only the marks.'"), () => { k.needs.study = this._clamp(k.needs.study + 15); k.skill.study++; }], [L("😠 Scold {n} in front of the teacher", { n }), L("{n} looks at the floor. Mrs. Rao: 'Please, talk to the child at home, gently.'", { n }), () => { k.needs.love = this._clamp(k.needs.love - 20); this._punya(-1); }]] },
       { text: L("On the way home, {n} holds your hand. 'Are you angry?'", { n }), opts: [[L("🤗 'No. I am proud you try. Ice cream?'"), L("{n} smiles all the way home.", { n }), () => { k.needs.love = this._clamp(k.needs.love + 20); }], [L("📚 'A little. Let us make a study plan together.'"), L("You make a timetable and stick it on the fridge."), () => { k.needs.study = this._clamp(k.needs.study + 10); }]] },
     ], () => { this._jsave(); this.diary(L("Went to {n}'s parent-teacher meeting.", { n })); });
   }
@@ -12619,6 +12630,237 @@ class Game {
       { text: L("Your way: the Diwali you grew up with."), opts: [[L("💡 Hang the fairy lights on the balcony"), L("Papa holds the ladder, like always.")], [L("🍬 Share sweet boxes with the neighbours"), L("Sharma Aunty sends back kaju katli. The best trade.")]] },
       { text: L("{n}'s way: the new Diwali.", { n: yn }), opts: [[L("🌱 Green crackers only, and a pet-safe night"), L("{n}: 'The dogs in the lane are not scared this year!'", { n: yn })], [L("📱 A video call so far-away family can see the diyas"), L("Everyone waves at the screen. The whole family, in one Diwali.")]] },
     ], () => { this._famAll(10); this._snap && this._snap("🪔", "A Diwali of three generations."); this.diary(L("Diwali with three generations: Dadi's diyas, my lights, {n}'s green crackers.", { n: yn })); });
+  }
+
+  // ================= v76 · The temple wedding: a 3D ceremony with garlands (varmala), the priest's mantras, seven pheras =================
+  // opts: { groom: { name, look }, bride: { name, look }, title, family: [[name, look], ...] }. onDone runs after the scene (or Skip).
+  _templeWedding(opts, onDone) {
+    if (this._cut || this._noCutscene) { onDone && onDone(); return; }
+    const X = 0, Z = -9800, G = new THREE.Group(); G.position.set(X, 0, Z); this.world.scene.add(G);
+    const M = (c, e = 0) => new THREE.MeshStandardMaterial({ color: c, emissive: e ? c : 0x000000, emissiveIntensity: e, roughness: 0.8 });
+    const box = (w, h, d, c, x, y, z, e = 0) => { const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), M(c, e)); b.position.set(x, y, z); G.add(b); return b; };
+    // The temple: a stone courtyard, a shikhara with a saffron flag, pillars, bells and marigold torans.
+    box(40, 0.2, 40, 0x6d8b3a, 0, -0.1, 0); box(16, 0.6, 14, 0xe8dcc4, 0, 0.3, 0);
+    box(6, 4, 5, 0xf1e3c6, 0, 2.6, -8); for (let k = 0; k < 5; k++) { const s = new THREE.Mesh(new THREE.ConeGeometry(2.6 - k * 0.45, 1.6, 4), M(0xe07a2e)); s.rotation.y = Math.PI / 4; s.position.set(0, 5.2 + k * 1.1, -8); G.add(s); }
+    const flag = new THREE.Mesh(new THREE.PlaneGeometry(1.2, 0.7), new THREE.MeshBasicMaterial({ color: 0xff7f11, side: THREE.DoubleSide })); flag.position.set(0.6, 11.6, -8); G.add(flag); box(0.06, 1.6, 0.06, 0x444444, 0, 11.3, -8);
+    box(2, 2.6, 0.2, 0x7a3e1d, 0, 1.9, -5.45); try { const om = makeTextSprite("🕉️ " + L("Shiv Mandir"), { size: 44, scale: 1.1 }); om.position.set(0, 4.9, -5.2); G.add(om); } catch (e) { /* label optional */ }
+    const bells = []; for (const bx of [-1.4, 1.4]) { const b = new THREE.Mesh(new THREE.ConeGeometry(0.22, 0.4, 10, 1, true), M(0xd4a017, 0.2)); b.position.set(bx, 3.2, -5.2); G.add(b); bells.push(b); }
+    // The mandap: four poles, a red canopy, marigold strings, and the sacred fire in the middle.
+    for (const [px, pz] of [[-2.6, -2.2], [2.6, -2.2], [-2.6, 2.2], [2.6, 2.2]]) { box(0.2, 3.4, 0.2, 0xd4a017, px, 2.3, pz); for (let k = 0; k < 6; k++) { const f = new THREE.Mesh(new THREE.SphereGeometry(0.13, 8, 6), M(k % 2 ? 0xff9f1c : 0xffd166)); f.position.set(px, 0.9 + k * 0.5, pz); G.add(f); } }
+    box(5.6, 0.12, 4.8, 0xc1121f, 0, 4.05, 0);
+    for (let k = 0; k < 28; k++) { const f = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 6), M(k % 2 ? 0xff9f1c : 0xffd166)); const edge = k < 14; f.position.set(edge ? -2.6 + (k % 14) * 0.4 : -2.6 + (k % 14) * 0.4, 3.8 - Math.sin(((k % 14) / 13) * Math.PI) * 0.35, edge ? -2.2 : 2.2); G.add(f); }
+    box(1, 0.35, 1, 0x8d6e63, 0, 0.78, 0); const fire = new THREE.Mesh(new THREE.ConeGeometry(0.35, 0.8, 10), new THREE.MeshBasicMaterial({ color: 0xff7b00 })); fire.position.set(0, 1.35, 0); G.add(fire);
+    const fireL = new THREE.PointLight(0xff9c40, 6, 9, 2); fireL.position.set(0, 1.8, 0); G.add(fireL);
+    // People: the couple, Panditji, the family and guests.
+    const person = (look, x, z, ry, label, sc = 1) => { let g; try { g = makeHuman(look); } catch (e) { g = new THREE.Group(); } g.scale.setScalar(sc); g.position.set(x, 0.6, z); g.rotation.y = ry; G.add(g); if (label) { try { const t = makeTextSprite(label, { size: 34, scale: sc < 1 ? 0.4 : 0.5 }); t.position.set(x, 3.1 * sc, z); G.add(t); } catch (e) { /* label optional */ } } return g; };
+    const groom = person(Object.assign({ skin: 0xd9a574, hair: 0x1d1410 }, opts.groom.look || {}, { shirt: 0xf6e7c1, trousers: 0xf6e7c1 }), -0.9, 1.4, Math.PI, "🤵 " + opts.groom.name);
+    const safa = new THREE.Mesh(new THREE.SphereGeometry(0.3, 12, 8), M(0xc1121f)); safa.scale.set(1, 0.8, 1); safa.position.y = 2.25; groom.add(safa);
+    const bride = person(Object.assign({ skin: 0xe0ac7e, hair: 0x1d1410 }, opts.bride.look || {}, { shirt: 0xc1121f, dress: true }), 0.9, 1.4, Math.PI, "👰 " + opts.bride.name);
+    const veil = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.9, 0.5), new THREE.MeshStandardMaterial({ color: 0xd62828, transparent: true, opacity: 0.55 })); veil.position.y = 1.95; bride.add(veil);
+    const pandit = person({ skin: 0xc68b59, shirt: 0xff9f1c, trousers: 0xffffff, hair: 0xdddddd }, 0, -1.4, 0, "🙏 " + L("Panditji"));
+    const fam = opts.family || [];
+    fam.forEach(([nm, look], i) => { const a = -0.9 + i * (1.8 / Math.max(1, fam.length - 1)); person(Object.assign({ skin: 0xd9a574, hair: 0x1d1410 }, look || {}), Math.sin(a) * 6.2, Math.cos(a) * 6.2, a + Math.PI, nm); });
+    for (let k = 0; k < 8; k++) { const a = -1.3 + k * 0.37; person({ shirt: [0xff4f8b, 0x06d6a0, 0xffd166, 0x9d4edd, 0x118ab2, 0xe76f51, 0x2a9d8f, 0xf4a261][k], trousers: 0x333333, dress: k % 2 === 0 }, Math.sin(a) * 8.6, Math.cos(a) * 8.6, a + Math.PI); }
+    // Two marigold garlands (varmala), held in the hands until the exchange.
+    const garland = (c) => { const g = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.07, 8, 20), M(c)); g.rotation.x = Math.PI / 2; G.add(g); return g; };
+    const gB = garland(0xff9f1c), gG = garland(0xffd166);
+    const petals = []; for (let k = 0; k < 70; k++) { const p = new THREE.Mesh(new THREE.SphereGeometry(0.06, 5, 4), new THREE.MeshBasicMaterial({ color: [0xff4f8b, 0xffd166, 0xff9f1c, 0xffffff][k % 4] })); p.visible = false; p.userData = { x: (Math.random() - 0.5) * 6, z: (Math.random() - 0.5) * 5, s: 0.6 + Math.random() * 0.8, o: Math.random() * 6 }; G.add(p); petals.push(p); }
+    try { if (this.ui && this.ui.setInteractPrompt) this.ui.setInteractPrompt(""); } catch (e) { /* prompt optional */ }
+    const { bar, skip, fade } = this._cutUI();
+    this._cut = { kind: "temple", t: 0, G, X, Z, groom, bride, pandit, gB, gG, fire, fireL, bells, petals, bar, skip, fade, fired: new Set(), focus: { x: X, y: 0, z: Z }, onDone, opts };
+    try { playBell(); } catch (e) { /* sound optional */ }
+    this._cutSay(L("🛕 {t}. Temple bells ring. Marigolds everywhere.", { t: opts.title || L("The wedding at the Shiv Mandir") }), true, 380);
+  }
+  _tickTemple(dt) {
+    const c = this._cut, t = (c.t += dt), cam = this.camera, once = (k, fn) => { if (!c.fired.has(k)) { c.fired.add(k); fn(); } }, X = c.X, Z = c.Z;
+    // The fire and the bells move a little all the time.
+    const f = 0.85 + Math.sin(t * 14) * 0.1 + Math.sin(t * 5.3) * 0.08; c.fire.scale.set(1, f, 1); c.fireL.intensity = 6 * f; c.bells.forEach((b, i) => (b.rotation.z = Math.sin(t * 3 + i) * 0.25));
+    // Garlands: held at first, then exchanged.
+    const hand = (g, side) => ({ x: g.position.x + side * 0.35, y: 1.9, z: g.position.z - 0.35 }), neck = (g) => ({ x: g.position.x, y: 2.15, z: g.position.z }), lerp = (a, b, u) => ({ x: a.x + (b.x - a.x) * u, y: a.y + (b.y - a.y) * u + Math.sin(u * Math.PI) * 0.6, z: a.z + (b.z - a.z) * u });
+    const put = (m, p) => m.position.set(p.x, p.y, p.z), u1 = Math.min(1, Math.max(0, (t - 11) / 1.6)), u2 = Math.min(1, Math.max(0, (t - 14) / 1.6));
+    put(c.gB, lerp(hand(c.bride, -1), neck(c.groom), u1)); put(c.gG, lerp(hand(c.groom, 1), neck(c.bride), u2));
+    if (u1 >= 1) c.gB.rotation.x = Math.PI / 2.4; if (u2 >= 1) c.gG.rotation.x = Math.PI / 2.4;
+    // Seven pheras: the couple walks around the sacred fire.
+    if (t > 18 && t < 26) { const a = ((t - 18) / 8) * Math.PI * 2 * 1.75; c.groom.position.set(Math.sin(a) * 1.7, 0.6, Math.cos(a) * 1.7); c.bride.position.set(Math.sin(a - 0.5) * 1.7, 0.6, Math.cos(a - 0.5) * 1.7); c.groom.rotation.y = a + Math.PI / 2; c.bride.rotation.y = a - 0.5 + Math.PI / 2; try { animateHuman(c.groom, dt, true, 0.6); animateHuman(c.bride, dt, true, 0.6); } catch (e) { /* pose optional */ } }
+    if (t >= 26 && !c.settled) { c.settled = true; c.groom.position.set(-0.7, 0.6, 1.9); c.bride.position.set(0.7, 0.6, 1.9); c.groom.rotation.y = c.bride.rotation.y = 0; }
+    // Flower shower at the end.
+    if (t > 26) for (const p of c.petals) { p.visible = true; const d = p.userData, y = 5 - ((t - 26 + d.o) * d.s) % 5; p.position.set(d.x + Math.sin(t + d.o) * 0.2, y, d.z); }
+    // The camera: wide first, close for the garlands, slow circle for the pheras.
+    // Stay in front of the temple (never behind its wall), inside the ring of family so their labels do not block the view.
+    const a = t < 9 ? 0.2 + t * 0.04 : t < 18 ? 0.55 : t < 26 ? 0.35 + Math.sin((t - 18) * 0.5) * 0.7 : 0.3, R = t < 9 ? 14 - t * 0.9 : t < 18 ? 6.5 : 5.2, H = t < 9 ? 7 : t < 18 ? 3.2 : t < 26 ? 4.2 : 3.6;
+    cam.position.set(X + Math.sin(a) * R, H, Z + Math.cos(a) * R); cam.lookAt(X, t < 9 ? 2.5 : 1.8, Z + (t < 18 && t >= 9 ? 1.2 : 0));
+    const O = c.opts;
+    if (t > 4) once("mantra1", () => { this._cutSay(L("🕉️ Panditji lights the sacred fire and chants: 'Om Shri Ganeshaya Namah. Om Shri Ganeshaya Namah...'"), true, 300); try { this._tone && this._tone(130, "sawtooth", 2.2, 0.05); } catch (e) { /* sound optional */ } });
+    if (t > 8) once("mantra2", () => this._cutSay(L("🕉️ 'Mangalam Bhagwan Vishnu, Mangalam Garudadhwajah, Mangalam Pundarikakshah, Mangalaya Tano Harih.'"), true, 300));
+    if (t > 11) once("var1", () => { this._cutSay(L("💐 Varmala! {b} puts the marigold garland on {g}. Everyone cheers!", { b: O.bride.name, g: O.groom.name }), true, 420); try { playBell(); } catch (e) { /* sound optional */ } });
+    if (t > 14) once("var2", () => this._cutSay(L("💐 Now {g} puts a garland on {b}. The friends try to lift {g} up high. Laughter!", { g: O.groom.name, b: O.bride.name }), true, 420));
+    if (t > 18) once("phera", () => this._cutSay(L("🔥 The seven pheras around the sacred fire. Seven steps, seven promises: to care, to share, to respect, forever."), true, 330));
+    if (t > 23) once("mantra3", () => this._cutSay(L("🕉️ Panditji: 'Om Swaha...' The family throws rice and flower petals."), true, 300));
+    if (t > 26) once("done", () => { this._cutSay(L("🌸 Married! The elders bless them: 'Sada sukhi raho. Be happy always.'"), true, 400); try { playSuccess(); playBell(); } catch (e) { /* sound optional */ } });
+    if (t > 30) this._endFlight();
+  }
+
+  // ================= v77 · Only in School Days: family WhatsApp, Aaj ka Sawaal, skills, Punya, kitchen garden, moods, Dadi's story cards, life movie =================
+  _tickUnique(dt) {
+    this._uqT = (this._uqT || 0) - dt; if (this._uqT > 0) return; this._uqT = 1;
+    const pr = this.progress, jl = this._jl(); if (!this._uqHooked) { this._uqHooked = true; this._skillHooks(); }
+    this._moodChip();
+    if (!this._zone) { this._gardenBuild(); }
+    if (this._cut || this._sim) return;
+    // A new game day: new family messages, and maybe a little luck (good or bad) from your Punya.
+    if (jl.uqDay !== pr.day + ":" + (pr.age || 0)) { jl.uqDay = pr.day + ":" + (pr.age || 0); this._waNewDay(); this._jsave(); if (!this._uiBlocking()) setTimeout(() => this._luck(), 6000); }
+  }
+
+  // ---------- 1. 📱 The family WhatsApp group ----------
+  _waNewDay() {
+    const pr = this.progress, jl = this._jl(), F = pr.fam || {}, S = this._sib(), d = pr.day || 1, pick = (a) => a[(d + (pr.age || 0)) % a.length];
+    const m = [["Dadi", pick([L("🌸🌸 Good morning 🌸🌸 Jai Shri Krishna 🙏 Have a blessed day"), L("🌻 Suprabhat 🌻 Drink one glass of warm water before tea 🙏"), L("🌹 Good morning ji 🌹 God is great 🙏🙏🙏")])],
+      ["Papa", pick([L("Forwarded: Scientists say eating 5 almonds daily makes you a genius. Very true. 👍"), L("Forwarded: NASA says the Diwali photo of India from space is the most beautiful. Proud Indian 🇮🇳"), L("Petrol went up by ₹1 again. Everyone, use the cycle for short trips. 🚲")])],
+      ["Maa", pick([L("Beta, did you eat? Reply."), L("Who took my scissors from the drawer??"), L("Tonight rajma chawal. Come home on time.")])]];
+    if (S) m.push([S.name, pick([L("😂😂😂 (sends a cat video)"), L("Who ate my chocolate from the fridge?? 😤"), L("I got a star in class today ⭐⭐⭐")])]);
+    if (this.isRainy && this.isRainy()) m.push(["Papa", L("Heavy rain today. Take the umbrella. Do not play in the drain water.")]);
+    if (pr.spouse) m.push([pr.spouse.name, L("Coming home by 7. Should I bring samosas? 😋")]);
+    (F.kids || []).forEach((k) => { const a = Math.max(0, (pr.age || 0) - k.born); if (a >= 6 && a <= 17 && (k.reports || []).length) m.push([k.name, L("My report card: grade {g}! Can we get pizza? 🍕", { g: k.reports[k.reports.length - 1].gr })]); else if (k.city) m.push([k.name, L("Hello from {c}! Missing Maa's food 😢", { c: k.city })]); });
+    if (this._sibFest && this._sibFest()) m.push(["Dadi", L("🪔 Happy festival to my whole family! Come home early, everyone. 🙏")]);
+    if (pr.money > 5000) m.push(["Papa", L("Proud of your savings, champ. Put some in the bank, it grows! 🏦")]);
+    jl.wa = { day: jl.uqDay, msgs: m.slice(0, 6), replied: false }; jl.waUnread = m.length;
+    if (!this._uiBlocking() && pr.day > 1) showToast(L("📱 {n} new messages in 'Kaushik Parivar 👨‍👩‍👧' family group. Open 🎲.", { n: m.length }), 3200);
+  }
+  _whatsapp() {
+    const jl = this._jl(); if (!jl.wa) this._waNewDay(); const W = jl.wa; jl.waUnread = 0; this._jsave();
+    const col = { Dadi: "#e76f51", Papa: "#1d3557", Maa: "#9d4edd" }, time = (i) => `${7 + i}:${String((i * 13) % 60).padStart(2, "0")}`;
+    const F = this._fOpen(`<div style="background:#075e54;color:#fff;border-radius:12px 12px 0 0;padding:10px 12px;display:flex;justify-content:space-between;align-items:center"><b>👨‍👩‍👧 Kaushik Parivar</b><button class="ghost-btn" id="f-x" style="color:#fff">${L("Close")}</button></div>
+      <div style="background:#ece5dd;padding:10px;border-radius:0 0 12px 12px;max-height:52vh;overflow-y:auto">${W.msgs.map(([who, txt], i) => `<div style="background:#fff;border-radius:10px;padding:6px 9px;margin:6px 0;max-width:88%;box-shadow:0 1px 1px rgba(0,0,0,.1)"><b style="color:${col[who] || "#2a9d8f"};font-size:13px">${who}</b><div style="font-size:15px">${txt}</div><div style="text-align:right;font-size:11px;color:#999">${time(i)}</div></div>`).join("")}${W.replied ? `<div style="background:#dcf8c6;border-radius:10px;padding:6px 9px;margin:6px 0 6px auto;max-width:60%;text-align:right;font-size:22px">${W.replied}</div>` : ""}</div>
+      <div class="btn-row">${["🙏", "👍", "❤️", "😂", "🌸 Good morning"].map((s, i) => `<button class="lang-btn" id="wa-${i}" ${W.replied ? "disabled" : ""}>${s}</button>`).join("")}</div>`);
+    ["🙏", "👍", "❤️", "😂", "🌸 Good morning"].forEach((s, i) => F.q(`#wa-${i}`).addEventListener("click", () => { W.replied = s; this.addFriendship && this.addFriendship("family", 1, L("replied in the family group")); this._skill("kind"); this._jsave(); this._sfx(); this._whatsapp(); showToast(L("✓✓ Dadi: 'So sweet beta 🙏🌸'"), 2400, "good"); }));
+  }
+
+  // ---------- 2. 🗓️ Aaj ka Sawaal: the same 5 questions for everyone today; share the score ----------
+  _dqSeed() { const k = this._todayKey(); let h = 0; for (const c of k) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; }
+  _dailyQ() {
+    const jl = this._jl(), today = this._todayKey(); jl.dq = jl.dq || {};
+    if (jl.dq.date === today) return this._dqResult();
+    let s = this._dqSeed(); const rnd = () => { s = (s * 1103515245 + 12345) >>> 0; return s / 4294967296; };
+    const bank = this._gkBank(), Q = []; const used = new Set(); while (Q.length < 3) { const k = Math.floor(rnd() * bank.length); if (!used.has(k)) { used.add(k); Q.push(bank[k]); } }
+    const a = 6 + Math.floor(rnd() * 7), b = 3 + Math.floor(rnd() * 7), c = 12 + Math.floor(rnd() * 40), e = 5 + Math.floor(rnd() * 20); Q.push([L("Quick maths: {a} × {b} = ?", { a, b }), [String(a * b), String(a * b + a), String(a * b - b), String(a * b + 1)]]); Q.push([L("Quick maths: ₹100 minus ₹{c} minus ₹{e} = ?", { c, e }), [String(100 - c - e), String(100 - c + e), String(100 - c), String(90 - c - e)]]);
+    let i = 0; const grid = [], F = this._fOpen(`${this._fHead("🗓️", L("Aaj ka Sawaal · {d}", { d: today }))}<p class="job-brief" style="font-size:13px">${L("5 questions. Every player in India gets the same 5 today. One try only. Then share your score!")}</p><div class="job-goal" id="dq-n"></div><p class="job-brief" id="dq-q" style="font-size:17px"></p><div class="btn-row" id="dq-o" style="flex-direction:column"></div>`);
+    const ask = () => { if (i >= 5) { const score = grid.filter((x) => x).length, y = new Date(Date.now() - 86400000), yk = `${y.getFullYear()}-${String(y.getMonth() + 1).padStart(2, "0")}-${String(y.getDate()).padStart(2, "0")}`; jl.dqStreak = jl.dq.date === yk ? (jl.dqStreak || 0) + 1 : 1; jl.dq = { date: today, score, grid: grid.map((x) => (x ? "🟩" : "🟥")).join("") }; jl.dqBest = Math.max(jl.dqBest || 0, jl.dqStreak); if (score) this.addMoney(score * 20, L("Aaj ka Sawaal")); this._skill("maths"); this._jsave(); this._dqResult(); return; }
+      const [q, o] = Q[i], opts = o.map((t, k) => ({ t, ok: k === 0 })).sort((x, y) => (x.t < y.t ? -1 : 1)); F.q("#dq-n").textContent = `${i + 1} / 5 ${grid.map((x) => (x ? "🟩" : "🟥")).join("")}`; F.q("#dq-q").textContent = q; F.q("#dq-o").innerHTML = opts.map((x, k) => `<button class="big-btn" id="dq-${k}">${x.t}</button>`).join("");
+      opts.forEach((x, k) => F.q(`#dq-${k}`).addEventListener("click", () => { grid.push(x.ok); this._sfx(x.ok ? "" : "bad"); i++; ask(); })); };
+    ask();
+  }
+  _dqResult() {
+    const jl = this._jl(), D = jl.dq, txt = `🗓️ School Days · Aaj ka Sawaal ${D.date}\n${D.grid} ${D.score}/5 · 🔥 ${jl.dqStreak || 1}\n${L("Can you beat me?")} ${location.href.split("#")[0]}`;
+    const F = this._fOpen(`${this._fHead("🗓️", L("Aaj ka Sawaal"))}<div class="score-big">${D.grid}</div><p class="job-brief" style="text-align:center">${L("{s} of 5 today · streak {k} days · best {b}", { s: D.score, k: jl.dqStreak || 1, b: jl.dqBest || 1 })}<br>${L("New questions tomorrow. Everyone gets the same ones!")}</p><div class="btn-row"><button class="big-btn" id="dq-share">📤 ${L("Share on WhatsApp")}</button></div>`);
+    F.q("#dq-share").addEventListener("click", () => { try { if (navigator.share) { navigator.share({ title: "School Days", text: txt }).catch(() => {}); return; } } catch (e) { /* share optional */ } try { navigator.clipboard.writeText(txt).then(() => showToast(L("📋 Copied! Paste it in WhatsApp."), 2600, "good"), () => showToast(txt, 8000)); } catch (e) { showToast(txt, 8000); } });
+  }
+
+  // ---------- 3. 📊 Skills that level up ----------
+  _skillList() { return [["cook", "🍳", L("Cooking")], ["sport", "🏏", L("Sports")], ["music", "🎵", L("Music")], ["maths", "🧮", L("Maths")], ["kind", "🤝", L("Kindness")], ["biz", "💼", L("Business")], ["care", "👨‍👩‍👧", L("Family care")]]; }
+  _skillLevel(xp) { return Math.min(10, 1 + Math.floor(Math.sqrt((xp || 0) * 1.5))); }
+  _skill(k, n = 1) {
+    const jl = this._jl(); jl.sk = jl.sk || {}; const before = this._skillLevel(jl.sk[k]); jl.sk[k] = (jl.sk[k] || 0) + n; const after = this._skillLevel(jl.sk[k]); this._jsave();
+    if (after > before) { const s = this._skillList().find((x) => x[0] === k); this._moodBoost = { e: "🤩", why: L("{s} level up!", { s: s ? s[2] : k }), until: performance.now() + 60000 }; showToast(L("⬆️ {i} {s}: level {l}! {t}", { i: s ? s[1] : "⭐", s: s ? s[2] : k, l: after, t: [L("Beginner"), L("Beginner"), L("Learner"), L("Learner"), L("Good"), L("Good"), L("Very good"), L("Expert"), L("Expert"), L("Master"), L("Legend")][after] }), 3200, "good"); }
+  }
+  // Each activity gives skill points once per game day (so spamming does not help).
+  _skillHooks() {
+    const map = { _makeChai: "cook", _evShop: "biz", _bargain: "biz", _shopMaths: "maths", _teachTables: "maths", _gkQuiz: "maths", _cricket2: "sport", _sportsDay: "sport", _evMatch: "sport", _kiteFight: "sport", _musicRoom: "music", _evSangeet: "music", _coChore: "kind", _dadiTablet: "kind", _litterStart: "kind", _pawTrail: "kind", _famKid: "care", _famGk: "care", _feedPets: "care" };
+    for (const [m, k] of Object.entries(map)) { const orig = this[m]; if (typeof orig !== "function") continue; this[m] = (...a) => { const r = orig.apply(this, a); const jl = this._jl(); jl.skDay = jl.skDay || {}; const key = this._dayKey(); if (jl.skDay[m] !== key) { jl.skDay[m] = key; this._skill(k); } return r; }; }
+  }
+  _skillsPanel() {
+    const jl = this._jl(), sk = jl.sk || {}, P = jl.punya || 0;
+    const F = this._fOpen(`${this._fHead("📊", L("My skills and Punya"))}${this._skillList().map(([k, i, t]) => { const xp = sk[k] || 0, l = this._skillLevel(xp), nx = Math.ceil(((l) * (l)) / 1.5), pc = l >= 10 ? 100 : Math.min(100, Math.round((xp / Math.max(1, nx)) * 100)); return `<div style="margin:6px 0"><b>${i} ${t}</b> · ${L("level")} ${l}/10<div style="height:10px;background:#eee;border-radius:5px;overflow:hidden"><div style="height:100%;width:${pc}%;background:#2a9d8f"></div></div></div>`; }).join("")}
+      <div class="job-goal" style="margin-top:10px">🙏 <b>${L("Punya (good deeds)")}: ${P}</b> · ${P >= 20 ? L("Blessed! Good luck follows you.") : P >= 5 ? L("A kind heart.") : P > -5 ? L("Normal. Do some good deeds!") : L("Hmm. Small bad luck may come. Be kind!")}</div><p class="job-brief" style="font-size:13px">${L("Skills grow when you cook, play, help and learn. Punya grows with kind choices and falls with mean ones.")}</p>`);
+  }
+
+  // ---------- 4. 🙏 Punya: kind choices bring good luck ----------
+  _punya(n, why) { const jl = this._jl(); jl.punya = (jl.punya || 0) + n; this._jsave(); if (why) showToast(`${n > 0 ? "🙏" : "😔"} ${L("Punya")} ${n > 0 ? "+" : ""}${n}: ${why}`, 2200, n > 0 ? "good" : "bad"); }
+  _luck() {
+    const jl = this._jl(), P = jl.punya || 0, d = (this.progress.day || 1) + (this.progress.age || 0); if (this._uiBlocking() || this._cut) return; if (d % 3 !== 0) return;
+    if (P >= 10) { const g = [[L("🍀 Sharma Uncle gives you a box of mangoes: 'For the good child of the colony!'"), 0], [L("🍀 You find ₹50 in your old jeans! Lucky day."), 50], [L("🍀 The bus driver waits for you today. You make it just in time!"), 0]][d % 3]; if (g[1]) this.addMoney(g[1], L("good luck")); showToast(g[0], 3600, "good"); jl.lucky = (jl.lucky || 0) + 1; }
+    else if (P <= -5) { showToast([L("😖 You step in a puddle with new shoes. Maybe be kinder today?"), L("😖 The auto-wala charges ₹20 extra. Hmm."), L("😖 A crow drops something on your shirt!")][d % 3], 3600, "bad"); jl.unlucky = (jl.unlucky || 0) + 1; }
+    this._jsave();
+  }
+
+  // ---------- 5. 🌱 Kitchen garden: vegetables that grow on real days ----------
+  _gardenCrops() { return { tomato: ["🍅", L("Tomato"), 4], chilli: ["🌶️", L("Chilli"), 3], dhania: ["🌿", L("Coriander"), 2], bhindi: ["🫛", L("Bhindi"), 3] }; }
+  _garden() {
+    if (!this._funOutdoorHome()) return; const jl = this._jl(), C = this._gardenCrops(), today = this._todayKey(); jl.garden = jl.garden || [null, null, null];
+    const G = jl.garden, F = this._fOpen(`${this._fHead("🌱", L("My kitchen garden"))}<p class="job-brief">${L("Three beds beside the house. Plant a seed, water it once every real day. When it is ripe, harvest it for Maa or the mandi. Basket: {b}", { b: Object.entries(jl.veg || {}).map(([k, n]) => `${C[k][0]}×${n}`).join(" ") || "—" })}</p>${G.map((b, i) => { if (!b) return `<div class="cart-row"><div><b>${L("Bed {n}", { n: i + 1 })}</b> · ${L("empty")}</div><div>${Object.entries(C).map(([k, c]) => `<button class="lang-btn" id="gd-${i}-p-${k}">${c[0]}</button>`).join("")}</div></div>`; const c = C[b.crop], ripe = b.days >= c[2]; return `<div class="cart-row"><div><b>${L("Bed {n}", { n: i + 1 })}</b> · ${c[0]} ${c[1]} · ${ripe ? L("ripe!") : L("{d} of {n} days", { d: b.days, n: c[2] })}</div><div>${ripe ? `<button class="use-btn" id="gd-${i}-h">🧺 ${L("Harvest")}</button>` : `<button class="lang-btn" id="gd-${i}-w" ${b.last === today ? "disabled" : ""}>💧 ${b.last === today ? L("watered today") : L("Water")}</button>`}</div></div>`; }).join("")}${Object.values(jl.veg || {}).some((n) => n) ? `<div class="btn-row"><button class="big-btn" id="gd-maa">👩 ${L("Give the basket to Maa")}</button><button class="big-btn" id="gd-sell">💰 ${L("Sell at the mandi (₹30 each)")}</button></div>` : ""}`);
+    G.forEach((b, i) => { if (!b) Object.keys(C).forEach((k) => F.q(`#gd-${i}-p-${k}`).addEventListener("click", () => { G[i] = { crop: k, days: 0, last: null }; this._jsave(); this._sfx(); this._gardenBuild(true); this._garden(); }));
+      else { const w = F.q(`#gd-${i}-w`); if (w) w.addEventListener("click", () => { b.days++; b.last = today; this._jsave(); this._sfx(); this._gardenBuild(true); this._garden(); }); const h = F.q(`#gd-${i}-h`); if (h) h.addEventListener("click", () => { jl.veg = jl.veg || {}; jl.veg[b.crop] = (jl.veg[b.crop] || 0) + 3; jl.harvests = (jl.harvests || 0) + 1; G[i] = null; this._jsave(); this._sfx("win"); this._snap && this._snap("🧺", `Harvested ${C[b.crop][1]} from my own garden.`); this._gardenBuild(true); this._garden(); }); } });
+    const gm = F.q("#gd-maa"); if (gm) gm.addEventListener("click", () => { jl.veg = {}; this._jsave(); this.addFriendship && this.addFriendship("family", 2, L("vegetables from my garden")); this._skill("cook"); this._punya(1); closePanel(); this.dialogue.say("Maa", [L("From your own garden? Wah! Tonight the sabzi tastes extra sweet."), L("Dadi: 'Growing food is the oldest good deed.'")], null, { pitch: 450 }); });
+    const gs = F.q("#gd-sell"); if (gs) gs.addEventListener("click", () => { const n = Object.values(jl.veg || {}).reduce((a, b) => a + b, 0); jl.veg = {}; this.addMoney(n * 30, L("sold vegetables")); this._skill("biz"); this._jsave(); closePanel(); showToast(L("💰 Sold {n} vegetables for ₹{m}. Fresh from your garden!", { n, m: n * 30 }), 3000, "good"); });
+  }
+  _gardenBuild(force) {
+    const jl = this._jl(); if (!jl.garden || typeof HOME === "undefined") return; const sig = JSON.stringify(jl.garden); if (!force && this._gdSig === sig && this.interactables.some((x) => x._garden)) return; this._gdSig = sig;
+    if (this._gd3d) { this.world.scene.remove(this._gd3d); this.interactables = this.interactables.filter((x) => !x._garden); }
+    const d = HOME.door, G = new THREE.Group(), C = { tomato: 0xd62828, chilli: 0x2d6a4f, dhania: 0x52b788, bhindi: 0x74c69d }; let base = null;
+    for (const [ox, oz] of [[8, -4], [-8, -3], [9, -9], [-11, -8]]) if (this.world.isWalkable(d.x + ox, d.z + oz) && this.world.isWalkable(d.x + ox + 3, d.z + oz)) { base = { x: d.x + ox, z: d.z + oz }; break; }
+    if (!base) return;
+    jl.garden.forEach((b, i) => { const x = base.x + i * 1.5, z = base.z; const bed = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.2, 1.6), new THREE.MeshStandardMaterial({ color: 0x6d4c41 })); bed.position.set(x, 0.1, z); G.add(bed);
+      if (b) { const c = this._gardenCrops()[b.crop], u = Math.min(1, (b.days + 1) / (c[2] + 1)); for (let k = 0; k < 4; k++) { const pl = new THREE.Mesh(new THREE.ConeGeometry(0.12, 0.5, 6), new THREE.MeshStandardMaterial({ color: 0x40916c })); pl.scale.setScalar(0.4 + u * 0.9); pl.position.set(x + (k % 2 ? 0.25 : -0.25), 0.3 + u * 0.2, z + (k < 2 ? 0.4 : -0.4)); G.add(pl); if (b.days >= c[2]) { const f = new THREE.Mesh(new THREE.SphereGeometry(0.08, 6, 4), new THREE.MeshStandardMaterial({ color: C[b.crop] })); f.position.set(pl.position.x + 0.1, 0.55, pl.position.z); G.add(f); } } } });
+    try { const s = makeTextSprite("🌱 " + L("My garden"), { size: 34, scale: 0.6 }); s.position.set(base.x + 1.5, 1.6, base.z); G.add(s); } catch (e) { /* label optional */ }
+    this.world.scene.add(G); this._gd3d = G; this.interactables.push({ _garden: true, pos: { x: base.x + 1.5, z: base.z + 1.2 }, radius: 2.4, priority: 1, visible: () => !this._zone, prompt: () => L("🌱 My kitchen garden"), activate: () => this._garden() });
+  }
+
+  // ---------- 6. 😊 Moods with reasons ----------
+  _mood() {
+    const pr = this.progress, jl = this._jl(), F = pr.fam || {}, R = [];
+    if (this._moodBoost && this._moodBoost.until > performance.now()) R.push([4, this._moodBoost.e, this._moodBoost.why]);
+    if (this._pcut) R.push([-2, "😬", L("Power cut! It is dark.")]);
+    if ((pr.energy || 0) < 25) R.push([-2, "😴", L("Very tired. Eat and sleep.")]);
+    if (this.isRainy && this.isRainy() && !this.world.currentRoom) R.push([1, "🌧️", L("Rain! Paper boat weather.")]);
+    if (this._sibFest && this._sibFest()) R.push([3, "🥳", L("Festival day!")]);
+    if (pr.spouse && F.love != null) R.push(F.love < 30 ? [-2, "😔", L("{n} feels far away.", { n: pr.spouse.name })] : F.love > 80 ? [2, "🥰", L("In love with {n}.", { n: pr.spouse.name })] : [0, "", ""]);
+    if ((F.kids || []).some((k) => Object.values(k.needs || {}).some((v) => v < 30) && (pr.age - k.born) < 18)) R.push([-1, "😟", L("A child needs you.")]);
+    if ((jl.punya || 0) >= 10) R.push([1, "😇", L("Good deeds make you glow.")]);
+    if ((pr.money || 0) < 20 && (pr.age || 0) >= 18) R.push([-1, "😰", L("Almost no money.")]);
+    const real = R.filter((r) => r[1]), score = real.reduce((a, r) => a + r[0], 0), face = real.length ? (score >= 3 ? "😄" : score >= 1 ? "🙂" : score <= -3 ? "😢" : score < 0 ? "😕" : "😐") : "🙂";
+    return { face, reasons: real.map((r) => `${r[1]} ${r[2]}`), score };
+  }
+  _moodChip() {
+    let el = document.getElementById("mood-chip"); if (!el) { el = document.createElement("button"); el.id = "mood-chip"; el.style.cssText = "position:fixed;left:12px;top:262px;z-index:40;border:none;border-radius:14px;background:rgba(255,255,255,.92);font:600 14px system-ui;padding:6px 10px;box-shadow:0 2px 8px rgba(0,0,0,.18);cursor:pointer"; el.addEventListener("click", (e) => { e.stopPropagation(); const m = this._mood(); showToast(`${m.face} ${m.reasons.length ? m.reasons.join(" · ") : L("A normal, calm day.")}`, 4200); }); document.body.appendChild(el); }
+    const m = this._mood(); el.textContent = `${m.face} ${L("Mood")}`; el.title = m.reasons.join(" · "); el.hidden = !!(this._cut || this._sim);
+  }
+
+  // ---------- 7. 📖 Dadi's story cards ----------
+  _storyCards() {
+    return [["🐒", L("The Monkey and the Crocodile"), L("A crocodile wants the monkey's heart. The clever monkey says: 'I left my heart on the tree!' and escapes."), L("What saved the monkey?"), [L("Quick thinking"), L("Running fast"), L("Crying")]],
+      ["🐦", L("The Thirsty Crow"), L("A crow finds a pot with little water. It drops pebbles, one by one, until the water rises."), L("What is the lesson?"), [L("Where there is a will, there is a way"), L("Crows love pebbles"), L("Never drink water")]],
+      ["👳", L("Tenali Raman and the Thieves"), L("Tenali says loudly: 'I hid my gold in the well!' The thieves pull water all night. His garden gets watered for free!"), L("How did Tenali win?"), [L("He used his brain"), L("He fought them"), L("He called the police")]],
+      ["🍲", L("Birbal's Khichdi"), L("Akbar says a man got warm from a far lamp. Birbal cooks khichdi with the pot far above the fire. It never cooks! Akbar understands."), L("What did Birbal teach Akbar?"), [L("Be fair"), L("Cook faster"), L("Lamps are hot")]],
+      ["⭐", L("Dhruv, the Pole Star"), L("Little Dhruv prays with all his heart. He becomes the star that never moves, the one sailors use to find north."), L("Which star is Dhruv Tara?"), [L("The Pole Star"), L("The Sun"), L("A shooting star")]],
+      ["🏹", L("Eklavya's Practice"), L("Eklavya has no teacher, so he practises every day in front of a clay statue. He becomes a great archer."), L("What made Eklavya great?"), [L("Practice every day"), L("A magic bow"), L("Luck")]],
+      ["🗡️", L("Rani Lakshmibai"), L("With her baby tied to her back, the brave queen of Jhansi rides into battle for her people."), L("Rani Lakshmibai was the queen of which place?"), [L("Jhansi"), L("Mumbai"), L("Goa")]],
+      ["🚀", L("Dr. APJ Abdul Kalam"), L("A boy who sold newspapers in Rameswaram grows up to build India's rockets and become President."), L("What did young Kalam do to help his family?"), [L("Sold newspapers"), L("Drove a bus"), L("Sold toys")]],
+      ["👩‍🚀", L("Kalpana Chawla"), L("A girl from Karnal looks at the stars from her roof. One day she flies to space."), L("Where did Kalpana Chawla go?"), [L("Space"), L("The ocean"), L("The desert")]],
+      ["🐘", L("The Elephant and the Mice"), L("Elephants free the trapped mice. Later, the mice chew the hunter's net and free the elephants."), L("What is the lesson?"), [L("Even small friends can help"), L("Mice are strong"), L("Elephants are scared")]],
+      ["🕊️", L("Gandhiji and the Salt March"), L("Gandhiji walks 390 km to the sea to make salt, peacefully, and the whole country walks with him."), L("How did Gandhiji protest?"), [L("Peacefully"), L("With a sword"), L("By shouting")]],
+      ["🦁", L("The Lion and the Clever Rabbit"), L("A small rabbit shows a proud lion his own face in a well. The lion jumps at the 'other lion' and falls in."), L("What beat the lion?"), [L("The rabbit's cleverness"), L("A bigger lion"), L("The rain")]]];
+  }
+  _dadiStory() {
+    const jl = this._jl(), pr = this.progress, S = this._storyCards(); jl.cards = jl.cards || [];
+    if (!(this.phase === "night" || this.phase === "evening")) { showToast(L("Dadi tells stories at night, under the blanket. Come after dinner!"), 2800); return this._storyAlbum(); }
+    if (jl.storyDay === this._dayKey()) { showToast(L("Dadi is sleepy. One story a night!"), 2400); return this._storyAlbum(); }
+    const idx = S.findIndex((s, i) => !jl.cards.includes(i)); const i = idx < 0 ? (pr.day || 0) % S.length : idx, s = S[i];
+    this.dialogue.say("Dadi", [L("Come, under the blanket. Tonight's story: {t}.", { t: s[1] }), s[2]], () => {
+      const opts = s[4].map((t, k) => ({ t, ok: k === 0 })).sort((a, b) => (a.t < b.t ? -1 : 1)); const F = this._fOpen(`${this._fHead(s[0], s[1])}<p class="job-brief">${L("Dadi asks")}: ${s[3]}</p><div class="btn-row" style="flex-direction:column">${opts.map((o, k) => `<button class="big-btn" id="sc-${k}">${o.t}</button>`).join("")}</div>`);
+      opts.forEach((o, k) => F.q(`#sc-${k}`).addEventListener("click", () => { closePanel(); jl.storyDay = this._dayKey(); if (o.ok && !jl.cards.includes(i)) jl.cards.push(i); this._jsave(); this._sfx(o.ok ? "win" : "bad"); showToast(o.ok ? L("🃏 Story card {n} of 12 collected: {t}!", { n: jl.cards.length, t: s[1] }) : L("Dadi smiles: 'Think again tomorrow night, beta.' The answer was: {a}", { a: s[4][0] }), 3400, o.ok ? "good" : "bad"); }));
+    }, { pitch: 380 });
+  }
+  _storyAlbum() {
+    const jl = this._jl(), S = this._storyCards(), have = jl.cards || [];
+    this._fOpen(`${this._fHead("🃏", L("Dadi's story cards: {n} of 12", { n: have.length }))}<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">${S.map((s, i) => `<div style="aspect-ratio:3/4;border-radius:10px;background:${have.includes(i) ? "#fff3c4" : "#e0e0e0"};display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:11px;padding:4px"><div style="font-size:26px">${have.includes(i) ? s[0] : "❔"}</div>${have.includes(i) ? s[1] : ""}</div>`).join("")}</div><p class="job-brief" style="font-size:13px">${L("One story every night from Dadi. Answer her question to win the card.")}</p>`);
+  }
+
+  // ---------- 8. 📽️ The life movie ----------
+  _lifeMovie() {
+    const pr = this.progress, A = (pr.album || []).slice(-24); if (A.length < 2) { showToast(L("Your life movie needs photos. Live a little more! (Big moments are saved to your album.)"), 3200); return; }
+    const F = this._fOpen(`<div id="lm-box" style="background:#111;color:#fff;border-radius:14px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;transition:opacity .6s"><div id="lm-ic" style="font-size:64px"></div><div id="lm-t" style="font-size:20px;margin-top:10px"></div><div id="lm-a" style="font-size:14px;color:#aaa;margin-top:6px"></div></div><div class="btn-row"><button class="ghost-btn" id="f-x">${L("Close")}</button></div>`);
+    let i = -1; const box = F.q("#lm-box"), notes = [262, 294, 330, 392, 440, 523, 587];
+    const show = () => { if (!F.alive()) return; i++; box.style.opacity = 0; setTimeout(() => { if (!F.alive()) return; if (i === 0) { F.q("#lm-ic").textContent = "🎬"; F.q("#lm-t").textContent = L("The life of {n}", { n: this.playerName || L("You") }); F.q("#lm-a").textContent = "School Days"; } else if (i <= A.length) { const a = A[i - 1]; F.q("#lm-ic").textContent = a.icon; F.q("#lm-t").textContent = a.text; F.q("#lm-a").textContent = `${L("Age")} ${a.age != null ? a.age : "?"} · ${L("Day")} ${a.day}`; } else { F.q("#lm-ic").textContent = "🌅"; F.q("#lm-t").textContent = L("...and the story goes on."); F.q("#lm-a").textContent = L("Just live it."); const jl = this._jl(); jl.movies = (jl.movies || 0) + 1; this._jsave(); } box.style.opacity = 1; try { this._tone(notes[i % notes.length], "sine", 1.2, 0.05); } catch (e) { /* music optional */ } if (i <= A.length) setTimeout(show, 2600); }, 500); };
+    show();
   }
 }
 

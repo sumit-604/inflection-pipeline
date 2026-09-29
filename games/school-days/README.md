@@ -1002,6 +1002,23 @@ A new 👨‍👩‍👧 button opens "My family".
 - Two-player games (operator ruling): Player 2 (the brother or sister) marries when Player 1 is 30, has a child when Player 1 is 40, and becomes a grandparent when Player 1 is 60 (the child is then 20). The family panel and the family tree show this line. Visit them, and bring a gift for the niece or nephew.
 - The automatic check has group O (15 checks) and runs in three parts: RGROUPS=A,B,C,E,F,G,H,I,J (78), RGROUPS=K,L,M,N (81) and RGROUPS=O (15). All 174 pass.
 
+## The temple wedding (v76)
+
+Every wedding now plays a 3D ceremony at the Shiv Mandir before the reception card: temple bells, a mandap with marigolds, the sacred fire, Panditji chanting ("Om Shri Ganeshaya Namah", "Mangalam Bhagwan Vishnu..."), the varmala (the bride and the groom put marigold garlands on each other), the seven pheras around the fire, and a flower shower while the elders bless the couple. A boy is the groom and a girl is the bride. Player 2's wedding (at Player 1's 30) plays the same ceremony. "Skip" ends it at any time.
+
+## Only in School Days (v77)
+
+A new "✨ Only in School Days" section at the top of the 🎲 hub:
+- 📱 Family WhatsApp group "Kaushik Parivar": each game day brings new messages from Dadi (good-morning flowers), Papa (forwards), Maa, the sibling, the spouse and the children, based on your real game life. Reply with a sticker.
+- 🗓️ Aaj ka Sawaal: 5 questions, the same for every player on the same real date. One try a day, a 🟩🟥 grid, a daily streak, and a share button for WhatsApp.
+- 📊 Skills: cooking, sports, music, maths, kindness, business and family care level up to 10 (points once a day per activity).
+- 🙏 Punya: kind choices add Punya and mean choices remove it. High Punya brings small good luck; low Punya brings small bad luck.
+- 🌱 Kitchen garden: three beds beside the house; tomato, chilli, coriander and bhindi grow on real days of watering; give the harvest to Maa or sell it.
+- 😊 Mood: a mood face on the screen; tap it to see the reasons.
+- 📖 Dadi's story cards: one story each night (Panchatantra, Tenali Raman, Birbal, Dhruv, Eklavya, Rani Lakshmibai, Dr. Kalam, Kalpana Chawla, Gandhiji); answer Dadi's question to win the card; 12 to collect.
+- 📽️ Life movie: a slideshow of your photo album.
+- The automatic check runs in three parts: RGROUPS=A,B,C,E,F,G,H,I,J (78), RGROUPS=K,L,M,N (81) and RGROUPS=O,P,Q (34). All 193 pass.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

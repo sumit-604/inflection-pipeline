@@ -19,3 +19,4 @@
 | 12d | verifier D peer coverage | claude-sonnet-5 | default | - | - | 154972 | 498s | 1 |
 | 12a | verifier A numerical (re-invocation, 180 claims) | claude-haiku-4-5 | default | - | - | 86209 | 320s | 2 |
 | 12b | verifier B red flags (independent) | claude-opus-4-8 | default | - | - | 257852 | 1117s | 1 |
+| 13 | synthesis-lite (phase 1, 3 files) | claude-opus-4-8 | default | - | - | 162742 | 361s | 1 (run#0 lost to session end, wrote nothing) |

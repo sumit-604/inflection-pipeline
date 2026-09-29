@@ -1,0 +1,38 @@
+stage: B13-synthesis
+mode: phase-1-lite
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-opus-4-8
+status: complete
+verdict: "REWORK"
+verdict_rule_applied: 1
+verdict_basis: "B12b acceptance_rate 29 (<60) and confidence overall 29 (<60). Judges the pipeline, not the stock. Missing operation: no stage reconciled investor decks and MD&A against audited notes and the Reg 33 results filing."
+flags_active: [FLAG-CASH, FLAG-GATE0]
+flag_cash_determination: "INDETERMINATE"
+flag_cash_missing_evidence: ["debtor split of Rs 42.90 Cr overdue bucket (Note 13c)", "Q2 FY27 Reg 33 half year balance sheet and cash flow", "FY27 AR Note 13c ageing and ECL"]
+promoter_verdict: "CAUTION (status partial; not a mandatory FLAG-PROMOTER block)"
+partial_stages: [B08, B09]
+freshness_verdict: "FRESHNESS PAIRS OK"
+corpus_audit_verdict: "CORPUS GAPPED"
+gate0: {core: 54, grand: 73, classification: "AVERAGE", corrected_from: {core: 56, grand: 75}}
+em: {score: 24, classification: "MODEST"}
+ua_qualifier: "WITHHELD (core 54 < 60, EM 24 < 25)"
+open_conflicts: ["B12b CRITICAL audited basis EBITDA margin 11.11% to 11.10% vs deck 11.27% to 11.44%", "B12b CRITICAL deck ROCE 34.97% vs Note 51 ROCE 17%", "credibility grade C (B05) vs D (B12b)"]
+transition_posture: "NOT ASSIGNED (Mental Model unsigned; recognition gap is a stage 11 output)"
+confidence_delta: {numerical: 97.2, redflag: 29, framework: 82, peer: 100, overall: 29}
+valuation_decision: "NOT RUN (phase 1)"
+entry_range: {low: null, high: null}
+headline: "Ignition leader growing, cash and margins unproven"
+falsification_metric: "Q2 FY27 Reg 33 filing: trade receivables growing faster than revenue with H1 CFO below 0.4x of H1 PAT"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - runs/indnippon-2026-09-10/outputs/final/business-narrative.md
+  - runs/indnippon-2026-09-10/outputs/final/gate-recommendation.md
+  - runs/indnippon-2026-09-10/outputs/final/verifier-summary.md
+notion_save:
+  page_title: "India Nippon Electricals (INDNIPPON) - Phase 1 evidence 2026-09-10"
+  summary: "Ignition leader growing, cash and margins unproven. REWORK (pipeline, not stock). No valuation run."
+  drive_link: "NOT FOUND"
+  mode: append-never-overwrite-status

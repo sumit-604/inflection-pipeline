@@ -413,6 +413,49 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     await run('nest', async () => { await story(); return true; }, 'N18 video call with Tara in her city');
     ok('N19 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ') + (await G(() => window.__game._lastErr || ''))); await p.close();
   } catch (e) { ok('N life events', false, e.message.slice(0, 300)); }
+  // ---------- O. v75: brides for boys, grooms for girls; the real blackout and the candle; Player 2's family line ----------
+  if (want('O')) try {
+    p = await fresh();
+    const G = (fn, a) => ev(p, fn, a);
+    const names = () => G(() => [...document.querySelectorAll('#job-card .cart-row b')].map((b) => b.textContent));
+    const boyN = await G(() => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.age = 25; g._wedding(); return !!g.player.girl; }); const n1 = await names();
+    ok('O1 a boy gets three proposals, all brides (no Arjun)', !boyN && n1.length === 3 && n1.every((n) => ['Priya', 'Meera', 'Anjali'].includes(n)), n1.join(','));
+    await G(() => { const g = window.__game; document.getElementById('job-panel').hidden = true; g.progress.age = 22; g._familyHub(); }); const d1 = await G(() => [...document.querySelectorAll('[id^="fd-"][id$="-talk"]')].map((b) => b.id.split('-')[1]));
+    ok('O2 dating list for a boy: only brides', d1.length === 3 && !d1.includes('arjun'), d1.join(','));
+    const fix = await G(() => { const g = window.__game, pr = g.progress; pr.spouse = { id: 'arjun', name: 'Arjun' }; const r = g._fixSpouse(); return [r, pr.spouse.name]; });
+    ok('O3 an old save where a boy married Arjun is fixed to Priya', fix[0] === true && fix[1] === 'Priya', JSON.stringify(fix)); await G(() => { const x = document.querySelector('#f-x'); if (x) x.click(); });
+    // Blackout at home.
+    await G(() => { const g = window.__game, d = g.world.doors.find((x) => x.label === 'Our Home'); g.progress.day = 5; g._startPhase('evening'); window.__fin(); g.player.group.position.set(d.x, 0, d.z); g._enterRoom(d); window.__fin(); });
+    await p.waitForTimeout(800); await p.screenshot({ path: 'O_before.png' });
+    const dark = await G(() => { const g = window.__game, W = g.world; g._tmin = 18 * 60 + 40; g._tickUtilities(); window.__fin(); g._tickUtilities(); const it = g.roomInteractables.find((i) => i._pc), r = W.currentRoom; return { bg: W.scene.background.getHex(), on: !!g._pcut, room: W.roomLight.intensity, hemi: W.hemi.intensity, sun: W.sun.intensity, prompt: it && it.prompt(), dx: it ? it.pos.x - r.x0 : null }; });
+    await p.waitForTimeout(1500); await p.screenshot({ path: 'O_dark.png' });
+    ok('O4 power cut: the house goes really dark, sky too', dark.on && dark.room === 0 && dark.hemi < 0.1 && dark.sun < 0.1 && dark.bg === 0x05070d, JSON.stringify(dark));
+    ok('O5 the candle waits in the living room, by the sofa', /living room/.test(dark.prompt || '') && dark.dx < -4, JSON.stringify(dark));
+    const cand = await G(() => { const g = window.__game; g.roomInteractables.find((i) => i._pc).activate(); g._tickUtilities(); const P = g._pcut; return { candle: P.candle, light: P.cL ? P.cL.intensity : 0, inRoom: !!(P.cG && P.cG.parent), prompt: g.roomInteractables.find((i) => i._pc).prompt() }; });
+    await G(() => { const g = window.__game, P = g._pcut, r = g.world.currentRoom; g.player.group.position.set(r.x0 + P.cG.position.x + 1.5, 0, r.z0 + P.cG.position.z + 1.5); }); await p.waitForTimeout(1500); await p.screenshot({ path: 'O_candle.png' });
+    ok('O6 light the candle: a dim, warm flickering light', cand.candle && cand.light > 2 && cand.light < 8 && cand.inRoom && /burning/.test(cand.prompt), JSON.stringify(cand));
+    const end = await G(() => { const g = window.__game, W = g.world; g._tmin = 19 * 60 + 40; g._tickUtilities(); return { bg: W.scene.background.getHex(), off: !g._pcut, room: W.roomLight.intensity, hemi: W.hemi.intensity, spots: g.roomInteractables.filter((i) => i._pc).length }; });
+    ok('O7 "Light aa gayi": lights come back, the candle goes', end.off && end.room === 18 && end.bg !== 0x05070d && end.hemi > 0.3 && end.spots === 0, JSON.stringify(end));
+    const one = await G(() => { const g = window.__game; g._exitRoom(); g.progress.age = 45; g._famT = 0; g._tickFamily(); return !!(g.progress.fam && g.progress.fam.sib && g.progress.fam.sib.married); });
+    ok('O8 one-player game: no Player 2 family line', one === false);
+    ok('O9 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ') + (await G(() => window.__game._lastErr || ''))); await p.close();
+    // Girl player: grooms and a lehenga.
+    p = await fresh({ setup: async (q) => { await q.click('#av-girl'); } });
+    const g1 = await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.age = 25; g._wedding(); return [...document.querySelectorAll('#job-card .cart-row b')].map((b) => b.textContent); });
+    await ev(p, () => document.querySelector('.use-btn').click()); const lehenga = await ev(p, () => /Lehenga/.test(document.body.innerText) && !/Sherwani/.test(document.body.innerText));
+    ok('O10 a girl gets three proposals, all grooms; she wears a lehenga', g1.length === 3 && g1.every((n) => ['Arjun', 'Kabir', 'Rohit'].includes(n)) && lehenga, g1.join(','));
+    await p.close();
+    // Two players: the sister's own family line.
+    p = await fresh({ setup: async (q) => { await q.click('#av-2p'); await q.click('#av-boy'); await q.click('#av-p2girl'); } });
+    const step = (age) => ev(p, (a) => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); window.__fin(); g.progress.age = a; g._famT = 0; g._tickFamily(); const t = g.dialogue.active ? g.dialogue.lines.join(' ') : ''; window.__fin(); const S = (g.progress.fam || {}).sib || {}; return { m: !!S.married, sp: S.spouse, kids: (S.kids || []).length, gk: (S.kids || [])[0] ? S.kids[0].kids.length : 0, t: t.slice(0, 90) }; }, age);
+    const s29 = await step(29), s30 = await step(30), s39 = await step(39), s40 = await step(40), s59 = await step(59), s60 = await step(60);
+    ok('O11 two players: the sister marries when Player 1 is 30 (a groom)', !s29.m && s30.m && ['Vikram', 'Aditya', 'Sahil'].includes(s30.sp), JSON.stringify([s29, s30]));
+    ok('O12 her baby comes when Player 1 is 40', s39.kids === 0 && s40.kids === 1, JSON.stringify([s39.kids, s40.kids]));
+    ok('O13 her grandchild comes when Player 1 is 60', s59.gk === 0 && s60.gk === 1, JSON.stringify([s59.gk, s60.gk, s60.t]));
+    await ev(p, () => { window.__game._familyHub(); document.querySelector('#fp2-visit').click(); }); const hubT = await ev(p, () => { window.__game._famTree(); return document.body.innerText; });
+    ok('O14 family panel and tree show the sister\'s family', /Ishaan|Siya/.test(hubT) && /Rudra|Aadhya/.test(hubT), '');
+    ok('O15 no page errors', p.errs.length === 0 && !(await ev(p, () => window.__game._lastErr)), p.errs.join(' | ')); await p.close();
+  } catch (e) { ok('O v75', false, e.message.slice(0, 300)); }
   await browser.close();
   const fails = results.filter((r) => r[0] === 'FAIL'); console.log(`\n==== ${results.length - fails.length} PASS, ${fails.length} FAIL ====`); fails.forEach((f) => console.log('FAIL: ' + f[1] + ' -- ' + f[2]));
 })();

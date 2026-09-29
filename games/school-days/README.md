@@ -995,6 +995,13 @@ A new 👨‍👩‍👧 button opens "My family".
 - Old saves: an old child, child's wedding and grandchild join the new family sim.
 - The automatic check now runs in two parts (RGROUPS=A,B,C,E,F,G,H,I,J and RGROUPS=K,L,M,N), each under 10 minutes. Result: 78 of 78 and 81 of 81.
 
+## Brides for boys, grooms for girls; a real blackout; Player 2's family (v75)
+
+- Bug fix: a boy player could marry "Arjun". Now a boy sees only brides (Priya, Meera, Anjali) and a girl sees only grooms (Arjun, Kabir, Rohit), in Maa's proposals and in dating. A bride wears a lehenga or a saree. An old save where the spouse has the wrong gender changes to the matching partner once, with a message.
+- Power cut: inside a house everything goes black, the sky too. Dadi says the candle is in the living room. Light it by the sofa: a dim, warm, flickering light. When the power comes back, the candle goes and the lights return.
+- Two-player games (operator ruling): Player 2 (the brother or sister) marries when Player 1 is 30, has a child when Player 1 is 40, and becomes a grandparent when Player 1 is 60 (the child is then 20). The family panel and the family tree show this line. Visit them, and bring a gift for the niece or nephew.
+- The automatic check has group O (15 checks) and runs in three parts: RGROUPS=A,B,C,E,F,G,H,I,J (78), RGROUPS=K,L,M,N (81) and RGROUPS=O (15). All 174 pass.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

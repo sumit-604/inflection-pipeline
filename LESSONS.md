@@ -134,3 +134,6 @@ _Pending framework edits Keerti maintains._
   projection (Entero: fade 10% vs SOM-implied 26.4%), flag the fade for operator
   ruling rather than applying it silently. For /compost to promote into a
   prompt/framework fix.
+- Add an Auto Components / auto electricals row to the Section 1B cap table
+  (INDNIPPON 2026-09-10 ruled "Cables / Industrial products" 25x ad hoc; no
+  auto row exists).

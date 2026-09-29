@@ -1,0 +1,56 @@
+stage: B09b-dossier
+company: "INDNIPPON"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Quarterly shareholding-pattern filing, BSE scrip 532240 (promoter pledge and 12-quarter holding history)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Debtor split of the Rs 42.90 cr near-term-overdue receivables bucket"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Earnings-call transcripts (company holds none)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Rating rationale (no rated debt)"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "OEM ignition and electronics (2W, 3W, general purpose engines)"
+    archetype: "Build-to-spec component maker"
+  - line: "Aftermarket (about 11% of revenue, parent-owned dealer channel)"
+    archetype: "fits no known archetype (nearest Brand/franchise consumer; no moat evidenced, B07)"
+transition:
+  - line: "OEM ignition and electronics"
+    from_tier: "R2 (proposal; holds under audited Note 51 ROCE 17%; under deck ROCE 34.97% or stage 1 operating ROCE 21.9-30.5% the ROCE number alone points to R4-R5 while pricing power stays weak, B04)"
+    to_tier: "R3 (proposal; management claims a move to integrated system-level supplier, AR2026 MD&A p.124)"
+    engine: "Content per vehicle rising via ISG controllers, DC-DC converters, sensors, EFI ECU; exports and premium 2W mix (B04, B05, B07)"
+    proof_gate: "Audited-basis operating EBITDA margin above FY26 audited 11.10% for two consecutive quarters AND a disclosed product-category revenue split showing electronics share rising; NOT FIRED (proposal, operator fixes threshold)"
+    recognition_gap: "Open question for Stage 11: does the TO state already look reflected in market pricing; resolved via the PE gap; no number or conclusion here"
+    ugliness: "UNRESOLVED (B13 cash INDETERMINATE): inventory half reads ARTIFACT-OF-CLIMB; receivables half leans STRUCTURAL-FEATURE; debtor split separates them"
+    transition_falsifier: "Audited-basis margin at or below 11.10% for two more filings with no product split; growth vs 2W industry narrowing to single digits two straight quarters; 3 kW controller rollout not delivered by end-2026 with R&D flat"
+dominant_variables:
+  - "V1 Audited-basis operating margin against mix disclosure"
+  - "V2 INEL revenue growth against 2W industry growth (share and content)"
+  - "V3 Cash conversion and receivables quality (CFO/PAT, overdue share)"
+  - "V4 NdFeB magnet supply and cost recovery"
+business_falsifier: "Two-customer concentration above 75% or a third customer above 10% or an OEM dual-sourcing or insourcing ignition; or audited margin and ROCE showing cost-of-capital returns with FY26 growth proving a one-off GST base effect (FROM becomes R1); or the receivable build proving intra-group financing of the parent channel"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "3 of 6 externally observable"
+  single_point_failure: "Two-customer concentration (70.66% of FY26 revenue, B02); secondary candidate NdFeB rare-earth supply (B09)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "7d6c438d4c8b47c7c270af199e97457749cbfea7"

@@ -515,3 +515,37 @@ Company memory written for both with the standing-ruling spear OVERRIDE.
 - Roughly 5.58M tokens over 25 subagent runs; about 52% went to cycles two and
   three. Stage 5, stage 6 and the two verifiers that audit them are 60.6% of the run.
 - Not a clean run.
+
+## [2026-09-29] INDNIPPON Phase 1 (/step1 intake, run date 2026-09-10) — REWORK
+
+- Gate verdict REWORK on the pipeline, not the stock. Verifier B acceptance 29%,
+  confidence overall 29. No stage was tasked with reconciling the investor decks
+  and MD&A against the audited notes and the Reg 33 filing. Twelve red-flag items
+  sat in that seam, including two CRITICALs: deck ROCE 34.97% vs audited Note 51
+  17%, and an FY26 margin rise that may be an FX artefact (audited 11.11% to
+  11.10% vs deck 11.27% to 11.44%). Stage 4 saw the deck ROCE and accepted it as
+  "directionally consistent". Candidate for /compost: give stage 5 (or a new
+  step) an explicit deck-vs-audited reconciliation duty on every run.
+- Shared working directory collision. Another session checked out a different
+  branch in the main checkout mid-run and swapped the tree. Committed work was
+  safe; one uncommitted report was saved from scratch. Moved the run into
+  .claude/worktrees/indnippon. Start every /step1 in its own worktree.
+- Stage-0 inventory counted CSV lines, not data, and recorded the screener CSVs
+  as populated. The empty-CSV defect had fired for all four companies. Stage 1
+  caught it. Test for data, not line count.
+- Stage-0 cited a SEBI transfer-window "pledged" line as a promoter pledge
+  statement. Corrected in B00; pledge is UNRESOLVED.
+- Verifier A pass 1 raised a false MAJOR with source_fidelity: true (conflated a
+  combined FY25 line 54 + 2,414 = 2,458 with the stipend line 2,414). Withdrawn
+  on the single re-invocation; coverage rose 57 to 180 claims, 97.2%.
+- Verifier C caught a real Gate 0 breach: A1 median ROCE 13.68% scored 3, band
+  gives 1. Core 56 to 54, grand 75 to 73, class unchanged.
+- WebSearch returned "unavailable" to every subagent that tried it (stages 8 and
+  9, about 26 attempts) while it worked for the orchestrator. Both stages ran
+  partial on WebFetch fallback. Subagent tool provisioning, not quota.
+- Stage 4 wrote its YAML block only to its hand-back, not its report file. The
+  orchestrator persisted the verbatim block rather than re-run.
+- Stage 13 run lost once to a session end; rerun clean.
+- Amendment 14 fade guard fired in REVERSE: SOM-implied CAGR 5.3% sits far
+  BELOW delivered growth (26.5% FY26, 35.5% Q1FY27). Add to the ENTERO item.
+- About 3.03M subagent tokens over 19 ledgered runs. Not a clean run.

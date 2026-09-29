@@ -20,3 +20,40 @@
 | 12a | verifier A numerical (re-invocation, 180 claims) | claude-haiku-4-5 | default | - | - | 86209 | 320s | 2 |
 | 12b | verifier B red flags (independent) | claude-opus-4-8 | default | - | - | 257852 | 1117s | 1 |
 | 13 | synthesis-lite (phase 1, 3 files) | claude-opus-4-8 | default | - | - | 162742 | 361s | 1 (run#0 lost to session end, wrote nothing) |
+| 09b | Halt 1 understanding dossier | claude-sonnet-5 | default | - | - | 261844 | 669s | 1 |
+
+## CLOSE-OUT SUMMARY (run-pipeline step 6c)
+
+Run total across all ledger rows: 3,033,361 subagent tokens. Stage 0 ran inline in the orchestrator and carries no subagent tokens.
+
+### (a) Top five by tokens (loops and retries summed per stage)
+
+| rank | stage | total_tok | share of run |
+|---|---|---|---|
+| 1 | 2 notes triple-pass | 370,270 | 12.2% |
+| 2 | 3 AR backward deep dive | 312,251 | 10.3% |
+| 3 | 6 peer concall verification | 271,100 | 8.9% |
+| 4 | 09b Halt 1 understanding dossier | 261,844 | 8.6% |
+| 5 | 12b verifier B red flags | 257,852 | 8.5% |
+
+### (b) Downshift failures
+
+none. The mechanical stages are stage 0 (ran inline, no subagent), stage 10 (not run in phase 1) and verifier A, which ran on claude-haiku-4-5 on both passes.
+
+### (c) Cost spikes
+
+none. No prior runs/indnippon-*/session-cost.md exists, so there is no baseline to compare against.
+
+### (d) Operator snapshot
+
+Reminder: run /cost and /usage now and paste the cache hit ratio and the loop totals below this heading. The orchestrator cannot read those interactive commands.
+
+Operator snapshot:
+
+(pending)
+
+### Run notes
+
+- Stage 13 run#0 was lost when the session ended mid-call. It wrote nothing and consumed no ledgered tokens that could be measured; run#1 is the ledgered run.
+- Stage 2 is the single largest cost at three sequential passes. Stage 6 read twelve peer transcripts in one call.
+

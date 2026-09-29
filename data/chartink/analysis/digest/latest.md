@@ -148,3 +148,19 @@ Bottom decile of history:
 
 
 <!-- market-read -->
+
+## Market read
+
+Monday undid the repair on the long line. Big fallers beat big risers 110 to 45,
+the worst day since the 15 September washout, and about eight stocks in ten
+closed down. The Nifty lost about one and a half percent. Only the fear gauge
+rose. The count of stocks above the two-hundred-day line fell to 991, below the
+washout-day level of about 1,035 and the lowest since June. The shorter lines
+held above their washout lows, so this is a lower low on the slow measure and
+not yet on the fast ones. It was not a second washout. Fewer than a third as
+many stocks fell hard as on washout day. Small and micro indices still sit above
+their trend lines, and healthcare still holds its long breadth. Fear moved from
+cheap to normal in one session. The repair from the washout lost its best proof
+on Monday.
+
+Full brief: briefs/2026-09-28.html

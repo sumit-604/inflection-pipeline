@@ -1,5 +1,6 @@
 // Full regression (v73: groups K and L cover the 30 new activities): every feature and fix the operator asked for, in a real browser, with real keys where it matters.
 const { chromium } = require('playwright');
+const ONLY = (process.env.RGROUPS || '').split(',').filter(Boolean); const want = (g) => !ONLY.length || ONLY.includes(g); // RGROUPS=A,B,... runs part of the suite
 const results = []; const ok = (name, pass, info = '') => { results.push([pass ? 'PASS' : 'FAIL', name, info]); console.log(`${pass ? 'PASS' : 'FAIL'}  ${name}${info ? '  -- ' + info : ''}`); };
 const FIN = `window.__fin = () => { const g = window.__game; let n = 0; while (g.dialogue.active && n++ < 40) { const f = g.dialogue.onDone; g.dialogue.onDone = null; g.dialogue.close(); if (f) f(); } };`;
 let browser;
@@ -22,7 +23,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });
   let p;
   // ---------- A. Start screen ----------
-  try {
+  if (want('A')) try {
     p = await browser.newPage({ viewport: { width: 1280, height: 720 } }); await p.goto('http://localhost:8765/game.html'); await p.evaluate(() => localStorage.clear()); await p.reload();
     const ids = ['av-1p', 'av-2p', 'av-boy', 'av-girl', 'av-p2boy', 'av-p2girl', 'av-p2name', 'new-game', 'av-name', 'av-glasses'];
     const have = await ev(p, (ids) => ids.filter((i) => !document.getElementById(i)), ids); ok('A1 start screen has all buttons', have.length === 0, have.join(','));
@@ -33,7 +34,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('A start screen', false, e.message); }
 
   // ---------- B. Two players: genders, names, keys ----------
-  try {
+  if (want('B')) try {
     p = await fresh({ setup: async (q) => { await q.click('#av-2p'); await q.click('#av-girl'); } });
     await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); const pp = g.player.position; g.p2.group.position.set(pp.x + 2, 0, pp.z); });
     const info = await ev(p, () => { const g = window.__game; return { on: !!(g.p2 && g.p2.on), p1girl: !!g.player.girl, two: !!g.input.twoPlayer, dress: g.p2.group.children.some((c) => c.geometry && c.geometry.type === 'CylinderGeometry' && c.geometry.parameters.radiusBottom === 0.4) }; });
@@ -81,7 +82,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('B two players', false, e.message); }
 
   // ---------- C. One player: W A S D and arrows both move ----------
-  try {
+  if (want('C')) try {
     p = await fresh({ setup: async (q) => { await q.click('#av-1p'); } });
     await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); });
     const P = () => ev(p, () => { const a = window.__game.player.position; return [a.x, a.z]; });
@@ -93,7 +94,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('C/D one player and home start', false, e.message); }
 
   // ---------- E. Umbrella, monsoon, morning life, bath, towel, water and power cuts ----------
-  try {
+  if (want('E')) try {
     p = await fresh();
     const r = await ev(p, () => { const g = window.__game, pr = g.progress; window.__fin(); for (let d = 1; d < 400; d++) { pr.day = d; if (g.isRainy() && d % 4 !== 3) break; } if (g.world.currentRoom) g._exitRoom(); g._startPhase('morning'); window.__fin(); if (g.world.currentRoom) g._exitRoom(); return { rainy: g.isRainy(), day: pr.day }; });
     await p.waitForTimeout(600); ok('E1 umbrella opens outdoors in the rain', await ev(p, () => !!(window.__game.player.umbrella && window.__game.player.umbrella.visible)), JSON.stringify(r));
@@ -112,7 +113,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('E daily life', false, e.message); }
 
   // ---------- F. Other cities: walking, maps, vehicles, taxi, landmark, hotel, home lock, going home ----------
-  try {
+  if (want('F')) try {
     p = await fresh();
     await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.money = 20000; g.progress.age = 25; g.progress.licence = true; g._arriveCity('Delhi', ['a', 'b', 'c'], 'air', 'family'); if (g._cut) g._endFlight(); window.__fin(); if (g._matchTrip && g._matchTrip.banner) g.world.scene.remove(g._matchTrip.banner); g._matchTrip = null; });
     const Z = await ev(p, () => { const g = window.__game, Z = g._zone, P = g.player.position; return { city: Z && Z.city, inCity: Math.abs(P.x - Z.x) < 170, x: P.x, z: P.z, zx: Z.x }; }); ok('F1 Delhi is its own city and the player is inside it', Z.city === 'Delhi' && Z.inCity, JSON.stringify(Z));
@@ -134,7 +135,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('F other cities', false, e.message); }
 
   // ---------- G. Police cases: rotation, murder rooms, questioning, picker, trips hold the case ----------
-  try {
+  if (want('G')) try {
     p = await fresh();
     const rot = await ev(p, () => { const g = window.__game, out = []; if (g.world.currentRoom) g._exitRoom(); const d = g.world.doors.find((x) => x.label === 'Police Station');
       for (let k = 0; k < 3; k++) { g.player.group.position.set(d.x, 0, d.z); g._enterRoom(d); const it = g.roomInteractables.find((i) => /thief, fight/i.test((i.prompt && i.prompt()) || '')); if (!it) { out.push('no file'); break; } it.activate(); window.__fin(); out.push(g._chase ? 'thief' : g._fieldCase ? 'fight' : g._myst ? 'murder' : 'none'); if (g._chase) g._endChase(false); if (g._fieldCase) { g._fieldCase = null; g._clearCaseScene(); } window.__fin(); if (g._myst && k < 2) g._mysteryEnd(false); }
@@ -158,7 +159,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('G police cases', false, e.message); }
 
   // ---------- H. Haveli: marker, stairs by walking, upstairs, resume, never stuck ----------
-  try {
+  if (want('H')) try {
     p = await fresh();
     await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g._startPhase('night'); window.__fin(); if (g.world.currentRoom) g._exitRoom(); g.player.group.position.set(-154, 0, 141); g._nearestInteractable().activate(); window.__fin(); });
     ok('H1 haveli entered at night with the glowing marker', await ev(p, () => { const g = window.__game, R = g.world.currentRoom; return !!R && R.type === 'haveli' && !!R._hvBeacon && R._hvBeacon.visible; }));
@@ -174,7 +175,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('H haveli', false, e.message); }
 
   // ---------- I. Lift, stocks, goals, photo, bug report, election, new game ----------
-  try {
+  if (want('I')) try {
     p = await fresh();
     await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); const d = g.world.doors.find((x) => x.label === 'Grand Hotel'); g.player.group.position.set(d.x, 0, d.z); g._enterRoom(d); window.__fin(); g.roomInteractables.find((i) => /Take the lift/.test(i.prompt() || '')).activate(); });
     await p.fill('#lift-in', '3'); await p.keyboard.press('Enter'); await p.waitForTimeout(1500);
@@ -191,7 +192,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('I tools', false, e.message); }
 
   // ---------- J. Pilot duty: explore the city in the break ----------
-  try {
+  if (want('J')) try {
     p = await fresh();
     const r = await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g._sim = { kind: 'fly', trip: { dest: 'Sydney', pax: 120, no: 101, leg: 1, stars: [] }, ui: {}, score: 4, max: 5, t: 0 }; g._simArrive(); document.querySelector('#sa-walk').click(); if (g._cut) g._endFlight(); window.__fin(); return { city: g._zone && g._zone.city, lm: g._landmark && g._landmark.userData.name, back: g.interactables.some((i) => i._zone && /cockpit/.test(i.prompt())) }; });
     ok('J1 pilot break: walk Sydney, Opera House in the city, back-to-cockpit spot', r.city === 'Sydney' && !!r.lm && r.back, JSON.stringify(r));
@@ -199,7 +200,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('J pilot break', false, e.message); }
 
   // ---------- K. v73 fun hub: 30 new things to do ----------
-  try {
+  if (want('K')) try {
     p = await fresh();
     await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.money = 20000; const s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); });
     await p.click('#lb-fun'); const nb = await ev(p, () => document.querySelectorAll('[id^="fh-"]').length); ok('K1 🎲 hub opens with 30 activities', nb === 30, `${nb}`); await p.click('#f-x');
@@ -207,13 +208,15 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     const next = () => ev(p, () => { const g = window.__game; g.progress.day++; window.__fin(); });
     // K2 chore, one player: press up when the sister shouts NOW.
     await ev(p, () => { window.__game._coLast = 0; window.__game._coChore(); });
-    for (let k = 0; k < 160; k++) { const t = await ev(p, () => { const c = document.querySelector('#co-cue'); return c ? c.textContent : 'gone'; }); if (t === 'gone') break; if (/NOW/.test(t)) await p.keyboard.press('ArrowUp'); if (await ev(p, () => !!document.querySelector('#f-ok'))) break; await p.waitForTimeout(100); }
+    // Press inside the page, the moment the cue says NOW (a slow test machine cannot poll fast enough from outside).
+    await ev(p, () => { const c = document.querySelector('#co-cue'); const mo = new MutationObserver(() => { if (/NOW/.test(c.textContent)) window.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp', bubbles: true })); }); mo.observe(c, { childList: true, characterData: true, subtree: true }); });
+    await p.waitForFunction(() => !!document.querySelector('#f-ok'), null, { timeout: 60000 }).catch(() => {});
     ok('K2 two-hand chore done by lifting on NOW', (await J()).chores === 1, JSON.stringify((await J()).chores)); await ev(p, () => { const b = document.querySelector('#f-ok'); if (b) b.click(); });
     // K3 cricket, one player: let every ball go past.
     await ev(p, () => window.__game._cricket2()); await p.waitForFunction(() => !!document.querySelector('#f-ok'), null, { timeout: 45000 }).catch(() => {});
     ok('K3 gully cricket over finishes with a result', (await J()).cricket === 1); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
     // K4 hide and seek.
-    await ev(p, () => window.__game._hideSeek()); await p.waitForFunction(() => window.__game._hs && window.__game._hs.t > 0.2, null, { timeout: 40000 }).catch(() => {}); const hs = await ev(p, () => { const g = window.__game; if (!g._hs) return 'no game'; const s = g._hs.sp; g.player.position.set(s.x + 1, 0, s.z); return 'ok'; }); await p.waitForTimeout(600);
+    await ev(p, () => window.__game._hideSeek()); await p.waitForFunction(() => window.__game._hs && window.__game._hs.t > 0.2, null, { timeout: 40000 }).catch(() => {}); const hs = await ev(p, () => { const g = window.__game; if (!g._hs) return 'no game'; const s = g._hs.sp; g.player.position.set(s.x + 1, 0, s.z); return 'ok'; }); await p.waitForFunction(() => !window.__game._hs, null, { timeout: 20000 }).catch(() => {});
     ok('K4 hide and seek: walk to the hiding place and find her', hs === 'ok' && (await J()).hideFound === 1, hs);
     // K5 race.
     await ev(p, () => { const g = window.__game, s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); g._sibRaceStart(); }); await p.waitForFunction(() => window.__game._sibRace && window.__game._sibRace.t > 0.1, null, { timeout: 30000 }); await ev(p, () => { const g = window.__game; const T = g._sibRace.T; g.player.position.set(T.x, 0, T.z + 1); }); await p.waitForTimeout(500);
@@ -309,7 +312,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   } catch (e) { ok('K fun hub', false, e.message.slice(0, 300)); }
 
   // ---------- L. Two players in the fun games ----------
-  try {
+  if (want('L')) try {
     p = await fresh({ setup: async (q) => { await q.click('#av-2p'); await q.click('#av-boy'); await q.click('#av-p2girl'); } });
     await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); });
     await ev(p, () => window.__game._coChore()); for (let k = 0; k < 5; k++) { await ev(p, () => { for (const key of ['ArrowUp', 'w']) window.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true })); }); await p.waitForTimeout(250); }
@@ -323,6 +326,93 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     ok('L4 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
   } catch (e) { ok('L two players', false, e.message.slice(0, 300)); }
 
+  // ---------- M. v74 family sim: marry at 25-26, children at 30-38, grandchildren at 49-50 ----------
+  if (want('M')) try {
+    p = await fresh();
+    const G = (fn, a) => ev(p, fn, a);
+    const click = (sel) => G((s) => { const b = document.querySelector(s); if (!b || b.disabled) return false; b.click(); return true; }, sel);
+    const has = (sel) => G((s) => { const b = document.querySelector(s); return !!b && !b.disabled; }, sel);
+    const tick = () => G(() => { const g = window.__game; g._famT = 0; g._tickFamily(); });
+    const F = () => G(() => JSON.parse(JSON.stringify(window.__game.progress.fam || {})));
+    const hub = (age) => G((a) => { const g = window.__game; if (a != null) g.progress.age = a; g._familyHub(); }, age);
+    await G(() => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.money = 90000; g.progress.age = 12; });
+    await p.click('#lb-fam'); ok('M1 👨‍👩‍👧 family panel opens; a child sees "when you grow up"', await G(() => /grow up/.test(document.body.innerText))); await p.click('#f-x');
+    await hub(22); for (let d = 0; d < 2; d++) { for (const k of ['talk', 'chai', 'film']) await click(`#fd-priya-${k}`); await G(() => { window.__game.progress.day++; window.__game._familyHub(); }); }
+    const dl = (await F()).dating.priya, ring22 = await has('#fd-priya-ring'); await hub(25); const ring25 = await has('#fd-priya-ring');
+    ok('M2 dating fills love to 70+, but Propose waits for age 25', dl >= 70 && !ring22 && ring25, `love ${dl}, at 22 ${ring22}, at 25 ${ring25}`);
+    await click('#fd-priya-ring'); await G(() => window.__fin()); await click('#wp-ok'); await p.waitForTimeout(200); await click('#wd-ok'); await G(() => window.__fin());
+    ok('M3 wedding at 25: Priya is the spouse', await G(() => (window.__game.progress.spouse || {}).name === 'Priya' && window.__game.progress.marriedAt === 25));
+    await hub(); const l0 = (await F()).love; await click('#fs-cook'); const l1 = (await F()).love; await hub(); ok('M4 cook together raises love; once a day', l1 > l0 && !(await has('#fs-cook')), `${l0} -> ${l1}`);
+    await G(() => { window.__game.progress.fam.love = 90; }); await hub(29); const b29 = await has('#fs-baby'); await hub(30); const b30 = await has('#fs-baby');
+    ok('M5 no baby at 29; babies from age 30', !b29 && b30, `29 ${b29}, 30 ${b30}`);
+    await click('#fs-baby'); await click('#fb-girl'); await p.fill('#fb-name', 'Tara'); await click('#fb-ok');
+    const b1 = await G(() => { const pr = window.__game.progress; return { kids: pr.fam.kids.length, child: pr.child && pr.child.name, gen: pr.generations, boy: pr.fam.kids[0].boy, born: pr.fam.kids[0].born }; });
+    ok('M6 a girl, Tara, born when you are 30', b1.kids === 1 && b1.child === 'Tara' && b1.gen === 2 && b1.boy === false && b1.born === 30, JSON.stringify(b1));
+    await tick(); const f0 = (await F()).kids[0].needs.food; await G(() => { window.__game.progress.day++; }); await tick(); const f1 = (await F()).kids[0].needs.food;
+    await hub(); await click('#fk-0-feed'); const f2 = (await F()).kids[0].needs.food; ok('M7 the baby gets hungry each day; feeding helps', f1 < f0 && f2 > f1, `${f0} -> ${f1} -> ${f2}`);
+    await G(() => { window.__game.progress.fam.love = 90; }); await hub(31); await click('#fs-baby'); await click('#fb-boy'); await p.fill('#fb-name', 'Veer'); await click('#fb-ok');
+    ok('M8 a second child, a boy, at 31', (await F()).kids.length === 2 && (await F()).kids[1].boy === true);
+    await G(() => { window.__game.progress.age = 36; }); await tick(); const k6 = (await F()).kids[0]; await hub(); const hw = await click('#fk-0-hw'); const k6b = (await F()).kids[0];
+    ok('M9 at 36: Tara is 6, a report card, homework builds the study skill', (k6.reports || []).length === 1 && hw && k6b.skill.study === 1, JSON.stringify(k6.reports));
+    await G(() => { window.__game.progress.fam.love = 90; }); await hub(39); ok('M10 no baby after 38', !(await has('#fs-baby')));
+    await G(() => { window.__game.progress.age = 48; }); await tick(); await hub(); await click('#fk-0-career'); await click('#fc-0'); ok('M11 at 48 Tara is 18 and chooses a career', !!(await F()).kids[0].career, (await F()).kids[0].career);
+    await hub(); await click('#fk-0-wed'); await click('#fw-0'); await G(() => window.__fin()); ok('M12 Tara marries at 18, when you are 48', (await F()).kids[0].married && await G(() => !!window.__game.progress.childMarried));
+    await hub(); const gk48 = await has('#fk-0-gk'); await hub(49); const gk49 = await has('#fk-0-gk'); await click('#fk-0-gk'); await G(() => window.__fin());
+    const gk = await G(() => { const pr = window.__game.progress; return { n: pr.fam.kids[0].kids.length, g: pr.grandchild && pr.grandchild.name, gen: pr.generations }; });
+    ok('M13 no grandchild at 48; a grandchild at 49: three generations', !gk48 && gk49 && gk.n === 1 && !!gk.g && gk.gen === 3, JSON.stringify(gk));
+    await hub(51); ok('M14 no new grandchild after 50', !(await has('#fk-0-gk')));
+    await hub(49); const gl0 = (await F()).kids[0].kids[0].love; await click('#fg-0-0-story'); ok('M15 grandparent tells a story: the grandchild is happier', (await F()).kids[0].kids[0].love > gl0 || gl0 === 100);
+    await G(() => { const g = window.__game, d = g.world.doors.find((x) => x.label === 'Our Home'); if (g.world.currentRoom) g._exitRoom(); g.player.group.position.set(d.x, 0, d.z); g._enterRoom(d); window.__fin(); });
+    const home = await G(() => { const g = window.__game, r = g.world.currentRoom; return { figs: r && r._famFigs ? r._famFigs.children.length : 0, its: g.roomInteractables.filter((i) => i._fam).length }; });
+    ok('M16 the second child stands in the home; tap to care', home.figs >= 2 && home.its >= 1, JSON.stringify(home));
+    await G(() => { const g = window.__game; g._exitRoom(); g._famTree(); }); const tree = await G(() => document.body.innerText);
+    ok('M17 family tree shows Dadi down to the grandchild', /Dadi/.test(tree) && /Tara/.test(tree) && /Veer/.test(tree) && /Priya/.test(tree)); await click('#f-x');
+    ok('M18 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ') + (await G(() => window.__game._lastErr || '')));
+    await p.close();
+    p = await fresh();
+    const old = await ev(p, () => { const g = window.__game, pr = g.progress; delete pr.fam; pr.age = 52; pr.spouse = { name: 'Meera' }; pr.marriedAt = 25; pr.child = { name: 'Anaya' }; pr.childBornAt = 30; pr.childMarried = true; pr.grandchild = { name: 'Vihaan' }; const F = g._fam(); return { kids: F.kids.length, girl: !F.kids[0].boy, married: F.kids[0].married, gk: F.kids[0].kids.map((x) => x.name).join(), age: g._kidAge(F.kids[0]) }; });
+    ok('M19 old saves join the new family sim', old.kids === 1 && old.girl && old.married && old.gk === 'Vihaan' && old.age === 22, JSON.stringify(old));
+    const yr = await ev(p, () => { const g = window.__game, pr = g.progress, out = {}; delete pr.fam; pr.child = null; pr.childMarried = false; pr.grandchild = null; pr.spouse = { name: 'Meera' }; pr.marriedAt = 25;
+      const step = (age) => { pr.age = age - 1; g._yearPassed(); const got = !!document.querySelector('#cb-ok'); if (typeof closePanel !== 'undefined') {} const b = document.querySelector('#cb-ok'); if (b) b.click(); window.__fin(); return got; };
+      out.at28 = step(28); out.at30 = step(30); return out; });
+    ok('M20 the old automatic baby also waits for age 30', !yr.at28 && yr.at30, JSON.stringify(yr));
+    ok('M21 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
+  } catch (e) { ok('M family sim', false, e.message.slice(0, 300)); }
+
+  // ---------- N. v74 life events: 15 real moments ----------
+  if (want('N')) try {
+    p = await fresh();
+    const G = (fn, a) => ev(p, fn, a);
+    const click = (sel) => G((s) => { const b = document.querySelector(s); if (!b || b.disabled) return false; b.click(); return true; }, sel);
+    const F = () => G(() => JSON.parse(JSON.stringify(window.__game.progress.fam || {})));
+    const story = async () => { for (let k = 0; k < 8; k++) { if (!(await click('#ss2-0'))) break; await click('#ss2-n'); } await G(() => window.__fin()); };
+    const timing = () => G(() => { for (let k = 0; k < 5; k++) document.querySelector('#sp-hit').click(); document.querySelector('#sp-ok').click(); window.__fin(); });
+    await G(() => { const g = window.__game, pr = g.progress; if (g.world.currentRoom) g._exitRoom(); pr.money = 90000; pr.age = 45; pr.spouse = { name: 'Priya' }; pr.marriedAt = 25; const F = g._fam(); F.kids = [g._newKid('Tara', false, 30), g._newKid('Veer', true, 37)]; pr.child = { name: 'Tara' }; pr.childBornAt = 30; });
+    await G(() => window.__game._familyHub()); await click('#fm-life'); const n = await G(() => document.querySelectorAll('[id^="le-"]').length - 1);
+    ok('N1 🌟 Life events opens with 15 events', n === 15, `${n}`);
+    const run = async (key, check, label, extra) => { await G((k) => { const g = window.__game; g._lifeEvents(); const b = document.querySelector('#le-' + k); if (b && !b.disabled) b.click(); }, key); if (extra) await extra(); const r = await check(); ok(label, !!r, typeof r === 'string' ? r : ''); if (await G(() => !!document.querySelector('#f-x'))) await click('#f-x'); };
+    await run('village', async () => { await story(); return (await F()).ev.village === 45; }, 'N2 summer trip to Nani\'s village');
+    await G(() => { const g = window.__game; g._evBus(); }); await story(); ok('N3 school bus story', await G(() => window.__game._famDone('ev', 'bus')));
+    await run('ptm', async () => { await story(); return (await F()).ev.ptm === 45; }, 'N4 parent-teacher meeting');
+    await run('album', async () => ((await F()).photos || []).length === 1 && await G(() => /Tara/.test(document.body.innerText)), 'N5 family photo shows everyone');
+    await run('sangeet', async () => { await timing(); return G(() => window.__game._famDone('ev', 'sangeet')); }, 'N6 sangeet dance practice');
+    await run('trip', async () => { await click('#rt-0'); await G(() => window.__fin()); return (await F()).ev.trip === 45; }, 'N7 family road trip to Shimla');
+    await run('paint', async () => { await click('#pt-1'); await G(() => window.__fin()); return (await F()).paint; }, 'N8 paint the house');
+    await run('gpday', async () => { await story(); return (await F()).ev.gpday === 45; }, 'N9 grandparents\' day');
+    await run('fall', async () => { await story(); return (await F()).kids[1].fell === true; }, 'N10 Veer\'s first cycle fall, first aid, then riding');
+    await run('shop', async () => { await click('#sw-open'); return !!(await F()).sweetShop; }, 'N11 open the family sweet shop');
+    const m0 = await G(() => window.__game.progress.money); await G(() => { window.__game._evShop(); for (let k = 0; k < 5; k++) document.querySelector('#og-' + k).click(); }); const m1 = await G(() => window.__game.progress.money);
+    await G(() => { const g = window.__game; g._famT = 0; g._tickFamily(); g.progress.day++; g._famT = 0; g._tickFamily(); }); const m2 = await G(() => window.__game.progress.money);
+    ok('N12 fresh laddoos earn ₹120; the shop earns ₹200 a day', m1 - m0 === 120 && m2 - m1 === 200, `${m1 - m0}, ${m2 - m1}`);
+    await run('match', async () => { await timing(); return G(() => window.__game._famDone('ev', 'match')); }, 'N13 cheer at the cricket match');
+    await run('board', async () => { await click('#be-1'); await G(() => window.__fin()); return ((await F()).kids[0].boards || []).includes(15); }, 'N14 board exam week: the balanced plan');
+    await run('fest', async () => { await story(); return (await F()).ev.fest === 45; }, 'N15 Diwali of three generations');
+    await run('dog', async () => { await click('#dg-ok'); return !!(await F()).dog; }, 'N16 adopt a family dog');
+    await G(() => { const g = window.__game; g._famT = 0; g._tickFamily(); g.progress.fam.kids[0].career = 'Doctor'; g.progress.age = 59; g._famT = 0; g._tickFamily(); window.__fin(); });
+    const late = await F(); ok('N17 years later: Tara moves away for work; the old dog is remembered', !!late.kids[0].city && (late.dogsPast || []).length === 1 && !late.dog, JSON.stringify({ city: late.kids[0].city, past: late.dogsPast }));
+    await run('nest', async () => { await story(); return true; }, 'N18 video call with Tara in her city');
+    ok('N19 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ') + (await G(() => window.__game._lastErr || ''))); await p.close();
+  } catch (e) { ok('N life events', false, e.message.slice(0, 300)); }
   await browser.close();
   const fails = results.filter((r) => r[0] === 'FAIL'); console.log(`\n==== ${results.length - fails.length} PASS, ${fails.length} FAIL ====`); fails.forEach((f) => console.log('FAIL: ' + f[1] + ' -- ' + f[2]));
 })();

@@ -982,6 +982,19 @@ A new 🎲 button sits on the right, above 🏆. It opens every new activity.
 - The build now stops if two game functions share one name. This caught three clashes before release.
 - The automatic check has 41 new checks (groups K and L). Result: 119 of 119 pass.
 
+## Family sim: three generations, and 15 life events (v74)
+
+A new 👨‍👩‍👧 button opens "My family".
+
+- Life ages (operator ruling): marriage at 25 or 26; children when you are 30 to 38; grandchildren when you are 49 or 50. A child can marry at 18 once you are 48, so the first child (born at 30 or 31) can give you grandchildren at 49 or 50. The old automatic story events follow the same ages.
+- Marriage: date from 21 (talk, chai, a film). At 70 love, and age 25 or more, you can propose; the wedding plan follows. After the wedding a love meter falls a little each day. Talk, cook together, share chores, give gifts and go on date nights. Small quarrels come, and you choose how to fix them.
+- Children: up to 3. Each child has food, fun, love and study needs that fall every game day. Care changes with age: feeding and lullabies for babies, homework and cricket for children, talks and coaching for teenagers, calls and Sunday dinners for grown-ups. Report cards every year. At 18 a career, based on the skills your care built. At 22 a grown child with a career moves to another city.
+- Grandchildren: up to 2 per married child. Stories, the park, teaching cycling, sweets and pocket money.
+- At home, extra children and grandchildren stand in the house; tap them to care for them. A family tree shows Dadi down to the grandchildren.
+- 🌟 Life events (15): summer trip to Nani's village, school bus with friends, parent-teacher meeting, yearly family photo, sangeet dance practice, family road trip to the hills, painting the house before Diwali, grandparents' day, the first cycle fall (with first aid), the family sweet shop (₹200 a day), cheering at your child's match, video calls with a grown child far away, a family dog that grows old, board exam week, and a Diwali of three generations.
+- Old saves: an old child, child's wedding and grandchild join the new family sim.
+- The automatic check now runs in two parts (RGROUPS=A,B,C,E,F,G,H,I,J and RGROUPS=K,L,M,N), each under 10 minutes. Result: 78 of 78 and 81 of 81.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

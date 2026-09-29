@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v73";
+const GAME_VERSION = "v74";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -7080,6 +7080,7 @@ class Game {
     if (this._myst && this._myst.door && this._myst.m.site === door.label) { const mf = this._myst.m.floor || 0; if (floor === mf) this._mysteryRoom(room); else showToast(L("🕵️ The crime scene is on floor {f}. Take the lift and type {f}.", { f: mf }), 3800); }
     if (door.label === "Our Home" && this._homeDaily) this._homeDaily(room);
     if (door.label === "Our Home" && this._funHome) { try { this._funHome(room); } catch (e) { this._reportError && this._reportError(e); } }
+    if (door.label === "Our Home" && this._famHome) { try { this._famHome(room); } catch (e) { this._reportError && this._reportError(e); } }
     if (door.label === "Our Home") this._giftBox(room);
     if (door.label === "Our Home") this._homeExtras(room);
     if (door.label === "Our Home") this._telescopeAt(room);
@@ -8854,9 +8855,9 @@ class Game {
   _yearPassed() {
     const pr = this.progress; pr.age++; if (this.working && pr.money >= 200) { pr.money -= 200; pr.taxPaid = (pr.taxPaid || 0) + 1; showToast(L("🧾 Income tax paid on time: ₹200. A good citizen."), 3000, "good"); } saveProgress(this.profile, pr); this.ui.refreshRank();
     if (!pr.spouse && pr.age >= 25) return this._wedding();
-    if (pr.spouse && !pr.child && pr.age >= pr.marriedAt + 2) return this._childBorn();
-    if (pr.child && !pr.childMarried && this.childAge() >= 23) return this._childWedding();
-    if (pr.childMarried && !pr.grandchild && this.childAge() >= 25) return this._grandchildBorn();
+    if (pr.spouse && !pr.child && pr.age >= 30 && pr.age <= 38) return this._childBorn();
+    if (pr.child && !pr.childMarried && this.childAge() >= 18 && pr.age >= 48) return this._childWedding();
+    if (pr.childMarried && !pr.grandchild && pr.age >= 49 && pr.age <= 50) return this._grandchildBorn();
     if (pr.child && this.childAge() === 1) this._snap("👶", `${pr.child.name}'s first word: "Papa". Maa says it was "Maa".`); if (pr.child && this.childAge() === 2) this._snap("👣", `${pr.child.name}'s first steps, from the sofa to Moti.`);
     if (pr.grandparentMode) { pr.pension = (pr.pension || 0) + 300; this.addMoney(300, L("pension")); }
     if (pr.child && this.childAge() === 4) showToast(L("🎒 {c} starts Nursery at Sunrise Public School today. Same gate, same chalk.", { c: pr.child.name }), 4200, "good");
@@ -11378,6 +11379,7 @@ class Game {
     if (!this._dailyReady) { this._dailyReady = true; try { this._dailyStart(); } catch (e) { this._reportError && this._reportError(e); } }
     this._tickUmbrella();
     try { this._tickFun && this._tickFun(dt); } catch (e) { this._reportError && this._reportError(e); }
+    try { this._tickFamily && this._tickFamily(); } catch (e) { this._reportError && this._reportError(e); }
     this._lifeButtons();
     this._tickMusic(dt);
     const pr = this.progress, t = performance.now() / 1000;
@@ -11522,8 +11524,8 @@ class Game {
   // ---------- Floating life buttons: goals, photo, stocks, bug report ----------
   _lifeButtons() {
     let box = document.getElementById("life-btns");
-    if (!box) { box = document.createElement("div"); box.id = "life-btns"; box.style.cssText = "position:fixed;right:12px;top:250px;z-index:40;display:flex;flex-direction:column;gap:8px";
-      for (const [id, icon, title, fn] of [["lb-fun", "🎲", "Just live it: games and things to do", () => this._funHub()], ["lb-goals", "🏆", "My life: goals and trophies", () => this._goalsBoard()], ["lb-photo", "📸", "Take a photo", () => this._photo()], ["lb-stock", "📈", "Stock market app", () => this._stocks()], ["lb-bug", "🐞", "Report a problem", () => this._bugReport()]]) {
+    if (!box) { box = document.createElement("div"); box.id = "life-btns"; box.style.cssText = "position:fixed;right:12px;top:250px;z-index:40;display:flex;flex-direction:column;gap:8px;max-height:calc(100vh - 262px);overflow-y:auto";
+      for (const [id, icon, title, fn] of [["lb-fun", "🎲", "Just live it: games and things to do", () => this._funHub()], ["lb-fam", "👨‍👩‍👧", "My family: marriage, children, grandchildren", () => this._familyHub()], ["lb-goals", "🏆", "My life: goals and trophies", () => this._goalsBoard()], ["lb-photo", "📸", "Take a photo", () => this._photo()], ["lb-stock", "📈", "Stock market app", () => this._stocks()], ["lb-bug", "🐞", "Report a problem", () => this._bugReport()]]) {
         const b = document.createElement("button"); b.id = id; b.textContent = icon; b.title = L(title); b.style.cssText = "width:46px;height:46px;border:none;border-radius:14px;background:rgba(255,255,255,.92);font-size:22px;box-shadow:0 2px 8px rgba(0,0,0,.18);cursor:pointer"; b.addEventListener("click", (e) => { e.stopPropagation(); fn(); }); box.appendChild(b); }
       document.body.appendChild(box); }
     box.hidden = !!(this._cut || this._sim);
@@ -12228,6 +12230,330 @@ class Game {
     if (this.phase !== "morning") { showToast(L("Dadi's tablet is in the morning, after breakfast. Remind her tomorrow!"), 2600); return; }
     const F = this._fOpen(`${this._fHead("💊", L("Dadi's morning tablet"))}<p class="job-brief">${L("Dadi: 'Which one is mine, beta? My eyes are weak.' The doctor wrote: ONE white round tablet, after breakfast, with water.")}</p><div class="btn-row" style="flex-direction:column"><button class="big-btn" id="dt-0">⚪ ${L("One white round tablet, with a glass of water")}</button><button class="big-btn" id="dt-1">🟡 ${L("Two yellow tablets, with tea")}</button><button class="big-btn" id="dt-2">🍬 ${L("A sweet instead, she will not know")}</button></div>`);
     [0, 1, 2].forEach((k) => F.q(`#dt-${k}`).addEventListener("click", () => { closePanel(); if (k) { this._sfx("bad"); showToast(k === 1 ? L("❌ Wrong medicine can be dangerous! Always read the doctor's paper.") : L("❌ Medicine is serious. Never swap it for a sweet!"), 3200, "bad"); return; } const yest = jl.medDay === pr.day - 1; jl.medDay = pr.day; jl.medStreak = yest ? (jl.medStreak || 0) + 1 : 1; this._jsave(); this._sfx("win"); this.addFriendship && this.addFriendship("family", 1, L("cared for Dadi")); this.dialogue.say("Dadi", [L("Gulp. Thank you, my little doctor!"), L("You remembered {n} days in a row. My BP is happy!", { n: jl.medStreak })], null, { pitch: 420 }); }));
+  }
+
+  // ================= v74 · Family sim: dating and marriage, children, grandchildren. Three generations you care for. =================
+  // Life ages (operator ruling): marriage at 25 or 26, children when you are 30 to 38, grandchildren when you are 49 or 50.
+  // State lives in progress.fam. The old fields (spouse, child, childMarried, grandchild) stay in sync so older code keeps working.
+  _fam() {
+    const pr = this.progress; if (!pr.fam || typeof pr.fam !== "object") pr.fam = {}; const F = pr.fam; F.kids = F.kids || []; F.dating = F.dating || {}; if (F.love == null) F.love = 70;
+    const girlName = (n) => ["Anaya", "Ira", "Myra", "Zoya", "Riya", "Tara", "Pari", "Kiara"].includes(n);
+    if (pr.child && !F.kids.length) F.kids.push(this._newKid(pr.child.name, !girlName(pr.child.name), pr.childBornAt != null ? pr.childBornAt : pr.age));
+    const k0 = F.kids[0]; if (k0 && pr.childMarried && !k0.married) { k0.married = true; k0.partner = k0.partner || L("a kind partner"); }
+    if (k0 && pr.grandchild && !k0.kids.some((g) => g.name === pr.grandchild.name)) k0.kids.push({ name: pr.grandchild.name, boy: !girlName(pr.grandchild.name), born: Math.max(k0.born + 25, pr.age - 1), love: 70, fun: 70, done: {} });
+    return F;
+  }
+  _newKid(name, boy, born) { return { name, boy, born, needs: { food: 80, fun: 80, study: 70, love: 80 }, skill: { study: 0, sport: 0, art: 0 }, career: null, married: false, partner: null, kids: [], done: {} }; }
+  _kidAge(k) { return Math.max(0, (this.progress.age || 0) - k.born); }
+  _kidStage(a) { return a < 3 ? ["baby", "👶", L("Baby")] : a < 13 ? ["child", "🧒", L("Child")] : a < 18 ? ["teen", "🧑", L("Teenager")] : ["adult", "🧑‍💼", L("Grown-up")]; }
+  _dayKey() { const pr = this.progress; return `${pr.age}:${pr.day}:${pr.workDays || 0}`; }
+  _clamp(v) { return Math.max(0, Math.min(100, Math.round(v))); }
+
+  // Needs fall a little every game day; birthdays, report cards and anniversaries come every year.
+  _tickFamily() {
+    this._famT = (this._famT || 0) - 1; if (this._famT > 0) return; this._famT = 60;
+    const pr = this.progress; if (!pr.spouse && !(pr.fam && (pr.fam.kids && pr.fam.kids.length || pr.fam.sweetShop || pr.fam.dog)) && !pr.child) return; const F = this._fam();
+    if (F.seenDay == null) { F.seenDay = pr.day; F.seenAge = pr.age; }
+    if (F.seenDay !== pr.day) { F.seenDay = pr.day; this._famDecay(F); }
+    if (F.seenAge !== pr.age) { const years = pr.age - F.seenAge; F.seenAge = pr.age; if (years > 0) this._famYear(F); }
+  }
+  _famDecay(F) {
+    const pr = this.progress, low = [];
+    if (pr.spouse) { F.love = this._clamp(F.love - 3); if (F.love < 30) low.push(L("{n} feels lonely. Spend time together.", { n: pr.spouse.name })); }
+    for (const k of F.kids) { const a = this._kidAge(k); if (a >= 18) { k.needs.love = this._clamp(k.needs.love - 3); continue; } k.needs.food = this._clamp(k.needs.food - 12); k.needs.fun = this._clamp(k.needs.fun - 10); k.needs.love = this._clamp(k.needs.love - 8); if (a >= 5) k.needs.study = this._clamp(k.needs.study - 8);
+      const w = Object.entries(k.needs).find(([n, v]) => v < 30 && (n !== "study" || a >= 5)); if (w) low.push({ food: L("{n} is hungry!", { n: k.name }), fun: L("{n} is bored. Play together!", { n: k.name }), love: L("{n} misses you.", { n: k.name }), study: L("{n} needs help with homework.", { n: k.name }) }[w[0]]); }
+    for (const k of F.kids) for (const g of k.kids) { g.love = this._clamp(g.love - 6); g.fun = this._clamp(g.fun - 8); }
+    if (F.sweetShop) { F.sweetShop.days = (F.sweetShop.days || 0) + 1; this.addMoney(200, L("Kaushik Sweets shop")); }
+    this._jsave(); if (low.length) showToast("👨‍👩‍👧 " + low.slice(0, 2).join(" "), 4200, "bad");
+  }
+  _famYear(F) {
+    const pr = this.progress, msgs = [];
+    if (pr.spouse && pr.marriedAt != null && pr.age > pr.marriedAt) msgs.push(L("💞 {y} years of marriage with {n}!", { y: pr.age - pr.marriedAt, n: pr.spouse.name }));
+    for (const k of F.kids) { const a = this._kidAge(k); if (a > 0) msgs.push(L("🎂 {n} turns {a}.", { n: k.name, a }));
+      if (a >= 5 && a <= 17) { const s = (k.needs.study + k.skill.study * 8) / 2, gr = s >= 70 ? "A" : s >= 50 ? "B" : s >= 30 ? "C" : "D"; k.reports = (k.reports || []).concat([{ a, gr }]).slice(-14); msgs.push(L("📄 {n}'s report card: grade {g}.", { n: k.name, g: gr })); }
+      if (a === 18 && !k.career) msgs.push(L("🎓 {n} is 18! Choose a career in the family panel.", { n: k.name })); }
+    for (const k of F.kids) if (this._kidAge(k) >= 22 && k.career && !k.city) { k.city = ["Bengaluru", "Pune", "Hyderabad", "Delhi", "Mumbai"][F.kids.indexOf(k) % 5]; msgs.push(L("🧳 {n} moves to {c} for work. The house feels quiet. Video call in 🌟 Life events.", { n: k.name, c: k.city })); }
+    if (pr.age === 48 && F.kids.some((k) => this._kidAge(k) >= 18 && !k.married)) msgs.push(L("💍 Your eldest can marry now. Grandchildren come when you are 49 or 50."));
+    if (this._dogYear) this._dogYear();
+    this._jsave(); if (msgs.length) showToast(msgs.slice(0, 3).join(" "), 5200, "good");
+  }
+
+  // ---------- The family panel ----------
+  _familyHub() {
+    const pr = this.progress, F = this._fam(), age = pr.age || 0, bar = (v, c = "#2a9d8f") => `<span style="display:inline-block;width:70px;height:9px;background:#eee;border-radius:5px;vertical-align:middle;overflow:hidden"><span style="display:block;height:100%;width:${v}%;background:${v < 30 ? "#e63946" : c}"></span></span>`;
+    let body = "";
+    if (!pr.spouse) {
+      body += age < 21 ? `<p class="job-brief">${L("You are {a}. Your own family starts when you grow up. From 21 you can go on dates. At 25 Maa brings proposals.", { a: age })}</p>`
+        : `<div class="job-goal"><b>💞 ${L("Dating")}</b> · ${L("Get to know someone. At 70 love, you can propose. Weddings happen at 25 or 26.")}</div>${PARTNERS.map((p) => { const v = F.dating[p.id] || 0; return `<div class="cart-row"><div><b>${p.name}</b>, ${L(p.job)} ${bar(v, "#ff4f8b")} ${v}<br><small>"${L(p.line)}"</small></div><div><button class="lang-btn" id="fd-${p.id}-talk">💬</button><button class="lang-btn" id="fd-${p.id}-chai">☕ ₹100</button><button class="lang-btn" id="fd-${p.id}-film">🎬 ₹250</button>${v >= 70 && age >= 25 ? `<button class="use-btn" id="fd-${p.id}-ring">💍 ${L("Propose")}</button>` : ""}</div></div>`; }).join("")}`;
+    } else {
+      const acts = [["talk", "💬", L("Talk")], ["cook", "🍲", L("Cook together")], ["chores", "🧹", L("Share chores")], ["gift", "🎁", L("Gift ₹300")], ["date", "🌃", L("Date night ₹500")]];
+      body += `<div class="job-goal"><b>💞 ${pr.spouse.name}</b> · ${L("Love")} ${bar(F.love, "#ff4f8b")} ${F.love}${pr.marriedAt != null ? ` · ${L("married {y} years", { y: Math.max(0, age - pr.marriedAt) })}` : ""}</div><div class="btn-row" style="flex-wrap:wrap">${acts.map(([k, i, t]) => `<button class="lang-btn" id="fs-${k}" ${this._famDone("sp", k) ? "disabled" : ""}>${i} ${t}</button>`).join("")}</div>`;
+      if (F.kids.length < 3) { const last = F.kids[F.kids.length - 1], wait = last && this._kidAge(last) < 1, okAge = age >= 30 && age <= 38; body += `<div class="btn-row"><button class="big-btn" id="fs-baby" ${wait || F.love < 50 || !okAge ? "disabled" : ""}>👶 ${L("Plan a baby")}</button></div>${!okAge ? `<small>${L("Babies come when you are 30 to 38. You are {a}.", { a: age })}</small>` : F.love < 50 ? `<small>${L("Love must be 50 or more first.")}</small>` : wait ? `<small>${L("Wait one year after the last baby.")}</small>` : ""}`; }
+    }
+    F.kids.forEach((k, i) => {
+      const a = this._kidAge(k), st = this._kidStage(a), acts = this._kidActs(st[0]);
+      body += `<div class="job-goal" style="margin-top:8px"><b>${st[1]} ${k.name}</b> · ${st[2]}, ${L("age")} ${a}${k.career ? " · " + k.career : ""}${k.married ? " · 💍 " + k.partner : ""}</div>`;
+      if (st[0] !== "adult") body += `<div style="font-size:13px">🍲 ${bar(k.needs.food)} 🎈 ${bar(k.needs.fun)} ❤️ ${bar(k.needs.love)}${a >= 5 ? ` 📚 ${bar(k.needs.study)}` : ""} · ${L("Skills")}: 📚${k.skill.study} ⚽${k.skill.sport} 🎨${k.skill.art}${(k.reports || []).length ? ` · ${L("last grade")} ${k.reports[k.reports.length - 1].gr}` : ""}</div>`;
+      body += `<div class="btn-row" style="flex-wrap:wrap">${acts.map(([key, ic, t, cost]) => `<button class="lang-btn" id="fk-${i}-${key}" ${this._famDone("k" + i, key) ? "disabled" : ""}>${ic} ${t}${cost ? ` ₹${cost}` : ""}</button>`).join("")}${st[0] === "adult" && !k.career ? `<button class="use-btn" id="fk-${i}-career">🎓 ${L("Choose a career")}</button>` : ""}${a >= 18 && age >= 48 && !k.married ? `<button class="use-btn" id="fk-${i}-wed">💍 ${L("{n}'s wedding", { n: k.name })}</button>` : ""}${k.married && age >= 49 && age <= 50 && k.kids.length < 2 ? `<button class="use-btn" id="fk-${i}-gk">👶 ${L("A grandchild!")}</button>` : ""}</div>`;
+      k.kids.forEach((g, j) => { const ga = Math.max(0, age - g.born); body += `<div style="margin-left:14px;font-size:13px">👶 <b>${g.name}</b> (${L("grandchild")}, ${L("age")} ${ga}) ❤️ ${bar(g.love)} 🎈 ${bar(g.fun)}</div><div class="btn-row" style="flex-wrap:wrap;margin-left:14px">${this._gkActs().map(([key, ic, t, cost]) => `<button class="lang-btn" id="fg-${i}-${j}-${key}" ${this._famDone(`g${i}.${j}`, key) ? "disabled" : ""}>${ic} ${t}${cost ? ` ₹${cost}` : ""}</button>`).join("")}</div>`; });
+    });
+    const gens = 1 + (F.kids.length ? 1 : 0) + (F.kids.some((k) => k.kids.length) ? 1 : 0);
+    const Fp = this._fOpen(`${this._fHead("👨‍👩‍👧", L("My family"))}<div class="job-goal">${L("Generations in your line: {g} of 3", { g: gens })}${gens >= 3 ? " 🏆" : ""} · ${L("Wallet")} ₹${Math.round(pr.money || 0)}</div>${body}<div class="btn-row"><button class="big-btn" id="fm-life">🌟 ${L("Life events")}</button><button class="ghost-btn" id="fm-tree">🌳 ${L("Family tree")}</button>${age >= 21 ? `<button class="ghost-btn" id="fm-year">⏩ ${L("Let a year pass")}</button>` : ""}</div>`);
+    const on = (id, fn) => { const b = Fp.q("#" + id); if (b) b.addEventListener("click", fn); };
+    for (const p of PARTNERS) { for (const k of ["talk", "chai", "film"]) on(`fd-${p.id}-${k}`, () => this._famDate(p, k)); on(`fd-${p.id}-ring`, () => this._famPropose(p)); }
+    for (const k of ["talk", "cook", "chores", "gift", "date"]) on(`fs-${k}`, () => this._famSpouse(k)); on("fs-baby", () => this._famBaby());
+    F.kids.forEach((k, i) => { for (const [key] of this._kidActs(this._kidStage(this._kidAge(k))[0])) on(`fk-${i}-${key}`, () => this._famKid(i, key)); on(`fk-${i}-career`, () => this._famCareer(i)); on(`fk-${i}-wed`, () => this._famKidWedding(i)); on(`fk-${i}-gk`, () => this._famGrandkid(i)); k.kids.forEach((g, j) => { for (const [key] of this._gkActs()) on(`fg-${i}-${j}-${key}`, () => this._famGk(i, j, key)); }); });
+    on("fm-tree", () => this._famTree()); on("fm-life", () => this._lifeEvents()); on("fm-year", () => { closePanel(); if (this._fastYear) this._fastYear(); });
+  }
+  _famDone(who, act) { const F = this._fam(), d = F.done || (F.done = {}); return d[who + "|" + act] === this._dayKey(); }
+  _famMark(who, act) { const F = this._fam(); (F.done || (F.done = {}))[who + "|" + act] = this._dayKey(); }
+  _famPay(n, why) { if (!n) return true; if ((this.progress.money || 0) < n) { showToast(L("You need ₹{n}.", { n }), 2000, "bad"); return false; } this.addMoney(-n, why); return true; }
+  _famRefresh() { if (panelOpen()) this._familyHub(); }
+
+  // ---------- Dating and marriage ----------
+  _famDate(p, k) {
+    const F = this._fam(); if (this._famDone("d" + p.id, k)) return; const cost = { talk: 0, chai: 100, film: 250 }[k]; if (!this._famPay(cost, L("date with {n}", { n: p.name }))) return;
+    this._famMark("d" + p.id, k); F.dating[p.id] = this._clamp((F.dating[p.id] || 0) + { talk: 8, chai: 14, film: 18 }[k]); this._jsave(); this._sfx();
+    showToast({ talk: L("💬 You talk with {n} for an hour. Time flies!", { n: p.name }), chai: L("☕ Chai and samosas with {n} at the tea house. {n} laughs at your jokes.", { n: p.name }), film: L("🎬 A movie with {n}. You share the popcorn.", { n: p.name }) }[k] + ` ❤️ ${F.dating[p.id]}`, 3000, "good"); this._famRefresh();
+  }
+  _famPropose(p) {
+    if ((this.progress.age || 0) < 25) { showToast(L("Weddings happen at 25 or 26. Keep dating!"), 2600); return; } closePanel(); this.dialogue.say(p.name, [L("(You kneel at the park, under the mango tree, holding a ring.)"), L("Yes! YES! Now we tell both our families!"), L("Maa cries. Papa hugs you. Dadi says: 'Finally!'")], () => { const done = () => this._weddingDay(p); if (this._weddingPlan) this._weddingPlan(p, done); else done(); }, { pitch: p.pitch || 460 });
+  }
+  _famSpouse(k) {
+    const pr = this.progress, F = this._fam(), n = pr.spouse.name; if (this._famDone("sp", k)) return; const cost = { gift: 300, date: 500 }[k] || 0; if (!this._famPay(cost, L("for {n}", { n }))) return;
+    this._famMark("sp", k); F.love = this._clamp(F.love + { talk: 8, cook: 12, chores: 10, gift: 15, date: 20 }[k]); F.spouseActs = (F.spouseActs || 0) + 1; this._jsave(); this._sfx(k === "date" ? "win" : "");
+    const line = { talk: L("You tell {n} about your day. {n} listens, then tells a funny story about the neighbours.", { n }), cook: L("You chop, {n} stirs. The dal is a little salty. You both laugh.", { n }), chores: L("You wash, {n} dries. The kitchen shines in ten minutes.", { n }), gift: L("A small box: {n}'s favourite chocolates and a card. {n} smiles all evening.", { n }), date: L("Dinner by the lake, then ice cream. You walk home slowly, holding hands.", { n }) }[k];
+    // Real life: sometimes a small quarrel, and you choose how to fix it.
+    if (k === "talk" && F.spouseActs % 5 === 4) { closePanel(); return this._famQuarrel(); }
+    showToast(`💞 ${line} ❤️ ${F.love}`, 3600, "good"); this._famRefresh();
+  }
+  _famQuarrel() {
+    const pr = this.progress, F = this._fam(), n = pr.spouse.name, Q = [[L("the monthly budget"), L("You bought a new phone without asking.")], [L("the TV"), L("Cricket or the serial?")], [L("visiting relatives"), L("Your side or {n}'s side this Diwali?", { n })]][(F.spouseActs || 0) % 3];
+    const Fp = this._fOpen(`${this._fHead("😤", L("A small quarrel about {t}", { t: Q[0] }))}<p class="job-brief">${Q[1]} ${L("How do you fix it?")}</p><div class="btn-row" style="flex-direction:column"><button class="big-btn" id="fq-0">🙏 ${L("Listen first, then say sorry")}</button><button class="big-btn" id="fq-1">🤝 ${L("Find a middle way together")}</button><button class="big-btn" id="fq-2">🙄 ${L("Walk away and sulk")}</button></div>`);
+    [0, 1, 2].forEach((i) => Fp.q(`#fq-${i}`).addEventListener("click", () => { closePanel(); F.love = this._clamp(F.love + [10, 12, -15][i]); F.quarrels = (F.quarrels || 0) + 1; this._jsave();
+      this.dialogue.say(n, [[L("Thank you for listening. I am sorry too."), L("Okay. Half-half. Deal!"), L("(A cold dinner. Nobody talks. Try again tomorrow.)")][i], i < 2 ? L("Every couple fights. Good couples fix it before bed.") : L("Dadi whispers: 'Never sleep angry, beta.'")], null, { pitch: pr.spouse.pitch || 460 }); }));
+  }
+  _famBaby() {
+    const pr = this.progress, F = this._fam(); if (F.kids.length >= 3 || pr.age < 30 || pr.age > 38) return; const sug = CHILD_NAMES[(pr.day + F.kids.length * 3) % CHILD_NAMES.length];
+    const Fp = this._fOpen(`${this._fHead("👶", L("A baby is coming!"))}<p class="job-brief">${L("Nine months later, at City Hospital, a tiny cry. Is it a boy or a girl? Give a name.")}</p><div class="btn-row"><button class="big-btn" id="fb-boy">👦 ${L("Boy")}</button><button class="big-btn" id="fb-girl">👧 ${L("Girl")}</button></div><div class="chat-row"><input id="fb-name" type="text" maxlength="14" value="${sug}"></div><div class="btn-row"><button class="big-btn" id="fb-ok">${L("Welcome home, baby!")}</button></div>`);
+    let boy = sug && !["Anaya", "Ira", "Myra", "Zoya"].includes(sug); const mark = () => { Fp.q("#fb-boy").style.outline = boy ? "3px solid #2a9d8f" : ""; Fp.q("#fb-girl").style.outline = boy ? "" : "3px solid #2a9d8f"; }; mark();
+    Fp.q("#fb-boy").addEventListener("click", () => { boy = true; mark(); }); Fp.q("#fb-girl").addEventListener("click", () => { boy = false; mark(); }); const inp = Fp.q("#fb-name"); inp.addEventListener("keydown", (e) => e.stopPropagation());
+    Fp.q("#fb-ok").addEventListener("click", () => { const name = (inp.value || "").trim().slice(0, 14) || sug; const k = this._newKid(name, boy, pr.age); F.kids.push(k);
+      if (!pr.child) { pr.child = { name }; pr.childBornAt = pr.age; pr.badges = pr.badges || []; if (!pr.badges.includes("parent")) pr.badges.push("parent"); } pr.generations = Math.max(pr.generations || 1, 2); F.love = this._clamp(F.love + 10); this._jsave(); this._sfx("win");
+      this._snap && this._snap("👶", `${name} was born.`); this.diary(L("{n} was born. Our family grows.", { n: name })); closePanel(); this._famRebuildHome(); showToast(L("👶 Welcome, {n}! Feed, bathe and sing to the baby every day in 👨‍👩‍👧.", { n: name }), 4200, "good"); });
+  }
+
+  // ---------- Children ----------
+  _kidActs(stage) {
+    return { baby: [["feed", "🍼", L("Feed")], ["bath", "🛁", L("Bathe")], ["sing", "🎵", L("Lullaby")], ["peek", "🙈", L("Peekaboo")]],
+      child: [["tiffin", "🍱", L("Pack tiffin")], ["hw", "📚", L("Homework")], ["cricket", "🏏", L("Play cricket")], ["draw", "🎨", L("Draw together")], ["story", "🌙", L("Bedtime story")]],
+      teen: [["tiffin", "🍱", L("Cook dinner")], ["hw", "📚", L("Exam help")], ["talk", "💬", L("Talk about worries")], ["coach", "🎓", L("Coaching class"), 500], ["sport", "⚽", L("Sports academy"), 400]],
+      adult: [["call", "📞", L("Call")], ["dinner", "🍛", L("Sunday dinner")]] }[stage];
+  }
+  _famKid(i, key) {
+    const F = this._fam(), k = F.kids[i]; if (!k || this._famDone("k" + i, key)) return; const st = this._kidStage(this._kidAge(k))[0], act = this._kidActs(st).find((x) => x[0] === key); if (!act) return; if (!this._famPay(act[3] || 0, act[2])) return;
+    this._famMark("k" + i, key); const N = k.needs, S = k.skill, n = k.name;
+    const fx = { feed: () => { N.food += 45; }, bath: () => { N.love += 15; N.fun += 10; }, sing: () => { N.love += 25; }, peek: () => { N.fun += 35; },
+      tiffin: () => { N.food += 45; }, hw: () => { N.study += 30; S.study++; }, cricket: () => { N.fun += 35; S.sport++; }, draw: () => { N.fun += 25; S.art++; }, story: () => { N.love += 30; },
+      talk: () => { N.love += 35; }, coach: () => { N.study += 30; S.study += 2; }, sport: () => { N.fun += 25; S.sport += 2; }, call: () => { N.love += 25; }, dinner: () => { N.love += 30; N.food += 20; } };
+    fx[key](); for (const x of Object.keys(N)) N[x] = this._clamp(N[x]); F.care = (F.care || 0) + 1; this.addFriendship && this.addFriendship("family", 1, L("time with {n}", { n })); this._jsave(); this._sfx();
+    const say = { feed: L("🍼 {n} drinks all the milk, then burps on your shoulder.", { n }), bath: L("🛁 Splash! {n} kicks the water everywhere.", { n }), sing: L("🎵 Lakdi ki kaathi... {n} falls asleep on your chest.", { n }), peek: L("🙈 Peekaboo! {n} laughs and laughs.", { n }),
+      tiffin: L("🍱 Aloo paratha and an apple for {n}.", { n }), hw: L("📚 You sit with {n} for an hour. The sums make sense now.", { n }), cricket: L("🏏 {n} hits a six into the neighbour's garden!", { n }), draw: L("🎨 {n} draws the whole family, and Moti too.", { n }), story: L("🌙 A story about a clever crow. {n} asks for one more.", { n }),
+      talk: L("💬 {n} tells you about a fight with a friend. You listen. {n} feels lighter.", { n }), coach: L("🎓 Coaching class fees paid. {n} studies hard.", { n }), sport: L("⚽ The academy coach says {n} has talent!", { n }), call: L("📞 {n}: 'Hello! I was just thinking of you.'", { n }), dinner: L("🍛 {n} comes home for Sunday dinner with sweets.", { n }) }[key];
+    showToast(say, 3000, "good"); this._famRefresh();
+  }
+  _famCareer(i) {
+    const F = this._fam(), k = F.kids[i]; if (!k) return; const S = k.skill, top = Object.entries(S).sort((a, b) => b[1] - a[1])[0][0];
+    const opts = { study: [L("Doctor"), L("Engineer"), L("Scientist")], sport: [L("Cricketer"), L("Coach"), L("Army officer")], art: [L("Artist"), L("Fashion designer"), L("Film maker")] }[top];
+    const Fp = this._fOpen(`${this._fHead("🎓", L("{n} chooses a career", { n: k.name }))}<p class="job-brief">${L("{n}'s strongest skill: {s}. Years of your help made this. Which path?", { n: k.name, s: { study: L("studies"), sport: L("sports"), art: L("art") }[top] })}</p><div class="btn-row" style="flex-direction:column">${opts.map((o, j) => `<button class="big-btn" id="fc-${j}">${o}</button>`).join("")}</div>`);
+    opts.forEach((o, j) => Fp.q(`#fc-${j}`).addEventListener("click", () => { k.career = o; this._jsave(); this._sfx("win"); this._snap && this._snap("🎓", `${k.name} became a ${o}.`); this.diary(L("{n} chose to become a {c}.", { n: k.name, c: o })); closePanel(); showToast(L("🎓 {n} will be a {c}! You are so proud.", { n: k.name, c: o }), 3600, "good"); }));
+  }
+  _famKidWedding(i) {
+    const pr = this.progress, F = this._fam(), k = F.kids[i]; if (!k || k.married || this._kidAge(k) < 18 || pr.age < 48) return; const P = k.boy ? [[L("Riya"), L("an architect")], [L("Tara"), L("a lawyer")], [L("Pari"), L("a pilot")]] : [[L("Sameer"), L("a pilot")], [L("Dev"), L("a scientist")], [L("Rohan"), L("a banker")]];
+    const Fp = this._fOpen(`${this._fHead("💍", L("{n}'s wedding", { n: k.name }))}<p class="job-brief">${L("{n} wants you to meet someone special. Who is it?", { n: k.name })}</p><div class="btn-row" style="flex-direction:column">${P.map((p, j) => `<button class="big-btn" id="fw-${j}">${p[0]}, ${p[1]}</button>`).join("")}</div>`);
+    P.forEach((p, j) => Fp.q(`#fw-${j}`).addEventListener("click", () => { closePanel(); k.married = true; k.partner = p[0]; if (i === 0) pr.childMarried = true; this._jsave(); this._sfx("win"); this._snap && this._snap("💍", `${k.name} married ${p[0]}.`); this.diary(L("{n} married {p}.", { n: k.name, p: p[0] }));
+      this.dialogue.say(L("The wedding"), [L("The same mango tree, new lights. Now you check {n}'s collar twice, like Papa did for you.", { n: k.name }), L("{p} touches your feet. You bless them both.", { p: p[0] }), pr.spouse ? L("{s} cries the way Maa did.", { s: pr.spouse.name }) : L("The whole colony dances.")], null, { pitch: 420 }); }));
+  }
+  _famGrandkid(i) {
+    const pr = this.progress, F = this._fam(), k = F.kids[i]; if (!k || !k.married || k.kids.length >= 2 || pr.age < 49 || pr.age > 50) return; const names = [["Aarav", true], ["Myra", false], ["Reyansh", true], ["Zoya", false], ["Kabir", true], ["Ira", false]], nm = names[(i * 2 + k.kids.length + pr.day) % names.length];
+    k.kids.push({ name: nm[0], boy: nm[1], born: pr.age, love: 80, fun: 80, done: {} }); if (i === 0 && !pr.grandchild) pr.grandchild = { name: nm[0] }; pr.generations = 3; pr.badges = pr.badges || []; if (!pr.badges.includes("grandparent")) pr.badges.push("grandparent"); this._jsave(); this._sfx("win");
+    this._snap && this._snap("👶", `${nm[0]}, my grandchild, was born.`); this.diary(L("{g}, {n}'s baby, was born. Three generations!", { g: nm[0], n: k.name })); this._famRebuildHome();
+    this.dialogue.say(k.name, [L("{p}, meet your grandchild: {g}!", { p: pr.spouse ? L("Maa, Papa") : L("Look"), g: nm[0] }), L("(A tiny hand holds your finger. Three generations on one sofa.)")], () => this._famRefresh(), { pitch: 480 });
+  }
+  _gkActs() { return [["story", "📖", L("Story")], ["park", "🛝", L("Park")], ["cycle", "🚲", L("Teach cycling")], ["sweet", "🍬", L("Sweets"), 20], ["money", "🪙", L("Pocket money"), 50]]; }
+  _famGk(i, j, key) {
+    const F = this._fam(), g = F.kids[i] && F.kids[i].kids[j]; if (!g || this._famDone(`g${i}.${j}`, key)) return; const act = this._gkActs().find((x) => x[0] === key); if (!this._famPay(act[3] || 0, act[2])) return;
+    this._famMark(`g${i}.${j}`, key); if (key === "story" || key === "money") g.love += 25; else g.fun += 30; if (key === "sweet" || key === "cycle") g.love += 10; g.love = this._clamp(g.love); g.fun = this._clamp(g.fun); F.gkCare = (F.gkCare || 0) + 1; this._jsave(); this._sfx();
+    const n = g.name; showToast({ story: L("📖 'When I was your age, I solved a murder case...' {n}'s eyes go wide.", { n }), park: L("🛝 You push {n} on the swing. Higher! Higher!", { n }), cycle: L("🚲 You run behind, holding the seat. Then you let go. {n} rides alone!", { n }), sweet: L("🍬 A secret laddoo for {n}. 'Don't tell Mummy!'", { n }), money: L("🪙 ₹50 for {n}'s piggy bank. Grandparents' job!", { n }) }[key], 3200, "good"); this._famRefresh();
+  }
+  _famTree() {
+    const pr = this.progress, F = this._fam(), me = this.playerName || L("You"), S = this._sib ? this._sib() : { name: "Gudiya" }, box = (t, c = "#f1f1f1") => `<div style="display:inline-block;margin:3px;padding:6px 9px;border-radius:10px;background:${c};font-size:13px">${t}</div>`;
+    const rows = [[box("👵 Dadi")], [box("👨 Papa"), box("👩 Maa")], [box(`⭐ <b>${me}</b>`, "#ffe8a3"), pr.spouse ? box(`💍 ${pr.spouse.name}`, "#ffe0ec") : "", box(`${S.boy ? "👦" : "👧"} ${S.name}`)], F.kids.map((k) => box(`${k.boy ? "👦" : "👧"} ${k.name}${k.partner ? " 💍 " + k.partner : ""}`, "#d8f3dc")), F.kids.flatMap((k) => k.kids.map((g) => box(`${g.boy ? "👶" : "👶"} ${g.name}`, "#e0f0ff")))];
+    const Fp = this._fOpen(`${this._fHead("🌳", L("Family tree"))}${rows.filter((r) => r.length && r.join("")).map((r, i) => `<div style="text-align:center">${r.join("")}</div>${i < rows.length - 1 ? '<div style="text-align:center;color:#999">│</div>' : ""}`).join("")}<div class="btn-row"><button class="big-btn" id="ft-back">${L("Back")}</button></div>`);
+    Fp.q("#ft-back").addEventListener("click", () => this._familyHub());
+  }
+
+  // ---------- Your children and grandchildren at home, in 3D ----------
+  _famRebuildHome() { const rm = this.world.currentRoom; if (rm && rm._famFigs) { rm.group.remove(rm._famFigs); rm._famFigs = null; this.roomInteractables = this.roomInteractables.filter((x) => !x._fam); this._famHome(rm); } }
+  _famHome(room) {
+    const F = this._fam(), pr = this.progress; if (room._famFigs) return; const list = [];
+    F.kids.forEach((k, i) => { if (i > 0) list.push([k, this._kidAge(k), () => this._familyHub()]); k.kids.forEach((g, j) => { if (!(i === 0 && j === 0 && pr.grandchild && pr.grandchild.name === g.name)) list.push([g, Math.max(0, pr.age - g.born), () => this._familyHub()]); }); });
+    if (!list.length) return; const G = new THREE.Group(); room.group.add(G); room._famFigs = G;
+    list.forEach(([p, a, fn], n) => { const sp = this._nearSpot ? this._nearSpot(room, room.x0 - 1 + n * 1.6, room.z0 + 2.5, [[0, 0], [0.8, 0], [-0.8, 0], [0, 0.8], [0, -0.8], [1.6, 0.8]]) : { x: room.x0 - 1 + n * 1.6, z: room.z0 + 2.5 };
+      try { const f = makeHuman({ skin: 0xe8b98a, shirt: p.boy ? 0x3a86ff : 0xff8fab, dress: !p.boy, hair: 0x1d1410 }); f.scale.setScalar(a < 3 ? 0.38 : a < 13 ? 0.55 + a * 0.02 : a < 18 ? 0.88 : 1); f.position.set(sp.x - room.x0, 0, sp.z - room.z0); f.rotation.y = Math.PI; G.add(f); const t = makeTextSprite(`${p.name} (${a})`, { size: 36, scale: 0.5 }); t.position.set(sp.x - room.x0, a < 3 ? 1.2 : 2.3, sp.z - room.z0); G.add(t); } catch (e) { /* figure optional */ }
+      this.roomInteractables.push({ _fam: true, pos: sp, radius: 1.8, priority: 1, prompt: () => L("👨‍👩‍👧 {n}: care and play", { n: p.name }), activate: fn }); });
+  }
+
+  // ================= v74 · Life events: 15 real-life moments across the three generations =================
+  // A small card-story helper: each step shows text and choices; a choice shows a reply and may change state.
+  _storySteps(icon, title, steps, onDone) {
+    let i = 0; const next = () => { if (i >= steps.length) { closePanel(); onDone && onDone(); return; } const s = steps[i];
+      const F = this._fOpen(`${this._fHead(icon, title)}<p class="job-brief">${s.text}</p><div class="btn-row" style="flex-direction:column">${s.opts.map((o, k) => `<button class="big-btn" id="ss2-${k}">${o[0]}</button>`).join("")}</div><div class="job-goal" id="ss2-r"></div>`);
+      s.opts.forEach((o, k) => F.q(`#ss2-${k}`).addEventListener("click", () => { if (o[2]) o[2](); F.q(".btn-row").innerHTML = `<button class="big-btn" id="ss2-n">${L("Next")}</button>`; F.q("#ss2-r").textContent = o[1]; this._sfx(); F.q("#ss2-n").addEventListener("click", () => { i++; next(); }); })); };
+    next();
+  }
+  _lifeList() {
+    const pr = this.progress, F = this._fam(), age = pr.age || 0, kids = F.kids, ka = (k) => this._kidAge(k), yr = (key) => (F.ev || {})[key] === age;
+    return [
+      ["village", "🚂", L("Summer trip to Nani's village"), yr("village") ? L("done this year") : true],
+      ["bus", "🚌", L("School bus with friends"), this.working ? L("for school students") : this._famDone("ev", "bus") ? L("done today") : true],
+      ["ptm", "👩‍🏫", L("Parent-teacher meeting"), kids.some((k) => ka(k) >= 5 && ka(k) <= 17) ? (yr("ptm") ? L("done this year") : true) : L("needs a child aged 5 to 17")],
+      ["album", "📷", L("Family photo day"), yr("album") ? L("done this year") : true],
+      ["sangeet", "💃", L("Sangeet dance practice"), this._famDone("ev", "sangeet") ? L("done today") : true],
+      ["trip", "🏔️", L("Family road trip to the hills"), age < 21 ? L("for grown-ups") : yr("trip") ? L("done this year") : true],
+      ["paint", "🎨", L("Paint the house before Diwali"), age < 21 ? L("for grown-ups") : yr("paint") ? L("done this year") : true],
+      ["gpday", "👵", L("Grandparents' day at school"), yr("gpday") ? L("done this year") : true],
+      ["fall", "🚲", L("First cycle, first fall"), kids.some((k) => ka(k) >= 5 && ka(k) <= 10 && !k.fell) ? true : L("needs a child aged 5 to 10")],
+      ["shop", "🍬", L("Family sweet shop"), age < 21 ? L("for grown-ups") : true],
+      ["match", "🏏", L("Cheer at your child's match"), kids.some((k) => ka(k) >= 8 && ka(k) <= 17) ? (this._famDone("ev", "match") ? L("done today") : true) : L("needs a child aged 8 to 17")],
+      ["nest", "📱", L("Video call your grown child"), kids.some((k) => k.city) ? true : L("when a child moves away for work (age 22)")],
+      ["dog", "🐕", L("Our family dog"), age < 21 ? L("for grown-ups") : true],
+      ["board", "📝", L("Board exam week"), kids.some((k) => [15, 17].includes(ka(k)) && !(k.boards || []).includes(ka(k))) ? true : L("needs a child aged 15 or 17")],
+      ["fest", "🪔", L("Diwali of three generations"), yr("fest") ? L("done this year") : true],
+    ];
+  }
+  _lifeEvents() {
+    const list = this._lifeList(), Fp = this._fOpen(`${this._fHead("🌟", L("Life events"))}<p class="job-brief" style="font-size:13px">${L("Real moments of family life. Some come once a year, some need a child of the right age.")}</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:5px">${list.map(([k, i, t, ok]) => `<button class="lang-btn" id="le-${k}" style="text-align:left;padding:7px 9px" ${ok === true ? "" : "disabled"}>${i} ${t}${ok === true ? "" : `<br><small>${ok}</small>`}</button>`).join("")}</div><div class="btn-row"><button class="ghost-btn" id="le-back">${L("Back to my family")}</button></div>`);
+    const M = { village: () => this._evVillage(), bus: () => this._evBus(), ptm: () => this._evPtm(), album: () => this._evAlbum(), sangeet: () => this._evSangeet(), trip: () => this._evTrip(), paint: () => this._evPaint(), gpday: () => this._evGpDay(), fall: () => this._evFall(), shop: () => this._evShop(), match: () => this._evMatch(), nest: () => this._evNest(), dog: () => this._evDog(), board: () => this._evBoard(), fest: () => this._evFest() };
+    list.forEach(([k, , , ok]) => { if (ok === true) Fp.q(`#le-${k}`).addEventListener("click", () => { try { M[k](); } catch (e) { this._reportError && this._reportError(e); } }); });
+    Fp.q("#le-back").addEventListener("click", () => this._familyHub());
+  }
+  _evMark(key) { const F = this._fam(); F.ev = F.ev || {}; F.ev[key] = this.progress.age || 0; this._jsave(); }
+  _famAll(n) { const F = this._fam(); if (this.progress.spouse) F.love = this._clamp(F.love + n); for (const k of F.kids) { k.needs.love = this._clamp(k.needs.love + n); for (const g of k.kids) g.love = this._clamp(g.love + n); } this.addFriendship && this.addFriendship("family", 1, L("family time")); this._jsave(); }
+
+  // 1. Summer trip to Nani's village.
+  _evVillage() {
+    this._evMark("village");
+    this._storySteps("🚂", L("Summer trip to Nani's village"), [
+      { text: L("The train chugs past green fields. At the small station, Nana waits with a bullock cart!"), opts: [[L("🐂 Ride the bullock cart"), L("Bumpy and slow. You wave at every child on the road.")], [L("🚶 Walk with Nana"), L("Nana names every tree on the way. He knows them all.")]] },
+      { text: L("Morning in the village. What do you do first?"), opts: [[L("🪣 Pull water from the well"), L("Heavy! Nani laughs: 'City arms!' The water is ice cold and sweet.")], [L("🐃 Feed the buffalo"), L("The buffalo licks your hand. Nani shows you how to milk it.")], [L("🥭 Climb the mango tree"), L("Five raw mangoes. Nani makes aam panna for everyone.")]] },
+      { text: L("Night. No TV, no phone signal. Only stars and stories."), opts: [[L("🌟 Count the stars with Nana"), L("You stop at 300. Nana says the stars are the old people of the village, watching.")], [L("📖 Hear Nani's ghost story"), L("A churail in the peepal tree! You sleep between Nani and Maa.")]] },
+    ], () => { this._famAll(8); this._snap && this._snap("🚂", "Summer holidays at Nani's village."); this.diary(L("Summer holidays at Nani's village: the well, the buffalo and the stars.")); showToast(L("🚂 Back home, brown from the sun and full of mangoes."), 3200, "good"); });
+  }
+  // 2. The school bus with friends.
+  _evBus() {
+    this._famMark("ev", "bus"); const S = this._sib ? this._sib() : { name: "Gudiya" };
+    this._storySteps("🚌", L("The school bus"), [
+      { text: L("Rohan is in YOUR window seat. Again."), opts: [[L("😤 Push him out"), L("The driver shouts: 'SIT DOWN!' Both of you stand at the front for the ride."), () => this.addFriendship && this.addFriendship("rohan", -1, L("seat fight"))], [L("🤝 Take turns: you in the morning, him after school"), L("Rohan: 'Deal!' He shares his chips with you."), () => this.addFriendship && this.addFriendship("rohan", 1, L("shared the seat"))]] },
+      { text: L("The whole bus starts antakshari. The song must start with 'M'!"), opts: [[L("🎤 'Mere sapnon ki rani...'"), L("The bus sings with you. Even the driver hums.")], [L("🎤 'Maa tujhe salaam'"), L("Everyone claps. A proud song.")]] },
+      { text: L("Oh no! {n} left the tiffin box on the seat.", { n: S.name }), opts: [[L("🍱 Pick it up and give it back"), L("{n}: 'You saved my lunch! Half my paratha is yours.'", { n: S.name }), () => this.addFriendship && this.addFriendship("family", 1, L("found the tiffin"))], [L("😋 Eat it"), L("Delicious... but {n} cries at lunch. Not nice. Share yours.", { n: S.name })]] },
+    ], () => this.diary(L("A school bus ride: seat fight, songs and a tiffin rescue.")));
+  }
+  // 3. Parent-teacher meeting for your own child.
+  _evPtm() {
+    const F = this._fam(), k = F.kids.find((x) => this._kidAge(x) >= 5 && this._kidAge(x) <= 17); if (!k) return; this._evMark("ptm");
+    const good = k.needs.study >= 60 || k.skill.study >= 3, n = k.name;
+    this._storySteps("👩‍🏫", L("PTM for {n}", { n }), [
+      { text: good ? L("Mrs. Rao: '{n} is doing very well. Neat notebooks, good questions in class.'", { n }) : L("Mrs. Rao: '{n} is a sweet child, but the homework is often missing. Maths is weak.'", { n }), opts: [[L("🙏 'Thank you. How can we help at home?'"), L("Mrs. Rao: 'Twenty minutes of reading every night. And praise the effort, not only the marks.'"), () => { k.needs.study = this._clamp(k.needs.study + 15); k.skill.study++; }], [L("😠 Scold {n} in front of the teacher", { n }), L("{n} looks at the floor. Mrs. Rao: 'Please, talk to the child at home, gently.'", { n }), () => { k.needs.love = this._clamp(k.needs.love - 20); }]] },
+      { text: L("On the way home, {n} holds your hand. 'Are you angry?'", { n }), opts: [[L("🤗 'No. I am proud you try. Ice cream?'"), L("{n} smiles all the way home.", { n }), () => { k.needs.love = this._clamp(k.needs.love + 20); }], [L("📚 'A little. Let us make a study plan together.'"), L("You make a timetable and stick it on the fridge."), () => { k.needs.study = this._clamp(k.needs.study + 10); }]] },
+    ], () => { this._jsave(); this.diary(L("Went to {n}'s parent-teacher meeting.", { n })); });
+  }
+  // 4. Family photo day: once a year, everyone in one frame.
+  _evAlbum() {
+    const pr = this.progress, F = this._fam(), me = this.playerName || L("You"); this._evMark("album");
+    const people = [["👵", "Dadi"], ["👨", "Papa"], ["👩", "Maa"], ["⭐", `${me} (${pr.age})`]].concat(pr.spouse ? [["💍", pr.spouse.name]] : [], F.kids.map((k) => [k.boy ? "👦" : "👧", `${k.name} (${this._kidAge(k)})`]), F.kids.flatMap((k) => k.kids.map((g) => ["👶", `${g.name} (${Math.max(0, pr.age - g.born)})`])));
+    F.photos = (F.photos || []).concat([{ age: pr.age, n: people.length }]).slice(-40); this._jsave(); this._sfx("win"); this._snap && this._snap("📷", `Family photo at age ${pr.age}: ${people.length} people.`);
+    const Fp = this._fOpen(`${this._fHead("📷", L("Family photo, age {a}", { a: pr.age }))}<div style="background:#fff8e7;border:8px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.2);padding:12px;text-align:center;font-size:30px">${people.map((x) => `<span title="${x[1]}">${x[0]}</span>`).join(" ")}<div style="font-size:13px;margin-top:6px">${people.map((x) => x[1]).join(" · ")}</div></div><p class="job-brief">${L("'Everyone say paneer!' Click! Photos taken: {n}. Look at them in your album when you are old.", { n: F.photos.length })}</p>`);
+  }
+  // 5. Sangeet dance practice for the colony wedding.
+  _evSangeet() {
+    this._famMark("ev", "sangeet"); this._timingGame({ name: L("Sangeet practice: 'London Thumakda'"), icon: "💃", cue: "Step on the beat in the green!", hit: "Wah! Nice step!", miss: "Oops, wrong foot!", verb: "Dance" }, 5, (h) => { this._famAll(3); this.diary(L("Sangeet practice for the colony wedding: {h} of 5 steps right.", { h })); }, L("Dance teacher Pinky Aunty"));
+  }
+  // 6. A family road trip to the hills.
+  _evTrip() {
+    const places = [["Shimla", "🚂", 3000, L("The toy train through 100 tunnels. Snow on the Mall Road!")], ["Munnar", "🍃", 3500, L("Tea gardens like green carpets. Mist on the hills.")], ["Darjeeling", "🏔️", 4000, L("Sunrise on Kanchenjunga from Tiger Hill. Everyone forgets the cold.")]];
+    const Fp = this._fOpen(`${this._fHead("🏔️", L("Family road trip"))}<p class="job-brief">${L("Pack the car! Where does the family go this year?")}</p><div class="btn-row" style="flex-direction:column">${places.map((p, i) => `<button class="big-btn" id="rt-${i}">${p[1]} ${p[0]} · ₹${p[2]}</button>`).join("")}</div>`);
+    places.forEach((p, i) => Fp.q(`#rt-${i}`).addEventListener("click", () => { if (!this._famPay(p[2], L("trip to {p}", { p: p[0] }))) return; this._evMark("trip"); closePanel(); this._famAll(15); this._sfx("win"); this._snap && this._snap(p[1], `Family road trip to ${p[0]}.`); this.diary(L("Family road trip to {p}.", { p: p[0] }));
+      this.dialogue.say(L("Road trip"), [L("Six hours in the car. 'Are we there yet?' asked 40 times."), p[3], L("Everyone sleeps on the way back. You drive with a smile.")], null, { pitch: 400 }); }));
+  }
+  // 7. Paint the house before Diwali.
+  _evPaint() {
+    const cols = [[L("Sunny yellow"), 0xffd166], [L("Mint green"), 0x95d5b2], [L("Sky blue"), 0x90e0ef], [L("Peach"), 0xffb4a2]];
+    const Fp = this._fOpen(`${this._fHead("🎨", L("Paint the house before Diwali"))}<p class="job-brief">${L("Every Diwali the house gets fresh paint. The painters cost ₹2,000. Which colour?")}</p><div class="btn-row" style="flex-wrap:wrap">${cols.map((c, i) => `<button class="big-btn" id="pt-${i}" style="background:#${c[1].toString(16)}">${c[0]}</button>`).join("")}</div>`);
+    cols.forEach((c, i) => Fp.q(`#pt-${i}`).addEventListener("click", () => { if (!this._famPay(2000, L("painting the house"))) return; const F = this._fam(); F.paint = c[0]; this._evMark("paint"); closePanel(); this._famAll(5); this._sfx("win"); this.diary(L("Painted the house {c} before Diwali.", { c: c[0] }));
+      this.dialogue.say(L("The painters"), [L("Three days of mess. Newspaper on every floor. The smell of fresh paint."), L("Then: a {c} house that shines like new. Dadi: 'Now Lakshmi ji will surely come!'", { c: c[0] })], null, { pitch: 380 }); }));
+  }
+  // 8. Grandparents' day at school.
+  _evGpDay() {
+    const pr = this.progress, F = this._fam(), g = F.kids.flatMap((k) => k.kids)[0]; this._evMark("gpday");
+    if (g) this._storySteps("👵", L("Grandparents' day at {n}'s school", { n: g.name }), [{ text: L("You sit on a tiny chair in a Class 1 room. {n} is so proud. What do you do on stage?", { n: g.name }), opts: [[L("📖 Tell a story from your police days"), L("The children listen with open mouths. {n} tells everyone: 'That is MY grandparent!'", { n: g.name }), () => { g.love = this._clamp(g.love + 25); }], [L("🎵 Sing an old film song"), L("The teachers join in. Everyone claps.", {}), () => { g.love = this._clamp(g.love + 20); g.fun = this._clamp(g.fun + 20); }]] }], () => { this._jsave(); this.diary(L("Grandparents' day at {n}'s school.", { n: g.name })); });
+    else this._storySteps("👵", L("Grandparents' day at school"), [{ text: L("Dadi comes to YOUR school in her best saree. What does she do on stage?"), opts: [[L("🧶 Shows how to knit"), L("The girls and boys crowd around her. Dadi is a star!")], [L("🎵 Sings a lori (lullaby)"), L("The whole hall goes quiet. Some teachers cry a little.")]] }], () => { this.addFriendship && this.addFriendship("family", 2, L("grandparents' day")); this.diary(L("Dadi came for grandparents' day at school.")); });
+  }
+  // 9. First bicycle, first fall.
+  _evFall() {
+    const F = this._fam(), k = F.kids.find((x) => this._kidAge(x) >= 5 && this._kidAge(x) <= 10 && !x.fell); if (!k) return; const n = k.name; k.fell = true; this._jsave();
+    this._storySteps("🚲", L("{n}'s first cycle", { n }), [
+      { text: L("You let go of the seat. {n} rides, rides... CRASH! Into the hedge. A scraped knee and a lot of crying.", { n }), opts: [[L("🧼 Wash the cut with clean water, then antiseptic"), L("Right! Clean water first, then antiseptic, then a bandage. It stings, then it is fine."), () => { k.needs.love = this._clamp(k.needs.love + 15); }], [L("🌿 Rub mud on it"), L("No! Mud can cause an infection. Always wash a cut with clean water.")]] },
+      { text: L("The knee is swollen. Should you see a doctor?"), opts: [[L("🏥 Yes, a quick check at City Hospital"), L("Dr. Mehta: 'Just a bruise. A tetanus shot, and no football for two days.'"), () => this._famPay(200, L("doctor visit"))], [L("🧊 Ice pack and rest, watch it"), L("By evening the swelling is down. {n} wants to ride again!", { n })]] },
+      { text: L("Next morning, {n} looks at the cycle. Scared.", { n }), opts: [[L("💪 'Fall seven times, stand up eight.' Try again together"), L("{n} rides to the end of the lane, alone! The whole colony claps.", { n }), () => { k.skill.sport++; k.needs.fun = this._clamp(k.needs.fun + 20); }]] },
+    ], () => { this._snap && this._snap("🚲", `${n} learned to ride a cycle.`); this.diary(L("{n} fell off the cycle, then learned to ride.", { n })); });
+  }
+  // 10. The family sweet shop.
+  _evShop() {
+    const F = this._fam(), pr = this.progress;
+    if (!F.sweetShop) { const Fp = this._fOpen(`${this._fHead("🍬", L("Open a family sweet shop"))}<p class="job-brief">${L("Dadi has the old recipes. You have the savings. Open 'Kaushik Sweets' for ₹5,000? The shop earns about ₹200 every day, and more when you make fresh sweets.")}</p><div class="btn-row"><button class="big-btn" id="sw-open">🏪 ${L("Open the shop (₹5,000)")}</button></div>`);
+      Fp.q("#sw-open").addEventListener("click", () => { if (!this._famPay(5000, L("opening the sweet shop"))) return; F.sweetShop = { opened: pr.age, days: 0 }; this._jsave(); this._sfx("win"); this._snap && this._snap("🍬", "Opened the family sweet shop."); this.diary(L("Opened Kaushik Sweets with the family.")); closePanel(); showToast(L("🍬 Kaushik Sweets is open! Dadi cuts the ribbon."), 3500, "good"); }); return; }
+    if (this._famDone("ev", "shop")) { showToast(L("Fresh sweets are made for today. The shop earns ₹200 a day by itself."), 2800); return; }
+    this._orderGame("🍬 " + L("Make fresh besan laddoos"), L("Dadi's recipe, in order:"), [["🍳", L("Roast the besan in ghee")], ["👃", L("Roast till it smells nutty")], ["🍬", L("Add powdered sugar")], ["🥜", L("Add cardamom and nuts")], ["🤲", L("Roll into round laddoos")]], (miss) => { this._famMark("ev", "shop"); const earn = miss ? 60 : 120; this.addMoney(earn, L("fresh laddoos sold")); this._jsave(); this._sfx("win"); showToast(L("🍬 The laddoos sell out by noon! ₹{e} extra.", { e: earn }), 3000, "good"); });
+  }
+  // 11. Cheer at your child's cricket match.
+  _evMatch() {
+    const F = this._fam(), k = F.kids.find((x) => this._kidAge(x) >= 8 && this._kidAge(x) <= 17); if (!k) return; this._famMark("ev", "match");
+    this._timingGame({ name: L("{n}'s cricket match", { n: k.name }), icon: "🏏", cue: "Cheer loud when the ball comes to the green!", hit: "FOUR! You scream the loudest!", miss: "Dot ball. Keep cheering!", verb: "Cheer" }, 5, (h) => { k.needs.love = this._clamp(k.needs.love + 20); k.skill.sport++; this._jsave(); this.diary(L("Watched {n}'s cricket match and cheered.", { n: k.name })); showToast(h >= 3 ? L("🏆 {n}'s team wins! {n} runs to you first.", { n: k.name }) : L("They lost, but {n} says: 'You were the loudest parent!'", { n: k.name }), 3600, "good"); }, L("The umpire"));
+  }
+  // 12. The empty nest: a grown child moves away; you video call.
+  _evNest() {
+    const F = this._fam(), k = F.kids.find((x) => x.city); if (!k) return;
+    this._storySteps("📱", L("Video call with {n} in {c}", { n: k.name, c: k.city }), [{ text: L("Ring ring... {n}'s face on the screen! There is a small kitchen behind, and dal in a cooker.", { n: k.name }), opts: [[L("🍲 'Are you eating properly?'"), L("{n} laughs: 'Yes, Maa-Papa! I even learned your dal recipe.'", { n: k.name })], [L("🏠 'Come home for Diwali?'"), L("'Tickets are booked! I will bring sweets from {c}.'", { c: k.city })]] }, { text: L("After the call, the house is very quiet."), opts: [[L("🙂 Look at the old photos and smile"), L("You find {n}'s first drawing. Still on the fridge after all these years.", { n: k.name }), () => { k.needs.love = this._clamp(k.needs.love + 25); }]] }], () => { this._jsave(); this.diary(L("Video call with {n}, who now lives in {c}.", { n: k.name, c: k.city })); });
+  }
+  // 13. The family dog grows old over the years.
+  _evDog() {
+    const F = this._fam(), pr = this.progress;
+    if (!F.dog) { const Fp = this._fOpen(`${this._fHead("🐕", L("Adopt a family dog"))}<p class="job-brief">${L("A shelter puppy needs a home. A dog lives about 13 to 15 years. It is a promise for its whole life.")}</p><div class="chat-row"><input id="dg-n" type="text" maxlength="12" value="Bruno"></div><div class="btn-row"><button class="big-btn" id="dg-ok">🐶 ${L("Adopt")}</button></div>`);
+      const inp = Fp.q("#dg-n"); inp.addEventListener("keydown", (e) => e.stopPropagation()); Fp.q("#dg-ok").addEventListener("click", () => { F.dog = { name: (inp.value || "Bruno").trim().slice(0, 12) || "Bruno", born: pr.age }; this._jsave(); this._sfx("win"); this.diary(L("Adopted {n} from the shelter.", { n: F.dog.name })); closePanel(); showToast(L("🐶 {n} is home! Walk and feed {n} every day.", { n: F.dog.name }), 3200, "good"); }); return; }
+    const a = pr.age - F.dog.born, st = a < 2 ? L("a playful puppy") : a < 9 ? L("a strong, happy dog") : L("an old dog with a grey face"), done = this._famDone("ev", "dog");
+    const Fp = this._fOpen(`${this._fHead("🐕", F.dog.name)}<p class="job-brief">${L("{n} is {a} years old: {s}.", { n: F.dog.name, a, s: st })} ${(F.dogsPast || []).length ? L("In memory: {m}.", { m: F.dogsPast.join(", ") }) : ""}</p><div class="btn-row"><button class="big-btn" id="dg-walk" ${done ? "disabled" : ""}>🦮 ${a >= 9 ? L("A slow, short walk") : L("Walk and play fetch")}</button></div>`);
+    Fp.q("#dg-walk").addEventListener("click", () => { this._famMark("ev", "dog"); this._famAll(2); this._sfx(); closePanel(); showToast(a >= 9 ? L("🦮 {n} walks slowly now, but the tail still wags when you pick up the leash.", { n: F.dog.name }) : L("🦮 {n} brings the ball back ten times!", { n: F.dog.name }), 3200, "good"); });
+  }
+  _dogYear() {
+    const F = this._fam(), pr = this.progress; if (!F.dog) return; const a = pr.age - F.dog.born; if (a < 14) return; const n = F.dog.name; F.dogsPast = (F.dogsPast || []).concat([n]); F.dog = null; this._jsave();
+    this.dialogue.say(L("A quiet morning"), [L("{n} is old and tired. Last night {n} slept at your feet, like always, and did not wake up.", { n }), L("The whole family sits in the garden. Everyone tells a favourite {n} story. Some laugh, some cry.", { n }), L("A good dog, a full life, much love. When you are ready, the shelter has more puppies waiting for a home.")], null, { pitch: 360 });
+  }
+  // 14. Board exam week: plan the study time.
+  _evBoard() {
+    const F = this._fam(), k = F.kids.find((x) => [15, 17].includes(this._kidAge(x)) && !(x.boards || []).includes(this._kidAge(x))); if (!k) return; const n = k.name, a = this._kidAge(k);
+    const plans = [[L("📚 Study 14 hours, sleep 5, no play"), L("By day 3, {n} falls asleep in the exam hall. Tired brains forget.", { n }), 0], [L("⚖️ Study 8, sleep 8, play 1, eat well"), L("{n} feels calm and fresh. The paper goes well! A balanced plan wins.", { n }), 3], [L("📱 'Study later', phone all day"), L("Panic on the last night. The results are weak. A lesson for next time.", { n }), -1]];
+    const Fp = this._fOpen(`${this._fHead("📝", L("{n}'s Class {c} board exams", { n, c: a === 15 ? 10 : 12 }))}<p class="job-brief">${L("{n} is stressed. Help make a timetable for exam week.", { n })}</p><div class="btn-row" style="flex-direction:column">${plans.map((p, i) => `<button class="big-btn" id="be-${i}">${p[0]}</button>`).join("")}</div>`);
+    plans.forEach((p, i) => Fp.q(`#be-${i}`).addEventListener("click", () => { k.boards = (k.boards || []).concat([a]); k.skill.study = Math.max(0, k.skill.study + p[2]); k.needs.love = this._clamp(k.needs.love + 15); this._jsave(); closePanel(); this._sfx(p[2] > 0 ? "win" : "bad"); const pct = [72, 91, 58][i]; this.diary(L("{n}'s board exam: {p}%.", { n, p: pct })); this.dialogue.say(n, [p[1], L("Result: {p}%.", { p: pct }), i === 1 ? L("'Thank you for the plan. And for the midnight chai.'") : L("'Next time, I will make a better plan.'")], null, { pitch: 480 }); }));
+  }
+  // 15. Diwali of three generations.
+  _evFest() {
+    const F = this._fam(), young = F.kids.flatMap((k) => k.kids)[0] || F.kids[0], yn = young ? young.name : (this._sib ? this._sib().name : "Gudiya"); this._evMark("fest");
+    this._storySteps("🪔", L("Diwali of three generations"), [
+      { text: L("Dadi's way: the old Diwali."), opts: [[L("🪔 Light 51 clay diyas with Dadi"), L("Dadi: 'In my time there was no electricity. Only diyas, and the whole village glowed.'")], [L("🌸 Make a rangoli with rice flour"), L("Dadi: 'Rice flour, so the ants also get a Diwali meal.'")]] },
+      { text: L("Your way: the Diwali you grew up with."), opts: [[L("💡 Hang the fairy lights on the balcony"), L("Papa holds the ladder, like always.")], [L("🍬 Share sweet boxes with the neighbours"), L("Sharma Aunty sends back kaju katli. The best trade.")]] },
+      { text: L("{n}'s way: the new Diwali.", { n: yn }), opts: [[L("🌱 Green crackers only, and a pet-safe night"), L("{n}: 'The dogs in the lane are not scared this year!'", { n: yn })], [L("📱 A video call so far-away family can see the diyas"), L("Everyone waves at the screen. The whole family, in one Diwali.")]] },
+    ], () => { this._famAll(10); this._snap && this._snap("🪔", "A Diwali of three generations."); this.diary(L("Diwali with three generations: Dadi's diyas, my lights, {n}'s green crackers.", { n: yn })); });
   }
 }
 

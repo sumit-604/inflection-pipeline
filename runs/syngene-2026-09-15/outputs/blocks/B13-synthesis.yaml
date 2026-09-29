@@ -1,0 +1,41 @@
+stage: B13-synthesis
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-opus-5
+status: complete
+mode: phase-1-lite
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-PROMOTER", "FLAG-CASH", "FLAG-GATE0"]
+flag_determinations:
+  promoter: "CONCERN (verdict-line block inline)"
+  cash: "GROWTH-INDUCED; falsifier H1FY27 consolidated CFO below 70% of H1FY27 operating EBITDA (FY26 92.5%, FY25 104.8%)"
+  gate0: "AVERAGE 66/160, caps nothing; depressors part historical (Rs 766mn exceptional), part live (Unit 3 depreciation, hedge book, M1 margin trend)"
+confidence_delta: {numerical: 96.6, redflag: 67, framework: 85, peer: 83, overall: 67}
+confidence_band: "60-74; PROCEED WITH FLAGS is already the most cautious PROCEED rung, band reinforces and does not move the verdict"
+freshness_cap: "none (FRESHNESS PAIRS OK)"
+open_critical_carried: "B12b CRITICAL: Bayview/Unit 3 cost drag unquantified; FY27 mid-20s margin guide rests on Bayview capitalisation deferral (Q2FY26 p.8; Q4FY26 p.5, p.7; Q1FY27 p.13)"
+transition_posture_provisional: "Proof gate NOT FIRED; ugliness unresolved (ARTIFACT-OF-CLIMB vs STRUCTURAL-FEATURE); recognition gap phase 3; RESEARCH-WATCH or VALUE-TRAP RISK; Mental Model NOT SIGNED"
+lbf_landing:
+  LBF1: "CONFIRMED (Q2-Q4 need Rs 2,779-2,853 Cr at ~28-29% blended margin)"
+  LBF2: "PARTIAL (peak share, take or pay, impairment test NOT FOUND)"
+  LBF3: "CONFIRMED and extended (CWIP 34.9% of net block; Bayview ~12 month slip; FY28 depreciation step-up NOT FOUND)"
+  LBF4: "PARTIAL (dedicated-centre revenue NOT FOUND; peer SAILIFE CRO +26% contradicts sector-wide commoditisation on direction)"
+valuation_decision: ""
+entry_range: {low: 0, high: 0}
+headline: "Syngene built the capacity before the customers"
+falsification_metric: "Q2FY27 consolidated revenue from operations at or below Q1FY27's Rs 736 Cr, leaving Q3 and Q4 each needing about Rs 1,020-1,060 Cr against Q4FY26's Rs 1,037 Cr that still carried Librela"
+monitorables_count: 8
+contradicted_claims_count: 1
+internal_contradictions_count: 5
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "runs/syngene-2026-09-15/outputs/final/business-narrative.md"
+  - "runs/syngene-2026-09-15/outputs/final/gate-recommendation.md"
+  - "runs/syngene-2026-09-15/outputs/final/verifier-summary.md"
+notion_save:
+  page_title: "SYNGENE - Inflection Alpha phase-1 (evidence gate) 2026-09-15"
+  summary: "Syngene built the capacity before the customers. Gate on evidence: PROCEED WITH FLAGS. FLAG-PROMOTER (CONCERN), FLAG-CASH (GROWTH-INDUCED), FLAG-GATE0 (AVERAGE 66/160). Credibility D. Overall confidence 67, band 60-74. One Verifier B CRITICAL carried to Halt 1. No valuation; phase 3 pending."
+  drive_link: ""
+  mode: append-never-overwrite-status

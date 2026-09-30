@@ -151,3 +151,18 @@ These are weekly or slower series. The date shown is their last reading.
 
 
 <!-- market-read -->
+
+## Market read
+
+Tuesday split the market in two. The fast measures bounced and the slow floor
+kept sinking. Big risers beat big fallers 88 to 49, and volume rose above its
+year-ago level. The lists of stocks trading above their day's average price
+doubled at every size. Yet about six stocks in ten still closed down. The count
+of stocks above the two-hundred-day line fell again, to 973, the lowest since 11
+June. The market printed 165 new yearly lows against 40 new highs, the most lows
+since the March bottom. The microcap index rose about one percent and led every
+index. The Nifty slipped again. Fear eased back under its average. This is a
+bounce at the short end on better volume, inside a long base that is still
+eroding.
+
+Full brief: briefs/2026-09-29.html

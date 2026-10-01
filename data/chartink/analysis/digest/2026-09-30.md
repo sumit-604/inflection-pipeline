@@ -143,3 +143,19 @@ These are weekly or slower series. The date shown is their last reading.
 
 
 <!-- market-read -->
+
+## Market read
+
+Wednesday was a quiet repair day with a flat floor. The rush of new yearly lows
+eased. Lows fell from 165 to 83, and new highs rose from 40 to 63. Rising and
+falling stocks came out close to even. Big risers beat big fallers 88 to 47 for
+the second day. The list of stocks with fresh daily momentum nearly doubled.
+Almost 200 stocks turned up from a deeply sold reading, and many of them were
+large. But the bid inside the day faded. The large-cap list above the day's
+average price fell back from 32 names to 17. The count of stocks above the
+two-hundred-day line stayed at 971, the lowest since 11 June. The Nifty slipped
+again while media, realty, defence and banks rose. Fear stayed just under its
+average. The short end is mending. The long floor has stopped falling, but it
+has not started to rise.
+
+Full brief: briefs/2026-09-30.html

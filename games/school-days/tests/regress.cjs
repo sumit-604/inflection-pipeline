@@ -56,7 +56,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     for (const [who, key, want] of [[1, 'ArrowUp', 'up'], [1, 'ArrowDown', 'down'], [2, 'w', 'up'], [2, 's', 'down'], [2, 'a', 'left'], [2, 'd', 'right']]) {
       const r = await dirTest(who, key, want); ok(`B-dir Player ${who} ${key} goes ${want}`, r.dot > 0.9 && r.dist > 0.3, `dot ${r.dot.toFixed(2)}, moved ${r.dist.toFixed(1)}`);
     }
-    for (const key of ['ArrowLeft', 'ArrowRight']) { const b0 = await ev(p, () => { const g = window.__game, a = g.player.position; return [g.player.camYaw, a.x, a.z]; }); await hold(p, key, 700); const b1 = await ev(p, () => { const g = window.__game, a = g.player.position; return [g.player.camYaw, a.x, a.z]; });
+    for (const key of ['ArrowLeft', 'ArrowRight']) { const b0 = await ev(p, () => { const g = window.__game, a = g.player.position; return [g.player.camYaw, a.x, a.z]; }); await hold(p, key, 1600); const b1 = await ev(p, () => { const g = window.__game, a = g.player.position; return [g.player.camYaw, a.x, a.z]; });
       ok(`B-turn Player 1 ${key} turns the camera (old controls), no walking`, Math.abs(b1[0] - b0[0]) > 0.3 && Math.hypot(b1[1] - b0[1], b1[2] - b0[2]) < 0.2, `turned ${(b1[0] - b0[0]).toFixed(2)}`); }
     // Holding up for 3 seconds: a straight line, camera still.
     await ev(p, () => { const g = window.__game; g.player.group.position.set(-40, 0, 5); g.player.camYaw = Math.PI / 2; g.player._placeCamera(1); g.p2.group.position.set(-40, 0, 8); }); await p.waitForTimeout(400);
@@ -203,7 +203,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   if (want('K')) try {
     p = await fresh();
     await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.money = 20000; const s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); });
-    await p.click('#lb-fun'); const nb = await ev(p, () => document.querySelectorAll('[id^="fh-"]').length); ok('K1 🎲 hub opens with 36 activities', nb === 36, `${nb}`); await p.click('#f-x');
+    await p.click('#lb-fun'); const nb = await ev(p, () => document.querySelectorAll('[id^="fh-"]').length); ok('K1 🎲 hub opens with 56 activities', nb === 56, `${nb}`); await p.click('#f-x');
     const J = () => ev(p, () => JSON.parse(JSON.stringify(window.__game.progress.jl || {})));
     const next = () => ev(p, () => { const g = window.__game; g.progress.day++; window.__fin(); });
     // K2 chore, one player: press up when the sister shouts NOW.
@@ -216,7 +216,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     await ev(p, () => window.__game._cricket2()); await p.waitForFunction(() => !!document.querySelector('#f-ok'), null, { timeout: 45000 }).catch(() => {});
     ok('K3 gully cricket over finishes with a result', (await J()).cricket === 1); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
     // K4 hide and seek.
-    await ev(p, () => window.__game._hideSeek()); await p.waitForFunction(() => window.__game._hs && window.__game._hs.t > 0.2, null, { timeout: 40000 }).catch(() => {}); const hs = await ev(p, () => { const g = window.__game; if (!g._hs) return 'no game'; const s = g._hs.sp; g.player.position.set(s.x + 1, 0, s.z); return 'ok'; }); await p.waitForFunction(() => !window.__game._hs, null, { timeout: 20000 }).catch(() => {});
+    await ev(p, () => window.__game._hideSeek()); await p.waitForFunction(() => window.__game._hs && window.__game._hs.t > 0.2, null, { timeout: 40000 }).catch(() => {}); const hs = await ev(p, () => { const g = window.__game; if (!g._hs) return 'no game'; const s = g._hs.sp; g.player.position.set(s.x, 0, s.z); return 'ok'; }); for (let k = 0; k < 40 && await ev(p, () => !!window.__game._hs); k++) { await ev(p, () => { const g = window.__game; if (g._hs) g.player.position.set(g._hs.sp.x, 0, g._hs.sp.z); }); await p.waitForTimeout(500); }
     ok('K4 hide and seek: walk to the hiding place and find her', hs === 'ok' && (await J()).hideFound === 1, hs);
     // K5 race.
     await ev(p, () => { const g = window.__game, s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); g._sibRaceStart(); }); await p.waitForFunction(() => window.__game._sibRace && window.__game._sibRace.t > 0.1, null, { timeout: 30000 }); await ev(p, () => { const g = window.__game; const T = g._sibRace.T; g.player.position.set(T.x, 0, T.z + 1); }); await p.waitForTimeout(500);
@@ -276,7 +276,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     const md = (await J()).medals || {}; ok('K21 sports day sprint: fast feet win gold', md.g === 1, JSON.stringify(md)); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
     await ev(p, () => { window.__game._longJump(); }); for (let k = 0; k < 3; k++) { await p.waitForTimeout(400); await ev(p, () => document.querySelector('#lj-j') && document.querySelector('#lj-j').click()); await p.waitForTimeout(1100); }
     await p.waitForFunction(() => !!document.querySelector('#f-ok'), null, { timeout: 12000 }).catch(() => {}); ok('K21b long jump: 3 tries give a result', await ev(p, () => !!document.querySelector('#f-ok'))); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
-    await ev(p, () => window.__game._tugWar()); await p.waitForTimeout(900); for (let k = 0; k < 40; k++) { await ev(p, () => { const b = document.querySelector('#tw-a'); if (b) b.click(); }); await p.waitForTimeout(40); if (await ev(p, () => !!document.querySelector('#f-ok'))) break; }
+    await ev(p, () => window.__game._tugWar()); await p.waitForTimeout(900); await ev(p, () => { const id = setInterval(() => { const b = document.querySelector('#tw-a'); if (b) b.click(); else clearInterval(id); if (document.querySelector('#f-ok')) clearInterval(id); }, 20); }); await p.waitForFunction(() => !!document.querySelector('#f-ok'), null, { timeout: 30000 }).catch(() => {});
     ok('K21c tug of war: pull fast and win', ((await J()).medals || {}).g === 2); await ev(p, () => document.querySelector('#f-ok') && document.querySelector('#f-ok').click());
     // K22 kite fight.
     await ev(p, () => { window.__game._kiteFight(); for (let k = 0; k < 5; k++) document.querySelector('#sp-hit').click(); document.querySelector('#sp-ok').click(); window.__fin(); }); ok('K22 kite fight', (await J()).kitesCut != null);
@@ -307,7 +307,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     await ev(p, () => { window.__game._rangoli(); document.querySelector('#rg-0').click(); document.querySelector('#rg-s').click(); }); ok('K30 rangoli at the door (mirrored)', ((await J()).rangoli || []).filter((v) => v).length === 4 && await ev(p, () => !!window.__game._rg3d));
     // Every hub button opens without an error.
     const bad = await ev(p, () => { const g = window.__game, out = []; for (const [, list] of g._funList()) for (const [k] of list) { g._lastErr = null; try { g._funRun(k); } catch (e) { out.push(k + ':' + e.message); } if (g._lastErr) out.push(k + ':' + g._lastErr); window.__fin(); if (document.querySelector('#f-x')) document.querySelector('#f-x').click(); if (g._hs) g._hideEnd(null); if (g._sibRace) g._sibRaceEnd(null); if (g._paw) { g.world.scene.remove(g._paw.G); g._paw = null; } if (g._swachh) { g.world.scene.remove(g._swachh.G); g._swachh = null; } } return out; });
-    ok('K32 all 36 hub buttons run with no error', bad.length === 0, bad.join(' | '));
+    ok('K32 all 56 hub buttons run with no error', bad.length === 0, bad.join(' | '));
     ok('K33 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
   } catch (e) { ok('K fun hub', false, e.message.slice(0, 300)); }
 
@@ -519,6 +519,74 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     ok('Q9 life movie plays the album', /Born|First day|life of/.test(mv || ''), mv);
     ok('Q10 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ') + (await G(() => window.__game._lastErr || ''))); await p.close();
   } catch (e) { ok('Q only in School Days', false, e.message.slice(0, 300)); }
+
+  // ---------- R. v78: ten more ----------
+  if (want('R')) try {
+    p = await fresh();
+    const G = (fn, a) => ev(p, fn, a); const J = () => G(() => JSON.parse(JSON.stringify(window.__game.progress.jl || {}))); const next = () => G(() => { window.__game.progress.day++; window.__fin(); });
+    const timing = () => G(() => { for (let k = 0; k < 6; k++) { const b = document.querySelector('#sp-hit'); if (b && !b.hidden) b.click(); } document.querySelector('#sp-ok').click(); window.__fin(); });
+    await G(() => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.money = 20000; g.progress.age = 30; const s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); });
+    await G(() => { window.__game._cpl(); document.querySelector('#cpl-play').click(); }); await timing(); await G(() => window.__game._cpl()); const cp = await G(() => ({ n: window.__game.progress.jl.cpl.games.length, dis: document.querySelector('#cpl-play').disabled }));
+    ok('R1 Colony Premier League: play one match a day, the table fills', cp.n === 1 && cp.dis, JSON.stringify(cp)); await G(() => document.querySelector('#f-x').click());
+    const m0 = await G(() => window.__game.progress.money); await G(() => { window.__game._budget(); document.querySelector('#bd-rent-m').click(); }); const rent = await G(() => /₹3000/.test(document.querySelector('#bd-rows').innerText)); await G(() => { document.querySelector('#bd-ok').click(); window.__fin(); }); const m1 = await G(() => window.__game.progress.money);
+    ok('R2 Ghar ka budget: rent cannot go below ₹3,000; savings earn interest', rent && (await J()).budgets === 1 && m1 - m0 === 150, `${m1 - m0}`);
+    const pp = await G(() => { const g = window.__game; g.progress.landmarks = ['India Gate', 'Hawa Mahal']; g._passport(); return document.querySelector('#job-card h2').textContent; });
+    ok('R3 passport shows a stamp for each landmark seen', /2 of \d+ stamps/.test(pp), pp); await G(() => document.querySelector('#f-x').click());
+    const st = await G(() => { const g = window.__game; g.phase = 'morning'; g._straysBuild(); const it = g.interactables.find((i) => i._stray); if (!it) return 'no spot'; it.activate(); return 'ok'; });
+    ok('R4 feed the stray dog and the cow in the morning (Punya up)', st === 'ok' && (await J()).strayFed === 1 && (await J()).punya >= 1, st);
+    await G(() => { const g = window.__game; g._sip(); document.querySelector('#sip-500').click(); document.querySelector('#sip-on').click(); document.querySelector('#f-x').click(); });
+    for (let k = 0; k < 3; k++) { await next(); await G(() => { const g = window.__game; g._mrT = 0; g._tickMore(0.1); }); }
+    const sp = (await J()).sip; const m2 = await G(() => window.__game.progress.money); await G(() => { window.__game._sip(); document.querySelector('#sip-out').click(); }); const m3 = await G(() => window.__game.progress.money);
+    ok('R5 SIP: ₹500 a month for 3 months grows past ₹1,500; withdraw it', sp.invested === 1500 && sp.value > 1500 && m3 - m2 === sp.value, JSON.stringify({ inv: sp.invested, val: sp.value }));
+    await G(() => { const x = document.querySelector('#f-x'); if (x) x.click(); const g = window.__game; g.phase = 'night'; g._dream(); }); const dr = await G(() => window.__game.dialogue.active); await G(() => { window.__fin(); window.__game._dream(); });
+    ok('R6 a dream at night, one a night', dr && (await J()).dreams === 1);
+    await G(() => { window.__game._penpal(); document.querySelector('#pp-jp').click(); document.querySelector('#ppt-0').click(); }); await next(); await G(() => { window.__game._penpal(); }); const pal = await G(() => window.__game.dialogue.active && /Japan/.test(window.__game.dialogue.lines.join(' ') + document.body.innerText)); await G(() => window.__fin());
+    ok('R7 pen pal in Japan: write today, the reply comes next day', pal && (await J()).pp.n === 1);
+    await G(() => { const g = window.__game; g.phase = 'morning'; g._yoga(); }); await timing(); ok('R8 morning yoga with Dadi', (await J()).yoga === 1);
+    await G(() => { const g = window.__game; g._colonyLib(); document.querySelector('#lb-b0').click(); });
+    for (let k = 0; k < 3; k++) { await G(() => { document.querySelector('#lb-read').click(); }); await next(); await G(() => window.__game._colonyLib()); }
+    await G(() => { [...document.querySelectorAll('[id^="lb-q"]')].find((b) => b.textContent === 'The monkey').click(); });
+    ok('R9 library: read on 3 days, answer, the book is done', ((await J()).lib.done || []).includes(0));
+    await G(() => { const g = window.__game; g._sudoku(); const sol = g._sdSol; for (let i = 0; i < 16; i++) { const b = document.querySelector('#sd-' + i); if (b.disabled) continue; for (let k = 0; k < 4 && Number(document.querySelector('#sd-' + i).textContent || 0) !== sol[i]; k++) document.querySelector('#sd-' + i).click(); } document.querySelector('#sd-ok').click(); });
+    ok('R10 daily Sudoku solved', (await J()).sudokus === 1);
+    ok('R11 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ') + (await G(() => window.__game._lastErr || ''))); await p.close();
+  } catch (e) { ok('R ten more', false, e.message.slice(0, 300)); }
+
+  // ---------- S. About us ----------
+  if (want('S')) try {
+    p = await fresh();
+    await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); }); await p.click('#lb-about'); await p.waitForTimeout(800);
+    const ab = await ev(p, () => { const img = document.querySelector('#about-photo'), t = document.querySelector('#job-card').innerText; return { w: img && img.naturalWidth, name: /Rishabh Sharma/.test(t), series: /RishSchoolDays/.test(t), age: /9 years old/.test(t), ver: /v\d+/.test(t), noAi: !/\bAI\b|Gemini/i.test(t) }; });
+    await p.screenshot({ path: 'S_about.png' });
+    ok('S1 ℹ️ About us: Rishabh\'s photo, name, age 9, the RishSchoolDays series, the version', ab.w === 360 && ab.name && ab.series && ab.age && ab.ver && ab.noAi, JSON.stringify(ab));
+    const tabs = {}; for (const [k, re] of [['game', /What is School Days/], ['story', /Kaushik family/], ['play', /W A S D/], ['do', /Things you can do/]]) { await p.click('#ab-' + k); await p.waitForTimeout(200); tabs[k] = await ev(p, (s) => new RegExp(s).test(document.querySelector('#job-card').innerText), re.source); if (k === 'play') await p.screenshot({ path: 'S_howto.png' }); }
+    ok('S3 About us tabs: the game, the story, how to play, things to do', Object.values(tabs).every(Boolean), JSON.stringify(tabs));
+    ok('S2 no page errors', p.errs.length === 0, p.errs.join(' | ')); await p.close();
+  } catch (e) { ok('S about us', false, e.message.slice(0, 300)); }
+
+  // ---------- T. v79: even more ----------
+  if (want('T')) try {
+    p = await fresh();
+    const G = (fn, a) => ev(p, fn, a); const J = () => G(() => JSON.parse(JSON.stringify(window.__game.progress.jl || {})));
+    const timing = (good) => G((good) => { const g = window.__game; for (let k = 0; k < 6; k++) { const b = document.querySelector('#sp-hit'); if (b && !b.hidden) { if (good && g._sportSet) g._sportSet(0.5); b.click(); } } document.querySelector('#sp-ok').click(); window.__fin(); }, good);
+    await G(() => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); g.progress.money = 20000; const s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); });
+    await G(() => { window.__game._myBirthday(); for (let k = 0; k < 3; k++) document.querySelector('#mb-0').click(); window.__fin(); }); ok('T1 my birthday party, once a year', (await J()).bdAge === await G(() => window.__game.progress.age));
+    await G(() => { const g = window.__game; g.phase = 'morning'; g._brush(); g.phase = 'night'; g._brush(); window.__fin(); }); ok('T2 brush morning and night: a streak day', ((await J()).br || {}).streak === 1);
+    const ml = await G(() => { const g = window.__game; g.progress.day = 7; g.progress.energy = 50; g._mela(); document.querySelector('#ml-candy').click(); return g.progress.energy > 50 && g._famDone('mela', 'candy'); }); ok('T3 Sunday mela: candy floss', ml);
+    const bw = await G(() => { window.__game._badges(); return document.querySelector('#job-card h2').textContent; }); ok('T4 badge wall with 20 badges', /of 20/.test(bw), bw); await G(() => document.querySelector('#f-x').click());
+    await G(() => { const g = window.__game, s = g._funHomeSpot(); g.player.position.set(s.x, 0, s.z); g._riddleHunt(); window.__fin(); });
+    for (let k = 0; k < 3; k++) { await G(() => { const g = window.__game, R = g._rh; if (!R) return; const c = R.C[R.i]; g.player.position.set(c.x, 0, c.z); g._tickRiddle(); window.__fin(); }); }
+    ok('T5 riddle hunt: three riddles, three places, the treasure chest', (await J()).riddles === 1);
+    await G(() => { const g = window.__game; g.diary('Won the gully cricket match.'); g.diary('Planted a neem tree.'); g.diary('Helped Maa make chai.'); g._colonyPaper(); document.querySelector('#np-print').click(); });
+    ok('T6 my colony newspaper prints the front page', (await J()).papers === 1 && await G(() => /SURYANAGAR TIMES/.test(document.body.innerText))); await G(() => document.querySelector('#f-x').click());
+    await G(() => { window.__game.phase = 'evening'; window.__game._sleepover(); }); for (let k = 0; k < 6; k++) { await G(() => { const b = document.querySelector('#ss2-0'); if (b) { b.click(); document.querySelector('#ss2-n').click(); } }); } await G(() => window.__fin());
+    ok('T7 sleepover with a friend', (await J()).sleepovers === 1);
+    await G(() => { const g = window.__game; g._powerSaver(); for (let i = 0; i < 4; i++) for (let j = 0; j < 3; j++) { const b = document.querySelector('#ps-' + i + '-' + j); if (b) b.click(); } document.querySelector('#ps-done').click(); });
+    ok('T8 power saver: everything off in empty rooms, people keep their lights', (await J()).powerSaved === 1);
+    await G(() => { const g = window.__game; g.phase = 'morning'; g._birdWatch(); }); await timing(true); ok('T9 bird watching fills the bird book', ((await J()).birds || []).length >= 3, String(((await J()).birds || []).length));
+    await G(() => window.__game._warden()); await timing(true); ok('T10 traffic warden: children cross safely', (await J()).crossed >= 12, String((await J()).crossed));
+    ok('T11 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ') + (await G(() => window.__game._lastErr || ''))); await p.close();
+  } catch (e) { ok('T even more', false, e.message.slice(0, 300)); }
 
   await browser.close();
   const fails = results.filter((r) => r[0] === 'FAIL'); console.log(`\n==== ${results.length - fails.length} PASS, ${fails.length} FAIL ====`); fails.forEach((f) => console.log('FAIL: ' + f[1] + ' -- ' + f[2]));

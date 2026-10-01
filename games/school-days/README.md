@@ -1019,6 +1019,18 @@ A new "✨ Only in School Days" section at the top of the 🎲 hub:
 - 📽️ Life movie: a slideshow of your photo album.
 - The automatic check runs in three parts: RGROUPS=A,B,C,E,F,G,H,I,J (78), RGROUPS=K,L,M,N (81) and RGROUPS=O,P,Q (34). All 193 pass.
 
+## Ten more, and About us (v78)
+
+A new "🌟 New: ten more" section in the 🎲 hub: the Colony Premier League (one match a game day, a points table, a final), Ghar ka budget (share a ₹10,000 salary; rent, food and bills have a minimum; savings earn interest), My passport (a stamp for each of the 44 landmarks), feeding the stray dog and cow every morning (Punya), My first SIP (one game day = one month, about 1% growth a month, a chart and the compounding table), a dream each night, a pen pal in Japan, Kenya, Brazil or France (the reply comes next game day), morning yoga with Dadi, the colony library (read on 3 days, then answer the librarian), and a daily 4 × 4 Sudoku that is the same for everyone on the same day (checked by the rules, so any correct grid passes).
+
+A new ℹ️ button opens "About us" with five tabs: the creator (Rishabh Sharma, 9 years old, the RishSchoolDays series, with his photo), the game, the story, how to play, and things to do.
+
+## Even more (v79)
+
+A new "🎉 Even more" section in the 🎲 hub: my birthday party (once a year), brushing morning and night (a dentist check-up every 5-day streak), the Sunday mela (ring toss, balloon shooting, giant wheel, candy floss), a badge wall with 20 badges, a 3D colony riddle hunt (three riddles, glowing clues, a treasure chest), my colony newspaper (the Suryanagar Times, made from your diary), a sleepover with a friend, a power saver (switch off what nobody uses), bird watching (10 Indian birds), and the school-crossing traffic warden.
+
+The automatic check runs in three parts: RGROUPS=A,B,C,E,F,G,H,I,J, RGROUPS=K,L,M,N and RGROUPS=O,P,Q,R,S,T.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

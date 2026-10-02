@@ -3098,6 +3098,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-25,00:00,KINGFA,plastic products,midcap,7.0264,0.6836
 2026-09-25,00:00,KIRLOSENG,industrials,largecap,-1.0601,0.2738
 2026-09-25,00:00,KOPRAN,healthcare,smallcap,2.4964,1.1944
+2026-09-25,00:00,KOTAKBANK,bank,largecap,-2.0606,1.1199
 2026-09-25,00:00,KSL,metals & mining,smallcap,1.0104,1.5755
 2026-09-25,00:00,KTKBANK,bank,midcap,6.9152,0.1828
 2026-09-25,00:00,LALPATHLAB,healthcare,largecap,2.9206,1.1732
@@ -3127,6 +3128,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-25,00:00,OPTIEMUS,telecom,midcap,28.546,1.6254
 2026-09-25,00:00,ORBTEXP,textiles,smallcap,-1.2706,0.1474
 2026-09-25,00:00,PAISALO,financials,midcap,-0.5474,0.7345
+2026-09-25,00:00,PANAMAPET,energy,smallcap,0.6806,0.2084
 2026-09-25,00:00,PGIL,readymade garments/apparels,midcap,15.9672,1.6141
 2026-09-25,00:00,PHOENIXLTD,realty,largecap,5.3517,0.8793
 2026-09-25,00:00,PITTIENG,industrials,smallcap,1.4222,1.3396
@@ -3150,14 +3152,15 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-25,00:00,SHILPAMED,healthcare,largecap,-0.7492,0.6512
 2026-09-25,00:00,SHREEPUSHK,chemicals,smallcap,-1.6041,0.9041
 2026-09-25,00:00,SHRIPISTON,auto,largecap,3.7189,1.1187
-2026-09-25,00:00,SIGMAADV,aerospace & defence,midcap,9.2253,0.6888
+2026-09-25,00:00,SIGMAADV,aerospace & defence,largecap,9.2253,0.6888
 2026-09-25,00:00,SMLMAH,auto,midcap,8.4704,0.4852
 2026-09-25,00:00,SMSPHARMA,healthcare,smallcap,7.2356,0.6623
-2026-09-25,00:00,SOTL,energy,smallcap,0.7274,0.4821
+2026-09-25,00:00,SOTL,energy,midcap,0.7274,0.4821
 2026-09-25,00:00,SOUTHBANK,bank,midcap,8.422,1.2535
 2026-09-25,00:00,SPLPETRO,energy,midcap,1.6518,0.8192
 2026-09-25,00:00,SSWL,auto,midcap,1.7052,2.4031
 2026-09-25,00:00,STLTECH,industrials,largecap,2.2472,0.1964
+2026-09-25,00:00,SUDARSCHEM,chemicals,midcap,-3.5299,0.3018
 2026-09-25,00:00,SUNFLAG,metals & mining,midcap,18.9945,5.7587
 2026-09-25,00:00,SWANDEF,transportation,midcap,-2.4286,0.1072
 2026-09-25,00:00,TALBROAUTO,auto,smallcap,-4.0592,1.0071
@@ -3243,6 +3246,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-28,00:00,KINGFA,plastic products,midcap,2.3487,1.2727
 2026-09-28,00:00,KIRLOSENG,industrials,largecap,0.1872,0.6377
 2026-09-28,00:00,KOPRAN,healthcare,smallcap,-2.3056,2.0277
+2026-09-28,00:00,KOTAKBANK,bank,largecap,-0.6064,0.9297
 2026-09-28,00:00,KSL,metals & mining,smallcap,-1.2802,2.0992
 2026-09-28,00:00,KTKBANK,bank,midcap,-4.0686,0.2945
 2026-09-28,00:00,LALPATHLAB,healthcare,largecap,-0.5225,0.3588
@@ -3266,6 +3270,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-28,00:00,ONELIFECAP,financials,smallcap,4.0777,3.6792
 2026-09-28,00:00,OPTIEMUS,telecom,midcap,6.7761,9.7401
 2026-09-28,00:00,ORBTEXP,textiles,smallcap,0.1102,0.6175
+2026-09-28,00:00,PANAMAPET,energy,smallcap,-1.278,0.2735
 2026-09-28,00:00,PGIL,readymade garments/apparels,midcap,-2.4829,0.7051
 2026-09-28,00:00,PHOENIXLTD,realty,largecap,-1.3243,0.2945
 2026-09-28,00:00,PKTEA,fmcg,smallcap,-0.6741,1.1119
@@ -3286,14 +3291,15 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-28,00:00,SANGAMIND,textiles,smallcap,1.5164,1.3512
 2026-09-28,00:00,SHILPAMED,healthcare,largecap,1.1643,0.7291
 2026-09-28,00:00,SHRIPISTON,auto,largecap,-2.1383,1.3396
-2026-09-28,00:00,SIGMAADV,aerospace & defence,midcap,-1.649,1.0648
+2026-09-28,00:00,SIGMAADV,aerospace & defence,largecap,-1.649,1.0648
 2026-09-28,00:00,SMLMAH,auto,midcap,-4.5418,0.6503
 2026-09-28,00:00,SMSPHARMA,healthcare,smallcap,-2.7053,0.7108
-2026-09-28,00:00,SOTL,energy,smallcap,-1.949,0.5639
+2026-09-28,00:00,SOTL,energy,midcap,-1.949,0.5639
 2026-09-28,00:00,SOUTHBANK,bank,midcap,-2.6226,0.675
 2026-09-28,00:00,SPLPETRO,energy,midcap,-1.7216,0.4569
 2026-09-28,00:00,SSWL,auto,midcap,2.6139,1.9976
 2026-09-28,00:00,STLTECH,industrials,largecap,-1.4154,0.2498
+2026-09-28,00:00,SUDARSCHEM,chemicals,midcap,-1.5834,0.4009
 2026-09-28,00:00,SUNFLAG,metals & mining,midcap,9.3876,11.8882
 2026-09-28,00:00,SWANDEF,transportation,midcap,-1.8062,0.0602
 2026-09-28,00:00,TBZ,consumer discretionary,smallcap,-3.7904,0.5174
@@ -3365,6 +3371,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-29,00:00,KINGFA,plastic products,midcap,4.6012,2.6363
 2026-09-29,00:00,KIRLOSENG,industrials,largecap,12.39,8.4284
 2026-09-29,00:00,KOPRAN,healthcare,smallcap,2.2388,2.0988
+2026-09-29,00:00,KOTAKBANK,bank,largecap,0.495,2.0036
 2026-09-29,00:00,KSL,metals & mining,smallcap,-0.0363,1.2776
 2026-09-29,00:00,KTKBANK,bank,midcap,-3.3532,0.3353
 2026-09-29,00:00,LALPATHLAB,healthcare,largecap,-0.0973,1.0474
@@ -3386,6 +3393,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-29,00:00,ONELIFECAP,financials,smallcap,8.0999,0.6987
 2026-09-29,00:00,OPTIEMUS,telecom,midcap,4.9634,2.3837
 2026-09-29,00:00,ORBTEXP,textiles,smallcap,15.4738,3.7251
+2026-09-29,00:00,PANAMAPET,energy,smallcap,1.4998,0.4507
 2026-09-29,00:00,PGIL,readymade garments/apparels,midcap,-2.9117,0.5173
 2026-09-29,00:00,PKTEA,fmcg,smallcap,-0.764,0.8312
 2026-09-29,00:00,PRECWIRE,metals & mining,midcap,-0.4875,1.5309
@@ -3403,13 +3411,14 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-29,00:00,SANGAMIND,textiles,smallcap,4.1378,2.3693
 2026-09-29,00:00,SHILPAMED,healthcare,largecap,4.1739,0.939
 2026-09-29,00:00,SHRIPISTON,auto,largecap,0.0506,2.736
-2026-09-29,00:00,SIGMAADV,aerospace & defence,midcap,3.2664,1.9611
+2026-09-29,00:00,SIGMAADV,aerospace & defence,largecap,3.2664,1.9611
 2026-09-29,00:00,SMLMAH,auto,midcap,-3.062,0.3325
 2026-09-29,00:00,SMSPHARMA,healthcare,smallcap,0.9263,1.1224
-2026-09-29,00:00,SOTL,energy,smallcap,0.5328,0.5851
+2026-09-29,00:00,SOTL,energy,midcap,0.5328,0.5851
 2026-09-29,00:00,SOUTHBANK,bank,midcap,-2.4825,0.4573
 2026-09-29,00:00,SSWL,auto,midcap,5.7822,3.8404
 2026-09-29,00:00,STLTECH,industrials,largecap,3.5117,0.8886
+2026-09-29,00:00,SUDARSCHEM,chemicals,midcap,-1.7721,0.6205
 2026-09-29,00:00,SUNFLAG,metals & mining,midcap,13.0647,5.6307
 2026-09-29,00:00,SWANDEF,transportation,midcap,0.9217,0.0863
 2026-09-29,00:00,TBZ,consumer discretionary,smallcap,-4.5455,0.3843
@@ -3470,6 +3479,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-30,00:00,KINGFA,plastic products,midcap,3.9279,2.2869
 2026-09-30,00:00,KIRLOSENG,industrials,largecap,7.814,2.8684
 2026-09-30,00:00,KOPRAN,healthcare,smallcap,-2.1825,0.868
+2026-09-30,00:00,KOTAKBANK,bank,largecap,3.2178,1.9954
 2026-09-30,00:00,KSL,metals & mining,smallcap,0.0726,1.2581
 2026-09-30,00:00,KTKBANK,bank,midcap,-1.9374,0.2696
 2026-09-30,00:00,LALPATHLAB,healthcare,largecap,1.7774,1.368
@@ -3478,6 +3488,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-30,00:00,LOKESHMACH,industrials,smallcap,7.5544,1.1507
 2026-09-30,00:00,LUMAXTECH,auto,midcap,2.462,0.5283
 2026-09-30,00:00,MANAKSTEEL,metals & mining,smallcap,4.9962,0.2747
+2026-09-30,00:00,MANINDS,metals & mining,midcap,-11.0746,1.1241
 2026-09-30,00:00,MAWANASUG,fmcg,smallcap,-3.0941,1.6054
 2026-09-30,00:00,MBECL,realty,smallcap,6.1174,0.028
 2026-09-30,00:00,MCX,financials,largecap,-0.7369,0.6537
@@ -3489,6 +3500,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-30,00:00,ONELIFECAP,financials,smallcap,11.1789,0.4547
 2026-09-30,00:00,OPTIEMUS,telecom,midcap,1.2128,2.28
 2026-09-30,00:00,ORBTEXP,textiles,smallcap,13.9313,4.529
+2026-09-30,00:00,PANAMAPET,energy,smallcap,2.2919,0.6249
 2026-09-30,00:00,PGIL,readymade garments/apparels,midcap,-3.5362,0.2946
 2026-09-30,00:00,PKTEA,fmcg,smallcap,4.1943,11.9112
 2026-09-30,00:00,PRECWIRE,metals & mining,midcap,-2.0195,0.3043
@@ -3506,13 +3518,14 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-30,00:00,SANGAMIND,textiles,smallcap,1.1292,0.4164
 2026-09-30,00:00,SHILPAMED,healthcare,largecap,3.3302,0.5284
 2026-09-30,00:00,SHRIPISTON,auto,largecap,-1.9613,0.7588
-2026-09-30,00:00,SIGMAADV,aerospace & defence,midcap,8.4249,1.3053
+2026-09-30,00:00,SIGMAADV,aerospace & defence,largecap,8.4249,1.3053
 2026-09-30,00:00,SMLMAH,auto,midcap,-3.6261,0.4659
 2026-09-30,00:00,SMSPHARMA,healthcare,smallcap,0.3368,0.6798
-2026-09-30,00:00,SOTL,energy,smallcap,0.7852,7.6306
+2026-09-30,00:00,SOTL,energy,midcap,0.7852,7.6306
 2026-09-30,00:00,SOUTHBANK,bank,midcap,-3.4234,0.6821
 2026-09-30,00:00,SSWL,auto,midcap,7.7492,1.8397
 2026-09-30,00:00,STLTECH,industrials,largecap,8.6837,0.4101
+2026-09-30,00:00,SUDARSCHEM,chemicals,midcap,-1.2306,1.7118
 2026-09-30,00:00,SUNFLAG,metals & mining,midcap,11.0556,1.6241
 2026-09-30,00:00,SWANDEF,transportation,midcap,2.8697,0.1803
 2026-09-30,00:00,TBZ,consumer discretionary,smallcap,-3.1345,0.1343
@@ -3525,3 +3538,72 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-09-30,00:00,WELSPUNLIV,textiles,largecap,1.1795,0.7661
 2026-09-30,00:00,WHEELS,auto,midcap,-3.2834,0.6926
 2026-09-30,00:00,WSTCSTPAPR,building materials,smallcap,0.6422,1.8731
+2026-10-01,00:00,AEGISLOG,services,largecap,2.6146,0.7928
+2026-10-01,00:00,AJANTPHARM,healthcare,largecap,0.9358,0.6493
+2026-10-01,00:00,ARIES,chemicals,smallcap,0.8663,0.6293
+2026-10-01,00:00,ASHIANA,realty,smallcap,-1.4755,0.2757
+2026-10-01,00:00,AXISCADES,aerospace & defence,midcap,21.9439,4.3554
+2026-10-01,00:00,BAFNAPH,healthcare,smallcap,8.1988,0.045
+2026-10-01,00:00,BHAGERIA,chemicals,smallcap,-3.1804,1.5386
+2026-10-01,00:00,BIRLACABLE,industrials,smallcap,5.6697,3.4811
+2026-10-01,00:00,CENTUM,aerospace & defence,midcap,-2.0948,1.1523
+2026-10-01,00:00,CUBEXTUB,metals & mining,smallcap,9.104,0.5884
+2026-10-01,00:00,CUPID,fmcg,largecap,15.7407,0.8437
+2026-10-01,00:00,DYNAMATECH,aerospace & defence,midcap,4.5845,1.5243
+2026-10-01,00:00,ENGINERSIN,realty,midcap,-0.9187,1.5379
+2026-10-01,00:00,FILATEX,textiles,smallcap,-0.7855,1.464
+2026-10-01,00:00,FINCABLES,industrials,largecap,-0.1437,0.9716
+2026-10-01,00:00,GANDHITUBE,metals & mining,smallcap,0.9364,2.3162
+2026-10-01,00:00,GEECEE,financials,smallcap,3.5219,0.2842
+2026-10-01,00:00,GESHIP,transportation,largecap,2.2308,0.736
+2026-10-01,00:00,HITECHCORP,industrials,smallcap,3.0592,1.2837
+2026-10-01,00:00,INDIAGLYCO,fmcg,smallcap,-3.5818,0.2817
+2026-10-01,00:00,IOLCP,healthcare,midcap,2.5466,1.3694
+2026-10-01,00:00,IVP,chemicals,smallcap,-1.6665,0.6626
+2026-10-01,00:00,KILITCH,healthcare,smallcap,-2.5683,0.341
+2026-10-01,00:00,KINGFA,plastic products,midcap,5.5952,1.925
+2026-10-01,00:00,KIRLOSENG,industrials,largecap,4.9364,1.1295
+2026-10-01,00:00,KOPRAN,healthcare,smallcap,-0.8716,1.2713
+2026-10-01,00:00,KOTAKBANK,bank,largecap,3.552,4.6343
+2026-10-01,00:00,LALPATHLAB,healthcare,largecap,2.7045,1.409
+2026-10-01,00:00,LLOYDSENGG,industrials,midcap,-0.2537,1.738
+2026-10-01,00:00,LOKESHMACH,industrials,smallcap,17.813,14.0835
+2026-10-01,00:00,MANAKSTEEL,metals & mining,smallcap,3.6258,0.3363
+2026-10-01,00:00,MANINDS,metals & mining,midcap,-9.683,1.0434
+2026-10-01,00:00,MBECL,realty,smallcap,8.2384,0.0328
+2026-10-01,00:00,MOREPENLAB,healthcare,midcap,11.0816,4.0145
+2026-10-01,00:00,MUKANDLTD,metals & mining,smallcap,3.3583,4.224
+2026-10-01,00:00,NRAIL,building materials,smallcap,-2.6209,1.1553
+2026-10-01,00:00,NRBBEARING,industrials,midcap,1.4585,1.2887
+2026-10-01,00:00,OILCOUNTUB,metals & mining,smallcap,8.2272,0.9415
+2026-10-01,00:00,ONELIFECAP,financials,smallcap,15.3121,1.6493
+2026-10-01,00:00,OPTIEMUS,telecom,midcap,5.9521,2.0775
+2026-10-01,00:00,ORBTEXP,textiles,smallcap,7.3821,0.611
+2026-10-01,00:00,PANAMAPET,energy,smallcap,2.894,0.4621
+2026-10-01,00:00,PGIL,readymade garments/apparels,midcap,-4.9733,0.39
+2026-10-01,00:00,PKTEA,fmcg,smallcap,3.6301,0.6805
+2026-10-01,00:00,PRECWIRE,metals & mining,midcap,-0.2388,0.686
+2026-10-01,00:00,PREMEXPLN,aerospace & defence,smallcap,0.2499,0.2696
+2026-10-01,00:00,PRIMESECU,financials,smallcap,-0.1325,0.9652
+2026-10-01,00:00,PRIVISCL,chemicals,midcap,-0.5871,1.0931
+2026-10-01,00:00,RAYMOND,transportation,midcap,0.046,1.1406
+2026-10-01,00:00,RML,auto,smallcap,1.5806,1.0466
+2026-10-01,00:00,RUBYMILLS,textiles,smallcap,1.5858,0.538
+2026-10-01,00:00,SALSTEEL,metals & mining,smallcap,5.6838,5.166
+2026-10-01,00:00,SANGAMIND,textiles,smallcap,2.3633,0.7598
+2026-10-01,00:00,SHILPAMED,healthcare,largecap,4.9978,1.8002
+2026-10-01,00:00,SIGMAADV,aerospace & defence,largecap,13.8372,1.9057
+2026-10-01,00:00,SMSPHARMA,healthcare,smallcap,-0.7789,0.7207
+2026-10-01,00:00,SOTL,energy,midcap,2.2855,0.8707
+2026-10-01,00:00,SSWL,auto,midcap,3.1815,4.5629
+2026-10-01,00:00,STLTECH,industrials,largecap,14.1125,1.3503
+2026-10-01,00:00,SUDARSCHEM,chemicals,midcap,1.8541,1.8056
+2026-10-01,00:00,SUNFLAG,metals & mining,midcap,5.5644,1.0928
+2026-10-01,00:00,SWANDEF,transportation,midcap,1.4367,0.2095
+2026-10-01,00:00,TBZ,consumer discretionary,smallcap,-4.9039,0.0932
+2026-10-01,00:00,TDPOWERSYS,industrials,midcap,5.4022,2.072
+2026-10-01,00:00,VENUSREM,healthcare,smallcap,7.69,1.7657
+2026-10-01,00:00,WELINV,financials,smallcap,-0.876,0.0197
+2026-10-01,00:00,WELSPUNLIV,textiles,largecap,6.4492,5.469
+2026-10-01,00:00,WHEELS,auto,midcap,-2.3994,0.9733
+2026-10-01,00:00,WSTCSTPAPR,building materials,smallcap,-0.5807,1.0041

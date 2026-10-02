@@ -1,5 +1,5 @@
 # STAGE 13: SYNTHESIS (PIPELINE MODE)
-# Model: Opus (agent alias) | Emits: the four final files + Notion save payload
+# Model: Opus 5.5 | Emits: the four final files + Notion save payload
 # Consumes: everything. This is the only stage that reads all blocks,
 # all reports, and the confidence delta.
 # Cache boundary: rules above INJECTED INPUTS are stable.
@@ -329,7 +329,7 @@ line, then exactly this fenced YAML block:
 stage: B13-synthesis
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: ""  # your exact model ID, as pinned in the agent frontmatter
 status: complete
 verdict: ""                    # the five-verdict set only
 verdict_rule_applied: 0        # which selection rule fired, 1-5

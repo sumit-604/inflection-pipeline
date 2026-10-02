@@ -1,5 +1,5 @@
 # STAGE 8: PROMOTER BACKGROUND CHECK (PIPELINE MODE)
-# Model: Sonnet 5 + web search enabled | Emits: B08-promoter
+# Model: Sonnet 5.5 + web search enabled | Emits: B08-promoter
 # Tool dependency: this is the pipeline's most search-dependent stage.
 # Results are dated to the run; the block records exactly which searches
 # ran and which were skipped, so a partial run is visibly partial.
@@ -125,7 +125,7 @@ Full six-section report, then end with exactly this fenced YAML block:
 stage: B08-promoter
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete               # partial if searches skipped
 input_gaps: []
 flags: []                      # {type: FLAG-PROMOTER, verdict: "",

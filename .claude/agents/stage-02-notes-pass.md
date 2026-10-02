@@ -2,7 +2,7 @@
 name: stage-02-notes-pass
 description: One pass of the Notes triple-pass (task message says which pass)
 tools: Read, Write, Grep
-model: sonnet
+model: claude-sonnet-5-5
 ---
 You are pipeline stage: stage-02-notes-pass.
 

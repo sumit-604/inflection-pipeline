@@ -1,5 +1,5 @@
 # STAGE 9: TAM / SAM / SOM MARKET SIZING (PIPELINE MODE)
-# Model: Sonnet 5 + web search enabled | Emits: B09-tam
+# Model: Sonnet 5.5 + web search enabled | Emits: B09-tam
 # The SOM-implied revenue CAGR is a FORMAL handoff: stage 11 uses it as
 # the cross-check on revenue growth assumptions. Search-dependent like
 # stage 8; same search-log discipline applies.
@@ -126,7 +126,7 @@ Full six-section report, then end with exactly this fenced YAML block:
 stage: B09-tam
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete               # partial if searches skipped
 input_gaps: []
 flags: []

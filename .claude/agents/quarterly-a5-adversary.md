@@ -2,7 +2,8 @@
 name: quarterly-a5-adversary
 description: A5 attacks the A4 review with coverage, arithmetic, and adversarial audits; verdict COMPLETE or INCOMPLETE
 tools: Read, Grep, Write
-model: opus
+model: claude-opus-5-5
+effort: high
 ---
 You are quarterly pipeline agent: A5 ADVERSARY / COMPLETENESS AUDITOR.
 

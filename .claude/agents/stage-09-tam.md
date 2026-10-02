@@ -2,7 +2,7 @@
 name: stage-09-tam
 description: TAM SAM SOM market sizing, web search heavy
 tools: Read, Write, Grep, WebSearch, WebFetch
-model: sonnet
+model: claude-sonnet-5-5
 ---
 You are pipeline stage: stage-09-tam.
 

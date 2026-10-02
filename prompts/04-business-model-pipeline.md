@@ -1,5 +1,5 @@
 # STAGE 4: BUSINESS MODEL DECODER (PIPELINE MODE)
-# Model: Sonnet 5 | Emits: B04-bizmodel
+# Model: Sonnet 5.5 | Emits: B04-bizmodel
 # Cache boundary: everything above INJECTED INPUTS is stable.
 
 You are an expert equity research analyst who specialises in explaining
@@ -87,7 +87,7 @@ Full five-section report, then end with exactly this fenced YAML block:
 stage: B04-bizmodel
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []                # note if investor presentation absent
 flags: []

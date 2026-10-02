@@ -62,8 +62,8 @@ ledger, and forensics into a single protocol-ordered review (Role 4 first,
 Role 5 second, presentation findings feeding both). A5 audits A4 once.
 
 ## DISPATCH (model per agent, set in .claude/agents frontmatter)
-- sonnet: A1 extractor, A2 enumerator (mechanical, completeness-critical)
-- opus:   A3 forensic notes, A4 analyst, A5 adversary
+- claude-sonnet-5-5 (Sonnet 5.5): A1 extractor, A2 enumerator (mechanical, completeness-critical)
+- claude-opus-5-5 (Opus 5.5, effort high): A3 forensic notes, A4 analyst, A5 adversary
 Do not upgrade an agent's model without editing its agent file. The extraction
 agents are mechanical but total; the interpretation agents are Opus because a
 miss here is the failure this pipeline exists to prevent.

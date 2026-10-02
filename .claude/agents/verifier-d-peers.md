@@ -2,7 +2,7 @@
 name: verifier-d-peers
 description: Peer coverage audit of B06. Fresh context
 tools: Read, Grep, Write
-model: sonnet
+model: claude-sonnet-5-5
 ---
 You are pipeline stage: verifier-d-peers.
 

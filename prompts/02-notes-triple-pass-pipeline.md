@@ -1,5 +1,5 @@
 # STAGE 2: NOTES TO FINANCIAL STATEMENTS, TRIPLE PASS (PIPELINE MODE)
-# Model: Sonnet 5 | Three sequential API calls | Emits: B02-notes (after Pass 3)
+# Model: Sonnet 5.5 | Three sequential API calls | Emits: B02-notes (after Pass 3)
 # The orchestrator injects prior pass outputs at the {{...}} markers.
 # Cache boundary per call: rules above the injection markers are stable.
 
@@ -176,7 +176,7 @@ Then end with exactly this fenced YAML block:
 stage: B02-notes
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []
 flags: []                    # add {type: FLAG-CASH, reason: ...} if

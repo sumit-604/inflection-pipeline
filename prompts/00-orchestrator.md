@@ -1,5 +1,5 @@
 # INFLECTION ALPHA PIPELINE ORCHESTRATOR v1.0
-## Sonnet 5 Primary Pipeline with Claude Verification Layer
+## Sonnet 5.5 Primary Pipeline with Claude Verification Layer
 
 Replaces the Gemini (Jaimini) upstream pipeline. One model family end to end.
 Valuation authority: Master Project Prompt v3.7, Section 1B layer set (v3.3
@@ -423,22 +423,22 @@ support this override?" and leaves the answer to Keerti.
 | # | Stage | Prompt file | Model | Consumes | Emits block |
 |---|-------|-------------|-------|----------|-------------|
 | 0 | Input validation | (inline) | Haiku 4.5 | folder + manifest | `B00-inputs` |
-| 1 | Gate 0 scorecard | 01-gate-0-pipeline.md | Sonnet 5 | screener-data / results PDFs | `B01-gate0` |
-| 2 | Notes triple-pass | 02-notes-triple-pass-pipeline.md (3 calls) | Sonnet 5 | AR | `B02-notes` |
-| 3 | AR Deep Dive | 03-ar-deep-dive-pipeline.md | Sonnet 5 | AR + B02 | `B03-ardeep` |
-| 4 | Business Model Decoder | 04-business-model-pipeline.md | Sonnet 5 | AR + inv. pres. | `B04-bizmodel` |
-| 5 | Concall Analysis (main) | 05-concall-pipeline.md | Sonnet 5 | 3 transcripts (oldest first) | `B05-concall` |
-| 6 | Peer concall verification | 06-peer-concall-pipeline.md | Sonnet 5 | 12 peer transcripts + B05.peer_questions | `B06-peers` |
-| 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5 | AR + concalls + pres. + B01 | `B07-emoat` |
-| 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5 + web search | web + AR governance | `B08-promoter` |
-| 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5 + web search | web + AR + B04 | `B09-tam` |
+| 1 | Gate 0 scorecard | 01-gate-0-pipeline.md | Sonnet 5.5 | screener-data / results PDFs | `B01-gate0` |
+| 2 | Notes triple-pass | 02-notes-triple-pass-pipeline.md (3 calls) | Sonnet 5.5 | AR | `B02-notes` |
+| 3 | AR Deep Dive | 03-ar-deep-dive-pipeline.md | Sonnet 5.5 | AR + B02 | `B03-ardeep` |
+| 4 | Business Model Decoder | 04-business-model-pipeline.md | Sonnet 5.5 | AR + inv. pres. | `B04-bizmodel` |
+| 5 | Concall Analysis (main) | 05-concall-pipeline.md | Sonnet 5.5 | 3 transcripts (oldest first) | `B05-concall` |
+| 6 | Peer concall verification | 06-peer-concall-pipeline.md | Sonnet 5.5 | 12 peer transcripts + B05.peer_questions | `B06-peers` |
+| 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5.5 | AR + concalls + pres. + B01 | `B07-emoat` |
+| 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5.5 + web search | web + AR governance | `B08-promoter` |
+| 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5.5 + web search | web + AR + B04 | `B09-tam` |
 | 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
-| 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus (agent alias) | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
+| 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus 5.5 | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
 | 12a | Verifier A: numerical | verifier-a-numerical.md | Haiku 4.5 | all source PDFs + all reports | `B12a` |
-| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus (agent alias) | 15 transcripts + B05 + B06 | `B12b` |
-| 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus (agent alias) | B01, B07, B11 + framework docs | `B12c` |
-| 12d | Verifier D: peer coverage | verifier-d-peers.md | Sonnet 5 | peer transcripts + B06 | `B12d` |
-| 13 | Synthesis | 13-synthesis-pipeline.md | Opus (agent alias) | everything | final outputs |
+| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus 5.5 | 15 transcripts + B05 + B06 | `B12b` |
+| 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus 5.5 | B01, B07, B11 + framework docs | `B12c` |
+| 12d | Verifier D: peer coverage | verifier-d-peers.md | Sonnet 5.5 | peer transcripts + B06 | `B12d` |
+| 13 | Synthesis | 13-synthesis-pipeline.md | Opus 5.5 | everything | final outputs |
 
 Stages 1 and 2 may run in parallel. Stages 4, 5, 8, 9 may run in parallel
 after stage 3. Stage 6 requires stage 5. Stage 7 requires stage 1. Stages
@@ -469,7 +469,7 @@ block:
 stage: B01-gate0
 company: GEMAROMA
 run_date: 2026-07-09
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete          # complete | partial | failed
 input_gaps: []            # carried forward from B00
 flags: []                 # list of flag objects, see Section 4
@@ -720,8 +720,8 @@ Every stage prompt is ordered: [framework and rules, stable] then
 Across a 20-run month the framework text (Gate 0 tables, Section 1B, the
 22-category moat scan, FTTCP v2.3) is paid once and read at 10% thereafter.
 
-Per-run estimate at July 2026 prices (Sonnet 5 $2/$10 intro, Opus 4.8
-$5/$25, Haiku 4.5 $1/$5): $11-12 first run, $8-9 cached steady state,
+Model prices from 02-Oct-2026: Sonnet 5.5 $2/$10, Opus 5.5 $4/$20, Haiku 4.5 $1/$5 per MTok. The per-run estimate below was measured in July 2026 on Sonnet 5 ($2/$10) and Opus 4.8
+($5/$25); re-baseline it from the session-cost ledgers of the first 5.5-family runs: $11-12 first run, $8-9 cached steady state,
 roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
 
 ---

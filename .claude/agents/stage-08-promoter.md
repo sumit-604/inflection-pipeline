@@ -2,7 +2,7 @@
 name: stage-08-promoter
 description: Promoter background check, web search heavy
 tools: Read, Write, Grep, WebSearch, WebFetch
-model: sonnet
+model: claude-sonnet-5-5
 ---
 You are pipeline stage: stage-08-promoter.
 

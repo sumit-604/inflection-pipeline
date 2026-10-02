@@ -1,0 +1,92 @@
+stage: B06-peers
+company: "TRUALT"
+run_date: "2026-09-18"
+model: claude-sonnet-5
+status: complete
+rework: true
+rework_basis: "Stage 5 reworked its peer_questions (B05-concall.yaml, rework: true); Verifier D (12d-verifier-d-r1) found six citation-anchor errors (five one page off, one eight pages off) and one speaker misattribution, plus a single-peer VERIFIED verdict that should have read PARTIALLY VERIFIED; Verifier B (12b-verifier-b-r1) found the maize-margin CONTRADICTED verdict misframed TruAlt's claim (a point-in-time sensitivity, not a full-FY26 result) and that the 'TruAlt never described the Supreme Court stay' claim in Part 2E was overstated. This block replaces B06-peers-r1 after a full fresh read of all 12 peer transcripts against the reworked question list."
+input_gaps:
+- 'carried from B00 by orchestrator: collector_warning (verbatim): sector_cap_row_guess Pharma / CDMO is the collector
+  default and is wrong; Step 1 set Sugar / agri-commodity.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): peer RENUKA (Shree Renuka Sugars) collected but
+  has held no concall since Jun-2022; replaced by TRIVENI, collected separately with screener_collect.py. RENUKA
+  Data_Sheet removed.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): announcements: collector downloaded 5 of 102
+  BSE rows; Step 1 fetched the material Reg 30 filings by hand (41 files, 6 duplicates of other folders removed).
+  Routine filings (trading window, Reg 74(5), newspaper ads, SDD) skipped.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): results, rating, prospectus and shareholding
+  were empty after the collector; Step 1 filled them from BSE (results Q3FY26, Q4FY26, Q1FY27; Ind-Ra rating with
+  full rationale), the NSE archive (final prospectus 01-Oct-2025) and the BSE XBRL SHP (Mar and Jun 2026, converted
+  to text).'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): Q4FY26 audited results PDF is a scan (16 of 20
+  pages image-only); the .txt beside it carries RapidOCR text marked per page. OCR also filled 4 image pages in
+  each deck and 10 in the prospectus.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): concall filenames: collector names by month;
+  BALRAMCHIN May_2026 is dated 30-Apr-2026 and Jun_2026 is dated 22-May-2026 on page 1.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): screener export sheets came out EMPTY (formulas
+  with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance
+  Sheet, screener:Cash Flow, screener:Customization, GULPOLY:Profit & Loss, GULPOLY:Quarters, GULPOLY:Balance Sheet,
+  GULPOLY:Cash Flow, GULPOLY:Customization, BALRAMCHIN:Profit & Loss, BALRAMCHIN:Quarters, BALRAMCHIN:Balance Sheet,
+  BALRAMCHIN:Cash Flow, BALRAMCHIN:Customization, TRIVENI:Profit & Loss, TRIVENI:Quarters, TRIVENI:Balance Sheet,
+  TRIVENI:Cash Flow, TRIVENI:Customization (every Data_Sheet.csv is populated and carries P&L, quarters, balance
+  sheet and cash flow). Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'carried from B00 by orchestrator: research: NONE. No broker notes collected. No effect on anchored evidence.'
+- 'carried from B00 by orchestrator: other: NONE (folder empty, never consumed).'
+- 'carried from B00 by orchestrator: screening: only <TICKER>-Data_Sheet.csv exists for TRUALT and each peer; the
+  Profit & Loss / Balance Sheet / Cash Flow / Quarters sheets exported empty and were not written. Data_Sheet carries
+  FY23-FY26 annual P&L, balance sheet, cash flow and nine quarters (Jun-2024 to Jun-2026), so the gap is cosmetic.
+  TRUALT screener history starts FY23 (company incorporated 2021): Gate 0 data_years is at most 4 audited years;
+  the prospectus restated FY23-FY25 is the backward baseline.'
+- 'carried from B00 by orchestrator: concalls: FOUR transcripts present (Q2FY26 to Q1FY27). The contract uses the
+  3 most recent (Q3FY26, Q4FY26, Q1FY27); the Q2FY26 (Nov-2025) transcript is passed to stage 5 as the promise baseline
+  for the multi-feed shutdown, because the load-bearing guidance-vs-delivery fact needs the first post-listing promise.
+  Deliberate deviation, recorded here.'
+- 'carried from B00 by orchestrator: prospectus: PRESENT (final prospectus 01-Oct-2025). Listed 03-Oct-2025, inside
+  the ~3 year window, so it is foundational: promoter/group history, group-company map, restated FY23-FY25.'
+- 'carried from B00 by orchestrator: results: the Q4FY26 audited results PDF is a scan; its financial tables come
+  from OCR text (RapidOCR). Stages cross-check any OCR figure against the FY26 AR (text-native) and anchor to the
+  AR where both carry the figure.'
+- 'carried from B00 by orchestrator: results: Q2FY26 and Q1FY26 results are not in results/ (contract keeps 3 most
+  recent). The Q2FY26 results sit inside inputs/announcements/20251111-d6d62c30-*.pdf (board outcome); Q1FY26 (BSE,
+  19-Oct-2025) was not downloaded.'
+- 'carried from B00 by orchestrator: sector_cap_row: Step 1 set ''Sugar / agri-commodity'' (18x). That row is Section
+  1B v3.11 Amendment 27.4 (16-Sep-2026), present on branch framework/group-3-promotions and NOT yet merged to main;
+  this run branch is cut from main, whose cap table lacks the row. Nearest row on main: ''Agri processing'' 20x.
+  Flagged for phase-3 operator confirmation before stage 11.'
+flags:
+  - "Q3 verdict (PARTIALLY VERIFIED) rests on a single peer (GULPOLY) by the reworked check_peers scope, not a discipline failure; TRIVENI's maize-margin data is noted as context in Part 2B only, not counted toward the Q3 verdict"
+peers_provided: 12
+verified: []
+partially_verified:
+  - {claim: "FY26/ESY25-26 OMC allocation shortfall vs bid, and peer disclosure timing", peers: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
+  - {claim: "Maize-based ethanol margin compression as a point-in-time sensitivity at elevated maize prices", peers: ["GULPOLY"]}
+  - {claim: "Interest-subvention/PLI proportion of PBT as a sector-wide dependency", peers: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
+contradicted:
+  - {claim: "Roughly balanced ethanol demand-supply picture at current blending, no material new capacity", contradicting_peer: "TRIVENI, BALRAMCHIN", quote_anchor: "TRIVENI-Concall_Aug_2026_Transcript.pdf p.10-11; BALRAMCHIN-Concall_Jun_2026_Transcript.pdf p.10 (Pramod Patwari)"}
+unverifiable:
+  - {claim: "Private-OMC reneging/price-cut and narrative consistency across quarters", peers_checked: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
+  - {claim: "Related-party feedstock purchase share reconciliation (concall vs AR)", peers_checked: ["GULPOLY", "BALRAMCHIN", "TRIVENI"]}
+peer_coverage_map:
+  - {peer: "GULPOLY", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Private-OMC disinterest; PLI Rs5.34cr; allocation baseline"}
+  - {peer: "GULPOLY", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "EBITDA/litre Rs9 at maize Rs18-21; peer allocation shortfalls 20-30% of capacity"}
+  - {peer: "GULPOLY", quarter: "Q4 FY26/FY26", usage: "SUBSTANTIVE", contribution: "EBITDA/litre Rs10-11; own bid-vs-award 78% (p.14); full-year ethanol margin 12.5%"}
+  - {peer: "GULPOLY", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Management-stated 18% margin (p.6) at maize Rs23-25; exceptional-quarter framing; FY27 guide-down to 10-11%"}
+  - {peer: "BALRAMCHIN", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Maize tender 63% hit rate; national 60% acceptance; 3-year B-heavy/juice price freeze"}
+  - {peer: "BALRAMCHIN", quarter: "special call filed 30-Apr-2026", usage: "CITED-ONLY", contribution: "Silent-period PLA/capital-raise call; capex-cycle context only"}
+  - {peer: "BALRAMCHIN", quarter: "Q4 FY26 (filed Jun_2026)", usage: "SUBSTANTIVE", contribution: "Overcapacity quote (Pramod Patwari, p.10); FY26 production vs nameplate"}
+  - {peer: "BALRAMCHIN", quarter: "Q1 FY27", usage: "CITED-ONLY", contribution: "Distillery margin resilience from feedstock mix; no related-party or allocation content found"}
+  - {peer: "TRIVENI", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Maize EBITDA Rs11-12/litre; term loans/subvention (p.3); Cycle 1 near-full; overcapacity production estimate"}
+  - {peer: "TRIVENI", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Maize margin robust double-digit; massive overcapacity language (p.8)"}
+  - {peer: "TRIVENI", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Huge disappointment tender cycle; grain mix; Sir Shadi Lal intra-group molasses transfer"}
+  - {peer: "TRIVENI", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Supreme Court stay/BPCL challenge named in full; standalone-distillery solvency risk; capacity vs offtake"}
+industry_cross_read:
+  demand: "Real, sector-wide FY26 allocation friction (tender shortfalls, OMC methodology shift, Supreme Court stay), not a demand boom or collapse; two of three peers disclosed shortfall risk earlier than TruAlt"
+  pricing_inputs: "FCI-rice mandate softened grain prices through most of FY26; GULPOLY and TRIVENI margins held through Rs18-22/kg maize, first signs of pressure only at Rs23-25/kg (Q1FY27), matching TruAlt's claimed mechanism in direction though not in disclosed magnitude; BALRAMCHIN's cane-route 3-year price freeze is the closest sector analogue on a different feedstock route"
+  capex_cycle: "Lone-expander situation, not an industry-wide capacity race: all three peers are de-risking away from core ethanol capex (GULPOLY frozen to FY28, BALRAMCHIN into PLA, TRIVENI into demerged PTB/defence and de-bottlenecking only) while TruAlt alone raises leverage for new ethanol-adjacent capacity (CBG, SAF)"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Supreme Court stay / BPCL challenge to Karnataka HC ruling / AG 100cr L proposal, named in full by TRIVENI but only partially by TruAlt (effect disclosed, petitioner/ruling/proposal not named)"
+  - "Standalone-distillery solvency risk as PSU-bank interest moratoriums expire (TRIVENI), never applied by TruAlt to itself despite carrying the same CFO/DSCR profile flagged elsewhere in this corpus"
+  - "Ethanol price non-revision on the cane route for three years (BALRAMCHIN), evidencing OMC pricing power across feedstock routes, not just grain"
+net_narrative_effect: "complicates"
+analyst_note: "Three corrections change the picture from the first run: the maize-margin claim (Q3) moves CONTRADICTED to PARTIALLY VERIFIED once read as TruAlt itself framed it (a point-in-time sensitivity) and checked against GULPOLY alone per the reworked check_peers scope; the demand-supply contradiction (Q4) is now read together with TruAlt's own narrative reversal between its Nov-2025 and Aug-2026 calls on similar absolute figures; the Supreme Court disclosure finding narrows from a full disclosure gap to a disclosure-depth gap (TruAlt describes the stay's effect but not its procedural detail). All three carry into Halt 1 as named, corrected, peer-anchored items, not general skepticism."

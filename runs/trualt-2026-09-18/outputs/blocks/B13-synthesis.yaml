@@ -1,0 +1,32 @@
+stage: B13-synthesis
+company: "TRUALT"
+run_date: "2026-09-18"
+model: "claude-opus-5"
+status: complete
+mode: "PHASE 1 LITE: business-narrative.md, gate-recommendation.md, verifier-summary.md, verifier-disagreement-log.md; no fttcp-handoff.md, no Notion payload"
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3        # FLAG-PROMOTER and FLAG-CASH active; INDETERMINATE cash caps at PROCEED WITH CAVEATS
+flags_active: [FLAG-PROMOTER, FLAG-CASH, FLAG-GATE0]
+cash_determination: "INDETERMINATE"
+promoter_verdict: "CONCERN"
+transition_posture: "NOT CLASSIFIED (model unsigned, Stage 11 not run); proof gate not fired on evidence; candidate cells RESEARCH/WATCH if ARTIFACT, VALUE-TRAP RISK if STRUCTURAL"
+confidence_delta: {numerical: 100, redflag: 96.0, framework: 84.3, peer: 75, overall: 75}
+overall_set_by: "peer_utilisation"
+freshness_verdict: "FRESHNESS PAIRS OK"
+valuation_decision: "NOT RUN (phase 1)"
+entry_range: {low: null, high: null}
+headline: "Largest ethanol maker, cash still flowing out"
+falsification_metric: "Q2 FY27 half year results (quarter to 30-Sep-2026, due by mid-Nov-2026): consolidated inventory at or above Rs 528 Cr together with negative H1 CFO"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files:
+  - runs/trualt-2026-09-18/outputs/final/business-narrative.md
+  - runs/trualt-2026-09-18/outputs/final/gate-recommendation.md
+  - runs/trualt-2026-09-18/outputs/final/verifier-summary.md
+  - runs/trualt-2026-09-18/outputs/final/verifier-disagreement-log.md
+notion_save:
+  page_title: ""
+  summary: ""
+  drive_link: "not used (repo run folder runs/trualt-2026-09-18)"
+  mode: append-never-overwrite-status

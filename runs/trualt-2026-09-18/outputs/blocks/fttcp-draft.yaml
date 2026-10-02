@@ -1,0 +1,47 @@
+stage: fttcp-draft
+company: "TRUALT"
+run_folder: "runs/trualt-2026-09-18"
+framework: "FTTCP v2.3; Section 1B v3.3-v3.10 plus v3.11 (Amendment 27, UNMERGED, read-only from main checkout)"
+draft_date: "2026-10-02"
+cmp_used: 424.0
+cmp_note: "manifest 18-Sep-2026; dossier cites Rs 444 (01-Oct-2026, secondary), not used"
+mode: "REFRESH by literal rule (companies/TRUALT.md pre-existed); first FTTCP in substance; NOT no-concall mode"
+entity_ruling: "ONE scored entity (TruAlt consolidated, ethanol core) with CBG as a separately stated CONVERTER SOTP slice (v3.11 A27.2, unmerged); SAF at zero"
+backward:
+  revenue: "VOLATILE"
+  margin: "SUSTAINED"
+  cash: "DETERIORATING"
+  roce: "STRUCTURALLY LOW"
+  status: "BACKWARD FAIL (1 of 4 positive)"
+forward:
+  revenue: {verdict: "STARTING", score: 1, probability: "about 60% (3-6m)", confidence: "fairly sure"}
+  margin: {verdict: "STAGNANT", score: 0, probability: "about 35-40% (3-6m)", confidence: "genuinely uncertain", alternative: "STARTING (+1) on the signed Rs 11-12/L base"}
+  cash: {verdict: "STAGNANT", score: 0, probability: "about 40% (3-6m)", confidence: "genuinely uncertain", alternative: "STARTING (+1) if H1 FY27 shows the stock converting"}
+  roce: {verdict: "STAGNANT", score: 0, probability: "about 25-35% (12m)", confidence: "fairly sure"}
+composite_score: 1
+composite_range_on_alternatives: "0 to 3"
+position_band: "DEEP WATCH leaning AVOID"
+position_action: "no position now; any later starter capped at Small (2-3%) by promoter CONCERN"
+disposition_cap: "PROCEED WITH CAVEATS (INDETERMINATE cash; missing H1 FY27 cash flow and 30-Sep-2026 inventory)"
+cash_determination: "INDETERMINATE (growth-induced vs structural); converter input-price fork closed by volume test"
+roce_verdict: "STRUCTURALLY LOW backward, STAGNANT forward; Pillar 1 core through-cycle ROCE 10.4% -> 12.7x; recovery not credited"
+proof_gates:
+  transition_1_ethanol_feed: {gate: "Q3 and Q4 FY27 each at 9 cr L or more, at EBITDA of Rs 10/L or more", status: "NOT FIRED", evidence: "Q3/Q4 FY27 not reported; Q1 FY27 8.29 cr L at about Rs 16.0/L"}
+  transition_2_cbg: {gate: "three Sumitomo plants commissioned and about Rs 15 Cr a quarter by Q2 FY28", status: "NOT FIRED", evidence: "0 of 3 commissioned; AGM 31-Aug-2026 nearing commissioning"}
+  transition_3_governance: {gate: "family-entity balances at zero by Mar-2027", status: "NOT FIRED", evidence: "Rs 55.38 Cr (Accutrade 40.31 + Nirani Holdings 15.08)"}
+sector_cap_draft_ruling: "Sugar / agri-commodity 18x (v3.11 A27.4, unmerged; fits row boundary); in-force fallback Agri processing 20x; dossier recommends Agri processing 20x; Recycling / Manufacturing 25x fits worst; non-binding at draft destination; operator rules"
+destination_pe_preview:
+  additive_track: "10.2x (range 9.5-11.0x), PROVISIONAL on Pillar 2 0.80x"
+  rrm_track: "8.9-10.0x (r 15.25-16.0% plus governance NOT FOUND)"
+  dossier_indicative: "about 11-13x (WHD section 6)"
+  cash_multiplier_readings: "0.65x -> 8.3x | 0.80x -> 10.2x | 0.90x -> 11.4x | 1.00x -> 12.7x"
+growth_premium_eligible_b2: "NO"
+ua_applied: false
+kernex_cap_engaged: false
+trim_rule_engaged: false
+signal_gate: "PASSED (19 tracker rows, 02-Oct-2026)"
+shared_catalyst_flag: "litres sold drive revenue and every ROCE lift; grain stock drives both margin and H1 cash release"
+single_swing_print: "Q2 FY27 results with first half-yearly balance sheet and cash flow (due by mid-Nov 2026): H1 CFO sign, consolidated inventory vs Rs 528.43 Cr, family balances, Q2 litres vs about 11 cr L"
+operator_rulings_pending: ["sector cap", "CBG treatment", "earnings basis (forward vs trailing; ex-subvention beyond FY28)", "Pillar 1 ROCE base and Pillar 2 cash band", "size"]
+files:
+  draft: "runs/trualt-2026-09-18/outputs/final/fttcp-draft.md"

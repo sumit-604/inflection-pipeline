@@ -1,0 +1,19 @@
+company: TruAlt Bioenergy Ltd
+ticker: TRUALT
+cmp: 424.0
+market_cap_cr: 3635.0
+run_date: 2026-09-18
+run_type: full
+listed_date: 2025-10-03
+concalls_available: true
+sector_cap_row: "Sugar / agri-commodity"   # Step 1 pick, 18x, Section 1B v3.11 A27.4 (16-Sep-2026; on branch framework/group-3-promotions, NOT yet on main; main-branch fallback Agri processing 20x). Stage 0 confirms.
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "sector_cap_row_guess Pharma / CDMO is the collector default and is wrong; Step 1 set Sugar / agri-commodity."
+  - "peer RENUKA (Shree Renuka Sugars) collected but has held no concall since Jun-2022; replaced by TRIVENI, collected separately with screener_collect.py. RENUKA Data_Sheet removed."
+  - "announcements: collector downloaded 5 of 102 BSE rows; Step 1 fetched the material Reg 30 filings by hand (41 files, 6 duplicates of other folders removed). Routine filings (trading window, Reg 74(5), newspaper ads, SDD) skipped."
+  - "results, rating, prospectus and shareholding were empty after the collector; Step 1 filled them from BSE (results Q3FY26, Q4FY26, Q1FY27; Ind-Ra rating with full rationale), the NSE archive (final prospectus 01-Oct-2025) and the BSE XBRL SHP (Mar and Jun 2026, converted to text)."
+  - "Q4FY26 audited results PDF is a scan (16 of 20 pages image-only); the .txt beside it carries RapidOCR text marked per page. OCR also filled 4 image pages in each deck and 10 in the prospectus."
+  - "concall filenames: collector names by month; BALRAMCHIN May_2026 is dated 30-Apr-2026 and Jun_2026 is dated 22-May-2026 on page 1."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, GULPOLY:Profit & Loss, GULPOLY:Quarters, GULPOLY:Balance Sheet, GULPOLY:Cash Flow, GULPOLY:Customization, BALRAMCHIN:Profit & Loss, BALRAMCHIN:Quarters, BALRAMCHIN:Balance Sheet, BALRAMCHIN:Cash Flow, BALRAMCHIN:Customization, TRIVENI:Profit & Loss, TRIVENI:Quarters, TRIVENI:Balance Sheet, TRIVENI:Cash Flow, TRIVENI:Customization (every Data_Sheet.csv is populated and carries P&L, quarters, balance sheet and cash flow). Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

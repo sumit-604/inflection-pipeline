@@ -1,0 +1,92 @@
+stage: B12b
+company: "TRUALT"
+run_date: "2026-09-18"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 42
+caught: 25
+partially_caught: 5
+missed:
+  - {severity: "MAJOR", item: "Sugary-feedstock (B-heavy and juice) diversion may be restricted in ESY 26-27; TruAlt Q1 FY27 volume about 53 percent sugar-based, two monofeed units, 100 syrup days planned; never raised by TruAlt, B05 or B06", anchor: "BALRAMCHIN Aug Vivek Saraogi [page 4]; TRIVENI Aug Tarun Sawhney [page 5]-[page 7]; TRUALT Aug [page 8], May [page 16]"}
+  - {severity: "MINOR", item: "CBG margin figures inconsistent within one call (68.29, 60-65, 40-45, 55-60 percent)", anchor: "TRUALT Nov MD/CFO [page 6], [page 21]-[page 22]"}
+  - {severity: "MINOR", item: "Revenue-mix answer flips mid-answer from 70/20-25 to 85/15", anchor: "TRUALT Nov MD [page 24]"}
+  - {severity: "MINOR", item: "Nov CFO says shut plants operational from Q3 with COD done; Feb shows Unit 5 CTO 17-Dec-2025, 58 operating days, 30 days lost", anchor: "TRUALT Nov CFO [page 7]; Feb MD [page 3]-[page 4], [page 11]"}
+  - {severity: "MINOR", item: "Not-allowed-to-project line used selectively while detailed numbers are given", anchor: "TRUALT Feb MD [page 18]; May CFO [page 19]"}
+  - {severity: "MINOR", item: "Retail PAT-margin question answered with CBG and finance-cost reasons; retail margin 2 percent (Feb) vs 5 percent (May)", anchor: "TRUALT Aug MD [page 10]; Feb CFO [page 17]; May MD [page 7]"}
+  - {severity: "MINOR", item: "CBG utilisation 85 percent plus to 78 percent; CFO says nothing driving the EBITDA dip, then cites employee cost and one-time R&M", anchor: "TRUALT May [page 5]; Aug [page 6], [page 10]"}
+  - {severity: "MINOR", item: "Investor-engagement and advertising promises from May not delivered by Aug", anchor: "TRUALT May [page 20], [page 23]; Aug [page 22]"}
+  - {severity: "MINOR", item: "ENA plan 6 cr L at Rs 62-63; price fell to Rs 55-56; actual about 3 cr L", anchor: "TRUALT May MD [page 4], [page 14]-[page 15]"}
+  - {severity: "MINOR", item: "Peer can hold only 30-45 days of grain; TruAlt claims months of cheap grain stock carrying margin into Q2-Q3 FY27", anchor: "GULPOLY Aug [page 8]-[page 9]; TRUALT Aug [page 18]"}
+  - {severity: "MINOR", item: "Peer view split on SAF technology readiness (GULPOLY not established; TRIVENI ATF norms include ethanol-to-jet)", anchor: "GULPOLY Feb [page 11]-[page 12]; TRIVENI Jun [page 7]"}
+  - {severity: "MINOR", item: "TruAlt claims LTOA status yet got 26 of a 72 cr L bid sized on 365-day capacity; GULPOLY gets priority allocation at 78 percent; hit rates not like-for-like", anchor: "GULPOLY May [page 3], [page 14]; TRUALT May [page 4], Aug [page 12]"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "concur - D; 8 of 11 promises missed, allocation done-deal claim post-dated the cut by the MD's own May words, same shutdown told as intentional and as force majeure; positives are operational only"
+findings:
+  - {severity: "MAJOR", location: "B05 and B06 (absent)", finding: "Missed peer-flagged risk that B-heavy and juice diversion is restricted in ESY 26-27; about half of TruAlt volume and two monofeed units exposed", anchor: "BALRAMCHIN Aug [page 4]; TRIVENI Aug [page 5]-[page 7]; TRUALT Aug [page 8]"}
+  - {severity: "MAJOR", location: "B05 4D HIGH allocation done-deal", finding: "Under-weighted; should be CRITICAL. Missing the MD's own dating of the cut to November, the 30 cr L third figure, and 8 cr L ENA potential inside the 47", anchor: "TRUALT May [page 10], [page 26]; Nov [page 15]"}
+  - {severity: "MAJOR", location: "B06 Q6", finding: "Peer accounting contrast not drawn: BALRAMCHIN keeps subvention below EBITDA, GULPOLY books incentives on receipt; TruAlt EBITDA includes about Rs 22cr per quarter of subvention plus PLI and a Rs 107cr accrued receivable", anchor: "BALRAMCHIN Jun [page 10]; GULPOLY Aug [page 14], Feb [page 13]; TRUALT Aug [page 18], Nov [page 9]"}
+  - {severity: "MINOR", location: "B05 1B/1C/2A CBG", finding: "Construction-start contradiction not named (Nov three plants begun vs Feb began in December)", anchor: "TRUALT Nov [page 3]; Feb [page 18]-[page 19]"}
+  - {severity: "MINOR", location: "B05 4D and YAML red_flags", finding: "Stock-in-trade purchase question deflection named in prose but absent from the red-flag list", anchor: "TRUALT Feb [page 12]"}
+  - {severity: "MINOR", location: "B06 Q2", finding: "GULPOLY private-refiner statement contradicts TruAlt Feb pricing claim; verdict left UNVERIFIABLE", anchor: "GULPOLY Nov [page 8]; TRUALT Feb [page 21]"}
+  - {severity: "MINOR", location: "B05 4D CRITICAL grain/sugar split", finding: "Supported on facts, severity overstated; data given in Aug and peer TRIVENI withholds the same split; MAJOR fits", anchor: "TRUALT Nov [page 15], May [page 25], Aug [page 8]; TRIVENI Nov [page 10]"}
+  - {severity: "MINOR", location: "B06 Q6", finding: "Below-5 percent ISS debt-cost statement attributed to BALRAMCHIN; it is GULPOLY CFO Rajiv Gupta", anchor: "GULPOLY May [page 6]"}
+  - {severity: "MINOR", location: "B05 1C de-leveraging row", finding: "May de-leveraging push attributed to Tanmay Javeri; he asked about CBG funding and one-on-ones", anchor: "TRUALT May [page 20]"}
+  - {severity: "MINOR", location: "B05 2A row Q3+Q4 26-28 cr L", finding: "Actual stated as roughly 18-20 cr L; quarterly figures sum to about 13.6-13.8 cr L; promise was production, outcome sales", anchor: "TRUALT Feb [page 8], [page 16]; May [page 25]"}
+  - {severity: "MINOR", location: "B05 and B06 anchors", finding: "Page anchors off by one: B05 Feb p.10 to p.11, May p.5 to p.6, Nov p.17 to p.18; B06 BALRAMCHIN Jun overcapacity p.10 to p.11, GULPOLY Aug guide p.4 to p.5", anchor: "PDF page markers in each .txt"}
+  - {severity: "MINOR", location: "B05 and B06 (absent)", finding: "Eleven minor items missed (M22, M23, M24, M25, M27, M28, M29, M30, P8, P9, P10); see missed list", anchor: "see missed list"}
+critical_count: 0
+major_count: 3
+minor_count: 9
+material_found: 25
+material_caught: 24
+acceptance_rate: 96.0
+coverage_basis: "25 material of 42 listed (2 CRITICAL, 23 MAJOR); 20 caught outright, 4 partially caught, 1 missed; rate counts partial catches as caught, same convention as run r1; strict outright rate 20 of 25 = 80.0 percent"
+input_gaps:
+- 'carried from B00 by orchestrator: collector_warning (verbatim): sector_cap_row_guess Pharma / CDMO is the collector
+  default and is wrong; Step 1 set Sugar / agri-commodity.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): peer RENUKA (Shree Renuka Sugars) collected but
+  has held no concall since Jun-2022; replaced by TRIVENI, collected separately with screener_collect.py. RENUKA
+  Data_Sheet removed.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): announcements: collector downloaded 5 of 102
+  BSE rows; Step 1 fetched the material Reg 30 filings by hand (41 files, 6 duplicates of other folders removed).
+  Routine filings (trading window, Reg 74(5), newspaper ads, SDD) skipped.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): results, rating, prospectus and shareholding
+  were empty after the collector; Step 1 filled them from BSE (results Q3FY26, Q4FY26, Q1FY27; Ind-Ra rating with
+  full rationale), the NSE archive (final prospectus 01-Oct-2025) and the BSE XBRL SHP (Mar and Jun 2026, converted
+  to text).'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): Q4FY26 audited results PDF is a scan (16 of 20
+  pages image-only); the .txt beside it carries RapidOCR text marked per page. OCR also filled 4 image pages in
+  each deck and 10 in the prospectus.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): concall filenames: collector names by month;
+  BALRAMCHIN May_2026 is dated 30-Apr-2026 and Jun_2026 is dated 22-May-2026 on page 1.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): screener export sheets came out EMPTY (formulas
+  with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance
+  Sheet, screener:Cash Flow, screener:Customization, GULPOLY:Profit & Loss, GULPOLY:Quarters, GULPOLY:Balance Sheet,
+  GULPOLY:Cash Flow, GULPOLY:Customization, BALRAMCHIN:Profit & Loss, BALRAMCHIN:Quarters, BALRAMCHIN:Balance Sheet,
+  BALRAMCHIN:Cash Flow, BALRAMCHIN:Customization, TRIVENI:Profit & Loss, TRIVENI:Quarters, TRIVENI:Balance Sheet,
+  TRIVENI:Cash Flow, TRIVENI:Customization (every Data_Sheet.csv is populated and carries P&L, quarters, balance
+  sheet and cash flow). Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'carried from B00 by orchestrator: research: NONE. No broker notes collected. No effect on anchored evidence.'
+- 'carried from B00 by orchestrator: other: NONE (folder empty, never consumed).'
+- 'carried from B00 by orchestrator: screening: only <TICKER>-Data_Sheet.csv exists for TRUALT and each peer; the
+  Profit & Loss / Balance Sheet / Cash Flow / Quarters sheets exported empty and were not written. Data_Sheet carries
+  FY23-FY26 annual P&L, balance sheet, cash flow and nine quarters (Jun-2024 to Jun-2026), so the gap is cosmetic.
+  TRUALT screener history starts FY23 (company incorporated 2021): Gate 0 data_years is at most 4 audited years;
+  the prospectus restated FY23-FY25 is the backward baseline.'
+- 'carried from B00 by orchestrator: concalls: FOUR transcripts present (Q2FY26 to Q1FY27). The contract uses the
+  3 most recent (Q3FY26, Q4FY26, Q1FY27); the Q2FY26 (Nov-2025) transcript is passed to stage 5 as the promise baseline
+  for the multi-feed shutdown, because the load-bearing guidance-vs-delivery fact needs the first post-listing promise.
+  Deliberate deviation, recorded here.'
+- 'carried from B00 by orchestrator: prospectus: PRESENT (final prospectus 01-Oct-2025). Listed 03-Oct-2025, inside
+  the ~3 year window, so it is foundational: promoter/group history, group-company map, restated FY23-FY25.'
+- 'carried from B00 by orchestrator: results: the Q4FY26 audited results PDF is a scan; its financial tables come
+  from OCR text (RapidOCR). Stages cross-check any OCR figure against the FY26 AR (text-native) and anchor to the
+  AR where both carry the figure.'
+- 'carried from B00 by orchestrator: results: Q2FY26 and Q1FY26 results are not in results/ (contract keeps 3 most
+  recent). The Q2FY26 results sit inside inputs/announcements/20251111-d6d62c30-*.pdf (board outcome); Q1FY26 (BSE,
+  19-Oct-2025) was not downloaded.'
+- 'carried from B00 by orchestrator: sector_cap_row: Step 1 set ''Sugar / agri-commodity'' (18x). That row is Section
+  1B v3.11 Amendment 27.4 (16-Sep-2026), present on branch framework/group-3-promotions and NOT yet merged to main;
+  this run branch is cut from main, whose cap table lacks the row. Nearest row on main: ''Agri processing'' 20x.
+  Flagged for phase-3 operator confirmation before stage 11.'

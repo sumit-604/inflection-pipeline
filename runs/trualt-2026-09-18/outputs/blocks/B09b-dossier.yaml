@@ -1,0 +1,109 @@
+stage: B09b-dossier
+company: "TRUALT"
+run_date: "2026-09-18"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Q1FY26 results (quarter ended 30-Jun-2025)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Broker or analyst research notes"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Postal ballot notice and voting result for the reported Rs2,500cr FY2026-27 Nirani Sugars RPT ceiling"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Onkar Agro Sugars & Energy Pvt Ltd ownership and director filings"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Pre-listing standalone Annual Reports (FY23-FY25)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Ethanol and ENA (core, 97.6% of FY26 consolidated revenue)"
+    archetype: "Commodity converter"
+  - line: "Compressed biogas (CBG, 2.4% of consolidated revenue)"
+    archetype: "fits no known archetype yet (licence/scarcity-adjacent, one operating plant only)"
+  - line: "SAF and retail fuel (pre-revenue / immaterial)"
+    archetype: "fits no known archetype yet"
+transition:
+  - line: "Ethanol and ENA (core line)"
+    from_tier: "R1 COMMODITY PRICE-TAKER (seasonal, cane-only converter, cyclical ROCE)"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER (year-round, dual-feedstock converter, durable mid-teens ROCE; Amendment 17 binds)"
+    engine: "Multi-feed conversion of three distilleries (1,300 of 2,000 KLPD now grain-capable), turning a 4-5 month crush-season operation into a year-round one"
+    proof_gate: "Quarterly capacity utilisation (all-days basis) sustained above management's own 80-85% target for two consecutive quarters, together with positive CFO for at least one full quarter; neither has fired as of Q1FY27"
+    recognition_gap: "Open question, not resolved here: TruAlt trades at a screener trailing PE of 23.2x against a Gate 0 AVOID classification on FY26 leverage. Whether that multiple already prices the year-round TO state, or still prices the R1 crush-season past, is the PE gap Stage 11 resolves."
+    ugliness: "ARTIFACT-OF-CLIMB (most evidenced reading), with STRUCTURAL-FEATURE as a live rival reading not dismissed; separated by the Q2FY27 half-year inventory and CFO print"
+    transition_falsifier: "Utilisation stays near 60% for four consecutive quarters after FY26 AND CFO stays negative through FY27 AND grain margin does not recover from Rs6-7/litre"
+dominant_variables:
+  - "Capacity utilisation (all-days basis)"
+  - "Grain feedstock price (maize, Rs/kg) and margin per litre"
+  - "OMC allocation volume (tender bid vs award)"
+  - "Cash flow from operations / DSCR"
+business_falsifier: "Loss of OMC-approved-supplier status, or a sustained DSCR covenant breach with no waiver granted that triggers accelerated lender action or a going-concern qualification, independent of whether the multi-feed transition itself succeeds"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 9
+  verifiability_ratio: "7 of 9 externally observable"
+  single_point_failure: "possible: sustained DSCR covenant breach with no DSRA waiver granted, triggering accelerated lender action (Ind-Ra rationale names the waiver request as pending)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 15
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "8b93e88732a12ce31bf818eb301f6ae143d22bef"
+input_gaps:
+- 'carried from B00 by orchestrator: collector_warning (verbatim): sector_cap_row_guess Pharma / CDMO is the collector
+  default and is wrong; Step 1 set Sugar / agri-commodity.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): peer RENUKA (Shree Renuka Sugars) collected but
+  has held no concall since Jun-2022; replaced by TRIVENI, collected separately with screener_collect.py. RENUKA
+  Data_Sheet removed.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): announcements: collector downloaded 5 of 102
+  BSE rows; Step 1 fetched the material Reg 30 filings by hand (41 files, 6 duplicates of other folders removed).
+  Routine filings (trading window, Reg 74(5), newspaper ads, SDD) skipped.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): results, rating, prospectus and shareholding
+  were empty after the collector; Step 1 filled them from BSE (results Q3FY26, Q4FY26, Q1FY27; Ind-Ra rating with
+  full rationale), the NSE archive (final prospectus 01-Oct-2025) and the BSE XBRL SHP (Mar and Jun 2026, converted
+  to text).'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): Q4FY26 audited results PDF is a scan (16 of 20
+  pages image-only); the .txt beside it carries RapidOCR text marked per page. OCR also filled 4 image pages in
+  each deck and 10 in the prospectus.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): concall filenames: collector names by month;
+  BALRAMCHIN May_2026 is dated 30-Apr-2026 and Jun_2026 is dated 22-May-2026 on page 1.'
+- 'carried from B00 by orchestrator: collector_warning (verbatim): screener export sheets came out EMPTY (formulas
+  with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance
+  Sheet, screener:Cash Flow, screener:Customization, GULPOLY:Profit & Loss, GULPOLY:Quarters, GULPOLY:Balance Sheet,
+  GULPOLY:Cash Flow, GULPOLY:Customization, BALRAMCHIN:Profit & Loss, BALRAMCHIN:Quarters, BALRAMCHIN:Balance Sheet,
+  BALRAMCHIN:Cash Flow, BALRAMCHIN:Customization, TRIVENI:Profit & Loss, TRIVENI:Quarters, TRIVENI:Balance Sheet,
+  TRIVENI:Cash Flow, TRIVENI:Customization (every Data_Sheet.csv is populated and carries P&L, quarters, balance
+  sheet and cash flow). Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again.'
+- 'carried from B00 by orchestrator: research: NONE. No broker notes collected. No effect on anchored evidence.'
+- 'carried from B00 by orchestrator: other: NONE (folder empty, never consumed).'
+- 'carried from B00 by orchestrator: screening: only <TICKER>-Data_Sheet.csv exists for TRUALT and each peer; the
+  Profit & Loss / Balance Sheet / Cash Flow / Quarters sheets exported empty and were not written. Data_Sheet carries
+  FY23-FY26 annual P&L, balance sheet, cash flow and nine quarters (Jun-2024 to Jun-2026), so the gap is cosmetic.
+  TRUALT screener history starts FY23 (company incorporated 2021): Gate 0 data_years is at most 4 audited years;
+  the prospectus restated FY23-FY25 is the backward baseline.'
+- 'carried from B00 by orchestrator: concalls: FOUR transcripts present (Q2FY26 to Q1FY27). The contract uses the
+  3 most recent (Q3FY26, Q4FY26, Q1FY27); the Q2FY26 (Nov-2025) transcript is passed to stage 5 as the promise baseline
+  for the multi-feed shutdown, because the load-bearing guidance-vs-delivery fact needs the first post-listing promise.
+  Deliberate deviation, recorded here.'
+- 'carried from B00 by orchestrator: prospectus: PRESENT (final prospectus 01-Oct-2025). Listed 03-Oct-2025, inside
+  the ~3 year window, so it is foundational: promoter/group history, group-company map, restated FY23-FY25.'
+- 'carried from B00 by orchestrator: results: the Q4FY26 audited results PDF is a scan; its financial tables come
+  from OCR text (RapidOCR). Stages cross-check any OCR figure against the FY26 AR (text-native) and anchor to the
+  AR where both carry the figure.'
+- 'carried from B00 by orchestrator: results: Q2FY26 and Q1FY26 results are not in results/ (contract keeps 3 most
+  recent). The Q2FY26 results sit inside inputs/announcements/20251111-d6d62c30-*.pdf (board outcome); Q1FY26 (BSE,
+  19-Oct-2025) was not downloaded.'
+- 'carried from B00 by orchestrator: sector_cap_row: Step 1 set ''Sugar / agri-commodity'' (18x). That row is Section
+  1B v3.11 Amendment 27.4 (16-Sep-2026), present on branch framework/group-3-promotions and NOT yet merged to main;
+  this run branch is cut from main, whose cap table lacks the row. Nearest row on main: ''Agri processing'' 20x.
+  Flagged for phase-3 operator confirmation before stage 11.'

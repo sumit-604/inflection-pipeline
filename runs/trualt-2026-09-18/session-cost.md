@@ -60,3 +60,5 @@ The REWORK cycle (stage 5 and 6 reruns, verifier B and D round 2) cost 1,126,711
 | X | extraction part 5 (5 items) | opus 5.5 | inherited | - | - | 242428 | 9m28s | 1 |
 | X | extraction part 6 (7 items) | opus 5.5 | inherited | - | - | 290191 | 12m05s | 1 |
 | X | extraction part 7 (7 items) | opus 5.5 | inherited | - | - | 356295 | 13m49s | 1 |
+| X | QX1 extraction | opus 5.5 | inherited | - | - | 156390 | 5m17s | 1 |
+| F | fttcp draft | opus 5.5 | inherited | - | - | 442594 | 19m23s | 1 |

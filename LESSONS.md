@@ -121,3 +121,7 @@ _Pending framework edits Keerti maintains._
   3. OR-9 (proposed): Amendment 24 caps size at starter when the residual
      exceeds 25% of CMP; Amendment 25 permits a starter only at 25% or less.
      Reading A: size zero. Reading B: a 2-3% starter. Operator ruling needed.
+- OPEN (2026-10-02, TRUALT, V2/09b): state the feedstock with every per-litre margin (rice vs maize mix-up). Prompt fix; see LESSONS_ARCHIVE.md 2026-10-02 TRUALT.
+- OPEN (2026-10-02, TRUALT, V3): distinguish converted, installed and licensed capacity in every capacity line (Unit 4). Prompt fix; see LESSONS_ARCHIVE.md 2026-10-02 TRUALT.
+- OPEN (2026-10-02, TRUALT, V5/verifiers): reconcile subsidiary turnover (AOC-1 / agency) against segment revenue (Rs 18 Cr gap). Verifier check; see LESSONS_ARCHIVE.md 2026-10-02 TRUALT.
+- OPEN (2026-10-02, TRUALT, 09b): every deck number gets a filed cross-check before entering a mental model (CBG break-even, Unit 4). Prompt fix; see LESSONS_ARCHIVE.md 2026-10-02 TRUALT.

@@ -1,15 +1,15 @@
 # COMPANY MEMORY — TruAlt Bioenergy Ltd (TRUALT)
 
 ## THESIS (one line)
-DRAFT (Step 1, not signed): the multi-feed conversion (1,300 of 2,000 KLPD
-now grain-capable) turns a crush-season distillery into a year-round one,
-lifting utilisation from 60% toward 80-85% on existing capacity, if grain
-ethanol margin holds and working capital releases cash.
+Rationed ethanol converter (OMC-allocated litres x margin per litre) inside a family group,
+moving from sugar-seasonal to dual-feed year-round; CBG (51%, GAIL/Sumitomo) is a policy-priced
+build-out held as a CONVERTER slice; SAF valued at zero. FY27 base ~34 cr L at ~Rs 11-12/L.
+Priced for the transition (~25x FY27 EPS vs ~11-13x indicative). Promoter CONCERN (integrity).
 
 ## DECISION STATUS AND ENTRY ZONE
-DRAFT — Step 1 intake, Phase 1 evidence only. No decision, no entry zone.
-CMP Rs 424, market cap Rs 3,635 cr (screener, 18-Sep-2026). Listed
-03-Oct-2025 at Rs 496.
+Halt 1 ruling 02-Oct-2026 (operator): PROCEED to /fttcp (override of Claude's SHALLOW WATCH).
+Decision Status in Notion is operator-set only: WATCHLIST. Size ceiling Small (2-3%).
+CMP Rs 444 (01-Oct-2026 close, Screener). Master gate: Q2 FY27 + first half-yearly cash flow.
 
 ## SPEAR
 Spear: OVERRIDE 2026-09-18 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -35,33 +35,35 @@ runs/trualt-2026-09-18/step1-business-brief.md):
    demand order Aug-2026.
 
 ## HALT 1 GATE
-- Mental Model signed: NOT SIGNED. Draft in
-  runs/trualt-2026-09-18/outputs/reports/09b-understanding-dossier.md
-  Section 2 (DRAFT - PENDING OPERATOR SIGN-OFF): ethanol line R1 -> R2
-  (Commodity converter, Amendment 17 binds), proof gate not fired, fragility
-  FRAGILE.
-- Phase 1 result (2026-09-18): corpus verdict CORPUS GAPPED; gate
-  recommendation PROCEED WITH CAVEATS (FLAG-PROMOTER CONCERN, FLAG-CASH
-  INDETERMINATE, FLAG-GATE0 AVOID on FY26 leverage); confidence 75 (set by
-  peer_utilisation); concall credibility D.
-- Halt 1 decision (KILL/SHALLOW/PROCEED): pending operator.
+- Mental Model signed: YES (operator, 02-Oct-2026). Archetype: rationed commodity converter
+  inside a family group; CBG = CONVERTER slice until commissioned; SAF = 0.
+- Halt 1 decision: PROCEED (02-Oct-2026)
+- Handover: runs/trualt-2026-09-18/inputs/research/web-handover-dossier.md
+- Tracker proof: 19 rows written to DOWNSTREAM SIGNAL TRACKER 02-Oct-2026 (T1 x7, T2 x6,
+  T3 x4, T4 x2), linked to COMPANIES MASTER page 3acbb2b9d3ab81ddb7e1ea44725a4a32.
 
 ## OPERATOR RULINGS
 - 2026-09-18: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.
+- 2026-10-02: Mental model signed. Promoter CONCERN (integrity): I1 Accutrade Rs 40.31 Cr,
+  I2 decks ahead of filings, I3 AR gaps, I4 TGPL rights-then-flip, I5 Acuite non-cooperation,
+  I6 fines, I7 NHPL Rs 15.08 Cr. Ledger cannot offset. Size ceiling Small (2-3%).
+- 2026-10-02: AVOID triggers: Accutrade >= Rs 40 Cr at H1 FY27 without supplies; TGPL rights
+  price well below Rs 30.90; NHPL dues unpaid at 30-Sep-2026.
+- 2026-10-02: Halt 1 = PROCEED to /fttcp.
+- Pending at P/E gate: sector cap (Agri processing 20x recommended), CBG converter treatment,
+  ex-subvention earnings basis beyond FY28.
 
 ## ACTIVE TRIPWIRES
-- None set. Set at /finalize. Phase 1 falsification metric for the cash
-  determination: Q2FY27 half-year results (due by mid-Nov-2026), consolidated
-  inventory at or above Rs 528 cr together with negative H1 CFO.
+AVOID-1 Accutrade >= Rs 40 Cr at H1 FY27 | AVOID-2 TGPL rights price << Rs 30.90 |
+AVOID-3 NHPL dues unpaid at 30-Sep-2026 | T1 ESY27 award < 25 cr L | T2 Q3 or Q4 FY27
+< 9 cr L or EBITDA < Rs 10/L | T3 EBITDA margin < 12% or CRISIL downgrade | T4 DSRA cash call
+or covenant waiver | T5 promoter encumbrance up / invocation | T6 NSL dealings rising |
+T7 CBG commissioning slips past FY28
 
 ## OPTIONALITY REGISTER (summary)
-From B07 (runs/trualt-2026-09-18/outputs/blocks/B07-emoat.yaml):
-- SAF plant (Rs 2,000-2,250 cr capex) -> converts on signed EPC plus financial closure, first appears in a Reg 30 filing, window 24-30m from Jun-2026 grant.
-- CBG beyond the 10 identified plants -> converts on EPC/construction-start disclosure, window FY28-FY29, unconfirmed.
-- Karnataka HC 15 cr litre allocation (~Rs 1,062 cr) -> converts on OMC supply against the order, first appears in quarterly volumes, unresolved three quarters.
-- FY27 volume upside to 55 cr litres (base 44) -> converts on quarterly delivered volume, window FY27.
-- Retail network to 76+ outlets -> converts on franchise construction starts; paused.
-- CBG central financial assistance, Visolis MoU, green hydrogen -> low-probability items, see B07.
+- CBG (CONVERTER until three Sumitomo plants commissioned; ~Rs 15 Cr/qtr by Q2 FY28 gate)
+- SAF (zero; reopens on FID with committed equity and offtake)
+- Blending mandate above E20 (would loosen the ration)
 
 ## RUN FOLDERS
 - runs/trualt-2026-09-18/

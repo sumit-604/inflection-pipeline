@@ -612,3 +612,18 @@ Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
 - The sector cap row "Sugar / agri-commodity" exists only on the unmerged branch framework/group-3-promotions (v3.11 A27.4). The run branch is cut from main, so B00 carries it as PROVISIONAL.
 - Tokens: 5.17M over 22 subagent runs; the rework cycle was 21.8%.
 - Not a clean run.
+
+## 2026-10-02 — TRUALT Halt 1 close-out (claude.ai web handover; runs/trualt-2026-09-18)
+
+Source: runs/trualt-2026-09-18/inputs/research/web-handover-dossier.md, Section 11. Halt 1 = PROCEED (operator override of SHALLOW WATCH).
+
+| # | What went wrong or was corrected | Stage | File / rule | Status |
+|---|---|---|---|---|
+| 1 | Margin-per-litre claim attached to the wrong feedstock (rice vs maize) | V2 / 09b | State the feedstock with every per-litre margin | OPEN (prompt fix) |
+| 2 | Converted capacity read as added capacity (Unit 4) | V3 | Distinguish converted, installed and licensed capacity in every capacity line | OPEN (prompt fix) |
+| 3 | Cash accrual first estimated at Rs 130 Cr; restated lines give Rs 196-224 Cr | V4 | Build accrual from filed PBT + D&A − tax, restated basis | CLOSED (this dossier) |
+| 4 | Subsidiary turnover vs segment revenue gap (Rs 18 Cr) not reconciled by verifiers | V5 | Reconcile subsidiary turnover (AOC / agency) against segment revenue | OPEN (verifier check) |
+| 5 | Personal cases of a director read as company misstatement | V6 | Separate company disclosure duty from director-personal matters | CLOSED |
+| 6 | Deck claims entered drafts before filing cross-check (CBG break-even, Unit 4) | 09b | Every deck number gets a filed cross-check before entering a mental model | OPEN (prompt fix) |
+
+Claude Code side, same cycle: seven post-Halt-1 extractions (parts 1 to 7) and a Markdown copy of the three latest decks and four calls (runs/trualt-2026-09-18/md/) were produced so Claude web could read the corpus without re-reading PDFs. Parts 3 to 7 ran on Opus 5.5 after the 5.5-family migration (PR #176).

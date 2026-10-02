@@ -51,3 +51,8 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
 ## Versions
 
 - v1: first release.
+- v2: the car never gets stuck. Correct start lane, soft bumps with
+  damage once per 0.7 s, auto-unstick, free pit crew at every race and
+  mission start, a broken car or empty tank crawls at 18 km/h, traffic
+  clears at mode start, safer touch buttons and keys. New regression
+  checks run 8 modes in a row twice with traffic and real keys.

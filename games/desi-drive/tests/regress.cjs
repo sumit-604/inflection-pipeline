@@ -28,7 +28,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "Desi Drive v1", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "Desi Drive v2", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "Desi Drive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -127,8 +127,8 @@ const HELPERS = () => {
   await E(() => yesTraffic());
 
   // T. Broken car and tow truck
-  r = await E(() => { G.startFree(); S.damage = 100; G.car.broken = true; G.car.s = 0; S.points = 50; keys("up"); const z0 = G.car.z; sim(2); const still = Math.abs(G.car.z - z0) < 0.5; keys(); G.openMenu(); const tow = visible("#m-tow"); document.querySelector("#m-tow").click(); return { still, tow, dmg: S.damage, broken: G.car.broken, pts: S.points, x: G.car.x }; });
-  ok("T1 broken car cannot drive", r.still, r); ok("T2 tow truck works with few points", r.tow && r.dmg === 40 && !r.broken && r.pts === 0, r);
+  r = await E(() => { G.startFree(); noTraffic(); G.setPos(-3.5, -150, 0); S.damage = 100; G.car.broken = true; G.car.s = 0; S.points = 50; keys("up"); const z0 = G.car.z; sim(2); const crawl = G.car.kmh > 3 && G.car.kmh <= 20; keys(); yesTraffic(); G.openMenu(); const tow = visible("#m-tow"); document.querySelector("#m-tow").click(); return { crawl, tow, dmg: S.damage, broken: G.car.broken, pts: S.points, x: G.car.x }; });
+  ok("T1 broken car only crawls", r.crawl, r); ok("T2 tow truck works with few points", r.tow && r.dmg === 40 && !r.broken && r.pts === 0, r);
 
   // U. About us and how to play
   r = await E(async () => { G.openMenu(); document.querySelector("#m-about").click(); const t = document.querySelector("#card").innerText, img = document.querySelector("#about-photo"); await img.decode().catch(() => {}); return { t, src: img.src.slice(0, 23), w: img.naturalWidth }; });
@@ -160,6 +160,25 @@ const HELPERS = () => {
 
   r = await E(() => G.lastErr || ""); ok("Z1 no loop errors", !r, r.slice(0, 300));
   ok("Z2 no page errors", errs.length === 0, errs.slice(0, 5));
+
+  // AA. The operator's flow: many modes one after another, with traffic, real keys (arrows and WASD).
+  r = await E(() => { S.damage = 99; S.fuel = 100; G.car.broken = true; return 0; });
+  const modes = [["free", ["#m-free"]], ["circuit", ["#m-races", "#r-circ"]], ["highway", ["#m-races", "#r-hw"]], ["trial", ["#m-races", "#r-tt"]], ["taxi", ["#m-missions", "#mi-taxi"]], ["delivery", ["#m-missions", "#mi-del"]], ["parking", ["#m-missions", "#mi-park"]], ["licence", ["#m-missions", "#mi-lic"]]];
+  for (const round of [1, 2]) for (const [name, clicks] of modes) {
+    await E(() => G.openMenu()); for (const c of clicks) await p.click(c);
+    const key = round === 1 ? "ArrowUp" : "w"; await p.keyboard.down(key);
+    r = await E(() => { const x0 = G.car.x, z0 = G.car.z; let maxK = 0; for (let i = 0; i < 140; i++) { G.T += 0.05; G.step(0.05); if (G.paused) break; maxK = Math.max(maxK, G.car.kmh); } return { moved: Math.round(Math.hypot(G.car.x - x0, G.car.z - z0)), maxK: Math.round(maxK), dmg: Math.round(S.damage), kind: G.mode.kind }; });
+    await p.keyboard.up(key);
+    ok(`AA${round} ${name} drives after other modes`, (r.moved > 25 || r.kind !== "mission") && r.maxK > 40, r);
+  }
+  r = await E(() => { G.openMenu(); document.querySelector("#m-free").click(); return 0; });
+  await p.keyboard.down("ArrowUp"); await p.keyboard.down("ArrowLeft");
+  r = await E(() => { const h0 = G.car.h; sim(2); return { kmh: G.car.kmh, dh: G.car.h - h0 }; });
+  await p.keyboard.up("ArrowLeft"); await p.keyboard.up("ArrowUp"); await p.keyboard.down("d"); await p.keyboard.down("w");
+  const r2 = await E(() => { const h0 = G.car.h; sim(2); return G.car.h - h0; }); await p.keyboard.up("d"); await p.keyboard.up("w");
+  ok("AB arrows and WASD steer both ways", r.dh > 0.2 && r2 < -0.2, { r, r2 });
+  r = await E(() => { G.setPos(-3.5, -150, 0); G.car.s = 0; const W = G.world, bx = W.boxes[0]; G.setPos((bx.x0 + bx.x1) / 2, bx.z0 - 2.2, 0); keys("up"); sim(3); keys(); return { kmh: G.car.kmh, toast: document.querySelector("#toast").textContent }; });
+  ok("AC auto-unstick when pushing a wall", r.toast.includes("Unstuck"), r);
 
   // Phone layout with touch buttons
   const m = await b.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });

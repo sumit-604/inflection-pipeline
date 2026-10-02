@@ -54,3 +54,4 @@ The REWORK cycle (stage 5 and 6 reruns, verifier B and D round 2) cost 1,126,711
 ### Operator snapshot
 (pending operator)
 | X | top-up extraction (5 questions) | sonnet | agent default | - | - | 420849 | 9m42s | 1 |
+| X | extraction part 2 (9 items) | sonnet | agent default | - | - | 389966 | 16m31s | 1 |

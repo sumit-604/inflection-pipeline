@@ -1,0 +1,26 @@
+stage: confidence-delta
+company: ORCHPHARMA
+run_date: '2026-09-06'
+phase: 1
+numerical_acceptance: 95.2
+numerical_acceptance_note: 'B12a run 2. Stated figure is a floor: its one source-fidelity MISMATCH was
+  cleared at source by the orchestrator and logged as a disagreement, and two further items it labelled
+  MAJOR were non-findings by its own notes. Coverage 10.1%, honestly reported after run 1 overstated it.'
+redflag_coverage: 39
+redflag_coverage_note: B12b run 2, after one full remediation cycle on stage 5. Round 1 was 31%. Below
+  the 60% threshold, so REWORK stands on the analysis.
+framework_adherence: 90
+framework_adherence_note: 'B12c phase-1 scope only: Gate 0 49/56 and Emerging Moat 35/37, combined 90.3%.
+  The valuation-adherence component is PENDING PHASE 3.'
+peer_utilisation: 91
+peer_utilisation_note: 'B12d. Ten of eleven peer-quarter entries correctly handled. Judged against peer-selection
+  limits: no peer in the corpus manufactures cephalosporins or 7-ACA.'
+overall: 39
+overall_rule: minimum of the four components
+band: 'below 60: forced REWORK'
+verdict_consequence: The phase-1 gate recommendation is REWORK. REWORK judges the pipeline, not the company.
+  It is additional to, not instead of, the CORPUS GAPPED-FRESHNESS cap already set at stage 0.
+remediation_performed: Stage 5 re-run once against seventeen named gaps (run 2), then Verifier B re-run
+  independently (round 2). Coverage moved 31% to 39%. The loop was stopped at one cycle so the outstanding
+  findings reach the operator at Halt 1 rather than being iterated without operator input.
+valuation_framework_adherence: PENDING PHASE 3

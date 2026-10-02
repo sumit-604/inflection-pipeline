@@ -1,0 +1,53 @@
+stage: B09b-dossier
+company: "TAALTECH"
+run_date: "2026-09-10"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - {document: "Investor presentation", expected_source: "company IR page", kind: "plausibly-nonexistent"}
+  - {document: "Exchange announcements / Regulation 30 filings (FY25-27)", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Quarterly shareholding pattern filings after 31 March 2026", expected_source: "BSE", kind: "findable-missing"}
+  - {document: "Broker / research notes", expected_source: "rating agency site / broker research", kind: "plausibly-nonexistent"}
+  - {document: "Pre-FY2022 (FY2017-FY2021) annual reports", expected_source: "BSE / company IR page", kind: "findable-missing"}
+  - {document: "Populated screener P&L / Balance Sheet / Cash Flow / Quarterly CSVs (four of five header-only, collector defect)", expected_source: "BSE / company IR page", kind: "findable-missing"}
+archetypes:
+  - {line: "Engineering services (single line, T&M 95.5% / fixed-price 4.5%)", archetype: "Outsourcing partner (CDMO/EMS/IT services archetype)"}
+transition:
+  - line: "Engineering services (T&M plus fixed-price)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER (evidenced mechanism: offshore Bangalore delivery at Indian cost, billed through a thin US conduit at 5.68% while the parent books 28.3%)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed via ten-year-plus client tenure and deepening top-customer share; unproven, no bill-rate or utilisation evidence separates pricing power from cost position)"
+    engine: "(1) growth broadening from one deepening account into named diversified wins; (2) a demonstrated pricing mechanism (bill-rate premium or utilisation gain) distinct from the disclosed cost-position and transfer-pricing structure"
+    proof_gate: "Quarterly consolidated revenue sustaining above Rs57-60cr for two more quarters WHILE CFO/PAT recovers above 0.7x and unbilled revenue reverts below 15% of quarter revenue, both in the H1 FY27 filing due around November 2026"
+    recognition_gap: "Open question, resolved at stage 11 via the PE gap: does the current multiple already price the claimed TO state (spec'd supplier, deepening wallet share), or still the FROM state (cost-advantaged converter with an unexplained revenue jump)?"
+    ugliness: "INDETERMINATE - the evidence does not yet separate ARTIFACT-OF-CLIMB from STRUCTURAL-FEATURE (B13 ruling; Section 2 Part B5 carries both-direction evidence and the three missing items that would close it)"
+    transition_falsifier: "Quarterly revenue reverting into the Rs44-49cr band held Mar-2024 to Sep-2025 AND, in that same filing, unbilled revenue holding at or above 20% of the lower revenue base"
+dominant_variables:
+  - "Quarterly consolidated revenue run-rate against the Rs57-60cr threshold"
+  - "CFO/PAT ratio and unbilled revenue as a percentage of quarter revenue"
+  - "Top-customer revenue concentration against a 28-30% dependency threshold"
+  - "Disclosure of a transfer-pricing study, an advance pricing agreement, or a US tax event bearing on the 28.3% India-booked margin"
+business_falsifier: "Loss of, or a material slowdown at, the top customer (24.05% of FY26 revenue) or the top two combined (34.03%), without a named replacement, in a business whose one confirmed moat is client tenure and which discloses no pipeline, backlog or contract-minimum figure"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "4 of 6 externally observable, 2 of 6 company-narrated only or presently undisclosed"
+  single_point_failure: "Quarterly consolidated revenue reverting below Rs57cr while unbilled revenue stays at or above 20% of that quarter's revenue"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "299e832a8af4c1ded9d2ec549166a8c25f324510"
+mechanical_check:
+  six_sections_in_order: PASS
+  single_corpus_verdict_line: PASS
+  draft_marker_present: PASS
+  annex_ten_questions: PASS
+  annex_ends_with_hash: PASS

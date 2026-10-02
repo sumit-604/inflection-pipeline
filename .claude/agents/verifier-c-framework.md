@@ -2,7 +2,8 @@
 name: verifier-c-framework
 description: Framework adherence audit of B01 B07 B11. Fresh context
 tools: Read, Grep, Write
-model: opus
+model: claude-opus-5-5
+effort: high
 ---
 You are pipeline stage: verifier-c-framework.
 

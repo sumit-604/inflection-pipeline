@@ -1,0 +1,55 @@
+stage: B02-notes
+company: "ORCHPHARMA"
+run_date: "2026-09-06"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "results: no quarterly or annual results filing in corpus"
+  - "rating: no credit rating bulletin or rationale in corpus"
+  - "announcements: no exchange / Reg 30 filings in corpus"
+  - "shareholding: no quarterly shareholding pattern in corpus"
+  - "research: no broker notes in corpus (non-anchored; no evidence effect)"
+  - "screening: Profit_Loss, Balance_Sheet, Cash_Flow, Quarters CSVs are empty templates (collect_to_repo v3 defect); Data_Sheet used in their place"
+  - "presentation: image-based, 3124 chars over 14 pages; unusable"
+  - "FY2026 primary filings absent: no FY2026 annual report and no FY2026 audited annual results filing"
+  - "annual report PDFs carry a corrupt OCR text layer across the financial statements"
+flags:
+  - {type: FLAG-CASH, reason: "Net trade receivables +27.7% YoY vs revenue +12.5% YoY; finished goods inventory +41.0% YoY; ECL coverage on receivables fell from 30.2% (FY2024) to 22.1% (FY2025) of gross -- working capital build running ahead of sales with simultaneously loosened provisioning (Note 11/13, Annual_Report_2025.pdf p.198-199)"}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Corporate guarantee Rs 447.22 Cr for Orchid Bio-Pharma Ltd's borrowings, zero to full in one year, 34.0% of standalone net worth, no visible Ind AS 109 fair-value treatment", note_ref: "Note 44/49/50, p.208-209/210-213/213-216", rating: "RED FLAG"}
+  - {rank: 2, finding: "Rs 230.72 Cr FY2025 purchase of sole-sourced GCLE from Otsuka Chemical (India) Pvt Ltd, up 35.8% YoY, supplier board includes the MD and a WTD, no arm's-length disclosure (CORRECTED from Pass 1's misread as a related-party sale, now retracted)", note_ref: "Note 50(c)/(e), p.213-214", rating: "RED FLAG"}
+  - {rank: 3, finding: "Intercompany loan to Orchid Bio-Pharma Ltd Rs NIL to Rs 108.24 Cr in one year; Rs 4.66 Cr interest income and Rs 5.28 Cr guarantee commission disclosed, but no rate, tenure, security, or repayment terms stated", note_ref: "Note 7/50(e), p.197/213-216", rating: "RED FLAG"}
+  - {rank: 4, finding: "Rs 145.30 Cr QIP proceeds unutilised at FY2025 close; the Alathur API block (parent's own capex line) only 0.36% utilised, Rs 99.46 Cr of the unutilised balance sits here alone", note_ref: "Note 55, p.222-223", rating: "WATCH"}
+  - {rank: 5, finding: "Consolidated capital commitments Rs 298.43 Cr vs standalone Rs 90.25 Cr, ~9.6x YoY rise consolidated", note_ref: "Note 44/consolidated Note 45, p.208-209/263-265", rating: "RED FLAG"}
+  - {rank: 6, finding: "Net trade receivables +27.7% YoY vs revenue +12.5%; finished goods +41.0% YoY; ECL coverage fell 30.2% to 22.1% of gross", note_ref: "Note 11/13, p.198-199", rating: "RED FLAG"}
+  - {rank: 7, finding: "Rs 38.72 Cr standalone contingent claim removed from FY2025 disclosure on management's own legal opinion while counterparty still disputes it; only Rs 7.62 Cr paid", note_ref: "Note 44, p.208-209", rating: "RED FLAG"}
+  - {rank: 8, finding: "Recurring, multi-year qualified opinion on consolidated FS over four unaudited foreign subsidiaries and one associate", note_ref: "Auditor's Report on Consolidated FS, p.225 (cross-ref Note 3(c)/31)", rating: "RED FLAG"}
+  - {rank: 9, finding: "BRSR states Nil monetary penalties while the Corporate Governance Report of the same annual report discloses two FY2024-25 exchange fines (Rs 88,000 + Rs 10,000)", note_ref: "BRSR Penalty/Fine table vs Corporate Governance Report", rating: "WATCH"}
+  - {rank: 10, finding: "Rs 143 Cr promoter 0% OCDs, redemption premium capped at 18% IRR if unconverted, no per-share conversion terms disclosed, no dilutive EPS effect shown", note_ref: "Note 22/48/50, p.202-203/209-210/213-216", rating: "WATCH"}
+  - {rank: 11, finding: "Pattern finding: guarantee, loan, unutilised QIP, and consolidated capital commitments are one funding relationship to a single pre-revenue subsidiary, with no note presenting the composite exposure or the guarantee's downside tail together", note_ref: "Notes 7/44/50/55 (pattern synthesis)", rating: "RED FLAG"}
+  - {rank: 12, finding: "Standalone capital commitments Rs 90.25 Cr vs Rs 10.06 Cr FY2024, ~797% YoY rise at parent level alone", note_ref: "Note 44, p.208-209", rating: "WATCH"}
+  - {rank: 13, finding: "NCLT petition to amalgamate holding company Dhanuka Laboratories Ltd into listed Orchid Pharma; NCLT order 29-Apr-2025 for shareholder/creditor meetings; per run corrections this scheme became effective 10-Jul-2026", note_ref: "Note 56, p.222", rating: "RED FLAG"}
+  - {rank: 14, finding: "CSR shortfall Rs 21.95 lakh (65.8% of FY2025 requirement) unspent at year-end with no statutory-transfer confirmation in the note; per cross-stage evidence the transfer was made 11-Aug-2025, within the statutory window -- resolved", note_ref: "Note 46, p.209-210", rating: "WATCH"}
+  - {rank: 15, finding: "Employee benefits expense +24.0% YoY vs revenue +12.5% YoY, unexplained in the notes; database-level audit-trail control gap disclosed, not fully remediated", note_ref: "Notes 31-41/54, p.177-179/205-208, p.221", rating: "WATCH"}
+red_flags:
+  - "No Ind AS 109 fair-value or amortising-liability recognition visible for the Rs 447.22 Cr financial guarantee, despite guarantee commission income being recognised on the same relationship"
+  - "Rs 38.72 Cr contingent claim removed from disclosure on management's own unevidenced legal opinion while the counterparty actively disputes it"
+  - "Related-party purchase equal to roughly a quarter of standalone revenue in value terms, from a sole-source KMP-controlled supplier, carries no arm's-length or benchmarking disclosure"
+  - "ECL coverage on trade receivables loosened from 30.2% to 22.1% of gross in the same year receivables grew faster than revenue"
+  - "Rs 108.24 Cr intercompany loan carries charged-and-received economics but no disclosed rate, tenure, security, or repayment terms"
+  - "Internal inconsistency within the same filing: BRSR states Nil penalties, Corporate Governance Report discloses two paid FY2024-25 exchange fines"
+questions_for_mgmt:
+  - "What is the pricing and transfer-pricing basis for the Rs 230.72 Cr FY2025 GCLE purchase from Otsuka Chemical (India) Pvt Ltd, a KMP-controlled sole-source supplier, and why is no arm's-length benchmarking disclosed in Note 50 itself?"
+  - "What interest rate, tenure, security, and repayment schedule apply to the Rs 108.24 Cr loan to Orchid Bio-Pharma Ltd, and why does Note 7 describe it as the company's only related-party loan without fixed repayment terms?"
+  - "Has the Rs 447.22 Cr corporate guarantee for Orchid Bio-Pharma's borrowings been recognised and measured under Ind AS 109, and if not, what is the accounting basis for omitting it, given the guarantee is 34.0% of standalone net worth?"
+  - "What is the basis for removing the Rs 38.72 Cr pre-CIRP contingent claim from FY2025 disclosure, was an independent legal opinion obtained and on what date, and how does that reconcile with the counterparty's continuing dispute?"
+  - "What is the stated per-equity-share conversion price or ratio for the Rs 143 Cr promoter OCDs, and why do Notes 22 and 41 show no dilutive EPS effect from an instrument convertible at any time over a ten-year tenor?"
+receivables_trend: "deteriorating - net trade receivables +27.7% YoY vs revenue +12.5% YoY; ECL coverage fell from 30.2% (FY2024) to 22.1% (FY2025) of gross receivables (Note 13, Annual_Report_2025.pdf p.198-199); finished goods inventory +41.0% YoY over the same period is a second, corroborating working-capital signal (Note 11, p.199)"
+restatements_found:
+  - "Notes 57-58: previous year figures regrouped/rearranged where necessary, generic and unquantified, no material restatement identified (Annual_Report_2025.pdf, p.222)"
+  - "Reclassification, not a restatement: the Rs 7.89 Cr FY2024 current portion of the Orchid Bio-Pharma loan (Note 15-19) was rolled into the new Rs 108.24 Cr non-current loan balance (Note 7) rather than repaid"
+going_concern_language: "NONE found in either annual report's notes to financial statements, the standalone auditor's report, or the consolidated auditor's report (re-confirmed by direct read across all three passes)"
+analyst_note: "The single most important structural read from these notes is the funding chain, not any one number: the Rs 447.22 Cr guarantee, Rs 108.24 Cr loan, Rs 145.30 Cr unutilised QIP, and Rs 298.43 Cr consolidated capital commitments describe one relationship, the parent funding and guaranteeing a pre-revenue subsidiary, with the guarantee's own downside carrying no visible Ind AS 109 treatment anywhere. Pass 1's related-party misread (sale vs purchase, wrong counterparty) is fully retracted; the corrected reading turns a revenue-quality question into a cost-side, sole-source, KMP-controlled-supplier concentration question, which is a different and arguably sharper concern for position sizing. This stage's record stops at FY2025; the Dhanuka Laboratories reverse merger (Note 56) is a leading indicator in these notes of an event the run's own corrections confirm became effective 10-Jul-2026, well outside what these notes alone can evidence."

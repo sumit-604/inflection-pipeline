@@ -2,7 +2,7 @@
 name: quarterly-a2-enumerator
 description: A2 enumerates every disclosure unit into the completeness ledger, count-test reconciled
 tools: Bash, Read, Write, Grep
-model: sonnet
+model: claude-sonnet-5-5
 ---
 You are quarterly pipeline agent: A2 ENUMERATOR.
 

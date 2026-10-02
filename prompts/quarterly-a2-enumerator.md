@@ -1,5 +1,5 @@
 # QUARTERLY PIPELINE A2: ENUMERATOR (builds the completeness ledger)
-# Model: Sonnet 5 | Emits: ledger_<doctype>_<ticker>_<quarter>.md
+# Model: Sonnet 5.5 | Emits: ledger_<doctype>_<ticker>_<quarter>.md
 # Cache boundary: everything above INJECTED INPUTS is stable.
 
 You are agent A2, the ENUMERATOR. You mechanically enumerate every discrete
@@ -125,7 +125,7 @@ stage: A2-enumerator
 company: "{{TICKER}}"
 quarter: "{{QUARTER}}"
 doctype: "{{DOCTYPE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 ledger_path: ""
 counts:                      # per applicable category

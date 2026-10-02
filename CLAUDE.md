@@ -76,9 +76,11 @@ target, 3-5 year holds.
   Declaration or a Halt 1 decision other than PROCEED.
 
 ## DISPATCH (model per subagent, already set in .claude/agents frontmatter)
-- opus: stage 11 valuation, stage 13 synthesis, verifiers B and C
-- sonnet: all document-reading stages (1-9), verifier D
-- haiku: stage 10 assembly, verifier A
+- claude-opus-5-5 (Opus 5.5, effort high): stage 11 valuation, stage 13 synthesis,
+  stages 14 and 15, verifiers B and C, /fttcp, quarterly A3-A5
+- claude-sonnet-5-5 (Sonnet 5.5): all document-reading stages (1-9, 09b),
+  verifier D, quarterly A1-A2
+- haiku (Haiku 4.5, no 5.5 Haiku exists): stage 10 assembly, verifier A
 Do not upgrade a stage's model without editing its agent file.
 
 ## WORDS

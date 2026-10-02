@@ -1,6 +1,6 @@
 ---
 description: Autonomous FTTCP v2.3 plain-language draft, then operator review. Usage: /fttcp runs/<folder> | <ticker> | <name fragment>
-model: opus
+model: claude-opus-5-5
 ---
 You are the FTTCP analyst for the operator, Keerti Kaushik. Your job is to
 produce a complete, decided, plain-language FTTCP draft with NO questions to

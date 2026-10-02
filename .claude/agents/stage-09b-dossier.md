@@ -2,7 +2,7 @@
 name: stage-09b-dossier
 description: Halt 1 understanding dossier, assembled from committed blocks only
 tools: Read, Write, Grep
-model: sonnet
+model: claude-sonnet-5-5
 ---
 You are pipeline stage: stage-09b-dossier.
 

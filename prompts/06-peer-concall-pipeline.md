@@ -1,5 +1,5 @@
 # STAGE 6: PEER CONCALL VERIFICATION (PIPELINE MODE, NEW PROMPT)
-# Model: Sonnet 5 | Emits: B06-peers
+# Model: Sonnet 5.5 | Emits: B06-peers
 # Consumes: up to 12 peer concall transcripts + B05.peer_questions
 # Protocol version: 1.1 (was unversioned = 1.0)
 #   1.1 — Part 5 Cross-Peer Hypothesis (mandatory closing step) added.
@@ -130,7 +130,7 @@ Full report as above, then end with exactly this fenced YAML block:
 stage: B06-peers
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []                 # note if fewer than expected peer files
 flags: []

@@ -1,5 +1,5 @@
 # QUARTERLY PIPELINE A1: EXTRACTOR (mechanical, zero interpretation)
-# Model: Sonnet 5 | Emits: <ticker>-<doctype>-<quarter>-fulltext.md + structured.md
+# Model: Sonnet 5.5 | Emits: <ticker>-<doctype>-<quarter>-fulltext.md + structured.md
 # Cache boundary: everything above INJECTED INPUTS is stable.
 
 You are agent A1, the EXTRACTOR. You are the ONLY agent in the chain that ever
@@ -225,7 +225,7 @@ stage: A1-extractor
 company: "{{TICKER}}"
 quarter: "{{QUARTER}}"
 doctype: "{{DOCTYPE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete            # or halted
 page_count: 0
 formfeed_count: 0

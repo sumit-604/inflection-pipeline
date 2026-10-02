@@ -1,5 +1,5 @@
 # STAGE 3: ANNUAL REPORT DEEP DIVE, BACKWARD READ (PIPELINE MODE)
-# Model: Sonnet 5 | Emits: B03-ardeep
+# Model: Sonnet 5.5 | Emits: B03-ardeep
 # Requires: B02-notes output (injected below)
 # Protocol version: 1.3 (aligned with AR Protocol v1.3; Step 10.5
 #   (tracker cross-check) executes at Role 5.5 outside this pipeline,
@@ -180,7 +180,7 @@ YAML block:
 stage: B03-ardeep
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []
 flags: []                     # FLAG-CASH if Phase 3 CFO quality checks

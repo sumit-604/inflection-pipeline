@@ -1,5 +1,5 @@
 # STAGE 1: GATE 0 SCORECARD (PIPELINE MODE)
-# Model: Sonnet 5 | Emits: B01-gate0
+# Model: Sonnet 5.5 | Emits: B01-gate0
 # Cache boundary: everything above INPUT DATA is stable.
 
 You are a quantitative screening engine. You will receive financial data for
@@ -169,7 +169,7 @@ fenced YAML block:
 stage: B01-gate0
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []
 flags: []                  # add {type: FLAG-GATE0, reason: ...} if

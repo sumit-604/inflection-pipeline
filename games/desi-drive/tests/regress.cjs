@@ -28,7 +28,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "Desi Drive v2", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "Desi Drive v3", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "Desi Drive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -153,10 +153,56 @@ const HELPERS = () => {
   // X. Level up from points
   r = await E(() => { const l0 = __dd.level(); G.addPts(5000, "test"); return { l0, l1: __dd.level() }; }); ok("X1 points raise the level", r.l1 > r.l0, r);
 
+  // ===== v3 features (ideas 6 to 14) =====
+  await E(() => { noTraffic(); G.startFree(); S.points = 2000; S.damage = 0; S.fuel = 100; G.car.broken = false; S.car = "hatch"; G.respawnCar(); });
+  // 6. Monsoon puddles
+  r = await E(() => { if (!S.rain) G.toggleRain(); const pd = G.world.puddles[0], vis = pd.m.visible, sp0 = S.stats.splashes, p0 = S.points; G.setPos(pd.x, pd.z, 0); G.car.z -= 12; G.car.x = pd.x; keys("up"); G.car.s = 14; sim(1.2); keys(); const o = { vis, d: S.stats.splashes - sp0, dp: S.points - p0 }; G.toggleRain(); o.hidden = !pd.m.visible; return o; });
+  ok("N6 puddles show in rain and splash", r.vis && r.d >= 1 && r.hidden, r);
+  // 7. Toll plaza
+  r = await E(() => { G.world.gates.forEach((g) => (g.open = 0, g.a = 0)); G.setPos(5.5, 420, 0); G.car.s = 12; keys("up"); let blocked = true; const g0 = G.world.gates[0]; for (let i = 0; i < 80; i++) { G.T += 0.05; G.step(0.05); if (G.car.z > 450.5 && g0.a < 0.9) blocked = false; } keys(); G.world.gates.forEach((g) => (g.open = 0, g.a = 0)); G.setPos(5.5, 441, 0); const p0 = S.points, t0 = S.stats.tolls; sim(0.3); const paid = p0 - S.points; keys("up"); sim(4); keys(); return { blocked, paid, tolls: S.stats.tolls - t0, passed: G.car.z > 462 }; });
+  ok("N7a closed toll barrier stops the car", r.blocked, r); ok("N7b stop to pay 20 and pass", r.paid === 20 && r.tolls === 1 && r.passed, r);
+  r = await E(() => { G.startHighway(); sim(3.5); G.setPos(5.5, 420, 0); G.car.s = 25; keys("up"); const p0 = S.points; sim(3); keys(); const o = { passed: G.car.z > 460, dp: p0 - S.points }; G.startFree(); return o; });
+  ok("N7c races use the FASTag lane", r.passed && r.dp === 0, r);
+  // 8. Petrol pump game
+  r = await E(async () => { S.fuel = 50; S.points = 1000; G.pumpPanel(); document.querySelector("#p-game").click(); const out = document.querySelector("#pg-v"); await new Promise((res) => { const t = setInterval(() => { if (parseInt(out.textContent) >= 99) { clearInterval(t); document.querySelector("#pg-stop").click(); res(); } }, 2); }); const msg = document.querySelector("#pg-msg").textContent; const o = { msg, fuel: S.fuel, perfect: S.stats.perfectFill }; document.querySelector("#pg-stop").click(); o.closed = !G.paused; return o; });
+  ok("N8 pump fill game", r.msg.length > 5 && r.fuel >= 98 && r.closed, r);
+  // 9. Daily gift
+  r = await E(() => { S.daily = { d: "", streak: 0 }; G.openMenu(); const btn = visible("#m-daily"); const p0 = S.points; document.querySelector("#m-daily").click(); const o = { btn, dp: S.points - p0, st: S.daily.streak }; document.querySelector("#dg-ok").click(); o.gone = !document.querySelector("#m-daily");
+    const y = new Date(); y.setDate(y.getDate() - 1); S.daily = { d: `${y.getFullYear()}-${String(y.getMonth() + 1).padStart(2, "0")}-${String(y.getDate()).padStart(2, "0")}`, streak: 2 }; G.openMenu(); const p1 = S.points; document.querySelector("#m-daily").click(); o.d2 = S.points - p1; o.st2 = S.daily.streak; G.checkBadges(); o.badge = !!S.badges.daily3; document.querySelector("#dg-ok").click(); return o; });
+  ok("N9a daily gift once per day", r.btn && r.dp === 100 && r.st === 1 && r.gone, r); ok("N9b streak grows the gift", r.d2 === 200 && r.st2 === 3 && r.badge, r);
+  // 10. Number plate and stickers
+  r = await E(() => { G.garage(false); const inp = document.querySelector("#g-plate"); inp.value = "keerti 1"; document.querySelector("#g-plate-save").click(); const p0 = S.points; document.querySelector('[data-stk="2"]').click(); let plates = 0; G.car.m.traverse((o) => { if (o.isMesh && o.material.map && o.geometry.parameters && o.geometry.parameters.width === 0.9) plates++; }); const o = { plate: S.plate.hatch, stk: S.sticker.hatch, cost: p0 - S.points, plates, kids: G.car.m.children.length }; document.querySelector("#g-close").click(); return o; });
+  ok("N10a own number plate", r.plate === "KEERTI 1" && r.plates >= 2, r); ok("N10b sticker costs 30", r.stk === 2 && r.cost === 30, r);
+  await p.keyboard.type("wasd"); r = await E(() => S.plate.hatch); ok("N10c typing a plate does not drive", r === "KEERTI 1", r);
+  // 11. Car wash
+  r = await E(() => { S.dirt = 0.8; G._washCd = 0; const w0 = S.stats.washes; G.setPos(-175, -63.5, Math.PI / 2); G.car.s = 8; keys("up"); for (let i = 0; i < 200 && G.car.x < -130; i++) { G.T += 0.05; G.step(0.05); G.car.s = Math.min(G.car.s, 8); } keys(); return { dirt: S.dirt, w: S.stats.washes - w0, x: G.car.x }; });
+  ok("N11 car wash cleans the car", r.dirt === 0 && r.w === 1, r);
+  // 12. Stunt ramps
+  r = await E(() => { const j0 = S.stats.jumps, p0 = S.points; G.setPos(-39, 6, 0); G.car.s = 24; keys("up"); let maxY = 0, air = false; for (let i = 0; i < 80; i++) { G.T += 0.05; G.step(0.05); maxY = Math.max(maxY, G.car.y); air = air || G.car.air; } keys(); return { maxY, air, j: S.stats.jumps - j0, dp: S.points - p0, y: G.car.y }; });
+  ok("N12 ramp jump with points", r.air && r.maxY > 2.5 && r.j === 1 && r.dp > 0 && r.y < 0.01, r);
+  r = await E(() => { G.setPos(-21, 10, 0); G.car.s = 15; keys("up"); sim(1.5); keys(); return { y: G.car.y, z: G.car.z }; });
+  ok("N12b high end of a ramp is a wall", r.y < 0.5 && r.z < 27, r);
+  await E(() => { G.setPos(-39, 12, 0); G.car.s = 24; keys("up"); sim(1.05); keys(); }); await p.waitForTimeout(1200); await p.screenshot({ path: `${SHOTS}/10-jump.png` });
+  // 13. Badges
+  r = await E(() => { G.checkBadges(); G.openMenu(); document.querySelector("#m-badges").click(); return { n: document.querySelectorAll(".badge").length, on: document.querySelectorAll(".badge.on").length, jump: !!S.badges.jump1, wash: !!S.badges.wash, toll: !!S.badges.toll, plate: !!S.badges.plate }; });
+  ok("N13 22 badges, earned ones lit", r.n === 22 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
+  await p.screenshot({ path: `${SHOTS}/11-badges.png` });
+  // 14. Village and Sunrise Hill: drive the road with a simple autopilot
+  r = await E(() => { document.querySelector("#b-back").click(); document.querySelector("#m-free").click(); const W = G.world, v0 = S.stats.village, h0 = S.stats.hilltop; S.fuel = 100; G.setPos(-180, -3.5, -Math.PI / 2); keys("up"); let i = 0, maxY = 0;
+    const path = W.vp.concat(W.hp); for (let k = 0; k < 3600; k++) { const c = G.car; let best = 1e9, bi = i; for (let j = Math.max(0, i - 5); j < Math.min(path.length, i + 30); j++) { const d = Math.hypot(path[j].x - c.x, path[j].z - c.z); if (d < best) { best = d; bi = j; } } i = bi; const t = path[Math.min(path.length - 1, i + 5)]; c.h = Math.atan2(t.x - c.x, t.z - c.z); c.s = Math.min(c.s, 14); G.T += 0.05; G.step(0.05); maxY = Math.max(maxY, c.y); if (i >= path.length - 3) break; }
+    keys(); G.setPos(__dd.HILL.x, __dd.HILL.z + 8, 0); sim(0.2); return { village: S.stats.village - v0, maxY: Math.round(maxY), hill: S.stats.hilltop - h0, i, n: path.length }; });
+  ok("N14a village visit", r.village >= 1, r); ok("N14b car climbs Sunrise Hill road", r.maxY >= 20 && r.i >= r.n - 10, r); ok("N14c hill top bonus", r.hill >= 1, r);
+  await E(() => { G.setPos(__dd.HILL.x + 14, __dd.HILL.z - 4, -Math.PI / 2); G.camMode = 1; sim(0.3); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/12-hilltop.png` });
+  await E(() => { G.camMode = 0; const q = G.world.vp[60], q2 = G.world.vp[64]; G.setPos(q.x, q.z, Math.atan2(q2.x - q.x, q2.z - q.z)); sim(0.3); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/13-village.png` });
+  await E(() => { G.world.gates.forEach((g) => (g.open = 0)); G.setPos(5.5, 425, 0); sim(0.3); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/14-toll.png` });
+  await E(() => { G.setPos(-168, -63.5, Math.PI / 2); sim(0.3); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/15-wash.png` });
+  r = await E(() => { G.setPos(-3.5, -150, 0); G.car.s = 0; S.fuel = 100; S.damage = 0; G.car.broken = false; keys("up"); sim(3); keys(); return G.car.kmh; }); ok("N15 city driving still works after the new features", r > 40, r);
+  await E(() => yesTraffic());
+
   // Y. Save survives reload
   const saved = await E(() => { __dd.save(); return S.points; });
   await p.reload(); await p.waitForFunction(() => window.__dd, null, { timeout: 90000 }); await p.evaluate(HELPERS);
-  r = await E(() => ({ pts: S.points, car: S.car, lic: S.licence })); ok("Y1 save persists", r.pts === saved && r.car === "gt" && r.lic, r);
+  r = await E(() => ({ pts: S.points, car: S.car, lic: S.licence, plate: S.plate.hatch, badges: Object.keys(S.badges).length })); ok("Y1 save persists", r.pts === saved && r.lic && r.plate === "KEERTI 1" && r.badges >= 5, r);
 
   r = await E(() => G.lastErr || ""); ok("Z1 no loop errors", !r, r.slice(0, 300));
   ok("Z2 no page errors", errs.length === 0, errs.slice(0, 5));

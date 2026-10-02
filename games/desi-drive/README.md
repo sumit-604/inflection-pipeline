@@ -29,6 +29,19 @@ from the jsdelivr CDN.
   with headlights, rain with less grip, 4 camera views, rotating mini map,
   engine and crash sounds, touch buttons on phones.
 - **Levels:** points also give XP. Level = floor(sqrt(XP / 120)) + 1.
+- **Rishpur village and Sunrise Hill:** a winding village road west of the
+  city with huts, fields and haystacks, then a spiral road up a hill with a
+  temple, a flag and snowy mountains. Hills slow the car going up.
+- **Stunt ramps:** 2 in the park and 1 big one in the village. Real jumps,
+  points for air time.
+- **Monsoon puddles:** in rain, puddles splash and slide the car.
+- **Toll plaza:** on the highway. Stop at the barrier to pay 20 points.
+  Races use the FASTag lane.
+- **Car wash:** rain and grass make the car dirty; the wash makes it shine.
+- **Petrol pump game:** stop the meter between 98% and 100%.
+- **Daily gift:** grows with the day streak, up to 600 points on day 7.
+- **Number plate and stickers:** your own plate text, 10 stickers.
+- **Badges:** 22 badges, +50 points each.
 - **About us:** Rishabh's photo, the series, and the game story.
 
 ## Controls
@@ -56,3 +69,7 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   mission start, a broken car or empty tank crawls at 18 km/h, traffic
   clears at mode start, safer touch buttons and keys. New regression
   checks run 8 modes in a row twice with traffic and real keys.
+- v3: ideas 6 to 14: monsoon puddles, toll plaza, petrol pump game,
+  daily gift, number plates and stickers, car wash, stunt ramps,
+  22 badges, Rishpur village and Sunrise Hill. Grass no longer shows
+  through roads on some screens. 102 regression checks.

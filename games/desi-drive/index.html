@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Desi Drive · RishSchoolDays</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b1324; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #fff; user-select: none; -webkit-user-select: none; touch-action: none; }
+  #view { position: fixed; inset: 0; }
+  .hud { position: fixed; z-index: 10; pointer-events: none; }
+  .chip { background: rgba(10, 16, 30, .72); border-radius: 12px; padding: 6px 10px; font-weight: 700; font-size: 14px; }
+  #top-left { left: 10px; top: 10px; display: flex; flex-direction: column; gap: 6px; }
+  #top-right { right: 10px; top: 10px; display: flex; gap: 6px; pointer-events: auto; }
+  .ib { width: 44px; height: 44px; border: none; border-radius: 12px; background: rgba(255,255,255,.92); font-size: 20px; cursor: pointer; }
+  #dash { right: 12px; bottom: 20px; width: 210px; background: rgba(10,16,30,.78); border-radius: 18px; padding: 10px 14px; }
+  #spd { font-size: 46px; font-weight: 900; line-height: 1; }
+  #spd small { font-size: 14px; font-weight: 600; opacity: .7; }
+  .bar { height: 8px; background: rgba(255,255,255,.18); border-radius: 4px; overflow: hidden; margin: 3px 0 5px; }
+  .bar > div { height: 100%; width: 0; border-radius: 4px; }
+  .lbl { font-size: 11px; opacity: .8; display: flex; justify-content: space-between; }
+  #map { left: 10px; bottom: 10px; width: 180px; height: 180px; border-radius: 50%; border: 3px solid rgba(255,255,255,.85); background: #2d5a27; box-shadow: 0 4px 14px rgba(0,0,0,.4); }
+  #mission-bar { left: 50%; top: 10px; transform: translateX(-50%); text-align: center; max-width: min(560px, 70vw); font-size: 15px; display: none; }
+  #center-msg { left: 50%; top: 32%; transform: translate(-50%, -50%); font-size: 64px; font-weight: 900; text-shadow: 0 4px 18px rgba(0,0,0,.6); display: none; }
+  #pops { left: 50%; top: 22%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .pop { font-weight: 800; font-size: 20px; text-shadow: 0 2px 8px rgba(0,0,0,.7); animation: rise 1.6s ease-out forwards; }
+  @keyframes rise { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-40px); } }
+  #toast { left: 50%; bottom: 90px; transform: translateX(-50%); max-width: min(560px, 90vw); text-align: center; font-size: 15px; display: none; }
+  #race-board { right: 12px; top: 64px; font-size: 13px; display: none; min-width: 150px; }
+  .screen { position: fixed; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; background: rgba(6, 10, 22, .55); }
+  .screen[hidden] { display: none; }
+  .card { background: #fffdf7; color: #222; border-radius: 20px; padding: 18px 20px; width: min(560px, 94vw); max-height: 92vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,.4); }
+  .card h2 { margin: 0 0 8px; font-size: 22px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+  .btn { border: none; border-radius: 12px; padding: 11px 14px; font-weight: 700; font-size: 15px; cursor: pointer; background: #ffb703; color: #222; }
+  .btn.alt { background: #e9ecef; }
+  .btn.go { background: #2a9d8f; color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .big { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .big .btn { padding: 16px 10px; font-size: 17px; }
+  .title { font-size: 44px; font-weight: 900; letter-spacing: 1px; margin: 0; background: linear-gradient(90deg,#ff9933,#ffd166,#138808); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { color: #555; margin: 2px 0 12px; }
+  .carrow { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 12px; background: #f1f3f5; margin: 6px 0; }
+  .carrow.sel { outline: 3px solid #2a9d8f; }
+  .lvl { display: inline-flex; gap: 3px; } .lvl i { width: 14px; height: 8px; border-radius: 2px; background: #ddd; display: inline-block; } .lvl i.on { background: #2a9d8f; }
+  .sw { width: 30px; height: 30px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px #aaa; cursor: pointer; }
+  #touch { position: fixed; inset: auto 0 0 0; height: 0; z-index: 12; display: none; }
+  .tb { position: fixed; bottom: 18px; width: 70px; height: 70px; border-radius: 50%; border: none; background: rgba(255,255,255,.28); color: #fff; font-size: 26px; font-weight: 900; }
+  small.mut { color: #777; }
+  table.res { width: 100%; border-collapse: collapse; } table.res td { padding: 5px; border-bottom: 1px solid #eee; }
+  /* Phones and tablets: the touch buttons own the bottom, so the dash and map move up. */
+  body.touch #dash { top: 62px; bottom: auto; right: 8px; width: 150px; padding: 6px 10px; }
+  body.touch #spd { font-size: 30px; }
+  body.touch #map { top: 86px; bottom: auto; left: 8px; width: 110px; height: 110px; }
+  body.touch #mission-bar { top: auto; bottom: 170px; max-width: 92vw; font-size: 13px; }
+  body.touch #toast { bottom: 228px; font-size: 13px; }
+  body.touch #race-board { top: 236px; right: 8px; font-size: 12px; min-width: 0; }
+  @media (orientation: landscape) { body.touch #race-board { top: 86px; right: auto; left: 128px; } }
+  @media (max-width: 480px) { body.touch .ib { width: 36px; height: 36px; font-size: 17px; } body.touch #dash { top: 54px; } }
+  @media (max-width: 640px) { #map { width: 120px; height: 120px; } #dash { width: 160px; } #spd { font-size: 34px; } .title { font-size: 34px; } }
+</style>
+</head>
+<body>
+<canvas id="view"></canvas>
+
+<div class="hud" id="top-left">
+  <div class="chip">⭐ <span id="pts">0</span> · 🏆 <span id="lvl">Lv 1</span></div>
+  <div class="chip" id="car-chip">🚗 —</div>
+</div>
+<div class="hud" id="top-right">
+  <button class="ib" id="b-cam" title="Camera (C)">🎥</button>
+  <button class="ib" id="b-light" title="Night (L)">🌙</button>
+  <button class="ib" id="b-rain" title="Rain (R)">🌧️</button>
+  <button class="ib" id="b-horn" title="Horn (H)">📯</button>
+  <button class="ib" id="b-menu" title="Menu (Esc)">☰</button>
+</div>
+<div class="hud chip" id="mission-bar"></div>
+<div class="hud chip" id="race-board"></div>
+<div class="hud" id="center-msg"></div>
+<div class="hud" id="pops"></div>
+<div class="hud chip" id="toast"></div>
+<div class="hud" id="ver" style="right:8px;bottom:2px;font-size:11px;color:#fff;opacity:.8;text-shadow:0 1px 2px #000">Desi Drive v1</div>
+<canvas class="hud" id="map" width="360" height="360"></canvas>
+<div class="hud" id="dash">
+  <div id="spd">0 <small>km/h</small></div>
+  <div class="lbl"><span>⚙️ <b id="gear">N</b></span><span id="rpm-t">RPM</span></div><div class="bar"><div id="rpm" style="background:linear-gradient(90deg,#2a9d8f,#ffb703,#e63946)"></div></div>
+  <div class="lbl"><span>⛽ Fuel</span><span id="fuel-t">100%</span></div><div class="bar"><div id="fuel" style="background:#ffb703"></div></div>
+  <div class="lbl"><span>🛠️ Damage</span><span id="dmg-t">0%</span></div><div class="bar"><div id="dmg" style="background:#e63946"></div></div>
+  <div class="lbl"><span>🔥 Nitro (N)</span><span id="nit-t"></span></div><div class="bar"><div id="nitro" style="background:#3a86ff"></div></div>
+</div>
+<div id="touch">
+  <button class="tb" id="t-left" style="left:16px">◀</button>
+  <button class="tb" id="t-right" style="left:96px">▶</button>
+  <button class="tb" id="t-brake" style="right:96px">⏬</button>
+  <button class="tb" id="t-gas" style="right:16px;background:rgba(42,157,143,.6)">⏫</button>
+  <button class="tb" id="t-hand" style="right:96px;bottom:96px;width:60px;height:60px;font-size:18px">🅿️</button>
+  <button class="tb" id="t-nitro" style="right:16px;bottom:96px;width:60px;height:60px;font-size:20px">🔥</button>
+</div>
+
+<div class="screen" id="scr"><div class="card" id="card"></div></div>
+
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
+<script type="module">
+import * as THREE from 'three';
+
+// ================= Desi Drive · RishSchoolDays series · Game 2 · Just live it! =================
+const VERSION = "v1";
+const ABOUT_PHOTO = "data:image/jpeg;base64,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";
+const $ = (s) => document.querySelector(s);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const lerp = (a, b, t) => a + (b - a) * t;
+const wrapA = (a) => { while (a > Math.PI) a -= Math.PI * 2; while (a < -Math.PI) a += Math.PI * 2; return a; };
+function rng(seed) { let s = seed >>> 0; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = Math.imul(s ^ (s >>> 15), 1 | s); t ^= t + Math.imul(t ^ (t >>> 7), 61 | t); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const fmtT = (t) => `${Math.floor(t / 60)}:${(t % 60).toFixed(1).padStart(4, "0")}`;
+
+// ---------- Save ----------
+const SAVE_KEY = "desi-drive.v1";
+const DEF = { name: "", points: 300, xp: 0, owned: ["hatch"], car: "hatch", up: {}, paint: {}, fuel: 100, damage: 0, nitro: 100, best: {}, ghost: null, licence: false, stats: { races: 0, wins: 0, km: 0, missions: 0, drift: 0 }, night: false, rain: false, cam: 0 };
+let S; try { S = Object.assign({}, DEF, JSON.parse(localStorage.getItem(SAVE_KEY) || "{}")); S.stats = Object.assign({}, DEF.stats, S.stats || {}); } catch (e) { S = JSON.parse(JSON.stringify(DEF)); }
+const save = () => { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) { /* storage optional */ } };
+
+// ---------- Cars and parts ----------
+const CARS = [
+  { id: "hatch", name: "Chotu Hatch", type: "hatch", top: 150, acc: 8.5, handle: 1.0, brake: 14, price: 0, color: 0xd62828, fuelUse: 1 },
+  { id: "auto", name: "Tuk-Tuk Auto", type: "auto", top: 72, acc: 6, handle: 1.25, brake: 10, price: 500, color: 0x2a9d8f, fuelUse: 0.6 },
+  { id: "sedan", name: "Rani Sedan", type: "sedan", top: 175, acc: 10, handle: 0.95, brake: 16, price: 2500, color: 0x1d3557, fuelUse: 1.1 },
+  { id: "suv", name: "Sher SUV", type: "suv", top: 160, acc: 9.5, handle: 0.85, brake: 15, price: 4000, color: 0x3a5a40, fuelUse: 1.3, offroad: true },
+  { id: "truck", name: "Bharat Truck", type: "truck", top: 112, acc: 5, handle: 0.6, brake: 10, price: 3000, color: 0xf4a261, fuelUse: 1.6 },
+  { id: "bus", name: "City Bus", type: "bus", top: 100, acc: 4.5, handle: 0.55, brake: 9, price: 3500, color: 0xffb703, fuelUse: 1.7 },
+  { id: "gt", name: "Toofan GT", type: "sports", top: 250, acc: 15, handle: 1.15, brake: 20, price: 12000, color: 0xffd60a, fuelUse: 1.5 },
+];
+const PARTS = [["engine", "🔧", "Engine", "Faster top speed and pick-up"], ["tyres", "🛞", "Tyres", "Better grip and turning"], ["brakes", "🛑", "Brakes", "Stops quicker"], ["nitro", "🔥", "Nitro", "Bigger nitro tank"], ["body", "🛡️", "Body", "Less crash damage"]];
+const PAINTS = [0xd62828, 0xffd60a, 0x2a9d8f, 0x1d3557, 0xf1f1f1, 0x111111, 0xff4f8b, 0xf77f00, 0x6a4c93, 0x8ecae6];
+const carDef = (id) => CARS.find((c) => c.id === id) || CARS[0];
+const lvlOf = (id, p) => ((S.up[id] || {})[p] || 0);
+const partCost = (car, p) => Math.round((120 + car.price * 0.05) * (lvlOf(car.id, p) + 1));
+function eff(car) { const L = (p) => lvlOf(car.id, p); return { top: (car.top / 3.6) * (1 + 0.08 * L("engine")), acc: car.acc * (1 + 0.1 * L("engine")), handle: car.handle * (1 + 0.08 * L("tyres")), grip: 1 + 0.12 * L("tyres"), brake: car.brake * (1 + 0.15 * L("brakes")), nitroMax: 100 * (1 + 0.25 * L("nitro")), armor: Math.max(0.25, 1 - 0.15 * L("body")) }; }
+const level = () => Math.floor(Math.sqrt((S.xp || 0) / 120)) + 1;
+
+// ---------- Sound (Web Audio, made in code) ----------
+const SND = { ctx: null, eng: null, engGain: null, sq: null, sqGain: null,
+  init() { if (this.ctx) return; try { const A = this.ctx = new (window.AudioContext || window.webkitAudioContext)(); const o = A.createOscillator(), f = A.createBiquadFilter(), g = A.createGain(); o.type = "sawtooth"; o.frequency.value = 60; f.type = "lowpass"; f.frequency.value = 900; g.gain.value = 0; o.connect(f); f.connect(g); g.connect(A.destination); o.start(); this.eng = o; this.engGain = g;
+      const buf = A.createBuffer(1, A.sampleRate, A.sampleRate), d = buf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; const n = A.createBufferSource(); n.buffer = buf; n.loop = true; const bp = A.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 2500; const g2 = A.createGain(); g2.gain.value = 0; n.connect(bp); bp.connect(g2); g2.connect(A.destination); n.start(); this.sqGain = g2; this.noise = buf; } catch (e) { this.ctx = null; } },
+  engine(rpm, on) { if (!this.ctx) return; this.eng.frequency.setTargetAtTime(55 + rpm * 140, this.ctx.currentTime, 0.05); this.engGain.gain.setTargetAtTime(on ? 0.045 : 0, this.ctx.currentTime, 0.1); },
+  screech(v) { if (this.ctx) this.sqGain.gain.setTargetAtTime(v, this.ctx.currentTime, 0.05); },
+  beep(f, d = 0.3, type = "square", v = 0.06) { if (!this.ctx) return; const A = this.ctx, o = A.createOscillator(), g = A.createGain(); o.type = type; o.frequency.value = f; g.gain.setValueAtTime(v, A.currentTime); g.gain.exponentialRampToValueAtTime(0.0001, A.currentTime + d); o.connect(g); g.connect(A.destination); o.start(); o.stop(A.currentTime + d + 0.05); },
+  horn() { this.beep(392, 0.45, "square", 0.05); this.beep(494, 0.45, "square", 0.05); },
+  crash(v = 0.3) { if (!this.ctx) return; const A = this.ctx, n = A.createBufferSource(), g = A.createGain(), f = A.createBiquadFilter(); n.buffer = this.noise; f.type = "lowpass"; f.frequency.value = 700; g.gain.setValueAtTime(v, A.currentTime); g.gain.exponentialRampToValueAtTime(0.0001, A.currentTime + 0.5); n.connect(f); f.connect(g); g.connect(A.destination); n.start(); n.stop(A.currentTime + 0.6); },
+  coin() { this.beep(880, 0.12, "triangle", 0.08); setTimeout(() => this.beep(1320, 0.15, "triangle", 0.08), 90); },
+};
+
+// ---------- 3D car models ----------
+const M = (c, o = {}) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: 0.6, metalness: 0.15 }, o));
+const GLASS = new THREE.MeshStandardMaterial({ color: 0x9fd3ea, roughness: 0.1, metalness: 0.5, transparent: true, opacity: 0.75 });
+const TYRE = new THREE.MeshStandardMaterial({ color: 0x151515, roughness: 0.9 });
+const RIM = new THREE.MeshStandardMaterial({ color: 0xcfd8dc, metalness: 0.8, roughness: 0.3 });
+function box(g, w, h, d, mat, x, y, z) { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat); m.position.set(x, y, z); m.castShadow = true; g.add(m); return m; }
+function wheel(g, x, y, z, r = 0.36, w = 0.26) { const p = new THREE.Group(); const t = new THREE.Mesh(new THREE.CylinderGeometry(r, r, w, 16), TYRE); t.rotation.z = Math.PI / 2; p.add(t); const rim = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.55, r * 0.55, w + 0.02, 10), RIM); rim.rotation.z = Math.PI / 2; p.add(rim); p.position.set(x, y, z); g.add(p); return p; }
+function makeCar(type, color) {
+  const g = new THREE.Group(), body = M(color, { metalness: 0.35, roughness: 0.35 }), dark = M(0x222222), wheels = [], front = [];
+  const D = { hatch: [1.7, 3.8, 0.75, 0.62], sedan: [1.8, 4.5, 0.7, 0.62], sports: [1.95, 4.4, 0.55, 0.5], suv: [1.95, 4.6, 1.0, 0.8], truck: [2.4, 7.2, 1.2, 0.9], bus: [2.5, 10.5, 2.4, 0.9], auto: [1.4, 2.9, 0.7, 0.55] }[type] || [1.7, 3.8, 0.75, 0.62];
+  const [W, L, H, base] = D, wy = 0.36;
+  if (type === "auto") {
+    box(g, W, 0.55, L * 0.75, body, 0, base, -0.2); box(g, W, 1.1, 1.1, M(0x111111), 0, base + 0.8, -0.6); const roof = box(g, W + 0.1, 0.12, L * 0.85, M(0x111111), 0, base + 1.45, -0.15); roof.castShadow = true;
+    box(g, W * 0.6, 0.9, 0.12, GLASS, 0, base + 0.75, 0.9); box(g, 0.9, 0.5, 0.6, body, 0, base + 0.2, 1.05);
+    front.push(wheel(g, 0, wy, 1.1)); wheels.push(front[0], wheel(g, -W / 2, wy, -0.9), wheel(g, W / 2, wy, -0.9));
+  } else if (type === "bus") {
+    box(g, W, H, L, body, 0, base + H / 2, 0); for (let i = 0; i < 6; i++) for (const s of [-1, 1]) box(g, 0.05, 0.8, 1.2, GLASS, s * W / 2, base + H * 0.65, -L / 2 + 1.4 + i * 1.6);
+    box(g, W - 0.2, 1.0, 0.06, GLASS, 0, base + H * 0.65, L / 2); box(g, W + 0.02, 0.18, L, M(0xffffff), 0, base + 0.5, 0);
+    for (const z of [L / 2 - 1.8, -L / 2 + 2]) for (const s of [-1, 1]) { const w = wheel(g, s * (W / 2 - 0.15), 0.5, z, 0.5, 0.3); wheels.push(w); if (z > 0) front.push(w); }
+  } else if (type === "truck") {
+    box(g, W, 1.7, 2.2, body, 0, base + 0.85, L / 2 - 1.1); box(g, W - 0.2, 0.7, 0.06, GLASS, 0, base + 1.25, L / 2 + 0.01); box(g, W, 2.2, L - 2.4, M(0x6c757d), 0, base + 1.2, -1.2);
+    box(g, W + 0.05, 0.3, L, dark, 0, base - 0.05, 0);
+    for (const z of [L / 2 - 1.2, -L / 2 + 1.4, -L / 2 + 2.6]) for (const s of [-1, 1]) { const w = wheel(g, s * (W / 2 - 0.1), 0.5, z, 0.48, 0.32); wheels.push(w); if (z > 0) front.push(w); }
+  } else {
+    box(g, W, H, L, body, 0, base + H / 2, 0);
+    const cabL = type === "sports" ? L * 0.38 : type === "suv" ? L * 0.6 : L * 0.5, cabH = type === "sports" ? 0.42 : type === "suv" ? 0.75 : 0.6, cabZ = type === "hatch" ? -0.2 : type === "suv" ? -0.25 : -0.15;
+    box(g, W * 0.92, cabH, cabL, body, 0, base + H + cabH / 2, cabZ);
+    box(g, W * 0.86, cabH * 0.8, 0.06, GLASS, 0, base + H + cabH / 2, cabZ + cabL / 2 + 0.01).rotation.x = -0.35;
+    box(g, W * 0.86, cabH * 0.8, 0.06, GLASS, 0, base + H + cabH / 2, cabZ - cabL / 2 - 0.01);
+    for (const s of [-1, 1]) box(g, 0.05, cabH * 0.75, cabL * 0.8, GLASS, s * W * 0.465, base + H + cabH / 2, cabZ);
+    box(g, W + 0.02, 0.16, 0.3, dark, 0, base + 0.15, L / 2 - 0.1); box(g, W + 0.02, 0.16, 0.3, dark, 0, base + 0.15, -L / 2 + 0.1);
+    if (type === "sports") box(g, W * 0.9, 0.08, 0.35, dark, 0, base + H + 0.35, -L / 2 + 0.3);
+    if (type === "suv") { box(g, W * 0.9, 0.08, cabL, dark, 0, base + H + cabH + 0.08, cabZ); const sp = new THREE.Mesh(new THREE.CylinderGeometry(0.38, 0.38, 0.25, 14), TYRE); sp.rotation.x = Math.PI / 2; sp.position.set(0, base + H * 0.7, -L / 2 - 0.15); g.add(sp); }
+    const ry = type === "suv" ? 0.45 : type === "sports" ? 0.34 : 0.36;
+    for (const z of [L / 2 - 0.85, -L / 2 + 0.85]) for (const s of [-1, 1]) { const w = wheel(g, s * (W / 2 - 0.08), ry, z, ry, type === "sports" ? 0.32 : 0.26); wheels.push(w); if (z > 0) front.push(w); }
+  }
+  const headM = new THREE.MeshStandardMaterial({ color: 0xfff6d5, emissive: 0xfff2c0, emissiveIntensity: 0.3 }), tailM = new THREE.MeshStandardMaterial({ color: 0x8b0000, emissive: 0xff0000, emissiveIntensity: 0.2 }), indM = new THREE.MeshStandardMaterial({ color: 0xffa500, emissive: 0xff8c00, emissiveIntensity: 0 });
+  const hy = type === "bus" ? 0.9 : type === "truck" ? 1.0 : base + 0.35, fz = type === "truck" ? L / 2 + 0.02 : L / 2 + 0.01;
+  for (const s of [-1, 1]) { box(g, 0.32, 0.16, 0.06, headM, s * (W / 2 - 0.3), hy, fz); box(g, 0.3, 0.14, 0.06, tailM, s * (W / 2 - 0.3), hy, -L / 2 - 0.01); box(g, 0.1, 0.1, 0.07, indM, s * (W / 2 - 0.06), hy + 0.12, fz); }
+  g.userData = { wheels, front, body, headM, tailM, indM, L, W, r: Math.max(W * 0.62, L * 0.36) };
+  g.traverse((o) => { if (o.isMesh) o.castShadow = true; });
+  return g;
+}
+
+// ---------- The world: an Indian city, a highway and a race circuit ----------
+const BLOCK = 60, NR = 3, CITY = NR * BLOCK, RW = 14;
+const SPECIAL = { pump: { cx: 90, cz: 90 }, garage: { cx: -90, cz: -90 }, parking: { cx: 90, cz: -90 }, park: { cx: -30, cz: 30 }, temple: { cx: -90, cz: 90 } };
+const TRACK_PTS = [[330, 0], [360, -80], [450, -115], [560, -95], [625, -20], [605, 60], [525, 105], [455, 60], [395, 105], [340, 70]];
+const HW = { x: 0, z0: CITY + 7, z1: 820, w: 9 };
+class World {
+  constructor(scene) {
+    this.scene = scene; this.boxes = []; this.lights = []; this.windowMats = []; this.lampMats = []; this.r = rng(2026);
+    this._ground(); this._city(); this._highway(); this._track(); this._specials(); this._trees(); this._stars();
+  }
+  _ground() {
+    const g = new THREE.Mesh(new THREE.PlaneGeometry(2400, 2400), new THREE.MeshStandardMaterial({ color: 0x6a9c4a, roughness: 1 })); g.rotation.x = -Math.PI / 2; g.position.set(250, -0.02, 250); g.receiveShadow = true; this.scene.add(g);
+  }
+  _roadTex() { const c = document.createElement("canvas"); c.width = 64; c.height = 64; const x = c.getContext("2d"); x.fillStyle = "#3b3e42"; x.fillRect(0, 0, 64, 64); for (let i = 0; i < 300; i++) { x.fillStyle = `rgba(${Math.random() < 0.5 ? 255 : 0},${Math.random() < 0.5 ? 255 : 0},255,0.05)`; x.fillRect(Math.random() * 64, Math.random() * 64, 1, 1); } const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; return t; }
+  _city() {
+    const S0 = this.scene, roadMat = new THREE.MeshStandardMaterial({ map: this._roadTex(), roughness: 0.95 }), len = CITY * 2 + RW;
+    for (let k = -NR; k <= NR; k++) for (const ax of ["x", "z"]) { const p = new THREE.Mesh(new THREE.PlaneGeometry(ax === "x" ? len : RW, ax === "x" ? RW : len), roadMat); p.rotation.x = -Math.PI / 2; p.position.set(ax === "x" ? 0 : k * BLOCK, 0.01, ax === "x" ? k * BLOCK : 0); p.receiveShadow = true; S0.add(p); }
+    // White dashes in the middle, yellow edges.
+    const dash = new THREE.InstancedMesh(new THREE.PlaneGeometry(0.25, 3), new THREE.MeshBasicMaterial({ color: 0xffffff }), 800), dm = new THREE.Matrix4(), q = new THREE.Quaternion(), sc = new THREE.Vector3(1, 1, 1); let n = 0;
+    for (let k = -NR; k <= NR; k++) for (let t = -CITY; t <= CITY; t += 6) { if (Math.abs(((t % BLOCK) + BLOCK) % BLOCK) < 8 || Math.abs(((t % BLOCK) + BLOCK) % BLOCK) > BLOCK - 8) continue; for (const ax of ["x", "z"]) { if (n >= 800) break; q.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, ax === "x" ? Math.PI / 2 : 0)); dm.compose(new THREE.Vector3(ax === "x" ? t : k * BLOCK, 0.03, ax === "x" ? k * BLOCK : t), q, sc); dash.setMatrixAt(n++, dm); } }
+    dash.count = n; S0.add(dash);
+    // Blocks: pavement, buildings with windows.
+    const litTex = (() => { const c = document.createElement("canvas"); c.width = 64; c.height = 128; return c; })(), winTex = (() => { const c = document.createElement("canvas"); c.width = 64; c.height = 128; const x = c.getContext("2d"), y = litTex.getContext("2d"); x.fillStyle = "#fff"; x.fillRect(0, 0, 64, 128); y.fillStyle = "#000"; y.fillRect(0, 0, 64, 128); for (let r = 0; r < 8; r++) for (let q2 = 0; q2 < 4; q2++) { const lit = Math.random() < 0.45; x.fillStyle = lit ? "#ffe9a8" : "#5d7183"; x.fillRect(6 + q2 * 15, 6 + r * 15, 9, 9); if (lit) { y.fillStyle = "#fff"; y.fillRect(6 + q2 * 15, 6 + r * 15, 9, 9); } } const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; return t; })();
+    const litT = new THREE.CanvasTexture(litTex); litT.wrapS = litT.wrapT = THREE.RepeatWrapping; litT.colorSpace = THREE.SRGBColorSpace;
+    const pave = M(0xb8b2a7, { roughness: 1 }), cols = [0xe9c46a, 0xf4a261, 0xe76f51, 0x8ecae6, 0xd8e2dc, 0xffcad4, 0xb5e48c, 0xcdb4db, 0xf1faee, 0xadb5bd];
+    for (let i = -NR; i < NR; i++) for (let j = -NR; j < NR; j++) {
+      const cx = i * BLOCK + BLOCK / 2, cz = j * BLOCK + BLOCK / 2, sp = Object.values(SPECIAL).find((s) => s.cx === cx && s.cz === cz), inner = BLOCK - RW;
+      const pv = new THREE.Mesh(new THREE.BoxGeometry(inner, 0.18, inner), sp ? M(sp === SPECIAL.park ? 0x7cb342 : 0x9e9e9e, { roughness: 1 }) : pave); pv.position.set(cx, 0.09, cz); pv.receiveShadow = true; S0.add(pv);
+      if (sp) continue;
+      for (const [ox, oz] of [[-11, -11], [11, -11], [-11, 11], [11, 11]]) {
+        if (this.r() < 0.12) continue; const h = 8 + Math.floor(this.r() * 38), w = 16 + this.r() * 3, d = 16 + this.r() * 3, col = cols[Math.floor(this.r() * cols.length)];
+        const tex = winTex.clone(); tex.needsUpdate = true; tex.repeat.set(Math.max(1, Math.round(w / 6)), Math.max(1, Math.round(h / 8))); const lt = litT.clone(); lt.needsUpdate = true; lt.repeat.copy(tex.repeat);
+        const mat = new THREE.MeshStandardMaterial({ color: col, map: tex, emissive: 0xffd27a, emissiveMap: lt, emissiveIntensity: 0, roughness: 0.85 }); this.windowMats.push(mat);
+        const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat); b.position.set(cx + ox, h / 2 + 0.18, cz + oz); b.castShadow = b.receiveShadow = true; S0.add(b);
+        const roof = new THREE.Mesh(new THREE.BoxGeometry(w + 0.6, 0.6, d + 0.6), M(0x6c757d)); roof.position.set(cx + ox, h + 0.48, cz + oz); S0.add(roof);
+        this.boxes.push({ x0: cx + ox - w / 2, x1: cx + ox + w / 2, z0: cz + oz - d / 2, z1: cz + oz + d / 2 });
+      }
+    }
+    // Street lamps along the roads.
+    const poleG = new THREE.CylinderGeometry(0.1, 0.12, 6, 6), lampG = new THREE.SphereGeometry(0.35, 8, 6), poleM = M(0x555555);
+    for (let k = -NR; k <= NR; k++) for (let t = -CITY + 30; t < CITY; t += 60) for (const ax of ["x", "z"]) { const x = ax === "x" ? t : k * BLOCK + RW / 2 + 0.6, z = ax === "x" ? k * BLOCK + RW / 2 + 0.6 : t; const p = new THREE.Mesh(poleG, poleM); p.position.set(x, 3, z); this.scene.add(p); const lm = new THREE.MeshStandardMaterial({ color: 0xfff3b0, emissive: 0xfff3b0, emissiveIntensity: 0.1 }); const l = new THREE.Mesh(lampG, lm); l.position.set(x, 6.1, z); this.scene.add(l); this.lampMats.push(lm); }
+    // Traffic lights at the 9 middle crossings.
+    this.signals = [];
+    for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) {
+      const cx = i * BLOCK, cz = j * BLOCK, sig = { x: cx, z: cz, bulbs: {} };
+      for (const ax of ["x", "z"]) { const px = cx + (ax === "x" ? -RW / 2 - 0.8 : RW / 2 + 0.8), pz = cz + (ax === "x" ? RW / 2 + 0.8 : -RW / 2 - 0.8); const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 4.6, 6), poleM); pole.position.set(px, 2.3, pz); this.scene.add(pole); const hb = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.4, 0.5), M(0x222222)); hb.position.set(px, 5, pz); this.scene.add(hb);
+        sig.bulbs[ax] = ["r", "y", "g"].map((c, n) => { const m = new THREE.MeshBasicMaterial({ color: 0x333333 }); const s = new THREE.Mesh(new THREE.SphereGeometry(0.16, 8, 6), m); s.position.set(px + (ax === "x" ? 0.27 : 0), 5.45 - n * 0.45, pz + (ax === "z" ? 0.27 : 0)); this.scene.add(s); return m; }); }
+      this.signals.push(sig);
+    }
+    // Speed cameras (60 km/h limit in the city).
+    this.cams = [{ x: 0, z: -120 }, { x: 120, z: 0 }].map((c) => { const p = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.5, 0.8), M(0x333333)); p.position.set(c.x + 8, 4.5, c.z); this.scene.add(p); const pole = new THREE.Mesh(poleG, poleM); pole.position.set(c.x + 8, 2, c.z); this.scene.add(pole); return c; });
+  }
+  _highway() {
+    const roadMat = new THREE.MeshStandardMaterial({ map: this._roadTex(), roughness: 0.95 }), len = HW.z1 - HW.z0;
+    const p = new THREE.Mesh(new THREE.PlaneGeometry(HW.w * 2, len), roadMat); p.rotation.x = -Math.PI / 2; p.position.set(0, 0.01, (HW.z0 + HW.z1) / 2); p.receiveShadow = true; this.scene.add(p);
+    const end = new THREE.Mesh(new THREE.CircleGeometry(24, 32), roadMat); end.rotation.x = -Math.PI / 2; end.position.set(0, 0.012, HW.z1); this.scene.add(end);
+    for (let z = HW.z0 + 4; z < HW.z1; z += 8) { const d = new THREE.Mesh(new THREE.PlaneGeometry(0.25, 3.5), new THREE.MeshBasicMaterial({ color: 0xffffff })); d.rotation.x = -Math.PI / 2; d.position.set(0, 0.03, z); this.scene.add(d); }
+    for (const s of [-1, 1]) { const e = new THREE.Mesh(new THREE.PlaneGeometry(0.3, len), new THREE.MeshBasicMaterial({ color: 0xffd166 })); e.rotation.x = -Math.PI / 2; e.position.set(s * (HW.w - 0.4), 0.03, (HW.z0 + HW.z1) / 2); this.scene.add(e); }
+    const sign = (z, text) => { const c = document.createElement("canvas"); c.width = 256; c.height = 96; const x = c.getContext("2d"); x.fillStyle = "#1b7a3a"; x.fillRect(0, 0, 256, 96); x.strokeStyle = "#fff"; x.lineWidth = 4; x.strokeRect(4, 4, 248, 88); x.fillStyle = "#fff"; x.font = "bold 30px sans-serif"; x.textAlign = "center"; x.fillText(text, 128, 60); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; const b = new THREE.Mesh(new THREE.PlaneGeometry(6, 2.2), new THREE.MeshBasicMaterial({ map: t })); b.position.set(HW.w + 3, 5, z); b.rotation.y = Math.PI; this.scene.add(b); const pl = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 4, 6), M(0x777777)); pl.position.set(HW.w + 3, 2, z + 0.05); this.scene.add(pl); };
+    sign(260, "Highway · 100 km/h"); sign(480, "Agra 200 km"); sign(700, "Turn back ahead");
+  }
+  _track() {
+    const pts = TRACK_PTS.map(([x, z]) => new THREE.Vector3(x, 0, z)); this.curve = new THREE.CatmullRomCurve3(pts, true, "catmullrom", 0.5);
+    const N = 480, S2 = this.curve.getSpacedPoints(N); S2.pop(); this.tp = S2; this.tN = S2.length; this.tLen = this.curve.getLength();
+    const pos = [], idx = [], half = 8; for (let i = 0; i < this.tN; i++) { const a = this.tp[i], b = this.tp[(i + 1) % this.tN], dx = b.x - a.x, dz = b.z - a.z, l = Math.hypot(dx, dz) || 1, nx = -dz / l, nz = dx / l; pos.push(a.x + nx * half, 0.02, a.z + nz * half, a.x - nx * half, 0.02, a.z - nz * half); }
+    for (let i = 0; i < this.tN; i++) { const j = (i + 1) % this.tN, a = i * 2, b = j * 2; idx.push(a, a + 1, b, a + 1, b + 1, b); }
+    const geo = new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); geo.setIndex(idx); geo.computeVertexNormals();
+    const tm = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: this._roadTex(), color: 0x9a9a9a, side: THREE.DoubleSide, roughness: 0.9 })); tm.receiveShadow = true; this.scene.add(tm);
+    // Red and white kerbs.
+    const kerb = new THREE.InstancedMesh(new THREE.BoxGeometry(1.2, 0.15, 2.4), new THREE.MeshStandardMaterial({ color: 0xffffff }), this.tN * 2), m4 = new THREE.Matrix4(), col = new THREE.Color();
+    for (let i = 0; i < this.tN; i++) { const a = this.tp[i], b = this.tp[(i + 1) % this.tN], ang = Math.atan2(b.x - a.x, b.z - a.z), dx = b.x - a.x, dz = b.z - a.z, l = Math.hypot(dx, dz) || 1, nx = -dz / l, nz = dx / l;
+      for (const s of [-1, 1]) { const k = i * 2 + (s > 0 ? 1 : 0); m4.compose(new THREE.Vector3(a.x + nx * (half + 0.6) * s, 0.08, a.z + nz * (half + 0.6) * s), new THREE.Quaternion().setFromEuler(new THREE.Euler(0, ang, 0)), new THREE.Vector3(1, 1, 1)); kerb.setMatrixAt(k, m4); kerb.setColorAt(k, col.set(i % 2 ? 0xd62828 : 0xffffff)); } }
+    this.scene.add(kerb);
+    // Start and finish line, a gantry, and grandstands.
+    const s0 = this.tp[0], s1 = this.tp[1], ang = Math.atan2(s1.x - s0.x, s1.z - s0.z); this.startAng = ang;
+    const fc = document.createElement("canvas"); fc.width = 64; fc.height = 16; const fx = fc.getContext("2d"); for (let i = 0; i < 16; i++) for (let j = 0; j < 4; j++) { fx.fillStyle = (i + j) % 2 ? "#000" : "#fff"; fx.fillRect(i * 4, j * 4, 4, 4); } const ft = new THREE.CanvasTexture(fc);
+    const fl = new THREE.Mesh(new THREE.PlaneGeometry(16, 2), new THREE.MeshBasicMaterial({ map: ft })); fl.rotation.set(-Math.PI / 2, 0, -ang); fl.position.set(s0.x, 0.04, s0.z); this.scene.add(fl);
+    const gan = new THREE.Group(); for (const s of [-1, 1]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.5, 7, 0.5), M(0xdddddd)); p.position.set(s * 9, 3.5, 0); gan.add(p); } const top = new THREE.Mesh(new THREE.BoxGeometry(19, 1.6, 0.6), M(0xd62828)); top.position.y = 7; gan.add(top); gan.position.set(s0.x, 0, s0.z); gan.rotation.y = ang + Math.PI / 2; this.scene.add(gan);
+    for (let i = 0; i < 5; i++) { const st = new THREE.Mesh(new THREE.BoxGeometry(14, 1 + i * 0.9, 3), M([0x264653, 0x2a9d8f, 0xe9c46a, 0xf4a261, 0xe76f51][i])); st.position.set(345 - 20 - i * 3, (1 + i * 0.9) / 2, 0); st.rotation.y = 0; this.scene.add(st); }
+    // Connector road from the city to the circuit.
+    const roadMat = new THREE.MeshStandardMaterial({ map: this._roadTex(), roughness: 0.95 }); const c = new THREE.Mesh(new THREE.PlaneGeometry(338 - CITY, RW), roadMat); c.rotation.x = -Math.PI / 2; c.position.set((CITY + 338) / 2, 0.01, 0); this.scene.add(c);
+    // Curvature for the computer drivers.
+    this.tCurv = []; for (let i = 0; i < this.tN; i++) { const a = this.tp[(i - 3 + this.tN) % this.tN], b = this.tp[i], c2 = this.tp[(i + 3) % this.tN]; const a1 = Math.atan2(b.x - a.x, b.z - a.z), a2 = Math.atan2(c2.x - b.x, c2.z - b.z); this.tCurv.push(Math.abs(wrapA(a2 - a1)) / (this.tLen / this.tN * 3)); }
+  }
+  _specials() {
+    const add = (o) => { this.scene.add(o); return o; };
+    // Petrol pump.
+    const P = SPECIAL.pump; const can = add(new THREE.Mesh(new THREE.BoxGeometry(18, 0.6, 10), M(0xf1f1f1))); can.position.set(P.cx, 6, P.cz); for (const [x, z] of [[-8, -4], [8, -4], [-8, 4], [8, 4]]) { const c = add(new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 6, 8), M(0xd62828))); c.position.set(P.cx + x, 3, P.cz + z); }
+    for (const x of [-4, 4]) { const d = add(new THREE.Mesh(new THREE.BoxGeometry(1, 1.8, 0.8), M(0xd62828))); d.position.set(P.cx + x, 0.9, P.cz); }
+    this._label("⛽ Petrol Pump", P.cx, 8, P.cz);
+    // Garage.
+    const G = SPECIAL.garage, gb = add(new THREE.Mesh(new THREE.BoxGeometry(30, 8, 12), M(0x457b9d))); gb.position.set(G.cx, 4, G.cz - 12); this.boxes.push({ x0: G.cx - 15, x1: G.cx + 15, z0: G.cz - 18, z1: G.cz - 6 });
+    const door = add(new THREE.Mesh(new THREE.BoxGeometry(10, 5, 0.2), M(0x222222))); door.position.set(G.cx, 2.5, G.cz - 5.9); this._label("🔧 Garage: repair and upgrade", G.cx, 10, G.cz - 6);
+    // Parking lot with 8 bays.
+    const Pk = SPECIAL.parking; this.bays = [];
+    for (let i = 0; i < 4; i++) for (const r of [-1, 1]) { const x = Pk.cx - 9 + i * 6, z = Pk.cz + r * 7; this.bays.push({ x, z, h: r > 0 ? Math.PI : 0 }); for (const s of [-1, 1]) { const l = add(new THREE.Mesh(new THREE.PlaneGeometry(0.2, 6), new THREE.MeshBasicMaterial({ color: 0xffffff }))); l.rotation.x = -Math.PI / 2; l.position.set(x + s * 1.6, 0.2, z); } }
+    this.bayMark = add(new THREE.Mesh(new THREE.PlaneGeometry(3, 5.6), new THREE.MeshBasicMaterial({ color: 0xffd166, transparent: true, opacity: 0.55 }))); this.bayMark.rotation.x = -Math.PI / 2; this.bayMark.visible = false;
+    this._label("🅿️ Parking", Pk.cx, 6, Pk.cz);
+    // A small temple.
+    const T = SPECIAL.temple, tb = add(new THREE.Mesh(new THREE.BoxGeometry(10, 6, 10), M(0xf1e3c6))); tb.position.set(T.cx, 3, T.cz); this.boxes.push({ x0: T.cx - 5, x1: T.cx + 5, z0: T.cz - 5, z1: T.cz + 5 });
+    for (let k = 0; k < 4; k++) { const s = add(new THREE.Mesh(new THREE.ConeGeometry(5 - k, 2.2, 4), M(0xe07a2e))); s.position.set(T.cx, 7 + k * 1.6, T.cz); s.rotation.y = Math.PI / 4; }
+  }
+  _label(text, x, y, z) { const c = document.createElement("canvas"); c.width = 512; c.height = 96; const g = c.getContext("2d"); g.fillStyle = "rgba(255,253,246,0.92)"; g.beginPath(); g.roundRect(4, 4, 504, 88, 24); g.fill(); g.fillStyle = "#222"; g.font = "bold 42px sans-serif"; g.textAlign = "center"; g.fillText(text, 256, 62); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, depthTest: true })); s.scale.set(14, 2.6, 1); s.position.set(x, y, z); this.scene.add(s); return s; }
+  _trees() {
+    const trunkG = new THREE.CylinderGeometry(0.25, 0.35, 3, 6), crownG = new THREE.IcosahedronGeometry(2.2, 0), tm = M(0x6d4c41), cm = M(0x2f7d32, { flatShading: true }); const n = 260;
+    const trunks = new THREE.InstancedMesh(trunkG, tm, n), crowns = new THREE.InstancedMesh(crownG, cm, n), m4 = new THREE.Matrix4(); let k = 0;
+    const put = (x, z, s = 1) => { if (k >= n) return; m4.makeScale(s, s, s).setPosition(x, 1.5 * s, z); trunks.setMatrixAt(k, m4); m4.makeScale(s, s * (0.9 + this.r() * 0.4), s).setPosition(x, 3.8 * s, z); crowns.setMatrixAt(k, m4); k++; };
+    for (let z = HW.z0 + 10; z < HW.z1; z += 22) for (const s of [-1, 1]) put(s * (HW.w + 6 + this.r() * 8), z, 0.9 + this.r() * 0.5);
+    for (let i = 0; i < 9; i++) put(SPECIAL.park.cx - 18 + (i % 3) * 18, SPECIAL.park.cz - 18 + Math.floor(i / 3) * 18, 1.2);
+    for (let i = 0; i < 70; i++) { const a = this.r() * Math.PI * 2, r = 30 + this.r() * 120; const x = 480 + Math.cos(a) * r * 1.4, z = Math.sin(a) * r; if (this.trackDist(x, z) > 16) put(x, z, 0.8 + this.r() * 0.6); }
+    trunks.count = crowns.count = k; trunks.castShadow = crowns.castShadow = true; this.scene.add(trunks, crowns);
+  }
+  _stars() {
+    this.stars = []; const g = new THREE.OctahedronGeometry(0.7), mt = new THREE.MeshStandardMaterial({ color: 0xffd60a, emissive: 0xffb703, emissiveIntensity: 0.8 });
+    for (let i = 0; i < 26; i++) { const p = this.randomRoadPoint(); const m = new THREE.Mesh(g, mt); m.position.set(p.x, 1.4, p.z); this.scene.add(m); this.stars.push({ m, x: p.x, z: p.z, gone: 0 }); }
+  }
+  randomRoadPoint(r = this.r) { const k = Math.floor(r() * (NR * 2 + 1)) - NR, t = (r() * 2 - 1) * (CITY - 10), ax = r() < 0.5; return ax ? { x: t, z: k * BLOCK + (r() < 0.5 ? -3.5 : 3.5) } : { x: k * BLOCK + (r() < 0.5 ? -3.5 : 3.5), z: t }; }
+  trackNearest(x, z, hint = -1) { let best = 1e9, bi = 0; const N = this.tN; if (hint >= 0) { for (let d = -40; d <= 40; d++) { const i = (hint + d + N) % N, p = this.tp[i], q = (p.x - x) ** 2 + (p.z - z) ** 2; if (q < best) { best = q; bi = i; } } } else for (let i = 0; i < N; i++) { const p = this.tp[i], q = (p.x - x) ** 2 + (p.z - z) ** 2; if (q < best) { best = q; bi = i; } } return { i: bi, d: Math.sqrt(best) }; }
+  trackDist(x, z) { if (x < 300 || x > 660 || z < -150 || z > 140) return 99; return this.trackNearest(x, z).d; }
+  onRoad(x, z) {
+    if (Math.abs(x) <= CITY + RW / 2 && Math.abs(z) <= CITY + RW / 2) { const mx = Math.abs(x - Math.round(x / BLOCK) * BLOCK), mz = Math.abs(z - Math.round(z / BLOCK) * BLOCK); if (mx < RW / 2 || mz < RW / 2) return true; for (const k of ["pump", "garage", "parking"]) { const s = SPECIAL[k]; if (Math.abs(x - s.cx) < 23 && Math.abs(z - s.cz) < 23) return true; } return false; }
+    if (Math.abs(x) < HW.w && z >= HW.z0 - 1 && z <= HW.z1) return true; if (Math.hypot(x, z - HW.z1) < 24) return true;
+    if (x >= CITY && x <= 338 && Math.abs(z) < RW / 2) return true;
+    return this.trackDist(x, z) < 8.6;
+  }
+  signalState(T) { const c = T % 20; return { x: c < 8 ? "g" : c < 10 ? "y" : "r", z: c >= 10 && c < 18 ? "g" : c >= 18 ? "y" : "r" }; }
+  updateSignals(T) { const st = this.signalState(T); for (const s of this.signals) for (const ax of ["x", "z"]) { const b = s.bulbs[ax], v = st[ax]; b[0].color.set(v === "r" ? 0xff2020 : 0x331111); b[1].color.set(v === "y" ? 0xffc300 : 0x332a11); b[2].color.set(v === "g" ? 0x20ff60 : 0x113318); } }
+}
+
+// ---------- Traffic ----------
+class Traffic {
+  constructor(scene, world, n = 16) { this.scene = scene; this.w = world; this.cars = []; const r = rng(77), types = ["hatch", "sedan", "auto", "suv", "hatch", "truck", "bus", "sedan"];
+    for (let i = 0; i < n; i++) { const type = types[i % types.length], m = makeCar(type, PAINTS[Math.floor(r() * PAINTS.length)]); scene.add(m); const ax = i % 2 ? "x" : "z", line = (Math.floor(r() * (NR * 2 + 1)) - NR) * BLOCK, dir = r() < 0.5 ? 1 : -1; this.cars.push({ m, ax, line, dir, pos: (r() * 2 - 1) * CITY, v: 9, vmax: type === "bus" || type === "truck" ? 9 : 10 + r() * 4, stop: 0, r: m.userData.r }); } }
+  xz(c) { const lane = c.dir * 3.5 * (c.ax === "x" ? 1 : -1); return c.ax === "x" ? { x: c.pos, z: c.line + lane } : { x: c.line + lane, z: c.pos }; }
+  update(dt, T, player) {
+    const st = this.w.signalState(T);
+    for (const c of this.cars) {
+      let target = c.vmax; if (c.stop > 0) { c.stop -= dt; target = 0; }
+      const ahead = Math.ceil((c.pos * c.dir + 0.01) / BLOCK) * BLOCK * c.dir, dist = (ahead - c.pos) * c.dir, hasSig = Math.abs(ahead) <= BLOCK && Math.abs(c.line) <= BLOCK;
+      if (hasSig && st[c.ax] !== "g" && dist > 7 && dist < 16) target = 0;
+      const p = this.xz(c); if (player) { const dx = player.x - p.x, dz = player.z - p.z, fwd = c.ax === "x" ? dx * c.dir : dz * c.dir, side = c.ax === "x" ? Math.abs(dz) : Math.abs(dx); if (fwd > 0 && fwd < 12 && side < 3) target = 0; }
+      for (const o of this.cars) { if (o === c || o.ax !== c.ax || o.line !== c.line || o.dir !== c.dir) continue; const f = (o.pos - c.pos) * c.dir; if (f > 0 && f < 10) target = 0; }
+      c.v = lerp(c.v, target, clamp(dt * (target < c.v ? 4 : 1.2), 0, 1)); c.pos += c.v * c.dir * dt;
+      if (Math.abs(c.pos) > CITY + 6) { c.pos = -c.dir * (CITY + 5); }
+      const q = this.xz(c); c.m.position.set(q.x, 0, q.z); c.m.rotation.y = c.ax === "x" ? (c.dir > 0 ? Math.PI / 2 : -Math.PI / 2) : (c.dir > 0 ? 0 : Math.PI); for (const w of c.m.userData.wheels) w.children[0].rotation.x += c.v * dt / 0.36;
+    }
+  }
+}
+
+// ---------- The game ----------
+class Game {
+  constructor() {
+    const cv = $("#view"); this.renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true }); this.renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1)); this.renderer.setSize(innerWidth, innerHeight); this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = THREE.PCFSoftShadowMap; this.renderer.outputColorSpace = THREE.SRGBColorSpace; this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    this.scene = new THREE.Scene(); this.camera = new THREE.PerspectiveCamera(62, innerWidth / innerHeight, 0.1, 1600);
+    this.hemi = new THREE.HemisphereLight(0xcfe9ff, 0x5a7a40, 0.9); this.scene.add(this.hemi);
+    this.sun = new THREE.DirectionalLight(0xfff2d6, 2.4); this.sun.castShadow = true; this.sun.shadow.mapSize.set(2048, 2048); const sc = this.sun.shadow.camera; sc.left = sc.bottom = -70; sc.right = sc.top = 70; sc.far = 300; this.scene.add(this.sun, this.sun.target);
+    this.scene.fog = new THREE.Fog(0xbfe3f2, 150, 750); this.scene.background = new THREE.Color(0xbfe3f2);
+    this.world = new World(this.scene); this.traffic = new Traffic(this.scene, this.world);
+    this.keys = new Set(); this.touch = {}; this.T = 0; this.camMode = S.cam || 0;
+    this.headL = new THREE.SpotLight(0xfff2c0, 0, 60, 0.55, 0.5, 1.2); this.scene.add(this.headL, this.headL.target);
+    this.beacon = new THREE.Mesh(new THREE.CylinderGeometry(2.5, 2.5, 40, 20, 1, true), new THREE.MeshBasicMaterial({ color: 0xffd166, transparent: true, opacity: 0.35, side: THREE.DoubleSide, depthWrite: false })); this.beacon.visible = false; this.scene.add(this.beacon);
+    this._rain(); this.spawnPlayer(); this.applyWorldLook(); this._input(); this._map();
+    this.mode = { kind: "menu" }; this.last = performance.now(); this.hudT = 0;
+    addEventListener("resize", () => { this.camera.aspect = innerWidth / innerHeight; this.camera.updateProjectionMatrix(); this.renderer.setSize(innerWidth, innerHeight); });
+    this.loop = this.loop.bind(this); requestAnimationFrame(this.loop);
+  }
+  // ----- Player car -----
+  spawnPlayer(x = 3.5, z = -150, h = 0) {
+    if (this.car) this.scene.remove(this.car.m); const def = carDef(S.car), m = makeCar(def.type, S.paint[def.id] != null ? S.paint[def.id] : def.color); this.scene.add(m);
+    this.car = { def, m, x, z, h, s: 0, lat: 0, steer: 0, nitroOn: false, broken: S.damage >= 100, dist: 0, driftT: 0, drift: 0, wasIn: null };
+    this.updateCarChip(); this.placeCam(true);
+  }
+  setPos(x, z, h) { const c = this.car; c.x = x; c.z = z; c.h = h; c.s = 0; c.lat = 0; this.placeCam(true); }
+  updateCarChip() { $("#car-chip").textContent = `🚗 ${this.car.def.name}${S.licence ? " · 🪪" : ""}`; }
+  // ----- Input -----
+  _input() {
+    const map = { arrowup: "up", w: "up", arrowdown: "down", s: "down", arrowleft: "left", a: "left", arrowright: "right", d: "right", " ": "hand", shift: "hand", n: "nitro" };
+    addEventListener("keydown", (e) => { SND.init(); const k = e.key.toLowerCase(); if (map[k]) { this.keys.add(map[k]); e.preventDefault(); }
+      if (e.repeat) return; if (k === "c") this.cycleCam(); if (k === "h") this.horn(); if (k === "l") this.toggleNight(); if (k === "r") this.toggleRain(); if (k === "q") this.indicate(-1); if (k === "e") this.indicate(1); if (k === "escape") this.openMenu(true); });
+    addEventListener("keyup", (e) => { const k = map[e.key.toLowerCase()]; if (k) this.keys.delete(k); });
+    addEventListener("pointerdown", () => SND.init(), { once: true });
+    $("#b-cam").onclick = () => this.cycleCam(); $("#b-light").onclick = () => this.toggleNight(); $("#b-rain").onclick = () => this.toggleRain(); $("#b-horn").onclick = () => this.horn(); $("#b-menu").onclick = () => this.openMenu(true);
+    if ("ontouchstart" in window || navigator.maxTouchPoints > 0) { document.body.classList.add("touch"); $("#touch").style.display = "block"; for (const [id, k] of [["t-left", "left"], ["t-right", "right"], ["t-gas", "up"], ["t-brake", "down"], ["t-hand", "hand"], ["t-nitro", "nitro"]]) { const b = $("#" + id); b.addEventListener("pointerdown", (e) => { e.preventDefault(); SND.init(); this.touch[k] = true; }); for (const ev of ["pointerup", "pointerleave", "pointercancel"]) b.addEventListener(ev, () => { this.touch[k] = false; }); } }
+  }
+  key(k) { return this.keys.has(k) || !!this.touch[k]; }
+  cycleCam() { this.camMode = (this.camMode + 1) % 4; S.cam = this.camMode; save(); this.toast(["🎥 Chase camera", "🎥 Far camera", "🎥 Bonnet camera", "🎥 Top camera"][this.camMode], 1200); }
+  horn() { SND.init(); SND.horn(); for (const t of this.traffic.cars) { const p = this.traffic.xz(t); if (Math.hypot(p.x - this.car.x, p.z - this.car.z) < 15 && Math.random() < 0.5) setTimeout(() => SND.beep(330, 0.25, "square", 0.03), 400); } }
+  indicate(d) { this.ind = this.ind === d ? 0 : d; this.toast(this.ind ? (d < 0 ? "⬅️ Left indicator on" : "➡️ Right indicator on") : "Indicator off", 900); }
+  toggleNight() { S.night = !S.night; save(); this.applyWorldLook(); this.toast(S.night ? "🌙 Night: headlights on" : "☀️ Day time", 1200); }
+  toggleRain() { S.rain = !S.rain; save(); this.applyWorldLook(); this.toast(S.rain ? "🌧️ Rain: the road is slippery. Brake early!" : "🌤️ The rain stops", 1500); }
+  applyWorldLook() {
+    const n = S.night, r = S.rain, sky = n ? (r ? 0x0b0f19 : 0x0d1530) : r ? 0x8a97a6 : 0xbfe3f2;
+    this.scene.background.set(sky); this.scene.fog.color.set(sky); this.scene.fog.far = r ? 380 : n ? 420 : 750;
+    this.hemi.intensity = n ? 0.18 : r ? 0.6 : 0.9; this.sun.intensity = n ? 0.05 : r ? 0.8 : 2.4;
+    for (const m of this.world.windowMats) m.emissiveIntensity = n ? 0.9 : 0; for (const m of this.world.lampMats) m.emissiveIntensity = n ? 2 : 0.1;
+    this.headL.intensity = n ? 120 : 0; if (this.car) { this.car.m.userData.headM.emissiveIntensity = n ? 2.5 : 0.3; this.car.m.userData.tailM.emissiveIntensity = n ? 1.2 : 0.2; }
+    this.rain.visible = r; $("#b-light").textContent = n ? "☀️" : "🌙";
+  }
+  _rain() { const N = 2500, g = new THREE.BufferGeometry(), p = new Float32Array(N * 3); for (let i = 0; i < N; i++) { p[i * 3] = (Math.random() - 0.5) * 80; p[i * 3 + 1] = Math.random() * 40; p[i * 3 + 2] = (Math.random() - 0.5) * 80; } g.setAttribute("position", new THREE.BufferAttribute(p, 3)); this.rain = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xaaccff, size: 0.18, transparent: true, opacity: 0.7 })); this.rain.visible = false; this.scene.add(this.rain); }
+  // ----- Physics -----
+  drive(dt) {
+    const c = this.car, e = eff(c.def), W = this.world, onR = W.onRoad(c.x, c.z), surf = onR ? 1 : c.def.offroad ? 0.8 : 0.45, frozen = this.mode.freeze > 0;
+    const up = !frozen && this.key("up"), down = !frozen && this.key("down"), hand = this.key("hand"), left = this.key("left"), right = this.key("right");
+    const canGo = S.fuel > 0 && !c.broken && !frozen; c.nitroOn = this.key("nitro") && up && S.nitro > 1 && canGo;
+    const topV = e.top * surf * (c.nitroOn ? 1.35 : 1);
+    if (up && canGo) { if (c.s < -0.5) c.s += e.brake * dt; else c.s += e.acc * dt * (c.nitroOn ? 1.7 : 1) * (1 - clamp(c.s / topV, 0, 1) * 0.55); S.fuel = Math.max(0, S.fuel - dt * 0.035 * c.def.fuelUse * (c.nitroOn ? 2 : 1)); }
+    else if (down) { if (c.s > 0.5) c.s -= e.brake * dt * (S.rain ? 0.7 : 1); else if (canGo) c.s = Math.max(-9, c.s - e.acc * 0.6 * dt); else c.s *= 1 - 3 * dt; }
+    else c.s *= 1 - (onR ? 0.35 : 1.2) * dt;
+    if (Math.abs(c.s) < 0.05 && !up && !down) c.s = 0;
+    if (c.s > topV) c.s = lerp(c.s, topV, clamp(dt * 2, 0, 1));
+    if (c.nitroOn) S.nitro = Math.max(0, S.nitro - dt * 25); else S.nitro = Math.min(e.nitroMax, S.nitro + dt * 4);
+    const steerIn = (left ? 1 : 0) - (right ? 1 : 0); c.steer = lerp(c.steer, steerIn, clamp(dt * 8, 0, 1));
+    const sp = Math.abs(c.s), turn = c.steer * e.handle * 1.9 * clamp(sp / 5, 0, 1) / (1 + sp / 32); c.h += turn * dt * Math.sign(c.s || 1);
+    const grip = e.grip * (S.rain ? 0.65 : 1) * (onR ? 1 : 0.8);
+    if (hand) { c.s *= 1 - 0.7 * dt; c.lat += -c.steer * sp * 0.9 * dt; } else c.lat += -c.steer * sp * 0.05 * dt / grip;
+    c.lat *= Math.exp(-(hand ? 0.9 : 5.5 * grip) * dt); c.lat = clamp(c.lat, -14, 14);
+    const sh = Math.sin(c.h), ch = Math.cos(c.h); let nx = c.x + (sh * c.s + ch * c.lat) * dt, nz = c.z + (ch * c.s - sh * c.lat) * dt;
+    // Buildings.
+    const r = c.m.userData.r * 0.75; let hit = 0;
+    for (const b of W.boxes) { if (nx + r < b.x0 || nx - r > b.x1 || nz + r < b.z0 || nz - r > b.z1) continue; const px = Math.min(nx + r - b.x0, b.x1 - (nx - r)), pz = Math.min(nz + r - b.z0, b.z1 - (nz - r)); if (px < pz) nx += nx < (b.x0 + b.x1) / 2 ? -px : px; else nz += nz < (b.z0 + b.z1) / 2 ? -pz : pz; hit = Math.max(hit, sp); }
+    if (nx < -280 || nx > 720 || nz < -280 || nz > 880) { nx = clamp(nx, -280, 720); nz = clamp(nz, -280, 880); hit = Math.max(hit, sp); }
+    // Traffic and race cars.
+    for (const o of this.others()) { const dx = nx - o.x, dz = nz - o.z, d = Math.hypot(dx, dz), min = r + o.r * 0.75; if (d < min && d > 0.001) { nx = o.x + (dx / d) * min; nz = o.z + (dz / d) * min; hit = Math.max(hit, Math.abs(c.s - (o.v || 0) * 0.5)); if (o.car) o.car.stop = 2.5; if (o.ai) o.ai.s *= 0.8; } }
+    if (hit > 2.5) { this.crash(hit, e); c.s *= -0.25; c.lat *= 0.3; }
+    const moved = Math.hypot(nx - c.x, nz - c.z); c.dist += moved; S.stats.km += moved / 1000; c.x = nx; c.z = nz;
+    // Drift points.
+    if (Math.abs(c.lat) > 2.5 && sp > 8) { c.driftT += dt; c.drift += dt * sp; SND.screech(0.05); } else { if (c.driftT > 0.8) { const p = Math.round(c.drift); this.addPts(p, `🌀 Drift ×${p}`); S.stats.drift++; } c.driftT = 0; c.drift = 0; SND.screech(0); }
+    // Car pose.
+    c.m.position.set(c.x, 0, c.z); c.m.rotation.y = c.h; c.m.rotation.z = lerp(c.m.rotation.z, -c.steer * clamp(sp / 30, 0, 1) * 0.05, 0.2);
+    for (const w of c.m.userData.wheels) w.children.forEach((t) => (t.rotation.x += c.s * dt / 0.36)); for (const w of c.m.userData.front) w.rotation.y = c.steer * 0.45;
+    c.m.userData.tailM.emissiveIntensity = down && c.s > 0.5 ? 2.5 : S.night ? 1.2 : 0.2; c.m.userData.indM.emissiveIntensity = this.ind && Math.floor(this.T * 3) % 2 ? 2 : 0;
+    const kmh = Math.abs(c.s) * 3.6, frac = clamp(c.s / e.top, 0, 1.2), gear = c.s < -0.3 ? "R" : kmh < 1 ? "N" : String(Math.min(6, 1 + Math.floor(frac * 6))), rpm = c.s < 0 ? 0.3 : kmh < 1 ? 0.12 : ((frac * 6) % 1) * 0.75 + 0.25;
+    c.kmh = kmh; c.gear = gear; c.rpm = rpm; SND.engine(rpm, this.mode.kind !== "menu");
+  }
+  others() { const out = this.traffic.cars.map((t) => { const p = this.traffic.xz(t); return { x: p.x, z: p.z, r: t.r, v: t.v, car: t }; }); for (const a of this.mode.ai || []) out.push({ x: a.x, z: a.z, r: a.r, v: a.s, ai: a }); return out; }
+  crash(hit, e) { const dmg = Math.min(40, hit * 1.4 * e.armor); S.damage = Math.min(100, S.damage + dmg); SND.crash(Math.min(0.5, hit / 30)); this.shake = 0.4; if (this.mode.onCrash) this.mode.onCrash(dmg); if (S.damage >= 100 && !this.car.broken) { this.car.broken = true; this.toast("💥 The car has broken down! Open ☰ and call the tow truck to the garage.", 4000); } else if (dmg > 6) this.pop(`💥 Crash! −${Math.round(dmg)}% health`, "#ff6b6b"); }
+  // ----- Rules: red lights, speed cameras, stars, near misses, places -----
+  rules(dt) {
+    const c = this.car, W = this.world, st = W.signalState(this.T);
+    for (const sg of W.signals) { const inside = Math.abs(c.x - sg.x) < RW / 2 && Math.abs(c.z - sg.z) < RW / 2, key = sg.x + ":" + sg.z;
+      if (inside && c.wasIn !== key) { c.wasIn = key; const vx = Math.sin(c.h) * c.s, vz = Math.cos(c.h) * c.s, ax = Math.abs(vx) > Math.abs(vz) ? "x" : "z"; if (st[ax] === "r" && c.kmh > 12) this.fine(50, "🚦 Red light jumped! Police fine"); }
+      if (!inside && c.wasIn === key) c.wasIn = null; }
+    for (const cm of W.cams) { const d = Math.hypot(c.x - cm.x, c.z - cm.z), key = "cam" + cm.x; if (d < 8 && c.kmh > 80 && this._camHit !== key) { this._camHit = key; this.fine(40, `📸 Speed camera: ${Math.round(c.kmh)} km/h in a 60 zone`); } if (d > 30 && this._camHit === key) this._camHit = null; }
+    if (this.mode.kind === "free") for (const s of W.stars) { if (s.gone > 0) { s.gone -= dt; s.m.visible = s.gone <= 0; continue; } s.m.rotation.y += dt * 2; if (Math.hypot(c.x - s.x, c.z - s.z) < 3) { s.gone = 30; s.m.visible = false; SND.coin(); this.addPts(25, "⭐ Star +25"); } }
+    if (c.kmh > 40) for (const t of this.traffic.cars) { const p = this.traffic.xz(t), d = Math.hypot(c.x - p.x, c.z - p.z); if (d < c.m.userData.r + t.r + 1.4 && d > c.m.userData.r * 0.75 + t.r * 0.75 + 0.2 && (t.nm || 0) < this.T) { t.nm = this.T + 3; this.addPts(15, "😮 Near miss +15"); } }
+    if (this.mode.kind === "free") { const k = Math.floor(c.dist / 40); if (k > (c.distPts || 0)) { this.addPts(k - (c.distPts || 0)); c.distPts = k; } }
+    // Places: petrol pump and garage open by themselves when you stop there.
+    const at = (sp, r) => Math.hypot(c.x - sp.cx, c.z - sp.cz) < r;
+    if (c.kmh < 3 && at(SPECIAL.pump, 10) && !this._atPump && this.mode.kind !== "menu") { this._atPump = true; this.pumpPanel(); } if (!at(SPECIAL.pump, 14)) this._atPump = false;
+    if (c.kmh < 3 && at(SPECIAL.garage, 10) && !this._atGarage && this.mode.kind !== "menu") { this._atGarage = true; this.garage(true); } if (!at(SPECIAL.garage, 14)) this._atGarage = false;
+    if (S.fuel < 15 && !this._lowFuel) { this._lowFuel = true; this.toast("⛽ Low fuel! Drive to the petrol pump (yellow on the map).", 3500); } if (S.fuel > 25) this._lowFuel = false;
+  }
+  fine(n, why) { S.points = Math.max(0, S.points - n); save(); this.pop(`${why}: −${n}`, "#ff6b6b"); SND.beep(880, 0.2, "square", 0.04); setTimeout(() => SND.beep(660, 0.2, "square", 0.04), 220); if (this.mode.onFine) this.mode.onFine(why); }
+  addPts(n, label) { if (!n) return; const before = level(); S.points += n; S.xp += n; save(); if (label) this.pop(label, "#ffd166"); if (level() > before) { this.pop(`🏆 LEVEL ${level()}!`, "#7bf1a8"); SND.coin(); } }
+  // ----- Camera -----
+  placeCam(snap) {
+    const c = this.car, sh = Math.sin(c.h), ch = Math.cos(c.h), L = c.m.userData.L, big = L > 6 ? 1.8 : 1; let px, py, pz, lx, ly, lz;
+    if (this.camMode === 0) { px = c.x - sh * 7.5 * big; pz = c.z - ch * 7.5 * big; py = 3.2 * big; lx = c.x + sh * 4; lz = c.z + ch * 4; ly = 1.2; }
+    else if (this.camMode === 1) { px = c.x - sh * 14 * big; pz = c.z - ch * 14 * big; py = 6 * big; lx = c.x + sh * 6; lz = c.z + ch * 6; ly = 1; }
+    else if (this.camMode === 2) { px = c.x + sh * (L * 0.15); pz = c.z + ch * (L * 0.15); py = L > 6 ? 2.8 : 1.45; lx = c.x + sh * 30; lz = c.z + ch * 30; ly = 1.2; }
+    else { px = c.x - sh * 2; pz = c.z - ch * 2; py = 42; lx = c.x; lz = c.z; ly = 0; }
+    const k = snap ? 1 : this.camMode === 2 ? 1 : 0.12; this.camera.position.set(lerp(this.camera.position.x, px, k), lerp(this.camera.position.y, py, k), lerp(this.camera.position.z, pz, k));
+    if (this.shake > 0) { this.camera.position.x += (Math.random() - 0.5) * this.shake; this.camera.position.y += (Math.random() - 0.5) * this.shake; }
+    this.camera.lookAt(lx, ly, lz); this.camera.fov = lerp(this.camera.fov, 62 + (c.nitroOn ? 12 : 0) + clamp((c.kmh || 0) / 20, 0, 6), 0.08); this.camera.updateProjectionMatrix();
+  }
+  // ----- The loop -----
+  loop(now) {
+    requestAnimationFrame(this.loop); const dt = Math.min(0.05, (now - this.last) / 1000); this.last = now; this.T += dt; if (this.shake > 0) this.shake = Math.max(0, this.shake - dt);
+    try { this.step(dt); } catch (e) { this.lastErr = String(e && e.stack || e); console.error(e); }
+    this.renderer.render(this.scene, this.camera);
+  }
+  step(dt) {
+    const W = this.world; if (!this.paused || this.mode.kind === "menu") { W.updateSignals(this.T); this.traffic.update(dt, this.T, this.mode.kind === "menu" ? null : this.car); }
+    if (this.mode.kind === "menu") { $("#pts").textContent = Math.round(S.points); $("#lvl").textContent = `Lv ${level()}`; }
+    if (this.mode.kind === "menu") { const a = this.T * 0.05; this.camera.position.set(Math.cos(a) * 230, 110, Math.sin(a) * 230); this.camera.lookAt(0, 0, 0); this.sun.position.set(80, 160, 60); this.sun.target.position.set(0, 0, 0); return; }
+    if (this.paused) { SND.engine(0, false); SND.screech(0); return; }
+    if (this.mode.freeze > 0) this.mode.freeze -= dt;
+    this.drive(dt); this.rules(dt); if (this.mode.update) this.mode.update(dt);
+    const c = this.car; this.sun.position.set(c.x + 50, 120, c.z + 40); this.sun.target.position.set(c.x, 0, c.z);
+    this.headL.position.set(c.x + Math.sin(c.h) * 1.5, 1.2, c.z + Math.cos(c.h) * 1.5); this.headL.target.position.set(c.x + Math.sin(c.h) * 25, 0, c.z + Math.cos(c.h) * 25);
+    if (S.rain) { this.rain.position.set(c.x, 0, c.z); const p = this.rain.geometry.attributes.position; for (let i = 0; i < p.count; i++) { let y = p.getY(i) - dt * 30; if (y < 0) y += 40; p.setY(i, y); } p.needsUpdate = true; }
+    if (this.beacon.visible) this.beacon.material.opacity = 0.25 + Math.sin(this.T * 4) * 0.1;
+    this.placeCam(false); this.hud(dt);
+  }
+  // ----- HUD -----
+  hud(dt) {
+    const c = this.car, e = eff(c.def); this.hudT -= dt; if (this.hudT > 0) return; this.hudT = 0.08;
+    $("#spd").innerHTML = `${Math.round(c.kmh || 0)} <small>km/h</small>`; $("#gear").textContent = c.gear || "N"; $("#rpm").style.width = `${Math.round((c.rpm || 0) * 100)}%`; $("#rpm-t").textContent = c.nitroOn ? "🔥 NITRO" : "RPM";
+    $("#fuel").style.width = `${S.fuel}%`; $("#fuel-t").textContent = `${Math.round(S.fuel)}%`; $("#dmg").style.width = `${S.damage}%`; $("#dmg-t").textContent = `${Math.round(S.damage)}%`; $("#nitro").style.width = `${(S.nitro / e.nitroMax) * 100}%`;
+    $("#pts").textContent = Math.round(S.points); $("#lvl").textContent = `Lv ${level()}`; this.drawMap();
+  }
+  pop(text, color = "#fff") { const d = document.createElement("div"); d.className = "pop"; d.style.color = color; d.textContent = text; $("#pops").appendChild(d); setTimeout(() => d.remove(), 1600); }
+  toast(text, ms = 2500) { const t = $("#toast"); t.textContent = text; t.style.display = "block"; clearTimeout(this._tt); this._tt = setTimeout(() => (t.style.display = "none"), ms); }
+  bar(text) { const b = $("#mission-bar"); if (!text) { b.style.display = "none"; return; } b.innerHTML = text; b.style.display = "block"; }
+  center(text, ms = 900) { const c = $("#center-msg"); c.textContent = text; c.style.display = "block"; clearTimeout(this._ct); this._ct = setTimeout(() => (c.style.display = "none"), ms); }
+  // ----- Mini map -----
+  _map() {
+    const W = this.world, cv = document.createElement("canvas"), sc = 0.5; cv.width = 1000 * sc; cv.height = 1160 * sc; const g = cv.getContext("2d"), X = (x) => (x + 280) * sc, Z = (z) => (880 - z) * sc; this.mapBase = { cv, X, Z, sc };
+    g.fillStyle = "#4f7d3a"; g.fillRect(0, 0, cv.width, cv.height); g.fillStyle = "#cfcfcf";
+    for (let i = -NR; i < NR; i++) for (let j = -NR; j < NR; j++) { const cx = i * BLOCK + BLOCK / 2, cz = j * BLOCK + BLOCK / 2; g.fillStyle = cx === SPECIAL.pump.cx && cz === SPECIAL.pump.cz ? "#ffd166" : cx === SPECIAL.garage.cx && cz === SPECIAL.garage.cz ? "#8ecae6" : cx === SPECIAL.parking.cx && cz === SPECIAL.parking.cz ? "#bde0fe" : cx === SPECIAL.park.cx && cz === SPECIAL.park.cz ? "#7cb342" : "#bfb8ad"; g.fillRect(X(cx - 23), Z(cz + 23), 46 * sc, 46 * sc); }
+    g.strokeStyle = "#333"; g.lineWidth = RW * sc; for (let k = -NR; k <= NR; k++) { g.beginPath(); g.moveTo(X(-CITY - 7), Z(k * BLOCK)); g.lineTo(X(CITY + 7), Z(k * BLOCK)); g.stroke(); g.beginPath(); g.moveTo(X(k * BLOCK), Z(-CITY - 7)); g.lineTo(X(k * BLOCK), Z(CITY + 7)); g.stroke(); }
+    g.beginPath(); g.moveTo(X(0), Z(HW.z0)); g.lineTo(X(0), Z(HW.z1)); g.lineWidth = HW.w * 2 * sc; g.stroke(); g.beginPath(); g.moveTo(X(CITY), Z(0)); g.lineTo(X(338), Z(0)); g.lineWidth = RW * sc; g.stroke();
+    g.beginPath(); W.tp.forEach((p, i) => (i ? g.lineTo(X(p.x), Z(p.z)) : g.moveTo(X(p.x), Z(p.z)))); g.closePath(); g.lineWidth = 16 * sc; g.strokeStyle = "#444"; g.stroke();
+  }
+  drawMap() {
+    const cv = $("#map"), g = cv.getContext("2d"), B = this.mapBase, c = this.car, R = 160, sz = cv.width; g.save(); g.clearRect(0, 0, sz, sz); g.beginPath(); g.arc(sz / 2, sz / 2, sz / 2, 0, Math.PI * 2); g.clip();
+    const k = sz / (R * 2 * B.sc); g.translate(sz / 2, sz / 2); g.rotate(c.h + Math.PI); g.scale(k, k); g.translate(-B.X(c.x), -B.Z(c.z)); g.drawImage(B.cv, 0, 0);
+    const dot = (x, z, col, r) => { g.fillStyle = col; g.beginPath(); g.arc(B.X(x), B.Z(z), r / k, 0, Math.PI * 2); g.fill(); };
+    for (const t of this.traffic.cars) { const p = this.traffic.xz(t); dot(p.x, p.z, "#ffffff", 3); }
+    for (const a of this.mode.ai || []) dot(a.x, a.z, "#e63946", 5); if (this.mode.ghostPos) dot(this.mode.ghostPos.x, this.mode.ghostPos.z, "#a0c4ff", 5);
+    if (this.mode.kind === "free") for (const s of this.world.stars) if (s.gone <= 0) dot(s.x, s.z, "#ffd60a", 3);
+    if (this.beacon.visible) dot(this.beacon.position.x, this.beacon.position.z, "#ffd166", 9);
+    g.restore(); g.fillStyle = "#3a86ff"; g.beginPath(); g.moveTo(sz / 2, sz / 2 - 14); g.lineTo(sz / 2 - 9, sz / 2 + 10); g.lineTo(sz / 2 + 9, sz / 2 + 10); g.closePath(); g.fill(); g.strokeStyle = "#fff"; g.lineWidth = 3; g.stroke();
+  }
+  setBeacon(x, z) { if (x == null) { this.beacon.visible = false; return; } this.beacon.position.set(x, 20, z); this.beacon.visible = true; }
+  // ================= Screens =================
+  show(html) { $("#card").innerHTML = html; $("#scr").hidden = false; this.paused = true; return $("#card"); }
+  hide() { $("#scr").hidden = true; this.paused = false; }
+  openMenu(toggle) {
+    if (toggle && this.mode.kind !== "menu" && !$("#scr").hidden) { this.hide(); return; }
+    const ghost = this.friendGhost ? `<button class="btn go" id="m-fg" style="grid-column:span 2">👻 ${this.friendGhost.name}'s challenge: ${fmtT(this.friendGhost.t)} · Race the ghost!</button>` : "";
+    const C = this.show(`<div style="text-align:center"><div class="title">Desi Drive</div><div class="sub">RishSchoolDays series · Game 2 · <b>Just live it!</b></div></div>
+      <div class="row" style="justify-content:center"><span class="btn alt" style="cursor:default">⭐ ${Math.round(S.points)} points</span><span class="btn alt" style="cursor:default">🏆 Level ${level()}</span><span class="btn alt" style="cursor:default">🚗 ${carDef(S.car).name}</span></div>
+      <div class="big">${ghost}<button class="btn go" id="m-free">🛣️ Free drive</button><button class="btn" id="m-races">🏁 Races</button><button class="btn" id="m-missions">🎯 Missions</button><button class="btn" id="m-garage">🔧 Garage</button><button class="btn alt" id="m-challenge">👻 Challenge a friend</button><button class="btn alt" id="m-howto">🕹️ How to play</button></div>
+      <div class="row" style="justify-content:center">${this.mode.kind !== "menu" ? `<button class="btn alt" id="m-resume">▶️ Back to the road</button>` : ""}${S.damage >= 100 || S.fuel <= 0 ? `<button class="btn alt" id="m-tow">🚛 Call the tow truck (${Math.min(150, Math.round(S.points))} points)</button>` : ""}<button class="btn alt" id="m-about">ℹ️ About us</button></div><small class="mut">Version ${VERSION}</small>`);
+    const on = (id, f) => { const b = C.querySelector("#" + id); if (b) b.onclick = f; };
+    on("m-free", () => this.startFree()); on("m-races", () => this.racesMenu()); on("m-missions", () => this.missionsMenu()); on("m-garage", () => this.garage(false)); on("m-challenge", () => this.challenge()); on("m-howto", () => this.howTo()); on("m-about", () => this.about()); on("m-resume", () => this.hide()); on("m-fg", () => this.startGhostRace(this.friendGhost));
+    on("m-tow", () => { S.points -= Math.min(150, S.points); S.fuel = Math.max(S.fuel, 30); S.damage = Math.min(S.damage, 40); save(); this.endMode(); this.startFree(); this.setPos(SPECIAL.garage.cx, SPECIAL.garage.cz, Math.PI); this.car.broken = false; this.toast("🚛 The tow truck takes you to the garage. Car fixed a little, 30% fuel.", 3500); });
+  }
+  endMode() { if (this.mode.cleanup) this.mode.cleanup(); for (const a of this.mode.ai || []) this.scene.remove(a.m); if (this.mode.ghost) this.scene.remove(this.mode.ghost); this.setBeacon(null); this.world.bayMark.visible = false; this.bar(null); $("#race-board").style.display = "none"; this.mode = { kind: "free" }; }
+  startFree() { this.endMode(); this.hide(); this.mode = { kind: "free" }; if (!this._spawned) { this._spawned = true; this.setPos(3.5, -150, 0); } this.car.distPts = Math.floor(this.car.dist / 40); this.toast("🛣️ Free drive! Collect ⭐ stars, drift (Space + turn), and pass traffic closely for points.", 4000); }
+  // ----- Garage -----
+  garage(atGarage) {
+    const def = carDef(S.car), e = eff(def), repairCost = Math.ceil(S.damage * 4), repAllowed = atGarage;
+    const C = this.show(`<h2>🔧 Garage</h2><div class="row"><span class="btn alt" style="cursor:default">⭐ ${Math.round(S.points)} points</span>${repAllowed ? `<button class="btn go" id="g-rep" ${S.damage < 1 || S.points < repairCost ? "disabled" : ""}>🛠️ Repair (${repairCost} pts)</button>` : `<small class="mut">Drive to the 🔧 garage (blue on the map) to repair your car.</small>`}</div>
+      <h3 style="margin:8px 0 4px">Your cars</h3>${CARS.map((c) => { const own = S.owned.includes(c.id); return `<div class="carrow ${c.id === S.car ? "sel" : ""}"><div style="font-size:26px">${{ hatch: "🚗", auto: "🛺", sedan: "🚘", suv: "🚙", truck: "🚚", bus: "🚌", sports: "🏎️" }[c.type]}</div><div style="flex:1"><b>${c.name}</b><br><small class="mut">Top ${c.top} km/h · pick-up ${c.acc} · turning ${c.handle}${c.offroad ? " · off-road" : ""}</small></div>${c.id === S.car ? "<b>✅ Driving</b>" : own ? `<button class="btn alt" data-sel="${c.id}">Drive</button>` : `<button class="btn" data-buy="${c.id}" ${S.points < c.price ? "disabled" : ""}>Buy ${c.price} ⭐</button>`}</div>`; }).join("")}
+      <h3 style="margin:10px 0 4px">Upgrade the ${def.name}</h3>${PARTS.map(([k, ic, n, d]) => { const l = lvlOf(def.id, k), cost = partCost(def, k); return `<div class="carrow"><div style="font-size:22px">${ic}</div><div style="flex:1"><b>${n}</b> <span class="lvl">${[0, 1, 2, 3, 4].map((i) => `<i class="${i < l ? "on" : ""}"></i>`).join("")}</span><br><small class="mut">${d}</small></div>${l >= 5 ? "<b>MAX</b>" : `<button class="btn" data-up="${k}" ${S.points < cost ? "disabled" : ""}>Level ${l + 1}: ${cost} ⭐</button>`}</div>`; }).join("")}
+      <small class="mut">Now: top ${Math.round(e.top * 3.6)} km/h · grip ×${e.grip.toFixed(2)} · brakes ${e.brake.toFixed(1)} · nitro ${Math.round(e.nitroMax)} · crash damage ×${e.armor.toFixed(2)}</small>
+      <h3 style="margin:10px 0 4px">Paint (50 ⭐)</h3><div class="row">${PAINTS.map((p, i) => `<div class="sw" data-paint="${i}" style="background:#${p.toString(16).padStart(6, "0")}"></div>`).join("")}</div>
+      <div class="row"><button class="btn go" id="g-close">▶️ Drive</button><button class="btn alt" id="g-menu">☰ Menu</button></div>`);
+    C.querySelectorAll("[data-buy]").forEach((b) => (b.onclick = () => { const c = carDef(b.dataset.buy); if (S.points < c.price) return; S.points -= c.price; S.owned.push(c.id); S.car = c.id; save(); this.respawnCar(); SND.coin(); this.garage(atGarage); }));
+    C.querySelectorAll("[data-sel]").forEach((b) => (b.onclick = () => { S.car = b.dataset.sel; save(); this.respawnCar(); this.garage(atGarage); }));
+    C.querySelectorAll("[data-up]").forEach((b) => (b.onclick = () => { const k = b.dataset.up, cost = partCost(def, k); if (S.points < cost || lvlOf(def.id, k) >= 5) return; S.points -= cost; S.up[def.id] = S.up[def.id] || {}; S.up[def.id][k] = lvlOf(def.id, k) + 1; save(); SND.coin(); this.garage(atGarage); }));
+    C.querySelectorAll("[data-paint]").forEach((b) => (b.onclick = () => { if (S.points < 50) return; S.points -= 50; S.paint[def.id] = PAINTS[+b.dataset.paint]; save(); this.respawnCar(); this.garage(atGarage); }));
+    const rep = C.querySelector("#g-rep"); if (rep) rep.onclick = () => { if (S.points < repairCost) return; S.points -= repairCost; S.damage = 0; this.car.broken = false; save(); SND.coin(); this.garage(atGarage); };
+    C.querySelector("#g-close").onclick = () => { if (this.mode.kind === "menu") this.startFree(); else this.hide(); }; C.querySelector("#g-menu").onclick = () => this.openMenu();
+  }
+  respawnCar() { const c = this.car; const x = c.x, z = c.z, h = c.h; this.spawnPlayer(x, z, h); this.applyWorldLook(); }
+  pumpPanel() {
+    const need = Math.ceil(100 - S.fuel), cost = need * 2, C = this.show(`<h2>⛽ Petrol Pump</h2><p>"Namaste! Petrol or diesel? Full tank?" Your tank: <b>${Math.round(S.fuel)}%</b>.</p><div class="row"><button class="btn go" id="p-full" ${need < 1 || S.points < cost ? "disabled" : ""}>⛽ Fill the tank (${cost} ⭐)</button><button class="btn alt" id="p-air">🛞 Check the tyre air (free)</button><button class="btn alt" id="p-x">Not now</button></div>`);
+    C.querySelector("#p-full").onclick = () => { S.points -= cost; S.fuel = 100; save(); SND.coin(); this.hide(); this.toast("⛽ Full tank! The pump attendant waves: 'Drive safe!'", 2600); };
+    C.querySelector("#p-air").onclick = () => { this.hide(); this.toast("🛞 All four tyres at 32 PSI. Good tyres save fuel!", 2600); }; C.querySelector("#p-x").onclick = () => this.hide();
+  }
+  // ----- Missions -----
+  missionsMenu() {
+    const C = this.show(`<h2>🎯 Missions</h2><div class="big"><button class="btn" id="mi-taxi">🚕 Taxi driver<br><small>3 passengers</small></button><button class="btn" id="mi-del">📦 Delivery rush<br><small>beat the timer</small></button><button class="btn" id="mi-park">🅿️ Parking test<br><small>park in the box</small></button><button class="btn" id="mi-lic">🪪 Driving licence test${S.licence ? " ✅" : ""}<br><small>follow the rules</small></button></div><div class="row"><button class="btn alt" id="mi-back">◀ Back</button></div>`);
+    C.querySelector("#mi-taxi").onclick = () => this.startTaxi(); C.querySelector("#mi-del").onclick = () => this.startDelivery(); C.querySelector("#mi-park").onclick = () => this.startParking(); C.querySelector("#mi-lic").onclick = () => this.startLicence(); C.querySelector("#mi-back").onclick = () => this.openMenu();
+  }
+  _farPoint(minD) { for (let k = 0; k < 60; k++) { const p = this.world.randomRoadPoint(Math.random); if (Math.hypot(p.x - this.car.x, p.z - this.car.z) > minD) return p; } return this.world.randomRoadPoint(Math.random); }
+  _person(x, z) { const g = new THREE.Group(), sk = M(0xd9a574); const b = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.35, 1.1, 8), M(PAINTS[Math.floor(Math.random() * PAINTS.length)])); b.position.y = 1.2; g.add(b); const h = new THREE.Mesh(new THREE.SphereGeometry(0.28, 10, 8), sk); h.position.y = 2; g.add(h); for (const s of [-0.15, 0.15]) { const l = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.7, 6), M(0x333333)); l.position.set(s, 0.35, 0); g.add(l); } g.position.set(x, 0, z); this.scene.add(g); return g; }
+  startTaxi() {
+    this.endMode(); this.hide(); if (!this._spawned) { this._spawned = true; this.setPos(3.5, -150, 0); } let ride = 0, stage = "pick", p = this._farPoint(60), d = null, person = this._person(p.x + 4, p.z), t = 0, dmg = 0;
+    this.setBeacon(p.x, p.z); this.toast("🚕 Taxi duty! A passenger waits at the yellow light. Stop next to them.", 3500);
+    this.mode = { kind: "mission", cleanup: () => this.scene.remove(person), onCrash: (x) => (dmg += x), update: (dt) => { t += dt; const c = this.car, tgt = stage === "pick" ? p : d, dist = Math.hypot(c.x - tgt.x, c.z - tgt.z);
+      this.bar(`🚕 Ride ${ride + 1} of 3 · ${stage === "pick" ? "Pick up the passenger" : "Drop at the yellow light"} · ${Math.round(dist)} m · ⏱️ ${Math.round(t)}s`);
+      if (dist < 6 && c.kmh < 6) { if (stage === "pick") { stage = "drop"; person.visible = false; d = this._farPoint(150); this.setBeacon(d.x, d.z); t = 0; dmg = 0; SND.beep(660, 0.2, "triangle"); this.toast(["Passenger: 'Railway station, jaldi please!'", "Passenger: 'Take me to my office. I am late!'", "Passenger: 'To the market, bhaiya. Slowly, I have eggs!'"][ride % 3], 3000); }
+        else { const fare = Math.max(40, Math.round(120 + Math.hypot(d.x - p.x, d.z - p.z) * 0.6 - t * 1.5 - dmg * 3)); ride++; S.stats.missions++; this.addPts(fare, `🚕 Fare +${fare}${dmg < 1 ? " · ⭐ 5-star ride" : ""}`); if (ride >= 3) { this.endMode(); this.mode = { kind: "free" }; this.done("🚕 Taxi shift done!", `3 happy passengers. Total fares added to your points.`); return; } stage = "pick"; p = this._farPoint(60); person.position.set(p.x + 4, 0, p.z); person.visible = true; this.setBeacon(p.x, p.z); t = 0; } } } };
+  }
+  startDelivery() {
+    this.endMode(); this.hide(); if (!this._spawned) { this._spawned = true; this.setPos(3.5, -150, 0); } let stage = "pick", p = this._farPoint(50), d = null, left = 0, n = 0;
+    this.setBeacon(p.x, p.z); this.toast("📦 Pick up the parcel from the shop at the yellow light.", 3000);
+    this.mode = { kind: "mission", update: (dt) => { const c = this.car, tgt = stage === "pick" ? p : d, dist = Math.hypot(c.x - tgt.x, c.z - tgt.z); if (stage === "drop") { left -= dt; if (left <= 0) { this.endMode(); this.done("⏰ Too late!", "The customer cancelled the order. Try a faster route!"); return; } }
+      this.bar(`📦 Delivery ${n + 1} of 3 · ${stage === "pick" ? "Collect the parcel" : `Deliver it! ⏱️ ${Math.ceil(left)}s`} · ${Math.round(dist)} m`);
+      if (dist < 6 && c.kmh < 8) { if (stage === "pick") { stage = "drop"; d = this._farPoint(150); left = Math.hypot(d.x - c.x, d.z - c.z) / 9 + 18; this.setBeacon(d.x, d.z); SND.beep(660, 0.2, "triangle"); }
+        else { const pay = 100 + Math.round(left * 4); n++; S.stats.missions++; this.addPts(pay, `📦 Delivered! +${pay}`); if (n >= 3) { this.endMode(); this.done("📦 All parcels delivered!", "The customers are happy. Points added."); return; } stage = "pick"; p = this._farPoint(50); this.setBeacon(p.x, p.z); } } } };
+  }
+  startParking() {
+    this.endMode(); this.hide(); const W = this.world, bay = W.bays[Math.floor(Math.random() * W.bays.length)], Pk = SPECIAL.parking; this.setPos(Pk.cx - 15, Pk.cz - 30, 0); W.bayMark.position.set(bay.x, 0.21, bay.z); W.bayMark.visible = true; let t = 90, dmg = 0, hold = 0;
+    this.toast("🅿️ Park inside the yellow box. Straight, slow, and stop. Use reverse (⬇) if needed!", 4000);
+    this.mode = { kind: "mission", onCrash: (x) => (dmg += x), update: (dt) => { t -= dt; const c = this.car, dx = c.x - bay.x, dz = c.z - bay.z, ang = Math.abs(wrapA(c.h - bay.h)), aligned = ang < 0.22 || Math.abs(ang - Math.PI) < 0.22, inside = Math.abs(dx) < 1.2 && Math.abs(dz) < 1.8 && aligned;
+      this.bar(`🅿️ Park in the yellow box · ⏱️ ${Math.ceil(t)}s · ${inside ? (c.kmh < 1 ? "Hold still..." : "Stop now!") : `${Math.round(Math.hypot(dx, dz))} m`}`);
+      if (inside && c.kmh < 1) hold += dt; else hold = 0;
+      if (hold > 1) { const pts = Math.max(60, Math.round(150 + t * 2 - dmg * 5)); S.stats.missions++; this.endMode(); this.addPts(pts, `🅿️ Perfect parking +${pts}`); this.done("🅿️ Parked!", dmg < 1 ? "Not one scratch. You are a parking master!" : "Parked, with a few scratches."); return; }
+      if (t <= 0) { this.endMode(); this.done("⏰ Time up", "Parking takes practice. Try again!"); } } };
+  }
+  startLicence() {
+    this.endMode(); this.hide(); this.setPos(3.5, -150, 0); this._ow = 0; const route = [[3.5, -60], [60, -3.5], [120, 3.5], [56.5, 60], [-3.5, 120], [-60, 63.5], [-3.5, 0]]; let i = 0, warn = 0, dmg = 0, fail = null;
+    this.setBeacon(route[0][0], route[0][1]); this.toast("🪪 Licence test! Follow the yellow lights. Stop at red lights. Stay under 60 km/h. No crashes!", 5000);
+    this.mode = { kind: "mission", onCrash: (x) => { dmg += x; if (dmg > 8) fail = "You crashed. The examiner holds his head!"; }, onFine: (why) => { fail = why.includes("Red") ? "You jumped a red light." : "You went over the speed limit."; },
+      update: (dt) => { const c = this.car; if (c.kmh > 62) { this._ow = (this._ow || 0) + dt; if (this._ow > 2.5) { warn++; this._ow = 0; this.toast(`⚠️ Too fast! Warning ${warn} of 3`, 2000); if (warn >= 3) fail = "Too fast, three times."; } } else this._ow = 0;
+        const tg = route[i], dist = Math.hypot(c.x - tg[0], c.z - tg[1]); this.bar(`🪪 Licence test · checkpoint ${i + 1} of ${route.length} · ${Math.round(dist)} m · warnings ${warn}/3`);
+        if (fail) { this.endMode(); this.done("❌ Test failed", `${fail} Practise in free drive and try again.`); return; }
+        if (dist < 7) { i++; SND.beep(700, 0.15, "triangle"); if (i >= route.length) { this.endMode(); const first = !S.licence; S.licence = true; save(); this.updateCarChip(); if (first) this.addPts(500, "🪪 Licence +500"); S.stats.missions++; this.done("🪪 You passed!", `Examiner Singh: "Safe and smooth. Here is your driving licence!" ${first ? "+500 points." : ""}`); return; } this.setBeacon(route[i][0], route[i][1]); } } };
+  }
+  done(title, text) { const C = this.show(`<h2>${title}</h2><p>${text}</p><div class="row"><button class="btn go" id="d-free">🛣️ Keep driving</button><button class="btn alt" id="d-menu">☰ Menu</button></div>`); C.querySelector("#d-free").onclick = () => this.startFree(); C.querySelector("#d-menu").onclick = () => this.openMenu(); save(); }
+  // ----- Races -----
+  racesMenu() {
+    const b = S.best.track ? fmtT(S.best.track) : "—";
+    const C = this.show(`<h2>🏁 Races</h2><div class="big"><button class="btn" id="r-circ">🏁 Circuit race<br><small>3 laps vs 3 drivers</small></button><button class="btn" id="r-tt">⏱️ Time trial<br><small>your best: ${b}</small></button><button class="btn" id="r-hw">🛣️ Highway sprint<br><small>vs 2 drivers</small></button><button class="btn alt" id="r-ch">👻 Challenge a friend<br><small>race a ghost</small></button></div><div class="row"><button class="btn alt" id="r-back">◀ Back</button></div>`);
+    C.querySelector("#r-circ").onclick = () => this.startCircuit(); C.querySelector("#r-tt").onclick = () => this.startTimeTrial(null); C.querySelector("#r-hw").onclick = () => this.startHighway(); C.querySelector("#r-ch").onclick = () => this.challenge(); C.querySelector("#r-back").onclick = () => this.openMenu();
+  }
+  _grid(slot) { const W = this.world, i = (W.tN - 6 - Math.floor(slot / 2) * 4 + W.tN) % W.tN, p = W.tp[i], q = W.tp[(i + 1) % W.tN], a = Math.atan2(q.x - p.x, q.z - p.z), side = slot % 2 ? -3.5 : 3.5; return { x: p.x + Math.cos(a) * side, z: p.z - Math.sin(a) * side, h: a, i }; }
+  _aiCar(slot, skill, name, color) { const g = this._grid(slot), m = makeCar(slot % 2 ? "sports" : "sedan", color); this.scene.add(m); return { m, name, x: g.x, z: g.z, h: g.h, u: g.i, s: 0, lap: 0, skill, off: slot % 2 ? -3 : 3, r: m.userData.r, done: false, time: 0 }; }
+  _aiStep(a, dt, W) { const N = W.tN, i = Math.floor(a.u) % N, curv = W.tCurv[(i + 6) % N] || 0, vmax = (34 + 14 * a.skill), target = Math.min(vmax, Math.sqrt(10 / Math.max(curv, 0.0005))); a.s = lerp(a.s, target, clamp(dt * (target > a.s ? 0.55 : 2), 0, 1)); const segL = W.tLen / N; const prev = a.u; a.u += a.s * dt / segL; if (Math.floor(a.u / N) > Math.floor(prev / N)) a.lap++;
+    const j = Math.floor(a.u) % N, f = a.u - Math.floor(a.u), p = W.tp[j], q = W.tp[(j + 1) % N], ang = Math.atan2(q.x - p.x, q.z - p.z), lane = a.off * Math.sin(this.T * 0.3 + a.skill * 7) * 0.6; a.x = lerp(p.x, q.x, f) + Math.cos(ang) * lane; a.z = lerp(p.z, q.z, f) - Math.sin(ang) * lane; a.h = ang; a.m.position.set(a.x, 0, a.z); a.m.rotation.y = ang; for (const w of a.m.userData.wheels) w.children.forEach((t) => (t.rotation.x += a.s * dt / 0.36)); }
+  _countdown(then) { this.mode.freeze = 3.2; let n = 3; const tick = () => { if (n > 0) { this.center(String(n), 800); SND.beep(440, 0.2, "triangle", 0.08); n--; setTimeout(tick, 1000); } else { this.center("GO!", 900); SND.beep(880, 0.4, "triangle", 0.09); then && then(); } }; tick(); }
+  _trackProgress(st, W) { const c = this.car, n = W.trackNearest(c.x, c.z, st.pi); const N = W.tN; if (st.pi > N * 0.85 && n.i < N * 0.15 && st.cp >= 6) { st.lap++; st.cp = 0; st.lapStart = st.t; return { ...n, newLap: true }; } const cpI = Math.floor(n.i / (N / 8)); if (cpI === st.cp + 1 || (st.cp === 0 && cpI === 1)) st.cp = cpI; st.pi = n.i; return n; }
+  startCircuit() {
+    this.endMode(); this.hide(); const W = this.world, me = this._grid(5); this.setPos(me.x, me.z, me.h); const lv = clamp(0.35 + level() * 0.05, 0.4, 1.1);
+    const ai = [this._aiCar(0, lv * 1.0, "Rocket Raju", 0xe63946), this._aiCar(1, lv * 0.92, "Speedy Sana", 0x8338ec), this._aiCar(2, lv * 0.85, "Turbo Tinku", 0x06d6a0)];
+    const st = { t: 0, lap: -1, pi: me.i, cp: 7, laps: 3, lapStart: 0, fin: false }; ai.forEach((a) => (a.lap = -1)); $("#race-board").innerHTML = "🏁 Lap 1/3 · Get ready!"; $("#race-board").style.display = "block";
+    this.mode = { kind: "race", ai, freeze: 3.2, update: (dt) => { if (this.mode.freeze > 0) return; st.t += dt; const n = this._trackProgress(st, W); for (const a of ai) if (!a.done) { this._aiStep(a, dt, W); if (a.lap >= st.laps) { a.done = true; a.time = st.t; } }
+      const list = [{ name: "🧑 You", prog: st.lap * W.tN + st.pi, me: true }].concat(ai.map((a) => ({ name: a.name, prog: a.done ? 1e9 - a.time : a.lap * W.tN + (a.u % W.tN) }))).sort((x, y) => y.prog - x.prog);
+      const pos = list.findIndex((x) => x.me) + 1; $("#race-board").innerHTML = `🏁 Lap ${clamp(st.lap + 1, 1, st.laps)}/${st.laps} · ${fmtT(st.t)}<br>${list.map((x, i) => `${i + 1}. ${x.me ? "<b>" + x.name + "</b>" : x.name}`).join("<br>")}`;
+      this.bar(`🏁 Position ${pos} of 4${n.d > 9 ? " · ⚠️ Back on the track!" : ""}`);
+      if (n.newLap && st.lap > 0 && st.lap < st.laps) { this.center(st.lap === st.laps - 1 ? "FINAL LAP" : `LAP ${st.lap + 1}`, 1200); }
+      if (st.lap >= st.laps && !st.fin) { st.fin = true; const prize = [600, 350, 180, 60][pos - 1]; S.stats.races++; if (pos === 1) S.stats.wins++; this.endMode(); this.addPts(prize, `🏁 P${pos} +${prize}`); this.done(pos === 1 ? "🏆 YOU WIN!" : `🏁 You finished ${["", "1st", "2nd", "3rd", "4th"][pos]}`, `Time ${fmtT(st.t)}. Prize: ${prize} points. ${pos === 1 ? "The crowd goes wild!" : "Upgrade your car in the 🔧 garage and try again!"}`); } } };
+    this._countdown();
+  }
+  startHighway() {
+    this.endMode(); this.hide(); this.setPos(4, HW.z0 + 6, 0); const lv = clamp(0.35 + level() * 0.05, 0.4, 1.1), mk = (x, name, col, sk) => { const m = makeCar("sports", col); this.scene.add(m); return { m, name, x, z: HW.z0 + 6, h: 0, s: 0, r: m.userData.r, skill: sk }; };
+    const ai = [mk(-4, "Rocket Raju", 0xe63946, lv), mk(0, "Speedy Sana", 0x8338ec, lv * 0.93)], fin = HW.z1 - 30; let t = 0, ended = false;
+    $("#race-board").innerHTML = "🛣️ Get ready!"; $("#race-board").style.display = "block"; this.toast("🛣️ Highway sprint! First to the end of the highway wins. Use 🔥 nitro (N)!", 3500);
+    this.mode = { kind: "race", ai, freeze: 3.2, update: (dt) => { if (this.mode.freeze > 0) return; t += dt; for (const a of ai) { a.s = lerp(a.s, 36 + 18 * a.skill, dt * 0.35); a.z += a.s * dt; a.m.position.set(a.x, 0, a.z); a.m.rotation.y = 0; for (const w of a.m.userData.wheels) w.children.forEach((q) => (q.rotation.x += a.s * dt / 0.36)); }
+      const list = [{ name: "🧑 You", z: this.car.z, me: true }].concat(ai.map((a) => ({ name: a.name, z: a.z }))).sort((a, b) => b.z - a.z), pos = list.findIndex((x) => x.me) + 1;
+      $("#race-board").innerHTML = `🛣️ ${fmtT(t)} · ${Math.max(0, Math.round(fin - this.car.z))} m to go<br>${list.map((x, i) => `${i + 1}. ${x.me ? "<b>" + x.name + "</b>" : x.name}`).join("<br>")}`;
+      if (!ended && (this.car.z >= fin || ai.some((a) => a.z >= fin + 40))) { ended = true; const p = this.car.z >= fin ? pos : Math.min(3, 1 + ai.filter((a) => a.z >= fin).length), prize = [400, 200, 60][p - 1]; S.stats.races++; if (p === 1) S.stats.wins++; this.endMode(); this.addPts(prize, `🛣️ P${p} +${prize}`); this.done(p === 1 ? "🏆 Highway king!" : `🛣️ You finished ${["", "1st", "2nd", "3rd"][p]}`, `Time ${fmtT(t)}. +${prize} points.`); } } };
+    this._countdown();
+  }
+  // ----- Time trial, ghosts, and friend challenges -----
+  encodeGhost(samples) { const a = new Int16Array(samples.length * 3); samples.forEach((s, i) => { a[i * 3] = Math.round(s[0] * 5); a[i * 3 + 1] = Math.round(s[1] * 5); a[i * 3 + 2] = Math.round(wrapA(s[2]) * 5000); }); let b = ""; const u8 = new Uint8Array(a.buffer); for (let i = 0; i < u8.length; i++) b += String.fromCharCode(u8[i]); return btoa(b); }
+  decodeGhost(code) { const b = atob(code), u8 = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) u8[i] = b.charCodeAt(i); const a = new Int16Array(u8.buffer), out = []; for (let i = 0; i + 2 < a.length; i += 3) out.push([a[i] / 5, a[i + 1] / 5, a[i + 2] / 5000]); return out; }
+  ghostAt(samples, t, dtS = 0.2) { const f = t / dtS, i = Math.min(samples.length - 2, Math.floor(f)), k = clamp(f - i, 0, 1); if (i < 0) return { x: samples[0][0], z: samples[0][1], h: samples[0][2] }; const a = samples[i], b = samples[i + 1]; return { x: lerp(a[0], b[0], k), z: lerp(a[1], b[1], k), h: a[2] + wrapA(b[2] - a[2]) * k, end: f >= samples.length - 1 }; }
+  startTimeTrial(ghostSrc) {
+    this.endMode(); this.hide(); const W = this.world, me = this._grid(3); this.setPos(me.x, me.z, me.h); const rec = []; let acc = 0;
+    const src = ghostSrc || (S.ghost ? { name: "Your best", t: S.best.track, car: S.car, code: S.ghost } : null), gs = src ? this.decodeGhost(src.code) : null; let ghost = null;
+    if (gs) { ghost = makeCar(carDef(src.car).type, 0xa0c4ff); ghost.traverse((o) => { if (o.isMesh) { o.material = o.material.clone(); o.material.transparent = true; o.material.opacity = 0.4; o.castShadow = false; } }); this.scene.add(ghost); }
+    const st = { t: 0, lap: -1, pi: me.i, cp: 7, laps: 1, lapStart: 0, fin: false }; $("#race-board").innerHTML = "⏱️ Get ready!"; $("#race-board").style.display = "block";
+    this.mode = { kind: "race", ghost, freeze: 3.2, update: (dt) => { if (this.mode.freeze > 0) return; st.t += dt; acc += dt; if (acc >= 0.2) { acc -= 0.2; rec.push([this.car.x, this.car.z, this.car.h]); } const n = this._trackProgress(st, W);
+      if (gs) { const g = this.ghostAt(gs, st.t); ghost.position.set(g.x, 0, g.z); ghost.rotation.y = g.h; this.mode.ghostPos = g; }
+      $("#race-board").innerHTML = `⏱️ ${fmtT(st.t)}<br>${src ? `👻 ${src.name}: ${fmtT(src.t)}` : "No ghost yet: set a time!"}`; this.bar(`⏱️ Time trial · 1 lap${n.d > 9 ? " · ⚠️ Back on the track!" : ""}`);
+      if (st.lap >= 1 && !st.fin) { st.fin = true; this.finishTrial(st.t, rec, src); } } };
+    this._countdown();
+  }
+  finishTrial(t, rec, src) {
+    const best = S.best.track, newBest = !best || t < best, beatGhost = src && t < src.t; let code = null; S.stats.races++;
+    if (newBest) { S.best.track = t; code = this.encodeGhost(rec); S.ghost = code; } this.lastRun = { t, code: code || this.encodeGhost(rec) };
+    const pts = 150 + (newBest ? 200 : 0) + (beatGhost ? 250 : 0); this.endMode(); this.addPts(pts, `⏱️ Lap ${fmtT(t)} +${pts}`); save();
+    const C = this.show(`<h2>⏱️ ${fmtT(t)}</h2><p>${newBest ? "🎉 New personal best!" : `Your best is ${fmtT(best)}.`} ${src ? (beatGhost ? `You beat ${src.name}'s ghost! 👻💨` : `${src.name}'s ghost was faster (${fmtT(src.t)}).`) : ""}</p><p>+${pts} points.</p><div class="row"><button class="btn go" id="tt-share">📤 Send this lap as a challenge</button><button class="btn" id="tt-again">🔁 Try again</button><button class="btn alt" id="tt-menu">☰ Menu</button></div>`);
+    C.querySelector("#tt-share").onclick = () => this.shareLap(this.lastRun); C.querySelector("#tt-again").onclick = () => this.startTimeTrial(src && src.name !== "Your best" ? src : null); C.querySelector("#tt-menu").onclick = () => this.openMenu();
+  }
+  challengeLink(run) { const name = (S.name || "A friend").slice(0, 16), payload = btoa(unescape(encodeURIComponent(JSON.stringify({ n: name, t: Math.round(run.t * 100) / 100, c: S.car, g: run.code })))); return `${location.href.split("#")[0]}#race=${payload}`; }
+  shareLap(run) {
+    if (!S.name) { const n = prompt("Your name for the challenge?", ""); if (n) { S.name = n.trim().slice(0, 16); save(); } }
+    const link = this.challengeLink(run), text = `🏁 Desi Drive challenge! I drove the circuit in ${fmtT(run.t)}. Can you beat my ghost? ${link}`; this._lastLink = link;
+    try { if (navigator.share) { navigator.share({ title: "Desi Drive", text }).catch(() => {}); return; } } catch (e) { /* share optional */ }
+    try { navigator.clipboard.writeText(text).then(() => this.toast("📋 Challenge copied! Paste it in WhatsApp.", 3000), () => this.toast(text, 8000)); } catch (e) { this.toast(text, 8000); }
+  }
+  readChallenge() { const m = location.hash.match(/race=([A-Za-z0-9+/=%]+)/); if (!m) return null; try { const o = JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(m[1]))))); this.decodeGhost(o.g); return { name: o.n, t: o.t, car: o.c, code: o.g }; } catch (e) { return null; } }
+  startGhostRace(g) { this.startTimeTrial(g); this.toast(`👻 Race ${g.name}'s ghost! It is the see-through car.`, 3500); }
+  challenge() {
+    const C = this.show(`<h2>👻 Challenge a friend</h2><p>Race one lap of the circuit. The game records your drive. Send the link on WhatsApp: your friend races your <b>ghost</b>, a see-through copy of your car that drives exactly like you did.</p>
+      <p>${S.best.track ? `Your best lap: <b>${fmtT(S.best.track)}</b>` : "You have no lap yet. Drive a time trial first!"}</p>
+      <div class="row"><button class="btn go" id="c-new">⏱️ Drive a lap now</button>${S.ghost ? `<button class="btn" id="c-send">📤 Send my best lap</button>` : ""}${this.friendGhost ? `<button class="btn" id="c-race">👻 Race ${this.friendGhost.name} (${fmtT(this.friendGhost.t)})</button>` : ""}<button class="btn alt" id="c-back">◀ Back</button></div>
+      <small class="mut">Live racing with people at the same moment needs a game server. Ghost racing works with any friend, any time, with just a link.</small>`);
+    C.querySelector("#c-new").onclick = () => this.startTimeTrial(null); const s = C.querySelector("#c-send"); if (s) s.onclick = () => this.shareLap({ t: S.best.track, code: S.ghost }); const r = C.querySelector("#c-race"); if (r) r.onclick = () => this.startGhostRace(this.friendGhost); C.querySelector("#c-back").onclick = () => this.openMenu();
+  }
+  // ----- Help and About -----
+  howTo() {
+    const C = this.show(`<h2>🕹️ How to play</h2><table class="res"><tr><td>⬆️ W / Up arrow</td><td>Accelerate</td></tr><tr><td>⬇️ S / Down arrow</td><td>Brake, then reverse</td></tr><tr><td>⬅️➡️ A D / arrows</td><td>Steer</td></tr><tr><td>Space</td><td>Handbrake: drift around corners!</td></tr><tr><td>N</td><td>🔥 Nitro boost</td></tr><tr><td>C</td><td>🎥 Change the camera (4 views)</td></tr><tr><td>H</td><td>📯 Horn</td></tr><tr><td>L · R</td><td>🌙 Night · 🌧️ Rain</td></tr><tr><td>Q · E</td><td>Left · right indicator</td></tr><tr><td>Esc</td><td>☰ Menu</td></tr></table>
+      <p><b>Points:</b> drive, drift, collect ⭐ stars, pass traffic closely, finish missions and races. A red light or a speed camera (60 km/h in the city) costs points.</p><p><b>Garage:</b> spend points on new cars and on engine, tyres, brakes, nitro and body upgrades. Repair at the 🔧 garage, fill fuel at the ⛽ petrol pump: drive there and stop.</p><p><b>Phone:</b> use the round buttons on the screen.</p><div class="row"><button class="btn alt" id="h-back">◀ Back</button></div>`);
+    C.querySelector("#h-back").onclick = () => this.openMenu();
+  }
+  about() {
+    const C = this.show(`<div style="text-align:center"><img id="about-photo" src="${ABOUT_PHOTO}" alt="Rishabh Sharma" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:0 4px 16px rgba(0,0,0,.25)"><h2 style="margin:8px 0 0">Rishabh Sharma</h2><div style="color:#666">Creator of the RishSchoolDays series · 9 years old</div></div>
+      <div style="background:linear-gradient(90deg,#ff9933,#ffffff,#138808);height:4px;border-radius:2px;margin:10px 0"></div>
+      <table class="res"><tr><td>🏎️ Game</td><td><b>Desi Drive</b></td></tr><tr><td>📚 Series</td><td>RishSchoolDays · Game 2 (Game 1: School Days)</td></tr><tr><td>👦 Created by</td><td>Rishabh Sharma, age 9</td></tr><tr><td>💡 Ideas and testing</td><td>Rishabh Sharma</td></tr><tr><td>✨ Slogan</td><td><b>Just live it!</b></td></tr><tr><td>🇮🇳 Made in</td><td>India, for children everywhere</td></tr><tr><td>🔢 Version</td><td>${VERSION}</td></tr></table>
+      <p><b>The game:</b> drive through a 3D Indian city. Take taxi rides, deliver parcels, pass your licence test, race on the circuit and the highway, and challenge friends with ghost races. Earn points, buy 7 vehicles and upgrade every part.</p>
+      <p style="text-align:center;font-size:12px;color:#888">© 2026 Rishabh Sharma · RishSchoolDays. All rights reserved.</p><div class="row" style="justify-content:center"><button class="btn alt" id="a-back">◀ Back</button></div>`);
+    C.querySelector("#a-back").onclick = () => this.openMenu();
+  }
+}
+
+const game = new Game(); $("#ver").textContent = `Desi Drive ${VERSION}`; window.__dd = { game, S, CARS, eff, level, save };
+game.friendGhost = game.readChallenge();
+game.openMenu();
+if (game.friendGhost) game.toast(`👻 ${game.friendGhost.name} sent you a challenge: ${fmtT(game.friendGhost.t)}. Race the ghost!`, 5000);
+</script>
+</body>
+</html>

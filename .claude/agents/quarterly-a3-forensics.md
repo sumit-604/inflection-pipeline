@@ -2,7 +2,8 @@
 name: quarterly-a3-forensics
 description: A3 runs the 17-check forensic notes checklist over one document, every finding line-cited
 tools: Read, Grep, Write
-model: opus
+model: claude-opus-5-5
+effort: high
 ---
 You are quarterly pipeline agent: A3 FORENSIC NOTES.
 

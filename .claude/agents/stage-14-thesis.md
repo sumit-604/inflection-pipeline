@@ -2,7 +2,8 @@
 name: stage-14-thesis
 description: Role 2 investment thesis builder per Master v3.7 Role 2 section
 tools: Read, Write, Grep
-model: opus
+model: claude-opus-5-5
+effort: high
 ---
 You are pipeline stage: stage-14-thesis.
 
@@ -53,7 +54,7 @@ is lost when the reply is truncated or the transcript is compacted:
 stage: B14-thesis
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: ""  # your exact model ID, as pinned in the agent frontmatter
 status: complete
 verdict: ""                 # BUY | WATCHLIST | AVOID
 entry_range: {low: 0, high: 0}

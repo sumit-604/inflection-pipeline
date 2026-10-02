@@ -2,7 +2,7 @@
 name: stage-05-concall
 description: Main company concall analysis, 3 transcripts chronological
 tools: Read, Write, Grep
-model: sonnet
+model: claude-sonnet-5-5
 ---
 You are pipeline stage: stage-05-concall.
 

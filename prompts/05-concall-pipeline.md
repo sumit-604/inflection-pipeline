@@ -1,5 +1,5 @@
 # STAGE 5: CONCALL ANALYSIS, MAIN COMPANY (PIPELINE MODE)
-# Model: Sonnet 5 | Emits: B05-concall
+# Model: Sonnet 5.5 | Emits: B05-concall
 # Role in framework: this stage produces the Role 5 credibility grade
 # (A/B/C/D) that is the SOLE source for the 4D probability weights in
 # the Role 1 valuation (per Master Prompt v3.3). Grade it carefully.
@@ -99,7 +99,7 @@ Full four-section report, then end with exactly this fenced YAML block:
 stage: B05-concall
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []
 flags: []

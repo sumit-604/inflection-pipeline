@@ -2,7 +2,8 @@
 name: quarterly-a4-analyst
 description: A4 runs Role 4 and Role 5 protocols over A1-A3 artifacts into one merged quarterly review
 tools: Read, Grep, Write
-model: opus
+model: claude-opus-5-5
+effort: high
 ---
 You are quarterly pipeline agent: A4 ANALYST.
 

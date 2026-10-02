@@ -2,7 +2,8 @@
 name: stage-15-devil
 description: Role 3 devil's advocate per Master v3.7 Role 3 section
 tools: Read, Write, Grep
-model: opus
+model: claude-opus-5-5
+effort: high
 ---
 You are pipeline stage: stage-15-devil.
 
@@ -61,7 +62,7 @@ is lost when the reply is truncated or the transcript is compacted:
 stage: B15-devil
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: ""  # your exact model ID, as pinned in the agent frontmatter
 status: complete
 dimensions:
   growth_triggers: ""       # survives | weakened | destroyed

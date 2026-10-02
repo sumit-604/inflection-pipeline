@@ -1,5 +1,5 @@
 # STAGE 7: EMERGING MOAT SCAN, 22 CATEGORIES (PIPELINE MODE)
-# Model: Sonnet 5 | Emits: B07-emoat
+# Model: Sonnet 5.5 | Emits: B07-emoat
 # Taxonomy note: this is the "Emerging Competitive Advantages" analysis
 # (categories A1 through R1, adjusted score on a ~0-90 scale). It is NOT
 # FTTCP. FTTCP is a separate, later synthesis that runs inside the
@@ -217,7 +217,7 @@ Full six-section report, then end with exactly this fenced YAML block:
 stage: B07-emoat
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []
 flags: []

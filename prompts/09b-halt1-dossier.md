@@ -1,5 +1,5 @@
 # STAGE 09b: HALT 1 UNDERSTANDING DOSSIER (PIPELINE MODE)
-# Model: Sonnet 5 | Emits: B09b-dossier
+# Model: Sonnet 5.5 | Emits: B09b-dossier
 # Runs LAST in PHASE 1 (/run-pipeline): after stage 9 and the verifiers,
 # before the halt message. It is the Halt 1 deliverable the operator reads
 # to decide KILL / SHALLOW WATCH / PROCEED.
@@ -311,7 +311,7 @@ exactly this fenced YAML block:
 stage: B09b-dossier
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 corpus_verdict: ""              # CORPUS CURRENT | CORPUS GAPPED | CORPUS GAPPED-FRESHNESS
 corpus_gaps:                    # list, or [] if CORPUS CURRENT

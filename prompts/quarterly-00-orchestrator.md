@@ -8,6 +8,14 @@ COMPLETENESS. The protocol files govern ANALYSIS. Where this orchestrator and
 a protocol file conflict on analysis, the protocol file wins. Where they
 conflict on extraction discipline, this orchestrator wins.
 
+Interactive lines in the protocols (operator ruling 2026-10-03): the Role 4
+and Role 5 protocols were written for claude.ai and carry STOP, "stop and
+ask" and "get explicit GO" lines. Under /run-quarterly no agent waits on
+them. Each such STOP becomes a flag in the review, and the operator rules
+on the flags at the end. A missing Notion page is not a stop: frame the
+review as a PRE-THESIS READ (see below). The only waits in this pipeline
+are the loop-cap question and the Notion write gate.
+
 The pipeline exists because a casual text-layer read of SOUTHWEST Q1 FY27 on
 20 July 2026 missed a zero-value "Profit on sale of share in subsidiary"
 line, a widening standalone-vs-consolidated PAT gap resting on unaudited JV
@@ -226,7 +234,7 @@ After all documents pass A1-A3:
    This row is the document-review baseline, the same discipline the main
    pipeline ledger keeps.
 
-7. COMMIT the run folder (`work/` files) with message
+7. COMMIT the run folder (`extracted/`, `work/`, and `session-cost.md`) with `git commit -q -m "quarterly review: <ticker> <quarter>"`. End the report with the commit hash and `git log -1 --stat`. Report
    "quarterly review: <ticker> <quarter>" and report to the user the A5
    verdict, the count-reconciliation line (N notes / N turns / N slides, all
    reviewed), the top forensic findings, and the working-file paths. ALSO
@@ -238,6 +246,14 @@ After all documents pass A1-A3:
 ---
 
 ## NOTION SAVE (after A5 COMPLETE only)
+
+WRITE GATE (operator ruling 2026-10-03; the one approved exception to
+"claude.ai executes writes"): before any Notion call that writes, print the
+exact payload (page, properties, content) and STOP for the operator's
+explicit approval in this run. No approval, no write: save the payload to
+the run folder as notion-payload.md instead. Never write the Decision Status
+property. A fired pre-committed trigger is flagged in the Key Notes line and
+in the report; the operator changes Decision Status.
 
 Perform the Notion save INLINE in this orchestrator session. Do NOT delegate it
 to a subagent (Sonnet or otherwise): the save is a mechanical
@@ -255,7 +271,8 @@ Per Role 4 Step 9 and existing save mechanics:
 - `update_properties` to PREPEND the date-stamped Key Notes line to the
   pipe-delimited audit trail, preserving all prior entries.
 - Escape pipe characters inside table cells as `\|`.
-- Decision Status changes ONLY when a pre-committed trigger formally fires.
+- Never write Decision Status. When a pre-committed trigger formally fires,
+  flag it in the Key Notes line and the report; the operator decides.
 - Save the A3 forensics table and the A5 audit verdict alongside the review;
   the completeness proof is part of the record.
 
@@ -268,7 +285,7 @@ Per Role 4 Step 9 and existing save mechanics:
 2. Line-number citation or it did not happen. Every finding, number, and quote
    carries its line number (or turn / slide number).
 3. Zero-value lines are data. Never drop a nil row from an extraction table.
-4. The text layer is not trusted for image-heavy pages. OCR fallback is
+4. Text layer first (A1 TEXT-LAYER GATE). A document with a text layer is extracted text-only. OCR runs only on a no-text-layer scan, or on a logged zero-character page that holds a data-bearing figure.
    mandatory when the per-page character test fails.
 5. Standalone AND consolidated, always both. The gap is a first-class metric.
 6. Auditor paragraphs are read verbatim and diffed against the prior quarter,
@@ -302,7 +319,7 @@ Per Role 4 Step 9 and existing save mechanics:
   is copied twice across the working files. COMPLETENESS GATE: every A1 row ID
   must be referenced by at least one of A2-A5. An orphaned ID (in the structured
   file, cited by none) fails the run and is reported.
-- analyst_note handoff (bounded prose). Every agent's YAML block carries an
+- analyst_note handoff (bounded prose). The A2-A5 YAML blocks carry an
   `analyst_note` field, <=200 words, strict cap. Reasoning that a downstream
   stage cannot reconstruct from the structured fields travels there; everything
   else stays structured. It keeps free prose from leaking into the tables and
@@ -310,6 +327,7 @@ Per Role 4 Step 9 and existing save mechanics:
 - A5's independence is absolute: its task message carries only the A4 review,
   the A1 extracts, and the A2 ledgers, never your commentary.
 - Only mechanical failures (missing pages, count mismatch, blank checks,
-  INCOMPLETE audit after two loops, missing protocol files) halt the run.
+  INCOMPLETE audit after the one correction loop, then ask the operator;
+  missing protocol files) halt the run.
 - If any required protocol file is absent, STOP and report; do not
   reconstruct protocols from memory.

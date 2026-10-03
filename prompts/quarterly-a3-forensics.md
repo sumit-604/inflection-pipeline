@@ -95,7 +95,7 @@ exceeding the full prior year = assumption change (discount rate, plan assets)
 F10. SHARE COUNT AND DILUTION. Paid-up capital per period; any change traces
 to a corporate action. Basic vs diluted EPS spread; a widening spread = new
 dilutive instruments. Cross-check against known warrants / ESOPs from the
-Notion thesis (provided by A4; here just flag the spread).
+Notion thesis (A4 runs that cross-check; here just flag the spread).
 
 F11. RESERVES AND NET WORTH TIE-OUT. Other Equity + Paid-up = statutory net
 worth. Reconcile against any third-party number in context (rating rationale,

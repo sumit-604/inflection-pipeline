@@ -12,8 +12,10 @@ case), or a company-name fragment. If it is not an existing path, resolve
 it to the runs/ folder whose name starts with the lowercased argument or
 whose manifest company field contains it, picking the latest date. State
 the resolved folder before starting. If nothing matches, list the
-available runs and stop. If more than one matches, list the matches and
-ask.
+available runs and stop. If more than one matches at the same latest
+date, pick the one whose manifest ticker matches exactly; if still
+ambiguous, take the first alphabetically and say which you took and why.
+Do not ask.
 
 LESSONS PRE-READ: after the run folder resolves and before any stage runs,
 read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
@@ -29,8 +31,7 @@ overrides a prompt or framework, and it is never passed to a stage or
 verifier subagent.
 
 TOOLING GATE (before stage 0, not after the first failure). The
-session-start hook runs a PDF tooling preflight and reports its result in
-session context. Read that line first. Then confirm it yourself: test-read
+session-start hook runs a PDF tooling preflight on web sessions and reports its result in session context. Read that line first if present; on a local session there is none. Then confirm it yourself: test-read
 one inputs/ PDF end to end. Tooling that the hook could not install is
 installed here (apt-get install -y -qq poppler-utils; pip install -q pypdf;
 pip install -q --force-reinstall cffi when pypdf imports but fails on a real
@@ -76,7 +77,7 @@ launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
 table allows.
 
-PROVE COMPLETION, DO NOT ASSUME IT. Stages have repeatedly been dispatched
+PROVE COMPLETION. A returned call is not a finished stage. Before any later stage reads a stage's output:
 to the background despite the rule above, and the run carried on against
 reports that did not exist yet, because "the call returned" was treated as
 "the stage finished". The two are different events. Before you treat any
@@ -118,9 +119,8 @@ The pipeline is three phases (see prompts/00-orchestrator.md PHASES
 section):
 
 - PHASE 1 (this command): evidence gathering, stages 0-9, verifiers A, B,
-  D and the Gate 0 + EM half of verifier C, then a synthesis-lite. Ends by
-  handing off to /fttcp for deliberation.
-- PHASE 2: /fttcp runs/<folder> — operator deliberation, writes
+  D and the Gate 0 + EM half of verifier C, then a synthesis-lite and the 09b dossier. Ends at HALT 1; /fttcp runs only after the operator signs the Mental Model, records PROCEED, and the Role 5.5 tracker gate is met.
+- PHASE 2: /fttcp runs/<folder> — autonomous FTTCP draft, then operator review and the P/E base approval gate; writes
   outputs/final/fttcp-deliberation.md.
 - PHASE 3: /finalize runs/<folder> — assembly, valuation, thesis, devil's
   advocate, valuation verification, final synthesis.
@@ -128,7 +128,7 @@ section):
 Stages 10, 11, the valuation-adherence half of verifier C (12c), and the
 full synthesis do NOT run here. They run in PHASE 3.
 
-Read prompts/00-orchestrator.md now; it is the authority on sequence,
+Read prompts/00-orchestrator.md now; it is the authority on sequence, and its SPEAR GATE check runs before the stage 0 inventory below.
 handoff schemas, flag rules, and error handling. Then:
 
 1. VALIDATE (stage 0, do this yourself): inventory the run folder against
@@ -229,8 +229,7 @@ handoff schemas, flag rules, and error handling. Then:
    way the question is asked once and never again for the rest of the run.
    If the manifest has concalls_available: false, do
    not list concalls or peer-concalls as gaps: their absence is
-   declared, not accidental. This is the single permitted question in
-   the pipeline.
+   declared, not accidental. This is the single permitted question before Halt 1.
 
    COMPANY MEMORY: if companies/<TICKER>.md exists (the durable per-company
    memory written by prior /finalize runs), read it at stage 0 and carry it
@@ -282,7 +281,7 @@ handoff schemas, flag rules, and error handling. Then:
        (B07) compliance checks only, and pass it ONLY the two rule
        sources those checks need — prompts/01-gate-0-pipeline.md and
        prompts/07-emerging-moat-pipeline.md — alongside B01 and B07. Do
-       NOT pass the valuation framework docs (Master Prompt v3.6, Section
+       NOT pass the valuation framework docs (Master Prompt v3.7 at frameworks/Master_Project_Prompt_v3_6.md, Section
        1B layers, FTTCP v2.3): they are consumed only by the B11 valuation
        audit, which is deferred to PHASE 3, so in phase 1 they are dead
        context. Its valuation-adherence audit (B11, B10) must NOT run
@@ -390,11 +389,12 @@ handoff schemas, flag rules, and error handling. Then:
        every ledger row). Sum a stage's loop or retry runs into one stage
        total for the ranking.
    (b) DOWNSHIFT FAILURES. Any MECHANICAL stage that ran on Opus, flagged
-       "DOWNSHIFT FAILURE: <stage>". The mechanical stages are the ones
-       DISPATCH routes to haiku (stage 0 validation, stage 10 assembly,
-       verifier A); a mechanical stage on Opus means the downshift did not
-       take and the run overpaid. Write "none" if every mechanical stage
-       ran on haiku.
+       "DOWNSHIFT FAILURE: <stage>". In phase 1 the only mechanical stage
+       is verifier A (stage 10 runs in phase 3 and is checked there). Stage
+       0 runs inline on the session model by design and is not checked. A
+       mechanical stage on Opus means the downshift did not take and the
+       run overpaid. Write "none" if verifier A ran on its frontmatter
+       model.
    (c) COST SPIKES. Any stage whose total tokens exceed 1.5x the same
        stage in the previous run for this ticker (the most recent prior
        runs/<ticker>-<date>/session-cost.md ledger), flagged
@@ -420,6 +420,8 @@ handoff schemas, flag rules, and error handling. Then:
    the dossier, the gate recommendation verdict line, flags active,
    phase-1 confidence delta overall, and the final file paths including
    outputs/reports/09b-understanding-dossier.md and session-cost.md.
+   End the report with the commit hash and the output of
+   `git log -1 --stat`.
 
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,

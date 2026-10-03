@@ -19,7 +19,9 @@ analyse, judge, or estimate. You locate, copy, and anchor.
 3. NEVER compute a value that requires judgment (e.g., "is cash drag
    structural"). Copy the upstream determination and its anchor. If
    upstream stages disagree on a value, record BOTH with anchors under
-   conflicts[] and put the more conservative one in the table, marked.
+   conflicts[] and put both in the table as "CONFLICT: both readings",
+   each value with its anchor. Stage 11 resolves it under override 3.
+   Never pick the conservative one (CLAUDE.md: never shade an input).
 3a. RULE 3 COVERS JUDGMENTS ONLY. For an AUDITED FIGURE (anything printed in
    a results filing, an annual report or a rating rationale) two blocks
    cannot both be right: one number was printed. Do not apply rule 3's
@@ -124,5 +126,5 @@ analyst_note: ""               # optional, <=200 words (strict cap, excess
 
 Manifest: {{MANIFEST_YAML}}
 Blocks B01 through B09: {{ALL_BLOCKS_YAML}}
-Results PDFs (3 quarters): {{RESULTS_EXTRACTS}}
+Results PDFs (paths, up to 3 most recent): {{RESULTS_PDF_PATHS}}
 Rating PDF: {{RATING_EXTRACT}}

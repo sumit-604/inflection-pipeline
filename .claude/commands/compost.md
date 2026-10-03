@@ -48,7 +48,7 @@ each applied fix:
   the file and the change, and note it in LESSONS_ARCHIVE.md too (never
   delete existing archive entries).
 
-BUDGET REVIEW (Point 7, mandatory on every promotion). The active LESSONS.md
+BUDGET REVIEW (mandatory on every promotion). The active LESSONS.md
 has a hard budget under 1,500 tokens; it is not an unlimited append. After
 adding any PROMOTED TO LAW entry, check the active file's size. If it is at
 or over budget, review the oldest or now-redundant active lessons and move
@@ -57,5 +57,5 @@ longer needs to sit in RECURRING PATTERNS). Never archive a NAMED FAILURE
 CATALOGUE entry. Report the archive-review decision alongside the applied
 fixes.
 
-Do not commit or push unless the operator asks. Report what was applied and
+Do not commit or push unless the operator asks. If you commit an applied fix, keep it on a framework branch apart from run outputs and open a PR to main the same day (CLAUDE.md SESSION DISCIPLINE). Report what was applied and
 what was left for a future pass.

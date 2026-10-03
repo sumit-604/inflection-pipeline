@@ -1,4 +1,4 @@
-// Desi Drive regression. Usage: NODE_PATH=$(npm root -g) node regress.cjs http://localhost:8765/test.html [shotDir]
+// RishDrive regression. Usage: NODE_PATH=$(npm root -g) node regress.cjs http://localhost:8765/test.html [shotDir]
 const { chromium } = require("playwright");
 const URL = process.argv[2] || "http://localhost:8765/test.html", SHOTS = process.argv[3] || ".";
 const ARGS = ["--use-gl=swiftshader", "--enable-unsafe-swiftshader"];
@@ -28,8 +28,8 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "Desi Drive v3", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
-  ok("A4 title and slogan", r.title === "Desi Drive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v4", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
   // B. Free drive: speed, gears, fuel

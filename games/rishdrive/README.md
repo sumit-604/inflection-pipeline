@@ -1,4 +1,4 @@
-# Desi Drive
+# RishDrive
 
 RishSchoolDays series, Game 2. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
@@ -73,3 +73,5 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   daily gift, number plates and stickers, car wash, stunt ramps,
   22 badges, Rishpur village and Sunrise Hill. Grass no longer shows
   through roads on some screens. 102 regression checks.
+- v4: the game is renamed from Desi Drive to RishDrive. Saved progress
+  is kept (the save key is unchanged).

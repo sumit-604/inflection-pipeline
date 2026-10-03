@@ -137,6 +137,11 @@ CMDS = {'/run-pipeline': ['.claude/commands/run-pipeline.md', 'prompts/00-orches
         '/finalize': ['.claude/commands/finalize.md'],
         '/run-quarterly': ['.claude/commands/run-quarterly.md', 'prompts/quarterly-00-orchestrator.md']}
 pat = re.compile(r'(?<![\w/.<{-])((?:\.claude|frameworks|prompts|tools|audits|companies|runs|outputs|inputs|verifiers)/[\w./<>{}*-]+)')
+# A path counts only if git tracks it but the sparse tree dropped it. Paths
+# no reference run holds (Phase 2 and 3 outputs written later) are check 2's
+# concern, not a sparse gap.
+import subprocess
+tracked = set(subprocess.run(['git', 'ls-files'], capture_output=True, text=True).stdout.split('\n'))
 fail = False
 for cmd, fs in CMDS.items():
     miss = set()
@@ -150,9 +155,9 @@ for cmd, fs in CMDS.items():
                     p = os.path.join(RUN, tail)
                 elif re.search(r'[<>{}*]', p): continue
                 if p.startswith(('outputs/', 'inputs/')): p = os.path.join(RUN, p)
-                if not os.path.exists(p) and not glob.glob(p): miss.add(f'{p} ({f}:{i})')
+                if p in tracked and not os.path.exists(p): miss.add(f'{p} ({f}:{i})')
     fail = fail or bool(miss)
-    print(f'  {cmd}: ' + ('all paths on disk' if not miss else f'{len(miss)} missing'))
+    print(f'  {cmd}: ' + ('every tracked path on disk' if not miss else f'{len(miss)} tracked paths missing'))
     for x in sorted(miss): print('    missing:', x)
 tpl = 'runs/_template/outputs/expectation-ledger.md'
 print(f'  {tpl}: ' + ('present' if os.path.exists(tpl) else 'MISSING'))

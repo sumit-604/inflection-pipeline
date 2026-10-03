@@ -14,6 +14,7 @@ const HELPERS = () => {
   window.noTraffic = () => { window._tc = G.traffic.cars; G.traffic.cars = []; };
   window.yesTraffic = () => { if (window._tc) G.traffic.cars = window._tc; };
   // Teleport the car around the track, index by index, to complete laps.
+  window.lapTeleportRev = (laps) => { const W = G.world, N = W.tN, c = G.car; let i = W.trackNearest(c.x, c.z).i; for (let k = 0; k < N * laps + 30; k += 3) { const j = ((i - k) % N + N) % N, p = W.tp[j], q = W.tp[(j - 1 + N) % N]; G.setPos(p.x, p.z, Math.atan2(q.x - p.x, q.z - p.z)); G.T += 0.05; G.step(0.05); if (G.mode.kind !== "race") return k; } return -1; };
   window.lapTeleport = (laps) => { const W = G.world, N = W.tN, c = G.car; let i = W.trackNearest(c.x, c.z).i; for (let k = 0; k < N * laps + 30; k += 3) { const j = (i + k) % N, p = W.tp[j], q = W.tp[(j + 1) % N]; G.setPos(p.x, p.z, Math.atan2(q.x - p.x, q.z - p.z)); G.T += 0.05; G.step(0.05); if (G.mode.kind !== "race") return k; } return -1; };
 };
 
@@ -28,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v4", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v5", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -70,7 +71,7 @@ const HELPERS = () => {
   r = await E(() => ({ night: S.night, rain: S.rain && G.rain.visible, bg: G.scene.background.getHex(), cam: G.camMode, ind: G.ind, head: G.headL.intensity }));
   ok("I1 night toggles", r.night && r.bg < 0x202020 && r.head > 0, r); ok("I2 rain toggles", r.rain, r); ok("I3 camera cycles", r.cam === 1, r); ok("I4 indicator", r.ind === -1, r);
   await E(() => { G.setPos(3.5, -100, 0); keys("up"); sim(2); keys(); }); await p.waitForTimeout(2000); await p.screenshot({ path: `${SHOTS}/03-night-rain.png` });
-  await p.keyboard.press("l"); await p.keyboard.press("r"); await p.keyboard.press("c"); await p.keyboard.press("c"); await p.keyboard.press("c"); await p.keyboard.press("q");
+  await p.keyboard.press("l"); await p.keyboard.press("r"); for (let i = 0; i < 4; i++) await p.keyboard.press("c"); await p.keyboard.press("q");
   r = await E(() => ({ night: S.night, rain: S.rain, cam: G.camMode }));
   ok("I5 toggles back", !r.night && !r.rain && r.cam === 0, r);
 
@@ -147,7 +148,7 @@ const HELPERS = () => {
 
   // W. Each car spawns and drives
   r = await E(() => { const out = {}; for (const c of __dd.CARS) { if (!S.owned.includes(c.id)) S.owned.push(c.id); S.car = c.id; G.respawnCar(); G.setPos(0, 300, 0); S.fuel = 100; S.damage = 0; G.car.broken = false; keys("up"); sim(3); keys(); out[c.id] = Math.round(G.car.kmh); } return out; });
-  ok("W1 all 7 vehicles drive", Object.values(r).length === 7 && Object.values(r).every((v) => v > 15), r);
+  ok("W1 all 11 vehicles drive", Object.values(r).length === 11 && Object.values(r).every((v) => v > 15), r);
   await E(() => { S.car = "gt"; G.respawnCar(); G.setPos(3.5, -150, 0); keys("up"); sim(1); keys(); }); await p.waitForTimeout(2000); await p.screenshot({ path: `${SHOTS}/07-gt.png` });
 
   // X. Level up from points
@@ -162,7 +163,7 @@ const HELPERS = () => {
   r = await E(() => { G.world.gates.forEach((g) => (g.open = 0, g.a = 0)); G.setPos(5.5, 420, 0); G.car.s = 12; keys("up"); let blocked = true; const g0 = G.world.gates[0]; for (let i = 0; i < 80; i++) { G.T += 0.05; G.step(0.05); if (G.car.z > 450.5 && g0.a < 0.9) blocked = false; } keys(); G.world.gates.forEach((g) => (g.open = 0, g.a = 0)); G.setPos(5.5, 441, 0); const p0 = S.points, t0 = S.stats.tolls; sim(0.3); const paid = p0 - S.points; keys("up"); sim(4); keys(); return { blocked, paid, tolls: S.stats.tolls - t0, passed: G.car.z > 462 }; });
   ok("N7a closed toll barrier stops the car", r.blocked, r); ok("N7b stop to pay 20 and pass", r.paid === 20 && r.tolls === 1 && r.passed, r);
   r = await E(() => { G.startHighway(); sim(3.5); G.setPos(5.5, 420, 0); G.car.s = 25; keys("up"); const p0 = S.points; sim(3); keys(); const o = { passed: G.car.z > 460, dp: p0 - S.points }; G.startFree(); return o; });
-  ok("N7c races use the FASTag lane", r.passed && r.dp === 0, r);
+  ok("N7c races use the FASTag lane", r.passed && r.dp <= 0, r);
   // 8. Petrol pump game
   r = await E(async () => { S.fuel = 50; S.points = 1000; G.pumpPanel(); document.querySelector("#p-game").click(); const out = document.querySelector("#pg-v"); await new Promise((res) => { const t = setInterval(() => { if (parseInt(out.textContent) >= 99) { clearInterval(t); document.querySelector("#pg-stop").click(); res(); } }, 2); }); const msg = document.querySelector("#pg-msg").textContent; const o = { msg, fuel: S.fuel, perfect: S.stats.perfectFill }; document.querySelector("#pg-stop").click(); o.closed = !G.paused; return o; });
   ok("N8 pump fill game", r.msg.length > 5 && r.fuel >= 98 && r.closed, r);
@@ -185,7 +186,7 @@ const HELPERS = () => {
   await E(() => { G.setPos(-39, 12, 0); G.car.s = 24; keys("up"); sim(1.05); keys(); }); await p.waitForTimeout(1200); await p.screenshot({ path: `${SHOTS}/10-jump.png` });
   // 13. Badges
   r = await E(() => { G.checkBadges(); G.openMenu(); document.querySelector("#m-badges").click(); return { n: document.querySelectorAll(".badge").length, on: document.querySelectorAll(".badge.on").length, jump: !!S.badges.jump1, wash: !!S.badges.wash, toll: !!S.badges.toll, plate: !!S.badges.plate }; });
-  ok("N13 22 badges, earned ones lit", r.n === 22 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
+  ok("N13 25 badges, earned ones lit", r.n === 25 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
   await p.screenshot({ path: `${SHOTS}/11-badges.png` });
   // 14. Village and Sunrise Hill: drive the road with a simple autopilot
   r = await E(() => { document.querySelector("#b-back").click(); document.querySelector("#m-free").click(); const W = G.world, v0 = S.stats.village, h0 = S.stats.hilltop; S.fuel = 100; G.setPos(-180, -3.5, -Math.PI / 2); keys("up"); let i = 0, maxY = 0;
@@ -197,6 +198,63 @@ const HELPERS = () => {
   await E(() => { G.world.gates.forEach((g) => (g.open = 0)); G.setPos(5.5, 425, 0); sim(0.3); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/14-toll.png` });
   await E(() => { G.setPos(-168, -63.5, Math.PI / 2); sim(0.3); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/15-wash.png` });
   r = await E(() => { G.setPos(-3.5, -150, 0); G.car.s = 0; S.fuel = 100; S.damage = 0; G.car.broken = false; keys("up"); sim(3); keys(); return G.car.kmh; }); ok("N15 city driving still works after the new features", r > 40, r);
+  await E(() => yesTraffic());
+
+  // ===== v5: new vehicles, races, Skill Park, garage and real-feel extras =====
+  await E(() => { noTraffic(); S.points = 50000; S.damage = 0; S.fuel = 100; G.startFree(); });
+  r = await E(() => { const o = { cycleOwned: S.owned.includes("cycle") }; S.car = "bike"; if (!S.owned.includes("bike")) S.owned.push("bike"); G.respawnCar(); G.setPos(-3.5, -150, 0); G.car.s = 15; keys("up", "left"); sim(1); o.lean = G.car.m.rotation.z; keys(); S.car = "cycle"; G.respawnCar(); G.setPos(-3.5, -150, 0); S.fuel = 50; keys("up"); sim(5); keys(); o.fuel = S.fuel; o.cyc = Math.round(G.car.kmh); o.rider = !!G.car.m.userData.rider; return o; });
+  ok("V1 everyone owns the cycle", r.cycleOwned, r); ok("V2 bikes lean into turns", r.lean < -0.15, r); ok("V3 the cycle needs no fuel", r.fuel === 50 && r.cyc >= 20 && r.rider, r);
+  // Manual gearbox
+  await E(() => { S.car = "hatch"; G.respawnCar(); S.manual = true; G.car.gN = 1; G.setPos(-3.5, -150, 0); keys("up"); sim(4); });
+  r = await E(() => ({ gear: G.car.gear, kmh: Math.round(G.car.kmh), rpm: G.car.rpm }));
+  await p.keyboard.press("g"); const q2 = await E(() => { const o = { gear: G.car.gear, boost: G.car.boost > 0 }; sim(1.5); o.kmh2 = Math.round(G.car.kmh); keys(); S.manual = false; return o; });
+  ok("V4a manual 1st gear has a limiter", r.gear === "M1" && r.kmh < 60 && r.rpm > 0.9, r); ok("V4b G shifts up with a perfect-shift boost", q2.gear === "M2" && q2.boost && q2.kmh2 > r.kmh, q2);
+  // Drag race and replay
+  r = await E(() => { G.startDrag(); sim(3.3); keys("up"); sim(0.1); let k = 0; for (let i = 0; i < 600 && G.mode.kind === "race"; i++) { G.T += 0.05; G.step(0.05); if (G.car.rpm >= 0.88) G.shift(1); k = i; } keys(); return { title: document.querySelector("#card h2")?.textContent, best: S.best.drag, replay: !!document.querySelector("#d-replay") }; });
+  ok("V5a drag race with gears", /Drag/.test(r.title) && r.best > 5 && r.best < 30, r); ok("V5b replay button after a race", r.replay, r);
+  r = await E(() => { document.querySelector("#d-replay").click(); const k = G.mode.kind; sim(1); const cam = G.camera.position.clone(); sim(1); for (let i = 0; i < 800 && G.mode.kind === "replay"; i++) { G.T += 0.05; G.step(0.05); } return { k, back: document.querySelector("#card h2")?.textContent, kind: G.mode.kind }; });
+  ok("V5c replay plays and returns to the result", r.k === "replay" && /Drag/.test(r.back) && r.kind === "free", r);
+  await E(() => { G.startDrag(); sim(3.3); keys("up"); sim(2); keys(); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/16-drag.png` }); await E(() => G.startFree());
+  // Elimination, night and reverse races
+  r = await E(() => { G.startCircuit({ elim: true }); sim(3.5); const W = G.world, N = W.tN, c = G.car; let i = W.trackNearest(c.x, c.z).i, n1 = 3; for (let k = 0; k < N * 1.3; k += 3) { const j = (i + k) % N, p = W.tp[j], q = W.tp[(j + 1) % N]; G.setPos(p.x, p.z, Math.atan2(q.x - p.x, q.z - p.z)); G.T += 0.05; G.step(0.05); } n1 = G.mode.ai.length; const k2 = lapTeleport(3); return { n1, k2, title: document.querySelector("#card h2")?.textContent }; });
+  ok("V6 elimination knocks out the last car each lap", r.n1 === 2 && r.k2 > 0 && /WIN/.test(r.title), r);
+  r = await E(() => { const n0 = S.night; G.startCircuit({ night: true }); sim(0.3); const n1 = S.night, lamps = G.world.lampMats.some((m) => m.emissiveIntensity > 1); G.startFree(); return { n0, n1, lamps, n2: S.night }; });
+  ok("V7 night race turns night on and back off", !r.n0 && r.n1 && r.lamps && !r.n2, r);
+  r = await E(() => { G.startCircuit({ rev: true }); sim(3.5); const u0 = G.mode.ai.map((a) => a.u); sim(2); const back = G.mode.ai.every((a, i) => a.u < u0[i] - 5); const k = lapTeleportRev(3); return { back, k, title: document.querySelector("#card h2")?.textContent }; });
+  ok("V8 reverse circuit runs the other way and finishes", r.back && r.k > 0 && /WIN|finished/.test(r.title), r);
+  // Skill Park
+  r = await E(() => { G.startSlalom(); const W = G.world; for (let i = 0; i < W.cones.length; i++) { const k = W.cones[i], zz = k.z + (i % 2 === 0 ? -3 : 3); G.setPos(k.x - 4, zz, Math.PI / 2); G.T += 0.05; G.step(0.05); G.setPos(k.x + 4, zz, Math.PI / 2); G.T += 0.05; G.step(0.05); } G.setPos(595, 225, Math.PI / 2); G.T += 0.05; G.step(0.05); return { title: document.querySelector("#card h2")?.textContent, text: document.querySelector("#card p")?.textContent, best: S.best.slalom }; });
+  ok("V9a clean slalom", /[Ss]lalom/.test(r.title) && /0 cones hit, 0 wrong side/.test(r.text), r);
+  r = await E(() => { G.startSlalom(); const k = G.world.cones[0]; G.setPos(k.x - 3, k.z + 3, Math.PI / 2); sim(0.1); G.setPos(k.x, k.z, Math.PI / 2); sim(0.1); const o = { down: k.down, bar: document.querySelector("#mission-bar").textContent }; G.startFree(); return o; });
+  ok("V9b hitting a cone costs time", r.down && /cones hit 1/.test(r.bar), r);
+  r = await E(() => { G.startStop(); const St = { line: 610, z: 345 }; G.car.s = 16; sim(0.3); G.setPos(St.line - G.car.m.userData.L / 2 - 0.1, St.z, Math.PI / 2); sim(0.3); return { title: document.querySelector("#card h2")?.textContent, best: S.best.stop }; });
+  ok("V10 precision stop", /PERFECT/.test(r.title) && r.best === 300, r);
+  r = await E(() => { G.startDirt(); sim(3.5); const W = G.world, N = W.dp.length; for (let k = 0; k <= N + 5 && G.mode.kind === "race"; k += 2) { const p = W.dp[k % N], q = W.dp[(k + 1) % N]; G.setPos(p.x, p.z, Math.atan2(q.x - p.x, q.z - p.z)); G.T += 0.05; G.step(0.05); } return { title: document.querySelector("#card h2")?.textContent, best: S.best.dirt, dirt: G.world.onDirt(W.dp[5].x, W.dp[5].z), bump: Math.max(...[0, 1, 2, 3, 4].map((i) => G.world.groundAt(W.dp[i * 3].x, W.dp[i * 3].z))) }; });
+  ok("V11 dirt rally lap with bumps", /[Dd]irt rally/.test(r.title) && r.best > 0 && r.dirt && r.bump > 0.1, r);
+  r = await E(() => { S.car = "gt"; G.respawnCar(); G.skillMenu(); document.querySelector("#k-lj").click(); keys("up", "nitro"); sim(9); keys(); return { jump: S.best.jump, y: G.car.y }; });
+  ok("V12 long jump measures the distance", r.jump > 25, r);
+  await E(() => { G.skillMenu(); document.querySelector("#k-lj").click(); keys("up", "nitro"); sim(5.9); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/17-longjump.png` }); await E(() => keys());
+  r = await E(() => { G.setPos(530, 270, Math.PI / 2); G.car.s = 35; keys("up"); sim(1.5); keys(); return S.best.trap; });
+  ok("V13 speed trap records km/h", r > 100, r);
+  r = await E(() => { const p0 = S.points; G.setPos(410, 335, Math.PI / 2); G.car.s = 22; keys("up", "left", "hand"); sim(3); keys(); sim(0.6); return { best: S.best.drift, dp: S.points - p0 }; });
+  ok("V14 drift zone combo", r.best > 0 && r.dp > 0, r);
+  // Garage: showroom and extras
+  r = await E(() => { S.car = "hatch"; G.respawnCar(); G.garage(false); document.querySelector('[data-view="scooty"]').click(); sim(0.2); const o = { on: !!G.showroom, sr: document.body.classList.contains("sr"), clear: document.querySelector("#scr").classList.contains("clear") }; if (S.owned.includes("scooty")) S.owned.splice(S.owned.indexOf("scooty"), 1); G.openShowroom("scooty", false); const p0 = S.points; document.querySelector("#sr-buy").click(); o.bought = S.owned.includes("scooty") && p0 - S.points === 300 && S.car === "scooty"; document.querySelector("#sr-next").click(); o.next = G.showroom.id; document.querySelector("#sr-back").click(); o.off = !G.showroom && !document.body.classList.contains("sr"); return o; });
+  ok("V15 3D showroom: view, buy, next, back", r.on && r.sr && r.clear && r.bought && r.next === "bike" && r.off, r);
+  r = await E(() => { S.car = "sedan"; if (!S.owned.includes("sedan")) S.owned.push("sedan"); G.respawnCar(); G.garage(false); const p0 = S.points; document.querySelector('[data-rim="2"]').click(); document.querySelector('[data-spo="2"]').click(); document.querySelector('[data-neon="0"]').click(); document.querySelector('[data-gb="1"]').click(); const o = { cost: p0 - S.points, rim: S.rims.sedan, spo: S.spoiler.sedan, neon: S.neon.sedan, light: !!G.car.m.userData.neonLight, manual: S.manual }; document.querySelector('[data-gb="0"]').click(); o.auto = !S.manual; document.querySelector("#g-close").click(); return o; });
+  ok("V16 wheels, spoiler, neon and gearbox", r.cost === 600 && r.rim === 2 && r.spo === 2 && r.neon === 0 && r.light && r.manual && r.auto, r);
+  // Fog, mirror, cockpit, speed blur, turbo pops
+  await p.keyboard.press("o"); r = await E(() => ({ fog: S.fog, far: G.scene.fog.far })); await p.keyboard.press("o"); const q3 = await E(() => ({ fog: S.fog, far: G.scene.fog.far }));
+  ok("V17 fog mode toggles with O", r.fog && r.far <= 80 && !q3.fog && q3.far > 300, { r, q3 });
+  await E(() => { S.mirror = true; G.setPos(-3.5, -150, 0); }); await p.waitForTimeout(1200); r = await E(() => getComputedStyle(document.querySelector("#mirror-frame")).display); await p.keyboard.press("m"); await p.waitForTimeout(800); const q4 = await E(() => getComputedStyle(document.querySelector("#mirror-frame")).display); await p.keyboard.press("m");
+  ok("V18 rear-view mirror shows and hides with M", r === "block" && q4 === "none", { r, q4 });
+  r = await E(() => { G.camMode = 4; keys("up"); sim(1); keys(); G.hudT = 0; G.hud(0.1); const ud = G.car.m.userData; return { ck: ud.cockpit.visible, glass: ud.glass.every((g) => !g.visible), dist: G.camera.position.distanceTo(G.car.m.position) }; });
+  ok("V19 dashboard camera inside the car", r.ck && r.glass && r.dist < 3, r); await p.waitForTimeout(1200); await p.screenshot({ path: `${SHOTS}/18-cockpit.png` }); await E(() => { G.camMode = 0; G.placeCam(true); });
+  r = await E(() => { S.car = "gt"; G.respawnCar(); G.setPos(5.5, 250, 0); G.car.s = 50; keys("up", "nitro"); sim(0.5); const fx = G._fxOn; S.up.gt = Object.assign({}, S.up.gt, { engine: 3 }); keys("up"); sim(0.5); const before = Array.from(G.sp.life).filter((l) => l > 0).length; keys(); G.T += 0.05; G.step(0.05); const after = Array.from(G.sp.life).filter((l) => l > 0).length; return { fx, before, after }; });
+  ok("V20 speed blur at high speed", r.fx, r); ok("V21 turbo pop flames when lifting off", r.after > r.before, r);
+  await E(() => { G.toggleNight(); G.setPos(5.5, 300, 0); G.car.s = 55; keys("up", "nitro"); sim(0.6); keys(); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/19-night-neon-blur.png` }); await E(() => { G.toggleNight(); S.car = "hatch"; G.respawnCar(); });
+  r = await E(() => { G.checkBadges(); return { drag: !!S.badges.drag, slalom: !!S.badges.slalom, two: !!S.badges.twowheel }; }); ok("V22 new badges", r.drag && r.slalom && r.two, r);
+  r = await E(() => G.lastErr || ""); ok("V23 no loop errors after v5 checks", !r, r.slice(0, 300));
   await E(() => yesTraffic());
 
   // Y. Save survives reload

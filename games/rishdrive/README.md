@@ -8,8 +8,10 @@ from the jsdelivr CDN.
 
 ## What is in the game
 
-- **7 vehicles:** Chotu Hatch (free), Tuk-Tuk Auto, Rani Sedan, Sher SUV
-  (off-road), Bharat Truck, City Bus, Toofan GT.
+- **11 vehicles:** Rishu Cycle (free, no fuel), Pinky Scooty, Thunder Bike,
+  Chotu Hatch (free), Tuk-Tuk Auto, Rani Sedan, Sher SUV (off-road),
+  Kisan Tractor (off-road), Bharat Truck, City Bus, Toofan GT. Bikes lean
+  into turns and carry a rider. Bikes, scooties and tractors join traffic.
 - **Garage:** buy cars, paint them (10 colours), repair them at the garage.
   Upgrade 5 parts (engine, tyres, brakes, nitro, body) up to level 5 with points.
 - **World:** a city grid with buildings, traffic, 9 traffic signals,
@@ -42,13 +44,24 @@ from the jsdelivr CDN.
 - **Daily gift:** grows with the day streak, up to 600 points on day 7.
 - **Number plate and stickers:** your own plate text, 10 stickers.
 - **Badges:** 22 badges, +50 points each.
+- **More races:** elimination (last car out each lap), night race under
+  floodlights, reverse circuit, and a 400 m drag race with a perfect start
+  and perfect gear shifts. Every race has a TV-camera replay.
+- **Skill Park:** cone slalom, precision stop, speed trap, drift zone with a
+  x5 combo, and a long-jump ramp with distance markers. A bumpy dirt rally
+  track with dust sits south of the circuit.
+- **Garage extras:** 3D showroom, automatic or manual gearbox (G and F),
+  wheels, spoilers, neon underglow, turbo pops and exhaust flames.
+- **Real feel:** speed blur and wind lines, fog mode (O), rear-view mirror
+  (M), and a dashboard camera with a steering wheel and a live speed dial.
 - **About us:** Rishabh's photo, the series, and the game story.
 
 ## Controls
 
 W or Up: accelerate. S or Down: brake, then reverse. A, D or arrows: steer.
 Space: handbrake. N: nitro. C: camera. H: horn. L: night. R: rain.
-Q and E: indicators. Esc: menu.
+Q and E: indicators. O: fog. M: mirror. G and F: gear up and down
+(manual gearbox). Esc: menu.
 
 ## Tests
 
@@ -75,3 +88,7 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   through roads on some screens. 102 regression checks.
 - v4: the game is renamed from Desi Drive to RishDrive. Saved progress
   is kept (the save key is unchanged).
+- v5: cycle, scooty, bike and tractor; elimination, night, reverse and drag
+  races; replays; Skill Park and dirt rally; showroom, manual gearbox,
+  wheels, spoilers, neon, exhaust flames; speed blur, fog, mirror and
+  dashboard camera; 25 badges. 129 regression checks.

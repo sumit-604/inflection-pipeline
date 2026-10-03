@@ -113,14 +113,18 @@ _Pending framework edits Keerti maintains._
   run that uses it is the first test. Check announcements/ after that run,
   then confirm and close this action. PR #167.
 - PENDING FOR THE NEXT PROMPT BRANCH (2026-09-15):
-  1. prompts/10-input-assembly-pipeline.md rule 3, line 22 still says "put the
-     more conservative one in the table".
   2. Amendment 6 range rounding: the rule says nearest 0.5x, its own example
      rounds the top down (37x -> 34-39.5x). section-1b chunk 06 copies both.
      Operator ruling needed, then align chunk 06.
   3. OR-9 (proposed): Amendment 24 caps size at starter when the residual
      exceeds 25% of CMP; Amendment 25 permits a starter only at 25% or less.
      Reading A: size zero. Reading B: a 2-3% starter. Operator ruling needed.
+- OPEN (2026-10-03, pipeline, stage 5): if Verifier B overturns stage 5
+  credibility grades in two runs, move stage-05-concall alone to Opus 5.5
+  high (operator ruling, audits/RULINGS_2026-10.md item 27).
+- OPEN (2026-10-03, audit): 57 audit questions and 19 manual edits remain in
+  audits/RULINGS_2026-10.md "Still open". Read before the next company run.
+  Item 29 (Verifier A model) is held for re-ruling.
 - ORCHPHARMA 2026-09-06 (phase 1), all OPEN:
   - Corrupt OCR text layers in filed PDFs are a live corpus failure mode. Promote the
     [OCR:embedded] / [OCR:tesseract] / [OCR:embedded-CORRUPT] page tag and the
@@ -131,8 +135,6 @@ _Pending framework edits Keerti maintains._
   - Decide how many REWORK remediation cycles an orchestrator runs before handing the
     verdict to the operator. One cycle cost a third of the ORCHPHARMA run and did not
     clear the gate. Same entry, item 5.
-  - Resolve the stage 0 routing conflict between /run-pipeline (orchestrator does it
-    inline) and DISPATCH (mechanical stages go to haiku). Same entry, item 6.
   - Peer selection needs a product-chain check. ORCHPHARMA's three peers contained no
     cephalosporin or 7-ACA maker, so six of eight peer questions were structurally
     unanswerable. Same entry, closing note.

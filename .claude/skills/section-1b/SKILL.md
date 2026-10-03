@@ -7,7 +7,7 @@ description: Resolved Section 1B exit-multiple authority for the Inflection Alph
 
 This skill carries the Section 1B layer set as one resolved rulebook. The layers stack in this precedence order, and a later layer governs the items it names:
 
-v3.10 (Amendment 26) > v3.9 (Amendments 20 to 25) > v3.8 (Amendments 18, 19) > v3.7 (Amendment 17) > v3.6 (Amendments 11 to 16) > v3.5.1 (consolidated Amendment 9) > v3.3 Amendments file (Amendments 1 to 8, 4.1 to 4.4) > Master Prompt v3.7 Section 1B base text.
+v3.10 (Amendment 26) > v3.9 (Amendments 20 to 25) > v3.8 (Amendments 18, 19; its Amendment 20 text is superseded by the v3.9 Amendment 20, which renumbers the governance rule to 20.5) > v3.7 (Amendment 17) > v3.6 (Amendments 11 to 16) > v3.5.1 (consolidated Amendment 9) > v3.3 Amendments file (Amendments 1 to 8, 4.1 to 4.4) > Master Prompt v3.7 Section 1B base text.
 
 Every chunk states the resolved rule only. Where a later layer replaced an earlier rule, the chunk carries the later rule and nothing of the earlier text.
 
@@ -68,6 +68,7 @@ Load only the chunks the current step needs. Paths are relative to this skill fo
 - OR-2. Hurdle Ratio. Amendment 24 governs: the Hurdle Ratio is a feasibility check, not a verdict cap. Its PASS / CONDITIONAL / STOP band is computed and shown on the verdict card; it caps no verdict. Chunk 06.
 - OR-6. Amendment 17.0 default for ambiguous classification. Kept as written: "Ambiguous cases classify CONVERTER (conservative default)", with the ambiguity stated. Chunk 11.
 - OR-8. Entry divisor. Confirmed: entry = exit-consistent fair value ÷ (1 + tier hurdle)^N, with 1.25 for Tier A and 1.20 for Tier B. Chunk 06.
+- OR-12 (operator, 2026-10-03). Amendment 25 fast-growth trigger. FTTCP defines no ACCELERATING state, so "FTTCP Revenue Transition = ACCELERATING" reads as the forward Revenue Transition verdict FIRING. The Amendment 21 run-rate test (growth of 40% YoY or more) is unchanged. Chunk 08.
 
 ## Open rulings (carried as written until the operator rules)
 

@@ -72,3 +72,13 @@ The ledgers show re-runs cost more than any routing change saves:
 - TAALTECH 2026-09-10: 150k tokens lost to one void pass (shared checkout) and one Verifier A run on a wrong path.
 
 Worktree isolation per run addresses the shared-checkout loss (LESSONS_ARCHIVE.md, TAALTECH entry, notes that `git worktree add` needs an operator permission). Absolute verifier paths address the wrong-path run. The token meter mod (`/stage-cost`) lets the next run measure the effort assumptions above instead of guessing them.
+
+## Rulings applied (operator, 2026-10-03)
+
+Full record: `audits/RULINGS_2026-10.md`, items 27 to 30.
+
+- Stages 2, 3, 5 and 8 stay on Sonnet 5.5 at its default (high). Tripwire: if Verifier B overturns stage 5 credibility grades in two runs, move stage 5 alone to Opus 5.5 high. Logged in LESSONS.md.
+- xhigh: stage 11, stage 15, Verifiers B and C, quarterly A5. Start the `/fttcp` session on Opus 5.5 at xhigh; the command no longer pins a model.
+- medium: stages 1, 4, 6, 09b, Verifier D, quarterly A2. low: quarterly A1.
+- Verifier A stays on Haiku 4.5: the item 29 move is held. This table missed the reason the pipeline keeps it there. `prompts/00-orchestrator.md` makes Verifier A the only out-of-family read on the numbers, and the evidence stages it checks run on Sonnet 5.5.
+- Stage 10 stays on Haiku 4.5.

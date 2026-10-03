@@ -35,7 +35,7 @@ At any CMP, decompose market capitalisation into three supported tiers plus a re
 
 ## Amendment 25: margin of safety as position size (fast-growth carve-out)
 
-- Fast-growth = Amendment 21 run-rate growth ≥ 40% YoY, OR FTTCP Revenue Transition = ACCELERATING. For these names the margin of safety is position size, not a price haircut below fair value.
+- Fast-growth = Amendment 21 run-rate growth ≥ 40% YoY, OR FTTCP Revenue Transition = ACCELERATING [operator ruling OR-12, 2026-10-03: FTTCP has no ACCELERATING state; read this as the forward Revenue Transition verdict FIRING]. For these names the margin of safety is position size, not a price haircut below fair value.
 - **Starter:** 2-3% of portfolio (Small) when T1 + T2 ≥ 75% of CMP and the residual ≤ 25%.
 - **Add ladder:** +1 to +2% on each ledger item that confirms (moves from T2/T3 to T1), up to Medium (4-6%) when T1 alone ≥ 60% of CMP, and Large (7-10%) only when T1 ≥ 80% of CMP AND Gate 0 EXCELLENT AND Promoter TRUSTWORTHY or better.
 - **Trim ladder:** trim 25% of the position for each ledger item that decays (Amendment 23); trim 50% if the residual exceeds 40% of CMP after a decay.

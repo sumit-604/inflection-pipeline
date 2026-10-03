@@ -135,7 +135,7 @@ The review is regenerated whole so it stays self-contained, but the loop edit is
 surgical: every change traces to a named A5 finding, and nothing unchallenged is
 reworked.
 
-## VERDICT SET (the process verdict; canonical per CLAUDE.md and Master v3.6)
+## VERDICT SET (the process verdict; canonical per CLAUDE.md and Master v3.7)
 PROCEED / PROCEED WITH CAVEATS / PROCEED WITH FLAGS / REWORK / INSUFFICIENT
 EVIDENCE. No STOP verdict. Company quality never halts; only a mechanical
 failure does. This is the PROCESS verdict on the review's soundness. It is NOT
@@ -150,7 +150,7 @@ work, the FTTCP verdict, and Role 1 valuation. A document review that finds a
 valuation-relevant fact FLAGS it for the downstream chain and stops there.
 
 ## CHANGELOG
-- v1.1 — Step 10 provenance switched from a two-way prior-vs-document label to
+- v1.1 — Step 11 provenance switched from a two-way prior-vs-document label to
   the house five-tier system (FILED / AGENCY / MGMT / SECONDARY / INFERENCE)
   with presentation defaults; the brief now cites Narrative_Writing_Style_v1.md
   and the Dhruva-Research output style and adopts the 200-400 word house length.

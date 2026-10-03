@@ -2,13 +2,13 @@
 # Model: Sonnet 5.5 | Emits: B07-emoat
 # Taxonomy note: this is the "Emerging Competitive Advantages" analysis
 # (categories A1 through R1, adjusted score on a ~0-90 scale). It is NOT
-# FTTCP. FTTCP is a separate, later synthesis that runs inside the
-# valuation stage's framework inputs. Never conflate the two.
+# FTTCP. FTTCP is the separate phase 2 deliberation (/fttcp), run before
+# valuation. Never conflate the two.
 # Consumes: AR + 3 main concalls + investor presentation + B01-gate0
 # 20-Aug-2026: FAMILY I added — I1 TALENT ASYMMETRY (Category 21) and I2
 # CANNIBALIZATION BARRIER (Category 22), operator directive 20-Aug-2026.
 # Scored rows 21 -> 23; adjusted-score ceiling 84 -> 92 (~0-80 -> ~0-90).
-# THRESHOLDS RULING (operator, 20-Aug-2026): thresholds are ABSOLUTE on
+# THRESHOLDS RULING (operator, 20-Aug-2026): see Section 5.
 # the 22-category scan — the >=40/25-39/12-24 bands and the "EM >=25" UA
 # qualifier stand unchanged, no rescale. I1/I2 score 0 for typical
 # companies (both require documented structural evidence); a threshold

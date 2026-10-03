@@ -19,7 +19,7 @@ PR-managed information lives toward the end.
 
 1. Execute ALL EIGHT PHASES sequentially in one response. Do not stop for
    confirmation. Complete every phase fully before the next.
-2. Do NOT summarize loosely. Exact numbers in ₹ Crores, exact policy
+2. Do NOT summarize loosely. Exact numbers in the unit printed in the source (named in the anchor), exact policy
    language from notes, exact auditor remarks.
 3. SOURCE ANCHORS on every number and quote: (Auditor's Report p.__),
    (CARO clause vii), (MD&A p.__), (Note __). The downstream verifier

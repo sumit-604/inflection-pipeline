@@ -23,7 +23,7 @@ I will trigger this role with one of:
 - "These results are out — what do they mean for our thesis?"
 - Pasting a board outcome filing, results PDF, or press release for an analysed company
 
-When triggered, you MUST execute the protocol below in full sequence. **Do not skip steps. Do not jump to conclusions before completing the analytical walks.** If you find yourself wanting to write a verdict before completing Step 6, stop and finish the decomposition first.
+When triggered, you MUST execute the protocol below in full sequence. Run every step in order. If you find yourself wanting to write a verdict before completing Step 6, stop and finish the decomposition first.
 
 ## THE FAILURE MODES THIS PROTOCOL IS DESIGNED TO PREVENT
 
@@ -57,7 +57,7 @@ Use Notion search → fetch on the company name. Extract and have ready:
 - Position size, cost basis, current Decision Status — **verify Decision Status BEFORE any HOLD/ADD/TRIM/EXIT framing; stale memory has previously framed an exited position as HOLD**
 - Devil's Advocate findings (the recalibrated probability split, if present)
 
-If Notion has no page for the company, **stop and ask** — quarterly review without a thesis baseline is meaningless.
+If Notion has no page for the company, **stop and ask** — quarterly review without a thesis baseline is meaningless. (Under /run-quarterly: no wait; frame the review as a PRE-THESIS READ per the orchestrator.)
 
 ### 0B. Identify the unit convention used in the filing
 
@@ -112,7 +112,7 @@ For each note answer:
 
 State whether the company is a **standard operating business** or a **lending business** (bank, NBFC, MFI, HFC). Lending businesses use Steps 1L and 5L in place of Steps 1 and 5, and their pillar re-validation in Step 7 uses the lender rows.
 
-🛑 **STOP. Confirm Notion fetched (including Decision Status), units identified, share-count changes noted, all notes extracted into the table above, auditor opinion verified, business type stated. Then proceed.**
+▶ **Checkpoint (no wait). Confirm Notion fetched (including Decision Status), units identified, share-count changes noted, all notes extracted into the table above, auditor opinion verified, business type stated. Then continue; A5 audits coverage.**
 
 ## STEP 1 — DATA EXTRACTION TABLE (MANDATORY — STANDARD BUSINESSES)
 
@@ -186,11 +186,11 @@ For banks, NBFCs, MFIs, and HFCs, build this table INSTEAD of the Step 1 table:
 
 These rows feed directly into: FTTCP lender Transition 3 (asset quality — THE CRITICAL ONE), the Pillar 2 Asset-Quality Multiplier bands, and the Pillar 1 ROE input for lenders. One extraction, whole lender chain.
 
-🛑 **STOP. Show the complete extraction table (standard or lender). Do not proceed to analysis until every cell is filled or marked ND.**
+▶ **Checkpoint (no wait). Show the complete extraction table (standard or lender). Every cell must be filled or marked ND. Then continue; A5 rechecks the arithmetic.**
 
 ## STEP 2 — Q[N] YoY COMPARISON (THE MOST IMPORTANT STEP)
 
-This is the step I am most likely to skip. **Do not skip it.** Build this table explicitly (for lenders, substitute NII for Revenue, PPOP for Operating EBITDA, and add Credit Cost and GNPA rows):
+Build this table explicitly Build this table explicitly (for lenders, substitute NII for Revenue, PPOP for Operating EBITDA, and add Credit Cost and GNPA rows):
 
 | **Metric** | **Q[N] FY[YY-1]** | **Q[N] FY[YY]** | **YoY % Change** | **Verdict** |
 | --- | --- | --- | --- | --- |
@@ -215,7 +215,7 @@ This is the step I am most likely to skip. **Do not skip it.** Build this table 
 - **Are D&A and finance costs scaling faster than revenue?** This is the early warning for capex absorption gap. If D&A jumped 50–100% YoY but revenue grew 5%, the company is running an absorption deficit — mathematically, ROCE compresses until volume catches up.
 - **Is Other Income concentration changing?** If FY-level Other Income is flat but Q[N] Other Income spiked, treasury timing is masking quarterly trajectory. Strip it and re-read.
 
-🛑 **STOP. Show the YoY table and the six diagnostic answers. Get explicit GO before proceeding to QoQ.**
+▶ **Checkpoint (no wait). Show the YoY table and the six diagnostic answers. Then continue; A5 rechecks the arithmetic.**
 
 ## STEP 3 — SEQUENTIAL QoQ TRAJECTORY
 
@@ -231,7 +231,7 @@ Build this table for the last 4–6 quarters:
 - Does the latest quarter exceed, match, or fall short of the H1 average run-rate? This is critical when assessing capex commissioning — a new plant that doesn't lift run-rate above pre-commissioning levels is a red flag.
 - What is the implied Q[N+1] base rate for the next quarter to maintain trajectory?
 
-🛑 **STOP. Show QoQ table and diagnostics.**
+▶ **Checkpoint (no wait). Show QoQ table and diagnostics. Then continue; A5 rechecks the arithmetic.**
 
 ## STEP 4 — OPERATIONAL DECOMPOSITION
 
@@ -259,7 +259,7 @@ This step explicitly separates real operating change from accounting/treasury no
 
 (For lenders, the bridge decomposes PAT YoY into: NII change, other income change, opex change, provision change, tax change — with the provision line explicitly split into regular credit cost vs one-off/accelerated provisioning.)
 
-🛑 **STOP. Present the bridge table and answers.**
+▶ **Checkpoint (no wait). Present the bridge table and answers. Then continue; A5 rechecks the arithmetic.**
 
 ## STEP 5 — CASH QUALITY & BALANCE SHEET (STANDARD BUSINESSES)
 
@@ -309,16 +309,16 @@ For lenders, build this INSTEAD of the Step 5 table:
 
 **Mandatory lender questions:**
 
-- **Which Asset-Quality Multiplier band does this quarter support?** (Elite 1.15x / Sound 1.00x / Stressed 0.80x / Structural weakness 0.65x — per Section 1B v3.3 lender carve-out.) If the band changed, Pillar 2 needs revision.
+- **Which Asset-Quality Multiplier band does this quarter support?** (Elite 1.15x / Sound 1.00x / Stressed 0.80x / Structural weakness 0.65x — per the Section 1B lender carve-out (v3.3 base, as amended through v3.10).) If the band changed, Pillar 2 needs revision.
 - **Are credit costs within the guided band?** A miss is logged in the promise-vs-delivery tracker with the same weight as a revenue guidance miss.
 - **Is asset-quality deterioration geographically concentrated (state-specific stress) or broad-based?** State-specific MFI stress has a normalisation catalyst; broad-based deterioration does not.
 - **Is AUM growth outrunning collection infrastructure?** Disbursement growth materially above collection efficiency trend is the classic MFI pre-crisis pattern.
 
-🛑 **STOP. Present cash quality (or asset quality) table and answers.**
+▶ **Checkpoint (no wait). Present cash quality (or asset quality) table and answers. Then continue; A5 rechecks the arithmetic.**
 
 ## STEP 5.5 — DOWNSTREAM SIGNAL RECONCILIATION (v1.3, refactored)
 
-The Downstream Signal Tracker (consolidated Notion database peer to COMPANIES MASTER) is populated at initial workup via Role 5.5 (Downstream Signal Identification, defined in Master Project Prompt v3.6). Signals are stored ONCE at the portfolio level with a relational Affected Companies field mapping each signal to the companies it feeds. Monthly refresh of the tracker happens portfolio-wide at each month-end, not per-company at each quarterly review.
+The Downstream Signal Tracker (consolidated Notion database peer to COMPANIES MASTER) is populated at initial workup via Role 5.5 (Downstream Signal Identification, defined in the Master Project Prompt (v3.7; file Master_Project_Prompt_v3_6.md)). Signals are stored ONCE at the portfolio level with a relational Affected Companies field mapping each signal to the companies it feeds. Monthly refresh of the tracker happens portfolio-wide at each month-end, not per-company at each quarterly review.
 
 **Tracker coordinates (LIVE — use directly, do not search):** Database URL https://app.notion.com/p/ea5f02670d114b2abd7b74f88bb33061 | Data source ID `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`
 
@@ -406,7 +406,7 @@ For each growth trigger in the Notion thesis (typically 3–5 triggers), state:
 
 Updated Status options: FIRED, ON TRACK, DELAYED, WEAKENED, DEAD
 
-🛑 **STOP. Present 6A through 6D in full.**
+▶ **Checkpoint (no wait). Present 6A through 6D in full. Then continue; the operator reviews it at the Step 8 position decision.**
 
 ## STEP 6.5 — EXPECTATION LEDGER REVIEW AND A21 BASE REFRESH (v3.9 Amendments 21-25)
 
@@ -428,15 +428,15 @@ For every OPEN row, check whether the confirming metric hit its threshold by the
 ### 6.5C. Feed forward
 The refreshed A21 base and the re-tiered T1/T2/T3 feed Step 7 (destination-PE re-validation and fair-value recompute) and Step 8 (position decision: the trim ladder from decays, the add ladder from confirmations).
 
-🛑 **STOP. Present 6.5A and 6.5B before Step 7.**
+▶ **Checkpoint (no wait). Present 6.5A and 6.5B before Step 7. Then continue; the operator reviews it at the Step 8 position decision.**
 
 ## STEP 7 — FOUR-PILLAR DESTINATION PE RE-VALIDATION
 
-The destination PE in Notion was set under Section 1B v3.3. Each results review must check whether the pillars still hold. Walk through:
+The destination PE in Notion was set under the Section 1B layer set (v3.3 base through v3.10). Each results review must check whether the pillars still hold. Walk through:
 
 | **Pillar / Input** | **Original Assumption** | **Current Reading** | **Action** |
 | --- | --- | --- | --- |
-| ROCE Base (continuous formula: 0.5 × ROCE + 7.5, floor 9x, cap 24x) | ROCE ___% → ___x | This period's ROCE: ___% | Re-run FTTCP ROCE forward verdict; apply the FTTCP v2.1 mapping table. The FTTCP verdict is the SOLE authority for Pillar 1 ROCE selection — no ad hoc revision. |
+| ROCE Base (continuous formula per Section 1B Amendment 5 as amended by v3.6 Amendment 11; read the floor and cap from the section-1b skill) | ROCE ___% → ___x | This period's ROCE: ___% | Re-run FTTCP ROCE forward verdict; apply the FTTCP v2.3 mapping table (file FTTCP_v2_1_Consolidated.md). The FTTCP verdict is the SOLE authority for Pillar 1 ROCE selection — no ad hoc revision. |
 | Cash Multiplier (or Asset-Quality Multiplier for lenders) | ___x | This period's band | Hold / Revise per Step 5 (or 5L) band evidence |
 | Growth Visibility Premium | +___x | EM score / catalyst proximity | Hold / Adjust |
 | Strategic Premium | +___x | Moat status; single-credit rule state ("ROCE recovery credited via: ___") | Hold / Adjust |
@@ -589,7 +589,7 @@ After the 5–8 questions table, summarise:
 - If the concall is upcoming, prioritise the top 3 for the live Q&A and submit the rest in writing
 - For SME-listed companies that do not host concalls, AGM Q&A or formal IR letter is the only channel
 
-🛑 **STOP. Present the questions table, top 3 ranking, and channel recommendation. These questions are part of the Notion save in Step 9.**
+▶ **Checkpoint (no wait). Present the questions table, top 3 ranking, and channel recommendation. These questions are part of the Notion save in Step 9. Then continue; the operator reviews it at the Step 8 position decision.**
 
 ## STEP 9 — NOTION UPDATE
 

@@ -160,7 +160,7 @@ max AVERAGE | 9 history <3 years → AVERAGE
 
 ## OUTPUT
 
-Produce the full scorecard in the original dashboard format (all blocks,
+Produce the full scorecard as a dashboard (all blocks,
 all line items with anchors, moat profile bars, classification box,
 strongest/weakest block, decision line). Then end with exactly this
 fenced YAML block:

@@ -51,7 +51,7 @@ Either way, print the divergence explicitly: pillar destination, adjusted peer b
 - the Year-N exit price (v3.8 Amendment 18.1, on the entry-consistent basis; within-hold option slices still resolve per 18.3, beyond-hold per 18.4);
 - the fair-value path and the one-number FV CAGR (v3.8 Amendment 19.0-19.1);
 - the return-source label and its decomposition line (v3.8 Amendment 19.2-19.3);
-- the entry zone (entry = exit-consistent fair value / 1.25^N, MoS per evidence scale).
+- the entry zone (entry = exit-consistent fair value / (1 + tier hurdle)^N, Tier A 1.25, Tier B 1.20, MoS per evidence scale).
 
 The pillar-based fair values and entry zone are retained as the labelled cross-check. No entry zone is presented without the Amendment 19 FV CAGR and return-source classification recomputed on the governing multiple.
 
@@ -123,7 +123,7 @@ The pillar-based fair values and entry zone are retained as the labelled cross-c
 **Problem:** For fast growers the framework stacked three conservatisms: a cautious fair value, a 25% return hurdle, and a further 20-30% price discount. The compound effect is a buy price below the observed trading range.
 
 **Change:**
-- For names classified **fast-growth** (Amendment 21 run-rate growth ≥ 40% YoY, or FTTCP Revenue Transition = ACCELERATING), the margin of safety is expressed as **position size**, not as a price haircut below fair value.
+- For names classified **fast-growth** (Amendment 21 run-rate growth ≥ 40% YoY, or FTTCP Revenue Transition = ACCELERATING [operator ruling OR-12, 2026-10-03: FTTCP has no ACCELERATING state; read this as the forward Revenue Transition verdict FIRING]), the margin of safety is expressed as **position size**, not as a price haircut below fair value.
 - **Starter position:** 2-3% of portfolio (Small) when T1 + T2 ≥ 75% of CMP and the residual ≤ 25%. This is the "pay a small price to be in" entry.
 - **Add ladder:** +1 to +2% of portfolio on each ledger item that confirms (moves from T2/T3 to T1), up to Medium (4-6%) when T1 alone ≥ 60% of CMP, and Large (7-10%) only when T1 ≥ 80% of CMP and Gate 0 EXCELLENT and Promoter TRUSTWORTHY or better (existing sizing rules unchanged at the top).
 - **Trim ladder:** trim 25% of the position for each ledger item that decays (Amendment 23); trim 50% if the residual exceeds 40% of CMP after a decay.

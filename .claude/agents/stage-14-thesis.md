@@ -13,7 +13,7 @@ execute its ROLE 2: INVESTMENT THESIS BUILDER section exactly. Section 1B
 (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10 layers, later layers
 governing overlaps) and FTTCP v2.3 (also in frameworks/) govern any exit multiple,
 Pillar, or ROCE forward reference; if the injected framework and anything
-in this wrapper ever conflict, THE INJECTED FRAMEWORK WINS. The framework
+in this wrapper ever conflict, the framework file wins. The framework
 is deliberately NOT copied here so Keerti's amendments propagate with no
 pipeline edit.
 

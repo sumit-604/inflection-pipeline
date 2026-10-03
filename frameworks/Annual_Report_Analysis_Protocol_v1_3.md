@@ -14,9 +14,9 @@ I will trigger this role with one of:
 - "AR deep dive for [Company]"
 - "Annual Report review for [Company]"
 - Pasting/uploading the AR PDF for an analysed company
-- Pasting the Sheet 2 AR Deep Dive output (with triple-pass on notes already done by the Gemini pipeline)
+- Pasting the Sheet 2 AR Deep Dive output (with triple-pass on notes already done by the pipeline, stage 02)
 
-When triggered, you MUST execute the protocol below in full sequence. Do not skip steps. Do not jump to conclusions before completing the Notes triple-pass. If the existing Notion thesis is not yet fetched, STOP and fetch it before reading the AR.
+Run the steps in order. Draw conclusions only after the Notes triple-pass. If the existing Notion thesis is not yet fetched, STOP and fetch it before reading the AR.
 
 ## SEQUENCING WITH ROLE 4 (RESULTS REVIEW), ROLE 5 (CONCALL), AND FTTCP
 
@@ -34,7 +34,7 @@ The AR is released 2–3 months after the financial year-end. By the time it arr
   - MD&A with industry outlook, strategy, and forward-looking commentary
 - If Role 4 has NOT been run for Q4, run Role 4 FIRST, then Role 6. Audited consolidated numbers in the AR will supersede the Q4 filing on any reconciliation difference.
 - If a fresh concall happens after the AR is released, run Role 5 after Role 6 and treat any concall commitments as audited (or not) by the AR data.
-- **FTTCP interaction (v1.1):** the AR review produces an FTTCP REFRESH GATE (Step 11-PRE). If the AR changes any of the four forward transition verdicts or catalyst strengths, FTTCP is re-run BEFORE any pillar recomputation. Pillar 1 can never be revised from within this protocol directly — the FTTCP ROCE forward verdict is the sole authority (per FTTCP v2.1).
+- **FTTCP interaction (v1.1):** the AR review produces an FTTCP REFRESH GATE (Step 11-PRE). If the AR changes any of the four forward transition verdicts or catalyst strengths, FTTCP is re-run BEFORE any pillar recomputation. Pillar 1 can never be revised from within this protocol directly — the FTTCP ROCE forward verdict is the sole authority (per FTTCP v2.3).
 
 ## THE FAILURE MODES THIS PROTOCOL IS DESIGNED TO PREVENT
 
@@ -169,7 +169,7 @@ Build this exact inventory table before reading any narrative content. This forc
 - Promoter pledge increase → RED for governance
 - 5+ special resolutions including RPT caps in Notice → high transactional year ahead
 
-🛑 **STOP. Show the inventory and flag any yellow signals. Get explicit GO before proceeding.**
+▶ **Checkpoint (no wait). Show the inventory and flag any yellow signals. Then continue; the operator reviews it at the Step 11-PRE FTTCP refresh gate.**
 
 ## STEP 2 — MANAGEMENT LETTERS & MD&A — CLAIMS & TONE INVENTORY
 
@@ -231,7 +231,7 @@ Benchmark: >0.5 highly specific | 0.3–0.5 moderate | <0.3 heavy hedge language
 - Has management introduced any NEW growth trigger / catalyst not in the Notion thesis? List with confidence level.
 - Has the industry outlook section's tone shifted vs prior AR? In which direction?
 
-🛑 **STOP. Show 2A through 2D. Wait for GO.**
+▶ **Checkpoint (no wait). Show 2A through 2D. Then continue; the operator reviews it at the Step 11-PRE FTTCP refresh gate.**
 
 ## STEP 3 — FULL-YEAR FINANCIAL DECOMPOSITION (RECONCILED TO ROLE 4 IF RUN) — STANDARD BUSINESSES
 
@@ -303,7 +303,7 @@ Build this bridge from Reported PAT to Core Operating PAT:
 - Are D&A and finance costs scaling faster than revenue (capex absorption gap)?
 - Is the Expected Credit Loss provision growing materially? Compare ECL as % of revenue across three years.
 
-🛑 **STOP. Show the P&L table, reconciliation, decomposition, and diagnostic answers.**
+Record the P&L table, reconciliation, decomposition, and diagnostic answers, then continue to Step 3L or Step 4.
 
 ## STEP 3L — FULL-YEAR FINANCIAL DECOMPOSITION (LENDING BUSINESSES ONLY)
 
@@ -331,7 +331,7 @@ Reconciliation to Q4 filing and quality-of-earnings bridge apply as in 3B/3C, wi
 
 **Lender diagnostic questions:** Was PAT growth driven by NII/AUM growth or by provision release? Is the credit cost within the guided band (a miss registers in the Step 12A tracker with full weight)? Did write-offs make GNPA look stable while underlying stress grew? Is NIM expansion from asset yield or from funding cost — and is the funding advantage durable?
 
-🛑 **STOP. Show 3L in full.**
+▶ **Checkpoint (no wait). Show 3L in full. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 4 — CASH FLOW QUALITY DEEP-DIVE (STANDARD BUSINESSES)
 
@@ -379,7 +379,7 @@ Cash flow is the single hardest area for management to dress up — but the easi
 - **What is the Intangibles capex burn rate, and is it normalising or accelerating?** Persistent ₹500+ Cr/year intangible capex is a warning sign — either the company is rebuilding its product platform repeatedly (technology churn) or aggressively capitalising what should be expense.
 - **Did the financing cash flow include any disguised equity issuance or debt-raise above the prior year?** Compare net new borrowings vs the change in gross debt on the balance sheet.
 
-🛑 **STOP. Present cash flow table and answers.**
+▶ **Checkpoint (no wait). Present cash flow table and answers. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 4L — FUNDING, LIQUIDITY & PROVISIONING DEEP-DIVE (LENDING BUSINESSES ONLY)
 
@@ -397,7 +397,7 @@ Cash flow is the single hardest area for management to dress up — but the easi
 
 **Diagnostic questions:** Is the provisioning build proportional to book growth and seasoning, or is a release flattering PAT? Is the management overlay being drawn down to smooth earnings (a soft-quality signal)? Is funding diversifying or concentrating? Does the ALM profile show reliance on short-term funding for long-tenor assets?
 
-🛑 **STOP. Present 4L.**
+▶ **Checkpoint (no wait). Present 4L. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 5 — BALANCE SHEET QUALITY & WORKING CAPITAL FORENSICS (STANDARD BUSINESSES)
 
@@ -479,7 +479,7 @@ Flag any subsidiary that:
 - Has negative net worth
 - Has materially reduced stake (partial divestment) or increased (further investment)
 
-🛑 **STOP. Present 5A through 5D.**
+▶ **Checkpoint (no wait). Present 5A through 5D. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 5L — ASSET QUALITY & PORTFOLIO FORENSICS (LENDING BUSINESSES ONLY)
 
@@ -516,7 +516,7 @@ Guarantees on assigned/securitised pools, first-loss default guarantees given, c
 
 The Step 5L tables feed directly into: the FTTCP LENDER TRANSITION SET (especially Transition 3, asset quality — THE CRITICAL ONE), the Pillar 2L Asset-Quality Multiplier band, and the Pillar 1 ROE input.
 
-🛑 **STOP. Present 5L-A through 5L-D.**
+▶ **Checkpoint (no wait). Present 5L-A through 5L-D. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 6 — NOTES TO ACCOUNTS — TRIPLE-PASS (THESIS-ANCHORED)
 
@@ -650,7 +650,7 @@ After completing Pass 1–3, build this synthesis:
 | Note # | Why it matters for the thesis | Implication |
 | --- | --- | --- |
 
-🛑 **STOP. Present Pass 1 list, Pass 2 cross-reference matrix, Pass 3 deep-dives, and synthesis. This is the heart of the AR analysis.**
+▶ **Checkpoint (no wait). Present Pass 1 list, Pass 2 cross-reference matrix, Pass 3 deep-dives, and synthesis. This is the heart of the AR analysis. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 6.5 — SECOND-ORDER SECTION (Master Prompt v3.7, Rule F — MANDATORY)
 
@@ -687,7 +687,7 @@ Every confirm-by line feeds the Expectation Ledger (Section 1B v3.9 Amendment 23
 
 **AR-specific sourcing.** The "what binds" link is answered from this AR: the capex schedule, working-capital days from Step 5, contingent liabilities and related-party notes from Step 6, the auditor's KAMs from Step 7 where they are already read. The "what was not said" link is answered from Step 6 (footnotes) and Step 10 ("what was not discussed"), which now cross-reference each other.
 
-🛑 **STOP. Present the chains. State the count and the reason you stopped (mechanism repetition, not a count).**
+▶ **Checkpoint (no wait). Present the chains. State the count and the reason you stopped (mechanism repetition, not a count). Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 7 — AUDITOR'S REPORT — KAMs, CARO & OPINION ANALYSIS
 
@@ -779,7 +779,7 @@ State the audit firm's IFC opinion for both standalone and consolidated financia
 
 Any "material weakness" language is a RED flag.
 
-🛑 **STOP. Present 7A through 7D. Quote KAMs and any non-standard CARO clauses verbatim.**
+▶ **Checkpoint (no wait). Present 7A through 7D. Quote KAMs and any non-standard CARO clauses verbatim. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 8 — NOTICE OF AGM — RPTs, ESOPs, SPECIAL BUSINESS
 
@@ -858,7 +858,7 @@ Extract:
 - Appointment of new Independent Director — note the director's background and experience
 - Re-appointment of director retiring by rotation — note who and any board committee changes
 
-🛑 **STOP. Present 8A through 8E. The Material RPT table is the single most important forward indicator in the AR.**
+▶ **Checkpoint (no wait). Present 8A through 8E. The Material RPT table is the single most important forward indicator in the AR. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 9 — BOARD, KMP, PROMOTER & GOVERNANCE
 
@@ -899,7 +899,7 @@ Compare YoY changes in: MD/CEO total remuneration; CFO total remuneration; other
 
 Based on Steps 9A–9E (and any tracker findings from 12A), state whether the Notion Promoter Verdict (EXEMPLARY / TRUSTWORTHY / MONITOR / CONCERN / AVOID) or Management Grade (A/B/C/D) should be updated. Remember the automatic rules: two DROPPEDs in the trailing tracker = one-grade downgrade; repeated non-addressing of the same question across reviews = governance signal.
 
-🛑 **STOP. Present 9A through 9F.**
+▶ **Checkpoint (no wait). Present 9A through 9F. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 10 — STRATEGIC SIGNALS & "WHAT WAS NOT DISCUSSED"
 
@@ -957,11 +957,11 @@ For each analysed peer in the universe with a comparable AR release window (±60
 
 Discrepancies across peer ARs are diagnostic — if two peers in a sector say "destocking continues" and our company says "destocking is over," one of them is wrong.
 
-🛑 **STOP. Present 10A through 10D. Silence is information — don't skip it.**
+▶ **Checkpoint (no wait). Present 10A through 10D. Silence is information — don't skip it. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 10.5 — DOWNSTREAM SIGNAL TRACKER — ANNUAL CROSS-CHECK (v1.2 addition)
 
-The consolidated Downstream Signal Tracker (Notion database peer to COMPANIES MASTER, established at initial workup via Master Project Prompt v3.6 Role 5.5) is refreshed monthly via the Role 5.5 Monthly Refresh Workflow. The quarterly reviews (Role 4 v1.4 Step 5.5) reconcile target-company reported numbers against tracker rows for THIS company. The AR is the once-a-year checkpoint for tracker maintenance — the annual cross-check where signals may need to be added, retired, or reconciled against the AR's own audited customer-concentration disclosure.
+The consolidated Downstream Signal Tracker (Notion database peer to COMPANIES MASTER, established at initial workup via Master Project Prompt v3.7 Role 5.5) is refreshed monthly via the Role 5.5 Monthly Refresh Workflow. The quarterly reviews (Role 4 v1.4 Step 5.5) reconcile target-company reported numbers against tracker rows for THIS company. The AR is the once-a-year checkpoint for tracker maintenance — the annual cross-check where signals may need to be added, retired, or reconciled against the AR's own audited customer-concentration disclosure.
 
 **Tracker coordinates (LIVE — use directly, do not search):** Database URL https://app.notion.com/p/ea5f02670d114b2abd7b74f88bb33061 | Data source ID `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`
 
@@ -1020,7 +1020,7 @@ At the end of Step 10.5, the tracker rows relevant to this company are updated i
 
 The updated tracker becomes the input to the next monthly refresh cycle and to the next quarterly Step 5.5 reconciliation for this company.
 
-🛑 **STOP. Present 10.5A cross-check, 10.5B new-signal additions, 10.5C reconciliation, and the updated tracker summary. This section is part of the Notion save.**
+▶ **Checkpoint (no wait). Present 10.5A cross-check, 10.5B new-signal additions, 10.5C reconciliation, and the updated tracker summary. This section is part of the Notion save. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 11-PRE — FTTCP REFRESH GATE (NEW IN v1.1 — MANDATORY BEFORE 11A)
 
@@ -1037,7 +1037,7 @@ Walk the four transitions (or the lender transition set) against the AR evidence
 | Cash Conversion (lenders: Asset Quality) | | e.g., audited CFO/PAT, WC forensics, ageing schedule / provisioning data | Y/N |
 | ROCE (lenders: RoA/RoE) | | e.g., audited capital base, CWIP capitalisation, capital raise resolutions | Y/N |
 
-- If ANY row is Y → **re-run FTTCP with the AR evidence BEFORE proceeding to 11A.** The refreshed ROCE forward verdict then drives Pillar 1 per the FTTCP v2.1 sole-authority table.
+- If ANY row is Y → **re-run FTTCP with the AR evidence BEFORE proceeding to 11A.** The refreshed ROCE forward verdict then drives Pillar 1 per the FTTCP v2.3 sole-authority table.
 - If all rows are N → state so explicitly, carry the existing FTTCP verdicts forward, and proceed.
 - Either way, new documented (📄) catalysts from the AR (RPT caps, commissioning evidence, sanctioned facilities) are appended to the FTTCP catalyst tables — the AR is the highest-quality evidence source in the annual cycle.
 
@@ -1047,21 +1047,21 @@ Walk the four transitions (or the lender transition set) against the AR evidence
 
 This is the synthesis step that ties everything back to the investment decision.
 
-### 11A. Four-Pillar Destination PE re-validation (synced to Section 1B v3.9)
+### 11A. Four-Pillar Destination PE re-validation (synced to Section 1B v3.10)
 
 Walk through each pillar with the audited full-year data:
 
 | Pillar / Input | Original Assumption (Notion) | AR-supported reading | Action |
 | --- | --- | --- | --- |
-| 1. ROCE Base (continuous formula) | FTTCP verdict ___ → ROCE ___% → ___x | Refreshed FTTCP ROCE verdict from Step 11-PRE: ___ | Apply the FTTCP v2.1 mapping table — the verdict is the SOLE authority; no ad hoc revision. For lenders, use ROE. |
+| 1. ROCE Base (continuous formula) | FTTCP verdict ___ → ROCE ___% → ___x | Refreshed FTTCP ROCE verdict from Step 11-PRE: ___ | Apply the FTTCP v2.3 mapping table — the verdict is the SOLE authority; no ad hoc revision. For lenders, use ROE. |
 | 2. Cash Multiplier (lenders: Asset-Quality Multiplier) | ___x (structural / growth-induced) | Cumulative 3-yr audited CFO/PAT: ___; structural test reaffirmed? (Lenders: 5L band evidence) | Hold / Revise per audited band |
 | 3. Growth Visibility Premium | +___x (EM ___, catalyst ___) | RPT cap signal / catalyst evidence / new customer disclosures | Hold / Adjust |
 | 4. Strategic Premium | +___x | Reinforced / Maintained / Eroded by AR; single-credit state: "ROCE recovery credited via ___" | Hold / Adjust |
 | Sector Cap | ___x (quality-uplifted Y/N) | Unchanged unless sector reclassification | Hold |
 | Undiscovered Alpha (1.25×) | Applied / Not applied | Re-check qualifiers: listed ≥12m; Gate 0 ≥60 OR EM ≥25; FII+DII <3%. Ordering: min(Raw × 1.25, Sector Cap) | Apply / Drop / Hold |
-| **Hurdle Ratio recheck** | HR = (1 + EPS CAGR)³ × (Dest PE mid ÷ Current PE) ≥ 1.953 | Recompute with audited EPS base and current PE | PASS / CONDITIONAL / STOP |
+| **Hurdle Ratio recheck** | HR = (1 + EPS CAGR)³ × (Dest PE mid ÷ Current PE) ≥ 1.953 | Recompute with audited EPS base and current PE | PASS / CONDITIONAL / STOP (band shown; caps no verdict, Amendment 24 and operator ruling OR-2) |
 
-If any pillar materially changes, recompute Destination PE end-to-end per Section 1B v3.3 (both tracks if dual-track applies; range ±7.5% rounded to nearest 0.5x).
+If any pillar materially changes, recompute Destination PE end-to-end per Section 1B (v3.3 base through v3.10, later layers govern) (both tracks if dual-track applies; range ±7.5% rounded to nearest 0.5x).
 
 ### 11B. Variance vs Notion's Bear/Base/Bull projections
 
@@ -1114,7 +1114,7 @@ Pull the Notion Devil's Advocate findings. For each major bear case:
 - Has the AR weakened the bear case (counter-evidence)?
 - Has the pre-mortem scenario moved closer to or further from reality?
 
-🛑 **STOP. Present 11A through 11G. This is the core reconciliation.**
+▶ **Checkpoint (no wait). Present 11A through 11G. This is the core reconciliation. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 12 — UPDATED QUESTIONS FOR MANAGEMENT
 
@@ -1166,7 +1166,7 @@ Identify the TOP 3 questions ranked by likelihood of producing thesis-changing a
 - IR email
 - Wait for next scheduled concall
 
-🛑 **STOP. Present 12A through 12C.**
+▶ **Checkpoint (no wait). Present 12A through 12C. Then continue; the operator reviews it at the Step 13 position decision.**
 
 ## STEP 13 — POSITION DECISION
 
@@ -1245,7 +1245,7 @@ If destination PE has been recomputed in Step 11A, recompute:
 
 - Year 3 fair value (Bear / Base / Bull), both tracks if dual-track applies
 - Probability-weighted fair value (with the corrected credibility-grade weights from 12A)
-- Entry price for 25% CAGR (= Fair Value ÷ 1.25³)
+- Entry price = exit-consistent fair value ÷ (1 + tier hurdle)³ (Tier A 1.25, Tier B 1.20), shown with the Amendment 19 FV CAGR and return-source label
 - Margin of Safety price (20% below entry)
 - Update Notion with the revised price band
 
@@ -1264,7 +1264,7 @@ Pick exactly one. State it. State the bull threshold and the bear threshold.
 
 ## STEP 14 — NOTION UPDATE
 
-Save in this exact sequence per Notion_Save_Instructions:
+Save in this exact sequence per the notion-save skill:
 
 ### 14A. Search for the company page
 

@@ -3,7 +3,7 @@ name: verifier-b-redflags
 description: Independent concall red-flag audit. Fresh context
 tools: Read, Grep, Write
 model: claude-opus-5-5
-effort: high
+effort: xhigh
 ---
 You are pipeline stage: verifier-b-redflags.
 

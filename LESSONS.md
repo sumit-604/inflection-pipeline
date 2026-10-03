@@ -124,7 +124,6 @@ _Pending framework edits Keerti maintains._
   high (operator ruling, audits/RULINGS_2026-10.md item 27).
 - OPEN (2026-10-03, audit): 57 audit questions and 19 manual edits remain in
   audits/RULINGS_2026-10.md "Still open". Read before the next company run.
-  Item 29 (Verifier A model) is held for re-ruling.
 - ORCHPHARMA 2026-09-06 (phase 1), all OPEN:
   - Corrupt OCR text layers in filed PDFs are a live corpus failure mode. Promote the
     [OCR:embedded] / [OCR:tesseract] / [OCR:embedded-CORRUPT] page tag and the

@@ -80,5 +80,5 @@ Full record: `audits/RULINGS_2026-10.md`, items 27 to 30.
 - Stages 2, 3, 5 and 8 stay on Sonnet 5.5 at its default (high). Tripwire: if Verifier B overturns stage 5 credibility grades in two runs, move stage 5 alone to Opus 5.5 high. Logged in LESSONS.md.
 - xhigh: stage 11, stage 15, Verifiers B and C, quarterly A5. Start the `/fttcp` session on Opus 5.5 at xhigh; the command no longer pins a model.
 - medium: stages 1, 4, 6, 09b, Verifier D, quarterly A2. low: quarterly A1.
-- Verifier A stays on Haiku 4.5: the item 29 move is held. This table missed the reason the pipeline keeps it there. `prompts/00-orchestrator.md` makes Verifier A the only out-of-family read on the numbers, and the evidence stages it checks run on Sonnet 5.5.
+- Verifier A stays on Haiku 4.5 (operator ruling 2026-10-03, item 29 (a)). It is the out-of-family check on the numbers from the Sonnet 5.5 evidence stages (`prompts/00-orchestrator.md`, source-fidelity gate). My first proposal missed this reason.
 - Stage 10 stays on Haiku 4.5.

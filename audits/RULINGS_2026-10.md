@@ -32,7 +32,7 @@ Ruled by Keerti Kaushik, 2026-10-03. Items 1 to 5 were ruled one at a time. Item
 | 26 | Small stop merges | a | Sector-cap row and prior-override questions move to the /fttcp gate; duplicate 09b Halt 1 line removed. The stage 13 Decision Status line stays, because stage 13 does not read the orchestrator. |
 | 27 | Stages 2, 3, 5, 8 to Opus | b, with tripwire | No change. LESSONS open action: if Verifier B overturns stage 5 credibility grades in two runs, move stage 5 alone to Opus 5.5 high. |
 | 28 | xhigh effort | a | stage-11, stage-15, verifier-b, verifier-c, quarterly-a5 at xhigh; CLAUDE.md DISPATCH says to start the /fttcp session at xhigh. |
-| 29 | Verifier A to Sonnet 5.5 low | a, HELD | Not applied. The orchestrator keeps Verifier A on Haiku as the only out-of-family read on the numbers (00-orchestrator.md, source-fidelity gate). A Sonnet Verifier A would share the Sonnet evidence stages' blind spots. Re-ruling requested. |
+| 29 | Verifier A model | **(a) keep Haiku 4.5**, re-ruled 2026-10-03 (reversal of the first "a" accepted) | No change: Verifier A stays on Haiku 4.5. Reason: it is the out-of-family check on the numbers produced by the Sonnet 5.5 evidence stages (00-orchestrator.md, source-fidelity gate). |
 | 30 | Effort tuning on non-verifier stages and Verifier D | a | medium: stages 1, 4, 6, 09b, verifier D, quarterly A2; low: quarterly A1. |
 | 31 | 106 wording-only fixes | a | In the patch (class A). |
 | 32 | 42 medium/low alignment edits; open questions | a | Edits in the patch. The open questions and manual edits below stay open, logged in LESSONS.md. |

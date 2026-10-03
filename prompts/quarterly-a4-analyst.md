@@ -70,7 +70,7 @@ feeding both. Produce, per the protocol step sequence:
   the Board Outcome forward items (F13), each with its implied date.
 - A PLAIN-LANGUAGE BRIEF (MANDATORY on EVERY run, whether or not anyone asks;
   the FINAL narrative section of the review, immediately before the closing
-  YAML). Four labelled parts, in this order:
+  YAML). Five labelled parts, in this order:
   1. SUMMARY NARRATIVE — 10 to 20 lines, plain sentences, numbers first, no
      jargon and no AI vocabulary; what happened this quarter and what it means
      for the thesis and the decision.
@@ -80,6 +80,12 @@ feeding both. Produce, per the protocol step sequence:
      unit economics, and what this quarter says about model drift.
   4. COMPETITION INTELLIGENCE — where the company wins and is structurally
      weaker vs named peers, and the competitive risk to watch.
+  5. FORWARD MAP (next ~10-11 months) — built ONLY from the monitorables /
+     catalyst list and the single-cleanest-next-quarter metric: the
+     make-or-break next reading with its date, then each dated catalyst with
+     its bull fork and its bear fork in one line each. It adds no new number;
+     every figure already appears above with its anchor. (Recovered 2026-10-03,
+     branch audit item 14.)
   The three intelligence parts draw on the Notion thesis (peer / sector /
   business-model context passed inline) reconciled with this quarter's
   findings. PROVENANCE-LABEL every figure: mark whether it comes from prior
@@ -104,7 +110,7 @@ feeding both. Produce, per the protocol step sequence:
 ## OUTPUT
 Write the full merged review to `review_<ticker>_<quarter>.md` (complete
 tables, never summaries — this becomes institutional memory). The PLAIN-LANGUAGE
-BRIEF (four labelled parts above) is the last narrative section, placed
+BRIEF (five labelled parts above) is the last narrative section, placed
 immediately before the closing YAML block and produced on every run. End with
 exactly this fenced YAML block:
 

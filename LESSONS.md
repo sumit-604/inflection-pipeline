@@ -92,9 +92,6 @@ full text of each promotion is in LESSONS_ARCHIVE.md under its date._
 
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._
-- Add a Steel / Integrated Metals row to the Section 1B cap table (SHYAMMETL
-  ruled 20x ad hoc; MANINDS line pipe ruled 20x ad hoc on that precedent
-  2026-08-25; no dedicated row exists). [archetype: Commodity converter]
 - Add a Sugar / Agri-commodity cyclical row to the Section 1B cap table
   (KCPSUGIND ruled Agri-processing 20x ad hoc; no dedicated row exists).
   [sector: Agri processing] [archetype: Commodity converter]
@@ -124,6 +121,19 @@ _Pending framework edits Keerti maintains._
   high (operator ruling, audits/RULINGS_2026-10.md item 27).
 - OPEN (2026-10-03, audit): 57 audit questions and 19 manual edits remain in
   audits/RULINGS_2026-10.md "Still open". Read before the next company run.
+- OPEN (2026-10-03, repo, branch audit items 20-21): PR #186 (sparse
+  checkout) merged as c74e7a10; now land the markdown outputs of the 110 branch-only run and
+  quarterly records on main in one run PR, no PDFs; then revisit deleting
+  the 71 run branches whose folders are on main. audits/BRANCH_AUDIT_2026-10.md.
+- OPEN (2026-10-03, repo): run the deletion script in
+  audits/BRANCH_DELETIONS_2026-10.md from a local clone (100 branches; the
+  cloud proxy refuses remote deletes).
+- OPEN (2026-10-03, pipeline): PR #185 AR section index merges only after one
+  measured Phase 1 run confirms the saving (estimate about 415k tokens).
+- OPEN (2026-10-03, corpus): CLEANMAX run folder holds six Vinyas filings;
+  GAUDIUMIVF and VINYAS have mislabelled-year annual reports; KRONOX's
+  annual-report folder holds the IPO prospectus. Fix before reusing those
+  runs. audits/REPO_LAYOUT_PROPOSAL_2026-10.md follow-up section.
 - ORCHPHARMA 2026-09-06 (phase 1), all OPEN:
   - Corrupt OCR text layers in filed PDFs are a live corpus failure mode. Promote the
     [OCR:embedded] / [OCR:tesseract] / [OCR:embedded-CORRUPT] page tag and the

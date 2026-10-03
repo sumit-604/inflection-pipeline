@@ -90,7 +90,8 @@ at least one question), the monitorables/catalyst list, and — MANDATORY on
 every run — the PLAIN-LANGUAGE BRIEF as the final section: a 10-20 line plain
 summary narrative plus SECTOR intelligence, BUSINESS-MODEL intelligence, and
 COMPETITION intelligence (provenance-labelled: Notion/peer work vs this
-quarter's filings). This brief is a standing deliverable, never on-request.
+quarter's filings), plus a FORWARD MAP of the next ~10-11 months (each dated
+catalyst with a bull fork and a bear fork). This brief is a standing deliverable, never on-request.
 
 ## 3. A5 ADVERSARY (once)
 
@@ -133,7 +134,7 @@ to the user: the A5 verdict, the count-reconciliation line (N notes / N turns
 the protocol verdict, and the working-file paths. Print the merged review's
 headline tables and the Questions-for-Management table in full in chat. ALSO
 print the A4 PLAIN-LANGUAGE BRIEF every run — the plain summary narrative plus
-the sector, business-model, and competition intelligence. The user gets this
+the sector, business-model, and competition intelligence and the forward map. The user gets this
 automatically; they never have to ask for it.
 
 ## RULES FOR YOU, THE ORCHESTRATOR

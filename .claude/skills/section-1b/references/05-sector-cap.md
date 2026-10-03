@@ -40,6 +40,7 @@ Sources in force: Master v3.7 §1B Undiscovered Alpha, Sector Reality Cap, Categ
 | Logistics (asset-light) | 25x |
 | Cybersecurity / VAD | 25x |
 | Consulting / Engineering services | 25x |
+| Steel: value-added stainless / specialty (durable pricing) [operator ruling OR-13, 2026-10-03] | 25x |
 | Packaging | 22x |
 | Building materials | 22x |
 | City gas distribution | 22x |
@@ -48,6 +49,7 @@ Sources in force: Master v3.7 §1B Undiscovered Alpha, Sector Reality Cap, Categ
 | Real estate | 20x |
 | Agri processing | 20x |
 | Mining / mineral exploration | 20x |
+| Steel: commodity (long and flat carbon steel, ferro-alloys, integrated, cyclical) [operator ruling OR-13, 2026-10-03] | 20x |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
 
 Pending ruling: Section 1B v3.9 Appendix C R1 (a blended cap row for infra-plus-platform businesses, for example 35x, raised by the E2E Networks case). Until ruled, classify to an existing row and state the classification.

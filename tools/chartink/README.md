@@ -62,7 +62,13 @@ Then `push_data.bat`, run by Windows Task Scheduler at 22:15 on weekdays:
 
 | Step | Does |
 |---|---|
-| 9 | `git add data/chartink`, one data-only commit named `chartink data: <trade date>`, push to `main`. Rebases and retries once if the remote moved. Nothing else is ever staged. |
+| 9 | Copies `data/chartink` from the main checkout into a separate worktree, `repos\ip-chartink-main`, reset to `origin/main` each night. It commits there as one data-only commit named `chartink data: <trade date>` and pushes to `main`. Rebases and retries once if the remote moved. Nothing else is ever staged. |
+
+The worktree is a sparse checkout of `data/chartink` only, created on first
+use. The data therefore reaches `main` whatever branch the main checkout
+holds. Files are copied, never deleted, so a file on `main` that the current
+branch lacks is kept. The main checkout's own `data/chartink` changes stay
+uncommitted there; they are not lost, and the next night copies them again.
 
 ## The claude.ai project
 

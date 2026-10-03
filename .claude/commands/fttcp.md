@@ -347,6 +347,14 @@ CATALYST flag for the devil's advocate).
    Anchor every number. If a pillar input is genuinely not yet determinable,
    mark it NOT FOUND and say the card is provisional on that input.
 
+6. **MANAGEMENT VISION AND ACTION (Step 2E, a readable section, not only a
+   table).** Per transition, in plain sentences: what management SAYS it will
+   do (vision, discounted), what it is DOCUMENTED to be DOING (action, 📄), and
+   whether that action argues the pillar verdict is too conservative. The
+   five-column Step 2E ledger may sit beneath, but the prose is mandatory and
+   is printed in chat every run (operator instruction 2026-07-14; recovered
+   2026-10-03, branch audit item 12).
+
 ## CROSS-FAMILY GRADE (independent, grader-only)
 
 After the draft file is written and before you commit, run the cross-family
@@ -379,7 +387,8 @@ produced) using the message
 `fttcp: autonomous plain-language draft` and push with
 `git push -u origin <branch>` (retry on network error up to 4 times with 2s,
 4s, 8s, 16s backoff). Then print the COMPLETE draft in the chat, exactly as
-written, and end with this line and nothing after it:
+written. The printed draft visibly includes the MY RULINGS block and the
+Step 2E prose (part 6). End with this line and nothing after it:
 
   Ask me anything or give me your overrides.
 
@@ -393,8 +402,12 @@ operator asks something outside the run's evidence (today's price, current
 sector multiples, macro), say so plainly and name what would be needed; do not
 guess or fabricate an anchor.
 
-Record every override the moment it happens: what the draft said, what the
-operator ruled, and the operator's stated reasoning in the operator's words.
+Record every override the moment it happens, to DISK and not only in this
+conversation: append it to outputs/final/fttcp-deliberation.md as it is made
+(what the draft said, what the operator ruled, and the operator's stated
+reasoning in the operator's words). The deliberation file accretes during
+review and is finalized at sign-off. A mid-deliberation context compaction
+cannot lose an operator ruling.
 Where the operator's ruling overrides BOTH drafts (Claude Code's and the
 dossier Section 6 pre-ruling), record the override with the operator's stated
 reasoning AND the default-track sensitivity: the number the valuation would
@@ -424,7 +437,8 @@ run Role 1; this gate only fixes and approves the base the valuation must use.
 
 ## SIGN-OFF — write the deliberation file
 
-When the operator signs off, write outputs/final/fttcp-deliberation.md. It
+When the operator signs off, complete outputs/final/fttcp-deliberation.md (it
+already holds every override recorded during review). It
 carries:
 - The final rulings as they stand after review (the draft's rulings plus every
   change).

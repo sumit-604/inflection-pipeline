@@ -69,6 +69,7 @@ Load only the chunks the current step needs. Paths are relative to this skill fo
 - OR-6. Amendment 17.0 default for ambiguous classification. Kept as written: "Ambiguous cases classify CONVERTER (conservative default)", with the ambiguity stated. Chunk 11.
 - OR-8. Entry divisor. Confirmed: entry = exit-consistent fair value ÷ (1 + tier hurdle)^N, with 1.25 for Tier A and 1.20 for Tier B. Chunk 06.
 - OR-12 (operator, 2026-10-03). Amendment 25 fast-growth trigger. FTTCP defines no ACCELERATING state, so "FTTCP Revenue Transition = ACCELERATING" reads as the forward Revenue Transition verdict FIRING. The Amendment 21 run-rate test (growth of 40% YoY or more) is unchanged. Chunk 08.
+- OR-13 (operator, 2026-10-03). Steel sector caps. Commodity steel 20x (confirms the SHYAMMETL and MANINDS rulings). Value-added stainless and specialty steel 25x (new cap). Chunk 05.
 
 ## Open rulings (carried as written until the operator rules)
 

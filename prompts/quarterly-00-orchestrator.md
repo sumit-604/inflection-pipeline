@@ -240,7 +240,7 @@ After all documents pass A1-A3:
    reviewed), the top forensic findings, and the working-file paths. ALSO
    surface the A4 PLAIN-LANGUAGE BRIEF in the chat report every run (the
    summary narrative plus the sector, business-model, and competition
-   intelligence) — it is a standing part of the deliverable, not something the
+   intelligence and the forward map) — it is a standing part of the deliverable, not something the
    user has to ask for.
 
 ---
@@ -265,7 +265,7 @@ Per Role 4 Step 9 and existing save mechanics:
 - `insert_content` with `position: end` for the full review (complete tables,
   never summaries; the page is institutional memory). The full review now ends
   with the A4 PLAIN-LANGUAGE BRIEF (summary narrative + sector +
-  business-model + competition intelligence); it is part of the review and is
+  business-model + competition intelligence + forward map); it is part of the review and is
   saved with it, every run — never drop it and never treat it as optional.
   Split large content across sequential insert calls.
 - `update_properties` to PREPEND the date-stamped Key Notes line to the

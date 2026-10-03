@@ -59,7 +59,7 @@ from the jsdelivr CDN.
 ## Controls
 
 W or Up: accelerate. S or Down: brake, then reverse. A, D or arrows: steer.
-Space: handbrake. N: nitro. C: camera. H: horn. L: night. R: rain.
+Space: handbrake. N or 🔥: nitro (tap once, it stays on; tap again or brake to stop). C: camera. H: horn. L: night. R: rain.
 Q and E: indicators. O: fog. M: mirror. G and F: gear up and down
 (manual gearbox). Esc: menu.
 
@@ -92,3 +92,6 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   races; replays; Skill Park and dirt rally; showroom, manual gearbox,
   wheels, spoilers, neon, exhaust flames; speed blur, fog, mirror and
   dashboard camera; 25 badges. 129 regression checks.
+- v6: nitro works in turns. One tap keeps it on and it gives gas by itself,
+  so no three-key press is needed; steering grips better at nitro speed.
+  133 regression checks.

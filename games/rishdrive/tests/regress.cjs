@@ -29,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v5", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v6", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -253,6 +253,18 @@ const HELPERS = () => {
   r = await E(() => { S.car = "gt"; G.respawnCar(); G.setPos(5.5, 250, 0); G.car.s = 50; keys("up", "nitro"); sim(0.5); const fx = G._fxOn; S.up.gt = Object.assign({}, S.up.gt, { engine: 3 }); keys("up"); sim(0.5); const before = Array.from(G.sp.life).filter((l) => l > 0).length; keys(); G.T += 0.05; G.step(0.05); const after = Array.from(G.sp.life).filter((l) => l > 0).length; return { fx, before, after }; });
   ok("V20 speed blur at high speed", r.fx, r); ok("V21 turbo pop flames when lifting off", r.after > r.before, r);
   await E(() => { G.toggleNight(); G.setPos(5.5, 300, 0); G.car.s = 55; keys("up", "nitro"); sim(0.6); keys(); }); await p.waitForTimeout(1500); await p.screenshot({ path: `${SHOTS}/19-night-neon-blur.png` }); await E(() => { G.toggleNight(); S.car = "hatch"; G.respawnCar(); });
+  // Nitro: one tap keeps it on, and it works while turning with no gas key held.
+  await E(() => { S.car = "hatch"; G.respawnCar(); G.startFree(); S.nitro = 100; S.fuel = 100; S.damage = 0; G.car.broken = false; G.setPos(5.5, 230, 0); G.car.s = 15; keys(); });
+  await p.keyboard.press("n"); await p.keyboard.down("ArrowLeft");
+  r = await E(() => { const s0 = G.car.s, h0 = G.car.h; sim(0.8); return { on: G.car.nitroOn, latch: G.car.nitroLatch, faster: G.car.s > s0 + 3, turned: Math.abs(G.car.h - h0) > 0.3 }; });
+  await p.keyboard.up("ArrowLeft");
+  ok("V24 nitro tap stays on and works in a turn", r.on && r.latch && r.faster && r.turned, r);
+  await p.keyboard.down("ArrowDown"); r = await E(() => { sim(0.3); return { on: G.car.nitroOn, latch: G.car.nitroLatch }; }); await p.keyboard.up("ArrowDown");
+  ok("V25 braking stops the nitro", !r.on && !r.latch, r);
+  await p.keyboard.press("n"); r = await E(() => { sim(0.2); const a = G.car.nitroLatch; return a; }); await p.keyboard.press("n"); const q5 = await E(() => G.car.nitroLatch);
+  ok("V26 a second tap turns nitro off", r === true && q5 === false, { r, q5 });
+  r = await E(() => { G.startCircuit(); sim(3.5); const W = G.world, N = W.tN; G.nitroTap(); let minS = 1e9, hits = 0, fast = false; const d0 = S.damage; for (let k = 0; k < 120; k++) { const c = G.car, n = W.trackNearest(c.x, c.z), t = W.tp[(n.i + 8) % N], want = Math.atan2(t.x - c.x, t.z - c.z), d = Math.atan2(Math.sin(want - c.h), Math.cos(want - c.h)); keys(d > 0.05 ? "left" : d < -0.05 ? "right" : "x"); G.T += 0.05; G.step(0.05); if (G.car.kmh > 100) fast = true; if (fast && G.car.nitroOn) minS = Math.min(minS, G.car.s); } keys(); const o = { minKmh: Math.round(minS * 3.6), dmg: S.damage - d0, off: W.trackNearest(G.car.x, G.car.z).d }; G.startFree(); return o; });
+  ok("V27 nitro carries through the circuit bends", r.minKmh > 85 && r.minKmh < 1e6 && r.off < 12 && r.dmg === 0, r);
   r = await E(() => { G.checkBadges(); return { drag: !!S.badges.drag, slalom: !!S.badges.slalom, two: !!S.badges.twowheel }; }); ok("V22 new badges", r.drag && r.slalom && r.two, r);
   r = await E(() => G.lastErr || ""); ok("V23 no loop errors after v5 checks", !r, r.slice(0, 300));
   await E(() => yesTraffic());

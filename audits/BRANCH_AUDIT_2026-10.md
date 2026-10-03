@@ -1187,3 +1187,29 @@ plain_language_brief_included: true
   Recommendation: main wins (discard). It contradicts the standing NEVER rule; reviving it needs an operator ruling that amends CLAUDE.md first.
 - Branch verdict: RECOVER the /fttcp Step 2E visible-prose section (renumber after P/E base card); NEEDS OPERATOR CHOICE on the /fttcp 12-15 line business summary. Publication offer: main wins. anti-ai file: in main.
 
+
+## Operator decisions (2026-10-03) and what was done
+
+Reply: "all rec except 21a", with conditions on 8, 9 and 21.
+
+| Item | Decision | Done |
+|---|---|---|
+| 1 | Hand edit 3 approved | Master rule now also names the gates that still stop (commit 058c6a8, inside PR #178) |
+| 2 | Squash-merge PR #178 | Merged as 41b18319. Remote branch delete refused by the cloud proxy; listed in BRANCH_DELETIONS_2026-10.md |
+| 3 | Delete 77 merged branches | Listed with tip hashes in BRANCH_DELETIONS_2026-10.md; operator runs the script |
+| 4 | Recover resume-from-disk + live override record | PR #179 |
+| 5 | Autocompact left to the environment (80) | No change |
+| 6 | Recover PDF pre-extraction | PR #181 |
+| 7 | Recover chartink push | PR #182; duplicates the branch's own open PR #173, close one |
+| 8 | Steel caps 20x / 25x, 25x as dated ruling | PR #183, operator ruling OR-13 |
+| 9 | AR section index, own PR, merge only after a measured run | Draft PR #185 |
+| 10, 13, 15, 16 | Discard | Branch content not recovered |
+| 11 | Sector memory: raise in Session B as a design question | Not recovered |
+| 12 | Recover /fttcp Step 2E prose | PR #180 |
+| 14 | Recover quarterly forward map | PR #184 |
+| 17 | Main wins on every other CONFLICTS item | No change |
+| 18 | Delete 6 framework branches with nothing to recover | Listed. Their extra run files are runs/venusrem-2026-07-24 (deleted on main in 84cbd360) and two superseded JUBLCPL stage-5b outputs |
+| 19 | Delete 16 run branches with nothing unique | Listed |
+| 20 | Revisit after 21 | Deferred; LESSONS.md OPEN line |
+| 21 | Land the markdown outputs only, no PDFs, one PR, after 22 is in place | Deferred until PR #186 merges; LESSONS.md OPEN line |
+| 22 | Sparse checkout per session, keep runs/*/session-cost.md and runs/*/manifest.yaml | PR #186 (tools/sparse_session.sh) |

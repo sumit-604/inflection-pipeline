@@ -121,6 +121,19 @@ _Pending framework edits Keerti maintains._
   3. OR-9 (proposed): Amendment 24 caps size at starter when the residual
      exceeds 25% of CMP; Amendment 25 permits a starter only at 25% or less.
      Reading A: size zero. Reading B: a 2-3% starter. Operator ruling needed.
+- OPEN (2026-10-03, repo, branch audit items 20-21): after PR #186 (sparse
+  checkout) merges, land the markdown outputs of the 110 branch-only run and
+  quarterly records on main in one run PR, no PDFs; then revisit deleting
+  the 71 run branches whose folders are on main. audits/BRANCH_AUDIT_2026-10.md.
+- OPEN (2026-10-03, repo): run the deletion script in
+  audits/BRANCH_DELETIONS_2026-10.md from a local clone (100 branches; the
+  cloud proxy refuses remote deletes). Close PR #182 or #173 (same change).
+- OPEN (2026-10-03, pipeline): PR #185 AR section index merges only after one
+  measured Phase 1 run confirms the saving (estimate about 415k tokens).
+- OPEN (2026-10-03, corpus): CLEANMAX run folder holds six Vinyas filings;
+  GAUDIUMIVF and VINYAS have mislabelled-year annual reports; KRONOX's
+  annual-report folder holds the IPO prospectus. Fix before reusing those
+  runs. audits/REPO_LAYOUT_PROPOSAL_2026-10.md follow-up section.
 - ORCHPHARMA 2026-09-06 (phase 1), all OPEN:
   - Corrupt OCR text layers in filed PDFs are a live corpus failure mode. Promote the
     [OCR:embedded] / [OCR:tesseract] / [OCR:embedded-CORRUPT] page tag and the

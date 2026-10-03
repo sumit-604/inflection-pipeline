@@ -65,3 +65,37 @@ No repo change. Start cloud sessions with a sparse checkout that includes everyt
 2. Decide on **(a)** within the quarter. The repo grows by about one run folder per working day, and history only grows.
 3. Skip **(b)** for size; it saves 13 MB.
 4. Use **(c)** only if the runs must stay in this repo and the LFS quota cost is acceptable.
+
+## Follow-up answers (operator questions, 2026-10-03)
+
+### Does option (a) rewrite this repo's history?
+
+No, not as written. Option (a) copies the `runs/` history into the new repository (`git filter-repo --path runs/` on a throwaway clone) and then removes `runs/` from this repo with an ordinary commit. That keeps every branch, PR and hash here valid. The cost: this repo's pack stays at about 6.8 GB, so a full clone stays as slow as today. Only checkouts get small.
+
+Shrinking the clone needs a history rewrite of this repo (`git filter-repo --invert-paths --path runs/`) and a force-push of `main`. That changes every commit hash, breaks every open branch and PR, and forces every existing clone to re-clone. Do it at most once, after open PRs are merged or closed, and only by explicit ruling.
+
+### Duplicate PDFs by hash (main at 41b18319)
+
+| Measure | Value |
+|---|---|
+| PDFs on main | 1,903 |
+| Unique contents | 1,643 |
+| Duplicate groups | 231 |
+| Extra copies | 260 |
+| Size of extra copies | 0.44 GB of 4.95 GB (9%) |
+| Groups spanning 2+ run folders | 213 (0.31 GB) |
+
+Git already stores each unique PDF once in its pack, so duplicates cost checkout disk, not clone download. Most duplicates are legitimate: a company's own transcript reused as a peer transcript in another run.
+
+Six look like corpus errors, worth checking before those runs are reused:
+
+| Run | Finding |
+|---|---|
+| cleanmax-2026-09-01 | Holds six Vinyas documents: the Vinyas prospectus filed as an annual report, the Vinyas FY2023-24 annual report, and four Vinyas investor presentations. The CLEANMAX corpus is contaminated with another company's filings. |
+| gaudiumivf-2026-07-16 | `Annual_Report_2020.pdf` is byte-identical to `10.3 Annual Report FY 2024-25.pdf`. The run has no real FY2020 report. |
+| vinyas-2026-09-01 | `Annual_Report_2015.pdf` is byte-identical to the FY2023-24 SME annual report. |
+| azad-2026-07-12 | The annual-report file is byte-identical to the file in rating/. One of them is misfiled. |
+| sfl-2026-07-14 | The presentation file is byte-identical to a file in screening/. |
+| kronox-2026-08-30 | `inputs/annual-report/1718019653328.pdf` is the June 2024 IPO prospectus, not an annual report (found while testing the AR section index). |
+
+Full list of duplicate groups: produced in the session that wrote this file; re-run with `git ls-tree -r -l origin/main runs/` and group by blob hash.

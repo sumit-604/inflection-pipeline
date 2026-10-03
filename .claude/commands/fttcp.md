@@ -347,6 +347,14 @@ CATALYST flag for the devil's advocate).
    Anchor every number. If a pillar input is genuinely not yet determinable,
    mark it NOT FOUND and say the card is provisional on that input.
 
+6. **MANAGEMENT VISION AND ACTION (Step 2E, a readable section, not only a
+   table).** Per transition, in plain sentences: what management SAYS it will
+   do (vision, discounted), what it is DOCUMENTED to be DOING (action, 📄), and
+   whether that action argues the pillar verdict is too conservative. The
+   five-column Step 2E ledger may sit beneath, but the prose is mandatory and
+   is printed in chat every run (operator instruction 2026-07-14; recovered
+   2026-10-03, branch audit item 12).
+
 ## CROSS-FAMILY GRADE (independent, grader-only)
 
 After the draft file is written and before you commit, run the cross-family
@@ -379,7 +387,8 @@ produced) using the message
 `fttcp: autonomous plain-language draft` and push with
 `git push -u origin <branch>` (retry on network error up to 4 times with 2s,
 4s, 8s, 16s backoff). Then print the COMPLETE draft in the chat, exactly as
-written, and end with this line and nothing after it:
+written. The printed draft visibly includes the MY RULINGS block and the
+Step 2E prose (part 6). End with this line and nothing after it:
 
   Ask me anything or give me your overrides.
 

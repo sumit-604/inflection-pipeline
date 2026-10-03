@@ -79,6 +79,7 @@ ranked by investor importance, each with note anchor and rating.
 
 --- variable input below ---
 {{ANNUAL_REPORT}}
+(If the orchestrator passed a section range from the AR section index, read that range first; the full .txt path is the fallback of record. Read the full text whenever the slice looks truncated or you need another section.)
 
 ═══════════════════════════════════════════════════════════════════
 ## CALL 2 OF 3: PASS 2, WHAT WAS MISSED

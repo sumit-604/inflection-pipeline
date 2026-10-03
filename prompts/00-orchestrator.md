@@ -419,6 +419,26 @@ support this override?". The operator answers it once, at the
 
 ---
 
+### STAGE 0 AR SECTION INDEX (branch audit item 9; NOT live until one measured run confirms the saving)
+
+After the TOOLING GATE text cache exists, stage 0 runs
+`python3 tools/ar_index.py <annual-report .txt>` for each annual report (not
+for a prospectus or other document filed in that folder). It writes
+`<stem>.index.yaml` beside the .txt, mapping four sections to page and line
+ranges with a confidence flag: financials_and_notes, mdna, governance,
+business_overview. Record the summary in B00 as `ar_section_index`.
+
+Routing. Pass each section-scoped stage the .txt PATH plus its page range,
+AND the full .txt path as the named fallback. Never paste slice contents.
+- Stage 2 (notes): financials_and_notes.
+- Stage 4 (business model): business_overview + mdna.
+- Stage 8 (promoter): governance, at the {{AR_GOVERNANCE_EXTRACTS}} marker.
+- Stage 9 (TAM): mdna + business_overview, at the {{TAM_RELEVANT_EXTRACTS}} marker.
+- Stages 3 and 7, and every verifier: the FULL text, always.
+A section with `confidence: low`, or a run with no index, routes that stage
+to the FULL text and says so. The slice never starves a stage: a stage that
+finds its slice truncated, or needs another section, reads the full text.
+
 ## 2. STAGE SEQUENCE
 
 | # | Stage | Prompt file | Model | Consumes | Emits block |

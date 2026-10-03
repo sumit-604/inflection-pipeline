@@ -110,10 +110,13 @@ Do not upgrade a stage's model without editing its agent file.
   session; in-session it appears only as collect_to_repo.py --push-again.
 - Sparse checkout (operator ruling 2026-10-03): a pipeline session first runs
   tools/sparse_session.sh runs/<folder> [more folders]. It keeps everything
-  outside runs/, every run's session-cost.md and manifest.yaml, and the named
-  run folders, so the tree is about 80 MB, not 4.8 GB. Add a folder the same
-  way when a session needs it; tools/sparse_session.sh --off restores the full
-  tree. Never run git stash or git reset --hard over a full checkout.
+  outside runs/, runs/_template/, every run's session-cost.md and
+  manifest.yaml, and the named run folders, so the tree is about 80 MB, not
+  4.8 GB. Add a folder the same way when a session needs it;
+  tools/sparse_session.sh --off restores the full tree. Never run git stash or
+  git reset --hard over a full checkout.
+- Run tools/dry_check.sh before merging any PR that touches .claude/,
+  prompts/, frameworks/ or tools/ (operator ruling 2026-10-03).
 - Any session that commits a framework or prompt amendment must end by
   opening a PR to main the same day. Run outputs and framework amendments
   go in SEPARATE commits so recovery stays surgical.

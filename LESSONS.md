@@ -113,21 +113,24 @@ _Pending framework edits Keerti maintains._
   run that uses it is the first test. Check announcements/ after that run,
   then confirm and close this action. PR #167.
 - PENDING FOR THE NEXT PROMPT BRANCH (2026-09-15):
-  1. prompts/10-input-assembly-pipeline.md rule 3, line 22 still says "put the
-     more conservative one in the table".
   2. Amendment 6 range rounding: the rule says nearest 0.5x, its own example
      rounds the top down (37x -> 34-39.5x). section-1b chunk 06 copies both.
      Operator ruling needed, then align chunk 06.
   3. OR-9 (proposed): Amendment 24 caps size at starter when the residual
      exceeds 25% of CMP; Amendment 25 permits a starter only at 25% or less.
      Reading A: size zero. Reading B: a 2-3% starter. Operator ruling needed.
-- OPEN (2026-10-03, repo, branch audit items 20-21): after PR #186 (sparse
-  checkout) merges, land the markdown outputs of the 110 branch-only run and
+- OPEN (2026-10-03, pipeline, stage 5): if Verifier B overturns stage 5
+  credibility grades in two runs, move stage-05-concall alone to Opus 5.5
+  high (operator ruling, audits/RULINGS_2026-10.md item 27).
+- OPEN (2026-10-03, audit): 57 audit questions and 19 manual edits remain in
+  audits/RULINGS_2026-10.md "Still open". Read before the next company run.
+- OPEN (2026-10-03, repo, branch audit items 20-21): PR #186 (sparse
+  checkout) merged as c74e7a10; now land the markdown outputs of the 110 branch-only run and
   quarterly records on main in one run PR, no PDFs; then revisit deleting
   the 71 run branches whose folders are on main. audits/BRANCH_AUDIT_2026-10.md.
 - OPEN (2026-10-03, repo): run the deletion script in
   audits/BRANCH_DELETIONS_2026-10.md from a local clone (100 branches; the
-  cloud proxy refuses remote deletes). Close PR #182 or #173 (same change).
+  cloud proxy refuses remote deletes).
 - OPEN (2026-10-03, pipeline): PR #185 AR section index merges only after one
   measured Phase 1 run confirms the saving (estimate about 415k tokens).
 - OPEN (2026-10-03, corpus): CLEANMAX run folder holds six Vinyas filings;
@@ -144,8 +147,6 @@ _Pending framework edits Keerti maintains._
   - Decide how many REWORK remediation cycles an orchestrator runs before handing the
     verdict to the operator. One cycle cost a third of the ORCHPHARMA run and did not
     clear the gate. Same entry, item 5.
-  - Resolve the stage 0 routing conflict between /run-pipeline (orchestrator does it
-    inline) and DISPATCH (mechanical stages go to haiku). Same entry, item 6.
   - Peer selection needs a product-chain check. ORCHPHARMA's three peers contained no
     cephalosporin or 7-ACA maker, so six of eight peer questions were structurally
     unanswerable. Same entry, closing note.

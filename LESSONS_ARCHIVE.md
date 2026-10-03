@@ -809,3 +809,5 @@ Mental model signed 28-Sep-2026; Halt 1 = SHALLOW WATCH; no /fttcp or valuation 
 
 Orchestrator note (28-Sep-2026): LESSONS.md OPEN ACTIONS now carries rows 1, 2, 4, 7 (OR-11)
 and 8. The active file is over its 1,500-token budget after this addition; /compost should run.
+
+- [2026-10-03] Framework audit for the 5.5 family (branch framework/oct-2026-model-update). 272 findings, 32 operator rulings (audits/RULINGS_2026-10.md). Closed from LESSONS.md: the stage 0 routing conflict (ORCHPHARMA item 6) and the prompt 10 rule 3 "more conservative" line (pending item 1). OR-11 is now in CLAUDE.md; section-1b chunk 07 alignment stays open. New OR-12 (Amendment 25 fast-growth trigger reads forward Revenue FIRING). What dragged: the auto-mode classifier blocked `git worktree add`, so the patch was built on scratch copies; one routing recommendation (Verifier A to Sonnet) missed the orchestrator's out-of-family rationale and was held after approval. Lesson: read a stage's stated design rationale in the orchestrator before proposing a model change.

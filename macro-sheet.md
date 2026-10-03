@@ -1,7 +1,7 @@
 # MACRO SHEET — AUGUST 2026 (first live fill)
 
 **Month stamp:** August 2026 | Filled 18-Aug-2026 | Next refresh: 1-Sep-2026 (calendar reminder set)
-**Rule reminders:** every Role 1 run cites this sheet. DCF terminal growth may not exceed this sheet's nominal GDP growth, and as standing practice should not exceed the risk-free rate either, making the effective terminal ceiling 6.75%.
+**Rule reminders:** every Role 1 run cites this sheet. DCF terminal growth may not exceed 6% (the Master Role 1 cap), this sheet's nominal GDP growth, or, as standing practice, the risk-free rate. The 6% cap binds this month (operator ruling, 2026-10-03).
 
 ## CORE VALUES
 
@@ -27,7 +27,7 @@ Earnings growth is currently PLENTIFUL, not scarce: Q1 FY27 delivered the highes
 |---|---|
 | RRM neutral point (13.5%) vs current market cost of equity (~14.1%) | Within tolerance; gap 60bps < 100bps review trigger. No recalibration. |
 | Internal consistency: risk-free (6.76%) ≈ real growth (6.7%) + inflation (4.5-5%)? | Risk-free sits BELOW nominal growth (10%+), typical for India's financial-repression-lite regime; consistent macro story, no contradiction between growth and rate assumptions |
-| Terminal growth ceiling for any DCF this month | 6.75% hard (min of nominal GDP 10% and risk-free 6.76%) |
+| Terminal growth ceiling for any DCF this month | 6.0% hard (min of the Master's 6% cap, nominal GDP 10% and risk-free 6.76%) |
 | Smallcap exit-multiple context | Destination PEs computed this month inherit an elevated smallcap base; regime stress (exit PE minus one-third) is prudent to show on any BUY verdict |
 
 ## CHANGE LOG

@@ -14,7 +14,9 @@ target, 3-5 year holds.
   revenue runs off the 26.1 basis hierarchy, with historical CAGR shown as
   the cross-check and used as the base only when no forward evidence
   exists. Base margin runs off the 26.2 destination-mix bridge; the
-  trailing 3-year average is the BEAR input. Weights key to the trailing
+  trailing 3-year average is the BEAR input, except for margin-reset names,
+  where the bear margin comes from the evidence bridge (operator ruling
+  OR-11, approved 2026-09-28). Weights key to the trailing
   four quarters of Role 5 delivery, never whole-company history.
 - Never shade an input to be safe. State the most evidenced path, name the
   two readings and the one observation that separates them, and put the
@@ -76,11 +78,16 @@ target, 3-5 year holds.
   Declaration or a Halt 1 decision other than PROCEED.
 
 ## DISPATCH (model per subagent, already set in .claude/agents frontmatter)
-- claude-opus-5-5 (Opus 5.5, effort high): stage 11 valuation, stage 13 synthesis,
-  stages 14 and 15, verifiers B and C, /fttcp, quarterly A3-A5
-- claude-sonnet-5-5 (Sonnet 5.5): all document-reading stages (1-9, 09b),
-  verifier D, quarterly A1-A2
+- claude-opus-5-5 (Opus 5.5), effort xhigh: stage 11 valuation, stage 15
+  devil's advocate, verifiers B and C, quarterly A5, and the /fttcp session
+  (start that session on Opus 5.5 at xhigh; the command pins no model)
+- claude-opus-5-5 (Opus 5.5), effort high: stage 13 synthesis, stage 14
+  thesis, quarterly A3-A4
+- claude-sonnet-5-5 (Sonnet 5.5), effort medium: stages 1, 4, 6, 09b,
+  verifier D, quarterly A2; effort low: quarterly A1; default (high):
+  stages 2, 3, 5, 7, 8, 9
 - haiku (Haiku 4.5, no 5.5 Haiku exists): stage 10 assembly, verifier A
+  (the out-of-family read on the numbers)
 Do not upgrade a stage's model without editing its agent file.
 
 ## WORDS
@@ -101,6 +108,12 @@ Do not upgrade a stage's model without editing its agent file.
   apt-get install -y -qq; redirect verbose PDF-extraction output. The
   collect_to_repo.py collector runs on the operator's machine, out of
   session; in-session it appears only as collect_to_repo.py --push-again.
+- Sparse checkout (operator ruling 2026-10-03): a pipeline session first runs
+  tools/sparse_session.sh runs/<folder> [more folders]. It keeps everything
+  outside runs/, every run's session-cost.md and manifest.yaml, and the named
+  run folders, so the tree is about 80 MB, not 4.8 GB. Add a folder the same
+  way when a session needs it; tools/sparse_session.sh --off restores the full
+  tree. Never run git stash or git reset --hard over a full checkout.
 - Any session that commits a framework or prompt amendment must end by
   opening a PR to main the same day. Run outputs and framework amendments
   go in SEPARATE commits so recovery stays surgical.
@@ -164,8 +177,10 @@ weigh, never anchored evidence.
                  FTTCP v2.3, Quarterly v1.4, AR v1.3, plus
                  success_catalogue.md (Rule I; operator fills, 0 of 4
                  names, not yet enforced) (Keerti
-                 maintains; stage 11 reads at run time; amendments here
-                 propagate with zero pipeline edits), plus
+                 maintains; stage 11 reads the section-1b skill, so an
+                 amendment here reaches stage 11 only when the matching
+                 .claude/skills/section-1b/references chunk is regenerated
+                 in the same commit), plus
                  Downstream_Source_Discovery_Protocol_v1_0.md (source
                  registry for downstream signal candidates; Role 5.5
                  verifies against it in claude.ai)
@@ -196,8 +211,11 @@ The framework grew shield-first: verify everything, then value. Inverted by
 operator ruling. A SPEAR PASS runs FIRST, on live web, by Claude web, before
 any pipeline machinery. Heavy pipeline runs only on a SPEAR HIT or an explicit
 operator override. The spear hands the pipeline its priority verification
-targets, the load-bearing facts. Claude Code never runs a spear pass: this
-container has no live web access.
+targets, the load-bearing facts. Claude Code does not run the four-step
+spear below. Operator ruling 2026-09-05: the /step1 intake, run by Claude
+Code with live web and grounded in the corpus it collects, replaces the web
+spear. It writes "Spear: OVERRIDE <date> (operator standing ruling
+2026-09-05: Step-1 intake replaces the web spear)", which satisfies the gate.
 
 The four steps:
 - POND. Live-web opportunity size in numbers. How large is the market the
@@ -212,8 +230,8 @@ Gate rule. /run-pipeline and /fttcp on a new name require a line in
 companies/<TICKER>.md, above the Mental Model block, in one of two forms:
 - Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]
 - Spear: OVERRIDE YYYY-MM-DD (operator)
-If neither line exists, STOP. Direct the operator to run the spear pass with
-Claude web first. The pipeline never runs a new name shield-first.
+If neither line exists, STOP. Direct the operator to run /step1, or the spear
+pass with Claude web, first. The pipeline never runs a new name shield-first.
 
 The load-bearing facts named in the Spear line are the run's FIRST
 verification priority. Stage 0 carries them; every later stage checks them
@@ -230,12 +248,17 @@ an unsigned model.
 
 ## TEAM WORKFLOW — Claude Code and Claude web
 Claude Code reads the heavy corpus once (PDFs, ARs, transcripts) and holds
-the repo. It has NO live web access. Claude web (claude.ai) does live
+the repo. Its live web is limited to WebSearch and WebFetch in /step1 and
+stages 8 and 9; a failed search marks the stage partial, and nothing is
+filled from memory. Claude web (claude.ai) does live
 verification, cross-checks, tracker and Notion writes. It must NOT re-read
 corpus documents. It asks Claude Code via operator-ferried extraction
 prompts (quote-then-comment, NOT DISCLOSED allowed, filename+date
 verification mandatory). Filed documents beat inference. Every claim
-carries its evidence tier. The pipeline produces payloads. claude.ai
+carries its evidence tier. The pipeline produces payloads. One approved
+exception (operator ruling 2026-10-03): /run-quarterly writes Notion
+in-session, only after the operator approves the printed payload in that
+run, and never writes Decision Status. Otherwise claude.ai
 executes writes. Each document is paid for once.
 The claude.ai project carries a parallel operating manual at
 project-instruction level (team_workflow_project_instructions);

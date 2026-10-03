@@ -129,7 +129,7 @@ Before valuing, Role 1 verifies the single-credit map across FTTCP Part B and Se
 
 ## OPERATING RULES
 
-- Execute the sections in order, in one pass, in claude.ai and in the pipeline alike. Write the interim summary line at the end of each section and continue without waiting. The operator reviews once: the destination PE base and earnings basis at the /fttcp pillar-approval gate, then the final verdict (operator ruling 2026-10-03).
+- Execute the sections in order, in one pass, in claude.ai and in the pipeline alike. Write the interim summary line at the end of each section and continue without waiting. The operator reviews once: the destination PE base and earnings basis at the /fttcp pillar-approval gate, then the final verdict (operator ruling 2026-10-03). These gates still stop the run: Halt 1 and the signed Mental Model (before this role runs), the /fttcp P/E gate, the Section 1B Amendment 16, 17 and 18 gates, and Rule H before Role 3. No FTTCP output is a missing-input stop.
 - Show ALL math. Every formula, every assumption, every intermediate step.
 - State the most evidenced path (v3.7, Section 1B v3.10 Amendment 26.3). Where evidence is thin, present both readings and the single observation that separates them. Size the position for the doubt (v3.9 Amendment 25). Do NOT shade individual inputs. Per-input conservatism is retired: five inputs shaded 10% each produce a bear case labelled base.
 - Use tables. Every scenario in a scannable table.

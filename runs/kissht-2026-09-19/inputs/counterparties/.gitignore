@@ -1,0 +1,27 @@
+# Track only the ten counterparty documents fetched under the operator's
+# 10-document cap of 2026-10-03, their page-marked text extracts, and the
+# manifest. Everything else in this folder (an earlier uncapped pull) stays
+# on disk and out of git, per operator ruling 2026-10-03.
+*
+!.gitignore
+!MANIFEST.md
+!01-PIRAMALFIN-Q1FY27-transcript.pdf
+!01-PIRAMALFIN-Q1FY27-transcript.txt
+!02-PIRAMALFIN-Q2FY26-investor-presentation.pdf
+!02-PIRAMALFIN-Q2FY26-investor-presentation.txt
+!03-NORTHARC-Q4FY26-transcript.pdf
+!03-NORTHARC-Q4FY26-transcript.txt
+!04-NORTHARC-Q1FY27-investor-presentation.pdf
+!04-NORTHARC-Q1FY27-investor-presentation.txt
+!05-MASFIN-Q1FY27-transcript.pdf
+!05-MASFIN-Q1FY27-transcript.txt
+!06-MASFIN-AR-FY24.pdf
+!06-MASFIN-AR-FY24.txt
+!07-SMFG-CRISIL-RR-2026-01-28.html
+!07-SMFG-CRISIL-RR-2026-01-28.txt
+!08-SMFG-digital-lending-partner.html
+!08-SMFG-digital-lending-partner.txt
+!09-VIVRITI-ICRA-RR-2026-06-23.pdf
+!09-VIVRITI-ICRA-RR-2026-06-23.txt
+!10-UTKARSH-SiCreva-partner-disclosure.pdf
+!10-UTKARSH-SiCreva-partner-disclosure.txt

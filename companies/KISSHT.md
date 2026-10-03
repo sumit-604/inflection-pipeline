@@ -28,11 +28,26 @@ runs/kissht-2026-09-19/step1-business-brief.md:
 Brief: runs/kissht-2026-09-19/step1-business-brief.md
 
 ## HALT 1 GATE
-- Mental Model signed: NOT SIGNED
-- Halt 1 decision (KILL/SHALLOW/PROCEED): pending
+- Mental Model signed: NOT SIGNED. The model for signature is Section 1 of
+  runs/kissht-2026-09-19/inputs/research/web-handover-dossier.md (Claude web,
+  2026-10-03). The dossier asks the operator to confirm the signature; awaiting
+  that confirmation.
+- Halt 1 decision (KILL/SHALLOW/PROCEED): 2026-10-03 PROCEED — operator
+  instruction "ready to move to the FTTCP stage", as recorded in the web handover
+  dossier Section 0 and committed by the operator.
+- Gates still open before /fttcp (dossier Section 0):
+  - Mental model signature (above).
+  - Part 2.6 promoter classification: PENDING OPERATOR RULING. Claude web
+    recommends INTEGRITY concern, size ceiling Small, re-open on disclosure of
+    the RBI inspection period. Stage 11/14 must not size above Small until ruled.
+  - Tracker gate (Role 5.5): NOT YET SATISFIED. 13 draft rows in dossier
+    Section 9, not written to Notion. /fttcp STOPS until the proof line is here.
 
 ## OPERATOR RULINGS
 - 2026-09-19: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.
+- 2026-10-03: Counterparty read capped at 10 documents; an earlier uncapped pull
+  stays on disk, out of git (inputs/counterparties/.gitignore).
+- 2026-10-03: Halt 1 decision PROCEED (see HALT 1 GATE).
 
 ## ACTIVE TRIPWIRES
 - None yet (set at /finalize).

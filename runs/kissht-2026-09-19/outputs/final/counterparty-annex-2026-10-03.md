@@ -465,8 +465,10 @@ business loan forms.
 COMMENT.
 - SMFG names Kissht. The relationship is confirmed at COUNTERPARTY tier: OnEMI and Si
   Creva are listed as "LSP & DLA of LSP" for two apps, Kissht and Ring.
-- Ring is a second app name not mentioned in Kissht's own RHP or annual report extracts
-  read so far.
+- Ring is Kissht's own second app. CORRECTION (2026-10-03, extraction annex 4): the
+  RHP names it. The SRT services agreement covers "products and services operated
+  under 'PayWithRing' and 'Kissht'" (RHP PDF p.239-240 / printed p.233-234). An earlier
+  version of this line said the RHP did not mention it; that was wrong.
 - Product: NOT DISCLOSED per partner. The product grid is page-wide and does not map
   products to Kissht.
 - DLG provider and DLG terms: NOT DISCLOSED. The page contains no default loss guarantee

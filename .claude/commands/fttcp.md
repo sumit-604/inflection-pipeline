@@ -393,8 +393,12 @@ operator asks something outside the run's evidence (today's price, current
 sector multiples, macro), say so plainly and name what would be needed; do not
 guess or fabricate an anchor.
 
-Record every override the moment it happens: what the draft said, what the
-operator ruled, and the operator's stated reasoning in the operator's words.
+Record every override the moment it happens, to DISK and not only in this
+conversation: append it to outputs/final/fttcp-deliberation.md as it is made
+(what the draft said, what the operator ruled, and the operator's stated
+reasoning in the operator's words). The deliberation file accretes during
+review and is finalized at sign-off. A mid-deliberation context compaction
+cannot lose an operator ruling.
 Where the operator's ruling overrides BOTH drafts (Claude Code's and the
 dossier Section 6 pre-ruling), record the override with the operator's stated
 reasoning AND the default-track sensitivity: the number the valuation would
@@ -424,7 +428,8 @@ run Role 1; this gate only fixes and approves the base the valuation must use.
 
 ## SIGN-OFF — write the deliberation file
 
-When the operator signs off, write outputs/final/fttcp-deliberation.md. It
+When the operator signs off, complete outputs/final/fttcp-deliberation.md (it
+already holds every override recorded during review). It
 carries:
 - The final rulings as they stand after review (the draft's rulings plus every
   change).

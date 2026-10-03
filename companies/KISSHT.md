@@ -35,14 +35,26 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
   - FROM -> TO: FROM ultra-short checkout/pay-later credit with a synthetic
     partner guarantee (FY23-24). TO, two readings: (1, more evidenced) a well-run
     high-yield lender, RoE ~17-18% post-raise; (2, management) a data edge that
-    keeps cutting losses, RoE 20%+. Quality-ladder rung labels: not stated in
-    the signed model.
+    keeps cutting losses, RoE 20%+. Rungs (operator ruling 2026-10-03): FROM R1
+    COMMODITY PRICE-TAKER; TO R2 COST-ADVANTAGED CONVERTER (Reading 1) or R3
+    VALUE-ADDED / SPEC'D SUPPLIER (Reading 2). Note: R1 to R3 is a two-rung
+    leap, which the QUALITY LADDER treats as needing extraordinary proof and as
+    a red flag in itself; R1 to R2 is the base-rate one-rung climb.
   - Engine: all-in loss rate falling (credit leg), funding cost falling (small),
     core opex leverage (masked by marketing and off-book ECL).
   - Proof gate: all-in loss (on-book impairment + off-book ECL + collection
     outsourcing above run rate) / avg AUM below 10.5% for H2 FY27, with the
     off-book loss rate not rising.
-  - Ugliness verdict: not stated in the signed model; operator to set.
+  - Ugliness verdict (operator ruling 2026-10-03, verbatim): "STRUCTURAL-FEATURE
+    (cash-flow and cost-to-income optics are artifacts)". Matrix consequence:
+    proof gate NOT FIRED + STRUCTURAL -> VALUE-TRAP RISK (DEEP WATCH or AVOID
+    unless the classification is disproven); proof gate FIRED + STRUCTURAL ->
+    CONTRADICTION (re-examine before any verdict). FLAG FOR OPERATOR: the
+    parenthetical names the cash-flow and cost-to-income optics as artifacts,
+    which reads as ARTIFACT-OF-CLIMB for those two; the record does not say
+    which optic is the structural one (candidates in the dossier: the off-book
+    loss sitting in opex, partner concentration, the parent guarantee). Name it
+    so Stage 13 classifies the posture on the intended basis.
   - Transition falsifier: all-in loss above 11.6% of avg AUM; or off-book loss
     rate rising two consecutive half-years; or revenue margin minus all-in loss
     narrowing two consecutive quarters.
@@ -53,12 +65,17 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
 - Halt 1 decision (KILL/SHALLOW/PROCEED): 2026-10-03 PROCEED — operator
   instruction "ready to move to the FTTCP stage", as recorded in the web handover
   dossier Section 0 and committed by the operator.
-- Gates still open before /fttcp (dossier Section 0):
-  - Part 2.6 promoter classification: PENDING OPERATOR RULING. Claude web
-    recommends INTEGRITY concern, size ceiling Small, re-open on disclosure of
-    the RBI inspection period. Stage 11/14 must not size above Small until ruled.
-  - Tracker gate (Role 5.5): NOT YET SATISFIED. 13 draft rows in dossier
-    Section 9, not written to Notion. /fttcp STOPS until the proof line is here.
+- Part 2.6 promoter classification: RULED 2026-10-03 — INTEGRITY concern, size
+  ceiling Small, re-open on disclosure of the RBI inspection period (IR question
+  1 in dossier Section 10; re-open trigger: inspection covered FY23-24 only).
+  Stage 11 and Stage 14 must not size above Small.
+- Gates still open before /fttcp:
+  - Tracker gate (Role 5.5): rows APPROVED by the operator 2026-10-03 (13 rows,
+    dossier Section 9). NOT YET SATISFIED: Claude web writes the rows to the
+    DOWNSTREAM SIGNAL TRACKER (data_source_id
+    926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f), then the proof line goes here.
+    /fttcp STOPS until that line exists.
+  - Tracker proof line: PENDING (Notion write by Claude web).
 
 ## OPERATOR RULINGS
 - 2026-09-19: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.
@@ -66,6 +83,11 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
   stays on disk, out of git (inputs/counterparties/.gitignore).
 - 2026-10-03: Halt 1 decision PROCEED (see HALT 1 GATE).
 - 2026-10-03: Mental model SIGNED (web handover dossier Section 1).
+- 2026-10-03: Rungs FROM R1, TO R2 (Reading 1) / R3 (Reading 2).
+- 2026-10-03: Ugliness "STRUCTURAL-FEATURE (cash-flow and cost-to-income optics
+  are artifacts)" — structural optic not yet named (see HALT 1 GATE flag).
+- 2026-10-03: Part 2.6 INTEGRITY, Small ceiling, re-open on inspection period.
+- 2026-10-03: Tracker rows (13) approved; Notion write pending.
 
 ## ACTIVE TRIPWIRES
 - None yet (set at /finalize).

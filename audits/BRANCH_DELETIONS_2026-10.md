@@ -2,9 +2,9 @@
 
 Approved by the operator on 2026-10-03 (branch audit items 2, 3, 18, 19). Not executed from the cloud session: its git proxy refuses remote branch deletes ("remote end hung up"). Run the script below from your own machine, in a clone of the repo. Every tip hash is printed here, so any branch can be restored with `git push origin <hash>:refs/heads/<name>` while GitHub keeps the commit (unreferenced commits stay reachable by hash for a long time but are not guaranteed forever).
 
-Kept on purpose: `main`; `run/trualt-2026-09-18` (open PR #177); `tools/chartink-push-main` (open PR #173); `claude/inflection-opus-5.5-audit-102xpl`; `audit/oct-2026-branch-repo`; every open recovery PR branch (#179-#186); every run or quarterly branch that holds files main lacks (items 20 and 21, deferred).
+Kept on purpose: `main`; `run/trualt-2026-09-18` (open PR #177); `framework/ar-section-index` (draft PR #185); `claude/inflection-opus-5.5-audit-102xpl`;  every run or quarterly branch that holds files main lacks (items 20 and 21, deferred).
 
-100 branches.
+109 branches (100 approved 2026-10-03, plus 9 added after the PR merges the same day).
 
 | item | category | branch | tip |
 |---|---|---|---|
@@ -108,6 +108,15 @@ Kept on purpose: `main`; `run/trualt-2026-09-18` (open PR #177); `tools/chartink
 | item 19 nothing unique | RUN | `claude/ufbl-pipeline-run-8age4c` | `8da6da9ae8aedd62987b6ca0b1fb90509b136b1a` |
 | item 19 nothing unique | RUN | `claude/zen-cannon-f5qm0s` | `c35c3156db79eb8f1c7e6b66384098422600b575` |
 | item 19 nothing unique | RUN | `extract/asianene-fy26-halt1` | `ee638cd95457f9ee52913e3104ffa423b38c95de` |
+| PR #186 merged (c74e7a10) | FRAMEWORK | `tools/sparse-session` | `847aef0871d1f6bce95ff2b32ff104a15a1a1460` |
+| PR #187 merged (8849287e) | OTHER | `audit/oct-2026-branch-repo` | `1fb6744bea52727623d30007061fc086fc65bcc0` |
+| PR #179 merged (f45327e5) | FRAMEWORK | `framework/recover-auto-compact` | `445f79555e1496916b3733a5024f5c7706a04d97` |
+| PR #180 merged (4995588c) | FRAMEWORK | `framework/recover-sfl-step2e` | `a85945de5d8aca2ee87b67b6295d22a2111e1b79` |
+| PR #181 merged (a146a518) | FRAMEWORK | `framework/recover-pdf-extract` | `17ba75f90ad5518328a7858ed8bdf5e132fe56b0` |
+| PR #182 merged (18dc4bb6) | FRAMEWORK | `tools/recover-chartink-push` | `167a9a674de184c4ab5374baabdc47de5da76c36` |
+| PR #184 merged (5f707091) | FRAMEWORK | `framework/recover-quarterly-forward-map` | `ea39cb212ce2ff9a06bd7c030373d7d6f3f0aa6e` |
+| PR #183 merged (8aab014c) | FRAMEWORK | `framework/recover-steel-cap` | `2dfe87a963918ce0130607b1400186047aed7516` |
+| PR #173 closed, superseded by #182 | FRAMEWORK | `tools/chartink-push-main` | `a25b9c214b6dc6bba9613ecee45cec663d7ac19f` |
 
 ## Script (run from your own machine)
 
@@ -219,5 +228,14 @@ claude/sona-blw-ads-analysis-wn318h 62482326c8d34caccaed7c894340a63d229921df
 claude/ufbl-pipeline-run-8age4c 8da6da9ae8aedd62987b6ca0b1fb90509b136b1a
 claude/zen-cannon-f5qm0s c35c3156db79eb8f1c7e6b66384098422600b575
 extract/asianene-fy26-halt1 ee638cd95457f9ee52913e3104ffa423b38c95de
+tools/sparse-session 847aef0871d1f6bce95ff2b32ff104a15a1a1460
+audit/oct-2026-branch-repo 1fb6744bea52727623d30007061fc086fc65bcc0
+framework/recover-auto-compact 445f79555e1496916b3733a5024f5c7706a04d97
+framework/recover-sfl-step2e a85945de5d8aca2ee87b67b6295d22a2111e1b79
+framework/recover-pdf-extract 17ba75f90ad5518328a7858ed8bdf5e132fe56b0
+tools/recover-chartink-push 167a9a674de184c4ab5374baabdc47de5da76c36
+framework/recover-quarterly-forward-map ea39cb212ce2ff9a06bd7c030373d7d6f3f0aa6e
+framework/recover-steel-cap 2dfe87a963918ce0130607b1400186047aed7516
+tools/chartink-push-main a25b9c214b6dc6bba9613ecee45cec663d7ac19f
 LIST
 ```

@@ -1,0 +1,1613 @@
+diff --git a/.claude/agents/quarterly-a3-forensics.md b/.claude/agents/quarterly-a3-forensics.md
+--- a/.claude/agents/quarterly-a3-forensics.md	2026-10-03 04:52:54.881697018 +0000
++++ b/.claude/agents/quarterly-a3-forensics.md	2026-10-03 04:53:07.959122076 +0000
+@@ -15,7 +15,7 @@
+ 
+ Non-negotiables:
+ - Complete all 17 checks (F1-F17) in one run. Never stop to ask for confirmation.
+-- Read ONLY A1's structured extraction and fulltext plus the A2 ledger; never
++- Read ONLY A1's structured extraction and fulltext, the A2 ledger, and the prior-quarter fulltext and Notion checklist your task message passes; never
+   open the source PDF or anything under inputs/.
+ - Carry a bounded analyst_note (<=200 words) in the YAML; reasoning goes there,
+   everything else stays structured.
+diff --git a/.claude/agents/quarterly-a5-adversary.md b/.claude/agents/quarterly-a5-adversary.md
+--- a/.claude/agents/quarterly-a5-adversary.md	2026-10-03 04:52:54.902404292 +0000
++++ b/.claude/agents/quarterly-a5-adversary.md	2026-10-03 04:53:07.959257114 +0000
+@@ -14,7 +14,7 @@
+ in your task message (as file paths, or inline content).
+ 
+ Non-negotiables:
+-- Complete all three audits (coverage, arithmetic, adversarial) in one run.
++- Complete all four audits (0 deliverable-completeness, 1 coverage, 2 arithmetic, 3 adversarial) in one run.
+   Never stop to ask for confirmation.
+ - Read ONLY A1's fulltexts and structured extractions, the A2 ledgers, and the
+   A4 review; never open the source PDF or anything under inputs/. Your coverage
+diff --git a/.claude/agents/stage-02-notes-pass.md b/.claude/agents/stage-02-notes-pass.md
+--- a/.claude/agents/stage-02-notes-pass.md	2026-10-03 04:52:54.912746191 +0000
++++ b/.claude/agents/stage-02-notes-pass.md	2026-10-03 04:53:07.939948477 +0000
+@@ -7,8 +7,9 @@
+ You are pipeline stage: stage-02-notes-pass.
+ 
+ Your complete instructions are in the repository file: prompts/02-notes-triple-pass-pipeline.md
+-Read that file FIRST with the Read tool. Everything above its
+-"INJECTED INPUTS" section is your operating rules; follow them exactly.
++Read that file FIRST with the Read tool. Your task message names the pass
++(CALL 1, 2 or 3). Follow that CALL's rules; the text at its {{...}} markers
++arrives in your task message.
+ The variable inputs the file expects at its {{...}} markers are provided
+ in your task message (as file paths to read, or inline content).
+ 
+diff --git a/.claude/agents/stage-09b-dossier.md b/.claude/agents/stage-09b-dossier.md
+--- a/.claude/agents/stage-09b-dossier.md	2026-10-03 04:52:54.923623688 +0000
++++ b/.claude/agents/stage-09b-dossier.md	2026-10-03 04:53:07.940135679 +0000
+@@ -13,8 +13,8 @@
+ in your task message (as file paths to read, or inline content).
+ 
+ Non-negotiables:
+-- Assembly only: build from the committed blocks and stage reports given to
+-  you. No web search, no new numbers, no re-analysis. A claim with no block
++- Assembly only, with the two scoped exceptions (Section 4e chains, Section 6
++  annex) exactly as prompts/09b-halt1-dossier.md rule 2 states them. A claim with no block
+   trace is not written. ONE SCOPED EXCEPTION, Section 4e (the Rule F
+   Second-Order stub): labelled forward reasoning is REQUIRED there, because a
+   chain with no [INFERENCE] is a summary. Every fact a chain starts from still
+diff --git a/.claude/agents/stage-14-thesis.md b/.claude/agents/stage-14-thesis.md
+--- a/.claude/agents/stage-14-thesis.md	2026-10-03 04:52:54.944877592 +0000
++++ b/.claude/agents/stage-14-thesis.md	2026-10-03 04:53:07.940309746 +0000
+@@ -13,7 +13,7 @@
+ (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10 layers, later layers
+ governing overlaps) and FTTCP v2.3 (also in frameworks/) govern any exit multiple,
+ Pillar, or ROCE forward reference; if the injected framework and anything
+-in this wrapper ever conflict, THE INJECTED FRAMEWORK WINS. The framework
++in this wrapper ever conflict, the framework file wins. The framework
+ is deliberately NOT copied here so Keerti's amendments propagate with no
+ pipeline edit.
+ 
+diff --git a/.claude/agents/stage-15-devil.md b/.claude/agents/stage-15-devil.md
+--- a/.claude/agents/stage-15-devil.md	2026-10-03 04:52:54.955134172 +0000
++++ b/.claude/agents/stage-15-devil.md	2026-10-03 04:53:07.940829709 +0000
+@@ -13,7 +13,7 @@
+ Section 1B (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10 layers, later
+ layers governing overlaps) and FTTCP v2.3 (also in frameworks/) govern any exit
+ multiple, Pillar, or ROCE forward reference; if the injected framework
+-and anything in this wrapper ever conflict, THE INJECTED FRAMEWORK WINS.
++and anything in this wrapper ever conflict, the framework file wins.
+ The framework is deliberately NOT copied here so Keerti's amendments
+ propagate with no pipeline edit.
+ 
+@@ -26,7 +26,8 @@
+ 
+ - Complete the entire role in one run. Never stop to ask for confirmation.
+   Where the framework says STOP and report interim state, WRITE that
+-  interim line then continue immediately.
++  interim line then continue immediately. The one exception is the
++  STEELMAN GATE below: if it fails, return the gate table and write nothing else.
+ - Attack the thesis at full strength, per the framework's rules. Hold every
+   bear claim to the same evidence bar as a bull claim (Rule J).
+ - Every number carries a source anchor. Missing data is "NOT FOUND",
+diff --git a/.claude/agents/verifier-a-numerical.md b/.claude/agents/verifier-a-numerical.md
+--- a/.claude/agents/verifier-a-numerical.md	2026-10-03 04:52:54.965548921 +0000
++++ b/.claude/agents/verifier-a-numerical.md	2026-10-03 04:53:07.941011733 +0000
+@@ -15,7 +15,8 @@
+ Non-negotiables:
+ - Complete the entire stage in one run. Never stop to ask for confirmation.
+ - Every number carries a source anchor. Missing data is "NOT FOUND", never estimated.
+-- You are the pipeline's SOLE, FINAL, cross-family authority on source fidelity:
++- Source-fidelity findings are a hard, non-overridable gate: apply rule 7 of
++  your VERIFIER A section and mark each with `source_fidelity: true`.
+   whether a number actually exists in the source PDF at the cited anchor. Your
+   MISMATCH / ANCHOR NOT FOUND / material UNANCHORED findings are non-overridable
+   downstream — no Opus verifier or the synthesis can clear them. Mark each with
+diff --git a/.claude/commands/compost.md b/.claude/commands/compost.md
+--- a/.claude/commands/compost.md	2026-10-03 04:52:54.977363793 +0000
++++ b/.claude/commands/compost.md	2026-10-03 04:53:07.937989246 +0000
+@@ -48,7 +48,7 @@
+   the file and the change, and note it in LESSONS_ARCHIVE.md too (never
+   delete existing archive entries).
+ 
+-BUDGET REVIEW (Point 7, mandatory on every promotion). The active LESSONS.md
++BUDGET REVIEW (mandatory on every promotion). The active LESSONS.md
+ has a hard budget under 1,500 tokens; it is not an unlimited append. After
+ adding any PROMOTED TO LAW entry, check the active file's size. If it is at
+ or over budget, review the oldest or now-redundant active lessons and move
+@@ -57,5 +57,5 @@
+ CATALOGUE entry. Report the archive-review decision alongside the applied
+ fixes.
+ 
+-Do not commit or push unless the operator asks. Report what was applied and
++Do not commit or push unless the operator asks. If you commit an applied fix, keep it on a framework branch apart from run outputs and open a PR to main the same day (CLAUDE.md SESSION DISCIPLINE). Report what was applied and
+ what was left for a future pass.
+diff --git a/.claude/commands/finalize.md b/.claude/commands/finalize.md
+--- a/.claude/commands/finalize.md	2026-10-03 04:52:54.989592922 +0000
++++ b/.claude/commands/finalize.md	2026-10-03 04:53:07.936373838 +0000
+@@ -34,7 +34,7 @@
+ unavailable; if a PDF is genuinely unreadable, name it in the run log and
+ in the confidence delta note.
+ 
+-EXECUTION DISCIPLINE: invoke every stage as a foreground subagent call
++EXECUTION DISCIPLINE: as in .claude/commands/run-pipeline.md, including the PROVE COMPLETION checks (report file exists and is not empty, block file exists and parses, block came from this invocation) before any later stage reads the output.
+ that blocks until the subagent returns. Never use background task
+ launching with passive waiting. Achieve parallelism only by invoking
+ multiple foreground subagents in a single message where the dependency
+@@ -146,7 +146,7 @@
+    destroyed, overall, top counters). Collect B15.
+ 
+ 5. VERIFIER C — VALUATION ADHERENCE (phase 3 half). Invoke
+-   verifier-c-framework with the framework docs and B10, B11 for its
++   verifier-c-framework with B10, B11, frameworks/Master_Project_Prompt_v3_6.md (Master v3.7) and the section-1b skill chunks cited in B11, for its
+    deferred valuation-adherence audit, EXTENDED to also check Role 2's
+    (B14) decision rules and position-sizing logic against the Master
+    prompt. Give it only the artifact paths its section names, never other
+@@ -219,7 +219,7 @@
+        expected here; this is the audit trail, not a reading document.
+ 
+ 7. NOTION PAYLOAD. Write outputs/final/notion-payload.md containing the
+-   full save content structured per Notion_Save_Instructions conventions:
++   full save content structured per the claude.ai notion-save conventions (Notion_Save_Instructions, held in the claude.ai project, not in this repo):
+    page title, THEN the BUSINESS UNDERSTANDING NARRATIVE (the same section
+    defined in step 6, positioned before the verdict card so the operator
+    reads the understanding first), then run summary, verdict, the PRICE
+diff --git a/.claude/commands/fttcp.md b/.claude/commands/fttcp.md
+--- a/.claude/commands/fttcp.md	2026-10-03 04:52:55.001837135 +0000
++++ b/.claude/commands/fttcp.md	2026-10-03 04:53:07.935223429 +0000
+@@ -17,7 +17,7 @@
+ any judgment call inside FTTCP v2.3. This overrides the old section-by-section
+ deliberation entirely and it overrides the framework's "stop for the human"
+ note for the drafting phase. The operator was frustrated by interactive
+-section stops and by jargon-dense drafts (LESSONS 2026-07-09); the fix is a
++section stops and by jargon-dense drafts (LESSONS_ARCHIVE.md 2026-07-09); the fix is a
+ single finished draft in plain words that has already made every call.
+ 
+ Pipeline discipline applies here in full: nothing halts on company quality;
+@@ -80,8 +80,7 @@
+   the handover file had nowhere to land. Re-run the stage-0 scaffold to
+   recreate it, then reconfirm the dossier below.
+ - If inputs/research/ exists but web-handover-dossier.md is not in it, STOP
+-  and report "dossier missing" for a run that PASSED the Understanding Gate,
+-  and ask the operator.
++  and report "dossier missing" for a run that PASSED the Understanding Gate. Name the expected path inputs/research/web-handover-dossier.md.
+ If inputs/research/web-handover-dossier.md exists in the run folder, read it
+ in full before Step 0. It carries the claude.ai live-verification layer:
+ signed mental model, vertical findings with evidence tiers, corrections
+@@ -113,7 +112,7 @@
+ dossier's Section 6 Gate Pre-Ruling for that entity, with BOTH reasonings, so
+ the operator rules once on the card (see THE P/E BASE CARD below).
+ 
+-## LOAD ORDER (read all of this before writing a word)
++## LOAD ORDER (read before drafting)
+ 
+ Read, in this order:
+ 1. frameworks/FTTCP_v2_1_Consolidated.md — the protocol you run end to end
+@@ -137,7 +136,7 @@
+    symmetry in projections and weighting, Amendment 26), then v3.9, then
+    v3.8, then v3.7, then v3.6, then v3.5.1, then v3.3. For CONVERTER-classified names, the Cash
+    transition verdict uses volume-denominated WC per v3.7 17.2.
+-3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
++3. CLAUDE.md is already in context; do not re-read it.
+ 4. LESSONS.md — the lean ACTIVE operational memory read at every session
+    start (full run history is LESSONS_ARCHIVE.md). Before writing a word,
+    run the LESSONS PRE-READ: print every OPEN ACTIONS entry and every line
+@@ -149,7 +148,7 @@
+ 5. The run folder's manifest.yaml — company, ticker, cmp, run_type,
+    sector_cap_row, concalls_available.
+ 6. Every file in the run folder's outputs/blocks/ — the YAML handoff blocks
+-   (B00-B13, confidence). B04-bizmodel.yaml is the business-type and
++   (B00-B09, B09b, B12a-B12d, B13-lite, confidence). B04-bizmodel.yaml is the business-type and
+    sector-sanity authority; read it closely.
+ 7. Every file in the run folder's outputs/final/ — any synthesis outputs and
+    any existing FTTCP recommendation already written.
+diff --git a/.claude/commands/run-pipeline.md b/.claude/commands/run-pipeline.md
+--- a/.claude/commands/run-pipeline.md	2026-10-03 04:52:55.015642133 +0000
++++ b/.claude/commands/run-pipeline.md	2026-10-03 04:53:45.159111195 +0000
+@@ -29,8 +29,7 @@
+ verifier subagent.
+ 
+ TOOLING GATE (before stage 0, not after the first failure). The
+-session-start hook runs a PDF tooling preflight and reports its result in
+-session context. Read that line first. Then confirm it yourself: test-read
++session-start hook runs a PDF tooling preflight on web sessions and reports its result in session context. Read that line first if present; on a local session there is none. Then confirm it yourself: test-read
+ one inputs/ PDF end to end. Tooling that the hook could not install is
+ installed here (apt-get install -y -qq poppler-utils; pip install -q pypdf;
+ pip install -q --force-reinstall cffi when pypdf imports but fails on a real
+@@ -76,7 +75,7 @@
+ multiple foreground subagents in a single message where the dependency
+ table allows.
+ 
+-PROVE COMPLETION, DO NOT ASSUME IT. Stages have repeatedly been dispatched
++PROVE COMPLETION. A returned call is not a finished stage. Before any later stage reads a stage's output:
+ to the background despite the rule above, and the run carried on against
+ reports that did not exist yet, because "the call returned" was treated as
+ "the stage finished". The two are different events. Before you treat any
+@@ -118,9 +117,8 @@
+ section):
+ 
+ - PHASE 1 (this command): evidence gathering, stages 0-9, verifiers A, B,
+-  D and the Gate 0 + EM half of verifier C, then a synthesis-lite. Ends by
+-  handing off to /fttcp for deliberation.
+-- PHASE 2: /fttcp runs/<folder> — operator deliberation, writes
++  D and the Gate 0 + EM half of verifier C, then a synthesis-lite and the 09b dossier. Ends at HALT 1; /fttcp runs only after the operator signs the Mental Model, records PROCEED, and the Role 5.5 tracker gate is met.
++- PHASE 2: /fttcp runs/<folder> — autonomous FTTCP draft, then operator review and the P/E base approval gate; writes
+   outputs/final/fttcp-deliberation.md.
+ - PHASE 3: /finalize runs/<folder> — assembly, valuation, thesis, devil's
+   advocate, valuation verification, final synthesis.
+@@ -128,7 +126,7 @@
+ Stages 10, 11, the valuation-adherence half of verifier C (12c), and the
+ full synthesis do NOT run here. They run in PHASE 3.
+ 
+-Read prompts/00-orchestrator.md now; it is the authority on sequence,
++Read prompts/00-orchestrator.md now; it is the authority on sequence, and its SPEAR GATE check runs before the stage 0 inventory below.
+ handoff schemas, flag rules, and error handling. Then:
+ 
+ 1. VALIDATE (stage 0, do this yourself): inventory the run folder against
+@@ -229,8 +227,7 @@
+    way the question is asked once and never again for the rest of the run.
+    If the manifest has concalls_available: false, do
+    not list concalls or peer-concalls as gaps: their absence is
+-   declared, not accidental. This is the single permitted question in
+-   the pipeline.
++   declared, not accidental. This is the single permitted question before Halt 1, apart from name-resolution ambiguity.
+ 
+    COMPANY MEMORY: if companies/<TICKER>.md exists (the durable per-company
+    memory written by prior /finalize runs), read it at stage 0 and carry it
+@@ -282,7 +279,7 @@
+        (B07) compliance checks only, and pass it ONLY the two rule
+        sources those checks need — prompts/01-gate-0-pipeline.md and
+        prompts/07-emerging-moat-pipeline.md — alongside B01 and B07. Do
+-       NOT pass the valuation framework docs (Master Prompt v3.6, Section
++       NOT pass the valuation framework docs (Master Prompt v3.7 at frameworks/Master_Project_Prompt_v3_6.md, Section
+        1B layers, FTTCP v2.3): they are consumed only by the B11 valuation
+        audit, which is deferred to PHASE 3, so in phase 1 they are dead
+        context. Its valuation-adherence audit (B11, B10) must NOT run
+@@ -420,6 +417,8 @@
+    the dossier, the gate recommendation verdict line, flags active,
+    phase-1 confidence delta overall, and the final file paths including
+    outputs/reports/09b-understanding-dossier.md and session-cost.md.
++   End the report with the commit hash and the output of
++   `git log -1 --stat`.
+ 
+    PRINT FINALS IN CHAT: after writing the final files and committing,
+    always print the primary human-readable documents in full in the chat,
+diff --git a/.claude/commands/run-quarterly.md b/.claude/commands/run-quarterly.md
+--- a/.claude/commands/run-quarterly.md	2026-10-03 04:52:55.028662169 +0000
++++ b/.claude/commands/run-quarterly.md	2026-10-03 04:53:07.958154715 +0000
+@@ -10,7 +10,7 @@
+ ENUMERATOR -> A3 FORENSIC NOTES -> A4 ANALYST -> A5 ADVERSARY) with hard gates
+ between each. You do NOT analyse; every finding comes from a subagent.
+ 
+-Read `prompts/quarterly-00-orchestrator.md` NOW. It is the authority on
++Read `prompts/quarterly-00-orchestrator.md` first. It is the authority on
+ sequence, gates, working-file names, model dispatch, and the Notion save.
+ Then run:
+ 
+@@ -34,7 +34,7 @@
+    - frameworks/Master_Project_Prompt_v3_6.md (framework context by reference;
+      NOT an A4 input — A4 never loads it)
+ 
+-c. TOOLCHAIN PRECHECK: verify pdftotext, pdfinfo, pdftoppm, tesseract. If
++c. TOOLCHAIN PRECHECK: verify pdftotext, pdfinfo, pdffonts, pdftoppm, tesseract. If
+    missing, attempt install (poppler-utils, tesseract-ocr). If that fails,
+    STOP and report the missing tool — extraction cannot run without it and the
+    Read tool's PDF rendering is NOT an acceptable substitute for the
+@@ -45,7 +45,7 @@
+    speaker-turn structure -> concall; slide structure -> presentation).
+    Record each decision in the run log.
+ 
+-e. RUN FOLDER: create `runs/<ticker>-<quarter>/` with `inputs/` and `work/`
++e. RUN FOLDER: create `runs/<ticker>-<quarter>/` with `inputs/`, `extracted/`, and `work/`
+    (quarter placeholder = run date until A1 reports it, then rename). Copy or
+    reference the source PDFs into `inputs/`.
+ 
+@@ -120,7 +120,7 @@
+ 
+ ## 5. COMMIT AND REPORT
+ 
+-Commit the run folder with "quarterly review: <ticker> <quarter>". Then report
++Write `session-cost.md` per orchestrator step 6b, then commit the run folder with `git commit -q -m "quarterly review: <ticker> <quarter>"`. End the report with the commit hash and `git log -1 --stat`. Then report
+ to the user: the A5 verdict, the count-reconciliation line (N notes / N turns
+ / N slides, all reviewed), the top forensic findings with their line cites,
+ the protocol verdict, and the working-file paths. Print the merged review's
+diff --git a/.claude/commands/step1.md b/.claude/commands/step1.md
+--- a/.claude/commands/step1.md	2026-10-03 04:52:55.039814472 +0000
++++ b/.claude/commands/step1.md	2026-10-03 04:53:07.937441330 +0000
+@@ -21,9 +21,7 @@
+ 
+ ## AUTONOMY CONTRACT (the point of the command)
+ 
+-- Ask the operator no questions. The two interactive pauses in the normal
+-  pipeline are SUPPRESSED here and replaced by standing defaults:
+-  - PEER SELECTION never pauses. Claude picks the peers and records why.
++- Ask the operator no questions. The one interactive pause in the normal pipeline (the stage-0 EMPTY-FOLDER CONFIRMATION) is SUPPRESSED here and replaced by a standing default. Peer selection is Claude's call, recorded with reasons.
+   - The Phase 1 EMPTY-FOLDER CONFIRMATION never pauses. The standing answer is
+     "proceed with the gaps"; every absent document type is recorded in
+     B00.input_gaps and the run degrades per the orchestrator DEGRADATION MAP.
+@@ -84,8 +82,7 @@
+ 
+ ## D. PICK THE SECTOR CAP ROW (do not trust the collector)
+ 
+-Read the Section 1B Sector Cap Table in
+-`frameworks/Master_Project_Prompt_v3_6.md` and choose the row that matches the
++Read the sector cap table in the section-1b skill chunk 05 (`.claude/skills/section-1b/references/05-sector-cap.md`) and choose the row that matches the
+ business from Step B. The collector's auto-picker is unreliable (it defaults to
+ "Pharma / CDMO"); you will correct the manifest in Step F. State the chosen row
+ and its cap.
+@@ -161,7 +158,7 @@
+ the brief, companies/<TICKER>.md, and the Phase 1 outputs. Commit the corpus and
+ Phase 1 outputs as separate commits (corpus first, then "phase 1 (evidence):
+ <ticker> <date>"), each report ending with its commit hash and `git log -1
+---stat` per FERRY AND COMMIT HYGIENE. Push the branch. `gh` is not installed;
++--stat` per FERRY AND COMMIT HYGIENE. Push the branch. If `gh` is not installed or not signed in,
+ print the `https://github.com/sumit-604/inflection-pipeline/pull/new/run/<ticker>-<YYYY-MM-DD>`
+ link for the operator to open the PR. Then print the Halt 1 message exactly as
+ run-pipeline.md step 7 specifies (dossier path, the three operator decisions, the
+diff --git a/.claude/skills/section-1b/SKILL.md b/.claude/skills/section-1b/SKILL.md
+--- a/.claude/skills/section-1b/SKILL.md	2026-10-03 04:52:55.051363412 +0000
++++ b/.claude/skills/section-1b/SKILL.md	2026-10-03 04:53:07.995374983 +0000
+@@ -7,7 +7,7 @@
+ 
+ This skill carries the Section 1B layer set as one resolved rulebook. The layers stack in this precedence order, and a later layer governs the items it names:
+ 
+-v3.10 (Amendment 26) > v3.9 (Amendments 20 to 25) > v3.8 (Amendments 18, 19) > v3.7 (Amendment 17) > v3.6 (Amendments 11 to 16) > v3.5.1 (consolidated Amendment 9) > v3.3 Amendments file (Amendments 1 to 8, 4.1 to 4.4) > Master Prompt v3.7 Section 1B base text.
++v3.10 (Amendment 26) > v3.9 (Amendments 20 to 25) > v3.8 (Amendments 18, 19; its Amendment 20 text is superseded by the v3.9 Amendment 20, which renumbers the governance rule to 20.5) > v3.7 (Amendment 17) > v3.6 (Amendments 11 to 16) > v3.5.1 (consolidated Amendment 9) > v3.3 Amendments file (Amendments 1 to 8, 4.1 to 4.4) > Master Prompt v3.7 Section 1B base text.
+ 
+ Every chunk states the resolved rule only. Where a later layer replaced an earlier rule, the chunk carries the later rule and nothing of the earlier text.
+ 
+diff --git a/frameworks/Annual_Report_Analysis_Protocol_v1_3.md b/frameworks/Annual_Report_Analysis_Protocol_v1_3.md
+--- a/frameworks/Annual_Report_Analysis_Protocol_v1_3.md	2026-10-03 04:52:55.083814532 +0000
++++ b/frameworks/Annual_Report_Analysis_Protocol_v1_3.md	2026-10-03 04:53:08.010373166 +0000
+@@ -14,9 +14,9 @@
+ - "AR deep dive for [Company]"
+ - "Annual Report review for [Company]"
+ - Pasting/uploading the AR PDF for an analysed company
+-- Pasting the Sheet 2 AR Deep Dive output (with triple-pass on notes already done by the Gemini pipeline)
++- Pasting the Sheet 2 AR Deep Dive output (with triple-pass on notes already done by the pipeline, stage 02)
+ 
+-When triggered, you MUST execute the protocol below in full sequence. Do not skip steps. Do not jump to conclusions before completing the Notes triple-pass. If the existing Notion thesis is not yet fetched, STOP and fetch it before reading the AR.
++Run the steps in order. Draw conclusions only after the Notes triple-pass. If the existing Notion thesis is not yet fetched, STOP and fetch it before reading the AR.
+ 
+ ## SEQUENCING WITH ROLE 4 (RESULTS REVIEW), ROLE 5 (CONCALL), AND FTTCP
+ 
+@@ -34,7 +34,7 @@
+   - MD&A with industry outlook, strategy, and forward-looking commentary
+ - If Role 4 has NOT been run for Q4, run Role 4 FIRST, then Role 6. Audited consolidated numbers in the AR will supersede the Q4 filing on any reconciliation difference.
+ - If a fresh concall happens after the AR is released, run Role 5 after Role 6 and treat any concall commitments as audited (or not) by the AR data.
+-- **FTTCP interaction (v1.1):** the AR review produces an FTTCP REFRESH GATE (Step 11-PRE). If the AR changes any of the four forward transition verdicts or catalyst strengths, FTTCP is re-run BEFORE any pillar recomputation. Pillar 1 can never be revised from within this protocol directly — the FTTCP ROCE forward verdict is the sole authority (per FTTCP v2.1).
++- **FTTCP interaction (v1.1):** the AR review produces an FTTCP REFRESH GATE (Step 11-PRE). If the AR changes any of the four forward transition verdicts or catalyst strengths, FTTCP is re-run BEFORE any pillar recomputation. Pillar 1 can never be revised from within this protocol directly — the FTTCP ROCE forward verdict is the sole authority (per FTTCP v2.3).
+ 
+ ## THE FAILURE MODES THIS PROTOCOL IS DESIGNED TO PREVENT
+ 
+@@ -303,7 +303,7 @@
+ - Are D&A and finance costs scaling faster than revenue (capex absorption gap)?
+ - Is the Expected Credit Loss provision growing materially? Compare ECL as % of revenue across three years.
+ 
+-🛑 **STOP. Show the P&L table, reconciliation, decomposition, and diagnostic answers.**
++Record the P&L table, reconciliation, decomposition, and diagnostic answers, then continue to Step 3L or Step 4.
+ 
+ ## STEP 3L — FULL-YEAR FINANCIAL DECOMPOSITION (LENDING BUSINESSES ONLY)
+ 
+@@ -961,7 +961,7 @@
+ 
+ ## STEP 10.5 — DOWNSTREAM SIGNAL TRACKER — ANNUAL CROSS-CHECK (v1.2 addition)
+ 
+-The consolidated Downstream Signal Tracker (Notion database peer to COMPANIES MASTER, established at initial workup via Master Project Prompt v3.6 Role 5.5) is refreshed monthly via the Role 5.5 Monthly Refresh Workflow. The quarterly reviews (Role 4 v1.4 Step 5.5) reconcile target-company reported numbers against tracker rows for THIS company. The AR is the once-a-year checkpoint for tracker maintenance — the annual cross-check where signals may need to be added, retired, or reconciled against the AR's own audited customer-concentration disclosure.
++The consolidated Downstream Signal Tracker (Notion database peer to COMPANIES MASTER, established at initial workup via Master Project Prompt v3.7 Role 5.5) is refreshed monthly via the Role 5.5 Monthly Refresh Workflow. The quarterly reviews (Role 4 v1.4 Step 5.5) reconcile target-company reported numbers against tracker rows for THIS company. The AR is the once-a-year checkpoint for tracker maintenance — the annual cross-check where signals may need to be added, retired, or reconciled against the AR's own audited customer-concentration disclosure.
+ 
+ **Tracker coordinates (LIVE — use directly, do not search):** Database URL https://app.notion.com/p/ea5f02670d114b2abd7b74f88bb33061 | Data source ID `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`
+ 
+@@ -1037,7 +1037,7 @@
+ | Cash Conversion (lenders: Asset Quality) | | e.g., audited CFO/PAT, WC forensics, ageing schedule / provisioning data | Y/N |
+ | ROCE (lenders: RoA/RoE) | | e.g., audited capital base, CWIP capitalisation, capital raise resolutions | Y/N |
+ 
+-- If ANY row is Y → **re-run FTTCP with the AR evidence BEFORE proceeding to 11A.** The refreshed ROCE forward verdict then drives Pillar 1 per the FTTCP v2.1 sole-authority table.
++- If ANY row is Y → **re-run FTTCP with the AR evidence BEFORE proceeding to 11A.** The refreshed ROCE forward verdict then drives Pillar 1 per the FTTCP v2.3 sole-authority table.
+ - If all rows are N → state so explicitly, carry the existing FTTCP verdicts forward, and proceed.
+ - Either way, new documented (📄) catalysts from the AR (RPT caps, commissioning evidence, sanctioned facilities) are appended to the FTTCP catalyst tables — the AR is the highest-quality evidence source in the annual cycle.
+ 
+@@ -1047,21 +1047,21 @@
+ 
+ This is the synthesis step that ties everything back to the investment decision.
+ 
+-### 11A. Four-Pillar Destination PE re-validation (synced to Section 1B v3.9)
++### 11A. Four-Pillar Destination PE re-validation (synced to Section 1B v3.10)
+ 
+ Walk through each pillar with the audited full-year data:
+ 
+ | Pillar / Input | Original Assumption (Notion) | AR-supported reading | Action |
+ | --- | --- | --- | --- |
+-| 1. ROCE Base (continuous formula) | FTTCP verdict ___ → ROCE ___% → ___x | Refreshed FTTCP ROCE verdict from Step 11-PRE: ___ | Apply the FTTCP v2.1 mapping table — the verdict is the SOLE authority; no ad hoc revision. For lenders, use ROE. |
++| 1. ROCE Base (continuous formula) | FTTCP verdict ___ → ROCE ___% → ___x | Refreshed FTTCP ROCE verdict from Step 11-PRE: ___ | Apply the FTTCP v2.3 mapping table — the verdict is the SOLE authority; no ad hoc revision. For lenders, use ROE. |
+ | 2. Cash Multiplier (lenders: Asset-Quality Multiplier) | ___x (structural / growth-induced) | Cumulative 3-yr audited CFO/PAT: ___; structural test reaffirmed? (Lenders: 5L band evidence) | Hold / Revise per audited band |
+ | 3. Growth Visibility Premium | +___x (EM ___, catalyst ___) | RPT cap signal / catalyst evidence / new customer disclosures | Hold / Adjust |
+ | 4. Strategic Premium | +___x | Reinforced / Maintained / Eroded by AR; single-credit state: "ROCE recovery credited via ___" | Hold / Adjust |
+ | Sector Cap | ___x (quality-uplifted Y/N) | Unchanged unless sector reclassification | Hold |
+ | Undiscovered Alpha (1.25×) | Applied / Not applied | Re-check qualifiers: listed ≥12m; Gate 0 ≥60 OR EM ≥25; FII+DII <3%. Ordering: min(Raw × 1.25, Sector Cap) | Apply / Drop / Hold |
+-| **Hurdle Ratio recheck** | HR = (1 + EPS CAGR)³ × (Dest PE mid ÷ Current PE) ≥ 1.953 | Recompute with audited EPS base and current PE | PASS / CONDITIONAL / STOP |
++| **Hurdle Ratio recheck** | HR = (1 + EPS CAGR)³ × (Dest PE mid ÷ Current PE) ≥ 1.953 | Recompute with audited EPS base and current PE | PASS / CONDITIONAL / STOP (band shown; caps no verdict, Amendment 24 and operator ruling OR-2) |
+ 
+-If any pillar materially changes, recompute Destination PE end-to-end per Section 1B v3.3 (both tracks if dual-track applies; range ±7.5% rounded to nearest 0.5x).
++If any pillar materially changes, recompute Destination PE end-to-end per Section 1B (v3.3 base through v3.10, later layers govern) (both tracks if dual-track applies; range ±7.5% rounded to nearest 0.5x).
+ 
+ ### 11B. Variance vs Notion's Bear/Base/Bull projections
+ 
+@@ -1245,7 +1245,7 @@
+ 
+ - Year 3 fair value (Bear / Base / Bull), both tracks if dual-track applies
+ - Probability-weighted fair value (with the corrected credibility-grade weights from 12A)
+-- Entry price for 25% CAGR (= Fair Value ÷ 1.25³)
++- Entry price = exit-consistent fair value ÷ (1 + tier hurdle)³ (Tier A 1.25, Tier B 1.20), shown with the Amendment 19 FV CAGR and return-source label
+ - Margin of Safety price (20% below entry)
+ - Update Notion with the revised price band
+ 
+@@ -1264,7 +1264,7 @@
+ 
+ ## STEP 14 — NOTION UPDATE
+ 
+-Save in this exact sequence per Notion_Save_Instructions:
++Save in this exact sequence per the notion-save skill:
+ 
+ ### 14A. Search for the company page
+ 
+diff --git a/frameworks/Debt_Capacity_Assessment_v1_0.md b/frameworks/Debt_Capacity_Assessment_v1_0.md
+--- a/frameworks/Debt_Capacity_Assessment_v1_0.md	2026-10-03 04:52:55.095658830 +0000
++++ b/frameworks/Debt_Capacity_Assessment_v1_0.md	2026-10-03 04:53:08.014558692 +0000
+@@ -1,6 +1,6 @@
+ # DEBT CAPACITY ASSESSMENT v1.0
+ 
+-*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately BEFORE FTTCP v2.0 and after Role 5.5 (Downstream Signal Identification). Its output block is consumed by FTTCP Part B Module B7 and by Role 1. It establishes the maximum debt the company is capable of carrying, judged from the PAST, before any transition analysis begins.*
++*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately BEFORE FTTCP (v2.3) and after Role 5.5 (Downstream Signal Identification). Its output block is consumed by FTTCP Part B Module B7 and by Role 1. It establishes the maximum debt the company is capable of carrying, judged from the PAST, before any transition analysis begins.*
+ 
+ ## WHY THIS SECTION EXISTS
+ 
+@@ -13,7 +13,7 @@
+ ```
+ Role 5 (concall) → Role 5.5 (Downstream Signal Identification) →
+ DEBT CAPACITY ASSESSMENT (this section) →
+-FTTCP v2.0 → Market-Implied Assumptions → Role 1 → Role 2 → Role 3
++FTTCP v2.3 → Market-Implied Assumptions → Role 1 → Role 2 → Role 3
+ ```
+ 
+ Debt Capacity runs first because FTTCP Module B7 (Post-Deleveraging Earnings Picture) and Role 1 both consume its output. A business flagged BREACH here carries that flag into every downstream stage. A business flagged COMFORTABLE frees FTTCP to read a deleveraging path as a genuine transfer of value from lenders to shareholders rather than a rescue.
+@@ -22,7 +22,7 @@
+ 
+ Maximum sustainable debt is computed on normalized operating income, never on a trough year and never on a peak year. A trough understates capacity and screens out solvent businesses at the bottom of a cycle. A peak overstates it and waves through businesses that only cover their interest when everything is going right. Mid-cycle is the only honest base.
+ 
+-**Normalized (mid-cycle) EBIT.** Take the average EBIT across a complete cycle from audited filings. Where the sector is flagged cyclical, use the full-cycle average consistent with the FTTCP v2.0 cyclical margin rule. Where the business is not cyclical, use a representative normal year or a multi-year average that excludes any one-off distortion. State the years used and the figure in ₹ Crores. Strip non-operating income from EBIT so the coverage the company earns is the coverage its operations earn, not the coverage its treasury book earns.
++**Normalized (mid-cycle) EBIT.** Take the average EBIT across a complete cycle from audited filings. Where the sector is flagged cyclical, use the full-cycle average consistent with the FTTCP cyclical margin rule (Part B, since v2.0). Where the business is not cyclical, use a representative normal year or a multi-year average that excludes any one-off distortion. State the years used and the figure in ₹ Crores. Strip non-operating income from EBIT so the coverage the company earns is the coverage its operations earn, not the coverage its treasury book earns.
+ 
+ **Sustained interest coverage.** State the interest coverage (EBIT ÷ interest) the company has actually held through its history, read off the coverage trend line in Step 2. This is evidence, not a target. A business that has run at 3x through a normal year is judged at 3x. A business that has never cleared 2x is judged there.
+ 
+diff --git a/frameworks/Document_Review_Protocol_v1_1.md b/frameworks/Document_Review_Protocol_v1_1.md
+--- a/frameworks/Document_Review_Protocol_v1_1.md	2026-10-03 04:52:55.106874169 +0000
++++ b/frameworks/Document_Review_Protocol_v1_1.md	2026-10-03 04:53:07.965982300 +0000
+@@ -135,7 +135,7 @@
+ surgical: every change traces to a named A5 finding, and nothing unchallenged is
+ reworked.
+ 
+-## VERDICT SET (the process verdict; canonical per CLAUDE.md and Master v3.6)
++## VERDICT SET (the process verdict; canonical per CLAUDE.md and Master v3.7)
+ PROCEED / PROCEED WITH CAVEATS / PROCEED WITH FLAGS / REWORK / INSUFFICIENT
+ EVIDENCE. No STOP verdict. Company quality never halts; only a mechanical
+ failure does. This is the PROCESS verdict on the review's soundness. It is NOT
+@@ -150,7 +150,7 @@
+ valuation-relevant fact FLAGS it for the downstream chain and stops there.
+ 
+ ## CHANGELOG
+-- v1.1 — Step 10 provenance switched from a two-way prior-vs-document label to
++- v1.1 — Step 11 provenance switched from a two-way prior-vs-document label to
+   the house five-tier system (FILED / AGENCY / MGMT / SECONDARY / INFERENCE)
+   with presentation defaults; the brief now cites Narrative_Writing_Style_v1.md
+   and the Dhruva-Research output style and adopts the 200-400 word house length.
+diff --git a/frameworks/Downstream_Source_Discovery_Protocol_v1_0.md b/frameworks/Downstream_Source_Discovery_Protocol_v1_0.md
+--- a/frameworks/Downstream_Source_Discovery_Protocol_v1_0.md	2026-10-03 04:52:55.119845981 +0000
++++ b/frameworks/Downstream_Source_Discovery_Protocol_v1_0.md	2026-10-03 04:53:08.015405514 +0000
+@@ -1,6 +1,6 @@
+ # DOWNSTREAM SOURCE DISCOVERY PROTOCOL v1.0
+ 
+-*Version 1.0 | August 2026 | Dhruva Research. Companion to Master Project Prompt v3.6 Role 5.5 (Downstream Signal Identification). This protocol governs HOW signal sources are discovered and verified. Role 5.5 governs WHEN signals are identified and WHERE they are written (the tracker gate). The TAM/SAM/SOM Downstream Signal Candidates section feeds Step 1 here.*
++*Version 1.0 | August 2026 | Dhruva Research. Companion to Master Project Prompt v3.7 Role 5.5 (Downstream Signal Identification). This protocol governs HOW signal sources are discovered and verified. Role 5.5 governs WHEN signals are identified and WHERE they are written (the tracker gate). The TAM/SAM/SOM Downstream Signal Candidates section feeds Step 1 here.*
+ 
+ ---
+ 
+@@ -136,7 +136,7 @@
+ 
+ What stays manual by design: reading the monthly refresh output and deciding what it means (Steps M3-M4). The alert layer feeds the refresh; it does not replace judgment.
+ 
+-Claude executes the monthly M1-M5 pull with web access against the Primary Source URLs in the tracker; the alert layer catches event-driven signals BETWEEN monthly refreshes so nothing waits up to 30 days.
++Claude web (claude.ai) executes the monthly M1-M5 pull with live web access against the Primary Source URLs in the tracker; Claude Code has no live web and does not run it; the alert layer catches event-driven signals BETWEEN monthly refreshes so nothing waits up to 30 days.
+ 
+ ---
+ 
+diff --git a/frameworks/FTTCP_v2_1_Consolidated.md b/frameworks/FTTCP_v2_1_Consolidated.md
+--- a/frameworks/FTTCP_v2_1_Consolidated.md	2026-10-03 04:52:55.131975840 +0000
++++ b/frameworks/FTTCP_v2_1_Consolidated.md	2026-10-03 04:53:08.003738126 +0000
+@@ -2,7 +2,7 @@
+ 
+ *Companion to Role 1 (Valuation), Role 2 (Investment Thesis), Role 3 (Devil's Advocate), Role 4 (Quarterly Results Review), Role 5 (Concall Analysis), and Role 6 (Annual Report Deep Dive). Every preceding protocol is backward-looking by construction — they measure what HAS happened. FTTCP is the only protocol that explicitly tests whether forward catalysts exist for the transitions that drive shareholder returns. It is the bridge between historical analysis and the forward investment decision, and it runs BEFORE valuation.*
+ 
+-*Version 2.1 | 19 August 2026 | Dhruva Research. This single document replaces the v1.2 file, both v1.3 lineages, and the v2.0 file in full. Do not use any prior file alongside this one. v2.1 unions the tracker-enforcement v1.3 lineage into v2.0: the Signal Gate rule is hardened to require Role 5.5's Step 4 HARD GATE to have passed — signals physically written to the live Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs as proof of write — and Master Project Prompt cross-references move to v3.6. Everything v2.0 carried (PART A with Step 2E, PART B Modules B1-B8, the Category-Break Override) is preserved unchanged. The v1.2/v1.3 protocol is preserved here in full as PART A (Forward Transition Proof, Steps 0 through 6, the scored verdict system, the Kernex principle, the lender transition set, the monitoring triggers, Step 2E Management Intent-and-Action Ledger, and, reconciled in from the 11-August v1.3 lineage, the Category-Break Override in the Pillar 1 Integration section, the Signal Gate rule, and the Role 5.5 pipeline position). Version 2.0 adds PART B, the Financial Normalization Engine: eight modules (B1 through B8), each producing a named output that Role 1 consumes, closed by a consolidated FTTCP Output Sheet. Version 2.0 also adds the cyclical margin rule for scenario margins on flagged sectors. See the version history for the full v1.0 to v1.3 lineage and the v2.0 changes. `[v2.0: adds PART B Financial Normalization Engine (B1-B8) and the cyclical margin rule — Damodaran integration, operator directive 13-Aug-2026]`*
++*Version 2.3 (filename keeps the v2_1 stem) | first consolidated as v2.1 19 August 2026 | Dhruva Research. This single document replaces the v1.2 file, both v1.3 lineages, and the v2.0 file in full. Do not use any prior file alongside this one. v2.1 unions the tracker-enforcement v1.3 lineage into v2.0: the Signal Gate rule is hardened to require Role 5.5's Step 4 HARD GATE to have passed — signals physically written to the live Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs as proof of write — and Master Project Prompt cross-references moved to v3.6 at that date (the live Master is v3.7; see line 11). Everything v2.0 carried (PART A with Step 2E, PART B Modules B1-B8, the Category-Break Override) is preserved unchanged. The v1.2/v1.3 protocol is preserved here in full as PART A (Forward Transition Proof, Steps 0 through 6, the scored verdict system, the Kernex principle, the lender transition set, the monitoring triggers, Step 2E Management Intent-and-Action Ledger, and, reconciled in from the 11-August v1.3 lineage, the Category-Break Override in the Pillar 1 Integration section, the Signal Gate rule, and the Role 5.5 pipeline position). Version 2.0 adds PART B, the Financial Normalization Engine: eight modules (B1 through B8), each producing a named output that Role 1 consumes, closed by a consolidated FTTCP Output Sheet. Version 2.0 also adds the cyclical margin rule for scenario margins on flagged sectors. See the version history for the full v1.0 to v1.3 lineage and the v2.0 changes. `[v2.0: adds PART B Financial Normalization Engine (B1-B8) and the cyclical margin rule — Damodaran integration, operator directive 13-Aug-2026]`*
+ 
+ *Amended v1.3 (12 July 2026): adds Step 2E, the Management Intent-and-Action Ledger, a governed cross-check against over-conservatism; see Step 2E and the version history.*
+ 
+@@ -29,11 +29,11 @@
+ 
+ **FTTCP is a PRE-VALUATION DISCIPLINE GATE, not a post-valuation synthesis.** The enforced sequence (v2.0 architecture):
+ 
+-**Gate 0 + Emerging Moat scan → Role 4 (Results Review, filing numbers) → Role 5 (Concall Analysis, primary transcript) → Role 5.5 (Downstream Signal Identification, defined in Master Project Prompt v3.6) → Debt Capacity Assessment v1.0 → FTTCP v2.1 (this protocol, PART A transition proof then PART B normalization) → Market-Implied Assumptions v1.0 → Role 1 (Valuation) → Role 2 (Thesis) → Role 3 (Devil's Advocate) → Notion save.**
++**Gate 0 + Emerging Moat scan → Role 4 (Results Review, filing numbers) → Role 5 (Concall Analysis, primary transcript) → Role 5.5 (Downstream Signal Identification, defined in Master Project Prompt v3.7) → Debt Capacity Assessment v1.0 → FTTCP v2.3 (this protocol, PART A transition proof then PART B normalization) → Market-Implied Assumptions v1.0 → Role 1 (Valuation) → Role 2 (Thesis) → Role 3 (Devil's Advocate) → Notion save.**
+ 
+ Role 5.5 (Downstream Signal Identification) precedes the Debt Capacity Assessment and FTTCP because downstream signals are the leading indicators of catalyst firing; forward catalyst analysis in Step 2 must reference identified signals rather than reconstruct them. The Debt Capacity Assessment runs immediately before FTTCP because Part B Module B7 (Post-Deleveraging Earnings Picture) consumes its output block (current debt vs capacity, headroom, coverage trend, verdict). Market-Implied Assumptions runs immediately after FTTCP and before Role 1, because Role 1 consumes the FTTCP Part B output sheet and the market-implied block together.
+ 
+-**Signal Gate rule (v1.3 addition, carried into v2.0; hardened in v2.1):** Role 5.5 (Downstream Signal Identification, per Master Project Prompt v3.6) must precede FTTCP, and its Step 4 HARD GATE must have passed: signals physically written to the Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs presented as proof of write. FTTCP does not accept described-but-unwritten signals. Step 2 (Forward Catalyst Analysis) must reference identified Downstream Signals for each transition where an appropriate signal exists. Signals with Monthly or Event-driven cadence feed the 3-6 month window (Revenue, Margin, Cash transitions); Quarterly-cadence signals feed the 12-month window (ROCE transition). A catalyst that cannot be anchored to any Downstream Signal is graded as evidence-thin and its magnitude assessment is capped at MODERATE. If no downstream signals were identifiable at Role 5.5 for this company (i.e., zero external verification exists), FTTCP proceeds but the composite score is capped at DEEP WATCH pending signal identification.
++**Signal Gate rule (v1.3 addition, carried into v2.0; hardened in v2.1):** Role 5.5 (Downstream Signal Identification, per Master Project Prompt v3.7) must precede FTTCP, and its Step 4 HARD GATE must have passed: signals physically written to the Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs presented as proof of write. FTTCP does not accept described-but-unwritten signals. Step 2 (Forward Catalyst Analysis) must reference identified Downstream Signals for each transition where an appropriate signal exists. Signals with Monthly or Event-driven cadence feed the 3-6 month window (Revenue, Margin, Cash transitions); Quarterly-cadence signals feed the 12-month window (ROCE transition). A catalyst that cannot be anchored to any Downstream Signal is graded as evidence-thin and its magnitude assessment is capped at MODERATE. If no downstream signals were identifiable at Role 5.5 for this company (i.e., zero external verification exists), FTTCP proceeds but the composite score is capped at DEEP WATCH pending signal identification.
+ 
+ Role 1 Pillar 1 cannot be computed without the FTTCP ROCE forward verdict (see PILLAR 1 INTEGRATION below) — the sequencing is structural, not procedural. The Black Rose case is the canonical demonstration: five destination PE iterations were needed when FTTCP ran last; running it first produces the correct answer on the first pass.
+ 
+@@ -45,7 +45,7 @@
+ - At any quarterly refresh where 3+ monitoring triggers have fired
+ - Pasting a recent quarterly result + concall with the request to assess forward thesis
+ 
+-When triggered, you MUST execute the protocol below in full sequence. Do not produce a final FTTCP verdict before completing every step — especially Step 2C, which forces probability assessment with evidence.
++Run the steps in order. The FTTCP verdict comes after every step is complete, including the Step 2C probability table.
+ 
+ **Concall Gate rule:** Role 5 on the LATEST concall must precede FTTCP — management commentary on catalysts is a core input, and it must come from the actual transcript, never a pipeline synthesis. If no actual transcript exists, FTTCP runs with that limitation flagged explicitly and confidence materially reduced; do not fabricate forward catalysts from MD&A or presentation narrative.
+ 
+@@ -101,7 +101,7 @@
+ 
+ | Required input | Available? | Confidence impact if missing |
+ |---|---|---|
+-| Latest concall transcript (actual transcript, not Gemini-synthesised) | Yes/No | If missing: FTTCP confidence drops materially; flag prominently |
++| Latest concall transcript (actual transcript, not a pipeline synthesis) | Yes/No | If missing: FTTCP confidence drops materially; flag prominently |
+ | Latest quarterly result filing (full notes, not just headlines) | Yes/No | If missing: cannot assess leading indicators |
+ | Last 3 quarterly results filings (trajectory) | Yes/No | If missing: cannot assess catalyst momentum |
+ | Latest investor presentation | Yes/No | Lower priority but helpful |
+@@ -456,7 +456,7 @@
+ 
+ ### Sector Cap and the Category-Break Override (v1.3 addition, carried into v2.0)
+ 
+-The sector cap in Section 1B of the Master Project Prompt (v3.6 onward, where the destination-PE math level implements it with rows G2/G3) is the absolute ceiling on destination PE under normal conditions. The Category-Break Override is the narrow, evidence-heavy mechanism by which the sector cap can be raised for a company that is establishing a genuinely new category — not merely growing fast within an existing one.
++The sector cap in Section 1B of the Master Project Prompt (v3.6 onward, now v3.7 with the Section 1B layer set to v3.10, where the destination-PE math level implements it with rows G2/G3) is the absolute ceiling on destination PE under normal conditions. The Category-Break Override is the narrow, evidence-heavy mechanism by which the sector cap can be raised for a company that is establishing a genuinely new category — not merely growing fast within an existing one.
+ 
+ **The distinction that motivates the override.** A company operating inside an established sector, however excellent, sits under the sector cap because the market has already learned how to value the sector. The cap embeds the sector's structural ceiling on capital intensity, cyclicality, cash conversion, and competitive dynamics. But when a company is the first-mover in a new category — Bloom-Energy-hotbox economics for Mtar in India, an exclusive Vertiv-Nvidia GB200 liquid-cooling partnership for Aeroflex, a molecular-glue CDMO capability for Sai — the sector reference itself is stale. The historical sector cap is priced against businesses that do not have this position. Applying it mechanically to the category-break case understates fair value.
+ 
+@@ -495,7 +495,7 @@
+ | Cables / Industrial products | 25x | 35x | reserved |
+ | EPC / Civil construction | 20x | 28x | reserved |
+ 
+-The override is applied to the sector cap step of the Four-Pillar Summary Calculation (Section 1B row G in v3.5, materialised as rows G2/G3). The Raw × 1.25 UA multiplier is applied FIRST; the override then raises the cap against which the UA-adjusted raw PE is compared. Ordering: **Final Destination PE = min( Raw × UA_multiplier, Sector Cap × Override_multiplier_if_qualified )**, with the whole expression floored at zero and capped at 45x.
++The override is applied to the sector cap step of the Four-Pillar Summary Calculation (Section 1B row G, materialised as rows G2/G3 since Master v3.5). The Raw × 1.25 UA multiplier is applied FIRST; the override then raises the cap against which the UA-adjusted raw PE is compared. Ordering: **Final Destination PE = min( Raw × UA_multiplier, Sector Cap × Override_multiplier_if_qualified )**, with the whole expression floored at zero and capped at 45x.
+ 
+ **Sunset clause: 4 quarters, no automatic renewal.**
+ 
+@@ -565,7 +565,7 @@
+ 
+ After every quarterly result + concall cycle: Q result → Role 4 → Role 5 → FTTCP refresh → (Roles 1-3 refresh if any pillar input changed) → Update Notion. Mandatory every quarter for HELD positions; after each result for WATCHLIST and DEEP WATCH; annually or on trigger-fire for AVOID.
+ 
+-## METHODOLOGICAL DISCIPLINE — RULES THAT MUST NEVER BE VIOLATED
++## METHODOLOGICAL DISCIPLINE (checklist; each rule is defined in the step it cites and this list adds none)
+ 
+ 1. **No catalyst counts as a catalyst.** Write "NONE FOUND" when accurate. Don't fabricate catalysts to fill the table.
+ 2. **Sector tailwinds are not company catalysts.** Company-specific differential share capture is required.
+@@ -607,7 +607,7 @@
+               ↓
+        Debt Capacity Assessment v1.0
+               ↓
+-       Role 7 (FTTCP v2.1)  ←— this protocol
++       Role 7 (FTTCP v2.3)  ←— this protocol
+          PART A transition proof → PART B normalization engine
+               ↓
+        Market-Implied Assumptions v1.0
+diff --git a/frameworks/Market_Implied_Assumptions_v1_0.md b/frameworks/Market_Implied_Assumptions_v1_0.md
+--- a/frameworks/Market_Implied_Assumptions_v1_0.md	2026-10-03 04:52:55.143788253 +0000
++++ b/frameworks/Market_Implied_Assumptions_v1_0.md	2026-10-03 04:53:08.014931129 +0000
+@@ -1,6 +1,6 @@
+ # MARKET-IMPLIED ASSUMPTIONS v1.0
+ 
+-*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately AFTER FTTCP v2.0 and immediately BEFORE Role 1. Its output block is consumed by Role 1 Section 1 and by the valuation conclusion. Before we value the business, we state what the current price already assumes about it.*
++*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately AFTER FTTCP (v2.3) and immediately BEFORE Role 1. Its output block is consumed by Role 1 Section 1 and by the valuation conclusion. Before we value the business, we state what the current price already assumes about it.*
+ 
+ ## WHY THIS SECTION EXISTS
+ 
+@@ -78,7 +78,7 @@
+ 
+ ## WORKED-EXAMPLE PLACEHOLDER
+ 
+-Illustrative arithmetic, numbers invented for shape only. CMP ₹500, operating EPS ₹20, current PE 25x. At a flat 25x exit, delivering the operator's 25 percent price hurdle needs 25 percent EPS CAGR, so the price at 25x is already asking for 25 percent compounding just to clear the hurdle. At a reasonable exit PE of 20x (a mild de-rating a maturing name should expect), the EPS CAGR that merely makes ₹500 fair at a 13.5 percent cost of capital is roughly 18 percent. If FTTCP evidence supports 22 percent funded growth with ROCE crossing the cost of capital in FY2, evidence sits above the fair-value growth and near the hurdle growth: a live but not generous opportunity, for Role 1 to size. If FTTCP evidence supported only 12 percent, the flag reads PRICED-WE-ARE-LATE.
++Illustrative arithmetic, numbers invented for shape only. CMP ₹500, operating EPS ₹20, current PE 25x. At a flat 25x exit, delivering the operator's 25 percent price hurdle needs 25 percent EPS CAGR, so the price at 25x is already asking for 25 percent compounding just to clear the hurdle. At an illustrative exit PE of 20x (shape only; a run takes its exit PE per Step 1), the EPS CAGR that merely makes ₹500 fair at a 13.5 percent cost of capital is roughly 18 percent. If FTTCP evidence supports 22 percent funded growth with ROCE crossing the cost of capital in FY2, evidence sits above the fair-value growth and near the hurdle growth: a live but not generous opportunity, for Role 1 to size. If FTTCP evidence supported only 12 percent, the flag reads PRICED-WE-ARE-LATE.
+ 
+ ## VERSION HISTORY
+ 
+diff --git a/frameworks/Master_Project_Prompt_v3_6.md b/frameworks/Master_Project_Prompt_v3_6.md
+--- a/frameworks/Master_Project_Prompt_v3_6.md	2026-10-03 04:52:55.155501911 +0000
++++ b/frameworks/Master_Project_Prompt_v3_6.md	2026-10-03 04:53:07.995093407 +0000
+@@ -10,7 +10,7 @@
+ 
+ ## WHO I AM
+ 
+-I am Keerti, a fundamental equity investor focused on Indian listed equities — primarily small and mid caps. I use a systematic, multi-stage AI-powered analysis pipeline. By the time I paste analysis into this project, 10 specialised AI agents have already processed the company's annual report, concall transcripts, investor presentations, financial data, and peer comparisons through three automated pipelines.
++I am Keerti, a fundamental equity investor focused on Indian listed equities — primarily small and mid caps. I use a systematic, multi-stage AI-powered analysis pipeline. *Scope note for pipeline agents: WHO I AM, MY INVESTMENT CRITERIA, SECTOR LITERACY TRACK, WHAT I WILL PASTE, the INPUT DATA fill tables, HOW THIS PROJECT GROWS, and COMPANIES.TXT GENERATOR address the operator's claude.ai project. A pipeline stage takes its inputs from its task message and run folder, not from pasted sheets.* By the time I paste analysis into this project, the pipeline has already processed the company's annual report, concall transcripts, investor presentations, financial data, and peer comparisons.
+ 
+ ## MY INVESTMENT CRITERIA
+ 
+@@ -70,7 +70,7 @@
+ 
+ The enforced sequence for any full workup or quarterly refresh (v3.5 architecture):
+ 
+-**Gate 0 + Emerging Moat scan → Role 4 (Results Review, filing numbers) → Role 5 (Concall Analysis, primary transcript) → Role 5.5 (Downstream Signal Identification) → Debt Capacity Assessment v1.0 → FTTCP v2.1 (Quadruple Transition, PART A proof then PART B normalization) → Market-Implied Assumptions v1.0 → Role 1 (Valuation) → Role 2 (Thesis) → Role 3 (Devil's Advocate) → Notion save.**
++**Gate 0 + Emerging Moat scan → Role 4 (Results Review, filing numbers) → Role 5 (Concall Analysis, primary transcript) → Role 5.5 (Downstream Signal Identification) → Debt Capacity Assessment v1.0 → FTTCP v2.3 (Quadruple Transition, PART A proof then PART B normalization) → Market-Implied Assumptions v1.0 → Role 1 (Valuation) → Role 2 (Thesis) → Role 3 (Devil's Advocate) → Notion save.**
+ 
+ Role 5.5 (Downstream Signal Identification, defined in the Role 5.5 section below) runs immediately after Role 5 and before the Debt Capacity Assessment, so downstream signals are identified and locked into the consolidated tracker before forward catalyst scoring; signals are leading indicators of catalyst firing, not aftermarket telemetry, and FTTCP Step 2 must reference them (the Signal Gate rule in FTTCP v2.1). Then three sections sit between Role 5.5 and Role 1. Debt Capacity Assessment runs first and hands its verdict (COMFORTABLE / STRETCHED / BREACH, headroom, coverage trend) into FTTCP Module B7 and Role 1. FTTCP v2.1 runs its Part A transition proof and then its Part B normalization engine (Modules B1-B8), producing the consolidated output sheet Role 1 consumes. Market-Implied Assumptions runs last before Role 1 and hands forward what the current price already assumes, so Role 1 can state value against price honestly.
+ 
+@@ -105,7 +105,7 @@
+ 
+ You are an expert equity valuation analyst specialising in Indian listed companies. I need a rigorous, multi-method valuation exercise. The methods used must be appropriate for this company's specific business model and industry — not a generic one-size-fits-all approach.
+ 
+-CRITICAL: This prompt incorporates a proprietary FOUR-PILLAR exit multiple framework (Section 1B, v3.3 as amended through v3.5.1 and v3.6). Exit multiples are NOT assumed — they are EARNED through ROCE quality, cash conversion quality, growth visibility, and strategic scarcity, disciplined by the Hurdle Ratio and the sector cap. Read Section 1B carefully before assigning any exit multiple.
++This prompt uses the Four-Pillar exit multiple framework (Section 1B: the v3.3 base plus the v3.5.1, v3.6, v3.7, v3.8, v3.9 and v3.10 amendment layers in frameworks/; later layers govern overlaps). Exit multiples are earned through ROCE quality, cash conversion quality, growth visibility and strategic scarcity, disciplined by the Hurdle Ratio and the sector cap. Pipeline stage 11 works from the section-1b skill, which carries the resolved rules.
+ 
+ ### CONSUMPTION CLAUSE (v3.5 — read before Section 1A)
+ 
+@@ -129,13 +129,13 @@
+ 
+ ## OPERATING RULES
+ 
+-- Execute ONE SECTION at a time. STOP after each and wait for my "GO".
++- Execute the sections in order. In the operator's claude.ai chat, stop after each section only when the operator asks for that. Pipeline stages run all sections in one pass and write the interim summary lines without waiting.
+ - Show ALL math. Every formula, every assumption, every intermediate step.
+-- State the most evidenced path (v3.6, Section 1B v3.10 Amendment 26.3). Where evidence is thin, present both readings and the single observation that separates them. Size the position for the doubt (v3.9 Amendment 25). Do NOT shade individual inputs. Per-input conservatism is retired: five inputs shaded 10% each produce a bear case labelled base.
++- State the most evidenced path (v3.7, Section 1B v3.10 Amendment 26.3). Where evidence is thin, present both readings and the single observation that separates them. Size the position for the doubt (v3.9 Amendment 25). Do NOT shade individual inputs. Per-input conservatism is retired: five inputs shaded 10% each produce a bear case labelled base.
+ - Use tables. Every scenario in a scannable table.
+ - Methods must be business-appropriate. Don't force a method that doesn't fit.
+ - Exit multiples MUST be derived from Section 1B. Do NOT assume exit P/E of 15x, 20x, 25x etc. without running the four-pillar calculation first.
+-- FTTCP v2.1 must have been run BEFORE this role, and so must the Debt Capacity Assessment (before FTTCP) and Market-Implied Assumptions (after FTTCP). If no FTTCP output exists for this company, STOP and run FTTCP first — Pillar 1 cannot be computed without the ROCE forward verdict, and Section 1B cannot be completed without the FTTCP Part B output sheet.
++- FTTCP (file FTTCP_v2_1_Consolidated.md, content v2.3) must have been run BEFORE this role, and so must the Debt Capacity Assessment (before FTTCP) and Market-Implied Assumptions (after FTTCP). If no FTTCP output exists for this company, STOP and run FTTCP first — Pillar 1 cannot be computed without the ROCE forward verdict, and Section 1B cannot be completed without the FTTCP Part B output sheet.
+ - Operating earnings only, everywhere. The EPS entering every multiple is FTTCP Module B4's operating EPS (treasury income, rental income, and investment gains stripped). Non-operating assets are never multiplied by an exit PE; they enter through the equity bridge only.
+ - One quality improvement, one mechanism. Crediting the same ROCE improvement through multiple levers (Pillar 1, Strategic Premium, lower discount rate) is triple-counting and must be caught. Complexity is priced once, in r (Section 1B v3.6 Amendment 13), and cash quality once, in Pillar 2 (Amendment 12A) — never also in r.
+ 
+@@ -182,7 +182,7 @@
+ | Management's guided revenue growth | [FILL]% |
+ | Management's guided margin band | [FILL]% |
+ | Management delivery track record | Excellent / Good / Mixed / Poor — **from Role 5 credibility grade (A/B/C/D mapping) when history exists** |
+-| FTTCP ROCE forward verdict | FIRING / RECOVERING-to-FIRING / RECOVERING / STAGNANT / DECLINING (with probability) |
++| FTTCP ROCE forward verdict | FIRING / RECOVERING / STAGNANT / DECLINING (with probability) |
+ | FTTCP composite score and verdict | [FILL — from FTTCP v2.1 scored system, Part A] |
+ | Debt Capacity verdict (consumed) | [FILL — COMFORTABLE / STRETCHED / BREACH; headroom %; coverage trend] |
+ | FTTCP B4 operating EPS (consumed) | ₹[FILL — the EPS that enters every multiple] |
+@@ -263,9 +263,11 @@
+ | TERTIARY |  | ___% |  |
+ |  |  | 100% |  |
+ 
+-## SECTION 1B: FOUR-PILLAR EXIT MULTIPLE FRAMEWORK v3.3 (CRITICAL)
++## SECTION 1B: FOUR-PILLAR EXIT MULTIPLE FRAMEWORK (base text; v3.3 to v3.10 layers govern)
+ 
+-This section MUST be completed before any valuation method is applied. The exit multiple is EARNED, not assumed. FTTCP v2.1 must already have been run — its ROCE forward verdict (Part A) and its Part B output sheet are mandatory inputs here, alongside the Debt Capacity output and the Market-Implied Assumptions block.
++The text below is the base. These later layers replace parts of it and are not restated here: v3.3 Amendments 4.1-4.2 (Pillar 3 splits into 3a/3b/3c, +6x combined cap), 4.3 (two-tier hurdle, Tier A 1.953 / Tier B 1.728); v3.7 Amendment 17 (CONVERTER gate before any pillar math); v3.8 Amendments 18-19 (Year 4 projection, exit-basis symmetry, FV path and FV CAGR); v3.9 Amendments 20-25 (Step 1C, run-rate base, probabilistic credit, Expectation Ledger, price decomposition, size-based MoS); v3.10 Amendment 26. Where base text and a layer differ, the layer governs.
++
++This section MUST be completed before any valuation method is applied. The exit multiple is EARNED, not assumed. FTTCP v2.3 must already have been run — its ROCE forward verdict (Part A) and its Part B output sheet are mandatory inputs here, alongside the Debt Capacity output and the Market-Implied Assumptions block.
+ 
+ ### The Formula
+ 
+@@ -286,7 +288,7 @@
+ 
+ Round the resulting base to one decimal; do not round intermediate ROCE.
+ 
+-**ROCE selection — the FTTCP ROCE forward verdict is the SOLE authority (v1.2). No ad hoc trajectory judgment:**
++**ROCE selection — the FTTCP ROCE forward verdict is the SOLE authority (since FTTCP v1.2). No ad hoc trajectory judgment:**
+ 
+ | FTTCP ROCE Forward Verdict | Pillar 1 ROCE Used |
+ | --- | --- |
+@@ -559,13 +561,13 @@
+ 
+ ### Destination PE Sanity Check — the Hurdle Ratio (v3.3, replaces the old binary STOP rule and the fixed 1.3x gap check)
+ 
+-**Hurdle Ratio (HR) = (1 + EPS CAGR)³ × (Destination PE mid ÷ Current PE). Pass threshold: HR ≥ 1.953 (= 1.25³).**
++**Hurdle Ratio (HR) = (1 + EPS CAGR)³ × (Destination PE mid ÷ Current PE). Pass threshold: HR ≥ 1.953 (= 1.25³) for Tier A; HR ≥ 1.728 (= 1.20³) for Tier B (v3.3 Amendment 4.3). The verdict card's first line states "Tier: [A/B] | Hurdle: [25%/20%]".**
+ 
+ | Condition | Verdict |
+ | --- | --- |
+ | HR(Base EPS CAGR) ≥ 1.953 | PASS — proceed normally |
+ | HR(Base) < 1.953 but HR(Bull) ≥ 1.953 | CONDITIONAL — proceed, but flag "growth-dependent with de-rating headwind"; verdict capped at WATCHLIST / BUY-ON-DIPS; no BUY NOW |
+-| HR(Bull EPS CAGR) < 1.953 | STOP — overvalued; 25% CAGR is infeasible even on bull-case earnings |
++| HR(Bull EPS CAGR) < threshold | STOP band: the tier hurdle is infeasible even on bull-case earnings (a feasibility band, not a halt) |
+ 
+ Bull EPS CAGR may only be used in this check if the Role 5 credibility grade is A or B (Excellent/Good). If C or D, the Bull row uses Base EPS CAGR + 5% maximum.
+ 
+@@ -606,7 +608,7 @@
+ 
+ Historical CAGR is ALWAYS computed as a cross-check and shown beside the chosen basis. It governs only when no forward evidence exists. Where the chosen basis diverges from historical CAGR by more than 10 percentage points, name the observation that will confirm or refute the divergence and its confirm-by date; it feeds the Expectation Ledger (Section 1B v3.9 Amendment 23).
+ 
+-Single credit (v3.6 Amendment 4): a catalyst credited into revenue here at its probability is NOT credited again in Pillar 3 at full weight. State the split in the Section 2 worksheet line.
++Single credit (Section 1B Amendment 4, v3.3 file): a catalyst credited into revenue here at its probability is NOT credited again in Pillar 3 at full weight. State the split in the Section 2 worksheet line.
+ 
+ **Durability of growth fade horizon (v3.5, Section 1B v3.6 Amendment 14).** Flat CAGR lines through the projection are retired. The Emerging Moat classification sets how fast growth fades toward industry growth, and the projection must show the step-down year by year:
+ 
+@@ -655,7 +657,7 @@
+ 
+ ### 2C. Complete Projection Table (BASE CASE primary, Bear/Bull as ranges)
+ 
+-| Line Item | Year 0 | Year 1 | Year 2 | Year 3 | Year 5 |
++| Line Item | Year 0 | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 |
+ | --- | --- | --- | --- | --- | --- |
+ | Revenue | ₹___ Cr |  |  |  |  |
+ | EBITDA | ₹___ Cr |  |  |  |  |
+@@ -856,7 +858,8 @@
+ | Calculation | Value |
+ | --- | --- |
+ | Base Case Fair Value (Year 3) | ₹___ |
+-| Price for 25% CAGR = Fair Value ÷ (1.25)³ | ₹___ |
++| Price for the tier hurdle = exit-consistent Fair Value ÷ (1 + hurdle)³ (1.25 Tier A, 1.20 Tier B; v3.3 A4.3, v3.8 A18.5, ruling OR-8) | ₹___ |
++| FV CAGR and return-source label (v3.8 A19; mandatory beside any entry zone) | ___% [COMPOUNDER / HYBRID / DISCOUNT-CLOSER] |
+ | Price for 30% CAGR (extra safety) = Fair Value ÷ (1.30)³ | ₹___ |
+ | Margin of Safety Price (v3.5: evidence-scaled, 25% CAGR entry × (1 − MoS), MoS = 20%/30%/40% per Section 4H-pre) | ₹___ |
+ | My ideal entry range | ₹___ to ₹___ |
+@@ -930,6 +933,7 @@
+ - EXPECTED CAGR (probability-weighted, with grade source stated)
+ - UPSIDE/DOWNSIDE RATIO
+ - MY ENTRY PRICE range and MARGIN OF SAFETY PRICE
++- LATER-LAYER LINES: Tier line (A4.3, first line of card); FV CAGR and return-source label (A19); Step 1C line: pillar destination, adjusted peer base or PENDING LIVE PEER TABLE, % gap, governing multiple (A20); price decomposition T1/T2/T3/residual % (A24); CONVERTER classification (A17)
+ - VALUE VS PRICE (v3.5): two lines — what the business is worth and why; what the price assumes (market-implied flag), what closes the gap and when
+ - MARGIN OF SAFETY (v3.5): evidence-scaled row applied (20% / 30% / 40%) with the evidence and catalyst basis
+ - DISPERSION SIZING (v3.5): fair value range width (Bull − Bear) ÷ Base = ___% → sizing cap [Normal / Medium / Small]
+@@ -1049,7 +1053,7 @@
+ 
+ ## SECTION 4: CROSS-REFERENCE CHECK
+ 
+-This is critical. Go through ALL the agent outputs and find every instance where one agent's findings contradict another's. Examples:
++Find every place where one agent's findings contradict another's, across all agent outputs. Examples:
+ 
+ - Concall says "margins will expand" but AR shows margins compressing
+ - Gate 0 shows excellent cash generation but AR notes reveal aggressive revenue recognition
+@@ -1509,14 +1513,14 @@
+ - Cross-reference EVERY major claim against at least one other agent's output. The hardest verdict wins.
+ - If Gate 0 is below 60, default recommendation is WATCHLIST regardless of narrative quality.
+ - If Promoter verdict is CONCERN or AVOID, default recommendation is AVOID regardless of everything else.
+-- **Exit PE is governed solely by Section 1B. The sector cap table (with documented quality uplift where applicable) is the only ceiling. No other exit PE rule exists.**
++- Exit PE is governed solely by Section 1B (see MY INVESTMENT CRITERIA).
+ - Always show the bear case math, not just the bull case.
+-- Position size should reflect conviction. Never recommend Large unless Gate 0 is EXCELLENT and Promoter is TRUSTWORTHY or better.
+-- When I ask for the devil's advocate, be genuinely brutal. I need this to protect my capital. A weak devil's advocate is worse than none.
++- Position size should reflect conviction. Size per the Role 2 Section 7 position size rules.
++- When I ask for the devil's advocate, be genuinely brutal against the bull case as built (Rule H), with the same evidence bar as a bull claim (Rule J). A weak devil's advocate is worse than none.
+ - If you find a contradiction in the analysis that the agents missed, highlight it prominently.
+ - Verify position status (Notion Decision Status) before any HOLD/ADD/TRIM/EXIT framing.
+ - One quality improvement, one mechanism. Never credit the same improvement through multiple levers.
+-- **Role 5.5 Step 4 is a HARD GATE: no FTTCP, Role 1, or Role 2 may begin for a company until its downstream signals are physically written to the Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs presented as proof. Describing signals without writing them does not pass the gate. If the write fails, the workup pauses — it does not proceed.**
++- Role 5.5 Step 4 is a hard gate; see Role 5.5 Step 4 for its pass conditions. to the Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs presented as proof. Describing signals without writing them does not pass the gate. If the write fails, the workup pauses — it does not proceed.**
+ - All prices in Indian Rupees. All financial figures in Crores.
+ 
+ ---
+diff --git a/frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md b/frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md
+--- a/frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md	2026-10-03 04:52:55.166330892 +0000
++++ b/frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md	2026-10-03 04:53:07.965461422 +0000
+@@ -181,7 +181,7 @@
+ 
+ Credit cost guidance carries the same weight in the promise-vs-delivery tracker as revenue guidance does for standard businesses. A lender that stops guiding credit costs after previously guiding them = DROPPED, with the governance flag consequences of Step 3B.
+ 
+-🛑 **STOP. Show the guidance table and diagnostics. This is the most critical artifact of the concall — be thorough.**
++🛑 **STOP. Show the guidance table and diagnostics. This is the most critical artifact of the concall.**
+ 
+ ## STEP 3 — PROMISE vs DELIVERY AUDIT
+ 
+@@ -496,7 +496,7 @@
+ 
+ Concalls frequently provide forward inputs to the Four-Pillar framework:
+ 
+-- Forward ROCE trajectory commentary → feeds the FTTCP ROCE forward verdict, which is the SOLE authority for Pillar 1 ROCE selection (per FTTCP v1.2)
++- Forward ROCE trajectory commentary → feeds the FTTCP ROCE forward verdict, which is the SOLE authority for Pillar 1 ROCE selection (per FTTCP v2.3, file FTTCP_v2_1_Consolidated.md)
+ - Forward CFO/PAT commentary (especially WC structural vs growth-induced framing) → Pillar 2; for lenders, credit cost and asset quality commentary → Asset-Quality Multiplier
+ - Forward EM developments (new patents, contracts, certifications) → Pillar 3
+ - Strategic positioning changes → Strategic Premium (respect the single-credit rule: ROCE recovery credited in Pillar 1 OR Strategic Premium, never both)
+diff --git a/frameworks/Quarterly_Results_Review_Protocol_v1_4.md b/frameworks/Quarterly_Results_Review_Protocol_v1_4.md
+--- a/frameworks/Quarterly_Results_Review_Protocol_v1_4.md	2026-10-03 04:52:55.179730550 +0000
++++ b/frameworks/Quarterly_Results_Review_Protocol_v1_4.md	2026-10-03 04:53:07.964426884 +0000
+@@ -23,7 +23,7 @@
+ - "These results are out — what do they mean for our thesis?"
+ - Pasting a board outcome filing, results PDF, or press release for an analysed company
+ 
+-When triggered, you MUST execute the protocol below in full sequence. **Do not skip steps. Do not jump to conclusions before completing the analytical walks.** If you find yourself wanting to write a verdict before completing Step 6, stop and finish the decomposition first.
++When triggered, you MUST execute the protocol below in full sequence. Run every step in order. If you find yourself wanting to write a verdict before completing Step 6, stop and finish the decomposition first.
+ 
+ ## THE FAILURE MODES THIS PROTOCOL IS DESIGNED TO PREVENT
+ 
+@@ -190,7 +190,7 @@
+ 
+ ## STEP 2 — Q[N] YoY COMPARISON (THE MOST IMPORTANT STEP)
+ 
+-This is the step I am most likely to skip. **Do not skip it.** Build this table explicitly (for lenders, substitute NII for Revenue, PPOP for Operating EBITDA, and add Credit Cost and GNPA rows):
++Build this table explicitly Build this table explicitly (for lenders, substitute NII for Revenue, PPOP for Operating EBITDA, and add Credit Cost and GNPA rows):
+ 
+ | **Metric** | **Q[N] FY[YY-1]** | **Q[N] FY[YY]** | **YoY % Change** | **Verdict** |
+ | --- | --- | --- | --- | --- |
+@@ -309,7 +309,7 @@
+ 
+ **Mandatory lender questions:**
+ 
+-- **Which Asset-Quality Multiplier band does this quarter support?** (Elite 1.15x / Sound 1.00x / Stressed 0.80x / Structural weakness 0.65x — per Section 1B v3.3 lender carve-out.) If the band changed, Pillar 2 needs revision.
++- **Which Asset-Quality Multiplier band does this quarter support?** (Elite 1.15x / Sound 1.00x / Stressed 0.80x / Structural weakness 0.65x — per the Section 1B lender carve-out (v3.3 base, as amended through v3.10).) If the band changed, Pillar 2 needs revision.
+ - **Are credit costs within the guided band?** A miss is logged in the promise-vs-delivery tracker with the same weight as a revenue guidance miss.
+ - **Is asset-quality deterioration geographically concentrated (state-specific stress) or broad-based?** State-specific MFI stress has a normalisation catalyst; broad-based deterioration does not.
+ - **Is AUM growth outrunning collection infrastructure?** Disbursement growth materially above collection efficiency trend is the classic MFI pre-crisis pattern.
+@@ -318,7 +318,7 @@
+ 
+ ## STEP 5.5 — DOWNSTREAM SIGNAL RECONCILIATION (v1.3, refactored)
+ 
+-The Downstream Signal Tracker (consolidated Notion database peer to COMPANIES MASTER) is populated at initial workup via Role 5.5 (Downstream Signal Identification, defined in Master Project Prompt v3.6). Signals are stored ONCE at the portfolio level with a relational Affected Companies field mapping each signal to the companies it feeds. Monthly refresh of the tracker happens portfolio-wide at each month-end, not per-company at each quarterly review.
++The Downstream Signal Tracker (consolidated Notion database peer to COMPANIES MASTER) is populated at initial workup via Role 5.5 (Downstream Signal Identification, defined in the Master Project Prompt (v3.7; file Master_Project_Prompt_v3_6.md)). Signals are stored ONCE at the portfolio level with a relational Affected Companies field mapping each signal to the companies it feeds. Monthly refresh of the tracker happens portfolio-wide at each month-end, not per-company at each quarterly review.
+ 
+ **Tracker coordinates (LIVE — use directly, do not search):** Database URL https://app.notion.com/p/ea5f02670d114b2abd7b74f88bb33061 | Data source ID `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`
+ 
+@@ -432,11 +432,11 @@
+ 
+ ## STEP 7 — FOUR-PILLAR DESTINATION PE RE-VALIDATION
+ 
+-The destination PE in Notion was set under Section 1B v3.3. Each results review must check whether the pillars still hold. Walk through:
++The destination PE in Notion was set under the Section 1B layer set (v3.3 base through v3.10). Each results review must check whether the pillars still hold. Walk through:
+ 
+ | **Pillar / Input** | **Original Assumption** | **Current Reading** | **Action** |
+ | --- | --- | --- | --- |
+-| ROCE Base (continuous formula: 0.5 × ROCE + 7.5, floor 9x, cap 24x) | ROCE ___% → ___x | This period's ROCE: ___% | Re-run FTTCP ROCE forward verdict; apply the FTTCP v2.1 mapping table. The FTTCP verdict is the SOLE authority for Pillar 1 ROCE selection — no ad hoc revision. |
++| ROCE Base (continuous formula per Section 1B Amendment 5 as amended by v3.6 Amendment 11; read the floor and cap from the section-1b skill) | ROCE ___% → ___x | This period's ROCE: ___% | Re-run FTTCP ROCE forward verdict; apply the FTTCP v2.3 mapping table (file FTTCP_v2_1_Consolidated.md). The FTTCP verdict is the SOLE authority for Pillar 1 ROCE selection — no ad hoc revision. |
+ | Cash Multiplier (or Asset-Quality Multiplier for lenders) | ___x | This period's band | Hold / Revise per Step 5 (or 5L) band evidence |
+ | Growth Visibility Premium | +___x | EM score / catalyst proximity | Hold / Adjust |
+ | Strategic Premium | +___x | Moat status; single-credit rule state ("ROCE recovery credited via: ___") | Hold / Adjust |
+diff --git a/frameworks/README.txt b/frameworks/README.txt
+--- a/frameworks/README.txt	2026-10-03 04:52:55.192499400 +0000
++++ b/frameworks/README.txt	2026-10-03 04:53:08.016190569 +0000
+@@ -1,5 +1,5 @@
+ COPY THESE NINE FILES HERE FROM YOUR CLAUDE.AI PROJECT BEFORE THE
+-FIRST RUN (stage 11 halts without them):
++FIRST RUN (stage 11 and verifier C depend on them):
+   Master_Project_Prompt_v3_6.md   (CONTENT IS v3.7 - see below)
+   Section_1B_v3.3_Amendments.md
+   Section_1B_v3_5_1_Reconciliation.md
+@@ -13,19 +13,19 @@
+ authority for capital-cycle names. Its consolidated Amendment 9
+ SUPERSEDES the standalone Amendment 4.5 that still appears in
+ Section_1B_v3.3_Amendments.md (kept for history, banner-marked as
+-retired). Stage 11 injects all seven Section 1B layers; where they
++retired). Stage 11 reads all seven Section 1B layers through the section-1b skill; verifier C reads the files directly; where they
+ overlap, v3.10 governs the items it names (growth symmetry in
+ projections and weighting, Amendment 26), then v3.9 (relative
+ valuation cross-check step 1C, and the forward-expectation exit
+ framework), then v3.8, then v3.7, then v3.6, then v3.5.1, then v3.3.
+-FILENAME NOTE. Two files carry a version number in the path that is
++FILENAME NOTE. Three files carry a version number in the path that is
+ older than the version inside them. Master_Project_Prompt_v3_6.md is at
+ v3.7. Section_1B_v3.3_Amendments.md is the base of a set that runs at
+ v3.10. The paths are stable injection targets referenced by prompts,
+ agents, commands, and past run provenance; the version lives in each
+ file's banner. Cite the version, read the path.
+ 
+-When you amend a framework, update the copy here. Stage 11 reads these
++When you amend a framework, update the copy here AND regenerate the affected .claude/skills/section-1b/references chunks. Stage 11 reads the section-1b skill, not these
+ at run time, so amendments propagate with no pipeline edits.
+ 
+ ALSO MAINTAINED HERE (keep synced with the claude.ai project):
+diff --git a/frameworks/Section_1B_v3.3_Amendments.md b/frameworks/Section_1B_v3.3_Amendments.md
+--- a/frameworks/Section_1B_v3.3_Amendments.md	2026-10-03 04:52:55.205103538 +0000
++++ b/frameworks/Section_1B_v3.3_Amendments.md	2026-10-03 04:53:41.133016687 +0000
+@@ -1,6 +1,6 @@
+ # SECTION 1B AMENDMENTS — FOUR-PILLAR EXIT MULTIPLE FRAMEWORK v3.3
+ 
+-> **ACTIVE — not a superseded draft.** This file is the base amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11. The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.5.1 Reconciliation, v3.6 Amendments, v3.7 Amendments, v3.8 Amendments); where they overlap, the later layer governs.
++> **ACTIVE — not a superseded draft.** This file is the base amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11. The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.5.1 Reconciliation, v3.6, v3.7, v3.8, v3.9 and v3.10 Amendments); where they overlap, the later layer governs.
+ 
+ *Framework review conducted 02-Jul-2026 (Fable 5). Amendments adopted by Keerti; Amendment on premium scaling (original point 4) REJECTED with rationale recorded in Appendix A. Companion change: FTTCP v1.2 single-credit rule (Section 6 below).*
+ 
+@@ -17,6 +17,8 @@
+ 
+ ---
+ 
++> **PARTLY SUPERSEDED.** Section 1B v3.9 Amendment 24 and operator ruling OR-2 (2026-09-15): the Hurdle Ratio is a feasibility check. Its PASS / CONDITIONAL / STOP band is computed and shown; it caps no verdict. The table below is kept for history.
++
+ ## AMENDMENT 2 — 25% CAGR Feasibility Check (replaces the binary STOP rule AND the fixed 1.3x PE-gap check)
+ 
+ **Problem 1:** "If current PE > destination PE → STOP, fails 25% CAGR regardless of earnings growth" is mathematically false. Price CAGR = EPS CAGR × (PE_exit / PE_entry)^(1/3). A 40% EPS compounder de-rating from 30x to 25x still delivers ~32% CAGR. The old rule forecloses fast-growth de-rating winners.
+@@ -61,13 +63,15 @@
+ 
+ **Change:**
+ - ROCE recovery may be credited in **Pillar 1 (midpoint smoothing) OR the Strategic Premium — never both.**
+-- Default: credit it in Pillar 1. The Strategic Premium route is permitted only when trajectory smoothing was NOT applied (e.g., hard evidence exists but the +4 trajectory-adjustment threshold was not met).
++- Default: credit it in Pillar 1. The Strategic Premium route is permitted only when trajectory smoothing was NOT applied (e.g., the FTTCP ROCE verdict is STAGNANT or FIRING, so no forward uplift entered Pillar 1; FTTCP Pillar 1 Integration governs).
+ - The Section 1B worksheet must state explicitly which route was used: "ROCE recovery credited via: [Pillar 1 midpoint / Strategic Premium / not credited]."
+ - Growth Premium interaction: if the primary catalyst driving the EM/catalyst premium is the same capex commissioning that justifies midpoint smoothing, this is permitted (the premiums measure different things — earnings visibility vs capital efficiency) but must be flagged in the worksheet as "shared catalyst" so Role 3 can stress-test the single point of failure.
+ - FTTCP v1.1 Section 8 (Pace worked example) is annotated: the +1x ROCE re-rating strategic premium in that example is superseded; under v1.2 Pace credits recovery via Pillar 1 only. This log entry constitutes FTTCP v1.2.
+ 
+ ---
+ 
++> **PARTLY SUPERSEDED.** The 24x cap in this amendment is superseded by Section 1B v3.6 Amendment 11 (cap 30x with the elite extension above 33% ROCE). The formula, floor and rounding rules stand.
++
+ ## AMENDMENT 5 — Continuous Pillar 1 Formula (replaces the ROCE band table)
+ 
+ **Problem:** Step-function bands create cliff effects: ROCE 24.9% → 19x but 25.1% → 21x. A 20bps measurement difference moves fair value ~10%.
+@@ -116,7 +120,7 @@
+ 
+ ## AMENDMENT 8 — Sector Cap Table Additions
+ 
+-New rows covering the active universe (proposals — adjust caps if you disagree):
++New rows covering the active universe (adopted 02-Jul-2026):
+ 
+ | Sector | Maximum Exit PE |
+ |---|---|
+diff --git a/frameworks/Section_1B_v3_5_1_Reconciliation.md b/frameworks/Section_1B_v3_5_1_Reconciliation.md
+--- a/frameworks/Section_1B_v3_5_1_Reconciliation.md	2026-10-03 04:52:55.215886962 +0000
++++ b/frameworks/Section_1B_v3_5_1_Reconciliation.md	2026-10-03 04:53:08.011624638 +0000
+@@ -1,6 +1,6 @@
+ # SECTION 1B v3.5.1 — RECONCILIATION OF AMENDMENT 9 AND AMENDMENT 4.5
+ 
+-> **ACTIVE — not a superseded draft.** This file is the Pillar 1 normalization layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11 and governs capital-cycle ROCE route selection (Routes A and B). The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.3 Amendments, v3.6 Amendments, v3.7 Amendments, v3.8 Amendments); where they overlap, the later layer governs.
++> **ACTIVE — not a superseded draft.** This file is the Pillar 1 normalization layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11 and governs capital-cycle ROCE route selection (Routes A and B). The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.3, v3.6, v3.7, v3.8, v3.9 and v3.10 Amendments); where they overlap, the later layer governs.
+ 
+ *Reconciliation session 12-Jul-2026 (Fable 5). Two amendments were adopted independently on the same day, both labelled v3.5, both modifying Pillar 1 for capital-cycle names: Amendment 9 (mid-cycle OPERATIONAL ROCE — capital-base normalization, adopted in the operator session) and Amendment 4.5 (normalized pre-depression ROCE anchor, promoted to law during the TATVA run). Left unreconciled, a run could apply both and double-credit the same recovery — the exact failure class Amendment 4 (single-credit rule) exists to prevent. This document supersedes both texts and replaces them with a single consolidated Amendment 9. Amendment 4.5 is RETIRED as a number; its mechanism survives as Route B below.*
+ 
+diff --git a/frameworks/Section_1B_v3_6_Amendments.md b/frameworks/Section_1B_v3_6_Amendments.md
+--- a/frameworks/Section_1B_v3_6_Amendments.md	2026-10-03 04:52:55.227029176 +0000
++++ b/frameworks/Section_1B_v3_6_Amendments.md	2026-10-03 04:53:08.012675797 +0000
+@@ -1,6 +1,6 @@
+ # SECTION 1B v3.6 AMENDMENTS — DAMODARAN INTEGRATION
+ 
+-> **ACTIVE — not a superseded draft.** This file is the Damodaran amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11 (Amendments 11-16). The version number tags this amendment layer, not a competing copy of the Master Prompt; the "v3.6" here is independent of the Master Prompt v3.6. Do not archive or delete it. Read it on top of the v3.3 Amendments and the v3.5.1 Reconciliation, and below the v3.7 Amendments and the v3.8 Amendments; where they overlap, the later layer governs the items it names. NOTE: stage 11 does not yet inject this file (see the pipeline-sync audit); wiring is a pending operator decision.
++> **ACTIVE — not a superseded draft.** This file is the Damodaran amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11 (Amendments 11-16). The version number tags this amendment layer, not a competing copy of the Master Prompt; the "v3.6" here is independent of the Master Prompt v3.6. Do not archive or delete it. Read it on top of the v3.3 Amendments and the v3.5.1 Reconciliation, and below the v3.7, v3.8, v3.9 and v3.10 Amendments; where they overlap, the later layer governs the items it names. NOTE: stage 11 reads this layer through the section-1b skill; verifier C reads this file directly.
+ 
+ *Version 3.6 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. This document layers on top of Section 1B v3.3 (Four-Pillar Framework), the v3.3 Amendments (1-8, 4.1-4.5), and the v3.5.1 Reconciliation (consolidated Amendment 9, Routes A and B). It does not modify any prior file in place. Where it supersedes an earlier amendment, it says so and the earlier text stays in its file for history, banner-marked. Stage 11 reads this alongside the earlier Section 1B files; where they overlap, v3.6 governs the items named here.*
+ 
+@@ -68,7 +68,7 @@
+ | Modest | Fades to industry growth by Year 3 |
+ | None | Fades immediately (industry growth from Year 1) |
+ 
+-"Fades" means the growth rate steps down toward industry growth across the stated horizon, not that growth stops. The projection must show the step-down explicitly, year by year. This interacts with the projection-horizon rule in Master v3.5 Role 1: the model runs to Year 5 even on a three-year hold, because the Year 3 buyer pays for Years 4 and 5, and the fade horizon is what makes the Year 4 and Year 5 numbers honest. A name classified None with no credible Year 4 to Year 5 story takes the exit-multiple haircut named in Master v3.5.
++"Fades" means the growth rate steps down toward industry growth across the stated horizon, not that growth stops. The projection must show the step-down explicitly, year by year. This interacts with the projection-horizon rule in Master Role 1 (since v3.5; now v3.7, and Section 1B v3.8 Amendment 18.0): the model runs to Year 5 even on a three-year hold, because the Year 3 buyer pays for Years 4 and 5, and the fade horizon is what makes the Year 4 and Year 5 numbers honest. A name classified None with no credible Year 4 to Year 5 story takes the exit-multiple haircut named in Master v3.5.
+ 
+ ---
+ 
+@@ -98,7 +98,7 @@
+ 
+ - **Single-credit stays supreme.** Amendment 4 (ROCE recovery credited in Pillar 1 or the Strategic Premium, never both) and the v3.5.1 route selection (Route A operational or Route B pre-cycle, never both) are unchanged. Amendment 12's fixes are the same discipline applied to the r table. Amendment 13's complexity charge lives in r alone for the same reason.
+ - **The sector cap is still absolute.** Amendments 11, 14, 15, and 16 all defer to it. Nothing here raises a cap.
+-- **FTTCP v2.0 is the sole source of the forward verdicts and the Part B outputs** that Amendments 14 (via the EM classification path into projections) and 16 (via Module B2) rely on. Role 1 consumes them and does not recompute them.
++- **FTTCP (v2.3) is the sole source of the forward verdicts and the Part B outputs** that Amendments 14 (via the EM classification path into projections) and 16 (via Module B2) rely on. Role 1 consumes them and does not recompute them.
+ - **The RRM formula, bounds, and base r are unchanged.** Amendments 12 and 13 change only which adjustments enter r, not how RRM maps r to a multiplier.
+ 
+ ## VERSION HISTORY
+diff --git a/frameworks/Section_1B_v3_7_Amendments.md b/frameworks/Section_1B_v3_7_Amendments.md
+--- a/frameworks/Section_1B_v3_7_Amendments.md	2026-10-03 04:52:55.238478625 +0000
++++ b/frameworks/Section_1B_v3_7_Amendments.md	2026-10-03 04:53:08.012853803 +0000
+@@ -1,6 +1,6 @@
+ # SECTION 1B v3.7 AMENDMENTS — COMMODITY CONVERTER CYCLE INTEGRATION
+ 
+-*Version 3.7 | 20 August 2026 | Commodity converter cycle integration, operator directive 20-Aug-2026. Layers on top of Section 1B v3.3 + v3.3 Amendments + v3.5.1 + v3.6. It does not modify any prior file in place. Where they overlap on items named here, v3.7 governs. Stage 11 reads this alongside the earlier Section 1B files and the later v3.8 Amendments (which govern the items they name where the layers overlap). Amendments number continuing from v3.6 (whose last amendment is 16).*
++*Version 3.7 | 20 August 2026 | Commodity converter cycle integration, operator directive 20-Aug-2026. Layers on top of Section 1B v3.3 + v3.3 Amendments + v3.5.1 + v3.6. It does not modify any prior file in place. Where they overlap on items named here, v3.7 governs. Stage 11 reads this alongside the earlier Section 1B files and the later v3.8, v3.9 and v3.10 Amendments (which govern the items they name where the layers overlap). Amendments number continuing from v3.6 (whose last amendment is 16).*
+ 
+ ---
+ 
+diff --git a/frameworks/Section_1B_v3_8_Amendments.md b/frameworks/Section_1B_v3_8_Amendments.md
+--- a/frameworks/Section_1B_v3_8_Amendments.md	2026-10-03 04:52:55.248999263 +0000
++++ b/frameworks/Section_1B_v3_8_Amendments.md	2026-10-03 04:53:41.133503925 +0000
+@@ -8,7 +8,7 @@
+ 
+ `[v3.8: projection horizon = hold + 1, exit-basis symmetry, Option Resolution Calendar, exit-state pricing for within-hold options, re-dated carry for beyond-hold options, transition dual-display, and a Role 3 standing question — operator directive 23-Aug-2026, arising from the PERMAGNET v3 valuation walkthrough]`
+ 
+-**18.0 Projection horizon = hold + 1 (mandatory).** Every Role 1 Section 2 projection table runs to Year 4 at minimum (Year 5 preferred, consistent with Master v3.6's existing runway language: the Year-3 buyer pays for Years 4 and 5). Year-4 revenue, margin, PAT and EPS are explicit committed rows in every case (bear/base/bull), built from the same fade machinery as Years 1-3 (Amendment 14 fade-to-industry applies; where the fade rule requires an industry growth anchor that the corpus does not hold, the anchor is a NAMED assumption in the table, not a silent one). "NOT PROJECTED" for Year 4 is no longer an acceptable gap in a completed Role 1; it is REWORK.
++**18.0 Projection horizon = hold + 1 (mandatory).** Every Role 1 Section 2 projection table runs to Year 4 at minimum (Year 5 preferred, consistent with the Master's existing runway language (since v3.5): the Year-3 buyer pays for Years 4 and 5). Year-4 revenue, margin, PAT and EPS are explicit committed rows in every case (bear/base/bull), built from the same fade machinery as Years 1-3 (Amendment 14 fade-to-industry applies; where the fade rule requires an industry growth anchor that the corpus does not hold, the anchor is a NAMED assumption in the table, not a silent one). "NOT PROJECTED" for Year 4 is no longer an acceptable gap in a completed Role 1; it is REWORK.
+ 
+ **18.1 Exit-basis symmetry (one basis, both ends).** The exit price at Year N applies the destination PE to the SAME earnings basis the entry used:
+ - Entry basis one-year-forward → exit = destination PE × Year N+1 EPS.
+@@ -31,7 +31,7 @@
+ 
+ **18.4 Exit carry for beyond-hold options.** Options classified BEYOND-HOLD remain options at the exit, with two changes from the today-value treatment: (a) PV re-dated from Year N (not from today) to the fructification window; (b) probability stated as CONDITIONAL on what has resolved by Year N (e.g., a full-plan option conditional on the modest phases having delivered) — the conditional probability is an operator input at the gate, defaulting to the unconditional input only where no within-hold dependency exists, with the dependency named either way.
+ 
+-**18.5 Today-value machinery unchanged.** Amendment 18 changes the EXIT construction only. Today's fair value continues to carry option slices as probability-weighted, PV-discounted expected values (they are genuinely unresolved today). Nothing in 18.0-18.4 alters Section 1B pillar math, destination PE derivation, or the entry-zone formula (entry = exit-consistent fair value ÷ 1.25^N, MoS per evidence scale).
++**18.5 Today-value machinery unchanged.** Amendment 18 changes the EXIT construction only. Today's fair value continues to carry option slices as probability-weighted, PV-discounted expected values (they are genuinely unresolved today). Nothing in 18.0-18.4 alters Section 1B pillar math, destination PE derivation, or the entry-zone formula (entry = exit-consistent fair value ÷ (1 + tier hurdle)^N, Tier A 1.25, Tier B 1.20, MoS per evidence scale).
+ 
+ **18.6 Transition display (sunset after 5 names).** For the first five Role 1 runs under this amendment, the Section 4 exit table displays BOTH constructions — static-carry exit (old) and resolution-based exit (new) — with the per-share delta, so the operator sees the systematic effect before the old display retires. The resolution-based exit GOVERNS the verdict from the first run.
+ 
+@@ -64,6 +64,8 @@
+ 
+ ## AMENDMENT 20 — RELATIVE VALUATION CROSS-CHECK (STEP 1C)
+ 
++> **SUPERSEDED by Section 1B v3.9 Amendment 20 (reissued 07-Sep-2026), which governs Step 1C in full. Kept for history; do not apply this text.**
++
+ `[v3.8 addendum, operator directive 26-Aug-2026, arising from the MANINDS run: the pillar destination PE printed 8.1-12.6x while live listed peers priced the same converter earnings at a ~30x quality cluster. The pillar math was correct on its own terms and sat far below where the market prices the peer set; the framework had no step that forced that gap to be seen and ruled on before the verdict card. Step 1C is that step.]`
+ 
+ **20.0 Placement.** Step 1C runs AFTER the pillar build (the Four-Pillar destination PE and the RRM track) and BEFORE the verdict card. It is a cross-check that can supersede the pillar destination as the governing exit multiple; it does not alter the pillar math, the entry-zone formula, MoS, or the today-value machinery.
+@@ -80,7 +82,7 @@
+ 
+ **20.6 Sector-cap annual review.** The Section 1B sector caps are reviewed annually against live peer medians. A cap more than one step below the live peer median for two consecutive reviews is flagged to the operator for a re-rule; it does not auto-change.
+ 
+-**20.7 What Step 1C does not do.** It does not manufacture a BUY: a relative multiple that lifts the fair value still passes through the FTTCP Hurdle, the upside/downside gate, the entry-conjunction, and every active flag. It changes the exit multiple, not the decision rules.
++**20.7 What Step 1C does not do.** It does not manufacture a BUY: a relative multiple that lifts the fair value still passes through the Section 1B Hurdle Ratio (a feasibility check, OR-2), the upside/downside gate, the entry-conjunction, and every active flag. It changes the exit multiple, not the decision rules.
+ 
+ ---
+ 
+diff --git a/frameworks/Section_1B_v3_9_Amendments.md b/frameworks/Section_1B_v3_9_Amendments.md
+--- a/frameworks/Section_1B_v3_9_Amendments.md	2026-10-03 04:52:55.259813694 +0000
++++ b/frameworks/Section_1B_v3_9_Amendments.md	2026-10-03 04:53:08.013818527 +0000
+@@ -51,7 +51,7 @@
+ - the Year-N exit price (v3.8 Amendment 18.1, on the entry-consistent basis; within-hold option slices still resolve per 18.3, beyond-hold per 18.4);
+ - the fair-value path and the one-number FV CAGR (v3.8 Amendment 19.0-19.1);
+ - the return-source label and its decomposition line (v3.8 Amendment 19.2-19.3);
+-- the entry zone (entry = exit-consistent fair value / 1.25^N, MoS per evidence scale).
++- the entry zone (entry = exit-consistent fair value / (1 + tier hurdle)^N, Tier A 1.25, Tier B 1.20, MoS per evidence scale).
+ 
+ The pillar-based fair values and entry zone are retained as the labelled cross-check. No entry zone is presented without the Amendment 19 FV CAGR and return-source classification recomputed on the governing multiple.
+ 
+diff --git a/prompts/00-orchestrator.md b/prompts/00-orchestrator.md
+--- a/prompts/00-orchestrator.md	2026-10-03 04:52:55.269957036 +0000
++++ b/prompts/00-orchestrator.md	2026-10-03 04:53:07.947372097 +0000
+@@ -1,7 +1,5 @@
+ # INFLECTION ALPHA PIPELINE ORCHESTRATOR v1.0
+-## Sonnet 5.5 Primary Pipeline with Claude Verification Layer
+-
+-Replaces the Gemini (Jaimini) upstream pipeline. One model family end to end.
++## Claude pipeline: Sonnet 5.5 evidence stages, Opus 5.5 valuation and synthesis, Haiku 4.5 assembly and Verifier A
+ Valuation authority: Master Project Prompt v3.7, Section 1B layer set (v3.3
+ Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name) (Four-Pillar
+ Framework, RRM dual-track, Hurdle Ratio), FTTCP v2.3. No other exit PE source
+@@ -434,15 +432,17 @@
+ | 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5.5 + web search | web + AR + B04 | `B09-tam` |
+ | 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
+ | 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus 5.5 | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
+-| 12a | Verifier A: numerical | verifier-a-numerical.md | Haiku 4.5 | all source PDFs + all reports | `B12a` |
++| 12a | Verifier A: numerical | 12-verifiers-pipeline.md (VERIFIER A) | Haiku 4.5 | all source PDFs + all reports | `B12a` |
+ | 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus 5.5 | 15 transcripts + B05 + B06 | `B12b` |
+ | 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus 5.5 | B01, B07, B11 + framework docs | `B12c` |
+ | 12d | Verifier D: peer coverage | verifier-d-peers.md | Sonnet 5.5 | peer transcripts + B06 | `B12d` |
+-| 13 | Synthesis | 13-synthesis-pipeline.md | Opus 5.5 | everything | final outputs |
++| 9b | Halt 1 dossier | 09b-halt1-dossier.md | Sonnet 5.5 | B00-B09 + verifier blocks | `B09b-dossier` |
++| 14 | Role 2 thesis | (agent file stage-14-thesis.md) | Opus 5.5 | B10, B11, deliberation record | `B14-thesis` |
++| 15 | Role 3 devil's advocate | (agent file stage-15-devil.md) | Opus 5.5 | B14 + all blocks | `B15-devil` |
+ 
+ Stages 1 and 2 may run in parallel. Stages 4, 5, 8, 9 may run in parallel
+-after stage 3. Stage 6 requires stage 5. Stage 7 requires stage 1. Stages
+-12a-12d run in parallel after stage 11. Stage 13 requires all.
++after stage 3. Stage 6 requires stage 5. Stage 7 requires stage 1. Verifiers A, B, D and the Gate 0 + Emerging Moat half of C run in phase 1
++after stage 9; C's valuation half runs in phase 3 after stage 11. Stage 13 requires all.
+ 
+ Chronology rule for stage 5: transcripts are passed oldest first and each
+ call is prefixed with an ordered list mapping filename to quarter. The stage
+@@ -647,7 +647,7 @@
+ fewer than 4 items is NOT APPLICABLE: it is dropped from `overall`, listed in
+ `not_applicable` with its counts, and reported to the operator as a count
+ rather than a percentage. One item must not move a confidence score by 25
+-points, and `overall: min of the four` let exactly that decide a verdict.
++points.
+ 
+ `redflag_coverage` runs on Verifier B's MATERIAL findings (CRITICAL + MAJOR),
+ never on the length of its list. Verifier B is asked for a thorough
+@@ -681,16 +681,18 @@
+    GROWTH-INDUCED determination. No STOP verdict exists.
+ 3. `verifier-summary.md`: all four verifier findings tables, sorted by
+    severity, each finding with location anchor.
+-4. `fttcp-handoff.md`: the self-sufficient input package for manual FTTCP
+-   v1.2 deliberation in a separate Opus session with no source PDFs. The
++4. `fttcp-handoff.md`: the archive dossier of the run, self-sufficient for
++   a reader with no source PDFs (the FTTCP v2.3 deliberation already ran in
++   phase 2 via /fttcp). The
+    four transition data series, catalyst inventory, all flags with full
+    underlying findings, credibility grade with the guidance-vs-delivery
+    table, the scorecards and market sizing, valuation pillar detail from
+    both tracks if stage 11 ran, and a gaps ledger. Density over brevity;
+    every figure carries its source anchor.
+ 
+-Plus one Notion save to COMPANIES MASTER (data_source_id
+-345bb2b9-d3ab-8032-9b46-000ba16ab827) per Notion_Save_Instructions.docx:
++Plus one Notion save PAYLOAD for COMPANIES MASTER (data_source_id
++345bb2b9-d3ab-8032-9b46-000ba16ab827), written to
++outputs/final/notion-payload.md; claude.ai executes the write:
+ fetch live page first if the company exists; never overwrite Decision
+ Status from a pipeline run; append the run summary and link the Drive
+ folder.
+@@ -704,7 +706,7 @@
+   handoff block. Re-emit the complete output ending with the block."
+   Second failure: run halts, stage named.
+ - API error / timeout: 3 retries, exponential backoff (30s, 120s, 480s).
+-- stop_reason refusal: log, retry once on Opus 4.8, then halt with reason.
++- stop_reason refusal: log, retry once on the stage's own frontmatter model, then halt with reason.
+ - Web-search stages (8, 9): if search quota or tool errors force skips,
+   stage completes with searches_skipped[] populated; B08/B09 status =
+   partial; synthesis must mention partial status in the verdict block.
+@@ -733,11 +735,10 @@
+   tables (B10) exist so downstream stages consume summaries, not archives.
+ - Never lets any stage assume a number from conversation memory: stage 10
+   is the only assembler of valuation inputs, and it must anchor every value.
+-- Never lets any exit PE enter from outside the Section 1B layer set (v3.3
++- Never lets any exit PE enter from outside the Section 1B layer set named at the top of this file.
+   Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name).
+-- Never conflates the Emerging Moat scan (stage 7) with FTTCP: FTTCP runs
+-  inside stage 11's framework inputs as final synthesis, per project
+-  taxonomy.
++- Never conflates the Emerging Moat scan (stage 7) with FTTCP: FTTCP is the
++  phase 2 deliberation (/fttcp), a separate analysis with a separate name.
+ - Never treats low institutional ownership as a risk. UA qualifiers are
+   checked in stage 11 exactly per Amendment 3 ordering:
+   min(Raw × 1.25, Sector Cap).
+diff --git a/prompts/01-gate-0-pipeline.md b/prompts/01-gate-0-pipeline.md
+--- a/prompts/01-gate-0-pipeline.md	2026-10-03 04:52:55.280034816 +0000
++++ b/prompts/01-gate-0-pipeline.md	2026-10-03 04:53:07.947907221 +0000
+@@ -160,7 +160,7 @@
+ 
+ ## OUTPUT
+ 
+-Produce the full scorecard in the original dashboard format (all blocks,
++Produce the full scorecard as a dashboard (all blocks,
+ all line items with anchors, moat profile bars, classification box,
+ strongest/weakest block, decision line). Then end with exactly this
+ fenced YAML block:
+diff --git a/prompts/02-notes-triple-pass-pipeline.md b/prompts/02-notes-triple-pass-pipeline.md
+--- a/prompts/02-notes-triple-pass-pipeline.md	2026-10-03 04:52:55.289841689 +0000
++++ b/prompts/02-notes-triple-pass-pipeline.md	2026-10-03 04:53:07.948416341 +0000
+@@ -14,9 +14,10 @@
+ 
+ PIPELINE RULES:
+ - Complete the entire pass in one response. No stops, no confirmation.
+-- Go through EVERY SINGLE NOTE NUMBER from Note 1 to the last note. Do
+-  not skip any note, even if it looks routine.
+-- Extract exact numbers in ₹ Crores. Do not round.
++- Read every note from Note 1 to the last, routine ones included.
++- Extract exact numbers in the unit printed on the face of the document, and
++  name that unit in the anchor. Do not round and do not convert; stage 10
++  converts once.
+ - SOURCE ANCHORS: state the NOTE NUMBER and page for every finding, e.g.
+   (Note 27, p.187). The downstream verifier treats an unanchored finding
+   as unverified.
+diff --git a/prompts/03-ar-deep-dive-pipeline.md b/prompts/03-ar-deep-dive-pipeline.md
+--- a/prompts/03-ar-deep-dive-pipeline.md	2026-10-03 04:52:55.299849383 +0000
++++ b/prompts/03-ar-deep-dive-pipeline.md	2026-10-03 04:53:07.948594229 +0000
+@@ -19,7 +19,7 @@
+ 
+ 1. Execute ALL EIGHT PHASES sequentially in one response. Do not stop for
+    confirmation. Complete every phase fully before the next.
+-2. Do NOT summarize loosely. Exact numbers in ₹ Crores, exact policy
++2. Do NOT summarize loosely. Exact numbers in the unit printed in the source (named in the anchor), exact policy
+    language from notes, exact auditor remarks.
+ 3. SOURCE ANCHORS on every number and quote: (Auditor's Report p.__),
+    (CARO clause vii), (MD&A p.__), (Note __). The downstream verifier
+diff --git a/prompts/04-business-model-pipeline.md b/prompts/04-business-model-pipeline.md
+--- a/prompts/04-business-model-pipeline.md	2026-10-03 04:52:55.311982463 +0000
++++ b/prompts/04-business-model-pipeline.md	2026-10-03 04:53:07.948790149 +0000
+@@ -77,7 +77,7 @@
+ management with the answer that reassures and the answer that worries.
+ 
+ SECTION 5: ONE-PAGE BUSINESS MODEL SUMMARY CARD
+-The full card in the original box format, every field filled.
++A one-page summary card in a box layout, every field filled (fields: the Section 1 summary table plus primary valuation method and top 5 must-track metrics).
+ 
+ ## OUTPUT
+ 
+diff --git a/prompts/05-concall-pipeline.md b/prompts/05-concall-pipeline.md
+--- a/prompts/05-concall-pipeline.md	2026-10-03 04:52:55.323049257 +0000
++++ b/prompts/05-concall-pipeline.md	2026-10-03 04:53:07.948966131 +0000
+@@ -2,7 +2,7 @@
+ # Model: Sonnet 5.5 | Emits: B05-concall
+ # Role in framework: this stage produces the Role 5 credibility grade
+ # (A/B/C/D) that is the SOLE source for the 4D probability weights in
+-# the Role 1 valuation (per Master Prompt v3.3). Grade it carefully.
++# the Role 1 valuation (per Master Prompt v3.7 Section 4D, as amended by Section 1B v3.10 Amendment 26.4).
+ # Cache boundary: everything above INJECTED INPUTS is stable.
+ 
+ You are an expert Indian equity research analyst. Three earnings
+diff --git a/prompts/06-peer-concall-pipeline.md b/prompts/06-peer-concall-pipeline.md
+--- a/prompts/06-peer-concall-pipeline.md	2026-10-03 04:52:55.334036994 +0000
++++ b/prompts/06-peer-concall-pipeline.md	2026-10-03 04:53:07.949437977 +0000
+@@ -1,4 +1,4 @@
+-# STAGE 6: PEER CONCALL VERIFICATION (PIPELINE MODE, NEW PROMPT)
++# STAGE 6: PEER CONCALL VERIFICATION (PIPELINE MODE)
+ # Model: Sonnet 5.5 | Emits: B06-peers
+ # Consumes: up to 12 peer concall transcripts + B05.peer_questions
+ # Protocol version: 1.1 (was unversioned = 1.0)
+@@ -97,7 +97,7 @@
+ - Overall: does the peer set support, complicate, or undercut the main
+   company's narrative? One short paragraph, symmetric treatment.
+ 
+-## PART 5: CROSS-PEER HYPOTHESIS (mandatory closing step)
++cross_peer_hypothesis: ""     # Part 5 hypothesis, or the exact no-hypothesis line
+ 
+ After completing the triangulation verdict, state one novel hypothesis about the
+ sector, business model, or competitive dynamic that emerges from the combined
+diff --git a/prompts/07-emerging-moat-pipeline.md b/prompts/07-emerging-moat-pipeline.md
+--- a/prompts/07-emerging-moat-pipeline.md	2026-10-03 04:52:55.344260716 +0000
++++ b/prompts/07-emerging-moat-pipeline.md	2026-10-03 04:53:07.949980891 +0000
+@@ -2,13 +2,13 @@
+ # Model: Sonnet 5.5 | Emits: B07-emoat
+ # Taxonomy note: this is the "Emerging Competitive Advantages" analysis
+ # (categories A1 through R1, adjusted score on a ~0-90 scale). It is NOT
+-# FTTCP. FTTCP is a separate, later synthesis that runs inside the
+-# valuation stage's framework inputs. Never conflate the two.
++# FTTCP. FTTCP is the separate phase 2 deliberation (/fttcp), run before
++# valuation. Never conflate the two.
+ # Consumes: AR + 3 main concalls + investor presentation + B01-gate0
+ # 20-Aug-2026: FAMILY I added — I1 TALENT ASYMMETRY (Category 21) and I2
+ # CANNIBALIZATION BARRIER (Category 22), operator directive 20-Aug-2026.
+ # Scored rows 21 -> 23; adjusted-score ceiling 84 -> 92 (~0-80 -> ~0-90).
+-# THRESHOLDS RULING (operator, 20-Aug-2026): thresholds are ABSOLUTE on
++# THRESHOLDS RULING (operator, 20-Aug-2026): see Section 5.
+ # the 22-category scan — the >=40/25-39/12-24 bands and the "EM >=25" UA
+ # qualifier stand unchanged, no rescale. I1/I2 score 0 for typical
+ # companies (both require documented structural evidence); a threshold
+diff --git a/prompts/08-promoter-pipeline.md b/prompts/08-promoter-pipeline.md
+--- a/prompts/08-promoter-pipeline.md	2026-10-03 04:52:55.355335881 +0000
++++ b/prompts/08-promoter-pipeline.md	2026-10-03 04:53:07.950258782 +0000
+@@ -43,7 +43,7 @@
+ before the current company: founder vs inheritor, succession disputes,
+ prior ventures, unexplained gaps.
+ 
+-## SECTION 2: LEGAL & REGULATORY RECORD (most critical, search hardest)
++## SECTION 2: LEGAL & REGULATORY RECORD
+ 2A SEBI actions: adjudication orders, SAT appeals, insider trading,
+ manipulation, LODR non-compliance, market bans, consent orders (settled
+ without admitting guilt is itself a signal). 2B criminal cases: economic
+diff --git a/prompts/09-tam-pipeline.md b/prompts/09-tam-pipeline.md
+--- a/prompts/09-tam-pipeline.md	2026-10-03 04:52:55.367338306 +0000
++++ b/prompts/09-tam-pipeline.md	2026-10-03 04:53:07.950468747 +0000
+@@ -39,7 +39,7 @@
+ ## SECTION 1: MARKET DEFINITION
+ 1A precise boundaries: product scope, geographic scope, customer scope,
+ channel scope, price segment, explicit inclusions and exclusions. A
+-wrong definition makes every later number useless; spend effort here.
++wrong definition makes every later number useless.
+ 1B management's own TAM claim from the injected documents, with their
+ definition, the date, and a credibility read (broad / reasonable /
+ specific), held for comparison in Section 2.
+diff --git a/prompts/09b-halt1-dossier.md b/prompts/09b-halt1-dossier.md
+--- a/prompts/09b-halt1-dossier.md	2026-10-03 04:52:55.379988128 +0000
++++ b/prompts/09b-halt1-dossier.md	2026-10-03 04:53:07.951558903 +0000
+@@ -2,13 +2,13 @@
+ # Model: Sonnet 5.5 | Emits: B09b-dossier
+ # Runs LAST in PHASE 1 (/run-pipeline): after stage 9 and the verifiers,
+ # before the halt message. It is the Halt 1 deliverable the operator reads
+-# to decide KILL / SHALLOW WATCH / PROCEED.
++# to decide KILL / SHALLOW / PROCEED.
+ # ASSEMBLY ONLY: build from committed blocks (B01-B09) and the verifier
+ # outputs already in outputs/blocks/. No new research, no web claims, no
+ # re-analysis. Every claim traces to a block.
+ # NO VALUATION: no price, no exit PE, no fair value, no BUY/WATCHLIST/AVOID,
+ # no verdict-set language (PROCEED / REWORK / etc.) anywhere in this file.
+-# ONE SCOPED EXCEPTION: Section 2 Part B4 (the recognition gap) poses, as an
++# NO VALUATION: rule 4 below (one scoped exception, Section 2 Part B4).
+ # explicit OPEN QUESTION, whether the TO state looks already reflected in
+ # market pricing, and names the PE gap as the thing Stage 11 resolves. It
+ # states no number, no conclusion, no verdict. Nowhere else touches pricing.
+@@ -359,7 +359,7 @@
+ Corpus commit hash (for Section 6 annex question 10): {{CORPUS_COMMIT_HASH}}
+ 
+ ALL COMMITTED BLOCKS (B00 through B09 + verifier blocks B12a/B12b/B12c-
+-partial/B12d), inline:
++partial/B12d), as file paths under outputs/blocks/:
+ {{ALL_BLOCKS_YAML}}
+ 
+ STAGE REPORTS (for quote and cite retrieval only, never re-analysis):
+diff --git a/prompts/10-input-assembly-pipeline.md b/prompts/10-input-assembly-pipeline.md
+--- a/prompts/10-input-assembly-pipeline.md	2026-10-03 04:52:55.391303752 +0000
++++ b/prompts/10-input-assembly-pipeline.md	2026-10-03 04:53:07.951924735 +0000
+@@ -124,5 +124,5 @@
+ 
+ Manifest: {{MANIFEST_YAML}}
+ Blocks B01 through B09: {{ALL_BLOCKS_YAML}}
+-Results PDFs (3 quarters): {{RESULTS_EXTRACTS}}
++Results PDFs (paths, up to 3 most recent): {{RESULTS_PDF_PATHS}}
+ Rating PDF: {{RATING_EXTRACT}}
+diff --git a/prompts/11-valuation-pipeline.md b/prompts/11-valuation-pipeline.md
+--- a/prompts/11-valuation-pipeline.md	2026-10-03 04:52:55.401544180 +0000
++++ b/prompts/11-valuation-pipeline.md	2026-10-03 04:53:07.953073126 +0000
+@@ -96,8 +96,7 @@
+    [ESTIMATE, X1] because standalone statements do not yet exist, carry the tag
+    onto every leverage-, cash-, or ROCE-dependent cell it touches and note that
+    the cell re-runs when the filed number arrives. Emit one B11 YAML block per
+-   entity (entity name in the block). INDIAGLYCO discarded a run for valuing one
+-   consolidated entity against a three-entity dossier; this gate prevents it.
++   entity (entity name in the block).
+ 13. RECOGNITION GAP RESOLUTION. The signed mental model's RECOGNITION GAP
+    (09b Section 2 Part B4) is an OPEN QUESTION that resolves HERE, and it
+    equals the PE-gap check: does the current PE already sit at the TO rung's
+@@ -213,7 +212,8 @@
+   readings (structural 0.65x, no offset; growth-induced 0.80x with its
+   offset), name the observation that separates them and its confirm-by
+   date, state which reading you value on and why (section-1b open ruling
+-  OR-5), and cap the run at PROCEED WITH CAVEATS with the missing evidence
++  OR-5), and record in flags[] (FLAG-CASH, INDETERMINATE) that the gate
++  verdict caps at PROCEED WITH CAVEATS, with the missing evidence
+   named. State the most evidenced reading, not a shaded one (the
+   Amendment 26.3 principle).
+ - Pillar 3 uses B10's EM score, catalyst proximity, and evidence mix.
+@@ -321,7 +321,7 @@
+ ## INJECTED INPUTS (stable prefix = Master Role 1 + preloaded skill; table = variable)
+ 
+ FRAMEWORK:
+-{{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}
++{{MASTER_PROJECT_PROMPT_ROLE1_SECTIONS}}  (file Master_Project_Prompt_v3_6.md, content v3.7)
+ Section 1B and FTTCP: the preloaded section-1b skill (no file injection).
+ 
+ PRECEDENCE: the skill carries the resolved Section 1B layer order (v3.10 >
+diff --git a/prompts/12-verifiers-pipeline.md b/prompts/12-verifiers-pipeline.md
+--- a/prompts/12-verifiers-pipeline.md	2026-10-03 04:52:55.411619437 +0000
++++ b/prompts/12-verifiers-pipeline.md	2026-10-03 04:53:07.955235052 +0000
+@@ -1,5 +1,6 @@
+ # STAGE 12: VERIFIER LAYER, FOUR PARALLEL SUB-AGENTS (PIPELINE MODE)
+-# Four independent calls, fresh context each, run in parallel after B11.
++# Four independent calls, fresh context each. Phase 1: A, B, D and C's
++# Gate 0 + Emerging Moat half, after stage 9. Phase 3: C's valuation half, after B11.
+ # STRUCTURAL RULE: no verifier sees any other verifier's output, and no
+ # verifier sees the reasoning that produced the upstream reports; each
+ # sees only the artifacts named in its section plus its rubric. The
+@@ -124,8 +125,8 @@
+ # Model: Opus 5.5 | Emits: B12b
+ ═══════════════════════════════════════════════════════════════════
+ 
+-You are an independent concall auditor. You receive 15 raw transcripts
+-(3 main company, 12 peers) and the pipeline's concall analyses (B05,
++You are an independent concall auditor. You receive the raw transcripts
++(up to 3 main company, up to 12 peers) and the pipeline's concall analyses (B05,
+ B06 reports). Read the transcripts YOURSELF, fresh, then compare.
+ 
+ RULES:
+@@ -204,9 +205,9 @@
+ WRITTEN? The rule sources you receive depend on your invocation scope,
+ named in the task message:
+ - ALWAYS (both scopes): the Gate 0 rules (prompts/01-gate-0-pipeline.md)
+-  and the 20-category scan rules (prompts/07-emerging-moat-pipeline.md),
++  and the 22-category scan rules (prompts/07-emerging-moat-pipeline.md),
+   for the B01 and B07 audits. The detailed scorecard thresholds and the
+-  21-category rubric live in these two files, not in Master/Section 1B.
++  22-category rubric (23 scored rows with R1) live in these two files, not in Master/Section 1B.
+ - VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
+   valuation framework docs — Master Prompt v3.7 Role 1, the Section 1B
+   layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10;
+@@ -296,8 +297,9 @@
+    where the dossier must exist for the run; the phase-1 structural check
+    is mechanical, inside run-pipeline step 6b. Check:
+    outputs/reports/09b-understanding-dossier.md exists and contains all
+-   five sections in order; Section 1 ends with exactly one verdict line
+-   (CORPUS CURRENT or CORPUS GAPPED); Section 2 is marked DRAFT - PENDING
++   six sections in order (Section 6 annex ends with the corpus commit hash
++   line); Section 1 ends with exactly one verdict line (CORPUS CURRENT,
++   CORPUS GAPPED, or CORPUS GAPPED-FRESHNESS); Section 2 is marked DRAFT - PENDING
+    OPERATOR SIGN-OFF; Section 4c fragility fields present in the B09b YAML;
+    Section 5 has 14-15 numbered points and zero valuation/price/verdict
+    vocabulary. Absent or malformed at finalize = hard REWORK for stage 09b.
+@@ -326,7 +328,7 @@
+ 14. Ledger and decomposition GATES (v3.9 A22/A24), both hard:
+    (a) NO CREDIT OFF-LEDGER — every catalyst credited in
+    price_decomposition T2 or T3 has a matching ledger row. A catalyst
+-   credited in the price with no ledger row HALTS stage 11 (an expectation
++   credited in the price with no ledger row forces REWORK for stage 11 (an expectation
+    not on the ledger may not be credited, Amendment 22): CRITICAL, REWORK
+    for stage 11.
+    (b) RESIDUAL STARTER CAP — where price_decomposition.residual.pct_cmp
+@@ -360,7 +362,7 @@
+ emoat: {rules_checked: 0, fails: []}
+ valuation: {rules_checked: 0, fails: []}
+ expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # rules 13-14; any fail = REWORK stage 11
+-business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # rule 7; any fail = REWORK stage 13
++(same line, comment "# rule 9; any fail = REWORK stage 13")
+ recomputed_destination_pe: ""  # blank if concur; else both values
+ recomputed_decision: ""        # blank if concur
+ findings: []
+diff --git a/prompts/13-synthesis-pipeline.md b/prompts/13-synthesis-pipeline.md
+--- a/prompts/13-synthesis-pipeline.md	2026-10-03 04:52:55.422776778 +0000
++++ b/prompts/13-synthesis-pipeline.md	2026-10-03 04:53:07.956900635 +0000
+@@ -99,8 +99,8 @@
+ (from the FTTCP transition read), UGLINESS (ARTIFACT-OF-CLIMB or
+ STRUCTURAL-FEATURE, from the signed model / 09b Part B5), and the RECOGNITION
+ GAP open or closed (resolved at Stage 11, the PE-gap read). State the posture
+-in one line (RE-RATING LIVE / EARNINGS-ONLY / RESEARCH-WATCH / VALUE-TRAP RISK
+-/ CONTRADICTION / AVOID). It informs the value-trap read and the WATCH
++in one line (RE-RATING LIVE / EARNINGS-ONLY / RESEARCH-WATCH / PRICED
++NARRATIVE (TRAP) / VALUE-TRAP RISK / CONTRADICTION / AVOID). It informs the value-trap read and the WATCH
+ classification below; it never replaces the five-verdict set and never sets a
+ price. A VALUE-TRAP RISK or CONTRADICTION posture is surfaced in the
+ recommendation body, not buried.
+@@ -156,7 +156,7 @@
+   versus the lowest tested price since listing, both as percentages,
+   computed from the screening CSVs where price history exists (state
+   "price history unavailable" otherwise). If the zone top sits >20% below
+-  the lowest tested price since listing, print: "MARKET-UNLIKELY ZONE —
++  the lowest tested price since listing, print: "MARKET-UNLIKELY ZONE:
+   reaches entry only via thesis-relevant shock or broad de-rating;
+   classify DEEP WATCH not actionable WATCHLIST, or route to the trading
+   book." If a Tier B hurdle would move the zone to within 15% of tested
+@@ -202,8 +202,8 @@
+ 
+ ## DELIVERABLE 4: fttcp-handoff.md
+ 
+-Purpose: a self-sufficient input package for manual FTTCP v2.3
+-deliberation in a separate Opus session that will NOT have the source
++Purpose: the run's archive dossier, self-sufficient for a reader that will
++NOT have the source
+ PDFs. That session sees only this file, so it must carry every figure,
+ quote, and finding the deliberation needs. Density over brevity: this
+ file is consumed by a model, not skimmed by a human. Include rather than
+@@ -292,8 +292,8 @@
+ 
+ ## NOTION SAVE PAYLOAD
+ 
+-After the three files, emit a notion_save block the orchestrator uses
+-per Notion_Save_Instructions: page title, THEN the BUSINESS UNDERSTANDING
++After the four files, emit a notion_save block for claude.ai to execute
++(the pipeline never writes): page title, THEN the BUSINESS UNDERSTANDING
+ NARRATIVE (the same section defined above, positioned before the verdict
+ card in the saved page so the operator reads the understanding first), then
+ the run summary (headline + verdict line + decision + entry range), the
+@@ -368,7 +368,9 @@
+ ## INJECTED INPUTS (variable, below cache boundary)
+ 
+ Manifest: {{MANIFEST_YAML}}
+-All blocks B01 through B12d: {{ALL_BLOCKS_YAML}}
++All blocks B01 through B15 (including B09b, B14-thesis, B15-devil), as paths: {{ALL_BLOCK_PATHS}}
++FTTCP deliberation record: {{FTTCP_DELIBERATION_PATH}}
++Signed Mental Model (companies/<TICKER>.md): {{COMPANY_MEMORY_PATH}}
+ Confidence delta (computed by orchestrator): {{CONFIDENCE_DELTA}}
+ Full stage reports (for quote retrieval only, never re-analysis):
+ {{ALL_REPORTS}}
+diff --git a/prompts/quarterly-00-orchestrator.md b/prompts/quarterly-00-orchestrator.md
+--- a/prompts/quarterly-00-orchestrator.md	2026-10-03 04:52:55.434898331 +0000
++++ b/prompts/quarterly-00-orchestrator.md	2026-10-03 04:53:07.958932480 +0000
+@@ -226,7 +226,7 @@
+    This row is the document-review baseline, the same discipline the main
+    pipeline ledger keeps.
+ 
+-7. COMMIT the run folder (`work/` files) with message
++7. COMMIT the run folder (`extracted/`, `work/`, and `session-cost.md`) with `git commit -q -m "quarterly review: <ticker> <quarter>"`. End the report with the commit hash and `git log -1 --stat`. Report
+    "quarterly review: <ticker> <quarter>" and report to the user the A5
+    verdict, the count-reconciliation line (N notes / N turns / N slides, all
+    reviewed), the top forensic findings, and the working-file paths. ALSO
+@@ -268,7 +268,7 @@
+ 2. Line-number citation or it did not happen. Every finding, number, and quote
+    carries its line number (or turn / slide number).
+ 3. Zero-value lines are data. Never drop a nil row from an extraction table.
+-4. The text layer is not trusted for image-heavy pages. OCR fallback is
++4. Text layer first (A1 TEXT-LAYER GATE). A document with a text layer is extracted text-only. OCR runs only on a no-text-layer scan, or on a logged zero-character page that holds a data-bearing figure.
+    mandatory when the per-page character test fails.
+ 5. Standalone AND consolidated, always both. The gap is a first-class metric.
+ 6. Auditor paragraphs are read verbatim and diffed against the prior quarter,
+@@ -302,7 +302,7 @@
+   is copied twice across the working files. COMPLETENESS GATE: every A1 row ID
+   must be referenced by at least one of A2-A5. An orphaned ID (in the structured
+   file, cited by none) fails the run and is reported.
+-- analyst_note handoff (bounded prose). Every agent's YAML block carries an
++- analyst_note handoff (bounded prose). The A2-A5 YAML blocks carry an
+   `analyst_note` field, <=200 words, strict cap. Reasoning that a downstream
+   stage cannot reconstruct from the structured fields travels there; everything
+   else stays structured. It keeps free prose from leaking into the tables and
+diff --git a/prompts/quarterly-a1-extractor.md b/prompts/quarterly-a1-extractor.md
+--- a/prompts/quarterly-a1-extractor.md	2026-10-03 04:52:55.446806076 +0000
++++ b/prompts/quarterly-a1-extractor.md	2026-10-03 04:53:07.959457588 +0000
+@@ -6,7 +6,7 @@
+ touches the source document. You convert one input document into line-numbered
+ plain text with layout preserved, PROVE the extraction is complete, and produce
+ one structured file of every claim in the document with its page number. You do
+-NOT interpret. You do NOT summarise. You do NOT form a view. A downstream agent
++not interpret, summarise, or form a view. A downstream agent
+ that cannot find a number at the line you extracted will treat that number as
+ nonexistent, so your extraction is the evidence spine for the entire review.
+ 
+diff --git a/prompts/quarterly-a2-enumerator.md b/prompts/quarterly-a2-enumerator.md
+--- a/prompts/quarterly-a2-enumerator.md	2026-10-03 04:52:55.458010670 +0000
++++ b/prompts/quarterly-a2-enumerator.md	2026-10-03 04:53:07.959894499 +0000
+@@ -57,7 +57,7 @@
+ 1. Every numbered note. Grep the notes section
+    (`grep -n -E "^\s*[0-9]+\.\s" <extract>`) PLUS a manual sweep for
+    unnumbered notes and footnotes (asterisks, daggers, "Note:" prefixes
+-   below tables). Record: note number, line number, first 15 words.
++   below tables). Record: note number and its structured row ID (the ID carries the line; do not re-copy note text).
+ 2. Every line item in every financial table, INCLUDING items that are zero,
+    nil, or dash in ALL periods. Zero-value standing items get `ZERO_STANDING`
+    — they are template signals (the line exists because a transaction of that
+@@ -82,7 +82,7 @@
+ ## ENUMERATE — CONCALL TRANSCRIPT
+ 1. Every participant with designation, both sides (management and analyst).
+    Note absence of the promoter / CMD on a substantive call (`MGMT_ABSENCE`).
+-2. Every speaker turn, numbered sequentially, with speaker and first 10 words.
++2. Every speaker turn, numbered sequentially, with speaker and its structured row ID (no re-copied text).
+    This makes "60% of effort on Q&A" auditable by turn number.
+ 3. Every question, as a separate ledger: analyst name, firm, topic, turn
+    number. Repeated questions across analysts get `REPEAT_QUESTION`.
+diff --git a/prompts/quarterly-a3-forensics.md b/prompts/quarterly-a3-forensics.md
+--- a/prompts/quarterly-a3-forensics.md	2026-10-03 04:52:55.469174483 +0000
++++ b/prompts/quarterly-a3-forensics.md	2026-10-03 04:53:07.960057295 +0000
+@@ -95,7 +95,7 @@
+ F10. SHARE COUNT AND DILUTION. Paid-up capital per period; any change traces
+ to a corporate action. Basic vs diluted EPS spread; a widening spread = new
+ dilutive instruments. Cross-check against known warrants / ESOPs from the
+-Notion thesis (provided by A4; here just flag the spread).
++Notion thesis (A4 runs that cross-check; here just flag the spread).
+ 
+ F11. RESERVES AND NET WORTH TIE-OUT. Other Equity + Paid-up = statutory net
+ worth. Reconcile against any third-party number in context (rating rationale,
+diff --git a/prompts/quarterly-a4-analyst.md b/prompts/quarterly-a4-analyst.md
+--- a/prompts/quarterly-a4-analyst.md	2026-10-03 04:52:55.480247150 +0000
++++ b/prompts/quarterly-a4-analyst.md	2026-10-03 04:53:07.960733076 +0000
+@@ -49,7 +49,7 @@
+   the entry zone, active tripwires, and the monitoring checklist. Stale memory
+   has previously framed exited positions as held; trust the passed Decision
+   Status, not your prior.
+-- The protocol files (Role 4, Role 5) and Master v3.7 for framework context.
++- The protocol file(s) your task message passes (Document Review, or Role 4 and/or Role 5). Master v3.7 is framework context by reference only; you never load it.
+ 
+ ## WHAT YOU PRODUCE (the full protocol output, MERGED)
+ Order: Role 4 (results) FIRST, Role 5 (concall) SECOND, presentation findings
+@@ -62,7 +62,7 @@
+ - Standalone-vs-consolidated gap as a first-class metric (from A3 F2).
+ - Thesis reconciliation against the passed Notion Decision Status.
+ - Pillar re-validation.
+-- The position-decision branch (protocol 8A, or 8A-W for warrant cases).
++- The position-decision branch (protocol 8A for held names, or 8A-W for watchlist / non-held names).
+ - The QUESTIONS FOR MANAGEMENT table: EVERY A3 finding classified
+   FORWARD-SIGNAL or AMBIGUOUS generates at least one question here. A finding
+   that produces no question and no monitoring item has not been processed.
+@@ -123,7 +123,7 @@
+   a3_findings_incorporated: []  # A3 finding ids
+ protocol_verdict: ""           # PROCEED | PROCEED WITH CAVEATS |
+                                # PROCEED WITH FLAGS | REWORK | INSUFFICIENT EVIDENCE
+-cash_conversion: ""            # structural | growth-induced | INDETERMINATE
++cash_conversion: ""            # structural | growth-induced | INDETERMINATE | INDETERMINATE-WITH-DIRECTION
+ decision_status_verified: ""   # the Notion status this review was framed against
+ position_branch: ""            # 8A | 8A-W | n/a
+ sc_gap_pat_pct: []             # standalone-vs-consolidated PAT gap per period
+diff --git a/prompts/quarterly-a5-adversary.md b/prompts/quarterly-a5-adversary.md
+--- a/prompts/quarterly-a5-adversary.md	2026-10-03 04:52:55.490172765 +0000
++++ b/prompts/quarterly-a5-adversary.md	2026-10-03 04:53:07.961124438 +0000
+@@ -26,7 +26,7 @@
+ 
+ 0. DELIVERABLE-COMPLETENESS AUDIT (run FIRST; a hard gate). The A4 review MUST
+    contain a PLAIN-LANGUAGE BRIEF with all four labelled parts present and
+-   non-empty: (1) a summary narrative (10-20 lines), (2) SECTOR intelligence,
++   non-empty: (1) a summary narrative (10-20 lines, or 200-400 words when the Document Review Protocol governs), (2) SECTOR intelligence,
+    (3) BUSINESS-MODEL intelligence, (4) COMPETITION intelligence. Confirm each
+    heading exists in the review and carries real content (not a placeholder).
+    If any of the four is missing or empty, verdict = INCOMPLETE, loop_back_to
+@@ -83,7 +83,7 @@
+ would change a number, a fact, or the verdict is never STYLE.
+ 
+ ## DISCIPLINE
+-1. Complete all three audits in one run. Never stop to ask.
++1. Complete all four audits (0-3) in one run. Never stop to ask.
+ 2. Every FAIL names the specific gap, its TYPE tag, and the agent to loop back
+    to (A2 for a missed enumeration, A3 for an unreviewed row / missed forensic,
+    A4 for an arithmetic error or an unincorporated surviving bear counter). A
+diff --git a/team_workflow_project_instructions.md b/team_workflow_project_instructions.md
+--- a/team_workflow_project_instructions.md	2026-10-03 04:52:55.500579487 +0000
++++ b/team_workflow_project_instructions.md	2026-10-03 04:53:07.939558534 +0000
+@@ -1,4 +1,4 @@
+-CLAUDE WEB × CLAUDE CODE — TEAM WORKFLOW v2.2 FOR COMPANY ANALYSIS
++In CLAUDE.md line 244, change "(v2, five hand-offs:" to "(v2.2, five hand-offs:".
+ 
+ Version 2.2, 29-Aug-2026. Supersedes v2.1 (same day), which superseded v2 (26-Aug-2026) and v1. Written after the INDIAGLYCO cycle, which took seventeen operator hand-offs and five versions of one file to reach a verdict. The target is five hand-offs per company. v2.1 added the Session close-out block; v2.2 reshapes it into a per-stage token ledger plus an end-of-run summary. Everything in v1, v2 and v2.1 that is not changed below still applies.
+ 
+@@ -26,9 +26,9 @@
+ 
+ Hand-off 2 — One dossier, written once (Claude web → operator → repo). Claude web runs the corpus verification gate, the mental-model stress test, the live-web research brief, the vertical work, source discovery, and the tracker writes, then writes `inputs/research/web-handover-dossier.md` ONCE, complete, including Section 6 Gate Pre-Rulings (below). No placeholder slots. If a fact is unavailable it is written as NOT DISCLOSED with the reason, not as a slot to fill later. The operator commits it. One commit, message `<ticker>: web handover dossier v1`.
+ 
+-Hand-off 3 — FTTCP per entity, one gate card per entity (Claude Code → operator). `/fttcp` reads the dossier's declared entity count. If the count is greater than one, it produces one Step 3 scorecard, one composite, one verdict and one P/E gate card PER ENTITY, and carries any consolidated figure only as a reconciliation line. Each gate card shows Claude Code's draft ruling and Claude web's pre-ruling from dossier Section 6 side by side, with both reasonings. The operator rules once, on that card.
++Hand-off 3 — FTTCP per entity, one gate card per entity (Claude Code → operator). `/fttcp` reads the dossier's declared entity count. If the count is greater than one, it produces one Step 3 scorecard, one composite, one verdict and one P/E BASE CARD PER ENTITY, and carries any consolidated figure only as a reconciliation line. Each gate card shows Claude Code's draft ruling and Claude web's pre-ruling from dossier Section 6 side by side, with both reasonings. The operator rules once, on that card.
+ 
+-Hand-off 4 — Operator ruling and verdict sentence (operator → Claude Code). The operator answers each gate card and gives the verdict sentence in her own words. Claude Code runs stages 14 and 15 and `/finalize`.
++Hand-off 4 — Operator ruling and verdict sentence (operator → Claude Code). The operator answers each gate card and gives the verdict sentence in her own words. Claude Code runs `/finalize`, which runs stages 10, 11, 14, 15, Verifier C's valuation half and the final synthesis.
+ 
+ Hand-off 5 — Read and save (Claude web, no ferry). Claude web clones the run branch, reads the final files directly, saves to Notion under the approval tiers below, and runs the publication check. Nothing is pasted.
+ 
+@@ -85,7 +85,7 @@
+ * End-of-run summary. Before the run PR opens, Claude Code appends a summary block: (a) the top five stages by total tokens, each with its share of the run total; (b) any mechanical stage (the ones DISPATCH routes to haiku: stage 0 validation, stage 10 assembly, verifier A) that ran on Opus, flagged `DOWNSHIFT FAILURE: <stage>`; (c) any stage whose total tokens exceed 1.5x the same stage in the previous run for this ticker, flagged `COST SPIKE: <stage>`; (d) an Operator snapshot reminder.
+ * Operator snapshot. The orchestrator cannot read the interactive `/cost` and `/usage` commands. The operator runs both and pastes the cache hit ratio and the loop totals into session-cost.md under an "Operator snapshot" heading.
+ 
+-A DOWNSHIFT FAILURE or a COST SPIKE also earns a one-line entry in LESSONS.md naming the stage.
++A DOWNSHIFT FAILURE or a COST SPIKE also earns a one-line entry in LESSONS_ARCHIVE.md naming the stage, plus a LESSONS.md OPEN ACTIONS line only while it stays open.
+ 
+ Gates the pipeline enforces (unchanged from v1, with two additions)
+ 
+@@ -104,4 +104,4 @@
+ * Report a commit without its hash.
+ * Ask the operator to approve a routine Notion note.
+ 
+-End of v2.2. Replace the project-knowledge copy of team_workflow_project_instructions.md with this file and ferry the implementation prompt to Claude Code.
++End of v2.2.
+diff --git a/verifiers/README.md b/verifiers/README.md
+--- a/verifiers/README.md	2026-10-03 04:52:55.510555441 +0000
++++ b/verifiers/README.md	2026-10-03 04:53:07.957099283 +0000
+@@ -8,7 +8,7 @@
+ 
+ ## `fttcp_crossgrade.py` — cross-family FTTCP grader
+ 
+-Grades the written FTTCP draft against the FTTCP v2.1 rubric using a model from a
++Grades the written FTTCP draft against the FTTCP v2.3 rubric (file FTTCP_v2_1_Consolidated.md) using a model from a
+ **different family** (Gemini by default; GPT-5.6 / OpenAI selectable).
+ 
+ **Grader-only, never a maker.** It does not re-run the analysis, produce a

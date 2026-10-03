@@ -1,6 +1,6 @@
 # MARKET-IMPLIED ASSUMPTIONS v1.0
 
-*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately AFTER FTTCP v2.0 and immediately BEFORE Role 1. Its output block is consumed by Role 1 Section 1 and by the valuation conclusion. Before we value the business, we state what the current price already assumes about it.*
+*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately AFTER FTTCP (v2.3) and immediately BEFORE Role 1. Its output block is consumed by Role 1 Section 1 and by the valuation conclusion. Before we value the business, we state what the current price already assumes about it.*
 
 ## WHY THIS SECTION EXISTS
 
@@ -27,9 +27,9 @@ The price CAGR identity over a three-year hold is:
 Rearranged to solve for the growth the price is paying for, hold the exit multiple at a reasonable level and set the target price CAGR to the operator's hurdle. Two readings are useful and both should be shown.
 
 - **Reading 1 — growth implied at a flat multiple.** Assume the exit PE equals the current PE (no re-rating, no de-rating). Then price CAGR equals EPS CAGR, and the market is paying the current price for whatever EPS CAGR would deliver the operator's required return. State that required EPS CAGR.
-- **Reading 2 — growth implied at a reasonable exit multiple.** Use a reasonable exit PE for the sector and quality (state which, and why it is reasonable; do not use a round-number default). Solve for the EPS CAGR that makes the current price fair, meaning the EPS CAGR at which buying today returns exactly the cost of capital rather than the 25 percent hurdle. That is the growth the price embeds.
+- **Reading 2 — growth implied at a reasonable exit multiple.** Use the Section 1B sector cap for the name, or the live Step 1C adjusted peer base where one exists, and state which. Section 1B is the sole exit-multiple authority: never pick a multiple outside it (operator ruling, 2026-10-03). Solve for the EPS CAGR that makes the current price fair, meaning the EPS CAGR at which buying today returns exactly the cost of capital rather than the 25 percent hurdle. That is the growth the price embeds.
 
-Show every input: CMP, operating EPS (from FTTCP Module B4), current PE, the exit PE used and its justification, and the solved EPS CAGR for each reading. Where a reasonable exit multiple cannot be set without Section 1B, say so and use the current PE reading as the primary figure, flagging that Role 1 will refine it.
+Show every input: CMP, operating EPS (from FTTCP Module B4), current PE, the exit PE used and its justification, and the solved EPS CAGR for each reading. Where the Section 1B multiple is not yet available, say so and use the flat-multiple reading as the primary figure, flagging that Role 1 will refine it.
 
 ## STEP 2 — THE MARKET'S IMPLIED STORY
 
@@ -65,7 +65,7 @@ Reproduce this block verbatim in the run folder. Role 1 Section 1 and the valuat
 ```
 MARKET-IMPLIED ASSUMPTIONS OUTPUT
 CMP: ₹___    Operating EPS (FTTCP B4): ₹___    Current PE: ___x
-Reasonable exit PE used: ___x (basis: ___)
+Exit PE used: ___x (basis: Section 1B sector cap / Step 1C peer base)
 Implied EPS CAGR at flat multiple: ___%
 Implied EPS CAGR at reasonable exit PE: ___%
 Market's implied story (4-6 sentences): [reproduced from Step 2]
@@ -78,7 +78,7 @@ The flag never halts a run and never sets the verdict on its own. It is one inpu
 
 ## WORKED-EXAMPLE PLACEHOLDER
 
-Illustrative arithmetic, numbers invented for shape only. CMP ₹500, operating EPS ₹20, current PE 25x. At a flat 25x exit, delivering the operator's 25 percent price hurdle needs 25 percent EPS CAGR, so the price at 25x is already asking for 25 percent compounding just to clear the hurdle. At a reasonable exit PE of 20x (a mild de-rating a maturing name should expect), the EPS CAGR that merely makes ₹500 fair at a 13.5 percent cost of capital is roughly 18 percent. If FTTCP evidence supports 22 percent funded growth with ROCE crossing the cost of capital in FY2, evidence sits above the fair-value growth and near the hurdle growth: a live but not generous opportunity, for Role 1 to size. If FTTCP evidence supported only 12 percent, the flag reads PRICED-WE-ARE-LATE.
+Illustrative arithmetic, numbers invented for shape only. CMP ₹500, operating EPS ₹20, current PE 25x. At a flat 25x exit, delivering the operator's 25 percent price hurdle needs 25 percent EPS CAGR, so the price at 25x is already asking for 25 percent compounding just to clear the hurdle. At an illustrative exit PE of 20x (shape only; a run takes its exit PE per Step 1), the EPS CAGR that merely makes ₹500 fair at a 13.5 percent cost of capital is roughly 18 percent. If FTTCP evidence supports 22 percent funded growth with ROCE crossing the cost of capital in FY2, evidence sits above the fair-value growth and near the hurdle growth: a live but not generous opportunity, for Role 1 to size. If FTTCP evidence supported only 12 percent, the flag reads PRICED-WE-ARE-LATE.
 
 ## VERSION HISTORY
 

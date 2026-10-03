@@ -96,7 +96,7 @@ These are usually at the start. Note their breadth — wider caveats often corre
 
 State whether the company is a **standard operating business** or a **lending business**. Lenders use the Step 2L guidance metrics and the lender-specific evasion patterns noted throughout.
 
-🛑 **STOP. Confirm Notion fetched, participants listed, structure noted, caveats logged, business type stated. Then proceed.**
+▶ **Checkpoint (no wait). Confirm Notion fetched, participants listed, structure noted, caveats logged, business type stated. Then continue; A5 audits coverage.**
 
 ## STEP 1 — OPENING REMARKS — CLAIMS INVENTORY (MANDATORY)
 
@@ -127,7 +127,7 @@ Extract every claim management makes in opening remarks into this structured tab
 - Which claims are entirely new vs reaffirmations of prior concalls?
 - Which prior commitments were quietly dropped (i.e., expected to appear but didn't)?
 - Are there any internal contradictions in the opening (e.g., "demand is robust" + "we are seeing pricing pressure")?
-🛑 **STOP. Show the claims inventory and the four diagnostics.**
+▶ **Checkpoint (no wait). Show the claims inventory and the four diagnostics. Then continue; the operator reviews it at the Step 8 position decision.**
 
 ## STEP 2 — FORWARD GUIDANCE EXTRACTION
 
@@ -181,7 +181,7 @@ For banks, NBFCs, MFIs, and HFCs, replace the Step 2 metric rows with:
 
 Credit cost guidance carries the same weight in the promise-vs-delivery tracker as revenue guidance does for standard businesses. A lender that stops guiding credit costs after previously guiding them = DROPPED, with the governance flag consequences of Step 3B.
 
-🛑 **STOP. Show the guidance table and diagnostics. This is the most critical artifact of the concall — be thorough.**
+▶ **Checkpoint (no wait). Show the guidance table and diagnostics. This is the most critical artifact of the concall. Then continue; the operator reviews it at the Step 8 position decision.**
 
 ## STEP 3 — PROMISE vs DELIVERY AUDIT
 
@@ -253,7 +253,7 @@ Pull the "Questions for Management" table from the previous Role 4 review. For e
 
 **Repeated evasion across multiple concalls of the same question is a governance signal — log it.**
 
-🛑 **STOP. Show 3A through 3E. The credibility ratio and the unanswered question pattern are major inputs to position decision.**
+▶ **Checkpoint (no wait). Show 3A through 3E. The credibility ratio and the unanswered question pattern are major inputs to position decision. Then continue; the operator reviews it at the Step 8 position decision.**
 
 ## STEP 4 — Q&A DECOMPOSITION
 
@@ -304,7 +304,7 @@ After the full inventory, identify the THREE Q&A exchanges that most affect the 
 - What management did NOT say
 - What this implies for our thesis
 - What follow-up question we would have asked
-🛑 **STOP. Show 4A, 4B, and 4C. This is the heart of the concall analysis.**
+▶ **Checkpoint (no wait). Show 4A, 4B, and 4C. This is the heart of the concall analysis. Then continue; the operator reviews it at the Step 8 position decision.**
 
 ## STEP 5 — NEW INFORMATION AUDIT
 
@@ -350,7 +350,7 @@ This is the inverse table — topics that should have been discussed but weren't
 - Silence on a topic prior concalls covered = AMBER (something has changed)
 - Silence on a thesis-relevant catalyst = AMBER to RED depending on materiality
 - Silence on a topic peers have discussed = RED if [Company] should be visibly impacted
-🛑 **STOP. Show 5A and 5B. Silence is signal — don't skip the second table.**
+▶ **Checkpoint (no wait). Show 5A and 5B. Silence is signal — don't skip the second table. Then continue; the operator reviews it at the Step 8 position decision.**
 
 ## STEP 6 — TONE & SPECIFICITY ANALYSIS
 
@@ -418,7 +418,7 @@ Combine the Specificity Ratio (6B) with the trailing-4-quarter Credibility Ratio
 
 The archetype label goes in the Concall Verdict block (Step 9) and is tracked across quarters. An archetype shift (e.g., MEASURED & CREDIBLE → OVERPROMISER after a big capex announcement) is itself a flag.
 
-🛑 **STOP. Show 6A through 6E.**
+▶ **Checkpoint (no wait). Show 6A through 6E. Then continue; A5 rechecks the arithmetic.**
 
 ## STEP 7 — CROSS-REFERENCE vs FILING AND PEER CONCALLS
 
@@ -465,7 +465,7 @@ If our prior research has identified credible third-party data sources (rating a
 | **Concall Claim** | **External Source** | **External Says** | **Alignment** |
 | --- | --- | --- | --- |
 
-🛑 **STOP. Show 7A, 7B, 7C.**
+▶ **Checkpoint (no wait). Show 7A, 7B, 7C. Then continue; the operator reviews it at the Step 8 position decision.**
 
 ## STEP 8 — UPDATE THESIS & POSITION DECISION
 
@@ -496,7 +496,7 @@ For every thesis-broken condition, state explicitly whether the concall has fire
 
 Concalls frequently provide forward inputs to the Four-Pillar framework:
 
-- Forward ROCE trajectory commentary → feeds the FTTCP ROCE forward verdict, which is the SOLE authority for Pillar 1 ROCE selection (per FTTCP v1.2)
+- Forward ROCE trajectory commentary → feeds the FTTCP ROCE forward verdict, which is the SOLE authority for Pillar 1 ROCE selection (per FTTCP v2.3, file FTTCP_v2_1_Consolidated.md)
 - Forward CFO/PAT commentary (especially WC structural vs growth-induced framing) → Pillar 2; for lenders, credit cost and asset quality commentary → Asset-Quality Multiplier
 - Forward EM developments (new patents, contracts, certifications) → Pillar 3
 - Strategic positioning changes → Strategic Premium (respect the single-credit rule: ROCE recovery credited in Pillar 1 OR Strategic Premium, never both)

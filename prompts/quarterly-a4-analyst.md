@@ -49,7 +49,7 @@ claim: read the claim in the structured file at that ID.
   the entry zone, active tripwires, and the monitoring checklist. Stale memory
   has previously framed exited positions as held; trust the passed Decision
   Status, not your prior.
-- The protocol files (Role 4, Role 5) and Master v3.7 for framework context.
+- The protocol file(s) your task message passes (Document Review, or Role 4 and/or Role 5). Master v3.7 is framework context by reference only; you never load it.
 
 ## WHAT YOU PRODUCE (the full protocol output, MERGED)
 Order: Role 4 (results) FIRST, Role 5 (concall) SECOND, presentation findings
@@ -62,7 +62,7 @@ feeding both. Produce, per the protocol step sequence:
 - Standalone-vs-consolidated gap as a first-class metric (from A3 F2).
 - Thesis reconciliation against the passed Notion Decision Status.
 - Pillar re-validation.
-- The position-decision branch (protocol 8A, or 8A-W for warrant cases).
+- The position-decision branch (protocol 8A for held names, or 8A-W for watchlist / non-held names).
 - The QUESTIONS FOR MANAGEMENT table: EVERY A3 finding classified
   FORWARD-SIGNAL or AMBIGUOUS generates at least one question here. A finding
   that produces no question and no monitoring item has not been processed.
@@ -123,7 +123,7 @@ ledger_reconciliation:
   a3_findings_incorporated: []  # A3 finding ids
 protocol_verdict: ""           # PROCEED | PROCEED WITH CAVEATS |
                                # PROCEED WITH FLAGS | REWORK | INSUFFICIENT EVIDENCE
-cash_conversion: ""            # structural | growth-induced | INDETERMINATE
+cash_conversion: ""            # structural | growth-induced | INDETERMINATE | INDETERMINATE-WITH-DIRECTION
 decision_status_verified: ""   # the Notion status this review was framed against
 position_branch: ""            # 8A | 8A-W | n/a
 sc_gap_pat_pct: []             # standalone-vs-consolidated PAT gap per period

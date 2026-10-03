@@ -1,6 +1,6 @@
 # SECTION 1B AMENDMENTS — FOUR-PILLAR EXIT MULTIPLE FRAMEWORK v3.3
 
-> **ACTIVE — not a superseded draft.** This file is the base amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11. The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.5.1 Reconciliation, v3.6 Amendments, v3.7 Amendments, v3.8 Amendments); where they overlap, the later layer governs.
+> **ACTIVE — not a superseded draft.** This file is the base amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11. The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.5.1 Reconciliation, v3.6, v3.7, v3.8, v3.9 and v3.10 Amendments); where they overlap, the later layer governs.
 
 *Framework review conducted 02-Jul-2026 (Fable 5). Amendments adopted by Keerti; Amendment on premium scaling (original point 4) REJECTED with rationale recorded in Appendix A. Companion change: FTTCP v1.2 single-credit rule (Section 6 below).*
 
@@ -16,6 +16,8 @@
 - REPLACE both with: **"Exit PE is governed solely by the Section 1B Four-Pillar Framework. The Sector Cap Table is the only ceiling. No other exit PE assumption is permitted anywhere in the analysis."**
 
 ---
+
+> **PARTLY SUPERSEDED.** Section 1B v3.9 Amendment 24 and operator ruling OR-2 (2026-09-15): the Hurdle Ratio is a feasibility check. Its PASS / CONDITIONAL / STOP band is computed and shown; it caps no verdict. The table below is kept for history.
 
 ## AMENDMENT 2 — 25% CAGR Feasibility Check (replaces the binary STOP rule AND the fixed 1.3x PE-gap check)
 
@@ -61,12 +63,14 @@ Conservative-bias note: Bull EPS CAGR may only be used in this check if manageme
 
 **Change:**
 - ROCE recovery may be credited in **Pillar 1 (midpoint smoothing) OR the Strategic Premium — never both.**
-- Default: credit it in Pillar 1. The Strategic Premium route is permitted only when trajectory smoothing was NOT applied (e.g., hard evidence exists but the +4 trajectory-adjustment threshold was not met).
+- Default: credit it in Pillar 1. The Strategic Premium route is permitted only when trajectory smoothing was NOT applied (e.g., the FTTCP ROCE verdict is STAGNANT or FIRING, so no forward uplift entered Pillar 1; FTTCP Pillar 1 Integration governs).
 - The Section 1B worksheet must state explicitly which route was used: "ROCE recovery credited via: [Pillar 1 midpoint / Strategic Premium / not credited]."
 - Growth Premium interaction: if the primary catalyst driving the EM/catalyst premium is the same capex commissioning that justifies midpoint smoothing, this is permitted (the premiums measure different things — earnings visibility vs capital efficiency) but must be flagged in the worksheet as "shared catalyst" so Role 3 can stress-test the single point of failure.
 - FTTCP v1.1 Section 8 (Pace worked example) is annotated: the +1x ROCE re-rating strategic premium in that example is superseded; under v1.2 Pace credits recovery via Pillar 1 only. This log entry constitutes FTTCP v1.2.
 
 ---
+
+> **PARTLY SUPERSEDED.** The 24x cap in this amendment is superseded by Section 1B v3.6 Amendment 11 (cap 30x with the elite extension above 33% ROCE). The formula, floor and rounding rules stand.
 
 ## AMENDMENT 5 — Continuous Pillar 1 Formula (replaces the ROCE band table)
 
@@ -116,7 +120,7 @@ Examples: 12x → 11-13x; 20x → 18.5-21.5x; 37x → 34-39.5x (upper bound stil
 
 ## AMENDMENT 8 — Sector Cap Table Additions
 
-New rows covering the active universe (proposals — adjust caps if you disagree):
+New rows covering the active universe (adopted 02-Jul-2026):
 
 | Sector | Maximum Exit PE |
 |---|---|

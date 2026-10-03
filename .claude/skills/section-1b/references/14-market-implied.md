@@ -16,9 +16,9 @@ Price CAGR identity over a three-year hold:
 Show both readings with the algebra:
 
 - **Reading 1, flat multiple.** Exit PE = current PE. Price CAGR then equals EPS CAGR. State the EPS CAGR the operator's required return needs at the current price.
-- **Reading 2, reasonable exit multiple.** Use a reasonable exit PE for the sector and quality, and state which and why. Never a round-number default. Solve for the EPS CAGR at which buying today returns exactly the cost of capital, not the 25% hurdle. That is the growth the price embeds.
+- **Reading 2, reasonable exit multiple.** Use the Section 1B sector cap for the name, or the live Step 1C adjusted peer base where one exists, and state which. Section 1B is the sole exit-multiple authority: never pick a multiple outside it (operator ruling, 2026-10-03). Solve for the EPS CAGR at which buying today returns exactly the cost of capital, not the 25% hurdle. That is the growth the price embeds.
 
-Show every input: CMP, operating EPS (FTTCP Module B4), current PE, the exit PE used with its justification, and the solved EPS CAGR per reading. Where a reasonable exit multiple cannot be set without Section 1B, say so, use the flat-multiple reading as the primary figure, and flag that Role 1 refines it.
+Show every input: CMP, operating EPS (FTTCP Module B4), current PE, the exit PE used with its justification, and the solved EPS CAGR per reading. Where the Section 1B multiple is not yet available, say so, use the flat-multiple reading as the primary figure, and flag that Role 1 refines it.
 
 ## Step 2: the market's implied story
 
@@ -44,7 +44,7 @@ The evidence figure comes from FTTCP Part A (forward transition verdicts) and Pa
 ```
 MARKET-IMPLIED ASSUMPTIONS OUTPUT
 CMP: ₹___    Operating EPS (FTTCP B4): ₹___    Current PE: ___x
-Reasonable exit PE used: ___x (basis: ___)
+Exit PE used: ___x (basis: Section 1B sector cap / Step 1C peer base)
 Implied EPS CAGR at flat multiple: ___%
 Implied EPS CAGR at reasonable exit PE: ___%
 Market's implied story (4-6 sentences): [reproduced from Step 2]

@@ -43,7 +43,7 @@ education and professional background with verifiability. 1D history
 before the current company: founder vs inheritor, succession disputes,
 prior ventures, unexplained gaps.
 
-## SECTION 2: LEGAL & REGULATORY RECORD (most critical, search hardest)
+## SECTION 2: LEGAL & REGULATORY RECORD
 2A SEBI actions: adjudication orders, SAT appeals, insider trading,
 manipulation, LODR non-compliance, market bans, consent orders (settled
 without admitting guilt is itself a signal). 2B criminal cases: economic

@@ -1,6 +1,6 @@
 # DOWNSTREAM SOURCE DISCOVERY PROTOCOL v1.0
 
-*Version 1.0 | August 2026 | Dhruva Research. Companion to Master Project Prompt v3.6 Role 5.5 (Downstream Signal Identification). This protocol governs HOW signal sources are discovered and verified. Role 5.5 governs WHEN signals are identified and WHERE they are written (the tracker gate). The TAM/SAM/SOM Downstream Signal Candidates section feeds Step 1 here.*
+*Version 1.0 | August 2026 | Dhruva Research. Companion to Master Project Prompt v3.7 Role 5.5 (Downstream Signal Identification). This protocol governs HOW signal sources are discovered and verified. Role 5.5 governs WHEN signals are identified and WHERE they are written (the tracker gate). The TAM/SAM/SOM Downstream Signal Candidates section feeds Step 1 here.*
 
 ---
 
@@ -136,7 +136,7 @@ Source discovery is one-time per signal. Source MONITORING is recurring, and mos
 
 What stays manual by design: reading the monthly refresh output and deciding what it means (Steps M3-M4). The alert layer feeds the refresh; it does not replace judgment.
 
-Claude executes the monthly M1-M5 pull with web access against the Primary Source URLs in the tracker; the alert layer catches event-driven signals BETWEEN monthly refreshes so nothing waits up to 30 days.
+Claude web (claude.ai) executes the monthly M1-M5 pull with live web access against the Primary Source URLs in the tracker; Claude Code has no live web and does not run it; the alert layer catches event-driven signals BETWEEN monthly refreshes so nothing waits up to 30 days.
 
 ---
 

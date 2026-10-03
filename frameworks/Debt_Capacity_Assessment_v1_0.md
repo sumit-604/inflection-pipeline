@@ -1,6 +1,6 @@
 # DEBT CAPACITY ASSESSMENT v1.0
 
-*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately BEFORE FTTCP v2.0 and after Role 5.5 (Downstream Signal Identification). Its output block is consumed by FTTCP Part B Module B7 and by Role 1. It establishes the maximum debt the company is capable of carrying, judged from the PAST, before any transition analysis begins.*
+*Version 1.0 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. New standalone section. Runs immediately BEFORE FTTCP (v2.3) and after Role 5.5 (Downstream Signal Identification). Its output block is consumed by FTTCP Part B Module B7 and by Role 1. It establishes the maximum debt the company is capable of carrying, judged from the PAST, before any transition analysis begins.*
 
 ## WHY THIS SECTION EXISTS
 
@@ -13,7 +13,7 @@ The judgment here is backward only. It asks what coverage this company has actua
 ```
 Role 5 (concall) → Role 5.5 (Downstream Signal Identification) →
 DEBT CAPACITY ASSESSMENT (this section) →
-FTTCP v2.0 → Market-Implied Assumptions → Role 1 → Role 2 → Role 3
+FTTCP v2.3 → Market-Implied Assumptions → Role 1 → Role 2 → Role 3
 ```
 
 Debt Capacity runs first because FTTCP Module B7 (Post-Deleveraging Earnings Picture) and Role 1 both consume its output. A business flagged BREACH here carries that flag into every downstream stage. A business flagged COMFORTABLE frees FTTCP to read a deleveraging path as a genuine transfer of value from lenders to shareholders rather than a rescue.
@@ -22,7 +22,7 @@ Debt Capacity runs first because FTTCP Module B7 (Post-Deleveraging Earnings Pic
 
 Maximum sustainable debt is computed on normalized operating income, never on a trough year and never on a peak year. A trough understates capacity and screens out solvent businesses at the bottom of a cycle. A peak overstates it and waves through businesses that only cover their interest when everything is going right. Mid-cycle is the only honest base.
 
-**Normalized (mid-cycle) EBIT.** Take the average EBIT across a complete cycle from audited filings. Where the sector is flagged cyclical, use the full-cycle average consistent with the FTTCP v2.0 cyclical margin rule. Where the business is not cyclical, use a representative normal year or a multi-year average that excludes any one-off distortion. State the years used and the figure in ₹ Crores. Strip non-operating income from EBIT so the coverage the company earns is the coverage its operations earn, not the coverage its treasury book earns.
+**Normalized (mid-cycle) EBIT.** Take the average EBIT across a complete cycle from audited filings. Where the sector is flagged cyclical, use the full-cycle average consistent with the FTTCP cyclical margin rule (Part B, since v2.0). Where the business is not cyclical, use a representative normal year or a multi-year average that excludes any one-off distortion. State the years used and the figure in ₹ Crores. Strip non-operating income from EBIT so the coverage the company earns is the coverage its operations earn, not the coverage its treasury book earns.
 
 **Sustained interest coverage.** State the interest coverage (EBIT ÷ interest) the company has actually held through its history, read off the coverage trend line in Step 2. This is evidence, not a target. A business that has run at 3x through a normal year is judged at 3x. A business that has never cleared 2x is judged there.
 

@@ -69,13 +69,20 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
   ceiling Small, re-open on disclosure of the RBI inspection period (IR question
   1 in dossier Section 10; re-open trigger: inspection covered FY23-24 only).
   Stage 11 and Stage 14 must not size above Small.
-- Gates still open before /fttcp:
-  - Tracker gate (Role 5.5): rows APPROVED by the operator 2026-10-03 (13 rows,
-    dossier Section 9). NOT YET SATISFIED: Claude web writes the rows to the
-    DOWNSTREAM SIGNAL TRACKER (data_source_id
-    926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f), then the proof line goes here.
-    /fttcp STOPS until that line exists.
-  - Tracker proof line: PENDING (Notion write by Claude web).
+- Tracker gate (Role 5.5): SATISFIED 2026-10-03.
+  Tracker proof (Role 5.5): 13 rows written to DOWNSTREAM SIGNAL TRACKER
+  (926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f) on 2026-10-03 by Claude web, all linked
+  to COMPANIES MASTER row 3e4bb2b9-d3ab-8169-9b6e-eddf73a1f1a6. Tier 1: 4,
+  Tier 2: 6, Tier 3: 1, Tier 4: 2. First row 3eebb2b9-d3ab-81a7-8b08-c2a83ffe9390
+  (DLG pool disclosures), last row 3eebb2b9-d3ab-81a5-963b-f06e48bf2091 (LAP
+  breakeven). Primary Source URLs live-verified: 3 (kissht.com/dlg-disclosure,
+  sicrevacapital.com/dlg-disclosure, Acuité 25-Sep-2026); rest flagged in Notes.
+  Claude Code check 2026-10-03: first and last rows fetched from Notion; both sit
+  in the tracker and link to the COMPANIES MASTER row above. Row count of 13 not
+  independently queried. The DLG-pool row's Next Check Date is 2026-10-10 against
+  05-Nov-2026 in dossier Section 9.
+- All gates before /fttcp are closed: Halt 1 PROCEED, mental model signed,
+  Part 2.6 ruled, tracker proof recorded.
 
 ## OPERATOR RULINGS
 - 2026-09-19: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.
@@ -87,7 +94,12 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
 - 2026-10-03: Ugliness "STRUCTURAL-FEATURE (cash-flow and cost-to-income optics
   are artifacts)" — structural optic not yet named (see HALT 1 GATE flag).
 - 2026-10-03: Part 2.6 INTEGRITY, Small ceiling, re-open on inspection period.
-- 2026-10-03: Tracker rows (13) approved; Notion write pending.
+- 2026-10-03: Tracker rows (13) approved; written to Notion by Claude web; proof
+  recorded (see HALT 1 GATE).
+- 2026-10-03: Operator restated the rulings: rungs FROM R1, TO R2 (Reading 1) /
+  R3 (Reading 2); ugliness "STRUCTURAL-FEATURE"; Part 2.6 INTEGRITY, Small
+  ceiling, re-open on inspection period. The structural optic is still not
+  named.
 
 ## ACTIVE TRIPWIRES
 - None yet (set at /finalize).

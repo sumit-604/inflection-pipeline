@@ -496,7 +496,7 @@ ELSE IF actual lands BETWEEN BEAR and BASE:
 ELSE IF actual lands AT or ABOVE BASE:
     → Confirm or tighten the entry zone; if a pre-committed BUY gate threshold was met, state it explicitly and recommend the pre-committed action
 
-No trim/exit mechanics apply to names not held. The output of this branch is always: updated entry zone, updated gate, updated Decision Status if warranted.
+No trim/exit mechanics apply to names not held. The output of this branch is always: updated entry zone, updated gate, and a proposed Decision Status if warranted (the operator sets it).
 
 ### 8B. Add-Back / Trim Trigger Refinement
 
@@ -597,7 +597,7 @@ Save to Notion in this exact sequence:
 
 - **Search for the company page** using Notion MCP search
 - **Update row properties** if any of these have changed materially:
-  - Decision Status (e.g., HELD → WATCHLIST if trim triggered)
+  - Decision Status: never written by /run-quarterly. State the proposed change and the trigger that fired; the operator sets it.
   - Position Size
   - EM Score (if EM categories materially shifted)
   - Promoter Verdict (if governance event)

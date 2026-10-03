@@ -42,7 +42,10 @@ the whole run to pre-extracted text FIRST: extract every inputs/ PDF to a
 page-marked .txt beside it (one "[page N]" marker per page), and pass the
 .txt path to every stage and every verifier in place of the PDF. Pre-extracted
 text is the reliable default on any large corpus in any case, because it also
-avoids the ~20-32MB image-render wall. Record the switch in B00.
+avoids the ~20-32MB image-render wall. Record the switch in B00. The tools:
+`python3 tools/extract_pdfs.py runs/<folder>` writes the .txt files, then
+`python3 tools/check_extraction.py runs/<folder>` flags blank or garbled
+files, which go to tools/ocr_repair.py before any stage reads them.
 
 Verifiers must never skip source verification because rendering is
 unavailable; if a PDF is genuinely unreadable by both routes, name it in the

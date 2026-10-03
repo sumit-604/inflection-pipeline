@@ -25,11 +25,12 @@ A4's review, and that no fresh-pass unit is missing from the structured file.
 ## THE FOUR AUDITS
 
 0. DELIVERABLE-COMPLETENESS AUDIT (run FIRST; a hard gate). The A4 review MUST
-   contain a PLAIN-LANGUAGE BRIEF with all four labelled parts present and
+   contain a PLAIN-LANGUAGE BRIEF with all five labelled parts present and
    non-empty: (1) a summary narrative (10-20 lines, or 200-400 words when the Document Review Protocol governs), (2) SECTOR intelligence,
-   (3) BUSINESS-MODEL intelligence, (4) COMPETITION intelligence. Confirm each
+   (3) BUSINESS-MODEL intelligence, (4) COMPETITION intelligence, (5) FORWARD
+   MAP (dated catalysts, each with a bull and a bear fork). Confirm each
    heading exists in the review and carries real content (not a placeholder).
-   If any of the four is missing or empty, verdict = INCOMPLETE, loop_back_to
+   If any of the five is missing or empty, verdict = INCOMPLETE, loop_back_to
    = A4, gap = the missing part(s). This is a standing deliverable; its absence
    fails the gate exactly like a missing page or an arithmetic error.
 
@@ -117,11 +118,12 @@ quarter: "{{QUARTER}}"
 model: ""  # your exact model ID, as pinned in the agent frontmatter
 status: complete
 verdict: COMPLETE               # COMPLETE | INCOMPLETE
-plain_language_brief:           # hard gate — all four must be present
+plain_language_brief:           # hard gate — all five must be present
   narrative: present            # present | MISSING
   sector: present
   business_model: present
   competition: present
+  forward_map: present
 coverage:
   orphan_rows: []               # ledger rows not cited in A4
   missing_from_ledger: []       # rows your fresh pass found, ledger lacks

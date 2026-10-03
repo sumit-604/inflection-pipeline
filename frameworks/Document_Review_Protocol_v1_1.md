@@ -105,8 +105,10 @@ reads standalone.
     reference A3 F16. Sustained silence on a deteriorating metric is a
     confirmatory negative, not a neutral gap.
 11. PLAIN-LANGUAGE BRIEF (MANDATORY every run; the final narrative section).
-    Four labelled parts: (1) SUMMARY NARRATIVE, (2) SECTOR INTELLIGENCE,
-    (3) BUSINESS-MODEL INTELLIGENCE, (4) COMPETITION INTELLIGENCE.
+    Five labelled parts: (1) SUMMARY NARRATIVE, (2) SECTOR INTELLIGENCE,
+    (3) BUSINESS-MODEL INTELLIGENCE, (4) COMPETITION INTELLIGENCE, (5) FORWARD
+    MAP of the next ~10-11 months (each dated catalyst with a bull fork and a
+    bear fork, built only from the monitorables list; no new number).
     - STYLE. The SUMMARY NARRATIVE follows Narrative_Writing_Style_v1.md (STE
       plus Zinsser: short sentences, active voice, numbers first, no AI tells)
       and the Dhruva-Research output style. Length is the house standard: 200 to

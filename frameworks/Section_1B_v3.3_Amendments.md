@@ -129,6 +129,8 @@ New rows covering the active universe (adopted 02-Jul-2026):
 | EV charging / energy transition equipment | 28x |
 | City gas distribution | 22x |
 | Mining / mineral exploration | 20x |
+| Steel: value-added stainless / specialty (durable pricing) [operator ruling OR-13, 2026-10-03] | 25x |
+| Steel: commodity (long and flat carbon steel, ferro-alloys, integrated, cyclical) [operator ruling OR-13, 2026-10-03] | 20x |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
 
 ---

@@ -92,9 +92,6 @@ full text of each promotion is in LESSONS_ARCHIVE.md under its date._
 
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._
-- Add a Steel / Integrated Metals row to the Section 1B cap table (SHYAMMETL
-  ruled 20x ad hoc; MANINDS line pipe ruled 20x ad hoc on that precedent
-  2026-08-25; no dedicated row exists). [archetype: Commodity converter]
 - Add a Sugar / Agri-commodity cyclical row to the Section 1B cap table
   (KCPSUGIND ruled Agri-processing 20x ad hoc; no dedicated row exists).
   [sector: Agri processing] [archetype: Commodity converter]

@@ -28,15 +28,32 @@ runs/kissht-2026-09-19/step1-business-brief.md:
 Brief: runs/kissht-2026-09-19/step1-business-brief.md
 
 ## HALT 1 GATE
-- Mental Model signed: NOT SIGNED. The model for signature is Section 1 of
-  runs/kissht-2026-09-19/inputs/research/web-handover-dossier.md (Claude web,
-  2026-10-03). The dossier asks the operator to confirm the signature; awaiting
-  that confirmation.
+- Mental Model signed: 2026-10-03 (operator, in chat). The signed model is
+  Section 1 of runs/kissht-2026-09-19/inputs/research/web-handover-dossier.md
+  (Claude web, 2026-10-03); that section governs. Signed-model block, as the
+  dossier states it:
+  - FROM -> TO: FROM ultra-short checkout/pay-later credit with a synthetic
+    partner guarantee (FY23-24). TO, two readings: (1, more evidenced) a well-run
+    high-yield lender, RoE ~17-18% post-raise; (2, management) a data edge that
+    keeps cutting losses, RoE 20%+. Quality-ladder rung labels: not stated in
+    the signed model.
+  - Engine: all-in loss rate falling (credit leg), funding cost falling (small),
+    core opex leverage (masked by marketing and off-book ECL).
+  - Proof gate: all-in loss (on-book impairment + off-book ECL + collection
+    outsourcing above run rate) / avg AUM below 10.5% for H2 FY27, with the
+    off-book loss rate not rising.
+  - Ugliness verdict: not stated in the signed model; operator to set.
+  - Transition falsifier: all-in loss above 11.6% of avg AUM; or off-book loss
+    rate rising two consecutive half-years; or revenue margin minus all-in loss
+    narrowing two consecutive quarters.
+  - Business falsifier: a top-two partner exits or shrinks its pools by more than
+    a third with no replacement; or RBI cuts the 5% DLG cap or changes DLG
+    recognition again. Trust falsifier: RBI inspection shown to cover FY25 or
+    later.
 - Halt 1 decision (KILL/SHALLOW/PROCEED): 2026-10-03 PROCEED — operator
   instruction "ready to move to the FTTCP stage", as recorded in the web handover
   dossier Section 0 and committed by the operator.
 - Gates still open before /fttcp (dossier Section 0):
-  - Mental model signature (above).
   - Part 2.6 promoter classification: PENDING OPERATOR RULING. Claude web
     recommends INTEGRITY concern, size ceiling Small, re-open on disclosure of
     the RBI inspection period. Stage 11/14 must not size above Small until ruled.
@@ -48,6 +65,7 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
 - 2026-10-03: Counterparty read capped at 10 documents; an earlier uncapped pull
   stays on disk, out of git (inputs/counterparties/.gitignore).
 - 2026-10-03: Halt 1 decision PROCEED (see HALT 1 GATE).
+- 2026-10-03: Mental model SIGNED (web handover dossier Section 1).
 
 ## ACTIVE TRIPWIRES
 - None yet (set at /finalize).

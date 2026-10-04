@@ -21,7 +21,7 @@ Catalysts behind a strategic premium are credited at increment × probability un
 
 - Default home for ROCE recovery is Pillar 1. The Strategic Premium route is permitted only when the FTTCP ROCE forward verdict is STAGNANT or FIRING (no forward uplift entered Pillar 1) and archetype-supported re-rating optionality genuinely exists.
 - Sizing is archetype-dependent: asset-light recovering to ROCE >25% → +2x; asset-heavy recovering to >20% → +1x; BOO / infrastructure treadmill (ROCE cycles, does not expand) → 0x.
-- The empirical ROCE-led re-rating tables end at FY21-22 peak-cycle multiples. For planning, use the lower bound of the 1.5-2.5x re-rating estimate. The +1x/+2x sizing already reflects this.
+- The empirical ROCE-led re-rating tables end at FY21-22 peak-cycle multiples. For planning, the lower bound (1.5x) is the BEAR reading; the base carries the most evidenced point in 1.5-2.5x with the separating observation named (A26.3, OR-22). The +1x/+2x sizing already reflects this.
 
 ## The single-credit map (one quality improvement, one mechanism)
 

@@ -63,7 +63,7 @@ is lost when the reply is truncated or the transcript is compacted:
 stage: B15-devil
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID, as pinned in the agent frontmatter
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 dimensions:
   growth_triggers: ""       # survives | weakened | destroyed

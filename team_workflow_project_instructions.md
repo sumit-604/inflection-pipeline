@@ -90,7 +90,7 @@ A DOWNSHIFT FAILURE or a COST SPIKE also earns a one-line entry in LESSONS_ARCHI
 Gates the pipeline enforces (unchanged from v1, with two additions)
 
 * Halt 1 gate: stage 09b dossier + Section 6 annex complete + operator signed mental model + PROCEED recorded.
-* Role 5.5 tracker gate: tracker proof in companies file; minimum three EXTERNAL signals per entity (company-narrated rows do not count toward the floor; they may exist as internal telemetry).
+* Role 5.5 tracker gate: tracker proof in companies file; minimum three EXTERNAL signals per entity (company-narrated rows do not count toward the floor; they may exist as internal telemetry). A dated "Tracker floor: OVERRIDE YYYY-MM-DD (operator, reason)" line in companies/<TICKER>.md lets /fttcp proceed below the floor; the gate names the shortfall either way (operator ruling OR-17, 2026-10-04).
 * Handover input gate: dossier exists with Section 6 pre-rulings; absence = STOP.
 * Entity-count gate (new): `/fttcp` and stage 11 refuse to run a single consolidated pass when the dossier declares more than one entity.
 * P/E gate and Amendments 16-19: unchanged, but presented per entity with both drafts.

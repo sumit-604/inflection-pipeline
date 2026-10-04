@@ -111,7 +111,7 @@ reads standalone.
     bear fork, built only from the monitorables list; no new number).
     - STYLE. The SUMMARY NARRATIVE follows Narrative_Writing_Style_v1.md (STE
       plus Zinsser: short sentences, active voice, numbers first, no AI tells)
-      and the Dhruva-Research output style. Length is the house standard: 200 to
+      and the house style in anti-ai-writing-style.md. Length is the house standard: 200 to
       400 words (Narrative_Writing_Style_v1.md Section 6), not a line count.
     - PROVENANCE. Label every figure with the house five-tier evidence system,
       never a two-way prior-vs-this-document split:

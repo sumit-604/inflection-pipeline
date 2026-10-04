@@ -11,6 +11,7 @@ Changes from v4.0:
 - Part 6.1: /step1 is the intake line, with the manual collector as fallback.
 - Operator rulings of 04-Oct-2026 on the v4.1 review: CONVERTER per Amendment 17.0, stranded assets as Amendment 18 option slices; promoter CONCERN split kept and recorded as operator ruling OR-14; two cap rows with no Section 1B authority deleted (Upstream E&P, Oilfield services); Conviction Outlier, Sector Literacy, dispersion and Tier B caps added to sizing; re-rating optionality premium row; OR-3, OR-4 and OR-1 carried open; RRM, relative PE and Step 1C blocks; Role 1 rules restored from Master v3.7 (consumption clause, operating earnings, government tier, lenders, fade horizon, cyclical override, worksheet line, re-weighting, 4H-pre); OR-11 bear margin; Tier B 20% hurdle; spear gate per the 2026-09-05 /step1 ruling; archetype library pasted.
 - The v4.0 change log is removed.
+- October 2026 audit rulings of 04-Oct-2026 (audits/RULINGS_2026-10.md; OR-15 to OR-31): lender Pillar 1 takes the continuous formula to 30x (OR-28); the Hurdle bull row keys to the trailing-four-quarter Role 5 grade (OR-27); the Master cap-raising sentence reads "only EXCEPTIONAL mechanism" while OR-4 stays open (OR-25); the /fttcp tracker gate needs three external signals per entity, with a dated operator override line (OR-17).
 
 ---
 
@@ -319,7 +320,7 @@ Government customer tier rule: the worst tier above 25% of revenue sets the mult
 
 CONVERTER names run the Amendment 17.2 volume test first: WC per unit stable while WC in rupees swings means INPUT-PRICE-DRIVEN, 1.00x, no offset, no penalty.
 
-**Lenders (banks, NBFCs, MFIs, HFCs).** Pillar 1 uses ROE in the same formula. Pillar 2L replaces the cash multiplier: credit costs stable or falling 2+ years, GNPA <2%, PCR >70% = 1.15x; GNPA 2-4% stable, PCR 60-70%, credit costs in band = 1.00x; GNPA rising or >4%, PCR <60%, one credit-cost miss = 0.80x; rising credit costs, PCR <50%, growing restructured book = 0.65x. No growth offset. P/B (ROE ÷ CoE) is the primary method; the destination PE is the cross-check. Sector cap 18x.
+**Lenders (banks, NBFCs, MFIs, HFCs).** Pillar 1 uses ROE in the same formula, including the band above 33% (cap 30x; the old 24x lender cap is superseded, operator ruling OR-28). Pillar 2L replaces the cash multiplier: credit costs stable or falling 2+ years, GNPA <2%, PCR >70% = 1.15x; GNPA 2-4% stable, PCR 60-70%, credit costs in band = 1.00x; GNPA rising or >4%, PCR <60%, one credit-cost miss = 0.80x; rising credit costs, PCR <50%, growing restructured book = 0.65x. No growth offset. P/B (ROE ÷ CoE) is the primary method; the destination PE is the cross-check. Sector cap 18x.
 
 Show: cumulative CFO/PAT, latest FY CFO/PAT, FCF positive, band, base multiplier, structural or growth-induced with evidence, offset, effective multiplier, quality-adjusted base.
 
@@ -385,7 +386,7 @@ Shared catalyst: if the catalyst behind this premium is the same capex commissio
 
 Where a company spans sectors, the cap applies per line under SOTP.
 
-Quality uplift: when UA is triggered and durability is at least Moderate-Strong with documented evidence, a minimum 25% quality uplift on the sector cap applies; state the uplifted cap. Open ruling OR-4: the Master also calls the Category-Break Override the only mechanism that raises a cap. Carry both as written and show which one lifted the cap.
+Quality uplift: when UA is triggered and durability is at least Moderate-Strong with documented evidence, a minimum 25% quality uplift on the sector cap applies; state the uplifted cap. Open ruling OR-4: the Master also calls the Category-Break Override the only EXCEPTIONAL mechanism that raises a cap (wording per OR-25; the routine uplift is separate). Carry both as written and show which one lifted the cap.
 
 Category-Break Override (exceptional): all four conditions must hold (first mover in a new category; signed, disclosed customer or partner commitment; dated commissioning timeline; independently verified competitor absence), three primary documented sources (concalls and presentations count as zero), override cap = min(sector cap x 1.40, 45x), four-quarter sunset, Notion documentation and a Role 3 stress-test. It changes the cap only.
 
@@ -405,7 +406,7 @@ Category-Break Override (exceptional): all four conditions must hold (first move
 | HR(base) below threshold, HR(bull) ≥ threshold | CONDITIONAL: flag "growth-dependent with de-rating headwind" |
 | HR(bull EPS CAGR) below threshold | STOP band: the tier hurdle is infeasible even on bull-case earnings (a feasibility band, not a halt) |
 
-Bull EPS CAGR enters this check only if the Role 5 credibility grade is A or B. If C or D, the bull row uses base EPS CAGR + 5% maximum. Final validation: would you personally pay this multiple for this quality?
+Bull EPS CAGR enters this check only if the Role 5 credibility grade is A or B. If C or D, the bull row uses base EPS CAGR + 5% maximum (trailing-four-quarter grade, operator ruling OR-27). Final validation: would you personally pay this multiple for this quality?
 
 If current PE is above the destination PE, flag it on the verdict table. The run does not stop. The Hurdle Ratio band shows feasibility and caps no verdict (Amendment 24; operator ruling OR-2).
 
@@ -615,7 +616,7 @@ e. Deliver the signed mental model for sign-off. Once signed, the ruling is reco
 
 **Phase 4: Handover dossier (Claude web).** `runs/<ticker>-<date>/inputs/research/web-handover-dossier.md`: signed model, vertical verdicts with tiers, explicit supersessions of corpus-derived views with evidence, promise-versus-delivery ledger with credibility split, tracker proof, operator inputs (option probabilities, mature revenue estimates). Operator commits it.
 
-**Phase 5: Deliberation (Claude Code).** `/fttcp runs/<ticker>-<date>`. Understanding gate, tracker gate, handover consumed before Step 0. Payload for Role 1.
+**Phase 5: Deliberation (Claude Code).** `/fttcp runs/<ticker>-<date>`. Understanding gate, tracker gate (three EXTERNAL signals per entity; a dated "Tracker floor: OVERRIDE YYYY-MM-DD (operator, reason)" line in companies/<TICKER>.md lets it proceed below the floor, and the gate names the shortfall either way; OR-17), handover consumed before Step 0. Payload for Role 1.
 
 **Phase 6: Valuation (Claude Code with rulings).** Stage 11. Operator rulings at the P/E gate (Pillar 1 base, cash multiplier band, growth premium, earnings basis, option inputs) and at any Amendment 16, 17, 18 gate come here; Claude web drafts the recommendation with reasoning; operator decides; decision pasted back.
 

@@ -110,8 +110,9 @@ One of: PROCEED | PROCEED WITH CAVEATS | PROCEED WITH FLAGS | REWORK |
 INSUFFICIENT EVIDENCE. No other verdicts exist. There is no STOP.
 
 Verdict selection rules, applied in order:
-1. REWORK if the confidence delta forces it (any B12a CRITICAL, or any
-   verifier acceptance_rate <60%, or overall delta <60). REWORK judges
+1. REWORK if the confidence delta forces it (any CONFIRMED B12a CRITICAL,
+   or any verifier acceptance_rate <60% on a denominator of 4 or more, or
+   overall delta <60 where overall is computed; operator ruling OR-29). REWORK judges
    the ANALYSIS, not the company; say so, name the failing stage(s),
    and list what a rerun must fix. SOURCE-FIDELITY GATE: every B12a
    finding with `source_fidelity: true` is non-overridable — you may not
@@ -329,7 +330,7 @@ line, then exactly this fenced YAML block:
 stage: B13-synthesis
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID, as pinned in the agent frontmatter
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 verdict: ""                    # the five-verdict set only
 verdict_rule_applied: 0        # which selection rule fired, 1-5

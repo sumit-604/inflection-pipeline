@@ -118,8 +118,7 @@ these before its own work. Full brief: runs/taaltech-2026-09-10/step1-business-b
     in the dossier. No recusal recorded.
   With the ledger unable to offset, an AVOID on the promoter alone is
   possible at the next verdict.
-- Proposed de-escalation trigger (recommended by Claude, not yet approved
-  by the operator): the H1 FY27 balance sheet or Reg 23(9) RPT filing
+- De-escalation trigger (approved by the operator 2026-10-04): the H1 FY27 balance sheet or Reg 23(9) RPT filing
   (about Nov 2026) shows the loan repaid with interest received in cash,
   plus a corrected AOC-2 or Reg 23 disclosure. That would return the
   concern to STRUCTURE for operator review.

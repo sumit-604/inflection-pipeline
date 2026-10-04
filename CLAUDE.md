@@ -96,6 +96,11 @@ target, 3-5 year holds.
 Do not upgrade a stage's model without editing its agent file.
 
 ## OPERATOR RULINGS (dated; Section 1B rulings live in .claude/skills/section-1b/SKILL.md)
+Standing pipeline rulings:
+- Standing ruling 2026-10-04 (forward application): framework rulings apply
+  to names analysed from the ruling date forward. Closed names are not
+  re-derived under a new ruling; their record stands as of the run that
+  produced it.
 October 2026 audit, ruled 2026-10-04 (audits/RULINGS_2026-10.md item numbers):
 - OR-15 (item 36): /finalize Rule H loop. A stage 15 steelman-gate miss
   re-runs stage 14 once, then stage 15; a second miss marks Role 3 VOID,

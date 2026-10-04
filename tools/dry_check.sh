@@ -13,7 +13,9 @@
 #          Run-relative paths resolve against the reference run below.
 # Check 3  Sparse session: tools/sparse_session.sh <reference run> leaves
 #          every path the four pipeline commands read on disk; --off then
-#          restores a clean full tree. Needs a clean working tree.
+#          restores a clean full tree. Needs a clean working tree. Runs from
+#          a full or a sparse tree: a sparse tree is widened to full for the
+#          test, then its own patterns are put back.
 # Check 4  Load-bearing anchors exist (orchestrator 7A, fttcp disk writes and
 #          part 6), and the token-meter mod validates and passes its tests.
 #
@@ -124,10 +126,13 @@ check3() {
   if [ -n "$(git status --short)" ]; then
     echo "  FAIL: working tree not clean; commit first, then re-run check 3"; return 1
   fi
+  local rc=0 was_sparse=0 saved=()
   if [ "$(git config --get core.sparseCheckout)" = "true" ]; then
-    echo "  FAIL: tree is already sparse; run tools/sparse_session.sh --off first"; return 1
+    was_sparse=1
+    mapfile -t saved < <(git sparse-checkout list)
+    echo "  found sparse tree (${#saved[@]} patterns); widening to full for the test"
+    tools/sparse_session.sh --off >/dev/null
   fi
-  local rc=0
   tools/sparse_session.sh "$REF_RUN" | tail -1 | sed 's/^/  sparse tree: /'
   REF_RUN="$REF_RUN" python3 - <<'EOF' || rc=1
 import glob, os, re, sys
@@ -172,6 +177,14 @@ EOF
   echo "  after --off: $disk files on disk under runs/, $tracked tracked"
   [ "$disk" -eq "$tracked" ] || { echo "  FAIL: full tree not restored"; rc=1; }
   [ -z "$(git status --short)" ] || { echo "  FAIL: git status not clean after --off"; rc=1; }
+  if [ "$was_sparse" -eq 1 ]; then
+    git sparse-checkout set --no-cone "${saved[@]}"
+    if [ "$(git sparse-checkout list)" = "$(printf '%s\n' "${saved[@]}")" ] && [ -z "$(git status --short)" ]; then
+      echo "  sparse tree restored: ${#saved[@]} patterns, $(find runs -type f | wc -l) files under runs/"
+    else
+      echo "  FAIL: sparse tree not restored as found"; rc=1
+    fi
+  fi
   return $rc
 }
 

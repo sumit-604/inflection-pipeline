@@ -1,0 +1,42 @@
+stage: B02-notes
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: pass1_complete
+input_gaps:
+  - "No annual report: AR substitute is Prospectus 31-Aug-2026 restated financial information, Rs lakh, Indian GAAP (AS), pp.221-270"
+  - "No CARO or directors report: PF, statutory dues, Sec.185/188 checks not possible"
+  - "Customers unnamed: non-government buyers (Rs 4,733.92 lakh FY26) not identified, B2C undefined"
+  - "No ECL or doubtful-debt policy, no ageing basis, no govt vs private receivable split"
+  - "FY26 Q4 revenue share, advance tax detail, commission payees, placement investors: not disclosed"
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PAT 56.4% FY26 (762.30 vs 1350.77 Rs lakh), 54.3% FY25, negative FY24; FY26 cash tax 281.74 vs accrued 470.02; 3-yr receivable build 2107.28 = 84.6% of 3-yr PAT. Receivable days improving, conversion still weak (Annexure III p.228)"}
+  - {type: FLAG-CUSTOMER-ID, reason: "Non-government customers 4733.92 Rs lakh (44.78%) unnamed; no RPT sale or receivable disclosed but completeness untestable (p.29, pp.160-161, pp.250-251)"}
+  - {type: FLAG-RPT, reason: "Remuneration 281.35 +51.6%; Gostocks software 78.70 over FY25-26 vs software CWIP 137.17 unamortised; promoter-family guarantees incl. Bina Shah and Saloni Shah not in RPT list (pp.234, 237, 250)"}
+  - {type: FLAG-RECEIVABLE-QUALITY, reason: "130.54 Rs lakh at 2-3 years, barely collected in a year, provided 20.7%; no ECL policy; ageing roll-forward anomaly 26.27 (Note I.14 p.235)"}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "CFO 762.30 Rs lakh is 56.4% of PAT 1350.77; cash tax 281.74 vs accrued 470.02 flatters CFO by 188.28", note_ref: "Annexure III p.228; Note I.8 p.235; II.9 p.241", rating: "YELLOW", why: "Profit is not converting to cash at the pace of growth; the unpaid FY26 tax is a coming outflow"}
+  - {rank: 2, finding: "Non-government customers Rs 4733.92 lakh (82.7% of FY26 revenue growth) unnamed; no related-party sale or receivable disclosed", note_ref: "Risk Factor 10 p.29; top-10 pp.160-161; Annexure VIII pp.250-251", rating: "YELLOW", why: "Largest growth driver cannot be traced to counterparties; completeness of RPT untestable"}
+  - {rank: 3, finding: "Debtor days 83/89/74 are average-balance; year-end days 144/111/79; FY26 improvement real on both bases", note_ref: "pp.92-93; Annexure V p.245; pp.226-227", rating: "GREEN", why: "Stated metric is understated vs year-end but trend is genuinely improving"}
+  - {rank: 4, finding: "Rs 130.54 lakh receivable at 2-3 years provided 27.00 (20.7%) vs 100% on FY25 2-3 year bucket; no ECL policy; roll-forward anomaly 26.27", note_ref: "Note I.14 p.235; policies pp.229-231", rating: "YELLOW", why: "Provisioning follows no stated rule; stuck government or private dues"}
+  - {rank: 5, finding: "Unearned revenue 166.50 first appears FY26; customer advances only 22.18 vs claimed 30-50% advance from private buyers", note_ref: "Note I.7 p.234; p.92", rating: "YELLOW", why: "Management narrative for faster collections not visible in balance sheet; revenue timing policy has two bases"}
+  - {rank: 6, finding: "Related-party stack: remuneration 281.35, Gostocks software 78.70, group purchases 67.00, rent to MD 7.88; arm's-length evidence absent", note_ref: "Annexure VIII pp.250-251; Note I.9 p.237", rating: "YELLOW", why: "3.63% of revenue excluding loans; software CWIP 137.17 unamortised"}
+  - {rank: 7, finding: "Promoter loans repaid: MD borrowed 1249.73 over FY24-26; related-party debt nil, total borrowings nil, cash 1316.32 at FY26", note_ref: "p.250; Capitalisation p.254", rating: "GREEN", why: "Balance sheet funding no longer depends on promoters"}
+  - {rank: 8, finding: "Promoter-family collateral and personal guarantees incl. two persons not in RPT list; performance BG 592.85 = 14.3% of net worth", note_ref: "Note I.5 text p.234; Annexure V xiii p.244", rating: "YELLOW", why: "Credit support still promoter-dependent; unpriced; guarantee headroom 207.15 of 800"}
+  - {rank: 9, finding: "Internal contradictions: PF not deducted vs PF expense; Ind AS cited vs AS used; MD&A calls FY26 borrowings proceeds not repayment; WIP vs traded-goods-only inventory", note_ref: "pp.231, 239, 263-264, 268", rating: "YELLOW", why: "Disclosure quality weak; PF compliance uncheckable without CARO"}
+  - {rank: 10, finding: "Indian GAAP, FY25 auditor change, FY24 gratuity restated from cash basis, unfunded gratuity, tax demands 14.87 outside contingent table, placement price Rs 20 to Rs 569 per share in a year", note_ref: "pp.223, 233, 243, 244, 249", rating: "YELLOW", why: "Accounting infrastructure pre-IPO was thin"}
+red_flags: []
+questions_for_mgmt:
+  - "Name the top 10 customers FY26 split government vs private, and say which non-government buyers resell to government."
+  - "What is the ageing basis and the provisioning rule? Why is the 2-3 year bucket of Rs 130.54 lakh 20.7% provided?"
+  - "Why was FY26 cash tax 281.74 against accrued 470.02? Was FY26 advance tax paid and is there interest exposure?"
+  - "What is the software under development (Rs 137.17 lakh), who built it, and when is it commissioned?"
+  - "What is behind the Rs 166.50 lakh unearned revenue and the claimed 30-50% advance from private customers?"
+receivables_trend: "improving: average-basis days 83 / 89 / 74 (company), year-end days 144 / 111 / 79 (computed); receivables Rs lakh 1193.58 / 1979.05 / 2288.07; >6 months 11.85% of gross FY26 vs 16.97% FY25 vs 12.32% FY24; >1 year 165.60 (7.14%) FY26, with 130.54 aged 2-3 years and 27.00 provided (Note I.14 p.235, pp.92-93)"
+restatements_found:
+  - "FY24 PAT 287.16 restated to 283.47 Rs lakh: gratuity moved from cash to AS 15 actuarial basis (-4.93), deferred tax +1.24; reserves adjusted -3.69 FY24 P&L and -10.78 opening (Annexure VII p.249)"
+going_concern_language: "NONE in Section V notes pp.221-270 (a later section table states no audit qualification w.r.t. going concern; page not located)"
+analyst_note: "Units are Rs lakh as printed; stage 10 converts once. Basis is Indian GAAP, standalone, no subsidiaries. Receivable days improvement is real but the stated 74 is an average-balance figure; year-end is 79. The cash story is weaker than the days story: CFO/PAT 56.4%, helped by 188.28 of unpaid FY26 tax. Customer-identity gap on non-government buyers (82.7% of FY26 growth) is a disclosure gap, not evidence of a related-party customer; no related-party sale or receivable appears anywhere in Annexure VIII. Score 5 reflects thin policies (no ECL rule, two revenue bases, PF contradiction), anonymous customers, and unsupported arm's-length claims, offset by zero debt, clean audit reports and full RPT listing."

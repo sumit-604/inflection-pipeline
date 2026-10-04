@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No annual report, no results filing, no rating, no shareholding filing, no concalls (listed 03-Sep-2026). Audited source is the Final Prospectus 31-Aug-2026 restated FY24-FY26 (Rs lakh)."
+  - "Screener Data_Sheet has no capex line, no trade payables line, no CL split, no ROCE line: FCF FY21-FY23 and payables-based WC days FY21-FY23 are NOT FOUND."
+  - "Latest-quarter promoter holding not filed; 64.65% is the prospectus post-offer figure (txt L5444), not a filed pattern. Screener Sep-2026 figure is non-anchored."
+  - "Peer data not in this stage's inputs and no listed pure play exists (prospectus txt L7287): M2, M5, M9 PEER DATA NEEDED."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification capped AVERAGE by deal-breaker 4 (cumulative CFO/PAT 0.46x FY21-26; 0.39x FY24-26). Drivers: FY24 CFO Rs -2.61 Cr, FY22 CFO Rs -1.28 Cr, receivables build Rs 21.07 Cr over FY24-26 (prospectus txt L3851). Uncapped result is GOOD+ (core 69, STRONG moat). Deal-breakers 1, 2 and 8 not triggered; Block B sits exactly at 8."}
+  - {type: FLAG-GATE0, reason: "LBF-2: prospectus debtor days 83/89/74 are on an average-receivables basis (reconstructed, see report); year-end receivables/sales are 144/111/79 days. Same prospectus page shows both (txt L6359-6406). Year-end improvement is real but slower than the 83->74 headline."}
+data_years: 6
+fy_range: "FY21 to FY26"
+blocks: {A: 10, B: 8, C: 18, D: 20, E: 13}
+core_score: 69
+moat_score: 16
+grand_total: 85
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB4 cumulative CFO/PAT 0.459 < 0.50 (FY21-FY26 Rs 12.66 Cr / Rs 27.58 Cr; drivers FY22 -1.28 and FY24 -2.61 CFO, FY25 0.54x and FY26 0.56x PAT conversion) caps at AVERAGE"
+history_downgrade: false
+data_notes:
+  - "Data available: 6 years (FY21 to FY26), screener Data_Sheet, Rs Cr; FY24-FY26 cross-checked to prospectus restated statements (Rs lakh, converted 1 Cr = 100 lakh). Confidence tier 5-6 yrs: lower, may not have seen full cycle. FY21-FY23 are pre-restatement private-company numbers."
+  - "ROCE computed (screener has no ROCE line): EBIT = PBT + interest; capital employed = total assets less screener Other Liabilities (proxy for CL, no CL split). Series 50.9, 7.1, 30.5, 39.2, 38.2, 45.0; FY24-26 match prospectus-disclosed 39.07/38.15/44.88 within 0.1pp."
+  - "Window sensitivity: on the audited FY24-FY26 window alone A2 would be 5 and A4 5 (Block A 20), M10 would be 5 (revenue grew every year, receivable days fell 65), M1 would be 3. Core would be 79 and grand total ~89, still capped AVERAGE by DB4. Full-window scores are the filed result."
+  - "A2 is driven by FY22 (sales Rs 3.96 Cr, ROCE 7.1%); A4 decline 5.9pp is driven by FY21 start (50.9%)."
+  - "Receivable days on year-end revenue basis: 44.6, 34.1, 32.4, 144.4, 111.1, 79.0 (FY21-FY26). Inventory days (revenue basis) FY24-26 39.8, 42.5, 36.0. Payable days (revenue basis) 39.3, 58.5, 30.1. WC days 144.8, 95.0, 85.0."
+  - "B2, B3, B4 scored on FY24-FY26 only: capex (PPE + intangibles, CF statement) and trade payables NOT FOUND for FY21-FY23 in screener. FCF Rs -3.10, +4.26, +5.56 Cr."
+  - "Prospectus Net Working Capital Days KPI 98/141/124 includes cash in current assets (CA less CL, txt L6339-6350); not used for B4."
+  - "PEER DATA NEEDED: M2, M5, M9 (scored 0). M6 R&D expense NOT FOUND (0). M7 regulated-segment status and listed player count NOT FOUND in inputs (0). M8 distribution reach NOT FOUND; customers served 128/124/95 (0)."
+  - "M11: two-window test impossible (no FY20); scored on overall trend: FY23-26 revenue CAGR 73.0% and S&A 14.2% to 3.7% of sales. Mechanical result; the business has no network effect evidence. Without it moats confirmed would be 3 (MODERATE)."
+  - "E1 uses prospectus post-offer promoter and promoter group 64.65% (txt L5444, subject to basis of allotment), pre-offer 88.53% (txt L5268). E2 scored 0: pre to post offer fall 23.9pp; promoters held 96.97% of 330,010 shares around FY23 (derived from build-up, txt L5520-5560, partly inferred). E3 pledge nil (txt L5963, L6016)."
+  - "E4 contingent liabilities Rs 5.93 Cr (bank guarantees, txt L3924) / net worth Rs 41.41 Cr = 14.3%."
+  - "No loss-to-profit swing in window. Revenue fell FY22 (Rs 11.61 Cr to Rs 3.96 Cr)."
+  - "Market cap Rs 383.28 Cr, price Rs 178.8 (screener, post-listing) vs IPO price Rs 90 (prospectus txt L7396)."
+block_b_trend: "improving from CFO/PAT -0.92x (FY24) to 0.54x (FY25) and 0.56x (FY26); flat FY25 to FY26 and still below 1.0x"
+analyst_note: "Core 69 with STRONG moat is GOOD+ on the matrix. DB4 caps it at AVERAGE. Growth (18/20) and balance sheet (20/20) are strong; Block B (8/20, exactly at the deal-breaker line) is the depressor. Rs 31.42 Cr of IPO money funds working capital, so FY26 cash conversion of 0.56x is the baseline the new capital must beat. LBF-2: the 83/89/74 debtor days are average-receivables days; year-end days are 144/111/79, absolute receivables rose every year (Rs 11.94, 19.79, 22.88 Cr). LBF-1: government share confirmed 86.98/78.91/55.22%; B2C is only 10.48% of FY26 revenue, so at least 34pp of the 44.78% non-government share is B2B, and top customers are unnamed (identity is a stage 8/4 question). Moat points are fragile: M1 5 and M10 0 flip on window choice; M11 3 is mechanical. Peer-dependent tests scored 0 for lack of data. The 85 is a mechanical screen on thin history, not a quality verdict."

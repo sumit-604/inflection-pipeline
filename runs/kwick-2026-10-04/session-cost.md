@@ -9,3 +9,4 @@ session (claude-opus-5-5) and are not metered per stage.
 | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|---------|-----------|------|------|
 | 0 | inventory (inline) | claude-opus-5-5 (session) | session | n/a | n/a | not metered | n/a | 1 |
+| 1 | gate0 | claude-sonnet-5-5 | medium | n/a | n/a | 128,294 | 5m11s | 1 |

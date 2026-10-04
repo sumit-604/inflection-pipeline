@@ -1,0 +1,168 @@
+stage: B00-inputs
+company: KWICK
+run_date: 2026-10-04
+model: orchestrator (stage 0 run inline by the orchestrator session, claude-opus-5-5)
+status: complete
+spear:
+  line: "Spear: OVERRIDE 2026-10-04 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  gate: PASS (recorded override in companies/KWICK.md)
+  load_bearing_facts:
+    - "LBF-1 CUSTOMER SHIFT: government share of revenue 86.98% FY24 -> 78.91% FY25 -> 55.22% FY26; non-government Rs 4,733.92 lakh (44.78%) FY26. Identify the non-government buyers (integrators reselling to government, private labs, or related entities) from the top-10 customer table, the RPT note and the group-entity section."
+    - "LBF-2 RECEIVABLE DAYS BASIS: prospectus states debtor days 83 / 89 / 74 (FY24-FY26). Year-end receivables over sales give ~144 / 111 / 79 (screener Data_Sheet). Verify the basis and whether the year-end improvement is real."
+    - "LBF-3 CASH CONVERSION: CFO Rs -260.57 / 465.09 / 762.30 lakh vs PAT Rs 2.83 / 8.56 / 13.51 Cr (FY24-FY26). Verify against the restated cash flow statement; Rs 31.42 Cr of IPO proceeds fund working capital."
+    - "LBF-4 DISCLOSURE CONDUCT: the 27-Sep-2026 Reg 30 filing promotes a third-party Rs 150 Cr NFSU campus one day after the 26-Sep-2026 BSE price-movement clarification. Read against RPT, group-entity, litigation sections, and the SEBI order of 18-Aug-2026 against the BRLM."
+sector_cap_row: "Cybersecurity / VAD"
+sector_cap_row_evidence: >
+  25x, section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  sector cap table row "Cybersecurity / VAD"). The business resells and
+  integrates specialised investigation technology for law enforcement: FY26
+  revenue 37% physical-evidence kits, 33% cyber and digital forensics, 11% DNA,
+  10% mobile crime-scene vans, 9% services; raw material Rs 79.98 Cr of Rs 105.71
+  Cr sales (screener Data_Sheet), so value-added distribution with own kit
+  assembly. Collector guess "Pharma / CDMO" rejected. Alternative row for the
+  operator: "Defence / strategic" 38x (homeland security procurement). Confirm
+  in phase 3 against B04.
+listed_date: 2026-09-03
+recently_listed: true
+reporting_units:
+  prospectus: "Rs lakh (restated financial information; 'all figures have been expressed in Lakhs', prospectus txt line 1098, PDF p.18)"
+  presentation: "Rs Cr in market-size narrative; check each slide face"
+  screener: "Rs Cr"
+  announcements: "no financial statements"
+  note: "1 crore = 100 lakh. No stage converts silently; conversion happens once, at stage 10."
+annual_report_substitute: >
+  No annual report exists in the corpus. Per the AMAGI 2026-07-12 precedent
+  (LESSONS_ARCHIVE.md), stages 2, 3, 4, 7 and 8 run on the final Prospectus
+  dated 31-Aug-2026 as the AR substitute: restated financial information with
+  notes and significant accounting policies (Section V, PDF pp.221-270, MD&A
+  ~p.256), related party transactions (summary p.53; restated RPT note in
+  Section V), risk factors (pp.22-50), About Us (Section IV pp.113-220:
+  industry, business, regulations, history, management, promoters, group
+  entities), litigation and approvals (Section VI pp.271+). Directors' report,
+  CARO and the FY26 statutory AR notes are NOT available; this is named in
+  input_gaps.
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. -- NOT REPAIRED: BSE API returned Access Denied (2026-10-04). Screener shows Sep-2026 promoters 64.65%, FII 1.49%, DII 10.85% (non-anchored). Prospectus pre/post-issue pattern is the anchored fallback. UA qualifier also fails on listed >=12 months (listed 03-Sep-2026)."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, ZENTEC:Profit & Loss, ZENTEC:Quarters, ZENTEC:Balance Sheet, ZENTEC:Cash Flow, ZENTEC:Customization, ADSL:Profit & Loss, ADSL:Quarters, ADSL:Balance Sheet, ADSL:Cash Flow, ADSL:Customization, DSSL:Profit & Loss, DSSL:Quarters, DSSL:Balance Sheet, DSSL:Cash Flow, DSSL:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. -- Data_Sheet.csv is populated for all four names (annual P&L, BS, CF FY21-FY26 for KWICK); its Quarters block is blank (SME, half-yearly). Gate 0 uses Data_Sheet plus prospectus restated statements."
+  - "COLLECTOR WARNING (verbatim): no AR found on screener: AR stages will be skipped -- OVERRIDDEN: stages 2/3 run on the prospectus restated financial information (AMAGI precedent). FY2025-26 statutory annual report NOT in corpus (see freshness pair 4)."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again -- No exchange results exist: listed 03-Sep-2026; first filing will be H1 FY27 (trading window closed 01-Oct-2026). FY24-FY26 audited figures come from the prospectus restated statements."
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way -- No rating exists: prospectus PDF p.64 'As the Offer is of Equity Shares, the appointment of a credit rating agency is not required.' No bank-facility rating found in corpus."
+  - "COLLECTOR WARNING (verbatim): step1 repair: prospectus not collected by screener path; final Prospectus dated 31-Aug-2026 fetched from kwickforensic.com/Images/PDF_File/Prospectus_KwickForensics.pdf into inputs/prospectus/"
+  - "COLLECTOR WARNING (verbatim): step1 repair: product catalogue 2026 fetched from kwickforensic.com into inputs/presentation/"
+  - "COLLECTOR WARNING (verbatim): step1 repair: inputs/presentation/Investor_Presentation_1.pdf is the same 30-Sep-2026 conference presentation filed as announcements/20260930-4e7a525d...pdf (duplicate)"
+  - "COLLECTOR WARNING (verbatim): step1 repair: screener Data_Sheet CSVs carry annual P&L, BS, CF raw values; Quarters rows blank (SME, half-yearly)"
+  - "COLLECTOR WARNING (verbatim): step1 repair: sector_cap_row_guess Pharma / CDMO overridden to Cybersecurity / VAD"
+  - "concalls: NONE. concalls_available: false (no earnings calls held; listed one month). NO-CONCALL MODE: stage 5 runs from prospectus MD&A, business section, presentation and announcements; credibility_grade defaults to C. The 30-Sep-2026 Arihant investor conference left no transcript."
+  - "announcements: 6 BSE filings 24-Sep to 30-Sep-2026 only. Filings from listing day 03-Sep-2026 to 23-Sep-2026 (listing approval, monitoring/IPO proceeds, any early Reg 30) were not staged: possible collector selection gap (cf. KISSHT 2026-09-19 fetch_bse_announcements under-selection)."
+  - "announcements: SEBI order WTM/AS/CFD/CFD-SEC-5/32665/2026-27 dated 18-Aug-2026 against the BRLM Corporate Capital Ventures Pvt Ltd added by step1 from sebi.gov.in (inputs/announcements/SEBI-Order-CCVPL-2026-08-18.pdf). It is a regulator document, not a company filing."
+  - "results: ABSENT (see above). No interim period after FY26 is in the corpus."
+  - "rating: ABSENT (none exists)."
+  - "shareholding: ABSENT (see above)."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "other: EMPTY."
+  - "peers: no listed pure play (prospectus Basis for Offer Price: 'There is no listed industry peer company engaged in the same line of business'). Structural comps ZENTEC, ADSL, DSSL; forensic-specific peer questions may be structurally unanswerable (ORCHPHARMA product-chain lesson)."
+inventory:
+  prospectus:
+    count: 1
+    status: PRESENT
+    note: "Final Prospectus dated 31-Aug-2026, 383 pp, Rs lakh. listed_date 2026-09-03: RECENTLY-LISTED PRIORITY; foundational document and AR substitute."
+    files: [inputs/prospectus/KWICK-Prospectus-2026-08-31.pdf]
+  annual-report:
+    count: 0
+    status: ABSENT
+  results:
+    count: 0
+    status: ABSENT
+  rating:
+    count: 0
+    status: ABSENT (none exists)
+  concalls:
+    count: 0
+    status: NOT APPLICABLE (concalls_available false)
+  peer-concalls:
+    count: 11
+    status: PRESENT
+    coverage:
+      ZENTEC: "4 (Oct-2025, Feb-2026, May-2026, Jul-2026)"
+      ADSL: "4 (Nov-2025, Feb-2026, May-2026, Aug-2026)"
+      DSSL: "3 (Feb-2026, Jun-2026, Aug-2026)"
+  announcements:
+    count: 7
+    status: PARTIAL
+    note: "6 BSE filings 24-30 Sep 2026 (conference intimation, price-movement clarification, Reg 30 NFSU note, trading window closure, conference presentation, conference outcome) plus the SEBI order on the BRLM."
+  shareholding:
+    count: 0
+    status: ABSENT
+  research:
+    count: 0
+    status: ABSENT
+  screening:
+    count: 4
+    status: PARTIAL
+    files: [inputs/screening/screener-Data_Sheet.csv, inputs/screening/ZENTEC-Data_Sheet.csv, inputs/screening/ADSL-Data_Sheet.csv, inputs/screening/DSSL-Data_Sheet.csv]
+  presentation:
+    count: 2
+    status: PRESENT
+    files:
+      - inputs/presentation/Investor_Presentation_1.pdf          # 30-Sep-2026 Arihant conference deck, 22 pp (BSE filing)
+      - inputs/presentation/KWICK-Product-Catalogue-2026.pdf     # product catalogue, 32 pp, company website
+  other:
+    count: 0
+    status: ABSENT
+corpus_manifest:
+  - {path: inputs/prospectus/KWICK-Prospectus-2026-08-31.pdf, issuer: Kwick Forensic Solutions Ltd, type: final prospectus (BSE SME IPO), period: "dated 31-Aug-2026; restated FY24-FY26", folder_match: true}
+  - {path: inputs/presentation/Investor_Presentation_1.pdf, issuer: Kwick Forensic Solutions Ltd, type: investor presentation filed under Reg 30, period: "30-Sep-2026", folder_match: true}
+  - {path: inputs/presentation/KWICK-Product-Catalogue-2026.pdf, issuer: Kwick Forensic Solutions Ltd, type: product catalogue (marketing), period: 2026, folder_match: true}
+  - {path: inputs/announcements/20260924-9a7d0634-cbdd-414c-a01f-830ae3968ae9.pdf, issuer: Kwick, type: Reg 30 conference intimation, period: 24-Sep-2026, folder_match: true}
+  - {path: inputs/announcements/20260926-d9074a8c-e3d8-44e2-b97a-4b6474311727.pdf, issuer: Kwick, type: clarification on price movement (BSE query 25-Sep-2026), period: 26-Sep-2026, folder_match: true}
+  - {path: inputs/announcements/20260927-a4e0e740-8719-4e83-b403-8e5bc74dfe9d.pdf, issuer: Kwick, type: Reg 30 note on NFSU Varanasi campus opportunity, period: 27-Sep-2026, folder_match: true}
+  - {path: inputs/announcements/20260928-71f79ea7-e35f-4198-8706-27cf80bfd690.pdf, issuer: Kwick, type: trading window closure, period: 28-Sep-2026, folder_match: true}
+  - {path: inputs/announcements/20260930-4e7a525d-36ad-47cc-82ca-23adea2c95ab.pdf, issuer: Kwick, type: Reg 30 conference presentation (duplicate of presentation/Investor_Presentation_1.pdf), period: 30-Sep-2026, folder_match: true}
+  - {path: inputs/announcements/20260930-b0992b12-5214-47f1-a546-12ee55b3677b.pdf, issuer: Kwick, type: outcome of investor conference, period: 30-Sep-2026, folder_match: true}
+  - {path: inputs/announcements/SEBI-Order-CCVPL-2026-08-18.pdf, issuer: SEBI, type: WTM order against BRLM Corporate Capital Ventures Pvt Ltd, period: 18-Aug-2026, folder_match: "regulator document held in announcements/ (no regulator folder in the contract)"}
+  - {path: inputs/peer-concalls/ZENTEC-Concall_Oct_2025_Transcript.pdf, issuer: Zen Technologies, type: transcript, period: "Q2 FY26 (filed 30-Oct-2025)", folder_match: true}
+  - {path: inputs/peer-concalls/ZENTEC-Concall_Feb_2026_Transcript.pdf, issuer: Zen Technologies, type: transcript, period: "Q3 FY26 (filed 06-Feb-2026)", folder_match: true}
+  - {path: inputs/peer-concalls/ZENTEC-Concall_May_2026_Transcript.pdf, issuer: Zen Technologies, type: transcript, period: "Q4 FY26 (May-2026)", folder_match: true}
+  - {path: inputs/peer-concalls/ZENTEC-Concall_Jul_2026_Transcript.pdf, issuer: Zen Technologies, type: transcript, period: "Q1 FY27 (filed 31-Jul-2026)", folder_match: true}
+  - {path: inputs/peer-concalls/ADSL-Concall_Nov_2025_Transcript.pdf, issuer: Allied Digital Services, type: transcript, period: "Q2 FY26 (filed 13-Nov-2025)", folder_match: true}
+  - {path: inputs/peer-concalls/ADSL-Concall_Feb_2026_Transcript.pdf, issuer: Allied Digital Services, type: transcript, period: "Q3 FY26 (filed 10-Feb-2026)", folder_match: true}
+  - {path: inputs/peer-concalls/ADSL-Concall_May_2026_Transcript.pdf, issuer: Allied Digital Services, type: transcript, period: "Q4 FY26 (filed 27-May-2026)", folder_match: true}
+  - {path: inputs/peer-concalls/ADSL-Concall_Aug_2026_Transcript.pdf, issuer: Allied Digital Services, type: transcript, period: "Q1 FY27 (filed 13-Aug-2026)", folder_match: true}
+  - {path: inputs/peer-concalls/DSSL-Concall_Feb_2026_Transcript.pdf, issuer: Dynacons Systems & Solutions, type: transcript, period: "Q3 FY26 (filed 19-Feb-2026)", folder_match: true}
+  - {path: inputs/peer-concalls/DSSL-Concall_Jun_2026_Transcript.pdf, issuer: Dynacons Systems & Solutions, type: transcript, period: "Q4 FY26 (filed 05-Jun-2026)", folder_match: true}
+  - {path: inputs/peer-concalls/DSSL-Concall_Aug_2026_Transcript.pdf, issuer: Dynacons Systems & Solutions, type: transcript, period: "Q1 FY27 (filed 20-Aug-2026)", folder_match: true}
+pdf_readability:
+  total_pdfs: 21
+  unreadable: 0
+  scanned_zero_text: 0
+  pre_extracted_text: "beside each PDF as <name>.txt with one [page N] marker per page (tools/extract_pdfs.py; tools/check_extraction.py: clean). Stages and verifiers read the .txt; page markers carry the PDF page number."
+freshness_pairs:
+  - pair: RESULTS to CONCALL
+    trigger_doc: NONE (no results filing)
+    mate_expected: same-quarter concall
+    status: SKIPPED
+    missing_doc: ""
+    note: "concalls_available false; no results filing exists post-listing."
+  - pair: RATING BULLETIN to RATIONALE
+    trigger_doc: NONE
+    mate_expected: full rating rationale
+    status: SKIPPED
+    missing_doc: ""
+    note: "No rating exists."
+  - pair: SEBI ORDER to ORDER TEXT
+    trigger_doc: "prospectus PDF p.33, txt lines ~2091-2093 (risk factor citing SEBI Order WTM/AS/CFD/CFD-SEC-5/32665/2026-27 dated 18-Aug-2026 against the BRLM)"
+    mate_expected: SEBI order text
+    status: PASS
+    missing_doc: ""
+    note: "Order text fetched from sebi.gov.in (attachdocs/aug-2026/ORDER_1787048755.pdf) into inputs/announcements/SEBI-Order-CCVPL-2026-08-18.pdf, 19 pp."
+  - pair: AR to LATEST AUDITED ANNUAL RESULTS
+    trigger_doc: "prospectus restated financial information incl. audited FY2025-26 (year ended 31-Mar-2026)"
+    mate_expected: "FY2025-26 statutory annual report (directors' report, CARO, full audited notes)"
+    status: FAIL
+    missing_doc: "Kwick Forensic Solutions Ltd Annual Report FY2025-26. Expected source: BSE filing (AGM notice/AR under Reg 34) or kwickforensic.com/Home/Financial_Information?type=AnnualReport (empty on 2026-10-04)."
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+corpus_verdict: CORPUS GAPPED-FRESHNESS
+reporting_unit_line: "All figures in Rs Cr unless the source says otherwise; the source unit is on the face of the document, not in the filename. The prospectus reports in Rs lakh."
+empty_folder_confirmation: "SUPPRESSED by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty: annual-report, results, rating, concalls (declared), shareholding, research. Repeated in the Halt 1 dossier."
+flags: []
+analyst_note: "Recently listed BSE SME name (03-Sep-2026). The prospectus is the only audited source; there is no post-listing financial print, no concall, no rating and no shareholding filing in the corpus. Every backward figure is restated FY24-FY26 in Rs lakh."

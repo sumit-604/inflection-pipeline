@@ -712,6 +712,10 @@ dragged, one line each.
   attachment aa5cb05e-a85a-426b-b094-69afc1810339.pdf) and the Q1 FY25, Q2 FY25 and
   FY24 results filings are not in the corpus. They pin the quarter freight entered
   revenue and show whether Q1 FY26 was ever regrouped.
+- UPDATE same day: the Q1 FY26 filing of 13-Aug-2025 was collected into inputs/results/.
+  It matches the later filings exactly and carries the freight note; the other three
+  filings (Q1 FY25, Q2 FY25, FY24 results) remain open. The operator's "unexplained
+  Rs 1.28 cr of equity investments" traced to nothing in the corpus; source asked.
 - PDF rendering: the Read tool needs pdftoppm, absent on this machine. pymupdf rendered
   the results pages to PNG at 150 dpi, and every number was read from the image, not
   from the garbled OCR text layer.

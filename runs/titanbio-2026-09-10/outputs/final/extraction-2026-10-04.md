@@ -349,3 +349,114 @@ dossier in this commit.
 NOT IN CORPUS, named for collection: the Q1 FY26 results filing of 13-Aug-2025
 (BSE attachment aa5cb05e-a85a-426b-b094-69afc1810339.pdf); the Q1 FY25 and Q2 FY25
 results filings (Aug-2024, Nov-2024); the FY24 audited results (May-2024).
+
+---
+
+## ADDENDUM 2026-10-04 (second operator request)
+
+New corpus document. inputs/results/2025-08-13_Q1FY26_unaudited_results.pdf, the
+original Q1 FY26 filing (BSE attachment aa5cb05e-a85a-426b-b094-69afc1810339.pdf,
+15 pages, collected 2026-10-04). Standalone P&L on PDF p.8.
+
+### A1. Closes the gap left open in item 3
+
+Quote, PDF p.8, quarter ended 30.06.2025: "Revenue from operations 4,649.64";
+"Cost of Materials Consumed 1,855.28"; "Changes in inventories ... 539.67"; "Other
+Expenses 679.66"; "Profit for the period 616.08". Note 6 carries the freight sentence
+word for word.
+
+Comment. Q1 FY26 as first published is identical to the figures in the Nov-2025 and
+Aug-2026 filings, and it carried the freight note from day one. Q1 FY26 was never
+regrouped. Q1 FY27 growth of 27.2% is like for like.
+
+The same page prints Q1 FY25 directly (quarter ended 30.06.2024): revenue 4,311.46,
+materials 2,234.58, change in inventories (57.87), other expenses 682.73. These match
+the item 4 derivation to the paisa, so the Q1 FY25 row in the item 4 table is now
+filed, not derived.
+
+### A2. "Unexplained Rs 1.28 cr of equity investments"
+
+No Rs 1.28 cr equity item exists in the corpus. Every equity line reconciles.
+
+| Basis | 31-Mar-2025 | 31-Mar-2026 | Movement explained by | Anchor |
+|---|---|---|---|---|
+| Standalone, at cost | 1,636.89 | 1,636.89 | nil movement | AR FY26 PDF p.128 |
+| Consolidated, equity method | 2,463.85 | 2,707.49 | share of associate profit: Peptech 239.91 + Titan Media 3.73 = 243.64 | AR FY26 PDF p.174 |
+| Consolidated less standalone | 826.96 | 1,070.60 | cumulative share of profit (807.01 + 239.91 + 19.95 + 3.73 = 1,070.60) | AR FY26 PDF p.174 |
+
+A text search of all three annual reports and every results filing for a figure
+between Rs 127.5 lakh and Rs 128.5 lakh, or Rs 1.28 cr, finds none in an investment
+context. The nearest equity figure is the Peptech fully paid block: "Peptech
+Biosciences Limited 10.00 12,74,940 127.49" (AR FY26 PDF p.128), Rs 1.27 cr, carried
+unchanged since at least 31-Mar-2023 (AR FY24 PDF p.129). If that block is the
+reference: how the company acquired it is NOT DISCLOSED in any of the three annual
+reports. It would be found in the FY2011-12 and FY2012-13 annual reports or the
+Peptech allotment filings. Stage 8 holds a web claim (not a filing) that Peptech began
+as a 99.88% subsidiary in FY2012 and was diluted to 36.87%; treat that as a lead, not
+anchored evidence.
+
+One related anomaly is real and is recorded here. The H1 FY26 standalone cash flow
+(2025-11-11_Q2FY26_unaudited_results.pdf, PDF p.7) labels the line "Investment in
+equity shares (1,349.79)". The H1 balance sheet (same file, PDF p.6) shows
+investments rising from 2,449.99 to 3,799.79. The full-year Note 5 shows equity at
+cost unchanged at 1,636.89 and the whole increase in quoted debt. Either the H1 label
+is wrong, or equity was bought in H1 and sold by 31-Mar-2026 with no trace in Note 5.
+The FY25 H1 column carries the same label against an inflow of 1,160.49, in a year
+when equity rose by 754.69 and debt fell by 623.03, so the label reads as generic and
+unreliable. That is the most evidenced reading; the company would confirm it.
+
+### A3. Q1 to Q2 FY26 other expenses: 679.66 to 1,159.57, up 479.91 (+70.6%)
+
+Anchors: Q1 FY26 PDF p.8 of the new filing; Q2 FY26 filing PDF p.4. No results filing
+breaks other expenses into heads, and there is no concall. The head-wise split by
+quarter is NOT DISCLOSED in the corpus. Only the full-year Note 30 (AR FY26 PDF p.138)
+gives heads.
+
+| Quarter | Other expenses | % of revenue | Change on prior-year quarter |
+|---|---|---|---|
+| Q1 FY25 | 682.73 | 15.84% | |
+| Q2 FY25 | 812.09 | 20.36% | |
+| Q3 FY25 | 842.56 | 22.01% | |
+| Q4 FY25 | 864.29 | 24.58% | |
+| Q1 FY26 | 679.66 | 14.62% | (3.07) |
+| Q2 FY26 | 1,159.57 | 21.33% | +347.48 |
+| Q3 FY26 | 977.83 | 17.30% | +135.27 |
+| Q4 FY26 | 1,085.89 | 22.24% | +221.60 |
+| Q1 FY27 | 1,009.36 | 17.06% | +329.70 |
+
+What the corpus does establish:
+- Q2 FY26 is not the outlier; Q1 FY26 is. Q2 FY26 at 21.33% of revenue sits inside the
+  FY25 range for Q2 to Q4 (20.36% to 24.58%). Q1 FY26 at 14.62% is the lowest of nine
+  quarters.
+- Q1 is the low quarter in both years: 21.3% of annual other expenses in FY25 and 17.4%
+  in FY26, against an even 25%. The Q1 to Q2 step was +129.36 (+18.9%) in FY25 and
+  +479.91 (+70.6%) in FY26.
+- All of the FY26 increase of 701.28 sits in Q2 to Q4 (347.48 + 135.27 + 221.60 =
+  704.35); Q1 FY26 fell 3.07. Q1 FY27 then ran 48.5% above Q1 FY26 on revenue up 27.2%.
+- Freight presentation is RULED OUT as the cause. The original Q1 FY26 filing already
+  carries the freight note and its figures were never restated (A1).
+
+Two readings, and the observation that separates them:
+- Reading 1, production-linked overheads. Q1 FY26 sold from stock: a Rs 539.67 lakh
+  inventory drawdown with materials consumed at 1,855.28; Q2 FY26 built stock (137.86)
+  and materials consumed rose 47.8% to 2,742.73. Manufacturing overheads (power,
+  packing, consumables, processing) were Rs 2,136.10 lakh in FY26, 54.7% of other
+  expenses (Note 30), and they scale with production, not sales. [INFERENCE]
+  Against it: Q1 FY25 had the HIGHEST materials consumed of FY25 (2,234.58) and an
+  inventory build, yet the LOWEST other expenses (682.73). Production volume does not
+  explain the FY25 Q1 trough.
+- Reading 2, a recurring Q1 booking pattern. Annual or lumpy heads that FY26 grew most
+  are booked after Q1: security and manpower contract charges 21.45 to 130.22, power
+  and fuel 953.14 to 1,252.40, freight outward 426.95 to 584.41, CSR 56.50, building
+  repairs 19.36 to 52.26, the first expected credit loss provision 36.26. [INFERENCE]
+  Both years show the Q1 trough, which fits this reading better than reading 1.
+- The separating observation: the Q2 FY27 filing (due Nov-2026). Another large Q1 to Q2
+  step from Q1 FY27's 1,009.36, without a matching swing in materials consumed, makes
+  it a booking pattern. A step that tracks materials consumed makes it production.
+  The direct answer is a head-wise H1 FY26 breakdown, which the company publishes
+  nowhere; it is a question for the company.
+
+Files and pages added by this addendum: 2025-08-13_Q1FY26_unaudited_results.pdf PDF
+p.1-3 (board outcome) and p.8 (standalone P&L); 2025-11-11_Q2FY26_unaudited_results.pdf
+PDF p.6 (H1 balance sheet) and p.7 (H1 cash flow); AR FY26 PDF p.174 (consolidated
+Note 5); AR FY24 PDF p.129.

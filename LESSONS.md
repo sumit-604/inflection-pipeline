@@ -50,12 +50,19 @@ record as of the run that produced it.
   (3) OR-9 starter under A24/A25, size zero vs 2-3%.
 - Stage 5 to Opus 5.5 high if Verifier B overturns grades in two runs
   (RULINGS_2026-10 item 27).
+- OPEN (2026-10-04, C2): record stage 5 cost on the next no-call run
+  (target under 100k; Kwick 254k).
 - Audit deferrals: items 41, 43, 85-88, 45, 71, 108 (RULINGS_2026-10).
 - Repo: land 110 branch-only markdown records on main in one PR, then
   revisit 71 branch deletes (PR #186 = c74e7a10; BRANCH_AUDIT_2026-10).
 - Repo: run BRANCH_DELETIONS_2026-10 script from a local clone (proxy
   refuses remote deletes).
-- PR #185 AR section index merges after one measured Phase 1 run.
+- OPEN (2026-10-04, KWICK): the next company run that passes the checkout
+  guard is the first clean post-update token measurement; compare it per
+  stage with runs/kwick-2026-10-04/session-cost.md.
+- OPEN (2026-10-04, KWICK): on a prospectus-only corpus, stages 2 and 3
+  drive cost (474k and 421k). PR #185 (AR section index) now has its
+  measured run; evaluate it against Kwick in a later session, then merge.
 - RE-COLLECT (operator, collector or /step1): runs/kronox-2026-08-30 FY2024-25
   AR; runs/kopran-2026-07-14 FY2024-25 and FY2025-26 ARs;
   runs/akums-2026-07-10 Piramal Pharma (PPLPHARMA) Q2 FY26 transcript.

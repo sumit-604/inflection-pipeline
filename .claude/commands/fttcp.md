@@ -30,6 +30,15 @@ below for that case, state your ruling in one line, and move on.
 
 ## NAME RESOLUTION (do this first, silently)
 
+CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
+`git fetch origin main`, then
+`git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+If the diff is not empty, print
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+and STOP: "Checkout is behind or ahead of origin/main in framework files;
+pull or commit before running." If the fetch fails, STOP with the same line
+plus " (fetch failed)". This is a mechanical halt, not a quality halt.
+
 The argument may be a full path, a bare ticker (any case), or a company-name
 fragment. If it is not an existing path, resolve it to the runs/ folder whose
 name starts with the lowercased argument, or whose manifest company field

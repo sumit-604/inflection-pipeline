@@ -94,6 +94,9 @@ target, 3-5 year holds.
   verifier A moved to Sonnet 5.5; Verifier A's independence comes from a
   fresh context and the source page, not the model family)
 Do not upgrade a stage's model without editing its agent file.
+The model and effort in .claude/agents/*.md frontmatter are the operator's
+rulings. A session never overrides them on the belief that the file is stale.
+If the file looks stale, run the stale-checkout guard instead.
 
 ## OPERATOR RULINGS (dated; Section 1B rulings live in .claude/skills/section-1b/SKILL.md)
 Standing pipeline rulings:
@@ -127,6 +130,10 @@ October 2026 audit, ruled 2026-10-04 (audits/RULINGS_2026-10.md item numbers):
   an acceptance rate below 60% on a denominator of 4 or more.
 - OR-30 (items 81, 82): /run-quarterly A4 defers Role 4 Steps 6.5/7 and
   Role 5 Step 8D to /fttcp and Role 1 and flags pillar-relevant facts.
+Post-Kwick rulings, 2026-10-04 (audits/RULINGS_2026-10.md, post-Kwick section):
+- OR-32: Verifier A checks 100% of verdict-card, Section 1B pillar and
+  Gate 0 inputs (mandatory_checked of mandatory_total in B12a); everything
+  else stays a materiality sample with coverage stated honestly.
 
 ## WORDS
 - "done" for a stage = full report written AND valid YAML block emitted
@@ -156,6 +163,12 @@ October 2026 audit, ruled 2026-10-04 (audits/RULINGS_2026-10.md item numbers):
   git reset --hard over a full checkout.
 - Run tools/dry_check.sh before merging any PR that touches .claude/,
   prompts/, frameworks/ or tools/ (operator ruling 2026-10-03).
+- Stale-checkout guard (operator ruling 2026-10-04): /run-pipeline, /step1,
+  /fttcp, /finalize and /run-quarterly start with `git fetch origin main` and
+  `git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+  A non-empty diff or a failed fetch stops the command before it reads any
+  framework file. The session-start hook syncs only on the web, so on a local
+  checkout this guard is the only check.
 - Any session that commits a framework or prompt amendment must end by
   opening a PR to main the same day. Run outputs and framework amendments
   go in SEPARATE commits so recovery stays surgical.

@@ -16,6 +16,15 @@ Then run:
 
 ## 0. SETUP AND PRECHECKS (do these yourself, in order)
 
+CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
+`git fetch origin main`, then
+`git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+If the diff is not empty, print
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+and STOP: "Checkout is behind or ahead of origin/main in framework files;
+pull or commit before running." If the fetch fails, STOP with the same line
+plus " (fetch failed)". This is a mechanical halt, not a quality halt.
+
 a. PARSE ARGUMENTS: the TICKER and the `--docs` list. Resolve each doc path
    (absolute, relative to cwd, or a bare filename to locate). If no `--docs`
    are given, list candidate PDFs and ask which to run. This is the only

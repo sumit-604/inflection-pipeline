@@ -3,7 +3,7 @@
 # Run it before merging any PR that touches .claude/, prompts/, frameworks/
 # or tools/. It reads files and toggles the sparse checkout; it edits nothing.
 #
-# Usage:  tools/dry_check.sh            # all four checks
+# Usage:  tools/dry_check.sh            # all five checks
 #         tools/dry_check.sh 1 2        # only the named checks
 #
 # Check 1  Frontmatter: agents, commands and skills parse; agent model and
@@ -18,12 +18,19 @@
 #          test, then its own patterns are put back.
 # Check 4  Load-bearing anchors exist (orchestrator 7A, fttcp disk writes and
 #          part 6), and the token-meter mod validates and passes its tests.
+# Check 5  Checkout freshness (operator ruling 2026-10-04). Fetches origin
+#          main. FAIL if origin/main is not an ancestor of HEAD (the branch
+#          is behind main). FAIL if the guarded paths (.claude/ prompts/
+#          frameworks/ CLAUDE.md LESSONS.md) carry uncommitted edits. The
+#          branch's own diff against origin/main over those paths prints as
+#          INFO only: a framework PR branch always differs from main, and
+#          that difference is the PR.
 #
 # Exit 0 when every check run passes, 1 otherwise.
 set -uo pipefail
 cd "$(git rev-parse --show-toplevel)"
 REF_RUN="${DRY_CHECK_RUN:-runs/taaltech-2026-09-10}"
-CHECKS=("$@"); [ "${#CHECKS[@]}" -eq 0 ] && CHECKS=(1 2 3 4)
+CHECKS=("$@"); [ "${#CHECKS[@]}" -eq 0 ] && CHECKS=(1 2 3 4 5)
 declare -A RESULT
 
 check1() {
@@ -203,6 +210,33 @@ check4() {
     claude plugin test tools/mods/token-meter >/dev/null 2>&1 || { echo "  FAIL: token-meter tests"; rc=1; }
   else
     echo "  FAIL: claude CLI not on PATH; token-meter not checked"; rc=1
+  fi
+  return $rc
+}
+
+check5() {
+  local rc=0 guarded=(.claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md)
+  if ! git fetch -q origin main 2>/dev/null; then
+    echo "  FAIL: git fetch origin main failed"; return 1
+  fi
+  if git merge-base --is-ancestor origin/main HEAD; then
+    echo "  HEAD contains origin/main ($(git rev-parse --short origin/main))"
+  else
+    echo "  FAIL: branch is behind origin/main ($(git rev-parse --short origin/main)); merge or pull main first"; rc=1
+  fi
+  if git diff --quiet HEAD -- "${guarded[@]}"; then
+    echo "  guarded paths: no uncommitted edits"
+  else
+    echo "  FAIL: uncommitted edits in guarded paths:"
+    git diff --name-only HEAD -- "${guarded[@]}" | sed 's/^/    /'; rc=1
+  fi
+  local ahead
+  ahead=$(git diff --name-only origin/main...HEAD -- "${guarded[@]}")
+  if [ -n "$ahead" ]; then
+    echo "  INFO (not a failure): guarded files this branch changes versus origin/main:"
+    echo "$ahead" | sed 's/^/    /'
+  else
+    echo "  INFO: no guarded file differs from origin/main on this branch"
   fi
   return $rc
 }

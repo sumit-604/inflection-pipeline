@@ -112,7 +112,6 @@ Rules:
 - If no such hypothesis emerges honestly from the data, state it explicitly:
   "No cross-peer hypothesis identified — the peers do not reveal a pattern beyond
   what each individually discloses."
-- Do not force a hypothesis where none exists. Absence of pattern is itself a finding.
 
 This step exists to catch sector-level shifts that individual peer analyses miss
 because each peer is only telling their own story.

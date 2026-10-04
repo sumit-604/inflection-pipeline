@@ -481,7 +481,7 @@ Every override invocation must cite THREE independent primary sources of documen
 - Capex commissioning timeline (audited AR CWIP note, exchange announcement, or contractor disclosure that establishes a dated commissioning path)
 - Competitor absence (independent — cross-check via exports data, RBI/DGCI&S/customs sources, or independent industry report — never inferred solely from the company's own narrative)
 
-Second-tier sources (rating agency, industry association, sector-focused independent research) may substitute for the competitor-absence source when direct verification is impossible, but not for either of the first two. Management concalls and investor presentations count as ZERO sources for override purposes; they cannot be one of the three.
+Second-tier sources (rating agency, industry association, sector-focused independent research) may substitute for the competitor-absence source when direct verification is impossible, but not for either of the first two, and only where the substitute ranks 1-3 under Downstream_Source_Discovery_Protocol_v1_0.md Part 3 (operator ruling OR-20, 2026-10-04). Management concalls and investor presentations count as ZERO sources for override purposes; they cannot be one of the three.
 
 **Magnitude cap: +40% maximum above the sector cap, no exceptions.**
 
@@ -549,7 +549,7 @@ ROCE expansion has historically been the single most powerful re-rating driver i
 
 Capital-heavy caveat — the pattern is muted but real: Power Mech FY17-22 ROCE 18-22% oscillating, PE 8x → 15x; KNR 10x → 18x; PNC 9x → 16x; KEC 12x → 22x. For capital-heavy businesses ROCE oscillates within a ~5-point band because new capex deployment temporarily depresses it; the re-rating is ~2x rather than 3x.
 
-**ENDPOINT-BIAS ANNOTATION (v1.2):** endpoint multiples in these tables reflect FY21-22 peak-cycle conditions. For planning purposes, use the LOWER BOUND of the 1.5-2.5x re-rating estimate. The +1x/+2x re-rating optionality premium sizing already reflects this conservatism and is unchanged.
+**ENDPOINT-BIAS ANNOTATION (v1.2):** endpoint multiples in these tables reflect FY21-22 peak-cycle conditions. For planning, the lower bound (1.5x) of the 1.5-2.5x re-rating estimate is the BEAR reading; the base carries the most evidenced point in 1.5-2.5x, with the observation that separates the readings named (Section 1B v3.10 Amendment 26.3; operator ruling OR-22, 2026-10-04). The +1x/+2x re-rating optionality premium sizing already reflects this conservatism and is unchanged.
 
 ## STEP 6 — SAVE AND ROLL FORWARD
 
@@ -678,7 +678,7 @@ Cross-check the funding channel against the Debt Capacity Assessment verdict: a 
 
 A business does not earn a growth premium until it earns more than its cost of capital. Growth below the required return destroys value and must never be paid for.
 
-- **Minimum ROCE requirement.** This is the required return r the valuation will use. Where the RRM-derived r has already been computed, use it. Where r is not yet available at the FTTCP stage, use the standing default of **13.5% for micro and small caps** (operator-confirmed default, Gate E, 13-Aug-2026). State which was used.
+- **Minimum ROCE requirement.** This is the required return r the valuation will use. Where the RRM-derived r has already been computed, use it. Where r is not yet available at the FTTCP stage, use the standing default of **13.5% for micro and small caps** (operator-confirmed default, Gate E, 13-Aug-2026; reconfirmed as operator ruling OR-21, 2026-10-04). This B2 default is separate from the RRM base r (small/micro 14%); where the RRM r is computed it governs. State which was used.
 - **Forward ROCE projection.** Project ROCE forward three years from the transition evidence gathered in Part A (the ROCE forward verdict, the catalyst tables, and any normalization the pillars will apply). Show the path year by year.
 - **The crossover.** State whether projected ROCE exceeds the minimum requirement and, if so, in which fiscal year it crosses. Before the crossover year the business is growing below its cost of capital and no growth premium is eligible. From the crossover year it is compounding value.
 

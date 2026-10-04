@@ -39,8 +39,8 @@ LESSONS_ARCHIVE.md for 2+ occurrences and promotes qualifying patterns here._
   with a real Read. Reliable default: pre-extract every input PDF to
   page-marked .txt up front and point every stage/verifier at the .txt, so
   no stage hits the ~20-32MB image-render wall.
-- Verifier A (haiku) first pass mislabels severity, inventing false
-  CRITICALs that would force REWORK (a matched figure, a faithfully
+- Verifier A (haiku, before 2026-10-04) first pass mislabels severity,
+  inventing false CRITICALs that would force REWORK (a matched figure, a faithfully
   transcribed company anomaly, or a screener-vs-AR basis difference is not a
   finding). Orchestrator sanity-checks every Verifier A CRITICAL against its
   own source_truth column, then re-invokes once with the severity-semantics
@@ -119,8 +119,17 @@ _Pending framework edits Keerti maintains._
 - OPEN (2026-10-03, pipeline, stage 5): if Verifier B overturns stage 5
   credibility grades in two runs, move stage-05-concall alone to Opus 5.5
   high (operator ruling, audits/RULINGS_2026-10.md item 27).
-- OPEN (2026-10-03, audit): 57 audit questions and 19 manual edits remain in
-  audits/RULINGS_2026-10.md "Still open". Read before the next company run.
+- OPEN (2026-10-04, audit): all 76 open audit items ruled (OR-15 to OR-31).
+  Deferred, each for a later session: items 41 (/fttcp loads skill chunks,
+  after the KISSHT chunk 06/08 fix), 43 and 85-88 (quarterly command and
+  agent dedup, after one quarterly run), 45 (/compost budget review), 71
+  and 108 (operator to supply the promoter 10 dimensions and the TAM
+  runway class boundaries). audits/RULINGS_2026-10.md.
+- OPEN (2026-10-04, OR-14, PR #193): re-engage trigger "Re-derive under
+  OR-14" on AIMTRON, ASIANENE, SYSTANGO, SHYAMMETL, MANINDS. Fires when the
+  name is next opened (run, quarterly, Halt 1 revisit): class the promoter
+  concern INTEGRITY or STRUCTURE and run the ledger test before any AVOID
+  carries forward. Operator ruled: follow-up session.
 - OPEN (2026-10-03, repo, branch audit items 20-21): PR #186 (sparse
   checkout) merged as c74e7a10; now land the markdown outputs of the 110 branch-only run and
   quarterly records on main in one run PR, no PDFs; then revisit deleting
@@ -134,6 +143,7 @@ _Pending framework edits Keerti maintains._
   GAUDIUMIVF and VINYAS have mislabelled-year annual reports; KRONOX's
   annual-report folder holds the IPO prospectus. Fix before reusing those
   runs. audits/REPO_LAYOUT_PROPOSAL_2026-10.md follow-up section.
+  Operator ruled 2026-10-04: follow-up session.
 - OPEN (2026-10-04, KISSHT, 11): run priced under uncommitted v3.11; merge it [Section 1B v3.11]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
 - OPEN (2026-10-04, KISSHT, 11): own-book P/B band not earned (cap blend: F1 overruled by operator 2026-10-04) [A27.2]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
 - OPEN (2026-10-04, KISSHT, 11): partner RoE capital base and parent-held IPO cash unclassified [A27.1]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.

@@ -1,5 +1,5 @@
 # INFLECTION ALPHA PIPELINE ORCHESTRATOR v1.0
-## Claude pipeline: Sonnet 5.5 evidence stages, Opus 5.5 valuation and synthesis, Haiku 4.5 assembly and Verifier A
+## Claude pipeline: Sonnet 5.5 evidence stages, assembly and Verifier A; Opus 5.5 valuation and synthesis
 Valuation authority: Master Project Prompt v3.7, Section 1B layer set (v3.3
 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name) (Four-Pillar
 Framework, RRM dual-track, Hurdle Ratio), FTTCP v2.3. No other exit PE source
@@ -56,10 +56,10 @@ to the deliberation record.
 
 ## 1. INPUT CONTRACT
 
-Run folder structure (Google Drive, mirrored to local before run):
+Run folder structure (repo, collected by collect_to_repo.py):
 
 ```
-/inflection-alpha-runs/<ticker>-<YYYY-MM-DD>/
+runs/<ticker>-<YYYY-MM-DD>/
   manifest.yaml
   inputs/
     prospectus/       (0-2 PDF; DRHP / RHP. MANDATORY to attempt when the
@@ -161,8 +161,11 @@ Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]
 or
 
 ```
-Spear: OVERRIDE YYYY-MM-DD (operator)
+Spear: OVERRIDE YYYY-MM-DD (operator ...)
 ```
+
+(Any text after "(operator" is accepted, including the /step1 form "(operator
+standing ruling 2026-09-05: Step-1 intake replaces the web spear)".)
 
 If neither line exists, STOP the run at once and direct the operator to run
 the spear pass with Claude web first. This is not a mechanical halt and not a
@@ -170,8 +173,9 @@ degradation; the run does not start. The spear runs on live web, which this
 container cannot reach, so Claude Code never performs it.
 
 On a HIT, the load-bearing facts named in the Spear line become the run's
-first verification priority: stage 0 records them in `B00` and every later
-stage checks them before its own work.
+first verification priority: stage 0 records them in `B00`, the orchestrator
+carries them in every stage task message, and every later stage checks them
+before its own work.
 
 ### FRESHNESS PAIR CHECK (stage 0 corpus audit, hard rule; per MANINDS 2026-08-21)
 
@@ -433,9 +437,9 @@ support this override?". The operator answers it once, at the
 | 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5.5 | AR + concalls + pres. + B01 | `B07-emoat` |
 | 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5.5 + web search | web + AR governance | `B08-promoter` |
 | 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5.5 + web search | web + AR + B04 | `B09-tam` |
-| 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
+| 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Sonnet 5.5 (medium) | B01..B09 + results PDFs | `B10-valinputs` |
 | 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus 5.5 | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
-| 12a | Verifier A: numerical | 12-verifiers-pipeline.md (VERIFIER A) | Haiku 4.5 | all source PDFs + all reports | `B12a` |
+| 12a | Verifier A: numerical | 12-verifiers-pipeline.md (VERIFIER A) | Sonnet 5.5 (high) | all source PDFs + all reports | `B12a` |
 | 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus 5.5 | 15 transcripts + B05 + B06 | `B12b` |
 | 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus 5.5 | B01, B07, B11 + framework docs | `B12c` |
 | 12d | Verifier D: peer coverage | verifier-d-peers.md | Sonnet 5.5 | peer transcripts + B06 | `B12d` |
@@ -586,13 +590,14 @@ Position sizing logic in Role 2 already handles the override; the pipeline
 only surfaces it.
 
 **REWORK is about the analysis, not the company.** If Verifier A finds any
-CRITICAL numerical finding (fabricated or materially misread figure), or any
-verifier's acceptance_rate falls below 60%, the synthesis verdict is REWORK
+CONFIRMED CRITICAL numerical finding (fabricated or materially misread
+figure), or any verifier's acceptance_rate falls below 60% on a denominator
+of 4 or more (operator ruling OR-29, 2026-10-04), the synthesis verdict is REWORK
 regardless of company quality: the analysis cannot be trusted. This gate
 stays hard because it judges the pipeline, not the stock.
 
-**SOURCE FIDELITY IS A HARD, NON-OVERRIDABLE GATE.** Verifier A (Haiku) is the
-sole final authority on whether a number exists in the source. No downstream
+**SOURCE FIDELITY IS A HARD, NON-OVERRIDABLE GATE.** Verifier A (Sonnet 5.5,
+fresh context) is the sole final authority on whether a number exists in the source. No downstream
 step may clear, downgrade, or reason around a Verifier A source-fidelity
 finding (any B12a finding with `source_fidelity: true` — MISMATCH, ANCHOR NOT
 FOUND, or material UNANCHORED). A flagged number may not enter any downstream
@@ -603,9 +608,9 @@ Verifier C's re-derivations and the synthesis narrative are SUBORDINATE to
 Verifier A on the existence-of-a-number question; they own judgment and
 framework, never source fidelity. The only thing that clears a source-fidelity
 flag is re-reading the source PDF and showing the number does exist at a
-correct anchor, and that clearance is logged as a disagreement (below). The
-cross-family placement is the point: Haiku is the only out-of-family read on
-the numbers, so it is the one that binds.
+correct anchor, and that clearance is logged as a disagreement (below). Its
+independence comes from a fresh context and the source page, not the model
+family (operator ruling 2026-10-04), so it is the read that binds.
 
 **LOG EVERY VERIFIER DISAGREEMENT (from day one).** A disagreement is any point
 where a downstream step's conclusion conflicts with a Verifier A source-fidelity
@@ -613,7 +618,7 @@ finding: a Verifier C re-derivation that relied on a flagged number, a synthesis
 inclination to keep a figure Verifier A flagged, or a source re-check that
 CLEARED a Verifier A flag. Collect every one into a disagreement set. It is NOT
 a REWORK trigger by itself; it is the standing evidence that, over months, shows
-whether Haiku catches what the Opus verifiers miss or whether the disagreements
+whether Verifier A catches what the Opus verifiers miss or whether the disagreements
 are noise. Synthesis writes the set to `outputs/final/verifier-disagreement-log.md`
 and the Notion save appends each row to the "Verifier Disagreement Log" page.
 One row per disagreement, fixed shape:
@@ -673,7 +678,8 @@ counts instead of a confidence band; it never fills the gap with a guess.
 
 Four files in `outputs/final/`:
 
-1. `business-narrative.md`: 10 to 12 lines, plain English, Keerti's written
+1. `business-narrative.md`: structure per prompts/13-synthesis-pipeline.md
+   DELIVERABLE 1, plain English, Keerti's written
    voice per anti-ai-writing-style.md (no em-dashes, no AI vocabulary,
    numbers first, symmetric bull-bear, no landing lines). Opens with the
    6-7 word ultra-short headline.

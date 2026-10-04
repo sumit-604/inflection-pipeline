@@ -20,7 +20,7 @@ I will trigger this role with one of:
 - "Review this concall transcript"
 - Pasting a concall transcript or transcript link
 - "Walk me through the concall"
-When triggered, you MUST execute the protocol below in full sequence.
+When triggered, you MUST execute the protocol below in full sequence. Under /run-quarterly the 🛑 STOP lines are section checkpoints, not waits; A4 runs every step through; Steps 6C-fired and 8 surface as flags for the operator.
 
 **Sequencing with Role 4 (Results Review):**
 
@@ -185,7 +185,7 @@ Credit cost guidance carries the same weight in the promise-vs-delivery tracker 
 
 ## STEP 3 — PROMISE vs DELIVERY AUDIT
 
-This step requires Notion access to prior concall logs. If this is the first concall under the protocol, skip the historical audit but begin building the log from this quarter forward.
+This step requires Notion access to prior concall logs. (Under /run-quarterly the orchestrator passes the prior log inline; if not passed, mark 3A-3E ND with 'prior log not passed', never 'first concall'.) If this is the first concall under the protocol, skip the historical audit but begin building the log from this quarter forward.
 
 ### 3A. Last Quarter's Commitments — Did They Deliver?
 
@@ -441,7 +441,7 @@ For each major narrative claim from the concall, check whether the filing number
 - For lenders: "asset quality stable" → GNPA, PCR, collection efficiency, and write-off numbers in the filing; write-offs can make GNPA look stable while the underlying stress grows
 ### 7B. Peer Concall Cross-Check
 
-For analysed companies in adjacent sectors, pull recent peer concalls (within ±4 weeks). Compare narrative on shared topics:
+For analysed companies in adjacent sectors, pull recent peer concalls (within ±4 weeks). (Under /run-quarterly, if peer concalls are not passed: 'UNVERIFIABLE this run', never 'no peer reported'.) Compare narrative on shared topics:
 
 | **Topic** | **This Company Said** | **Peer 1 Said** | **Peer 2 Said** | **Most Credible Narrative** |
 | --- | --- | --- | --- | --- |

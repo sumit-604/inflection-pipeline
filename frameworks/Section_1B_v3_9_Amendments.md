@@ -211,6 +211,8 @@ Old method: FY28 base ₹260 Cr × 29.5x = ~₹373/share → "above fair value, 
 
 ## APPENDIX C — RULINGS REQUIRED FROM OPERATOR BEFORE STAGE 11
 
+`[Company-specific (E2E, 07-Sep-2026). No repo record of R1-R4 rulings as of 2026-10-04; R1 rides open ruling OR-4. Binds E2E only.]`
+
 | # | Ruling | Options | Effect |
 |---|---|---|---|
 | R1 | E2E sector cap classification | (a) 30x capital-heavy cloud infra per Amendment 8; (b) 45x Platform/IT per current Notion thesis; (c) blended cap for infra-plus-platform businesses (proposed new row, e.g., 35x) | Decisive: residual 20% vs none |

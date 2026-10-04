@@ -20,7 +20,8 @@ target, 3-5 year holds.
   four quarters of Role 5 delivery, never whole-company history.
 - Never shade an input to be safe. State the most evidenced path, name the
   two readings and the one observation that separates them, and put the
-  conservatism in position size (v3.9 Amendment 25). This binds Role 1
+  conservatism in position size (v3.10 Amendment 26.3; v3.9 Amendment 25
+  sets size as the margin of safety for fast-growth names; OR-31). This binds Role 1
   projections; it does not touch the document-reading protocols, where
   conservative interpretation of filed evidence still stands.
 - Never construct a Year-N exit price on a different earnings basis than
@@ -41,7 +42,9 @@ target, 3-5 year holds.
 - Never treat building as a footnote to governance (Master v3.7 Rule G).
   Role 2 Section 3G ledgers what the promoter built, raised, deployed, and
   delivered under constraint, and states its Pillar 3 line. The ledger
-  never lifts a position cap the promoter verdict imposes.
+  never lifts a cap set by a promoter AVOID or an INTEGRITY concern; for a
+  STRUCTURE concern, three of four evidenced ledger heads size as TRUSTWORTHY,
+  with each concern a named tripwire (operator ruling OR-14).
 - Never answer a failure-catalogue pattern-match without the nearest
   success name and the observable difference (Master v3.7 Rule I). While
   frameworks/success_catalogue.md holds fewer than four names, say
@@ -84,11 +87,41 @@ target, 3-5 year holds.
 - claude-opus-5-5 (Opus 5.5), effort high: stage 13 synthesis, stage 14
   thesis, quarterly A3-A4
 - claude-sonnet-5-5 (Sonnet 5.5), effort medium: stages 1, 4, 6, 09b,
-  verifier D, quarterly A2; effort low: quarterly A1; default (high):
-  stages 2, 3, 5, 7, 8, 9
-- haiku (Haiku 4.5, no 5.5 Haiku exists): stage 10 assembly, verifier A
-  (the out-of-family read on the numbers)
+  10 assembly, verifier D, quarterly A2; effort high (set in the file):
+  verifier A; effort low: quarterly A1; default (high): stages 2, 3, 5,
+  7, 8, 9
+- No stage runs on Haiku 4.5 (operator ruling 2026-10-04: stage 10 and
+  verifier A moved to Sonnet 5.5; Verifier A's independence comes from a
+  fresh context and the source page, not the model family)
 Do not upgrade a stage's model without editing its agent file.
+
+## OPERATOR RULINGS (dated; Section 1B rulings live in .claude/skills/section-1b/SKILL.md)
+October 2026 audit, ruled 2026-10-04 (audits/RULINGS_2026-10.md item numbers):
+- OR-15 (item 36): /finalize Rule H loop. A stage 15 steelman-gate miss
+  re-runs stage 14 once, then stage 15; a second miss marks Role 3 VOID,
+  flagged, and the run continues.
+- OR-16 (item 39): /fttcp override sensitivity shows the number on each
+  draft (Claude Code's and the dossier pre-ruling), not the more
+  conservative one.
+- OR-17 (item 40): /fttcp Role 5.5 gate needs three EXTERNAL tracker signals
+  per entity. A dated "Tracker floor: OVERRIDE YYYY-MM-DD (operator,
+  reason)" line in companies/<TICKER>.md lets it proceed below the floor;
+  the gate names the shortfall either way.
+- OR-18 (item 46): AR protocol margin of safety follows the Master evidence
+  scale (20/30/40%), or position size for fast-growth names (A25).
+- OR-19 (item 47): AR protocol Going Concern and FIRED thesis-broken
+  conditions carry to the IMMEDIATE EXIT overlay; the review completes.
+- OR-23 (item 52): Master Conviction Test. Stage 15 states the 3x exposure
+  as % of portfolio (capital base NOT FOUND unless supplied) and hands the
+  imagined-state questions to the operator.
+- OR-24 (item 54): quarterly-cadence downstream signals feed the 12-month
+  window (FTTCP governs; the Master's 6-12 month text is aligned).
+- OR-26 (item 59): Quarterly Results conservative bias binds the reading
+  of filed evidence (Steps 0-6); Steps 6.5-7 follow A26.3 / A25.
+- OR-29 (items 66, 78): REWORK fires on a CONFIRMED Verifier A CRITICAL or
+  an acceptance rate below 60% on a denominator of 4 or more.
+- OR-30 (items 81, 82): /run-quarterly A4 defers Role 4 Steps 6.5/7 and
+  Role 5 Step 8D to /fttcp and Role 1 and flags pillar-relevant facts.
 
 ## WORDS
 - "done" for a stage = full report written AND valid YAML block emitted
@@ -108,6 +141,7 @@ Do not upgrade a stage's model without editing its agent file.
   apt-get install -y -qq; redirect verbose PDF-extraction output. The
   collect_to_repo.py collector runs on the operator's machine, out of
   session; in-session it appears only as collect_to_repo.py --push-again.
+  Exception: /step1 runs it with --dry-run on the operator's desktop.
 - Sparse checkout (operator ruling 2026-10-03): a pipeline session first runs
   tools/sparse_session.sh runs/<folder> [more folders]. It keeps everything
   outside runs/, runs/_template/, every run's session-cost.md and
@@ -122,6 +156,9 @@ Do not upgrade a stage's model without editing its agent file.
   go in SEPARATE commits so recovery stays surgical.
 - Framework/prompt amendments and run outputs travel on SEPARATE branches
   and PRs; an amendment never rides a run PR.
+- Any PR that changes frameworks/, .claude/skills/section-1b/ or an operator
+  ruling also updates claude-web/PROJECT_INSTRUCTIONS.md (the claude.ai
+  project instructions), or says in the PR description why not.
 
 ## FERRY AND COMMIT HYGIENE (both sides; team workflow v2)
 - Hash by default. Every report a command produces that involves a commit
@@ -187,6 +224,9 @@ weigh, never anchored evidence.
                  Downstream_Source_Discovery_Protocol_v1_0.md (source
                  registry for downstream signal candidates; Role 5.5
                  verifies against it in claude.ai)
+- claude-web/PROJECT_INSTRUCTIONS.md   repo copy of the claude.ai project
+                 instructions (v4.1); the operator pastes it into the
+                 project settings and keeps the two in sync
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp

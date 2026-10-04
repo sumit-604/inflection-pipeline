@@ -32,6 +32,10 @@ normalized ROCE (TATVA) · 2026-08-19 four-folder input contract (AIMTRON) ·
 Check · 2026-08-26 A20 relative cross-check · 2026-09-15 section-1b skill
 (PR #163, #164) · 2026-09-16 LESSONS pre-read + deferred-work hook (PR #165).
 
+2026-10-04 standing ruling (CLAUDE.md OPERATOR RULINGS): framework rulings
+apply to names analysed from the ruling date forward; closed names keep their
+record as of the run that produced it.
+
 ## OPEN ACTIONS
 - 1B cap row: Sugar/Agri cyclical (KCPSUGIND, 20x ad hoc). [sector: Agri
   processing] [archetype: Commodity converter]
@@ -47,10 +51,6 @@ Check · 2026-08-26 A20 relative cross-check · 2026-09-15 section-1b skill
 - Stage 5 to Opus 5.5 high if Verifier B overturns grades in two runs
   (RULINGS_2026-10 item 27).
 - Audit deferrals: items 41, 43, 85-88, 45, 71, 108 (RULINGS_2026-10).
-- OR-14 (PR #193; re-derived 2026-10-04): AIMTRON and ASIANENE re-derive at
-  the FY26 AR review and present for ruling (two STRUCTURE-PENDING each).
-  SYSTANGO, SHYAMMETL, MANINDS ruled Small. MANINDS SEBI order is
-  [SECONDARY] until Claude web verifies the primary order.
 - Repo: land 110 branch-only markdown records on main in one PR, then
   revisit 71 branch deletes (PR #186 = c74e7a10; BRANCH_AUDIT_2026-10).
 - Repo: run BRANCH_DELETIONS_2026-10 script from a local clone (proxy
@@ -60,8 +60,8 @@ Check · 2026-08-26 A20 relative cross-check · 2026-09-15 section-1b skill
   AR; runs/kopran-2026-07-14 FY2024-25 and FY2025-26 ARs;
   runs/akums-2026-07-10 Piramal Pharma (PPLPHARMA) Q2 FY26 transcript.
 - Downloads sweep pushed non-financial files into fedfina, rathist,
-  shyammetl and voepl-2026-07-18 inputs (removed 2026-10-04). Review and
-  apply tools/collector/file-type-allowlist.patch (PDF, DOCX, TXT, XLSX).
+  shyammetl and voepl-2026-07-18 inputs (removed 2026-10-04). Collector
+  allowlist applied 2026-10-04 (PDF, DOCX, TXT, XLSX, MD); others refused.
 - Android signing key committed at runs/voepl-2026-07-18/inputs/results/New
   folder/SuperOver - Google Play package/signing.keystore, deleted
   2026-10-04, remains in history; treat as exposed.

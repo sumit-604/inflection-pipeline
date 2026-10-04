@@ -1036,3 +1036,10 @@ _Pending framework edits Keerti maintains._
      bear margin from the evidence bridge, not the trailing 3-yr average.
      Framework amendment and section-1b chunk 07 alignment still to write.
 ```
+
+## 2026-10-04 OR-14 line CLOSED
+
+OR-14 re-derivation (PR #193): SYSTANGO, SHYAMMETL, MANINDS ruled Small on
+2026-10-04 (PR #201). AIMTRON and ASIANENE: not re-derived; operator ruling
+2026-10-04 (standing ruling: framework rulings apply forward; closed names keep
+their record as of the run that produced it). Both stay CONCERN, Small.

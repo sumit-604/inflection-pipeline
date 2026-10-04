@@ -811,3 +811,22 @@ Orchestrator note (28-Sep-2026): LESSONS.md OPEN ACTIONS now carries rows 1, 2, 
 and 8. The active file is over its 1,500-token budget after this addition; /compost should run.
 
 - [2026-10-03] Framework audit for the 5.5 family (branch framework/oct-2026-model-update). 272 findings, 32 operator rulings (audits/RULINGS_2026-10.md). Closed from LESSONS.md: the stage 0 routing conflict (ORCHPHARMA item 6) and the prompt 10 rule 3 "more conservative" line (pending item 1). OR-11 is now in CLAUDE.md; section-1b chunk 07 alignment stays open. New OR-12 (Amendment 25 fast-growth trigger reads forward Revenue FIRING). What dragged: the auto-mode classifier blocked `git worktree add`, so the patch was built on scratch copies; one routing recommendation (Verifier A to Sonnet) missed the orchestrator's out-of-family rationale and was held after approval. Lesson: read a stage's stated design rationale in the orchestrator before proposing a model change.
+
+## 2026-09-19 — KISSHT (OnEMI Technology Solutions) — /step1 intake, phase 1 to Halt 1
+
+- fetch_bse_announcements, first live test (LESSONS OPEN ACTION, PR #167): connectivity PASSED (scrip 544754, 69 rows returned), selection FAILED. It staged 10 of 69 filings and missed both Result-category filings (Q1 FY27 and FY26 audited). Results, the Q4 deck and 16 material filings were pulled by hand from BSE AttachLive. Keep the open action; change it from "untested" to "selection defect".
+- collect_to_repo set concalls_available: false on 2 transcripts. For a name listed 4 months earlier, 2 calls is the full history, not no-concall mode. Overridden to true in the manifest.
+- Sector guess "Platform / SaaS / IT services" for a digital lender. Corrected to Banks / NBFCs / MFIs (18x, P/B primary).
+- SBICARD produced no screener Data_Sheet CSV; Poonawalla's Q3 FY26 transcript arrived twice (one with a BSE cover letter). Six duplicate PDFs removed by MD5 at intake.
+- Shareholding: the BSE API shpSecSummery_New endpoint gives the summary statement (promoter/public, pledge) but not the FII/DII split. UA qualifier left open.
+- One stage (B03) wrote its block file wrapped in markdown fences; after the task messages added "plain YAML, no markdown fences", no later stage did.
+- DOWNSHIFT FAILURE: stage 0 ran inline on the orchestrator (claude-opus-5), as run-pipeline step 1 directs. Same pattern as TOTEM.
+- Worktree used: the main checkout carried another session's uncommitted v3.11 framework edits, so the run branch was built in a separate git worktree (../inflection-pipeline-kissht) off origin/main to keep amendment and run work apart.
+
+## 2026-10-04 — KISSHT (OnEMI Technology Solutions) — /fttcp draft, review and sign-off
+
+- Cross-family grade did not run: no Gemini or Google key configured (exit 3).
+- Q2 FY27 business update not fetched: BSE announcements API returned Access Denied from this machine on 04-Oct-2026. Operator to supply the PDF.
+- Section 1B v3.11 still unmerged; framework files were read from origin/main plus the main checkout's uncommitted draft. Stage 11 sign-off waits on the framework PR.
+- Partner-slice cap needed an operator-set blend (1/3 NBFC 18x + 2/3 asset-light 25x = 22.67x). Section 1B has no row or rule for a lender's capital-light fee slice; a framework item for Keerti.
+- Claude web's stress numbers mislabelled (bear vs partner exit at two multiple sets); caught by an exact recompute. Ruled headlines then moved again when the low multiple changed; deliberation file carries the recomputed values with an alignment note.

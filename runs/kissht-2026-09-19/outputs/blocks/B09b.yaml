@@ -1,0 +1,71 @@
+stage: B09b-dossier
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "FII/DII institutional sub-split within public shareholding"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "SBICARD screener Data_Sheet CSV"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Q3 FY26 and earlier results filings"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Prior-year (pre-FY26) listed annual reports"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Broker research notes"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Numeric FLDG-in-opex quantum and numeric DPD write-off trigger"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "MCA/RoC status for nine promoter-group entities; SEBI SCORES complaint history"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+archetypes:
+  - line: "Consolidated lending business (unsecured PL + LAP)"
+    archetype: "Lender"
+transition:
+  - line: "Unsecured personal loan book (92.3% of AUM)"
+    from_tier: "R1 COMMODITY PRICE-TAKER (lender-specialised: weak pricing power, cyclical asset quality, credit cost 8.85-9.7% of AUM through FY25-26)"
+    to_tier: "R2/R3 boundary (lender-specialised): most-evidenced reading is R2 COST-ADVANTAGED CONVERTER via funding-cost decline and underwriting selection; management's own claim is R3 VALUE-ADDED/SPEC'D SUPPLIER via a durable underwriting-data edge, not yet evidenced (repeat-customer share fell 73% to 49%; I2 cannibalization test = 0)"
+    engine: "(1) funding-cost decline from rating upgrades (CRISIL A-, Feb-2026; guided 100-300bps further cut); (2) underwriting/collections model improvement (AUC 66% to 74%, 2023-2026)"
+    proof_gate: "Sequential GNPA (Stage 3) at or below 2.25% AND Stage 2 at or below 2.4% for two consecutive quarters, with write-off rate not accelerating past the FY26 pace of ~15.7% of average book"
+    recognition_gap: "OPEN QUESTION for Stage 11: whether CMP already prices a cost-advantaged or franchise-tier lender, against the Banks/NBFCs/MFIs sector cap row (18x P/B primary); resolved via the Stage 11 PE gap, no number stated here"
+    ugliness: "STRUCTURAL-FEATURE (parent guarantee to Si Creva's lenders, 228% of parent net worth FY26, rising 4 straight years, named by the evidence stage itself as 'a structural, worsening trend independent of the IPO'); cumulative negative CFO separately read as ARTIFACT-OF-CLIMB but its loss content is INDETERMINATE, not confirmed clean"
+    transition_falsifier: "Q2 FY27 gross NPA above 2.25% with Stage 2 not back toward 2.4%; or Cost-to-Income continuing to worsen past 56.64% for another year"
+  - line: "Loan against property, LAP (7.7% of AUM, embryonic)"
+    from_tier: "Below R1, no established rung (nascent, branch-dependent, disclosed inconsistently across AR/deck/CRISIL)"
+    to_tier: "R2 per management's claim (cost-advantaged secured lending diversification); not yet evidenced"
+    engine: "Branch network rollout plus secured underwriting"
+    proof_gate: "Branch count reaching guided pace (178+ by FY27-end) with a disclosed LAP-specific asset-quality figure"
+    recognition_gap: "Not separately assessed; folds into the consolidated PE gap at Stage 11"
+    ugliness: "ARTIFACT-OF-CLIMB (early-stage execution lag: 3 branches added in Q1 FY27 against an implied ~27/quarter pace)"
+    transition_falsifier: "LAP branch pace remaining near current levels for two more quarters with no explanation, or a disclosed LAP GNPA above peer secured-lending norms"
+dominant_variables:
+  - "GNPA/Stage-3 trajectory versus the write-off rate (asset-quality truth)"
+  - "FLDG cost and off-book AUM loss content (53.6% of book, booking line undisclosed and answered inconsistently)"
+  - "Cost of borrowing trajectory tied to rating upgrades"
+  - "Cost-to-Income ratio (the operating-leverage claim)"
+business_falsifier: "Parent corporate guarantee to Si Creva's lenders (228% of parent net worth, FY26) being called upon or disclosed to be crystallising, converting the fee-earning listed parent into a distressed guarantor of its own subsidiary's lenders"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 5
+  verifiability_ratio: "3 of 5 externally observable (AUM growth/BSE filings, cost of borrowing/rating actions, Cost-to-Income/audited AR); 2 of 5 company-narrated only (FLDG loss content, write-off-adjusted asset quality)"
+  single_point_failure: "FLDG/off-book loss content and its booking line (undisclosed; contradictory answers across calls)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 16
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "072df3a4c8be75e13aa9c5220b023bc0a057cc70"

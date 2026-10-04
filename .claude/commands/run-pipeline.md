@@ -115,15 +115,18 @@ After each stage returns AND passes the completion check, validate its YAML
 block and commit before proceeding. At that same moment, before moving to
 the next stage, append one line to the per-stage token ledger in
 runs/<ticker>-<date>/session-cost.md, taken from the subagent result
-metadata: stage number, stage name, model, effort, input tokens, output
-tokens, total tokens, and wall time. Create the ledger with its header row
+metadata: stage number, stage name, model, effort, input tokens, cache-read
+tokens, cache-write tokens, output tokens, total tokens, and wall time.
+in_tok is uncached + cache_read + cache_write input tokens. When the
+token-meter mod is loaded, /stage-cost writes these rows; when a figure is
+not exposed, write n/a, never an estimate. Create the ledger with its header row
 when the first stage writes to it. Write one line per subagent run: if a
 stage runs as a loop or is retried, each run gets its own line with a run
 counter (run# 1, 2, ...) so the loop or retry total stays visible. Never
 defer these lines to the end of the run; each is written and committed with
 its own stage. The ledger row shape:
 
-    | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
+    | # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |
 
 A stage exceeding 45 minutes is noted in the run log, not killed.
 
@@ -413,11 +416,12 @@ handoff schemas, flag rules, and error handling. Then:
        runs/<ticker>-<date>/session-cost.md ledger), flagged
        "COST SPIKE: <stage> (<this_total> vs <prior_total>)". Write "none"
        if no prior run exists or nothing crossed 1.5x.
-   (d) OPERATOR SNAPSHOT. A reminder line: the operator runs /cost and
-       /usage now and pastes the cache hit ratio and the loop totals into
-       this file under an "Operator snapshot" heading. The orchestrator
-       cannot read those interactive commands, so the operator fills the
-       snapshot.
+   (d) OPERATOR SNAPSHOT. Add a line "SESSION TOTAL (/cost)" with an
+       empty slot under it. The final message (step 7) reprints the
+       per-stage table from session-cost.md and tells the operator to run
+       /cost in the terminal and paste its output under that line. The
+       orchestrator cannot read /cost and the meter never records
+       orchestrator usage, so the operator fills the session total.
    If any DOWNSHIFT FAILURE or COST SPIKE is found, append one line naming the
    stage to this run's dated entry in LESSONS_ARCHIVE.md (the MEMORY rule's
    home for run history). Add a line under OPEN ACTIONS in LESSONS.md only
@@ -433,6 +437,9 @@ handoff schemas, flag rules, and error handling. Then:
    the dossier, the gate recommendation verdict line, flags active,
    phase-1 confidence delta overall, and the final file paths including
    outputs/reports/09b-understanding-dossier.md and session-cost.md.
+   Reprint the per-stage table from session-cost.md in full, then tell
+   the operator: "Run /cost in the terminal and paste the result into
+   session-cost.md under the line SESSION TOTAL (/cost)."
    End the report with the commit hash and the output of
    `git log -1 --stat`.
 

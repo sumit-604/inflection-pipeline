@@ -748,7 +748,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v79";
+const GAME_VERSION = "v80";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -1237,6 +1237,23 @@ function playHorn() {
 
 // A bat swing, a kick, a marble click.
 function playWhoosh() { if (muted) return; const c = getCtx(); if (!c) return; const t = c.currentTime; const o = c.createOscillator(), g = c.createGain(), f = c.createBiquadFilter(); f.type = "bandpass"; f.frequency.setValueAtTime(400, t); f.frequency.linearRampToValueAtTime(1800, t + 0.18); o.type = "sawtooth"; o.frequency.value = 90; g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.18, t + 0.05); g.gain.linearRampToValueAtTime(0.001, t + 0.25); o.connect(f).connect(g).connect(master); o.start(t); o.stop(t + 0.26); }
+// ---------- Horror sounds for the night ghost ----------
+function noiseBuf(c, sec) { const b = c.createBuffer(1, Math.floor(c.sampleRate * sec), c.sampleRate), d = b.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; return b; }
+// A long, shaking scream that rises and cracks.
+function playScream() { if (muted) return; const c = getCtx(); if (!c) return; const t = c.currentTime, g = c.createGain(); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.32, t + 0.05); g.gain.setValueAtTime(0.32, t + 0.9); g.gain.exponentialRampToValueAtTime(0.001, t + 1.6); g.connect(master);
+  const lfo = c.createOscillator(), lg = c.createGain(); lfo.frequency.value = 28; lg.gain.value = 60; lfo.connect(lg);
+  for (const det of [0, 13, -9]) { const o = c.createOscillator(), f = c.createBiquadFilter(); o.type = "sawtooth"; o.frequency.setValueAtTime(380 + det, t); o.frequency.exponentialRampToValueAtTime(1500 + det * 4, t + 0.5); o.frequency.exponentialRampToValueAtTime(900 + det, t + 1.5); lg.connect(o.frequency); f.type = "bandpass"; f.frequency.value = 1400; f.Q.value = 2; o.connect(f).connect(g); o.start(t); o.stop(t + 1.6); }
+  const n = c.createBufferSource(), nf = c.createBiquadFilter(), ng = c.createGain(); n.buffer = noiseBuf(c, 1.4); nf.type = "highpass"; nf.frequency.value = 2500; ng.gain.value = 0.35; n.connect(nf).connect(ng).connect(g); n.start(t); lfo.start(t); lfo.stop(t + 1.6); }
+// A creepy child's giggle in the dark: "hee hee hee".
+function playGiggle() { if (muted) return; const c = getCtx(); if (!c) return; const t = c.currentTime; for (let k = 0; k < 4; k++) { const o = c.createOscillator(), g = c.createGain(), v = c.createOscillator(), vg = c.createGain(); o.type = "triangle"; const st = t + k * 0.19; o.frequency.setValueAtTime(1150 - k * 70, st); o.frequency.exponentialRampToValueAtTime(820 - k * 70, st + 0.15); v.frequency.value = 14; vg.gain.value = 35; v.connect(vg).connect(o.frequency); g.gain.setValueAtTime(0, st); g.gain.linearRampToValueAtTime(0.09, st + 0.02); g.gain.exponentialRampToValueAtTime(0.001, st + 0.17); o.connect(g).connect(master); o.start(st); o.stop(st + 0.18); v.start(st); v.stop(st + 0.18); } }
+// A whisper: breathy noise shaped into syllables.
+function playWhisper() { if (muted) return; const c = getCtx(); if (!c) return; const t = c.currentTime, n = c.createBufferSource(), f = c.createBiquadFilter(), g = c.createGain(); n.buffer = noiseBuf(c, 2); f.type = "bandpass"; f.Q.value = 6; for (let k = 0; k < 7; k++) f.frequency.setValueAtTime(900 + Math.random() * 2200, t + k * 0.24); g.gain.setValueAtTime(0, t); for (let k = 0; k < 7; k++) { g.gain.linearRampToValueAtTime(0.22, t + k * 0.24 + 0.08); g.gain.linearRampToValueAtTime(0.02, t + k * 0.24 + 0.22); } g.gain.linearRampToValueAtTime(0, t + 1.9); n.connect(f).connect(g).connect(master); n.start(t); n.stop(t + 2); }
+// A heartbeat: lub-dub.
+function playHeartbeat() { if (muted) return; const c = getCtx(); if (!c) return; const t = c.currentTime; for (const [d, v] of [[0, 0.5], [0.22, 0.35]]) { const o = c.createOscillator(), g = c.createGain(); o.type = "sine"; o.frequency.setValueAtTime(70, t + d); o.frequency.exponentialRampToValueAtTime(38, t + d + 0.16); g.gain.setValueAtTime(0, t + d); g.gain.linearRampToValueAtTime(v, t + d + 0.02); g.gain.exponentialRampToValueAtTime(0.001, t + d + 0.2); o.connect(g).connect(master); o.start(t + d); o.stop(t + d + 0.22); } }
+// A low, wavering drone that hangs in the air while the ghost is near.
+let droneNodes = null;
+function setDrone(on) { const c = getCtx(); if (!c) return; if (on && !muted && !droneNodes) { const g = c.createGain(); g.gain.value = 0; g.connect(master); const os = [55, 58.3, 82.4].map((fq) => { const o = c.createOscillator(); o.type = "sawtooth"; o.frequency.value = fq; const lp = c.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 260; o.connect(lp).connect(g); o.start(); return o; }); g.gain.setTargetAtTime(0.11, c.currentTime, 0.6); droneNodes = { g, os }; }
+  else if ((!on || muted) && droneNodes) { const d = droneNodes; droneNodes = null; d.g.gain.setTargetAtTime(0, c.currentTime, 0.3); setTimeout(() => d.os.forEach((o) => { try { o.stop(); } catch (e) { /* already stopped */ } }), 1200); } }
 function playKick() { const c = getCtx(); if (!c) return; tone(110, c.currentTime, 0.12, "triangle", 0.5); tone(70, c.currentTime, 0.2, "sine", 0.4); }
 function playMarble() { const c = getCtx(); if (!c) return; tone(2400, c.currentTime, 0.04, "sine", 0.25); tone(1900, c.currentTime + 0.05, 0.05, "sine", 0.2); }
 
@@ -9799,12 +9816,25 @@ class Game {
     const S = this.world.scene; const std = (c, o) => new THREE.MeshStandardMaterial({ color: c, transparent: o < 1, opacity: o, roughness: 1, emissive: c, emissiveIntensity: 0.25 });
     // The torch that lights the ground around you at night.
     try { this._torch = new THREE.PointLight(0xfff1c0, 0, 16, 2); S.add(this._torch); } catch (e) { this._torch = null; }
-    // The ghost: a pale floating figure with dark eyes.
-    const gh = new THREE.Group(); const bodyMat = std(0xeef3ff, 0.55); const body = new THREE.Mesh(new THREE.ConeGeometry(0.55, 1.8, 12, 1, true), bodyMat); body.position.y = 1.0; gh.add(body);
-    const head = new THREE.Mesh(new THREE.SphereGeometry(0.34, 12, 10), bodyMat); head.position.y = 2.0; gh.add(head);
-    for (const s of [-1, 1]) { const eye = new THREE.Mesh(new THREE.SphereGeometry(0.06, 8, 6), new THREE.MeshBasicMaterial({ color: 0x000000 })); eye.position.set(s * 0.12, 2.05, 0.3); gh.add(eye); }
-    const hair = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.9, 0.12), std(0x111111, 0.85)); hair.position.set(0, 1.75, -0.26); gh.add(hair);
-    gh.visible = false; S.add(gh); this._ghost = { group: gh, mat: bodyMat, t: 0, show: 0, next: 18 };
+    // The ghost: a tall chudail in a torn white sari. Long black hair hangs over a grey face with hollow eyes, red pin-points and a gaping mouth.
+    // Her bony hands reach out, and her feet point BACKWARDS, like in the old stories.
+    const gh = new THREE.Group(); const bodyMat = std(0xdfe6ee, 0.82), skin = new THREE.MeshStandardMaterial({ color: 0x8e9aa6, roughness: 0.9, emissive: 0x2b3440, emissiveIntensity: 0.6 }), hairM = new THREE.MeshStandardMaterial({ color: 0x050505, roughness: 1 }), voidM = new THREE.MeshBasicMaterial({ color: 0x000000 }), redM = new THREE.MeshBasicMaterial({ color: 0xff1a1a });
+    const robeG = new THREE.CylinderGeometry(0.26, 0.8, 2.2, 22, 8, true), rp = robeG.attributes.position; for (let i = 0; i < rp.count; i++) { const y = rp.getY(i); if (y < -0.6) { rp.setY(i, y + Math.random() * 0.55 * (-0.6 - y + 0.5)); rp.setX(i, rp.getX(i) * (0.9 + Math.random() * 0.25)); rp.setZ(i, rp.getZ(i) * (0.9 + Math.random() * 0.25)); } } robeG.computeVertexNormals();
+    const robe = new THREE.Mesh(robeG, bodyMat); robe.position.y = 1.2; gh.add(robe); const sh = new THREE.Mesh(new THREE.SphereGeometry(0.33, 14, 10), bodyMat); sh.scale.set(1.15, 0.6, 0.8); sh.position.y = 2.28; gh.add(sh);
+    const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.09, 0.3, 8), skin); neck.position.y = 2.45; gh.add(neck);
+    const head = new THREE.Group(); head.position.y = 2.72; head.rotation.z = 0.32; gh.add(head);
+    const face = new THREE.Mesh(new THREE.SphereGeometry(0.24, 16, 12), skin); face.scale.set(0.92, 1.18, 0.95); head.add(face);
+    for (const s2 of [-1, 1]) { const sock = new THREE.Mesh(new THREE.SphereGeometry(0.065, 10, 8), voidM); sock.scale.set(1, 1.35, 0.5); sock.position.set(s2 * 0.085, 0.05, 0.205); head.add(sock); const pin = new THREE.Mesh(new THREE.SphereGeometry(0.017, 8, 6), redM); pin.position.set(s2 * 0.085, 0.04, 0.24); head.add(pin); }
+    const mouth = new THREE.Mesh(new THREE.SphereGeometry(0.06, 10, 8), voidM); mouth.scale.set(0.9, 2.1, 0.45); mouth.position.set(0, -0.15, 0.2); head.add(mouth);
+    const cap = new THREE.Mesh(new THREE.SphereGeometry(0.255, 14, 10, 0, Math.PI * 2, 0, Math.PI * 0.55), hairM); cap.position.y = 0.02; head.add(cap);
+    for (let k = 0; k < 26; k++) { const a = (k / 26) * Math.PI * 2, front = Math.cos(a) > 0.55, len = 0.9 + Math.random() * 0.8; if (front && Math.abs(Math.sin(a)) < 0.5) continue; const st = new THREE.Mesh(new THREE.BoxGeometry(0.05, len, 0.025), hairM); st.position.set(Math.sin(a) * 0.22, 0.12 - len / 2, Math.cos(a) * 0.2); st.rotation.y = a; st.rotation.x = Math.cos(a) * 0.08; head.add(st); }
+    const armM = skin, arms = [];
+    for (const s2 of [-1, 1]) { const arm = new THREE.Group(); arm.position.set(s2 * 0.33, 2.25, 0); const up = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.035, 0.95, 8), armM); up.rotation.x = Math.PI / 2 - 0.25; up.position.set(0, -0.1, 0.45); arm.add(up); const sleeve = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.16, 0.45, 10, 1, true), bodyMat); sleeve.rotation.x = Math.PI / 2 - 0.25; sleeve.position.set(0, -0.05, 0.18); arm.add(sleeve);
+      const hand = new THREE.Group(); hand.position.set(0, -0.22, 0.92); const palm = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.03, 0.11), armM); hand.add(palm); for (let k = 0; k < 4; k++) { const fg = new THREE.Mesh(new THREE.CylinderGeometry(0.011, 0.006, 0.26, 5), armM); fg.position.set(-0.045 + k * 0.03, -0.05, 0.15); fg.rotation.x = Math.PI / 2 + 0.55; hand.add(fg); } arm.add(hand); gh.add(arm); arms.push(arm); }
+    for (const s2 of [-1, 1]) { const ft = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.06, 0.28), armM); ft.position.set(s2 * 0.12, 0.05, -0.12); gh.add(ft); const heel = new THREE.Mesh(new THREE.SphereGeometry(0.05, 8, 6), armM); heel.position.set(s2 * 0.12, 0.06, 0.04); gh.add(heel); }
+    try { const glow = new THREE.PointLight(0x9fd3ff, 0.9, 7, 2); glow.position.set(0, 3.1, 0.9); gh.add(glow); } catch (e) { /* light optional */ }
+    gh.userData.head = head; gh.userData.arms = arms;
+    gh.visible = false; S.add(gh); this._ghost = { group: gh, mat: bodyMat, t: 0, show: 0, next: 14 };
     // The old haveli: a dark ruined mansion in the north-west corner.
     const hv = new THREE.Group(); hv.position.set(-154, 0, 150); S.add(hv);
     const wall = new THREE.Mesh(new THREE.BoxGeometry(16, 7, 11), std(0x3a3530, 1)); wall.position.y = 3.5; hv.add(wall);
@@ -9828,49 +9858,53 @@ class Game {
     if (this._haveliWin && this._haveliWin.material) this._haveliWin.material.color.setHex && this._haveliWin.material.color.setHex(night && Math.sin(elapsed * 1.3) > 0.7 ? 0xffb347 : 0x332200);
     const G = this._ghost; if (!G) return; const g = G.group;
     const allowed = night && out && !this.gentle && !this._cut && !this._trial && !this._chase && !this._uiBlocking();
-    if (!allowed) { if (G.mode === "chase" && this.world.currentRoom && !this.gentle) this._ghostEscaped(L("🚪 You dive inside and slam the door! It cannot follow you in. You escaped!")); if (G.mode) this._ghostGone(null); G.mode = null; if (g.visible) g.visible = false; return; }
+    if (!allowed) { setDrone(false); this._fear(0); if (G.mode === "chase" && this.world.currentRoom && !this.gentle) this._ghostEscaped(L("🚪 You dive inside and slam the door! It cannot follow you in. You escaped!")); if (G.mode) this._ghostGone(null); G.mode = null; if (g.visible) g.visible = false; return; }
     G.t += dt;
     // Where the camera looks: it sits behind the player at camYaw, so the view runs the other way.
     const cy = this.player.camYaw || 0, vx = -Math.sin(cy), vz = -Math.cos(cy);
     if (!G.mode) { G.next -= dt; if (G.next > 0) return; G.next = 25 + Math.random() * 25;
       const kind = Math.random(); pr.ghostSeen = (pr.ghostSeen || 0);
-      if (kind < 0.2) { const sounds = [L("👣 Footsteps behind you... You turn. Nobody."), L("🔔 Anklets jingle in the dark: chham, chham... then silence."), L("🦉 An owl hoots three times. The dogs start howling."), L("🌬️ A cold wind. Someone whispers your name from the trees...")]; showToast(sounds[Math.floor(Math.random() * sounds.length)], 3400, "bad"); try { playBark(); } catch (e) { /* sound optional */ } return; }
+      if (kind < 0.2) { const sounds = [[L("👣 Footsteps behind you... You turn. Nobody."), playHeartbeat], [L("🔔 Anklets jingle in the dark: chham, chham... then silence."), playGiggle], [L("🦉 An owl hoots three times. The dogs start howling."), playBark], [L("🌬️ A cold wind. Someone whispers your name from the trees..."), playWhisper], [L("👧 A little girl giggles somewhere on the empty road... 'Come and play with meee...'"), playGiggle]], pick = sounds[Math.floor(Math.random() * sounds.length)]; showToast(pick[0], 3600, "bad"); try { pick[1](); } catch (e) { /* sound optional */ } return; }
       if (kind > 0.45 && kind < 0.62) {
         // The chase: it comes for you. Run far away, or get inside a building.
         const d = 15; g.position.set(pp.x + vx * d, 0.2, pp.z + vz * d); g.visible = true; G.mode = "chase"; G.show = 0; G.cx = g.position.x; G.cz = g.position.z;
         for (const l of this.world.lampLights || []) l.visible = false; this._scareFlash();
-        this._cityBanner("😱 " + L("RUN!"), L("The white figure is coming FOR you! Run far away, or get inside a building!")); try { playWhoosh(); playBark(); } catch (e) { /* sound optional */ } return; }
+        this._cityBanner("😱 " + L("RUN!"), L("SHE is coming FOR you! Her feet point BACKWARDS! Run far away, or get inside a building!")); try { playScream(); setDrone(true); } catch (e) { /* sound optional */ } return; }
       if (kind < 0.62) {
         // Behind you: it waits where you cannot see. Turn round and it is there.
         G.mode = "behind"; G.show = 0; G.spot = { x: pp.x - vx * 5, z: pp.z - vz * 5 }; g.visible = false;
-        showToast(L("🥶 The air goes ice cold. You feel someone standing right BEHIND you... Turn around (arrow keys, drag, or walk back)."), 5200, "bad"); try { playWhoosh(); } catch (e) { /* sound optional */ } return; }
+        showToast(L("🥶 The air goes ice cold. Breathing... right BEHIND you. Something whispers: 'Turn around...' (arrow keys, drag, or walk back)."), 5200, "bad"); try { playWhisper(); setDrone(true); } catch (e) { /* sound optional */ } return; }
       // In front of you: placed inside the camera view so you really see it.
       const d = 11 + Math.random() * 5, side = (Math.random() - 0.5) * 5;
       g.position.set(pp.x + vx * d + vz * side, 0.2, pp.z + vz * d - vx * side); g.visible = true; G.mode = "front"; G.show = 0;
       for (const l of this.world.lampLights || []) l.visible = false;
-      showToast(L("👻 What is THAT? A white figure stands on the road ahead..."), 3200, "bad"); try { playWhoosh(); } catch (e) { /* sound optional */ } return; }
+      showToast(L("👻 What is THAT? A woman in a torn white sari stands on the road. Her head is tilted... and she is looking at YOU."), 3600, "bad"); try { playWhoosh(); setDrone(true); } catch (e) { /* sound optional */ } return; }
     G.show += dt;
+    // While she is out: her head twitches, her hands reach, and your heart pounds faster the closer she is.
+    const hd = g.userData.head, dist0 = Math.hypot(pp.x - g.position.x, pp.z - g.position.z); if (hd) { hd.rotation.z = 0.32 + (Math.random() < 0.07 ? (Math.random() - 0.5) * 1.1 : 0); hd.rotation.y = Math.random() < 0.05 ? (Math.random() - 0.5) * 0.8 : hd.rotation.y * 0.9; }
+    for (const [k, a] of (g.userData.arms || []).entries()) a.rotation.x = -0.15 + Math.sin(G.t * 3 + k) * 0.12;
+    if (g.visible || G.mode === "behind") { G.hb = (G.hb || 0) - dt; if (G.hb <= 0) { G.hb = THREE.MathUtils.clamp(dist0 / 16, 0.32, 1.1); try { playHeartbeat(); } catch (e) { /* sound optional */ } } this._fear(G.mode === "chase" ? THREE.MathUtils.clamp(1 - dist0 / 26, 0.25, 1) : g.visible ? 0.35 : 0.25); }
     if (G.mode === "behind" && !g.visible) {
       const tx = G.spot.x - pp.x, tz = G.spot.z - pp.z, tl = Math.hypot(tx, tz) || 1;
-      if ((tx * vx + tz * vz) / tl > 0.55) { g.position.set(G.spot.x, 0.2, G.spot.z); g.visible = true; G.show = 0; G.revealed = true; this._scareFlash(); for (const l of this.world.lampLights || []) l.visible = false; showToast(L("😱 IT WAS RIGHT BEHIND YOU! A pale face, dark eyes, staring..."), 3200, "bad"); try { playWhoosh(); playBark(); } catch (e) { /* sound optional */ } }
+      if ((tx * vx + tz * vz) / tl > 0.55) { g.position.set(G.spot.x, 0.2, G.spot.z); g.visible = true; G.show = 0; G.revealed = true; this._jumpScare(); for (const l of this.world.lampLights || []) l.visible = false; showToast(L("😱 SHE WAS RIGHT BEHIND YOU! Grey face, hollow eyes, red dots staring... her mouth opens WIDE!"), 3400, "bad"); }
       else if (G.show > 14) { G.mode = null; showToast(L("🌬️ The cold feeling fades. Whatever it was, it is gone."), 3000); }
       return; }
     if (G.mode === "chase") {
       const dx = pp.x - G.cx, dz = pp.z - G.cz, dd = Math.hypot(dx, dz) || 1;
-      if (G.show > 1.5) { G.cx += (dx / dd) * 5.2 * dt; G.cz += (dz / dd) * 5.2 * dt; }
+      if (G.show > 1.5) { const spd = 5.0 + Math.min(1.2, G.show * 0.08); G.cx += (dx / dd) * spd * dt; G.cz += (dz / dd) * spd * dt; } if (Math.random() < dt * 0.25) try { playWhisper(); } catch (e) { /* sound optional */ }
       g.position.set(G.cx, 0.3 + Math.sin(G.t * 9) * 0.12, G.cz); g.rotation.y = Math.atan2(dx, dz); G.mat.opacity = 0.5 + Math.abs(Math.sin(G.t * 11)) * 0.3;
       for (const l of this.world.lampLights || []) l.visible = Math.random() > 0.6;
       if (dd > 34 || G.show > 18) { this._ghostEscaped(dd > 34 ? L("🏃 You ran and ran... You look back. It is gone. You escaped!") : L("🐓 A rooster crows far away and the figure melts into mist. You escaped!")); return; }
-      if (dd < 1.1) { this._ghostGone(null); G.mode = null; this._scareFlash(); if (this.addEnergy) this.addEnergy(-10); pr.ghostCaught = (pr.ghostCaught || 0) + 1; saveProgress(this.profile, pr); showToast(L("🥶 It swoops right THROUGH you! Ice cold... then it is gone. You are fine, just shaking. (Energy -10)"), 3800, "bad"); this.diary(L("Night: a ghost chased me and swooped through me. Brrr!")); }
+      if (dd < 1.1) { this._ghostGone(null); G.mode = null; this._jumpScare(); if (this.addEnergy) this.addEnergy(-10); pr.ghostCaught = (pr.ghostCaught || 0) + 1; saveProgress(this.profile, pr); showToast(L("🥶 It swoops right THROUGH you! Ice cold... then it is gone. You are fine, just shaking. (Energy -10)"), 3800, "bad"); this.diary(L("Night: a ghost chased me and swooped through me. Brrr!")); }
       return; }
     g.position.y = 0.2 + Math.sin(G.t * 2) * 0.15; g.rotation.y = Math.atan2(pp.x - g.position.x, pp.z - g.position.z); G.mat.opacity = 0.35 + Math.abs(Math.sin(G.t * 7)) * 0.3;
-    if (G.mode === "front") g.position.x += Math.sin(G.t * 0.7) * dt * 0.8;
+    if (G.mode === "front") { G.step = (G.step || 0) - dt; if (G.step <= 0) { G.step = 0.55; const fx = pp.x - g.position.x, fz = pp.z - g.position.z, fl = Math.hypot(fx, fz) || 1; g.position.x += (fx / fl) * 1.1; g.position.z += (fz / fl) * 1.1; for (const l of this.world.lampLights || []) l.visible = false; } }
     for (const l of this.world.lampLights || []) l.visible = Math.random() > 0.5;
     const near = Math.hypot(pp.x - g.position.x, pp.z - g.position.z) < (G.mode === "behind" ? 3 : 7), limit = G.mode === "behind" ? 2.6 : 6;
     if (near || G.show > limit) this._ghostGone(near);
   }
   _ghostGone(near) {
-    const G = this._ghost, pr = this.progress; if (!G) return; const was = G.mode; G.mode = null; G.group.visible = false; for (const l of this.world.lampLights || []) l.visible = true;
+    const G = this._ghost, pr = this.progress; if (!G) return; const was = G.mode; G.mode = null; G.group.visible = false; setDrone(false); this._fear(0); for (const l of this.world.lampLights || []) l.visible = true;
     if (near === null || !was) return;
     pr.ghostSeen = (pr.ghostSeen || 0) + 1; saveProgress(this.profile, pr);
     showToast(was === "behind" ? L("💨 You blink... and it is GONE. Your heart is pounding.") : near ? L("💨 You step closer... and it is GONE. Only a cold mist where it stood.") : L("💨 It drifts into the trees and vanishes."), 3200, "bad");
@@ -9878,11 +9912,28 @@ class Game {
     this.diary(was === "behind" ? L("Night: something stood behind me on the road. I turned and saw it!") : L("Night: saw something white on the road. Was it a ghost?"));
   }
   _ghostEscaped(msg) {
-    const G = this._ghost, pr = this.progress; if (!G) return; G.mode = null; G.group.visible = false; for (const l of this.world.lampLights || []) l.visible = true;
+    const G = this._ghost, pr = this.progress; if (!G) return; G.mode = null; G.group.visible = false; setDrone(false); this._fear(0); for (const l of this.world.lampLights || []) l.visible = true;
     pr.escapes = (pr.escapes || 0) + 1; pr.ghostSeen = (pr.ghostSeen || 0) + 1; saveProgress(this.profile, pr); playSuccess(); showToast(msg, 3600, "good");
     if (pr.escapes === 3) { this._snap && this._snap("🏃", "Escaped from a ghost chase three times."); showToast(L("🏅 Badge: Great Escape!"), 3000, "good"); }
     this.diary(L("Night: a ghost chased me and I escaped!"));
   }
+  // Full-screen jump scare: her face rushes at you with a scream and the screen shakes.
+  _jumpScare() {
+    try { playScream(); } catch (e) { /* sound optional */ }
+    try { let d = document.getElementById("jump-scare"); if (!d) { d = document.createElement("div"); d.id = "jump-scare"; d.style.cssText = "position:fixed;inset:0;z-index:70;pointer-events:none;display:none;background:#000"; const c = document.createElement("canvas"); c.width = c.height = 600; c.style.cssText = "position:absolute;left:50%;top:50%;height:96vh;width:96vh;max-width:none;transform:translate(-50%,-50%)"; d.appendChild(c); document.body.appendChild(d); this._drawScareFace(c.getContext("2d")); }
+      const c = d.firstChild; d.style.display = "block"; d.style.opacity = "1"; d.style.transition = "none"; const t0 = performance.now(); clearInterval(this._jsT); this._jsT = setInterval(() => { const k = Math.floor((performance.now() - t0) / 50); const sc = 0.55 + Math.min(1, k / 8) * 0.75, jx = (Math.random() - 0.5) * 40, jy = (Math.random() - 0.5) * 40; c.style.transform = `translate(calc(-50% + ${jx}px), calc(-50% + ${jy}px)) scale(${sc})`; d.style.filter = k % 3 === 0 ? "invert(1)" : "none"; if (k > 16) { clearInterval(this._jsT); d.style.filter = "none"; d.style.transition = "opacity .5s"; d.style.opacity = "0"; setTimeout(() => (d.style.display = "none"), 520); } }, 50); } catch (e) { this._scareFlash(); }
+  }
+  _drawScareFace(g) {
+    const W = 600; g.fillStyle = "#000"; g.fillRect(0, 0, W, W);
+    for (let i = 0; i < 90; i++) { g.strokeStyle = `rgba(10,10,10,${0.6 + Math.random() * 0.4})`; g.lineWidth = 6 + Math.random() * 10; g.beginPath(); const x = 120 + Math.random() * 360; g.moveTo(x, 40); g.bezierCurveTo(x + (Math.random() - 0.5) * 120, 250, x + (Math.random() - 0.5) * 160, 420, x + (Math.random() - 0.5) * 200, 600); g.stroke(); }
+    const fg = g.createRadialGradient(300, 290, 30, 300, 300, 210); fg.addColorStop(0, "#b8c2cc"); fg.addColorStop(0.7, "#7d8894"); fg.addColorStop(1, "#2b3138"); g.fillStyle = fg; g.beginPath(); g.ellipse(300, 300, 150, 205, 0, 0, Math.PI * 2); g.fill();
+    for (const s2 of [-1, 1]) { const eg = g.createRadialGradient(300 + s2 * 62, 255, 4, 300 + s2 * 62, 255, 52); eg.addColorStop(0, "#000"); eg.addColorStop(0.75, "#050505"); eg.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = eg; g.beginPath(); g.ellipse(300 + s2 * 62, 255, 46, 58, 0, 0, Math.PI * 2); g.fill(); g.fillStyle = "#ff1a1a"; g.shadowColor = "#ff0000"; g.shadowBlur = 25; g.beginPath(); g.arc(300 + s2 * 62, 260, 7, 0, Math.PI * 2); g.fill(); g.shadowBlur = 0; }
+    g.strokeStyle = "rgba(20,25,30,.5)"; g.lineWidth = 3; for (let i = 0; i < 6; i++) { g.beginPath(); g.moveTo(230 + i * 28, 330); g.lineTo(225 + i * 30 + (Math.random() - 0.5) * 20, 360 + Math.random() * 30); g.stroke(); }
+    const mg = g.createRadialGradient(300, 420, 5, 300, 420, 80); mg.addColorStop(0, "#000"); mg.addColorStop(1, "#0a0a0a"); g.fillStyle = mg; g.beginPath(); g.ellipse(300, 420, 48, 82, 0, 0, Math.PI * 2); g.fill();
+    for (let i = 0; i < 70; i++) { g.strokeStyle = "rgba(5,5,5,.9)"; g.lineWidth = 5 + Math.random() * 6; g.beginPath(); const x = 150 + Math.random() * 300; if (x > 255 && x < 345) continue; g.moveTo(x, 60); g.bezierCurveTo(x, 220, x + (Math.random() - 0.5) * 60, 380, x + (Math.random() - 0.5) * 80, 600); g.stroke(); }
+  }
+  // Red fear glow at the edges of the screen; 0 = off, 1 = full.
+  _fear(v) { try { let f = document.getElementById("fear-vig"); if (!f) { if (!v) return; f = document.createElement("div"); f.id = "fear-vig"; f.style.cssText = "position:fixed;inset:0;pointer-events:none;z-index:55;background:radial-gradient(circle,rgba(0,0,0,0) 45%,rgba(120,0,0,.85) 100%);opacity:0;transition:opacity .25s"; document.body.appendChild(f); } f.style.opacity = String(v ? v * (0.75 + Math.sin(performance.now() / 160) * 0.25) : 0); } catch (e) { /* glow optional */ } }
   _scareFlash() {
     try { let f = document.getElementById("scare-flash"); if (!f) { f = document.createElement("div"); f.id = "scare-flash"; f.style.cssText = "position:fixed;inset:0;background:#000;opacity:0;pointer-events:none;z-index:60;transition:opacity .35s"; document.body.appendChild(f); }
       f.style.transition = "none"; f.style.opacity = "0.92"; requestAnimationFrame(() => requestAnimationFrame(() => { f.style.transition = "opacity .9s"; f.style.opacity = "0"; })); } catch (e) { /* flash optional */ }

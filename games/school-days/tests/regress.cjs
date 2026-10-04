@@ -588,6 +588,31 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     ok('T11 no page errors', p.errs.length === 0 && !(await G(() => window.__game._lastErr)), p.errs.join(' | ') + (await G(() => window.__game._lastErr || ''))); await p.close();
   } catch (e) { ok('T even more', false, e.message.slice(0, 300)); }
 
+  // ---------- U. v80: the night ghost is very scary ----------
+  if (want('U')) try {
+    p = await fresh();
+    const night = async () => ev(p, () => { const g = window.__game; g._startPhase('night'); window.__fin(); if (g.world.currentRoom) g._exitRoom(); g.gentle = false; return g.phase; });
+    await night();
+    const m = await ev(p, () => { const gh = window.__game._ghost.group; let meshes = 0; gh.traverse((o) => { if (o.isMesh) meshes++; }); return { meshes, head: !!gh.userData.head, arms: (gh.userData.arms || []).length, light: gh.children.some((c) => c.isLight) }; });
+    ok('U1 new ghost model: head, two reaching arms, hair, glow', m.meshes >= 40 && m.head && m.arms === 2 && m.light, JSON.stringify(m));
+    const fr = await ev(p, () => { const g = window.__game, G = g._ghost; G.mode = null; G.next = 0; const R = Math.random; Math.random = () => 0.9; g._tickNight(0.05, 1); Math.random = R; const pp = g.player.position, d0 = Math.hypot(pp.x - G.group.position.x, pp.z - G.group.position.z); for (let i = 0; i < 14; i++) g._tickNight(0.05, 1 + i * 0.05); const d1 = Math.hypot(pp.x - G.group.position.x, pp.z - G.group.position.z); return { mode: G.mode, vis: G.group.visible, d0, d1 }; });
+    ok('U2 she appears on the road and stutters closer', fr.vis && fr.d1 < fr.d0 - 0.8, JSON.stringify(fr));
+    await ev(p, () => { const g = window.__game; g._ghostGone(null); });
+    const bh = await ev(p, () => { const g = window.__game, G = g._ghost; G.mode = null; G.next = 0; const R = Math.random; Math.random = () => 0.5 + 0.001; g._tickNight(0.05, 2); Math.random = R; return G.mode; });
+    const ch = await ev(p, () => { const g = window.__game, G = g._ghost; for (let i = 0; i < 30; i++) g._tickNight(0.05, 2 + i * 0.05); const fear = +(document.getElementById('fear-vig') || { style: { opacity: 0 } }).style.opacity; const pp = g.player.position; G.cx = pp.x + 0.4; G.cz = pp.z; g._tickNight(0.05, 4); const js = document.getElementById('jump-scare'); return { fear, js: !!js && js.style.display === 'block', caught: g.progress.ghostCaught || 0, mode: G.mode }; });
+    ok('U3 the chase: red fear glow, then a full-screen jump scare when she catches you', bh === 'chase' && ch.fear > 0.15 && ch.js && ch.caught >= 1 && !ch.mode, JSON.stringify({ bh, ...ch }));
+    await p.waitForTimeout(3000);
+    const gone = await ev(p, () => ({ js: document.getElementById('jump-scare').style.display, fear: +document.getElementById('fear-vig').style.opacity }));
+    ok('U4 the jump scare and the fear glow go away after', gone.js === 'none' && gone.fear === 0, JSON.stringify(gone));
+    const be = await ev(p, () => { const g = window.__game, G = g._ghost; G.mode = null; G.next = 0; const R = Math.random; Math.random = () => 0.3; g._tickNight(0.05, 5); Math.random = R; const o = { mode: G.mode, spot: !!G.spot }; g.player.camYaw = (g.player.camYaw || 0) + Math.PI; for (let i = 0; i < 4; i++) g._tickNight(0.05, 5 + i * 0.05); o.vis = G.group.visible; o.js = document.getElementById('jump-scare').style.display === 'block'; return o; });
+    ok('U5 turn around and she is right behind you, with a jump scare', be.mode === 'behind' && be.vis && be.js, JSON.stringify(be));
+    await p.waitForTimeout(1500);
+    const gen = await ev(p, () => { const g = window.__game, G = g._ghost; g._ghostGone(null); g.gentle = true; G.mode = null; G.next = 0; for (let i = 0; i < 20; i++) g._tickNight(0.05, 8 + i * 0.05); const o = { vis: G.group.visible, mode: G.mode }; g.gentle = false; return o; });
+    ok('U6 gentle mode keeps the ghost away', !gen.vis && !gen.mode, JSON.stringify(gen));
+    ok('U7 no page errors', p.errs.length === 0 && !(await ev(p, () => window.__game._lastErr)), p.errs.join(' | '));
+    await p.close();
+  } catch (e) { ok('U scary ghost', false, e.message.slice(0, 300)); }
+
   await browser.close();
   const fails = results.filter((r) => r[0] === 'FAIL'); console.log(`\n==== ${results.length - fails.length} PASS, ${fails.length} FAIL ====`); fails.forEach((f) => console.log('FAIL: ' + f[1] + ' -- ' + f[2]));
 })();

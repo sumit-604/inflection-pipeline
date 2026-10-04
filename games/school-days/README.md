@@ -1029,7 +1029,13 @@ A new ℹ️ button opens "About us" with five tabs: the creator (Rishabh Sharma
 
 A new "🎉 Even more" section in the 🎲 hub: my birthday party (once a year), brushing morning and night (a dentist check-up every 5-day streak), the Sunday mela (ring toss, balloon shooting, giant wheel, candy floss), a badge wall with 20 badges, a 3D colony riddle hunt (three riddles, glowing clues, a treasure chest), my colony newspaper (the Suryanagar Times, made from your diary), a sleepover with a friend, a power saver (switch off what nobody uses), bird watching (10 Indian birds), and the school-crossing traffic warden.
 
-The automatic check runs in three parts: RGROUPS=A,B,C,E,F,G,H,I,J, RGROUPS=K,L,M,N and RGROUPS=O,P,Q,R,S,T.
+## The scary night ghost (v80)
+
+The night ghost is now a chudail from the old stories: a tall woman in a torn white sari, long black hair over a grey face, hollow eyes with red pin-points, a gaping mouth, long bony hands that reach out, and feet that point backwards. Her head twitches, she stutters closer each time the street lights flicker, and a cold blue light follows her.
+
+Horror sounds: a low drone while she is near, a heartbeat that gets faster as she comes closer, whispers, a child's giggle on the empty road, and a scream. When she catches you in a chase, or when you turn and find her right behind you, a full-screen jump scare fills the screen: her face rushes at you, the screen shakes and flashes. A red fear glow pulses at the edges of the screen during a chase. Gentle mode (🧸) still keeps her away for small children.
+
+The automatic check runs in four parts: RGROUPS=A,B,C,E,F,G,H,I,J, RGROUPS=K,L,M,N, RGROUPS=O,P,Q,R,S,T and RGROUPS=U (the ghost).
 
 ## Files
 

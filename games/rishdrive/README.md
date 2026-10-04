@@ -54,12 +54,19 @@ from the jsdelivr CDN.
   wheels, spoilers, neon underglow, turbo pops and exhaust flames.
 - **Real feel:** speed blur and wind lines, fog mode (O), rear-view mirror
   (M), and a dashboard camera with a steering wheel and a live speed dial.
+- **Track Challenges:** 12 tough tracks built in an arena north-east of the
+  city: Rishu Ring, Mango Hairpins, Figure of 8, Chicane Chaos, Jump
+  Junction, Monsoon Mile (rain), Night Snake (night), Fog Valley (fog),
+  Dirt Devil (dirt), Narrow Bridge, Star Twister and Grand Prix India.
+  1 to 3 stars against silver and gold times, best times, your own ghost,
+  and each track unlocks the next.
+- **Power drift:** W + S + A or D (or the arrows), or the 🌀 button on phones.
 - **About us:** Rishabh's photo, the series, and the game story.
 
 ## Controls
 
 W or Up: accelerate. S or Down: brake, then reverse. A, D or arrows: steer.
-Space: handbrake. N or 🔥: nitro (tap once, it stays on; tap again or brake to stop). C: camera. H: horn. L: night. R: rain.
+Space: handbrake. W + S + A or D (arrows too): power drift. N or 🔥: nitro (tap once, it stays on; tap again or brake to stop). C: camera. H: horn. L: night. R: rain.
 Q and E: indicators. O: fog. M: mirror. G and F: gear up and down
 (manual gearbox). Esc: menu.
 
@@ -95,3 +102,7 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
 - v6: nitro works in turns. One tap keeps it on and it gives gas by itself,
   so no three-key press is needed; steering grips better at nitro speed.
   133 regression checks.
+- v7: power drift (gas + brake + turn, and a 🌀 phone button); 12 Track
+  Challenges with stars, ghosts and unlocks; detailed cycle, scooty and
+  bike models with spoked or alloy wheels, frames, lights and riders;
+  start gantries and lines now face across the road. 146 regression checks.

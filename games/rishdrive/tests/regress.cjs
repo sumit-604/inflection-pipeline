@@ -29,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v6", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v7", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -186,7 +186,7 @@ const HELPERS = () => {
   await E(() => { G.setPos(-39, 12, 0); G.car.s = 24; keys("up"); sim(1.05); keys(); }); await p.waitForTimeout(1200); await p.screenshot({ path: `${SHOTS}/10-jump.png` });
   // 13. Badges
   r = await E(() => { G.checkBadges(); G.openMenu(); document.querySelector("#m-badges").click(); return { n: document.querySelectorAll(".badge").length, on: document.querySelectorAll(".badge.on").length, jump: !!S.badges.jump1, wash: !!S.badges.wash, toll: !!S.badges.toll, plate: !!S.badges.plate }; });
-  ok("N13 25 badges, earned ones lit", r.n === 25 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
+  ok("N13 28 badges, earned ones lit", r.n === 28 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
   await p.screenshot({ path: `${SHOTS}/11-badges.png` });
   // 14. Village and Sunrise Hill: drive the road with a simple autopilot
   r = await E(() => { document.querySelector("#b-back").click(); document.querySelector("#m-free").click(); const W = G.world, v0 = S.stats.village, h0 = S.stats.hilltop; S.fuel = 100; G.setPos(-180, -3.5, -Math.PI / 2); keys("up"); let i = 0, maxY = 0;
@@ -265,6 +265,39 @@ const HELPERS = () => {
   ok("V26 a second tap turns nitro off", r === true && q5 === false, { r, q5 });
   r = await E(() => { G.startCircuit(); sim(3.5); const W = G.world, N = W.tN; G.nitroTap(); let minS = 1e9, hits = 0, fast = false; const d0 = S.damage; for (let k = 0; k < 120; k++) { const c = G.car, n = W.trackNearest(c.x, c.z), t = W.tp[(n.i + 8) % N], want = Math.atan2(t.x - c.x, t.z - c.z), d = Math.atan2(Math.sin(want - c.h), Math.cos(want - c.h)); keys(d > 0.05 ? "left" : d < -0.05 ? "right" : "x"); G.T += 0.05; G.step(0.05); if (G.car.kmh > 100) fast = true; if (fast && G.car.nitroOn) minS = Math.min(minS, G.car.s); } keys(); const o = { minKmh: Math.round(minS * 3.6), dmg: S.damage - d0, off: W.trackNearest(G.car.x, G.car.z).d }; G.startFree(); return o; });
   ok("V27 nitro carries through the circuit bends", r.minKmh > 85 && r.minKmh < 1e6 && r.off < 12 && r.dmg === 0, r);
+  // v7: power drift with W + S + A or D (and the arrows), drift button
+  for (const [k1, k2, k3, side] of [["w", "s", "a", 1], ["ArrowUp", "ArrowDown", "ArrowRight", -1]]) {
+    await E(() => { S.car = "hatch"; G.respawnCar(); G.startFree(); S.damage = 0; G.car.broken = false; G.setPos(5.5, 230, 0); G.car.s = 22; keys(); G.car.nitroLatch = false; });
+    await p.keyboard.down(k1); await p.keyboard.down(k2); await p.keyboard.down(k3);
+    r = await E(() => { const h0 = G.car.h; let maxLat = 0; for (let i = 0; i < 24; i++) { G.T += 0.05; G.step(0.05); maxLat = Math.max(maxLat, Math.abs(G.car.lat)); } return { pd: G.car.pdOn, lat: G.car.lat, maxLat, dh: G.car.h - h0, kmh: Math.round(G.car.kmh) }; });
+    await p.keyboard.up(k3); await p.keyboard.up(k2); await p.keyboard.up(k1);
+    ok(`V28 power drift ${k1}+${k2}+${k3}`, r.pd && r.maxLat > 3 && Math.sign(r.dh) === side && r.kmh > 40, r);
+  }
+  r = await E(() => { G.setPos(5.5, 230, 0); G.car.s = 22; G.touch.drift = true; G.touch.left = true; sim(1); const o = { pd: G.car.pdOn, lat: Math.abs(G.car.lat) }; G.touch = {}; sim(0.5); return o; });
+  ok("V29 the drift button with a turn key drifts", r.pd && r.lat > 2, r);
+  r = await E(() => { G.setPos(5.5, 230, 0); G.car.s = 22; keys("up", "down"); sim(1); const o = { pd: G.car.pdOn, kmh: Math.round(G.car.kmh) }; keys("down"); sim(1); o.brake = Math.round(G.car.kmh); keys(); return o; });
+  ok("V30 gas+brake with no turn is not a drift, brake still brakes", !r.pd && r.brake < r.kmh, r);
+  // v7: Track Challenges
+  r = await E(() => { S.tracks = {}; S.tghost = {}; G.openMenu(); document.querySelector("#m-tracks").click(); const btns = [...document.querySelectorAll("[data-trk]")]; return { n: btns.length, open: btns.filter((b) => !b.disabled).length }; });
+  ok("V31 track menu: 12 tracks, only the first open", r.n === 12 && r.open === 1, r);
+  r = await E(() => { document.querySelector('[data-trk="0"]').click(); const built = !!G.world.trk; sim(3.4); const tk = G.world.trk, N = tk.N; for (let k = 0; k < N * 3 && G.mode.kind === "race"; k += 2) { const a = tk.pts[(N - 5 + k) % N], b = tk.pts[(N - 4 + k) % N]; G.setPos(a.x, a.z, Math.atan2(b.x - a.x, b.z - a.z)); G.T += 0.05; G.step(0.05); } return { built, title: document.querySelector("#card h2")?.textContent, rec: S.tracks.ring, ghost: !!S.tghost.ring, keep: !!G.world.trk, unlockText: /Unlocked/.test(document.querySelector("#card p").textContent) }; });
+  ok("V32 finish a track: stars, best time, ghost, next unlocked", r.built && /Rishu Ring/.test(r.title) && r.rec && r.rec.stars >= 1 && r.ghost && r.unlockText, r);
+  r = await E(() => { const vis = !!G.world.trk; document.querySelector("#d-replay").click(); sim(1); const during = !!G.world.trk && G.mode.kind === "replay"; for (let i = 0; i < 1500 && G.mode.kind === "replay"; i++) { G.T += 0.05; G.step(0.05); } const after = !!G.world.trk; document.querySelector("#d-free").click(); return { vis, during, after, gone: !G.world.trk }; });
+  ok("V33 track replay shows the track, keep driving clears it", r.vis && r.during && r.after && r.gone, r);
+  r = await E(() => { G.tracksMenu(); const open = [...document.querySelectorAll("[data-trk]")].filter((b) => !b.disabled).length; G.startTrack(0); sim(3.6); const g = G.mode.ghost, p0 = g && g.position.clone(); sim(1); const moved = g && g.position.distanceTo(p0) > 2; G.startFree(); return { open, ghost: !!g, moved }; });
+  ok("V34 second track open and your ghost races you", r.open === 2 && r.ghost && r.moved, r);
+  r = await E(() => { const ids = ["ring", "hairpin", "eight", "chicane", "jump", "monsoon", "snake", "fog", "dirt", "narrow", "star", "gp"], out = []; for (let i = 0; i < 12; i++) { if (i) S.tracks[ids[i - 1]] = S.tracks[ids[i - 1]] || { best: 999, stars: 1 }; G.startTrack(i); const tk = G.world.trk, T = tk.T, cond = { night: S.night === !!T.night, rain: S.rain === !!T.rain, fog: S.fog === !!T.fog }; sim(3.4); const N = tk.N; for (let k = 0; k < N * 4 && G.mode.kind === "race"; k += 2) { const a = tk.pts[(N - 5 + k) % N], b = tk.pts[(N - 4 + k) % N]; G.setPos(a.x, a.z, Math.atan2(b.x - a.x, b.z - a.z)); G.T += 0.05; G.step(0.05); } out.push({ i, done: /⭐/.test(document.querySelector("#card h2")?.textContent || ""), cond: cond.night && cond.rain && cond.fog }); } G.startFree(); return { all: out.every((o) => o.done && o.cond), bad: out.filter((o) => !(o.done && o.cond)), clean: !G.world.trk && !S.night && !S.rain && !S.fog, err: G.lastErr || "" }; });
+  ok("V35 all 12 tracks build, set their weather and finish", r.all && r.clean && !r.err, r);
+  r = await E(() => { G.startTrack(4); sim(3.4); const tk = G.world.trk, rp = tk.ramps[0], i = tk.pts.findIndex((p) => Math.hypot(p.x - rp.x, p.z - rp.z) < 2); const a = tk.pts[(i - 15 + tk.N) % tk.N], b = tk.pts[(i - 14 + tk.N) % tk.N]; G.setPos(a.x, a.z, Math.atan2(b.x - a.x, b.z - a.z)); G.car.s = 30; keys("up"); let air = false; for (let k = 0; k < 40; k++) { G.T += 0.05; G.step(0.05); air = air || G.car.air; } keys(); G.startFree(); return { ramps: tk.ramps.length, air }; });
+  ok("V36 Jump Junction ramps launch the car", r.ramps === 2 && r.air, r);
+  r = await E(() => { G.startTrack(0); sim(3.4); const tk = G.world.trk, p0 = tk.pts[50]; G.setPos(p0.x + 40, p0.z + 40, 0); sim(3); const n = G.world._pathNear(tk.pts, G.car.x, G.car.z).d; G.startFree(); return { back: n < 3 }; });
+  ok("V37 far off the track: put back with a penalty", r.back, r);
+  // v7: realistic two-wheelers
+  r = await E(() => { const o = {}; for (const t of ["cycle", "scooty", "bike"]) { const m = __dd.makeCar(t, 0xff0000); let meshes = 0; m.traverse((x) => { if (x.isMesh) meshes++; }); o[t] = { meshes, rider: !!m.userData.rider, wheels: m.userData.wheels.length, steer: m.userData.front.length }; } o.crank = !!__dd.makeCar("cycle", 0xff0000).userData.crank; return o; });
+  ok("V38 detailed cycle, scooty and bike models with riders", ["cycle", "scooty", "bike"].every((t) => r[t].meshes >= 40 && r[t].rider && r[t].wheels === 2 && r[t].steer === 1) && r.crank, r);
+  r = await E(() => { S.car = "cycle"; G.respawnCar(); G.setPos(-3.5, -150, 0); const c0 = G.car.m.userData.crank.rotation.x; keys("up"); sim(1); keys(); return G.car.m.userData.crank.rotation.x !== c0; });
+  ok("V39 cycle pedals turn while riding", r === true, r);
+  await E(() => { S.car = "hatch"; G.respawnCar(); });
   r = await E(() => { G.checkBadges(); return { drag: !!S.badges.drag, slalom: !!S.badges.slalom, two: !!S.badges.twowheel }; }); ok("V22 new badges", r.drag && r.slalom && r.two, r);
   r = await E(() => G.lastErr || ""); ok("V23 no loop errors after v5 checks", !r, r.slice(0, 300));
   await E(() => yesTraffic());
@@ -302,7 +335,7 @@ const HELPERS = () => {
   await mp.screenshot({ path: `${SHOTS}/08-phone-menu.png` });
   r = await mp.evaluate(() => { document.querySelector("#m-free").click(); const tb = getComputedStyle(document.querySelector("#touch")).display; const g = document.querySelector("#t-gas"); g.dispatchEvent(new PointerEvent("pointerdown", { bubbles: true })); sim(3); const k = G.car.kmh; g.dispatchEvent(new PointerEvent("pointerup", { bubbles: true })); return { tb, k }; });
   ok("ZM1 touch buttons on phone", r.tb === "block" && r.k > 20, r);
-  r = await mp.evaluate(() => { const ids = ["t-left", "t-right", "t-brake", "t-gas", "t-hand", "t-nitro", "dash", "map", "top-left", "top-right"], R = ids.map((i) => [i, document.getElementById(i).getBoundingClientRect()]), bad = [];
+  r = await mp.evaluate(() => { const ids = ["t-left", "t-right", "t-brake", "t-gas", "t-hand", "t-nitro", "t-drift", "dash", "map", "top-left", "top-right"], R = ids.map((i) => [i, document.getElementById(i).getBoundingClientRect()]), bad = [];
     for (let i = 0; i < R.length; i++) for (let j = i + 1; j < R.length; j++) { const [a, p] = R[i], [b, q] = R[j]; if (p.left < q.right && q.left < p.right && p.top < q.bottom && q.top < p.bottom) bad.push(a + "/" + b); } return bad; });
   ok("ZM1b phone HUD has no overlaps", r.length === 0, r);
   await mp.waitForTimeout(2000); await mp.screenshot({ path: `${SHOTS}/09-phone-drive.png` });

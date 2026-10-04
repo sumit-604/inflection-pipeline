@@ -1,0 +1,88 @@
+stage: B03-ardeep
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No annual report: AR substitute is the final Prospectus 31-Aug-2026 (restated FY24-FY26, Rs lakh, Indian GAAP, standalone). Statutory auditor's report with KAMs, CARO 2020, directors' report, chairman's letter, prior-year ARs, board attendance, whistleblower report, section 143(12) reporting are NOT AVAILABLE"
+  - "Customer names, buyer type by product line, buyer class and segment placement of Rs 2,035.74 lakh of kits for 95 vehicles, receivable split by buyer type: NOT FOUND"
+  - "FY26 Q4 share of sales, POC contract value, ECL rule, software CWIP vendor schedule, commission payees, FY26 group-entity financials, segment margins, order book: NOT FOUND"
+  - "Live-web items PENDING LIVE VERIFICATION: PIB release 03-Jan-2026 (Rs 30,000 crore outlay), deck market-size figures, 433 mobile forensic vans, NFSU Varanasi campus Rs 150 crore"
+flags:
+  - {type: FLAG-CASH, reason: "CFO 762.30 vs PAT 1,350.77 lakh = 56.4% FY26 (54.3% FY25, -91.9% FY24); CFO/EBITDA 40.0%; FY26 CFO includes statutory dues +144.12 (GST timing), ex it 618.18 = 45.8% of PAT; FY25 CFO includes payables +717.33 (Annex III p.228; I.7 p.234)"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No pledge (p.85). FY25 promoter cash sales 31,639 shares at Rs 569 = Rs 180.03 lakh and 63,279 gifted, incl. 21,093 to Vishal Jain (CFO from 01-Aug-2025) (pp.80-81, 201); OFS 10,80,000 shares = Rs 972.00 lakh = 71.96% of FY26 PAT (p.276). Full verdict from B08"}
+  - {type: FLAG-CUSTOMER-ID, reason: "Non-government 4,733.92 lakh (44.78%, 82.65% of growth) unnamed; filing shows kits for 95 vehicles sold via dealers and vehicle manufacturers, Rs 2,035.74 lakh = 43.0% of non-government revenue, segment placement not stated (p.29, p.150, p.160)"}
+  - {type: FLAG-RPT, reason: "Gostocks Fintech sold 58.95 lakh to Kwick in FY25 = 62.3% of its FY25 turnover 94.64; Extreme Covet 31.20 = 48.3% of 64.57; software CWIP 137.17 about 57% Gostocks purchases; no arm's-length evidence (pp.213-215, 250, 237)"}
+  - {type: FLAG-CAPITALISATION, reason: "Software CWIP 137.17 unamortised; capitalised share 0/59.6/82.6% of programming spend; policy lacks AS 26 research/development test; AI and LIMS prototype costs 48.72 outsourced; oldest CWIP 61.70 predates stated FY26 start (pp.230, 237, 240, 151-152)"}
+  - {type: FLAG-DISCLOSURE-CONDUCT, reason: "Reg 30 NFSU Varanasi note 27-Sep-2026 one day after 26-Sep reply saying nothing to disclose; Audit Committee dated 04-Jul-2026 (p.196) vs KPI approval 25-May-2026 (p.256); deck 130 customers vs 95; deck PBT 1,921.45 vs 1,821.45; MD pay 126.72 paid vs 94.00 terms (p.191, p.250)"}
+phase_verdicts: {p1: "YELLOW (examination report only; no KAMs, no CARO)", p2: "YELLOW", p3: "YELLOW", p4: "YELLOW", p5: "YELLOW (upper end)", p6: "YELLOW", p7_best_fit: "GARP WATCHLIST"}
+overall_quality: 5.3
+quality_components: {governance: 4, accounting: 5, balance_sheet: 7, earnings: 5}
+kill_switch_notes:
+  - "P3: a human reviewer would not have reason to stop; cash conversion weak but positive, borrowings nil; wants H1 FY27 CFO before sizing"
+  - "P5: a human reviewer would not have reason to stop; wants the Audit Committee date conflict, MD pay 34.8% above stated terms, WTD joining date conflict and CFO share gift answered before signing the Mental Model"
+triple_pass_verification:
+  verified: 12
+  discrepancies:
+    - {finding_rank: 4, triple_pass_value: "ex-cash WC days 97.1/72.8/78.4 (borrowings counted as operating liability); FY26 did not improve", ar_value: "ex-cash and ex-borrowings 135.2/91.1/78.4, FY26 improved 12.7 days; company KPI 98/141/124 incl cash (computed from p.226-227; p.257)", note_ref: "Annex I p.226; KPI p.257"}
+    - {finding_rank: 10, triple_pass_value: "Rs 20 'placement' about 89% promoter; 94,918 shares transferred FY25 at undisclosed price", ar_value: "Rs 20 was a 5:1 rights issue 12-Mar-2024, promoters 14,51,550 of 16,00,050 = 90.7%; of 94,918 transferred, 31,639 sold for cash at Rs 569 and 63,279 gifted (to Vishal Jain, Sangita Mehta, Sunita Shah)", note_ref: "Capital structure pp.80-81"}
+    - {finding_rank: 11, triple_pass_value: "tax disputes 14.87 outside contingent table (6 cases)", ar_value: "23 tax cases, 19.37 lakh in legal section and RF17 (IT 5/8.55, TDS 17/4.54, GST 1/6.28); Annexure V xiv shows 6 cases, 14.87 and omits 17 TDS cases", note_ref: "p.274; RF17 p.35; Annex V xiv p.244"}
+missing_risks:
+  - {risk: "Dealer and vehicle-builder channel replacing direct state sales, Rs 2,035.74 lakh of kits for 95 vehicles", evidence: "p.150; absent from segment tables p.24 and RF10 p.29"}
+  - {risk: "Q4 loading 51% of FY25 sales; FY26 not found; MD&A says not seasonal", evidence: "p.92; p.270"}
+  - {risk: "No ECL rule; 130.54 lakh at 2-3 years provided 20.7%; ageing roll-forward anomaly 26.27", evidence: "Note I.14 p.235"}
+  - {risk: "Single-customer rental line 925.41 lakh (8.75% of revenue) equals one customer; implied direct margin 97.6%", evidence: "pp.24, 160, 239"}
+  - {risk: "Promoter-group suppliers depend on Kwick for 48% to 62% of their turnover", evidence: "pp.213-219 vs pp.250-251"}
+  - {risk: "BG limit headroom 207.15 of 800.00 vs about +40% implied FY27 revenue growth", evidence: "p.234; p.255; p.95"}
+  - {risk: "Audit Committee constituted 04-Jul-2026 but cited as approving KPIs 25-May-2026", evidence: "p.196 vs p.256"}
+  - {risk: "Independent director turnover: three exits in ten months; two sitting independents are one 33-year-old with four other boards and one appointed 04-Jul-2026", evidence: "p.194; pp.186-187"}
+  - {risk: "Independent director Dr Mukesh defendant in Madras HC defamation suit, Rs 100.10 lakh claimed; chairs NRC", evidence: "p.272"}
+  - {risk: "Promoter gifted 1.00% to future CFO six months before appointment", evidence: "p.80; p.201; p.203"}
+  - {risk: "Software CWIP about half related-party purchase; no AS 26 test; prototype costs capitalised", evidence: "pp.237, 250, 230, 152"}
+  - {risk: "Gross margin 37.3% to 27.1% with no cause in MD&A beyond cyber mix", evidence: "p.257; p.265; RF13 p.32"}
+  - {risk: "Reg 30 disclosure conduct after price query", evidence: "announcements 26-Sep and 27-Sep-2026"}
+  - {risk: "Thin organisation and liaisoning: 33-34 staff, six-person sales team, commission payees undisclosed", evidence: "pp.36, 156-157, 240"}
+  - {risk: "Top Supplier 1 is 92.8% of Cyber revenue FY26 (hypothesis: thin-margin pass-through)", evidence: "pp.24, 27"}
+guidance_table:
+  - {claim: "FY27 working capital need", number: "4,442.00 lakh (receivables 3,000; inventory 1,350; payables 700)", timeframe: "FY27", credibility: "Medium; plan adds 854.86 vs IPO 3,142.00, about 2,287 replaces existing funding"}
+  - {claim: "Implied FY27 revenue (not stated)", number: "about 14,797 lakh (+40.0%)", timeframe: "FY27", credibility: "Medium; implied from 3,000 / 74 days x 365"}
+  - {claim: "Debtor days stabilise", number: "74 days", timeframe: "FY27", credibility: "Medium; FY26 year-end basis is 79"}
+  - {claim: "Reduce Bihar and Gujarat dependence", number: "top-two share 38.4% FY26 from 57.3%", timeframe: "ongoing", credibility: "Mixed; Gujarat rose to 29.39%"}
+  - {claim: "Improve gross margin via domestic sourcing", number: "domestic share 65.42% to 91.35%", timeframe: "past", credibility: "Low; gross margin fell 37.3% to 27.1%"}
+  - {claim: "E-Forensics suite and AI/LIMS platforms in development", number: "none; CWIP 137.17", timeframe: "none", credibility: "Low"}
+  - {claim: "Private forensic laboratory", number: "none", timeframe: "none", credibility: "Low; not in objects of the issue"}
+  - {claim: "FY27 managerial remuneration ceiling", number: "315.89 lakh vs 281.35 FY26", timeframe: "FY27", credibility: "High; terms stated"}
+monitorables:
+  - {metric: "H1 FY27 CFO/PAT", threshold: ">= 0.8 (FY26 0.56)", where: "H1 FY27 cash flow statement", why: "tests whether IPO money fixes conversion"}
+  - {metric: "Year-end receivable days and >6m share", threshold: "<= 80 days and <= 12%", where: "receivables note and ageing", why: "LBF-2 durability"}
+  - {metric: "2-3 year receivable bucket", threshold: "below 130.54 lakh; provision rule disclosed", where: "ageing note", why: "stuck dues"}
+  - {metric: "Named top-10 customers and buyer class of 95-vehicle kit revenue", threshold: "names, end user, state", where: "customer disclosure, GeM tenders", why: "LBF-1"}
+  - {metric: "Gross margin on COGS", threshold: ">= 27%", where: "P&L", why: "margin quality"}
+  - {metric: "Q4 or H2 share of sales", threshold: "no quarter above 40%", where: "quarterly split", why: "timing risk"}
+  - {metric: "BG outstanding vs IOB LG limit", threshold: "< 700 of 800 lakh", where: "contingent liabilities", why: "limit headroom"}
+  - {metric: "Software CWIP commissioning", threshold: "commissioning date; amortisation 13.7 lakh a year at 10 years", where: "fixed asset note", why: "capitalisation test"}
+  - {metric: "Related-party purchases from Gostocks, Extreme Covet, Shah group", threshold: "no growth; arm's-length basis stated", where: "RPT note", why: "value extraction"}
+  - {metric: "Reg 30 filings tied to a named order or tender", threshold: "any NFSU or MHA order stated", where: "BSE announcements", why: "LBF-4"}
+ar_new_downstream_entities:
+  - {name: "Top Customer 1 (unnamed, 23.59% of FY26 revenue, 2,493.65 lakh)", where_in_ar: "RF2 p.24; business p.160", entity_type: "customer >10% of revenue, name not disclosed"}
+  - {name: "Top Customer 2 (unnamed, 11.36%, 1,201.40 lakh)", where_in_ar: "RF2 p.24; business p.160", entity_type: "customer >10% of revenue, name not disclosed"}
+  - {name: "Local dealers and established vehicle manufacturers (unnamed) buying kits for 95 Mobile CSI vehicles, 2,035.74 lakh", where_in_ar: "Business strategies p.150", entity_type: "channel partners, possibly the non-government buyers"}
+  - {name: "Top Supplier 1 (unnamed, 3,268.40 lakh, 40.86% of cost of materials)", where_in_ar: "RF6 p.27; business p.161", entity_type: "supplier >10%"}
+  - {name: "Gostocks Fintech Private Limited", where_in_ar: "Annexure VIII p.250; group entities p.214", entity_type: "RPT counterparty, software vendor, group entity"}
+  - {name: "Extreme Covet Private Limited", where_in_ar: "Annexure VIII p.250; group entities p.212", entity_type: "RPT counterparty, goods supplier and past lender, group entity"}
+  - {name: "Shah Infotech; Shah Electronics; Shah Trading & Co.; The Style Salad; Gee Gee Hire Purchase & Leasing Private Limited", where_in_ar: "Annexure VIII p.250; group entities pp.215-219", entity_type: "RPT counterparties, promoter-group firms"}
+  - {name: "Sirchie (USA); Thermo Fisher Scientific; Invitrogen; Rapiscan Systems; Smallpond; MHC Hardware Software Trading LLC; Seratec", where_in_ar: "Competitive strengths p.149", entity_type: "OEM principals, non-exclusive"}
+  - {name: "Corporate Capital Ventures Pvt Ltd; CCV Emerging Opportunities Fund-I; Chanakya Opportunities Fund I", where_in_ar: "RF15-16 pp.33-34", entity_type: "BRLM and pre-IPO investors"}
+  - {name: "Indian Overseas Bank; National Small Industries Corporation (NSIC)", where_in_ar: "Statement of financial indebtedness p.255", entity_type: "lenders"}
+  - {name: "GeM and e-procurement portals; National Forensic Sciences University (NFSU)", where_in_ar: "business p.157; Reg 30 note 27-Sep-2026", entity_type: "named platform and named third-party institution, no Kwick order disclosed"}
+strengths_top3:
+  - "Debt-free with net cash 1,316.32 lakh, current ratio 2.90, 325.61 repaid in FY26 (p.226, p.245)"
+  - "Year-end receivable days 144 to 111 to 79 while revenue grew 3.5x; EBITDA margin steady at 18.0%"
+  - "Granular disclosure of statutory defaults, related parties, ageing and fully repaid promoter loans"
+red_flags_top3:
+  - "Cash conversion 56.4% of PAT and 40.0% of EBITDA, with 144.12 lakh of FY26 CFO from GST timing"
+  - "Buyers behind 82.7% of growth unnamed; undisclosed-segment dealer channel of Rs 2,035.74 lakh (43.0% of non-government revenue)"
+  - "Governance and disclosure record: promoter-group vendors dependent on Kwick, Audit Committee date conflict, MD pay 34.8% above stated terms, Reg 30 note after a price query"
+best_fit_strategy: "GARP (WATCHLIST); proof gate not fired"
+one_line_verdict: "Profit grew 4.8x in two years and the balance sheet is clean, but 56% cash conversion, unnamed buyers behind 82.7% of growth and a self-contradicting governance record keep this a GARP watchlist name until the proof gate fires."
+analyst_note: "Unit Rs lakh as printed. No AR exists: Phase 1 is an examination report (no KAMs, no CARO); Phase 6 uses prospectus strategy sections. Three findings a later stage cannot rebuild. One: the filing itself gives a mechanism for the non-government jump. p.150 says FY26 kits for 95 Mobile CSI vehicles went through dealers and vehicle builders for Rs 2,035.74 lakh, 43.0% of non-government revenue; segment placement not stated. LBF-1 stays open on names. Two: software CWIP 137.17 is about Gostocks 78.70 plus outsourced prototypes 48.72; Gostocks sells 62% of its FY25 turnover to Kwick. Three: rental revenue equals one customer each year, and Assam, Meghalaya and Mizoram top customers equal state totals. Corrections to B02: FY24 Rs 20 issue was a rights issue; FY25 promoter sales were at Rs 569 plus gifts (one to the later CFO); operating WC days improved on an ex-debt basis; legal section shows 23 tax cases, not 6. Quality 5.3."

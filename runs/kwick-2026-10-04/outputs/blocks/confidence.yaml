@@ -16,6 +16,6 @@ rework_triggered: false
 rework_basis: "No CONFIRMED CRITICAL in B12a; no verifier acceptance_rate below 60% on a denominator of 4 or more (OR-29)."
 source_fidelity_open:
   - "B12a MAJOR: 09-tam.md cites prospectus p.265 for Rs 2,035.74 lakh / 95 vehicles, Mobile CSI 16.41 to 10.57 Cr and 115% growth. Correct anchors p.150, p.24, p.264. Values correct; anchor must be corrected wherever 09 figures are used."
-disagreements: "none (no downstream step relies on a figure Verifier A flagged; the 09 anchor error is corrected at anchor, values unchanged)"
+disagreements: "one row, logged by synthesis-lite in outputs/final/verifier-disagreement-log.md: debtor-day basis called unstated by B01 and B12b; Verifier A showed p.245 prints it; GATE HELD, corrected at p.245"
 stage5_tripwire: "NOT FIRED. B12b concurs with stage 5 credibility grade C (low end). Five MAJOR misses recorded against B05/B06 content; grade not overturned."
 valuation_framework_adherence: PENDING PHASE 3

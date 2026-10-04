@@ -24,3 +24,4 @@ session (claude-opus-5-5) and are not metered per stage.
 | 12b | verifier B red flags | claude-opus-5-5 | high (stale def; current def xhigh) | n/a | n/a | 346,273 | 15m35s | 1 |
 | 12c | verifier C (Gate 0 + EM half) | claude-opus-5-5 | xhigh | n/a | n/a | 133,152 | 6m52s | 1 |
 | 12d | verifier D peers | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 116,333 | 4m36s | 1 |
+| 13 | synthesis-lite | claude-opus-5-5 | high | n/a | n/a | 247,900 | 11m44s | 1 |

@@ -1,7 +1,7 @@
 # Chunk 05. Sector cap table, UA multiplier and the Category-Break Override
 
 Loaded by: Role 1 Section 1B rows F2, G, G2, G3 of the summary. Pipeline: stage 11 (cap row arrives from the manifest via B10); /step1 (writes the manifest sector cap row); /fttcp (sector cap row sanity check against B04); Verifier C (12c).
-Sources in force: Master v3.7 §1B Undiscovered Alpha, Sector Reality Cap, Category-Break Override and v3.5 reconciliation note; Section 1B v3.3 Amendments 1, 3, 8; v3.7 Amendment 17.5; v3.9 Amendments 20.6, 20.7, Appendix C R1; v3.10 Amendment 26.5; FTTCP v2.3 Sector Cap and Category-Break Override, SOTP rule.
+Sources in force: Master v3.7 §1B Undiscovered Alpha, Sector Reality Cap, Category-Break Override and v3.5 reconciliation note; Section 1B v3.3 Amendments 1, 3, 8; v3.7 Amendment 17.5; v3.9 Amendments 20.6, 20.7, Appendix C R1; v3.10 Amendment 26.5; v3.11 Amendments 27.2, 27.4; FTTCP v2.3 Sector Cap and Category-Break Override, SOTP rule.
 
 ## The ordering
 
@@ -24,15 +24,18 @@ Sources in force: Master v3.7 §1B Undiscovered Alpha, Sector Reality Cap, Categ
 |---|---|
 | Platform / SaaS / IT services | 45x |
 | Consumer franchise / Jewellery | 40x |
+| QSR | 40x (A27.4) |
 | Pharma / CDMO | 38x |
 | Defence / strategic | 38x |
 | Branded apparel / FMCG | 35x |
 | Specialty chemicals | 35x |
 | Hospitals / dialysis / healthcare services | 35x |
+| Alcoholic beverages | 35x (A27.4) |
 | Fluorochemicals / industrial gases | 30x |
 | Hotels | 30x |
 | Telecom equipment | 30x |
 | Data centers / cloud infrastructure (capital-heavy) | 30x |
+| EMS | 30x (A27.4) |
 | CPaaS / Communications platform | 28x |
 | EV charging / energy transition equipment | 28x |
 | Cables / Industrial products | 25x |
@@ -48,7 +51,18 @@ Sources in force: Master v3.7 §1B Undiscovered Alpha, Sector Reality Cap, Categ
 | Real estate | 20x |
 | Agri processing | 20x |
 | Mining / mineral exploration | 20x |
+| Distribution / trading | 20x (A27.4) |
+| Sugar / agri-commodity | 18x (A27.4) |
+| Commodity textiles | 18x (A27.4) |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
+| Steel / integrated metals | 15x (A27.4) |
+
+Rows marked A27.4 were added by Section 1B v3.11 Amendment 27.4 (operator ruling 2026-09-16). They behave like every other row: absolute absent a qualified Category-Break Override, never breached by UA, neither raised nor lowered by Amendment 17. Stage 0 resolves a company's row against the full table, these rows included. A company earlier ruled ad hoc into another row takes its A27.4 row from its next run; the ad hoc cap is not carried forward. No company is revalued on adoption.
+
+Row boundaries (Amendment 27.4):
+
+- "Sugar / agri-commodity: revenue dominated by one commodity with regulated or exchange-traded pricing. Agri processing: output branded or multi-product."
+- "Cybersecurity / VAD: distribution with vendor certifications, bundled services and enterprise contracts. Distribution / trading: pure buy-and-sell with no service layer."
 
 Pending ruling: Section 1B v3.9 Appendix C R1 (a blended cap row for infra-plus-platform businesses, for example 35x, raised by the E2E Networks case). Until ruled, classify to an existing row and state the classification.
 
@@ -59,6 +73,8 @@ When UA is triggered AND durability is at least Moderate-Strong with documented 
 ## SOTP blended cap (hybrid annuity-EPC)
 
 Revenue-weighted blend: pure EPC 20x; BOO / InvIT-equivalent 14-16x; manufacturing 25-30x. The Pillar 2 SOTP rule is in chunk 02.
+
+Every SOTP slice earns its multiple under Amendment 27.2 (chunk 04): its own three-pillar derivation capped by its own cap row in the table above, or the Amendment 17 CONVERTER multiple. Amendment 27 leaves the blend above unchanged. A BOO / InvIT-equivalent slice has no exact row in the table, and until open ruling OR-10 is ruled it keeps the FTTCP InvIT-style EV/EBITDA multiple and this blend as written (SKILL.md).
 
 ## Converters
 

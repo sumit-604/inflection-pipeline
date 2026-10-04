@@ -1,7 +1,7 @@
 # Chunk 07. Base-case revenue basis hierarchy and margin bridge (Rules B and C)
 
 Loaded by: Role 1 Section 2A and 2B. Pipeline: stage 11; stage 15 (Rule H preconditions 1 and 2: declared basis, stated bridge); Verifier C (12c).
-Sources in force: Section 1B v3.10 Amendments 26.1, 26.2, 26.3; Master v3.7 §2A, §2B (as amended by Amendment 26); v3.6 Amendment 14; v3.7 Amendment 17.3; FTTCP v2.3 cyclical margin rule and Modules B1, B5.
+Sources in force: Section 1B v3.10 Amendments 26.1, 26.2, 26.3; v3.11 Amendment 27.3; Master v3.7 §2A, §2B (as amended by Amendment 26); v3.6 Amendment 14; v3.7 Amendment 17.3; FTTCP v2.3 cyclical margin rule and Modules B1, B5.
 
 ## Operating rule for every projection (Amendment 26.3)
 
@@ -27,6 +27,7 @@ Base-case revenue uses whichever basis rests on harder evidence. The worksheet d
 - If the chosen basis diverges from historical CAGR by more than 10 percentage points, name the observation that will confirm or refute the divergence and its confirm-by date. It feeds the Expectation Ledger (chunk 09).
 - RUN-RATE uses the same run-rate definition as the Amendment 21 earnings base (chunk 08).
 - Single credit: a catalyst credited into revenue at its probability (CAPACITY or ORDER-BOOK) is not credited again in Pillar 3 at full weight. State the split in the 2C-w line (chunk 17).
+- Single credit extends to the margin bridge (Amendment 27.3): a catalyst credited through a margin-bridge lever is not credited again in the exit multiple. Where a catalyst is split between the projection and the exit multiple, the shares sum to no more than 100% of that catalyst's credit, and the worksheet names both (chunk 06).
 
 ### Bear and bull
 

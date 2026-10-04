@@ -599,6 +599,59 @@ Verifier C check 15 (PR #163, PR #164), and the LESSONS discipline changes
 
 Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
 
+## 2026-09-16 — FRAMEWORK AMENDMENT: Section 1B v3.11 Amendment 27 (operator rulings, Group 3)
+
+Operator rulings of 16-Sep-2026 promote four recurring archive patterns into
+frameworks/Section_1B_v3_11_Amendments.md, aligned into section-1b chunks 01,
+04, 05 and 06, the Master cap table and prompts/11.
+
+- 27.1 Post-IPO operating ROCE. Promotes the EBGNG (2026-07-12) and AMAGI
+  (2026-07-12) operator overrides that computed Pillar 1 on operating capital
+  ex surplus cash. CLOSED.
+- 27.2 SOTP slices earn their multiple. Promotes the KCPSUGIND (2026-07-21)
+  plucked 8x Eimco multiple and the PERMAGNET (2026-08-23) consolidated-ROCE
+  double penalty. CLOSED.
+- 27.3 One basis, both ends, at the Hurdle Ratio. Promotes the INDGN
+  (2026-08-03) Hurdle double credit. CLOSED.
+- 27.4 Seven sector cap rows. The ad hoc cap rulings below are CLOSED against
+  this amendment. The new row governs each company from its next run. No
+  company is revalued on adoption.
+
+| Company | Ruled | Ad hoc cap | A27.4 row | New cap | Change |
+|---|---|---|---|---|---|
+| SHYAMMETL | 2026-07-19 | 20x | Steel / integrated metals | 15x | -5x |
+| MANINDS | 2026-08-25 | 20x (line pipe, on the SHYAMMETL precedent) | Steel / integrated metals | 15x | -5x |
+| KCPSUGIND | 2026-07-21 | Agri processing 20x | Sugar / agri-commodity | 18x | -2x |
+| ENTERO | 2026-08-30 | 18-20x | Distribution / trading | 20x | top of range |
+| BORANA | 2026-09-07 | Recycling / Manufacturing 25x | Commodity textiles | 18x | -7x |
+| AIMTRON | 2026-07-12 | Recycling / Manufacturing 25x | EMS | 30x | +5x |
+| FRATELLI | 2026-09-07 | Branded apparel / FMCG 35x | Alcoholic beverages | 35x | none |
+| UFBL | 2026-08-05 | Branded apparel / FMCG 35x | QSR | 40x | +5x |
+
+Eight company rulings across seven sectors: steel carried two. The AIMTRON
+ruling is recorded in companies/AIMTRON.md, not in a run entry above.
+
+OPEN ACTIONS moved out of LESSONS.md, closed by 27.4 (verbatim):
+- Add a Steel / Integrated Metals row to the Section 1B cap table (SHYAMMETL
+  ruled 20x ad hoc; MANINDS line pipe ruled 20x ad hoc on that precedent
+  2026-08-25; no dedicated row exists). [archetype: Commodity converter]
+- Add a Sugar / Agri-commodity cyclical row to the Section 1B cap table
+  (KCPSUGIND ruled Agri-processing 20x ad hoc; no dedicated row exists).
+  [sector: Agri processing] [archetype: Commodity converter]
+- Add Distribution rows to the Section 1B cap table (ENTERO 2026-08-30, ruled
+  18-20x ad hoc). Operator proposal: Distribution-commodity 18-19x;
+  Distribution-value-added 25-26x; blended by revenue share. Any distributor.
+
+The ENTERO operator proposal (Distribution-commodity 18-19x,
+Distribution-value-added 25-26x, blended) is superseded by the single
+Distribution / trading 20x row as ruled.
+
+Not promoted: the cross-family grader (skipped for want of API keys). The
+operator deferred the decision on 2026-09-16; LESSONS.md carries the line.
+
+Size: LESSONS.md 1103 words before, 1088 words after.
+
+
 ## 2026-09-19 — DPABHUSHAN (D. P. Abhushan) — /step1 intake, phase 1 to Halt 1
 
 Run: runs/dpabhushan-2026-09-19, branch run/dpabhushan-2026-09-19. Peers SENCO,

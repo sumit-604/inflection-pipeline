@@ -1,7 +1,7 @@
 # Chunk 10. Exit-basis symmetry and the Option Resolution Calendar (A18)
 
 Loaded by: Role 1 Section 2 projection horizon and Section 4 exit table. Pipeline: stage 11 (overrides 8 and 9); stage 15 (Amendment 18.7 standing question).
-Sources in force: Section 1B v3.8 Amendment 18 and its interactions; Master v3.7 §2A projection horizon; v3.6 Amendment 14; v3.7 Amendment 17; v3.9 Amendment 20.
+Sources in force: Section 1B v3.8 Amendment 18 and its interactions; Master v3.7 §2A projection horizon; v3.6 Amendment 14; v3.7 Amendment 17; v3.9 Amendment 20; v3.11 Amendment 27.3.
 
 ## 18.0 Projection horizon = hold + 1
 
@@ -57,7 +57,7 @@ For any SOTP with within-hold options: "Which resolution dates carry the exit, a
 
 ## Interactions
 
-- The Hurdle Ratio formula is unchanged; only the EPS the destination PE multiplies at exit is brought onto the entry basis.
+- The Hurdle Ratio formula is unchanged in form. Amendment 27.3 puts every term on the entry basis: EPS CAGR, Destination PE mid and Current PE (chunk 06). It replaces the v3.8 note that limited 18.1 to the exit term.
 - A failed 18.0 (no Year 4 row) makes Amendment 19's FV path impossible. That is a single REWORK against 18.0, not two.
 - A relative exit multiple (Step 1C) multiplies the same Year N+1 EPS on the entry basis (chunk 15).
 - Amendment 19 FV-step lines read this calendar and add no new probability inputs (chunk 12).

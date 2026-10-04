@@ -415,15 +415,18 @@ The destination PE CANNOT exceed the sector cap regardless of how strong the pil
 | --- | --- |
 | Platform / SaaS / IT services | 45x |
 | Consumer franchise / Jewellery | 40x |
+| QSR | 40x (Section 1B v3.11 Amendment 27.4, 16-Sep-2026) |
 | Pharma / CDMO | 38x |
 | Defence / strategic | 38x |
 | Branded apparel / FMCG | 35x |
 | Specialty chemicals | 35x |
 | Hospitals / dialysis / healthcare services | 35x |
+| Alcoholic beverages | 35x (Section 1B v3.11 Amendment 27.4, 16-Sep-2026) |
 | Fluorochemicals / industrial gases | 30x |
 | Hotels | 30x |
 | Telecom equipment | 30x |
 | Data centers / cloud infrastructure (capital-heavy) | 30x |
+| EMS | 30x (Section 1B v3.11 Amendment 27.4, 16-Sep-2026) |
 | CPaaS / Communications platform | 28x |
 | EV charging / energy transition equipment | 28x |
 | Cables / Industrial products | 25x |
@@ -439,7 +442,11 @@ The destination PE CANNOT exceed the sector cap regardless of how strong the pil
 | Real estate | 20x |
 | Agri processing | 20x |
 | Mining / mineral exploration | 20x |
+| Distribution / trading | 20x (Section 1B v3.11 Amendment 27.4, 16-Sep-2026) |
+| Sugar / agri-commodity | 18x (Section 1B v3.11 Amendment 27.4, 16-Sep-2026) |
+| Commodity textiles | 18x (Section 1B v3.11 Amendment 27.4, 16-Sep-2026) |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
+| Steel / integrated metals | 15x (Section 1B v3.11 Amendment 27.4, 16-Sep-2026) |
 
 Quality uplift: when UA is triggered AND durability is at least Moderate-Strong with documented evidence, a minimum 25% quality uplift on the sector cap applies. State the uplifted cap explicitly when used.
 

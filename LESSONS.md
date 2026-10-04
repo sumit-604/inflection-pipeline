@@ -90,17 +90,14 @@ full text of each promotion is in LESSONS_ARCHIVE.md under its date._
   close-out table to the archive; the session-start hook runs the
   deferred-work check (PR #165).
 
+- [2026-09-16] frameworks/Section_1B_v3_11_Amendments.md — Amendment 27:
+  post-IPO operating ROCE ex surplus cash (27.1; EBGNG, AMAGI), SOTP slices
+  earn their own multiple (27.2; KCPSUGIND, PERMAGNET), one basis at the
+  Hurdle Ratio (27.3; INDGN), seven sector cap rows closing eight ad hoc
+  rulings (27.4). section-1b chunks 01, 04, 05, 06 aligned.
+
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._
-- Add a Steel / Integrated Metals row to the Section 1B cap table (SHYAMMETL
-  ruled 20x ad hoc; MANINDS line pipe ruled 20x ad hoc on that precedent
-  2026-08-25; no dedicated row exists). [archetype: Commodity converter]
-- Add a Sugar / Agri-commodity cyclical row to the Section 1B cap table
-  (KCPSUGIND ruled Agri-processing 20x ad hoc; no dedicated row exists).
-  [sector: Agri processing] [archetype: Commodity converter]
-- Add Distribution rows to the Section 1B cap table (ENTERO 2026-08-30, ruled
-  18-20x ad hoc). Operator proposal: Distribution-commodity 18-19x;
-  Distribution-value-added 25-26x; blended by revenue share. Any distributor.
 - Amendment 14 fade guard (ENTERO 2026-08-30): where the TAM stage's
   SOM-implied growth is materially above the faded projection (fade 10% vs
   SOM-implied 26.4%), flag the fade for operator ruling rather than applying
@@ -108,6 +105,9 @@ _Pending framework edits Keerti maintains._
 - Canary (canary/verifier.py) needs an Anthropic API key; none is configured,
   so it has never run (checked 2026-09-15). Rewrite it to call Claude Code
   headless (`claude -p`) so it runs on the Max subscription. PR #162.
+- Cross-family grader: skipped on every run that reaches it, because no
+  API key is configured. Operator deferred the decision 2026-09-16. Leave
+  the grader as it is until the operator rules.
 - fetch_bse_announcements in tools/collector/collect_to_repo.py is UNTESTED
   against the live BSE API. This container has no web access, so the first
   run that uses it is the first test. Check announcements/ after that run,

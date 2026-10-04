@@ -3,7 +3,7 @@
 # DESIGN: this file is a THIN WRAPPER. The Section 1B and FTTCP rules come
 # from the section-1b skill, preloaded by the agent frontmatter
 # (.claude/skills/section-1b/): the resolved result of Section 1B v3.3,
-# v3.5.1, v3.6, v3.7, v3.8, v3.9 and v3.10, FTTCP v2.3, Debt Capacity v1.0,
+# v3.5.1, v3.6, v3.7, v3.8, v3.9, v3.10 and v3.11, FTTCP v2.3, Debt Capacity v1.0,
 # Market-Implied Assumptions v1.0 and the macro sheet. Work from its
 # SKILL.md and load the chunk files its index names for each Role 1
 # section. Role 1 structure (Section 1A method matrix, Sections 2-4, the
@@ -163,7 +163,7 @@ mode:
 ## FRAMEWORK ELEMENTS THE WRAPPER ENFORCES (per the section-1b skill, non-negotiable)
 
 - The Section 1B layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 +
-  v3.9 + v3.10; later layers govern the items they name) is the SOLE exit
+  v3.9 + v3.10 + v3.11; later layers govern the items they name) is the SOLE exit
   multiple authority. No exit PE from any other source, no round-number
   defaults. There is no numeric exit-PE ceiling other than the sector cap
   (v3.10 Amendment 26.5).
@@ -240,6 +240,20 @@ mode:
   single-point forecast. Recompute HR on it and carry it to
   expected_cagr_prob_weighted. The bull-EPS-CAGR credibility gate is
   unchanged.
+- HURDLE BASIS AND SINGLE CREDIT (v3.11 Amendment 27.3, enforcing 18.1 at
+  the Hurdle step; section-1b chunk 06). Write two lines BEFORE computing
+  HR. (1) The basis line: the EPS basis used for the entry price is the
+  basis used for the exit price, and EPS CAGR, Destination PE mid and
+  Current PE all run on it. A FORWARD basis takes Current PE on forward
+  EPS; a TRAILING basis on trailing EPS. (2) The catalyst credit line: a
+  catalyst credited in the revenue path or the margin bridge is not
+  credited again in the exit multiple (Pillar 3, the Strategic Premium, or
+  the A22 multiple credit). Where the Amendment 26 interaction splits a
+  catalyst, the two shares sum to no more than 100%; name both. For a name within 24 months of listing,
+  Current PE is (CMP less surplus cash per share) divided by EPS excluding the
+  after-tax treasury income on that cash (27.1). An HR shown without both lines is incomplete.
+  Carry the two lines in hurdle_ratio.basis_line and
+  hurdle_ratio.catalyst_credit_line.
 - 4D probability weights come ONLY from B10.credibility_grade
   (A 20/50/30, B 25/50/25, C 35/45/20, D 45/40/15).
 - Cross-check: compare your base revenue CAGR against B10's SOM-implied
@@ -270,7 +284,7 @@ entity_count: 1                # from B10.entity_count (dossier Section 1); emit
 input_gaps: []
 flags: []                      # FLAG-CASH carried forward with the
                                # multiplier actually applied
-framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
+framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10+v3.11 / FTTCP v2.3"
 pe_basis: ""                   # forward | trailing (operator-approved at the FTTCP gate)
 exit_pe_base_approved: ""      # the operator-approved destination PE base carried from the deliberation
 destination_pe:
@@ -291,7 +305,7 @@ pillar_detail:
   shared_catalyst_flag: false
   ua_applied: false
   sector_cap_used: 0
-hurdle_ratio: {base: 0, bull_used: false, verdict: ""}  # PASS|CONDITIONAL|STOP; computed on the prob-weighted EPS CAGR (A21 base)
+hurdle_ratio: {base: 0, bull_used: false, verdict: "", basis_line: "", catalyst_credit_line: ""}  # PASS|CONDITIONAL|STOP; computed on the prob-weighted EPS CAGR (A21 base); both lines per A27.3
 run_rate_base:                 # v3.9 Amendment 21
   basis: ""                    # single-quarter-annualised | trailing-4q
   pat_run_rate_cr: 0
@@ -324,8 +338,8 @@ FRAMEWORK:
 {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}
 Section 1B and FTTCP: the preloaded section-1b skill (no file injection).
 
-PRECEDENCE: the skill carries the resolved Section 1B layer order (v3.10 >
-v3.9 > v3.8 > v3.7 > v3.6 > v3.5.1 > v3.3) and the operator rulings in its
+PRECEDENCE: the skill carries the resolved Section 1B layer order (v3.11 >
+v3.10 > v3.9 > v3.8 > v3.7 > v3.6 > v3.5.1 > v3.3) and the operator rulings in its
 Ruled section. The FTTCP v2.3 ROCE forward verdict is the sole Pillar 1
 authority. Normalize capital-cycle ROCE through exactly one route (skill
 chunk 01) and declare it in the worksheet.

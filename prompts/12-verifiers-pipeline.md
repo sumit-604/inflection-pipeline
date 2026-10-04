@@ -209,7 +209,7 @@ named in the task message:
   21-category rubric live in these two files, not in Master/Section 1B.
 - VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
   valuation framework docs — Master Prompt v3.7 Role 1, the Section 1B
-  layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10;
+  layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10 + v3.11;
   later layers govern overlaps), FTTCP v2.3 — for the B11 audit. In phase-1 scope (Gate 0 + Emerging
   Moat only, no B11) these are NOT loaded: they are consumed solely
   by the deferred valuation audit, so carrying them in phase 1 is dead
@@ -371,7 +371,7 @@ acceptance_rate: 0             # rules passed ÷ rules checked, %
 ```
 
 INPUTS (phase-1 scope): prompts/01-gate-0-pipeline.md + prompts/07-emerging-moat-pipeline.md + {{B01_REPORT}} + {{B07_REPORT}}
-INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + Section_1B_v3_7_Amendments.md + Section_1B_v3_8_Amendments.md + Section_1B_v3_9_Amendments.md + Section_1B_v3_10_Amendments.md + FTTCP_v2_1_Consolidated.md) + the section-1b chunk files B11 cites (.claude/skills/section-1b/references/, for check 15) + {{B10_REPORT}} + {{B11_REPORT}}
+INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation framework docs (Master_Project_Prompt_v3_6.md Role 1 + Section_1B_v3.3_Amendments.md + Section_1B_v3_5_1_Reconciliation.md + Section_1B_v3_6_Amendments.md + Section_1B_v3_7_Amendments.md + Section_1B_v3_8_Amendments.md + Section_1B_v3_9_Amendments.md + Section_1B_v3_10_Amendments.md + Section_1B_v3_11_Amendments.md + FTTCP_v2_1_Consolidated.md) + the section-1b chunk files B11 cites (.claude/skills/section-1b/references/, for check 15) + {{B10_REPORT}} + {{B11_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER D: PEER COVERAGE

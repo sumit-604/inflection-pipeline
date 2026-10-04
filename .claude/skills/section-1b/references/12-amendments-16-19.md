@@ -1,7 +1,7 @@
 # Chunk 12. Amendments 16 and 19
 
 Loaded by: Role 1 Section 1B Pillar 3 eligibility gate (A16); Role 1 Section 4 fair-value path and verdict card (A19). Pipeline: stage 11 (override 10); stage 14 (A19 lines in Role 2 Section 5 and the one-line thesis); stage 13 synthesis (verdict card lines).
-Sources in force: Section 1B v3.6 Amendment 16; v3.8 Amendment 19 and its interactions; v3.9 Amendment 20.8; FTTCP v2.3 Module B2.
+Sources in force: Section 1B v3.6 Amendment 16; v3.8 Amendment 19 and its interactions; v3.9 Amendment 20.8; v3.11 Amendment 27.1; FTTCP v2.3 Module B2.
 
 ## Amendment 16: growth premium eligibility gate
 
@@ -29,7 +29,8 @@ In Section 4, beside the entry-zone derivation, on the GOVERNING track, base cas
 
 - The entry-consistent earnings basis rolls forward one year at each step (Amendment 18.1).
 - Option slices follow their resolution treatment: static today (18.5); resolved or re-dated at each future point per 18.3 / 18.4 as the calendar dictates.
-- Net debt is held at the anchored figure unless a committed projection moves it.
+- Net debt is held at the anchored figure unless a committed projection moves it. For a post-IPO name, net debt, or net cash, used anywhere in fair value excludes the surplus cash (Amendment 27.1).
+- Post-IPO name (Amendment 27.1, chunk 01): the surplus cash line is a constant, added at each year-end row and never compounded. The FV CAGR in 19.1 is computed on the total (operating line plus cash line). The 19.3 decomposition line names the cash line within the static fraction.
 - Minimum rows: today, end-Year-1, end-Year-2, end-Year-3 (the exit point). The Year 4 EPS the end-Year-3 row needs exists by 18.0.
 
 ### 19.1 The FV CAGR line (one number, mandatory)
@@ -50,7 +51,7 @@ In Section 4, beside the entry-zone derivation, on the GOVERNING track, base cas
 
 ### 19.3 The decomposition line (mandatory)
 
-One or two sentences naming the drivers: the growing fraction of FV (core) against the static fraction (unresolved option slices), the fade schedule's drag, and whether any re-rating lever remains (multiple already at destination = no lever). SOTP names state the static share explicitly: "X% of fair value is non-compounding option value."
+One or two sentences naming the drivers: the growing fraction of FV (core) against the static fraction (unresolved option slices, and the post-IPO surplus cash line under Amendment 27.1), the fade schedule's drag, and whether any re-rating lever remains (multiple already at destination = no lever). SOTP names state the static share explicitly: "X% of fair value is non-compounding option value."
 
 ### 19.4 FV-step events (SOTP names with resolution calendars)
 

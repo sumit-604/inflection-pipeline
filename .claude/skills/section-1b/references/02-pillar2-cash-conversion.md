@@ -1,7 +1,7 @@
 # Chunk 02. Pillar 2: cash conversion multiplier
 
 Loaded by: Role 1 Section 1B Pillar 2, row B of the summary. Pipeline: stage 11; stage 10 (carries the structural/growth-induced determination and the rating agency quote into B10); Verifier C (12c).
-Sources in force: Master v3.7 §1B Pillar 2 and Pillar 2L; Section 1B v3.3 Amendment 7; v3.6 Amendment 12A; v3.7 Amendment 17.2; FTTCP v2.3 Pillar 1 Integration (SOTP rule); v3.3 Appendix A operator decision of 02-Jul-2026.
+Sources in force: Master v3.7 §1B Pillar 2 and Pillar 2L; Section 1B v3.3 Amendment 7; v3.6 Amendment 12A; v3.7 Amendment 17.2; v3.11 Amendment 27.2 (OR-10 carry); FTTCP v2.3 Pillar 1 Integration (SOTP rule); v3.3 Appendix A operator decision of 02-Jul-2026.
 
 ## Cash quality bands (standard businesses)
 
@@ -43,6 +43,8 @@ The worst tier representing more than 25% of revenue sets the multiplier, not an
 Recompute WC days on volumes or constant prices. If WC per unit is stable while WC in rupees swings, the swing is INPUT-PRICE-DRIVEN: assign 1.00x neutral, no growth offset, no structural penalty. Every converter cash-quality trend claim, including the FTTCP Cash transition feed, is made on volume-denominated WC only. Rating-agency language separating price-led from cycle-led WC is admissible evidence. See chunk 11.
 
 ## SOTP rule for hybrid annuity-EPC businesses
+
+Amendment 27.2 requires every other SOTP slice to earn its multiple (chunk 04). The BOO / annuity slice treatment below is carried as written until open ruling OR-10 is ruled; the worksheet names OR-10 on that slice.
 
 For material BOO / Ind AS 116 finance-lease components, do not apply the cash multiplier penalty to the BOO portion; structural cash lag is the business model there. EPC, manufacturing or telecom portion → standard four pillars with the cash multiplier. BOO/annuity portion → InvIT-style multiple of 10-14x EV/EBITDA, set by counterparty quality and equity IRR against cost of capital. Blended destination = weighted average. The blended sector cap is in chunk 05.
 

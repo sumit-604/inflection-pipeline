@@ -9,21 +9,23 @@ priced it today.
 
 Bookmarks are named by date: `fw-YYYY-MM-DD` (for example `fw-2026-07-18`).
 
-## The rules right now (08 September 2026)
+## The rules right now (16 September 2026)
 
 - Master Project Prompt: **v3.7** (Growth Symmetry companion, Rules F to J:
   mandatory Second-Order Section, Entrepreneur Ledger, steelman ordering,
   paired success catalogue, depth by default). The file is still named
   `Master_Project_Prompt_v3_6.md`; the path is a stable injection target,
   the version is in the banner.
-- Section 1B (exit multiple): the **seven-layer set** — v3.3 Amendments +
+- Section 1B (exit multiple): the **eight-layer set** — v3.3 Amendments +
   v3.5.1 Reconciliation + v3.6 Amendments + v3.7 Amendments (commodity
   converters, 20-Aug) + v3.8 Amendments (exit-basis symmetry and option
   resolution, 23-Aug) + v3.9 Amendments (relative valuation cross-check
   step 1C, 26-Aug; forward-expectation exit framework, Amendments 21-25,
   07-Sep) + v3.10 Amendments (growth symmetry in projections and
-  weighting, Amendment 26, 08-Sep). Where they overlap, v3.10 governs the
-  items it names, then v3.9, then v3.8, then v3.7, then v3.6, then
+  weighting, Amendment 26, 08-Sep) + v3.11 Amendments (post-IPO operating
+  ROCE, earned SOTP slices, Hurdle basis, seven cap rows, Amendment 27,
+  16-Sep). Where they overlap, v3.11 governs the items it names, then
+  v3.10, then v3.9, then v3.8, then v3.7, then v3.6, then
   v3.5.1, then v3.3.
 - FTTCP: **v2.3** Consolidated (v2.2 probabilistic catalyst credit and
   Section C.2; v2.3 Step 4.5 Second-Order Section). File keeps the

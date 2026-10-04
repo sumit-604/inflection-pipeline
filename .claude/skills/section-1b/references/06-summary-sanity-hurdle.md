@@ -1,7 +1,7 @@
 # Chunk 06. Eight-row summary, sanity checks, Hurdle Ratio, standing check, entry and conclusion
 
 Loaded by: Role 1 Section 1B Four-Pillar Summary and Hurdle Ratio; Section 2D; Section 4E to 4H. Pipeline: stage 11; stage 13 synthesis (Hurdle and verdict card); /finalize; Verifier C (12c).
-Sources in force: Master v3.7 §1B summary, RRM dual track, Hurdle Ratio, §2D, §4E-4H, §4H-pre; Section 1B v3.3 Amendments 2, 3, 6, 4.3; v3.8 Amendment 18.5; v3.9 Amendments 20.5, 20.8, 24, 25; v3.10 Amendment 26 standing check.
+Sources in force: Master v3.7 §1B summary, RRM dual track, Hurdle Ratio, §2D, §4E-4H, §4H-pre; Section 1B v3.3 Amendments 2, 3, 6, 4.3; v3.8 Amendment 18.5; v3.9 Amendments 20.5, 20.8, 24, 25; v3.10 Amendment 26 standing check; v3.11 Amendments 27.1, 27.3.
 
 ## Four-Pillar Summary Calculation (rows A to H)
 
@@ -38,6 +38,11 @@ Every Role 1 produces both tracks, carried through all fair values, entry prices
 
 - EPS CAGR = the probability-weighted EPS CAGR on the Amendment 21 run-rate base, built from the FTTCP C.2 credit net of the mandatory downside term (Amendment 24; chunks 08, 09).
 - The destination-PE-times-EPS term is basis-consistent with the entry (Amendment 18.1).
+- **One basis, both ends, at the Hurdle (Amendment 27.3).** The EPS basis used for the entry price is the basis used for the exit price, stated in the worksheet line. EPS CAGR, Destination PE mid and Current PE all run on that basis: a forward basis takes Current PE on forward EPS, a trailing basis on trailing EPS.
+- **One credit per catalyst (Amendment 27.3).** A catalyst credited in the revenue path (26.1) or in the margin bridge (26.2) is not credited again in the exit multiple. Where the Amendment 26 interaction splits a catalyst between the projection and the exit multiple, the two shares sum to no more than 100%, and the worksheet names both (chunks 04, 07).
+- For a name within 24 months of listing, Current PE = (CMP − surplus cash per share) ÷ EPS excluding the after-tax treasury income on that cash (Amendment 27.1, chunk 01).
+- The basis line and the catalyst credit line are written before HR is computed. An HR shown without both lines is incomplete.
+- Worksheet: "Hurdle basis (A27.3): [FORWARD / TRAILING], same at entry and exit (A18.1) | Current PE ___x = (CMP ₹___ − surplus cash ₹___/share) ÷ [forward / trailing] EPS ₹___ | EPS CAGR ___% | Destination PE mid ___x | Catalysts: [name: revenue path or margin bridge ___% / exit multiple ___%] × N, each summing to no more than 100%"
 - Amendment 24 governs: the Hurdle Ratio is a feasibility check, not a verdict cap (operator ruling 2026-09-15, OR-2). Compute the band and show it on the verdict card; it caps no verdict.
 
 | Condition | Feasibility band |
@@ -75,13 +80,16 @@ Every Role 1 produces both tracks, carried through all fair values, entry prices
 ## Entry price (Section 4E)
 
 - Entry = exit-consistent fair value ÷ (1 + tier hurdle)^N, with 1.25 for Tier A and 1.20 for Tier B (Amendment 18.5 read with Amendment 4.3; operator ruling 2026-09-15, OR-8).
+- Post-IPO name (Amendment 27.1): fair value carries two lines, operating fair value and surplus cash per share at face value. The cash line is never grown, discounted or multiplied. Net debt, or net cash, used anywhere in fair value excludes the surplus cash. The tier hurdle discount applies to the operating line only: entry = operating Year N fair value ÷ (1 + tier hurdle)^N + surplus cash per share. Discounting the cash line would carry the cash below its face. The 30% CAGR price and the margin-of-safety price likewise discount the operating line only, then add the cash line. Surplus cash per share uses the diluted share count the EPS uses.
 
 | Calculation | Value |
 |---|---|
-| Base Case Fair Value (Year 3) | ₹___ |
+| Base Case Fair Value (Year 3) (post-IPO name: operating line) | ₹___ |
+| Post-IPO only: surplus cash per share, separate fair value line at face value (A27.1) | ₹___ |
 | Price for the tier hurdle = Fair Value ÷ (1 + hurdle)³ | ₹___ |
-| Price for 30% CAGR = Fair Value ÷ (1.30)³ | ₹___ |
-| Margin of Safety Price = hurdle entry × (1 − MoS), MoS per the evidence-scaled schedule | ₹___ |
+| Post-IPO only: + surplus cash per share at face value, after the hurdle discount (A27.1) | ₹___ |
+| Price for 30% CAGR = Fair Value ÷ (1.30)³ (post-IPO name: operating line ÷ (1.30)³ + surplus cash per share) | ₹___ |
+| Margin of Safety Price = hurdle entry × (1 − MoS), MoS per the evidence-scaled schedule (post-IPO name: operating hurdle entry × (1 − MoS) + surplus cash per share) | ₹___ |
 | Ideal entry range | ₹___ to ₹___ |
 
 Buy at the bottom of the revealed premium band, never the top. No entry zone is presented without the Amendment 19 FV CAGR and return-source label (chunk 12). Fast-growth names express margin of safety as position size instead (Amendment 25, chunk 08).
@@ -107,4 +115,4 @@ Buy at the bottom of the revealed premium band, never the top. No entry zone is 
 
 ## Verdict card additions carried by later layers
 
-Tier line (A4.3); Hurdle band; both tracks; destination range ±7.5%; FV CAGR and return-source label (A19); price decomposition percentages and residual % (A24); Step 1C line: pillar destination, adjusted peer base or PENDING LIVE PEER TABLE, % gap, governing multiple (A20); value vs price, MoS row, dispersion cap, edge (4H-pre).
+Tier line (A4.3); Hurdle band; for a SOTP, the total shown without any NOT FOUND slice, each such slice named as a caveat (A27.2); both tracks; destination range ±7.5%; FV CAGR and return-source label (A19); price decomposition percentages and residual % (A24); Step 1C line: pillar destination, adjusted peer base or PENDING LIVE PEER TABLE, % gap, governing multiple (A20); value vs price, MoS row, dispersion cap, edge (4H-pre).

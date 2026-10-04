@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 28 Apr from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/PR-Ratnaveer-Precision-Engineering28apr26.pdf",
+    "file": "01-Infomerics.pdf",
+    "status": 200,
+    "bytes": 457477
+  },
+  {
+    "index": 2,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 17 Mar 2025 from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/pr-ratnaveer-precision-17mar25.pdf",
+    "file": "02-Infomerics.pdf",
+    "status": 200,
+    "bytes": 288453
+  },
+  {
+    "index": 3,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 18 Jan 2024 from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/pr-Ratnaveer-Precision-18jan2024.pdf",
+    "file": "03-Infomerics.pdf",
+    "status": 200,
+    "bytes": 257136
+  },
+  {
+    "index": 4,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 15 Jun 2023 from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/pr-rpel-15jun23.pdf",
+    "file": "04-Infomerics.pdf",
+    "status": 200,
+    "bytes": 303123
+  }
+]

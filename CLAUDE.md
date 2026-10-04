@@ -6,7 +6,8 @@ target, 3-5 year holds.
 
 ## NEVER
 - Never use any exit PE from outside Section 1B (v3.3 base + v3.5.1 +
-  v3.6 + v3.7 + v3.8 + v3.9 + v3.10 amendment layers in frameworks/; later
+  v3.6 + v3.7 + v3.8 + v3.9 + v3.10 + v3.11 amendment layers in frameworks/;
+  later
   layers govern overlaps). It is the sole exit multiple authority. No
   round-number defaults, ever. There is no numeric ceiling but the sector
   cap; "never above 20x" language is void (v3.10 Amendment 26.5).
@@ -158,7 +159,7 @@ weigh, never anchored evidence.
 - prompts/       stage instructions, single source of truth
 - frameworks/    Master v3.7 (file Master_Project_Prompt_v3_6.md; the path
                  is stable, the version is in the banner), Section 1B layer set
-                 (v3.3/v3.5.1/v3.6/v3.7/v3.8/v3.9/v3.10),
+                 (v3.3/v3.5.1/v3.6/v3.7/v3.8/v3.9/v3.10/v3.11),
                  FTTCP v2.3, Quarterly v1.4, AR v1.3, plus
                  success_catalogue.md (Rule I; operator fills, 0 of 4
                  names, not yet enforced) (Keerti

@@ -1,6 +1,6 @@
 ---
 description: Autonomous FTTCP v2.3 plain-language draft, then operator review. Usage: /fttcp runs/<folder> | <ticker> | <name fragment>
-model: opus
+model: claude-opus-5-5
 ---
 You are the FTTCP analyst for the operator, Keerti Kaushik. Your job is to
 produce a complete, decided, plain-language FTTCP draft with NO questions to
@@ -130,11 +130,14 @@ Read, in this order:
    frameworks/Section_1B_v3_7_Amendments.md, then
    frameworks/Section_1B_v3_8_Amendments.md, then
    frameworks/Section_1B_v3_9_Amendments.md, then
-   frameworks/Section_1B_v3_10_Amendments.md — read ALL SEVEN layers in this
+   frameworks/Section_1B_v3_10_Amendments.md, then
+   frameworks/Section_1B_v3_11_Amendments.md — read ALL EIGHT layers in this
    order; together they are the sole exit-multiple and Pillar authority the
    FTTCP verdict hands off to, and the source of truth for the sector cap
-   table. Where they overlap, v3.10 governs the items it names (growth
-   symmetry in projections and weighting, Amendment 26), then v3.9, then
+   table. Where they overlap, v3.11 governs the items it names (post-IPO
+   operating ROCE, earned SOTP slices, Hurdle basis, seven cap rows,
+   Amendment 27), then v3.10 (growth symmetry in projections and weighting,
+   Amendment 26), then v3.9, then
    v3.8, then v3.7, then v3.6, then v3.5.1, then v3.3. For CONVERTER-classified names, the Cash
    transition verdict uses volume-denominated WC per v3.7 17.2.
 3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
@@ -252,7 +255,7 @@ Make every judgment call and state your view on it:
 Anchoring is mandatory: every number is followed by its (source, page/note).
 A number is anchored or it is NOT FOUND — never estimate a missing one. Exit
 PE and Pillar treatment come only from the Section 1B layer set (v3.3
-Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name). Never credit one ROCE
+Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10 + v3.11; later layers govern the items they name). Never credit one ROCE
 recovery through both Pillar 1 and the Strategic Premium; state which route
 carries it.
 
@@ -454,7 +457,7 @@ LESSONS.md, which is budget-capped): what broke or dragged this session, or
 - Never leave a judgment call open or phrase one as a question.
 - Never estimate a missing number; NOT FOUND is the only fill.
 - Never use an exit PE from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name); the sector cap table
+  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10 + v3.11; later layers govern the items they name); the sector cap table
   is the only ceiling.
 - Never let INDETERMINATE cash conversion resolve to a clean pass.
 - Never fabricate a catalyst to fill a table; NONE FOUND is a valid finding.

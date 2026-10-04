@@ -116,7 +116,7 @@ from the reply only if the stage failed to write it.
 
 2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
    existing wrapper. Its frontmatter preloads the section-1b skill (the
-   resolved Section 1B v3.3-v3.10 and FTTCP v2.3 rulebook), so do NOT pass
+   resolved Section 1B v3.3-v3.11 and FTTCP v2.3 rulebook), so do NOT pass
    the Section 1B or FTTCP framework files. Pass
    frameworks/Master_Project_Prompt_v3_6.md (resolves
    {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}) as its stable prefix plus
@@ -287,7 +287,7 @@ answered from the blocks, write "the run did not establish this" rather than fil
      produced_at: <run date>
      framework_git_commit: <output of `git rev-parse HEAD`>
      framework_tag: <output of `git describe --tags --always`>
-     framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
+     framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10+v3.11 / FTTCP v2.3"
    This is a plain record, not a decision. It gets committed with the rest.
 
 8c. LESSONS CLOSE-OUT. Before the commit, record what this run taught.
@@ -346,7 +346,7 @@ Rules for you, the orchestrator session:
 - Deliberation conclusions supersede earlier pipeline determinations
   wherever they conflict; this is the phase-3 authority rule.
 - Never let any exit PE enter from outside the Section 1B layer set (v3.3
-  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name).
+  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10 + v3.11; later layers govern the items they name).
 - Never paste full PDFs into subagent task messages; pass file PATHS.
 - Verifier independence is absolute.
 - Nothing halts on company quality; only mechanical failures halt.

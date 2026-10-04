@@ -37,7 +37,7 @@ def _last(s: pd.Series, t):
 def reason(a: M.Asset, row, f) -> str:
     bits = []
     bits.append({1: "trend up", -1: "trend down", 0: "trend mixed"}[row.L1])
-    q = row.quad or "regime n/a"
+    q = row.quad if isinstance(row.quad, str) else "regime n/a"
     bits.append(f"{q} {'favours' if row.L2 > 0 else 'opposes' if row.L2 < 0 else 'neutral for'} it")
     if a.driver == "real_yield":
         bits.append(f"real yield {_f(f.real_yield_3m)} pts 3m")
@@ -71,7 +71,11 @@ def flips(a: M.Asset, v: pd.DataFrame, f: pd.DataFrame, panel, t) -> str:
     tbl = M.REGIME_TABLE[a.regime]
     alt = sorted({f"{M.QSHORT[q]} {tbl[q]:+d}" for q in tbl
                   if tbl[q] != row.L2})
-    trig.append(f"L2 changes in {', '.join(alt)}")
+    if isinstance(row.quad, str):
+        trig.append(f"L2 changes in {', '.join(alt)}")
+    else:
+        trig.append("L2 votes 0 until the breakeven series is refreshed "
+                    f"(then: {', '.join(sorted(f'{M.QSHORT[q]} {tbl[q]:+d}' for q in tbl))})")
     # Layer 3.
     if a.driver == "real_yield":
         ry = M.inputs(panel, a.basis)["real_yield"]
@@ -110,6 +114,13 @@ def main():
                     f"{int(r.L3):+d} | {reason(a, r, f.loc[t])} |")
         flip_lines.append(f"- **{a.label}** ({t}): {flips(a, v, f, panel, t)}")
     rf = regime_f.loc[t_avg]
+
+    def stale(col):
+        s_ = panel[col].dropna() if col in panel else pd.Series(dtype=float)
+        last = s_.index.max() if len(s_) else None
+        return "" if last is not None and last >= t_avg else \
+            f" (series ends {last})" if last is not None else " (not fetched)"
+
     g, i = rf.growth_up, rf.infl_up
     quad = (M.QUADRANTS[(bool(g), bool(i))]
             if pd.notna(g) and pd.notna(i) else "NOT AVAILABLE (input missing)")
@@ -124,17 +135,17 @@ def main():
          "| Input | Value | Reading |", "|---|---|---|",
          f"| Copper/gold 3m change | {_f(rf.cu_au_3m, 1, True)} | vs its 12m "
          f"average {_f(g12, 1, True)}: growth {_dir(g)} |",
-         f"| 10y breakeven 3m change | {_f(rf.breakeven_3m)} pts | vs its 12m "
+         f"| 10y breakeven 3m change | {_f(rf.breakeven_3m)}{stale('breakeven')} pts | vs its 12m "
          f"average {_f(i12)} pts: inflation {_dir(i)} |",
          f"| 10y real yield (level, 3m change) | {_f(rf.real_yield)}%, "
-         f"{_f(rf.real_yield_3m)} pts | gold/silver driver |",
-         f"| Broad dollar 3m change | {_f(rf.dollar_3m, 1, True)} | metals "
+         f"{_f(rf.real_yield_3m)} pts{stale('real_yield')} | gold/silver driver |",
+         f"| Broad dollar 3m change | {_f(rf.dollar_3m, 1, True)}{stale('dollar')} | metals "
          "driver |",
-         f"| Fed funds 6m change | {_f(rf.fedfunds_6m)} pts | context only |",
+         f"| Fed funds 6m change | {_f(rf.fedfunds_6m)} pts{stale('fedfunds')} | context only |",
          f"| USD/INR 3m change | {_f(rf.usdinr_3m, 1, True)} | context only |",
          f"| Brent 3m change | {_f(rf.brent_3m, 1, True)} | Nifty driver |",
          f"| Net FPI equity flow (month) | "
-         f"{'NOT FOUND' if pd.isna(rf.fpi) else f'{rf.fpi:+,.0f} cr'} | "
+         f"{'NOT FOUND' if pd.isna(rf.fpi) else f'{rf.fpi:+,.0f} cr'}{stale('fpi')} | "
          "Nifty driver |", "",
          "| Asset | Call | Confidence | L1 trend | L2 regime | L3 driver | "
          "Reason |", "|---|---|---|---|---|---|---|", *rows, "",

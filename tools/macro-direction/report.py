@@ -38,7 +38,22 @@ def _verdict(key: str) -> list[str]:
             continue
         if on:
             out.append(line)
-    return [l for l in out if l.strip()] or ["_No verdict for this asset._"]
+    while out and not out[0].strip():
+        out.pop(0)
+    while out and not out[-1].strip():
+        out.pop()
+    return out or ["_No verdict for this asset._"]
+
+
+def _crosscheck(panel) -> str:
+    x = panel[["brent_avg", "brent_eia_avg"]].dropna()
+    x = x[x.index >= pd.Period("2004-01", "M")]
+    d = (x["brent_avg"] / x["brent_eia_avg"] - 1).abs()
+    ra = x.pct_change().dropna()
+    agree = (ra.iloc[:, 0] > 0) == (ra.iloc[:, 1] > 0)
+    return (f"{len(x)} months from 2004, median level gap {100 * d.median():.2f}%, "
+            f"max {100 * d.max():.2f}% ({d.idxmax()}), monthly direction "
+            f"agrees in {100 * agree.mean():.1f}% of months.")
 
 
 def write(path: Path, panel: pd.DataFrame, results: dict):
@@ -111,7 +126,11 @@ def write(path: Path, panel: pd.DataFrame, results: dict):
     a("")
     a("Hit rate = share of months with a call where the call matched the sign "
       "of the forward return; (n) = months with a call. Coverage = share of "
-      "months the model made any call.")
+      "months the model made any call. Noise band: with 200 calls, one "
+      "standard error of a hit rate near 55% is 3.5 points, so a gap under "
+      "about 7 points between two rules is not distinguishable from luck. "
+      "3-month outcomes overlap month to month, so their effective sample is "
+      "about a third of n.")
     for h in (1, 3):
         a("")
         a(f"### {h}-month horizon, full window")
@@ -141,10 +160,39 @@ def write(path: Path, panel: pd.DataFrame, results: dict):
               f"{B.fmt_hit(*t['logit'])} | {B.fmt_hit(*t['model_lw'])} | "
               f"{B.fmt_hit(*t['trend_lw'])} | {B.fmt_hit(*t['up_lw'])} |")
     a("")
+    a("### Where all three layers could vote (breakeven data ends 2019-10)")
+    a("")
+    a("Same tables restricted to months with a regime reading. After "
+      "2019-10 the regime layer votes 0 for every asset (input missing), "
+      "so this is the only fair test of the full rule set.")
+    for h in (1, 3):
+        a("")
+        a(f"| Asset ({h}m) | Model | LOW | MEDIUM | HIGH | Trend L1 | Always "
+          "up | Logistic | Model minus trend |")
+        a("|---|---|---|---|---|---|---|---|---|")
+        for k, r in results.items():
+            t = B.hit_table(r, h, regime_only=True)
+            d = t["model"][0] - t["trend"][0]
+            a(f"| {r['asset'].label} | {B.fmt_hit(*t['model'])} | "
+              f"{B.fmt_hit(*t['conf1'])} | {B.fmt_hit(*t['conf2'])} | "
+              f"{B.fmt_hit(*t['conf3'])} | {B.fmt_hit(*t['trend'])} | "
+              f"{B.fmt_hit(*t['up'])} | {B.fmt_hit(*t.get('logit', (None, 0)))} "
+              f"| {100 * d:+.1f} pts |")
+    a("")
+    nf = B.evaluate(panel, M.CHECK_ASSETS[3], with_logit=False)
+    t1, t3 = B.hit_table(nf, 1), B.hit_table(nf, 3)
+    a(f"Nifty with the FPI vote switched off (FPI history before 2020 is "
+      f"unverified, see data): 1m {B.fmt_hit(*t1['model'])}, 3m "
+      f"{B.fmt_hit(*t3['model'])}.")
+    a("")
     a("Calibration reads off the LOW / MEDIUM / HIGH columns: a calibrated "
       "model shows hit rate rising with confidence.")
     a("")
 
+    a("Cross-check, Pink Sheet Brent vs EIA Brent spot (monthly average): "
+      + _crosscheck(panel) + " Gold and silver could not be cross-checked: "
+      "Yahoo futures (GC=F, SI=F) were refused and no copy was found.")
+    a("")
     a("## 4. Averaging check: monthly-average vs month-end prices")
     a("")
     a("Pink Sheet prices are monthly averages. Averaging a random walk "
@@ -212,6 +260,7 @@ def write(path: Path, panel: pd.DataFrame, results: dict):
     a("|---|---|---|---|")
     for name, key in [("Top-2 by score", "top"),
                       ("Top-2, only scores > 0 (else cash)", "top_pos"),
+                      ("Top-2 by trend L1 alone (baseline ranking)", "trend"),
                       ("Bottom-2 by score (sanity check)", "bottom"),
                       ("Equal weight, all six", "ew")]:
         p = pf[key]

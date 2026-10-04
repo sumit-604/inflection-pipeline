@@ -1,0 +1,112 @@
+stage: B09-tam
+company: "MMP"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "B00 CORPUS GAPPED, no_concall_mode true: screener P&L/Quarters/BS/CF sheets empty; Q4 FY26 and Q3 FY26 results are image scans; ARFIN transcripts absent; announcements hand-collected; NSE clarifications of 2026-03-05 and 2026-06-23 unanswered in corpus; research/ empty"
+  - "B07.capex_embedded_growth_pct NOT AVAILABLE (B07 runs in parallel); 3C uses B05 capex programme and B03 funding figures"
+  - "NOT FOUND in corpus: tonnage volumes and realisation per MT by segment, export revenue by segment, customer concentration, market share, peer revenues"
+flags:
+  - {type: FLAG-MGMT-CLAIM-NOT-A-TAM, reason: "Management gives no TAM for its products. The only market figure is whole India aluminium industry USD 11 bn 2023 to 20 bn 2030 (Q1 FY27 deck p.24, source AR FY25); deck CAGR 7.6% does not match its own endpoints (derived 8.1%)"}
+  - {type: FLAG-FOIL-VOLUME-DIVERGENCE, reason: "India foil demand volume reads 337 kt (derived from 400 kt by 2028 at 5.9%), about 510 kt (derived from China imports 140,234 t at ~30% share), and 915 kt (as printed in search result). Separator: DGCI&S HS 7607 import data plus domestic production statistics. Carried 337 kt, confidence L"}
+  - {type: FLAG-CONDUCTOR-SAM-UNFILTERED, reason: "No sourced filter exists for conductor SAM; it is carried at the conservative TAM. Conductors are 81% of headline SAM but 12% of FY26 revenue and demand-limited by tenders and utility payments, not market size. Core SAM (powders plus foil) is 1,852 Cr, headroom 2.6x"}
+  - {type: FLAG-SOM-BELOW-GUIDANCE, reason: "SOM-implied revenue CAGR 9.6% (3yr) and 8.7% (5yr) sits below FY27 guide of 15-18% (Q1 FY27 PR p.3). Share-gain rules and capacity bind the SOM; the guide implies faster share gain or price inflation (SAM is held at 2025-26 prices)"}
+  - {type: FLAG-CAPACITY-GAP, reason: "At constant price, powders and foil need about Rs 23 Cr more capacity than installed by FY29 and about Rs 138 Cr by FY31. The capex plan holds no powder or foil capacity (Call p.16, p.18, p.21). SOM yr5 is the optimistic side against the plan"}
+  - {type: FLAG-INSULATOR-PEAK-ABOVE-SHARE-RULE, reason: "Management peak Rs 130-140 Cr (Call p.15) is 7.0-7.2% of a derived Rs 1,865 Cr composite insulator market, above the 5pp aggressive ceiling for share gain. Q1 FY27 insulator revenue Rs 0.5 Cr (Q1 FY27 deck p.7)"}
+  - {type: FLAG-FX, reason: "USD figures converted at USD/INR 96.18 (2 Oct 2026, tradingeconomics.com). Older USD data converted at today's rate overstates rupee TAM versus the year of the source"}
+market_definition: "India demand for aluminium powders, pharma and packaging foil, bare aluminium conductors and composite polymer insulators, served by one Nagpur converter; exports sized only as MMP's own FOB inflow"
+tam_cr: {conservative: 19812, realistic: 35242}
+sam_cr: 19762
+sam_pct_of_tam: 56.1
+som_3yr_cr: 1086
+som_5yr_cr: 1248
+som_implied_revenue_cagr: {yr3: 9.6, yr5: 8.7}
+current_sam_share_pct: 4.2
+revenue_headroom_x: 24.0
+tam_growth_pct: 5.1
+runway_class: "MODERATE"
+mgmt_claim_cr: 105798
+mgmt_claim_ratio: 5.3
+mgmt_claim_read: "inflated"
+capacity_check: "gap of Rs 23 Cr by FY29 and Rs 138 Cr by FY31 (powders plus foil, constant price); SOM yr5 is the optimistic side, because the capex plan holds no powder or foil capacity"
+methods_used:
+  - "Method 1 top-down (global to India, powders)"
+  - "Method 2 bottom-up (volume x price: powders, foil, insulators)"
+  - "Method 4 import substitution (foil, China imports)"
+  - "Method 5 global benchmark (powders, India share of global volume only)"
+stale_data_flags:
+  - {datapoint: "India aluminium bare wire conductor market USD 1,668.2 mn", source: "Allied Market Research", year: 2023}
+  - {datapoint: "India aluminium industry USD 11 bn, global USD 230 bn", source: "MMP Q1 FY27 deck p.24 citing AR FY25", year: 2023}
+  - {datapoint: "India mining explosives consumption 1.2 mt", source: "search summary of Dataintelo/other", year: 2023}
+  - {datapoint: "India foil market CAGR 5.9% to 400 kt by 2028 (publication date unknown)", source: "search summary", year: 2028}
+searches_performed:
+  - "India aluminium powder market size (IMARC 48.66 kt 2025, report dated 15 Jul 2026, fetched)"
+  - "Global aluminium powder market (680.5 kt, USD 1.98 bn 2025, snippet)"
+  - "Aluminium powder price India per kg (IndiaMART/TradeIndia listings, Aug 2026)"
+  - "India aluminium foil market, anti-dumping duty (alcircle, MarketsandMarkets, snippets and fetch)"
+  - "India pharma foil blister demand and producers (snippet)"
+  - "India aluminium conductor market (Allied Market Research, snippet)"
+  - "India conductor capacity and Apar position (snippet)"
+  - "India composite polymer insulator market (Ken Research via search summary)"
+  - "India wires and cables market, LT cables, organised share (IMARC and others, snippet)"
+  - "India industrial explosives consumption (snippet)"
+  - "USD/INR spot Oct 2026 (tradingeconomics, snippet)"
+searches_skipped:
+  - "Method 3 peer revenue aggregation: MEPCO, Sri Kaliswari, Deva and other powder peers' revenues and unorganised share not searched; NOT FOUND"
+  - "Bulk contract powder prices and grade split (commodity vs specialty); only listing prices found"
+  - "Aluminium-core share of India LT/ABC cable market; LT cable excluded from TAM"
+  - "Method 5 per-capita benchmark vs China and SE Asia (population and China consumption not searched)"
+  - "Pharma foil price per kg and non-pharma split of MMP foil revenue"
+  - "Insulator market growth rate"
+downstream_candidates:
+  - signal: "India monthly coal production and explosives offtake"
+    entity_type: "macro"
+    demand_link: "Coal and mining output drive slurry explosive use, the largest industrial powder outlet named by MMP"
+    likely_source: "Ministry of Coal and Coal India monthly production releases; PIB"
+    cadence: "monthly"
+    shared: false
+  - signal: "Listed explosives makers' volume commentary"
+    entity_type: "end-customer"
+    demand_link: "Explosive producers buy aluminium powder as sensitiser; their volumes lead powder orders"
+    likely_source: "Dependency owner quarterly filings and concall transcripts via BSE/NSE (customer names NOT FOUND in MMP corpus)"
+    cadence: "quarterly"
+    shared: false
+  - signal: "AAC block output and PMAY-U 2.0 housing approvals"
+    entity_type: "end-customer"
+    demand_link: "AAC producers use powder as foaming agent; housing starts drive block demand"
+    likely_source: "MoHUA PIB releases and PMAY-U sanction data; industry association notes"
+    cadence: "quarterly"
+    shared: false
+  - signal: "DGTR and CBIC order on Chinese foil, and China foil import volumes"
+    entity_type: "regulatory"
+    demand_link: "Duty of USD 479-721 per tonne for 5 years from 17 Mar 2025 cuts imports and lifts domestic foil utilisation"
+    likely_source: "DGTR findings, CBIC notification, DGCI&S tradestat HS 7607"
+    cadence: "event-driven"
+    shared: false
+  - signal: "India pharma exports and domestic production"
+    entity_type: "macro"
+    demand_link: "Pharma strip and blister packaging is the core foil outlet"
+    likely_source: "DGCI&S tradestat and Pharmexcil export data; CDSCO"
+    cadence: "monthly"
+    shared: false
+  - signal: "State utility payments and RDSS disbursement"
+    entity_type: "counterparty"
+    demand_link: "Utility payment delays hit private EPC buyers of conductors, ABC and insulators; MMP blames them for Q1 FY27 conductor fall"
+    likely_source: "PFC and REC RDSS dashboards; utility results; CEA data"
+    cadence: "quarterly"
+    shared: true
+  - signal: "PGCIL vendor registration and BIS licences (LT cable, AL59)"
+    entity_type: "regulatory"
+    demand_link: "Approvals gate insulator, LT cable and AL59 revenue; dates have slipped three times"
+    likely_source: "BIS licence database; PGCIL vendor list; utility tender portals"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Aluminium ingot price (LME and MCX)"
+    entity_type: "macro"
+    demand_link: "Metal price sets revenue per MT, customer buying sentiment and pass-through lag across all four segments"
+    likely_source: "LME and MCX price series"
+    cadence: "monthly"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "Headline SAM is 91% conductors and insulators [corrected by orchestrator 2026-10-05 from 96%: (16,045 + 1,865) / 19,762, per stage 9 hand-back] by value, so it flatters runway. Core powder plus foil SAM is Rs 1,852 Cr against Rs 719 Cr FY26 revenue (2.6x), and the powder domestic share is already about 42% (Rs 466 Cr domestic over Rs 1,117 Cr, export FOB Rs 38.4 Cr from AR26 Board report). Two readings of growth: (A) SOM 9.6% CAGR, bound by share rules and capacity; (B) guide 15-18%, which needs faster share gain, price inflation or new verticals (LT cable has no revenue guide, NOT FOUND). Separator: Q2 and Q3 FY27 powder and foil revenue against the 13-15% segment guides, and insulator quarterly revenue near Rs 6 Cr. SOM holds SAM at 2025-26 prices, so metal inflation is excluded. FY26 base includes a fire loss of Rs 40-50 Cr (deck p.27), which would lower the CAGR if normalised. Powder volume is NOT FOUND, so share is value-based and overstated for exports."

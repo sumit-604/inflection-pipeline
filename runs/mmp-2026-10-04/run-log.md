@@ -6,3 +6,5 @@
 - 2026-10-05 manifest cmp 450.0 annotated with capture date 2026-10-04 (stages 3 and 4 flagged no capture date).
 - 2026-10-05 stage 5 no-call bounded cost 200,857 tokens vs target under 100k (LESSONS OPEN C2).
 - 2026-10-05 stage 8 status partial (portals and two news pages unreachable); FIR identity link to the WTD is INFERENCE.
+- 2026-10-05 B09 analyst_note "96%" corrected to 91% in block and report, per stage 9 self-report; no other field affected. Stage 9 status partial (six searches skipped).
+- 2026-10-05 stage 9 ran in parallel with stage 7, so B07.capex_embedded_growth_pct (20.4, upper bound) did not reach it; it used B05 capex and B03 funding instead.

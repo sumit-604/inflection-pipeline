@@ -11,3 +11,6 @@
 | 4 | bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 242310 | 10m10s | 1 |
 | 5 | concall (no-call bounded) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 200857 | 6m52s | 1 |
 | 8 | promoter (web) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 107695 | 3m04s | 1 |
+| 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 233019 | 5m38s | 1 |
+| 7 | emoat | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 211958 | 8m44s | 1 |
+| 9 | tam (web) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 148296 | 6m15s | 1 |

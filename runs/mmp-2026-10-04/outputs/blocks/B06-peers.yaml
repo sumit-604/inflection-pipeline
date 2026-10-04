@@ -1,0 +1,65 @@
+stage: B06-peers
+company: "MMP"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "ARFIN peer transcripts absent (none collected); ARFIN marked UNUSED, nothing filled from memory"
+  - "Peer set is two names (APARINDS 4 calls, MAANALU 4 calls); neither is an aluminium powder or pharma foil business, so powder and foil claims are largely unverifiable"
+  - "B00 CORPUS GAPPED: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets empty for MMP and all peers (Data_Sheet.csv only); no peer financial tables used, transcripts only"
+  - "B00 scanned Q4 FY26, Q3 FY26 and FY26 audited MMP results are image scans without OCR; Q1 FY27 filing text OCR-garbled; MMP press releases carry quarterly numbers"
+  - "B00 NSE results clarifications of 2026-03-05 and 2026-06-23 have no company reply in the corpus"
+  - "B00 announcements and shareholding repaired by hand; selection, not full list"
+  - "APARINDS Jun 2026 file (Q4 FY26 call) ends at printed page 16 of 17 mid-answer (Chaitanya Desai on PGCIL past-performance rule); the last page is empty in the text, so the end of the call is missing"
+  - "APARINDS Q1 FY27 call (24 Jul 2026) took no questions on guidance or funding because of a pending securities-issue notice, so forward commentary is thin"
+  - "MAANALU management gives blended EBITDA per tonne only and declined powder, asset-turn and margin numbers on several calls"
+  - "Page anchors use the printed call page number (file page marker minus 1)"
+flags:
+  - {type: FLAG-PEER-SET-THIN, reason: "Two peers, neither makes aluminium powder or foil; 2 of 8 questions UNVERIFIABLE, 5 PARTIALLY VERIFIED on adjacent evidence, 0 VERIFIED, 1 CONTRADICTED"}
+  - {type: FLAG-EXPORT-CONTRADICTION, reason: "MMP guides exports +40-50% while MAANALU (Jun-26 p.7, Aug-26 p.6) reports Gulf and GCC shipments stalled and freight up 5-10x, and APARINDS (Jun-26 p.4-6, p.13; Jul-26 p.4) reports Middle East shipments halted; adjacent products, so scope is West Asia and freight, not powder demand itself"}
+  - {type: FLAG-CONDUCTOR-IDIOSYNCRATIC, reason: "APARINDS Q1 FY27 conductor revenue +19.9%, domestic +19.3%, volume -6.7% (Jul-26 p.3) against MMP conductor revenue -42% YoY; metal-price deferral explains direction not magnitude"}
+  - {type: FLAG-NO-PEER-PAYMENT-DELAY, reason: "No peer mentions RDSS or state utility payment delays; APARINDS attributes domestic delay to right of way, transformer bushing shortage, milestone billing and manpower; MMP's payment-delay explanation is unverified"}
+  - {type: FLAG-HEDGE-DIFFERENCE, reason: "Both peers state metal is hedged back to back (APARINDS Oct-25 p.15; MAANALU Nov-25 p.9, Aug-26 p.8) so no metal inventory gain; MMP reports a 2-2.5 Cr Q4 inventory gain, which implies open metal exposure that peers do not run"}
+  - {type: FLAG-FUNDING-DIFFERENCE, reason: "MAANALU funds capex from Rs 83 Cr preferential equity and says no debt (Jun-26 p.3; Aug-26 p.11); APARINDS issued a securities-approval notice (Jul-26 p.2); MMP funds with 76.6% short-term debt and a 102.5 day cycle (B05)"}
+peers_provided: 8
+verified: []
+partially_verified:
+  - {claim: "Elevated aluminium price is cutting conductor offtake; pass-through on bare conductor and ABC", peers: ["APARINDS", "MAANALU"]}
+  - {claim: "Conductor demand is shifting to AL59 alloy and carries a margin premium", peers: ["APARINDS"]}
+  - {claim: "Utility and PGCIL vendor approvals take 6-8 months to 2 years before material order flow", peers: ["APARINDS", "MAANALU"]}
+  - {claim: "Inventory gains or losses when aluminium rises, and margin stated ex inventory effect", peers: ["APARINDS", "MAANALU"]}
+  - {claim: "Utilisation, asset turn, net D/E and working-capital cycle for converters adding capex", peers: ["APARINDS", "MAANALU"]}
+contradicted:
+  - {claim: "Export demand for aluminium powder and converter products from Europe and West Asia supports exports +40-50% and powders +13-15% without customer resistance (West Asia and price-resistance parts only)", contradicting_peer: "MAANALU", quote_anchor: "MAANALU Q4 FY26 call p.7 (Ashish Jain): 'We had dispatches into the Gulf Middle East which just went on standstill ... till today they've not restarted'; Q1 FY27 call p.6: 'freight prices which have multiplied more than five times to 10 times ... a lot of customers are sitting back'. APARINDS Q4 FY26 call p.13 (Kushal Desai): 'There were no shipments that went to these geographies in March. Nothing went in the month of April.'"}
+unverifiable:
+  - {claim: "State utility and RDSS payment delays slowing conductor and ABC execution for private EPC contractors, and when recovery comes", peers_checked: ["APARINDS"]}
+  - {claim: "EBITDA per tonne for conductors and LT cable with and without own wire rod; rod capex and lead time", peers_checked: ["APARINDS"]}
+peer_coverage_map:
+  - {peer: "APARINDS", quarter: "Q2 FY26 (call 30 Oct 2025)", usage: "SUBSTANTIVE", contribution: "Metal-price order hold, full hedge and absolute-rupee pass-through, 50% US duty on metal portion, capex 1,300 Cr, utilisation 75-85%"}
+  - {peer: "APARINDS", quarter: "Q3 FY26 (call 29 Jan 2026)", usage: "SUBSTANTIVE", contribution: "AL59 replaces ACSR with higher EBITDA per tonne but AL59 is conventional and competitive; volume -5.9% on right of way and bushing shortage"}
+  - {peer: "APARINDS", quarter: "Q4 FY26 (call 28 May 2026)", usage: "SUBSTANTIVE", contribution: "Middle East war, metal and freight slowdown, capex 1,500 Cr FY27, utilisation 85-95%, new domestic entrants and capacity adding, PGCIL past-performance rule"}
+  - {peer: "APARINDS", quarter: "Q1 FY27 (call 24 Jul 2026)", usage: "SUBSTANTIVE", contribution: "Conductor volume -6.7% from customer deferral of unhedged conventional conductors, premium mix 50.3%, working capital 45-50 days, oil inventory gain and 94 Cr provision"}
+  - {peer: "MAANALU", quarter: "Q2 FY26 (call 17 Nov 2025)", usage: "SUBSTANTIVE", contribution: "Converter model with 95-98% hedge, working capital 60 days, 24,000 tpa capacity, no debt plan, value-added margin ladder"}
+  - {peer: "MAANALU", quarter: "Q3 FY26 (call 17 Feb 2026)", usage: "SUBSTANTIVE", contribution: "Extrusion utilisation 25%, 450 t US order cancelled and moved to local supplier, Tata qualification timeline, EBITDA per tonne USD 450 target"}
+  - {peer: "MAANALU", quarter: "Q4 FY26 (call 1 Jun 2026)", usage: "SUBSTANTIVE", contribution: "US 80-85% of exports stalled on 50% duty plus aluminium up 50%, Gulf dispatches halted, qualification 6-8 months, EBITDA per tonne about USD 340, 83 Cr preferential equity"}
+  - {peer: "MAANALU", quarter: "Q1 FY27 (call 14 Aug 2026)", usage: "SUBSTANTIVE", contribution: "Production 1,558 t, export share 40-45%, freight up 5-10x, anodizing 45-50% and machining 55% utilisation, no-debt statement, only 50% of cost increase passed on"}
+  - {peer: "ARFIN", quarter: "none collected", usage: "UNUSED", contribution: "No transcripts in corpus (B00 input gap); ARFIN not read, not filled from memory"}
+industry_cross_read:
+  demand: "Split: APARINDS order book 10,190 Cr and domestic revenue +19-37% but conductor volume -6% to -7% from metal-price deferral of conventional orders; MAANALU flat year with exports down to 40-45%; no peer cites RDSS or payment delays."
+  pricing_inputs: "Peers pass metal through on a hedged, rupee-per-tonne spread; peer margin pressure comes from freight, gas, polymers and MJP premium, and MAANALU passed only about 50% of cost increases in two quarters."
+  capex_cycle: "Capacity race, not a lone expander: APARINDS raises capex to 1,500 Cr in FY27 and says domestic players add capacity and pricing pressure; MAANALU builds ahead at 25% extrusion utilisation. MMP holds powder and foil capex flat but joins the race in LT cable and insulators."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Aluminium and copper price spike makes customers defer unhedged deliveries (APARINDS Jul-26 p.3, p.14; MAANALU Jun-26 p.7)"
+  - "Middle East war: shipments, freight up 5-10x, container insurance terrorism clause (MAANALU Jun-26 p.7, Aug-26 p.6; APARINDS Jun-26 p.4-6, p.13)"
+  - "US Section 232 duty of 50% on aluminium products and orders lost to US local producers (APARINDS Jan-26 p.14-15; MAANALU Feb-26 p.7, p.11)"
+  - "Unhedgeable MJP premium on aluminium (APARINDS Jul-26 p.13-14)"
+  - "Chinese competition and LME-SHFE gap of USD 330-360 a tonne (APARINDS Jun-26 p.6)"
+  - "New domestic capacity and large entrants (UltraTech, Aditya Birla, Adani) in wires and cables (APARINDS Jun-26 p.6, p.15)"
+  - "Gas and energy supply restrictions and cost, passed on only about 50% (MAANALU Jun-26 p.2; Aug-26 p.11-12)"
+  - "Specialty polymer shortage from Middle East plants (APARINDS Jun-26 p.5-6)"
+  - "Ramp-up and qualification delays on new lines: Tata contract, Dewas tubing machinery repriced and 8-9 months late (MAANALU Feb-26 p.7-8; Jun-26 p.8, p.10)"
+  - "Equipment lead times longer than 2-3 years ago (APARINDS Jun-26 p.9)"
+net_narrative_effect: "complicates"
+cross_peer_hypothesis: "The 2026 aluminium price and freight shock splits downstream demand by contract type, not by product. Contract-bound domestic project demand is deferred and then recovers (APARINDS Jul-26 p.3, p.14: penalties force delivery and clearances resumed once metal eased). Discretionary export demand is lost, not deferred (MAANALU Feb-26 p.7, p.11: US orders cancelled and moved to local producers). Test: if MMP's conductor fall is deferral, Q2 FY27 conductor revenue returns above 200 Mn; MMP's export growth guide of +40-50% is the exposed number."
+analyst_note: "Peer set supports MMP's direction on metal-price deferral and slow approvals but not its magnitude, and no peer confirms the payment-delay story. APARINDS domestic conductor revenue grew 19.3% in Q1 FY27 while MMP conductors fell 42%, so MMP's weakness looks partly company-specific (conventional bare conductor sits in the deferred bucket; APARINDS pushes conventional product to exports and keeps premium at home). Both peers hedge metal back to back and report no metal inventory gain, so MMP's 2-2.5 Cr gain points to open exposure; this feeds margin quality. Both peers hold working capital at 45-60 days against MMP 102.5. Powder and foil are not covered by any peer; those claims remain on MMP's own word. Weights: MAANALU evidence is adjacent (extrusion, not powder); APARINDS is large-cap conductors and cables."

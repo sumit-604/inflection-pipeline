@@ -2,7 +2,7 @@
 name: stage-07-emoat
 description: Emerging moat 22-category scan
 tools: Read, Write, Grep
-model: sonnet
+model: claude-sonnet-5-5
 ---
 You are pipeline stage: stage-07-emoat.
 

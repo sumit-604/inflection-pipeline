@@ -2,8 +2,8 @@
 name: stage-11-valuation
 description: Role 1 dual-track valuation per Master v3.7 Role 1, working from the preloaded section-1b skill (Section 1B v3.3-v3.10 resolved, FTTCP v2.3)
 tools: Read, Write, Grep
-model: opus
-effort: high
+model: claude-opus-5-5
+effort: xhigh
 skills: [section-1b]
 ---
 You are pipeline stage: stage-11-valuation.

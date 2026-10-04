@@ -1,5 +1,6 @@
 # STAGE 12: VERIFIER LAYER, FOUR PARALLEL SUB-AGENTS (PIPELINE MODE)
-# Four independent calls, fresh context each, run in parallel after B11.
+# Four independent calls, fresh context each. Phase 1: A, B, D and C's
+# Gate 0 + Emerging Moat half, after stage 9. Phase 3: C's valuation half, after B11.
 # STRUCTURAL RULE: no verifier sees any other verifier's output, and no
 # verifier sees the reasoning that produced the upstream reports; each
 # sees only the artifacts named in its section plus its rubric. The
@@ -121,11 +122,11 @@ INPUTS: {{ALL_STAGE_REPORTS}} + {{ALL_SOURCE_PDFS}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER B: CONCALL RED FLAGS
-# Model: Opus (agent alias) | Emits: B12b
+# Model: Opus 5.5 | Emits: B12b
 ═══════════════════════════════════════════════════════════════════
 
-You are an independent concall auditor. You receive 15 raw transcripts
-(3 main company, 12 peers) and the pipeline's concall analyses (B05,
+You are an independent concall auditor. You receive the raw transcripts
+(up to 3 main company, up to 12 peers) and the pipeline's concall analyses (B05,
 B06 reports). Read the transcripts YOURSELF, fresh, then compare.
 
 RULES:
@@ -172,7 +173,7 @@ promise-delivery spot checks; then:
 stage: B12b
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: ""  # your exact model ID, as pinned in the agent frontmatter
 status: complete
 independent_flags_found: 0
 caught: 0
@@ -197,16 +198,16 @@ INPUTS: {{ALL_15_TRANSCRIPTS}} + {{B05_REPORT}} + {{B06_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER C: FRAMEWORK ADHERENCE
-# Model: Opus (agent alias) | Emits: B12c
+# Model: Opus 5.5 | Emits: B12c
 ═══════════════════════════════════════════════════════════════════
 
 You are a framework compliance auditor. Was each framework applied AS
 WRITTEN? The rule sources you receive depend on your invocation scope,
 named in the task message:
 - ALWAYS (both scopes): the Gate 0 rules (prompts/01-gate-0-pipeline.md)
-  and the 20-category scan rules (prompts/07-emerging-moat-pipeline.md),
+  and the 22-category scan rules (prompts/07-emerging-moat-pipeline.md),
   for the B01 and B07 audits. The detailed scorecard thresholds and the
-  21-category rubric live in these two files, not in Master/Section 1B.
+  22-category rubric (23 scored rows with R1) live in these two files, not in Master/Section 1B.
 - VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
   valuation framework docs — Master Prompt v3.7 Role 1, the Section 1B
   layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10;
@@ -260,7 +261,8 @@ RULES:
    governs entry on >15% divergence; Hurdle Ratio computed correctly
    with the credibility-grade gate on Bull; 4D weights match the grade;
    SOM cross-check performed; every unresolved input handled by the
-   stated conservative rule, no silent fills; one-improvement-one-
+   override-3 both-readings rule (both readings and the separating
+   observation), no silent fills; one-improvement-one-
    mechanism honoured (no double-crediting).
 5. Any misapplication that changes the destination PE by >1x or flips
    the Hurdle verdict or the decision is CRITICAL; changes within
@@ -296,8 +298,9 @@ RULES:
    where the dossier must exist for the run; the phase-1 structural check
    is mechanical, inside run-pipeline step 6b. Check:
    outputs/reports/09b-understanding-dossier.md exists and contains all
-   five sections in order; Section 1 ends with exactly one verdict line
-   (CORPUS CURRENT or CORPUS GAPPED); Section 2 is marked DRAFT - PENDING
+   six sections in order (Section 6 annex ends with the corpus commit hash
+   line); Section 1 ends with exactly one verdict line (CORPUS CURRENT,
+   CORPUS GAPPED, or CORPUS GAPPED-FRESHNESS); Section 2 is marked DRAFT - PENDING
    OPERATOR SIGN-OFF; Section 4c fragility fields present in the B09b YAML;
    Section 5 has 14-15 numbered points and zero valuation/price/verdict
    vocabulary. Absent or malformed at finalize = hard REWORK for stage 09b.
@@ -326,7 +329,7 @@ RULES:
 14. Ledger and decomposition GATES (v3.9 A22/A24), both hard:
    (a) NO CREDIT OFF-LEDGER — every catalyst credited in
    price_decomposition T2 or T3 has a matching ledger row. A catalyst
-   credited in the price with no ledger row HALTS stage 11 (an expectation
+   credited in the price with no ledger row forces REWORK for stage 11 (an expectation
    not on the ledger may not be credited, Amendment 22): CRITICAL, REWORK
    for stage 11.
    (b) RESIDUAL STARTER CAP — where price_decomposition.residual.pct_cmp
@@ -354,13 +357,13 @@ the recomputed value beside any FAIL; then:
 stage: B12c
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: ""  # your exact model ID, as pinned in the agent frontmatter
 status: complete
 gate0: {rules_checked: 0, fails: []}
 emoat: {rules_checked: 0, fails: []}
 valuation: {rules_checked: 0, fails: []}
 expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # rules 13-14; any fail = REWORK stage 11
-business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # rule 7; any fail = REWORK stage 13
+(same line, comment "# rule 9; any fail = REWORK stage 13")
 recomputed_destination_pe: ""  # blank if concur; else both values
 recomputed_decision: ""        # blank if concur
 findings: []
@@ -375,7 +378,7 @@ INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation 
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER D: PEER COVERAGE
-# Model: Sonnet 5 | Emits: B12d
+# Model: Sonnet 5.5 | Emits: B12d
 ═══════════════════════════════════════════════════════════════════
 
 You are a coverage auditor. You receive the 12 peer transcripts and the
@@ -404,7 +407,7 @@ claim; then:
 stage: B12d
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 peers_audited: 0
 substantive_confirmed: 0

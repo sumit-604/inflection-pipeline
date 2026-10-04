@@ -10,7 +10,7 @@ before interpretation. You coordinate five agents (A1 EXTRACTOR -> A2
 ENUMERATOR -> A3 FORENSIC NOTES -> A4 ANALYST -> A5 ADVERSARY) with hard gates
 between each. You do NOT analyse; every finding comes from a subagent.
 
-Read `prompts/quarterly-00-orchestrator.md` NOW. It is the authority on
+Read `prompts/quarterly-00-orchestrator.md` first. It is the authority on
 sequence, gates, working-file names, model dispatch, and the Notion save.
 Then run:
 
@@ -34,7 +34,7 @@ b. PROTOCOL-FILE CHECK: verify the protocol(s) THIS run needs exist. If a
    - frameworks/Master_Project_Prompt_v3_6.md (framework context by reference;
      NOT an A4 input — A4 never loads it)
 
-c. TOOLCHAIN PRECHECK: verify pdftotext, pdfinfo, pdftoppm, tesseract. If
+c. TOOLCHAIN PRECHECK: verify pdftotext, pdfinfo, pdffonts, pdftoppm, tesseract. If
    missing, attempt install (poppler-utils, tesseract-ocr). If that fails,
    STOP and report the missing tool — extraction cannot run without it and the
    Read tool's PDF rendering is NOT an acceptable substitute for the
@@ -45,7 +45,7 @@ d. DOCUMENT-CLASS DETECTION: read the first pages of each doc and classify it
    speaker-turn structure -> concall; slide structure -> presentation).
    Record each decision in the run log.
 
-e. RUN FOLDER: create `runs/<ticker>-<quarter>/` with `inputs/` and `work/`
+e. RUN FOLDER: create `runs/<ticker>-<quarter>/` with `inputs/`, `extracted/`, and `work/`
    (quarter placeholder = run date until A1 reports it, then rename). Copy or
    reference the source PDFs into `inputs/`.
 
@@ -90,7 +90,8 @@ at least one question), the monitorables/catalyst list, and — MANDATORY on
 every run — the PLAIN-LANGUAGE BRIEF as the final section: a 10-20 line plain
 summary narrative plus SECTOR intelligence, BUSINESS-MODEL intelligence, and
 COMPETITION intelligence (provenance-labelled: Notion/peer work vs this
-quarter's filings). This brief is a standing deliverable, never on-request.
+quarter's filings), plus a FORWARD MAP of the next ~10-11 months (each dated
+catalyst with a bull fork and a bear fork). This brief is a standing deliverable, never on-request.
 
 ## 3. A5 ADVERSARY (once)
 
@@ -106,6 +107,14 @@ iteration. Log the loop as its own session-cost.md rows with the iteration count
 
 ## 4. NOTION SAVE (only after A5 COMPLETE)
 
+WRITE GATE (operator ruling 2026-10-03; the one approved exception to
+"claude.ai executes writes"): before any Notion call that writes, print the
+exact payload (page, properties, content) and STOP for the operator's
+explicit approval in this run. No approval, no write: save the payload to
+the run folder as notion-payload.md instead. Never write the Decision Status
+property. A fired pre-committed trigger is flagged in the Key Notes line and
+in the report; the operator changes Decision Status.
+
 Do the Notion save INLINE yourself — do NOT delegate it to a subagent (it is a
 mechanical insert/update; a subagent only adds latency). Per Role 4 Step 9 and
 existing save mechanics: fetch the company page first; `insert_content` with
@@ -115,25 +124,25 @@ every run), splitting large content across sequential inserts;
 `update_properties` to PREPEND the date-stamped Key Notes line to the
 pipe-delimited audit trail, preserving all prior entries; escape `|` in cells
 as `\|`. Save the A3 forensics table and the A5 audit verdict alongside the
-review. Decision Status changes only when a pre-committed trigger fires — flag,
-do not decide.
+review. Never write Decision Status; flag a fired trigger, do not decide.
 
 ## 5. COMMIT AND REPORT
 
-Commit the run folder with "quarterly review: <ticker> <quarter>". Then report
+Write `session-cost.md` per orchestrator step 6b, then commit the run folder with `git commit -q -m "quarterly review: <ticker> <quarter>"`. End the report with the commit hash and `git log -1 --stat`. Then report
 to the user: the A5 verdict, the count-reconciliation line (N notes / N turns
 / N slides, all reviewed), the top forensic findings with their line cites,
 the protocol verdict, and the working-file paths. Print the merged review's
 headline tables and the Questions-for-Management table in full in chat. ALSO
 print the A4 PLAIN-LANGUAGE BRIEF every run — the plain summary narrative plus
-the sector, business-model, and competition intelligence. The user gets this
+the sector, business-model, and competition intelligence and the forward map. The user gets this
 automatically; they never have to ask for it.
 
 ## RULES FOR YOU, THE ORCHESTRATOR
 - You coordinate; you do not analyse. Every judgment comes from a subagent.
 - Only mechanical failures halt: missing protocol file, missing extraction
-  tool, page-coverage gap, count mismatch, blank forensic check, or INCOMPLETE
-  audit after two loops. Company quality never halts.
+  tool, page-coverage gap, count mismatch, blank forensic check, or an
+  INCOMPLETE audit after the one correction loop (then ask the operator).
+  Company quality never halts.
 - Enumeration before interpretation; line-number citation or it did not happen;
   zero-value lines are data; standalone AND consolidated always; auditor
   paragraphs verbatim-diffed; Board Outcome beyond item 1 assessed; every

@@ -92,9 +92,6 @@ full text of each promotion is in LESSONS_ARCHIVE.md under its date._
 
 ## OPEN ACTIONS
 _Pending framework edits Keerti maintains._
-- Add a Steel / Integrated Metals row to the Section 1B cap table (SHYAMMETL
-  ruled 20x ad hoc; MANINDS line pipe ruled 20x ad hoc on that precedent
-  2026-08-25; no dedicated row exists). [archetype: Commodity converter]
 - Add a Sugar / Agri-commodity cyclical row to the Section 1B cap table
   (KCPSUGIND ruled Agri-processing 20x ad hoc; no dedicated row exists).
   [sector: Agri processing] [archetype: Commodity converter]
@@ -113,11 +110,52 @@ _Pending framework edits Keerti maintains._
   run that uses it is the first test. Check announcements/ after that run,
   then confirm and close this action. PR #167.
 - PENDING FOR THE NEXT PROMPT BRANCH (2026-09-15):
-  1. prompts/10-input-assembly-pipeline.md rule 3, line 22 still says "put the
-     more conservative one in the table".
   2. Amendment 6 range rounding: the rule says nearest 0.5x, its own example
      rounds the top down (37x -> 34-39.5x). section-1b chunk 06 copies both.
      Operator ruling needed, then align chunk 06.
   3. OR-9 (proposed): Amendment 24 caps size at starter when the residual
      exceeds 25% of CMP; Amendment 25 permits a starter only at 25% or less.
      Reading A: size zero. Reading B: a 2-3% starter. Operator ruling needed.
+- OPEN (2026-10-03, pipeline, stage 5): if Verifier B overturns stage 5
+  credibility grades in two runs, move stage-05-concall alone to Opus 5.5
+  high (operator ruling, audits/RULINGS_2026-10.md item 27).
+- OPEN (2026-10-03, audit): 57 audit questions and 19 manual edits remain in
+  audits/RULINGS_2026-10.md "Still open". Read before the next company run.
+- OPEN (2026-10-03, repo, branch audit items 20-21): PR #186 (sparse
+  checkout) merged as c74e7a10; now land the markdown outputs of the 110 branch-only run and
+  quarterly records on main in one run PR, no PDFs; then revisit deleting
+  the 71 run branches whose folders are on main. audits/BRANCH_AUDIT_2026-10.md.
+- OPEN (2026-10-03, repo): run the deletion script in
+  audits/BRANCH_DELETIONS_2026-10.md from a local clone (100 branches; the
+  cloud proxy refuses remote deletes).
+- OPEN (2026-10-03, pipeline): PR #185 AR section index merges only after one
+  measured Phase 1 run confirms the saving (estimate about 415k tokens).
+- OPEN (2026-10-03, corpus): CLEANMAX run folder holds six Vinyas filings;
+  GAUDIUMIVF and VINYAS have mislabelled-year annual reports; KRONOX's
+  annual-report folder holds the IPO prospectus. Fix before reusing those
+  runs. audits/REPO_LAYOUT_PROPOSAL_2026-10.md follow-up section.
+- ORCHPHARMA 2026-09-06 (phase 1), all OPEN:
+  - Corrupt OCR text layers in filed PDFs are a live corpus failure mode. Promote the
+    [OCR:embedded] / [OCR:tesseract] / [OCR:embedded-CORRUPT] page tag and the
+    read-the-source-page-directly rule into the stage prompts and the verifier A
+    invocation. See LESSONS_ARCHIVE.md 2026-09-06 ORCHPHARMA item 1.
+  - Verifier A's coverage addendum (minimum checks per report, a real denominator,
+    per-report acceptance) should be standing, not retry-only. Same entry, item 4.
+  - Decide how many REWORK remediation cycles an orchestrator runs before handing the
+    verdict to the operator. One cycle cost a third of the ORCHPHARMA run and did not
+    clear the gate. Same entry, item 5.
+  - Peer selection needs a product-chain check. ORCHPHARMA's three peers contained no
+    cephalosporin or 7-ACA maker, so six of eight peer questions were structurally
+    unanswerable. Same entry, closing note.
+- SYNGENE 2026-09-28 (from web handover Section 11), all OPEN:
+  1. Prompt fix: results tables have 4 columns; state the column header with
+     every number (V4 read the prior-year Rs 48mn as Q1 FY27's Rs 501mn).
+  2. Collector: also fetch the prior-year same-quarter transcript for every
+     quarter held (Q1 FY26 split was missing, so no research YoY).
+  3. Verifier A check: test derivative notional against revenue scale and the
+     filed 1% sensitivity (Note 28 "INR million" was USD million).
+  4. Prompt fix: every management causal claim gets one counterparty or peer
+     check before it enters a mental model.
+  5. OR-11 APPROVED 2026-09-28 (operator): for margin-reset names, set the Rule C
+     bear margin from the evidence bridge, not the trailing 3-yr average.
+     Framework amendment and section-1b chunk 07 alignment still to write.

@@ -1,6 +1,6 @@
 # SECTION 1B v3.6 AMENDMENTS — DAMODARAN INTEGRATION
 
-> **ACTIVE — not a superseded draft.** This file is the Damodaran amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11 (Amendments 11-16). The version number tags this amendment layer, not a competing copy of the Master Prompt; the "v3.6" here is independent of the Master Prompt v3.6. Do not archive or delete it. Read it on top of the v3.3 Amendments and the v3.5.1 Reconciliation, and below the v3.7 Amendments and the v3.8 Amendments; where they overlap, the later layer governs the items it names. NOTE: stage 11 does not yet inject this file (see the pipeline-sync audit); wiring is a pending operator decision.
+> **ACTIVE — not a superseded draft.** This file is the Damodaran amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11 (Amendments 11-16). The version number tags this amendment layer, not a competing copy of the Master Prompt; the "v3.6" here is independent of the Master Prompt v3.6. Do not archive or delete it. Read it on top of the v3.3 Amendments and the v3.5.1 Reconciliation, and below the v3.7, v3.8, v3.9 and v3.10 Amendments; where they overlap, the later layer governs the items it names. NOTE: stage 11 reads this layer through the section-1b skill; verifier C reads this file directly.
 
 *Version 3.6 | 13 August 2026 | Damodaran integration, operator directive 13-Aug-2026. This document layers on top of Section 1B v3.3 (Four-Pillar Framework), the v3.3 Amendments (1-8, 4.1-4.5), and the v3.5.1 Reconciliation (consolidated Amendment 9, Routes A and B). It does not modify any prior file in place. Where it supersedes an earlier amendment, it says so and the earlier text stays in its file for history, banner-marked. Stage 11 reads this alongside the earlier Section 1B files; where they overlap, v3.6 governs the items named here.*
 
@@ -68,7 +68,7 @@ Flat CAGR lines through the projection assume a business grows at one rate and t
 | Modest | Fades to industry growth by Year 3 |
 | None | Fades immediately (industry growth from Year 1) |
 
-"Fades" means the growth rate steps down toward industry growth across the stated horizon, not that growth stops. The projection must show the step-down explicitly, year by year. This interacts with the projection-horizon rule in Master v3.5 Role 1: the model runs to Year 5 even on a three-year hold, because the Year 3 buyer pays for Years 4 and 5, and the fade horizon is what makes the Year 4 and Year 5 numbers honest. A name classified None with no credible Year 4 to Year 5 story takes the exit-multiple haircut named in Master v3.5.
+"Fades" means the growth rate steps down toward industry growth across the stated horizon, not that growth stops. The projection must show the step-down explicitly, year by year. This interacts with the projection-horizon rule in Master Role 1 (since v3.5; now v3.7, and Section 1B v3.8 Amendment 18.0): the model runs to Year 5 even on a three-year hold, because the Year 3 buyer pays for Years 4 and 5, and the fade horizon is what makes the Year 4 and Year 5 numbers honest. A name classified None with no credible Year 4 to Year 5 story takes the exit-multiple haircut named in Master v3.5.
 
 ---
 
@@ -98,7 +98,7 @@ Where B2 reads NO (ROCE does not cross the minimum requirement within the projec
 
 - **Single-credit stays supreme.** Amendment 4 (ROCE recovery credited in Pillar 1 or the Strategic Premium, never both) and the v3.5.1 route selection (Route A operational or Route B pre-cycle, never both) are unchanged. Amendment 12's fixes are the same discipline applied to the r table. Amendment 13's complexity charge lives in r alone for the same reason.
 - **The sector cap is still absolute.** Amendments 11, 14, 15, and 16 all defer to it. Nothing here raises a cap.
-- **FTTCP v2.0 is the sole source of the forward verdicts and the Part B outputs** that Amendments 14 (via the EM classification path into projections) and 16 (via Module B2) rely on. Role 1 consumes them and does not recompute them.
+- **FTTCP (v2.3) is the sole source of the forward verdicts and the Part B outputs** that Amendments 14 (via the EM classification path into projections) and 16 (via Module B2) rely on. Role 1 consumes them and does not recompute them.
 - **The RRM formula, bounds, and base r are unchanged.** Amendments 12 and 13 change only which adjustments enter r, not how RRM maps r to a multiplier.
 
 ## VERSION HISTORY

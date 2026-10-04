@@ -12,8 +12,10 @@ case), or a company-name fragment. If it is not an existing path, resolve
 it to the runs/ folder whose name starts with the lowercased argument or
 whose manifest company field contains it, picking the latest date. State
 the resolved folder before starting. If nothing matches, list the
-available runs and stop. If more than one matches, list the matches and
-ask.
+available runs and stop. If more than one matches at the same latest
+date, pick the one whose manifest ticker matches exactly; if still
+ambiguous, take the first alphabetically and say which you took and why.
+Do not ask.
 
 LESSONS PRE-READ: after the run folder resolves and before any stage runs,
 read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
@@ -34,7 +36,7 @@ Verifiers must never skip source verification because rendering is
 unavailable; if a PDF is genuinely unreadable, name it in the run log and
 in the confidence delta note.
 
-EXECUTION DISCIPLINE: invoke every stage as a foreground subagent call
+EXECUTION DISCIPLINE: as in .claude/commands/run-pipeline.md, including the PROVE COMPLETION checks (report file exists and is not empty, block file exists and parses, block came from this invocation) before any later stage reads the output.
 that blocks until the subagent returns. Never use background task
 launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
@@ -146,7 +148,7 @@ from the reply only if the stage failed to write it.
    destroyed, overall, top counters). Collect B15.
 
 5. VERIFIER C — VALUATION ADHERENCE (phase 3 half). Invoke
-   verifier-c-framework with the framework docs and B10, B11 for its
+   verifier-c-framework with B10, B11, frameworks/Master_Project_Prompt_v3_6.md (Master v3.7) and the section-1b skill chunks cited in B11, for its
    deferred valuation-adherence audit, EXTENDED to also check Role 2's
    (B14) decision rules and position-sizing logic against the Master
    prompt. Give it only the artifact paths its section names, never other
@@ -219,7 +221,7 @@ answered from the blocks, write "the run did not establish this" rather than fil
        expected here; this is the audit trail, not a reading document.
 
 7. NOTION PAYLOAD. Write outputs/final/notion-payload.md containing the
-   full save content structured per Notion_Save_Instructions conventions:
+   full save content structured per the claude.ai notion-save conventions (Notion_Save_Instructions, held in the claude.ai project, not in this repo):
    page title, THEN the BUSINESS UNDERSTANDING NARRATIVE (the same section
    defined in step 6, positioned before the verdict card so the operator
    reads the understanding first), then run summary, verdict, the PRICE

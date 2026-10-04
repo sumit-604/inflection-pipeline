@@ -1,5 +1,5 @@
 # STAGE 9: TAM / SAM / SOM MARKET SIZING (PIPELINE MODE)
-# Model: Sonnet 5 + web search enabled | Emits: B09-tam
+# Model: Sonnet 5.5 + web search enabled | Emits: B09-tam
 # The SOM-implied revenue CAGR is a FORMAL handoff: stage 11 uses it as
 # the cross-check on revenue growth assumptions. Search-dependent like
 # stage 8; same search-log discipline applies.
@@ -30,7 +30,9 @@ TAM = SAM = growth runway is being dishonest.
    inform direction only, never the headline number.
 5. Use at least 2-3 estimation methods; triangulate. If methods diverge
    materially, flag it and explain why rather than averaging silently.
-6. CONSERVATIVE BIAS: when choosing between estimates, take the lower.
+6. NO SHADING: when estimates differ, show both, name the observation that
+   separates them, and carry the most evidenced one as the central estimate
+   (CLAUDE.md NEVER list; Section 1B v3.9 Amendment 25).
 7. All figures in ₹ Crores, Indian context; if the market is global,
    show global and India separately.
 8. SEARCH LOG discipline as in stage 8: record searches performed and
@@ -39,7 +41,7 @@ TAM = SAM = growth runway is being dishonest.
 ## SECTION 1: MARKET DEFINITION
 1A precise boundaries: product scope, geographic scope, customer scope,
 channel scope, price segment, explicit inclusions and exclusions. A
-wrong definition makes every later number useless; spend effort here.
+wrong definition makes every later number useless.
 1B management's own TAM claim from the injected documents, with their
 definition, the date, and a credibility read (broad / reasonable /
 specific), held for comparison in Section 2.
@@ -126,7 +128,7 @@ Full six-section report, then end with exactly this fenced YAML block:
 stage: B09-tam
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete               # partial if searches skipped
 input_gaps: []
 flags: []

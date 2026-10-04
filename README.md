@@ -1,6 +1,6 @@
 # Inflection Alpha Pipeline
 
-Sonnet 5 primary research pipeline with Claude verification layer.
+Sonnet 5.5 primary research pipeline with Claude verification layer.
 Runs on Claude Code (web, desktop, or CLI). Built July 2026.
 
 ## One-time setup (works entirely from a Chromebook browser)

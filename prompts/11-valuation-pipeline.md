@@ -1,5 +1,5 @@
 # STAGE 11: ROLE 1 MULTI-MODAL VALUATION (PIPELINE MODE)
-# Model: Opus (agent alias) | Emits: B11-valuation
+# Model: Opus 5.5 | Emits: B11-valuation
 # DESIGN: this file is a THIN WRAPPER. The Section 1B and FTTCP rules come
 # from the section-1b skill, preloaded by the agent frontmatter
 # (.claude/skills/section-1b/): the resolved result of Section 1B v3.3,
@@ -96,8 +96,7 @@ mode:
    [ESTIMATE, X1] because standalone statements do not yet exist, carry the tag
    onto every leverage-, cash-, or ROCE-dependent cell it touches and note that
    the cell re-runs when the filed number arrives. Emit one B11 YAML block per
-   entity (entity name in the block). INDIAGLYCO discarded a run for valuing one
-   consolidated entity against a three-entity dossier; this gate prevents it.
+   entity (entity name in the block).
 13. RECOGNITION GAP RESOLUTION. The signed mental model's RECOGNITION GAP
    (09b Section 2 Part B4) is an OPEN QUESTION that resolves HERE, and it
    equals the PE-gap check: does the current PE already sit at the TO rung's
@@ -213,7 +212,8 @@ mode:
   readings (structural 0.65x, no offset; growth-induced 0.80x with its
   offset), name the observation that separates them and its confirm-by
   date, state which reading you value on and why (section-1b open ruling
-  OR-5), and cap the run at PROCEED WITH CAVEATS with the missing evidence
+  OR-5), and record in flags[] (FLAG-CASH, INDETERMINATE) that the gate
+  verdict caps at PROCEED WITH CAVEATS, with the missing evidence
   named. State the most evidenced reading, not a shaded one (the
   Amendment 26.3 principle).
 - Pillar 3 uses B10's EM score, catalyst proximity, and evidence mix.
@@ -263,7 +263,7 @@ consolidated valuation:
 stage: B11-valuation
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: ""  # your exact model ID, as pinned in the agent frontmatter
 status: complete
 entity: ""                     # entity name; "" or "consolidated single-entity" when entity_count is 1
 entity_count: 1                # from B10.entity_count (dossier Section 1); emit one block per entity when >1
@@ -321,7 +321,7 @@ one_line_thesis: ""
 ## INJECTED INPUTS (stable prefix = Master Role 1 + preloaded skill; table = variable)
 
 FRAMEWORK:
-{{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}
+{{MASTER_PROJECT_PROMPT_ROLE1_SECTIONS}}  (file Master_Project_Prompt_v3_6.md, content v3.7)
 Section 1B and FTTCP: the preloaded section-1b skill (no file injection).
 
 PRECEDENCE: the skill carries the resolved Section 1B layer order (v3.10 >

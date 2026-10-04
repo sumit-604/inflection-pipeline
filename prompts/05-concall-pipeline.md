@@ -1,8 +1,8 @@
 # STAGE 5: CONCALL ANALYSIS, MAIN COMPANY (PIPELINE MODE)
-# Model: Sonnet 5 | Emits: B05-concall
+# Model: Sonnet 5.5 | Emits: B05-concall
 # Role in framework: this stage produces the Role 5 credibility grade
 # (A/B/C/D) that is the SOLE source for the 4D probability weights in
-# the Role 1 valuation (per Master Prompt v3.3). Grade it carefully.
+# the Role 1 valuation (per Master Prompt v3.7 Section 4D, as amended by Section 1B v3.10 Amendment 26.4).
 # Cache boundary: everything above INJECTED INPUTS is stable.
 
 You are an expert Indian equity research analyst. Three earnings
@@ -88,7 +88,11 @@ trend claimed, any market share gain claimed, any capex-cycle claim.
 4C management quality verdict table ending in an overall grade A/B/C/D.
 This grade feeds the Role 1 probability weights directly (A=Excellent
 20/50/30, B=Good 25/50/25, C=Mixed 35/45/20, D=Poor 45/40/15), so
-grade on the promise-delivery evidence, not on tone or charm. 4D concall
+grade on the promise-delivery evidence, not on tone or charm. Key the
+grade to the trailing four quarters of delivery, not whole-company history
+(Section 1B v3.10 Amendment 26.4: mixed history plus four quarters of
+delivery grades Good). With fewer than four quarters, use what exists and
+state the period in credibility_basis. 4D concall
 red flags with severity, if any.
 
 ## OUTPUT
@@ -99,7 +103,7 @@ Full four-section report, then end with exactly this fenced YAML block:
 stage: B05-concall
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []
 flags: []

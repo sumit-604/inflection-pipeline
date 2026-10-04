@@ -1,5 +1,5 @@
-# STAGE 6: PEER CONCALL VERIFICATION (PIPELINE MODE, NEW PROMPT)
-# Model: Sonnet 5 | Emits: B06-peers
+# STAGE 6: PEER CONCALL VERIFICATION (PIPELINE MODE)
+# Model: Sonnet 5.5 | Emits: B06-peers
 # Consumes: up to 12 peer concall transcripts + B05.peer_questions
 # Protocol version: 1.1 (was unversioned = 1.0)
 #   1.1 — Part 5 Cross-Peer Hypothesis (mandatory closing step) added.
@@ -97,7 +97,7 @@ Verifier D re-checks this map. Mark a peer SUBSTANTIVE only when Parts
 - Overall: does the peer set support, complicate, or undercut the main
   company's narrative? One short paragraph, symmetric treatment.
 
-## PART 5: CROSS-PEER HYPOTHESIS (mandatory closing step)
+cross_peer_hypothesis: ""     # Part 5 hypothesis, or the exact no-hypothesis line
 
 After completing the triangulation verdict, state one novel hypothesis about the
 sector, business model, or competitive dynamic that emerges from the combined
@@ -130,7 +130,7 @@ Full report as above, then end with exactly this fenced YAML block:
 stage: B06-peers
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []                 # note if fewer than expected peer files
 flags: []

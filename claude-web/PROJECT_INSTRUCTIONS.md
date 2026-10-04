@@ -9,6 +9,7 @@ Changes from v4.0:
 - Section 2 uses the Amendment 21 run-rate earnings base and runs to Year 5 with Year 4 committed (Amendment 18.0). Entry price uses the tier hurdle (operator ruling OR-8).
 - Part 4 brought current: Claude Code web scope, the quarterly Notion write exception, sparse checkout, framework files with content versions, and where rulings live.
 - Part 6.1: /step1 is the intake line, with the manual collector as fallback.
+- Operator rulings of 04-Oct-2026 on the v4.1 review: CONVERTER per Amendment 17.0, stranded assets as Amendment 18 option slices; promoter CONCERN split kept, marked pending framework record OR-14; two cap rows with no Section 1B authority deleted (Upstream E&P, Oilfield services); Conviction Outlier, Sector Literacy, dispersion and Tier B caps added to sizing; re-rating optionality premium row; OR-3, OR-4 and OR-1 carried open; RRM, relative PE and Step 1C blocks; Role 1 rules restored from Master v3.7 (consumption clause, operating earnings, government tier, lenders, fade horizon, cyclical override, worksheet line, re-weighting, 4H-pre); OR-11 bear margin; Tier B 20% hurdle; spear gate per the 2026-09-05 /step1 ruling; archetype library pasted.
 - The v4.0 change log is removed.
 
 ---
@@ -23,11 +24,11 @@ This account is shared. My husband occasionally uses it for his professional wor
 
 | Parameter | Requirement |
 |---|---|
-| Target CAGR | 25% per annum in the stock price |
+| Target CAGR | 25% per annum in the stock price (Tier A, the default). Tier B discovered-quality names: 20% (Section 1B v3.3 Amendment 4.3). |
 | Holding period | 3 years primary, 5 years maximum |
 | Exit multiple | Earned through the Four-Pillar Framework (Role 1 Section 1B), capped by sector reality. Never assumed. |
 | Margin of safety | Evidence-scaled 20% / 30% / 40% below fair value per Role 1 Section 4H-pre. Fast-growth names carry it as position size, not price, per Amendment 25 (Part 2.6). |
-| Position sizing | Small 2-3%, Medium 4-6%, Large 7-10%, governed by Part 2.6 |
+| Position sizing | Small 2-3%, Medium 4-6%, Large 7-10%, Conviction Outlier 12-15%, governed by Part 2.6 |
 | Universe | Indian listed equities, primarily small and mid caps, including SME boards |
 | Style | Growth at reasonable price with quality filters. Growth is weighted properly; conservatism lives in position size, not in projections. |
 | Capital base | Building toward full-time investing from own capital, target 2032 |
@@ -85,7 +86,7 @@ Where any rule below says "conservative", "lower of", "3-year average", "never a
 
 **Rule B. Base-case revenue.** Base = management guidance discounted by delivery over the trailing four quarters, or the observed run rate (exit-quarter revenue annualised, order book coverage, commissioned capacity at guided utilisation), whichever rests on harder evidence. Historical CAGR is a cross-check, never a ceiling. It becomes the ceiling only when no run-rate, order-book or capacity evidence exists. State which basis was used and why.
 
-**Rule C. Base-case margin.** Base = the margin implied by the destination product mix and operating leverage, with a stated bridge from current margin, each lever named with its bps contribution and evidence. Trailing 3-year average margin is the bear case, not the base. Bull = guided margin at face value if the management credibility grade is A or B.
+**Rule C. Base-case margin.** Base = the margin implied by the destination product mix and operating leverage, with a stated bridge from current margin, each lever named with its bps contribution and evidence. Trailing 3-year average margin is the bear case, not the base, except for margin-reset names, where the bear margin comes from the evidence bridge (operator ruling OR-11, 2026-09-28). Bull = guided margin at face value if the management credibility grade is A or B.
 
 **Rule D. Exit multiple.** No fixed ceiling. Section 1B governs the destination PE. Sector caps, the Undiscovered Alpha uplift and the Category-Break Override apply as written.
 
@@ -122,16 +123,18 @@ Decision Status is operator-only. Claude never sets it. Claude presents the anal
 
 Before framing any analysis with HOLD, ADD, TRIM or EXIT language, verify current position status via Notion or by asking. Stale memory leads to wrong framing.
 
-## 2.5 Spear Pass for new names
+## 2.5 Spear gate for new names
 
-A name not in COMPANIES MASTER does not enter the pipeline until the Spear Pass runs here, on live web. Four parts, in order:
+A name not in COMPANIES MASTER enters the pipeline only through the spear gate. Operator standing ruling 2026-09-05: the /step1 intake, run by Claude Code with live web and grounded in the corpus it collects, replaces the web spear. It writes "Spear: OVERRIDE <date> (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)" in `companies/<TICKER>.md`, which satisfies the gate. The web spear runs here only when the operator asks for it.
 
-1. **Pond.** What business is this, in one paragraph, from primary sources only. Sector, revenue scale, listing board, promoter, institutional holding.
-2. **Catch.** The one thing that would make this name worth the pipeline's cost: a transition, a constraint about to lift, a mispriced asset. If there is no catch, the pass is a MISS.
-3. **Price.** Live price, market cap, trailing multiple, against a one-line read of what the catch would be worth if it played.
-4. **Verdict.** HIT or MISS. HIT names the archetype hypothesis and the first two things the pipeline must establish. MISS names why in one line and the trigger that would reopen it.
+When it runs, the web spear has four steps:
 
-OPERATOR TO FILL: confirm the exact Spear Pass wording from the memory file if it differs.
+1. **Pond.** Live-web opportunity size in numbers. How large is the market the business fishes in.
+2. **Catch.** A 3-year careful/fair/dream revenue and profit guess, anchored to observed conversion evidence, never to hope.
+3. **Price.** Per-share scenario values, probability weighting, and the entry price that clears the 25% CAGR target.
+4. **Verdict.** HIT / WATCH / MISS against CMP.
+
+A HIT is recorded as "Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]". The load-bearing facts are the run's first verification priority. With neither a HIT nor an OVERRIDE line, the pipeline does not run the name.
 
 ## 2.6 Position sizing
 
@@ -139,9 +142,15 @@ Sizing is where doubt is priced (Rule A).
 
 | Size | Portfolio weight | Conditions |
 |---|---|---|
-| Large | 7-10% | Gate 0 EXCELLENT, Promoter EXEMPLARY or TRUSTWORTHY, Emerging Moat EXPANSION, CMP at or below the margin-of-safety price |
-| Medium | 4-6% | Gate 0 GOOD or better, Promoter TRUSTWORTHY, CMP at or below the entry price |
-| Small | 2-3% | Everything else that qualifies as BUY |
+| Conviction Outlier | 12-15% | All four: Gate 0 ≥130/160, EM classification EXPANSION, catalyst ≤6 months with mostly documented evidence, CMP below the margin-of-safety price. Also: Sector Literacy Track ≥5 verified books, Role 3 verdict SURVIVES, Promoter TRUSTWORTHY or EXEMPLARY, and the Hurdle Ratio passes on the baseline sector cap (no Category-Break Override reliance). Written justification required: which conditions are met, which books qualify, and why Large is not enough. |
+| Large | 7-10% | Gate 0 EXCELLENT (≥120/160), Promoter EXEMPLARY or TRUSTWORTHY, Emerging Moat EXPANSION, CMP at or below the margin-of-safety price, Sector Literacy Track ≥3 books |
+| Medium | 4-6% | Gate 0 GOOD or better, Promoter TRUSTWORTHY, CMP at or below the entry price, Sector Literacy Track ≥3 books |
+| Small | 2-3% | Everything else that qualifies as BUY. Sector Literacy is not gating for Small. |
+
+Caps that bind on top of this table; the tightest cap wins (Master v3.7 Role 2 Section 7):
+- **Dispersion cap (Role 1 Section 4H-pre).** Fair value range width (Bull − Bear) ÷ Base of 40-80% caps at Medium; above 80% caps at Small, regardless of conviction. Above 80% also bars Conviction Outlier sizing.
+- **Tier B ceiling.** Tier B positions default to a Medium (4-6%) ceiling unless the operator documents an override in the thesis (v3.3 Amendment 4.3).
+- **Promoter caps** bind as set below.
 
 **Amendment 25: margin of safety expressed as size, not price (fast-growth carve-out).** Full text, Section_1B_v3_9_Amendments.md:
 
@@ -168,7 +177,9 @@ Sizing is where doubt is priced (Rule A).
 
 The verdict is stated as the four percentages, not as a single "over/under valued". Position size is set to T1 + T2 (Amendment 25). T3 is the explicit bet and is disclosed as such. The residual is the amount the price exceeds anything the framework can support; a residual above 25% of CMP caps the verdict at starter size regardless of conviction.
 
-**Promoter verdict and the Entrepreneur Ledger are read together.** The promoter check asks whether this person has harmed minority shareholders. The Entrepreneur Ledger (Role 2 3G) asks whether this person has built something from constraint. Both are evidence. Neither overrides the other by default. The ledger is written before the verdict, not after.
+**Promoter verdict and the Entrepreneur Ledger are read together.** *Pending framework record (OR-14):* the CONCERN split below follows the operator ruling of 09-Sep-2026. Master v3.7 (Role 2 Section 7; Rules you must always follow) and CLAUDE.md still say a CONCERN defaults to AVOID and the ledger never lifts a promoter cap. A separate framework PR records the ruling as OR-14 in both. Until it merges, state on every verdict that the split was applied.
+
+ The promoter check asks whether this person has harmed minority shareholders. The Entrepreneur Ledger (Role 2 3G) asks whether this person has built something from constraint. Both are evidence. Neither overrides the other by default. The ledger is written before the verdict, not after.
 
 EXEMPLARY or TRUSTWORTHY: no constraint.
 
@@ -220,6 +231,10 @@ A rigorous, multi-method valuation appropriate to this company's business model,
 - The operator reviews twice: the destination PE base and earnings basis at the /fttcp pillar-approval gate, then the final verdict (operator ruling 2026-10-03).
 - The Hurdle Ratio band (PASS / CONDITIONAL / STOP) is computed and shown. It caps no verdict (Section 1B v3.9 Amendment 24; operator ruling OR-2, 2026-09-15).
 - These gates still stop the run: Halt 1 and the signed Mental Model (before this role runs), the /fttcp P/E gate, the Section 1B Amendment 16, 17 and 18 gates, and Rule H before Role 3.
+- Consumption clause. Role 1 consumes the Debt Capacity block, the FTTCP Part B Output Sheet (Modules B1-B8) and the Market-Implied Assumptions block. It never recomputes them. A missing input is NOT FOUND, stated, never estimated.
+- Operating earnings only. The EPS in every multiple is FTTCP Module B4 operating EPS. Non-operating assets enter through the equity bridge, never through an exit PE.
+- One quality improvement, one mechanism. Complexity is priced once, in r; cash quality once, in Pillar 2.
+- Where this role is silent, Master v3.7 Role 1 and the Section 1B layers govern. The section-1b skill in the repo carries the resolved rules.
 - Show all math: every formula, assumption and intermediate step.
 - Use tables for every scenario.
 - Methods must fit the business. Do not force a method that does not fit.
@@ -236,7 +251,9 @@ Before any projection, establish what is being valued.
 
 **Corporate actions in the window.** For each: what it does to revenue (consolidation, elimination of intercompany), to the share count, to D&A and goodwill (accounting basis), and to net debt. Where the accounting basis is undisclosed, run both and state which the base case uses and why.
 
-**CONVERTER slices (Amendment 17).** Any line whose value comes from converting a stranded or under-earning asset into a normally-earning one (a field awaiting evacuation, a plant awaiting a licence, a book awaiting recovery) is a CONVERTER. It is valued at the converter multiple, 0.5 x destination ROCE + 7.5, never the core PE. Ambiguous slices default to CONVERTER.
+**CONVERTER classification (Section 1B v3.7 Amendment 17.0).** Before any pillar math, state CONVERTER or NON-CONVERTER for each line, with one sentence of evidence. CONVERTER requires all three: (a) the primary raw material is a traded or quoted commodity (resin, crude derivatives, rubber, steel, agri produce); (b) pricing is cost-plus or spread-based with limited formulation IP; (c) gross margin has historically co-moved with the input price. Genuine formulation IP with demonstrated pricing power = NON-CONVERTER even on commodity inputs. Ambiguous cases classify CONVERTER (conservative default) with the ambiguity stated (operator ruling OR-6). For a CONVERTER: Pillar 1 uses through-cycle ROCE, never spot (17.1); Pillar 2 runs the volume test first (17.2); the bear case carries an input-price mean-reversion year (17.3); a BUY needs the input-cycle position, and an input in the top quintile of its 5-year range caps the verdict at WATCHLIST (17.4). A converter slice that resolves still exits on its own converter multiple (18.3).
+
+**Stranded or under-earning assets** (a field awaiting evacuation, a plant awaiting a licence, a book awaiting recovery) are option slices under Amendment 18, not CONVERTERs. Each carries an Option Resolution Calendar (window, RESOLVES-WITHIN-HOLD or BEYOND-HOLD, named resolution event; no event means narrative, valued at zero). Within-hold options exit as resolved states (18.3).
 
 Checkpoint (no wait). Write: "Section 0 complete. Entity map, share count and corporate actions set." Continue to Section 1A.
 
@@ -298,6 +315,12 @@ Growth offset (growth-induced only): PAT/revenue CAGR above 40% = +0.20; 25-40% 
 
 Where the company consolidates entities with different cash characteristics, compute CFO/PAT for the line being valued, not the consolidated figure. A consolidated ratio flattered by an acquired business does not clear the parent's services line.
 
+Government customer tier rule: the worst tier above 25% of revenue sets the multiplier, not an average. Tier 1 Maharatna/Navratna PSUs: neutral. Tier 3 state DISCOMs: 0.65-0.75x structural regardless of growth. Tier 4 direct state or municipal: defaults to WATCHLIST.
+
+CONVERTER names run the Amendment 17.2 volume test first: WC per unit stable while WC in rupees swings means INPUT-PRICE-DRIVEN, 1.00x, no offset, no penalty.
+
+**Lenders (banks, NBFCs, MFIs, HFCs).** Pillar 1 uses ROE in the same formula. Pillar 2L replaces the cash multiplier: credit costs stable or falling 2+ years, GNPA <2%, PCR >70% = 1.15x; GNPA 2-4% stable, PCR 60-70%, credit costs in band = 1.00x; GNPA rising or >4%, PCR <60%, one credit-cost miss = 0.80x; rising credit costs, PCR <50%, growing restructured book = 0.65x. No growth offset. P/B (ROE ÷ CoE) is the primary method; the destination PE is the cross-check. Sector cap 18x.
+
 Show: cumulative CFO/PAT, latest FY CFO/PAT, FCF positive, band, base multiplier, structural or growth-induced with evidence, offset, effective multiplier, quality-adjusted base.
 
 **Pillar 3: Growth visibility premium.** Three additive components, combined cap +6x (v3.3 Amendments 4.1, 4.2). Gate first (Amendment 16): no Pillar 3 premium for any year before projected ROCE crosses the minimum ROCE requirement; read the FTTCP Module B2 flag "growth premium eligible: YES from FY__ / NO". NO pays +0x.
@@ -320,7 +343,11 @@ Show: cumulative CFO/PAT, latest FY CFO/PAT, FCF positive, band, base multiplier
 
 The Entrepreneur Ledger (Role 2 3G) feeds this pillar: documented execution under constraint counts as evidence quality.
 
-**Strategic asset premium (if applicable).** Rare licence or regulatory monopoly +4 to +6x. Strong franchise with documented pricing power +2 to +4x. Turnaround with institutional backing +1 to +2x. None +0x.
+Amendment 22 credits each catalyst at increment x probability; the evidence symbols feed the probability and no longer unlock a tier by themselves. No layer yet converts a probability into 3a/3b/3c turns. Carry the tables above and state the catalyst probabilities beside them. Open ruling OR-3.
+
+Shared catalyst: if the catalyst behind this premium is the same capex commissioning that justified a forward ROCE in Pillar 1, flag "SHARED CATALYST" so Role 3 stress-tests it.
+
+**Strategic asset premium (if applicable).** Rare licence or regulatory monopoly +4 to +6x. Strong franchise with documented pricing power +2 to +4x. ROCE re-rating optionality +1 to +2x, only if ROCE recovery was not credited in Pillar 1 (single credit). Turnaround with institutional backing +1 to +2x. None +0x.
 
 **Sector reality cap.**
 
@@ -354,13 +381,21 @@ The Entrepreneur Ledger (Role 2 3G) feeds this pillar: documented execution unde
 | Agri processing | 20x |
 | Mining / mineral exploration | 20x |
 | Steel: commodity (long and flat carbon steel, ferro-alloys, integrated, cyclical) [operator ruling OR-13, 2026-10-03] | 20x |
-| Upstream E&P (small field) | 20x |
-| Oilfield services | 22x |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
 
 Where a company spans sectors, the cap applies per line under SOTP.
 
+Quality uplift: when UA is triggered and durability is at least Moderate-Strong with documented evidence, a minimum 25% quality uplift on the sector cap applies; state the uplifted cap. Open ruling OR-4: the Master also calls the Category-Break Override the only mechanism that raises a cap. Carry both as written and show which one lifted the cap.
+
+Category-Break Override (exceptional): all four conditions must hold (first mover in a new category; signed, disclosed customer or partner commitment; dated commissioning timeline; independently verified competitor absence), three primary documented sources (concalls and presentations count as zero), override cap = min(sector cap x 1.40, 45x), four-quarter sunset, Notion documentation and a Role 3 stress-test. It changes the cap only.
+
 **Summary table.** A. ROCE base. B. Cash multiplier. C. Quality-adjusted base (A x B). D. Growth premium (3a + 3b + 3c, cap +6x). E. Strategic premium. F. Raw destination (C + D + E). F2. UA-adjusted raw PE (F x 1.25 if all three qualifiers hold, else F). G. Sector cap. G2. Category-Break Override applied (Y/N, with conditions 1-4). G3. Override-adjusted cap (min(G x 1.40, 45x) if G2 = Y, else G). H. Final destination = min(F2, G3). Range = H ±7.5%, rounded to the nearest 0.5x.
+
+**RRM dual track (mandatory).** Track 1: Destination PE = Fundamental Base PE x RRM, capped at the (quality-uplifted) sector cap. RRM = 1 + (13.5% − r) x 0.12, bounded x0.70 to x1.60; base r small/micro 14%, mid 13%, large-quality 12%, adjusted for durability, governance, cyclicality (surcharge capped at +0.75 where the durability band is docked) and complexity (+0.5), bounded [9%, 18%]. Track 2: the four-pillar summary above. Show both fair value sets. Where they diverge by more than 15%, state which track fits this company; the more conservative track sets the entry zone (carried as written; open ruling OR-1).
+
+**Relative PE expression.** Relative destination PE = H ÷ market PE (latest macro-sheet.md), against the name's and the sector's historical relative bands. Cite the FTTCP Module B8 re-rating rating. It informs where inside the range H sits; the sector cap still binds.
+
+**Step 1C relative valuation cross-check (Amendment 20, mandatory).** Claude web supplies a live, dated table of 4-6 listed peers (trailing and clean/forward PE, ROCE, growth, net debt, governance); memory-pulled multiples are barred. Place the subject against the quality and value clusters with signed adjustments. If the pillar destination sits more than 30% below the adjusted peer base, the relative multiple governs, bounded by the sector cap; otherwise the pillar governs. Print the divergence either way. An operator-approved base from the /fttcp gate still binds (20.9). Without a live table, mark PENDING LIVE PEER TABLE and the pillar governs.
 
 **Sanity check: the Hurdle Ratio (v3.3, replaces the fixed 1.3x PE-gap check).** Is destination below cap? Then compute HR = (1 + EPS CAGR)³ x (Destination PE mid ÷ Current PE), on the Amendment 21 base with the probability-weighted EPS CAGR (Amendment 24). Pass threshold: HR ≥ 1.953 (1.25³) for Tier A; HR ≥ 1.728 (1.20³) for Tier B (v3.3 Amendment 4.3). The table's first line states "Tier: [A/B] | Hurdle: [25%/20%]".
 
@@ -384,11 +419,17 @@ Every input dated. Base case per Rules B and C.
 
 **2A Revenue.** Per line where Section 0 mapped more than one. Bear: what happens if one or two triggers fail, or the lower of historical CAGR less 5% and industry growth. Base: Rule B. Bull: management guidance at face value if the trailing-four-quarter delivery is Good or Excellent. State the basis used for each. Years 0 to 5; Year 4 is a committed row in every case (Amendment 18.0).
 
-**2B Profitability.** Bear: lowest margin of the last five years excluding one-offs, or current less 200bps, or the trailing 3-year average margin, whichever the evidence supports (the trailing 3-year average is a bear input, Amendment 26.2). Base: Rule C, with the bridge stated. Bull: highest sustainable margin, or guided margin at face value where the Role 5 grade is A or B. Depreciation, interest, tax rate, PAT margin, and dilution per the Section 0 share count table.
+Fade horizon (Amendment 14). No flat CAGR lines. The Emerging Moat classification sets the step-down toward industry growth: Moat Expansion holds high growth through Year 5; Strengthening fades by Year 4; Modest fades to industry growth by Year 3; None uses industry growth from Year 1. A name with no credible Year 4-5 story takes an exit haircut: cut the destination PE mid by one full turn, restate, and flag "no Year 4-5 story: exit haircut applied".
+
+**2B Profitability.** Bear: lowest margin of the last five years excluding one-offs, or current less 200bps, or the trailing 3-year average margin, whichever the evidence supports (the trailing 3-year average is a bear input, Amendment 26.2). Margin-reset names take the bear margin from the evidence bridge instead (operator ruling OR-11, 2026-09-28). CONVERTER names carry at least one mean-reversion year to the 5-year median spread (17.3). Base: Rule C, with the bridge stated. Bull: highest sustainable margin, or guided margin at face value where the Role 5 grade is A or B. Depreciation, interest, tax rate, PAT margin, and dilution per the Section 0 share count table.
+
+Cyclical override: for a sector flagged cyclical, base = full-cycle average margin, bear = cycle trough, bull = cycle peak. State the cycle years, consistent with the FTTCP Part B sheet.
 
 **2C Complete projection table.** Revenue, EBITDA, margin, PAT, EPS on weighted shares, book value per share, estimated CFO, FCF, net debt, ROCE, ROE. Years 0 to 5.
 
-**2D Sanity checks.** Growth within capacity? Margins require anything unprecedented? ROCE stays above 15%? FCF funds growth without excessive debt? EPS growth from operations not financial engineering? Market share gain realistic? CFO/PAT trajectory consistent with Pillar 2? Standing check from Part 2.2: did the base case credit the transition?
+**2C-w Worksheet line (Amendment 26), every run.** "Base-case basis: [RUN-RATE / ORDER-BOOK / CAPACITY / GUIDANCE-DISCOUNTED / HISTORICAL]. Evidence: [filing, section, date]. Historical CAGR cross-check: ___% (divergence ___ pp, confirm-by observation: ___, date: ___). Margin bridge: current ___% -> Year 3 ___% via [lever: bps, evidence] x N. Track-record period for weighting: trailing ___ quarters, Role 5 grade ___. Catalyst credit split: revenue ___% / Pillar 3 ___%."
+
+**2D Sanity checks.** Year 3 ROCE consistent with the FTTCP ROCE verdict used in Pillar 1? Growth within capacity? Margins require anything unprecedented? ROCE stays above 15%? FCF funds growth without excessive debt? EPS growth from operations not financial engineering? Market share gain realistic? CFO/PAT trajectory consistent with Pillar 2? Standing check from Part 2.2: did the base case credit the transition?
 
 Checkpoint (no wait). Write: "Section 2 complete. Projections built." Continue to Section 3.
 
@@ -410,19 +451,25 @@ Checkpoint (no wait). Write: "Section 3 complete. All valuation methods applied.
 
 ### Section 4 — Triangulation, entry price, verdict
 
-**4A Triangulated fair value.** Weighted sum per scenario.
+**4A Triangulated fair value.** Weighted sum per scenario, for both tracks (additive and RRM). The more conservative track sets the entry zone (open ruling OR-1).
 
 **4B Methods agreement.** Same direction? Spread between highest and lowest? If above 30%, which is the outlier and why? Which method is trusted most for this company?
 
 **4C Return at current price.** Per scenario: fair value, CMP with date, total return, CAGR, hurdle met.
 
-**4D Probability-weighted return.** Weights keyed to trailing-four-quarter delivery (Rule E): Excellent 20/50/30, Good 25/50/25, Mixed 35/45/20, Poor 45/40/15. State the period assessed.
+**4D Probability-weighted return.** Weights keyed to trailing-four-quarter delivery (Rule E): Excellent 20/50/30, Good 25/50/25, Mixed 35/45/20, Poor 45/40/15. State the period assessed. Re-weighting rule: if actuals landed below bear on 2+ key metrics for 2 consecutive quarters, shift one notch toward the Poor weights regardless of grade.
 
 **4E Entry price.** Base fair value; price for the tier hurdle = exit-consistent fair value ÷ (1 + hurdle)³ (1.25 Tier A, 1.20 Tier B; OR-8); FV CAGR and return-source label beside it (COMPOUNDER / HYBRID / DISCOUNT-CLOSER, Amendment 19, mandatory beside any entry zone); price for 30% CAGR; margin-of-safety price = 25% CAGR entry x (1 − MoS), MoS 20% / 30% / 40% per Section 4H-pre (fast-growth names: size per Amendment 25 instead); ideal range.
 
 **4F Asymmetry.** Bull upside, base upside, bear downside, base-upside to bear-downside ratio (should be at least 2x).
 
 **4G Exit multiple validation.** Does Year 3 ROCE justify the base? Does Year 3 CFO/PAT justify the multiplier? Has the primary catalyst fired by Year 3 in the base? Is the strategic premium still justified? Would you buy a different stock at this PE with these Year 3 metrics? Any failure revises the exit PE down and recalculates.
+
+**4H-pre Mandatory conclusion elements.** Each appears on the verdict table.
+1. Value vs price (two lines): what the business is worth and its main driver; what the price already assumes (Market-Implied flag OPPORTUNITY / FAIRLY PRICED / PRICED-WE-ARE-LATE), what closes the gap, and when.
+2. Evidence-scaled margin of safety: mostly documented evidence and catalyst inside 12 months = 20%; mixed evidence = 30%; mostly management-verbal or inferred evidence, or catalyst beyond 18 months = 40%. MoS price = 25% CAGR entry x (1 − MoS). State the row and why.
+3. Dispersion-capped sizing: width (Bull − Bear) ÷ Base under 40% normal; 40-80% caps at Medium; above 80% caps at Small.
+4. Edge declaration: "Edge claimed: [process / patience / information], because ___". Default PROCESS. INFORMATION needs the specific public-but-unread fact.
 
 **4H Verdict table.**
 
@@ -441,6 +488,12 @@ Checkpoint (no wait). Write: "Section 3 complete. All valuation methods applied.
 | Entry range / margin-of-safety price (MoS row applied) | |
 | FV CAGR and return-source label (Amendment 19) | |
 | Price decomposition T1 / T2 / T3 / residual, % of CMP (Amendment 24) | |
+| CONVERTER / NON-CONVERTER (Amendment 17) | |
+| RRM track: r, RRM, destination and fair values | |
+| Step 1C: pillar destination, adjusted peer base or PENDING LIVE PEER TABLE, % gap, governing multiple | |
+| Value vs price (two lines, market-implied flag) | |
+| Dispersion width and sizing cap | |
+| Edge claimed | |
 | Decision implied by the rules (operator sets Decision Status) | |
 | Buy below / Watch between / Avoid above | |
 | Assumption that moves FV up, and to what | |
@@ -483,7 +536,7 @@ Header: company, date, Gate 0 (Core /100, Moat /60, Total /160, classification),
 
 **Section 7: Recommendation table.** Verdict implied by the rules; entry range; 3-year and 5-year target; stop or condition; position size per Part 2.6; thesis broken if; action now.
 
-Decision rules: BUY NOW when CMP is at or below the margin-of-safety price, Gate 0 GOOD or better, promoter TRUSTWORTHY or better (including CONCERN-structure with a three-head ledger per Part 2.6). BUY ON DIPS between margin-of-safety and entry. WATCHLIST when CMP is above entry but the thesis is strong. AVOID when Gate 0 is AVERAGE or AVOID, promoter is AVOID on an integrity finding, or upside/downside is below 2x. Gate 0 Core below 60 defaults to WATCHLIST regardless of narrative. Promoter CONCERN never forces AVOID by itself; it routes through the ledger per Part 2.6, and the verdict names what was credited and what became a tripwire.
+Decision rules: BUY NOW when CMP is at or below the margin-of-safety price, Gate 0 GOOD or better, promoter TRUSTWORTHY or better (including CONCERN-structure with a three-head ledger per Part 2.6). BUY ON DIPS between margin-of-safety and entry. WATCHLIST when CMP is above entry but the thesis is strong. AVOID when Gate 0 is AVERAGE or AVOID, promoter is AVOID on an integrity finding, or upside/downside is below 2x. Gate 0 Core below 60 defaults to WATCHLIST regardless of narrative. Promoter CONCERN never forces AVOID by itself; it routes through the ledger per Part 2.6, and the verdict names what was credited and what became a tripwire. (Pending framework record OR-14; see Part 2.6.)
 
 **Re-engage triggers.** Mandatory for every AVOID or WATCHLIST verdict. Two to five, ranked by decision impact, each with the observation that fires it and where that observation will be published.
 
@@ -547,9 +600,9 @@ Operating manual for every company analysed. Claude web (this project) works wit
 
 ## 4.3 Sequence for a new company
 
-**Phase 0: Spear Pass (Claude web).** Part 2.5. A MISS ends here.
+**Phase 0: Intake (Claude Code).** `/step1 <company>` writes the Spear OVERRIDE line, picks peers, collects the corpus and runs Phase 1 to Halt 1 (Part 2.5). A web spear runs here only on operator request; a MISS ends there.
 
-**Phase 1: Pipeline (Claude Code).** `/run-pipeline runs/<ticker>-<date>`. Stages 0-9, verifiers, stage 09b. At Halt 1 Claude Code delivers: corpus completeness audit (CURRENT or GAPPED), draft mental model, business understanding narrative, downstream dossier with fragility read, research brief, 14-15 point plain-language summary.
+**Phase 1: Pipeline (Claude Code).** Run by /step1, or directly as `/run-pipeline runs/<ticker>-<date>`. Stages 0-9, verifiers, stage 09b. At Halt 1 Claude Code delivers: corpus completeness audit (CURRENT or GAPPED), draft mental model, business understanding narrative, downstream dossier with fragility read, research brief, 14-15 point plain-language summary.
 
 **Phase 2: Understanding stress-test (Claude web).**
 a. Read the corpus audit. If GAPPED, name what is missing and where to fetch it. Distinguish findable-but-missing from does-not-exist.
@@ -593,7 +646,7 @@ e. Deliver the signed mental model for sign-off. Once signed, the ruling is reco
 - Handover input gate: dossier file exists; absence after Halt 1 is a STOP.
 - P/E gate: operator rulings on Pillar 1 base, cash band, growth premium, earnings basis.
 - Amendment 16: no Pillar 3 growth premium for any year before projected ROCE crosses the minimum ROCE requirement (FTTCP Module B2 flag, YES from FY__ / NO); the premium is eligible only from the crossover year forward.
-- Amendment 17: CONVERTER slices held to 0.5 x ROCE + 7.5, never the core PE; ambiguous defaults to CONVERTER.
+- Amendment 17: CONVERTER / NON-CONVERTER stated before any pillar math (three-part test, ambiguous defaults to CONVERTER, OR-6); through-cycle ROCE and volume-denominated WC for converters; top-quintile input caps a converter BUY at WATCHLIST.
 - Amendment 18: exit-basis symmetry, Option Resolution Calendar per slice, within-hold options exit as resolved states.
 - Amendment 19: FV path table, FV CAGR line, return-source classification on the verdict.
 - Rule H: Role 3 runs only against a bull built to depth (forward basis, margin bridge, five chains, filled Entrepreneur Ledger); otherwise return to Role 2.
@@ -609,7 +662,15 @@ e. Deliver the signed mental model for sign-off. Once signed, the ruling is reco
 
 **Where rulings live.** Section 1B operator rulings (OR-n, ruled and open): `.claude/skills/section-1b/SKILL.md`. The October 2026 audit ruling table: `audits/RULINGS_2026-10.md`. Per-company rulings with dates: `companies/<TICKER>.md`. Standing pipeline rulings: `CLAUDE.md`.
 
-**Archetype library.** OPERATOR TO FILL: repo path, or paste the list here. Phase 2b cannot run against a library the project cannot see.
+**Archetype library** (CLAUDE.md; extend by operator ruling only). Phase 2b tests the draft model against these:
+- Build-to-spec component maker: customer capex cycle, design-win pipeline, content per unit, input-cost pass-through.
+- Commodity converter (Section 1B v3.7 Amendment 17 binds): spread (output minus input price), utilisation, cycle position, cost-curve rank.
+- Brand/franchise consumer: volume growth, pricing power, distribution reach, gross margin, advertising efficiency.
+- Order-book business (EPC/defence/capital goods): order inflow, book-to-bill, execution pace, working capital, margin on backlog.
+- Outsourcing partner (CDMO/EMS/IT services): client concentration, wallet share, capacity fill, contract stickiness, price per unit.
+- Licence/scarcity business: licence or quota validity, renewal risk, regulated price, capacity cap, entry-barrier durability.
+- Lender (framework variant exists): AUM growth, NIM, asset quality (GNPA and credit cost), RoA and RoE.
+- Platform/network: active users, take rate, unit economics per transaction, network density, retention.
 
 ## 4.6 Never and always
 

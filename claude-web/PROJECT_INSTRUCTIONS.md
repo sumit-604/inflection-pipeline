@@ -9,7 +9,7 @@ Changes from v4.0:
 - Section 2 uses the Amendment 21 run-rate earnings base and runs to Year 5 with Year 4 committed (Amendment 18.0). Entry price uses the tier hurdle (operator ruling OR-8).
 - Part 4 brought current: Claude Code web scope, the quarterly Notion write exception, sparse checkout, framework files with content versions, and where rulings live.
 - Part 6.1: /step1 is the intake line, with the manual collector as fallback.
-- Operator rulings of 04-Oct-2026 on the v4.1 review: CONVERTER per Amendment 17.0, stranded assets as Amendment 18 option slices; promoter CONCERN split kept, marked pending framework record OR-14; two cap rows with no Section 1B authority deleted (Upstream E&P, Oilfield services); Conviction Outlier, Sector Literacy, dispersion and Tier B caps added to sizing; re-rating optionality premium row; OR-3, OR-4 and OR-1 carried open; RRM, relative PE and Step 1C blocks; Role 1 rules restored from Master v3.7 (consumption clause, operating earnings, government tier, lenders, fade horizon, cyclical override, worksheet line, re-weighting, 4H-pre); OR-11 bear margin; Tier B 20% hurdle; spear gate per the 2026-09-05 /step1 ruling; archetype library pasted.
+- Operator rulings of 04-Oct-2026 on the v4.1 review: CONVERTER per Amendment 17.0, stranded assets as Amendment 18 option slices; promoter CONCERN split kept and recorded as operator ruling OR-14; two cap rows with no Section 1B authority deleted (Upstream E&P, Oilfield services); Conviction Outlier, Sector Literacy, dispersion and Tier B caps added to sizing; re-rating optionality premium row; OR-3, OR-4 and OR-1 carried open; RRM, relative PE and Step 1C blocks; Role 1 rules restored from Master v3.7 (consumption clause, operating earnings, government tier, lenders, fade horizon, cyclical override, worksheet line, re-weighting, 4H-pre); OR-11 bear margin; Tier B 20% hurdle; spear gate per the 2026-09-05 /step1 ruling; archetype library pasted.
 - The v4.0 change log is removed.
 
 ---
@@ -177,7 +177,7 @@ Caps that bind on top of this table; the tightest cap wins (Master v3.7 Role 2 S
 
 The verdict is stated as the four percentages, not as a single "over/under valued". Position size is set to T1 + T2 (Amendment 25). T3 is the explicit bet and is disclosed as such. The residual is the amount the price exceeds anything the framework can support; a residual above 25% of CMP caps the verdict at starter size regardless of conviction.
 
-**Promoter verdict and the Entrepreneur Ledger are read together.** *Pending framework record (OR-14):* the CONCERN split below follows the operator ruling of 09-Sep-2026. Master v3.7 (Role 2 Section 7; Rules you must always follow) and CLAUDE.md still say a CONCERN defaults to AVOID and the ledger never lifts a promoter cap. A separate framework PR records the ruling as OR-14 in both. Until it merges, state on every verdict that the split was applied.
+**Promoter verdict and the Entrepreneur Ledger are read together.** Operator ruling OR-14 (ruled 09-Sep-2026, recorded in Master v3.7 Role 2 Section 7, CLAUDE.md and the section-1b skill on 04-Oct-2026).
 
  The promoter check asks whether this person has harmed minority shareholders. The Entrepreneur Ledger (Role 2 3G) asks whether this person has built something from constraint. Both are evidence. Neither overrides the other by default. The ledger is written before the verdict, not after.
 
@@ -536,7 +536,7 @@ Header: company, date, Gate 0 (Core /100, Moat /60, Total /160, classification),
 
 **Section 7: Recommendation table.** Verdict implied by the rules; entry range; 3-year and 5-year target; stop or condition; position size per Part 2.6; thesis broken if; action now.
 
-Decision rules: BUY NOW when CMP is at or below the margin-of-safety price, Gate 0 GOOD or better, promoter TRUSTWORTHY or better (including CONCERN-structure with a three-head ledger per Part 2.6). BUY ON DIPS between margin-of-safety and entry. WATCHLIST when CMP is above entry but the thesis is strong. AVOID when Gate 0 is AVERAGE or AVOID, promoter is AVOID on an integrity finding, or upside/downside is below 2x. Gate 0 Core below 60 defaults to WATCHLIST regardless of narrative. Promoter CONCERN never forces AVOID by itself; it routes through the ledger per Part 2.6, and the verdict names what was credited and what became a tripwire. (Pending framework record OR-14; see Part 2.6.)
+Decision rules: BUY NOW when CMP is at or below the margin-of-safety price, Gate 0 GOOD or better, promoter TRUSTWORTHY or better (including CONCERN-structure with a three-head ledger per Part 2.6). BUY ON DIPS between margin-of-safety and entry. WATCHLIST when CMP is above entry but the thesis is strong. AVOID when Gate 0 is AVERAGE or AVOID, promoter is AVOID on an integrity finding, or upside/downside is below 2x. Gate 0 Core below 60 defaults to WATCHLIST regardless of narrative. Promoter CONCERN never forces AVOID by itself; it routes through the ledger per Part 2.6, and the verdict names what was credited and what became a tripwire. (Operator ruling OR-14; see Part 2.6.)
 
 **Re-engage triggers.** Mandatory for every AVOID or WATCHLIST verdict. Two to five, ranked by decision impact, each with the observation that fires it and where that observation will be published.
 

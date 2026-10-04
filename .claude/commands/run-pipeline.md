@@ -259,7 +259,8 @@ handoff schemas, flag rules, and error handling. Then:
 
 2. EXECUTE stages 0 through 9 by invoking the matching subagent for each,
    in dependency order (1 and 2 can interleave; 4, 5, 8, 9 after 3; 6
-   after 5; 7 after 1). For each invocation, pass in the task message:
+   after 5; 7 after 1). In NO-CONCALL MODE stage 5 reads the B03 report
+   and block, so it dispatches only once stage 3 is proven complete. For each invocation, pass in the task message:
    the exact input file paths the stage needs, the injected content the
    prompt's {{...}} markers expect (prior YAML blocks inline, since
    blocks are small), the output path outputs/reports/<stage>.md, the BLOCK

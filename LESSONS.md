@@ -50,6 +50,8 @@ record as of the run that produced it.
   (3) OR-9 starter under A24/A25, size zero vs 2-3%.
 - Stage 5 to Opus 5.5 high if Verifier B overturns grades in two runs
   (RULINGS_2026-10 item 27).
+- OPEN (2026-10-04, C2): record the actual stage 5 cost on the next no-call
+  run against the bounded-read target of 100k (Kwick: 254k).
 - Audit deferrals: items 41, 43, 85-88, 45, 71, 108 (RULINGS_2026-10).
 - Repo: land 110 branch-only markdown records on main in one PR, then
   revisit 71 branch deletes (PR #186 = c74e7a10; BRANCH_AUDIT_2026-10).

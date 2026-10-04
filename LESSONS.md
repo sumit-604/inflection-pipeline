@@ -47,8 +47,10 @@ Check · 2026-08-26 A20 relative cross-check · 2026-09-15 section-1b skill
 - Stage 5 to Opus 5.5 high if Verifier B overturns grades in two runs
   (RULINGS_2026-10 item 27).
 - Audit deferrals: items 41, 43, 85-88, 45, 71, 108 (RULINGS_2026-10).
-- OR-14: re-derive AIMTRON, ASIANENE, SYSTANGO, SHYAMMETL, MANINDS before
-  any AVOID carries forward. PR #193.
+- OR-14 (PR #193; re-derived 2026-10-04): AIMTRON and ASIANENE re-derive at
+  the FY26 AR review and present for ruling (two STRUCTURE-PENDING each).
+  SYSTANGO, SHYAMMETL, MANINDS ruled Small. MANINDS SEBI order is
+  [SECONDARY] until Claude web verifies the primary order.
 - Repo: land 110 branch-only markdown records on main in one PR, then
   revisit 71 branch deletes (PR #186 = c74e7a10; BRANCH_AUDIT_2026-10).
 - Repo: run BRANCH_DELETIONS_2026-10 script from a local clone (proxy

@@ -92,15 +92,38 @@ these before its own work. Full brief: runs/taaltech-2026-09-10/step1-business-b
 - Halt 1 decision: **PROCEED, 2026-09-20.** Corpus ruled CURRENT with named
   residue: Vishkul MGT-7 shareholder list, the identities of Creovate,
   Dureleg, Torrozo and Tenshi, and the 12th AGM transcript, not yet published.
-- Sizing ceiling: **SMALL** under Part 2.6 (structure concern, Entrepreneur
-  Ledger short of three heads), regardless of return. A25 starter only.
-- 2026-10-04: Promoter concern marked **INTEGRITY-PENDING** (operator,
-  under OR-14). The Rs10cr loan to promoter holding company Vishkul
-  Enterprises, absent from AOC-2, reads as an integrity finding, not a
-  structure one. Pending operator confirmation after a corpus search for
-  any disclosure, explanation or repayment of the loan. Until confirmed,
-  the Small ceiling above stands and the ledger does not offset the concern.
-- Escalation to INTEGRITY, a hard stop: the FY27 audit repeating the
+- Sizing ceiling: **SMALL** under Part 2.6 (INTEGRITY concern, OR-14;
+  the Entrepreneur Ledger does not offset it), regardless of return. A25
+  starter only. The 2026-09-20 structure classification is superseded.
+- 2026-10-04: Promoter concern **INTEGRITY, CONFIRMED** (operator, under
+  OR-14). Ground: misstatement in a filed document. The Rs1,000 lakh loan
+  to promoter holding company Vishkul Enterprises (50.74% holder) is in the
+  FY26 related-party note but reads "NA" in AOC-2. Corpus evidence, FY26 AR
+  (runs/taaltech-2026-09-10/extracted/annual-report__Annual_Report_2026.txt):
+  - RPT note 37(B), L9199-9206, p98: loan 1,000.00 lakh granted in FY26,
+    interest income 98.55 lakh.
+  - Note 13, L7888, and CARO (iii), L4489-4500: 1,000.00 lakh outstanding at
+    31-Mar-2026, unsecured.
+  - AOC-2 (Annexure E, L4032-4058, p56): every field "NA".
+  - RPT terms, L9294: balances "unsecured and interest free except for
+    borrowings", which contradicts the booked interest.
+  - CARO (iii) text says no advances in the nature of loans; its table lists
+    this one (L4489-4516). CARO (iv), L4531-4537: auditor states Section 185
+    and 186 compliance.
+  - Not disclosed: rate, tenure, purpose, approval date, a loan-specific
+    shareholder approval (AGM item 5 only lifts the Section 186 limit), any
+    repayment, and Vishkul's own shareholders (its MGT-7 on MCA).
+  - Audit committee member Narayan Karbhase (from 2025-08-04, L2686); the
+    AGM profile listing a Vishkul directorship (L1480) is attributed to him
+    in the dossier. No recusal recorded.
+  With the ledger unable to offset, an AVOID on the promoter alone is
+  possible at the next verdict.
+- Proposed de-escalation trigger (recommended by Claude, not yet approved
+  by the operator): the H1 FY27 balance sheet or Reg 23(9) RPT filing
+  (about Nov 2026) shows the loan repaid with interest received in cash,
+  plus a corrected AOC-2 or Reg 23 disclosure. That would return the
+  concern to STRUCTURE for operator review.
+- Further escalation triggers (unchanged): the FY27 audit repeating the
   limited-liability-partnership denial while the fund is still held, or any
   private-company holding resolving to a promoter-linked entity.
 - Gates before /fttcp:

@@ -100,6 +100,41 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
   R3 (Reading 2); ugliness "STRUCTURAL-FEATURE"; Part 2.6 INTEGRITY, Small
   ceiling, re-open on inspection period. The structural optic is still not
   named.
+- 2026-10-04: CONSOLIDATED OPERATOR RULINGS (supersede the separate ruling lines of
+  03-04 Oct where they overlap). Gate results and recompute:
+  runs/kissht-2026-09-19/outputs/final/fttcp-signoff-gates-2026-10-04.md.
+  - A. Confirmed: Halt 1 PROCEED; model SIGNED; rungs FROM R1, TO R2 (Reading 1) /
+    R3 (Reading 2); ugliness STRUCTURAL-FEATURE (negative CFO and cost-to-income optics
+    are artifacts); Part 2.6 INTEGRITY, Small ceiling, re-open on RBI inspection period;
+    Hurdle Tier A (25%).
+  - B. FTTCP: T1 AUM FIRING +2 (watch: average ticket and loans per borrower in the Q2
+    deck). T2 NIM DECLINING -1 (about half of the 5.2 pt income fall is mix, not price;
+    return on AUM held ~5%; finance cost/AUM fell on equity replacing debt and rises as
+    debt rebuilds). T3 asset quality STARTING +1 (overrides draft STAGNANT; Q1 YoY GNPA
+    +13 bps vs +75 bps, seasonal). T3 trigger, Q2 FY27 vs Q2 FY26: STARTING if Stage 2
+    <=3.3% and GNPA <2.92%; DECLINING if Stage 2 >4.11% or GNPA >2.92%. T4 RoA/RoE
+    STAGNANT 0 (RoE ~17% FY27, flat ~17-18%). Composite +2. Band "DEEP WATCH"
+    (operator words; FTTCP table label for +2 is DEEP WATCH leaning AVOID). Posture
+    VALUE-TRAP RISK.
+  - C. Shares fully diluted: 18.19 Cr pre-raise (16.85 paid-up + 1.34 options in
+    force), 20.84 Cr post-raise. CMP refresh; market value post-raise = CMP x 18.19 Cr
+    + Rs 832.20 Cr.
+  - D. Method: SOTP primary (Amendment 27.2), FORWARD basis, valuation date
+    31-Mar-2027; own book on Mar-27 book, partner half on FY28 PAT; same basis at exit
+    (27.3). PAT FY27/FY28: base 441/623, bear 400/500, bull 470/700. Split 46/54 by AUM.
+  - E. Own book P/B 0.8 / 1.0 / 1.2x on Mar-27 book.
+  - F. Partner half: Pillar 1 parent RoE ~34% = 24.5x; Pillar 2L 1.00x; Pillar 3 +0x;
+    strategic +0x; operator-set slice cap 22.7x (1/3 x 18x + 2/3 x 25x); Track 2 22.7x,
+    Track 1 ~17.2x, Track 1 sets entry; SOTP P/E 17.2 / ~19.95 / 22.7x. Revisit the cap
+    if the FLDG charge exceeds ~40% of partner revenue or top-two partner share stays
+    above 90% through FY27.
+  - G. Cash: Rs 208.05 Cr general-purpose slice only; FLDG deposits excluded.
+  - H. Cross-checks: whole-company Pillar 1 RoE ~17% = 16.0x; Track 1 governance
+    add-on +0.5; P/B on post-allotment BVPS.
+  - I. Gates before sign-off: I1 transfer pricing, I2 stress cases, I3 ESOPs reported
+    04-Oct; I4 Q2 business update OPEN (BSE access denied); I5 v3.11 merge OPEN.
+  - J. Recompute matches low/base/high/entry within 0.2%; stress labels, the 34% RoE
+    basis, the slice governance add-on and the per-Rs-10-Cr sensitivity are flagged.
 
 ## ACTIVE TRIPWIRES
 - None yet (set at /finalize).

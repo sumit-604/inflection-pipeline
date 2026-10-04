@@ -23,8 +23,7 @@ Pipeline discipline applies here in full: nothing halts on company quality;
 flags propagate; only a mechanical failure halts (missing run folder, missing
 manifest, empty outputs/blocks/). There is no STOP verdict. Every judgment
 call is MADE, with a stated view, a confidence, and the single fact that
-would prove it wrong. You never leave a call open and you never turn a call
-into a question.
+would prove it wrong. You never leave a call open.
 
 Defaults are law. When a default and the data disagree, you follow the rule
 below for that case, state your ruling in one line, and move on.
@@ -52,8 +51,15 @@ part is missing and stop; do not draft.
 
 1. PRECONDITION — ROLE 5.5 TRACKER GATE: companies/<TICKER>.md or the
    run's notion-payload must record downstream tracker rows written with
-   row-URL proof for this ticker. If no tracker rows with row-URL proof
-   are recorded, STOP and print what is missing. Tracker writes happen at
+   row-URL proof for this ticker, with at least three EXTERNAL signals per
+   entity (company-narrated rows do not count toward the floor). If no
+   tracker rows with row-URL proof are recorded, STOP and print what is
+   missing. Below three external signals for an entity, the gate names the
+   shortfall (entity, external count, missing count) and STOPS, unless
+   companies/<TICKER>.md carries a dated line "Tracker floor: OVERRIDE
+   YYYY-MM-DD (operator, reason)"; with that line /fttcp proceeds and still
+   prints the shortfall at the top of the draft (operator ruling OR-17,
+   2026-10-04). Tracker writes happen at
    Role 5.5 in claude.ai; this gate confirms they happened, it does not
    perform them.
 
@@ -234,8 +240,7 @@ between two states, bias to DECLINING when genuinely torn, INDETERMINATE cash
 caps the disposition at PROCEED WITH CAVEATS), tag it `genuinely uncertain`,
 flag it prominently in MY RULINGS with the single missing fact named, and write
 the draft. A call that cannot be closed in 8 iterations is reported as
-unresolved, never a reason to keep iterating and never a reason to ask the
-operator. This bounds the whole deliberation the way the INDETERMINATE-cash cap
+unresolved, never a reason to keep iterating. This bounds the whole deliberation the way the INDETERMINATE-cash cap
 bounds one gate.
 
 Make every judgment call and state your view on it:
@@ -386,7 +391,8 @@ After the draft file is written, commit it (with fttcp-crossgrade.md if it was
 produced) using the message
 `fttcp: autonomous plain-language draft` and push with
 `git push -u origin <branch>` (retry on network error up to 4 times with 2s,
-4s, 8s, 16s backoff). Then print the COMPLETE draft in the chat, exactly as
+4s, 8s, 16s backoff). End the commit report with the commit hash and
+`git log -1 --stat`. Then print the COMPLETE draft in the chat, exactly as
 written. The printed draft visibly includes the MY RULINGS block and the
 Step 2E prose (part 6). End with this line and nothing after it:
 
@@ -411,8 +417,9 @@ cannot lose an operator ruling.
 Where the operator's ruling overrides BOTH drafts (Claude Code's and the
 dossier Section 6 pre-ruling), record the override with the operator's stated
 reasoning AND the default-track sensitivity: the number the valuation would
-have carried on the default track (the more conservative of the two drafts),
-so the cost of the override is visible. Keep answering and recording until the
+have carried on each draft (Claude Code's and the dossier Section 6
+pre-ruling), both shown, so the cost of the override is visible (operator
+ruling OR-16, 2026-10-04). Keep answering and recording until the
 operator signs off.
 
 ## VALUATION PILLAR APPROVAL (mandatory operator gate — do not skip)
@@ -462,7 +469,8 @@ requires before Phase 3 can run; it does not exist until the operator signs
 off, so do not write it early. The OPERATOR-APPROVED VALUATION PILLARS block is
 mandatory in it — /finalize refuses to run the valuation without it.
 
-Commit the deliberation file and push (same retry policy). Append one dated
+Commit the deliberation file and push (same retry policy). End the commit
+report with the commit hash and `git log -1 --stat`. Append one dated
 line to LESSONS_ARCHIVE.md per the MEMORY rule (never to the active
 LESSONS.md, which is budget-capped): what broke or dragged this session, or
 "clean run" if nothing.
@@ -491,6 +499,6 @@ LESSONS.md, which is budget-capped): what broke or dragged this session, or
   own work (CLAUDE.md); independence is enforced by what the verifier is given,
   not by trust.
 
-End your final message to the operator with, on its own line:
+End your sign-off message (after the deliberation commit) with, on its own line:
 
 REMINDER — MERGE THIS BRANCH BEFORE STARTING ANY FTTCP SESSION.

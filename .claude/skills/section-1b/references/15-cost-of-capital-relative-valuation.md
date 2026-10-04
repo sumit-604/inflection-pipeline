@@ -41,7 +41,7 @@ Worksheet line: "r base ___%; durability adj ___ (band: ___, reason: ___); gover
 
 ### Minimum ROCE requirement (FTTCP Module B2)
 
-Minimum ROCE = the r the valuation uses. Where the RRM r is not yet computed at the FTTCP stage, the standing default is 13.5% for micro and small caps (operator Gate E).
+Minimum ROCE = the r the valuation uses. Where the RRM r is not yet computed at the FTTCP stage, the standing default is 13.5% for micro and small caps (operator Gate E; reconfirmed OR-21). It is separate from the RRM base r of 14%.
 
 ## Cash flow and asset methods
 

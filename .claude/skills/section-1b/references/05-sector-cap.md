@@ -86,7 +86,7 @@ If any condition is missing or thin, the override is denied and the sector cap h
 - Customer commitment source (exchange filing, customer's own filing, or contractual document).
 - Capex commissioning source (audited CWIP note, exchange announcement, or contractor disclosure).
 - Competitor-absence source (exports data, RBI/DGCI&S, or independent research; never the target company's narrative).
-- Rating agency, sector association or independent research may substitute for the competitor-absence source only. Management concalls and investor presentations count as ZERO sources.
+- Rating agency, sector association or independent research may substitute for the competitor-absence source only, and only where the substitute ranks 1-3 under the Downstream Source Discovery Protocol Part 3 (OR-20). Management concalls and investor presentations count as ZERO sources.
 
 ### Magnitude, sunset, documentation, stress test
 

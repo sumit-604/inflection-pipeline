@@ -20,7 +20,8 @@ target, 3-5 year holds.
   four quarters of Role 5 delivery, never whole-company history.
 - Never shade an input to be safe. State the most evidenced path, name the
   two readings and the one observation that separates them, and put the
-  conservatism in position size (v3.9 Amendment 25). This binds Role 1
+  conservatism in position size (v3.10 Amendment 26.3; v3.9 Amendment 25
+  sets size as the margin of safety for fast-growth names; OR-31). This binds Role 1
   projections; it does not touch the document-reading protocols, where
   conservative interpretation of filed evidence still stands.
 - Never construct a Year-N exit price on a different earnings basis than
@@ -94,6 +95,34 @@ target, 3-5 year holds.
   fresh context and the source page, not the model family)
 Do not upgrade a stage's model without editing its agent file.
 
+## OPERATOR RULINGS (dated; Section 1B rulings live in .claude/skills/section-1b/SKILL.md)
+October 2026 audit, ruled 2026-10-04 (audits/RULINGS_2026-10.md item numbers):
+- OR-15 (item 36): /finalize Rule H loop. A stage 15 steelman-gate miss
+  re-runs stage 14 once, then stage 15; a second miss marks Role 3 VOID,
+  flagged, and the run continues.
+- OR-16 (item 39): /fttcp override sensitivity shows the number on each
+  draft (Claude Code's and the dossier pre-ruling), not the more
+  conservative one.
+- OR-17 (item 40): /fttcp Role 5.5 gate needs three EXTERNAL tracker signals
+  per entity. A dated "Tracker floor: OVERRIDE YYYY-MM-DD (operator,
+  reason)" line in companies/<TICKER>.md lets it proceed below the floor;
+  the gate names the shortfall either way.
+- OR-18 (item 46): AR protocol margin of safety follows the Master evidence
+  scale (20/30/40%), or position size for fast-growth names (A25).
+- OR-19 (item 47): AR protocol Going Concern and FIRED thesis-broken
+  conditions carry to the IMMEDIATE EXIT overlay; the review completes.
+- OR-23 (item 52): Master Conviction Test. Stage 15 states the 3x exposure
+  as % of portfolio (capital base NOT FOUND unless supplied) and hands the
+  imagined-state questions to the operator.
+- OR-24 (item 54): quarterly-cadence downstream signals feed the 12-month
+  window (FTTCP governs; the Master's 6-12 month text is aligned).
+- OR-26 (item 59): Quarterly Results conservative bias binds the reading
+  of filed evidence (Steps 0-6); Steps 6.5-7 follow A26.3 / A25.
+- OR-29 (items 66, 78): REWORK fires on a CONFIRMED Verifier A CRITICAL or
+  an acceptance rate below 60% on a denominator of 4 or more.
+- OR-30 (items 81, 82): /run-quarterly A4 defers Role 4 Steps 6.5/7 and
+  Role 5 Step 8D to /fttcp and Role 1 and flags pillar-relevant facts.
+
 ## WORDS
 - "done" for a stage = full report written AND valid YAML block emitted
 - "anchored" = every number followed by (source, page/note)
@@ -112,6 +141,7 @@ Do not upgrade a stage's model without editing its agent file.
   apt-get install -y -qq; redirect verbose PDF-extraction output. The
   collect_to_repo.py collector runs on the operator's machine, out of
   session; in-session it appears only as collect_to_repo.py --push-again.
+  Exception: /step1 runs it with --dry-run on the operator's desktop.
 - Sparse checkout (operator ruling 2026-10-03): a pipeline session first runs
   tools/sparse_session.sh runs/<folder> [more folders]. It keeps everything
   outside runs/, runs/_template/, every run's session-cost.md and

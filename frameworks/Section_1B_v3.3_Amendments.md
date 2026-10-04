@@ -37,7 +37,7 @@ Pass threshold: HR ≥ 1.953 (which is 1.25³, i.e., 25% price CAGR over 3 years
 | HR(Base) < 1.953 but HR(Bull) ≥ 1.953 | CONDITIONAL — proceed, but flag "growth-dependent with de-rating headwind"; verdict capped at WATCHLIST / BUY-ON-DIPS; no BUY NOW |
 | HR(Bull EPS CAGR) < 1.953 | STOP — overvalued; 25% CAGR is infeasible even on bull-case earnings |
 
-Conservative-bias note: Bull EPS CAGR may only be used in this check if management delivery track record is Good or Excellent (consistent with existing Section 2A bull-case rules). If track record is Mixed or Poor, the Bull row of this check uses Base EPS CAGR + 5% maximum.
+Track-record note (v3.10 Amendment 26.4; operator ruling OR-27, 2026-10-04): Bull EPS CAGR enters this check only if the Role 5 credibility grade over the trailing four quarters is A or B. If C or D, the Bull row uses Base EPS CAGR + 5% maximum.
 
 ---
 
@@ -113,7 +113,7 @@ Examples: 12x → 11-13x; 20x → 18.5-21.5x; 37x → 34-39.5x (upper bound stil
 
 - No growth offset applies to the Asset-Quality Multiplier (loan growth cannot offset bad underwriting — it compounds it).
 - P/B (theoretical P/B = ROE ÷ CoE) remains the PRIMARY valuation method for lenders; the Section 1B destination PE becomes the SECONDARY cross-check.
-- Pillar 1 for lenders uses ROE bands in place of ROCE (same formula: 0.5 × ROE + 7.5, floor 9x, cap 24x), since ROCE is not meaningful for leveraged financials.
+- Pillar 1 for lenders uses ROE in place of ROCE in the same continuous formula (v3.6 Amendment 11: 0.5 × ROE + 7.5 up to 33%, then 24 + 0.3 × (ROE − 33), floor 9x, cap 30x; operator ruling OR-28, 2026-10-04; the old 24x cap is superseded), since ROCE is not meaningful for leveraged financials.
 - FTTCP Transition 3 (cash conversion) for lenders is likewise read as asset-quality trajectory (credit costs, GNPA, collection efficiency), not CFO/PAT.
 
 ---
@@ -193,7 +193,7 @@ Tier B exists because discovered-quality names structurally do not offer 25% ent
 
 At the RRM formula (RRM = 1 + (13.5% − r) × 0.12, bounded ×0.70 to ×1.60; Master v3.3 Role 1 RRM Dual-Track Derivation), add:
 
-The term (13.5 − r) is in PERCENTAGE POINTS: r = 16% gives (13.5 − 16) = −2.5, not −0.025. The bounds confirm this reading — under the percentage-point interpretation, r at the 9%/18% limits produces RRM of 1.54 and 0.46 (floored to 0.70), mapping exactly to the stated ×0.70–×1.60 bounds; under a decimal reading RRM never leaves 1.00±0.005 and the bounds would be meaningless. All RRM computations use the percentage-point reading.
+The term (13.5 − r) is in PERCENTAGE POINTS: r = 16% gives (13.5 − 16) = −2.5, not −0.025. The bounds confirm this reading — under the percentage-point interpretation, r at the 9%/18% limits produces RRM of 1.54 and 0.46 (floored to 0.70), consistent with the stated ×0.70–×1.60 bounds; under a decimal reading RRM never leaves 1.00±0.005 and the bounds would be meaningless. All RRM computations use the percentage-point reading.
 
 ---
 

@@ -46,7 +46,7 @@ Both channels understate true capital efficiency, drive the destination PE below
 ### INTERACTION WITH THE REST OF THE FRAMEWORK
 
 - Amendment 4 (single-credit for ROCE recovery across Pillar 1 / Strategic Premium) applies on top of this: whichever route is used, ROCE recovery credited in Pillar 1 bars the Strategic Premium route, as before.
-- Amendment 10 (intrinsic cross-check) triggers and mechanics are unaffected; where triggered, the DCF uses the same route-declared ROCE basis for its capital-efficiency assumptions.
+- Amendment 10 (intrinsic cross-check; text NOT FOUND in repo) triggers and mechanics are unaffected; where triggered, the DCF uses the same route-declared ROCE basis for its capital-efficiency assumptions.
 - FTTCP remains the sole source of the recovery verdict and probability. Neither route may be invoked on a STAGNANT or DECLINING ROCE verdict.
 
 ### WORKSHEET LINE (replaces the Amendment 9 worksheet line 1)

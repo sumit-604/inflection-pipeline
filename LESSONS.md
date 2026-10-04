@@ -119,8 +119,17 @@ _Pending framework edits Keerti maintains._
 - OPEN (2026-10-03, pipeline, stage 5): if Verifier B overturns stage 5
   credibility grades in two runs, move stage-05-concall alone to Opus 5.5
   high (operator ruling, audits/RULINGS_2026-10.md item 27).
-- OPEN (2026-10-03, audit): 57 audit questions and 19 manual edits remain in
-  audits/RULINGS_2026-10.md "Still open". Read before the next company run.
+- OPEN (2026-10-04, audit): all 76 open audit items ruled (OR-15 to OR-31).
+  Deferred, each for a later session: items 41 (/fttcp loads skill chunks,
+  after the KISSHT chunk 06/08 fix), 43 and 85-88 (quarterly command and
+  agent dedup, after one quarterly run), 45 (/compost budget review), 71
+  and 108 (operator to supply the promoter 10 dimensions and the TAM
+  runway class boundaries). audits/RULINGS_2026-10.md.
+- OPEN (2026-10-04, OR-14, PR #193): re-engage trigger "Re-derive under
+  OR-14" on AIMTRON, ASIANENE, SYSTANGO, SHYAMMETL, MANINDS. Fires when the
+  name is next opened (run, quarterly, Halt 1 revisit): class the promoter
+  concern INTEGRITY or STRUCTURE and run the ledger test before any AVOID
+  carries forward. Operator ruled: follow-up session.
 - OPEN (2026-10-03, repo, branch audit items 20-21): PR #186 (sparse
   checkout) merged as c74e7a10; now land the markdown outputs of the 110 branch-only run and
   quarterly records on main in one run PR, no PDFs; then revisit deleting
@@ -134,6 +143,7 @@ _Pending framework edits Keerti maintains._
   GAUDIUMIVF and VINYAS have mislabelled-year annual reports; KRONOX's
   annual-report folder holds the IPO prospectus. Fix before reusing those
   runs. audits/REPO_LAYOUT_PROPOSAL_2026-10.md follow-up section.
+  Operator ruled 2026-10-04: follow-up session.
 - ORCHPHARMA 2026-09-06 (phase 1), all OPEN:
   - Corrupt OCR text layers in filed PDFs are a live corpus failure mode. Promote the
     [OCR:embedded] / [OCR:tesseract] / [OCR:embedded-CORRUPT] page tag and the

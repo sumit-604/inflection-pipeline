@@ -54,7 +54,7 @@ is lost when the reply is truncated or the transcript is compacted:
 stage: B14-thesis
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID, as pinned in the agent frontmatter
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 verdict: ""                 # BUY | WATCHLIST | AVOID
 entry_range: {low: 0, high: 0}

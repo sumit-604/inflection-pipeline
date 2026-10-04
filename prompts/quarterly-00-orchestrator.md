@@ -177,7 +177,10 @@ After all documents pass A1-A3:
    forensics path, the PROTOCOL FOR THIS RUN (doctype-conditional, below), and
    the live Notion thesis (the orchestrator fetches the company Notion page
    first per Step 0A and passes its Decision Status and monitoring checklist
-   inline; subagents never call Notion themselves). A4 states the
+   inline, plus the Bear/Base/Bull projections, thesis-broken conditions,
+   growth triggers, four-pillar values, the prior quarter's
+   Questions-for-Management table and the prior concall promise log where
+   the page holds them (A4 marks any field not passed ND 'not passed'); subagents never call Notion themselves). A4 states the
    ledger-reconciliation preamble, runs the protocol in full step sequence, and
    writes the merged review. Every A3 finding classified AMBIGUOUS or
    FORWARD-SIGNAL must produce at least one Questions-for-Management row.
@@ -191,9 +194,12 @@ After all documents pass A1-A3:
      Master.
    - FULL QUARTER (a results filing and/or concall in --docs): pass Role 4 for
      the filing and/or Role 5 for the concall, as before. Master is framework
-     context by reference, not an A4 input.
+     context by reference, not an A4 input. A4 marks Role 4 Steps 6.5 and 7
+     and Role 5 Step 8D "deferred to /fttcp and Role 1" and flags each
+     pillar-relevant fact (operator ruling OR-30, 2026-10-04).
    NOTION vs SPEAR. If a live Notion thesis exists, pass it inline (thesis
-   check). If none exists, pass the Spear Pass template instead and tell A4 to
+   check). If none exists, pass the companies/<TICKER>.md Spear line and its load-bearing facts instead
+   (or state 'no spear on record') and tell A4 to
    frame the output as a PRE-THESIS READ, not a thesis check.
 
    SIGNAL CONTEXT input note: if the operator supplies tracker rows for this

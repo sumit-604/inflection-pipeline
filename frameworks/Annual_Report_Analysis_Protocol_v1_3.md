@@ -165,7 +165,7 @@ Build this exact inventory table before reading any narrative content. This forc
 - 3+ KAMs in one AR → significant management judgement areas
 - Modified opinion or EoM paragraph → AMBER, investigate immediately
 - CARO qualification on inventory, related parties, loans, or fraud → READ THAT CLAUSE FIRST
-- Going Concern flag → STOP analysis, this is a structural break in the thesis
+- Going Concern flag → carry to the Step 13 overlay (IMMEDIATE EXIT) and complete the review; this is a structural break in the thesis (operator ruling OR-19, 2026-10-04)
 - Promoter pledge increase → RED for governance
 - 5+ special resolutions including RPT caps in Notice → high transactional year ahead
 
@@ -1090,7 +1090,7 @@ Status = GREEN / AMBER / RED / UNKNOWN
 | Thesis-Broken Condition | Threshold | Current Reading | FIRED? |
 | --- | --- | --- | --- |
 
-If any thesis-broken condition has FIRED, stop the protocol and recommend immediate exit per pre-committed discipline. The AR is an audited document — its findings are conclusive, not preliminary.
+If any thesis-broken condition has FIRED, complete the protocol and recommend immediate exit per pre-committed discipline (operator ruling OR-19, 2026-10-04). The AR is an audited document — its findings are conclusive, not preliminary.
 
 ### 11E. Growth Trigger status update
 
@@ -1246,7 +1246,7 @@ If destination PE has been recomputed in Step 11A, recompute:
 - Year 3 fair value (Bear / Base / Bull), both tracks if dual-track applies
 - Probability-weighted fair value (with the corrected credibility-grade weights from 12A)
 - Entry price = exit-consistent fair value ÷ (1 + tier hurdle)³ (Tier A 1.25, Tier B 1.20), shown with the Amendment 19 FV CAGR and return-source label
-- Margin of Safety price (20% below entry)
+- Margin of Safety per the Master evidence scale (20%/30%/40%), or as position size for fast-growth names (Section 1B v3.9 Amendment 25; operator ruling OR-18, 2026-10-04)
 - Update Notion with the revised price band
 
 ### 13C. Single cleanest metric for Q1 of next FY

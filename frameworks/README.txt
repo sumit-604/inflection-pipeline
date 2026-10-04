@@ -31,6 +31,12 @@ reads the section-1b skill, not these files, so an amendment edited only
 here never reaches stage 11.
 
 ALSO MAINTAINED HERE (keep synced with the claude.ai project):
+  Debt_Capacity_Assessment_v1_0.md            (runs before FTTCP; feeds
+    Module B7 and Role 1)
+  Market_Implied_Assumptions_v1_0.md          (runs after FTTCP, before
+    Role 1)
+  Document_Review_Protocol_v1_1.md            (standalone document review;
+    the /run-quarterly DOCUMENT REVIEW path)
   success_catalogue.md                        (Master v3.7 Rule I; the
     operator's own names that looked ugly on trailing numbers and
     compounded. Paired with the failure catalogue. Rule I is enforced in

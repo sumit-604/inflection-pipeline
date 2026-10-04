@@ -135,6 +135,23 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
     04-Oct; I4 Q2 business update OPEN (BSE access denied); I5 v3.11 merge OPEN.
   - J. Recompute matches low/base/high/entry within 0.2%; stress labels, the 34% RoE
     basis, the slice governance add-on and the per-Rs-10-Cr sensitivity are flagged.
+- 2026-10-04: SIGN-OFF FLAG RULINGS and FTTCP SIGN-OFF. Record:
+  runs/kissht-2026-09-19/outputs/final/fttcp-deliberation.md.
+  - Stresses reported at base and low multiples; headline = low multiples.
+  - Partner-slice RoE measured on parent capital ex the investment in Si Creva (84.4% FY26;
+    ~34% FY27 projected); the cap binds either way.
+  - Governance add-on +0.5 everywhere; partner Track 1 18.62x; SOTP partner P/E 18.62 /
+    20.64 / 22.67x.
+  - Entry zone held at ~Rs 350 by operator override (mechanical Rs 371.4); revisit on
+    disbursement by book and the Amendment 19 FV CAGR.
+  - Band "DEEP WATCH leaning AVOID" (+2).
+  - Transfer pricing: fees cover ~73% of cost on an AUM split; the 46/54 split is
+    conservative for the partner half.
+  - ESOPs: ordinary compensation; no Entrepreneur Ledger change.
+  - IR questions added: disbursement by book; guarantee fee gap (Rs 39.41 Cr related
+    party vs Rs 21.72 Cr P&L).
+  - Open at sign-off: I4 Q2 business update PDF (operator), I5 v3.11 merge (operator,
+    blocks Stage 11 sign-off).
 
 ## ACTIVE TRIPWIRES
 - None yet (set at /finalize).

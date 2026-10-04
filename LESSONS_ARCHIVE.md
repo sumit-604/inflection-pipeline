@@ -609,3 +609,11 @@ Size: LESSONS.md 164 lines / 1555 words before, 119 lines / 1062 words after.
 - One stage (B03) wrote its block file wrapped in markdown fences; after the task messages added "plain YAML, no markdown fences", no later stage did.
 - DOWNSHIFT FAILURE: stage 0 ran inline on the orchestrator (claude-opus-5), as run-pipeline step 1 directs. Same pattern as TOTEM.
 - Worktree used: the main checkout carried another session's uncommitted v3.11 framework edits, so the run branch was built in a separate git worktree (../inflection-pipeline-kissht) off origin/main to keep amendment and run work apart.
+
+## 2026-10-04 — KISSHT (OnEMI Technology Solutions) — /fttcp draft, review and sign-off
+
+- Cross-family grade did not run: no Gemini or Google key configured (exit 3).
+- Q2 FY27 business update not fetched: BSE announcements API returned Access Denied from this machine on 04-Oct-2026. Operator to supply the PDF.
+- Section 1B v3.11 still unmerged; framework files were read from origin/main plus the main checkout's uncommitted draft. Stage 11 sign-off waits on the framework PR.
+- Partner-slice cap needed an operator-set blend (1/3 NBFC 18x + 2/3 asset-light 25x = 22.67x). Section 1B has no row or rule for a lender's capital-light fee slice; a framework item for Keerti.
+- Claude web's stress numbers mislabelled (bear vs partner exit at two multiple sets); caught by an exact recompute. Ruled headlines then moved again when the low multiple changed; deliberation file carries the recomputed values with an alignment note.

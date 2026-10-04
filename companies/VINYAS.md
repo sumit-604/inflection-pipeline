@@ -8,6 +8,11 @@ Halt 1: SIGNED 2026-09-01. Decision: SHALLOW (read, not valued);
 Role 5.5 tracker proof: COMPANIES MASTER row 3cfbb2b9-d3ab-81a1-affa-ec101ce847ca;
   15 DOWNSTREAM SIGNAL TRACKER rows written 2026-09-01, all linked.
 Operator sign-off: [KEERTI KAUSHIK — SIGN AND DATE]
+RE-RUN REQUIRED (operator ruling 2026-10-04, corpus Job 1): stages 3 and 09b of
+  runs/vinyas-2026-09-01 are TAINTED and must re-run before any further work on
+  the name. They misread Annual_Report_2015.pdf (a byte-identical FY24 AR copy, now
+  removed) as a 5-page AGM notice and concluded no FY24 AR and no prospectus held.
+  Corpus holds FY24, FY25 and FY26 ARs and inputs/prospectus/Vinyas_PROSP.pdf.
 
 ---
 

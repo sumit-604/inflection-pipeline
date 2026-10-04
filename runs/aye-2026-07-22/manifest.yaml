@@ -7,3 +7,6 @@ run_type: full
 concalls_available: false
 sector_cap_row: "Pharma / CDMO"
 notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+
+corpus_fixes:   # Job 1, maint/oct-2026-corpus-and-or14, operator approved 2026-10-04
+  - "2026-10-04 removed inputs/results/138929.pdf: ICRA rating rationale misfiled as results, byte-identical to inputs/rating/138929.pdf (kept)."

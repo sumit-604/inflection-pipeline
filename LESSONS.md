@@ -54,8 +54,15 @@ Check · 2026-08-26 A20 relative cross-check · 2026-09-15 section-1b skill
 - Repo: run BRANCH_DELETIONS_2026-10 script from a local clone (proxy
   refuses remote deletes).
 - PR #185 AR section index merges after one measured Phase 1 run.
-- Corpus contamination: CLEANMAX, GAUDIUMIVF, VINYAS, KRONOX
-  (REPO_LAYOUT_PROPOSAL follow-up).
+- RE-COLLECT (operator, collector or /step1): runs/kronox-2026-08-30 FY2024-25
+  AR; runs/kopran-2026-07-14 FY2024-25 and FY2025-26 ARs;
+  runs/akums-2026-07-10 Piramal Pharma (PPLPHARMA) Q2 FY26 transcript.
+- Downloads sweep pushed non-financial files into fedfina, rathist,
+  shyammetl and voepl-2026-07-18 inputs (removed 2026-10-04). Review and
+  apply tools/collector/file-type-allowlist.patch (PDF, DOCX, TXT, XLSX).
+- Android signing key committed at runs/voepl-2026-07-18/inputs/results/New
+  folder/SuperOver - Google Play package/signing.keystore, deleted
+  2026-10-04, remains in history; treat as exposed.
 - KISSHT 2026-10-04 (archive entry):
   - stage 11 priced under uncommitted v3.11; merge it.
   - own-book P/B band not earned (A27.2).

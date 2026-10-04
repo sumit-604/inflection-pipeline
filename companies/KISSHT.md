@@ -163,6 +163,38 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
   - Open at sign-off: I4 Q2 business update PDF (operator), I5 v3.11 merge (operator,
     blocks Stage 11 sign-off).
 
+- 2026-10-04: PHASE 3 RULINGS (after finalize). Applied as rulings; values NOT
+  recomputed by agents (operator: "investing is not some rigid chemistry or
+  physics. It is about approximation"; the 25% hurdle is a guide).
+  - Partner-slice cap STANDS at 22.7x (1/3 x 18x NBFC + 2/3 x 25x asset-light
+    services), operator-set; revisit if FLDG charge > ~40% of partner revenue or
+    top-two partner share > 90% through FY27. Verifier C F1 (assign a real cap
+    row) OVERRULED by the operator. Do not revert to 18x. Note: on the ruled
+    trigger measure (top-two lenders' share of DLG outstanding, monthly
+    kissht.com / sicrevacapital.com tables) the share read 95% at 31-Aug-2026.
+  - Entry override withdrawn; entry = mechanical Track 1. Own-book P/B earned as
+    (RoE - g) / (CoE - g). Book from the audited AR (Si Creva Rs 1,231.98 Cr,
+    AR p.57; consolidated Rs 1,342.78 Cr, AR p.98). 34% RoE base = parent capital
+    ex the investment in Si Creva. IPO money at parent: cash at book unless
+    FLDG-earmarked (monitoring agency report 29-Jul-2026: no FLDG earmark; GCP
+    Rs 47.99 Cr and issue expenses Rs 28.81 Cr unutilised at 30-Jun-2026, p.8).
+    Ledger probabilities ratified provisionally, revisit after Q2 FY27. Verifier C
+    F9 and F10 accepted.
+  - Gate 0: AVOID stands until a lender variant merges as a framework change for
+    all lenders (draft uncommitted, worktree inflection-pipeline-gate0, branch
+    framework/gate0-lender-variant).
+  - D15 set: structural optic = "partner concentration (by allocation design)
+    plus off-book loss invisibility (GNPA definition, 30-day partner reset)"; a
+    fired proof gate is transition evidence only. Headline partner-exit stress =
+    50% cut (1/3 alongside). Partner-slice Pillar 2L = 0.80x (own book 1.00x).
+    T3 Q2 FY27 bands: STARTING Stage 2 <=3.3% AND GNPA <=2.25%; STAGNANT Stage 2
+    3.3-4.11% OR GNPA 2.25-2.92%; DECLINING Stage 2 >4.11% OR GNPA >2.92%
+    (baselines Q1 FY27 deck p.30). Rs 208.05 Cr preferential cash line = 0 until
+    a numeric use-of-proceeds split. Proof-gate confirm-by 30-Sep-2027.
+  - Approximate effect (Claude Code, back-of-envelope, not an agent recompute):
+    Track 1 value ~Rs 620 at 31-Mar-2030; ~16% a year from Rs 370; ~Rs 330 for
+    ~20% a year; ~Rs 285 for ~25% a year.
+
 ## ACTIVE TRIPWIRES
 (2026-10-04, from B14 thesis_broken_if and the signed model falsifiers)
 - Q2 FY27 vs Q2 FY26: Stage 2 > 4.11% or GNPA > 2.92% (T3 DECLINING; by 30-Nov-2026).
@@ -186,7 +218,7 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
 - Rs 832 Cr preferential capital deployed against a stated need (EGM 14-Oct-2026).
 
 ## OPEN OPERATOR RULINGS AFTER FINALIZE (2026-10-04)
-Verifier C phase 3: partner-slice cap row (F1); own-book slice method under
+Verifier C phase 3: F1 partner-slice cap OVERRULED by operator 2026-10-04 (22.7x stands); own-book slice method under
 A27.2 (F2); capital base of the ~34% partner RoE (F3); classification of ~Rs 171 Cr
 parent-held IPO money under A27.1 (F4); close BOOK on AR figures (F8); strike the
 B14 U/D trigger and Rs 347.2 re-open price (F9); B14 position_size field (F10).

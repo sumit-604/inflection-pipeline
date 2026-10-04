@@ -846,3 +846,5 @@ and 8. The active file is over its 1,500-token budget after this addition; /comp
 | 10 | Skill chunk vs source divergences: chunk 06 lines 39 and 89, chunk 08 line 38 (Verifier C check 15) | skill section-1b | .claude/skills/section-1b/references | OPEN |
 | 11 | Operator overrides at FTTCP: T3 STARTING (draft STAGNANT); entry ~Rs 350 above mechanical Rs 344.2 | FTTCP | fttcp-deliberation.md §3 | CLOSED |
 | 12 | Synthesis agent has no Edit tool, could not mark gate-recommendation.md superseded; orchestrator added the header | 13 synthesis | .claude/agents/stage-13-synthesis.md | CLOSED |
+
+Update 2026-10-04 (KISSHT): row 3 CLOSED. The operator overruled Verifier C F1; the partner-slice cap stays at the 22.7x operator-set blend.

@@ -94,6 +94,12 @@ these before its own work. Full brief: runs/taaltech-2026-09-10/step1-business-b
   Dureleg, Torrozo and Tenshi, and the 12th AGM transcript, not yet published.
 - Sizing ceiling: **SMALL** under Part 2.6 (structure concern, Entrepreneur
   Ledger short of three heads), regardless of return. A25 starter only.
+- 2026-10-04: Promoter concern marked **INTEGRITY-PENDING** (operator,
+  under OR-14). The Rs10cr loan to promoter holding company Vishkul
+  Enterprises, absent from AOC-2, reads as an integrity finding, not a
+  structure one. Pending operator confirmation after a corpus search for
+  any disclosure, explanation or repayment of the loan. Until confirmed,
+  the Small ceiling above stands and the ledger does not offset the concern.
 - Escalation to INTEGRITY, a hard stop: the FY27 audit repeating the
   limited-liability-partnership denial while the fund is still held, or any
   private-company holding resolving to a promoter-linked entity.

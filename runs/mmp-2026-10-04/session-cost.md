@@ -20,3 +20,5 @@
 | 12d | verifier D | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 67113 | 1m38s | 1 |
 | 1 | gate0 (remediation) | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 115707 | 4m20s | 2 |
 | 7 | emoat (scoped remediation) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 124950 | 4m34s | 2 |
+| 12a | verifier A (scoped re-audit) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 253268 | 8m59s | 2 |
+| 12c | verifier C (phase 1 re-audit) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 213095 | 16m46s | 2 |

@@ -1,285 +1,216 @@
-# Verifier C: Framework Adherence, MMP, run 2026-10-05 (PHASE 1 SCOPE)
+# VERIFIER C: FRAMEWORK ADHERENCE, PHASE 1 SCOPE. MMP, run date 2026-10-05
 
-Model: claude-opus-5-5 (matches .claude/agents/verifier-c-framework.md frontmatter).
-Scope: Gate 0 (B01) and Emerging Moat (B07) only. The valuation audit (B10, B11, rules 4, 5 valuation half, 6, 7, 9 to 15) is PENDING PHASE 3. Those blocks do not exist yet.
-Rule sources (the only two): prompts/01-gate-0-pipeline.md, prompts/07-emerging-moat-pipeline.md. Output shape: prompts/12-verifiers-pipeline.md, VERIFIER C section.
+Run folder: runs/mmp-2026-10-04. Model: claude-opus-5-5 (effort xhigh, per .claude/agents/verifier-c-framework.md).
+Scope: Gate 0 (B01 run 2) and Emerging Moat (B07 run 2) only. The valuation audit is pending phase 3 (Section 7).
+
+Rule sources (the only two): prompts/01-gate-0-pipeline.md (cited "G0 prompt") and prompts/07-emerging-moat-pipeline.md (cited "S7 prompt"). Output shape: prompts/12-verifiers-pipeline.md, Verifier C section.
 Artifacts audited: outputs/reports/01-gate0.md, outputs/blocks/B01-gate0.yaml, outputs/reports/07-emoat.md, outputs/blocks/B07-emoat.yaml.
-Sources read to settle basis and availability: inputs/screening/screener-Data_Sheet.csv; inputs/screening/APARINDS-Data_Sheet.csv, ARFIN-Data_Sheet.csv, MAANALU-Data_Sheet.csv; inputs/annual-report/Annual_Report_2026.txt; inputs/annual-report/Annual_Report_2025.txt; inputs/shareholding/SHP_MMP_2026-06-30.md.
-Units: Rs Cr unless marked L. L = Rs Lakh, the unit on the face of both annual reports. 100 L = 1 Cr.
-Page anchors: the "[page N]" markers in the annual-report text files. Line numbers refer to the same text files.
-Boundary: this verifier audits rule application. Verifier A owns whether each number exists at its anchor. This report cites source lines only to settle the basis of a figure or whether data was available. No other verifier output was read.
+Sources opened to re-derive scores and test basis choices: inputs/screening/screener-Data_Sheet.csv, APARINDS-Data_Sheet.csv, ARFIN-Data_Sheet.csv, MAANALU-Data_Sheet.csv; inputs/annual-report/Annual_Report_2026.txt (consolidated cash flow p.173, energy p.43, borrowings note p.204); inputs/annual-report/Annual_Report_2025.txt (consolidated cash flow p.156, Note 16(d) p.112, shareholding pattern p.67).
+Units: Rs Cr unless marked L (Rs Lakh). The AR statements are in Rs Lakh on their face ("in Lakhs", AR26 p.173 heading).
+Independence: I read no other verifier output and no earlier B12c.
+
+Verifier A owns source fidelity. This audit judges rule application. I recompute from the inputs the artifacts state. I open a source only to test a basis choice.
 
 ---
-## 1. RESULT IN NUMBERS
 
-| Item | Value |
-| --- | --- |
-| Gate 0 rules checked | 50 |
-| Gate 0 FAIL lines | 12, from 7 findings: 1 CRITICAL, 4 MAJOR, 2 MINOR |
-| Emerging Moat rules checked | 36 |
-| Emerging Moat FAIL lines | 2, from 2 findings: 2 MINOR |
-| Valuation rules checked | 0 (pending phase 3) |
-| Acceptance rate | 72 of 86 = 83.7% (above the 60% REWORK trigger) |
-| B01 classification as emitted | AVOID, core 39/100 (01-gate0.md line 78) |
-| B01 classification recomputed | AVERAGE, core 40 to 54 across the rule readings in Section 3. AVOID survives under one reading only (core 38). |
-| B01 moat profile as emitted | 4/60, 0 present, NONE |
-| B01 moat profile recomputed | 11 or 12/60, 2 present (M5, M9), MODERATE |
-| B07 em_score and band | 11.6, NONE. Concur. |
-| B07 combined_assessment | AVOID. It inherits the B01 error. B07 applied its own rule correctly on the block it received. |
+## 1. RESULT
 
-The one CRITICAL is F1. B01 declared a consolidated basis and then scored E4 on the standalone contingent-liabilities note. The consolidated note exists. On it, E4 scores 5, not 1. Core moves 39 to 43. The classification moves AVOID to AVERAGE. This holds under every reading of the rules.
+- Rules checked: 90 (Gate 0: 54, Emerging Moat: 36). Passed: 86. Acceptance rate 95.6%.
+- Findings: 0 CRITICAL, 3 MAJOR, 3 MINOR.
+- No finding changes a classification. Gate 0 stays AVERAGE. EM stays NONE at 11.6. Combined stays AVERAGE.
+- Three emitted fields change if the MAJOR findings stand:
+  - B01 blocks.B 14 to 10 and core_score 54 to 50 (F1).
+  - B01 moat_score 12 to 10, moats_confirmed 2 to 1, moat_class MODERATE to THIN (F2).
+  - B07 capex_embedded_growth_pct 20.4 to 8.7 (F5).
+- REWORK gate: not triggered. The acceptance rate is 95.6% on a denominator of 90.
 
 ---
-## 2. GATE 0 COMPLIANCE TABLE (B01)
 
-Recomputed values sit beside each FAIL. "On stated input" means the band was applied correctly to the value B01 stated; any input problem is a separate line.
+## 2. GATE 0 (B01 RUN 2) COMPLIANCE
 
-| # | Rule (prompt 01) | B01 value | Verdict | Recomputed / note (anchor) |
-| --- | --- | --- | --- | --- |
-| G01 | Rule 6 opening line | "Data available: 10 years (FY2017 to FY2026)" | PASS | 10 annual columns (screener-Data_Sheet lines 10-11) |
-| G02 | Rule 4, anchor after every extracted number | C1-C4, M3, M11 lines carry no inline anchor | FAIL MINOR (F6) | Add (screener-data) per line |
-| G03 | ROCE formula fixed: EBIT / (Total Assets minus Current Liabilities); no substitutes | EBIT / (equity + reserves + borrowings), all 10 years | FAIL MAJOR (F3) | Fixed formula computable FY24-FY26: 14.74%, 16.31%, 12.91% (AR25 [page 154]-[page 155]; AR26 p.171 per B01 cross-check) |
-| G04 | ROE = PAT / average net worth; FY17 closing disclosed | 10 values, median 12.15% | PASS | Recomputed all 10 from screener lines 24, 39-40; match to 0.1pp |
-| G05 | WC days formula, basis stated | revenue basis stated | PASS | |
-| G06 | FCF = CFO minus PPE and intangibles capex; no CFI proxy in the score | CFO+CFI proxy shown as info only | PASS | |
-| G07 | CAGR formula | revenue 16.8%, PAT 6.8% | PASS | 16.83%, 6.76% (screener lines 11, 24) |
-| G08 | CAGR edge rules | no negative endpoint; no annual swing; noted in data_notes | PASS | |
-| G09 | A1 median ROCE band | 12.85% → 1 | PASS on stated input | 12.835% |
-| G10 | A2 minimum ROCE band | 10.06% → 1 | PASS on stated input | |
-| G11 | A3 median ROE band | 12.15% → 2 | PASS | |
-| G12 | A4 ROCE trend band | −15.2pp → 0 | PASS on stated input | |
-| G13 | B1 cumulative CFO / PAT | 1.21 → 5 | PASS | 297.83 / 246.72 = 1.207 (screener lines 24, 57) |
-| G14 | B2 FCF-positive years | NOT FOUND → 0 | FAIL MAJOR (F2) | FY24-FY26 in corpus: 5 (PPE line) or 2 (PPE + CWIP + capital advances) |
-| G15 | B3 cumulative FCF / PAT | NOT FOUND → 0 | FAIL MAJOR (F2) | 1 (0.33) or 0 (0.03) |
-| G16 | B4 WC days change | NOT FOUND → 0 | FAIL MAJOR (F2) | FY24 91.4 to FY26 88.9 days, −2.4 → 3 |
-| G17 | C1 revenue CAGR | 16.8% → 4 | PASS | |
-| G18 | C2 PAT CAGR | 6.8% → 1 | PASS | |
-| G19 | C3 positive YoY years | 7 of 9 → 3 | PASS | FY20, FY21 declined (screener line 11) |
-| G20 | C4 PAT CAGR minus revenue CAGR | −10.1pp → 0 | PASS | |
-| G21 | D1 net debt / EBITDA | 2.81x → 1 | PASS | |
-| G22 | D2 EBIT / interest | 4.01x → 2 | PASS | |
-| G23 | D3 debt / equity | 0.53 → 3 | PASS | |
-| G24 | D4 current ratio | 1.26 → 2 | PASS | |
-| G25 | E1 promoter holding | 74.49% → 5 | PASS | |
-| G26 | E2 promoter change over 3 years | "window NOT evidenced", scored 3 | FAIL MAJOR (F4) | 0 under rule 5 |
-| G27 | E3 pledge | 0% → 5 | PASS | |
-| G28 | E4 contingent liabilities / net worth, declared consolidated basis | 7,133.72 L standalone / 34,650.78 L consolidated = 20.6% → 1 | FAIL CRITICAL (F1) | Consolidated Note 51: 445.72 L / 34,650.78 L = 1.29% → 5 (AR26 [page 241]) |
-| G29 | M1 pricing power | −2.3pp margin, CAGR 16.8% → 1 | PASS | 10.23% FY17 to 7.92% FY26 (screener) |
-| G30 | M2 cost advantage vs peer median | PEER DATA NEEDED → 0 | FAIL MAJOR (F5) | MMP 7.92% vs peer median 7.47% = +0.45pp → 1 |
-| G31 | M3 capital efficiency | proxy ROCE 10.06% → 0 | FAIL MINOR (consequence of F3) | FAT 3.29x, fixed-formula FY26 ROCE 12.91% > 12% → 1 |
-| G32 | M4 stickiness | 2 decline years → 1 | PASS | |
-| G33 | M5 scale and dominance | PEER DATA NEEDED → 0 | FAIL MAJOR (F5) | Market cap rank 3 of 4, margin rank 2 → 3 |
-| G34 | M6 R&D | 0 | PASS | No separate R&D (B07 cites AR26 p.44); 0 either way |
-| G35 | M7 regulatory | listed-player count NOT FOUND → 0 | PASS | |
-| G36 | M8 distribution | 0 | PASS | AR26 names no company dealer or distributor network; "distribution networks" at lines 2550, 2604, 2650 are power grids |
-| G37 | M9 brand, GM proxy (Rev − RM) / Rev | PEER DATA NEEDED → 0 | FAIL MAJOR (F5) | 21.28% vs peer median 12.16% = +9.12pp, CAGR 16.8% → 3 |
-| G38 | M10 switching costs | → 1 | PASS | |
-| G39 | M11 network effects | → 1 | PASS | Latest 3y 15.25% < prior 3y 30.57%; selling 1.73% (FY23) to 1.94% (FY26), rising |
-| G40 | M12 float | → 0 | PASS | WC days above 45 in all known years |
-| G41 | Moat class from present count | 0 present → NONE | PASS on stated scores | |
-| G42 | Classification matrix | core 39 < 40 → AVOID | PASS on stated core | |
-| G43 | Data-confidence tier | 10 years, full, no downgrade | PASS | |
-| G44 | Deal-breakers 1-9 tested, driving years stated | 1 and 2 recorded with years; 3-9 not triggered | PASS | |
-| G45 | FLAG-GATE0 when ≤ AVERAGE with depressors | raised, years named | PASS | |
-| G46 | B01 YAML block file carries all schema keys | 21 of 21 keys present | PASS | |
-| G47 | Report ends with exactly the fenced YAML block | report ends with a 6-key stub and a pointer to the block file | FAIL MINOR (F7) | |
-| G48 | Dashboard elements | all blocks, line items, moat table, classification box, strongest/weakest, decision line | PASS | Moat profile is a score table, not bars; same content |
-| G49 | analyst_note ≤ 200 words | about 95 words | PASS | |
-| G50 | data_notes carry swing, proxy bases, PEER DATA NEEDED | present | PASS | |
+Every block score was re-derived from the stated inputs with the G0 prompt thresholds. Data_Sheet references are rows of screener-Data_Sheet.csv (r11 Sales, r12 Raw Material Cost, r13 Change in Inventory, r17 Selling and admin, r21 Interest, r22 PBT, r24 Net profit, r39-r40 equity and reserves, r41 Borrowings, r43 Total, r44 Net Block, r51 Cash, r57 CFO).
 
-Gate 0: 50 checked, 38 PASS, 12 FAIL (76.0%).
+| # | Rule (G0 prompt) | B01 value | Verifier C re-derivation | Result |
+|---|---|---|---|---|
+| GZ-01 | Rule 6 opening line | "Data available: 10 years (FY2017 to FY2026). Scoring adapted to 10-year history." | Data_Sheet holds 10 annual columns, FY2017 to FY2026 (r10) | PASS |
+| GZ-02 | Rule 6: minimum 3 years, maximum whatever exists | A1, A2, A4, B2, B3, B4, M12 on FY24-FY26; the rest on FY17-FY26 | Each window meets the 3-year minimum. Current liabilities, payables and capex lines exist only in AR25/AR26 (FY24-FY26); the Data_Sheet has no such rows | PASS |
+| GZ-03 | Rule 4: anchor on every number | Anchored | 25 scored lines spot-checked; each carries (screener-data) or an AR page | PASS |
+| GZ-04 | Rule 5: NOT FOUND scores 0 | E2 start point, M7 player count, M8 reach scored 0 | AR25 Note 16(d) p.112 gives 31-Mar-2025 and 31-Mar-2024 only (both 74.48%); no earlier promoter figure in the inputs | PASS |
+| GZ-05 | ROCE: use source figure, else compute and say "computed" | Computed, stated | Data_Sheet has no ROCE row | PASS |
+| GZ-06 | Formulas fixed, "do not substitute alternatives" | Proxy EBIT/(equity+reserves+borrowings) shown, not scored | Correct | PASS |
+| GZ-07 | ROE = PAT / average net worth; FY17 closing stated | 10 values listed | Recomputed all 10 (r24, r39, r40): 31.55, 24.40, 16.44, 10.20, 8.73, 12.97, 8.61, 11.59, 12.70, 9.26%. Match | PASS |
+| GZ-08 | WC days formula, basis stated | Revenue basis stated | Correct | PASS |
+| GZ-09 | FCF = CFO - Capex; capex = purchase of PPE + intangibles; exclude acquisitions | PPE line only | **FAIL, F1.** Recomputed FCF 0.43, 4.76, -2.50 Cr; B2 2, B3 0, Block B 10, core 50 | **FAIL** |
+| GZ-10 | CAGR = (End/Start)^(1/years) - 1 | 9-year windows | Correct | PASS |
+| GZ-11 | CAGR edge rules | No negative endpoint; "No loss-to-profit PAT swing" noted; C4 computed | All ten PAT values positive (r24) | PASS |
+| GZ-12 | A1 median ROCE | 14.74% = 1 | FY24 46.81/317.61 = 14.74%; FY25 61.30/375.94 = 16.31%; FY26 53.40/413.63 = 12.91%; median 14.74%, band 10-14.9 = 1 | PASS |
+| GZ-13 | A2 minimum ROCE | 12.91% = 3 | Band 12-14.9 = 3 | PASS |
+| GZ-14 | A3 median ROE | 12.15% = 2 | Median of 10 = (11.59 + 12.70)/2 = 12.15%, band 12-14.9 = 2 | PASS |
+| GZ-15 | A4 ROCE trend | -1.83pp = 3 | 12.91 - 14.74 = -1.83pp, band 1-3pp = 3 | PASS |
+| GZ-16 | Block A total | 9 | 1 + 3 + 2 + 3 = 9 | PASS |
+| GZ-17 | B1 cumulative CFO / PAT | 1.21 = 5 | 297.83 / 246.72 = 1.21 (r57, r24, FY17-FY26) | PASS |
+| GZ-18 | B2 FCF-positive years | 3 of 3 = 5 | PASS on the stated capex. Under F1: 2 of 3 = 2 | PASS |
+| GZ-19 | B3 cumulative FCF / PAT | 0.33 = 1 | 33.07 / 101.53 = 0.33. PASS on the stated capex. Under F1: 2.69 / 101.53 = 0.03 = 0 | PASS |
+| GZ-20 | B4 change in WC days | -2.5 days = 3 | FY24 36.00 + 70.03 - 14.66 = 91.37; FY26 39.36 + 70.03 - 20.47 = 88.92; -2.45, band within 5 days = 3 | PASS |
+| GZ-21 | C1 revenue CAGR | 16.8% = 4 | (824.00 / 203.22)^(1/9) - 1 = 16.83% (r11) | PASS |
+| GZ-22 | C2 PAT CAGR | 6.8% = 1 | (31.01 / 17.21)^(1/9) - 1 = 6.76% (r24) | PASS |
+| GZ-23 | C3 positive revenue years | 7 of 9 = 3 | FY20 and FY21 declined (r11); 77.8%, band 75-99 = 3 | PASS |
+| GZ-24 | C4 PAT CAGR minus revenue CAGR | -10.1pp = 0 | -10.07pp, band below -8pp = 0 | PASS |
+| GZ-25 | D1 net debt / EBITDA | 2.81x = 1 | 182.51 / 64.94 = 2.81x; on Data_Sheet EBITDA 65.27 it is 2.80x; same band 2-3x = 1 | PASS |
+| GZ-26 | D2 EBIT / interest | 4.01x = 2 | 53.40 / 13.33 = 4.01x, band 3-4.9 = 2 | PASS |
+| GZ-27 | D3 debt / equity | 0.53 = 3 | 184.52 / 346.51 = 0.53, band 0.5-1.0 = 3 | PASS |
+| GZ-28 | D4 current ratio | 1.26 = 2 | 26,543.14 / 21,130.77 L = 1.26, band 1.2-1.49 = 2 | PASS |
+| GZ-29 | E1 promoter holding | 74.49% = 5 | Band 60% or more = 5 | PASS |
+| GZ-30 | E2 promoter change over 3 years | NOT FOUND = 0 | Rule 5. The evidenced 27 months sit under the rule 6 3-year minimum | PASS |
+| GZ-31 | E3 pledge | 0% = 5 | Correct | PASS |
+| GZ-32 | E4 contingent liabilities / net worth | 1.29% = 5 | 445.72 / 34,650.78 L = 1.29%. Consolidated basis on both sides. Guarantees for subsidiaries drop out on consolidation; capital commitments are not contingent liabilities | PASS |
+| GZ-33 | Core score | 54 | 9 + 14 + 8 + 8 + 15 = 54 | PASS |
+| GZ-34 | M1 pricing power | 1 | FY17 EBITDA 20.78 / 203.22 = 10.23% to FY26 7.92% = -2.31pp, CAGR 16.8%: "declined 2-5pp despite growth" = 1 | PASS |
+| GZ-35 | M2 cost vs peer median | 1 | Peer EBITDA margins recomputed from each Data_Sheet: Apar 1,921.79 / 22,902.12 = 8.39%, Arfin 46.16 / 617.99 = 7.47%, Maan 20.12 / 808.71 = 2.49%; each reconciles to its PBT. Median 7.47%; MMP +0.45pp = 1 | PASS |
+| GZ-36 | M3 capital efficiency | 1 | FAT 824.00 / 250.23 = 3.29x (r44); ROCE 12.91%: "FAT >1x AND ROCE >12%" = 1 | PASS |
+| GZ-37 | M4 customer stickiness | 1 | 2 decline years, CAGR positive = 1 | PASS |
+| GZ-38 | M5 scale and dominance | 3 | Market cap rank 3 of 4, EBITDA margin rank 2 of 4: "top 3 mcap AND margin top 2" = 3. See O1 | PASS |
+| GZ-39 | M6 technology / R&D | 0 | No R&D spend (AR26 p.44) = 0 | PASS |
+| GZ-40 | M7 regulatory | 0 | Player count NOT FOUND = 0 | PASS |
+| GZ-41 | M8 distribution | 0 | Reach NOT FOUND = 0 | PASS |
+| GZ-42 | M9 band on the stated proxy | 3 | MMP 175.33 / 824.00 = 21.28%; Apar 17.92%, Arfin 12.16%, Maan 10.97%; median 12.16%; gap 9.12pp, CAGR 16.8%: "5pp above AND 8%" = 3 | PASS |
+| GZ-43 | M9 proxy basis: "(Revenue - Material Cost)" | Raw Material Cost line, change in inventory excluded | **FAIL, F2.** Recomputed gap 3.56pp; M9 1; moats 1 (M5); THIN; moat 10 | **FAIL** |
+| GZ-44 | M10 switching costs | 1 | Overall growth, 2 decline years = 1 | PASS |
+| GZ-45 | M11 network effects | 1 | Latest 3-yr CAGR 15.25% < prior 30.57%; selling and admin 9.29 / 538.29 = 1.73% (FY23) to 15.96 / 824.00 = 1.94% (FY26), rising; growth above 15% = 1 | PASS |
+| GZ-46 | M12 negative WC / float | 0 | 91.4, 104.1, 88.9 days, all above 45 = 0 | PASS |
+| GZ-47 | Moat count and class | 12/60, 2 present, MODERATE | PASS on the stated scores. Under F2: 10/60, 1 present (M5), THIN | PASS |
+| GZ-48 | Grand total | 66 | 54 + 12 = 66 | PASS |
+| GZ-49 | Data confidence tier | 10 years, full, no downgrade | The tier keys to data years (rule 6 opener; YAML data_years). 10 years = "10+ yrs full" | PASS |
+| GZ-50 | Classification matrix | AVERAGE | Core 40-59 = AVERAGE; the moat class does not enter this row | PASS |
+| GZ-51 | Deal-breakers 1 to 9 | None | Block A 9 (not <8); Block B 14 (not <8); median ROCE 14.74% (not <10%); CFO/PAT 1.21; pledge 0%; ND/EBITDA 2.81x with IC 4.01x; revenue fell in 2 of 9 years; PAT positive FY24-FY26; history 10 years. None trips | PASS |
+| GZ-52 | FLAG-GATE0 when classification is AVERAGE or lower with depressors | Raised | Correct | PASS |
+| GZ-53 | Dashboard elements | All blocks, anchors, moat bars, classification box, strongest/weakest, decision line | All present | PASS |
+| GZ-54 | YAML block shape | Template keys, data_notes (proxy bases, PEER DATA NEEDED), block_b_trend, analyst_note | All keys present; model claude-sonnet-5-5 matches the template; analyst_note about 136 words, under the 200 cap | PASS |
 
----
-## 3. GATE 0 RECOMPUTATION
+Gate 0: 54 rules checked, 52 PASS, 2 FAIL (GZ-09, GZ-43).
 
-### 3a. Corrections that hold under every reading
-| Line | B01 | Recomputed | Basis |
-| --- | --- | --- | --- |
-| E4 | 1 | 5 | Declared consolidated basis; consolidated Note 51 = 445.72 L (AR26 [page 241]) |
-| E2 | 3 | 0 | Rule 5; 3-year start point NOT FOUND |
-| Core | 39 | 40 | AVERAGE, on the band floor |
+### 2a. Verifier C reading of the five B01 open rulings
 
-### 3b. The rule 6 window question
-Rule 6 reads: "Use whatever history is available: minimum 3 years, maximum whatever exists." It has two readings.
-- Reading 1, per-metric window. Each metric uses the years its inputs exist, if 3 or more.
-- Reading 2, full window. A metric whose inputs do not span the scorecard window is NOT FOUND and scores 0.
+B01 lists five open rulings and the score under each other reading. The open-ruling table is honest and complete for those five. Here is how the G0 prompt text reads on each. The operator still decides.
 
-| Line | B01 as emitted | Reading 1 | Reading 2 |
-| --- | --- | --- | --- |
-| Block A | 4 (proxy ROCE) | 9 on the fixed formula FY24-FY26; 4 if the proxy is accepted | 2 (fixed formula NOT FOUND FY17-FY23); 4 if the proxy is accepted |
-| Block B | 5 | 10 (capex incl. CWIP and capital advances) or 14 (PPE line only) | 5 |
-| Block C | 8 | 8 | 8 |
-| Block D | 8 | 8 | 8 |
-| Block E | 14 | 15 | 15 |
-| Core | 39 | 45 to 54 | 38 (proxy rejected) or 40 (proxy accepted) |
-| Classification | AVOID | AVERAGE | AVOID or AVERAGE |
-| Deal-breakers | 1, 2 | none with A = 9; only 1 with A = 4 (max GOOD, not binding at AVERAGE) | 1, 2 |
-| Moat | 4/60, 0 present, NONE | 11-12/60, 2 present, MODERATE | 11-12/60, 2 present, MODERATE |
+| Open ruling | B01 primary | What the G0 prompt text says | Verifier C reading |
+|---|---|---|---|
+| Rule 6 scope | Per metric | "Use whatever history is available: minimum 3 years, maximum whatever exists." Each per-metric window meets the 3-year minimum. | Primary is as written. The full-window reading zeroes metrics that meet the minimum. The text does not require that. The core 38 AVOID path has no textual support. |
+| ROCE proxy | Not admitted | "FORMULA DEFINITIONS (fixed, do not substitute alternatives)." | Not a live reading. |
+| Confidence tier key | 10-year history | The tier keys to data years: rule 6 opener "Data available: [X] years", YAML data_years. No per-metric tier exists in the text. | Primary is as written. The LIMITED/AVOID path has no textual support. The text did not foresee mixed windows, so the operator may still rule. A "may not have seen full cycle" note on the FY24-FY26 metrics fits the spirit of the 5-6 year tier, without a downgrade. |
+| Capex definition | PPE line | "Purchase of PPE + intangibles ... exclude acquisitions." | The text supports PPE + CWIP + capital advances. See F1. |
+| E2 window | NOT FOUND = 0 | Rule 5: a missing data point scores 0. Rule 6 minimum is 3 years. | Primary is as written. 27 months is under the minimum. |
 
-The text supports Reading 1, for three reasons.
-1. Rule 6 sets a floor of 3 years and a ceiling of "whatever exists". It does not require every metric to span the same years.
-2. The confidence tiers score a company with 3-4 years and downgrade it one tier. A rule that scores a 3-year company but zeroes a 10-year company with the same 3 years of capex data contradicts that design.
-3. B01 rejected Reading 2 itself, twice. It used a proxy to get a 10-year ROCE series (G03). It scored E2 on 21 months (G26).
-
-Residual point for the operator. Under Reading 1 the confidence tier stays "10 years, full". Rule 6 keys the tier to "Data available: [X] years", the scorecard history. If the operator keys the tier to the shortest scored window instead (3 years, LIMITED), AVERAGE downgrades one tier to AVOID.
-
-What separates the readings: an operator ruling on the scope of rule 6 (per metric or full window) and on whether a disclosed ROCE proxy is admissible when the fixed formula's inputs are absent. F1 does not depend on that ruling.
-
-Economic caveat, not a scoring input. Under Reading 1 the Block B lift rests on reported CFO. Reported CFO carries short-term borrowing inflows of 26.78 Cr in FY24 (AR25 [page 156], line 8721), 44.26 Cr in FY25 (same line) and 17.23 Cr in FY26 (AR26 [page 173], line 9448). If those lines moved to financing, FY24-FY26 FCF on the PPE line would be −14.81, −37.22 and −3.17 Cr, and B2 and B3 would return to 0. Prompt 01 rule 2 bars that reclassification inside the scorecard. B01's FLAG-CASH already carries it.
+Under the text, neither AVOID path holds. The as-written Gate 0 result is AVERAGE, core 50 (F1), moat 10/60 THIN (F2).
 
 ---
-## 4. EMERGING MOAT COMPLIANCE TABLE (B07)
 
-| # | Rule (prompt 07) | B07 value | Verdict | Note (anchor) |
-| --- | --- | --- | --- | --- |
-| E01 | Six sections in one response | Sections 1-6 plus register present | PASS | |
-| E02 | 1A: status from the set, evidence type, date, revenue potential, difference | 11 rows | PASS | Statuses LAUNCHED-recent, IN TRIALS, ANNOUNCED, UNDER DEVELOPMENT, CONCEPT, LAUNCHED |
-| E03 | 1B direction with evidence and timeline | 5 rows | PASS | |
-| E04 | 1C mix table | 3-year % stated NOT FOUND, not filled | PASS | |
-| E05 | 2A capex table | 8 rows | PASS | |
-| E06 | 2B utilisation | 5 facilities | PASS | |
-| E07 | 2C capex under execution x historical FAT, % of revenue, arithmetic shown | 52.5 x 3.196 = 167.8 Cr = 20.4% of 824.0 Cr | PASS | Recomputed FAT mean 3.196x and 20.36%. See observation O2. |
-| E08 | 2D new geographies | present | PASS | |
-| E09 | 22 categories, each with evidence table or NO EVIDENCE FOUND | 22 of 22 | PASS | |
-| E10 | Taxonomy tag on every evidence item | tagged | PASS | |
-| E11 | Source anchor (AR p., call, slide) on every evidence item | several items anchor to upstream blocks; one unanchored | FAIL MINOR (F8) | |
-| E12 | Never force-fit | sparse scan, 9 rows scored | PASS | See observation O1 on G2 |
-| E13 | One improvement, one mechanism | ADD in R1 only; FRP in B1 only; AVL in H2 only | PASS | |
-| E14 | Section 3 summary: 22 rows, evidence, type, strength, time | present | PASS | |
-| E15 | Strong/Moderate count stated | 3 Moderate, 0 Strong | PASS | |
-| E16 | Recount line in the mandated form, arithmetic correct | "11 documented items across 7 categories" | PASS | 2+1+3+1+2+1+1 = 11 across B1, B2, E2, F2, H2, H3, R1 |
-| E17 | Completionist guard at 12 or more active | 9 active | PASS | |
-| E18 | 4A approvals pipeline | present | PASS | |
-| E19 | 4B policy tailwinds, shared or not | present | PASS | |
-| E20 | 4C regulatory moat assessment | present, score stated | PASS | |
-| E21 | Section 5: all 23 rows | 23 rows | PASS | |
-| E22 | Likelihood x impact matrix values | 9 scored rows checked | PASS | MM 2, ML 1, LL 1, HL 2 |
-| E23 | Evidence multipliers 1.0 / 0.7 / 0.5 | applied | PASS | B2 mixed evidence scored at 0.7, the lower tier |
-| E24 | No claim-only or inference-only row scored at documented weight | none found | PASS | E1 0.7 (claim), G2 0.5 (inference) |
-| E25 | Adjusted total | 11.6 | PASS | 2.0+1.4+0.7+2.0+1.0+0.5+2.0+1.0+1.0 = 11.6 |
-| E26 | Band | below 12 → NONE | PASS | |
-| E27 | I1/I2 contribution stated separately | 0.0 | PASS | |
-| E28 | Category 21 (I1) present; above 0 only with both legs and a documented (b) leg | present, 0 | PASS | |
-| E29 | Category 22 (I2) present; above 0 only with a specific named sacrifice | present, 0 | PASS | |
-| E30 | I2 test run "for each moat claimed anywhere in this scan" | 4 moats tested; E2 and H2 not tested | FAIL MINOR (F9) | Score 0 survives |
-| E31 | Optionality register: table and YAML; rows scored 0 or claim/inference only; never scored | 8 rows | PASS | |
-| E32 | 6A-6E present; 6C uses the injected Gate 0 block | core 39, moat 4/60, 0 confirmed, NONE, AVOID | PASS | Inputs carry the B01 errors (Section 5) |
-| E33 | 6D: HIGH POTENTIAL and TURNAROUND reasoning in full | both tested, both fail with reasons | PASS | |
-| E34 | B07 YAML schema | all keys present; one extra key (no_concall_mode) | PASS | |
-| E35 | active_categories only Strong/Moderate; capex_embedded_growth_pct equals 2C headline | B1, E2, H2; 20.4 | PASS | |
-| E36 | analyst_note ≤ 200 words; scan kept separate from FTTCP | about 162 words; "It is not FTTCP" | PASS | |
+## 3. EMERGING MOAT (B07 RUN 2) COMPLIANCE
 
-Emerging Moat: 36 checked, 34 PASS, 2 FAIL (94.4%).
+| # | Rule (S7 prompt, and Verifier C rules 3 and 8) | B07 value | Verifier C check | Result |
+|---|---|---|---|---|
+| EM-01 | Six sections plus register, one response | 1 to 6 plus Optionality Register | All present, in order | PASS |
+| EM-02 | Rule 2: evidence tag on every evidence item | Tags on items | Correct | PASS |
+| EM-03 | Rule 3: source anchor on every evidence item | Most anchored to source pages | **FAIL, F6.** Five items anchor to upstream records or to unpaged notes | **FAIL** |
+| EM-04 | Rules 4-5: NO EVIDENCE FOUND, no force-fit | 13 of 22 categories marked NO EVIDENCE FOUND | Correct | PASS |
+| EM-05 | Rule 6: completionist guard | 9 active categories (under 12); recount performed | Correct | PASS |
+| EM-06 | 1A status vocabulary | LAUNCHED-recent, IN TRIALS, ANNOUNCED, UNDER DEVELOPMENT, CONCEPT | Correct | PASS |
+| EM-07 | 1B diversification direction | 5 directions with evidence and timeline | Correct | PASS |
+| EM-08 | 1C mix table | FY26 and Q1 FY27 mix; 3-year mix NOT FOUND stated | Correct | PASS |
+| EM-09 | 2A capex table | Project, Rs Cr, funding, status, date, capacity, % over current | Correct | PASS |
+| EM-10 | 2B utilisation | Per facility, unknowns NOT FOUND | Correct | PASS |
+| EM-11 | 2C arithmetic shown | 3.196x mean FAT; 50-55 x 3.196 = 159.8-175.8; 20.4% | FAT FY22-FY26: 3.0455, 3.3665, 3.1681, 3.1083, 3.2934; mean 3.1964. 52.5 x 3.196 = 167.8; 167.8 / 824.0 = 20.36% | PASS |
+| EM-12 | 2C input: "total capex under execution", consistent with stated evidence tier | Wire rod 20-25 + solar 30 = 50-55 Cr | **FAIL, F5.** Solar is claim-only in B07's own tags. Recomputed 8.7% (7.8-9.7%) | **FAIL** |
+| EM-13 | 2D new geography | Nepal, Venezuela, US, Latin America, exports | Correct | PASS |
+| EM-14 | 22 categories each addressed | A1-A4, B1-B3, C1-C2, D1-D2, E1-E2, F1-F2, G1-G2, H1-H3, I1-I2 | 22 counted | PASS |
+| EM-15 | Section 3 summary table | 22 rows; Strong or Moderate count 3 (B1, E2, H2), 0 Strong | Correct | PASS |
+| EM-16 | Recount line, exact form | "📄 recount performed: 11 documented items across 7 categories" | Items listed: B1 2, B2 1, E2 3, F2 1, H2 2, H3 1, R1 1 = 11 across 7 | PASS |
+| EM-17 | Category 21 (I1): above 0 only with both legs, (b) leg documented | 0; leg (a) and leg (b) both absent | Correct | PASS |
+| EM-18 | Category 22 (I2): above 0 only with a specific named sacrifice | 0; tested for B1, E2, H2, insulators, powders, foils | Correct | PASS |
+| EM-19 | Categories 21 and 22 present in B07 (Verifier C rule 8) | Present in Sections 3 and 5 | Correct | PASS |
+| EM-20 | 4A approvals | 5 rows: body, status, timeline, unlock, competitors | Correct | PASS |
+| EM-21 | 4B policy tailwinds | ADD, RDSS, MSEDCL incentive, PLI NOT FOUND; shared column | Correct | PASS |
+| EM-22 | 4C regulatory moat assessment | Emerging, weak, shared | Correct | PASS |
+| EM-23 | Section 5: all 23 rows | 22 categories plus R1 | 23 counted | PASS |
+| EM-24 | Likelihood x impact matrix | B1 MM 2, B2 MM 2, E1 ML 1, E2 MM 2, F2 ML 1, G2 LL 1, H2 HL 2, H3 ML 1, R1 ML 1 | Each raw value matches the matrix | PASS |
+| EM-25 | Evidence multipliers 1.0 / 0.7 / 0.5 | As listed | Correct | PASS |
+| EM-26 | Score consistent with stated evidence tier (no claim scored as documented) | E1 claim 0.7; G2 inference 0.5; B2 blend 0.7; every 1.0 row carries documented evidence | Correct. See O3 on B2 | PASS |
+| EM-27 | Adjusted total | 11.6 | 2.0 + 1.4 + 0.7 + 2.0 + 1.0 + 0.5 + 2.0 + 1.0 + 1.0 = 11.6 | PASS |
+| EM-28 | Band | NONE | 11.6 < 12 = NO MEANINGFUL EMERGING MOAT | PASS |
+| EM-29 | I1/I2 contribution stated separately | 0.0 | Correct | PASS |
+| EM-30 | "EM >=25" UA qualifier stated | Not met | Correct | PASS |
+| EM-31 | Optionality register | 8 rows, four columns, watched never scored | Matches report table and YAML | PASS |
+| EM-32 | One improvement, one mechanism | FRP in B1 only; ADD in R1 only; AVL in H2 only; M9 not re-credited | No double credit found | PASS |
+| EM-33 | 6A timeline and 6B risks | Four windows; six risks with early warnings | Correct | PASS |
+| EM-34 | 6C uses the injected Gate 0 block | Core 54, moat 12/60, 2 moats (M5, M9), AVERAGE, MODERATE | Matches B01-gate0.yaml | PASS |
+| EM-35 | 6D combined classification with TURNAROUND and HIGH POTENTIAL reasoning | AVERAGE; both tests reasoned and failed | Correct | PASS |
+| EM-36 | 6E output card and YAML shape | Map, 12-month catalysts, biggest risk; YAML keys present; analyst_note about 177 words | Correct. See O4 on two extra keys | PASS |
 
-Observations (no fail):
-- O1. G2 (WC trajectory) scores 0.5 on one year of data. AR25 adds FY24. WC days run 91.4 (FY24), 104.1 (FY25), 88.9 (FY26). That is a round trip, not a trajectory. Without G2 the total is 11.1, still NONE. B07 flagged the row itself in FLAG-BORDERLINE-BAND.
-- O2. 2C case A counts the 7 MW solar park (Rs 30 Cr) as "committed and in execution". Its 2A status is a claim: "land acquired; no contract disclosed". AR26 consolidated Note 52 ([page 241], lines 13319-13327) shows capital commitments of 5,642.27 L, which fits Rs 50-55 Cr committed but names no project. Without solar, case A is wire rod 20-25 Cr x 3.196 = 63.9-79.9 Cr, 7.8-9.7% of 824.0 Cr. B07 labels 20.4% an upper bound and states the quality adjustment. Disclosed, so no fail.
-- O3. B2 shows "Weak" in the Section 3 summary but takes raw MM = 2 in Section 5, the same raw score as the Moderate rows. The 0.7 multiplier brings it to 1.4. No rule maps strength to raw score. Noted for consistency only.
+Emerging Moat: 36 rules checked, 34 PASS, 2 FAIL (EM-03, EM-12).
 
 ---
-## 5. INHERITED EFFECTS ON B07 (not B07 misapplications)
 
-B07 applied prompt 07 correctly to the Gate 0 block it received. Three B07 outputs rest on the B01 errors.
-- 6C reads core 39, moat 4/60, 0 moats confirmed, NONE, AVOID. Recomputed B01: core 40 to 54, AVERAGE, 2 moats present (M5, M9), MODERATE.
-- 6D combined_assessment "AVOID" and combined_reasoning ("Gate 0 core 39 (AVOID...") no longer follow. Stage 7 must re-derive 6D on the corrected block. The forward score (11.6, NONE) does not change. The TURNAROUND and HIGH POTENTIAL tests rest on forward evidence and stand as written.
-- 6E "Existing (Gate 0)" shows "none" in every family. M5 (scale) and M9 (gross-margin proxy) would show as existing, with the four-name peer-set caveat in F5.
+## 4. FINDINGS
 
----
-## 6. FINDINGS
+| ID | Severity | Artifact and location | Rule | Claimed | Recomputed / required | Note |
+|---|---|---|---|---|---|---|
+| F1 | MAJOR | B01 Block B (B2, B3); data_notes capex line; block_b_trend; open-ruling row "Capex definition"; YAML blocks.B, core_score | G0 FORMULA DEFINITIONS: "FCF = CFO - Capex (capex = purchase of PPE + intangibles from cash flow statement; exclude acquisitions)" | Capex = "Investment in Property, Plants and Equipment (Net of Disposal)" only: FY24 3,078.11 L, FY25 4,974.53 L, FY26 3,923.03 L. FCF 11.97, 7.04, 14.06 Cr. B2 5, B3 1, Block B 14, core 54 | Capex = PPE line + increase in CWIP + capital advances. FY24 3,078.11 + 1,285.85 - 131.62 = 4,232.34 L (AR25 p.156); FY25 4,974.53 + 92.28 + 135.59 = 5,202.40 L; FY26 3,923.03 + 991.83 + 663.86 = 5,578.72 L (AR26 p.173). CFO 4,275.02 / 5,678.74 / 5,328.97 L (AR25 p.156, AR26 p.173). FCF 0.43, 4.76, -2.50 Cr. B2 2 (2 of 3), B3 0 (2.69 / 101.53 = 0.03). Block B 10. Core 50. AVERAGE unchanged. Netting "Liabilities towards Capital Expenditures" (10.15, 24.38, 18.22 L) gives 0.53, 5.01, -2.32 Cr and the same scores | The rule excludes only acquisitions. Cash spent on plant under construction (CWIP) and advances paid for plant are purchases of PPE. MMP reports them on separate cash-flow lines. A company with the same cash flows on one combined line would score B 10. Under B01's reading the score depends on line layout. Support outside the two rule sources: Ind AS 7 para 16(a) counts payments for self-constructed PPE as cash paid to acquire PPE. B01 already shows this reading in its open-ruling table, so the fix is to make it primary |
+| F2 | MAJOR | B01 Block F M9 row; data_notes M9 line; YAML moat_score, moats_confirmed, moat_class, grand_total | G0 M9: "GM proxy if needed: (Revenue - Material Cost) / Revenue, state proxy used" | Raw Material Cost line, change in inventory excluded. MMP 21.28%, peer median 12.16%, gap 9.12pp, M9 3. Moats 2 (M5, M9), MODERATE, moat 12, grand total 66 | Material cost for the year's sales = Raw Material Cost net of Change in Inventory. This is the basis B01 itself uses for EBITDA in M1, M2 and M5 (data_notes: "Sales - RM + change in inventory - ..."). FY26: MMP (824.00 - 648.67 + 5.97) / 824.00 = 22.00% (r11-r13); Apar (22,902.12 - 18,797.67 + 706.82) / 22,902.12 = 21.01%; Arfin (617.99 - 542.87 + 38.85) / 617.99 = 18.44%; Maan (808.71 - 719.98 + 10.30) / 808.71 = 12.25% (each Data_Sheet r11-r13). Peer median 18.44%. Gap 3.56pp, under the 5pp tier. M9 1 (above peers, below the 5pp tier; the rubric has no band for that case, and 0 applies only at or below peers). Moats 1 (M5), THIN, moat 10, grand total 64. AVERAGE unchanged | B01 states its proxy, as the rule asks. The fault is that one scorecard treats change in inventory as a cost in three margin tests and ignores it in the fourth. Arfin drives the swing: change in inventory +38.85 Cr, 6.3% of its FY26 sales, moves its proxy from 12.16% to 18.44% and makes it the median. The open-ruling table does not show this reading |
+| F3 | MINOR | B01 LBF3, Block A, FLAG-GATE0 reason | Presentation: a disclosed sensitivity shown in one direction only (no G0 scoring rule broken) | FY26 EBIT 53.40 Cr includes the associates share and the exceptional fire loss 973.69 L (AR26 p.172, Note 37). Only the ex-associates sensitivity is shown (ROCE about 10.9%). FLAG-GATE0 names "FY26 ROCE 12.91% ... down from 16.31% FY25" as a depressor | Show the ex-exceptional line beside the ex-associates line: EBIT 53.40 + 9.74 = 63.14 Cr; ROCE 63.14 / 413.63 = 15.26%. The one-off loss is 2.35pp of the 3.40pp fall from FY25. Score effect if read that way: A1 3, A2 3, A4 5, Block A 13; M3 3 (FAT 3.29x and ROCE above 15%); core 58; AVERAGE | The scored figure follows the formula as written (EBIT = PBT + interest). Do not rescore. Add the missing line and a clause in the FLAG-GATE0 reason |
+| F4 | MINOR | B01 LBF4, Block B caveat, open-ruling table | Presentation: score effect of a named caveat not shown | Filed CFO includes increases in short-term borrowings inside operating activities: FY24 26.78, FY25 44.26, FY26 17.23 Cr (AR25 p.156; AR26 p.173 shows 1,723.34 L). CFO ex short-term borrowing 15.97, 12.53, 36.06 Cr is shown. Its score effect is not | Add a row to the open-ruling table. CFO ex short-term borrowing: B1 (297.83 - 88.27) / 246.72 = 0.85 = 4 (0.849 unrounded; 2 if read strictly); FCF 15.97 - 30.78, 12.53 - 49.75, 36.06 - 39.23, all negative, so B2 0 and B3 0; B4 3. Block B 7. Deal-breaker 2 (Block B <8, max GOOD) trips but does not bind at AVERAGE. Core 47. AVERAGE | Filed CFO is the correct scored input under "No qualitative judgments". The table shows the capex alternative but omits this one. This is the only reading that trips a deal-breaker |
+| F5 | MAJOR | B07 2C case A and headline; YAML capex_embedded_growth_pct; FLAG-CAPEX-FUNDING; 6E stage 9 hand-off line | S7 2C: "total capex under execution x historical fixed asset turnover"; S7 rule 4 (hard evidence over promises); Verifier C rule 3 (consistent with stated evidence tiers) | Case A "committed and in execution" = wire rod 20-25 + solar 30 = 50-55 Cr; 52.5 x 3.196 = 167.8 Cr = 20.4% of 824.0 Cr | B07 tags the 7 MW solar park as a claim: 2A "land acquired (deck p.14); no contract disclosed"; catalysts_12m "claim (land acquired per deck)". AR26 documents only the existing 1.5 MW (p.43). Its Citi solar loan funds the existing Bhandara plant, repaid from March 2025 (AR26 p.204, consolidated borrowings note (e)). Documented capex under execution = wire rod only (machinery ordered, civil works, AR26 p.30; Kotak loan per B07, AR26 p.205). 20-25 x 3.196 = 63.9-79.9 Cr = 7.8-9.7% of 824.0 Cr; midpoint 22.5 x 3.196 = 71.9 Cr = 8.7% | em_score and combined class do not change. The YAML field is the stage 9 hand-off and a CAPACITY-basis input at stage 11. B07's own quality note says consolidated revenue from this capex is near zero, so the 20.4 headline contradicts the report's own reading. Emit 8.7 as the headline. Keep 20.4 as the upper bound that includes the claim-only solar project |
+| F6 | MINOR | B07 2A solar row; F2 table solar row; G1 net debt line and "Figure changes"; 2A MEPL funding cell; C1 | S7 rule 3: "SOURCE ANCHORS on every evidence item: (AR p.__), (Q_ FY__ call), (Inv. Pres. slide __)" | (a) Solar date revisions anchored to "run 1 reading of the PR and deck series" (2A, F2 table). (b) "guidance cut from 20-25% to 15-18% (stage 5 record)" (6D). (c) EBITDA 6,626.71 L "on the stage 2 basis" (G1, Figure changes). (d) "7.00% preference share (standalone related-party notes)" (2A). (e) "related-party structures (AR26 related-party notes)" (C1) | Give the source page for each, or mark NOT FOUND | No score rests on these five items. The run 2 anchor remediation left them open |
 
-### F1. CRITICAL. E4 scored on a standalone note against a consolidated net worth
-- Rule: prompt 01 Block E, E4 "Contingent liabilities ÷ Net Worth (latest)"; rule 5 "confirm it exists in the provided data".
-- B01 declares "Basis: consolidated" (01-gate0.md line 4). E4 uses standalone Note 47: 7,133.72 L (AR26 [page 157], Annual_Report_2026.txt lines 8459-8472). That total includes corporate guarantees for two wholly owned subsidiaries, MMP Electricals 3,400.00 L and MMP Cables 3,288.00 L. B01 divides it by consolidated net worth 34,650.78 L and states "no separate consolidated note found" (B01-gate0.yaml data_notes).
-- Source: the consolidated statements carry Note 51 Contingent Liabilities (AR26 [page 241], lines 13308-13318). Bank guarantees 445.72 L. Total 445.72 L at 31-Mar-2026.
-- Recomputed: 445.72 / 34,650.78 = 1.29%. Band below 5% = 5.
-- Why the basis matters: the subsidiary loans the guarantees cover already sit in consolidated borrowings, which D1 and D3 score. The standalone figure counts the same debt twice.
-- Effect: Block E 14 to 18. Core 39 to 43. Classification AVOID to AVERAGE. This holds under both readings in Section 3b. B07 combined_assessment inherits the change.
-- Fix: stage 1 re-scores E4 on Note 51.
+Severity rule applied (prompts/12, Verifier C rule 5): no finding moves a classification or decision, so none is CRITICAL. F1, F2 and F5 change an emitted value, so they are MAJOR. F3, F4 and F6 are presentation gaps, so they are MINOR.
 
-### F2. MAJOR. B2, B3, B4 marked NOT FOUND while three years of inputs sit in the corpus
-- Rule: prompt 01 rule 5 (confirm in the provided data) and rule 6 (use whatever history is available, minimum 3 years).
-- B01 input_gaps: "no 10-year capex line and no trade payables before FY25 in corpus". The corpus holds inputs/annual-report/Annual_Report_2025.txt.
-- Source: AR25 consolidated cash flow ([page 156], lines 8693-8739): FY24 CFO 4,275.02 L; investment in PPE 3,078.11 L; CWIP increase 1,285.85 L; capital advances +131.62 L. AR25 consolidated balance sheet ([page 154], lines 8518-8573): FY24 trade payables 700.31 + 1,624.13 = 2,324.44 L; receivables 5,706.17 L; inventories 11,099.96 L. AR25 P&L ([page 155]): FY24 revenue 57,854.35 L. FY25 from AR25 [page 156]. FY26 from AR26 [page 173], lines 9455-9461 (CFO 5,328.97 L; PPE 3,923.03 L; CWIP 991.83 L; capital advances 663.86 L).
-- Recomputed (Rs Cr; cumulative PAT FY24-FY26 = 31.64 + 38.88 + 31.01 = 101.53, screener line 24):
-
-| Capex reading | FY24 FCF | FY25 FCF | FY26 FCF | B2 | Cum FCF / PAT | B3 |
-| --- | --- | --- | --- | --- | --- | --- |
-| PPE line only (the line B01 itself used) | 11.97 | 7.04 | 14.06 | 3 of 3 → 5 | 33.07 / 101.53 = 0.33 → 1 | 1 |
-| PPE + CWIP + capital advances | 0.43 | 4.76 | −2.50 | 2 of 3 → 2 | 2.69 / 101.53 = 0.03 → 0 | 0 |
-
-  B4: FY24 receivable 36.0 + inventory 70.0 − payable 14.7 = 91.4 days (revenue basis). FY26 88.9 days (B01). Change −2.4 days, within ±5 → 3.
-- Effect: Block B 5 to 14 or 10. Under Reading 1, this finding alone gives core 48 or 44, AVERAGE. Under Reading 2 the zeros stand. Graded MAJOR because the score effect depends on the rule 6 reading. The input_gaps statement is wrong under both readings.
-- Cause not visible here: stage 1 may not have received AR25 as an input. B07 (stage 7) cites "AR25 p.18", so AR25 was in the corpus by stage 7. The fix is the same either way.
-- Fix: re-run stage 1 with AR25 injected.
-
-### F3. MAJOR. ROCE computed on a substituted formula
-- Rule: prompt 01 FORMULA DEFINITIONS, "fixed, do not substitute alternatives". ROCE = EBIT / (Total Assets − Current Liabilities).
-- B01 used EBIT / (equity + reserves + borrowings) for all 10 years and disclosed it as a proxy. The proxy keeps short-term borrowings inside capital employed; the fixed formula removes them with the other current liabilities.
-- Fixed formula where inputs exist: FY24 46.81 / (435.00 − 117.39) = 14.74% (EBIT screener lines 21-22; total assets 43,500.03 L and current liabilities 11,738.68 L, AR25 [page 154]). FY25 16.31% and FY26 12.91% (B01 cross-check, AR26 p.171).
-- Reading 1: A1 median 14.74% → 1; A2 minimum 12.91% → 3; A3 → 2; A4 decline 1.83pp → 3. Block A 4 to 9. M3: FAT 3.29x and FY26 ROCE 12.91% above 12% → 1 (G31).
-- Reading 2: the fixed formula is NOT FOUND for FY17-FY23. A1, A2, A4 score 0. Block A 4 to 2.
-- Effect: from −2 to +5 on core, depending on the reading. The breach holds under both readings.
-- Fix: operator ruling on proxy admissibility; then stage 1 applies it.
-
-### F4. MAJOR. E2 scored 3 on a window B01 itself calls not evidenced
-- Rule: prompt 01 E2 "change over 3 years"; rule 5 "NOT FOUND ... score it 0".
-- B01: "Three-year window NOT evidenced", scored ±1% = 3 on 30-Sep-2024 to 30-Jun-2026 (21 months, SHP_MMP_2026-06-30.md lines 8-15) plus an unchanged share count.
-- Source: AR25 Note 16(d) ([page 112], Annual_Report_2025.txt lines 6070-6093) adds 31-Mar-2024: 1,89,20,779 promoter shares, 74.48%. The window grows to 27 months. The start point (mid-2023) stays NOT FOUND.
-- Recomputed: 0.
-- Consistency: B01 applied NOT FOUND → 0 to B2-B4 and not to E2.
-- Effect: Block E −3. Alone: core 36, AVOID stands. With F1: core 40, AVERAGE.
-
-### F5. MAJOR. Peer tests scored PEER DATA NEEDED while three peer Data_Sheets sit in the corpus
-- Rule: prompt 01 Block F, "If a test needs peer data that is not provided, score 0".
-- B01 input_gaps: "no peer data (M2, M5, M6, M9 PEER DATA NEEDED)". inputs/screening/ holds APARINDS-, ARFIN- and MAANALU-Data_Sheet.csv beside the MMP sheet.
-- FY26 values (each sheet: market cap line 8; sales line 11; raw material line 12; other income, depreciation, interest, PBT lines 19-22):
-
-| Company | Market cap Cr | EBITDA margin | GM proxy (Rev − RM) / Rev |
-| --- | --- | --- | --- |
-| MMP | 1,142.1 | 7.92% | 21.28% |
-| APAR Industries | 73,896.3 | 8.39% | 17.92% |
-| Arfin India | 1,472.1 | 7.47% | 12.16% |
-| Maan Aluminium | 595.89 | 2.49% | 10.97% |
-| Peer median (3) | | 7.47% | 12.16% |
-
-- Recomputed: M2 +0.45pp, within ±2pp → 1. M5 market cap rank 3 of 4 (top 3) and margin rank 2 → 3. M9 +9.12pp (≥5pp) with revenue CAGR 16.8% (≥8%) → 3. M6 stays 0 (no R&D).
-- Effect: moat score 4 to 11 (proxy ROCE) or 12 (fixed-formula ROCE, F3). Moats present 0 to 2. Class NONE to MODERATE. The classification does not change: below core 60 the matrix ignores the moat class.
-- Caveat on M5: the set has four names. A top-3 market cap rank needs only that MMP is not the smallest. APAR's market cap is 65x MMP's. M5 = 3 is mechanical and rests on the peer list the pipeline chose.
-- Cause not visible here: the sheets may not have been injected into stage 1. The fix is the same.
-- Fix: re-run stage 1 with the peer sheets injected.
-
-### F6. MINOR. Inline anchors missing on some Gate 0 lines
-- Rule: prompt 01 rule 4.
-- C1-C4 lines (01-gate0.md lines 42-45), the M3 FAT figure and the M11 CAGRs carry no inline anchor. The block header names screener-data, so the source is traceable.
-- No score effect.
-
-### F7. MINOR. The Gate 0 report does not end with the full YAML block
-- Rule: prompt 01 OUTPUT, "end with exactly this fenced YAML block".
-- 01-gate0.md lines 86-96 hold a 6-key stub that points to outputs/blocks/B01-gate0.yaml. The block file is complete (G46).
-- No score effect.
-
-### F8. MINOR. Some B07 evidence anchors cite upstream blocks, not source pages
-- Rule: prompt 07 rule 3, "SOURCE ANCHORS on every evidence item: (AR p.__), (Q_ FY__ call), (Inv. Pres. slide __)".
-- Examples: G1 "CFO net of borrowing and payables Rs 16.96 Cr (B03)"; G2 "Payable days rose 17.8 to 24.8 (B03)" and "WC days 104.1 to 88.9 (B01)"; B2 "PGCIL approval pending, slipped three times (B05)"; 1A AL59 "conductor revenue 171 Mn, -42% YoY (B05)". E1 "central-India location" has no anchor. F2 cites B05 by design (prompt 07 F2 text), so F2 is exempt.
-- No score effect.
-
-### F9. MINOR. I2 test skips two of the three Moderate moats
-- Rule: prompt 07 I2, "For each moat claimed anywhere in this scan, answer: what SPECIFIC thing would the best-resourced competitor have to destroy".
-- The I2 table tests polymer insulators, powders, foils and wire rod. It omits E2 (exports) and H2 (AVL, Toyal). H2's four-decade AVL tie is the "decades-old relationship" case the second I2 direction names, so the test was owed.
-- Score 0 survives: no specific sacrifice is named, and no documented competitor evidence exists for the top band.
+Direction of the basis choices, stated for the symmetric bar (Master Rule J): both Gate 0 FAILs resolved a basis choice toward the higher score. The E2 choice went the other way (0 rather than 3). F3 is an upward reading left unshown. F4 is a downward reading left unshown.
 
 ---
-## 7. VALUATION AUDIT: PENDING PHASE 3
 
-Rules 4 (valuation half), 5 (valuation half), 6, 7, 9 to 15 of the Verifier C section are not run. B10 and B11 do not exist. The valuation framework documents were not loaded, as the phase-1 scope requires. The valuation, expectation_ledger and business-narrative fields in B12c are marked "pending phase 3".
+## 5. EFFECT ON EMITTED FIELDS
+
+### 5a. Gate 0 under the findings
+
+| Reading | A | B | C | D | E | Core | Moat /60 | Moats present | Class | Classification | Deal-breaker |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| B01 as emitted | 9 | 14 | 8 | 8 | 15 | 54 | 12 | 2 (M5, M9) | MODERATE | AVERAGE | none |
+| F1 + F2 (as-written, Verifier C) | 9 | 10 | 8 | 8 | 15 | 50 | 10 | 1 (M5) | THIN | AVERAGE | none |
+| F1 + F2 + F3 sensitivity (ex-exceptional) | 13 | 10 | 8 | 8 | 15 | 54 | 12 | 2 (M3, M5) | MODERATE | AVERAGE | none |
+| F1 + F2 + F4 sensitivity (CFO ex short-term borrowing) | 9 | 7 | 8 | 8 | 15 | 47 | 10 | 1 (M5) | THIN | AVERAGE | 2 trips, not binding |
+
+Gate 0 classification is AVERAGE in every row. FLAG-GATE0 stands in every row.
+Under F1 the block_b_trend text changes: FCF positive 2 of 3 (0.43, 4.76, -2.50 Cr), FY26 negative.
+
+### 5b. B07 fields that depend on B01
+
+If F1 and F2 stand, these B07 items must be re-aligned in the same commit. em_score 11.6, NONE and combined AVERAGE do not change.
+- 6C row 1 (core 54) and row 2 (12/60, MODERATE, M5 and M9).
+- 6D backward-evidence sentence ("but moats M5 and M9 present").
+- 6E map, Family A row (M9 Brand).
+- Section 5 "Run 2 note on double credit" (M9). It becomes moot.
+- combined_reasoning and FLAG-B01-OPEN-RULINGS (core 54, M5 and M9).
+If F5 stands: capex_embedded_growth_pct 8.7, FLAG-CAPEX-FUNDING ("Committed capex in execution Rs 50-55 Cr (wire rod, solar)"), the 6E stage 9 hand-off line, and the analyst_note sentence on 20.4.
+
+recomputed_decision: blank. Verifier C concurs with AVERAGE (Gate 0), NONE (EM) and AVERAGE (combined).
 
 ---
-## 8. NOTES FOR THE ORCHESTRATOR
 
-- Acceptance 83.7% on a denominator of 86. The REWORK rate trigger does not fire. A Verifier C CRITICAL does not by itself trigger REWORK under the stage 12 header.
-- Fix path: re-run stage 1 on the full corpus (AR25 and the three peer Data_Sheets injected), with E4 on consolidated Note 51 and E2 at NOT FOUND = 0. Then re-derive B07 6C to 6E on the new block. B07 Sections 1 to 5 and the register stand.
-- Operator rulings needed before the stage 1 re-run settles the core: (a) rule 6 scope, per metric or full window; (b) admissibility of the disclosed ROCE proxy; (c) whether the confidence tier keys to scorecard history or to the shortest scored window. Under the reading this verifier judges the text supports (Reading 1, tier on scorecard history), the class is AVERAGE with core 45 to 54.
-- Verifier A owns the existence of AR26 Note 51 (445.72 L), the AR25 FY24 lines and the peer-sheet values used here. This report used them only for basis and availability.
+## 6. OBSERVATIONS (NOT FINDINGS)
+
+- O1. M5 peer set. With four names, "top 3 mcap" passes for any name except the smallest. The three peers (Apar, Arfin, Maan) overlap MMP's conductor line, 12.1% of FY26 segment sales (B07 1C, AR26 p.226). They do not make aluminium powder, which is 61.2%. The rule says to use the peer data provided, and B01 did. B01's caveat names the three-peer set. Peer-set adequacy for M2, M5 and M9 is an operator question, not a rule breach.
+- O2. G2 base year. B07 measures the WC gain from FY25 (104.1 days), which is the three-year peak. B01's FY24 to FY26 window gives -2.5 days, inside the 5-day "stable" band. B07 scores G2 at the floor (LL, inference, 0.5) and names it in FLAG-BORDERLINE-BAND. This is judgment inside the rubric. At 0, em_score is 11.1, still NONE.
+- O3. B2 multiplier. B2 holds one documented item (AL59 BIS, AR26 p.26) but is scored at 0.7 "on the blend". This is the lower multiplier, so it does not inflate the score.
+- O4. B07 YAML carries two keys outside the S7 template (no_concall_mode, run). They do no harm if the orchestrator expects them.
+- O5. I2 coverage. The I2 table tests the three Moderate categories and three product lines, not each Weak-scored row. It cannot change the result. No competitor filing in the corpus shows a sacrifice, and I2 needs one for any score.
+
+---
+
+## 7. VALUATION ADHERENCE (B11): PENDING PHASE 3
+
+Pending phase 3. Not run in this invocation.
+Not in phase-1 scope per the task message: Verifier C rules 4, 5 (valuation part), 6, 7, 9, 10, 11, 12, 13, 14 and 15. The expectation_ledger and business_narrative lines in the block below are placeholders marked pending, not results.
+
+---
 
 ```yaml
 stage: B12c
@@ -287,109 +218,31 @@ company: "MMP"
 run_date: "2026-10-05"
 model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
-scope: "phase 1: gate0 (B01) + emoat (B07) only; valuation half pending phase 3"
+scope: "phase 1: Gate 0 (B01 run 2) + Emerging Moat (B07 run 2); valuation audit pending phase 3"
 gate0:
-  rules_checked: 50
+  rules_checked: 54
   fails:
-    - "G28 E4 CRITICAL (F1): standalone note 47 7,133.72 L over consolidated NW 34,650.78 L = 20.6% -> 1; consolidated Note 51 = 445.72 L (AR26 [page 241]) -> 1.29% -> 5; core 39 -> 43; AVOID -> AVERAGE under every reading"
-    - "G14 B2, G15 B3, G16 B4 MAJOR (F2): FY24 capex and payables in AR25 [page 154], [page 156]; FY24-FY26 meets the rule 6 3-year minimum; B2 5 or 2, B3 1 or 0, B4 3; Block B 5 -> 14 or 10"
-    - "G03 ROCE formula MAJOR (F3): equity+reserves+borrowings proxy replaces fixed EBIT/(TA-CL); fixed formula FY24-FY26 = 14.74 / 16.31 / 12.91%; Block A 4 -> 9 (per-metric window) or 2 (full window)"
-    - "G31 M3 MINOR (consequence of F3): FY26 fixed-formula ROCE 12.91% > 12%, FAT 3.29x -> 1"
-    - "G26 E2 MAJOR (F4): 3-year start point NOT FOUND (21 months SHP; 27 months with AR25 note 16(d) [page 112]); rule 5 -> 0, not 3"
-    - "G30 M2, G33 M5, G37 M9 MAJOR (F5): three peer Data_Sheets in inputs/screening; M2 1, M5 3, M9 3; moats present 0 -> 2; NONE -> MODERATE; moat score 4 -> 11 or 12"
-    - "G02 MINOR (F6): C1-C4, M3, M11 lines lack inline anchors"
-    - "G47 MINOR (F7): 01-gate0.md ends with a 6-key stub, not the full block"
-  recomputed_core: "40 to 54 (AVERAGE); 38 (AVOID) only under the full-window reading with the ROCE proxy also rejected"
-  recomputed_classification: "AVERAGE"
-  recomputed_moat: "11 or 12/60, 2 present (M5, M9), MODERATE"
-  operator_rulings_needed: "rule 6 scope (per metric vs full window); ROCE proxy admissibility; confidence tier keyed to scorecard history vs shortest scored window"
+    - {id: "F1", rule: "G0 FORMULA DEFINITIONS: FCF = CFO - Capex; capex = purchase of PPE + intangibles from cash flow statement; exclude acquisitions", scored: "PPE line only; FCF FY24 11.97, FY25 7.04, FY26 14.06 Cr; B2 5, B3 1, Block B 14, core 54", recomputed: "PPE + increase in CWIP + capital advances (AR25 p.156; AR26 p.173); FCF 0.43, 4.76, -2.50 Cr; B2 2, B3 0, Block B 10, core 50; AVERAGE unchanged"}
+    - {id: "F2", rule: "G0 M9 GM proxy (Revenue - Material Cost) / Revenue", scored: "Raw Material Cost line, change in inventory excluded; MMP 21.28% vs peer median 12.16%, gap 9.12pp; M9 3; moats 2 (M5, M9) MODERATE; moat 12", recomputed: "material cost net of change in inventory, the basis B01 uses for EBITDA in M1/M2/M5; MMP 22.00%, peer median 18.44% (Arfin), gap 3.56pp; M9 1; moats 1 (M5) THIN; moat 10; grand total 64; AVERAGE unchanged"}
 emoat:
   rules_checked: 36
   fails:
-    - "E11 MINOR (F8): evidence anchored to upstream blocks B01/B03/B05 in G1, G2, B2, 1A; E1 central-India location unanchored"
-    - "E30 MINOR (F9): I2 test omits E2 and H2 (2 of 3 Moderate moats); I2 = 0 survives"
-  em_score_concur: true  # 11.6, NONE
-  inherited_from_b01: "6C/6D/6E rest on B01 AVOID and 0 moats; combined_assessment AVOID must be re-derived after the stage 1 re-run; not a B07 misapplication"
+    - {id: "F5", rule: "S7 2C total capex under execution x historical FAT; S7 rule 4; consistency with stated evidence tiers", scored: "wire rod 20-25 + solar 30 = 50-55 Cr x 3.196x = 20.4% of 824.0 Cr", recomputed: "solar is claim-only in B07 2A and catalysts_12m (AR26 p.43 shows 1.5 MW existing only); documented capex under execution = wire rod 20-25 Cr x 3.196x = 63.9-79.9 Cr = 7.8-9.7% of 824.0 Cr, midpoint 8.7%"}
+    - {id: "F6", rule: "S7 rule 3 source anchor on every evidence item", scored: "five evidence items anchored to upstream records (run 1 reading, stage 5 record, stage 2 EBITDA basis) or unpaged notes (related-party notes)", recomputed: "n/a; give source page or mark NOT FOUND; no score effect"}
 valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
-expectation_ledger: {status: "pending phase 3", present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # rules 13-14; any fail = REWORK stage 11
-business_understanding_narrative: {status: "pending phase 3", present: false, five_questions: false, prose_only: false, downstream_refs_ok: false, no_valuation_vocab: false, fails: []}  # rule 9; any fail = REWORK stage 13
-recomputed_destination_pe: ""  # pending phase 3
-recomputed_decision: ""        # pending phase 3; Gate 0 class recomputation is in gate0.recomputed_classification
+expectation_ledger: {status: "pending phase 3", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11
+business_narrative: {status: "pending phase 3", fails: []}  # rule 9; any fail = REWORK stage 13
+recomputed_destination_pe: ""  # phase 3
+recomputed_decision: ""        # concur: Gate 0 AVERAGE, EM NONE 11.6, combined AVERAGE hold under every recomputation
 findings:
-  - id: F1
-    framework: gate0
-    rule: "E4 on the declared consolidated basis (prompt 01 Block E; rule 5)"
-    severity: CRITICAL
-    claimed: "7,133.72 L standalone Note 47 (AR26 [page 157]) / 34,650.78 L = 20.6% -> 1; 'no separate consolidated note found'"
-    recomputed: "445.72 L consolidated Note 51 (AR26 [page 241], lines 13308-13318) / 34,650.78 L = 1.29% -> 5"
-    effect: "Block E 14 -> 18; core 39 -> 43; AVOID -> AVERAGE under every reading; B07 combined_assessment inherits"
-    fix: "stage 1 re-scores E4 on Note 51"
-  - id: F2
-    framework: gate0
-    rule: "B2/B3/B4 NOT FOUND vs available history (prompt 01 rules 5, 6)"
-    severity: MAJOR
-    claimed: "capex and payables before FY25 not in corpus; B2 0, B3 0, B4 0"
-    recomputed: "AR25 [page 154]-[page 156] gives FY24; FCF FY24/FY25/FY26 = 11.97/7.04/14.06 Cr (PPE line) or 0.43/4.76/-2.50 Cr (PPE+CWIP+capital advances); B2 5 or 2; B3 1 (0.33) or 0 (0.03); B4 FY24 91.4 -> FY26 88.9 days = 3"
-    effect: "Block B 5 -> 14 or 10; alone core 48 or 44 (AVERAGE) under the per-metric reading; nil under the full-window reading"
-    fix: "re-run stage 1 with AR25 injected"
-  - id: F3
-    framework: gate0
-    rule: "ROCE fixed formula, no substitutes (prompt 01 FORMULA DEFINITIONS)"
-    severity: MAJOR
-    claimed: "EBIT/(equity+reserves+borrowings), 10 years; A1 1, A2 1, A4 0; M3 0"
-    recomputed: "fixed formula FY24 14.74% (AR25 [page 154]), FY25 16.31%, FY26 12.91%; per-metric reading A1 1, A2 3, A4 3 = Block A 9, M3 1; full-window reading A1/A2/A4 NOT FOUND = Block A 2"
-    effect: "core -2 to +5 depending on the rule 6 reading"
-    fix: "operator ruling on proxy admissibility, then stage 1"
-  - id: F4
-    framework: gate0
-    rule: "E2 3-year change; NOT FOUND scores 0 (prompt 01 rule 5)"
-    severity: MAJOR
-    claimed: "window NOT evidenced, scored 3"
-    recomputed: "0; holdings known 31-Mar-2024 (AR25 note 16(d) [page 112]) to 30-Jun-2026 (SHP), 27 months"
-    effect: "Block E -3; alone core 36 (AVOID); with F1 core 40 (AVERAGE)"
-    fix: "stage 1 scores E2 NOT FOUND = 0"
-  - id: F5
-    framework: gate0
-    rule: "peer tests scored 0 only when peer data is not provided (prompt 01 Block F)"
-    severity: MAJOR
-    claimed: "M2, M5, M9 PEER DATA NEEDED = 0; moats present 0; NONE"
-    recomputed: "peer sheets APARINDS/ARFIN/MAANALU: EBITDA median 7.47% vs MMP 7.92% -> M2 1; mcap rank 3 of 4, margin rank 2 -> M5 3; GM proxy 21.28% vs median 12.16% -> M9 3"
-    effect: "moat 4 -> 11 or 12/60; present 0 -> 2; NONE -> MODERATE; classification unchanged (core below 60); M5 rests on a four-name peer set"
-    fix: "re-run stage 1 with peer sheets injected"
-  - id: F6
-    framework: gate0
-    rule: "anchor after every extracted number (prompt 01 rule 4)"
-    severity: MINOR
-    claimed: "C1-C4, M3, M11 without inline anchors"
-    recomputed: "no score change"
-    effect: "none"
-    fix: "add (screener-data) per line"
-  - id: F7
-    framework: gate0
-    rule: "report ends with exactly the fenced YAML block (prompt 01 OUTPUT)"
-    severity: MINOR
-    claimed: "6-key stub plus pointer"
-    recomputed: "block file complete, 21 of 21 keys"
-    effect: "none"
-    fix: "paste the full block at the end of 01-gate0.md"
-  - id: F8
-    framework: emoat
-    rule: "source anchor on every evidence item (prompt 07 rule 3)"
-    severity: MINOR
-    claimed: "G1, G2, B2, 1A items anchored to B01/B03/B05; E1 location unanchored"
-    recomputed: "no score change"
-    effect: "none"
-    fix: "replace block anchors with source pages"
-  - id: F9
-    framework: emoat
-    rule: "I2 test for each moat claimed (prompt 07 I2)"
-    severity: MINOR
-    claimed: "I2 table tests insulators, powders, foils, wire rod"
-    recomputed: "E2 and H2 untested; I2 stays 0 (no specific sacrifice, no documented competitor evidence)"
-    effect: "none"
-    fix: "add E2 and H2 rows to the I2 table"
-critical_count: 1
-major_count: 4
-minor_count: 4
-acceptance_rate: 83.7             # rules passed / rules checked, %: (38 + 34) / (50 + 36)
+  - {id: "F1", severity: "MAJOR", artifact: "B01", location: "Block B (B2, B3); data_notes capex line; block_b_trend; blocks.B; core_score", claimed: "capex = PPE line only (3,078.11 / 4,974.53 / 3,923.03 L); FCF 11.97 / 7.04 / 14.06 Cr; B 14; core 54", recomputed: "capex = PPE + CWIP increase + capital advances (AR25 p.156; AR26 p.173); FCF 0.43 / 4.76 / -2.50 Cr; B2 2; B3 0; B 10; core 50; AVERAGE", note: "Rule excludes only acquisitions; CWIP spend and capital advances are purchases of PPE; B01 score otherwise depends on cash-flow line layout. B01 already shows this reading as an open ruling; make it primary."}
+  - {id: "F2", severity: "MAJOR", artifact: "B01", location: "Block F M9; data_notes M9 line; moat_score; moats_confirmed; moat_class; grand_total", claimed: "GM proxy on Raw Material Cost line; gap 9.12pp; M9 3; 2 moats; MODERATE; moat 12", recomputed: "GM proxy net of change in inventory (same basis as B01 EBITDA); MMP 22.00%, Apar 21.01%, Arfin 18.44%, Maan 12.25%; median 18.44%; gap 3.56pp; M9 1; 1 moat (M5); THIN; moat 10; AVERAGE", note: "Same scorecard treats change in inventory as cost in M1/M2/M5 and ignores it in M9. Arfin change in inventory +38.85 Cr (6.3% of FY26 sales) drives the swing. Reading absent from the open-ruling table."}
+  - {id: "F3", severity: "MINOR", artifact: "B01", location: "LBF3; Block A; FLAG-GATE0 reason", claimed: "ex-associates sensitivity shown (FY26 ROCE about 10.9%); exceptional fire loss 973.69 L (AR26 p.172) included in EBIT, its effect not shown", recomputed: "ex-exceptional FY26 EBIT 63.14 Cr, ROCE 15.26%; 2.35pp of the 3.40pp fall is the one-off loss; sensitivity A 13, M3 3, core 58, AVERAGE", note: "Scored figure follows the formula; add the missing sensitivity line, do not rescore."}
+  - {id: "F4", severity: "MINOR", artifact: "B01", location: "LBF4; Block B caveat; open-ruling table", claimed: "CFO includes short-term borrowing increases 26.78 / 44.26 / 17.23 Cr (AR25 p.156; AR26 p.173); score effect not shown", recomputed: "ex short-term borrowing: B1 0.85 = 4, B2 0, B3 0, B4 3; Block B 7; deal-breaker 2 trips (max GOOD, not binding); core 47; AVERAGE", note: "Filed CFO is the correct scored input; add the row to the open-ruling table, the only reading that trips a deal-breaker."}
+  - {id: "F5", severity: "MAJOR", artifact: "B07", location: "2C case A and headline; capex_embedded_growth_pct; FLAG-CAPEX-FUNDING; 6E stage 9 hand-off", claimed: "50-55 Cr under execution (wire rod 20-25, solar 30); 20.4%", recomputed: "solar claim-only per B07's own tags; documented capex under execution wire rod 20-25 Cr; 7.8-9.7%, midpoint 8.7%", note: "em_score and combined class unchanged; field feeds stage 9 and the stage 11 CAPACITY basis; B07's own quality note puts consolidated revenue from this capex near zero. Emit 8.7; keep 20.4 as upper bound."}
+  - {id: "F6", severity: "MINOR", artifact: "B07", location: "2A solar row; F2 table solar row; 6D; G1 and Figure changes; 2A MEPL funding; C1", claimed: "anchors 'run 1 reading of the PR and deck series', 'stage 5 record', 'EBITDA on the stage 2 basis', 'standalone related-party notes', 'AR26 related-party notes'", recomputed: "source page or NOT FOUND for each", note: "No score effect; residual of the run 2 anchor remediation."}
+critical_count: 0
+major_count: 3
+minor_count: 3
+acceptance_rate: 95.6             # rules passed / rules checked, % (86 of 90)
 ```

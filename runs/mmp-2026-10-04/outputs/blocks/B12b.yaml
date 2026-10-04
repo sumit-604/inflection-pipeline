@@ -1,0 +1,43 @@
+stage: B12b
+company: "MMP"
+run_date: "2026-10-05"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 27
+caught: 15
+partially_caught: 7
+missed:
+  - {severity: "MINOR", item: "Fire add-back messaging: AR25 says all customer demands were fulfilled during the suspension, FY26 messaging claims INR 45-50 Cr revenue loss and INR 11-12 Cr PAT effect; deck shows 40-50 and 45-50 ranges; B05 credits it as internally consistent", anchor: "AR25 L1129-1131; PR-Q4 [page 3] L121-127; DECK-MAY L65, L234"}
+  - {severity: "MINOR", item: "CFO says FY27 powder/foil growth largely volume while MD says value-added grades within same capacity; powder 80%, rolling 80-85%, no capex for 2 years", anchor: "C26 [page 16] L639-648; [page 18] L716-718, L737-742"}
+  - {severity: "MINOR", item: "Wire rod capex INR 13-15 Cr restated as INR 20-25 Cr in Aug 2026 deck; SPV moved from MMP Alutech to MMP Cables; B05 capex sum still uses 13-15", anchor: "DECK-AUG [page 9] L202; AR25 L2401-2404; AR26 L1342"}
+  - {severity: "MINOR", item: "'Maiden' dividend label false; dividends paid INR 381.04 L (FY25) and INR 508.05 L (FY26); B05 records maiden as FACT", anchor: "AR26 L1057-1061, L4946, L8527; AR25 L801-805; AGM L240-241"}
+  - {severity: "MINOR", item: "Jul 2022 call deferred four questions to email (industry structure, capital allocation and dividend, tax rate, volume impact) and answered top-3 pharma ramp with 'I do not have that data'", anchor: "C22 [page 10-11] L393-396, [page 14] L513-515, [page 16] L594, [page 18] L640"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
+credibility_grade_concur: "concur - C holds: trailing four quarters met core powder guidance and missed conductor and new-vertical guidance; unpaired 2022 pledges (asset turn, gross margin, FCF, hedging, conversion) push toward the low edge of C but sit outside the A26.4 window"
+findings:
+  - {severity: "MAJOR", location: "B05 2A, 4D", finding: "Foil conversion utilisation flat 45-50% (Jul 2022) to ~45% (May 2026) not paired; four-year stall of the foil value-add lever missing from tracker and red flags", anchor: "C22 [page 13] L480-481, [page 6] L231-232; C26 [page 16] L641, [page 21] L862-870"}
+  - {severity: "MAJOR", location: "B05 2A, FLAG-FUNDING", finding: "2022 pledges of 5x asset turn and ~27% gross margin in two years and FCF positive in FY24 absent from tracker (FY24 GM 22.3%, FY26 20.5%; CFO plus CFI FY26 -1.6 Cr derived); June 2026 ECLGS working-capital approval not recorded", anchor: "C22 [page 10] L377-385, [page 15] L556; DECK-MAY [page 28] L238, [page 30] L247; BM-JUN L27-28"}
+  - {severity: "MINOR", location: "B05 2C, 3C, red_flags", finding: "Inventory gain scored as transparency; PR commentary omits it; 2022 hedging pledge untracked (B06 FLAG-HEDGE-DIFFERENCE and B05 separator keep decision path intact)", anchor: "PR-Q4 [page 3] L108-109; PR-Q1 [page 3] L114-116; C22 [page 12] L451-453"}
+  - {severity: "MINOR", location: "B05 input_gaps, analyst_note", finding: "Q4 FY26 deck marked NOT FOUND but is in inputs/presentation and states ~20-25% target; 'appeared only in a footnote' is wrong; flag strengthens", anchor: "DECK-MAY [page 9] L86; DECK-AUG [page 9] L219-220"}
+  - {severity: "MINOR", location: "B05 2C", finding: "CFO did not restate 20-25% on the call; the line is an asterisked post-call insertion worded 'reiterates'", anchor: "C26 [page 20] L824-832"}
+  - {severity: "MINOR", location: "B05 repeated_evasions", finding: "OVERSTATED for 2022: CFO gave GM ~27% and 5x asset turn; 2026 refusal beside same-call segment percentages not drawn", anchor: "C22 [page 10] L382-385; C26 L809, L438-439, L554-556"}
+  - {severity: "MINOR", location: "B05 red flag MEDIUM approvals", finding: "OVERSTATED: 'several boards' backed by PR-Q3 and PR-Q1; real contradiction is the only named approval (<=33 kV) sitting in the band the MD calls non-focus", anchor: "PR-Q3 [page 4] L160-162; PR-Q1 [page 5] L187-188; C26 L569-570, L689-692"}
+  - {severity: "MINOR", location: "B05 2A row 8", finding: "Two-part AR25 MEPL promise half-scored DELIVERED; full capacity by end FY26 missed; should be PARTIAL (tally 6/3/9)", anchor: "AR25 [page 18] L852-853; PR-Q4 [page 2] L86, L92"}
+  - {severity: "MINOR", location: "B05 2B Positive", finding: "Fire quantification credited without testing AR25 'all customer demands fulfilled' or deck 40-50 vs 45-50; separator: filed FY26 quarterly powder tonnage", anchor: "AR25 L1129-1131; DECK-MAY L65, L234"}
+  - {severity: "MINOR", location: "B05 1B, guidance", finding: "'Maiden' dividend recorded as FACT; dividends paid FY25 and FY26", anchor: "AR26 L4946, L8527; AR25 L801-805"}
+  - {severity: "MINOR", location: "B05 1B, T6, capex sum", finding: "Wire rod capex stale at INR 13-15 Cr vs INR 20-25 Cr in Aug deck; SPV switch unflagged", anchor: "DECK-AUG [page 9] L202; AR26 L1342"}
+  - {severity: "MINOR", location: "B05 1B powders", finding: "'largely volume' recorded without MD value-mix statement or capacity ceiling", anchor: "C26 L639-648, L716-718, L737-742"}
+  - {severity: "MINOR", location: "B05 2E", finding: "2022 email deferrals and 'do not have that data' not logged", anchor: "C22 L393-396, L513-515, L594, L640"}
+  - {severity: "MINOR", location: "B05 3C", finding: "Analyst misquoted as Rs 18 Cr interest and Rs 150 Cr capex; call says INR 13 Cr finance cost on INR 180 Cr gross borrowing, capex 30+15+90", anchor: "C26 [page 15] L592-595"}
+  - {severity: "MINOR", location: "B05 3B", finding: "Pass-through tone shift not compared with 2022 7-10 day settlement", anchor: "C22 [page 17] L624-628; C26 [page 18] L737"}
+  - {severity: "MINOR", location: "B05 1C, 4D", finding: "Aug deck copy-forward of Q4 exceptional bullet and header, and PR-Q3 insulator unit slip, missing from disclosure-control evidence", anchor: "DECK-AUG L84, L100-101; PR-Q3 L152; PR-Q4 L86"}
+  - {severity: "MINOR", location: "B05 dropped_triggers", finding: "Security printing foil still targeted in Aug deck footnote; 'dropped' is PR-only", anchor: "DECK-AUG L225"}
+  - {severity: "MINOR", location: "B05 2E note", finding: "2022 'first earnings call' was said by the CMD, not only a participant", anchor: "C22 [page 3] L95-96"}
+critical_count: 0
+major_count: 2
+minor_count: 16
+material_found: 9
+material_caught: 6
+acceptance_rate: 67
+coverage_basis: "9 material (0 CRITICAL, 9 MAJOR) of 27 listed; 6 fully caught, 3 partially caught (I3, I4, I6), 0 missed; strict rate 6/9 = 66.7% with partials not credited, 9/9 = 100% if partials count as already had; 18 MINOR listed, 5 missed; spot checks 6 checked, 5 confirmed, 1 wrong"

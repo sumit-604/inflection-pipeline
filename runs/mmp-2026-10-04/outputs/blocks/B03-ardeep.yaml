@@ -1,0 +1,82 @@
+stage: B03-ardeep
+company: "MMP"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00 CORPUS GAPPED: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets are empty (no CSV); Data_Sheet.csv only (used here for FY17-FY26 and quarterly margins)"
+  - "B00: scanned Q4 FY26, Q3 FY26 and FY26 audited results are image scans with no OCR; not used in this stage (AR FY26 text used)"
+  - "B00: ARFIN transcripts absent; peer transcripts only APARINDS and MAANALU; no-concall mode (concalls May 2026 and Jul 2022 only)"
+  - "B00: NSE results clarifications of 2026-03-05 and 2026-06-23 have no company reply in the corpus"
+  - "B00: announcements and shareholding repaired by hand; selection, not full list; collector warnings on BSE scrip code, empty research/ and prospectus/"
+  - "Stage-level NOT FOUND: insurer acceptance and receipt of the 793.05 L claim, business-interruption claim, fire root cause and inspector findings, auditor names of Star and Toyal, statutory auditor tenure before 2022, CEO-to-median pay multiple, Risk Management and Project Monitoring Committee meeting counts, volume-versus-price split of powder growth, installed capacity (AR26 gives none), Phase III 2,500 MTPA status, capitalised interest, date of screener price 449.6, first appointment date of Bapna and Khanna, reason for their 10 Aug 2026 resignations"
+flags:
+  - {type: FLAG-CASH, reason: "C CFO 5,328.97 L includes 1,723.34 L short-term borrowing and 1,909.56 L payables build (68.2% of CFO); CFO net of both 1,696.07 L against gross capex about 5,560.50 L; payable days 24.8 vs 17.8; FCF (231.53) L (C p.173-174; S p.130; derived)"}
+  - {type: FLAG-FIRE-RECOVERY, reason: "AR25 p.24 says loss 150-200 Mn 'fully insured'; AR26 recognises 793.05 L of 1,672.01 L (47.4%), nil received; KAM gives no insurer-acceptance conclusion; Note 14 and Note 52 give different bases (S p.122, p.159, p.83)"}
+  - {type: FLAG-FUNDING, reason: "S cash 56.38 L; guarantees 6,688 L (22.0% of NW); commitments C 5,642.27 L vs undrawn subsidiary lines 3,126.32 L (B02); 76.6% of C debt due within a year; parent 7.00% preference into MEPL against about 8.6% own borrowing cost (S p.119, p.157; C p.220, p.241)"}
+  - {type: FLAG-DISCLOSURE-INTEGRITY, reason: "AOC-1 subsidiary totals and PAT (25.77 L combined loss) do not tie to C statements (Insulators result (329.13) L, subsidiary assets 4,618.90 L); four CSR totals; wire-rod dates conflict (installation July 2027, trials H2 FY27); Board says 17.29 Cr vs Note 52 16.72 Cr (AR26 p.30, p.37, p.25; S p.159)"}
+phase_verdicts: {p1: "YELLOW", p2: "YELLOW", p3: "YELLOW", p4: "YELLOW", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "WATCHLIST (transition, GARP and Turnaround overlap; no strategy passes)"}
+overall_quality: 5.25
+quality_components: {governance: 5, accounting: 6, balance_sheet: 5, earnings: 5}
+kill_switch_notes:
+  - "P1: no reason to stop; unmodified opinion and clean CARO; yellow for fire KAM without a stated conclusion, other-auditor reliance on 820.78 L associate profit, audit fee 3.44 L"
+  - "P2: no reason to stop; totals tie; recovery, funding and AOC-1 items need operator attention"
+  - "P3: no reason to stop; BBB+/Stable and solvent; cash conversion rests on borrowing and payables"
+  - "P4: no reason to stop; guidance partly delivered; MD&A has no financial numbers and wire-rod dates conflict"
+  - "P5: no reason to stop; no pledge or selling; executive promoter joins Audit Committee, two committee chairs rotated on 10 Aug 2026"
+  - "P6: no reason to stop; transition items slipped without being named (MEPL ramp, LVPC greenfield, Phase III)"
+triple_pass_verification:
+  verified: 12
+  discrepancies:
+    - {finding_rank: 3, triple_pass_value: "fire inventory removed from EBITDA 583.03 L (17.87 + 39.16 + 526.00)", ar_value: "Note 52 inventory loss 671.45 L; gap 88.42 L not located (stores and spares in other expenses or slip)", note_ref: "S Note 31-32 p.133-134; S Note 52 p.159"}
+    - {finding_rank: 4, triple_pass_value: "Star described as a listed associate", ar_value: "Star CIN U24110MH1974PLC017301 = unlisted; OCI (168.32) Star vs (167.96) group is consistent", note_ref: "AR26 p.31; C p.172, p.238"}
+    - {finding_rank: 8, triple_pass_value: "liens 2,545.72 L vs term deposits 242.24 L", ar_value: "2,000 L is the borrowing secured, 445.72 L is the BG amount (equals Note 47a), Federal Bank deposit lien is 100 L; deposits 242.24 L confirmed; no lien-over-deposit contradiction", note_ref: "S Note 7 p.120; Note 14 p.122; Note 23d p.130; Note 47 p.157"}
+missing_risks:
+  - {risk: "Subsidiary funding and guarantee exposure not in MD&A threats", evidence: "guarantees 6,688 L (S p.157); commitments C 5,642.27 L (C p.241); parent cash 56.38 L (S p.96)"}
+  - {risk: "Insurance recovery gap: 'fully insured' became 47.4% claim, nil received", evidence: "AR25 p.24; S p.122, p.159"}
+  - {risk: "Promoter and key-person dependence: MD and WTD age 70, personal guarantees, promoter-company mortgage", evidence: "AR26 p.6-7; S p.126-127; C p.205"}
+  - {risk: "Foil raw-material supplier dependence (Hindalco named in AR25, absent in AR26)", evidence: "AR25 p.18; AR26 p.26"}
+  - {risk: "Cash conversion rests on supplier credit and working-capital borrowing", evidence: "S p.95, p.130; C p.173"}
+  - {risk: "Associate profit non-cash, 26.5% of C PAT, Star unlisted and promoter-linked", evidence: "C p.172, p.238; AR26 p.31"}
+  - {risk: "Legal and regulatory aftermath of 7 fatalities not disclosed (no contingent liability, no root cause)", evidence: "AR26 p.25; S p.157; AR25 p.143"}
+  - {risk: "Disclosure control: AOC-1, CSR and date inconsistencies", evidence: "AR26 p.37, p.40-42; S p.122"}
+guidance_table:
+  - {claim: "Powders FY26 single-digit growth", number: "single digit; delivered +15.1% (S p.132)", timeframe: "FY26 (AR25 p.18)", credibility: "high, conservative"}
+  - {claim: "Powders Phase III 2,500 MTPA fully operational", number: "2,500 MTPA", timeframe: "end Q2 FY26 (AR25 p.18)", credibility: "untestable, AR26 silent (NOT FOUND IN DOCUMENT)"}
+  - {claim: "Conductors positive momentum with further improved margins", number: "delivered +3.4% revenue, margin 4.86% vs 8.27% (C p.226)", timeframe: "FY26 (AR25 p.18)", credibility: "low, missed"}
+  - {claim: "MEPL Phase I commercial production and full capacity", number: "Q2 FY26 start, full capacity end FY26; delivered revenue 231.94 L, loss (329.13) L", timeframe: "FY26 (AR25 p.18, p.22; AR26 p.30, p.53)", credibility: "mixed, ramp about three quarters late"}
+  - {claim: "Fire loss 150-200 Mn, fully insured", number: "loss 1,672.01 L inside range; claim 793.05 L = 47.4%", timeframe: "FY26 (AR25 p.24; S p.159)", credibility: "quantum good, insurance claim not borne out"}
+  - {claim: "Powders FY27 revenue growth with higher EBITDA margin", number: "+13% to 15%", timeframe: "FY27 (AR26 p.26)", credibility: "medium-high on revenue, margin unproven"}
+  - {claim: "Exports growth in FY27", number: "+50%", timeframe: "FY27 (AR26 p.26)", credibility: "medium; FY26 exports +66.8%"}
+  - {claim: "Foils FY27 growth and margin improvement; Security Printing and Lidding Foil launches", number: "+15% revenue; launches early Q3 FY27", timeframe: "FY27 (AR26 p.26)", credibility: "medium; margin claim soft (FY26 2.00% vs 1.96%)"}
+  - {claim: "MEPL sales ramp", number: "meaningful ramp", timeframe: "from Q3 FY27 (AR26 p.30)", credibility: "medium, slipped once"}
+  - {claim: "MCPL wire rod 18,000 MTPA", number: "installation from July 2027 and plant trials H2 FY27 (dates conflict)", timeframe: "FY27 to FY28 (AR26 p.30)", credibility: "unreliable until dates clarified"}
+monitorables:
+  - {metric: "Insurance receipt against 793.05 L", threshold: "at least 80% (634 L) received by 31 Mar 2027", where: "other current financial assets, Q2/Q3 FY27 notes", why: "write-down would hit exceptional items"}
+  - {metric: "Insulators segment revenue and result", threshold: "one quarter above FY26 full-year 231.94 L by Q4 FY27; quarterly loss under 80 L", where: "segment note, quarterly results", why: "transition proof gate"}
+  - {metric: "Quarterly operating margin", threshold: "at or above 8.7% for three straight quarters (FY25 base 9.22%)", where: "quarterly results", why: "separates fire and stock-build readings"}
+  - {metric: "Conductors segment margin", threshold: "at or above 8.27% (FY25)", where: "segment note", why: "FY26 guidance miss"}
+  - {metric: "CFO net of borrowing and payables / EBITDA", threshold: "above 50% (FY26 25.6%)", where: "cash flow, Notes 23-24", why: "cash quality"}
+  - {metric: "Year-end payable days", threshold: "not above 24.8", where: "Note 24, Note 43", why: "payables stretch"}
+  - {metric: "Gross debt, DSCR, ND/EBITDA", threshold: "debt at or below 18,452.46 L; DSCR at or above 2.5; ND/EBITDA at or below 3.0x", where: "Note 18, Note 43", why: "funding stress"}
+  - {metric: "Subsidiary reimbursement closing balances", threshold: "disclosed; MCPL 471.75 L expected", where: "RPT note", why: "hidden parent funding"}
+  - {metric: "Associate profit share of PBT and Star dividend", threshold: "under 20% of PBT; dividend above 9.98 L", where: "C Notes 46 and 49", why: "cash backing"}
+  - {metric: "Wire-rod and LVPC timeline", threshold: "one consistent date set", where: "Board's Report, Q2 FY27 presentation", why: "resolves date conflict"}
+ar_new_downstream_entities:
+  - {name: "MMP Cables Private Limited", where_in_ar: "RPT note S p.152-154 (reimbursements 1,139.54 L, equity 500 L); C Note 18 p.205 (Kotak term loan, guarantee 3,288 L)", entity_type: "wholly owned subsidiary and RPT counterparty; first appears in financials this year"}
+  - {name: "MMP Alutech Private Limited", where_in_ar: "S p.153 (loan received 24.00 L, repaid 20.40 L; equity 25.00 L); AR26 p.31 ('not functional yet')", entity_type: "wholly owned subsidiary and RPT counterparty"}
+  - {name: "Kotak Mahindra Bank Limited (as lender to MCPL, term loan 3,188 L sanctioned, 512.70 L drawn)", where_in_ar: "C Note 18 p.205; S Note 47 p.157", entity_type: "lender and guarantee beneficiary for a subsidiary"}
+  - {name: "AVL Metal Powders (technology and sales partner for AAC grade powder, 'four decade old')", where_in_ar: "Annex D, AR26 p.43; not in AR25 text", entity_type: "technology and sales partner"}
+  - {name: "NOT NAMED: Nepal commercial customer for MEPL insulators", where_in_ar: "Board's Report p.30", entity_type: "export customer, unnamed"}
+  - {name: "NOT NAMED: prospective United States customers for MEPL", where_in_ar: "Board's Report p.30", entity_type: "export prospects, unnamed"}
+strengths_top3:
+  - "Revenue +18.8% through a 50-day Umred stop; exports +66.8%; powders +15.0% against single-digit guidance (S p.132; AR25 p.18)"
+  - "Trade receivables clean (96.3% not due), no covenant breach, no default, promoter 74.49% unpledged (B02; NSE SHP 30 Jun 2026)"
+  - "Fire loss recognised in full and segment note shows which lines earn (C p.226-227)"
+red_flags_top3:
+  - "Funding of subsidiary capex: S cash 56.38 L, guarantees 6,688 L, commitments 5,642.27 L vs 3,126.32 L undrawn, 76.6% of debt due within a year"
+  - "Earnings and cash quality: 68.2% of CFO is borrowing plus payables; margin fall wider than the fire explains; associates 26.5% of PAT with 9.98 L dividend"
+  - "Disclosure and guidance reliability: AOC-1 does not tie, wire-rod dates conflict, claim is 47.4% of a 'fully insured' loss, MEPL ramp slipped about three quarters"
+best_fit_strategy: "WATCHLIST on the transition (GARP and Turnaround overlap); no strategy passes"
+one_line_verdict: "Revenue and exports grew, but PAT fell 20%, cash conversion leans on borrowing and payables, and the electrical-products climb has not yet shown revenue or margin: WATCHLIST."
+analyst_note: "No Chairman's letter exists; the MD&A (p.49-55) has no company numbers, so stage 5 must read Board's Report p.25-26 and p.30-31 for guidance. Three corrections to B02: (1) the lien-exceeds-deposit finding is a reading error (2,000 L and 445.72 L are the obligations secured; the real deposit lien is 100 L); (2) Star Circlips is unlisted; (3) Note 52 inventory loss is 671.45 L, 88.42 L above what Notes 31-32 move out of EBITDA, so fire-inclusive EBITDA is 7.23% to 7.33%. The margin story has two readings: fire plus start-up drag, or a FY25 base lifted by a 2,069.76 L stock-build credit (45% of FY25 S PBT). Q2 FY26 operating margin of 6.85% (screener) supports the second. Separator: Q3 and Q4 FY27 margin and the Insulators segment ramp. AOC-1 conflicts with the C statements. Screener price 449.6 versus FY26 year-end 189.11 has no capture date."

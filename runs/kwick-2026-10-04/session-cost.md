@@ -19,3 +19,4 @@ session (claude-opus-5-5) and are not metered per stage.
 | 8 | promoter (web) | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 244,642 | 10m25s | 1 |
 | 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | 273,438 | 5m11s | 1 |
 | 7 | emoat | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 151,372 | 4m53s | 1 |
+| 9 | tam (web) | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 138,447 | 7m17s | 1 |

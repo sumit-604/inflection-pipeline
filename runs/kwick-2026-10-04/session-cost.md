@@ -15,3 +15,4 @@ session (claude-opus-5-5) and are not metered per stage.
 | 2 | notes pass 3 | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 87,618 | 2m22s | 1 |
 | 3 | ardeep | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 421,167 | 17m16s | 1 |
 | 4 | bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | 122,894 | 3m49s | 1 |
+| 5 | concall (no-concall mode) | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 253,924 | 11m24s | 1 |

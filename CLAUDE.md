@@ -41,7 +41,9 @@ target, 3-5 year holds.
 - Never treat building as a footnote to governance (Master v3.7 Rule G).
   Role 2 Section 3G ledgers what the promoter built, raised, deployed, and
   delivered under constraint, and states its Pillar 3 line. The ledger
-  never lifts a position cap the promoter verdict imposes.
+  never lifts a cap set by a promoter AVOID or an INTEGRITY concern; for a
+  STRUCTURE concern, three of four evidenced ledger heads size as TRUSTWORTHY,
+  with each concern a named tripwire (operator ruling OR-14).
 - Never answer a failure-catalogue pattern-match without the nearest
   success name and the observable difference (Master v3.7 Rule I). While
   frameworks/success_catalogue.md holds fewer than four names, say

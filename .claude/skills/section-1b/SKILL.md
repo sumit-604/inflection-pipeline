@@ -70,6 +70,7 @@ Load only the chunks the current step needs. Paths are relative to this skill fo
 - OR-8. Entry divisor. Confirmed: entry = exit-consistent fair value ÷ (1 + tier hurdle)^N, with 1.25 for Tier A and 1.20 for Tier B. Chunk 06.
 - OR-12 (operator, 2026-10-03). Amendment 25 fast-growth trigger. FTTCP defines no ACCELERATING state, so "FTTCP Revenue Transition = ACCELERATING" reads as the forward Revenue Transition verdict FIRING. The Amendment 21 run-rate test (growth of 40% YoY or more) is unchanged. Chunk 08.
 - OR-13 (operator, 2026-10-03). Steel sector caps. Commodity steel 20x (confirms the SHYAMMETL and MANINDS rulings). Value-added stainless and specialty steel 25x (new cap). Chunk 05.
+- OR-14 (operator, ruled 2026-09-09, recorded 2026-10-04). Promoter CONCERN splits into INTEGRITY (ledger cannot offset; Small ceiling; AVOID possible on the promoter alone) and STRUCTURE (three of the four Entrepreneur Ledger heads evidenced from filed or counterparty sources = TRUSTWORTHY for sizing, each concern a named tripwire; fewer = Small ceiling). A CONCERN never forces AVOID by itself. Master Role 2 Section 7. Chunk 03.
 
 ## Open rulings (carried as written until the operator rules)
 

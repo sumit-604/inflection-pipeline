@@ -1,0 +1,74 @@
+stage: B08-promoter
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: partial                # searches blocked or empty, see searches_skipped
+input_gaps:
+  - "No filed shareholding pattern in corpus (BSE API blocked); Sep-2026 pattern is web, non-anchored (promoters 64.65%, DII 10.85% one DII, FII 1.49%, 23 FIIs); DII and FII names NOT FOUND"
+  - "Dealers and vehicle builders behind kits for 95 Mobile CSI vehicles (Rs 2,035.74 lakh) and the non-government buyers: names NOT FOUND (LBF-1 open)"
+  - "Owners of Gostocks Financial Services Pvt Ltd (65.84% parent of Gostocks Fintech); business and ownership of 4 MD directorships (Mokka Kefi and Cabana, Esource Lighting LLP, Brrain Source, Archos Techno Solutions) and 11 promoter-group entities: NOT DISCLOSED"
+  - "MCA master data, strike-off and charges for all promoter entities: PENDING LIVE VERIFICATION (Zauba 403)"
+  - "Independent confirmation of SAT stay for CCV (Appeal 278 of 2026), outcome of Madras HC hearing 19-Aug-2026, shareholder approval of Dr Mukesh: NOT FOUND"
+  - "Promoter or KMP trades 03-Sep to 01-Oct-2026 (SAST, PIT filings): NOT FOUND"
+  - "Employee reviews (Glassdoor, AmbitionBox): NOT FOUND"
+flags:
+  - {type: FLAG-PROMOTER-WATCH, verdict: "CAUTION (upper end)", top_findings: ["Board and CXO quality red: three independent-director exits in ten months, Audit Committee only from 04-Jul-2026 with the MD as member (pp.194, 196)", "Captive promoter-group vendors: Gostocks Fintech sold Kwick 62.3% and Extreme Covet 48.3% of their FY25 turnover; Gostocks software 78.70 lakh is about 57% of CWIP 137.17; parent owner NOT DISCLOSED (pp.213-215, 250)", "Disclosure conduct: Reg 30 NFSU note 27-Sep-2026 one day after the 26-Sep no-information reply; investor deck FY26 PBT 1,921.45 vs filed 1,821.45 (Rs 100 lakh error); deck 130 customers vs prospectus 95", "Promoter cash-out and gifts: OFS Rs 972.00 lakh = 71.96% of FY26 PAT; FY25 cash sales Rs 180.03 lakh at Rs 569; 1.00% gifted to the later CFO (pp.80-81, 276)", "LBF-1 not cleared and not confirmed: no related-party sale in Annexure VIII, but dealer and buyer names absent"]}
+verdict: CAUTION
+scorecard: {clean: 3, caution: 6, red: 1}
+deal_breakers:
+  - "Auditor resignation within 3 years, triggered on its face: Ghewarchand Rathan Kumar, resignation 25.04.2025, stated reason 'firm was not a peer reviewed auditor as required under the SEBI (ICDR) Regulations, 2018 as the company is proposing to undertake an initial public offering' (prospectus p.67). Recorded, not enforced; stated reason is procedural"
+  - "Multiple mid-term independent exits within 3 years: BORDERLINE. Vasudevan (5 days), Panchi Samuthirakani (9 days), Latha Venkatesh (about 292 days, resigned 05-Jul-2026) (p.194). One true mid-term exit. Recorded, not enforced"
+adverse_findings:
+  - {finding: "Three independent-director exits in ten months; Audit Committee and NRC constituted only 04-Jul-2026; MD is an Audit Committee member; two sitting independents (age 33 CS with three other boards per web; doctor with Rs 100.10 lakh defamation suit)", evidence_tier: "VERIFIED", source: "Prospectus pp.186-188, 194, 196, 198, 272", date: "2026-08-31"}
+  - {finding: "Captive promoter-group vendors with no arm's-length evidence: Gostocks Fintech 58.95 of 94.64 (62.3%) and Extreme Covet 31.20 of 64.57 (48.3%) of FY25 turnover; Gostocks software 20.00 FY26 and 58.70 FY25; owner of the 65.84% parent not disclosed", evidence_tier: "VERIFIED", source: "Prospectus pp.213-215, 250; B03", date: "2026-08-31"}
+  - {finding: "Disclosure conduct: Reg 30 note on third-party NFSU campus 27-Sep-2026 after the 26-Sep reply saying no information to disclose; deck PBT 1,921.45 vs Annexure IX 1,821.45 (deck total income less expenses = 1,821.44); deck 130 customers vs prospectus 95; MD pay FY26 126.72 vs stated 94.00 (+34.8%) and conflicting year labels pp.191 vs 200 vs 250", evidence_tier: "VERIFIED", source: "BSE announcements 26, 27, 30-Sep-2026; prospectus pp.191, 200, 250, 252", date: "2026-09-30"}
+  - {finding: "Promoter cash-out: OFS 10,80,000 shares at Rs 90 = Rs 972.00 lakh (71.96% of FY26 PAT; Sejal Shah sells 6,48,000 = Rs 583.20 lakh); FY25 cash sales 31,639 shares at Rs 569 = Rs 180.03 lakh; 63,279 shares gifted, 21,093 to Vishal Jain, CFO from 01-Aug-2025 (1.00% = Rs 151.87 lakh at Rs 90)", evidence_tier: "VERIFIED", source: "Prospectus pp.80-81, 203, 276", date: "2026-08-31"}
+  - {finding: "RoC Section 450 penalty 30-Jun-2026: Rs 2,00,000 company and Rs 50,000 on MD Shammer Shah for forensic business run from 2015 outside MoA objects until alteration 22-Apr-2025; paid Jul-2026", evidence_tier: "VERIFIED", source: "Prospectus pp.27-28, 178-179", date: "2026-06-30"}
+  - {finding: "BRLM Corporate CapitalVentures (sole BRLM, 100% underwriter Rs 5,077.44 lakh): SEBI order 18-Aug-2026, six violations, one-month assignment ban, SAT stay stated only in Kwick's prospectus; CCV Emerging Opportunities Fund-I (CCV director Kulbhushan Parashar a unitholder) took 35,153 shares at Rs 569 in the Dec-2024 placement. Gatekeeper fact, not a promoter act", evidence_tier: "VERIFIED (order, prospectus); stay beyond prospectus UNVERIFIED", source: "SEBI order WTM/AS/CFD/CFD-SEC-5/32665/2026-27; prospectus pp.33-34", date: "2026-08-18"}
+  - {finding: "Key-person risk: MD aged 60 and COO aged 64 hold technical and customer knowledge; 33-34 staff; no named successor", evidence_tier: "VERIFIED", source: "Prospectus pp.199-207; B03", date: "2026-08-31"}
+transition_evidence:
+  - {item: "Promoter loans fully repaid FY26 (382.39 lakh repaid, balance nil from 267.93 at FY25)", strength: "real, favourable", anchor: "Prospectus pp.250-251"}
+  - {item: "Audit Committee and NRC constituted 04-Jul-2026", strength: "real but recent; MD sits on Audit Committee", anchor: "Prospectus pp.196, 198"}
+  - {item: "Auditor moved to a peer-reviewed firm (A B C D and Co LLP), not Big-4", strength: "partial", anchor: "Prospectus pp.66-67"}
+  - {item: "New outside CFO (CA, ex-Deloitte, age 27) and CS", strength: "weak; CFO holds 1.00% from promoter gift", anchor: "Prospectus pp.80, 201, 204"}
+  - {item: "Two new independent directors", strength: "weak; thin finance and domain credentials", anchor: "Prospectus pp.186-188"}
+  - {item: "Institutional holders 10.85% DII (one) and 1.49% FII (web, non-anchored, Sep-2026 pattern)", strength: "unverified, names NOT FOUND; part may be BRLM-linked funds", anchor: "valueresearchonline via search 2026-10-04"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: no pledge at any date in build-up tables; locked-in shares 42,87,290 (3 yr), 39,04,123 (2 yr), 39,04,123 (1 yr) (pp.79-84)"
+searches_performed:
+  - "Shammer Saralal Shah Kwick promoter"
+  - "Kwick share price upper circuit Sep-2026"
+  - "Kwick IPO red flags related party Gostocks Extreme Covet"
+  - "Corporate Capital Ventures SEBI order SAT stay Aug-2026"
+  - "Kwick shareholding pattern Sep-2026"
+  - "Fetch freepressjournal CCV article"
+  - "Fetch moneylife CCV article"
+  - "Shammer Shah court SEBI fraud case"
+  - "Kwick Glassdoor AmbitionBox"
+  - "Kwick stock surge NFSU Varanasi price query"
+  - "Extreme Covet CIN directors"
+  - "Gostocks Fintech CIN"
+  - "Kwick IPO subscription anchor allottees"
+  - "Zauba Extreme Covet Shammer Shah director"
+  - "Kwick Rs 569 placement CCV Kulbhushan Parashar conflict"
+  - "SEBI Kulbhushan Parashar CCV Oriana Power probe"
+  - "Wildnet Technologies Sonia Vaid"
+  - "A B C D and Co LLP auditor"
+  - "Dr V Mohan vs Dr B Mukesh defamation"
+  - "Kwick IPO analyst concerns"
+  - "Kwick news tender investigation raid"
+  - "Ashok Hinduja SEBI court fraud"
+  - "Kwick promoter OFS Sejal Shah governance"
+  - "Kwick surveillance ASM price band Oct-2026"
+searches_skipped:
+  - "Zauba Gostocks Financial Services and Gostocks Fintech pages: HTTP 403"
+  - "valueresearchonline shareholding page: HTTP 403"
+  - "angelone CCV probe article: HTTP 410"
+  - "Anchor allocation letter PDF: unreadable"
+  - "MCA master data, strike-off, charges for promoter entities: not accessible, PENDING LIVE VERIFICATION"
+  - "SEBI, SAT and exchange order databases queried directly: not done"
+  - "BSE shareholding pattern and SAST/PIT filings: BSE API blocked"
+  - "Glassdoor and AmbitionBox Kwick reviews: nothing returned"
+  - "Independent SAT stay confirmation for CCV and Madras HC 19-Aug-2026 outcome: NOT FOUND"
+verdict_basis: "No regulator action, no pledge and no promoter litigation, but board and disclosure record is weak and promoter-group vendors are captive; LBF-1 buyer names not disclosed."
+analyst_note: "LBF-1: Annexure VIII shows no related-party sale or receivable FY24-26, so no link is shown. A link is not ruled out. Dealer and buyer names are absent, and the MD holds four directorships (Mokka Kefi and Cabana, Esource Lighting LLP, Brrain Source, Archos Techno) plus eleven promoter-group entities with no stated business. One observation separates the readings: a dealer or non-government buyer whose partner or director matches that list (MCA lookup, PENDING LIVE VERIFICATION). LBF-3: promoter pay plus rent, interest and group purchases = 314.55 lakh FY26 = 23.3% of PAT (54.5% FY24), falling; group purchases are 1.13% of purchases; the issue is shape, not size. Upgrade trigger: Gostocks parent owned by the MD without arm's-length proof moves this to CONCERN. Report 08-promoter.md has two cosmetic slips: a garbled page cite in the verdict card (pledge row; correct cite is p.84 and pp.79-81) and a stray phrase in 5A."

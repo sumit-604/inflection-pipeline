@@ -1,0 +1,77 @@
+stage: B04-bizmodel
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No annual report; AR substitute is final Prospectus 31-Aug-2026 (Business pp.130-165, KPIs pp.162-164, restated financials). Segment margins, order book, contract tenor, revenue recognition rule, per-order or per-kit economics: NOT FOUND"
+  - "Buyer names and segment placement of 2,035.74 lakh dealer-route kits for 95 vehicles: NOT FOUND (top-10 customers and suppliers anonymised, Pros. pp.160-161)"
+  - "Named competitors and market share: NOT FOUND (prospectus says no listed peer, p.149)"
+  - "Investor presentation present (30-Sep-2026) but unreliable: customers 130 vs 95, PBT 1,921.45 vs 1,821.45 (deck own P&L sums to 1,821.44). Deck market-size figures PENDING LIVE VERIFICATION. Product catalogue holds no pricing or margin data"
+flags:
+  - {type: FLAG-GM-COMPRESSION, reason: "Gross margin on COGS 37.30% / 31.15% / 27.06% (Pros. p.162); opex ratio 19.5% / 12.4% / 9.1% (computed, Deck slide 19); EBITDA margin flat 18.0% only because opex dilution offset gross margin loss; little opex room left"}
+  - {type: FLAG-CUSTOMER-ID, reason: "Non-government 4,733.92 lakh (44.78%) unnamed, 82.7% of FY26 growth; 2,035.74 dealer-route kits for 95 vehicles = 43.0% of non-government revenue, segment placement not stated (Pros. pp.150, 160)"}
+  - {type: FLAG-CONCENTRATION, reason: "Rental 925.41 lakh (8.75%) equals one customer, Government of Bihar (Pros. pp.24, 143); Bihar total 953.22 so non-rental Bihar about 27.81 [INFERENCE]; Top Supplier 1 40.86% of purchases vs 12.50% FY24 (Pros. pp.161-162)"}
+  - {type: FLAG-DECK-RELIABILITY, reason: "Deck says 130 customers (slide 6) vs 95 (Pros. p.164); deck PBT 1,921.45 vs prospectus 1,821.45; deck arithmetic confirms prospectus"}
+  - {type: FLAG-NO-MOAT, reason: "No moat visible in numbers; growth credited to word of mouth and liaisoning (Pros. p.157); OEM tie-ups non-exclusive (Pros. p.149)"}
+  - {type: FLAG-SECTOR-CAP, reason: "Business model supports Cybersecurity / VAD 25x (resale and integration, GM 27.06%); does not support Defence / strategic 38x (police and FSL buyers, no defence order, no proprietary platform)"}
+business_type: hybrid
+revenue_streams:
+  - {name: "Forensic Science and Physical Evidence Solutions", type: "goods resale plus kit assembly, tender", pct_of_revenue: 36.99, predictability: "M"}
+  - {name: "Cyber and Digital Forensics", type: "goods resale, OEM pass-through", pct_of_revenue: 33.32, predictability: "L to M"}
+  - {name: "DNA Forensics", type: "goods resale, scheme funded project", pct_of_revenue: 10.76, predictability: "L to M"}
+  - {name: "Mobile CSI Vehicles", type: "project supply, shifting to kit-only via dealers", pct_of_revenue: 10.00, predictability: "L"}
+  - {name: "Renting of Forensic Equipment", type: "contracted rental, single customer", pct_of_revenue: 8.75, predictability: "H"}
+  - {name: "AMC and other services", type: "recurring service", pct_of_revenue: 0.17, predictability: "M"}
+asset_intensity: light
+wc_intensity: high
+pricing_power: weak
+cyclicality: secular-growth
+moats_present:
+  - "OEM and channel access (Thermo Fisher partner awards, Sirchie, Smallpond), non-exclusive: moderate, durability medium"
+  - "Government relationship and tender know-how, person dependent: weak, durability low to medium"
+  - "In-house handheld devices, software outsourced, 4 commercialised: weak, durability unproven"
+  - "None shown in the numbers: gross margin falling, AMC shrinking"
+valuation_methods:
+  primary: {method: "P/E on forward earnings (Section 1B destination PE)", why: "Profitable, asset light, no debt; margin bridge must key to gross margin not historical EBITDA margin"}
+  secondary: {method: "EV/EBITDA", why: "Cross-check independent of tax and capital structure; read against cash conversion"}
+  tertiary: {method: "Cash-flow yield or reverse DCF on owner earnings", why: "CFO/PAT 0.56 means P/E overstates cash earnings"}
+  not_applicable: ["EV/Sales", "P/B", "SOTP (segment margins NOT FOUND)", "NAV or asset value", "Dividend yield", "Full DCF (no order book, no guidance, three years of history)"]
+irrelevant_ratios:
+  - "Company ROCE 44.88% and ROE 38.98%: asset-light and supplier-funded, not pricing power"
+  - "Fixed asset turnover 32.77x: no plant"
+  - "Debt to equity 0.00: funding sits in receivables and supplier credit"
+  - "Company debtor days 74: use year-end 79 and ageing"
+  - "Government share %: not a quality verdict until buyers are named"
+  - "EBITDA margin alone 18.03%: held flat by opex dilution offsetting gross margin loss"
+  - "P/B: book is working capital and IPO cash"
+must_track_metrics:
+  - {metric: "Gross margin on COGS", healthy: "27.06% or higher (FY24 37.30%)", red_flag: "below 25%"}
+  - {metric: "CFO / PAT", healthy: "0.8 or higher", red_flag: "below 0.56"}
+  - {metric: "Year-end receivable days and over 6 month share", healthy: "80 days or less; 12% or less", red_flag: "above 90 days"}
+  - {metric: "Named buyers and segment of 2,035.74 lakh dealer-route kits", healthy: "names, end user, segment line stated", red_flag: "still unplaced or related party"}
+  - {metric: "Bank guarantee outstanding vs 800 lakh limit", healthy: "below 700 lakh", red_flag: "above 700 lakh"}
+unit_economics:
+  unit: "Rs 100 of resale revenue (per-order or per-kit economics NOT FOUND)"
+  revenue_per_unit: "Rs 100; FY26 revenue 10,571.28 lakh over 95 customers = 111.3 lakh per customer vs 23.6 FY24"
+  margin_per_unit: "Gross 27.06; opex 9.11; EBITDA 18.03 per Rs 100 (FY26); incremental EBITDA margin 16.8% FY26"
+  key_lever: "Gross margin on resale; opex dilution is largely used up (opex already 9.1% of revenue)"
+first_deterioration_signals:
+  - {risk: "Dealer channel replaces direct sales, buyers unnamed", first_signal: "Segment mix and customer count (95 vs 124 and 128)"}
+  - {risk: "Single-customer rental", first_signal: "Rental revenue and its receivable"}
+  - {risk: "OEM concentration and L1 pricing", first_signal: "Gross margin on COGS below 27%"}
+  - {risk: "WC intensity, FY27 need 4,442 lakh", first_signal: "Year-end receivable days above 80 and 2-3 year bucket above 130.54"}
+  - {risk: "Bank guarantee limit", first_signal: "BG outstanding above 700 of 800 lakh"}
+  - {risk: "Tender lumpiness", first_signal: "Any half-year above 40% of annual sales"}
+  - {risk: "Thin organisation", first_signal: "Employee cost flat while revenue grows 40%"}
+  - {risk: "Capitalised software", first_signal: "CWIP 137.17 growing with no commissioning date"}
+mgmt_questions:
+  - "Who bought the 95-vehicle kits, via which dealers, and in which segment line is the 2,035.74 lakh booked?"
+  - "Gross margin fell 37.3% to 27.1%: segment and dealer-route margins?"
+  - "Why CFO was 56% of PAT, and when does it reach 80%?"
+  - "What does Top Supplier 1 supply, is it an OEM, is it related?"
+  - "Is the Bihar rental contract renewable, for what term and price?"
+  - "Why does the deck show 130 customers and PBT 1,921.45 against 95 and 1,821.45?"
+  - "What named order or tender supports the 27-Sep-2026 NFSU Varanasi note?"
+one_line_verdict: "A thin-margin, working-capital-heavy tender reseller on a real policy tailwind, whose profit growth came from cost dilution that is nearly spent while gross margin fell 10 points and buyers behind 82.7% of growth stay unnamed."
+analyst_note: "Three things a later stage cannot rebuild from the fields. One: the margin physics. Opex fell from 19.5% to 9.1% of revenue while gross margin fell 37.3% to 27.1%, so EBITDA margin sat flat at 18.0%. Any forward margin that assumes more opex dilution has little room; key the Section 1B margin bridge to gross margin. Two readings for the fall: mix shift to resale cyber and DNA, or price cutting for volume. Separator: segment or dealer-route gross margin. Three: deck PBT 1,921.45 is a deck error; its own P&L totals 1,821.44, matching the prospectus. Sector cap: supports Cybersecurity / VAD 25x, not Defence 38x. Rental 925.41 equals one customer (Government of Bihar), and Bihar total is 953.22, so Bihar is almost entirely rental [INFERENCE]. Cyber revenue 3,522.83 vs Top Supplier 1 purchases 3,268.40 is a pass-through hypothesis, unconfirmed."

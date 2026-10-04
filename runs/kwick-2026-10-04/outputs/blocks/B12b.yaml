@@ -1,0 +1,38 @@
+stage: B12b
+company: "KWICK"
+run_date: "2026-10-04"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 29
+caught: 15
+partially_caught: 7
+missed:
+  - {severity: "MAJOR", item: "Dealer/vehicle-builder kit revenue (Rs 2,035.74 lakh) equals Top Customer 2 + Top Customer 4 (Rs 1,201.40 + 834.35 = 2,035.75 lakh, computed), matching Maharashtra (1,204.55) and Rajasthan (834.42) state totals; p.140 says the end client does pre-dispatch inspection and acceptance. Favours Reading A of LBF-1; government share re-attributed about 74.5% vs 55.22% printed", anchor: "Prospectus p.160, p.159, p.150, p.140"}
+  - {severity: "MINOR", item: "Employee cost growth attributed mainly to Director and KMP remuneration in FY25 (+121%) and FY26 (+27.49%)", anchor: "Prospectus p.266, p.267"}
+  - {severity: "MINOR", item: "MD&A credits FY26 revenue growth to a 03-Jan-2026 PIB forward five-year Rs 30,000 crore plan", anchor: "Prospectus p.265"}
+  - {severity: "MINOR", item: "Pre-IPO placement holders moved 5,72,440 of 14,34,360 post-bonus shares (39.9%, computed) before 14-Aug-2026; CCV fund (BRLM-director-linked) 2,81,224 to 1,56,224; buyers and prices undisclosed, below 5% threshold", anchor: "Prospectus p.34, p.107"}
+  - {severity: "MINOR", item: "Risk factor 15 headed 'general routine Inspections' discloses a SEBI one-month ban order on the BRLM", anchor: "Prospectus p.33"}
+  - {severity: "MINOR", item: "Deck 'Founded in 2005', '20+ Years', '12+ Global OEM Partnerships' vs forensic activity from 2015, 'a decade', deal-to-deal OEM terms and 'no technical or other collaboration'", anchor: "Deck p.5-6; Prospectus p.27, p.149, p.158"}
+  - {severity: "MINOR", item: "Dealer shift dated 'from mid of FY 25' on p.140 while FY25 was the record complete-van year (47) and p.150 frames the shift as FY26", anchor: "Prospectus p.140, p.259, p.150"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "concur: C is the no-concall default and nothing documents delivery strong enough for B; evidence sits at the low end of C (payables contradiction, related-party source of the in-house software, two-counterparty dealer channel)"
+findings:
+  - {severity: "MAJOR", location: "B05 LBF-1, 2D, 3C, input_gaps", finding: "Missed filed evidence narrowing LBF-1: kit revenue = Top Customers 2+4, matching MH and RJ state totals; p.140 end-client pre-dispatch inspection. B05 states no separator exists in the filings", anchor: "Prospectus p.160, p.159, p.150, p.140"}
+  - {severity: "MAJOR", location: "B05 2B, LBF-3", finding: "Payables fall explained as voluntary for better pricing and cash discounts (p.91, p.94) and as supplier-forced with limited bargaining power (p.96, p.98); gross margin fell 4.09 points. B05 records only p.98 as external-blame", anchor: "Prospectus p.91, p.94, p.96, p.98, p.257"}
+  - {severity: "MAJOR", location: "B05 trigger 6 kill signal, timeline_slippages, 2D", finding: "Related-party software purchase from group entity Gostocks Fintech (Rs 58.70 lakh FY25, Rs 20.00 lakh FY26) behind an in-house, 100% Made in India E-Forensics claim is not surfaced; B05 phrase 'related-group vendor' is unanchored", anchor: "Prospectus p.250 related-party schedule, p.151, p.213-214; Deck p.12, p.19"}
+  - {severity: "MAJOR", location: "B05 1B INFERENCE 3, analyst_note, notes for later stages", finding: "'Only forward revenue evidence' overstated: p.96 ties the +31.1% receivables build to projected revenue growth; Stage 11 needs three forward readings (+18-23%, about +31%, +40%) with the H1 FY27 separator", anchor: "Prospectus p.96, p.95, p.90"}
+  - {severity: "MAJOR", location: "B06 Q3 verdict and net read, B06 input_gaps; B05 2A row 2b label", finding: "Gross margin mislabelled 'on COGS'; 27.06% is on revenue (p.257). B06 conversion to 21.3% and 'inside the peer resale band' are inverted: Kwick sits above ADSL hardware-only single digits and DSSL 12-18%. Mechanism verdict stands; range verdict does not", anchor: "Prospectus p.257, p.24; ADSL Feb-2026 [page 13]; DSSL Jun-2026 [page 8], [page 11]"}
+  - {severity: "MINOR", location: "B05 2A row 5, promise_delivery row 6", finding: "Caveat that repayment came from cash held is not supported: FY26 cash rose 1,206.79 to 1,316.32 lakh; CFO 762.30 covered investing 273.17 and financing 379.60. Verdict DELIVERED stands", anchor: "Prospectus p.268; Deck p.20"}
+  - {severity: "MINOR", location: "B05 LBF-2", finding: "FY24 83 days is testable: opening receivables 180.79 lakh from p.93; average basis gives 83.1, so 3 of 3 years reproduce", anchor: "Prospectus p.93, p.91"}
+  - {severity: "MINOR", location: "B05 2A row 2a", finding: "Domestic sourcing scored DELIVERED in form only; channel-partner awards and foreign-OEM range suggest imported goods bought from Indian entities [INFERENCE]; separator Top Supplier 1 identity", anchor: "Prospectus p.146-149, p.153, p.161"}
+  - {severity: "MINOR", location: "B05 overall", finding: "Six minor items missed (R16 to R20, R23): KMP pay, Jan-2026 plan attribution, pre-listing share transfers, RF15 heading, deck tenure and partnership claims, mid-FY25 dealer-shift date", anchor: "Prospectus p.266-267, p.265, p.34, p.33, p.27, p.140; Deck p.5-6"}
+  - {severity: "MINOR", location: "B06 Part 1 Q4 and Part 4 vs flags", finding: "Peer Q4 range stated as 26-34% in text and 26-33% in the flag", anchor: "B06 report"}
+  - {severity: "MINOR", location: "B05 FLAG-CHANNEL-OMISSION", finding: "'Explained only in business strategy p.150' is imprecise; p.140 also describes the channel and dates it from mid-FY25", anchor: "Prospectus p.140"}
+critical_count: 0
+major_count: 5
+minor_count: 6
+material_found: 15
+material_caught: 10
+acceptance_rate: 66.7
+coverage_basis: "15 material of 29 listed (0 CRITICAL, 15 MAJOR); 10 fully caught, 4 partially caught, 1 missed. Rate counts full catches only (14/15 = 93.3% if partials counted). Sources: 5 BSE filings and 22-page deck in full; prospectus MD&A p.256-270, objects p.86-100, risk factors p.22-36, business p.135-140 and p.145-164 in full, plus targeted reads (p.33-34, p.87, p.106-108, p.124, p.196, p.212-214, p.250); risk factors p.36-50 not read. Peers: DSSL Q4 FY26 and Q1 FY27 in full; 9 others by targeted search with context."

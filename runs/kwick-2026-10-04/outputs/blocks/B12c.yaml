@@ -1,0 +1,37 @@
+stage: B12c
+company: "KWICK"
+run_date: "2026-10-04"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+scope: "PHASE 1 ONLY: Gate 0 (B01) + Emerging Moat (B07). Valuation audit (B10/B11), expectation ledger and rule 9 are PENDING PHASE 3."
+gate0:
+  rules_checked: 41
+  fails:
+    - "G0-1 MAJOR: B4 scored on an FY24 start (B4 = 5, Block B = 8, DB2 not triggered, uncapped GOOD+). On the FY21-FY26 window the stage used for A4, C1-C4, M1 and M10, B4 <= 1 for any FY21 payables (WC days change >= +5.4 days), Block B <= 4, DB2 triggers (max GOOD), uncapped result is GOOD, not GOOD+. Final AVERAGE unchanged (DB4). Window dependence not disclosed."
+    - "G0-2 MINOR: the YAML inside 01-gate0.md is not the block. data_notes and analyst_note are pointer strings, and prose follows the fence. Block file B01-gate0.yaml is complete."
+emoat:
+  rules_checked: 23
+  fails:
+    - "EM-1 MAJOR: F2 adjusted with an off-rubric 0.7x 'mixed' multiplier on 📄/🔍 evidence (raw 2 -> 1.4). The rubric allows 1.0 / 0.7 / 0.5 by evidence type only. 📄 reading: F2 2.0, total 12.2 = MODEST. 🔍 reading: F2 1.0, total 11.2 = NONE. Filed: 11.6 NONE. The band flips on the reading. The R1 sensitivity also uses 0.7x; the rubric 🔍 reading is 1.5 (total 10.1)."
+    - "EM-2 MINOR: evidence_mix {documented 12} and the 📄 recount use an unstated counting rule (supporting items only, about one per category). Section 3 tables tag more 📄 rows (A4 1, C1 1, C2 4, G1 3, G2 4, H2 3). Direction is conservative."
+    - "EM-3 MINOR: capex_embedded_growth_pct filed as 0. The 2C arithmetic as written gives 42.5% (Rs 1.37 Cr CWIP x 32.77x = Rs 44.95 Cr on Rs 105.71 Cr). Override is reasoned and disclosed, but the field is not 'from 2C'. Stage 11 must read the analyst_note."
+    - "EM-4 MINOR: catalysts_12m carries two items outside 12 months (E-Forensics CWIP 12-24m; state DNA/cyber awards 6-18m). The field feeds Pillar 3 catalyst proximity."
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3 (B10/B11 not produced yet)"}
+expectation_ledger: {status: "PENDING PHASE 3", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11
+business_understanding_narrative: {status: "PENDING (stage 13 not run)", fails: []}  # rule 9; any fail = REWORK stage 13
+recomputed_destination_pe: ""  # valuation scope not run
+recomputed_decision: ""        # Gate 0 final classification AVERAGE concurs; see G0-1 for the uncapped result
+findings:
+  - {id: "G0-1", severity: "MAJOR", location: "01-gate0.md Block B (B4), Section 3 classification box; B01-gate0.yaml flags[0], blocks.B", rule: "Gate 0 B4 + deal-breaker 2; CAGR/window consistency (rule 2)", stated: "B4 = 5 (WC days 144.8 FY24 to 85.0 FY26); Block B 8; DB2 not triggered; uncapped GOOD+", recomputed: "FY21 start: receivable days 44.6 + inventory days 34.9 = 79.5 less payables days >= 0 (screener-data FY21); FY26 WC days 85.0 (prosp L6433-6435, L6482, L7176). Change >= +5.4 days -> B4 = 1 (payables days <= 9.6) or 0. Block B 3-4 < 8 -> DB2 max GOOD. Core 64-65, still 60-79.", note: "Two readings: earliest = first year with all three legs (stage) vs earliest = start of the scoring window the stage used everywhere else. Separator: operator ruling on per-metric windows. FY21 payables are not needed to fix the band. Final AVERAGE survives via DB4. Uncapped GOOD+ in B01 flags and B07 6C is window-contingent and matters if the post-IPO rebase override lifts DB4."}
+  - {id: "G0-2", severity: "MINOR", location: "01-gate0.md lines 116-147", rule: "Gate 0 OUTPUT: end with exactly this fenced YAML block", stated: "embedded block with pointer strings; trailing prose", recomputed: "n/a", note: "Block file is authoritative and complete; presentational."}
+  - {id: "EM-1", severity: "MAJOR", location: "07-emoat.md Section 5 row 15 (F2); B07-emoat.yaml em_score, em_classification", rule: "Stage 7 Section 5 evidence multipliers (📄 1.0x, 🎙️ 0.7x, 🔍 0.5x)", stated: "F2 MM raw 2 x 'mixed 0.7' = 1.4; total 11.6 NONE", recomputed: "📄 reading 2.0 -> 12.2 MODEST; 🔍 reading 1.0 -> 11.2 NONE", note: "F2 rests on prospectus statements tested against restated FY24-FY26 results (4 delivered, 1 missed) and vehicle acceptance certificates, which are 📄; the scalability claim is 🔍. Separator: whether the MM rating rests on the documented delivery record or on the scalability inference. No reading reaches the EM >= 25 UA qualifier or EXPANSION, so 6D AVERAGE stands. Phase 3: check whether any Pillar 3 step keys to NONE vs MODEST; if one does, re-grade."}
+  - {id: "EM-2", severity: "MINOR", location: "07-emoat.md Section 3 recount line; B07 evidence_mix", rule: "Stage 7 rule 6 completionist recount; evidence_mix item counts", stated: "12 documented / 9 claim / 3 inference", recomputed: "counting basis not stated; tagged 📄 rows exceed 12", note: "Undercounting 📄 is the conservative direction; the guard purpose is met (8 categories score, ceiling 12)."}
+  - {id: "EM-3", severity: "MINOR", location: "07-emoat.md 2C; B07 capex_embedded_growth_pct", rule: "Stage 7 Section 2C, YAML field 'from 2C'", stated: "0", recomputed: "42.5% mechanical", note: "Override reasoned (software CWIP, asset-light resale turnover) and disclosed in analyst_note. Prevents a spurious CAPACITY basis at stage 11."}
+  - {id: "EM-4", severity: "MINOR", location: "B07 catalysts_12m items 3 and 4", rule: "catalysts_12m feeds Pillar 3 catalyst proximity", stated: "windows 6-18m and 12-24m inside the 12m list", recomputed: "3 of 5 items sit inside 12 months", note: "Stage 11 should read the window field, not list membership."}
+rubric_notes:
+  - "Gate 0 M11 says the two-window test 'needs >= 6 years', but two non-overlapping 3-year CAGR windows need 7 annual points. KWICK has 6; the stage used the fallback (3). A FY21-FY23 two-year prior window would give 5. M11 is present either way. Operator fix to the rubric text."
+  - "Gate 0 M10 has no band for exactly 1 decline year with unstable receivable days. As written it falls to 'else 0', below the 2+ decline-year band (1). Operator fix to the rubric text."
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 90.6             # 58 passed / 64 checked (Gate 0 41, Emerging Moat 23)

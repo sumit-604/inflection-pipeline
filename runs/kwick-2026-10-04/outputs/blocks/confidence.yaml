@@ -1,0 +1,21 @@
+stage: confidence
+company: KWICK
+run_date: 2026-10-04
+phase: 1
+verifier_a_identity_check: "No CRITICAL rows in B12a; nothing to strike. B12a self-struck 3 false positives before filing."
+confidence_delta:
+  numerical_acceptance: 96          # B12a, 227 clean of 236 checked (material universe 410)
+  redflag_coverage: 66.7            # B12b, 10 of 15 material (CRITICAL+MAJOR) fully caught; 93.3 if 4 partials counted
+  framework_adherence: 90.6         # B12c Gate 0 + EM portion only, 58 of 64 rules; valuation portion PENDING PHASE 3
+  peer_utilisation: 100             # B12d, 11 of 11 peer transcripts SUBSTANTIVE
+  overall: 66.7
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  band: "60-74: PROCEED verdicts downgrade one level"
+rework_triggered: false
+rework_basis: "No CONFIRMED CRITICAL in B12a; no verifier acceptance_rate below 60% on a denominator of 4 or more (OR-29)."
+source_fidelity_open:
+  - "B12a MAJOR: 09-tam.md cites prospectus p.265 for Rs 2,035.74 lakh / 95 vehicles, Mobile CSI 16.41 to 10.57 Cr and 115% growth. Correct anchors p.150, p.24, p.264. Values correct; anchor must be corrected wherever 09 figures are used."
+disagreements: "none (no downstream step relies on a figure Verifier A flagged; the 09 anchor error is corrected at anchor, values unchanged)"
+stage5_tripwire: "NOT FIRED. B12b concurs with stage 5 credibility grade C (low end). Five MAJOR misses recorded against B05/B06 content; grade not overturned."
+valuation_framework_adherence: PENDING PHASE 3

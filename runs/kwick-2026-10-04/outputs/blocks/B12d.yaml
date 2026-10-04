@@ -1,0 +1,24 @@
+stage: B12d
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Q3 gross margin on resale vs own IP and mix compression", b06_verdict: "VERIFIED", should_be: "PARTIALLY VERIFIED", reason: "Margin-band leg has three peer anchors. The mix-compression leg rests on ADSL alone (Q3 FY26 p.23, analyst-led, N. Shah 'That is right'). DSSL management attributes its 18% to 14% fall to component cost, not mix (Q4 FY26 p.11). Zen is own IP and only sets the ceiling.", severity: MAJOR}
+findings:
+  - {id: F1, severity: MAJOR, item: "Q3 verdict VERIFIED overstates. Net read says 'three independent peers confirm ... heavier hardware mix compresses margin', but DSSL denies mix as the cause and Zen does not speak to resale mix. Rule 4: VERIFIED resting on one peer for the compression leg.", anchor: "B06 Part 1 Q3; DSSL Jun-2026 p.11; ADSL Feb-2026 p.23"}
+  - {id: F2, severity: MINOR, item: "Q8 VERIFIED covers the disclosure-practice half only. GeM wording and how soon after award rest on one peer (ADSL Q4 FY26 p.12, an order not yet announced) or on silence. B06 caveats GeM; timing is not caveated.", anchor: "B06 Part 1 Q8; ADSL May-2026 p.12"}
+  - {id: F3, severity: MINOR, item: "Page anchors off by one against the page-marker convention B06 uses elsewhere: ADSL Q3 Supreme Court cited p.22 (text under marker p.21); ADSL Q3 10% threshold cited p.24 (p.23); ADSL Q4 Western Railway cited p.14 (p.13); Zen Q1 FY27 state police cited p.14 (p.13); Zen Q1 FY27 'no simulator tenders' cited p.16 (p.15); DSSL Q4 PPE and net debt cited p.4 (same line as revenue cited p.5, so p.5). All quotes and figures exist; only page numbers drift.", anchor: "ADSL-Feb-2026 lines 867, 940; ADSL-May-2026 line 516; ZENTEC-Jul-2026 lines 482, 563; DSSL-Jun-2026 line 57"}
+  - {id: F4, severity: MINOR, item: "DSSL Q3 FY26 net debt Rs 68 Cr cited to Q3 p.6. The Feb-2026 call has no net debt figure. Page 6 does support lease and bank funding. Net debt Rs 68 Cr is in the Jun-2026 call (p.5).", anchor: "DSSL-Feb-2026 p.6 lines 215-222; DSSL-Jun-2026 line 57"}
+  - {id: F5, severity: MINOR, item: "Coverage map attributes 'milestone payment vs upfront billing' to DSSL Q3. It is in DSSL Q4 (Jun-2026 p.10). Q3 has only the longer implementation cycle remark (p.13). Row stays SUBSTANTIVE on other real citations.", anchor: "DSSL-Feb-2026 p.13; DSSL-Jun-2026 p.10"}
+  - {id: F6, severity: MINOR, item: "Cross-peer hypothesis says Zen WC 196 to 257 days 'only because it holds Rs 1,217 Cr cash'. Transcript says the rise is supplier advances and inventory; cash is a separate balance sheet line. Causal link is B06 inference stated as fact.", anchor: "ZENTEC-Jul-2026 p.4 lines 119-125"}
+  - {id: F7, severity: MINOR, item: "Q5 operator note says ADSL and Zen 'both sell to police'. Word 'police' appears once in all 11 transcripts (Zen Q1 FY27, as a user of its smart border suite). ADSL Safe City is police-adjacent but not stated. Net read of Q5 also says silence is 'no evidence either way', then calls it informative. Verdict UNVERIFIABLE is correct and not upgraded.", anchor: "ZENTEC-Jul-2026 line 482; full-text search of 11 files"}
+critical_count: 0
+major_count: 1
+minor_count: 6
+acceptance_rate: 100

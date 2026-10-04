@@ -20,3 +20,7 @@ session (claude-opus-5-5) and are not metered per stage.
 | 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | 273,438 | 5m11s | 1 |
 | 7 | emoat | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 151,372 | 4m53s | 1 |
 | 9 | tam (web) | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 138,447 | 7m17s | 1 |
+| 12a | verifier A numerical | claude-sonnet-5-5 (override; stale local def says haiku) | default | n/a | n/a | 334,184 | 7m44s | 1 |
+| 12b | verifier B red flags | claude-opus-5-5 | high (stale def; current def xhigh) | n/a | n/a | 346,273 | 15m35s | 1 |
+| 12c | verifier C (Gate 0 + EM half) | claude-opus-5-5 | xhigh | n/a | n/a | 133,152 | 6m52s | 1 |
+| 12d | verifier D peers | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 116,333 | 4m36s | 1 |

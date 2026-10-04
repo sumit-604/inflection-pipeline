@@ -22,3 +22,4 @@
 | 7 | emoat (scoped remediation) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 124950 | 4m34s | 2 |
 | 12a | verifier A (scoped re-audit) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 253268 | 8m59s | 2 |
 | 12c | verifier C (phase 1 re-audit) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 213095 | 16m46s | 2 |
+| 13 | synthesis-lite | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 237320 | 11m05s | 1 |

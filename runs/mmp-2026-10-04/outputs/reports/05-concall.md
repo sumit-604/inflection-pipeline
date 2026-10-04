@@ -50,7 +50,7 @@ Run date: 2026-10-05 | Bounded read: B03 report and block, AR26 p.25-26 and p.30
 | Dividend | maiden final Rs 2 a share (20%) | AR26 p.25 | FACT; no policy ratio stated |
 | Debt reduction | NOT FOUND; no target given | none | NOT FOUND |
 
-Reading the FY27 pair against Q1 (derived). FY26 revenue 8,253 Mn (Q4 PR p.2). A 15-18% rise means 9,491-9,739 Mn. Q1 FY27 gave 2,328 Mn (Q1 PR p.2). Q2 to Q4 FY26 gave 6,416 Mn. So Q2 to Q4 FY27 must grow +11.6% to +15.5%. The 20-25% figure from May would need 9,904-10,316 Mn, or +16.8% to +20.8% from here after Q1 (derived). Q1 benefits from a fire-depressed Q1 FY26 base (powders +45% YoY, Q1 PR p.2). Exports +40-50% and margin up are open.
+Reading the FY27 pair against Q1 (derived). FY26 revenue 8,253 Mn (Q4 PR p.2). A 15-18% rise means 9,491-9,739 Mn. Q1 FY27 gave 2,328 Mn (Q1 PR p.2). Q2 to Q4 FY26 gave 6,416 Mn. So Q2 to Q4 FY27 must grow +11.6% to +15.5%. The 20-25% figure from May would need 9,904-10,316 Mn, or +18.1% to +24.5% from here after Q1 (derived; corrected from +16.8% to +20.8% by orchestrator 2026-10-05 per B12a). Q1 benefits from a fire-depressed Q1 FY26 base (powders +45% YoY, Q1 PR p.2). Exports +40-50% and margin up are open.
 
 ## 1C Trigger evolution (press releases, call, AR)
 | Trigger | Q2 FY26 (7 Nov 2025) | Q3 FY26 (13 Feb 2026) | Q4 FY26 (23 May 2026 and call) | Q1 FY27 (10 Aug 2026) | Trend |

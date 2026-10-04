@@ -830,3 +830,21 @@ and 8. The active file is over its 1,500-token budget after this addition; /comp
 - Section 1B v3.11 still unmerged; framework files were read from origin/main plus the main checkout's uncommitted draft. Stage 11 sign-off waits on the framework PR.
 - Partner-slice cap needed an operator-set blend (1/3 NBFC 18x + 2/3 asset-light 25x = 22.67x). Section 1B has no row or rule for a lender's capital-light fee slice; a framework item for Keerti.
 - Claude web's stress numbers mislabelled (bear vs partner exit at two multiple sets); caught by an exact recompute. Ruled headlines then moved again when the low multiple changed; deliberation file carries the recomputed values with an alignment note.
+
+## 2026-10-04 — KISSHT /finalize (runs/kissht-2026-09-19)
+| # | What went wrong or was corrected | Stage | File or rule | Status |
+|---|---|---|---|---|
+| 1 | Stage 10 copied 7 deliberation fields wrong (invented the structural optic, used the 09b draft proof gate, dropped entity_count and earnings basis); fixed in one resend | 10 input assembly | prompts/10-input-assembly-pipeline.md | CLOSED |
+| 2 | Run priced under Section 1B v3.11 read from the main checkout's uncommitted tree; provenance commit cannot reproduce it | 11 valuation | Section 1B v3.11 / I5 | OPEN |
+| 3 | Partner-slice cap 22.67x is an operator blend, not a cap row (Verifier C F1, MAJOR) | 11 valuation | v3.11 Amendment 27.2 cap rows | OPEN |
+| 4 | Own-book P/B band 0.8/1.0/1.2x is round, not earned (Verifier C F2, MAJOR) | 11 valuation | v3.11 Amendment 27.2 | OPEN |
+| 5 | Partner RoE ~34% capital base and ~Rs 171 Cr parent-held IPO money unclassified (Verifier C F3, F4) | 11 valuation | v3.11 Amendment 27.1 | OPEN |
+| 6 | Master Role 2 conflict: "Gate 0 below 60, default WATCHLIST" vs Section 7 AVERAGE means AVOID | 14 thesis | Master v3.7 Role 2 Section 7 | OPEN |
+| 7 | B14 used partner-exit stress as the U/D downside, set a non-framework Rs 347.2 re-open price, and wrote position_size Small under AVOID (Verifier C F6, F9, F10) | 14 thesis | Master v3.7 Section 4F / Section 7 | OPEN |
+| 8 | Stage 11 proposed ledger probabilities with no operator input (C2P) | 11 valuation | Section 1B v3.9 Amendments 22-23 | OPEN |
+| 9 | B10 did not carry consumed blocks (Debt Capacity, FTTCP Part B, Market-Implied, B09 downstream candidates); Signal Gate not applied (Verifier C F7, F27) | 10 input assembly | prompts/10 consumption clause | OPEN |
+| 10 | Skill chunk vs source divergences: chunk 06 lines 39 and 89, chunk 08 line 38 (Verifier C check 15) | skill section-1b | .claude/skills/section-1b/references | OPEN |
+| 11 | Operator overrides at FTTCP: T3 STARTING (draft STAGNANT); entry ~Rs 350 above mechanical Rs 344.2 | FTTCP | fttcp-deliberation.md §3 | CLOSED |
+| 12 | Synthesis agent has no Edit tool, could not mark gate-recommendation.md superseded; orchestrator added the header | 13 synthesis | .claude/agents/stage-13-synthesis.md | CLOSED |
+
+Update 2026-10-04 (KISSHT): row 3 CLOSED. The operator overruled Verifier C F1; the partner-slice cap stays at the 22.7x operator-set blend.

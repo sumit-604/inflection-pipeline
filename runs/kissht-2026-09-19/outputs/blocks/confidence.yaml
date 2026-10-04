@@ -1,20 +1,28 @@
 stage: confidence-delta
 company: KISSHT
 run_date: 2026-09-19
-phase: 1
+phase: 3
 confidence_delta:
-  numerical_acceptance: 100      # B12a: 47 material numbers checked, 0 CRITICAL, 0 MAJOR, 2 MINOR
-  redflag_coverage: 67           # B12b: material_found 9 (CRITICAL + MAJOR), 6 held upstream (1 caught, 5 partial), 3 MISSED
-  framework_adherence: 77.5      # B12c phase-1 portion only (Gate 0 52 rules + Emerging Moat 28 rules); valuation half pending phase 3
-  peer_utilisation: 90.9         # B12d: 10 substantive of 11 distinct peer transcripts (3 of 3 peers used substantively)
+  numerical_acceptance: 100
+  redflag_coverage: 67
+  framework_adherence: 80.0
+  peer_utilisation: 90.9
   overall: 67
   overall_set_by: redflag_coverage
   not_applicable: []
-  pending_phase_3: ["framework_adherence valuation half (B10/B11)"]
-verifier_a_identity_check: "0 CRITICAL rows in B12a; nothing to strike."
-rework_gate: "not triggered: no Verifier A CRITICAL; no verifier acceptance_rate below 60 (lowest B12b 67)."
-band: "60-74: any PROCEED verdict downgrades one level (orchestrator Section 5), set by redflag_coverage."
-source_fidelity_flags: "B12a marks one MINOR with source_fidelity true: FY23 CFO carried at two values (screener 48.36 Cr vs RHP restated 111.48 Cr, RHP p.271). Both exist in their sources; B01 disclosed the conflict. Under FLAG-DISAGREEMENT the audited figure is the RHP restated value; the screener figure is a data-vendor reading. UNRESOLVED inside this run for any pillar input; carried to phase 3."
+  pending_phase_3: []
+verifier_a_identity_check: 0 CRITICAL rows in B12a; nothing to strike.
+rework_gate: 'not triggered: no Verifier A CRITICAL; no verifier acceptance_rate below 60 (lowest B12b 67).'
+band: '60-74: any PROCEED verdict downgrades one level (orchestrator Section 5), set by redflag_coverage.'
+source_fidelity_flags: 'B12a marks one MINOR with source_fidelity true: FY23 CFO carried at two values (screener 48.36 Cr vs RHP restated 111.48 Cr, RHP p.271). Both exist in their sources; B01 disclosed
+  the conflict. Under FLAG-DISAGREEMENT the audited figure is the RHP restated value; the screener figure is a data-vendor reading. UNRESOLVED inside this run for any pillar input; carried to phase 3.'
 operator_rulings_requested_by_verifiers:
-  - "B12c: Gate 0 lender variant for Blocks A and F, applied symmetrically."
-  - "B12c: Deal-breaker 6 for financials: confirm CAR/PCR substitution or require literal ND/EBITDA and IC."
+- 'B12c: Gate 0 lender variant for Blocks A and F, applied symmetrically.'
+- 'B12c: Deal-breaker 6 for financials: confirm CAR/PCR substitution or require literal ND/EBITDA and IC.'
+- 'B12c phase 3: partner-slice cap row (F1)'
+- 'B12c phase 3: own-book slice method under A27.2 (F2)'
+- 'B12c phase 3: capital base of ~34% partner RoE and surplus-cash inclusion (F3)'
+- 'B12c phase 3: A27.1 classification of ~Rs 171 Cr parent-held IPO remainder (F4)'
+- 'B12c phase 3: close BOOK open item on AR figures (F8)'
+framework_adherence_basis: 'B12c combined: phase 1 62/80 (Gate 0 + EM) + phase 3 78/95 (valuation 39/49, ledger 9/9, Role 2 18/22, chunk fidelity 12/15) = 140/175 = 80.0%; 0 CRITICAL, 10 MAJOR, 17 MINOR
+  in phase 3; no REWORK'

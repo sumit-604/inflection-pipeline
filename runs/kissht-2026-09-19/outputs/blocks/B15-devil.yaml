@@ -1,0 +1,21 @@
+stage: B15-devil
+company: "KISSHT"
+run_date: "2026-09-19"
+model: "claude-opus-5-5"
+status: complete
+dimensions:
+  growth_triggers: "weakened"
+  moat_durability: "weakened"
+  management_trust: "weakened"
+  valuation_safety: "weakened"
+overall: "WEAKENED BUT ALIVE"
+top_counters:
+  - "Partner-half multiple: 72.6% of Track 1 value is a P/E on a first-loss credit stream whose parent guarantees 228% of its equity; the 22.67x cap borrows a 25x asset-light services row Section 1B does not carry, and its own revisit line (top-two > 90%) reads 95% on the DLG-pool measure the cap rationale names (68.2% on RHP off-book AUM, Dec-25). At the framework 18x row: Track 2 -Rs 75.3, Track 1 Year 3 -Rs 19.4, mechanical entry Rs 335.3, midpoint HR ~1.84 < 1.953."
+  - "Partner-exit stress is mis-sized: D2 cuts partner PAT by one third, but RE3 holds 55.7% of parent DLG pools and Partner 1 held 39.0% of off-book AUM; Partner 4 fell from 56.4% of AUM (FY23) to 0.9% (Dec-25). A 50% cut gives Rs 263.7 at 18.62x and Rs 237.7 at the market-implied 15.4x; U/D at the Rs 350 zone 0.74x."
+  - "Pillar 2L 1.00x on the partner slice is read from on-book GNPA, which excludes off-book loans by definition (RHP KPI note 24); A27.2 requires the slice's own rows, and its own loss line rose (CRISIL FLDG cost 1.7% to 3.3% of managed assets, FY25 to H1 FY26). At 0.80x: today Rs 353.9, Year 3 Rs 621.5, 25% entry Rs 290.8."
+  - "COMPOUNDER is one reading at a 1.2 pp margin: FV growth decelerates to +18.4% (Year 3) and +18.7% (Year 4), HYBRID band; the held 4.571% return leans on T4 STAGNANT, a 12-month verdict, for FY29-FY31 while B11's own leverage still rises FY28 to FY29; Reading B gives 17.9% HYBRID and a Rs 317.2 entry."
+  - "PAT extension: 78.8% of the Year-3 exit is Stage 11's FY31 partner PAT at 18.62x; it needs partner AUM ~3.6x (Rs 4,284 Cr to Rs 15,526 Cr) inside two unnamed lenders, and a counterparty (Piramal) calls fintech partnership volume 'not a very stable business'."
+  - "Rs 832 Cr raise: on B11's own path AUM/equity without it stays 5.0x to 5.3x through FY30, below FY26's 5.74x; on the thesis SOTP each Rs 1 raised is worth Rs 0.85 and the Rs 314.11 issue costs existing holders ~Rs 21.4 a share; no numeric rationale, no promoter participation, against management's own '20% plus' RoE guidance; the Rs 208.05 Cr cash line may double-count FLDG collateral."
+  - "Operator zone ~Rs 350 sits above every mechanical entry (Rs 344.2 base, Rs 335.3 framework cap, Rs 317.2 Reading B, Rs 290.8 at 2L 0.80x) and returns 23.8% to the governing Track 1, below the 25% Tier A hurdle."
+  - "Ugliness: the proof gate (all-in loss < 10.5%) cannot disprove the permanent optics (partner concentration by allocation design; off-book loss invisible by GNPA definition and 30-day partner reset), so a fired gate reads CONTRADICTION, not RE-RATING LIVE; the gate's data also arrives in the AR or rating notes, after its 31-May-2027 confirm-by."
+  - "T3 falsifier is loose: GNPA can rise from 2.25% to 2.91% (+66 bps, back to the FY25 2.89%) and still read STARTING; Stage 2 has a 3.3% to 4.11% dead zone."

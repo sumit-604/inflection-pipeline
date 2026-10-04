@@ -1,0 +1,24 @@
+stage: B14-thesis
+company: "KISSHT"
+run_date: "2026-09-19"
+model: "claude-opus-5-5"
+status: complete
+verdict: "AVOID"
+entry_range: {low: 301.5, high: 350}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Any one of: Q2 FY27 vs Q2 FY26 Stage 2 > 4.11% or GNPA > 2.92% (T3 DECLINING, by 30-Nov-2026); H2 FY27 all-in loss (on-book impairment + off-book ECL + collection outsourcing above run rate) / avg AUM > 11.6%, or off-book loss rate rising two consecutive half-years (by 31-May-2027); revenue margin minus all-in loss narrowing two consecutive quarters; a top-two partner exits or cuts its DLG pools by more than one third with no replacement; RBI cuts the 5% DLG cap or changes DLG recognition; RBI inspection shown to cover FY25 or later. Time stop: proof gate (all-in < 10.5%, H2 FY27) not fired by 31-May-2027."
+monitoring_checklist:
+  - "T3 test Q2 FY27 vs Q2 FY26 (by 30-Nov-2026): green Stage 2 <= 3.3% AND GNPA < 2.92%; red Stage 2 > 4.11% OR GNPA > 2.92%"
+  - "AUM: Q2 FY27 >= Rs 9,055 Cr; Mar-27 >= Rs 11,600 Cr (31-May-2027); Mar-28 >= Rs 15,660 Cr; red any QoQ growth < 8% unexplained"
+  - "All-in loss / avg AUM: H2 FY27 < 10.5% with off-book loss rate not rising (proof gate, 31-May-2027); red > 11.6%"
+  - "Return on avg AUM: FY27 >= 4.75% keeps Reading A (COMPOUNDER); FY28 <= 4.60% fires ledger D1 (HYBRID)"
+  - "DLG portal monthly: RE2 + RE3 pools not shrinking; red any top-two pool down > 1/3 with no replacement; top-two share > 90% through FY27 triggers partner-cap revisit (95% at 31-Aug-2026)"
+  - "FLDG charge / parent revenue from outside Si Creva < 40% (FY26 23.4%); > 40% triggers partner-cap revisit"
+  - "Revenue margin minus all-in loss: red if narrowing two consecutive quarters"
+  - "Disbursement QoQ >= 0 (Q1 FY27 Rs 3,812 Cr) with stable average ticket; red if disbursement falls two consecutive quarters while AUM rises"
+  - "H1 FY27 FLDG cost as % of avg off-book AUM disclosed by 30-Nov-2026; red a third quarter with no number"
+  - "Si Creva rating upgrade to A by CRISIL or Ind-Ra by 31-Mar-2027; next plain NCD coupon <= 11.0% green, >= 12.5% red"
+  - "RBI inspection years (IR reply): FY23-24 only re-opens Part 2.6; FY25 or later is thesis broken"
+  - "Q2 FY27 other income: treasury income on IPO and raise cash disclosed and stripped from the run-rate PAT"
+  - "Parent guarantee / parent net worth in FY27 AR: green < 100%; red > 228%"

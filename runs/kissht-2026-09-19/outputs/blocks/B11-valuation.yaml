@@ -1,0 +1,163 @@
+stage: B11-valuation
+company: "KISSHT"
+run_date: "2026-09-19"
+model: "claude-opus-5-5"
+status: complete
+entity: "consolidated single-entity (OnEMI Technology Solutions Ltd incl. Si Creva Capital Services); SOTP slices own book and partner half are method outputs, not entities"
+entity_count: 1
+framework_state: "Priced under Section 1B v3.11 unmerged draft (open item I5)"
+framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10+v3.11 (v3.11 unmerged, I5) / FTTCP v2.3"
+input_gaps:
+  - "Debt Capacity block: NOT FOUND in B10 (consumed, not recomputed)"
+  - "FTTCP Part B Output Sheet B1-B8: NOT FOUND in B10 (B2 flag, B4 operating EPS, B7, B8 not available)"
+  - "Market-Implied block: NOT FOUND in B10; flag PENDING (claude.ai)"
+  - "C.2 operator probabilities: NOT FOUND in B10; Stage 11 provisional probabilities used"
+  - "Treasury income on surplus cash Rs 208.05 Cr: NOT FOUND; not stripped"
+  - "Tax rate and credit-cost base: NOT FOUND; asset-quality downside row D3 uncredited"
+  - "Live peer table: PENDING LIVE PEER TABLE (Step 1C)"
+  - "Revenue / total-income yield path: NOT PROJECTED (lender; valuation on AUM x return on AUM)"
+  - "AUM 3-year historical CAGR: NOT FOUND (one-year +73% only)"
+  - "Macro sheet stale: August 2026 stamp, next refresh 1-Sep-2026 passed"
+flags:
+  - {type: "FLAG-CASH", reason: "GROWTH INDUCED (operator); lender, so multiplier applied is Pillar 2L 1.00x, not a cash multiplier; cumulative CFO/PAT -2.46x by Ind AS 7"}
+  - {type: "FLAG-I5", reason: "Priced under Section 1B v3.11 unmerged draft; Stage 11 sign-off and downstream presentation gated on merge"}
+  - {type: "FLAG-ENTRY-OVERRIDE-VS-MECHANICAL", reason: "Operator override ~Rs 350 sits 1.7% above chunk-06 mechanical Rs 344.2 (Track 1 Year-3 FV / 1.25^3.487 + cash); deliberation today-value method gave Rs 371.4 (Rs 372.4 A27.1-consistent)"}
+  - {type: "FLAG-FV-LABEL-MARGIN", reason: "FV CAGR 21.2% COMPOUNDER by 1.2 pp; Reading B (return on AUM -15 bps/yr) gives 17.9% HYBRID; separating observation FY27 return on avg AUM vs 4.75% by 31-May-2027"}
+  - {type: "FLAG-HURDLE-TRACK1", reason: "Prob-weighted HR 2.04 PASS on midpoint destination; 1.79 on Track 1 multiples; time-exact threshold 2.177 over 3.487 years"}
+  - {type: "FLAG-BOOK-BASE-CONFLICT", reason: "B10 carries Mar-27 consolidated book Rs 3,424.0 Cr (BVPS 164.3 route) vs Rs 3,142.0 Cr (SOTP roll); gap Rs 282.0 Cr = Rs 13.5/share; root at Jun-26 net worth"}
+  - {type: "FLAG-PILLAR2L-READING", reason: "GNPA rose 2.12% to 2.25% sequentially, a 0.80x Stressed criterion; operator ruled 1.00x on YoY; at 0.80x partner Track 1 14.9x and today-value Rs 353.9; resolves at Q2 FY27 T3 test"}
+  - {type: "FLAG-DECOMP-PROBABILITIES-PROVISIONAL", reason: "Ledger probabilities are Stage 11 proposals from chunk 09 bands and chunk 17 grade-C weights; operator ratifies at /finalize"}
+  - {type: "FLAG-UGLINESS-TEXT", reason: "Classification recorded as STRUCTURAL-FEATURE with 'artifacts' wording; ARTIFACT reading gives RESEARCH / WATCH; neither is a trade before the proof gate"}
+  - {type: "FLAG-MACRO-STALE", reason: "macro-sheet.md August 2026, next refresh 1-Sep-2026 passed at run date 04-Oct-2026"}
+  - {type: "FLAG-CONSUMED-BLOCKS-MISSING", reason: "Debt Capacity, FTTCP Part B, Market-Implied blocks not in B10"}
+  - {type: "FLAG-CAPITAL-STRUCTURE", reason: "carried from B10: parent guarantee 228% of parent net worth FY26"}
+  - {type: "FLAG-ASSET-QUALITY", reason: "carried from B10: write-off-assisted GNPA; Q1 FY27 GNPA 2.25%"}
+  - {type: "FLAG-CAPITAL-RAISE", reason: "carried from B10: Rs 832 Cr preferential, no numeric rationale, EGM 14-Oct-2026"}
+  - {type: "FLAG-COST-OF-BORROWING", reason: "carried from B10: FCNR(B) tailwind contradicted by peers"}
+  - {type: "FLAG-PROOF-GATE", reason: "carried from B10: NOT FIRED; H2 FY27 all-in loss test (< 10.5% of avg AUM)"}
+  - {type: "FLAG-CREDENTIAL-GRADE", reason: "carried from B10: grade C at the C/B boundary"}
+  - {type: "FLAG-EM-SCORE", reason: "carried from B10: EM 18.5 MODEST"}
+pe_basis: "forward"
+exit_pe_base_approved: "SOTP (A27.2), valuation date 31-Mar-2027: own book P/B 0.8/1.0/1.2x on Mar-27 book Rs 2,695.8 Cr; partner half P/E on FY28 PAT 18.62x (Track 1) / 20.6433x (midpoint) / 22.6667x (Track 2 at operator-set slice cap); cash Rs 208.05 Cr at face (A27.1); same basis at exit (A27.3)"
+destination_pe:
+  track1_rrm: {low: 17.0, mid: 18.62, high: 20.0, r_used: 15.5, rrm: 0.76}
+  track2_additive: {low: 21.0, mid: 22.67, high: 22.67}
+  sotp_range_approved: {low: 18.62, base: 20.64, high: 22.67}
+  own_book_pb_approved: {low: 0.8, base: 1.0, high: 1.2}
+  whole_company_crosscheck: {track1: 12.16, track2: 16.0, sector_cap: 18.0}
+  divergence_pct: 17.9
+  governing_track: "Track 1 (partner 18.62x with own book 0.8x): tracks diverge 17.9% > 15%; more conservative track sets the entry zone (section-1b chunk 06, OR-1)"
+pillar_detail:
+  slice_reported: "partner half (primary P/E slice)"
+  roce_used: 34.0
+  roce_base: 24.5
+  roce_note: "RoE ex investment in Si Creva ~34% FY27 (operator); formula at 34.0% gives 24.3x; approved 24.5x implies 34.7%; FY26 actual 84.4% would give 30x"
+  roce_recovery_route: "not-credited"
+  pillar1_normalization_route: "none"
+  cash_multiplier: 1.00
+  cash_multiplier_type: "Pillar 2L asset-quality, Sound (lender)"
+  structural_or_growth: "GROWTH INDUCED"
+  growth_offset: 0
+  growth_premium: 0
+  strategic_premium: 0
+  shared_catalyst_flag: false
+  ua_applied: false
+  sector_cap_used: 22.67
+  sector_cap_whole_company: 18.0
+  converter_classification: "NON-CONVERTER"
+hurdle_ratio: {base: 2.30, prob_weighted: 2.04, bull: 2.54, bull_used: false, track1_prob_weighted: 1.79, threshold: 1.953, verdict: "PASS", basis: "FORWARD; Current PE 19.70x = (369.55 - 9.98) / A21 EPS 18.25; prob-weighted EPS CAGR 39.9%; destination PE mid 14.67x (SOTP-implied at 31-Mar-2030); feasibility only, caps no verdict (OR-2)"}
+run_rate_base:
+  basis: "single-quarter-annualised"
+  pat_run_rate_cr: 380.32
+  eps_run_rate_rs: 18.25
+  one_offs_adjusted: "none stripped; treasury income on IPO proceeds NOT FOUND; Rs 832 Cr raise not in Q1; no seasonal flag in B10"
+  annual_model_divergence_pct: -13.8
+  annual_model_divergence_note: "-13.8% vs FY27 base 441; -39.0% vs FY28 forward 623; approved FORWARD basis governs fair values, A21 base governs T1"
+price_decomposition:
+  denominator: "B10 market value post-raise Rs 7,555.1 Cr (Rs 362.50 per diluted share)"
+  t1_confirmed: {rs_cr: 6061.4, rs_per_share: 290.83, pct_cmp: 80.2}
+  t2_high_prob: {rs_cr: 1510.8, rs_per_share: 72.49, pct_cmp: 20.0}
+  t3_speculative: {rs_cr: 162.9, rs_per_share: 7.82, pct_cmp: 2.2}
+  residual: {rs_cr: -180.1, rs_per_share: -8.64, pct_cmp: -2.4}
+  midpoint_crosscheck_pct: {t1: 92.4, t2: 22.3, t3: 2.4, residual: -17.2}
+  step1c_peer_base_crosscheck: "PENDING LIVE PEER TABLE"
+  governing_multiple: "pillar (approved SOTP Track 1: own book 0.8x P/B, partner 18.62x; effective 10.58x per Rs 1 Cr FY28 PAT increment)"
+  probabilities_status: "PROVISIONAL, operator to ratify"
+expectation_ledger: "runs/kissht-2026-09-19/outputs/expectation-ledger.md"
+fair_values:
+  basis_date_year3: "31-Mar-2030 (Mar-30 book, FY31 PAT)"
+  track1: {bear: 519.5, base: 737.7, bull: 899.5}
+  track2: {bear: 668.0, base: 937.3, bull: 1136.5}
+  midpoint: {bear: 593.7, base: 837.5, bull: 1018.0}
+  today_31mar2027:
+    track1: {bear: 354.0, base: 414.0, bull: 451.7}
+    midpoint: {bear: 405.9, base: 472.5, bull: 514.4}
+    track2: {bear: 457.8, base: 531.1, bull: 577.1}
+projection_extension:
+  pat_base_cr: {fy27: 441, fy28: 623, fy29: 814.2, fy30: 1003.9, fy31: 1204.7, fy32: 1445.6}
+  pat_bear_cr: {fy27: 400, fy28: 500, fy29: 580.3, fy30: 672.7, fy31: 778.9, fy32: 900.7}
+  pat_bull_cr: {fy27: 470, fy28: 700, fy29: 949.8, fy30: 1218.6, fy31: 1523.3, fy32: 1904.1}
+  aum_base_cr: {fy27: 11600, fy28: 15660, fy29: 19966.5, fy30: 23959.8, fy31: 28751.8, fy32: 34502.1}
+  basis: "RUN-RATE (Q1 FY27 AUM pace) to FY27; A14 MODEST fade to 20% industry anchor (B10.tam_growth_pct) by FY30; return on avg AUM held 4.571% (Reading A, T4 STAGNANT)"
+  split_own_partner: "46/54 kept; B10 evidences no other split (DBB open)"
+  two_readings: "A: return on AUM held 4.571% / B: slides 15 bps a year; separating observation FY27 return on avg AUM vs 4.75% by 31-May-2027"
+fv_path_track1_base: {today_31mar2027: 414.0, end_y1_31mar2028: 517.3, end_y2_31mar2029: 623.2, end_y3_31mar2030: 737.7}
+fv_cagr: 21.2
+fv_cagr_line: "FV CAGR over the hold: 21.2% (today Rs 414.0 to end-Year-3 Rs 737.7, governing Track 1, base case)"
+return_source_label: "COMPOUNDER"
+fv_cagr_sensitivity: {midpoint: 21.0, track2: 20.9, reading_b: 17.9, prob_weighted: 20.5, bear: 13.6, bull: 25.8}
+decomposition_19_3: "2.4% of FV today (1.4% at exit) is the static A27.1 cash line; no option value; partner half 72.6% compounds at 24.6%/yr with FY28-FY31 PAT, own book 25.0% at 12.3%/yr via retained earnings; MODEST fade drags PAT growth 41.3% to 20.0%; no re-rating lever credited"
+option_resolution_calendar: "none (no option slices); 18.6 dual display identical"
+expected_cagr_prob_weighted: 19.3
+expected_cagr_note: "Track 1, grade C 35/45/20, CMP to 31-Mar-2030 (3.487 years); Track 2 27.8%; midpoint 23.7%"
+entry_zone:
+  operator_override_rs: 350
+  operator_override_status: "BINDING (deliberation override 5)"
+  operator_override_reasoning: "book-value cross-check: SOTP base 2.88x Mar-27 book needs 12.4% perpetual growth at 17% RoE and 14% CoE (14.7% at 15.5%)"
+  mechanical_chunk06_rs: 344.2
+  mechanical_chunk06_basis: "Track 1 Year-3 operating FV Rs 727.76 / 1.25^3.487 + cash Rs 9.98 (A27.1)"
+  mechanical_30pct_rs: 301.5
+  mechanical_deliberation_today_value_rs: 371.4
+  mechanical_deliberation_a27_1_consistent_rs: 372.4
+  midpoint_chunk06_rs: 390.1
+  reading_b_track1_rs: 317.2
+  override_vs_mechanical_pct: 1.7
+entry_range: {low: 301.5, high: 344.2}
+mos_price: 243.9
+mos_note: "reference only; FAST-GROWTH carve-out puts MoS in size (A25); 30% row, mixed evidence"
+upside_downside_ratio: 0.8
+upside_downside_note: "valuation-date headline: base Track 1 Rs 414.0 (+12.0%) vs partner-exit Rs 313.8 (-15.1%); Year-3 ratio n.m. (all Year-3 states above CMP)"
+stress_headlines: {bear_low_rs: 354.0, partner_exit_low_rs: 313.8, bear_base_rs: 405.9, partner_exit_base_rs: 361.5, compound_bear_partner_exit_low_rs: 273.5}
+recognition_gap:
+  status: "OPEN on governing forward basis"
+  current_forward_pe: 12.03
+  sotp_implied_destination_pe: {track1: 13.5, midpoint: 15.5, track2: 17.4}
+  market_implied_partner_pe: {own_0_8x: 15.4, own_1_0x: 13.8, own_1_2x: 12.2}
+  counter_reading: "CLOSED on book: CMP 2.25x Mar-27 BVPS 164.3 vs theoretical 1.10-1.21x; implies 11.6% perpetual growth at 17% RoE"
+  separating_observation: "FY27 PAT vs Rs 441 Cr and Mar-27 AUM vs Rs 11,600 Cr at Q4 FY27 results, confirm-by 31-May-2027"
+transition_posture: "VALUE-TRAP RISK (proof gate NOT FIRED + STRUCTURAL-FEATURE); gap OPEN so AVOID overlay not engaged on forward basis"
+size_state:
+  fast_growth: true
+  fast_growth_basis: "Q1 FY27 revenue +44.8% YoY, PAT +59.2% YoY"
+  a25_state: "STARTER (Small, 2-3%)"
+  ceiling: "Small (Part 2.6, operator)"
+  dispersion_pct: 51.5
+  dispersion_cap: "Medium"
+  add_trigger: "none inside the Small ceiling; above it: ledger row 1 CONFIRMED and proof gate fired, plus operator ruling lifting the ceiling"
+  trim_trigger: "25% per decayed ledger row; 50% if residual > 40% after a decay"
+decision: "WATCHLIST (on valuation: CMP Rs 369.55 is 5.6% above the binding ~Rs 350 zone; posture VALUE-TRAP RISK; FTTCP +2 DEEP WATCH leaning AVOID)"
+open_items:
+  - {item_id: "I4", description: "Q2 FY27 business update (03-Oct-2026) not in corpus", owner: "operator", blocks: "none; feeds ledger row 1 interim and T3 test", status: "OPEN"}
+  - {item_id: "I5", description: "Section 1B v3.11 (Amendment 27) not merged to main", owner: "operator, separate framework PR", blocks: "Stage 11 sign-off and downstream presentation", status: "OPEN"}
+  - {item_id: "DBB", description: "Disbursement by book, on-book vs off-book, FY25/FY26/Q1 FY27", owner: "IR reply", blocks: "entry-override revisit; 46/54 split; transfer pricing", status: "OPEN"}
+  - {item_id: "A19", description: "Amendment 19 FV CAGR and return-source label", owner: "Stage 11", blocks: "entry-zone presentation", status: "RESOLVED: 21.2% COMPOUNDER (Track 1 base)"}
+  - {item_id: "BOOK", description: "Mar-27 consolidated book conflict Rs 3,424.0 Cr vs Rs 3,142.0 Cr", owner: "Claude Code extraction (AR consolidated total equity 31-Mar-2026)", blocks: "none; sensitivity up to Rs 13.5/share", status: "OPEN (new)"}
+  - {item_id: "C2P", description: "Operator ratification of ledger probabilities", owner: "operator", blocks: "price decomposition finality", status: "OPEN (new)"}
+unresolved_inputs_used:
+  - {field: "C.2 probabilities", assumption: "rows 1/2/3/D1/D2 = 0.70/0.60/0.20/0.70/0.15", rule: "chunk 09 band mapping, chunk 17 grade-C bull weight", readings: "operator ratifies / operator resets (all base rows p=1.0 gives residual -14.0%)", separating_observation: "operator C.2 ruling at /finalize"}
+  - {field: "treasury income on surplus cash", assumption: "none stripped", rule: "operator PAT path built on return on AUM", readings: "none in path / some in FY27-28 PAT", separating_observation: "Q2 FY27 other income, by 30-Nov-2026"}
+  - {field: "return on AUM beyond FY28", assumption: "4.571% held", rule: "T4 STAGNANT sole RoA authority", readings: "A held / B -15 bps per year", separating_observation: "FY27 return on avg AUM vs 4.75%, by 31-May-2027"}
+  - {field: "Mar-27 consolidated book", assumption: "approved own book Rs 2,695.8 Cr", rule: "operator-approved base binds", readings: "Rs 3,142.0 Cr / Rs 3,424.0 Cr", separating_observation: "AR consolidated total equity 31-Mar-2026"}
+  - {field: "fade industry anchor", assumption: "20% (B10.tam_growth_pct)", rule: "A14 MODEST fade needs a named anchor", readings: "20% market / 46.9% digital-lender SAM", separating_observation: "FY28 AUM growth vs 35%, by 31-May-2028"}
+som_cagr_crosscheck: "consistent (base AUM CAGR FY26-FY29 41.4% vs SOM-implied 61.4%)"
+one_line_thesis: "Buying KISSHT at or below ~Rs 350 because forward EPS grows from Rs 29.9 (FY28) to Rs 57.8 (FY31) as AUM compounds at a held 4.57% return, valued as an SOTP at Track 1 (own book 0.8x P/B; partner half 18.62x) = Rs 737.7 end-FY30 = 23.8% CAGR from Rs 350; FV CAGR 21.2% COMPOUNDER; key risk two-partner concentration and the 228% parent guarantee behind write-off-assisted GNPA; cash quality growth-induced."

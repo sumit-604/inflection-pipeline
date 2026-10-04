@@ -144,6 +144,14 @@ _Pending framework edits Keerti maintains._
   annual-report folder holds the IPO prospectus. Fix before reusing those
   runs. audits/REPO_LAYOUT_PROPOSAL_2026-10.md follow-up section.
   Operator ruled 2026-10-04: follow-up session.
+- OPEN (2026-10-04, KISSHT, 11): run priced under uncommitted v3.11; merge it [Section 1B v3.11]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
+- OPEN (2026-10-04, KISSHT, 11): own-book P/B band not earned (cap blend: F1 overruled by operator 2026-10-04) [A27.2]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
+- OPEN (2026-10-04, KISSHT, 11): partner RoE capital base and parent-held IPO cash unclassified [A27.1]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
+- OPEN (2026-10-04, KISSHT, 14): Gate 0 <60 WATCHLIST vs Section 7 AVERAGE AVOID conflict [Master Role 2 §7]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
+- OPEN (2026-10-04, KISSHT, 14): U/D on partner-exit stress, Rs 347.2 re-open, position_size under AVOID [Master §4F/§7]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
+- OPEN (2026-10-04, KISSHT, 11): ledger probabilities proposed without operator (C2P) [A22-23]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
+- OPEN (2026-10-04, KISSHT, 10): B10 drops consumed blocks and downstream candidates [prompts/10]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
+- OPEN (2026-10-04, KISSHT, skill): chunk 06 l.39/l.89, chunk 08 l.38 diverge from source [section-1b]; see LESSONS_ARCHIVE.md 2026-10-04 KISSHT.
 - ORCHPHARMA 2026-09-06 (phase 1), all OPEN:
   - Corrupt OCR text layers in filed PDFs are a live corpus failure mode. Promote the
     [OCR:embedded] / [OCR:tesseract] / [OCR:embedded-CORRUPT] page tag and the

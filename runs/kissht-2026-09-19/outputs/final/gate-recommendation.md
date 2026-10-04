@@ -1,3 +1,5 @@
+> SUPERSEDED 2026-10-04 by fttcp-recommendation.md (phase 3 finalize). Kept as the phase 1 record.
+
 PROCEED WITH FLAGS
 
 # Gate recommendation: OnEMI Technology Solutions Ltd (KISSHT)

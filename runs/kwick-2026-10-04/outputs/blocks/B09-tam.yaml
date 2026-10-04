@@ -1,0 +1,116 @@
+stage: B09-tam
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "No sourced rupee market size for Kwick's own categories (kits, CSI vehicle kits, DNA, cyber tools). Prospectus D&B extract (pp.113-129) gives no rupee market size in text; charts not extractable"
+  - "Equipment share of NFIES, SMFC and the Rs 30,000 crore claim: NOT FOUND. State own-budget spend on forensic equipment: NOT FOUND. Government share of digital forensics market: NOT FOUND"
+  - "Named competitors, market shares, unorganised share: NOT FOUND (prospectus p.149 says no listed peer)"
+  - "Successor to MPF umbrella scheme (FY22-FY26, ended 31-Mar-2026): NOT FOUND"
+  - "Primary text of PIB 03-Jan-2026 release, MHA Parliament replies: fetch blocked (403); figures held at secondary-source tier"
+flags:
+  - {type: FLAG-MGMT-CLAIM-INFLATED, reason: "Rs 30,000 crore is a 5-year Centre plus States all-in announcement (labs, campuses, people), not an equipment market. 6.5x the conservative 5-year central pool Rs 4,605 Cr (computed)"}
+  - {type: FLAG-DECK-TENFOLD, reason: "Deck Rs 1,852 cr vs prospectus Rs 18,528 lakh = Rs 185.28 Cr (pp.265-266). Deck is wrong by 10x. Prospectus Rs 185.28 Cr itself conflicts with a secondary-source snippet of MHA at Rs 128.28 Cr of Rs 245.29 Cr; PENDING LIVE VERIFICATION against MHA Lok Sabha reply"}
+  - {type: FLAG-DECK-ATTRIBUTION, reason: "Deck slide 15 credits PIB for digital forensics $0.19bn to $1.39bn. That path is Deloitte-DSCI (Jun-2025, FY25 base Rs 2,281 Cr, $265.9M), not PIB. Deck 2024 base $0.19bn does not match Deloitte FY25 base"}
+  - {type: FLAG-SAM-FLOOR, reason: "SAM Rs 416 Cr is the scheme-visible floor. Kwick scheme-linked revenue is already 18.9% of it [INFERENCE]. SOM from this floor is a lower bound, not a forecast"}
+  - {type: FLAG-SCHEME-CLIFF, reason: "SMFC (Rs 2,080.5 Cr, vans and state FSL kit) sat inside MPF FY22-FY26. Successor not found. FY27 central forensic budget Rs 1,471 Cr is secondary-source"}
+  - {type: FLAG-BNSS-PHASING, reason: "BNSS 176(3) allows states 5 years from their own notification; Goa is the only notification found. Mandate is phased and unevenly notified, not a single-year demand step"}
+  - {type: FLAG-MOBILE-LAB-COUNT, reason: "Deck says over 1,000 mobile forensic labs; prospectus says over 550 units; PIB scheme says 433 vans approved. Three counts, unreconciled"}
+market_definition: "Annual Indian government and institutional spend on forensic equipment, field kits, CSI vehicle kits, DNA lab and cyber forensic tools bought by police, FSLs and central agencies via tender, GeM and dealers"
+tam_cr: {conservative: 921, realistic: 3035}
+sam_cr: 416
+sam_pct_of_tam: 45.2
+som_3yr_cr: 126.4
+som_5yr_cr: 126.4
+som_implied_revenue_cagr: {yr3: 6.1, yr5: 3.6}
+current_sam_share_pct: 18.9
+revenue_headroom_x: 3.9
+tam_growth_pct: 40
+runway_class: MODERATE
+mgmt_claim_cr: 30000
+mgmt_claim_ratio: 6.5
+mgmt_claim_read: inflated
+capacity_check: "sufficient on physical capacity (asset light, no plant). Binding limit is working capital, FY27 need Rs 44.42 Cr (B04, prospectus RF11). SOM is the cautious side; the working-capital plan implies FY27 Rs 124.8-130.4 Cr, already above SOM yr3"
+methods_used:
+  - "Top-down policy pool (central forensic budget FY27 and annualised scheme outlays)"
+  - "Bottom-up van kits (433 vans x Rs 21.43 lakh Kwick kit value)"
+  - "Global benchmark (India share of global digital forensics applied to global forensic equipment)"
+  - "Peer aggregation: NOT RUN, no named peers found"
+  - "Import substitution: not applicable, no import data found"
+stale_data_flags:
+  - {datapoint: "NCRB crime incidence and conviction rate FY2020-FY2022 (prospectus D&B extract)", source: "NCRB via D&B, Prospectus pp.121-122", year: 2022}
+  - {datapoint: "Deck digital forensics 2024 base $0.19bn", source: "Investor Presentation slide 15", year: 2024}
+  - {datapoint: "MPF umbrella scheme FY22-FY26 outlay Rs 26,275 Cr", source: "Prospectus p.127; PIB", year: 2022}
+searches_performed:
+  - "PIB 3 Jan 2026 forensic labs Rs 30,000 crore, 433 mobile forensic vans (results: ANI, the420, PIB listing)"
+  - "India digital forensics market 2024 2030 (Business Standard snippet, IBEF fetched, Deloitte-DSCI)"
+  - "Nirbhaya DNA and cyber forensic State FSLs Rs 245.29 crore (MHA snippets; aviation-defence-universe fetched)"
+  - "Amit Shah forensic labs Rs 30,000 crore 2029, BNSS 176(3)"
+  - "MPF umbrella scheme Rs 26,275 crore, forensic capacity Rs 2,080.50 crore"
+  - "SMFC 433 vans 23 States/UTs"
+  - "MPF continuation 2026-31 (no result found)"
+  - "BNSS 176(3) state notifications and implementation (Goa 24-Feb-2025 found)"
+  - "MHA directive forensic 2026 (buddingforensicexpert blog, secondary)"
+  - "Union Budget 2026-27 forensic Rs 1,471 crore (devdiscourse, siasat snippets)"
+  - "India forensic equipment market size (SNS Insider global USD 8.73bn snippet, not fetched)"
+  - "Kwick NFSU Varanasi 28-Sep-2026 (Free Press Journal snippet; Rs 150 Cr campus, foundation stone 7-Oct-2026)"
+searches_skipped:
+  - "PIB PRID 2211128 primary text: WebFetch 403"
+  - "MHA Rajya Sabha 11-Feb-2026 (1331.pdf) and 27-Nov-2024 (241.pdf): WebFetch 403"
+  - "MHA modernisation-of-forensic-capacities page: WebFetch 403"
+  - "ANI Rs 30,000 crore article: WebFetch 403"
+  - "Business Standard Deloitte-DSCI article: domain blocked (IBEF copy used instead)"
+  - "Peer revenue aggregation and unorganised share: not searched, no peer named in filings"
+  - "Global per-capita comparison vs China and SE Asia: not searched"
+downstream_candidates:
+  - signal: "MHA and DFSS approvals and releases under SMFC and successor scheme"
+    entity_type: regulatory
+    demand_link: "Approved state projects fund vans, DNA and cyber kit that Kwick tenders into."
+    likely_source: "MHA Lok Sabha and Rajya Sabha replies; MHA forensics section"
+    cadence: event-driven
+    shared: true
+  - signal: "State notifications under BNSS section 176(3)"
+    entity_type: regulatory
+    demand_link: "Each notification starts a five year clock for forensic expert visits and kit demand."
+    likely_source: "State home department gazette notifications"
+    cadence: event-driven
+    shared: true
+  - signal: "NFIES CFSL and NFSU campus tenders, incl. Varanasi foundation stone 7-Oct-2026"
+    entity_type: end-customer
+    demand_link: "New campuses and CFSLs need lab equipment, the only scheme where Kwick names a target."
+    likely_source: "CPPP and GeM tender portals; NFSU tender page"
+    cadence: event-driven
+    shared: false
+  - signal: "Government of Bihar equipment rental contract renewal"
+    entity_type: counterparty
+    demand_link: "Single customer equals the whole Rs 9.25 Cr rental line."
+    likely_source: "Bihar e-procurement portal; Bihar police tenders"
+    cadence: event-driven
+    shared: false
+  - signal: "Union Budget and Demand for Grants, MHA forensic lines"
+    entity_type: macro
+    demand_link: "Annual allocation sets the central scheme pool that forms the SAM floor."
+    likely_source: "Union Budget expenditure documents; PRS Demand for Grants analysis"
+    cadence: event-driven
+    shared: true
+  - signal: "GeM bid and order awards for forensic kits, DNA and cyber tools"
+    entity_type: end-customer
+    demand_link: "GeM is the stated acquisition channel for state police and FSL orders."
+    likely_source: "GeM public bid and order data"
+    cadence: monthly
+    shared: true
+  - signal: "OEM partners and Top Supplier 1 (Thermo Fisher partner awards, Sirchie, Smallpond)"
+    entity_type: counterparty
+    demand_link: "Cyber revenue is near pass-through of one supplier; OEM terms set margin and supply."
+    likely_source: "Customs import records; OEM India distributor announcements"
+    cadence: quarterly
+    shared: true
+  - signal: "NCRB and I4C cybercrime registrations"
+    entity_type: macro
+    demand_link: "Cybercrime volume drives digital forensic tool demand in police units."
+    likely_source: "NCRB Crime in India; I4C portal statistics"
+    cadence: event-driven
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Central SOM is a floor, not a forecast. SAM Rs 416 Cr is the annualised SMFC pool only (2,080.5 / 5). Kwick scheme-linked revenue is Rs 78.7 Cr (gov 58.37 plus dealer-route kits 20.36 [INFERENCE]), 18.9% share; +5pp cap gives Rs 99.4 Cr; non-scheme revenue Rs 27.0 Cr held flat; SOM3 = SOM5 = Rs 126.4 Cr. Two readings. Floor: pool flat, CAGR 6.1% / 3.6%. Upside: non-scheme revenue grows at the Deloitte-DSCI 40% digital forensics rate, giving Rs 173.4 Cr yr3 (17.9%) and Rs 244.5 Cr yr5 (18.3%). Pool growth of 10% a year gives 14.6% yr3; 20% gives 23.4%. Separator: H1 FY27 non-government and cyber revenue, and any scheme approval after SMFC. tam_growth_pct 40 is digital forensics only; scheme pool growth NOT FOUND. P/E and margin for line 5E: NOT FOUND here, stage 11 owns them."

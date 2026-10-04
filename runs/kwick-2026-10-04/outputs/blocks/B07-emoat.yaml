@@ -1,0 +1,47 @@
+stage: B07-emoat
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No annual report (AR SUBSTITUTE is Final Prospectus 31-Aug-2026, Rs lakh), no concalls, no filed results. F2 tested without a promise-delivery record from calls (NO-CONCALL MODE)"
+  - "NOT FOUND: patents or IP list, R&D expense, revenue and margin by in-house product, segment margins, order book, named customers and dealers, any three-year revenue mix, ESOP, headcount history, ISO 17025 or NABL status"
+  - "PENDING LIVE VERIFICATION: deck market and policy figures (Rs 30,000 crore, Rs 1,852 crore vs prospectus Rs 185.28 Cr, 433 vans, 35,000 experts, digital forensics $0.19bn to $1.39bn), NFSU Varanasi Rs 150 crore, continuation of the police modernisation umbrella beyond FY26"
+  - "SEBI order dated 18-Aug-2026 on BRLM Corporate Capital Ventures Pvt Ltd: only first two pages read; not moat evidence"
+flags:
+  - {type: FLAG-NO-MOAT, reason: "EM score 11.6 is NONE and 0.4 below the MODEST line. Eight categories score, none above 3.0, none Strong or Moderate among the 22. R1 (3.0) is a shared policy tailwind, not a moat. Without R1 the total is 8.6. A one-point change in F2 or G2 reaches MODEST. Consistent with B04 FLAG-NO-MOAT."}
+  - {type: FLAG-CLAIM-VS-FILING, reason: "Pros. p.149 claims significant barriers to entry with no filed support; Pros. p.158 says no technical or other collaboration; deck says in-house development and manufacturing and an R&D centre against Pros. p.136 (assembly in-house or outsourced, software outsourced, not full manufacturing) and p.156 (4 payroll R&D staff of 33). Pros. FY24 Mobile CSI revenue is Rs 405.09 lakh on p.132 and p.150 but Rs 421.37 lakh on p.141."}
+  - {type: FLAG-GATE0-DIVERGENCE, reason: "B01 reports 4 confirmed moats, STRONG, 16 points, driven by mechanical tests (M11, M1, M10 flip on window). This scan finds no structural moat evidence. B01 moat count should not be read as structural."}
+  - {type: FLAG-LBF4, reason: "27-Sep-2026 Reg 30 note names a third-party Rs 150 Cr NFSU Varanasi campus and no Kwick order. Zero credit to H2 or R1; carried as optionality with a named confirming observation (a Reg 30 order tied to NFSU or MHA)."}
+em_score: 11.6
+em_classification: "NONE"
+active_categories:
+  - {id: "R1", name: "Regulatory and policy tailwind (shared: BNSS, NFIES Rs 2,254.43 Cr FY25-FY29, state FSL approvals)", strength: "Moderate", evidence_type: "documented policy facts; Kwick benefit inferred", time_to_materialise: "realised in DNA and cyber revenue, runs to FY29"}
+evidence_mix: {documented: 12, claim: 9, inference: 3}
+completionist_recount: "📄 recount performed: 12 documented items across 6 categories (C2, G1, G2, F2, H2, R1). 8 categories score, none Strong; 9 claim and 3 inference items sit outside the count."
+catalysts_12m:
+  - {catalyst: "H1 FY27 results: gross margin on COGS at or above 27%, CFO/PAT at or above 0.8, year-end receivable days at or below 80", window: "by about Nov 2026 to May 2027 (filing date NOT FOUND in inputs)", evidence_type: "documented metrics, forward event", anchor: "B03 monitorables; Pros. p.257, p.262"}
+  - {catalyst: "Reg 30 order named and tied to NFSU, MHA or a state, converting the 27-Sep Varanasi note (LBF-4 separator)", window: "6-12m", evidence_type: "management claim", anchor: "Announcement 27-Sep-2026; B05 kill signal"}
+  - {catalyst: "State DNA and cyber lab awards from Rs 185.28 Cr approved of Rs 245.29 Cr", window: "6-18m", evidence_type: "documented policy, no Kwick order", anchor: "Pros. p.150"}
+  - {catalyst: "E-Forensics software CWIP (Rs 1.37 Cr) commissioned, first priced order", window: "12-24m", evidence_type: "management claim", anchor: "Pros. p.151-152; B03"}
+  - {catalyst: "Names and end-user states of the Rs 20.36 Cr dealer-channel kit buyers", window: "12m", evidence_type: "analyst inference", anchor: "Pros. p.150, p.160"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "E-Forensics suite (10 apps) as recurring software line", converting_evidence: "Commissioning date, first priced order, amortisation start on Rs 1.37 Cr CWIP", first_appears: "Fixed-asset note, H1 FY27 results, Reg 30", window: "12-24m"}
+  - {optionality: "AI Judicial platform and LIMS reach a customer", converting_evidence: "Signed tender or purchase order; capitalised cost above Rs 48.72 lakh prototypes", first_appears: "Results notes, Reg 30", window: "24-36m or longer"}
+  - {optionality: "Kwick 8D and 4D handhelds commercialised", converting_evidence: "First invoiced sale and units sold", first_appears: "H1 FY27 results commentary", window: "12-24m"}
+  - {optionality: "In-house handhelds as a margin lever (A4)", converting_evidence: "Revenue and gross margin by in-house product", first_appears: "Next KPI disclosure, MD&A", window: "12-24m"}
+  - {optionality: "Private forensic laboratory as services line", converting_evidence: "Funded plan, accreditation, first paid case", first_appears: "Reg 30 or objects variation", window: "36m or longer"}
+  - {optionality: "NFSU Varanasi, 433 vans, Rs 30,000 crore network become Kwick orders", converting_evidence: "Named NFSU, MHA or state order to Kwick under Reg 30", first_appears: "BSE announcements by H1 FY27 results", window: "6-12m"}
+  - {optionality: "State DNA and cyber lab awards convert to Kwick revenue", converting_evidence: "Named state FSL awards on GeM or e-procurement", first_appears: "Reg 30, H2 FY27 revenue by state", window: "6-18m"}
+  - {optionality: "Make in India purchase preference lifts win rate for in-house devices", converting_evidence: "Tender documents citing local-content preference; Kwick award above L1 price", first_appears: "GeM tender record, gross margin by product", window: "24-36m"}
+  - {optionality: "OEM relationships become exclusive (H2 upgrade)", converting_evidence: "Signed exclusivity, territory rights or co-development", first_appears: "Reg 30, material contracts note", window: "24-36m"}
+  - {optionality: "Customer base deepens (C1 upgrade)", converting_evidence: "Named buyers of Rs 20.36 Cr kits and repeat-order record", first_appears: "Customer disclosure, annual report", window: "12-24m"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (capped by DB4 cash conversion 0.46x) with a NONE forward moat (EM 11.6, 0.4 below MODEST) is not a transition setup; the only Moderate item is a shared policy tailwind."
+top_moat_risks:
+  - "R1 tailwind is shared and won at L1 tender price; gross margin on COGS 37.30% to 27.06%; police modernisation umbrella period printed ends FY26"
+  - "Gujarat 29.39% (4.5x in two years) and Top Customer 1 23.59% do not repeat"
+  - "Receivables and cash conversion: CFO/PAT 0.56x, FY27 working capital gap Rs 44.42 Cr, BG headroom 207.15 of 800 lakh"
+  - "Thin, person-dependent team of 33 payroll staff; customers served 128 to 95; disclosure conduct (27-Sep Reg 30 note without an order)"
+analyst_note: "capex_embedded_growth_pct is 0 because no capex programme exists. The template arithmetic (Rs 1.37 Cr software CWIP x 32.77x asset turnover = Rs 44.95 Cr, 42.5% of FY26 revenue) is an artefact and is rejected. The only forward revenue evidence is B05's derived +18% to +23% from average-balance working-capital days, funded by IPO working capital. Score sensitivity: F2 at 0.7x and R1 at 1.0x are judgement calls; R1 at 0.7x gives 10.7; excluding R1 gives 8.6; one raw point on F2 or G2 reaches MODEST. I1 and I2 contribute 0.0, so the review checkpoint list is unaffected. Pros. p.149 barrier claim and p.158 'no collaboration' statement conflict. SEBI order on BRLM CCVPL (18-Aug-2026) only partly read, not moat evidence."

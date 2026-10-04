@@ -17,3 +17,4 @@ session (claude-opus-5-5) and are not metered per stage.
 | 4 | bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | 122,894 | 3m49s | 1 |
 | 5 | concall (no-concall mode) | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 253,924 | 11m24s | 1 |
 | 8 | promoter (web) | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 244,642 | 10m25s | 1 |
+| 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | 273,438 | 5m11s | 1 |

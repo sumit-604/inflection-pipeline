@@ -1,0 +1,57 @@
+stage: B06-peers
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No listed forensic pure play; all 11 transcripts are structural comps on the engine (govt IT/defence procurement, OEM resale, tender working capital). No peer mentions Kwick, forensics, BNSS, FSLs, GeM or bank guarantees (full-text search of all 11 .txt twins)"
+  - "Peers use their own day definitions (Zen DSO, ADSL DSO quoted by analyst, DSSL none stated). Kwick days are average-balance (74) and year-end (79). Cross-peer day comparisons are indicative only"
+  - "Kwick 'gross margin on COGS' basis NOT FOUND in B05; peer gross margins are on revenue. Magnitude comparison is conditional"
+  - "DSSL Aug-2026 cover page titles the call Q1 FY26; body, dates and figures show Q1 FY27 (transcript label error, treated as Q1 FY27)"
+  - "Zen Q4 FY26 PAT Rs 47.2 Cr (May-2026 p.8) vs Rs 31.5 Cr (Jul-2026 p.3); peer-internal inconsistency, not used"
+flags:
+  - {type: FLAG-PEER-STRUCTURAL-ONLY, reason: "Peer set cannot test the forensic demand claim (BNSS, NFIES, state FSL buying) or the dealer/vehicle-builder channel. 3 of 8 questions UNVERIFIABLE; silence recorded, not read as support or contradiction"}
+  - {type: FLAG-Q4-LOADING-OUTLIER, reason: "Peer Q4 revenue shares are 26% to 33% (all DERIVED from peer figures); Kwick Q4 FY25 share was 51% (B05, prospectus p.92). Kwick is more back-ended than any peer"}
+  - {type: FLAG-SUPPLIER-CREDIT-DIVERGENCE, reason: "Peers fund project working capital with OEM and distributor credit (DSSL net WC 14 to 17 days with payables stretched). Kwick plans creditor days 44 to 30 in FY27 (B05 guidance), the opposite direction"}
+  - {type: FLAG-INPUT-COST-NOT-IN-B05, reason: "DSSL and ADSL report 25% to 50% hardware price spikes and tender walk-aways in Q4 FY26 to Q1 FY27. B05 carries no input-price risk for Kwick's cyber and digital resale line (33.32% of FY26)"}
+peers_provided: 11
+verified:
+  - {claim: "What gross margin on OEM resale/integration versus own-IP, and does mix shift to lower-margin lines compress it (Kwick GM 37.30% to 27.06%)", peers: ["DSSL", "ADSL", "ZENTEC"], anchor_count: 7}
+  - {claim: "Do peers disclose tender or order wins under Reg 30 with named customer and value (benchmark for Kwick 27-Sep note that names no order)", peers: ["ZENTEC", "DSSL", "ADSL"], anchor_count: 6}
+partially_verified:
+  - {claim: "Receivable days and year-end receivables to sales versus peers; how government buyers pay versus private/channel (Kwick 74 days average, 79 year-end)", peers: ["ZENTEC", "DSSL", "ADSL"]}
+  - {claim: "Tender-win to billed-revenue conversion and Q4 (March) loading (Kwick Q4 FY25 = 51% of sales; MD&A says not seasonal)", peers: ["ZENTEC", "ADSL", "DSSL"]}
+  - {claim: "Customer and state concentration, and what happens when a buyer stops ordering after a big year (Kwick Gujarat 29.39%, top-10 77.64%)", peers: ["ZENTEC", "DSSL", "ADSL"]}
+contradicted: []
+unverifiable:
+  - {claim: "Do you sell through dealers, vehicle builders or integrators instead of direct to end agency; how is it classed and collected (Kwick Rs 20.36 Cr channel)", peers_checked: ["DSSL", "ADSL", "ZENTEC"]}
+  - {claim: "Has BNSS, new criminal law or state forensic modernisation changed order inflow; central/state grants released on schedule", peers_checked: ["ZENTEC", "ADSL"]}
+  - {claim: "Do bank guarantees, liquidated damages or performance bonds limit growth headroom (Kwick BG outstanding Rs 5.93 Cr)", peers_checked: ["ADSL", "ZENTEC", "DSSL"]}
+peer_coverage_map:
+  - {peer: "ZENTEC", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Emergency-procurement orders must conclude before Mar-2026 (FY-end loading); regular orders slipped; H1 revenue Rs 235.71 Cr vs 495.64 Cr (standalone)"}
+  - {peer: "ZENTEC", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Outsourced build, no-assembler stance; anti-drone margins below simulators; most equipment order book executes in 12 to 18 months; named orders via press releases"}
+  - {peer: "ZENTEC", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "FY26 revenue -29.4% on order pause; DSO 161 to 119 days; WC 196 days; warranty true-up Rs 3.1 Cr"}
+  - {peer: "ZENTEC", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Gross margin 72.9% own IP; debtor days 122; WC 257 days on supplier advances; named MoD order Rs 177.5 Cr; no anti-drone or simulator tenders floated"}
+  - {peer: "ADSL", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Govt payment delays of 2 to 4 weeks once budgeted; hardware is commodity, margin in services; subcontractors for local build; partner-led bids"}
+  - {peer: "ADSL", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "DSO 75 days; milestone billing pushed to 31-Mar; hardware-only margin single digit; 10% of top line order-announcement threshold; auditor qualifications on receivables, unbilled revenue, inventory"}
+  - {peer: "ADSL", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Govt revenue -6% FY26 vs enterprise +31%; Rs 36 Cr ECL true-up; Western Railway walk-away (Rs 165 Cr + 85 Cr) on 25% to 30% hardware price rise"}
+  - {peer: "ADSL", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Repeat of hardware-price caution; two quarters without large govt wins; finance cost up on working capital; audit report unmodified"}
+  - {peer: "DSSL", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "No seasonality claim; back-to-back OEM pricing via Redington/Rashi; milestone payment vs upfront billing; top-10 customers ~60% with rotating names; named orders"}
+  - {peer: "DSSL", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Receivables Rs 301 Cr to 602 Cr (analyst figure, uncontested); net WC 14 to 17 days; gross margin 18% to 14% sequential; Q4 revenue Rs 402 Cr of FY Rs 1,424 Cr"}
+  - {peer: "DSSL", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Revenue Rs 313 Cr vs 328 Cr on OEM lead times; named orders RBI/NPCI/CBI; declarable-order threshold; works with end customers because direct OEM channel margin is lower"}
+industry_cross_read:
+  demand: "Split between orders and conversion: all three peers report strong order books (Zen Rs 1,239 Cr, DSSL Rs 3,104 Cr) but revenue slips on government approval timing and OEM lead times; no peer mentions forensic or police-lab demand"
+  pricing_inputs: "Hardware inflation 25% to 50% (AI-driven memory and server demand) forced tender walk-aways (ADSL) and margin dips (DSSL gross 18% to 14%); own-IP vendor Zen holds 72.9% gross. Resale lines carry the price risk; Kwick cyber resale is exposed and B05 is silent"
+  capex_cycle: "Not a capacity race. Peers are asset-light and expand working capital (Zen WC 196 to 257 days, DSSL lease-funded as-a-service, ADSL finance cost up). Lone-expander test does not apply; Kwick's IPO working-capital object sits inside a working-capital-heavy peer norm"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Hardware price spike between bid and award voids tenders; rebid (ADSL Q4 FY26 p.14; ADSL Q1 FY27 p.11)"
+  - "OEM and component lead-time stretch defers revenue recognition on orders in hand (DSSL Q1 FY27 p.4)"
+  - "Auditor qualifications on receivables over 3 years, unbilled revenue, physical verification of inventory and fixed assets; later one-time ECL Rs 36 Cr (ADSL Q3 FY26 p.16; Q4 FY26 p.13)"
+  - "Warranty provision true-ups after delivery: Zen Rs 3.1 Cr Q4 FY26 (p.8), Rs 2.88 Cr Q1 FY27 (p.4)"
+  - "Working-capital days inflate with supplier advances and inventory ahead of delivery: Zen 196 to 257 days (Q4 FY26 p.9; Q1 FY27 p.4)"
+  - "Provision release flatters a base quarter: Zen Q1 FY26 Rs 7.65 Cr (Q1 FY27 p.4)"
+  - "Election and model-code periods block government permissions and billing (ADSL Q3 FY26 p.10)"
+  - "Government revenue can fall while headline revenue grows: ADSL govt -6% vs enterprise +31% FY26 (Q4 FY26 p.5)"
+net_narrative_effect: "complicates"
+analyst_note: "Cross-peer hypothesis: in government and BFSI hardware integration, the headline receivable-days figure is not the binding metric. Peers hold net working capital low by stretching OEM and distributor credit (DSSL net WC 14 to 17 days while receivables doubled; payables 134 days per analyst figure, uncontested), and the receivable risk surfaces as aged-debtor and unbilled-revenue audit items (ADSL). Kwick plans the opposite: creditor days 44 to 30 and debtor days 74 in FY27 (B05 guidance), so its Rs 44.42 Cr gap depends on collections, not supplier credit. Testable: Kwick H1 FY27 creditor days and top-supplier credit terms (top supplier 40.86%). Second item: peer Q4 shares are 26% to 33% (DERIVED) against Kwick 51%. Third: no verdict is CONTRADICTED; unverifiable items are structural, not evidence against Kwick. DSSL payables and receivables figures come from analyst questions; management did not dispute them."

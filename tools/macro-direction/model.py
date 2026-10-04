@@ -53,6 +53,11 @@ def load_panel() -> pd.DataFrame:
     s = _read("fred_DEXINUS", "month_avg")
     if s is not None:
         cols["usdinr_avg"] = s
+    for name, key in [("eia_brent_spot", "brent_eia_avg"),
+                      ("nifty_monthly", "nifty_avg")]:
+        s = _read(name, "month_avg")
+        if s is not None:
+            cols[key] = s
     for name, key in [("eia_brent_spot", "brent_end"),
                       ("nifty_monthly", "nifty_end"),
                       ("yahoo_gold_fut", "gold_fut_end"),
@@ -105,6 +110,12 @@ ASSETS = [
 CHECK_ASSETS = [
     Asset("brent_end", "Brent EIA spot, month-end", "brent_end", "end",
           "crude", None, False),
+    Asset("brent_eia_avg", "Brent EIA spot, month-average", "brent_eia_avg",
+          "avg", "crude", None, False),
+    Asset("nifty_avg", "Nifty 50, month-average", "nifty_avg", "avg",
+          "equity", "nifty", False),
+    Asset("nifty_nofpi", "Nifty 50, FPI vote off", "nifty_end", "end",
+          "equity", "nifty_nofpi", False),
     Asset("gold_end", "Gold futures GC=F, month-end", "gold_fut_end", "end",
           "gold", "real_yield", False),
     Asset("silver_end", "Silver futures SI=F, month-end", "silver_fut_end",
@@ -210,6 +221,8 @@ def votes(panel: pd.DataFrame, asset: Asset,
         l3 = _sgn(-_sgn(f["dollar_3m"]) + _sgn(f["cu_au_3m"]))
     elif d == "nifty":
         l3 = _sgn(_sgn(f["fpi"]) - _sgn(f["brent_3m"]))
+    elif d == "nifty_nofpi":
+        l3 = -_sgn(f["brent_3m"])
     else:
         l3 = pd.Series(0, index=panel.index)
     out["L3"] = l3

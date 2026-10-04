@@ -67,8 +67,12 @@ def evaluate(panel, asset: M.Asset, with_logit=True) -> dict:
     return res
 
 
-def hit_table(res: dict, h: int) -> dict:
+def hit_table(res: dict, h: int, regime_only: bool = False) -> dict:
     v = res["v"]
+    if regime_only:
+        v = v[v["quad"].notna()]
+        res = {k: (x.reindex(v.index) if isinstance(x, pd.Series) else x)
+               for k, x in res.items()}
     fwd = v[f"fwd{h}"]
     row = {}
     row["model"] = hit(v["call"], fwd)
@@ -120,7 +124,7 @@ def worst_stretches(res: dict, k=3) -> list[dict]:
             win = v.loc[end - 11:end]
             hr, n = hit(win["call"], win["fwd1"])
             q = win["quad"].value_counts()
-            mix = ", ".join(f"{a} {b}" for a, b in q.items())
+            mix = ", ".join(f"{a} {b}" for a, b in q.items()) or "no regime data (after 2019-10)"
             bh = (1 + win["fwd1"]).prod() - 1
             picked.append(dict(end=end, start=end - 11, ret=val, bh=bh,
                                hit=hr, quads=mix))
@@ -149,13 +153,17 @@ def portfolio(results: dict) -> dict:
     r_top_pos = pd.Series([
         fwd.loc[t, [a for a in top2[t] if pos.loc[t, a]]].sum() / 2
         for t in idx], index=idx)
+    l1 = pd.DataFrame({k: results[k]["v"]["L1"] for k in core}).loc[idx]
+    key_tr = l1 + r12.rank(axis=1, pct=True) * 0.5
+    r_tr = pd.Series([fwd.loc[t, list(key_tr.loc[t].nlargest(2).index)]
+                      .mean() for t in idx], index=idx)
     r_ew = fwd.mean(axis=1)
     r_bot = pd.Series([fwd.loc[t, list(rank_key.loc[t].nsmallest(2).index)]
                        .mean() for t in idx], index=idx)
     valid = fwd.notna().all(axis=1)
     picks = pd.Series([a for t in idx[valid] for a in top2[t]]).value_counts()
     return dict(core=core, top=perf(r_top[valid]), top_pos=perf(r_top_pos[valid]),
-                ew=perf(r_ew[valid]), bottom=perf(r_bot[valid]),
+                ew=perf(r_ew[valid]), trend=perf(r_tr[valid]), bottom=perf(r_bot[valid]),
                 start=str(idx[valid].min()), end=str(idx[valid].max()),
                 picks=picks, months=int(valid.sum()),
                 hit_vs_ew=float((r_top[valid] > r_ew[valid]).mean()))
@@ -164,8 +172,8 @@ def portfolio(results: dict) -> dict:
 def averaging_check(panel) -> list[tuple]:
     """Same rules on monthly-average vs month-end prices of one asset."""
     rows = []
-    pairs = [("brent", "brent_end"), ("gold", "gold_end"),
-             ("silver", "silver_end")]
+    pairs = [("brent_eia_avg", "brent_end"), ("nifty_avg", "nifty"),
+             ("gold", "gold_end"), ("silver", "silver_end")]
     all_assets = {a.key: a for a in M.ASSETS + M.CHECK_ASSETS}
     for a_avg, a_end in pairs:
         if all_assets[a_end].price not in panel:

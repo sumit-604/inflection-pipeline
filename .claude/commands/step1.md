@@ -33,6 +33,15 @@ complete, never to reach a verdict.
 
 ## ENVIRONMENT
 
+CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
+`git fetch origin main`, then
+`git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+If the diff is not empty, print
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+and STOP: "Checkout is behind or ahead of origin/main in framework files;
+pull or commit before running." If the fetch fails, STOP with the same line
+plus " (fetch failed)". This is a mechanical halt, not a quality halt.
+
 Claude Code desktop has live web (WebSearch/WebFetch) in this setup. Steps B and
 C use it. If web is unavailable at run time, degrade: build the business read
 from the collected annual report and presentation, and fall back to screener's

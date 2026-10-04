@@ -156,6 +156,12 @@ October 2026 audit, ruled 2026-10-04 (audits/RULINGS_2026-10.md item numbers):
   git reset --hard over a full checkout.
 - Run tools/dry_check.sh before merging any PR that touches .claude/,
   prompts/, frameworks/ or tools/ (operator ruling 2026-10-03).
+- Stale-checkout guard (operator ruling 2026-10-04): /run-pipeline, /step1,
+  /fttcp, /finalize and /run-quarterly start with `git fetch origin main` and
+  `git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+  A non-empty diff or a failed fetch stops the command before it reads any
+  framework file. The session-start hook syncs only on the web, so on a local
+  checkout this guard is the only check.
 - Any session that commits a framework or prompt amendment must end by
   opening a PR to main the same day. Run outputs and framework amendments
   go in SEPARATE commits so recovery stays surgical.

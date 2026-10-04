@@ -168,7 +168,7 @@ Note: both calls were called "first" by a speaker (Jul 2022 call p.9 by a partic
 | Question | Response | Satisfactory | Real risk |
 |---|---|---|---|
 | Conductor EBITDA flat at about Rs 5 Cr since FY18 while capital employed doubled; when does it scale | ABC demand fell with government scheme; wire rod will help (p.13) | No: no EBITDA target for FY27 stated in rupees | Yes. Q1 FY27 conductor revenue 171 Mn |
-| Rs 53 Cr operating cash flow vs Rs 150 Cr capex and Rs 18 Cr interest; where is the halt line | "will not go beyond one" net D/E (p.15) | Partly | Yes. B03: 68.2% of CFO is borrowing and payables |
+| Rs 53 Cr operating cash flow vs capex of INR 30 Cr solar + INR 15 Cr wire + INR 90 Cr LT cables and INR 13 Cr finance cost on INR 180 Cr gross borrowing (May-26 call [page 15]) [misquote corrected by orchestrator 2026-10-05 per B12a]; where is the halt line | "will not go beyond one" net D/E (p.15) | Partly | Yes. B03: 68.2% of CFO is borrowing and payables |
 | When do returns exceed cost of capital; 20-25% growth does not add up | ROCE 13-14% FY27; 20-25% is consolidated incl. new verticals (p.19-20) | No. The same investor showed segment guides give about 15-17%; Q1 PR then cut to 15-18% | Yes |
 | Name EPC vendor approvals and minimum revenue to justify capex | Adani Renewables up to 33 kV only; Rs 18-20 Cr FY27 (p.15) | Partly | Yes. approvals thin vs "several boards" claim (p.9) |
 | Why conversion foil capacity is only 45% used | pharma bulk orders hard to win; Rohini Bhandari now leads; 60-65% target (p.21) | Partly | Medium |

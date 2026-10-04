@@ -134,7 +134,7 @@ TAM realistic 35,242 (conservative 19,812) > SAM 19,762 (core 1,852) > FY26 reve
 
 5E Output card.
 - TAM Rs 19,812 Cr (conservative) to Rs 35,242 Cr (realistic). SAM Rs 19,762 Cr. SOM Rs 1,086 Cr (FY29) and Rs 1,248 Cr (FY31). CAGR 9.6% and 8.7%. Runway MODERATE. Capacity gap Rs 22 Cr (FY29), Rs 138 Cr (FY31).
-- Valuation implication: at 9.6% revenue CAGR implied by SOM, with margin trajectory of 8.0% (FY26) to 9.0% (Q1 FY27, deck p.8), the earnings growth embedded here is 12.9% CAGR at EBITDA level (1,086 x 9.0% = 97.7 vs 66.3; 1.4743^(1/3)), which does not support, on its own, the current valuation of 25.6x P/E (screener per step-1 brief, 2026-10-04; company memory, not anchored). PAT growth not built here; stage 11 owns it. If margin reaches the per-MT guide levels, the reading changes; per-MT FY26 actuals are NOT FOUND (B04).
+- Valuation implication: at 9.6% revenue CAGR implied by SOM, with margin trajectory of 8.0% (FY26) to 9.0% (Q1 FY27, deck p.8), the earnings growth embedded here is 13.8% CAGR at EBITDA level (1,086 x 9.0% = 97.7 vs 66.3; 1.4743^(1/3) = 1.138) [corrected from 12.9% by orchestrator 2026-10-05 per B12a]. [Unanchored 25.6x P/E removed by orchestrator 2026-10-05 per B12a source-fidelity finding; the corpus screener Data_Sheet gives 36.8x on FY26 PAT and about 22.8x on trailing-four-quarter PAT; stage 11 owns the multiple.] PAT growth not built here; stage 11 owns it. If margin reaches the per-MT guide levels, the reading changes; per-MT FY26 actuals are NOT FOUND (B04).
 
 ## SECTION 6: DOWNSTREAM SIGNAL CANDIDATES
 

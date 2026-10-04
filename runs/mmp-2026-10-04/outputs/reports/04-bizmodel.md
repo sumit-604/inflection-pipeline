@@ -59,7 +59,7 @@ Group revenue streams are all one type: sale of goods at a point in time (AR26 C
 | Pricing power source or absence | Absent in bulk. "We will not cater to the commodity market as much as we are doing today ... there is resistance to pricing" (Call p.18). Partial in specialty powders and printed foil, unmeasured |
 | Asset intensity | Medium. PPE 250.2 Cr plus CWIP 38.3 Cr on revenue 824.0 Cr; fixed asset turn 3.3x (Q1 deck p.29, derived). Total asset turn 1.4x (B03) |
 | WC intensity | High. Inventory 158.1 Cr and trade receivables 88.8 Cr against payables 46.2 Cr; short-term borrowings 141.3 Cr fund it (Q1 deck p.29). Cash cycle 102.5 days (B03) |
-| Regulatory moat or burden | Burden: explosive-grade powder handling, 7 deaths in FY26 (AR26 p.25). Moat: anti-dumping duty on Chinese foil, Rs 619-873 per MT (Q1 deck p.25), a tailwind that carries a sunset NOT FOUND |
+| Regulatory moat or burden | Burden: explosive-grade powder handling, 7 deaths in FY26 (AR26 p.25). Moat: anti-dumping duty on Chinese foil, US$619-873 per MT (Q1 deck p.25) [currency corrected by orchestrator 2026-10-05 per B12a], a tailwind that carries a sunset NOT FOUND |
 
 ## 1E The chai-stall uncle version
 Think of a flour mill. The mill buys wheat and grinds it into different flours. The price of flour follows the price of wheat. The mill earns a grinding fee on top. MMP is a mill for aluminium. It grinds one kind into fine powder, rolls another into thin sheets, and draws a third into wire. Fancy flour earns a bigger fee than plain flour. MMP now builds two new small mills, one for cable and one for insulators, and the new mills lose money until customers approve them.

@@ -1,45 +1,46 @@
 stage: B01-gate0
 company: "MMP"
-run_date: "2026-10-04"
+run_date: "2026-10-05"
 model: claude-sonnet-5-5
 status: complete
 input_gaps:
-  - "screener P&L/BS/CF/Quarters CSVs empty (Data_Sheet present, used)"
-  - "Q4 FY26 and Q3 FY26 results are image scans"
-  - "ARFIN peer transcripts absent"
-  - "announcements hand-collected selection"
-  - "NSE sought results clarifications 2026-03-05 and 2026-06-23 (reply not in corpus)"
-  - "research empty"
-  - "Gate0: no 10-year capex line and no trade payables before FY25 in corpus (B2, B3, B4 NOT FOUND, scored 0)"
-  - "Gate0: no peer data (M2, M5, M6, M9 PEER DATA NEEDED); R&D, distribution reach, listed-player count NOT FOUND (M6, M7, M8)"
-  - "Gate0: promoter holding history only 8 quarters (Sep-2024 to Jun-2026)"
+  - "B00 collector gap: BSE scrip code not found, announcements/ empty; repaired by /step1 with 11 NSE filings (a selection)"
+  - "B00 collector gap: shareholding/ empty; repaired by /step1 with Jun 2026 SHP (machine conversion of NSE XBRL)"
+  - "B00 collector gap: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets exported EMPTY for MMP, ARFIN, APARINDS, MAANALU; not repaired (no LibreOffice); Data_Sheet.csv carries the raw values"
+  - "B00 collector gap: no results PDFs from screener; repaired by /step1 (Q1 FY27 machine-readable, Q4/FY26 audited scan, Q3 FY26 scan)"
+  - "B00 collector gap: no rating PDF; repaired by /step1 (CRISIL letter plus rationale text)"
+  - "B00 collector gap: only 2 concalls, no-concall mode (May 2026 and Jul 2022 usable as supplementary evidence)"
+  - "B00 scanned results: Q4/FY26 and Q3 FY26 results PDFs are image scans, no OCR; FY26 audited figures taken from the text AR FY26"
+  - "B00 peer transcripts: ARFIN none; APARINDS 4 and MAANALU 4 only"
+  - "B00 exchange clarifications 2026-03-05 and 2026-06-23: company reply not in corpus"
+  - "B00 research/ and prospectus/ empty (no effect on anchored evidence)"
+  - "Gate 0 gap: capex line, trade payables and current liabilities exist only for FY24-FY26 (AR25 p.154/p.156, AR26 p.171/p.173); screener Data_Sheet has no capex, payables or ROCE row"
+  - "Gate 0 gap: promoter holding before 30-Sep-2024 in SHP; 31-Mar-2024 from AR25 note 16(d) p.112; 3-year start (Jun-2023) NOT FOUND"
+  - "Gate 0 gap: R&D spend nil (AR26 p.44, no separate R&D activity); listed-player count for a regulated segment NOT FOUND; distribution reach NOT FOUND"
 flags:
-  - {type: FLAG-GATE0, reason: "Core 39/100 (matrix AVOID, 1 point under the AVERAGE band). Depressors: ROCE fell 25.3% (FY17) to 10.06% (FY26) as capital employed grew 5.6x on a slower profit base; PAT CAGR 6.8% vs revenue CAGR 16.8%; Block B scored 5 because capex and payables history are NOT FOUND (data absence, not evidenced weak cash); contingent liabilities 20.6% of net worth driven by subsidiary guarantees. Years driving: FY26 (exceptional loss, associates), FY20-FY21 revenue decline, FY19 capex step-up."}
-  - {type: FLAG-CASH, reason: "CFO FY26 53.29 Cr includes +17.23 Cr increase in short-term borrowings booked in CFO (AR consolidated CF p.173); FY25 +44.26 Cr. CFO ex that line: FY26 36.06, FY25 12.53 Cr. Capex FY26 39.23 Cr, FY25 49.75 Cr (AR p.173). Verifier to confirm."}
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (core 54). Depressors: FY26 ROCE 12.91% fixed formula (down from 16.31% FY25), ND/EBITDA 2.81x, FY26 PAT CAGR 6.8% vs revenue CAGR 16.8% over 9 years, Block C and D 8/20 each, borrowing-funded CFO. Result flips to AVOID under two open-ruling readings (see analyst_note)."}
 data_years: 10
 fy_range: "FY2017 to FY2026"
-blocks: {A: 4, B: 5, C: 8, D: 8, E: 14}
-core_score: 39
-moat_score: 4
-grand_total: 43
-moats_confirmed: 0
-moat_class: "NONE"
-classification: "AVOID"
-deal_breakers:
-  - "1: Block A 4 <8, max GOOD (years FY17-FY26; ROCE median 12.85%, A4 decline 15.2pp)"
-  - "2: Block B 5 <8, max GOOD (driven by NOT FOUND B2/B3/B4, not by measured weakness)"
+blocks: {A: 9, B: 14, C: 8, D: 8, E: 15}
+core_score: 54
+moat_score: 12
+grand_total: 66
+moats_confirmed: 2
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers: []
 history_downgrade: false
 data_notes:
-  - "Basis: consolidated (screener BS total 624.94 Cr = AR consolidated 62,493.66 L p.171). Screener Data_Sheet has no ROCE row; ROCE computed: EBIT = PBT + Interest, capital employed = equity + reserves + borrowings (Total Assets minus Other Liabilities), a proxy because Data_Sheet has no current-liabilities line. Strict-formula cross-check: FY26 12.9% (Total Assets 624.94 minus current liabilities 211.31 Cr, AR p.171), FY25 16.3%; earlier years not computable."
-  - "ROE earliest year FY17 uses closing net worth (opening unavailable). FY26 ROE 9.26% matches AR consolidated ratio table p.224."
-  - "Screener 'Other Income' nets associate share and exceptional; EBIT includes associates +8.21 Cr and exceptional -9.74 Cr in FY26."
-  - "EBITDA FY26 64.94 Cr (AR consolidated P&L p.172: 4159.15+1333.31+1134.25-133.17 Lakhs); screener Data_Sheet 65.27 Cr. Margin 7.88% (AR) vs 8.0% in load-bearing fact (screener 7.92%)."
-  - "B2/B3 NOT FOUND: capex only FY25-FY26 in corpus. Unscored proxy CFO+CFI: positive in 7 of 10 years, cumulative -20.39 Cr. Proxy would add at most 2 points (B2=2, B3=0) giving core 41 = AVERAGE band."
-  - "B4 NOT FOUND: trade payables only FY25 2712.64 L and FY26 4622.21 L (AR p.171 note 24). Receivable+inventory days 97.5 (FY17) to 109.4 (FY26); full WC days FY25 104.1, FY26 88.9."
-  - "E2: 3-year window not evidenced; holding 74.48% (Sep-2024) to 74.49% (Jun-2026) per SHP; share count unchanged 25,402,613 FY20-FY26 (screener). Scored 3."
-  - "E4: contingent liabilities 7,133.72 L (standalone note 47, AR p.157) of which 6,688 L are guarantees for wholly owned subsidiaries MMP Electricals and MMP Cables; no separate consolidated note found. Over consolidated net worth 34,650.78 L = 20.6%. Excluding subsidiary guarantees 1.3% (score would be 5, core 43)."
-  - "C3: 9 YoY periods, 7 positive (FY20, FY21 declined)."
-  - "PEER DATA NEEDED: M2, M5, M9 (GM proxy (Rev-RM)/Rev FY26 21.3%, peers absent); M6 R&D NOT FOUND; M7, M8 NOT FOUND."
-  - "No loss-to-profit swing in annual PAT. Q1 FY26 quarterly PAT -5.41 Cr (Other income -15.17 incl exceptional)."
-block_b_trend: "stable on headline, quality caveat: CFO 56.79 (FY25) to 53.29 Cr (FY26), of which short-term borrowing increase 44.26 to 17.23 Cr sits inside CFO"
-analyst_note: "AVOID by one point (39 vs 40) is a thin, partly data-driven result. B2, B3, B4 score 0 because 10-year capex and payables are not in the corpus; the unscored proxy lifts core to 41. The real depressor is ROCE: capital employed rose from 95 Cr (FY17) to 531 Cr (FY26) while EBIT rose from 24 to 53 Cr, and FY26 EBIT carries a 9.74 Cr exceptional loss (Umred) offset by 8.21 Cr associate profit. E4 is inflated by subsidiary guarantees that sit inside consolidated debt. Downstream: treat as capex-phase compression, not a halt."
+  - "Per-metric windows (rule 6): A1, A2, A4, B2, B3, B4, M12 on FY24-FY26 (3 years; fixed-formula ROCE needs current liabilities, payables and capex are filed only for FY24-FY26). A3, B1, C1-C4, D, E, M1, M4, M10, M11 on FY17-FY26. M3 on FY26."
+  - "ROCE computed (screener has no ROCE row): EBIT = PBT + Interest (screener-data); capital employed = Total Assets - Current Liabilities. FY24 14.74%, FY25 16.31%, FY26 12.91%. EBIT includes associate share of profit and the FY26 exceptional loss 973.69 L (AR26 p.172)."
+  - "Capex = AR cash-flow line Investment in PPE (net of disposal): FY24 3,078.11 L, FY25 4,974.53 L, FY26 3,923.03 L. CWIP and capital advances not included (see analyst_note)."
+  - "E4 on consolidated basis: AR26 Note 51 p.241, contingent liabilities 445.72 L over consolidated net worth 34,650.78 L (AR26 p.171) = 1.29% = 5. Standalone Note 47 (7,133.72 L, p.157) not used; its 6,688.00 L of subsidiary guarantees drop out on consolidation. Capital commitments 7,621.61 L and derivative commitments 1,979.34 L (Note 52) are not contingent liabilities and are excluded."
+  - "E2: 3-year start point (Jun-2023) NOT FOUND, scored 0 under rule 5. Known: 74.48% at 31-Mar-2024 (AR25 note 16(d) p.112) and 74.49% at 30-Jun-2026 (SHP), 27 months, +0.01pp."
+  - "Peer set for F tests: APARINDS, ARFIN, MAANALU Data_Sheets (three peers, subject excluded). EBITDA margin FY26 = (Sales - RM + change in inventory - power - other mfr - employee - selling - other exp) / Sales, Data_Sheet lines, reconciles to PBT for all four. MMP 7.92%, Apar 8.39%, Arfin 7.47%, Maan 2.49%; peer median 7.47%. Market cap (Data_Sheet): Apar 73,896.3, Arfin 1,472.1, MMP 1,142.1, Maan 595.89 Cr; MMP rank 3 of 4."
+  - "M9 gross-margin proxy (Revenue - Raw Material Cost line) / Revenue FY26, change in inventory excluded: MMP 21.28%, Apar 17.92%, Arfin 12.16%, Maan 10.97%; peer median 12.16%; gap 9.12pp."
+  - "Gate 0 EBITDA FY26 64.94 Cr = AR26 p.172 PBT before exceptional 4,159.15 + finance 1,333.31 + depreciation 1,134.25 - other income 133.17 = 6,493.54 L. Data_Sheet EBITDA 65.27 Cr; the 0.33 Cr gap is a screener-vs-AR basis difference."
+  - "No loss-to-profit PAT swing. All ten years PAT positive (screener-data)."
+  - "Associates share of PBT: FY24 18.05% (721.66 L, AR25 p.155), FY25 12.01% (613.67 L), FY26 20.49% (820.78 L, AR26 p.172). Included in PBT and EBIT; excluding it FY26 ROCE is about 10.9% (sensitivity, not scored)."
+  - "PEER DATA NEEDED: none. M7 listed-player count NOT FOUND scored 0; M8 reach NOT FOUND scored 0; M6 scored 0 on filed evidence (no R&D, AR26 p.44)."
+block_b_trend: "stable: WC days 91.4 (FY24) to 88.9 (FY26); FCF positive 3 of 3 but thin (11.97, 7.04, 14.06 Cr); CFO ex short-term borrowing 15.97, 12.53, 36.06 Cr"
+analyst_note: "Open rulings. (1) Rule 6 scope: scored per metric. Full-window reading with ROCE proxy rejected gives A 2, core 38, AVOID; with proxy admitted (10-yr A1 1, A2 1, A4 0) A 4, core 40, AVERAGE. (2) Confidence tier keyed to 10-year history (no downgrade); keyed to the 3-year shortest scored window (LIMITED) AVERAGE becomes AVOID. (3) Capex = PPE line; adding CWIP and capital advances gives FCF positive 2 of 3, B 10, core 50. (4) E2 = 0 under rule 5; the 27-month change of +0.01pp would score 3, core 57. Primary core 54 AVERAGE holds in every case except the two AVOID readings. Depressors: FY26 ROCE 12.91%, ND/EBITDA 2.81x, associates 20.5% of PBT, short-term borrowing funds part of CFO (+17.23 Cr FY26). M5 rests on three peers; Apar market cap is 65x MMP."

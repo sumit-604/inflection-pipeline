@@ -1,0 +1,45 @@
+stage: B01-gate0
+company: "MMP"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L/BS/CF/Quarters CSVs empty (Data_Sheet present, used)"
+  - "Q4 FY26 and Q3 FY26 results are image scans"
+  - "ARFIN peer transcripts absent"
+  - "announcements hand-collected selection"
+  - "NSE sought results clarifications 2026-03-05 and 2026-06-23 (reply not in corpus)"
+  - "research empty"
+  - "Gate0: no 10-year capex line and no trade payables before FY25 in corpus (B2, B3, B4 NOT FOUND, scored 0)"
+  - "Gate0: no peer data (M2, M5, M6, M9 PEER DATA NEEDED); R&D, distribution reach, listed-player count NOT FOUND (M6, M7, M8)"
+  - "Gate0: promoter holding history only 8 quarters (Sep-2024 to Jun-2026)"
+flags:
+  - {type: FLAG-GATE0, reason: "Core 39/100 (matrix AVOID, 1 point under the AVERAGE band). Depressors: ROCE fell 25.3% (FY17) to 10.06% (FY26) as capital employed grew 5.6x on a slower profit base; PAT CAGR 6.8% vs revenue CAGR 16.8%; Block B scored 5 because capex and payables history are NOT FOUND (data absence, not evidenced weak cash); contingent liabilities 20.6% of net worth driven by subsidiary guarantees. Years driving: FY26 (exceptional loss, associates), FY20-FY21 revenue decline, FY19 capex step-up."}
+  - {type: FLAG-CASH, reason: "CFO FY26 53.29 Cr includes +17.23 Cr increase in short-term borrowings booked in CFO (AR consolidated CF p.173); FY25 +44.26 Cr. CFO ex that line: FY26 36.06, FY25 12.53 Cr. Capex FY26 39.23 Cr, FY25 49.75 Cr (AR p.173). Verifier to confirm."}
+data_years: 10
+fy_range: "FY2017 to FY2026"
+blocks: {A: 4, B: 5, C: 8, D: 8, E: 14}
+core_score: 39
+moat_score: 4
+grand_total: 43
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVOID"
+deal_breakers:
+  - "1: Block A 4 <8, max GOOD (years FY17-FY26; ROCE median 12.85%, A4 decline 15.2pp)"
+  - "2: Block B 5 <8, max GOOD (driven by NOT FOUND B2/B3/B4, not by measured weakness)"
+history_downgrade: false
+data_notes:
+  - "Basis: consolidated (screener BS total 624.94 Cr = AR consolidated 62,493.66 L p.171). Screener Data_Sheet has no ROCE row; ROCE computed: EBIT = PBT + Interest, capital employed = equity + reserves + borrowings (Total Assets minus Other Liabilities), a proxy because Data_Sheet has no current-liabilities line. Strict-formula cross-check: FY26 12.9% (Total Assets 624.94 minus current liabilities 211.31 Cr, AR p.171), FY25 16.3%; earlier years not computable."
+  - "ROE earliest year FY17 uses closing net worth (opening unavailable). FY26 ROE 9.26% matches AR consolidated ratio table p.224."
+  - "Screener 'Other Income' nets associate share and exceptional; EBIT includes associates +8.21 Cr and exceptional -9.74 Cr in FY26."
+  - "EBITDA FY26 64.94 Cr (AR consolidated P&L p.172: 4159.15+1333.31+1134.25-133.17 Lakhs); screener Data_Sheet 65.27 Cr. Margin 7.88% (AR) vs 8.0% in load-bearing fact (screener 7.92%)."
+  - "B2/B3 NOT FOUND: capex only FY25-FY26 in corpus. Unscored proxy CFO+CFI: positive in 7 of 10 years, cumulative -20.39 Cr. Proxy would add at most 2 points (B2=2, B3=0) giving core 41 = AVERAGE band."
+  - "B4 NOT FOUND: trade payables only FY25 2712.64 L and FY26 4622.21 L (AR p.171 note 24). Receivable+inventory days 97.5 (FY17) to 109.4 (FY26); full WC days FY25 104.1, FY26 88.9."
+  - "E2: 3-year window not evidenced; holding 74.48% (Sep-2024) to 74.49% (Jun-2026) per SHP; share count unchanged 25,402,613 FY20-FY26 (screener). Scored 3."
+  - "E4: contingent liabilities 7,133.72 L (standalone note 47, AR p.157) of which 6,688 L are guarantees for wholly owned subsidiaries MMP Electricals and MMP Cables; no separate consolidated note found. Over consolidated net worth 34,650.78 L = 20.6%. Excluding subsidiary guarantees 1.3% (score would be 5, core 43)."
+  - "C3: 9 YoY periods, 7 positive (FY20, FY21 declined)."
+  - "PEER DATA NEEDED: M2, M5, M9 (GM proxy (Rev-RM)/Rev FY26 21.3%, peers absent); M6 R&D NOT FOUND; M7, M8 NOT FOUND."
+  - "No loss-to-profit swing in annual PAT. Q1 FY26 quarterly PAT -5.41 Cr (Other income -15.17 incl exceptional)."
+block_b_trend: "stable on headline, quality caveat: CFO 56.79 (FY25) to 53.29 Cr (FY26), of which short-term borrowing increase 44.26 to 17.23 Cr sits inside CFO"
+analyst_note: "AVOID by one point (39 vs 40) is a thin, partly data-driven result. B2, B3, B4 score 0 because 10-year capex and payables are not in the corpus; the unscored proxy lifts core to 41. The real depressor is ROCE: capital employed rose from 95 Cr (FY17) to 531 Cr (FY26) while EBIT rose from 24 to 53 Cr, and FY26 EBIT carries a 9.74 Cr exceptional loss (Umred) offset by 8.21 Cr associate profit. E4 is inflated by subsidiary guarantees that sit inside consolidated debt. Downstream: treat as capex-phase compression, not a halt."

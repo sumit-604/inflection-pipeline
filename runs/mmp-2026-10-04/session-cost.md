@@ -18,3 +18,4 @@
 | 12b | verifier B | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 349819 | 17m23s | 1 |
 | 12c | verifier C (phase 1 half) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 218716 | 17m00s | 1 |
 | 12d | verifier D | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 67113 | 1m38s | 1 |
+| 1 | gate0 (remediation) | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 115707 | 4m20s | 2 |

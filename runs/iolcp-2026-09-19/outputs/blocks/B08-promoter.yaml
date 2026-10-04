@@ -1,65 +1,123 @@
 stage: B08-promoter
 company: "IOLCP"
-run_date: "2026-09-19"
+run_date: "2026-10-04"
+original_run_date: "2026-09-19"
+rerun_note: "RE-RUN 2026-10-04 (operator ruling); supersedes 2026-09-19"
 model: claude-sonnet-5
-status: complete
+status: partial
 input_gaps:
-  - "Beneficial/ultimate control of Vasudeva Commercials Limited and G Consultants and Fabricators Private Limited before their Oct-2025/Jun-2026 corporate actions: NOT FOUND (directors on record carry no Gupta-family surname; shared registered address with promoter entity NCVI Enterprises at 93 Industrial Area-A, Ludhiana is a circumstantial signal only, not proof)."
-  - "MCA beneficial-ownership filings for the pre-merger entities: NOT FOUND (outside this container's reach)."
-  - "Company/proxy-advisory explanation for the 91.34% institutional vote against Kushal Kumar Rana's re-appointment at the 39th AGM (2-Sep-2026): NOT FOUND in corpus or web search."
-  - "AmbitionBox-specific employee review data: NOT FOUND via search (only Glassdoor retrieved)."
-  - "Industry peer promoter-quality comparison (Aarti Drugs, Granules, Laxmi Organic promoter background): NOT FOUND IN THIS PASS (out of scope this stage)."
-flags: []
-verdict: "CAUTION"
-scorecard: {clean: 2, caution: 8, red: 0}
+  - "Promoter holding history FY17-FY22 (41-44%) not in corpus; screener CSVs hold no holding table; 43.69% Mar-2021/Mar-2022 is MEDIA (trendlyne)"
+  - "Reg 10(6) exemption reports for the FY23, FY25, FY26 and FY27 scheme steps not in corpus; no 2023-2026 filing for a public-classed transferor states an exemption"
+  - "NCLT/RD scheme documents (valuation, share-exchange ratio, transferor shareholder lists) not reachable; NCLT CA(CAA)60/Chd/Pb/2023 PDF unreadable here"
+  - "MCA beneficial-ownership and MGT-7 filings for Trichit, Enorg, Vasudeva Commercials, G Consultants and Fabricators, Synthorix Trading, NM Merchantiles: NOT FOUND"
+  - "Outcome of SEBI adjudication directed by order WTMO/33/CFD/3/04 (31-Mar-2004): NOT FOUND"
+  - "Non-audit fee ratio and Audit Committee detail carried from first run, not re-verified"
+  - "announcements PARTIAL: 34 of 105 BSE filings over 12 months kept at intake; SAST-FY25 filing added 2026-10-04"
+  - "shareholding entity detail: promoter entity-level tables only for Sep 2024 - Mar 2025 (XML); later quarters are category summaries"
+  - "research: absent (no broker notes collected)"
+  - "other: absent"
+  - "concalls: 4 transcripts vs contract 0-3 (kept); Nov-2025 Q2 FY26 transcript now held"
+  - "rating: Jun-2026 CARE rationale now held (dated 06-Jul-2026)"
+  - "annual-report: 2 files vs contract 0-1; FY26 primary"
+flags:
+  - type: FLAG-PROMOTER
+    verdict: CONCERN
+    verdict_type: UNDETERMINED
+    top_findings:
+      - "Four public-to-promoter mergers (FY23 Trichit 4.50, FY25 Enorg 4.43, FY26 Vasudeva 4.00, FY27 G Consultants and Synthorix 4.80) moved 17.73 of 18.59 pts since Mar-2022 with share capital flat"
+      - "Beneficial control of the vehicles NOT FOUND; five public-classed vehicles share one director cluster (Rakesh Sharma, Kulpreet Singh Gahir, Ramandeep Singh); IOLCP SHP declares no significant beneficial owner"
+      - "Annual group increase 4.50, 4.43, 4.86, 4.80 pts, each under the 5.00 pt Reg 3(2) creeping limit; FY26 headroom 0.14, FY27 headroom 0.20; no exemption stated in 2023-2026 filings for public-classed transferors"
+      - "SEBI order 31-Mar-2004 directed adjudication against Varinder Gupta and Mayadevi Polycot for SAST non-compliance on a 61.97% inter se exemption claim; outcome NOT FOUND"
+verdict: CONCERN
+verdict_type: UNDETERMINED
+verdict_type_reasons:
+  - "INTEGRITY needs bad faith or breach: none proven; indicators are shared directorate, consecutive CINs (Trichit 049624, Enorg 049625), Rs 1.38 Cr paid-up Vasudeva holding about Rs 174 Cr of IOLCP, SBO declared No, the 2004 order"
+  - "STRUCTURE is the floor: schemes lawful in form and filed within 1-2 days, yet public category fell 56.31% to 37.72% with no IOLCP shareholder vote and the 5% creeping test never needed because transfers were scheme transfers"
+  - "UNDETERMINED because INTEGRITY versus STRUCTURE turns on who owned the vehicles, which is NOT FOUND"
+  - "Moving observation: post-merger NM Merchantiles shareholder register (MGT-7 FY26 or scheme share-exchange report). Gupta family or affiliates on it gives STRUCTURE; unrelated holders gives INTEGRITY"
+scorecard: {clean: 1, caution: 8, red: 1}
 deal_breakers: []
+chain_by_fy:
+  - fy: FY23
+    from_pct: 43.69
+    to_pct: 48.19
+    delta_pts: 4.50
+    mode: "NCLT scheme of amalgamation (Mar-2023)"
+    vehicles: "Trichit Limited into Mayadevi Polycot; 26,41,079 pre-split shares; Trichit prior class not stated, implied public by arithmetic"
+    exemption: "None stated; Reg 29(2) filing SAST-2023-03-27-reg29-2"
+    within_5pct_creeping: true
+  - fy: FY24
+    from_pct: 48.19
+    to_pct: 48.19
+    delta_pts: 0.00
+    mode: "Internal scheme of amalgamation (26-Sep-2023)"
+    vehicles: "True Value Traders, NCG Enterprises, Bhudeva Lifesciences into NCVI Enterprises; 65,58,107 pre-split shares, 11.17%; all already promoter group"
+    exemption: "Reg 10(1)(d)(iii) stated in Reg 10(6) report"
+    within_5pct_creeping: true
+  - fy: FY25
+    from_pct: 48.19
+    to_pct: 52.62
+    delta_pts: 4.43
+    mode: "NCLT scheme of amalgamation CP(CAA)19/CHD/PB/2024 of 16-Oct-2024; transfer 25-Nov-2024"
+    vehicles: "Enorg Limited (public in Sep-2024 SHP) into NM Merchantiles; 26,02,539 pre-split shares; fully reconciled to SHP entity tables, no remainder"
+    exemption: "None stated; Reg 29(2) filing SAST-FY25-2024-11-26-reg29-2"
+    within_5pct_creeping: true
+  - fy: FY26
+    from_pct: 52.62
+    to_pct: 57.48
+    delta_pts: 4.86
+    mode: "Fast-track merger RD New Delhi 12-Feb-2026 (+4.00) plus open market 16-19 Mar-2026 (+0.86)"
+    vehicles: "Vasudeva Commercials into NM, 1,17,41,100 shares; open market NCVI 18,04,305 and Mayadevi 7,08,320 shares"
+    exemption: "None stated for the scheme step; Reg 29(2) filings SAST-29-2-7 and SAST-29-2-2 to -6"
+    within_5pct_creeping: true
+  - fy: FY27
+    from_pct: 57.48
+    to_pct: 62.28
+    delta_pts: 4.80
+    mode: "Fast-track merger RD Chandigarh 24-Jun-2026; transfer 25-Jun-2026 (FY27 to date, Apr-Jun)"
+    vehicles: "G Consultants and Fabricators 29,05,000 and Synthorix Trading 1,11,78,195 into NM, 1,40,83,195 shares"
+    exemption: "None stated; Reg 29(2) filing SAST-29-2-1; headroom 0.20 pt for rest of FY27"
+    within_5pct_creeping: true
 adverse_findings:
-  - {finding: "RPT purchases from three promoter entities rose 31.1% YoY to Rs 131.94 Cr (8.8% of material consumed) FY26; NM Merchantiles's sales to the company nearly tripled (+205.4% YoY) the same year its own equity stake rose 4.00pp", evidence_tier: "VERIFIED", source: "AR FY26 Note 40, p.169-171", date: "FY26 (year ended 31-Mar-2026)"}
-  - {finding: "Promoter/promoter-group holding rose 57.48% (31-Mar-2026) to 62.28% (30-Jun-2026), a genuine +4.80pp increase via RD-sanctioned amalgamation of two previously-public vehicles (G Consultants and Fabricators Pvt Ltd, Synthorix Trading Ltd) into promoter entity NM Merchantiles; secondary media (Whalesbook, scanx.trade) mischaracterized this as 'no change'", evidence_tier: "VERIFIED", source: "SAST-29-2-4 (26-Jun-2026); SHP-March-2026.txt and SHP-June-2026.txt XBRL shareholding patterns", date: "24/25-Jun-2026"}
-  - {finding: "Institutional (Public-Institutions category) shareholders voted 91.34% AGAINST re-appointment of director Kushal Kumar Rana at the 39th AGM; resolution passed only on promoter and retail votes; no company or proxy-advisory explanation found", evidence_tier: "VERIFIED", source: "BSE voting-results filing and scrutinizer report, 02-Sep-2026", date: "02-Sep-2026"}
-  - {finding: "External professional CEO (Vikas Vij, ex-Cipla) resigned after an 18-month tenure 'on personal grounds'; CEO seat has not been refilled, family executives run operations directly", evidence_tier: "VERIFIED", source: "AR FY26 Note 40, p.169; corroborated by biospectrumindia.com/peoplematters.in appointment coverage", date: "resigned 09-Sep-2024, effective 30-Sep-2024"}
-  - {finding: "CEO-to-median-employee pay ratio 283.82x, high in absolute terms for a small-cap", evidence_tier: "VERIFIED", source: "AR FY26 Annexure-4, p.69", date: "FY26"}
-  - {finding: "Brief technical non-compliance: mandatory woman independent-director seat vacant ~5 weeks (22-Sep-2024 to 28-Oct-2024), breaching Reg 17(1E); fine paid, remedied", evidence_tier: "VERIFIED", source: "Secretarial Compliance Report FY25 as referenced in the FY26 report filed 20-May-2026", date: "22-Sep-2024 to 28-Oct-2024"}
-  - {finding: "Customs Order-In-Original: Rs 2.06 Cr aggregate demand/penalty for allegedly non-conforming ASEAN-India FTA Certificates of Origin; company appealing; company states no material impact", evidence_tier: "VERIFIED", source: "Reg 30 disclosure, 09-May-2026; AR FY26 Note 35 footnote, p.161", date: "order received 08-May-2026"}
-  - {finding: "Non-audit fees exceeded statutory audit fee in FY25 (107.7% of audit fee), pulled back to 93.75% in FY26, close to parity both years; statutory auditor is a regional firm (M/s Ashwani & Associates, Ludhiana), not Tier-1 national", evidence_tier: "VERIFIED", source: "AR FY26 Note 45, p.174; Board's Report Section 26, p.94-95", date: "FY25-FY26"}
-  - {finding: "Blog post alleges a company filing had corrupted/garbled text in place of project details for the Rs 500 Cr capex plan; not corroborated -- the actual Reg 30 capex intimation held in the corpus (09-Sep-2026) is complete and itemised", evidence_tier: "UNVERIFIED", source: "Whalesbook.com Hinglish blog post (single source)", date: "undated post, referencing the capex disclosure period, 2026"}
-  - {finding: "Shared registered office address (93 Industrial Area-A, Ludhiana) between confirmed promoter entity NCVI Enterprises Limited and non-promoter Vasudeva Commercials Limited (the entity whose demerger ultimately fed the Jun-2026 promoter-holding increase)", evidence_tier: "UNVERIFIED", source: "SAST-29-2-2/3/6/7 (NCVI Enterprises letterhead) vs SAST-29-2-8 (Vasudeva Commercials letterhead)", date: "filings Oct-2025 and Mar-2026"}
+  - {finding: "Four public-to-promoter scheme mergers moved +17.73 pts (95.4% of the +18.59 pt rise since Mar-2022); transferors share one director cluster; beneficial control NOT FOUND", evidence_tier: "VERIFIED (filings, SHP) for chain; MEDIA for directorate", source: "SAST-2023-03-27-reg29-2; SAST-FY25-2024-11-26-reg29-2; SAST-29-2-7; SAST-29-2-1; SHP-September-2024.xml; SHP-December-2024.xml; zaubacorp/tofler/indiafilings extracts", date: "2023-03 to 2026-06"}
+  - {finding: "SEBI order WTMO/33/CFD/3/04 directed adjudication against Varinder Gupta and Mayadevi Polycot for SAST Regs 6, 8, 10 on 61.97% inter se acquisition of 08-Jun-2002; outcome NOT FOUND", evidence_tier: "VERIFIED", source: "sebi.gov.in/sebi_data/docfiles/10925_t.html", date: "2004-03-31"}
+  - {finding: "RPT purchases Rs 131.94 Cr FY26, +31.0% on Rs 100.68 Cr; NM sales +205% (Rs 7.37 Cr to Rs 22.52 Cr) in the year its stake rose 4.00 pts", evidence_tier: "VERIFIED", source: "AR FY26 Note 40B p.169", date: "FY26"}
+  - {finding: "Public Institutions voted 91.34% against re-appointment of Kushal Kumar Rana (1,29,54,830 against, 12,27,653 for); resolution passed on promoter votes", evidence_tier: "VERIFIED", source: "AGM voting results 20260902-590a090f p.4, p.8", date: "2026-09-02"}
+  - {finding: "Customs OIO Rs 2,05,94,796 including Rs 1,00,00,000 s.114AA penalty; appeal planned", evidence_tier: "VERIFIED", source: "Reg 30 disclosure 20260509 p.1-2", date: "2026-05-09"}
+  - {finding: "Public category fell 56.31% (Mar-2022) to 37.72% (Jun-2026) with no IOLCP shareholder vote on any scheme", evidence_tier: "VERIFIED (derived)", source: "SHP-June-2026.txt; SAST-29-2-7 p.1; SAST-29-2-1 p.1", date: "2026-06-30"}
+  - {finding: "G Consultants fell 49,45,000 to 29,05,000 and Synthorix sold 4,00,000 shares (24,40,000 total) in the quarter the group bought 25,12,625 shares on market; counterparties NOT FOUND", evidence_tier: "UNVERIFIED (inference)", source: "SHP-December-2025.txt; SHP-March-2026.txt; SAST-29-2-1 p.2; SAST-29-2-2 to -6", date: "2026-03"}
+  - {finding: "Management credibility ruled grade C (CDMO disclosure sequence, 50:50 mix target moved FY27 to FY29, old Rs 4,500 Cr target missed); CEO seat vacant since 30-Sep-2024", evidence_tier: "operator ruling 2026-10-04; VERIFIED (AR FY26 Note 40A p.169)", source: "operator 2026-10-04; Concall_Feb_2026 p.10; Concall_Sep_2026 p.13", date: "2026-10-04"}
 transition_evidence:
-  - {item: "FPI/FII holding rose from 1.72% (31-Mar-2026) to 4.87% (30-Jun-2026), nearly tripling in one quarter, coinciding with the reported +170% four-month stock rally", source: "SHP-March-2026.txt and SHP-June-2026.txt, BSE XBRL shareholding patterns", date: "quarter ended 30-Jun-2026"}
+  - "FPI holding 1.72% (Mar-2026) to 4.87% (Jun-2026); AIF 0.41% new (SHP-June-2026.txt)"
 pledge_pct_latest: 0
-pledge_trend: "stable at 0% across all 8 quarters examined (Sep-2024 through Jun-2026); explicit 'No' pledge declaration in every quarterly XBRL shareholding-pattern filing (item 7 of the Declaration table, e.g. SHP-June-2026.txt)"
+pledge_trend: "stable at 0 across Sep-2024 to Jun-2026 SHPs"
 searches_performed:
-  - "\"NM Merchantiles\" IOL Chemicals promoter shareholding restructuring 2026"
-  - "IOL Chemicals Pharmaceuticals Varinder Gupta Rajinder Gupta founders history"
-  - "\"Vasudeva Commercials\" IOL Chemicals shareholding"
-  - "IOL Chemicals Pharmaceuticals SEBI order adjudication"
-  - "\"IOL Chemicals\" Kushal Kumar Rana AGM 2026 institutional investors vote against reappointment"
-  - "IOL Chemicals Pharmaceuticals Glassdoor AmbitionBox employee reviews"
-  - "IOL Chemicals Pharmaceuticals AmbitionBox reviews rating"
-  - "IOL Chemicals Pharmaceuticals proxy advisory IiAS SES InGovern recommendation"
-  - "IOL Chemicals Pharmaceuticals promoter pledge shares"
-  - "\"Vikas Vij\" IOL Chemicals CEO resignation 2024"
-  - "IOL Chemicals Pharmaceuticals short seller report forensic concerns"
-  - "Rajinder Gupta Trident Varinder Gupta IOL family settlement dispute"
-  - "Harpal Singh Sharad Tyagi Rajni Jha independent director IOL Chemicals background"
-  - "\"Vasudeva Commercials\" \"Rakesh Sharma\" Ludhiana director company"
-  - "WebFetch: whalesbook.com IOL Chemicals filing-corrupted article full text"
-searches_skipped: []
-verdict_basis: "No SEBI/criminal record and zero pledge, but a real filed +4.80pp promoter-holding increase via demerger-then-amalgamation of two previously-public vehicles (media-mischaracterized as unchanged), RPT growth co-timed with a promoter entity's own stake rise, and an unexplained 91% institutional vote against a director's reappointment keep this at CAUTION rather than TRUSTWORTHY."
-analyst_note: >
-  The Vasudeva Commercials / LBF2 puzzle is now resolved with a six-document evidence
-  chain, not a residual gap: Vasudeva was always non-promoter; it demerged into Synthorix
-  Trading Ltd (Oct-2025, NCLT Chandigarh order), both non-promoter; both were then
-  amalgamated into promoter entity NM Merchantiles (Jun-2026, RD order) alongside
-  previously-public G Consultants and Fabricators Pvt Ltd. The BSE XBRL shareholding
-  pattern for 31-Mar-2026 independently names Synthorix Trading at 3.81% under the public
-  "Bodies Corporate" category -- direct proof the pre-merger classification was genuinely
-  public. This means the +4.80pp promoter-holding rise in Jun-2026 is real and filed, and
-  secondary media describing it as "no change" is incorrect. Downstream stages should cite
-  this stage's evidence chain rather than re-deriving it. The one item this stage could not
-  close is who beneficially controlled Vasudeva Commercials and G Consultants before their
-  respective corporate actions; the shared registered address with NCVI Enterprises is
-  circumstantial only. None of the eight caution-rated dimensions individually would cap
-  position size under the deal-breaker rules; downstream (FTTCP, Role 2/Role 6, /finalize
-  tripwires) should carry the RPT-growth trend, the AGM institutional-dissent pattern, and
-  the unfilled CEO seat as named monitorables.
+  - "Enorg Limited NM Merchantiles NCLT scheme"
+  - "IOL promoter holding Dec-2024 NM Merchantiles Enorg"
+  - "Vasudeva Commercials directors and shareholders"
+  - "Synthorix Trading directors"
+  - "NCLT CA(CAA)60/Chd/Pb/2023 fetch (PDF unreadable)"
+  - "Trichit Limited amalgamated directors"
+  - "NM Merchantiles directors"
+  - "Rakesh Sharma DIN 00008627 companies"
+  - "Innova Marchantiles and Krishanmurari Trading"
+  - "IOL shareholding pattern history"
+  - "Vasudeva Organics to Enorg name change"
+  - "2014-15 IOL warrants non-promoter allottees"
+  - "Vasudeva-Synthorix demerger NCLT"
+  - "NM-Vasudeva RD merger"
+  - "Section 233 fast-track merger"
+  - "Reg 10(1)(d)(iii) exemption"
+  - "tofler, indiafilings, filesure fetches"
+  - "Kulpreet Singh Gahir; Jatin Sood; NCVI directors"
+  - "Sunlight Commercial to Vasudeva name"
+  - "SEBI 2004 order (fetched) and adjudication outcome"
+  - "NGT Barnala; IT/ED search; AGM proxy advisor; GDPL merger; free-float commentary"
+searches_skipped:
+  - "zaubacorp, business-standard, drvijaymalik direct fetch (403; extracts only)"
+  - "MCA MGT-7 and beneficial-ownership filings (not reachable)"
+  - "NCLT/RD scheme valuation reports (not reachable)"
+  - "AmbitionBox and Glassdoor re-pull"
+  - "IiAS/SES recommendation (not found)"
+verdict_basis: "Four public-to-promoter mergers (+17.73 of +18.59 pts since Mar-2022), each year under the 5% limit, one director cluster behind five public-classed vehicles, beneficial control NOT FOUND, 2004 SEBI SAST direction"
+analyst_note: "Chain reconciles to the share: FY23 26,41,079 sh = 4.50; FY25 Enorg 26,02,539 sh = 4.43 with no remainder; FY26 4.00 + 0.86; FY27 4.80. Correction to first run: Vasudeva did not keep 4.00%. Type is UNDETERMINED: if Gupta family or affiliates sit on the NM Merchantiles register the type is STRUCTURE and CAUTION is arguable; unrelated holders make it INTEGRITY. Free float 37.72% stays above 25%. Open-market buys at about Rs 74.6 are real but small (0.86 pts)."

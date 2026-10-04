@@ -1,6 +1,20 @@
-MISSING MATE DOCUMENT: CARE Ratings rationale for IOL Chemicals and Pharmaceuticals Limited, reaffirmation letter dated 30-Jun-2026 (careratings.com press release, Jun/Jul 2026); only the 04-Jul-2025 rationale is held.
-
 VERDICT: PROCEED WITH CAVEATS
+⚠️ PROMOTER FLAG: CONCERN (type UNDETERMINED, floor STRUCTURE; stage 8 re-run 2026-10-04). Top findings: [1] four mergers of public-classed vehicles into promoter entities (Trichit FY23, Enorg FY25, Vasudeva FY26, G Consultants and Synthorix FY27) added +17.73 of the +18.59 pts rise in promoter holding since Mar-2022, each fiscal year's increase between 4.43 and 4.86 pts, under the 5% creeping limit; [2] beneficial control of the five vehicles NOT FOUND, and media/MCA-aggregator records show one director cluster behind all five; a 2004 SEBI order (WTMO/33/CFD/3/04) directed SAST adjudication against Varinder Gupta and Mayadevi Polycot, outcome NOT FOUND.
+Transition evidence: FPI holding 1.72% to 4.87% (Jun-2026 quarter); no other transition criteria met.
+
+> **UPDATE 2026-10-04 (Halt 1 operator rulings).** The missing mate document named on
+> line 1 of the 2026-09-19 version (CARE rationale for the 30-Jun-2026 reaffirmation) is
+> now held: CARE rationale dated 06-Jul-2026, inputs/rating/2026-07-06-CARE-rationale.pdf.
+> Corpus verdict is CORPUS CURRENT, so the freshness cap is lifted. The verdict stays
+> PROCEED WITH CAVEATS on the two remaining routes: FLAG-CASH is still INDETERMINATE
+> (the new rationale has not yet been read into the determination; that happens at
+> /fttcp), and overall confidence 73.2 sits in the 60-74 band. Other rulings: red flag
+> coverage 77% accepted; credibility grade **C**; stage 7 not re-run (EM 23.4 MODEST);
+> Halt 1 decision PROCEED to understanding work and tracker writes; valuation waits for
+> Q2 FY27 results; sizing ceiling Small until beneficial control of Vasudeva Commercials,
+> G Consultants and Fabricators, and Synthorix Trading is established; Mental Model not
+> yet signed. Promoter verdict: see the stage 8 re-run (outputs/blocks/B08-promoter.yaml,
+> 2026-10-04).
 
 # IOLCP: FTTCP gate recommendation (Phase 1 lite, run 2026-09-19)
 
@@ -63,9 +77,9 @@ Missing evidence that resolves it: the 30-Jun-2026 CARE rationale (careratings.c
 
 Falsification metric: debtor days on the 30-Sep-2026 half year balance sheet (Q2 FY27 results, BSE). Above 95 days with trade receivables again growing faster than half year revenue reads STRUCTURAL. At or below 95 days with revenue still growing reads GROWTH-INDUCED.
 
-### FLAG-PROMOTER: not active
+### FLAG-PROMOTER: ACTIVE from 2026-10-04 (stage 8 re-run: CONCERN, type UNDETERMINED)
 
-B08 verdict is CAUTION (2 clean, 8 caution, 0 red, no deal breakers). The flag fires on CONCERN or AVOID only. The findings behind CAUTION travel as caveats below, not as a flag.
+The 2026-09-19 stage 8 verdict was CAUTION (flag not active). The 2026-10-04 re-run, on the corrected FY23-FY27 chain, returned CONCERN (1 clean, 8 caution, 1 red, no deal breakers); the flag block is on the verdict line above. The verdict level stays PROCEED WITH CAVEATS (FLAG-CASH INDETERMINATE and the 60-74 confidence band cap it there; the promoter flag adds no further cap). The type moves to INTEGRITY or STRUCTURE on one observation: the post-merger NM Merchantiles shareholder register (MGT-7 FY26 or the scheme share-exchange report). Full chain: outputs/reports/08-promoter.md.
 
 ### Stage flags carried as caveats (not verdict flags)
 

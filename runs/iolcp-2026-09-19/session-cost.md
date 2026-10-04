@@ -44,3 +44,9 @@ Run total across subagent ledger rows: 3,111,132 tokens (orchestrator session to
 
 ### Operator snapshot
 (pending operator)
+
+## 2026-10-04 Halt 1 follow-up
+
+| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
+|---|-------|-------|--------|--------|---------|-----------|------|------|
+| 8 | promoter re-run (operator ruling) | sonnet | agent default | n/a | n/a | 324385 | 13m54s | 2 |

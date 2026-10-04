@@ -3,6 +3,27 @@ Run date 2026-09-19 | Assembled from B00-B09, verifiers B12a-B12d, confidence.ya
 B13-synthesis-lite. Assembly only. No new research, no valuation, no price, no verdict
 vocabulary except the one scoped Part B4 exception named in the prompt.
 
+> **HALT 1 OPERATOR RULINGS, 2026-10-04 (these govern where the text below differs).**
+> 1. Red flag coverage: 77% accepted (Verifier B's own rule). No stage 5 rework.
+> 2. Management credibility grade: **C** (not B, not B/C). Basis: CDMO disclosure
+>    sequence (Feb call p.8 / Aug call p.13 / Sep call p.3-4); 50:50 mix target moved
+>    FY27 to FY29; old Rs 4,500 Cr target missed.
+> 3. Stage 7: no re-run; corrected Emerging Moat score 23.4 MODEST stands.
+> 4. Corpus gap RESOLVED: CARE rationale dated 06-Jul-2026 added. Corpus verdict
+>    **CORPUS CURRENT** (Section 1 Item 8).
+> 5. Halt 1 decision: **PROCEED** to understanding work and tracker writes. Valuation
+>    (/fttcp) waits for Q2 FY27 results. Sizing ceiling **Small** until beneficial
+>    control of Vasudeva Commercials, G Consultants and Fabricators, and Synthorix
+>    Trading is established.
+> 6. Mental Model: **NOT YET SIGNED**; signing happens in claude.ai.
+> 7. Promoter verdict after the stage 8 re-run (2026-10-04): **CONCERN, type UNDETERMINED**
+>    (floor STRUCTURE). FY23-FY27 chain: +4.50 / 0.00 / +4.43 / +4.86 / +4.80 pts, schemes
+>    +17.73 of +18.59 pts. The move to INTEGRITY or STRUCTURE turns on the post-merger NM
+>    Merchantiles shareholder register. FLAG-PROMOTER is now active in gate-recommendation.md.
+> Corrections applied the same day: Section 6 Item 7 (Vasudeva's 4.00% merged into NM
+> Merchantiles in Mar-2026; June citation is SAST-29-2-1). Stage 8 re-run on the full
+> FY23-FY27 chain: see outputs/reports/08-promoter.md (2026-10-04).
+
 ---
 
 ## SECTION 1: CORPUS COMPLETENESS AUDIT
@@ -37,9 +58,10 @@ around 12-Aug-2026, per B09 stale_data check). Q4 FY26 (20260521) and Q3 FY26
 
 **5. Research / rating.** No broker note or independent research report is held
 (B00: "research: absent (no broker notes collected)"). Rating: a Reg 30 intimation of
-the CARE reaffirmation letter dated 30-Jun-2026 is held (bulletin only, no rationale
-text), plus the prior full rationale dated 04-Jul-2025. The Jun-2026 rationale text
-itself is ABSENT — see Item 7.
+the CARE reaffirmation letter dated 30-Jun-2026 is held, plus the prior full rationale
+dated 04-Jul-2025. UPDATE 2026-10-04: the current CARE rationale dated 06-Jul-2026 is
+now held (inputs/rating/2026-07-06-CARE-rationale.pdf, added at operator ruling,
+corpus commit 3acb16d0). Its contents have not yet been read into any stage report.
 
 **6. Corporate actions.** 34 of 105 BSE filings over 12 months kept after excluding
 routine ads, trading-window notices, KYC and Reg 74(5) filings: 8 SAST 29(2)
@@ -50,24 +72,26 @@ Sep-2026 (B00).
 
 **7. Freshness pair check.** Per B00 `freshness_pairs`:
 - results_to_concall: PASS (Q1 FY27 results paired with the Aug-2026 Q1 FY27 call).
-- rating_bulletin_to_rationale: **FAIL**. Trigger document held: the Reg 30 intimation
-  of the CARE reaffirmation letter dated 30-Jun-2026. Missing mate: the CARE Ratings
-  rationale/press release for that same reaffirmation (careratings.com, expected
-  Jun/Jul 2026). Only the 04-Jul-2025 rationale is held, one cycle old.
+- rating_bulletin_to_rationale: PASS as of 2026-10-04. It FAILED at the 2026-09-19 run
+  (only the 04-Jul-2025 rationale was held). The mate, CARE Ratings rationale dated
+  06-Jul-2026 for the 30-Jun-2026 reaffirmation, was added at operator ruling on
+  2026-10-04 (careratings.com PR 202607140715).
 - sebi_order_to_text: PASS (no SEBI order referenced beyond the standard
   director-debarment certificate; not applicable).
 - ar_to_latest_audited_annual: PASS (AR FY26 pairs with the FY26 audited results).
 
-**8. VERDICT LINE: CORPUS GAPPED-FRESHNESS.**
-Missing mate document (named first, per the rule): CARE Ratings rationale for IOL
-Chemicals and Pharmaceuticals Limited, reaffirmation letter dated 30-Jun-2026
-(careratings.com press release, Jun/Jul 2026 expected). This failed pair caps the
-phase-1 gate recommendation at PROCEED WITH CAVEATS (B13/gate-recommendation.md) and is
-never softened to plain CORPUS GAPPED.
+**8. VERDICT LINE: CORPUS CURRENT.**
+Operator ruling 2026-10-04: corpus gap RESOLVED. The 2026-09-19 verdict was CORPUS
+GAPPED-FRESHNESS, on the missing CARE rationale for the 30-Jun-2026 reaffirmation; that
+rationale (dated 06-Jul-2026) is now in the corpus, so the freshness cap no longer
+applies. The other gaps below still list. The Q2 FY26 results and the Nov-2025 call
+transcript were also added on 2026-10-04 and are no longer gaps.
 
 Other gaps, listed under this verdict:
-- Q2 FY26 results and its Nov-2025 concall transcript — findable-but-missing, expected
-  source BSE (outside the collector's 3-most-recent rule).
+- Q2 FY26 results and its Nov-2025 concall transcript — RESOLVED 2026-10-04: added at
+  operator ruling (inputs/results/20251111-Q2FY26-results.pdf,
+  inputs/concalls/Concall_Nov_2025_Transcript.pdf); not yet read into any stage report
+  except the stage 8 re-run.
 - MCA beneficial-ownership filings for Vasudeva Commercials Limited and G Consultants
   and Fabricators Pvt Ltd before their Oct-2025/Jun-2026 corporate actions — findable-
   but-missing, expected source MCA (B08 input_gaps).
@@ -169,8 +193,9 @@ their reading (B13 FLAG-CASH, determination INDETERMINATE):
   Rs 495 Cr dated tranche, not yet earning full-run-rate returns) or STRUCTURAL-FEATURE
   (a four-of-five-year sub-15% ROCE band, B01 Block A deal-breaker, following a
   FY19-FY21 pricing-supercycle peak that itself was not repeatable).
-The missing evidence that would resolve this reading is the 30-Jun-2026 CARE rationale
-(Section 1 Item 8) and the 30-Sep-2026 half-year balance sheet (B13's own falsification
+The missing evidence that would resolve this reading is the CARE rationale for the
+30-Jun-2026 reaffirmation (dated 06-Jul-2026, now held as of 2026-10-04 but not yet read
+into this section; Section 1 Item 8) and the 30-Sep-2026 half-year balance sheet (B13's own falsification
 metric names this).
 
 **B6. The transition falsifier.** Non-ibuprofen share of pharma revenue plateaus or
@@ -295,8 +320,8 @@ schedule; (3) what share of each facility's capacity is contracted versus specul
 **Vertical 3 — Working capital / debtor days.** The corpus establishes the trend
 (78.5 to 94.9 days, receivables +17.7% vs revenue +11.5%, payable days falling, B01/B02)
 and both competing readings (Section 2 B5), but cannot resolve which reading holds: the
-30-Jun-2026 CARE rationale that would carry the rating agency's own working-capital view
-is the missing freshness-pair document (Section 1 Item 8), and no top-customer
+CARE rationale (dated 06-Jul-2026) that would carry the rating agency's own working-capital view
+was the missing freshness-pair document; it is held as of 2026-10-04 but not yet read in (Section 1 Item 8), and no top-customer
 concentration data exists to test whether the receivables build sits with a few large,
 low-risk buyers or is broad-based (B02/B05 input_gaps). Questions to decide it: (1) does
 the 30-Sep-2026 half-year balance sheet show debtor days above or at/below 95 (B13's own
@@ -364,7 +389,8 @@ candidate_count: 8 (all carried from B09 Section 6, none newly invented).
 
 ### 4d. Research brief (claude.ai live-web work order)
 
-1. Obtain the CARE Ratings rationale for the 30-Jun-2026 reaffirmation
+1. [OBTAINED 2026-10-04: inputs/rating/2026-07-06-CARE-rationale.pdf; read it for this item]
+   Obtain the CARE Ratings rationale for the 30-Jun-2026 reaffirmation
    (careratings.com press release, Jun/Jul 2026) and extract its working-capital and
    liquidity paragraphs — the single document that resolves FLAG-CASH and lifts the
    freshness cap. [from Section 4e Chain 2 PENDING LIVE VERIFICATION]
@@ -388,7 +414,7 @@ candidate_count: 8 (all carried from B09 Section 6, none newly invented).
    ChemAnalyst/ICIS data, given Laxmi Organic's Aug-2026 transcript describes the spread
    as still above its 12-year average with a fresh "West Asia 2.0" disruption (B06
    FLAG-SPREAD), a live signal this static corpus cannot update.
-7. Check for Q2 FY26 results and its Nov-2025 concall transcript on BSE, to close the
+7. [DONE 2026-10-04: both added to the corpus] Check for Q2 FY26 results and its Nov-2025 concall transcript on BSE, to close the
    one backward gap in the quarterly chronology.
 8. Run the 9 remaining molecule-specific global-market-size searches (Metformin,
    Clopidogrel, Pantoprazole, Fenofibrate, Levetiracetam, Lamotrigine, Losartan,
@@ -465,7 +491,7 @@ Unsaid: the Chairman's Message, MD's Message and Investment Case narrate the cap
   Cr specific-project set, let alone the greenfield.
 Who pays, and why now [PENDING LIVE VERIFICATION]: whether any bank has sanctioned or is
   in discussion for a term facility for the Rs 1,200-1,400 Cr greenfield, and whether
-  the 30-Jun-2026 CARE rationale (the missing freshness-pair document, Section 1 Item 8)
+  the CARE rationale dated 06-Jul-2026 (formerly the missing freshness-pair document, held since 2026-10-04, Section 1 Item 8)
   carries a funding-plan or liquidity view this corpus cannot see. Claude web should
   pull the CARE Ratings press release (careratings.com, Jun/Jul 2026) and check BSE for
   any subsequent term-loan sanction filing.
@@ -643,28 +669,42 @@ not evidence of an actual restatement (B02).
 
 ### 7. CORPORATE-ACTION CLAUSES
 
-Two corporate actions are in the corpus, both feeding LBF2 (promoter reclassification),
-reconstructed by B08 from primary filings:
+CORRECTED 2026-10-04 (operator ruling, task b). The 2026-09-19 text said Vasudeva
+Commercials "retained" its remaining 4.00%. That was wrong: SAST-29-2-7 (06-Mar-2026) is
+an image-only PDF whose first extraction held only signature stamps; re-extracted by OCR
+on 2026-10-04 it shows that 4.00% merged into NM Merchantiles in Mar-2026. The June
+amalgamation was also mis-cited as SAST-29-2-4; the correct filing is SAST-29-2-1.
+
+Three corporate actions are in the corpus for FY26-FY27, all feeding LBF2 (promoter
+reclassification):
 - **Demerger**: NCLT (Chandigarh Bench), order CP(CAA)10/CHG/PB/2025, dated 25-Sep-2025
   (formal order issued 09-Oct-2025). Demerged company: Vasudeva Commercials Limited
   (non-promoter, per its own Reg 29(2) filing statement: "Whether the acquirer belongs
   to Promoter/Promoter group: No", SAST-29-2-8, 01-Oct-2025). Resulting company:
-  Synthorix Trading Limited (newly created). Ratio/allocation: 1,15,78,195 shares
-  (3.94% at the time) moved to Synthorix Trading; Vasudeva retained 1,17,41,100 shares
-  (4.00%).
-- **Amalgamation**: Regional Director (Northern Region-II), Chandigarh, Order Nos.
-  RDNR/233/AC3630802/2026/426-428, sanctioned 24-Jun-2026. Amalgamating companies: G
-  Consultants and Fabricators Private Limited and Synthorix Trading Limited (both
-  confirmed public/non-promoter, "Bodies Corporate" category, in the BSE XBRL
-  shareholding pattern for the quarter ended 31-Mar-2026). Amalgamated into: NM
-  Merchantiles Limited (promoter entity). Shares moved: 29,05,000 + 1,11,78,195 =
-  1,40,83,195 shares (4.80% of capital), effective 25-Jun-2026 (SAST-29-2-4,
-  26-Jun-2026).
-Comment: this is a two-step, filing-confirmed demerger-then-amalgamation sequence that
-raised promoter/promoter-group holding from 57.48% (31-Mar-2026) to 62.28%
-(30-Jun-2026), a genuine +4.80pp increase (B08). Beneficial control of Vasudeva
-Commercials and G Consultants before these transactions is NOT FOUND (B08 input_gaps);
-this is the item named in the research brief (4d item 3).
+  Synthorix Trading Limited (newly created). 1,15,78,195 shares (3.94% at the time)
+  moved to Synthorix Trading; 1,17,41,100 shares (4.00%) stayed with Vasudeva.
+- **Merger, Mar-2026**: Vasudeva Commercials Limited merged into NM Merchantiles Limited
+  (promoter entity) under Regional Director (NR) New Delhi orders
+  RDNR/233/AC1499296/2026/14530 and 14531 dated 12-Feb-2026. Shares moved: 1,17,41,100
+  (4.00%), transfer 05-Mar-2026; NM Merchantiles 13.08% to 17.08% (SAST-29-2-7,
+  06-Mar-2026, p.1 and p.3). Vasudeva did not retain this 4.00%.
+- **Amalgamation, Jun-2026**: Regional Director (Northern Region-II), Chandigarh, Order
+  Nos. RDNR/233/AC3630802/2026/426-428, sanctioned 24-Jun-2026. Amalgamating companies:
+  G Consultants and Fabricators Private Limited and Synthorix Trading Limited (both
+  public/non-promoter, "Bodies Corporate" category, in the BSE XBRL shareholding pattern
+  for the quarter ended 31-Mar-2026). Amalgamated into: NM Merchantiles Limited. Shares
+  moved: 29,05,000 + 1,11,78,195 = 1,40,83,195 (4.80% of capital), effective 25-Jun-2026
+  (SAST-29-2-1, 26-Jun-2026).
+Between the two schemes, promoter entities also bought 25,12,625 shares (0.86%) in the
+open market on 16-19 Mar-2026 (SAST-29-2-2 to -6; NCVI Enterprises 18,04,305, Mayadevi
+Polycot 7,08,320).
+Comment: promoter holding 52.62% (31-Dec-2025) to 62.28% (30-Jun-2026) = +4.00 (scheme,
+Mar-2026) + 0.86 (open market, Mar-2026) + 4.80 (scheme, Jun-2026). Both halves of
+Vasudeva Commercials' former 7.94% ended inside NM Merchantiles. Beneficial control of
+Vasudeva Commercials, G Consultants and Fabricators and Synthorix Trading before these
+transactions is NOT FOUND; it sets the operator's sizing ceiling (Small) and is the item
+named in the research brief (4d item 3). The full FY23-FY27 chain is in the re-run
+stage 8 report (outputs/reports/08-promoter.md, 2026-10-04).
 
 ### 8. RELATED-PARTY PERIMETER
 
@@ -715,7 +755,9 @@ Documents quoted in this annex, with filename and date:
   Concall_Aug_2026_Transcript.pdf, Concall_Sep_2026_Transcript.pdf — Section 6 Items 3,
   5.
 - 20260909-... Reg 30 capex intimation (09-Sep-2026) — Section 6 Items 3, 7.
-- SAST-29-2-8 (01-Oct-2025), SAST-29-2-4 (26-Jun-2026) — Section 6 Item 7.
+- SAST-29-2-8 (01-Oct-2025), SAST-29-2-7 (06-Mar-2026), SAST-29-2-2 to -6
+  (18-20 Mar-2026), SAST-29-2-1 (26-Jun-2026) — Section 6 Item 7 (corrected 2026-10-04;
+  first version cited SAST-29-2-4 for the June amalgamation).
 - SHP-June-2026.txt, SHP-March-2026.txt (BSE XBRL shareholding patterns) — Section 6
   Items 7, 9.
 

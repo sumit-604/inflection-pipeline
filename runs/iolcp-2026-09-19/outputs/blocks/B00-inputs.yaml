@@ -63,8 +63,9 @@ freshness_pairs:
   - pair: rating_bulletin_to_rationale
     trigger_doc: inputs/rating/20260701-credit-rating.pdf (CARE reaffirmation, letter 30-Jun-2026)
     mate_expected: CARE Ratings press release / rationale dated Jun-Jul 2026
-    status: FAIL
-    missing_doc: "CARE Ratings rationale for IOL Chemicals and Pharmaceuticals Limited, June/July 2026 (careratings.com PR). Only the 04-Jul-2025 rationale is held."
+    status: PASS
+    missing_doc: none
+    history: "FAIL at 2026-09-19 (only the 04-Jul-2025 rationale held). Mate added 2026-10-04 at operator ruling: inputs/rating/2026-07-06-CARE-rationale.pdf (CARE rationale dated 06-Jul-2026, careratings.com PR 202607140715), corpus commit 3acb16d0."
   - pair: sebi_order_to_text
     trigger_doc: none referenced (AR FY25 mentions SEBI orders only in the standard director-debarment certificate; the 09-May-2026 penalty is a Customs order, not SEBI, and its disclosure is held)
     mate_expected: n/a
@@ -75,7 +76,16 @@ freshness_pairs:
     mate_expected: inputs/annual-report/Annual_Report_2026.pdf (FY26)
     status: PASS
     missing_doc: none
-freshness_verdict: CORPUS GAPPED-FRESHNESS
+freshness_verdict: FRESHNESS PAIRS OK
+freshness_verdict_history: "CORPUS GAPPED-FRESHNESS at 2026-09-19; operator ruled corpus gap RESOLVED 2026-10-04, corpus verdict CORPUS CURRENT"
+corpus_additions_2026_10_04:
+  - "inputs/rating/2026-07-06-CARE-rationale.pdf (CARE rationale dated 06-Jul-2026)"
+  - "inputs/results/20251111-Q2FY26-results.pdf (Q2 FY26 results, 11-Nov-2025)"
+  - "inputs/concalls/Concall_Nov_2025_Transcript.pdf (Q2 FY26 earnings call, filed 19-Nov-2025)"
+  - "inputs/announcements/SAST-2023-03-27-reg29-2.pdf (Trichit Ltd amalgamation into Mayadevi Polycot)"
+  - "inputs/announcements/SAST-2023-09-28-reg29-2.pdf, SAST-2023-09-28-reg29-1.pdf, SAST-2023-09-28-reg10-6.pdf (Sep-2023 scheme of amalgamation)"
+  - "inputs/announcements/SAST-FY25-2024-11-26-reg29-2.pdf (Enorg Ltd amalgamation, FY25 promoter step)"
+  - "re-extraction of announcements/, rating/, results/ with signature-aware OCR (SAST-29-2-7 and SAST-29-2-1 were signature-stamp-only text before)"
 cmp_check: "manifest cmp 203.0, market_cap_cr 5963.0: non-zero, consolidated page carries price; PASS"
 empty_folder_confirmation: "SUPPRESSED by /step1 autonomy contract (standing answer: proceed with the gaps). Empty folders at stage 0: research, other. Prospectus empty and not expected."
 flags: []

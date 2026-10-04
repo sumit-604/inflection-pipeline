@@ -34,14 +34,43 @@ runs/iolcp-2026-09-19/step1-business-brief.md):
    gain is price (acetyl spread, ibuprofen realisation) or mix.
 
 ## HALT 1 GATE
-- Mental Model signed: NOT SIGNED
-- Halt 1 decision (KILL/SHALLOW/PROCEED): pending
+- Mental Model signed: NOT SIGNED (2026-10-04: signing happens in claude.ai after the
+  screener.ai answers)
+- Halt 1 decision (KILL/SHALLOW/PROCEED): 2026-10-04 PROCEED to understanding work and
+  tracker writes. Valuation (/fttcp) waits for Q2 FY27 results. Sizing ceiling Small
+  until beneficial control of Vasudeva Commercials, G Consultants and Fabricators, and
+  Synthorix Trading is established.
+- Corpus verdict: CORPUS CURRENT (2026-10-04; was GAPPED-FRESHNESS at 2026-09-19).
 
 ## OPERATOR RULINGS
 - 2026-09-19: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.
+- 2026-10-04: Red flag coverage 77% accepted (Verifier B's own rule); no stage 5 rework.
+- 2026-10-04: Management credibility grade C. Basis: CDMO disclosure sequence (Feb call
+  p.8 / Aug call p.13 / Sep call p.3-4); 50:50 mix target moved FY27 to FY29; old
+  Rs 4,500 Cr target missed.
+- 2026-10-04: Stage 7 not re-run; corrected Emerging Moat 23.4 MODEST stands.
+- 2026-10-04: Corpus gap resolved; CARE rationale dated 06-Jul-2026 added
+  (inputs/rating/2026-07-06-CARE-rationale.pdf). Corpus verdict CURRENT.
+- 2026-10-04: Halt 1 PROCEED (understanding work and tracker writes); /fttcp after Q2
+  FY27 results; sizing ceiling Small pending beneficial control of the scheme vehicles.
+- 2026-10-04: Mental Model not yet signed.
+- 2026-10-04: Stage 8 re-run ordered on the full FY23-FY27 promoter chain; dossier
+  Section 6 Item 7 corrected (Vasudeva's 4.00% merged into NM Merchantiles Mar-2026;
+  June amalgamation is SAST-29-2-1).
+- 2026-10-04 (stage 8 re-run result, not a ruling): promoter verdict CONCERN, type
+  UNDETERMINED (floor STRUCTURE); was CAUTION on 2026-09-19. Chain: FY23 +4.50 (Trichit
+  into Mayadevi Polycot), FY24 0.00 (internal, into NCVI), FY25 +4.43 (Enorg into NM
+  Merchantiles), FY26 +4.86 (Vasudeva into NM +4.00; open market +0.86), FY27 +4.80
+  (G Consultants and Synthorix into NM). Schemes +17.73 of +18.59 pts; each FY under
+  the 5% creeping limit. FLAG-PROMOTER active. Type turns on the post-merger NM
+  Merchantiles shareholder register (MGT-7 FY26 / scheme share-exchange report).
 
-## ACTIVE TRIPWIRES
-None yet.
+## ACTIVE TRIPWIRES (added 2026-10-04)
+- Any further merger of a public-classed vehicle into a promoter entity.
+- Beneficial control of Vasudeva Commercials, G Consultants and Fabricators, Synthorix
+  Trading (and Trichit, Enorg) shown to sit outside the Gupta family: type moves to
+  INTEGRITY.
+- Debtor days above 95 on the 30-Sep-2026 balance sheet (FLAG-CASH falsifier).
 
 ## OPTIONALITY REGISTER (summary)
 None yet.

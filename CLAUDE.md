@@ -86,10 +86,12 @@ target, 3-5 year holds.
 - claude-opus-5-5 (Opus 5.5), effort high: stage 13 synthesis, stage 14
   thesis, quarterly A3-A4
 - claude-sonnet-5-5 (Sonnet 5.5), effort medium: stages 1, 4, 6, 09b,
-  verifier D, quarterly A2; effort low: quarterly A1; default (high):
-  stages 2, 3, 5, 7, 8, 9
-- haiku (Haiku 4.5, no 5.5 Haiku exists): stage 10 assembly, verifier A
-  (the out-of-family read on the numbers)
+  10 assembly, verifier D, quarterly A2; effort high (set in the file):
+  verifier A; effort low: quarterly A1; default (high): stages 2, 3, 5,
+  7, 8, 9
+- No stage runs on Haiku 4.5 (operator ruling 2026-10-04: stage 10 and
+  verifier A moved to Sonnet 5.5; Verifier A's independence comes from a
+  fresh context and the source page, not the model family)
 Do not upgrade a stage's model without editing its agent file.
 
 ## WORDS

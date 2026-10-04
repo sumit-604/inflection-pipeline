@@ -198,7 +198,7 @@ step + its position | Disposition (GATE HELD — corrected / removed /
 forced REWORK, or FLAG CLEARED — source re-check with correct anchor and
 who re-checked) | Note. If there were no disagreements, write "none". This
 file is appended to the Notion "Verifier Disagreement Log" page at save
-time; it is the standing data on whether Haiku catches what Opus misses.
+time; it is the standing data on whether Verifier A catches what Opus misses.
 
 ## DELIVERABLE 4: fttcp-handoff.md
 

@@ -1,0 +1,110 @@
+stage: B12c
+company: "MMP"
+run_date: "2026-10-05"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+scope: "phase 1: gate0 (B01) + emoat (B07) only; valuation half pending phase 3"
+gate0:
+  rules_checked: 50
+  fails:
+    - "G28 E4 CRITICAL (F1): standalone note 47 7,133.72 L over consolidated NW 34,650.78 L = 20.6% -> 1; consolidated Note 51 = 445.72 L (AR26 [page 241]) -> 1.29% -> 5; core 39 -> 43; AVOID -> AVERAGE under every reading"
+    - "G14 B2, G15 B3, G16 B4 MAJOR (F2): FY24 capex and payables in AR25 [page 154], [page 156]; FY24-FY26 meets the rule 6 3-year minimum; B2 5 or 2, B3 1 or 0, B4 3; Block B 5 -> 14 or 10"
+    - "G03 ROCE formula MAJOR (F3): equity+reserves+borrowings proxy replaces fixed EBIT/(TA-CL); fixed formula FY24-FY26 = 14.74 / 16.31 / 12.91%; Block A 4 -> 9 (per-metric window) or 2 (full window)"
+    - "G31 M3 MINOR (consequence of F3): FY26 fixed-formula ROCE 12.91% > 12%, FAT 3.29x -> 1"
+    - "G26 E2 MAJOR (F4): 3-year start point NOT FOUND (21 months SHP; 27 months with AR25 note 16(d) [page 112]); rule 5 -> 0, not 3"
+    - "G30 M2, G33 M5, G37 M9 MAJOR (F5): three peer Data_Sheets in inputs/screening; M2 1, M5 3, M9 3; moats present 0 -> 2; NONE -> MODERATE; moat score 4 -> 11 or 12"
+    - "G02 MINOR (F6): C1-C4, M3, M11 lines lack inline anchors"
+    - "G47 MINOR (F7): 01-gate0.md ends with a 6-key stub, not the full block"
+  recomputed_core: "40 to 54 (AVERAGE); 38 (AVOID) only under the full-window reading with the ROCE proxy also rejected"
+  recomputed_classification: "AVERAGE"
+  recomputed_moat: "11 or 12/60, 2 present (M5, M9), MODERATE"
+  operator_rulings_needed: "rule 6 scope (per metric vs full window); ROCE proxy admissibility; confidence tier keyed to scorecard history vs shortest scored window"
+emoat:
+  rules_checked: 36
+  fails:
+    - "E11 MINOR (F8): evidence anchored to upstream blocks B01/B03/B05 in G1, G2, B2, 1A; E1 central-India location unanchored"
+    - "E30 MINOR (F9): I2 test omits E2 and H2 (2 of 3 Moderate moats); I2 = 0 survives"
+  em_score_concur: true  # 11.6, NONE
+  inherited_from_b01: "6C/6D/6E rest on B01 AVOID and 0 moats; combined_assessment AVOID must be re-derived after the stage 1 re-run; not a B07 misapplication"
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3"}
+expectation_ledger: {status: "pending phase 3", present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # rules 13-14; any fail = REWORK stage 11
+business_understanding_narrative: {status: "pending phase 3", present: false, five_questions: false, prose_only: false, downstream_refs_ok: false, no_valuation_vocab: false, fails: []}  # rule 9; any fail = REWORK stage 13
+recomputed_destination_pe: ""  # pending phase 3
+recomputed_decision: ""        # pending phase 3; Gate 0 class recomputation is in gate0.recomputed_classification
+findings:
+  - id: F1
+    framework: gate0
+    rule: "E4 on the declared consolidated basis (prompt 01 Block E; rule 5)"
+    severity: CRITICAL
+    claimed: "7,133.72 L standalone Note 47 (AR26 [page 157]) / 34,650.78 L = 20.6% -> 1; 'no separate consolidated note found'"
+    recomputed: "445.72 L consolidated Note 51 (AR26 [page 241], lines 13308-13318) / 34,650.78 L = 1.29% -> 5"
+    effect: "Block E 14 -> 18; core 39 -> 43; AVOID -> AVERAGE under every reading; B07 combined_assessment inherits"
+    fix: "stage 1 re-scores E4 on Note 51"
+  - id: F2
+    framework: gate0
+    rule: "B2/B3/B4 NOT FOUND vs available history (prompt 01 rules 5, 6)"
+    severity: MAJOR
+    claimed: "capex and payables before FY25 not in corpus; B2 0, B3 0, B4 0"
+    recomputed: "AR25 [page 154]-[page 156] gives FY24; FCF FY24/FY25/FY26 = 11.97/7.04/14.06 Cr (PPE line) or 0.43/4.76/-2.50 Cr (PPE+CWIP+capital advances); B2 5 or 2; B3 1 (0.33) or 0 (0.03); B4 FY24 91.4 -> FY26 88.9 days = 3"
+    effect: "Block B 5 -> 14 or 10; alone core 48 or 44 (AVERAGE) under the per-metric reading; nil under the full-window reading"
+    fix: "re-run stage 1 with AR25 injected"
+  - id: F3
+    framework: gate0
+    rule: "ROCE fixed formula, no substitutes (prompt 01 FORMULA DEFINITIONS)"
+    severity: MAJOR
+    claimed: "EBIT/(equity+reserves+borrowings), 10 years; A1 1, A2 1, A4 0; M3 0"
+    recomputed: "fixed formula FY24 14.74% (AR25 [page 154]), FY25 16.31%, FY26 12.91%; per-metric reading A1 1, A2 3, A4 3 = Block A 9, M3 1; full-window reading A1/A2/A4 NOT FOUND = Block A 2"
+    effect: "core -2 to +5 depending on the rule 6 reading"
+    fix: "operator ruling on proxy admissibility, then stage 1"
+  - id: F4
+    framework: gate0
+    rule: "E2 3-year change; NOT FOUND scores 0 (prompt 01 rule 5)"
+    severity: MAJOR
+    claimed: "window NOT evidenced, scored 3"
+    recomputed: "0; holdings known 31-Mar-2024 (AR25 note 16(d) [page 112]) to 30-Jun-2026 (SHP), 27 months"
+    effect: "Block E -3; alone core 36 (AVOID); with F1 core 40 (AVERAGE)"
+    fix: "stage 1 scores E2 NOT FOUND = 0"
+  - id: F5
+    framework: gate0
+    rule: "peer tests scored 0 only when peer data is not provided (prompt 01 Block F)"
+    severity: MAJOR
+    claimed: "M2, M5, M9 PEER DATA NEEDED = 0; moats present 0; NONE"
+    recomputed: "peer sheets APARINDS/ARFIN/MAANALU: EBITDA median 7.47% vs MMP 7.92% -> M2 1; mcap rank 3 of 4, margin rank 2 -> M5 3; GM proxy 21.28% vs median 12.16% -> M9 3"
+    effect: "moat 4 -> 11 or 12/60; present 0 -> 2; NONE -> MODERATE; classification unchanged (core below 60); M5 rests on a four-name peer set"
+    fix: "re-run stage 1 with peer sheets injected"
+  - id: F6
+    framework: gate0
+    rule: "anchor after every extracted number (prompt 01 rule 4)"
+    severity: MINOR
+    claimed: "C1-C4, M3, M11 without inline anchors"
+    recomputed: "no score change"
+    effect: "none"
+    fix: "add (screener-data) per line"
+  - id: F7
+    framework: gate0
+    rule: "report ends with exactly the fenced YAML block (prompt 01 OUTPUT)"
+    severity: MINOR
+    claimed: "6-key stub plus pointer"
+    recomputed: "block file complete, 21 of 21 keys"
+    effect: "none"
+    fix: "paste the full block at the end of 01-gate0.md"
+  - id: F8
+    framework: emoat
+    rule: "source anchor on every evidence item (prompt 07 rule 3)"
+    severity: MINOR
+    claimed: "G1, G2, B2, 1A items anchored to B01/B03/B05; E1 location unanchored"
+    recomputed: "no score change"
+    effect: "none"
+    fix: "replace block anchors with source pages"
+  - id: F9
+    framework: emoat
+    rule: "I2 test for each moat claimed (prompt 07 I2)"
+    severity: MINOR
+    claimed: "I2 table tests insulators, powders, foils, wire rod"
+    recomputed: "E2 and H2 untested; I2 stays 0 (no specific sacrifice, no documented competitor evidence)"
+    effect: "none"
+    fix: "add E2 and H2 rows to the I2 table"
+critical_count: 1
+major_count: 4
+minor_count: 4
+acceptance_rate: 83.7             # rules passed / rules checked, %: (38 + 34) / (50 + 36)

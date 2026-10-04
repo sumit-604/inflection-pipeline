@@ -1,0 +1,49 @@
+stage: B02-notes
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: pass2_complete
+input_gaps:
+  - "No annual report: AR substitute is Prospectus 31-Aug-2026 restated financial information, Rs lakh, Indian GAAP (AS), pp.221-270"
+  - "No CARO or directors report; statutory dues partly covered by Risk Factor 5 pp.25-27"
+  - "Customers unnamed: non-government buyers (Rs 4,733.92 lakh FY26) not identified; product lines not crossed to buyer type"
+  - "No ECL or doubtful-debt policy, no ageing basis, no govt vs private receivable split"
+  - "Placement investors, FY25 promoter transfer price and buyers, commission payees, security deposit counterparties, software CWIP vendors, peak intra-year borrowing: not disclosed"
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PAT 56.4% FY26 (762.30 vs 1350.77 Rs lakh), 54.3% FY25, negative FY24 as printed. Pass 1 unpaid-tax claim WITHDRAWN: advance tax sits in other current assets (RF5 shortfalls 43.24/129.80/18.37; I.16 453.05). Tax-neutral CFO/PAT about 44% FY25, 65% FY26 (inference). WC absorbed 21.3% of incremental revenue FY26 vs 19.5%; ex-cash NWC days 97/73/78 (Annex III p.228, I.16 p.236)"}
+  - {type: FLAG-CUSTOMER-ID, reason: "Non-government customers 4733.92 Rs lakh (44.78%) unnamed; two product lines (Forensic Science, Cyber) give 99.97% of FY26 growth but no buyer-type cross-tab (p.29, p.24, pp.160-161, pp.250-251)"}
+  - {type: FLAG-RPT, reason: "Remuneration 281.35 +51.6%; Gostocks software 78.70 over FY25-26; software capitalised share of spend 0/59.6/82.6% with CWIP 137.17 unamortised; RPT payables 90.34 FY25 to 2.65 FY26; guarantors Bina Shah and Saloni Shah not in RPT list (pp.234, 237, 240, 250-251)"}
+  - {type: FLAG-RECEIVABLE-QUALITY, reason: "130.54 Rs lakh at 2-3 years, barely collected in a year, provided 20.7%; no ECL policy; ageing roll-forward anomaly 26.27 (Note I.14 p.235)"}
+  - {type: FLAG-CONTROLS, reason: "Company admits control gaps: 7 late TDS payments (up to 91 days, Mar-2025 TDS paid 30-Jul-2025), 2 late TDS returns, 3 GST delays, EPF and ESI lapses, advance tax shortfalls 44%/46% of tax in FY24/FY25; Annexure IX shows nil statutory interest in FY25/FY26 vs RF5 10.21 and 1.89 (RF5 pp.25-27; Annex IX p.252)"}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "CORRECTION to Pass 1: advance tax shortfalls 43.24/129.80/18.37 Rs lakh; advance tax paid sits in other current assets (453.05 vs about 451.65); CFO not flattered by unpaid tax; tax-neutral CFO/PAT about 44% FY25 and 65% FY26", note_ref: "RF5 pp.25-26; Annex IX p.252; I.16 p.236; Annex III p.228", rating: "YELLOW", why: "Pass 1 tax-timing claim is withdrawn; conversion trend is better than printed if the inference holds; Annexure IX interest disclosure conflicts with RF5"}
+  - {rank: 2, finding: "FY26 product-line revenue found: Forensic Science 3910.84 and Cyber 3522.83 give 99.97% of growth; Mobile CSI vehicles 1056.76 (-35.6%, units 47 to 25); DNA 1137.57", note_ref: "RF3 p.24; p.259", rating: "YELLOW", why: "Growth is two lines wide; non-government growth of 3362.74 cannot be mapped to products so LBF-1 stays open"}
+  - {rank: 3, finding: "Promoters took about 89% of the FY24 placement at Rs 20 (book about Rs 115.9); promoters transferred 94918 shares in FY25 at undisclosed price; OFS 1080000 shares; promoter name differs between RF4 and notes", note_ref: "I.1 pp.232-233; II.11 p.242; RF4 p.25", rating: "YELLOW", why: "Who bought at Rs 20 and Rs 569 and the FY25 sale price are open for stage 8"}
+  - {rank: 4, finding: "Statutory compliance: 7 late TDS payments (to 91 days), 2 late TDS returns, 3 GST, EPF and ESI lapses; company cites internal control gaps; process gap not funding gap", note_ref: "RF5 pp.25-27", rating: "YELLOW", why: "Control quality signal; rupee penalties small; closes part of the CARO gap"}
+  - {rank: 5, finding: "WC absorbed 866.37 FY26 = 21.3% of incremental revenue (19.5% FY25); deposits 302.89 up 93.56; ex-cash NWC days 97/73/78; FY27 WC need 4442.00 vs 3587.14", note_ref: "Annex III p.228; I.16 p.236; RF11 pp.29-30", rating: "YELLOW", why: "Receivable days improved but total working-capital intensity did not"}
+  - {rank: 6, finding: "Related-party payables 90.34 FY25 to 2.65 FY26 = 51% of the FY26 payables outflow; Extreme Covet fully unpaid at FY25", note_ref: "Annex VIII p.251; I.6 p.234", rating: "YELLOW", why: "Related parties financed FY25 working capital; FY26 settlement used placement cash"}
+  - {rank: 7, finding: "Software capitalised share of programming spend 0/59.6/82.6%; CWIP 137.17 unamortised; PBT 4.1% to 6.5% lower if expensed", note_ref: "II.8 p.240; I.9 p.237", rating: "YELLOW", why: "Capitalisation honesty test; vendor and completion date not disclosed; amortisation about 35.6 a year on commissioning"}
+  - {rank: 8, finding: "Machine lease cost 160.78 to 22.48 while renting revenue 671.33 to 925.41; owned scanners 164.50 added late FY26; fall is 15.4% of EBITDA growth", note_ref: "II.3 p.239; RF3 p.24; I.9 p.237", rating: "YELLOW", why: "Margin source not explained by owned assets; durability needs management answer"}
+  - {rank: 9, finding: "Gross margin 37.3/31.2/27.1%; EBITDA margin flat at about 18% only via opex leverage (other expenses 13.7% to 4.4% of revenue)", note_ref: "KPI p.257; II.3-II.8 pp.239-240", rating: "YELLOW", why: "Margin quality: cost leverage is carrying margin while product gross margin compresses"}
+  - {rank: 10, finding: "ROCE reproduces as EBIT / closing equity plus debt (44.88/38.15/39.07%), not the printed formula; cash is 31.8% of equity so EBIT over capital ex-cash is 65.8%; ROE on average equity 38.98% vs RoNW 32.62%", note_ref: "Annex V p.245; VI p.248; KPI pp.257-258", rating: "YELLOW", why: "Spot-year ROCE on cash-heavy base; do not feed as durable ROCE to stage 10 or 11"}
+  - {rank: 11, finding: "Non-related interest 11.95 FY26 on nil closing debt shows intra-year borrowing; other borrowing cost is 4.6% and 14.1% of average guarantees, not pure commission", note_ref: "II.6 p.239; Annex VIII p.250; p.255", rating: "YELLOW", why: "Zero debt is a point-in-time figure; EBITDA add-back composition unknown"}
+  - {rank: 12, finding: "MD&A conflicts: not seasonal vs 51% Q4 sales; volume-led vs customers down 23.4%; order-basis inventory vs +37.9%; placement 930 vs 947.97 vs 1020.19", note_ref: "pp.266-270; p.92", rating: "YELLOW", why: "Disclosure quality; undermines management narrative on collections and inventory"}
+  - {rank: 13, finding: "PF contradiction resolved: PF and ESI are deducted and deposited; II.5 line includes gratuity 9.43", note_ref: "RF5 p.26; II.5 p.239", rating: "GREEN", why: "Pass 1 yellow downgraded"}
+  - {rank: 14, finding: "Import of services 643.03 vs customs duty 37.96 does not track; Schedule III gaps; issue-cost tax deduction 72.22 exposure 18.18; MSME 43B cross-check clean", note_ref: "Annex V xvii p.246; IX p.252; I.6 p.234", rating: "YELLOW", why: "Small items for management Q and tax diligence"}
+  - {rank: 15, finding: "Events after balance sheet: Section VI item G reports none material except MD&A; no going concern language found", note_ref: "p.274", rating: "GREEN", why: "Fills Pass 1 gap"}
+red_flags: []
+questions_for_mgmt:
+  - "Name the top 10 customers FY26 split government vs private, and say which non-government buyers resell to government. Cross-tab each product line by buyer type."
+  - "Confirm the advance tax paid for FY26 and where it is carried. Why do Annexure IX and Risk Factor 5 differ on statutory interest for FY25 and FY26, and where is the interest booked?"
+  - "At what price and to whom did promoters transfer 94,918 shares in FY25, and who bought the Rs 20 and Rs 569 placements?"
+  - "What equipment carried FY26 rentals after machine lease cost fell from 127.48 to 22.48, given the 164.50 of owned scanners arrived late in the year?"
+  - "What is the software under development (Rs 137.17 lakh), who built it, when is it commissioned, and why did capitalised share of programming spend rise to 82.6%?"
+receivables_trend: "improving on days, flat on operating working capital: average-basis days 83 / 89 / 74 (company), year-end days 144 / 111 / 79 (computed); receivables Rs lakh 1193.58 / 1979.05 / 2288.07; >6 months 11.85% of gross FY26 vs 16.97% FY25 vs 12.32% FY24; 130.54 aged 2-3 years, 27.00 provided (Note I.14 p.235). Year-end operating WC days ex-cash 97.1 / 72.8 / 78.4, tax-netted 102.3 / 80.1 / 79.0 (computed); WC absorbed 21.3% of incremental revenue FY26 vs 19.5% FY25 (Annex III p.228)"
+restatements_found:
+  - "FY24 PAT 287.16 restated to 283.47 Rs lakh: gratuity moved from cash to AS 15 actuarial basis (-4.93), deferred tax +1.24; reserves adjusted -3.69 FY24 P&L and -10.78 opening (Annexure VII p.249)"
+  - "Product-line table in RF3 groups goods and services differently from Note II.1: goods 9628.00 vs 9620.04 FY26, 5622.71 vs 5608.52 FY25 (p.24 vs p.239)"
+going_concern_language: "NONE in Section V notes pp.221-270 or Section VI item G p.274 (no material developments after balance sheet date except as in MD&A)"
+analyst_note: "Pass 2 withdraws one Pass 1 claim: the 188.28 unpaid-tax effect on CFO. Risk Factor 5 shows advance tax shortfalls of only 18.37 for FY26, and the 453.05 asset labelled advance tax matches 451.65 paid. CFO is net of full cash tax. CFO/PAT 56.4% stands as printed; about 65% tax-neutral is an inference. The cash weakness is working-capital intensity (21.3% of incremental revenue), not tax. Two lines supply 99.97% of FY26 growth, and LBF-1 stays open. Margin quality watch items: gross margin down 10 points in two years, lease cost down 105 while owned scanners arrived late, software capitalised share 82.6%. Control gaps are real but small in rupees. Score held at 5."

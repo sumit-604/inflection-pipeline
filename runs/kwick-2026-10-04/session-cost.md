@@ -11,3 +11,4 @@ session (claude-opus-5-5) and are not metered per stage.
 | 0 | inventory (inline) | claude-opus-5-5 (session) | session | n/a | n/a | not metered | n/a | 1 |
 | 1 | gate0 | claude-sonnet-5-5 | medium | n/a | n/a | 128,294 | 5m11s | 1 |
 | 2 | notes pass 1 | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 174,699 | 6m17s | 1 |
+| 2 | notes pass 2 | claude-sonnet-5-5 | default (stale def) | n/a | n/a | 211,367 | 10m34s | 1 |

@@ -54,6 +54,37 @@ MIRRORS: dict[str, dict] = {
                     value_col="Exchange rate",
                     note="datahub mirror of FRED H.10 daily rates "
                          "(DEXINUS for India)"),
+    "DTWEXBGS": dict(repo="unbalancedparentheses/forex-centuries", ref="main",
+                     path="data/sources/fred/daily/fred_usd_broad_index.csv",
+                     date_col="observation_date", value_col="DTWEXBGS",
+                     note="GitHub copy of FRED DTWEXBGS daily, pulled by the "
+                          "repo's FRED API script; ends 2025-12"),
+    "T10YIE": dict(repo="luizamfsantos/CPI-BER-Time-Series-Analysis",
+                   ref="main", path="data/raw/T10YIE.csv", date_col="DATE",
+                   value_col="T10YIE",
+                   note="GitHub copy of a FRED T10YIE CSV export; ends "
+                        "2019-11"),
+    "FEDFUNDS": dict(repo="eco3min/macro-regime-classifier", ref="main",
+                     path="docs/regime_history_v1.1.0.csv", date_col="date",
+                     value_col="fedfunds",
+                     note="column 'fedfunds' (FRED FEDFUNDS, monthly) of the "
+                          "repo's regime table; starts 2003-01"),
+    "NIFTY_NSE_LONG": dict(repo="GautamGopalKrishnan/garch", ref="main",
+                           path="HistoricalData_Nifty50.csv", date_col="Date",
+                           value_col="Close",
+                           note="NSE historical index data (README: courtesy "
+                                "of NSE), daily close 1990-07 to 2024-08"),
+    "NIFTY_NSE_RECENT": dict(repo="BennyThadikaran/eod2_data", ref="main",
+                             path="daily/nifty%2050.csv", date_col="Date",
+                             value_col="Close",
+                             note="eod2 NSE daily index file, 2012-02 on, "
+                                  "updated weekly"),
+    "FPI": dict(repo="mrchartist/fii-dii-data", ref="main",
+                path="data/fpi_yearly_monthly.json",
+                note="JSON of NSDL Yearwise monthly FPI flows. 2020 on is "
+                     "scraped from NSDL by the repo; 2005-2019 are arrays "
+                     "hard-coded in the repo's append scripts with no stated "
+                     "source: UNVERIFIED against NSDL"),
     "BRENT_EIA": dict(repo="datasets/oil-prices", ref="main",
                       path="data/brent-daily.csv", date_col="Date",
                       value_col="Price",
@@ -100,6 +131,12 @@ def _monthly_from_daily(s: pd.Series) -> pd.DataFrame:
                         "month_avg": s.groupby(m).mean(),
                         "last_obs_date": pd.Series(s.index, index=s.index)
                         .groupby(m).last().dt.date.astype(str)})
+    # In a daily series, a final month that stops before the 15th is not a
+    # month-end. (Monthly series carry one dated-the-1st row per month.)
+    daily = s.groupby(m).size().median() > 3
+    if daily and len(out) and \
+            pd.Timestamp(out["last_obs_date"].iloc[-1]).day < 15:
+        out = out.iloc[:-1]
     out.index = out.index.astype(str)
     out.index.name = "month"
     return out
@@ -158,8 +195,8 @@ def _mirror_daily(key: str) -> tuple[pd.Series, str, str]:
     df = pd.read_csv(io.BytesIO(_get(url)))
     if "filter_col" in m:
         df = df[df[m["filter_col"]] == m["filter_val"]]
-    s = pd.Series(df[m["value_col"]].values,
-                  index=pd.to_datetime(df[m["date_col"]]))
+    s = pd.Series(pd.to_numeric(df[m["value_col"]], errors="coerce").values,
+                  index=pd.to_datetime(df[m["date_col"]], format="mixed"))
     return s, url, m["note"]
 
 
@@ -242,6 +279,42 @@ def fetch_yahoo(sym: str, name: str, primary_only: bool):
     _record(name, sym, url.split("?")[0], "FAILED", note=err)
 
 
+# -------------------------------------------------------------------- Nifty
+def build_nifty(primary_only: bool):
+    """nifty_monthly.csv: Yahoo ^NSEI if it was served, else NSE mirrors.
+
+    The two NSE files are joined: the long file up to the day before the
+    recent file starts, the recent file after. Their overlap is checked.
+    """
+    name = "nifty_monthly"
+    y = DATA / "yahoo_nifty.csv"
+    if any(r["name"] == "yahoo_nifty" and r["status"] == "PRIMARY"
+           for r in LOG):
+        df = pd.read_csv(y, dtype={"month": str}).set_index("month")
+        _save(df, name)
+        _record(name, "^NSEI", "yahoo_nifty.csv", "PRIMARY", df)
+        return
+    if primary_only:
+        _record(name, "^NSEI", "", "FAILED", note="Yahoo refused")
+        return
+    try:
+        lo, url_lo, _ = _mirror_daily("NIFTY_NSE_LONG")
+        hi, url_hi, _ = _mirror_daily("NIFTY_NSE_RECENT")
+        lo, hi = lo.dropna().sort_index(), hi.dropna().sort_index()
+        ov = lo.index.intersection(hi.index)
+        gap = float((lo[ov] / hi[ov] - 1).abs().max()) if len(ov) else None
+        s = pd.concat([lo[lo.index < hi.index.min()], hi])
+        out = _monthly_from_daily(s)
+        _save(out, name)
+        _record(name, "NIFTY 50 (NSE)", f"{url_lo} + {url_hi}", "MIRROR",
+                out, note=f"Yahoo ^NSEI refused. NSE long file to "
+                f"{hi.index.min().date()} then eod2 file; {len(ov)} "
+                f"overlapping days, max close difference "
+                f"{100 * gap:.3f}%" if gap is not None else "no overlap")
+    except Exception as e:                              # noqa: BLE001
+        _record(name, "NIFTY 50", "", "FAILED", note=repr(e)[:160])
+
+
 # ------------------------------------------------------- India FPI (NSDL)
 def fetch_fpi(primary_only: bool):
     """Monthly net FPI equity flow, INR crore.
@@ -264,6 +337,25 @@ def fetch_fpi(primary_only: bool):
     except Exception as e:                              # noqa: BLE001
         _record(name, "NSDL FPI monthly", NSDL_FPI, "FAILED",
                 note=repr(e)[:120])
+    if not manual.exists() and not primary_only:
+        m = MIRRORS["FPI"]
+        url = RAW_GH.format(**m)
+        try:
+            j = json.loads(_get(url))
+            rows = []
+            for yr, blk in j["years"].items():
+                for r in blk["months"]:
+                    mon = dt.datetime.strptime(r["month"], "%B").month
+                    rows.append((f"{yr}-{mon:02d}", r["equity"]))
+            df = pd.DataFrame(rows, columns=["month",
+                                             "fpi_equity_net_inr_cr"])
+            df = df.set_index("month").sort_index()
+            _save(df, name)
+            _record(name, "NSDL FPI monthly, equity net (INR cr)", url,
+                    "MIRROR", df, note=m["note"])
+        except Exception as e:                          # noqa: BLE001
+            _record(name, "NSDL FPI monthly", url, "FAILED",
+                    note=repr(e)[:120])
     if manual.exists():
         df = pd.read_csv(manual, dtype={"month": str}).set_index("month")
         _save(df, name)
@@ -282,6 +374,8 @@ def write_sources():
              "| File | Series code | Status | Source URL used | First | Last "
              "| Rows | Fetched | Note |", "|---|---|---|---|---|---|---|---|---|"]
     for r in LOG:
+        if r["status"] == "FAILED" and (DATA / f"{r['name']}.csv").exists():
+            r["note"] += "; the cached CSV from an earlier run is kept"
         lines.append(f"| {r['name']}.csv | {r['code']} | {r['status']} | "
                      f"{r['url']} | {r['first']} | {r['last']} | {r['rows']} "
                      f"| {r['fetched']} | {r['note']} |")
@@ -298,7 +392,14 @@ def main():
     fetch_brent_eia(primary_only)
     for sym, name in YAHOO_SYMS.items():
         fetch_yahoo(sym, name, primary_only)
+    build_nifty(primary_only)
     fetch_fpi(primary_only)
+    LOG.append(dict(name="fred_DFII10 (no mirror)", code="DFII10", url="",
+                    status="NOTE", first="", last="", rows="", fetched=TODAY,
+                    note="no public copy found; gold/silver driver votes 0 "
+                         "until the operator runs fetch.py")) \
+        if any(r["code"] == "DFII10" and r["status"] == "FAILED"
+               for r in LOG) else None
     write_sources()
     for r in LOG:
         print(f"{r['status']:8} {r['name']:28} {r['first']:>8} -> "

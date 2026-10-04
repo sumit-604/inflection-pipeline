@@ -82,3 +82,4 @@ Full record: `audits/RULINGS_2026-10.md`, items 27 to 30.
 - medium: stages 1, 4, 6, 09b, Verifier D, quarterly A2. low: quarterly A1.
 - Verifier A stays on Haiku 4.5 (operator ruling 2026-10-03, item 29 (a)). It is the out-of-family check on the numbers from the Sonnet 5.5 evidence stages (`prompts/00-orchestrator.md`, source-fidelity gate). My first proposal missed this reason.
 - Stage 10 stays on Haiku 4.5.
+- SUPERSEDED 2026-10-04: Stage 10 (Sonnet 5.5 medium) and Verifier A (Sonnet 5.5 high) moved off Haiku. See audits/RULINGS_2026-10.md, "Ruling 2026-10-04".

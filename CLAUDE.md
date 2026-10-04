@@ -41,7 +41,9 @@ target, 3-5 year holds.
 - Never treat building as a footnote to governance (Master v3.7 Rule G).
   Role 2 Section 3G ledgers what the promoter built, raised, deployed, and
   delivered under constraint, and states its Pillar 3 line. The ledger
-  never lifts a position cap the promoter verdict imposes.
+  never lifts a cap set by a promoter AVOID or an INTEGRITY concern; for a
+  STRUCTURE concern, three of four evidenced ledger heads size as TRUSTWORTHY,
+  with each concern a named tripwire (operator ruling OR-14).
 - Never answer a failure-catalogue pattern-match without the nearest
   success name and the observable difference (Master v3.7 Rule I). While
   frameworks/success_catalogue.md holds fewer than four names, say
@@ -84,10 +86,12 @@ target, 3-5 year holds.
 - claude-opus-5-5 (Opus 5.5), effort high: stage 13 synthesis, stage 14
   thesis, quarterly A3-A4
 - claude-sonnet-5-5 (Sonnet 5.5), effort medium: stages 1, 4, 6, 09b,
-  verifier D, quarterly A2; effort low: quarterly A1; default (high):
-  stages 2, 3, 5, 7, 8, 9
-- haiku (Haiku 4.5, no 5.5 Haiku exists): stage 10 assembly, verifier A
-  (the out-of-family read on the numbers)
+  10 assembly, verifier D, quarterly A2; effort high (set in the file):
+  verifier A; effort low: quarterly A1; default (high): stages 2, 3, 5,
+  7, 8, 9
+- No stage runs on Haiku 4.5 (operator ruling 2026-10-04: stage 10 and
+  verifier A moved to Sonnet 5.5; Verifier A's independence comes from a
+  fresh context and the source page, not the model family)
 Do not upgrade a stage's model without editing its agent file.
 
 ## WORDS
@@ -110,15 +114,21 @@ Do not upgrade a stage's model without editing its agent file.
   session; in-session it appears only as collect_to_repo.py --push-again.
 - Sparse checkout (operator ruling 2026-10-03): a pipeline session first runs
   tools/sparse_session.sh runs/<folder> [more folders]. It keeps everything
-  outside runs/, every run's session-cost.md and manifest.yaml, and the named
-  run folders, so the tree is about 80 MB, not 4.8 GB. Add a folder the same
-  way when a session needs it; tools/sparse_session.sh --off restores the full
-  tree. Never run git stash or git reset --hard over a full checkout.
+  outside runs/, runs/_template/, every run's session-cost.md and
+  manifest.yaml, and the named run folders, so the tree is about 80 MB, not
+  4.8 GB. Add a folder the same way when a session needs it;
+  tools/sparse_session.sh --off restores the full tree. Never run git stash or
+  git reset --hard over a full checkout.
+- Run tools/dry_check.sh before merging any PR that touches .claude/,
+  prompts/, frameworks/ or tools/ (operator ruling 2026-10-03).
 - Any session that commits a framework or prompt amendment must end by
   opening a PR to main the same day. Run outputs and framework amendments
   go in SEPARATE commits so recovery stays surgical.
 - Framework/prompt amendments and run outputs travel on SEPARATE branches
   and PRs; an amendment never rides a run PR.
+- Any PR that changes frameworks/, .claude/skills/section-1b/ or an operator
+  ruling also updates claude-web/PROJECT_INSTRUCTIONS.md (the claude.ai
+  project instructions), or says in the PR description why not.
 
 ## FERRY AND COMMIT HYGIENE (both sides; team workflow v2)
 - Hash by default. Every report a command produces that involves a commit
@@ -184,6 +194,9 @@ weigh, never anchored evidence.
                  Downstream_Source_Discovery_Protocol_v1_0.md (source
                  registry for downstream signal candidates; Role 5.5
                  verifies against it in claude.ai)
+- claude-web/PROJECT_INSTRUCTIONS.md   repo copy of the claude.ai project
+                 instructions (v4.1); the operator pastes it into the
+                 project settings and keeps the two in sync
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp

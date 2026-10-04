@@ -4,7 +4,7 @@ Approved by the operator on 2026-10-03 (branch audit items 2, 3, 18, 19). Not ex
 
 Kept on purpose: `main`; `run/trualt-2026-09-18` (open PR #177); `framework/ar-section-index` (draft PR #185); `claude/inflection-opus-5.5-audit-102xpl`;  every run or quarterly branch that holds files main lacks (items 20 and 21, deferred).
 
-109 branches (100 approved 2026-10-03, plus 9 added after the PR merges the same day).
+111 branches (100 approved 2026-10-03, plus 11 added after the PR merges the same day).
 
 | item | category | branch | tip |
 |---|---|---|---|
@@ -117,6 +117,8 @@ Kept on purpose: `main`; `run/trualt-2026-09-18` (open PR #177); `framework/ar-s
 | PR #184 merged (5f707091) | FRAMEWORK | `framework/recover-quarterly-forward-map` | `ea39cb212ce2ff9a06bd7c030373d7d6f3f0aa6e` |
 | PR #183 merged (8aab014c) | FRAMEWORK | `framework/recover-steel-cap` | `2dfe87a963918ce0130607b1400186047aed7516` |
 | PR #173 closed, superseded by #182 | FRAMEWORK | `tools/chartink-push-main` | `a25b9c214b6dc6bba9613ecee45cec663d7ac19f` |
+| PR #188 merged (9bc9d18b) | OTHER | `audit/branch-deletions-update` | `da1deafc0c05390c0f8d9c779c6a55a92ebbd066` |
+| PR #189 merged (05153461) | FRAMEWORK | `tools/dry-check` | `47d37a752d0542c5bea68ab1966449fe6e58fd12` |
 
 ## Script (run from your own machine)
 
@@ -237,5 +239,7 @@ tools/recover-chartink-push 167a9a674de184c4ab5374baabdc47de5da76c36
 framework/recover-quarterly-forward-map ea39cb212ce2ff9a06bd7c030373d7d6f3f0aa6e
 framework/recover-steel-cap 2dfe87a963918ce0130607b1400186047aed7516
 tools/chartink-push-main a25b9c214b6dc6bba9613ecee45cec663d7ac19f
+audit/branch-deletions-update da1deafc0c05390c0f8d9c779c6a55a92ebbd066
+tools/dry-check 47d37a752d0542c5bea68ab1966449fe6e58fd12
 LIST
 ```

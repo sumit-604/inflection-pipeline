@@ -19,7 +19,7 @@
 # of the gate below: the gate binds on whether a number is in the source, and
 # a row that agrees with itself makes no claim about the source at all. No
 # other reason may strike a Verifier A finding.
-# HARD SOURCE-FIDELITY GATE: Verifier A (Haiku) is the SOLE and FINAL
+# HARD SOURCE-FIDELITY GATE: Verifier A (Sonnet 5.5) is the SOLE and FINAL
 # authority on source fidelity — whether a specific number actually appears
 # in the source PDF at the cited anchor. Its per-number source-fidelity
 # verdicts (MISMATCH, ANCHOR NOT FOUND, material UNANCHORED) are
@@ -27,14 +27,14 @@
 # orchestrator may downgrade, dismiss, or reason around one. The ONLY thing
 # that clears a source-fidelity finding is re-reading the source PDF and
 # showing the number does exist at a correct anchor, and that clearance is
-# itself logged as a disagreement. This is deliberate cross-family placement:
-# Haiku is the pipeline's only out-of-family read on the numbers, so it is the
-# read that binds. Verifiers B and C own judgment and framework, never the
+# itself logged as a disagreement. Its independence comes from a fresh
+# context and the source page, not the model family (operator ruling
+# 2026-10-04), so it is the read that binds. Verifiers B and C own judgment and framework, never the
 # existence-of-a-number question.
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER A: NUMERICAL ACCURACY
-# Model: Haiku 4.5 | Emits: B12a
+# Model: Sonnet 5.5 (high) | Emits: B12a
 ═══════════════════════════════════════════════════════════════════
 
 You are a numerical audit engine. You receive the pipeline's stage
@@ -104,7 +104,7 @@ denominator cannot be audited. Then:
 stage: B12a
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-haiku-4-5
+model: claude-sonnet-5-5
 status: complete
 numbers_checked: 0
 findings:

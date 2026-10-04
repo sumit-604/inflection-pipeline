@@ -1,5 +1,5 @@
 # STAGE 10: VALUATION INPUT ASSEMBLY (PIPELINE MODE)
-# Model: Haiku 4.5 | Emits: B10-valinputs
+# Model: Sonnet 5.5 (medium) | Emits: B10-valinputs
 # Purpose: the ONLY assembler of Role 1 inputs. The valuation model must
 # never fill its own inputs from memory of earlier context; that is
 # where numbers drift. This stage builds the complete input table with
@@ -96,7 +96,7 @@ exactly this fenced YAML block:
 stage: B10-valinputs
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-haiku-4-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []
 flags: []

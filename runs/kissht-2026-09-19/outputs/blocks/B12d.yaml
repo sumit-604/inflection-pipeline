@@ -1,0 +1,19 @@
+stage: B12d
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 10
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: "MINOR", location: "B06 Claim 4 narrative", claimed: "management (Arvind Kapil, Sanjay Miranka) attributes rising cost of borrowing to bond-yield and 'geopolitical environment' pressure", source_truth: "the 'geopolitical environment' phrase originates in analyst Abhijit Tibrewal's question (POONAWALLA-Concall_Jul_2026_Transcript.txt p.16); management's actual replies (p.16-17, p.19) are measured and do not adopt that framing explicitly", note: "underlying number and CONTRADICTED direction are correct and independently verified; only the attribution of who named the cause is imprecise"}
+  - {severity: "MINOR", location: "B06 Claim 3, UGROCAP Aug-2026 citation", claimed: "24% of total income in Q4 FY26 to 14% in Q1 FY27 — UGROCAP-Concall_Aug_2026_Transcript.txt p.4, p.9", source_truth: "the 24%->14% figure is on p.7 (Shilpa Bhatter's financial highlights); only the separate '4% within 11-12 quarters' target is on p.9; p.4 contains neither number", note: "figures are real and correctly quoted; page anchor for one of the two figures is wrong; Claim 3 remains UNVERIFIABLE regardless"}
+  - {severity: "MINOR", location: "B06 Part 2E, UGROCAP Feb-2026 citation", claimed: "realised-vs-unrealised ROA quality framing — UGROCAP-Concall_Feb_2026 p.9, p.13-14", source_truth: "the specific 'NPV values / interest-led income' quote sits at p.10 by the file's [page N] markers, one page later than cited; broader discussion does continue to p.12-13", note: "quote is real and accurately paraphrased; page number off by one"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

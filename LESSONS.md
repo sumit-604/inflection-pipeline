@@ -39,8 +39,8 @@ LESSONS_ARCHIVE.md for 2+ occurrences and promotes qualifying patterns here._
   with a real Read. Reliable default: pre-extract every input PDF to
   page-marked .txt up front and point every stage/verifier at the .txt, so
   no stage hits the ~20-32MB image-render wall.
-- Verifier A (haiku) first pass mislabels severity, inventing false
-  CRITICALs that would force REWORK (a matched figure, a faithfully
+- Verifier A (haiku, before 2026-10-04) first pass mislabels severity,
+  inventing false CRITICALs that would force REWORK (a matched figure, a faithfully
   transcribed company anomaly, or a screener-vs-AR basis difference is not a
   finding). Orchestrator sanity-checks every Verifier A CRITICAL against its
   own source_truth column, then re-invokes once with the severity-semantics

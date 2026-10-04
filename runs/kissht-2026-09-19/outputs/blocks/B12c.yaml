@@ -1,0 +1,44 @@
+stage: B12c
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-opus-5
+status: complete
+scope: "phase 1 (Gate 0 B01 + Emerging Moat B07); valuation pending phase 3"
+gate0: {rules_checked: 52, fails: ["M1 MAJOR: Cost-to-Income swapped for EBITDA margin in M1 only; as-written M1=5", "M3 MAJOR: computable test scored 0 on judgment (rule 2); FAT 51.4x, ROCE 30.93%; as-written M3=5", "M8 MAJOR: 'purely digital' contradicted by LAP branch network 98->101; as-written M8=3 (floor 1)", "moat_class MAJOR: as-written 18 pts / 4 present / STRONG (floor 16/3/MODERATE) vs THIN; classification AVERAGE unchanged", "DB6 MAJOR: literal ND/EBITDA and IC not computed (NOT FOUND); CAR/PCR swap asserted not ruled; operator ruling needed", "A3 MINOR: mixed ROE bases, median 20.86 sits 0.86pp above band edge", "B4 MINOR: earliest-available window applied inconsistently vs A4", "M7 MINOR: peer count partly general market knowledge", "M9 MINOR: prescribed GM proxy not used; score unchanged", "M11 MINOR: 2-yr spans labelled 3-yr; FY23-26 CAGR ~30% gives 1", "M12 MINOR: scored on judgment; FY26 WC ~-0.1 days, FY25 not stated; NOT DETERMINABLE", "deal_breakers MINOR: driving years not named for DB2/DB4"]}
+emoat: {rules_checked: 28, fails: ["EM-9 MAJOR: A3 AUC series and F1 headcount rest on deck/concall only, graded documented; recomputed A3 1.4, F1 0.7", "EM-24/25 MAJOR: Rs 832.2 Cr preferential credited in G1 and H2; portfolio investors not strategic partners; recomputed H2 0 (max 1.0)", "EM-18 MAJOR: 2C levers unapproved preferential and non-lending IPO tranche; recomputed 21.9% (29.2% full IPO) vs 57.8%", "EM-24 MINOR: AUC series evidence in both A3 and D1", "EM-4 MINOR: AR anchors are text line ranges, one missing page", "EM-8 MINOR: C1 mixed tier at 1.0x without named scoring item", "EM-25 MINOR: C2 uses 46.4% on-book Jun-26 as off-book Jun-25"]}
+valuation: {rules_checked: 0, fails: [], note: "pending phase 3"}
+expectation_ledger: {note: "pending phase 3 (rules 13-14 not in phase-1 scope)"}
+business_understanding_narrative: {note: "pending phase 3 (rule 9, stage 13 not yet run)"}
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_gate0: "classification AVERAGE concur; moat as-written 18 pts / 4 present / STRONG (floor 16 / 3 / MODERATE) vs B01 4 / 1 / THIN; grand_total 69 (floor 67) vs 55"
+recomputed_em: "15.6 to 16.6 vs 18.5; MODEST concur; EM>=25 UA qualifier unmet either way"
+recomputed_capex_embedded_growth_pct: "21.9 (executed lending tranche) or 29.2 (full IPO) vs 57.8"
+operator_rulings_requested: ["Gate 0 lender variant for Blocks A and F, applied symmetrically (literal ROCE either valid in both A1/A2/A4 and M3, or in neither)", "Deal-breaker 6 for financials: confirm CAR/PCR substitution or require literal ND/EBITDA and IC"]
+findings:
+  - {severity: MAJOR, location: "B01 M1", rule: "Block F M1; pipeline rule 2", note: "Cost-to-Income basis swapped in for M1 only; M2/M9 keep naive proxy", recomputed: "M1=5"}
+  - {severity: MAJOR, location: "B01 M3", rule: "pipeline rule 2", note: "computable test scored 0 on archetype judgment; same ROCE accepted in Block A", recomputed: "M3=5"}
+  - {severity: MAJOR, location: "B01 M8", rule: "Block F M8", note: "LAP branch network disclosed (AR p.9 per B07; 98->101 IP1 p.11)", recomputed: "M8=3 (floor 1)"}
+  - {severity: MAJOR, location: "B01 moat_class", rule: "moat classification", note: "THIN not the as-written result; propagates into B07 6C", recomputed: "STRONG (floor MODERATE); classification AVERAGE unchanged"}
+  - {severity: MAJOR, location: "B01 deal-breaker 6", rule: "deal-breaker overrides", note: "literal test not computed; swap asserted", recomputed: "NOT FOUND; operator ruling"}
+  - {severity: MINOR, location: "B01 A3", rule: "ROE formula", note: "mixed bases; 0.86pp above band edge", recomputed: "5 or 4"}
+  - {severity: MINOR, location: "B01 B4", rule: "window consistency", note: "FY21 required in B4 while A4 accepts FY23", recomputed: "up to +5 Core, still AVERAGE"}
+  - {severity: MINOR, location: "B01 M7", rule: "pipeline rule 5", note: "general market knowledge used", recomputed: "1 unchanged"}
+  - {severity: MINOR, location: "B01 M9", rule: "M9 proxy", note: "prescribed GM proxy not used", recomputed: "0 unchanged"}
+  - {severity: MINOR, location: "B01 M11", rule: "M11 two-window test", note: "2-yr spans labelled 3-yr", recomputed: "1"}
+  - {severity: MINOR, location: "B01 M12", rule: "pipeline rule 2", note: "scored on judgment", recomputed: "NOT DETERMINABLE"}
+  - {severity: MINOR, location: "B01 deal_breakers", rule: "state driving years", note: "years not named for DB2/DB4", recomputed: ""}
+  - {severity: MINOR, location: "B01 M1/M11", rule: "CAGR formula", note: "13.99% not 14.01%", recomputed: "band unchanged"}
+  - {severity: MINOR, location: "B01 B1 vs B2/B3", rule: "single basis", note: "FY23 CFO from two sources (disclosed)", recomputed: "no score effect"}
+  - {severity: MAJOR, location: "B07 A3, F1", rule: "evidence taxonomy (verifier rule 3)", note: "deck/concall-only metrics graded documented", recomputed: "A3 1.4, F1 0.7"}
+  - {severity: MAJOR, location: "B07 G1/H2", rule: "one improvement one mechanism; H2 category list", note: "preferential issue double-credited; portfolio investors not strategic partners", recomputed: "H2 0 (max 1.0)"}
+  - {severity: MAJOR, location: "B07 2C / capex_embedded_growth_pct", rule: "2C under-execution base", note: "unapproved preferential and non-lending IPO tranche levered", recomputed: "21.9% (29.2%) vs 57.8%"}
+  - {severity: MINOR, location: "B07 A3/D1", rule: "one improvement one mechanism", note: "AUC series in both", recomputed: "D1 likely unchanged"}
+  - {severity: MINOR, location: "B07 anchors", rule: "source anchors", note: "line-range pseudo-pages; one missing page", recomputed: ""}
+  - {severity: MINOR, location: "B07 C1", rule: "multiplier vs tier", note: "mixed tier at 1.0x, scoring item not named", recomputed: "2.0 or 1.4"}
+  - {severity: MINOR, location: "B07 C2", rule: "internal consistency", note: "on-book 46.4% relabelled off-book Jun-25", recomputed: "0 unchanged"}
+critical_count: 0
+major_count: 8
+minor_count: 13
+rework_triggered: false
+acceptance_rate: 77.5

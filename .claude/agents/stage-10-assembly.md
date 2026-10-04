@@ -2,7 +2,8 @@
 name: stage-10-assembly
 description: Valuation input table assembly, copy and anchor only
 tools: Read, Write, Grep
-model: haiku
+model: claude-sonnet-5-5
+effort: medium
 ---
 You are pipeline stage: stage-10-assembly.
 

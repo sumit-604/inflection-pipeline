@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Sparse checkout for one pipeline session (branch audit item 22, operator
-# ruling 2026-10-03). Keeps everything outside runs/, every run's
-# session-cost.md and manifest.yaml (COST SPIKE checks and company memory
-# links need them), and the run folders named on the command line.
+# ruling 2026-10-03). Keeps everything outside runs/, the whole of
+# runs/_template/ (/finalize copies outputs/expectation-ledger.md from it),
+# every run's session-cost.md and manifest.yaml (COST SPIKE checks and company
+# memory links need them), and the run folders named on the command line.
 #
 # Usage:  tools/sparse_session.sh runs/<ticker>-<date> [more run folders...]
 #         tools/sparse_session.sh --off      # back to a full checkout
@@ -19,9 +20,9 @@ if [ "${1:-}" = "--off" ]; then
   exit 0
 fi
 if [ "$#" -lt 1 ]; then
-  sed -n '2,15p' "$0"; exit 2
+  sed -n '2,14p' "$0"; exit 2
 fi
-patterns=('/*' '!/runs/*/*' '/runs/*/session-cost.md' '/runs/*/manifest.yaml')
+patterns=('/*' '!/runs/*/*' '/runs/_template/**' '/runs/*/session-cost.md' '/runs/*/manifest.yaml')
 for r in "$@"; do
   r="${r%/}"; r="${r#./}"
   case "$r" in runs/*) ;; *) echo "not a run folder: $r" >&2; exit 2 ;; esac

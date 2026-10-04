@@ -61,6 +61,21 @@ from the jsdelivr CDN.
   1 to 3 stars against silver and gold times, best times, your own ghost,
   and each track unlocks the next.
 - **Power drift:** W + S + A or D (or the arrows), or the 🌀 button on phones.
+- **Sky tracks (v8):** Sky Gap (a road 8 m up with 3 gaps to jump), Roller
+  Coaster (twisting turns over big hills) and Space Hopper (floating roads in
+  space; jump down from one road to the next). Every track is now one lap.
+  Fall off and you go back with a 3 s penalty.
+- **New modes (v8):** 5 boss rivals, police chase after a red light or speed
+  camera, train race against the express, king of the hill, tag (catch 5
+  cars), 10 parking puzzles, loop the loop, barrel roll ramp, balance bridge
+  (two wheels only) and stunt combos (x2, x3 for tricks in a row).
+- **New places (v8):** a railway next to the highway, Rish Beach with a coast
+  road and waves, desert dunes with a sandstorm and an oasis, a snow pass
+  with a spiral road and snowflakes, and a tunnel through Sunrise Hill.
+- **New extras (v8):** day and night cycle with a clock (Settings), car
+  designer (roof colour, stripes, race number), 4 engine sound packs, a
+  speed or grip tuning slider, photo mode (P) with filters, and a weekly
+  challenge worth 1500 points.
 - **About us:** Rishabh's photo, the series, and the game story.
 
 ## Controls
@@ -68,7 +83,7 @@ from the jsdelivr CDN.
 W or Up: accelerate. S or Down: brake, then reverse. A, D or arrows: steer.
 Space: handbrake. W + S + A or D (arrows too): power drift. N or 🔥: nitro (tap once, it stays on; tap again or brake to stop). C: camera. H: horn. L: night. R: rain.
 Q and E: indicators. O: fog. M: mirror. G and F: gear up and down
-(manual gearbox). Esc: menu.
+(manual gearbox). P: photo mode. Esc: menu.
 
 ## Tests
 
@@ -106,3 +121,9 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   Challenges with stars, ghosts and unlocks; detailed cycle, scooty and
   bike models with spoked or alloy wheels, frames, lights and riders;
   start gantries and lines now face across the road. 146 regression checks.
+- v8: every track is one lap; 3 hard sky tracks (Sky Gap, Roller Coaster,
+  Space Hopper) with gaps to jump; boss rivals, cop chase, train race, king
+  of the hill, tag, parking puzzles, loop the loop, barrel roll, balance
+  bridge, stunt combos; beach, desert dunes, snow pass and a hill tunnel;
+  day and night cycle, car designer, engine sounds, tuning, photo mode and a
+  weekly challenge. 173 regression checks.

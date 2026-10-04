@@ -848,3 +848,14 @@ and 8. The active file is over its 1,500-token budget after this addition; /comp
 | 12 | Synthesis agent has no Edit tool, could not mark gate-recommendation.md superseded; orchestrator added the header | 13 synthesis | .claude/agents/stage-13-synthesis.md | CLOSED |
 
 Update 2026-10-04 (KISSHT): row 3 CLOSED. The operator overruled Verifier C F1; the partner-slice cap stays at the 22.7x operator-set blend.
+
+- [2026-10-04] KWICK phase 1 (/step1 intake, run/kwick-2026-10-04). What broke or dragged, one line each:
+  - Main checkout sat dirty on an old run branch (191 changes) with stale .claude/agents files (Verifier A still on haiku, 09b without its scoped exceptions). Run moved to a clean worktree off origin/main (../ip-kwick); every subagent was told to read its current agent file from the worktree; Verifier A got an explicit sonnet override. Effort could not be forced, so several stages ran at the stale default.
+  - collect_to_repo.py hardcodes REPO_ROOT to the main checkout; patched in the worktree copy for the run and reverted before commit.
+  - Collector staged no prospectus for a 1-month-old SME listing; final prospectus fetched by hand from the company site. No AR: stages 2/3 ran on the prospectus restated statements (AMAGI precedent).
+  - fetch_bse_announcements (PR #167 open action): staged 6 filings from 24-Sep only; listing-day to 23-Sep filings missing. Selection still short.
+  - BSE shareholding API returned Access Denied; shareholding stays a gap. MCA/Zauba and PIB/MHA primary pages 403 for stages 8 and 9 (both partial).
+  - /cost-bar, /stage-cost: no such commands; ledger built from Agent result totals; no in/out/cache split available.
+  - Cost: 3.63M subagent tokens vs 2.60M audit medians (+39%). Above 1.5x median: 12a (+241%, now Sonnet high on a 383-page prospectus), 13 lite (+147%), 12b (+112%), 3 and 5 (+68%). Not COST SPIKEs under the same-ticker rule (no prior KWICK run).
+  - Stage 5 tripwire not fired: Verifier B concurred with grade C but logged 5 MAJOR misses (dealer channel = Top Customers 2+4, payables reasons, related-party software, forward revenue, margin basis).
+  - Stage 8 and 09b reported Edit tool disabled; cosmetic report errata left in place, block files correct.

@@ -1,0 +1,62 @@
+stage: B09b-dossier
+company: "KWICK"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "Kwick Forensic Solutions Ltd Annual Report FY2025-26 (directors' report, CARO, full audited notes)"
+    expected_source: "BSE"
+    kind: "freshness-pair"
+  - document: "Filed shareholding pattern (latest quarter and history)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "BSE announcements 2026-09-03 to 2026-09-23 (not staged)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "H1 FY27 results (first post-listing filing)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Rating rationale (equity issue, none required)"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+  - document: "Earnings call transcripts (none held)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Physical evidence kits, cyber and digital forensics, DNA forensics, Mobile CSI vehicles and kits (91.08% of FY26 revenue)"
+    archetype: "Order-book business"
+  - line: "Equipment rental (8.75%, one customer)"
+    archetype: "fits no known archetype"
+transition:
+  - line: "In-house devices and E-Forensics software on the resale base"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Revenue mix moves to own products (software CWIP Rs 1.37 Cr commissioned with a first priced order; 8D and 4D handhelds first invoiced) and gross margin on revenue stops falling from 27.06% as the opex cushion (9.11% of revenue) is nearly spent"
+    proof_gate: "H1 FY27 gross margin on revenue at or above 27% with in-house revenue shown as its own line, CFO/PAT at or above 0.8, and year-end receivable days at or below 80, held in H1 FY27 and the following half"
+    recognition_gap: "Open question for Stage 11: does the TO state already look reflected in market pricing, resolved via the PE gap"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "H1 FY27 gross margin on revenue below 25% with CFO/PAT at or below 0.56x and receivables growing faster than revenue; or no in-house revenue line and no software commissioning date by H1 FY27 results; or no Reg 30 filing tying NFSU, MHA or a state to a named Kwick order"
+dominant_variables:
+  - "Gross margin on revenue and in-house product revenue (37.30 / 31.15 / 27.06%)"
+  - "Cash conversion and working capital (CFO/PAT 0.56x FY26; FY27 gap Rs 44.42 Cr)"
+  - "Customer identity and repeat (Rs 26.98 Cr non-government revenue unnamed; dealer route equals Top Customers 2 and 4)"
+  - "Scheme demand continuity (SMFC ended 2026-03-31, successor NOT FOUND)"
+business_falsifier: "Live-web lookups show the customers behind the unnamed Rs 26.98 Cr or the dealers behind the Rs 20.36 Cr share directors or partners with the MD's four directorships or the eleven promoter-group entities; or the Gostocks parent proves MD-owned without arm's-length proof; or Top Supplier 1 proves a near pass-through of the cyber line (agent, not assembler)"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "5 of 7 externally observable"
+  single_point_failure: "Gross margin on revenue: opex is already 9.11% of revenue, so a fall below 25% falls straight into EBITDA margin"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 4
+  confirm_by_observations: 2
+research_brief_items: 17
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "3ff70054bd0c255edb65a08f83433405b582aae4"

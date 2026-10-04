@@ -32,7 +32,7 @@ Ruled by Keerti Kaushik, 2026-10-03. Items 1 to 5 were ruled one at a time. Item
 | 26 | Small stop merges | a | Sector-cap row and prior-override questions move to the /fttcp gate; duplicate 09b Halt 1 line removed. The stage 13 Decision Status line stays, because stage 13 does not read the orchestrator. |
 | 27 | Stages 2, 3, 5, 8 to Opus | b, with tripwire | No change. LESSONS open action: if Verifier B overturns stage 5 credibility grades in two runs, move stage 5 alone to Opus 5.5 high. |
 | 28 | xhigh effort | a | stage-11, stage-15, verifier-b, verifier-c, quarterly-a5 at xhigh; CLAUDE.md DISPATCH says to start the /fttcp session at xhigh. |
-| 29 | Verifier A model | **(a) keep Haiku 4.5**, re-ruled 2026-10-03 (reversal of the first "a" accepted) | No change: Verifier A stays on Haiku 4.5. Reason: it is the out-of-family check on the numbers produced by the Sonnet 5.5 evidence stages (00-orchestrator.md, source-fidelity gate). |
+| 29 | Verifier A model | **(a) keep Haiku 4.5**, re-ruled 2026-10-03 (reversal of the first "a" accepted). SUPERSEDED 2026-10-04, see below. | No change: Verifier A stays on Haiku 4.5. Reason: it is the out-of-family check on the numbers produced by the Sonnet 5.5 evidence stages (00-orchestrator.md, source-fidelity gate). |
 | 30 | Effort tuning on non-verifier stages and Verifier D | a | medium: stages 1, 4, 6, 09b, verifier D, quarterly A2; low: quarterly A1. |
 | 31 | 106 wording-only fixes | a | In the patch (class A). |
 | 32 | 42 medium/low alignment edits; open questions | a | Edits in the patch. The open questions and manual edits below stay open, logged in LESSONS.md. |
@@ -119,3 +119,14 @@ Read these before the next company run. Full text, current quote and proposal fo
 | AR-02 | low | `prompts/03-ar-deep-dive-pipeline.md` | (manual) move the changelog (7-8) and the RATIONALE comment (152-156) to git history or a CHANGELOG line; keep the rule text. |
 | PC-02 | low | `prompts/06-peer-concall-pipeline.md` | (manual) delete (line 112-114 already says it). |
 | TAM-03 | low | `prompts/09-tam-pipeline.md` | QUESTION: which matrix? State the class boundaries here or name the file. |
+
+## Ruling 2026-10-04: Stage 10 and Verifier A move to Sonnet 5.5
+
+Ruled by Keerti Kaushik, 2026-10-04. Supersedes item 29 and the MODEL_ROUTING_2026-10.md note "Stage 10 stays on Haiku 4.5".
+
+| Agent | Was | Now | Reason |
+|---|---|---|---|
+| stage-10-assembly | Haiku 4.5 | Sonnet 5.5, effort medium | KISSHT 2026-09-19 phase 3: Haiku's first B10 pass carried seven reading errors (override rule, ugliness ruling, superseded proof gate, trigger quarter, missing fields, conflict label, EV and "net cash" computed for a lender). Stage 10 is "copy and anchor, never judge", and Stage 11 treats B10 as its only input. The correction pass cost 50,000 tokens plus Opus orchestrator checking. |
+| verifier-a-numerical | Haiku 4.5 | Sonnet 5.5, effort high | LESSONS.md records that Haiku Verifier A invents false CRITICALs (KARNIKA, OBSCP), so the orchestrator re-checks every CRITICAL on Opus. A checker that needs a checker gives no independence. Verifier A's independence comes from a fresh context and the source PDF page, not the model family. Sonnet 5.5 keeps both. |
+
+Fable is not used for either stage (operator instruction). Expected cost: about $0.30 more per run at list price (Sonnet 5.5 $2/$10 vs Haiku 4.5 $1/$5 per MTok, on 66k to 160k tokens for stage 10 and 84k to 127k for Verifier A), offset by fewer correction passes and less Opus re-checking. Applied in CLAUDE.md DISPATCH, both agent files, prompts/00-orchestrator.md, prompts/10-input-assembly-pipeline.md, prompts/12-verifiers-pipeline.md, prompts/13-synthesis-pipeline.md and LESSONS.md.

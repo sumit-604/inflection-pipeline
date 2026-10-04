@@ -12,6 +12,18 @@ pack did not cover material it should have covered, the measurement caught it, a
 the pack is not yet fit to carry a decision. The company evidence in this run points
 both ways and is set out below on the same bar for each side.
 
+UPDATE 2026-10-04. An operator extraction (outputs/final/extraction-2026-10-04.md)
+resolved four items and reversed two run findings. (1) The CRITICAL MD&A operating
+cash item is RESOLVED: audited net CFO is Rs 3,042.08 lakh; the MD&A Rs 3,896.91 lakh
+is pre-tax cash generation mislabelled as CFO. (2) The Rs 186.90 lakh investing gap is
+RESOLVED: it is a non-cash office lease addition the results filing grosses through
+investing and financing; the annual report excludes it. (3) FLAG-REVENUE-BASIS is
+WITHDRAWN: the 12-Feb-2025 Q3 FY25 filing carries the same freight note, so FY25 and
+FY26 share one presentation and 31.79 percent growth is like for like. (4) Related
+party materials are Rs 3,683.61 lakh, 37.1 percent, not Rs 3,877.14 lakh, 39.1
+percent. The confidence delta is a measurement and is NOT re-graded here; REWORK
+stands until stage 5 is rerun on the remaining items and re-verified.
+
 This is a phase 1 output. Stages 10 and 11 did not run. There is no valuation, no
 destination PE, no fair value, no entry zone, no Hurdle verdict and no buy, watch or
 avoid call in this file. Those belong to phase 3.
@@ -38,12 +50,12 @@ The rerun scope is defined, not open ended:
   anchor.
 - Re-verify.
 
-The largest single item is a CRITICAL. The FY26 MD&A cash flow table reports Rs
-3,896.91 lakh as operating cash flow against audited net operating cash flow of Rs
-3,042.08 lakh, omits the Rs 854.83 lakh tax line and does not reconcile to the
-closing cash it prints. The same unlabelled basis switch recurs for FY24 between the
-FY24 and FY25 annual reports. Cash conversion is a Section 1B pillar input, so this
-must be settled before phase 3.
+The largest single item was a CRITICAL, now RESOLVED (2026-10-04). The FY26 MD&A
+cash flow table labels Rs 3,896.91 lakh as operating cash flow. That is the pre-tax
+line "Cash generation from operation"; audited net operating cash flow after Rs
+854.83 lakh of income tax is Rs 3,042.08 lakh (results filing PDF p.10; AR FY26 PDF
+p.117). The same mislabel recurs for FY24 in the FY25 annual report. Phase 3 uses
+Rs 3,042.08 lakh. The finding survives as a disclosure defect, not a cash unknown.
 
 Two corrections were applied inside this run and are already closed. Stage 1 rebuilt
 Gate 0 after Verifier C proved a lakh to crore unit error in payable days, which moved
@@ -103,13 +115,13 @@ percent across all three annual reports held.
 
 Top two findings:
 
-1. Related party purchases of Rs 3,877.14 lakh, 39.1 percent of cost of materials
+1. Related party purchases of Rs 3,683.61 lakh, 37.1 percent of cost of materials
    consumed of Rs 9,916.35 lakh, with no arm's length pricing benchmark disclosed in
-   three years of annual reports (AR FY26 Note 41(a): Peptech 44.79 + Phoenix Bio
-   Sciences 2,574.32 + Stalwart 986.20 + Titan Animal 78.30). This audited figure
-   replaces the Rs 3,683.61 lakh and 37.1 percent that B02, B03 and B04 carried;
-   Verifier A is the source fidelity authority and the audited total is higher, so the
-   finding strengthens. Phoenix Bio Sciences alone is 26.0 percent of the raw material
+   three years of annual reports (AR FY26 Note 41, PDF p.145: Peptech 44.79 + Phoenix
+   Bio Sciences 2,574.32 + Stalwart 986.20 + Titan Animal 78.30). Corrected
+   2026-10-04: Verifier A's re-run figure of Rs 3,877.14 lakh, 39.1 percent, is the
+   subtotal of the whole Note 41 expense block, not materials; the stage figure
+   stands. Phoenix Bio Sciences alone is 26.0 percent of the raw material
    bill and grew 73.6 percent in the year.
 2. Two serving Executive Directors, Raja Singla and Shivom Singla, sit on the board of
    Phoenix Bio Sciences, the largest related party raw material supplier (AR FY26
@@ -182,9 +194,9 @@ with the H1 FY27 filing.
 
 | Flag | Stage | One line |
 |---|---|---|
-| FLAG-REVENUE-BASIS | B01 | FY26 revenue carries a freight gross up of about Rs 5.84 cr absent from the FY25 comparator; reported growth 31.79 percent against 28.06 percent like for like (AR FY26 p.138) |
-| FLAG-RPT-CONCENTRATION | B02, B03 | Related party raw material buying at 39.1 percent of cost of materials consumed, no arm's length benchmark (AR FY26 Note 41(a)) |
-| FLAG-DISCLOSURE-GAP | B02, B03 | Freight gross up disclosed only in the exchange filing; Rs 186.90 lakh gap between MD&A p.104 and the audited cash flow statement p.117 in the same document |
+| FLAG-REVENUE-BASIS | B01 | WITHDRAWN 2026-10-04. The same freight note governs FY25 (Q3 FY25 filing, 12-Feb-2025, PDF p.4 note 5 and p.5 note 7). FY25 and FY26 share one presentation; 31.79 percent growth is like for like. The Rs 5.84 cr was the whole freight outward expense line, never a disclosed gross-up amount |
+| FLAG-RPT-CONCENTRATION | B02, B03 | Related party raw material buying at 37.1 percent of cost of materials consumed, Rs 3,683.61 lakh, no arm's length benchmark (AR FY26 Note 41, PDF p.145) |
+| FLAG-DISCLOSURE-GAP | B02, B03 | Freight policy stated in every results filing since at least Feb-2025 and in no annual report note. MD&A Table A (p.104) quotes pre-tax cash as CFO and the results-filing investing (3,441.49) and financing (34.39) figures, which gross a Rs 186.90 lakh non-cash lease through cash flow, against the audited statement in the same report (p.117) |
 | FLAG-RESTATEMENT | B02 | Rs 243.87 lakh FY25 reclassification and an FY25 ROE and ROCE restatement across AR FY25 and AR FY26, both undisclosed, on identical FY25 profit, equity and debt |
 | FLAG-ASSOCIATE-RECON | B01 | AOC-1 profit considered Rs 658.83 lakh against a P&L pickup of Rs 243.80 lakh, a Rs 415.03 lakh gap with no disclosed mechanism (AR FY26 p.80 vs p.161) |
 | FLAG-CAPEX-CLAIM-CONTRADICTED | B07 | Capacity building sentence reused near verbatim FY24 to FY26 while gross plant additions fell Rs 1,948.49 to Rs 936.88 to Rs 740.08 lakh and 77 percent of the FY26 outflow went into a quoted debt portfolio |
@@ -231,13 +243,15 @@ confirmed SUBSTANTIVE.
 Eight items, deduplicated across stages 2, 3, 4, 5, 7 and 9.
 
 1. **Related party share of the raw material bill.** Look at Note 41 of the FY27
-   annual report. The audited FY26 figure is 39.1 percent of cost of materials
+   annual report. The audited FY26 figure is 37.1 percent of cost of materials
    consumed, Phoenix Bio Sciences alone 26.0 percent. If it rises again with no arm's
    length benchmark printed, the dependency is still widening and the promoter caution
    hardens.
 
-2. **Cost of materials consumed as a share of revenue, every quarter.** It was 48.1
-   percent in FY26 against 48.3 percent in FY25. The peer set shows this ratio falling
+2. **Materials consumed plus change in inventories, as a share of revenue, every
+   quarter and trailing four quarters.** It was 46.65 percent in FY26 against 46.42
+   percent in FY25 (plain cost of materials 48.1 against 48.3). Single quarters swing
+   from 38.56 to 51.51 percent on inventory timing; read the trailing figure. The peer set shows this ratio falling
    when margin expands on better mix. A flat ratio with a rising margin points to
    volume or accounting instead, which is the core of the transition question.
 
@@ -272,8 +286,9 @@ Eight items, deduplicated across stages 2, 3, 4, 5, 7 and 9.
 ## Falsification line
 
 The single next quarter print that would do the most damage: Q2 FY27 revenue growth
-below 8 percent year on year in the November 2026 filing, with cost of materials
-consumed holding at or above 48 percent of revenue. That combination says the FY26
+below 8 percent year on year in the November 2026 filing, with materials consumed
+plus change in inventories holding at or above 46.65 percent of revenue on a
+trailing four quarter basis (basis revised 2026-10-04). That combination says the FY26
 and Q1 FY27 acceleration was a restock lapping a weak base, not a mix climb, and it
 takes the one live emerging moat category with it.
 

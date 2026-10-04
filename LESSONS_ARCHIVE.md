@@ -685,3 +685,36 @@ What broke or dragged, one line each.
   capacity non-disclosure is peer-normal (all three peers disclose a utilisation
   percentage and tie capex to it). On a no-concall name the peers are not colour, they
   are the control group.
+
+## 2026-10-04 — TITANBIO / Titan Biotech Ltd (runs/titanbio-2026-09-10), operator extraction after Halt 1
+
+Four corpus questions answered in outputs/final/extraction-2026-10-04.md on branch
+run/titanbio-phase1-2026-09-16, worked from an isolated worktree. What broke or
+dragged, one line each.
+
+- ORCHESTRATOR ACCEPTED A FALSE VERIFIER A "CORRECTION" ON 2026-09-16. The re-run
+  replaced related-party materials Rs 3,683.61 lakh (37.1%) with Rs 3,877.14 lakh
+  (39.1%). The new figure is the subtotal of the whole Note 41 expense block, and the
+  verifier's own itemised sum came to 3,683.61. The orchestrator re-derived the FIRST
+  pass's source_truth column but did not re-add the SECOND pass's. Rule worth
+  promoting: re-derive every Verifier A source_truth on every pass, including the
+  re-run, before it enters a final file. THIRD occurrence of the Verifier A
+  first-pass/re-run pattern in this ledger.
+- A RUN FLAG STOOD ON AN UNTESTED PREMISE. FLAG-REVENUE-BASIS assumed freight entered
+  revenue in FY26. The corpus already held the 12-Feb-2025 Q3 FY25 filing with the same
+  freight note. No stage opened that announcement for the freight question, because it
+  was filed under announcements/ and read only as an "integrated filing". Withdrawn.
+- OPEN (2026-10-04, TITANBIO, stage 1/5/9): Gate 0 Block C growth tests, the stage 5
+  trigger 1 threshold and the stage 9 growth base rest on the withdrawn Rs 200.35 cr /
+  28.06% like-for-like basis. They need re-scoring on reported growth before phase 3.
+  Not re-run in the extraction commit.
+- OPEN (2026-10-04, TITANBIO, corpus): the Q1 FY26 results filing of 13-Aug-2025 (BSE
+  attachment aa5cb05e-a85a-426b-b094-69afc1810339.pdf) and the Q1 FY25, Q2 FY25 and
+  FY24 results filings are not in the corpus. They pin the quarter freight entered
+  revenue and show whether Q1 FY26 was ever regrouped.
+- PDF rendering: the Read tool needs pdftoppm, absent on this machine. pymupdf rendered
+  the results pages to PNG at 150 dpi, and every number was read from the image, not
+  from the garbled OCR text layer.
+- SHARED CHECKOUT AGAIN: the main checkout sat on another session's branch with 19+
+  uncommitted framework edits. This session used .claude/worktrees/titanbio and
+  touched nothing in the shared tree.

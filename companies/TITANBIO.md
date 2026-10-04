@@ -25,6 +25,11 @@ runs/titanbio-2026-09-10/step1-business-brief.md):
    FY26 p.138). Reported FY26 growth 31.8%; roughly 28% ex the gross-up. Confirm
    whether the FY25 comparative was restated. Every forward revenue basis
    depends on it.
+   RESOLVED 2026-10-04 (runs/titanbio-2026-09-10/outputs/final/extraction-2026-10-04.md
+   item 3): the Q3 FY25 filing of 12-Feb-2025 carries the same freight note, so
+   FY25 and FY26 share one presentation; 31.8% is like for like on corpus evidence.
+   The "roughly 28%" premise is withdrawn. Quarter of first entry NOT DISCLOSED in
+   corpus (needs the Q1/Q2 FY25 and FY24 results filings).
 2. Peptech Biosciences Ltd associate, 36.87% held, cost Rs 12.30 cr,
    attributable net worth Rs 74.33 cr, FY26 profit considered Rs 6.51 cr (AR
    FY26 p.80, AOC-1), yet consolidated PAT exceeds standalone by only Rs 2.44
@@ -36,6 +41,10 @@ runs/titanbio-2026-09-10/step1-business-brief.md):
 4. FY26 investing outflow Rs 34.41 cr vs Rs 9.87 cr FY25 (AR FY26 p.104), but
    gross block up only Rs 5 cr and investments up Rs 27 cr. Split plant from
    financial assets; find any stated capacity or commissioning date.
+   RESOLVED 2026-10-04 (extraction-2026-10-04.md items 1 and 2): audited cash
+   investing outflow Rs 32.55 cr; the Rs 34.41 cr includes a Rs 1.87 cr non-cash
+   lease. Rs 25.16 cr went into quoted debt, NIL into equity, NIL Titan Media calls in
+   FY26. Capacity and commissioning date still NOT DISCLOSED.
 
 Brief: runs/titanbio-2026-09-10/step1-business-brief.md
 

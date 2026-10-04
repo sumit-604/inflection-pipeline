@@ -58,16 +58,17 @@ Titan Biotech makes fermentation and extraction derived biological ingredients a
 four plants in Rajasthan, one at Bhiwadi RIICO Phase III, two at Chopanki and one at
 Kaharani. FY26 revenue was Rs 206 cr and profit Rs 30 cr on a consolidated basis. The
 business is a converter: cost of materials consumed was 48.1 percent of revenue in
-FY26 against 48.3 percent in FY25, flat while revenue grew 31.8 percent. Pricing
+FY26 against 48.3 percent in FY25, and 46.65 against 46.42 percent once the change in
+inventories is added back, flat on either basis while revenue grew 31.8 percent. Pricing
 power reads weak, and raw material pass through is the company's own named top risk
 in every one of the three annual reports.
 
 The transition question is whether the FY26 and FY27 acceleration is a climb into
 higher value work or a delayed restock after the FY25 trough. FY25 revenue fell 5.7
 percent and the operating margin fell to 16 percent from 21 percent. FY26 reported
-revenue growth was 31.8 percent, which is 28.1 percent like for like once the freight
-gross up is removed, a presentation disclosed only in the exchange results filing
-and absent from every annual report note. Exports rose 49.0 percent to Rs 80.33 cr,
+revenue growth was 31.8 percent, like for like: the freight presentation the results
+filings describe already governed FY25 (Q3 FY25 filing, 12-Feb-2025), though no annual
+report note mentions it. Exports rose 49.0 percent to Rs 80.33 cr,
 39 percent of revenue, against domestic growth of 22.7 percent. Q1 FY27 revenue rose
 27.2 percent year on year to Rs 59.2 cr at a 21 percent operating margin. No filing
 names a customer, a country, a certification or a product behind any of it.
@@ -94,11 +95,11 @@ to 8.4 percent of the gross book, MSME payables rose 291 percent and customer
 advances rose 149 percent.
 
 Related party buying is the largest single finding. Audited Note 41(a) of the FY26
-annual report itemises related party purchases of Rs 3,877.14 lakh against cost of
-materials consumed of Rs 9,916.35 lakh, which is 39.1 percent (Peptech 44.79,
-Phoenix Bio Sciences 2,574.32, Stalwart 986.20, Titan Animal 78.30). That audited
-figure replaces the Rs 3,683.61 lakh and 37.1 percent the evidence stages carried,
-and it is used everywhere in this run. Phoenix Bio Sciences alone is 26.0 percent of
+annual report itemises related party materials of Rs 3,683.61 lakh against cost of
+materials consumed of Rs 9,916.35 lakh, which is 37.1 percent (Peptech 44.79,
+Phoenix Bio Sciences 2,574.32, Stalwart 986.20, Titan Animal 78.30). A verifier
+figure of Rs 3,877.14 lakh was the subtotal of the whole related party expense block
+and was withdrawn on 2026-10-04. Phoenix Bio Sciences alone is 26.0 percent of
 the raw material bill and grew 73.6 percent in the year. Two serving Executive
 Directors, Raja Singla and Shivom Singla, sit on the Phoenix board. The Independent
 Chairman and Audit Committee Chairman, Rohit Jain, sits on the board of Peptech

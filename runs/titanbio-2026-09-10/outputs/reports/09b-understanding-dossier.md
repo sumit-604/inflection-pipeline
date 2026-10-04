@@ -156,15 +156,16 @@ expands on better mix, and it is the signature Titan's FY26 numbers do NOT show
 not match the mix-driven margin signature... this peer set shows when margin
 expands"). The engine, in other words, has not yet visibly turned.
 
-**B3. The proof gate.** Cost of materials consumed as a percentage of revenue
-must fall below the FY26 floor of 48.1% for two consecutive quarters while
-like-for-like revenue growth (ex the freight gross-up, B01 FLAG-REVENUE-BASIS)
-holds at or above high single digits. This is the hard binary this dossier can
+**B3. The proof gate.** Materials consumed plus change in inventories, as a share of revenue from
+operations, falls below the FY26 level of 46.65% for two consecutive quarters while
+revenue growth year on year holds at or above high single digits (basis and the
+single-quarter versus trailing-four-quarter reading: outputs/final/extraction-2026-10-04.md
+item 4; revised 2026-10-04 from the plain cost-of-materials ratio). This is the hard binary this dossier can
 state from corpus: B04's own must-track metric names the direction ("Cost of
 materials consumed / revenue: healthy = flat or falling, red flag = rising
 quarter over quarter"), and the gate-recommendation's own falsification line
 inverts it into a kill test ("Q2 FY27 revenue growth below 8 percent year on
-year... with cost of materials consumed holding at or above 48 percent of
+year... with materials consumed plus change in inventories holding at or above 46.65 percent of
 revenue," gate-recommendation.md). Until the ratio moves, the climb is
 narrative.
 
@@ -208,15 +209,16 @@ tailwind explanation for Titan's FY26 rebound.
 ### PART C — WHAT THE MODEL WATCHES
 
 **C1. Dominant variables** (derived from the engine and the proof gate):
-1. **Cost of materials consumed / revenue.** Current state: flat, 48.1% FY26 vs
-   48.3% FY25 (B04). The single most direct mix-climb tell.
+1. **Materials consumed plus change in inventories / revenue.** Current state: flat,
+   46.65% FY26 vs 46.42% FY25 (plain cost-of-materials ratio 48.1% vs 48.3%, B04;
+   rebuilt basis per extraction-2026-10-04.md item 4). The single most direct mix-climb tell.
 2. **Export revenue share and its cause.** Current state: 39% of FY26 revenue,
    +49.0% YoY, no customer, country, certification or product named in any
    filing (AR FY26 Note 38, p.141-142; B07 FLAG-NO-CAUSAL-EXPORT-STORY).
-3. **Related-party share of raw-material cost.** Current state: 39.1% of cost of
-   materials consumed, Rs 3,877.14 lakh, audited (AR FY26 Note 41(a); this
-   figure replaces the Rs 3,683.61 lakh / 37.1% carried in B02/B03/B04, see
-   Section 4a below); Phoenix Bio Sciences alone 26.0% of the bill, +73.6% YoY,
+3. **Related-party share of raw-material cost.** Current state: 37.1% of cost of
+   materials consumed, Rs 3,683.61 lakh, audited (AR FY26 Note 41, PDF p.145;
+   corrected 2026-10-04, the Rs 3,877.14 lakh / 39.1% previously shown here is the
+   Note 41 expense-block subtotal, see extraction-2026-10-04.md); Phoenix Bio Sciences alone 26.0% of the bill, +73.6% YoY,
    with two serving Executive Directors on its board (B08).
 4. **Net PPE additions versus net FVTPL/financial-asset additions.** Current
    state: gross PPE additions fell three years running (Rs 1,948.49 lakh FY24 to
@@ -233,10 +235,10 @@ tailwind explanation for Titan's FY26 rebound.
   or near-identical language has run for three straight annual reports with no
   product named, no launch date, no revenue (B05, B07 FLAG-HEALTH-SUPPLEMENT-STALE).
   It is noise until a product is named.
-- The headline 31.8% FY26 revenue growth figure as the test metric. It carries
-  an unrestated freight gross-up; like-for-like growth is closer to 28% (B01
-  FLAG-REVENUE-BASIS). The model watches the like-for-like number, not the
-  reported one.
+- (Withdrawn 2026-10-04.) The run first rejected the headline 31.8% FY26 growth as
+  freight-inflated. The Q3 FY25 filing of 12-Feb-2025 carries the same freight note,
+  so FY25 and FY26 sit on one presentation and 31.8% is like for like on corpus
+  evidence (extraction-2026-10-04.md item 3).
 
 **C3. The business falsifier** (kills the FROM business itself, distinct from
 B6). Cost of materials consumed rising past roughly 50% of revenue for two
@@ -334,15 +336,15 @@ industry-wide re-acceleration, B06) offer any explanation compatible with
 Titan's idiosyncratic growth?
 
 **Vertical 3 — Related-party share of raw-material cost.** What the corpus
-establishes: 39.1% of cost of materials consumed, Rs 3,877.14 lakh, audited
-(AR FY26 Note 41(a)), Phoenix Bio Sciences alone 26.0% and +73.6% YoY, with two
+establishes: 37.1% of cost of materials consumed, Rs 3,683.61 lakh, audited
+(AR FY26 Note 41, PDF p.145; corrected 2026-10-04), Phoenix Bio Sciences alone 26.0% and +73.6% YoY, with two
 serving Executive Directors on Phoenix's board and no arm's-length pricing
 benchmark disclosed in three years (B08). What it cannot establish: whether the
 pricing is at, above, or below an arm's-length market rate; the corpus holds no
 independent MCA/RoC record for Phoenix (B08 input_gaps). Questions that decide
 it: (1) does Phoenix Bio Sciences' own MCA/RoC filing or a rating rationale, if
 one exists, show a margin on sales to Titan consistent with market pricing; (2)
-does the related-party share keep rising past 39.1% with no benchmark ever
+does the related-party share keep rising past 37.1% with no benchmark ever
 printed (B03 monitorables); (3) does the FY27 AR add any disclosure at all on
 the pricing mechanism (B02 questions_for_mgmt)?
 
@@ -450,7 +452,8 @@ raw-material concentration (Vertical 3).
 CHAIN 1: Export revenue grew 49.0% YoY to Rs 80.33 cr, 39% of FY26 revenue,
 against 22.7% domestic growth (AR FY26 Note 38, p.141-142; B04).
 Link 1 [DOCUMENTED]: Cost of materials consumed held flat at 48.1% of revenue
-in FY26 versus 48.3% in FY25, showing no mix-driven margin lift despite the
+in FY26 versus 48.3% in FY25 (46.65% versus 46.42% with the change in
+inventories added back, extraction-2026-10-04.md item 4), showing no mix-driven margin lift despite the
 export-share increase (B04; B01).
 Link 2 [DOCUMENTED]: No filing names a customer, country, certification or
 product behind the export increase in three years of annual reports; the only
@@ -468,8 +471,9 @@ Binding constraint: customer qualification for a new regulated-ingredient
 export buyer runs four to ten years on peer precedent (VIDHIING, Jun-2024), so
 a genuine brand-new-customer explanation for a single-year 49% jump is
 implausible on its face; the more likely explanations are an existing
-qualified customer restocking, a currency effect, or the freight gross-up
-distorting comparability (B01 FLAG-REVENUE-BASIS).
+qualified customer restocking or a currency effect (the freight gross-up is no
+longer a candidate: FY25 carried the same presentation, extraction-2026-10-04.md
+item 3).
 Unsaid: the AR's own Future Plans section proposes marketing and
 trade-exhibition activity to "expand its customer base" (AR FY26 Directors'
 Report, Future Plans, p.71) but never claims a new customer was actually won
@@ -483,11 +487,11 @@ export growth maps to a broadening country/customer base or a concentrated
 single-buyer restock. Confirm by the Q2 FY27 results filing date (on or before
 14-Nov-2026), cross-read against the DGCIS monthly series.
 
-CHAIN 2: Related-party raw-material purchases were Rs 3,877.14 lakh in FY26,
-39.1% of cost of materials consumed of Rs 9,916.35 lakh, with Phoenix Bio
+CHAIN 2: Related-party raw-material purchases were Rs 3,683.61 lakh in FY26,
+37.1% of cost of materials consumed of Rs 9,916.35 lakh, with Phoenix Bio
 Sciences Private Ltd alone at 26.0% of the bill and up 73.6% year on year (AR
-FY26 Note 41(a); the audited figure that replaces the Rs 3,683.61 lakh / 37.1%
-carried in B02/B03/B04).
+FY26 Note 41, PDF p.145; corrected 2026-10-04 from Rs 3,877.14 lakh / 39.1%,
+which is the Note 41 expense-block subtotal).
 Link 1 [DOCUMENTED]: Two serving Executive Directors, Raja Singla and Shivom
 Singla, sit on the board of Phoenix Bio Sciences Private Ltd, the single
 largest related-party raw-material counterparty (AR FY26 Corporate Governance
@@ -534,8 +538,8 @@ with live web, before Role 2.
    extract and animal-nutrition inputs.
 2. It runs four plants in Rajasthan and reports as one business segment, so no
    filing splits revenue by product.
-3. FY26 revenue was about Rs 206 crore, up 31.8 percent as reported, or about
-   28 percent once an accounting freight add-back is stripped out.
+3. FY26 revenue was about Rs 206 crore, up 31.8 percent. FY25 sat on the same
+   freight presentation, so that growth is like for like.
 4. Customers are named only as classes: pharma, biotech, diagnostics,
    nutraceutical, food, cosmetics, veterinary and farm-input buyers, never as
    named companies.
@@ -715,13 +719,11 @@ Operations — Peptech Biosciences Ltd 389.38; Stalwart Nutritions Private Ltd
 33.07; Titan Media Limited (Associate) 21.79; PG Micro Lab Solution LLP (Other
 related party) 29.33; Phoenix Bio Sciences Private Ltd 3.47; Titan Animal
 Nutrition Private Ltd 0.60. Loan given/received — Peptech Biosciences Ltd
-420.00 / 420.00. Interest income — Peptech Biosciences Ltd 22.83. The audited
-total that Verifier A's re-run pass anchors at Note 41(a) — Rs 3,877.14 lakh,
-39.1% of cost of materials consumed of Rs 9,916.35 lakh — replaces the Rs
-3,683.61 lakh / 37.1% figure carried in B02, B03 and B04; that figure is used
-throughout this dossier with the Note 41(a) anchor, and the audited figure is
-higher, so the underlying dependency finding strengthens rather than weakens
-(B12a; confidence.yaml).
+420.00 / 420.00. Interest income — Peptech Biosciences Ltd 22.83. Related-party materials total Rs 3,683.61 lakh, 37.1% of cost of materials
+consumed of Rs 9,916.35 lakh (Note 41, PDF p.145). Correction 2026-10-04: Verifier
+A's re-run figure of Rs 3,877.14 lakh is the subtotal of the whole Note 41 expense
+block (materials 3,683.61 + other expenses 132.96 + fixed assets 18.57 + rent
+42.00); the stage figure stands (extraction-2026-10-04.md; verifier-disagreement-log.md).
 
 **9. PLEDGE AND SHAREHOLDING.** Pledge: NOT DISCLOSED as a percentage line
 anywhere in three annual reports; no pledge column appears in the AR's own
@@ -796,14 +798,14 @@ transition:
     from_tier: "R1 COMMODITY PRICE-TAKER"
     to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed, not delivered)"
     engine: "Export customer mix shifting from commodity-grade to qualified regulated buyers, which should show up as cost of materials consumed falling as a share of revenue"
-    proof_gate: "Cost of materials consumed / revenue falls below the FY26 floor of 48.1% for two consecutive quarters while like-for-like revenue growth (ex freight gross-up) holds at or above high single digits"
+    proof_gate: "(Materials consumed + change in inventories) / revenue falls below the FY26 level of 46.65% for two consecutive quarters while revenue growth YoY holds at or above high single digits (revised 2026-10-04; single-quarter vs trailing-4Q reading left to operator sign-off)"
     recognition_gap: "OPEN: whether an assumed export-led value-add climb is already priced into Titan's current multiple is unresolved here; Stage 11 resolves it via the PE gap under the Amendment 17 converter cap"
     ugliness: "STRUCTURAL-FEATURE"
     transition_falsifier: "Cost-of-materials ratio holds flat or rises for two more quarters while like-for-like growth reverts to the FY25 flat/declining pattern, or the FY26 export growth proves to be a single-customer restock rather than a broadening qualified base"
 dominant_variables:
-  - "Cost of materials consumed / revenue (flat 48.1% FY26 vs 48.3% FY25)"
+  - "(Materials consumed + change in inventories) / revenue (flat 46.65% FY26 vs 46.42% FY25; plain ratio 48.1% vs 48.3%)"
   - "Export revenue share and its cause (39% of revenue, +49.0% YoY, no customer/country/certification named)"
-  - "Related-party share of raw-material cost (39.1% audited, Phoenix Bio Sciences 26.0%, +73.6% YoY)"
+  - "Related-party share of raw-material cost (37.1% audited, Rs 3,683.61 lakh; Phoenix Bio Sciences 26.0%, +73.6% YoY)"
   - "Net PPE additions vs net FVTPL/financial-asset additions (PPE falling 3 years running, 77% of FY26 outflow into FVTPL)"
 business_falsifier: "Cost of materials consumed rising past roughly 50% of revenue for two consecutive years, combined with a disruption or evidenced above-market pricing at Phoenix Bio Sciences (26.0% of the FY26 raw-material bill, no arm's-length benchmark disclosed, two serving Executive Directors on its board)"
 mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"

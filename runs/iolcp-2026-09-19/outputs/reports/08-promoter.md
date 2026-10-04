@@ -150,7 +150,9 @@ Type reasons.
 - INTEGRITY would need evidence of bad faith or breach: non-family owners parked in the cluster, a false SHP classification, or an unfounded exemption claim. Found: none proven. Indicators: shared directorate, consecutive CINs (Trichit and Enorg), a Rs 1.38 Cr paid-up vehicle holding about Rs 174 Cr of IOLCP, SBO "No", the 2004 order.
 - STRUCTURE is the floor: the schemes are lawful in form and filed, yet they cut the public category by 18.6 pts without a minority vote, and the 5% creeping test was never needed because the transfers were scheme transfers.
 - UNDETERMINED is the type because INTEGRITY versus STRUCTURE turns on who owned the vehicles, which is NOT FOUND.
-One observation that moves the type: the post-merger NM Merchantiles shareholder register (MGT-7 FY26 or the scheme share-exchange report). Gupta family or affiliates on it: type STRUCTURE, and the verdict could ease to CAUTION. Unrelated holders, or a transferor owner outside the promoter group: type INTEGRITY, and the verdict moves toward AVOID.
+One observation that moves the type: the post-merger NM Merchantiles shareholder register (MGT-7 FY26 or the scheme share-exchange report).
+
+**DECISION RULE CORRECTED 2026-10-04 (operator ruling OR-14; supersedes the text this stage first wrote).** Gupta family or affiliates on the register means the five vehicles were promoter-controlled while the shareholding patterns classed them as public. That is a misstatement: type INTEGRITY. Genuinely unrelated holders put the type closer to STRUCTURE, unless those holders are shown to act in concert with the promoter group, which returns it to INTEGRITY. The first version of this paragraph had the mapping reversed (family = STRUCTURE, unrelated = INTEGRITY).
 
 ### 6C. Deal-breakers (recorded, not enforced). SEBI ban: none. Conviction: none. SFIO, PMLA: none. Auditor resignation: none. Pledge above 40%: 0%. Multiple ID exits: none. Restatement: none. NOT TRIGGERED.
 

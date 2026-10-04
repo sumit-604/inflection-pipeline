@@ -34,7 +34,7 @@ verdict_type_reasons:
   - "INTEGRITY needs bad faith or breach: none proven; indicators are shared directorate, consecutive CINs (Trichit 049624, Enorg 049625), Rs 1.38 Cr paid-up Vasudeva holding about Rs 174 Cr of IOLCP, SBO declared No, the 2004 order"
   - "STRUCTURE is the floor: schemes lawful in form and filed within 1-2 days, yet public category fell 56.31% to 37.72% with no IOLCP shareholder vote and the 5% creeping test never needed because transfers were scheme transfers"
   - "UNDETERMINED because INTEGRITY versus STRUCTURE turns on who owned the vehicles, which is NOT FOUND"
-  - "Moving observation: post-merger NM Merchantiles shareholder register (MGT-7 FY26 or scheme share-exchange report). Gupta family or affiliates on it gives STRUCTURE; unrelated holders gives INTEGRITY"
+  - "Moving observation: post-merger NM Merchantiles shareholder register (MGT-7 FY26 or scheme share-exchange report). DECISION RULE CORRECTED 2026-10-04 by operator ruling OR-14: Gupta family or affiliates on it means the vehicles were promoter-controlled while classed as public, a misstatement in the shareholding patterns, so type INTEGRITY. Genuinely unrelated holders put the type closer to STRUCTURE, unless they are shown to act in concert with the promoter group (then INTEGRITY). The stage 8 re-run first stated this rule the other way round."
 scorecard: {clean: 1, caution: 8, red: 1}
 deal_breakers: []
 chain_by_fy:
@@ -120,4 +120,4 @@ searches_skipped:
   - "AmbitionBox and Glassdoor re-pull"
   - "IiAS/SES recommendation (not found)"
 verdict_basis: "Four public-to-promoter mergers (+17.73 of +18.59 pts since Mar-2022), each year under the 5% limit, one director cluster behind five public-classed vehicles, beneficial control NOT FOUND, 2004 SEBI SAST direction"
-analyst_note: "Chain reconciles to the share: FY23 26,41,079 sh = 4.50; FY25 Enorg 26,02,539 sh = 4.43 with no remainder; FY26 4.00 + 0.86; FY27 4.80. Correction to first run: Vasudeva did not keep 4.00%. Type is UNDETERMINED: if Gupta family or affiliates sit on the NM Merchantiles register the type is STRUCTURE and CAUTION is arguable; unrelated holders make it INTEGRITY. Free float 37.72% stays above 25%. Open-market buys at about Rs 74.6 are real but small (0.86 pts)."
+analyst_note: "Chain reconciles to the share: FY23 26,41,079 sh = 4.50; FY25 Enorg 26,02,539 sh = 4.43 with no remainder; FY26 4.00 + 0.86; FY27 4.80. Correction to first run: Vasudeva did not keep 4.00%. Type is UNDETERMINED. Decision rule per operator ruling OR-14 (2026-10-04), which reverses this stage's first statement: Gupta family or affiliates on the NM Merchantiles register means promoter control while classed public (misstatement), type INTEGRITY; genuinely unrelated holders, closer to STRUCTURE unless shown to act in concert. Free float 37.72% stays above 25%. Open-market buys at about Rs 74.6 are real but small (0.86 pts)."

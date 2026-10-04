@@ -23,3 +23,25 @@
 | 12a | verifier A (scoped re-audit) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 253268 | 8m59s | 2 |
 | 12c | verifier C (phase 1 re-audit) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 213095 | 16m46s | 2 |
 | 13 | synthesis-lite | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 237320 | 11m05s | 1 |
+| 9b | halt1 dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 259194 | 11m18s | 1 |
+
+Subagent ledger total: 4,670,340 tokens (Sonnet 5.5 3,651,390; Opus 5.5 1,018,950). The subagent result metadata exposes only total tokens per run, so in/cache/out columns are n/a. The orchestrator session (Opus 5.5, stage 0 inline, Step 1 intake, coordination) is not in this ledger.
+
+## CLOSE-OUT SUMMARY
+
+(a) TOP FIVE BY TOKENS (loop and retry runs summed per stage)
+| rank | stage | total_tok | share of ledger |
+|---|---|---|---|
+| 1 | 12a verifier A (runs 1+2) | 748,997 | 16.0% |
+| 2 | 2 notes triple-pass (passes 1+2+3) | 709,653 | 15.2% |
+| 3 | 12c verifier C phase-1 half (runs 1+2) | 431,811 | 9.2% |
+| 4 | 3 AR deep dive | 412,218 | 8.8% |
+| 5 | 12b verifier B | 349,819 | 7.5% |
+
+(b) DOWNSHIFT FAILURES: none. Verifier A ran on its frontmatter model (claude-sonnet-5-5, high).
+
+(c) COST SPIKES: none (no prior runs/mmp-* ledger). Kwick comparison (LESSONS OPEN, 2026-10-04): stage 5 no-call bounded 200,857 vs Kwick 254k (target under 100k, missed); stage 2 709,653 vs Kwick 474k; stage 3 412,218 vs Kwick 421k. Remediation cycle cost (stage 1 run 2, stage 7 run 2, 12a run 2, 12c run 2): 707,020 tokens, 15.1% of the ledger.
+
+(d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+

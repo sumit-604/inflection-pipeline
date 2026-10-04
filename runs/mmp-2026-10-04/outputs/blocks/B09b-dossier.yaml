@@ -1,0 +1,85 @@
+stage: B09b-dossier
+company: "MMP"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Full NSE/BSE Reg 30 announcements list, Nov 2025 to date (announcements/ holds a hand-picked selection)"
+    expected_source: "BSE | NSE"
+    kind: "findable-missing"
+  - document: "Q2 FY26 results filing (press release only held)"
+    expected_source: "BSE | NSE"
+    kind: "findable-missing"
+  - document: "Shareholding patterns before 30-Sep-2024 (Sep-2023, Dec-2023, Jun-2024 quarters)"
+    expected_source: "BSE | NSE"
+    kind: "findable-missing"
+  - document: "Company reply to NSE clarifications of 05-Mar-2026 and 23-Jun-2026"
+    expected_source: "BSE | NSE"
+    kind: "findable-missing"
+  - document: "Resignation filing for independent directors Bapna and Khanna, 10-Aug-2026"
+    expected_source: "BSE | NSE"
+    kind: "findable-missing"
+  - document: "Machine-readable copies of Q4 FY26 and Q3 FY26 results (held as image scans, no OCR)"
+    expected_source: "company IR page | BSE"
+    kind: "findable-missing"
+  - document: "ARFIN peer transcripts (none collected)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Screener full export sheets (P&L, Quarters, Balance Sheet, Cash Flow, Customization) for MMP and three peers"
+    expected_source: "screener.in re-export"
+    kind: "findable-missing"
+  - document: "Call transcripts for Q2 FY26, Q3 FY26 and Q1 FY27 (company holds about one call a year)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Broker or research notes (research/ empty)"
+    expected_source: "rating agency site | BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Prospectus (long-listed name, not expected)"
+    expected_source: "BSE | NSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Powders, foils and conductors (99.4% of FY26 revenue; powders hybrid with unquantified specialty tail)"
+    archetype: "Commodity converter"
+  - line: "Polymer insulators (MMP Electricals, start-up, 0.3% of FY26 revenue, on intent only)"
+    archetype: "Build-to-spec component maker"
+transition:
+  - line: "Group core: powder-funded move into approval-gated electrical products (insulators, LT cable)"
+    from_tier: "R2 cost-advantaged converter (low end; FY26 ROCE 12.91%, 15.26% before the one-time fire loss)"
+    to_tier: "R3 value-added or spec'd supplier"
+    engine: "Approval-gated lines reach revenue (insulators, LT cable, lidding and security printing foil); backward integration via 18,000 MTPA wire rod and 7 MW captive solar cuts conversion cost"
+    proof_gate: "Two legs, both true in one filing window: MMP Electricals quarterly revenue at or above Rs 3 Cr (30 Mn) by Q3 FY27 with a PGCIL or state utility registration letter on file; foil segment margin above 4% for two consecutive quarters after the Q3 FY27 lidding foil launch (FY26 base 2.00%)"
+    recognition_gap: "Open question: does the R3 state already look reflected in market pricing of MMP? Resolved at Stage 11 through the PE gap; no conclusion here"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Q2 FY27 insulator revenue below Rs 15 Mn or segment loss above Rs 1.0 Cr again; foil segment margin at or below 2.0% through H1 FY27 after launches; LT cable BIS licence not received by Q3 FY27 results or wire rod trials past Q4 FY27"
+  - line: "Foils and conductors"
+    from_tier: "R1 commodity price-taker (segment margins 2.00% and 4.86%)"
+    to_tier: "R2 cost-advantaged converter"
+    engine: "Wire rod backward integration for conductors; printed, lidding and security printing foil mix for foils"
+    proof_gate: "Foil segment margin above 4% for two consecutive quarters; conductor segment margin at or above 8.27% (FY25 level) for two quarters after wire rod commercial production"
+    recognition_gap: "Open question for Stage 11 through the PE gap; no conclusion here"
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Foil segment margin at or below 2.0% through H1 FY27; wire rod trials moving beyond Q4 FY27; Q2 FY27 conductor revenue below Rs 20 Cr"
+dominant_variables:
+  - "Approval-gated line ramp: insulator quarterly revenue, PGCIL and utility registration, BIS licence for LT cable (Q1 FY27 insulator revenue Rs 5 Mn against FY27 guide Rs 18 to 20 Cr)"
+  - "Segment margin mix: powder 11.88%, foil 2.00%, conductor 4.86% in FY26"
+  - "Backward integration delivery: wire rod trials and solar commissioning dates, conductor margin recovery (wire rod budget Rs 13-15 Cr to Rs 20-25 Cr in 11 weeks)"
+  - "Cash and funding capacity of the powder engine: CFO net of short-term borrowing and payables at 25.6% of EBITDA in FY26; 76.6% of group debt due within a year"
+business_falsifier: "Q2 or Q3 FY27 powder segment revenue growth below 10% YoY, or powder segment margin below FY26's 11.88% for two straight quarters (powders carry 89.6% of segment result); or disclosure that the powder specialty tail is nil, re-declaring powders as a pure commodity converter"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "Powder segment: carries 89.6% of segment result and funds every start-up; powder growth below 10% YoY ends the funding source (second candidate: roll-over of short-term lines, 76.6% of group debt due within a year)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 4
+  confirm_by_observations: 2
+research_brief_items: 16
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "f65dc68863d4a9363cf1c2733c979629e0eab59f"

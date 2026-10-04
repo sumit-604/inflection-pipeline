@@ -6,7 +6,7 @@ COMPANY MEMORY. Memory to weigh, never anchored evidence.
 Not yet formed. Step-1 intake 2026-10-04; thesis forms at Halt 1 and phase 3.
 
 ## DECISION STATUS AND ENTRY ZONE
-None. Phase 1 run 2026-10-04 stops at Halt 1.
+None. Phase 1 complete 2026-10-05 (run folder runs/mmp-2026-10-04): gate recommendation PROCEED WITH FLAGS (FLAG-CASH INDETERMINATE, FLAG-GATE0 AVERAGE core 54); corpus CORPUS GAPPED; fragility FRAGILE. Stops at Halt 1; no valuation run.
 
 ## SPEAR
 Spear: OVERRIDE 2026-10-04 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)

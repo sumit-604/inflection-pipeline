@@ -94,6 +94,9 @@ target, 3-5 year holds.
   verifier A moved to Sonnet 5.5; Verifier A's independence comes from a
   fresh context and the source page, not the model family)
 Do not upgrade a stage's model without editing its agent file.
+The model and effort in .claude/agents/*.md frontmatter are the operator's
+rulings. A session never overrides them on the belief that the file is stale.
+If the file looks stale, run the stale-checkout guard instead.
 
 ## OPERATOR RULINGS (dated; Section 1B rulings live in .claude/skills/section-1b/SKILL.md)
 Standing pipeline rulings:

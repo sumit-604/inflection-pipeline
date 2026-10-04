@@ -173,7 +173,7 @@ promise-delivery spot checks; then:
 stage: B12b
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID, as pinned in the agent frontmatter
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 independent_flags_found: 0
 caught: 0
@@ -357,7 +357,7 @@ the recomputed value beside any FAIL; then:
 stage: B12c
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID, as pinned in the agent frontmatter
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 gate0: {rules_checked: 0, fails: []}
 emoat: {rules_checked: 0, fails: []}

@@ -23,7 +23,7 @@ I will trigger this role with one of:
 - "These results are out — what do they mean for our thesis?"
 - Pasting a board outcome filing, results PDF, or press release for an analysed company
 
-When triggered, you MUST execute the protocol below in full sequence. Run every step in order. If you find yourself wanting to write a verdict before completing Step 6, stop and finish the decomposition first.
+When triggered, you MUST execute the protocol below in full sequence. Under /run-quarterly the 🛑 STOP lines are section checkpoints, not waits; A4 runs every step through; Steps 6C-fired and 8 surface as flags for the operator. Run every step in order. If you find yourself wanting to write a verdict before completing Step 6, stop and finish the decomposition first.
 
 ## THE FAILURE MODES THIS PROTOCOL IS DESIGNED TO PREVENT
 
@@ -350,7 +350,7 @@ Write out this reconciliation for THIS company using the actual signal readings 
 
 ### 5.5C. Trigger new signals if the quarterly review surfaces them
 
-If the quarterly filing or concall exposed a new downstream dependency not currently in the tracker — a newly disclosed customer above 10%, a newly named foreign partner, a newly announced regulatory dependency — that dependency must be added to the tracker via Role 5.5 STEP 4 procedure (Case A add-to-existing or Case B create-new). Do NOT delay this to the next month-end refresh; add it now so the next portfolio-wide monthly scan captures it.
+If the quarterly filing or concall exposed a new downstream dependency not currently in the tracker — a newly disclosed customer above 10%, a newly named foreign partner, a newly announced regulatory dependency — that dependency must be added to the tracker via Role 5.5 STEP 4 procedure (Case A add-to-existing or Case B create-new). (Under /run-quarterly A4 emits Steps 5.5A, 5.5C and 6.5B as payload rows; they are written only through the run's operator-approval write gate; Decision Status is never written.) Do NOT delay this to the next month-end refresh; add it now so the next portfolio-wide monthly scan captures it.
 
 State explicitly in 5.5C: "No new signals surfaced this quarter" OR "New signal added to tracker: [Signal Name], Case [A/B], because [reason]."
 
@@ -442,7 +442,7 @@ The destination PE in Notion was set under the Section 1B layer set (v3.3 base t
 | Strategic Premium | +___x | Moat status; single-credit rule state ("ROCE recovery credited via: ___") | Hold / Adjust |
 | UA Multiplier | 1.25x applies / N/A | Still all 3 qualifiers? Ordering: min(Raw × 1.25, Sector Cap) | Hold / Drop |
 | Sector Cap | ___x | Any sector reclassification? | Hold |
-| **Hurdle Ratio recheck** | HR = (1 + EPS CAGR)³ × (Dest PE mid ÷ Current PE) ≥ 1.953 | Recompute with updated EPS CAGR and current PE | PASS / CONDITIONAL / STOP per v3.3 Amendment 2 |
+| **Hurdle Ratio recheck** | HR = (1 + EPS CAGR)³ × (Dest PE mid ÷ Current PE) ≥ 1.953 | Recompute with updated EPS CAGR and current PE | PASS / CONDITIONAL / STOP band (Hurdle feasibility band per v3.3 Amendment 2 and OR-2; caps no verdict, not a run halt) |
 
 **Recompute destination PE if any pillar changes.** Destination PE range = calculated value ±7.5%, rounded to nearest 0.5x.
 
@@ -657,7 +657,7 @@ These rules apply to every quarterly review without exception:
 - **Use the half-yearly cash flow statement at Q2.** It is mandatory under Reg 33 and skipping it forfeits one of only two CFO/PAT readings per year.
 - **Lending businesses use Steps 1L and 5L.** Never force the manufacturing template onto a lender.
 - **When in doubt about a metric, decompose further.** If you cannot explain WHY a number changed, you have not finished the analysis.
-- **Do not deliver a position verdict without completing all 9 steps.** Even if step 8 looks obvious from earlier steps, complete each step to surface anything missed.
+- **Do not deliver a position verdict without completing every step (0 through 9, including 5.5, 6.5 and 8.5).** Even if step 8 looks obvious from earlier steps, complete each step to surface anything missed.
 - **Verify Decision Status before any HOLD/ADD/TRIM/EXIT framing.** The 8A branch is for held names; the 8A-W branch for everything else.
 - **Track answer status across quarters.** When reviewing quarterly results, the FIRST thing to do after the data extraction is check the previous quarter's "Questions for Management" table from Notion. For each question, mark: ANSWERED (specifically) / PARTIALLY ANSWERED / EVADED / NOT ADDRESSED. Repeated evasion or non-addressing of the same question across multiple quarters is itself a governance signal — log it in the Promoter Verdict update.
 
@@ -665,7 +665,7 @@ These rules apply to every quarterly review without exception:
 
 - Show all math. Every percentage change should be inline with the numbers used.
 - Use tables aggressively. The diagnostic value of these reviews is in the structured comparison.
-- Conservative bias. When uncertain, lean toward the bear interpretation. Better to be cautious and updated than confidently wrong.
+- Conservative bias, for interpretation of filed evidence (Steps 0-6). When uncertain, lean toward the bear interpretation. Better to be cautious and updated than confidently wrong. Steps 6.5-7 follow Section 1B v3.10 Amendment 26.3 and v3.9 Amendment 25: most evidenced path, conservatism in position size (operator ruling OR-26, 2026-10-04).
 - No cheerleading. If results are genuinely strong, say so plainly. If they are mixed, name the mixed nature explicitly. If they are weak, do not soften.
 - Length is not virtue, but completeness is. Each step should be as long as it needs to be — but every required cell must be filled.
 - Indian rupees throughout. ₹ Crores as the standard unit. Convert from Lakhs (÷100) or Millions (÷10) at extraction.

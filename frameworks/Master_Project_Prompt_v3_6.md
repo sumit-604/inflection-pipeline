@@ -451,7 +451,7 @@ Quality uplift: when UA is triggered AND durability is at least Moderate-Strong 
 
 ### Category-Break Override (ValuePickr integration, v3.5 — narrow, evidence-heavy, sunset-bound)
 
-The sector cap above is the absolute ceiling under normal conditions. The Category-Break Override is the ONLY mechanism by which it can be raised. See FTTCP v2.1 Pillar 1 Integration section for the full mechanics; this section implements them at the destination-PE math level.
+The sector cap above is the absolute ceiling under normal conditions. The Category-Break Override is the only EXCEPTIONAL mechanism by which it can be raised; the routine quality uplift (above) is separate (open ruling OR-4; wording per operator ruling OR-25, 2026-10-04). See FTTCP v2.1 Pillar 1 Integration section for the full mechanics; this section implements them at the destination-PE math level.
 
 **When it applies.** The company is establishing a genuinely new category — first-mover in a market segment that either did not exist as a purchasable good three years ago (e.g., Bloom-Energy hotbox capability for Mtar in India), or is defined by an exclusive partnership with a category-defining foreign counterparty (e.g., Aeroflex's Vertiv-Nvidia GB200 liquid-cooling exclusive), or has been unlocked by a technology or regulatory maturity threshold recently crossed (e.g., Sai's molecular-glue CDMO capability). It is NOT the fastest-grower-in-an-established-sector case.
 
@@ -1205,7 +1205,7 @@ Every analysis ends with a plain-English NARRATIVE section, and flags publicatio
 
 If any is missing, STOP and return to Role 2. A devil's advocate that destroys a bull case the analyst never fully built is VOID, and is rerun after the bull is complete. Brutal means honest about a real bull, not efficient against a thin one.
 
-*Note on the rule labels.* Rule H as ruled reads "Rules B, C, F, and G". Rules F and G are defined in this file (Section 3.5 and Section 3G). Rules B and C are labels from the operator's claude.ai project-instruction copy and are NOT separately defined in this repo; Section 1B v3.10 Amendment 26.4 refers to one of them as "the Rule B discount", the guidance discount by track record. The FOUR PRECONDITIONS IN THE TABLE ABOVE are the operative test. Do not halt Role 3 looking for a repo definition of Rule B or Rule C, and do not reconstruct one. If the operator lands those rules here, add their preconditions to the table.
+*Note on the rule labels.* Rule H as ruled reads "Rules B, C, F, and G". Rules F and G are defined in this file (Section 3.5 and Section 3G). Rules B and C are defined in claude-web/PROJECT_INSTRUCTIONS.md §2.2 (Rule B = Amendment 26.1 base-case revenue basis, Rule C = Amendment 26.2 margin bridge); the "Rule B discount" in Section 1B v3.10 Amendment 26.4 is Rule B's guidance discount by trailing-four-quarter delivery. The FOUR PRECONDITIONS IN THE TABLE ABOVE are the operative test. Do not halt Role 3 looking for a repo definition of Rule B or Rule C, and do not reconstruct one. If the operator lands those rules here, add their preconditions to the table.
 
 When I say "destroy this thesis" or "devil's advocate", switch to this role:
 
@@ -1289,7 +1289,7 @@ The recommended position size becomes the anchor. 3x that number is the stress p
 
 **How to answer honestly.**
 
-Do not answer in the abstract. Write out the specific dollar exposure at 3x sizing on the actual capital base. Then imagine the position is down 30% from entry and the thesis is unchanged. Then imagine it's up 100% and the thesis is unchanged. Both imagined states must feel like states you could sit with — not states you would want to escape.
+Do not answer in the abstract. Write out the rupee exposure at 3x sizing as a percentage of portfolio (capital base: NOT FOUND unless the operator supplies it). In pipeline mode (stage 15) the two imagined states below are the operator's to answer: state the 3x figure and hand the questions to the operator as an open item; never answer them on the operator's behalf (operator ruling OR-23, 2026-10-04). Then imagine the position is down 30% from entry and the thesis is unchanged. Then imagine it's up 100% and the thesis is unchanged. Both imagined states must feel like states you could sit with — not states you would want to escape.
 
 If either imagined state produces a strong urge to reduce, the current sizing is honest and 3x is not the right level. If both states feel like states you could hold, the current sizing may be too small — and the Conviction Outlier tier or an upsize to Large may be warranted.
 
@@ -1434,7 +1434,7 @@ For each mapped dependency, identify the specific primary-source URL:
 
 ## STEP 4 — CONSOLIDATED TRACKER UPDATE (HARD GATE — BLOCKS FTTCP)
 
-**This step is a WRITE step, not a description step. Role 5.5 is not complete until the rows physically exist in the Notion tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`). No FTTCP, no Role 1, no Role 2 may begin until this gate passes.**
+**This step is a WRITE step, not a description step. Role 5.5 is not complete until the rows physically exist in the Notion tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`). No FTTCP, no Role 1, no Role 2 may begin until this gate passes. Claude web writes the rows; a Claude Code stage checks the run folder for the Tracker Row URLs and, if they are absent, names the gap.**
 
 For each signal that passes Step 3 verification, one of two things happens:
 
@@ -1460,7 +1460,7 @@ Every signal in the gate-passed summary is now part of the monthly refresh workf
 
 The Downstream Signal Identification output produced here becomes a required input to:
 
-- **FTTCP (Role 7):** each transition's forward catalyst analysis (Step 2B) must reference at least one Downstream Signal where an appropriate signal exists. Signals with cadence Monthly or Event-driven feed the 3-6 month window; Quarterly-cadence signals feed the 6-12 month window (relevant for the ROCE transition). This is the FTTCP v2.1 Signal Gate rule.
+- **FTTCP (Role 7):** each transition's forward catalyst analysis (Step 2B) must reference at least one Downstream Signal where an appropriate signal exists. Signals with cadence Monthly or Event-driven feed the 3-6 month window; Quarterly-cadence signals feed the 12-month window (ROCE transition; aligned to FTTCP, operator ruling OR-24, 2026-10-04). This is the FTTCP v2.1 Signal Gate rule.
 - **Role 1 (Valuation):** the ROCE forward verdict via FTTCP already incorporates signals. Additionally, growth premium in Section 1B Pillar 3 must state which Downstream Signal(s) support the "mostly 📄 documented evidence" claim, if any.
 - **Role 2 (Thesis):** Section 3B (Growth Triggers) must reference the Downstream Signal for each trigger. A trigger without a matching signal is downgraded to lower confidence.
 - **Role 3 (Devil's Advocate):** Section 8 (Early Warning Signals) must include the falsifying observation for each Downstream Signal identified here.
@@ -1546,6 +1546,8 @@ The project accumulates institutional knowledge about every company I've studied
 ---
 
 # COMPANIES.TXT GENERATOR
+
+*Operator utility (Sumit, off-session; tools/collector/collect_batch.py). Not an analysis rule; pipeline stages ignore this section.*
 
 When Sumit pastes a list of screener.in URLs and asks for "companies.txt text" or "batch file text", respond with ONLY the ready-to-paste text block — no explanation needed.
 

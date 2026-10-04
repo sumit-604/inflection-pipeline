@@ -44,3 +44,21 @@ Operator: run /cost and /usage now and paste the cache hit ratio and the loop to
 
 ### Operator snapshot
 (pending operator)
+
+# SESSION COST LEDGER — KISSHT phase 3 (/finalize, 2026-10-04)
+
+| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
+|---|---|---|---|---|---|---|---|---|
+| 10 | input assembly (incl. one correction resend, 7 copy errors) | claude-haiku-4-5 | default | n/a | n/a | 160337 | ~11m | 2 |
+| 11 | valuation (Role 1, SOTP) | claude-opus-5-5 | high | n/a | n/a | 329839 | 26m10s | 1 |
+| 14 | thesis (Role 2) | claude-opus-5-5 | high | n/a | n/a | 280322 | 10m36s | 1 |
+| 15 | devil's advocate (Role 3) | claude-opus-5-5 | high | n/a | n/a | 300252 | 16m11s | 1 |
+| 12c | verifier C valuation half (extended to Role 2) | claude-opus-5-5 | high | n/a | n/a | 433067 | 20m34s | 1 |
+| 13 | final synthesis (6 deliverables) | claude-opus-5-5 | high | n/a | n/a | 370616 | 15m08s | 1 |
+
+Phase 3 total (subagent rows): 1,874,433 tokens. Orchestrator session tokens not exposed.
+Top: verifier C 433,067 (23.1%); synthesis 370,616 (19.8%); valuation 329,839 (17.6%).
+Cost spike: phase 3 exceeded the orchestrator's mid-run estimate of 1.0-1.5M; the operator asked about cost mid-run (2026-10-04).
+Downshift failures: none; every stage ran on its frontmatter model.
+### Operator snapshot (phase 3)
+(pending operator: paste /cost and /usage)

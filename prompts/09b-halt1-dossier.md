@@ -128,7 +128,7 @@ B2. THE ENGINE. The one or two things that physically change to move it
     mechanism, not the narrative.
 B3. THE PROOF GATE. The hard binary observation, quarter by quarter, that
     proves the shift is real. State the exact metric and threshold. This
-    is the observation Stage 11 FTTCP tests. Until it fires, the
+    is the observation FTTCP (phase 2, /fttcp) tests. Until it fires, the
     transition is narrative and the name is research, not a trade.
 B4. THE RECOGNITION GAP (to be resolved at Stage 11). State, as an open
     question, whether the TO state appears already reflected in market
@@ -325,7 +325,7 @@ transition:                     # PART B: the model itself, one entry per line t
     from_tier: ""              # B1: tier it leaves, from CLAUDE.md QUALITY LADDER
     to_tier: ""                # B1: tier it claims to reach, from CLAUDE.md QUALITY LADDER
     engine: ""                 # B2: the 1-2 things that physically change
-    proof_gate: ""             # B3: exact metric + threshold Stage 11 FTTCP tests
+    proof_gate: ""             # B3: exact metric + threshold FTTCP (/fttcp) tests
     recognition_gap: ""        # B4: open question, resolved at Stage 11 via the PE gap
     ugliness: ""               # B5: ARTIFACT-OF-CLIMB | STRUCTURAL-FEATURE
     transition_falsifier: ""   # B6: evidence that kills the transition thesis

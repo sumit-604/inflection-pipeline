@@ -83,6 +83,14 @@ peer medians if
 peer financial data was provided (P/E, EV/EBITDA, P/B, growth, ROCE),
 else unresolved.
 
+From the phase-2 deliberation (phase 3 only; copy and anchor, no judgment;
+the deliberation record is authoritative where it conflicts): entity_count
+(handover dossier Section 1, with any per-entity approved bases),
+seasonal (true/false, as the deliberation or B05 states it), the
+operator-approved exit PE base (both tracks) and pe_basis (forward or
+trailing), the expectation ledger / FTTCP Section C.2 credit rows, and the
+live peer table when one is injected (else "PENDING LIVE PEER TABLE").
+
 Rating PDF extraction: agency, rating, outlook, date, and the working
 capital / cash flow commentary quoted verbatim with page. This quote is
 what the FLAG-CASH determination cites downstream; get it exactly.
@@ -114,6 +122,12 @@ downstream_candidates: []      # copied from B09, summary rows only:
 demand_externally_verifiable: true   # copied from B09
 ar_new_downstream_entities: [] # copied from B03: {name, where_in_ar,
                                #  entity_type}; Step 10.5B feed
+entity_count: 1                # from the deliberation / dossier Section 1
+seasonal: null                 # true | false, copied
+exit_pe_base_approved: ""      # operator-approved base, both tracks, per entity
+pe_basis: ""                   # forward | trailing, operator-approved
+expectation_ledger: []         # FTTCP C.2 credit rows, copied
+peer_table: ""                 # live dated table, or "PENDING LIVE PEER TABLE"
 analyst_note: ""               # optional, <=200 words (strict cap, excess
                                # truncated). Assembly caveat only (e.g. why a
                                # field is unresolved or which of two sources
@@ -126,5 +140,6 @@ analyst_note: ""               # optional, <=200 words (strict cap, excess
 
 Manifest: {{MANIFEST_YAML}}
 Blocks B01 through B09: {{ALL_BLOCKS_YAML}}
+FTTCP deliberation record (phase 3): {{FTTCP_DELIBERATION_PATH}}
 Results PDFs (paths, up to 3 most recent): {{RESULTS_PDF_PATHS}}
 Rating PDF: {{RATING_EXTRACT}}

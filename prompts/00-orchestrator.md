@@ -56,10 +56,10 @@ to the deliberation record.
 
 ## 1. INPUT CONTRACT
 
-Run folder structure (Google Drive, mirrored to local before run):
+Run folder structure (repo, collected by collect_to_repo.py):
 
 ```
-/inflection-alpha-runs/<ticker>-<YYYY-MM-DD>/
+runs/<ticker>-<YYYY-MM-DD>/
   manifest.yaml
   inputs/
     prospectus/       (0-2 PDF; DRHP / RHP. MANDATORY to attempt when the
@@ -161,8 +161,11 @@ Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]
 or
 
 ```
-Spear: OVERRIDE YYYY-MM-DD (operator)
+Spear: OVERRIDE YYYY-MM-DD (operator ...)
 ```
+
+(Any text after "(operator" is accepted, including the /step1 form "(operator
+standing ruling 2026-09-05: Step-1 intake replaces the web spear)".)
 
 If neither line exists, STOP the run at once and direct the operator to run
 the spear pass with Claude web first. This is not a mechanical halt and not a
@@ -170,8 +173,9 @@ degradation; the run does not start. The spear runs on live web, which this
 container cannot reach, so Claude Code never performs it.
 
 On a HIT, the load-bearing facts named in the Spear line become the run's
-first verification priority: stage 0 records them in `B00` and every later
-stage checks them before its own work.
+first verification priority: stage 0 records them in `B00`, the orchestrator
+carries them in every stage task message, and every later stage checks them
+before its own work.
 
 ### FRESHNESS PAIR CHECK (stage 0 corpus audit, hard rule; per MANINDS 2026-08-21)
 
@@ -586,8 +590,9 @@ Position sizing logic in Role 2 already handles the override; the pipeline
 only surfaces it.
 
 **REWORK is about the analysis, not the company.** If Verifier A finds any
-CRITICAL numerical finding (fabricated or materially misread figure), or any
-verifier's acceptance_rate falls below 60%, the synthesis verdict is REWORK
+CONFIRMED CRITICAL numerical finding (fabricated or materially misread
+figure), or any verifier's acceptance_rate falls below 60% on a denominator
+of 4 or more (operator ruling OR-29, 2026-10-04), the synthesis verdict is REWORK
 regardless of company quality: the analysis cannot be trusted. This gate
 stays hard because it judges the pipeline, not the stock.
 
@@ -673,7 +678,8 @@ counts instead of a confidence band; it never fills the gap with a guess.
 
 Four files in `outputs/final/`:
 
-1. `business-narrative.md`: 10 to 12 lines, plain English, Keerti's written
+1. `business-narrative.md`: structure per prompts/13-synthesis-pipeline.md
+   DELIVERABLE 1, plain English, Keerti's written
    voice per anti-ai-writing-style.md (no em-dashes, no AI vocabulary,
    numbers first, symmetric bull-bear, no landing lines). Opens with the
    6-7 word ultra-short headline.

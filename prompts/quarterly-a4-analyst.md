@@ -61,7 +61,7 @@ feeding both. Produce, per the protocol step sequence:
   named, per house rules).
 - Standalone-vs-consolidated gap as a first-class metric (from A3 F2).
 - Thesis reconciliation against the passed Notion Decision Status.
-- Pillar re-validation.
+- Pillar evidence: flag each fact that moves a pillar input; the recompute is deferred to /fttcp and Role 1 (operator ruling OR-30).
 - The position-decision branch (protocol 8A for held names, or 8A-W for watchlist / non-held names).
 - The QUESTIONS FOR MANAGEMENT table: EVERY A3 finding classified
   FORWARD-SIGNAL or AMBIGUOUS generates at least one question here. A finding
@@ -88,7 +88,8 @@ feeding both. Produce, per the protocol step sequence:
      branch audit item 14.)
   The three intelligence parts draw on the Notion thesis (peer / sector /
   business-model context passed inline) reconciled with this quarter's
-  findings. PROVENANCE-LABEL every figure: mark whether it comes from prior
+  findings. PROVENANCE-LABEL every figure with its evidence tier (FILED / AGENCY /
+  MGMT / SECONDARY / INFERENCE, as in the Document Review Protocol) and mark whether it comes from prior
   Notion / peer work or from this quarter's filings, and name any metric the
   filings did not disclose. This brief is a standing deliverable, not an
   on-request extra.

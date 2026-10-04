@@ -189,9 +189,8 @@ mode:
   Where they diverge >15%, state which track fits this company and why;
   the track that sets the entry zone follows section-1b chunk 06 (open
   ruling OR-1).
-- Continuous Pillar 1 formula (0.5 × ROCE% + 7.5, floor 9x; above 33%
-  ROCE the elite extension per v3.6 Amendment 11, Base PE = 24 + 0.3 ×
-  (ROCE% − 33), cap 30x; the old 24x cap is superseded),
+- Continuous Pillar 1 formula per section-1b chunk 01 (v3.6 Amendment 11
+  elite extension above 33% ROCE; the old 24x cap is superseded),
   with the FTTCP ROCE forward verdict as sole Pillar 1 authority and the
   single-credit rule for ROCE recovery (Pillar 1 midpoint OR Strategic
   Premium, never both; state which route, flag shared catalysts).
@@ -225,8 +224,8 @@ mode:
   Pillar 1, P/B primary, 18x cap).
 - HURDLE RATIO is a feasibility check, not a verdict cap (v3.9 Amendment 24;
   operator ruling 2026-09-15, OR-2): HR = (1 + EPS CAGR)³ ×
-  (Destination PE mid ÷ Current PE), threshold 1.953 for Tier A, 1.728 for
-  Tier B. Compute the band and show it on the verdict card: PASS (the tier
+  (Destination PE mid ÷ Current PE), against the tier threshold in
+  section-1b chunk 06 (Tier A or Tier B). Compute the band and show it on the verdict card: PASS (the tier
   hurdle is feasible on base-case earnings); CONDITIONAL (base fails, bull
   passes) flag "growth-dependent with de-rating headwind"; STOP band (bull
   fails) the tier hurdle is infeasible even on bull-case earnings. No band
@@ -240,8 +239,9 @@ mode:
   single-point forecast. Recompute HR on it and carry it to
   expected_cagr_prob_weighted. The bull-EPS-CAGR credibility gate is
   unchanged.
-- 4D probability weights come ONLY from B10.credibility_grade
-  (A 20/50/30, B 25/50/25, C 35/45/20, D 45/40/15).
+- 4D probability weights come ONLY from B10.credibility_grade, the Role 5
+  grade over the trailing four quarters (Amendment 26.4); the grade-to-weights
+  table is section-1b chunk 17.
 - Cross-check: compare your base revenue CAGR against B10's SOM-implied
   CAGR; if your assumption exceeds it, justify or cut.
 - One quality improvement, one mechanism. Never credit the same
@@ -263,7 +263,7 @@ consolidated valuation:
 stage: B11-valuation
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID, as pinned in the agent frontmatter
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 entity: ""                     # entity name; "" or "consolidated single-entity" when entity_count is 1
 entity_count: 1                # from B10.entity_count (dossier Section 1); emit one block per entity when >1

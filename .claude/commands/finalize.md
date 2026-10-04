@@ -40,8 +40,9 @@ EXECUTION DISCIPLINE: as in .claude/commands/run-pipeline.md, including the PROV
 that blocks until the subagent returns. Never use background task
 launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
-table allows. After each stage returns, validate its YAML block and commit
-before proceeding. A stage exceeding 45 minutes is noted in the run log,
+table allows. After each stage returns, validate its YAML block, append the
+stage's row to the run's session-cost.md, and commit before proceeding. Run
+the run-pipeline close-out summary over session-cost.md before step 9. A stage exceeding 45 minutes is noted in the run log,
 not killed.
 
 PHASE 3 turns the phase-1 evidence and the phase-2 deliberation into the
@@ -146,6 +147,10 @@ from the reply only if the stage failed to write it.
    anchors). Pass Role 2's output (B14 report) PLUS all blocks. Its output
    ends with the B15-devil YAML block (per-dimension survives / weakened /
    destroyed, overall, top counters). Collect B15.
+   RULE H LOOP (operator ruling OR-15, 2026-10-04): if stage 15 returns the
+   Rule H steelman gate table instead of a devil's advocate, re-invoke stage
+   14 once with the named gaps, then stage 15 again. On a second miss, mark
+   Role 3 VOID in B15, flag it in the verdict, and continue.
 
 5. VERIFIER C — VALUATION ADHERENCE (phase 3 half). Invoke
    verifier-c-framework with B10, B11, frameworks/Master_Project_Prompt_v3_6.md (Master v3.7) and the section-1b skill chunks cited in B11, for its
@@ -318,7 +323,7 @@ answered from the blocks, write "the run did not establish this" rather than fil
    verdict, and the paths to the four final deliverables plus
    outputs/final/notion-payload.md.
 
-   FINALIZE GATE (team workflow v2 — hash by default). End the report with
+   FINALIZE GATE (team workflow v2 — hash by default). Close the report section with
    the commit hash and the output of `git log -1 --stat`, so Claude web
    verifies against the repo and the operator never has to ask. A finalize
    report that omits the hash or the `--stat` is INCOMPLETE. If this run made
@@ -352,9 +357,3 @@ Rules for you, the orchestrator session:
 - Never paste full PDFs into subagent task messages; pass file PATHS.
 - Verifier independence is absolute.
 - Nothing halts on company quality; only mechanical failures halt.
-- Hash by default: end any report that involves a commit with the hash and
-  `git log -1 --stat`; a report without them is incomplete.
-- Dependency alignment: when an edit changes a status, ruling, or gate,
-  align every dependent section in the SAME commit and list what you aligned.
-- Self-contained ferry: any block the operator carries to Claude web holds
-  every path, hash, and exact text it needs; no reference to earlier messages.

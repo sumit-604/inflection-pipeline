@@ -1,0 +1,25 @@
+company: Kwick Forensic Solutions Ltd
+ticker: KWICK
+cmp: 179.0
+market_cap_cr: 383.0
+run_date: 2026-10-04
+run_type: full
+listed_date: 2026-09-03
+bse_code: 544895
+screener_url: https://www.screener.in/company/544895/
+peers: [ZENTEC, ADSL, DSSL]
+concalls_available: false
+sector_cap_row: "Cybersecurity / VAD"   # step1 Step D, chunk 05, 25x; alternative Defence / strategic 38x flagged for phase-3 confirmation
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "step1 repair: prospectus not collected by screener path; final Prospectus dated 31-Aug-2026 fetched from kwickforensic.com/Images/PDF_File/Prospectus_KwickForensics.pdf into inputs/prospectus/"
+  - "step1 repair: product catalogue 2026 fetched from kwickforensic.com into inputs/presentation/"
+  - "step1 repair: inputs/presentation/Investor_Presentation_1.pdf is the same 30-Sep-2026 conference presentation filed as announcements/20260930-4e7a525d...pdf (duplicate)"
+  - "step1 repair: screener Data_Sheet CSVs carry annual P&L, BS, CF raw values; Quarters rows blank (SME, half-yearly)"
+  - "step1 repair: sector_cap_row_guess Pharma / CDMO overridden to Cybersecurity / VAD"
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, ZENTEC:Profit & Loss, ZENTEC:Quarters, ZENTEC:Balance Sheet, ZENTEC:Cash Flow, ZENTEC:Customization, ADSL:Profit & Loss, ADSL:Quarters, ADSL:Balance Sheet, ADSL:Cash Flow, ADSL:Customization, DSSL:Profit & Loss, DSSL:Quarters, DSSL:Balance Sheet, DSSL:Cash Flow, DSSL:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no AR found on screener: AR stages will be skipped"
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

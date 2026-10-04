@@ -15,7 +15,9 @@ valuation decision AVOID (Gate 0 AVERAGE 55/160; B14, Verifier C F12 concur);
 FTTCP +2 of 8 DEEP WATCH leaning AVOID, posture VALUE-TRAP RISK. Entry zone
 Rs 301.5 to ~Rs 350 (Rs 350 operator override; mechanical Rs 344.2), FV CAGR
 21.2% COMPOUNDER (17.9% HYBRID on Reading B). Size: none now; ceiling Small.
-Track 1 FV Rs 414.0 (31-Mar-2027) to Rs 737.7 (31-Mar-2030). Priced under the
+Track 1 FV Rs 414.0 (31-Mar-2027) to Rs 737.7 (31-Mar-2030). UPDATE 2026-10-04
+(operator): entry zone ~Rs 330-345, size Small; Gate 0 AVOID stands until the
+lender variant merges. Priced under the
 unmerged Section 1B v3.11 draft (I5). Notion Decision Status is set by the
 operator in claude.ai, never by this file.
 
@@ -195,6 +197,18 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
     Track 1 value ~Rs 620 at 31-Mar-2030; ~16% a year from Rs 370; ~Rs 330 for
     ~20% a year; ~Rs 285 for ~25% a year.
 
+- 2026-10-04: OPERATOR RULING (supersedes D15-2 and D15-3 above).
+  - Partner-slice Pillar 2L = 1.00x (D15-3 overruled): "Q4 FY26 off-book loss
+    ~3.4% of partner book; CRISIL rise partly mix" (operator figures). Revisit to
+    0.80x if the H1 FY27 partner-loss rate exceeds ~6% of average off-book AUM.
+  - Partner-exit stress headline = 1/3 cut (D15-2 overruled; "FY23 exit was
+    rule-driven"); the 1/2 cut is shown as the tail case.
+  - Cap 22.7x stands. Cash line 0 (D15-5 accepted).
+  - ENTRY ZONE ~Rs 330-345. SIZE Small.
+  - Approximate effect (back-of-envelope, not an agent recompute): Track 1
+    value ~Rs 740 at 31-Mar-2030; ~22% a year from Rs 370; ~25% a year from
+    the middle of the entry zone (~Rs 340).
+
 ## ACTIVE TRIPWIRES
 (2026-10-04, from B14 thesis_broken_if and the signed model falsifiers)
 - Q2 FY27 vs Q2 FY26: Stage 2 > 4.11% or GNPA > 2.92% (T3 DECLINING; by 30-Nov-2026).
@@ -205,6 +219,8 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
   replacement; RBI cuts the 5% DLG cap or changes DLG recognition.
 - RBI inspection shown to cover FY25 or later (trust falsifier).
 - Time stop: proof gate (all-in loss < 10.5%, H2 FY27) not fired by 31-May-2027.
+- Pillar 2L revisit: H1 FY27 partner-loss rate > ~6% of average off-book AUM
+  moves the partner slice to 0.80x.
 - Partner-cap revisit: FLDG charge > 40% of outside revenue, or top-two share
   > 90% through FY27 (DLG-pool measure already 95%; measure open, CAPM).
 

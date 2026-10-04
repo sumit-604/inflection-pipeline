@@ -275,7 +275,7 @@ Evaluate each method against this company:
 
 **Peer discipline.** The peer set includes listed comparables in the same sector, and at least one counterparty benchmark: an operator, customer, supplier or JV partner whose own disclosures test the company's claims about the same asset, contract or market. A counterparty's audited unit economics (revenue per unit, margin per unit) outrank a sector peer's multiple when the two conflict. State the peer set, the counterparty, and why each was chosen.
 
-### Section 1B — Three-Pillar exit multiple framework
+### Section 1B — Four-Pillar exit multiple framework
 
 Completed before any method is applied. The exit multiple is earned.
 

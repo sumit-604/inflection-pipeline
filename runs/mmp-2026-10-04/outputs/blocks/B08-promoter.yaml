@@ -1,0 +1,56 @@
+stage: B08-promoter
+company: "MMP"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "B00 CORPUS GAPPED: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets empty (Data_Sheet.csv only)"
+  - "B00: announcements and shareholding were repaired by hand; a selection of 11 NSE filings, not the full list; BSE scrip code not found"
+  - "B00: scanned Q4 FY26 and Q3 FY26 results are image scans (no OCR)"
+  - "B00: NSE clarifications sought on results 2026-03-05 and 2026-06-23 have no company reply in the corpus"
+  - "B00: ARFIN peer transcripts absent; research/ and prospectus/ empty; no-concall mode (May 2026 and Jul 2022 only)"
+  - "B00: no stock-exchange resignation filing for Bapna and Khanna (10 Aug 2026) in the corpus; reason beyond term expiry NOT FOUND"
+flags: []
+verdict: CAUTION
+scorecard: {clean: 6, caution: 4, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Umred police case (Apr 2025) under BNS 106(1), 287, 125(B) plus Factories Act 7A, 40, 38 after a DISH report found no PPE issued and untrained new workers; three officials booked: Tenneti Narsing Murthy (56) General Manager, Raman Bhajipale (50) Safety Officer, Amit Bachale (38) Shift Manager. AR26 lists WTD Tenneti Narasimham Murthy, age 57, joined board 2 Feb 2019: name and age match, identity link is INFERENCE, not confirmed. No arrest, charge-sheet or court outcome found. Promoters Arun and Lalit Bhandari not named in the reports found.", evidence_tier: "MEDIA REPORTED", source: "Deccan Herald https://www.deccanherald.com/india/maharashtra/nagpur-factory-blast-safety-lapses-found-3-booked-3492858 (page not opened, HTTP 403; content read from search extract); Nagpur Trends; Business and Human Rights Centre; AR26 p.25, p.57-58, p.6", date: "Apr 2025 (exact day not shown in the extract)"}
+  - {finding: "Fatal fire: AR26 states 7 fatalities and 4 injuries, estimated loss Rs 17.29 Cr, powder unit halted about 50 days; early media said 5 deaths, later reports 6 and 7. Company disclosed no FIR, DISH finding or litigation on the fire in the AR text read.", evidence_tier: "VERIFIED", source: "AR26 p.25-26 (Board's Report 1.4); The Live Nagpur 7 May 2025 (7 families, Rs 5 lakh each from CM Relief Fund) as MEDIA REPORTED", date: "AR filed 18-Aug-2026; incident 11-Apr-2025"}
+  - {finding: "CRISIL had the bank facility ratings at Issuer Not Cooperating (BBB+/Stable, A2) for inadequate information before the 27-Apr-2026 action; cured when management shared information. Date INC started NOT FOUND. Facilities enhanced Rs 80 Cr to Rs 135 Cr.", evidence_tier: "VERIFIED", source: "CRISIL rationale 27-Apr-2026 (inputs/rating/MMP_30042026121825_MMPRating2026.txt p.1)", date: "2026-04-27"}
+  - {finding: "Both independent directors Bapna (AC chair) and Khanna (NRC) resigned 10 Aug 2026, 33 days before the AGM, at the end of a ten year tenure per AR26; two new independents appointed same day; Arun Bhandari (CMD, executive) joined the Audit Committee. No reason beyond term expiry found. Karan Varma also resigned 8 Aug 2025 'owing to preoccupation' after 1 of 3 meetings.", evidence_tier: "VERIFIED", source: "AR26 p.28-29, p.57-58, p.63-65; B03 phase 5", date: "2025-08-08; 2026-08-10"}
+  - {finding: "Promoter-group economics: payments to promoter family and entities 255.21 L (290.34 L with Lalit); personal guarantees by Arun and Lalit on parent loans and by Arun and Mayank on subsidiary loans; Mayank Fasteners mortgage backs MEPL loan; 280 L interest-free promoter loans to MEPL; a single omnibus RPT approval dated 23.05.2025 covers all items. Scale small, disclosure thin.", evidence_tier: "VERIFIED", source: "AR26 Note 45 p.150-155, Note 18 p.126-127; B02-notes rank 10", date: "FY26"}
+  - {finding: "Associate Star Circlips (unlisted, promoter group entity, CIN U24110MH1974PLC017301) is 26.06% owned by MMP, holds 4.56% of MMP (counted in promoter 74.49%) and gave 9.98 L dividend against 742.70 L equity-accounted profit. Arun, Mayank, Rohini and Sakshi Bhandari are listed as directors on third-party registry pages.", evidence_tier: "VERIFIED", source: "AR26 C p.172, p.238; SHP 30-Jun-2026; SAST letter 06-Apr-2026; zaubacorp/tofler registry pages (MEDIA REPORTED for directors)", date: "2026-06-30"}
+  - {finding: "Board hygiene: two directors under 75% attendance (Murthy 3/6, Mayank 3/6, Ulka Kulkarni 4/6); Mayank holds 9 board seats; MD and WTD both 70, AGM items to continue MD to 31-Jan-2028 and WTD to 2032; AGM filing misprints (Arora DIN shown as Sethia's; '52nd' in title). Procedural, not integrity.", evidence_tier: "VERIFIED", source: "AR26 p.57-58; AGM proceedings 12-Sep-2026 p.1-4", date: "2026-09-12"}
+transition_evidence:
+  - {item: "Two new independent directors (Raj Sethia: ex-Vodafone EVP, CMA, MBA Wake Forest, runs a Category II AIF; Dr Sanjay Arora: brand strategist, 39 years) appointed 10 Aug 2026; outcome of AGM e-vote not in corpus", source: "AGM proceedings 12-Sep-2026 p.3"}
+  - {item: "Maiden dividend Rs 2 per share (20%) for FY26; promoter group share about 378.43 L (derived)", source: "AGM proceedings p.6; B03 phase 5"}
+  - {item: "CRISIL Issuer Not Cooperating cured; facilities enhanced to Rs 135 Cr", source: "CRISIL rationale 27-Apr-2026"}
+  - {item: "Non-family professional hires: WTD Murthy (since 2019), CFO Khandelwal, CS Singh; Sacheti becomes AC chair. No outside CEO. No institutional entry (FPI 0.02%)", source: "AR26 p.57; SHP 30-Jun-2026"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil; all six encumbrance flags false at 30-Jun-2026; SAST Reg 31(4) letter 06-Apr-2026 says no encumbrance created in FY26; promoter holding flat at 74.48% from 30-Sep-2024 to 31-Mar-2026, 74.49% at 30-Jun-2026 (SHP)"
+searches_performed:
+  - "Umred factory fire April 2025 fatalities (plantservices, Deccan Herald, BHRRC, Business Standard, Hitavada, Live Nagpur)"
+  - "Umred blast FIR police case directors factory inspector"
+  - "Umred blast court, arrest, anticipatory bail (Livelaw hit was SBL Energy, a different company, excluded)"
+  - "Arun Bhandari with SEBI, NCLT, ED, MPCB (only 2018 IPO and a Companies Act compounding authorisation found)"
+  - "CRISIL Issuer Not Cooperating MMP Industries"
+  - "Independent director resignation Bapna Khanna Aug 2026 (nothing found outside the AR)"
+  - "NSE clarification on results, 23-Jun-2026 (one aggregator line; March item not found)"
+  - "MPCB, NGT, income tax, GST notice (nothing found)"
+  - "Employee reviews Glassdoor, AmbitionBox (no valid profile found)"
+  - "Star Circlips registry, financials, directors; Toyal MMP India JV (toyalmmpindia.com)"
+  - "Proxy advisor, SCORES, short seller (nothing found)"
+  - "Compensation and death toll follow-up (Live Nagpur, Nagpur Today)"
+searches_skipped:
+  - "SEBI order database, SAT and SCORES portal direct query (web search only; no live portal access)"
+  - "NSE announcement page for the 5-Mar-2026 and 23-Jun-2026 clarification letters and company replies (not retrievable; no attachment on NSE per B00)"
+  - "Stock-exchange Reg 30 filings for Bapna and Khanna resignation reasons"
+  - "Court dockets (Bombay HC Nagpur bench, Umred JMFC) for status of the Umred FIR and any arrest or bail"
+  - "MCA21 charge, strike-off and director-disqualification checks on Star Circlips, Rohini Farms, Mayank Fasteners (paywalled)"
+  - "Bombay HC or DISH prosecution status; MPCB consent or notice records (portal)"
+  - "AmbitionBox direct page (search returned none)"
+  - "Succession and education verification beyond AR26 and AGM profiles"
+  - "Deccan Herald and Nagpur Trends full text (HTTP 403 or empty); read from search extracts only"
+verdict_basis: "No SEBI, pledge, selling, fraud or deal-breaker found; a safety FIR with Factories Act charges after seven deaths, an executive promoter on the Audit Committee, the unexplained two-independent exit and thin RPT disclosure hold it at CAUTION."
+analyst_note: "Search is partial. The decisive open item is the Umred case. A named General Manager aged 56 was booked in April 2025; AR26 shows WTD Tenneti Narasimham Murthy, 57, joined 2019. Name and age match, but the link is inference. Two readings: (a) the WTD is an accused in a Factories Act case and the AR is silent, a disclosure and key-person problem; (b) a namesake, or the role differed in 2025. One observation separates them: the FIR text or the company's Reg 30 reply. Search found no arrest, no court outcome, no promoter named. The AR calls the incident the Board's 'major event' but gives no FIR or DISH disclosure. Livelaw anticipatory-bail hit was SBL Energy, not MMP. The Bapna and Khanna exit looks like term end (second term to 53rd AGM); the 33-day gap is the only oddity. CRISIL INC start date NOT FOUND."

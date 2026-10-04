@@ -14,7 +14,7 @@ load_bearing_facts:
   - "LBF3 associates and RPT: Star Circlips (26.06%) and Toyo JV (26%) share of profit as a share of PBT; promoter-group RPTs"
   - "LBF4 cash conversion and funding of new-subsidiary capex: CFO vs EBITDA, WC days, debt path behind bank lines Rs 80 Cr to Rs 135 Cr"
 sector_cap_row: "Cables / Industrial products"
-sector_cap_row_evidence: "No non-ferrous or aluminium row in the cap table. Revenue Q1 FY27: aluminium powders 62% (industrial input to explosives, AAC, pesticides), foils 26%, conductors and cables 12% (Q1 FY27 press release p.1). Row 'Cables / Industrial products' 25x, .claude/skills/section-1b/references/05-sector-cap.md line 38. Collector guess 'Pharma / CDMO' rejected. Converter slices subject to v3.7 Amendment 17 in phase 3; phase 3 to confirm the row."
+sector_cap_row_evidence: "No non-ferrous or aluminium row in the cap table. FY26 revenue mix (printed on the Q1 FY27 deck p.11, p.16): aluminium powders 62% (industrial input to explosives, AAC, pesticides), foils 26%, conductors and cables 12%; Q1 FY27 actual 66.1/26.0/7.3 per B04 (label corrected by orchestrator 2026-10-05 on stage 4 finding FLAG-MIX-LABEL). Row 'Cables / Industrial products' 25x, .claude/skills/section-1b/references/05-sector-cap.md line 38. Collector guess 'Pharma / CDMO' rejected. Converter slices subject to v3.7 Amendment 17 in phase 3; phase 3 to confirm the row."
 reporting_units:
   results: "INR Lakhs (results filings, face of statement)"
   annual_report: "INR Lakhs (AR FY26: all amounts rounded off to the nearest INR in Lakhs)"

@@ -8,3 +8,6 @@
 | 2 | notes pass 2 | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 281835 | 9m08s | 1 |
 | 2 | notes pass 3 | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 124528 | 4m35s | 1 |
 | 3 | ardeep | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 412218 | 17m30s | 1 |
+| 4 | bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 242310 | 10m10s | 1 |
+| 5 | concall (no-call bounded) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 200857 | 6m52s | 1 |
+| 8 | promoter (web) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 107695 | 3m04s | 1 |

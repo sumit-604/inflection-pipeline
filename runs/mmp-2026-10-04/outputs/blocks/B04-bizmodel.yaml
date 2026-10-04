@@ -1,0 +1,82 @@
+stage: B04-bizmodel
+company: "MMP"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00 CORPUS GAPPED: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets empty (Data_Sheet only); Q4 FY26 and Q3 FY26 results are image scans; ARFIN transcripts absent; announcements hand-collected selection; NSE clarifications of 2026-03-05 and 2026-06-23 have no company reply in corpus; research/ empty"
+  - "B00 no_concall_mode true: the May 2026 call is used here as supplementary evidence only, cited as Call p.N"
+  - "Investor presentations present (Q1 FY27 and Q4 FY26) and used; Q1 FY27 press release used"
+  - "NOT FOUND in AR or decks: tonnage volumes by segment, realisation per MT, grade mix inside powders (commodity vs value-added), export margin versus domestic margin, customer concentration, market share, name of ingot and wire-rod suppliers, foil-stock share of foil cost, pass-through lag, conductor order book, installed capacity in AR26 (decks give it)"
+  - "NOT FOUND: peer data and listed-player count (carried from B01); no listed aluminium-powder or pharma-foil pure play is evidenced in the corpus"
+flags:
+  - {type: FLAG-MIX-LABEL, reason: "B00 sector_cap_row_evidence quotes powders 62%, foils 26%, conductors 12% as the Q1 FY27 mix. That is the FY26 mix printed on a Q1 FY27 slide (Q1 deck p.11, p.16). Q1 FY27 actual is powders 66.1%, foils 26.0%, conductors 7.3%, insulators 0.2%, others 0.4% (PR p.2, derived). Sector cap row is unchanged; the conductor share has fallen"}
+  - {type: FLAG-ARCHETYPE-HYBRID, reason: "No segment fits one archetype cleanly. Foils and conductors fit Commodity converter (Amendment 17). Powders are a converter with an unquantified specialty tail. Insulators fit Build-to-spec component maker on intent, not yet on evidence (revenue 231.94 L, loss 329.13 L, AR26 C p.226). Stage 11 must hold the powder specialty share as an open input"}
+  - {type: FLAG-FOIL-DILUTION, reason: "Foils gave 46.0% of FY26 segment revenue growth at a 2.00% segment margin and hold 25.0% of segment assets for 6.4% of segment result (AR26 C p.226-227, derived). Segment margin fell 1.41 pts, of which mix -0.36 and within-segment rates -1.05 (derived)"}
+  - {type: FLAG-GUIDANCE-DRIFT, reason: "FY27 group growth guide moved from ~20-25% (Q4 deck p.9) to ~15-18% (Q1 deck p.9, PR p.3). Solar park moved from H1 FY27 (Q4 deck p.14) to Q3 FY27 (Q1 deck p.14). Wire-rod capex moved from Rs 13-15 Cr (Q4 deck p.9) to Rs 20-25 Cr (Q1 deck p.9). Wire-rod timing: AR26 p.30 says installation from July 2027 and trials H2 FY27; PR p.5 says installation underway, trials end Q3 FY27, commercial Q4 FY27. The PR reading is consistent with H2 FY27, so July 2027 looks like a typo for July 2026 (reading, not proof)"}
+  - {type: FLAG-DECK-COPY, reason: "Q1 FY27 deck p.6 credits PAT growth to a net exceptional credit of Rs 5.45 Cr post tax, but the Q1 FY27 P&L shows exceptional items 0.0 (Q1 deck p.8; PR p.8). The same sentence sits in the Q4 FY26 deck p.6. Treat Q1 FY27 PAT 13.7 Cr as free of exceptional items"}
+  - {type: FLAG-CASH, reason: "Carried from B01 and B03: CFO 53.29 Cr includes 17.23 Cr short-term borrowing and 19.10 Cr payables build; CFO net of both 16.96 Cr against gross capex about 55.6 Cr (AR26 C p.173; B03). FY27 capex plan items sum to about Rs 63-70 Cr before the Rs 85-90 Cr LT cable programme (derived from Q1 deck p.9, Q4 deck p.9, Call p.15-16)"}
+  - {type: FLAG-FUNDING, reason: "Carried from B03: parent cash 56.38 L, guarantees 6,688 L, 76.6% of group debt due within a year. Management says net debt to equity will not go beyond 1.0 (Call p.15); FY26 is 0.5 (Q1 deck p.27)"}
+business_type: manufacturing
+revenue_streams:
+  - {name: "Aluminium powders and pastes (powders, atomised, pyro, flake, leafing; paste via Toyal JV is outside revenue)", type: "B2B product sales, per-kg price linked to ingot, spot and annual contracts mixed (AVL Belgium long-term contract named)", pct_of_revenue: 61.2, predictability: "M"}
+  - {name: "Aluminium foils (bare, converted, printed; pharma strip and blister)", type: "B2B product sales, spread over bought-in foil stock", pct_of_revenue: 26.1, predictability: "M"}
+  - {name: "Aluminium conductors and cables (AAC, AAAC, ACSR, ABC, AL59; LVPC pilot)", type: "tender and project linked B2B sales, state utilities and EPC contractors", pct_of_revenue: 12.1, predictability: "L"}
+  - {name: "Polymer insulators (MMP Electricals)", type: "approval gated B2B sales, start-up", pct_of_revenue: 0.3, predictability: "L"}
+  - {name: "Others (manganese oxide, washers, circlips, coals)", type: "minor product sales", pct_of_revenue: 0.3, predictability: "M"}
+asset_intensity: medium
+wc_intensity: high
+pricing_power: weak
+cyclicality: cyclical
+moats_present:
+  - "Process know-how in aluminium atomisation and milling, 40+ years, hazardous process, AVL Belgium and Toyo Aluminium links: moderate durability, not quantified, B01 moat_class NONE stands"
+  - "Customer qualification cycles (pharma foil, utility vendor approval for insulators, 1.5 to 2 years validation per Call p.17): claimed by management, unproven in margin (foil segment margin 2.00%); durability low to moderate"
+  - "Anti-dumping duty on Chinese foil (AR26 p.51): regulatory tailwind, not an owned moat; sunset date NOT FOUND"
+valuation_methods:
+  primary: {method: "P/E on normalised consolidated earnings, built bottom-up by segment (volume x EBITDA per MT less depreciation, interest, tax, plus associate share), exit multiple from Section 1B only", why: "Entry and exit must sit on one earnings basis (v3.8 Amendment 18). Earnings are positive and lumpy. Converter slices fall under v3.7 Amendment 17, so normalised, not spot-year, inputs. Associates are 20.5% of FY26 PBT and need a stated treatment in Stage 11"}
+  secondary: {method: "EV/EBITDA on consolidated EBITDA ex-associates", why: "Net debt is rising (gross debt 184.5 Cr, ND/EBITDA 2.75x) and finance cost is 13.3 Cr, so a leverage-neutral cross-check is needed. Associate profit is excluded from EBITDA, which keeps the two methods apart"}
+  tertiary: {method: "Sum-of-parts for associates (Star Circlips 26.06%, Toyal 26%) and the insulator start-up at invested cost", why: "Associate profit is non-cash (dividend 9.98 L against 742.70 L share of profit) and both are unlisted; a holding-value cross-check stops double counting"}
+  not_applicable:
+    - "DCF as primary: FCF is negative (FY26 -2.32 Cr before borrowing, B03) and a heavy capex plan makes terminal inputs a guess"
+    - "EV/Sales: aluminium price inflates revenue, and segment margins range from 2.0% to 11.9%"
+    - "P/B as primary: ROE 9.3% in FY26; book value is not the earning asset in a start-up phase"
+    - "PEG: growth is lumpy and partly start-up driven"
+    - "Dividend yield: maiden dividend Rs 2 per share, payout 19.2% (B03)"
+    - "EV per tonne of capacity or replacement cost: volumes and capex per MTPA NOT FOUND"
+irrelevant_ratios:
+  - "Spot-year ROCE and ROE (FY26 10.12% and 9.26%): capex-phase compression and fire year; Amendment 17 forbids spot-year ROCE into Section 1B for a converter"
+  - "EBITDA margin percent read alone: aluminium price changes the denominator, so margin per MT and spread carry the signal"
+  - "Revenue growth percent alone: price and volume split is NOT FOUND; part of +19.1% is metal price"
+  - "Headline P/E: 20.5% of FY26 PBT and 26.5% of PAT is associate share, mostly non-cash"
+  - "Current ratio (1.26) and D/E (0.53): 76.6% of debt is working-capital debt rolled yearly; use net debt to EBITDA and DSCR"
+  - "Rupee working-capital trends: metal price inflates inventory and payables; use days"
+must_track_metrics:
+  - {metric: "Consolidated gross margin percent (revenue less COGS)", healthy: "21% or above (Q1 FY27 21.0%; FY25 22.8%); company's own history, no peer band found", red_flag: "below 19% (Q1 FY26 19.1%; FY26 20.5%)"}
+  - {metric: "Powder segment result margin", healthy: "12.4% or above (FY25 12.37%)", red_flag: "below FY26 11.88% for two quarters"}
+  - {metric: "Foil segment result margin", healthy: "rising above 2.00% each quarter as printed foil and lidding foil scale", red_flag: "at or below 2.00% through H1 FY27 after launches"}
+  - {metric: "CFO net of short-term borrowing and payables, as percent of EBITDA", healthy: "above 50%", red_flag: "below 25.6% (FY26)"}
+  - {metric: "Net debt to EBITDA, with DSCR", healthy: "at or below 3.0x and DSCR 2.5 or above", red_flag: "above 3.0x or DSCR below 2.5 (FY26 2.75x and 2.51)"}
+unit_economics:
+  unit: "1 MT of aluminium powder (powders are 61.2% of FY26 gross sales and 89.6% of segment result)"
+  revenue_per_unit: "NOT FOUND (no tonnage volume in AR26, decks or release)"
+  margin_per_unit: "Management guide EBITDA Rs 37,000 to 42,000 per MT for powders, Rs 12,000 to 15,000 for foils, Rs 15,000 to 18,000 for conductors and cables (Call p.20); FY26 actual per MT NOT FOUND"
+  key_lever: "Spread over ingot cost set by grade mix (value-added and export grades against commodity grades) and by utilisation (powder about 80%, rolling mill 80 to 85%, foil conversion about 45%, Call p.16). Opex is 12.0% of revenue in both Q1 FY26 and Q1 FY27, so the whole Q1 gain came from gross margin (+190 bps)"
+first_deterioration_signals:
+  - {risk: "Aluminium price spike not passed through", first_signal: "Gross margin percent and powder segment margin fall while inventory days rise"}
+  - {risk: "Foil margin stays at 2%", first_signal: "Foil segment margin in the Q2 and Q3 FY27 segment notes"}
+  - {risk: "Conductor payment cycles and tender slowdown", first_signal: "Conductor revenue (Q1 FY27 17.1 Cr, -42% YoY) and trade receivable days"}
+  - {risk: "Insulator approvals slip", first_signal: "Insulator quarterly revenue below about 5 Cr by Q3 FY27 and segment loss not narrowing"}
+  - {risk: "Subsidiary capex outruns funding", first_signal: "Short-term borrowings (141.3 Cr) and payable days (24.8) rising while CFO net of both stays near 17 Cr"}
+  - {risk: "Hazardous process incident repeats or claim not collected", first_signal: "Insurance receivable 793.05 L still open at Q3 FY27; any new exceptional item"}
+  - {risk: "Associate profit not backed by cash", first_signal: "Associate share of PBT above 20% with Star dividend near 9.98 L"}
+  - {risk: "Supplier dependence for foil stock", first_signal: "Foil volume and foil gross margin in a quarter where stock prices jump (AR25 named Hindalco; AR26 does not)"}
+mgmt_questions:
+  - "What are the powder tonnage sold in FY26 and the split between commodity grades and value-added or export grades? Reassures: tonnage and EBITDA per MT disclosed and tied to the 37,000 to 42,000 guide. Worries: no volumes, only 'better realisations'"
+  - "How fast does an aluminium ingot price move reach customer prices, by segment? Reassures: a stated lag of weeks and a price formula. Worries: 'mostly yes, some resistance' with no formula (Call p.18)"
+  - "Who supplies foil stock and ingots today, on what contract, and what share of foil cost is stock? Reassures: two or more suppliers and a formula. Worries: one supplier as in AR25"
+  - "What is the FY27 funding plan for about Rs 63-70 Cr of near-term capex and the Rs 85-90 Cr LT cable programme, and what is the debt ceiling? Reassures: named split of internal accrual, term debt and equity within net debt to equity of 1.0. Worries: more working-capital lines"
+  - "What insulator order, approval and revenue milestones will be met by Q3 FY27 against the May guide of Rs 18-20 Cr for FY27, when Q1 FY27 was Rs 0.5 Cr? Reassures: dated approvals and first utility orders. Worries: guide cut or slippage to FY28"
+  - "Why did the foil segment earn 2.00% while foil revenue grew 39%, and what price-per-MT premium do printed and lidding foil earn? Reassures: product margin per MT disclosed. Worries: foil stays a volume business"
+  - "What will Star Circlips supply to MMP Electricals once its forging plant runs, at what pricing method, and what dividend will Star pay? Reassures: arm's length benchmark and rising dividend. Worries: closed related-party loop with no price test"
+one_line_verdict: "An aluminium converter with a 61% powder core earning about 12% segment margin, a 26% foil arm earning 2%, and three start-ups that must prove themselves before the transition thesis exists."
+analyst_note: "Two readings of the FY26 margin fall. Reading A: fire plus start-up drag, so margin recovers. Reading B: structural dilution, because foil (2.00% segment margin) supplied 46% of revenue growth and conductors fell from 8.27% to 4.86%. Segment arithmetic gives mix -0.36 pts and within-segment rate -1.05 pts of the -1.41 pt fall, so B explains more than the fire alone, but the rate effect includes the 329 L insulator start-up loss and the conductor drop. Separator: Q2 and Q3 FY27 segment margins for powders (back to 12.4%?) and foils (above 2%?). Powders are not a pure converter: the specialty share is NOT FOUND, so Stage 11 must not assume either archetype for the whole segment. B00 mix label is wrong (62/26/12 is FY26, Q1 FY27 is 66/26/7). The May 2026 call carries per-MT EBITDA guidance that no filing lets us check, since volumes are not disclosed."

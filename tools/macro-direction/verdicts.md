@@ -4,6 +4,34 @@ report.py copies each section into the report under its asset. Numbers
 quoted here come from the 2026-10-04 run. If a re-run changes the tables,
 rewrite these paragraphs. Do not keep stale prose.
 
+## PASS BAR
+
+Written 2026-10-04, after the primary data was committed (5c7648a) and
+before any backtest ran on it. It is fixed. The rerun is judged against
+it; it is not tuned to the rerun.
+
+Conditions, on the month-end price series with every input present:
+
+1. The full rules beat the trend baseline (Layer 1 alone) by 5 or more
+   points of 1-month hit rate on at least 4 of the 6 core assets, with
+   gold and silver judged on the Yahoo month-end series (gold_end,
+   silver_end), Brent on the EIA month-end series (brent_end), and Nifty
+   on nifty_end.
+2. The top-2-of-6 portfolio beats top-2-by-trend on return per unit of
+   volatility over the full window.
+
+Report the 2020-2023 window on its own line for every asset. The
+regime layer exists to catch the 2021-2022 inflation shock; that window
+is worth more than the 22-year average.
+
+Miss either condition: archive the forecasting layer, close PR #202
+with this file as the record, and keep only the regime quadrant and the
+six trend signs as a monthly dashboard section in macro-sheet.md, with
+no direction calls and no confidence levels.
+
+Pass both: merge, and latest.md becomes a monthly section in
+macro-sheet.md.
+
 ## HEADLINE
 
 **Verdict: in its v1 form, the rule model does not earn the operator's attention as a forecaster.** At the 1-month horizon it beats the trend baseline by more than 2 points on two of eight series: zinc (+6.0) and aluminium (+2.2). At the 3-month horizon it clears 2 points on none of them. Gold (INR) comes closest at +1.9. It loses to trend on silver, Nifty and both INR metals. "Always up" beats the model at 3 months on all eight series. At 1 month the logistic model loses to the rules on five series, ties on one, and wins on two (Brent, Nifty). On Nifty it still trails "always up".  Keep the rules as the primary model. Neither model forecasts well.

@@ -137,6 +137,82 @@ M12 Negative WC / Float: WC days negative in majority of years = 5 |
 Moat classification: 6+ present = FORTRESS | 4-5 = STRONG | 2-3 = MODERATE |
 1 = THIN | 0 = NONE
 
+## LENDER VARIANT (Blocks A, B and F; all lenders)
+
+Applies to every bank, NBFC, MFI and HFC: the company's manifest
+sector_cap_row is Banks / NBFCs / MFIs, or its filings describe a lending
+licence (RBI NBFC / HFC / SFB / bank registration). It is a framework rule
+for all lenders, never a single-company exception. State "LENDER VARIANT
+APPLIED" at the top of the scorecard and in data_notes. Blocks C, D and E
+and the classification matrix are unchanged (Block D already carries the
+CAR / PCR / financials-default substitutions).
+
+Why: for a growing lender, loan disbursal runs through CFO under Ind AS 7,
+so CFO, FCF and WC-days tests score zero by construction; finance cost is
+the lender's cost of goods, so EBIT-based ROCE and EBITDA-margin proxies
+inflate. The variant replaces those tests with the lender's own measures of
+the same qualities: return on assets, cash before loan-book growth, asset
+quality and funding.
+
+Formula definitions (lender):
+- RoA = PAT ÷ average total assets. Where the company reports RoA on
+  average AUM only, use it and state the basis; never mix bases in one series.
+- CFO before loan-book change = CFO − (net change in loans / advances /
+  receivables from financing, as the cash flow statement shows it). Anchor
+  the line item used. If the statement does not separate it, the metric is
+  N/A, scored 0, and named in input_gaps.
+- Credit cost = impairment on financial instruments (P&L) ÷ average loan
+  book (or average AUM where that is the reported basis; state which).
+
+[BLOCK A — LENDER: RETURN ON ASSETS AND EQUITY, Max 20]
+A1L Median RoA: ≥2.5% = 5 | 2.0-2.49 = 4 | 1.5-1.99 = 3 | 1.0-1.49 = 1 | <1.0 = 0
+A2L Minimum single-year RoA: ≥2.0% = 5 | 1.5-1.99 = 3 | 1.0-1.49 = 1 | <1.0 = 0
+A3L Median ROE: unchanged from A3.
+A4L RoA trend, latest vs earliest: latest ≥ earliest = 5 | decline ≤25 bps
+    = 3 | decline 25-50 bps = 1 | decline >50 bps = 0
+
+[BLOCK B — LENDER: CASH AND CREDIT QUALITY, Max 20]
+B1L Cumulative CFO before loan-book change ÷ Cumulative PAT: same bands as B1.
+B2L Credit cost, latest year vs median of prior years: lower by ≥50 bps
+    = 5 | within ±50 bps = 3 | higher by 50-150 bps = 1 | higher by
+    >150 bps = 0
+B3L GNPA (latest, the company's reported basis; state whether it covers
+    on-book loans only): <2% = 5 | 2-3% = 3 | 3-5% = 1 | >5% = 0
+B4L Structural liquidity (ALM, latest): cumulative gap positive in every
+    bucket up to 12 months = 5 | negative in one bucket, ≤10% of outflows
+    = 3 | negative in two or more buckets = 1 | not disclosed = 0
+
+[BLOCK F — LENDER substitutions; all other moat tests unchanged]
+M1L Pricing Power: net interest margin (or net total income ÷ average AUM;
+    state basis) expanded ≥50 bps AND AUM CAGR ≥10% = 5 | stable ±50 bps
+    AND AUM CAGR ≥10% = 3 | declined 50-150 bps despite growth = 1 | else 0
+M2L Cost Advantage: cost-to-income vs peer median: ≥10pp better = 5 |
+    5-10pp better = 3 | within ±5pp = 1 | worse = 0
+M3L Capital Efficiency: RoA >2.5% AND average assets ÷ equity ≤6x = 5 |
+    RoA >2.0% AND ≤8x = 3 | RoA >1.5% = 1 | else 0
+M4L Customer Stickiness: the revenue-decline-years test is unchanged; the
+    receivable-days condition becomes "GNPA within ±100 bps over the period"
+M9L Underwriting edge (replaces Brand): credit cost vs peer median at a
+    yield within ±200 bps of the peer median: ≥100 bps below = 5 | 50-100
+    bps below = 3 | within ±50 bps = 1 | above = 0
+M10L Switching Costs: the revenue-growth test is unchanged; the
+    receivable-days condition becomes repeat-borrower share of
+    disbursement ≥50% where disclosed; not disclosed caps the test at 1
+M12L Funding advantage (replaces Negative WC / Float): cost of funds vs
+    peer median: ≥150 bps lower = 5 | 50-150 bps lower = 3 | within ±50 bps
+    = 1 | higher = 0. Banks may use CASA share instead: ≥40% = 5 | 30-40%
+    = 3 | 20-30% = 1 | <20% = 0
+
+One mechanism, one credit: M1L (margin trend), M9L (credit cost level) and
+M12L (funding cost level) measure different things; never score one spread
+movement under two of them.
+
+Lender deal-breaker forms (replace numbers 3 and 4 when the variant
+applies): 3L median RoA <1.0% → max AVERAGE | 4L cumulative CFO before
+loan-book change ÷ cumulative PAT <0.50 → max AVERAGE. Deal-breakers 1 and
+2 read the lender Blocks A and B. A run scored before this variant existed
+is re-scored only by a new run, never retroactively.
+
 ## CLASSIFICATION AND OVERRIDES
 
 Data confidence: 10+ yrs full | 7-9 moderate | 5-6 lower, flag "may not
@@ -156,7 +232,8 @@ so state WHICH years drive any deal-breaker):
 max AVERAGE | 4 cumul CFO/PAT <0.50 → max AVERAGE | 5 pledge >15% → max
 AVERAGE | 6 ND/EBITDA >3x AND IC <3x → AVOID | 7 revenue declined in
 majority of years → max AVERAGE | 8 PAT negative in any of last 3 years →
-max AVERAGE | 9 history <3 years → AVERAGE
+max AVERAGE | 9 history <3 years → AVERAGE. Lenders: numbers 3 and 4
+take the LENDER VARIANT forms 3L and 4L.
 
 ## OUTPUT
 

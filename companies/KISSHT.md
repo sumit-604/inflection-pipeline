@@ -3,11 +3,21 @@
 Company memory. Memory to weigh, never anchored evidence.
 
 ## THESIS (one line)
-Not yet formed. Phase 1 evidence pack on the shelf; the operator forms the
-thesis at Halt 1.
+2026-10-04 (finalize): a fast-growing digital lender earning ~5% on AUM whose
+partner-book losses sit outside GNPA; buy only at or below ~Rs 350 if the proof
+gate fires, because value compounds through partner-half PAT (FV CAGR 21.2%,
+COMPOUNDER on one reading) and not through a discount closing. Two partners hold
+95% of the parent's DLG pools; the parent guarantee was 228% of parent net worth.
 
 ## DECISION STATUS AND ENTRY ZONE
-None. No valuation has run. (2026-09-19)
+2026-10-04 (run kissht-2026-09-19, phase 3): gate verdict PROCEED WITH FLAGS;
+valuation decision AVOID (Gate 0 AVERAGE 55/160; B14, Verifier C F12 concur);
+FTTCP +2 of 8 DEEP WATCH leaning AVOID, posture VALUE-TRAP RISK. Entry zone
+Rs 301.5 to ~Rs 350 (Rs 350 operator override; mechanical Rs 344.2), FV CAGR
+21.2% COMPOUNDER (17.9% HYBRID on Reading B). Size: none now; ceiling Small.
+Track 1 FV Rs 414.0 (31-Mar-2027) to Rs 737.7 (31-Mar-2030). Priced under the
+unmerged Section 1B v3.11 draft (I5). Notion Decision Status is set by the
+operator in claude.ai, never by this file.
 
 ## SPEAR
 Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -154,10 +164,34 @@ Brief: runs/kissht-2026-09-19/step1-business-brief.md
     blocks Stage 11 sign-off).
 
 ## ACTIVE TRIPWIRES
-- None yet (set at /finalize).
+(2026-10-04, from B14 thesis_broken_if and the signed model falsifiers)
+- Q2 FY27 vs Q2 FY26: Stage 2 > 4.11% or GNPA > 2.92% (T3 DECLINING; by 30-Nov-2026).
+- H2 FY27 all-in loss / avg AUM > 11.6%, or off-book loss rate rising two
+  consecutive half-years (by 31-May-2027).
+- Revenue margin minus all-in loss narrowing two consecutive quarters.
+- A top-two partner exits or cuts its DLG pools by more than one third with no
+  replacement; RBI cuts the 5% DLG cap or changes DLG recognition.
+- RBI inspection shown to cover FY25 or later (trust falsifier).
+- Time stop: proof gate (all-in loss < 10.5%, H2 FY27) not fired by 31-May-2027.
+- Partner-cap revisit: FLDG charge > 40% of outside revenue, or top-two share
+  > 90% through FY27 (DLG-pool measure already 95%; measure open, CAPM).
 
 ## OPTIONALITY REGISTER (summary)
-- None yet.
+(2026-10-04, from B07.optionality_register; none credited in value)
+- Insurance and MF fee income becomes a disclosed line (2-4 quarters).
+- New secured product launch per management's pecking order (3-5 years).
+- Second rating notch cuts borrowing cost 100-150 bps (FY27-FY28).
+- LAP reaches guided pace, 178+ branches by FY27 end (~9x behind pace).
+- Underwriting edge holds through a real credit down-cycle (2-3 years).
+- Rs 832 Cr preferential capital deployed against a stated need (EGM 14-Oct-2026).
+
+## OPEN OPERATOR RULINGS AFTER FINALIZE (2026-10-04)
+Verifier C phase 3: partner-slice cap row (F1); own-book slice method under
+A27.2 (F2); capital base of the ~34% partner RoE (F3); classification of ~Rs 171 Cr
+parent-held IPO money under A27.1 (F4); close BOOK on AR figures (F8); strike the
+B14 U/D trigger and Rs 347.2 re-open price (F9); B14 position_size field (F10).
+Also: C2P ledger probabilities; G0V Gate 0 lender variant; CAPM; Pillar 2L 0.80x
+reading; structural optic not named; D15-1 to D15-6 (devil's advocate); I4, I5, DBB.
 
 ## RUN FOLDERS
-- runs/kissht-2026-09-19/
+- runs/kissht-2026-09-19/ (phase 1 2026-09-19; FTTCP signed 2026-10-04; finalize 2026-10-04)

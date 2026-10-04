@@ -122,6 +122,9 @@ Do not upgrade a stage's model without editing its agent file.
   go in SEPARATE commits so recovery stays surgical.
 - Framework/prompt amendments and run outputs travel on SEPARATE branches
   and PRs; an amendment never rides a run PR.
+- Any PR that changes frameworks/, .claude/skills/section-1b/ or an operator
+  ruling also updates claude-web/PROJECT_INSTRUCTIONS.md (the claude.ai
+  project instructions), or says in the PR description why not.
 
 ## FERRY AND COMMIT HYGIENE (both sides; team workflow v2)
 - Hash by default. Every report a command produces that involves a commit
@@ -187,6 +190,9 @@ weigh, never anchored evidence.
                  Downstream_Source_Discovery_Protocol_v1_0.md (source
                  registry for downstream signal candidates; Role 5.5
                  verifies against it in claude.ai)
+- claude-web/PROJECT_INSTRUCTIONS.md   repo copy of the claude.ai project
+                 instructions (v4.1); the operator pastes it into the
+                 project settings and keeps the two in sync
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp

@@ -129,7 +129,7 @@ Before valuing, Role 1 verifies the single-credit map across FTTCP Part B and Se
 
 ## OPERATING RULES
 
-- Execute the sections in order, in one pass, in claude.ai and in the pipeline alike. Write the interim summary line at the end of each section and continue without waiting. The operator reviews once: the destination PE base and earnings basis at the /fttcp pillar-approval gate, then the final verdict (operator ruling 2026-10-03). These gates still stop the run: Halt 1 and the signed Mental Model (before this role runs), the /fttcp P/E gate, the Section 1B Amendment 16, 17 and 18 gates, and Rule H before Role 3. No FTTCP output is a missing-input stop.
+- Execute the sections in order, in one pass, in claude.ai and in the pipeline alike. Write the interim summary line at the end of each section and continue without waiting. The operator reviews once: the destination PE base and earnings basis at the /fttcp pillar-approval gate, then the final verdict (operator ruling 2026-10-03). These gates still stop the run: Halt 1 and the signed Mental Model (before this role runs), the /fttcp P/E gate, the Section 1B Amendment 16, 17 and 18 gates, and Rule H before Role 3. A missing item inside an FTTCP output is NOT FOUND, stated with the gap named, and never stops the run (consumption clause). FTTCP not run at all is a mechanical stop (the FTTCP rule below).
 - Show ALL math. Every formula, every assumption, every intermediate step.
 - State the most evidenced path (v3.7, Section 1B v3.10 Amendment 26.3). Where evidence is thin, present both readings and the single observation that separates them. Size the position for the doubt (v3.9 Amendment 25). Do NOT shade individual inputs. Per-input conservatism is retired: five inputs shaded 10% each produce a bear case labelled base.
 - Use tables. Every scenario in a scannable table.
@@ -1018,7 +1018,7 @@ This one line must be specific enough that I can review it quarterly and instant
 
 *Feed to Pillar 3.* A ledger showing capital deployed into capacity that then filled, and contrarian decisions that worked, is evidence of growth visibility. State it in the Pillar 3 worksheet line: "Entrepreneur Ledger supports / does not support the premium because ___."
 
-*Two limits.* A promoter with a CONCERN or AVOID verdict still gets a ledger, and the ledger CANNOT lift the position cap that verdict imposes. And single credit (v3.6 Amendment 4) still binds: a ledger fact credited into Pillar 3 is not credited again in the Strategic Premium.
+*Two limits.* A promoter with a CONCERN or AVOID verdict still gets a ledger. The ledger CANNOT lift a cap imposed by an AVOID verdict or by an INTEGRITY concern; for a STRUCTURE concern the ledger decides the cap (operator ruling OR-14, see Section 7). And single credit (v3.6 Amendment 4) still binds: a ledger fact credited into Pillar 3 is not credited again in the Strategic Premium.
 
 *NOT FOUND is a valid entry.* A row with no filed evidence reads NOT FOUND and is not inferred. An empty ledger is itself a finding: state it.
 
@@ -1126,7 +1126,7 @@ Decision rules:
 - **BUY ON DIPS:** CMP between MoS and Entry Price
 - **WATCHLIST:** CMP above Entry Price but thesis is strong — wait for correction
 - **INSUFFICIENT CONVICTION (ValuePickr, v3.5):** thesis has one or more specific gaps that a named upcoming event will resolve, and until it does, position action would be premature. Not "wait for price" (that's WATCHLIST). Not "reject" (that's AVOID). Specifically: "we do not yet know enough to size this correctly." Requires an explicit resolving event and a review date. See INSUFFICIENT CONVICTION section below.
-- **AVOID:** Gate 0 AVERAGE/AVOID OR Promoter CONCERN/AVOID OR Upside/Downside < 2x
+- **AVOID:** Gate 0 AVERAGE/AVOID OR Promoter AVOID on an integrity finding OR Upside/Downside < 2x. Promoter CONCERN never forces AVOID by itself; it routes through the Entrepreneur Ledger per the OR-14 rule under the position size rules (operator ruling OR-14).
 - The Hurdle Ratio band (PASS / CONDITIONAL / STOP) is shown on the card. It caps no verdict (Amendment 24; ruling OR-2, 2026-09-15).
 - Transition-Alpha Filter default: a good business WITHOUT a clear inflection goes to WATCH-FOR-INFLECTION, not TRACK.
 - ENTRY CONJUNCTION (anti-value-trap): a BUY or BUY-ON-DIPS executes only when BOTH hold: price inside the entry zone AND the most recent quarterly monitoring checklist shows no thesis-broken trigger fired. Price entering the zone BECAUSE a trigger fired is a withdrawn zone, not an opportunity. Every thesis must state this conjunction explicitly in its Section 7 verdict box.
@@ -1156,7 +1156,7 @@ Position size rules (v3.5 — Conviction Outlier tier added):
 - **Large (7-10%):** Gate 0 EXCELLENT (≥120) + Promoter EXEMPLARY/TRUSTWORTHY + Emerging Moat EXPANSION + CMP below MoS price + Sector Literacy Track ≥3 books
 - **Medium (4-6%):** Gate 0 GOOD+ or better + Promoter TRUSTWORTHY + CMP at or below Entry price + Sector Literacy Track ≥3 books
 - **Small (2-3%):** Everything else that qualifies as BUY; Sector Literacy Track not gating for Small positions
-- Promoter Verdict caps always bind (e.g., a Promoter Concern cap overrides everything above).
+- Promoter Verdict caps always bind, as OR-14 sets them: CONCERN splits by kind (operator ruling OR-14, 2026-09-09, recorded 2026-10-04). INTEGRITY concern (misstatement, unexplained related-party leakage, pledges against the company, regulatory or exchange action, auditor exit under dispute, siphoning): the ledger does not offset it; size ceiling Small; the verdict may be AVOID on the promoter alone. STRUCTURE concern (promoter in an executive role, related-party revenue captive by design, aggressive capital raising, a reverse merger, family on the board, concentration on one person): the ledger decides. Three or more of the four ledger heads (what was built and from what base; capital raised versus deployed; contrarian decisions that worked; skin in the game) evidenced from 📄 filed or counterparty sources: treat as TRUSTWORTHY for sizing and carry each structural concern as a named tripwire. Fewer than three: Small ceiling, with the ledger gaps named. AVOID on the promoter check is a hard stop only for integrity findings; a structure-only AVOID is a CONCERN with a weak ledger. Nothing is offset silently: the verdict names the ledger lines credited and the concerns made tripwires.
 - The Conviction Outlier tier requires explicit written justification in the Role 2 output including: which four gating conditions are met and how, which fifth-book (or more) Sector Literacy entries qualify, and why the position size is 12-15% rather than 10% (i.e., why Large is not sufficient).
 - The Role 1 dispersion sizing cap (v3.5, Section 4H-pre) also binds: fair value range width 40-80% caps at Medium, above 80% caps at Small, regardless of conviction. **The dispersion cap binds the Conviction Outlier tier too: a fair value range width above 80% bars Conviction Outlier sizing regardless of the gating conditions.** The tightest cap wins.
 
@@ -1519,7 +1519,7 @@ The Quarterly Results Review Protocol v1.4 (Step 5.5) and the Annual Report Anal
 - **Paired catalogues (v3.7, Rule I).** The failure catalogue (Kernex, Tipco, Rappid Valves, Ind Swift) is paired with the success catalogue at `frameworks/success_catalogue.md`: names from the operator's own history that looked ugly on trailing numbers and compounded. Every pattern-match to a failure name is answered with the nearest success name and the observable difference between them. Enforced in Role 3 Section 3 once the catalogue holds four names.
 - Cross-reference EVERY major claim against at least one other agent's output. The hardest verdict wins.
 - If Gate 0 is below 60, default recommendation is WATCHLIST regardless of narrative quality.
-- If Promoter verdict is CONCERN or AVOID, default recommendation is AVOID regardless of everything else.
+- If Promoter verdict is AVOID on an integrity finding, default recommendation is AVOID regardless of everything else. A CONCERN routes through the Entrepreneur Ledger (operator ruling OR-14, Role 2 Section 7).
 - Exit PE is governed solely by Section 1B (see MY INVESTMENT CRITERIA).
 - Always show the bear case math, not just the bull case.
 - Position size should reflect conviction. Size per the Role 2 Section 7 position size rules.

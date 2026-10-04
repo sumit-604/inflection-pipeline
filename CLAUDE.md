@@ -130,6 +130,10 @@ October 2026 audit, ruled 2026-10-04 (audits/RULINGS_2026-10.md item numbers):
   an acceptance rate below 60% on a denominator of 4 or more.
 - OR-30 (items 81, 82): /run-quarterly A4 defers Role 4 Steps 6.5/7 and
   Role 5 Step 8D to /fttcp and Role 1 and flags pillar-relevant facts.
+Post-Kwick rulings, 2026-10-04 (audits/RULINGS_2026-10.md, post-Kwick section):
+- OR-32: Verifier A checks 100% of verdict-card, Section 1B pillar and
+  Gate 0 inputs (mandatory_checked of mandatory_total in B12a); everything
+  else stays a materiality sample with coverage stated honestly.
 
 ## WORDS
 - "done" for a stage = full report written AND valid YAML block emitted

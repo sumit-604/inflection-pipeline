@@ -11,7 +11,7 @@
 | LIQUIDITY | +0.34 | -0.14 | 6 of 6 | mid, falling |
 | STRESS | -0.52 | -1.13 | 5 of 5 | low, falling |
 | IN_STRESS | +0.02 | -0.62 | 6 of 6 | mid, falling |
-| IN_GROWTH | +0.00 | +0.70 | 2 of 3 | mid, rising |
+| IN_GROWTH | +0.83 | +0.34 | 2 of 3 | high, rising |
 
 Exposure bands are switched off: the band table failed condition (a) of PASS_BAR.md (EVALUATION_2026-10.md, section 5). What each quadrant, liquidity and stress tag has meant for the six assets over the following 12 months is in that file, section 4.
 
@@ -22,7 +22,7 @@ Inputs, latest z-score (sign already applied; "carried" = last published value c
 - LIQUIDITY: US M2 YoY +0.60 (carried); Fed assets 6m log change +0.70; Fed funds 6m change (inverted) +0.24; NFCI level (inverted) +1.13; dollar 6m change (inverted) +0.32; real yield 6m change (inverted) -1.03
 - STRESS: VIX level -0.47; Baa spread level -1.28; St Louis stress index -1.07; EPU US level +0.03; EPU global level -0.34 (carried)
 - IN_STRESS: India VIX level -0.43; EPU India level +1.04; USD/INR 6m log change -0.21; FPI equity 3m sum (inverted) -0.48; India call rate 6m change -0.20 (carried); India CPI YoY (MoSPI from 2014, OECD before) +0.05 (carried)
-- IN_GROWTH: India IIP YoY (MoSPI) +0.91 (carried); India OECD CLI 6m change (partial, ends 2024-01) n/a; Nifty 6m log change -0.34
+- IN_GROWTH: India IIP YoY 3m mean (MoSPI) +1.18; India services GVA YoY (MoSPI, quarterly) +0.42; India bank credit YoY (BIS, quarterly) n/a
 
 ### Analogues
 

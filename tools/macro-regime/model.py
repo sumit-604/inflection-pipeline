@@ -166,11 +166,15 @@ DIAL_INPUTS = {
         ("India call rate 6m change", lambda p: chg(p["in_call_rate"], 6), +1),
         ("India CPI YoY (MoSPI from 2014, OECD before)", lambda p: p["in_cpi"], +1),
     ],
-    "IN_GROWTH": [   # India growth dial; sets the India regime with in_cpi
-        ("India IIP YoY (MoSPI)", lambda p: p["in_iip_yoy"], +1),
-        ("India OECD CLI 6m change (partial, ends 2024-01)",
-         lambda p: chg(p["in_cli"], 6), +1),
-        ("Nifty 6m log change", lambda p: logchg(p["nifty"], 6), +1),
+    "IN_GROWTH": [   # India growth, relative view: the vote's three inputs
+        # as z-scores against their 5-year norm. No price input (operator
+        # ruling 2026-10-05: Nifty and the OECD CLI removed).
+        ("India IIP YoY 3m mean (MoSPI)",
+         lambda p: p["in_iip_yoy"].rolling(3, min_periods=2).mean(), +1),
+        ("India services GVA YoY (MoSPI, quarterly)",
+         lambda p: p["in_services_gva_yoy"], +1),
+        ("India bank credit YoY (BIS, quarterly)",
+         lambda p: p["in_bank_credit_yoy"], +1),
     ],
 }
 DIALS = ["GROWTH", "INFLATION", "LIQUIDITY", "STRESS", "IN_STRESS", "IN_GROWTH"]
@@ -229,7 +233,8 @@ IN_CPI_BENCH = 5.0         # % YoY, MoSPI CPI combined
 # misses; quarterly, known two months after quarter end), bank credit YoY
 # above IN_CREDIT_BENCH (financing of both). With three tests available two
 # must pass; with two (before the quarterly GVA series starts in 2012) both
-# must. The z-score dial ("zscore") stays as an option.
+# must. The z-score dial ("zscore") reads the same three inputs against
+# their 5-year norm: the relative question beside the vote's absolute one.
 IN_GROWTH_MODE = "vote"    # "vote" or "zscore"
 IN_IIP_BENCH = 4.0         # % YoY
 IN_GVA_BENCH = 7.0         # % YoY, services GVA, constant prices
@@ -375,8 +380,9 @@ def rules() -> list[str]:
          "(RBI 4% target plus one point); growth HIGH when a strict majority "
          f"of the available tests pass: IIP YoY (3-month mean) > {IN_IIP_BENCH}%, services GVA "
          f"YoY > {IN_GVA_BENCH}% (quarterly, known two months after quarter "
-         f"end), bank credit YoY > {IN_CREDIT_BENCH}% (IN_GROWTH_MODE = vote; "
-         "the z-score dial is the other option). India regime governs Nifty "
+         f"end), bank credit YoY > {IN_CREDIT_BENCH}% (IN_GROWTH_MODE = vote). The "
+         "IN_GROWTH dial reads the same three inputs as z-scores against their "
+         "5-year norm (the relative view; option zscore). India regime governs Nifty "
          "and Indian rates; the global regime governs gold, silver, base "
          "metals and Brent. DIVERGENCE is flagged when the two differ.",
          "LIQUIDITY tag: EASING above +0.25, TIGHT below -0.25. STRESS tag: "

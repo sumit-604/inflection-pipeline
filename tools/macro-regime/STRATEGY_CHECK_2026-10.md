@@ -236,3 +236,44 @@ expected: the old dial carried Nifty's own 6-month change inside it.
 Current read (2026-09): 2 of 2 tests pass (IIP 3m mean 7.8%, services
 GVA 10.0% for Apr-Jun 2026; the BIS credit series ends 2025-12 and is
 NOT FOUND for 2026-05 on). India GOLDILOCKS, CPI 4.82% against 5.0%.
+
+### India z-score dial rebuilt on the vote's inputs, 2026-10-05
+
+Operator ruling 2026-10-05, after seeing the two definitions read 2025
+opposite ways (dial D, vote G). The dial had three inputs: IIP, the OECD
+leading indicator (ended 2024-01) and Nifty's 6-month change, so from
+2024 it was half IIP and half Nifty, reading the market and calling it
+growth. It now reads the same three inputs as the vote (IIP YoY 3-month
+mean, services GVA YoY, bank credit YoY) as z-scores against their
+5-year norm. The vote asks the absolute question (healthy pace or not);
+the dial asks the relative one (faster or slower than the recent past).
+Neither uses a price. Both sides (model.py, Pine) changed.
+
+| Year | Vote (default) | Dial, rebuilt |
+|---|---|---|
+| 2005 | `....GGGGGGRR` | `GGGGGGGGGGRR` |
+| 2006 | `GGGGRRRRRRRR` | `GGGGRRRRRRRR` |
+| 2007 | `RRRRRRRRRRRR` | `RRRRRRRRRRRR` |
+| 2008 | `RRRRRRRRRRRS` | `RRRRRSSSSSSS` |
+| 2009 | `SSSSSSSSSSSR` | `SSSSSSSSSSSS` |
+| 2010 | `SSSRRRRRRRRR` | `SSSSSSSSSSSS` |
+| 2011 | `RRRRRRRRSSSS` | `SRRRRSSSSSSS` |
+| 2012 | `SSSSSSSRRRRR` | `SSSSSSSSSSSS` |
+| 2013 | `RRRRRSSRRRRR` | `SSSSSSSSSSSS` |
+| 2014 | `RRRRSRRRRDDD` | `SSSSSSSSSDDD` |
+| 2015 | `RSSDSSDDDGSR` | `SSSDSSDDDDSS` |
+| 2016 | `SRGRRRRRGGGD` | `SSDRRRRRGGGG` |
+| 2017 | `DDDDDDDDDDDS` | `DDDDDDDDDDDS` |
+| 2018 | `SGGGDDGGGGGD` | `SDGGDDDGGGGG` |
+| 2019 | `GDDDGGDDDDSS` | `DDDDDGGDDDSS` |
+| 2020 | `SSSSSSSSSSSD` | `SSSSSSSSSSSD` |
+| 2021 | `DSSDSSSRGGDS` | `DSSDSRRRGGGR` |
+| 2022 | `SSSSSSSRSRRR` | `RRSSRRRRRRRR` |
+| 2023 | `RRRGGGRRRGRR` | `RRRGGGRRRGRR` |
+| 2024 | `SRGGGRGGRRRR` | `RRGGGRGGRRRR` |
+| 2025 | `GGGGDDDGGGGG` | `GGGGGGGGGGGG` |
+| 2026 | `GGGGGGGGG` | `GGGGGGGGG` |
+
+The two agree in 70% of months since 1998-02 (the old dial agreed with the vote far less). Dial regime changes 62 in 344 months; vote 86 in 367. Both read 2025 and 2026 as GOLDILOCKS. Where they still differ (2010-2014) the dial reads S where the vote reads R: growth was healthy in absolute terms but below the 2005-2010 norm while CPI ran above 5%.
+
+Current read (2026-09): dial z +0.83 (2 of 3 inputs, credit NOT FOUND after 2026-04), vote 2 of 2. India GOLDILOCKS on both.

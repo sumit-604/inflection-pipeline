@@ -12,7 +12,8 @@
 //  - z-score window needs 60 monthly bars (the Python allows 36). Dials start
 //    5 years after the youngest input in them.
 //  - FPI flows (NSDL) and CFTC positioning are not TradingView series; the
-//    India dial runs without the FPI input.
+//    India STRESS dial runs without the FPI input. India growth uses
+//    request.economic("IN", IPYY / LG / GDPS) on both definitions.
 //  - Copper/gold uses front-month futures, not Pink Sheet averages.
 //  - Bands failed PASS_BAR.md (a) and are OFF by default. Turn them on to test.
 //
@@ -27,9 +28,8 @@
 // and inflation. India growth HIGH (default, "Design A") when a strict
 // majority of three fixed-benchmark tests pass: IIP YoY 3-month mean above
 // 4%, services GDP YoY above 7% (quarterly, held between prints), bank
-// credit growth above 12%. No price input. The earlier z-score dial (IIP,
-// OECD CLI, Nifty 6m change against their 5-year norm) is kept as an
-// option. India inflation high = CPI YoY above 5% (RBI 4% target plus one
+// credit growth above 12%. No price input. The z-score dial option reads
+// the same three inputs against their 5-year norm (relative view). India inflation high = CPI YoY above 5% (RBI 4% target plus one
 // point). Lower-case strip r g s d below the
 // global strip; "Background shows" picks which regime colours the pane. The
 // India regime governs Nifty and Indian rates; the global one governs gold,
@@ -46,7 +46,7 @@ cpiBench  = input.float(3.0, "Inflation HIGH if US CPI YoY above (%)", group = "
 beBench   = input.float(2.5, "or if 10y breakeven above (%)", group = "Level benchmarks")
 inCpiBench = input.float(5.0, "India inflation HIGH if CPI YoY above (%)", group = "Level benchmarks")
 inGrowthDef = input.string("Benchmarks (vote)", "India growth definition", options = ["Benchmarks (vote)", "z-score dial"], group = "India growth",
-     tooltip = "Vote: growth HIGH when a strict majority of the available tests pass (2 of 3, or both of 2). No price input. z-score dial: IIP, OECD CLI and Nifty 6m change against their 5-year norm (the earlier definition).")
+     tooltip = "Vote: growth HIGH when a strict majority of the available tests pass (2 of 3, or both of 2): the absolute question. z-score dial: the same three inputs against their 5-year norm, HIGH above zero: the relative question. Neither uses a price.")
 iipBench    = input.float(4.0,  "IIP YoY, 3-month mean, above (%)", group = "India growth")
 gvaBench    = input.float(7.0,  "Services GDP YoY above (%)", group = "India growth")
 creditBench = input.float(12.0, "Bank credit growth YoY above (%)", group = "India growth")
@@ -106,12 +106,10 @@ epuGl   = m("FRED:GEPUCURRENT")
 epuIN   = m("FRED:INDEPUINDXM")
 inCall  = m("FRED:IRSTCI01INM156N")
 inCpi   = m("FRED:CPALTT01INM659N")
-inCli   = m("FRED:INDLOLITONOSTSAM")
 // India (Trading Economics feed on TradingView; FRED OECD series as fallback)
 inIrYY  = m("ECONOMICS:INIRYY")        // India CPI inflation, % YoY
 inIpYY  = m("ECONOMICS:INIPYY")        // India industrial production, % YoY
 inIpIdx = m("FRED:INDPROINDMISMEI")    // fallback: OECD production index
-nifty   = m("NSE:NIFTY")
 inCpiLvl = na(inIrYY) ? inCpi : inIrYY
 // India growth tests (request.economic repeats the last release between prints)
 ecIP   = request.economic("IN", "IPYY", ignore_invalid_symbol = true)   // industrial production YoY
@@ -161,10 +159,12 @@ STRESS = mean6(zs(vix), zs(baa10y), zs(stlfsi), zs(epuUS), zs(epuGl), float(na))
 IN_STRESS = mean6(zs(invix), zs(epuIN), zs(logchg(usdinr, 6)), zs(chg(inCall, 6)), zs(inCpiLvl), float(na))   // FPI input not on TradingView
 inIpIdxYoY = yoy(inIpIdx)   // computed every bar (history-dependent), then picked
 iipYoY = na(ecIP) ? (na(inIpYY) ? inIpIdxYoY : inIpYY) : ecIP
-IN_GROWTH = mean6(zs(iipYoY), zs(chg(inCli, 6)), zs(logchg(nifty, 6)), float(na), float(na), float(na))
-// vote: IIP 3m mean > bench, services GDP YoY > bench, credit growth > bench
 iip3   = ta.sma(iipYoY, 3)
 gvaYoY = yoy(ecGDPS)
+// India growth dial, relative view: the vote's three inputs as z-scores
+// against their 5-year norm. No price input (operator ruling 2026-10-05).
+IN_GROWTH = mean6(zs(iip3), zs(gvaYoY), zs(ecLG), float(na), float(na), float(na))
+// vote: IIP 3m mean > bench, services GDP YoY > bench, credit growth > bench
 tIip   = na(iip3) ? int(na) : iip3 > iipBench ? 1 : 0
 tGva   = na(gvaYoY) ? int(na) : gvaYoY > gvaBench ? 1 : 0
 tCr    = na(ecLG) ? int(na) : ecLG > creditBench ? 1 : 0

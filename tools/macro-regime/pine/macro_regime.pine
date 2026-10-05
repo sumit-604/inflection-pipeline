@@ -57,6 +57,13 @@ showLabels = input.bool(true, "Label each regime change")
 showLegend = input.bool(true, "Legend table")
 stripY     = input.float(-2.7, "Letter strip y level")
 stripY2    = input.float(-2.95, "India strip y level")
+// colours and transparency (0 = solid, 100 = invisible)
+cREFL   = input.color(color.green, "REFLATION",   group = "Regime colours", inline = "c1")
+cGOLD   = input.color(color.teal,  "GOLDILOCKS",  group = "Regime colours", inline = "c1")
+cSTAG   = input.color(color.red,   "STAGFLATION", group = "Regime colours", inline = "c2")
+cDEFL   = input.color(color.gray,  "DEFLATION",   group = "Regime colours", inline = "c2")
+bgAlpha = input.int(88, "Background transparency", minval = 0, maxval = 100, group = "Regime colours")
+lblAlpha = input.int(20, "Label transparency", minval = 0, maxval = 100, group = "Regime colours")
 
 // ---------------------------------------------------------------- series
 m(sym) => request.security(sym, "1M", close, ignore_invalid_symbol = true)
@@ -196,10 +203,6 @@ band(string asset) =>
 bandSel = band(bandAsset)
 
 // --------------------------------------------------------------- colours
-cREFL = color.green
-cGOLD = color.teal
-cSTAG = color.red
-cDEFL = color.gray
 quadColor(int q) => q == 0 ? cREFL : q == 1 ? cGOLD : q == 2 ? cSTAG : q == 3 ? cDEFL : color.new(color.white, 100)
 quadLetter(int q) => q == 0 ? "R" : q == 1 ? "G" : q == 2 ? "S" : q == 3 ? "D" : ""
 quadLower(int q) => q == 0 ? "r" : q == 1 ? "g" : q == 2 ? "s" : q == 3 ? "d" : ""
@@ -217,7 +220,7 @@ hline(stHi, "stress high", color = color.new(color.orange, 60), linestyle = hlin
 hline(liqHi, "easing", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
 hline(liqLo, "tight", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
 bgQuad = bgShows == "India regime" ? iquad : quad
-bgcolor(na(bgQuad) ? na : color.new(quadColor(bgQuad), 88), title = "regime background")
+bgcolor(na(bgQuad) ? na : color.new(quadColor(bgQuad), bgAlpha), title = "regime background")
 
 // letter strip: one letter per month at a fixed level, in the regime colour
 plotchar(showStrip and quad == 0 ? stripY : na, "R reflation", char = "R", location = location.absolute, color = cREFL, size = size.tiny)
@@ -236,7 +239,7 @@ regimeChanged = not na(quad) and quad != quad[1] and not na(quad[1])
 if regimeChanged
     monthsRan = na(regimeStart) ? 0 : bar_index - regimeStart
     if showLabels
-        label.new(bar_index, stripY + 0.35, quadFull(quad) + (monthsRan > 0 ? "\n(" + quadFull(quad[1]) + " ran " + str.tostring(monthsRan) + "m)" : ""), style = label.style_label_up, color = color.new(quadColor(quad), 20), textcolor = color.white, size = size.small)
+        label.new(bar_index, stripY + 0.35, quadFull(quad) + (monthsRan > 0 ? "\n(" + quadFull(quad[1]) + " ran " + str.tostring(monthsRan) + "m)" : ""), style = label.style_label_up, color = color.new(quadColor(quad), lblAlpha), textcolor = color.white, size = size.small)
     regimeStart := bar_index
 if na(regimeStart) and not na(quad)
     regimeStart := bar_index

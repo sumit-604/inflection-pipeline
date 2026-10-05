@@ -13,3 +13,4 @@ timestamp. Stage 0 and step1 steps A-G ran inline on the orchestrator session
 | 2 | notes pass 1 | claude-sonnet-5-5 | default (high) | 2,181,503 | 2,002,672 | 178,793 | 21,459 | 2,202,962 | 6m36s | 1 |
 | 2 | notes pass 2 | claude-sonnet-5-5 | default (high) | 4,846,167 | 4,569,529 | 276,580 | 65,949 | 4,912,116 | 14m30s | 1 |
 | 2 | notes pass 3 | claude-sonnet-5-5 | default (high) | 595,481 | 509,045 | 86,418 | 2,805 | 598,286 | 2m31s | 1 |
+| 3 | ardeep | claude-sonnet-5-5 | default (high) | 18,433,041 | 17,910,686 | 522,233 | 75,195 | 18,508,236 | 20m38s | 1 |

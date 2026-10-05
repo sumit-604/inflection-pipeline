@@ -1,0 +1,107 @@
+stage: B03-ardeep
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "BSE scrip code not found on screener page; announcements/ empty. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026; filings before Sep 2025 not collected."
+  - "shareholding/ empty (no automated source). REPAIRED by /step1: NSE SHP XBRL Mar-2026 and Jun-2026 plus text extracts."
+  - "screener export sheets EMPTY (P&L, Quarters, Balance Sheet, Cash Flow, Customization); Data_Sheet.csv populated; screener history FY2023-FY2026 plus Q1 FY27 only."
+  - "no results PDFs from screener. REPAIRED by /step1: H1 FY26, FY26 audited, Q1 FY27 board outcomes."
+  - "no rating PDF. REPAIRED by /step1: CRISIL rationale 2026-07-02 as text; 2024 and 2025 rationales not collected."
+  - "only 2 concalls. OVERRIDDEN by /step1: concalls_available true on 2 transcripts (Jun 2025, Aug 2026); 22 Jun 2026 investor meet has deck but no transcript; no H1 FY26 call."
+  - "annual-report: FY2023-24 AR not collected (two-most-recent rule); prospectus covers pre-IPO years."
+  - "research/ empty, no broker notes."
+  - "prospectus: final prospectus held; near-identical RHP moved to inputs/other/."
+  - "announcements: SAST disclosure 2026-05-19 scanned; .txt corrupt, OCR failed; read PDF page directly."
+  - "shareholding and rating XBRL/HTML originals kept beside text extracts, committed by hand by /step1."
+  - "listed_date: exact NSE Emerge listing date NOT FOUND in corpus (AR Note 1 p.105 says 23 Feb 2024; prospectus dated 2024-02-20)."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer proceed with gaps. Empty at stage 0: research/."
+  - "pass1 gap: FY24 AR not read, so FY24 purchases and FY24 payable days NOT FOUND; FY24 receivable days taken from FY25 AR comparatives."
+  - "pass1 gap: consolidated ageing tables (Notes 2.13.1 and 2.6.1 cited on p.142 and p.140) NOT FOUND IN DOCUMENT."
+  - "pass2 gap: Fluidech acquisition-date balance sheet and purchase agreement NOT FOUND; goodwill working, consolidation method and swap/cash price valuation basis NOT FOUND."
+  - "pass2 gap: Zeacloud and Singapore stand-alone accounts not in corpus (Singapore audited by other auditors, FY26 AR p.127); Singapore total assets conflict: AOC-1 SGD 33,89,867 (about 2,465 Lakhs at 72.72) vs auditor 553.64 Lakhs."
+  - "pass2 gap: preferential issue allottee list, lender list for the 247.95 repayment object, OD facility rate/limit/covenants, FDR lien and maturities, advance tax paid in FY26: all NOT FOUND."
+  - "pass2 note: FY25 AR and the Reg 30 filing of 28 Feb 2026 were read for cross-reference only; no figure from them enters the Pass 1 base."
+  - "stage3: Q1 FY27 other income split and the accounting of the 184.23 Lakhs warrant forfeiture NOT FOUND in the results filings read (note says only interest income, gain on sale of PPE and miscellaneous income)."
+  - "stage3: Fluidech s.156 income tax demand of 235.16 Lakhs (AY 2021-22, per prospectus) current status NOT FOUND; not in FY26 AR."
+  - "stage3: per-director Board and committee attendance NOT FOUND (extract lost the Present markers); other directorships NOT FOUND."
+  - "stage3: HexaData, services, cloud and cybersecurity revenue and margin NOT FOUND; FY26 customer concentration NOT FOUND; order book value NOT FOUND."
+  - "stage3: NSE PDF vs XBRL EPS discrepancy not verifiable from the AR; one EPS mismatch between filings found (standalone FY25 basic 5.26 vs 5.43)."
+flags:
+  - {type: FLAG-CASH, reason: "Six-year cumulative standalone CFO (469.94) Lakhs on one FDR-inside-cash basis against 2,924.80 Lakhs cumulative PBT (PROSP p.51; AR25 p.86; AR26 p.104). FY25 CFO re-cut from +5.10 to (1,751.68) with FDR moved out of cash (AR25 p.86; AR26 p.104). FY26 CFO 1,568.45 includes 1,745.95 FDR liquidation, ex-FDR (177.50). Consolidated CFO (882.50). Receivables over six months 19.9% with no provision. Debt 53.01 to 1,324.33."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter group net sold 84,000 shares in FY26 (Santosh Agrawal -62,000, Pooja Gupta -30,000, Sunil Agrawal +8,000); holding 61.29% to 60.19% (AR26 p.109). No pledge at Mar-2026 or Jun-2026 (SHP). Promoter pay and rent 234.51 Lakhs = 26.5% of standalone PBT; pay +104.7% on PBT -3.2%. Full verdict from B08."}
+  - {type: FLAG-GOVERNANCE, reason: "Fluidech bought from Gaurav Gupta, who held 99% beneficial ownership of Fluidech while an independent director (PROSP p.280) and left the NRC on 24 Mar 2025 (AR25 p.42). Income tax s.131(1A) summons of 24 Feb 2026 on the IPO and use of proceeds absent from AR26. Board report s.10 and s.48 conflict with the revised use-of-proceeds schedule and warrant lapse (AR26 p.52-53, p.65). Independent director Manoj Chugh's LLP billed 12.00 Lakhs against Board report s.39 (AR26 p.147, p.63-64). Auditor FRN differs between Board report and audit report."}
+  - {type: FLAG-DISCLOSURE-OMISSION, reason: "Fluidech s.156 demand 235.16 Lakhs (PROSP p.281) and the IPO summons are not in contingent liabilities (AR26 p.117, p.145). FY25 cash flow comparative re-cut described only as regrouped (AR26 p.118). No order book, HexaData, concentration or ageing-table disclosure."}
+  - {type: FLAG-CONSOLIDATION, reason: "Goodwill 851.11 Lakhs with no policy or test; derived net worth overstatement about 209 Lakhs (B02). No profit elimination on 568.79 Lakhs sold to Zeacloud. Consolidated IFC annexure omits Fluidech. Consolidated P&L inventory change shows only the parent (826.72) against a balance sheet movement of 3,255.66 (AR26 p.133, p.134, p.141)."}
+  - {type: FLAG-MARGIN-BASIS, reason: "Company EBITDA includes other income (28.0% of FY26). Ex other income consolidated margin 1.53% (H1 FY26), 3.15% (H2 FY26), 7.03% (Q1 FY27). Standalone gross margin 10.2%, 16.9%, 29.2%. MD links part of the margin to hardware price volatility and inventory (CALL26 p.10, p.12). Q1 other income 193.21 vs FY26 quarterly average 85.91; forfeiture treatment unstated."}
+phase_verdicts: {p1: "WATCH", p2: "RED FLAG", p3: "RED FLAG", p4: "RED FLAG", p5: "RED FLAG", p6: "WATCH", p7_best_fit: "GARP transition, WATCHLIST (proof gate unfired)"}
+overall_quality: 4.0
+quality_components: {governance: 3, accounting: 4, balance_sheet: 5, earnings: 4}
+kill_switch_notes:
+  - "P1: would not stop. Opinions unmodified; no fraud, default or going concern remark. CARO iv s.186 remark and absent KAMs carried forward."
+  - "P2: would pause. Notes omit a filed tax summons, carry untested goodwill 851.11 and a related party buy-in, and re-cut a prior-year cash flow."
+  - "P3: would stop for a cash conversion review. Six-year cumulative CFO negative against positive profit; FY26 positive CFO rests on FDR run-down."
+  - "P4: would stop. Risk disclosure omits a filed tax summons and the AR does not explain the fall in profit."
+  - "P5: would stop. An independent director owned 99% of a company bought from him; the AR is silent on a filed summons covering the IPO."
+  - "P6: would not stop. Top-line claims hold; asset-light and order book claims unsupported."
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - {finding_rank: 1, triple_pass_value: "seller was NRC chair, resigned 24 Mar 2025", ar_value: "AR25 p.42 table lists Gaurav Gupta as Chairperson; footnote makes Manoj Chugh NRC chair from 10 Jan 2025; Gupta ceased as chair or member on 24 Mar 2025", note_ref: "AR25 p.42; status nuance, not a value error"}
+    - {finding_rank: 6, triple_pass_value: "48.28 = 42.0% of finance cost", ar_value: "48.28 / 115.10 = 41.9%", note_ref: "Notes 2.23 and 2.24 AR26 p.115 (Lakhs); rounding only"}
+    - {finding_rank: 9, triple_pass_value: "consolidated inventory note cited at p.139", ar_value: "value 5,149.87 Lakhs verified; PDF marker page is p.141 (p.139 is the printed folio)", note_ref: "Note 2.12 AR26 p.141 (Lakhs); page reference only. Same marker issue for Note 14 (B02 p.116, marker p.117-118)"}
+missing_risks:
+  - "Income tax s.131(1A) summons arising from the IPO lead manager search absent from AR (R30-0228 p.1-2; AR26 p.117, p.66)"
+  - "Fluidech seller held 99% of Fluidech while an independent director; pending s.156 demand 235.16 Lakhs at IPO (PROSP p.280-281; AR26 p.69, p.118)"
+  - "Receivable collection: 893.06 Lakhs (19.9%) over six months, no provision (AR26 p.112)"
+  - "Working capital and OD dependence: 1,187.42 Lakhs rolling, debt 53.01 to 1,324.33 Lakhs (AR26 p.110)"
+  - "Customer and government concentration: FY23 top five 41.35%, government 35.75%; AR26 gives no figure (PROSP p.28-29)"
+  - "Supplier and distributor concentration: Ingram Micro 27.01% of FY23 purchases (PROSP p.142)"
+  - "Hardware price and inventory dependence of margin (CALL26 p.10, p.12)"
+  - "Goodwill 851.11 Lakhs impairment with Fluidech loss-making, PBT (68.01) Lakhs (AR26 p.132, p.69)"
+  - "Zeacloud asset-heavy depreciation drag against asset-light narrative (CALL26 p.18; AR26 p.13)"
+  - "Funding gap from warrant lapse: 552.69 Lakhs not received, objects cut (AR26 p.53, p.122)"
+  - "Singapore subsidiary scale (13.8% of revenue) audited by other auditors; total assets conflict (AR26 p.127, p.69)"
+  - "Promoter family payroll and pay-for-profit link: pay +104.7% on PBT -3.2% (AR26 p.115, p.118)"
+guidance_table:
+  - {claim: "Driving margin improvement through value-added offerings (Chairman, AR26 p.13)", number: "none", timeframe: "forward", credibility: "2 of 5. FY26 EBITDA margin 3.42% vs 5.59% (AR26 p.76); Q1 FY27 8.55% is outside the AR"}
+  - {claim: "Strong order book supporting sustainable growth (AR26 p.24)", number: "none; prospectus showed 1,168.26 Lakhs at Dec 2023", timeframe: "forward", credibility: "1 of 5. No order book value in the AR"}
+  - {claim: "ZeaCloud continues to scale, high-margin, asset-light (AR26 p.13)", number: "none", timeframe: "FY26", credibility: "1 of 5. Turnover +1.8%, PAT 110.82 to (10.04) Lakhs, MD calls it asset-heavy (AR26 p.69; CALL26 p.18)"}
+  - {claim: "Prospectus: FY24 sales might reach around 14,000 Lakhs (PROSP p.76)", number: "14,000 Lakhs", timeframe: "FY24", credibility: "4 of 5. Actual 13,747.50 Lakhs (98.2%)"}
+  - {claim: "Prospectus: IPO working capital 1,600 Lakhs used Jan to Dec 2024 (PROSP p.75)", number: "1,600 Lakhs", timeframe: "to Dec 2024", credibility: "4 of 5. Fully utilised by 31 Mar 2025 (AR26 p.98)"}
+  - {claim: "Prospectus: FY25 receivables estimate (PROSP p.76)", number: "2,334.43 Lakhs", timeframe: "Mar 2025", credibility: "1 of 5. Actual 5,343.98 Lakhs, 2.29x"}
+  - {claim: "Prospectus: FY25 inventory estimate (PROSP p.76)", number: "2,969.12 Lakhs", timeframe: "Mar 2025", credibility: "3 of 5. Actual 1,894.21 Lakhs, 0.64x"}
+  - {claim: "MD on call: FY27 focus on margin building, not top line (CALL26, outside AR)", number: "none", timeframe: "FY27", credibility: "3 of 5. Q1 consolidated revenue +31% over FY26 quarterly average, standalone -18%"}
+monitorables:
+  - {metric: "Consolidated EBITDA margin ex other income", threshold: "at or above 5% in Q2 FY27 (Q1 7.03%; FY26 2.49%)", where: "H1 FY27 results, Nov 2026", why: "Tests whether the Q1 step-up lasts"}
+  - {metric: "Standalone gross margin", threshold: "at or above 20% (Q1 29.2%; FY26 13.7%)", where: "H1 FY27 P&L lines", why: "Separates mix from price and inventory gain"}
+  - {metric: "Standalone inventory days and quarterly change", threshold: "days at or below 60; no quarterly build above 500 Lakhs", where: "H1 FY27 change in inventories", why: "Inventory gain risk"}
+  - {metric: "Other income and forfeiture treatment", threshold: "184.23 Lakhs placement named; other income at or below 5% of total income", where: "H1 FY27 notes; AR27", why: "Q1 other income 193.21 Lakhs vs FY26 quarterly average 85.91"}
+  - {metric: "Receivables over six months share", threshold: "below 10% (FY26 19.9%); first provision", where: "H1 FY27 balance sheet; AR27 Note 2.13.1", why: "Collection risk and cash conversion"}
+  - {metric: "CFO excluding FDR movements", threshold: "positive; CFO/PAT above 0.7", where: "H1 FY27 cash flow", why: "Conversion proof"}
+  - {metric: "Debt and delayed-payment interest", threshold: "debt at or below 1,324.33 Lakhs; delay interest below 5 Lakhs per half-year", where: "Finance cost line; Note 2.23", why: "Liquidity strain"}
+  - {metric: "Summons follow-up", threshold: "no new Reg 30 filing; disclosure in H1 notes", where: "NSE announcements", why: "Regulatory risk on IPO conduct"}
+  - {metric: "Fluidech and Zeacloud results", threshold: "Fluidech PBT breakeven; Zeacloud PAT above zero; s.156 demand status stated", where: "AOC-1 and notes in AR27", why: "Goodwill and subsidiary drag"}
+  - {metric: "Parent sales to Zeacloud", threshold: "below 50% of Zeacloud turnover; profit elimination shown", where: "AR27 Note 14 and Schedule III", why: "Intra-group revenue quality"}
+  - {metric: "Singapore audited balance sheet", threshold: "total assets reconciled (553.64 vs about 2,465 Lakhs)", where: "AR27", why: "Unresolved total assets and inventory location"}
+ar_new_downstream_entities:
+  - {name: "Fluidech IT Services Pvt Ltd", where_in_ar: "AOC-1 p.69; Note 14 p.118 (first appears as related party in FY26)", entity_type: "subsidiary, 70%, RPT counterparty"}
+  - {name: "Manoj Chugh Advisory LLP", where_in_ar: "Consolidated Note 15 p.147 (consultancy fees 12.00 Lakhs)", entity_type: "RPT counterparty, firm of independent director"}
+  - {name: "Kiran Sreedharan (Secretary, Esconet Singapore Pte Ltd)", where_in_ar: "Consolidated Note 15 p.146", entity_type: "KMP of foreign subsidiary"}
+  - {name: "Amity University", where_in_ar: "Client ecosystem p.22 and strategic pages p.28 (named client)", entity_type: "named customer"}
+  - {name: "Anheuser-Busch InBev", where_in_ar: "p.22, p.28 (named client)", entity_type: "named customer"}
+  - {name: "Indian Army (Army Headquarters Computer Centre)", where_in_ar: "Milestones p.9; p.22, p.28 (seven-year secure cloud engagement)", entity_type: "named customer"}
+  - {name: "Nitya Foundation", where_in_ar: "CSR page p.41", entity_type: "CSR implementation agency"}
+  - {name: "Red Hat (hardware certification of HexaData HD-RS2200)", where_in_ar: "MD&A p.75", entity_type: "named platform"}
+strengths_top3:
+  - "Real top-line growth: standalone revenue 9,465.96 to 29,782.95 Lakhs over FY23 to FY26, CAGR 46.5% (PROSP p.50; AR26 p.103)"
+  - "Margin step-up visible in the latest prints: standalone gross margin 10.2% (H1 FY26), 16.9% (H2 FY26), 29.2% (Q1 FY27); cause unresolved (RES-0528 p.5; Q1BM p.4)"
+  - "Liquidity and clean mechanics: net cash 1,042.73 Lakhs all-in standalone, no promoter pledge, unmodified opinions, CSR and payables ageing clean"
+red_flags_top3:
+  - "Fluidech chain: seller held 99% while an independent director, 4.06x sales, 269.95 Lakhs unexplained, goodwill 851.11 Lakhs untested, 235.16 Lakhs tax demand unmentioned (PROSP p.280-281; AR26 p.69, p.118, p.132)"
+  - "Cash conversion: six-year cumulative CFO (469.94) Lakhs on 2,924.80 Lakhs PBT; FY25 comparative re-cut; FY26 deposit run-down"
+  - "Disclosure: IPO-related income tax summons absent from AR while Board report says no variation and no material change (R30-0228; AR26 p.52, p.65)"
+best_fit_strategy: "GARP transition, WATCHLIST (margin-reset proof gate unfired)"
+one_line_verdict: "Real growth and a visible margin step-up, but the proof gate (durable margin plus cash conversion plus clean governance) is unfired, and the Fluidech chain and the unmentioned IPO summons carry the weight."
+analyst_note: "Quality 4.0 of 10. Stage 3 added three findings stage 2 lacked. (1) The FY25 cash flow was re-cut in the FY26 AR (CFO +5.10 became (1,751.68)); on one basis six-year CFO is negative. (2) The prospectus shows the Fluidech seller held 99% of it while an independent director, with a 235.16 Lakhs tax demand pending. (3) The Q1 FY27 margin jump is a standalone gross margin event (29.2% vs 13.7% FY26), not other income; management credits hardware price volatility and inventory in part. Two readings: structural HexaData mix, or a one-time price and stock gain. Separating observation: HexaData revenue and margin by line plus Q2 FY27 gross margin after stock replacement. Conservatism belongs in position size, not in the projection. The s.186 remark may be an over-report because s.186(11) exempts wholly owned subsidiary loans; counsel should read it."

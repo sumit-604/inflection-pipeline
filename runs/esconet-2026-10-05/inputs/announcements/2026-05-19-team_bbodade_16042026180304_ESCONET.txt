@@ -1,0 +1,7 @@
+SOURCE: runs/esconet-2026-10-05/inputs/announcements/2026-05-19-team_bbodade_16042026180304_ESCONET.pdf
+PAGES: 1
+TEXT LAYER: mixed. [OCR:tesseract] pages were re-OCR'd at 200dpi because the PDF's own text layer was corrupt. [OCR:embedded] pages use the PDF's own text layer, which is sound. [OCR:embedded-CORRUPT] pages needed re-OCR and it has not succeeded: their text is the corrupt original and NO NUMBER may be taken from them.
+RE-OCR OK: 0 | STILL CORRUPT: 1 | CLEAN EMBEDDED: 0
+
+===== PAGE 1 =====
+[OCR:embedded-CORRUPT]

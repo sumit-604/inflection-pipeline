@@ -1,0 +1,19 @@
+company: Esconet Technologies Ltd
+ticker: ESCONET
+cmp: 247.0
+market_cap_cr: 326.0
+run_date: 2026-10-05
+run_type: full
+listed_date: ""          # NSE Emerge; prospectus dated 2024-02-20 (inputs/prospectus p1) so listed within ~3y; exact listing date NOT FOUND in corpus
+concalls_available: true    # /step1 repair 2026-10-05: company holds calls (Jun 2025 FY25 call, Aug 2026 Q1 FY27 call); 2 transcripts held, collector "<3 -> no-concall" heuristic overridden
+sector_cap_row: "Cybersecurity / VAD"   # /step1 Step D 2026-10-05, section-1b chunk 05 sector cap table, 25x; reason in step1-business-brief.md
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing."
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, NETWEB:Profit & Loss, NETWEB:Quarters, NETWEB:Balance Sheet, NETWEB:Cash Flow, NETWEB:Customization, RPTECH:Profit & Loss, RPTECH:Quarters, RPTECH:Balance Sheet, RPTECH:Cash Flow, RPTECH:Customization, ORIENTTECH:Profit & Loss, ORIENTTECH:Quarters, ORIENTTECH:Balance Sheet, ORIENTTECH:Cash Flow, ORIENTTECH:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "only 2 concalls -> no-concall mode (overridden by /step1: concalls_available set true, 2 transcripts)"
+  - "/step1 repairs 2026-10-05: results PDFs (3), announcements (33), shareholding XBRL (Mar-26, Jun-26) with text extracts, CRISIL 2026-07-02 rationale (HTML -> txt), and final prospectus fetched by hand from NSE/CRISIL; RHP and duplicate decks moved to other/; sector_cap_row corrected from guess Pharma / CDMO"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

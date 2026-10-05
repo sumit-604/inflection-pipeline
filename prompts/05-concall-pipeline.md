@@ -168,10 +168,17 @@ block) still holds.
 
 DEGRADED PROCEDURE:
 
-1. No transcripts are provided. Read instead the annual report's MD&A, the
-   chairman's / management letter, and the results commentary from the
-   results PDFs. These are your only sources; apply the same GROUNDED
-   CLAIMS and SOURCE ANCHOR rules to them.
+1. No transcripts are provided. BOUNDED READ (operator ruling 2026-10-04):
+   read the B03 report (outputs/reports/03-ardeep.md) and the B03 block
+   first. Then read ONLY the source pages B03 anchors for the MD&A, the
+   objects of the issue or working capital, and the operating KPIs (the
+   B03 guidance_table rows and the report anchors that name those
+   sections), plus the results commentary pages of the results PDFs. Do
+   NOT read the whole annual report or prospectus. If B03 anchors none of
+   these sections, name the gap in input_gaps rather than widening the
+   read. Token target: under 100k for the stage. These pages are your only
+   sources; apply the same GROUNDED CLAIMS and SOURCE ANCHOR rules to
+   them.
 2. Extract every piece of stated guidance from these documents (revenue,
    margin, capex with timeline, capacity, debt, returns, dividend), and
    check delivery of that guidance against the numbers in the results PDFs.

@@ -330,10 +330,15 @@ Some companies hold no earnings calls. When `manifest.yaml` sets
 `concalls_available: false`, the `inputs/concalls/` folder is not required
 and the concall-dependent stages run in degraded mode:
 
-- **Stage 5** runs in degraded mode: instead of transcripts it reads the
-  annual report's MD&A, the chairman's letter, and the results
-  commentary. It extracts stated guidance and checks delivery against the
-  results PDFs. `credibility_grade` defaults to **C** and may rise to **B**
+- **Stage 5** runs in degraded mode as a bounded dispatch (operator
+  ruling 2026-10-04): instead of transcripts it reads the B03 report and
+  block, then only the MD&A, objects-of-issue or working-capital, and KPI
+  pages that B03 anchors, plus the results commentary. It never reads the
+  whole annual report or prospectus; token target under 100k. Stage 5
+  dispatches only after stage 3 is proven complete (report and B03 block
+  on disk); in this mode it never runs alongside stage 3. Pass it the B03
+  report and block paths. It extracts stated guidance and checks delivery
+  against the results PDFs. `credibility_grade` defaults to **C** and may rise to **B**
   only on documented AR-guidance-vs-results delivery evidence, never to
   **A**. The B05 block gains `no_concall_mode: true`.
 - **Stage 6** runs only if `inputs/peer-concalls/` contains files;
@@ -448,7 +453,7 @@ support this override?". The operator answers it once, at the
 | 15 | Role 3 devil's advocate | (agent file stage-15-devil.md) | Opus 5.5 | B14 + all blocks | `B15-devil` |
 
 Stages 1 and 2 may run in parallel. Stages 4, 5, 8, 9 may run in parallel
-after stage 3. Stage 6 requires stage 5. Stage 7 requires stage 1. Verifiers A, B, D and the Gate 0 + Emerging Moat half of C run in phase 1
+after stage 3 (in NO-CONCALL MODE stage 5 reads B03 and waits for it). Stage 6 requires stage 5. Stage 7 requires stage 1. Verifiers A, B, D and the Gate 0 + Emerging Moat half of C run in phase 1
 after stage 9; C's valuation half runs in phase 3 after stage 11. Stage 13 requires all.
 
 Chronology rule for stage 5: transcripts are passed oldest first and each

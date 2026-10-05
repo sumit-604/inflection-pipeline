@@ -1,7 +1,7 @@
 import { expect, test } from 'claude-code/testing'
 
 import type { Finished } from '../types'
-import { appendRows, cacheHitPercent, effortOf, ledgerRow, runNumber, stageNumber, wall } from './ledger'
+import { LEDGER_HEADER, appendRows, cacheHitPercent, effortOf, ledgerRow, runNumber, stageNumber, wall } from './ledger'
 
 const f: Finished = {
   key: 'a:1', agentId: 'a', type: 'stage-05-concall', description: 'concall analysis',
@@ -32,16 +32,23 @@ test('a row matches the ledger shape and run# counts prior rows', () => {
   const ledger = '| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |\n|---|\n| 5 | concall | sonnet | default | - | - | 155072 | 8m17s | 1 |\n'
   const run = runNumber(ledger, '5', 'x')
   expect(run).toBe(2)
-  expect(ledgerRow(f, 'default', run)).toBe(
-    '| 5 | concall analysis (stage-05-concall) | claude-sonnet-5-5 | default | 10000 | 2000 | 12000 | 2m05s | 2 |',
+  const row = ledgerRow(f, 'default', run)
+  expect(row).toBe(
+    '| 5 | concall analysis (stage-05-concall) | claude-sonnet-5-5 | default | 10000 | 9000 | 0 | 2000 | 12000 | 2m05s | 2 |',
   )
+  expect(row.split('|').length).toBe(LEDGER_HEADER[0]?.split('|').length)
+  // A wide row counts toward run# the same as a legacy narrow row.
+  expect(runNumber(`${ledger}${row}\n`, '5', 'x')).toBe(3)
+  expect(runNumber(`${row}\n`, '-', 'concall analysis (stage-05-concall)')).toBe(2)
   expect(wall(59_400)).toBe('0m59s')
 })
 
 test('append adds the header to a new ledger and keeps old text', () => {
   const fresh = appendRows(null, 'abc-2026-10-03', ['| 1 | x |'])
   expect(fresh.startsWith('# SESSION COST LEDGER — abc-2026-10-03')).toBe(true)
-  expect(fresh.includes('| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |')).toBe(true)
-  const old = '# L\n\n| # | stage | model |\n|---|\n| 1 | a |\n'
-  expect(appendRows(old, 't', ['| 2 | b |'])).toBe(`${old}| 2 | b |\n`)
+  expect(fresh.includes('| # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |')).toBe(true)
+  const current = `# L\n\n${LEDGER_HEADER.join('\n')}\n| 1 | a |\n`
+  expect(appendRows(current, 't', ['| 2 | b |'])).toBe(`${current}| 2 | b |\n`)
+  const legacy = '# L\n\n| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |\n|---|\n| 1 | a |\n'
+  expect(appendRows(legacy, 't', ['| 2 | b |'])).toBe(`${legacy}\n${LEDGER_HEADER.join('\n')}\n| 2 | b |\n`)
 })

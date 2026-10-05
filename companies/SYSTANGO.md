@@ -44,6 +44,13 @@ Halt 1 decision (KILL/SHALLOW/PROCEED): 2026-08-29 PROCEED under explicit operat
 - Revenue dual path BASE 17% / DOWNSIDE 10% CAGR carried to Role 1; margin H2-exit 33.05% held.
 - Earnings basis: FORWARD (one-year-forward operating EPS), operator 30-Aug-2026. Multiple meets operating EPS Rs 18.43 FY26 (reported 21.73), applied one year forward per Amendment 18.1.
 - STILL PENDING for Phase 3 (do not block the approved base): O2 option probabilities; O3 Step 1C live peer table (KSOLVES/INFOBEAN/ONWARDTEC/YUDIZ, claude.ai owes); O4 SEZ 10AA expiry date (post-expiry operating EPS Rs 16.95, 8% haircut).
+- 2026-10-04 OR-14 RE-DERIVATION (operator ruling 2026-10-04; maint/oct-2026-corpus-and-or14). Recorded verdict CONCERN (stage 8 CAUTION, raised to CONCERN in this file; Halt 1 operator promoter-override). Ruling: CONCERN stands, Small ceiling. DBX recorded as INTEGRITY.
+  - INTEGRITY: DBX. Nilesh Rathi (ED and CFO) is sole director; DBX was an RPT customer (Rs1.57cr FY24, nil FY25); Systango took a Rs1.66cr equity stake with no ownership %, control, rationale or RPT designation. The ledger cannot offset it.
+  - STRUCTURE: 60% family board; Chairperson (promoter's mother) 25% attendance FY25; MD and CFO within the family.
+  - STRUCTURE-PENDING: funding of the GBP1.5M Tech Alchemy asset buy against a 0%-used Rs800L IPO acquisitions bucket; was a binding deal left out of AR subsequent events? Answer source: FY26 AR.
+  - Cleared: GreenLeaf TDG (genuine third party).
+  - Ledger 1/4: skin [FILED] (promoter group 71.96% FY23-24, 72.07% FY25). Built: NOT FOUND (search summary only). Contrarian: NOT FOUND. Capital deployed: EVIDENCED-ADVERSE, not counted (IPO use 44.7%; acquisitions bucket 0%). Small holds even if DBX proves STRUCTURE.
+  - Re-engage triggers, ranked: (1) FY26 AR Note 8 and RPT note disclose DBX ownership and control, or the stake is unwound [AR; Companies House PSC register, co. 15645030]; (2) Rathi's full UK directorship register shows no other promoter entities [Companies House]; (3) Rs800L acquisitions bucket deployed or objects formally varied [FY26 Board's Report; NSE monitoring statement]; (4) "Others" loan book (Rs529.55L) shrinks [FY26 CARO (iii)].
 
 ## ACTIVE TRIPWIRES (thesis-broken triggers and falsification metrics)
 - THESIS-BROKEN if: H1 FY27 revenue < Rs 45 cr (breaks the 10% downside path) OR the FY26 AR shows the FY26 receivable release came from write-offs/factoring (A3 fires, destination 16.8x->13.4x) OR the FY26 AR confirms DBX is promoter-controlled with the customer-to-equity cash link.

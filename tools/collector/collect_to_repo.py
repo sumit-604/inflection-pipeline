@@ -314,9 +314,37 @@ def git_try(*args):
     subprocess.run(["git", *args], cwd=REPO_ROOT,
                    capture_output=True, text=True)
 
+# File types a run folder may carry. A Downloads sweep once pushed game
+# files, an Android app package and its signing key into run inputs
+# (LESSONS 2026-10-04). Operator documents: PDF, DOCX, TXT transcripts, XLSX,
+# and .md operator-ferried notes (operator ruling 2026-10-04).
+# The collector's own outputs (.csv from xlsx_to_csvs, .gitkeep keepers) pass.
+ALLOWED_SUFFIXES = {".pdf", ".docx", ".txt", ".xlsx", ".md"}
+COLLECTOR_OUTPUTS = {".csv", ".gitkeep"}
+
+def refuse_disallowed():
+    """Unstage every staged runs/ file whose type is not allowed; log each."""
+    r = subprocess.run(["git", "diff", "--cached", "--name-only",
+                        "--diff-filter=AM", "-z", "--", "runs/"],
+                       cwd=REPO_ROOT, capture_output=True, text=True)
+    refused = []
+    for path in filter(None, r.stdout.split("\0")):
+        name = Path(path).name.lower()
+        suffix = ".gitkeep" if name == ".gitkeep" else Path(name).suffix
+        if suffix in ALLOWED_SUFFIXES or suffix in COLLECTOR_OUTPUTS:
+            continue
+        git("reset", "-q", "--", path)
+        refused.append(path)
+        print(f"  REFUSED (file type {suffix or 'none'} not allowed): {path}")
+    if refused:
+        print(f"  {len(refused)} file(s) refused and left unstaged. Allowed: "
+              f"{', '.join(sorted(ALLOWED_SUFFIXES))}.")
+    return refused
+
 def push_run(run, ticker, today):
     git_try("rebase", "--abort")          # clear any stuck rebase
     git("add", "-A")                      # stage EVERYTHING incl .gitignore
+    refuse_disallowed()                   # then drop non-allowlisted types
     git_try("commit", "-m", f"run inputs: {ticker} {today}")  # ok if empty
     git("pull", "--rebase", "origin", "main")
     git("push", "origin", "main")

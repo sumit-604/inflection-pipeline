@@ -8,7 +8,7 @@ test('a finished stage shows in the band and /stage-cost appends one ledger line
     'runs/demo-2026-10-03/manifest.yaml': 'ticker: DEMO\n',
     '.claude/agents/stage-05-concall.md': '---\nname: stage-05-concall\nmodel: claude-sonnet-5-5\neffort: medium\n---\nbody\n',
     'runs/demo-2026-10-03/session-cost.md':
-      '# SESSION COST LEDGER — DEMO\n\n| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |\n|---|---|---|---|---|---|---|---|---|\n| 1 | gate 0 | sonnet | default | - | - | 134317 | 10m07s | 1 |\n',
+      '# SESSION COST LEDGER — DEMO\n\n| # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |\n|---|---|---|---|---|---|---|---|---|---|---|\n| 1 | gate 0 | sonnet | default | - | - | - | - | 134317 | 10m07s | 1 |\n',
   }
   const key = (path: string) => Object.keys(files).find(k => path === k || path.endsWith(`/${k}`)) ?? path
   const seen: string[] = []
@@ -45,7 +45,7 @@ test('a finished stage shows in the band and /stage-cost appends one ledger line
   const r = await $.command.run({ command: 'stage-cost', args: 'runs/demo-2026-10-03' } as never)
   expect([(r as { text: string }).text, seen.join(',')].join(' | ')).toContain('Appended 1 line(s)')
   expect(files['runs/demo-2026-10-03/session-cost.md']).toContain(
-    '| 1 | gate 0 | sonnet | default | - | - | 134317 | 10m07s | 1 |\n| 5 | concall analysis (stage-05-concall) | claude-sonnet-5-5 | medium | 10000 | 2000 | 12000 | 2m05s | 1 |\n',
+    '| 1 | gate 0 | sonnet | default | - | - | - | - | 134317 | 10m07s | 1 |\n| 5 | concall analysis (stage-05-concall) | claude-sonnet-5-5 | medium | 10000 | 9000 | 0 | 2000 | 12000 | 2m05s | 1 |\n',
   )
 
   const again = await $.command.run({ command: 'stage-cost', args: 'runs/demo-2026-10-03' } as never)

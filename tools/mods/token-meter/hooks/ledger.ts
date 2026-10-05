@@ -3,8 +3,8 @@ import type { Finished, Tokens } from '../types'
 export const ZERO: Tokens = { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }
 
 export const LEDGER_HEADER = [
-  '| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |',
-  '|---|-------|-------|--------|--------|---------|-----------|------|------|',
+  '| # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |',
+  '|---|-------|-------|--------|--------|------------|-------------|---------|-----------|------|------|',
 ]
 
 export const PIPELINE_AGENT = /^(stage-|verifier-|quarterly-)/
@@ -56,11 +56,14 @@ export const effortOf = (agentFile: string | null): string => {
 }
 
 // run# = how many rows for the same stage label the ledger already holds, plus one.
+// Counts both row shapes: the 9-column rows of older ledgers (11 cells after the
+// split on '|') and the current 11-column rows (13 cells). # and stage sit in
+// cells 1 and 2 in both.
 export const runNumber = (ledger: string, stage: string, stageName: string): number => {
   let n = 0
   for (const line of ledger.split('\n')) {
     const cells = line.split('|').map(c => c.trim())
-    if (cells.length < 10) continue
+    if (cells.length < 11) continue
     if (stage !== '-' ? cells[1] === stage : cells[2] === stageName) n += 1
   }
   return n + 1
@@ -69,12 +72,15 @@ export const runNumber = (ledger: string, stage: string, stageName: string): num
 export const stageLabel = (f: Finished): string => `${f.description} (${f.type})`.replace(/\|/g, '/')
 
 export const ledgerRow = (f: Finished, effort: string, run: number): string => {
-  return `| ${stageNumber(f.type)} | ${stageLabel(f)} | ${f.model} | ${effort} | ${inTokens(f.tokens)} | ${f.tokens.output} | ${totalTokens(f.tokens)} | ${wall(f.wallMs)} | ${run} |`
+  const t = f.tokens
+  return `| ${stageNumber(f.type)} | ${stageLabel(f)} | ${f.model} | ${effort} | ${inTokens(t)} | ${t.cacheRead} | ${t.cacheWrite} | ${t.output} | ${totalTokens(t)} | ${wall(f.wallMs)} | ${run} |`
 }
 
-// Appends rows to a ledger's text, adding the header when the ledger is new or has none.
+// Appends rows to a ledger's text, adding the current header when the ledger is new or
+// has none. A ledger that holds only the older 9-column header gets the current header
+// as a new table below its old text, so wide rows never sit under a narrow header.
 export const appendRows = (ledger: string | null, title: string, rows: string[]): string => {
   let text = ledger ?? `# SESSION COST LEDGER — ${title}\n\n`
-  if (!text.includes('| # | stage |')) text = `${text.replace(/\n*$/, '\n\n')}${LEDGER_HEADER.join('\n')}\n`
+  if (!text.includes(LEDGER_HEADER[0] as string)) text = `${text.replace(/\n*$/, '\n\n')}${LEDGER_HEADER.join('\n')}\n`
   return `${text.replace(/\n*$/, '\n')}${rows.join('\n')}\n`
 }

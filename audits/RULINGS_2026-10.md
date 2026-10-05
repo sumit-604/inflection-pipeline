@@ -131,3 +131,11 @@ Ruled by Keerti Kaushik, 2026-10-04. Supersedes item 29 and the MODEL_ROUTING_20
 | verifier-a-numerical | Haiku 4.5 | Sonnet 5.5, effort high | LESSONS.md records that Haiku Verifier A invents false CRITICALs (KARNIKA, OBSCP), so the orchestrator re-checks every CRITICAL on Opus. A checker that needs a checker gives no independence. Verifier A's independence comes from a fresh context and the source PDF page, not the model family. Sonnet 5.5 keeps both. |
 
 Fable is not used for either stage (operator instruction). Expected cost: about $0.30 more per run at list price (Sonnet 5.5 $2/$10 vs Haiku 4.5 $1/$5 per MTok, on 66k to 160k tokens for stage 10 and 84k to 127k for Verifier A), offset by fewer correction passes and less Opus re-checking. Applied in CLAUDE.md DISPATCH, both agent files, prompts/00-orchestrator.md, prompts/10-input-assembly-pipeline.md, prompts/12-verifiers-pipeline.md, prompts/13-synthesis-pipeline.md and LESSONS.md.
+
+## Ruling 2026-10-04: post-Kwick run fixes (OR-32)
+
+Ruled by Keerti Kaushik, 2026-10-04, after the KWICK Phase 1 run (branch run/kwick-2026-10-04, commit 1cd88096). Applied on branch maint/post-kwick-run-fixes.
+
+| Ruling | Text | Applied in |
+|---|---|---|
+| OR-32 | Verifier A checks 100% of verdict-card inputs, Section 1B pillar inputs and Gate 0 inputs (the mandatory tier). Everything else stays a materiality sample with coverage stated honestly. B12a reports `mandatory_checked` against `mandatory_total`, beside `numbers_checked` and `material_universe`. | prompts/12-verifiers-pipeline.md (VERIFIER A rule 2, output statement, B12a YAML); CLAUDE.md OPERATOR RULINGS |

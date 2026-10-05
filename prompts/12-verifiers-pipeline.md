@@ -43,9 +43,18 @@ number in the reports actually in the sources?
 
 RULES:
 1. One response, no stops. Judge only what is in front of you.
-2. Work through the reports' numbers in order of materiality: verdict
-   card figures first, then scorecard inputs, then table cells. You will
-   not verify every number; state your coverage honestly.
+2. TWO TIERS (operator ruling OR-32, 2026-10-04).
+   MANDATORY TIER, checked 100%: every verdict-card input, every Section
+   1B pillar input, and every Gate 0 scorecard input that appears in the
+   reports in front of you. Count the tier first (`mandatory_total`), then
+   check each one (`mandatory_checked`). The two counts must match. If a
+   mandatory figure cannot be checked (its source document is not among
+   your inputs), name it in `coverage_note` with the reason; it is a
+   coverage shortfall, never a silent skip.
+   SAMPLE TIER: everything else. Work through it in order of materiality:
+   scorecard and table inputs that feed a judgment first, then other table
+   cells. You will not verify every sample-tier number; state your
+   coverage honestly.
 3. For each checked number: locate the claimed anchor in the source.
    Verdict per number: ✓ MATCHES | ✗ MISMATCH (state both values) |
    ⊘ ANCHOR NOT FOUND (the cited page/note does not contain it) |
@@ -95,9 +104,11 @@ RULES:
 
 OUTPUT: findings table (severity, report location, claimed value +
 anchor, source truth + location, note), then a coverage statement as two
-COUNTS and the rule you used, not as a bare percentage: how many material
-numbers exist in the reports (your count, and how you decided what counted
-as material), and how many of them you checked. A percentage with no
+COUNTS and the rule you used, not as a bare percentage: first the
+mandatory tier (mandatory figures checked of the mandatory total, with any
+unchecked figure named), then the sample tier: how many material numbers
+exist in the reports (your count, and how you decided what counted as
+material), and how many of them you checked. A percentage with no
 denominator cannot be audited. Then:
 
 ```yaml
@@ -107,6 +118,8 @@ run_date: "{{RUN_DATE}}"
 model: claude-sonnet-5-5
 status: complete
 numbers_checked: 0
+mandatory_checked: 0        # mandatory-tier figures checked (rule 2, OR-32)
+mandatory_total: 0          # mandatory-tier figures in the reports; must equal mandatory_checked
 findings:
   - {severity: "", location: "", claimed: "", source_truth: "", note: "", source_fidelity: false}
 critical_count: 0

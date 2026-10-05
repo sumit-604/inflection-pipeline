@@ -7,3 +7,6 @@ run_type: full
 concalls_available: false
 sector_cap_row: "Pharma / CDMO"
 notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+
+corpus_fixes:   # Job 1, maint/oct-2026-corpus-and-or14, operator approved 2026-10-04
+  - "2026-10-04 removed inputs/annual-report/Annual_Report_2020.pdf: it is the FY2024-25 AR, byte-identical to '10.3 Annual Report FY 2024-25.pdf' (kept). No stage outputs exist."

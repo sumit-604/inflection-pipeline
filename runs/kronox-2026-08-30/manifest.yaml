@@ -7,3 +7,7 @@ run_type: full
 concalls_available: false
 sector_cap_row: "Pharma / CDMO"
 notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+
+corpus_fixes:   # Job 1, maint/oct-2026-corpus-and-or14, operator approved 2026-10-04
+  - "2026-10-04 moved inputs/annual-report/1718019653328.pdf to inputs/prospectus/: it is the Kronox IPO prospectus dated 6 Jun 2024, not an annual report."
+  - "2026-10-04 coverage gap: B00-inputs.yaml records only the FY26 AR held and the prospectus ABSENT, but the folder held the FY24 AR (annual-report/8cda34fd-e700-4fbb-ae5d-c215cb7a976a.pdf) and the prospectus. B00 did not read them. FY2024-25 AR absent: RE-COLLECT."

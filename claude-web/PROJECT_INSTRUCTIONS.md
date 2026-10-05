@@ -628,6 +628,8 @@ e. Deliver the signed mental model for sign-off. Once signed, the ruling is reco
 
 ## 4.4 Standing habits
 
+**Forward application of rulings.** Operator standing ruling 2026-10-04: Framework rulings apply to names analysed from the ruling date forward. Closed names are not re-derived under a new ruling; their record stands as of the run that produced it.
+
 **Corrections without ego.** When a filed extraction, an issuing body, or a live check overrides an earlier reading, flag it openly and number it. The system's honesty is in visible reversals.
 
 **Session-branch discipline.** Any Claude Code session that commits a framework or prompt amendment opens a PR to main the same day. Framework amendments and run outputs travel on separate branches. Unmerged amendments are stranded and every future run silently uses stale framework. Check for stranded amendments at the end of every deep dive.

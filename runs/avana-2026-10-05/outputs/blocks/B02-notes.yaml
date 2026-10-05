@@ -1,0 +1,62 @@
+stage: B02-notes
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00: BSE scrip code absent (collector); repaired at /step1 from NSE API; NSE-only SME listing"
+  - "B00: shareholding Sep-2026 not yet filed (due 21-Oct-2026); 31-Mar-2026 SHP held"
+  - "B00: screener export sheets empty (P&L, Quarters, Balance Sheet, Cash Flow, Customization for AVANA and peers); Data_Sheet CSVs used, cash flow from AR and RHP"
+  - "B00: original FY26 results PDF scanned; legible re-filing 2026-06-23 used"
+  - "B00: no credit rating document; rating_wc_quote unresolved"
+  - "B00: no concalls (NO-CONCALL MODE); presentation/ and research/ empty"
+  - "B00: only FY2025-26 AR exists; FY23-FY25 from RHP restated financials; final prospectus (14-Jan-2026) not collected"
+  - "B00: Reg 31(4) filing scanned (read as images); AR pdf pp.2-4 and 99-127 are image transcriptions (second-hand reading; stray digit possible)"
+  - "B00: peer transcripts only for DANISH; SPCL and MARINE investor presentations only; no listed protection-relay pure play"
+  - "Notes: NOT FOUND in AR notes: FY26 customer concentration and top-customer identity; product-wise revenue; order book; unsatisfied performance obligations"
+  - "Notes: NOT FOUND: CC sanctioned limit and rate, covenants, 5-year repayment schedule, lender and rate of repaid unsecured loan 196.86"
+  - "Notes: NOT FOUND: deferred tax components, tax rate reconciliation, leave encashment roll-forward, lease commitments, warranty period assumptions"
+  - "Notes: NOT FOUND: KIADB unit status in the notes, nature of stock in transit 263.44, description of FY25 other income 115.60, reason for lower warranty accrual rate, whether Purchases 5,752.65 is gross or net of 151.65 warranty usage, FY26 revenue-authority balance netting, cause of 18.32 tax-roll gap"
+flags:
+  - {type: FLAG-CASH, reason: "CFO 795.44 = 48.7% of EBITDA excl. other income (45.5% excluding 30.30 IPO-expense reversal and 22.75 accrued interest); inventory +772.30 (+52.5%); receivables over 6 months 307.13 (13.8% vs 11.4%), over 2 years 86.24 vs 46.26; bank-statement receivables above books each quarter; free cash after capex 45.21 (174.96 after advances inflow). Receivable days improved to 96.7 from 125.8 (AR FY26 p101/p90; Note 14; Note 13; Note 25 item 15)"}
+  - {type: FLAG-CAPEX, reason: "CWIP 466.79 plus commitments 1,094.99 = 1,561.78 vs RHP plan 1,305.38; IPO capex used 275.83 of 1,155.38; KIADB status not in notes; RHP deadline 26-Oct-2026 (Note 25 items 3, 16; Note 2(iii)(b)) (LBF1)"}
+  - {type: FLAG-PROVISION, reason: "Warranty accrual 41.81 (0.50% of revenue) vs 228.47 (3.72%); provision down 25.4%; H2 accrual 0.13% of H2 revenue; journal for 151.65 usage not stated; installation line also net to gross (Note 25 item 11; Note 24) (LBF4)"}
+accounting_quality: 6
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "KIADB unit unbuilt: CWIP 466.79, IPO capex used 275.83 of 1,155.38, commitments 1,094.99; CWIP plus commitments 1,561.78 vs RHP plan 1,305.38; deadline 26-Oct-2026 (RHP); notes silent on status", note_ref: "Note 25 items 3, 16; Note 2(iii)(b) (AR FY26 p119/p108, p125/p114, p107/p96)", rating: "red", why: "Capacity thesis depends on it; 215.44 of commitment above unspent IPO capex needs internal cash"}
+  - {rank: 2, finding: "Warranty accrual 41.81 (0.50% of revenue) vs 228.47 (3.72%); provision 431.99 to 322.15; H2 accrual 0.13% of revenue; usage entry not stated; installation also net to gross", note_ref: "Note 25 items 11-12; Note 24 (AR FY26 p124/p113, p116/p105)", rating: "yellow", why: "Largest other-expense swing; at FY25 additions rate gap 269.8 or 17.1% of PBT (illustrative); two readings, A cost 41.81 vs B 193.46"}
+  - {rank: 3, finding: "H2 EBITDA excl. other income 18.1% vs H1 21.3%; net material cost 54.0% to 63.4%; other expenses 10.7% to 6.9%; FY26 19.47%", note_ref: "Notes 20-24; RES p10; RHP p.72", rating: "yellow", why: "Full-year margin hides a falling exit rate (LBF4)"}
+  - {rank: 4, finding: "Inventory 2,243.25 (+52.5%); FG 690.47 (+108.8%); stock in transit 263.44 new; 42.5% outside bank stock statement; IPO WC object used 123.03 of 860.00", note_ref: "Note 13; Note 20; Note 25 item 15; Note 2(iii)(b)", rating: "yellow", why: "Biggest cash drag; FG sell-through and write-downs NOT FOUND (LBF3)"}
+  - {rank: 5, finding: "Receivables 2,221.29: over 6 months 307.13 (13.8% vs 11.4%); over 2 years 86.24 vs 46.26; no doubtful-debt provision; days 96.7 vs 125.8; FY25 ageing restated vs RHP", note_ref: "Note 14 (AR FY26 p113/p102); Note 25 item 24", rating: "yellow", why: "Days improved but tails aged with zero provision (LBF2)"}
+  - {rank: 6, finding: "Bank stock statement receivables exceed books every quarter (2.15% to 7.77%; 138.36 at 31-Mar-2026); called Not Material; FY25 Q4 inventory bank figure 65.00 below books", note_ref: "Note 25 item 15 (AR FY26 p125/p114); CARO ii(b)", rating: "yellow", why: "Lender-facing figures do not reconcile to books"}
+  - {rank: 7, finding: "CFO 795.44 = 48.7% of EBITDA (45.5% adjusted); free cash after capex 45.21 (174.96 after advances); margin money 719.17 restricted; non-IPO cash 40.37 below margin money", note_ref: "Cash flow (AR FY26 p101/p90); Note 15; Note 17", rating: "yellow", why: "Growth funded from IPO cash, not operations"}
+  - {rank: 8, finding: "IPO accounting: 551.01 paid vs 498.09 booked (52.92 gap); 89.13 promoter recovery 12.7 above pro rata; unspent 2,103.98 vs 1,702.00 FD plus 361.62 bank (40.36 gap)", note_ref: "Note 2(iii); Note 3; Note 25 item 1", rating: "yellow", why: "Certificate ties; underlying reconciliation does not, cause NOT FOUND"}
+  - {rank: 9, finding: "AR FY25 comparatives differ from RHP: profit 847.08 vs 831.23; CFO 573.22 vs 676.66; assets and statutory dues differ by 103.44; contingent items 35.04 dropped", note_ref: "AR p99-101; RHP pp.54, 71, 72, 233, 242; Note 25 item 3", rating: "yellow", why: "FY25 ratios must name source; changes unexplained"}
+  - {rank: 10, finding: "Promoter pay 289.48 (-15.0%) only as FY25 incentive 155.00 ended; fixed pay +56.1%; FY27 +18.0% needs s.197 special resolution; family fees 78.00 flat, scope NOT FOUND; CFO and CS changes", note_ref: "Note 25 item 1 (AR FY26 p117-118/pp.106-107); AGM notice Items 4-7", rating: "yellow", why: "Governance and cost alignment signal, 24.7% of PAT"}
+  - {rank: 11, finding: "Working capital funded via LC discounting and bank charges 55.85 (26.70) as pure interest fell to 29.83; payables +43.3% with Not Due nil; balances subject to confirmation", note_ref: "Notes 23, 7; Note 25 items 6, 8", rating: "yellow", why: "Financing cost hides in supplier credit, not the 76.14 debt line"}
+  - {rank: 12, finding: "Disclosure slips: payable turnover sum not average; MD&A interest cover 0.05x vs 19.4x derived; ROCE on long-term debt only (FY25 57.52% vs 48.2% stated definition); CARO vi vs Board on cost records", note_ref: "Note 25 item 24 (AR FY26 p127/p116); CARO vi", rating: "yellow", why: "Weak note review; use stated-definition ROCE in stage 10"}
+  - {rank: 13, finding: "Thin notes: deferred tax one line, no rate reconciliation, no customer or product split, no lease commitments, no CC limit or covenants", note_ref: "Notes 11, 18, 25", rating: "yellow", why: "Untestable items carried as input gaps"}
+  - {rank: 14, finding: "Clean base: unmodified audit and IFC, no default, debt 76.14 (0.01x), no subsidiaries or loans to parties, gratuity 93.3% funded, no ESOP, going concern clear, IPO inflow ties 2,555.75", note_ref: "Notes 2-4, 25; AR-aud; CARO", rating: "green", why: "Sound floor under the yellow items"}
+  - {rank: 15, finding: "AS framework; revenue at delivery and acceptance (point in time); WDV depreciation per Schedule II; OFS 7,94,000 shares confirmed", note_ref: "Note 1; Note 2 (AR FY26 p103/p92, p107/p96)", rating: "green", why: "Conservative recognition; no ECL or lease accounting to test"}
+red_flags:
+  - "KIADB unit unbuilt: CWIP 466.79 plus commitments 1,094.99 vs RHP plan 1,305.38; deadline 26-Oct-2026 with no further extension; notes silent (Note 25 items 3, 16)"
+  - "Warranty accrual fall (0.50% vs 3.72% of revenue) unexplained; entry for 151.65 usage not stated (Note 25 item 11) - rated watch, not a manipulation finding"
+  - "Zero doubtful-debt provision while receivables over 2 years doubled to 86.24 (Note 14)"
+  - "Bank stock statement receivables above books in all four FY26 quarters, called Not Material (Note 25 item 15)"
+questions_for_mgmt:
+  - "What is the KIADB unit status against 26-Oct-2026, and how is the 1,094.99 commitment funded above the 879.55 unspent IPO capex?"
+  - "Why did warranty accrual fall to 0.50% of revenue (H2 0.13%) while 141.65 of claims were used in H2, and is Purchases 5,752.65 gross or net of the 151.65 usage?"
+  - "What is in finished goods 690.47 and stock in transit 263.44, and why are they outside the bank stock statement?"
+  - "Why does bank-statement receivables exceed books every quarter, and who are the FY26 top five customers (RHP showed 38.79% for H1)?"
+  - "Why were FY25 comparatives (profit, ageing, 103.44 revenue-authority balance, contingent items) changed from the RHP, and what is the scope of the 78.00 family fees?"
+receivables_trend: "improving on days, tails deteriorating: days 96.7 vs 125.8; total 2,221.29 vs 2,119.08; over 6 months 307.13 (13.8%) vs 242.47 (11.4%); over 1 year 136.03 (6.1%) vs 165.49 (7.8%); over 2 years 86.24 vs 46.26; no doubtful-debt provision (Note 14, AR FY26 p113/p102); mixed -> FLAG-CASH on conversion"
+restatements_found:
+  - "FY25 profit 831.23 (RHP restated, prior-period charge 76.02) vs 847.08 (AR, 60.17) (RHP p.72, p.242; AR p100/p89)"
+  - "FY25 total assets 4,942.12 (RHP) vs 4,838.68 (AR); 103.44 revenue-authority balance netted; CFO 676.66 vs 573.22 (RHP p.54, 71, 233; AR p101/p90)"
+  - "FY25 receivables ageing: RHP nothing over 1 year; AR 165.49 over 1 year, total 242.47 over 6 months unchanged (RHP p.232; AR Note 14)"
+  - "Contingent items income-tax 5.71 and GST 29.33 in RHP omitted from AR FY26 note; FY25 total 996.52 vs 1,031.56 (Note 25 item 3; RHP p.33)"
+  - "Warranty and installation P&L lines: FY25 net of usage, FY26 gross additions (Note 24; Note 25 item 11)"
+going_concern_language: "NONE (Board report printed p.38 and auditor CARO xix: no threat or material uncertainty; no going-concern language in the notes)"
+analyst_note: "Load-bearing facts: LBF1 OPEN red (status absent from notes). LBF2 partly answered (days 96.7, tails aged; FY26 top-5 NOT FOUND). LBF3 answered: WC object used 14.3%, inventory build funded by operations and payables. LBF4 answered with caution: H2 margin 18.1% vs H1 21.3%; FY26 19.47% leans on lower other expenses including the warranty accrual. Rate warranty as watch until Purchases gross-or-net is known. AR pages 99-127 are image transcriptions."

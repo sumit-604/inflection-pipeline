@@ -14,3 +14,4 @@ expose them (never estimated).
 | 1 | Gate 0 scorecard (resumed: E4 from AR notes, M2/M5/M9 peer sheets) | sonnet 5.5 | medium | n/a | n/a | n/a | n/a | 120,750 | 94s | 2 |
 | 2 | Notes triple-pass, pass 1 of 3 (resumed over transcribed notes) | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 199,035 | 287s | 2 |
 | 2 | Notes triple-pass, pass 2 of 3 | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 180,401 | 522s | 1 |
+| 2 | Notes triple-pass, pass 3 of 3 (synthesis, B02) | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 72,268 | 103s | 1 |

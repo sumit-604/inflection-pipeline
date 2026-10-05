@@ -1,4 +1,6 @@
-# GATE 0 SCORECARD: Avana Electrosystems Ltd (AVANA), run 2026-10-05
+# GATE 0 SCORECARD: Avana Electrosystems Ltd (AVANA), run 2026-10-05 (revision 2)
+
+Revision 2 changes: E4 re-scored on FY26 AR notes (now readable); M2, M5, M9 scored against the three screener peer sheets; moat, grand total and class recomputed; RHP working-capital anchor corrected.
 
 Data available: 7 years (FY20 to FY26). Scoring adapted to 7-year history (moderate confidence, no downgrade).
 Units: screener-data in INR Cr. AR, RHP and results in INR lakh (100 lakh = 1 Cr); the unit is stated in each anchor. Standalone figures. NO-CONCALL MODE.
@@ -24,7 +26,7 @@ Cross-checks: FY26 revenue 8,385.88 lakh, PAT 1,172.28 lakh (results Q4 FY26 p.1
 
 ## BLOCK A: Return on capital (10 of 20)
 
-ROCE computed (screener Data_Sheet has none). EBIT = PBT + Interest. Capital employed proxy = Total assets - Other liabilities (screener lumps current liabilities with other liabilities). Closing basis.
+ROCE computed (screener Data_Sheet has none). EBIT = PBT + Interest. Capital employed proxy = Total assets - Other liabilities. Closing basis.
 
 | Year | EBIT | Cap. employed | ROCE |
 |---|---|---|---|
@@ -36,24 +38,23 @@ ROCE computed (screener Data_Sheet has none). EBIT = PBT + Interest. Capital emp
 | FY25 | 12.60 | 27.49 | 45.83% |
 | FY26 | 16.65 | 59.84 | 27.82% |
 
-Exact check FY26: EBIT 1,665.31 lakh (PBT 1,579.63 + finance 85.68, results p.10) over (total assets 8,476.53 - current liabilities 2,218.49) = 6,258.04 lakh (results p.11) = 26.61%.
+Exact check FY26: EBIT 1,665.31 lakh (results p.10) over (8,476.53 - 2,218.49) = 6,258.04 lakh (results p.11) = 26.61%.
+ROE = PAT / average net worth: FY20 13.79% (closing only), FY21 3.15%, FY22 4.75%, FY23 10.22%, FY24 35.05%, FY25 48.02%, FY26 28.98% (screener-data).
 
-ROE = PAT / average net worth: FY20 13.79% (closing only, no opening), FY21 3.15%, FY22 4.75%, FY23 10.22%, FY24 35.05%, FY25 48.02%, FY26 28.98% (screener-data).
-
-- A1 Median ROCE 17.79% (screener-data, computed): 3
+- A1 Median ROCE 17.79% (computed): 3
 - A2 Minimum ROCE 7.09% (FY21): 0
 - A3 Median ROE 13.79%: 2
-- A4 ROCE FY26 27.82% vs FY20 17.79%, higher: 5
+- A4 ROCE FY26 27.82% vs FY20 17.79%: 5
 Block A = 10/20.
 
 ## BLOCK B: Cash generation (8 of 20)
 
-- B1 Cumulative CFO FY20-FY26 15.59 Cr / cumulative PAT 27.02 Cr = 0.577 (screener-data): 1
-- Capex (not in screener): FY23 13.76, FY24 213.02, FY25 23.47 lakh (RHP p.290, INR lakh); FY26 750.23 lakh (results p.12, INR lakh, includes CWIP). FY20-FY22 capex NOT FOUND, so FCF runs on FY23-FY26.
+- B1 Cumulative CFO FY20-FY26 15.59 Cr / PAT 27.02 Cr = 0.577 (screener-data): 1
+- Capex: FY23 13.76, FY24 213.02, FY25 23.47 lakh (RHP p.290, INR lakh); FY26 750.23 lakh (results p.12, INR lakh, includes CWIP). FY20-FY22 capex NOT FOUND, so FCF runs on FY23-FY26.
 - FCF (Cr): FY23 -0.46, FY24 -1.18, FY25 +5.50, FY26 +0.45
 - B2 FCF-positive years 2 of 4 = 50%: 2
 - B3 Cumulative FCF 4.31 Cr / PAT FY23-26 25.13 Cr = 0.17: 0
-- WC days (revenue basis, year-end; payables FY23-25 RHP p.225, FY26 results p.11; FY20-22 payables NOT FOUND):
+- WC days (revenue basis; payables FY23-25 RHP p.225, FY26 results p.11; FY20-22 payables NOT FOUND):
 
 | Year | Rec days | Inv days | Pay days | WC days |
 |---|---|---|---|---|
@@ -63,91 +64,101 @@ Block A = 10/20.
 | FY26 | 96.7 | 97.6 | 57.8 | 136.5 |
 
 - B4 FY26 136.5 vs FY23 168.4 = -31.9 days: 5
-Block B = 8/20. Block A and B are both at or above the deal-breaker line (A 10, B 8; test is <8).
-Note: FY26 year-end receivable days benefit from H2-loaded revenue (H2 4,811.17 lakh vs H1 3,574.71 lakh, results p.10, INR lakh). RHP projected FY26 WC cycle 205 days (RHP p.113 working-capital assumptions); computed 136.5 on year-end balances.
+Block B = 8/20. Test for the deal-breaker is below 8.
+Note: FY26 year-end receivable days benefit from H2-loaded revenue (H2 4,811.17 lakh vs H1 3,574.71 lakh, results p.10). The RHP projected a FY26 working-capital cycle of 205 days (RHP, Objects of the Offer, "Key assumptions for working capital projections" table); computed 136.5.
 
 ## BLOCK C: Growth (18 of 20)
 
-- C1 Revenue CAGR FY20-FY26 (6 yrs) 24.5% (22.56 to 83.86, screener-data): 5
-- C2 PAT CAGR 45.8% (1.22 to 11.72): 5
-- C3 Positive YoY revenue years 5 of 6 = 83% (FY21 declined 22.56 to 14.95): 3
-- C4 PAT CAGR minus revenue CAGR = +21.3pp: 5
+- C1 Revenue CAGR FY20-FY26 (6 yrs) 24.5%: 5
+- C2 PAT CAGR 45.8%: 5
+- C3 Positive YoY revenue years 5 of 6 = 83% (FY21 declined): 3
+- C4 PAT CAGR minus revenue CAGR +21.3pp: 5
 Block C = 18/20.
 
 ## BLOCK D: Balance sheet (20 of 20)
 
 - D1 Borrowings 0.76 Cr vs cash 27.83 Cr (screener-data FY26): net cash: 5
-- D2 EBIT 16.65 / Interest 0.86 = 19.4x (screener-data); excluding other income 18.2x: 5
-- D3 Debt/Equity 0.76 / 59.08 = 0.013: 5
-- D4 Current ratio: current assets 7,419.66 lakh (inventories 2,243.25, receivables 2,221.29, cash 2,782.78, ST loans 124.96, other 47.38) / current liabilities 2,218.49 lakh (ST borrowing 20.54, payables 1,328.84, other 410.24, provisions 458.87) = 3.34x (results p.11, INR lakh): 5
-Block D = 20/20. FY26 cash includes IPO money: net IPO proceeds 2,555.75 lakh (results p.12 cash flow, INR lakh).
+- D2 EBIT 16.65 / interest 0.86 = 19.4x (18.2x excluding other income): 5
+- D3 Debt/equity 0.76 / 59.08 = 0.013: 5
+- D4 Current assets 7,419.66 lakh / current liabilities 2,218.49 lakh = 3.34x (results p.11, INR lakh): 5
+Block D = 20/20. FY26 cash includes IPO money (net proceeds 2,555.75 lakh, results p.12).
 
-## BLOCK E: Shareholder alignment (10 of 20)
+## BLOCK E: Shareholder alignment (13 of 20)
 
 - E1 Promoter holding 73.64% (SHP XBRL 31-Mar-2026): 5
-- E2 100% (RHP p.92, 31-Dec-2023, INR n/a) to 73.64% = -26.36pp (IPO dilution): 0
+- E2 100% (RHP p.92, 31-Dec-2023) to 73.64% = -26.36pp (IPO dilution): 0
 - E3 Pledge nil (SHP XBRL, encumbrance flag false): 5. The Reg 31(4) scanned filing was not read here.
-- E4 FY26 contingent liabilities NOT FOUND (AR notes pp.100-127 image-only; results carry no note). Latest filed: 1,031.56 lakh at 30-Sep-2025 (RHP Note 29, p.245, INR lakh: LC 509.51, BG 485.33, GST 29.33, tax demand 5.71, TDS 1.68) over net worth 2,740.73 lakh (RHP p.32) = 37.6%: 0. Against FY26 net worth 17.5% would score 1; classification unchanged.
-Block E = 10/20.
+- E4 Contingent liabilities 31-Mar-2026 (AR p.119, Note 3, INR lakh): bank guarantees 481.42 + letters of credit 196.16 + TDS defaults 1.64 = 679.22 lakh (FY25 comparative 485.33 + 509.51 + 1.68 = 996.52 lakh). Net worth 5,908.03 lakh (results p.11). 679.22 / 5,908.03 = 11.50%: 3. Capital commitment for factory construction 1,094.99 lakh (AR p.119) is a commitment, not a contingent liability, and sits outside the ratio.
+Block E = 13/20.
 
-## BLOCK F: Quantitative moat (18 of 60)
+## BLOCK F: Quantitative moat (31 of 60)
 
-EBITDA margin (Sales less operating costs excluding other income; each year reconciled to PBT): FY20 5.90%, FY21 4.35%, FY22 3.77%, FY23 6.72%, FY24 13.30%, FY25 19.37%, FY26 19.47% (screener-data).
+EBITDA margin (sales less operating costs excluding other income; each year reconciled to PBT): FY20 5.90%, FY21 4.35%, FY22 3.77%, FY23 6.72%, FY24 13.30%, FY25 19.37%, FY26 19.47% (screener-data).
+
+Peer set (screener Data_Sheet, FY26, INR Cr; three companies only, no direct relay peer):
+
+| Company | Sales | EBITDA margin* | GM proxy** | Mcap |
+|---|---|---|---|---|
+| AVANA | 83.86 | 19.47% | 40.62% | 315.34 |
+| DANISH | 521.45 | 17.73% | 26.8%*** | 1,837.43 |
+| SPCL | 155.40 | 12.12% | 23.99% | 149.04 |
+| MARINE | 876.94 | 10.77% | 29.51% | 6,565.49 |
+| Peer median | | 12.12% | 26.8% | |
+
+*(PBT + interest + depreciation - other income) / sales. **(Sales - (material cost - change in inventory)) / sales. ***DANISH FY26 RM line is blank in screener; Other Mfr. Exp 387.70 assumed to hold materials, so approximate. Dropping DANISH gives a median of 26.75% and the same score.
 
 | Test | Evidence | Score |
 |---|---|---|
 | M1 Pricing power | margin +13.6pp FY20 to FY26, revenue CAGR 24.5% | 5 |
-| M2 Cost advantage | PEER DATA NEEDED | 0 |
+| M2 Cost advantage | 19.47% vs peer median 12.12% = +7.35pp (>=5pp) | 5 |
 | M3 Capital efficiency | FAT 83.86 / net block 5.32 = 15.8x (8.4x with CWIP), ROCE 27.82% | 5 |
-| M4 Stickiness | one decline year (FY21), recovered by FY23 (28.41 vs 22.56) | 3 |
-| M5 Scale | PEER DATA NEEDED | 0 |
+| M4 Stickiness | one decline year (FY21), recovered by FY23 | 3 |
+| M5 Scale | mcap rank 3 of 4 in the set (MARINE, DANISH above); margin rank 1 | 3 |
 | M6 R&D | not separately disclosed (AR: merged with expenditure); NOT FOUND | 0 |
 | M7 Regulatory | no licensed segment evidenced; vendor registrations only | 0 |
 | M8 Distribution | no reach metrics in provided data | 0 |
-| M9 Brand | PEER DATA NEEDED (GM proxy 40.6%, revenue less net material cost) | 0 |
+| M9 Brand | GM proxy 40.62% vs median 26.8% = +13.8pp, revenue CAGR 24.5% | 5 |
 | M10 Switching costs | FY21 decline and receivable days 74.4 to 96.7 (+22.3) | 0 |
 | M11 Network effects | CAGR FY23-26 43.4% > FY20-23 8.0%; S&A/sales 8.3% to 5.0% (mechanical) | 5 |
 | M12 Negative WC | WC 136-168 days (FY23-26) | 0 |
 
-Moat bars: M1 #####, M3 #####, M11 #####, M4 ###.., all others ..... . Moats present (>=3): 4 (M1, M3, M4, M11). Class STRONG.
-Moat score 18/60.
+Moat bars: M1 #####, M2 #####, M3 #####, M9 #####, M11 #####, M4 ###.., M5 ###.., others ..... . Moats present (>=3): 7 (M1, M2, M3, M4, M5, M9, M11). Class FORTRESS (6+). Moat score 31/60.
 
 ## CLASSIFICATION
 
 | Item | Value |
 |---|---|
-| Core score | 66/100 (A 10, B 8, C 18, D 20, E 10) |
-| Moat score | 18/60, 4 present, STRONG |
-| Grand total | 84 |
+| Core score | 69/100 (A 10, B 8, C 18, D 20, E 13) |
+| Moat score | 31/60, 7 present, FORTRESS |
+| Grand total | 100 |
 | Data confidence | 7 years, moderate, no downgrade |
-| Matrix | Core 60-79 + STRONG = GOOD+ |
-| Deal-breakers | none triggered (A 10, B 8 not below 8; median ROCE 17.79%; CFO/PAT 0.577; no pledge; 1 decline year in 6; PAT positive all years) |
+| Matrix | Core 60-79 + STRONG/FORTRESS = GOOD+ |
+| Deal-breakers | none (A 10, B 8 not below 8; median ROCE 17.79%; CFO/PAT 0.577; no pledge; 1 decline year in 6; PAT positive all years) |
 
-Strongest block: D (20/20). Weakest block: A (10/20) and E (10/20), with Block B (8/20) lowest in score though not below the deal-breaker line.
-Sensitivity: B1 at 0.577 sits 0.123 above the 0.50 deal-breaker and 0.123 below the 0.70 band edge. Block B at 8 is exactly on the 8-point line; one point lower would cap at GOOD.
+Strongest block: D (20/20). Weakest: B (8/20), then A (10/20).
+Sensitivity: Block B at 8 is exactly on the 8-point line; one point lower would cap at GOOD. The FORTRESS label rests on a 3-company peer set and four formula-driven tests (M1, M2, M9, M11).
 
-Decision line: GOOD+ (Core 66, STRONG moat, 4 of 12). Pass to downstream stages with the cash conversion and moat-measurement caveats below.
+Decision line: GOOD+ (Core 69, FORTRESS moat 7 of 12). Pass downstream with the cash-conversion caveat.
 
 ## Load-bearing fact checks (this stage's scope)
 
-- LBF1 capex: FY26 purchase of PPE/intangibles/CWIP 750.23 lakh (results p.12, INR lakh); CWIP 466.79 lakh at 31-Mar-2026 (results p.11) vs RHP KIADB plan 1,155.38 lakh. KIADB unit status not tested here.
-- LBF2: receivable days FY26 96.7 vs FY25 125.8 vs FY23 143.4 (computed). Customer concentration is outside Gate 0.
-- LBF3: inventory rose 1,470.95 to 2,243.25 lakh (+772.30 lakh, results p.11-12). WC certificate (results p.4, INR lakh): WC gap 2,438.93 lakh; IPO proceeds used 123.03 lakh of 860.00 lakh disclosed; unutilised 736.97 lakh; internal accrual 2,315.90 lakh. The inventory build was funded mainly by operations and existing cash, not issue money.
-- LBF4: H2 FY26 EBITDA 870.11 lakh on revenue 4,811.17 lakh = 18.1%; H1 762.61 lakh on 3,574.71 lakh = 21.3%; FY26 19.5% (results p.10, INR lakh; EBITDA = PBT + finance + depreciation - other income). Net material cost (materials + inventory change) 63.4% of H2 revenue vs 54.0% of H1. A 19-20% margin did not hold in H2; it held at 18.1%.
+- LBF1: FY26 PPE/intangibles/CWIP purchases 750.23 lakh (results p.12); CWIP 466.79 lakh at 31-Mar-2026 (results p.11); capital commitment for factory construction 1,094.99 lakh (AR p.119, Note 3) vs RHP KIADB plan 1,155.38 lakh. KIADB unit status not tested here.
+- LBF2: receivable days FY26 96.7 vs FY25 125.8 vs FY23 143.4 (computed). Concentration is outside Gate 0.
+- LBF3: inventory rose 1,470.95 to 2,243.25 lakh (+772.30 lakh). WC certificate (results p.4): WC gap 2,438.93 lakh; IPO proceeds used 123.03 lakh of 860.00 lakh; unutilised 736.97 lakh; internal accrual 2,315.90 lakh. The build was funded mainly by operations and existing cash.
+- LBF4: H2 FY26 EBITDA 870.11 lakh on 4,811.17 lakh = 18.1%; H1 762.61 lakh on 3,574.71 lakh = 21.3%; FY26 19.5% (results p.10, INR lakh). Net material cost 63.4% of H2 revenue vs 54.0% of H1. The 19-20% margin did not hold in H2.
 
 ## Data notes and conflicts
 
-- Source conflict, FY25: RHP restated CFO 676.66 lakh and PAT 831.23 lakh (RHP p.290, p.32) vs FY26 filing comparatives 573.22 and 847.08 lakh (results pp.10, 12). Screener follows the later filing; used.
-- FY25 total assets: RHP 4,942.12 lakh (p.225) vs FY26 comparative 4,838.69 lakh (results p.11); regrouping of short-term loans (358.15 vs 254.71 lakh).
-- Screener P&L/BS/CF/Quarters export sheets are empty; Data_Sheet used.
-- FY20-FY22 payables and capex NOT FOUND, so B2, B3, B4, M12 use FY23-FY26.
-- Reg 31(4) filing scanned; promoter pledge read from SHP XBRL only.
-- Peer sheets (DANISH, SPCL, MARINE) were not stage inputs; M2, M5, M9 scored 0.
+- FY25 source conflict: RHP restated CFO 676.66 lakh, PAT 831.23 lakh (RHP p.290, p.32) vs FY26 filing comparatives 573.22 and 847.08 lakh (results pp.10, 12). Later filing used.
+- FY25 total assets: RHP 4,942.12 lakh (p.225) vs FY26 comparative 4,838.69 lakh (results p.11); regrouping of short-term loans.
+- Screener P&L/BS/CF/Quarters export sheets empty; Data_Sheet used.
+- FY20-FY22 payables and capex NOT FOUND; B2, B3, B4, M12 use FY23-FY26.
+- Reg 31(4) filing scanned; pledge read from SHP XBRL only.
 - No loss-to-profit swing.
 
 ## Block B trend
 
-Deteriorating at FCF level: FCF Rs 0.45 Cr FY26 vs Rs 5.50 Cr FY25. CFO/PAT flat at 0.68 in FY25 and FY26 (5.73/8.47 and 7.95/11.72).
+Deteriorating at FCF level: FCF Rs 0.45 Cr FY26 vs Rs 5.50 Cr FY25. CFO/PAT flat at 0.68 in FY25 and FY26.
 
 ```yaml
 stage: B01-gate0
@@ -155,12 +166,12 @@ company: "AVANA"
 run_date: "2026-10-05"
 model: claude-sonnet-5-5
 status: complete
-blocks: {A: 10, B: 8, C: 18, D: 20, E: 10}
-core_score: 66
-moat_score: 18
-grand_total: 84
-moats_confirmed: 4
-moat_class: "STRONG"
+blocks: {A: 10, B: 8, C: 18, D: 20, E: 13}
+core_score: 69
+moat_score: 31
+grand_total: 100
+moats_confirmed: 7
+moat_class: "FORTRESS"
 classification: "GOOD+"
 ```
 (Full block in B01-gate0.yaml.)

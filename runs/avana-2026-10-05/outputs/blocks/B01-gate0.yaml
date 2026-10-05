@@ -16,16 +16,15 @@ input_gaps:
   - "peer-concalls: DANISH two transcripts only; SPCL and MARINE presentations only"
   - "RHP held, final prospectus (14-Jan-2026) not collected"
   - "No listed protection-relay pure play (relays ~40% of revenue have no direct peer)"
-  - "STAGE 1 ADD: AR notes pages 100-127 are image-only and no page renderer on host; FY26 contingent liabilities NOT FOUND"
 flags: []
 data_years: 7
 fy_range: "FY20 to FY26"
-blocks: {A: 10, B: 8, C: 18, D: 20, E: 10}
-core_score: 66
-moat_score: 18
-grand_total: 84
-moats_confirmed: 4
-moat_class: "STRONG"
+blocks: {A: 10, B: 8, C: 18, D: 20, E: 13}
+core_score: 69
+moat_score: 31
+grand_total: 100
+moats_confirmed: 7
+moat_class: "FORTRESS"
 classification: "GOOD+"
 deal_breakers: []
 history_downgrade: false
@@ -33,17 +32,19 @@ data_notes:
   - "Data available: 7 years (FY20 to FY26), screener-data. Standalone, INR Cr (screener); AR/RHP/results anchors are INR lakh. 100 lakh = 1 Cr."
   - "ROCE computed (screener Data_Sheet has none): EBIT = PBT + Interest (includes other income) over capital employed proxy = Total - Other Liabilities (equity + reserves + borrowings), closing basis, because screener lumps current liabilities with other liabilities. Exact FY26 check TA 8,476.53 lakh - CL 2,218.49 lakh gives 26.61% vs proxy 27.82% (results Q4 FY26 p.11). Median ROCE 17.79% (FY20 to FY26)."
   - "ROE: FY20 uses closing net worth (no opening)."
-  - "WC days on revenue basis, year-end balances. Payables not in screener; FY23-FY25 from RHP restated BS (RHP p.225), FY26 from results p.11. FY20-FY22 payables NOT FOUND, so B4 and M12 compare FY23 (168.4 days) to FY26 (136.5 days)."
+  - "WC days on revenue basis, year-end balances. Payables not in screener; FY23-FY25 from RHP restated BS (RHP p.225), FY26 from results p.11. FY20-FY22 payables NOT FOUND, so B4 and M12 compare FY23 (168.4 days) to FY26 (136.5 days). RHP projected FY26 NWC cycle 205 days (RHP Objects of the Offer, 'Key assumptions for working capital projections' table) vs computed 136.5."
   - "FCF: capex FY23-FY25 from RHP p.290 (13.76, 213.02, 23.47 lakh); FY26 750.23 lakh from results p.12 (includes CWIP); FY20-FY22 capex NOT FOUND, so B2 and B3 run on FY23-FY26 (4 years): 2 of 4 positive, cumulative FCF 4.31 Cr / PAT 25.13 Cr = 0.17."
   - "B1 uses CFO from screener-data FY20-FY26 (cum 15.59 Cr / PAT 27.02 Cr = 0.577). FY25 CFO differs by source: RHP restated 676.66 lakh vs FY26 filing comparative 573.22 lakh (screener 5.73 Cr); later filing used. FY25 PAT also differs: RHP 831.23 lakh vs FY26 comparative 847.08 lakh (screener 8.47 Cr, nets prior-period gratuity item 60.17 lakh)."
   - "A2 min ROCE 7.09% is FY21 (COVID year, revenue 14.95 Cr, PAT 0.27 Cr); FY22 7.53% also <8. Two sub-8 years, both pre-FY23."
   - "E2: promoters 100% (RHP p.92, 31-Dec-2023) to 73.64% (SHP 31-Mar-2026): -26.36pp, IPO fresh issue dilution, scored 0 mechanically."
   - "E3: pledge nil per SHP XBRL flag WhetherAnySharesHeldByPromotersAreEncumberedUnderPledged = false (31-Mar-2026). Reg 31(4) scanned filing not read."
-  - "E4: FY26 contingent liabilities NOT FOUND (AR notes image-only). Latest filed: 1,031.56 lakh at 30-Sep-2025 (RHP Note 29, p.245) over net worth 2,740.73 lakh = 37.6% scored 0. Against FY26 net worth 5,908.03 lakh it would be 17.5% (score 1); classification unchanged."
-  - "PEER DATA NEEDED: M2, M5, M9 scored 0. Peer data sheets exist in corpus (DANISH, SPCL, MARINE) but were not in this stage's inputs; stage 6 holds peer comparison. M9 GM proxy (Revenue - net material cost) / Revenue = 40.6% FY26."
+  - "E4 re-scored on AR notes: contingent liabilities 31-Mar-2026 = bank guarantees 481.42 + letters of credit 196.16 + TDS defaults 1.64 = 679.22 lakh (AR p.119, Note 3, INR lakh; FY25 comparative 996.52 lakh) over FY26 net worth 5,908.03 lakh (results p.11) = 11.50%: score 3. Capital commitments (construction of factory) 1,094.99 lakh are shown separately and excluded from the ratio (AR p.119, Note 3)."
+  - "Peer scoring (M2, M5, M9) uses the three screener peer sheets (DANISH, SPCL, MARINE; FY26, INR Cr), a 3-company set, not the full segment; no direct relay peer exists. Peer EBITDA margin = (PBT + interest + depreciation - other income) / sales: DANISH 17.73%, SPCL 12.12%, MARINE 10.77%; median 12.12%; AVANA 19.47% (+7.35pp)."
+  - "M5: market caps (screener-data, Rs Cr): MARINE 6,565.49, DANISH 1,837.43, AVANA 315.34, SPCL 149.04. AVANA ranks 3 of 4 in the set and has the highest EBITDA margin: score 3."
+  - "M9 GM proxy (Revenue - net material cost) / Revenue, FY26: AVANA 40.62%, DANISH 26.8% (RM line blank in screener; Other Mfr. Exp 387.70 assumed to hold materials, so proxy approximate), SPCL 23.99%, MARINE 29.51%; peer median 26.8% (26.75% if DANISH is dropped); AVANA +13.8pp, revenue CAGR 24.5%: score 5. Result does not depend on the DANISH proxy."
   - "M6: R&D spend not separately disclosed (AR: 'merged with the appropriate expenditure'), NOT FOUND, score 0. M7: vendor registrations are approvals, not a licensed segment, score 0. M8: no reach metrics in provided data, score 0."
   - "M10 scores 0: FY21 revenue decline plus receivable days rising 74.4 (FY20) to 96.7 (FY26), +22.3 days (>10). On FY23-FY26 alone revenue grew every year and receivable days fell 143.4 to 96.7 (would score 5). M11 formula is mechanical (revenue CAGR FY23-26 43.4% vs FY20-23 8.0%, S&A/sales 8.3% to 5.0%); it tests growth, not network effects."
   - "No loss-to-profit swing; PAT positive all 7 years. PAT CAGR FY20-FY26 45.8% on 1.22 to 11.72 Cr."
-  - "LBF1: FY26 capex 750.23 lakh (CF), CWIP 466.79 lakh at 31-Mar-2026 vs RHP KIADB plan 1,155.38 lakh; KIADB status not tested at this stage. LBF2: receivable days FY26 96.7 vs FY25 125.8; top-5 concentration not in scope. LBF3: inventory +772.30 lakh (CF) vs IPO WC use 123.03 lakh of 860.00 lakh disclosed (WC certificate p.4), unutilised 736.97 lakh; build funded by operations and cash, not issue money. LBF4: H2 FY26 EBITDA margin 18.1% vs H1 21.3% (FY26 19.5%); net material cost 63.4% of H2 revenue vs 54.0% H1."
+  - "LBF1: FY26 capex 750.23 lakh (CF), CWIP 466.79 lakh at 31-Mar-2026, capital commitment for factory construction 1,094.99 lakh (AR p.119 Note 3) vs RHP KIADB plan 1,155.38 lakh; KIADB status not tested at this stage. LBF2: receivable days FY26 96.7 vs FY25 125.8; top-5 concentration not in scope. LBF3: inventory +772.30 lakh (CF) vs IPO WC use 123.03 lakh of 860.00 lakh disclosed (WC certificate p.4), unutilised 736.97 lakh; build funded by operations and cash, not issue money. LBF4: H2 FY26 EBITDA margin 18.1% vs H1 21.3% (FY26 19.5%); net material cost 63.4% of H2 revenue vs 54.0% H1."
 block_b_trend: "deteriorating at FCF level: FY26 FCF Rs 0.45 Cr vs Rs 5.50 Cr FY25 on capex Rs 7.50 Cr; CFO/PAT flat at 0.68 in FY25 and FY26"
-analyst_note: "Core 66 with 4 of 12 moats gives GOOD+, but three scores rest on mechanics. Block A median ROCE 17.8% is pulled down by FY20-FY22 (7-18%) before the FY24 step-up to 30-46%; FY26 ROCE fell to 27.8% as IPO cash (27.83 Cr) lifted capital employed. Block B is the weak point: CFO/PAT 0.58 and FCF/PAT 0.17 because inventory (+7.72 Cr) and capex (7.50 Cr) absorbed FY26 cash. M10 and M11 are formula artefacts, M2/M5/M9 are zero for missing peers, so true moat strength is not measured. FY20-FY22 payables and capex missing, which shortens B2/B3/B4 windows."
+analyst_note: "Core 69 with 7 of 12 moats gives GOOD+ (FORTRESS moat, but Core is under 80). Four moat scores are formula artefacts: M1 and M2 ride the margin step from 5.9% to 19.5% and a 3-company peer set; M9 compares a 40.6% gross margin proxy to peers with different cost lines; M11 tests growth, not network effects. Block B is the weak point: CFO/PAT 0.58 and FCF/PAT 0.17 because inventory (+7.72 Cr) and capex (7.50 Cr) absorbed FY26 cash. Block A median ROCE 17.8% reflects FY20-FY22 at 7-18% before the FY24 step-up. FY20-FY22 payables and capex missing shorten the B2/B3/B4 windows. Margin fell to 18.1% in H2 FY26."

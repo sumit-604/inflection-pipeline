@@ -2,23 +2,30 @@ stage: B02-notes-pass1
 company: "AVANA"
 run_date: "2026-10-05"
 model: claude-sonnet-5-5
-status: partial
+status: complete
+source_note: "AR FY26 pdf pp.99-127 (printed pp.88-116) read from page-image transcriptions; INR lakh as printed"
 input_gaps:
-  - "AR FY2025-26 pdf pp.99-127 (balance sheet, P&L, cash flow, accounting policies, Notes 1 to last) are image-only: txt carries page markers but no text. Read tool PDF render failed (pdftoppm missing); no OCR route. Note-level FY26 items are NOT FOUND."
-  - "FY26 face statements, WC certificate, IPO utilisation certificate and RPT Annexure D read from OCR text of the results re-filing; some digits damaged and marked [OCR] in the report"
+  - "COLLECTOR/B00: BSE scrip code not found; announcements repaired from NSE API (10 filings); NSE-only SME listing"
+  - "COLLECTOR/B00: shareholding repaired with 31-Mar-2026 XBRL; Sep-2026 SHP not yet filed (due 21-Oct-2026)"
+  - "COLLECTOR/B00: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets empty for AVANA, DANISH, SPCL, MARINE; Data_Sheet CSVs carry annual P&L and balance sheet"
+  - "B00: original FY26 results PDF scanned; legible re-filing used; H1 FY26 sits in RHP restated financials"
+  - "B00: no credit rating document (rating_wc_quote unresolved); presentation/ and research/ empty; concalls none (NO-CONCALL MODE)"
+  - "B00: only FY2025-26 AR exists as a listed company; FY23-FY25 from RHP restated financials; final prospectus (14-Jan-2026) not collected"
+  - "B00: Reg31(4) disclosure PDF scanned; peer coverage thin (DANISH transcripts only; SPCL and MARINE presentations); no listed protection-relay pure play"
+  - "Notes: FY26 top-customer concentration and identity NOT FOUND in AR notes (RHP top-5 38.79% H1 FY26 vs 22.42% FY25 only)"
+  - "Notes: product-wise revenue, order book, CC sanctioned limit and rate, covenants, 5-year repayment schedule, deferred tax components, tax rate reconciliation, nature of stock-in-transit 263.44, reason for lower warranty accrual rate, post-balance-sheet KIADB status NOT FOUND"
 flags: []
-pass1_findings_readable_sources_only: true
 top_findings:
-  - {rank: 1, finding: "AR notes pp.99-127 image-only; FY26 note-level evidence NOT FOUND", note_ref: "AR txt page 99-127", rating: "red-evidence-gap"}
-  - {rank: 2, finding: "KIADB unit: IPO capex used 275.83 of 1,155.38 lakh; CWIP 466.79; commercial production deadline 26-Oct-2026, no further extension", note_ref: "RES p16/p11; RHP p31-37", rating: "red"}
-  - {rank: 3, finding: "Inventory 2,243.25 vs 1,470.95 (+52.5%) vs revenue +36.4%; IPO WC object used 123.03 of 860.00", note_ref: "RES p11/p16", rating: "watch"}
-  - {rank: 4, finding: "Net material cost 52.2% to 59.4% of revenue (H2 63.4%); H2 PBT margin 17.6% vs H1 20.5%", note_ref: "RES p10 derived", rating: "watch"}
-  - {rank: 5, finding: "CFO 795.44 = 48.7% of EBITDA; margin-money balances 919.17", note_ref: "RES p12/p13", rating: "watch"}
-  - {rank: 6, finding: "Receivables 2,221.29, days 96.7 vs 125.8 improving; FY26 ageing and concentration NOT FOUND; H1 top-5 38.79%", note_ref: "RES p11; RHP p232", rating: "watch"}
-  - {rank: 7, finding: "RPT 476.04 lakh = 5.68% of revenue incl. 78.00 relative fees", note_ref: "RES p18-19", rating: "watch"}
-  - {rank: 8, finding: "Cost-records conflict between CARO vi and Board report", note_ref: "CARO pdf p94; AR-BR p40", rating: "watch"}
-  - {rank: 9, finding: "MD&A interest cover 0.05x contradicts P&L (19.4x); LT provisions -27%", note_ref: "AR MD&A; RES p11", rating: "watch"}
-  - {rank: 10, finding: "Clean base: unmodified opinions, no default, debt 76.14 lakh, no going concern doubt, IPO no deviation", note_ref: "AR-aud; CARO; RES p16", rating: "green"}
-receivables_trend: "improving on totals (closing days 96.7 FY26 vs 125.8 FY25; total 2,221.29 vs 2,119.08); FY26 ageing NOT FOUND; >6m share 11.4% FY25, 13.5% Sep-2025"
-going_concern_language: "NONE (Board: no elements threatening going concern, AR txt 2323-2325; CARO xix no material uncertainty)"
-analyst_note: "Pass 2 and 3 cannot improve on notes pp.99-127 without images or OCR text; ask the operator for an OCR/rendered copy."
+  - {rank: 1, finding: "KIADB unit unbuilt: CWIP 466.79; IPO capex used 275.83 of 1,155.38 lakh (23.9%); capital commitments 1,094.99; deadline 26-Oct-2026, no further extension (RHP)", note_ref: "AR FY26 p119/printed p108 Note 25 item 3; p107/p96 Note 2(iii); p125/p114 Note 25 item 16", rating: "red"}
+  - {rank: 2, finding: "Warranty accrual 41.81 (0.50% of revenue) vs 228.47 (3.72%) in provision note; P&L warranty 122.97 to 41.81; provision down 109.84 on revenue +36%; about 125.9 (8.0% of PBT) at FY25 P&L rate (derived)", note_ref: "AR FY26 p124/p113 Note 25 item 11; p116/p105 Note 24", rating: "watch"}
+  - {rank: 3, finding: "Inventory +52.5% to 2,243.25: FG +108.8% (690.47), new stock-in-transit 263.44; 42.5% of inventory outside bank stock statement; IPO WC object used 123.03 of 860.00", note_ref: "AR FY26 p113/p102 Note 13; p125/p114 Note 25 item 15; p107/p96 Note 2(iii)", rating: "watch"}
+  - {rank: 4, finding: "Net material cost 52.2% to 59.4% of revenue; margin held by other-expense ratio 13.0% to 8.5% and lower employee ratio; EBITDA ex other income 20.36% to 19.47%", note_ref: "AR FY26 p115-116/pp.104-105 Notes 20-24", rating: "watch"}
+  - {rank: 5, finding: "Receivables over 6 months 307.13 (13.8%) vs 242.47 (11.4%); over 2 years 86.24 vs 46.26; no provision; bank-statement receivables exceed books by 2.15% to 7.77% each quarter; FY25 ageing differs from RHP", note_ref: "AR FY26 p113/p102 Note 14; p125/p114 Note 25 item 15", rating: "watch"}
+  - {rank: 6, finding: "CFO 795.44 = 48.7% of EBITDA; free cash after capex 45.21; margin money 719.17 and FD over 3m 200.00 outside cash equivalents", note_ref: "AR FY26 p101/p90; p114/p103 Note 15", rating: "watch"}
+  - {rank: 7, finding: "IPO issue expense 551.01 paid vs 498.09 booked (52.92 unreconciled); 89.13 recovered from promoters; unspent IPO 2,103.98 vs FD 1,702.00 plus bank 361.62 (40.36 gap, may be timing)", note_ref: "AR FY26 p107/p96 Note 2(iii); p109/p98 Note 3; p118/p107 Note 25 item 1", rating: "watch"}
+  - {rank: 8, finding: "RPT 476.03 = 5.68% of revenue; 78.00 family fees flat; promoter pay 289.48 vs 340.40 (-15.0%) as incentives ended; CFO and CS changes in one year", note_ref: "AR FY26 p117-118/pp.106-107 Note 25 item 1", rating: "watch"}
+  - {rank: 9, finding: "Disclosure slips: payable turnover ratio built on sum not average; MD&A interest cover 0.05x vs 19.4x; CARO vi vs Board report on cost records; income-tax and GST contingent items (35.04) dropped from FY25 comparative", note_ref: "AR FY26 p127/p116 Note 25 item 24; p119/p108 Note 25 item 3; CARO vi", rating: "watch"}
+  - {rank: 10, finding: "Clean base: unmodified audit and IFC opinions, no default, debt 76.14 (0.01x equity), gratuity 93% funded, no subsidiaries, no going concern doubt, IPO net inflow 2,555.75 ties, customer advances +115%", note_ref: "AR-aud; Notes 2-4, 8, 25", rating: "green"}
+receivables_trend: "improving on days (closing 96.7 vs 125.8; turnover 3.86x vs 3.41x) but ageing tail rising: over 6m 307.13 (13.8%) vs 242.47 (11.4%); over 2y 86.24 vs 46.26; total 2,221.29 vs 2,119.08; no provision"
+going_concern_language: "NONE"
+analyst_note: "Image-only gap closed. OFS of 7,94,000 shares confirmed (468.46). Largest swing in other expenses is warranty (accrual 0.50% of revenue vs 3.72%): the lead LBF4 observation. Capex commitment 1,094.99 exceeds unspent IPO capex 879.55 by 215.44."

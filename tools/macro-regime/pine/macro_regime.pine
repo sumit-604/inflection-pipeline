@@ -1,0 +1,176 @@
+// @version=6
+// Macro Regime Dials, 6 to 12 month horizon.
+// Pine port of tools/macro-regime/model.py (inflection-pipeline, PR #205).
+// Same inputs, transforms and thresholds where TradingView carries the series.
+//
+// Use on a MONTHLY chart of any symbol. All inputs are pulled at 1M.
+// Outputs: five dials (z), the regime quadrant as background colour, liquidity
+// and stress tags, and an optional band score per asset (-1, 0, +1) that you
+// can feed to a strategy through input.source for your own backtest.
+//
+// Differences from the Python, stated:
+//  - z-score window needs 60 monthly bars (the Python allows 36). Dials start
+//    5 years after the youngest input in them.
+//  - FPI flows (NSDL) and CFTC positioning are not TradingView series; the
+//    India dial runs without the FPI input.
+//  - Copper/gold uses front-month futures, not Pink Sheet averages.
+//  - Bands failed PASS_BAR.md (a) and are OFF by default. Turn them on to test.
+
+indicator("Macro Regime Dials (6-12m)", shorttitle = "MacroRegime", overlay = false, max_bars_back = 500)
+
+// ---------------------------------------------------------------- inputs
+zWin      = input.int(60, "z-score window, months", minval = 24)
+smooth    = input.int(3, "dial smoothing, months", minval = 1)
+dirLen    = input.int(6, "direction lookback, months", minval = 1)
+liqHi     = input.float(0.25, "LIQUIDITY easing above")
+liqLo     = input.float(-0.25, "LIQUIDITY tight below")
+stHi      = input.float(1.0, "STRESS high above")
+stLo      = input.float(-0.5, "STRESS low below")
+showBands = input.bool(false, "Show exposure bands (failed bar; test only)")
+bandAsset = input.string("nifty", "Band to plot", options = ["gold", "silver", "aluminium", "zinc", "brent", "nifty"])
+
+// ---------------------------------------------------------------- series
+m(sym) => request.security(sym, "1M", close, ignore_invalid_symbol = true)
+
+// prices
+copper  = m("COMEX:HG1!")
+gold    = m("COMEX:GC1!")
+sse     = m("SSE:000001")
+dxy     = m("TVC:DXY")
+usdinr  = m("FX_IDC:USDINR")
+vix     = m("CBOE:VIX")
+invix   = m("NSE:INDIAVIX")
+// FRED
+dfii10  = m("FRED:DFII10")
+t10yie  = m("FRED:T10YIE")
+t10y2y  = m("FRED:T10Y2Y")
+fedfund = m("FRED:FEDFUNDS")
+cpi     = m("FRED:CPIAUCSL")
+corecpi = m("FRED:CPILFESL")
+m2      = m("FRED:M2SL")
+walcl   = m("FRED:WALCL")
+nfci    = m("FRED:NFCI")
+baa10y  = m("FRED:BAA10Y")
+stlfsi  = m("FRED:STLFSI4")
+indpro  = m("FRED:INDPRO")
+recpro  = m("FRED:RECPROUSM156N")
+epuUS   = m("FRED:USEPUINDXM")
+epuGl   = m("FRED:GEPUCURRENT")
+epuIN   = m("FRED:INDEPUINDXM")
+inCall  = m("FRED:IRSTCI01INM156N")
+inCpi   = m("FRED:CPALTT01INM659N")
+
+// ------------------------------------------------------------ transforms
+chg(s, n)    => s - s[n]
+logchg(s, n) => math.log(s) - math.log(s[n])
+yoy(s)       => 100 * (s / s[12] - 1)
+zs(s) =>
+    mu = ta.sma(s, zWin)
+    sd = ta.stdev(s, zWin)
+    z  = sd > 0 ? (s - mu) / sd : na
+    math.max(-3, math.min(3, z))
+
+// mean of up to 6 values, skipping na (the Python's skipna mean)
+mean6(a, b, c, d, e, f) =>
+    sum = 0.0
+    n = 0
+    if not na(a)
+        sum += a
+        n += 1
+    if not na(b)
+        sum += b
+        n += 1
+    if not na(c)
+        sum += c
+        n += 1
+    if not na(d)
+        sum += d
+        n += 1
+    if not na(e)
+        sum += e
+        n += 1
+    if not na(f)
+        sum += f
+        n += 1
+    n > 0 ? sum / n : na
+
+// ----------------------------------------------------------------- dials
+cuau = copper / gold
+GROWTH = mean6(zs(logchg(cuau, 6)), zs(logchg(copper, 6)), zs(yoy(indpro)), -zs(recpro), zs(t10y2y), zs(logchg(sse, 6)))
+INFLATION = mean6(zs(t10yie), zs(chg(t10yie, 6)), zs(yoy(cpi)), zs(chg(yoy(corecpi), 6)), na, na)
+LIQUIDITY = mean6(zs(yoy(m2)), zs(logchg(walcl, 6)), -zs(chg(fedfund, 6)), -zs(nfci), -zs(chg(math.log(dxy), 6)), -zs(chg(dfii10, 6)))
+STRESS = mean6(zs(vix), zs(baa10y), zs(stlfsi), zs(epuUS), zs(epuGl), na)
+IN_STRESS = mean6(zs(invix), zs(epuIN), zs(logchg(usdinr, 6)), zs(chg(inCall, 6)), zs(inCpi), na)   // FPI input not on TradingView
+
+gS = ta.sma(GROWTH, smooth)
+iS = ta.sma(INFLATION, smooth)
+lS = ta.sma(LIQUIDITY, smooth)
+sS = ta.sma(STRESS, smooth)
+nS = ta.sma(IN_STRESS, smooth)
+
+// ---------------------------------------------------------------- regime
+gUp = gS - gS[dirLen] > 0
+iUp = iS - iS[dirLen] > 0
+// 0 REFLATION, 1 GOLDILOCKS, 2 STAGFLATION, 3 DEFLATION
+quad = na(gS - gS[dirLen]) or na(iS - iS[dirLen]) ? na : gUp and iUp ? 0 : gUp and not iUp ? 1 : not gUp and iUp ? 2 : 3
+quadName = quad == 0 ? "REFLATION" : quad == 1 ? "GOLDILOCKS" : quad == 2 ? "STAGFLATION" : quad == 3 ? "DEFLATION" : "n/a"
+liqTag = lS > liqHi ? "EASING" : lS < liqLo ? "TIGHT" : "NEUTRAL"
+stTag  = sS > stHi ? "HIGH" : sS < stLo ? "LOW" : "NORMAL"
+inTag  = nS > stHi ? "HIGH" : nS < stLo ? "LOW" : "NORMAL"
+
+// ----------------------------------------------------------------- bands
+// Base band by quadrant [REFL, GOLD, STAG, DEFL]; same table as model.py.
+base(asset, q) =>
+    r = 0
+    if asset == "gold"
+        r := q == 0 ? 0 : q == 1 ? -1 : q == 2 ? 1 : 0
+    if asset == "silver"
+        r := q == 0 ? 1 : q == 1 ? 0 : q == 2 ? 0 : -1
+    if asset == "aluminium" or asset == "zinc"
+        r := q == 0 ? 1 : q == 1 ? 1 : q == 2 ? -1 : -1
+    if asset == "brent"
+        r := q == 0 ? 1 : q == 1 ? -1 : q == 2 ? 1 : -1
+    if asset == "nifty"
+        r := q == 0 ? 0 : q == 1 ? 1 : q == 2 ? -1 : 0
+    r
+band(asset) =>
+    s = base(asset, quad)
+    liqShade = asset == "brent" ? 0 : 1
+    s += liqTag == "EASING" ? liqShade : liqTag == "TIGHT" ? -liqShade : 0
+    s += stTag == "HIGH" ? (asset == "gold" ? 1 : -1) : 0
+    s += asset == "nifty" and inTag == "HIGH" ? -1 : 0
+    na(quad) ? na : math.max(-1, math.min(1, s))
+bandSel = band(bandAsset)
+
+// ----------------------------------------------------------------- plots
+plot(gS, "GROWTH", color = color.new(color.green, 0), linewidth = 2)
+plot(iS, "INFLATION", color = color.new(color.red, 0), linewidth = 2)
+plot(lS, "LIQUIDITY", color = color.new(color.blue, 0), linewidth = 2)
+plot(sS, "STRESS", color = color.new(color.orange, 0), linewidth = 2)
+plot(nS, "IN_STRESS", color = color.new(color.purple, 0), linewidth = 1)
+hline(0)
+hline(stHi, "stress high", color = color.new(color.orange, 60), linestyle = hline.style_dotted)
+hline(liqHi, "easing", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
+hline(liqLo, "tight", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
+bgcolor(quad == 0 ? color.new(color.green, 88) : quad == 1 ? color.new(color.teal, 88) : quad == 2 ? color.new(color.red, 88) : quad == 3 ? color.new(color.gray, 88) : na, title = "regime")
+plot(showBands ? bandSel : na, "Band score (selected asset)", color = color.new(color.black, 0), style = plot.style_stepline, linewidth = 2, display = display.all)
+// Exported for strategies via input.source (always computed, hidden unless showBands):
+plot(band("gold"), "band gold", display = display.none)
+plot(band("silver"), "band silver", display = display.none)
+plot(band("aluminium"), "band aluminium", display = display.none)
+plot(band("zinc"), "band zinc", display = display.none)
+plot(band("brent"), "band brent", display = display.none)
+plot(band("nifty"), "band nifty", display = display.none)
+plot(quad, "quadrant 0-3", display = display.none)
+
+// ----------------------------------------------------------------- table
+var t = table.new(position.top_right, 2, 7, border_width = 1)
+if barstate.islast
+    table.cell(t, 0, 0, "Regime", bgcolor = color.new(color.gray, 70))
+    table.cell(t, 1, 0, quadName, bgcolor = color.new(color.gray, 70))
+    table.cell(t, 0, 1, "GROWTH");    table.cell(t, 1, 1, str.tostring(gS, "#.00"))
+    table.cell(t, 0, 2, "INFLATION"); table.cell(t, 1, 2, str.tostring(iS, "#.00"))
+    table.cell(t, 0, 3, "LIQUIDITY"); table.cell(t, 1, 3, str.tostring(lS, "#.00") + "  " + liqTag)
+    table.cell(t, 0, 4, "STRESS");    table.cell(t, 1, 4, str.tostring(sS, "#.00") + "  " + stTag)
+    table.cell(t, 0, 5, "IN_STRESS"); table.cell(t, 1, 5, str.tostring(nS, "#.00") + "  " + inTag)
+    table.cell(t, 0, 6, "Band " + bandAsset); table.cell(t, 1, 6, showBands ? str.tostring(bandSel, "#") : "off")

@@ -1,0 +1,58 @@
+stage: B08-promoter
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "B00: AR pp.99-127 and Reg 31(4) filing are image transcriptions (second-hand reading)"
+  - "B00: Sep-2026 shareholding pattern not yet filed (due 21-Oct-2026); pledge read at 31-Mar-2026 only, so the 3-year pledge trend is a one-point read plus the RHP statement"
+  - "B00: final prospectus (14-Jan-2026) not collected; RHP used"
+  - "Stage 8: promoter-group revision of 23-Jan-2026 (Anantharamaiah H K added, nil holding) taken from the task brief; the filing is not in the corpus"
+  - "Stage 8: AGM vote results on Items 4-7 (promoter pay) NOT FOUND; scrutiniser report exists on NSE (29-Sep-2026) but the fetch timed out twice"
+  - "Stage 8: scope of the Rs 0.78 Cr family consultancy fees NOT FOUND; prior-CS history before 29-Aug-2025 NOT FOUND; Target Shipping Pvt Ltd business NOT FOUND; per-director board attendance NOT FOUND"
+flags: []
+verdict: CAUTION
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Family consultancy and professional fees Rs 0.78 Cr (5 relatives of three promoters; Rs 0.18 Cr each for four, Rs 0.06 Cr for one), flat FY25 and FY26, scope of services NOT FOUND; total RPT Rs 4.76 Cr = 5.68% of revenue incl Rs 0.89 Cr IPO-expense recovery", evidence_tier: "VERIFIED", source: "AR FY26 Note 25 item 1, pp.106-107 (pdf p117-118); RHP p.211 states no group companies", date: "2026-08-19 (AR)"}
+  - {finding: "Promoter pay Rs 2.89 Cr (four executive promoters) = 24.7% of FY26 PAT Rs 11.72 Cr; fixed pay +56.1% vs PAT +38.4%; FY27 pay +18.0% to Rs 3.42 Cr put to special resolutions (AGM Items 4-7); vote result NOT FOUND; RHP terms say each 'not exceeding 10% of net profit'", evidence_tier: "VERIFIED", source: "AR FY26 Board report p.41 (pdf p52) and Note 25 item 1; AGM proceedings 28-Sep-2026 p.4; RHP p.200; B02 rank 10; B03", date: "2026-09-28"}
+  - {finding: "Independent directors attended 9 of 19 board meetings (47%) since appointment on 4-Aug-2025; CSR committee held 0 meetings while Rs 12.78 lakh CSR was expensed; independents waived sitting fees Apr-Sep 2025", evidence_tier: "VERIFIED", source: "AR FY26 pp.45-46, p.46 (CSR annexure), Note 25 item 1 note; B03 flag", date: "2026-08-19"}
+  - {finding: "CS churn: Amrutha Naveen served 29-Aug-2025 to 31-Mar-2026 (about 7 months), resigned for independent practice; successor C R Nerajaa from 10-Apr-2026. CFO role moved from promoter K N Sreenath to Ravi Kumar S on 1-Sep-2025", evidence_tier: "VERIFIED", source: "NSE Reg 30 CS resignation 30-Mar-2026 p.1-2; AR FY26 p.43 and Note 25 item 1 footnotes", date: "2026-03-30"}
+  - {finding: "Executive Director K N Sreenath cannot trace his education documents; RHP profile rests on his own affidavit and was not independently verified", evidence_tier: "VERIFIED", source: "RHP risk factor 35, printed p.48 (txt page 54)", date: "2025-12-31"}
+  - {finding: "Origins and overlap not explained in the RHP: Panish was a Director of J V S Electronics Pvt Ltd (relay maker) May-2006 to Mar-2010; Gururaj Dambal worked at JVS 2001-2009; Vinod Kumar and Sreenath worked at Venson Electric (JVS is reported as a Venson Group sister concern). RHP says no common pursuits and names no JVS or Venson link. A web aggregator lists a JVS director (M S Anagha) as an Avana director from 16-Jul-2010; unverified", evidence_tier: "UNVERIFIED", source: "RHP pp.198 (profiles) and 211 (common pursuits nil); IndiaMART JVS profile; aggregator snippet via web search 2026-10-05", date: "2026-10-05"}
+  - {finding: "Promoter group includes Target Shipping Pvt Ltd (20%+ held by a promoter or relative) under Reg 2(1)(pp)(iv); business, activity and any dealing with Avana NOT FOUND; RHP names no group company", evidence_tier: "VERIFIED", source: "RHP printed p.214 (txt page 219)", date: "2025-12-31"}
+  - {finding: "Board is promoter-run: all four promoters are executive directors (4 of 7 seats), the Managing Director also chairs the board and the AGM", evidence_tier: "VERIFIED", source: "RHP p.196; AGM proceedings 28-Sep-2026 p.2-3", date: "2026-09-28"}
+  - {finding: "IPO expense accounting unreconciled: Rs 5.51 Cr paid vs Rs 4.98 Cr booked; Rs 0.89 Cr recovered from the four promoters (12.7 lakh above pro rata per B02); cause NOT FOUND. Direction favours the company, so recorded as a disclosure gap, not a minority harm", evidence_tier: "VERIFIED", source: "AR FY26 Note 25 item 1 p.107; Note 2(iii); B02 rank 8", date: "2026-08-19"}
+  - {finding: "Reg 31(4) promoter encumbrance letter is dated 8-Apr-2026 but sits in the NSE record as 15-Jun-2026; NSE dissemination date NOT FOUND, so a late filing cannot be confirmed", evidence_tier: "UNVERIFIED", source: "Reg 31(4) filing p.1-2 (letter date 08.04.2026); announcements folder date 2026-06-15", date: "2026-06-15"}
+transition_evidence:
+  - {item: "Professional CFO from outside the family, replacing a promoter-CFO", detail: "Ravi Kumar S appointed CFO 1-Sep-2025; K N Sreenath (promoter) held CFO until 29-Aug-2025", source: "AR FY26 p.43; Note 25 item 1 footnote (1)"}
+  - {item: "Governance upgrade, modest credentials", detail: "Three independent directors (two ICSI fellows, one CA) appointed 4-Aug-2025; Audit Committee chaired by independent Kishore N S; but 47% attendance and local practitioners, not big-name credentials", source: "RHP pp.197-198; AGM proceedings 28-Sep-2026 p.2; B03"}
+  - {item: "Institutional entry, names NOT FOUND", detail: "AIF locked-in holding 6,75,000 shares (2.98% of 2,26,45,408); screener-type media gives FII 1.10% and DII 8.54% at Mar-2026; anchor book Rs 9.97 Cr (media). Names not in corpus", source: "SHP XBRL 31-Mar-2026 (AIF locked-in 675000); businesstoday.in via web search; chittorgarh IPO page (media)"}
+  - {item: "Promoter stake dilution through a real IPO", detail: "Promoters 99.99% pre-IPO to 73.64% post (1,66,75,408 of 2,26,45,408); Rs 0.89 Cr of IPO expenses recovered from promoters; all promoter shares locked in 100%", source: "RHP p.209; AR FY26 Note 2 (ix)-(xi); SHP XBRL; Reg 31(4) p.2-3"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: SHP 31-Mar-2026 encumbrance flags all false; Reg 31(4) of 8-Apr-2026 confirms no encumbrance in FY26; RHP 31-Dec-2025 states no material guarantees by promoters. 100% of promoter shares (1,66,75,408) locked in. Earlier years not in corpus"
+searches_performed:
+  - "Avana Electrosystems promoters Panish SEBI order OR litigation OR fraud (no adverse found)"
+  - "SEBI order Avana Electrosystems OR Anantharamaiah Panish OR Gururaj Dambal OR K N Sreenath (none)"
+  - "Avana Electrosystems IPO NSE Emerge Jan 2026 (listing facts)"
+  - "chittorgarh IPO page and IPO review (lead manager Indcap, anchor Rs 9.97 Cr, LTP Rs 126.60 on 1-Oct-2026; reviewer calls issue fully priced)"
+  - "Avana Electrosystems news 2026 (KIADB extension to 22-May-2026 per media; price Rs 155.85 on 2-Sep-2026)"
+  - "Avana Vasanth & Co auditor governance concerns (none found)"
+  - "Zauba / directorship search for the four promoters (Dambal: Hula Infotainment Studios Pvt Ltd directorship ceased 25-May-2023 per aggregator, unconfirmed; direct Hula lookup did not mention him)"
+  - "JVS Electronics relay manufacturer Avana link"
+  - "Glassdoor Avana (6 reviews, 4.2 overall, senior management 3.4)"
+  - "Indcap Advisors track record (no data returned)"
+  - "Corpus read: RHP promoters, group companies, litigation, management; AR Board report, Note 25, CSR annexure, auditor section; Reg 31(4); SHP XBRL; CS resignation; price-movement reply; AGM proceedings"
+searches_skipped:
+  - "NSE scrutiniser report 29-Sep-2026 (vote results on Items 4-7): WebFetch timed out twice"
+  - "Zauba Corp company page (director history, charges): HTTP 403"
+  - "Direct SEBI orders portal, SCORES, SAT, eCourts, NCLT, MCA21 search: no direct access; only general web search used, so a clean result is a no-hit, not a registry check"
+  - "IiAS / SES / InGovern proxy advisor opinions: not run (no AGM-vote or advisor coverage expected for an NSE Emerge name; not confirmed)"
+  - "ED / SFIO / DRI / income-tax raid search on the promoters by name: covered only by the two combined queries above"
+  - "AmbitionBox reviews: not returned by search"
+  - "Political donation, short-seller, philanthropy beyond CSR searches: not run"
+  - "Target Shipping Pvt Ltd lookup: not run"
+  - "KIADB letters and DRHP-to-RHP comparison: not run"
+verdict_basis: "No legal, regulatory, pledge or deal-breaker record on four co-founder promoters, but the listed record is 8 months old and carries six caution items: family fees Rs 0.78 Cr with scope unknown, promoter pay at 24.7% of PAT, independents at 47% attendance, 7-month CS tenure, undocumented education for one promoter, and unexplained JVS/Venson origins."
+analyst_note: "Task brief named two promoters. The RHP, AR Note 2(xi), Reg 31(4) and SHP name four: Panish, Dambal, Vinod Kumar and Sreenath, each about 18% (73.64% combined). Promoter group holds 22 shares each in four spouses (88 shares in all). OFS of 7,94,000 shares at Rs 59 raised Rs 4.68 Cr for the promoters (about 4.5% of their stake). Ledger inputs for Role 2 3G: built (revenue Rs 28.41 Cr FY23 to Rs 83.86 Cr FY26, debt Rs 5.69 Cr to Rs 0.76 Cr, self-funded, no outside equity before IPO), raised (IPO Rs 35.22 Cr), deployed (IPO capex Rs 2.76 Cr of Rs 11.55 Cr plan; WC Rs 1.23 Cr of Rs 8.60 Cr), delivered (revenue +36.4%, PAT +38.4%, first export Rs 0.46 Cr; KIADB unit unbuilt). No pledge, no litigation, no SEBI action found. Verdict is CAUTION, not TRUSTWORTHY, on listed-conduct ledger depth and the unexplained JVS/Venson link; both resolve with one filing each."

@@ -1,0 +1,72 @@
+stage: B05-concall
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "NO-CONCALL MODE: no transcripts; 2E repeated-question tracker, analyst Q&A tone and 3C have no source"
+  - "B00: presentation/ and research/ empty; no company revenue, margin, debt, dividend or return guidance exists in any filing"
+  - "B03: KIADB extension letters and the true extended date NOT FOUND (RHP p36-37 26-Oct-2026 vs RHP p179 23-May-2025 plus 3 years; BO19Aug 'extended timelines' undated)"
+  - "B03: lease renewal status of both operating units, FY26 customer concentration and identity, product-wise revenue and margin, capacity basis for panels (886 vs 600) NOT FOUND"
+  - "B05: new capacity figures, order book 5,223.65 and the RHP WC plan (RHP p42-43, p113, p171-172) carried from B03 and not re-read in this bounded stage"
+  - "B00: only the FY26 AR exists post-listing; no prior-year earnings call or investor presentation to test guidance across periods"
+flags:
+  - {type: FLAG-CAPEX, reason: "KIADB unit not reported commissioned at 2026-10-05; RHP mid-May 2026 slipped to end-Oct 2026 (RHP p105-106; BO19Aug p2); end-Oct falls after the RHP deadline 26-Oct-2026 (RHP p36-37); IPO capex used 275.83 of 1,155.38 (AR p107)"}
+  - {type: FLAG-CREDIBILITY, reason: "No stated cause for any slip or under-deployment; 4 of 7 scored guidance rows missed, 2 delivered, 1 partial (RHP p102-106; AR p107; RES p4; BO19Aug p2)"}
+quarters_analysed: []
+documents_basis: ["RHP 31-Dec-2025", "Reg 30 10-Feb-2026", "Results re-filing 23-Jun-2026 with WC certificate", "Board outcome 19-Aug-2026", "AR FY26"]
+triggers:
+  - {priority: 1, name: "KIADB integrated unit in commercial production", type: "VOLUME + COST", timeframe: "by 26-Oct-2026 (RHP) / end-Oct 2026 (BO19Aug)", conviction: "L-M", confirm_signal: "Reg 30 filing of commercial production; KIADB extension letter naming the date", kill_signal: "No filing by 26-Oct-2026 with no extension letter; lease cancellation"}
+  - {priority: 2, name: "Order book converts into revenue", type: "VOLUME", timeframe: "FY27", conviction: "M", confirm_signal: "Order book above 5,223.65 and H1 FY27 revenue growth", kill_signal: "Order book not disclosed or falling"}
+  - {priority: 3, name: "IPO deployment accelerates", type: "VOLUME", timeframe: "H1 FY27 certificate", conviction: "M", confirm_signal: "Cumulative capex above 275.83 toward 1,155.38", kill_signal: "Utilisation flat"}
+  - {priority: 4, name: "Utility vendor registrations (MPPTCL, CSPTCL) convert to orders", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "Purchase order with a value", kill_signal: "No order after 2 reporting periods"}
+  - {priority: 5, name: "Consolidation savings in rent and logistics", type: "COST", timeframe: "after commissioning", conviction: "L", confirm_signal: "Other expenses stay near 8.5% of revenue after relocation", kill_signal: "Other expenses rise"}
+  - {priority: 6, name: "Exports and dealer expansion", type: "VOLUME", timeframe: "long", conviction: "L", confirm_signal: "Export above 0.55% of revenue", kill_signal: "Export stays 46.28 or falls"}
+guidance:
+  - {item: "Commercial production, integrated unit", number: "mid-May 2026", timeframe: "May 2026", stated_in: "RHP p105-106 (31-Dec-2025)"}
+  - {item: "Commercial production, revised", number: "end of October 2026", timeframe: "Oct 2026", stated_in: "Board outcome 19-Aug-2026 p2"}
+  - {item: "KIADB deadline", number: "26-Oct-2026, no further extension (RHP p179 reading: 3 years from 23-May-2025)", timeframe: "26-Oct-2026", stated_in: "RHP p36-37, p179"}
+  - {item: "Project cost", number: "1,305.38 lakh (IPO 1,155.38, internal 150.00), excl GST", timeframe: "FY26-FY27", stated_in: "RHP p102, p106"}
+  - {item: "IPO capex deployment", number: "up to 850.00 FY26, 305.38 FY27 (lakh)", timeframe: "FY26-FY27", stated_in: "RHP p102-103"}
+  - {item: "IPO working-capital deployment", number: "860.00 lakh in FY26", timeframe: "FY26", stated_in: "RHP p103"}
+  - {item: "FY26 working-capital cycle", number: "205 days; inventory 1,646.94; receivables 2,720.65 (lakh)", timeframe: "31-Mar-2026", stated_in: "RHP p43, p113 via B03"}
+  - {item: "New capacity", number: "1,75,000 relays and 1,500 panels (+150%)", timeframe: "post-commissioning", stated_in: "RHP via B03"}
+  - {item: "Dividend", number: "none paid, no policy number", timeframe: "-", stated_in: "AR p108"}
+promise_delivery:
+  delivered: 2
+  partial: 1
+  missed: 4
+  rows:
+    - {promised_in: "RHP 31-Dec-2025 p105-106", promise: "Commercial production mid-May 2026, minimal delays", outcome: "MISSED", explanation: "none given; end-Oct 2026 in BO19Aug p2; unit not reported live at 2026-10-05"}
+    - {promised_in: "RHP p102-103", promise: "IPO capex up to 850.00 lakh in FY26", outcome: "MISSED", explanation: "none given; 275.83 used (AR p107)"}
+    - {promised_in: "RHP p103", promise: "IPO WC 860.00 lakh in FY26", outcome: "MISSED", explanation: "auditor: unutilised balance 'will be utilized subsequently'; 123.03 used (RES p4)"}
+    - {promised_in: "RHP p43, p113 via B03", promise: "FY26 WC cycle 205 days", outcome: "DELIVERED", explanation: "176.8 days derived; mix differs"}
+    - {promised_in: "RHP p43 via B03", promise: "FY26 inventory 1,646.94 lakh", outcome: "MISSED", explanation: "2,243.25 actual (RES p4); none given"}
+    - {promised_in: "RHP p43 via B03", promise: "FY26 receivables 2,720.65 lakh", outcome: "DELIVERED", explanation: "2,221.29 actual (RES p4)"}
+    - {promised_in: "RHP via B03", promise: "Exports restart, one Kuwait order", outcome: "PARTIAL", explanation: "46.28 lakh, 0.55% of revenue (AR p115)"}
+excuse_pattern: "silence-heavy (no external blame and no admission; mapped to balanced-or-honest set: none fits, closest external-blame-heavy NOT met)"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "No-concall default C held: 4 of 7 scored RHP-vs-results rows missed (commissioning, IPO capex and WC pace, inventory), 2 delivered (WC cycle, receivables), 1 partial; no cause stated for any miss; evidence period Dec-2025 to Oct-2026 (under four quarters); never above B in this mode"
+peer_questions:
+  - {question: "Did gross margin fall in H2 FY26 or H1 FY27 for protection relay and control panel makers, and what do they attribute it to (copper, aluminium, product mix, pricing)?", why: "AVANA gross margin 47.80% to 40.61% (H2 36.61%); MD&A says no significant change (B03; RES p10)", check_peers: ["DANISH", "MARINE", "SPCL"]}
+  - {question: "What warranty or installation accrual rate (% of revenue) do peers book, and did it change in FY26?", why: "AVANA additions 0.50% of revenue vs 3.72% in FY25 (B03, AR p124)", check_peers: ["DANISH", "MARINE", "SPCL"]}
+  - {question: "How long did peers take from civil start to commercial production on a new factory, and by how much did schedules slip?", why: "AVANA slipped about 5.5 months (RHP p106 to BO19Aug p2) and faces a 26-Oct-2026 KIADB date", check_peers: ["DANISH", "MARINE", "SPCL"]}
+  - {question: "Is the sector growth claim credible: IIP electrical equipment +34.0% (June 2026), control panel market 8.4% CAGR to 2031, versus peer volume and revenue growth in FY26?", why: "AVANA grew 36.4% against the cited 8.4% (AR p70, p75-77; B03)", check_peers: ["DANISH", "MARINE", "SPCL"]}
+  - {question: "What are peer receivable days, share of receivables over 6 months and provisioning policy for utility and EPC customers?", why: "AVANA days 96.7, over-6-month share 13.8%, nil provision (B03; AR p113)", check_peers: ["DANISH", "MARINE", "SPCL"]}
+  - {question: "What inventory days, finished-goods build and working-capital cycle do peers run, and how are they funded?", why: "AVANA inventory 2,243.25 vs plan 1,646.94, days 164.4, FG +108.8% (RES p4; B03)", check_peers: ["DANISH", "MARINE", "SPCL"]}
+  - {question: "How do peers disclose order book and book-to-bill, and what customer concentration (top 5, top 10) is normal for utility and EPC supply?", why: "AVANA top 5 38.79% in H1 FY26, order book 5,223.65 (RHP; B03); FY26 NOT FOUND", check_peers: ["DANISH", "MARINE", "SPCL"]}
+  - {question: "Do peers report installed capacity and utilisation, and has output ever exceeded stated capacity?", why: "AVANA panels 886 produced vs 600 installed (AR p85; RHP p104 via B03)", check_peers: ["DANISH", "MARINE", "SPCL"]}
+  - {question: "Do peers win utility orders after vendor registration, and what is the lag from registration to a purchase order?", why: "AVANA MPPTCL and CSPTCL registrations carry no order value (Reg30 10-Feb-2026)", check_peers: ["DANISH", "MARINE", "SPCL"]}
+red_flags:
+  - "KIADB slip about 5.5 months; 26-Oct-2026 RHP deadline 21 days away with 'no further extension' language and automatic lease cancellation (RHP p36-37, p179; BO19Aug p2)"
+  - "End-October 2026 in BO19Aug falls after the 26-Oct-2026 deadline; 'extended timelines' undated; RHP date conflict (p36-37 vs p179)"
+  - "IPO capex 23.9% and WC 14.3% used; 2,103.98 lakh unspent (AR p107)"
+  - "No cause stated for any slip; MD&A omits KIADB (B03 4C)"
+dropped_triggers:
+  - "Regional offices and dealer network expansion: no follow-up in the AR (RHP via B03 6E)"
+timeline_slippages:
+  - "KIADB commercial production: mid-May 2026 (RHP p106) to end-October 2026 (BO19Aug p2)"
+  - "IPO capex FY26 850.00 to 275.83 used; WC FY26 860.00 to 123.03 used (RHP p102-103; AR p107)"
+analyst_note: "Grade C is the no-concall default and the evidence does not lift it. New beyond B03: 'end of October 2026' (BO19Aug p2) falls after the RHP deadline of 26-Oct-2026 (RHP p36-37), yet the filing says 'well before the extended timelines'. Reading A: the 26-Oct date stands and cancellation risk is live. Reading B: a later extension exists (RHP p179: 3 years from 23-May-2025). Separating observation: KIADB extension letters or a Reg 30 filing naming the date. Stage 11 should hold both readings and size the position, not shade the capacity input. Stage 6 has no listed relay pure play as a peer."

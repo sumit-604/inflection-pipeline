@@ -1,0 +1,67 @@
+stage: B04-bizmodel
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Investor presentation NOT PROVIDED (none exists); RHP Our Business and Industry Overview used instead; RHP stops at H1 FY26 (mix, customers) and 30-Nov-2025 (order book)"
+  - "No concalls (NO-CONCALL MODE); FY26 product-wise revenue and margin, FY26 top-5 customers and identities, FY26 customer-type mix, order book after 30-Nov-2025, payment terms, patents, market share: NOT FOUND"
+  - "Carried from B00/B03: AR pp.99-127 are image transcriptions; screener export sheets empty; no rating document; only FY2025-26 AR exists; RHP is the pre-listing baseline"
+  - "RHP/AR conflicts: panel voltage 11-220 kV (RHP p153) vs SCADA up to 400 kV (AR p68) and MPPTCL 400 kV vendor registration; relay sold units 73,621 (RHP p271) vs produced 58,501 (RHP p165) for FY24"
+flags:
+  - {type: FLAG-MIX, reason: "Mix shifted to panels 48.94% FY25 to 60.26% H1 FY26 while FY26 gross margin fell 47.80% to 40.61%; no product-wise margin, so cause stays a hypothesis (RHP p152; AR p85, p100)"}
+  - {type: FLAG-CONCENTRATION, reason: "Top 5 customers 38.79% H1 FY26 vs 22.42% FY25, private players 76-82%, MP 33.59% of FY25; FY26 NOT FOUND (RHP p38-39, p168-169)"}
+  - {type: FLAG-CAPACITY-BASIS, reason: "Panels 886 produced vs 600 stated capacity (AR p85; RHP p165); stated capacity unreliable for the +150% expansion case"}
+  - {type: FLAG-EXECUTION, reason: "KIADB unit unbuilt, 26-Oct-2026 deadline, operating-unit leases Jul/Aug-2026 per RHP (carried from B03)"}
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Control and relay panels (custom, 11-220 kV; SCADA/automation embedded)", type: "project-linked one-time transactional sale", pct_of_revenue: 60.26, predictability: "M"}   # H1 FY26 (RHP p152); FY25 48.94; FY26 NOT FOUND
+  - {name: "Protection relays (numerical and electromechanical)", type: "repeat transactional product sale", pct_of_revenue: 39.74, predictability: "M"}   # H1 FY26 (RHP p152); FY25 51.06; FY26 NOT FOUND
+  - {name: "SCADA / substation automation", type: "project, not reported separately", pct_of_revenue: 0, predictability: "L"}   # NOT FOUND separately; inside panels
+asset_intensity: "light"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - "switching costs and utility vendor approvals (MPPTCL 400 kV, CSPTCL SCADA 220 kV): medium durability"
+  - "proprietary relay hardware and firmware design (9 R&D staff, patents NOT FOUND): low to medium durability"
+valuation_methods:
+  primary: {method: "P/E on forward earnings (Section 1B destination PE governs exit)", why: "profitable, asset-light, net-cash, growing; matches entry earnings basis"}
+  secondary: {method: "EV/EBITDA on EBITDA excl other income, net of cash", why: "removes 2,103.98 unspent IPO cash; cross-checks P/E against operating margin"}
+  tertiary: {method: "reverse DCF on FCF", why: "FCF 45.21 FY26 after capex; test the growth the price implies, not set value"}
+  not_applicable: ["EV/Sales", "SOTP (single segment, no product margin)", "NAV / asset value", "dividend yield", "P/B as primary (equity inflated by IPO cash)"]
+irrelevant_ratios:
+  - "spot ROCE and ROE as printed: IPO cash 2,103.98 and printed FY25 long-term-debt-only base distort them"
+  - "current ratio 3.34x: 2.40x ex IPO cash"
+  - "debt/equity and interest cover: debt 76.14; MD&A 0.05x cover is wrong (19.4x derived)"
+  - "EV/Sales: product mix and margin differ widely"
+  - "P/B: net worth inflated by IPO proceeds"
+  - "stated capacity utilisation: panels 886 vs 600 stated capacity"
+must_track_metrics:
+  - {metric: "order book and product-wise revenue (panels vs relays)", healthy: "order book at or above 5,223.65 (30-Nov-2025), about 62% of FY26 revenue; product split disclosed", red_flag: "order book undisclosed or falling; no product split at H1 FY27"}
+  - {metric: "gross margin and EBITDA margin excl other income", healthy: "gross at or above 40.6%; EBITDA ex OI at or above 18.1%", red_flag: "gross below 36.6% or EBITDA ex OI below 18.1%"}
+  - {metric: "warranty additions % of revenue", healthy: "near 2.1% or evidence for a lasting lower rate", red_flag: "below 0.75% twice with no failure-rate evidence (FY26 0.50%, FY25 3.72%)"}
+  - {metric: "top 5 customer share and largest state share", healthy: "top 5 at or below 25-30%; no state above 33%", red_flag: "top 5 above 38.79%; MP-like single-state dependence"}
+  - {metric: "CFO/EBITDA with inventory days and IPO capex used", healthy: "CFO/EBITDA above 70%; inventory days at or below 150; capex used trending to 1,155.38", red_flag: "CFO/EBITDA below 50% (FY26 48.7%); inventory above 170 days; capex used stuck near 275.83"}
+unit_economics:
+  unit: "one control and relay panel (project unit) and one relay (catalogue unit)"
+  revenue_per_unit: "FY25 panel 5.75 lakh (3,008.96 / 523), relay Rs 4,769 (3,139.62 / 65,840); H1 FY26 panel 6.88 lakh, relay Rs 4,221; derived on produced units (RHP p152, p165)"
+  margin_per_unit: "NOT FOUND by product; company-level gross margin 40.61% FY26 (H2 36.61%), incremental EBITDA margin excl OI 17.0% FY26 (derived)"
+  key_lever: "panel-to-relay mix and input-cost pass-through (gross margin); then warranty accrual and capacity from the KIADB unit"
+first_deterioration_signals:
+  - {risk: "buyer concentration (EPC, 3 states)", first_signal: "top 5 share above 38.79% or revenue drop after a large order ends"}
+  - {risk: "gross margin falls on panel mix or input cost", first_signal: "gross margin below 36.6% in H1 FY27"}
+  - {risk: "warranty accrual understated", first_signal: "warranty additions below 0.75% of revenue a second period"}
+  - {risk: "working capital and EPC credit", first_signal: "receivable days above 110 or over-6-month share above 15%; CFO/EBITDA below 50%"}
+  - {risk: "KIADB unit and lease continuity", first_signal: "no Reg 30 commercial-production filing after 26-Oct-2026; capex used still near 275.83"}
+  - {risk: "capacity basis unreliable", first_signal: "panel output stays above 600 with no capacity restatement"}
+mgmt_questions:
+  - "FY26 revenue and gross margin by product, and which line drove the 7.2 point gross-margin fall?"
+  - "Who are the FY26 top 5 customers (EPC, panel builder, utility) and what share are they?"
+  - "Order book today, panel share, delivery schedule?"
+  - "Why did warranty additions fall from 3.72% to 0.50% of revenue?"
+  - "True installed capacity and outsourced share, given 886 panels vs 600 stated?"
+  - "KIADB status, extension date, and lease status of both current units?"
+  - "Payment terms, retention money and bank-stock-statement variance with EPC customers?"
+one_line_verdict: "A build-to-spec panel and relay maker selling through EPC contractors with real design-in gates, but concentration, product margin and capacity basis are undisclosed; value it on forward P/E with margin and order-book disclosure as the tests."
+analyst_note: "Mix is the lever that matters and the filings do not give it for FY26. Panel share rose from 48.94% (FY25) to 60.26% (H1 FY26) while production shows panels +69% and relays -5.8% for FY26 (AR p85); gross margin fell 7.2 points. [INFERENCE] If panels carry lower gross margin than relays, mix explains most of the fall; if not, input cost or pricing does. The one observation that separates the two readings: H1 FY27 product-wise revenue and gross margin. The utility approves the vendor, the EPC buys (Reg 30 10-Feb-2026), so end-customer risk sits with state utilities while credit risk sits with EPCs. Per-unit revenue uses produced, not sold, units; RHP shows FY24 relay sold 73,621 vs produced 58,501."

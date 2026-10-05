@@ -1,0 +1,292 @@
+#!/usr/bin/env python3
+"""Macro regime model, 6 to 12 month horizon.
+
+Reads the monthly series under data/, builds four dials (GROWTH, INFLATION,
+LIQUIDITY, STRESS) plus an India stress dial, names the regime, and sets an
+exposure band per asset. No learned parameters. Every rule is one line and
+is printed by rules().
+
+Horizon: the dials are built from 6- and 12-month changes and 5-year
+z-scores; nothing here is meant to say anything about next month.
+"""
+from __future__ import annotations
+
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+HERE = Path(__file__).resolve().parent
+DATA = HERE / "data"
+ZWIN = 60            # months in the trailing z-score window
+ZMIN = 36            # minimum months before a z-score is used
+START = "1995-01"    # panel start; evaluation starts 2004-01
+
+
+# --------------------------------------------------------------- loading
+def _s(name: str, col: str = "value") -> pd.Series | None:
+    p = DATA / f"{name}.csv"
+    if not p.exists():
+        return None
+    df = pd.read_csv(p, dtype={"month": str}).set_index("month")
+    s = pd.to_numeric(df[col], errors="coerce")
+    s.index = pd.PeriodIndex(s.index, freq="M")
+    return s
+
+
+def load_panel() -> pd.DataFrame:
+    """One row per month: raw inputs and asset prices, as of month-end."""
+    c = {}
+    # prices (month-end unless noted)
+    c["gold"] = _s("gold_usd")
+    c["silver"] = _s("silver_usd")
+    c["copper"] = _s("copper_usd")
+    pink = pd.read_csv(DATA / "pinksheet_monthly_avg.csv",
+                       dtype={"month": str}).set_index("month")
+    pink.index = pd.PeriodIndex(pink.index, freq="M")
+    c["aluminium_avg"] = pink["aluminium"]          # monthly average
+    c["zinc_avg"] = pink["zinc"]                    # monthly average
+    c["copper_avg"] = pink["copper"]
+    c["gold_avg"] = pink["gold"]
+    c["brent"] = _s("brent_spot_eia")
+    c["nifty"] = _s("nifty_long")
+    c["usdinr"] = _s("usdinr")
+    c["dxy"] = _s("dxy")
+    c["usd_broad"] = _s("usd_broad")
+    c["shanghai"] = _s("shanghai")
+    # macro
+    for k in ["us_real_yield_10y", "us_breakeven_10y", "us_curve_10y2y",
+              "us_nominal_10y", "us_fedfunds", "us_cpi", "us_core_cpi",
+              "us_m2", "us_fed_assets", "us_nfci", "us_baa_spread",
+              "us_stlfsi", "us_vix", "us_indpro", "us_recession_prob",
+              "epu_us", "epu_india", "epu_global", "in_call_rate",
+              "in_gsec_10y", "in_cpi_yoy", "in_m3", "in_cli", "india_vix",
+              "us_crude_stocks_ex_spr"]:
+        c[k] = _s(k)
+    fpi = pd.read_csv(DATA / "in_fpi_flows.csv", dtype={"month": str}) \
+        .set_index("month")
+    fpi.index = pd.PeriodIndex(fpi.index, freq="M")
+    c["fpi_equity"] = fpi["value"]
+    c["fpi_total"] = fpi["fpi_total_net_inr_cr"]
+    for k in ["gold", "silver", "wti", "copper"]:
+        c[f"cot_{k}"] = _s(f"cot_{k}_net_pct_oi")
+    panel = pd.DataFrame({k: v for k, v in c.items() if v is not None})
+    panel = panel.sort_index()
+    panel = panel[panel.index >= pd.Period(START, "M")]
+    # the dollar: broad index from 2006, DXY before (spliced on log change)
+    d = np.log(panel["usd_broad"]).diff()
+    d = d.fillna(np.log(panel["dxy"]).diff())
+    panel["dollar"] = d.cumsum()
+    panel["cu_au"] = panel["copper_avg"] / panel["gold_avg"]
+    return panel
+
+
+# ------------------------------------------------------------ transforms
+def chg(s: pd.Series, n: int) -> pd.Series:
+    return s - s.shift(n)
+
+
+def logchg(s: pd.Series, n: int) -> pd.Series:
+    return np.log(s) - np.log(s.shift(n))
+
+
+def yoy(s: pd.Series) -> pd.Series:
+    return 100 * (s / s.shift(12) - 1)
+
+
+def z(s: pd.Series) -> pd.Series:
+    """Trailing 5-year z-score, so 'high' means high against recent history."""
+    m = s.rolling(ZWIN, min_periods=ZMIN).mean()
+    sd = s.rolling(ZWIN, min_periods=ZMIN).std()
+    out = (s - m) / sd
+    return out.clip(-3, 3)
+
+
+# ------------------------------------------------------------------ dials
+DIAL_INPUTS = {
+    "GROWTH": [
+        ("cu_au 6m log change", lambda p: logchg(p["cu_au"], 6), +1),
+        ("copper 6m log change", lambda p: logchg(p["copper_avg"], 6), +1),
+        ("US industrial production YoY", lambda p: yoy(p["us_indpro"]), +1),
+        ("US recession probability (inverted)",
+         lambda p: p["us_recession_prob"], -1),
+        ("US 10y-2y curve level", lambda p: p["us_curve_10y2y"], +1),
+        ("Shanghai 6m log change", lambda p: logchg(p["shanghai"], 6), +1),
+    ],
+    "INFLATION": [
+        ("US breakeven level", lambda p: p["us_breakeven_10y"], +1),
+        ("US breakeven 6m change", lambda p: chg(p["us_breakeven_10y"], 6), +1),
+        ("US CPI YoY", lambda p: yoy(p["us_cpi"]), +1),
+        ("US core CPI YoY 6m change",
+         lambda p: chg(yoy(p["us_core_cpi"]), 6), +1),
+    ],
+    "LIQUIDITY": [   # positive = easing
+        ("US M2 YoY", lambda p: yoy(p["us_m2"]), +1),
+        ("Fed assets 6m log change", lambda p: logchg(p["us_fed_assets"], 6), +1),
+        ("Fed funds 6m change (inverted)", lambda p: chg(p["us_fedfunds"], 6), -1),
+        ("NFCI level (inverted)", lambda p: p["us_nfci"], -1),
+        ("dollar 6m change (inverted)", lambda p: chg(p["dollar"], 6), -1),
+        ("real yield 6m change (inverted)",
+         lambda p: chg(p["us_real_yield_10y"], 6), -1),
+    ],
+    "STRESS": [
+        ("VIX level", lambda p: p["us_vix"], +1),
+        ("Baa spread level", lambda p: p["us_baa_spread"], +1),
+        ("St Louis stress index", lambda p: p["us_stlfsi"], +1),
+        ("EPU US level", lambda p: p["epu_us"], +1),
+        ("EPU global level", lambda p: p["epu_global"], +1),
+    ],
+    "IN_STRESS": [   # India-only modifier for Nifty
+        ("India VIX level", lambda p: p["india_vix"], +1),
+        ("EPU India level", lambda p: p["epu_india"], +1),
+        ("USD/INR 6m log change", lambda p: logchg(p["usdinr"], 6), +1),
+        ("FPI equity 3m sum (inverted)",
+         lambda p: p["fpi_equity"].rolling(3).sum(), -1),
+        ("India call rate 6m change", lambda p: chg(p["in_call_rate"], 6), +1),
+        ("India CPI YoY (partial, ends 2025-03)", lambda p: p["in_cpi_yoy"], +1),
+    ],
+}
+
+
+def build_dials(panel: pd.DataFrame) -> pd.DataFrame:
+    """Each dial = mean of its inputs' z-scores (inputs present that month)."""
+    out = {}
+    for dial, items in DIAL_INPUTS.items():
+        cols = []
+        for label, fn, sign in items:
+            try:
+                raw = fn(panel)
+            except KeyError:
+                continue
+            # a monthly release lags the read month by one or two months;
+            # the last published value is carried forward up to 2 months
+            cols.append(sign * z(raw).ffill(limit=2))
+        out[dial] = pd.concat(cols, axis=1).mean(axis=1, skipna=True)
+        out[dial + "_n"] = pd.concat(cols, axis=1).notna().sum(axis=1)
+    d = pd.DataFrame(out)
+    for dial in ["GROWTH", "INFLATION", "LIQUIDITY", "STRESS", "IN_STRESS"]:
+        d[dial + "_6m"] = d[dial] - d[dial].shift(6)
+        d[dial + "_sm"] = d[dial].rolling(3).mean()   # 3-month smoothing
+    return d
+
+
+# ----------------------------------------------------------------- regime
+QUAD = {(True, True): "REFLATION", (True, False): "GOLDILOCKS",
+        (False, True): "STAGFLATION", (False, False): "DEFLATION"}
+
+
+def regime(d: pd.DataFrame) -> pd.DataFrame:
+    """Quadrant from the smoothed GROWTH and INFLATION dials' 6m direction.
+
+    Direction = sign of the 6-month change in the smoothed dial. Level is
+    carried as a tag (HIGH/LOW when |z| > 0.5) for the report.
+    """
+    g_up = d["GROWTH_sm"].diff(6) > 0
+    i_up = d["INFLATION_sm"].diff(6) > 0
+    r = pd.DataFrame(index=d.index)
+    r["quadrant"] = [QUAD[(a, b)] for a, b in zip(g_up, i_up)]
+    r.loc[d["GROWTH_sm"].diff(6).isna() | d["INFLATION_sm"].diff(6).isna(),
+          "quadrant"] = None
+    r["liquidity"] = np.where(d["LIQUIDITY_sm"] > 0.25, "EASING",
+                              np.where(d["LIQUIDITY_sm"] < -0.25, "TIGHT",
+                                       "NEUTRAL"))
+    r["stress"] = np.where(d["STRESS_sm"] > 1.0, "HIGH",
+                           np.where(d["STRESS_sm"] < -0.5, "LOW", "NORMAL"))
+    r["in_stress"] = np.where(d["IN_STRESS_sm"] > 1.0, "HIGH",
+                              np.where(d["IN_STRESS_sm"] < -0.5, "LOW",
+                                       "NORMAL"))
+    return r
+
+
+# ----------------------------------------------------------------- bands
+ASSETS = ["gold", "silver", "aluminium", "zinc", "brent", "nifty"]
+# Base band by quadrant: +1 OVERWEIGHT, 0 NEUTRAL, -1 UNDERWEIGHT.
+BASE = {
+    #            REFL  GOLD  STAG  DEFL
+    "gold":      (0,   -1,   +1,   0),
+    "silver":    (+1,   0,    0,  -1),
+    "aluminium": (+1,  +1,   -1,  -1),
+    "zinc":      (+1,  +1,   -1,  -1),
+    "brent":     (+1,  -1,   +1,  -1),
+    "nifty":     (0,   +1,   -1,   0),
+}
+BASE_REASON = {
+    "gold": "gold wants rising inflation with falling growth; it is the hedge",
+    "silver": "half monetary, half industrial: best when both growth and "
+              "inflation rise, worst when both fall",
+    "aluminium": "priced off factory demand: growth up is what matters",
+    "zinc": "as aluminium",
+    "brent": "an inflation asset: rises with the inflation impulse, falls "
+             "without it",
+    "nifty": "equities want growth with falling inflation; stagflation is "
+             "the one quadrant that hurts",
+}
+# Liquidity shade: easing adds one step to these, tightening removes one.
+LIQ_SHADE = {"gold": +1, "silver": +1, "aluminium": +1, "zinc": +1,
+             "brent": 0, "nifty": +1}
+# Stress shade when STRESS is HIGH.
+STRESS_SHADE = {"gold": +1, "silver": -1, "aluminium": -1, "zinc": -1,
+                "brent": -1, "nifty": -1}
+QIDX = {"REFLATION": 0, "GOLDILOCKS": 1, "STAGFLATION": 2, "DEFLATION": 3}
+BAND = {1: "OVERWEIGHT", 0: "NEUTRAL", -1: "UNDERWEIGHT"}
+
+
+def bands(r: pd.DataFrame) -> pd.DataFrame:
+    """Band per asset per month from the regime row. Clipped to one step."""
+    out = {}
+    for a in ASSETS:
+        score = pd.Series(np.nan, index=r.index)
+        for i, (q, liq, st, ist) in enumerate(zip(r["quadrant"], r["liquidity"],
+                                                  r["stress"], r["in_stress"])):
+            if q is None or (isinstance(q, float) and np.isnan(q)):
+                continue
+            s = BASE[a][QIDX[q]]
+            if liq == "EASING":
+                s += LIQ_SHADE[a]
+            elif liq == "TIGHT":
+                s -= LIQ_SHADE[a]
+            if st == "HIGH":
+                s += STRESS_SHADE[a]
+            if a == "nifty" and ist == "HIGH":
+                s -= 1
+            score.iloc[i] = max(-1, min(1, s))
+        out[a] = score
+    return pd.DataFrame(out)
+
+
+def rules() -> list[str]:
+    L = ["Each input is a trailing 5-year z-score (60 months, minimum 36); "
+         "a dial is the mean of its inputs' z-scores, smoothed 3 months. "
+         "A series that lags the read month is carried forward up to 2 months.",
+         "Regime = GROWTH direction x INFLATION direction, direction = sign "
+         "of the 6-month change in the smoothed dial.",
+         "LIQUIDITY tag: EASING above +0.25, TIGHT below -0.25. STRESS tag: "
+         "HIGH above +1.0, LOW below -0.5. IN_STRESS the same, Nifty only.",
+         "Band = base band for the quadrant, +1 step if EASING, -1 if TIGHT "
+         "(brent unshaded), stress HIGH adds +1 to gold and -1 to the rest, "
+         "Nifty takes -1 more if IN_STRESS is HIGH; clipped to one step."]
+    for dial, items in DIAL_INPUTS.items():
+        L.append(f"{dial}: " + "; ".join(
+            f"{lab}{' (-)' if sgn < 0 else ''}" for lab, _, sgn in items))
+    for a in ASSETS:
+        L.append(f"{a}: REFL {BASE[a][0]:+d}, GOLDILOCKS {BASE[a][1]:+d}, "
+                 f"STAG {BASE[a][2]:+d}, DEFL {BASE[a][3]:+d}; "
+                 f"{BASE_REASON[a]}")
+    return L
+
+
+def run_all():
+    p = load_panel()
+    d = build_dials(p)
+    r = regime(d)
+    b = bands(r)
+    return p, d, r, b
+
+
+if __name__ == "__main__":
+    p, d, r, b = run_all()
+    last = r.index[-1]
+    print(last, r.loc[last].to_dict())
+    print(d.loc[last, ["GROWTH", "INFLATION", "LIQUIDITY", "STRESS",
+                       "IN_STRESS"]].round(2).to_dict())
+    print(b.loc[last].map(BAND).to_dict())

@@ -8,3 +8,6 @@
 - 2026-10-05 several stage agents reported the Edit tool unavailable and left small report blemishes (anchor typos) unfixed; each named in its hand-back.
 - 2026-10-05 stage 9 status partial: storage market size, PSU share, sovereign-cloud size not found; market sizes from WebSearch summaries only.
 - 2026-10-05 remediation: Verifier C F1 CRITICAL (Gate 0 scored 4 years; prospectus holds FY21-FY22 restated standalone). One remediation cycle per MMP 2026-10-05 precedent: stage 1 run 2, stage 7 run 2 scoped (6C-6E + F7), then B12a run 2 (B01 mandatory tier) and B12c run 2. Run 1 files kept as *-run1.
+- 2026-10-05 09b mechanical check PASS: SECTION 1-6 in order, one corpus verdict line (CORPUS GAPPED), DRAFT marker in Section 2, annex Q1-Q10 and hash line. Stray scratch_edit_placeholder.txt (repo root, created by 09b) deleted after inspection.
+- 2026-10-05 B00 announcement count clarified: 33 fetched, 28 kept (dossier noted 33 vs 30 vs 28).
+- 2026-10-05 open for operator: B12b basis (90.9% partial-catch vs 54.5% full-catch; the latter would force REWORK under OR-29).

@@ -28,7 +28,7 @@ Spear gate: Spear: OVERRIDE 2026-10-05 (operator standing ruling 2026-09-05: Ste
 - Verdict: FRESHNESS PAIRS OK
 
 ## Input gaps
-- collector_warning (verbatim): BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026 fetched from the NSE API; filings before Sep 2025 not collected.
+- collector_warning (verbatim): BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026 fetched from the NSE API (28 kept in announcements/ after removing 3 byte-identical duplicates and moving 2 decks to presentation/ and other/); filings before Sep 2025 not collected.
 - collector_warning (verbatim): shareholding/ is empty: no source is automated yet. REPAIRED by /step1: NSE SHP XBRL for Mar-2026 and Jun-2026 plus mechanical text extracts.
 - collector_warning (verbatim): screener export sheets came out EMPTY (Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization) for ESCONET, NETWEB, RPTECH, ORIENTTECH. Data_Sheet.csv files ARE populated with raw values; ESCONET screener history covers FY2023-FY2026 only plus Q1 FY27.
 - collector_warning (verbatim): no results PDFs yet (screener has none). REPAIRED by /step1: H1 FY26, FY26 audited and Q1 FY27 board outcomes fetched from NSE.
@@ -163,7 +163,7 @@ freshness_pairs:
 freshness_verdict: FRESHNESS PAIRS OK
 input_gaps:
 - 'collector_warning (verbatim): BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the
-  company files nothing. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026 fetched from the NSE API; filings before Sep 2025 not collected.'
+  company files nothing. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026 fetched from the NSE API (28 kept in announcements/ after removing 3 byte-identical duplicates and moving 2 decks to presentation/ and other/); filings before Sep 2025 not collected.'
 - 'collector_warning (verbatim): shareholding/ is empty: no source is automated yet. REPAIRED by /step1: NSE SHP XBRL for Mar-2026 and Jun-2026 plus mechanical
   text extracts.'
 - 'collector_warning (verbatim): screener export sheets came out EMPTY (Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization) for ESCONET, NETWEB,

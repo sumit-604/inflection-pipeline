@@ -61,17 +61,17 @@ inCall  = m("FRED:IRSTCI01INM156N")
 inCpi   = m("FRED:CPALTT01INM659N")
 
 // ------------------------------------------------------------ transforms
-chg(s, n)    => s - s[n]
-logchg(s, n) => math.log(s) - math.log(s[n])
-yoy(s)       => 100 * (s / s[12] - 1)
-zs(s) =>
+chg(float s, int n)    => s - s[n]
+logchg(float s, int n) => math.log(s) - math.log(s[n])
+yoy(float s)           => 100 * (s / s[12] - 1)
+zs(float s) =>
     mu = ta.sma(s, zWin)
     sd = ta.stdev(s, zWin)
     z  = sd > 0 ? (s - mu) / sd : na
     math.max(-3, math.min(3, z))
 
 // mean of up to 6 values, skipping na (the Python's skipna mean)
-mean6(a, b, c, d, e, f) =>
+mean6(float a, float b, float c, float d, float e, float f) =>
     sum = 0.0
     n = 0
     if not na(a)
@@ -97,10 +97,10 @@ mean6(a, b, c, d, e, f) =>
 // ----------------------------------------------------------------- dials
 cuau = copper / gold
 GROWTH = mean6(zs(logchg(cuau, 6)), zs(logchg(copper, 6)), zs(yoy(indpro)), -zs(recpro), zs(t10y2y), zs(logchg(sse, 6)))
-INFLATION = mean6(zs(t10yie), zs(chg(t10yie, 6)), zs(yoy(cpi)), zs(chg(yoy(corecpi), 6)), na, na)
+INFLATION = mean6(zs(t10yie), zs(chg(t10yie, 6)), zs(yoy(cpi)), zs(chg(yoy(corecpi), 6)), float(na), float(na))
 LIQUIDITY = mean6(zs(yoy(m2)), zs(logchg(walcl, 6)), -zs(chg(fedfund, 6)), -zs(nfci), -zs(chg(math.log(dxy), 6)), -zs(chg(dfii10, 6)))
-STRESS = mean6(zs(vix), zs(baa10y), zs(stlfsi), zs(epuUS), zs(epuGl), na)
-IN_STRESS = mean6(zs(invix), zs(epuIN), zs(logchg(usdinr, 6)), zs(chg(inCall, 6)), zs(inCpi), na)   // FPI input not on TradingView
+STRESS = mean6(zs(vix), zs(baa10y), zs(stlfsi), zs(epuUS), zs(epuGl), float(na))
+IN_STRESS = mean6(zs(invix), zs(epuIN), zs(logchg(usdinr, 6)), zs(chg(inCall, 6)), zs(inCpi), float(na))   // FPI input not on TradingView
 
 gS = ta.sma(GROWTH, smooth)
 iS = ta.sma(INFLATION, smooth)
@@ -112,7 +112,7 @@ nS = ta.sma(IN_STRESS, smooth)
 gUp = gS - gS[dirLen] > 0
 iUp = iS - iS[dirLen] > 0
 // 0 REFLATION, 1 GOLDILOCKS, 2 STAGFLATION, 3 DEFLATION
-quad = na(gS - gS[dirLen]) or na(iS - iS[dirLen]) ? na : gUp and iUp ? 0 : gUp and not iUp ? 1 : not gUp and iUp ? 2 : 3
+quad = na(gS - gS[dirLen]) or na(iS - iS[dirLen]) ? int(na) : gUp and iUp ? 0 : gUp and not iUp ? 1 : not gUp and iUp ? 2 : 3
 quadName = quad == 0 ? "REFLATION" : quad == 1 ? "GOLDILOCKS" : quad == 2 ? "STAGFLATION" : quad == 3 ? "DEFLATION" : "n/a"
 liqTag = lS > liqHi ? "EASING" : lS < liqLo ? "TIGHT" : "NEUTRAL"
 stTag  = sS > stHi ? "HIGH" : sS < stLo ? "LOW" : "NORMAL"
@@ -120,7 +120,7 @@ inTag  = nS > stHi ? "HIGH" : nS < stLo ? "LOW" : "NORMAL"
 
 // ----------------------------------------------------------------- bands
 // Base band by quadrant [REFL, GOLD, STAG, DEFL]; same table as model.py.
-base(asset, q) =>
+base(string asset, int q) =>
     r = 0
     if asset == "gold"
         r := q == 0 ? 0 : q == 1 ? -1 : q == 2 ? 1 : 0
@@ -133,13 +133,13 @@ base(asset, q) =>
     if asset == "nifty"
         r := q == 0 ? 0 : q == 1 ? 1 : q == 2 ? -1 : 0
     r
-band(asset) =>
+band(string asset) =>
     s = base(asset, quad)
     liqShade = asset == "brent" ? 0 : 1
     s += liqTag == "EASING" ? liqShade : liqTag == "TIGHT" ? -liqShade : 0
     s += stTag == "HIGH" ? (asset == "gold" ? 1 : -1) : 0
     s += asset == "nifty" and inTag == "HIGH" ? -1 : 0
-    na(quad) ? na : math.max(-1, math.min(1, s))
+    na(quad) ? int(na) : math.max(-1, math.min(1, s))
 bandSel = band(bandAsset)
 
 // ----------------------------------------------------------------- plots
@@ -168,9 +168,15 @@ var t = table.new(position.top_right, 2, 7, border_width = 1)
 if barstate.islast
     table.cell(t, 0, 0, "Regime", bgcolor = color.new(color.gray, 70))
     table.cell(t, 1, 0, quadName, bgcolor = color.new(color.gray, 70))
-    table.cell(t, 0, 1, "GROWTH");    table.cell(t, 1, 1, str.tostring(gS, "#.00"))
-    table.cell(t, 0, 2, "INFLATION"); table.cell(t, 1, 2, str.tostring(iS, "#.00"))
-    table.cell(t, 0, 3, "LIQUIDITY"); table.cell(t, 1, 3, str.tostring(lS, "#.00") + "  " + liqTag)
-    table.cell(t, 0, 4, "STRESS");    table.cell(t, 1, 4, str.tostring(sS, "#.00") + "  " + stTag)
-    table.cell(t, 0, 5, "IN_STRESS"); table.cell(t, 1, 5, str.tostring(nS, "#.00") + "  " + inTag)
-    table.cell(t, 0, 6, "Band " + bandAsset); table.cell(t, 1, 6, showBands ? str.tostring(bandSel, "#") : "off")
+    table.cell(t, 0, 1, "GROWTH")
+    table.cell(t, 1, 1, str.tostring(gS, "#.00"))
+    table.cell(t, 0, 2, "INFLATION")
+    table.cell(t, 1, 2, str.tostring(iS, "#.00"))
+    table.cell(t, 0, 3, "LIQUIDITY")
+    table.cell(t, 1, 3, str.tostring(lS, "#.00") + "  " + liqTag)
+    table.cell(t, 0, 4, "STRESS")
+    table.cell(t, 1, 4, str.tostring(sS, "#.00") + "  " + stTag)
+    table.cell(t, 0, 5, "IN_STRESS")
+    table.cell(t, 1, 5, str.tostring(nS, "#.00") + "  " + inTag)
+    table.cell(t, 0, 6, "Band " + bandAsset)
+    table.cell(t, 1, 6, showBands ? str.tostring(bandSel, "#") : "off")

@@ -22,3 +22,7 @@ expose them (never estimated).
 | 6 | Peer verification (2 DANISH transcripts, 2 presentations) | sonnet 5.5 | medium | n/a | n/a | n/a | n/a | 142,219 | 179s | 1 |
 | 7 | Emerging moat 22-category scan | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 110,242 | 231s | 1 |
 | 9 | TAM SAM SOM (web; partial) | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 116,397 | 272s | 1 |
+| 12a | Verifier A numerical | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 416,814 | 609s | 1 |
+| 12b | Verifier B red flags | opus 5.5 | xhigh | n/a | n/a | n/a | n/a | 441,546 | 978s | 1 |
+| 12c | Verifier C framework (phase 1 scope) | opus 5.5 | xhigh | n/a | n/a | n/a | n/a | 162,120 | 658s | 1 |
+| 12d | Verifier D peer coverage | sonnet 5.5 | medium | n/a | n/a | n/a | n/a | 71,906 | 77s | 1 |

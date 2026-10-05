@@ -1,0 +1,23 @@
+stage: B12d
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+peers_provided: 3                # DANISH, SPCL, MARINE (4 documents: DANISH two calls, SPCL deck, MARINE deck) plus 3 screener sheets
+peers_used_substantively: 3      # DANISH (2 transcripts), SPCL (deck + sheet), MARINE (sheet-carried; deck adds p16-17, p32 only)
+peer_utilisation: "100% by peer (3 of 3); 67% if MARINE is counted CITED-ONLY (2 of 3 carried by document text)"
+peers_audited: 3
+substantive_confirmed: 3
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "MARINE", missed_item: "Vendor qualification barrier: approved-vendor list with Indian Navy/Coast Guard needs prior similar work and references (relevant to Q9 vendor registration; no lag stated)", anchor: "MARINE-Investor-Presentation-2025-10-11.txt page 31, lines 693-696"}
+claims_all_addressed: true       # 9 of 9 peer_questions in B05 have a verdict (0 verified, 7 partial, 2 unverifiable)
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "MARINE marked SUBSTANTIVE but verdict-bearing evidence is sheet-only; deck citations (p16-17 customers, p32 new facilities) exist and are real but light. B06 discloses this itself. Treat as CITED-ONLY on documents, sheet as carrier. Sheet figures spot-checked and match.", anchor: "B06 Part 3; MARINE-Data_Sheet.csv rows Sales, Raw Material Cost, Receivables, Inventory"}
+  - {severity: MINOR, item: "Q9 left UNVERIFIABLE without citing MARINE p31 vendor qualification barrier (context only, not a lag). Verdict stands.", anchor: "MARINE deck page 31"}
+  - {severity: MINOR, item: "B06 peers_provided is 4 (documents) against 3 peers; count basis differs from this audit", anchor: "B06-peers.yaml line 17"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

@@ -1,0 +1,44 @@
+stage: B12b
+company: "AVANA"
+run_date: "2026-10-05"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+independent_flags_found: 25
+caught: 7
+partially_caught: 6
+missed:
+  - {severity: "MAJOR", item: "R6 promoter family take 367.48 lakh = 31.3% of FY26 PAT (49.4% FY25); FY27 pay 341.64 above Sec 197 limits, self-approved (97.6% of votes cast); 78.00/yr consultancy to four promoter wives and one mother; AR says pay 'increased marginally' over a +45% to +65% table; AGM Sec 189 register and AOC-2 'NIL'", anchor: "AR p52, p27-31, p37-40, p67, p117-118; AGM proceedings p3-4; voting results p5; Reg 31(4) p2"}
+  - {severity: "MAJOR", item: "R8 disclosure-control weakness pattern in the only communication channel (NSE results query, Board report vs CARO on cost records and CSR, MD&A interest cover backwards, CS exit 69 days post-listing, KMP pay swap)", anchor: "RES p1-2; AR p51/p94; AR p59/p96; AR p74; CS resignation p1; AR p52/p117"}
+  - {severity: "MINOR", item: "R13 MD&A interest cover 0.05x vs 0.07x with 'lower operating earnings' explanation; derived EBIT/interest 19.4x vs 14.5x", anchor: "AR p74; AR p127"}
+  - {severity: "MINOR", item: "R14 Board report says cost records not required and not maintained; CARO (vi) says maintained", anchor: "AR p51; AR p94"}
+  - {severity: "MINOR", item: "R15 CSR nil spent in FY26, committee never met, 12.78 sent to PM CARES 16-Jul-2026; CARO (xx)(a) says no unspent amount", anchor: "AR p46, p57-59, p96, p124"}
+  - {severity: "MINOR", item: "R16 NSE email 17-Jun-2026: four defects in FY26 results filing", anchor: "RES p1-2"}
+  - {severity: "MINOR", item: "R17 NSE surveillance price-movement query 10-Apr-2026", anchor: "Price-movement clarification p1"}
+  - {severity: "MINOR", item: "R18 CS resigned 69 days after listing", anchor: "CS resignation 30-Mar-2026 p1; AR p63"}
+  - {severity: "MINOR", item: "R19 CFO and CS pay figures swapped between Board report and notes", anchor: "AR p52; AR p117; RES p18"}
+  - {severity: "MINOR", item: "R20 10 of 23 Board meetings at 57% attendance; Audit Committee met 3 times, none after 23-Dec-2025", anchor: "AR p45-46"}
+  - {severity: "MINOR", item: "R21 bank stock-statement receivables exceed books by 2.15% to 7.77% each FY26 quarter, labelled 'Not Material'", anchor: "AR p125"}
+  - {severity: "MINOR", item: "R24 RHP order book described as 'transformers and relay panels'; company makes no transformers", anchor: "RHP p49"}
+pipeline_flags_not_supported:
+  - "B06 FLAG-WC-PATTERN / Part 4 'most consequential finding': AVANA cost-based 164 days compared with peer sales-based days (AVANA sales-based 97.6, nearer DANISH 64 than SPCL 188); AVANA FY26 CFO +795.44 and borrowings 568.51 to 76.14 are the opposite of SPCL; IPO WC use only 123.03 (AR p101, p43, p107; RES p4)"
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "lower by one notch: RHP blames COVID for a KIADB delay whose first deadline passed ~15 months before COVID (RHP p179), and the AR contradicts its own numbers (margin 'no significant change', interest cover, pay 'marginally', cost records and CSR vs CARO); hold C at its floor if no lower grade exists"
+findings:
+  - {severity: "MAJOR", location: "B05 all sections", claimed: "no governance or pay red flag; FY27 pay 341.64 listed as cost guidance", source_truth: "family take 367.48 = 31.3% of FY26 PAT; FY27 pay above Sec 197 limits, self-approved; 78.00/yr to promoter wives and mother; AR framing contradicts notes", note: "R6 MISSED (AR p52, p67, p117-118; AGM p3; votes p5)"}
+  - {severity: "MAJOR", location: "B05 all sections", claimed: "no disclosure-quality flag", source_truth: "NSE results query (RES p1-2, file B05 opened); Board report vs CARO on cost records and CSR; MD&A interest cover backwards; CS exit 69 days post-listing; KMP pay swap", note: "R8 MISSED"}
+  - {severity: "MAJOR", location: "B05 2B; block excuse_pattern", claimed: "silence-heavy, no external blame", source_truth: "RHP p179 blames COVID-19 for KIADB non-start; construction was due ~Dec-2018; KIADB notice 2023; 2016-2025 history absent", note: "R2 PARTIALLY CAUGHT; excuse pattern misclassified"}
+  - {severity: "MAJOR", location: "B05 2D; B06 Q8", claimed: "886 vs 600 panels explainable by shift basis; capacity basis NOT FOUND", source_truth: "RHP p104 'fully utilised and further capacity expansion cannot be done'; relays fell 65,840 to 62,034 (AR p85)", note: "R5 PARTIALLY CAUGHT; B06 reading OVERSTATED; relay decline and mix-margin link absent"}
+  - {severity: "MAJOR", location: "B06 FLAG-WC-PATTERN; Part 4; cross_peer_hypothesis", claimed: "AVANA WC and cash profile matches SPCL; WC drain is the live use of IPO money", source_truth: "sales-based inventory 97.6 days, receivables 96.7 (nearer DANISH); CFO +795.44; debt 568.51 to 76.14; IPO WC use 123.03, internal accrual 2,315.90", note: "NOT SUPPORTED (AR p101, p43, p107; RES p4)"}
+  - {severity: "MINOR", location: "B05 peer_questions 2; B06 Q2", claimed: "warranty drop 0.50% vs 3.72% as a peer question / unsupported anomaly", source_truth: "H2 FY26 accrual ~6.06 on revenue 4,811.17 (0.13%); provision 457.74 to 322.15 in H2; PBT effect 5-20% of H2 PBT [INFERENCE]", note: "R4 PARTIALLY CAUGHT; under-weighted (AR p124; RHP p231, p235)"}
+  - {severity: "MINOR", location: "B05 2A rows 4 and 6", claimed: "WC cycle and receivables DELIVERED", source_truth: "projections that justified an 860.00 raise; IPO WC use 123.03; internal accrual 2,315.90", note: "R10; direction right, classification generous"}
+  - {severity: "MINOR", location: "B05 3D; B06 Q7", claimed: "top 5 38.79% H1 FY26, not high vs SPCL", source_truth: "top 5 rose from 22.42% FY25; top 10 from 31.50% to 52.00% (RHP p37-38)", note: "R11 trend absent"}
+  - {severity: "MINOR", location: "B05 2A row 7", claimed: "exports PARTIAL at 0.55%", source_truth: "AR p4 'global clientele' map with six countries vs 46.28 exports; country lists differ (AR p68)", note: "R12 branding contradiction absent"}
+  - {severity: "MINOR", location: "B05 2B", claimed: "about 11 weeks before the date", source_truth: "19-Aug-2026 to 26-Oct-2026 = 68 days (9.7 weeks)", note: "imprecision"}
+  - {severity: "MINOR", location: "B05, B06", claimed: "not mentioned", source_truth: "R17 NSE price query; R20 Board/Audit Committee functioning; R21 bank stock-statement gaps; R24 RHP 'transformers'", note: "minor misses aggregated"}
+critical_count: 0
+major_count: 5
+minor_count: 6
+material_found: 8
+material_caught: 6
+acceptance_rate: 75
+coverage_basis: "8 material (all MAJOR) of 25 listed; 3 CAUGHT (R1, R3, R7) + 3 PARTIALLY CAUGHT (R2, R4, R5) counted as had per rule 3 'found but under-weighted'; strict CAUGHT-only 3/8 = 37.5%; 2 MISSED (R6 promoter take, R8 disclosure controls), both possibly held by stages this verifier cannot see"

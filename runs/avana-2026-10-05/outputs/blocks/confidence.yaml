@@ -1,0 +1,20 @@
+stage: confidence
+company: AVANA
+run_date: 2026-10-05
+phase: 1
+verifier_a_identity_check: "0 CRITICAL rows in B12a; nothing to test; no strikes"
+confidence_delta:
+  numerical_acceptance: 96.4      # B12a: 640 figures checked of ~1,050 material; mandatory tier 32 of 32; 0 CRITICAL, 5 MAJOR, 7 MINOR
+  redflag_coverage: 75            # B12b: 6 of 8 material (CAUGHT + PARTIALLY CAUGHT per verifier rule 3); strict CAUGHT-only 3/8 = 37.5% recorded, not used
+  framework_adherence: 87.0       # B12c phase 1 scope: 60 of 69 rules (Gate 0 42/47, EM 18/22); valuation half PENDING PHASE 3
+  peer_utilisation: NOT APPLICABLE
+  overall: 75
+  overall_set_by: redflag_coverage
+  not_applicable:
+    - "peer_utilisation: denominator 3 peers (< 4 floor); reported as count: 3 of 3 used substantively (B12d; 2 of 3 if MARINE counted cited-only)"
+  band: "75-89 normal, note specifics"
+rework_check: "No CONFIRMED CRITICAL in B12a; no applicable component below 60% on a denominator of 4 or more (OR-29). No REWORK."
+notes:
+  - "Verifier B asked the orchestrator to choose between the rule-3 rate (75%) and a strict caught-only rate (37.5%). The orchestrator applies B12b.acceptance_rate as emitted under the verifier's own rule 3; the strict figure is recorded for the operator."
+  - "Verifier B's two MISSED items (R6 promoter family take, R8 disclosure controls) were audited against B05/B06 only; stage 8 (B08) records promoter pay 24.7% of PAT and the family fees, and stage 3 records disclosure slips. Verifier B did not see those blocks by design."
+  - "Verifier C C-01 (MAJOR): Gate 0 ROCE proxy vs fixed formula; recompute gives Core 76, classification GOOD+ unchanged. B01 not revised in phase 1; carried to the dossier and to stage 10."

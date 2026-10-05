@@ -1,0 +1,87 @@
+stage: B12c
+company: "AVANA"
+run_date: "2026-10-05"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+# scope: phase 1 (Gate 0 + Emerging Moat); valuation half PENDING PHASE 3
+gate0:
+  rules_checked: 47
+  fails:
+    - "G-03 MAJOR: ROCE computed on Total assets minus Other liabilities (equity + borrowings proxy) for all 7 years; fixed formula is EBIT / (TA - CL); CL available FY23-FY25 (RHP p.225) and FY26 (results p.11); FY20-FY22 CL NOT FOUND"
+    - "G-08 (consequential to G-03): A1 stated 3 on proxy median 17.79%; as written 5 on exact FY23-FY26 median 34.55%"
+    - "G-09 (consequential to G-03): A2 stated 0 on proxy min 7.09% (FY21); as written 5 on exact min 16.65% (FY23)"
+    - "G-35 MINOR: M8 stated 0 on 'no reach metrics in provided data'; RHP p.173-174 names 6 dealers, RHP p.39 dealer revenue 3.65 to 86.16 lakh FY23-FY25; re-derived 1"
+    - "G-47 MINOR: 01-gate0.md ends with an abridged YAML block missing 9 schema fields; full block only in B01-gate0.yaml"
+emoat:
+  rules_checked: 22
+  fails:
+    - "E-05 MINOR: recount says 13 documented items across 5 scan categories but itemises B2 3 + G1 2 + G2 2 + F1 2 + E2 1 = 10; evidence_mix documented 16 double-adds the 3 Section 1-2 items (re-derived 13); claim count 8 vs at least 13 distinct 🎙️ tags"
+    - "E-09 MINOR: Section 5 scoring table has 15 grouped rows, rule requires all 23 rows"
+    - "E-20 MINOR: 3 evidence items anchored to B03/B04 only, no source page (2A capacity, Section 3 C2, top_moat_risks CFO/EBITDA and inventory days)"
+    - "E-21 MINOR: catalysts_12m item 2 (vendor registrations to valued order) has window 12-24 months"
+valuation: {rules_checked: 0, fails: [], status: "PENDING PHASE 3: B10/B11 not yet produced"}
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: [], status: "PENDING PHASE 3"}  # rules 13-14; any fail = REWORK stage 11
+business_narrative: {checked: false, fails: [], status: "NOT IN PHASE-1 SCOPE: stage 13 not yet run"}  # rule 9; any fail = REWORK stage 13
+recomputed_destination_pe: ""  # blank: valuation scope pending phase 3
+recomputed_decision: ""        # blank: Gate 0 classification GOOD+ concurs on recompute; valuation pending
+findings:
+  - id: C-01
+    framework: gate0
+    rules: "G-03, G-08, G-09"
+    severity: MAJOR
+    stated: "ROCE proxy (equity + borrowings) all 7 years; median 17.79%, min 7.09%; A1 3, A2 0, Block A 10, Core 69, grand total 100"
+    recomputed: "ROCE = EBIT / (TA - CL): FY23 16.65%, FY24 42.49%, FY25 46.48%, FY26 26.61% (RHP p.225; results p.10-11); FY20-FY22 NOT FOUND; median 34.55%, min 16.65%; A1 5, A2 5, A4 5, Block A 17, Core 76, grand total 108 with C-02"
+    effect: "Classification GOOD+ unchanged (Core 60-79 + FORTRESS); no deal-breaker change; Block A no longer a weak block; Core 76 is 4 below the 80 line"
+    fix: "B01 revision: fixed ROCE formula, FY20-FY22 ROCE NOT FOUND (same window rule B01 applies to B2, B3, B4, M12); align B07 6C and combined_reasoning"
+  - id: C-02
+    framework: gate0
+    rules: "G-35"
+    severity: MINOR
+    stated: "M8 0, no reach metrics"
+    recomputed: "M8 1: 6 dealers (RHP p.173-174), network growth NOT FOUND; moat score 32; moats present 7 unchanged"
+    effect: "none on class or classification"
+    fix: "B01 revision"
+  - id: C-03
+    framework: gate0
+    rules: "G-47"
+    severity: MINOR
+    stated: "report ends with abridged block plus pointer line"
+    recomputed: "report should end with the full fenced block"
+    effect: "presentational"
+    fix: "B01 revision"
+  - id: C-04
+    framework: emoat
+    rules: "E-05"
+    severity: MINOR
+    stated: "13 documented across 5 scan categories plus 3; evidence_mix documented 16, claim 8"
+    recomputed: "10 documented across 5 scan categories plus 3 = 13; claims at least 13"
+    effect: "no score effect; guard outcome unchanged (2 of 22 active)"
+    fix: "B07 recount line and evidence_mix"
+  - id: C-05
+    framework: emoat
+    rules: "E-09"
+    severity: MINOR
+    stated: "15-row scoring table"
+    recomputed: "23 rows"
+    effect: "presentational"
+    fix: "B07 Section 5"
+  - id: C-06
+    framework: emoat
+    rules: "E-20"
+    severity: MINOR
+    stated: "anchors 'RHP via B03', '(B04 FLAG-CONCENTRATION)', '(B03)'"
+    recomputed: "source page anchors"
+    effect: "weak anchor"
+    fix: "B07 anchors"
+  - id: C-07
+    framework: emoat
+    rules: "E-21"
+    severity: MINOR
+    stated: "catalysts_12m item 2 window 12-24 months"
+    recomputed: "next-12-month items only; move to optionality register or relabel"
+    effect: "risk of over-counted catalyst proximity at Pillar 3 in phase 3"
+    fix: "B07 catalysts_12m"
+critical_count: 0
+major_count: 1
+minor_count: 6
+acceptance_rate: 87.0             # 60 passed / 69 checked (gate0 42/47, emoat 18/22)

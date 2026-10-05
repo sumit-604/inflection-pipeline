@@ -10,14 +10,7 @@
 | STRESS | -0.52 | -1.13 | 5 of 5 | low, falling |
 | IN_STRESS | +0.03 | -0.94 | 5 of 6 | mid, falling |
 
-| Asset | Band | How the band was set |
-|---|---|---|
-| gold | OVERWEIGHT | reflation base +0, +1 easing |
-| silver | OVERWEIGHT | reflation base +1, +1 easing |
-| aluminium | OVERWEIGHT | reflation base +1, +1 easing |
-| zinc | OVERWEIGHT | reflation base +1, +1 easing |
-| brent | OVERWEIGHT | reflation base +1 |
-| nifty | OVERWEIGHT | reflation base +0, +1 easing |
+Exposure bands are switched off: the band table failed condition (a) of PASS_BAR.md (EVALUATION_2026-10.md, section 5). What each quadrant, liquidity and stress tag has meant for the six assets over the following 12 months is in that file, section 4.
 
 Inputs, latest z-score (sign already applied):
 
@@ -46,4 +39,4 @@ Series ending before the read month:
 - imf_aluminium.csv ends 2026-07
 - imf_zinc.csv ends 2026-07
 
-No direction call is made for any horizon under 6 months. Bands are exposure tilts conditional on the regime, not forecasts. Evaluation: EVALUATION_2026-10.md; bar: PASS_BAR.md.
+No direction call is made for any horizon. This is a regime read, not a forecast. Evaluation: EVALUATION_2026-10.md; bar: PASS_BAR.md; reading: VERDICT_2026-10.md.

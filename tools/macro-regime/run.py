@@ -14,6 +14,10 @@ from model import (ASSETS, BAND, BASE, BASE_REASON, DIAL_INPUTS, LIQ_SHADE,
                    QIDX, STRESS_SHADE, run_all, z)
 
 HERE = Path(__file__).resolve().parent
+# EVALUATION_2026-10.md: condition (a) of PASS_BAR.md failed, so latest.md
+# shows dials and regime only. Set True only after a new bar is written and
+# passed. The band code stays in model.py for the next evaluation.
+BANDS_ENABLED = False
 DIALS = ["GROWTH", "INFLATION", "LIQUIDITY", "STRESS", "IN_STRESS"]
 
 
@@ -49,9 +53,16 @@ def main():
         tag = ("high" if lvl > 0.5 else "low" if lvl < -0.5 else "mid") + \
               (", rising" if ch > 0.1 else ", falling" if ch < -0.1 else ", flat")
         L.append(f"| {k} | {lvl:+.2f} | {ch:+.2f} | {n} of {len(DIAL_INPUTS[k])} | {tag} |")
-    L += ["", "| Asset | Band | How the band was set |", "|---|---|---|"]
-    for a in ASSETS:
-        L.append(f"| {a} | {BAND[int(b.loc[m, a])]} | {_band_reason(a, row)} |")
+    if BANDS_ENABLED:
+        L += ["", "| Asset | Band | How the band was set |", "|---|---|---|"]
+        for a in ASSETS:
+            L.append(f"| {a} | {BAND[int(b.loc[m, a])]} | {_band_reason(a, row)} |")
+    else:
+        L += ["", "Exposure bands are switched off: the band table failed "
+              "condition (a) of PASS_BAR.md (EVALUATION_2026-10.md, section 5). "
+              "What each quadrant, liquidity and stress tag has meant for the "
+              "six assets over the following 12 months is in that file, "
+              "section 4."]
     # inputs behind each dial, latest z
     L += ["", "Inputs, latest z-score (sign already applied):", ""]
     for k in DIALS:
@@ -71,9 +82,9 @@ def main():
             c = [x.strip() for x in line.strip("|").split("|")]
             if c[5] and c[5] < str(m) and c[2] != "V1 CACHE":
                 L.append(f"- {c[0]} ends {c[5]}")
-    L += ["", "No direction call is made for any horizon under 6 months. "
-          "Bands are exposure tilts conditional on the regime, not forecasts. "
-          "Evaluation: EVALUATION_2026-10.md; bar: PASS_BAR.md."]
+    L += ["", "No direction call is made for any horizon. This is a regime "
+          "read, not a forecast. Evaluation: EVALUATION_2026-10.md; bar: "
+          "PASS_BAR.md; reading: VERDICT_2026-10.md."]
     text = "\n".join(L) + "\n"
     (HERE / "latest.md").write_text(text)
     print(text)

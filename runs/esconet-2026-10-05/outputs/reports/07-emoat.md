@@ -1,5 +1,6 @@
 # STAGE 7: EMERGING MOAT SCAN (22 categories + R1), ESCONET TECHNOLOGIES LTD
-Run date 2026-10-05. Model Sonnet 5.5. This is the Emerging Moat scan. It is not FTTCP.
+Run 2 (scoped remediation). Run date 2026-10-05. Model Sonnet 5.5. This is the Emerging Moat scan. It is not FTTCP.
+Run 2 scope: Sections 6C to 6E re-derived on the re-issued Gate 0 (B01 run 2: 6 years FY2021-FY2026, core 60, moat 18 STRONG, AVERAGE capped by DB4). Section 3 recount and evidence_mix redone from the run 1 tables (Verifier C F7). The 22-category scan, scores and every other section carry forward from run 1 unchanged. Sections 0 to 2 and Section 0.2 mention Gate 0 facts as of run 1 (for example "cumulative CFO FY23 to FY26"); they stand as the record of run 1 and do not feed any score.
 Units: AR, results, prospectus and Reg 30 value tables are in Rs Lakhs unless a line says Cr. Each anchor names its unit.
 Anchor key: AR = FY26 Annual Report (page marker); JUN25 = Concall 19 Jun 2025; AUG26 = Concall 13 Aug 2026; Pres Sep25 / Pres Jun26 = investor decks; Q1 BM = Q1 FY27 board outcome (12 Aug 2026); PROSP = prospectus; Reg 30 = exchange filing with date.
 Evidence tags: 📄 documented, 🎙️ management claim, 🔍 analyst inference.
@@ -34,7 +35,7 @@ Two readings, one separating observation (per A26.3):
 - Evidenced path today: B carries more documentary support, A carries none filed. Neither is quantified. Separating observation: Q2 FY27 standalone gross margin after stock is replaced at current cost, with HexaData revenue and margin by line. Conservatism goes in position size, not in the input.
 
 ### 0.2 Cash conversion
-- FY26 consolidated CFO (882.50) Lakhs after inventories (3,255.66), receivables +828.13, payables +1,333.68 (AR p.134, Lakhs). PAT 6.16 Cr. Cumulative FY23 to FY26 CFO is negative (B01).
+- FY26 consolidated CFO (882.50) Lakhs after inventories (3,255.66), receivables +828.13, payables +1,333.68 (AR p.134, Lakhs). PAT 6.16 Cr. Cumulative FY23 to FY26 CFO is negative (B01 run 1 basis; B01 run 2 shows cumulative FY21 to FY26 CFO -798.86 Lakhs, CFO/PAT -0.36, same sign).
 - FY26 investing 1,568.36 Lakhs outflow (capex 797.13, goodwill 851.11) funded by short-term borrowing 1,208.85 and equity 419.91 (AR p.134).
 - Q1 FY27: no balance sheet or cash flow filed. CFO "positive", "5% of revenue" in a garbled exchange (AUG26 p.12); MD says cash is reinvested in inventory (AUG26 p.12). Status INDETERMINATE for Q1, negative for FY26. Per rule, it caps the verdict at PROCEED WITH CAVEATS when it reaches the verdict stage.
 - The receivable gap in B01 (results filing 1,963.93 vs AR 4,426.93 Lakhs) still decides whether the "20.2 debtor days" claim is true. Not resolved here.
@@ -174,7 +175,7 @@ Standard of proof: a moat row needs a documented advantage that a rival cannot c
 - F2 Execution moat: NO EVIDENCE FOUND. Counter-evidence found. B05 promise-delivery record: 3 delivered, 5 partial, 5 missed; all 4 quantified forecasts missed; grade C. ResQ launched on the promised FY26 timeline (📄) and the Info Edge order carried a Dec 2025 delivery date (delivery confirmation NOT FOUND). ZeaCloud capacity grew about 3x with flat revenue. Capex is too small to test on time and budget. Score 0.
 
 ### FAMILY G, FINANCIAL AND STRUCTURAL
-- G1 War chest: NO EVIDENCE FOUND. FCF negative in all four years (B01); FY26 CFO (882.50) Lakhs; BBB-/Stable (CRISIL, 2 Jul 2026); Rs 7.50 Cr working-capital limit unused per CRISIL. A short-term loan of Rs 11.87 Cr was repaid in April 2026 (Pres Jun26 slide 9, 🎙️); source of repayment cash NOT FOUND. Q1 finance cost 7.32 Lakhs vs 115.10 FY26 (📄 Q1 BM p.4) shows lower interest, not a growing cash pile.
+- G1 War chest: NO EVIDENCE FOUND. FCF negative in all four years (B01 run 1; negative in all six years FY21 to FY26 in B01 run 2); FY26 CFO (882.50) Lakhs; BBB-/Stable (CRISIL, 2 Jul 2026); Rs 7.50 Cr working-capital limit unused per CRISIL. A short-term loan of Rs 11.87 Cr was repaid in April 2026 (Pres Jun26 slide 9, 🎙️); source of repayment cash NOT FOUND. Q1 finance cost 7.32 Lakhs vs 115.10 FY26 (📄 Q1 BM p.4) shows lower interest, not a growing cash pile.
 - G2 WC improvement trajectory: NO EVIDENCE FOUND. WC days 42.3 vs 47.8 FY25 on the AR basis (B01) but inventory rose 18.94 to 51.50 Cr and CFO is negative. The deck claim "receivables sharply improved" (Pres Jun26 slide 9) sits against the AR versus results-filing conflict in B01. Counter-evidence outweighs.
 
 ### FAMILY H, ECOSYSTEM AND EXTERNAL
@@ -205,8 +206,8 @@ Standard of proof: a moat row needs a documented advantage that a rival cannot c
 | B1 | Backward integration | No | n/a | None | n/a |
 | B2 | Qualification lock-in | Yes | 📄 | Weak | 12 to 36m |
 | B3 | Supply network effect | No | n/a | None | n/a |
-| C1 | Customer ecosystem | Yes | 🎙️ | Weak | 24 to 36m |
-| C2 | Concentration | Yes | 🎙️ | Weak | 12 to 24m |
+| C1 | Customer ecosystem | Yes | 🎙️ load-bearing claim; 📄 service share and Army engagement | Weak | 24 to 36m |
+| C2 | Concentration | Yes | 🎙️ load-bearing claim; 📄 FY23 top-5 and single orders (point to lumpiness) | Weak | 12 to 24m |
 | D1 | Data asset | No | n/a | None | n/a |
 | D2 | Digital platform | No | n/a | None | n/a |
 | E1 | Geographic first-mover | No | n/a | None | n/a |
@@ -216,14 +217,30 @@ Standard of proof: a moat row needs a documented advantage that a rival cannot c
 | G1 | War chest | No | n/a | None | n/a |
 | G2 | WC trajectory | No (counter-evidence) | n/a | None | n/a |
 | H1 | Consolidation beneficiary | No | n/a | None | n/a |
-| H2 | Strategic partnerships | Yes | 📄 tier, 🎙️ benefit | Weak | 12 to 24m |
+| H2 | Strategic partnerships | Yes | 📄 tier and ResQ basis, 🎙️ benefit | Weak | 12 to 24m |
 | H3 | ESG | No | n/a | None | n/a |
 | I1 | Talent asymmetry | No | n/a | None | n/a |
 | I2 | Cannibalization barrier | No | n/a | None | n/a |
 | R1 | Regulatory (Section 4) | Yes | 🎙️ | Weak | 12 to 24m |
 
 Strong or Moderate rows: 0. Weak rows: 6.
-📄 recount performed: 6 documented items across 3 categories (A4, B2, H2). Items: ResQ launch, AI supercomputer launch, Red Hat certification, ONGC LOR, GeM OEM listing (statement), NVIDIA Elite letter. The guard threshold of 12 categories is not near.
+
+Run 2 recount (Verifier C F7). Run 1 stated 6 documented items across 3 categories (A4, B2, H2). That counted the launches, certifications and the Elite letter and skipped the 📄 lines inside C1 and C2 and the second 📄 line in H2. Recount of every 📄 row in the Section 3 evidence tables:
+
+| Category | 📄 items | Count |
+| --- | --- | --- |
+| A4 | ResQ launch; AI supercomputer launch | 2 |
+| B2 | Red Hat certification; ONGC LOR; GeM OEM listing (statement); ISO set (statement) | 4 |
+| C1 | Service charges 2.39% of revenue; 7-year Army HQ engagement | 2 |
+| C2 | Top 5 clients 41.35% FY23; Info Edge and C-DAC single orders (one table row) | 2 |
+| H2 | NVIDIA Elite letter; ResQ built on Scality and Veeam | 2 |
+| Total | | 12 items across 5 categories; 11 unique (the ResQ launch appears in A4 and H2) |
+
+🎙️ items in the same tables: A4 1 (R&D under 2%), C1 2 (cross-sell, Fluidech), C2 3 (client count, 10+ new clients, government share), H2 3 (privileged allocation, MD NVIDIA access, Cato) = 9. 🔍 items: 1 (A4 shared chassis). R1 sits in Section 4 and its 2 🎙️ claims (MeitY timeline, Make in India demand) are outside this tally. Mix: 12 documented, 9 claim, 1 inference.
+
+Effect on the score: none. The score runs per category, not per item. Of the 6 added documented items, none changes a row. C1 and C2 are scored on their load-bearing claim (cross-sell and concentration improvement), which stays 🎙️. The C1 documented items are a 2.39% service share and a FY24 event, too small to carry a moat. The C2 documented items (41.35% top-5, 6 to 7% single orders) point to lumpy concentration, against the claim. The A4 and B2 rows already took 1.0x on 📄 and the H2 row stays 0.7x because its benefit leg is 🎙️. The adjusted total stays 5.5, class NONE, active categories empty.
+
+📄 recount performed: 12 documented items (11 unique) across 5 categories (A4, B2, C1, C2, H2). The guard threshold of 12 categories is not near; 5 of 22 categories carry any documented item, inside the 3 to 6 base rate. The higher item count is a count of eligibility gates, launches and small facts. It is not a count of moat evidence.
 
 ## SECTION 4: REGULATORY AND POLICY TAILWINDS (R1)
 
@@ -271,8 +288,8 @@ Raw score from the likelihood x impact matrix, times evidence multiplier (📄 1
 | | Adjusted total | | | | 5.5 |
 
 I1/I2 contribution: 0.0 of 5.5. No threshold crossing relies on Family I.
-No double credit: GeM, ONGC and Red Hat sit in B2 only. NVIDIA Elite sits in H2 only. The Make in India demand claim sits in R1 and does not repeat the GeM listing.
-Classification: 5.5 is below 12. NO MEANINGFUL EMERGING MOAT (block value NONE). The "EM >= 25" UA qualifier is not met.
+No double credit: GeM, ONGC and Red Hat sit in B2 only. NVIDIA Elite sits in H2 only. The Make in India demand claim sits in R1 and does not repeat the GeM listing. The ResQ launch is scored once, in A4. H2 lists the ResQ partner basis as evidence of the partnership and credits no ResQ launch points.
+Classification: 5.5 is below 12. NO MEANINGFUL EMERGING MOAT (block value NONE). The "EM >= 25" UA qualifier is not met. The F7 recount changed no score.
 
 ## OPTIONALITY REGISTER
 Watched, never scored.
@@ -306,30 +323,38 @@ Watched, never scored.
 | Margin (all) | Stock gain reverses | Q2 standalone gross margin below 20% (trigger from B05) |
 | Cash | Inventory funds growth | Inventory build above 500 Lakhs a quarter, fresh borrowing |
 
-### 6C Combined Gate 0 plus Emerging Moat (B01)
-| Item | Value |
+### 6C Combined Gate 0 plus Emerging Moat (B01 run 2)
+Gate 0 was re-issued in run 2 on 6 years of history (FY2021 to FY2026). Run 1 used 4 years, scored core 59 and moat 12 (2 moats, MODERATE), and downgraded AVERAGE to AVOID under the LIMITED-history rule. Run 2 has no history downgrade (history_downgrade false, B01 data_notes: 5 to 6 years, confidence LOWER, no tier downgrade).
+
+| Item | Value (B01 run 2) |
 | --- | --- |
-| Gate 0 core score | 59 (blocks A 9, B 3, C 15, D 17, E 15) |
-| Moat score / confirmed existing moats | 12 / 2 (class MODERATE) |
-| Grand total | 71 |
-| Gate 0 classification | AVOID (pre-downgrade AVERAGE; one-tier LIMITED-history downgrade) |
+| Data years | 6 (FY2021 to FY2026) |
+| Gate 0 core score | 60 (blocks A 13, B 5, C 10, D 17, E 15) |
+| Moat score / confirmed existing moats | 18 / 4 (class STRONG) |
+| Grand total | 78 |
+| Gate 0 classification | AVERAGE (core 60 with STRONG moat class maps to GOOD+; capped to AVERAGE by DB4; DB2 caps at GOOD and does not bind further) |
 | Emerging Moat score and class | 5.5 / NONE |
-| Deal-breakers | DB2 (Block B 3 below 8), DB4 (cumulative CFO/PAT -0.44) |
+| Deal-breakers | DB2 (Block B 5 below 8, max GOOD); DB4 (cumulative CFO/PAT -0.36 below 0.50, max AVERAGE, binds) |
+| History downgrade | None |
+
+Gate 0 sensitivity carried from B01: core sits on the 60 line and several scores rest on the FY21 loss-year start (A4, M1, B4). Starting at FY22 drops core to 55, still AVERAGE by band. The DB4 cap holds under every sensitivity B01 ran, so AVERAGE is robust. The FY26 AR versus results-filing gap moves only D4 (core 60 vs 61).
 
 ### 6D Combined classification
-AVOID. This is a flag for the human decision, not a stop. The pipeline continues.
+AVERAGE. Gate 0 AVERAGE (backward) combined with Emerging Moat NONE (forward) gives AVERAGE with no uplift. The matrix has no row that lifts a backward AVERAGE on a forward score below 12. Run 1 reached AVOID only through a four-year history downgrade that run 2 removes. This is a flag for the human decision, not a stop. The pipeline continues. I do not lift the DB4 cap on the strength of the STRONG moat class: pre-cap GOOD+ is B01's own statement and the cap is a cash conversion rule.
 
-HIGH POTENTIAL row, full reasoning. The row needs a good or average backward score with a forward score of EXPANSION or STRENGTHENING. The backward score was AVERAGE before a mechanical downgrade, so the first half is nearly met. The forward half fails: 5.5 against a 25 floor, 0 Strong or Moderate rows, 6 documented items that are all eligibility gates or launches without revenue. Not met.
+HIGH POTENTIAL row, full reasoning. The row needs a good or average backward score with a forward score of EXPANSION or STRENGTHENING. The backward half is now met: Gate 0 is AVERAGE, core 60, moat class STRONG with 4 confirmed existing moats. The forward half fails: 5.5 against a 25 floor for STRENGTHENING, 0 Strong or Moderate rows, and the 12 documented items (11 unique) in 5 categories are eligibility gates, launches and small facts without revenue. The recount in Section 3 did not move any score. The setup this operation hunts needs both halves. Half is met. Not met overall.
 
-TURNAROUND row, full reasoning. A turnaround needs a weak backward record that a documented fix is repairing. Evidence for a fix: Q1 FY27 standalone gross margin 29.16%, finance cost down to 7.32 Lakhs (📄), and quarterly disclosure started. Evidence against: the margin step has a stock-gain reading that management partly confirmed; mix cannot explain it; CFO is negative; Q1 filed no cash flow; all quantified guidance missed. One quarter of margin is not a turnaround. If Q2 FY27 repeats with stock replaced at current cost and HexaData disclosed, this row reopens. Today: not met, and not ruled out.
+TURNAROUND row, full reasoning. A turnaround needs a weak backward record that a documented fix is repairing. The backward record is not weak on the score: AVERAGE, PAT positive FY22 to FY26. It is weak on the two lines that matter for the fix test: ROCE fell from 60.6% (FY23) to 11.96% (FY26) and cumulative CFO is negative at -798.86 Lakhs against PAT of 2,234.14 Lakhs (B01 run 2). Evidence for a fix: Q1 FY27 standalone gross margin 29.16%, finance cost down to 7.32 Lakhs (📄), and quarterly disclosure started. Evidence against: the margin step has a stock-gain reading that management partly confirmed; mix cannot explain it; CFO is negative; Q1 filed no cash flow; all quantified guidance missed. One quarter of margin is not a turnaround. If Q2 FY27 repeats with stock replaced at current cost and HexaData disclosed, this row reopens. Today: not met, and not ruled out.
 
-Transition note: the operation hunts a GOOD or AVERAGE backward score with an EXPANSION forward score. Esconet has neither a good backward score nor a forward score. The setup the operation wants is absent on today's evidence.
+Transition note: the operation hunts a GOOD or AVERAGE backward score with an EXPANSION forward score. Esconet now has the backward score (AVERAGE, capped by cash conversion) and not the forward score (5.5, NONE). The setup is half present. Run 1 read it as absent because of the LIMITED-history downgrade. The forward half decides, and on today's evidence it is empty.
 
 ### 6E Final output card
-Moat evolution map (existing to emerging, per family):
+Combined assessment: AVERAGE (Gate 0 AVERAGE core 60 / moat 18 STRONG, capped by DB4; Emerging Moat 5.5 NONE).
+
+Moat evolution map (existing to emerging, per family). "Existing" now reads from the B01 run 2 moat class (STRONG, 4 confirmed moats); B01 does not name which four moats, so the family-level existing column stays at the run 1 reading and is not re-derived here:
 - A Product: none to Weak (launches, no IP).
 - B Supply chain: none to Weak (registrations, no lock-in).
-- C Customer: none to Weak (cross-sell claim, concentration unknown).
+- C Customer: none to Weak (cross-sell claim, concentration unknown; documented items small or against).
 - D Data and digital: none to none.
 - E Geography: none to none (Singapore is a billing route).
 - F Talent: none to none (execution record is C).
@@ -348,6 +373,7 @@ Publish candidate flag (no X post written): Q1 FY27 gross margin step with the 9
 
 ```yaml
 stage: B07-emoat
+run: 2
 company: "ESCONET"
 run_date: "2026-10-05"
 model: claude-sonnet-5-5
@@ -367,17 +393,18 @@ input_gaps:
   - "stage7: ZeaCloud and Fluidech fixed-asset base NOT FOUND, so no segment fixed-asset turnover; 2C uses NIL committed capital contracts (AR p.117, p.145)"
   - "stage7: no patents, no PLI enrolment, no NCIIPC accreditation letter, no GeM listing document in corpus; these rest on company statements"
   - "stage7: FY26 AR p.22 to p.23 carries drafting residue ('Basis for the Technical Updates ... the original draft's figure'); treated as a document-quality flag, no number taken from it"
+  - "stage7 run 2: B01 does not name which 4 existing moats it confirmed, so the family-level existing-moat column in 6E is not re-derived; Sections 0 to 2 text still quotes run 1 Gate 0 phrasing in two places and feeds no score"
 flags:
   - {type: FLAG-MARGIN-BASIS, reason: "Q1 FY27 standalone gross margin 29.16% (revenue 6,107.71, purchases 4,845.14, stock change +518.50 Lakhs; Q1 BM p.4) vs FY26 standalone 13.72% (29,782.95 / 26,523.52 / 826.72 Lakhs). Reversion to 13.72% on Q1 revenue removes 943.10 Lakhs of gross profit against standalone PBT of 935.67 Lakhs. Stated Jun 2025 gross margins (HexaData 10-15%, legacy SI 7-8%; JUN25 p.12) cannot produce 29% by mix: HexaData at 35% share would need about 69%. MD attributes margin to execution, hardware price volatility and inventory, unquantified (AUG26 p.10, p.12). Evidenced path unresolved; separating observation is Q2 FY27 gross margin after stock replaced at current cost with HexaData revenue and margin by line."}
-  - {type: FLAG-CASH, reason: "FY26 consolidated CFO (882.50) Lakhs after inventories (3,255.66) Lakhs (AR p.134); capex 797.13 Lakhs and goodwill 851.11 Lakhs funded by 1,208.85 Lakhs short-term borrowing and 419.91 Lakhs equity. Q1 FY27: no cash flow filed; CFO 'positive, 5% of revenue' unverified (AUG26 p.12). Cash conversion INDETERMINATE for Q1, negative for FY26."}
+  - {type: FLAG-CASH, reason: "FY26 consolidated CFO (882.50) Lakhs after inventories (3,255.66) Lakhs (AR p.134); capex 797.13 Lakhs and goodwill 851.11 Lakhs funded by 1,208.85 Lakhs short-term borrowing and 419.91 Lakhs equity. Gate 0 run 2: cumulative CFO FY21-FY26 -798.86 Lakhs vs PAT 2,234.14 Lakhs, ratio -0.36, DB4 caps Gate 0 at AVERAGE. Q1 FY27: no cash flow filed; CFO 'positive, 5% of revenue' unverified (AUG26 p.12). Cash conversion INDETERMINATE for Q1, negative for FY26."}
   - {type: FLAG-IPO-GOVERNANCE, reason: "s.131(1A) ITD summons dated 24 Feb 2026 on the IPO BRLM Corporate Capital Ventures (Reg 30, 28 Feb 2026), no demand as of filing; 2,13,600 warrants lapsed 25 Apr 2026 with 552.69 Lakhs balance unpaid and preferential issue revised 3,269.22 to 2,716.53 Lakhs (AR p.122); neither discussed on the 13 Aug 2026 call. Outcome NOT FOUND."}
   - {type: FLAG-GUIDANCE-DELIVERY, reason: "B05 record carried: 3 delivered, 5 partial, 5 missed of 13; 4 of 4 quantified segment and cost forecasts missed; credibility C. F2 scored 0."}
   - {type: FLAG-NO-MOAT-IN-MARGIN, reason: "No forward advantage is Strong or Moderate. Every listed advantage is a registration, tier or claim shared by peers, and none shows in a margin or cash line before Q1 FY27."}
 em_score: 5.5
 em_classification: "NONE"
 active_categories: []
-evidence_mix: {documented: 6, claim: 5, inference: 1}
-completionist_recount: "📄 recount performed: 6 documented items across 3 categories (A4, B2, H2); 6 categories carry any evidence and none reaches Moderate (adjusted 2.0) or Strong; guard not triggered"
+evidence_mix: {documented: 12, claim: 9, inference: 1}
+completionist_recount: "📄 recount performed: 12 documented items (11 unique; ResQ launch appears in A4 and H2) across 5 categories (A4, B2, C1, C2, H2); mix 12/9/1 from the Section 3 tables, R1 claims in Section 4 excluded; 5 categories carry any 📄 item and none reaches Moderate (adjusted 2.0) or Strong; no score changed by the recount; guard not triggered"
 catalysts_12m:
   - {catalyst: "Q2 FY27 results: standalone gross margin after stock replaced at current cost, HexaData revenue and margin by line", window: "Nov 2026 (Q2 FY27 print, about 3 months)", evidence_type: "🎙️", anchor: "Q2 'similar profit, small variation' (Q1 FY27 call, AUG26 p.10, p.16)"}
   - {catalyst: "ZeaCloud ISO certifications then MeitY empanelment application", window: "ISO by Sep 2026 end; application then 3 to 4 months; within FY27 per MD", evidence_type: "🎙️", anchor: "Q1 FY27 call, AUG26 p.14; Inv. Pres. Jun 2026 slide 12, 17"}
@@ -394,13 +421,13 @@ optionality_register:
   - {optionality: "HexaData HPC orchestration stack and ResQ appliance add own-IP content and software margin", converting_evidence: "Named order with revenue for either product; services share of revenue above 5% (FY26 2.39%)", first_appears: "Reg 30 order, AR revenue note (products vs service charges)", window: "12 months"}
   - {optionality: "Cross-sell across Sovereign Stack layers deepens customer lock-in", converting_evidence: "Multi-layer contract (hardware plus cloud plus security) disclosed with value; AMC or managed-service revenue disclosed", first_appears: "Reg 30 order announcement, AR revenue note", window: "12 to 18 months"}
   - {optionality: "Customer concentration falls as client base broadens", converting_evidence: "FY26 or FY27 top-5 and top-10 customer share disclosed (last known 41.35% top-5 in FY23, PROSP p.28)", first_appears: "FY27 AR or exchange filing", window: "12 months"}
-combined_assessment: "AVOID"
-combined_reasoning: "Gate 0 AVOID (core 59, one-tier LIMITED-history downgrade from AVERAGE) with Emerging Moat NONE (5.5 of about 90); no evidenced forward advantage to support a HIGH POTENTIAL or TURNAROUND read, and the Q1 FY27 margin step is unresolved between structural mix and stock gain."
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 run 2 AVERAGE (core 60, moat 18 STRONG, GOOD+ pre-cap, held at AVERAGE by DB4 cumulative CFO/PAT -0.36; no history downgrade) with Emerging Moat NONE (5.5 of about 90): the backward half of HIGH POTENTIAL is met, the forward half fails (0 Strong or Moderate rows), and the Q1 FY27 margin step is unresolved between structural mix and stock gain."
 top_moat_risks:
   - "Q1 FY27 margin reverses to FY26 gross margin as hardware prices settle or high-cost stock sells through"
   - "Working-capital build keeps CFO negative (FY26 -882.50 Lakhs) and forces fresh borrowing after the April 2026 loan repayment"
   - "Guidance credibility: MeitY empanelment, Fluidech and ZeaCloud timelines keep slipping (4 of 4 quantified forecasts missed)"
   - "Partner-tier and registration advantages (NVIDIA Elite, Red Hat, ONGC LOR, GeM) are shared with peers and reset with each tender"
   - "IPO-intermediary ITD summons and warrant lapse widen into a governance finding"
-analyst_note: "Sparse scan by design: 6 of 23 rows carry any evidence, 0 reach Moderate. Weak rows: H2 1.4, A4 1.0, B2 1.0, C1 0.7, C2 0.7, R1 0.7. I1 and I2 score 0 (no inventor, remuneration or competitor-filing evidence; a rival loses nothing to copy a server OEM). Q1 FY27 standalone gross margin 29.16% against FY26 standalone 13.72%: reversion erases 943.10 Lakhs against PBT 935.67 Lakhs. Reading A, structural AI/HexaData mix, has no filed support and conflicts with stated sub-line margins of 10 to 15%. Reading B, stock and price gain, has MD admission but no number. Separating observation: Q2 FY27 gross margin after stock replacement plus HexaData disclosure. Conservatism belongs in position size. Capex-embedded growth is 0 because committed capital contracts are NIL; growth is funded by inventory, not capex."
+analyst_note: "Sparse scan by design: 6 of 23 rows carry any evidence, 0 reach Moderate. Weak rows: H2 1.4, A4 1.0, B2 1.0, C1 0.7, C2 0.7, R1 0.7. I1 and I2 score 0 (no inventor, remuneration or competitor-filing evidence; a rival loses nothing to copy a server OEM). Q1 FY27 standalone gross margin 29.16% against FY26 standalone 13.72%: reversion erases 943.10 Lakhs against PBT 935.67 Lakhs. Reading A, structural AI/HexaData mix, has no filed support and conflicts with stated sub-line margins of 10 to 15%. Reading B, stock and price gain, has MD admission but no number. Separating observation: Q2 FY27 gross margin after stock replacement plus HexaData disclosure. Conservatism belongs in position size. Capex-embedded growth is 0 because committed capital contracts are NIL; growth is funded by inventory, not capex. Run 2: Gate 0 re-issued (6 years, AVERAGE), combined moves AVOID to AVERAGE; documented recount is 12 items across 5 categories, no score change."
 ```

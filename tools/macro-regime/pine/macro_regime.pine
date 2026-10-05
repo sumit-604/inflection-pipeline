@@ -16,15 +16,19 @@
 //  - Copper/gold uses front-month futures, not Pink Sheet averages.
 //  - Bands failed PASS_BAR.md (a) and are OFF by default. Turn them on to test.
 //
-// Regime key: R REFLATION (green) growth up, inflation up; G GOLDILOCKS (teal)
-// growth up, inflation down; S STAGFLATION (red) growth down, inflation up;
-// D DEFLATION (grey) both down. Letter strip at the pane bottom, a label at
+// Regime key (level definition): R REFLATION (green) growth above norm, inflation high; G GOLDILOCKS (teal)
+// growth above norm, inflation low; S STAGFLATION (red) growth below norm,
+// inflation high; D DEFLATION (grey) growth below norm, inflation low.
+// Inflation high = US CPI YoY above 3% or 10y breakeven above 2.5% (inputs). Letter strip at the pane bottom, a label at
 // each change, legend top-left. Alerts: regime change, stress HIGH,
 // liquidity TIGHT / EASING.
 
 indicator("Macro Regime Dials (6-12m)", shorttitle = "MacroRegime", overlay = false, max_bars_back = 500, max_labels_count = 500)
 
 // ---------------------------------------------------------------- inputs
+regimeDef = input.string("Level vs benchmarks", "Regime definition", options = ["Level vs benchmarks", "Direction (6m change)"])
+cpiBench  = input.float(3.0, "Inflation HIGH if US CPI YoY above (%)", group = "Level benchmarks")
+beBench   = input.float(2.5, "or if 10y breakeven above (%)", group = "Level benchmarks")
 zWin      = input.int(60, "z-score window, months", minval = 24)
 smooth    = input.int(3, "dial smoothing, months", minval = 1)
 dirLen    = input.int(6, "direction lookback, months", minval = 1)
@@ -119,10 +123,16 @@ sS = ta.sma(STRESS, smooth)
 nS = ta.sma(IN_STRESS, smooth)
 
 // ---------------------------------------------------------------- regime
-gUp = gS - gS[dirLen] > 0
-iUp = iS - iS[dirLen] > 0
+// Level definition (default): growth HIGH when the smoothed GROWTH dial is
+// above its 5-year norm; inflation HIGH when CPI YoY or the breakeven is
+// above its benchmark. Direction definition: sign of each dial's 6m change.
+cpiYoY = yoy(cpi)
+gUp = regimeDef == "Level vs benchmarks" ? gS > 0 : gS - gS[dirLen] > 0
+iUp = regimeDef == "Level vs benchmarks" ? (cpiYoY > cpiBench or t10yie > beBench) : iS - iS[dirLen] > 0
+okG = regimeDef == "Level vs benchmarks" ? not na(gS) : not na(gS - gS[dirLen])
+okI = regimeDef == "Level vs benchmarks" ? (not na(cpiYoY) or not na(t10yie)) : not na(iS - iS[dirLen])
 // 0 REFLATION, 1 GOLDILOCKS, 2 STAGFLATION, 3 DEFLATION
-quad = na(gS - gS[dirLen]) or na(iS - iS[dirLen]) ? int(na) : gUp and iUp ? 0 : gUp and not iUp ? 1 : not gUp and iUp ? 2 : 3
+quad = not (okG and okI) ? int(na) : gUp and iUp ? 0 : gUp and not iUp ? 1 : not gUp and iUp ? 2 : 3
 quadName = quad == 0 ? "REFLATION" : quad == 1 ? "GOLDILOCKS" : quad == 2 ? "STAGFLATION" : quad == 3 ? "DEFLATION" : "n/a"
 liqTag = lS > liqHi ? "EASING" : lS < liqLo ? "TIGHT" : "NEUTRAL"
 stTag  = sS > stHi ? "HIGH" : sS < stLo ? "LOW" : "NORMAL"
@@ -206,35 +216,35 @@ plot(band("nifty"), "band nifty", display = display.none)
 plot(quad, "quadrant 0-3", display = display.none)
 
 // ---------------------------------------------------------------- legend
-// Nifty and gold 12-month medians by quadrant are from EVALUATION_2026-10.md
-// section 4 (2004-01 to 2025-09, 272 months). Reference only, not a forecast.
+// Nifty and gold 12-month medians by quadrant under the LEVEL definition,
+// 2004-01 to 2025-09 (tools/macro-regime, 2026-10-05). Reference only.
 var lg = table.new(position.top_left, 5, 5, border_width = 1)
 if barstate.islast and showLegend
     table.cell(lg, 0, 0, "", bgcolor = color.new(color.gray, 70))
     table.cell(lg, 1, 0, "Regime", bgcolor = color.new(color.gray, 70))
-    table.cell(lg, 2, 0, "Growth / Inflation", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 2, 0, "Growth / Inflation (level)", bgcolor = color.new(color.gray, 70))
     table.cell(lg, 3, 0, "Nifty 12m med", bgcolor = color.new(color.gray, 70))
     table.cell(lg, 4, 0, "Gold 12m med", bgcolor = color.new(color.gray, 70))
     table.cell(lg, 0, 1, "R", bgcolor = color.new(cREFL, 30), text_color = color.white)
     table.cell(lg, 1, 1, "REFLATION")
-    table.cell(lg, 2, 1, "up / up")
-    table.cell(lg, 3, 1, "+15.4%")
-    table.cell(lg, 4, 1, "+8.7%")
+    table.cell(lg, 2, 1, "above norm / high")
+    table.cell(lg, 3, 1, "+12.3%")
+    table.cell(lg, 4, 1, "+5.7%")
     table.cell(lg, 0, 2, "G", bgcolor = color.new(cGOLD, 30), text_color = color.white)
     table.cell(lg, 1, 2, "GOLDILOCKS")
-    table.cell(lg, 2, 2, "up / down")
-    table.cell(lg, 3, 2, "+12.3%")
-    table.cell(lg, 4, 2, "+10.1%")
+    table.cell(lg, 2, 2, "above norm / low")
+    table.cell(lg, 3, 2, "+13.0%")
+    table.cell(lg, 4, 2, "+9.9%")
     table.cell(lg, 0, 3, "S", bgcolor = color.new(cSTAG, 30), text_color = color.white)
     table.cell(lg, 1, 3, "STAGFLATION")
-    table.cell(lg, 2, 3, "down / up")
-    table.cell(lg, 3, 3, "+7.6%")
-    table.cell(lg, 4, 3, "+5.8%")
+    table.cell(lg, 2, 3, "below norm / high")
+    table.cell(lg, 3, 3, "+15.0%")
+    table.cell(lg, 4, 3, "+11.8%")
     table.cell(lg, 0, 4, "D", bgcolor = color.new(cDEFL, 30), text_color = color.white)
     table.cell(lg, 1, 4, "DEFLATION")
-    table.cell(lg, 2, 4, "down / down")
-    table.cell(lg, 3, 4, "+12.7%")
-    table.cell(lg, 4, 4, "+18.2%")
+    table.cell(lg, 2, 4, "below norm / low")
+    table.cell(lg, 3, 4, "+10.5%")
+    table.cell(lg, 4, 4, "+16.6%")
 
 // ----------------------------------------------------------------- table
 var t = table.new(position.top_right, 2, 7, border_width = 1)

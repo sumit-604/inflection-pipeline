@@ -11,8 +11,8 @@ from pathlib import Path
 import pandas as pd
 
 from analogues import section as analogue_section
-from model import (ASSETS, BAND, BASE, BASE_REASON, DIAL_INPUTS, LIQ_SHADE,
-                   QIDX, STRESS_SHADE, run_all, z)
+from model import (ASSETS, BAND, BASE, BASE_REASON, BE_BENCH, CPI_BENCH,
+                   DIAL_INPUTS, LIQ_SHADE, QIDX, STRESS_SHADE, run_all, yoy, z)
 
 HERE = Path(__file__).resolve().parent
 # EVALUATION_2026-10.md: condition (a) of PASS_BAR.md failed, so latest.md
@@ -43,8 +43,10 @@ def main():
     L = [f"## Macro regime read, {m} (tools/macro-regime, 6-12 month horizon)",
          "",
          f"**Regime: {row['quadrant']}** (growth "
-         f"{'rising' if d.loc[m, 'GROWTH_sm'] - d.loc[m - 6, 'GROWTH_sm'] > 0 else 'falling'}, "
-         f"inflation {'rising' if d.loc[m, 'INFLATION_sm'] - d.loc[m - 6, 'INFLATION_sm'] > 0 else 'falling'}). "
+         f"{'above' if d.loc[m, 'GROWTH_sm'] > 0 else 'below'} its 5-year norm at z {d.loc[m, 'GROWTH_sm']:+.2f}; "
+         f"inflation {'HIGH' if row['quadrant'] in ('REFLATION', 'STAGFLATION') else 'LOW'} against the benchmarks "
+         f"CPI {CPI_BENCH}% / breakeven {BE_BENCH}%, US CPI YoY {yoy(p['us_cpi']).ffill(limit=2).loc[m]:.1f}%, "
+         f"breakeven {p['us_breakeven_10y'].loc[m]:.2f}%). "
          f"Liquidity {row['liquidity']}. Global stress {row['stress']}. India stress {row['in_stress']}.",
          "",
          "| Dial | Level (z) | 6m change | Inputs voting | Reading |",

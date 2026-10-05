@@ -175,18 +175,37 @@ QUAD = {(True, True): "REFLATION", (True, False): "GOLDILOCKS",
         (False, True): "STAGFLATION", (False, False): "DEFLATION"}
 
 
-def regime(d: pd.DataFrame) -> pd.DataFrame:
-    """Quadrant from the smoothed GROWTH and INFLATION dials' 6m direction.
+# Regime definition (operator ruling 2026-10-05): LEVEL against benchmarks.
+# Inflation is HIGH when US CPI YoY is above CPI_BENCH or the 10y breakeven is
+# above BE_BENCH. Growth is HIGH when the smoothed GROWTH dial is above its
+# five-year norm (z > 0). "direction" (sign of the 6-month change in each
+# dial) is kept as an option; it was the v2 definition and is what
+# EVALUATION_2026-10.md tested.
+REGIME_MODE = "level"      # "level" or "direction"
+CPI_BENCH = 3.0            # % YoY
+BE_BENCH = 2.5             # % 10y breakeven
 
-    Direction = sign of the 6-month change in the smoothed dial. Level is
-    carried as a tag (HIGH/LOW when |z| > 0.5) for the report.
-    """
-    g_up = d["GROWTH_sm"].diff(6) > 0
-    i_up = d["INFLATION_sm"].diff(6) > 0
+
+def regime(d: pd.DataFrame, panel: pd.DataFrame | None = None,
+           mode: str | None = None) -> pd.DataFrame:
+    """Quadrant of GROWTH x INFLATION, by level (default) or by direction."""
+    mode = mode or REGIME_MODE
     r = pd.DataFrame(index=d.index)
-    r["quadrant"] = [QUAD[(a, b)] for a, b in zip(g_up, i_up)]
-    r.loc[d["GROWTH_sm"].diff(6).isna() | d["INFLATION_sm"].diff(6).isna(),
-          "quadrant"] = None
+    if mode == "level":
+        if panel is None:
+            raise ValueError("level mode needs the panel for CPI and breakeven")
+        cpi = yoy(panel["us_cpi"]).ffill(limit=2).reindex(d.index)
+        be = panel["us_breakeven_10y"].reindex(d.index)
+        i_hi = (cpi > CPI_BENCH) | (be > BE_BENCH)
+        g_hi = d["GROWTH_sm"] > 0
+        r["quadrant"] = [QUAD[(a, b)] for a, b in zip(g_hi, i_hi)]
+        r.loc[d["GROWTH_sm"].isna() | (cpi.isna() & be.isna()), "quadrant"] = None
+    else:
+        g_up = d["GROWTH_sm"].diff(6) > 0
+        i_up = d["INFLATION_sm"].diff(6) > 0
+        r["quadrant"] = [QUAD[(a, b)] for a, b in zip(g_up, i_up)]
+        r.loc[d["GROWTH_sm"].diff(6).isna() | d["INFLATION_sm"].diff(6).isna(),
+              "quadrant"] = None
     r["liquidity"] = np.where(d["LIQUIDITY_sm"] > 0.25, "EASING",
                               np.where(d["LIQUIDITY_sm"] < -0.25, "TIGHT",
                                        "NEUTRAL"))
@@ -258,8 +277,10 @@ def rules() -> list[str]:
     L = ["Each input is a trailing 5-year z-score (60 months, minimum 36); "
          "a dial is the mean of its inputs' z-scores, smoothed 3 months. "
          "A series that lags the read month is carried forward up to 2 months.",
-         "Regime = GROWTH direction x INFLATION direction, direction = sign "
-         "of the 6-month change in the smoothed dial.",
+         f"Regime ({REGIME_MODE}): inflation HIGH when US CPI YoY > {CPI_BENCH}% "
+         f"or 10y breakeven > {BE_BENCH}%; growth HIGH when the smoothed GROWTH "
+         "dial is above its 5-year norm (z > 0). Direction mode (sign of the "
+         "6-month change in each dial) is available as an option.",
          "LIQUIDITY tag: EASING above +0.25, TIGHT below -0.25. STRESS tag: "
          "HIGH above +1.0, LOW below -0.5. IN_STRESS the same, Nifty only.",
          "Band = base band for the quadrant, +1 step if EASING, -1 if TIGHT "
@@ -278,7 +299,7 @@ def rules() -> list[str]:
 def run_all():
     p = load_panel()
     d = build_dials(p)
-    r = regime(d)
+    r = regime(d, p)
     b = bands(r)
     return p, d, r, b
 

@@ -56,3 +56,26 @@ fitted rule. It is now the default in pine/macro_regime_backtest.pine.
 Reading: with two cycles of data an optimiser finds the rule that explains
 the past. The rule to carry is the simplest one that survived a blind
 half, and it is one rule, not a per-asset table.
+
+## Regime definition changed to LEVEL, 2026-10-05 (operator ruling)
+
+Direction (sign of the 6-month change in each dial) produced 69 regime
+changes in 2004-2026 and called "rising" what the operator means by
+"high". The definition is now LEVEL against benchmarks: inflation HIGH
+when US CPI YoY is above 3.0% or the 10-year breakeven above 2.5%; growth
+HIGH when the smoothed GROWTH dial is above its five-year norm (z > 0).
+41 regime changes in the same span. 2008 reads S from January to October,
+2022 and 2023 read S throughout, 2015-16 D, 2017 G. September 2026 reads
+R under both definitions. Direction stays available (REGIME_MODE in
+model.py; "Regime definition" input in Pine). EVALUATION_2026-10.md and
+the grid search above were run under the direction definition and are
+not rerun; a level-definition evaluation needs its own bar.
+
+Level regime, months 2004-2026 and median 12-month forward return:
+
+| Regime | Months | gold | silver | aluminium | zinc | brent | nifty |
+|---|---|---|---|---|---|---|---|
+| REFLATION | 49 | +5.7 | +2.3 | +3.2 | +11.7 | +3.0 | +12.3 |
+| GOLDILOCKS | 96 | +9.9 | +0.6 | +9.5 | +8.4 | +26.5 | +13.0 |
+| STAGFLATION | 46 | +11.8 | +9.0 | -7.7 | -3.6 | -8.7 | +15.0 |
+| DEFLATION | 82 | +16.6 | +19.9 | +5.6 | +5.9 | -1.4 | +10.5 |

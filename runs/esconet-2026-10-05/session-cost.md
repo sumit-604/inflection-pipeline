@@ -28,3 +28,4 @@ timestamp. Stage 0 and step1 steps A-G ran inline on the orchestrator session
 | 7 | emoat (scoped 6C-6E remediation) | claude-sonnet-5-5 | default (high) | 164,993 | 78,586 | 86,401 | 443 | 165,436 | 2m49s | 2 |
 | 12a | verifier A numerical (re-audit) | claude-sonnet-5-5 | high | 5,676,630 | 5,475,260 | 201,272 | 29,122 | 5,705,752 | 7m27s | 2 |
 | 12c | verifier C (Gate 0 + EM half, re-audit) | claude-opus-5-5 | xhigh | 3,378,041 | 3,174,056 | 203,933 | 43,321 | 3,421,362 | 11m27s | 2 |
+| 13 | synthesis-lite | claude-opus-5-5 | high | 4,819,763 | 4,563,034 | 256,669 | 29,078 | 4,848,841 | 10m12s | 1 |

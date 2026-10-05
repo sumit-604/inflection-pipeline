@@ -1,0 +1,28 @@
+stage: B13-synthesis
+company: "ESCONET"
+run_date: "2026-10-05"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete           # PHASE 1 LITE: business-narrative, gate-recommendation, verifier-summary, verifier-disagreement-log; no fttcp-handoff, no Notion payload
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3    # FLAG-CASH INDETERMINATE caps at PROCEED WITH CAVEATS; rule 4 lands the same; operator rulings open: B12b full-catch basis (54.5) would make it REWORK (rule 1); literal rule 2 reading of INDETERMINATE cash would make it INSUFFICIENT EVIDENCE
+flags_active: ["FLAG-CASH (INDETERMINATE)", "FLAG-GATE0 (AVERAGE, DB4 cap)", "FLAG-PROMOTER-CAUTION (carried; below CONCERN, FLAG-PROMOTER not active)"]
+confidence_delta: {numerical: 97.0, redflag: 90.9, framework: 94.7, peer: 91.7, overall: 90.9}
+valuation_decision: "NOT RUN (phase 1; stages 10 and 11 pending)"
+entry_range: {low: null, high: null}   # NOT RUN, never estimated
+headline: "Thin margin integrator, one quarter of proof"
+falsification_metric: "H1 FY27 print (due by mid Nov 2026): Q2 FY27 standalone gross margin back near the FY26 level of 13.7% (Q1 FY27 29.2%; Q1 BM p.4, AR26 p.103)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+transition_posture: "NOT CLASSIFIED (phase 1; Mental Model unsigned). Proof gate NOT FIRED; reachable cells RESEARCH / WATCH, PRICED NARRATIVE (TRAP), VALUE-TRAP RISK"
+verifier_disagreements: 1   # FLAG CLEARED: CRISIL FY26 operating margin 2.60% exists at rating .txt line 29, against a B12a run 2 coverage_note statement
+files:
+  - runs/esconet-2026-10-05/outputs/final/business-narrative.md
+  - runs/esconet-2026-10-05/outputs/final/gate-recommendation.md
+  - runs/esconet-2026-10-05/outputs/final/verifier-summary.md
+  - runs/esconet-2026-10-05/outputs/final/verifier-disagreement-log.md
+notion_save:
+  page_title: "ESCONET: Esconet Technologies (phase 1, 2026-10-05)"
+  summary: "Thin margin integrator, one quarter of proof. Gate: PROCEED WITH CAVEATS (FLAG-CASH INDETERMINATE). Decision and entry range: not run (phase 1)."
+  drive_link: "none (repo run folder)"
+  mode: append-never-overwrite-status

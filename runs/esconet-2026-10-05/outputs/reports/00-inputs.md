@@ -15,7 +15,7 @@ Spear gate: Spear: OVERRIDE 2026-10-05 (operator standing ruling 2026-09-05: Ste
 
 ## Reporting units
 - results: INR Lakhs (all three board outcomes)
-- annual_report: INR Crores (FY25 and FY26 ARs)
+- annual_report: INR Lakhs on the face of both ARs (AR FY26 p.132 'All amounts in lakhs'); corrected 2026-10-05 after stage 1 (stage 0 first wrote Crores in error)
 - screener: INR Cr
 - prospectus: INR Lakhs (cover page issue size)
 - rating: INR crore
@@ -133,7 +133,7 @@ listed_within_3y: true
 listed_evidence: IPO prospectus dated 20 Feb 2024 (inputs/prospectus/EsconetTechnologies_PROSP.pdf p1), NSE Emerge. Prospectus present.
 reporting_units:
   results: INR Lakhs (all three board outcomes)
-  annual_report: INR Crores (FY25 and FY26 ARs)
+  annual_report: INR Lakhs on the face of both ARs (AR FY26 p.132 'All amounts in lakhs'); corrected 2026-10-05 after stage 1 (stage 0 first wrote Crores in error)
   screener: INR Cr
   prospectus: INR Lakhs (cover page issue size)
   rating: INR crore
@@ -523,5 +523,5 @@ corpus_manifest:
   type: Data Sheet (raw values populated; formula sheets exported empty)
   period: FY2023-FY2026 annual + latest quarter
   folder_match: true
-analyst_note: Inputs mix INR Lakhs (results, prospectus) and INR Crores (ARs, screener). Name the unit with every figure; convert only at stage 10.
+analyst_note: Results, prospectus and both ARs are INR Lakhs; screener is INR Cr. Name the unit with every figure; convert only at stage 10.
 ```

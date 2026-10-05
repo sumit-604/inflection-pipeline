@@ -1,0 +1,24 @@
+stage: B02-notes-pass1
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "AR FY2025-26 pdf pp.99-127 (balance sheet, P&L, cash flow, accounting policies, Notes 1 to last) are image-only: txt carries page markers but no text. Read tool PDF render failed (pdftoppm missing); no OCR route. Note-level FY26 items are NOT FOUND."
+  - "FY26 face statements, WC certificate, IPO utilisation certificate and RPT Annexure D read from OCR text of the results re-filing; some digits damaged and marked [OCR] in the report"
+flags: []
+pass1_findings_readable_sources_only: true
+top_findings:
+  - {rank: 1, finding: "AR notes pp.99-127 image-only; FY26 note-level evidence NOT FOUND", note_ref: "AR txt page 99-127", rating: "red-evidence-gap"}
+  - {rank: 2, finding: "KIADB unit: IPO capex used 275.83 of 1,155.38 lakh; CWIP 466.79; commercial production deadline 26-Oct-2026, no further extension", note_ref: "RES p16/p11; RHP p31-37", rating: "red"}
+  - {rank: 3, finding: "Inventory 2,243.25 vs 1,470.95 (+52.5%) vs revenue +36.4%; IPO WC object used 123.03 of 860.00", note_ref: "RES p11/p16", rating: "watch"}
+  - {rank: 4, finding: "Net material cost 52.2% to 59.4% of revenue (H2 63.4%); H2 PBT margin 17.6% vs H1 20.5%", note_ref: "RES p10 derived", rating: "watch"}
+  - {rank: 5, finding: "CFO 795.44 = 48.7% of EBITDA; margin-money balances 919.17", note_ref: "RES p12/p13", rating: "watch"}
+  - {rank: 6, finding: "Receivables 2,221.29, days 96.7 vs 125.8 improving; FY26 ageing and concentration NOT FOUND; H1 top-5 38.79%", note_ref: "RES p11; RHP p232", rating: "watch"}
+  - {rank: 7, finding: "RPT 476.04 lakh = 5.68% of revenue incl. 78.00 relative fees", note_ref: "RES p18-19", rating: "watch"}
+  - {rank: 8, finding: "Cost-records conflict between CARO vi and Board report", note_ref: "CARO pdf p94; AR-BR p40", rating: "watch"}
+  - {rank: 9, finding: "MD&A interest cover 0.05x contradicts P&L (19.4x); LT provisions -27%", note_ref: "AR MD&A; RES p11", rating: "watch"}
+  - {rank: 10, finding: "Clean base: unmodified opinions, no default, debt 76.14 lakh, no going concern doubt, IPO no deviation", note_ref: "AR-aud; CARO; RES p16", rating: "green"}
+receivables_trend: "improving on totals (closing days 96.7 FY26 vs 125.8 FY25; total 2,221.29 vs 2,119.08); FY26 ageing NOT FOUND; >6m share 11.4% FY25, 13.5% Sep-2025"
+going_concern_language: "NONE (Board: no elements threatening going concern, AR txt 2323-2325; CARO xix no material uncertainty)"
+analyst_note: "Pass 2 and 3 cannot improve on notes pp.99-127 without images or OCR text; ask the operator for an OCR/rendered copy."

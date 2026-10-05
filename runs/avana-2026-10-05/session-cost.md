@@ -15,3 +15,4 @@ expose them (never estimated).
 | 2 | Notes triple-pass, pass 1 of 3 (resumed over transcribed notes) | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 199,035 | 287s | 2 |
 | 2 | Notes triple-pass, pass 2 of 3 | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 180,401 | 522s | 1 |
 | 2 | Notes triple-pass, pass 3 of 3 (synthesis, B02) | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 72,268 | 103s | 1 |
+| 3 | AR backward deep dive | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 424,227 | 963s | 1 |

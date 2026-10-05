@@ -1,0 +1,97 @@
+stage: B03-ardeep
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00: BSE scrip code absent (collector); repaired at /step1 from NSE API; NSE-only SME listing"
+  - "B00: shareholding Sep-2026 not yet filed (due 21-Oct-2026); 31-Mar-2026 SHP held; FII/DII split not re-opened"
+  - "B00: screener export sheets empty (P&L, Quarters, Balance Sheet, Cash Flow, Customization for AVANA and peers); Data_Sheet CSVs used"
+  - "B00: original FY26 results PDF scanned; legible re-filing 2026-06-23 used (RES p10 is OCR text of a scan)"
+  - "B00: no credit rating document; rating_wc_quote unresolved"
+  - "B00: no concalls (NO-CONCALL MODE); presentation/ and research/ empty"
+  - "B00: only FY2025-26 AR exists; FY23-FY25 from RHP restated financials; final prospectus (14-Jan-2026) not collected"
+  - "B00: AR pdf pp.2-4 and 99-127 are image transcriptions (second-hand reading; stray digit possible); Reg 31(4) filing read from transcription"
+  - "B00: peer transcripts only for DANISH; SPCL and MARINE presentations only; no listed protection-relay pure play"
+  - "B02: NOT FOUND in AR notes: FY26 customer concentration and identity; product-wise revenue; order book; unsatisfied performance obligations; CC limit, rate, covenants, repayment schedule; lender of repaid unsecured loan 196.86; deferred tax components and rate reconciliation; leave encashment roll-forward; lease commitments; warranty period assumptions"
+  - "B02: NOT FOUND: nature of stock in transit 263.44; description of FY25 other income 115.60; reason for lower warranty accrual rate; whether Purchases 5,752.65 is gross or net of 151.65 warranty usage (footnote says usage is included in Purchases, credit side not stated); FY26 revenue-authority balance netting; cause of 18.32 tax-roll gap"
+  - "B03: KIADB deadline conflict inside RHP (26-Oct-2026 at RHP p36-37 vs 23-May-2025 plus 3 years at RHP p179) and BO19Aug 'extended timelines' undated; KIADB letters NOT FOUND"
+  - "B03: lease renewal status of both operating units (RHP p43-44 expiry Jul/Aug-2026) NOT FOUND"
+  - "B03: per-director board attendance, independents' other directorships, FY26 approval basis for director pay, AGM vote results on Items 4-7 NOT FOUND"
+  - "B03: auditor peer-review status, SA 701 applicability reading, whether IPO certificates fall inside 1.50 other-matters fee NOT FOUND"
+  - "B03: capacity basis for panel output (886 produced vs 600 installed, RHP p104) and product-wise revenue and margin NOT FOUND"
+flags:
+  - {type: FLAG-CASH, reason: "CFO 795.44 = 67.9% of PAT (FY25 67.7%) and 48.7% of EBITDA excl other income; FCF 45.21 vs 549.75; inventory +772.30; bank-statement receivables above books each quarter (AR p101, p113, p125)"}
+  - {type: FLAG-CAPEX, reason: "KIADB unit unbuilt: CWIP 466.79, commitments 1,094.99, IPO capex used 275.83 of 1,155.38 (32.4% of FY26 plan 850.00); RHP date conflict (26-Oct-2026 vs 23-May-2028 on a 3-year reading); RHP schedule mid-May 2026 slipped to end-Oct 2026; MD&A silent (AR p107, p119; RHP p36-37, p106, p179; BO19Aug p2)"}
+  - {type: FLAG-PROVISION, reason: "Warranty additions 41.81 (0.50% of revenue) vs 228.47 (3.72%); provision down 25.4%; footnote says usage 151.65 is included in Purchases, credit side not stated (AR p124)"}
+  - {type: FLAG-MARGIN, reason: "Gross margin 47.80% to 40.61% (H2 36.61%); H2 EBITDA excl other income 18.08% vs H1 21.33%; held by other expenses falling from 13.0% to 8.5% of revenue (RHP p120; RES p10; AR p100)"}
+  - {type: FLAG-GOVERNANCE, reason: "Independents attended 9 of 19 meetings (derived 47%); CSR committee 0 meetings; promoter pay +56.1% fixed vs PAT +38.4%, called marginal; family fees 78.00; CFO and CS churn (AR p45-46, p52, p117-118)"}
+phase_verdicts: {p1: "yellow: unmodified opinion, no KAM section, CARO ii(b), vi, xx contradicted by notes/Board report", p2: "yellow: 15 of 15 verified; warranty, no ECL, restated comparatives, FY25 provisions reclassified", p3: "yellow: CFO/PAT 0.68, FCF 45.21, gross margin -7.2 pts, net cash 2,706.64", p4: "red (disclosure): MD&A silent on KIADB, order book, concentration, margin; interest cover 0.05x wrong vs 19.4x", p5: "yellow: no pledge or loans; independents 47% attendance, pay and family fees, KMP churn", p6: "yellow: headline growth true; delivery and governance claims weak; 5 quiet abandonments", p7_best_fit: "Capex-led growth on a GARP watchlist; proof gate pending (KIADB unit)"}
+overall_quality: 6.0
+quality_components: {governance: 5, accounting: 6, balance_sheet: 7, earnings: 6}
+kill_switch_notes:
+  - "P1: would not stop; unmodified opinion, contradictions are small but lower trust in review quality"
+  - "P3: would not stop; solvency strong, weak points are cash conversion and margin quality"
+  - "P4: would not stop; omissions are of coverage, cured by filings; treat MD&A as non-evidence"
+  - "P5: would not stop; no integrity event; put independents' attendance to management"
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - {finding_rank: 15, triple_pass_value: "promoters 73.63%", ar_value: "73.64% (1,66,75,320 / 2,26,45,408; SHP and Reg 31(4) agree)", note_ref: "AR p107-108 Note 2; sum of rounded percentages explains 73.63"}
+    - {finding_rank: 10, triple_pass_value: "CFO/CS pay not cross-checked", ar_value: "Board report p52 lists CFO 4.05 and CS 8.18; Note 25 item 1 lists CS 4.05 and CFO 8.18 (swapped, 4.13)", note_ref: "AR p52 vs AR p117"}
+    - {finding_rank: 1, triple_pass_value: "RHP deadline 26-Oct-2026, no further extension", ar_value: "RHP p36-37 matches; RHP p179 says extension 23-May-2025 with commercial production within 3 years of that date; BO19Aug says 'extended timelines' undated", note_ref: "RHP p36-37, p179; BO19Aug p2"}
+missing_risks:
+  - "KIADB deadline 26-Oct-2026, no further extension, automatic cancellation; absent from MD&A and Board risk text (RHP p36-37; AR p48-49, p68-83)"
+  - "Lease expiry of both operating units Jul/Aug-2026 before relocation (RHP p43-44; AR p122)"
+  - "IPO deployment 398.86 of 1,710.00 FY26 plan (23.3%), 2,103.98 idle (RHP p102-103; AR p107)"
+  - "Customer concentration top 5 38.79% H1 FY26 and three-state dependence; FY26 not disclosed (RHP p37-39)"
+  - "Gross margin compression 47.8% to 40.6% not explained; MD&A says no significant change (RHP p120; RES p10; AR p74)"
+  - "Bank stock statement variances and drawing power (AR p125)"
+  - "Panel output 886 above stated capacity 600 (AR p85; RHP p104)"
+  - "Retention money in receivables 119.15 FY25 and over-2-year receivables doubling (RHP p113; AR p113)"
+  - "Promoter pay and family fees outpacing profit; independents' attendance (AR p45-46, p52, p117-118)"
+guidance_table:
+  - {claim: "Commercial production at integrated KIADB unit", number: "end-October 2026", timeframe: "Q3 FY27", credibility: "Low to medium: slipped from RHP mid-May 2026; unit unbuilt at 466.79 CWIP plus 1,094.99 committed; no completion filing (BO19Aug p2; RHP p106)"}
+  - {claim: "New capacity 1,75,000 relays and 1,500 panels", number: "+150%", timeframe: "post-commissioning", credibility: "Untested; panel baseline 600 already exceeded at 886 in FY26 (AR p85; RHP p104)"}
+  - {claim: "IPO deployment FY26", number: "capex up to 850.00; WC 860.00", timeframe: "FY26", credibility: "Missed: 275.83 and 123.03 used (AR p107; RHP p102-103)"}
+  - {claim: "FY26 working-capital cycle", number: "205 days", timeframe: "31-Mar-2026", credibility: "Beaten: 176.8 days derived; mix differs (inventory worse, receivables better) (RHP p113; AR p99, p100, p115)"}
+  - {claim: "Exports restart", number: "one Kuwait order; actual 46.28", timeframe: "FY26", credibility: "Delivered but small, 0.55% of revenue (AR p115; RHP p171)"}
+  - {claim: "Regional offices and dealer network expansion", number: "not quantified", timeframe: "not stated", credibility: "Follow-up NOT FOUND in AR (RHP p170-171)"}
+  - {claim: "FY27 managerial remuneration", number: "341.64 (+18.0%)", timeframe: "FY27", credibility: "Cost commitment; special resolutions; vote NOT FOUND (AR p37-38)"}
+monitorables:
+  - {metric: "KIADB unit commercial production", threshold: "Reg 30 filing by 26-Oct-2026; KIADB extension letter", where: "NSE announcements; KIADB letters via operator", why: "LBF1; lease cancellation risk"}
+  - {metric: "IPO capex used (cumulative)", threshold: "above 275.83 trending to 1,155.38", where: "Auditor utilisation certificate with H1 FY27 results", why: "Delivery pace"}
+  - {metric: "Warranty additions % revenue", threshold: "above 2.1% = reversion; below 0.75% for a second period = lasting lower rate (analyst midpoint of 0.50% and 3.72%)", where: "H1 FY27 provision note", why: "Separates Reading A from B"}
+  - {metric: "Gross margin", threshold: "not below 40.6% (FY26); H2 FY26 36.6%", where: "H1 FY27 results", why: "LBF4"}
+  - {metric: "EBITDA margin excl other income", threshold: "not below 18.1%", where: "H1 FY27 results", why: "Exit rate"}
+  - {metric: "CFO / EBITDA", threshold: "above 70% (FY26 48.7%)", where: "H1 FY27 cash flow", why: "Conversion"}
+  - {metric: "Inventory days and FG", threshold: "at or below 150 days (FY26 164.4); FG 690.47 and SIT 263.44 falling", where: "H1 FY27 balance sheet", why: "LBF3"}
+  - {metric: "Receivables over 6 months", threshold: "at or below 13.8%; any provision", where: "H1 FY27 ageing", why: "Tail ageing"}
+  - {metric: "Customer concentration", threshold: "top 5 disclosed; at or below 38.79%", where: "H1 FY27 or AR FY27; investor query", why: "LBF2"}
+  - {metric: "Lease renewal of both existing units", threshold: "renewed or relocation done", where: "Reg 30 or management reply", why: "Continuity before relocation"}
+  - {metric: "Promoter pay vote and independent attendance", threshold: "special resolutions result; attendance above 75%", where: "Scrutiniser report; AR FY27", why: "Governance"}
+  - {metric: "Panel and relay output", threshold: "panels vs 600 installed; relays vs 62,034", where: "AR FY27 Annexure E", why: "Mix and capacity"}
+ar_new_downstream_entities:
+  - name: "KIADB (Karnataka Industrial Areas Development Board)"
+    where_in_ar: "AR p6 (facility page); Note 16 p114 (advance to KIADB 165.23 in FY25); also RHP and BO19Aug"
+    entity_type: "land authority and project counterparty (lease terms and deadline)"
+  - name: "Kuwait export customer (unnamed)"
+    where_in_ar: "Note 18 p115 export sales 46.28; AR p4 map; MD&A p68"
+    entity_type: "export customer"
+  - name: "ELAsia 2026, BIEC Bengaluru, 14-17 May 2026"
+    where_in_ar: "AR p7"
+    entity_type: "named exhibition platform"
+  - name: "Africa Power & Energy Expo 2026, Nairobi"
+    where_in_ar: "AR p8"
+    entity_type: "named exhibition platform"
+strengths_top3:
+  - "Balance sheet: debt 76.14 (0.013x), net cash 2,706.64, current ratio 3.34x (2.40x ex IPO cash)"
+  - "Growth with returns: revenue +36.4%, PAT +38.4%, ROE 28.99%, revenue CAGR FY23-26 43.4%"
+  - "Clean statutory base: unmodified opinion, no default, no related-party loans, no pledge; WC cycle 176.8 vs plan 205 days"
+red_flags_top3:
+  - "Capacity delivery: unit unbuilt, 1,094.99 committed, KIADB date 26-Oct-2026, IPO capex used 23.9%, MD&A silent"
+  - "Margin quality: gross margin -7.2 pts, H2 EBITDA 18.1%, held by a warranty line at 0.50% of revenue"
+  - "Cash and reconciliation: CFO/PAT 0.68, FCF 45.21, bank-statement receivables above books each quarter, comparatives restated"
+best_fit_strategy: "Capex-led growth on a GARP watchlist; proof gate pending (KIADB unit and H1 FY27 margin)"
+one_line_verdict: "A growing, net-cash relay and panel maker whose FY26 earnings lean on a falling warranty accrual and cost lines, with the capacity unit unproven; WATCHLIST until the KIADB unit starts and H1 FY27 margin holds."
+analyst_note: "New beyond B02. (1) Note 25 item 11 footnote says the 151.65 warranty usage is 'included in Purchases' (AR p124); credit side still unstated, Reading A vs B open. (2) RHP is internally inconsistent on the KIADB date (26-Oct-2026 at RHP p36-37 vs 23-May-2025 plus 3 years at RHP p179); BO19Aug says 'extended timelines' undated. Get the KIADB letters. (3) RHP planned the whole 860.00 WC and 850.00 capex in FY26; used 123.03 and 275.83. (4) Production: panels 886 vs 600 installed capacity, relays -5.8%; H2 implied panels +83%, relays -15.6% on H1 [INFERENCE: mix drives H2 gross margin 36.6%; segment margin NOT FOUND]. (5) FY25 provisions moved from current (RHP) to long-term (AR); WC certificate gap 2,255.47 vs RHP 1,850.92, diff 404.55. (6) Independents attended 9 of 19 board meetings after 4-Aug-2025. (7) Both operating-unit leases expire Jul/Aug-2026 per RHP; renewal NOT FOUND."

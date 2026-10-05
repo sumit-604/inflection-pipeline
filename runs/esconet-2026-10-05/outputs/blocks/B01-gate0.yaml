@@ -1,0 +1,69 @@
+stage: B01-gate0
+run: 2
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "collector (B00): BSE scrip code not found on screener, announcements/ empty; REPAIRED by /step1 with 33 NSE Reg 30 filings Sep 2025 to Sep 2026; filings before Sep 2025 not collected"
+  - "collector (B00): shareholding/ empty; REPAIRED by /step1 with NSE SHP XBRL for Mar-2026 and Jun-2026 plus text extracts; no quarterly series, no 3-year promoter series"
+  - "collector (B00): screener export sheets (Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization) came out EMPTY for ESCONET, NETWEB, RPTECH, ORIENTTECH; Data_Sheet.csv used; ESCONET screener history is FY2023-FY2026 plus Q1 FY27 only"
+  - "collector (B00): no results PDFs from screener; REPAIRED by /step1 with H1 FY26, FY26 audited and Q1 FY27 board outcomes from NSE"
+  - "collector (B00): no rating PDF; REPAIRED by /step1 with CRISIL rationale 2026-07-02 as text; 2024 and 2025 rationales not collected"
+  - "collector (B00): only 2 concalls; OVERRIDDEN by /step1 to concalls_available true; the 22 Jun 2026 investor meet has a deck but no transcript; no H1 FY26 call"
+  - "annual-report (B00): FY2023-24 AR not collected (two-most-recent rule); FY23 and FY24 figures come from the prospectus restated financials and the AR FY25 comparatives"
+  - "research/ (B00): empty, no broker notes"
+  - "prospectus (B00): final prospectus held; near-identical RHP moved to inputs/other/"
+  - "announcements (B00): SAST disclosure 2026-05-19 scanned, .txt corrupt, OCR repair failed; no number taken from it"
+  - "listed_date (B00): exact NSE Emerge listing date NOT FOUND in corpus; prospectus dated 2024-02-20; AR FY25 [page 115] states listing on NSE SME on 23 Feb 2024"
+  - "half-yearly reporter until Q1 FY27 (first voluntary quarterly print) (run 1 addition, still holds)"
+  - "history before FY2021 NOT FOUND; FY21 opening net worth NOT FOUND, so FY21 ROE uses closing net worth (run 2)"
+  - "FY21 to FY23 come from prospectus restated financials only (standalone FY21, FY22; consolidated FY23), no audited annual report in corpus for those years (run 2)"
+  - "screener FY23 column does not tie to either restated FY23 set; screener is not used for FY21 to FY23 (run 2)"
+flags:
+  - type: FLAG-GATE0
+    reason: "Classification AVERAGE: core 60 with STRONG moat class would map to GOOD+, capped to AVERAGE by deal-breaker DB4 (cumulative CFO/PAT -0.36, max AVERAGE) and DB2 (Block B 5, max GOOD). Depressors: cash conversion (CFO negative in FY21, FY23, FY24, FY26; FCF negative all 6 years; FY24 receivables build 2,439.02 Rs Lakhs, FY26 inventory build 3,255.66 Rs Lakhs) and ROCE fall from 60.6% (FY23, 9.59 Rs Cr capital employed) to 11.96% (FY26). Not a current-loss case: PAT positive FY22 to FY26."
+  - type: FLAG-CASH
+    reason: "Cumulative CFO FY21-FY26 -798.86 Rs Lakhs (-7.99 Rs Cr) vs cumulative PAT 2,234.14 Rs Lakhs (22.34 Rs Cr), ratio -0.36 (prospectus [page 51], [page 194]; AR FY25 [page 114]; AR FY26 [page 134]). FY26 CFO -882.50 Rs Lakhs. Ratio on FY21-FY25 alone is 0.05, still below 0.50."
+  - type: FLAG-SOURCE-CONFLICT
+    reason: "FY26 audited consolidated balance sheet differs between the results filing 2026-05-28 ([page 14]: receivables 1,963.93, trade payables 3,004.26, total assets 13,102.08 Rs Lakhs) and AR FY26 ([page 132]: receivables 4,426.93, trade payables 5,467.26, total assets 15,565.08 Rs Lakhs). Gap 2,463.00 Rs Lakhs on receivables, payables and total assets. CFO identical (-882.50). Screener follows the AR. The 20.2 debtor days claim reproduces only on the results-filing basis; on the AR basis it is 45.6. Sensitivity: only D4 moves (1.85 AR basis score 4; 2.28 results basis score 5); ROCE, WC days, D1 to D3 are identical on both bases."
+data_years: 6
+fy_range: "FY2021 to FY2026"
+blocks: {A: 13, B: 5, C: 10, D: 17, E: 15}
+core_score: 60
+moat_score: 18
+grand_total: 78
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB2 Block B 5 < 8 -> max GOOD (drivers: CFO negative FY21 -22.13, FY23 -42.25, FY24 -134.97, FY26 -882.50 Rs Lakhs; FCF negative FY21 to FY26)"
+  - "DB4 cumulative CFO/PAT -0.36 < 0.50 -> max AVERAGE (drivers: FY26 -882.50, FY24 -134.97, FY23 -42.25, FY21 -22.13 Rs Lakhs; binds the classification: pre-cap GOOD+)"
+history_downgrade: false
+data_notes:
+  - "Data available: 6 years (FY2021 to FY2026). Scoring adapted to 6-year history. Data confidence LOWER (5-6 years): may not have seen full cycle; no tier downgrade applies."
+  - "Units: Rs Lakhs on the face of prospectus, AR FY25, AR FY26 and results filings; Rs Cr in screener. Working tables use Rs Lakhs; Cr only where a column header says so."
+  - "Basis by year: FY21, FY22 restated STANDALONE (prospectus [page 48], [page 50], [page 51]); the only subsidiary (ZeaCloud) was incorporated 11 May 2022 (prospectus [page 199]), so standalone equals the whole company for FY21 and FY22. FY23 restated CONSOLIDATED (prospectus [page 190], [page 192], [page 194]). FY24 and FY25 consolidated from AR FY25 [page 112]-[page 114]. FY26 consolidated from AR FY26 [page 132]-[page 134]. Perimeter step at FY23: revenue 9,659.26 consolidated vs 9,465.96 standalone Rs Lakhs; standalone FY23 gives ROCE 60.7% and YoY growth 38.1% (no band change)."
+  - "Screener FY23 not used: sales 94.59 Rs Cr matches neither restated consolidated 96.59 nor standalone 94.66; total assets 28.91 matches neither 27.98 nor 27.62; cash 0.72 and CFO -1.86 match neither; PBT 4.45 and receivables 12.59 match standalone. Screener FY24 to FY26 tie to the AR consolidated statements."
+  - "ROCE computed, screener gives none: EBIT = PBT + interest; capital employed = total assets - current liabilities (short-term borrowings inside current liabilities). FY21 -6.23%, FY22 20.29%, FY23 60.56%, FY24 23.30%, FY25 16.12%, FY26 11.96%; median 18.2%."
+  - "Loss-to-profit swing, FY21 to FY22: PAT -100.48 to 72.36 Rs Lakhs (prospectus [page 50]). C2 N/M (negative endpoint), scored 0; C4 scored 0; no synthetic CAGR attempted. FY21 PBT is -104.84 Rs Lakhs; FY21 is also the minimum-ROCE year (A2)."
+  - "A4 compares FY26 11.96% with FY21 -6.23% (loss year): latest above earliest, score 5. Sensitivity: against FY22, the first profit year (20.29%), the decline is 8.3pp, score 0 (core 55, AVERAGE by band)."
+  - "ROE: FY21 uses closing net worth (opening NOT FOUND). FY23 opening net worth is 250.45 Rs Lakhs (FY22 closing standalone: 76.71 + 173.74, prospectus [page 48]); this is the whole-company figure because no subsidiary existed at 31 Mar 2022. FY23 closing 554.19 excludes minority interest 34.42 (prospectus [page 190]). ROE FY21 -56.4%, FY22 33.8%, FY23 75.6%, FY24 25.6%, FY25 15.0%, FY26 8.2%; median 20.27%, 0.27pp above the A3 line."
+  - "PAT is profit attributable after minority interest: FY23 304.00 (before MI 318.42, prospectus [page 192]); FY26 615.50 (before MI 595.41; AR FY26 [page 133]). Net worth includes warrant money 184.23 Rs Lakhs in FY25 and FY26 (AR FY26 [page 132])."
+  - "Working capital days on revenue basis (COGS not used): FY21 47.6, FY22 36.0, FY23 37.7, FY24 58.5, FY25 47.8, FY26 42.3. B4 change -5.3 days scores 5, only 0.3 day past the 5-day line; against FY22 the change is +6.3 days and scores 1 (Block B 1, core 56)."
+  - "Capex = purchase of fixed assets only: FY21 58.36, FY22 151.87 (prospectus [page 51]); FY23 115.86 ([page 194]); FY24 211.95, FY25 365.69 (AR FY25 [page 114]); FY26 797.13 (AR FY26 [page 134]). FY26 goodwill purchase 851.11 Rs Lakhs excluded as an acquisition."
+  - "EBITDA = PBT + interest + depreciation - other income, on revenue: FY21 0.07%, FY22 2.91%, FY23 6.64%, FY24 7.09%, FY25 4.38%, FY26 2.49%. Task brief 2.60% not reproduced. Q1 FY27 8.55% (results Q1 [page 15]) is on total income including other income 193.21 Rs Lakhs; ex other income on revenue it is 7.03%, same basis as FY26 2.49%. Q1 not scored."
+  - "D4 sensitivity to the FY26 balance-sheet conflict: AR basis current assets 13,647.86 / current liabilities 7,372.96 = 1.85 (score 4); results-filing basis 11,184.86 / 4,909.96 = 2.28 (score 5). Block D 17 vs 18, core 60 vs 61, classification unchanged. D1, D2, D3, ROCE and WC days do not move (the 2,463.00 gap sits equally in receivables and payables)."
+  - "Q1 FY27 consolidated change in inventories -518.50 Rs Lakhs equals the standalone figure while consolidated purchases (10,217.64) differ from standalone (4,845.14); unresolved at Gate 0, passed to later stages."
+  - "PEER DATA NEEDED: M5 (segment universe incomplete; Esconet mcap 325.68 Rs Cr is smallest of 4 names provided: Netweb 26,872.08, Rashi 6,329.46, Orient 1,050.10). M2 and M9 use the three provided peers only; Orient FY26 data distorted (other income -17.91 Rs Cr), its 4.99% margin is a mechanical output."
+  - "M1 scores 5 on endpoints (EBITDA margin 0.07% FY21 to 2.49% FY26, +2.42pp, revenue CAGR 51.7%) but the margin fell 4.15pp from FY23 and 4.61pp from FY24 peak 7.09%; start FY23 scores 1, start FY22 scores 3. Endpoint artefact of a loss-year start."
+  - "M3 scored on FY26: FAT 35.8x on PP&E 989.00 Rs Lakhs (988.87 + 0.13) or 19.3x on screener net block 18.40 Rs Cr (includes goodwill 851.11 Rs Lakhs); ROCE 11.96% is not above 12%, score 0. On the 6-year median ROCE 18.2% it would score 3."
+  - "M4 scores 3: no revenue-decline year, but receivable days range 43.3 to 96.9 and moved -26.0 days FY21 to FY26 (71.6 to 45.6, AR basis), outside the +/-10 stable band. On the results-filing basis (20.2 days) the score is also 3."
+  - "M6 R&D NOT FOUND: AR FY26 Annexure IV [page 72] R&D row blank (Annexure IV, not III); scored 0. M7 unregulated 0. M8 scored 1: AR FY26 [page 29] names Bengaluru, Chennai and Hyderabad, unquantified."
+  - "M10 scores 5: revenue grew in all 5 years and receivable days fell 26.0 over the period (rule asks rise <=10). Mechanical proxy; peak 96.9 days in FY24."
+  - "M11 scored on the overall-trend path (3): the two-window test needs a prior 3-year window ending FY23, i.e. FY20, NOT FOUND. Revenue CAGR FY21-FY26 51.7% (>=20%); selling proxy % of revenue (advertisement, sales and marketing, sales promotion, commission, freight outward) 2.49, 3.01, 2.58, 2.01, 2.07, 1.98 (FY21 to FY26), declining end to end. Adapted two-window reading (FY23-FY26 54.2% vs FY21-FY23 48.0%, selling % down) would score 5."
+  - "M12 median WC days 44.98 (0.02 day under the 45 line) scores 1; 3 of 6 years sit above 45 days, so 0 is the neighbouring reading."
+  - "E2: promoter holding 64.94% post-issue (prospectus [page 35]) to 60.19% Jun-2026 (SHP XBRL), -4.75pp over about 2.4 years since IPO; no full 3-year series. E3: no pledge or encumbrance (SHP Jun-2026 XBRL). E4: no contingent liabilities (AR FY26 [page 145]); 500.00 Rs Lakhs ZeaCloud funding commitment sits outside the test. IPO-linked tax summons not quantified in filings read here."
+  - "DB8 not triggered: PAT positive in FY24, FY25, FY26. The FY21 loss lies outside the last 3 years."
+block_b_trend: "deteriorating: FY26 CFO -8.83 Rs Cr on PAT 6.16 Rs Cr (AR FY26 [page 134]); cumulative FCF FY21-FY26 -25.00 Rs Cr; inventory 18.94 to 51.50 Rs Cr FY25 to FY26 (screener-data)"
+analyst_note: "Core 60 with STRONG moats would map to GOOD+, but cumulative CFO/PAT of -0.36 caps the result at AVERAGE. That cap holds under every sensitivity run here, so AVERAGE is robust even though core sits on the 60 line. Several scores rest on loss-year FY21 endpoints: A4 (5), M1 (5), B4 (5). Moving the start to FY22 drops core to 55 and cuts M1 to 3. FY21 to FY23 growth came off a low base and the FY23 ROCE of 60.6% sits on 9.59 Rs Cr of capital employed. Cash conversion is the real depressor: FY24 receivables build, FY26 inventory build. Net cash, 8.3x interest cover and 0.17 debt to equity are sound. The FY26 AR versus results-filing gap (2,463.00 Rs Lakhs) moves only D4 and the debtor-day reading."

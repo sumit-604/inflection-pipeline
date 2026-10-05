@@ -1,0 +1,103 @@
+stage: B04-bizmodel
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "BSE scrip code not found on screener page; announcements/ empty. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026; filings before Sep 2025 not collected."
+  - "shareholding/ empty (no automated source). REPAIRED by /step1: NSE SHP XBRL Mar-2026 and Jun-2026 plus text extracts."
+  - "screener export sheets EMPTY (P&L, Quarters, Balance Sheet, Cash Flow, Customization); Data_Sheet.csv populated; screener history FY2023-FY2026 plus Q1 FY27 only."
+  - "no results PDFs from screener. REPAIRED by /step1: H1 FY26, FY26 audited, Q1 FY27 board outcomes."
+  - "no rating PDF. REPAIRED by /step1: CRISIL rationale 2026-07-02 as text; 2024 and 2025 rationales not collected."
+  - "only 2 concalls. OVERRIDDEN by /step1: concalls_available true on 2 transcripts (Jun 2025, Aug 2026); 22 Jun 2026 investor meet has deck but no transcript; no H1 FY26 call."
+  - "annual-report: FY2023-24 AR not collected (two-most-recent rule); prospectus covers pre-IPO years."
+  - "research/ empty, no broker notes."
+  - "prospectus: final prospectus held; near-identical RHP moved to inputs/other/."
+  - "announcements: SAST disclosure 2026-05-19 scanned; .txt corrupt, OCR failed; read PDF page directly."
+  - "shareholding and rating XBRL/HTML originals kept beside text extracts, committed by hand by /step1."
+  - "listed_date: exact NSE Emerge listing date NOT FOUND in corpus (AR Note 1 p.105 says 23 Feb 2024; prospectus dated 2024-02-20)."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer proceed with gaps. Empty at stage 0: research/."
+  - "pass1 gap: FY24 AR not read, so FY24 purchases and FY24 payable days NOT FOUND; FY24 receivable days taken from FY25 AR comparatives."
+  - "pass1 gap: consolidated ageing tables (Notes 2.13.1 and 2.6.1 cited on p.142 and p.140) NOT FOUND IN DOCUMENT."
+  - "pass2 gap: Fluidech acquisition-date balance sheet and purchase agreement NOT FOUND; goodwill working, consolidation method and swap/cash price valuation basis NOT FOUND."
+  - "pass2 gap: Zeacloud and Singapore stand-alone accounts not in corpus (Singapore audited by other auditors, FY26 AR p.127); Singapore total assets conflict: AOC-1 SGD 33,89,867 (about 2,465 Lakhs at 72.72) vs auditor 553.64 Lakhs."
+  - "pass2 gap: preferential issue allottee list, lender list for the 247.95 repayment object, OD facility rate/limit/covenants, FDR lien and maturities, advance tax paid in FY26: all NOT FOUND."
+  - "pass2 note: FY25 AR and the Reg 30 filing of 28 Feb 2026 were read for cross-reference only; no figure from them enters the Pass 1 base."
+  - "stage3: Q1 FY27 other income split and the accounting of the 184.23 Lakhs warrant forfeiture NOT FOUND in the results filings read (note says only interest income, gain on sale of PPE and miscellaneous income)."
+  - "stage3: Fluidech s.156 income tax demand of 235.16 Lakhs (AY 2021-22, per prospectus) current status NOT FOUND; not in FY26 AR."
+  - "stage3: per-director Board and committee attendance NOT FOUND (extract lost the Present markers); other directorships NOT FOUND."
+  - "stage3: HexaData, services, cloud and cybersecurity revenue and margin NOT FOUND; FY26 customer concentration NOT FOUND; order book value NOT FOUND."
+  - "stage3: NSE PDF vs XBRL EPS discrepancy not verifiable from the AR; one EPS mismatch between filings found (standalone FY25 basic 5.26 vs 5.43)."
+  - "stage4: investor presentations provided (Jun 2026 and Sep 2025); neither gives revenue or margin by HexaData, cloud or cybersecurity. AR26 reports one segment (AR26 p.76). Only the products vs service-charges split exists (AR26 p.143)."
+  - "stage4: Q1 FY27 results filing and Aug 2026 concall transcript not in this stage's inputs; concall facts are carried from B03 (CALL26) and labelled as such."
+  - "stage4: Singapore customers, goods location and share of inventory NOT FOUND; FY26 government share, top-ten customers, supplier concentration NOT FOUND (prospectus covers to FY23 and H1 FY24 only)."
+  - "stage4: peer financials (Netweb, Rashi, Orient, E2E) not in this stage's inputs; no peer margin or multiple stated."
+flags:
+  - {type: FLAG-MIX-NOT-DISCLOSED, reason: "Q1 FY27 margin jump cannot be assigned to HexaData, services, cloud or cyber mix: no line revenue or margin in AR26, decks or prospectus. Only products 97.61% vs service charges 2.39% (AR26 p.143, Lakhs; derived). Two readings carried: structural mix, or inventory/price holding gain. Separating observation: line disclosure or Q2 FY27 gross margin after stock replaced."}
+  - {type: FLAG-DECK-VS-FILING, reason: "Four company statements conflict with filed numbers: vendors paid on time (Pres Jun26 slide 8) vs delayed-supplier interest 30.63 vs 1.15 Lakhs (AR26 p.115); ZeaCloud asset-light (AR26 p.13) vs asset-heavy (Pres Jun26 slide 8; CALL26 p.18); ZeaCloud healthy (slide 12) vs PAT (10.04) Lakhs (AR26 p.151); inventory backed by demand (slide 9) vs 2,428.94 Lakhs unreconciled inventory gap (B02)."}
+  - {type: FLAG-MODEL-WC, reason: "Net purchases 86.81% of revenue, gross margin 13.19% falling from 15.23% (derived, AR26 p.133). FY26 operating leverage negative: gross profit +1,167.37 Lakhs, opex +1,295.36 Lakhs, ex-other-income EBITDA 1,009.60 to 881.61 Lakhs. Government buyers pay slowly and need FDR-funded guarantees (PROSP p.77)."}
+  - {type: FLAG-SINGAPORE-THIN, reason: "Singapore is about 13.8% of revenue at 0.52% net margin (PAT 25.57 on revenue 4,905.58 Lakhs; B02, AR26 p.151, derived); customers, stock location and total-assets reconciliation NOT FOUND."}
+  - {type: FLAG-SECTOR-ROW, reason: "Manifest row Cybersecurity / VAD 25x is supported as the nearest existing row (97.61% resale and integration; cyber is Fluidech, 1.52% of revenue, loss-making). No hardware-integrator row exists. Platform/SaaS/IT services 45x not supported (services 2.39%). Cap is a ceiling; margins are likely to bind first. Manifest unchanged."}
+business_type: hybrid
+revenue_streams:
+  - {name: "Sales of IT products (traded and integrated hardware, HexaData own-brand, Singapore trading; line split NOT FOUND)", type: "transactional, project/tender-based product resale with light assembly", pct_of_revenue: 97.61, predictability: "Low to Medium (AR26 p.143, consolidated FY26: 34,593.19 of 35,440.48 Lakhs; derived)"}
+  - {name: "Service charges (integration, AMC, managed services, parts of cloud and cyber)", type: "services, project and recurring mix", pct_of_revenue: 2.39, predictability: "Medium (AR26 p.143: 847.30 of 35,440.48 Lakhs; FY25 0.65%)"}
+  - {name: "HexaData own-brand (inside products line)", type: "product / assembly", pct_of_revenue: "NOT FOUND, check investor presentation or concall", predictability: "Low to Medium"}
+  - {name: "ZeaCloud and Fluidech (inside the two lines above)", type: "subscription and services", pct_of_revenue: "NOT FOUND as line; Fluidech turnover 538.96 Lakhs = 1.52% of consolidated revenue (B02; derived)", predictability: "Medium"}
+asset_intensity: medium
+wc_intensity: high
+pricing_power: weak
+cyclicality: cyclical
+moats_present:
+  - "Intangible: HexaData brand, Red Hat certification of HD-RS2200 (AR26 p.75), 6,000+ units since 2018 (Pres Sep25 slide 4). Strength weak to moderate; durability low to moderate"
+  - "Accreditation: Fluidech NCIIPC, India's first (Pres Jun26 slide 5, 13). Moderate; durability moderate"
+  - "Supply access: NVIDIA Elite Partner tier, privileged GPU allocation (Pres Jun26 slide 11). Management claim, unproven in margin; durability low to moderate"
+  - "Relationships and government panel access: 500+ clients (Pres Sep25 slide 4), GeM OEM listing (AR26 p.75). Moderate; resets every tender cycle"
+  - "Overall verdict: narrow; no moat proven in the margin line (gross margin 13.19% FY26, AR26 p.133)"
+valuation_methods:
+  primary: {method: "P/E on normalised earnings (ex other income, mid-cycle gross margin; Section 1B governs the exit PE)", why: "Positive PAT (FY26 6.16 Cr, AR26 p.76) and a margin-driven model; FCF and book value are not reliable"}
+  secondary: {method: "EV/EBITDA excluding other income vs Orient Technologies, Rashi Peripherals, Netweb", why: "Same-model cross-check that removes OD and other-income noise; EV/gross profit as supporting view"}
+  tertiary: {method: "SOTP (hardware core, ZeaCloud, Fluidech, Singapore)", why: "Only when line revenue and margin are disclosed; all NOT FOUND today"}
+  not_applicable:
+    - "DCF: six-year CFO negative, FY26 CFO ex-FDR (177.50) Lakhs (B02)"
+    - "P/B or net worth: goodwill 851.11 Lakhs untested, derived overstatement about 209 Lakhs"
+    - "EV/Sales or P/S: 97% resale at 2.5% margin"
+    - "DDM: no dividend evidence"
+    - "NAV or replacement cost"
+irrelevant_ratios:
+  - "Reported EBITDA margin 3.42%: includes other income 28.0% of EBITDA; ex other income 2.49%"
+  - "Headline ROE and ROCE: asset-turn driven at 2% to 3% margin; goodwill and FDR cash blur capital employed"
+  - "Notes ratio table (DSCR 0.47x, ROE 0.39): not reproducible"
+  - "EV/Sales and P/S: mostly someone else's product"
+  - "Single-quarter gross margin: moves with component prices and inventory timing"
+  - "Revenue per employee: headcount figures conflict across the Sep 2025 deck (70 vs 40/50/60 chart)"
+  - "Order pipeline of 100 Cr+: a pipeline, not a signed backlog"
+  - "Reported CFO: FY26 standalone includes 1,745.95 Lakhs FDR liquidation"
+must_track_metrics:
+  - {metric: "Gross margin after stock replaced at new prices (standalone and consolidated)", healthy: "Consolidated above 15%; standalone Q1 FY27 29.2% holds above 20% (B03)", red_flag: "Back toward 13% (FY26 13.19%) or depends on old stock"}
+  - {metric: "EBITDA margin excluding other income", healthy: "5% or more for two straight quarters (FY26 2.49%; Q1 FY27 7.03%)", red_flag: "Q2 FY27 below 5%"}
+  - {metric: "Revenue by line: HexaData, services, cloud, cyber (and order backlog in rupees)", healthy: "Disclosed; services above 5% of revenue and rising (FY26 2.39%)", red_flag: "Still NOT FOUND after Q2 FY27"}
+  - {metric: "CFO excluding FDR movements, and receivables over six months", healthy: "CFO/PAT above 0.7; over six months below 10%", red_flag: "CFO ex-FDR negative; over six months above 20% (FY26 19.9%); any first provision"}
+  - {metric: "Inventory days and OD/delayed-payment interest", healthy: "Inventory days at or below 60; delay interest under 5 Lakhs a half-year", red_flag: "Stock build above 500 Lakhs a quarter without orders; delay interest above FY26 30.63 Lakhs run-rate"}
+unit_economics:
+  unit: "₹100 of consolidated revenue (no single product unit; tenders differ)"
+  revenue_per_unit: "100.00"
+  margin_per_unit: "FY26: gross profit 13.19, ex-other-income EBITDA 2.49, PBT 2.43 per ₹100 (AR26 p.133, p.144, Lakhs; derived). FY25: 15.23, 4.38, 4.61"
+  key_lever: "Gross margin mix and pricing: 1 point on about ₹354 Cr revenue is about ₹3.5 Cr EBITDA vs ex-other-income EBITDA of ₹8.8 Cr. FY26 operating leverage was negative (GP +1,167.37 Lakhs vs opex +1,295.36 Lakhs)"
+first_deterioration_signals:
+  - {risk: "Revenue model: project/tender sales, no disclosed backlog, government and top-ten concentration", first_signal: "Quarterly revenue and order inflow; standalone revenue already -18% vs FY26 quarterly average in Q1 FY27 (B03)"}
+  - {risk: "Margin: component price swings, inventory gain reversal", first_signal: "Gross margin line (revenue less purchases plus stock change)"}
+  - {risk: "Balance sheet: slow government receivables, OD-funded stock", first_signal: "Over-six-month receivables bucket (893.06 Lakhs, 19.9%) and delayed-payment interest"}
+  - {risk: "Execution: ZeaCloud, Fluidech and MeitY plans not delivered", first_signal: "Subsidiary losses and depreciation; ZeaCloud PAT (10.04) Lakhs, Fluidech PBT (68.01) Lakhs"}
+  - {risk: "Structural: supplier power of distributors and OEMs", first_signal: "Purchases growing faster than revenue (FY26 +58% vs +54%, Pres Jun26 slide 8)"}
+  - {risk: "Quality: intra-group sales and goodwill", first_signal: "Parent sales to Zeacloud vs Zeacloud turnover (568.79 Lakhs = 106.4%); goodwill 851.11 Lakhs impairment"}
+mgmt_questions:
+  - "What are FY26 and Q1 FY27 revenue and gross margin for HexaData, services, cloud and cybersecurity?"
+  - "How much of the Q1 FY27 standalone gross margin of 29.2% is stock bought before the price rise, and what is the margin on stock replaced at new prices?"
+  - "What is the signed order backlog in rupees, and how much is government?"
+  - "What does Esconet Singapore sell, to whom, where is its stock, and why do audited total assets (553.64 Lakhs) differ from AOC-1 (about 2,465 Lakhs)?"
+  - "The June 2026 deck says vendors were paid on time; the AR shows 30.63 Lakhs delayed-payment interest and 17.65 Lakhs on statutory dues. Which is right?"
+  - "ZeaCloud: asset-light (Chairman) or asset-heavy (MD)? Capex plan, utilisation, third-party revenue?"
+  - "What numeric revenue and margin is management working to for FY27, given the deck gives no growth number, and how did FY26 compare with the June 2025 outlook?"
+one_line_verdict: "A thin-margin hardware integrator (97.61% product resale, 13.19% gross margin) whose claimed shift to own-brand, cloud and cyber mix cannot be measured from any document in the corpus."
+analyst_note: "Sector cap: the manifest row Cybersecurity / VAD 25x is supported as the nearest existing row, because 97.61% of revenue is resale and integration; cyber is Fluidech, 1.52% of revenue and loss-making. No hardware-integrator row exists, so no better row is available. The cap is a ceiling: with margins between 2.5% and 7%, the pillar-built PE will likely bind first. Q1 FY27 margin: the evidenced path is unresolved. Reading one is structural mix; reading two is a stock-gain from pre-inflation inventory (MD ties part of margin to price volatility and stock, CALL26 p.10, p.12 via B03). Separating observation: revenue and gross margin by line, or Q2 FY27 gross margin after stock replacement. Put the conservatism in position size, not in the input. Gross margin (not volume) drives value: 1 point is about ₹3.5 Cr EBITDA."

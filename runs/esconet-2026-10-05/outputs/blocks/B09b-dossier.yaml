@@ -1,0 +1,77 @@
+stage: B09b-dossier
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "FY2023-24 annual report"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "CRISIL rating rationales 2024 and 2025"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "NSE Reg 30 filings before Sep 2025, including 10 Jan 2025 Fluidech acquisition filing and 3 Feb 2025 EGM notice"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Shareholding patterns for the other 10 of the last 12 quarters, and Sep 2026 when filed"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Audited accounts of ZeaCloud, Fluidech and Esconet Singapore; Fluidech acquisition-date balance sheet"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Q1 FY27 balance sheet and cash flow statement (not yet filed; H1 FY27 print due mid Nov 2026)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Q1 FY27 earnings deck shown on the 13 Aug 2026 call"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "SEBI order text on lead manager Corporate Capital Ventures, 18 Aug 2026"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "22 Jun 2026 investor meet transcript (recording only)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "H1 FY26 call transcript (no call held)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Broker and research notes (research/ empty)"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Core integration and resale (97.61% of FY26 consolidated revenue is product sales)"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services)"
+  - line: "HexaData own-brand servers, workstations and storage"
+    archetype: "Build-to-spec component maker"
+transition:
+  - line: "Core integration plus HexaData mix shift"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (two-rung claim; dossier reading of management language)"
+    engine: "Own-brand HexaData content share rises against resold boxes (mechanism unproven: stated sub-line margins of 10 to 15 percent cannot produce the 29.16 percent Q1 FY27 standalone gross margin); ZeaCloud MeitY empanelment and Fluidech NCIIPC accreditation convert to revenue"
+    proof_gate: "Standalone gross margin at or above 20 percent in Q2 FY27 and Q3 FY27 after stock replaced at current cost, with HexaData revenue and margin disclosed by line; companions: consolidated EBITDA ex other income at or above 5 percent for two straight quarters, and CFO ex-FDR positive with CFO to PAT above 0.7 and receivables over six months below 10 percent"
+    recognition_gap: "Open question for Stage 11 via the PE gap: does the TO state already look reflected in market pricing. No number or conclusion here."
+    ugliness: "STRUCTURAL-FEATURE"
+    transition_falsifier: "Q2 FY27 standalone gross margin back near the FY26 level of 13.7 percent, or no HexaData line disclosure after the Q2 FY27 print"
+dominant_variables:
+  - "Standalone gross margin after stock replacement (Q1 FY27 29.16 percent vs FY26 13.72 percent)"
+  - "HexaData revenue and margin by line, and revenue base ex-Singapore (not disclosed)"
+  - "Cash conversion: CFO ex-FDR, inventory build, receivables over six months (FY26 CFO negative; 19.9 percent over six months)"
+  - "Credential conversion: ZeaCloud MeitY empanelment and Fluidech break-even (timelines slipping)"
+business_falsifier: "An audited Singapore balance sheet or customer list showing thin pass-through trade, a write-down of the unreconciled 2,428.94 Lakhs subsidiary inventory, or a tax or SEBI finding tying pre-IPO placements to promoters"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 8
+  verifiability_ratio: "5 of 8 externally observable"
+  single_point_failure: "standalone gross margin reverting to the FY26 level of 13.7 percent"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 4
+  confirm_by_observations: 2
+research_brief_items: 16
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "f2564198362ac19889f2cf6e3aa6371623d52783"

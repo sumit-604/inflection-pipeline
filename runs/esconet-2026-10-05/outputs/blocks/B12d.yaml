@@ -1,0 +1,22 @@
+stage: B12d
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 11
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "ORIENTTECH Q2 FY26 (14 Nov 2025)", missed_item: "Pre-shock EBITDA baseline: Rs 21.96 Cr on Rs 272.80 Cr revenue (8.05%, derived), H1 Rs 39.29 Cr on Rs 485.37 Cr; and 'margin should gradually improve in Q4 as set-up costs taper'. Gives the 8% to 3.19% to 7.57% path for Q1 claim; B06 starts the Orient path at Q3 FY26. Industry-context depth, not a verdict change.", anchor: "ORIENTTECH Q2 FY26 transcript, [page 4] lines 116-123; [page 5] lines 160-162"}
+  - {peer: "RPTECH Q4 FY26 (15 May 2026)", missed_item: "Data sovereignty and PMO push named as the driver of AI and non-AI data-centre projects (second peer for the Q4 sovereign-driver claim, B06 says Netweb only); and the caveat on the Rs 20,000 to 25,000 Cr funnel 'I'm not very sure whether they can get finalized', plus 'capital intensive ... margins are also lower', omitted from the Q7 acceleration anchor.", anchor: "RPTECH Q4 FY26 transcript, [page 10] lines 396-405"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, peer: "ORIENTTECH Q2 FY26", finding: "Coverage map marks it CITED-ONLY and says content is 'also in other Orient calls'. Part 1 cites it four times (Q4 gov/PSU 19.65%, Q5 AI proof-of-concept p.8, Q8 SOC revenue date p.5 and builder delay p.9). The 19.65% share appears on no other call in the same form and the builder delay is unique to Q2. Label understates use."}
+  - {severity: MINOR, peer: "ORIENTTECH Q2 FY26; NETWEB Q1 FY27", finding: "Two page anchors are off by one against the stated [page N] marker convention. Orient Q2 gov/PSU 19.65% cited p.3, marker is p.4 (line 125). Netweb Q1 FY27 '125 people in R&D' cited p.16, marker is p.17 (line 679). Both quotes exist and are findable."}
+  - {severity: MINOR, peer: "RPTECH Q4 FY26", finding: "Q4 sovereign-driver claim and Q7 acceleration anchor omit RPTECH Q4 p.10 statements (data sovereignty push; funnel may not finalize; selective participation as capital intensive and lower margin). Verdicts do not change."}
+  - {severity: MINOR, peer: "NETWEB, RPTECH", finding: "Q7 VERIFIED rests on 2 independent peers for acceleration and partner allocation, so the 2-anchor rule holds. Esconet's own Elite-status access is not tested and 'no cancellations' rests on a text search (silence), not a statement. B06 discloses the interested-party limit. Closer to PARTIALLY VERIFIED on the full claim; not an upgrade from silence because the verdict stands on affirmative quotes."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 92

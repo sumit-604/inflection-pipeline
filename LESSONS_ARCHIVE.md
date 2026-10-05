@@ -1043,3 +1043,14 @@ OR-14 re-derivation (PR #193): SYSTANGO, SHYAMMETL, MANINDS ruled Small on
 2026-10-04 (PR #201). AIMTRON and ASIANENE: not re-derived; operator ruling
 2026-10-04 (standing ruling: framework rulings apply forward; closed names keep
 their record as of the run that produced it). Both stay CONCERN, Small.
+
+## 2026-10-05 ESCONET (Phase 1, /step1 intake, runs/esconet-2026-10-05)
+
+- Collector: wrong concall mode (2 transcripts -> no-concall); no results, rating, announcements (NSE-only SME, no BSE code), shareholding; empty screener formula sheets. All repaired by hand from the NSE API and CRISIL before commit.
+- Stage 0 wrote the ARs as INR Crores; both are INR Lakhs on the face. Stage 1 caught it; B00 corrected.
+- Gate 0 run 1 scored 4 years while the prospectus held FY21-FY22 restated statements; Verifier C CRITICAL. One remediation cycle (stage 1 run 2, stage 7 run 2 scoped, B12a and B12c re-audit) moved AVOID to AVERAGE.
+- Stage 9 needs B04 and B07 blocks, so it cannot run in parallel with stages 4, 5, 8 as the dependency table says.
+- B05 block file lost a closing brace (reply copy intact); clerical repair.
+- Several stage agents reported no Edit tool and left small anchor typos; stage 09b left a stray file in the repo root (deleted).
+- B12b gives two acceptance bases (90.9% partial-catch, 54.5% full-catch); the full-catch basis would force REWORK under OR-29. Left to the operator at Halt 1.
+- Tokens: the session transcript logs carry exact per-call usage with cache reads and writes. Billed total 130.7M (95.9% cache reads); harness total 4.92M for 21 subagent runs, +17% vs KWICK on run 1 of each stage. API-equivalent cost about $71, about 2.4x the 2.5x breaker line of the Section 8 estimate; the breaker was never checked in-run because the ledger has no dollar column.

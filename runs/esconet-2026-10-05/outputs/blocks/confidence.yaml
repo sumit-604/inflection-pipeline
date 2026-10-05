@@ -1,0 +1,37 @@
+stage: confidence
+company: "ESCONET"
+run_date: "2026-10-05"
+phase: 1
+computed_by: "orchestrator (prompts/00-orchestrator.md Section 5)"
+sources:
+  B12a: "run 2 (re-audit): 452 clean of 466 checked; mandatory 215 of 215; 0 CRITICAL"
+  B12b: "run 1: material_found 11 (0 CRITICAL, 11 MAJOR), material_caught 10 (6 full, 4 partial counted as caught); acceptance_rate 90.9"
+  B12c: "run 2 (re-audit), phase 1 half only: 72 of 76 rules passed; 0 CRITICAL"
+  B12d: "run 1: 11 of 12 peer-calls SUBSTANTIVE confirmed; acceptance_rate 92"
+verifier_a_identity_check: "no CRITICAL rows in B12a run 1 or run 2; nothing struck"
+confidence_delta:
+  numerical_acceptance: 97.0        # B12a run 2, n = 466
+  redflag_coverage: 90.9            # B12b.acceptance_rate, n = 11 material
+  framework_adherence: 94.7         # B12c run 2, Gate 0 + Emerging Moat portion only, n = 76
+  framework_adherence_valuation: "PENDING PHASE 3"
+  peer_utilisation: 91.7            # B12d: 11 substantive of 12 peer-calls provided
+  overall: 90.9
+  overall_set_by: "redflag_coverage (B12b)"
+  not_applicable: []
+band: "high confidence (overall >= 90), set by redflag_coverage"
+open_reading_for_operator: >-
+  B12b states two bases. Counting partial catches as caught (the block's
+  acceptance_rate) gives 90.9%. Counting full catches only gives 54.5% (6 of
+  11), which is below the 60% line on a denominator of 4 or more and would
+  force REWORK under OR-29 and put overall at 54.5. The orchestrator used the
+  block's stated acceptance_rate, as Section 5 directs, and names the second
+  basis here so the operator can rule on it at Halt 1.
+remediation_cycle: >-
+  One cycle run (MMP 2026-10-05 precedent): Verifier C run 1 F1 CRITICAL
+  (Gate 0 scored 4 years; 6 exist) -> stage 1 run 2, stage 7 run 2 scoped,
+  B12a run 2, B12c run 2. Run 1 confidence before remediation: numerical 93.5,
+  redflag 90.9, framework 91.7 (with 1 CRITICAL), peer 91.7. Open after
+  remediation: B12c N1-N4 MINOR (M11 window, FY21 opening net worth, the
+  FY22-start sensitivity wording, B07 6E existing-moat column); B12a three
+  carried MAJOR source-fidelity rows in B03, B04, B09 (corrected figures named
+  in B12a; none feeds Gate 0).

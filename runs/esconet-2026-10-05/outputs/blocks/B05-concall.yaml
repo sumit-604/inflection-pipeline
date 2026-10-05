@@ -1,0 +1,126 @@
+stage: B05-concall
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "BSE scrip code not found on screener page; announcements/ empty. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026; filings before Sep 2025 not collected."
+  - "shareholding/ empty (no automated source). REPAIRED by /step1: NSE SHP XBRL Mar-2026 and Jun-2026 plus text extracts."
+  - "screener export sheets EMPTY (P&L, Quarters, Balance Sheet, Cash Flow, Customization); Data_Sheet.csv populated; screener history FY2023-FY2026 plus Q1 FY27 only."
+  - "no results PDFs from screener. REPAIRED by /step1: H1 FY26, FY26 audited, Q1 FY27 board outcomes."
+  - "no rating PDF. REPAIRED by /step1: CRISIL rationale 2026-07-02 as text; 2024 and 2025 rationales not collected."
+  - "only 2 concalls. OVERRIDDEN by /step1: concalls_available true on 2 transcripts (Jun 2025, Aug 2026); 22 Jun 2026 investor meet has deck but no transcript; no H1 FY26 call."
+  - "annual-report: FY2023-24 AR not collected (two-most-recent rule); prospectus covers pre-IPO years."
+  - "research/ empty, no broker notes."
+  - "prospectus: final prospectus held; near-identical RHP moved to inputs/other/."
+  - "announcements: SAST disclosure 2026-05-19 scanned; .txt corrupt, OCR failed; read PDF page directly."
+  - "shareholding and rating XBRL/HTML originals kept beside text extracts, committed by hand by /step1."
+  - "listed_date: exact NSE Emerge listing date NOT FOUND in corpus (AR Note 1 p.105 says 23 Feb 2024; prospectus dated 2024-02-20)."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer proceed with gaps. Empty at stage 0: research/."
+  - "pass1 gap: FY24 AR not read, so FY24 purchases and FY24 payable days NOT FOUND; FY24 receivable days taken from FY25 AR comparatives."
+  - "pass1 gap: consolidated ageing tables (Notes 2.13.1 and 2.6.1 cited on p.142 and p.140) NOT FOUND IN DOCUMENT."
+  - "pass2 gap: Fluidech acquisition-date balance sheet and purchase agreement NOT FOUND; goodwill working, consolidation method and swap/cash price valuation basis NOT FOUND."
+  - "pass2 gap: Zeacloud and Singapore stand-alone accounts not in corpus (Singapore audited by other auditors, FY26 AR p.127); Singapore total assets conflict: AOC-1 SGD 33,89,867 (about 2,465 Lakhs at 72.72) vs auditor 553.64 Lakhs."
+  - "pass2 gap: preferential issue allottee list, lender list for the 247.95 repayment object, OD facility rate/limit/covenants, FDR lien and maturities, advance tax paid in FY26: all NOT FOUND."
+  - "pass2 note: FY25 AR and the Reg 30 filing of 28 Feb 2026 were read for cross-reference only; no figure from them enters the Pass 1 base."
+  - "stage3: Q1 FY27 other income split and the accounting of the 184.23 Lakhs warrant forfeiture NOT FOUND in the results filings read (note says only interest income, gain on sale of PPE and miscellaneous income)."
+  - "stage3: Fluidech s.156 income tax demand of 235.16 Lakhs (AY 2021-22, per prospectus) current status NOT FOUND; not in FY26 AR."
+  - "stage3: per-director Board and committee attendance NOT FOUND (extract lost the Present markers); other directorships NOT FOUND."
+  - "stage3: HexaData, services, cloud and cybersecurity revenue and margin NOT FOUND; FY26 customer concentration NOT FOUND; order book value NOT FOUND."
+  - "stage3: NSE PDF vs XBRL EPS discrepancy not verifiable from the AR; one EPS mismatch between filings found (standalone FY25 basic 5.26 vs 5.43)."
+  - "stage5: only two transcripts exist (19 Jun 2025 FY25 call; 13 Aug 2026 Q1 FY27 call). No H1 FY26 call. The 22 Jun 2026 FY26 investor meet has a deck only; deck claims are labelled deck, not transcript. Trailing-four-quarter delivery test therefore rests on one forward call (Jun 2025) and the filed record, not on a quarterly call chain."
+  - "stage5: Q1 FY27 results carry no balance sheet and no cash flow statement; the 20.2 debtor-day claim in the step1 brief is in neither transcript nor the Q1 filing text read. NOT FOUND; cannot be tested."
+  - "stage5: CFO statement of operating cash flow as '5% of revenue' is garbled in the transcript (base and period unclear); no cash flow statement filed for Q1. NOT FOUND."
+  - "stage5: Singapore revenue 'approximately 53 crores' (AUG26 p.15) has no stated period; Q1 or FY26 ambiguous. NOT FOUND."
+  - "stage5: Fluidech FY25 and FY26 segment revenue comes from B03 (AR26 p.69), not from a call; HexaData versus non-HexaData split NOT DISCLOSED on the Aug 2026 call (single AS-17 segment)."
+flags:
+  - {type: FLAG-MARGIN-BASIS, reason: "MD says Q1 FY27 margins reflect execution plus current market conditions; hardware price volatility 'has played some role', unquantified; inventory build 'contributed to some extent to our margins' (AUG26 p.10, p.12). Company margin 15.39% standalone and 8.55% consolidated are on total income incl other income; ex other income 12.75% and 7.03% (Q1 FY27 BM p.4, Lakhs). Q1 inventory build 518.50 Lakhs. The same price rise was the FY26 cost shock (May 2026 PR, Jun 2026 deck)."}
+  - {type: FLAG-CASH, reason: "CFO gave no cash flow number on the call and no Q1 balance sheet or cash flow was filed (AUG26 p.12). MD says operating cash is reinvested in rising inventory. 20.2 debtor days NOT FOUND in either call or the Q1 filing."}
+  - {type: FLAG-IPO-GOVERNANCE-SILENCE, reason: "The s.131(1A) IPO-related income tax summons (Reg 30, 28 Feb 2026) was not raised by management or any analyst on the Aug 2026 call. Warrant lapse (552.69 Lakhs not received, 184.23 Lakhs forfeited) not discussed; preferential issue revised 3,269.22 to 2,716.53 Lakhs (Q1 FY27 BM p.12-13). MD said no fund raise in FY27 (AUG26 p.14)."}
+  - {type: FLAG-STATEMENT-CONFLICT, reason: "MD said no intent to sell any stake in ZeaCloud 'as of now' (AUG26 p.14); Reg 30 of 9 Feb 2026 disclosed talks on fresh equity in ZeaCloud via Merino Consulting that may dilute Esconet. Independent director Manoj Chugh praised governance 'of the highest levels' (AUG26 p.3) while B03 records a 12.00 Lakhs fee to his advisory LLP."}
+  - {type: FLAG-GUIDANCE-INCONSISTENCY, reason: "FY27 revenue 'not significantly bigger than last year' (AUG26 p.16) against Q1 consolidated 11,632.69 Lakhs (about 466 Cr annualised) and Q2 'slightly better' (AUG26 p.16); CRISIL records a company expectation of Rs 370-400 Cr. Standalone Q1 6,107.71 Lakhs is 18% below the FY26 quarterly average, so the statement fits standalone, not consolidated."}
+  - {type: FLAG-PROMO-GLOSS, reason: "May 2026 PR calls ZeaCloud 'healthy operational growth'; deck calls Fluidech FY26 a 'planned' loss of about 0.67 Cr. The MD on the Aug 2026 call says ZeaCloud had no revenue and no margin expansion in FY26. Jun 2025 call promised Fluidech 15-20 Cr and 25-30% operating margin; actual 538.96 Lakhs turnover and PBT (68.01) Lakhs (B03, AR26 p.69)."}
+quarters_analysed: ["FY25 / H2 FY25 call (19 Jun 2025)", "Q1 FY27 call (13 Aug 2026)", "FY26 audited and H1 FY26 filings (delivery evidence only, no call)", "FY26 investor meet deck, 22 Jun 2026 (deck only, no transcript)"]
+triggers:
+  - {priority: 1, name: "Standalone gross margin hold at Q1 FY27 level (HexaData mix versus hardware price and inventory gain)", type: "margin", timeframe: "near", conviction: "L", confirm_signal: "Q2 FY27 standalone gross margin at or above 20% with stock replaced at current cost and quarterly inventory build below 500 Lakhs; HexaData revenue and margin disclosed by line", kill_signal: "Gross margin back near FY26 13.2% consolidated, or a hardware price fall with high-cost stock on hand"}
+  - {priority: 2, name: "HexaData AI and GPU server volume through NVIDIA Elite allocation and PSU/government orders (C-DAC 25.74 Cr, Jul 2026)", type: "revenue", timeframe: "near", conviction: "M", confirm_signal: "Further Reg 30 orders; standalone revenue back above 7,400 Lakhs per quarter; Q2 revenue slightly above Q1 as guided", kill_signal: "Standalone revenue stays near 6,100 Lakhs or order flow stops"}
+  - {priority: 3, name: "Cost and finance savings after working-capital loan repayment (April 2026)", type: "margin", timeframe: "near", conviction: "H", confirm_signal: "Finance cost stays near 7 Lakhs per quarter (Q1 7.32 Lakhs vs FY26 standalone 115.10 Lakhs)", kill_signal: "Fresh borrowing as inventory builds"}
+  - {priority: 4, name: "ZeaCloud MeitY empanelment unlocking government cloud hosting", type: "revenue", timeframe: "medium", conviction: "L", confirm_signal: "ISO certifications done by Sep 2026, MeitY application filed, empanelment in FY27", kill_signal: "Empanelment slips beyond FY27 or ZeaCloud revenue stays near 5.3 Cr"}
+  - {priority: 5, name: "Fluidech turnaround to breakeven (NCIIPC and NPCI credentials)", type: "both", timeframe: "medium", conviction: "L", confirm_signal: "Fluidech PBT breakeven in FY27 and a stated revenue number", kill_signal: "Loss continues or no Fluidech figure given again"}
+  - {priority: 6, name: "ResQ backup appliance, Scality and Cato partnerships, HPC orchestration stack v1", type: "margin", timeframe: "medium", conviction: "L", confirm_signal: "A named appliance or stack order with revenue disclosed", kill_signal: "No revenue shown by FY27 results"}
+guidance:
+  - {item: "ZeaCloud FY26 revenue growth", number: "50 to 60 percent; about 8 to 8.5 Cr", timeframe: "FY26", stated_in: "FY25 call, 19 Jun 2025 (JUN25 p.6, p.9)"}
+  - {item: "Fluidech FY26 revenue", number: "15 to 20 Cr; growth 30 to 40 percent minimum for 3 to 4 years", timeframe: "FY26 and after", stated_in: "FY25 call, 19 Jun 2025 (JUN25 p.6, p.9)"}
+  - {item: "ZeaCloud operating margin", number: "30 to 35 percent now, sustaining 20 to 25 percent", timeframe: "FY26", stated_in: "FY25 call, 19 Jun 2025 (JUN25 p.9, p.11)"}
+  - {item: "Fluidech operating margin", number: "25 to 30 percent", timeframe: "FY26", stated_in: "FY25 call, 19 Jun 2025 (JUN25 p.9)"}
+  - {item: "Group margin FY26", number: "will improve; may not exceed FY24 level (gross margin about 20% in FY24, 15% in FY25 per analyst)", timeframe: "FY26", stated_in: "FY25 call, 19 Jun 2025 (JUN25 p.7)"}
+  - {item: "Group margin FY27", number: "to exceed FY24 margin percentages 'by far'", timeframe: "FY27", stated_in: "FY25 call, 19 Jun 2025 (JUN25 p.7)"}
+  - {item: "Employee cost growth", number: "about 30 percent; FY27 slower", timeframe: "FY26, FY27", stated_in: "FY25 call, 19 Jun 2025 (JUN25 p.9)"}
+  - {item: "Legacy SI gross margin and HexaData gross margin", number: "7 to 8 percent; 10 to 15 percent", timeframe: "FY25 level", stated_in: "FY25 call, 19 Jun 2025 (JUN25 p.12)"}
+  - {item: "Q1 FY27 margin sustainability", number: "'pretty much sustainable' for FY27; 7, 6, 5 or 10 percent all possible", timeframe: "FY27", stated_in: "Q1 FY27 call, 13 Aug 2026 (AUG26 p.10, p.16)"}
+  - {item: "Q2 FY27", number: "revenue slightly better than Q1; profit similar with small variation", timeframe: "Q2 FY27", stated_in: "Q1 FY27 call, 13 Aug 2026 (AUG26 p.10, p.11, p.16)"}
+  - {item: "FY27 revenue", number: "not significantly bigger than FY26; no number committed", timeframe: "FY27", stated_in: "Q1 FY27 call, 13 Aug 2026 (AUG26 p.16); deck 22 Jun 2026 p.17 'not committing growth numbers'"}
+  - {item: "ZeaCloud FY27 revenue", number: "similar to FY26 (5 to 5.5 Cr)", timeframe: "FY27", stated_in: "Q1 FY27 call, 13 Aug 2026 (AUG26 p.18)"}
+  - {item: "MeitY empanelment", number: "ISO certifications by Sep 2026 end, then 3 to 4 months; within FY27", timeframe: "FY27", stated_in: "Q1 FY27 call, 13 Aug 2026 (AUG26 p.14); deck 22 Jun 2026 p.12, p.17"}
+  - {item: "Fundraising", number: "none in FY27", timeframe: "FY27", stated_in: "Q1 FY27 call, 13 Aug 2026 (AUG26 p.14)"}
+  - {item: "Order book at 30 Jun 2026", number: "about 20 to 25 Cr (guesstimate); 100 Cr pipeline 'may not be anytime soon'", timeframe: "30 Jun 2026", stated_in: "Q1 FY27 call, 13 Aug 2026 (AUG26 p.15, p.16)"}
+  - {item: "Government share of revenue", number: "40 to 45 percent last year; lower this year", timeframe: "FY26, FY27", stated_in: "Q1 FY27 call, 13 Aug 2026 (AUG26 p.17)"}
+  - {item: "Quarterly reporting", number: "Q1 to Q4 every year from FY27", timeframe: "FY27 onward", stated_in: "Q1 FY27 call, 13 Aug 2026 (AUG26 p.5)"}
+promise_delivery:
+  delivered: 3
+  partial: 5
+  missed: 5
+  rows:
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.7)", promise: "FY26 margins will definitely improve", outcome: "MISSED", explanation: "FY26 consolidated gross margin 13.19% vs 15.23%, EBITDA margin 3.46% vs 5.67% (FY26 PR 28 May 2026, Lakhs, consolidated FY2025-26 column; B03). Blamed component inflation above 100%: external-blame."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.6)", promise: "ZeaCloud revenue +50 to 60% in FY26 (about 8 to 8.5 Cr)", outcome: "MISSED", explanation: "Turnover 534.43 vs 525.13 Lakhs, +1.8%; PAT 110.82 to (10.04) Lakhs (AR26 p.69 via B03). MD admitted flat revenue and margin on Q1 FY27 call (AUG26 p.18) and said 'ZeaCloud 2.0' was being built: honest-admission with reframe."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.6, p.9)", promise: "Fluidech FY26 revenue 15 to 20 Cr", outcome: "MISSED", explanation: "Turnover 538.96 Lakhs (5.39 Cr), about 30 to 36% of the range (AR26 p.69 via B03). Not mentioned on the Aug 2026 call; deck calls it a planned investment year: silence and reframe."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.9)", promise: "Fluidech operating margin 25 to 30%", outcome: "MISSED", explanation: "Fluidech PBT (68.01) Lakhs in FY26 (AR26 p.69 via B03); deck says planned loss of about 0.67 Cr. Reframed as deliberate."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.9)", promise: "Employee cost up about 30% in FY26", outcome: "MISSED", explanation: "Consolidated 933.32 vs 557.04 Lakhs, +67.5% (FY26 BM; B03). Cost overshoot not explained on the Aug 2026 call."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.4)", promise: "Hexadata unified backup appliance launched in FY26", outcome: "DELIVERED", explanation: "HexaData ResQ launched 1 Sep 2025 on Scality ARTESCA and Veeam (Reg 30, 1 Sep 2025). Revenue from it NOT FOUND."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.8)", promise: "No acquisitions under consideration", outcome: "DELIVERED", explanation: "No acquisition in the Reg 30 record Sep 2025 to Sep 2026 (33 filings, B03 input gaps). Earlier months not collected."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.6)", promise: "FY26 to continue the same growth path; bottom line focus from FY27", outcome: "DELIVERED", explanation: "Consolidated total income 23,325.09 to 35,784.11 Lakhs, +53.41% (FY26 PR). Profit fell 23% (PAT 615.50 vs 799.79 Lakhs), so the top-line half only."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.4)", promise: "Own HPC cluster management stack, branding nearly done", outcome: "PARTIAL", explanation: "Aug 2026: version 1 ready, POCs done, 'may have shipped to one or two customers' (AUG26 p.17). No order disclosed."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.4)", promise: "Own indigenous cloud platform", outcome: "PARTIAL", explanation: "Aug 2026: orchestration layer in production, observability module pending, third-party tools still used (AUG26 p.17)."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.4)", promise: "Target MeitY empanelment 'a little far away'", outcome: "PARTIAL", explanation: "Not achieved. Aug 2026: ISO certs by Sep 2026, then 3 to 4 months, within FY27 (AUG26 p.14). Deck 22 Jun 2026 also says FY27. Timeline still moving."}
+    - {promised_in: "FY25 call, 19 Jun 2025 (JUN25 p.7)", promise: "FY27 margin to exceed FY24 'by far'", outcome: "PARTIAL", explanation: "Q1 FY27 standalone gross margin 29.2% (derived from Q1 BM p.4, Lakhs) and consolidated EBITDA 8.55%. One quarter only, on total income, partly hardware price and inventory (AUG26 p.10, p.12)."}
+    - {promised_in: "H1 FY26 press release, 17 Nov 2025 (PR p.2, not a call)", promise: "ONGC project cost booked in H1, revenue in next two quarters, margin reversal in H2", outcome: "PARTIAL", explanation: "H2 consolidated EBITDA margin 4.33% vs H1 2.20%, but FY26 3.46% vs 5.67% (FY26 PR). H1 PR also said margins 'resilient' while EBITDA margin fell from 4.30% to 2.20% YoY."}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "How large is the margin gain and how sustainable (quantify the band; quantify the hardware price benefit)", quarters_asked: ["FY25 call Jun 2025", "Q1 FY27 call Aug 2026"], classification: "deflected every time"}
+  - {question: "Revenue split by business (HexaData, SI, ZeaCloud, Fluidech) and HexaData versus non-HexaData", quarters_asked: ["FY25 call Jun 2025", "Q1 FY27 call Aug 2026"], classification: "answer changed between quarters"}
+  - {question: "Three to five year scale and growth outlook", quarters_asked: ["FY25 call Jun 2025", "Q1 FY27 call Aug 2026"], classification: "deflected every time"}
+  - {question: "ZeaCloud capital intensity and asset utilisation", quarters_asked: ["FY25 call Jun 2025", "Q1 FY27 call Aug 2026"], classification: "deflected every time"}
+  - {question: "Move to quarterly reporting", quarters_asked: ["FY25 call Jun 2025 (and at the AGM)", "Q1 FY27 call Aug 2026"], classification: "answered eventually"}
+credibility_grade: "C"
+credibility_basis: "Trailing delivery window Jun 2025 to Aug 2026: 4 of 4 quantified segment and cost forecasts missed (ZeaCloud revenue, Fluidech revenue and margin, employee cost, FY26 margin); 3 of 13 promises delivered (product launch, no acquisition, top-line growth), 5 partial; Q1 FY27 margin step-up is one quarter and part price and inventory driven; lower edge of C, D if Q2 FY27 gross margin reverts."
+peer_questions:
+  - {question: "Is hardware component price inflation (memory, storage, GPU servers) a margin tailwind through inventory held at lower cost, or a cost shock through fixed-price orders? Did peers book margin gain on stock in the latest quarter, and do they expect the price trend to run through FY28?", why: "MD credits hardware price volatility and rising inventory for Q1 FY27 margins and says analysts expect the trend into FY28; FY26 PR called the same rise a >100% cost shock", check_peers: ["NETWEB", "RPTECH", "ORIENTTECH"]}
+  - {question: "What gross margin does a server-OEM and SI business earn on AI/GPU server mix versus legacy SI (Esconet cites 7 to 8% legacy SI, 10 to 15% HexaData in Jun 2025)? What are peer gross and EBITDA margins ex other income?", why: "Tests whether 29.2% Q1 FY27 standalone gross margin is structural mix or outlier", check_peers: ["NETWEB", "RPTECH", "ORIENTTECH"]}
+  - {question: "What are peer debtor days, inventory days and operating cash flow to PAT? Do peers disclose order book and book-to-bill?", why: "Esconet says it has no order book (60 to 90 day cycle, 30 to 90 day collection), guesses 20 to 25 Cr, and gave no cash flow; 20.2 debtor days not found", check_peers: ["NETWEB", "ORIENTTECH", "RPTECH"]}
+  - {question: "What share of peer revenue is government/PSU, and how long do PSU receivables take? Is sovereign or Make in India server demand a growth driver peers also report?", why: "Esconet says government was 40 to 45% of FY26 revenue and is lower in FY27; sovereign stack is the stated theme", check_peers: ["NETWEB", "ORIENTTECH"]}
+  - {question: "Industry growth rate: no rate was cited on either call. What AI infrastructure, sovereign cloud and cybersecurity growth rates do peers cite, and do they confirm the demand claims?", why: "Calls cite AI, data sovereignty, cloud and cyber demand without numbers", check_peers: ["NETWEB", "ORIENTTECH", "RPTECH"]}
+  - {question: "Market share gain claim: Esconet implies share gain in AI servers and competes with Cisco, HP, Lenovo and Dell. Does any peer report share loss or gain in Indian server OEM?", why: "Esconet states it competes with global OEMs case by case; no share figure given", check_peers: ["NETWEB", "ORIENTTECH"]}
+  - {question: "Capex-cycle claim: is customer AI and data-centre capex accelerating or digesting? Does any peer report GPU allocation constraints or cancellations?", why: "NVIDIA Elite status is cited as privileged access to scarce supply; MD cites pipeline strength and force majeure risk", check_peers: ["NETWEB", "RPTECH"]}
+  - {question: "Have peers disclosed MeitY cloud empanelment timelines or sovereign cloud revenue ramp, and how asset-heavy is it?", why: "ZeaCloud empanelment is the stated growth engine and has slipped; ZeaCloud is asset-heavy with depreciation drag", check_peers: ["ORIENTTECH", "NETWEB"]}
+red_flags:
+  - {severity: "HIGH", flag: "Q1 FY27 margin partly from hardware price volatility and inventory build, unquantified by management; the same price rise was the FY26 cost shock (AUG26 p.10, p.12; Q1 BM p.4)"}
+  - {severity: "HIGH", flag: "IPO-linked income tax summons and the warrant lapse (552.69 Lakhs not received; preferential issue revised 3,269.22 to 2,716.53 Lakhs) not discussed by management; no analyst asked (Reg 30 28 Feb 2026 and 29 Apr 2026; Q1 BM p.12-13)"}
+  - {severity: "MEDIUM", flag: "Operating cash flow not quantified; MD says cash is reinvested in rising inventory; no Q1 balance sheet or cash flow filed; 20.2 debtor days NOT FOUND"}
+  - {severity: "MEDIUM", flag: "No-stake-sale statement on ZeaCloud conflicts with the 9 Feb 2026 Reg 30 dilution talks"}
+  - {severity: "MEDIUM", flag: "Independent director endorsed governance 'of the highest levels' while his LLP billed the group 12.00 Lakhs (B03, AR26 p.147)"}
+  - {severity: "MEDIUM", flag: "FY27 revenue 'not significantly bigger' conflicts with Q1 consolidated annualised run-rate; Singapore 53 Cr statement has no period"}
+  - {severity: "MEDIUM", flag: "HexaData split given in Jun 2025 (about 35% of revenue) refused in Aug 2026; single AS-17 segment; no segment margins"}
+  - {severity: "LOW", flag: "Promotional language in PR and deck (healthy ZeaCloud growth, planned Fluidech loss) ahead of facts; EPS XBRL error corrected 23 Jul 2026"}
+dropped_triggers:
+  - "Fluidech 15 to 20 Cr FY26 revenue and 30 to 40% growth for 3 to 4 years (JUN25 p.6, p.9): no Fluidech number on the Aug 2026 call"
+  - "ZeaCloud 50 to 60% growth and 30 to 40% growth for 3 to 4 years: replaced by flat FY27 guidance (AUG26 p.18)"
+  - "State government cyber contracts within 10 to 14 months and two of Big Four qualifying for NCIIPC by end 2025 (Gaurav Gupta, JUN25 p.10): not mentioned in Aug 2026"
+  - "South India expansion (Bangalore, Chennai, Hyderabad) (JUN25 p.3): not mentioned in Aug 2026"
+  - "Cato Networks managed services and Scality-based immutable storage as growth lines (JUN25 p.4): not mentioned in Aug 2026"
+  - "HexaData becoming larger than the rest of the business (JUN25 p.12): no split given in Aug 2026"
+timeline_slippages:
+  - "MeitY empanelment: 'a little far away' (Jun 2025), FY27 (deck Jun 2026), ISO certs by Sep 2026 then apply and wait 3 to 4 months (Aug 2026)"
+  - "Fluidech profit: expected to 'fire' by FY27 (Jun 2025); FY26 loss; breakeven now targeted in FY27 (deck Jun 2026)"
+  - "ZeaCloud own stack: observability module still pending Aug 2026 (AUG26 p.17)"
+  - "HexaData HPC stack: branding 'almost done' Jun 2025; commercial shipment still unconfirmed Aug 2026"
+analyst_note: "Two readings of the Q1 FY27 margin. Reading A: structural HexaData and AI mix. Reading B: a one-time gain on stock bought before hardware prices rose, plus 193.21 Lakhs of other income. Separating observation: Q2 FY27 standalone gross margin after stock is replaced at current cost, with HexaData revenue and margin by line. Q1 earnings sit entirely in the parent: standalone PAT 683.80 Lakhs exceeds FY26 full-year standalone PAT 646.83 Lakhs, while subsidiaries net lost about 34 Lakhs (consolidated 649.53 vs standalone 683.80 Lakhs). Derived rest-of-group EBITDA ex other income is about 0.7% on 5,525 Lakhs revenue (Singapore trading). The MD was more candid on the call (ZeaCloud flat, price volatility helped) than the PR and deck. Grade C is the lower edge; a Q2 reversal moves it to D. The tax summons and warrant lapse went unmentioned, a silence the grade does not price."

@@ -81,6 +81,10 @@ record as of the run that produced it.
   - ledger probabilities proposed without operator, C2P (A22-23).
   - B10 drops consumed blocks and downstream candidates (prompts/10).
   - chunk 06 l.39/l.89, chunk 08 l.38 diverge from source.
+- OPEN (2026-10-05, ESCONET): cost breaker basis. Billed tokens from
+  transcript logs put Phase 1 at about $71 API-equivalent vs the $11-12
+  Section 8 estimate; re-baseline and add a dollar column [session-cost.md];
+  see LESSONS_ARCHIVE.md 2026-10-05 ESCONET.
 - ORCHPHARMA 2026-09-06 (archive items 1, 4, 5, closing note):
   - OCR page tags and read-the-page rule into stage and Verifier A prompts.
   - Verifier A coverage addendum standing, not retry-only.

@@ -1,0 +1,90 @@
+stage: B08-promoter
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "BSE scrip code not found on screener page; announcements/ empty. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026; filings before Sep 2025 not collected."
+  - "shareholding/ empty (no automated source). REPAIRED by /step1: NSE SHP XBRL Mar-2026 and Jun-2026 plus text extracts."
+  - "screener export sheets EMPTY (P&L, Quarters, Balance Sheet, Cash Flow, Customization); Data_Sheet.csv populated; screener history FY2023-FY2026 plus Q1 FY27 only."
+  - "no results PDFs from screener. REPAIRED by /step1: H1 FY26, FY26 audited, Q1 FY27 board outcomes."
+  - "no rating PDF. REPAIRED by /step1: CRISIL rationale 2026-07-02 as text; 2024 and 2025 rationales not collected."
+  - "only 2 concalls. OVERRIDDEN by /step1: concalls_available true on 2 transcripts (Jun 2025, Aug 2026); 22 Jun 2026 investor meet has deck but no transcript; no H1 FY26 call."
+  - "annual-report: FY2023-24 AR not collected (two-most-recent rule); prospectus covers pre-IPO years."
+  - "research/ empty, no broker notes."
+  - "prospectus: final prospectus held; near-identical RHP moved to inputs/other/."
+  - "announcements: SAST disclosure 2026-05-19 scanned; .txt corrupt, OCR failed; read PDF page directly. (B08: PDF read; it is a Reg 31(4) annual no-encumbrance declaration dated 3 Apr 2026, not a Reg 29 sale disclosure.)"
+  - "shareholding and rating XBRL/HTML originals kept beside text extracts, committed by hand by /step1."
+  - "listed_date: exact NSE Emerge listing date NOT FOUND in corpus (AR Note 1 p.105 says 23 Feb 2024; prospectus dated 2024-02-20)."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer proceed with gaps. Empty at stage 0: research/."
+  - "pass1 gap: FY24 AR not read, so FY24 purchases and FY24 payable days NOT FOUND; FY24 receivable days taken from FY25 AR comparatives."
+  - "pass1 gap: consolidated ageing tables (Notes 2.13.1 and 2.6.1 cited on p.142 and p.140) NOT FOUND IN DOCUMENT."
+  - "pass2 gap: Fluidech acquisition-date balance sheet and purchase agreement NOT FOUND; goodwill working, consolidation method and swap/cash price valuation basis NOT FOUND."
+  - "pass2 gap: Zeacloud and Singapore stand-alone accounts not in corpus (Singapore audited by other auditors, FY26 AR p.127); Singapore total assets conflict: AOC-1 SGD 33,89,867 (about 2,465 Lakhs at 72.72) vs auditor 553.64 Lakhs."
+  - "pass2 gap: preferential issue allottee list, lender list for the 247.95 repayment object, OD facility rate/limit/covenants, FDR lien and maturities, advance tax paid in FY26: all NOT FOUND. (B08: the five warrant allottees are now found in the 2026-04-29 Reg 30 filing; the 7,34,000 equity-share allottees remain NOT FOUND.)"
+  - "pass2 note: FY25 AR and the Reg 30 filing of 28 Feb 2026 were read for cross-reference only; no figure from them enters the Pass 1 base."
+  - "stage3: Q1 FY27 other income split and the accounting of the 184.23 Lakhs warrant forfeiture NOT FOUND in the results filings read (note says only interest income, gain on sale of PPE and miscellaneous income)."
+  - "stage3: Fluidech s.156 income tax demand of 235.16 Lakhs (AY 2021-22, per prospectus) current status NOT FOUND; not in FY26 AR."
+  - "stage3: per-director Board and committee attendance NOT FOUND (extract lost the Present markers); other directorships NOT FOUND."
+  - "stage3: HexaData, services, cloud and cybersecurity revenue and margin NOT FOUND; FY26 customer concentration NOT FOUND; order book value NOT FOUND."
+  - "stage3: NSE PDF vs XBRL EPS discrepancy not verifiable from the AR; one EPS mismatch between filings found (standalone FY25 basic 5.26 vs 5.43). (B08: the discrepancy is confirmed in the 2026-07-27 filing for FY26 results; direction and size of the EPS error NOT FOUND.)"
+flags:
+  - type: FLAG-PROMOTER-CAUTION
+    verdict: CAUTION
+    note: "Not the mandatory FLAG-PROMOTER (verdict is below CONCERN). Carried so synthesis places it in the verdict line, as B03 FLAG-PROMOTER-PRELIM required a full verdict from B08."
+    top_findings:
+      - "Fluidech bought from Gaurav Gupta, who held 99% beneficial interest while an independent director and NRC chair (PROSP p.280; AR25 p.42); deal announced 10 Jan 2025, he resigned 24 Mar 2025, shares allotted 7 Apr, deal closed 16 Apr 2025; valuation basis NOT FOUND."
+      - "ITD s.131(1A) summons of 24 Feb 2026 on IPO, pre-IPO placements and use of proceeds, from the search of lead manager Corporate Capital Ventures; absent from AR26 while Board report says no variation in use of proceeds."
+      - "Promoter pay doubled (+104.7%) on standalone PBT -3.2%; FY27 proposal adds 5% of PBT each for two directors; all six AGM resolutions passed with zero votes against on 10.22% public turnout."
+      - "Promoter group holding 61.29% (Mar-25) to 60.19% (Mar-26 and Jun-26) to 59.15% on the 19 Sep 2026 AGM record date (derived, 1,36,000 shares gone since 30 Jun; seller NOT FOUND)."
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 5, red: 2}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Independent director and NRC chair Gaurav Gupta held 99% significant beneficial ownership of Fluidech (prospectus disclosed it); company announced acquisition from him 10 Jan 2025; he resigned 24 Mar 2025; 1,02,238 Esconet shares allotted to him 7 Apr 2025; closing 16 Apr 2025; he stays a director of the subsidiary and drew 60.00 Lakhs in FY25 per FY26 comparatives; valuation basis, audit committee and RPT approval NOT FOUND", evidence_tier: "VERIFIED (PROSP p.280; AR25 p.42, p.2111; AR26 AOC-1 p.69) plus MEDIA (MarketScreener 10 Jan 2025)", source: "PROSP p.280 (Lakhs); AR25; AR26 p.69; B02 rank 1", date: "2024-02-20 / 2025-01-10 / 2025-04-16"}
+  - {finding: "ITD Deputy Director (Investigation) Unit-3 Noida summons under s.131(1A) dated 24 Feb 2026, received 27 Feb, seeking IPO process, intermediaries, pre-IPO and private placements, share transactions and use of IPO proceeds; arises from s.132 search on lead manager Corporate Capital Ventures; company says no demand or adverse order and no material impact; not in AR26 contingent liabilities or Board report; outcome NOT FOUND", evidence_tier: "VERIFIED (Reg 30 filing)", source: "NSE Reg 30 filing 2026-02-28 p.1-2; AR26 p.52, p.65, p.117", date: "2026-02-28"}
+  - {finding: "Lead manager Corporate Capital Ventures was barred by SEBI from new assignments for one month on 18 Aug 2026 for track-record, NISM, inspection-reply and due-diligence-record lapses (Uma Exports named); no Esconet mention; separate Feb 2026 I-T search on merchant banker Kulbhushan Parashar (founder of CCV per CCV site) at about 20 locations covered irregularities in SME IPOs (allocation to relatives and dummy investors alleged); the420 article does not name CCV or Esconet, so the identity link rests on the company's filing", evidence_tier: "MEDIA REPORTED (Moneylife 2026-08-18 via fetch; The420 2026-02-21)", source: "moneylife.in article 81393; the420.in sme-ipo-irregularities-it-raids-merchant-banker", date: "2026-08-18 / 2026-02-21"}
+  - {finding: "All 2,13,600 warrants at Rs 345 allotted 24 Oct 2024 to five non-promoter allottees lapsed 25 Apr 2026 with no exercise; 1,84,23,000 rupees (184.23 Lakhs) forfeited; Board report s.10 states no variation in use of proceeds while Board revised the schedule after year end and 552.69 Lakhs was never received", evidence_tier: "VERIFIED (Reg 30 filing; AR26)", source: "NSE Reg 30 filing 2026-04-29 p.1-3; AR26 p.52-53 (Lakhs)", date: "2026-04-29"}
+  - {finding: "Promoter pay: directors' pay 180.51 vs 88.20 Lakhs (+104.7%) while standalone PBT fell 3.2%; 54.00 Lakhs rent to MD on promoter-owned registered office; FY27 proposal: salary 60.00 Lakhs each for Santosh and Sunil plus 5% of PBT each, 12.00 Lakhs for Vineet, from 1 Apr 2026; Board report s.197 table shows Vineet +233%; all six AGM resolutions 100% in favour, public turnout 10.22%", evidence_tier: "VERIFIED (AR26; AGM notice; AGM voting results)", source: "AR26 p.70, p.68, Note 14 p.116 (Lakhs); AGM notice 2026-08-24 items 4-6; AGM outcome 2026-09-30 Annexure II", date: "2026-08-12 / 2026-09-30"}
+  - {finding: "Promoter group net seller: 80,26,196 shares (61.29%) at Mar-25 to 79,42,196 (60.19%) at Mar-26 (Santosh -62,000, Pooja Gupta -30,000, Sunil +8,000); 79,42,196 again at 30 Jun 2026; AGM voting table shows 78,06,196 promoter shares on 19 Sep 2026 record date, 1,36,000 fewer (derived; seller, price and Reg 29 or PIT filing NOT FOUND; Sep-2026 SHP not yet filed)", evidence_tier: "VERIFIED for Mar-26 and Jun-26 (AR26 p.109; NSE SHP); derived for Sep-26 from AGM outcome", source: "AR26 p.109 (Reg shares); SHP_1693906 (2026-06-30); AGM outcome 2026-09-30 Annexure II", date: "2026-09-19"}
+  - {finding: "Disclosure integrity: NSE flagged PDF vs XBRL differences in FY26 results (mail 25 Jun 2026, direction 21 Jul 2026); company refiled corrected EPS XBRL on 23 Jul 2026, 56 days after the 28 May results; AR26 omits the summons and Fluidech s.156 demand of 235.16 Lakhs from contingent liabilities; Board report s.10 and s.48 conflict with revised schedule; auditor FRN differs between Board report and audit report", evidence_tier: "VERIFIED (NSE filing 2026-07-27; B03)", source: "NSE filing 2026-07-27 p.1; AR26 p.52-53, p.65, p.117 (Lakhs); B03", date: "2026-07-23"}
+  - {finding: "Independent director Manoj Chugh's LLP billed 12.00 Lakhs consultancy against Board report s.39 independence statement; Chugh also chairs the NRC that recommended the promoter pay rise", evidence_tier: "VERIFIED (AR26)", source: "AR26 p.147, p.63-64 (Lakhs); AR26 p.48 committee table", date: "2026-08-12"}
+  - {finding: "Zeacloud: 500.00 Lakhs interest-free loan flagged by auditor as s.186 non-compliance (CARO iii/iv); parent sales of 568.79 Lakhs to Zeacloud equal 106.4% of its turnover; promoter Vineet Agrawal is named promoter of ZeaCloud in the prospectus", evidence_tier: "VERIFIED (AR26; B02)", source: "AR26 CARO p.97; AOC-2 p.68; PROSP p.180 (Lakhs)", date: "2026-08-12"}
+transition_evidence:
+  - {item: "External CFO Keshav Pareek (appointed 26 Jul 2024) replaced Himanshu Purohit (resigned 10 Jun 2024)", anchor: "AR25 CXO table p.37 region; AR26 p.51", weight: "low; CFO change predates the cash-flow and pay findings"}
+  - {item: "External CRO Amit Gupta appointed 29 Jul 2026 (Lenovo, Juniper, EMC, HP background); not related to any director", anchor: "NSE Reg 30 filing 2026-07-29 p.1-2", weight: "low; CRO and senior management role, not CEO or CFO; no outcome yet"}
+  - {item: "Independent director Manoj Chugh (ICT industry veteran) joined 10 Jan 2025 and replaced Gaurav Gupta as NRC chair", anchor: "AR25 p.42; AR26 p.45-46", weight: "low; his LLP billed 12.00 Lakhs in FY26"}
+  - {item: "No pledge and no encumbrance at Mar-2026 and Jun-2026; Reg 31(4) declaration of 3 Apr 2026 states none", anchor: "SHP_1693906 and SHP_1650865; SAST declaration 2026-05-19 file p.1", weight: "static clean state, not a trend"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: no pledge, NDU or other encumbrance at Mar-2026 and Jun-2026 (NSE SHP XBRL); Reg 31(4) declaration dated 3 Apr 2026 states no encumbrance in FY26. Pre-FY26 pledge history NOT FOUND (FY25 SHP not read)."
+searches_performed:
+  - "web: Esconet Technologies promoter Santosh Kumar Agrawal"
+  - "web: Corporate Capital Ventures Pvt Ltd income tax search IPO SME merchant banker 2026"
+  - "web: Esconet Technologies SEBI order OR show cause OR investigation"
+  - "web: Esconet Technologies Fluidech acquisition Gaurav Gupta"
+  - "web: Esconet Technologies Gaurav Gupta independent director resignation March 2025"
+  - "web: Esconet Technologies income tax summons IPO lead manager news"
+  - "web: income tax search merchant banker SME IPO 2026 Kulbhushan Parashar; fetch the420.in article"
+  - "web: Wichita Enterprises / Top Filings India warrant allottee"
+  - "web: Esconet Technologies AmbitionBox / Glassdoor reviews"
+  - "web: Esconet share price falls, promoter sells, warrants lapse, governance 2026; fetch univest 2026-08-17 note"
+  - "web: Abro Intrade LLP"
+  - "web: Samir Satish Goenka / Gotham Chand allottees"
+  - "web: Gaurav Gupta Fluidech founder Esconet board; Tofler Fluidech fetch"
+  - "web: SEBI Corporate Capital Ventures merchant banker order 2026; Moneylife fetch"
+  - "web: NSE PDF vs XBRL EPS discrepancy"
+  - "web: promoter share sales Jul-Sep 2026; SHP Sep 2026"
+  - "corpus: AR26, AR25, prospectus, SHP Jun-26, AGM notice and outcome, ITD, warrant, CRO, XBRL clarification filings, SAST PDF"
+searches_skipped:
+  - "MCA master data and director DIN lists for the three promoters (zaubacorp returned 403)"
+  - "Fluidech zaubacorp page (403); Fluidech charges and AOC-4 for FY25 and FY26 not obtained"
+  - "NSE 10 Jan 2025 acquisition filing (WebFetch timeout) and EGM notice 3 Feb 2025 (host unreachable): Fluidech price basis, valuer and RPT approval NOT FOUND"
+  - "eCourts, NCLT, SAT and SEBI order-search portals for promoter names (not reachable by web search tool; web search showed no hits)"
+  - "SCORES complaints; IiAS, SES, InGovern proxy advisory notes (no result found by search)"
+  - "AmbitionBox page (search returned Glassdoor only); Glassdoor rating score and review dates not retrieved"
+  - "Reg 29 or PIT promoter sale disclosures Jul-Sep 2026 (none found by search; NSE site not reachable)"
+  - "Marketscreener Fluidech page (domain blocked), Business Standard CCV order text (403)"
+  - "Abro Intrade LLP current objects, filings and RPT with the company (only a directory snippet)"
+  - "CCV link to specific pre-IPO allottees; PROSP allottee lists not searched beyond the capital structure chapter"
+verdict_basis: "No SEBI, court or criminal record against the promoters and no pledge; but an independent director owned 99% of an acquired company, pay doubled on flat profit, the AR omits the IPO-linked tax summons, and the promoter group sold shares."
+analyst_note: "CAUTION, not CONCERN, because nothing here proves wrongdoing and no deal-breaker fires. Two readings: (A) a founder family with sloppy SME-grade disclosure and self-serving pay; (B) an IPO conduct problem that the ITD summons is testing. The observation that separates them is what the summons produces (any demand, SEBI referral, or a named pre-IPO allottee tie to promoters), plus the Fluidech valuation basis and audit committee approval. Warrant allottees walked away at Rs 345 while the stock trades near Rs 192 to 231, so lapse is explainable on price alone [INFERENCE]. Upgrade to CONCERN on any ITD demand, a second unexplained promoter sale, or an RPT approval gap on Fluidech. The 1,36,000 share fall after 30 Jun is derived from AGM voting data only. Size position as the margin of safety, not the input."

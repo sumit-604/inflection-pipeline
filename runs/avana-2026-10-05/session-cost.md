@@ -26,3 +26,4 @@ expose them (never estimated).
 | 12b | Verifier B red flags | opus 5.5 | xhigh | n/a | n/a | n/a | n/a | 441,546 | 978s | 1 |
 | 12c | Verifier C framework (phase 1 scope) | opus 5.5 | xhigh | n/a | n/a | n/a | n/a | 162,120 | 658s | 1 |
 | 12d | Verifier D peer coverage | sonnet 5.5 | medium | n/a | n/a | n/a | n/a | 71,906 | 77s | 1 |
+| 13 | Synthesis-lite (phase 1 lite, 3 final files) | opus 5.5 | high | n/a | n/a | n/a | n/a | 170,276 | 533s | 1 |

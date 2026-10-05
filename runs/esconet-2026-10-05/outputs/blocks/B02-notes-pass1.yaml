@@ -1,0 +1,57 @@
+stage: B02-notes-pass1
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+call: 1
+unit_note: "Face of every FY26 AR statement and note is INR Lakhs, not INR Crores (standalone BS p.102, consolidated BS p.132, notes p.108). All figures are INR Lakhs. B00 reporting_units says annual_report INR Crores: wrong for this document. Stage 10 converts once."
+input_gaps:
+  - "BSE scrip code not found on screener page; announcements/ empty. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026; filings before Sep 2025 not collected."
+  - "shareholding/ empty (no automated source). REPAIRED by /step1: NSE SHP XBRL Mar-2026 and Jun-2026 plus text extracts."
+  - "screener export sheets EMPTY (P&L, Quarters, Balance Sheet, Cash Flow, Customization); Data_Sheet.csv populated; screener history FY2023-FY2026 plus Q1 FY27 only."
+  - "no results PDFs from screener. REPAIRED by /step1: H1 FY26, FY26 audited, Q1 FY27 board outcomes."
+  - "no rating PDF. REPAIRED by /step1: CRISIL rationale 2026-07-02 as text; 2024 and 2025 rationales not collected."
+  - "only 2 concalls. OVERRIDDEN by /step1: concalls_available true on 2 transcripts (Jun 2025, Aug 2026); 22 Jun 2026 investor meet has deck but no transcript; no H1 FY26 call."
+  - "annual-report: FY2023-24 AR not collected (two-most-recent rule); prospectus covers pre-IPO years."
+  - "research/ empty, no broker notes."
+  - "prospectus: final prospectus held; near-identical RHP moved to inputs/other/."
+  - "announcements: SAST disclosure 2026-05-19 scanned; .txt corrupt, OCR failed; read PDF page directly."
+  - "shareholding and rating XBRL/HTML originals kept beside text extracts, committed by hand by /step1."
+  - "listed_date: exact NSE Emerge listing date NOT FOUND in corpus (AR Note 1 p.105 says 23 Feb 2024; prospectus dated 2024-02-20)."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer proceed with gaps. Empty at stage 0: research/."
+  - "pass1 gap: FY24 AR not read, so FY24 purchases and FY24 payable days NOT FOUND; FY24 receivable days taken from FY25 AR comparatives."
+  - "pass1 gap: consolidated ageing tables (Notes 2.13.1 and 2.6.1 cited on p.142 and p.140) NOT FOUND IN DOCUMENT."
+flags:
+  - {type: FLAG-CASH, reason: "Standalone CFO +1568.45 Lakhs includes 1745.95 FDR liquidation via other current assets (ex-FDR about -177.50); consolidated CFO -882.50 (CFS p.134); receivables over 6 months 893.06 = 19.85% vs 12.63%; 1-2 year bucket 472.79 vs 4.32; debt 1324.33 vs 53.01; interest on delayed payments 30.63 vs 1.15"}
+  - {type: FLAG-INVENTORY, reason: "Consolidated inventory 5149.87 vs standalone 2720.93; consolidated P&L change in inventories -826.72 is standalone only vs BS movement 3255.66; 2428.94 gap unexplained and large against subsidiary total assets (about 2712.92 per AOC-1 and auditor p.127)"}
+  - {type: FLAG-GOVERNANCE, reason: "s.186 non-compliance on interest-free 500.00 Zeacloud loan (CARO p.97); 842.82 paid to director-linked seller for Fluidech shares; directors pay 180.51 vs 88.20 with PBT down 3.2%; income tax s.131(1A) summons not disclosed anywhere in AR; contingent liabilities stated nil"}
+accounting_quality: 0        # pass 1 does not score; Pass 3 fills
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Consolidated inventory 5149.87 vs 1894.21 (+171.9%); consolidated P&L inventory change (826.72) is standalone only; BS movement 3255.66; 2428.94 gap unexplained; subsidiary total assets (about 2712.92) cannot comfortably hold it", note_ref: "Note 2.12 p.139; Note 2.20 p.143; BS p.132; CFS p.134; p.127; AOC-1 p.69", rating: red, why: "Margin and inventory-valuation priority; measurement basis of group cost of sales unclear"}
+  - {rank: 2, finding: "Standalone CFO +1568.45 includes FDR liquidation 1745.95 booked in other current assets; ex-FDR about -177.50; consolidated CFO -882.50; FDR is cash in consolidated, not in standalone", note_ref: "CFS p.104, p.134; Note 2.16 p.114; Note 2.14 p.140", rating: red, why: "Cash conversion priority; headline standalone CFO overstates operating cash"}
+  - {rank: 3, finding: "Receivables over 6 months 893.06 (19.85%) vs 674.72 (12.63%); 1-2 yr bucket 472.79 vs 4.32; no provision; summary note says over-6-month nil; consolidated says 116.99", note_ref: "Note 2.13.1 p.112; Note 2.14 p.113; consolidated Note 2.13 p.142", rating: red, why: "Year-end receivable days (55.1) are not supported by the ageing; three conflicting figures"}
+  - {rank: 4, finding: "Fluidech 70% acquisition: 1532.68 cost, goodwill 851.11 with no note or impairment test, 842.82 paid to related director, 269.95 of cost unexplained, minority -26.54 inside reserves", note_ref: "Note 2.11 p.112; Note 14 p.116; BS p.132; Note 2.2 p.137", rating: red, why: "Acquisition accounting and related-party seller; goodwill 10.6% of consolidated net worth"}
+  - {rank: 5, finding: "Warrants lapsed 25 Apr 2026, 184.23 forfeited with no stated accounting; Board cut preferential-issue objects post year end (Zeacloud 1250 to 1200, working capital 1000 to 800, loan repayment 400 to 247.95, GCP 619.22 to 468.58); 500.00 unspent; no variation approval disclosed", note_ref: "Note 19 p.121-122; Note 20 p.150-151; BS p.102", rating: red, why: "IPO and governance priority; forfeiture could flow to FY27 other income"}
+  - {rank: 6, finding: "Interest on delayed payments to parties 30.63 vs 1.15 and on statutory dues 17.65 vs 0.44 = 48.28 or 42.0% of finance cost; additional government dues 16.45 vs 0.22", note_ref: "Note 2.23 p.115; Note 2.24 p.115", rating: red, why: "Direct evidence of late payment to suppliers and tax authority in FY26"}
+  - {rank: 7, finding: "Debt 1324.33 vs 53.01; OD/bill discounting 1187.42 secured on stock, debtors, directors' property and personal guarantee; DSCR 0.47x vs 1.94x; 1988.62 sits in the cash credit account at the same time", note_ref: "Notes 2.3, 2.5, 2.15 p.109-113; Note 20 p.122; Note 21(iii) p.123", rating: red, why: "Leverage rose 25x; gross-up of cash and debt"}
+  - {rank: 8, finding: "Directors pay 180.51 vs 88.20 (+104.7%) while PBT -3.2%; 20.4% of PBT; incentive 50.91 payable; consolidated auditor leans on private-company-era approval", note_ref: "Note 2.24 p.115; Note 8 p.115; Note 2.7 p.111; auditor p.125", rating: yellow, why: "Governance optics; pay step-up against falling profit"}
+  - {rank: 9, finding: "Interest-free 500.00 loan to Zeacloud with auditor-reported s.186 non-compliance; parent sells 568.79 to Zeacloud whose own turnover is 534.43; Singapore subsidiary (revenue 4905.58) shows no RPT", note_ref: "CARO iii-iv p.97; Note 14 p.116; AOC-1 p.69; p.127", rating: red, why: "Subsidiary flows and round-trip test; related-party completeness"}
+  - {rank: 10, finding: "Unlabelled Other Income 221.96 = 76.7% of other income, 25.1% of standalone PBT; no income tax matter disclosed; contingent liabilities stated nil", note_ref: "Note 2.19 p.114; Note 2.25 item 1 p.115", rating: red, why: "Margin quality unknown; tax summons from memory absent from AR"}
+red_flags:
+  - "Inventory gap 2428.94 unreconciled between consolidated BS and P&L (Note 2.12, 2.20)"
+  - "Standalone CFO inflated by FDR liquidation 1745.95 (CFS p.104; Note 2.16)"
+  - "Receivable ageing vs summary note conflict: over 6 months 0 vs 893.06 vs 116.99 (Notes 2.13.1, 2.14, consolidated 2.13)"
+  - "Warrant forfeiture 184.23 accounting not disclosed; Board cut preferential-issue objects post year end (Note 19 p.121-122)"
+  - "Interest on delayed payments 30.63 vs 1.15 and on statutory dues 17.65 vs 0.44 (Note 2.23 p.115)"
+  - "s.186 non-compliance, interest-free 500.00 loan to Zeacloud (CARO iii-iv p.97)"
+  - "Goodwill 851.11 has no note, policy or impairment test"
+  - "Unlabelled Other Income 221.96 = 76.7% of other income, 25.1% of standalone PBT (Note 2.19 p.114)"
+  - "Directors pay 180.51 vs 88.20 while PBT -3.2% (Note 2.24, Note 8 p.115)"
+questions_for_mgmt: []       # Pass 3 fills
+receivables_trend: "mixed: year-end days improving (standalone 102.3 FY24, 86.7 FY25, 55.1 FY26; consolidated 45.6) but ageing worsening (over 6 months 893.06 or 19.85% vs 674.72 or 12.63%; 1-2 years 472.79 vs 4.32; no provision); summary note says over 6 months nil. INR Lakhs, Note 2.13.1 p.112"
+restatements_found:
+  - "No company-flagged restatement. Comparatives differ between standalone and consolidated: Santosh and Sunil remuneration FY25 43.20 each (Note 14 p.116) vs 36.00 each (Note 15 p.146); consolidated FY25 EPS basic 6.11 computed on year-end shares vs diluted 6.31 on weighted shares (Note 2.24 p.145)."
+going_concern_language: "NONE (only policy line 'prepared on Going Concern basis' Note 1.1 p.105 and CARO xix 'no material uncertainty' p.98-99)"
+analyst_note: "Pass 1 only: accounting_quality, pass flags and questions_for_mgmt are filled by Pass 3. Unit is INR Lakhs, not Crores. Framework is IGAAP, so no ECL, Ind AS 116 or fair value notes exist. Derived figures (days, ratios, EBITDA ex other income 2.77% standalone, 2.49% consolidated) are my arithmetic on anchored inputs and labelled derived in the report. Report has two untidy lines (effective tax wording in Section 10; share count wording in 12C); correct values: current tax 28.8% of standalone PBT, net 26.8%; shares 131.96 Lakh. Stray empty file 02-notes-pass1-errata.tmp in reports/ can be deleted."

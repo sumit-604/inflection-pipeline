@@ -10,3 +10,4 @@ timestamp. Stage 0 and step1 steps A-G ran inline on the orchestrator session
 | # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |
 |---|-------|-------|--------|--------|------------|-------------|---------|-----------|------|------|
 | 1 | gate0 | claude-sonnet-5-5 | medium | 1,970,182 | 1,847,698 | 122,434 | 21,164 | 1,991,346 | 5m03s | 1 |
+| 2 | notes pass 1 | claude-sonnet-5-5 | default (high) | 2,181,503 | 2,002,672 | 178,793 | 21,459 | 2,202,962 | 6m36s | 1 |

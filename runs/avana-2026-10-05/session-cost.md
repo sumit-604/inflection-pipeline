@@ -19,3 +19,6 @@ expose them (never estimated).
 | 4 | Business model decoder | sonnet 5.5 | medium | n/a | n/a | n/a | n/a | 151,378 | 313s | 1 |
 | 5 | Communication and guidance (NO-CONCALL MODE, bounded) | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 118,050 | 145s | 1 |
 | 8 | Promoter and governance check (web; partial) | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 176,078 | 493s | 1 |
+| 6 | Peer verification (2 DANISH transcripts, 2 presentations) | sonnet 5.5 | medium | n/a | n/a | n/a | n/a | 142,219 | 179s | 1 |
+| 7 | Emerging moat 22-category scan | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 110,242 | 231s | 1 |
+| 9 | TAM SAM SOM (web; partial) | sonnet 5.5 | high | n/a | n/a | n/a | n/a | 116,397 | 272s | 1 |

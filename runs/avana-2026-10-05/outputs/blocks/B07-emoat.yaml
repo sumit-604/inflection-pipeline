@@ -1,0 +1,49 @@
+stage: B07-emoat
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "NO-CONCALL MODE: no transcripts; F2 run on capex-completion evidence (AR/RHP/Reg 30 timeline) in place of the promise-delivery record per orchestrator, B05 record carried as context (delivered 2, partial 1, missed 4, credibility C)"
+  - "Investor presentation NOT PROVIDED; RHP Our Business section used; RHP stops at H1 FY26 mix and 30-Nov-2025 order book"
+  - "NOT FOUND: patents, global or Indian manufacturer count, qualification timelines, FY26 product-wise revenue and margin, FY26 top-5 customers, order book after 30-Nov-2025, ESOP to technical staff, customer advances trend, peer vendor-approval holdings"
+  - "NOT FOUND: KIADB extension letters and the true extended date (RHP p36-37 26-Oct-2026 vs RHP p179 23-May-2025 plus 3 years; BO19Aug undated)"
+  - "NOT FOUND: reconciliation of CWIP 466.79 plus commitments 1,094.99 (1,561.78) to project cost 1,305.38 lakh"
+  - "B00 carried: no credit rating document; only FY2025-26 AR; AR p99-127 are image transcriptions; peer set has no listed relay pure play"
+flags:
+  - {type: FLAG-CAPEX, reason: "KIADB unit not reported commissioned at 2026-10-05; RHP mid-May 2026 slipped to end-Oct 2026 after the 26-Oct-2026 deadline reading; IPO capex used 275.83 of 1,155.38 lakh (AR p107; BO19Aug p2; RHP p36-37, p106)"}
+  - {type: FLAG-2C-MECHANICAL, reason: "capex_embedded_growth_pct 206 is mechanical (1,094.99 lakh x 15.76x turnover over FY26 revenue 8,385.88 lakh) and overstates; physical capacity ceiling is about +114% (panels 1,500 vs 886 FY26 output, relays 1,75,000 vs 62,034, H1 FY26 mix). Stage 11 should use the ceiling and the 26.1 basis hierarchy"}
+  - {type: FLAG-CONCENTRATION, reason: "C2 scored 0: top 5 customers 38.79% H1 FY26 vs 22.42% FY25, FY26 NOT FOUND (RHP p38-39 via B04)"}
+em_score: 6.7
+em_classification: "NONE"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in (MPPTCL 400 kV and CSPTCL SCADA vendor approvals, no order value)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "12-24 months"}
+  - {id: "G1", name: "War chest (net cash 2,706.64 lakh from IPO, FY26 capex covered by CFO 795.44)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "present"}
+evidence_mix: {documented: 16, claim: 8, inference: 3}
+completionist_recount: "📄 recount performed: 13 documented items across 5 scan categories (B2 3, G1 2, G2 2, F1 2, E2 1) plus 3 documented items in Sections 1-2; 8 claims, 3 inferences; 2 of 22 categories Moderate or Strong, under the 12 guard"
+catalysts_12m:
+  - {catalyst: "LBF1 KIADB integrated unit commercial production. Confirm: Reg 30 filing of commercial production or KIADB extension letter naming the date. Kill: no filing by 26-Oct-2026 with no extension letter, or lease cancellation", window: "by 26-Oct-2026 (RHP) / end-Oct 2026 (BO19Aug)", evidence_type: "claim (date); documented (CWIP 466.79, commitments 1,094.99)", anchor: "BO19Aug p2; RHP p36-37, p179; AR p99, p119"}
+  - {catalyst: "Utility vendor registrations (MPPTCL 400 kV, CSPTCL SCADA) convert to a valued purchase order. Kill: no order after two reporting periods", window: "12-24 months", evidence_type: "documented (registration only)", anchor: "Reg 30 10-Feb-2026 p1"}
+  - {catalyst: "H1 FY27 results: product-wise revenue and gross margin disclosed. Confirm: gross margin at or above 40.6% and a product split. Kill: gross margin below 36.6% or no split", window: "H1 FY27 results (filing date NOT FOUND)", evidence_type: "documented (FY26 baseline)", anchor: "AR p100; B04 must_track_metrics"}
+  - {catalyst: "IPO capex deployment accelerates. Confirm: cumulative capex used above 275.83 toward 1,155.38 lakh. Kill: flat", window: "H1 FY27 utilisation certificate", evidence_type: "documented", anchor: "AR p107"}
+  - {catalyst: "Top-5 customer share disclosed and below 38.79%", window: "H1 FY27 or AR FY27", evidence_type: "claim (none made)", anchor: "RHP p38-39 via B04"}
+capex_embedded_growth_pct: 206
+optionality_register:
+  - {optionality: "Utility vendor registrations turn into valued orders", converting_evidence: "Purchase order or contractor award with a value", first_appears: "Reg 30 order announcement; AR FY27 MD&A", window: "12-24 months"}
+  - {optionality: "New KIADB unit lifts capacity to 1,75,000 relays and 1,500 panels (+150%)", converting_evidence: "Commercial-production Reg 30 filing; KIADB extension letter; utilisation certificate with capex used above 275.83", first_appears: "NSE filing by 26-Oct-2026; H1 FY27 auditor certificate", window: "0-6 months start, 12-36 months fill"}
+  - {optionality: "Customer concentration falls after capacity (C2)", converting_evidence: "Top-5 share disclosed below 38.79%", first_appears: "H1 FY27 results note or AR FY27", window: "12 months"}
+  - {optionality: "Higher-voltage SCADA and panel line adds content per panel", converting_evidence: "Product-wise revenue and margin; a 400 kV panel order", first_appears: "H1 FY27 results; Reg 30", window: "12-24 months"}
+  - {optionality: "Patent or IP position in relay firmware (A2)", converting_evidence: "Patent grant or filing with named inventors and revenue linkage", first_appears: "AR note; ipindia.gov.in", window: "24-36 months, low likelihood"}
+  - {optionality: "Advanced relay systems for industrial users (A4)", converting_evidence: "Product launch with named customer and price; SKU count rising", first_appears: "Reg 30; AR FY27 R&D section", window: "24+ months"}
+  - {optionality: "Exports scale beyond one Kuwait order (E2)", converting_evidence: "Export revenue above 46.28 lakh (0.55% of sales); overseas dealer agreement", first_appears: "AR FY27 revenue note; Reg 30", window: "24-36 months"}
+  - {optionality: "Relay-in-panel cross-sell builds an ecosystem (C1)", converting_evidence: "Product-wise revenue showing relay share inside panel orders", first_appears: "H1 FY27 or AR FY27", window: "12-24 months"}
+  - {optionality: "Regional offices and dealer network (dropped trigger)", converting_evidence: "Office or dealer announcements; regional revenue split", first_appears: "Reg 30; AR FY27", window: "NOT FOUND, may be abandoned"}
+  - {optionality: "Talent asymmetry (I1)", converting_evidence: "Named inventors on filings plus a competitor pay-economics comparison", first_appears: "Espacenet; AR remuneration annexure", window: "no realistic window, low likelihood"}
+combined_assessment: "GOOD+"
+combined_reasoning: "Gate 0 GOOD+ (core 69, 7 of 12 moats) with forward NONE (6.7): no transition-moat uplift; upside is capacity and mix growth gated on the KIADB unit, not a forming moat"
+top_moat_risks:
+  - "KIADB unit and lease: 26-Oct-2026 deadline vs end-Oct 2026 guidance, no cause stated for the 5.5 month slip, IPO capex used 23.9% (RHP p36-37; BO19Aug p2; AR p107)"
+  - "Vendor registrations (B2) stay listings with no valued order after two reporting periods (Reg 30 10-Feb-2026)"
+  - "War chest (G1) is IPO cash, not earned; CFO/EBITDA 48.7% and inventory days 164.4 (B03)"
+  - "Customer concentration rising: top 5 38.79% H1 FY26 vs 22.42% FY25 (B04)"
+analyst_note: "Scan is sparse by design: 2 of 22 categories Moderate (B2, G1), adjusted 6.7, band NONE; I1/I2 contribute 0. The 206% capex_embedded_growth_pct is the mechanical 2C arithmetic and overstates; the capacity ceiling is about +114% at FY26 realisations and H1 FY26 mix (FY26 mix NOT FOUND), which stage 11 should prefer. Readings on KIADB: A, the 26-Oct-2026 date stands and cancellation is live; B, a later extension exists (RHP p179). Separating observation: KIADB extension letter or Reg 30 filing naming the date. F2 was run on capex-completion evidence in no-concall mode and earned no credit. Put the conservatism in position size, not in the capacity input."

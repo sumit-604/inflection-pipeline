@@ -1,0 +1,98 @@
+stage: B09-tam
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: partial                # Ken Research page fetch blocked; no sourced share of C&R panels in substation capex; no unorganised or global-benchmark data
+input_gaps:
+  - "B07 capex_embedded_growth_pct not available (parallel run); used RHP capex plan Rs 11.55 Cr (1,155.38 lakh), capacity 600 to 1,500 panels and 70,000 to 175,000 relays (RHP p105), AR CWIP 4.67 Cr"
+  - "FY26 product-wise revenue, customer-type mix and order book after 30-Nov-2025 NOT FOUND (B04); per-unit revenue uses FY25 and H1 FY26 produced units"
+  - "No investor presentation, no concalls (B00 NO-CONCALL MODE); no company TAM figure exists, management cites third-party industry numbers only"
+  - "Share of utility/substation C&R panels inside the Ken control-panel market NOT FOUND; SAM uses a labelled proxy (T&D = ~40% of electrical equipment, AR p70)"
+flags:
+  - {type: FLAG-SAM-PROXY, reason: "SAM 2,422 Cr rests on the 40% T&D share of the electrical-equipment market (AR p70) applied to two vendor-published market sizes; not a measured share of panels or relays"}
+  - {type: FLAG-DIVERGENCE, reason: "India relay market estimates range USD 165.75M (FY24) to USD 3.2B (2025) across vendors; USD 2.4B and 3.2B rejected as implausible (10-14% of T&D equipment spend); USD 196M carried, LOW confidence"}
+  - {type: FLAG-CAPACITY, reason: "Yr5 SOM 227 Cr exceeds stated post-KIADB capacity at fixed unit prices (170-177 Cr) by 50-57 Cr; stated capacity unreliable (panels 886 produced vs 600 stated)"}
+  - {type: FLAG-CYCLE, reason: "Vendor CAGRs (5.9-8.4%) sit far below observed grid unit growth: FY26 transformation additions 113,013 MVA, FY27 CEA target 158,339 MVA (+40%); market growth rate likely understated for this niche"}
+market_definition: "India utility and generation-side substation control and relay panels, protection relays and embedded SCADA/automation (11-400 kV), sold to EPC contractors, developers and utilities; excludes MCC/LV industrial panels, SCADA for non-power uses, GIS/switchgear, exports"
+tam_cr: {conservative: 6055, realistic: 7592}
+sam_cr: 2422
+sam_pct_of_tam: 40
+som_3yr_cr: 165
+som_5yr_cr: 227
+som_implied_revenue_cagr: {yr3: 25.4, yr5: 22.0}   # FORMAL handoff to stage 11; base FY26 83.86 Cr; SAM grows 7.7%, share 3.46% to 5.46% (yr3) and 6.46% (yr5)
+current_sam_share_pct: 3.46
+revenue_headroom_x: 28.9
+tam_growth_pct: 7.7
+runway_class: STRONG
+mgmt_claim_cr: 4315            # AR p70: Indian electric control panel market USD 486M 2025 x 88.79; narrower than conservative TAM (excludes relays). Broad claim: USD 59B electrical equipment = 523,861 Cr
+mgmt_claim_ratio: 0.71
+mgmt_claim_read: conservative
+capacity_check: "yr3 sufficient (SOM 165 vs 170-177 Cr capacity at FY25 / H1 FY26 unit prices, 93-97% fill); yr5 gap of Rs 50-57 Cr; at fixed prices the capex plan is the tighter side, but stated capacity is unreliable (panels ran 148% of stated), so neither side is proven optimistic"
+methods_used:
+  - "M1 top-down vendor market sums (relays MnM + control panels Ken) with T&D proxy for SAM"
+  - "M1b top-down cross-check: India digital substation market (MnM)"
+  - "M3 peer revenue aggregation (floor only; unorganised NOT FOUND)"
+  - "Demand-pull cross-check: CEA transformation additions and transmission capex (NEP-T, PGCIL)"
+  - "M2 bottom-up, M4 import substitution, M5 global benchmark: NOT FOUND, not run"
+stale_data_flags:
+  - {datapoint: "IEEMA HV switchgear industry size Rs 7,860 Cr and 9.87% 5-yr CAGR", source: "RHP p147 (IEEMA Journal Dec-2024)", year: "FY2023-24"}
+  - {datapoint: "NEP-T transmission investment Rs 9.15 lakh Cr to 2032", source: "RHP p137 / PIB Oct-2024", year: 2024}
+  - {datapoint: "MnM India protective relay USD 196M", source: "marketsandmarkets.com search snippet", year: 2024}
+  - {datapoint: "FX 88.79 INR/USD used for all conversions", source: "RHP p~14 exchange-rate table (Sep-2025 column)", year: 2025}
+searches_performed:
+  - "India protection relay market size control and relay panel market INR crore CAGR"
+  - "India electric control panel market USD 486M 2025 USD 790M 2031 8.4% CAGR"
+  - "National Electricity Plan transmission 2022-32 Rs 9.15 lakh crore"
+  - "FETCH loktej.com FY26 grid transformation additions (ok, dated 24-Sep-2026)"
+  - "FETCH tribuneindia.com grid modernisation Rs 4.91 lakh Cr 2027-32 (ok, InVed, 1-Jul-2025)"
+  - "Aartech Solonics FY2025 revenue"
+  - "substation capex breakdown share of control and protection systems (no usable result)"
+  - "India protection relay numerical relay market INR crore imports IEEMA (no INR figures)"
+  - "India substation automation SCADA market size"
+  - "India renewable capacity addition FY26"
+  - "Power Grid FY27 capex target TBCB pipeline"
+  - "India control and relay panel manufacturers market structure"
+searches_skipped:
+  - "FETCH kenresearch.com control panel report page (domain verification blocked); Ken figures taken from the search snippet and AR p70, not the report"
+  - "Share of C&R panels and relays in EHV substation capex: no source found"
+  - "Unorganised-sector share for C&R panels and relays: NOT FOUND"
+  - "Import share and global per-capita benchmark for relays/panels: not searched beyond one query"
+downstream_candidates:
+  - signal: "POWERGRID capex, works in hand and TBCB awards"
+    entity_type: end-customer
+    demand_link: "Largest ISTS substation builder; awards convert to EPC and panel orders"
+    likely_source: "NSE announcements and concall transcripts of POWERGRID; CEA/PIB"
+    cadence: quarterly
+    shared: true
+  - signal: "CEA monthly transformation capacity (MVA) added vs target"
+    entity_type: macro
+    demand_link: "FY26 113,013 MVA, FY27 target 158,339 MVA; each substation needs panels"
+    likely_source: "CEA monthly transmission progress report; PIB"
+    cadence: monthly
+    shared: true
+  - signal: "MP, Chhattisgarh and Karnataka state transmission utility tenders (MPPTCL, CSPTCL, KPTCL)"
+    entity_type: end-customer
+    demand_link: "Utility vendor approval (MPPTCL 400 kV, CSPTCL SCADA 220 kV) gates EPC panel purchases"
+    likely_source: "State utility tender portals; Reg 30 filings by Avana"
+    cadence: event-driven
+    shared: false
+  - signal: "Renewable capacity additions and BESS commissioning"
+    entity_type: macro
+    demand_link: "FY26 solar 44.6 GW, wind 6.1 GW; evacuation substations need C&R and SCADA"
+    likely_source: "MNRE / CEA installed capacity reports; PIB"
+    cadence: monthly
+    shared: true
+  - signal: "EPC contractor order wins (Avana's top 5 customers, identities NOT FOUND)"
+    entity_type: counterparty
+    demand_link: "EPCs buy panels after utility approval; their awards lead Avana orders"
+    likely_source: "Listed EPC concall transcripts and NSE order-win filings"
+    cadence: quarterly
+    shared: false
+  - signal: "CERC/CEA transmission planning orders and RDSS sanctions"
+    entity_type: regulatory
+    demand_link: "Regulatory approval of transmission and distribution schemes sets the order pipeline"
+    likely_source: "CERC orders; CEA NCT minutes; Ministry of Power/PIB"
+    cadence: event-driven
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "Vendor market numbers do not isolate Avana's niche, so the SAM is a labelled proxy and the 25% / 22% SOM CAGR rests on a share-gain path, not a measured market. The two readings: (a) share gain of 2 to 3 points on a 7.7% market, which gives 25% then 22%; (b) grid unit growth, where CEA targets imply +40% in FY27, which would let Avana grow faster than the SOM without any share gain. The one observation that separates them: CEA FY27 transformation additions against the 158,339 MVA target, plus Avana H1 FY27 order book and product split. Per rule, no conservatism was shaded into the SOM; size carries it. Stage 11 should use 25.4% (yr3) as the forward cross-check, and treat capacity above ~170-177 Cr as needing outsourcing or extra capex."

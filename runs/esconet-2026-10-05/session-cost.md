@@ -20,3 +20,7 @@ timestamp. Stage 0 and step1 steps A-G ran inline on the orchestrator session
 | 6 | peers | claude-sonnet-5-5 | medium | 2,053,038 | 1,757,370 | 295,644 | 17,951 | 2,070,989 | 8m25s | 1 |
 | 7 | emoat | claude-sonnet-5-5 | default (high) | 4,098,711 | 3,862,573 | 236,084 | 21,986 | 4,120,697 | 8m22s | 1 |
 | 9 | tam (web) | claude-sonnet-5-5 | default (high) | 1,050,847 | 928,231 | 122,588 | 14,314 | 1,065,161 | 6m00s | 1 |
+| 12a | verifier A numerical | claude-sonnet-5-5 | high | 22,376,000 | 21,934,335 | 441,477 | 68,296 | 22,444,296 | 12m47s | 1 |
+| 12b | verifier B red flags | claude-opus-5-5 | xhigh | 6,827,502 | 6,432,590 | 394,842 | 70,167 | 6,897,669 | 17m51s | 1 |
+| 12c | verifier C (Gate 0 + EM half) | claude-opus-5-5 | xhigh | 2,797,485 | 2,601,832 | 195,601 | 60,555 | 2,858,040 | 14m05s | 1 |
+| 12d | verifier D peers | claude-sonnet-5-5 | medium | 1,355,054 | 1,255,353 | 99,663 | 11,371 | 1,366,425 | 2m38s | 1 |

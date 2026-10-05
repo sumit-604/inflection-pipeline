@@ -1,0 +1,39 @@
+stage: B12b
+company: "ESCONET"
+run_date: "2026-10-05"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 25
+caught: 15
+partially_caught: 6
+missed:
+  - {severity: "MAJOR", item: "NVIDIA 'privileged allocation of scarce GPUs / structural moat' (deck) unsupported by the company's own Reg 30 (Solution Provider Elite tier; benefits are enablement, support, GTM; no material financial impact) and contradicted by the MD buying 'from the NVIDIA channel'; Netweb claims the regional OEM tier", anchor: "DECK26 p.11, p.15; Reg 30 29 Apr 2026 l.36-50; AUG26 p.16 l.867 (MD); NETWEB Nov 2025 p.8 l.332-340"}
+  - {severity: "MINOR", item: "Fluidech acquisition date stated as start of FY24-25 on the call vs AOC-1 16 Apr 2025", anchor: "AUG26 p.9 l.510-511 (MD); AR26 p.69"}
+  - {severity: "MINOR", item: "CFO signals future capitalisation of R&D on Ind AS move; AGM 2025 'investing significantly in R&D' vs under 2% now", anchor: "AUG26 p.12 l.631-640 (CFO, MD); p.11 l.612; AGM 12 Sep 2025 l.306"}
+  - {severity: "MINOR", item: "CEO named in Sep 2025 deck absent from AR26 KMP list; no cessation filing in corpus (NOT FOUND); CRO appointed Jul 2026", anchor: "DECK25 p.5; AR26 l.3056-3060; Reg 30 29 Jul 2026"}
+pipeline_flags_not_supported:
+  - "OVERSTATED: B06 analyst_note / FLAG-PEER-SPLIT net read 'Esconet's own inventory build is small (518.50 Lakhs)'; FY26 consolidated inventory rose 3,255.66 Lakhs to 5,149.87 (AR26 p.132, p.134); MD says stock kept rising and helped margins (AUG26 p.12 l.665-668)"
+  - "OVERSTATED: B06 verified Q7 used as support for Esconet GPU allocation; own Reg 30 makes no allocation claim and MD buys through the NVIDIA channel (AUG26 p.16 l.867)"
+  - "OVERSTATED: B05 repeated_evasions rows 1 and 4 'deflected every time'; Jun 2025 answered with direction, segment margins and a capital-to-revenue range (JUN25 p.7 l.400-402; p.9 l.504-511; p.11 l.628-633); only Aug 2026 refused"
+promise_delivery_spot_checks: {checked: 6, confirmed: 6, wrong: 0}
+credibility_grade_concur: "lower (C/D boundary): 0 of 4 quantified forecasts hit and at least five PR or deck claims contradicted by filings or the MD's own call words (ZeaCloud healthy growth, Fluidech planned loss, strengthening cash flows, privileged GPU allocation, inventory backed by signed orders)"
+findings:
+  - {severity: "MAJOR", location: "B05 trigger #2 and 1C; B06 verified Q7", issue: "NVIDIA allocation-moat premise accepted; red flag missed", evidence: "Reg 30 29 Apr 2026 l.36-50; AUG26 p.16 l.867; NETWEB Nov 2025 p.8 l.332-340", action: "drop allocation premise from trigger #2 until a filed allocation benefit appears"}
+  - {severity: "MAJOR", location: "B05 trigger #8, 1C, FLAG-GUIDANCE-INCONSISTENCY", issue: "Singapore classed as a committed growth trigger; 53 Cr period left NOT FOUND though filed", evidence: "Q1BM p.10 l.407-415: Q1 revenue 5,332.02 Lakhs (45.8% of consolidated, derived), net profit 29.67 (0.56%), total assets 67.09; AR26 p.69 FY26 turnover SGD 67,46,372 (about 4,906 Lakhs derived at 72.72)", action: "reclassify as revenue-quality flag; show standalone and ex-Singapore growth"}
+  - {severity: "MAJOR", location: "B06 analyst_note and FLAG-PEER-SPLIT-MARGIN-MECHANISM net read", issue: "inventory build called small from the Q1 standalone change alone; weakens stock-gain reading on a wrong input", evidence: "AR26 p.132, p.134 (consolidated inventory 1,894.21 to 5,149.87 Lakhs, +3,255.66); AUG26 p.12 l.665-668", action: "restore reading B to equal standing with reading C"}
+  - {severity: "MINOR", location: "B05 FLAG-CASH", issue: "identical 'strengthening operational cash flows' PR text and deck 'inventory supports signed orders' contradicted by filings, not flagged", evidence: "FY26PR p.4 l.204-208; Q1BM p.16 l.686-688; AR26 p.134 consolidated CFO (882.50) Lakhs; DECK26 p.9 vs AUG26 p.15 l.828-829", action: "add to FLAG-CASH; cash conversion stays INDETERMINATE"}
+  - {severity: "MINOR", location: "B05 2D item 8; 1B order-book row", issue: "Rs 500 Cr+ vision and Rs 100 Cr+ pipeline source missed; walkback not recorded", evidence: "DECK25 p.19; AUG26 p.14 l.747-752; p.16 l.858-859", action: "record as walkback against filed targets"}
+  - {severity: "MINOR", location: "B05 FLAG-MARGIN-BASIS; stage3 input gap", issue: "Q1 other income 190.04 Lakhs vs 184.23 Lakhs forfeiture in same quarter not raised as a flag; CFO framed income as core", evidence: "Q1BM p.4 l.146; Reg 30 29 Apr 2026 forfeiture l.41-49; AUG26 p.6 l.334-337", action: "name the flag; verify booking in H1 FY27 notes or FY27 AR"}
+  - {severity: "MINOR", location: "B05 repeated_evasions rows 1 and 4", issue: "'deflected every time' overstated for Jun 2025 leg", evidence: "JUN25 p.7 l.400-402; p.9 l.504-511; p.11 l.628-633", action: "reclassify as answered 2025, withdrawn 2026"}
+  - {severity: "MINOR", location: "B05 promise row 5", issue: "employee-cost miss computed on mixed basis (FY26 consolidated includes Fluidech, FY25 does not)", evidence: "AR26 p.103 standalone 795.39 vs 557.04 Lakhs, +42.8% derived", action: "show standalone basis; direction MISSED stands"}
+  - {severity: "MINOR", location: "B05 promise row 12", issue: "standalone 29.2% gross used against a consolidated margin promise", evidence: "Q1BM p.7 consolidated gross 16.6% derived; JUN25 p.7 l.405-406 (FY24 about 20%)", action: "state consolidated basis; PARTIAL stands"}
+  - {severity: "MINOR", location: "B05/B06, not covered", issue: "Fluidech acquisition date misstated on the call", evidence: "AUG26 p.9 l.510-511 vs AR26 p.69 (16 Apr 2025)", action: "note in management-accuracy record"}
+  - {severity: "MINOR", location: "B05/B06, not covered", issue: "future R&D capitalisation signalled by CFO", evidence: "AUG26 p.12 l.631-640", action: "add tripwire on capitalised development cost after Ind AS move"}
+  - {severity: "MINOR", location: "B05/B06, not covered", issue: "CEO in Sep 2025 deck absent from AR26 KMP; no cessation filing in corpus", evidence: "DECK25 p.5; AR26 l.3056-3060; Reg 30 29 Jul 2026 CRO", action: "ask in Halt 1 extraction annex; NOT FOUND until answered"}
+critical_count: 0
+major_count: 3
+minor_count: 9
+material_found: 11
+material_caught: 10
+acceptance_rate: 90.9
+coverage_basis: "11 material (0 CRITICAL, 11 MAJOR) of 25 listed; pipeline had 10 (6 fully caught, 4 partially caught, counted as had); 1 missed (NVIDIA allocation claim). Full-catch-only rate would be 54.5% (6 of 11). 2 of 2 company transcripts read in full; 12 of 12 peer files present, 5 read in full or in targeted sections, 7 by text search."

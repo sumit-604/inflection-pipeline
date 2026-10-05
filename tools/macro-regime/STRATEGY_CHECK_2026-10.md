@@ -25,3 +25,34 @@ the drawdown on Nifty (55% to 38%), and adds return on zinc, silver and
 aluminium. Gold is best held. The band rule loses everywhere, as
 EVALUATION_2026-10.md section 2 showed. Two cycles, no costs; a rule, not
 a result.
+
+## Grid search with an out-of-sample split, 2026-10-05
+
+135 rules per asset: every non-empty set of quadrants to be long in (15),
+times a liquidity filter (any / not TIGHT / only EASING), times a stress
+filter (any / not HIGH / also long when HIGH). Each rule had to be invested
+at least 30% of months. Winner chosen by return per unit of volatility on
+2004-01 to 2015-12, then run blind on 2016-01 to 2026-09.
+
+| Asset | In-sample winner | IS ann/vol/dd | OOS ann/vol/dd | OOS buy-hold | OOS trend | Held |
+|---|---|---|---|---|---|---|
+| gold | long R G S | 7.8 / 15.7 / -27 | 6.1 / 13.4 / -23 | 13.6 / 15.2 / -23 | 8.6 / 14.0 / -24 | no |
+| silver | R G D, stress not HIGH | 8.9 / 27.9 / -64 | 9.7 / 25.2 / -38 | 14.7 / 30.3 / -38 | 5.5 / 26.5 / -41 | no |
+| aluminium | R D, stress not HIGH | 6.8 / 12.6 / -18 | 6.1 / 11.3 / -27 | 7.6 / 15.8 / -39 | 6.8 / 13.5 / -36 | yes |
+| zinc | R D, stress not HIGH | 10.3 / 18.6 / -29 | 9.4 / 15.5 / -26 | 9.4 / 20.0 / -46 | 5.3 / 15.3 / -40 | yes |
+| brent | R S D, not TIGHT | 12.0 / 20.0 / -33 | 1.2 / 33.9 / -78 | 11.1 / 54.9 / -82 | -0.7 / 25.8 / -68 | no |
+| nifty | R G S D, stress not HIGH | 16.4 / 18.0 / -23 | 5.1 / 14.9 / -31 | 10.2 / 16.4 / -29 | 3.5 / 13.8 / -31 | no |
+
+Four of six in-sample winners failed out of sample. The Nifty winner,
+"sell when stress is HIGH", fit 2008 and sold the 2020 bottom.
+
+The one rule that held: flat only in STAGFLATION, long otherwise. It was
+not the in-sample winner on any asset. Out-of-sample return per unit of
+volatility against buy-and-hold: gold 0.98 vs 0.90, silver 0.56 vs 0.48,
+aluminium 0.78 vs 0.48, zinc 0.66 vs 0.47, brent 0.14 vs 0.20, nifty 0.73
+vs 0.62. It improved from the first half to the second, the opposite of a
+fitted rule. It is now the default in pine/macro_regime_backtest.pine.
+
+Reading: with two cycles of data an optimiser finds the rule that explains
+the past. The rule to carry is the simplest one that survived a blind
+half, and it is one rule, not a per-asset table.

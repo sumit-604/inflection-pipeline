@@ -10,6 +10,9 @@
 // 4. Read the Strategy Tester tab: net profit, drawdown, trade list.
 //    Compare the "Buy and hold" line in the Tester's overview with the equity.
 //
+// Default = the one rule that held out of sample (STRATEGY_CHECK_2026-10.md):
+// long in R, G and D, flat in S. The grid-search winners did not hold.
+//
 // Signals are known at the month close; orders fill at the NEXT month's open,
 // so no look-ahead. Fees and slippage are inputs; set them to what you pay.
 
@@ -28,7 +31,7 @@ mode      = input.string("Regime: long in selected quadrants", "Mode",
 useR      = input.bool(true,  "Long in REFLATION (0)",   group = "Regime mode")
 useG      = input.bool(true,  "Long in GOLDILOCKS (1)",  group = "Regime mode")
 useS      = input.bool(false, "Long in STAGFLATION (2)", group = "Regime mode")
-useD      = input.bool(false, "Long in DEFLATION (3)",   group = "Regime mode")
+useD      = input.bool(true,  "Long in DEFLATION (3)",   group = "Regime mode")
 holdMin   = input.int(1, "Minimum hold, months", minval = 1, group = "Execution")
 startYear = input.int(2004, "Start year", group = "Execution")
 endYear   = input.int(2100, "End year", group = "Execution")

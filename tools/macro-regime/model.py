@@ -61,8 +61,13 @@ def load_panel() -> pd.DataFrame:
               "us_stlfsi", "us_vix", "us_indpro", "us_recession_prob",
               "epu_us", "epu_india", "epu_global", "in_call_rate",
               "in_gsec_10y", "in_cpi_yoy", "in_m3", "in_cli", "india_vix",
-              "us_crude_stocks_ex_spr"]:
+              "us_crude_stocks_ex_spr", "in_iip_yoy", "in_cpi_yoy_mospi"]:
         c[k] = _s(k)
+    # India CPI YoY: MoSPI (issuing body) from 2014-01, FRED OECD before.
+    # The two differ by up to 5.6 points on the overlap; MoSPI wins there.
+    if c.get("in_cpi_yoy_mospi") is not None and c.get("in_cpi_yoy") is not None:
+        fred_pre = c["in_cpi_yoy"][c["in_cpi_yoy"].index < pd.Period("2014-01", "M")]
+        c["in_cpi"] = c["in_cpi_yoy_mospi"].combine_first(fred_pre)
     fpi = pd.read_csv(DATA / "in_fpi_flows.csv", dtype={"month": str}) \
         .set_index("month")
     fpi.index = pd.PeriodIndex(fpi.index, freq="M")
@@ -143,9 +148,16 @@ DIAL_INPUTS = {
         ("FPI equity 3m sum (inverted)",
          lambda p: p["fpi_equity"].rolling(3).sum(), -1),
         ("India call rate 6m change", lambda p: chg(p["in_call_rate"], 6), +1),
-        ("India CPI YoY (partial, ends 2025-03)", lambda p: p["in_cpi_yoy"], +1),
+        ("India CPI YoY (MoSPI from 2014, OECD before)", lambda p: p["in_cpi"], +1),
+    ],
+    "IN_GROWTH": [   # India growth dial; sets the India regime with in_cpi
+        ("India IIP YoY (MoSPI)", lambda p: p["in_iip_yoy"], +1),
+        ("India OECD CLI 6m change (partial, ends 2024-01)",
+         lambda p: chg(p["in_cli"], 6), +1),
+        ("Nifty 6m log change", lambda p: logchg(p["nifty"], 6), +1),
     ],
 }
+DIALS = ["GROWTH", "INFLATION", "LIQUIDITY", "STRESS", "IN_STRESS", "IN_GROWTH"]
 
 
 def build_dials(panel: pd.DataFrame) -> pd.DataFrame:
@@ -164,7 +176,7 @@ def build_dials(panel: pd.DataFrame) -> pd.DataFrame:
         out[dial] = pd.concat(cols, axis=1).mean(axis=1, skipna=True)
         out[dial + "_n"] = pd.concat(cols, axis=1).notna().sum(axis=1)
     d = pd.DataFrame(out)
-    for dial in ["GROWTH", "INFLATION", "LIQUIDITY", "STRESS", "IN_STRESS"]:
+    for dial in DIALS:
         d[dial + "_6m"] = d[dial] - d[dial].shift(6)
         d[dial + "_sm"] = d[dial].rolling(3).mean()   # 3-month smoothing
     return d
@@ -184,6 +196,16 @@ QUAD = {(True, True): "REFLATION", (True, False): "GOLDILOCKS",
 REGIME_MODE = "level"      # "level" or "direction"
 CPI_BENCH = 3.0            # % YoY
 BE_BENCH = 2.5             # % 10y breakeven
+# India regime (operator request 2026-10-05): the same quadrant logic on
+# India's own growth and inflation, read beside the global one. India
+# inflation is HIGH when MoSPI CPI YoY is above IN_CPI_BENCH: the RBI 4%
+# target plus one point, the same margin the US benchmark gives the Fed's
+# 2%, and the midpoint of the 4-6% upper half of the tolerance band. India
+# growth is HIGH when the smoothed IN_GROWTH dial (IIP YoY, OECD CLI change,
+# Nifty 6m change) is above its five-year norm. The India regime governs
+# Nifty and Indian rates; the global regime governs gold, silver, the base
+# metals and Brent. When the two differ the read is flagged DIVERGENCE.
+IN_CPI_BENCH = 5.0         # % YoY, MoSPI CPI combined
 
 
 def regime(d: pd.DataFrame, panel: pd.DataFrame | None = None,
@@ -206,6 +228,24 @@ def regime(d: pd.DataFrame, panel: pd.DataFrame | None = None,
         r["quadrant"] = [QUAD[(a, b)] for a, b in zip(g_up, i_up)]
         r.loc[d["GROWTH_sm"].diff(6).isna() | d["INFLATION_sm"].diff(6).isna(),
               "quadrant"] = None
+    # India quadrant
+    if mode == "level":
+        icpi = panel["in_cpi"].ffill(limit=2).reindex(d.index)
+        ii_hi = icpi > IN_CPI_BENCH
+        ig_hi = d["IN_GROWTH_sm"] > 0
+        r["in_quadrant"] = [QUAD[(a, b)] for a, b in zip(ig_hi, ii_hi)]
+        r.loc[d["IN_GROWTH_sm"].isna() | icpi.isna(), "in_quadrant"] = None
+    else:
+        icpi = panel["in_cpi"].ffill(limit=2).reindex(d.index) if panel is not None else None
+        ig_up = d["IN_GROWTH_sm"].diff(6) > 0
+        ii_up = icpi.diff(6) > 0 if icpi is not None else pd.Series(False, index=d.index)
+        r["in_quadrant"] = [QUAD[(a, b)] for a, b in zip(ig_up, ii_up)]
+        bad = d["IN_GROWTH_sm"].diff(6).isna()
+        if icpi is not None:
+            bad = bad | icpi.diff(6).isna()
+        r.loc[bad, "in_quadrant"] = None
+    r["divergence"] = (r["quadrant"].notna() & r["in_quadrant"].notna()
+                       & (r["quadrant"] != r["in_quadrant"]))
     r["liquidity"] = np.where(d["LIQUIDITY_sm"] > 0.25, "EASING",
                               np.where(d["LIQUIDITY_sm"] < -0.25, "TIGHT",
                                        "NEUTRAL"))
@@ -281,6 +321,11 @@ def rules() -> list[str]:
          f"or 10y breakeven > {BE_BENCH}%; growth HIGH when the smoothed GROWTH "
          "dial is above its 5-year norm (z > 0). Direction mode (sign of the "
          "6-month change in each dial) is available as an option.",
+         f"India regime: inflation HIGH when MoSPI CPI YoY > {IN_CPI_BENCH}% "
+         "(RBI 4% target plus one point); growth HIGH when the smoothed "
+         "IN_GROWTH dial is above its 5-year norm. India regime governs Nifty "
+         "and Indian rates; the global regime governs gold, silver, base "
+         "metals and Brent. DIVERGENCE is flagged when the two differ.",
          "LIQUIDITY tag: EASING above +0.25, TIGHT below -0.25. STRESS tag: "
          "HIGH above +1.0, LOW below -0.5. IN_STRESS the same, Nifty only.",
          "Band = base band for the quadrant, +1 step if EASING, -1 if TIGHT "
@@ -308,6 +353,5 @@ if __name__ == "__main__":
     p, d, r, b = run_all()
     last = r.index[-1]
     print(last, r.loc[last].to_dict())
-    print(d.loc[last, ["GROWTH", "INFLATION", "LIQUIDITY", "STRESS",
-                       "IN_STRESS"]].round(2).to_dict())
+    print(d.loc[last, DIALS].round(2).to_dict())
     print(b.loc[last].map(BAND).to_dict())

@@ -79,3 +79,88 @@ Level regime, months 2004-2026 and median 12-month forward return:
 | GOLDILOCKS | 96 | +9.9 | +0.6 | +9.5 | +8.4 | +26.5 | +13.0 |
 | STAGFLATION | 46 | +11.8 | +9.0 | -7.7 | -3.6 | -8.7 | +15.0 |
 | DEFLATION | 82 | +16.6 | +19.9 | +5.6 | +5.9 | -1.4 | +10.5 |
+
+"Flat only in stagflation" rerun under the level definition, same
+2004-01 to 2015-12 / 2016-01 to 2026-09 split. It held out of sample on
+three of six assets (the direction definition held on five). Columns:
+buy-and-hold | flat only in S, each as annualised return / volatility /
+worst drawdown.
+
+| Asset | Full, hold | Full, flat in S | IS hold | IS flat in S | OOS hold | OOS flat in S | Held OOS |
+|---|---|---|---|---|---|---|---|
+| gold | 10.7 / 17.2 / -42 | 9.0 / 15.0 / -45 | 8.1 / 18.8 / -42 | 6.5 / 15.8 / -45 | 13.6 / 15.2 / -23 | 11.8 / 14.0 / -23 | no |
+| silver | 10.7 / 32.7 / -72 | 10.5 / 29.5 / -75 | 7.2 / 34.8 / -72 | 8.6 / 31.1 / -75 | 14.7 / 30.3 / -38 | 12.7 / 27.7 / -38 | no |
+| aluminium | 3.3 / 17.7 / -57 | 6.0 / 15.3 / -43 | -0.3 / 19.3 / -57 | 1.9 / 16.8 / -43 | 7.6 / 15.8 / -39 | 10.7 / 13.4 / -37 | yes |
+| zinc | 6.4 / 23.2 / -75 | 10.7 / 20.0 / -46 | 3.8 / 25.8 / -75 | 9.3 / 23.2 / -45 | 9.4 / 20.0 / -46 | 12.4 / 15.9 / -46 | yes |
+| brent | 6.0 / 45.3 / -89 | 11.0 / 43.0 / -90 | 1.6 / 34.7 / -74 | 8.1 / 30.6 / -75 | 11.1 / 54.9 / -82 | 14.3 / 53.5 / -82 | yes |
+| nifty | 11.6 / 20.7 / -55 | 12.2 / 17.7 / -29 | 12.8 / 24.0 / -55 | 16.5 / 19.5 / -26 | 10.2 / 16.4 / -29 | 7.6 / 15.4 / -29 | no |
+
+Reading. Under the level definition the stagflation flag is a metals and
+oil rule. For Nifty it cut the 2008 drawdown (55% to 29%) but cost 2.6
+points a year after 2016. The Pine strategy default (long R, G, D; flat
+S) is unchanged; use it on the metals and Brent, and read this table
+before using it on Nifty.
+
+## India regime, 2026-10-05 (operator request)
+
+The operator asked for an India-specific regime beside the global one:
+growth or inflation can be present in India and absent in the US, or the
+reverse. Added to model.py, run.py, analogues.py and the Pine indicator.
+
+Definition (level): India inflation HIGH when MoSPI CPI (Combined, All
+India, General) YoY is above 5.0%, the RBI 4% target plus one point (the
+same margin the US benchmark gives the Fed's 2%). India growth HIGH when
+the IN_GROWTH dial (IIP YoY, OECD CLI 6-month change, Nifty 6-month log
+change; trailing 5-year z, 3-month smoothed) is above zero. Data: MoSPI
+API (api.mospi.gov.in; raw JSON under data/raw/mospi_*.json). IIP is
+four base years spliced, each used from its second year, 1995-04 to
+2026-08 with 2004-04 to 2005-03 null at source. CPI is MoSPI from
+2014-01 (base 2012 to 2025-12, base 2024 from 2026-01) and the FRED OECD
+series before; on the overlap the OECD series differs from MoSPI by up to
+5.6 points, so MoSPI wins where it exists.
+
+What the India regime governs: Nifty and Indian rates. The global regime
+governs gold, silver, the base metals and Brent. When the two differ the
+read says DIVERGENCE. They differed in 69% of months, 1998-05 to 2026-09
+(341 months). India changed regime 63 times in that span, the global
+regime 50; median India spell 3 months.
+
+Nifty 12 months on, median, by regime (months since 1998-05):
+
+| Regime | India: months | India: Nifty 12m | Global: months | Global: Nifty 12m |
+|---|---|---|---|---|
+| REFLATION | 94 | +16.6% | 43 | +14.9% |
+| GOLDILOCKS | 77 | +13.7% | 119 | +13.4% |
+| STAGFLATION | 94 | +10.4% | 62 | +7.0% |
+| DEFLATION | 64 | +0.4% | 105 | +10.8% |
+
+The India DEFLATION bucket (growth below norm, CPI under 5%) is the one
+cell where Nifty's forward median is near zero. The full global x India
+cross-table is printed in latest.md each month under "India regime
+analogues".
+
+As a Nifty timing rule the India regime did not beat holding. Monthly
+long/flat, signal at month close applied next month, no costs, 2004-01
+to 2026-09, then the 2004-2015 / 2016-2026 split:
+
+| Rule | Full | IS 2004-15 | OOS 2016-26 |
+|---|---|---|---|
+| Buy and hold | 11.6 / 20.7 / -55 | 12.8 / 24.0 / -55 | 10.2 / 16.4 / -29 |
+| Global: flat only in S | 12.2 / 17.7 / -29 | 16.5 / 19.5 / -26 | 7.6 / 15.4 / -29 |
+| India: flat only in d | 9.4 / 20.0 / -55 | 11.7 / 23.7 / -55 | 6.9 / 14.8 / -34 |
+| India: long r and g only | 8.9 / 13.5 / -23 | 11.3 / 16.2 / -23 | 6.3 / 9.5 / -12 |
+| Both: flat if global S or India d | 11.0 / 16.9 / -34 | 16.3 / 19.3 / -26 | 5.3 / 13.7 / -34 |
+
+Reading. The India regime is a read of where India stands, and it is
+right to show it beside the global one: the two disagree more often than
+they agree. It is not a switch to trade Nifty on. Its spells are short
+(median 3 months) and the one-month lag eats the DEFLATION signal. The
+Pine indicator exports "india quadrant 0-3" so the operator can test her
+own rules; the numbers above are the reference.
+
+Current read (2026-09): global REFLATION, India GOLDILOCKS, DIVERGENCE.
+India CPI 4.82% in August against the 5.0% line and rising for ten
+months; IN_GROWTH z +0.00 (IIP +8.0% YoY pulls up, Nifty 6m change pulls
+down). Both India inputs sit on their lines; the likeliest next India
+read is REFLATION (CPI crosses 5%), which is what followed 12 of the 16
+closed India GOLDILOCKS spells since 1998.

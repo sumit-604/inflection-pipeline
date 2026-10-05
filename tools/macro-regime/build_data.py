@@ -271,6 +271,74 @@ def cftc():
     pd.concat(out_all).to_csv(RAW / "cftc_legacy_weekly_slim.csv", index=False)
 
 
+# ------------------------------------------------------------------ MoSPI
+MOSPI_API = "https://api.mospi.gov.in"
+_MON = {m: i for i, m in enumerate(
+    ["January", "February", "March", "April", "May", "June", "July",
+     "August", "September", "October", "November", "December"], 1)}
+
+
+def _mospi_series(fname: str, col: str) -> pd.Series:
+    rows = json.loads((RAW / fname).read_text())
+    s = {pd.Period(f"{int(r['year'])}-{_MON[r['month']]:02d}", "M"):
+         pd.to_numeric(r[col], errors="coerce") for r in rows}
+    return pd.Series(s).sort_index()
+
+
+def mospi():
+    """India IIP YoY and CPI YoY from the MoSPI API (fetched 2026-10-05
+    through Firecrawl; raw JSON kept under data/raw/mospi_*.json).
+
+    IIP: four base years spliced. The first twelve months of a new base
+    compare against the base-year average, not a real prior month (base
+    2004-05 prints +26.7% for 2006-03; base 2022-23 prints +19.0% for
+    2024-03), so each base is used only from its second year, and the
+    older base covers the join. Base 1993-94 is null for 2004-04 to
+    2005-03 at source and base 2004-05 is invalid there: that year is
+    NOT FOUND.
+    CPI: base 2012 from 2014-01 (2013 inflation is null at source) to
+    2025-12, base 2024 from 2026-01. Earlier months come from the FRED
+    OECD series in_cpi_yoy.csv, which the model uses only before 2014-01:
+    on the 2014-2025 overlap it differs from MoSPI by up to 5.6 points.
+    """
+    b93 = _mospi_series("mospi_iip_1993-94_monthly.json", "growth_rate")
+    b04 = _mospi_series("mospi_iip_2004-05_monthly.json", "growth_rate")
+    b11 = _mospi_series("mospi_iip_2011-12_monthly.json", "growth_rate")
+    b22 = _mospi_series("mospi_iip_2022-23_monthly.json", "growth_rate")
+    P = lambda s: pd.Period(s, "M")
+    iip = pd.concat([
+        b93[(b93.index >= P("1995-04")) & (b93.index <= P("2006-03"))],
+        b04[(b04.index >= P("2006-04")) & (b04.index <= P("2012-12"))],
+        b11[(b11.index >= P("2013-01")) & (b11.index <= P("2024-12"))],
+        b22[b22.index >= P("2025-01")],
+    ]).sort_index()
+    iip = iip.reindex(pd.period_range(iip.index[0], iip.index[-1], freq="M"))
+    df = pd.DataFrame({"value": iip.values}, index=iip.index.astype(str))
+    df.index.name = "month"
+    _save(df, "in_iip_yoy", "MoSPI IIP General index, growth rate % YoY",
+          f"{MOSPI_API}/api/iip/getIipData?base_year=<1993-94|2004-05|"
+          "2011-12|2022-23>&frequency=Monthly&type=General&year=...&Format=JSON",
+          "PRIMARY", "spliced: base 1993-94 to 2006-03, 2004-05 from 2006-04, "
+          "2011-12 from 2013-01, 2022-23 from 2025-01 (first year of each "
+          "base dropped: it compares to the base-year average); 2004-04 to "
+          "2005-03 null at source")
+    c12 = _mospi_series("mospi_cpi_2012_monthly.json", "inflation")
+    c24 = _mospi_series("mospi_cpi_2024_monthly.json", "inflation")
+    cpi = pd.concat([c12[(c12.index >= P("2014-01")) & (c12.index <= P("2025-12"))],
+                     c24[c24.index >= P("2026-01")]]).sort_index()
+    df = pd.DataFrame({"value": cpi.values}, index=cpi.index.astype(str))
+    df.index.name = "month"
+    _save(df, "in_cpi_yoy_mospi", "MoSPI CPI Combined All India General, "
+          "inflation % YoY",
+          f"{MOSPI_API}/api/cpi/getCPIIndex?base_year=2012&series=Current&"
+          "state_code=99&group_code=0&sector_code=3 ; /api/cpi/getCPIData?"
+          "base_year=2024&series=Current&state_code=1&sector_code=3&"
+          "division_code=0", "PRIMARY",
+          "base 2012 to 2025-12, base 2024 from 2026-01; 2020-04 and "
+          "2020-05 null at source (status F*); the model uses this from "
+          "2014-01 and the FRED OECD series before")
+
+
 # ------------------------------------------------------- v1 cache reuse
 def v1_reuse():
     if not V1.exists():
@@ -324,7 +392,7 @@ def write_sources():
 
 if __name__ == "__main__":
     DATA.mkdir(exist_ok=True)
-    fred(); yahoo(); eia(); nsdl(); cftc(); v1_reuse()
+    fred(); yahoo(); eia(); nsdl(); cftc(); mospi(); v1_reuse()
     write_sources()
     for r in LOG:
         print(f"{r['status']:9} {r['name']:28} {str(r['first']):>8} -> "

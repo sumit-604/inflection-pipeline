@@ -22,6 +22,17 @@
 // Inflation high = US CPI YoY above 3% or 10y breakeven above 2.5% (inputs). Letter strip at the pane bottom, a label at
 // each change, legend top-left. Alerts: regime change, stress HIGH,
 // liquidity TIGHT / EASING.
+//
+// INDIA REGIME (added 2026-10-05): the same quadrant on India's own growth
+// and inflation. India growth = IN_GROWTH dial (IIP YoY, OECD CLI 6m change,
+// Nifty 6m change) above its 5-year norm; India inflation high = CPI YoY
+// above 5% (RBI 4% target plus one point). Lower-case strip r g s d below the
+// global strip; "Background shows" picks which regime colours the pane. The
+// India regime governs Nifty and Indian rates; the global one governs gold,
+// silver, base metals and Brent. Hidden plot "india quadrant 0-3" feeds the
+// strategy. Python reference: 1998-2026 the two regimes differ in 69% of
+// months; Nifty 12m median by India regime R +16.6%, G +13.7%, S +10.4%,
+// D +0.4% (STRATEGY_CHECK_2026-10.md, India section).
 
 indicator("Macro Regime Dials (6-12m)", shorttitle = "MacroRegime", overlay = false, max_bars_back = 500, max_labels_count = 500)
 
@@ -29,6 +40,9 @@ indicator("Macro Regime Dials (6-12m)", shorttitle = "MacroRegime", overlay = fa
 regimeDef = input.string("Level vs benchmarks", "Regime definition", options = ["Level vs benchmarks", "Direction (6m change)"])
 cpiBench  = input.float(3.0, "Inflation HIGH if US CPI YoY above (%)", group = "Level benchmarks")
 beBench   = input.float(2.5, "or if 10y breakeven above (%)", group = "Level benchmarks")
+inCpiBench = input.float(5.0, "India inflation HIGH if CPI YoY above (%)", group = "Level benchmarks")
+bgShows   = input.string("Global regime", "Background shows", options = ["Global regime", "India regime"])
+showIndia = input.bool(true, "India regime strip (lower-case r g s d)")
 zWin      = input.int(60, "z-score window, months", minval = 24)
 smooth    = input.int(3, "dial smoothing, months", minval = 1)
 dirLen    = input.int(6, "direction lookback, months", minval = 1)
@@ -42,6 +56,7 @@ showStrip = input.bool(true, "Regime letter strip (R G S D)")
 showLabels = input.bool(true, "Label each regime change")
 showLegend = input.bool(true, "Legend table")
 stripY     = input.float(-2.7, "Letter strip y level")
+stripY2    = input.float(-2.95, "India strip y level")
 
 // ---------------------------------------------------------------- series
 m(sym) => request.security(sym, "1M", close, ignore_invalid_symbol = true)
@@ -73,6 +88,13 @@ epuGl   = m("FRED:GEPUCURRENT")
 epuIN   = m("FRED:INDEPUINDXM")
 inCall  = m("FRED:IRSTCI01INM156N")
 inCpi   = m("FRED:CPALTT01INM659N")
+inCli   = m("FRED:INDLOLITONOSTSAM")
+// India (Trading Economics feed on TradingView; FRED OECD series as fallback)
+inIrYY  = m("ECONOMICS:INIRYY")        // India CPI inflation, % YoY
+inIpYY  = m("ECONOMICS:INIPYY")        // India industrial production, % YoY
+inIpIdx = m("FRED:INDPROINDMISMEI")    // fallback: OECD production index
+nifty   = m("NSE:NIFTY")
+inCpiLvl = na(inIrYY) ? inCpi : inIrYY
 
 // ------------------------------------------------------------ transforms
 chg(float s, int n)    => s - s[n]
@@ -114,13 +136,16 @@ GROWTH = mean6(zs(logchg(cuau, 6)), zs(logchg(copper, 6)), zs(yoy(indpro)), -zs(
 INFLATION = mean6(zs(t10yie), zs(chg(t10yie, 6)), zs(yoy(cpi)), zs(chg(yoy(corecpi), 6)), float(na), float(na))
 LIQUIDITY = mean6(zs(yoy(m2)), zs(logchg(walcl, 6)), -zs(chg(fedfund, 6)), -zs(nfci), -zs(chg(math.log(dxy), 6)), -zs(chg(dfii10, 6)))
 STRESS = mean6(zs(vix), zs(baa10y), zs(stlfsi), zs(epuUS), zs(epuGl), float(na))
-IN_STRESS = mean6(zs(invix), zs(epuIN), zs(logchg(usdinr, 6)), zs(chg(inCall, 6)), zs(inCpi), float(na))   // FPI input not on TradingView
+IN_STRESS = mean6(zs(invix), zs(epuIN), zs(logchg(usdinr, 6)), zs(chg(inCall, 6)), zs(inCpiLvl), float(na))   // FPI input not on TradingView
+iipYoY = na(inIpYY) ? yoy(inIpIdx) : inIpYY
+IN_GROWTH = mean6(zs(iipYoY), zs(chg(inCli, 6)), zs(logchg(nifty, 6)), float(na), float(na), float(na))
 
 gS = ta.sma(GROWTH, smooth)
 iS = ta.sma(INFLATION, smooth)
 lS = ta.sma(LIQUIDITY, smooth)
 sS = ta.sma(STRESS, smooth)
 nS = ta.sma(IN_STRESS, smooth)
+igS = ta.sma(IN_GROWTH, smooth)
 
 // ---------------------------------------------------------------- regime
 // Level definition (default): growth HIGH when the smoothed GROWTH dial is
@@ -134,6 +159,14 @@ okI = regimeDef == "Level vs benchmarks" ? (not na(cpiYoY) or not na(t10yie)) : 
 // 0 REFLATION, 1 GOLDILOCKS, 2 STAGFLATION, 3 DEFLATION
 quad = not (okG and okI) ? int(na) : gUp and iUp ? 0 : gUp and not iUp ? 1 : not gUp and iUp ? 2 : 3
 quadName = quad == 0 ? "REFLATION" : quad == 1 ? "GOLDILOCKS" : quad == 2 ? "STAGFLATION" : quad == 3 ? "DEFLATION" : "n/a"
+// India quadrant, same logic on IN_GROWTH and India CPI
+igUp = regimeDef == "Level vs benchmarks" ? igS > 0 : igS - igS[dirLen] > 0
+iiUp = regimeDef == "Level vs benchmarks" ? inCpiLvl > inCpiBench : inCpiLvl - inCpiLvl[dirLen] > 0
+okIG = regimeDef == "Level vs benchmarks" ? not na(igS) : not na(igS - igS[dirLen])
+okII = regimeDef == "Level vs benchmarks" ? not na(inCpiLvl) : not na(inCpiLvl - inCpiLvl[dirLen])
+iquad = not (okIG and okII) ? int(na) : igUp and iiUp ? 0 : igUp and not iiUp ? 1 : not igUp and iiUp ? 2 : 3
+iquadName = iquad == 0 ? "REFLATION" : iquad == 1 ? "GOLDILOCKS" : iquad == 2 ? "STAGFLATION" : iquad == 3 ? "DEFLATION" : "n/a"
+diverge = not na(quad) and not na(iquad) and quad != iquad
 liqTag = lS > liqHi ? "EASING" : lS < liqLo ? "TIGHT" : "NEUTRAL"
 stTag  = sS > stHi ? "HIGH" : sS < stLo ? "LOW" : "NORMAL"
 inTag  = nS > stHi ? "HIGH" : nS < stLo ? "LOW" : "NORMAL"
@@ -169,6 +202,7 @@ cSTAG = color.red
 cDEFL = color.gray
 quadColor(int q) => q == 0 ? cREFL : q == 1 ? cGOLD : q == 2 ? cSTAG : q == 3 ? cDEFL : color.new(color.white, 100)
 quadLetter(int q) => q == 0 ? "R" : q == 1 ? "G" : q == 2 ? "S" : q == 3 ? "D" : ""
+quadLower(int q) => q == 0 ? "r" : q == 1 ? "g" : q == 2 ? "s" : q == 3 ? "d" : ""
 quadFull(int q) => q == 0 ? "REFLATION" : q == 1 ? "GOLDILOCKS" : q == 2 ? "STAGFLATION" : q == 3 ? "DEFLATION" : "n/a"
 
 // ----------------------------------------------------------------- plots
@@ -177,17 +211,24 @@ plot(iS, "INFLATION", color = color.new(color.red, 0), linewidth = 2)
 plot(lS, "LIQUIDITY", color = color.new(color.blue, 0), linewidth = 2)
 plot(sS, "STRESS", color = color.new(color.orange, 0), linewidth = 2)
 plot(nS, "IN_STRESS", color = color.new(color.purple, 0), linewidth = 1)
+plot(igS, "IN_GROWTH", color = color.new(color.lime, 0), linewidth = 1, style = plot.style_circles)
 hline(0)
 hline(stHi, "stress high", color = color.new(color.orange, 60), linestyle = hline.style_dotted)
 hline(liqHi, "easing", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
 hline(liqLo, "tight", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
-bgcolor(na(quad) ? na : color.new(quadColor(quad), 88), title = "regime")
+bgQuad = bgShows == "India regime" ? iquad : quad
+bgcolor(na(bgQuad) ? na : color.new(quadColor(bgQuad), 88), title = "regime background")
 
 // letter strip: one letter per month at a fixed level, in the regime colour
 plotchar(showStrip and quad == 0 ? stripY : na, "R reflation", char = "R", location = location.absolute, color = cREFL, size = size.tiny)
 plotchar(showStrip and quad == 1 ? stripY : na, "G goldilocks", char = "G", location = location.absolute, color = cGOLD, size = size.tiny)
 plotchar(showStrip and quad == 2 ? stripY : na, "S stagflation", char = "S", location = location.absolute, color = cSTAG, size = size.tiny)
 plotchar(showStrip and quad == 3 ? stripY : na, "D deflation", char = "D", location = location.absolute, color = cDEFL, size = size.tiny)
+// India strip, lower case, one row below
+plotchar(showIndia and iquad == 0 ? stripY2 : na, "r India reflation", char = "r", location = location.absolute, color = cREFL, size = size.tiny)
+plotchar(showIndia and iquad == 1 ? stripY2 : na, "g India goldilocks", char = "g", location = location.absolute, color = cGOLD, size = size.tiny)
+plotchar(showIndia and iquad == 2 ? stripY2 : na, "s India stagflation", char = "s", location = location.absolute, color = cSTAG, size = size.tiny)
+plotchar(showIndia and iquad == 3 ? stripY2 : na, "d India deflation", char = "d", location = location.absolute, color = cDEFL, size = size.tiny)
 
 // label at each regime change: new regime name, and how long the old one ran
 var int regimeStart = na
@@ -202,6 +243,9 @@ if na(regimeStart) and not na(quad)
 
 // alerts
 alertcondition(regimeChanged, "Regime changed", "Macro regime changed")
+iRegimeChanged = not na(iquad) and iquad != iquad[1] and not na(iquad[1])
+alertcondition(iRegimeChanged, "India regime changed", "India macro regime changed")
+alertcondition(diverge and not diverge[1], "India diverged from global", "India regime now differs from the global regime")
 alertcondition(sS > stHi and sS[1] <= stHi, "Stress crossed HIGH", "Global STRESS dial crossed HIGH")
 alertcondition(lS < liqLo and lS[1] >= liqLo, "Liquidity turned TIGHT", "LIQUIDITY dial turned TIGHT")
 alertcondition(lS > liqHi and lS[1] <= liqHi, "Liquidity turned EASING", "LIQUIDITY dial turned EASING")
@@ -214,11 +258,13 @@ plot(band("zinc"), "band zinc", display = display.none)
 plot(band("brent"), "band brent", display = display.none)
 plot(band("nifty"), "band nifty", display = display.none)
 plot(quad, "quadrant 0-3", display = display.none)
+plot(iquad, "india quadrant 0-3", display = display.none)
+plot(diverge ? 1 : 0, "divergence 0/1", display = display.none)
 
 // ---------------------------------------------------------------- legend
 // Nifty and gold 12-month medians by quadrant under the LEVEL definition,
 // 2004-01 to 2025-09 (tools/macro-regime, 2026-10-05). Reference only.
-var lg = table.new(position.top_left, 5, 5, border_width = 1)
+var lg = table.new(position.top_left, 5, 6, border_width = 1)
 if barstate.islast and showLegend
     table.cell(lg, 0, 0, "", bgcolor = color.new(color.gray, 70))
     table.cell(lg, 1, 0, "Regime", bgcolor = color.new(color.gray, 70))
@@ -245,9 +291,14 @@ if barstate.islast and showLegend
     table.cell(lg, 2, 4, "below norm / low")
     table.cell(lg, 3, 4, "+10.5%")
     table.cell(lg, 4, 4, "+16.6%")
+    table.cell(lg, 0, 5, "r g s d", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 1, 5, "India regime (lower strip)")
+    table.cell(lg, 2, 5, "IN_GROWTH vs norm / India CPI > 5%")
+    table.cell(lg, 3, 5, "R +16.6  G +13.7  S +10.4  D +0.4")
+    table.cell(lg, 4, 5, "governs Nifty")
 
 // ----------------------------------------------------------------- table
-var t = table.new(position.top_right, 2, 7, border_width = 1)
+var t = table.new(position.top_right, 2, 10, border_width = 1)
 if barstate.islast
     table.cell(t, 0, 0, "Regime", bgcolor = color.new(color.gray, 70))
     table.cell(t, 1, 0, quadLetter(quad) + "  " + quadName, bgcolor = color.new(quadColor(quad), 30), text_color = color.white)
@@ -261,5 +312,11 @@ if barstate.islast
     table.cell(t, 1, 4, str.tostring(sS, "#.00") + "  " + stTag)
     table.cell(t, 0, 5, "IN_STRESS")
     table.cell(t, 1, 5, str.tostring(nS, "#.00") + "  " + inTag)
-    table.cell(t, 0, 6, "Band " + bandAsset)
-    table.cell(t, 1, 6, showBands ? str.tostring(bandSel, "#") : "off")
+    table.cell(t, 0, 6, "India regime")
+    table.cell(t, 1, 6, quadLetter(iquad) + "  " + iquadName + (diverge ? "  DIVERGENCE" : ""), bgcolor = color.new(quadColor(iquad), 30), text_color = color.white)
+    table.cell(t, 0, 7, "IN_GROWTH")
+    table.cell(t, 1, 7, str.tostring(igS, "#.00"))
+    table.cell(t, 0, 8, "India CPI YoY")
+    table.cell(t, 1, 8, na(inCpiLvl) ? "n/a" : str.tostring(inCpiLvl, "#.00") + "%")
+    table.cell(t, 0, 9, "Band " + bandAsset)
+    table.cell(t, 1, 9, showBands ? str.tostring(bandSel, "#") : "off")

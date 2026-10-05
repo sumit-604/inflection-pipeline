@@ -66,7 +66,8 @@ def nearest(p, d, r, n: int = 8, min_gap: int = 6):
             continue
         shown.append(m)
         rows.append(dict(month=str(m), distance=round(float(dv), 2),
-                         regime=r.loc[m, "quadrant"], liquidity=r.loc[m, "liquidity"],
+                         regime=r.loc[m, "quadrant"], india=r.loc[m, "in_quadrant"],
+                         liquidity=r.loc[m, "liquidity"],
                          stress=r.loc[m, "stress"],
                          plus6=r["quadrant"].get(m + 6, "?"),
                          plus12=r["quadrant"].get(m + 12, "?"),
@@ -74,6 +75,36 @@ def nearest(p, d, r, n: int = 8, min_gap: int = 6):
         if len(rows) >= n:
             break
     return now, x, rows
+
+
+def india_section(p, d, r) -> list[str]:
+    """India regime spells, and what Nifty did for each global x India pair."""
+    now = r.index[-1]
+    cur, icur = r.loc[now, "quadrant"], r.loc[now, "in_quadrant"]
+    rr = r.rename(columns={"quadrant": "global", "in_quadrant": "quadrant"})
+    sp = spells(rr, icur)
+    nxt = pd.Series([s[3] for s in sp if s[3] != "ongoing"]).value_counts()
+    L = ["", "### India regime analogues", "",
+         f"**India {icur} spells since 1998** ({len(sp)}, median length "
+         f"{int(np.median([s[2] for s in sp]))} months). What came next: "
+         + ", ".join(f"{k} {v}" for k, v in nxt.items()) + ".", "",
+         "| Start | End | Months | Next India regime | Global regime at end |",
+         "|---|---|---|---|---|"]
+    for s in sp:
+        L.append(f"| {s[0]} | {s[1]} | {s[2]} | {s[3]} | {r.loc[s[1], 'quadrant']} |")
+    f12 = 100 * (p["nifty"].shift(-12) / p["nifty"] - 1)
+    x = r[r["in_quadrant"].notna() & r["quadrant"].notna()].copy()
+    x["n12"] = f12.reindex(x.index)
+    tab = x.groupby(["quadrant", "in_quadrant"])["n12"].agg(["count", "median"])
+    L += ["", f"**Nifty 12 months on, by global x India pair** (months since "
+          f"{x.index[0]}; the pair now is global {cur} / India {icur}). "
+          f"Regimes differ in {100 * x['divergence'].mean():.0f}% of months.", "",
+          "| Global | India | Months | Nifty 12m median |", "|---|---|---|---|"]
+    for (g, i), w in tab.iterrows():
+        mark = " **<- now**" if (g == cur and i == icur) else ""
+        med = f"{w['median']:+.1f}%" if pd.notna(w["median"]) else ""
+        L.append(f"| {g} | {i} | {int(w['count'])} | {med}{mark} |")
+    return L
 
 
 def section(p, d, r) -> list[str]:
@@ -93,14 +124,15 @@ def section(p, d, r) -> list[str]:
           "6-month changes, and eight inputs (real yield, curve, copper/gold, "
           "Fed funds change, Baa spread, USD/INR, Brent 12m, gold 6m). "
           "Distance is root-mean-square in z units; below 1.0 is close.", "",
-          "| Month | Dist | Regime then | Liq | Stress | +6m | +12m | "
+          "| Month | Dist | Regime then | India then | Liq | Stress | +6m | +12m | "
           + " | ".join(f"{a} 12m" for a in ASSETS) + " |",
-          "|---|---|---|---|---|---|---|" + "---|" * len(ASSETS)]
+          "|---|---|---|---|---|---|---|---|" + "---|" * len(ASSETS)]
     for w in rows:
-        L.append(f"| {w['month']} | {w['distance']} | {w['regime']} | {w['liquidity']} | "
+        L.append(f"| {w['month']} | {w['distance']} | {w['regime']} | {w['india']} | {w['liquidity']} | "
                  f"{w['stress']} | {w['plus6']} | {w['plus12']} | "
                  + " | ".join(f"{w[a]:+.0f}%" if pd.notna(w[a]) else "" for a in ASSETS) + " |")
     L += ["", "Now, same features (z): " + ", ".join(f"{k} {v:+.2f}" for k, v in x.items())]
+    L += india_section(p, d, r)
     return L
 
 

@@ -6,12 +6,15 @@
 //    asset you want to test (NIFTY, GOLD, SILVER, a metal, BRENT).
 // 2. Add this strategy to the same chart.
 // 3. In this strategy's settings, set "Signal source" to the indicator's
-//    "quadrant 0-3" plot (or one of its "band <asset>" plots), and pick a mode.
+//    "quadrant 0-3" plot (global regime), "india quadrant 0-3" (India
+//    regime, for Nifty tests) or one of its "band <asset>" plots, and pick a mode.
 // 4. Read the Strategy Tester tab: net profit, drawdown, trade list.
 //    Compare the "Buy and hold" line in the Tester's overview with the equity.
 //
-// Default = the one rule that held out of sample (STRATEGY_CHECK_2026-10.md):
-// long in R, G and D, flat in S. The grid-search winners did not hold.
+// Default = long in R, G and D, flat in S. Under the direction definition it
+// held out of sample on five of six assets; under the level definition (the
+// indicator's default) on three: aluminium, zinc, Brent. For Nifty it did not
+// (STRATEGY_CHECK_2026-10.md). The grid-search winners did not hold.
 //
 // Signals are known at the month close; orders fill at the NEXT month's open,
 // so no look-ahead. Fees and slippage are inputs; set them to what you pay.

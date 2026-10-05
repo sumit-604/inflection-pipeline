@@ -169,7 +169,8 @@ tGva   = na(gvaYoY) ? int(na) : gvaYoY > gvaBench ? 1 : 0
 tCr    = na(ecLG) ? int(na) : ecLG > creditBench ? 1 : 0
 nAvail = (na(tIip) ? 0 : 1) + (na(tGva) ? 0 : 1) + (na(tCr) ? 0 : 1)
 nVotes = (na(tIip) ? 0 : tIip) + (na(tGva) ? 0 : tGva) + (na(tCr) ? 0 : tCr)
-voteHigh = nAvail >= 2 ? nVotes * 2 > nAvail : bool(na)
+// 1 = growth HIGH, 0 = LOW, na = fewer than two tests available
+voteHigh = nAvail >= 2 ? (nVotes * 2 > nAvail ? 1 : 0) : int(na)
 
 gS = ta.sma(GROWTH, smooth)
 iS = ta.sma(INFLATION, smooth)
@@ -192,7 +193,7 @@ quad = not (okG and okI) ? int(na) : gUp and iUp ? 0 : gUp and not iUp ? 1 : not
 quadName = quad == 0 ? "REFLATION" : quad == 1 ? "GOLDILOCKS" : quad == 2 ? "STAGFLATION" : quad == 3 ? "DEFLATION" : "n/a"
 // India quadrant, same logic on IN_GROWTH and India CPI
 useVote = inGrowthDef == "Benchmarks (vote)"
-igUp = useVote ? voteHigh : regimeDef == "Level vs benchmarks" ? igS > 0 : igS - igS[dirLen] > 0
+igUp = useVote ? voteHigh == 1 : regimeDef == "Level vs benchmarks" ? igS > 0 : igS - igS[dirLen] > 0
 iiUp = regimeDef == "Level vs benchmarks" ? inCpiLvl > inCpiBench : inCpiLvl - inCpiLvl[dirLen] > 0
 okIG = useVote ? not na(voteHigh) : regimeDef == "Level vs benchmarks" ? not na(igS) : not na(igS - igS[dirLen])
 okII = regimeDef == "Level vs benchmarks" ? not na(inCpiLvl) : not na(inCpiLvl - inCpiLvl[dirLen])

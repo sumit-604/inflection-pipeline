@@ -339,6 +339,77 @@ def mospi():
           "2014-01 and the FRED OECD series before")
 
 
+def _nas_quarterly(fname: str) -> pd.DataFrame:
+    """MoSPI quarterly GVA at constant prices -> DataFrame indexed by the
+    calendar quarter-end month (fiscal Q1 = Apr-Jun -> YYYY-06), columns
+    = industry, values Rs crore. Duplicate (year, quarter, industry) rows
+    from unstable server paging are dropped (identical values)."""
+    rows = json.loads((RAW / fname).read_text())
+    rec = {}
+    for r in rows:
+        fy = int(r["year"][:4]); q = int(r["quarter"][1])
+        end = {1: pd.Period(f"{fy}-06", "M"), 2: pd.Period(f"{fy}-09", "M"),
+               3: pd.Period(f"{fy}-12", "M"), 4: pd.Period(f"{fy + 1}-03", "M")}[q]
+        rec[(end, r["industry"])] = float(r["constant_price"])
+    df = pd.Series(rec).unstack()
+    return df.sort_index()
+
+
+SERVICES = ["Trade, Hotels, Transport, Communication & Services Related to Broadcasting",
+            "Financial, Real Estate & Professional Services",
+            "Public Administration, Defence & Other Services"]
+
+
+def mospi_nas():
+    """India real GVA YoY, quarterly, from MoSPI national accounts: services
+    (three service industries summed), manufacturing, total. Base 2011-12
+    for quarters to 2023-03, base 2022-23 from 2023-06 (YoY needs four
+    quarters inside one base, so the new base starts a year after its
+    first quarter). Stored at the quarter-end month; the model treats a
+    quarter as known two months after it ends (the release lag)."""
+    a = _nas_quarterly("mospi_nas_gva_quarterly_2011-12.json")
+    b = _nas_quarterly("mospi_nas_gva_quarterly_2022-23.json")
+    out = {}
+    for label, cols in [("services", SERVICES), ("manufacturing", ["Manufacturing"]),
+                        ("total", ["Total Gross Value Added"])]:
+        ya = 100 * (a[cols].sum(axis=1) / a[cols].sum(axis=1).shift(4) - 1)
+        yb = 100 * (b[cols].sum(axis=1) / b[cols].sum(axis=1).shift(4) - 1)
+        s = pd.concat([ya[ya.index <= pd.Period("2023-03", "M")],
+                       yb[yb.index >= pd.Period("2023-06", "M")]]).dropna()
+        out[label] = s
+    df = pd.DataFrame({"value": out["services"], "manufacturing_yoy": out["manufacturing"],
+                       "total_gva_yoy": out["total"]})
+    df.index = df.index.astype(str); df.index.name = "month"
+    _save(df, "in_gva_yoy_q", "MoSPI NAS quarterly GVA at constant prices, "
+          "indicator 1, industries 6+9+12 (services), 3, 15",
+          f"{MOSPI_API}/api/nas/getNASData?base_year=<2011-12|2022-23>&series="
+          "Current&frequency_code=Quarterly&indicator_code=1&industry_code="
+          "3,6,9,12,15&Format=JSON", "PRIMARY",
+          "value = services GVA YoY %, quarterly, at the quarter-end month; "
+          "base 2011-12 to 2023-03, base 2022-23 from 2023-06; released "
+          "two months after quarter end")
+
+
+def fred_bis_credit():
+    """BIS credit to the private non-financial sector from domestic banks,
+    India, INR bn, quarterly (FRED CRDQINBPABIS). YoY % at the quarter-end
+    month. Stands in for RBI bank credit growth in the Python history; the
+    TradingView port uses the RBI monthly loan-growth feed (field LG)."""
+    df = pd.read_csv(RAW / "fred_CRDQINBPABIS.csv")
+    s = pd.Series(df.iloc[:, 1].values, index=pd.to_datetime(df.iloc[:, 0]))
+    s.index = s.index.to_period("Q").asfreq("M", "end")
+    y = (100 * (s / s.shift(4) - 1)).dropna()
+    out = pd.DataFrame({"value": y.values, "level_inr_bn": s.reindex(y.index).values},
+                       index=y.index.astype(str))
+    out.index.name = "month"
+    _save(out, "in_bank_credit_yoy_q", "CRDQINBPABIS",
+          "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CRDQINBPABIS",
+          "PRIMARY", "BIS credit from domestic banks to the private "
+          "non-financial sector, India, YoY %, quarterly at the quarter-end "
+          "month; fetched through Firecrawl 2026-10-05 and verified row for "
+          "row against a second fetch")
+
+
 # ------------------------------------------------------- v1 cache reuse
 def v1_reuse():
     if not V1.exists():
@@ -392,7 +463,7 @@ def write_sources():
 
 if __name__ == "__main__":
     DATA.mkdir(exist_ok=True)
-    fred(); yahoo(); eia(); nsdl(); cftc(); mospi(); v1_reuse()
+    fred(); yahoo(); eia(); nsdl(); cftc(); mospi(); mospi_nas(); fred_bis_credit(); v1_reuse()
     write_sources()
     for r in LOG:
         print(f"{r['status']:9} {r['name']:28} {str(r['first']):>8} -> "

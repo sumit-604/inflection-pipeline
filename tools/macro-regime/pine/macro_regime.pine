@@ -24,12 +24,16 @@
 // liquidity TIGHT / EASING.
 //
 // INDIA REGIME (added 2026-10-05): the same quadrant on India's own growth
-// and inflation. India growth = IN_GROWTH dial (IIP YoY, OECD CLI 6m change,
-// Nifty 6m change) above its 5-year norm; India inflation high = CPI YoY
-// above 5% (RBI 4% target plus one point). Lower-case strip r g s d below the
+// and inflation. India growth HIGH (default, "Design A") when a strict
+// majority of three fixed-benchmark tests pass: IIP YoY 3-month mean above
+// 4%, services GDP YoY above 7% (quarterly, held between prints), bank
+// credit growth above 12%. No price input. The earlier z-score dial (IIP,
+// OECD CLI, Nifty 6m change against their 5-year norm) is kept as an
+// option. India inflation high = CPI YoY above 5% (RBI 4% target plus one
+// point). Lower-case strip r g s d below the
 // global strip; "Background shows" picks which regime colours the pane. The
 // India regime governs Nifty and Indian rates; the global one governs gold,
-// silver, base metals and Brent. Hidden plot "india quadrant 0-3" feeds the
+// silver, base metals and Brent. Hidden plot "india quadrant 0-3" and "india growth votes 0-3" feed the
 // strategy. Python reference: 1998-2026 the two regimes differ in 69% of
 // months; Nifty 12m median by India regime R +16.6%, G +13.7%, S +10.4%,
 // D +0.4% (STRATEGY_CHECK_2026-10.md, India section).
@@ -41,6 +45,11 @@ regimeDef = input.string("Level vs benchmarks", "Regime definition", options = [
 cpiBench  = input.float(3.0, "Inflation HIGH if US CPI YoY above (%)", group = "Level benchmarks")
 beBench   = input.float(2.5, "or if 10y breakeven above (%)", group = "Level benchmarks")
 inCpiBench = input.float(5.0, "India inflation HIGH if CPI YoY above (%)", group = "Level benchmarks")
+inGrowthDef = input.string("Benchmarks (vote)", "India growth definition", options = ["Benchmarks (vote)", "z-score dial"], group = "India growth",
+     tooltip = "Vote: growth HIGH when a strict majority of the available tests pass (2 of 3, or both of 2). No price input. z-score dial: IIP, OECD CLI and Nifty 6m change against their 5-year norm (the earlier definition).")
+iipBench    = input.float(4.0,  "IIP YoY, 3-month mean, above (%)", group = "India growth")
+gvaBench    = input.float(7.0,  "Services GDP YoY above (%)", group = "India growth")
+creditBench = input.float(12.0, "Bank credit growth YoY above (%)", group = "India growth")
 bgShows   = input.string("Global regime", "Background shade follows", options = ["Global regime", "India regime"], group = "Display")
 display   = input.string("Minimal", "Pane content", options = ["Minimal", "Dials"], group = "Display",
      tooltip = "Minimal: background, letter strips, 4-row table. Dials: adds the dial lines and the full table. Legend and labels are separate switches.")
@@ -104,6 +113,10 @@ inIpYY  = m("ECONOMICS:INIPYY")        // India industrial production, % YoY
 inIpIdx = m("FRED:INDPROINDMISMEI")    // fallback: OECD production index
 nifty   = m("NSE:NIFTY")
 inCpiLvl = na(inIrYY) ? inCpi : inIrYY
+// India growth tests (request.economic repeats the last release between prints)
+ecIP   = request.economic("IN", "IPYY", ignore_invalid_symbol = true)   // industrial production YoY
+ecLG   = request.economic("IN", "LG",   ignore_invalid_symbol = true)   // bank loan growth YoY
+ecGDPS = request.economic("IN", "GDPS", ignore_invalid_symbol = true)   // GDP from services, quarterly level
 
 // ------------------------------------------------------------ transforms
 chg(float s, int n)    => s - s[n]
@@ -146,8 +159,17 @@ INFLATION = mean6(zs(t10yie), zs(chg(t10yie, 6)), zs(yoy(cpi)), zs(chg(yoy(corec
 LIQUIDITY = mean6(zs(yoy(m2)), zs(logchg(walcl, 6)), -zs(chg(fedfund, 6)), -zs(nfci), -zs(chg(math.log(dxy), 6)), -zs(chg(dfii10, 6)))
 STRESS = mean6(zs(vix), zs(baa10y), zs(stlfsi), zs(epuUS), zs(epuGl), float(na))
 IN_STRESS = mean6(zs(invix), zs(epuIN), zs(logchg(usdinr, 6)), zs(chg(inCall, 6)), zs(inCpiLvl), float(na))   // FPI input not on TradingView
-iipYoY = na(inIpYY) ? yoy(inIpIdx) : inIpYY
+iipYoY = na(ecIP) ? (na(inIpYY) ? yoy(inIpIdx) : inIpYY) : ecIP
 IN_GROWTH = mean6(zs(iipYoY), zs(chg(inCli, 6)), zs(logchg(nifty, 6)), float(na), float(na), float(na))
+// vote: IIP 3m mean > bench, services GDP YoY > bench, credit growth > bench
+iip3   = ta.sma(iipYoY, 3)
+gvaYoY = yoy(ecGDPS)
+tIip   = na(iip3) ? int(na) : iip3 > iipBench ? 1 : 0
+tGva   = na(gvaYoY) ? int(na) : gvaYoY > gvaBench ? 1 : 0
+tCr    = na(ecLG) ? int(na) : ecLG > creditBench ? 1 : 0
+nAvail = (na(tIip) ? 0 : 1) + (na(tGva) ? 0 : 1) + (na(tCr) ? 0 : 1)
+nVotes = (na(tIip) ? 0 : tIip) + (na(tGva) ? 0 : tGva) + (na(tCr) ? 0 : tCr)
+voteHigh = nAvail >= 2 ? nVotes * 2 > nAvail : bool(na)
 
 gS = ta.sma(GROWTH, smooth)
 iS = ta.sma(INFLATION, smooth)
@@ -169,9 +191,10 @@ okI = regimeDef == "Level vs benchmarks" ? (not na(cpiYoY) or not na(t10yie)) : 
 quad = not (okG and okI) ? int(na) : gUp and iUp ? 0 : gUp and not iUp ? 1 : not gUp and iUp ? 2 : 3
 quadName = quad == 0 ? "REFLATION" : quad == 1 ? "GOLDILOCKS" : quad == 2 ? "STAGFLATION" : quad == 3 ? "DEFLATION" : "n/a"
 // India quadrant, same logic on IN_GROWTH and India CPI
-igUp = regimeDef == "Level vs benchmarks" ? igS > 0 : igS - igS[dirLen] > 0
+useVote = inGrowthDef == "Benchmarks (vote)"
+igUp = useVote ? voteHigh : regimeDef == "Level vs benchmarks" ? igS > 0 : igS - igS[dirLen] > 0
 iiUp = regimeDef == "Level vs benchmarks" ? inCpiLvl > inCpiBench : inCpiLvl - inCpiLvl[dirLen] > 0
-okIG = regimeDef == "Level vs benchmarks" ? not na(igS) : not na(igS - igS[dirLen])
+okIG = useVote ? not na(voteHigh) : regimeDef == "Level vs benchmarks" ? not na(igS) : not na(igS - igS[dirLen])
 okII = regimeDef == "Level vs benchmarks" ? not na(inCpiLvl) : not na(inCpiLvl - inCpiLvl[dirLen])
 iquad = not (okIG and okII) ? int(na) : igUp and iiUp ? 0 : igUp and not iiUp ? 1 : not igUp and iiUp ? 2 : 3
 iquadName = iquad == 0 ? "REFLATION" : iquad == 1 ? "GOLDILOCKS" : iquad == 2 ? "STAGFLATION" : iquad == 3 ? "DEFLATION" : "n/a"
@@ -266,6 +289,7 @@ plot(band("nifty"), "band nifty", display = display.none)
 plot(quad, "quadrant 0-3", display = display.none)
 plot(iquad, "india quadrant 0-3", display = display.none)
 plot(diverge ? 1 : 0, "divergence 0/1", display = display.none)
+plot(nVotes, "india growth votes 0-3", display = display.none)
 
 // ---------------------------------------------------------------- legend
 // Nifty and gold 12-month medians by quadrant under the LEVEL definition,
@@ -323,7 +347,7 @@ if barstate.islast
         table.cell(t, 1, 6, str.tostring(lS, "#.00"))
         table.cell(t, 0, 7, "STRESS z")
         table.cell(t, 1, 7, str.tostring(sS, "#.00") + "  India " + str.tostring(nS, "#.00"))
-        table.cell(t, 0, 8, "IN_GROWTH z")
-        table.cell(t, 1, 8, str.tostring(igS, "#.00") + "  India CPI " + (na(inCpiLvl) ? "n/a" : str.tostring(inCpiLvl, "#.0") + "%"))
+        table.cell(t, 0, 8, "India growth")
+        table.cell(t, 1, 8, str.tostring(nVotes) + " of " + str.tostring(nAvail) + ": IIP " + (na(iip3) ? "n/a" : str.tostring(iip3, "#.0")) + "  svc GDP " + (na(gvaYoY) ? "n/a" : str.tostring(gvaYoY, "#.0")) + "  credit " + (na(ecLG) ? "n/a" : str.tostring(ecLG, "#.0")) + "  CPI " + (na(inCpiLvl) ? "n/a" : str.tostring(inCpiLvl, "#.0")))
         table.cell(t, 0, 9, "Band " + bandAsset)
         table.cell(t, 1, 9, showBands ? str.tostring(bandSel, "#") : "off")

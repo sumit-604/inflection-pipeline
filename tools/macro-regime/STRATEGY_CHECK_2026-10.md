@@ -164,3 +164,75 @@ months; IN_GROWTH z +0.00 (IIP +8.0% YoY pulls up, Nifty 6m change pulls
 down). Both India inputs sit on their lines; the likeliest next India
 read is REFLATION (CPI crosses 5%), which is what followed 12 of the 16
 closed India GOLDILOCKS spells since 1998.
+
+## India growth test rebuilt on fixed benchmarks (Design A), 2026-10-05
+
+Operator ruling 2026-10-05. The India growth dial (z-scores of IIP, OECD
+CLI and Nifty 6m change against their 5-year norm) is replaced as the
+default by a majority vote on three fixed benchmarks, in line with the
+inflation rule: IIP YoY 3-month mean above 4% (industry); services GVA
+YoY above 7% (the 55% of GVA that IIP misses; quarterly, MoSPI national
+accounts, known two months after quarter end, held for the quarter);
+bank credit YoY above 12% (BIS credit from domestic banks, FRED
+CRDQINBPABIS, quarterly, held; the TradingView port reads the RBI
+monthly loan-growth feed instead). Growth HIGH when a strict majority
+of the available tests pass: two of three, or both of two before the
+quarterly GVA series starts (2012-08). Nifty is out of the India test.
+The PMIs were the first choice for the services leg but are not in the
+Pine economic-data list, so services GVA stands in on both sides.
+
+India strip by year, new (vote) and old (z-score dial). One letter per
+month; . = not computable.
+
+| Year | New: vote on benchmarks | Old: z-score dial |
+|---|---|---|
+| 2005 | `....GGGGGGRR` | `GGGGGGGGGGRR` |
+| 2006 | `GGGGRRRRRRRR` | `GGGGRRRRRRRR` |
+| 2007 | `RRRRRRRRRRRR` | `RRRRRRRRRRRR` |
+| 2008 | `RRRRRRRRRRRS` | `RRSSSSSSSSSS` |
+| 2009 | `SSSSSSSSSSSR` | `SSSSSRRRRRRR` |
+| 2010 | `SSSRRRRRRRRR` | `RRRRRRSSSSSS` |
+| 2011 | `RRRRRRRRSSSS` | `SSSSSSSSSSSS` |
+| 2012 | `SSSSSSSRRRRR` | `SSSSSSSSSSSS` |
+| 2013 | `RRRRRSSRRRRR` | `SSRRRSSSSRRR` |
+| 2014 | `RRRRSRRRRDDD` | `RRRRRRRRRGGG` |
+| 2015 | `RSSDSSDDDGSR` | `RRRGSSDDDDSS` |
+| 2016 | `SRGRRRRRGGGD` | `SSDSSRRRGGDD` |
+| 2017 | `DDDDDDDDDDDS` | `DDDDGGGGGGGR` |
+| 2018 | `SGGGDDGGGGGD` | `RGGGGGGGGGDD` |
+| 2019 | `GDDDGGDDDDSS` | `DDDDDDDDDDSS` |
+| 2020 | `SSSSSSSSSSSD` | `SSSSSSSSRRRG` |
+| 2021 | `DSSDSSSRGGDS` | `GRRGRRRRGGGR` |
+| 2022 | `SSSSSSSRSRRR` | `RSSSSSSSSSSR` |
+| 2023 | `RRRGGGRRRGRR` | `RRSDDDRRRGRR` |
+| 2024 | `SRGGGRGGRRRR` | `RRGGGRGGRRRS` |
+| 2025 | `GGGGDDDGGGGG` | `DDDDDDDDDDDD` |
+| 2026 | `GGGGGGGGG` | `DDDDDDDDG` |
+
+Regime changes: new 86 in 367 months (median spell 2), old 63 in 341 months (median spell 3). Most flips on both sides come from CPI crossing the 5% line, not from growth.
+
+Nifty 12 months on, median, by India regime:
+
+| Regime | New: months | New: Nifty 12m | Old: months | Old: Nifty 12m |
+|---|---|---|---|---|
+| REFLATION | 136 | +9.3% | 94 | +16.6% |
+| GOLDILOCKS | 74 | +9.6% | 77 | +13.7% |
+| STAGFLATION | 85 | +13.2% | 94 | +10.4% |
+| DEFLATION | 60 | +4.6% | 64 | +0.4% |
+
+Reading. The two definitions disagree most where it matters now. The
+old dial read India DEFLATION for all of 2025 and to August 2026 because
+IIP growth of 2 to 5% sat below a five-year norm that still held the
+2021-23 rebound, and Nifty's 6-month change was negative. The vote reads
+2025 as GOLDILOCKS with a two-month DEFLATION dip (May-June 2025, all
+three tests failing): services GVA ran 7.5 to 9%, credit 12%, IIP mixed.
+That is the official-data picture of 2025: inflation collapsing, growth
+intact, markets weak. 2020 reads STAGFLATION all year (CPI above 6%,
+growth tests failing), 2017 DEFLATION (demonetisation and GST year, CPI
+under 5%), 2008 REFLATION until the last quarter. The new strip
+separates Nifty's forward return less than the old one did, which is
+expected: the old dial carried Nifty's own 6-month change inside it.
+
+Current read (2026-09): 2 of 2 tests pass (IIP 3m mean 7.8%, services
+GVA 10.0% for Apr-Jun 2026; the BIS credit series ends 2025-12 and is
+NOT FOUND for 2026-05 on). India GOLDILOCKS, CPI 4.82% against 5.0%.

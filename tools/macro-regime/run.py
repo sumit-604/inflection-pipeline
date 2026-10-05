@@ -12,8 +12,9 @@ import pandas as pd
 
 from analogues import section as analogue_section
 from model import (ASSETS, BAND, BASE, BASE_REASON, BE_BENCH, CPI_BENCH,
-                   DIAL_INPUTS, DIALS, IN_CPI_BENCH, LIQ_SHADE, QIDX,
-                   STRESS_SHADE, run_all, yoy, z)
+                   DIAL_INPUTS, DIALS, IN_CPI_BENCH, IN_CREDIT_BENCH,
+                   IN_GVA_BENCH, IN_IIP_BENCH, LIQ_SHADE, QIDX, STRESS_SHADE,
+                   india_growth_votes, run_all, yoy, z)
 
 HERE = Path(__file__).resolve().parent
 # EVALUATION_2026-10.md: condition (a) of PASS_BAR.md failed, so latest.md
@@ -42,8 +43,13 @@ def _vs_norm(v: float) -> str:
     return f"{'above' if v > 0 else 'below'} its 5-year norm at z {v:+.2f}"
 
 
+def _fmt(x) -> str:
+    return "NOT FOUND" if pd.isna(x) else f"{x:.1f}%"
+
+
 def main():
     p, d, r, b = run_all()
+    v = india_growth_votes(p)
     m = r.index[-1]
     row = r.loc[m]
     L = [f"## Macro regime read, {m} (tools/macro-regime, 6-12 month horizon)",
@@ -56,9 +62,12 @@ def main():
          f"Liquidity {row['liquidity']}. Global stress {row['stress']}. India stress {row['in_stress']}.",
          "",
          f"**India regime: {row['in_quadrant']}** (India growth "
-         f"{_vs_norm(d.loc[m, 'IN_GROWTH_sm'])}; "
-         f"India CPI YoY {p['in_cpi'].ffill(limit=2).loc[m]:.2f}% against the {IN_CPI_BENCH}% benchmark, "
-         f"IIP YoY {p['in_iip_yoy'].ffill(limit=2).loc[m]:.1f}%). "
+         f"{'HIGH' if row['in_quadrant'] in ('REFLATION', 'GOLDILOCKS') else 'LOW'}: "
+         f"{int(v.loc[m, 'votes'])} of {int(v.loc[m, 'available'])} tests pass, "
+         f"IIP YoY 3m mean {p['in_iip_yoy'].ffill(limit=2).rolling(3, min_periods=2).mean().loc[m]:.1f}% vs {IN_IIP_BENCH}%, "
+         f"services GVA YoY {_fmt(p['in_services_gva_yoy'].loc[m])} vs {IN_GVA_BENCH}%, "
+         f"bank credit YoY {_fmt(p['in_bank_credit_yoy'].loc[m])} vs {IN_CREDIT_BENCH}%; "
+         f"India CPI YoY {p['in_cpi'].ffill(limit=2).loc[m]:.2f}% against the {IN_CPI_BENCH}% benchmark). "
          + ("**DIVERGENCE**: the India regime differs from the global one. "
             if row["divergence"] else "India and global regimes agree. ")
          + "The India regime governs Nifty and Indian rates; the global regime "

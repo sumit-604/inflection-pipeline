@@ -2,7 +2,7 @@
 
 **Regime: REFLATION** (growth above its 5-year norm at z +0.59; inflation HIGH against the benchmarks CPI 3.0% / breakeven 2.5%, US CPI YoY 3.4%, breakeven 2.36%). Liquidity EASING. Global stress LOW. India stress NORMAL.
 
-**India regime: GOLDILOCKS** (India growth on its 5-year norm at z +0.00 (on the line: the call can flip next month); India CPI YoY 4.82% against the 5.0% benchmark, IIP YoY 8.0%). **DIVERGENCE**: the India regime differs from the global one. The India regime governs Nifty and Indian rates; the global regime governs gold, silver, base metals and Brent.
+**India regime: GOLDILOCKS** (India growth HIGH: 2 of 2 tests pass, IIP YoY 3m mean 7.8% vs 4.0%, services GVA YoY 10.0% vs 7.0%, bank credit YoY NOT FOUND vs 12.0%; India CPI YoY 4.82% against the 5.0% benchmark). **DIVERGENCE**: the India regime differs from the global one. The India regime governs Nifty and Indian rates; the global regime governs gold, silver, base metals and Brent.
 
 | Dial | Level (z) | 6m change | Inputs voting | Reading |
 |---|---|---|---|---|
@@ -48,11 +48,11 @@ Inputs, latest z-score (sign already applied; "carried" = last published value c
 
 | Month | Dist | Regime then | India then | Liq | Stress | +6m | +12m | gold 12m | silver 12m | aluminium 12m | zinc 12m | brent 12m | nifty 12m |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 2016-11 | 0.79 | DEFLATION | DEFLATION | TIGHT | NORMAL | GOLDILOCKS | GOLDILOCKS | +9% | -0% | +21% | +26% | +32% | +24% |
+| 2016-11 | 0.79 | DEFLATION | GOLDILOCKS | TIGHT | NORMAL | GOLDILOCKS | GOLDILOCKS | +9% | -0% | +21% | +26% | +32% | +24% |
 | 2013-12 | 0.85 | GOLDILOCKS | REFLATION | NEUTRAL | LOW | DEFLATION | GOLDILOCKS | -1% | -20% | +10% | +10% | -50% | +31% |
 | 2013-06 | 0.97 | GOLDILOCKS | STAGFLATION | NEUTRAL | LOW | GOLDILOCKS | DEFLATION | +8% | +8% | +1% | +16% | +8% | +30% |
-| 2017-10 | 1.03 | GOLDILOCKS | GOLDILOCKS | TIGHT | LOW | GOLDILOCKS | DEFLATION | -4% | -15% | -5% | -18% | +22% | +0% |
-| 2021-02 | 1.04 | GOLDILOCKS | REFLATION | EASING | NORMAL | REFLATION | REFLATION | +10% | -8% | +56% | +32% | +57% | +16% |
+| 2017-10 | 1.03 | GOLDILOCKS | DEFLATION | TIGHT | LOW | GOLDILOCKS | DEFLATION | -4% | -15% | -5% | -18% | +22% | +0% |
+| 2021-02 | 1.04 | GOLDILOCKS | STAGFLATION | EASING | NORMAL | REFLATION | REFLATION | +10% | -8% | +56% | +32% | +57% | +16% |
 | 2023-11 | 1.05 | STAGFLATION | REFLATION | TIGHT | LOW | REFLATION | DEFLATION | +30% | +21% | +17% | +18% | -9% | +20% |
 | 2014-09 | 1.05 | GOLDILOCKS | REFLATION | NEUTRAL | LOW | DEFLATION | DEFLATION | -8% | -15% | -20% | -25% | -50% | -0% |
 | 2007-08 | 1.05 | GOLDILOCKS | REFLATION | TIGHT | NORMAL | STAGFLATION | STAGFLATION | +23% | +13% | +10% | -47% | +57% | -2% |
@@ -61,48 +61,51 @@ Now, same features (z): G +0.59, I -0.16, L +0.34, S -0.52, IN +0.02, G6 +0.04, 
 
 ### India regime analogues
 
-**India GOLDILOCKS spells since 1998** (17, median length 3 months). What came next: REFLATION 12, DEFLATION 3, STAGFLATION 1.
+**India GOLDILOCKS spells since 1998** (20, median length 3 months). What came next: REFLATION 9, DEFLATION 9, STAGFLATION 1.
 
 | Start | End | Months | Next India regime | Global regime at end |
 |---|---|---|---|---|
 | 1999-07 | 2000-03 | 9 | REFLATION | STAGFLATION |
-| 2002-12 | 2003-03 | 4 | REFLATION | REFLATION |
-| 2003-05 | 2004-06 | 14 | DEFLATION | REFLATION |
-| 2004-11 | 2005-10 | 12 | REFLATION | STAGFLATION |
+| 2000-07 | 2001-01 | 7 | DEFLATION | STAGFLATION |
+| 2002-06 | 2003-03 | 10 | REFLATION | REFLATION |
+| 2003-05 | 2003-06 | 2 | DEFLATION | GOLDILOCKS |
+| 2004-04 | 2005-10 | 19 | REFLATION | STAGFLATION |
 | 2006-01 | 2006-04 | 4 | REFLATION | REFLATION |
-| 2014-10 | 2014-12 | 3 | REFLATION | GOLDILOCKS |
-| 2015-04 | 2015-04 | 1 | STAGFLATION | DEFLATION |
-| 2016-09 | 2016-10 | 2 | DEFLATION | DEFLATION |
-| 2017-05 | 2017-11 | 7 | REFLATION | GOLDILOCKS |
-| 2018-02 | 2018-10 | 9 | DEFLATION | DEFLATION |
-| 2020-12 | 2021-01 | 2 | REFLATION | GOLDILOCKS |
-| 2021-04 | 2021-04 | 1 | REFLATION | REFLATION |
-| 2021-09 | 2021-11 | 3 | REFLATION | REFLATION |
+| 2015-10 | 2015-10 | 1 | STAGFLATION | DEFLATION |
+| 2016-03 | 2016-03 | 1 | REFLATION | DEFLATION |
+| 2016-09 | 2016-11 | 3 | DEFLATION | DEFLATION |
+| 2018-02 | 2018-04 | 3 | DEFLATION | GOLDILOCKS |
+| 2018-07 | 2018-11 | 5 | DEFLATION | DEFLATION |
+| 2019-01 | 2019-01 | 1 | DEFLATION | DEFLATION |
+| 2019-05 | 2019-06 | 2 | DEFLATION | DEFLATION |
+| 2021-09 | 2021-10 | 2 | DEFLATION | REFLATION |
+| 2023-04 | 2023-06 | 3 | REFLATION | STAGFLATION |
 | 2023-10 | 2023-10 | 1 | REFLATION | STAGFLATION |
 | 2024-03 | 2024-05 | 3 | REFLATION | REFLATION |
 | 2024-07 | 2024-08 | 2 | REFLATION | DEFLATION |
-| 2026-09 | 2026-09 | 1 | ongoing | REFLATION |
+| 2025-01 | 2025-04 | 4 | DEFLATION | GOLDILOCKS |
+| 2025-08 | 2026-09 | 14 | ongoing | REFLATION |
 
-**Nifty 12 months on, by global x India pair** (months since 1998-05; the pair now is global REFLATION / India GOLDILOCKS). Regimes differ in 69% of months.
+**Nifty 12 months on, by global x India pair** (months since 1998-02; the pair now is global REFLATION / India GOLDILOCKS). Regimes differ in 75% of months.
 
 | Global | India | Months | Nifty 12m median |
 |---|---|---|---|
-| DEFLATION | DEFLATION | 27 | -0.4% |
-| DEFLATION | GOLDILOCKS | 10 | +7.5% |
-| DEFLATION | REFLATION | 25 | +21.9% |
-| DEFLATION | STAGFLATION | 43 | +18.5% |
-| GOLDILOCKS | DEFLATION | 21 | +18.2% |
-| GOLDILOCKS | GOLDILOCKS | 40 | +12.6% |
-| GOLDILOCKS | REFLATION | 39 | +15.9% |
-| GOLDILOCKS | STAGFLATION | 19 | +2.1% |
-| REFLATION | DEFLATION | 1 | -8.1% |
-| REFLATION | GOLDILOCKS | 20 | +36.2% **<- now** |
-| REFLATION | REFLATION | 14 | +13.4% |
-| REFLATION | STAGFLATION | 8 | -1.9% |
-| STAGFLATION | DEFLATION | 15 | -15.5% |
-| STAGFLATION | GOLDILOCKS | 7 | +7.7% |
-| STAGFLATION | REFLATION | 16 | +8.5% |
-| STAGFLATION | STAGFLATION | 24 | +7.9% |
+| DEFLATION | DEFLATION | 22 | -1.6% |
+| DEFLATION | GOLDILOCKS | 15 | +7.7% |
+| DEFLATION | REFLATION | 37 | +17.9% |
+| DEFLATION | STAGFLATION | 34 | +20.2% |
+| GOLDILOCKS | DEFLATION | 29 | +13.7% |
+| GOLDILOCKS | GOLDILOCKS | 28 | +8.3% |
+| GOLDILOCKS | REFLATION | 35 | +8.9% |
+| GOLDILOCKS | STAGFLATION | 23 | +15.8% |
+| REFLATION | DEFLATION | 2 | +13.7% |
+| REFLATION | GOLDILOCKS | 15 | +35.9% **<- now** |
+| REFLATION | REFLATION | 16 | +7.7% |
+| REFLATION | STAGFLATION | 6 | +3.7% |
+| STAGFLATION | DEFLATION | 4 | -8.2% |
+| STAGFLATION | GOLDILOCKS | 16 | -16.0% |
+| STAGFLATION | REFLATION | 28 | +7.0% |
+| STAGFLATION | STAGFLATION | 12 | +15.0% |
 
 Series ending before the read month:
 
@@ -124,5 +127,7 @@ Series ending before the read month:
 - imf_zinc.csv ends 2026-07
 - in_iip_yoy.csv ends 2011-12
 - in_cpi_yoy_mospi.csv ends 2026-08
+- in_gva_yoy_q.csv ends 2012-06
+- in_bank_credit_yoy_q.csv ends 2025-12
 
 No direction call is made for any horizon. This is a regime read, not a forecast. Evaluation: EVALUATION_2026-10.md; bar: PASS_BAR.md; reading: VERDICT_2026-10.md.

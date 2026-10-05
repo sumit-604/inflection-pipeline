@@ -63,6 +63,19 @@ def load_panel() -> pd.DataFrame:
               "in_gsec_10y", "in_cpi_yoy", "in_m3", "in_cli", "india_vix",
               "us_crude_stocks_ex_spr", "in_iip_yoy", "in_cpi_yoy_mospi"]:
         c[k] = _s(k)
+    # quarterly series, placed when they become known: GVA two months after
+    # the quarter ends (release lag), bank credit one month after; each then
+    # holds for the quarter (ffill 3 months).
+    gva = _s("in_gva_yoy_q")
+    if gva is not None:
+        gva.index = gva.index + 2
+        c["in_services_gva_yoy"] = gva
+        mf = _s("in_gva_yoy_q", "manufacturing_yoy"); mf.index = mf.index + 2
+        c["in_mfg_gva_yoy"] = mf
+    cr = _s("in_bank_credit_yoy_q")
+    if cr is not None:
+        cr.index = cr.index + 1
+        c["in_bank_credit_yoy"] = cr
     # India CPI YoY: MoSPI (issuing body) from 2014-01, FRED OECD before.
     # The two differ by up to 5.6 points on the overlap; MoSPI wins there.
     if c.get("in_cpi_yoy_mospi") is not None and c.get("in_cpi_yoy") is not None:
@@ -78,6 +91,9 @@ def load_panel() -> pd.DataFrame:
     panel = pd.DataFrame({k: v for k, v in c.items() if v is not None})
     panel = panel.sort_index()
     panel = panel[panel.index >= pd.Period(START, "M")]
+    for k in ["in_services_gva_yoy", "in_mfg_gva_yoy", "in_bank_credit_yoy"]:
+        if k in panel:
+            panel[k] = panel[k].ffill(limit=3)
     # the dollar: broad index from 2006, DXY before (spliced on log change)
     d = np.log(panel["usd_broad"]).diff()
     d = d.fillna(np.log(panel["dxy"]).diff())
@@ -206,6 +222,33 @@ BE_BENCH = 2.5             # % 10y breakeven
 # Nifty and Indian rates; the global regime governs gold, silver, the base
 # metals and Brent. When the two differ the read is flagged DIVERGENCE.
 IN_CPI_BENCH = 5.0         # % YoY, MoSPI CPI combined
+# India growth test (operator ruling 2026-10-05, "Design A"): fixed
+# benchmarks, majority vote, no price input. Growth HIGH when a strict
+# majority of the available tests pass: IIP YoY above IN_IIP_BENCH
+# (industry), services GVA YoY above IN_GVA_BENCH (the 55% of GVA that IIP
+# misses; quarterly, known two months after quarter end), bank credit YoY
+# above IN_CREDIT_BENCH (financing of both). With three tests available two
+# must pass; with two (before the quarterly GVA series starts in 2012) both
+# must. The z-score dial ("zscore") stays as an option.
+IN_GROWTH_MODE = "vote"    # "vote" or "zscore"
+IN_IIP_BENCH = 4.0         # % YoY
+IN_GVA_BENCH = 7.0         # % YoY, services GVA, constant prices
+IN_CREDIT_BENCH = 12.0     # % YoY, bank credit to the private sector
+
+
+def india_growth_votes(panel: pd.DataFrame) -> pd.DataFrame:
+    """Per-month pass/fail of the three India growth tests and the verdict."""
+    t = pd.DataFrame(index=panel.index)
+    # IIP is noisy month to month (single prints of -0.9% and +8.8% sit
+    # weeks apart in 2025-26); the test reads its 3-month mean
+    iip = panel["in_iip_yoy"].ffill(limit=2).rolling(3, min_periods=2).mean()
+    t["iip"] = (iip > IN_IIP_BENCH).where(iip.notna())
+    t["gva"] = (panel["in_services_gva_yoy"] > IN_GVA_BENCH).where(panel["in_services_gva_yoy"].notna())
+    t["credit"] = (panel["in_bank_credit_yoy"] > IN_CREDIT_BENCH).where(panel["in_bank_credit_yoy"].notna())
+    t["available"] = t[["iip", "gva", "credit"]].notna().sum(axis=1)
+    t["votes"] = t[["iip", "gva", "credit"]].fillna(False).astype(bool).sum(axis=1)
+    t["high"] = (t["votes"] * 2 > t["available"]).where(t["available"] >= 2)
+    return t
 
 
 def regime(d: pd.DataFrame, panel: pd.DataFrame | None = None,
@@ -232,9 +275,16 @@ def regime(d: pd.DataFrame, panel: pd.DataFrame | None = None,
     if mode == "level":
         icpi = panel["in_cpi"].ffill(limit=2).reindex(d.index)
         ii_hi = icpi > IN_CPI_BENCH
-        ig_hi = d["IN_GROWTH_sm"] > 0
+        if IN_GROWTH_MODE == "vote":
+            v = india_growth_votes(panel).reindex(d.index)
+            ig_hi = v["high"].fillna(False).astype(bool)
+            g_missing = v["high"].isna()
+            r["in_votes"] = v["votes"].where(v["available"] >= 2)
+        else:
+            ig_hi = d["IN_GROWTH_sm"] > 0
+            g_missing = d["IN_GROWTH_sm"].isna()
         r["in_quadrant"] = [QUAD[(a, b)] for a, b in zip(ig_hi, ii_hi)]
-        r.loc[d["IN_GROWTH_sm"].isna() | icpi.isna(), "in_quadrant"] = None
+        r.loc[g_missing | icpi.isna(), "in_quadrant"] = None
     else:
         icpi = panel["in_cpi"].ffill(limit=2).reindex(d.index) if panel is not None else None
         ig_up = d["IN_GROWTH_sm"].diff(6) > 0
@@ -322,8 +372,11 @@ def rules() -> list[str]:
          "dial is above its 5-year norm (z > 0). Direction mode (sign of the "
          "6-month change in each dial) is available as an option.",
          f"India regime: inflation HIGH when MoSPI CPI YoY > {IN_CPI_BENCH}% "
-         "(RBI 4% target plus one point); growth HIGH when the smoothed "
-         "IN_GROWTH dial is above its 5-year norm. India regime governs Nifty "
+         "(RBI 4% target plus one point); growth HIGH when a strict majority "
+         f"of the available tests pass: IIP YoY (3-month mean) > {IN_IIP_BENCH}%, services GVA "
+         f"YoY > {IN_GVA_BENCH}% (quarterly, known two months after quarter "
+         f"end), bank credit YoY > {IN_CREDIT_BENCH}% (IN_GROWTH_MODE = vote; "
+         "the z-score dial is the other option). India regime governs Nifty "
          "and Indian rates; the global regime governs gold, silver, base "
          "metals and Brent. DIVERGENCE is flagged when the two differ.",
          "LIQUIDITY tag: EASING above +0.25, TIGHT below -0.25. STRESS tag: "

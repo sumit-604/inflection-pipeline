@@ -1043,3 +1043,23 @@ OR-14 re-derivation (PR #193): SYSTANGO, SHYAMMETL, MANINDS ruled Small on
 2026-10-04 (PR #201). AIMTRON and ASIANENE: not re-derived; operator ruling
 2026-10-04 (standing ruling: framework rulings apply forward; closed names keep
 their record as of the run that produced it). Both stay CONCERN, Small.
+
+## 2026-10-05 AVANA (/step1 intake, phase 1 to Halt 1)
+
+- AR FY26 pdf pp.99-127 (all financial statements and notes) were image-only;
+  extraction reported the file OK because other pages carried text. No OCR on
+  the Windows host. Fix used: PyMuPDF page render plus two Sonnet transcription
+  subagents (1.17M tokens, $1.01). check_extraction should flag a block of
+  blank pages inside an otherwise-OK file.
+- Collector misfiled a 3-page newspaper AGM ad as an annual report and found
+  no BSE code (NSE-only SME). Announcements, results, SHP pulled from the NSE
+  API by hand.
+- Subagents run without Edit or Bash; two wrote stray one-character files in
+  the user home folder (removed). Several reports carry anchor slips they could
+  not patch.
+- 09b listed a 30-Jun-2026 SHP as findable-missing; NSE Emerge SME files
+  half-yearly, so no such filing is due.
+- Token baseline (first clean post-update run, see LESSONS OPEN KWICK line):
+  82.6M cumulative tokens, $41.26 API-equivalent; Verifier A 18.2M and
+  Verifier B 12.0M lead. Stage 5 no-concall bounded: 118k context, 0.64M
+  cumulative. Ledger at runs/avana-2026-10-05/session-cost.md.

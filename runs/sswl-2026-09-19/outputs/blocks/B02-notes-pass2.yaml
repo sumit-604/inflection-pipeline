@@ -1,0 +1,62 @@
+stage: B02-notes-pass2
+company: SSWL
+run_date: "2026-09-19"
+model: claude-sonnet-5
+pass: 2
+status: complete
+pass_2_empty: false
+report_path: outputs/reports/02-notes-pass2.md
+source_read: "inputs/annual-report/SSWL-AR-FY26-Reg34-2026-09-03.txt (standalone notes 1-54, AR p.144-183; consolidated notes 1-56, AR p.196-239; AOC-1 schedule, AR p.239-240) -- full re-read against 02-notes-pass1.md"
+units: "All figures as printed in the source: INR lakh. Cr equivalents stated inline (100 lakh = 1 Cr), never converted silently."
+carry_forward_from_pass_1_disposition:
+  - item: "R&D capex/opex split trend"
+    disposition: NO_NEW_FINDING
+  - item: "Leave-encashment non-current provision 12.4x jump (Rs 30.28 lakh -> Rs 374.39 lakh)"
+    disposition: STILL_UNEXPLAINED
+    detail: "Re-checked Note 22, 28, 43, 51. Deferred-tax note shows the leave-encashment DTA shrank, consistent with a current/non-current reclassification rather than a genuine obligation change, but no note states this. Unresolved; carry to Stage 3/5."
+  - item: "CSR routed through Hansraj Trust (Note 45D)"
+    disposition: NO_NEW_FINDING
+  - item: "Missing warranty provision roll-forward"
+    disposition: CONFIRMED_GAP
+    detail: "Full-text search confirms warranty accounting policy exists (standalone Note 2.09(g) p.150-151, consol equivalent p.205-206) but no provision balance or movement table appears anywhere in either statement."
+  - item: "Absence of any subsequent-events note format"
+    disposition: CONFIRMED_GAP
+    detail: "Full-text search confirms no subsequent-events note and no material-uncertainty-related-to-going-concern paragraph in either auditor's report; only boilerplate going-concern language in directors' responsibility statements."
+  - item: "AMW AOC-1 'Turnover: 0' line"
+    disposition: STILL_UNEXPLAINED
+    detail: "Re-confirmed verbatim (AR p.239). No note gives AMW's own revenue or explains nil turnover for an operating subsidiary. Unresolved; carry to Stage 3/5."
+  - item: "Standalone-vs-consolidated Note 8 security deposit gap (Rs 269.20 lakh)"
+    disposition: RESOLVED
+    detail: "Explained by intercompany elimination of a new-this-year Rs 270.00 lakh security deposit SSWL paid to subsidiary AMW (Note 41). FY25 comparative gap negligible (Rs 0.10 lakh), consistent with the deposit not existing then. Standard consolidation mechanics, not an irregularity."
+new_findings:
+  - {rank: 1, finding: "Consolidated retained earnings fell from +Rs 57.64 Cr (FY24 close) to -Rs 826.70 Cr (FY26 close) via two straight years of oversized reserve transfers (Rs 674.68 Cr to General Reserve in FY25, 3.5x that year's own profit; Rs 364.52 Cr to a new Capital Reserve in FY26), not via trading losses (profit was positive both years). The consolidated Note 19 'Nature and purpose of Reserves' list explains every other reserve but omits Capital Reserve entirely.", note_ref: "Note 19, consol AR p.219-220", rating: RED, why: "Expands Pass 1 Finding 1 into a confirmed two-year pattern with an internal disclosure-template inconsistency; the AR's own equity note structure shows it knows to explain reserves and did not for the largest one."}
+  - {rank: 2, finding: "Second unexplained consolidation-only reserve: Capital Revaluation Reserve is Rs 87.65 Cr consolidated vs Rs 52.81 Cr standalone (Rs 34.84 Cr gap), static both years, despite explicit standalone and consolidated Note 53(X)/55(X) statements that no PPE revaluation occurred either year.", note_ref: "Note 19 vs Note 53(X)/55(X), AR p.164/182/219-220/237", rating: RED, why: "A reserve whose stated purpose is PPE revaluation gains coexists with a flat 'no revaluation' declaration; most likely source is AMW's pre-acquisition reserve surviving into consolidation, never stated. Compounds Finding 1's AMW-related equity opacity."}
+  - {rank: 3, finding: "Note 6(II)'s impairment-assessment cross-reference (Refer Note 52(C)) leads only to the associate's summarised balance sheet/P&L -- no discount rate, methodology, or headroom is disclosed anywhere.", note_ref: "Note 6(II)/52(C), consol AR p.215-216/236-237", rating: YELLOW, why: "Confirms rather than infers the disclosure gap Pass 1 flagged; the promised substantiation does not exist in the document."}
+  - {rank: 4, finding: "AMW's net-asset figure differs by Rs 5.37 Cr between its own AOC-1 (Rs 75.98 Cr) and the consolidated Note 53 Schedule III schedule (Rs 70.61 Cr), unreconciled.", note_ref: "AOC-1 AR p.239 vs Note 53 consol AR p.237", rating: YELLOW, why: "Small but sits inside the same cluster of AMW-related figures carrying the AR's largest disclosure gaps."}
+  - {rank: 5, finding: "Trade payables grew for two consecutive years, accelerating (+25.4% FY24-25, +33.2% FY25-26); the Net Debt/EBITDA improvement Pass 1 credited to FY26 is mostly an FY24-25 deleveraging event (borrowings -21.0%) that has since stalled (-0.2% FY25-26), with FY26's ratio gain coming from EBITDA growth, not continued balance-sheet deleveraging.", note_ref: "Note 48(e) liquidity risk table, standalone AR p.178-179", rating: YELLOW, why: "Refines Pass 1 Findings 7 and 10 with a three-year trend the single-year comparison understated."}
+  - {rank: 6, finding: "'Interest Others' (Rs 69.85 Cr) opacity is a stable two-year structural gap (+7.4% YoY, Rs 65.02 Cr FY25), not an accelerating one; still no breakdown sub-note in either year.", note_ref: "Note 35, standalone AR p.169, consol AR p.224", rating: YELLOW, why: "Reframes Pass 1 Finding 4: a persistent unexplained line rather than a fresh jump."}
+  - {rank: 7, finding: "AMW acquisition date pinned to 09-01-2024; subsidiary status achieved via Companies Act Section 2(87)(ii) (control-by-agreement clause) rather than the straightforward majority-voting-power clause, alongside separately-confirmed 100% shareholding.", note_ref: "AOC-1, AR p.239", rating: GREEN, why: "New precise anchor for LBF4's acquisition timeline; informational, not itself a flag."}
+  - {rank: 8, finding: "Authorised, unissued optionally-convertible preference share capital of Rs 17.40 Cr (12,00,000 shares @ Rs 145) sits on the cap table both years, never issued.", note_ref: "Note 18, standalone AR p.162, consol AR p.217-218", rating: GREEN, why: "Shelf optionality on the cap table; background for Stage 8/11, not a finding on substance."}
+  - {rank: 9, finding: "RPT table minor completeness items: two immaterial FY25-only lines (Sale of Machinery Rs 8.55 lakh, Purchase of Goods Rs 37.15 lakh) not itemised in Pass 1's summary table (totals unaffected); power-payable outstanding total corrected to Rs 163.67 lakh FY26 (Pass 1 quoted only the Rs 135.24 lakh associate component, omitting Rs 28.43 lakh 'Others').", note_ref: "Note 41, standalone AR p.171-172", rating: GREEN, why: "Minor correction/completeness note, no change to any total previously reported."}
+flags_new_or_updated:
+  - {type: FLAG-DISCLOSURE, reason: "UPDATED: the Rs 364.52 Cr FY26 Transfer to Capital Reserves is now confirmed to be the second of two consecutive years of oversized, cross-referenced-nowhere reserve transfers (Rs 674.68 Cr to General Reserve in FY25 preceded it); consolidated retained earnings' swing to -Rs 826.70 Cr is entirely a reserve-transfer effect, not a trading-loss effect; and the Note 19 reserve-purpose list omits Capital Reserve entirely, an internal disclosure-template lapse. (Note 19, consol AR p.219-220)"}
+  - {type: FLAG-CONSOLIDATION-RESERVE, reason: "NEW: consolidated Capital Revaluation Reserve carries a Rs 34.84 Cr excess over standalone, static both years, against an explicit AR-wide 'no revaluation' declaration (Note 53(X)/55(X)); most plausible source is AMW's pre-acquisition reserve surviving consolidation without any note explaining it. (Note 19 vs Note 53(X)/55(X))"}
+  - {type: FLAG-IMPAIRMENT-SUBSTANTIATION, reason: "CONFIRMED (was inferred in Pass 1, now verified): the Note 6(II) cross-reference to Note 52(C) for the associate impairment assessment leads to summary financials only, with no discount rate, methodology, or headroom disclosed anywhere in the AR."}
+receivables_trend: "No change from Pass 1's read (deteriorating in growth-rate terms, mix-shifted toward current; see B02-notes-pass1.yaml). Pass 2 adds a two-year corroborating trend on the payables side (Note 48(e)): trade payables +25.4% FY24-25 then +33.2% FY25-26, an accelerating pattern Pass 1's single-year comparison did not show."
+restatements_found: []
+going_concern_language: "NONE beyond boilerplate ('prepared on a going concern basis') in both directors' responsibility statements and both auditor's reports; no material-uncertainty-related-to-going-concern paragraph in either report; confirmed by full-text search across the entire AR."
+analyst_note: >
+  The single most important Pass 2 result: consolidated retained earnings did
+  not fall to -Rs 826.70 Cr because SSWL lost money. Profit was positive both
+  years. It fell because two large, sequential, cross-referenced-nowhere
+  transfers moved money out of retained earnings and into two different
+  reserve buckets (General Reserve in FY25, a new Capital Reserve in FY26),
+  both almost certainly tracing to the AMW NCLT transaction the FY26 AR does
+  not carry the FY24 detail for. A second, separate consolidation-only
+  reserve (Capital Revaluation Reserve, Rs 34.84 Cr) sits against the
+  company's own "no revaluation" statement and likely shares the same root
+  cause. Stage 3/5/8 should treat these as one open question, not two or
+  three: what did the AMW acquisition/resolution-plan accounting actually
+  do to consolidated equity across FY24-FY26, and why does no note anywhere
+  connect the dots the company's own numbers otherwise draw clearly. The
+  FY25 AR (not in this corpus) is the most direct way to close this.

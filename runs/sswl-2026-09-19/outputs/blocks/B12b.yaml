@@ -1,0 +1,52 @@
+stage: B12b
+company: "SSWL"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 30
+caught: 12
+partially_caught: 11
+missed:
+  - {severity: "MAJOR", item: "Bhuj knuckle capacity: MD says 1.1mn, CFO says 0.6mn in the same call; pipeline adopts 1.1mn", anchor: "Q1 FY27, Garg p.4 vs Pranav Jain p.7; Q3 FY26 Garg p.10, p.12; Q4 FY26 Garg p.5-6"}
+  - {severity: "MAJOR", item: "Alloy pricing/margin pressure admitted ('domestic margins are crashing', 'margins coming under pressure because there is competition') vs 'expanding at every segment' told to another analyst", anchor: "Q3 FY26 Garg p.19; Q1 FY27 Garg p.12 (Jhurani vs Pradhan exchanges)"}
+  - {severity: "MAJOR", item: "Knuckle ramp under-delivers: FY26 Rs75-80cr guide vs ~Rs55-65cr implied (derived); 'not great'; still 2 customers after a year", anchor: "Q2 FY26 Joshi p.12; Q3 FY26 Garg p.5; Q4 FY26 Garg p.4, Jain p.22; Q1 FY27 Khetan/Garg p.6, p.13"}
+  - {severity: "MAJOR", item: "Bhuj re-described as export-aftermarket plant with Chinese partner Arays technical support, vs OEM-approval/sold-out framing and 'stop the Chinese' rationale", anchor: "Q1 FY27 Dixit p.14; Q3 FY26 Garg p.16"}
+  - {severity: "MINOR", item: "FY26 EBITDA/wheel stated as Rs262 and Rs272 in the same call", anchor: "Q4 FY26 Garg p.4, p.8"}
+  - {severity: "MINOR", item: "US-loss excuse grows from ~Rs200cr/yr to Rs300-400cr/yr; FY26 total export drop Rs108cr", anchor: "Q2 FY26 Joshi p.11; Q3 FY26 Garg p.5, p.19; Q4 FY26 Garg p.4"}
+  - {severity: "MINOR", item: "Truck demand blip June 2026 volunteered", anchor: "Q1 FY27 Garg p.15"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 6, confirmed: 5, wrong: 1}
+credibility_grade_concur: "lower: B- bordering C; misses cluster in management-controlled items (Bhuj timing, knuckles, FY26 exports, speaker contradictions) and B05's two RED silence flags are overstated"
+findings:
+  - {severity: "MAJOR", location: "B05 1A/2A/block trigger 2", finding: "MISSED: Bhuj knuckle capacity conflict 1.1mn (MD) vs 0.6mn (CFO); pipeline adopts 1.1mn", anchor: "Q1 FY27 p.4, p.7"}
+  - {severity: "MAJOR", location: "B05 3A/4D; B06 Q4", finding: "MISSED: alloy domestic margin/pricing pressure admitted twice and contradicted within the same call; LBF2-central", anchor: "Q3 FY26 p.19; Q1 FY27 p.12"}
+  - {severity: "MAJOR", location: "B05 2A", finding: "MISSED: knuckle FY26 revenue guide miss and customer-count stagnation", anchor: "Q2 FY26 p.12; Q4 FY26 p.4; Q1 FY27 p.6, p.13"}
+  - {severity: "MAJOR", location: "B05/B06", finding: "MISSED: Bhuj aftermarket-export orientation with Arays support", anchor: "Q1 FY27 p.14"}
+  - {severity: "MAJOR", location: "B05 2A row 6, 4A trigger 2, block timeline_slippages", finding: "Promise direction WRONG: Bhuj graded on track for Oct-2026 trial; transcript moves trial to Q4 FY27; 4-5 month delay quote misdated (Q4 FY26 p.19, not Q1 FY27); 'external guide unchanged' is false", anchor: "Q3 FY26 p.10, p.16; Q4 FY26 p.5, p.19; Q1 FY27 p.4"}
+  - {severity: "MAJOR", location: "B05 1A/1C", finding: "PARTIAL: stalled alloy share (35-37% across 4 calls vs promised rise) not flagged; EBITDA/wheel gain is price, not mix", anchor: "Q2 FY26 p.3; Q3 FY26 p.4; Q4 FY26 p.4; Q1 FY27 p.3, p.12"}
+  - {severity: "MAJOR", location: "B05 1B/4D", finding: "PARTIAL: capex creep Rs460cr->Rs550cr->Rs650cr, reversed no-steel-capex statement, unchanged +Rs200cr debt guide not flagged", anchor: "Q3 FY26 p.8, p.10, p.16-17; Q4 FY26 p.16-17; Q1 FY27 p.7"}
+  - {severity: "MAJOR", location: "B05 3B", finding: "PARTIAL: management's own contradictions of 'absolute pass-through' and working-capital admissions not flagged", anchor: "Q3 FY26 p.5; Q4 FY26 p.20-21; Q1 FY27 p.9, p.13"}
+  - {severity: "MAJOR", location: "B05 2E/4D", finding: "PARTIAL: offline-via-SGA deferral pattern (selective-disclosure risk) not named; US run-rate deferral missed", anchor: "Q2 FY26 p.6-7; Q3 FY26 p.9, p.14; Q1 FY27 p.10-11"}
+  - {severity: "MAJOR", location: "B05 2A tally", finding: "PARTIAL: FY26 export target Rs600-650cr vs Rs454cr actual omitted from promise table; tally overstates delivery", anchor: "Q2 FY26 p.11; Q4 FY26 p.15"}
+  - {severity: "MAJOR", location: "B05 block flag 1, 1B, analyst note", finding: "PARTIAL/misclassified: management describes DEBTOR (receivables) factoring; pipeline treats it as confirming the payables supplier finance arrangement (LBF3)", anchor: "Q3 FY26 Jain p.9; Q1 FY27 Jain p.9"}
+  - {severity: "MAJOR", location: "B05 1B, block guidance, 2A row 7", finding: "FY27 EBITDA guide misread as Rs650-750cr; transcript gives ~Rs650cr FY27 and ~Rs700-750cr the following year", anchor: "Q4 FY26 p.8, p.17; Q1 FY27 p.11"}
+  - {severity: "MINOR", location: "B05 FLAG-SILENCE-CASH", finding: "OVERSTATED: working-capital strain volunteered twice; interest-cost gap pressed in 2 quarters", anchor: "Q4 FY26 p.21; Q1 FY27 p.9; Q3 FY26 p.8-9"}
+  - {severity: "MINOR", location: "B05 FLAG-SILENCE-CUSTOMS", finding: "OVERSTATED at RED: SCN ~Rs1.7cr, already repaid with interest, penalty unquantified", anchor: "SSWL-showcause_2026-06-17 p.1-2"}
+  - {severity: "MINOR", location: "B06 Q9", finding: "Capex benchmark uses total FY27 capex Rs600cr as Bhuj alloy base; Bhuj is Rs420cr for 1.2mn alloy plus 0.6mn knuckles; direction survives", anchor: "Q3 FY26 p.8; Q1 FY27 p.7"}
+  - {severity: "MINOR", location: "B05 FLAG-STONEWALL/2E", finding: "Omits Q2 FY26 segment margin-% ranges and Q3 FY26 '>Rs450' implicit confirmation", anchor: "Q2 FY26 p.7; Q3 FY26 p.13"}
+  - {severity: "MINOR", location: "B05 2C", finding: "MISSED: FY26 EBITDA/wheel Rs262 vs Rs272 in the same call", anchor: "Q4 FY26 p.4, p.8"}
+  - {severity: "MINOR", location: "B05 1C", finding: "MISSED: US-loss magnitude grows between calls", anchor: "Q2 FY26 p.11; Q3 FY26 p.5; Q4 FY26 p.4"}
+  - {severity: "MINOR", location: "B05", finding: "MISSED: truck blip June 2026", anchor: "Q1 FY27 p.15"}
+  - {severity: "MINOR", location: "B05 header", finding: "PARTIAL: Deputy MD 'family issues' absence on 02-Jun, resignation 03-Jun; reason consistent, not assessed", anchor: "Q4 FY26 p.17; SSWL-dir-resign_2026-06-03 p.3"}
+  - {severity: "MINOR", location: "B05 2A/3C", finding: "PARTIAL: LCV self-contradiction in the MHCV share answer", anchor: "Q3 FY26 p.9"}
+  - {severity: "MINOR", location: "B05 3D", finding: "PARTIAL: Maruti exit vs Maruti pull contradiction; 'what contracts' evasion", anchor: "Q3 FY26 p.17-18"}
+  - {severity: "MINOR", location: "B05 4B", finding: "PARTIAL: 'sole supplier for knuckles' not sent for peer testing; ALICON reports rising die-casting capacity", anchor: "Q4 FY26 p.19; ALICON Q1 FY27 p.23"}
+  - {severity: "MINOR", location: "B06 2E(b)", finding: "'No SSWL transcript surfaces' labour-code risk; SSWL mentions wage increases", anchor: "SSWL Q4 FY26 p.9"}
+  - {severity: "MINOR", location: "B05 2A", finding: "Inconsistent gradeability: one quarter of EBITDA/wheel guide graded Delivered while export target held not gradeable", anchor: "Q4 FY26 p.4, p.8; Q1 FY27 p.3"}
+critical_count: 0
+major_count: 12
+minor_count: 13
+material_found: 14
+material_caught: 10
+acceptance_rate: 71
+coverage_basis: "14 material (1 CRITICAL + 13 MAJOR) of 30 listed; 3 caught, 7 partially caught, 4 missed. material_caught counts caught + partially caught (rule 3: partial = found but under-weighted or misclassified) = 10. Strict caught-only 3/14 = 21%; half-credit 6.5/14 = 46%. All 4 company transcripts read in full; 12 peer transcripts searched by claim, not read end to end."

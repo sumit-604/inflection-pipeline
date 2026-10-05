@@ -1,0 +1,16 @@
+stage: B12a
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-haiku-4-5-20251001
+status: complete
+numbers_checked: 18
+findings:
+  - {severity: "MAJOR", location: "Stage 1 Block A (computed EBITDA)", claimed: "Rs 510.23 Cr (screener formula)", source_truth: "AR Board's Report line E: Rs 522.956 Cr standalone (52,295.60 lakh) or Rs 513.40 Cr consolidated (51,340.04 lakh)", note: "Screener EBITDA per Stage 1 formula (Sales−RMC−Power−Other Mfr−EmpC−S&A−Other Exp+Chg Inv) = 510.23 Cr. AR Board's Report (p.19) lines E show standalone 52,295.60 lakh = 522.956 Cr and consolidated 51,340.04 lakh = 513.40 Cr. Delta 2.4% on standalone. Stage 1 does not state basis for 510.23 Cr figure or reconciliation to AR EBITDA. Material because EBITDA drives ROCE/FCF/leverage downstream.", source_fidelity: true}
+  - {severity: "MINOR", location: "Stage 1 Block A (FY22 ROCE)", claimed: "FY22 ROCE 21.73%", source_truth: "NOT FOUND in AR FY26 (only FY25-26 comparatives). Source is screener Data_Sheet (SSWL-Data_Sheet.csv row 73 FY22). Stage 1 acknowledges basis as 'Data_Sheet' proxy.", note: "Screener confirms 21.73% but AR itself lacks historical data; anchor is not the AR but screener. Stage 1 correctly cites screener; no contradiction to the stated source.", source_fidelity: false}
+critical_count: 0
+major_count: 1
+minor_count: 1
+false_positives_struck: 0
+material_universe: 47
+acceptance_rate: 94
+coverage_note: "18 of 47 material numbers checked (38% coverage). Prioritized verdict-card figures (ROCE, CAGR, leverage, CFO, promoter holding) and key balance-sheet/cash-flow anchors. Rule: all verdict-card and Section 1B inputs checked first; block scores and supporting detail deferred. At 18 checked, all Gate 0 verdict-determining figures are covered."

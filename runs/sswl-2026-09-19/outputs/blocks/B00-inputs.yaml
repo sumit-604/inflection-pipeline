@@ -1,0 +1,121 @@
+stage: B00-inputs
+company: SSWL
+run_date: 2026-09-19
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+spear_gate: "PASS. companies/SSWL.md carries 'Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/SSWL.md SPEAR)
+  - "LBF1 GUIDANCE vs DELIVERY: FY27 revenue ~Rs 6,500 Cr and exports ~Rs 600 Cr vs Q1 FY27 revenue Rs 1,510 Cr and exports Rs 127 Cr. Verify the guidance in the transcripts and the prior-year guidance record (FY26 guidance vs FY26 delivery)."
+  - "LBF2 MIX-SHIFT MARGIN: EBITDA per wheel Rs 314 vs Rs 262; alloy ~35% of revenue. Verify product revenue and any margin split in AR, results and decks; test against the fall in operating margin from ~12.7% (FY22) to ~9.8% (FY26)."
+  - "LBF3 CASH CONVERSION: FY26 CFO ~Rs 332 Cr vs EBITDA ~Rs 510 Cr; factoring limits Rs 400-500 Cr; year-end cash Rs 6.5 Cr. Verify receivables, the factoring / bill-discounting note and its effect on reported CFO."
+  - "LBF4 AMW EXCEPTIONAL GAIN: FY24 NCLT write-back gain on AMW Autocomponent (Bhuj), consideration ~Rs 138 Cr; effect on equity, ROE and ROCE denominators; AMW status (the FY26 AR names it a wholly owned subsidiary)."
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Cables / Industrial products | 25x'). SSWL makes steel wheel rims,
+  alloy wheels and aluminium steering knuckles to OEM specification for PV,
+  CV, tractor, 2W/3W and OTR customers, domestic and export (India Ratings
+  rationale 18-Feb-2026, page 3: segment market shares; AR FY26). It converts
+  steel and aluminium into engineered components; it does not make metal, so
+  'Steel / integrated metals' 15x is rejected. No auto-components row exists
+  in the table. 'Recycling / Manufacturing' 25x is the alternative at the
+  same cap; nine prior manufacturing runs sit on 'Cables / Industrial
+  products'. The collector guess 'Agri processing' is wrong and is discarded.
+  FLAG for phase-3 operator confirmation: an auto-components row would be an
+  operator ruling. Note: the v3.11 A27.4 rows are uncommitted in the main
+  checkout; no A27.4 row fits this company either way.
+reporting_units:
+  annual_report: "INR lakh (AR FY26 statements, '(Rs. in lakhs)')"
+  results: "INR lakh (Q3 FY26, Q4 FY26 and Q1 FY27 results filings: 'All Amount in Rs Lakhs Except EPS')"
+  screener: "INR Cr (screener Data_Sheet)"
+  rating: "INR million (Ind-Ra)"
+  presentation: "INR Cr (investor decks)"
+  note: "Filings report in INR lakh; screener and decks in INR Cr; Ind-Ra in INR million. 100 lakh = 1 Cr; 10 million = 1 Cr. Conversion happens once, at stage 10."
+listed_date: ""
+recently_listed: false
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: WHEELS:Profit & Loss, WHEELS:Quarters, WHEELS:Balance Sheet, WHEELS:Cash Flow, WHEELS:Customization, UNOMINDA:Profit & Loss, UNOMINDA:Quarters, UNOMINDA:Balance Sheet, UNOMINDA:Cash Flow, UNOMINDA:Customization, ALICON:Profit & Loss, ALICON:Quarters, ALICON:Balance Sheet, ALICON:Cash Flow, ALICON:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no AR found on screener: AR stages will be skipped"
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "COLLECTOR DEFECT (main company): the collector's first SSWL pass failed at the screener login (Excel download timeout; company name read 'Get a free account'). It wrote no AR, transcripts or deck and set concalls_available false. screener_collect.py re-run for SSWL alone succeeded; manifest corrected to concalls_available true."
+  - "RESOLVED AT INTAKE: annual-report/ holds the FY26 Annual Report (Reg 34 filing 03-Sep-2026, 245pp incl. 40th AGM notice). Two byte-identical copies in announcements/ deleted. Only FY26 AR is held; the FY25 AR is not in the corpus (FY26 AR comparatives carry FY25)."
+  - "RESOLVED AT INTAKE: results/ filled from BSE: Q1 FY27 (15-Jul-2026), Q4 FY26 + FY26 audited (29-May-2026), Q3 FY26 (22-Jan-2026). Q2 FY26 (12-Nov-2025) held in other/. These filings are SCANS: the .txt OCR layer is garbled. READ THE PAGE IMAGES at work/pages/results/<basename>/pNN.png; cite the PDF page."
+  - "RESOLVED AT INTAKE: rating/ holds the India Ratings Reg 30 filing of 18-Feb-2026 (7pp; p1 SSWL cover, pp2-7 the full Ind-Ra press release: IND AA-/Stable affirmed, INR 2,750 million additional limits rated). Text layer readable."
+  - "RESOLVED AT INTAKE (PARTIAL): shareholding/ holds the BSE XBRL shareholding pattern for quarter ended June 2026 as text (promoter and promoter group 61.14%, 17 holders, no pledge, no encumbrance; public 38.86%). Institution-level rows (MF, FPI) are in the same file; stage 10 reads the FII+DII split there."
+  - "screening: EMPTY-CSV defect present for the subject and all three peers. P&L, Balance Sheet, Cash Flow and Quarters sheets absent. The four <TICKER>-Data_Sheet.csv files are populated with raw annual P&L, balance sheet, cash flow and quarterly rows in INR Cr. Stage 1 reads Data_Sheet only."
+  - "concalls: 3 SSWL transcripts held, the three most recent: Q3 FY26 (23-Jan-2026), Q4 FY26 (02-Jun-2026), Q1 FY27 (16-Jul-2026). The Q2 FY26 transcript (13-Nov-2025) sits in other/ as an extra backward check."
+  - "peer-concalls: 12 transcripts, 4 per peer. ALICON: Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27. UNOMINDA: Q2 FY26, Q3 FY26 (file 'Feb_2026'; quarter not printed on page 1, confirm), Q4 FY26, Q1 FY27. WHEELS: Q2 FY25, Q4 FY25, Q2 FY26, Q4 FY26 (Wheels India holds half-yearly calls; no Q1 FY27 call in the set)."
+  - "presentation: 4 decks: Jan-2026 (Q3 FY26), May-2026 (Q4 FY26, filed 01-Jun-2026), Jul-2026-A (Q1 FY27, 15-Jul-2026) and Jul-2026-B (a second, different July-2026 deck BSE filed under 'Earnings Call Transcript' on 15-Jul-2026)."
+  - "announcements/: 45 Reg 30 filings Oct-2025 to Sep-2026 from the BSE API (renamed by subject; duplicates removed). Routine items excluded: trading window, Reg 74(5), RTA re-lodgement, newspaper publications except the AGM notice. The two SAST Reg 29 filings (08-Sep and 16-Sep-2026) are image-only: read work/pages/announcements/."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "prospectus: EMPTY. Long-listed company; not expected; not a gap."
+  - "TOOLING: pdftoppm absent; the Read tool cannot render PDF pages. Every input PDF is pre-extracted to a page-marked .txt BESIDE the PDF (same basename, '[page N]' markers = PDF page numbers). Stages and verifiers read the .txt; anchors cite the PDF with the page number. For the scanned results, SAST and other image-heavy filings, page images are rendered at work/pages/<folder>/<basename>/pNN.png (PyMuPDF, 110 dpi; not committed)."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/SSWL-results-Q1FY27-2026-07-15.pdf (Q1 FY27, quarter ended 30-Jun-2026)"
+    mate_expected: "Q1 FY27 earnings call transcript"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/concalls/SSWL-concall-Q1FY27-2026-07-16.pdf (Q1 FY27 results call, 16-Jul-2026)"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "inputs/rating/SSWL-IndRa-rationale-2026-02-18.pdf (Ind-Ra, 18-Feb-2026)"
+    mate_expected: "full rating rationale"
+    status: PASS
+    missing_doc: ""
+    mate_found: "same PDF pages 2-7 carry the full Ind-Ra press release (key rating drivers, liquidity, sensitivities, key financials)"
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No SEBI order is referenced. The show cause notice filed 17-Jun-2026 is from the Principal Commissioner of Customs, Mundra (Customs), not SEBI; its disclosure is in announcements/SSWL-showcause_2026-06-17.pdf. Director declarations carry boilerplate 'not debarred by SEBI order' text only."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/SSWL-results-Q4FY26-FY26-2026-05-29.pdf (FY26 audited, 29-May-2026)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/SSWL-AR-FY26-Reg34-2026-09-03.pdf"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (FY25 AR, research, screener formula sheets absent; results are scans); freshness pairs OK"
+operator_pause: "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders: research/, prospectus/ (not expected)."
+filings_of_note:   # surfaced for stages 2, 3, 5, 8; not findings
+  - "17-Jun-2026 Customs show cause notice (Principal Commissioner of Customs, Mundra): announcements/SSWL-showcause_2026-06-17.pdf"
+  - "18-Mar-2026 Tata Steel nominee director resigned (withdrawal of nomination; Tata Steel is an equity investor): announcements/SSWL-dir-resign_2026-03-18.pdf"
+  - "03-Jun-2026 Deputy MD Mohan Joshi resigned (personal health and family): announcements/SSWL-dir-resign_2026-06-03.pdf"
+  - "12/13-Nov-2025 CFO appointment and revision: announcements/SSWL-mgmt-change_2025-11-12.pdf, -2025-11-13.pdf; 03-Sep-2026 board outcome with change in management: announcements/SSWL-board-outcome-mgmt-change_2026-09-03.pdf"
+  - "09-Apr-2026 further investment in Echanda Urja Pvt Ltd (captive renewable power SPV): announcements/SSWL-board-outcome-Echanda-Urja-investment_2026-04-09.pdf"
+  - "26-Dec-2025 and 13-Feb-2026 MoU / agreement disclosures: announcements/SSWL-board-outcome-MoU_2025-12-26.pdf, SSWL-mou_2026-02-13.pdf"
+  - "08-Sep and 16-Sep-2026 promoter open-market purchases (Sunena Garg, 16,600 shares on 15-Sep-2026; promoter group 61.14% to 61.15%): announcements/SSWL-SAST-Reg29-*.pdf (image-only)"
+  - "Monthly business updates Oct-2025 to Sep-2026 (turnover, aluminium segment, CV sales): announcements/SSWL-monthly_*.pdf"
+corpus_manifest:
+  - {path: inputs/annual-report/SSWL-AR-FY26-Reg34-2026-09-03.pdf, issuer: Steel Strips Wheels Ltd, type: "Annual Report FY2025-26 + 40th AGM notice (Reg 34 filing)", period: FY26, folder_match: "yes (screener copy; BSE duplicates removed)"}
+  - {path: inputs/results/SSWL-results-Q1FY27-2026-07-15.pdf, issuer: SSWL, type: "Board outcome + unaudited results SA & consol (scan)", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/results/SSWL-results-Q4FY26-FY26-2026-05-29.pdf, issuer: SSWL, type: "Board outcome + audited results SA & consol (scan)", period: "Q4 / FY26", folder_match: yes}
+  - {path: inputs/results/SSWL-results-Q3FY26-2026-01-22.pdf, issuer: SSWL, type: "Unaudited results (scan)", period: "Q3 / 9M FY26", folder_match: yes}
+  - {path: inputs/rating/SSWL-IndRa-rationale-2026-02-18.pdf, issuer: "SSWL cover + India Ratings press release", type: "rating letter with full rationale", period: "18-Feb-2026", folder_match: yes}
+  - {path: inputs/concalls/SSWL-concall-Q1FY27-2026-07-16.pdf, issuer: SSWL, type: transcript, period: "Q1 FY27", folder_match: "yes (moved from announcements/)"}
+  - {path: inputs/concalls/SSWL-concall-Q4FY26-2026-06-02.pdf, issuer: SSWL, type: transcript, period: "Q4 FY26", folder_match: yes}
+  - {path: inputs/concalls/SSWL-concall-Q3FY26-2026-01-23.pdf, issuer: SSWL, type: transcript, period: "Q3 FY26", folder_match: yes}
+  - {path: inputs/presentation/SSWL-investor-presentation-Jan2026.pdf, issuer: SSWL, type: "investor presentation", period: "Q3 FY26", folder_match: yes}
+  - {path: inputs/presentation/SSWL-investor-presentation-May2026.pdf, issuer: SSWL, type: "investor presentation", period: "Q4 FY26", folder_match: yes}
+  - {path: inputs/presentation/SSWL-investor-presentation-Jul2026-A.pdf, issuer: SSWL, type: "investor presentation", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/presentation/SSWL-investor-presentation-Jul2026-B.pdf, issuer: SSWL, type: "investor presentation (BSE filed it as a transcript)", period: "Jul-2026", folder_match: "moved from concalls (screener 'Concall_Jul_2026_Transcript_2' is a deck)"}
+  - {path: inputs/shareholding/SSWL-SHP-Jun2026-BSE.txt, issuer: "BSE XBRL SHP", type: "shareholding pattern", period: "Jun-2026", folder_match: yes}
+  - {path: inputs/screening/SSWL-Data_Sheet.csv, issuer: screener.in, type: "Data Sheet export", period: "to Jun-2026", folder_match: yes}
+  - {path: "inputs/peer-concalls/ALICON-*.pdf (4)", issuer: Alicon Castalloy Ltd, type: transcripts, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/UNOMINDA-*.pdf (4)", issuer: Uno Minda Ltd, type: transcripts, period: "Q2 FY26, Q3 FY26 (confirm), Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/WHEELS-*.pdf (4)", issuer: Wheels India Ltd, type: transcripts, period: "Q2 FY25, Q4 FY25, Q2 FY26, Q4 FY26", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (45)", issuer: SSWL, type: "Reg 30 filings", period: "Oct-2025 to Sep-2026", folder_match: yes}
+  - {path: inputs/other/SSWL-BRSR-FY26-2026-09-03.pdf, issuer: SSWL, type: BRSR, period: FY26, folder_match: "moved from announcements/"}
+  - {path: inputs/other/SSWL-concall-Q2FY26-2025-11-13.pdf, issuer: SSWL, type: transcript, period: "Q2 FY26", folder_match: "other/ (beyond the 3-transcript contract)"}
+  - {path: inputs/other/SSWL-results-Q2FY26-2025-11-12.pdf, issuer: SSWL, type: "results (scan)", period: "Q2 FY26", folder_match: "other/ (beyond the 3-results contract)"}
+flags: []
+analyst_note: >
+  Filings report in INR lakh; screener and decks in INR Cr; Ind-Ra in INR
+  million. The results filings are scans with garbled OCR text: stages must
+  read the PNG page images for any results figure. Screener shows
+  consolidated figures; the AR carries standalone and consolidated
+  (subsidiary AMW Autocomponent Ltd, associate Clean Max Astria Pvt Ltd).
+  Every stage should state which basis it quotes.

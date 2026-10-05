@@ -1,0 +1,46 @@
+stage: B13-synthesis-lite
+company: "SSWL"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+mode: "PHASE 1 LITE (no valuation-dependent content)"
+files:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+verdict_chain: "Rule 1 REWORK not fired (0 CRITICAL, all acceptance >= 71, overall 71). Rule 2 not fired (decision record intact; gaps named). Rule 3: FLAG-CASH active -> PROCEED WITH FLAGS; cash INDETERMINATE caps at PROCEED WITH CAVEATS. Confidence band 60-74 (overall 71, set by redflag_coverage) downgrades one level -> PROCEED WITH FLAGS."
+freshness_verdict: "FRESHNESS PAIRS OK (no cap)"
+flags_active: [FLAG-CASH]
+flags_not_active:
+  - "FLAG-PROMOTER: B08 verdict CAUTION, below the CONCERN/AVOID trigger; B08 block lists a FLAG-PROMOTER entry at CAUTION, not treated as triggering; findings carried as caveats"
+  - "FLAG-GATE0: B01 GOOD (80/160, core 63); B12c sensitivity AVERAGE (core 47) to GOOD+; operator ruling needed"
+cash_determination: "INDETERMINATE"
+cash_metric: "Standalone CFO/EBITDA 103.5% (FY25) to 63.3% (FY26), AR basis (B03); CFO Rs 517.60 Cr to Rs 331.16 Cr"
+cash_missing_evidence:
+  - "Debtor factoring balance at 31-Mar-2025 and 31-Mar-2026 (not in FY26 AR; management question)"
+  - "Supplier finance balance at 31-Mar-2025 (FY25 AR, BSE)"
+  - "Receivables ageing beyond FY26 Note 52 split (FY25 AR)"
+  - "H1 FY27 cash flow statement (Q2 FY27 results, BSE, expected Nov-2026)"
+rating_wc_quote: "The net working capital cycle (creditors excluding LC acceptances) moderated slightly to 90 days in FY25 (FY24: 85 days), primarily due to a higher inventory held for exports, along with an increase in receivables. (India Ratings rationale 18-Feb-2026, p.4)"
+promoter_verdict: "CAUTION"
+transition_posture_provisional: "Proof gate NOT FIRED; ugliness class awaits signed model Part B5; recognition gap unresolved until Stage 11. ARTIFACT -> RESEARCH / WATCH; STRUCTURAL -> VALUE-TRAP RISK."
+confidence_delta: {numerical: 94, redflag: 71, framework: 86, peer: 92, overall: 71}
+overall_set_by: redflag_coverage
+source_fidelity_handling: "B12a MAJOR source_fidelity true on B01 EBITDA Rs 510.23 Cr vs AR p.19 (Rs 522.96 Cr standalone, Rs 513.40 Cr consolidated). GATE HELD: no ratio built on Rs 510.23 Cr carried; cash conversion stated on AR standalone basis (63.3%). Not a verdict card or Section 1B input, so no REWORK. Disagreement log row to be written at phase 3."
+valuation_decision: "NOT IN SCOPE (phase 3)"
+entry_range: "NOT IN SCOPE (phase 3)"
+headline: "Alloy shift real, margin and cash unproven"
+falsification_metric: "H1 FY27 cash flow statement (Q2 FY27 results, ~Nov-2026): CFO below 65% of AR basis EBITDA with revenue growth above 20% moves FLAG-CASH to STRUCTURAL"
+monitorables_count: 8
+contradicted_claims_peer_stage: 0
+priority_monitoring_items: 6
+lbf_findings:
+  LBF1: "Guidance explicit and repeated (FY27 Rs 6,000 Cr visible, Rs 6,500 Cr if US tariff resolves; exports ~Rs 600 Cr). Q1 FY27 revenue Rs 1,509 Cr (+27%), exports Rs 127 Cr. FY26 revenue and EBITDA beat the guide; FY26 exports Rs 454 Cr missed a Rs 600-650 Cr guide. FY27 EBITDA guide is ~Rs 650 Cr, not Rs 650-750 Cr (B12b correction)."
+  LBF2: "Rs 314 vs Rs 262 EBITDA/wheel confirmed but blended; no product margin split anywhere; alloy share stalled 35-37% across 4 calls while EBITDA margin fell 12.7% (FY22) to 9.9% (FY26); management admits alloy margin pressure; peer WHEELS calls alloy its lowest-ROI segment. Mix-driven margin unproven."
+  LBF3: "Confirmed and wider: CFO/EBITDA 63.3% standalone AR basis (65.0% rests on B12a-flagged EBITDA). Rs 400-500 Cr is DEBTOR factoring (not in AR); separate Rs 676.50 Cr payables supplier finance (Note 25). Year-end standalone cash Rs 6.5 Cr."
+  LBF4: "FY24 other income Rs 486.76 Cr confirmed; ~Rs 138 Cr consideration NOT FOUND (FY24 AR absent). AMW wholly owned, loss-making, AOC-1 turnover 0, Rs 133.15 Cr parent loan, Rs 59.31 Cr DTA, adverse CARO title; unexplained reserve transfers Rs 674.68 Cr (FY25) and Rs 364.52 Cr (FY26). ROCE not directly inflated; ROE and equity base affected."
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save: "NOT IN SCOPE (phase 3 /finalize)"

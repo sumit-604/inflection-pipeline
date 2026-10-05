@@ -1,0 +1,77 @@
+stage: B04-bizmodel
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Bhuj plant trial-production timeline (company memory cites Q4 FY27) not independently found in AR or the four decks read; verify against concall transcripts."
+  - "FY24 AMW Autocomponent NCLT exceptional gain (LBF4) not verifiable within FY26 AR (only FY25/FY26 comparative shown, exceptional item nil both years); FY25 AR not in corpus. Affects any multi-year P/E or ROE reading."
+  - "Factoring / bill-discounting arrangement (LBF3, Rs 400-500 Cr limits per company memory) searched in AR text (\"factor\", \"bill discounting\") and NOT FOUND; open item for financial-forensics stage."
+  - "Export revenue by geography (US/EU/RoW) disclosed only in the Jan-2026 (Q3 FY26) deck, not repeated in later decks."
+flags:
+  - "Margin tension unresolved: alloy revenue share rose ~28% (FY23) to ~36% (FY26, Ind-Ra p.4) while full-year EBITDA margin fell 12.7% (FY22) to 9.9% (FY26, deck Historical P&L). No product-level margin is disclosed anywhere in the AR or the four decks; the mix-shift-lifts-margin thesis is asserted, not yet demonstrated company-wide."
+  - "Company memory's 'EBITDA per wheel Rs 314 vs Rs 262' (LBF2) is a derivable but undisclosed blended (all-product) metric from Q1 FY27 vs Q1 FY26 deck data (EBITDA / total volume), not a per-product margin figure."
+  - "AR's MD&A text ('85% of revenues come from domestic market customers', AR p.124) is a rounder figure that does not match the AR's own Note 44B geographical split (exports 7.4% of gross sale revenue) or the deck's export line (8.8% of revenue from operations, FY26); used the Note 44B / deck figures as the more precise anchor."
+  - "Standalone intercompany loan to wholly-owned subsidiary AMW Autocomponent of Rs 141.4 Cr outstanding, repayable on demand, principal not called during FY26 (AR CARO note) -- relevant to LBF3 cash-conversion reading."
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Steel Wheels", type: "manufactured, OEM-spec, cost-plus-conversion with raw-material pass-through", pct_of_revenue: 63, predictability: "M"}
+  - {name: "Alloy Wheels", type: "manufactured, OEM-spec, cost-plus-conversion, higher ASP", pct_of_revenue: 36, predictability: "M"}
+  - {name: "Aluminium Knuckles", type: "manufactured, OEM-spec, early-stage, 2-customer base", pct_of_revenue: 1, predictability: "L"}
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - {moat: "switching costs (OEM design-win / platform qualification)", durability: "moderate, tied to platform life"}
+  - {moat: "cost advantage (backward-integrated hot rolling + Tata Steel supply relationship + captive renewable power)", durability: "moderate"}
+  - {moat: "efficient scale (~25.7 Mn combined annual capacity, broadest listed product span)", durability: "moderate-high"}
+valuation_methods:
+  primary: {method: "EV/EBITDA", why: "capex-heavy cyclical manufacturer; EBITDA is the metric the company, Ind-Ra and this stage's unit economics all centre on"}
+  secondary: {method: "P/E, normalised for exceptional items", why: "usable cross-check once the FY24 AMW NCLT gain (not verifiable in this AR) is adjusted for"}
+  tertiary: {method: "DCF", why: "Ind-Ra expects free cash flow to turn negative FY26-FY27 on Bhuj/knuckle capex, so near-term FCF is not representative of steady state"}
+  not_applicable: ["SOTP/NAV (single reporting segment)", "Dividend discount (modest, non-primary payout)", "Asset-based/replacement cost (sanity check only, not primary)"]
+irrelevant_ratios:
+  - {ratio: "gross profit margin quarter-to-quarter", why: "raw material is a clean pass-through with ~3-month lag (AR p.76; Ind-Ra p.3), creating timing noise unrelated to underlying profitability"}
+  - {ratio: "headline revenue growth %", why: "inflated or deflated by steel/aluminium price pass-through, not by volume or mix"}
+  - {ratio: "trailing P/E and ROE unadjusted", why: "FY24 AMW NCLT write-back gain (company memory LBF4) is outside this AR's two-year comparative window and not verifiable here; could distort any multi-year series spanning FY24"}
+must_track_metrics:
+  - {metric: "EBITDA margin %", healthy: "10-11%, rangebound per Ind-Ra", red_flag: "below 9.5% for two consecutive quarters"}
+  - {metric: "Blended EBITDA per wheel (derived, EBITDA / total volume)", healthy: "rising YoY same-quarter", red_flag: "flat or falling despite rising alloy revenue share"}
+  - {metric: "Net adjusted leverage (net debt incl. LC acceptances / EBITDA)", healthy: "below 2.5x (Ind-Ra's own positive-trigger threshold)", red_flag: "above 3.2x (the 9MFY26 level per Ind-Ra)"}
+  - {metric: "Capacity utilization % (alloy/knuckle)", healthy: "above 80%", red_flag: "below 70% (idle capex)"}
+  - {metric: "Cash conversion cycle (days)", healthy: "~90 days (Ind-Ra FY25 level)", red_flag: "above 100 days sustained"}
+unit_economics:
+  unit: "one wheel rim (steel or alloy, blended); aluminium knuckle tracked separately as a non-comparable part"
+  revenue_per_unit: "~Rs 2,600/wheel blended FY26 (derived: Revenue from Operations Rs 5,182.8 Cr / 199.52 lakh total units); steel ~Rs 2,070/unit vs alloy ~Rs 4,730/unit (derived)"
+  margin_per_unit: "blended EBITDA/wheel ~Rs 256 (FY26) vs ~Rs 254 (FY25) full year (derived); ~Rs 312 (Q1 FY27) vs ~Rs 254 (Q1 FY26) on a single quarter (derived) -- no product-level EBITDA margin is disclosed anywhere in the corpus"
+  key_lever: "product mix shift toward alloy wheels and knuckles (higher ASP) plus capacity utilization; NOT raw material price, which is passed through"
+first_deterioration_signals:
+  - {risk: "OEM/platform concentration", first_signal: "quarterly volume by product line in the deck's Volumes panel"}
+  - {risk: "export/tariff exposure", first_signal: "export revenue (Rs Cr) line, quarterly P&L"}
+  - {risk: "raw-material pass-through timing lag", first_signal: "gross profit margin %, quarter over quarter"}
+  - {risk: "unquantified mix-shift margin benefit", first_signal: "full-year EBITDA margin % tracked against alloy revenue share % in the same period"}
+  - {risk: "capex-heavy expansion against elevated leverage", first_signal: "net debt / EBITDA; borrowings lines on the balance sheet"}
+  - {risk: "thin standalone liquidity", first_signal: "cash and cash equivalents line; intercompany Loans line under current financial assets"}
+  - {risk: "Bhuj execution / KMP continuity", first_signal: "capacity utilization % (alloy/knuckle) each quarter and concall management commentary"}
+mgmt_questions:
+  - "What EBITDA or contribution margin does the company actually earn on alloy wheels and knuckles versus steel wheels?"
+  - "Why has full-year EBITDA margin fallen from 12.7% (FY22) to 9.9% (FY26) even as the alloy revenue share has risen from about a quarter to over a third?"
+  - "What is the status and expected trial-production date for the Bhuj alloy/knuckle expansion, and is the FY27 revenue guidance of ~Rs 6,500 Cr contingent on it?"
+  - "Beyond the current two OEM customers, what is the knuckle order pipeline, against 1.1 Mn units of FY27E capacity for a business that sold ~2.6 lakh units in FY26?"
+  - "With net adjusted leverage above 2.5x and standalone cash of Rs 1.5-6.5 Cr, how is the ~Rs 500 Cr FY27 capex plan funded, and what is the plan for the Rs 141.4 Cr intercompany loan to AMW?"
+  - "What caused the CFO change (Nov-2025) and the Deputy Managing Director's resignation (Jun-2026), and what is the succession plan?"
+  - "Why did export revenue fall from Rs 561 Cr (FY25) to Rs 454 Cr (FY26), and is the ~Rs 600 Cr FY27 export guidance dependent on a US tariff outcome outside the company's control?"
+one_line_verdict: "Scaled OEM wheel maker mid-transition to alloy; mix shift real, company-wide margin lift not yet proven."
+analyst_note: >
+  LBF2 verified in the decks, not the AR (AR carries a single reporting segment, no product
+  split). Alloy revenue share climbed ~28% (FY23) to ~36% (FY26, Ind-Ra p.4) while full-year
+  EBITDA margin fell 12.7% to 9.9% over FY22-FY26 (deck Historical P&L) -- the two facts coexist
+  and are both anchored. Company memory's "EBITDA per wheel Rs 314 vs Rs 262" is a legitimate,
+  derivable blended metric (EBITDA / total volume) from Q1 FY27 vs Q1 FY26 deck data, not a
+  disclosed per-product margin; no document in this corpus splits EBITDA by product. The
+  archetype (CLAUDE.md library) is build-to-spec component maker: OEM design-win pipeline,
+  content-per-unit economics, clean raw-material pass-through (AR p.76). This is consistent
+  with B00's "Cables / Industrial products" 25x sector-cap row (no dedicated auto-components
+  row exists); this stage does not challenge that row. Bhuj timeline and the LBF3 factoring
+  mechanism were not found in this stage's documents and are carried forward as gaps.

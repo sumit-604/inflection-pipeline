@@ -1,0 +1,17 @@
+company: Steel Strips Wheels Ltd
+ticker: SSWL
+cmp: 372.0
+market_cap_cr: 5857.0
+run_date: 2026-09-19
+run_type: full
+listed_date: ""        # long-listed (incorporated 1985, BSE 513262); prospectus not expected
+concalls_available: true   # collector wrote false because its first main-company pass failed at login; 3 SSWL transcripts are now in concalls/
+sector_cap_row: "Cables / Industrial products"   # step1 Step D pick (25x): engineered OEM wheel and knuckle maker; no auto-components row exists. Stage 0 confirms; flag for phase-3 operator confirmation
+sector_cap_row_guess: "Agri processing"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: WHEELS:Profit & Loss, WHEELS:Quarters, WHEELS:Balance Sheet, WHEELS:Cash Flow, WHEELS:Customization, UNOMINDA:Profit & Loss, UNOMINDA:Quarters, UNOMINDA:Balance Sheet, UNOMINDA:Cash Flow, UNOMINDA:Customization, ALICON:Profit & Loss, ALICON:Quarters, ALICON:Balance Sheet, ALICON:Cash Flow, ALICON:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no AR found on screener: AR stages will be skipped"
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "STEP1 REPAIRS 2026-09-19: (1) The collector's main-company pass failed at the screener login (Excel timeout, page read 'Get a free account'), so it wrote no AR, concalls or deck and set concalls_available false. screener_collect.py was re-run for SSWL alone and succeeded. (2) annual-report/: FY26 AR (Reg 34, 245pp incl. AGM notice, filed 03-Sep-2026). Two byte-identical AR copies in announcements/ deleted. (3) concalls/: Q3FY26 (23-Jan-2026), Q4FY26 (02-Jun-2026), Q1FY27 (16-Jul-2026), from BSE and screener; Q2FY26 (13-Nov-2025) kept in other/. (4) results/ filled from BSE AttachLive: Q1FY27 (15-Jul-2026), Q4FY26 + FY26 audited (29-May-2026), Q3FY26 (22-Jan-2026); Q2FY26 in other/. These are SCANNED filings: the .txt OCR layer is garbled; read the page images in work/pages/results/. (5) rating/: India Ratings 18-Feb-2026 Reg 30 filing, which carries the full rationale (IND AA-/Stable). (6) shareholding/: BSE XBRL SHP Jun-2026 converted to text. (7) presentation/: Jan-2026, May-2026 and two different July-2026 decks (A = screener/BSE investor presentation; B = the deck BSE filed under 'Earnings Call Transcript' on 15-Jul-2026). (8) announcements/: 46 Reg 30 filings Oct-2025 to Sep-2026 from the BSE API, renamed by subject; duplicates removed. The two Sep-2026 SAST Reg 29 filings are image-only: read work/pages/announcements/. BRSR FY26 moved to other/. (9) screening/: SSWL Data_Sheet.csv written from Financials.xlsx; SSWL P&L, Quarters, Balance Sheet, Cash Flow sheets EMPTY (no cached values). (10) UNITS: results and AR report in Rs lakh; screener in Rs Cr. (11) Every PDF pre-extracted to a page-marked .txt beside it; page images for scanned filings in work/pages/ (not committed). Collected from screener.in by collect_to_repo.py v3 plus BSE."

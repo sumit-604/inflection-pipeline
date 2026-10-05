@@ -1,0 +1,71 @@
+stage: B08-promoter
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "AmbitionBox.com SSWL-specific page could not be retrieved directly (search returned AmbitionBox's own corporate reviews); Glassdoor is the only employee-review source used."
+  - "Direct MCA/RoC DIN disqualification lookup not performed; relied on the AR's own director self-declaration (p.29, p.63), which is company-supplied, not independently cross-checked against MCA master data."
+  - "Note 41 RPT table column extraction is ambiguous on which single group entity received the 3.5x YoY rent increase (Rs 42.15 lakh to Rs 147.44 lakh FY26); flagged for a management-question follow-up, not resolved from the AR text alone."
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["AMW subsidiary cluster (Rs 133.15 Cr related-party loan, growing DTA, adverse CARO land-title remark) sits under an Audit Committee Chairman who attended only 20% of Board and 33% of Audit Committee meetings in FY26 (AR p.63)", "Customs show-cause notice (16-Jun-2026, ~Rs 1.84 Cr, already repaid) absent from the FY26 AR signed 03-Sep-2026 despite predating it by 2.5 months", "Statutory auditor (AKR & Associates, a single-registration regional firm, second 5-year term since 2022) declared zero Key Audit Matters despite the judgment-heavy AMW cluster", "Positive counterweight: promoter pledge reduced from 21.9% (2021) to 0% (FY26), plus fresh open-market promoter buying in Sep-2026 (64,600 shares) the same week as AR signing"]}
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Customs SCN (16-Jun-2026, Principal Commissioner of Customs, Mundra Port) alleging unlawful Duty Drawback (Rs 1.378 Cr) and RoDTEP (Rs 0.324 Cr) on FY24-25 exports, penalty unquantified under Customs Act Sections 113/114(iii)/114AA/117; amounts already repaid with interest before the SCN issued; not disclosed anywhere in the FY26 AR signed 03-Sep-2026", evidence_tier: "VERIFIED", source: "inputs/announcements/SSWL-showcause_2026-06-17.pdf (Reg 30 filing); absence confirmed by full-text search of inputs/annual-report/SSWL-AR-FY26-Reg34-2026-09-03.txt", date: "2026-06-16/17"}
+  - {finding: "Audit Committee Chairman Ajit Singh Chatha attended 1 of 5 Board meetings (20%) and 2 of 6 Audit Committee meetings (33%) in FY26, both below any reasonable attendance norm, in the committee role most responsible for RPT and disclosure oversight", evidence_tier: "VERIFIED", source: "AR FY26 p.63 attendance table", date: "FY26 (year ended 31-Mar-2026)"}
+  - {finding: "Rs 133.15 Cr unsecured, interest-bearing related-party loan outstanding to wholly-owned subsidiary AMW Autocomponent Ltd, unchanged for two years, against a subsidiary posting losses every year since acquisition; a growing Rs 59.31 Cr DTA against those losses with no disclosed forecast support (carried from B02/B03)", evidence_tier: "VERIFIED", source: "Note 41, standalone AR p.170-172; Note 51/52/53 consol AR p.236-238", date: "as at 31-Mar-2026"}
+  - {finding: "Both statutory audit reports (standalone and consolidated) declare zero Key Audit Matters for FY26 despite the AMW cluster's unresolved consolidation-reserve, DTA and adverse-CARO items; statutory auditor is a single-registration regional CA firm (AKR & Associates), not a national/Big-4 practice", evidence_tier: "VERIFIED", source: "AR FY26 p.28 (auditor appointment/tenure), auditor's reports p.130/p.183", date: "FY26"}
+  - {finding: "Related-party rent paid rose 3.5x YoY (Rs 42.15 lakh FY25 to Rs 147.44 lakh FY26), largest single-year RPT jump in Note 41; recipient entity not cleanly resolved from the AR's table extraction", evidence_tier: "VERIFIED", source: "Note 41, standalone AR p.171", date: "FY26"}
+  - {finding: "Three KMP exits within ~18 months (CFO Sep-2025, Company Secretary Oct-2024, Deputy MD Jun-2026), each citing personal/family reasons with an explicit 'no other material reason' confirmation and no adverse external signal found contradicting that", evidence_tier: "VERIFIED / MEDIA REPORTED (resignation reasons)", source: "AR FY26 p.27-28; Reg 30 filings SSWL-dir-resign_2026-06-03, SSWL-mgmt-change_2025-11-12; scanx.trade CFO exit report", date: "2024-10 to 2026-06"}
+  - {finding: "30 promoter-group entities named as related parties, 21 with zero disclosed SSWL equity; a layered private holding structure typical of an older Punjab industrial group, no entity independently found struck-off, under BIFR, or in an opaque offshore jurisdiction", evidence_tier: "VERIFIED", source: "AR FY26 p.75; SHP Jun-2026 Table II(a)(d)", date: "as at Jun-2026"}
+transition_evidence:
+  - "Promoter pledge reduced from 21.9% of paid-up capital (Jul-2021) through 12.26% (Dec-2021), 8.70% then 5.78% (Jul-2023), 3.06% (Sep-2023), to 0% confirmed for FY26 ('no share encumbrance') -- a five-year, multi-step de-pledging trend to zero. Source: multiple dated Business Standard/EquityBulls items (MEDIA REPORTED), cross-checked against the company's own Jun-2026 SHP (VERIFIED, 0% pledge, no encumbrance declared)."
+  - "Promoter open-market buying: Sunena Garg acquired 48,000 shares on 07-Sep-2026 and 16,600 shares on 15-Sep-2026 (SAST Reg 29 filings, VERIFIED from page images), lifting promoter/promoter group holding from 61.11% to 61.15% in the same week the FY26 AR was signed."
+  - "MD remuneration fell 3.08% YoY in FY26, a year of EBITDA growth of only 4.5% and a 36% YoY fall in CFO (B03 FLAG-CASH) -- the opposite of the 'pay rising through performance decline' pattern. Source: Board's Report Annexure VI, AR p.50."
+  - "CSR spend (Rs 6.35 Cr) exceeded the Section 135(5) statutory minimum (Rs 5.53 Cr) in FY26, with the excess carried forward under the statutory set-off mechanism. Source: AR CSR Annexure, p.29-30."
+  - "No new outside-professional CEO/CFO hire found (new CFO Rahul Kumar is a 2022-vintage internal promotion); no new institutional investor entry (Tata Steel since 2008 and Nippon Steel/Sumitomo since 2010 are long-standing strategic stakes, not new entrants, and Tata Steel retained its equity stake even after its nominee director resigned 18-Mar-2026); no Big-4 auditor upgrade (AKR & Associates reappointed, unchanged); no independent-director exit of a problematic family member (none found to exit)."
+pledge_pct_latest: 0
+pledge_trend: "falling, to zero -- 21.9% (Jul-2021) -> 12.26% (Dec-2021) -> 8.70% then 5.78% (Jul-2023) -> 3.06% (Sep-2023) -> 0% (confirmed FY26, no encumbrance in Jun-2026 SHP)"
+searches_performed:
+  - "Dheeraj Garg Steel Strips Wheels promoter SEBI order"
+  - "\"Steel Strips Wheels\" SEBI order OR penalty OR fraud"
+  - "\"R K Garg\" \"Steel Strips\" Chandigarh promoter history founder"
+  - "AMW Autocomponent NCLT resolution Steel Strips Wheels Asia Motor Works Bhuj insolvency"
+  - "WebFetch: en.wikipedia.org/wiki/Rajinder_Garg (disambiguation check)"
+  - "\"Indian Acrylics\" OR \"SAB Industries\" Steel Strips group company NCLT OR default OR BIFR OR sick company"
+  - "Steel Strips Wheels Glassdoor AmbitionBox employee reviews rating"
+  - "Steel Strips Wheels IiAS OR SES OR InGovern proxy advisory governance"
+  - "Steel Strips Wheels AmbitionBox reviews rating"
+  - "\"Steel Strips Wheels\" Tata Steel stake investor 2007 OR strategic partnership"
+  - "\"Steel Strips Wheels\" Sumitomo Metal Industries stake history"
+  - "\"Dheeraj Garg\" Steel Strips Wheels interview vision strategy alloy wheels"
+  - "WebFetch: ibclaw.in NCLAT case summary (Steel Strips Wheels vs Avil Menezes)"
+  - "\"Steel Strips Wheels\" litigation court case promoter dispute OR family dispute"
+  - "\"Steel Strips Wheels\" short seller OR activist investor OR forensic report"
+  - "\"Steel Strips Wheels\" CFO resignation Naveen Sorot reason 2025"
+  - "Steel Strips Wheels news September 2026"
+  - "\"Steel Strips Wheels\" promoter pledge shares history"
+  - "\"Steel Strips Wheels\" income tax raid OR ED OR PMLA OR enforcement directorate"
+  - "\"Steel Strips Wheels\" pollution OR NGT OR environment notice Dappar OR Chandigarh plant"
+searches_skipped:
+  - "Direct AmbitionBox.com page fetch for SSWL specifically (search surfaced AmbitionBox's own corporate reviews instead)"
+  - "Direct MCA/RoC portal DIN disqualification lookup (relied on AR self-declaration)"
+  - "Peer-by-peer industry reputation comparison (4E) against Wheels India, Uno Minda, Alicon Castalloy"
+  - "CCI/consumer-forum-specific search (no reasonable-suspicion trigger surfaced to justify it)"
+verdict_basis: "No deal-breaker and no red-rated dimension; six of ten scorecard dimensions carry CAUTION, clustered on one theme -- disclosure quality around the AMW subsidiary (RPT loan/DTA, zero-KAM audit, low Audit Committee Chairman attendance) plus one undisclosed Customs SCN -- while the ownership/alignment axis shows genuine, quantified positive momentum (pledge to zero over five years, fresh Sep-2026 promoter buying, MD pay falling with performance)."
+analyst_note: >
+  The AMW subsidiary is the single thread connecting this stage's caution
+  items: the Rs 133.15 Cr related-party loan and its DTA sit inside a
+  zero-KAM audit opinion from a regional (non-Big-4) firm, overseen by an
+  Audit Committee Chairman who missed 80% of FY26 Board meetings. None of
+  this is evidenced wrongdoing; it is a concentration of "not explained
+  clearly enough" sitting on top of B02/B03's independently-found AMW
+  reserve/DTA/land cluster. Treat B02, B03 and B08 as three lenses on the
+  same underlying entity, not three separate concerns, when sizing any
+  AMW-linked contribution to equity, ROE or ROCE. Separately, the
+  Customs SCN is financially immaterial (~Rs 1.84 Cr, already repaid) but
+  its absence from a AR signed after the SCN was received is a real
+  representation-accuracy point worth a direct management question at
+  Halt 1, independent of the SCN's own resolution.

@@ -1043,3 +1043,12 @@ OR-14 re-derivation (PR #193): SYSTANGO, SHYAMMETL, MANINDS ruled Small on
 2026-10-04 (PR #201). AIMTRON and ASIANENE: not re-derived; operator ruling
 2026-10-04 (standing ruling: framework rulings apply forward; closed names keep
 their record as of the run that produced it). Both stay CONCERN, Small.
+
+## 2026-09-19 — SSWL (Steel Strips Wheels) step1 intake + phase 1
+
+- collect_to_repo: the main-company pass failed at the screener login (Excel timeout, name read "Get a free account") while all three peers succeeded; it then wrote concalls_available false and "no AR". Re-running screener_collect.py for the main company alone fixed it. A failed main pass should be retried, not classified.
+- collect_to_repo fetch_bse_announcements ran live for the first time and returned 15 filings (Jul-Sep 2026) correctly; it only covers a short window, so results, older transcripts and 12 months of Reg 30 were pulled by hand from the BSE API (12-month max range per query). Evidence for closing the PR #167 open action.
+- SSWL results filings are scans with garbled OCR text; pdftoppm absent, so page images were rendered with PyMuPDF (pip install pymupdf) into work/pages/ (not committed). Stages read the PNGs.
+- Main checkout held uncommitted v3.11 framework work, so the run went into a git worktree; a full worktree checkout of the 5 GB repo ran out of memory. A sparse worktree (runs/ excluded except this run) worked; git add needs --sparse.
+- Stage block files: B01 carried code fences (stripped); B02 pass 3 emitted input_gaps empty (B00 governs).
+- DOWNSHIFT FAILURE: stage 0 ran inline on Opus (no haiku stage-0 agent), same as AWFIS.

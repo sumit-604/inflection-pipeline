@@ -1,0 +1,121 @@
+stage: B05-concall
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps: []
+flags:
+  - {type: FLAG-SILENCE-CASH, reason: "Zero mention across all 4 transcripts (Q2 FY26 backward check, Q3 FY26, Q4 FY26, Q1 FY27) of the FY26 CFO/EBITDA cash-conversion decline (~63-65%, per B01/B03) or the Rs676.5cr reverse-factoring arrangement's true scale (67.6% of payables, per B02); only the Rs400-500cr factoring-limit figure surfaces, and only because an analyst asked about interest cost."}
+  - {type: FLAG-SILENCE-CUSTOMS, reason: "No mention anywhere in the 4 transcripts of the 17-Jun-2026 Customs show-cause notice (Mundra), despite the Q1 FY27 call (16-Jul-2026) occurring a month after the notice."}
+  - {type: FLAG-STONEWALL, reason: "Steel-vs-alloy EBITDA/wheel segment split asked in Q2 FY26, Q3 FY26 and Q1 FY27; stonewalled every time ('trade secrets', 'will prepare next time'). Repeated evasion tracker 2E."}
+  - {type: FLAG-DATA-DISCREPANCY, reason: "MHCV market share cited at 61% in a prior-year Q3 presentation vs 52% in the Q3 FY26 call; management conceded 'it could be an error' but no correction found in Q4 FY26 or Q1 FY27 transcripts."}
+quarters_analysed: ["Q2 FY26", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Input-price pass-through renegotiation lifting EBITDA/wheel", type: "PRICE-MIX", timeframe: "near", conviction: "H", confirm_signal: "EBITDA/wheel holds >= Rs310 in Q2 FY27", kill_signal: "Reversion below Rs280"}
+  - {priority: 2, name: "Bhuj capacity commissioning (1.2mn alloy wheels + 1.1mn knuckles)", type: "VOLUME/INORGANIC", timeframe: "medium", conviction: "M", confirm_signal: "Trial production Oct-2026 and OEM approvals land by Q4 FY27", kill_signal: "Further slippage past FY27-end or no OEM approvals"}
+  - {priority: 3, name: "Export recovery to ~Rs600cr FY27 (US tariff normalisation + Europe/LatAm diversification)", type: "PRICE-MIX/REGULATORY-POLICY", timeframe: "near", conviction: "M", confirm_signal: "H2 FY27 export run-rate implying full-year Rs550-600cr", kill_signal: "Exports stall below ~Rs400cr annualised or US tariffs re-escalate"}
+  - {priority: 4, name: "Steel wheel segment reflation (GST-cut demand + new agri/PV brownfield line)", type: "VOLUME/SECTORAL", timeframe: "near", conviction: "M", confirm_signal: "Steel wheel revenue growth sustains >5% with utilisation >90%", kill_signal: "Post-GST demand pullback"}
+  - {priority: 5, name: "FY27 revenue Rs6,500cr / ~25% growth", type: "VOLUME+PRICE-MIX", timeframe: "near", conviction: "M", confirm_signal: "Quarterly revenue trending toward Rs1,700cr+ by Q4 FY27", kill_signal: "Growth stalls below ~20%"}
+  - {priority: 6, name: "EV-scooter wheel dominance (~80% share claimed)", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "Any quantified segment revenue disclosure", kill_signal: "Continued non-disclosure or manpower re-shortage"}
+  - {priority: 7, name: "Hot-stamping / new product diversification", type: "INORGANIC", timeframe: "long", conviction: "L", confirm_signal: "Any capex or customer announcement", kill_signal: "No follow-up mention in the next 2 calls"}
+guidance:
+  - {item: "FY26 revenue", number: "~Rs4,800cr", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 EBITDA (flattish year)", number: "Rs470-480cr", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 volume growth (revised down)", number: "2-3%", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "FY26 total capex", number: "~Rs250cr", timeframe: "FY26", stated_in: "Q2 FY26 call"}
+  - {item: "Year-end net debt", number: "Rs950-960cr", timeframe: "FY26-end", stated_in: "Q2 FY26 call"}
+  - {item: "Q4 FY26 EBITDA/wheel target", number: "Rs270", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call"}
+  - {item: "FY27 revenue", number: "Rs6,000cr visible; Rs6,500cr if US tariff resolves", timeframe: "FY27", stated_in: "Q3 FY26 call"}
+  - {item: "Bhuj expansion capex", number: "~Rs420cr (alloy + knuckle)", timeframe: "FY27-28", stated_in: "Q3 FY26 call"}
+  - {item: "Bhuj peak revenue", number: "Wheels ~Rs600-700cr, knuckles ~Rs200cr", timeframe: "at full utilisation", stated_in: "Q3 FY26 call"}
+  - {item: "FY26 actual revenue", number: "Rs5,183cr (+17% YoY)", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 actual EBITDA (with other income)", number: "Rs523cr", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 actual EBITDA/wheel", number: "Rs262 (flat YoY)", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY26 actual PAT", number: "Rs202cr", timeframe: "FY26", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 EBITDA/wheel target", number: "~Rs300", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 EBITDA target", number: "Rs650-750cr", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 PAT growth target", number: "15-20%", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 export target", number: "~Rs600cr", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 capex", number: "~Rs550cr", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "FY27 debt increase", number: "~Rs200cr", timeframe: "FY27", stated_in: "Q4 FY26 call"}
+  - {item: "Q1 FY27 actual revenue", number: "Rs1,509cr (+27% YoY)", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Q1 FY27 actual EBITDA (standalone, with other income)", number: "Rs165.17cr (+32% YoY)", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Q1 FY27 actual EBITDA/wheel", number: "Rs314 (vs Rs262 Q1 FY26)", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Q1 FY27 actual PAT", number: "Rs71.51cr (+43% YoY), PAT margin 4.7%", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Q1 FY27 actual exports", number: "Rs127cr", timeframe: "Q1 FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 EBITDA/wheel target (raised)", number: ">Rs310, upside bias on Rs314", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 total capex (revised)", number: "~Rs600cr", timeframe: "FY27-28", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 knuckle revenue", number: "Rs110-130cr", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "FY27 total borrowings", number: "~Rs826cr (flat vs FY26)", timeframe: "FY27", stated_in: "Q1 FY27 call"}
+  - {item: "Factoring limits", number: "Rs400-500cr", timeframe: "ongoing", stated_in: "Q1 FY27 call"}
+  - {item: "Steel wheel capacity (with new brownfield)", number: "~24mn to ~26mn", timeframe: "FY27-28", stated_in: "Q1 FY27 call"}
+promise_delivery:
+  delivered: 7
+  partial: 1
+  missed: 3
+  rows:
+    - {promised_in: "Q2 FY26", promise: "FY26 revenue ~Rs4,800cr", outcome: "Delivered (beat): Rs5,183cr actual", explanation: "Domestic demand (GST reform) outperformed the Q2 guide"}
+    - {promised_in: "Q2 FY26", promise: "FY26 EBITDA Rs470-480cr", outcome: "Delivered (beat): Rs523cr actual", explanation: "Same"}
+    - {promised_in: "Q2 FY26", promise: "EBITDA/wheel first milestone Rs260-265", outcome: "Delivered: Rs260 in Q3 FY26", explanation: "On schedule"}
+    - {promised_in: "Q3 FY26", promise: "Q4 FY26 EBITDA/wheel target Rs270", outcome: "Delivered (beat): Rs282 actual", explanation: "Higher tractor/truck utilisation than modelled"}
+    - {promised_in: "Q4 FY26", promise: "FY27 EBITDA/wheel ~Rs300", outcome: "Delivered (beat, ahead of schedule): Rs314 in Q1 FY27 alone", explanation: "Input-price increases exceeded management's own expectations"}
+    - {promised_in: "Q2/Q3 FY26", promise: "Knuckle capacity to 0.5mn (FY26) then ~1.0-1.1mn via Bhuj", outcome: "Delivered/on track: Bhuj knuckle 1.1mn confirmed, trial Oct-2026", explanation: "Plan expanded, not shrunk"}
+    - {promised_in: "Q3 FY26", promise: "Come back next call with FY27 EBITDA/wheel and EBITDA projections", outcome: "Delivered: specific Rs300/wheel and Rs650-750cr given in Q4 FY26 call", explanation: "Promise kept on the letter"}
+    - {promised_in: "Q1 FY26 deck (referenced Q3 FY26 call)", promise: "Steel wheel capacity 205 to 270 lakh", outcome: "Missed/downsized to ~210 lakh", explanation: "AMW capacity scrapped, equipment redeployed; explained on the call but never proactively disclosed"}
+    - {promised_in: "Q3 FY26", promise: "US export recovery in three to six months (by ~Mar-Jun 2026)", outcome: "Partial: tariff situation still unresolved through Apr-May 2026 per Q4 FY26 call; level playing field only reached by June 2026", explanation: "External-blame (US tariff policy timeline); roughly one quarter of slippage"}
+    - {promised_in: "Q2/Q3/Q1 FY27 (repeated)", promise: "Steel-vs-alloy EBITDA/wheel segment split, will discuss offline / will prepare next time", outcome: "Missed - never delivered in any of the 4 quarters", explanation: "Trade secret / competitive sensitivity cited every time"}
+    - {promised_in: "Q3 FY26", promise: "MHCV market share discrepancy (52% vs prior-year 61%) - will clarify through SGA", outcome: "Missed - no on-record follow-up found in Q4 FY26 or Q1 FY27 transcripts", explanation: "Silent; conceded as possible error on the call but never corrected"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Give the EBITDA/wheel or margin split between steel and alloy wheels", quarters_asked: ["Q2 FY26", "Q3 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "How much revenue will the Bhuj facility contribute in FY27, and when at full utilisation?", quarters_asked: ["Q3 FY26", "Q4 FY26"], classification: "deflected every time on quantification; timeline detail improves each quarter"}
+credibility_grade: "B"
+credibility_basis: >
+  Guidance specificity is high and delivery strong on hard numbers
+  (EBITDA/wheel guide beaten 3 straight quarters: Rs270->282, Rs300->314;
+  FY26 revenue/EBITDA beat the Q2 FY26 guide), and the MD owns the Q2 FY26
+  miss candidly across three later calls. Capped at B, not A, by a question
+  stonewalled in all 4 quarters (steel-vs-alloy EBITDA/wheel split), an
+  unresolved MHCV market-share data discrepancy, and total silence across all
+  4 calls on the Customs show-cause notice, the FY26 cash-conversion
+  collapse, and the AMW subsidiary's continuing losses -- material topics
+  stage 0/2/3 flag that no analyst ever raised on any call.
+peer_questions:
+  - {question: "Is aluminium-wheel EBITDA/wheel genuinely roughly 2x steel wheel's, and does a per-wheel alloy margin near Rs450 (floated by an SSWL analyst, never denied by management) match what peers report or imply?", why: "Tests LBF2's mix-shift-margin thesis and whether SSWL's claimed premium is real vs the industry, given SSWL stonewalls the segment split every quarter.", check_peers: ["WHEELS", "UNOMINDA"]}
+  - {question: "Is raw material (steel and aluminium) a genuine 100% pass-through with only a short lag, now compressed to near-monthly settlement, industry-wide?", why: "Tests whether SSWL's margin-durability claim is a real differentiator or standard industry practice.", check_peers: ["WHEELS", "UNOMINDA", "ALICON"]}
+  - {question: "Do Vietnam/Thailand wheel exporters face US antidumping/circumvention investigations giving India (and SSWL) a cost/tariff advantage, and has the level playing field from ~June 2026 actually held?", why: "Tests the regulatory tailwind underlying the export-recovery trigger.", check_peers: ["WHEELS", "UNOMINDA"]}
+  - {question: "Does the Indian aluminium wheel market really have only 2 serious players with durable pricing power despite rising import competition?", why: "Tests the market-structure claim underlying the alloy-wheel margin-durability trigger.", check_peers: ["UNOMINDA", "ALICON"]}
+  - {question: "Does SSWL hold ~80% share in EV-scooter wheels and ~30% in ICE 2W/3W wheels, as claimed?", why: "Tests a near-monopoly claim in a stated growth segment SSWL never quantifies in revenue terms.", check_peers: ["ALICON", "UNOMINDA"]}
+  - {question: "Is the GST 2.0-driven demand recovery across PV/CV/tractor/2W-3W broad-based industry-wide, or is SSWL's growth disproportionately execution-driven?", why: "Tests whether the sectoral tailwind supports all three peers equally or SSWL is outperforming on its own merits.", check_peers: ["WHEELS", "UNOMINDA", "ALICON"]}
+  - {question: "Does a CV industry growth rate of ~16% YoY for 9M FY26 reconcile with SIAM/peer-reported CV volumes, and does SSWL's claimed 52% domestic MHCV+LCV wheel share hold given SSWL's own unresolved 61%-to-52% data discrepancy?", why: "Tests a specific cited industry growth figure and an unresolved SSWL market-share number.", check_peers: ["WHEELS"]}
+  - {question: "Do peer aluminium/steel cost trajectories match SSWL's cited path (Rs225/kg to ~Rs265-270/kg H1 FY26, further rise since, plus a Rs150cr Q1 FY27 cost-pressure event tied to the West Asia conflict), and did peers hold margin flat through full pass-through as SSWL claims?", why: "Tests the RM-trend and pass-through-durability claims underneath every margin guide SSWL has given.", check_peers: ["UNOMINDA", "ALICON", "WHEELS"]}
+  - {question: "Is a ~Rs600cr capex for ~1.2mn wheels of incremental capacity (SSWL's Bhuj benchmark, stated 7-year/~14% IRR payback on a conservative case) in line with peer capex-per-unit-capacity and payback assumptions?", why: "Tests the capex-cycle claim underlying the Bhuj commissioning and revenue-growth triggers.", check_peers: ["WHEELS", "UNOMINDA", "ALICON"]}
+red_flags:
+  - {flag: "Complete silence across all 4 calls on the FY26 CFO/EBITDA cash-conversion decline (~63-65%) and the Rs676.5cr reverse-factoring arrangement's true scale", severity: RED}
+  - {flag: "No mention anywhere in the 4 transcripts of the 17-Jun-2026 Customs show-cause notice, despite the Q1 FY27 call occurring a month after it", severity: RED}
+  - {flag: "Steel-vs-alloy EBITDA/wheel segment split stonewalled in every quarter asked", severity: YELLOW}
+  - {flag: "MHCV market-share discrepancy (61% vs 52%) conceded as a possible error but never corrected in later calls", severity: YELLOW}
+  - {flag: "Steel wheel capacity plan (205 to 270 lakh) quietly curtailed to ~210 lakh without proactive disclosure", severity: YELLOW}
+  - {flag: "Equity-dilution suggestion (Q1 FY27) met with a one-word non-answer", severity: YELLOW}
+  - {flag: "Sustained over-promotional tone across all 3 core calls complicates clean signal extraction from an otherwise solid delivery record", severity: YELLOW}
+dropped_triggers:
+  - "Steel wheel capacity expansion to 270 lakh (original AMW-inclusive plan) - quietly curtailed to ~210 lakh by Q3 FY26, sheds repurposed instead"
+  - "European wheel-maker M&A/acquisition option - live only at 'a very deep discount' per Q2 FY26, never mentioned again in Q3 FY26, Q4 FY26 or Q1 FY27"
+timeline_slippages:
+  - "US tariff resolution guided at 3-6 months from the Q3 FY26 call (implying by ~Mar-Jun 2026); still unresolved through Apr-May 2026 per the Q4 FY26 call (02-Jun-2026); level playing field only reached by June 2026 per the Q1 FY27 call - roughly one quarter of slippage, externally caused"
+  - "Bhuj facility commissioning: Dheeraj Garg states in the Q1 FY27 call that the expansion is delayed by four to five months versus his own internal expectation, though the external guide (Q4 FY27 trial production) stayed unchanged"
+  - "Bhuj FY27 revenue contribution never quantified across 3 quarters of asking (Q3 FY26, Q4 FY26); each call pushes the number further out (FY28 70% utilisation by Q4 FY26 call)"
+analyst_note: >
+  LBF1 is well anchored: FY27 revenue guidance ~Rs6,500cr (25% growth) and
+  export guidance ~Rs600cr are explicit and repeated across Q3 FY26, Q4 FY26
+  and Q1 FY27 calls. Q1 FY27 actuals (revenue Rs1,509cr, ~Rs6,000cr run-rate
+  per Dheeraj Garg himself; exports Rs127cr) sit one quarter into a
+  four-quarter guide - not yet a miss, but the export number needs a hard H2
+  FY27 check before crediting the full Rs600cr. LBF2 (EBITDA/wheel Rs314 vs
+  Rs262, alloy ~35% of revenue) is directly confirmed and ahead of the FY27
+  guide the company itself set six weeks earlier. LBF3 (factoring Rs400-500cr)
+  is directly confirmed by Pranav Jain on the Q1 FY27 call, but management
+  never volunteers the 67.6%-of-payables scale or its CFO effect that B02
+  flagged - the widest gap between what the documents show and what the
+  calls say. LBF4 (AMW) is discussed only as a capex/land-reuse story; its
+  losses, DTA growth and adverse CARO finding never surface on any call.

@@ -1,0 +1,66 @@
+stage: B03-ardeep
+company: "SSWL"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "FY25 Annual Report not in corpus (only FY26 AR held, with FY25 comparatives inside it); FY22 EBITDA-margin baseline named in LBF2 (~12.7%) is NOT FOUND IN THIS AR and needs screener Data_Sheet.csv or an older AR."
+  - "No product-level or segment revenue/margin split anywhere in the AR (single Ind AS 108 segment) -- LBF2's EBITDA-per-wheel and alloy-%-of-revenue figures are NOT FOUND IN THIS AR."
+  - "No numeric FY27 revenue or export guidance table anywhere in the AR -- LBF1 cannot be verified from this document; it is a transcript-sourced figure outside this AR's scope."
+  - "AMW Autocomponent Ltd balance-sheet size is internally inconsistent across three AR-native sources (AOC-1 net worth Rs 75.98 Cr; consolidated Note 53 net worth Rs 70.61 Cr; auditor's consolidated Other Matters total assets Rs 20.20 Cr) and cannot be reconciled from the document itself."
+flags:
+  - "FLAG-CASH: standalone CFO fell 36% YoY (Rs 517.60 Cr to Rs 331.16 Cr, FY25 to FY26) against EBITDA growth of 4.54%; CFO/EBITDA fell from 103.5% to 63.3%, driven by working-capital build (inventory +Rs 209.4 Cr cash use, receivables +Rs 122.6 Cr cash use) partly offset by a Rs 249.7 Cr payables increase substantially attributable to the Note 25 Supplier Finance Arrangement (Rs 676.50 Cr, 67.6% of payables). This number appears nowhere in the AR's own narrative sections (Phase 6E silent drop)."
+  - "FLAG-PROMOTER-PRELIM: no adverse signal -- promoter/promoter-group holding stable-to-rising (61.14% to 61.15%, Stage 0 SAST filing 15-Sep-2026 open-market purchase), no pledge disclosed. Recorded per protocol trigger condition even though the direction is positive; full promoter verdict comes from B08."
+  - "FLAG-GOVERNANCE-ATTENDANCE: Audit Committee Chairman (Ajit Singh Chatha) attended only 1 of 5 Board meetings (20%) and 2 of 6 Audit Committee meetings (33%) in FY26, both under the 75% attendance norm; he is also aged over 75 and re-appointed notwithstanding that fact (AR p.65)."
+  - "FLAG-AMW-ADVERSE-CARO: the consolidated auditor's report Annexure A (AR p.188) discloses that AMW Autocomponent Ltd (subsidiary) carries a formal adverse/unfavourable CARO remark under clause (i)(c) -- title deeds of immovable property not held in the company's name -- confirming Stage 2's AACL/AMWL-demerger land-title finding as an auditor-level adverse finding, not merely a notes disclosure."
+  - "FLAG-MISSING-DISCLOSURE: a Customs show-cause notice dated 17-Jun-2026 (Principal Commissioner of Customs, Mundra; Stage 0 filings_of_note) predates this AR's 03-Sep-2026 signing date but is not disclosed anywhere in the AR (no contingent liability, no subsequent event, no litigation mention; Board's Report and CARO both affirmatively state no pending/material litigation or orders)."
+phase_verdicts: {p1: "WATCH", p2: "RED FLAG", p3: "WATCH (tipping toward RED on CFO/EBITDA)", p4: "WATCH", p5: "WATCH", p6: "RED FLAG", p7_best_fit: "GARP / Turnaround, both WATCHLIST"}
+overall_quality: 5
+quality_components: {governance: 6, accounting: 4, balance_sheet: 6, earnings: 4}
+kill_switch_notes:
+  - "P1: a human reviewer would not stop on Phase 1 alone, but would flag the AMW cluster (adverse CARO + zero KAM + unresolved AOC-1/auditor total-assets tension) as the item most worth a direct management question before Halt 1."
+  - "P2: unchanged from Stage 2 -- the AMW cluster remains the largest unresolved transparency gap, now with a formal adverse CARO finding attached; a reviewer would want it closed via the FY25 AR or a direct management question before treating any AMW-linked equity/ROE/ROCE figure as clean."
+  - "P3: a reviewer would want the FY27 Q1 cash-conversion trend (outside this AR) before treating FY26 as a one-year working-capital blip vs. the start of a structural problem tied to the alloy/knuckle mix shift's higher input-cost and inventory intensity."
+  - "P4: not a standalone stop, but a reviewer would want the Customs notice quantum and the FY25 AR's risk-section wording (to test whether the omissions are new this year or standing) before Halt 1."
+  - "P5: a reviewer would want to understand why the Audit Committee Chairman -- the named whistleblower escalation point -- has such low attendance, given the AMW cluster's need for exactly this oversight."
+triple_pass_verification:
+  verified: 8
+  discrepancies: []
+missing_risks:
+  - {risk: "Reverse-factoring / Supplier Finance Arrangement (Note 25, Rs 676.50 Cr, 67.6% of trade payables) treated as debt-like by Stage 2 but never named under the AR's own 'Debt Burden' risk category", evidence_anchor: "AR p.125 (Debt Burden risk) vs Note 25 standalone AR p.166-167"}
+  - {risk: "Customs show-cause notice (17-Jun-2026) absent from contingent liabilities, subsequent events, and litigation disclosures despite predating the AR's 03-Sep-2026 signing date", evidence_anchor: "Full-text search of AR for 'show cause'/'Mundra' returns no match; Board's Report AR p.29 and CARO AR p.132 both affirmatively state no material litigation/orders"}
+  - {risk: "AMW loss/DTA/related-party-loan/adverse-CARO cluster not named anywhere in the risk table despite 'Debt Burden' and 'Credit Risk' both being disclosed categories", evidence_anchor: "AR p.123-126 risk table; cf. CARO Annexure A AR p.188, Note 41 standalone AR p.171-172"}
+  - {risk: "Raw-material import/currency exposure lacks any % import-dependency figure; FX outgo-over-inflow gap widened FY25 to FY26 (net outflow Rs 42.7 Cr to Rs 214.3 Cr) with no risk-table discussion", evidence_anchor: "Annexure IV AR p.44-45 vs Risk table AR p.125 (Currency Volatility)"}
+guidance_table:
+  - {claim: "FY27 renewable-energy capex", number: "Rs 15.00 Cr (vs Rs 10.00 Cr spent FY26)", timeframe: "FY27", credibility: "Specific and capital-quantified; first-year delivery not yet testable"}
+  - {claim: "FY27 renewable electricity sourcing", number: "~650 lakh units", timeframe: "FY27", credibility: "Specific target; not yet testable"}
+  - {claim: "Dappar plant water-positive target", number: "n/a (qualitative)", timeframe: "FY27", credibility: "Directional only, no metric given"}
+  - {claim: "FY27 revenue / export guidance (company memory LBF1, transcript-sourced, NOT an AR figure)", number: "~Rs 6,500 Cr revenue / ~Rs 600 Cr exports", timeframe: "FY27", credibility: "NOT FOUND IN THIS AR; only AR-native proxy is Annexure IV actual FY26 FX inflow Rs 508.73 Cr, a plausible but unconfirmed ~18% growth path to the transcript's ~Rs 600 Cr export figure"}
+monitorables:
+  - {metric: "Q1/Q2 FY27 CFO and CFO/EBITDA", threshold: ">80% supports one-year-blip read; <65% supports structural read", where: "Quarterly results filings / working-capital notes", why: "Resolves whether the FY26 cash-conversion collapse (LBF3) reverses or compounds"}
+  - {metric: "Supplier Finance Arrangement utilisation", threshold: "Growth beyond Rs 676.50 Cr or above the Rs 400-500 Cr limit named in company memory", where: "Quarterly borrowings/payables note or next AR", why: "Tests whether the debt-like financing is stabilising or expanding"}
+  - {metric: "AMW quarterly performance and DTA carrying value", threshold: "Any DTA write-down or continued losses beyond FY26", where: "Quarterly consolidated results; next AR AOC-1", why: "Tests LBF4's DTA-realism concern and the adverse-CARO land-title resolution"}
+  - {metric: "Product/segment margin disclosure (alloy vs steel wheels)", threshold: "Any voluntary revenue or margin split", where: "Investor presentations, concall transcripts (Stage 5/8)", why: "Only route to verifying LBF2's mix-shift-margin thesis; the AR itself carries none"}
+  - {metric: "Customs show-cause notice quantum and outcome", threshold: "Any provision, resolution, or escalation", where: "Next Reg 30 filing or next AR contingent liabilities note", why: "Currently undisclosed in the AR despite predating its signing date"}
+ar_new_downstream_entities:
+  - {name: "Liuzhou Arays Technology Co. Limited", where_in_ar: "Board's Report Annexure-IV (Technology Absorption), AR p.41-42; Secretarial Audit Report AR p.36", entity_type: "Technology/equipment supply partner (China) for the Bhuj alloy-wheel plant, first appearance in this corpus"}
+  - {name: "Hainan Jihoo Import & Export Co. Ltd.", where_in_ar: "Board's Report Annexure-IV, AR p.41-42; Secretarial Audit Report AR p.36", entity_type: "Export/invoicing/foreign-trade-compliance partner (China) in the same Tripartite Agreement, first appearance in this corpus"}
+strengths_top3:
+  - "Clean, unmodified audit opinion at standalone and consolidated levels; no fraud, no wilful default, no cash losses, low leverage (D/E 0.16), no goodwill anywhere on the balance sheet."
+  - "Real, specific, capital-backed capacity expansion into alloy wheels and aluminium steering knuckles (Bhuj, named technology partners, stated unit capacity); knuckle unit volumes already up 448% YoY."
+  - "Clean insider-confidence signal: promoter holding stable-to-rising with a recent open-market purchase, no pledge, low RPT quantum, CSR over-spent (not under-spent)."
+red_flags_top3:
+  - "CFO collapsed 36% YoY against EBITDA growth of 4.54%, driven by working-capital build partly masked by a debt-like Rs 676.50 Cr Supplier Finance Arrangement; the number appears nowhere in the AR's own narrative (silent drop, Phase 6E)."
+  - "AMW cluster: three consecutive loss years, an un-demanded Rs 141.42 Cr related-party loan, a Rs 59.31 Cr DTA with no disclosed forecast support, an adverse CARO clause on land title, zero KAM, and three internally inconsistent balance-sheet-size figures for the subsidiary."
+  - "Audit Committee Chairman attended only 20% of Board meetings and 33% of Audit Committee meetings in FY26 -- a quantified breach of the 75% attendance norm in the committee role most responsible for catching exactly the disclosure gaps this report found."
+best_fit_strategy: "GARP / Turnaround (both WATCHLIST)"
+one_line_verdict: "GARP/Turnaround watchlist: real mix-shift capex, but FY26 cash conversion and AMW opacity need resolution first."
+analyst_note: >
+  Three separate AR-native figures for AMW's balance-sheet size cannot be reconciled
+  (AOC-1 net worth Rs 75.98 Cr; consolidated Note 53 net worth Rs 70.61 Cr; auditor's
+  Other Matters total assets Rs 20.20 Cr) -- net worth exceeding total assets is
+  arithmetically impossible, so at least one figure is mislabelled or reflects an
+  unexplained scope difference. Stage 5/8 should not compute any AMW-attributable
+  ROE/ROCE contribution from these numbers without first resolving which is correct.
+  ROCE (standalone, computed from AR figures since the AR discloses no ROCE table):
+  17.96% FY26 vs 19.95% FY25, margin-driven not leverage-driven per DuPont.

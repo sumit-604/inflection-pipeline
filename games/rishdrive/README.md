@@ -61,6 +61,24 @@ from the jsdelivr CDN.
   1 to 3 stars against silver and gold times, best times, your own ghost,
   and each track unlocks the next.
 - **Power drift:** W + S + A or D (or the arrows), or the 🌀 button on phones.
+- **Flips (v9):** in the air, let go of the gas, then hold ⬆ (W) for a
+  frontflip or ⬇ (S) for a backflip. Land with the wheels down for 400
+  points per flip (2 flips: 1000). Half a flip is a bad landing. Holding the
+  gas through a jump never flips the car by mistake. New badge: Flip master.
+- **Stunt Canyon (v9):** 4 decks 6 m up with gaps of 20, 30, 40 and 50 m
+  and no road in the gap, plus an 8-bus jump. Hit the ⚡ boost pad and the
+  kicker fast; short jumps splash into the river. Fire rings over the gaps.
+- **More v9 ideas:** Stunt Show (90 s score), flip challenge, ⚡ boost pads,
+  🪙 sky coins over ramps, 🧪 nitro bottles, 🐢 slow motion (T), bike
+  wheelies (X), catch the thief (you are the police), checkpoint rush, cows on
+  the village road (honk to move them), lightning in the rain, fireworks when
+  you win, hot air balloons, a plane, shooting stars, gold, chrome and rainbow
+  paint, drift smoke colours, a light trail, 4 horns, a radio with 3 stations
+  (K), a daily spin wheel, a top speed record and 2 new badges (31 badges).
+- **Skip (v9):** a ⏭ Skip button on Track Challenges and canyon jumps opens
+  the next one when a track is too hard.
+- **Black city fix (v9):** after a GPU reset (sleep, a long background tab)
+  the buildings, roads and mini map no longer turn black.
 - **Sky tracks (v8):** Sky Gap (a road 8 m up with 3 gaps to jump), Roller
   Coaster (twisting turns over big hills) and Space Hopper (floating roads in
   space; jump down from one road to the next). Every track is now one lap.
@@ -83,7 +101,7 @@ from the jsdelivr CDN.
 W or Up: accelerate. S or Down: brake, then reverse. A, D or arrows: steer.
 Space: handbrake. W + S + A or D (arrows too): power drift. N or 🔥: nitro (tap once, it stays on; tap again or brake to stop). C: camera. H: horn. L: night. R: rain.
 Q and E: indicators. O: fog. M: mirror. G and F: gear up and down
-(manual gearbox). P: photo mode. Esc: menu.
+(manual gearbox). P: photo mode. In the air: let go, then ⬆ frontflip or ⬇ backflip. X: wheelie. T: slow motion. K: radio. Esc: menu.
 
 ## Tests
 
@@ -127,3 +145,6 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   bridge, stunt combos; beach, desert dunes, snow pass and a hill tunnel;
   day and night cycle, car designer, engine sounds, tuning, photo mode and a
   weekly challenge. 173 regression checks.
+- v9: frontflips and backflips; Stunt Canyon gap jumps (20 to 50 m, 8 buses);
+  25 new ideas; Skip buttons; the black city fix after a GPU reset; 31 badges.
+  196 regression checks.

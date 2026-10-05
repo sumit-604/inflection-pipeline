@@ -29,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v8", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v9", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -186,7 +186,7 @@ const HELPERS = () => {
   await E(() => { G.setPos(-39, 12, 0); G.car.s = 24; keys("up"); sim(1.05); keys(); }); await p.waitForTimeout(1200); await p.screenshot({ path: `${SHOTS}/10-jump.png` });
   // 13. Badges
   r = await E(() => { G.checkBadges(); G.openMenu(); document.querySelector("#m-badges").click(); return { n: document.querySelectorAll(".badge").length, on: document.querySelectorAll(".badge.on").length, jump: !!S.badges.jump1, wash: !!S.badges.wash, toll: !!S.badges.toll, plate: !!S.badges.plate }; });
-  ok("N13 28 badges, earned ones lit", r.n === 28 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
+  ok("N13 31 badges, earned ones lit", r.n === 31 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
   await p.screenshot({ path: `${SHOTS}/11-badges.png` });
   // 14. Village and Sunrise Hill: drive the road with a simple autopilot
   r = await E(() => { document.querySelector("#b-back").click(); document.querySelector("#m-free").click(); const W = G.world, v0 = S.stats.village, h0 = S.stats.hilltop; S.fuel = 100; G.setPos(-180, -3.5, -Math.PI / 2); keys("up"); let i = 0, maxY = 0;
@@ -361,6 +361,59 @@ const HELPERS = () => {
   ok("W8-26 menus: 9 new skill and place buttons, 4 new race buttons", r.ids === 9 && r.rs === 4, r);
   r = await E(() => G.lastErr || ""); ok("W8-27 no loop errors after v8 checks", !r, r.slice(0, 300));
   await E(() => { S.car = "hatch"; G.respawnCar(); G.startFree(); yesTraffic(); });
+
+  // ===== v9: frontflip and backflip in the air =====
+  r = await E(() => { const jump = (mode) => { G.startFree(); S.damage = 0; G.setPos(400, 395, Math.PI / 2); G.car.s = 30; keys("up"); let airT = 0, maxF = 0, rel = false; const f0 = S.stats.flips || 0;
+      for (let i = 0; i < 120; i++) { const c = G.car; c.h = Math.PI / 2; if (!c.air) c.s = Math.min(c.s, 30);
+        if (c.air && mode !== "held") { airT += 0.05; G.keys.clear(); if (rel) { const lim = mode === "bad" ? Math.PI : Math.PI * 2 - 0.25; if (Math.abs(c.flip || 0) < lim) G.keys.add(mode === "front" ? "up" : "down"); } rel = true; } else if (c.air) airT += 0.05;
+        G.T += 0.05; G.step(0.05); maxF = Math.max(maxF, Math.abs(c.flip || 0)); if (airT > 0 && !c.air) break; }
+      keys(); return { airT, maxF, flips: (S.stats.flips || 0) - f0, dmg: S.damage, rx: G.car.m.rotation.x, s: G.car.s }; };
+    const held = jump("held"), back = jump("back"), front = jump("front"), bad = jump("bad"); G.checkBadges(); S.damage = 0; G.startFree(); return { held, back, front, bad, badge: !!S.badges.flip, fronts: S.stats.frontflips, backs: S.stats.backflips }; });
+  ok("W9-01 holding gas through a jump does not flip the car", r.held.airT > 0.8 && r.held.maxF === 0 && r.held.flips === 0, r.held);
+  ok("W9-02 let go, then hold back in the air: backflip, clean landing, points", r.back.flips === 1 && r.back.dmg === 0 && Math.abs(r.back.rx) < 0.1 && r.back.s > 20 && r.backs >= 1, r.back);
+  ok("W9-03 let go, then hold front in the air: frontflip", r.front.flips === 1 && r.front.dmg === 0 && r.fronts >= 1, r.front);
+  ok("W9-04 half a flip is a bad landing: slow down and damage", r.bad.flips === 0 && r.bad.dmg > 0 && r.bad.s < 10, r.bad);
+  ok("W9-05 Flip master badge", r.badge, r);
+  r = await E(() => G.lastErr || ""); ok("W9-06 no loop errors after flips", !r, r.slice(0, 300));
+  r = await E(async () => { const cvs = []; G.scene.traverse((o) => { for (const m of o.material ? [].concat(o.material) : []) if (m.map && m.map.image && m.map.image.getContext) cvs.push(m.map.image); }); cvs.push(G.mapBase.cv);
+    const soft = cvs.every((c) => c.getContext("2d").getContextAttributes().willReadFrequently === true); const ext = G.renderer.getContext().getExtension("WEBGL_lose_context"); ext.loseContext(); await new Promise((res) => setTimeout(res, 300)); ext.restoreContext(); await new Promise((res) => setTimeout(res, 1200)); sim(0.5);
+    const tex = cvs[0].getContext("2d").getImageData(0, 0, 8, 8).data.some((v, i) => i % 4 !== 3 && v > 0); return { n: cvs.length, soft, tex, lost: G.renderer.getContext().isContextLost(), err: G.lastErr || "" }; });
+  ok("W9-07 after a GPU reset the city keeps its colours and the mini map (no black buildings)", r.n > 20 && r.soft && r.tex && !r.lost && !r.err, r);
+  // v9: 25 ideas
+  r = await E(() => { const { CANYON } = __dd, out = []; for (const [i, car] of [[0, "hatch"], [2, "hatch"], [3, "gt"], [4, "sedan"]]) { S.car = car; G.respawnCar(); S.canyonLv = 4; G.startCanyon(i); sim(3.5); keys("up"); G.nitroTap(); for (let k = 0; k < 600 && G.mode.kind === "mission"; k++) { const c = G.car; c.h = Math.PI / 2; c.z += (CANYON.lanes[i].z - c.z) * 0.3; if (!c.nitroLatch && S.nitro > 30 && !c.air) G.nitroTap(); G.T += 0.05; G.step(0.05); } keys(); out.push(document.querySelector("#card h2")?.textContent || ""); } S.car = "hatch"; G.respawnCar(); return out; });
+  ok("W9-08 Stunt Canyon: 20 m, 40 m, 50 m and the 8-bus jump can be cleared", r.every((t) => /cleared/.test(t)), r);
+  r = await E(() => { const { CANYON } = __dd; S.car = "cycle"; G.respawnCar(); G.startCanyon(1); sim(3.5); keys("up"); let splash = false; for (let k = 0; k < 500; k++) { const c = G.car; c.h = Math.PI / 2; c.z += (CANYON.lanes[1].z - c.z) * 0.3; G.T += 0.05; G.step(0.05); if (/try 2/.test(document.querySelector("#race-board").textContent)) { splash = true; break; } } keys(); const back = G.car.x < CANYON.x0; G.startFree(); S.car = "hatch"; G.respawnCar(); return { splash, back }; });
+  ok("W9-09 Stunt Canyon: too slow means a splash in the river and a new try", r.splash && r.back, r);
+  r = await E(() => { const { CANYON } = __dd; G.startFree(); const L = CANYON.lanes[0], r0 = S.stats.rings || 0; G.setPos(CANYON.x0 + 100, L.z, Math.PI / 2); for (let i = 0; i < 80; i++) { G.car.h = Math.PI / 2; if (!G.car.air) G.car.s = 95 / 3.6; G.T += 0.05; G.step(0.05); } return (S.stats.rings || 0) - r0; });
+  ok("W9-10 ring of fire over the gap", r === 1, r);
+  r = await E(() => { S.cySkip = {}; S.canyonLv = 0; G.canyonMenu(); const lanes = document.querySelectorAll("[data-cy]").length, open0 = [...document.querySelectorAll("[data-cy]")].filter((b) => !b.disabled).length; document.querySelector('[data-cyskip="0"]').click(); const open1 = [...document.querySelectorAll("[data-cy]")].filter((b) => !b.disabled).length; S.tracks = {}; S.tskip = {}; G.tracksMenu(); const tsk = document.querySelectorAll("[data-tskip]").length; document.querySelector('[data-tskip="0"]').click(); const topen = [...document.querySelectorAll("[data-trk]")].filter((b) => !b.disabled).length; return { lanes, open0, open1, tsk, topen }; });
+  ok("W9-11 Skip buttons: skip a track challenge or a canyon jump to open the next", r.lanes === 5 && r.open0 === 1 && r.open1 === 2 && r.tsk === 1 && r.topen === 2, r);
+  r = await E(() => { G.startFree(); G.setPos(4.5, 376, 0); G.car.s = 15; const b0 = S.stats.boosts || 0; sim(0.5); const boost = (S.stats.boosts || 0) - b0; const p = G.world.pickups.find((q) => q.type === "coin" && q.gone <= 0), c0 = S.stats.coins || 0; G.setPos(p.x, p.z, 0); G.car.y = p.y - 0.8; G.car.air = true; G.car.vy = 0; sim(0.05); const coin = (S.stats.coins || 0) - c0; S.nitro = 5; const q = G.world.pickups.find((z) => z.type === "nitro" && z.gone <= 0); G.setPos(q.x, q.z, 0); sim(0.1); return { boost, coin, nitro: S.nitro, coins: G.world.pickups.filter((z) => z.type === "coin").length }; });
+  ok("W9-12 boost pads, sky coins and nitro bottles", r.boost === 1 && r.coin === 1 && r.nitro >= 100 && r.coins > 30, r);
+  r = await E(() => { G.startFree(); G._slowCd = 0; G.slowmo(); const c = G.car; c.s = 20; const z0 = c.z; sim(0.5); const moved = c.z - z0; sim(3); return { cls: !document.body.classList.contains("slowmo"), moved }; });
+  ok("W9-13 slow motion for 3 seconds", r.moved < 5 && r.moved > 2 && r.cls, r);
+  r = await E(() => { S.car = "bike"; G.respawnCar(); G.startFree(); G.setPos(-3.5, -150, 0); G.car.s = 15; const w0 = S.stats.wheelies || 0; keys("up", "wheelie"); let rx = 0; sim(2, 0.05); rx = G.car.m.rotation.x; keys("up"); sim(0.2); keys(); S.car = "hatch"; G.respawnCar(); return { rx, w: (S.stats.wheelies || 0) - w0 }; });
+  ok("W9-14 wheelie on a bike with X", r.rx < -0.3 && r.w === 1, r);
+  r = await E(() => { G.startThief(); sim(3.5); const th = G.mode.ai[0], z0 = th.z; sim(3); const moved = Math.abs(th.z - z0) + Math.abs(th.x); G.setPos(th.x + Math.sin(th.h) * 2, th.z + Math.cos(th.h) * 2, th.h + Math.PI); sim(0.1); return { moved, t: document.querySelector("#card h2")?.textContent }; });
+  ok("W9-15 catch the thief: the thief runs, touch it to win", r.moved > 20 && /Caught/.test(r.t || ""), r);
+  r = await E(() => { G.startRush(); sim(3.5); for (const q of G.mode.rush.slice()) { G.setPos(q.x, q.z, 0); sim(0.1); } return document.querySelector("#card h2")?.textContent; });
+  ok("W9-16 checkpoint rush: 8 checkpoints", /Checkpoint|checkpoints/.test(r || ""), r);
+  r = await E(() => { G.startShow(); sim(3.5); G.comboAdd("jump", 100); G.comboAdd("flip", 400); const sc = G.mode.show; sim(91); const t1 = document.querySelector("#card h2")?.textContent; G.startFlipChallenge(); sim(3.5); S.stats.flips = (S.stats.flips || 0) + 3; sim(0.1); return { sc, t1, t2: document.querySelector("#card h2")?.textContent }; });
+  ok("W9-17 stunt show scores tricks for 90 s; flip challenge", r.sc === 500 && /stunt show/i.test(r.t1 || "") && /Flip champion/.test(r.t2 || ""), r);
+  r = await E(() => { G.startFree(); const cw = G.world.cows[0]; G.setPos(cw.x - 8, cw.z, Math.PI / 2); G.horn(); sim(1); const moved = Math.hypot(cw.x - cw.hx, cw.z - cw.hz); S.rain = true; G.applyWorldLook(); G._ltT = 0.01; const l0 = S.stats.lightning || 0; sim(0.5); const light = (S.stats.lightning || 0) - l0; S.rain = false; G.applyWorldLook(); G.world.plane.t = 5; sim(0.2); S.night = true; G._ssT = 0.01; const s0 = S.stats.shootingStars || 0; sim(0.2); const ss = (S.stats.shootingStars || 0) - s0; S.night = false; G.applyWorldLook(); const f0 = S.stats.fireworks || 0; G.done("🏆 Test", "x"); return { cows: G.world.cows.length, moved, light, plane: G.world.plane.g.visible, balloons: G.world.balloons.length, ss, fw: (S.stats.fireworks || 0) - f0 }; });
+  ok("W9-18 cows move when you honk; lightning, plane, balloons, shooting stars, fireworks", r.cows === 4 && r.moved > 1 && r.light === 1 && r.plane && r.balloons === 6 && r.ss === 1 && r.fw === 1, r);
+  r = await E(() => { S.points += 3000; S.car = "hatch"; G.respawnCar(); G.garage(true); const p0 = S.points; document.querySelector('[data-spp="gold"]').click(); const gold = S.special.hatch === "gold" && p0 - S.points === 500; document.querySelector('[data-spp="rainbow"]').click(); G.startFree(); sim(0.2); const c1 = G.car.m.userData.body.color.getHex(); sim(1); const rainbow = c1 !== G.car.m.userData.body.color.getHex(); G.garage(true); document.querySelector('[data-smk="2"]').click(); document.querySelector('[data-trl="1"]').click(); G.startFree(); G.setPos(-3.5, -150, 0); G.car.s = 20; keys("up"); sim(1.5); keys(); const trail = !!G.trailM && G.trailM.userData.pts.length > 10; G.garage(true); document.querySelector('[data-spp=""]').click(); document.querySelector('[data-trl="-1"]').click(); G.startFree(); sim(0.1); return { gold, rainbow, smoke: S.smoke.hatch, trail, off: !G.trailM }; });
+  ok("W9-19 garage: gold, chrome and rainbow paint, drift smoke colour, light trail", r.gold && r.rainbow && r.smoke === 2 && r.trail && r.off, r);
+  r = await E(() => { G.settingsMenu(); document.querySelector('[data-hrn="duck"]').click(); const horn = S.horn; document.querySelector('[data-rad="2"]').click(); const on = !!G._radioI; G.setRadio(0); S.horn = "classic"; return { horn, on, off: !G._radioI, n: __dd.RADIO.length }; });
+  ok("W9-20 4 horns and a radio with 3 stations", r.horn === "duck" && r.on && r.off && r.n === 3, r);
+  r = await E(() => { S.spin = null; G.openMenu(); const btn = !!document.querySelector("#m-spin"); document.querySelector("#m-spin").click(); const won = G.lastSpin; G.openMenu(); return { btn, won, again: !document.querySelector("#m-spin") }; });
+  ok("W9-21 daily spin wheel, once a day", r.btn && !!r.won && r.again, r);
+  r = await E(() => { G.startFree(); G.setPos(4.5, 250, 0); for (let i = 0; i < 20; i++) { G.car.s = 60; G.T += 0.05; G.step(0.05); } G.checkBadges(); return { top: S.best.top, badge: !!S.badges.speed200 }; });
+  ok("W9-22 top speed record and the 200 club badge", r.top >= 200 && r.badge, r);
+  r = await E(() => { G.skillMenu(); const a = ["k-canyon", "k-show", "k-flip"].filter((i) => document.getElementById(i)).length; G.missionsMenu(); const m = ["mi-thief", "mi-rush"].filter((i) => document.getElementById(i)).length; G.startFree(); return { a, m, err: G.lastErr || "" }; });
+  ok("W9-23 new buttons in Skill Park and Missions; no loop errors", r.a === 3 && r.m === 2 && !r.err, r);
+  await E(() => { S.car = "hatch"; S.damage = 0; G.respawnCar(); G.startFree(); });
+
 
   // Y. Save survives reload
   const saved = await E(() => { __dd.save(); return S.points; });

@@ -1,40 +1,46 @@
 stage: B12c
+run: 2
 company: "ESCONET"
 run_date: "2026-10-05"
 model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
-status: complete          # phase-1 scope complete; valuation half PENDING PHASE 3
-scope: "PHASE 1: Gate 0 (B01) + Emerging Moat (B07) only; valuation audit (B10/B11) PENDING PHASE 3"
+status: complete          # phase-1 re-audit complete; valuation half PENDING PHASE 3
+scope: "PHASE 1 RE-AUDIT: Gate 0 (B01 run 2) + Emerging Moat (B07 run 2, scoped) only; valuation audit (B10/B11) PENDING PHASE 3"
+run1_findings:
+  - {id: "F1", run1_severity: "CRITICAL", status: "RESOLVED", evidence: "B01 data_years 6 (FY2021-FY2026), history_downgrade false, blocks A13 B5 C10 D17 E15, core 60, AVERAGE (DB4); C2/C4 N/M with loss-to-profit swing FY21 to FY22; B07 6C/6D/combined_assessment AVERAGE"}
+  - {id: "F2", run1_severity: "MINOR", status: "RESOLVED for FY23; recurs at FY21 as N2", evidence: "FY23 ROE 304.00 / avg(250.45, 554.19) = 75.6%"}
+  - {id: "F3", run1_severity: "MINOR", status: "RESOLVED", evidence: "M8 = 1 (AR FY26 [page 29])"}
+  - {id: "F4", run1_severity: "MINOR", status: "RESOLVED as raised; superseded by N1", evidence: "sub-window reading removed; overall trend used; at 6 years the written path is the two-window test"}
+  - {id: "F5", run1_severity: "MINOR", status: "RESOLVED", evidence: "01-gate0.md lines 203-271 identical to B01-gate0.yaml; data_notes 24-item list"}
+  - {id: "F6", run1_severity: "MINOR", status: "RESOLVED", evidence: "D4 1.85 (4) AR basis vs 2.28 (5) results basis disclosed in section 0, D4 row, data_notes, FLAG-SOURCE-CONFLICT"}
+  - {id: "F7", run1_severity: "MINOR", status: "RESOLVED", evidence: "12 documented items (11 unique) across 5 categories; evidence_mix 12/9/1; verifier recount agrees"}
 gate0:
-  rules_checked: 46
-  rules_passed: 41
+  rules_checked: 49
+  rules_passed: 46
   fails:
-    - {id: "F1", rule: "01 rule 6 history window + data-confidence table", severity: "CRITICAL", b01: "data_years 4 (FY2023-FY2026), LIMITED, history_downgrade true, classification AVOID", recomputed: "data_years 6 (FY2021-FY2026, PROSP p.48/p.50/p.51 restated standalone; no subsidiary before 11 May 2022, PROSP p.199), 5-6 lower flag, no downgrade, blocks A13 B5 C10 D17 E15, core 60, classification AVERAGE (DB4 cap); C2/C4 N/M, loss-to-profit swing FY21 to FY22"}
-    - {id: "F2", rule: "01 FORMULA ROE opening net worth", severity: "MINOR", b01: "FY23 ROE on closing net worth, opening NOT FOUND", recomputed: "opening 250.45 Lakhs exists (PROSP p.48); FY23 ROE 75.3%; A3 median 20.3%, score 5 unchanged"}
-    - {id: "F3", rule: "01 M8 distribution", severity: "MINOR", b01: "0", recomputed: "1 (mentioned unquantified: AR FY26 p.29 Bengaluru, Chennai, Hyderabad)"}
-    - {id: "F4", rule: "01 M11 under 6 years, overall trend", severity: "MINOR", b01: "1", recomputed: "3 (selling and admin % 4.81 FY23 to 4.27 FY26, declining; revenue CAGR 55.3%); moats_confirmed 3, class MODERATE, moat_score 15 with F3"}
-    - {id: "F5", rule: "01 OUTPUT YAML template", severity: "MINOR", b01: "report-embedded block has data_notes as a string pointer and a different analyst_note from B01-gate0.yaml", recomputed: "one identical block, data_notes as a list"}
+    - {id: "N1", rule: "01 M11 two-window test at >=6 years", severity: "MINOR", b01: "3 (overall-trend fallback; 'prior window needs FY20')", recomputed: "5 (FY21-FY23 48.0% vs FY24-FY26 58.8%, or FY23-FY26 54.2%; selling proxy block means 2.69% to 2.02%); moat_score 20, grand_total 80, moats_confirmed 4, STRONG; classification AVERAGE unchanged"}
+    - {id: "N2", rule: "01 FORMULA ROE opening net worth (earliest year)", severity: "MINOR", b01: "FY21 opening net worth NOT FOUND; ROE -56.4% on closing", recomputed: "opening 278.57 Lakhs = share capital 76.71 (PROSP [page 232]) + opening surplus 201.86 (PROSP [page 233]); FY21 ROE -44.0%; A3 median 20.27%, score 5 unchanged"}
+    - {id: "N3", rule: "01 rules 2-3 and analyst_note purpose: sensitivity must match the scoring rules", severity: "MINOR", b01: "analyst_note: FY22 start drops core to 55", recomputed: "consistent FY22-FY26 window: A10 B1 C20 D17 E15 = core 63, moat 16 STRONG, AVERAGE (DB4 -0.33); 55 is the A4-only swap; FY21 start costs 3 points net"}
 emoat:
-  rules_checked: 26
-  rules_passed: 25
+  rules_checked: 27
+  rules_passed: 26
   fails:
-    - {id: "F7", rule: "07 rule 6 completionist recount + evidence_mix", severity: "MINOR", b07: "6 documented items across 3 categories; evidence_mix {documented 6, claim 5, inference 1}", recomputed: "12 documented items (11 unique) across 5 categories (A4, B2, C1, C2, H2); evidence_mix {documented 12, claim 9, inference 1}; em_score 5.5 and class NONE unchanged"}
-  inherited_from_gate0: "6C/6D combined_assessment AVOID becomes AVERAGE on the F1-corrected Gate 0 input (not a B07 rule error)"
+    - {id: "N4", rule: "07 Section 6E moat evolution map existing to emerging per family", severity: "MINOR", b07: "existing column none in all families; 'B01 does not name which four moats'", recomputed: "B01 names M1, M4, M10, M11 (01-gate0.md line 162; B01 data_notes); C Customer existing = M4 (3) + M10 (5); M1 (5) and M11 (3, or 5 per N1) listed beside the map; emerging side unchanged"}
+  inherited_from_gate0: "6C sentence 'Starting at FY22 drops core to 55' carried from B01 analyst_note (N3); not a B07 rule error"
 valuation: {rules_checked: 0, fails: []}  # PENDING PHASE 3 (B10/B11 not in phase-1 inputs)
 expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11; PENDING PHASE 3
 business_understanding_narrative: {checked: null, fails: []}  # rule 9; any fail = REWORK stage 13; PENDING /finalize
 recomputed_destination_pe: ""  # PENDING PHASE 3
 recomputed_decision: ""        # PENDING PHASE 3
-recomputed_gate0_classification: "AVERAGE (B01 states AVOID; see F1)"
-recomputed_emoat_combined_assessment: "AVERAGE (B07 states AVOID; inherited from F1)"
+recomputed_gate0_classification: ""  # concur: AVERAGE
+recomputed_gate0_moat: "moat_score 20, grand_total 80, moats_confirmed 4, STRONG (N1); B01 states 18 / 78 / 4 / STRONG"
+recomputed_emoat_combined_assessment: ""  # concur: AVERAGE
 findings:
-  - {id: "F1", severity: "CRITICAL", location: "B01 data_years/history_downgrade/classification; B07 6C/6D", claimed: "4 years, LIMITED downgrade, AVOID", recomputed: "6 years, no downgrade, core 60, AVERAGE", note: "01 rule 6 'maximum whatever exists'; FY21-FY22 restated statements in PROSP p.48-51; flips the Gate 0 decision line; FLAG-GATE0 stays"}
-  - {id: "F2", severity: "MINOR", location: "B01 ROE FY23", claimed: "opening net worth NOT FOUND", recomputed: "250.45 Lakhs (PROSP p.48); FY23 ROE 75.3%; A3 unchanged", note: "same root cause as F1"}
-  - {id: "F3", severity: "MINOR", location: "B01 M8", claimed: "0", recomputed: "1", note: "AR FY26 p.29 regional footprint, unquantified"}
-  - {id: "F4", severity: "MINOR", location: "B01 M11", claimed: "1", recomputed: "3", note: "rubric scores the overall trend under 6 years; 4.81% to 4.27% declining"}
-  - {id: "F5", severity: "MINOR", location: "01-gate0.md YAML vs B01-gate0.yaml", claimed: "data_notes string pointer", recomputed: "data_notes list, identical copies", note: "template compliance"}
-  - {id: "F6", severity: "MINOR", location: "B01 D4 / FLAG-SOURCE-CONFLICT", claimed: "sensitivity not stated", recomputed: "results-filing basis current ratio 2.28 (11,184.86 / 4,909.96 Lakhs, results 2026-05-28) scores D4 = 5; in the 4-year frame core 60 gives AVERAGE", note: "disclosure gap; moot once F1 is corrected"}
-  - {id: "F7", severity: "MINOR", location: "B07 completionist_recount, evidence_mix", claimed: "6 items, 3 categories; mix 6/5/1", recomputed: "12 items (11 unique), 5 categories; mix 12/9/1", note: "no score or guard change"}
-critical_count: 1
+  - {id: "N1", severity: "MINOR", location: "B01 M11, moat_score, grand_total", claimed: "3", recomputed: "5; moat_score 20; grand_total 80", note: "6 years meets the rubric's two-window threshold; fallback is 'if fewer'; rubric window definition needs an operator ruling (O2); classification unchanged"}
+  - {id: "N2", severity: "MINOR", location: "B01 ROE FY21, input_gaps, data_notes", claimed: "opening net worth NOT FOUND", recomputed: "278.57 Lakhs (PROSP [page 232] + [page 233]); ROE -44.0%; A3 unchanged", note: "same class as run 1 F2; verifier run 1 recompute shared the error"}
+  - {id: "N3", severity: "MINOR", location: "B01 analyst_note; B07 6C (inherited)", claimed: "FY22 start gives core 55", recomputed: "consistent FY22 window gives core 63, AVERAGE", note: "one-sided sensitivity; correct it before the Halt 1 dossier or stage 13 quotes it"}
+  - {id: "N4", severity: "MINOR", location: "B07 6E moat evolution map", claimed: "existing none in all families; B01 does not name the four moats", recomputed: "C Customer existing M4 (3) + M10 (5); M1 and M11 listed", note: "premise false; run 1 had the same gap and the run 1 audit missed it"}
+critical_count: 0
 major_count: 0
-minor_count: 6
-acceptance_rate: 91.7           # 66 rules passed / 72 rules checked (gate0 46 + emoat 26), %; phase 1 only
+minor_count: 4
+acceptance_rate: 94.7           # 72 rules passed / 76 rules checked (gate0 49 + emoat 27), %; phase 1 only
+rework_trigger: false           # no CRITICAL; rate above 60% on a denominator of 76

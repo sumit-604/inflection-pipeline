@@ -1,114 +1,77 @@
-# VERIFIER A: NUMERICAL AUDIT, ESCONET, run 2026-10-05 (PHASE 1)
+# VERIFIER A, NUMERICAL AUDIT, RUN 2 (re-audit): ESCONET, run 2026-10-05
 
-Model: Sonnet 5.5. Inputs read: reports 01, 02 (pass 1, pass 2, final), 03 to 09 under R/outputs/reports/, and the source corpus under R/inputs/ (screener CSVs, both ARs, three results filings, prospectus, Reg 30 filings, concall and peer transcripts, decks, CRISIL text, SHP extracts). Page checks used the `[page N]` markers in the .txt extracts. No PDF page was rendered: `pdftoppm` is missing in this environment, so the scanned SAST file could not be read either.
+Model: Sonnet 5.5. Phase 1. Page checks used the .txt [page N] markers of the corpus extracts. No PDF page was rendered.
 
-Phase 1 scope note. No stage 10 or stage 11 output exists. There is no verdict card and no Section 1B pillar input to audit. A MISMATCH here is therefore MAJOR at most, never CRITICAL.
+## Scope
 
-## 1. Result in one paragraph
+- Fresh audit, mandatory tier (OR-32): every Gate 0 input in 01-gate0.md and B01-gate0.yaml (run 2, FY2021 to FY2026), including the new FY21 and FY22 figures.
+- Fresh check of the changed figures in 07-emoat.md Sections 6C to 6E, evidence_mix and the completionist recount.
+- Carried from run 1 without re-audit: findings and sample checks for stages 2, 3, 4, 5, 6, 8 and 9 (B12a-run1.yaml). Six run 1 rows carry into B12a.yaml.
+- Superseded: the run 1 findings on B01. Each one is resolved in the re-issue (see table below).
 
-No CRITICAL. Four MAJOR findings, seven MINOR. Three MAJOR are wrong numbers in the maker's report (a promoter-holding basis label in stage 3, a supplier-concentration total in stage 4, a ZeaCloud turnover in stage 9). One MAJOR is an anchor error on the Gate 0 source conflict: the FY26 results-filing balance sheet and cash flow sit one page earlier than cited. Every Gate 0 value matched its source. The Gate 0 arithmetic (ROCE, ROE, CAGR, WC days, FCF, interest cover, peer margins) all recompute. The 2,463.00 Lakh gap between the results filing and the AR is real and exact on receivables, payables and total assets.
+## Run 1 B01 findings: resolved in the re-issue
 
-## 2. Findings table
+| Run 1 row | Run 2 state | Verified at |
+|---|---|---|
+| Results filing balance sheet cited p.15, CFO p.16 | Now results [page 14] (balance sheet) and [page 15] (cash flow) | Outcome_BM_28052026 [page 14], [page 15] |
+| AR FY25 balance sheet cited by folio p.110 | Now AR FY25 [page 112], folio 110 in brackets | Annual_Report_2025 [page 112] |
+| FY23 revenue 94.59 and receivables 12.59 basis unlabelled | Basis table added. Screener FY23 column rejected, with the neither-set tie-out stated | PROSP [page 50], [page 190], [page 192]; screener Data_Sheet |
+| M3 net block 18.40 includes goodwill, unlabelled | Labelled: 18.40 Cr = 989.00 + 851.11 Lakhs | AR FY26 [page 132] |
+| M6 Annexure III | Now Annexure IV [page 72] | AR FY26 [page 72] |
 
-Severity per rule 5. `SF` = source_fidelity flag (non-overridable; only a PDF read clears it).
+## Findings table (new in run 2)
 
-| # | Sev | SF | Report location | Claimed (anchor) | Source truth (location) | Note |
-|---|---|---|---|---|---|---|
-| 1 | MAJOR | yes | 03 Phase 5D, shareholding table | "Promoter and group" pre-IPO 82.50%, post-IPO 60.09% (PROSP p.21) | 82.50% and 60.09% are "Total - A", promoters only (PROSP p.21). Promoter and group is 89.18% pre-issue and 64.94% post-issue (A plus B: 6.68% and 4.85%; PROSP p.21, p.35, p.182) | Basis mislabelled. The text then reads the fall to 60.19% as dilution, against 61.29% and 60.19% which are promoter and group (AR26 p.109). Gate 0 E2 (64.94%) and B08 (89.18%) are right. |
-| 2 | MAJOR | yes | 04 Section 2A, supplier power | Top five suppliers 52.35% of FY23 purchases, "derived from 27.01+9.17+7.35+5.98+3.64" | 53.15% (PROSP p.31 risk factor 15; p.32 table: 4,044.52 of 7,610.30 Lakhs). The five shares sum to 53.15 | Total transposed. B07 cites 53.15% correctly. |
-| 3 | MAJOR | yes | 09 Section 5D (ii) | ZeaCloud turnover Rs 5.69 Cr (568.79 Lakhs) | ZeaCloud turnover 5,34,42,971 rupees = 534.43 Lakhs = Rs 5.34 Cr (AOC-1, AR26 p.69). 568.79 Lakhs is the parent's sale to ZeaCloud (AR26 p.118, p.147) | Parent sale written as subsidiary turnover. B03, B04, B07 carry 534.43. |
-| 4 | MAJOR | yes | 01 Section 0 and B01 FLAG-SOURCE-CONFLICT | Results filing 2026-05-28: balance sheet "p.15", cash flow "p.16" | Balance sheet is on [page 14] (receivables 1,963.93; payables 3,004.26; total 13,102.08). Cash flow is on [page 15] (CFO (882.50)). [page 15] holds the cash flow; [page 16] holds the notes | ANCHOR NOT FOUND at the cited pages; off by one. All four values exact at the corrected pages. Cleared only by a PDF page read. |
-| 5 | MINOR | no | 01 Section 1, current liabilities and payables FY24, FY25 | "AR FY25 p.110" | Figures exact on [page 112]; printed folio is 110 | Mixed pagination: p.113 and p.114 in the same cell set are markers. [page 110] is the IFC annexure. Statement name is given. |
-| 6 | MINOR | no | 01 Section 1, revenue FY23 94.59 and Section 0 "cross-checked to prospectus" | 94.59 Cr, consolidated basis | Screener 94.59 is exact. Prospectus restated consolidated 9,659.26 L = 96.59 Cr (p.192); restated standalone 9,465.96 L = 94.66 Cr (p.228). Screener FY23 receivables 12.59 = standalone 1,258.74 L, while FY23 total assets, current liabilities and payables use the consolidated restated balance sheet (p.190) | Unlabelled basis mix in the FY23 column. C1 CAGR 55.3% vs 54.2%; score 5 either way. |
-| 7 | MINOR | no | 01 Section 8, M3 | FAT 19.3x = 354.40 / 18.40 | 18.40 Cr is screener "Net Block", which includes goodwill: 988.87 + 0.13 + 851.11 = 1,840.11 L (AR26 p.132). PP&E alone is 9.89 Cr, FAT 35.8x | Unlabelled basis. M3 stays 0 (ROCE leg fails). |
-| 8 | MINOR | no | 01 Section 8, M6 | "AR FY26 Annexure III row blank" | The blank R&D row is on [page 72] under ANNEXURE IV | Label wrong; the blank row exists. B03 N11 says Annexure IV. |
-| 9 | MINOR | yes | 06 Q3, Netweb cash conversion | FY26 PAT INR 2,058 mn, "p.4" | On [page 3] and [page 5] of the May 2026 transcript; not on [page 4] | ANCHOR NOT FOUND on one figure in a derived 83% ratio. Value correct. |
-| 10 | MINOR | no | 02 pass 1 and final | 5,149.87 "p.139"; 222.82 and revenue lines "p.142"; Note 14 "p.116"; Schedule III "p.150" | Markers: [page 141]; [page 143]; [page 117-118]; [page 151] | Folio or off-marker cites, with note IDs given. All values match. B03 and pass 2 correct several. |
-| 11 | MINOR | no | 04 4D Q5 and contradictions paragraph | 17.65 Lakhs interest on statutory dues, in a report using "consolidated unless standalone is stated" | 17.65 is standalone (AR26 p.115). Consolidated is 18.59 (AR26 p.144) | Unlabelled basis. Decision impact nil. |
+No new CRITICAL or MAJOR. Four new MINOR rows.
 
-Self-check (rule 5b). Each CRITICAL and MAJOR row was read back. In every row `claimed` and `source_truth` are different numbers (82.50 vs 89.18; 52.35 vs 53.15; 568.79 vs 534.43; page 15 vs page 14). None is a matched figure, a faithfully copied anomaly, or a labelled basis difference. No MAJOR row is a verdict-card or pillar item, so none is CRITICAL. Four candidate rows were struck before emitting (`false_positives_struck: 4`):
+| Severity | Report location | Claimed | Source truth | Note |
+|---|---|---|---|---|
+| MINOR | 01-gate0.md WC-days lines; B01 data_notes | FY21 "71.6 + 48.5 - 72.4 = 47.6"; FY24 58.5 | The three printed FY21 terms sum to 47.7. Unrounded FY21 is 47.64 (47.6, correct). Unrounded FY24 is 58.44 (58.4, not 58.5). | Derived arithmetic, mixed rounding. Every input behind it matches. B4 stays 5 (change -5.32). M12 median 44.98 reproduces on unrounded values. source_fidelity false. |
+| MINOR | 01-gate0.md Section 10 item 1; B01 data_notes | Standalone Q1 purchases 4,845.14 and standalone inventory change -518.50, no anchor | Results Q1 [page 4] prints "48,45.14" and "-5,18.50". Values match. Consolidated 10,217.64 and (518.50) on [page 7] match. | UNANCHORED, present in source, not scored. source_fidelity false (not material). |
+| MINOR | 01-gate0.md Section 10 item 4 | FY27 guidance Rs 370-400 Cr, no anchor | CRISIL rationale 2026-07-02 text line 26: "increase in revenue to Rs 370-400 crore". 116.33/400 = 29.1%, /370 = 31.4%. | UNANCHORED, present in source, not scored. source_fidelity false. |
+| MINOR | 01-gate0.md Block B trend; B01 block_b_trend and FLAG-CASH | PAT 6.16 Cr cited to AR FY26 [page 134] | [page 134] holds CFO -882.50 (correct). PAT 615.50 is on [page 133]. Cumulative PAT pages omitted from the FLAG-CASH cite. | Page-level imprecision. Values correct and correctly anchored in the Section 1 table. source_fidelity false. |
 
-- PR table prints FY25 PAT 799.79 against 799.71 in its own text. B05 copies the PR. Faithful transcription.
-- AR p.7 prints PBT 8.61 Cr and p.76 prints 8.62. B03 and B01 each copy one printed value. Both exist in the AR.
-- RES-0528 prints H1 consolidated total income 14,620.97 against revenue plus other income 14,629.97. B03 flags it as a typo. Faithful.
-- EBITDA margin 3.46% and 5.67% (press release basis, B05) against 3.42% and 5.59% (total-income basis, B03). Two labelled bases.
+Six carried rows (3 MAJOR, 3 MINOR) are in the YAML marked "(carried run 1)". Four of them keep source_fidelity true and still stand: 03-ardeep promoter basis, 04-bizmodel 52.35% vs 53.15%, 09-tam ZeaCloud turnover 568.79 vs 534.43, and the Netweb 2,058 mn page cite. Two run 1 rows I re-saw while checking (17.65 vs 18.59 interest on statutory dues; promoter 64.94% on PROSP [page 35]) were confirmed on the page.
 
-## 3. What matched (Gate 0, mandatory tier)
+## What was checked and matched (mandatory tier)
 
-Recomputed from the sources and found exact:
+1. Section 1 table, 96 cells (16 rows x 6 years), against the source for each year.
+   - FY21 and FY22: restated standalone, PROSP [page 48], [page 50], [page 51]. All 32 cells exact. Current liabilities rebuild: FY21 321.49 + 875.67 + 24.42 + 4.94 = 1,226.52; FY22 378.40 + 1,455.22 + 71.74 + 5.41 = 1,910.77. Net worth: 76.71 + 101.38 = 178.09; 76.71 + 173.74 = 250.45. Borrowings: 313.36 + 321.49; 396.43 + 378.40.
+   - FY23: restated consolidated, PROSP [page 190], [page 192], [page 194]. All exact. PAT 304.00 after minority interest 14.42 (before 318.42). Net worth 76.71 + 477.48 = 554.19, minority interest 34.42 excluded.
+   - FY24, FY25: AR FY25 [page 112], [page 113], [page 114]. All exact.
+   - FY26: AR FY26 [page 132], [page 133], [page 134]. All exact.
+2. Source conflict (Section 0). Results filing [page 14]: receivables 1,963.93, payables 3,004.26, total 13,102.08. AR [page 132]: 4,426.93, 5,467.26, 15,565.08. Gap 2,463.00 on each. CFO -882.50 in both ([page 15], [page 134]). Working-capital lines: results +3,291.13 and (1,129.32); AR +828.13 and +1,333.68. Both gaps equal 2,463.00. Debtor days 20.2 on 1,963.93, 45.6 on 4,426.93.
+3. D4 components and both ratios (13,647.86 / 7,372.96 = 1.85; 11,184.86 / 4,909.96 = 2.28). Capital employed 8,192.12 on both bases.
+4. Block E. SHP XBRL Jun-2026: 7,942,196 shares, 0.6019, pledge, NDU and other encumbrance flags false. 64.94% on PROSP [page 35] (and 60.09 + 4.85 on the p.67 table). Contingent liabilities nil and 500.00 ZeaCloud commitment on AR FY26 [page 145]. -4.75pp reproduces.
+5. Block F. Netweb, Rashi, Orient and Esconet screener inputs all exact. Margins reproduce: 13.05%, 2.93%, 4.99% (median 4.99%), Esconet 2.49%. Gross margins reproduce: 21.4%, 2.0%, 21.0% (median 21.0%), Esconet 10.9%. Market caps 325.68, 26,872.08, 6,329.46, 1,050.10. FAT 35.8x on 989.00 and 19.3x on 18.40 (= 989.00 + 851.11 = 1,840.11 Lakhs).
+6. Selling proxy, all six years, each line item and total. FY21 47.71 + 52.22 + 10.13 = 110.06; FY22 71.98 + 117.51 + 16.90 = 206.39 (PROSP [page 254]). FY23 102.88 + 124.69 + 21.67 = 249.24 (PROSP [page 215], consolidated). FY24 10.99 + 49.03 + 40.80 + 32.85 + 149.08 = 282.75 (AR FY25 [page 124]). FY25 477.67 and FY26 703.00 (AR FY26 [page 144]). Percentages 2.49, 3.01, 2.58, 2.01, 2.07, 1.98 reproduce.
+7. Screener cross-check. FY23 column: sales 94.59, total 28.91, cash 0.72, CFO -1.86, PBT 4.45, receivables 12.59 are as printed, and the report's claim that they tie to neither restated set is true. Consolidated 96.59 and 27.98, standalone 94.66 and 27.62 are exact. FY24 to FY26 tie to the AR.
+8. Q1 FY27. Revenue 11,632.69, other income 193.21, EBITDA 1,011.16, margin 8.55% (on total income 11,825.90), purchases 10,217.64. Ex other income margin 817.95 / 11,632.69 = 7.03%. Revenue 116.33 Cr, 29.1% to 31.4% of 370-400.
+9. Dates and drivers. ZeaCloud incorporated 11 May 2022 (PROSP [page 199]). Listing 23 Feb 2024 (AR FY25 [page 115]; AR FY26 [page 105]). Prospectus dated 20 Feb 2024. FY24 receivables build 2,439.02 (AR FY25 [page 114]). FY26 inventory build 3,255.66 (AR FY26 [page 134]).
+10. Recomputed from checked inputs and reproduced: EBIT, capital employed, EBITDA and margin, ROCE (-6.23, 20.29, 60.56, 23.30, 16.12, 11.96), ROE (-56.4, 33.8, 75.6, 25.6, 15.0, 8.2; median 20.27), receivable, inventory and payable days, cumulative CFO -798.86, cumulative PAT 2,234.14, ratio -0.36, ex-FY26 ratio 0.05, FCF by year and cumulative -2,499.72, revenue CAGR 51.7%, FY23 to FY26 54.2%, FY21 to FY23 48.0%, D1 -1,413.37, D2 8.3x, D3 0.17. Standalone FY23 ROCE 60.7% and growth 38.1% reproduce.
 
-- All screener cells quoted in the Gate 0 inputs table (revenue, other income, depreciation, interest, PBT, PAT, net worth from share capital plus reserves, borrowings, cash, receivables, inventory, CFO, selling and admin, total assets FY24 to FY26, market cap 325.68).
-- AR-sourced cells: FY26 current liabilities 1,219.34 + 5,467.26 + 403.57 + 282.79 = 7,372.96 L; current assets 5,149.87 + 4,426.93 + 2,737.70 + 186.21 + 1,147.15 = 13,647.86 L; capex 797.13; inventory outflow 3,255.66; CFO (882.50); PBT 861.80; PAT after minority 615.50; PAT before minority 595.41; borrowings 104.99 + 1,219.34 = 1,324.33 L.
-- AR FY25 comparatives: FY24 PBT 744.34, CFO (134.97), capex 211.95, payables 2,908.07; FY25 payables 4,133.58, capex 365.69.
-- Prospectus FY23: total assets 2,798.37; current liabilities 762.82 + 1,006.32 + 63.13 + 7.59; capex 115.86; restated consolidated PBT 465.06 and CFO (42.25); promoter and group post-issue 64.94%.
-- Block E: SHP Jun 2026 promoter and group 60.19%, 7,942,196 shares, no pledge or encumbrance flags (rows 6 to 11); contingent liabilities nil and 500.00 commitment (AR26 p.145 consolidated, p.117 standalone).
-- Source conflict: receivables, payables and total assets each differ by exactly 2,463.00 Lakhs between the results filing and the AR. CFO (882.50) is the same in both. The debtor-day arithmetic reproduces: 19.64 / 354.40 x 365 = 20.2 days on the results basis; 44.27 / 354.40 x 365 = 45.6 days on the AR basis.
-- Derived Gate 0 figures: EBIT, EBITDA ex other income (6.04, 9.96, 10.10, 8.81 Cr), margins, capital employed, ROCE (58.5, 23.3, 16.1, 11.96%), ROE (54.7, 25.6, 15.0, 8.2%), medians, CAGRs (55.3%, 26.7%), WC days (42.8, 58.5, 47.8, 42.3), FCF (-3.02, -3.47, -1.63, -16.80), cumulative CFO/PAT -0.44, interest cover 8.3x, D/E 0.17, current ratio 1.85.
-- Moat inputs: Netweb 13.05%, Rashi 2.93%, Orient 4.99% EBITDA margins and gross-margin proxies 21.4%, 2.0%, 21.0% recompute from the three peer CSVs. Esconet 10.9% recomputes. S&A percentages 4.81, 3.91, 3.95, 4.27 recompute.
-- Q1 FY27 items: 8.55% and 1,011.16 on p.15 of the filing; 11,632.69, 193.21, (518.50), 10,217.64 on p.7; standalone purchases 4,845.14 on p.4; (1,011.16 - 193.21) / 11,632.69 = 7.03%.
+## Stage 7 changed figures (Sections 6C to 6E, evidence_mix, recount)
 
-## 4. What matched (sample tier, highlights)
+- 6C table: core 60, blocks 13/5/10/17/15, moat 18, 4 moats, grand 78 match B01 run 2. Run 1 values (4 years, core 59, moat 12, 2 moats, MODERATE, history downgrade) match B01-gate0-run1.yaml.
+- 6D and 6E: Q1 FY27 standalone gross margin 29.16% = (6,107.71 - 4,845.14 + 518.50) / 6,107.71. FY26 standalone 13.72% = 4,086.15 / 29,782.95. Reversion gap 943.10 vs PBT 935.67. Finance cost 7.32 (Q1 BM [page 4]). ROCE 60.6% to 11.96%, CFO -798.86 vs PAT 2,234.14.
+- Emerging Moat total: 1.0 + 1.0 + 0.7 + 0.7 + 1.4 + 0.7 = 5.5.
+- Recount: documented A4 2, B2 4, C1 2, C2 2, H2 2 = 12; claims 1 + 2 + 3 + 3 = 9; inference 1. Mix 12/9/1. The 6 Weak rows and "6 of 23 rows" match the Section 3 summary table.
+- Supporting figures: 41.35% top-5 (PROSP [page 28]); service charges 847.30 / 35,440.48 = 2.39% and 150.38 / 23,029.80 = 0.65% (AR FY26 [page 143]); Info Edge Rs 20.06 Cr and C-DAC Rs 25.74 Cr (Reg 30 filings); 25.74 / 354.4 = 7.3%.
+- No stage 7 finding.
 
-Stage 3: N1 FY25 cash-flow re-cut is exact (AR25 p.86 CFO 5.10, cash 3,132.97; AR26 p.104 comparatives (1,751.68) and 1,313.16). FDR liquidation 1,756.78 to 10.83. Receivable ageing and 19.9%. Promoter table 60.19% and 61.29% with the three share movements. IPO cost 303.03 to 429.78 (+41.8%). Pre-IPO placement 4,43,947 shares at 29.20 to 18 holders. Warrant lapse names and amounts. Utilisation tables (3,269.22; 2,216.53; 2,716.53; 1,052.69; 468.58). Quarter and half-year margin anatomy. Schedule III rows and the 9,019.20 typo.
+## Self-check (rule 5b)
 
-Stage 4: 97.61% and 2.39% product and service split (AR26 p.143). Deck figures (11.87 Cr loan, 8.5 Cr receivable fall from 52.55, PP&E 4.75 to 9.89, gross margin 15.2 to 13.2, 41.42 days, 100 Cr pipeline, 6,000 units). Government 35.75% and top ten 53.72%.
+- No CRITICAL or MAJOR row was written this run, so no severity test failed.
+- Three candidate rows struck: screener PBT 4.45 vs standalone 445.60 (rounding of 4.456); prospectus cash-flow interest 72.34 vs P&L finance cost 72.35 for FY21 (both printed, report uses P&L); screener FY26 PAT 6.16 vs 615.50 / 100 (rounding of 6.155). `false_positives_struck` is 7 (3 here, 4 carried from run 1).
+- The WC-days row is kept. The two printed figures differ from the recomputed ones by 0.1 day, and it is not a matched figure, a transcribed anomaly or a labelled basis difference. It is MINOR and not source_fidelity.
 
-Stage 5: transcript dates, 53 crores, 40 to 45% government, 32.69 crores, 15 to 20 crores, 5% cash line and the margin quotes on the cited pages. CRISIL 2.60% vs 5.09%, 370 to 400 Cr, about 50 Cr Singapore. Order values (C-DAC 25.74 Cr, Info Edge 20.06 Cr, USD 53,208).
+## Coverage
 
-Stage 6: Netweb (21,836; 8,197; 5,105.70; 25,069.35; 8,480.47; 104,100; 1,205; 1,715), Orient (7.57%, 438 bp, 3.19%, 375.43, 201.92), Rashi (173 Cr, 5,102, 3.38%, 514, 282).
+Mandatory tier: 215 of 215 checked. No figure unchecked. No verdict-card or Section 1B pillar input exists yet (no stage 10 or 11 output); empty by construction.
 
-Stage 7: gross margins 29.16% and 13.72%, reversion arithmetic 943.10, 152.48 subsidiary gross profit, 53.15% suppliers, ONGC and NVIDIA dates, ResQ 442 TB.
+Sample tier: material universe 1,035 (about 820 in stages 2 to 9 as counted in run 1, plus the 215 Gate 0 mandatory figures). Checked 466 (251 carried from run 1 plus the 215 mandatory). The ~40 stage 7 re-checks are not added because most overlap the run 1 sample. The run 1 NOT CHECKED list stands: the scanned SAST disclosure, web and media claims in B08 and B09, note-level B02 figures beyond the sample, and Reg 30 filings beyond the sampled items.
 
-Stage 8: 89.18% and 80,26,196, AGM votes 78,06,196, 75,20,196, 5,51,000, 10.22%, 2,766 holders, 1,31,96,268; summons dated 24 Feb 2026, received 27 Feb 2026.
+Acceptance: 452 clean of 466 checked = 97.0%.
 
-Stage 9: AR26 p.75 market table (6.31 trillion, 13.5%, 176.3 billion, 10.6%, 7,788 and 9,385 million, 29.2%, 20.5%, 35,383 million, 11.1%), Singapore, Fluidech, trailing P/E 52.9x.
+Source-fidelity status after this audit: 0 CRITICAL, 3 MAJOR (all carried, source_fidelity true), 7 MINOR. Four standing rows (three MAJOR, one MINOR Netweb page) are non-overridable until the PDF clears them.
 
-## 5. Coverage statement
-
-**Mandatory tier (OR-32): 118 of 118 checked.** Phase 1 has no verdict card and no Section 1B pillar input, so the tier is the Gate 0 scorecard inputs in B01. Count rule: 64 Section 1 table cells (16 rows x 4 years, each with its Lakh anchor); 8 source-conflict figures; 6 current-asset figures; 6 Block E figures; 21 moat-score inputs; 8 Q1 FY27 figures; 2 FY23 prospectus alternates; 3 other (listing date, two PAT lines). Every one matched its source value. 14 sit under a finding row for an anchor or basis problem (findings 4 to 7); 104 are fully clean. No mandatory figure was left unchecked.
-
-**Sample tier.** About 820 material numbers exist in stages 2 to 9 (my count from tables, derived lines, flag text and YAML anchors; material = a figure that feeds a flag, score, ratio, priority-item answer or table cell). I checked 251, about 31%, in order of materiality. The count of 820 is an estimate and carries an error of perhaps 10%.
-
-**Not checked, named.**
-1. Scanned SAST disclosure of 2026-05-19: .txt corrupt and no PDF renderer. B08's "3 Apr 2026" declaration date and no-encumbrance statement rest on the maker.
-2. Web and media claims in B08 (CCV order of 18 Aug 2026, Moneylife, share prices, Glassdoor) and B09 (IMARC, Mordor, TechSci, IDC, USD INR 96.3, IndiaAI): no PDF exists for them.
-3. About 570 note-level figures in B02 pass 1 and pass 2 beyond the sample.
-4. Reg 30 filings other than summons, warrant, order values, ONGC, NVIDIA, ResQ and Red Hat.
-
-**Acceptance rate.** 369 figures checked (118 + 251). 24 sit under a finding row. 345 clean. 345 / 369 = 93.5%. The rate is above the 60% line; the REWORK trigger on acceptance does not apply. No CRITICAL exists, so the CONFIRMED CRITICAL trigger does not apply either.
-
-## 6. Hand-off notes
-
-- Findings 1, 2, 3 are copy and label errors in report text. None reaches a Gate 0 score, but finding 1 sits in the promoter-holding story and finding 3 sits in the stage 9 levers line. Downstream stages should use 64.94% / 89.18% for promoter and group, 53.15% for top-five suppliers, and 534.43 Lakhs for ZeaCloud turnover.
-- Finding 4 touches the FLAG-SOURCE-CONFLICT. The conflict stands and is exact. Correct the page cites to results [page 14] and [page 15] when the dossier quotes it.
-- Findings 6 and 7 do not change any Gate 0 band.
-
-```yaml
-stage: B12a
-company: "ESCONET"
-run_date: "2026-10-05"
-model: claude-sonnet-5-5
-status: complete
-numbers_checked: 369
-mandatory_checked: 118
-mandatory_total: 118
-findings:
-  - {severity: "MAJOR", location: "03-ardeep.md Phase 5D shareholding table, rows 'Promoter and group, pre-IPO' and 'Post-IPO'", claimed: "Promoter and group: pre-IPO 82.50%, post-IPO 60.09% (PROSP p.21); 'the fall from 82.50% to 60.09% is dilution'", source_truth: "PROSP p.21 prints 82.50% pre / 60.09% post only for 'Total - A' (Promoters: Santosh, Sunil, Vineet; 74,25,396 shares). Promoter Group 'Total - B' adds 6,00,800 shares, 6.68% pre / 4.85% post. Promoter and group = 80,26,196 shares, 89.18% pre-issue and 64.94% post-issue (PROSP p.21; p.35 states 64.94%; p.182 states 89.18%)", note: "Basis mislabelled. The figures are promoters only but are set beside 61.29% and 60.19%, which are promoter AND group (AR26 p.109). The like-for-like path is 89.18% to 64.94% to 61.29% to 60.19%. Gate 0 E2 uses 64.94% correctly; B08 uses 89.18% correctly.", source_fidelity: true}
-  - {severity: "MAJOR", location: "04-bizmodel.md Section 2A, Supplier power row", claimed: "Five distributors and OEMs supplied 52.35% of FY23 purchases (derived from 27.01+9.17+7.35+5.98+3.64)", source_truth: "PROSP p.31 (risk factor 15) and the p.32 supplier table print 53.15% (total 4,044.52 Lakhs of 7,610.30 Lakhs). The five listed shares sum to 53.15, not 52.35. B07 cites 53.15% correctly.", note: "Transposition. The five components are correct; the total and the 'derived' claim are wrong by 0.80 point.", source_fidelity: true}
-  - {severity: "MAJOR", location: "09-tam.md Section 5D (ii) expansion levers", claimed: "ZeaCloud turnover Rs 5.69 Cr (568.79 Lakhs, 106.4% of it intra-group per B04)", source_truth: "AOC-1 (AR26 p.69) prints ZeaCloud turnover 5,34,42,971 rupees = 534.43 Lakhs = Rs 5.34 Cr. 568.79 Lakhs is the PARENT's sale to ZeaCloud (standalone Note 14 and consolidated Note 15, AR26 p.118 and p.147), which is 106.4% of ZeaCloud turnover 534.43.", note: "Parent sales to ZeaCloud were written as ZeaCloud turnover. B03, B04, B07 carry the correct 534.43. The sentence also reads '106.4% of it', which only holds against 534.43.", source_fidelity: true}
-  - {severity: "MAJOR", location: "01-gate0.md Section 0 table and B01 FLAG-SOURCE-CONFLICT: 'Results filing 2026-05-28 p.15' (balance sheet) and 'results p.16' (CFO -882.50)", claimed: "Results filing balance sheet on p.15 (receivables 1,963.93; trade payables 3,004.26; total assets 13,102.08 Lakhs); results CFO on p.16", source_truth: "In Outcome_BM_28052026 the consolidated balance sheet is on [page 14] and the consolidated cash flow on [page 15]. [page 15] holds the cash flow, not the balance sheet; [page 16] holds the notes. All four values are exact at the corrected pages.", note: "ANCHOR NOT FOUND at the cited pages (off by one). Values verified exact. Page check was made on the .txt [page N] markers; PDF rendering was unavailable (pdftoppm missing). Only a PDF read can clear this.", source_fidelity: true}
-  - {severity: "MINOR", location: "01-gate0.md Section 1 table, Current liabilities and Trade payables, FY24 and FY25 anchors 'AR FY25 p.110'", claimed: "AR FY25 p.110 for balance sheet figures (FY24 292.91+2,908.07+155.42+194.42; FY25 10.49+4,133.58+179.25+270.00 Lakhs)", source_truth: "Figures are exact. They sit on [page 112] of the extract, printed folio 110. The same cell set cites AR FY25 p.113 and p.114 by marker, so the pagination convention is mixed. [page 110] is the Annexure B internal controls report.", note: "Value matches. Folio cited, markers used elsewhere. Statement name (Consolidated Balance Sheet) is given, so the figures are findable.", source_fidelity: false}
-  - {severity: "MINOR", location: "01-gate0.md Section 1 table, Revenue FY23 94.59 (screener-data); Section 0 statement 'Screener matches the AR consolidated; FY23 cross-checked to the prospectus'", claimed: "FY23 revenue 94.59 Cr (consolidated basis), cross-checked to the prospectus", source_truth: "Screener Data_Sheet FY23 Sales = 94.59 (exact). Prospectus restated consolidated revenue FY23 = 9,659.26 Lakhs = 96.59 Cr (PROSP p.192); restated standalone = 9,465.96 Lakhs = 94.66 Cr (PROSP p.228). Neither equals 94.59. Screener FY23 receivables 12.59 equals the STANDALONE 1,258.74 Lakhs, while FY23 total assets, current liabilities and payables are taken from the CONSOLIDATED restated balance sheet (PROSP p.190).", note: "Unlabelled basis mix inside the FY23 column. C1 revenue CAGR is 55.3% on 94.59 and 54.2% on 96.59; band and score (5) unchanged. Total assets, PBT and CFO differences are labelled in B01 data_notes; revenue and receivables are not.", source_fidelity: false}
-  - {severity: "MINOR", location: "01-gate0.md Section 8, M3 Capital efficiency: 'FAT 19.3x (354.40/18.40)'", claimed: "Fixed asset turnover 19.3x using net block 18.40 Cr", source_truth: "18.40 is the screener 'Net Block' (exact). In AR26 p.132 tangible plus intangible PP&E is 988.87 + 0.13 = 989.00 Lakhs; adding goodwill 851.11 gives 1,840.11 Lakhs = 18.40 Cr. Screener's net block therefore includes goodwill. On PP&E alone FAT is 35.8x (354.40/9.89).", note: "Unlabelled basis. M3 score stays 0 because the ROCE leg fails (11.96% below 12%).", source_fidelity: false}
-  - {severity: "MINOR", location: "01-gate0.md Section 8, M6 R&D: 'AR FY26 Annexure III row blank'", claimed: "R&D expenditure row blank in AR FY26 Annexure III", source_truth: "The blank 'expenditure incurred on Research and Development' row sits on AR26 [page 72] under the heading ANNEXURE IV (Conservation of Energy and Technology Absorption). B03 N11 correctly says Annexure IV.", note: "Annexure label wrong; the blank row exists.", source_fidelity: false}
-  - {severity: "MINOR", location: "06-peers.md Q3, NETWEB cash conversion: 'FY26 PAT Rs 2,058 mn (p.4)'", claimed: "NETWEB Q4 FY26 call p.4: FY26 PAT INR 2,058 million", source_truth: "INR 2,058 million appears on [page 3] and [page 5] of NETWEB-Concall_May_2026_Transcript.txt; [page 4] does not contain it. OCF INR 1,715 mn on p.5 is correct.", note: "ANCHOR NOT FOUND for one figure feeding a derived 83% ratio. Value is correct.", source_fidelity: true}
-  - {severity: "MINOR", location: "02-notes-pass1.md and 02-notes.md page cites: Note 2.12 consolidated inventory 5,149.87 'p.139'; consolidated Other Income 222.82 and Note 2.17 revenue 'p.142'; Note 14 'p.116'; Schedule III table 'p.150'", claimed: "Cites in the printed-folio or off-marker form while the report states it uses [page N] markers", source_truth: "Markers: 5,149.87 on [page 141]; 222.82, revenue 34,593.19 and 847.30 on [page 143]; Note 14 on [page 117-118]; Schedule III on [page 151]. B03 and Pass 2 already correct several of these. All values match; note numbers are given.", note: "Pagination convention slip. Values exact and note IDs name the location, so the figures remain findable.", source_fidelity: false}
-  - {severity: "MINOR", location: "04-bizmodel.md 4D question 5 and 'Contradictions' paragraph: '17.65 Lakhs on statutory dues (AR26 p.115)'", claimed: "17.65 Lakhs interest on statutory dues in a report whose stated convention is 'consolidated figures unless standalone is stated'", source_truth: "17.65 is the STANDALONE figure (AR26 p.115). Consolidated Note 2.22 prints 18.59 (AR26 p.144). The 30.63 delay-payment interest is identical on both bases.", note: "Unlabelled basis difference. Decision impact nil.", source_fidelity: false}
-critical_count: 0
-major_count: 4
-minor_count: 7
-false_positives_struck: 4
-material_universe: 820
-acceptance_rate: 93.5
-coverage_note: "PHASE 1 audit. No stage 10 or stage 11 output exists, so there is no verdict card and no Section 1B pillar input to check; that part of the OR-32 tier is empty by construction, not skipped. MANDATORY TIER = Gate 0 inputs in B01 (blocks A to E and the moat score): 118 figures counted, 118 checked. Count rule: the 64 Section 1 table cells (16 rows x 4 years, each with its Lakh-source anchor); 8 source-conflict figures (results and AR receivables, payables, total assets, plus both CFO prints); 6 current-asset figures; 6 Block E figures (60.19%, 7,942,196, 64.94%, pledge flags, contingent liabilities, 500.00 commitment); 21 moat-score inputs (Netweb, Rashi and Orient PBT, interest, depreciation, other income, sales, raw material cost; Esconet raw material, market cap, net block); 8 Q1 FY27 figures used in Gate 0; 2 FY23 prospectus consolidated alternates; 3 other (listing date, PAT before minority, PAT after minority). Every one of the 118 matched its source value. 14 of them sit under a finding row for an anchor or basis problem (rows 4 to 7: results p.15 and p.16 pages, AR FY25 p.110 folio, FY23 revenue basis, net block basis); 104 are clean. SAMPLE TIER: about 820 material numbers exist in stages 2 to 9 (my count by scanning each report's tables, derived lines, flag text and YAML anchors; material = a figure that feeds a flag, score, ratio, priority-item answer or table cell); 251 of them checked (about 31%), taken in order of materiality: Q1 FY27 margin anatomy, cash-conversion and CFO set, receivable ageing, promoter holdings and AGM data, warrant and use-of-proceeds tables, subsidiary AOC-1 and Schedule III figures, IPO and prospectus anchors, concall dates and quotes, deck and CRISIL figures, peer transcript figures (Netweb 9, Orient 5, Rashi 5), and the AR p.75 market table. NOT CHECKED, named: (1) the scanned SAST disclosure 2026-05-19 (.txt corrupt, no PDF renderer in this environment: pdftoppm missing), so the 3 Apr 2026 declaration date and no-encumbrance statement in B08 rest on the maker alone; (2) all web and media claims in B08 (CCV SEBI order, Moneylife, share prices, Glassdoor) and B09 (IMARC, Mordor, TechSci, IDC, USD INR 96.3, IndiaAI), which have no PDF in the corpus; (3) the remaining note-level figures in B02 pass 1 and pass 2 beyond the sample (about 570 figures); (4) Reg 30 filings other than the summons, warrant, order-value, ONGC, NVIDIA, ResQ and Red Hat items. Page checks used the .txt [page N] markers; no PDF page was rendered. Four candidate rows were struck at self-check as faithfully transcribed or correctly labelled: PR table 799.79 vs PR text 799.71 (B05 copies the PR), AR p.7 PBT 8.61 vs p.76 8.62 (both printed in the AR), RES-0528 H1 consolidated total income 14,620.97 print error (B03 flags it as a typo), and EBITDA margin 3.46%/5.67% (PR basis) vs 3.42%/5.59% (B03 basis), two labelled bases. Screener FY23 CFO -1.86 vs prospectus -0.42 is labelled in B01 and was never a row. Acceptance rate: 345 clean of 369 checked; 24 figures sit under a finding row."
-```
+Full YAML block with findings and coverage_note: runs/esconet-2026-10-05/outputs/blocks/B12a.yaml

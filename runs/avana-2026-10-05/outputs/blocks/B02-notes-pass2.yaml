@@ -1,0 +1,24 @@
+stage: B02-notes-pass2
+company: "AVANA"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+pass_2_empty: false
+input_gaps:
+  - "Notes: FY26 revenue-authority (GST/TDS) balance and whether it is netted at FY26: NOT FOUND"
+  - "Notes: journal entry for warranty usage 151.65 (gross or net in Purchases): NOT FOUND"
+  - "Notes: leave encashment roll-forward, operating lease commitments, capital advances, cause of 18.32 tax-provision gap: NOT FOUND"
+flags: []
+new_findings:
+  - {n: 1, finding: "H2 FY26 EBITDA excl other income 18.1% vs H1 21.3%; net material cost 54.0% to 63.4% of revenue; other expenses 10.7% to 6.9%", note_ref: "RES p10; RHP p.72", rating: "watch"}
+  - {n: 2, finding: "Warranty accrual H2 6.06 (0.13% of rev) vs H1 35.75; H2 usage 141.65; usage journal unstated, two readings (3.22 vs 1.50 points of revenue); LT/ST split fixed 80/20", note_ref: "AR Note 25 items 11-12; RHP pp.231, 236", rating: "watch"}
+  - {n: 3, finding: "AR FY25 comparatives differ from RHP restated: profit 847.08 vs 831.23; total assets, CFO, statutory dues each differ by 103.44 (revenue-authority balance netted)", note_ref: "AR pp.99-101; RHP pp.54, 71, 72, 233, 242", rating: "watch"}
+  - {n: 4, finding: "CFO includes 30.30 IPO expense reversal and 22.75 accrued interest; CFO excl both 742.39 = 45.5% of EBITDA; tax roll gap 18.32; FCF after advances 174.96 vs 45.21", note_ref: "AR pp.101, 111, 114", rating: "watch"}
+  - {n: 5, finding: "Fixed promoter pay +56.1% ex incentive; FY27 revisions +18.0% need special resolution", note_ref: "AR Note 25 item 1; AGM notice Items 4-7", rating: "watch"}
+  - {n: 6, finding: "ROCE printed 27.98% / 57.52% uses long-term debt only; stated definition gives 27.88% / 48.2%", note_ref: "AR Note 25 item 24", rating: "watch"}
+  - {n: 7, finding: "Payables ageing Not Due nil with MSME interest nil; balances subject to confirmation", note_ref: "AR Notes 7, 25 items 6, 8", rating: "watch"}
+  - {n: 8, finding: "FY25 bank inventory 65.00 below books; margin money cover of BG+LC 106% vs 51%", note_ref: "AR Note 25 items 3, 15", rating: "watch"}
+restatements_found:
+  - "FY25 profit 847.08 (AR comparative, audited) vs 831.23 (RHP restated); prior-period charge 60.17 vs 76.02"
+  - "FY25 total assets 4,838.68 (AR) vs 4,942.12 (RHP); CFO 573.22 vs 676.66; gap 103.44"
+analyst_note: "Pass 2 used the RHP restated notes and the results re-filing only as cross-checks. Largest new item: H2 FY26 margin and warranty accrual split, which the FY26 totals hide."

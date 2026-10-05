@@ -1,0 +1,93 @@
+stage: B06-peers
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "BSE scrip code not found on screener page; announcements/ empty. REPAIRED by /step1: 33 NSE Reg 30 filings Sep 2025 to Sep 2026; filings before Sep 2025 not collected."
+  - "shareholding/ empty (no automated source). REPAIRED by /step1: NSE SHP XBRL Mar-2026 and Jun-2026 plus text extracts."
+  - "screener export sheets EMPTY (P&L, Quarters, Balance Sheet, Cash Flow, Customization); Data_Sheet.csv populated; screener history FY2023-FY2026 plus Q1 FY27 only."
+  - "no results PDFs from screener. REPAIRED by /step1: H1 FY26, FY26 audited, Q1 FY27 board outcomes."
+  - "no rating PDF. REPAIRED by /step1: CRISIL rationale 2026-07-02 as text; 2024 and 2025 rationales not collected."
+  - "only 2 concalls. OVERRIDDEN by /step1: concalls_available true on 2 transcripts (Jun 2025, Aug 2026); 22 Jun 2026 investor meet has deck but no transcript; no H1 FY26 call."
+  - "annual-report: FY2023-24 AR not collected (two-most-recent rule); prospectus covers pre-IPO years."
+  - "research/ empty, no broker notes."
+  - "prospectus: final prospectus held; near-identical RHP moved to inputs/other/."
+  - "announcements: SAST disclosure 2026-05-19 scanned; .txt corrupt, OCR failed; read PDF page directly."
+  - "shareholding and rating XBRL/HTML originals kept beside text extracts, committed by hand by /step1."
+  - "listed_date: exact NSE Emerge listing date NOT FOUND in corpus (AR Note 1 p.105 says 23 Feb 2024; prospectus dated 2024-02-20)."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer proceed with gaps. Empty at stage 0: research/."
+  - "pass1 gap: FY24 AR not read, so FY24 purchases and FY24 payable days NOT FOUND; FY24 receivable days taken from FY25 AR comparatives."
+  - "pass1 gap: consolidated ageing tables (Notes 2.13.1 and 2.6.1 cited on p.142 and p.140) NOT FOUND IN DOCUMENT."
+  - "pass2 gap: Fluidech acquisition-date balance sheet and purchase agreement NOT FOUND; goodwill working, consolidation method and swap/cash price valuation basis NOT FOUND."
+  - "pass2 gap: Zeacloud and Singapore stand-alone accounts not in corpus (Singapore audited by other auditors, FY26 AR p.127); Singapore total assets conflict: AOC-1 SGD 33,89,867 (about 2,465 Lakhs at 72.72) vs auditor 553.64 Lakhs."
+  - "pass2 gap: preferential issue allottee list, lender list for the 247.95 repayment object, OD facility rate/limit/covenants, FDR lien and maturities, advance tax paid in FY26: all NOT FOUND."
+  - "pass2 note: FY25 AR and the Reg 30 filing of 28 Feb 2026 were read for cross-reference only; no figure from them enters the Pass 1 base."
+  - "stage3: Q1 FY27 other income split and the accounting of the 184.23 Lakhs warrant forfeiture NOT FOUND in the results filings read (note says only interest income, gain on sale of PPE and miscellaneous income)."
+  - "stage3: Fluidech s.156 income tax demand of 235.16 Lakhs (AY 2021-22, per prospectus) current status NOT FOUND; not in FY26 AR."
+  - "stage3: per-director Board and committee attendance NOT FOUND (extract lost the Present markers); other directorships NOT FOUND."
+  - "stage3: HexaData, services, cloud and cybersecurity revenue and margin NOT FOUND; FY26 customer concentration NOT FOUND; order book value NOT FOUND."
+  - "stage3: NSE PDF vs XBRL EPS discrepancy not verifiable from the AR; one EPS mismatch between filings found (standalone FY25 basic 5.26 vs 5.43)."
+  - "stage5: only two transcripts exist (19 Jun 2025 FY25 call; 13 Aug 2026 Q1 FY27 call). No H1 FY26 call. The 22 Jun 2026 FY26 investor meet has a deck only; deck claims are labelled deck, not transcript. Trailing-four-quarter delivery test therefore rests on one forward call (Jun 2025) and the filed record, not on a quarterly call chain."
+  - "stage5: Q1 FY27 results carry no balance sheet and no cash flow statement; the 20.2 debtor-day claim in the step1 brief is in neither transcript nor the Q1 filing text read. NOT FOUND; cannot be tested."
+  - "stage5: CFO statement of operating cash flow as '5% of revenue' is garbled in the transcript (base and period unclear); no cash flow statement filed for Q1. NOT FOUND."
+  - "stage5: Singapore revenue 'approximately 53 crores' (AUG26 p.15) has no stated period; Q1 or FY26 ambiguous. NOT FOUND."
+  - "stage5: Fluidech FY25 and FY26 segment revenue comes from B03 (AR26 p.69), not from a call; HexaData versus non-HexaData split NOT DISCLOSED on the Aug 2026 call (single AS-17 segment)."
+  - "stage6: all 12 peer transcripts present; none missing. No peer mentions Esconet, HexaData, ZeaCloud, Fluidech or MeitY."
+  - "stage6: no peer reports gross margin as a level (NETWEB, RPTECH gross margin NOT FOUND); ORIENTTECH debtor days, inventory days and cash flow NOT FOUND; PSU receivable days NOT FOUND in any peer; cyber and sovereign cloud growth rates NOT FOUND in any peer."
+  - "stage6: peer_questions answered on 3 peers only; Esconet's 20.2 debtor days remains NOT FOUND and sits below the lowest peer (RPTECH 41 days)."
+flags:
+  - {type: FLAG-PEER-SPLIT-MARGIN-MECHANISM, reason: "Esconet credits price volatility and stock for Q1 FY27 margin. NETWEB denies any memory-price gain (Q1 FY27 p.8, p.13); ORIENTTECH attributes its Q4 FY26 3.19% to Q1 FY27 7.57% EBITDA rebound to pass-through repricing after fixed-price rate contracts ended 31 Mar 2026 (Q3 FY26 p.4-5; Q1 FY27 p.4, p.6); only RPTECH allows a stock gain 'to some extent' and refused to size it (Q3 FY26 p.12, p.16). Stock-gain reading has the weakest peer support."}
+  - {type: FLAG-NO-PEER-GROSS-MARGIN-BENCHMARK, reason: "No peer states a gross margin level. Esconet standalone 29.2% gross cannot be benchmarked. EBITDA ladder: RPTECH 3.38% (Q1 FY27 p.5, Cr basis), ORIENTTECH 7.57% (Q1 FY27 p.6), NETWEB 14.7% (Q1 FY27 p.5, INR mn basis). Esconet standalone 12.75% and consolidated 7.03% ex other income (B05) sit at the Netweb band and the Orient level."}
+  - {type: FLAG-NETWEB-AI-MIX-LOWER-MARGIN, reason: "The one large-AI peer says strategic AI orders carry 150 to 200 bp lower PBT margin than its base (NETWEB Q2 FY26 p.7; Q3 FY26 p.9). Does not support a higher margin for AI/GPU mix over legacy at the large-order end."}
+  - {type: FLAG-PEER-SCALE-MISMATCH, reason: "No peer is a small-cap GPU-server integrator. NETWEB revenue INR 21,836 mn FY26 with 125 R&D staff and a refusal to run cloud; RPTECH is a distributor; ORIENTTECH has no own-brand GPU line. Weight as ladder rungs."}
+  - {type: FLAG-ESCONET-DISCLOSURE-GAP-VS-PEERS, reason: "NETWEB and ORIENTTECH disclose order book; NETWEB and RPTECH disclose receivable and inventory days and operating cash flow. Esconet's missing order book, cash flow and 20.2 debtor days are a disclosure choice, not an industry norm."}
+  - {type: FLAG-CLOUD-ASSET-HEAVY-LONE-EXPANDER, reason: "Esconet is a lone expander into asset-heavy cloud. NETWEB refuses cloud services (Q2 FY26 p.16). ORIENTTECH SOC build shows capex first, revenue dates moving (Q1 FY26 p.6-7; Q2 FY26 p.5, p.9; Q3 FY26 p.8; Q1 FY27 p.10). Pattern evidence only; no peer data on MeitY."}
+  - {type: FLAG-PEER-TRANSCRIPT-INCONSISTENCY, reason: "RPTECH Q1 FY27 gives EBITDA INR 155 Cr, +50% (p.4) and INR 173 Cr, +55%, 3.38% (p.5). ORIENTTECH Q3 FY26 gives the Digital India Corporation contract as about INR 15 Cr (p.3) and INR 15 Cr per quarter (p.5). CFO figures used for RPTECH; Orient contract not used."}
+peers_provided: 12
+verified:
+  - {claim: "Q7 Customer AI and data-centre capex accelerating; partner-status vendors keep GPU and component allocation; no cancellations; constraints in memory, storage, lead time", peers: ["NETWEB", "RPTECH"], anchor_count: 8}
+partially_verified:
+  - {claim: "Q1 Hardware price inflation as inventory gain versus cost shock; peer stock gain; run-through to FY28 (cost shock confirmed at ORIENTTECH, stock gain only RPTECH 'to some extent', NETWEB denies, no peer sizes a gain, FY28 only via RPTECH citing third parties)", peers: ["ORIENTTECH", "RPTECH", "NETWEB"]}
+  - {claim: "Q2 Gross margin on AI/GPU mix versus legacy SI; peer gross and EBITDA margins (EBITDA ladder 3.38% / 7.57% / 14.7% confirmed; no peer gross margin; AI mix lower margin at large-order end)", peers: ["NETWEB", "RPTECH", "ORIENTTECH"]}
+  - {claim: "Q3 Peer debtor days, inventory days, OCF to PAT, order book (collection range 41 to 78 days and short order cycle confirmed; peers disclose order book and cash flow; Esconet 20.2 days untestable)", peers: ["NETWEB", "RPTECH", "ORIENTTECH"]}
+  - {claim: "Q4 Government/PSU share and sovereign demand (Netweb 40 to 50% government, sovereign driver confirmed; Orient 12 to 20%; PSU receivable days not given by any peer)", peers: ["NETWEB", "ORIENTTECH"]}
+  - {claim: "Q5 Industry growth rates for AI, sovereign cloud, cyber (Netweb 38% AI CAGR; Orient data centre 30 to 35% and cloud 22 to 28% via analyst quoting CRISIL; no sovereign cloud or cyber rate)", peers: ["NETWEB", "ORIENTTECH", "RPTECH"]}
+contradicted: []
+unverifiable:
+  - {claim: "Q6 Market share gain in Indian server OEM against Cisco, HP, Lenovo, Dell", peers_checked: ["NETWEB", "ORIENTTECH"]}
+  - {claim: "Q8 MeitY empanelment timelines, sovereign cloud ramp and asset intensity (no peer mentions MeitY; Orient Q1 FY26 p.10 adverse on sovereign platform adoption, adjacent only)", peers_checked: ["ORIENTTECH", "NETWEB"]}
+peer_coverage_map:
+  - {peer: "NETWEB", quarter: "Q2 FY26 (3 Nov 2025)", usage: "SUBSTANTIVE", contribution: "Strategic AI orders 150 to 200 bp lower PBT margin; cash cycle 120 days; LC-backed orders; refuses cloud services"}
+  - {peer: "NETWEB", quarter: "Q3 FY26 (19 Jan 2026)", usage: "SUBSTANTIVE", contribution: "9M operating cash flow INR 134 Cr vs PAT; memory pricing aligned at order date; on-prem AI leg not started"}
+  - {peer: "NETWEB", quarter: "Q4 FY26 (4 May 2026)", usage: "SUBSTANTIVE", contribution: "FY26 operating cash flow INR 1,715 mn; 13 to 14% EBITDA guide; declined to link inventory to margin; 50/50 govt mix"}
+  - {peer: "NETWEB", quarter: "Q1 FY27 (29 Jul 2026)", usage: "SUBSTANTIVE", contribution: "Denies memory-price margin gain; 78 receivable and 110 inventory days; order book INR 25,069 mn; 38% AI CAGR"}
+  - {peer: "RPTECH", quarter: "Q2 FY26 (10 Nov 2025)", usage: "SUBSTANTIVE", contribution: "Working-capital days; Yotta receivable INR 280 Cr delay; shortage named as risk"}
+  - {peer: "RPTECH", quarter: "Q3 FY26 (4 Feb 2026)", usage: "SUBSTANTIVE", contribution: "Price helped bottom line 'to some extent'; refused inventory-gain number; supplier price validity of weeks"}
+  - {peer: "RPTECH", quarter: "Q4 FY26 (15 May 2026)", usage: "SUBSTANTIVE", contribution: "FY26 operating cash flow INR 514 Cr vs PAT INR 282 Cr; margins intact; AI funnel INR 20,000 to 25,000 Cr"}
+  - {peer: "RPTECH", quarter: "Q1 FY27 (5 Aug 2026)", usage: "SUBSTANTIVE", contribution: "EBITDA 3.38%; channel stock bought at 80 sold near 100; price-rise speed to halve; allocation orange alert"}
+  - {peer: "ORIENTTECH", quarter: "Q1 FY26 (14 Aug 2025)", usage: "SUBSTANTIVE", contribution: "SI margin ladder 8 to 10% and 15 to 20%; sovereign platform adoption weak; AI not in revenue"}
+  - {peer: "ORIENTTECH", quarter: "Q2 FY26 (14 Nov 2025)", usage: "CITED-ONLY", contribution: "AI still proof-of-concept; SOC revenue date moved (repeated in other Orient calls)"}
+  - {peer: "ORIENTTECH", quarter: "Q3 FY26 (19 Feb 2026)", usage: "SUBSTANTIVE", contribution: "Fixed-price rate contracts to 31 Mar 2026; customer moved to OEM-direct; shortage through FY27"}
+  - {peer: "ORIENTTECH", quarter: "Q1 FY27 (13 Aug 2026)", usage: "SUBSTANTIVE", contribution: "EBITDA 3.19% to 7.57% via pass-through; order book INR 375.43 Cr; delivery-penalty refusal"}
+industry_cross_read:
+  demand: "Split: compute hardware peers boom (Netweb +172.1% YoY, RPTECH +62%) while the services SI is flat (Orient Q1 FY27 INR 201.92 Cr vs INR 212.56 Cr, derived -5%); Esconet standalone looks like the SI pattern."
+  pricing_inputs: "Memory, storage, CPU prices up (RAM 2x to 3x); no easing seen for about a year; margin effect splits by contract-pricing architecture: markup distributor up in rupees, own-brand OEM in band, fixed-price SI shock then rebound."
+  capex_cycle: "No peer expands capacity; working capital is the constraint (Netweb INR 1,200 Cr enabling resolution, RPTECH leverage to 2x on projects). Esconet is a lone expander into asset-heavy cloud, not a capacity race."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Customer disintermediated by OEM-direct sale (ORIENTTECH Q3 FY26 p.6)"
+  - "Fixed-price rate contracts against rising input cost (ORIENTTECH Q3 FY26 p.4-5)"
+  - "Delivery-penalty terms on 16 to 18 week lead times (ORIENTTECH Q1 FY27 p.13)"
+  - "Component shortage tracked weekly; supplier price validity of weeks (RPTECH Q1 FY27 p.9; Q3 FY26 p.16)"
+  - "Supplier product-line exit, Micron Crucial (RPTECH Q3 FY26 p.12)"
+  - "Consumer affordability and unit decline of 5 to 10% (RPTECH Q4 FY26 p.14)"
+  - "Channel stock build (RPTECH Q1 FY27 p.10, p.15)"
+  - "Large-order receivable delay, Yotta INR 280 Cr (RPTECH Q2 FY26 p.15)"
+  - "Growth working-capital funding and quarter-end short-term borrowing (NETWEB Q4 FY26 p.16-17; Q1 FY27 p.14-15)"
+  - "Contingent liabilities: GST notices (RPTECH Q1 FY27 p.16-17); INR 4.4 Cr AWS reversal (ORIENTTECH Q1 FY27 p.10)"
+  - "GPU substitutes ASIC/TPU and Chinese open models (NETWEB Q3 FY26 p.9-10; Q1 FY27 p.11)"
+  - "Inventory valuation policy change restating prior period (NETWEB Q1 FY27 p.17)"
+net_narrative_effect: "complicates"
+cross_peer_hypothesis: "In this memory-price cycle, margin outcome splits on contract-repricing lag, not on business model. Fixed-price books (Orient to 31 Mar 2026; Esconet FY26 per B05) took a FY26 H2 shock; captive-supply and markup peers (Netweb, RPTECH) held margin. Orient's 3.19% to 7.57% rebound (Q1 FY27 p.6) and Esconet's Q1 FY27 jump are then a one-time reset as contracts reprice, not expansion. Test: with price-rise speed halving (RPTECH Q1 FY27 p.11) and Orient pricing stable (Q1 FY27 p.4), Orient and Esconet Q2 FY27 margins should hold or fall toward the repriced level while Netweb and RPTECH stay in band. Any Esconet gross margin above that level needs pre-rise stock, which fades as stock turns. [INFERENCE]"
+analyst_note: "Three readings of the Q1 FY27 margin now exist. A: structural HexaData mix (B05 reading A). B: stock gain plus other income (B05 reading B). C: fixed-price contracts rolling onto new prices, as at Orient. Peers give B the weakest support: Netweb denies it, RPTECH will not size it, Esconet's own inventory build is small (518.50 Lakhs). Separating observation: Q2 FY27 standalone gross margin and the share of Q2 revenue billed on orders priced before the rise. No peer reports gross margin, so 29.2% stays unbenchmarked; on EBITDA ex other income Esconet standalone 12.75% sits in Netweb's 13 to 14% band and consolidated 7.03% sits at Orient's 7.57%. Stage 6 does not test the Esconet corpus again; Esconet inputs are B05 figures. Zero formal contradictions; read the verdict count with the peer-split flag, not instead of it."

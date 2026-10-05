@@ -17,3 +17,5 @@ timestamp. Stage 0 and step1 steps A-G ran inline on the orchestrator session
 | 4 | bizmodel | claude-sonnet-5-5 | medium | 1,669,432 | 1,528,922 | 140,474 | 19,229 | 1,688,661 | 5m24s | 1 |
 | 5 | concall | claude-sonnet-5-5 | default (high) | 1,854,669 | 1,669,494 | 185,145 | 20,693 | 1,875,362 | 6m35s | 1 |
 | 8 | promoter (web) | claude-sonnet-5-5 | default (high) | 3,346,309 | 3,162,310 | 183,941 | 6,894 | 3,353,203 | 7m09s | 1 |
+| 6 | peers | claude-sonnet-5-5 | medium | 2,053,038 | 1,757,370 | 295,644 | 17,951 | 2,070,989 | 8m25s | 1 |
+| 7 | emoat | claude-sonnet-5-5 | default (high) | 4,098,711 | 3,862,573 | 236,084 | 21,986 | 4,120,697 | 8m22s | 1 |

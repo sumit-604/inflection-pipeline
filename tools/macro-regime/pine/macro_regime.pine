@@ -15,8 +15,14 @@
 //    India dial runs without the FPI input.
 //  - Copper/gold uses front-month futures, not Pink Sheet averages.
 //  - Bands failed PASS_BAR.md (a) and are OFF by default. Turn them on to test.
+//
+// Regime key: R REFLATION (green) growth up, inflation up; G GOLDILOCKS (teal)
+// growth up, inflation down; S STAGFLATION (red) growth down, inflation up;
+// D DEFLATION (grey) both down. Letter strip at the pane bottom, a label at
+// each change, legend top-left. Alerts: regime change, stress HIGH,
+// liquidity TIGHT / EASING.
 
-indicator("Macro Regime Dials (6-12m)", shorttitle = "MacroRegime", overlay = false, max_bars_back = 500)
+indicator("Macro Regime Dials (6-12m)", shorttitle = "MacroRegime", overlay = false, max_bars_back = 500, max_labels_count = 500)
 
 // ---------------------------------------------------------------- inputs
 zWin      = input.int(60, "z-score window, months", minval = 24)
@@ -28,6 +34,10 @@ stHi      = input.float(1.0, "STRESS high above")
 stLo      = input.float(-0.5, "STRESS low below")
 showBands = input.bool(false, "Show exposure bands (failed bar; test only)")
 bandAsset = input.string("nifty", "Band to plot", options = ["gold", "silver", "aluminium", "zinc", "brent", "nifty"])
+showStrip = input.bool(true, "Regime letter strip (R G S D)")
+showLabels = input.bool(true, "Label each regime change")
+showLegend = input.bool(true, "Legend table")
+stripY     = input.float(-2.7, "Letter strip y level")
 
 // ---------------------------------------------------------------- series
 m(sym) => request.security(sym, "1M", close, ignore_invalid_symbol = true)
@@ -142,6 +152,15 @@ band(string asset) =>
     na(quad) ? int(na) : math.max(-1, math.min(1, s))
 bandSel = band(bandAsset)
 
+// --------------------------------------------------------------- colours
+cREFL = color.green
+cGOLD = color.teal
+cSTAG = color.red
+cDEFL = color.gray
+quadColor(int q) => q == 0 ? cREFL : q == 1 ? cGOLD : q == 2 ? cSTAG : q == 3 ? cDEFL : color.new(color.white, 100)
+quadLetter(int q) => q == 0 ? "R" : q == 1 ? "G" : q == 2 ? "S" : q == 3 ? "D" : ""
+quadFull(int q) => q == 0 ? "REFLATION" : q == 1 ? "GOLDILOCKS" : q == 2 ? "STAGFLATION" : q == 3 ? "DEFLATION" : "n/a"
+
 // ----------------------------------------------------------------- plots
 plot(gS, "GROWTH", color = color.new(color.green, 0), linewidth = 2)
 plot(iS, "INFLATION", color = color.new(color.red, 0), linewidth = 2)
@@ -152,7 +171,30 @@ hline(0)
 hline(stHi, "stress high", color = color.new(color.orange, 60), linestyle = hline.style_dotted)
 hline(liqHi, "easing", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
 hline(liqLo, "tight", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
-bgcolor(quad == 0 ? color.new(color.green, 88) : quad == 1 ? color.new(color.teal, 88) : quad == 2 ? color.new(color.red, 88) : quad == 3 ? color.new(color.gray, 88) : na, title = "regime")
+bgcolor(na(quad) ? na : color.new(quadColor(quad), 88), title = "regime")
+
+// letter strip: one letter per month at a fixed level, in the regime colour
+plotchar(showStrip and quad == 0 ? stripY : na, "R reflation", char = "R", location = location.absolute, color = cREFL, size = size.tiny)
+plotchar(showStrip and quad == 1 ? stripY : na, "G goldilocks", char = "G", location = location.absolute, color = cGOLD, size = size.tiny)
+plotchar(showStrip and quad == 2 ? stripY : na, "S stagflation", char = "S", location = location.absolute, color = cSTAG, size = size.tiny)
+plotchar(showStrip and quad == 3 ? stripY : na, "D deflation", char = "D", location = location.absolute, color = cDEFL, size = size.tiny)
+
+// label at each regime change: new regime name, and how long the old one ran
+var int regimeStart = na
+regimeChanged = not na(quad) and quad != quad[1] and not na(quad[1])
+if regimeChanged
+    monthsRan = na(regimeStart) ? 0 : bar_index - regimeStart
+    if showLabels
+        label.new(bar_index, stripY + 0.35, quadFull(quad) + (monthsRan > 0 ? "\n(" + quadFull(quad[1]) + " ran " + str.tostring(monthsRan) + "m)" : ""), style = label.style_label_up, color = color.new(quadColor(quad), 20), textcolor = color.white, size = size.small)
+    regimeStart := bar_index
+if na(regimeStart) and not na(quad)
+    regimeStart := bar_index
+
+// alerts
+alertcondition(regimeChanged, "Regime changed", "Macro regime changed")
+alertcondition(sS > stHi and sS[1] <= stHi, "Stress crossed HIGH", "Global STRESS dial crossed HIGH")
+alertcondition(lS < liqLo and lS[1] >= liqLo, "Liquidity turned TIGHT", "LIQUIDITY dial turned TIGHT")
+alertcondition(lS > liqHi and lS[1] <= liqHi, "Liquidity turned EASING", "LIQUIDITY dial turned EASING")
 plot(showBands ? bandSel : na, "Band score (selected asset)", color = color.new(color.black, 0), style = plot.style_stepline, linewidth = 2, display = display.all)
 // Exported for strategies via input.source (always computed, hidden unless showBands):
 plot(band("gold"), "band gold", display = display.none)
@@ -163,11 +205,42 @@ plot(band("brent"), "band brent", display = display.none)
 plot(band("nifty"), "band nifty", display = display.none)
 plot(quad, "quadrant 0-3", display = display.none)
 
+// ---------------------------------------------------------------- legend
+// Nifty and gold 12-month medians by quadrant are from EVALUATION_2026-10.md
+// section 4 (2004-01 to 2025-09, 272 months). Reference only, not a forecast.
+var lg = table.new(position.top_left, 5, 5, border_width = 1)
+if barstate.islast and showLegend
+    table.cell(lg, 0, 0, "", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 1, 0, "Regime", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 2, 0, "Growth / Inflation", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 3, 0, "Nifty 12m med", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 4, 0, "Gold 12m med", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 0, 1, "R", bgcolor = color.new(cREFL, 30), text_color = color.white)
+    table.cell(lg, 1, 1, "REFLATION")
+    table.cell(lg, 2, 1, "up / up")
+    table.cell(lg, 3, 1, "+15.4%")
+    table.cell(lg, 4, 1, "+8.7%")
+    table.cell(lg, 0, 2, "G", bgcolor = color.new(cGOLD, 30), text_color = color.white)
+    table.cell(lg, 1, 2, "GOLDILOCKS")
+    table.cell(lg, 2, 2, "up / down")
+    table.cell(lg, 3, 2, "+12.3%")
+    table.cell(lg, 4, 2, "+10.1%")
+    table.cell(lg, 0, 3, "S", bgcolor = color.new(cSTAG, 30), text_color = color.white)
+    table.cell(lg, 1, 3, "STAGFLATION")
+    table.cell(lg, 2, 3, "down / up")
+    table.cell(lg, 3, 3, "+7.6%")
+    table.cell(lg, 4, 3, "+5.8%")
+    table.cell(lg, 0, 4, "D", bgcolor = color.new(cDEFL, 30), text_color = color.white)
+    table.cell(lg, 1, 4, "DEFLATION")
+    table.cell(lg, 2, 4, "down / down")
+    table.cell(lg, 3, 4, "+12.7%")
+    table.cell(lg, 4, 4, "+18.2%")
+
 // ----------------------------------------------------------------- table
 var t = table.new(position.top_right, 2, 7, border_width = 1)
 if barstate.islast
     table.cell(t, 0, 0, "Regime", bgcolor = color.new(color.gray, 70))
-    table.cell(t, 1, 0, quadName, bgcolor = color.new(color.gray, 70))
+    table.cell(t, 1, 0, quadLetter(quad) + "  " + quadName, bgcolor = color.new(quadColor(quad), 30), text_color = color.white)
     table.cell(t, 0, 1, "GROWTH")
     table.cell(t, 1, 1, str.tostring(gS, "#.00"))
     table.cell(t, 0, 2, "INFLATION")

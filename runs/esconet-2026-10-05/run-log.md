@@ -6,3 +6,4 @@
 - 2026-10-05 B05 block file line 39 lacked the closing brace of a flow mapping (reply copy had it); clerical repair by the orchestrator, no content change.
 - 2026-10-05 stage 8 status partial: web sources failed (MCA, zaubacorp, NSE 2025 filing, SEBI/SAT portals); searches_skipped populated.
 - 2026-10-05 several stage agents reported the Edit tool unavailable and left small report blemishes (anchor typos) unfixed; each named in its hand-back.
+- 2026-10-05 stage 9 status partial: storage market size, PSU share, sovereign-cloud size not found; market sizes from WebSearch summaries only.

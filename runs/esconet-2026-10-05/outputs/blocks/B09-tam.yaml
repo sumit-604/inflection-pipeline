@@ -1,0 +1,111 @@
+stage: B09-tam
+company: "ESCONET"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "carried from B07/B05: BSE scrip code not found; announcements REPAIRED by /step1 (33 NSE Reg 30 filings Sep 2025 to Sep 2026); shareholding REPAIRED (SHP XBRL Mar-2026, Jun-2026 only); screener export sheets EMPTY except Data_Sheet.csv (FY2023-FY2026 plus Q1 FY27); results PDFs REPAIRED by /step1; CRISIL rationale 2026-07-02 only"
+  - "carried: only 2 concalls (19 Jun 2025, 13 Aug 2026); Jun 2026 investor meet has deck only; FY2023-24 AR not collected; prospectus covers pre-IPO years; research/ empty; listed_date NOT FOUND in corpus (AR Note 1 p.105 says 23 Feb 2024); SAST 2026-05-19 .txt corrupt"
+  - "carried: consolidated ageing tables, Fluidech acquisition-date balance sheet, ZeaCloud and Singapore stand-alone accounts, allottee list, lender list, OD terms, FDR lien NOT FOUND; Singapore total assets conflict (AOC-1 about 2,465 Lakhs vs auditor 553.64 Lakhs)"
+  - "carried: HexaData, services, cloud and cyber revenue and margin by line NOT FOUND; FY26 customer concentration, government share and order book value NOT FOUND (MD guesstimate 20 to 25 Cr, AUG26 p.15); HexaData capacity (units or utilisation) and R&D spend NOT FOUND; ZeaCloud and Fluidech fixed-asset base NOT FOUND"
+  - "carried: Q1 FY27 filing has no balance sheet or cash flow; Singapore revenue 'approximately 53 crores' has no stated period (AUG26 p.15); no patents, PLI enrolment, NCIIPC letter or GeM listing document in corpus; FY26 AR p.22-23 drafting residue flagged"
+  - "stage9: management gives NO numeric TAM, SAM or market-share claim in any injected document (AR26 pp.72-76 cite only macro IT spend tables; decks and AUG26 call list qualitative drivers); mgmt_claim_cr NOT FOUND"
+  - "stage9: India storage-hardware market size, India government and PSU share of server demand, and IDC India vendor shares for 2025-26 NOT FOUND in web search; India sovereign-cloud (as distinct from government-cloud) market size NOT FOUND"
+  - "stage9: the AR26 p.75 India IT spend table carries footnote 5 but the extract does not name its publisher; treated as a company-cited third-party figure, publisher NOT FOUND"
+flags:
+  - {type: FLAG-TAM-DEFINITION-DIVERGENCE, reason: "Three India server market sizes for 2025 differ 3.9x: TechSci/ResearchAndMarkets USD 1.68B (Rs 16,178 Cr), IMARC USD 4.25B (Rs 40,928 Cr), Mordor data-centre servers USD 6.55B (Rs 63,077 Cr). Separating observation: scope (hyperscale and ODM-direct included at 48.35% in Mordor) and whether GPU value is counted at system value. Central estimate IMARC (sits inside the AR26 p.75 ceiling of India data-centre systems USD 7,788M = Rs 74,998 Cr, which also holds storage and network). Both others shown."}
+  - {type: FLAG-NO-MGMT-TAM, reason: "No numeric management market claim exists; ratio and read are NOT FOUND, not zero. Stage 11 should not read management_claim fields as a confirmation of size."}
+  - {type: FLAG-SOM-NOT-FORECAST, reason: "Rule-band SOM (1pp share gain in 3 years from 1.42%) gives a 31.2% revenue CAGR, which exceeds FY27 guidance (Rs 370-400 Cr = +4.4% to +12.9%) and the hardware market growth (9.81%). Market size is not the binding limit; working capital and execution are. Two readings carried; separating observation is Q2 FY27 consolidated revenue ex-Singapore plus HexaData line disclosure."}
+  - {type: FLAG-SINGAPORE-IN-RUN-RATE, reason: "Q1 FY27 consolidated revenue 116.33 Cr (screener) less standalone 61.08 Cr (B03/Q1 BM, 6,107.71 Lakhs) leaves 55.25 Cr in subsidiaries and eliminations (derived). MD says Singapore 'approximately 53 crores' with no period (AUG26 p.15). If Q1, Singapore (0.5% net margin FY26) is nearly half of Q1 revenue and sits outside the India SAM."}
+  - {type: FLAG-FX-BASIS, reason: "Market sizes in USD converted at Rs 96.3 per USD (4 Oct 2026, web). Rupee is down 8.39% in 12 months, so converting CY2025 USD data at today's rate lifts the rupee base versus the FY26 average rate. FY26 average rate NOT FOUND in the corpus; all rupee market figures carry this basis."}
+  - {type: FLAG-GUIDANCE-VS-Q1-RUNRATE, reason: "Q1 FY27 consolidated 116.33 Cr annualises to 465.32 Cr (arithmetic only) against guidance Rs 370-400 Cr. Either Q1 is lumpy or guidance is below run-rate. Not resolved from the corpus."}
+  - {type: FLAG-AGGREGATOR-SOURCES, reason: "Most India market sizes come from IMARC, Mordor, TechSci and MarketsandMarkets, not IDC, CRISIL or ICRA. Confidence is M at best. No IDC India quarterly server data could be fetched."}
+market_definition: "India enterprise and government servers and storage hardware (ex-hyperscale), plus cybersecurity services and government cloud as adjacent levers; Singapore trading excluded; revenue base Rs 299.96 Cr India ex-Fluidech"
+tam_cr: {conservative: 55332, realistic: 83321}
+sam_cr: 21139
+sam_pct_of_tam: 25.4
+som_3yr_cr: 677
+som_5yr_cr: 986
+som_implied_revenue_cagr: {yr3: 31.2, yr5: 26.9}
+current_sam_share_pct: 1.42
+revenue_headroom_x: 70.5
+tam_growth_pct: 11.6
+runway_class: "STRONG"
+mgmt_claim_cr: "NOT FOUND"
+mgmt_claim_ratio: "NOT FOUND"
+mgmt_claim_read: "NOT FOUND (no numeric management claim; only AR26 p.75 cites India data-centre systems USD 7,788M in 2025 and USD 9,385M in 2026, Rs 74,998 Cr and Rs 90,378 Cr, an industry table not a company TAM)"
+capacity_check: "NOT FOUND on units (no capacity or utilisation disclosed; capex-embedded growth 0 per B07). Working-capital gap: SOM yr3 needs about Rs 377 Cr more revenue; at the FY26 inventory build of 26.2% of incremental revenue (32.56 of 124.10 Cr, derived) that is about Rs 99 Cr of inventory funding, source unevidenced. The SOM is the optimistic side, not a capex plan."
+methods_used:
+  - "Method 1 top-down (India server, DC systems, cyber services, government cloud, minus hyperscale)"
+  - "Method 2 bottom-up: NOT RUN (no unit or per-unit data found)"
+  - "Method 3 peer aggregation: partial (Netweb Rs 2,183.6 Cr FY26, Esconet; unorganised estimate NOT FOUND)"
+  - "Method 4 import substitution: NOT RUN (no sourced import or localisation figures for servers)"
+  - "Method 5 global benchmark: partial (global server USD 444B 2025 vs India 2.7% AI server share; no per-capita basis)"
+stale_data_flags:
+  - {datapoint: "India server market USD 1,602.97M CAGR 7.19%", source: "Prospectus (Mordor extract) p.95-108", year: 2022}
+  - {datapoint: "India data centre market USD 7.44B 2023, USD 9.27B 2027", source: "Prospectus (India Briefing extract) p.106", year: 2023}
+  - {datapoint: "India cloud market USD 6.47B 2022, CAGR 18.37%", source: "Prospectus (Mordor/other extract)", year: 2022}
+  - {datapoint: "Global server USD 175.29B by 2030, CAGR 9.3%", source: "Prospectus global server section", year: 2023}
+searches_performed:
+  - "India server market size 2025 IDC revenue USD billion x86 (IMARC 4.25B, Mordor 6.55B, TechSci 1.68B, 2025)"
+  - "India AI server market GPU servers 2025 2030 CAGR (USD 4.78B 2025, 40.8% CAGR to 2033; global GPU server USD 171.47B 2025; India AI server chassis USD 120-150M 2026)"
+  - "India cybersecurity market size 2025 DSCI (IMARC USD 11.34B 2025, 15.46% CAGR; DSCI product revenue USD 4.46B 2025; MarketsandMarkets USD 8.58B 2025)"
+  - "India cybersecurity services market size (IMARC services USD 2.48B 2024, 13.60% CAGR 2025-2033)"
+  - "IDC India server vendor share 2026 (no India-specific data returned; global Q2 2026 USD 166.3B)"
+  - "IndiaAI Mission GPUs (Rs 10,371.92 Cr outlay, 38,000 GPUs, plus 20,000 under Mission 2.0, Feb 2026)"
+  - "India sovereign cloud / government cloud market (government cloud USD 1,585.89M 2025, 12.58% CAGR; public cloud USD 13.7B 2025 to USD 17.5B 2026)"
+  - "USD INR 4 Oct 2026 (96.3)"
+  - "India server market share by end user (hyperscale 48.35% of data-centre servers 2025, Mordor)"
+  - "India x86 server units and vendor share 2025 (not found for India)"
+  - "India HPC AI server Netweb PLI Make in India (HPE, VVDN, Altos entries; Netweb sole listed domestic AI server maker per web summaries)"
+searches_skipped:
+  - "India storage hardware market size (not searched; no India storage figure obtained)"
+  - "India government and PSU share of server procurement (not searched beyond end-user query; NOT FOUND)"
+  - "India sovereign cloud segment size separate from government cloud (not found)"
+  - "Publisher of AR26 p.75 IT spend table (not searched)"
+  - "Primary-source fetches of IMARC, Mordor, TechSci, DSCI pages (WebSearch summaries only; no WebFetch of full reports)"
+downstream_candidates:
+  - signal: "IndiaAI Mission GPU tenders, empanelment rounds and Mission 2.0 20,000 GPU additions"
+    entity_type: "regulatory"
+    demand_link: "Government-funded GPU compute buys drive sovereign AI server demand HexaData and NVIDIA-partner resale chase."
+    likely_source: "MeitY / IndiaAI Mission portal and PIB press notes"
+    cadence: "event-driven"
+    shared: true
+  - signal: "MeitY cloud empanelment status and ISO certificates for ZeaCloud"
+    entity_type: "regulatory"
+    demand_link: "Empanelment decides whether ZeaCloud can host government data; company calls it a 2 to 3 year runway."
+    likely_source: "MeitY empanelled CSP list; Esconet Reg 30 filing on NSE"
+    cadence: "event-driven"
+    shared: false
+  - signal: "NVIDIA data-centre revenue, India partner allocation commentary and component (memory, storage) price trend"
+    entity_type: "counterparty"
+    demand_link: "GPU and memory supply and price set HexaData GPU system revenue and gross margin."
+    likely_source: "NVIDIA 10-Q and earnings call; peer concalls (Netweb, RPTECH, Orient)"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Netweb, RPTECH and Orient Technologies quarterly results and order books"
+    entity_type: "counterparty"
+    demand_link: "Listed peers selling to the same enterprise and government buyers show demand and pricing before Esconet reports."
+    likely_source: "Peer exchange filings and concall transcripts"
+    cadence: "quarterly"
+    shared: true
+  - signal: "C-DAC order Rs 25.74 Cr (ex-GST) billing and collection; central and state PSU tender awards on GeM"
+    entity_type: "end-customer"
+    demand_link: "Government buyers are the large visible orders and pay slowly; collection shows receivable risk."
+    likely_source: "Esconet Reg 30 order announcements; GeM bid and order portal"
+    cadence: "event-driven"
+    shared: false
+  - signal: "NCIIPC and CERT-In critical-infrastructure directives and DSCI cybersecurity spend data"
+    entity_type: "regulatory"
+    demand_link: "Mandated audits and compliance drive Fluidech GRC and critical-infrastructure demand."
+    likely_source: "CERT-In and NCIIPC notices; DSCI annual reports"
+    cadence: "event-driven"
+    shared: false
+  - signal: "USD INR rate and RBI policy"
+    entity_type: "macro"
+    demand_link: "Imported hardware cost in rupees and enterprise capex appetite move with the rupee and rates."
+    likely_source: "RBI reference rate; RBI monetary policy statements"
+    cadence: "monthly"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "SAM is hardware ex-hyperscale only (Rs 21,139 Cr = realistic server TAM x 51.65%); cyber (Rs 27,121 Cr services TAM) and government cloud (Rs 15,272 Cr) sit as 5D levers because Fluidech is 1.52% of revenue and ZeaCloud has no empanelment. Rule-band SOM (31.2% yr3, 26.9% yr5) is the framework mechanic, not a forecast: a 1pp gain from a 1.42% base means a 70% rise in share. Reading A: market absorbs it (market growth 9.81% plus share gain, FY23-26 CAGR 55%). Reading B: FY27 guidance Rs 370-400 Cr (+4.4% to +12.9%) and working-capital limits bind. Separating observation: Q2 FY27 consolidated revenue ex-Singapore and any HexaData line disclosure. At constant FY26 margin, earnings growth equals revenue growth. Trailing P/E 52.9x (market cap 325.68 Cr over FY26 PAT 6.16 Cr, screener). Section 1B governs the exit multiple."

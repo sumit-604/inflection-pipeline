@@ -1,0 +1,66 @@
+# Data sources, macro regime model
+
+Written by build_data.py on 2026-10-05. One row per series under data/. PRIMARY = the issuing body's own file, fetched through the operator's laptop browser on 2026-10-05 and kept under data/raw/ (CFTC zips reduced to data/raw/cftc_legacy_weekly_slim.csv). V1 CACHE = copied from tools/macro-direction/data with that folder's provenance. FAILED = not served; the model runs without it. PARTIAL in a note = the series ends before 2026-09.
+
+Monthly rule: last observation of the month is the month value; month_avg is the mean; a final month whose last observation is before the 15th is dropped.
+
+| File | Series code | Status | Source URL | First | Last | Rows | Fetched | Note |
+|---|---|---|---|---|---|---|---|---|
+| us_real_yield_10y.csv | DFII10 | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFII10 | 2003-01 | 2026-09 | 285 | 2026-10-05 | US 10y TIPS yield, %, daily |
+| us_breakeven_10y.csv | T10YIE | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=T10YIE | 2003-01 | 2026-09 | 285 | 2026-10-05 | US 10y breakeven inflation, %, daily |
+| us_curve_10y2y.csv | T10Y2Y | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=T10Y2Y | 1976-06 | 2026-09 | 604 | 2026-10-05 | US 10y minus 2y, pp, daily |
+| us_nominal_10y.csv | DGS10 | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10 | 1962-01 | 2026-09 | 777 | 2026-10-05 | US 10y Treasury yield, %, daily |
+| us_fedfunds.csv | FEDFUNDS | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS | 1954-07 | 2026-09 | 867 | 2026-10-05 | Effective Fed funds, %, monthly |
+| us_cpi.csv | CPIAUCSL | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL | 1947-01 | 2026-08 | 955 | 2026-10-05 | US CPI-U index, SA, monthly |
+| us_core_cpi.csv | CPILFESL | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPILFESL | 1957-01 | 2026-08 | 835 | 2026-10-05 | US core CPI index, SA, monthly |
+| us_m2.csv | M2SL | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=M2SL | 1959-01 | 2026-08 | 812 | 2026-10-05 | US M2, $bn, SA, monthly |
+| us_fed_assets.csv | WALCL | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=WALCL | 2002-12 | 2026-09 | 286 | 2026-10-05 | Fed total assets, $mn, weekly (Wed) |
+| us_monetary_base.csv | BOGMBASE | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=BOGMBASE | 1959-01 | 2026-08 | 812 | 2026-10-05 | US monetary base, $mn, monthly |
+| us_nfci.csv | NFCI | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=NFCI | 1971-01 | 2026-09 | 669 | 2026-10-05 | Chicago Fed National Financial Conditions Index, weekly; positive = tighter than average |
+| us_baa_spread.csv | BAA10Y | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10Y | 1986-01 | 2026-09 | 489 | 2026-10-05 | Moody's Baa yield minus 10y Treasury, pp, daily; the credit-stress series (ICE HY OAS on FRED starts 2023-10 only) |
+| us_hy_oas.csv | BAMLH0A0HYM2 | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2 | 2023-10 | 2026-09 | 36 | 2026-10-05 | ICE BofA US HY OAS, pp, daily; FRED serves 2023-10 on only |
+| us_stlfsi.csv | STLFSI4 | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=STLFSI4 | 1993-12 | 2026-09 | 394 | 2026-10-05 | St Louis Fed Financial Stress Index, weekly |
+| us_vix.csv | VIXCLS | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS | 1990-01 | 2026-09 | 441 | 2026-10-05 | CBOE VIX close, daily |
+| usd_broad.csv | DTWEXBGS | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS | 2006-01 | 2026-09 | 249 | 2026-10-05 | Fed broad dollar index, daily |
+| usdinr.csv | DEXINUS | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXINUS | 1973-01 | 2026-09 | 645 | 2026-10-05 | USD/INR, daily |
+| usdcny.csv | DEXCHUS | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCHUS | 1981-01 | 2026-09 | 549 | 2026-10-05 | USD/CNY, daily |
+| us_indpro.csv | INDPRO | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=INDPRO | 1919-01 | 2026-08 | 1292 | 2026-10-05 | US industrial production index, monthly |
+| us_recession_prob.csv | RECPROUSM156N | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=RECPROUSM156N | 1967-06 | 2026-08 | 711 | 2026-10-05 | Smoothed US recession probability, %, monthly |
+| epu_us.csv | USEPUINDXM | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM | 1985-01 | 2026-09 | 501 | 2026-10-05 | Economic Policy Uncertainty index, US, monthly (Baker-Bloom-Davis via FRED) |
+| epu_india.csv | INDEPUINDXM | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=INDEPUINDXM | 2003-01 | 2026-09 | 285 | 2026-10-05 | Economic Policy Uncertainty index, India, monthly |
+| epu_global.csv | GEPUCURRENT | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=GEPUCURRENT | 1997-01 | 2026-07 | 355 | 2026-10-05 | Global EPU, current-price GDP weights, monthly |
+| in_call_rate.csv | IRSTCI01INM156N | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=IRSTCI01INM156N | 1968-01 | 2026-07 | 703 | 2026-10-05 | India call money rate, %, monthly (OECD MEI) |
+| in_gsec_10y.csv | INDIRLTLT01STM | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=INDIRLTLT01STM | 2011-12 | 2026-07 | 176 | 2026-10-05 | India 10y government bond yield, %, monthly (OECD MEI), 2011-12 on |
+| in_policy_rate_imf.csv | INTDSRINM193N | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=INTDSRINM193N | 1968-01 | 2022-07 | 655 | 2026-10-05 | India central bank discount/policy rate, %, monthly (IMF IFS), ends 2022-07 |
+| in_cpi_yoy.csv | CPALTT01INM659N | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPALTT01INM659N | 1958-01 | 2025-03 | 807 | 2026-10-05 | India CPI all items, % change YoY, monthly (OECD MEI), ends 2025-03: PARTIAL |
+| in_m3.csv | MABMM301INM189N | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=MABMM301INM189N | 1960-01 | 2023-09 | 765 | 2026-10-05 | India broad money M3, INR, monthly (OECD MEI), ends 2023-09: PARTIAL |
+| in_cli.csv | INDLOLITONOSTSAM | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=INDLOLITONOSTSAM | 1994-04 | 2024-01 | 358 | 2026-10-05 | India OECD composite leading indicator, ends 2024-01: PARTIAL |
+| imf_copper.csv | PCOPPUSDM | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOPPUSDM | 1992-01 | 2026-07 | 415 | 2026-10-05 | IMF copper price, $/t, monthly avg |
+| imf_aluminium.csv | PALUMUSDM | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=PALUMUSDM | 1992-01 | 2026-07 | 415 | 2026-10-05 | IMF aluminium price, $/t, monthly avg; cross-check for Pink Sheet |
+| imf_zinc.csv | PZINCUSDM | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=PZINCUSDM | 1992-01 | 2026-07 | 415 | 2026-10-05 | IMF zinc price, $/t, monthly avg; cross-check for Pink Sheet |
+| brent_spot_fred.csv | DCOILBRENTEU | PRIMARY | https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU | 1987-05 | 2026-09 | 473 | 2026-10-05 | EIA Brent spot via FRED, $/bbl, daily |
+| gold_usd.csv | GC=F | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/GC=F (interval=1d, period1=0) | 2000-08 | 2026-09 | 314 | 2026-10-05 | COMEX gold front future, $/oz; 6549 daily closes |
+| silver_usd.csv | SI=F | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/SI=F (interval=1d, period1=0) | 2000-08 | 2026-09 | 314 | 2026-10-05 | COMEX silver front future, $/oz; 6550 daily closes |
+| copper_usd.csv | HG=F | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/HG=F (interval=1d, period1=0) | 2000-08 | 2026-09 | 314 | 2026-10-05 | COMEX copper front future, $/lb; 6553 daily closes |
+| aluminium_fut.csv | ALI=F | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/ALI=F (interval=1d, period1=0) | 2014-05 | 2026-09 | 149 | 2026-10-05 | COMEX aluminium future, $/t, 2014-05 on; 3086 daily closes |
+| brent_fut.csv | BZ=F | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/BZ=F (interval=1d, period1=0) | 2007-07 | 2026-09 | 231 | 2026-10-05 | ICE Brent front future, $/bbl, 2007-07 on; 4775 daily closes |
+| wti_fut.csv | CL=F | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/CL=F (interval=1d, period1=0) | 2000-08 | 2026-09 | 314 | 2026-10-05 | NYMEX WTI front future, $/bbl; 6557 daily closes |
+| nifty.csv | ^NSEI | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/^NSEI (interval=1d, period1=0) | 2007-09 | 2026-09 | 229 | 2026-10-05 | NIFTY 50 close, INR, 2007-09 on; 4672 daily closes |
+| banknifty.csv | ^NSEBANK | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/^NSEBANK (interval=1d, period1=0) | 2007-09 | 2026-09 | 229 | 2026-10-05 | NIFTY Bank close, INR; 4687 daily closes |
+| india_vix.csv | ^INDIAVIX | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/^INDIAVIX (interval=1d, period1=0) | 2008-03 | 2026-09 | 223 | 2026-10-05 | India VIX close, 2008-03 on; 4553 daily closes |
+| vix_yahoo.csv | ^VIX | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/^VIX (interval=1d, period1=0) | 1990-01 | 2026-09 | 441 | 2026-10-05 | CBOE VIX close (Yahoo copy); 9258 daily closes |
+| dxy.csv | DX-Y.NYB | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB (interval=1d, period1=0) | 1971-01 | 2026-09 | 669 | 2026-10-05 | ICE US Dollar Index, 1971 on; 14157 daily closes |
+| spx.csv | ^GSPC | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/^GSPC (interval=1d, period1=0) | 1970-01 | 2026-09 | 681 | 2026-10-05 | S&P 500 close; 14310 daily closes |
+| shanghai.csv | 000001.SS | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/000001.SS (interval=1d, period1=0) | 1997-07 | 2026-09 | 351 | 2026-10-05 | Shanghai Composite close, 1997-07 on; 7087 daily closes |
+| tlt.csv | TLT | PRIMARY | https://query1.finance.yahoo.com/v8/finance/chart/TLT (interval=1d, period1=0) | 2002-07 | 2026-09 | 291 | 2026-10-05 | iShares 20y+ Treasury ETF, 2002-07 on; 6084 daily closes |
+| us_crude_stocks_ex_spr.csv | WCESTUS1 | PRIMARY | https://www.eia.gov/dnav/pet/hist_xls/WCESTUS1w.xls | 1982-08 | 2026-09 | 530 | 2026-10-05 | US ending stocks of crude oil excl. SPR, kbbl, weekly |
+| us_crude_stocks_total.csv | WCRSTUS1 | PRIMARY | https://www.eia.gov/dnav/pet/hist_xls/WCRSTUS1w.xls | 1982-08 | 2026-09 | 530 | 2026-10-05 | US ending stocks of crude oil incl. SPR, kbbl, weekly |
+| us_crude_production.csv | WCRFPUS2 | PRIMARY | https://www.eia.gov/dnav/pet/hist_xls/WCRFPUS2w.xls | 1983-01 | 2026-09 | 525 | 2026-10-05 | US field production of crude oil, kb/d, weekly |
+| brent_spot_eia.csv | RBRTE | PRIMARY | https://www.eia.gov/dnav/pet/hist_xls/RBRTEd.xls | 1987-05 | 2026-09 | 473 | 2026-10-05 | Europe Brent spot FOB, $/bbl, daily (primary EIA file) |
+| in_fpi_flows.csv | NSDL FPI net investment, calendar-year tables | PRIMARY | https://www.fpi.nsdl.co.in/web/Reports/Yearwise.aspx?RptType=6 | 2002-01 | 2026-09 | 297 | 2026-10-05 | value = equity net, INR crore; debt = general + VRR + FAR where split; total as published. Partial current month excluded. Each year's table read from NSDL on 2026-10-05. |
+| cot_gold_net_pct_oi.csv | CFTC legacy COT 088691 | PRIMARY | https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm (deacot1986_2016.zip + deacot2017..2026.zip) | 1986-01 | 2026-09 | 489 | 2026-10-05 | GOLD - COMMODITY EXCHANGE INC.; non-commercial (long minus short) as % of open interest, futures only, last report of the month |
+| cot_silver_net_pct_oi.csv | CFTC legacy COT 084691 | PRIMARY | https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm (deacot1986_2016.zip + deacot2017..2026.zip) | 1986-01 | 2026-09 | 489 | 2026-10-05 | SILVER - COMMODITY EXCHANGE INC.; non-commercial (long minus short) as % of open interest, futures only, last report of the month |
+| cot_wti_net_pct_oi.csv | CFTC legacy COT 067651 | PRIMARY | https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm (deacot1986_2016.zip + deacot2017..2026.zip) | 1986-01 | 2026-09 | 489 | 2026-10-05 | WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE; non-commercial (long minus short) as % of open interest, futures only, last report of the month |
+| cot_copper_net_pct_oi.csv | CFTC legacy COT 085692 | PRIMARY | https://www.cftc.gov/MarketReports/CommitmentsofTraders/HistoricalCompressed/index.htm (deacot1986_2016.zip + deacot2017..2026.zip) | 1989-07 | 2026-09 | 447 | 2026-10-05 | COPPER- #1 - COMMODITY EXCHANGE INC.; non-commercial (long minus short) as % of open interest, futures only, last report of the month |
+| pinksheet_monthly_avg.csv | pinksheet_monthly_avg | V1 CACHE | tools/macro-direction/data/pinksheet_monthly_avg.csv | 1960-01 | 2026-09 | 801 | 2026-10-04 | World Bank Pink Sheet monthly averages; copied from tools/macro-direction/data (datahub mirror, not checked against the World Bank file: the browser cannot reach thedocs.worldbank.org) |
+| nifty_long.csv | nifty_monthly | V1 CACHE | tools/macro-direction/data/nifty_monthly.csv | 1990-07 | 2026-09 | 435 | 2026-10-04 | NIFTY 50 month-end from NSE files 1990-07 on, patched 2026-09 from Yahoo; copied from tools/macro-direction/data |

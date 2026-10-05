@@ -24,3 +24,4 @@ timestamp. Stage 0 and step1 steps A-G ran inline on the orchestrator session
 | 12b | verifier B red flags | claude-opus-5-5 | xhigh | 6,827,502 | 6,432,590 | 394,842 | 70,167 | 6,897,669 | 17m51s | 1 |
 | 12c | verifier C (Gate 0 + EM half) | claude-opus-5-5 | xhigh | 2,797,485 | 2,601,832 | 195,601 | 60,555 | 2,858,040 | 14m05s | 1 |
 | 12d | verifier D peers | claude-sonnet-5-5 | medium | 1,355,054 | 1,255,353 | 99,663 | 11,371 | 1,366,425 | 2m38s | 1 |
+| 1 | gate0 (remediation) | claude-sonnet-5-5 | medium | 2,248,343 | 2,096,607 | 151,686 | 30,233 | 2,278,576 | 6m37s | 2 |

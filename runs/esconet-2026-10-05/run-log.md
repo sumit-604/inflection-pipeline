@@ -7,3 +7,4 @@
 - 2026-10-05 stage 8 status partial: web sources failed (MCA, zaubacorp, NSE 2025 filing, SEBI/SAT portals); searches_skipped populated.
 - 2026-10-05 several stage agents reported the Edit tool unavailable and left small report blemishes (anchor typos) unfixed; each named in its hand-back.
 - 2026-10-05 stage 9 status partial: storage market size, PSU share, sovereign-cloud size not found; market sizes from WebSearch summaries only.
+- 2026-10-05 remediation: Verifier C F1 CRITICAL (Gate 0 scored 4 years; prospectus holds FY21-FY22 restated standalone). One remediation cycle per MMP 2026-10-05 precedent: stage 1 run 2, stage 7 run 2 scoped (6C-6E + F7), then B12a run 2 (B01 mandatory tier) and B12c run 2. Run 1 files kept as *-run1.

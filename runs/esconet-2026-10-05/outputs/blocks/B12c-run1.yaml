@@ -1,0 +1,40 @@
+stage: B12c
+company: "ESCONET"
+run_date: "2026-10-05"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete          # phase-1 scope complete; valuation half PENDING PHASE 3
+scope: "PHASE 1: Gate 0 (B01) + Emerging Moat (B07) only; valuation audit (B10/B11) PENDING PHASE 3"
+gate0:
+  rules_checked: 46
+  rules_passed: 41
+  fails:
+    - {id: "F1", rule: "01 rule 6 history window + data-confidence table", severity: "CRITICAL", b01: "data_years 4 (FY2023-FY2026), LIMITED, history_downgrade true, classification AVOID", recomputed: "data_years 6 (FY2021-FY2026, PROSP p.48/p.50/p.51 restated standalone; no subsidiary before 11 May 2022, PROSP p.199), 5-6 lower flag, no downgrade, blocks A13 B5 C10 D17 E15, core 60, classification AVERAGE (DB4 cap); C2/C4 N/M, loss-to-profit swing FY21 to FY22"}
+    - {id: "F2", rule: "01 FORMULA ROE opening net worth", severity: "MINOR", b01: "FY23 ROE on closing net worth, opening NOT FOUND", recomputed: "opening 250.45 Lakhs exists (PROSP p.48); FY23 ROE 75.3%; A3 median 20.3%, score 5 unchanged"}
+    - {id: "F3", rule: "01 M8 distribution", severity: "MINOR", b01: "0", recomputed: "1 (mentioned unquantified: AR FY26 p.29 Bengaluru, Chennai, Hyderabad)"}
+    - {id: "F4", rule: "01 M11 under 6 years, overall trend", severity: "MINOR", b01: "1", recomputed: "3 (selling and admin % 4.81 FY23 to 4.27 FY26, declining; revenue CAGR 55.3%); moats_confirmed 3, class MODERATE, moat_score 15 with F3"}
+    - {id: "F5", rule: "01 OUTPUT YAML template", severity: "MINOR", b01: "report-embedded block has data_notes as a string pointer and a different analyst_note from B01-gate0.yaml", recomputed: "one identical block, data_notes as a list"}
+emoat:
+  rules_checked: 26
+  rules_passed: 25
+  fails:
+    - {id: "F7", rule: "07 rule 6 completionist recount + evidence_mix", severity: "MINOR", b07: "6 documented items across 3 categories; evidence_mix {documented 6, claim 5, inference 1}", recomputed: "12 documented items (11 unique) across 5 categories (A4, B2, C1, C2, H2); evidence_mix {documented 12, claim 9, inference 1}; em_score 5.5 and class NONE unchanged"}
+  inherited_from_gate0: "6C/6D combined_assessment AVOID becomes AVERAGE on the F1-corrected Gate 0 input (not a B07 rule error)"
+valuation: {rules_checked: 0, fails: []}  # PENDING PHASE 3 (B10/B11 not in phase-1 inputs)
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11; PENDING PHASE 3
+business_understanding_narrative: {checked: null, fails: []}  # rule 9; any fail = REWORK stage 13; PENDING /finalize
+recomputed_destination_pe: ""  # PENDING PHASE 3
+recomputed_decision: ""        # PENDING PHASE 3
+recomputed_gate0_classification: "AVERAGE (B01 states AVOID; see F1)"
+recomputed_emoat_combined_assessment: "AVERAGE (B07 states AVOID; inherited from F1)"
+findings:
+  - {id: "F1", severity: "CRITICAL", location: "B01 data_years/history_downgrade/classification; B07 6C/6D", claimed: "4 years, LIMITED downgrade, AVOID", recomputed: "6 years, no downgrade, core 60, AVERAGE", note: "01 rule 6 'maximum whatever exists'; FY21-FY22 restated statements in PROSP p.48-51; flips the Gate 0 decision line; FLAG-GATE0 stays"}
+  - {id: "F2", severity: "MINOR", location: "B01 ROE FY23", claimed: "opening net worth NOT FOUND", recomputed: "250.45 Lakhs (PROSP p.48); FY23 ROE 75.3%; A3 unchanged", note: "same root cause as F1"}
+  - {id: "F3", severity: "MINOR", location: "B01 M8", claimed: "0", recomputed: "1", note: "AR FY26 p.29 regional footprint, unquantified"}
+  - {id: "F4", severity: "MINOR", location: "B01 M11", claimed: "1", recomputed: "3", note: "rubric scores the overall trend under 6 years; 4.81% to 4.27% declining"}
+  - {id: "F5", severity: "MINOR", location: "01-gate0.md YAML vs B01-gate0.yaml", claimed: "data_notes string pointer", recomputed: "data_notes list, identical copies", note: "template compliance"}
+  - {id: "F6", severity: "MINOR", location: "B01 D4 / FLAG-SOURCE-CONFLICT", claimed: "sensitivity not stated", recomputed: "results-filing basis current ratio 2.28 (11,184.86 / 4,909.96 Lakhs, results 2026-05-28) scores D4 = 5; in the 4-year frame core 60 gives AVERAGE", note: "disclosure gap; moot once F1 is corrected"}
+  - {id: "F7", severity: "MINOR", location: "B07 completionist_recount, evidence_mix", claimed: "6 items, 3 categories; mix 6/5/1", recomputed: "12 items (11 unique), 5 categories; mix 12/9/1", note: "no score or guard change"}
+critical_count: 1
+major_count: 0
+minor_count: 6
+acceptance_rate: 91.7           # 66 rules passed / 72 rules checked (gate0 46 + emoat 26), %; phase 1 only

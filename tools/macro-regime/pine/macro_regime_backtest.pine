@@ -1,0 +1,75 @@
+// @version=6
+// Macro Regime Backtest. Companion to macro_regime.pine (the indicator).
+//
+// HOW TO USE
+// 1. Add the indicator "Macro Regime Dials (6-12m)" to a MONTHLY chart of the
+//    asset you want to test (NIFTY, GOLD, SILVER, a metal, BRENT).
+// 2. Add this strategy to the same chart.
+// 3. In this strategy's settings, set "Signal source" to the indicator's
+//    "quadrant 0-3" plot (or one of its "band <asset>" plots), and pick a mode.
+// 4. Read the Strategy Tester tab: net profit, drawdown, trade list.
+//    Compare the "Buy and hold" line in the Tester's overview with the equity.
+//
+// Signals are known at the month close; orders fill at the NEXT month's open,
+// so no look-ahead. Fees and slippage are inputs; set them to what you pay.
+
+strategy("Macro Regime Backtest", shorttitle = "MacroRegime BT", overlay = true,
+     default_qty_type = strategy.percent_of_equity, default_qty_value = 100,
+     initial_capital = 1000000, currency = currency.NONE,
+     commission_type = strategy.commission.percent, commission_value = 0.05,
+     slippage = 2, process_orders_on_close = false, calc_on_every_tick = false,
+     margin_long = 0, margin_short = 0)
+
+// ---------------------------------------------------------------- inputs
+sig       = input.source(close, "Signal source (pick the indicator's 'quadrant 0-3' or a 'band ...' plot)")
+mode      = input.string("Regime: long in selected quadrants", "Mode",
+     options = ["Regime: long in selected quadrants", "Band: long when +1, flat otherwise",
+                "Band: long when +1, short when -1", "Trend: long when 12m return > 0 (baseline)"])
+useR      = input.bool(true,  "Long in REFLATION (0)",   group = "Regime mode")
+useG      = input.bool(true,  "Long in GOLDILOCKS (1)",  group = "Regime mode")
+useS      = input.bool(false, "Long in STAGFLATION (2)", group = "Regime mode")
+useD      = input.bool(false, "Long in DEFLATION (3)",   group = "Regime mode")
+holdMin   = input.int(1, "Minimum hold, months", minval = 1, group = "Execution")
+startYear = input.int(2004, "Start year", group = "Execution")
+endYear   = input.int(2100, "End year", group = "Execution")
+
+// --------------------------------------------------------------- signal
+inWindow = year >= startYear and year <= endYear
+q = math.round(sig)
+longRegime = (q == 0 and useR) or (q == 1 and useG) or (q == 2 and useS) or (q == 3 and useD)
+trend12 = close / close[12] - 1
+
+wantLong = false
+wantShort = false
+if mode == "Regime: long in selected quadrants"
+    wantLong := longRegime
+else if mode == "Band: long when +1, flat otherwise"
+    wantLong := sig >= 0.5
+else if mode == "Band: long when +1, short when -1"
+    wantLong := sig >= 0.5
+    wantShort := sig <= -0.5
+else
+    wantLong := trend12 > 0
+
+// ------------------------------------------------------------ execution
+var int barsHeld = 0
+barsHeld := strategy.position_size != 0 ? barsHeld + 1 : 0
+canExit = barsHeld >= holdMin
+
+if inWindow and not na(sig)
+    if wantLong and strategy.position_size <= 0
+        strategy.entry("L", strategy.long)
+    if wantShort and strategy.position_size >= 0
+        strategy.entry("S", strategy.short)
+    if not wantLong and not wantShort and strategy.position_size != 0 and canExit
+        strategy.close_all(comment = "flat")
+    if wantLong and strategy.position_size < 0 and canExit
+        strategy.close("S")
+    if wantShort and strategy.position_size > 0 and canExit
+        strategy.close("L")
+if not inWindow and strategy.position_size != 0
+    strategy.close_all(comment = "window end")
+
+// --------------------------------------------------------------- visual
+bgcolor(strategy.position_size > 0 ? color.new(color.green, 90) : strategy.position_size < 0 ? color.new(color.red, 90) : na)
+plot(sig, "signal (debug)", display = display.data_window)

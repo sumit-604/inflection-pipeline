@@ -1,0 +1,69 @@
+stage: B07-emoat
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Shareholding: only Jun-2026 BSE summary exists; FII/DII institutional sub-split remains NOT FOUND (B00), leaves the H2 institutional-ownership-trend read partial."
+  - "Screener export sheets (P&L, Quarters, Balance Sheet, Cash Flow, Customization) for KISSHT/POONAWALLA/UGROCAP came out empty at collection; only Data_Sheet CSVs exist (B00)."
+  - "Only 2 concalls exist since listing (Q4 FY26, Q1 FY27); F2 execution-moat test runs on a one-quarter-long promise-delivery series, not a multi-year record."
+  - "Only FY26 AR is held (company listed 8-May-2026); RHP restated FY23-FY25 carries the backward baseline (B00)."
+  - "No patent/trademark registry check possible in this container (Espacenet/ipindia.gov.in unreachable); A2 and I1(a) rest on AR/RHP/deck disclosure only."
+  - "No R&D-spend line disclosed anywhere in the corpus; limits the A4 test (SKU growth vs proportional R&D spend) to NO EVIDENCE FOUND by default."
+  - "FLDG-in-opex bps for Q1 FY27: NOT FOUND -- management could not provide it on request on the call itself (Concall_Aug_2026 p.19-20)."
+  - "Rs 832 Cr preferential issue's numeric rationale: NOT FOUND anywhere in the corpus; postdates both concalls; EGM shareholder approval pending 14-Oct-2026."
+  - "ESOP grants not broken out by function/seniority in the AR; 'ESOPs to technical staff specifically' (F1 evidence hierarchy) could not be verified."
+  - "Research folder EMPTY (no broker notes); no independent third-party read on any finding in this container (B00)."
+flags:
+  - {type: FLAG-EMOAT-EXECUTION-LEAD, reason: "I2 (cannibalization barrier) scores 0 for every moat claimed: no competitor would have to destroy anything in its own P&L or org to replicate Kissht's underwriting-data stack or off-book network. The AI/data edge (D1, the scan's Strong-rated category) is an execution lead, not a structural barrier."}
+  - {type: FLAG-EMOAT-CONTRADICTION, reason: "C1 (customer ecosystem/cross-sell) is scored Moderate on a cross-sell funnel and new fee-line launches, but repeat-customer AUM share fell from 73% (FY25) to 49% (FY26) in the same AR (p.7) -- the opposite of what an embedded-relationship moat predicts."}
+  - {type: FLAG-EMOAT-CAPITAL-SILENCE, reason: "G1 (war chest) is scored Moderate but held down from Strong: the Rs 832 Cr preferential raise (17-Sep-2026) has no disclosed numeric rationale at an already-comfortable CRAR 40.2%, and the headline capital growth coexists with an undisclosed parent guarantee at 228% of net worth (B03 FLAG-CAPITAL-STRUCTURE)."}
+em_score: 18.5                 # adjusted total, ~0-92 scale; I1/I2 contribute 0.00 (both fire at 0 by design)
+em_classification: "MODEST"    # 12-24 band; below the EM>=25 UA qualifying threshold
+active_categories:             # only Strong/Moderate rows
+  - {id: "A3", name: "Process innovation (underwriting AUC trend)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "C1", name: "Customer ecosystem / cross-sell (LAP, insurance, mutual fund)", strength: "Moderate (counterweighted by falling repeat-customer share)", evidence_type: "documented/claim", time_to_materialise: "12-24 months"}
+  - {id: "D1", name: "Proprietary underwriting data asset", strength: "Strong", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "D2", name: "Digital platform (100% digital origination, 45+ partner integration)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+  - {id: "G1", name: "War chest (post-IPO/preferential capital growth)", strength: "Moderate (counterweighted by capital-rationale silence and parent guarantee overhang)", evidence_type: "documented", time_to_materialise: "immediate"}
+  - {id: "H2", name: "Strategic partnerships (Tendulkar dual role; marquee institutional co-investors)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+evidence_mix: {documented: 11, claim: 8, inference: 4}   # item counts across the full scan
+completionist_recount: "📄 recount performed: 11 documented items across 8 categories (A3, C1, D1, D2, F1, F2, G1, H2 carry at least one 📄-grade item; H1 is 🔍-only). 9 non-zero categories total, below the 12-category mandatory-recheck threshold. A4 was downgraded from a considered Weak score to NO EVIDENCE FOUND on recount -- a platform architecture diagram is not proof of SKU growth or accelerating launch frequency, the exact 🎙️-credited-as-📄 failure mode the guard warns against."
+catalysts_12m:
+  - {catalyst: "LAP branch-pace recovery toward FY27-end target (currently 3 vs ~27/quarter needed)", window: "FY27-end", evidence_type: "documented", anchor: "Concall_Jun_2026 p.20; B05 FLAG-LAP-PACE"}
+  - {catalyst: "Rs 832 Cr preferential capital rationale disclosed (or continued silence)", window: "EGM 14-Oct-2026 / next concall", evidence_type: "documented (pending)", anchor: "20260917-acc1d37a; 20260918-4643d424"}
+  - {catalyst: "Second rating-agency notch upgrade (CRISIL/India Ratings) cutting cost of borrowing", window: "FY27-FY28", evidence_type: "claim", anchor: "Concall_Jun_2026 p.9-10; Concall_Aug_2026 p.11"}
+  - {catalyst: "First quantified insurance/mutual-fund fee-income disclosure", window: "2-4 quarters", evidence_type: "claim", anchor: "Concall_Aug_2026 p.5,14"}
+  - {catalyst: "Repeat-customer AUM share trend in next annual report (73%->49% FY25-26 fall continuing or reversing)", window: "12 months", evidence_type: "documented", anchor: "AR p.7; B04 FLAG-BUSINESS-MODEL"}
+capex_embedded_growth_pct: 57.8   # lender form: (IPO Rs850cr + preferential Rs832.2cr) x 2.75x midpoint steady-state leverage / current AUM Rs8,001cr; capacity, not committed disbursement (Section 2C)
+optionality_register:          # scored 0 or 🎙️/🔍-only; watched, never scored
+  - {optionality: "Insurance + mutual fund fee income scales into a material, disclosed revenue line", converting_evidence: "Quarterly fee-income % breakout in results/IP deck", first_appears: "Quarterly results filing or investor presentation", window: "2-4 quarters"}
+  - {optionality: "New secured/semi-secured product (gold, business, education loan) launches per management's named pecking order", converting_evidence: "BSE product-launch filing + AUM-mix disclosure", first_appears: "Exchange filing / investor presentation", window: "3-5yr+ (management: 'not immediately')"}
+  - {optionality: "Second rating-agency notch upgrade cuts cost of borrowing a further 100-150bps", converting_evidence: "Rating agency press release / rationale", first_appears: "Exchange filing / rating agency website", window: "FY27-FY28"}
+  - {optionality: "LAP scale-up reaches guided pace (178+ branches, FY27-end)", converting_evidence: "Branch count and AUM-mix disclosure matching guided run-rate", first_appears: "Quarterly investor presentation", window: "FY27-end (currently ~9x behind pace)"}
+  - {optionality: "AI/data underwriting advantage holds through a genuine credit down-cycle, not just a benign one since IPO", converting_evidence: "Asset-quality metrics held steady across a real stress quarter", first_appears: "Quarterly results", window: "2-3 years"}
+  - {optionality: "Rs 832 Cr preferential capital deployed against a disclosed, numbered use-case", converting_evidence: "Management explanation with a specific capital-need number", first_appears: "EGM (14-Oct-2026) or next concall", window: "immediate, next quarter"}
+  - {optionality: "Talent asymmetry (I1) becomes evidenced: a named class of staff a competitor structurally cannot match on pay", converting_evidence: "Remuneration-annexure disclosure above sector norm, or documented failed-poaching commentary from a competitor", first_appears: "Next AR remuneration annexure, or a competitor's own concall", window: "not yet visible; no current trigger"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Core 51/AVERAGE (backward, B01) combined with EM 18.5/MODEST (forward, below the EM>=25 UA-qualifying threshold, operator ruling 20-Aug-2026) does not constitute a qualifying transition setup; the single Strong-rated category (D1, proprietary data asset) is an execution lead by the scan's own I2 test, not a structural barrier."
+top_moat_risks:
+  - "D1 (Strong) is an execution lead, not a structural barrier: I2 scores 0 for every moat claimed -- no named competitor sacrifice blocks replication of the underwriting-data stack."
+  - "C1's cross-sell narrative is directly undercut by repeat-customer AUM share falling from 73% (FY25) to 49% (FY26) in the same annual report."
+  - "C2 scores 0 on contra-evidence: off-book partner concentration is worsening (46.4%->53.6% of AUM across 8 partners), not improving."
+  - "G1's war chest reading is undermined by the Rs 832 Cr preferential raise's undisclosed numeric rationale at CRAR 40.2%, and by the parent's 228%-of-net-worth guarantee to Si Creva's lenders, never named in the AR's own liability-diversification narrative."
+  - "F2's one concrete physical build-out item (LAP branches) is running at roughly 1/9th of the guided FY27 pace, unexplained and unasked on either call."
+analyst_note: >
+  The AI/data underwriting stack (D1) is the only category clearing Strong, and it
+  is genuinely well documented across the AR, both investor decks and both
+  concalls with dated model versions. But the scan's own Family I test (I1=0,
+  I2=0) forces the conclusion that this advantage is an execution lead a
+  well-capitalised competitor (Bajaj, Chola, a bank-led digital lender) could
+  replicate without sacrificing anything in its own business. Two categories score
+  0 on direct contra-evidence rather than absence of evidence (C2 off-book
+  concentration worsening; G2 Cost-to-Income worsening), and the scan's
+  highest-scoring customer category (C1) sits beside a same-document
+  contradiction (repeat-customer share falling) that the AR's own narrative does
+  not acknowledge. The completionist guard triggered one correction (A4
+  downgraded from a considered Weak to NO EVIDENCE FOUND) and no others; 18.5/92
+  is an honest sparse-to-modest result, not an inflated one, and it does not clear
+  the EM>=25 threshold needed to lift the backward AVERAGE classification.

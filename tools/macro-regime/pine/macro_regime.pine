@@ -1,0 +1,355 @@
+// @version=6
+// Macro Regime Dials, 6 to 12 month horizon.
+// Pine port of tools/macro-regime/model.py (inflection-pipeline, PR #205).
+// Same inputs, transforms and thresholds where TradingView carries the series.
+//
+// Use on a MONTHLY chart of any symbol. All inputs are pulled at 1M.
+// Outputs: five dials (z), the regime quadrant as background colour, liquidity
+// and stress tags, and an optional band score per asset (-1, 0, +1) that you
+// can feed to a strategy through input.source for your own backtest.
+//
+// Differences from the Python, stated:
+//  - z-score window needs 60 monthly bars (the Python allows 36). Dials start
+//    5 years after the youngest input in them.
+//  - FPI flows (NSDL) and CFTC positioning are not TradingView series; the
+//    India STRESS dial runs without the FPI input. India growth uses
+//    request.economic("IN", IPYY / LG / GDPS) on both definitions.
+//  - Copper/gold uses front-month futures, not Pink Sheet averages.
+//  - Bands failed PASS_BAR.md (a) and are OFF by default. Turn them on to test.
+//
+// Regime key (level definition): R REFLATION (green) growth above norm, inflation high; G GOLDILOCKS (teal)
+// growth above norm, inflation low; S STAGFLATION (red) growth below norm,
+// inflation high; D DEFLATION (grey) growth below norm, inflation low.
+// Inflation high = US CPI YoY above 3% or 10y breakeven above 2.5% (inputs). Letter strip at the pane bottom, a label at
+// each change, legend top-left. Alerts: regime change, stress HIGH,
+// liquidity TIGHT / EASING.
+//
+// INDIA REGIME (added 2026-10-05): the same quadrant on India's own growth
+// and inflation. India growth HIGH (default, "Design A") when a strict
+// majority of three fixed-benchmark tests pass: IIP YoY 3-month mean above
+// 4%, services GDP YoY above 7% (quarterly, held between prints), bank
+// credit growth above 12%. No price input. The z-score dial option reads
+// the same three inputs against their 5-year norm (relative view). India inflation high = CPI YoY above 5% (RBI 4% target plus one
+// point). Lower-case strip r g s d below the
+// global strip; "Background shows" picks which regime colours the pane. The
+// India regime governs Nifty and Indian rates; the global one governs gold,
+// silver, base metals and Brent. Hidden plot "india quadrant 0-3" and "india growth votes 0-3" feed the
+// strategy. Python reference: 1998-2026 the two regimes differ in 69% of
+// months; Nifty 12m median by India regime R +16.6%, G +13.7%, S +10.4%,
+// D +0.4% (STRATEGY_CHECK_2026-10.md, India section).
+
+indicator("Macro Regime Dials (6-12m)", shorttitle = "MacroRegime", overlay = false, max_bars_back = 500, max_labels_count = 500)
+
+// ---------------------------------------------------------------- inputs
+regimeDef = input.string("Level vs benchmarks", "Regime definition", options = ["Level vs benchmarks", "Direction (6m change)"])
+cpiBench  = input.float(3.0, "Inflation HIGH if US CPI YoY above (%)", group = "Level benchmarks")
+beBench   = input.float(2.5, "or if 10y breakeven above (%)", group = "Level benchmarks")
+inCpiBench = input.float(5.0, "India inflation HIGH if CPI YoY above (%)", group = "Level benchmarks")
+inGrowthDef = input.string("Benchmarks (vote)", "India growth definition", options = ["Benchmarks (vote)", "z-score dial"], group = "India growth",
+     tooltip = "Vote: growth HIGH when a strict majority of the available tests pass (2 of 3, or both of 2): the absolute question. z-score dial: the same three inputs against their 5-year norm, HIGH above zero: the relative question. Neither uses a price.")
+iipBench    = input.float(4.0,  "IIP YoY, 3-month mean, above (%)", group = "India growth")
+gvaBench    = input.float(7.0,  "Services GDP YoY above (%)", group = "India growth")
+creditBench = input.float(12.0, "Bank credit growth YoY above (%)", group = "India growth")
+bgShows   = input.string("Global regime", "Background shade follows", options = ["Global regime", "India regime"], group = "Display")
+display   = input.string("Minimal", "Pane content", options = ["Minimal", "Dials"], group = "Display",
+     tooltip = "Minimal: background, letter strips, 4-row table. Dials: adds the dial lines and the full table. Legend and labels are separate switches.")
+showIndia = input.bool(true, "India regime strip (lower-case r g s d)", group = "Display")
+zWin      = input.int(60, "z-score window, months", minval = 24)
+smooth    = input.int(3, "dial smoothing, months", minval = 1)
+dirLen    = input.int(6, "direction lookback, months", minval = 1)
+liqHi     = input.float(0.25, "LIQUIDITY easing above")
+liqLo     = input.float(-0.25, "LIQUIDITY tight below")
+stHi      = input.float(1.0, "STRESS high above")
+stLo      = input.float(-0.5, "STRESS low below")
+showBands = input.bool(false, "Show exposure bands (failed bar; test only)")
+bandAsset = input.string("nifty", "Band to plot", options = ["gold", "silver", "aluminium", "zinc", "brent", "nifty"])
+showStrip = input.bool(true, "Global regime letter strip (R G S D)", group = "Display")
+showLabels = input.bool(false, "Label each regime change", group = "Display")
+showLegend = input.bool(false, "Legend table", group = "Display")
+stripY     = input.float(-2.7, "Letter strip y level")
+stripY2    = input.float(-2.95, "India strip y level")
+// colours and transparency (0 = solid, 100 = invisible)
+cREFL   = input.color(color.green, "REFLATION",   group = "Regime colours", inline = "c1")
+cGOLD   = input.color(color.teal,  "GOLDILOCKS",  group = "Regime colours", inline = "c1")
+cSTAG   = input.color(color.red,   "STAGFLATION", group = "Regime colours", inline = "c2")
+cDEFL   = input.color(color.gray,  "DEFLATION",   group = "Regime colours", inline = "c2")
+bgAlpha = input.int(88, "Background transparency", minval = 0, maxval = 100, group = "Regime colours")
+lblAlpha = input.int(20, "Label transparency", minval = 0, maxval = 100, group = "Regime colours")
+
+// ---------------------------------------------------------------- series
+m(sym) => request.security(sym, "1M", close, ignore_invalid_symbol = true)
+
+// prices
+copper  = m("COMEX:HG1!")
+gold    = m("COMEX:GC1!")
+sse     = m("SSE:000001")
+dxy     = m("TVC:DXY")
+usdinr  = m("FX_IDC:USDINR")
+vix     = m("CBOE:VIX")
+invix   = m("NSE:INDIAVIX")
+// FRED
+dfii10  = m("FRED:DFII10")
+t10yie  = m("FRED:T10YIE")
+t10y2y  = m("FRED:T10Y2Y")
+fedfund = m("FRED:FEDFUNDS")
+cpi     = m("FRED:CPIAUCSL")
+corecpi = m("FRED:CPILFESL")
+m2      = m("FRED:M2SL")
+walcl   = m("FRED:WALCL")
+nfci    = m("FRED:NFCI")
+baa10y  = m("FRED:BAA10Y")
+stlfsi  = m("FRED:STLFSI4")
+indpro  = m("FRED:INDPRO")
+recpro  = m("FRED:RECPROUSM156N")
+epuUS   = m("FRED:USEPUINDXM")
+epuGl   = m("FRED:GEPUCURRENT")
+epuIN   = m("FRED:INDEPUINDXM")
+inCall  = m("FRED:IRSTCI01INM156N")
+inCpi   = m("FRED:CPALTT01INM659N")
+// India (Trading Economics feed on TradingView; FRED OECD series as fallback)
+inIrYY  = m("ECONOMICS:INIRYY")        // India CPI inflation, % YoY
+inIpYY  = m("ECONOMICS:INIPYY")        // India industrial production, % YoY
+inIpIdx = m("FRED:INDPROINDMISMEI")    // fallback: OECD production index
+inCpiLvl = na(inIrYY) ? inCpi : inIrYY
+// India growth tests (request.economic repeats the last release between prints)
+ecIP   = request.economic("IN", "IPYY", ignore_invalid_symbol = true)   // industrial production YoY
+ecLG   = request.economic("IN", "LG",   ignore_invalid_symbol = true)   // bank loan growth YoY
+ecGDPS = request.economic("IN", "GDPS", ignore_invalid_symbol = true)   // GDP from services, quarterly level
+
+// ------------------------------------------------------------ transforms
+chg(float s, int n)    => s - s[n]
+logchg(float s, int n) => math.log(s) - math.log(s[n])
+yoy(float s)           => 100 * (s / s[12] - 1)
+zs(float s) =>
+    mu = ta.sma(s, zWin)
+    sd = ta.stdev(s, zWin)
+    z  = sd > 0 ? (s - mu) / sd : na
+    math.max(-3, math.min(3, z))
+
+// mean of up to 6 values, skipping na (the Python's skipna mean)
+mean6(float a, float b, float c, float d, float e, float f) =>
+    sum = 0.0
+    n = 0
+    if not na(a)
+        sum += a
+        n += 1
+    if not na(b)
+        sum += b
+        n += 1
+    if not na(c)
+        sum += c
+        n += 1
+    if not na(d)
+        sum += d
+        n += 1
+    if not na(e)
+        sum += e
+        n += 1
+    if not na(f)
+        sum += f
+        n += 1
+    n > 0 ? sum / n : na
+
+// ----------------------------------------------------------------- dials
+cuau = copper / gold
+GROWTH = mean6(zs(logchg(cuau, 6)), zs(logchg(copper, 6)), zs(yoy(indpro)), -zs(recpro), zs(t10y2y), zs(logchg(sse, 6)))
+INFLATION = mean6(zs(t10yie), zs(chg(t10yie, 6)), zs(yoy(cpi)), zs(chg(yoy(corecpi), 6)), float(na), float(na))
+LIQUIDITY = mean6(zs(yoy(m2)), zs(logchg(walcl, 6)), -zs(chg(fedfund, 6)), -zs(nfci), -zs(chg(math.log(dxy), 6)), -zs(chg(dfii10, 6)))
+STRESS = mean6(zs(vix), zs(baa10y), zs(stlfsi), zs(epuUS), zs(epuGl), float(na))
+IN_STRESS = mean6(zs(invix), zs(epuIN), zs(logchg(usdinr, 6)), zs(chg(inCall, 6)), zs(inCpiLvl), float(na))   // FPI input not on TradingView
+inIpIdxYoY = yoy(inIpIdx)   // computed every bar (history-dependent), then picked
+iipYoY = na(ecIP) ? (na(inIpYY) ? inIpIdxYoY : inIpYY) : ecIP
+iip3   = ta.sma(iipYoY, 3)
+gvaYoY = yoy(ecGDPS)
+// India growth dial, relative view: the vote's three inputs as z-scores
+// against their 5-year norm. No price input (operator ruling 2026-10-05).
+IN_GROWTH = mean6(zs(iip3), zs(gvaYoY), zs(ecLG), float(na), float(na), float(na))
+// vote: IIP 3m mean > bench, services GDP YoY > bench, credit growth > bench
+tIip   = na(iip3) ? int(na) : iip3 > iipBench ? 1 : 0
+tGva   = na(gvaYoY) ? int(na) : gvaYoY > gvaBench ? 1 : 0
+tCr    = na(ecLG) ? int(na) : ecLG > creditBench ? 1 : 0
+nAvail = (na(tIip) ? 0 : 1) + (na(tGva) ? 0 : 1) + (na(tCr) ? 0 : 1)
+nVotes = (na(tIip) ? 0 : tIip) + (na(tGva) ? 0 : tGva) + (na(tCr) ? 0 : tCr)
+// 1 = growth HIGH, 0 = LOW, na = fewer than two tests available
+voteHigh = nAvail >= 2 ? (nVotes * 2 > nAvail ? 1 : 0) : int(na)
+
+gS = ta.sma(GROWTH, smooth)
+iS = ta.sma(INFLATION, smooth)
+lS = ta.sma(LIQUIDITY, smooth)
+sS = ta.sma(STRESS, smooth)
+nS = ta.sma(IN_STRESS, smooth)
+igS = ta.sma(IN_GROWTH, smooth)
+
+// ---------------------------------------------------------------- regime
+// Level definition (default): growth HIGH when the smoothed GROWTH dial is
+// above its 5-year norm; inflation HIGH when CPI YoY or the breakeven is
+// above its benchmark. Direction definition: sign of each dial's 6m change.
+cpiYoY = yoy(cpi)
+gUp = regimeDef == "Level vs benchmarks" ? gS > 0 : gS - gS[dirLen] > 0
+iUp = regimeDef == "Level vs benchmarks" ? (cpiYoY > cpiBench or t10yie > beBench) : iS - iS[dirLen] > 0
+okG = regimeDef == "Level vs benchmarks" ? not na(gS) : not na(gS - gS[dirLen])
+okI = regimeDef == "Level vs benchmarks" ? (not na(cpiYoY) or not na(t10yie)) : not na(iS - iS[dirLen])
+// 0 REFLATION, 1 GOLDILOCKS, 2 STAGFLATION, 3 DEFLATION
+quad = not (okG and okI) ? int(na) : gUp and iUp ? 0 : gUp and not iUp ? 1 : not gUp and iUp ? 2 : 3
+quadName = quad == 0 ? "REFLATION" : quad == 1 ? "GOLDILOCKS" : quad == 2 ? "STAGFLATION" : quad == 3 ? "DEFLATION" : "n/a"
+// India quadrant, same logic on IN_GROWTH and India CPI
+useVote = inGrowthDef == "Benchmarks (vote)"
+igUp = useVote ? voteHigh == 1 : regimeDef == "Level vs benchmarks" ? igS > 0 : igS - igS[dirLen] > 0
+iiUp = regimeDef == "Level vs benchmarks" ? inCpiLvl > inCpiBench : inCpiLvl - inCpiLvl[dirLen] > 0
+okIG = useVote ? not na(voteHigh) : regimeDef == "Level vs benchmarks" ? not na(igS) : not na(igS - igS[dirLen])
+okII = regimeDef == "Level vs benchmarks" ? not na(inCpiLvl) : not na(inCpiLvl - inCpiLvl[dirLen])
+iquad = not (okIG and okII) ? int(na) : igUp and iiUp ? 0 : igUp and not iiUp ? 1 : not igUp and iiUp ? 2 : 3
+iquadName = iquad == 0 ? "REFLATION" : iquad == 1 ? "GOLDILOCKS" : iquad == 2 ? "STAGFLATION" : iquad == 3 ? "DEFLATION" : "n/a"
+diverge = not na(quad) and not na(iquad) and quad != iquad
+liqTag = lS > liqHi ? "EASING" : lS < liqLo ? "TIGHT" : "NEUTRAL"
+stTag  = sS > stHi ? "HIGH" : sS < stLo ? "LOW" : "NORMAL"
+inTag  = nS > stHi ? "HIGH" : nS < stLo ? "LOW" : "NORMAL"
+
+// ----------------------------------------------------------------- bands
+// Base band by quadrant [REFL, GOLD, STAG, DEFL]; same table as model.py.
+base(string asset, int q) =>
+    r = 0
+    if asset == "gold"
+        r := q == 0 ? 0 : q == 1 ? -1 : q == 2 ? 1 : 0
+    if asset == "silver"
+        r := q == 0 ? 1 : q == 1 ? 0 : q == 2 ? 0 : -1
+    if asset == "aluminium" or asset == "zinc"
+        r := q == 0 ? 1 : q == 1 ? 1 : q == 2 ? -1 : -1
+    if asset == "brent"
+        r := q == 0 ? 1 : q == 1 ? -1 : q == 2 ? 1 : -1
+    if asset == "nifty"
+        r := q == 0 ? 0 : q == 1 ? 1 : q == 2 ? -1 : 0
+    r
+band(string asset) =>
+    s = base(asset, quad)
+    liqShade = asset == "brent" ? 0 : 1
+    s += liqTag == "EASING" ? liqShade : liqTag == "TIGHT" ? -liqShade : 0
+    s += stTag == "HIGH" ? (asset == "gold" ? 1 : -1) : 0
+    s += asset == "nifty" and inTag == "HIGH" ? -1 : 0
+    na(quad) ? int(na) : math.max(-1, math.min(1, s))
+bandSel = band(bandAsset)
+
+// --------------------------------------------------------------- colours
+quadColor(int q) => q == 0 ? cREFL : q == 1 ? cGOLD : q == 2 ? cSTAG : q == 3 ? cDEFL : color.new(color.white, 100)
+quadLetter(int q) => q == 0 ? "R" : q == 1 ? "G" : q == 2 ? "S" : q == 3 ? "D" : ""
+quadLower(int q) => q == 0 ? "r" : q == 1 ? "g" : q == 2 ? "s" : q == 3 ? "d" : ""
+quadFull(int q) => q == 0 ? "REFLATION" : q == 1 ? "GOLDILOCKS" : q == 2 ? "STAGFLATION" : q == 3 ? "DEFLATION" : "n/a"
+
+// ----------------------------------------------------------------- plots
+showDials = display != "Minimal"
+plot(showDials ? gS : na, "GROWTH", color = color.new(color.green, 0), linewidth = 2)
+plot(showDials ? iS : na, "INFLATION", color = color.new(color.red, 0), linewidth = 2)
+plot(showDials ? lS : na, "LIQUIDITY", color = color.new(color.blue, 0), linewidth = 2)
+plot(showDials ? sS : na, "STRESS", color = color.new(color.orange, 0), linewidth = 2)
+plot(showDials ? nS : na, "IN_STRESS", color = color.new(color.purple, 0), linewidth = 1)
+plot(showDials ? igS : na, "IN_GROWTH", color = color.new(color.lime, 0), linewidth = 1, style = plot.style_circles)
+hline(0)
+hline(stHi, "stress high", color = color.new(color.orange, 60), linestyle = hline.style_dotted)
+hline(liqHi, "easing", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
+hline(liqLo, "tight", color = color.new(color.blue, 60), linestyle = hline.style_dotted)
+bgQuad = bgShows == "India regime" ? iquad : quad
+bgcolor(na(bgQuad) ? na : color.new(quadColor(bgQuad), bgAlpha), title = "regime background")
+
+// letter strip: one letter per month at a fixed level, in the regime colour
+plotchar(showStrip and quad == 0 ? stripY : na, "R reflation", char = "R", location = location.absolute, color = cREFL, size = size.tiny)
+plotchar(showStrip and quad == 1 ? stripY : na, "G goldilocks", char = "G", location = location.absolute, color = cGOLD, size = size.tiny)
+plotchar(showStrip and quad == 2 ? stripY : na, "S stagflation", char = "S", location = location.absolute, color = cSTAG, size = size.tiny)
+plotchar(showStrip and quad == 3 ? stripY : na, "D deflation", char = "D", location = location.absolute, color = cDEFL, size = size.tiny)
+// India strip, lower case, one row below
+plotchar(showIndia and iquad == 0 ? stripY2 : na, "r India reflation", char = "r", location = location.absolute, color = cREFL, size = size.tiny)
+plotchar(showIndia and iquad == 1 ? stripY2 : na, "g India goldilocks", char = "g", location = location.absolute, color = cGOLD, size = size.tiny)
+plotchar(showIndia and iquad == 2 ? stripY2 : na, "s India stagflation", char = "s", location = location.absolute, color = cSTAG, size = size.tiny)
+plotchar(showIndia and iquad == 3 ? stripY2 : na, "d India deflation", char = "d", location = location.absolute, color = cDEFL, size = size.tiny)
+
+// label at each regime change: new regime name, and how long the old one ran
+var int regimeStart = na
+regimeChanged = not na(quad) and quad != quad[1] and not na(quad[1])
+if regimeChanged
+    monthsRan = na(regimeStart) ? 0 : bar_index - regimeStart
+    if showLabels
+        label.new(bar_index, stripY + 0.35, quadFull(quad) + (monthsRan > 0 ? "\n(" + quadFull(quad[1]) + " ran " + str.tostring(monthsRan) + "m)" : ""), style = label.style_label_up, color = color.new(quadColor(quad), lblAlpha), textcolor = color.white, size = size.small)
+    regimeStart := bar_index
+if na(regimeStart) and not na(quad)
+    regimeStart := bar_index
+
+// alerts
+alertcondition(regimeChanged, "Regime changed", "Macro regime changed")
+iRegimeChanged = not na(iquad) and iquad != iquad[1] and not na(iquad[1])
+alertcondition(iRegimeChanged, "India regime changed", "India macro regime changed")
+alertcondition(diverge and not diverge[1], "India diverged from global", "India regime now differs from the global regime")
+alertcondition(sS > stHi and sS[1] <= stHi, "Stress crossed HIGH", "Global STRESS dial crossed HIGH")
+alertcondition(lS < liqLo and lS[1] >= liqLo, "Liquidity turned TIGHT", "LIQUIDITY dial turned TIGHT")
+alertcondition(lS > liqHi and lS[1] <= liqHi, "Liquidity turned EASING", "LIQUIDITY dial turned EASING")
+plot(showBands ? bandSel : na, "Band score (selected asset)", color = color.new(color.black, 0), style = plot.style_stepline, linewidth = 2, display = display.all)
+// Exported for strategies via input.source (always computed, hidden unless showBands):
+plot(band("gold"), "band gold", display = display.none)
+plot(band("silver"), "band silver", display = display.none)
+plot(band("aluminium"), "band aluminium", display = display.none)
+plot(band("zinc"), "band zinc", display = display.none)
+plot(band("brent"), "band brent", display = display.none)
+plot(band("nifty"), "band nifty", display = display.none)
+plot(quad, "quadrant 0-3", display = display.none)
+plot(iquad, "india quadrant 0-3", display = display.none)
+plot(diverge ? 1 : 0, "divergence 0/1", display = display.none)
+plot(nVotes, "india growth votes 0-3", display = display.none)
+
+// ---------------------------------------------------------------- legend
+// Nifty and gold 12-month medians by quadrant under the LEVEL definition,
+// 2004-01 to 2025-09 (tools/macro-regime, 2026-10-05). Reference only.
+var lg = table.new(position.top_left, 5, 6, border_width = 1)
+if barstate.islast and showLegend
+    table.cell(lg, 0, 0, "", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 1, 0, "Regime", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 2, 0, "Growth / Inflation (level)", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 3, 0, "Nifty 12m med", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 4, 0, "Gold 12m med", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 0, 1, "R", bgcolor = color.new(cREFL, 30), text_color = color.white)
+    table.cell(lg, 1, 1, "REFLATION")
+    table.cell(lg, 2, 1, "above norm / high")
+    table.cell(lg, 3, 1, "+12.3%")
+    table.cell(lg, 4, 1, "+5.7%")
+    table.cell(lg, 0, 2, "G", bgcolor = color.new(cGOLD, 30), text_color = color.white)
+    table.cell(lg, 1, 2, "GOLDILOCKS")
+    table.cell(lg, 2, 2, "above norm / low")
+    table.cell(lg, 3, 2, "+13.0%")
+    table.cell(lg, 4, 2, "+9.9%")
+    table.cell(lg, 0, 3, "S", bgcolor = color.new(cSTAG, 30), text_color = color.white)
+    table.cell(lg, 1, 3, "STAGFLATION")
+    table.cell(lg, 2, 3, "below norm / high")
+    table.cell(lg, 3, 3, "+15.0%")
+    table.cell(lg, 4, 3, "+11.8%")
+    table.cell(lg, 0, 4, "D", bgcolor = color.new(cDEFL, 30), text_color = color.white)
+    table.cell(lg, 1, 4, "DEFLATION")
+    table.cell(lg, 2, 4, "below norm / low")
+    table.cell(lg, 3, 4, "+10.5%")
+    table.cell(lg, 4, 4, "+16.6%")
+    table.cell(lg, 0, 5, "r g s d", bgcolor = color.new(color.gray, 70))
+    table.cell(lg, 1, 5, "India regime (lower strip)")
+    table.cell(lg, 2, 5, "IN_GROWTH vs norm / India CPI > 5%")
+    table.cell(lg, 3, 5, "R +16.6  G +13.7  S +10.4  D +0.4")
+    table.cell(lg, 4, 5, "governs Nifty")
+
+// ----------------------------------------------------------------- table
+var t = table.new(position.top_right, 2, 10, border_width = 1)
+if barstate.islast
+    table.cell(t, 0, 0, "Global", bgcolor = color.new(color.gray, 70))
+    table.cell(t, 1, 0, quadLetter(quad) + "  " + quadName, bgcolor = color.new(quadColor(quad), 30), text_color = color.white)
+    table.cell(t, 0, 1, "India", bgcolor = color.new(color.gray, 70))
+    table.cell(t, 1, 1, quadLetter(iquad) + "  " + iquadName + (diverge ? "  (differs)" : ""), bgcolor = color.new(quadColor(iquad), 30), text_color = color.white)
+    table.cell(t, 0, 2, "Liquidity")
+    table.cell(t, 1, 2, liqTag)
+    table.cell(t, 0, 3, "Stress")
+    table.cell(t, 1, 3, stTag + " / India " + inTag)
+    if showDials
+        table.cell(t, 0, 4, "GROWTH z")
+        table.cell(t, 1, 4, str.tostring(gS, "#.00"))
+        table.cell(t, 0, 5, "INFLATION z")
+        table.cell(t, 1, 5, str.tostring(iS, "#.00") + "  US CPI " + str.tostring(cpiYoY, "#.0") + "%")
+        table.cell(t, 0, 6, "LIQUIDITY z")
+        table.cell(t, 1, 6, str.tostring(lS, "#.00"))
+        table.cell(t, 0, 7, "STRESS z")
+        table.cell(t, 1, 7, str.tostring(sS, "#.00") + "  India " + str.tostring(nS, "#.00"))
+        table.cell(t, 0, 8, "India growth")
+        table.cell(t, 1, 8, str.tostring(nVotes) + " of " + str.tostring(nAvail) + ": IIP " + (na(iip3) ? "n/a" : str.tostring(iip3, "#.0")) + "  svc GDP " + (na(gvaYoY) ? "n/a" : str.tostring(gvaYoY, "#.0")) + "  credit " + (na(ecLG) ? "n/a" : str.tostring(ecLG, "#.0")) + "  CPI " + (na(inCpiLvl) ? "n/a" : str.tostring(inCpiLvl, "#.0")))
+        table.cell(t, 0, 9, "Band " + bandAsset)
+        table.cell(t, 1, 9, showBands ? str.tostring(bandSel, "#") : "off")

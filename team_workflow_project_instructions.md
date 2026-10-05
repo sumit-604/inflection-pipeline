@@ -1,4 +1,4 @@
-CLAUDE WEB × CLAUDE CODE — TEAM WORKFLOW v2.2 FOR COMPANY ANALYSIS
+In CLAUDE.md line 244, change "(v2, five hand-offs:" to "(v2.2, five hand-offs:".
 
 Version 2.2, 29-Aug-2026. Supersedes v2.1 (same day), which superseded v2 (26-Aug-2026) and v1. Written after the INDIAGLYCO cycle, which took seventeen operator hand-offs and five versions of one file to reach a verdict. The target is five hand-offs per company. v2.1 added the Session close-out block; v2.2 reshapes it into a per-stage token ledger plus an end-of-run summary. Everything in v1, v2 and v2.1 that is not changed below still applies.
 
@@ -11,7 +11,7 @@ Why v2 exists (the four leaks it plugs)
 
 Phase 0 — Spear Pass (Claude web only)
 
-Before any pipeline run on a new name, Claude web runs a spear pass on live web. The spear comes before the shield: guess first, verify second. Claude Code has no live-web access and never runs this phase. The four steps:
+Before any pipeline run on a new name, Claude web runs a spear pass on live web. The spear comes before the shield: guess first, verify second. Claude Code does not run this phase. Operator ruling 2026-09-05: the /step1 intake, run by Claude Code with live web and grounded in the corpus it collects, replaces the web spear and writes a Spear OVERRIDE line that satisfies the gate. The four steps:
 
 1. Pond. Live-web opportunity size in numbers. How large is the market the business fishes in.
 2. Catch. A 3-year careful/fair/dream revenue and profit guess, anchored to observed conversion evidence, never to hope.
@@ -26,9 +26,9 @@ Hand-off 1 — Halt 1 with the Standing Extraction Annex (Claude Code → operat
 
 Hand-off 2 — One dossier, written once (Claude web → operator → repo). Claude web runs the corpus verification gate, the mental-model stress test, the live-web research brief, the vertical work, source discovery, and the tracker writes, then writes `inputs/research/web-handover-dossier.md` ONCE, complete, including Section 6 Gate Pre-Rulings (below). No placeholder slots. If a fact is unavailable it is written as NOT DISCLOSED with the reason, not as a slot to fill later. The operator commits it. One commit, message `<ticker>: web handover dossier v1`.
 
-Hand-off 3 — FTTCP per entity, one gate card per entity (Claude Code → operator). `/fttcp` reads the dossier's declared entity count. If the count is greater than one, it produces one Step 3 scorecard, one composite, one verdict and one P/E gate card PER ENTITY, and carries any consolidated figure only as a reconciliation line. Each gate card shows Claude Code's draft ruling and Claude web's pre-ruling from dossier Section 6 side by side, with both reasonings. The operator rules once, on that card.
+Hand-off 3 — FTTCP per entity, one gate card per entity (Claude Code → operator). `/fttcp` reads the dossier's declared entity count. If the count is greater than one, it produces one Step 3 scorecard, one composite, one verdict and one P/E BASE CARD PER ENTITY, and carries any consolidated figure only as a reconciliation line. Each gate card shows Claude Code's draft ruling and Claude web's pre-ruling from dossier Section 6 side by side, with both reasonings. The operator rules once, on that card.
 
-Hand-off 4 — Operator ruling and verdict sentence (operator → Claude Code). The operator answers each gate card and gives the verdict sentence in her own words. Claude Code runs stages 14 and 15 and `/finalize`.
+Hand-off 4 — Operator ruling and verdict sentence (operator → Claude Code). The operator answers each gate card and gives the verdict sentence in her own words. Claude Code runs `/finalize`, which runs stages 10, 11, 14, 15, Verifier C's valuation half and the final synthesis.
 
 Hand-off 5 — Read and save (Claude web, no ferry). Claude web clones the run branch, reads the final files directly, saves to Notion under the approval tiers below, and runs the publication check. Nothing is pasted.
 
@@ -81,16 +81,16 @@ Session close-out
 
 Every run leaves a cost record in `runs/<ticker>-<date>/session-cost.md` (see the run-pipeline close-out step). It is a run output: it travels with the run outputs on the run branch and its PR, never on a framework branch.
 
-* Per-stage ledger. After each stage returns, at the moment its YAML block is validated and committed, Claude Code appends one ledger line from the subagent result metadata: stage number, stage name, model, effort, input tokens, output tokens, total tokens, wall time. One line per subagent run, each with a run counter, so a loop or retry keeps its total visible. Written with each stage, never deferred to the end. Row shape: `| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |`.
-* End-of-run summary. Before the run PR opens, Claude Code appends a summary block: (a) the top five stages by total tokens, each with its share of the run total; (b) any mechanical stage (the ones DISPATCH routes to haiku: stage 0 validation, stage 10 assembly, verifier A) that ran on Opus, flagged `DOWNSHIFT FAILURE: <stage>`; (c) any stage whose total tokens exceed 1.5x the same stage in the previous run for this ticker, flagged `COST SPIKE: <stage>`; (d) an Operator snapshot reminder.
+* Per-stage ledger. After each stage returns, at the moment its YAML block is validated and committed, Claude Code appends one ledger line from the subagent result metadata: stage number, stage name, model, effort, input tokens, cache-read tokens, cache-write tokens, output tokens, total tokens, wall time. One line per subagent run, each with a run counter, so a loop or retry keeps its total visible. Written with each stage, never deferred to the end. Row shape: `| # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |`. The close-out report reprints the table; the operator pastes `/cost` under SESSION TOTAL (/cost).
+* End-of-run summary. Before the run PR opens, Claude Code appends a summary block: (a) the top five stages by total tokens, each with its share of the run total; (b) any mechanical stage that ran on Opus (phase 1: verifier A only; stage 10 is checked in phase 3; stage 0 runs inline on the session model and is not checked), flagged `DOWNSHIFT FAILURE: <stage>`; (c) any stage whose total tokens exceed 1.5x the same stage in the previous run for this ticker, flagged `COST SPIKE: <stage>`; (d) an Operator snapshot reminder.
 * Operator snapshot. The orchestrator cannot read the interactive `/cost` and `/usage` commands. The operator runs both and pastes the cache hit ratio and the loop totals into session-cost.md under an "Operator snapshot" heading.
 
-A DOWNSHIFT FAILURE or a COST SPIKE also earns a one-line entry in LESSONS.md naming the stage.
+A DOWNSHIFT FAILURE or a COST SPIKE also earns a one-line entry in LESSONS_ARCHIVE.md naming the stage, plus a LESSONS.md OPEN ACTIONS line only while it stays open.
 
 Gates the pipeline enforces (unchanged from v1, with two additions)
 
 * Halt 1 gate: stage 09b dossier + Section 6 annex complete + operator signed mental model + PROCEED recorded.
-* Role 5.5 tracker gate: tracker proof in companies file; minimum three EXTERNAL signals per entity (company-narrated rows do not count toward the floor; they may exist as internal telemetry).
+* Role 5.5 tracker gate: tracker proof in companies file; minimum three EXTERNAL signals per entity (company-narrated rows do not count toward the floor; they may exist as internal telemetry). A dated "Tracker floor: OVERRIDE YYYY-MM-DD (operator, reason)" line in companies/<TICKER>.md lets /fttcp proceed below the floor; the gate names the shortfall either way (operator ruling OR-17, 2026-10-04).
 * Handover input gate: dossier exists with Section 6 pre-rulings; absence = STOP.
 * Entity-count gate (new): `/fttcp` and stage 11 refuse to run a single consolidated pass when the dossier declares more than one entity.
 * P/E gate and Amendments 16-19: unchanged, but presented per entity with both drafts.
@@ -104,4 +104,4 @@ What we never do (v1 list, plus)
 * Report a commit without its hash.
 * Ask the operator to approve a routine Notion note.
 
-End of v2.2. Replace the project-knowledge copy of team_workflow_project_instructions.md with this file and ferry the implementation prompt to Claude Code.
+End of v2.2.

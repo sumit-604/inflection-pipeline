@@ -1,5 +1,5 @@
 # STAGE 13: SYNTHESIS (PIPELINE MODE)
-# Model: Opus (agent alias) | Emits: the four final files + Notion save payload
+# Model: Opus 5.5 | Emits: the four final files + Notion save payload
 # Consumes: everything. This is the only stage that reads all blocks,
 # all reports, and the confidence delta.
 # Cache boundary: rules above INJECTED INPUTS are stable.
@@ -99,8 +99,8 @@ reading the signed model's three state variables: PROOF GATE fired or not
 (from the FTTCP transition read), UGLINESS (ARTIFACT-OF-CLIMB or
 STRUCTURAL-FEATURE, from the signed model / 09b Part B5), and the RECOGNITION
 GAP open or closed (resolved at Stage 11, the PE-gap read). State the posture
-in one line (RE-RATING LIVE / EARNINGS-ONLY / RESEARCH-WATCH / VALUE-TRAP RISK
-/ CONTRADICTION / AVOID). It informs the value-trap read and the WATCH
+in one line (RE-RATING LIVE / EARNINGS-ONLY / RESEARCH-WATCH / PRICED
+NARRATIVE (TRAP) / VALUE-TRAP RISK / CONTRADICTION / AVOID). It informs the value-trap read and the WATCH
 classification below; it never replaces the five-verdict set and never sets a
 price. A VALUE-TRAP RISK or CONTRADICTION posture is surfaced in the
 recommendation body, not buried.
@@ -110,8 +110,9 @@ One of: PROCEED | PROCEED WITH CAVEATS | PROCEED WITH FLAGS | REWORK |
 INSUFFICIENT EVIDENCE. No other verdicts exist. There is no STOP.
 
 Verdict selection rules, applied in order:
-1. REWORK if the confidence delta forces it (any B12a CRITICAL, or any
-   verifier acceptance_rate <60%, or overall delta <60). REWORK judges
+1. REWORK if the confidence delta forces it (any CONFIRMED B12a CRITICAL,
+   or any verifier acceptance_rate <60% on a denominator of 4 or more, or
+   overall delta <60 where overall is computed; operator ruling OR-29). REWORK judges
    the ANALYSIS, not the company; say so, name the failing stage(s),
    and list what a rerun must fix. SOURCE-FIDELITY GATE: every B12a
    finding with `source_fidelity: true` is non-overridable — you may not
@@ -156,7 +157,7 @@ Verdict selection rules, applied in order:
   versus the lowest tested price since listing, both as percentages,
   computed from the screening CSVs where price history exists (state
   "price history unavailable" otherwise). If the zone top sits >20% below
-  the lowest tested price since listing, print: "MARKET-UNLIKELY ZONE —
+  the lowest tested price since listing, print: "MARKET-UNLIKELY ZONE:
   reaches entry only via thesis-relevant shock or broad de-rating;
   classify DEEP WATCH not actionable WATCHLIST, or route to the trading
   book." If a Tier B hurdle would move the zone to within 15% of tested
@@ -198,12 +199,12 @@ step + its position | Disposition (GATE HELD — corrected / removed /
 forced REWORK, or FLAG CLEARED — source re-check with correct anchor and
 who re-checked) | Note. If there were no disagreements, write "none". This
 file is appended to the Notion "Verifier Disagreement Log" page at save
-time; it is the standing data on whether Haiku catches what Opus misses.
+time; it is the standing data on whether Verifier A catches what Opus misses.
 
 ## DELIVERABLE 4: fttcp-handoff.md
 
-Purpose: a self-sufficient input package for manual FTTCP v2.3
-deliberation in a separate Opus session that will NOT have the source
+Purpose: the run's archive dossier, self-sufficient for a reader that will
+NOT have the source
 PDFs. That session sees only this file, so it must carry every figure,
 quote, and finding the deliberation needs. Density over brevity: this
 file is consumed by a model, not skimmed by a human. Include rather than
@@ -292,8 +293,8 @@ worklist the deliberation session uses to close its own gaps.
 
 ## NOTION SAVE PAYLOAD
 
-After the three files, emit a notion_save block the orchestrator uses
-per Notion_Save_Instructions: page title, THEN the BUSINESS UNDERSTANDING
+After the four files, emit a notion_save block for claude.ai to execute
+(the pipeline never writes): page title, THEN the BUSINESS UNDERSTANDING
 NARRATIVE (the same section defined above, positioned before the verdict
 card in the saved page so the operator reads the understanding first), then
 the run summary (headline + verdict line + decision + entry range), the
@@ -329,7 +330,7 @@ line, then exactly this fenced YAML block:
 stage: B13-synthesis
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 verdict: ""                    # the five-verdict set only
 verdict_rule_applied: 0        # which selection rule fired, 1-5
@@ -368,7 +369,9 @@ Weaknesses and risks. Revenue has fallen 19% in FY26 after Pakistan trade was cl
 ## INJECTED INPUTS (variable, below cache boundary)
 
 Manifest: {{MANIFEST_YAML}}
-All blocks B01 through B12d: {{ALL_BLOCKS_YAML}}
+All blocks B01 through B15 (including B09b, B14-thesis, B15-devil), as paths: {{ALL_BLOCK_PATHS}}
+FTTCP deliberation record: {{FTTCP_DELIBERATION_PATH}}
+Signed Mental Model (companies/<TICKER>.md): {{COMPANY_MEMORY_PATH}}
 Confidence delta (computed by orchestrator): {{CONFIDENCE_DELTA}}
 Full stage reports (for quote retrieval only, never re-analysis):
 {{ALL_REPORTS}}

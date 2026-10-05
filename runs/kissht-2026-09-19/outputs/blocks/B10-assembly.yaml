@@ -1,0 +1,347 @@
+stage: B10-valinputs
+company: KISSHT
+run_date: "2026-09-19"
+model: claude-haiku-4-5-20251001
+status: complete
+input_gaps:
+  - "FY21-FY22 ROCE: NOT FOUND (screener balance sheet does not split current/non-current liabilities for those years; RHP restated data starts FY23)"
+  - "FY21-FY22 capex: NOT FOUND (RHP restated cash flow starts FY23; screener carries no capex line)"
+  - "WC days change (FY21 baseline): NOT FOUND (no FY21 trade payables in corpus; AR/RHP data starts FY23)"
+  - "Promoter holding change (3-year trend): NOT FOUND (company listed 08-May-2026; only one post-listing shareholding statement exists)"
+  - "FII/DII split (public shareholding): NOT FOUND (BSE summary gives Promoter 24.80% / Public 75.20% only; UA institutional qualifier stays OPEN)"
+  - "SBICARD market cap: NOT FOUND (screener Data_Sheet CSV not collected for SBICARD)"
+  - "R&D/Revenue: NOT FOUND (no R&D line disclosed in corpus)"
+  - "150-DPD write-off trigger: NOT FOUND (qualitative language in AR/RHP; numeric trigger undisclosed despite company context naming 150 DPD; B00 LBF-1)"
+  - "FLDG-in-opex bps (Q1 FY27): NOT FOUND (management answered 'not readily available' on Q1 FY27 call)"
+  - "Standalone NIM / lending yield (%): NOT FOUND (only DuPont-style proxies disclosed; pure interest spread not stated)"
+  - "LAP ticket size & tenure (reconciled): NOT FOUND (AR Rs 30L/15yr vs Q1 deck Rs 15L/10yr vs CRISIL Rs 20L/10yr; unreconciled)"
+  - "Q1 FY27 CFO: NOT FOUND (only annual CFO extracted from results; quarterly operating cash flow not in assembly scope)"
+  - "FY26 CFO conflict: screener 48.36 Cr vs RHP restated consolidated 111.48 Cr (2.3x apart); neither used pending resolution"
+  - "EBITDA for lender: NOT APPLICABLE (financial firm; no standard EBITDA metric; interest margin + cost-to-income used instead per B04)"
+  - "Amendment 19 FV CAGR: NOT YET COMPUTED (Stage 11 task; blocks entry-zone downstream presentation per CLAUDE.md)"
+
+flags:
+  - {type: "FLAG-CASH", reason: "Cumulative CFO FY21-26 negative -1,648 Cr vs cumulative PAT +671 Cr (-2.46x ratio); consolidated negative driven by Ind AS 7 loan-disbursal classification; GROWTH INDUCED classification per operator confirmed; standalone CFO positive >1.2x per B01 analyst_note"}
+  - {type: "FLAG-CAPITAL-STRUCTURE", reason: "Parent corporate guarantee to Si Creva lenders 228% of parent net worth (FY26), rising every year for 4 years from 70.3% (FY23), crossed 100% in FY24 (two years pre-IPO); backs 99.8% of NCD book; never named in AR risk factors or liability-diversification narrative; B02 rank 1"}
+  - {type: "FLAG-ASSET-QUALITY", reason: "GNPA 2.12% (FY26) sustained by ~15.7% annual write-off rate (+10.7% YoY) while new Stage-3 inflow grew 28.9% YoY; 150-DPD trigger not disclosed; Q1 FY27 GNPA rose sequentially to 2.25% one quarter into 'further strengthen' guidance; B02 rank 2, B03 FLAG-GUIDANCE-DIVERGENCE"}
+  - {type: "FLAG-CAPITAL-RAISE", reason: "Rs 832 Cr preferential issue (17-Sep-2026, postdates both concalls) at 40.2% CRAR (2.5x minimum) with zero numeric rationale disclosed anywhere in corpus; peer precedent check shows unmatched timing/scale; EGM pending 14-Oct-2026"}
+  - {type: "FLAG-COST-OF-BORROWING", reason: "Kissht cites system-wide FCNR(B) liquidity-easing tailwind (Q1 FY27 call, Jul-2026); peers SBICARD and POONAWALLA same quarter report cost of borrowing flat-to-rising with no FCNR(B) mention; Stage 11 should treat forward cost-improvement as company-specific (rating-upgrade) only; B06 FLAG-COST-OF-BORROWING-TAILWIND-CONTRADICTED"}
+  - {type: "FLAG-PROOF-GATE", reason: "Proof gate NOT FIRED; transition requires all-in loss (on-book impairment + off-book ECL + collection outsourcing above run rate) / avg AUM below 10.5% for H2 FY27, with off-book loss rate not rising. FY26 all-in loss 10.97% of avg AUM; Q2 FY27 test needed."}
+  - {type: "FLAG-CREDENTIAL-GRADE", reason: "Credibility grade C sits at C/B boundary; would move to B on further clean quarter + proactive GNPA recovery + guarantee/raise rationale disclosure; would trend D if future call repeats 'technicality' framing on asset-quality miss; B05.analyst_note"}
+  - {type: "FLAG-EM-SCORE", reason: "EM 18.5 / MODEST, below EM >=25 UA-qualifying threshold per operator ruling 20-Aug-2026; only Strong-rated category (D1 proprietary data) is execution lead per I2 test, not structural barrier; combined with backward AVERAGE (Core 51) does not constitute qualifying transition setup; B07 em_classification, combined_assessment"}
+
+table:
+  company_identity:
+    company_name: "OnEMI Technology Solutions Ltd (Kissht)"
+    ticker_nse: "KISSHT"
+    ticker_bse: "544754"
+    sector: "Banks / NBFCs / MFIs"
+    business_model_type: "Lending (unsecured personal loans 92.3% of AUM; LAP 7.7%)"
+    sector_cap_row_primary: "P/B (Price-to-Book primary; P/E cross-check)"
+    sector_cap_value: "18x"
+    cmp_per_share: 369.55
+    cmp_date: "2026-10-01"
+    cmp_source: "Trendlyne LTP (01-Oct-2026)"
+    shares_diluted_pre_raise_cr: 18.1922
+    shares_diluted_post_raise_cr: 20.8416
+    market_cap_post_raise_cr: 7555.1
+    market_cap_calculation: "Rs 369.55 per share × 18.1922 Cr pre-raise + Rs 832.20 Cr raise = Rs 7,555.1 Cr (fttcp-deliberation section 5)"
+    enterprise_value_note: "n.m. for a lender (P/B primary); Rs 208.05 Cr is the Amendment 27.1 cash line only"
+
+  latest_financials_consolidated:
+    most_recent_quarter: "Q1 FY27 (30-Jun-2026, unaudited, 3-month)"
+    prior_full_year: "FY26 (31-Mar-2026, audited, 12-month)"
+    revenue_q1fy27_cr: 669.50
+    revenue_q1fy27_source: "results Q1 FY27 consolidated p.5: 6,695.00 million ÷ 10"
+    revenue_fy26_cr: 2179.25
+    revenue_fy26_source: "results FY26 consolidated p.6: 21,792.46 million ÷ 10"
+    ebitda_cr: null
+    ebitda_note: "NOT APPLICABLE (financial firm; interest margin and cost-to-income used instead per B04.irrelevant_ratios)"
+    pat_q1fy27_cr: 95.08
+    pat_q1fy27_source: "results Q1 FY27 p.5: 950.77 million ÷ 10"
+    pat_fy26_cr: 281.45
+    pat_fy26_source: "results FY26 p.6: 2,814.52 million ÷ 10"
+    pat_margin_q1fy27_pct: 14.21
+    pat_margin_fy26_pct: 12.91
+    diluted_eps_q1fy27_rs: 5.88
+    diluted_eps_q1fy27_source: "results Q1 FY27 p.5"
+    diluted_eps_fy26_rs: 21.39
+    diluted_eps_fy26_source: "results FY26 p.6"
+    bvps_mar27_rs: 164.3
+    bvps_mar27_source: "fttcp-deliberation section 5 [INFERENCE]: Jun-26 BVPS 133.3 × 16.85 Cr + Q2-Q4 FY27 PAT 345.9 + raise 832.20, over 20.84 Cr fully diluted"
+    bvps_fy26_rs: 131.33
+    bvps_fy26_source: "AR net worth 1,231.98 Cr / 9.3769 Cr paid-up shares"
+    net_cash_surplus_cr: 208.05
+    net_cash_source: "fttcp-deliberation section 5 Amendment 27.1: general-purpose cash slice only; FLDG deposits excluded as locked collateral"
+    revenue_growth_q1fy27_yoy_pct: 44.8
+    revenue_growth_fy26_yoy_pct: 63.0
+    pat_growth_q1fy27_yoy_pct: 59.2
+    pat_growth_fy26_yoy_pct: 75.0
+    roe_q1fy27_ann_pct: 21.20
+    roe_q1fy27_source: "fttcp-deliberation section 5"
+    roe_fy26_pct: 23.97
+    roe_fy26_source: "AR KPI p.5"
+    roce_status: "STAGNANT (overridden to STARTING +1 for T3 asset quality; fttcp-deliberation ruling 11, override 1)"
+    gnpa_stage3_q1fy27_pct: 2.25
+    gnpa_stage3_q1fy27_source: "Q1 FY27 press release 20260729-74639f09 p.2"
+    gnpa_stage3_fy26_pct: 2.12
+    gnpa_stage3_fy26_source: "AR KPI p.5"
+    nnpa_fy26_pct: 0.29
+    nnpa_fy26_source: "AR KPI p.5"
+    pcr_fy26_pct: 86.15
+    pcr_fy26_source: "AR KPI p.5"
+    writeoff_rate_annual_pct: 15.7
+    writeoff_rate_source: "B02 finding rank 2: FY26 Rs 4,725.95 mn (+10.7% YoY); Consolidated Note 41 pp.127-129"
+    cost_to_income_fy26_pct: 56.64
+    cost_to_income_source: "B01 FLAG-QUALITY: worsened from 45.54% (FY24)"
+    aum_q1fy27_cr: 8001
+    aum_q1fy27_source: "Q1 FY27 press release p.2"
+    aum_fy26_cr: 7066
+    aum_fy26_source: "AR KPI p.5"
+    aum_growth_fy26_yoy_pct: 73.0
+    aum_growth_fy26_source: "AR KPI"
+    depreciation_q1fy27_cr: 4.82
+    depreciation_q1fy27_source: "results Q1 FY27 p.5: 48.22 million ÷ 10"
+    depreciation_fy26_cr: 21.62
+    depreciation_fy26_source: "results FY26 p.6: 216.17 million ÷ 10"
+    cfo_note: "NOT FOUND for Q1 (quarterly CFO not extracted); FY26 consolidated negative per Ind AS 7; standalone positive >1.2x per B01"
+    cfo_pat_ratio_note: "INDETERMINATE for Q1; cumulative FY21-26 -2.46x (negative); GROWTH INDUCED classification per operator"
+
+  upstream_analysis:
+    credibility_grade: "C"
+    credibility_basis: "Two clean quarters mostly ahead of guidance; one hard test (GNPA/write-off mechanic) not fully supported on cross-check; largest risk (228% guarantee) and Rs 832 Cr raise rationale absent from call record; B05.credibility_basis"
+    guided_revenue_growth_pct: 40
+    guided_revenue_window: "FY27"
+    guided_margin_band: "Credit cost -10 to -15% YoY; RoE 19-21%"
+    guided_margin_window: "FY27"
+    credibility_delivery_rating: "delivered 6, partial 3, missed 1 (over one-quarter track record); LAP branch pace missed; GNPA tracking wrong direction (B05.promise_delivery)"
+    primary_catalyst_12m: "LAP branch-pace recovery; Rs 832 Cr preferential rationale disclosure; second rating upgrade; GNPA direction"
+    catalyst_windows: "FY27-end; EGM 14-Oct-2026 / next concall; FY27-FY28; immediate Q2 FY27"
+    em_score: 18.5
+    em_classification: "MODEST (12-24 band; below EM >=25 UA threshold per operator ruling 20-Aug-2026)"
+    moat_strongest_category: "D1 Strong (proprietary underwriting data, AUC 66-74%); C1 Moderate (cross-sell); D2 Moderate (digital platform)"
+    evidence_quality_summary: "mostly documented (11 items across 8 categories); mixed-grade (8 claim, 4 inference); completionist recount performed"
+    evidence_mix_summary: "documented 11, claim 8, inference 4"
+    demand_externally_verifiable: true
+    tam_cr_conservative: 2600000
+    tam_cr_realistic: 2700000
+    tam_growth_pct: 20
+    tam_source: "B09.tam_cr (India PL+LAP all-lender market; personal-loan leg corroborated within 2-13% by four independent aggregators vs 1Lattice RHP figure)"
+    sam_cr: 60000
+    sam_definition: "New Age/Digital Lender segment (FY25 base; 46.9% CAGR CAGR-interpolated to FY26 current)"
+    sam_pct_of_tam: 2.3
+    som_3yr_cr: 33620
+    som_5yr_cr: 63747
+    som_3yr_revenue_cagr: 61.4
+    som_5yr_revenue_cagr: 51.4
+    som_source: "B09.som_implied_revenue_cagr; AUM-basis CAGR used as revenue-CAGR proxy on ~40% revenue/AUM yield"
+    runway_class: "MASSIVE"
+    ar_new_downstream_entities_count: 2
+    ar_new_downstream_entities:
+      - name: "Invincible Minds Private Limited"
+        where_in_ar: "Boards' Report item 1/29, AR p.70/78"
+        entity_type: "wholly owned subsidiary incorporated 17-Jun-2026, not yet in consolidated PS or Form AOC-1"
+      - name: "Sachin Ramesh Tendulkar"
+        where_in_ar: "Boards' Report share-capital allotment table, AR p.39; front matter brand ambassador section"
+        entity_type: "individual investor (CCPS allottee) and brand ambassador; both related-party transaction and public-facing brand asset"
+
+  rating_extraction:
+    agency: "CRISIL Ratings"
+    rating_long_term: "A- / Stable (upgraded from BBB+ / Stable; 13-Feb-2026)"
+    rating_short_term: "Crisil A1 (upgraded from A2+)"
+    rating_date: "2026-02-13"
+    rating_entity: "Si Creva Capital Services Pvt Ltd (subsidiary)"
+    rating_outlook: "Stable"
+    rating_wc_quote: "Liquidity Strong. As on December 31, 2025, the group had unencumbered cash, cash equivalent and liquid investment of Rs 290.4 crore. This is sufficient to cover one month debt repayments. Additionally, the group's average monthly collections stood at over Rs 500 crore over the last six months. Crisil Ratings also understands that Si Creva will not do any incremental disbursements unless it has adequate resources to service maturing debt obligations in the near term; this will remain a key monitorable."
+    rating_wc_quote_source: "CRISIL rationale 13-Feb-2026, 'Liquidity' section p.64"
+
+  peer_medians:
+    status: "NOT FOUND (screener Data_Sheet CSVs collected for POONAWALLA and UGROCAP only; full quarterly/balance-sheet sheets not provided; insufficient for multi-period construction)"
+    note: "Peer concall evidence exists (B06 stage) showing cost-of-borrowing flat-to-rising trends contradicting Kissht's FCNR(B) tailwind narrative; Rs 832 Cr raise precedent check shows unmatched timing/scale"
+
+  operator_signed_fttcp_pillars:
+    verdict_composite_final: "Composite +2 of 8. DEEP WATCH leaning AVOID. Posture VALUE-TRAP RISK."
+    verdict_source: "fttcp-deliberation section 1, signed 04-Oct-2026"
+    entity_count: 1
+    entity_count_source: "web handover dossier Section 1; deliberation ruling 5; SOTP slices are not entities"
+    roa_roe_forward_verdict: "STAGNANT (T4 RoA/RoE; sole Pillar 1 authority; not overridden)"
+    roa_roe_forward_source: "fttcp-deliberation section 2 ruling 12"
+    earnings_basis: "FORWARD"
+    earnings_basis_reason: "Valuation date 31-Mar-2027. Own book on Mar-27 book; partner half on FY28 PAT. Same basis at exit (Amendment 27.3) per fttcp-deliberation section 5"
+    cash_conversion_determination: "GROWTH INDUCED (operator confirmed)"
+    cash_conversion_source: "fttcp-deliberation section 2 ruling 7; Ind AS 7 loan disbursal through CFO"
+    t1_aum_growth: "FIRING +2"
+    t2_nim_spread: "DECLINING -1 (5.2-pt income decline post-raise; mix ~half, price ~half per deliberation section 7)"
+    t3_asset_quality: "STARTING +1 (operator override of draft STAGNANT; Q2 FY27 trigger: STARTING if Stage 2 <=3.3% and GNPA <2.92%; DECLINING if Stage 2 >4.11% or GNPA >2.92%)"
+    t3_asset_quality_source: "fttcp-deliberation section 3 override 1 (Q2 FY27 vs Q2 FY26 test, not Q1)"
+    proof_gate: "NOT FIRED"
+    proof_gate_definition: "all-in loss (on-book impairment + off-book ECL + collection outsourcing above run rate) / avg AUM below 10.5% for H2 FY27, with off-book loss rate not rising"
+    proof_gate_source: "companies/KISSHT.md HALT 1 GATE; FY26 all-in loss 10.97% of avg AUM"
+    ugliness_classification: "STRUCTURAL-FEATURE (negative CFO and cost-to-income optics are artifacts)"
+    ugliness_classification_source: "companies/KISSHT.md rulings 2026-10-04 A (operator's words verbatim)"
+    ugliness_flag: "operator has not named which optic is structural; candidates in the dossier: off-book loss in opex, partner concentration, parent guarantee"
+    ugliness_flag_source: "companies/KISSHT.md HALT 1 GATE"
+    recognition_gap_status: "OPEN QUESTION for Stage 11 (whether CMP prices cost-advantaged or franchise tier)"
+    entry_zone_provisional_rs: 350
+    entry_zone_caveat: "PROVISIONAL pending Amendment 19 FV CAGR and return-source label; cannot present downstream without these per CLAUDE.md"
+    mechanical_track1_rs: 371.4
+    entry_zone_override_reasoning: "book-value cross-check: base case implies 2.88x Mar-27 book, needing ~12.4% perpetual growth at 17% RoE; operator held at Rs 350 as prudent override"
+    sector_cap_whole_company_pb: "18x"
+    sector_cap_partner_blend_pe: "22.67x (1/3 × 18x NBFC + 2/3 × 25x asset-light services; operator-set blend, override 3; revisit if FLDG >40% revenue or top-2 partner >90%)"
+    valuation_method_primary: "SOTP (Amendment 27.2)"
+    valuation_basis_forward_date: "31-Mar-2027"
+    valuation_basis_earnings: "Own book on Mar-27 book value; partner half on FY28 PAT; same basis at exit (Amendment 27.3)"
+    pat_base_fy27_cr: 441
+    pat_base_fy28_cr: 623
+    pat_bear_fy27_cr: 400
+    pat_bear_fy28_cr: 500
+    pat_bull_fy27_cr: 470
+    pat_bull_fy28_cr: 700
+    pat_return_on_average_aum_pct: "4.75% / 4.6% (FY27/FY28)"
+    aum_base_fy27_cr: 11600
+    aum_base_fy28_cr: 15660
+    split_own_partner_pct: "46 / 54 by AUM share"
+    own_book_pb_low: 0.8
+    own_book_pb_base: 1.0
+    own_book_pb_high: 1.2
+    own_book_book_mar27_cr: 2695.8
+    own_book_roe_reasoning: "~10% post-raise, recovering toward FY26's 14% as capital lent out"
+    partner_slice_pillar1_pe: 24.5
+    partner_slice_pillar1_reasoning: "Parent RoE ex investment in Si Creva: 84.4% FY26 actual, ~34% FY27 projected; capped by sector"
+    partner_slice_pillar2l: 1.00
+    partner_slice_pillar3: 0
+    partner_slice_strategic_premium: 0
+    partner_slice_ua_qualified: false
+    partner_slice_track2_destination_pe: 22.67
+    partner_slice_track1_destination_pe: 18.62
+    partner_slice_rcd_reasoning: "Track 1 is 17.9% below Track 2 (>15% threshold); Track 1 sets entry zone"
+    partner_slice_sotp_pe_low: 18.62
+    partner_slice_sotp_pe_base: 20.64
+    partner_slice_sotp_pe_high: 22.67
+    cash_general_purpose_cr: 208.05
+    cash_treatment: "Amendment 27.1: held at face value, constant on FV path; FLDG deposits excluded as locked collateral"
+    hurdle_rate_pct: 25
+    hurdle_tier: "A"
+    cost_of_equity_pct: 15.5
+    cost_of_equity_components: "14 base + 0.5 durability + 0.5 governance + 0.5 complexity"
+    risk_return_multiplier: 0.76
+    ua_classification: "Not qualified (EM 18.5 <25; listed ~5 months)"
+
+  open_items:
+    - item_id: "I4"
+      description: "Q2 FY27 business update (03-Oct-2026) not in corpus; BSE API returned Access Denied 04-Oct-2026"
+      owner: "operator"
+      recovery_action: "drop PDF into inputs/announcements/"
+      blocks_stage11_gate: false
+      impact: "T1 FIRING trigger confirmation needs Q2 AUM/GNPA/credit-cost trend"
+
+    - item_id: "I5"
+      description: "Section 1B v3.11 (Amendment 27) not merged to main"
+      owner: "operator"
+      recovery_action: "separate framework PR"
+      blocks_stage11_gate: true
+      impact: "Stage 11 sign-off per CLAUDE.md ruling I5 (amendments must be merged before presentation)"
+
+    - item_id: "A19"
+      description: "Amendment 19 three-year FV CAGR and return-source label"
+      owner: "Stage 11"
+      recovery_action: "compute from forward deliberation basis"
+      blocks_stage11_gate: true
+      impact: "Entry zone Rs 350 cannot be presented downstream without Amendment 19 label per CLAUDE.md"
+
+    - item_id: "DBB"
+      description: "Disbursement by book (on-book Si Creva vs off-book partner), FY25/FY26/Q1 FY27"
+      owner: "IR reply"
+      recovery_action: "management quantification"
+      blocks_stage11_gate: false
+      impact: "Validates 46/54 split assumption; tests transfer-pricing fairness and entry-zone override sensitivity"
+
+  conflicts:
+    - field: "FY23 CFO (consolidated)"
+      value_a: "48.36 Cr"
+      anchor_a: "screener-data"
+      value_b: "111.48 Cr"
+      anchor_b: "RHP restated consolidated cash flow p.271 (1,114.78 million ÷ 10)"
+      used: "Neither (unresolved); both listed separately"
+      resolution: "2.3x apart; all other years FY24-26 reconcile exactly; flagged for Role 5.5 primary-source verification per B01 FLAG-DATA-CONFLICT"
+
+    - field: "T3 asset quality"
+      value_a: "STAGNANT"
+      anchor_a: "fttcp-draft.md ruling 11 (original draft)"
+      value_b: "STARTING +1 (operator override)"
+      anchor_b: "fttcp-deliberation section 3 override 1"
+      used: "STARTING +1"
+      resolution: "Operator override per deliberation section 3, ruling 1; composite +2 result per ruling 14; deliberation governs"
+
+  unresolved:
+    - field: "FY21-FY22 ROCE"
+      why: "Screener balance sheet does not split current/non-current liabilities for those years; RHP restated data starts FY23"
+      where_it_might_be: "Full audited financial statements (not in corpus)"
+
+    - field: "FY21-FY22 capex"
+      why: "RHP restated cash flow data starts FY23; screener carries no capex/PPE-purchase line"
+      where_it_might_be: "Full audited statements pre-FY23 (not in corpus)"
+
+    - field: "WC days change (FY21 baseline)"
+      why: "No FY21 trade payables anywhere in corpus; AR/RHP payables data starts FY23"
+      where_it_might_be: "FY21 balance sheet (not in corpus)"
+
+    - field: "Promoter holding change (3-year trend)"
+      why: "Company listed 08-May-2026; only one post-listing shareholding statement (Jun-2026) exists"
+      where_it_might_be: "Future quarterly shareholding filings (BSE Regulation 31)"
+
+    - field: "FII/DII split (public shareholding)"
+      why: "BSE shareholding summary gives Promoter 24.80% / Public 75.20% only; no institutional sub-split"
+      where_it_might_be: "BSE detailed shareholding pattern OR next quarterly filing (live-web verification)"
+
+    - field: "SBICARD market cap"
+      why: "Screener only provided POONAWALLA and UGROCAP Data_Sheet CSVs; SBICARD produced no export"
+      where_it_might_be: "Screener Data_Sheet OR Trendlyne LTP (collector defect; minor peer-median impact)"
+
+    - field: "R&D/Revenue (%)"
+      why: "No R&D line disclosed anywhere in provided source"
+      where_it_might_be: "AR/RHP/concalls/decks (lender does not segregate R&D as manufacturer would; embedded in opex)"
+
+    - field: "150-DPD write-off trigger (numeric)"
+      why: "Qualitative language in AR/RHP; numeric trigger NOT FOUND despite company context naming 150 DPD"
+      where_it_might_be: "Company IR response OR CRISIL detailed review; live-web verification required"
+
+    - field: "FLDG-in-opex bps (Q1 FY27)"
+      why: "Management answered 'not readily available... handy' on Q1 FY27 call itself"
+      where_it_might_be: "Future quarterly investor presentation OR results annexures"
+
+    - field: "Standalone NIM / lending yield (%)"
+      why: "Total-income-per-avg-AUM and finance-cost-per-avg-AUM only disclosed proxies; pure interest spread not stated"
+      where_it_might_be: "Company IR page OR CRISIL detailed review"
+
+    - field: "LAP ticket size & tenure (reconciled)"
+      why: "AR up to Rs 30L/15yr vs Q1 deck up to Rs 15L/10yr vs CRISIL up to Rs 20L/10yr; unreconciled"
+      where_it_might_be: "Management direct clarification; B04 flag tracks this"
+
+    - field: "Q1 FY27 CFO"
+      why: "Quarterly operating cash flow not extracted from results statement"
+      where_it_might_be: "Full Q1 FY27 cash flow statement (results PDF annexure)"
+
+    - field: "Amendment 19 FV CAGR"
+      why: "Not computed until Stage 11 works forward from deliberation basis"
+      where_it_might_be: "Stage 11 valuation task (blocks entry-zone presentation per CLAUDE.md)"
+
+analyst_note: >
+  Assembly complete with all values anchored or marked UNRESOLVED with recovery paths. CFO/PAT negative
+  cumulative ratio is Ind AS 7 effect (loan disbursals through operating cash), not cash-quality failure;
+  classified GROWTH INDUCED per operator. Write-off-assisted GNPA is material: ~15.7% annual write-off
+  rate (+10.7% YoY) sustains 2.12% headline against 28.9% YoY new Stage-3 inflow; 150-DPD trigger
+  undisclosed despite company-context naming (B00 LBF-1); Q1 GNPA rose sequentially to 2.25% into
+  'further strengthen' guidance (B03 FLAG-GUIDANCE-DIVERGENCE). Ugliness classification (negative CFO/cost-to-income
+  optics are artifacts) is operator's verbatim assessment; operator has not named which is structural vs which is
+  temporary. Parent guarantee 228% of net worth (rising 4 years) is a candidate but not the named structural feature.
+  Rs 832 Cr raise (17-Sep-2026) at 40.2% CRAR postdates both concalls, has zero disclosed numeric rationale,
+  unprecedented vs peer precedent (B06 FLAG-CAPITAL-RAISE-NO-PEER-PRECEDENT). EM 18.5/MODEST + Core 51/AVERAGE
+  does not qualify transition; strongest moat (D1) is execution lead per I2, not structural barrier. Proof gate
+  NOT FIRED; H2 FY27 all-in loss test needed (FY26 all-in loss 10.97% of avg AUM). Entry zone Rs 350 PROVISIONAL
+  pending Amendment 19 FV CAGR per CLAUDE.md. SOTP slices (own P/B, partner P/E) are method outputs, not
+  entity decomposition; one entity throughout. All upstream input blocks (B01-B09) carried forward unchanged;
+  FTTCP deliberation is authoritative source for all forward assumptions and operator overrides. Stage 11 must
+  use Amendment 27.2 SOTP primary on deliberation basis; do not derive alternative exit PE. Earnings basis FORWARD
+  per deliberation section 5. Cash conversion classified GROWTH INDUCED (Ind AS 7); lender metrics framework applies
+  throughout (AUM, NIM, credit cost, GNPA, write-offs, RoA, RoE, CRAR, borrowings).

@@ -1,0 +1,451 @@
+Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
+2026-09-22,RAYMOND,transportation,midcap,14.2076,5.1834
+2026-09-23,RAYMOND,transportation,midcap,13.9724,4.5901
+2026-09-24,RAYMOND,transportation,midcap,23.093,7.4618
+2026-09-25,RAYMOND,transportation,midcap,22.3569,3.0624
+2026-09-28,RAYMOND,transportation,midcap,-1.3956,4.7182
+2026-09-22,GESHIP,transportation,largecap,2.0878,1.1143
+2026-09-23,GESHIP,transportation,largecap,3.6101,0.5392
+2026-09-24,GESHIP,transportation,largecap,3.5263,0.7944
+2026-09-25,GESHIP,transportation,largecap,4.5458,0.5964
+2026-09-28,GESHIP,transportation,largecap,2.4179,4.244
+2026-09-22,AXISCADES,aerospace & defence,midcap,4.4114,1.2406
+2026-09-23,AXISCADES,aerospace & defence,midcap,7.1224,1.9662
+2026-09-24,AXISCADES,aerospace & defence,midcap,6.1782,0.8032
+2026-09-25,AXISCADES,aerospace & defence,midcap,4.4667,0.8863
+2026-09-28,AXISCADES,aerospace & defence,midcap,-0.6659,1.8821
+2026-09-22,SIGMAADV,aerospace & defence,midcap,9.4562,1.2846
+2026-09-23,SIGMAADV,aerospace & defence,midcap,8.1515,0.879
+2026-09-24,SIGMAADV,aerospace & defence,midcap,9.6467,0.975
+2026-09-25,SIGMAADV,aerospace & defence,midcap,9.2253,0.6888
+2026-09-28,SIGMAADV,aerospace & defence,midcap,-1.649,1.0648
+2026-09-22,CENTUM,aerospace & defence,midcap,12.1247,1.5128
+2026-09-23,CENTUM,aerospace & defence,midcap,11.3724,2.9703
+2026-09-24,CENTUM,aerospace & defence,midcap,11.6378,1.3778
+2026-09-25,CENTUM,aerospace & defence,midcap,10.8232,1.1033
+2026-09-28,CENTUM,aerospace & defence,midcap,-4.8123,0.9361
+2026-09-22,DYNAMATECH,aerospace & defence,midcap,3.7725,1.3166
+2026-09-23,DYNAMATECH,aerospace & defence,midcap,4.1456,1.3624
+2026-09-24,DYNAMATECH,aerospace & defence,midcap,4.0627,0.8723
+2026-09-25,DYNAMATECH,aerospace & defence,midcap,9.054,1.3825
+2026-09-28,DYNAMATECH,aerospace & defence,midcap,-0.1064,1.608
+2026-09-22,REDINGTON,services,largecap,2.626,0.8225
+2026-09-23,REDINGTON,services,largecap,0.2251,0.7205
+2026-09-24,REDINGTON,services,largecap,1.6381,0.7558
+2026-09-25,REDINGTON,services,largecap,1.8507,0.3972
+2026-09-28,REDINGTON,services,largecap,-0.5893,0.7147
+2026-09-22,PGIL,readymade garments/apparels,midcap,4.2579,0.7889
+2026-09-23,PGIL,readymade garments/apparels,midcap,13.498,2.6053
+2026-09-24,PGIL,readymade garments/apparels,midcap,11.1247,0.9903
+2026-09-25,PGIL,readymade garments/apparels,midcap,15.9672,1.6141
+2026-09-28,PGIL,readymade garments/apparels,midcap,-2.4829,0.7051
+2026-09-22,KALYANIFRG,"castings, forgings & fasteners",smallcap,-4.9218,0.8494
+2026-09-23,KALYANIFRG,"castings, forgings & fasteners",smallcap,-1.8098,0.57
+2026-09-24,KALYANIFRG,"castings, forgings & fasteners",smallcap,-3.9272,0.2647
+2026-09-25,KALYANIFRG,"castings, forgings & fasteners",smallcap,-0.1025,0.6808
+2026-09-28,KALYANIFRG,"castings, forgings & fasteners",smallcap,1.6166,0.5273
+2026-09-22,SALSTEEL,metals & mining,smallcap,-1.556,3.3759
+2026-09-23,SALSTEEL,metals & mining,smallcap,3.3552,1.6907
+2026-09-24,SALSTEEL,metals & mining,smallcap,8.5218,4.5746
+2026-09-25,SALSTEEL,metals & mining,smallcap,13.7856,3.4471
+2026-09-28,SALSTEEL,metals & mining,smallcap,-0.609,4.6478
+2026-09-22,MANAKSTEEL,metals & mining,smallcap,-0.3068,0.2811
+2026-09-23,MANAKSTEEL,metals & mining,smallcap,-0.8924,0.2607
+2026-09-24,MANAKSTEEL,metals & mining,smallcap,-5.0567,0.932
+2026-09-25,MANAKSTEEL,metals & mining,smallcap,-2.3239,0.5511
+2026-09-28,MANAKSTEEL,metals & mining,smallcap,4.8059,0.6384
+2026-09-22,CUBEXTUB,metals & mining,smallcap,22.8903,5.8015
+2026-09-23,CUBEXTUB,metals & mining,smallcap,47.4684,5.7695
+2026-09-24,CUBEXTUB,metals & mining,smallcap,62.2128,4.3168
+2026-09-25,CUBEXTUB,metals & mining,smallcap,78.4341,13.0846
+2026-09-28,CUBEXTUB,metals & mining,smallcap,9.9974,5.3588
+2026-09-22,SUNFLAG,metals & mining,midcap,2.8832,0.5799
+2026-09-23,SUNFLAG,metals & mining,midcap,13.1701,2.6386
+2026-09-24,SUNFLAG,metals & mining,midcap,14.9812,4.3982
+2026-09-25,SUNFLAG,metals & mining,midcap,18.9945,5.7587
+2026-09-28,SUNFLAG,metals & mining,midcap,9.3876,11.8882
+2026-09-22,JSL,metals & mining,largecap,-0.9987,1.2741
+2026-09-23,JSL,metals & mining,largecap,1.012,1.295
+2026-09-24,JSL,metals & mining,largecap,-1.598,1.0565
+2026-09-25,JSL,metals & mining,largecap,-0.3595,2.5087
+2026-09-28,JSL,metals & mining,largecap,-0.3408,1.8062
+2026-09-22,GANDHITUBE,metals & mining,smallcap,11.5658,23.6307
+2026-09-23,GANDHITUBE,metals & mining,smallcap,10.6595,2.0345
+2026-09-24,GANDHITUBE,metals & mining,smallcap,8.8857,1.111
+2026-09-25,GANDHITUBE,metals & mining,smallcap,7.4844,0.5626
+2026-09-28,GANDHITUBE,metals & mining,smallcap,-1.4485,0.6144
+2026-09-22,VSSL,metals & mining,smallcap,0.766,0.5404
+2026-09-23,VSSL,metals & mining,smallcap,2.1992,0.612
+2026-09-24,VSSL,metals & mining,smallcap,0.0741,0.6819
+2026-09-25,VSSL,metals & mining,smallcap,1.6803,0.4611
+2026-09-28,VSSL,metals & mining,smallcap,-0.9113,0.6471
+2026-09-22,GOODLUCK,metals & mining,midcap,4.0213,1.5104
+2026-09-23,GOODLUCK,metals & mining,midcap,3.8376,1.6892
+2026-09-24,GOODLUCK,metals & mining,midcap,2.552,0.6883
+2026-09-25,GOODLUCK,metals & mining,midcap,1.624,0.4366
+2026-09-28,GOODLUCK,metals & mining,midcap,-0.6944,0.5174
+2026-09-22,SAIL,metals & mining,largecap,-1.8722,0.3227
+2026-09-23,SAIL,metals & mining,largecap,4.5734,1.8881
+2026-09-24,SAIL,metals & mining,largecap,3.7613,1.122
+2026-09-25,SAIL,metals & mining,largecap,4.3253,0.4375
+2026-09-28,SAIL,metals & mining,largecap,-0.4324,0.649
+2026-09-22,MUKANDLTD,metals & mining,smallcap,4.9191,1.2201
+2026-09-23,MUKANDLTD,metals & mining,smallcap,16.5677,14.0786
+2026-09-24,MUKANDLTD,metals & mining,smallcap,15.1951,5.5992
+2026-09-25,MUKANDLTD,metals & mining,smallcap,23.9427,5.9294
+2026-09-28,MUKANDLTD,metals & mining,smallcap,2.3825,8.2762
+2026-09-22,MANINDS,metals & mining,midcap,-0.1938,0.6967
+2026-09-23,MANINDS,metals & mining,midcap,15.8711,11.3865
+2026-09-24,MANINDS,metals & mining,midcap,13.0703,1.5019
+2026-09-25,MANINDS,metals & mining,midcap,19.8227,1.8603
+2026-09-28,MANINDS,metals & mining,midcap,-6.5664,1.3631
+2026-09-22,KDDL,consumer discretionary,smallcap,2.9727,1.1572
+2026-09-23,KDDL,consumer discretionary,smallcap,10.1985,4.9055
+2026-09-24,KDDL,consumer discretionary,smallcap,6.7748,2.1495
+2026-09-25,KDDL,consumer discretionary,smallcap,4.5356,1.4788
+2026-09-28,KDDL,consumer discretionary,smallcap,-0.4785,1.3288
+2026-09-22,TBZ,consumer discretionary,smallcap,10.2394,0.6756
+2026-09-23,TBZ,consumer discretionary,smallcap,14.7295,0.6389
+2026-09-24,TBZ,consumer discretionary,smallcap,11.8134,0.4799
+2026-09-25,TBZ,consumer discretionary,smallcap,8.624,0.2432
+2026-09-28,TBZ,consumer discretionary,smallcap,-3.7904,0.5174
+2026-09-22,MOREPENLAB,healthcare,midcap,-1.5385,1.1452
+2026-09-23,MOREPENLAB,healthcare,midcap,1.1993,1.2402
+2026-09-24,MOREPENLAB,healthcare,midcap,-3.5567,1.012
+2026-09-25,MOREPENLAB,healthcare,midcap,-0.4301,0.9868
+2026-09-28,MOREPENLAB,healthcare,midcap,0.2741,2.0828
+2026-09-22,BLISSGVS,healthcare,midcap,1.8699,0.1469
+2026-09-23,BLISSGVS,healthcare,midcap,2.5446,0.0633
+2026-09-24,BLISSGVS,healthcare,midcap,0.7626,0.0663
+2026-09-25,BLISSGVS,healthcare,midcap,3.3512,0.1803
+2026-09-28,BLISSGVS,healthcare,midcap,4.6758,1.1698
+2026-09-22,ZYDUSLIFE,healthcare,largecap,0.1983,1.1428
+2026-09-23,ZYDUSLIFE,healthcare,largecap,0.8707,0.998
+2026-09-24,ZYDUSLIFE,healthcare,largecap,1.75,1.7947
+2026-09-25,ZYDUSLIFE,healthcare,largecap,3.7845,1.8117
+2026-09-28,ZYDUSLIFE,healthcare,largecap,0.922,3.5879
+2026-09-22,SMSPHARMA,healthcare,smallcap,9.1207,3.462
+2026-09-23,SMSPHARMA,healthcare,smallcap,9.0304,1.4486
+2026-09-24,SMSPHARMA,healthcare,smallcap,7.0211,0.9214
+2026-09-25,SMSPHARMA,healthcare,smallcap,7.2356,0.6623
+2026-09-28,SMSPHARMA,healthcare,smallcap,-2.7053,0.7108
+2026-09-22,LALPATHLAB,healthcare,largecap,0.6801,0.683
+2026-09-23,LALPATHLAB,healthcare,largecap,1.4445,0.6003
+2026-09-24,LALPATHLAB,healthcare,largecap,3.395,1.1178
+2026-09-25,LALPATHLAB,healthcare,largecap,2.9206,1.1732
+2026-09-28,LALPATHLAB,healthcare,largecap,-0.5225,0.3588
+2026-09-22,SHILPAMED,healthcare,midcap,1.1801,0.7321
+2026-09-23,SHILPAMED,healthcare,midcap,1.6257,0.6639
+2026-09-24,SHILPAMED,healthcare,midcap,-1.3515,0.6717
+2026-09-25,SHILPAMED,healthcare,midcap,-0.7492,0.6512
+2026-09-28,SHILPAMED,healthcare,midcap,1.1643,0.7291
+2026-09-22,RPGLIFE,healthcare,midcap,-1.9804,0.319
+2026-09-23,RPGLIFE,healthcare,midcap,7.9575,6.006
+2026-09-24,RPGLIFE,healthcare,midcap,3.4792,2.5895
+2026-09-25,RPGLIFE,healthcare,midcap,8.8567,4.529
+2026-09-28,RPGLIFE,healthcare,midcap,-3.1305,1.8748
+2026-09-22,INDSWFTLAB,healthcare,smallcap,8.6537,2.3725
+2026-09-23,INDSWFTLAB,healthcare,smallcap,8.5198,0.9459
+2026-09-24,INDSWFTLAB,healthcare,smallcap,7.5017,0.7487
+2026-09-25,INDSWFTLAB,healthcare,smallcap,8.3322,0.5148
+2026-09-28,INDSWFTLAB,healthcare,smallcap,0.9274,0.6961
+2026-09-22,BAFNAPH,healthcare,smallcap,4.0195,0.0429
+2026-09-23,BAFNAPH,healthcare,smallcap,6.0845,0.0485
+2026-09-24,BAFNAPH,healthcare,smallcap,8.1967,0.0625
+2026-09-25,BAFNAPH,healthcare,smallcap,10.3562,0.1836
+2026-09-28,BAFNAPH,healthcare,smallcap,1.9997,0.0939
+2026-09-22,CAPLIPOINT,healthcare,largecap,1.0442,0.976
+2026-09-23,CAPLIPOINT,healthcare,largecap,1.6445,0.53
+2026-09-24,CAPLIPOINT,healthcare,largecap,4.3222,9.9851
+2026-09-25,CAPLIPOINT,healthcare,largecap,3.1471,1.4524
+2026-09-28,CAPLIPOINT,healthcare,largecap,0.6666,0.9717
+2026-09-22,HALEOSLABS,healthcare,smallcap,0.1603,0.2204
+2026-09-23,HALEOSLABS,healthcare,smallcap,0.8747,0.7723
+2026-09-24,HALEOSLABS,healthcare,smallcap,0.3873,0.8215
+2026-09-25,HALEOSLABS,healthcare,smallcap,0.2805,0.3614
+2026-09-28,HALEOSLABS,healthcare,smallcap,0.7791,0.3691
+2026-09-22,LAURUSLABS,healthcare,largecap,2.6868,0.6929
+2026-09-23,LAURUSLABS,healthcare,largecap,4.0942,0.635
+2026-09-24,LAURUSLABS,healthcare,largecap,3.695,0.6459
+2026-09-25,LAURUSLABS,healthcare,largecap,2.7124,0.673
+2026-09-28,LAURUSLABS,healthcare,largecap,0.1844,0.4456
+2026-09-22,DIVISLAB,healthcare,largecap,-0.2453,0.7475
+2026-09-23,DIVISLAB,healthcare,largecap,2.656,1.243
+2026-09-24,DIVISLAB,healthcare,largecap,2.4213,1.689
+2026-09-25,DIVISLAB,healthcare,largecap,2.608,0.9861
+2026-09-28,DIVISLAB,healthcare,largecap,-0.7225,0.9677
+2026-09-22,KOPRAN,healthcare,smallcap,-0.4179,1.0971
+2026-09-23,KOPRAN,healthcare,smallcap,0.6556,1.0395
+2026-09-24,KOPRAN,healthcare,smallcap,-2.446,0.6866
+2026-09-25,KOPRAN,healthcare,smallcap,2.4964,1.1944
+2026-09-28,KOPRAN,healthcare,smallcap,-2.3056,2.0277
+2026-09-22,KILITCH,healthcare,smallcap,10.2481,0.3816
+2026-09-23,KILITCH,healthcare,smallcap,15.7587,0.4139
+2026-09-24,KILITCH,healthcare,smallcap,13.4657,1.2809
+2026-09-25,KILITCH,healthcare,smallcap,17.1429,0.483
+2026-09-28,KILITCH,healthcare,smallcap,-3.2193,0.4603
+2026-09-22,JUBLPHARMA,healthcare,midcap,0.5115,1.1077
+2026-09-23,JUBLPHARMA,healthcare,midcap,-0.6946,0.7768
+2026-09-24,JUBLPHARMA,healthcare,midcap,-0.1455,0.66
+2026-09-25,JUBLPHARMA,healthcare,midcap,0.6148,0.8987
+2026-09-28,JUBLPHARMA,healthcare,midcap,-1.0728,0.5499
+2026-09-22,KANORICHEM,chemicals,smallcap,-5.7248,1.3104
+2026-09-23,KANORICHEM,chemicals,smallcap,-1.0157,2.1772
+2026-09-24,KANORICHEM,chemicals,smallcap,3.9216,3.0452
+2026-09-25,KANORICHEM,chemicals,smallcap,7.8431,2.0308
+2026-09-28,KANORICHEM,chemicals,smallcap,2.0146,1.7756
+2026-09-22,IVP,chemicals,smallcap,7.3335,1.395
+2026-09-23,IVP,chemicals,smallcap,6.0082,0.8098
+2026-09-24,IVP,chemicals,smallcap,6.2919,0.8212
+2026-09-25,IVP,chemicals,smallcap,6.3151,0.6995
+2026-09-28,IVP,chemicals,smallcap,0.2362,0.4986
+2026-09-22,BHAGERIA,chemicals,smallcap,3.1367,1.0346
+2026-09-23,BHAGERIA,chemicals,smallcap,5.0784,0.6881
+2026-09-24,BHAGERIA,chemicals,smallcap,7.4384,1.1361
+2026-09-25,BHAGERIA,chemicals,smallcap,17.879,4.2899
+2026-09-28,BHAGERIA,chemicals,smallcap,-3.4845,1.1397
+2026-09-22,BODALCHEM,chemicals,smallcap,0.8733,4.2555
+2026-09-23,BODALCHEM,chemicals,smallcap,4.3403,3.0551
+2026-09-24,BODALCHEM,chemicals,smallcap,2.0133,3.3463
+2026-09-25,BODALCHEM,chemicals,smallcap,5.6424,2.0192
+2026-09-28,BODALCHEM,chemicals,smallcap,-0.0446,1.5724
+2026-09-22,FCL,chemicals,midcap,0.6489,1.5599
+2026-09-23,FCL,chemicals,midcap,-0.3683,0.913
+2026-09-24,FCL,chemicals,midcap,-1.6661,1.4779
+2026-09-25,FCL,chemicals,midcap,6.068,3.4506
+2026-09-28,FCL,chemicals,midcap,-5.0926,2.0954
+2026-09-22,PRIVISCL,chemicals,midcap,2.0407,0.3416
+2026-09-23,PRIVISCL,chemicals,midcap,1.1292,1.9373
+2026-09-24,PRIVISCL,chemicals,midcap,2.6996,1.0292
+2026-09-25,PRIVISCL,chemicals,midcap,4.331,0.8022
+2026-09-28,PRIVISCL,chemicals,midcap,0.3116,0.6733
+2026-09-22,MAWANASUG,fmcg,smallcap,2.5115,2.1404
+2026-09-23,MAWANASUG,fmcg,smallcap,3.7907,0.9431
+2026-09-24,MAWANASUG,fmcg,smallcap,1.9421,0.9701
+2026-09-25,MAWANASUG,fmcg,smallcap,16.7148,16.7746
+2026-09-28,MAWANASUG,fmcg,smallcap,-2.4993,5.1293
+2026-09-22,BALRAMCHIN,fmcg,midcap,-1.7172,1.064
+2026-09-23,BALRAMCHIN,fmcg,midcap,0.565,0.8402
+2026-09-24,BALRAMCHIN,fmcg,midcap,-1.9625,0.4753
+2026-09-25,BALRAMCHIN,fmcg,midcap,1.9625,3.662
+2026-09-28,BALRAMCHIN,fmcg,midcap,-0.7437,1.576
+2026-09-22,PKTEA,fmcg,smallcap,9.6593,0.9457
+2026-09-23,PKTEA,fmcg,smallcap,8.5879,0.9065
+2026-09-24,PKTEA,fmcg,smallcap,9.7088,0.8875
+2026-09-25,PKTEA,fmcg,smallcap,10.0385,0.8762
+2026-09-28,PKTEA,fmcg,smallcap,-0.6741,1.1119
+2026-09-22,INDIAGLYCO,fmcg,smallcap,-3.8301,0.2964
+2026-09-23,INDIAGLYCO,fmcg,smallcap,-2.2753,0.6399
+2026-09-24,INDIAGLYCO,fmcg,smallcap,16.041,4.9582
+2026-09-25,INDIAGLYCO,fmcg,smallcap,17.5199,2.094
+2026-09-28,INDIAGLYCO,fmcg,smallcap,-4.0013,1.1787
+2026-09-22,SOUTHBANK,bank,midcap,-1.8233,0.1954
+2026-09-23,SOUTHBANK,bank,midcap,2.1923,0.6395
+2026-09-24,SOUTHBANK,bank,midcap,8.3134,2.5127
+2026-09-25,SOUTHBANK,bank,midcap,8.422,1.2535
+2026-09-28,SOUTHBANK,bank,midcap,-2.6226,0.675
+2026-09-22,LGBBROSLTD,auto,midcap,-0.0116,0.291
+2026-09-23,LGBBROSLTD,auto,midcap,0.2369,0.2144
+2026-09-24,LGBBROSLTD,auto,midcap,0.8611,0.382
+2026-09-25,LGBBROSLTD,auto,midcap,0.2832,0.2433
+2026-09-28,LGBBROSLTD,auto,midcap,-0.2709,0.4507
+2026-09-22,JAMNAAUTO,auto,midcap,2.3674,0.6116
+2026-09-23,JAMNAAUTO,auto,midcap,3.6151,1.0126
+2026-09-24,JAMNAAUTO,auto,midcap,10.6854,5.1794
+2026-09-25,JAMNAAUTO,auto,midcap,10.5335,1.271
+2026-09-28,JAMNAAUTO,auto,midcap,1.0709,1.3326
+2026-09-22,SHRIPISTON,auto,largecap,-1.3984,0.532
+2026-09-23,SHRIPISTON,auto,largecap,-1.8966,0.2265
+2026-09-24,SHRIPISTON,auto,largecap,-1.0903,1.1859
+2026-09-25,SHRIPISTON,auto,largecap,3.7189,1.1187
+2026-09-28,SHRIPISTON,auto,largecap,-2.1383,1.3396
+2026-09-22,GNA,auto,smallcap,0.555,0.5998
+2026-09-23,GNA,auto,smallcap,6.8212,13.3879
+2026-09-24,GNA,auto,smallcap,11.0823,24.6016
+2026-09-25,GNA,auto,smallcap,10.581,2.0818
+2026-09-28,GNA,auto,smallcap,-3.7157,1.7886
+2026-09-22,SMLMAH,auto,midcap,6.7859,0.7119
+2026-09-23,SMLMAH,auto,midcap,7.9698,0.5186
+2026-09-24,SMLMAH,auto,midcap,4.9344,0.3281
+2026-09-25,SMLMAH,auto,midcap,8.4704,0.4852
+2026-09-28,SMLMAH,auto,midcap,-4.5418,0.6503
+2026-09-22,INDNIPPON,auto,smallcap,-1.8254,0.5476
+2026-09-23,INDNIPPON,auto,smallcap,0.0556,1.576
+2026-09-24,INDNIPPON,auto,smallcap,4.4365,1.4197
+2026-09-25,INDNIPPON,auto,smallcap,4.619,1.2805
+2026-09-28,INDNIPPON,auto,smallcap,-2.0938,0.601
+2026-09-22,SSWL,auto,midcap,-2.0408,3.6017
+2026-09-23,SSWL,auto,midcap,-0.1208,1.5672
+2026-09-24,SSWL,auto,midcap,0.9936,1.9902
+2026-09-25,SSWL,auto,midcap,1.7052,2.4031
+2026-09-28,SSWL,auto,midcap,2.6139,1.9976
+2026-09-22,WHEELS,auto,midcap,-0.0781,0.6648
+2026-09-23,WHEELS,auto,midcap,2.9692,2.686
+2026-09-24,WHEELS,auto,midcap,0.2344,0.9917
+2026-09-25,WHEELS,auto,midcap,5.5476,3.1938
+2026-09-28,WHEELS,auto,midcap,1.1932,1.7668
+2026-09-22,TCPLPACK,industrials,smallcap,-0.2705,0.3369
+2026-09-23,TCPLPACK,industrials,smallcap,4.1309,1.6062
+2026-09-24,TCPLPACK,industrials,smallcap,5.5824,1.4378
+2026-09-25,TCPLPACK,industrials,smallcap,6.8311,1.1685
+2026-09-28,TCPLPACK,industrials,smallcap,-2.8976,0.7743
+2026-09-22,HITECHCORP,industrials,smallcap,0.4111,0.689
+2026-09-23,HITECHCORP,industrials,smallcap,1.7052,0.5638
+2026-09-24,HITECHCORP,industrials,smallcap,0.9592,0.1664
+2026-09-25,HITECHCORP,industrials,smallcap,0.5329,0.0236
+2026-09-28,HITECHCORP,industrials,smallcap,3.4227,2.5125
+2026-09-22,NRBBEARING,industrials,midcap,-0.9515,0.6381
+2026-09-23,NRBBEARING,industrials,midcap,2.9591,2.9555
+2026-09-24,NRBBEARING,industrials,midcap,0.647,0.6611
+2026-09-25,NRBBEARING,industrials,midcap,1.7697,0.6833
+2026-09-28,NRBBEARING,industrials,midcap,1.2528,2.6927
+2026-09-22,WELCORP,industrials,largecap,2.6841,1.4063
+2026-09-23,WELCORP,industrials,largecap,5.1389,1.6938
+2026-09-24,WELCORP,industrials,largecap,1.2067,0.9737
+2026-09-25,WELCORP,industrials,largecap,6.4772,2.6581
+2026-09-28,WELCORP,industrials,largecap,-3.2728,1.2929
+2026-09-22,APLAPOLLO,industrials,largecap,-3.3082,0.8893
+2026-09-23,APLAPOLLO,industrials,largecap,-3.3082,0.5328
+2026-09-24,APLAPOLLO,industrials,largecap,-3.7575,0.6995
+2026-09-25,APLAPOLLO,industrials,largecap,-2.4404,0.5053
+2026-09-28,APLAPOLLO,industrials,largecap,-0.7992,0.4778
+2026-09-22,LLOYDSENGG,industrials,midcap,4.0034,1.0454
+2026-09-23,LLOYDSENGG,industrials,midcap,11.0275,2.44
+2026-09-24,LLOYDSENGG,industrials,midcap,10.2875,1.3099
+2026-09-25,LLOYDSENGG,industrials,midcap,19.5681,7.1193
+2026-09-28,LLOYDSENGG,industrials,midcap,-2.6278,2.2118
+2026-09-22,ADOR,industrials,smallcap,0.1696,0.6141
+2026-09-23,ADOR,industrials,smallcap,0.3706,0.7191
+2026-09-24,ADOR,industrials,smallcap,1.3065,0.9075
+2026-09-25,ADOR,industrials,smallcap,2.9395,1.0528
+2026-09-28,ADOR,industrials,smallcap,-1.6597,0.9176
+2026-09-22,KABRAEXTRU,industrials,smallcap,-2.2521,0.8241
+2026-09-23,KABRAEXTRU,industrials,smallcap,7.5191,3.4022
+2026-09-24,KABRAEXTRU,industrials,smallcap,18.2658,4.3266
+2026-09-25,KABRAEXTRU,industrials,smallcap,24.1784,3.7227
+2026-09-28,KABRAEXTRU,industrials,smallcap,1.979,4.8592
+2026-09-22,MBECL,realty,smallcap,7.0968,0.0851
+2026-09-23,MBECL,realty,smallcap,9.2383,0.0184
+2026-09-24,MBECL,realty,smallcap,11.4221,0.0363
+2026-09-25,MBECL,realty,smallcap,13.6482,0.0467
+2026-09-28,MBECL,realty,smallcap,1.9982,0.0151
+2026-09-22,ASHIANA,realty,smallcap,8.5271,1.2348
+2026-09-23,ASHIANA,realty,smallcap,10.2326,0.4883
+2026-09-24,ASHIANA,realty,smallcap,9.5137,0.2185
+2026-09-25,ASHIANA,realty,smallcap,9.852,0.1409
+2026-09-28,ASHIANA,realty,smallcap,-0.231,0.2268
+2026-09-22,OBEROIRLTY,realty,largecap,3.395,0.8739
+2026-09-23,OBEROIRLTY,realty,largecap,3.6415,0.7215
+2026-09-24,OBEROIRLTY,realty,largecap,2.9412,0.8685
+2026-09-25,OBEROIRLTY,realty,largecap,4.1176,1.1816
+2026-09-28,OBEROIRLTY,realty,largecap,-1.5335,0.6752
+2026-09-22,ENGINERSIN,realty,midcap,13.5911,4.7493
+2026-09-23,ENGINERSIN,realty,midcap,14.9615,2.2496
+2026-09-24,ENGINERSIN,realty,midcap,11.376,0.9258
+2026-09-25,ENGINERSIN,realty,midcap,18.5095,3.8687
+2026-09-28,ENGINERSIN,realty,midcap,-0.5544,1.9281
+2026-09-22,PHOENIXLTD,realty,largecap,4.0204,0.7989
+2026-09-23,PHOENIXLTD,realty,largecap,6.1398,1.2118
+2026-09-24,PHOENIXLTD,realty,largecap,4.1056,1.0587
+2026-09-25,PHOENIXLTD,realty,largecap,5.3517,0.8793
+2026-09-28,PHOENIXLTD,realty,largecap,-1.3243,0.2945
+2026-09-22,INDORAMA,textiles,smallcap,13.7507,8.9695
+2026-09-23,INDORAMA,textiles,smallcap,9.8298,3.7762
+2026-09-24,INDORAMA,textiles,smallcap,11.7188,4.9874
+2026-09-25,INDORAMA,textiles,smallcap,9.1269,1.5473
+2026-09-28,INDORAMA,textiles,smallcap,1.4493,1.951
+2026-09-22,FILATEX,textiles,smallcap,7.7161,3.268
+2026-09-23,FILATEX,textiles,smallcap,15.8691,8.4204
+2026-09-24,FILATEX,textiles,smallcap,12.2455,1.9948
+2026-09-25,FILATEX,textiles,smallcap,13.9721,2.933
+2026-09-28,FILATEX,textiles,smallcap,3.5627,2.2653
+2026-09-22,SALONA,textiles,smallcap,3.0752,2.2393
+2026-09-23,SALONA,textiles,smallcap,2.7525,0.3584
+2026-09-24,SALONA,textiles,smallcap,4.1192,1.3642
+2026-09-25,SALONA,textiles,smallcap,4.309,0.1592
+2026-09-28,SALONA,textiles,smallcap,-0.6551,0.1156
+2026-09-22,AYMSYNTEX,textiles,smallcap,4.3263,1.9144
+2026-09-23,AYMSYNTEX,textiles,smallcap,3.4081,1.35
+2026-09-24,AYMSYNTEX,textiles,smallcap,0.7946,0.9734
+2026-09-25,AYMSYNTEX,textiles,smallcap,3.8142,1.3422
+2026-09-28,AYMSYNTEX,textiles,smallcap,-0.9525,1.0676
+2026-09-22,WELSPUNLIV,textiles,largecap,3.1911,1.2575
+2026-09-23,WELSPUNLIV,textiles,largecap,4.2439,2.9584
+2026-09-24,WELSPUNLIV,textiles,largecap,3.5684,1.1945
+2026-09-25,WELSPUNLIV,textiles,largecap,4.6678,0.7114
+2026-09-28,WELSPUNLIV,textiles,largecap,1.4554,1.0338
+2026-09-22,RUBYMILLS,textiles,smallcap,-1.5307,0.1472
+2026-09-23,RUBYMILLS,textiles,smallcap,4.9454,2.4716
+2026-09-24,RUBYMILLS,textiles,smallcap,5.8874,0.7056
+2026-09-25,RUBYMILLS,textiles,smallcap,5.2987,0.2975
+2026-09-28,RUBYMILLS,textiles,smallcap,3.8121,2.1101
+2026-09-22,SANGAMIND,textiles,smallcap,-1.8448,0.1644
+2026-09-23,SANGAMIND,textiles,smallcap,-1.5776,0.1375
+2026-09-24,SANGAMIND,textiles,smallcap,-0.0517,0.6037
+2026-09-25,SANGAMIND,textiles,smallcap,6.8793,6.5866
+2026-09-28,SANGAMIND,textiles,smallcap,1.5164,1.3512
+2026-09-22,DEEPINDS,energy,smallcap,2.4551,0.942
+2026-09-23,DEEPINDS,energy,smallcap,3.9753,0.8717
+2026-09-24,DEEPINDS,energy,smallcap,3.047,0.8315
+2026-09-25,DEEPINDS,energy,smallcap,5.0784,0.8795
+2026-09-28,DEEPINDS,energy,smallcap,-1.6771,0.4077
+2026-09-22,ANTELOPUS,energy,smallcap,0.5023,1.0869
+2026-09-23,ANTELOPUS,energy,smallcap,5.1002,1.921
+2026-09-24,ANTELOPUS,energy,smallcap,2.3623,0.6386
+2026-09-25,ANTELOPUS,energy,smallcap,14.1965,12.6002
+2026-09-28,ANTELOPUS,energy,smallcap,-8.1041,2.2995
+2026-09-22,SPLPETRO,energy,midcap,-0.1097,0.6422
+2026-09-23,SPLPETRO,energy,midcap,1.906,1.9575
+2026-09-24,SPLPETRO,energy,midcap,1.6403,0.751
+2026-09-25,SPLPETRO,energy,midcap,1.6518,0.8192
+2026-09-28,SPLPETRO,energy,midcap,-1.7216,0.4569
+2026-09-22,UMIYA-MRO,telecom,smallcap,-0.7346,0.1721
+2026-09-23,UMIYA-MRO,telecom,smallcap,-2.9691,0.2538
+2026-09-24,UMIYA-MRO,telecom,smallcap,-1.6223,1.6789
+2026-09-25,UMIYA-MRO,telecom,smallcap,-0.7754,0.143
+2026-09-28,UMIYA-MRO,telecom,smallcap,0.2982,0.1227
+2026-09-22,OPTIEMUS,telecom,midcap,20.1322,31.2947
+2026-09-23,OPTIEMUS,telecom,midcap,40.3745,35.6842
+2026-09-24,OPTIEMUS,telecom,midcap,32.4352,5.3419
+2026-09-25,OPTIEMUS,telecom,midcap,28.546,1.6254
+2026-09-28,OPTIEMUS,telecom,midcap,6.7761,9.7401
+2026-09-22,ARROWGREEN,plastic products,smallcap,2.6764,2.4563
+2026-09-23,ARROWGREEN,plastic products,smallcap,1.2089,1.4717
+2026-09-24,ARROWGREEN,plastic products,smallcap,0.7534,0.5037
+2026-09-25,ARROWGREEN,plastic products,smallcap,1.8611,0.7116
+2026-09-28,ARROWGREEN,plastic products,smallcap,-1.5401,0.3824
+2026-09-22,KINGFA,plastic products,midcap,5.8425,2.6069
+2026-09-23,KINGFA,plastic products,midcap,7.0779,0.95
+2026-09-24,KINGFA,plastic products,midcap,6.872,1.7526
+2026-09-25,KINGFA,plastic products,midcap,7.0264,0.6836
+2026-09-28,KINGFA,plastic products,midcap,2.3487,1.2727
+2026-09-22,PREMIERPOL,plastic products,smallcap,-0.5035,0.3405
+2026-09-23,PREMIERPOL,plastic products,smallcap,18.7769,21.5652
+2026-09-24,PREMIERPOL,plastic products,smallcap,23.4312,20.3061
+2026-09-25,PREMIERPOL,plastic products,smallcap,17.1558,2.3668
+2026-09-28,PREMIERPOL,plastic products,smallcap,-2.7149,0.9046
+2026-09-22,ONELIFECAP,financials,smallcap,3.4391,0.2328
+2026-09-23,ONELIFECAP,financials,smallcap,3.1452,1.0881
+2026-09-24,ONELIFECAP,financials,smallcap,5.2616,0.8236
+2026-09-25,ONELIFECAP,financials,smallcap,5.9671,1.178
+2026-09-28,ONELIFECAP,financials,smallcap,4.0777,3.6792
+2026-09-22,GEECEE,financials,smallcap,0.5379,0.3229
+2026-09-23,GEECEE,financials,smallcap,1.6404,0.0728
+2026-09-24,GEECEE,financials,smallcap,0.0269,0.5689
+2026-09-25,GEECEE,financials,smallcap,-3.0254,0.2561
+2026-09-28,GEECEE,financials,smallcap,2.4265,0.4048
+2026-09-22,WELINV,financials,smallcap,3.8319,0.0827
+2026-09-23,WELINV,financials,smallcap,5.9052,0.0466
+2026-09-24,WELINV,financials,smallcap,5.9052,0.0058
+2026-09-25,WELINV,financials,smallcap,7.7543,0.0073
+2026-09-28,WELINV,financials,smallcap,-1.9561,0.0361
+2026-09-22,PRIMESECU,financials,smallcap,-2.2402,0.1977
+2026-09-23,PRIMESECU,financials,smallcap,-0.1684,0.9102
+2026-09-24,PRIMESECU,financials,smallcap,0.9601,1.1245
+2026-09-25,PRIMESECU,financials,smallcap,1.7012,0.8666
+2026-09-28,PRIMESECU,financials,smallcap,-0.0166,0.1946
+2026-09-22,NRAIL,building materials,smallcap,4.3026,1.8507
+2026-09-23,NRAIL,building materials,smallcap,5.2303,1.0108
+2026-09-24,NRAIL,building materials,smallcap,2.0074,0.7232
+2026-09-25,NRAIL,building materials,smallcap,8.3253,1.2854
+2026-09-28,NRAIL,building materials,smallcap,-4.378,3.1439

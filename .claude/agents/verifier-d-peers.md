@@ -2,13 +2,14 @@
 name: verifier-d-peers
 description: Peer coverage audit of B06. Fresh context
 tools: Read, Grep, Write
-model: sonnet
+model: claude-sonnet-5-5
+effort: medium
 ---
 You are pipeline stage: verifier-d-peers.
 
 Your complete instructions are in the repository file: prompts/12-verifiers-pipeline.md (VERIFIER D section only)
 Read that file FIRST with the Read tool. Everything above its
-"INJECTED INPUTS" section is your operating rules; follow them exactly.
+"INPUTS:" line in your section is your operating rules; follow them exactly.
 The variable inputs the file expects at its {{...}} markers are provided
 in your task message (as file paths to read, or inline content).
 

@@ -14,11 +14,14 @@ target, 3-5 year holds.
   revenue runs off the 26.1 basis hierarchy, with historical CAGR shown as
   the cross-check and used as the base only when no forward evidence
   exists. Base margin runs off the 26.2 destination-mix bridge; the
-  trailing 3-year average is the BEAR input. Weights key to the trailing
+  trailing 3-year average is the BEAR input, except for margin-reset names,
+  where the bear margin comes from the evidence bridge (operator ruling
+  OR-11, approved 2026-09-28). Weights key to the trailing
   four quarters of Role 5 delivery, never whole-company history.
 - Never shade an input to be safe. State the most evidenced path, name the
   two readings and the one observation that separates them, and put the
-  conservatism in position size (v3.9 Amendment 25). This binds Role 1
+  conservatism in position size (v3.10 Amendment 26.3; v3.9 Amendment 25
+  sets size as the margin of safety for fast-growth names; OR-31). This binds Role 1
   projections; it does not touch the document-reading protocols, where
   conservative interpretation of filed evidence still stands.
 - Never construct a Year-N exit price on a different earnings basis than
@@ -39,7 +42,9 @@ target, 3-5 year holds.
 - Never treat building as a footnote to governance (Master v3.7 Rule G).
   Role 2 Section 3G ledgers what the promoter built, raised, deployed, and
   delivered under constraint, and states its Pillar 3 line. The ledger
-  never lifts a position cap the promoter verdict imposes.
+  never lifts a cap set by a promoter AVOID or an INTEGRITY concern; for a
+  STRUCTURE concern, three of four evidenced ledger heads size as TRUSTWORTHY,
+  with each concern a named tripwire (operator ruling OR-14).
 - Never answer a failure-catalogue pattern-match without the nearest
   success name and the observable difference (Master v3.7 Rule I). While
   frameworks/success_catalogue.md holds fewer than four names, say
@@ -76,10 +81,59 @@ target, 3-5 year holds.
   Declaration or a Halt 1 decision other than PROCEED.
 
 ## DISPATCH (model per subagent, already set in .claude/agents frontmatter)
-- opus: stage 11 valuation, stage 13 synthesis, verifiers B and C
-- sonnet: all document-reading stages (1-9), verifier D
-- haiku: stage 10 assembly, verifier A
+- claude-opus-5-5 (Opus 5.5), effort xhigh: stage 11 valuation, stage 15
+  devil's advocate, verifiers B and C, quarterly A5, and the /fttcp session
+  (start that session on Opus 5.5 at xhigh; the command pins no model)
+- claude-opus-5-5 (Opus 5.5), effort high: stage 13 synthesis, stage 14
+  thesis, quarterly A3-A4
+- claude-sonnet-5-5 (Sonnet 5.5), effort medium: stages 1, 4, 6, 09b,
+  10 assembly, verifier D, quarterly A2; effort high (set in the file):
+  verifier A; effort low: quarterly A1; default (high): stages 2, 3, 5,
+  7, 8, 9
+- No stage runs on Haiku 4.5 (operator ruling 2026-10-04: stage 10 and
+  verifier A moved to Sonnet 5.5; Verifier A's independence comes from a
+  fresh context and the source page, not the model family)
 Do not upgrade a stage's model without editing its agent file.
+The model and effort in .claude/agents/*.md frontmatter are the operator's
+rulings. A session never overrides them on the belief that the file is stale.
+If the file looks stale, run the stale-checkout guard instead.
+
+## OPERATOR RULINGS (dated; Section 1B rulings live in .claude/skills/section-1b/SKILL.md)
+Standing pipeline rulings:
+- Standing ruling 2026-10-04 (forward application): framework rulings apply
+  to names analysed from the ruling date forward. Closed names are not
+  re-derived under a new ruling; their record stands as of the run that
+  produced it.
+October 2026 audit, ruled 2026-10-04 (audits/RULINGS_2026-10.md item numbers):
+- OR-15 (item 36): /finalize Rule H loop. A stage 15 steelman-gate miss
+  re-runs stage 14 once, then stage 15; a second miss marks Role 3 VOID,
+  flagged, and the run continues.
+- OR-16 (item 39): /fttcp override sensitivity shows the number on each
+  draft (Claude Code's and the dossier pre-ruling), not the more
+  conservative one.
+- OR-17 (item 40): /fttcp Role 5.5 gate needs three EXTERNAL tracker signals
+  per entity. A dated "Tracker floor: OVERRIDE YYYY-MM-DD (operator,
+  reason)" line in companies/<TICKER>.md lets it proceed below the floor;
+  the gate names the shortfall either way.
+- OR-18 (item 46): AR protocol margin of safety follows the Master evidence
+  scale (20/30/40%), or position size for fast-growth names (A25).
+- OR-19 (item 47): AR protocol Going Concern and FIRED thesis-broken
+  conditions carry to the IMMEDIATE EXIT overlay; the review completes.
+- OR-23 (item 52): Master Conviction Test. Stage 15 states the 3x exposure
+  as % of portfolio (capital base NOT FOUND unless supplied) and hands the
+  imagined-state questions to the operator.
+- OR-24 (item 54): quarterly-cadence downstream signals feed the 12-month
+  window (FTTCP governs; the Master's 6-12 month text is aligned).
+- OR-26 (item 59): Quarterly Results conservative bias binds the reading
+  of filed evidence (Steps 0-6); Steps 6.5-7 follow A26.3 / A25.
+- OR-29 (items 66, 78): REWORK fires on a CONFIRMED Verifier A CRITICAL or
+  an acceptance rate below 60% on a denominator of 4 or more.
+- OR-30 (items 81, 82): /run-quarterly A4 defers Role 4 Steps 6.5/7 and
+  Role 5 Step 8D to /fttcp and Role 1 and flags pillar-relevant facts.
+Post-Kwick rulings, 2026-10-04 (audits/RULINGS_2026-10.md, post-Kwick section):
+- OR-32: Verifier A checks 100% of verdict-card, Section 1B pillar and
+  Gate 0 inputs (mandatory_checked of mandatory_total in B12a); everything
+  else stays a materiality sample with coverage stated honestly.
 
 ## WORDS
 - "done" for a stage = full report written AND valid YAML block emitted
@@ -99,11 +153,30 @@ Do not upgrade a stage's model without editing its agent file.
   apt-get install -y -qq; redirect verbose PDF-extraction output. The
   collect_to_repo.py collector runs on the operator's machine, out of
   session; in-session it appears only as collect_to_repo.py --push-again.
+  Exception: /step1 runs it with --dry-run on the operator's desktop.
+- Sparse checkout (operator ruling 2026-10-03): a pipeline session first runs
+  tools/sparse_session.sh runs/<folder> [more folders]. It keeps everything
+  outside runs/, runs/_template/, every run's session-cost.md and
+  manifest.yaml, and the named run folders, so the tree is about 80 MB, not
+  4.8 GB. Add a folder the same way when a session needs it;
+  tools/sparse_session.sh --off restores the full tree. Never run git stash or
+  git reset --hard over a full checkout.
+- Run tools/dry_check.sh before merging any PR that touches .claude/,
+  prompts/, frameworks/ or tools/ (operator ruling 2026-10-03).
+- Stale-checkout guard (operator ruling 2026-10-04): /run-pipeline, /step1,
+  /fttcp, /finalize and /run-quarterly start with `git fetch origin main` and
+  `git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+  A non-empty diff or a failed fetch stops the command before it reads any
+  framework file. The session-start hook syncs only on the web, so on a local
+  checkout this guard is the only check.
 - Any session that commits a framework or prompt amendment must end by
   opening a PR to main the same day. Run outputs and framework amendments
   go in SEPARATE commits so recovery stays surgical.
 - Framework/prompt amendments and run outputs travel on SEPARATE branches
   and PRs; an amendment never rides a run PR.
+- Any PR that changes frameworks/, .claude/skills/section-1b/ or an operator
+  ruling also updates claude-web/PROJECT_INSTRUCTIONS.md (the claude.ai
+  project instructions), or says in the PR description why not.
 
 ## FERRY AND COMMIT HYGIENE (both sides; team workflow v2)
 - Hash by default. Every report a command produces that involves a commit
@@ -162,11 +235,16 @@ weigh, never anchored evidence.
                  FTTCP v2.3, Quarterly v1.4, AR v1.3, plus
                  success_catalogue.md (Rule I; operator fills, 0 of 4
                  names, not yet enforced) (Keerti
-                 maintains; stage 11 reads at run time; amendments here
-                 propagate with zero pipeline edits), plus
+                 maintains; stage 11 reads the section-1b skill, so an
+                 amendment here reaches stage 11 only when the matching
+                 .claude/skills/section-1b/references chunk is regenerated
+                 in the same commit), plus
                  Downstream_Source_Discovery_Protocol_v1_0.md (source
                  registry for downstream signal candidates; Role 5.5
                  verifies against it in claude.ai)
+- claude-web/PROJECT_INSTRUCTIONS.md   repo copy of the claude.ai project
+                 instructions (v4.1); the operator pastes it into the
+                 project settings and keeps the two in sync
 - runs/<ticker>-<date>/   one folder per run, see runs/_template
 - companies/<TICKER>.md   durable per-company memory, written at /finalize,
                  read as COMPANY MEMORY by /run-pipeline stage 0 and /fttcp
@@ -194,8 +272,11 @@ The framework grew shield-first: verify everything, then value. Inverted by
 operator ruling. A SPEAR PASS runs FIRST, on live web, by Claude web, before
 any pipeline machinery. Heavy pipeline runs only on a SPEAR HIT or an explicit
 operator override. The spear hands the pipeline its priority verification
-targets, the load-bearing facts. Claude Code never runs a spear pass: this
-container has no live web access.
+targets, the load-bearing facts. Claude Code does not run the four-step
+spear below. Operator ruling 2026-09-05: the /step1 intake, run by Claude
+Code with live web and grounded in the corpus it collects, replaces the web
+spear. It writes "Spear: OVERRIDE <date> (operator standing ruling
+2026-09-05: Step-1 intake replaces the web spear)", which satisfies the gate.
 
 The four steps:
 - POND. Live-web opportunity size in numbers. How large is the market the
@@ -210,8 +291,8 @@ Gate rule. /run-pipeline and /fttcp on a new name require a line in
 companies/<TICKER>.md, above the Mental Model block, in one of two forms:
 - Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]
 - Spear: OVERRIDE YYYY-MM-DD (operator)
-If neither line exists, STOP. Direct the operator to run the spear pass with
-Claude web first. The pipeline never runs a new name shield-first.
+If neither line exists, STOP. Direct the operator to run /step1, or the spear
+pass with Claude web, first. The pipeline never runs a new name shield-first.
 
 The load-bearing facts named in the Spear line are the run's FIRST
 verification priority. Stage 0 carries them; every later stage checks them
@@ -228,12 +309,17 @@ an unsigned model.
 
 ## TEAM WORKFLOW — Claude Code and Claude web
 Claude Code reads the heavy corpus once (PDFs, ARs, transcripts) and holds
-the repo. It has NO live web access. Claude web (claude.ai) does live
+the repo. Its live web is limited to WebSearch and WebFetch in /step1 and
+stages 8 and 9; a failed search marks the stage partial, and nothing is
+filled from memory. Claude web (claude.ai) does live
 verification, cross-checks, tracker and Notion writes. It must NOT re-read
 corpus documents. It asks Claude Code via operator-ferried extraction
 prompts (quote-then-comment, NOT DISCLOSED allowed, filename+date
 verification mandatory). Filed documents beat inference. Every claim
-carries its evidence tier. The pipeline produces payloads. claude.ai
+carries its evidence tier. The pipeline produces payloads. One approved
+exception (operator ruling 2026-10-03): /run-quarterly writes Notion
+in-session, only after the operator approves the printed payload in that
+run, and never writes Decision Status. Otherwise claude.ai
 executes writes. Each document is paid for once.
 The claude.ai project carries a parallel operating manual at
 project-instruction level (team_workflow_project_instructions);

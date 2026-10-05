@@ -42,10 +42,17 @@ Fragility: FRAGILE.
 - 2026-08-25: FLAG-CASH ruled GROWTH-INDUCED — carried from Phase 1 synthesis on the full CRISIL 01-Jun-2026 rationale (A+/Stable upgrade, Liquidity Strong, WC stretch tied to two named resolving events, FY27 normalisation expected; audited sub-1.0x DSCR reconciled as SEBI-format ratio). Falsifier: debtor days fail to fall toward 100 by Q4FY27, or the 6m-1yr receivables bucket grows in any FY27 quarter.
 - 2026-08-25: Amendment 17 ruling — CONVERTER for BOTH pipe lines (India + NPC). Steel is the quoted input (74.7% of standalone revenue), fixed-price-tender/spread pricing, no formulation IP; CRISIL confirms input-cost rises post-tender cannot be passed on.
 - 2026-08-25: Sector cap ruled 20x (SHYAMMETL precedent; no dedicated Steel/Line-pipe row exists in the Section 1B cap table). Second ad hoc steel ruling; logged under open action "add Steel row". Manifest sector_cap_row "Pharma / CDMO" is a collect_to_repo v3 mis-pick, overridden.
+- 2026-10-04 OR-14 RE-DERIVATION (operator ruling 2026-10-04; maint/oct-2026-corpus-and-or14). Recorded verdict CONCERN (runs/maninds-2026-08-21/outputs/blocks/B08-promoter.yaml). Ruling: stands at Small (2-3%).
+  - INTEGRITY: SEBI order of 29 Sep 2025 (misstatement FY15-21, non-consolidation of Merino Shelters, unapproved RPTs, fund diversion; 2-yr ban stayed by SAT 10 Oct 2025) [SECONDARY] media summary; primary order to be verified by Claude web; NFRA 5-year ban on the FY16-17 audit partner; 5-6 SEBI actions 2014-2025. The ledger cannot offset them.
+  - STRUCTURE: live Supreme Court dispute between two Mansukhani promoter branches (AR Note 34(d) p.160).
+  - STRUCTURE-PENDING: Rs97.68cr loan from promoter-controlled Limitless Contracting, no rate or tenor disclosed (AR Note 36 p.232-233). Resolving question: arm's-length rate, unsecured? Answer source: FY26 AR Note 36 or Reg 23 half-yearly RPT filing.
+  - Non-driving: 65 lakh promoter shares pledged to SBI for the company's own FX loan (AR p.150-151).
+  - Ledger 3/4: built [COUNTERPARTY] (CRISIL RR 01-Jun-2026: incorporated 1988, SAW pipes from 1995, 11.75 lakh TPA); capital raised vs deployed [COUNTERPARTY] (same RR: NPC Rs1,000cr funded USD70m debt + USD32m equity); skin [FILED] (promoter warrants 25 lakh at Rs183.50, 25% paid). Contrarian: NOT FOUND (NPC closed 21-May-2026, no delivery filed).
+  - Re-engage triggers, ranked: (1) SAT final order quashes or narrows the 29-Sep-2025 SEBI order without a fund-diversion finding [SAT and SEBI order sites; Reg 30]; (2) FY26 AR Note 36 shows the Limitless balance and interest falling, terms disclosed [FY26 AR]; (3) promoter pledge released after the SBI FX loan is repaid [BSE quarterly shareholding pattern; SAST disclosure]; (4) MCA s.206(5) compounding closed [AR secretarial audit].
 
 ## PROMOTER OVERRIDE RULING
 FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality upgrade).
-- SEBI order = within-hold option, resolved by the SAT final order. Operator probabilities: P(quash) = 15%, P(narrowed) = 45%, P(upheld) = 40%. Supreme Court tail sits beyond the hold.
+- SEBI order ([SECONDARY] media summary; primary order to be verified by Claude web) = within-hold option, resolved by the SAT final order. Operator probabilities: P(quash) = 15%, P(narrowed) = 45%, P(upheld) = 40%. Supreme Court tail sits beyond the hold.
 - Governance held CONCERN; full CONCERN loading in the RRM spine until the SAT order.
 - Limitless loan is a thesis-breaker: if the FY26 AR Note 36 does NOT show the balance and accrued interest falling, the thesis breaks.
 - Position capped at Small while any governance item is open.
@@ -63,7 +70,7 @@ FLAG-PROMOTER CONCERN acknowledged. Override for coverage only (not a quality up
 - Standalone India order book below ~Rs2,500cr = kill on variable 1. Q1FY27 concall (12-Aug-2026, now in corpus) discloses the split: consolidated Rs3,600cr = India ~Rs2,200-2,300cr + NPC remainder. THE INDIA STANDALONE BOOK IS ALREADY BELOW THE ~Rs2,500cr KILL LINE (Q4FY26 call held Rs3,000cr; the split was not disclosed then). This is a LIVE kill-line breach for /fttcp Role 3 to weigh; India utilisation 50-60%, FY27 guided ~Rs5,000cr incl ~Rs1,500cr Saudi (India standalone ~Rs3,500cr).
 - WC normalisation first test: Q2FY27 balance sheet (~Nov-2026). Debtor days must fall toward 100 (FY26 ~128) and GCA toward 200 (FY26 stretch); the 6m-1yr receivables bucket must not grow. Failure flips FLAG-CASH back to STRUCTURAL.
 - Limitless Contracting (Note 36) FY26 movement: balance (Rs97.68cr FY25) and accrued interest must fall in the FY26 AR. If not, thesis-breaker per the promoter override.
-- SAT final order on the 29-Sep-2025 SEBI matter: outcome resolves the within-hold governance option (quash 15% / narrowed 45% / upheld 40%). MCA Section 206(5) compounding outcome and the Mansukhani Supreme Court dispute also monitored.
+- SAT final order on the 29-Sep-2025 SEBI matter ([SECONDARY] media summary; primary order to be verified by Claude web): outcome resolves the within-hold governance option (quash 15% / narrowed 45% / upheld 40%). MCA Section 206(5) compounding outcome and the Mansukhani Supreme Court dispute also monitored.
 - Capex ramp: Jammu/Dammam commissioning against Mar-2027 (company) vs Sep-2027 (CRISIL); a further slip is a red on variable 2.
 - Steel spread: consolidated EBITDA margin sustaining >= 13% (FY26 delivered 13% consol / 14% standalone).
 - NPC mature-revenue / margin: watch against the peak-year caveat (Role 3); a CY25-as-peak read pressures the base Rs2,800cr FY29 assumption.

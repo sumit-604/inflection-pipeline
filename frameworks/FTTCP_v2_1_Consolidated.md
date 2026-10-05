@@ -2,7 +2,7 @@
 
 *Companion to Role 1 (Valuation), Role 2 (Investment Thesis), Role 3 (Devil's Advocate), Role 4 (Quarterly Results Review), Role 5 (Concall Analysis), and Role 6 (Annual Report Deep Dive). Every preceding protocol is backward-looking by construction — they measure what HAS happened. FTTCP is the only protocol that explicitly tests whether forward catalysts exist for the transitions that drive shareholder returns. It is the bridge between historical analysis and the forward investment decision, and it runs BEFORE valuation.*
 
-*Version 2.1 | 19 August 2026 | Dhruva Research. This single document replaces the v1.2 file, both v1.3 lineages, and the v2.0 file in full. Do not use any prior file alongside this one. v2.1 unions the tracker-enforcement v1.3 lineage into v2.0: the Signal Gate rule is hardened to require Role 5.5's Step 4 HARD GATE to have passed — signals physically written to the live Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs as proof of write — and Master Project Prompt cross-references move to v3.6. Everything v2.0 carried (PART A with Step 2E, PART B Modules B1-B8, the Category-Break Override) is preserved unchanged. The v1.2/v1.3 protocol is preserved here in full as PART A (Forward Transition Proof, Steps 0 through 6, the scored verdict system, the Kernex principle, the lender transition set, the monitoring triggers, Step 2E Management Intent-and-Action Ledger, and, reconciled in from the 11-August v1.3 lineage, the Category-Break Override in the Pillar 1 Integration section, the Signal Gate rule, and the Role 5.5 pipeline position). Version 2.0 adds PART B, the Financial Normalization Engine: eight modules (B1 through B8), each producing a named output that Role 1 consumes, closed by a consolidated FTTCP Output Sheet. Version 2.0 also adds the cyclical margin rule for scenario margins on flagged sectors. See the version history for the full v1.0 to v1.3 lineage and the v2.0 changes. `[v2.0: adds PART B Financial Normalization Engine (B1-B8) and the cyclical margin rule — Damodaran integration, operator directive 13-Aug-2026]`*
+*Version 2.3 (filename keeps the v2_1 stem) | first consolidated as v2.1 19 August 2026 | Dhruva Research. This single document replaces the v1.2 file, both v1.3 lineages, and the v2.0 file in full. Do not use any prior file alongside this one. v2.1 unions the tracker-enforcement v1.3 lineage into v2.0: the Signal Gate rule is hardened to require Role 5.5's Step 4 HARD GATE to have passed — signals physically written to the live Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs as proof of write — and Master Project Prompt cross-references moved to v3.6 at that date (the live Master is v3.7; see line 11). Everything v2.0 carried (PART A with Step 2E, PART B Modules B1-B8, the Category-Break Override) is preserved unchanged. The v1.2/v1.3 protocol is preserved here in full as PART A (Forward Transition Proof, Steps 0 through 6, the scored verdict system, the Kernex principle, the lender transition set, the monitoring triggers, Step 2E Management Intent-and-Action Ledger, and, reconciled in from the 11-August v1.3 lineage, the Category-Break Override in the Pillar 1 Integration section, the Signal Gate rule, and the Role 5.5 pipeline position). Version 2.0 adds PART B, the Financial Normalization Engine: eight modules (B1 through B8), each producing a named output that Role 1 consumes, closed by a consolidated FTTCP Output Sheet. Version 2.0 also adds the cyclical margin rule for scenario margins on flagged sectors. See the version history for the full v1.0 to v1.3 lineage and the v2.0 changes. `[v2.0: adds PART B Financial Normalization Engine (B1-B8) and the cyclical margin rule — Damodaran integration, operator directive 13-Aug-2026]`*
 
 *Amended v1.3 (12 July 2026): adds Step 2E, the Management Intent-and-Action Ledger, a governed cross-check against over-conservatism; see Step 2E and the version history.*
 
@@ -29,11 +29,11 @@ The transition test as a backward-looking filter is necessary but insufficient. 
 
 **FTTCP is a PRE-VALUATION DISCIPLINE GATE, not a post-valuation synthesis.** The enforced sequence (v2.0 architecture):
 
-**Gate 0 + Emerging Moat scan → Role 4 (Results Review, filing numbers) → Role 5 (Concall Analysis, primary transcript) → Role 5.5 (Downstream Signal Identification, defined in Master Project Prompt v3.6) → Debt Capacity Assessment v1.0 → FTTCP v2.1 (this protocol, PART A transition proof then PART B normalization) → Market-Implied Assumptions v1.0 → Role 1 (Valuation) → Role 2 (Thesis) → Role 3 (Devil's Advocate) → Notion save.**
+**Gate 0 + Emerging Moat scan → Role 4 (Results Review, filing numbers) → Role 5 (Concall Analysis, primary transcript) → Role 5.5 (Downstream Signal Identification, defined in Master Project Prompt v3.7) → Debt Capacity Assessment v1.0 → FTTCP v2.3 (this protocol, PART A transition proof then PART B normalization) → Market-Implied Assumptions v1.0 → Role 1 (Valuation) → Role 2 (Thesis) → Role 3 (Devil's Advocate) → Notion save.**
 
 Role 5.5 (Downstream Signal Identification) precedes the Debt Capacity Assessment and FTTCP because downstream signals are the leading indicators of catalyst firing; forward catalyst analysis in Step 2 must reference identified signals rather than reconstruct them. The Debt Capacity Assessment runs immediately before FTTCP because Part B Module B7 (Post-Deleveraging Earnings Picture) consumes its output block (current debt vs capacity, headroom, coverage trend, verdict). Market-Implied Assumptions runs immediately after FTTCP and before Role 1, because Role 1 consumes the FTTCP Part B output sheet and the market-implied block together.
 
-**Signal Gate rule (v1.3 addition, carried into v2.0; hardened in v2.1):** Role 5.5 (Downstream Signal Identification, per Master Project Prompt v3.6) must precede FTTCP, and its Step 4 HARD GATE must have passed: signals physically written to the Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs presented as proof of write. FTTCP does not accept described-but-unwritten signals. Step 2 (Forward Catalyst Analysis) must reference identified Downstream Signals for each transition where an appropriate signal exists. Signals with Monthly or Event-driven cadence feed the 3-6 month window (Revenue, Margin, Cash transitions); Quarterly-cadence signals feed the 12-month window (ROCE transition). A catalyst that cannot be anchored to any Downstream Signal is graded as evidence-thin and its magnitude assessment is capped at MODERATE. If no downstream signals were identifiable at Role 5.5 for this company (i.e., zero external verification exists), FTTCP proceeds but the composite score is capped at DEEP WATCH pending signal identification.
+**Signal Gate rule (v1.3 addition, carried into v2.0; hardened in v2.1):** Role 5.5 (Downstream Signal Identification, per Master Project Prompt v3.7) must precede FTTCP, and its Step 4 HARD GATE must have passed: signals physically written to the Downstream Signal Tracker (data source `926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f`) with row URLs presented as proof of write. FTTCP does not accept described-but-unwritten signals. Step 2 (Forward Catalyst Analysis) must reference identified Downstream Signals for each transition where an appropriate signal exists. Signals with Monthly or Event-driven cadence feed the 3-6 month window (Revenue, Margin, Cash transitions); Quarterly-cadence signals feed the 12-month window (ROCE transition). A catalyst that cannot be anchored to any Downstream Signal is graded as evidence-thin and its magnitude assessment is capped at MODERATE. If no downstream signals were identifiable at Role 5.5 for this company (i.e., zero external verification exists), FTTCP proceeds but the composite score is capped at DEEP WATCH pending signal identification.
 
 Role 1 Pillar 1 cannot be computed without the FTTCP ROCE forward verdict (see PILLAR 1 INTEGRATION below) — the sequencing is structural, not procedural. The Black Rose case is the canonical demonstration: five destination PE iterations were needed when FTTCP ran last; running it first produces the correct answer on the first pass.
 
@@ -45,7 +45,7 @@ Trigger FTTCP with one of:
 - At any quarterly refresh where 3+ monitoring triggers have fired
 - Pasting a recent quarterly result + concall with the request to assess forward thesis
 
-When triggered, you MUST execute the protocol below in full sequence. Do not produce a final FTTCP verdict before completing every step — especially Step 2C, which forces probability assessment with evidence.
+Run the steps in order. The FTTCP verdict comes after every step is complete, including the Step 2C probability table.
 
 **Concall Gate rule:** Role 5 on the LATEST concall must precede FTTCP — management commentary on catalysts is a core input, and it must come from the actual transcript, never a pipeline synthesis. If no actual transcript exists, FTTCP runs with that limitation flagged explicitly and confidence materially reduced; do not fabricate forward catalysts from MD&A or presentation narrative.
 
@@ -101,7 +101,7 @@ Before framing ANY analysis with position-action language, ALWAYS verify current
 
 | Required input | Available? | Confidence impact if missing |
 |---|---|---|
-| Latest concall transcript (actual transcript, not Gemini-synthesised) | Yes/No | If missing: FTTCP confidence drops materially; flag prominently |
+| Latest concall transcript (actual transcript, not a pipeline synthesis) | Yes/No | If missing: FTTCP confidence drops materially; flag prominently |
 | Latest quarterly result filing (full notes, not just headlines) | Yes/No | If missing: cannot assess leading indicators |
 | Last 3 quarterly results filings (trajectory) | Yes/No | If missing: cannot assess catalyst momentum |
 | Latest investor presentation | Yes/No | Lower priority but helpful |
@@ -456,7 +456,7 @@ For businesses with material BOO/Ind AS 116 finance-lease components, do NOT app
 
 ### Sector Cap and the Category-Break Override (v1.3 addition, carried into v2.0)
 
-The sector cap in Section 1B of the Master Project Prompt (v3.6 onward, where the destination-PE math level implements it with rows G2/G3) is the absolute ceiling on destination PE under normal conditions. The Category-Break Override is the narrow, evidence-heavy mechanism by which the sector cap can be raised for a company that is establishing a genuinely new category — not merely growing fast within an existing one.
+The sector cap in Section 1B of the Master Project Prompt (v3.6 onward, now v3.7 with the Section 1B layer set to v3.10, where the destination-PE math level implements it with rows G2/G3) is the absolute ceiling on destination PE under normal conditions. The Category-Break Override is the narrow, evidence-heavy mechanism by which the sector cap can be raised for a company that is establishing a genuinely new category — not merely growing fast within an existing one.
 
 **The distinction that motivates the override.** A company operating inside an established sector, however excellent, sits under the sector cap because the market has already learned how to value the sector. The cap embeds the sector's structural ceiling on capital intensity, cyclicality, cash conversion, and competitive dynamics. But when a company is the first-mover in a new category — Bloom-Energy-hotbox economics for Mtar in India, an exclusive Vertiv-Nvidia GB200 liquid-cooling partnership for Aeroflex, a molecular-glue CDMO capability for Sai — the sector reference itself is stale. The historical sector cap is priced against businesses that do not have this position. Applying it mechanically to the category-break case understates fair value.
 
@@ -481,7 +481,7 @@ Every override invocation must cite THREE independent primary sources of documen
 - Capex commissioning timeline (audited AR CWIP note, exchange announcement, or contractor disclosure that establishes a dated commissioning path)
 - Competitor absence (independent — cross-check via exports data, RBI/DGCI&S/customs sources, or independent industry report — never inferred solely from the company's own narrative)
 
-Second-tier sources (rating agency, industry association, sector-focused independent research) may substitute for the competitor-absence source when direct verification is impossible, but not for either of the first two. Management concalls and investor presentations count as ZERO sources for override purposes; they cannot be one of the three.
+Second-tier sources (rating agency, industry association, sector-focused independent research) may substitute for the competitor-absence source when direct verification is impossible, but not for either of the first two, and only where the substitute ranks 1-3 under Downstream_Source_Discovery_Protocol_v1_0.md Part 3 (operator ruling OR-20, 2026-10-04). Management concalls and investor presentations count as ZERO sources for override purposes; they cannot be one of the three.
 
 **Magnitude cap: +40% maximum above the sector cap, no exceptions.**
 
@@ -495,7 +495,7 @@ The category-break-adjusted cap = min(Sector Cap × 1.40, 45x absolute ceiling r
 | Cables / Industrial products | 25x | 35x | reserved |
 | EPC / Civil construction | 20x | 28x | reserved |
 
-The override is applied to the sector cap step of the Four-Pillar Summary Calculation (Section 1B row G in v3.5, materialised as rows G2/G3). The Raw × 1.25 UA multiplier is applied FIRST; the override then raises the cap against which the UA-adjusted raw PE is compared. Ordering: **Final Destination PE = min( Raw × UA_multiplier, Sector Cap × Override_multiplier_if_qualified )**, with the whole expression floored at zero and capped at 45x.
+The override is applied to the sector cap step of the Four-Pillar Summary Calculation (Section 1B row G, materialised as rows G2/G3 since Master v3.5). The Raw × 1.25 UA multiplier is applied FIRST; the override then raises the cap against which the UA-adjusted raw PE is compared. Ordering: **Final Destination PE = min( Raw × UA_multiplier, Sector Cap × Override_multiplier_if_qualified )**, with the whole expression floored at zero and capped at 45x.
 
 **Sunset clause: 4 quarters, no automatic renewal.**
 
@@ -549,7 +549,7 @@ ROCE expansion has historically been the single most powerful re-rating driver i
 
 Capital-heavy caveat — the pattern is muted but real: Power Mech FY17-22 ROCE 18-22% oscillating, PE 8x → 15x; KNR 10x → 18x; PNC 9x → 16x; KEC 12x → 22x. For capital-heavy businesses ROCE oscillates within a ~5-point band because new capex deployment temporarily depresses it; the re-rating is ~2x rather than 3x.
 
-**ENDPOINT-BIAS ANNOTATION (v1.2):** endpoint multiples in these tables reflect FY21-22 peak-cycle conditions. For planning purposes, use the LOWER BOUND of the 1.5-2.5x re-rating estimate. The +1x/+2x re-rating optionality premium sizing already reflects this conservatism and is unchanged.
+**ENDPOINT-BIAS ANNOTATION (v1.2):** endpoint multiples in these tables reflect FY21-22 peak-cycle conditions. For planning, the lower bound (1.5x) of the 1.5-2.5x re-rating estimate is the BEAR reading; the base carries the most evidenced point in 1.5-2.5x, with the observation that separates the readings named (Section 1B v3.10 Amendment 26.3; operator ruling OR-22, 2026-10-04). The +1x/+2x re-rating optionality premium sizing already reflects this conservatism and is unchanged.
 
 ## STEP 6 — SAVE AND ROLL FORWARD
 
@@ -557,15 +557,15 @@ Capital-heavy caveat — the pattern is muted but real: Power Mech FY17-22 ROCE 
 
 The complete analysis goes into the Notion company page as a new section titled "FTTCP — [Date]": backward baseline (Step 1E), per-transition catalyst tables (Step 2B), forward scorecard with scores (Step 3), composite score and verdict with cap state (Step 4), monitoring triggers (Step 5), and the Pillar 1 handoff line ("ROCE verdict: ___ → Pillar 1 ROCE: ___%; recovery credited via: ___"). New entries are added each run; old entries are never deleted — they are the audit trail of how forward expectations evolved.
 
-### 6B. Update Decision Status if the FTTCP verdict differs
+### 6B. Flag a Decision Status change if the FTTCP verdict implies one
 
-If the verdict implies a Decision Status change, update the row property in the Notion COMPANIES MASTER database immediately, and prepend a date-prefixed entry to Key Notes.
+If the verdict implies a Decision Status change, flag it and put the proposed change, with a date-prefixed Key Notes entry, in the Notion payload. The operator decides. No stage writes Decision Status (CLAUDE.md: a flag leaves the decision human; Section 1B v3.9 Appendix B5: a Decision Status change is operator-only).
 
 ### 6C. Quarterly review cycle
 
 After every quarterly result + concall cycle: Q result → Role 4 → Role 5 → FTTCP refresh → (Roles 1-3 refresh if any pillar input changed) → Update Notion. Mandatory every quarter for HELD positions; after each result for WATCHLIST and DEEP WATCH; annually or on trigger-fire for AVOID.
 
-## METHODOLOGICAL DISCIPLINE — RULES THAT MUST NEVER BE VIOLATED
+## METHODOLOGICAL DISCIPLINE (checklist; each rule is defined in the step it cites and this list adds none)
 
 1. **No catalyst counts as a catalyst.** Write "NONE FOUND" when accurate. Don't fabricate catalysts to fill the table.
 2. **Sector tailwinds are not company catalysts.** Company-specific differential share capture is required.
@@ -607,7 +607,7 @@ Role 4 (Results) → Role 5 (Concall) → Role 5.5 (Downstream Signal Identifica
               ↓
        Debt Capacity Assessment v1.0
               ↓
-       Role 7 (FTTCP v2.1)  ←— this protocol
+       Role 7 (FTTCP v2.3)  ←— this protocol
          PART A transition proof → PART B normalization engine
               ↓
        Market-Implied Assumptions v1.0
@@ -678,7 +678,7 @@ Cross-check the funding channel against the Debt Capacity Assessment verdict: a 
 
 A business does not earn a growth premium until it earns more than its cost of capital. Growth below the required return destroys value and must never be paid for.
 
-- **Minimum ROCE requirement.** This is the required return r the valuation will use. Where the RRM-derived r has already been computed, use it. Where r is not yet available at the FTTCP stage, use the standing default of **13.5% for micro and small caps** (operator-confirmed default, Gate E, 13-Aug-2026). State which was used.
+- **Minimum ROCE requirement.** This is the required return r the valuation will use. Where the RRM-derived r has already been computed, use it. Where r is not yet available at the FTTCP stage, use the standing default of **13.5% for micro and small caps** (operator-confirmed default, Gate E, 13-Aug-2026; reconfirmed as operator ruling OR-21, 2026-10-04). This B2 default is separate from the RRM base r (small/micro 14%); where the RRM r is computed it governs. State which was used.
 - **Forward ROCE projection.** Project ROCE forward three years from the transition evidence gathered in Part A (the ROCE forward verdict, the catalyst tables, and any normalization the pillars will apply). Show the path year by year.
 - **The crossover.** State whether projected ROCE exceeds the minimum requirement and, if so, in which fiscal year it crosses. Before the crossover year the business is growing below its cost of capital and no growth premium is eligible. From the crossover year it is compounding value.
 

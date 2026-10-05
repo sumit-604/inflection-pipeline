@@ -21,9 +21,7 @@ complete, never to reach a verdict.
 
 ## AUTONOMY CONTRACT (the point of the command)
 
-- Ask the operator no questions. The two interactive pauses in the normal
-  pipeline are SUPPRESSED here and replaced by standing defaults:
-  - PEER SELECTION never pauses. Claude picks the peers and records why.
+- Ask the operator no questions. The one interactive pause in the normal pipeline (the stage-0 EMPTY-FOLDER CONFIRMATION) is SUPPRESSED here and replaced by a standing default. Peer selection is Claude's call, recorded with reasons.
   - The Phase 1 EMPTY-FOLDER CONFIRMATION never pauses. The standing answer is
     "proceed with the gaps"; every absent document type is recorded in
     B00.input_gaps and the run degrades per the orchestrator DEGRADATION MAP.
@@ -34,6 +32,15 @@ complete, never to reach a verdict.
   decision is the operator's at Halt 1.
 
 ## ENVIRONMENT
+
+CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
+`git fetch origin main`, then
+`git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+If the diff is not empty, print
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+and STOP: "Checkout is behind or ahead of origin/main in framework files;
+pull or commit before running." If the fetch fails, STOP with the same line
+plus " (fetch failed)". This is a mechanical halt, not a quality halt.
 
 Claude Code desktop has live web (WebSearch/WebFetch) in this setup. Steps B and
 C use it. If web is unavailable at run time, degrade: build the business read
@@ -84,8 +91,7 @@ so and take the closest structural comps. Do not ask the operator to confirm.
 
 ## D. PICK THE SECTOR CAP ROW (do not trust the collector)
 
-Read the Section 1B Sector Cap Table in
-`frameworks/Master_Project_Prompt_v3_6.md` and choose the row that matches the
+Read the sector cap table in the section-1b skill chunk 05 (`.claude/skills/section-1b/references/05-sector-cap.md`) and choose the row that matches the
 business from Step B. The collector's auto-picker is unreliable (it defaults to
 "Pharma / CDMO"); you will correct the manifest in Step F. State the chosen row
 and its cap.
@@ -161,7 +167,7 @@ Keep the whole intake on one run branch `run/<ticker>-<YYYY-MM-DD>`: the corpus,
 the brief, companies/<TICKER>.md, and the Phase 1 outputs. Commit the corpus and
 Phase 1 outputs as separate commits (corpus first, then "phase 1 (evidence):
 <ticker> <date>"), each report ending with its commit hash and `git log -1
---stat` per FERRY AND COMMIT HYGIENE. Push the branch. `gh` is not installed;
+--stat` per FERRY AND COMMIT HYGIENE. Push the branch. If `gh` is not installed or not signed in,
 print the `https://github.com/sumit-604/inflection-pipeline/pull/new/run/<ticker>-<YYYY-MM-DD>`
 link for the operator to open the PR. Then print the Halt 1 message exactly as
 run-pipeline.md step 7 specifies (dossier path, the three operator decisions, the

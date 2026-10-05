@@ -1,6 +1,6 @@
 # SECTION 1B AMENDMENTS — FOUR-PILLAR EXIT MULTIPLE FRAMEWORK v3.3
 
-> **ACTIVE — not a superseded draft.** This file is the base amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11. The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.5.1 Reconciliation, v3.6 Amendments, v3.7 Amendments, v3.8 Amendments); where they overlap, the later layer governs.
+> **ACTIVE — not a superseded draft.** This file is the base amendment layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11. The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.5.1 Reconciliation, v3.6, v3.7, v3.8, v3.9 and v3.10 Amendments); where they overlap, the later layer governs.
 
 *Framework review conducted 02-Jul-2026 (Fable 5). Amendments adopted by Keerti; Amendment on premium scaling (original point 4) REJECTED with rationale recorded in Appendix A. Companion change: FTTCP v1.2 single-credit rule (Section 6 below).*
 
@@ -16,6 +16,8 @@
 - REPLACE both with: **"Exit PE is governed solely by the Section 1B Four-Pillar Framework. The Sector Cap Table is the only ceiling. No other exit PE assumption is permitted anywhere in the analysis."**
 
 ---
+
+> **PARTLY SUPERSEDED.** Section 1B v3.9 Amendment 24 and operator ruling OR-2 (2026-09-15): the Hurdle Ratio is a feasibility check. Its PASS / CONDITIONAL / STOP band is computed and shown; it caps no verdict. The table below is kept for history.
 
 ## AMENDMENT 2 — 25% CAGR Feasibility Check (replaces the binary STOP rule AND the fixed 1.3x PE-gap check)
 
@@ -35,7 +37,7 @@ Pass threshold: HR ≥ 1.953 (which is 1.25³, i.e., 25% price CAGR over 3 years
 | HR(Base) < 1.953 but HR(Bull) ≥ 1.953 | CONDITIONAL — proceed, but flag "growth-dependent with de-rating headwind"; verdict capped at WATCHLIST / BUY-ON-DIPS; no BUY NOW |
 | HR(Bull EPS CAGR) < 1.953 | STOP — overvalued; 25% CAGR is infeasible even on bull-case earnings |
 
-Conservative-bias note: Bull EPS CAGR may only be used in this check if management delivery track record is Good or Excellent (consistent with existing Section 2A bull-case rules). If track record is Mixed or Poor, the Bull row of this check uses Base EPS CAGR + 5% maximum.
+Track-record note (v3.10 Amendment 26.4; operator ruling OR-27, 2026-10-04): Bull EPS CAGR enters this check only if the Role 5 credibility grade over the trailing four quarters is A or B. If C or D, the Bull row uses Base EPS CAGR + 5% maximum.
 
 ---
 
@@ -61,12 +63,14 @@ Conservative-bias note: Bull EPS CAGR may only be used in this check if manageme
 
 **Change:**
 - ROCE recovery may be credited in **Pillar 1 (midpoint smoothing) OR the Strategic Premium — never both.**
-- Default: credit it in Pillar 1. The Strategic Premium route is permitted only when trajectory smoothing was NOT applied (e.g., hard evidence exists but the +4 trajectory-adjustment threshold was not met).
+- Default: credit it in Pillar 1. The Strategic Premium route is permitted only when trajectory smoothing was NOT applied (e.g., the FTTCP ROCE verdict is STAGNANT or FIRING, so no forward uplift entered Pillar 1; FTTCP Pillar 1 Integration governs).
 - The Section 1B worksheet must state explicitly which route was used: "ROCE recovery credited via: [Pillar 1 midpoint / Strategic Premium / not credited]."
 - Growth Premium interaction: if the primary catalyst driving the EM/catalyst premium is the same capex commissioning that justifies midpoint smoothing, this is permitted (the premiums measure different things — earnings visibility vs capital efficiency) but must be flagged in the worksheet as "shared catalyst" so Role 3 can stress-test the single point of failure.
 - FTTCP v1.1 Section 8 (Pace worked example) is annotated: the +1x ROCE re-rating strategic premium in that example is superseded; under v1.2 Pace credits recovery via Pillar 1 only. This log entry constitutes FTTCP v1.2.
 
 ---
+
+> **PARTLY SUPERSEDED.** The 24x cap in this amendment is superseded by Section 1B v3.6 Amendment 11 (cap 30x with the elite extension above 33% ROCE). The formula, floor and rounding rules stand.
 
 ## AMENDMENT 5 — Continuous Pillar 1 Formula (replaces the ROCE band table)
 
@@ -109,14 +113,14 @@ Examples: 12x → 11-13x; 20x → 18.5-21.5x; 37x → 34-39.5x (upper bound stil
 
 - No growth offset applies to the Asset-Quality Multiplier (loan growth cannot offset bad underwriting — it compounds it).
 - P/B (theoretical P/B = ROE ÷ CoE) remains the PRIMARY valuation method for lenders; the Section 1B destination PE becomes the SECONDARY cross-check.
-- Pillar 1 for lenders uses ROE bands in place of ROCE (same formula: 0.5 × ROE + 7.5, floor 9x, cap 24x), since ROCE is not meaningful for leveraged financials.
+- Pillar 1 for lenders uses ROE in place of ROCE in the same continuous formula (v3.6 Amendment 11: 0.5 × ROE + 7.5 up to 33%, then 24 + 0.3 × (ROE − 33), floor 9x, cap 30x; operator ruling OR-28, 2026-10-04; the old 24x cap is superseded), since ROCE is not meaningful for leveraged financials.
 - FTTCP Transition 3 (cash conversion) for lenders is likewise read as asset-quality trajectory (credit costs, GNPA, collection efficiency), not CFO/PAT.
 
 ---
 
 ## AMENDMENT 8 — Sector Cap Table Additions
 
-New rows covering the active universe (proposals — adjust caps if you disagree):
+New rows covering the active universe (adopted 02-Jul-2026):
 
 | Sector | Maximum Exit PE |
 |---|---|
@@ -125,6 +129,8 @@ New rows covering the active universe (proposals — adjust caps if you disagree
 | EV charging / energy transition equipment | 28x |
 | City gas distribution | 22x |
 | Mining / mineral exploration | 20x |
+| Steel: value-added stainless / specialty (durable pricing) [operator ruling OR-13, 2026-10-03] | 25x |
+| Steel: commodity (long and flat carbon steel, ferro-alloys, integrated, cyclical) [operator ruling OR-13, 2026-10-03] | 20x |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
 
 ---
@@ -187,7 +193,7 @@ Tier B exists because discovered-quality names structurally do not offer 25% ent
 
 At the RRM formula (RRM = 1 + (13.5% − r) × 0.12, bounded ×0.70 to ×1.60; Master v3.3 Role 1 RRM Dual-Track Derivation), add:
 
-The term (13.5 − r) is in PERCENTAGE POINTS: r = 16% gives (13.5 − 16) = −2.5, not −0.025. The bounds confirm this reading — under the percentage-point interpretation, r at the 9%/18% limits produces RRM of 1.54 and 0.46 (floored to 0.70), mapping exactly to the stated ×0.70–×1.60 bounds; under a decimal reading RRM never leaves 1.00±0.005 and the bounds would be meaningless. All RRM computations use the percentage-point reading.
+The term (13.5 − r) is in PERCENTAGE POINTS: r = 16% gives (13.5 − 16) = −2.5, not −0.025. The bounds confirm this reading — under the percentage-point interpretation, r at the 9%/18% limits produces RRM of 1.54 and 0.46 (floored to 0.70), consistent with the stated ×0.70–×1.60 bounds; under a decimal reading RRM never leaves 1.00±0.005 and the bounds would be meaningless. All RRM computations use the percentage-point reading.
 
 ---
 

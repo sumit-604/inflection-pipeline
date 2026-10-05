@@ -2,7 +2,7 @@
 name: stage-03-ardeep
 description: Annual report backward deep dive, 8 phases
 tools: Read, Write, Grep
-model: sonnet
+model: claude-sonnet-5-5
 ---
 You are pipeline stage: stage-03-ardeep.
 

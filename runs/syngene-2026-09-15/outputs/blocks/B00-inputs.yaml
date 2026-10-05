@@ -1,0 +1,80 @@
+stage: B00-inputs
+company: SYNGENE
+run_date: 2026-09-15
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+spear_gate: "PASS. companies/SYNGENE.md carries the line: Spear OVERRIDE 2026-09-15 (operator standing ruling 2026-09-05, Step-1 intake replaces the web spear)."
+first_verification_priority:
+  - "LBF1 Guidance drift and H2 arithmetic: FY27 guidance 'broadly flat' (Q4FY26 call 30-Apr-2026) became 'single-digit decline' (Q1FY27 call 30-Jul-2026); margins held at mid-20s after a 12% Q1FY27."
+  - "LBF2 Zoetis exposure: peak revenue share of the 10-year Librela deal ('up to $500 million', Jul-2022), the 'nearly $50 million' one-client impact, residual delivery obligations, any take-or-pay, compensation or impairment."
+  - "LBF3 Capital not yet earning: CWIP Rs 1,046 cr at Mar-2026 vs net block Rs 3,000 cr (screener Data_Sheet); Bayview capitalisation timing; FY28 depreciation step-up."
+  - "LBF4 Research-services attrition (78% of Q1FY27 sales) vs anchored dedicated-centre contracts (BMS to 2035, Amgen, Baxter)."
+company_memory:
+  - companies/SYNGENE.md
+  - runs/syngene-2026-09-15/step1-business-brief.md
+input_gaps:
+  - "peer-concalls: PARTIAL. 6 transcripts. ANTHEM 4 (Nov-25, Feb-26, May-26, Jul-26). SAILIFE 1 (Aug-26). PPLPHARMA 1 (call dated 30-Jul-2026 = Q1FY27; page 1 also names Q1 FY26 as the comparison period). The BSE copies of the SAILIFE and PPLPHARMA Nov-25, Feb-26 and May-26 transcripts are 1-page covering letters, and the company-site links 404. Stage 6 coverage for SAILIFE and PPLPHARMA rests on one current call each."
+  - "shareholding: SECONDARY. inputs/shareholding/ holds the screener quarterly shareholding table (Jun-2024 to Jun-2026) as text, not the BSE XBRL shareholding-pattern filing. Use for trend only; confirm against a filed pattern before any UA qualifier ruling. The AR FY26 carries Biocon's 52.41% holding as a filed figure."
+  - "screening: the collect_to_repo v3 empty-CSV defect IS present. Profit_Loss.csv, Balance_Sheet.csv, Cash_Flow.csv and Quarters.csv are empty formula shells for the subject (screener-*) and all three peers. All usable screening data is in <prefix>-Data_Sheet.csv (subject prefix 'screener-')."
+  - "announcements: four SAST disclosures (2026-02-17 and 2026-04-10 Reg 29(1); 2026-04-15 and 2026-07-22 Reg 29(2)) are scanned images with no text layer. Their extracted .txt files are empty. Content NOT READ."
+  - "announcements: the BSE attachment for the 2026-04-29 Appointment of Statutory Auditor filing was byte-identical to the FY26 results board outcome; the duplicate was dropped. Auditor-appointment detail must come from the FY26 AR or AGM material."
+  - "rating: PRESENT as HTML plus extracted text (CRISIL 11-Sep-2026 full rationale), not PDF. Older CRISIL (Jun-2025, Nov-2024) and ICRA (Aug-2024, Oct-2025, Nov-2025) rationales sit in inputs/other/older-ratings/ (preserved, never consumed); the three ICRA files are page shells with little text."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "prospectus: not expected. Listed Aug-2015 (listed_date 2015-08-11); absence is not a gap."
+  - "concalls: 4 transcripts held; the 3 most recent (Jan-26 Q3FY26, Apr-26 Q4FY26, Jul-26 Q1FY27) are the primary set. Nov-25 (Q2FY26) is an older comparator."
+  - "results: 4 held; the 3 most recent (Q1FY27, FY26 audited, Q3FY26) are primary; Q2FY26 is an older comparator."
+  - "annual-report: 2 held (FY26 404p primary, FY25 331p comparator), one more than the contract 0-1. AR amounts are in INR million unless stated."
+  - "PDF text: every input PDF is pre-extracted to page-marked text under runs/syngene-2026-09-15/work/extracted/<folder>/<file>.txt. '===== PAGE n =====' markers carry the PDF page number, not the printed folio. Anchor to the PDF filename and page."
+  - "mandate: subject market cap Rs 15,446 cr (screener, 2026-09-15) sits above the small/micro-cap mandate. Run at operator request. Recorded, not a gap."
+inventory:
+  prospectus: {count: 0, status: "NOT EXPECTED (long-listed)"}
+  annual-report:
+    count: 2
+    status: PRESENT
+    files: [inputs/annual-report/Annual_Report_2026.pdf, inputs/annual-report/Annual_Report_2025.pdf]
+  results:
+    count: 4
+    status: PRESENT
+    files:
+      - inputs/results/2026-07-29_Q1FY27_unaudited_results.pdf
+      - inputs/results/2026-04-29_FY26_audited_results_board-outcome.pdf
+      - inputs/results/2026-01-22_Q3FY26_unaudited_results.pdf
+      - inputs/results/2025-11-05_Q2FY26_unaudited_results.pdf
+  rating:
+    count: 1
+    status: PRESENT
+    files: [inputs/rating/2026-09-11_CRISIL_rating-rationale_AA+stable.txt, inputs/rating/2026-09-11_CRISIL_rating-rationale_AA+stable.html]
+  concalls:
+    count: 4
+    status: PRESENT
+    quarter_map:
+      - {file: inputs/concalls/Concall_Nov_2025_Transcript.pdf, quarter: Q2FY26, call_date: 2025-11-06}
+      - {file: inputs/concalls/Concall_Jan_2026_Transcript.pdf, quarter: Q3FY26, call_date: 2026-01-23}
+      - {file: inputs/concalls/Concall_Apr_2026_Transcript.pdf, quarter: Q4FY26, call_date: 2026-04-30}
+      - {file: inputs/concalls/Concall_Jul_2026_Transcript.pdf, quarter: Q1FY27, call_date: 2026-07-30}
+  peer-concalls:
+    count: 6
+    status: PARTIAL
+    coverage: {ANTHEM: 4, SAILIFE: 1, PPLPHARMA: 1}
+  announcements:
+    count: 39
+    status: PRESENT
+    note: "Reg 30 filings 2025-09-27 to 2026-08-24: results press releases, management changes, auditor resignation at material subsidiary SSSL, tax litigation updates, renewable power SPV investments, subsidiary liquidation, exchange fine, rumour clarification, postal ballot and AGM outcomes, SAST (scanned)."
+  shareholding: {count: 1, status: SECONDARY}
+  research: {count: 0, status: ABSENT}
+  screening: {count: 24, status: "PRESENT (Data_Sheet only populated)"}
+  presentation:
+    count: 3
+    status: PRESENT
+    files: [inputs/presentation/2026-07-29_investor-presentation_Q1FY27.pdf, inputs/presentation/2026-04-30_investor-presentation_Q4FY26.pdf, inputs/presentation/2025-12-17_investor-presentation.pdf]
+  other: {count: 6, status: "PRESERVED (older ratings)"}
+freshness_pairs:
+  - {pair: RESULTS_TO_CONCALL, trigger_doc: inputs/results/2026-07-29_Q1FY27_unaudited_results.pdf, mate_expected: "Q1FY27 concall transcript (inputs/concalls/Concall_Jul_2026_Transcript.pdf, 30-Jul-2026)", status: PASS, missing_doc: ""}
+  - {pair: RATING_BULLETIN_TO_RATIONALE, trigger_doc: inputs/rating/2026-09-11_CRISIL_rating-rationale_AA+stable.txt, mate_expected: "full rating rationale", status: PASS, missing_doc: ""}
+  - {pair: SEBI_ORDER_TO_ORDER_TEXT, trigger_doc: "none found; the only penalty filing is the NSE/BSE fine for NRC composition, letters enclosed in inputs/announcements/2026-01-22_board-comments-on-exchange-fine.pdf", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: AR_TO_LATEST_AUDITED_ANNUAL_RESULTS, trigger_doc: inputs/results/2026-04-29_FY26_audited_results_board-outcome.pdf, mate_expected: "FY26 annual report (inputs/annual-report/Annual_Report_2026.pdf)", status: PASS, missing_doc: ""}
+freshness_verdict: FRESHNESS PAIRS OK
+empty_folder_confirmation: "SUPPRESSED by the /step1 autonomy contract; standing answer is proceed with the gaps."
+corpus_commit: d4142117deb2a2a54c044ec71c323de4b66ce2ac
+flags: []
+analyst_note: ""

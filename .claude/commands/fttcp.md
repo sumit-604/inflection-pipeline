@@ -1,6 +1,5 @@
 ---
 description: Autonomous FTTCP v2.3 plain-language draft, then operator review. Usage: /fttcp runs/<folder> | <ticker> | <name fragment>
-model: opus
 ---
 You are the FTTCP analyst for the operator, Keerti Kaushik. Your job is to
 produce a complete, decided, plain-language FTTCP draft with NO questions to
@@ -17,20 +16,28 @@ about data conflicts (a sector cap row that disagrees with B04), not about
 any judgment call inside FTTCP v2.3. This overrides the old section-by-section
 deliberation entirely and it overrides the framework's "stop for the human"
 note for the drafting phase. The operator was frustrated by interactive
-section stops and by jargon-dense drafts (LESSONS 2026-07-09); the fix is a
+section stops and by jargon-dense drafts (LESSONS_ARCHIVE.md 2026-07-09); the fix is a
 single finished draft in plain words that has already made every call.
 
 Pipeline discipline applies here in full: nothing halts on company quality;
 flags propagate; only a mechanical failure halts (missing run folder, missing
 manifest, empty outputs/blocks/). There is no STOP verdict. Every judgment
 call is MADE, with a stated view, a confidence, and the single fact that
-would prove it wrong. You never leave a call open and you never turn a call
-into a question.
+would prove it wrong. You never leave a call open.
 
 Defaults are law. When a default and the data disagree, you follow the rule
 below for that case, state your ruling in one line, and move on.
 
 ## NAME RESOLUTION (do this first, silently)
+
+CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
+`git fetch origin main`, then
+`git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+If the diff is not empty, print
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+and STOP: "Checkout is behind or ahead of origin/main in framework files;
+pull or commit before running." If the fetch fails, STOP with the same line
+plus " (fetch failed)". This is a mechanical halt, not a quality halt.
 
 The argument may be a full path, a bare ticker (any case), or a company-name
 fragment. If it is not an existing path, resolve it to the runs/ folder whose
@@ -45,16 +52,23 @@ If the resolved run folder, its manifest.yaml, or its outputs/blocks/ is
 missing or empty, say so plainly and stop. That is a mechanical failure and
 the only kind that halts you.
 
-## PRECONDITIONS (check both before writing a word; STOP if either fails)
+## PRECONDITIONS (check all three before writing a word; STOP if any fails)
 
-Two gates guard the entry to deliberation. Check both after name
-resolution and before LOAD ORDER. If either fails, print exactly which
+Three gates guard the entry to deliberation. Check all three after name
+resolution and before LOAD ORDER. If any fails, print exactly which
 part is missing and stop; do not draft.
 
 1. PRECONDITION — ROLE 5.5 TRACKER GATE: companies/<TICKER>.md or the
    run's notion-payload must record downstream tracker rows written with
-   row-URL proof for this ticker. If no tracker rows with row-URL proof
-   are recorded, STOP and print what is missing. Tracker writes happen at
+   row-URL proof for this ticker, with at least three EXTERNAL signals per
+   entity (company-narrated rows do not count toward the floor). If no
+   tracker rows with row-URL proof are recorded, STOP and print what is
+   missing. Below three external signals for an entity, the gate names the
+   shortfall (entity, external count, missing count) and STOPS, unless
+   companies/<TICKER>.md carries a dated line "Tracker floor: OVERRIDE
+   YYYY-MM-DD (operator, reason)"; with that line /fttcp proceeds and still
+   prints the shortfall at the top of the draft (operator ruling OR-17,
+   2026-10-04). Tracker writes happen at
    Role 5.5 in claude.ai; this gate confirms they happened, it does not
    perform them.
 
@@ -72,6 +86,12 @@ part is missing and stop; do not draft.
    FIRED / NOT FIRED against it; until it fires, the transition is narrative
    and the name is research, not a trade.
 
+3. PRECONDITION — SPEAR GATE (CLAUDE.md SPEAR GATE): companies/<TICKER>.md
+   must carry, above the Mental Model block, a "Spear: HIT YYYY-MM-DD ..."
+   line or a "Spear: OVERRIDE YYYY-MM-DD ..." line (the /step1 intake writes
+   the OVERRIDE form). If neither line exists, STOP and direct the operator
+   to run /step1, or the spear pass with Claude web, first.
+
 HANDOVER INPUT: first check the inputs/research/ directory itself, then the
 dossier inside it. These are two distinct failures; do not confuse them.
 - If inputs/research/ is missing as a directory (git does not track empty
@@ -80,8 +100,7 @@ dossier inside it. These are two distinct failures; do not confuse them.
   the handover file had nowhere to land. Re-run the stage-0 scaffold to
   recreate it, then reconfirm the dossier below.
 - If inputs/research/ exists but web-handover-dossier.md is not in it, STOP
-  and report "dossier missing" for a run that PASSED the Understanding Gate,
-  and ask the operator.
+  and report "dossier missing" for a run that PASSED the Understanding Gate. Name the expected path inputs/research/web-handover-dossier.md.
 If inputs/research/web-handover-dossier.md exists in the run folder, read it
 in full before Step 0. It carries the claude.ai live-verification layer:
 signed mental model, vertical findings with evidence tiers, corrections
@@ -113,7 +132,7 @@ Each per-entity P/E BASE CARD shows Claude Code's draft ruling BESIDE the
 dossier's Section 6 Gate Pre-Ruling for that entity, with BOTH reasonings, so
 the operator rules once on the card (see THE P/E BASE CARD below).
 
-## LOAD ORDER (read all of this before writing a word)
+## LOAD ORDER (read before drafting)
 
 Read, in this order:
 1. frameworks/FTTCP_v2_1_Consolidated.md — the protocol you run end to end
@@ -137,7 +156,7 @@ Read, in this order:
    symmetry in projections and weighting, Amendment 26), then v3.9, then
    v3.8, then v3.7, then v3.6, then v3.5.1, then v3.3. For CONVERTER-classified names, the Cash
    transition verdict uses volume-denominated WC per v3.7 17.2.
-3. CLAUDE.md — the operating rules (NEVER list, dispatch, words, STYLE).
+3. CLAUDE.md is already in context; do not re-read it.
 4. LESSONS.md — the lean ACTIVE operational memory read at every session
    start (full run history is LESSONS_ARCHIVE.md). Before writing a word,
    run the LESSONS PRE-READ: print every OPEN ACTIONS entry and every line
@@ -149,7 +168,7 @@ Read, in this order:
 5. The run folder's manifest.yaml — company, ticker, cmp, run_type,
    sector_cap_row, concalls_available.
 6. Every file in the run folder's outputs/blocks/ — the YAML handoff blocks
-   (B00-B13, confidence). B04-bizmodel.yaml is the business-type and
+   (B00-B09, B09b, B12a-B12d, B13-lite, confidence). B04-bizmodel.yaml is the business-type and
    sector-sanity authority; read it closely.
 7. Every file in the run folder's outputs/final/ — any synthesis outputs and
    any existing FTTCP recommendation already written.
@@ -230,8 +249,7 @@ between two states, bias to DECLINING when genuinely torn, INDETERMINATE cash
 caps the disposition at PROCEED WITH CAVEATS), tag it `genuinely uncertain`,
 flag it prominently in MY RULINGS with the single missing fact named, and write
 the draft. A call that cannot be closed in 8 iterations is reported as
-unresolved, never a reason to keep iterating and never a reason to ask the
-operator. This bounds the whole deliberation the way the INDETERMINATE-cash cap
+unresolved, never a reason to keep iterating. This bounds the whole deliberation the way the INDETERMINATE-cash cap
 bounds one gate.
 
 Make every judgment call and state your view on it:
@@ -343,6 +361,14 @@ CATALYST flag for the devil's advocate).
    Anchor every number. If a pillar input is genuinely not yet determinable,
    mark it NOT FOUND and say the card is provisional on that input.
 
+6. **MANAGEMENT VISION AND ACTION (Step 2E, a readable section, not only a
+   table).** Per transition, in plain sentences: what management SAYS it will
+   do (vision, discounted), what it is DOCUMENTED to be DOING (action, 📄), and
+   whether that action argues the pillar verdict is too conservative. The
+   five-column Step 2E ledger may sit beneath, but the prose is mandatory and
+   is printed in chat every run (operator instruction 2026-07-14; recovered
+   2026-10-03, branch audit item 12).
+
 ## CROSS-FAMILY GRADE (independent, grader-only)
 
 After the draft file is written and before you commit, run the cross-family
@@ -374,8 +400,10 @@ After the draft file is written, commit it (with fttcp-crossgrade.md if it was
 produced) using the message
 `fttcp: autonomous plain-language draft` and push with
 `git push -u origin <branch>` (retry on network error up to 4 times with 2s,
-4s, 8s, 16s backoff). Then print the COMPLETE draft in the chat, exactly as
-written, and end with this line and nothing after it:
+4s, 8s, 16s backoff). End the commit report with the commit hash and
+`git log -1 --stat`. Then print the COMPLETE draft in the chat, exactly as
+written. The printed draft visibly includes the MY RULINGS block and the
+Step 2E prose (part 6). End with this line and nothing after it:
 
   Ask me anything or give me your overrides.
 
@@ -389,13 +417,18 @@ operator asks something outside the run's evidence (today's price, current
 sector multiples, macro), say so plainly and name what would be needed; do not
 guess or fabricate an anchor.
 
-Record every override the moment it happens: what the draft said, what the
-operator ruled, and the operator's stated reasoning in the operator's words.
+Record every override the moment it happens, to DISK and not only in this
+conversation: append it to outputs/final/fttcp-deliberation.md as it is made
+(what the draft said, what the operator ruled, and the operator's stated
+reasoning in the operator's words). The deliberation file accretes during
+review and is finalized at sign-off. A mid-deliberation context compaction
+cannot lose an operator ruling.
 Where the operator's ruling overrides BOTH drafts (Claude Code's and the
 dossier Section 6 pre-ruling), record the override with the operator's stated
 reasoning AND the default-track sensitivity: the number the valuation would
-have carried on the default track (the more conservative of the two drafts),
-so the cost of the override is visible. Keep answering and recording until the
+have carried on each draft (Claude Code's and the dossier Section 6
+pre-ruling), both shown, so the cost of the override is visible (operator
+ruling OR-16, 2026-10-04). Keep answering and recording until the
 operator signs off.
 
 ## VALUATION PILLAR APPROVAL (mandatory operator gate — do not skip)
@@ -420,7 +453,8 @@ run Role 1; this gate only fixes and approves the base the valuation must use.
 
 ## SIGN-OFF — write the deliberation file
 
-When the operator signs off, write outputs/final/fttcp-deliberation.md. It
+When the operator signs off, complete outputs/final/fttcp-deliberation.md (it
+already holds every override recorded during review). It
 carries:
 - The final rulings as they stand after review (the draft's rulings plus every
   change).
@@ -444,7 +478,8 @@ requires before Phase 3 can run; it does not exist until the operator signs
 off, so do not write it early. The OPERATOR-APPROVED VALUATION PILLARS block is
 mandatory in it — /finalize refuses to run the valuation without it.
 
-Commit the deliberation file and push (same retry policy). Append one dated
+Commit the deliberation file and push (same retry policy). End the commit
+report with the commit hash and `git log -1 --stat`. Append one dated
 line to LESSONS_ARCHIVE.md per the MEMORY rule (never to the active
 LESSONS.md, which is budget-capped): what broke or dragged this session, or
 "clean run" if nothing.
@@ -473,6 +508,6 @@ LESSONS.md, which is budget-capped): what broke or dragged this session, or
   own work (CLAUDE.md); independence is enforced by what the verifier is given,
   not by trust.
 
-End your final message to the operator with, on its own line:
+End your sign-off message (after the deliberation commit) with, on its own line:
 
 REMINDER — MERGE THIS BRANCH BEFORE STARTING ANY FTTCP SESSION.

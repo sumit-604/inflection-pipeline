@@ -1,0 +1,59 @@
+stage: B06-peers
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "Only 2 concalls exist since listing (Q4 FY26 29-May-2026, Q1 FY27 30-Jul-2026); the company was unlisted before 08-May-2026. Declared short series (B00-inputs.yaml), not a collection miss."
+  - "The Rs 832 Cr preferential issue (board approved 17-Sep-2026) postdates both available Kissht calls; no Kissht transcript addresses its rationale. Peer evidence (Claim 6) is used as an independent precedent check, not as evidence of Kissht's own stated rationale, which remains absent from the record."
+  - "SBICARD produced no Data_Sheet CSV (screening data exists for POONAWALLA and UGROCAP only); does not affect this stage, which reads concall transcripts only."
+  - "POONAWALLA-Concall_Jan_2026_Transcript.pdf and the _2 cover-letter duplicate are the SAME call (Q3 FY26, held 16-Jan-2026); treated as one call throughout. Effective peer transcripts: 11 (SBICARD 4, POONAWALLA 3, UGROCAP 4)."
+  - "No peer transcript in this container discusses an FLDG/DLG-covered off-book structure comparable to Kissht's; Claim 3 (FLDG cost trend/accounting) is UNVERIFIABLE for structural reasons (no comparable peer disclosure exists), not a search failure."
+flags:
+  - {type: FLAG-COST-OF-BORROWING-TAILWIND-CONTRADICTED, reason: "Kissht cited a system-wide FCNR(B)-driven liquidity easing tailwind on the Q1 FY27 call (Jul-2026). Two peers reporting the identical quarter (SBICARD, POONAWALLA) independently describe cost of borrowing as flat-to-rising, not easing, and neither cites FCNR(B) or a comparable mechanism. Stage 11's margin bridge should treat Kissht's forward cost-of-borrowing improvement as company-specific (rating-upgrade-driven) only, not sector-tailwind-supported."}
+  - {type: FLAG-CAPITAL-RAISE-NO-PEER-PRECEDENT, reason: "Neither Poonawalla's Rs 2,500 Cr QIP (raised at CRAR 16.83%, ~1.8pp above the 15% regulatory minimum, with an explicit ALM-gap rationale) nor Ugro's historical ~18%-CRAR-triggered raises (tied to acquisition/growth funding) resemble Kissht's Rs 832 Cr raise at CRAR 40.2% (2.5x the regulatory minimum) four months post-IPO with no numeric rationale given anywhere in the filed record. Sharpens, does not soften, B05's LBF-4 flag."}
+peers_provided: 11
+verified: []
+partially_verified:
+  - {claim: "Divergence beneath a calm surface: headline unsecured PL delinquency improving while stress concentrates in small-ticket, multi-lender-exposed borrowers", peers: [SBICARD, UGROCAP]}
+  - {claim: "150-DPD write-off point is within a plausible, though not identical, industry range and is not proven to be an outlier extension", peers: [POONAWALLA]}
+contradicted:
+  - {claim: "FY27 cost-of-borrowing improvement is supported by a system-wide FCNR(B)-driven liquidity easing tailwind", contradicting_peer: "SBICARD and POONAWALLA (Q1 FY27 calls, Jul-2026)", quote_anchor: "SBICARD-Concall_Jul_2026_Transcript.txt p.5 ('we expect cost of funds to trend higher in line with market rates'); POONAWALLA-Concall_Jul_2026_Transcript.txt p.16 (cost of borrowing +9bps QoQ, attributed to bond yields/geopolitical environment)"}
+  - {claim: "Rs 832 Cr preferential raise at 40.2% CRAR four months post-IPO reflects a recognised sector pattern among fast-growing NBFC lenders", contradicting_peer: "POONAWALLA and UGROCAP", quote_anchor: "POONAWALLA-Concall_May_2026_Transcript.txt p.14, p.19 (QIP raised at CRAR 16.83%, explicit ALM-gap rationale); UGROCAP-Concall_Nov_2025_Transcript.txt p.9 (raises tied to a modelled ~18% CRAR trigger and acquisition/growth funding, explicit rationale given)"}
+unverifiable:
+  - {claim: "Kissht's FLDG cost trend (reported tripling in FY26) and accounting treatment (opex vs credit cost) mirror a system-wide co-lending/FLDG repricing trend at Poonawalla and Ugro", peers_checked: [POONAWALLA, UGROCAP]}
+  - {claim: "Peers name Kissht, Bajaj, or Chola as specific share-gaining or share-losing competitors in unsecured PL", peers_checked: [SBICARD, POONAWALLA, UGROCAP]}
+peer_coverage_map:
+  - {peer: "SBICARD", quarter: "Q2 FY26 (Oct-2025)", usage: "CITED-ONLY", contribution: "Generic write-off/credit-cost scene-setting; no unique citation beyond what later SBICARD quarters already establish"}
+  - {peer: "SBICARD", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "'Repo-cut benefit mostly absorbed, cost of funds to remain stable' evidence against a continuing easing tailwind (Claim 4); general competitive-intensity framing"}
+  - {peer: "SBICARD", quarter: "Q4 FY26 (May-2026)", usage: "CITED-ONLY", contribution: "Cost of funds 6.4% Q4 context for Claim 4 trend; no new decisive citation"}
+  - {peer: "SBICARD", quarter: "Q1 FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "Southern-India IT-stress exchange corroborating Claim 1 structure; 'cost of funds to trend higher' contradicting Claim 4; geopolitical rate-risk framing peer names that Kissht does not"}
+  - {peer: "POONAWALLA", quarter: "Q3 FY26 (Jan-2026, incl. duplicate)", usage: "SUBSTANTIVE", contribution: "Explicit DPD write-off schedule (180/365/730) for Claim 2; repo-cut/NCD-mix cost-of-borrowing decline context for Claim 4; 'not accelerated write-offs' denial feeding Part 5 hypothesis"}
+  - {peer: "POONAWALLA", quarter: "Q4 FY26 (May-2026)", usage: "SUBSTANTIVE", contribution: "Rs 2,500 Cr QIP with pre/post CRAR and explicit ALM-gap rationale for Claim 6"}
+  - {peer: "POONAWALLA", quarter: "Q1 FY27 (Jul-2026)", usage: "SUBSTANTIVE", contribution: "Cost of borrowing rising QoQ with explicit geopolitical/bond-yield attribution, contradicting Claim 4"}
+  - {peer: "UGROCAP", quarter: "Q2 FY26 (Nov-2025)", usage: "SUBSTANTIVE", contribution: "MSME over-leverage/stress commentary corroborating Claim 1 structure; explicit ~18%-CRAR capital-raise pattern and rationale for Claim 6"}
+  - {peer: "UGROCAP", quarter: "Q3 FY26 (Feb-2026)", usage: "SUBSTANTIVE", contribution: "Co-lending/capital-adequacy accounting mechanics context for Claim 3; realised-vs-unrealised ROA quality framing peer names that Kissht does not"}
+  - {peer: "UGROCAP", quarter: "Q4 FY26 (Apr-2026)", usage: "SUBSTANTIVE", contribution: "GNPA 'denominator effect, not a deterioration' framing feeding Part 5 cross-peer hypothesis; co-lending economics detail for Claim 3"}
+  - {peer: "UGROCAP", quarter: "Q1 FY27 (Aug-2026)", usage: "SUBSTANTIVE", contribution: "Co-lending wind-down evidencing Claim 3's structural non-comparability; general competitive-intensity mention with no names for Claim 5"}
+industry_cross_read:
+  demand: "Steady-to-strong overall across all three peers, each layering at least one specific caution pocket (SBICARD: Southern-India IT-salaried stress; UGROCAP: small-ticket MSME over-leverage) on top of growth commentary, broadly consistent in shape, not axis, with Kissht's own divergence narrative."
+  pricing_inputs: "Cost of borrowing flat-to-rising across SBICARD and POONAWALLA in Q1 FY27, contradicting Kissht's cited system-wide easing tailwind; asset yields stable-to-slightly-up across peers, with no peer describing the FLDG/off-book-mix margin compression Kissht cites for itself."
+  capex_cycle: "MIXED, not an industry-wide race. Poonawalla expanding branches/new lines; Ugro expanding LAP/GROx while deliberately shrinking Prime co-lending; SBICARD not branch-based. Kissht's own slipping LAP branch pace (B05 1C) is a lone-vertical, company-specific matter, not explained by any sector-wide slowdown visible in this peer set."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Geopolitical and rate-volatility risk to cost of funds, explicitly named and monitored by SBICARD and Poonawalla; not named as a qualifier on Kissht's own cost-of-borrowing guidance in either Kissht call."
+  - "Explicit ALM (asset-liability mismatch) gap disclosure with a quantified remediation, disclosed by Poonawalla; no comparable ALM statement in either Kissht call despite the unexplained Rs 832 Cr raise (LBF-4)."
+  - "Explicit separation of realised cash ROA from unrealised/NPV-based co-lending gain, with the latter flagged as not capital-accretive until realised, disclosed by Ugro; Kissht's own utilised-vs-unutilised FLDG income-quality question (B05 LBF-2) is not framed with comparable explicitness on either Kissht call."
+net_narrative_effect: "complicates"
+analyst_note: >
+  Two of six handed-off claims are CONTRADICTED by peer evidence for the identical quarter
+  Kissht made them (cost-of-borrowing tailwind; capital-raise precedent), which is the
+  strongest actionable output of this stage. Both cut against management's framing without
+  alleging any wrongdoing: peers simply report facts (rising funding costs, numerically
+  justified raises at working CRAR levels) that sit uncomfortably next to Kissht's claims.
+  Claim 3 (FLDG) is unverifiable for a structural reason worth carrying forward: none of the
+  three chosen peers runs a directly comparable FLDG-covered off-book book, so this peer set
+  may never be able to triangulate that specific claim regardless of how many future quarters
+  are added. The Part 5 hypothesis (a shared "technicality/denominator" rhetorical reflex
+  across three separate managements facing rising asset-quality ratios) is offered as a
+  pattern to test against a fourth peer or future quarter, not a proven finding.

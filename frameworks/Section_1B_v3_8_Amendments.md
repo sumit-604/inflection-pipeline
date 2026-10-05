@@ -8,7 +8,7 @@
 
 `[v3.8: projection horizon = hold + 1, exit-basis symmetry, Option Resolution Calendar, exit-state pricing for within-hold options, re-dated carry for beyond-hold options, transition dual-display, and a Role 3 standing question — operator directive 23-Aug-2026, arising from the PERMAGNET v3 valuation walkthrough]`
 
-**18.0 Projection horizon = hold + 1 (mandatory).** Every Role 1 Section 2 projection table runs to Year 4 at minimum (Year 5 preferred, consistent with Master v3.6's existing runway language: the Year-3 buyer pays for Years 4 and 5). Year-4 revenue, margin, PAT and EPS are explicit committed rows in every case (bear/base/bull), built from the same fade machinery as Years 1-3 (Amendment 14 fade-to-industry applies; where the fade rule requires an industry growth anchor that the corpus does not hold, the anchor is a NAMED assumption in the table, not a silent one). "NOT PROJECTED" for Year 4 is no longer an acceptable gap in a completed Role 1; it is REWORK.
+**18.0 Projection horizon = hold + 1 (mandatory).** Every Role 1 Section 2 projection table runs to Year 4 at minimum (Year 5 preferred, consistent with the Master's existing runway language (since v3.5): the Year-3 buyer pays for Years 4 and 5). Year-4 revenue, margin, PAT and EPS are explicit committed rows in every case (bear/base/bull), built from the same fade machinery as Years 1-3 (Amendment 14 fade-to-industry applies; where the fade rule requires an industry growth anchor that the corpus does not hold, the anchor is a NAMED assumption in the table, not a silent one). "NOT PROJECTED" for Year 4 is no longer an acceptable gap in a completed Role 1; it is REWORK.
 
 **18.1 Exit-basis symmetry (one basis, both ends).** The exit price at Year N applies the destination PE to the SAME earnings basis the entry used:
 - Entry basis one-year-forward → exit = destination PE × Year N+1 EPS.
@@ -31,7 +31,7 @@ A slice with no nameable resolution event is not an option; it is narrative, and
 
 **18.4 Exit carry for beyond-hold options.** Options classified BEYOND-HOLD remain options at the exit, with two changes from the today-value treatment: (a) PV re-dated from Year N (not from today) to the fructification window; (b) probability stated as CONDITIONAL on what has resolved by Year N (e.g., a full-plan option conditional on the modest phases having delivered) — the conditional probability is an operator input at the gate, defaulting to the unconditional input only where no within-hold dependency exists, with the dependency named either way.
 
-**18.5 Today-value machinery unchanged.** Amendment 18 changes the EXIT construction only. Today's fair value continues to carry option slices as probability-weighted, PV-discounted expected values (they are genuinely unresolved today). Nothing in 18.0-18.4 alters Section 1B pillar math, destination PE derivation, or the entry-zone formula (entry = exit-consistent fair value ÷ 1.25^N, MoS per evidence scale).
+**18.5 Today-value machinery unchanged.** Amendment 18 changes the EXIT construction only. Today's fair value continues to carry option slices as probability-weighted, PV-discounted expected values (they are genuinely unresolved today). Nothing in 18.0-18.4 alters Section 1B pillar math, destination PE derivation, or the entry-zone formula (entry = exit-consistent fair value ÷ (1 + tier hurdle)^N, Tier A 1.25, Tier B 1.20, MoS per evidence scale).
 
 **18.6 Transition display (sunset after 5 names).** For the first five Role 1 runs under this amendment, the Section 4 exit table displays BOTH constructions — static-carry exit (old) and resolution-based exit (new) — with the per-share delta, so the operator sees the systematic effect before the old display retires. The resolution-based exit GOVERNS the verdict from the first run.
 
@@ -64,6 +64,8 @@ The label is a diagnosis of WHERE the return comes from, not a quality grade —
 
 ## AMENDMENT 20 — RELATIVE VALUATION CROSS-CHECK (STEP 1C)
 
+> **SUPERSEDED by Section 1B v3.9 Amendment 20 (reissued 07-Sep-2026), which governs Step 1C in full. Kept for history; do not apply this text.**
+
 `[v3.8 addendum, operator directive 26-Aug-2026, arising from the MANINDS run: the pillar destination PE printed 8.1-12.6x while live listed peers priced the same converter earnings at a ~30x quality cluster. The pillar math was correct on its own terms and sat far below where the market prices the peer set; the framework had no step that forced that gap to be seen and ruled on before the verdict card. Step 1C is that step.]`
 
 **20.0 Placement.** Step 1C runs AFTER the pillar build (the Four-Pillar destination PE and the RRM track) and BEFORE the verdict card. It is a cross-check that can supersede the pillar destination as the governing exit multiple; it does not alter the pillar math, the entry-zone formula, MoS, or the today-value machinery.
@@ -80,7 +82,7 @@ The label is a diagnosis of WHERE the return comes from, not a quality grade —
 
 **20.6 Sector-cap annual review.** The Section 1B sector caps are reviewed annually against live peer medians. A cap more than one step below the live peer median for two consecutive reviews is flagged to the operator for a re-rule; it does not auto-change.
 
-**20.7 What Step 1C does not do.** It does not manufacture a BUY: a relative multiple that lifts the fair value still passes through the FTTCP Hurdle, the upside/downside gate, the entry-conjunction, and every active flag. It changes the exit multiple, not the decision rules.
+**20.7 What Step 1C does not do.** It does not manufacture a BUY: a relative multiple that lifts the fair value still passes through the Section 1B Hurdle Ratio (a feasibility check, OR-2), the upside/downside gate, the entry-conjunction, and every active flag. It changes the exit multiple, not the decision rules.
 
 ---
 

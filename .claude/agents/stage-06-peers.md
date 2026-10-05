@@ -2,7 +2,8 @@
 name: stage-06-peers
 description: Peer concall verification against B05 claims
 tools: Read, Write, Grep
-model: sonnet
+model: claude-sonnet-5-5
+effort: medium
 ---
 You are pipeline stage: stage-06-peers.
 

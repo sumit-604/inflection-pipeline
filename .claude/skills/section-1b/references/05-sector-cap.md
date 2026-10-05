@@ -40,6 +40,7 @@ Sources in force: Master v3.7 §1B Undiscovered Alpha, Sector Reality Cap, Categ
 | Logistics (asset-light) | 25x |
 | Cybersecurity / VAD | 25x |
 | Consulting / Engineering services | 25x |
+| Steel: value-added stainless / specialty (durable pricing) [operator ruling OR-13, 2026-10-03] | 25x |
 | Packaging | 22x |
 | Building materials | 22x |
 | City gas distribution | 22x |
@@ -48,6 +49,7 @@ Sources in force: Master v3.7 §1B Undiscovered Alpha, Sector Reality Cap, Categ
 | Real estate | 20x |
 | Agri processing | 20x |
 | Mining / mineral exploration | 20x |
+| Steel: commodity (long and flat carbon steel, ferro-alloys, integrated, cyclical) [operator ruling OR-13, 2026-10-03] | 20x |
 | Banks / NBFCs / MFIs | 18x (P/B primary; PE is cross-check only) |
 
 Pending ruling: Section 1B v3.9 Appendix C R1 (a blended cap row for infra-plus-platform businesses, for example 35x, raised by the E2E Networks case). Until ruled, classify to an existing row and state the classification.
@@ -84,7 +86,7 @@ If any condition is missing or thin, the override is denied and the sector cap h
 - Customer commitment source (exchange filing, customer's own filing, or contractual document).
 - Capex commissioning source (audited CWIP note, exchange announcement, or contractor disclosure).
 - Competitor-absence source (exports data, RBI/DGCI&S, or independent research; never the target company's narrative).
-- Rating agency, sector association or independent research may substitute for the competitor-absence source only. Management concalls and investor presentations count as ZERO sources.
+- Rating agency, sector association or independent research may substitute for the competitor-absence source only, and only where the substitute ranks 1-3 under the Downstream Source Discovery Protocol Part 3 (OR-20). Management concalls and investor presentations count as ZERO sources.
 
 ### Magnitude, sunset, documentation, stress test
 

@@ -2,7 +2,8 @@
 name: stage-01-gate0
 description: Gate 0 quantitative scorecard, 160 points
 tools: Read, Write, Grep
-model: sonnet
+model: claude-sonnet-5-5
+effort: medium
 ---
 You are pipeline stage: stage-01-gate0.
 

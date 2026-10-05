@@ -2,7 +2,8 @@
 name: stage-13-synthesis
 description: Final narrative, FTTCP verdict, verifier summary, Notion payload
 tools: Read, Write, Grep
-model: opus
+model: claude-opus-5-5
+effort: high
 ---
 You are pipeline stage: stage-13-synthesis.
 

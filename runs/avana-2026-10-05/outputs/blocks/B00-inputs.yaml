@@ -1,0 +1,78 @@
+stage: B00-inputs
+company: AVANA
+company_name: Avana Electrosystems Ltd
+run_date: 2026-10-05
+model: claude-opus-5-5 (orchestrator inline)
+status: complete
+run_mode: NO-CONCALL MODE (manifest concalls_available false; no earnings calls found on screener, NSE or the web)
+listed_date: 2026-01-20   # NSE Emerge SME; RECENTLY-LISTED PRIORITY applies (prospectus mandatory)
+spear_gate: "PASS - Spear: OVERRIDE 2026-10-05 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear), companies/AVANA.md"
+load_bearing_facts:   # first verification priority for every stage (companies/AVANA.md, step1-business-brief.md)
+  - "LBF1 capex delivery: KIADB integrated unit status, capex spent vs RHP plan Rs 1,155.38 lakh, extended KIADB deadline; board guides commercial production by end-Oct 2026"
+  - "LBF2 concentration and receivables: top 5 customers 38.79% (H1 FY26 stub) vs 22.42% (FY25); identity of those customers; FY26 debtor days and receivables ageing"
+  - "LBF3 IPO working-capital use: auditor WC utilisation certificate (re-filed 23-Jun-2026) vs RHP objects; FY26 inventory Rs 14.71 Cr to Rs 22.43 Cr funded by issue money or operations"
+  - "LBF4 FY26 margin bridge: H2 FY26 = FY26 minus H1 stub (Rs 36.28 Cr revenue, Rs 5.61 Cr PAT); does a 19-20% EBITDA margin survive RM share rising 54% to 63% of sales"
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_evidence: "25x per section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md, sector cap table). Business: designs and makes customised control and relay panels (11-400 kV), protection relays and SCADA/substation automation for T&D substations, generation and renewable evacuation; supplies EPC contractors and utilities, does not execute sites (not EPC 20x); renewables are one end market (not EV/energy-transition 28x). Single reportable segment (reply to NSE 23-Jun-2026 item 2). Collector guess 'Pharma / CDMO' rejected."
+reporting_units:
+  annual_report: "INR lakh"
+  prospectus: "INR lakh"
+  results: "INR lakh"
+  screener: "INR Cr"
+  shareholding: "number of shares / %"
+units_line: "All figures in Rs Cr unless the source says otherwise; the source unit is on the face of the document, not in the filename. AR, RHP and results report in INR lakh (100 lakh = 1 Cr); screener reports in INR Cr. Conversion happens once, at stage 10."
+extraction: "Run switched to pre-extracted page-marked .txt (one [page N] marker per page) beside every PDF, tools/extract_pdfs.py; check_extraction.py clean except the two scanned files named below. No OCR route on this Windows host (no tesseract/poppler); scanned PDFs are read as page images with the Read tool."
+corpus_manifest:
+  - {path: inputs/prospectus/AVANA-RHP-2025-12-31.pdf, issuer: Avana Electrosystems Ltd, type: Red Herring Prospectus (NSE Emerge), period: "dated 31-Dec-2025; restated FY23, FY24, FY25 and H1 FY26 (Sep-2025)", folder_match: true, pages: 399, text: ok}
+  - {path: inputs/annual-report/AVANA-AR-FY2025-26-with-AGM-notice.pdf, issuer: Avana Electrosystems Ltd, type: Annual Report FY2025-26 with 16th AGM notice (cover letter to NSE 03-Sep-2026), period: FY2025-26, folder_match: true, pages: 128, text: ok, page_map: "MD&A printed pp57-72 (pdf ~pp68-83); auditor report and financial statements printed pp78-116 (pdf ~pp89-127); PDF page = printed page + ~11"}
+  - {path: inputs/results/AVANA-FY26-H2-audited-results-2026-05-21.pdf, issuer: Avana Electrosystems Ltd, type: Board outcome with audited H2 and FY26 standalone results, period: "H2 FY26 / FY26 (31-Mar-2026)", folder_match: true, pages: 16, text: "SCANNED - only 2/16 pages carry text; read pages as images or use the legible re-filing below"}
+  - {path: inputs/results/AVANA-FY26-results-legible-refiling-2026-06-23.pdf, issuer: Avana Electrosystems Ltd, type: "Reply to NSE clarification re-submitting FY26 results in legible form (same contents as 21-May-2026 filing per company), plus unmodified-opinion declaration and auditor working-capital utilisation certificate", period: "H2 FY26 / FY26", folder_match: "true (copied from announcements/ where the same filing also sits)", pages: 21, text: ok}
+  - {path: inputs/announcements/AVANA-Reply-to-NSE-2026-06-23.pdf, issuer: Avana Electrosystems Ltd, type: Reg 30 reply to NSE clarification, period: 23-Jun-2026, folder_match: true, note: "duplicate of the results re-filing above"}
+  - {path: inputs/announcements/AVANA-Board-outcome-2026-08-19.pdf, issuer: Avana Electrosystems Ltd, type: Board outcome (AGM, WTD re-appointment, KIADB integrated unit update), period: 19-Aug-2026, folder_match: true}
+  - {path: inputs/announcements/AVANA-Board-outcome-2026-04-10.pdf, issuer: Avana Electrosystems Ltd, type: Board outcome (CS appointment), period: 10-Apr-2026, folder_match: true}
+  - {path: inputs/announcements/AVANA-CS-resignation-2026-03-30.pdf, issuer: Avana Electrosystems Ltd, type: Reg 30 CS resignation, period: 30-Mar-2026, folder_match: true}
+  - {path: inputs/announcements/AVANA-Price-movement-clarification-2026-04-11.pdf, issuer: Avana Electrosystems Ltd, type: Reply to NSE price-movement query, period: 11-Apr-2026, folder_match: true}
+  - {path: inputs/announcements/AVANA-Reg30-agreements-2026-02-10.pdf, issuer: Avana Electrosystems Ltd, type: Reg 30 vendor registrations (MPPTCL 400 kV C&R panels; CSPTCL SCADA up to 220 kV), period: 10-Feb-2026, folder_match: true}
+  - {path: inputs/announcements/AVANA-Reg31-4-disclosure-2026-06-15.pdf, issuer: "Avana promoters (filed via NSE)", type: SAST Reg 31(4) annual promoter encumbrance declaration, period: FY26, folder_match: true, text: "SCANNED - 0/4 pages carry text; read as images"}
+  - {path: inputs/announcements/AVANA-AGM-proceedings-2026-09-28.pdf, issuer: Avana Electrosystems Ltd, type: 16th AGM proceedings, period: 28-Sep-2026, folder_match: true}
+  - {path: inputs/announcements/AVANA-Newspaper-AGM-notice-2026-09-05.pdf, issuer: Avana Electrosystems Ltd (newspaper publication), type: newspaper advertisement of AGM notice, period: 05-Sep-2026, folder_match: "MOVED from inputs/annual-report/Annual_Report_2026.pdf (collector misfile)"}
+  - {path: inputs/shareholding/AVANA-SHP-2026-03-31.xml, issuer: Avana Electrosystems Ltd, type: shareholding pattern XBRL (NSE), period: 31-Mar-2026, folder_match: true, note: "promoter and group 73.64%, public 26.36% (NSE API summary); Sep-2026 SHP not yet filed (due by 21-Oct-2026)"}
+  - {path: inputs/peer-concalls/DANISH-Concall_Nov_2025_Transcript.pdf, issuer: Danish Power Ltd, type: earnings call transcript, period: H1 FY26 (Nov-2025), folder_match: true}
+  - {path: inputs/peer-concalls/DANISH-Concall_May_2026_Transcript.pdf, issuer: Danish Power Ltd, type: earnings call transcript, period: "H2 & FY26 (11-May-2026)", folder_match: true}
+  - {path: inputs/peer-concalls/MARINE-Investor-Presentation-2025-10-11.pdf, issuer: Marine Electricals (India) Ltd, type: investor presentation (NOT a transcript), period: Oct-2025, folder_match: "peer disclosure placed in peer-concalls/ because MARINE holds no calls"}
+  - {path: inputs/peer-concalls/SPCL-Investor-Presentation-2024-12-04.pdf, issuer: Shivalic Power Control Ltd, type: investor presentation (NOT a transcript), period: Dec-2024, folder_match: "peer disclosure placed in peer-concalls/ because SPCL holds no calls"}
+  - {path: inputs/screening/screener-Data_Sheet.csv, issuer: screener.in (AVANA), type: screener data sheet, period: "FY20-FY26 annual P&L and balance sheet; quarters blank (SME files half-yearly)", content: populated}
+  - {path: inputs/screening/DANISH-Data_Sheet.csv, issuer: screener.in, type: peer data sheet, content: populated}
+  - {path: inputs/screening/SPCL-Data_Sheet.csv, issuer: screener.in, type: peer data sheet, content: populated}
+  - {path: inputs/screening/MARINE-Data_Sheet.csv, issuer: screener.in, type: peer data sheet, content: populated}
+freshness_pairs:
+  - {pair: RESULTS to CONCALL, trigger_doc: inputs/results/ FY26 audited results, mate_expected: none, status: SKIPPED, missing_doc: "n/a - concalls_available false (declared)"}
+  - {pair: RATING BULLETIN to RATIONALE, trigger_doc: none, mate_expected: none, status: PASS, missing_doc: "n/a - no rating document in corpus (gap recorded separately)"}
+  - {pair: SEBI ORDER to ORDER TEXT, trigger_doc: none found, mate_expected: none, status: PASS, missing_doc: "n/a - no SEBI order referenced in the inventoried filings"}
+  - {pair: AR to LATEST AUDITED ANNUAL RESULTS, trigger_doc: "FY26 audited results (21-May-2026)", mate_expected: FY2025-26 AR, status: PASS, missing_doc: none}
+freshness_verdict: FRESHNESS PAIRS OK
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. -> REPAIRED at /step1: 10 NSE filings pulled from the NSE corporate-announcements API (index=sme) and placed in announcements/; NSE-only SME listing, no BSE code exists."
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. -> REPAIRED: 31-Mar-2026 SHP XBRL from NSE added. Sep-2026 SHP not yet filed."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, DANISH:Profit & Loss, DANISH:Quarters, DANISH:Balance Sheet, DANISH:Cash Flow, DANISH:Customization, SPCL:Profit & Loss, SPCL:Quarters, SPCL:Balance Sheet, SPCL:Cash Flow, SPCL:Customization, MARINE:Profit & Loss, MARINE:Quarters, MARINE:Balance Sheet, MARINE:Cash Flow, MARINE:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. -> Not repairable here (no Excel/LibreOffice); Data_Sheet CSVs carry the raw annual P&L and balance sheet, the cash flow comes from the AR and RHP."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again -> REPAIRED: FY26 audited results (scanned, 21-May-2026) and its legible re-filing (23-Jun-2026) added from NSE. H1 FY26 (Sep-2025) results predate listing; they sit in the RHP restated financials."
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way -> GAP: no credit rating document found; rating/ empty. Stage 10 marks rating_wc_quote unresolved."
+  - "concalls: none held (declared, concalls_available false). NO-CONCALL MODE."
+  - "presentation/: EMPTY. No company investor presentation found on NSE filings since listing."
+  - "research/: EMPTY (no broker notes collected; non-anchored source only)."
+  - "annual reports: only FY2025-26 AR exists as a listed company; FY23-FY25 history comes from the RHP restated financials (pre-IPO private company ARs not in corpus)."
+  - "results: original FY26 results PDF is scanned (2/16 pages carry text); use the legible re-filing in results/ (AVANA-FY26-results-legible-refiling-2026-06-23)."
+  - "announcements/AVANA-Reg31-4-disclosure-2026-06-15.pdf is scanned (0/4 text pages); read as images."
+  - "peer-concalls: transcripts only for DANISH (2). SPCL and MARINE hold no calls; one investor presentation each is placed in peer-concalls/. Stage 6 peer coverage is thin by corpus, not by choice."
+  - "prospectus: RHP dated 31-Dec-2025 held; final prospectus (14-Jan-2026) not collected; RHP carries the same restated financials and objects."
+  - "No listed protection-relay pure play exists; relays (~40% of revenue) have no direct peer."
+document_moves:
+  - "inputs/annual-report/Annual_Report_2026.pdf -> inputs/announcements/AVANA-Newspaper-AGM-notice-2026-09-05.pdf (it is a 3-page newspaper advertisement, not an AR)"
+  - "inputs/annual-report/Annual_Report_2026_2.pdf -> inputs/annual-report/AVANA-AR-FY2025-26-with-AGM-notice.pdf (rename only)"
+empty_folder_confirmation: "SUPPRESSED under /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders: presentation, rating, research, concalls (declared). Repeat in the Halt 1 dossier."
+lessons_preread: "no tagged lessons for this sector/archetype (Cables / Industrial products; Build-to-spec component maker not yet declared)"
+company_memory: companies/AVANA.md
+step1_brief: runs/avana-2026-10-05/step1-business-brief.md
+corpus_commit: f27e5f3d
+flags: []
+analyst_note: "SME listed 20-Jan-2026, so the RHP is the backbone for FY23-FY25 and H1 FY26; the FY26 AR is the only post-listing AR. The legible results re-filing also carries the auditor's IPO working-capital utilisation certificate, which is LBF3's primary source."

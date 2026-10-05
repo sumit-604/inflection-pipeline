@@ -159,7 +159,8 @@ INFLATION = mean6(zs(t10yie), zs(chg(t10yie, 6)), zs(yoy(cpi)), zs(chg(yoy(corec
 LIQUIDITY = mean6(zs(yoy(m2)), zs(logchg(walcl, 6)), -zs(chg(fedfund, 6)), -zs(nfci), -zs(chg(math.log(dxy), 6)), -zs(chg(dfii10, 6)))
 STRESS = mean6(zs(vix), zs(baa10y), zs(stlfsi), zs(epuUS), zs(epuGl), float(na))
 IN_STRESS = mean6(zs(invix), zs(epuIN), zs(logchg(usdinr, 6)), zs(chg(inCall, 6)), zs(inCpiLvl), float(na))   // FPI input not on TradingView
-iipYoY = na(ecIP) ? (na(inIpYY) ? yoy(inIpIdx) : inIpYY) : ecIP
+inIpIdxYoY = yoy(inIpIdx)   // computed every bar (history-dependent), then picked
+iipYoY = na(ecIP) ? (na(inIpYY) ? inIpIdxYoY : inIpYY) : ecIP
 IN_GROWTH = mean6(zs(iipYoY), zs(chg(inCli, 6)), zs(logchg(nifty, 6)), float(na), float(na), float(na))
 // vote: IIP 3m mean > bench, services GDP YoY > bench, credit growth > bench
 iip3   = ta.sma(iipYoY, 3)

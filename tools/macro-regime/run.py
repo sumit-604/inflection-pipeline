@@ -10,6 +10,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from analogues import section as analogue_section
 from model import (ASSETS, BAND, BASE, BASE_REASON, DIAL_INPUTS, LIQ_SHADE,
                    QIDX, STRESS_SHADE, run_all, z)
 
@@ -74,6 +75,7 @@ def main():
                 v = float("nan")
             bits.append(f"{lab} {v:+.2f}" if pd.notna(v) else f"{lab} n/a")
         L.append(f"- {k}: " + "; ".join(bits))
+    L += analogue_section(p, d, r)
     # staleness
     L += ["", "Series ending before the read month:", ""]
     src = (HERE / "data" / "sources.md").read_text().splitlines()

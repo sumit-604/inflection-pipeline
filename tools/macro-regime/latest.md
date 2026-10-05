@@ -20,6 +20,49 @@ Inputs, latest z-score (sign already applied):
 - STRESS: VIX level -0.47; Baa spread level -1.28; St Louis stress index -1.07; EPU US level +0.03; EPU global level n/a
 - IN_STRESS: India VIX level -0.43; EPU India level +1.04; USD/INR 6m log change -0.21; FPI equity 3m sum (inverted) -0.48; India call rate 6m change n/a; India CPI YoY (partial, ends 2025-03) n/a
 
+### Analogues
+
+**REFLATION spells since 1998** (21, median length 3 months). What came next: GOLDILOCKS 10, STAGFLATION 8, DEFLATION 2.
+
+| Start | End | Months | Next regime |
+|---|---|---|---|
+| 1999-08 | 2000-01 | 6 | STAGFLATION |
+| 2002-09 | 2002-09 | 1 | STAGFLATION |
+| 2003-03 | 2003-03 | 1 | GOLDILOCKS |
+| 2003-11 | 2004-06 | 8 | STAGFLATION |
+| 2005-03 | 2005-04 | 2 | GOLDILOCKS |
+| 2005-11 | 2006-08 | 10 | GOLDILOCKS |
+| 2007-06 | 2007-07 | 2 | GOLDILOCKS |
+| 2009-05 | 2010-01 | 9 | STAGFLATION |
+| 2010-12 | 2011-05 | 6 | STAGFLATION |
+| 2013-02 | 2013-04 | 3 | GOLDILOCKS |
+| 2013-12 | 2014-02 | 3 | DEFLATION |
+| 2014-09 | 2014-09 | 1 | GOLDILOCKS |
+| 2016-04 | 2017-04 | 13 | GOLDILOCKS |
+| 2017-11 | 2018-03 | 5 | STAGFLATION |
+| 2019-08 | 2019-08 | 1 | DEFLATION |
+| 2020-01 | 2020-02 | 2 | GOLDILOCKS |
+| 2020-09 | 2021-07 | 11 | STAGFLATION |
+| 2024-02 | 2024-07 | 6 | GOLDILOCKS |
+| 2025-02 | 2025-04 | 3 | STAGFLATION |
+| 2025-10 | 2025-10 | 1 | GOLDILOCKS |
+| 2026-05 | 2026-09 | 5 | ongoing |
+
+**Nearest past months to 2026-09** on the five dials, their 6-month changes, and eight inputs (real yield, curve, copper/gold, Fed funds change, Baa spread, USD/INR, Brent 12m, gold 6m). Distance is root-mean-square in z units; below 1.0 is close.
+
+| Month | Dist | Regime then | Liq | Stress | +6m | +12m | gold 12m | silver 12m | aluminium 12m | zinc 12m | brent 12m | nifty 12m |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2016-11 | 0.8 | REFLATION | TIGHT | NORMAL | GOLDILOCKS | REFLATION | +9% | -0% | +21% | +26% | +32% | +24% |
+| 2013-12 | 0.85 | REFLATION | NEUTRAL | LOW | STAGFLATION | GOLDILOCKS | -1% | -20% | +10% | +10% | -50% | +31% |
+| 2013-06 | 0.97 | GOLDILOCKS | NEUTRAL | LOW | REFLATION | STAGFLATION | +8% | +8% | +1% | +16% | +8% | +30% |
+| 2017-10 | 1.03 | DEFLATION | TIGHT | LOW | STAGFLATION | DEFLATION | -4% | -15% | -5% | -18% | +22% | +0% |
+| 2021-02 | 1.04 | REFLATION | EASING | NORMAL | STAGFLATION | DEFLATION | +10% | -8% | +56% | +32% | +57% | +16% |
+| 2014-09 | 1.05 | REFLATION | NEUTRAL | LOW | DEFLATION | STAGFLATION | -8% | -15% | -20% | -25% | -50% | -0% |
+| 2023-11 | 1.05 | DEFLATION | TIGHT | LOW | REFLATION | DEFLATION | +30% | +21% | +17% | +18% | -9% | +20% |
+| 2007-08 | 1.05 | GOLDILOCKS | TIGHT | NORMAL | STAGFLATION | DEFLATION | +23% | +13% | +10% | -47% | +57% | -2% |
+
+Now, same features (z): G +0.59, I -0.16, L +0.34, S -0.52, IN +0.03, G6 +0.04, I6 +0.41, L6 -0.14, real yield +1.52, curve +0.69, cu/au 6m +3.00, fed funds 6m -0.24, Baa spread -1.28, USD/INR 6m -0.21, Brent 12m +1.50, gold 6m -1.70
+
 Series ending before the read month:
 
 - us_cpi.csv ends 2026-08

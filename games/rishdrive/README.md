@@ -65,6 +65,15 @@ from the jsdelivr CDN.
   frontflip or ⬇ (S) for a backflip. Land with the wheels down for 400
   points per flip (2 flips: 1000). Half a flip is a bad landing. Holding the
   gas through a jump never flips the car by mistake. New badge: Flip master.
+- **Stunts (v10):** in the air, hold ⬆ for a frontflip, ⬇ for a backflip,
+  ⬅ or ➡ for a 360° spin. Holding the key from before the ramp works too.
+  The game finishes each flip before landing, so the car lands on its
+  wheels. Big jumps give double flips. Flip and spin together for a
+  CORKSCREW. A stunt camera shows the car from the side in the air.
+- **More v10 ideas:** a 12 m mega ramp, 4 trampolines, 3 oil slicks, a hunt
+  for the 9 hidden letters R I S H D R I V E (2000 bonus), an air time
+  record, stunt show medals, fireworks at each level up, crowd cheers, a
+  stunt book, and 3 new badges (34 badges).
 - **Stunt Canyon (v9):** 4 decks 6 m up with gaps of 20, 30, 40 and 50 m
   and no road in the gap, plus an 8-bus jump. Hit the ⚡ boost pad and the
   kicker fast; short jumps splash into the river. Fire rings over the gaps.
@@ -101,7 +110,7 @@ from the jsdelivr CDN.
 W or Up: accelerate. S or Down: brake, then reverse. A, D or arrows: steer.
 Space: handbrake. W + S + A or D (arrows too): power drift. N or 🔥: nitro (tap once, it stays on; tap again or brake to stop). C: camera. H: horn. L: night. R: rain.
 Q and E: indicators. O: fog. M: mirror. G and F: gear up and down
-(manual gearbox). P: photo mode. In the air: let go, then ⬆ frontflip or ⬇ backflip. X: wheelie. T: slow motion. K: radio. Esc: menu.
+(manual gearbox). P: photo mode. In the air: ⬆ frontflip, ⬇ backflip, ⬅ ➡ spin. X: wheelie. T: slow motion. K: radio. Esc: menu.
 
 ## Tests
 
@@ -148,3 +157,7 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
 - v9: frontflips and backflips; Stunt Canyon gap jumps (20 to 50 m, 8 buses);
   25 new ideas; Skip buttons; the black city fix after a GPU reset; 31 badges.
   196 regression checks.
+- v10: flips fixed (a key held from before the ramp now flips, and every
+  flip finishes before landing); air spins, corkscrews, stunt camera, mega
+  ramp, trampolines, oil slicks, letter hunt, stunt book, 34 badges.
+  201 regression checks.

@@ -1,0 +1,88 @@
+stage: B05-concall
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "TRANSCRIPT_2 and TRANSCRIPT_3 NOT AVAILABLE: one call only (H2 FY26, 2026-06-01); no cross-quarter test; 2E cannot run"
+  - "H1 FY27 EBITDA, PAT margin, receivables and cash flow NOT FOUND (H1 update 2026-10-05 gives revenue, order book, inflow only)"
+  - "Results scans p03-p19 not re-read in this stage; call figures cross-checked to B03 and operator notes only"
+  - "Capex amount for new plant, FY26 customer table, name of Rs 31 Cr deferred-order customer, billing of that order: NOT FOUND"
+  - "NHEV LOI: NOT FILED on BSE; Tata, Infosys and NHAI roles PENDING LIVE VERIFICATION"
+flags:
+  - {type: LBF-1-GUIDANCE-INCONSISTENT, reason: "Call says 60-80% growth (Rs 112-126 Cr on 70.07, calc) and Rs 120-180 Cr; EBITDA 13-15% was answered to a 2-3 year question, not dated to FY27 (Tr. p6 L250-264; p11 L435-439, L476-480)"}
+  - {type: LBF-1-H1-DELIVERY, reason: "H1 FY27 revenue 52.68 = 43.9% of 120 and 29.3% of 180 (calc); H2 needs 67.3-127.3; H1 doubled 105.4 is below the low end; book 164.25 -> 156 (25-May) -> 159 -> 173, inflow 77; implied 1-Apr book 148.68 (calc)"}
+  - {type: CAPACITY-IRRECONCILABLE, reason: "75-80% utilisation on 70.07 implies ceiling Rs 88-93 Cr; Rs 120 Cr at 90% implies Rs 133 Cr; stated Rs 150-200 Cr; 1,200+ MVA claimed vs 900.36 MVA certified (Tr. p7 L273-277; p12 L488-491; B03)"}
+  - {type: NHEV-NOT-FILED, reason: "Rs 1,600 Cr, 450 stations, 'only our brand is approved', 'LOI already issued' (Tr. p14 L568-582): no BSE filing; Q1 update says only 'continued supplying NHEV' with no value"}
+  - {type: TENDER-SILENCE, reason: "MVVNL bids ~Rs 125 Cr and Torrent ~Rs 100 Cr named on call (Tr. p3 L141-145); no outcome in 27-Jul or 5-Oct updates or any order filing"}
+  - {type: ORDER-FILING-GAP, reason: "Aditya Birla Rs 37 Cr / 119 units in H1 update vs Rs 20.02 Cr / 57 units filed 23-Sep; ~Rs 17 Cr not filed [INFERENCE]; filed orders sum about 59.4 vs inflow 77 (calc)"}
+  - {type: DISCLOSURE-CONDUCT, reason: "Customer names withheld on largest order filings; concentration follow-up promised on call (Tr. p11 L422-423) not delivered; expansion label EHV (call) became '5,000 MVA' (27-Jul)"}
+quarters_analysed: ["H2 FY26 (call 2026-06-01)"]
+triggers:
+  - {priority: 1, name: "Order book to revenue conversion (book 173 Cr at 30-Sep-26)", type: "volume", timeframe: "near", conviction: "M", confirm_signal: "H2 FY27 revenue at or above 67.3 Cr with book above 150 Cr", kill_signal: "H2 below 67.3 Cr or book below 150 Cr with stalled billing"}
+  - {priority: 2, name: "EBITDA margin step to 13-15% via operating leverage and price variation clauses", type: "margin", timeframe: "medium", conviction: "L", confirm_signal: "H1 FY27 EBITDA at or above 12% on operating basis (NOT FOUND today)", kill_signal: "H1 EBITDA below 10%"}
+  - {priority: 3, name: "Recognition of deferred Rs 31 Cr order (25 of 35 sets built)", type: "volume", timeframe: "near", conviction: "M", confirm_signal: "customer named or dispatch filing and receivable collection", kill_signal: "further deferral into FY28"}
+  - {priority: 4, name: "Renewable EPC and Aditya Birla Renewables orders (Rs 37 Cr, 119 units)", type: "volume", timeframe: "near", conviction: "M", confirm_signal: "remaining ~Rs 17 Cr filed and billed in 4-5 months", kill_signal: "order cancellation or site delays repeat"}
+  - {priority: 5, name: "Plant ceiling Rs 150 Cr and new plant on Tijara land", type: "volume", timeframe: "medium", conviction: "L", confirm_signal: "capex amount and build milestones filed; manufacturing start by about Jul-27", kill_signal: "build slips past Jul-27 or a second IPO object change"}
+  - {priority: 6, name: "Utility tenders: MVVNL Rs 125 Cr and Torrent Rs 100 Cr bids", type: "volume", timeframe: "near-medium", conviction: "L", confirm_signal: "any filed award", kill_signal: "loss or continued silence through Q3 FY27"}
+  - {priority: 7, name: "NHEV EV-charging CSS programme (Rs 1,600 Cr claim)", type: "volume", timeframe: "long", conviction: "L", confirm_signal: "LOI filed on BSE with value; first station supplied", kill_signal: "still NOT FILED at FY27-end"}
+  - {priority: 8, name: "Moscow MoU and technology transfer", type: "inorganic", timeframe: "long", conviction: "L", confirm_signal: "signed agreement with value", kill_signal: "no data by FY27-end"}
+guidance:
+  - {item: "FY27 revenue", number: "Rs 120-180 Cr", timeframe: "FY27", stated_in: "H2 FY26 call 2026-06-01, Nitin Gupta, Tr. p6 L262-264"}
+  - {item: "Revenue growth current year", number: "60-80% (conflicts with Rs 120-180 Cr band)", timeframe: "FY27", stated_in: "H2 FY26 call, Nitin Gupta, Tr. p6 L250-259"}
+  - {item: "Revenue growth thereafter", number: "30-50%", timeframe: "FY28 onward", stated_in: "H2 FY26 call, Nitin Gupta, Tr. p7 L259-260"}
+  - {item: "EBITDA margin", number: "13-15% (trying to maintain)", timeframe: "next 2-3 years (question frame), not dated to FY27", stated_in: "H2 FY26 call, Nitin Gupta, Tr. p11 L435-439, L479"}
+  - {item: "PAT margin", number: "9-11%, ~10% average", timeframe: "next 2-3 years", stated_in: "H2 FY26 call, Nitin Gupta, Tr. p11 L479-480"}
+  - {item: "Plant ceiling existing facility", number: "Rs 150 Cr smooth; up to Rs 200 Cr if no customer delays", timeframe: "near", stated_in: "H2 FY26 call, Pradeep Verma, Tr. p7 L273-277"}
+  - {item: "Utilisation", number: "75-80% now; ~90% at Rs 120 Cr+", timeframe: "FY26 / FY27", stated_in: "H2 FY26 call, Nitin Gupta, Tr. p12 L488-491"}
+  - {item: "Expansion timeline", number: "ground work 2-3 months; manufacturing 6 months minimum", timeframe: "from Jun-26", stated_in: "H2 FY26 call, Pradeep Verma, Tr. p7 L284-285"}
+  - {item: "Dividend", number: "none for 1-2 years", timeframe: "FY27-FY28", stated_in: "H2 FY26 call, Nitin Gupta, Tr. p6 L228-233"}
+  - {item: "NHEV programme", number: "Rs 1,600 Cr; 450 stations; 10-15 stations by FY27-end", timeframe: "3-4 years", stated_in: "H2 FY26 call, Pradeep Verma, Tr. p14 L568-584 (LOI NOT FILED)"}
+  - {item: "Order book", number: "Rs 156 Cr at 25-May-26", timeframe: "at call", stated_in: "H2 FY26 call, Pradeep Verma, Tr. p3 L149-151"}
+promise_delivery:
+  delivered: 2
+  partial: 5
+  missed: 2
+  rows:
+    - {promised_in: "H2 FY26 call", promise: "Land identified for expansion ~2.50 lakh sq ft", outcome: "delivered", explanation: "Land bought 3-Jul-26, 20,300 sq m (2.185 lakh sq ft, calc), Rs 8.85 Cr + 1.82 Cr; size 12.6% under"}
+    - {promised_in: "H2 FY26 call", promise: "Healthy order book ~Rs 156 Cr", outcome: "delivered", explanation: "159 at 22-Jul-26, 173 at 30-Sep-26, H1 inflow 77 (BSE filings)"}
+    - {promised_in: "H2 FY26 call", promise: "Rs 31 Cr deferred order plus Rs 3 Cr recognised in FY27", outcome: "partial", explanation: "H1 revenue 52.68 (+90.07%) consistent; billing of the order NOT FOUND"}
+    - {promised_in: "H2 FY26 call", promise: "FY27 revenue Rs 120-180 Cr", outcome: "partial", explanation: "H1 52.68; H2 needs 67.3-127.3; in progress, not scoreable"}
+    - {promised_in: "H2 FY26 call", promise: "Expansion ground work in 2-3 months, manufacturing in 6 months minimum", outcome: "partial", explanation: "land and funding approval only; build 9-10 months from 26-Sep-26 per B03; slipping"}
+    - {promised_in: "H2 FY26 call", promise: "IPO machinery funds for new plant only", outcome: "partial", explanation: "Rs 7 Cr moved from machinery to building (3-Sep board, 26-Sep AGM); machinery nil used to 2-Sep per B03"}
+    - {promised_in: "H2 FY26 call", promise: "NHEV work for 10-15 stations by FY27-end", outcome: "partial", explanation: "only 'continued supplying NHEV' in 27-Jul update, no value; LOI NOT FILED; test date FY27-end"}
+    - {promised_in: "H2 FY26 call", promise: "MVVNL ~Rs 125 Cr and Torrent ~Rs 100 Cr bids to open Jun/Jul", outcome: "missed", explanation: "no outcome reported by 5-Oct-26; silence; no win by 5-Oct inferred from absence of any filing"}
+    - {promised_in: "H2 FY26 call", promise: "Customer concentration note to follow", outcome: "missed", explanation: "no follow-up; AR has no customer table (B03)"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "One call plus four months of filings (under the four-quarter rule): order book and H1 revenue (+90.07%) delivered, 2 delivered / 5 partial / 2 missed, margin and cash delivery untested, guidance and capacity statements internally inconsistent; NO repeated-question test possible with one call"
+peer_questions:
+  - {question: "Do peers cite price variation (IEEMA/LME) clauses on all deliveries beyond 2-3 months, and what share of order book carries them? Management claims 100% pass-through above 3 months", why: "margin claim of 13-15% rests on pass-through (Tr. p8 L326-332)", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "What EBITDA margin range and PAT margin do peers report for distribution and power transformers, and is 13-15% EBITDA / 9-11% PAT plausible for a Rs 120-180 Cr maker?", why: "Guidance is above FY26 operating 9.9%; no bridge given", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "How do peers state capacity and utilisation (MVA basis, revenue per MVA), and what revenue ceiling does a comparable plant support?", why: "Accord says 75-80% utilised at Rs 70 Cr, Rs 150-200 Cr ceiling, 1,200+ MVA vs 900.36 MVA certified", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "Do peers report customer-site delays deferring dispatch (clearance-gated billing) and how large are the revenue deferrals?", why: "Accord attributes FY26 decline to a Rs 31 Cr order deferral (Tr. p5 L200-211)", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "Did peers face transformer oil, copper or CRGO availability or price constraints in FY26, and how do they hedge (15% advance, 3 months fixed)?", why: "Accord cites oil procurement cut and hedging practice (Tr. p10 L400-402; p11 L451-454)", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "Utility tender (state discoms, Torrent) win rates, L1 pricing and time from bid to award for transformers", why: "Accord named Rs 125 Cr MVVNL and Rs 100 Cr Torrent bids with no outcome", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "Are Danish and Voltamp/Transformers & Rectifiers competitors in Gujarat and Maharashtra, and do they use contract manufacturers (Accord says Voltamp once manufactured at its factory)?", why: "competitive claim and reputational claim on a named peer (Tr. p9 L352-354, L365-367)", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "Cost, time and sequence of entering EHV or higher-rating transformers (land, plant, testing, hires) and typical delay from land to first dispatch", why: "Accord says ground work in 2-3 months and manufacturing in 6 months; B03 says 9-10 months build", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "Customer concentration and renewable EPC / developer exposure at peers, including reliance on one large customer", why: "Torrent 35-40% of FY25; six or seven customers 45% of FY26; Rs 31 Cr order about 44% of FY26 revenue (calc)", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "Do peers report working-capital days and receivable days for transformer makers, and how do margins fare as order book grows?", why: "Accord FY26 CFO is a receivable unwind (B03 FLAG-CASH); H1 revenue +90% will rebuild receivables", check_peers: ["Danish Power", "Shilchar Technologies"]}
+  - {question: "Industry demand claims: does any peer cite market growth rate, order inflow growth or capacity additions for distribution and power transformers?", why: "Accord cited no industry growth rate or capacity data; management claims 'healthy momentum' only", check_peers: ["Danish Power", "Shilchar Technologies"]}
+red_flags:
+  - "HIGH: growth % (60-80%) and rupee band (Rs 120-180 Cr) do not reconcile; margin range not dated to FY27"
+  - "HIGH: capacity statements irreconcilable (Rs 88-93 Cr, Rs 133 Cr, Rs 150-200 Cr; 1,200+ vs 900.36 MVA)"
+  - "HIGH: NHEV Rs 1,600 Cr and 'only our brand approved' claimed, LOI NOT FILED"
+  - "MEDIUM: Rs 225 Cr of named tender bids, no outcome through 5-Oct-26"
+  - "MEDIUM: ~Rs 17 Cr of Aditya Birla orders not filed [INFERENCE]"
+  - "MEDIUM: expansion scope relabelled EHV to 5,000 MVA; land 12.6% under call; timeline slipping"
+  - "MEDIUM: customer names withheld; concentration follow-up undelivered"
+  - "LOW: FY26 income arithmetic (70.60 vs 70.36) and segment percentages loose"
+dropped_triggers:
+  - "MVVNL (~Rs 125 Cr) and Torrent (~Rs 100 Cr) bids: absent from 27-Jul and 5-Oct updates, no outcome"
+  - "Toyota / SMC-C Japan two-project bids: absent from later filings (SMCC Construction India approval listed 5-Oct, not shown to be the same entity)"
+  - "NHEV Rs 1,600 Cr value: never repeated in any filing; Q1 update says 'continued supplying' only"
+timeline_slippages:
+  - "Expansion: ground work 2-3 months and manufacturing 6 months minimum (Tr. p7 L284-285) vs board/AGM approval of building spend 3-Sep and 26-Sep and 9-10 month build to about Jul-27 (B03)"
+  - "IPO machinery spend moved to civil work (Rs 7 Cr) by AGM 26-Sep-26"
+analyst_note: "Single-call stage; grade C rests on four months of filings, not four quarters. Read order of weight: (1) LBF-1: guidance has two conflicting forms (60-80% growth = Rs 112-126 Cr vs Rs 120-180 Cr), margin 13-15% was answered to a 2-3 year question, so FY27 margin is not strictly guided. (2) H2 FY27 needs Rs 67.3 Cr for the low end, +28% over H1 52.68; H1 doubled misses it. Book 173 gives 2.57x cover on that need. (3) Order-book bridge implies 1-Apr book 148.68 (calc); filed orders sum about 59.4 vs inflow 77, gap close to the unfiled Aditya Birla balance (37 - 20.02), inference only. (4) FY26 'Rs 31 Cr BESS business' and the Rs 31 Cr deferred order may be the same item; not confirmed. (5) Peer checks must use Danish Power and Shilchar transcripts; Voltamp has none."

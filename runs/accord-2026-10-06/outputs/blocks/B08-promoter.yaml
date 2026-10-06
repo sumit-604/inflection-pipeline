@@ -1,0 +1,66 @@
+stage: B08-promoter
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "MCA master data and DIN 05113022 director history not reachable; cannot date the 2019 appointment against the 2016-2021 disqualification"
+  - "ADT-3 text and ICAI firm records for the two auditor FRNs not reachable"
+  - "Anchor investor names, current BSE shareholding pattern and SAST/PIT disclosures not reached"
+  - "Antelp Corporation and Accord Global Infra ownership and status not found"
+  - "Tipco auditor, CS and scrutinizer not found; shared compliance consultant unconfirmed"
+  - "Employee reviews (AmbitionBox, Glassdoor) not found"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 6, red: 1}
+deal_breakers:
+  - "Auditor resignation within 3 years: Kumar Vijay Gupta & Co (FRN 007814N) resigned 7-Aug-24 'due to pre-occupation in other assignment'; successor P.K. Lakhani & Co shares address and email (Pros. p.57)"
+adverse_findings:
+  - {finding: "Auditor resigned 7-Aug-24; successor firm shares the same address and email; statutory audit fee +209%; pre-IPO placement followed in 7 weeks", evidence_tier: "VERIFIED", source: "Prospectus p.57; AR p.92", date: "2024-08-07"}
+  - {finding: "MD director since 2019 falls inside his DIN disqualification 2016-11-01 to 2021-10-31 (Inorbit Technofab strike-off); order lifting it not traced", evidence_tier: "VERIFIED", source: "Prospectus risk factor 8 (p.33 text); Pros. p.138", date: "2026-02-26"}
+  - {finding: "Rs 700 lakh IPO money moved from machinery to building 7 months after listing; land Rs 8.85 Cr plus Rs 1.82 Cr (commission and stamp duty, 20.6% of price) bought 3-Jul-26 before the 26-Sep-26 approval; payment source not found", evidence_tier: "VERIFIED", source: "AR p.32-34; 3-Jul-26 BSE filing p.2; voting results p.11", date: "2026-09-26"}
+  - {finding: "ESOP 2026 of 5,00,000 options (2.43% of shares), exercise price floor Rs 10 face value against market near Rs 86; intrinsic value at Rs 10 is Rs 3.80 Cr = 84% of FY26 PAT; no cap on discount", evidence_tier: "VERIFIED", source: "AR p.35-36; voting results p.12; market price (operator, 2026-10-06)", date: "2026-09-26"}
+  - {finding: "Two largest order filings (Rs 19.97 Cr 2026-06-29, Rs 20.02 Cr 2026-09-23) withhold the awarding entity; promoter-interest answer 'No' cannot be tested; smaller orders name the buyer", evidence_tier: "VERIFIED", source: "BSE order filings 20260629 and 20260923-d54c506f p.2", date: "2026-09-23"}
+  - {finding: "2026-09-03 board outcome filed with Subject naming Tipco Engineering India Ltd (body is Accord's own); re-filed corrected same day; presentation p28 carries SRIGEE 544399 code (Srigee DLM shares BRLM GYR Capital with Accord); AR cover re-filed 2026-09-10", evidence_tier: "VERIFIED", source: "inputs/other/misfiled-third-party/20260903-bd607fbe p.1; announcements/20260903-0bf73e52 p.1; presentation p28; web BRLM check (MEDIA REPORTED)", date: "2026-09-03"}
+  - {finding: "Two CFOs in 7 months (Samal 21-Jun-25 to 16-Jan-26, Gupta from 16-Jan-26); outgoing CFO was internal auditor; GM Operations left after 70 days", evidence_tier: "VERIFIED", source: "Prospectus p.148; AR p.40, p.45", date: "2026-01-16"}
+  - {finding: "Promoter pay Rs 64.00 lakh in FY26 vs 36.00 in FY25 (+77.8%) while PBT fell 24.1%; promoter-linked interest-free loans Rs 182.78 lakh; ABL is lender, supplier and guarantor; ABL FY25 loan column fails arithmetic; Antelp (KMP relative) sale Rs 29.44 lakh 100% unpaid", evidence_tier: "VERIFIED", source: "AR Note 2.3 p.81-82; AOC-2 p.54; B03 section 2B", date: "2026-03-31"}
+  - {finding: "CHG-1 not filed on Mercedes-Benz vehicle charge, reported in prospectus and in FY26 secretarial audit; 2015 rights issue consideration untraceable", evidence_tier: "VERIFIED", source: "Prospectus p.33-34 text; AR p.44, p.50-51", date: "2026-08-26"}
+  - {finding: "AGM 26-Sep-26 lasted 18 minutes; public votes 1,85,740 shares (2.37% of public float); special resolutions carried 100%; AR prints stale promoter holding 84.94% vs 61.97%", evidence_tier: "VERIFIED", source: "Voting results and scrutinizer report p.9-12; AR p.85", date: "2026-09-26"}
+transition_evidence:
+  - "Outside CFO Nitin Gupta (ICAI, 34) from 2026-01-16 plus Head of Tax and Audit and Head of Accounts hired 2025-09-13 (Pros. p.148); weak, finance seat turned over twice in 7 months"
+  - "Independent director Dipakkumar Thakkar, ex-VP Torrent Power, since 2024-10-22 (Pros. p.139)"
+  - "Six anchor investors Rs 7.29 Cr on 2026-02-20 and domestic institutions about 10.44% (MEDIA REPORTED, chittorgarh, voguestock); names NOT FOUND"
+  - "Directors' Report discloses the CHG-1 default and corrective filing (AR p.44-45)"
+pledge_pct_latest: 0
+pledge_trend: "stable at 0%: no pledge in prospectus (line 5197), none in AR; promoter shares 1,27,50,000 unchanged in FY26 (0.00% change, AR p.85); 61.97% post-IPO"
+searches_performed:
+  - "Tipco Engineering IPO lead manager registrar"
+  - "Accord IPO GYR registrar"
+  - "SRIGEE 544399 lead manager"
+  - "Tipco auditor and CS"
+  - "Tipco board outcome Sept 2026"
+  - "Srigee DLM presentation auditor"
+  - "Anu Malhotra scrutinizer Tipco or Accord"
+  - "Pradeep Kumar Verma background Inorbit ABL"
+  - "Pradeep Kumar Verma SEBI NCLT court fraud"
+  - "Inorbit Technofab strike off"
+  - "Accord Global Infra directors"
+  - "Accord anchor investors list"
+  - "Accord AmbitionBox Glassdoor"
+  - "chittorgarh Accord IPO page fetch"
+  - "GYR Capital SEBI action"
+  - "P.K. Lakhani Kumar Vijay Gupta auditor link"
+  - "Accord shareholding pattern pledge"
+  - "Accord IPO review fetch, Accord governance news, Antelp Corporation directors"
+searches_skipped:
+  - "MCA master data (Accord Global Infra, Antelp, Inorbit, both audit firms) and DIN 05113022 history"
+  - "ADT-3 text and ICAI firm records"
+  - "sebi.gov.in order search by name"
+  - "BSE shareholding pattern PDF, SAST and PIT disclosures"
+  - "Tipco own BSE feed"
+  - "IiAS, SES, InGovern, SCORES"
+  - "short-seller and activist scan beyond one search"
+  - "political donation data"
+  - "NCLT cause list, Tofler cross-directorship pull"
+verdict_basis: "Clean legal record and zero pledge, offset by a recorded auditor resignation inside 3 years (successor at same address and email) and repeated disclosure looseness within 7 months of listing; no filed fact shows minority harm."
+analyst_note: "The Tipco file is Accord's own board outcome with a wrong Subject line, corrected the same day; B00 and the step 1 brief call it a third-party document, which overstates it. Tipco shares no BRLM or registrar with Accord (Smart Horizon and Maashitla vs GYR and Kfin). Auditor and compliance consultant not found. SRIGEE (Srigee DLM) shares BRLM GYR with Accord, so a reused presentation template is the likely cause [INFERENCE]. Three tripwires can lift CAUTION to CONCERN: ADT-3 and ICAI records for the auditor switch; bank trail for the Rs 10.67 Cr land payment against the IPO utilisation statement; first ESOP grant price. Watch 2-Mar-2027 for the end of the one-year lock-in on free promoter shares (reading of ICDR, not verified). MD's DIN 2016-21 disqualification overlaps his stated 2019 start; MCA DIN history separates the two readings."

@@ -146,3 +146,19 @@ Bottom decile of history:
 
 
 <!-- market-read -->
+
+## Market read
+
+Monday was a quiet bounce inside a damaged market. The count of stocks above
+the two-hundred-day line rose from 899 to 922. The fifty-day count rose from 619
+to 641, still well under its washout level of 702. New yearly lows fell from
+214 to 90, but they still beat new highs for the seventh session running.
+Rising and falling stocks came out about even. Volume ran level with a year
+ago, and quiet stocks outnumbered busy ones about three to one. So the bounce
+carried little force. The index rose more than the average stock. 31 of 35
+indices closed up, led by FMCG, which had been the weakest index. Healthcare
+and pharma, the strongest long sectors, fell most. Fear rose on an up day. The
+small end still sits above its long trend. The large end still sits well under
+its own. The down tail kept growing under the surface.
+
+Full brief: briefs/2026-10-05.html

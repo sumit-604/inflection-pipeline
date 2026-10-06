@@ -808,32 +808,48 @@ date,time,group,current price,market cap,category,sector,industry,% change,volum
 2026-10-01,15:29,SMLT,74.18,101.5506,smallcap,metals & mining,steel - medium / small,19.9935,112524
 2026-10-01,15:29,TECILCHEM,9.25,17.5414,smallcap,chemicals,chemicals,2.5499,6820
 2026-10-01,15:29,WEALTH,889.95,948.2417,smallcap,financials,finance & investments,-1.9717,4145
-2026-10-05,15:29,AADHARHFC,453.7,19610.1963,midcap,financials,finance - housing,1.182,255416
-2026-10-05,15:29,ACCELYA,1105.3,1633.2315,smallcap,i.t,computers - software - medium / small,1.0144,45159
-2026-10-05,15:29,ARSHIYA,0.83,21.3415,smallcap,transportation,miscellaneous,2.4691,23658
-2026-10-05,15:29,BSL,120.15,121.6534,smallcap,textiles,textiles - processing,1.6498,2251
-2026-10-05,15:29,DCMSHRIRAM,1044.55,14141.6271,midcap,miscellaneous,diversified - mega,15.1844,971948
-2026-10-05,15:29,EDUCOMP,0.93,11.022,smallcap,i.t,computers - education,3.3333,95825
-2026-10-05,15:29,ESCORTS,2820.8999,29841.1533,largecap,auto,automobiles - tractors,5.7586,222028
-2026-10-05,15:29,FLEXITUFF,3.07,9.9125,smallcap,industrials,packaging,1.6556,6245
-2026-10-05,15:29,GODIGIT,256.05,23697.5769,largecap,financials,finance & investments,-0.0975,228010
-2026-10-05,15:29,HARDWYN,9.34,628.4081,smallcap,services,trading,1.6322,3665570
-2026-10-05,15:29,HDFCLIFE,531,116053.6135,largecap,financials,finance & investments,-0.599,3381490
-2026-10-05,15:29,HINDCOMPOS,400.65,562.4035,smallcap,miscellaneous,diversified - medium / small,5.2127,46581
-2026-10-05,15:29,ICICIGI,1600,78036.2392,largecap,financials,finance & investments,2.3672,1196366
-2026-10-05,15:29,INDUSTOWER,380.2,99260.8737,largecap,telecom,transmisson line towers / equipment,1.0498,5862757
-2026-10-05,15:29,INSECTICID,578.8,1654.794,smallcap,chemicals,pesticides / agrochemicals - indian,1.776,15020
-2026-10-05,15:29,JAINREC,290.45,9748.6742,midcap,metals & mining,mining / minerals / metals,2.8142,699536
-2026-10-05,15:29,KFINTECH,867.5,14379.2595,midcap,financials,miscellaneous,4.2668,977572
-2026-10-05,15:29,LTTS,3219.5,34661.0948,largecap,i.t,computers - software - large,-1.4781,62578
-2026-10-05,15:29,MBLINFRA,23.9,360.237,smallcap,realty,construction,3.4184,28371
-2026-10-05,15:29,MFML,18.16,19.8812,smallcap,textiles,textiles - products,-2.9915,1351
-2026-10-05,15:29,NILAINFRA,6.71,258.7852,smallcap,realty,construction,2.1309,192035
-2026-10-05,15:29,NKIND,59.96,36.0354,smallcap,fmcg,solvent extraction,3.0241,4610
-2026-10-05,15:29,PALASHSECU,87.94,84.5262,smallcap,financials,finance & investments,4.071,2831
-2026-10-05,15:29,SBGLP,23.11,394.5224,smallcap,realty,construction,1.5824,35623
-2026-10-05,15:29,SEPC,5.11,988.3208,smallcap,realty,engineering - turnkey services,0.5906,5180319
-2026-10-05,15:29,SHREYANIND,129,174.5902,smallcap,building materials,paper,2.1459,8211
-2026-10-05,15:29,TICL,8.17,120.745,smallcap,realty,construction,4.8781,145462
-2026-10-05,15:29,URJA,8.69,479.7544,smallcap,auto,automobiles - motorcycles / mopeds,0.9292,478430
-2026-10-05,15:29,WAAREERTL,809.1,8439.4877,midcap,power & utilities,engineering - turnkey services,0.0371,124142
+2026-10-06,15:29,AADHARHFC,453.8,19841.985,midcap,financials,finance - housing,0.022,259527
+2026-10-06,15:29,AGARIND,396.5,572.8085,smallcap,energy,petrochemicals,3.5383,14766
+2026-10-06,15:29,ARSHIYA,0.82,21.8685,smallcap,transportation,miscellaneous,-1.2048,170195
+2026-10-06,15:29,AWL,185.93,22893.8386,largecap,fmcg,solvent extraction,5.5521,4711354
+2026-10-06,15:29,BSL,119.76,123.6604,smallcap,textiles,textiles - processing,-0.3246,981
+2026-10-06,15:29,CELLO,369.15,7511.1956,midcap,consumer discretionary,trading,8.5576,20298731
+2026-10-06,15:29,DCMSHRIRAM,988.85,16288.9525,midcap,miscellaneous,diversified - mega,-5.3324,406997
+2026-10-06,15:29,EDUCOMP,0.93,11.3894,smallcap,i.t,computers - education,3.3333,191650
+2026-10-06,15:29,EMAMILTD,384,16488.7875,midcap,fmcg,personal care - indian,1.6545,2900756
+2026-10-06,15:29,ESCORTS,2811.7,31559.5956,largecap,auto,automobiles - tractors,-0.3261,106436
+2026-10-06,15:29,EXXARO,6.14,270.6835,smallcap,building materials,ceramics - tiles / sanitaryware,1.4876,765535
+2026-10-06,15:29,FLEXITUFF,3.13,10.0766,smallcap,industrials,packaging,1.9544,5199
+2026-10-06,15:29,FORCEMOT,17110,21938.4762,largecap,auto,automobiles - lcvs / hcvs,2.7628,65477
+2026-10-06,15:29,GODIGIT,258.6,23674.4618,largecap,financials,finance & investments,0.9959,123612
+2026-10-06,15:29,GRAVITA,1500.9,10506.633,midcap,metals & mining,mining / minerals / metals,5.4373,796225
+2026-10-06,15:29,HARDWYN,9.22,638.665,smallcap,services,trading,-1.2848,826036
+2026-10-06,15:29,HDFCLIFE,543.95,115358.4215,largecap,financials,finance & investments,2.4388,8334621
+2026-10-06,15:29,HINDCOMPOS,401.45,591.72,smallcap,miscellaneous,diversified - medium / small,0.1997,13778
+2026-10-06,15:29,HINDPETRO,351,72846.0039,largecap,energy,refineries,2.5267,3973902
+2026-10-06,15:29,ICICIGI,1598.3,79883.5462,largecap,financials,finance & investments,-0.1062,333763
+2026-10-06,15:29,INDUSTOWER,389.1,100302.948,largecap,telecom,transmisson line towers / equipment,2.3409,5484978
+2026-10-06,15:29,INSECTICID,584.15,1684.1828,smallcap,chemicals,pesticides / agrochemicals - indian,0.9243,7785
+2026-10-06,15:29,JAINREC,290.15,10023.0175,midcap,metals & mining,mining / minerals / metals,-0.1033,439000
+2026-10-06,15:29,JSWENERGY,494.9,90170.681,largecap,power & utilities,power generation and supply,0.6303,3951551
+2026-10-06,15:29,KANSAINER,184,14311.82,midcap,building materials,paints / varnishes,3.9724,331156
+2026-10-06,15:29,KFINTECH,863.8,14992.7976,midcap,financials,miscellaneous,-0.4265,518303
+2026-10-06,15:29,KIOCL,344.6,19609.0891,midcap,metals & mining,mining / minerals / metals,6.803,139535
+2026-10-06,15:29,LTTS,3246,34148.7835,largecap,i.t,computers - software - large,0.8231,40233
+2026-10-06,15:29,MBLINFRA,25.05,372.5514,smallcap,realty,construction,4.8117,209858
+2026-10-06,15:29,MFML,19.19,19.2864,smallcap,textiles,textiles - products,5.6718,478
+2026-10-06,15:29,NACLIND,136.63,3051.9563,smallcap,chemicals,pesticides / agrochemicals - indian,4.8661,375897
+2026-10-06,15:29,NIITMTS,204.99,2751.0519,smallcap,i.t,computers - education,2.6901,97157
+2026-10-06,15:29,NILAINFRA,6.7,264.2997,smallcap,realty,construction,-0.149,81728
+2026-10-06,15:29,PALASHSECU,86.8,87.9673,smallcap,financials,finance & investments,-1.2963,607
+2026-10-06,15:29,PRAJIND,315.05,5588.8369,midcap,industrials,engineering,3.6178,751662
+2026-10-06,15:29,RUBFILA,63.59,342.8622,smallcap,fmcg,miscellaneous,0.6489,28374
+2026-10-06,15:29,SBILIFE,1750,171503.9693,largecap,financials,finance & investments,2.3691,941906
+2026-10-06,15:29,SHREYANIND,128.94,178.3367,smallcap,building materials,paper,-0.0465,7606
+2026-10-06,15:29,SRM,418.45,914.6705,smallcap,realty,construction,4.9668,80137
+2026-10-06,15:29,TICL,8.57,126.635,smallcap,realty,construction,4.896,26627
+2026-10-06,15:29,UNITECH,4,1020.3574,smallcap,realty,construction,2.5641,2291434
+2026-10-06,15:29,VAIBHAVGBL,202.43,3337.5044,smallcap,consumer discretionary,diamond cutting / jewellery,1.5043,108902
+2026-10-06,15:29,VENTIVE,582.35,12798.0801,midcap,services,hotels,6.2682,85216
+2026-10-06,15:29,VGUARD,306.3,12956.0042,midcap,industrials,electric equipment,3.2878,409980
+2026-10-06,15:29,WAAREERTL,825.95,8442.618,midcap,power & utilities,engineering - turnkey services,2.0826,101885

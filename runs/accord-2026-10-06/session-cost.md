@@ -7,3 +7,4 @@
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 147667 | 6m53s | 1 |
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 182070 | 7m45s | 1 |
 | 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 81532 | 1m46s | 1 |
+| 3 | stage-03-ardeep | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 405757 | 18m00s | 1 |

@@ -1043,3 +1043,13 @@ OR-14 re-derivation (PR #193): SYSTANGO, SHYAMMETL, MANINDS ruled Small on
 2026-10-04 (PR #201). AIMTRON and ASIANENE: not re-derived; operator ruling
 2026-10-04 (standing ruling: framework rulings apply forward; closed names keep
 their record as of the run that produced it). Both stay CONCERN, Small.
+
+## 2026-10-06 SUPREMEPWR (/step1 intake + phase 1 + operator forward module)
+- Collector: SME has no BSE code, so announcements/ came empty; NSE corporate-announcements API (index=sme) filled results, orders, AGM, rating letter by hand. Worth automating for NSE SME names.
+- Screener P&L/BS/CF/Quarters sheets exported empty again (all four tickers); Data_Sheet carried the run.
+- No poppler locally: one scanned Reg 30 letter could not be OCR-ed; its filed XBRL carried the facts.
+- CRISIL full rationale is HTML on crisil.com; saved as page-marked text in rating/.
+- Sparse checkout blocked the first corpus commit; tools/sparse_session.sh must run before git add on a new run folder.
+- Stage 9 report ended with a summary YAML, not the full block; block file governed.
+- Verifier C: prompts/12 L379 holds an edit instruction instead of a field; prompts/12 names no input for rules 6, 9, 10. FLAG-GATE0 raised on a GOOD classification (stage 1 rule slip).
+- Operator commissioned valuation work (forward_module.md) on an unsigned model in the same session; recorded as ruling R1 for the operator to confirm.

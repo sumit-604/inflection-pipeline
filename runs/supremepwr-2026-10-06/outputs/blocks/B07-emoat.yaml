@@ -1,0 +1,63 @@
+stage: B07-emoat
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR: BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. (Filled by hand from the NSE API: 17 filings Mar-Sep 2026; Oct-2025 to Feb-2026 order intimations not pulled under the operator cap.)"
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. (Filled by hand: NSE SHP XBRL 31-Mar-2026; the Sep-2026 half-year pattern is not yet filed as of 2026-10-06.)"
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values): screener/INDOTECH/531201/DANISH Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. ABSENT documents. Data_Sheet CSVs carry FY23-FY26 raw values and are present."
+  - "COLLECTOR: no results PDFs (screener has none). (Filled by hand: Q1 FY27 and FY26 audited results from NSE.)"
+  - "COLLECTOR: no rating PDF. (Filled by hand: CRISIL full rationale 20-Mar-2026 as text.)"
+  - "HIGH: prospectus/ empty. Company listed Dec-2023, within 3 years of run_date. Not pulled: operator 12-document cap 2026-10-06 (inputs/operator-notes.md). Backward baseline runs on FY23-FY26 AR/screener only; promoter and group map from AR and web."
+  - "research/ empty (non-anchored; no effect on evidence)."
+  - "Peer INDOTECH: no transcripts on screener; peer-concalls cover SHILCHAR (4) and DANISH (2) only."
+  - "No Q2 FY27 business update filed as of 2026-10-06 (NSE announcement list checked through 26-Sep-2026)."
+  - "Operator document cap: Q3 FY26 transcript (concalls/Concall_Feb_2026) and the shareholding XBRL are over the 12-document cap, kept because stage 5 requires three transcripts and the UA qualifier needs the SHP; flagged for operator ruling."
+  - "Results PDFs carry an OCR-quality text layer (e.g. 'R, Lakhs'); read the page before taking a number."
+  - "STAGE 7: peer data was not in this stage's inputs, so A1 rarity (count of 220 kV qualified makers), cost of debt vs peers (G1) and competitor attrition (I1) are NOT FOUND."
+  - "STAGE 7: Pres-Q1 slide 35 charts (product mix, top-ten share, government split) have no series labels in the text layer and PDF rendering is unavailable; not used for C2. FY26 product-wise revenue split NOT FOUND. AR read in sections (MD&A, Board's Report, Annexures V and VI, standalone statements, Notes 13 to 17), not line by line."
+flags:
+  - {type: FLAG-NO-EMERGING-MOAT-YET, reason: "Adjusted score 8.3, band NONE (below 12). Capacity is documented (Kannur Rs 95-100 Cr, commissioned 25-Feb-2026); the credential that makes it a moat (CPRI type test above 25 MVA / 110 kV) is a management claim for Dec-2026/Jan-2027. Seven categories scored, two Moderate (A1 2.1, B2 2.0)."}
+  - {type: FLAG-QUALIFICATION-GAP, reason: "AR Board's Report states CPRI type tests only to 25 MVA / 110 kV (L.3581-3582). Planned 160 MVA / 220 kV test is about 8-9 months after the 22-Apr-2026 order, versus the CMD's own norm of 1.5-2 years from order (Jun p.12). Date given on 2-Jun, not restated on 17-Aug. Credited once under A1 at 0.7; R1 scored 0 to avoid double credit."}
+  - {type: FLAG-UTIL, reason: "Carried from B04. Q1 FY27 revenue rose only Rs 13.16 Cr (48.23 vs 35.07) so a revenue-basis Kannur reading is near 10% if Unit 1 was flat, against the stated 20-25%. Separating observation: Kannur MVA dispatched and invoiced revenue per quarter with basis."}
+  - {type: FLAG-INFLOW-CONCENTRATION, reason: "Hyderabad-based buyers gave Rs 128.00 Cr of Rs 195.64 Cr Q1 FY27 inflow (65.4%, DERIVED, Pres-Q1 slide 4). Reg 30 filings never name the buyer. Whether they are one group is NOT FOUND."}
+  - {type: FLAG-ORDER-TIMING, reason: "DERIVED from filing dates plus stated execution months: Rs 55.50 Cr (28.4%) of Q1 FY27 wins falls due by Mar-2027 and Rs 140.14 Cr (71.6%) after. The Rs 377 Cr 'due before March' (Aug p.7) rests mostly on pre-April orders."}
+  - {type: FLAG-330KV-ABOVE-CLASS, reason: "Two 112.5 MVA / 330 kV orders (Rs 13.50 Cr 13-Apr-2026, Rs 13.60 Cr 13-Jul-2026) exceed the commissioned 220 kV class. CMD says 330 kV needs added test equipment in Phase 2 (Jun p.12). AR shows Rs 7.77 Cr testing equipment still in CWIP at 31-Mar-2026 (Note 13)."}
+  - {type: FLAG-DANYA-LOOP, reason: "Carried from B03/B04/B05. Not credited as backward integration. Danya Rs 88.13 Cr book is 14.9% of Rs 590.06 Cr (DERIVED). Whether intra-group SPEL-to-Danya orders sit inside the consolidated book is NOT FOUND."}
+  - {type: FLAG-CASH, reason: "Carried. Payables 62.20 equal inventory 62.10; borrowings 49.98; CFO 25.9 vs investing outflow 57.1. G1 and G2 held at Weak (1.0 each)."}
+  - {type: FLAG-GATE0, reason: "Carried from B01. Backward GOOD is fragile to AVERAGE if M3 scores 1 on the CWIP choice. Combined classification GOOD with NONE forward."}
+em_score: 8.3
+em_classification: "NONE"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "DOC plant and orders; CLAIM for type-test timing (multiplier 0.7)", time_to_materialise: "12-18 months (CPRI test Dec-2026/Jan-2027 claim; first 220 kV deliveries FY28)"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "DOC (state empanelments, ISO, BIS, vendor approvals)", time_to_materialise: "Already active; widens state by state over 12-24 months; access ticket, not price lock-in"}
+evidence_mix: {documented: 27, claim: 18, inference: 8}
+completionist_recount: "Recount performed: 27 documented items across 13 rows or sections; 19 sit under the 6 scored categories with documented support (A1 6, B2 3, C2 3, G1 3, G2 2, H1 2), 8 sit in zero-score rows or Sections 1-2. Seven categories scored, two Moderate, none Strong. Guard (12 or more) not tripped."
+catalysts_12m:
+  - {catalyst: "Q2 FY27 results and call: Kannur MVA and utilisation with basis; revenue at or above Rs 55 Cr; D+I share of EBITDA gain", window: "Nov-2026", evidence_type: "CLAIM", anchor: "Aug call p.14 (Q2 'definitely higher than Q1'); B03 monitorables"}
+  - {catalyst: "CPRI type test of 160 MVA / 220 kV prototype (prototype cost Rs 14-16 Cr)", window: "Dec-2026 to Jan-2027", evidence_type: "CLAIM (order Rs 23.30 Cr is DOC)", anchor: "Jun call p.11-12; Filing 22-Apr-2026"}
+  - {catalyst: "Warrant balance Rs 15.81 Cr due on 18-month expiry", window: "by 27-Feb-2027", evidence_type: "DOC", anchor: "AR Board's Report share capital, L.3628-3633; B03 Note 5"}
+  - {catalyst: "Tank factory statutory approvals and construction start (Rs 20-22 Cr, term loan)", window: "Oct-Dec 2026; completion claimed before Mar-2027", evidence_type: "CLAIM", anchor: "Aug call p.10"}
+  - {catalyst: "First deliveries of the 330 kV (about Mar-2027) and 160 MVA / 220 kV (about May-2027) orders, contingent on the type test", window: "Mar-2027 to May-2027", evidence_type: "DOC (orders); delivery date DERIVED", anchor: "Filings 13-Apr-2026, 13-Jul-2026, 22-Apr-2026"}
+  - {catalyst: "Main board migration window opens (re-rating event, not a moat event)", window: "after Dec-2026", evidence_type: "CLAIM", anchor: "Aug call p.14-15"}
+capex_embedded_growth_pct: 82
+optionality_register:
+  - {optionality: "220 kV and data-centre transformer orders (100-160 MVA, colo buyers)", converting_evidence: "CPRI certificate for 160 MVA / 220 kV, then a purchase order from a data-centre or colo buyer", first_appears: "Reg 30 order filing; Q3 or Q4 FY27 call", window: "Certificate Dec-2026 to Mar-2027; first data-centre order FY28 (CMD: not FY27)"}
+  - {optionality: "Tank factory as margin source (tanks 5-8% of turnover)", converting_evidence: "Statutory approvals received, board approval, term-loan sanction, construction-start filing", first_appears: "Reg 30 filing or Q2 FY27 call; CWIP note in FY27 AR", window: "Approvals Oct-Dec 2026; operation FY28"}
+  - {optionality: "Larger-MVA mix lifts margin by 1-2 points (management says absorbed by overheads)", converting_evidence: "Gross margin disclosed for above-25 MVA orders; EBITDA margin above 20% at Kannur use above 40%", first_appears: "Q2 to Q4 FY27 results and calls", window: "12-24 months"}
+  - {optionality: "Danya as execution arm / backward integration", converting_evidence: "Partnership deed, SPEL-to-Danya transfer-price benchmark, Danya stand-alone accounts, split of Danya book between group and external work", first_appears: "AGM Item 6 RPT disclosures; FY27 AR Note 21 and AOC-1", window: "FY27 AR (about Aug-2027)"}
+  - {optionality: "330 kV and 300-500 MVA class capability", converting_evidence: "Testing equipment capitalised out of CWIP (Rs 7.77 Cr), land purchase deed, board capex approval, funding named", first_appears: "Reg 30 filing; AR CWIP note", window: "12-36 months"}
+  - {optionality: "Direct exports", converting_evidence: "First export order with buyer and value", first_appears: "Reg 30 order filing", window: "24 months or more (1.5 years of effort so far)"}
+  - {optionality: "Refurbishment and after-sales revenue (dropped trigger)", converting_evidence: "A service revenue line above the current 0.4% of revenue or a named service order", first_appears: "FY27 AR revenue note; call", window: "24 months or more"}
+  - {optionality: "BEE energy-efficient range as consolidation beneficiary", converting_evidence: "Revenue or margin share of the energy-efficient range disclosed", first_appears: "FY27 AR MD&A product table", window: "12-24 months"}
+  - {optionality: "Order-book quality: Hyderabad buyers are 65.4% of Q1 FY27 inflow and unnamed", converting_evidence: "Named buyer disclosure or repeat orders from non-Hyderabad buyers", first_appears: "Reg 30 filings; AR customer note", window: "6-12 months"}
+combined_assessment: "GOOD"
+combined_reasoning: "Backward GOOD (fragile to AVERAGE on the M3 choice) plus forward NONE (8.3): capacity is built and documented, the 220 kV credential is a one-test claim, so no transition uplift."
+top_moat_risks:
+  - "One-shot 160 MVA / 220 kV CPRI test on a schedule about half the company's own 1.5-2 year norm; fail or slip past Mar-2027 strands the Kannur premise"
+  - "Kannur ramp unproven: revenue-basis reading near 10% vs stated 20-25%; fixed costs (employee plus other) rose Rs 2.28 Cr to Rs 6.41 Cr a quarter ahead of revenue"
+  - "Q1 FY27 inflow concentrated in unnamed Hyderabad buyers (65.4%) and 71.6% of Q1 wins fall due after Mar-2027"
+  - "Supplier-funded working capital (payables equal inventory) and debt-funded capex can reverse; no undrawn lines"
+  - "Danya loop (BB-/A4+, 61.3% of its turnover to SPEL) and a thin talent base (112 permanent staff in the AR, NED with high-voltage design history resigned 13-Aug-2026)"
+analyst_note: "Score is 8.3 because Kannur is capacity, not yet a moat. The only large item is the 220 kV qualification, credited once under A1 at the CLAIM multiplier; R1 is 0 to avoid double credit. Two new derived points: Q1 FY27 revenue rose only Rs 13.16 Cr, so a revenue-basis Kannur reading is near 10% if Unit 1 was flat; and 71.6% of Q1 wins fall due after Mar-2027, so the Rs 377 Cr FY27 delivery claim leans on the older book. The 330 kV orders sit above the commissioned class. Peer data was not in inputs, so the rarity of 220 kV makers is NOT FOUND, not assumed. Moderate B2 is an access ticket in a tender market, not lock-in."

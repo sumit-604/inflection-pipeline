@@ -18,3 +18,4 @@
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 337000 | 16m50s | 1 |
 | 12c | verifier-c-framework (phase-1 half) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 167683 | 12m50s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 63812 | 1m04s | 1 |
+| 13 | stage-13-synthesis (phase-1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 234942 | 11m20s | 1 |

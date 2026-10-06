@@ -1,0 +1,58 @@
+stage: B07-emoat
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding pattern ABSENT; rating NOT FOUND; results pp3-19 scan-only; one concall only; no Voltamp transcript"
+  - "H1 FY27 EBITDA, cash flow, receivables, production MVA and product mix NOT FOUND (H1 update gives revenue, order book, inflow only)"
+  - "AR Note 12 absent: gross block NOT FOUND; fixed asset turnover uses closing net PPE"
+  - "customer concentration FY26 and H1 FY27 NOT FOUND; unit count on Rs 19.97 Cr filing NOT FOUND; NHEV LOI and value NOT FILED; PGCIL approval document NOT FOUND"
+flags:
+  - {type: FLAG-CAPACITY-3WAY, reason: "900.36 MVA certified (Pros. p.76, p.123) vs 1,200+ MVA claimed (AR p.6, p.13; Q1 update p.2) vs 5,000 MVA new facility (Q1 update p.2); unreconciled"}
+  - {type: FLAG-RD-CONTRADICTION, reason: "in-house R&D center claimed in prospectus SWOT (Pros. p.117-118) vs R&D expenditure NIL (AR p.55)"}
+  - {type: FLAG-IPO-OBJECT-LOGIC, reason: "prospectus placed machinery in existing unit with 1,424 sq m free (Pros. p.76); AR p.33 now says machinery needs new built-up space; Rs 7.00 Cr moved to civil work"}
+  - {type: FLAG-NHEV-NOT-FILED, reason: "Rs 1,600 Cr and LOI claimed on call (Tr. p.14); prospectus, presentation and Q1 update say collaboration or supplying with no value; AR silent; claim tier only, scored in no category"}
+  - {type: FLAG-EXPORT-CONTRADICTION, reason: "export Rs 0.97 Cr in 9M FY26 (Pros. p.113) vs no export operations (Pros. p.125) and nil FX earnings (AR p.55)"}
+  - {type: FLAG-PARTNER-NAME, reason: "Siemens (Germany) named in Pros. p.118 and Inv. Pres. slide 30; collaboration section names SGB-SMIT GmbH only (Pros. p.124); unreconciled"}
+  - {type: FLAG-ORDER-NAMING, reason: "awarding EPC withheld on Rs 20.02 Cr and Rs 19.97 Cr filings; end owner Aditya Birla Renewables named in the nature line of the Rs 20.02 Cr filing only; 20.02 + 19.97/1.18 = 36.94 Cr close to the Rs 37 Cr ABRL figure [INFERENCE]"}
+  - {type: FLAG-G2-INDETERMINATE, reason: "FY26 WC improvement is a receivable release; H1 FY27 cash flow not filed; G2 scored 0 with missing evidence named"}
+em_score: 8.0
+em_classification: "NONE"
+active_categories: []
+evidence_mix: {documented: 14, claim: 11, inference: 3}
+completionist_recount: "📄 recount performed: 14 documented items across 5 categories (B2 4, C1 2, C2 2, G1 2, H2 4); 0 Strong or Moderate; 5 Weak; guard not triggered"
+catalysts_12m:
+  - {catalyst: "H1 FY27 results: cash flow, EBITDA ex-other income, receivables, inventory days (tests G2, LBF-4)", window: "Nov-2026, filing date NOT FOUND", evidence_type: "documented", anchor: "B00 freshness note: trading window closed 2026-09-28; H1 update 2026-10-05 p.2 gives revenue only"}
+  - {catalyst: "Schneider EcoXpert LV panel certification expiry and renewal", window: "2026-12-31", evidence_type: "documented", anchor: "Pros. p.124"}
+  - {catalyst: "Machinery purchase orders placed and Rs 3.5 Cr of Rs 7.00 Cr building spend by 31-Mar-27", window: "by 2027-03-31", evidence_type: "documented", anchor: "AR p.32-33; B03 monitorables"}
+  - {catalyst: "UGVCL ROBUST 2.0-X PO (Rs 87.50 Cr): counterparty named, 25% billed", window: "by 2027-03-31", evidence_type: "documented", anchor: "Pros. p.115; filing 2026-06-24; B03"}
+  - {catalyst: "MVVNL (Rs 125 Cr) and Torrent (Rs 100 Cr) tender outcomes", window: "Q3 FY27, silent since 2026-06-01", evidence_type: "claim", anchor: "Tr. p.3; B05 dropped_triggers"}
+  - {catalyst: "NHEV LOI filed with value, first 10-15 stations", window: "by FY27-end (2027-03-31) per management", evidence_type: "claim", anchor: "Tr. p.14; no filing"}
+  - {catalyst: "Tijara building completion, then machinery install", window: "Jun-Jul 2027", evidence_type: "documented", anchor: "AR p.33 (9-10 months from 2026-09-26)"}
+  - {catalyst: "End of one-year lock-in on promoter shares (reading of ICDR, not verified)", window: "2027-03-02", evidence_type: "inference", anchor: "B08 analyst note"}
+  - {catalyst: "Lucy Electric licence expiry and renewal", window: "2027-09-28", evidence_type: "documented", anchor: "Pros. p.124"}
+  - {catalyst: "FY27 full year: H2 must deliver Rs 67.3 Cr for the low guide", window: "FY27 results, about May-2027", evidence_type: "claim", anchor: "Tr. p.6; B05 LBF-1"}
+capex_embedded_growth_pct: 169
+optionality_register:
+  - {optionality: "EHV transformers up to 220 kV / 315 MVA", converting_evidence: "machinery purchase orders with value; EHV type test or customer approval; first EHV order", first_appears: "IPO utilisation statement; BSE order filing; AR FY27", window: "18-36 months"}
+  - {optionality: "NHEV EV-charging programme, Rs 1,600 Cr claimed", converting_evidence: "LOI filed on BSE with value and counterparty; first station order", first_appears: "BSE Reg 30 filing", window: "6-12 months"}
+  - {optionality: "Moscow technology transfer and co-branded JV", converting_evidence: "signed definitive agreement with value, scope, fees", first_appears: "BSE Reg 30 filing", window: "12-36 months"}
+  - {optionality: "SGB-SMIT technical collaboration", converting_evidence: "signed agreement with scope, term, technology transfer terms", first_appears: "Reg 30 filing; AR note", window: "12-24 months"}
+  - {optionality: "Price variation clause on all supply beyond 3 months, supporting 13-15% EBITDA", converting_evidence: "clause text, share of order book, materials, weights, lag; H1 FY27 EBITDA ex-other income", first_appears: "next earnings call; H1 FY27 results; order filings", window: "1-6 months"}
+  - {optionality: "In-house sheet metal, powder coating, robotic welding", converting_evidence: "capex order, commissioning, unit cost or gross margin attributed to it", first_appears: "IPO utilisation statement; AR FY27", window: "12-24 months"}
+  - {optionality: "Exports and China+1", converting_evidence: "export order filing; FX earnings above nil in AR note", first_appears: "BSE order filing; AR FY27", window: "12-24 months"}
+  - {optionality: "ESOP 2026 to technical staff (retention)", converting_evidence: "first grant letters, grant price, grantee classes", first_appears: "SBEB disclosure; AR FY27", window: "6-12 months"}
+  - {optionality: "Customer concentration improvement", converting_evidence: "FY26 and H1 FY27 top-5 and top-10 table; names behind the Rs 39.99 Cr LOAs", first_appears: "AR FY27; presentation; next call", window: "6-12 months"}
+  - {optionality: "Working-capital and cash conversion durability", converting_evidence: "H1 FY27 CFO above 50% of PAT; receivables at or below Rs 28.9 Cr; inventory days at or below 120 on cost basis", first_appears: "H1 FY27 results", window: "1-2 months"}
+  - {optionality: "Utility tender wins, MVVNL and Torrent", converting_evidence: "award or loss filing", first_appears: "BSE order filing", window: "3-9 months"}
+  - {optionality: "1,200+ MVA installed capacity claim", converting_evidence: "chartered-engineer certificate above 900.36 MVA; filed MVA made in H1 FY27", first_appears: "next presentation; IPO or AR disclosure", window: "6-12 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 65 capped by deal-breaker 4) with Emerging Moat 8.0 NONE: no forming moat, so the transition case rests on order conversion and capacity, not moat quality; not HIGH POTENTIAL, not TURNAROUND."
+top_moat_risks:
+  - "Vendor approvals are shared entry tickets; UGVCL covers 500 kVA only"
+  - "Customer concentration rising again: two unnamed-EPC LOAs are 51.9% of H1 FY27 inflow"
+  - "New plant has no machinery PO, no MVA figure and no capex amount; three capacity figures conflict"
+  - "Scaled peers (Danish about 11,000 MVA, Shilchar 7,500 MVA) already entering the 220 kV class"
+  - "Lucy and Schneider terms end 2027-09-28 and 2026-12-31"
+analyst_note: "Score 8.0 is sparse by design: 5 of 22 categories carry Weak evidence, all documented, none Strong or Moderate. Two readings: no moat and a volume story only, or a renewable-unit niche forming through ABRL and EPC approvals. Separating observation: a second filed ABRL or Good Earth order after lot one, with a price-variation clause shown. Fixed asset turnover arithmetic (9.10x to 11.20x on Rs 13.03 Cr) gives 169-208% above FY26 revenue; it is a ceiling, since 54% of the capex is civil work with no machinery order. Possible reconciliation: Rs 20.02 Cr plus Rs 19.97 Cr / 1.18 = Rs 36.94 Cr, near the Rs 37 Cr ABRL figure, so the B05 'unfiled Rs 17 Cr' may be the unnamed-EPC Gadag-1 order [INFERENCE]. NHEV appears in the prospectus as 'collaboration' but not in the AR."

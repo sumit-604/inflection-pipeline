@@ -29,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v12", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v13", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -186,7 +186,7 @@ const HELPERS = () => {
   await E(() => { G.setPos(-39, 12, 0); G.car.s = 24; keys("up"); sim(1.05); keys(); }); await p.waitForTimeout(1200); await p.screenshot({ path: `${SHOTS}/10-jump.png` });
   // 13. Badges
   r = await E(() => { G.checkBadges(); G.openMenu(); document.querySelector("#m-badges").click(); return { n: document.querySelectorAll(".badge").length, on: document.querySelectorAll(".badge.on").length, jump: !!S.badges.jump1, wash: !!S.badges.wash, toll: !!S.badges.toll, plate: !!S.badges.plate }; });
-  ok("N13 36 badges, earned ones lit", r.n === 36 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
+  ok("N13 38 badges, earned ones lit", r.n === 38 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
   await p.screenshot({ path: `${SHOTS}/11-badges.png` });
   // 14. Village and Sunrise Hill: drive the road with a simple autopilot
   r = await E(() => { document.querySelector("#b-back").click(); document.querySelector("#m-free").click(); const W = G.world, v0 = S.stats.village, h0 = S.stats.hilltop; S.fuel = 100; G.setPos(-180, -3.5, -Math.PI / 2); keys("up"); let i = 0, maxY = 0;
@@ -279,7 +279,7 @@ const HELPERS = () => {
   ok("V30 gas+brake with no turn is not a drift, brake still brakes", !r.pd && r.brake < r.kmh, r);
   // v7: Track Challenges
   r = await E(() => { S.tracks = {}; S.tghost = {}; G.openMenu(); document.querySelector("#m-tracks").click(); const btns = [...document.querySelectorAll("[data-trk]")]; return { n: btns.length, open: btns.filter((b) => !b.disabled).length }; });
-  ok("V31 track menu: 18 tracks, only the first open", r.n === 18 && r.open === 1, r);
+  ok("V31 track menu: 22 tracks, only the first open", r.n === 22 && r.open === 1, r);
   r = await E(() => { document.querySelector('[data-trk="0"]').click(); const built = !!G.world.trk; sim(3.4); const tk = G.world.trk, N = tk.N; for (let k = 0; k < N * 3 && G.mode.kind === "race"; k += 2) { const a = tk.pts[(N - 5 + k) % N], b = tk.pts[(N - 4 + k) % N]; G.setPos(a.x, a.z, Math.atan2(b.x - a.x, b.z - a.z)); G.T += 0.05; G.step(0.05); } return { built, title: document.querySelector("#card h2")?.textContent, rec: S.tracks.ring, ghost: !!S.tghost.ring, keep: !!G.world.trk, unlockText: /Unlocked/.test(document.querySelector("#card p").textContent) }; });
   ok("V32 finish a track: stars, best time, ghost, next unlocked", r.built && /Rishu Ring/.test(r.title) && r.rec && r.rec.stars >= 1 && r.ghost && r.unlockText, r);
   r = await E(() => { const vis = !!G.world.trk; document.querySelector("#d-replay").click(); sim(1); const during = !!G.world.trk && G.mode.kind === "replay"; for (let i = 0; i < 1500 && G.mode.kind === "replay"; i++) { G.T += 0.05; G.step(0.05); } const after = !!G.world.trk; document.querySelector("#d-free").click(); return { vis, during, after, gone: !G.world.trk }; });
@@ -305,7 +305,7 @@ const HELPERS = () => {
   // ===== v8: one-lap tracks, sky and space tracks, new modes and new places =====
   await E(() => { noTraffic(); G.startFree(); });
   r = await E(() => { const { TRACKS } = __dd; S.tracks = {}; G.tracksMenu(); return { n: TRACKS.length, menu: document.querySelectorAll("[data-trk]").length, laps: [...new Set(TRACKS.map((t) => t.laps))], hard: TRACKS.filter((t) => t.elev).map((t) => t.id) }; });
-  ok("W8-01 18 tracks, every track is one lap, sky tracks raised", r.n === 18 && r.menu === 18 && r.laps.length === 1 && r.laps[0] === 1 && ["skygap", "coaster", "space", "cloud", "volcano", "narrow"].every((id) => r.hard.includes(id)), r);
+  ok("W8-01 22 tracks, every track is one lap, sky tracks raised", r.n === 22 && r.menu === 22 && r.laps.length === 1 && r.laps[0] === 1 && ["skygap", "coaster", "space", "cloud", "volcano", "narrow"].every((id) => r.hard.includes(id)), r);
   r = await E(() => { for (const t of ["ring", "hairpin", "eight", "chicane", "jump", "monsoon", "snake", "fog", "dirt", "narrow", "star", "gp", "skygap", "coaster"]) S.tracks[t] = { best: 999, stars: 1 };
     const run = (idx, speed) => { G.startTrack(idx); sim(3.5); const tk = G.world.trk, N = tk.N, gap = tk.gaps[0], i0 = Math.floor((gap[0] - 0.06) * N), a = tk.pts[i0], b2 = tk.pts[i0 + 1]; G.setPos(a.x, a.z, Math.atan2(b2.x - a.x, b2.z - a.z)); G.car.s = speed; keys("up"); let air = false;
       for (let k = 0; k < 90; k++) { const c = G.car, n = G.world._pathNear(tk.pts, c.x, c.z), t = tk.pts[(n.i + 6) % N], want = Math.atan2(t.x - c.x, t.z - c.z); if (!c.air) c.h += Math.atan2(Math.sin(want - c.h), Math.cos(want - c.h)) * 0.5; c.s = Math.min(c.s, speed); G.T += 0.05; G.step(0.05); air = air || c.air; }
@@ -444,9 +444,27 @@ const HELPERS = () => {
       for (; k < 3000 && G.mode.kind === "race"; k++) { const c = G.car, n = G.world._pathNear(tk.pts, c.x, c.z), t = tk.pts[(n.i + 7) % N], want = Math.atan2(t.x - c.x, t.z - c.z); if (!c.air) { c.h += Math.atan2(Math.sin(want - c.h), Math.cos(want - c.h)) * 0.5; c.s = Math.min(c.s, 34); } G.T += 0.05; G.step(0.05); if (c.air) air++; }
       keys(); out.push({ id: T.id, done: G.mode.kind !== "race", air, jumpy: !!(T.ramps || T.elev), lava: !!T.lava, clouds: !!T.clouds }); G.startFree(); }
     S.car = keep; G.respawnCar(); return { all: out.every((o) => o.done && o.jumpy), bad: out.filter((o) => !(o.done && o.jumpy)), airTracks: out.filter((o) => o.air > 3).length, n: out.length, err: G.lastErr || "" }; });
-  ok("W12-01 all 18 tracks have jumps, hills or gaps, and an autopilot finishes each one", r.all && r.n === 18 && r.airTracks >= 14 && !r.err, r);
+  ok("W12-01 all 22 tracks have jumps, hills or gaps, and an autopilot finishes each one", r.all && r.n === 22 && r.airTracks >= 14 && !r.err, r);
   r = await E(() => { const { TRACKS } = __dd, ids = TRACKS.map((t) => t.id); const lava = TRACKS.find((t) => t.id === "volcano"), cloud = TRACKS.find((t) => t.id === "cloud"); G.startTrack(ids.indexOf("volcano")); const lm = []; G.world.trk.g.traverse((o) => { if (o.material && o.material.emissive && o.material.emissive.getHex() === 0xff3300) lm.push(o); }); const gaps = G.world.trk.gaps.length; G.startFree(); G.startTrack(ids.indexOf("cloud")); let puffs = 0; G.world.trk.g.traverse((o) => { if (o.geometry && o.geometry.type === "SphereGeometry") puffs++; }); const cg = G.world.trk.gaps.length; G.startFree(); return { lava: lm.length, gaps, puffs, cg, ramprush: TRACKS.find((t) => t.id === "ramprush").ramps.length, night: !!lava.night, high: cloud.keys.some((k) => Array.isArray(k) && k[1] >= 14) }; });
   ok("W12-02 Volcano Leap has 3 lava gaps, Cloud Bridge 4 gaps in the clouds, Ramp Rush 6 ramps", r.lava === 3 && r.gaps === 3 && r.cg === 4 && r.puffs > 20 && r.ramprush === 6 && r.night && r.high, r);
+
+  // ===== v13: sky and fiction tracks, Skill Park 2, more races =====
+  r = await E(() => { const { TRACKS } = __dd, ix = (id) => TRACKS.findIndex((t) => t.id === id); for (const t of TRACKS) S.tracks[t.id] = S.tracks[t.id] || { best: 999, stars: 1 }; const o = {};
+    G.startTrack(ix("cloud")); sim(3.5); o.cloud = { ground: G.world.groundMesh.visible, y: G.car.y, bg: G.scene.background.getHex() }; G.startFree(); o.groundBack = G.world.groundMesh.visible;
+    G.startTrack(ix("moon")); sim(3.5); o.moonG = G.grav(); G.startFree(); o.freeG = G.grav();
+    G.startTrack(ix("portal")); sim(3.5); const w0 = S.stats.warps || 0, tk = G.world.trk, N = tk.N; keys("up"); for (let k = 0; k < 2000 && G.mode.kind === "race"; k++) { const c = G.car, n = G.world._pathNear(tk.pts, c.x, c.z), t = tk.pts[(n.i + 7) % N], wnt = Math.atan2(t.x - c.x, t.z - c.z); if (!c.air) { c.h += Math.atan2(Math.sin(wnt - c.h), Math.cos(wnt - c.h)) * 0.5; c.s = Math.min(c.s, 34); } G.T += 0.05; G.step(0.05); } keys(); o.warps = (S.stats.warps || 0) - w0; o.portalDone = /Portal Run/.test(document.querySelector("#card h2")?.textContent || ""); G.startFree(); return o; });
+  ok("W13-01 Cloud Bridge is high in the sky (no ground), Moon Base has low gravity, Portal Run warps twice", !r.cloud.ground && r.cloud.y > 25 && r.groundBack && r.moonG < 10 && r.freeG === 22 && r.warps === 2 && r.portalDone, r);
+  r = await E(() => { const { TRACKS } = __dd, ix = (id) => TRACKS.findIndex((t) => t.id === id); G.startTrack(ix("dragon")); sim(3.5); const tk = G.world.trk, N = tk.N, g = tk.gaps[0]; keys("up"); let back = null;
+    for (let k = 0; k < 2000 && G.mode.kind === "race"; k++) { const c = G.car, n = G.world._pathNear(tk.pts, c.x, c.z), t = tk.pts[(n.i + 7) % N], wnt = Math.atan2(t.x - c.x, t.z - c.z); if (!c.air) { c.h += Math.atan2(Math.sin(wnt - c.h), Math.cos(wnt - c.h)) * 0.5; c.s = Math.min(c.s, 6); } G.T += 0.05; G.step(0.05); const pops = [...document.querySelectorAll(".pop")].map((x) => x.textContent).join("|"); if (/Rolling start/.test(pops)) { back = { s: G.car.s, d: (g[0] * N - G.world._pathNear(tk.pts, G.car.x, G.car.z).i) * tk.len / N }; break; } } keys(); G.startFree(); return back; });
+  ok("W13-02 a fall puts you back far before the gap with a rolling start", !!r && r.s > 15 && r.d > 60, r);
+  r = await E(() => { const o = {}; G.startGates(); sim(3.5); for (let k = 0; k < 12 && G.mode.kind === "mission"; k++) { const bc = G.beacon.position; G.setPos(bc.x, bc.z, Math.PI / 2); sim(0.1); } o.gates = document.querySelector("#card h2")?.textContent;
+    G.startBowling(); sim(3.5); keys("up"); for (let i = 0; i < 300 && G.mode.kind === "mission"; i++) { G.car.h = Math.PI / 2; G.car.z += (426 - G.car.z) * 0.3; G.T += 0.05; G.step(0.05); if (G.car.x > 290) keys(); } keys(); sim(4); o.bowl = S.best.bowl;
+    G.startDonut(); sim(3.5); let a = 0; for (let i = 0; i < 620 && G.mode.kind === "mission"; i++) { a += 0.08; const c = G.car; c.x = 200 + Math.sin(a) * 9; c.z = 426 + Math.cos(a) * 9; c.h = a + Math.PI / 2; c.s = 15; G.T += 0.05; G.step(0.05); } o.donut = S.best.donut;
+    G.startBalloons(); sim(3.5); for (const q of G.mode.balls) { G.setPos(q.x, q.z, 0); G.car.y = q.y - 0.9; G.car.air = true; G.car.vy = 0; G.T += 0.05; G.step(0.05); } sim(0.1); o.pop = S.best.pop;
+    G.startBullseye(); sim(3.5); let tries = 0; for (let j = 0; j < 3 && G.mode.kind === "mission"; j++) { keys("up"); let air = false; for (let i = 0; i < 200; i++) { const c = G.car; c.h = Math.PI / 2; if (!c.air && c.x < 478) c.s = 29; G.T += 0.05; G.step(0.05); if (c.air) air = true; if (air && !c.air) break; } keys(); tries++; sim(1.5); } o.bull = S.best.bull; o.bullDone = /Bullseye|shooter/.test(document.querySelector("#card h2")?.textContent || ""); G.checkBadges(); o.strike = S.best.bowl === 10 ? !!S.badges.strike : true; G.startFree(); return o; });
+  ok("W13-03 Skill Park 2: ring dash, car bowling, donuts, balloon pop and bullseye jump", /Ring dash|10 rings/.test(r.gates || "") && r.bowl >= 6 && r.donut >= 4 && r.pop === 15 && r.bull != null && r.bullDone && r.strike, r);
+  r = await E(() => { const o = {}; for (const id of ["r-fic", "r-bikes", "r-rocket", "r-rig"]) { G.racesMenu(); document.getElementById(id).click(); sim(3.5); const ai = G.mode.ai.map((a) => a.type).join(","), car = G.car.def.id; const k = lapTeleport(2); o[id] = { ai, car, k, win: /WIN|finished/.test(document.querySelector("#card h2")?.textContent || ""), back: S.car }; } G.startFree(); return o; });
+  ok("W13-04 four new races: Fiction Cup, Bike battle, Rocket rally, Big rig race (car lent and given back)", r["r-fic"].ai === "hover,ufo,ghost" && r["r-bikes"].car === "bike" && r["r-rocket"].car === "rocket" && r["r-rig"].car === "truck" && Object.values(r).every((x) => x.k > 0 && x.win && x.back === "hatch"), r);
 
   // Y. Save survives reload
   const saved = await E(() => { __dd.save(); return S.points; });

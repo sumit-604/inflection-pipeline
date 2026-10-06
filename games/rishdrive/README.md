@@ -65,6 +65,16 @@ from the jsdelivr CDN.
   frontflip or ⬇ (S) for a backflip. Land with the wheels down for 400
   points per flip (2 flips: 1000). Half a flip is a bad landing. Holding the
   gas through a jump never flips the car by mistake. New badge: Flip master.
+- **Sky and fiction tracks (v13):** Cloud Bridge now runs 30 m up in the
+  sky with clouds all round and no ground below. New: Rainbow Road (40 m up,
+  3 gaps), Moon Base (low gravity, 30 to 45 m gaps), Dragon Spine (twisty,
+  4 lava gaps) and Portal Run (warp through 2 portals). 22 tracks. A fall now
+  puts you back about 100 m before the gap with a rolling start.
+- **Skill Park 2 (v13):** a second pad west of the Skill Park with Ring dash,
+  Car bowling, Bullseye jump, Donut master and Balloon pop.
+- **More races (v13):** Fiction Cup (hover, UFO, ghost), Bike battle, Rocket
+  rally and Big rig race. The game lends the right vehicle and gives yours
+  back. 38 badges.
 - **18 jump tracks (v12):** every track now has jumps, hills or gaps.
   Ramps on Rishu Ring, Mango Hairpins, Figure of 8, Monsoon Mile, Fog Valley
   and Dirt Devil; 4 big ramps on Jump Junction; hills on Chicane Chaos, Night
@@ -179,3 +189,5 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   cannon, 36 badges. 206 regression checks.
 - v12: jumps, hills or gaps on all tracks; 3 new tracks (18 in all); lava
   under gaps, clouds, ramps that sit on raised roads. 208 regression checks.
+- v13: sky tracks, 4 fiction tracks (22 in all), Skill Park 2 with 5 games,
+  4 new races, rolling start after a fall, 38 badges. 212 regression checks.

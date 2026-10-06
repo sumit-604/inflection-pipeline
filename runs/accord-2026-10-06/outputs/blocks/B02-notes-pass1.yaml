@@ -1,0 +1,10 @@
+stage: B02-notes-pass1
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+note: "Pass 1 of 3 only. The prompt specifies no YAML for pass 1; the B02-notes block is emitted after pass 3."
+input_gaps: ["rating ABSENT", "shareholding ABSENT", "results pp3-19 scan-only", "listing-period announcements not staged", "VOLTAMP no transcripts", "one concall only", "AR Note 12 (fixed assets) absent from text layer; PDF render unavailable"]
+lbf_2: "vendor advances 624.41 of 890.45 lakh; counterparty and purpose NOT FOUND; no RPT advance; CARO iii nil (Note 17 p.90; CARO p.72)"
+lbf_4: "CFO 869.50 vs PAT 450.43 lakh; ex receivable release (479.83); 2-yr CFO 51.40 vs PAT 1,044.80; IPO money 2,040.21 of cash 2,232.80 (Cash Flow p.79; CARO x(a) p.73)"
+top_findings_ref: "runs/accord-2026-10-06/outputs/reports/02-notes-pass1.md"

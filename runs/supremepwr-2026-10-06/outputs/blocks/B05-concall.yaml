@@ -1,0 +1,119 @@
+stage: B05-concall
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR: BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. (Filled by hand from the NSE API: 17 filings Mar-Sep 2026; Oct-2025 to Feb-2026 order intimations not pulled under the operator cap.)"
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. (Filled by hand: NSE SHP XBRL 31-Mar-2026; the Sep-2026 half-year pattern is not yet filed as of 2026-10-06.)"
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values): screener/INDOTECH/531201/DANISH Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. ABSENT documents. Data_Sheet CSVs carry FY23-FY26 raw values and are present."
+  - "COLLECTOR: no results PDFs (screener has none). (Filled by hand: Q1 FY27 and FY26 audited results from NSE.)"
+  - "COLLECTOR: no rating PDF. (Filled by hand: CRISIL full rationale 20-Mar-2026 as text.)"
+  - "HIGH: prospectus/ empty. Company listed Dec-2023, within 3 years of run_date. Not pulled: operator 12-document cap 2026-10-06 (inputs/operator-notes.md). Backward baseline runs on FY23-FY26 AR/screener only; promoter and group map from AR and web."
+  - "research/ empty (non-anchored; no effect on evidence)."
+  - "Peer INDOTECH: no transcripts on screener; peer-concalls cover SHILCHAR (4) and DANISH (2) only."
+  - "No Q2 FY27 business update filed as of 2026-10-06 (NSE announcement list checked through 26-Sep-2026)."
+  - "Operator document cap: Q3 FY26 transcript (concalls/Concall_Feb_2026) and the shareholding XBRL are over the 12-document cap, kept because stage 5 requires three transcripts and the UA qualifier needs the SHP; flagged for operator ruling."
+  - "Results PDFs carry an OCR-quality text layer (e.g. 'R, Lakhs'); read the page before taking a number."
+  - "STAGE 5: only three calls exist (Q3 FY26, H2 FY26, Q1 FY27), so the trailing-four-quarter grade window is three quarters. Q1 FY26 and H1 FY26 transcripts sit in other/ and were not read. The FY26 guidance cascade 225 > 200 > 190 is anchored only to the CMD's own retrospective on 17-Aug-2026 (p.17); the 225 and 190 steps are in none of the three transcripts as live guidance."
+flags:
+  - {type: FLAG-GUIDANCE-DRIFT, reason: "FY27 revenue guide fell in two steps: more than 300 (Q3 FY26 call, 11-Feb-2026, p.6, p.11, p.14) to 275-300 (2-Jun-2026, p.5) to 250-300 (17-Aug-2026, p.6, p.14, p.17). The 250 floor was not new in August: the 2-Jun call also says 250-300 (p.7, p.9) and 270-300 (p.10, p.13). Operator context 'was 275-300 in June' holds only for the first answer."}
+  - {type: FLAG-CAPACITY-INCONSISTENT, reason: "Management's own capacity and utilisation figures give FY27 revenue of Rs 225-275 Cr (DERIVED: Unit 1 100-110 Cr per Q3 FY26 call p.15 at full use, plus Kannur 500-550 Cr per H2 FY26 call p.3 at 25-30% per Q1 FY27 call p.11), below the top half of the 250-300 guide. Unit 1 is also 'fully utilised' (Q1 FY27 p.11) vs 70-80% (presentation p.21; H2 FY26 call p.10 says 70-78%), and FY26 non-Kannur revenue of about Rs 157-162 Cr is above the 100-110 Cr Unit 1 potential."}
+  - {type: FLAG-SCHEDULE-DRIFT, reason: "Order-book delivery due in FY27 moved from 412 Cr (2-Jun p.7, p.13) to 377 Cr (17-Aug p.7) to 'almost 350' (17-Aug p.15), then cut to 250-300 for revenue because 10-20% of customers extend delivery (17-Aug p.7). Order book is flat at 590.06 vs 588.17 despite Rs 195.64 Cr of Q1 wins."}
+  - {type: FLAG-DANYA, reason: "Danya Electric appears twice in three calls (11-Feb p.4: Rs 1.5 Cr order executed through Danya; 17-Aug p.16: 'backward integration there', DT support). No analyst asked about it in any call. Presentation p.26 gives its order book as Rs 88.13 Cr (about 14.9% of 590.06, DERIVED) and calls it a 90% subsidiary; the calls never name its legal form, trade with SPEL, guarantee or rating."}
+  - {type: FLAG-QUALIFICATION-GAP, reason: "Order book is 76.9% power transformers, but of Rs 195.64 Cr Q1 FY27 wins only 112.5 MVA (13.50) and 160 MVA (23.30) are above 25 MVA; eight of ten orders are 20 MVA units that Unit 1 (rated up to 25 MVA, presentation p.21) can build. 220 kV type test is planned Dec-2026/Jan-2027 (2-Jun p.12) with no date restated on 17-Aug. Data-centre orders: none; management says none in FY27 (17-Aug p.11)."}
+  - {type: FLAG-MARGIN-BASIS, reason: "Operating margin guide has no stated basis: analyst-quoted 15-16% accepted on 2-Jun (p.7), 18-20% EBITDA on 17-Aug (p.5), while PAT floor fell to 9% in the same call (p.14-15). AR MD&A says 15-18% (B03). Consolidated 18.1% vs standalone 15.1% (B03) explains the spread; management never says which basis."}
+quarters_analysed: ["Q3 FY26", "H2 FY26 (Q4 FY26)", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Kannur ramp: utilisation 20-25% now to 30-50% by Q4 FY27", type: "revenue+margin (VOLUME)", timeframe: "near to medium (2-3 years to about 90%)", conviction: "M", confirm_signal: "Q2 FY27 call states utilisation with basis at or above 30%, Q2 revenue at or above 55-65 Cr, depreciation near 1.26 Cr a quarter", kill_signal: "Utilisation flat at or below 25% at Q3 FY27; skilled labour output still short; Q2 revenue below 55 Cr"}
+  - {priority: 2, name: "Order book conversion: 377 Cr due before Mar-2027 of 590.06 Cr", type: "revenue (VOLUME)", timeframe: "near (FY27)", conviction: "M", confirm_signal: "FY27 delivered revenue at or above 275 Cr; Q2 above Q1 48.23 Cr; no further cut to the 377 Cr schedule", kill_signal: "Customer-extended deliveries above 20%; revenue tracking 250 Cr or lower; order book falling below 500 Cr"}
+  - {priority: 3, name: "160 MVA / 220 kV type test at CPRI (Dec-2026/Jan-2027) unlocking 220 kV and data-centre orders", type: "revenue (REGULATORY-POLICY / qualification)", timeframe: "medium (FY28)", conviction: "L", confirm_signal: "CPRI certificate filed; first 220 kV repeat order; first data-centre purchase order", kill_signal: "Test slips beyond Mar-2027 or fails; data-centre orders still nil in FY28"}
+  - {priority: 4, name: "Price variation clauses on 80-85% of orders", type: "margin (PRICE-MIX / COST)", timeframe: "near", conviction: "M", confirm_signal: "Gross margin holds near Q1 FY27 level through Q2 and Q3 with copper and CRGO volatile; EBITDA band held", kill_signal: "Shorter-lead orders (under 3-4 months) rise in mix; margin dips more than 1.5 points"}
+  - {priority: 5, name: "Power-transformer mix and larger MVA premium (1-2 points, absorbed by overheads)", type: "margin (PRICE-MIX)", timeframe: "medium", conviction: "L", confirm_signal: "EBITDA margin above 20% at utilisation above 40%, employee plus other cost share falling", kill_signal: "Employee plus other expenses stay near 13% of revenue (Q1 FY27 6.41 of 48.23) with PAT margin at or below 10%"}
+  - {priority: 6, name: "Geographic spread: Hyderabad, Karnataka, Maharashtra, Kerala", type: "revenue (VOLUME)", timeframe: "near to medium", conviction: "M", confirm_signal: "Named large buyers in new states; repeat orders", kill_signal: "Hyderabad-based unnamed buyers stay above 60% of inflow with no repeat"}
+  - {priority: 7, name: "Tank factory (Rs 20-22 Cr, term loan) for backward integration", type: "margin (COST)", timeframe: "medium (before Mar-2027 per 17-Aug; next FY per 2-Jun p.11)", conviction: "L", confirm_signal: "Statutory approvals received by Sep-Oct 2026; construction start filed", kill_signal: "Approvals slip past Q3 FY27"}
+  - {priority: 8, name: "Main board migration (window after Dec-2026)", type: "re-rating (REGULATORY-POLICY)", timeframe: "near to medium", conviction: "L", confirm_signal: "Application or board approval filed", kill_signal: "'Let us see' answer persists past Q3 FY27"}
+  - {priority: 9, name: "Next capacity: 300-500 MVA capability on new land", type: "revenue (INORGANIC/VOLUME)", timeframe: "long (FY29+)", conviction: "L", confirm_signal: "Land bought, capex sized, funding named", kill_signal: "Equity raise on dilutive terms before Kannur reaches 50%"}
+  - {priority: 10, name: "Exports (direct)", type: "revenue (SECTORAL)", timeframe: "long", conviction: "L", confirm_signal: "First export order", kill_signal: "Still 'let us see' after 2 years of effort"}
+guidance:
+  - {item: "FY27 revenue", number: "more than 300 Cr", timeframe: "FY27", stated_in: "Q3 FY26 call 11-Feb-2026, p.6, p.11, p.14"}
+  - {item: "FY27 revenue", number: "275-300 Cr ('fixed target'); also 250-300 and 270-300 on same call", timeframe: "FY27", stated_in: "H2 FY26 call 2-Jun-2026, p.5, p.7, p.9, p.10, p.13"}
+  - {item: "FY27 revenue", number: "250-300 Cr; 'may cross 300'", timeframe: "FY27", stated_in: "Q1 FY27 call 17-Aug-2026, p.6, p.14, p.16"}
+  - {item: "Q1 FY27 revenue", number: "50-60 Cr (actual 48.23)", timeframe: "Q1 FY27", stated_in: "H2 FY26 call, p.11"}
+  - {item: "Q4 FY26 revenue", number: "70-80 Cr (actual total income 70.72 DERIVED)", timeframe: "Q4 FY26", stated_in: "Q3 FY26 call, p.5, p.14"}
+  - {item: "FY26 revenue", number: "180-200 Cr (earlier 200 plus; CMD later says 225 then 200 then 190; actual 181.64)", timeframe: "FY26", stated_in: "Q3 FY26 call p.5, p.14; Q1 FY27 call p.17"}
+  - {item: "FY28 revenue growth", number: "another 100 Cr; minimum 30% a year; 20% to 30%", timeframe: "FY28", stated_in: "H2 FY26 call p.5; Q1 FY27 call p.8, p.9, p.17"}
+  - {item: "Peak revenue", number: "600-650 Cr (FY29), then 550-600 Cr FY29 same call; Kannur alone 500-550 (Jun) vs 600-650 plus Unit 1 100-110 = 700 (Feb)", timeframe: "FY29", stated_in: "Q1 FY27 call p.8, p.9; H2 FY26 call p.3; Q3 FY26 call p.15"}
+  - {item: "PAT margin", number: "10-12% (Feb, Jun, Aug first answer); 10-13% (Feb); 9-12% (Aug later)", timeframe: "ongoing", stated_in: "Q3 FY26 p.5, p.12; H2 FY26 p.5; Q1 FY27 p.5, p.14, p.15"}
+  - {item: "EBITDA margin", number: "15-16% accepted (Jun); 18-20% (Aug)", timeframe: "FY27", stated_in: "H2 FY26 call p.7; Q1 FY27 call p.5"}
+  - {item: "Order book", number: "590.06 Cr at 13-Aug-2026; 377 Cr before Mar-2027, 212 Cr after", timeframe: "FY27 / FY28", stated_in: "Q1 FY27 call p.4, p.7"}
+  - {item: "Order book floor", number: "maintained between 500 and 600 Cr", timeframe: "ongoing", stated_in: "Q1 FY27 call p.9, p.17"}
+  - {item: "Price variation coverage", number: "80-85% of order book", timeframe: "current", stated_in: "Q1 FY27 call p.10, p.11"}
+  - {item: "Kannur utilisation", number: "20-25% now; 30-50% by Q4 FY27; Unit 2 25-30% for FY27; about 90% in 2-3 years", timeframe: "FY27 to FY29", stated_in: "Q1 FY27 call p.6, p.11; H2 FY26 call p.7"}
+  - {item: "Tank factory capex", number: "20-25 Cr (Jun), 20-22 Cr on term loan (Aug); complete before Mar-2027", timeframe: "FY27", stated_in: "H2 FY26 call p.7; Q1 FY27 call p.10"}
+  - {item: "220 kV prototype test", number: "Dec-2026 or Jan-2027 at CPRI; prototype costs Rs 14-16 Cr", timeframe: "FY27", stated_in: "H2 FY26 call p.11, p.12"}
+  - {item: "Equity raise", number: "none planned (Feb); not this year, FY28 may require (Aug)", timeframe: "FY28", stated_in: "Q3 FY26 call p.12; Q1 FY27 call p.10"}
+  - {item: "Kannur capex", number: "95-100 Cr", timeframe: "completed", stated_in: "Q3 FY26 call p.7"}
+  - {item: "Receivable days", number: "80-90 (Feb); 94 (Jun); 80-100 (Aug)", timeframe: "ongoing", stated_in: "Q3 FY26 p.12; H2 FY26 p.4; Q1 FY27 p.7"}
+promise_delivery:
+  delivered: 4
+  partial: 4
+  missed: 3
+  rows:
+    - {promised_in: "Q3 FY26 call (11-Feb-2026)", promise: "Q4 FY26 revenue 70-80 Cr", outcome: "DELIVERED (at floor)", explanation: "Q4 total income 70.72 Cr DERIVED (H2 106.75 less Q3 36.03). No explanation needed."}
+    - {promised_in: "Q3 FY26 call", promise: "PAT margin 10-12%", outcome: "DELIVERED", explanation: "Q4 PAT margin 10.8% DERIVED; FY26 11.4% (20.68/181.64); Q1 FY27 10.1%. Copper blamed for Q3 dip."}
+    - {promised_in: "Q3 FY26 call", promise: "New plant first invoice and commercial production in Q4 FY26", outcome: "DELIVERED (one quarter late vs the original Q3 target)", explanation: "Presentation p.21: commercialised Feb 2026. Delay blamed on environmental clearance (external)."}
+    - {promised_in: "Q3 FY26 call", promise: "Government exposure kept below 50%", outcome: "DELIVERED", explanation: "30.10% on 13-Aug-2026 (177.6 of 590.06)."}
+    - {promised_in: "Q3 FY26 call", promise: "FY26 revenue 180-200 Cr (earlier 200 plus)", outcome: "PARTIAL", explanation: "181.64 Cr is inside 180-200 at the floor, below the 190 the CMD cites in August and below 200 plus. Q3 shortfall blamed on customer payment delay, then on environmental clearance."}
+    - {promised_in: "Q3 FY26 call", promise: "Receivables cut to 80-90 days", outcome: "PARTIAL", explanation: "94 days in the 2-Jun CMD remarks (p.4); 80-100 in August. Claim of 210 to 80 days is not reconciled with the AR (FY25 109.8 days, B02)."}
+    - {promised_in: "Q3 FY26 call", promise: "No equity dilution planned", outcome: "PARTIAL", explanation: "17-Aug: not this year, but FY28 may require. Existing warrant balance of 15.81 Cr is never mentioned."}
+    - {promised_in: "H2 FY26 call (2-Jun-2026)", promise: "Kannur output in 3-4 months with 150-200 staff deployed", outcome: "PARTIAL", explanation: "20-25% utilisation after about 6 months from commercial start; Q2 'will be improved'. 250-300 staff now. Cause given: untrained hands, a mix of external and internal."}
+    - {promised_in: "Q3 FY26 call", promise: "New plant adds 30-40 Cr in Q4 FY26", outcome: "MISSED", explanation: "H2 FY26 call p.8: 20-25 Cr from the new facility for the whole year. No explanation of the Q4 gap (silence)."}
+    - {promised_in: "H2 FY26 call", promise: "Q1 FY27 revenue 50-60 Cr", outcome: "MISSED", explanation: "48.23 Cr revenue, 48.31 total income, 3.5% below the floor. Not addressed on the 17-Aug call (silence)."}
+    - {promised_in: "Q3 FY26 call", promise: "Identify land for next expansion within about a quarter", outcome: "MISSED", explanation: "17-Aug p.16: no land bought, no plan frozen. Kannur site full (6 acres). No explanation."}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "FY27 revenue guide: what is the number", quarters_asked: ["Q3 FY26", "H2 FY26", "Q1 FY27"], classification: "answer changed between quarters (more than 300, then 275-300 with 250-300 alongside, then 250-300)"}
+  - {question: "Kannur utilisation and ramp pace", quarters_asked: ["Q3 FY26", "H2 FY26", "Q1 FY27"], classification: "answer changed between quarters (30-40 Cr in Q4; 20-25 Cr for FY26; 20-25% now; Unit 1 fully used vs 70-80%)"}
+  - {question: "Equity raise needed to reach peak revenue", quarters_asked: ["Q3 FY26", "Q1 FY27"], classification: "answer changed between quarters (not planned, then FY28 may require)"}
+  - {question: "Direct export breakthrough", quarters_asked: ["Q3 FY26", "Q1 FY27"], classification: "deflected every time ('let us see'; no timeline after 1.5 years of effort)"}
+  - {question: "Price pass-through coverage on raw material", quarters_asked: ["Q3 FY26", "H2 FY26", "Q1 FY27"], classification: "answer changed between quarters (copper content only, about 20%; then PVC beyond 3-4 months; then 80-85% of book), while margin dipped 1-1.5 points in H2"}
+  - {question: "Size of data-centre opportunity", quarters_asked: ["H2 FY26", "Q1 FY27"], classification: "deflected every time (no number; 'FY27 we will not get, FY28 we will')"}
+  - {question: "Main board migration timing", quarters_asked: ["H2 FY26", "Q1 FY27"], classification: "deflected every time ('very much focused'; 'let us see')"}
+  - {question: "Share of order book that converts to FY27 revenue", quarters_asked: ["H2 FY26", "Q1 FY27"], classification: "answer changed between quarters (412 Cr, then 377 Cr, then almost 350 Cr, then 250-300 Cr revenue)"}
+credibility_grade: "C"
+credibility_basis: "Three quarters (Q3 FY26 to Q1 FY27): 4 delivered, 4 partial, 3 missed. Revenue guides land at or under the floor (FY26 181.64 vs 180-200, Q4 70.72 vs 70-80, Q1 FY27 48.23 vs 50-60); the Q4 new-plant sub-guide missed by 10-15 Cr; the FY27 guide was cut twice; the PAT band held. Upgrade to B needs Q2 FY27 inside guidance and Kannur utilisation disclosed with basis at or above 30%."
+peer_questions:
+  - {question: "Is the 5-10 year transformer demand claim backed by peers: utility capex, order inflow, lead times of 12-24 months for power transformers?", why: "Management gives no source beyond 'market information' (Q3 FY26 p.7, p.11; Q1 FY27 p.12). It underpins FY28 plus 30% and peak 600-650 Cr.", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "How fast do peers ramp a new plant: Jitesh K says peers go 20% to 35% in a quarter and 50% in a year. What did Shilchar and Danish disclose for utilisation after commissioning?", why: "Kannur is at 20-25% six months in. Benchmark for the 30-50% Q4 FY27 claim.", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "What share of peer order books carries price variation clauses, and did peer margins dip 1-1.5 points on copper, CRGO and oil in H2 FY26?", why: "SPEL says 80-85% PVC and a 1-1.5 point dip. Verify whether coverage this high is common for 20 MVA class orders.", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "Are CRGO and bushing supplies free-flowing (SPEL, Q3 FY26 p.5, p.14: 'no CRGO problem'; REP bushing delay)? What do peers say on CRGO price and lead time?", why: "Raw material trend claim.", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "Is 220 kV capacity oversupplied? SPEL says players are few (Q1 FY27 p.12) while each peer adds capacity. How many peers hold a 220 kV type test, how long did CPRI take, and what did the prototype cost?", why: "Capex-cycle and moat claim; SPEL plans its first 160 MVA test Dec-2026/Jan-2027 at a prototype cost of Rs 14-16 Cr.", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "Does a larger MVA mix lift margin by 1-2 points before overheads (SPEL says the gain is absorbed)? What did peers see in EBITDA margin when mix moved to power transformers?", why: "Core margin-bridge claim (Q3 FY26 p.7, p.15; Q1 FY27 p.8, p.15).", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "Are peers seeing data-centre transformer orders, and what approvals (type test, state approvals, colocation buyers) did they need?", why: "SPEL has no data-centre order and 'FY27 we will not get'. Test whether the DC trigger is real.", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "Skilled labour: do peers report the same shortage, and what wage and headcount ramp followed a new plant?", why: "SPEL attributes the slow ramp to untrained hands and employee cost 0.81 to 1.92 Cr.", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "Do peers hold in-house tank factories, and what margin gain did they report (SPEL: 5-8% of turnover is tanks; steel 6-7% of cost)?", why: "Tank factory margin claim is unquantified.", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "Government versus private receivable days and unbilled finished goods: do peers report customer-side billing delays like SPEL's Q3 FY26 Rs 5-10 Cr?", why: "SPEL cited customer payment hold for the Q3 FY26 shortfall.", check_peers: ["Shilchar", "Danish Power"]}
+  - {question: "Export tariff claim: US duty on India cut from 25% to 18% (Q3 FY26 p.14). Do peers confirm and report export orders?", why: "Management cites it but has no exports.", check_peers: ["Shilchar", "Danish Power"]}
+red_flags:
+  - {severity: HIGH, flag: "Guidance cascade: FY26 225 > 200 > 190 vs 181.64; FY27 more than 300 > 275-300 > 250-300; Q1 FY27 50-60 vs 48.23; Kannur Q4 30-40 vs 20-25 for the year. CMD says (17-Aug p.16) he commits lower so investors are safe; the record shows guides that missed, not guides that were beaten."}
+  - {severity: HIGH, flag: "Kannur utilisation facts conflict: Unit 1 'fully utilised' vs 70-80%; Unit 1 potential 100-110 Cr vs about 157-162 Cr of non-Kannur FY26 revenue; Kannur potential 600-650 Cr (Feb) vs 500-550 Cr (Jun); AR says 45-50% utilisation vs 19.4% (B03). Basis never stated."}
+  - {severity: MEDIUM, flag: "Danya Electric is never questioned or explained on any call; the book carries Rs 88.13 Cr of Danya orders (presentation p.26) and the CMD names it as backward integration for distribution transformers (17-Aug p.16)."}
+  - {severity: MEDIUM, flag: "Q3 FY26 miss given two causes (customer payment delay p.5; environmental clearance p.5) and a deferral sized at 4, 5, 5-10 and 10 Cr across the same call; PCB consent 'a matter of a week' (p.10) never confirmed in later calls."}
+  - {severity: MEDIUM, flag: "Larger-MVA mix is thin: of 195.64 Cr Q1 FY27 wins only 36.80 Cr (18.8%, DERIVED) are above 25 MVA; the rest are 20 MVA units. Order-book power-transformer share of 76.9% overstates Kannur-specific demand."}
+  - {severity: MEDIUM, flag: "PAT floor lowered to 9% while EBITDA guide raised to 18-20% in the same call; operating-leverage gain is absorbed by depreciation and interest (finance 0.41 to 1.30, depreciation 0.17 to 0.80, presentation p.7)."}
+  - {severity: LOW, flag: "Q1 FY27 order set of Rs 195.64 Cr in the presentation (p.5) is described as Q1 wins; the second 112.5 MVA 330 kV order of Rs 13.60 Cr is dated 13-Jul-2026 and is NOT in the 195.64 (the Rs 13.50 Cr 330 kV order is dated 13-Apr-2026). 165 MVA from KPTCL (17-Aug p.11) vs 160 MVA from an unnamed Hyderabad company (filing 22-Apr-2026)."}
+dropped_triggers:
+  - "Substation construction work (Q3 FY26 p.12: one Coimbatore order, 'not concentrating')"
+  - "Refurbishment and after-sales services in Phase 2 (Q3 FY26 p.8: after 6-12 months); never mentioned again"
+  - "Plant inauguration and investor plant visit (Q3 FY26 p.17: admin building 1-1.5 months); never mentioned again"
+  - "FY28 order booking of 400-500 Cr (Q3 FY26 p.11); replaced by an order-book floor of 500-600 Cr (Q1 FY27 p.9)"
+  - "Chinese-bidder competition (Q3 FY26 p.15: 'no China'); not revisited"
+timeline_slippages:
+  - "Kannur plant: expected ready Q3 FY26 (Q3 FY26 p.5), commercial Feb 2026 (presentation p.21); PCB consent 'a week' away on 11-Feb (p.10), status never reported"
+  - "Kannur ramp: Q4 FY26 contribution 30-40 Cr (p.17) vs 20-25 Cr for the year; 3-4 months to expected output (2-Jun p.8) vs 20-25% on 17-Aug"
+  - "Tank factory: complete this financial year (2-Jun p.6), operational next financial year (2-Jun p.11), approvals pending and complete before March (17-Aug p.10)"
+  - "Next-expansion land: identify within a quarter (Q3 FY26 p.11) vs not bought (17-Aug p.16)"
+  - "220 kV prototype: Dec-2026 or Jan-2027 (2-Jun p.12); no date on 17-Aug"
+  - "Main board: 'very much focused' (2-Jun p.13), 'let us see' for Q4 FY27 (17-Aug p.15)"
+analyst_note: "File [page N] markers are the anchors; the printed transcript page is N-1. Operator-context checks: FY27 275-300 in June holds only for the first answer (250-300 and 270-300 appear later on the same 2-Jun call). PAT 20.68 is pre-minority; the 20.44 the CMD cites is attributable (results). '30% by Q3' (B03 monitorable) fails: the call says 30-50% by Q4 FY27. EBITDA 18-20% holds (17-Aug p.5). Q1 FY27 PAT growth is 9.63% (net profit) or 10.04% (attributable); the CMD says 10.4%, which is PBT growth. Capacity cross-check: Unit 1 at 100% (100-110 Cr) plus Kannur 25-30% of 500-550 Cr gives Rs 225-275 Cr, below the guide midpoint; stage 11 should not take the top of the range as evidenced."

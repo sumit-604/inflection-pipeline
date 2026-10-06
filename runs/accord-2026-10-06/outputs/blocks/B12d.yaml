@@ -1,0 +1,19 @@
+stage: B12d
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 3
+substantive_confirmed: 2
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "Q5 and Q11 carry VERIFIED on direction only; the Accord-specific terms (15% advance, 3-month fixed; guidance size) are not supported. Two independent peers anchor each, so Rule 4 passes, but the label reads wider than the evidence. Downstream stages should read them as direction-verified.", anchor: "B06 Part 1 Q5, Q11; D-M26 p8 L300-308 and S-M26 p8 L318 (Q5)"}
+  - {severity: MINOR, item: "Voltamp coverage is Data_Sheet only (no transcript exists). B06 labels this UNUSED for call evidence and does not credit it as peer-call support. Handled correctly; 3 peers provided, 2 with transcripts.", anchor: "B06 Part 3 and input_gaps"}
+  - {severity: MINOR, item: "Verbatim spot-check passed on 14 of 14 sampled quotes. Some line ranges drift 1-4 lines from the txt (e.g. Danish PV 30% sits at txt L342-346; cited L340-346 covers it). No finding on content.", anchor: "DANISH-Concall_May_2026 L343-346, L482, L575, L600; SHILCTECH Aug_2026 L101, L122; May_2026 L318, L604-612; Apr_2025 L77, L117; Oct_2025 L251"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

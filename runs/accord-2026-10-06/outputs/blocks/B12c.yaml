@@ -1,0 +1,36 @@
+stage: B12c
+company: "ACCORD"
+run_date: "2026-10-06"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete  # phase-1 scope (gate0 + emoat) complete; valuation half pending phase 3
+scope: "phase 1: Gate 0 (B01) and Emerging Moat (B07) only; valuation (B10, B11) pending phase 3"
+gate0:
+  rules_checked: 50
+  rules_passed: 48
+  fails:
+    - {rule: "G26 E3 promoter pledge (latest)", severity: MINOR, stage_value: "5 on 0% pledge at prospectus 2026-02-26; post-listing pattern NOT FOUND (B01 L127)", recomputed: "E3 0 under G0 rule 5; Block E 8; core 60; grand total 75; band 60-79, matrix GOOD, DB4 cap AVERAGE; classification unchanged"}
+    - {rule: "G48 dashboard output elements", severity: MINOR, stage_value: "moat profile bars absent; moat shown as table only (B01 L141-155)", recomputed: "no score effect"}
+emoat:
+  rules_checked: 27
+  rules_passed: 24
+  fails:
+    - {rule: "E06 scan each category on its own list, never force-fit (C1)", severity: MINOR, stage_value: "C1 M x L = 1.0 on repeat orders; every listed C1 signal absent or NOT FOUND (B07 L134, L278)", recomputed: "C1 0; em_score 7.0; NONE unchanged"}
+    - {rule: "E17 I2 answered for each moat claimed in the scan", severity: MINOR, stage_value: "I2 table omits scored C1, C2, G1 (B07 L204-209)", recomputed: "I2 stays 0; no sacrifice named for C1, C2 or G1"}
+    - {rule: "E21 optionality register eligibility", severity: MINOR, stage_value: "C2 scored 1.0 on documented evidence (B07 L279) and also registered (B07 L319)", recomputed: "drop the row or limit it to the unfiled FY26 and H1 FY27 tables; no score effect"}
+valuation: {status: "pending phase 3", rules_checked: 0, fails: []}
+expectation_ledger: {status: "pending phase 3", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11
+business_understanding_narrative: {status: "pending phase 3"}  # rule 9; any fail = REWORK stage 13 (template line 379 carries no key; key supplied here)
+recomputed_destination_pe: ""  # valuation pending phase 3
+recomputed_decision: ""        # concur on phase-1 scope: Gate 0 AVERAGE, EM NONE, combined AVERAGE
+findings:
+  - {id: F1, stage: B01, rule: "G26 E3 pledge (latest)", severity: MINOR, claimed: "E3 5; Block E 13; core 65 (B01 L127, L129, L135)", recomputed: "E3 0; Block E 8; core 60; grand total 75", decision_effect: "none; AVERAGE via DB4 holds", note: "stale pre-listing anchor; stage disclosed the E3 = 0 sensitivity (B01 L131)"}
+  - {id: F2, stage: B01, rule: "G48 dashboard elements", severity: MINOR, claimed: "moat table without profile bars (B01 L141-155)", recomputed: "add moat profile bars", decision_effect: "none; presentational"}
+  - {id: F3, stage: B01, rule: "G30 M3 shown figure", severity: MINOR, claimed: "FAT median 13.5x (B01 L145)", recomputed: "13.25x from 8.8, 11.2, 15.3, 15.7", decision_effect: "none; M3 5 stands"}
+  - {id: F4, stage: B01, rule: "G38 M11 proxy and two-window reasoning", severity: MINOR, claimed: "M11 1 on selling and admin ratio; 'needs FY20' (B01 L153)", recomputed: "proxy must be declared in data_notes; 6 years meet the rule threshold; score 1 stands on every split (FY23-26 19.8% vs FY21-24 38.2%); strict NOT FOUND reading gives 0, moat 14, grand total 79", decision_effect: "none; moats confirmed 3, MODERATE"}
+  - {id: F5, stage: B07, rule: "E06 no force-fit (C1)", severity: MINOR, claimed: "C1 1.0 (B07 L278)", recomputed: "C1 0; em_score 7.0", decision_effect: "none; NONE either way"}
+  - {id: F6, stage: B07, rule: "E17 I2 coverage", severity: MINOR, claimed: "I2 tested on B2, overhead claim, BESS stance, H2 only (B07 L204-209)", recomputed: "I2 0", decision_effect: "none"}
+  - {id: F7, stage: B07, rule: "E21 register eligibility", severity: MINOR, claimed: "C2 scored and registered (B07 L279, L319)", recomputed: "row ineligible as worded", decision_effect: "none; register never scored"}
+critical_count: 0
+major_count: 0
+minor_count: 7
+acceptance_rate: 93.5  # 72 of 77 rules passed (gate0 48/50, emoat 24/27); denominator >= 4, applicable

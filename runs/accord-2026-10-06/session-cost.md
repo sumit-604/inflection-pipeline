@@ -14,3 +14,7 @@
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 233311 | 7m31s | 1 |
 | 7 | stage-07-emoat | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 253876 | 7m36s | 1 |
 | 9 | stage-09-tam | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 139702 | 5m56s | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 407009 | 12m10s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 337000 | 16m50s | 1 |
+| 12c | verifier-c-framework (phase-1 half) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 167683 | 12m50s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 63812 | 1m04s | 1 |

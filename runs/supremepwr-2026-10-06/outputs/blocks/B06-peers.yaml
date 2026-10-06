@@ -1,0 +1,69 @@
+stage: B06-peers
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR: BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. (Filled by hand from the NSE API: 17 filings Mar-Sep 2026; Oct-2025 to Feb-2026 order intimations not pulled under the operator cap.)"
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. (Filled by hand: NSE SHP XBRL 31-Mar-2026; the Sep-2026 half-year pattern is not yet filed as of 2026-10-06.)"
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values): screener/INDOTECH/531201/DANISH Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. ABSENT documents. Data_Sheet CSVs carry FY23-FY26 raw values and are present."
+  - "COLLECTOR: no results PDFs (screener has none). (Filled by hand: Q1 FY27 and FY26 audited results from NSE.)"
+  - "COLLECTOR: no rating PDF. (Filled by hand: CRISIL full rationale 20-Mar-2026 as text.)"
+  - "HIGH: prospectus/ empty. Company listed Dec-2023, within 3 years of run_date. Not pulled: operator 12-document cap 2026-10-06 (inputs/operator-notes.md). Backward baseline runs on FY23-FY26 AR/screener only; promoter and group map from AR and web."
+  - "research/ empty (non-anchored; no effect on evidence)."
+  - "Peer INDOTECH: no transcripts on screener; peer-concalls cover SHILCHAR (4) and DANISH (2) only."
+  - "No Q2 FY27 business update filed as of 2026-10-06 (NSE announcement list checked through 26-Sep-2026)."
+  - "Operator document cap: Q3 FY26 transcript (concalls/Concall_Feb_2026) and the shareholding XBRL are over the 12-document cap, kept because stage 5 requires three transcripts and the UA qualifier needs the SHP; flagged for operator ruling."
+  - "Results PDFs carry an OCR-quality text layer (e.g. 'R, Lakhs'); read the page before taking a number."
+flags:
+  - {type: FLAG-PVC-OUTLIER, reason: "SPEL 80-85% price variation cover vs Danish about 30% (H2 FY26 call p.8) and Shilchar 'some orders' (Q4 FY26 p.15). Verifier A to test against filed order terms."}
+  - {type: FLAG-PEER-SEGMENT-MISMATCH, reason: "Both peers are IDT-led (Shilchar about 80% of domestic revenue, Danish 65-70%); SPEL builds power and distribution transformers up to about 25 MVA. Peer evidence maps in part only."}
+  - {type: FLAG-220KV-ENTRANT-CLUSTER, reason: "Shilchar (April 2027 plant) and Danish (type tests begun, FY28 revenue) both enter 220 kV in SPEL's window; 'few players' not supported."}
+peers_provided: 3
+verified:
+  - {claim: "Q1a: 5-10 year transformer demand backed by peers (peers state 3-7 years)", peers: ["SHILCHAR", "DANISH"], anchor_count: 5}
+  - {claim: "Q4: CRGO and bushing supplies free-flowing (CRGO normal Oct-Nov 2025; 220 kV bushing lead time long)", peers: ["SHILCHAR", "DANISH"], anchor_count: 5}
+partially_verified:
+  - {claim: "Q2: peer new-plant ramp benchmark (peers ramp fast; 20/35/50 path not stated)", peers: ["SHILCHAR", "DANISH"]}
+  - {claim: "Q3b: peer margin dip 1-1.5 points on input costs (Danish yes; Shilchar 7-8 points)", peers: ["DANISH", "SHILCHAR"]}
+  - {claim: "Q5: 220 kV entry barrier and type-test path (peers are entrants; 'few players' untested)", peers: ["DANISH", "SHILCHAR"]}
+  - {claim: "Q7: data-centre transformer demand (no peer reports an order)", peers: ["DANISH", "SHILCHAR"]}
+  - {claim: "Q8: skilled labour and ramp training (Danish only; no wage data)", peers: ["DANISH"]}
+  - {claim: "Q9: in-house tank factory and margin gain (Danish Rs 20 Cr; no margin number; Shilchar rejects integration)", peers: ["DANISH", "SHILCHAR"]}
+  - {claim: "Q10: customer-side delivery and billing delays (Danish lift delays; Shilchar LC receivables)", peers: ["DANISH", "SHILCHAR"]}
+  - {claim: "Q11: US duty cut (direction confirmed; 25% and 18% levels not stated; Shilchar 50% to 10%)", peers: ["SHILCHAR", "DANISH"]}
+contradicted:
+  - {claim: "Q1b: lead times of 12-24 months for power transformers", contradicting_peer: "SHILCHAR", quote_anchor: "Alay Shah, Q4 FY26 call 05-May-2026, file p.7: power transformers supplied 'within, you know, 12 to 16 weeks'; Q1 FY27 call p.8: 'minimum lead time of about 10 to 12 weeks or even 16 weeks'. Supporting only in Q4 FY25 call p.15-16 (industry 1.5-2 years)."}
+  - {claim: "Q3a: 80-85% PVC coverage is common for this class", contradicting_peer: "DANISH", quote_anchor: "Shivam Talwar, H2 FY26 call 11-May-2026, file p.8: 'around 30% of the orders should be on price variation'; Shilchar Q4 FY26 call p.15: 'some orders ... based on the PV clause'."}
+  - {claim: "Q6: larger MVA mix lifts margin 1-2 points before overheads", contradicting_peer: "DANISH", quote_anchor: "Shivam Talwar, H2 FY26 call file p.12: 'product type ... does not determine the margin. The margin is determined by the type of customer'; H1 FY26 call p.19: realisation 'slightly decreases as the rating goes up'; Shilchar Q1 FY27 p.6: new 220 kV margins 'will be lower'."}
+unverifiable:
+  - {claim: "Q2 sub-point: peer ramp of 20% to 35% in a quarter and 50% in a year (specific path)", peers_checked: ["SHILCHAR", "DANISH"]}
+  - {claim: "Q5 sub-point: 220 kV prototype cost and CPRI time (Rs 14-16 Cr; no peer gives a rupee cost or names CPRI)", peers_checked: ["SHILCHAR", "DANISH"]}
+  - {claim: "Q8 sub-point: wage and headcount ramp per new plant (Shilchar gives none; Danish only 550 direct roll)", peers_checked: ["SHILCHAR", "DANISH"]}
+peer_coverage_map:
+  - {peer: "SHILCHAR (531201)", quarter: "Q4 FY25 (22-Apr-2025)", usage: "SUBSTANTIVE", contribution: "Industry lead time 1.5-2 years then; ramp to 100% run-rate; LC receivables; brand premium 1-3%"}
+  - {peer: "SHILCHAR (531201)", quarter: "Q2 FY26 (18-Oct-2025)", usage: "SUBSTANTIVE", contribution: "No material bottleneck; 220 kV plan and 22 week lead time; 5-6 year demand; US duty 50%"}
+  - {peer: "SHILCHAR (531201)", quarter: "Q4 FY26 (05-May-2026)", usage: "SUBSTANTIVE", contribution: "Oil +100%; PV clause 'some'; 12-16 week lead time; bushing lead time; tariff 10%"}
+  - {peer: "SHILCHAR (531201)", quarter: "Q1 FY27 (14-Aug-2026)", usage: "SUBSTANTIVE", contribution: "220 kV entry margin lower; 50-60% price pass-through; order pushouts"}
+  - {peer: "DANISH", quarter: "H1 FY26 (08-Nov-2025)", usage: "SUBSTANTIVE", contribution: "CRGO normal; tank factory Rs 20 Cr; 220 kV barrier and type-test time; client delivery delays"}
+  - {peer: "DANISH", quarter: "H2 FY26 (11-May-2026)", usage: "SUBSTANTIVE", contribution: "PVC about 30%; margin set by customer not product; data-centre dry type; EBITDA 19%"}
+  - {peer: "INDOTECH", quarter: "none", usage: "UNUSED", contribution: "No transcripts in corpus; peer Data_Sheet CSV not read"}
+industry_cross_read:
+  demand: "Firm at both peers (order books Rs 450-500 Cr and above), yet both missed or cut revenue guides on external causes (monsoon, West Asia shipping, late commissioning)."
+  pricing_inputs: "Oil about +100% and other inputs +10-25% since Feb 2026; peers carry fixed-price exposure and passed through 50-60% on older orders; SPEL's 80-85% PVC is the outlier."
+  capex_cycle: "Industry-wide capacity race, not a lone expander: Shilchar 7,500 to 14,000 MVA by Apr 2027, Danish about 11,000 MVA live with 80-100% more planned, Waaree entering by acquisition; SPEL's Kannur is a small add inside the race."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "West Asia shipping disruption, container cost 3-5x, dispatch cuts (Shilchar Q1 FY27 p.3)"
+  - "Fixed-price orders hit by input spike, customer relief needed (Danish H2 FY26 p.14; Shilchar Q4 FY26 p.15)"
+  - "Product concentration in IDT (Danish H1 FY26 p.14-15; Shilchar Q2 FY26 p.8)"
+  - "New capacity commissioned late, guide cut (Danish H1 FY26 p.15)"
+  - "Entry-segment margin concessions at 220 kV (Danish H1 FY26 p.17; Shilchar Q1 FY27 p.6)"
+  - "220 kV bushing shortage and long lead (Shilchar Q4 FY26 p.13)"
+  - "Monsoon timing and H2-heavy revenue (Danish H1 FY26 p.4)"
+  - "Government discom payment delays (Danish H1 FY26 p.29)"
+  - "Utilisation disclosed on dispatch not production (Shilchar Q4 FY26 p.13)"
+  - "New entrants by acquisition, e.g. Waaree (Danish H1 FY26 p.36)"
+cross_peer_hypothesis: "Shilchar (Q1 FY27 p.6) and Danish (H1 FY26 p.17; H2 FY26 p.12) each describe their own 220 kV entry at lower initial margin, but neither notes that both and SPEL type-test in the same Dec-2026 to Apr-2027 window. Hypothesis: the 'few players' 220 kV niche in SPEL trigger 3 holds at least three new entrants by FY28 and first-reference orders clear at entry pricing. Test: Q3-Q4 FY27 peer calls name a first 220 kV order at a margin below the IDT run rate, and SPEL's first 220 kV order prices below its 18-20% guide band. A peer first order at full margin falsifies it."
+net_narrative_effect: "complicates"
+analyst_note: "Anchors are file [page N] markers (Shilchar printed page is N-1). Q1 and Q3 split into two claims each, so 13 verdict lines from 11 questions. Peers are IDT-led; SPEL is power and distribution up to about 25 MVA, so mapping is partial. Peer lead times of 10-22 weeks describe their own fast-delivery niche; Shilchar Apr-2025 still cites an industry norm of 1.5-2 years. Danish gross margin dip of 1-1.5 points is an analyst statement management did not dispute. SPEL's 80-85% PVC needs Verifier A to test against filed order terms. Shilchar Q4 FY25 'August' commissioning year is not stated in the transcript; read as 2024."

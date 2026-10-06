@@ -1,0 +1,109 @@
+stage: B09-tam
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: partial                # searches skipped: Method 5 global benchmark, Indo Tech capacity, EHV/size split, Maharashtra demand
+input_gaps:
+  - "COLLECTOR: BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. (Filled by hand from the NSE API: 17 filings Mar-Sep 2026; Oct-2025 to Feb-2026 order intimations not pulled under the operator cap.)"
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. (Filled by hand: NSE SHP XBRL 31-Mar-2026; the Sep-2026 half-year pattern is not yet filed as of 2026-10-06.)"
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values): screener/INDOTECH/531201/DANISH Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. ABSENT documents. Data_Sheet CSVs carry FY23-FY26 raw values and are present."
+  - "COLLECTOR: no results PDFs (screener has none). (Filled by hand: Q1 FY27 and FY26 audited results from NSE.)"
+  - "COLLECTOR: no rating PDF. (Filled by hand: CRISIL full rationale 20-Mar-2026 as text.)"
+  - "HIGH: prospectus/ empty. Company listed Dec-2023, within 3 years of run_date. Not pulled: operator 12-document cap 2026-10-06 (inputs/operator-notes.md). Backward baseline runs on FY23-FY26 AR/screener only; promoter and group map from AR and web."
+  - "research/ empty (non-anchored; no effect on evidence)."
+  - "Peer INDOTECH: no transcripts on screener; peer-concalls cover SHILCHAR (4) and DANISH (2) only."
+  - "No Q2 FY27 business update filed as of 2026-10-06 (NSE announcement list checked through 26-Sep-2026)."
+  - "Operator document cap: Q3 FY26 transcript (concalls/Concall_Feb_2026) and the shareholding XBRL are over the 12-document cap, kept because stage 5 requires three transcripts and the UA qualifier needs the SHP; flagged for operator ruling."
+  - "Results PDFs carry an OCR-quality text layer (e.g. 'R, Lakhs'); read the page before taking a number."
+flags:
+  - {type: FLAG-TAM-SOURCES-DIVERGE, reason: "CRISIL (12-Aug-2025) Rs 33,000 Cr FY25 grown 10-11% gives about Rs 36,465 Cr FY26 (DERIVED); Mordor (5-Aug-2026) USD 3.25bn x RBI ref about 96 = about Rs 31,200 Cr. Gap 17%. Separator: Mordor scope and FX basis undisclosed. Realistic = CRISIL, conservative = Mordor."}
+  - {type: FLAG-MGMT-HEADLINE-NOT-TAM, reason: "AR p.17-18 headline Rs 9.15 lakh Cr is a transmission INVESTMENT programme to 2032, not a transformer market. About 29x the conservative annual transformer market (915,000 / 31,200 = 29.3x). The transformer-specific claim in the AR is Mordor USD 3.25bn (reasonable)."}
+  - {type: FLAG-SAM-FILTER-THIN, reason: "SAM rests on two filters with M/L evidence: rating share 40.78% (Mordor, 10-100 MVA; 100-200 MVA and sub-10 MVA slices NOT FOUND) and southern-region 36.2% share of substation capacity under construction (tndindia, undated). Maharashtra and distribution geography NOT FOUND."}
+  - {type: FLAG-220KV-UNQUALIFIED, reason: "SAM carries SPEL's stated 220 kV capability. 220 kV type test is planned Dec-2026/Jan-2027 (B05). Until it passes, the qualified SAM is smaller; not sized (no EHV split found)."}
+  - {type: FLAG-PEER-CAPACITY-RACE, reason: "Peers add 220 kV-class capacity in the same window: Voltamp +6,000 MVA EHV (Oct-2026), Shilchar +6,500 MVA (Apr-2027, may reach 220 kV), Danish +12,000-15,000 MVA up to 400 kV, TARIL +15,000 MVA (Q2 FY27) and +22,000 planned. Management line that 220 kV players are few (B05) is contradicted."}
+  - {type: FLAG-MARGIN-INDUSTRY-GAP, reason: "CRISIL (Aug-2025) sees industry operating margin 8-10% sustainable medium term; SPEL guides EBITDA 18-20% (B05). Margin bridge is stage 11's; the TAM stage does not credit it."}
+  - {type: FLAG-FX, reason: "Mordor USD figures converted at RBI reference about 96 (28-Sep to 01-Oct-2026, MSEI page; the 30-Sep value 61.16 on that page is an obvious data error and was dropped). Forward USD to INR at constant FX; INR depreciation would lift the Rs forecast."}
+market_definition: "Power and distribution transformers up to 200 MVA / 220 kV (oil-immersed, utility, EPC, renewable, industrial), India, with SAM on the southern-region footprint"
+tam_cr: {conservative: 31200, realistic: 36465}
+sam_cr: 5383
+sam_pct_of_tam: 14.8           # on realistic TAM; 5,383 / 36,465
+som_3yr_cr: 434                # FY29, +3.0pp share, SAM 6,819
+som_5yr_cr: 588                # FY31, +4.0pp share, SAM 7,983
+som_implied_revenue_cagr: {yr3: 33.7, yr5: 26.5}   # base FY26 181.64; normal-share alternate yr3 22.3% (SOM 332)
+current_sam_share_pct: 3.4
+revenue_headroom_x: 29.6
+tam_growth_pct: 8.2            # NEP GVA CAGR 1,251 to 2,342 GVA 2024-32 = 8.2%; Mordor 8.22%; CRISIL near term 10-11%
+runway_class: "STRONG"
+mgmt_claim_cr: 31200           # AR p.18 Mordor USD 3.25bn at RBI ref about 96; headline Rs 9.15 lakh Cr is investment, not TAM (see flags)
+mgmt_claim_ratio: 1.0
+mgmt_claim_read: "reasonable"
+capacity_check: "sufficient for SOM: Rs 434 Cr FY29 needs about 63% of Kannur Rs 500-550 Cr potential; Rs 588 Cr FY31 needs about 92%, at the ceiling. FY27 guide top (300) exceeds B05 capacity-derived 225-275 by up to Rs 25 Cr; the guide, not the capex plan, is the optimistic side"
+methods_used: ["top-down (CRISIL and Mordor)", "bottom-up MVA x price (transmission class, FY26 CEA additions)", "peer revenue aggregation with unorganised estimate (low confidence)"]
+stale_data_flags:
+  - {datapoint: "NEP Transmission Rs 9.15 lakh Cr and 1,274 GVA", source: "CEA / Ministry of Power via Business Today, 15-Oct-2024", year: "2024 (1.98 years old, at the 2-year limit)"}
+  - {datapoint: "Southern region 36.2% of substation capacity under construction", source: "tndindia.com, undated in snippet", year: "NOT FOUND (date unknown, treat as low confidence)"}
+  - {datapoint: "Unorganised about 60% of distribution transformers", source: "enggpro.com, undated blog", year: "NOT FOUND (undated)"}
+searches_performed:
+  - "India transformer market size 2025 MVA Rs crore (ianslive CRISIL 12-Aug-2025; Mordor 5-Aug-2026; MarketsandMarkets, IMARC, Ken results seen, not used)"
+  - "NEP transmission Rs lakh crore 2032 transformation capacity (Business Today 15-Oct-2024; Outlook Business 26-Sep-2026 FY26 113,013 MVA)"
+  - "RDSS outlay and extension (Rs 3,03,758 Cr; extension to 31-Mar-2028; Rs 2.78 lakh Cr sanctioned)"
+  - "Shilchar capacity (7,500 to 14,000 MVA; Gavasad 3 by Apr-2027; tndindia)"
+  - "Voltamp capacity and order book (14,000 MVA; EHV 6,000 MVA Oct-2026; order book Rs 2,342 Cr incl. inflow to 31-Jul-2026; tndindia)"
+  - "TARIL and Danish capacity (TARIL 33,000 MVA FY26 output, 75,000 MVA planned; Danish 11,000 MVA, +12-15k)"
+  - "Organised and unorganised structure (enggpro, undated)"
+  - "Data centre and renewable transformer demand (energetica 12 GW by 2030; Powerline 5-May-2026)"
+  - "Peer FY26 revenue (Voltamp Rs 2,153.69 Cr; TARIL Rs 2,508.80 Cr consolidated) plus screener Data_Sheet FY26 for Indo Tech, Shilchar, Danish in inputs"
+  - "Southern states T&D capex (Tamil Nadu Rs 2,000 Cr for 40,000 transformers; southern region share)"
+  - "USD INR RBI reference rate (MSEI, 28-Sep to 01-Oct-2026)"
+searches_skipped:
+  - "Method 5 global per-capita benchmark (China, SE Asia): not searched"
+  - "Method 4 import substitution beyond CRGO text in AR: not searched; transformer imports NOT FOUND"
+  - "Indo Tech Transformers capacity: not found in results"
+  - "EHV (>220 kV) and above-100 MVA share of market: not found"
+  - "Maharashtra, Karnataka, Kerala, Telangana state-level transformer demand in Rs: not found"
+  - "Renewable inverter-duty transformer demand in MVA per GW: not found"
+downstream_candidates:
+  - signal: "CEA monthly transformation capacity added (MVA) and FY27 target 158,339 MVA"
+    entity_type: regulatory
+    demand_link: "Substation MVA added drives power transformer orders; FY26 113,013 MVA, 90% of target."
+    likely_source: "CEA transmission monthly progress reports; Ministry of Power"
+    cadence: monthly
+    shared: false
+  - signal: "TNPDCL / TNEB distribution transformer replacement tenders (40,000 units, Rs 2,000 Cr plan)"
+    entity_type: counterparty
+    demand_link: "Home-state utility is the empanelled buyer for distribution units, including Danya's book."
+    likely_source: "Tamil Nadu e-procurement portal and TNPDCL tender notices"
+    cadence: event-driven
+    shared: true
+  - signal: "KPTCL and KSEB substation transformer tenders and awards"
+    entity_type: counterparty
+    demand_link: "Karnataka and Kerala utilities buy the 20 MVA to 160 MVA units that drive the order book."
+    likely_source: "KPTCL and KSEB tender portals; state utility annual capex plans"
+    cadence: event-driven
+    shared: false
+  - signal: "CPRI 220 kV / 160 MVA type-test certificate"
+    entity_type: regulatory
+    demand_link: "Qualification gate that unlocks the 220 kV SAM slice and Kannur loading."
+    likely_source: "CPRI test certificate; company Reg 30 filing"
+    cadence: event-driven
+    shared: false
+  - signal: "RDSS sanction and progress after extension to 31-Mar-2028"
+    entity_type: regulatory
+    demand_link: "Reform-linked distribution transformer demand from state DISCOMs."
+    likely_source: "Ministry of Power RDSS dashboard and parliamentary replies"
+    cadence: quarterly
+    shared: true
+  - signal: "Peer order books and capacity (Voltamp, Shilchar, Danish, TARIL)"
+    entity_type: macro
+    demand_link: "Peer inflow and pricing show industry demand and a 220 kV capacity race."
+    likely_source: "Peer investor presentations and Reg 30 order intimations"
+    cadence: quarterly
+    shared: false
+  - signal: "Hyderabad-based unnamed buyers (Rs 128.0 Cr of the ten listed Q1 FY27 orders, presentation)"
+    entity_type: end-customer
+    demand_link: "Telangana private and EPC buyers carry the largest slice of new orders; identity unknown."
+    likely_source: "Company Reg 30 order intimations; Telangana DISCOM and CTUIL filings"
+    cadence: event-driven
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Three reads a later stage cannot rebuild. (1) SOM yr3 sits at +3.0pp share (low end of the aggressive tier), not the normal +1.5pp (SOM 332, CAGR 22.3%). Separator: Q2 FY27 call stating Kannur utilisation with basis at 30% or more, plus the CPRI 220 kV certificate. Stage 11 should treat 33.7% as the upper cross-check and 22.3% as the no-proof reading, and put the gap in position size. (2) SAM is a floor on filters, not a ceiling: Maharashtra and the 100-200 MVA slice are not sized. (3) SOM yr5 of Rs 588 Cr needs about 92% of Kannur potential; beyond that needs new land, which management has not bought. Management peak Rs 550-650 Cr is the capacity ceiling, not a market limit. Rs 6.1 lakh/MVA at peak vs Rs 10.9 lakh/MVA in FY26 (B04) means MVA multiples overstate revenue multiples."

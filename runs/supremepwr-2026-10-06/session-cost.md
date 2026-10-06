@@ -21,3 +21,23 @@ Per-stage token ledger. Figures from subagent result metadata; the harness expos
 | 12c | verifier C (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 188328 | 14m29s | 1 |
 | 12d | verifier D | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 67110 | 1m28s | 1 |
 | 13 | synthesis-lite | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 264998 | 11m44s | 1 |
+| 9b | dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 231301 | 9m18s | 1 |
+
+## CLOSE-OUT SUMMARY
+
+Ledger total (subagents only): 3,927,117 tokens.
+
+(a) TOP FIVE BY TOKENS
+- 2 notes: 566,677 (14.4%)
+- 12a verifier A: 508,317 (12.9%)
+- 3 ardeep: 423,126 (10.8%)
+- 12b verifier B: 373,298 (9.5%)
+- 7 emoat: 318,365 (8.1%)
+
+(b) DOWNSHIFT FAILURES: none (verifier A ran on its frontmatter model, claude-sonnet-5-5).
+
+(c) COST SPIKES: none (no prior SUPREMEPWR run).
+
+(d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+

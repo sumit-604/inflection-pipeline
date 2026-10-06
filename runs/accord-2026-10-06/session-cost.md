@@ -19,3 +19,22 @@
 | 12c | verifier-c-framework (phase-1 half) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 167683 | 12m50s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 63812 | 1m04s | 1 |
 | 13 | stage-13-synthesis (phase-1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 234942 | 11m20s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 241311 | 9m55s | 1 |
+
+## CLOSE-OUT SUMMARY (phase 1)
+
+Ledger note: the Agent tool exposes only a combined subagent token total; in/cache/out splits are n/a, never estimated.
+
+(a) TOP FIVE BY TOKENS (subagent total tokens; run total 975504):
+- verifier-a-numerical: 407009 (41.7%)
+- verifier-b-redflags: 337000 (34.5%)
+- verifier-c-framework: 167683 (17.2%)
+- verifier-d-peers: 63812 (6.5%)
+
+(b) DOWNSHIFT FAILURES: none (verifier-a-numerical ran on its frontmatter model claude-sonnet-5-5).
+
+(c) COST SPIKES: none (no prior ACCORD run).
+
+(d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+

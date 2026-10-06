@@ -1,0 +1,23 @@
+stage: B12d
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 3
+substantive_confirmed: 2
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "SHILCHAR", missed_item: "Will not do business with any state utility companies (relevant to Q10 government receivables and SPEL's 30.10% government share)", anchor: "531201-Concall_Aug_2026_Transcript line 122, Alay Shah"}
+  - {peer: "SHILCHAR", missed_item: "Export mix stated as about 50% in comparability note; later calls give about 30% of FY26 revenue and 30/70 order book (context only)", anchor: "531201-Concall_May_2026 line 262; Aug_2026 line 110"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, finding: "Q1a VERIFIED overstated: peers state 3-7 years, 10-year end rests on one passing line (Oct-2025 p.9)"}
+  - {severity: MINOR, finding: "Q1b CONTRADICTED rests on IDT-niche lead times of 10-22 weeks; Shilchar Apr-2025 supports 1.5-2 year industry norm; comparability caveat present"}
+  - {severity: MINOR, finding: "Shilchar state-utility avoidance (Aug-2026) not used in Q10"}
+  - {severity: MINOR, finding: "Shilchar export share cited at 50% (Oct-2025) while later calls say about 30%"}
+  - {severity: MINOR, finding: "Page anchors off by one in several B06 citations (Danish May-2026 p.8, p.12; Shilchar May-2026 PV p.15); all findable on adjacent page"}
+critical_count: 0
+major_count: 0
+minor_count: 5
+acceptance_rate: 100

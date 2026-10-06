@@ -16,3 +16,7 @@ Per-stage token ledger. Figures from subagent result metadata; the harness expos
 | 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 195532 | 4m10s | 1 |
 | 7 | emoat | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 318365 | 12m55s | 1 |
 | 9 | tam | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 112666 | 5m08s | 1 |
+| 12a | verifier A | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 508317 | 13m18s | 1 |
+| 12b | verifier B | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 373298 | 19m21s | 1 |
+| 12c | verifier C (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 188328 | 14m29s | 1 |
+| 12d | verifier D | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 67110 | 1m28s | 1 |

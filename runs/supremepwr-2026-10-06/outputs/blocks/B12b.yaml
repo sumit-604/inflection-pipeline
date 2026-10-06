@@ -1,0 +1,42 @@
+stage: B12b
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+independent_flags_found: 30
+caught: 22
+partially_caught: 8
+missed: []
+pipeline_flags_not_supported:
+  - {status: "OVERSTATED", severity: MAJOR, flag: "B05 FLAG-SCHEDULE-DRIFT (and repeated_evasions row 8)", reason: "412 Cr (27-May book, Jun call p.7) and 377 Cr (13-Aug book, Aug call p.7) sit on different start dates; about 41 Cr executed in the 78 days between (DERIVED from Q1 FY27 total income 48.31 Cr over 91 days, Aug p.3) closes most of the step. 'Flat book despite 195.64 Cr of Q1 wins' double counts April-May wins already inside 588.17 Cr. The 377 to 'almost 350' step (Aug p.15) and the 377 vs 250-300 guide gap stand."}
+  - {status: "OVERSTATED", severity: MAJOR, flag: "B05 FLAG-CAPACITY-INCONSISTENT derived FY27 range 225-275 Cr and analyst_note 'stage 11 should not take the top of the range as evidenced'", reason: "Uses the Unit 1 potential of 100-110 Cr (Feb p.15) that the same flag shows is contradicted (FY26 non-Kannur revenue about 157-162 Cr; FY25 about 148 Cr from the old plant alone, Feb p.7). Demonstrated-output reading is about 282-327 Cr (DERIVED). Both readings belong in front of stage 11; Q2 FY27 revenue separates them."}
+  - {status: "NOT SUPPORTED", severity: MINOR, flag: "B05 Section 3D: 'Gap of 3.03 Cr is unexplained' (588.17 vs 585.14)", reason: "Jun call dates them 'As of May 27' (p.4) and 'As of date', 2-Jun (p.10); six days at about 0.53 Cr a day is about 3.2 Cr (DERIVED); the 196.79 + 388.35 split (p.7) sums to the as-of-date figure. Feeds no flag, so graded MINOR."}
+  - {status: "NOT SUPPORTED", severity: MINOR, flag: "B05 Section 2C: 'repeats I could not get your question four times in Q1'", reason: "One instance in the Aug call (p.5); five such replies across all three calls. Feeds only the Defensiveness score, which holds."}
+  - {status: "OVERSTATED", severity: MINOR, flag: "B06 Q1b CONTRADICTED, listed as a priority item for synthesis", reason: "SPEL never claimed 12-24 month lead times; its own figures (about 4 weeks DT, 6-8 weeks at 25 MVA, 3-4 months at 50-100 MVA, Jun p.13-14) match the peers. The 2-year figure is an analyst remark on 300-500 MVA units at other makers (Aug p.12)."}
+  - {status: "OVERSTATED", severity: MINOR, flag: "B05 Section 3A: 'no symptom' of competitive pressure rated Low credibility because of the H2 input-cost dip", reason: "An input-cost dip is not price competition; Shilchar says domestic prices show no pressure (SHIL-AUG26 p.10). The forward capacity race is the better basis."}
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur (C): every revenue guide landed at or below its floor and FY27 was cut twice with a denial, offset by a held PAT band and order intake that beat the Feb conversion range; after removing one padded and one premature row the tally is 3/3/3, still C"
+findings:
+  - {severity: MAJOR, type: "PARTIALLY CAUGHT (B-13)", item: "Q1 FY27 gross margin 23.80% to 28.82%: inventory-gain question unanswered; March pre-buy of oil and copper disclosed in June; PVC passes rises and falls. B05 trigger 4 takes Q1 gross margin as the level to hold; B06 reads the oil spike one way.", anchor: "AUG p.5 (Garvit Goyal, CMD); JUN p.9, p.11 (CMD); SHIL-MAY26 p.8 (Alay Shah); DAN-MAY26 p.15 (Shivam Talwar)", note: "Two readings: PVC run-rate vs one-time pre-buy gain. Separating observation: Q2 FY27 gross margin. Stage 11 should not anchor the margin bridge on Q1 until Q2 prints."}
+  - {severity: MAJOR, type: "PARTIALLY CAUGHT (B-02)", item: "FY28 revenue guide walked down 400-500 Cr (Feb) to about 375-400 (Jun) to about 300-390 (Aug, DERIVED); B05 files the Feb figure as 'order booking, ambiguous' and a dropped trigger", anchor: "FEB p.11-12 (Paras Chheda, CMD); JUN p.5; AUG p.9, p.17", note: "Feb p.12 follow-up ties 450-500 Cr by FY28 to working capital and equity: it is revenue."}
+  - {severity: MAJOR, type: "OVERSTATED pipeline flag", item: "B05 FLAG-SCHEDULE-DRIFT: 412 vs 377 Cr is a time-basis comparison; 'flat book despite Q1 wins' double counts", anchor: "JUN p.4, p.7; AUG p.3, p.7, p.15", note: "Order coverage held while the revenue guide fell; the cut points at execution capacity, not order flow."}
+  - {severity: MAJOR, type: "OVERSTATED pipeline derivation", item: "B05 FY27 cross-check 225-275 Cr uses the contradicted Unit 1 potential and steers stage 11 off the top of the guide; demonstrated-output reading about 282-327 Cr (DERIVED)", anchor: "FEB p.7, p.15; JUN p.4, p.8; AUG p.11", note: "State both readings; Q2 FY27 revenue and any split by unit separate them."}
+  - {severity: MINOR, type: "PARTIALLY CAUGHT (B-11)", item: "Scripted margin claims (Jun: offset by high-voltage mix; Aug: greater operating leverage) contradicted in the same calls' Q&A; not flagged", anchor: "JUN p.4, p.6, p.11; AUG p.3, p.4, p.8, p.15", note: "B05 trigger 5 (conviction L) already holds the right margin read; do not quote the opening remarks as margin evidence."}
+  - {severity: MINOR, type: "PARTIALLY CAUGHT (B-15)", item: "CMD describes the book as '25 MVA to 60-70 MVA' while 20 MVA orders sit in it; not flagged as a management overstatement", anchor: "JUN p.9; FEB p.4; AUG p.6", note: "B05 reaches the substance from filings."}
+  - {severity: MINOR, type: "PARTIALLY CAUGHT (B-20)", item: "'No credit' policy vs 60-75 day credit in one answer; 210 vs 110 day baseline in one call", anchor: "FEB p.12, p.13, p.15", note: ""}
+  - {severity: MINOR, type: "PARTIALLY CAUGHT (B-23)", item: "112 MVA '330 kV' order above the 220 kV plant rating; 330 kV not a standard Indian class", anchor: "JUN p.9, p.10, p.12", note: "Needs a filed check."}
+  - {severity: MINOR, type: "PARTIALLY CAUGHT (B-25)", item: "June-to-August tone shift (exceptional, flawless, impressive to moderation, measured, cautiously, commit less) not called out", anchor: "JUN p.3-4; AUG p.3, p.4, p.7, p.16", note: ""}
+  - {severity: MINOR, type: "PARTIALLY CAUGHT (B-28)", item: "Wrong analyst figures left standing in all three calls (9M 118.45 vs 111.38; H2 EBITDA 14.6% vs 17.8% DERIVED; employee cost 4x)", anchor: "FEB p.3, p.14; JUN p.4, p.11; AUG p.7", note: "B05 notes only the 4x instance."}
+  - {severity: MINOR, type: "NOT SUPPORTED pipeline observation", item: "B05 3D '3.03 Cr gap unexplained'", anchor: "JUN p.4, p.7, p.10", note: "Different as-of dates explain it."}
+  - {severity: MINOR, type: "NOT SUPPORTED pipeline evidence", item: "B05 2C 'four times in Q1'", anchor: "AUG p.5", note: "One instance."}
+  - {severity: MINOR, type: "OVERSTATED pipeline verdict", item: "B06 Q1b contradicts a lead-time claim SPEL never made", anchor: "JUN p.13-14; AUG p.12", note: "Synthesis should not count it against SPEL."}
+  - {severity: MINOR, type: "OVERSTATED pipeline rating", item: "B05 3A rates 'no symptom' Low on an input-cost dip", anchor: "FEB p.6; SHIL-AUG26 p.10", note: "Use the forward capacity race as the basis."}
+  - {severity: MINOR, type: "Promise table", item: "Padded row (government below 50%), premature row (Kannur 3-4 months), hedged intent tabled as a promise (land), positive delivery omitted (order book 311 to 588.17 Cr vs 70-160 Cr implied conversion, DERIVED)", anchor: "FEB p.9, p.11, p.16; JUN p.4, p.8; AUG p.4, p.6", note: "Tally becomes 3/3/3 plus one untabled positive; grade unchanged."}
+  - {severity: MINOR, type: "Anchor drift (note for Verifiers A and D)", item: "Some B05 and B06 anchors use the printed page instead of the stated file marker; all quotes exist, page off by one", anchor: "B05: 500-550 at H2 p.3 is p.4; players-less at Q1 p.12 is p.11; 160 MVA at H2 p.8 is p.9. B06: DAN-MAY26 PVC p.8 is p.9; SHIL-MAY26 PV clause p.15 is p.16; SHIL-AUG26 entry margin p.6 is p.7; DAN-MAY26 product type p.12 is p.13", note: ""}
+critical_count: 0
+major_count: 4
+minor_count: 12
+material_found: 17
+material_caught: 13
+acceptance_rate: 76
+coverage_basis: "17 material (1 CRITICAL, 16 MAJOR) of 30 listed; 13 caught, 4 partially caught, 0 missed. Rate counts CAUGHT only (13/17 = 76%); partials at half credit give 88%, at full credit 100%. 13 MINOR: 9 caught, 4 partially caught. Counts in critical/major/minor_count are the 16 consolidated findings."

@@ -1,0 +1,29 @@
+stage: B12a
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+numbers_checked: 640
+mandatory_checked: 103
+mandatory_total: 103
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md Block E, E4 (and B01 yaml data_notes)", claimed: "Contingent liabilities nil FY26 and FY25 (AR p.91, Note 30), 0% of net worth; basis not stated", source_truth: "Consolidated Note 30.1A AR p.91: guarantees nil. Standalone Note 30.1A AR p.71: corporate guarantee for Danya 1,470.00 lakh = 13.0% of standalone net worth 11,293.81. Basis (consolidated vs standalone) unlabelled in Gate 0.", note: "UNANCHORED basis on a mandatory Gate 0 input scoring 5 of 5. Nil is correct on the cited consolidated page.", source_fidelity: true}
+  - {severity: "MAJOR", location: "03-ardeep.md Phase 4D, Capital allocation sense row", claimed: "borrowing limit asked 5x gross debt", source_truth: "AGM Items 7 and 8 (AR p.33): Rs 500 Cr limit. Gross debt Rs 45.73 Cr standalone (Notes 6, 9) or Rs 50.0 Cr consolidated. 500/45.73 = 10.9x; 500/49.97 = 10.0x.", note: "Contradicts the same report's own 10x in its block. Derived figure, no verdict-card use.", source_fidelity: true}
+  - {severity: "MINOR", location: "07-emoat.md G1 table (D27 cross-ref)", claimed: "12.47 lakh x Rs 169 = Rs 21.08 Cr", source_truth: "AR Note 30.2 p.71: 2,107.43 lakh = Rs 21.07 Cr", note: "Rounding. 08-promoter.md has 21.07.", source_fidelity: true}
+  - {severity: "MINOR", location: "03-ardeep.md 1B observation 2", claimed: "Note 12 on p.66", source_truth: "Note 12 on [page 67], AR L6391-6398", note: "Page off by one; figures right.", source_fidelity: true}
+  - {severity: "MINOR", location: "03-ardeep.md Key monitorables (Danya gross trade)", claimed: "Rs 15.54 Cr to 13-Aug at AR p.29", source_truth: "Rs 15.54 Cr at AR L2472 on [page 28]", note: "Page off by one; figure right.", source_fidelity: true}
+  - {severity: "MINOR", location: "08-promoter.md 4B", claimed: "Headcount 112 incl. contract at AR p.44", source_truth: "L4038 on [page 43]", note: "Page off by one; figure right; 03 cites p.43.", source_fidelity: true}
+  - {severity: "MINOR", location: "09-tam.md Method 4", claimed: "AR p.18 says CRGO is 60-90% imported", source_truth: "AR MD&A L1398-1401 (p.17): domestic output met around 10-12% of demand; GTRI shortfall close to 30%. No 60-90% anywhere in the AR.", note: "ANCHOR NOT FOUND, non-material; Method 4 was not run.", source_fidelity: true}
+  - {severity: "MINOR", location: "02-notes-pass1.md A(b); 03 LB3; 05 sec 2D; 07 D16", claimed: "Borrowings 18.74 to 49.98 Cr, attributed to AR lakh figures or AR MD&A", source_truth: "AR consolidated BS p.81: 1,874.56 and 4,997.30 lakh = 18.75 and 49.97 Cr; AR MD&A p.19: Rs 50.0 Cr. 18.74 and 49.98 are the Pres-Q1 s.37 sums.", note: "0.01 Cr rounding and basis; Gate 0 states the gap; 04 anchors to the presentation correctly.", source_fidelity: true}
+  - {severity: "MINOR", location: "01-gate0.md load-bearing fact 4; B01 yaml; 03 LB4", claimed: "attributable Q1 FY27 +10.1% on 490.08 vs 445.37 lakh", source_truth: "490.08/445.37 = +10.04%; Pres-Q1 s.6 prints 10.04%", note: "Rounding; 10.1% comes from the rounded Cr values.", source_fidelity: true}
+  - {severity: "MINOR", location: "03-ardeep.md 3C-6", claimed: "Danya tax 36.6% of PBT", source_truth: "AR p.43: (135.53+0.76)/371.30 = 36.71%", note: "0.1 point; pass 2 N6 has 36.7%.", source_fidelity: true}
+  - {severity: "MINOR", location: "03-ardeep.md 2A and monitorables; 04 3D; 05 trigger 1", claimed: "gross-block depreciation run-rate 1.26 Cr a quarter", source_truth: "Report's own Note 13 / Schedule II components sum to 497 lakh a year = 1.24 Cr a quarter (1.56 Cr with CWIP add-on)", note: "1.26 reproduces neither basis; gap to Q1 0.80 is 0.44 Cr not 0.46.", source_fidelity: true}
+  - {severity: "MINOR", location: "09-tam.md 3B", claimed: "Management peak 550-650 Cr = +4.7 to +6.1pp share vs FY29 SAM", source_truth: "650/6,819 = 9.53% less 3.37% = +6.16pp (6.2)", note: "Rounding on web-derived SAM; arithmetic only.", source_fidelity: true}
+  - {severity: "MINOR", location: "06-peers.md: Danish H2 FY26 PV p.8 and myth p.12; Shilchar Q4 FY26 PV clause p.15 and oil p.7", claimed: "File [page N] anchors as cited", source_truth: "Danish May-2026 PV text under [page 9]; myth under [page 13]; Shilchar May-2026 PV clause under [page 16]; oil +100% under [page 8]", note: "Mixed marker and printed-page convention. Quotes verbatim and present.", source_fidelity: true}
+critical_count: 0
+major_count: 2
+minor_count: 11
+false_positives_struck: 7
+material_universe: 1600
+acceptance_rate: 97.5
+coverage_note: "Mandatory tier = Gate 0 scorecard inputs (103 of 103 checked: 83 source figures, 20 computed scorecard values), because no stage 13 verdict card and no stage 11 Section 1B exist in these Phase 1 reports. Sample tier: about 1,500 material numbers outside Gate 0 (my estimate, +/-15%), about 510 checked, ordered by materiality; load-bearing chain checked near-complete. UNVERIFIABLE-IN-CORPUS, not findings: web inputs in 09-tam.md (CRISIL market size, Mordor shares, RBI rate, CEA MVA, NEP GVA, RDSS, peer capacity, TARIL and Voltamp revenue) and in 08-promoter.md (IPO subscription, pre-IPO holding, FY26 Danya limit); arithmetic on them was checked. Caution: 2,342 appears in B09 both as NEP 2032 GVA and as Voltamp order book; verify the NEP endpoint before stage 11 uses 8.2%. Source conflicts recorded: FY25 CFO 37.69 (AR, screener) vs 39.36 (Pres-Q1 s.36); FY26 net worth 112.9 (AR p.12) vs 118.21 (Pres-Q1 s.37, screener); reserves 87.9 vs 93.22. No report cites the conflicting figures. Gate 0 matches the AR."

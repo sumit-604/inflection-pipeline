@@ -1,0 +1,21 @@
+stage: confidence-delta
+company: SUPREMEPWR
+run_date: 2026-10-06
+phase: 1
+verifier_a_identity_check: "0 CRITICAL rows in B12a; nothing to strike. B12a reports 7 candidate rows struck by its own rule 5b self-check (internal)."
+confidence_delta:
+  numerical_acceptance: 97.5        # B12a acceptance_rate; 640 numbers checked; mandatory 103 of 103 (OR-32)
+  redflag_coverage: 76              # B12b acceptance_rate; 13 caught of 17 material (CRITICAL+MAJOR); denominator >= 4
+  framework_adherence: 94.9         # B12c phase-1 portion only (Gate 0 45/48 + EM 29/30 = 74/78); valuation half pending phase 3
+  peer_utilisation: null            # B12d: 2 of 3 peers used substantively; denominator 3 < 4
+  overall: 76
+  overall_set_by: redflag_coverage
+  not_applicable:
+    - "peer_utilisation: 2 substantive of 3 peers provided (INDOTECH has no transcripts); denominator 3 below the floor of 4; reported as a count. (B12d own acceptance 100% on 3 of 3 peers correctly handled, also below the floor.)"
+  pending:
+    - "framework_adherence valuation half (B10/B11): phase 3"
+band: "75-89 normal, note specifics (overall 76 set by redflag_coverage)"
+rework_triggers:
+  verifier_a_confirmed_critical: 0
+  any_acceptance_below_60_on_denominator_ge_4: false
+  rework: false

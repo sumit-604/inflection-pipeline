@@ -65,6 +65,12 @@ from the jsdelivr CDN.
   frontflip or ⬇ (S) for a backflip. Land with the wheels down for 400
   points per flip (2 flips: 1000). Half a flip is a bad landing. Holding the
   gas through a jump never flips the car by mistake. New badge: Flip master.
+- **22 vehicles (v11):** 6 new real ones (Go-Kart, Desi Jeep, Ambulance with
+  siren, Fire Truck with siren and water cannon, Monster Truck, F1 Racer) and
+  5 fiction ones: Hover Rishu (floats and glides over the sea), Ghost Car
+  (drives through traffic), Rocket Racer (320 km/h), and two that fly: Sky
+  Rish and the UFO Saucer. V or 🛫 takes off and lands; Space climbs, Z goes
+  down (phone: 🅿️ up, 🌀 down). Fly over the city buildings. 36 badges.
 - **Stunts (v10):** in the air, hold ⬆ for a frontflip, ⬇ for a backflip,
   ⬅ or ➡ for a 360° spin. Holding the key from before the ramp works too.
   The game finishes each flip before landing, so the car lands on its
@@ -110,7 +116,7 @@ from the jsdelivr CDN.
 W or Up: accelerate. S or Down: brake, then reverse. A, D or arrows: steer.
 Space: handbrake. W + S + A or D (arrows too): power drift. N or 🔥: nitro (tap once, it stays on; tap again or brake to stop). C: camera. H: horn. L: night. R: rain.
 Q and E: indicators. O: fog. M: mirror. G and F: gear up and down
-(manual gearbox). P: photo mode. In the air: ⬆ frontflip, ⬇ backflip, ⬅ ➡ spin. X: wheelie. T: slow motion. K: radio. Esc: menu.
+(manual gearbox). P: photo mode. In the air: ⬆ frontflip, ⬇ backflip, ⬅ ➡ spin. X: wheelie. T: slow motion. K: radio. V: fly (flying vehicles), Space up, Z down. Esc: menu.
 
 ## Tests
 
@@ -161,3 +167,6 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   flip finishes before landing); air spins, corkscrews, stunt camera, mega
   ramp, trampolines, oil slicks, letter hunt, stunt book, 34 badges.
   201 regression checks.
+- v11: 11 new vehicles (22 in all), 5 of them fiction: hover, ghost, rocket,
+  flying car and UFO. Flying with take-off and landing, sirens and a water
+  cannon, 36 badges. 206 regression checks.

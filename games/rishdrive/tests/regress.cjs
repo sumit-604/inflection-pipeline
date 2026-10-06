@@ -29,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v10", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v11", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -148,7 +148,7 @@ const HELPERS = () => {
 
   // W. Each car spawns and drives
   r = await E(() => { const out = {}; for (const c of __dd.CARS) { if (!S.owned.includes(c.id)) S.owned.push(c.id); S.car = c.id; G.respawnCar(); G.setPos(0, 300, 0); S.fuel = 100; S.damage = 0; G.car.broken = false; keys("up"); sim(3); keys(); out[c.id] = Math.round(G.car.kmh); } return out; });
-  ok("W1 all 11 vehicles drive", Object.values(r).length === 11 && Object.values(r).every((v) => v > 15), r);
+  ok("W1 all 22 vehicles drive", Object.values(r).length === 22 && Object.values(r).every((v) => v > 15), r);
   await E(() => { S.car = "gt"; G.respawnCar(); G.setPos(3.5, -150, 0); keys("up"); sim(1); keys(); }); await p.waitForTimeout(2000); await p.screenshot({ path: `${SHOTS}/07-gt.png` });
 
   // X. Level up from points
@@ -186,7 +186,7 @@ const HELPERS = () => {
   await E(() => { G.setPos(-39, 12, 0); G.car.s = 24; keys("up"); sim(1.05); keys(); }); await p.waitForTimeout(1200); await p.screenshot({ path: `${SHOTS}/10-jump.png` });
   // 13. Badges
   r = await E(() => { G.checkBadges(); G.openMenu(); document.querySelector("#m-badges").click(); return { n: document.querySelectorAll(".badge").length, on: document.querySelectorAll(".badge.on").length, jump: !!S.badges.jump1, wash: !!S.badges.wash, toll: !!S.badges.toll, plate: !!S.badges.plate }; });
-  ok("N13 34 badges, earned ones lit", r.n === 34 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
+  ok("N13 36 badges, earned ones lit", r.n === 36 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
   await p.screenshot({ path: `${SHOTS}/11-badges.png` });
   // 14. Village and Sunrise Hill: drive the road with a simple autopilot
   r = await E(() => { document.querySelector("#b-back").click(); document.querySelector("#m-free").click(); const W = G.world, v0 = S.stats.village, h0 = S.stats.hilltop; S.fuel = 100; G.setPos(-180, -3.5, -Math.PI / 2); keys("up"); let i = 0, maxY = 0;
@@ -400,7 +400,7 @@ const HELPERS = () => {
   ok("W9-12 boost pads, sky coins and nitro bottles", r.boost === 1 && r.coin === 1 && r.nitro >= 100 && r.coins > 30, r);
   r = await E(() => { G.startFree(); G._slowCd = 0; G.slowmo(); const c = G.car; c.s = 20; const z0 = c.z; sim(0.5); const moved = c.z - z0; sim(3); return { cls: !document.body.classList.contains("slowmo"), moved }; });
   ok("W9-13 slow motion for 3 seconds", r.moved < 5 && r.moved > 2 && r.cls, r);
-  r = await E(() => { S.car = "bike"; G.respawnCar(); G.startFree(); G.setPos(-3.5, -150, 0); G.car.s = 15; const w0 = S.stats.wheelies || 0; keys("up", "wheelie"); let rx = 0; sim(2, 0.05); rx = G.car.m.rotation.x; keys("up"); sim(0.2); keys(); S.car = "hatch"; G.respawnCar(); return { rx, w: (S.stats.wheelies || 0) - w0 }; });
+  r = await E(() => { S.car = "bike"; G.respawnCar(); G.startFree(); G.setPos(-3.5, -150, 0); G.car.s = 15; const w0 = S.stats.wheelies || 0; noTraffic(); keys("up", "wheelie"); let rx = 0; for (let i = 0; i < 40; i++) { G.T += 0.05; G.step(0.05); rx = Math.min(rx, G.car.m.rotation.x); } keys("up"); yesTraffic(); sim(0.2); keys(); S.car = "hatch"; G.respawnCar(); return { rx, w: (S.stats.wheelies || 0) - w0 }; });
   ok("W9-14 wheelie on a bike with X", r.rx < -0.3 && r.w === 1, r);
   r = await E(() => { G.startThief(); sim(3.5); const th = G.mode.ai[0], z0 = th.z; sim(3); const moved = Math.abs(th.z - z0) + Math.abs(th.x); G.setPos(th.x + Math.sin(th.h) * 2, th.z + Math.cos(th.h) * 2, th.h + Math.PI); sim(0.1); return { moved, t: document.querySelector("#card h2")?.textContent }; });
   ok("W9-15 catch the thief: the thief runs, touch it to win", r.moved > 20 && /Caught/.test(r.t || ""), r);
@@ -422,6 +422,21 @@ const HELPERS = () => {
   ok("W9-23 new buttons in Skill Park and Missions; no loop errors", r.a === 3 && r.m === 2 && !r.err, r);
   await E(() => { S.car = "hatch"; S.damage = 0; G.respawnCar(); G.startFree(); });
 
+
+  // ===== v11: fiction vehicles and more real ones =====
+  r = await E(() => { const use = (id) => { if (!S.owned.includes(id)) S.owned.push(id); S.car = id; G.respawnCar(); G.startFree(); }; const o = {};
+    use("flycar"); G.setPos(-3.5, -150, 0); G.toggleFly(); o.f0 = G.car.flying; keys("up"); sim(4); o.y1 = G.car.y; keys("up", "hand"); sim(3); o.y2 = G.car.y; keys(); G.toggleFly(); sim(8); o.landed = !G.car.flying && G.car.y < 0.2;
+    use("ufo"); G.setPos(-3.5, -150, Math.PI / 2); G.toggleFly(); G.car.altT = 60; sim(5); keys("up"); sim(6); keys(); o.ufoX = G.car.x; G.toggleFly(); sim(10); o.ufoLanded = !G.car.flying;
+    use("flycar"); G.startCircuit(); sim(1); G.toggleFly(); o.raceFly = G.car.flying; use("hatch"); G.toggleFly(); o.hatchFly = G.car.flying; return o; });
+  ok("W11-01 flying car takes off, climbs with Space and lands with V", r.f0 && r.y1 > 12 && r.y2 > r.y1 + 10 && r.landed, r);
+  ok("W11-02 UFO flies over the city buildings and lands", r.ufoX > 100 && r.ufoLanded, r);
+  ok("W11-03 no flying in races, and a normal car cannot fly", !r.raceFly && !r.hatchFly, r);
+  r = await E(() => { const use = (id) => { if (!S.owned.includes(id)) S.owned.push(id); S.car = id; G.respawnCar(); G.startFree(); }; const o = {};
+    use("hover"); G.setPos(60, -560, Math.PI); G.car.s = 25; keys("up"); sim(2); keys(); o.hoverZ = G.car.z; o.hoverS = G.car.s; o.float = G.car.m.position.y - G.car.y;
+    use("ghostcar"); o.ghost = G.car.m.userData.body.opacity < 0.6 && G.car.def.ghost; use("fire"); G.horn(); sim(0.3); const sr = G.car.m.userData.siren; o.siren = !!sr && (sr[0].emissiveIntensity > 1 || sr[1].emissiveIntensity > 1); o.water = G.waterT > G.T; use("ufo"); o.ufoSpin = !!G.car.m.userData.spin;
+    G.checkBadges(); o.fiction = !!S.badges.fiction; o.fic = __dd.CARS.filter((c) => c.fiction).length; S.car = "hatch"; G.respawnCar(); G.startFree(); o.err = G.lastErr || ""; return o; });
+  ok("W11-04 hover car floats and glides over the sea", r.hoverZ < -580 && r.hoverS > 15 && r.float > 0.7, r);
+  ok("W11-05 ghost car, fire truck siren and water cannon, UFO lights, 5 fiction vehicles, Fiction fan badge", r.ghost && r.siren && r.water && r.ufoSpin && r.fic === 5 && r.fiction && !r.err, r);
 
   // Y. Save survives reload
   const saved = await E(() => { __dd.save(); return S.points; });

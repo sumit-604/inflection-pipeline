@@ -1,0 +1,63 @@
+stage: B00-inputs
+company: SUPREMEPWR
+company_name: Supreme Power Equipment Ltd
+run_date: 2026-10-06
+model: claude-opus-5-5 (orchestrator session, inline)
+status: complete
+run_type: full
+concalls_available: true
+listed_date: "2023-12"   # NSE Emerge, Q1 FY27 press release p4
+spear_gate: "PASS - Spear: OVERRIDE 2026-10-06 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear), companies/SUPREMEPWR.md"
+load_bearing_facts:
+  - "Guidance vs delivery: FY27 revenue guide 275-300 (press release/presentation) vs '250-300' reported from 17-Aug-2026 call; FY26 guided 225->200->190 vs actual 181.64; Q1 FY27 guided 50-60 vs 48.23."
+  - "Danya Electric: 90% held (CRISIL); AGM 25-Sep-2026 item 6 calls it a 'Partnership firm' with material RPT approval; standalone revenue reported above consolidated. Verify legal form, inter-company sales, minority share."
+  - "Cash conversion: FY26 CFO 25.90 vs capex ~57; borrowings 18.74 -> 49.98; inventory 62.10, payables 62.20."
+  - "Operating leverage: Q1 FY27 revenue +37% vs PAT +10%; employee cost 1.92 vs 0.81; Kannur 20-25% utilisation."
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_evidence: "Power and distribution transformer maker (Q1 FY27 press release p2-4; presentation lines 227-276); electrical industrial products. Section-1b chunk 05 line 38, 25x. Same row as runs/kecl-2026-09-06 (transformers, switchgear). Collector guess 'Pharma / CDMO' rejected."
+reporting_units:
+  results: "INR Lakhs (Results_Q1FY27_30Jun2026 line 147 'All Amounts are in Rs Lakhs'; Results_FY26_Audited line 254)"
+  annual_report_financial_statements: "INR Lakhs (Annual_Report_FY2025-26 line 3512)"
+  annual_report_mdna_tables: "INR Crore (Annual_Report_FY2025-26 line 1528)"
+  presentation: "INR Crore"
+  press_release: "INR Crore"
+  rating: "INR Crore"
+  screener: "INR Crore"
+corpus_manifest:
+  - {path: inputs/annual-report/Annual_Report_FY2025-26.pdf, issuer: SUPREMEPWR, type: "AR FY2025-26 with 21st AGM notice (NSE Reg 34 filing 01-Sep-2026)", period: FY26, folder_match: true}
+  - {path: inputs/results/Results_Q1FY27_30Jun2026.pdf, issuer: SUPREMEPWR, type: "board outcome, unaudited results standalone+consolidated", period: "Q1 FY27 (Jun-2026)", folder_match: true}
+  - {path: inputs/results/Results_FY26_Audited_31Mar2026.pdf, issuer: SUPREMEPWR, type: "board outcome, audited results H2/FY26", period: "FY26 (Mar-2026)", folder_match: true}
+  - {path: inputs/concalls/Concall_Feb_2026_Transcript.pdf, issuer: SUPREMEPWR, type: transcript, period: "Q3 FY26 (call 11-Feb-2026)", folder_match: true}
+  - {path: inputs/concalls/Concall_Jun_2026_Transcript.pdf, issuer: SUPREMEPWR, type: transcript, period: "H2 FY26 (call 02-Jun-2026)", folder_match: true}
+  - {path: inputs/concalls/Concall_Aug_2026_Transcript.pdf, issuer: SUPREMEPWR, type: transcript, period: "Q1 FY27 (call 17-Aug-2026)", folder_match: true}
+  - {path: inputs/presentation/InvestorPresentation_H2FY26_01Jun2026.pdf, issuer: SUPREMEPWR, type: investor presentation, period: "H2 FY26", folder_match: true}
+  - {path: inputs/presentation/InvestorPresentation_Q1FY27_17Aug2026.pdf, issuer: SUPREMEPWR, type: investor presentation, period: "Q1 FY27", folder_match: true, note: "collector file Investor_Presentation_1.pdf, renamed after first-page check"}
+  - {path: inputs/rating/CRISIL_RatingRationale_20Mar2026.txt, issuer: "CRISIL Ratings", type: "full rating rationale (HTML converted to text)", period: "20-Mar-2026", folder_match: true}
+  - {path: inputs/announcements/ (17 filings + XBRL), issuer: SUPREMEPWR, type: "Reg 30: 9 order intimations 07-Apr to 13-Jul-2026, AGM proceedings 25-Sep-2026, change-in-management 13-Aug-2026 (XBRL; scanned letter has no text layer), Reg 32 statement Q1 FY27, Q1 FY27 and H2 FY26 press releases, general update 24-Apr-2026, CRISIL letter 20-Mar-2026, investor meet outcome 21-Sep-2026", period: "Mar-Sep 2026", folder_match: true}
+  - {path: inputs/shareholding/SHP_31Mar2026_NSE_XBRL.xml (+ .txt rendition), issuer: SUPREMEPWR, type: "shareholding pattern XBRL", period: "31-Mar-2026 (latest; SME files half-yearly)", folder_match: true}
+  - {path: inputs/peer-concalls/531201-*.pdf (4), issuer: "Shilchar Technologies", type: transcript, period: "Apr-2025, Oct-2025, May-2026, Aug-2026", folder_match: true}
+  - {path: inputs/peer-concalls/DANISH-*.pdf (2), issuer: "Danish Power", type: transcript, period: "Nov-2025, May-2026", folder_match: true}
+  - {path: inputs/screening/*-Data_Sheet.csv (4), issuer: screener.in, type: "Data Sheet export", period: "FY23-FY26", folder_match: true}
+  - {path: inputs/other/ (FY25 AR, H2 FY25, Q1 FY26, H1 FY26 transcripts, CRISIL html), issuer: SUPREMEPWR, type: "preserved, never consumed by stages; orchestrator forward-module ledger only", folder_match: true}
+pdf_tooling: "pypdf extraction to page-marked .txt beside every PDF (tools/extract_pdfs.py); check_extraction flagged one blank file (13-Aug-2026 resignation letter, scanned); OCR unavailable locally (no poppler); its .txt replaced by the filed XBRL facts. Stages read .txt paths."
+input_gaps:
+  - "COLLECTOR: BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. (Filled by hand from the NSE API: 17 filings Mar-Sep 2026; Oct-2025 to Feb-2026 order intimations not pulled under the operator cap.)"
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. (Filled by hand: NSE SHP XBRL 31-Mar-2026; the Sep-2026 half-year pattern is not yet filed as of 2026-10-06.)"
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values): screener/INDOTECH/531201/DANISH Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. ABSENT documents. Data_Sheet CSVs carry FY23-FY26 raw values and are present."
+  - "COLLECTOR: no results PDFs (screener has none). (Filled by hand: Q1 FY27 and FY26 audited results from NSE.)"
+  - "COLLECTOR: no rating PDF. (Filled by hand: CRISIL full rationale 20-Mar-2026 as text.)"
+  - "HIGH: prospectus/ empty. Company listed Dec-2023, within 3 years of run_date. Not pulled: operator 12-document cap 2026-10-06 (inputs/operator-notes.md). Backward baseline runs on FY23-FY26 AR/screener only; promoter and group map from AR and web."
+  - "research/ empty (non-anchored; no effect on evidence)."
+  - "Peer INDOTECH: no transcripts on screener; peer-concalls cover SHILCHAR (4) and DANISH (2) only."
+  - "No Q2 FY27 business update filed as of 2026-10-06 (NSE announcement list checked through 26-Sep-2026)."
+  - "Operator document cap: Q3 FY26 transcript (concalls/Concall_Feb_2026) and the shareholding XBRL are over the 12-document cap, kept because stage 5 requires three transcripts and the UA qualifier needs the SHP; flagged for operator ruling."
+  - "Results PDFs carry an OCR-quality text layer (e.g. 'R, Lakhs'); read the page before taking a number."
+freshness_pairs:
+  - {pair: RESULTS_TO_CONCALL, trigger_doc: inputs/results/Results_Q1FY27_30Jun2026.pdf, mate_expected: "Q1 FY27 transcript", status: PASS, missing_doc: ""}
+  - {pair: RATING_BULLETIN_TO_RATIONALE, trigger_doc: inputs/announcements/SPEL_20032026151559_CreditRatingupdate.pdf, mate_expected: "CRISIL rationale 20-Mar-2026", status: PASS, missing_doc: ""}
+  - {pair: SEBI_ORDER_TO_ORDER_TEXT, trigger_doc: "none referenced", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: AR_TO_LATEST_AUDITED_ANNUAL, trigger_doc: inputs/results/Results_FY26_Audited_31Mar2026.pdf, mate_expected: "FY26 AR", status: PASS, missing_doc: ""}
+freshness_verdict: FRESHNESS PAIRS OK
+empty_folder_confirmation: "SUPPRESSED by /step1 autonomy contract; standing answer 'proceed with the gaps'. Empty folders at dispatch: prospectus (HIGH), research."
+flags: []
+analyst_note: "Units differ by document: results and AR statements in Rs Lakhs, presentation/press/MD&A/rating/screener in Rs Crore. Convert once at stage 10 only. Danya Electric's legal form is a load-bearing open item: CRISIL says 90% stake, AGM calls it a partnership firm."

@@ -1,0 +1,83 @@
+stage: B04-bizmodel
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR: BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. (Filled by hand from the NSE API: 17 filings Mar-Sep 2026; Oct-2025 to Feb-2026 order intimations not pulled under the operator cap.)"
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. (Filled by hand: NSE SHP XBRL 31-Mar-2026; the Sep-2026 half-year pattern is not yet filed as of 2026-10-06.)"
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values): screener/INDOTECH/531201/DANISH Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. ABSENT documents. Data_Sheet CSVs carry FY23-FY26 raw values and are present."
+  - "COLLECTOR: no results PDFs (screener has none). (Filled by hand: Q1 FY27 and FY26 audited results from NSE.)"
+  - "COLLECTOR: no rating PDF. (Filled by hand: CRISIL full rationale 20-Mar-2026 as text.)"
+  - "HIGH: prospectus/ empty. Company listed Dec-2023, within 3 years of run_date. Not pulled: operator 12-document cap 2026-10-06 (inputs/operator-notes.md). Backward baseline runs on FY23-FY26 AR/screener only; promoter and group map from AR and web."
+  - "research/ empty (non-anchored; no effect on evidence)."
+  - "Peer INDOTECH: no transcripts on screener; peer-concalls cover SHILCHAR (4) and DANISH (2) only."
+  - "No Q2 FY27 business update filed as of 2026-10-06 (NSE announcement list checked through 26-Sep-2026)."
+  - "Operator document cap: Q3 FY26 transcript (concalls/Concall_Feb_2026) and the shareholding XBRL are over the 12-document cap, kept because stage 5 requires three transcripts and the UA qualifier needs the SHP; flagged for operator ruling."
+  - "Results PDFs carry an OCR-quality text layer (e.g. 'R, Lakhs'); read the page before taking a number."
+  - "STAGE 4: investor presentations present. FY26 product-wise revenue mix (Pres-Q1 s.35, Pres-H2 s.36) is a chart with ten percentages and no label order in the text layer; PDF page rendering unavailable (no poppler). Product-wise revenue split is NOT FOUND; only the order-book mix is anchored."
+  - "STAGE 4: peer financials and named competitor positioning NOT FOUND in assigned inputs (AR names none)."
+flags:
+  - {type: FLAG-UTIL, reason: "Four utilisation readings do not agree: AR p.4 45-50% on 1,750 of 9,000 MVA (19.4% derived); presentation Unit 1 70-80% (1,750/2,500 = 70.0%); CMD Unit 1 'fully', Unit 2 20-25% then 25-30%; time-weighted hypothesis about 49% is an inference. FY26 output of 1,750 MVA is Unit 1."}
+  - {type: FLAG-MARGIN-NARRATIVE, reason: "Presentation says 'Margin Expansion Ahead' and 'high-margin segment' (Pres-Q1 s.8, s.21); CMD says larger power transformers add 1-2% margin absorbed by overheads (Call-Aug L.565). Q1 FY27 incremental PBT margin 4.9%."}
+  - {type: FLAG-GUIDE, reason: "FY26 guide 225>200>190 vs 181.64; Q1 FY27 guide 50-60 vs 48.23; FY27 guide 275-300 (AR) vs 250-300 (Aug call); Rs 377 Cr due before March vs 250-300 guide."}
+  - {type: FLAG-DANYA-LOOP, reason: "Danya Rs 88.13 Cr book about 15% of Rs 590.06 Cr; about 83% of the roughly Rs 106 Cr distribution book if Danya's book is all distribution (DERIVED, inference). 61.3% of Danya turnover is SPEL (B02). Model needs this execution arm."}
+  - {type: FLAG-CASH, reason: "Carried from B02/B03: CFO 25.90 vs capex about 57 Cr; payables 126.3 days and customer advances fund the 48-day standalone cash cycle."}
+  - {type: FLAG-SEGMENT-BASE, reason: "Q1 FY27 customer split sums to Rs 51.24 Cr; reported consolidated revenue 48.23 and standalone 51.06; unreconciled. Headcount also varies: 112 (B03), 250 (Pres-Q1 s.10), 250-300 (Call-Aug)."}
+  - {type: FLAG-PRODMIX-NOT-FOUND, reason: "FY26 product-wise revenue split not machine-readable; no estimate made."}
+business_type: manufacturing
+revenue_streams:
+  - {name: "Transformer sales, all products (goods)", type: "project/order-based, one-time sale on delivery", pct_of_revenue: 99.6, predictability: "M"}
+  - {name: "Services: repair, erection, commissioning, testing", type: "project-based service", pct_of_revenue: 0.4, predictability: "L"}
+  - {name: "Product split (power vs distribution vs inverter duty)", type: "NOT FOUND for revenue; order book power 72-76%, distribution 18-20%, inverter duty 5-8%", pct_of_revenue: 0, predictability: "H for book, NOT FOUND for revenue"}
+asset_intensity: medium
+wc_intensity: high
+pricing_power: weak
+cyclicality: "secular-growth demand with lumpy order timing and capex-cycle exposure (Pres-Q1 s.28; MD&A p.18)"
+moats_present:
+  - "Regional utility vendor approvals TANGEDCO, KSEB, KPTCL, TNPDCL, AP: medium durability, state-specific"
+  - "Type-test and design-validation record up to 25 MVA / 110 kV: medium, regional; 220 kV unproven"
+  - "Captive execution partner Danya Electric: low, governance-flagged"
+valuation_methods:
+  primary: {method: "P/E on forward earnings", why: "Profitable and growing with order-book visibility; build earnings from the order book and D+I run-rate, entry and exit on the same earnings basis"}
+  secondary: {method: "EV/EBITDA", why: "Debt rose 18.74 to 49.98 Cr and D+I are stepping up; EBITDA is the cleaner cross-check; show standalone and consolidated"}
+  tertiary: {method: "P/B with ROE", why: "Floor check on a build year; ROE 20.46% to 17.49%"}
+  not_applicable: ["DCF as primary (FCF negative two years)", "EV/Sales (Rs 50.18 Cr elimination distorts)", "EV per MVA / replacement cost (no peer data)", "EV/order book", "SOTP (single segment)", "Dividend yield"]
+irrelevant_ratios:
+  - "Spot ROCE and ROE: Kannur capital sits in the base before it earns"
+  - "Debt to equity 0.42x: payables 62.20 Cr exceed borrowings 49.98 Cr"
+  - "Current ratio 1.28x: advances and payables inflate it"
+  - "Debtors turnover 3.95x / 94 days: year-end loading, over-one-year tail 588.04 lakh with nil provision"
+  - "Consolidated EBITDA margin 18.1% vs standalone 15.1%: denominator effect from Rs 50.18 Cr elimination"
+  - "Fixed asset turnover 1.52x: plant commissioned Feb-2026"
+  - "Reported utilisation %: four unreconciled readings; use MVA delivered"
+  - "Quarterly YoY revenue growth: delivery-timed and lumpy"
+must_track_metrics:
+  - {metric: "Kannur MVA produced and delivered, with basis", healthy: "Disclosed by plant and rising each quarter", red_flag: "No MVA disclosed, or still 20-25% in Q3 FY27"}
+  - {metric: "Order inflow, book-to-bill and book roll", healthy: "Book above Rs 550 Cr after burn; inflow at least 1.0x quarterly revenue", red_flag: "Q2 revenue under Rs 55 Cr or book falling while guide held"}
+  - {metric: "D+I share of EBITDA gain", healthy: "At most 50%", red_flag: "70.4% in Q1 FY27; above 70% again"}
+  - {metric: "CFO vs capex; standalone advances and payables", healthy: "CFO above capex ex tank plant; advances near 17.10 Cr, payables near 59.54 Cr", red_flag: "Advances under 10 Cr with payables above 59 Cr"}
+  - {metric: "Danya gross trade with SPEL and SPEL guarantee", healthy: "Flat at Rs 50.2 Cr and Rs 14.70 Cr", red_flag: "Guarantee moves toward the Rs 25 Cr authority"}
+unit_economics:
+  unit: "1 MVA of transformer shipped (standalone FY26, 1,750 MVA produced, AR p.4)"
+  revenue_per_unit: "about Rs 10.9 lakh (190.08 Cr / 1,750 MVA, DERIVED; stated peak Rs 550 Cr / 9,000 MVA implies Rs 6.1 lakh)"
+  margin_per_unit: "about Rs 1.64 lakh operating EBITDA (28.65 Cr / 1,750 MVA, DERIVED), 15.1% standalone; consolidated 18.1%"
+  key_lever: "Kannur loading: delivered MVA and gross margin on large units against the fixed D+I, staff and other-expense step-up; CMD says larger units add only 1-2% margin"
+first_deterioration_signals:
+  - {risk: "Guided revenue not delivered", first_signal: "Q2 FY27 consolidated revenue under Rs 55 Cr"}
+  - {risk: "Danya loop and guarantee", first_signal: "Gross SPEL-Danya trade above Rs 50.2 Cr or guarantee above Rs 14.70 Cr"}
+  - {risk: "Fixed-cost step-up eats EBITDA gain", first_signal: "D+I share of EBITDA gain above 70%; other expenses above 9.3% of revenue"}
+  - {risk: "Pass-through fails on 15-20% of book", first_signal: "Gross margin below 24%"}
+  - {risk: "Supplier and advance float reverses", first_signal: "Standalone advances under Rs 10 Cr with payables above Rs 59 Cr"}
+  - {risk: "Debt service tightens", first_signal: "DSCR below 2.0x on company definition"}
+  - {risk: "Kannur ramp and 220 kV qualification slip", first_signal: "No MVA disclosed by plant; inventory and WIP days above 125; no type-test filing by Q4 FY27"}
+  - {risk: "Collection tail", first_signal: "Receivables over one year above Rs 5.88 Cr standalone, or provision introduced"}
+mgmt_questions:
+  - "Kannur MVA produced and delivered in Q1 FY27 and the utilisation basis; why AR p.4 says 45-50% when 1,750/9,000 = 19.4%"
+  - "FY26 guide cut 225>200>190 to 181.64; why FY27 is 250-300 vs 275-300; which Rs 377 Cr is due before March"
+  - "Kannur EBITDA margin at 50% and 90% utilisation; why the deck says high-margin segment when larger units add 1-2%"
+  - "Date, lab and 220 kV qualification path for the 165 MVA type test"
+  - "Danya deed terms, share sold to SPEL, transfer-price benchmark; is the Rs 88.13 Cr Danya book all TNPDC distribution"
+  - "How much of the Rs 14.46 Cr advance rise and Rs 24.9 Cr payables rise pays for Kannur capex, and the unwind date"
+one_line_verdict: "An order-book transformer maker with a full book and a new plant it has paid for but not loaded, where Q1 shows revenue growing into old capacity while Kannur costs arrive first."
+analyst_note: "Three reads a later stage cannot rebuild. (1) FY26 output of 1,750 MVA equals Unit 1 at 70% of 2,500 MVA, matching the presentation's 70-80%. FY26 is a Unit 1 result and Kannur is unproven in revenue; the AR's 45-50% fits only a time-weighted capacity, an inference. If Kannur really ran 20-25%, it would be WIP (inventory +102%), since revenue annualises only 7% above FY26. (2) Management's stated peak (Rs 550 Cr on 9,000 MVA = Rs 6.1 lakh/MVA) is 44% below FY26's Rs 10.9 lakh/MVA, so capacity multiples will not map to revenue multiples. (3) The deck says margin expansion; the CMD says 1-2% extra margin on large units is absorbed by overheads. Danya's Rs 88.13 Cr book is about 83% of the distribution book (derived), so the loop is part of the model. FY26 product revenue split is NOT FOUND."

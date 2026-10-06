@@ -65,6 +65,13 @@ from the jsdelivr CDN.
   frontflip or ⬇ (S) for a backflip. Land with the wheels down for 400
   points per flip (2 flips: 1000). Half a flip is a bad landing. Holding the
   gas through a jump never flips the car by mistake. New badge: Flip master.
+- **18 jump tracks (v12):** every track now has jumps, hills or gaps.
+  Ramps on Rishu Ring, Mango Hairpins, Figure of 8, Monsoon Mile, Fog Valley
+  and Dirt Devil; 4 big ramps on Jump Junction; hills on Chicane Chaos, Night
+  Snake and Star Twister; Narrow Bridge is 7 m up with a 12 m gap; Grand Prix
+  India has a flyover with a 14 m gap. New: Ramp Rush (6 ramps), Cloud
+  Bridge (14 m up, 4 gaps in the clouds) and Volcano Leap (3 lava gaps at
+  night).
 - **22 vehicles (v11):** 6 new real ones (Go-Kart, Desi Jeep, Ambulance with
   siren, Fire Truck with siren and water cannon, Monster Truck, F1 Racer) and
   5 fiction ones: Hover Rishu (floats and glides over the sea), Ghost Car
@@ -170,3 +177,5 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
 - v11: 11 new vehicles (22 in all), 5 of them fiction: hover, ghost, rocket,
   flying car and UFO. Flying with take-off and landing, sirens and a water
   cannon, 36 badges. 206 regression checks.
+- v12: jumps, hills or gaps on all tracks; 3 new tracks (18 in all); lava
+  under gaps, clouds, ramps that sit on raised roads. 208 regression checks.

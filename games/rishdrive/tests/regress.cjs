@@ -29,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v11", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v12", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -279,7 +279,7 @@ const HELPERS = () => {
   ok("V30 gas+brake with no turn is not a drift, brake still brakes", !r.pd && r.brake < r.kmh, r);
   // v7: Track Challenges
   r = await E(() => { S.tracks = {}; S.tghost = {}; G.openMenu(); document.querySelector("#m-tracks").click(); const btns = [...document.querySelectorAll("[data-trk]")]; return { n: btns.length, open: btns.filter((b) => !b.disabled).length }; });
-  ok("V31 track menu: 15 tracks, only the first open", r.n === 15 && r.open === 1, r);
+  ok("V31 track menu: 18 tracks, only the first open", r.n === 18 && r.open === 1, r);
   r = await E(() => { document.querySelector('[data-trk="0"]').click(); const built = !!G.world.trk; sim(3.4); const tk = G.world.trk, N = tk.N; for (let k = 0; k < N * 3 && G.mode.kind === "race"; k += 2) { const a = tk.pts[(N - 5 + k) % N], b = tk.pts[(N - 4 + k) % N]; G.setPos(a.x, a.z, Math.atan2(b.x - a.x, b.z - a.z)); G.T += 0.05; G.step(0.05); } return { built, title: document.querySelector("#card h2")?.textContent, rec: S.tracks.ring, ghost: !!S.tghost.ring, keep: !!G.world.trk, unlockText: /Unlocked/.test(document.querySelector("#card p").textContent) }; });
   ok("V32 finish a track: stars, best time, ghost, next unlocked", r.built && /Rishu Ring/.test(r.title) && r.rec && r.rec.stars >= 1 && r.ghost && r.unlockText, r);
   r = await E(() => { const vis = !!G.world.trk; document.querySelector("#d-replay").click(); sim(1); const during = !!G.world.trk && G.mode.kind === "replay"; for (let i = 0; i < 1500 && G.mode.kind === "replay"; i++) { G.T += 0.05; G.step(0.05); } const after = !!G.world.trk; document.querySelector("#d-free").click(); return { vis, during, after, gone: !G.world.trk }; });
@@ -289,7 +289,7 @@ const HELPERS = () => {
   r = await E(() => { const ids = ["ring", "hairpin", "eight", "chicane", "jump", "monsoon", "snake", "fog", "dirt", "narrow", "star", "gp"], out = []; for (let i = 0; i < 12; i++) { if (i) S.tracks[ids[i - 1]] = S.tracks[ids[i - 1]] || { best: 999, stars: 1 }; G.startTrack(i); const tk = G.world.trk, T = tk.T, cond = { night: S.night === !!T.night, rain: S.rain === !!T.rain, fog: S.fog === !!T.fog }; sim(3.4); const N = tk.N; for (let k = 0; k < N * 4 && G.mode.kind === "race"; k += 2) { const a = tk.pts[(N - 5 + k) % N], b = tk.pts[(N - 4 + k) % N]; G.setPos(a.x, a.z, Math.atan2(b.x - a.x, b.z - a.z)); G.T += 0.05; G.step(0.05); } out.push({ i, done: /⭐/.test(document.querySelector("#card h2")?.textContent || ""), cond: cond.night && cond.rain && cond.fog }); } G.startFree(); return { all: out.every((o) => o.done && o.cond), bad: out.filter((o) => !(o.done && o.cond)), clean: !G.world.trk && !S.night && !S.rain && !S.fog, err: G.lastErr || "" }; });
   ok("V35 all 12 tracks build, set their weather and finish", r.all && r.clean && !r.err, r);
   r = await E(() => { G.startTrack(4); sim(3.4); const tk = G.world.trk, rp = tk.ramps[0], i = tk.pts.findIndex((p) => Math.hypot(p.x - rp.x, p.z - rp.z) < 2); const a = tk.pts[(i - 15 + tk.N) % tk.N], b = tk.pts[(i - 14 + tk.N) % tk.N]; G.setPos(a.x, a.z, Math.atan2(b.x - a.x, b.z - a.z)); G.car.s = 30; keys("up"); let air = false; for (let k = 0; k < 40; k++) { G.T += 0.05; G.step(0.05); air = air || G.car.air; } keys(); G.startFree(); return { ramps: tk.ramps.length, air }; });
-  ok("V36 Jump Junction ramps launch the car", r.ramps === 2 && r.air, r);
+  ok("V36 Jump Junction ramps launch the car", r.ramps === 4 && r.air, r);
   r = await E(() => { G.startTrack(0); sim(3.4); const tk = G.world.trk, p0 = tk.pts[50]; G.setPos(p0.x + 40, p0.z + 40, 0); sim(3); const n = G.world._pathNear(tk.pts, G.car.x, G.car.z).d; G.startFree(); return { back: n < 3 }; });
   ok("V37 far off the track: put back with a penalty", r.back, r);
   // v7: realistic two-wheelers
@@ -305,7 +305,7 @@ const HELPERS = () => {
   // ===== v8: one-lap tracks, sky and space tracks, new modes and new places =====
   await E(() => { noTraffic(); G.startFree(); });
   r = await E(() => { const { TRACKS } = __dd; S.tracks = {}; G.tracksMenu(); return { n: TRACKS.length, menu: document.querySelectorAll("[data-trk]").length, laps: [...new Set(TRACKS.map((t) => t.laps))], hard: TRACKS.filter((t) => t.elev).map((t) => t.id) }; });
-  ok("W8-01 15 tracks, every track is one lap, 3 sky tracks", r.n === 15 && r.menu === 15 && r.laps.length === 1 && r.laps[0] === 1 && r.hard.join() === "skygap,coaster,space", r);
+  ok("W8-01 18 tracks, every track is one lap, sky tracks raised", r.n === 18 && r.menu === 18 && r.laps.length === 1 && r.laps[0] === 1 && ["skygap", "coaster", "space", "cloud", "volcano", "narrow"].every((id) => r.hard.includes(id)), r);
   r = await E(() => { for (const t of ["ring", "hairpin", "eight", "chicane", "jump", "monsoon", "snake", "fog", "dirt", "narrow", "star", "gp", "skygap", "coaster"]) S.tracks[t] = { best: 999, stars: 1 };
     const run = (idx, speed) => { G.startTrack(idx); sim(3.5); const tk = G.world.trk, N = tk.N, gap = tk.gaps[0], i0 = Math.floor((gap[0] - 0.06) * N), a = tk.pts[i0], b2 = tk.pts[i0 + 1]; G.setPos(a.x, a.z, Math.atan2(b2.x - a.x, b2.z - a.z)); G.car.s = speed; keys("up"); let air = false;
       for (let k = 0; k < 90; k++) { const c = G.car, n = G.world._pathNear(tk.pts, c.x, c.z), t = tk.pts[(n.i + 6) % N], want = Math.atan2(t.x - c.x, t.z - c.z); if (!c.air) c.h += Math.atan2(Math.sin(want - c.h), Math.cos(want - c.h)) * 0.5; c.s = Math.min(c.s, speed); G.T += 0.05; G.step(0.05); air = air || c.air; }
@@ -437,6 +437,16 @@ const HELPERS = () => {
     G.checkBadges(); o.fiction = !!S.badges.fiction; o.fic = __dd.CARS.filter((c) => c.fiction).length; S.car = "hatch"; G.respawnCar(); G.startFree(); o.err = G.lastErr || ""; return o; });
   ok("W11-04 hover car floats and glides over the sea", r.hoverZ < -580 && r.hoverS > 15 && r.float > 0.7, r);
   ok("W11-05 ghost car, fire truck siren and water cannon, UFO lights, 5 fiction vehicles, Fiction fan badge", r.ghost && r.siren && r.water && r.ufoSpin && r.fic === 5 && r.fiction && !r.err, r);
+
+  // ===== v12: every track has jumps, hills or gaps =====
+  r = await E(() => { const { TRACKS } = __dd, out = []; const keep = S.car; S.car = "gt"; if (!S.owned.includes("gt")) S.owned.push("gt"); G.respawnCar(); for (const T of TRACKS) S.tracks[T.id] = S.tracks[T.id] || { best: 999, stars: 1 };
+    for (let idx = 0; idx < TRACKS.length; idx++) { G.startTrack(idx); sim(3.5); const tk = G.world.trk, N = tk.N, T = TRACKS[idx]; let air = 0, k = 0; keys("up");
+      for (; k < 3000 && G.mode.kind === "race"; k++) { const c = G.car, n = G.world._pathNear(tk.pts, c.x, c.z), t = tk.pts[(n.i + 7) % N], want = Math.atan2(t.x - c.x, t.z - c.z); if (!c.air) { c.h += Math.atan2(Math.sin(want - c.h), Math.cos(want - c.h)) * 0.5; c.s = Math.min(c.s, 34); } G.T += 0.05; G.step(0.05); if (c.air) air++; }
+      keys(); out.push({ id: T.id, done: G.mode.kind !== "race", air, jumpy: !!(T.ramps || T.elev), lava: !!T.lava, clouds: !!T.clouds }); G.startFree(); }
+    S.car = keep; G.respawnCar(); return { all: out.every((o) => o.done && o.jumpy), bad: out.filter((o) => !(o.done && o.jumpy)), airTracks: out.filter((o) => o.air > 3).length, n: out.length, err: G.lastErr || "" }; });
+  ok("W12-01 all 18 tracks have jumps, hills or gaps, and an autopilot finishes each one", r.all && r.n === 18 && r.airTracks >= 14 && !r.err, r);
+  r = await E(() => { const { TRACKS } = __dd, ids = TRACKS.map((t) => t.id); const lava = TRACKS.find((t) => t.id === "volcano"), cloud = TRACKS.find((t) => t.id === "cloud"); G.startTrack(ids.indexOf("volcano")); const lm = []; G.world.trk.g.traverse((o) => { if (o.material && o.material.emissive && o.material.emissive.getHex() === 0xff3300) lm.push(o); }); const gaps = G.world.trk.gaps.length; G.startFree(); G.startTrack(ids.indexOf("cloud")); let puffs = 0; G.world.trk.g.traverse((o) => { if (o.geometry && o.geometry.type === "SphereGeometry") puffs++; }); const cg = G.world.trk.gaps.length; G.startFree(); return { lava: lm.length, gaps, puffs, cg, ramprush: TRACKS.find((t) => t.id === "ramprush").ramps.length, night: !!lava.night, high: cloud.keys.some((k) => Array.isArray(k) && k[1] >= 14) }; });
+  ok("W12-02 Volcano Leap has 3 lava gaps, Cloud Bridge 4 gaps in the clouds, Ramp Rush 6 ramps", r.lava === 3 && r.gaps === 3 && r.cg === 4 && r.puffs > 20 && r.ramprush === 6 && r.night && r.high, r);
 
   // Y. Save survives reload
   const saved = await E(() => { __dd.save(); return S.points; });

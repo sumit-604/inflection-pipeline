@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v4", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v4" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v5", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v5" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -286,6 +286,25 @@ const HELPERS = () => {
   r = await E(() => { const o = {}; R.startChapter(5, true); R.skipDialog(); G.C.z = -1260; G.C.vz = -1300; R.step(1 / 60, 3); o.calls = G.stats.calls; R.startChapter(6, true); R.skipDialog(); G.flags.kadeDown = 1; const k = G.enemies.find((e) => e.kind === "kade"); R.knockDown(k); play(0.3); for (const e of G.enemies) R.knockDown(e); R.skipDialog(); R.openCode(() => {}); document.getElementById("pzHint").click(); const h = document.getElementById("pzHintT").textContent; o.hint = /Aarav/.test(h) && /\d/.test(h) && document.getElementById("pzHint").disabled; R.skipNow(); return o; });
   ok("N7 friends help: Aarav and Meher call 4 times during the chase; Aarav gives one hint in the abort code", r.calls === 4 && r.hint, r);
 
+  // ---------------- X. Real 3D camera and the story base (v5) ----------------
+  r = await E(() => { const o = {}; R.startChapter(1, true); R.skipDialog(); sim(0.3); R.skipDialog(); for (const e of G.enemies) R.knockDown(e); const d = G.L.props.find((q) => q.type === "door"); if (d) R.propHit(d, null, "kick");
+    o.ceilIn = R.ceilAt(R.cell(20, 8).x, R.cell(20, 8).z); o.ceilOut = R.ceilAt(R.cell(20, 17).x, R.cell(20, 17).z); o.labCeil = 0;
+    R.startChapter(2, true); R.skipDialog(); sim(0.2); for (const e of G.enemies) R.knockDown(e); sim(0.2); R.skipDialog(); o.labCeil = R.ceilAt(R.cell(10, 5).x, R.cell(10, 5).z);
+    let maxRel = 0, minRel = 9, above = 0, n = 0; at(6, 7, Math.PI / 2); R.keyDown("KeyW"); for (let i = 0; i < 200; i++) { if (G.mode === "dialog") R.skipDialog(); G.camYaw = Math.PI / 2; R.step(1 / 60); const c = R.cam(); const rel = c.position.y - G.P.y; maxRel = Math.max(maxRel, rel); minRel = Math.min(minRel, rel); if (c.position.y > R.ceilAt(c.position.x, c.position.z)) above++; const ch = R.cellAt(Math.floor(c.position.x / 2), Math.floor(c.position.z / 2)); if (ch === "#" ) n++; } R.keyUp("KeyW");
+    o.maxRel = +maxRel.toFixed(2); o.minRel = +minRel.toFixed(2); o.above = above; o.inWall = n; const c = R.cam(); o.behind = Math.hypot(c.position.x - G.P.x, c.position.z - G.P.z); return o; });
+  ok("X1 real 3D: the school and the lab have ceilings and a roof indoors; open sky outdoors", r.ceilIn > 3 && r.ceilIn < 4 && r.ceilOut > 50 && r.labCeil > 3 && r.labCeil < 4, r);
+  ok("X2 the camera is low behind Rish's shoulder (1 to 3 m up), never above the ceiling, never inside a wall", r.maxRel < 3 && r.minRel > 0.9 && r.above === 0 && r.inWall === 0 && r.behind > 1.5 && r.behind < 4, r);
+  r = await E(() => { const o = {}; const c = R.cam(); tap("KeyV"); sim(0.5); o.fp = R.CAM.fp && !G.P.g.visible && Math.abs(c.position.y - (G.P.y + 1.15)) < 0.2 && Math.hypot(c.position.x - G.P.x, c.position.z - G.P.z) < 0.5; tap("KeyV"); sim(0.5); o.back = !R.CAM.fp && G.P.g.visible;
+    const p0 = G.camPitch; const cv = document.getElementById("cv"); const rect = cv.getBoundingClientRect(); const ev = (t, x, y) => cv.dispatchEvent(new PointerEvent(t, { pointerId: 7, clientX: x, clientY: y, bubbles: true, pointerType: "mouse" })); ev("pointerdown", 500, 300); ev("pointermove", 500, 380); ev("pointerup", 500, 380); o.pitch = G.camPitch > p0; sim(0.5); o.lookDown = R.cam().position.y > G.P.y + 1.9; G.camPitch = 0.22; return o; });
+  ok("X3 V (or the 👁 View button) switches to first person through Rish's eyes and back", r.fp && r.back, r);
+  ok("X4 drag up or down to look up or down (camera pitch)", r.pitch && r.lookDown, r);
+  r = await E(() => { const o = {}; R.menu(); document.getElementById("m-story").click(); const t = document.getElementById("card").textContent; o.story = /Marco Kade/.test(t) && /12:00 noon/.test(t) && /soldier's son/.test(t) && /Protect people, even the ones who hurt you/.test(t) && (t.match(/AM/g) || []).length >= 5; document.getElementById("b").click();
+    o.times = R.CHAPTERS.map((c) => c.time + "|" + (c.goal ? 1 : 0)).join(","); R.startChapter(2, true); R.skipDialog(); G.chT = 100; sim(0.6); o.clock = document.getElementById("clock").textContent;
+    R.startChapter(1, true); let k = 0; const lines = []; while (k++ < 600) { if (G.mode === "dialog") { lines.push(...G.dlg.lines.map((l) => l[1])); R.skipDialog(); } if (G.mode === "qte") break; R.step(1 / 60); } o.ch1 = lines.join(" ");
+    return o; });
+  ok("X5 a precise story base in the menu: who, why (Marco Kade), Kade's plan (12:00 noon), the heart, and a timeline", r.story, r);
+  ok("X6 every chapter has a time and a goal; the HUD clock runs (Annual Day 9:35 AM in the lab after 100 s)", /9:10 AM\|1/.test(r.times) && /11:40 AM\|1/.test(r.times) && /9:35 AM/.test(r.clock), r);
+
   // ---------------- V. Pictures ----------------
   for (const [i, name] of [[0, "08-prologue"], [1, "09-ch1"], [3, "10-ch3-hall"], [6, "11-ch6"]]) { await E((i) => { R.startChapter(i, true); play(0.4); if (G.mode === "dialog") R.skipDialog(); play(1); }, i); await shot(name); }
   r = await notBlank();
@@ -301,7 +320,7 @@ const HELPERS = () => {
       const inside = els.concat([st]).every((b) => b.left >= 0 && b.top >= 0 && b.right <= innerWidth && b.bottom <= innerHeight);
       const hit = (a, c) => !(a.right <= c.left || c.right <= a.left || a.bottom <= c.top || c.bottom <= a.top);
       let overlap = 0; for (let i = 0; i < els.length; i++) { if (hit(els[i], st)) overlap++; for (let j = i + 1; j < els.length; j++) if (hit(els[i], els[j])) overlap++; }
-      const ob = box(document.getElementById("obj")), mi = box(document.getElementById("mini")), tb = box(document.getElementById("topbtns"));
+      const ob = box(document.getElementById("obj")), mi = box(document.getElementById("mini")), tb = box(document.getElementById("topbtns")); const tops = [...document.querySelectorAll("#topbtns button")].filter((x) => getComputedStyle(x).display !== "none").map(box); for (const t of tops) for (const e of els) if (hit(t, e)) overlap++;
       return { pad: getComputedStyle(document.getElementById("pad")).display, n: els.length, inside, overlap, objMini: hit(ob, mi), skip: hit(tb, st) }; });
     ok("T1 phone: stick and 11 buttons on screen, nothing overlaps", r.pad === "block" && r.n === 11 && r.inside && r.overlap === 0 && !r.objMini && !r.skip, r);
     const jb = await q.$('#btns button[data-code="KeyJ"]'); const bb = await jb.boundingBox(); await q.touchscreen.tap(bb.x + bb.width / 2, bb.y + bb.height / 2);

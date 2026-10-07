@@ -14,6 +14,7 @@ canvas#cv { position: fixed; inset: 0; width: 100%; height: 100%; display: block
 .bar { height: 14px; background: rgba(0,0,0,0.45); border-radius: 7px; overflow: hidden; border: 1px solid rgba(255,255,255,0.25); position: relative; }
 .bar > i { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #c1121f, #ef476f); transition: width 0.12s; }
 .bar > span { position: absolute; inset: 0; font-size: 11px; line-height: 14px; padding-left: 6px; text-shadow: 0 1px 2px #000; }
+#clock { font-size: 13px; margin-top: 4px; text-shadow: 0 1px 2px #000; font-weight: 700; }
 #stance { font-size: 13px; margin-top: 4px; text-shadow: 0 1px 2px #000; }
 #obj { top: 10px; left: 50%; transform: translateX(-50%); background: var(--panel); padding: 7px 14px; border-radius: 10px; font-size: 14px; max-width: min(560px, 52vw); text-align: center; border: 1px solid rgba(255,255,255,0.12); }
 #obj:empty { display: none; }
@@ -88,6 +89,7 @@ body.touch #pad { display: block; }
 #btns button.hot { box-shadow: 0 0 0 3px #ffd60a; }
 body.touch #wpn { bottom: 170px; } body.touch #toast { bottom: 190px; } body.touch #prompt { bottom: 240px; }
 body.touch #dlg { bottom: 170px; }
+body.touch #topbtns { flex-direction: row; top: 112px; } body.touch #topbtns button { padding: 7px 10px; font-size: 14px; }
 #nogl { position: fixed; inset: 0; z-index: 30; background: #111; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
 @media (max-width: 640px) { #obj { max-width: 56vw; font-size: 12px; top: 8px; } #mini { width: 110px; height: 74px; } #topbtns { top: 92px; } #bars { width: 34vw; } }
 </style>
@@ -96,10 +98,10 @@ body.touch #dlg { bottom: 170px; }
 <body>
 <canvas id="cv"></canvas>
 <div id="flash"></div>
-<div class="hud" id="bars"><div class="bar"><i id="hpI"></i><span>❤ <b id="hpT">100</b></span></div><div id="stance"></div></div>
+<div class="hud" id="bars"><div class="bar"><i id="hpI"></i><span>❤ <b id="hpT">100</b></span></div><div id="clock"></div><div id="stance"></div></div>
 <div class="hud" id="obj"></div>
 <canvas class="hud" id="mini" width="150" height="100"></canvas>
-<div id="topbtns"><button id="pauseB">II</button><button id="skipB">⏭ Skip</button></div>
+<div id="topbtns"><button id="pauseB">II</button><button id="viewB">👁 View</button><button id="skipB">⏭ Skip</button></div>
 <div class="hud" id="wpn"></div>
 <div class="hud" id="prompt"></div>
 <div class="hud" id="toast"></div>
@@ -118,7 +120,7 @@ body.touch #dlg { bottom: 170px; }
 <script type="module">
 import * as THREE from "three";
 // ===================== DATA: maps, people, story, puzzles =====================
-const VERSION = "Rish Hero v4";
+const VERSION = "Rish Hero v5";
 const CS = 2; // one map cell is 2 metres
 
 // Map legend
@@ -256,16 +258,25 @@ const RIDDLES = [
   ["Eyes on your face", 2], ["Legs on a tripod", 3], ["Corners of a pentagon", 5], ["Wheels on a car", 4],
 ];
 
+// ---- The story base: who, why, when ----
+const STORY = {
+  who: "Rish (Rishabh Sharma) is 10. His father, Major Rajveer Sharma, is an army officer posted far away for one year. Rish and his mother move to Suryanagar, and Rish joins Class 5 at Sunrise Public School.",
+  why: "Two years ago Major Sharma caught the smuggler Marco Kade. Marco's brother, Viktor Kade, leads the Black Viper gang. Kade wants Marco free, and he wants revenge on Major Sharma by hurting the one person the Major loves most: his son.",
+  plan: "On Annual Day Kade takes the whole school. The school is his shield. A trigger box in the railway yard will set off bombs in five big cities at 12:00 noon unless the police free Marco. And Kade's men hunt for 'the soldier's son'.",
+  heart: "For one year nobody wanted Rish. Papa told him: 'Protect people, even the ones who hurt you.' On Annual Day the boy nobody wanted is the only one who can save them all.",
+  timeline: [["April, last year", "Rish's first day. One lonely year begins."], ["Annual Day, 9:00 AM", "Kabir and Rohan lock Rish in the storeroom."], ["9:10 AM", "A bomb blasts the school gate. The Black Viper gang takes the school."], ["9:30 AM", "Two bombs tick in the science lab."], ["10:05 AM", "The whole school is held in the hall."], ["10:40 AM", "Bull holds the Principal on the roof."], ["11:15 AM", "Kade escapes with Diya in a black van."], ["11:40 AM", "The railway yard. The trigger box counts down to noon."], ["12:00 noon", "The countdown must stop."], ["Two days later", "Assembly, medal, friends, and Papa comes home."]],
+};
+
 // ---- Chapters ----
 const CHAPTERS = [
-  { id: "pro", name: "Prologue", title: "One Year Alone", map: "school", gun: false, blurb: "April. Rish joins Sunrise Public School in Suryanagar. His father, Major Rajveer Sharma, is away on an army posting. For one whole year, nobody wants him." },
-  { id: "c1", name: "Chapter 1", title: "Locked In", map: "school", gun: false, blurb: "Annual Day, one year later. Kabir and Rohan lock Rish in the storeroom as a joke. Then the school gate explodes." },
-  { id: "c2", name: "Chapter 2", title: "The Science Lab", map: "lab", gun: false, blurb: "Two bombs tick in the science lab. Mr. Iyer is tied up. Rish has no gun, only his hands, his feet and his brain." },
-  { id: "c3", name: "Chapter 3", title: "Hostages in the Hall", map: "hall", gun: false, blurb: "The whole school sits on the floor of the hall. Six armed men watch them. Rish has no gun. He has quiet feet, quick hands, and everything in the room." },
-  { id: "c4", name: "Chapter 4", title: "Rooftop", map: "roof", gun: false, blurb: "Kade's men drag the Principal to the roof. Jump the gaps, slide under the pipes and beat Bull, the giant." },
-  { id: "c5", name: "Chapter 5", title: "Chase", map: "chase", gun: false, blurb: "Kade escapes in a van with Diya. Rish grabs a bicycle and chases it through the Suryanagar market." },
-  { id: "c6", name: "Chapter 6", title: "Railway Yard", map: "yard", gun: true, blurb: "The van stops at the railway yard. Kade has a trigger box for bombs in 5 world capitals. The only gun chapter: a pistol, and a machine gun if you find it. Free Diya. Stop Kade. Stop the countdown." },
-  { id: "end", name: "Ending", title: "Everyone's Hero", map: "school", gun: false, blurb: "" },
+  { id: "pro", time: "April to April", goal: "Live through one lonely year.", clock: 0, name: "Prologue", title: "One Year Alone", map: "school", gun: false, blurb: "April. Rish joins Sunrise Public School in Suryanagar. His father, Major Rajveer Sharma, is away on an army posting. For one whole year, nobody wants him." },
+  { id: "c1", time: "9:10 AM", goal: "Escape the storeroom. Find out what is happening. Call for help.", clock: 550, name: "Chapter 1", title: "Locked In", map: "school", gun: false, blurb: "Annual Day, one year later. Kabir and Rohan lock Rish in the storeroom as a joke. Then the school gate explodes." },
+  { id: "c2", time: "9:30 AM", goal: "Defuse the 2 bombs in the science lab.", clock: 570, name: "Chapter 2", title: "The Science Lab", map: "lab", gun: false, blurb: "Two bombs tick in the science lab. Mr. Iyer is tied up. Rish has no gun, only his hands, his feet and his brain." },
+  { id: "c3", time: "10:05 AM", goal: "Free the whole school from the hall, without a gun.", clock: 605, name: "Chapter 3", title: "Hostages in the Hall", map: "hall", gun: false, blurb: "The whole school sits on the floor of the hall. Six armed men watch them. Rish has no gun. He has quiet feet, quick hands, and everything in the room." },
+  { id: "c4", time: "10:40 AM", goal: "Save the Principal from Bull on the roof.", clock: 640, name: "Chapter 4", title: "Rooftop", map: "roof", gun: false, blurb: "Kade's men drag the Principal to the roof. Jump the gaps, slide under the pipes and beat Bull, the giant." },
+  { id: "c5", time: "11:15 AM", goal: "Catch the black van that has Diya.", clock: 675, name: "Chapter 5", title: "Chase", map: "chase", gun: false, blurb: "Kade escapes in a van with Diya. Rish grabs a bicycle and chases it through the Suryanagar market." },
+  { id: "c6", time: "11:40 AM", goal: "Free Diya. Beat Kade. Stop the 12:00 noon countdown.", clock: 700, name: "Chapter 6", title: "Railway Yard", map: "yard", gun: true, blurb: "The van stops at the railway yard. Kade has a trigger box for bombs in 5 world capitals. The only gun chapter: a pistol, and a machine gun if you find it. Free Diya. Stop Kade. Stop the countdown." },
+  { id: "end", time: "Two days later", goal: "", clock: 0, name: "Ending", title: "Everyone's Hero", map: "school", gun: false, blurb: "" },
 ];
 
 // ---- The Prologue: one year in 7 memories. Rish walks to each gold marker. ----
@@ -741,6 +752,30 @@ function buildLevel(mapName) {
     if (ch === "g") addProp(L, "case", x, y);
     if (ch === "k") addProp(L, "door", x, y);
   }
+  // Ceilings and roofs: the school, the lab and the hall are real closed rooms.
+  L.ceil = []; const lights = [];
+  const building = (x, y) => { const ch = at(x, y); if (".dstk_DrcSGgB".includes(ch) && mapName !== "school") return true; if (".dstk_Dr".includes(ch)) return true; if (ch === "#") return [at(x + 1, y), at(x - 1, y), at(x, y + 1), at(x, y - 1)].some((c) => ".dstk_D".includes(c)); return false; };
+  for (let y = 0; y < H; y++) { const row = []; for (let x = 0; x < W; x++) {
+    const ch = at(x, y); let h = 99;
+    if (mapName === "lab") h = 3.2; else if (mapName === "hall") h = 4.2; else if (mapName === "school" && building(x, y)) h = 3.2;
+    row.push(h);
+    if (h < 99) {
+      const { x: wx, z: wz } = cellCenter(x, y);
+      boxes.push({ x: wx, y: h + 0.06, z: wz, w: CS, h: 0.12, d: CS, c: 0xf6f1e4 });
+      boxes.push({ x: wx, y: h + 0.22, z: wz, w: CS + 0.02, h: 0.2, d: CS + 0.02, c: mapName === "school" ? 0x3f6f9f : 0x8d99ae });
+      if (ch !== "#" && x % 3 === 1 && y % 3 === 1) lights.push({ x: wx, y: h - 0.03, z: wz, w: 1.0, h: 0.06, d: 0.5, c: 0xfffbe6 });
+    }
+    // windows on the outside walls of the school building
+    if (mapName === "school" && ch === "#" && h < 99) { const { x: wx, z: wz } = cellCenter(x, y);
+      if (at(x, y + 1) === ",") boxes.push({ x: wx, y: 1.8, z: wz + CS / 2 + 0.03, w: 1.1, h: 1.0, d: 0.06, c: 0x7fb3d5 });
+      if (at(x, y - 1) === ",") boxes.push({ x: wx, y: 1.8, z: wz - CS / 2 - 0.03, w: 1.1, h: 1.0, d: 0.06, c: 0x7fb3d5 });
+      if (at(x + 1, y) === ",") boxes.push({ x: wx + CS / 2 + 0.03, y: 1.8, z: wz, w: 0.06, h: 1.0, d: 1.1, c: 0x7fb3d5 });
+      if (at(x - 1, y) === ",") boxes.push({ x: wx - CS / 2 - 0.03, y: 1.8, z: wz, w: 0.06, h: 1.0, d: 1.1, c: 0x7fb3d5 }); }
+    // door frames
+    if (ch === "D") { const { x: wx, z: wz } = cellCenter(x, y); const ns = ".dstk_,=".includes(at(x, y - 1)) || ".dstk_,=".includes(at(x, y + 1));
+      for (const o of [-0.92, 0.92]) boxes.push(ns ? { x: wx + o, y: 1.3, z: wz, w: 0.16, h: 2.6, d: 0.3, c: 0x7f5539 } : { x: wx, y: 1.3, z: wz + o, w: 0.3, h: 2.6, d: 0.16, c: 0x7f5539 }); }
+  } L.ceil.push(row); }
+  if (lights.length) { const lm = boxBatch(lights); lm.material = new THREE.MeshBasicMaterial({ vertexColors: true }); L.group.add(lm); }
   const m = boxBatch(boxes); m.receiveShadow = false; L.group.add(m); L.staticMesh = m;
   // Far ground under the roof, and sky colour
   if (mapName === "roof") { const gr = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), mat(0x6a994e)); gr.rotation.x = -Math.PI / 2; gr.position.set(W, -10, H); L.group.add(gr); for (let i = 0; i < 30; i++) { const b = new THREE.Mesh(new THREE.BoxGeometry(rr(6, 14), rr(4, 16), rr(6, 14)), mat([0xe9c46a, 0xf4a261, 0xcbd5e1, 0xe5989b][i % 4])); b.position.set(rr(-40, W * 2 + 40), -10 + b.geometry.parameters.height / 2, i % 2 ? rr(-60, -14) : rr(H * 2 + 14, H * 2 + 60)); L.group.add(b); } }
@@ -775,7 +810,7 @@ function addProp(L, type, cx, cy, extra = {}) {
 }
 
 // Sign above a door or a room.
-function addSign(L, text, cx, cy, h = 3.4, sc = 0.8) { const s = makeTextSprite(text, { size: 40, scale: sc, bg: "rgba(29,53,87,0.92)", color: "#ffffff" }); const { x, z } = cellCenter(cx, cy); s.position.set(x, h, z); L.group.add(s); return s; }
+function addSign(L, text, cx, cy, h = 3.4, sc = 0.8, dx = 0, dz = 0) { const s = makeTextSprite(text, { size: 40, scale: sc, bg: "rgba(29,53,87,0.92)", color: "#ffffff" }); const { x, z } = cellCenter(cx, cy); s.position.set(x + dx, h, z + dz); L.group.add(s); return s; }
 
 // ---- Particles (sparks, glass, wood, dust, smoke) ----
 const FX = { list: [], geo: null };
@@ -817,7 +852,7 @@ function bulletHole(L, p, n) {
 
 
 // ===================== CORE: state, scene, input, player, camera =====================
-const G = { mode: "menu", ch: -1, t: 0, diff: 1, later: [], L: null, P: null, enemies: [], npcs: {}, hostages: [], items: [], zones: [], triggers: [], bombs: [], clouds: [], jets: [], flags: {}, obj: "", shake: 0, marker: null, camYaw: 0, stats: { ko: 0, shots: 0, env: 0 }, save: { unlocked: 0, diff: 1 }, test: false };
+const G = { camPitch: 0.22, mode: "menu", ch: -1, t: 0, diff: 1, later: [], L: null, P: null, enemies: [], npcs: {}, hostages: [], items: [], zones: [], triggers: [], bombs: [], clouds: [], jets: [], flags: {}, obj: "", shake: 0, marker: null, camYaw: 0, stats: { ko: 0, shots: 0, env: 0 }, save: { unlocked: 0, diff: 1 }, test: false };
 const DIFF = [{ name: "Easy", dmg: 0.55, hp: 0.8, bomb: 90 }, { name: "Normal", dmg: 1, hp: 1, bomb: 60 }, { name: "Hard", dmg: 1.45, hp: 1.2, bomb: 45 }];
 function after(sec, f) { G.later.push({ t: G.t + sec, f }); }
 const $ = (id) => document.getElementById(id);
@@ -838,7 +873,7 @@ function initGfx() {
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x9ecbf0);
   scene.fog = new THREE.Fog(0x9ecbf0, 60, 170);
-  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 400);
+  camera = new THREE.PerspectiveCamera(68, window.innerWidth / window.innerHeight, 0.05, 400);
   hemi = new THREE.HemisphereLight(0xffffff, 0x8d7b5a, 1.25); scene.add(hemi);
   sun = new THREE.DirectionalLight(0xfff2d6, 1.5); sun.position.set(30, 60, 20); scene.add(sun);
   scene.add(new THREE.AmbientLight(0xffffff, 0.25));
@@ -850,7 +885,7 @@ function setSky(color, fogNear = 60, fogFar = 170) { scene.background = new THRE
 // ---- Input ----
 const K = {}, PRESS = {};
 const KEYMAP = { ArrowUp: "up", KeyW: "up", ArrowDown: "down", KeyS: "down", KeyA: "left", KeyD: "right", ArrowLeft: "turnL", ArrowRight: "turnR",
-  KeyJ: "punch", KeyK: "kick", KeyL: "block", KeyQ: "roll", Space: "jump", KeyE: "act", KeyF: "fire", KeyR: "reload", KeyC: "crouch", ShiftLeft: "run", ShiftRight: "run", Enter: "ok", Escape: "pause", KeyP: "pause", KeyM: "manual", KeyX: "swap" };
+  KeyJ: "punch", KeyK: "kick", KeyL: "block", KeyQ: "roll", Space: "jump", KeyE: "act", KeyF: "fire", KeyR: "reload", KeyC: "crouch", ShiftLeft: "run", ShiftRight: "run", Enter: "ok", Escape: "pause", KeyP: "pause", KeyM: "manual", KeyX: "swap", KeyV: "view", PageUp: "lookUp", PageDown: "lookDown" };
 function keyDown(code) { const a = KEYMAP[code]; if (!a) return false; if (!K[a]) PRESS[a] = true; K[a] = true; onAnyKey(code, a); return true; }
 function keyUp(code) { const a = KEYMAP[code]; if (!a) return false; K[a] = false; return true; }
 window.addEventListener("keydown", (e) => { if (e.target && e.target.tagName === "INPUT") return; if (keyDown(e.code)) e.preventDefault(); });
@@ -963,6 +998,8 @@ function updatePlayer(dt) {
     else if (pressed("fire")) { if (P.gun) fireGun(); else if (P.carry) throwItem(); else toast("Nothing to throw. Pick up a book or a brick first (E)."); }
     else if (pressed("act")) doAction();
   }
+  if (pressed("view")) toggleView();
+  if (K.lookUp) G.camPitch = Math.max(-0.45, G.camPitch - dt * 1.2); if (K.lookDown) G.camPitch = Math.min(0.85, G.camPitch + dt * 1.2);
   if (pressed("reload")) reloadGun();
   if (pressed("swap")) switchGun();
   if (P.gun && GUNS[P.gun.kind].auto && K.fire && !busy && G.mode === "play") fireGun();
@@ -1020,51 +1057,75 @@ function fallReset() {
 }
 
 // ---- Camera ----
-const CAM = { pos: new THREE.Vector3(), look: new THREE.Vector3(), init: false, dist: 7.2, h: 4.6 };
+const CAM = { pos: new THREE.Vector3(), look: new THREE.Vector3(), init: false, dist: 3.4, fp: false, near: 9 };
+function ceilAt(x, z) { const L = G.L; if (!L || !L.ceil) return 99; const cx = Math.floor(x / CS), cy = Math.floor(z / CS); if (cy < 0 || cy >= L.H || cx < 0 || cx >= L.W) return 99; return L.ceil[cy][cx]; }
+// A real 3D camera: low behind Rish's shoulder, looks up and down (pitch), never goes through walls or ceilings.
 function updateCamera(dt) {
   const P = G.P; if (!P) return;
   let tgt, look;
-  if (G.focus) { // cinematic: look at two people from the side
+  if (G.focus) { // talk scenes: a side view of the two people, at eye height
     const a = G.focus.a, b = G.focus.b || a;
     const mx = (a.x + b.x) / 2, mz = (a.z + b.z) / 2; let vx = b.x - a.x, vz = b.z - a.z; const l = Math.hypot(vx, vz);
     if (l < 0.3) { const f = faceDir(a.yaw || 0); vx = f.z; vz = -f.x; } else { vx /= l; vz /= l; }
     let nx = vz, nz = -vx; const want = faceDir(G.camYaw); if (nx * want.x + nz * want.z > 0) { nx = -nx; nz = -nz; }
-    const d = Math.max(4.2, l * 1.1 + 2.5);
-    tgt = clampCam(mx, mz, mx + nx * d, mz + nz * d, 2.6, 1.3); look = new THREE.Vector3(mx, 1.1, mz);
+    const d = Math.max(3.4, l * 1.1 + 2.2), base = Math.max(0, floorAt(mx, mz)) + 1.25;
+    tgt = clamp3(new THREE.Vector3(mx, base, mz), new THREE.Vector3(mx + nx * d, base + 0.75, mz + nz * d)); look = new THREE.Vector3(mx, base - 0.1, mz);
+    CAM.near = 9;
   } else {
-    const f = faceDir(G.camYaw), dist = P.gun ? 6.4 : CAM.dist;
-    tgt = clampCam(P.x, P.z, P.x - f.x * dist, P.z - f.z * dist, CAM.h, P.y + 1.2);
-    look = new THREE.Vector3(P.x + f.x * 1.6, P.y + 1.0, P.z + f.z * 1.6);
+    const f = faceDir(G.camYaw), r = { x: -Math.cos(G.camYaw), z: Math.sin(G.camYaw) }, pt = G.camPitch;
+    const eyeY = P.y + (P.crouch ? 0.85 : 1.15);
+    if (CAM.fp) { // first person: Rish's own eyes
+      tgt = new THREE.Vector3(P.x + f.x * 0.2, eyeY, P.z + f.z * 0.2);
+      look = new THREE.Vector3(tgt.x + f.x * Math.cos(pt) * 4, eyeY - Math.sin(pt) * 4, tgt.z + f.z * Math.cos(pt) * 4);
+      CAM.near = 0;
+    } else {
+      const side = P.gun ? 0.55 : 0.3, dist = P.gun ? 2.8 : CAM.dist;
+      const T = new THREE.Vector3(P.x + r.x * side, P.y + 1.3, P.z + r.z * side);
+      const D = new THREE.Vector3(T.x - f.x * Math.cos(pt) * dist, T.y + Math.sin(pt) * dist + 0.35, T.z - f.z * Math.cos(pt) * dist);
+      tgt = clamp3(T, D); CAM.near = tgt.distanceTo(T);
+      look = new THREE.Vector3(T.x + f.x * Math.cos(pt) * 4, T.y - Math.sin(pt) * 4 + 0.2, T.z + f.z * Math.cos(pt) * 4);
+    }
   }
-  const k = CAM.init ? Math.min(1, dt * 7) : 1; CAM.init = true;
+  const k = CAM.init ? Math.min(1, dt * 10) : 1; CAM.init = true;
   CAM.pos.lerp(tgt, k); CAM.look.lerp(look, k);
+  // the smoothing must not drag the camera into a wall or the ceiling
+  const c = ceilAt(CAM.pos.x, CAM.pos.z); if (CAM.pos.y > c - 0.2) CAM.pos.y = c - 0.2;
+  if (tallCell(cellXZ(CAM.pos.x, CAM.pos.z)) && CAM.pos.y < wallH(cellXZ(CAM.pos.x, CAM.pos.z)) + 0.1) CAM.pos.copy(tgt);
   camera.position.copy(CAM.pos);
-  if (G.shake > 0) { camera.position.x += rr(-1, 1) * G.shake * 0.3; camera.position.y += rr(-1, 1) * G.shake * 0.3; G.shake = Math.max(0, G.shake - dt * 2.5); }
+  if (G.shake > 0) { camera.position.x += rr(-1, 1) * G.shake * 0.12; camera.position.y += rr(-1, 1) * G.shake * 0.12; G.shake = Math.max(0, G.shake - dt * 2.5); }
   camera.lookAt(CAM.look);
+  P.g.visible = !(CAM.near < 0.75 && !G.focus);
 }
-// Pull the camera closer when a wall stands between it and the player.
-function clampCam(px, pz, cx, cz, h, baseY) {
-  const d = Math.hypot(cx - px, cz - pz), n = Math.ceil(d / 0.25); let use = d;
-  for (let i = 1; i <= n; i++) { const t = i / n, x = px + (cx - px) * t, z = pz + (cz - pz) * t; const wh = wallH(cellXZ(x, z)); const rayY = baseY + (h) * t; if (wh > rayY - 0.2) { use = Math.max(1.2, d * t - 0.45); break; } }
-  const k = use / (d || 1); const extra = (d - use) * 0.55;
-  return new THREE.Vector3(px + (cx - px) * k, baseY + h * k + extra, pz + (cz - pz) * k);
+// March from the player to the wanted camera spot; stop before a wall, stay under the ceiling.
+function clamp3(T, D) {
+  const v = D.clone().sub(T), len = v.length(), n = Math.max(1, Math.ceil(len / 0.1)); let last = T.clone();
+  for (let i = 1; i <= n; i++) {
+    const p = T.clone().addScaledVector(v, i / n); const ch = cellXZ(p.x, p.z);
+    if ((tallCell(ch) || ch === "#") && p.y < wallH(ch) + 0.15) { return last.lerp(T, Math.min(1, 0.25 / Math.max(0.3, last.distanceTo(T)))); }
+    const c = ceilAt(p.x, p.z); if (p.y > c - 0.25) p.y = c - 0.25;
+    last = p;
+  }
+  return last;
 }
 
-// ---- Mouse and touch camera drag ----
+// ---- Mouse and touch: drag to look around (left/right and up/down) ----
 function initPointer() {
   const cv = $("cv"); let drag = null;
   cv.addEventListener("pointerdown", (e) => { drag = { x: e.clientX, y: e.clientY, moved: 0, id: e.pointerId }; try { cv.setPointerCapture(e.pointerId); } catch (er) { /* fine */ } });
-  cv.addEventListener("pointermove", (e) => { if (!drag || drag.id !== e.pointerId) return; const dx = e.clientX - drag.x; drag.moved += Math.abs(dx) + Math.abs(e.clientY - drag.y); drag.x = e.clientX; drag.y = e.clientY; G.camYaw -= dx * 0.006; });
+  cv.addEventListener("pointermove", (e) => { if (!drag || drag.id !== e.pointerId) return; const dx = e.clientX - drag.x, dy = e.clientY - drag.y; drag.moved += Math.abs(dx) + Math.abs(dy); drag.x = e.clientX; drag.y = e.clientY; G.camYaw -= dx * 0.006; G.camPitch = clamp(G.camPitch + dy * 0.004, -0.45, 0.85); });
   cv.addEventListener("pointerup", (e) => { if (drag && drag.moved < 8 && e.pointerType === "mouse" && G.mode === "play" && G.P && G.P.gun) clickShoot(e.clientX, e.clientY); drag = null; });
   cv.addEventListener("pointercancel", () => { drag = null; });
 }
+function toggleView() { CAM.fp = !CAM.fp; toast(CAM.fp ? "👁 First person: you see with Rish's eyes. V to switch back." : "🎥 Third person: the camera is behind Rish.", 2.5); }
 
 // ---- HUD ----
 function toast(msg, sec = 3.2) { const t = $("toast"); t.textContent = msg; t.style.display = "block"; G.toastT = sec; }
 function center(msg, sec = 1.6) { const c = $("center"); c.textContent = msg; c.style.display = "block"; G.centerT = sec; }
 function flash(color = "#fff", op = 0.7) { const f = $("flash"); f.style.background = color; f.style.opacity = op; G.flashT = 0.25; }
 function setObj(text, marker) { G.obj = text; $("obj").innerHTML = text; G.marker = marker || null; }
+function clockText() { const c = CHAPTERS[G.ch]; if (!c) return ""; if (!c.clock) return `🕘 ${c.time}`; const m = c.clock + Math.floor((G.chT || 0) / 20), h = Math.floor(m / 60), mm = m % 60; return `🕘 Annual Day · ${h > 12 ? h - 12 : h}:${String(mm).padStart(2, "0")} ${h >= 12 ? "PM" : "AM"}${c.id === "c6" ? " · countdown to 12:00" : ""}`; }
 function updateHud(dt) {
+  if ((G.clockT = (G.clockT || 0) - dt) <= 0) { G.clockT = 0.5; $("clock").textContent = clockText(); }
   const P = G.P;
   if (G.toastT > 0) { G.toastT -= dt; if (G.toastT <= 0) $("toast").style.display = "none"; }
   if (G.centerT > 0) { G.centerT -= dt; if (G.centerT <= 0) $("center").style.display = "none"; }
@@ -1815,7 +1876,7 @@ let markerMesh = null;
 function makeMarker() {
   const g = new THREE.Group();
   const ring = new THREE.Mesh(new THREE.TorusGeometry(0.9, 0.08, 8, 28), new THREE.MeshBasicMaterial({ color: 0xffd60a })); ring.rotation.x = Math.PI / 2; ring.position.y = 0.08; g.add(ring);
-  const cone = new THREE.Mesh(new THREE.ConeGeometry(0.35, 0.7, 4), new THREE.MeshBasicMaterial({ color: 0xffd60a })); cone.rotation.x = Math.PI; cone.position.y = 3.0; g.add(cone); g.userData.cone = cone;
+  const cone = new THREE.Mesh(new THREE.ConeGeometry(0.35, 0.7, 4), new THREE.MeshBasicMaterial({ color: 0xffd60a })); cone.rotation.x = Math.PI; cone.position.y = 2.3; g.add(cone); g.userData.cone = cone;
   scene.add(g); return g;
 }
 // A gold arrow at Rish's feet shows the way to the marker, around walls and through doors.
@@ -1847,7 +1908,7 @@ function updateMarker(dt) {
   for (const b of G.bombs) { if (b.tag) b.tag.visible = !b.defused && G.P && Math.hypot(b.x - G.P.x, b.z - G.P.z) < 8; if (b.led && !b.defused) b.led.visible = Math.sin(G.t * 10) > 0; else if (b.led) b.led.visible = true; }
   if (!markerMesh) markerMesh = makeMarker();
   const m = G.marker; markerMesh.visible = !!m && (G.mode === "play");
-  if (m) { markerMesh.position.set(m.x, Math.max(0, floorAt(m.x, m.z)), m.z); markerMesh.userData.cone.position.y = 3 + Math.sin(G.t * 4) * 0.25; markerMesh.rotation.y += dt; }
+  if (m) { markerMesh.position.set(m.x, Math.max(0, floorAt(m.x, m.z)), m.z); markerMesh.userData.cone.position.y = 2.3 + Math.sin(G.t * 4) * 0.2; markerMesh.rotation.y += dt; }
 }
 function addTrigger(cx, cy, r, fn, ok) { const p = cellCenter(cx, cy); const t = { x: p.x, z: p.z, r, fn, ok, done: false }; G.triggers.push(t); return t; }
 function updateTriggers() { const P = G.P; if (!P || G.mode !== "play") return; for (const t of G.triggers) { if (t.done || (t.ok && !t.ok())) continue; if (Math.hypot(P.x - t.x, P.z - t.z) < t.r) { t.done = true; t.fn(); if (G.mode !== "play") break; } } }
@@ -1877,14 +1938,15 @@ function gateSign(L) {
 }
 function schoolSigns(L) {
   gateSign(L);
-  addSign(L, "Class 5A", 9, 7, 3.6, 0.6); addSign(L, "Class 5B", 14, 7, 3.6, 0.6); addSign(L, "Library", 20, 7, 3.6, 0.6); addSign(L, "Staff Room", 28, 7, 3.6, 0.6); addSign(L, "Computer Lab", 34, 7, 3.6, 0.6); addSign(L, "Storeroom", 40, 7, 3.6, 0.6);
-  addSign(L, "PRINCIPAL", 8, 10, 3.6, 0.6); addSign(L, "Class 4A", 14, 10, 3.6, 0.6); addSign(L, "Music Room", 21, 10, 3.6, 0.6); addSign(L, "SCIENCE LAB", 35, 10, 3.6, 0.7); addSign(L, "Suryanagar", 3, 1, 2.6, 0.6); addSign(L, "MAIN ENTRANCE", 29, 14, 3.6, 0.7); addSign(L, "SIDE DOOR", 6, 9, 3.6, 0.6);
+  for (const [t, cx] of [["Class 5A", 8], ["Class 5B", 14], ["Library", 20], ["Staff Room", 28], ["Computer Lab", 36], ["Storeroom", 40]]) addSign(L, t, cx, 7, 2.75, 0.55, 0, 1.15);
+  for (const [t, cx] of [["PRINCIPAL", 8], ["Class 4A", 14], ["Music Room", 21], ["SCIENCE LAB", 35]]) addSign(L, t, cx, 10, 2.75, 0.55, 0, -1.15);
+  addSign(L, "Suryanagar", 3, 1, 2.6, 0.6); addSign(L, "MAIN ENTRANCE", 29, 14, 2.7, 0.7, 0, 1.2); addSign(L, "SIDE DOOR", 6, 9, 2.7, 0.6, -1.2, 0);
 }
 function chapterCard(i, go) {
   const c = CHAPTERS[i];
   if (G.test || !c.blurb) { go(); return; }
   G.mode = "card";
-  showScr(`<p class="kicker">${c.name}</p><h1>${c.title}</h1><p>${c.blurb}</p><p class="mut">${c.gun ? "🔫 The only gun chapter: a pistol and a machine gun. Every shot changes the room." : "👊 No guns for Rish here. Hands, feet, brains."}</p><div class="row"><button class="btn go" id="cgo">▶ Start</button><button class="btn alt" id="cmenu">Menu</button></div>`);
+  showScr(`<p class="kicker">${c.name} · 🕘 ${c.time}</p><h1>${c.title}</h1><p>${c.blurb}</p>${c.goal ? `<p>🎯 <b>${c.goal}</b></p>` : ""}<p class="mut">${c.gun ? "🔫 The only gun chapter: a pistol and a machine gun. Every shot changes the room." : "👊 No guns for Rish here. Hands, feet, brains."}</p><div class="row"><button class="btn go" id="cgo">▶ Start</button><button class="btn alt" id="cmenu">Menu</button></div>`);
   $("cgo").onclick = () => { hideScr(); go(); }; $("cmenu").onclick = () => menu();
 }
 function startChapter(i, noCard) {
@@ -1984,6 +2046,7 @@ const CH_SETUP = {
     G.onPick = (it) => {
       if (it.type !== "radio") return; G.flags.radio = 1;
       say([["kade_radio", "This is Kade. Bombs are set in the science lab. All hostages sit in the hall. Nobody leaves.", "calm"],
+           ["kade_radio", "Police, listen. Free my brother Marco Kade by 12:00 noon. If not, my trigger box wakes up bombs in five big cities. This school is my shield.", "angry"],
            ["kade_radio", "And one more thing. One boy is missing from the hall. The soldier's son, Rishabh Sharma. He is the reason we came here. Find him. Bring him to me.", "angry"],
            ["rish", "Me? They came because of me? Because of Papa?", "surprised"], ["rish", "Then this is my fight. Nobody else gets hurt because of me.", "stern"],
            ["rish", "Bombs. In Mr. Iyer's lab. If they go off, the whole school goes with them.", "surprised"],
@@ -2002,7 +2065,7 @@ const CH_SETUP = {
 
   // ---------------- CHAPTER 2: THE SCIENCE LAB ----------------
   c2() {
-    loadMap("lab"); addSign(G.L, "SCIENCE LAB", 13, 0, 2.6, 0.9); makePlayer(2, 2, Math.PI / 2); G.flags.cones = true;
+    loadMap("lab"); addSign(G.L, "SCIENCE LAB", 13, 0, 2.6, 0.9, 0, 1.2); makePlayer(2, 2, Math.PI / 2); G.flags.cones = true;
     const T = [
       spawnEnemy("thug", 7, 1, 0, { path: [[7, 1], [7, 7]] }),
       spawnEnemy("thug", 15, 5, -Math.PI / 2, { scan: 1.0 }),
@@ -2064,7 +2127,7 @@ const CH_SETUP = {
       k.faceP = true;
       say([["kade", "So. The soldier's son. Major Rajveer Sharma put my brother in jail. Today I take something from him.", "angry"],
            ["verma", "Rishabh, run! Don't be a hero!", "surprised"], ["diya", "Rish!", "surprised"],
-           ["kade", "Bull, take the Principal to the roof. I take the girl. Come and find us, little soldier.", "laugh"],
+           ["kade", "And this girl shouted your name. So she is your friend. Good. She comes with me.", "laugh"], ["kade", "Bull, take the Principal to the roof. She is my shield when the police come. Come and find us, little soldier.", "laugh"],
            ["rish", "(Bull has the Principal. Kade has Diya. I have to be faster than both of them.)", "stern"]], () => {
         k.goto = M(30, 1); d.goto = M(30, 1); v.goto = M(30, 1); after(1.2, () => { removeNpc("kade"); removeNpc("diya"); removeNpc("verma"); });
         setObj("Follow them up to the <b>ROOF</b> (stage, right side)", M(29, 1)); addTrigger(29, 1, 1.8, () => completeChapter()); G.skipFn = () => completeChapter();
@@ -2095,7 +2158,7 @@ const CH_SETUP = {
     });
     G.onKO = (e) => { if (e === bull) { setObj("Untie the <b>Principal</b> (E)", M(42, 1)); G.skipFn = () => G.hostages[0].zone.fn(); } };
     G.skipFn = () => { const p = M(37, 3); G.P.x = p.x; G.P.z = p.z; G.P.safe = { x: p.x, z: p.z }; for (const e of T) knockDown(e); };
-    say([["rish", "(The roof. The gaps between the blocks are wide. Four metres. I must run and jump.)", "thinking"], ["radio", "Rish, it's Rohan! I am on Mr. Khan's phone. I know this roof from the school map. Four gaps and one low pipe. Run before every jump!", "calm"], ["rish", "Rohan, you are the map expert. Thank you.", "happy"], ["rish", "(And that pipe is low. If I run and press C, I can slide under it.)", "thinking"]],
+    say([["rish", "(10:40. Bull has Principal Ma'am on the roof. Kade wants her as a shield against the police.)", "thinking"], ["rish", "(The roof. The gaps between the blocks are wide. Four metres. I must run and jump.)", "thinking"], ["radio", "Rish, it's Rohan! I am on Mr. Khan's phone. I know this roof from the school map. Four gaps and one low pipe. Run before every jump!", "calm"], ["rish", "Rohan, you are the map expert. Thank you.", "happy"], ["rish", "(And that pipe is low. If I run and press C, I can slide under it.)", "thinking"]],
       () => { setObj("Cross the roof to the <b>Principal</b>. <b>Shift</b> run + <b>Space</b> jump · run + <b>C</b> slide", M(41, 3)); toast("Tip: hold Shift to run, then press Space at the edge.", 5); });
   },
 
@@ -2201,7 +2264,7 @@ function step(dt) {
   $("mini").style.display = G.L && G.mode !== "chase" ? "block" : "none";
   if (G.mode === "play" && (G.miniT = (G.miniT || 0) - dt) <= 0) { G.miniT = 0.15; drawMini(); }
   const sk = $("skipB"); sk.style.display = ["play", "dialog", "qte", "puzzle", "chase"].includes(G.mode) ? "block" : "none";
-  $("pauseB").style.display = ["play", "chase"].includes(G.mode) ? "block" : "none";
+  $("pauseB").style.display = ["play", "chase"].includes(G.mode) ? "block" : "none"; $("viewB").style.display = G.mode === "play" ? "block" : "none";
   if (G.skipArm > 0) { G.skipArm -= dt; if (G.skipArm <= 0) sk.textContent = "⏭ Skip"; }
 }
 // Laser sight from Rish's pistol to the auto aim target.
@@ -2234,8 +2297,8 @@ function menu() {
   showScr(`<h1 class="logo">RISH HERO</h1><p class="sub">RishSchoolDays · Game 3 · <b>Just live it!</b></p>
   <p class="mut">One lonely year at Sunrise Public School. One day of fear. One hero.</p>
   <div class="grid"><button class="btn go wide" id="m-play">▶ ${u > 0 ? `Continue: ${c.name}, ${c.title}` : "Start the story"}</button>
-  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button><button class="btn wide" id="m-diary">📔 Rish's Diary (${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL})</button></div>`);
-  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about; $("m-diary").onclick = diary;
+  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button><button class="btn" id="m-story">📖 The Story</button><button class="btn" id="m-diary">📔 Rish's Diary (${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL})</button></div>`);
+  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about; $("m-diary").onclick = diary; $("m-story").onclick = storyPage;
 }
 function chapters() {
   showScr(`<h2>Chapters</h2><div class="chl">${CHAPTERS.map((c, i) => `<button class="btn ch" data-i="${i}" ${i > G.save.unlocked ? "disabled" : ""}><b>${c.name}</b> ${c.title} ${c.gun ? "🔫" : ""}${i > G.save.unlocked ? " 🔒" : ""}</button>`).join("")}</div><p class="mut">Stuck? Every chapter has a ⏭ Skip button.</p><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
@@ -2243,7 +2306,7 @@ function chapters() {
 }
 function howTo() {
   showScr(`<h2>How to play</h2><div class="keys">
-  <p><b>Move</b> W A S D, or ↑ ↓ to walk and ← → to turn. Drag the screen to look around.</p>
+  <p><b>Move</b> W A S D, or ↑ ↓ to walk and ← → to turn. Drag the screen to look around and up or down (or Page Up / Page Down). <b>V</b> or 👁 View: first person (Rish\'s eyes) or third person.</p>
   <p><b>Shift</b> run · <b>Space</b> jump · <b>C</b> crouch (sneak), or slide when running</p>
   <p><b>J</b> punch (3 in a row = uppercut) · <b>K</b> kick (breaks guards) · <b>L</b> block (block just as they hit = COUNTER) · <b>Q</b> dodge roll</p>
   <p><b>E</b> takedown from behind, untie, pick up, use · <b>F</b> throw a book, duster or brick: at an enemy, or at a light or extinguisher near him</p>
@@ -2264,6 +2327,10 @@ function about() {
   <p><b>Rish Hero</b> is Game 3 of the <b>RishSchoolDays</b> series, created by <b>Rishabh Sharma</b>, 9 years old. Slogan: <b>Just live it!</b></p>
   <p>Rish joins Sunrise Public School in Suryanagar, the same school, classmates and teachers as RishSchoolDays. For one year nobody likes him. Kids push him, laugh at him and ignore him. Some teachers blame him. Then, on Annual Day, the Black Viper gang attacks the school. Rish frees his school, stops the bombs, beats Bull and Viktor Kade, and stops bombs in five cities around the world.</p>
   <p class="mut">The Black Viper gang and every person in this story are made up. Defeated enemies are knocked out and arrested. No blood.</p><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
+  $("b").onclick = menu;
+}
+function storyPage() {
+  showScr(`<h2>📖 The Story</h2><div class="diary"><h3>Who</h3><p class="dp">${STORY.who}</p><h3>Why the attack</h3><p class="dp">${STORY.why}</p><h3>Kade's plan</h3><p class="dp">${STORY.plan}</p><h3>The heart of the story</h3><p class="dp">${STORY.heart}</p><h3>Timeline</h3>${STORY.timeline.map(([t, x]) => `<p class="dp"><b>${t}</b>: ${x}</p>`).join("")}</div><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
   $("b").onclick = menu;
 }
 function diary() {
@@ -2298,7 +2365,7 @@ function initTouch() {
     const rel = (e) => { keyUp(b.dataset.code); b.classList.remove("down"); }; b.addEventListener("pointerup", rel); b.addEventListener("pointercancel", rel); b.addEventListener("pointerleave", rel);
   });
   $("btnRun").onclick = () => { runToggle = !runToggle; $("btnRun").classList.toggle("on", runToggle); };
-  $("pauseB").onclick = () => togglePause();
+  $("pauseB").onclick = () => togglePause(); $("viewB").onclick = () => toggleView();
   $("skipB").onclick = () => { if (G.skipArm > 0) { G.skipArm = 0; $("skipB").textContent = "⏭ Skip"; skipNow(); } else { G.skipArm = 2.5; $("skipB").textContent = "⏭ Tap again to skip"; } };
   $("dlgSkip").onclick = (e) => { e.stopPropagation(); skipDialog(); };
   $("dlg").onclick = () => nextLine();
@@ -2323,7 +2390,7 @@ function boot() {
   window.__rh = {
     G, step: (dt = 1 / 60, n = 1) => { for (let i = 0; i < n; i++) step(dt); }, startChapter, completeChapter, skipNow, skipDialog, nextLine, retryFail, skipFail,
     keyDown, keyUp, safeWire, cutWire, codeKey, openCode, knockDown, hurtEnemy, propHit, fireGun, autoAim, CHAPTERS, MEMORIES, ENDING, CAST, MAPS, RIDDLES,
-    cell: (cx, cy) => cellCenter(cx, cy), GUIDE, PAGES, PAGE_TOTAL, chapterResult, resultsCard, credits, diary, cellAt, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
+    cell: (cx, cy) => cellCenter(cx, cy), cam: () => camera, CAM, ceilAt, clockText, storyPage, STORY, GUIDE, PAGES, PAGE_TOTAL, chapterResult, resultsCard, credits, diary, cellAt, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
     tp: (cx, cy) => { const p = cellCenter(cx, cy); G.P.x = p.x; G.P.z = p.z; G.P.safe = { x: p.x, z: p.z }; },
   };
 }

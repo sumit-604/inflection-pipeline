@@ -3,8 +3,29 @@
 RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
-A 3D action story game in one HTML file (Three.js). It runs on a computer
-and on a phone. Version label: **Rish Hero v4** (bottom right).
+A full 3D action story game in one HTML file (Three.js). It runs on a
+computer and on a phone. Version label: **Rish Hero v5** (bottom right).
+
+Real 3D: a low camera behind Rish's shoulder (or first person with V),
+look up and down by dragging, closed rooms with ceilings and lights,
+buildings with roofs, windows and door frames.
+
+## The story base
+
+- **Who:** Rish (Rishabh Sharma) is 10. His father, Major Rajveer Sharma,
+  is posted far away for one year. Rish joins Class 5 at Sunrise Public
+  School, Suryanagar.
+- **Why the attack:** two years ago Major Sharma caught the smuggler Marco
+  Kade. Marco's brother Viktor Kade leads the Black Viper gang. He wants
+  Marco free, and revenge on the Major through his son.
+- **Kade's plan:** take the school on Annual Day as a shield. A trigger box
+  in the railway yard sets off bombs in five big cities at 12:00 noon
+  unless the police free Marco. His men hunt "the soldier's son".
+- **The heart:** for one year nobody wanted Rish. Papa told him: "Protect
+  people, even the ones who hurt you."
+- **Timeline:** 9:00 locked in the storeroom · 9:10 gate blast · 9:30 lab
+  bombs · 10:05 hall hostages · 10:40 roof · 11:15 van chase · 11:40
+  railway yard · 12:00 noon deadline. A clock on screen shows the time.
 
 ## The story
 
@@ -67,7 +88,8 @@ knocked out and arrested. No blood.
 ## Moves
 
 - Move: W A S D, or arrows (up and down walk, left and right turn). Drag
-  to look around. Phone: the stick.
+  to look around and up or down (or Page Up / Page Down). V or 👁 View:
+  first person or third person. Phone: the stick.
 - Shift run · Space jump · C crouch (sneak), or slide while running
 - J punch (3 in a row = uppercut) · K kick (breaks guards and crates) ·
   L block (block just as he swings = COUNTER) · Q dodge roll
@@ -89,7 +111,8 @@ knocked out and arrested. No blood.
 `tests/regress.cjs` plays the whole game in Chromium with Playwright
 (swiftshader WebGL): real walking, stealth, fights, quick moves, bombs,
 parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, diary pages, results, Play again,
-  smoke pellets and friends' help, plus phone controls. 72 checks.
+  smoke pellets, friends' help, the 3D camera (ceilings, first person,
+  look up and down), the story base and clock, plus phone controls. 78 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

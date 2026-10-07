@@ -277,3 +277,56 @@ Neither uses a price. Both sides (model.py, Pine) changed.
 The two agree in 70% of months since 1998-02 (the old dial agreed with the vote far less). Dial regime changes 62 in 344 months; vote 86 in 367. Both read 2025 and 2026 as GOLDILOCKS. Where they still differ (2010-2014) the dial reads S where the vote reads R: growth was healthy in absolute terms but below the 2005-2010 norm while CPI ran above 5%.
 
 Current read (2026-09): dial z +0.83 (2 of 3 inputs, credit NOT FOUND after 2026-04), vote 2 of 2. India GOLDILOCKS on both.
+
+## Asset read by regime, 2026-10-07 (reference numbers in the Pine table)
+
+Operator question 2026-10-07: what do the current regime and liquidity
+say for zinc and aluminium, and how to see it on the chart. The indicator
+now carries two "asset read" rows (inputs: Asset read, row 1 and row 2;
+defaults aluminium and zinc) that print, for the current global regime
+(India regime for nifty), the numbers below. They are hard-coded from this
+table, not computed on the chart, and are reference only: the exposure
+bands failed their bar and nothing here is a forecast.
+
+Level definition, months 2004-01 to 2025-09 (12-month forward windows).
+up = share of windows that ended higher; med = median 12m return; holds =
+median when the same regime was still in place 6 months later; turns =
+median when it had changed. n = months in the regime.
+
+| Asset | Regime | n | up | med | holds | turns |
+|---|---|---|---|---|---|---|
+| gold | REFLATION | 41 | 66% | +5.7% | +16.7% (n=16) | +2.9% (n=25) |
+| gold | GOLDILOCKS | 92 | 62% | +9.9% | +10.1% (n=43) | +5.7% (n=49) |
+| gold | STAGFLATION | 46 | 91% | +11.8% | +11.8% (n=26) | +12.5% (n=20) |
+| gold | DEFLATION | 82 | 77% | +16.6% | +17.7% (n=45) | +8.6% (n=37) |
+| silver | REFLATION | 41 | 51% | +2.3% | +34.6% (n=16) | -6.5% (n=25) |
+| silver | GOLDILOCKS | 92 | 52% | +0.6% | +7.9% (n=43) | -4.8% (n=49) |
+| silver | STAGFLATION | 46 | 70% | +9.0% | +8.5% (n=26) | +12.2% (n=20) |
+| silver | DEFLATION | 82 | 68% | +19.9% | +19.5% (n=45) | +22.7% (n=37) |
+| aluminium | REFLATION | 41 | 54% | +3.2% | +23.2% (n=16) | -10.9% (n=25) |
+| aluminium | GOLDILOCKS | 92 | 68% | +9.5% | +14.2% (n=43) | +1.1% (n=49) |
+| aluminium | STAGFLATION | 46 | 35% | -7.7% | -10.1% (n=26) | -5.1% (n=20) |
+| aluminium | DEFLATION | 82 | 57% | +5.6% | -4.4% (n=45) | +20.7% (n=37) |
+| zinc | REFLATION | 41 | 66% | +11.7% | +60.7% (n=16) | -4.4% (n=25) |
+| zinc | GOLDILOCKS | 92 | 57% | +8.4% | +15.7% (n=43) | -7.3% (n=49) |
+| zinc | STAGFLATION | 46 | 43% | -3.6% | -23.3% (n=26) | +7.8% (n=20) |
+| zinc | DEFLATION | 82 | 60% | +5.9% | -0.4% (n=45) | +24.0% (n=37) |
+| brent | REFLATION | 41 | 59% | +3.0% | +24.5% (n=16) | -2.2% (n=25) |
+| brent | GOLDILOCKS | 92 | 72% | +26.5% | +32.2% (n=43) | +11.4% (n=49) |
+| brent | STAGFLATION | 46 | 28% | -8.7% | -12.6% (n=26) | -5.5% (n=20) |
+| brent | DEFLATION | 82 | 48% | -1.4% | -17.7% (n=45) | +27.6% (n=37) |
+| nifty | REFLATION | 41 | 83% | +12.3% | +36.0% (n=16) | +9.9% (n=25) |
+| nifty | GOLDILOCKS | 92 | 77% | +13.0% | +15.4% (n=43) | +7.3% (n=49) |
+| nifty | STAGFLATION | 46 | 83% | +15.0% | +15.0% (n=26) | +12.1% (n=20) |
+| nifty | DEFLATION | 82 | 77% | +10.5% | +7.1% (n=45) | +19.6% (n=37) |
+
+Reading for the metals in REFLATION. On their own the REFLATION months
+are near a coin toss (aluminium up 54%, zinc 66%). The split is by what
+came next. When REFLATION was still in place six months on (16 months),
+aluminium's 12m median was +23% and zinc's +61%, up 88% and 100% of
+the time. When it had turned to STAGFLATION six months on (13 months),
+aluminium's median was -22% and zinc's -11%, up 15% and 23% of the
+time. Both metals were already up more than 20% on the year in the
+2006, 2011 and 2021-22 reflation months; after those, aluminium was
+flat (median -2.4%, n=23) and zinc still rose (median +22%, n=32).
+Small samples, three episodes; a prior, not a probability.

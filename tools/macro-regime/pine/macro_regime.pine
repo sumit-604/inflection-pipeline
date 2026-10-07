@@ -54,6 +54,8 @@ bgShows   = input.string("Global regime", "Background shade follows", options = 
 display   = input.string("Minimal", "Pane content", options = ["Minimal", "Dials"], group = "Display",
      tooltip = "Minimal: background, letter strips, 4-row table. Dials: adds the dial lines and the full table. Legend and labels are separate switches.")
 showIndia = input.bool(true, "India regime strip (lower-case r g s d)", group = "Display")
+readA     = input.string("aluminium", "Asset read, row 1", options = ["gold", "silver", "aluminium", "zinc", "brent", "nifty"], group = "Display")
+readB     = input.string("zinc", "Asset read, row 2", options = ["gold", "silver", "aluminium", "zinc", "brent", "nifty"], group = "Display")
 zWin      = input.int(60, "z-score window, months", minval = 24)
 smooth    = input.int(3, "dial smoothing, months", minval = 1)
 dirLen    = input.int(6, "direction lookback, months", minval = 1)
@@ -329,8 +331,28 @@ if barstate.islast and showLegend
     table.cell(lg, 3, 5, "R +16.6  G +13.7  S +10.4  D +0.4")
     table.cell(lg, 4, 5, "governs Nifty")
 
+// ------------------------------------------------------------ asset read
+// Reference numbers from the Python model (tools/macro-regime, level
+// definition, months 2004-01 to 2025-09, computed 2026-10-07). For each asset
+// and regime: share of 12-month windows that ended up, the median 12-month
+// return, the median when the regime was still in place 6 months later
+// ("holds"), and the median when it had changed ("turns"). Reference only;
+// the exposure bands failed their bar and these are not a forecast.
+// Arrays are indexed [asset * 4 + quadrant]; quadrant 0 R, 1 G, 2 S, 3 D.
+var aNames = array.from("gold", "silver", "aluminium", "zinc", "brent", "nifty")
+var aUp = array.from(66, 62, 91, 77, 51, 52, 70, 68, 54, 68, 35, 57, 66, 57, 43, 60, 59, 72, 28, 48, 83, 77, 83, 77)
+var aMed = array.from(5.7, 9.9, 11.8, 16.6, 2.3, 0.6, 9.0, 19.9, 3.2, 9.5, -7.7, 5.6, 11.7, 8.4, -3.6, 5.9, 3.0, 26.5, -8.7, -1.4, 12.3, 13.0, 15.0, 10.5)
+var aHold = array.from(16.7, 10.1, 11.8, 17.7, 34.6, 7.9, 8.5, 19.5, 23.2, 14.2, -10.1, -4.4, 60.7, 15.7, -23.3, -0.4, 24.5, 32.2, -12.6, -17.7, 36.0, 15.4, 15.0, 7.1)
+var aTurn = array.from(2.9, 5.7, 12.5, 8.6, -6.5, -4.8, 12.2, 22.7, -10.9, 1.1, -5.1, 20.7, -4.4, -7.3, 7.8, 24.0, -2.2, 11.4, -5.5, 27.6, 9.9, 7.3, 12.1, 19.6)
+var aN = array.from(41, 92, 46, 82, 41, 92, 46, 82, 41, 92, 46, 82, 41, 92, 46, 82, 41, 92, 46, 82, 41, 92, 46, 82)
+pct(float v) => (v >= 0 ? "+" : "") + str.tostring(v, "#.0") + "%"
+assetRead(string asset, int q) =>
+    i = array.indexof(aNames, asset)
+    k = na(q) or i < 0 ? 0 : i * 4 + q
+    na(q) or i < 0 ? "n/a" : "up " + str.tostring(array.get(aUp, k)) + "% of 12m windows, med " + pct(array.get(aMed, k)) + " | holds " + pct(array.get(aHold, k)) + " / turns " + pct(array.get(aTurn, k)) + " (n=" + str.tostring(array.get(aN, k)) + ")"
+
 // ----------------------------------------------------------------- table
-var t = table.new(position.top_right, 2, 10, border_width = 1)
+var t = table.new(position.top_right, 2, 12, border_width = 1)
 if barstate.islast
     table.cell(t, 0, 0, "Global", bgcolor = color.new(color.gray, 70))
     table.cell(t, 1, 0, quadLetter(quad) + "  " + quadName, bgcolor = color.new(quadColor(quad), 30), text_color = color.white)
@@ -340,16 +362,23 @@ if barstate.islast
     table.cell(t, 1, 2, liqTag)
     table.cell(t, 0, 3, "Stress")
     table.cell(t, 1, 3, stTag + " / India " + inTag)
+    // what the current GLOBAL regime has meant for two assets (reference numbers, see asset read block)
+    rq = readA == "nifty" ? iquad : quad
+    rq2 = readB == "nifty" ? iquad : quad
+    table.cell(t, 0, 4, readA + " in " + quadLetter(rq), text_size = size.small)
+    table.cell(t, 1, 4, assetRead(readA, rq), text_size = size.small)
+    table.cell(t, 0, 5, readB + " in " + quadLetter(rq2), text_size = size.small)
+    table.cell(t, 1, 5, assetRead(readB, rq2), text_size = size.small)
     if showDials
-        table.cell(t, 0, 4, "GROWTH z")
-        table.cell(t, 1, 4, str.tostring(gS, "#.00"))
-        table.cell(t, 0, 5, "INFLATION z")
-        table.cell(t, 1, 5, str.tostring(iS, "#.00") + "  US CPI " + str.tostring(cpiYoY, "#.0") + "%")
-        table.cell(t, 0, 6, "LIQUIDITY z")
-        table.cell(t, 1, 6, str.tostring(lS, "#.00"))
-        table.cell(t, 0, 7, "STRESS z")
-        table.cell(t, 1, 7, str.tostring(sS, "#.00") + "  India " + str.tostring(nS, "#.00"))
-        table.cell(t, 0, 8, "India growth")
-        table.cell(t, 1, 8, str.tostring(nVotes) + " of " + str.tostring(nAvail) + ": IIP " + (na(iip3) ? "n/a" : str.tostring(iip3, "#.0")) + "  svc GDP " + (na(gvaYoY) ? "n/a" : str.tostring(gvaYoY, "#.0")) + "  credit " + (na(ecLG) ? "n/a" : str.tostring(ecLG, "#.0")) + "  CPI " + (na(inCpiLvl) ? "n/a" : str.tostring(inCpiLvl, "#.0")))
-        table.cell(t, 0, 9, "Band " + bandAsset)
-        table.cell(t, 1, 9, showBands ? str.tostring(bandSel, "#") : "off")
+        table.cell(t, 0, 6, "GROWTH z")
+        table.cell(t, 1, 6, str.tostring(gS, "#.00"))
+        table.cell(t, 0, 7, "INFLATION z")
+        table.cell(t, 1, 7, str.tostring(iS, "#.00") + "  US CPI " + str.tostring(cpiYoY, "#.0") + "%")
+        table.cell(t, 0, 8, "LIQUIDITY z")
+        table.cell(t, 1, 8, str.tostring(lS, "#.00"))
+        table.cell(t, 0, 9, "STRESS z")
+        table.cell(t, 1, 9, str.tostring(sS, "#.00") + "  India " + str.tostring(nS, "#.00"))
+        table.cell(t, 0, 10, "India growth")
+        table.cell(t, 1, 10, str.tostring(nVotes) + " of " + str.tostring(nAvail) + ": IIP " + (na(iip3) ? "n/a" : str.tostring(iip3, "#.0")) + "  svc GDP " + (na(gvaYoY) ? "n/a" : str.tostring(gvaYoY, "#.0")) + "  credit " + (na(ecLG) ? "n/a" : str.tostring(ecLG, "#.0")) + "  CPI " + (na(inCpiLvl) ? "n/a" : str.tostring(inCpiLvl, "#.0")))
+        table.cell(t, 0, 11, "Band " + bandAsset)
+        table.cell(t, 1, 11, showBands ? str.tostring(bandSel, "#") : "off")

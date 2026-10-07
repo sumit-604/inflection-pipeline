@@ -3,59 +3,74 @@
 RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
-A top-down action hero game in one HTML file. No libraries, no downloads.
-It runs on a computer and on a phone.
+A 3D action story game in one HTML file (Three.js). It runs on a computer
+and on a phone. Version label: **Rish Hero v2** (bottom right).
 
 ## The story
 
-- **Prologue, The New Kid:** Rish is the new boy at Sunrise Public School.
-  His father, army commando Major Arjun Sharma, went missing on a secret
-  mission a year ago. Nobody in class wants to be Rish's friend.
-- **Chapter 1, Blast at Assembly:** a bomb blows the school gate open.
-  Viktor Kade and his Black Viper gang take the school to get the codes
-  for SKYFALL, a satellite weapon. Rish fights back, picks up a gun and
-  frees his classmates, even Bunty, who bullied him.
-- **Chapter 2, Bombs in the Building:** defuse 4 bombs before the timer ends.
-- **Chapter 3, Rooftop Showdown:** boss fight with Bruno "The Bull" Kassar.
-  The police arrive. Kade is going to Black Rock Island.
-- **Chapter 4, City Under Fire:** gunmen, drones and a sniper attack the
-  city. Rescue the people and reach the harbour.
-- **Chapter 5, Black Rock Island:** lasers, turrets, shield troopers and
-  3 keycards. Rish finds his father, alive, in the prison block.
-- **Chapter 6, Skyfall:** final boss Viktor Kade in a battle suit with a
-  minigun, rockets, drones and an energy shield. Enter the code to stop
-  the launch.
-- **Ending:** the world news calls Rish a hero, the school gives him the
-  Golden Hero Medal, Bunty says sorry, and everyone wants to be his friend.
+Same school, classmates and teachers as RishSchoolDays Game 1: Sunrise
+Public School, Suryanagar. Aarav, Diya, Kabir, Meher, Rohan, Sana.
+Mrs. Anjali Rao, Mr. Iyer, Ms. D'Souza, Mr. Khan, Computer Sir Arjun,
+Coach Vikram, Principal Mrs. Verma.
 
-The Black Viper gang and all the people are made up. Defeated enemies are
-knocked down and arrested; the game has no blood.
+- **Prologue, One Year Alone:** Rish joins the school in April. His father,
+  Major Rajveer Sharma, is away on an army posting. Rish walks through 7
+  months of his year. Kabir throws his tiffin away. Coach Vikram benches
+  him and Kabir pushes him down. Mr. Iyer blames him for a beaker that
+  Rohan broke. Kabir and Rohan trip him; Sana walks away; Ms. D'Souza tells
+  him to stop crying. Nobody takes his birthday sweets, only Diya. On
+  Annual Day, one year later, Kabir and Rohan lock him in the storeroom.
+- **Chapter 1, Locked In (no gun):** a bomb blows the school gate. Kick the
+  door open (quick move), sneak past guards, take them down from behind.
+  The phone is dead. A guard's radio: bombs in the lab, hostages in the hall.
+- **Chapter 2, The Science Lab (no gun):** fight 5 men by hand. The captain
+  drops the bomb manual. Defuse 2 bombs: read the manual, cut the right
+  wire. A wrong wire or the timer = BOOM. Mr. Iyer says sorry.
+- **Chapter 3, Hostages in the Hall (no gun):** 6 armed men. Rish uses
+  stealth and the room: throw a duster at a hanging light, a book at a fire
+  extinguisher, kick a glass case. Save Kabir (quick move). Untie 9
+  classmates and teachers. Coach Vikram says sorry. Kade takes the
+  Principal and Diya.
+- **Chapter 4, Rooftop (no gun):** run and jump 4 m gaps, slide under a
+  low pipe, beat Bull: dodge his charge so he hits the wall, break his
+  grab, finish him.
+- **Chapter 5, Chase:** a bicycle chase after Kade's van, 1.4 km through
+  the Suryanagar market. Change lanes, hop crates, use ramps. The van stops
+  at a railway crossing.
+- **Chapter 6, Railway Yard (the only gun chapter):** a pistol, and a
+  machine gun from a guard. Shots change the yard: red barrels explode,
+  steam valves spray, the crane container falls, crates break, bullet holes
+  stay. Kade fights with a gun, then kicks the gun away: hand to hand. Then
+  the abort code: 4 riddles, one digit each, 3 tries.
+- **Ending:** the news, the Sunrise Gold Medal, every teacher and bully
+  says sorry, everyone becomes his friend, and Dad comes home.
 
-## Moves and weapons
+The Black Viper gang and every person are made up. Defeated enemies are
+knocked out and arrested. No blood.
 
-- Move: W A S D or the arrows. Phone: the stick.
-- Guns: pistol, SMG, shotgun, assault rifle. Walk near a gun and Rish picks
-  it up. Shoot: mouse or Space (hold). Aim: the mouse, or Rish aims at the
-  nearest enemy he can see. R reload, Q or 1 to 4 switch, ammo boxes refill.
-- Fight: J punch (3 punches = uppercut that dazes), K kick (knocks shields
-  away), L or Shift roll (bullets miss), G grenade, F focus (slow motion).
-- E: talk, free hostages, defuse bombs, and TAKEDOWN a dazed or unaware enemy.
-- Enemies: thugs, riflemen, heavies, grenadiers, shield troopers, snipers
-  with a red laser, drones, turrets, and two bosses.
-- Training: spend stars on health, armor, fighting, shooting, speed,
-  grenades and focus. Settings: Easy, Normal or Hard.
+## Moves
+
+- Move: W A S D, or arrows (up and down walk, left and right turn). Drag
+  to look around. Phone: the stick.
+- Shift run · Space jump · C crouch (sneak), or slide while running
+- J punch (3 in a row = uppercut) · K kick (breaks guards and crates) ·
+  L block (block just as he swings = COUNTER) · Q dodge roll
+- E: takedown from behind, untie, pick up, use · F: throw a book, duster or
+  brick (at an enemy, or at a light or extinguisher near him)
+- Chapter 6 only: F or click shoots (hold F for the machine gun), R reload,
+  X switch guns. The red laser shows the target; a gold ring means the room
+  can do the work.
+- **Skip:** tap ⏭ Skip twice to skip a hard part (fight, bomb, code,
+  chase). Talks have their own Skip. The fail screen has "Skip this part".
+  The pause menu has "Skip this chapter".
 
 ## Tests
 
-`tests/regress.cjs` plays every chapter in Chromium with Playwright,
-through the game's step function, so it does not depend on the frame rate.
+`tests/regress.cjs` plays the whole game in Chromium with Playwright
+(swiftshader WebGL): real walking, stealth, fights, quick moves, bombs,
+parkour, the chase, guns and the code, plus phone controls. 62 checks.
 
-```
-# serve the folder with the game, then:
-NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8766/index.html shots
-```
+    NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 
-## Versions
-
-- v1: first release. 7 chapters, 4 guns, 6 moves, 10 enemy types, 2 bosses,
-  training, phone controls. 30 regression checks.
+The optional third argument serves Three.js 0.160 from a local file
+instead of the CDN.

@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v6", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v6" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v7", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v7" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -319,6 +319,36 @@ const HELPERS = () => {
   ok("L2 it checks the answers: a name is needed, the age must be 5 to 16; then it saves and opens the menu", r.err1 && r.err2 && r.saved === '{"name":"Aryan Kapoor","age":9,"job":"doctor"}' && r.menuWho, r);
   ok("L3 the story uses the player: name, age and father's job in every line", r.t1 === "My name is Aryan. My father is a doctor. He makes sick people well." && /doctor's son, Aryan Kapoor/.test(r.t2) && /A 9 year old boy/.test(r.t3) && /His name is Aryan Kapoor/.test(r.t3) && /turned 9/.test(r.t4) && r.t5 === "I am a doctor's son.", r);
   ok("L4 the Story page and the first scene follow the father's job (Dr. Rajveer Kapoor); the game credit stays Rishabh Sharma", /Dr\. Rajveer Kapoor/.test(r.story) && /Aryan \(Aryan Kapoor\) is 9/.test(r.story) && /a big hospital far away needs me/.test(r.firstLine) && r.credit, r);
+
+  // ---------------- HL. Hero Life: the whole life after the attack (v7) ----------------
+  await p.evaluate(() => { window.solveEm = (maxSec = 120) => { let n = 0; const P = G.P; god(); while (G.em && n++ < maxSec * 20) {
+      if (G.mode === "dialog") { talk(); continue; } if (G.mode === "qte") { solveQte(); continue; }
+      if (G.mode === "puzzle" && G.puz && G.puz.kind === "wire") { const b = G.puz.b; R.cutWire(R.safeWire(b.w, b.serial)); sim(1.2); continue; }
+      if (G.mode !== "play") { R.step(1 / 60); continue; }
+      const foe = alive().filter((e) => e.active)[0]; if (foe) { brawl(foe, 30); continue; }
+      const zs = G.zones.filter((z) => !z.off && (!z.ok || z.ok())); if (!zs.length) { R.step(1 / 60, 3); continue; }
+      const z = zs[0], q = z.get ? z.get() : z; let tx = q.x, tz = q.z; for (const [ox, oz] of [[1, 0], [-1, 0], [0, 1], [0, -1], [1.4, 1.4], [0, 2.5], [0, -2.5]]) { const ch = R.cellAt(Math.floor((q.x + ox) / 2), Math.floor((q.z + oz) / 2)); if (!R.solidFor(ch, {})) { tx = q.x + ox; tz = q.z + oz; break; } }
+      G.P.x = tx; G.P.z = tz; R.step(1 / 60, 2); tap("KeyE"); R.step(1 / 60, 3); }
+    return !G.em; }; });
+  r = await E(() => { const o = {}; G.save.unlocked = 7; R.menu(); o.btn = !!document.getElementById("m-life"); R.credits(); o.creditsBtn = !!document.getElementById("life") && /whole world knows his name/.test(document.getElementById("card").textContent);
+    document.getElementById("life").click(); sim(0.4); o.city = G.L.name === "city" && Object.keys(R.PLACES).length >= 14; o.age = R.lifeS().age; o.obj = G.obj; o.clock = document.getElementById("clock").textContent; o.walkers = Object.keys(G.npcs).filter((k) => k.startsWith("civ")).length;
+    const d = R.PLACES.school.door; const w = walkTo(d[0], d[1]); play(2.5); o.walk = w.ok; o.em = G.em && G.em.type; o.emObj = /🚨/.test(G.obj) && !!G.markerNow; return o; });
+  ok("HL1 after the Ending: 'Continue: Hero Life' and a Hero Life button; a 3D city (home, school, hospital, police, fire station, market, park, bank, river, bridge...)", r.btn && r.creditsBtn && r.city && r.walkers === 8, r);
+  ok("HL2 a normal day: age 10 goes to school (real walking); then an emergency starts with a timer and a gold marker", r.age === 10 && /school/.test(r.obj) && /Age 10/.test(r.clock) && r.walk && !!r.em && r.emObj, r);
+  r = await E(() => { const o = { done: {} }; for (const t of R.EM_TYPES) { R.lifeDay(); sim(0.2); G.skipFn = null; R.emergency(t); o.done[t] = solveEm(); talk(); sim(0.5); } o.saves = R.lifeS().saves; o.fame = R.lifeS().fame; o.kinds = Object.keys(R.lifeS().kinds).length; return o; });
+  ok("HL3 9 kinds of emergency, each solved by playing: fire, road accident, drowning, robbery, kidnapping, bomb, earthquake, runaway bus, kitten on a tree", Object.values(r.done).every(Boolean) && r.kinds === 9 && r.saves >= 9, r);
+  r = await E(() => { const o = {}; R.lifeDay(); sim(0.2); const f0 = R.lifeS().fame; R.emergency("robbery"); solveEm(); sim(1.5); o.news = G.mode === "dialog" && G.dlg.lines.map((l) => l[1]).join(" "); talk(); o.fameUp = R.lifeS().fame > f0; o.home = /go home/i.test(G.obj); const a0 = R.lifeS().age; const d = R.PLACES.home.door; G.P.x = R.cell(d[0], d[1]).x; G.P.z = R.cell(d[0], d[1]).z; sim(0.5); o.aged = R.lifeS().age === a0 + 1; o.level = R.fameLevel(R.lifeS().fame);
+    o.cape = !!G.P.g.userData.cape; o.fans = Object.keys(G.npcs).filter((k) => k.startsWith("fan")).length; const fan = G.npcs.fan0; if (fan) { G.P.x = fan.x + 1; G.P.z = fan.z; sim(0.1); tap("KeyE"); } o.autograph = /hero/i.test(document.getElementById("toast").textContent); return o; });
+  ok("HL4 every save is BREAKING NEWS: the whole world knows who the hero is; fame grows; then home, and one year passes", /BREAKING NEWS/.test(r.news) && /Everybody knows who the hero is/.test(r.news) && r.fameUp && r.home && r.aged, r);
+  ok("HL5 a famous hero: a red cape and badge, fans in the street, autographs", r.cape && r.fans >= 5 && r.autograph, r);
+  r = await E(() => { const o = {}; const S = R.lifeS(); S.age = 22; S.job = null; R.lifeDay(); o.card = G.mode === "card" && document.querySelectorAll("[data-job]").length === 11 && /no secret/.test(document.getElementById("card").textContent); document.querySelector('[data-job="doctor"]').click(); o.job = S.job; o.obj = G.obj; const d = R.PLACES.hospital.door; G.P.x = R.cell(d[0], d[1]).x; G.P.z = R.cell(d[0], d[1]).z; sim(0.3); o.shift = /Treat a patient/.test(G.obj); let k = 0; while (!G.em && k++ < 10) { const z = G.zones.find((q) => !q.off && /Treat/.test(q.label)); if (!z) break; G.P.x = z.x + 0.5; G.P.z = z.z; sim(0.1); tap("KeyE"); sim(0.2); } sim(1.8); o.em = !!G.em; return o; });
+  ok("HL6 at 22 he picks ONE job (11 jobs); a doctor goes to the City Hospital, works a shift (3 patients), then saves people too", r.card && r.job === "doctor" && /City Hospital/.test(r.obj) && r.shift && r.em, r);
+  r = await E(() => { const o = {}; const S = R.lifeS(); S.age = 25; S.viper = []; R.lifeDay(); sim(0.2); G.skipFn = null; R.emergency(); o.type = G.em.type; o.text = G.em.text; o.bull = G.enemies.some((e) => e.kind === "bull"); o.won = solveEm(180); talk(); return o; });
+  ok("HL7 at 25 the Black Viper gang attacks again (Marco Kade escaped): 5 men and Bull at the River Bridge", r.type === "viper" && /Marco Kade/.test(r.text) && r.bull && r.won, r);
+  r = await E(() => { const o = {}; R.lifeDay(); sim(0.2); R.emergency("bus"); for (let i = 0; i < 60 * 40 && G.em; i++) R.step(1 / 60); sim(1); o.missed = !G.em && /Other rescuers/.test(document.getElementById("toast").textContent) && /go home/i.test(G.obj); return o; });
+  ok("HL8 too slow: other rescuers help (no game over), and the day goes on", r.missed, r);
+  r = await E(() => { const o = {}; const S = R.lifeS(); S.age = 49; R.lifeDay(); sim(0.1); G.skipFn(); sim(0.1); R.emDone(true); talk(); R.yearEnd(); sim(0.3); o.statue = !!G.L.statue; S.age = 69; R.yearEnd(); const t = document.getElementById("card").textContent; o.end = /A HERO'S LIFE/.test(t) && /age 70/.test(t) && /Play life again/.test(t) && /whole world knows his name/.test(t); document.getElementById("lagain").click(); sim(0.2); o.again = R.lifeS().age === 10 && G.life; R.menu(); return o; });
+  ok("HL9 at 50 a statue in the City Park; at 70 the Life Story; Play life again starts a new life", r.statue && r.end && r.again, r);
 
   // ---------------- V. Pictures ----------------
   for (const [i, name] of [[0, "08-prologue"], [1, "09-ch1"], [3, "10-ch3-hall"], [6, "11-ch6"]]) { await E((i) => { R.startChapter(i, true); play(0.4); if (G.mode === "dialog") R.skipDialog(); play(1); }, i); await shot(name); }

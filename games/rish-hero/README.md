@@ -4,7 +4,7 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A full 3D action story game in one HTML file (Three.js). It runs on a
-computer and on a phone. Version label: **Rish Hero v6** (bottom right).
+computer and on a phone. Version label: **Rish Hero v7** (bottom right).
 
 **First page:** the player types 3 things only: the hero's name, age, and
 what the father does (army officer, police officer, doctor, scientist,
@@ -85,6 +85,31 @@ Coach Vikram, Principal Mrs. Verma.
   says sorry, everyone becomes his friend, Dad comes home, and Coach
   Vikram makes Rish the new striker next to Kabir.
 
+## Hero Life (after the school attack)
+
+The story goes on for the hero's whole life, like RishSchoolDays. After the
+Ending, "Continue: Hero Life" (also in the menu) opens a 3D city:
+Suryanagar with Home, Sunrise Public School, City Hospital, Fire Station,
+Police Station, Market, City Park, Bank, City Office, Apartments, Mall, City
+College, the river and the bridge, and people walking in the streets.
+
+- **Every year is one day.** Age 10 to 17: go to school. 18 to 21: college.
+  At 22 he picks ONE job (the same 11 jobs) and works a shift.
+- **Every year there is an emergency**, with a timer and a gold marker:
+  fire (take the extinguisher, spray 4 fires, carry the family out), road
+  accident (lift the car, first aid), drowning (dive and swim), robbery at
+  the Bank, kidnapping in the Park, a bomb in the Market (wire puzzle), an
+  earthquake (lift the rubble), a runaway bus (hold it with your hands),
+  and a kitten on a tree. At 25, 40 and 55 the Black Viper gang attacks
+  the River Bridge again, with Bull.
+- **Like Shaktimaan:** one normal job, and also the saviour. **The
+  difference: no secret.** Every save is BREAKING NEWS, and fame grows:
+  known in Suryanagar, the whole state, all of India, Asia, the whole
+  world. A red cape and badge, fans in the street, autographs.
+- **Milestones:** bravery awards, the World Hero Award, a Hero Academy, a
+  statue in the park at 50, and at 70 the Life Story. "Play life again"
+  starts a new life. Too slow? Other rescuers help, no game over.
+
 ## More to do
 
 - **Rish's Diary:** 15 pages hidden in the chapters (3 each). Rish wrote
@@ -124,7 +149,9 @@ knocked out and arrested. No blood.
 parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, diary pages, results, Play again,
   smoke pellets, friends' help, the 3D camera (ceilings, first person,
   look up and down), the story base and clock, the gold marker for every
-  objective, the first page and the personal story, plus phone controls. 83 checks.
+  objective, the first page and the personal story, Hero Life (city, school days,
+  job, 9 emergencies, Black Viper attacks, fame, cape, fans, statue,
+  Life Story), plus phone controls. 92 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

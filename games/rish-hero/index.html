@@ -121,7 +121,7 @@ body.touch #topbtns { flex-direction: row; top: 112px; } body.touch #topbtns but
 <script type="module">
 import * as THREE from "three";
 // ===================== DATA: maps, people, story, puzzles =====================
-const VERSION = "Rish Hero v6";
+const VERSION = "Rish Hero v7";
 const CS = 2; // one map cell is 2 metres
 
 // Map legend
@@ -642,7 +642,7 @@ function boxBatch(list) {
 
 // ---- People ----
 function makePerson(id, opts = {}) {
-  const def = CAST[id] || CAST.thug;
+  const def = CAST[opts.as || id] || CAST.thug;
   const g = makeHuman(Object.assign({}, def.look, id === "dad" ? JOB().look : {}, opts.look || {}));
   g.rotation.order = "YXZ";
   const s = (def.kid ? KID : 1) * (def.scale || 1) * (opts.scale || 1);
@@ -724,12 +724,19 @@ function buildLevel(mapName) {
     let fc = mapName === "hall" ? COLORS.hallFloor : mapName === "lab" ? 0xdad7cd : mapName === "roof" ? COLORS.roof : mapName === "yard" ? COLORS.yard : COLORS.room;
     if (ch === ",") fc = mapName === "yard" ? COLORS.yard : COLORS.grass; if (ch === "_") fc = COLORS.corridor; if (ch === "=") fc = COLORS.road;
     if ((x + y) % 2 === 0 && ch !== ",") fc = new THREE.Color(fc).multiplyScalar(0.95).getHex();
+    if (ch === "w") { boxes.push({ x: wx, y: -0.32, z: wz, w: CS, h: 0.1, d: CS, c: 0x2e86c1 }); continue; }
     if (ch === "S") { boxes.push({ x: wx, y: 0.3, z: wz, w: CS, h: 0.6, d: CS, c: COLORS.stage }); }
     else if (ch === " ") { /* roof gap: nothing */ }
     else if (mapName === "roof") boxes.push({ x: wx, y: -5, z: wz, w: CS, h: 10, d: CS, c: (x + y) % 2 ? COLORS.roof : 0x8f959b });
     else boxes.push({ x: wx, y: -0.05, z: wz, w: CS, h: 0.1, d: CS, c: fc });
     if (ch === "=" && mapName === "yard") { for (const o of [-0.5, 0.5]) boxes.push({ x: wx, y: 0.06, z: wz + o, w: CS, h: 0.08, d: 0.12, c: 0x8d99ae }); boxes.push({ x: wx, y: 0.03, z: wz, w: 0.4, h: 0.05, d: 1.6, c: 0x5c4033 }); }
     if (ch === "=" && mapName !== "yard") boxes.push({ x: wx, y: 0.01, z: wz, w: 0.3, h: 0.02, d: 1.0, c: 0xffffff });
+    if (ch === "#" && mapName === "city") {
+      const h = CITY_HGT[y][x] || 6, c = CITY_COL[y][x] || 0xcccccc;
+      boxes.push({ x: wx, y: h / 2, z: wz, w: CS, h, d: CS, c }); boxes.push({ x: wx, y: h + 0.15, z: wz, w: CS + 0.04, h: 0.3, d: CS + 0.04, c: 0x6c757d });
+      for (let fy = 1.7; fy < h - 0.8; fy += 3) for (const [nx, ny, ox, oz, w, d] of [[0, 1, 0, 1, 1.1, 0.06], [0, -1, 0, -1, 1.1, 0.06], [1, 0, 1, 0, 0.06, 1.1], [-1, 0, -1, 0, 0.06, 1.1]]) if (at(x + nx, y + ny) !== "#") boxes.push({ x: wx + ox * (CS / 2 + 0.03), y: fy, z: wz + oz * (CS / 2 + 0.03), w, h: 1.1, d, c: fy < 2 && ny === 1 && x % 3 === 0 ? 0x5c4033 : 0x9fd3ff });
+      continue;
+    }
     if (ch === "#") {
       let h = mapName === "hall" ? 4.2 : mapName === "roof" ? 1.0 : mapName === "yard" ? 2.6 : 3.2;
       if (mapName === "school") { const n = [at(x + 1, y), at(x - 1, y), at(x, y + 1), at(x, y - 1)]; if (!n.some((c) => ".dstk_D".includes(c))) h = 2.0; }
@@ -903,10 +910,10 @@ function cellXZ(x, z) { return cellAt(Math.floor(x / CS), Math.floor(z / CS)); }
 function solidFor(ch, who) {
   if (ch === " ") return !!(who && who.noGap);
   if (ch === "p") return !(who && (who.low || cellXZ(who.x, who.z) === "p"));
-  return "#GgdctsBorkxFKW".includes(ch);
+  return "#GgdctsBorkxFKWw".includes(ch);
 }
 function tallCell(ch) { return "#GsorkxK".includes(ch) || ch === "g"; }
-function wallH(ch) { if (ch === "#") return G.L.name === "hall" ? 4.2 : G.L.name === "roof" ? 1.0 : G.L.name === "yard" ? 2.6 : 3.2; if (ch === "s" || ch === "o") return 2.0; if (ch === "K") return 2.4; if (ch === "r" || ch === "x" || ch === "G" || ch === "g" || ch === "k") return 1.5; return 0; }
+function wallH(ch) { if (ch === "#") return G.L.name === "city" ? 40 : G.L.name === "hall" ? 4.2 : G.L.name === "roof" ? 1.0 : G.L.name === "yard" ? 2.6 : 3.2; if (ch === "s" || ch === "o") return 2.0; if (ch === "K") return 2.4; if (ch === "r" || ch === "x" || ch === "G" || ch === "g" || ch === "k") return 1.5; return 0; }
 function floorAt(x, z) { const cx = Math.floor(x / CS), cy = Math.floor(z / CS); const L = G.L; if (!L || cy < 0 || cy >= L.H || cx < 0 || cx >= L.W) return 0; return cellAt(cx, cy) === " " ? -50 : L.floorY[cy][cx]; }
 // Move a round body (radius r) and slide along walls.
 function moveBody(b, dx, dz, r = 0.32) {
@@ -1124,7 +1131,7 @@ function toast(msg, sec = 3.2) { const t = $("toast"); t.textContent = personali
 function center(msg, sec = 1.6) { const c = $("center"); c.textContent = personalize(msg); c.style.display = "block"; G.centerT = sec; }
 function flash(color = "#fff", op = 0.7) { const f = $("flash"); f.style.background = color; f.style.opacity = op; G.flashT = 0.25; }
 function setObj(text, marker) { G.obj = personalize(text); $("obj").innerHTML = G.obj; G.marker = marker || null; }
-function clockText() { const c = CHAPTERS[G.ch]; if (!c) return ""; if (!c.clock) return `🕘 ${c.time}`; const m = c.clock + Math.floor((G.chT || 0) / 20), h = Math.floor(m / 60), mm = m % 60; return `🕘 Annual Day · ${h > 12 ? h - 12 : h}:${String(mm).padStart(2, "0")} ${h >= 12 ? "PM" : "AM"}${c.id === "c6" ? " · countdown to 12:00" : ""}`; }
+function clockText() { if (G.life && G.save.life) { const S = G.save.life; return `🦸 Hero Life · Age ${S.age} · ${S.job ? JOBS[S.job].label : S.age < 18 ? "Student" : "College"} · 🌍 Known in ${fameLevel(S.fame)} · Saves ${S.saves}`; } const c = CHAPTERS[G.ch]; if (!c) return ""; if (!c.clock) return `🕘 ${c.time}`; const m = c.clock + Math.floor((G.chT || 0) / 20), h = Math.floor(m / 60), mm = m % 60; return `🕘 Annual Day · ${h > 12 ? h - 12 : h}:${String(mm).padStart(2, "0")} ${h >= 12 ? "PM" : "AM"}${c.id === "c6" ? " · countdown to 12:00" : ""}`; }
 function updateHud(dt) {
   if ((G.clockT = (G.clockT || 0) - dt) <= 0) { G.clockT = 0.5; $("clock").textContent = clockText(); }
   const P = G.P;
@@ -1589,7 +1596,8 @@ function spawnNpc(id, cx, cy, yaw = 0, pose = null, opts = {}) {
   const g = makePerson(id, opts); scene.add(g);
   const p = cellCenter(cx, cy);
   const n = { id, g, x: p.x + (opts.ox || 0), z: p.z + (opts.oz || 0), yaw, pose, goto: null, speed: 3.2 };
-  if (opts.label !== false && CAST[id] && id !== "thug") { const t = makeTextSprite(CAST[id].name, { size: 40, scale: 0.42, bg: "rgba(0,0,0,0.5)", color: "#fff" }); t.position.y = 2.75 / (g.userData.s || 1); g.add(t); t.scale.multiplyScalar(1 / (g.userData.s || 1)); n.tag = t; }
+  const tagText = opts.tag || (typeof opts.label === "string" ? opts.label : opts.label !== false && CAST[id] && id !== "thug" ? CAST[id].name : null);
+  if (tagText) { const t = makeTextSprite(personalize(tagText), { size: 40, scale: 0.42, bg: "rgba(0,0,0,0.5)", color: "#fff" }); t.position.y = 2.75 / (g.userData.s || 1); g.add(t); t.scale.multiplyScalar(1 / (g.userData.s || 1)); n.tag = t; }
   G.npcs[id] = n; return n;
 }
 function removeNpc(id) { const n = G.npcs[id]; if (n) { scene.remove(n.g); delete G.npcs[id]; } }
@@ -1995,7 +2003,7 @@ function resetWorld() {
   if (G.L) scene.remove(G.L.group); G.L = null;
   endChase(); fxClear();
   G.hostages = []; G.zones = []; G.triggers = []; G.bombs = []; G.clouds = []; G.jets = []; G.later = []; G.flags = {}; G.marker = null; GUIDE.key = "";
-  G.onKO = null; G.onPick = null; G.onBossPhase = null; G.skipFn = null; G.shake = 0; FLOW.d = null; CAM.init = false; runToggle = false;
+  G.life = false; G.em = null; G.onKO = null; G.onPick = null; G.onBossPhase = null; G.skipFn = null; G.shake = 0; FLOW.d = null; CAM.init = false; runToggle = false;
   G.stats = { ko: 0, shots: 0, env: 0 };
   setObj(""); $("toast").style.display = "none"; $("center").style.display = "none"; G.toastT = G.centerT = 0;
 }
@@ -2052,10 +2060,10 @@ function completeChapter() {
 function failChapter(msg, retry, skip) {
   if (G.mode === "fail") return;
   G.mode = "fail"; G.failMsg = msg; G.stats.fails = (G.stats.fails || 0) + 1; G.chFails = (G.chFails || 0) + 1;
-  G.retryFn = retry || (() => startChapter(G.ch, true)); G.skipFailFn = skip || G.skipFn || (() => completeChapter());
+  G.retryFn = retry || (() => (G.life ? lifeDay() : startChapter(G.ch, true))); G.skipFailFn = skip || G.skipFn || (() => completeChapter());
   $("failMsg").textContent = msg; $("fail").hidden = false;
 }
-function retryFail() { $("fail").hidden = true; const f = G.retryFn; G.retryFn = null; if (G.P && G.P.hp <= 0) { startChapter(G.ch, true); return; } G.mode = "play"; f && f(); }
+function retryFail() { $("fail").hidden = true; const f = G.retryFn; G.retryFn = null; if (G.P && G.P.hp <= 0) { if (G.life) lifeDay(); else startChapter(G.ch, true); return; } G.mode = "play"; f && f(); }
 function skipFail() { $("fail").hidden = true; const f = G.skipFailFn; G.mode = "play"; if (G.P && G.P.hp <= 0) { G.P.hp = G.P.max; G.P.st = "idle"; } f && f(); }
 // The on-screen Skip button: skips the hard part you are in (or the chapter).
 function skipNow() {
@@ -2307,6 +2315,268 @@ const CH_SETUP = {
 };
 
 
+// ===================== HERO LIFE: the rest of the hero's life after the school attack =====================
+// Like RishSchoolDays: the years go by (school, college, one job). Every year there is an emergency in
+// Suryanagar: accidents, fires, attacks. He has one normal job and he is also the saviour, like
+// Shaktimaan, but with no secret: the whole world knows who he is.
+const CITY_W = 48, CITY_H = 32;
+const BLOCKS = [
+  ["home", "Home", 1, 9, 1, 5, "bld", 5, 0xf4a261], ["school", "Sunrise Public School", 12, 23, 1, 5, "bld", 7, 0xfff1d6],
+  ["hospital", "City Hospital", 26, 37, 1, 5, "bld", 12, 0xf8f9fa], ["fire", "Fire Station", 40, 46, 1, 5, "bld", 7, 0xe63946],
+  ["police", "Police Station", 1, 9, 8, 15, "bld", 8, 0x3a86ff], ["market", "Market", 12, 23, 8, 15, "open", 0, 0],
+  ["park", "City Park", 26, 37, 8, 15, "park", 0, 0], ["bank", "Bank", 40, 46, 8, 15, "bld", 10, 0xd4a373],
+  ["office", "City Office", 1, 9, 18, 25, "bld", 16, 0x8ecae6], ["flats", "Apartments", 12, 23, 18, 25, "bld", 20, 0xcdb4db],
+  ["mall", "Mall", 26, 37, 18, 25, "bld", 9, 0xffb703], ["college", "City College", 40, 46, 18, 25, "bld", 8, 0xa3b18a],
+];
+const PLACES = {}; const CITY_HGT = [], CITY_COL = [];
+(function buildCity() {
+  const g = []; for (let y = 0; y < CITY_H; y++) { g.push(Array(CITY_W).fill("_")); CITY_HGT.push(Array(CITY_W).fill(0)); CITY_COL.push(Array(CITY_W).fill(0)); }
+  for (let y = 0; y < CITY_H; y++) for (let x = 0; x < CITY_W; x++) {
+    if (y === 0 || y === CITY_H - 1 || x === 0 || x === CITY_W - 1) g[y][x] = "o";
+    else if (y >= 27 && y <= 29) g[y][x] = x === 24 || x === 25 ? "=" : "w";
+    else if (y === 6 || y === 7 || y === 16 || y === 17) g[y][x] = "=";
+    else if ((x === 10 || x === 11 || x === 24 || x === 25 || x === 38 || x === 39) && y < 26) g[y][x] = "=";
+  }
+  for (const [id, name, x0, x1, y0, y1, kind, h, col] of BLOCKS) {
+    const door = [Math.round((x0 + x1) / 2), y1];
+    PLACES[id] = { id, name, x0, x1, y0, y1, kind, door };
+    for (let y = y0 + 1; y < y1; y++) for (let x = x0 + 1; x < x1; x++) {
+      if (kind === "bld") { g[y][x] = "#"; CITY_HGT[y][x] = h; CITY_COL[y][x] = col; }
+      else if (kind === "park") g[y][x] = ",";
+    }
+    if (kind === "park") { for (const [x, y] of [[x0 + 1, y0 + 1], [x1 - 1, y0 + 1], [x0 + 1, y1 - 1], [x1 - 1, y1 - 1], [x0 + 3, y0 + 1]]) g[y][x] = "o"; for (let y = y0 + 3; y <= y0 + 4; y++) for (let x = x0 + 4; x <= x0 + 6; x++) g[y][x] = "w"; PLACES[id].door = [x0 + 8, y1 - 1]; PLACES[id].tree = [x0 + 3, y0 + 1]; }
+    if (kind === "open") { for (const [x, y] of [[x0 + 2, y0 + 2], [x0 + 2, y0 + 5], [x1 - 2, y0 + 2], [x1 - 2, y0 + 5]]) g[y][x] = "r"; g[y1 - 1][x0 + 3] = "B"; g[y1 - 1][x1 - 3] = "B"; PLACES[id].door = [Math.round((x0 + x1) / 2), y0 + 4]; }
+  }
+  PLACES.bridge = { id: "bridge", name: "River Bridge", door: [24, 26] }; PLACES.river = { id: "river", name: "River", door: [31, 26] };
+  MAPS.city = "\n" + g.map((r) => r.join("")).join("\n");
+})();
+CAST.civ = { name: "Citizen", look: { shirt: 0x8ecae6, trousers: 0x3b3f4a, hair: 0x1d1410 } };
+CAST.child = { name: "Little Chintu", look: { shirt: 0xffb703, trousers: 0x1d3557, hair: 0x1d1410 }, kid: true };
+const FAME = [[0, "Suryanagar"], [300, "the whole state"], [700, "all of India"], [1400, "Asia"], [2400, "the whole world"]];
+function fameLevel(f) { let n = FAME[0][1]; for (const [v, t] of FAME) if (f >= v) n = t; return n; }
+const JOB_PLACE = { doctor: "hospital", police: "police", army: "police", firefighter: "fire", business: "market", farmer: "market" };
+const WORK_TASKS = { hospital: "Treat a patient", police: "Help a citizen with a complaint", fire: "Check the fire truck", market: "Serve a customer", office: "Finish an important job" };
+const MILESTONES = {
+  11: "The Mayor of Suryanagar gives Rish the City Bravery Award. The whole city knows his name.",
+  13: "Rish and Kabir win the inter-school football final. Coach Vikram cries with joy.",
+  14: "The National Child Bravery Award. TV channels call Rish 'the Boy Hero'.",
+  16: "Rish passes the Class 10 board exams. Sana helped with maths.",
+  18: "College begins. Diya, Kabir and Aarav are still Rish's best friends.",
+  22: "Time to choose ONE job. Rish will also be a hero every day, and the whole world will know it.",
+  25: "The Black Viper gang is back. Marco Kade has escaped from jail.",
+  30: "The World Hero Award. Children in every country know Rish's name.",
+  35: "Rish opens a free Hero Academy for kids in Suryanagar.",
+  40: "Viktor Kade is out of jail. One more fight.",
+  45: "Papa retires. He says: 'You protected people. Even the ones who hurt you.'",
+  50: "Suryanagar builds a statue of Rish in the City Park.",
+  55: "The last Black Viper attack. Rish is older now, but still the hero.",
+  60: "Rish trains a new team of young heroes. Kabir's son is one of them.",
+  70: "Rish retires as the most loved hero in the world.",
+};
+const VIPER_AGES = [25, 40, 55];
+const EM_TYPES = ["fire", "accident", "drown", "robbery", "kidnap", "bomb", "quake", "bus", "kitten"];
+const EM_INFO = {
+  fire: { title: "FIRE!", desc: (p) => `A fire at the ${p}! People are trapped inside.`, news: (p) => `Rish runs into the fire at the ${p} and saves a family. The firefighters say: he was faster than us!`, fame: 110 },
+  accident: { title: "ROAD ACCIDENT!", desc: () => "A car crashed at the crossing. Someone is stuck under it!", news: () => "Rish lifts a crashed car and saves two people at the crossing.", fame: 100 },
+  drown: { title: "DROWNING!", desc: () => "A child fell into the river!", news: () => "Rish dives into the river and saves a drowning child.", fame: 110 },
+  robbery: { title: "ROBBERY!", desc: () => "Robbers are attacking the Bank!", news: () => "Rish stops the robbers at the Bank. Not one rupee was lost.", fame: 120 },
+  kidnap: { title: "KIDNAPPING!", desc: () => "Men grabbed a child in the City Park!", news: () => "Rish rescues a kidnapped child from the City Park.", fame: 130 },
+  bomb: { title: "BOMB!", desc: () => "A bomb is ticking in the Market!", news: () => "Rish defuses a bomb in the Market. Hundreds of people are safe.", fame: 150 },
+  quake: { title: "EARTHQUAKE!", desc: () => "An earthquake! People are under the rubble at the Apartments!", news: () => "An earthquake hits Suryanagar. Rish pulls three people out of the rubble.", fame: 140 },
+  bus: { title: "RUNAWAY BUS!", desc: () => "A bus with broken brakes is rolling toward the Market crowd!", news: () => "A bus with no brakes! Rish stops it with his own hands.", fame: 130 },
+  kitten: { title: "HELP!", desc: () => "A little girl is crying. Her kitten is stuck high on a tree in the City Park.", news: () => "Even the small things: Rish saves a kitten from a tree. The video has 10 crore views!", fame: 60 },
+  viper: { title: "BLACK VIPER ATTACK!", desc: () => "The Black Viper gang is attacking the River Bridge!", news: () => "WORLD NEWS: Rish beats the Black Viper gang again. Every country thanks him.", fame: 320 },
+};
+
+function lifeS() { return G.save.life; }
+function startLife(fresh) {
+  if (fresh || !G.save.life) G.save.life = { age: profile().age, fame: 100, saves: 0, job: null, log: [], kinds: {}, viper: [] };
+  writeSave(); lifeDay();
+}
+function lifeDay() {
+  const S = lifeS();
+  resetWorld(); hideScr(); $("fail").hidden = true; G.ch = 99; G.life = true; G.mode = "play";
+  loadMap("city"); citySigns(G.L); setSky(0xbfe3ff, 70, 220);
+  const d = PLACES.home.door; makePlayer(d[0], d[1] + 2, Math.PI / 2);
+  if (S.fame >= 300) addCape(G.P.g);
+  spawnCivilians(); spawnFans();
+  if (S.age >= 50) addStatue();
+  G.em = null; G.lifeT = 0;
+  if (S.age >= 22 && !S.job) { chooseJob(); return; }
+  routine();
+}
+function door(id) { const d = PLACES[id].door; return cellCenter(d[0], d[1]); }
+function citySigns(L) { for (const b of BLOCKS) { const p = PLACES[b[0]]; addSign(L, personalize(b[1]), p.door[0], p.door[1], b[6] === "bld" ? 3.0 : 2.4, 0.7, 0, b[6] === "bld" ? -0.9 : 0); } addSign(L, "Suryanagar River", 31, 28, 1.6, 0.8); }
+function routine() {
+  const S = lifeS(); let id, text;
+  if (S.age < 18) { id = "school"; text = "Go to school."; } else if (S.age < 22) { id = "college"; text = "Go to college."; }
+  else { id = JOB_PLACE[S.job] || "office"; text = `Go to work at the ${PLACES[id].name}. You are ${JOBS[S.job].job} by day, and a hero always.`; }
+  setObj(`☀️ <b>Age ${S.age}</b>: ${text}`, door(id));
+  const d = PLACES[id].door;
+  addTrigger(d[0], d[1], 1.9, () => { if (S.age >= 22) workShift(id); else { center(S.age < 18 ? "📚 School day" : "🎓 College day", 1.4); after(1.5, () => emergency()); } });
+  G.skipFn = () => emergency();
+}
+function workShift(id) {
+  const d = PLACES[id].door; let done = 0; const label = WORK_TASKS[id];
+  setObj(`💼 Work: ${label} (E) ×3`);
+  for (const [ox, oy] of [[-2, 0], [2, 0], [0, 1]]) {
+    let cx = d[0] + ox, cy = d[1] + oy; if (solidFor(cellAt(cx, cy))) { cx = d[0]; cy = d[1]; }
+    const p = cellCenter(cx, cy); const ring = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.06, 6, 18), new THREE.MeshBasicMaterial({ color: 0x4cc9f0 })); ring.rotation.x = Math.PI / 2; ring.position.set(p.x, 0.08, p.z); G.L.group.add(ring);
+    const z = addZone({ label, x: p.x, z: p.z, r: 2.0, fn: () => { z.off = true; ring.visible = false; done++; sfx("heal"); toast(`💼 ${label}: done (${done}/3)`); if (done >= 3) { center("💼 Shift done!", 1.2); G.save.life.shifts = (G.save.life.shifts || 0) + 1; after(1.4, () => emergency()); } } });
+  }
+  G.skipFn = () => emergency();
+}
+function chooseJob() {
+  G.mode = "card";
+  showScr(`<p class="kicker">Age ${lifeS().age}</p><h1>Choose ONE job</h1><p>Rish will do this job every day, and be the saviour of Suryanagar too. Like a real superhero, but with no secret: the whole world will know he is the hero.</p>
+  <div class="chl">${Object.entries(JOBS).map(([k, j]) => `<button class="btn ch" data-job="${k}">${j.label}</button>`).join("")}</div>`);
+  $("card").querySelectorAll("[data-job]").forEach((b) => b.onclick = () => { lifeS().job = b.dataset.job; writeSave(); hideScr(); G.mode = "play"; toast(`Rish becomes ${JOBS[b.dataset.job].job}. And the whole world still calls him a hero.`, 4); routine(); });
+}
+
+// ---- Emergencies ----
+function emergency(force) {
+  const S = lifeS(); if (!S || G.em) return;
+  let type = force;
+  if (!type) { const v = VIPER_AGES.find((a) => S.age === a && !S.viper.includes(a)); type = v ? "viper" : EM_TYPES[(S.saves + S.age) % EM_TYPES.length]; }
+  const placeOf = { fire: ["school", "hospital", "mall", "office", "flats", "college"][S.age % 6], accident: "market", drown: "river", robbery: "bank", kidnap: "park", bomb: "market", quake: "flats", bus: "market", kitten: "park", viper: "bridge" }[type];
+  const pname = PLACES[placeOf].name;
+  G.em = { type, place: placeOf, t: type === "bus" ? 60 : 150, objs: [], npcs: [], step: 0, need: 0 };
+  sfx("alert"); G.shake = type === "quake" ? 1.6 : 0.3; center(`🚨 ${EM_INFO[type].title}`, 1.8); flash("#ff2a2a", 0.25);
+  G.em.text = EM_INFO[type].desc(pname);
+  EM_SETUP[type](PLACES[placeOf]);
+  G.skipFn = () => emDone(true);
+  emObj();
+}
+function emObj(extra) { const E = G.em; if (!E) return; E.extra = extra || E.extra || ""; setObj(`🚨 <b>${EM_INFO[E.type].title}</b> ${E.text}${E.extra ? " · " + E.extra : ""} · ⏱ <b>${Math.ceil(E.t)}</b> s`, E.marker || null); }
+function emMesh(m) { G.L.group.add(m); G.em.objs.push(m); return m; }
+function emNpc(id, cx, cy, yaw, pose, opts = {}) { const n = spawnNpc(id, cx, cy, yaw, pose, Object.assign({ as: "civ", label: false }, opts)); G.em.npcs.push(id); return n; }
+function fireMesh(x, z) { const g = new THREE.Group(); const a = new THREE.Mesh(new THREE.ConeGeometry(0.7, 1.8, 8), new THREE.MeshBasicMaterial({ color: 0xff6b00, transparent: true, opacity: 0.9 })); a.position.y = 0.9; g.add(a); const b = new THREE.Mesh(new THREE.ConeGeometry(0.4, 1.1, 8), new THREE.MeshBasicMaterial({ color: 0xffd166 })); b.position.y = 0.6; g.add(b); g.position.set(x, 0, z); return g; }
+const EM_SETUP = {
+  fire(P) {
+    const d = P.door, E = G.em; E.fires = [];
+    for (const [ox, oy] of [[-1, 0], [1, 0], [-2, 0], [2, 0]]) { const p = cellCenter(d[0] + ox, d[1] + oy); const f = { x: p.x, z: p.z, alive: true, mesh: emMesh(fireMesh(p.x, p.z)) }; E.fires.push(f);
+      f.zone = addZone({ label: "Spray the fire", x: p.x, z: p.z, r: 2.2, ok: () => E.ext && f.alive, fn: () => { f.alive = false; f.mesh.visible = false; puff(f.x, 1, f.z, 0xf8f9fa, 2, 1.5, 0.7); sfx("hiss"); emObj(`fires out ${E.fires.filter((q) => !q.alive).length}/4`); } }); }
+    let ec = [d[0], d[1] + 2]; for (const [ox, oy] of [[0, 2], [0, 1], [3, 0], [-3, 0], [3, 1], [-3, 1]]) { const ch = cellAt(d[0] + ox, d[1] + oy); if (!solidFor(ch) && ch !== " ") { ec = [d[0] + ox, d[1] + oy]; break; } } const ep = cellCenter(ec[0], ec[1]); const ext = emMesh(new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.7, 10), mat(0xd00000))); ext.position.set(ep.x, 0.35, ep.z);
+    addZone({ label: "Take the fire extinguisher", x: ep.x, z: ep.z, r: 1.8, ok: () => !E.ext, fn: () => { E.ext = true; ext.visible = false; toast("🧯 Got it! Spray each fire with E."); E.marker = E.fires[0]; emObj("fires out 0/4"); } });
+    const v = emNpc("victim", d[0], d[1], Math.PI, "hurt"); E.marker = { x: ep.x, z: ep.z };
+    addZone({ label: "Carry the family out", get: () => v, r: 2.0, ok: () => E.fires.every((f) => !f.alive), fn: () => { v.pose = "cheer"; v.goto = ep; emDone(true); } });
+  },
+  accident(P) {
+    const E = G.em, c = cellCenter(24, 16); const car = new THREE.Group(); const body = new THREE.Mesh(new THREE.BoxGeometry(2, 1.1, 4), mat(0xc1121f)); body.position.y = 0.75; car.add(body); const top = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.7, 2), mat(0x8d99ae)); top.position.y = 1.6; car.add(top);
+    car.position.set(c.x, 0, c.z); car.rotation.set(0, 0.6, 0.25); emMesh(car); E.marker = car.position;
+    const v1 = emNpc("victim", 24, 17, 0, "down"), v2 = emNpc("victim2", 26, 16, 0, "hurt"); E.lifted = false; let aid = 0;
+    addZone({ label: "Lift the car!", x: c.x, z: c.z, r: 2.6, ok: () => !E.lifted, fn: () => qte({ type: "mash", key: "kick", n: 12, time: 5, label: "Smash K to lift the car!" }, (ok) => { if (!ok) { toast("Too heavy! Try again (E)."); return; } E.lifted = true; car.rotation.z = 0.9; car.position.y = 0.6; emObj("give first aid 0/2"); }) });
+    for (const v of [v1, v2]) addZone({ label: "Give first aid", get: () => v, r: 2.0, ok: () => E.lifted && v.pose !== "sit", fn: () => { v.pose = "sit"; sfx("heal"); aid++; emObj(`give first aid ${aid}/2`); if (aid >= 2) emDone(true); } });
+  },
+  drown(P) {
+    const E = G.em, kid = emNpc("child", 31, 28, 0, null, { as: "child", label: "Help!" }); kid.bob = true; E.marker = kid;
+    addZone({ label: "Dive in and save the child!", get: () => kid, r: 4.8, fn: () => qte({ type: "seq", keys: ["jump", "punch", "punch", "act"], per: 1.6, label: "Space dive · J swim · J swim · E grab!" }, (ok) => { if (!ok) { toast("The water is strong! Try again (E)."); return; } kid.bob = false; const s = cellCenter(31, 26); kid.x = s.x; kid.z = s.z + 0.8; kid.pose = "sit"; emDone(true); }) });
+  },
+  robbery(P) {
+    const E = G.em, d = P.door; E.enemies = [[-2, 0], [2, 0], [0, 1]].map(([ox, oy]) => spawnEnemy("thug", d[0] + ox, d[1] + oy, Math.PI, { alert: true })); emNpc("keeper", d[0], d[1], 0, "hurt", { look: { shirt: 0x6c757d } }); E.marker = cellCenter(d[0], d[1]); E.need = "enemies";
+  },
+  kidnap(P) {
+    const E = G.em, d = P.door; E.enemies = [[-1, 0], [1, 0], [0, -1]].map(([ox, oy]) => spawnEnemy("thug", d[0] + ox, d[1] + oy, 0, { alert: true }));
+    const h = addHostage("child", d[0] - 2, d[1] - 2, 0, () => emDone(true), { ok: () => E.enemies.every((e) => e.st === "down") }); G.em.npcs.push("child"); E.marker = h.n;
+  },
+  bomb(P) {
+    const E = G.em, d = P.door; G.P.inv.manual = true; const b = addBomb(d[0], d[1], 3 + (lifeS().age % 3), () => emDone(true)); E.marker = b;
+    E.enemies = [[-2, 1], [2, 1]].map(([ox, oy]) => spawnEnemy("thug", d[0] + ox, d[1] + oy, 0, { alert: true }));
+  },
+  quake(P) {
+    const E = G.em, d = P.door; let freed = 0; G.shake = 2;
+    [[-3, 0], [0, 0], [3, 0]].forEach(([ox, oy], i) => { const p = cellCenter(d[0] + ox, d[1] + oy); const pile = emMesh(new THREE.Group()); for (let k = 0; k < 5; k++) { const r = new THREE.Mesh(new THREE.BoxGeometry(rr(0.5, 1), rr(0.3, 0.6), rr(0.5, 1)), mat(0x9a8c7a)); r.position.set(rr(-0.5, 0.5), 0.3 + k * 0.15, rr(-0.5, 0.5)); r.rotation.y = rr(0, 3); pile.add(r); } pile.position.set(p.x, 0, p.z);
+      const v = emNpc("rubble" + i, d[0] + ox, d[1] + oy, 0, "down");
+      addZone({ label: "Lift the rubble!", x: p.x, z: p.z, r: 2.0, ok: () => pile.visible, fn: () => qte({ type: "mash", key: "punch", n: 10, time: 4.5, label: "Smash J to lift the rubble!" }, (ok) => { if (!ok) { toast("Again! Lift (E)."); return; } pile.visible = false; v.pose = "cheer"; freed++; emObj(`people saved ${freed}/3`); if (freed >= 3) emDone(true); }) }); });
+    E.marker = cellCenter(d[0], d[1]); emObj("people saved 0/3");
+  },
+  bus(P) {
+    const E = G.em; const bus = new THREE.Group(); const body = new THREE.Mesh(new THREE.BoxGeometry(9, 3, 2.6), mat(0xffb703)); body.position.y = 1.8; bus.add(body); const win = new THREE.Mesh(new THREE.BoxGeometry(8.6, 0.8, 2.65), mat(0x5b7083)); win.position.y = 2.4; bus.add(win);
+    const s = cellCenter(46, 16); bus.position.set(s.x, 0, s.z + 1); emMesh(bus); E.bus = bus; E.marker = bus.position;
+    for (let i = 0; i < 3; i++) emNpc("crowd" + i, 13, 15 + (i % 2), Math.PI / 2, null, { look: { shirt: [0xe76f51, 0x06d6a0, 0x9d4edd][i] } });
+    addZone({ label: "Stop the bus!", get: () => bus.position, r: 5.5, ok: () => !E.stopped, fn: () => qte({ type: "mash", key: "kick", n: 14, time: 5, label: "Smash K to hold the bus!" }, (ok) => { if (!ok) { toast("Hold it! Try again (E)."); return; } E.stopped = true; sfx("metal"); emDone(true); }) });
+  },
+  kitten(P) {
+    const E = G.em, t = P.tree, p = cellCenter(t[0], t[1]); const cat = new THREE.Group(); const b = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.25, 0.5), mat(0xf4a261)); cat.add(b); const h = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.25, 0.25), mat(0xf4a261)); h.position.set(0, 0.15, 0.3); cat.add(h); cat.position.set(p.x, 4.4, p.z); emMesh(cat); E.marker = { x: p.x, z: p.z + 1 };
+    const girl = emNpc("girl", t[0], t[1] + 1, Math.PI, "sad", { look: { shirt: 0xff8fab, dress: true }, as: "child" });
+    addZone({ label: "Climb up and save the kitten", x: p.x, z: p.z + 1.6, r: 2.4, fn: () => qte({ type: "seq", keys: ["jump", "jump", "act"], per: 1.6, label: "Space climb · Space climb · E grab the kitten!" }, (ok) => { if (!ok) { toast("Slipped! Try again (E)."); return; } cat.position.set(girl.x + 0.4, 0.3, girl.z); girl.pose = "cheer"; emDone(true); }) });
+  },
+  viper(P) {
+    const E = G.em, S = lifeS(); E.enemies = [[22, 25], [27, 25], [24, 25], [25, 24], [21, 24]].map(([cx, cy]) => spawnEnemy("thug", cx, cy, Math.PI, { alert: true }));
+    const boss = spawnEnemy("bull", 24, 28, Math.PI, { alert: true, id: "bull" }); E.enemies.push(boss); E.marker = boss;
+    S.viper.push(S.age); E.text = { 25: "Marco Kade escaped! His men and Bull attack the River Bridge.", 40: "Viktor Kade is free again. Bull is back too!", 55: "The last Black Viper attack. Stop them one final time!" }[S.age] || EM_INFO.viper.desc();
+  },
+};
+function emDone(ok) {
+  const E = G.em, S = lifeS(); if (!E) return; G.em = null; G.skipFn = null;
+  for (const id of E.npcs) { const n = G.npcs[id]; if (n && !n.keep) n.leaveT = 4; }
+  if (ok) {
+    S.saves++; S.kinds[E.type] = (S.kinds[E.type] || 0) + 1; const before = fameLevel(S.fame); S.fame += EM_INFO[E.type].fame; const lvl = fameLevel(S.fame); writeSave();
+    center("✔ SAVED!", 1.4); sfx("heal"); for (const n of Object.values(G.npcs)) if (n.id.startsWith("fan")) n.pose = "cheer";
+    const lines = [["news", "BREAKING NEWS. " + EM_INFO[E.type].news(PLACES[E.place].name), "calm"], ["news", `Rish has saved ${S.saves} times. Everybody knows who the hero is. Known in: ${lvl}.`, "calm"]];
+    if (lvl !== before) lines.push(["rish", `Now even people in ${lvl} know my name. More people to protect.`, "happy"]);
+    after(1.2, () => say(lines, goHome));
+  } else { toast("Other rescuers helped this time. Be faster next time!", 4); S.fame += 10; writeSave(); after(0.6, goHome); }
+}
+function goHome() {
+  setSky(0xffb37a, 60, 200);
+  setObj("🌙 Evening. Go home and rest.", door("home"));
+  const d = PLACES.home.door; addTrigger(d[0], d[1], 1.9, () => yearEnd());
+  G.skipFn = () => yearEnd();
+}
+function yearEnd(skipCard) {
+  const S = lifeS(); S.age++; const m = MILESTONES[S.age]; if (m) S.log.push([S.age, m]); writeSave();
+  if (S.age >= 70) { lifeEnd(); return; }
+  if (G.test || skipCard) { lifeDay(); return; }
+  resetWorld(); G.mode = "card";
+  showScr(`<p class="kicker">One year later</p><h1>Age ${S.age}</h1><p>${m || ["Another year of school, work and saving people.", "Suryanagar sleeps safe. Its hero is awake.", "Kabir, Diya and Aarav visit every Sunday."][S.age % 3]}</p>
+    <p>🌍 Known in <b>${fameLevel(S.fame)}</b> · 🦸 Saves <b>${S.saves}</b>${S.job ? ` · 💼 ${JOBS[S.job].label}` : ""}</p>
+    <div class="row"><button class="btn go" id="ynext">▶ Next year</button><button class="btn" id="yff">⏩ Skip 5 years</button><button class="btn alt" id="ymenu">Menu</button></div>`);
+  $("ynext").onclick = () => lifeDay(); $("ymenu").onclick = () => menu();
+  $("yff").onclick = () => { lifeFastForward(5); };
+}
+function lifeFastForward(n) { const S = lifeS(); for (let i = 0; i < n - 1 && S.age < 69; i++) { S.age++; S.saves++; S.fame += 90; const m = MILESTONES[S.age]; if (m) S.log.push([S.age, m]); if (VIPER_AGES.includes(S.age) && !S.viper.includes(S.age)) S.viper.push(S.age); } if (S.age >= 22 && !S.job) {} writeSave(); toast(`${n - 1} years later... Rish saved ${n - 1} more people.`, 4); lifeDay(); }
+function lifeEnd() {
+  const S = lifeS(); S.done = true; writeSave(); resetWorld(); G.mode = "menu";
+  const kinds = Object.entries(S.kinds).map(([k, v]) => `${EM_INFO[k].title.replace("!", "")} ×${v}`).join(" · ");
+  showScr(`<h1 class="logo">A HERO'S LIFE</h1><p class="sub">Rish, age 70 · 💼 ${S.job ? JOBS[S.job].label : "Hero"}</p><p>🦸 <b>${S.saves}</b> saves · 🌍 Known in <b>${fameLevel(S.fame)}</b></p><p class="mut">${kinds}</p>
+    <div class="diary">${S.log.map(([a, t]) => `<p class="dp"><b>Age ${a}</b>: ${t}</p>`).join("")}</div>
+    <p>A lonely boy who protected even the ones who hurt him. The whole world knows his name.</p>
+    <div class="row"><button class="btn go" id="lagain">↺ Play life again</button><button class="btn alt" id="lmenu">Menu</button></div>`);
+  $("lagain").onclick = () => startLife(true); $("lmenu").onclick = () => menu();
+}
+
+// ---- People of the city ----
+function spawnCivilians() {
+  const lines = [[[2, 6], [45, 6]], [[3, 17], [44, 17]], [[10, 2], [10, 24]], [[24, 2], [24, 25]], [[38, 2], [38, 24]], [[45, 7], [2, 7]], [[44, 16], [3, 16]], [[11, 24], [11, 2]]];
+  lines.forEach(([a, b], i) => {
+    const n = spawnNpc("civ" + i, a[0], a[1], 0, null, { as: "civ", label: false, look: { shirt: [0xe63946, 0x2a9d8f, 0xffb703, 0x9b5de5, 0x3a86ff, 0xef476f, 0x06d6a0, 0xf77f00][i], dress: i % 3 === 0 } });
+    n.speed = 1.5; const pa = cellCenter(a[0], a[1]), pb = cellCenter(b[0], b[1]); let to = pb;
+    const go = () => { n.goto = to; to = to === pb ? pa : pb; n.arrive = go; }; const f = (i * 0.37) % 1; n.x = pa.x + (pb.x - pa.x) * f; n.z = pa.z + (pb.z - pa.z) * f; go();
+  });
+}
+function spawnFans() {
+  const S = lifeS(), n = Math.min(12, Math.floor(S.fame / 180)), names = ["Riya", "Arjun", "Zoya", "Kunal", "Neha", "Vikas", "Anu", "Farhan", "Tara", "Om", "Pooja", "Sam"];
+  for (let i = 0; i < n; i++) {
+    const cx = 2 + (i % 8), cy = i < 8 ? 7 : 6;
+    const f = spawnNpc("fan" + i, cx, cy, Math.PI, "cheer", { as: "civ", label: false, tag: "Fan", look: { shirt: [0xff006e, 0x3a86ff, 0xffbe0b, 0x8338ec][i % 4], dress: i % 2 === 0 } }); f.faceP = true;
+    addZone({ label: `Sign an autograph for ${names[i]}`, get: () => f, r: 1.8, fn: function () { this.off = true; S.fame += 2; writeSave(); G.stats.autographs = (G.stats.autographs || 0) + 1; toast(`${names[i]}: "It's Rish! The real hero! I watch you on TV every day!"`, 3.5); sfx("heal"); } });
+  }
+}
+function addCape(g) { if (g.userData.cape) return; const cape = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.85, 0.04), mat(0xc1121f)); cape.position.set(0, 0.95, -0.2); cape.rotation.x = 0.12; g.add(cape); const badge = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.03, 12), mat(0xffd60a, { emissive: 0x443300 })); badge.rotation.x = Math.PI / 2; badge.position.set(0, 1.12, 0.16); g.add(badge); g.userData.cape = cape; }
+function addStatue() { const P = PLACES.park; const c = cellCenter(P.x0 + 9, P.y0 + 3); const base = new THREE.Mesh(new THREE.BoxGeometry(2.2, 1.2, 2.2), mat(0x8d99ae)); base.position.set(c.x, 0.6, c.z); G.L.group.add(base); const st = makeHuman({ skin: 0xadb5bd, shirt: 0xadb5bd, trousers: 0xadb5bd, hair: 0xadb5bd, shoes: 0xadb5bd }); st.scale.setScalar(1.7); st.position.set(c.x, 1.2, c.z); st.rotation.y = Math.PI; st.userData.parts.armR.rotation.x = -2.8; G.L.group.add(st); addSign(G.L, personalize("Statue of Rish, Hero of Suryanagar"), P.x0 + 9, P.y0 + 3, 5.4, 0.7); G.L.statue = st; }
+function lifeUpdate(dt) {
+  const E = G.em, P = G.P;
+  for (const n of Object.values(G.npcs)) { if (n.bob) { n.g.position.y = -0.85 + Math.sin(G.t * 3) * 0.12; } if (n.leaveT !== undefined) { n.leaveT -= dt; if (n.leaveT <= 0) { removeNpc(n.id); } } }
+  if (!E) return;
+  E.t -= dt; if ((E.tick = (E.tick || 0) - dt) <= 0) { E.tick = 0.5; emObj(); }
+  if (E.fires) for (const f of E.fires) { if (!f.alive) continue; f.mesh.scale.y = 1 + Math.sin(G.t * 9 + f.x) * 0.15; if (Math.random() < dt * 2) puff(f.x, 2, f.z, 0x555555, 1.2, 2, 0.4); if (Math.hypot(P.x - f.x, P.z - f.z) < 0.9 && (E.burnT = (E.burnT || 0) - dt) <= 0) { E.burnT = 0.6; hurtPlayer(4, null); } }
+  if (E.bus && !E.stopped) { E.bus.position.x -= 2.6 * dt; if (E.bus.position.x < cellCenter(15, 16).x) { emDone(false); return; } }
+  if (E.enemies && E.type !== "kidnap" && E.type !== "bomb" && E.enemies.every((e) => e.st === "down")) { emDone(true); return; }
+  if (E.t <= 0) emDone(false);
+}
+
+
 // ===================== MAIN LOOP, MENUS, PHONE CONTROLS, TEST HOOKS =====================
 function onAnyKey(code, a) {
   if (a === "pause" && ["play", "chase", "pause"].includes(G.mode)) { togglePause(); return; }
@@ -2324,7 +2594,7 @@ function step(dt) {
   if (live && G.later.length) { const due = G.later.filter((l) => l.t <= G.t); G.later = G.later.filter((l) => l.t > G.t); for (const l of due) l.f(); }
   if (G.mode === "play") {
     G.chT = (G.chT || 0) + dt; G.flags.aimT = Math.max(0, (G.flags.aimT || 0) - dt); G.flags.aiming = G.flags.aimT > 0;
-    updatePlayer(dt); updateFlow(); updateEnemies(dt); updateNpcs(dt); updateItems(dt); updateProps(dt); updateTriggers(); updateCamera(dt); updateAim();
+    updatePlayer(dt); updateFlow(); updateEnemies(dt); updateNpcs(dt); updateItems(dt); updateProps(dt); updateTriggers(); if (G.life) lifeUpdate(dt); updateCamera(dt); updateAim();
   } else if (G.mode === "dialog") {
     updateDialog(dt); clearPress();
     if (G.P) { const sv = Object.assign({}, K); for (const k in K) K[k] = false; const j = JOY.on; JOY.on = false; updatePlayer(dt); Object.assign(K, sv); JOY.on = j; }
@@ -2370,8 +2640,8 @@ function menu() {
   <p class="mut">One lonely year at Sunrise Public School. One day of fear. One hero.</p>
   <p class="who">👤 <b>${heroNames().first}</b>, age ${profile().age} · father: ${JOB().label} <button class="btn mini" id="m-who">Change</button></p>
   <div class="grid"><button class="btn go wide" id="m-play">▶ ${u > 0 ? `Continue: ${c.name}, ${c.title}` : "Start the story"}</button>
-  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button><button class="btn" id="m-story">📖 The Story</button><button class="btn" id="m-diary">📔 Rish's Diary (${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL})</button></div>`);
-  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about; $("m-diary").onclick = diary; $("m-who").onclick = () => login(menu); $("m-story").onclick = storyPage;
+  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button>${G.save.unlocked >= CHAPTERS.length - 1 || G.save.life ? `<button class="btn go wide" id="m-life">🦸 Hero Life${G.save.life && !G.save.life.done ? ` (age ${G.save.life.age})` : ""}</button>` : ""}<button class="btn" id="m-story">📖 The Story</button><button class="btn" id="m-diary">📔 Rish's Diary (${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL})</button></div>`);
+  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about; $("m-diary").onclick = diary; $("m-who").onclick = () => login(menu); $("m-story").onclick = storyPage; if ($("m-life")) $("m-life").onclick = () => startLife(!G.save.life || G.save.life.done);
 }
 function chapters() {
   showScr(`<h2>Chapters</h2><div class="chl">${CHAPTERS.map((c, i) => `<button class="btn ch" data-i="${i}" ${i > G.save.unlocked ? "disabled" : ""}><b>${c.name}</b> ${c.title} ${c.gun ? "🔫" : ""}${i > G.save.unlocked ? " 🔒" : ""}</button>`).join("")}</div><p class="mut">Stuck? Every chapter has a ⏭ Skip button.</p><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
@@ -2413,14 +2683,15 @@ function diary() {
 }
 function credits() {
   resetWorld(); G.mode = "menu"; G.save.unlocked = CHAPTERS.length - 1; writeSave();
-  showScr(`<h1 class="logo">THE END</h1><p class="sub">Rish Hero · RishSchoolDays Game 3</p><p>A lonely year. One brave day. A whole school of new friends.</p><p><b>Created by Ris&#104;abh Shar&#109;a</b>, age 9.</p><p class="sub"><b>Just live it!</b></p><p class="mut">📔 Diary pages found: ${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL}</p><div class="row"><button class="btn go" id="again">↺ Play again</button><button class="btn" id="dia">📔 Diary</button><button class="btn alt" id="b">Menu</button></div>`);
-  $("b").onclick = menu; $("again").onclick = () => { G.chFails = 0; startChapter(0); }; $("dia").onclick = diary; G.stats.credits = 1;
+  showScr(`<h1 class="logo">THE END</h1><p class="sub">Rish Hero · RishSchoolDays Game 3</p><p>A lonely year. One brave day. A whole school of new friends.</p><p><b>Created by Ris&#104;abh Shar&#109;a</b>, age 9.</p><p class="sub"><b>Just live it!</b></p><p><b>But the story is not over.</b> Now Rish lives his whole life as the hero of Suryanagar. Accidents, fires, attacks: every year someone needs him. And the whole world knows his name.</p><p class="mut">📔 Diary pages found: ${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL}</p><div class="row"><button class="btn go" id="life">🦸 Continue: Hero Life</button><button class="btn" id="again">↺ Play again</button><button class="btn" id="dia">📔 Diary</button><button class="btn alt" id="b">Menu</button></div>`);
+  $("b").onclick = menu; $("again").onclick = () => { G.chFails = 0; startChapter(0); }; $("life").onclick = () => startLife(!G.save.life || G.save.life.done); $("dia").onclick = diary; G.stats.credits = 1;
 }
 function togglePause() {
   if (G.mode === "pause") { hideScr(); G.mode = G.pauseBack; return; }
   G.pauseBack = G.mode; G.mode = "pause";
-  showScr(`<h2>Paused</h2><p class="mut">${CHAPTERS[G.ch].name}: ${CHAPTERS[G.ch].title}</p><div class="grid"><button class="btn go" id="pr">▶ Resume</button><button class="btn" id="prs">↺ Restart chapter</button><button class="btn" id="psk">⏭ Skip this chapter</button><button class="btn alt" id="pm">Menu</button></div>`);
-  $("pr").onclick = togglePause; $("prs").onclick = () => startChapter(G.ch, true); $("psk").onclick = () => { hideScr(); G.mode = G.pauseBack; completeChapter(); }; $("pm").onclick = menu;
+  const c = G.life ? { name: "Hero Life", title: `Age ${G.save.life.age}` } : CHAPTERS[G.ch];
+  showScr(`<h2>Paused</h2><p class="mut">${c.name}: ${c.title}</p><div class="grid"><button class="btn go" id="pr">▶ Resume</button><button class="btn" id="prs">↺ ${G.life ? "Restart this year" : "Restart chapter"}</button><button class="btn" id="psk">⏭ ${G.life ? "Skip this year" : "Skip this chapter"}</button><button class="btn alt" id="pm">Menu</button></div>`);
+  $("pr").onclick = togglePause; $("prs").onclick = () => (G.life ? lifeDay() : startChapter(G.ch, true)); $("psk").onclick = () => { hideScr(); G.mode = G.pauseBack; if (G.life) { G.em = null; yearEnd(); } else completeChapter(); }; $("pm").onclick = menu;
 }
 
 // ---- Phone controls ----
@@ -2461,7 +2732,7 @@ function boot() {
   if (G.test || G.save.profile) menu(); else login(menu);
   requestAnimationFrame(frame);
   window.__rh = {
-    G, login, personalize, profile, JOBS, step: (dt = 1 / 60, n = 1) => { for (let i = 0; i < n; i++) step(dt); }, startChapter, completeChapter, skipNow, skipDialog, nextLine, retryFail, skipFail,
+    G, login, personalize, profile, JOBS, startLife, lifeDay, emergency, emDone, yearEnd, lifeEnd, lifeFastForward, PLACES, EM_TYPES, fameLevel, lifeS, step: (dt = 1 / 60, n = 1) => { for (let i = 0; i < n; i++) step(dt); }, startChapter, completeChapter, skipNow, skipDialog, nextLine, retryFail, skipFail,
     keyDown, keyUp, safeWire, cutWire, codeKey, openCode, knockDown, hurtEnemy, propHit, fireGun, autoAim, CHAPTERS, MEMORIES, ENDING, CAST, MAPS, RIDDLES,
     cell: (cx, cy) => cellCenter(cx, cy), cam: () => camera, CAM, ceilAt, clockText, storyPage, STORY, GUIDE, PAGES, PAGE_TOTAL, chapterResult, resultsCard, credits, diary, cellAt, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
     tp: (cx, cy) => { const p = cellCenter(cx, cy); G.P.x = p.x; G.P.z = p.z; G.P.safe = { x: p.x, z: p.z }; },

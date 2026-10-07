@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v3", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v3" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v4", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v4" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -266,6 +266,25 @@ const HELPERS = () => {
   ok("K3 Skip puzzle defuses a bomb; Skip this part on the fail screen works", r.open && r.skip && r.fail && r.failSkip, r);
   r = await E(() => { const o = {}; R.startChapter(5, true); talk(); R.togglePause(); o.pause = G.mode === "pause" && !!document.getElementById("psk"); document.getElementById("psk").click(); play(0.2); o.ch = G.ch; R.startChapter(4, true); talk(); G.P.hp = 5; G.god = false; R.hurtEnemy && 0; const t = alive()[0]; t.st = "alert"; t.x = G.P.x + 1; t.z = G.P.z; let n = 0; while (G.mode !== "fail" && n++ < 600) R.step(1 / 60); o.ko = G.mode === "fail" && /knocked out/.test(document.getElementById("failMsg").textContent); document.getElementById("failRetry").click(); play(0.3); o.restart = G.ch === 4 && G.P.hp === 100; return o; });
   ok("K4 pause menu: Skip this chapter; a knock out = Try again restarts the chapter", r.pause && r.ch === 6 && r.ko && r.restart, r);
+
+  // ---------------- N. New story and features (v4) ----------------
+  r = await E(() => { const o = {}; const P = R.PAGES; o.total = R.PAGE_TOTAL; o.walkable = true; const mapOf = { c1: "school", c2: "lab", c3: "hall", c4: "roof", c6: "yard" };
+    for (const id in P) { const rows = R.MAPS[mapOf[id]].replace(/^\n/, "").split("\n"); for (const [cx, cy] of P[id]) { const ch = rows[cy][cx]; if (R.solidFor(ch, {}) || ch === " ") o.walkable = false; } }
+    G.save.pages = {}; R.startChapter(2, true); R.skipDialog(); sim(0.2); const pg = G.items.filter((i) => i.type === "page"); o.spawned = pg.length; const it = pg[0]; G.P.x = it.x; G.P.z = it.z; sim(0.2); o.saved = Object.keys(G.save.pages).length; o.toast = /Diary/.test(document.getElementById("toast").textContent);
+    R.startChapter(2, true); R.skipDialog(); sim(0.2); o.respawn = G.items.filter((i) => i.type === "page").length; R.menu(); o.menuBtn = /Diary \(1\/15\)/.test(document.getElementById("m-diary").textContent); document.getElementById("m-diary").click(); const t = document.getElementById("card").textContent; o.diary = /Mr\. Iyer said science/.test(t) && (t.match(/still hidden/g) || []).length === 14; document.getElementById("b").click(); return o; });
+  ok("N1 15 hidden diary pages (3 per action chapter) on walkable squares; walking on one saves it with a toast", r.total === 15 && r.walkable && r.spawned === 3 && r.saved === 1 && r.toast, r);
+  ok("N2 a found page does not come back; the Diary in the menu shows found pages and hides the rest", r.respawn === 2 && r.menuBtn && r.diary, r);
+  r = await E(() => { const o = {}; R.startChapter(2, true); R.skipDialog(); sim(0.5); G.chT = 75; G.chFails = 0; const res = R.chapterResult(2); o.res = res; let went = 0; R.resultsCard(res, () => { went = 1; }); const t = document.getElementById("card").textContent; o.card = /complete/.test(t) && /Diary pages/.test(t) && /1:15/.test(t) && !!document.getElementById("ragain");
+    document.getElementById("ragain").click(); sim(0.2); o.again = G.ch === 2 && G.mode !== "card"; R.resultsCard(res, () => { went = 1; }); document.getElementById("rnext").click(); o.next = went === 1;
+    R.credits(); o.creditsAgain = !!document.getElementById("again"); document.getElementById("again").click(); sim(0.2); o.restart = G.ch === 0; return o; });
+  ok("N3 chapter results card: time, knockouts, takedowns, room tricks, diary pages, stars (finish, all pages, no fails)", r.card && r.res.stars >= 2 && r.res.pagesTotal === 3, r);
+  ok("N4 PLAY AGAIN: the results card replays the chapter; THE END screen restarts the story from the Prologue", r.again && r.next && r.creditsAgain && r.restart, r);
+  r = await E(() => { const o = {}; const all = JSON.stringify([R.MEMORIES]); R.startChapter(0, true); sim(0.2); o.cold = G.mode === "dialog" && /far away for one year/.test(G.dlg.lines[0][1]) && /Kade/.test(G.dlg.lines[1][1]); R.skipDialog();
+    R.startChapter(3, true); R.skipDialog(); sim(0.2); o.smokeStart = G.items.filter((i) => i.type === "smoke").length; god(); const gm = G.enemies.find((e) => e.kind === "gunman" && Math.abs(e.x - R.cell(7, 9).x) < 0.5); const sm = G.items.find((i) => i.type === "smoke"); G.P.x = sm.x; G.P.z = sm.z + 0.4; sim(0.1); tap("KeyE"); o.carry = G.P.carry && G.P.carry.type; at(7, 11); face(gm.x, gm.z); tap("KeyF"); play(1.5); o.cloud = G.clouds.length >= 1 && (G.stats.envKinds || {}).smoke === 1; o.stun = gm.st === "stun"; return o; });
+  ok("N5 the Prologue opens with Papa's call and the news about Viktor Kade's revenge", r.cold, r);
+  ok("N6 Mr. Iyer's smoke pellets: 2 at the start of Chapter 3; a throw makes a cloud that stuns the gunman", r.smokeStart === 2 && r.carry === "smoke" && r.cloud && r.stun, r);
+  r = await E(() => { const o = {}; R.startChapter(5, true); R.skipDialog(); G.C.z = -1260; G.C.vz = -1300; R.step(1 / 60, 3); o.calls = G.stats.calls; R.startChapter(6, true); R.skipDialog(); G.flags.kadeDown = 1; const k = G.enemies.find((e) => e.kind === "kade"); R.knockDown(k); play(0.3); for (const e of G.enemies) R.knockDown(e); R.skipDialog(); R.openCode(() => {}); document.getElementById("pzHint").click(); const h = document.getElementById("pzHintT").textContent; o.hint = /Aarav/.test(h) && /\d/.test(h) && document.getElementById("pzHint").disabled; R.skipNow(); return o; });
+  ok("N7 friends help: Aarav and Meher call 4 times during the chase; Aarav gives one hint in the abort code", r.calls === 4 && r.hint, r);
 
   // ---------------- V. Pictures ----------------
   for (const [i, name] of [[0, "08-prologue"], [1, "09-ch1"], [3, "10-ch3-hall"], [6, "11-ch6"]]) { await E((i) => { R.startChapter(i, true); play(0.4); if (G.mode === "dialog") R.skipDialog(); play(1); }, i); await shot(name); }

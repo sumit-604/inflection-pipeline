@@ -74,6 +74,9 @@ body.touch #qteBtns { display: flex; }
 .btn.go { background: linear-gradient(180deg, #ffb703, #fb8500); color: #1b1b1b; } .btn.alt { background: #495057; } .btn:disabled { opacity: 0.4; }
 .chl { display: grid; gap: 8px; } .ch { text-align: left; }
 .keys p { margin: 6px 0; font-size: 15px; } .keys b { color: var(--gold); }
+.stars { font-size: 40px; text-align: center; margin: 4px 0; letter-spacing: 6px; } .res { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 14px; } .res p { margin: 4px 0; } .res b { color: var(--gold); }
+.diary { max-height: 52vh; overflow: auto; } .diary h3 { margin: 12px 0 4px; color: var(--gold); font-size: 15px; } .dp { margin: 4px 0; font-size: 15px; line-height: 1.4; }
+#pzHint { margin-top: 6px; background: #3a86ff; }
 .portrait-photo { display: block; width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin: 0 auto; border: 3px solid var(--gold); }
 #pad { display: none; }
 body.touch #pad { display: block; }
@@ -115,7 +118,7 @@ body.touch #dlg { bottom: 170px; }
 <script type="module">
 import * as THREE from "three";
 // ===================== DATA: maps, people, story, puzzles =====================
-const VERSION = "Rish Hero v3";
+const VERSION = "Rish Hero v4";
 const CS = 2; // one map cell is 2 metres
 
 // Map legend
@@ -321,6 +324,18 @@ const MEMORIES = [
             ["rish", "(One whole year in this school. One whole year alone.)", "sad"]] },
 ];
 
+// ---- Diary pages: 3 hidden in each action chapter. Rish wrote them during his lonely year. ----
+const PAGES = {
+  c1: [[7, 3, "Diary, April: Kabir called my shoes village shoes. They are Papa's old army shoes. I like them."], [23, 12, "Diary, May: I sat alone in the music room at lunch. The tabla sounded like rain. Rain does not laugh at me."], [3, 9, "Diary, June: Maa packed two parathas. One for me, one for a friend. I ate both. Slowly."]],
+  c2: [[2, 7, "Diary, July: Mr. Iyer said science is asking why. Why does nobody sit with me? I could not find the answer."], [23, 5, "Diary, August: I ran 2 rounds faster than Kabir. Coach did not look. I counted my own time. 4 minutes 10 seconds."], [13, 8, "Diary, September: Diya lent me a pencil and smiled. Then Meher looked at her and she looked away."]],
+  c3: [[30, 13, "Diary, October: Papa's letter came. 'A soldier is not the one who wins fights. A soldier is the one who protects.'"], [1, 3, "Diary, November: I practised the roll Papa taught me, in the park. Hands in, chin down, round like a ball."], [29, 9, "Diary, December: Rohan cried behind the bus stop. I did not tell anyone. Everyone has a sad day."]],
+  c4: [[4, 5, "Diary, January: Birthday. Diya said happy birthday. Ten years old. One friend. That is not zero."], [19, 1, "Diary, February: I climbed the water tank ladder to see the whole city. Suryanagar looks small from up here."], [33, 4, "Diary, March: Papa said the posting ends soon. I made a calendar. 30 boxes. I cross one every night."]],
+  c6: [[1, 12, "Diary, April: Annual Day tomorrow. Maybe I will clap the loudest. Maybe someone will clap back."], [44, 1, "Last page: If you find this diary, I want you to know something. I never hated them. I only wanted one friend."], [25, 12, "Papa's note, folded inside: 'Proud of you every single day, beta. Even on the days nobody sees.'"]],
+};
+const PAGE_TOTAL = Object.values(PAGES).reduce((a, b) => a + b.length, 0);
+// The friends help on the phone during the chase.
+const CHASE_CALLS = [[250, "📱 Aarav: Rish! I am tracking the van on Mr. Khan's phone map. Pedal hard, the road is long!"], [600, "📱 Aarav: The van slows at the vegetable market. Use the yellow ramps!"], [950, "📱 Meher: Rish, everyone in the hall is praying for you. Even me. Sorry for the tiffin!"], [1200, "📱 Aarav: The railway gate is 200 metres ahead! The van will have to stop!"]];
+
 // ---- Ending lines ----
 const ENDING = [
   ["news", "BREAKING NEWS. A 10 year old boy from Suryanagar stopped the Black Viper gang. The bombs in 5 world capitals did not go off. His name is Rishabh Sharma.", "calm"],
@@ -339,6 +354,9 @@ const ENDING = [
   ["dad", "Rish! I took the first flight home. I am so proud of you, son.", "happy"],
   ["rish", "Papa! I did what you said. I protected people. Even the ones who hurt me.", "happy"],
   ["dad", "That is what makes a real hero.", "happy"],
+  ["vikram", "And Rish, Monday morning, football practice. You are our new striker. Next to Kabir.", "happy"],
+  ["kabir", "Partner! I pass, you score. Deal?", "laugh"],
+  ["rish", "Deal. One year alone. Now I have a whole school. Just live it!", "laugh"],
 ];
 
 function humanMat(color) {
@@ -1341,6 +1359,7 @@ function propHit(pr, point, how) {
   if (pr.type === "steam") { pr.alive = false; sfx("hiss"); G.jets.push({ x: pr.x, z: pr.z, dx: pr.dx, dz: pr.dz, len: 6, t: 6, pt: 0, hitSet: new Set() }); envUsed("steam"); return; }
   if (pr.type === "crane") { pr.alive = false; pr.falling = true; pr.vy = 0; pr.mesh.userData.chain.visible = false; sfx("metal"); envUsed("crane"); return; }
 }
+function smokeCloud(x, z) { sfx("hiss"); G.clouds.push({ x, z, r: 3.8, t: 6, hitSet: new Set() }); for (let i = 0; i < 6; i++) puff(x + rr(-1.8, 1.8), rr(0.5, 2), z + rr(-1.8, 1.8), 0xe9ecef, rr(2, 3), 5.5, 0.8); envUsed("smoke"); }
 function envUsed(kind) { G.stats.env++; G.stats.envKinds = G.stats.envKinds || {}; G.stats.envKinds[kind] = (G.stats.envKinds[kind] || 0) + 1; }
 function explode(x, z, r) {
   sfx("boom"); G.shake = 1.2; flash("#ffb703", 0.5);
@@ -1380,7 +1399,7 @@ function updateProps(dt) {
 
 // ---- Items on the floor ----
 const ITEM_DEF = {
-  pistol: { icon: "🔫", label: "Pick up the pistol", c: 0x222222 }, smg: { icon: "🔫", label: "Pick up the machine gun", c: 0x343a40 }, duster: { icon: "🧽", label: "Pick up a blackboard duster", c: 0x6b4423, throw: true }, ammo: { icon: "📦", label: "Ammo", c: 0x6a994e, auto: true }, medkit: { icon: "⛑️", label: "First aid", c: 0xffffff, auto: true },
+  pistol: { icon: "🔫", label: "Pick up the pistol", c: 0x222222 }, smg: { icon: "🔫", label: "Pick up the machine gun", c: 0x343a40 }, duster: { icon: "🧽", label: "Pick up a blackboard duster", c: 0x6b4423, throw: true }, smoke: { icon: "💨", label: "Pick up a smoke pellet", c: 0xadb5bd, throw: true }, ball: { icon: "⚽", label: "Pick up Kabir's football", c: 0xffffff, throw: true }, page: { icon: "📔", label: "Diary page", c: 0xfff3b0, auto: true }, ammo: { icon: "📦", label: "Ammo", c: 0x6a994e, auto: true }, medkit: { icon: "⛑️", label: "First aid", c: 0xffffff, auto: true },
   manual: { icon: "📘", label: "Take the bomb manual", c: 0x3a86ff }, radio: { icon: "📻", label: "Take the radio", c: 0x343a40 },
   book: { icon: "📕", label: "Pick up a heavy book", c: 0xc1121f, throw: true }, brick: { icon: "🧱", label: "Pick up a brick", c: 0xb5523b, throw: true },
 };
@@ -1401,6 +1420,7 @@ function updateItems(dt) {
     const d = Math.hypot(it.x - P.x, it.z - P.z);
     if (ITEM_DEF[it.type].auto && d < 1.1) {
       if (it.type === "ammo" && P.gun) { P.gun.res += P.gun.cap; toast(`+${P.gun.cap} bullets`); sfx("reload"); removeItem(it); }
+      if (it.type === "page") { G.save.pages = G.save.pages || {}; G.save.pages[it.pid] = 1; writeSave(); G.stats.pages = (G.stats.pages || 0) + 1; removeItem(it); sfx("heal"); toast(`📔 ${it.text}`, 7); continue; }
       if (it.type === "medkit" && P.hp < P.max) { P.hp = Math.min(P.max, P.hp + 35); toast("+35 health"); sfx("heal"); removeItem(it); }
     }
   }
@@ -1411,8 +1431,9 @@ function updateItems(dt) {
       continue; }
     pj.vy -= 9 * dt; pj.x += pj.vx * dt; pj.y += pj.vy * dt; pj.z += pj.vz * dt; pj.mesh.position.set(pj.x, pj.y, pj.z); pj.mesh.rotation.x += dt * 12;
     let done = pj.y < 0.1;
-    for (const e of G.enemies) { if (done || !e.active || e.st === "down") continue; if (Math.hypot(e.x - pj.x, e.z - pj.z) < 0.75 && pj.y < 2 * e.s) { hurtEnemy(e, e.boss ? 8 : 12, "throw"); pop(e, "BONK!"); done = true; } }
+    for (const e of G.enemies) { if (done || !e.active || e.st === "down") continue; if (Math.hypot(e.x - pj.x, e.z - pj.z) < 0.75 && pj.y < 2 * e.s) { hurtEnemy(e, e.boss ? 8 : pj.type === "ball" ? 20 : 12, "throw"); if (pj.type === "ball" && e.st === "stun") e.dur = 2.6; pop(e, pj.type === "ball" ? "GOAL!" : "BONK!"); done = true; } }
     const ch = cellXZ(pj.x, pj.z); if (!done && tallCell(ch) && pj.y < wallH(ch)) { const pr = G.L.props.find((q) => q.alive && q.cx === Math.floor(pj.x / CS) && q.cy === Math.floor(pj.z / CS)); if (pr && (pr.type === "window" || pr.type === "case")) propHit(pr, null, "throw"); done = true; }
+    if (done && pj.type === "smoke") smokeCloud(pj.x, pj.z);
     if (done) { scene.remove(pj.mesh); G.proj.splice(G.proj.indexOf(pj), 1); burst(pj.x, Math.max(0.2, pj.y), pj.z, 0x999999, 5, 2, 0.4, 0.6); }
   }
 }
@@ -1429,11 +1450,11 @@ function throwItem() {
   let tx, tz; const e = nearestEnemy(14, 0.9);
   // A light or an extinguisher next to an enemy is a better target: the room does the work.
   let best = null, bs = e ? Math.hypot(e.x - P.x, e.z - P.z) : 1e9;
-  for (const pr of G.L.props) { if (!propIsTarget(pr) || pr.type === "crane") continue; const d = Math.hypot(pr.x - P.x, pr.z - P.z); if (d > 14) continue; if (Math.abs(angDiff(P.yaw, Math.atan2(pr.x - P.x, pr.z - P.z))) > 0.9) continue; if (d * 0.6 < bs) { bs = d * 0.6; best = pr; } }
-  if (best) { const tp = propPoint(best); P.yaw = Math.atan2(tp.x - P.x, tp.z - P.z); const o = new THREE.Vector3(P.x, 1.3, P.z), dir = tp.clone().sub(o), L = dir.length(); dir.multiplyScalar(14 / L); G.proj.push({ x: o.x, y: o.y, z: o.z, vx: dir.x, vy: dir.y, vz: dir.z, mesh: it.mesh, prop: best, left: L / 14 }); sfx("whoosh"); return; }
+  for (const pr of G.L.props) { if (it.type === "smoke" || !propIsTarget(pr) || pr.type === "crane") continue; const d = Math.hypot(pr.x - P.x, pr.z - P.z); if (d > 14) continue; if (Math.abs(angDiff(P.yaw, Math.atan2(pr.x - P.x, pr.z - P.z))) > 0.9) continue; if (d * 0.6 < bs) { bs = d * 0.6; best = pr; } }
+  if (best) { const tp = propPoint(best); P.yaw = Math.atan2(tp.x - P.x, tp.z - P.z); const o = new THREE.Vector3(P.x, 1.3, P.z), dir = tp.clone().sub(o), L = dir.length(); dir.multiplyScalar(14 / L); G.proj.push({ type: it.type, x: o.x, y: o.y, z: o.z, vx: dir.x, vy: dir.y, vz: dir.z, mesh: it.mesh, prop: best, left: L / 14 }); sfx("whoosh"); return; }
   if (e) { P.yaw = Math.atan2(e.x - P.x, e.z - P.z); tx = e.x; tz = e.z; } else { const f = faceDir(P.yaw); tx = P.x + f.x * 10; tz = P.z + f.z * 10; }
   const d = Math.hypot(tx - P.x, tz - P.z) || 1, sp = 13, tFly = d / sp;
-  G.proj.push({ x: P.x, y: 1.3, z: P.z, vx: (tx - P.x) / d * sp, vz: (tz - P.z) / d * sp, vy: 0.5 * 9 * tFly - 0.2, mesh: it.mesh });
+  G.proj.push({ type: it.type, x: P.x, y: 1.3, z: P.z, vx: (tx - P.x) / d * sp, vz: (tz - P.z) / d * sp, vy: 0.5 * 9 * tFly - 0.2, mesh: it.mesh });
   sfx("whoosh");
 }
 
@@ -1648,7 +1669,8 @@ function openCode(done) {
   G.mode = "puzzle"; G.puz = { kind: "code", r: pick, code: pick.map((p) => p[1]).join(""), entry: "", tries: 3, t: 150, done }; clearPress();
   showPuz(`<div class="pz code"><div class="bomb"><div class="bt">⏱ <span id="pzT">--</span></div><div class="ser">ABORT CODE · tries left: <b id="pzTry">3</b></div><div class="disp" id="pzDisp">_ _ _ _</div>
     <div class="pad">${[1, 2, 3, 4, 5, 6, 7, 8, 9, "⌫", 0, "OK"].map((k) => `<button class="pk" data-k="${k}">${k}</button>`).join("")}</div></div>
-    <div class="manual"><h3>🧩 Kade's note</h3><p class="mut">"The code is 4 digits. Only a child could solve it." Each answer is one digit.</p><ol class="rid">${pick.map((p) => `<li>${p[0]}?</li>`).join("")}</ol></div></div>`);
+    <div class="manual"><h3>🧩 Kade's note</h3><p class="mut">"The code is 4 digits. Only a child could solve it." Each answer is one digit.</p><ol class="rid">${pick.map((p) => `<li>${p[0]}?</li>`).join("")}</ol><button class="btn" id="pzHint">💡 Call Aarav (1 hint)</button><p id="pzHintT" class="mut"></p></div></div>`);
+  $("pzHint").onclick = () => { const Z = G.puz; if (!Z || Z.hint) return; Z.hint = 1; const k = Math.floor(rnd() * 4); $("pzHintT").textContent = `📱 Aarav: "${pick[k][0]}"... that is ${pick[k][1]}! Maths whiz, remember?`; $("pzHint").disabled = true; G.stats.hint = 1; };
   $("puzIn").querySelectorAll(".pk").forEach((el) => el.onclick = () => codeKey(el.dataset.k));
 }
 function codeKey(k) {
@@ -1730,7 +1752,7 @@ function startChase(onWin) {
 }
 function updateChase(dt) {
   const C = G.C, CH = G.CH; if (!C || C.done) return;
-  C.t += dt;
+  C.t += dt; C.calls = C.calls || {}; for (const [m, txt] of CHASE_CALLS) if (-C.z >= m && !C.calls[m]) { C.calls[m] = 1; toast(txt, 4.5); G.stats.calls = (G.stats.calls || 0) + 1; }
   if (pressed("left") || pressed("turnL")) C.lane = Math.max(0, C.lane - 1);
   if (pressed("right") || pressed("turnR")) C.lane = Math.min(2, C.lane + 1);
   if (JOY.on) { if (JOY.x < -0.6 && !C.jl) { C.lane = Math.max(0, C.lane - 1); C.jl = 1; } else if (JOY.x > 0.6 && !C.jl) { C.lane = Math.min(2, C.lane + 1); C.jl = 1; } else if (Math.abs(JOY.x) < 0.3) C.jl = 0; }
@@ -1866,18 +1888,36 @@ function chapterCard(i, go) {
   $("cgo").onclick = () => { hideScr(); go(); }; $("cmenu").onclick = () => menu();
 }
 function startChapter(i, noCard) {
+  if (i !== G.ch) G.chFails = 0;
   resetWorld(); hideScr(); G.ch = i; $("fail").hidden = true; setSky(0x9ecbf0);
-  const run = () => { G.mode = "play"; CH_SETUP[CHAPTERS[i].id](); G.chT = 0; };
+  const run = () => { G.mode = "play"; CH_SETUP[CHAPTERS[i].id](); spawnPages(CHAPTERS[i].id); G.chT = 0; };
   if (noCard) run(); else chapterCard(i, run);
 }
+// Hidden diary pages for this chapter (only the ones not found yet).
+function spawnPages(id) { (PAGES[id] || []).forEach(([cx, cy, text], i) => { const pid = id + ":" + i; if (G.save.pages && G.save.pages[pid]) return; const p = cellCenter(cx, cy); const it = dropItem("page", p.x, p.z); it.pid = pid; it.text = text; }); }
+function pagesFound(id) { return (PAGES[id] || []).filter((_, i) => G.save.pages && G.save.pages[id + ":" + i]).length; }
+function chapterResult(cur) {
+  const id = CHAPTERS[cur].id, st = G.stats, tot = (PAGES[id] || []).length, got = pagesFound(id), fails = G.chFails || 0;
+  return { ch: cur, time: Math.round(G.chT || 0), ko: st.ko || 0, takedowns: st.takedowns || 0, env: st.env || 0, fails, pagesGot: got, pagesTotal: tot, stars: 1 + (got === tot ? 1 : 0) + (fails === 0 ? 1 : 0) };
+}
+function resultsCard(r, next) {
+  const c = CHAPTERS[r.ch]; G.mode = "card";
+  showScr(`<p class="kicker">${c.name} complete</p><h1>${c.title}</h1><p class="stars">${"⭐".repeat(r.stars)}${"☆".repeat(3 - r.stars)}</p>
+  <div class="res"><p>⏱ Time <b>${Math.floor(r.time / 60)}:${String(r.time % 60).padStart(2, "0")}</b></p><p>👊 Knocked out <b>${r.ko}</b></p><p>🤫 Silent takedowns <b>${r.takedowns}</b></p><p>💥 Room tricks used <b>${r.env}</b></p><p>📔 Diary pages <b>${r.pagesGot}/${r.pagesTotal}</b></p><p>😵 Tries <b>${r.fails + 1}</b></p></div>
+  <p class="mut">⭐ finish · ⭐ find all diary pages · ⭐ no fails</p>
+  <div class="row"><button class="btn go" id="rnext">▶ Next chapter</button><button class="btn" id="ragain">↺ Play again</button><button class="btn alt" id="rmenu">Menu</button></div>`);
+  $("rnext").onclick = () => { hideScr(); next(); }; $("ragain").onclick = () => { G.chFails = 0; startChapter(r.ch); }; $("rmenu").onclick = () => menu();
+}
 function completeChapter() {
-  const next = G.ch + 1; G.save.unlocked = Math.max(G.save.unlocked, Math.min(next, CHAPTERS.length - 1)); writeSave();
-  if (next >= CHAPTERS.length) { credits(); return; }
-  startChapter(next);
+  const cur = G.ch, next = cur + 1; G.save.unlocked = Math.max(G.save.unlocked, Math.min(next, CHAPTERS.length - 1));
+  const r = chapterResult(cur); G.lastResult = r; G.save.stars = G.save.stars || {}; G.save.stars[cur] = Math.max(G.save.stars[cur] || 0, r.stars); writeSave(); G.chFails = 0;
+  const go = () => { if (next >= CHAPTERS.length) credits(); else startChapter(next); };
+  if (G.test || cur === 0 || next >= CHAPTERS.length) { go(); return; }
+  resetWorld(); resultsCard(r, go);
 }
 function failChapter(msg, retry, skip) {
   if (G.mode === "fail") return;
-  G.mode = "fail"; G.failMsg = msg; G.stats.fails = (G.stats.fails || 0) + 1;
+  G.mode = "fail"; G.failMsg = msg; G.stats.fails = (G.stats.fails || 0) + 1; G.chFails = (G.chFails || 0) + 1;
   G.retryFn = retry || (() => startChapter(G.ch, true)); G.skipFailFn = skip || G.skipFn || (() => completeChapter());
   $("failMsg").textContent = msg; $("fail").hidden = false;
 }
@@ -1917,7 +1957,7 @@ const CH_SETUP = {
         else { flash("#000", 1); after(0.3, () => completeChapter()); }
       }));
     };
-    say([["rish", "New city. New school. Sunrise Public School, Suryanagar. Maybe here I will make a friend.", "happy"], ["rish", "(Walk with W A S D or the arrows. Find the gold markers. Each one is a month of my year.)", "calm"]], next);
+    say([["letter", "Phone call from Papa: Beta, the army is sending me far away for one year. You and Maa go to Suryanagar. New city, new school. Be brave. Protect people, even the ones who hurt you.", "calm"], ["news", "News from two years ago: Major Rajveer Sharma caught the smuggler Marco Kade. Marco's brother, Viktor Kade, said: one day I will take something from Major Sharma.", "calm"], ["rish", "New city. New school. Sunrise Public School, Suryanagar. Maybe here I will make a friend.", "happy"], ["rish", "(Walk with W A S D or the arrows. Find the gold markers. Each one is a month of my year.)", "calm"]], next);
   },
 
   // ---------------- CHAPTER 1: LOCKED IN ----------------
@@ -1944,7 +1984,8 @@ const CH_SETUP = {
     G.onPick = (it) => {
       if (it.type !== "radio") return; G.flags.radio = 1;
       say([["kade_radio", "This is Kade. Bombs are set in the science lab. All hostages sit in the hall. Nobody leaves.", "calm"],
-           ["kade_radio", "And one more thing. One boy is missing from the hall. Find him. Bring him to me.", "angry"],
+           ["kade_radio", "And one more thing. One boy is missing from the hall. The soldier's son, Rishabh Sharma. He is the reason we came here. Find him. Bring him to me.", "angry"],
+           ["rish", "Me? They came because of me? Because of Papa?", "surprised"], ["rish", "Then this is my fight. Nobody else gets hurt because of me.", "stern"],
            ["rish", "Bombs. In Mr. Iyer's lab. If they go off, the whole school goes with them.", "surprised"],
            ["rish", "Nobody here likes me. But Papa said: protect people, even the ones who hurt you.", "stern"]], () => {
         setObj("Go to the <b>SCIENCE LAB</b> door", M(35, 11));
@@ -1977,7 +2018,7 @@ const CH_SETUP = {
     addHostage("iyer", 23, 8, Math.PI, () => {
       G.flags.iyer = 1;
       say([["iyer", "Rishabh? You came back for me? After what I did?", "surprised"], ["iyer", "I blamed you for the beaker. I did not even listen. I am sorry, beta.", "sad"],
-           ["rish", "Later, sir. Where is everyone?", "calm"], ["iyer", "In the hall. Their leader, Kade, has armed men there. Be careful, Rish.", "stern"]], done);
+           ["rish", "Later, sir. Where is everyone?", "calm"], ["iyer", "In the hall. Their leader, Kade, has armed men there. Be careful, Rish.", "stern"], ["iyer", "Wait. Take these smoke pellets from my chemistry cupboard. Throw one with F. The men will cough and see nothing.", "calm"], ["rish", "Thank you, sir. Science is asking why. And today science is helping!", "happy"]], () => { const p = G.npcs.iyer; dropItem("smoke", p.x - 1, p.z); G.flags.gotSmoke = 1; done(); });
     });
     G.onPick = (it) => { if (it.type === "manual") { G.P.inv.manual = true; toast("📘 Bomb manual! Each bomb shows its wires and serial. Follow the rules for that number of wires.", 6); setObj("Defuse the <b>2 bombs</b> (E). Read the manual!", b1); } };
     G.skipFn = () => { for (const e of T) knockDown(e); G.P.inv.manual = true; for (const b of [b1, b2]) if (!b.defused) skipBomb(b); };
@@ -1993,6 +2034,7 @@ const CH_SETUP = {
     const guard = spawnEnemy("guard", 17, 13, Math.PI / 2, { drops: ["duster"], id: "guard" });
     const GM = [[7, 9], [14, 9], [22, 9], [28, 6], [3, 6], [19, 5]].map(([cx, cy]) => spawnEnemy("gunman", cx, cy, Math.PI, { scan: 0.6 }));
     for (const [cx, cy, t] of [[4, 13, "book"], [27, 13, "medkit"], [16, 10, "duster"], [2, 11, "book"], [29, 11, "book"], [10, 7, "duster"], [24, 5, "book"]]) dropItem(t, M(cx, cy).x, M(cx, cy).z);
+    dropItem("smoke", M(9, 13).x, M(9, 13).z); dropItem("smoke", M(11, 13).x, M(11, 13).z);
     const captor = spawnNpc("thug", 15, 2, 0, null, { label: false }); giveGun(captor.g); captor.pose = "aim";
     const kabir = spawnNpc("kabir", 16, 2, 0, "tied");
     let freed = 0; const total = 9;
@@ -2015,7 +2057,7 @@ const CH_SETUP = {
     const rescueKabir = () => {
       const lp = G.L.props.find((p) => p.type === "light" && p.stage); if (lp && lp.alive) propHit(lp, null, "shot");
       after(0.45, () => { captor.pose = "down"; dropGun(captor.g); kabir.pose = null; kabir.goto = M(15, 4); G.flags.kabir = 1;
-        after(0.6, () => say([["kabir", "Rish? I locked you in the storeroom. And you... saved me?", "sad"], ["rish", "You are in my school, Kabir. That makes you my team.", "calm"], ["kabir", "I am sorry. I am so sorry.", "sad"]], () => { setObj(`Free everyone (E): <b>0/${total}</b>`); G.skipFn = () => { for (const h of G.hostages) if (!h.freed) h.zone.fn(); }; })); });
+        after(0.6, () => say([["kabir", "Rish? I locked you in the storeroom. And you... saved me?", "sad"], ["rish", "You are in my school, Kabir. That makes you my team.", "calm"], ["kabir", "I am sorry. I am so sorry.", "sad"], ["kabir", "Here, take my football. Best striker in school, remember? Throw it hard. GOAL!", "happy"]], () => { dropItem("ball", kabir.x, kabir.z + 1.2); setObj(`Free everyone (E): <b>0/${total}</b>`); G.skipFn = () => { for (const h of G.hostages) if (!h.freed) h.zone.fn(); }; })); });
     };
     const kadeScene = () => {
       const k = spawnNpc("kade", 28, 1, Math.PI, null); const v = spawnNpc("verma", 29, 1, Math.PI, "hurt"); const d = spawnNpc("diya", 27, 1, Math.PI, "hurt");
@@ -2038,7 +2080,7 @@ const CH_SETUP = {
   c4() {
     loadMap("roof"); setSky(0x8ec5ff); makePlayer(2, 3, Math.PI / 2); G.flags.cones = true;
     const T = [spawnEnemy("thug", 9, 2, Math.PI / 2, { scan: 1 }), spawnEnemy("thug", 17, 4, -Math.PI / 2, { scan: 1 }), spawnEnemy("thug", 25, 3, 0, { path: [[25, 1], [25, 5]] }), spawnEnemy("thug", 32, 2, -Math.PI / 2, { scan: 1 })];
-    dropItem("brick", M(8, 4).x, M(8, 4).z); dropItem("brick", M(26, 5).x, M(26, 5).z); dropItem("medkit", M(33, 5).x, M(33, 5).z); dropItem("medkit", M(38, 5).x, M(38, 5).z);
+    dropItem("brick", M(8, 4).x, M(8, 4).z); dropItem("ball", M(3, 1).x, M(3, 1).z); dropItem("smoke", M(16, 1).x, M(16, 1).z); dropItem("brick", M(26, 5).x, M(26, 5).z); dropItem("medkit", M(33, 5).x, M(33, 5).z); dropItem("medkit", M(38, 5).x, M(38, 5).z);
     const bull = spawnEnemy("bull", 40, 3, -Math.PI / 2, { alert: true, active: false, id: "bull" });
     addHostage("verma", 42, 1, -Math.PI / 2, () => {
       say([["verma", "Rishabh! Thank God you are safe!", "surprised"], ["verma", "Listen. Kade took Diya down the back stairs. A black van. He said something about a railway yard.", "stern"],
@@ -2053,7 +2095,7 @@ const CH_SETUP = {
     });
     G.onKO = (e) => { if (e === bull) { setObj("Untie the <b>Principal</b> (E)", M(42, 1)); G.skipFn = () => G.hostages[0].zone.fn(); } };
     G.skipFn = () => { const p = M(37, 3); G.P.x = p.x; G.P.z = p.z; G.P.safe = { x: p.x, z: p.z }; for (const e of T) knockDown(e); };
-    say([["rish", "(The roof. The gaps between the blocks are wide. Four metres. I must run and jump.)", "thinking"], ["rish", "(And that pipe is low. If I run and press C, I can slide under it.)", "thinking"]],
+    say([["rish", "(The roof. The gaps between the blocks are wide. Four metres. I must run and jump.)", "thinking"], ["radio", "Rish, it's Rohan! I am on Mr. Khan's phone. I know this roof from the school map. Four gaps and one low pipe. Run before every jump!", "calm"], ["rish", "Rohan, you are the map expert. Thank you.", "happy"], ["rish", "(And that pipe is low. If I run and press C, I can slide under it.)", "thinking"]],
       () => { setObj("Cross the roof to the <b>Principal</b>. <b>Shift</b> run + <b>Space</b> jump · run + <b>C</b> slide", M(41, 3)); toast("Tip: hold Shift to run, then press Space at the edge.", 5); });
   },
 
@@ -2192,8 +2234,8 @@ function menu() {
   showScr(`<h1 class="logo">RISH HERO</h1><p class="sub">RishSchoolDays · Game 3 · <b>Just live it!</b></p>
   <p class="mut">One lonely year at Sunrise Public School. One day of fear. One hero.</p>
   <div class="grid"><button class="btn go wide" id="m-play">▶ ${u > 0 ? `Continue: ${c.name}, ${c.title}` : "Start the story"}</button>
-  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button></div>`);
-  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about;
+  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button><button class="btn wide" id="m-diary">📔 Rish's Diary (${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL})</button></div>`);
+  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about; $("m-diary").onclick = diary;
 }
 function chapters() {
   showScr(`<h2>Chapters</h2><div class="chl">${CHAPTERS.map((c, i) => `<button class="btn ch" data-i="${i}" ${i > G.save.unlocked ? "disabled" : ""}><b>${c.name}</b> ${c.title} ${c.gun ? "🔫" : ""}${i > G.save.unlocked ? " 🔒" : ""}</button>`).join("")}</div><p class="mut">Stuck? Every chapter has a ⏭ Skip button.</p><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
@@ -2224,10 +2266,15 @@ function about() {
   <p class="mut">The Black Viper gang and every person in this story are made up. Defeated enemies are knocked out and arrested. No blood.</p><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
   $("b").onclick = menu;
 }
+function diary() {
+  const rows = Object.entries(PAGES).map(([id, list]) => { const c = CHAPTERS.find((q) => q.id === id); return `<h3>${c.name}: ${c.title}</h3>` + list.map((p, i) => (G.save.pages && G.save.pages[id + ":" + i]) ? `<p class="dp">📔 ${p[2]}</p>` : `<p class="dp mut">🔒 A page is still hidden in this chapter.</p>`).join(""); }).join("");
+  showScr(`<h2>📔 Rish's Diary</h2><p class="mut">Rish wrote these pages during his lonely year. Find them hidden in the chapters.</p><div class="diary">${rows}</div><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
+  $("b").onclick = menu;
+}
 function credits() {
   resetWorld(); G.mode = "menu"; G.save.unlocked = CHAPTERS.length - 1; writeSave();
-  showScr(`<h1 class="logo">THE END</h1><p class="sub">Rish Hero · RishSchoolDays Game 3</p><p>A lonely year. One brave day. A whole school of new friends.</p><p><b>Created by Rishabh Sharma</b>, age 9.</p><p class="sub"><b>Just live it!</b></p><div class="row"><button class="btn go" id="b">Menu</button></div>`);
-  $("b").onclick = menu; G.stats.credits = 1;
+  showScr(`<h1 class="logo">THE END</h1><p class="sub">Rish Hero · RishSchoolDays Game 3</p><p>A lonely year. One brave day. A whole school of new friends.</p><p><b>Created by Rishabh Sharma</b>, age 9.</p><p class="sub"><b>Just live it!</b></p><p class="mut">📔 Diary pages found: ${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL}</p><div class="row"><button class="btn go" id="again">↺ Play again</button><button class="btn" id="dia">📔 Diary</button><button class="btn alt" id="b">Menu</button></div>`);
+  $("b").onclick = menu; $("again").onclick = () => { G.chFails = 0; startChapter(0); }; $("dia").onclick = diary; G.stats.credits = 1;
 }
 function togglePause() {
   if (G.mode === "pause") { hideScr(); G.mode = G.pauseBack; return; }
@@ -2276,7 +2323,7 @@ function boot() {
   window.__rh = {
     G, step: (dt = 1 / 60, n = 1) => { for (let i = 0; i < n; i++) step(dt); }, startChapter, completeChapter, skipNow, skipDialog, nextLine, retryFail, skipFail,
     keyDown, keyUp, safeWire, cutWire, codeKey, openCode, knockDown, hurtEnemy, propHit, fireGun, autoAim, CHAPTERS, MEMORIES, ENDING, CAST, MAPS, RIDDLES,
-    cell: (cx, cy) => cellCenter(cx, cy), GUIDE, cellAt, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
+    cell: (cx, cy) => cellCenter(cx, cy), GUIDE, PAGES, PAGE_TOTAL, chapterResult, resultsCard, credits, diary, cellAt, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
     tp: (cx, cy) => { const p = cellCenter(cx, cy); G.P.x = p.x; G.P.z = p.z; G.P.safe = { x: p.x, z: p.z }; },
   };
 }

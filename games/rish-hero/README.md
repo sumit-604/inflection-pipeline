@@ -4,7 +4,7 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A 3D action story game in one HTML file (Three.js). It runs on a computer
-and on a phone. Version label: **Rish Hero v2** (bottom right).
+and on a phone. Version label: **Rish Hero v3** (bottom right).
 
 ## The story
 
@@ -60,6 +60,9 @@ knocked out and arrested. No blood.
 - Chapter 6 only: F or click shoots (hold F for the machine gun), R reload,
   X switch guns. The red laser shows the target; a gold ring means the room
   can do the work.
+- **Finding the way:** a gold arrow at Rish's feet points the way to the
+  next gold marker, through the doors. The school has a MAIN ENTRANCE from
+  the campus and a SIDE DOOR on the left.
 - **Skip:** tap ⏭ Skip twice to skip a hard part (fight, bomb, code,
   chase). Talks have their own Skip. The fail screen has "Skip this part".
   The pause menu has "Skip this chapter".
@@ -68,7 +71,7 @@ knocked out and arrested. No blood.
 
 `tests/regress.cjs` plays the whole game in Chromium with Playwright
 (swiftshader WebGL): real walking, stealth, fights, quick moves, bombs,
-parkour, the chase, guns and the code, plus phone controls. 62 checks.
+parkour, the chase, guns and the code, doors, the guide arrow and the E prompts, plus phone controls. 65 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

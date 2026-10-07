@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v2", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v2" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v3", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v3" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -111,6 +111,13 @@ const HELPERS = () => {
     o.ch = G.ch; o.mode = G.mode; o.unlocked = G.save.unlocked; return o; });
   ok("B1 Prologue: Rish walks to all 7 month markers (real walking), each scene plays, Chapter 1 starts", r.months.length === 7 && r.months.every(Boolean) && r.ch === 1 && r.unlocked >= 1 && r.cast >= 14, r);
   ok("B2 Prologue has no enemies and no gun", r.enemies === 0 && !r.gun, r);
+  r = await E(() => { const o = { dead: [] }; for (const name of Object.keys(R.MAPS)) { const rows = R.MAPS[name].replace(/^\n/, "").split("\n"); const W = Math.max(...rows.map((x) => x.length)); const g = rows.map((x) => x.padEnd(W, "#")); const at = (x, y) => (g[y] && g[y][x]) || "#"; const walk = (c) => !"#GgdctsBorkxFpK".includes(c) || c === "k";
+      for (let y = 0; y < g.length; y++) for (let x = 0; x < W; x++) if (g[y][x] === "D") { const ns = walk(at(x, y - 1)) && walk(at(x, y + 1)), ew = walk(at(x - 1, y)) && walk(at(x + 1, y)); if (!ns && !ew) o.dead.push(name + ":" + x + "," + y); } }
+    begin(0); R.skipDialog(); at(29, 15); const w = walkTo(29, 9); o.main = w.ok && w.steps < 60 * 6; return o; });
+  ok("B3 every door leads somewhere (no door into a wall); the main entrance goes from the campus straight to the corridor", r.dead.length === 0 && r.main, r);
+  r = await E(() => { const o = {}; begin(0); R.skipDialog(); G.marker = R.cell(28, 8); at(21, 18); play(0.1); o.shown = R.GUIDE.mesh.visible; let n = 0; R.keyDown("KeyW");
+    while (n++ < 60 * 40) { const d = R.GUIDE.dir; if (!d) break; G.camYaw = Math.atan2(d.x, d.z); R.step(1 / 60); } R.keyUp("KeyW"); o.secs = Math.round(n / 60); o.near = Math.hypot(G.P.x - R.cell(28, 8).x, G.P.z - R.cell(28, 8).z) < 6; G.marker = null; return o; });
+  ok("B4 a gold arrow at Rish's feet shows the way: following only the arrow reaches the October marker inside the building", r.shown && r.near, r);
 
   // ---------------- C. Chapter 1: Locked In ----------------
   r = await E(() => { begin(1); const o = {}; o.locked = R.cellAt(40, 7) === "k"; let n = 0; while (G.mode !== "qte" && n++ < 40) play(0.25); o.qte = G.mode === "qte" && G.qte.type === "mash" && G.qte.keys[0] === "kick";
@@ -136,9 +143,11 @@ const HELPERS = () => {
   // ---------------- D. Chapter 2: The Science Lab ----------------
   r = await E(() => { const o = {}; play(0.5); o.ch = G.ch; o.noGun = !G.P.gun; const b = G.bombs[0]; G.P.x = b.x - 1.2; G.P.z = b.z; sim(0.1); o.lbl = document.getElementById("prompt").textContent; tap("KeyE"); o.needManual = G.mode === "dialog" && /manual/.test(document.getElementById("dlgText").textContent); talk(); return o; });
   ok("D1 Chapter 2 has no gun; a bomb cannot be cut without the manual", r.ch === 2 && r.noGun && /Defuse/.test(r.lbl) && r.needManual, r);
-  r = await E(() => { god(); const o = {}; const c0 = G.stats.counters || 0; const cap = G.enemies.find((e) => e.id === "captain"); let n = 0; while (alive().length && n++ < 10) { const e = alive().sort((a, b) => (a === cap) - (b === cap))[0]; brawl(e); }
+  r = await E(() => { const o = { spots: [] }; for (const b of G.bombs) { const c = { cx: Math.floor(b.x / 2), cy: Math.floor(b.z / 2) }; for (const [ox, oy] of [[-1, 0], [1, 0], [0, -1], [0, 1]]) { const ch = R.cellAt(c.cx + ox, c.cy + oy); if (R.solidFor(ch, {})) continue; at(c.cx + ox, c.cy + oy); sim(0.1); o.spots.push(/Defuse/.test(document.getElementById("prompt").textContent) && b.tag.visible); } } return o; });
+  ok("D1b standing in any square next to a bomb shows 'E Defuse the bomb', and a red sign floats over it", r.spots.length >= 6 && r.spots.every(Boolean), r);
+  r = await E(() => { god(); const o = {}; const c0 = G.stats.counters || 0; { const e = alive().find((q) => q.kind === "thug"); G.P.x = e.x + 1.2; G.P.z = e.z; G.P.st = "idle"; R.hurtEnemy(e, 1, "kick"); G.P.x = e.x + 1.2; G.P.z = e.z; e.st = "windup"; e.t = 0; e.wind = 0.6; e.yaw = Math.atan2(G.P.x - e.x, G.P.z - e.z); face(e.x, e.z); R.step(1 / 60, 24); R.keyDown("KeyL"); let k = 0; while (e.st === "windup" && k++ < 60) R.step(1 / 60); R.step(1 / 60, 2); R.keyUp("KeyL"); o.counterStun = e.st === "stun"; } const cap = G.enemies.find((e) => e.id === "captain"); let n = 0; while (alive().length && n++ < 10) { const e = alive().sort((a, b) => (a === cap) - (b === cap))[0]; brawl(e); }
     o.allDown = alive().length === 0; o.counters = (G.stats.counters || 0) - c0; const man = G.items.find((i) => i.type === "manual"); o.manualDropped = !!man; if (man) { G.P.x = man.x; G.P.z = man.z + 0.5; sim(0.1); tap("KeyE"); } o.manual = !!G.P.inv.manual; mortal(); return o; });
-  ok("D2 5 men beaten by hand; a block at the right moment gives a COUNTER", r.allDown && r.counters >= 1, r);
+  ok("D2 5 men beaten by hand; a block at the right moment gives a COUNTER", r.allDown && r.counters >= 1 && r.counterStun, r);
   ok("D3 the captain drops the bomb manual; E picks it up", r.manualDropped && r.manual, r);
   r = await E(() => { const o = {}; const b = G.bombs[0]; G.P.x = b.x - 1.2; G.P.z = b.z; sim(0.1); tap("KeyE"); o.open = G.mode === "puzzle"; o.manualShown = /Bomb Manual/.test(document.getElementById("puzIn").textContent) && document.querySelectorAll(".mh.on").length === 1; o.wires = document.querySelectorAll(".wire").length;
     const safe = R.safeWire(b.w, b.serial); const wrong = (safe + 1) % b.n; document.querySelector(`.wire[data-i="${wrong}"]`).click(); sim(1); o.boom = G.mode === "fail" && /BOOM/.test(document.getElementById("failMsg").textContent) && !document.getElementById("fail").hidden; o.booms = G.stats.booms;

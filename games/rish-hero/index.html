@@ -115,7 +115,7 @@ body.touch #dlg { bottom: 170px; }
 <script type="module">
 import * as THREE from "three";
 // ===================== DATA: maps, people, story, puzzles =====================
-const VERSION = "Rish Hero v2";
+const VERSION = "Rish Hero v3";
 const CS = 2; // one map cell is 2 metres
 
 // Map legend
@@ -130,16 +130,16 @@ const MAPS = {
 #,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,###
 #,,o,,######################################
 #,,,,,#.....#.....#......#......#....#...###
-#,,,,,#.dd..#.dd..#..ss..#..tt..#.ss.#.r.###
-#,,,,,#.dd..#.dd..#..ss..#..tt..#.ss.#.r.###
-#,,,,,#.dd..#.dd..#......#..tt..#....#...###
+#,,,,,#..dd.#..dd.#..ss..#...tt.#.ss.#.r.###
+#,,,,,#..dd.#..dd.#..ss..#...tt.#.ss.#.r.###
+#,,,,,#..dd.#..dd.#......#...tt.#....#...###
 #,,,,,##D#####D#####D#######D#######D###k###
 #,,,,,#__________________________________###
 #,,,,,D__________________________________###
-#,,,,,##D#####D######D#############D########
-#,,,,,#.....#.....#..........#.......#,,,###
-#,,o,,#.....#.dd..#..........#..ss...#,,,###
-#,,,,,#..s..#.dd..#..........#.......#,,,###
+#,,,,,##D#####D######D#######_#####D########
+#,,,,,#.....#.....#.........#_#......#,,,###
+#,,o,,#.....#.dd..#.........#_#.ss...#,,,###
+#,,,,,#..s..#.dd..#.........#_#......#,,,###
 #,,,,,#######################D########,,,###
 #,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,###
 #,,o,,,,,,,,,,,,,,,,,,F,,,,,,,,,,,,,,o,,,###
@@ -1325,7 +1325,7 @@ function clickShoot(sx, sy) {
 function floorChar() { return G.L.name === "yard" ? "," : "."; }
 function propHit(pr, point, how) {
   if (!pr.alive) return;
-  const L = G.L;
+  const L = G.L; GUIDE.key = "";
   if (pr.type === "crate") { pr.hp--; burst(pr.x, 0.9, pr.z, 0xb08355, 4, 2, 0.5, 0.8); if (pr.hp <= 0) { pr.alive = false; L.group.remove(pr.mesh); L.grid[pr.cy][pr.cx] = floorChar(); burst(pr.x, 0.8, pr.z, 0xb08355, 16, 4, 1.0, 1.4); sfx("wood"); envUsed("crate"); } else sfx("wood"); return; }
   if (pr.type === "window" || pr.type === "case") {
     pr.alive = false; sfx("glass"); envUsed("glass");
@@ -1442,8 +1442,8 @@ function currentAction() {
   if (!G.P || G.P.st === "down") return null;
   const td = takedownTarget(); if (td) return { label: td.st === "stun" ? "Knock out" : "Silent takedown", fn: () => doTakedown(td) };
   const P = G.P;
-  for (const z of G.zones) { if (z.off || (z.ok && !z.ok())) continue; const zx = z.get ? z.get().x : z.x, zz = z.get ? z.get().z : z.z; if (Math.hypot(zx - P.x, zz - P.z) < (z.r || 1.6)) return z; }
-  for (const it of G.items) { if (ITEM_DEF[it.type].auto) continue; if (Math.hypot(it.x - P.x, it.z - P.z) < 1.5) return { label: it.label, fn: () => pickUp(it) }; }
+  for (const z of G.zones) { if (z.off || (z.ok && !z.ok())) continue; const zx = z.get ? z.get().x : z.x, zz = z.get ? z.get().z : z.z; if (Math.hypot(zx - P.x, zz - P.z) < (z.r || 2.2)) return z; }
+  for (const it of G.items) { if (ITEM_DEF[it.type].auto) continue; if (Math.hypot(it.x - P.x, it.z - P.z) < 2.0) return { label: it.label, fn: () => pickUp(it) }; }
   return null;
 }
 function doAction() { const a = currentAction(); if (a) a.fn(); }
@@ -1526,7 +1526,7 @@ function addHostage(id, cx, cy, yaw, onFree, opts = {}) {
   const n = spawnNpc(id, cx, cy, yaw, "tied", opts);
   const h = { id, n, g: n.g, get x() { return n.x; }, get z() { return n.z; }, freed: false };
   G.hostages.push(h);
-  h.zone = addZone({ label: `Untie ${CAST[id].name}`, get: () => n, r: 1.7, ok: () => !h.freed && (!opts.ok || opts.ok()), fn: () => { h.freed = true; h.zone.off = true; n.pose = null; setMood(n.g, "happy", 5); n.faceP = true; sfx("heal"); if (onFree) onFree(h); } });
+  h.zone = addZone({ label: `Untie ${CAST[id].name}`, get: () => n, r: 2.3, ok: () => !h.freed && (!opts.ok || opts.ok()), fn: () => { h.freed = true; h.zone.off = true; n.pose = null; setMood(n.g, "happy", 5); n.faceP = true; sfx("heal"); if (onFree) onFree(h); } });
   return h;
 }
 
@@ -1598,7 +1598,8 @@ function addBomb(cx, cy, wires, onDefuse) {
   const led = new THREE.Mesh(new THREE.SphereGeometry(0.07, 8, 6), new THREE.MeshBasicMaterial({ color: 0xff0000 })); led.position.set(0.25, 0.5, 0.28); m.add(led);
   m.position.set(x, 0, z); G.L.group.add(m);
   const b = { x, z, cx, cy, n: wires, mesh: m, led, defused: false, onDefuse }; Object.assign(b, genWires(wires));
-  b.zone = addZone({ label: "Defuse the bomb", x, z, r: 1.8, ok: () => !b.defused, fn: () => openBomb(b) });
+  const tag = makeTextSprite("E: Defuse the bomb", { size: 40, scale: 0.6, bg: "rgba(193,18,31,0.92)", color: "#fff" }); tag.position.set(x, 1.6, z); tag.visible = false; G.L.group.add(tag); b.tag = tag;
+  b.zone = addZone({ label: "Defuse the bomb", x, z, r: 2.7, ok: () => !b.defused, fn: () => openBomb(b) });
   G.bombs.push(b); return b;
 }
 function openBomb(b) {
@@ -1795,7 +1796,33 @@ function makeMarker() {
   const cone = new THREE.Mesh(new THREE.ConeGeometry(0.35, 0.7, 4), new THREE.MeshBasicMaterial({ color: 0xffd60a })); cone.rotation.x = Math.PI; cone.position.y = 3.0; g.add(cone); g.userData.cone = cone;
   scene.add(g); return g;
 }
+// A gold arrow at Rish's feet shows the way to the marker, around walls and through doors.
+const GUIDE = { mesh: null, key: "", d: null };
+function updateGuide() {
+  if (!GUIDE.mesh) { GUIDE.mesh = new THREE.Group(); const c = new THREE.Mesh(new THREE.ConeGeometry(0.45, 1.2, 3), new THREE.MeshBasicMaterial({ color: 0xffd60a, transparent: true, opacity: 0.9 })); c.rotation.x = Math.PI / 2; c.scale.y = 1; GUIDE.mesh.add(c); scene.add(GUIDE.mesh); }
+  const m = G.marker, P = G.P, L = G.L; GUIDE.mesh.visible = false; GUIDE.dir = null;
+  if (!m || !P || !L || G.mode !== "play") return;
+  const mc = toCell(m.x, m.z), key = L.name + ":" + mc.cx + "," + mc.cy;
+  if (key !== GUIDE.key || !GUIDE.d) {
+    GUIDE.key = key; const d = new Int16Array(L.W * L.H).fill(-1), q = [];
+    if (mc.cx >= 0 && mc.cy >= 0 && mc.cx < L.W && mc.cy < L.H) { d[mc.cy * L.W + mc.cx] = 0; q.push(mc.cx, mc.cy); }
+    for (let i = 0; i < q.length; i += 2) { const x = q[i], y = q[i + 1], v = d[y * L.W + x]; for (const [ox, oy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const nx = x + ox, ny = y + oy; if (nx < 0 || ny < 0 || nx >= L.W || ny >= L.H || d[ny * L.W + nx] >= 0) continue; const ch = L.grid[ny][nx]; if (ch !== " " && solidFor(ch, { low: true })) continue; d[ny * L.W + nx] = v + 1; q.push(nx, ny); } }
+    GUIDE.d = d;
+  }
+  const pc = toCell(P.x, P.z), here = GUIDE.d[pc.cy * L.W + pc.cx]; if (here < 3) return;
+  let best = null, bv = here;
+  for (const [ox, oy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const nx = pc.cx + ox, ny = pc.cy + oy; if (nx < 0 || ny < 0 || nx >= L.W || ny >= L.H) continue; const v = GUIDE.d[ny * L.W + nx]; if (v >= 0 && v < bv) { bv = v; best = [nx, ny]; } }
+  if (!best) return;
+  // aim two steps ahead for a smoother arrow
+  let c2 = best; for (const [ox, oy] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const nx = best[0] + ox, ny = best[1] + oy; if (nx < 0 || ny < 0 || nx >= L.W || ny >= L.H) continue; const v = GUIDE.d[ny * L.W + nx]; if (v >= 0 && v < bv) { bv = v; c2 = [nx, ny]; } }
+  const t = cellCenter(c2[0], c2[1]), dx = t.x - P.x, dz = t.z - P.z, l = Math.hypot(dx, dz) || 1;
+  GUIDE.dir = { x: dx / l, z: dz / l };
+  GUIDE.mesh.visible = true; GUIDE.mesh.position.set(P.x + dx / l * 2.1, P.y + 0.15, P.z + dz / l * 2.1); GUIDE.mesh.rotation.y = Math.atan2(dx, dz);
+  GUIDE.mesh.children[0].position.z = Math.sin(G.t * 5) * 0.15;
+}
 function updateMarker(dt) {
+  updateGuide();
+  for (const b of G.bombs) { if (b.tag) b.tag.visible = !b.defused && G.P && Math.hypot(b.x - G.P.x, b.z - G.P.z) < 8; if (b.led && !b.defused) b.led.visible = Math.sin(G.t * 10) > 0; else if (b.led) b.led.visible = true; }
   if (!markerMesh) markerMesh = makeMarker();
   const m = G.marker; markerMesh.visible = !!m && (G.mode === "play");
   if (m) { markerMesh.position.set(m.x, Math.max(0, floorAt(m.x, m.z)), m.z); markerMesh.userData.cone.position.y = 3 + Math.sin(G.t * 4) * 0.25; markerMesh.rotation.y += dt; }
@@ -1812,7 +1839,7 @@ function resetWorld() {
   if (G.P) { scene.remove(G.P.g); if (G.P.carry) scene.remove(G.P.carry.mesh); } G.P = null;
   if (G.L) scene.remove(G.L.group); G.L = null;
   endChase(); fxClear();
-  G.hostages = []; G.zones = []; G.triggers = []; G.bombs = []; G.clouds = []; G.jets = []; G.later = []; G.flags = {}; G.marker = null;
+  G.hostages = []; G.zones = []; G.triggers = []; G.bombs = []; G.clouds = []; G.jets = []; G.later = []; G.flags = {}; G.marker = null; GUIDE.key = "";
   G.onKO = null; G.onPick = null; G.onBossPhase = null; G.skipFn = null; G.shake = 0; FLOW.d = null; CAM.init = false; runToggle = false;
   G.stats = { ko: 0, shots: 0, env: 0 };
   setObj(""); $("toast").style.display = "none"; $("center").style.display = "none"; G.toastT = G.centerT = 0;
@@ -1829,7 +1856,7 @@ function gateSign(L) {
 function schoolSigns(L) {
   gateSign(L);
   addSign(L, "Class 5A", 9, 7, 3.6, 0.6); addSign(L, "Class 5B", 14, 7, 3.6, 0.6); addSign(L, "Library", 20, 7, 3.6, 0.6); addSign(L, "Staff Room", 28, 7, 3.6, 0.6); addSign(L, "Computer Lab", 34, 7, 3.6, 0.6); addSign(L, "Storeroom", 40, 7, 3.6, 0.6);
-  addSign(L, "PRINCIPAL", 8, 10, 3.6, 0.6); addSign(L, "Class 4A", 14, 10, 3.6, 0.6); addSign(L, "Music Room", 21, 10, 3.6, 0.6); addSign(L, "SCIENCE LAB", 35, 10, 3.6, 0.7); addSign(L, "Suryanagar", 3, 1, 2.6, 0.6);
+  addSign(L, "PRINCIPAL", 8, 10, 3.6, 0.6); addSign(L, "Class 4A", 14, 10, 3.6, 0.6); addSign(L, "Music Room", 21, 10, 3.6, 0.6); addSign(L, "SCIENCE LAB", 35, 10, 3.6, 0.7); addSign(L, "Suryanagar", 3, 1, 2.6, 0.6); addSign(L, "MAIN ENTRANCE", 29, 14, 3.6, 0.7); addSign(L, "SIDE DOOR", 6, 9, 3.6, 0.6);
 }
 function chapterCard(i, go) {
   const c = CHAPTERS[i];
@@ -1913,7 +1940,7 @@ const CH_SETUP = {
       });
     });
     addTrigger(9, 12, 3.2, () => { if (!G.flags.radio) setObj(T[3].st === "down" ? "Use the phone (E). Take the guard's radio." : "Knock out the office guard. Then use the phone.", M(9, 12)); });
-    addZone({ label: "Use the phone", get: () => ({ x: M(9, 13).x, z: M(9, 13).z - 0.6 }), r: 1.9, ok: () => !G.flags.phone && T[3].st === "down", fn: () => { G.flags.phone = 1; say([["rish", "Hello? Police? Hello?", "surprised"], ["rish", "Dead. They cut the phone line. The guard had a radio.", "thinking"]]); } });
+    addZone({ label: "Use the phone", get: () => ({ x: M(9, 13).x, z: M(9, 13).z - 0.6 }), r: 2.4, ok: () => !G.flags.phone && T[3].st === "down", fn: () => { G.flags.phone = 1; say([["rish", "Hello? Police? Hello?", "surprised"], ["rish", "Dead. They cut the phone line. The guard had a radio.", "thinking"]]); } });
     G.onPick = (it) => {
       if (it.type !== "radio") return; G.flags.radio = 1;
       say([["kade_radio", "This is Kade. Bombs are set in the science lab. All hostages sit in the hall. Nobody leaves.", "calm"],
@@ -2249,7 +2276,7 @@ function boot() {
   window.__rh = {
     G, step: (dt = 1 / 60, n = 1) => { for (let i = 0; i < n; i++) step(dt); }, startChapter, completeChapter, skipNow, skipDialog, nextLine, retryFail, skipFail,
     keyDown, keyUp, safeWire, cutWire, codeKey, openCode, knockDown, hurtEnemy, propHit, fireGun, autoAim, CHAPTERS, MEMORIES, ENDING, CAST, MAPS, RIDDLES,
-    cell: (cx, cy) => cellCenter(cx, cy), cellAt, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
+    cell: (cx, cy) => cellCenter(cx, cy), GUIDE, cellAt, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
     tp: (cx, cy) => { const p = cellCenter(cx, cy); G.P.x = p.x; G.P.z = p.z; G.P.safe = { x: p.x, z: p.z }; },
   };
 }

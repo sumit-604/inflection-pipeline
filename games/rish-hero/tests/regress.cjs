@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v5", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v5" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v6", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v6" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -174,8 +174,9 @@ const HELPERS = () => {
   ok("E5 a kick shatters the glass trophy case; the rest of the gunmen are beaten by hand", r.glass && r.clear && /Kabir/.test(r.obj), r);
   r = await E(() => { const o = {}; walkTo(15, 5); let n = 0; while (G.mode !== "qte" && n++ < 50) play(0.2); o.qte = G.mode === "qte" && G.qte.keys.join() === "fire,act,kick"; tap("KeyJ"); sim(2); n = 0; while (G.mode !== "qte" && n++ < 50) play(0.2); o.retry = G.mode === "qte"; solveQte(); play(3); o.kabir = !!G.flags.kabir; o.lightFell = (G.stats.envKinds || {}).light >= 2; return o; });
   ok("E6 save Kabir: a 3 key quick move (F, E, K); a wrong key = try again; then Kabir is free", r.qte && r.retry && r.kabir && r.lightFell, r);
-  r = await E(() => { const o = { lines: [] }; for (const h of G.hostages.slice()) { if (h.freed) continue; G.P.x = h.x + 0.9; G.P.z = h.z + 0.6; sim(0.1); tap("KeyE"); if (G.mode === "dialog") { o.lines.push(G.dlg.lines.map((l) => l[1]).join(" ")); talk(); } play(0.2); }
+  r = await E(() => { const o = { lines: [] }; sim(0.1); const m0 = G.markerNow; o.marker = !!m0 && G.hostages.some((h) => h === m0 && !h.freed) && R.GUIDE.mesh.visible !== undefined; for (const h of G.hostages.slice()) { if (h.freed) continue; G.P.x = h.x + 0.9; G.P.z = h.z + 0.6; sim(0.1); tap("KeyE"); if (G.mode === "dialog") { o.lines.push(G.dlg.lines.map((l) => l[1]).join(" ")); talk(); } play(0.2); }
     o.freed = G.hostages.filter((h) => h.freed).length; let kk = 0; while (G.mode !== "dialog" && kk++ < 400) R.step(1 / 60); o.kade = G.mode === "dialog" && G.dlg.lines.some((l) => l[0] === "kade"); o.kadeTxt = o.kade && G.dlg.lines.map((l) => l[1]).join(" "); talk(); o.noGun = !G.P.gun; walkTo(29, 2); play(0.3); R.tp(29, 1); play(0.5); o.ch = G.ch; return o; });
+  ok("E6b after Kabir is saved, the gold marker points to the nearest person to untie", r.marker, r);
   ok("E7 all 9 hostages untied; Coach Vikram says sorry", r.freed === 9 && r.lines.some((l) => /Coach|bench/.test(l) && /sorry/.test(l)), r);
   ok("E8 Kade takes the Principal and Diya; the roof opens Chapter 4; still no gun", r.kade && /roof/.test(r.kadeTxt) && r.noGun && r.ch === 4, r);
   await shot("04-ch4-roof");
@@ -304,6 +305,20 @@ const HELPERS = () => {
     return o; });
   ok("X5 a precise story base in the menu: who, why (Marco Kade), Kade's plan (12:00 noon), the heart, and a timeline", r.story, r);
   ok("X6 every chapter has a time and a goal; the HUD clock runs (Annual Day 9:35 AM in the lab after 100 s)", /9:10 AM\|1/.test(r.times) && /11:40 AM\|1/.test(r.times) && /9:35 AM/.test(r.clock), r);
+
+  // ---------------- L. The first page: name, age, father's job (v6) ----------------
+  r = await E(() => { const o = {}; R.login(() => R.menu()); const card = document.getElementById("card"); o.fields = card.querySelectorAll("input, select").length; o.jobs = card.querySelectorAll("#lgJob option").length;
+    document.getElementById("lgName").value = ""; document.getElementById("lgGo").click(); o.err1 = /name/.test(document.getElementById("lgErr").textContent);
+    document.getElementById("lgName").value = "aryan kapoor"; document.getElementById("lgAge").value = "40"; document.getElementById("lgGo").click(); o.err2 = /age/.test(document.getElementById("lgErr").textContent);
+    document.getElementById("lgAge").value = "9"; document.getElementById("lgJob").value = "doctor"; document.getElementById("lgGo").click(); o.saved = JSON.stringify(G.save.profile); o.menuWho = /Aryan/.test(document.getElementById("card").textContent) && /Doctor/.test(document.getElementById("card").textContent);
+    const P = R.personalize; o.t1 = P("My name is Rish. My father is in the army. We move a lot."); o.t2 = P("And one more thing. One boy is missing from the hall. The soldier's son, Rishabh Sharma."); o.t3 = P("BREAKING NEWS. A 10 year old boy from Suryanagar. His name is Rishabh Sharma."); o.t4 = P("Dear Papa, today I turned 10."); o.t5 = P("I am a soldier's son.");
+    document.getElementById("m-story").click(); o.story = document.getElementById("card").textContent; R.menu(); document.getElementById("m-about").click(); o.credit = /Rishabh Sharma/.test(document.getElementById("card").textContent) && /9 years old/.test(document.getElementById("card").textContent); document.getElementById("b").click();
+    R.startChapter(0, true); sim(0.2); o.firstLine = G.mode === "dialog" ? document.getElementById("dlgText").textContent : ""; R.skipDialog();
+    G.save.profile = { name: "Rish", age: 10, job: "army" }; R.menu(); return o; });
+  ok("L1 the first page asks only 3 things: name, age, father's job (11 jobs to pick)", r.fields === 3 && r.jobs === 11, r);
+  ok("L2 it checks the answers: a name is needed, the age must be 5 to 16; then it saves and opens the menu", r.err1 && r.err2 && r.saved === '{"name":"Aryan Kapoor","age":9,"job":"doctor"}' && r.menuWho, r);
+  ok("L3 the story uses the player: name, age and father's job in every line", r.t1 === "My name is Aryan. My father is a doctor. He makes sick people well." && /doctor's son, Aryan Kapoor/.test(r.t2) && /A 9 year old boy/.test(r.t3) && /His name is Aryan Kapoor/.test(r.t3) && /turned 9/.test(r.t4) && r.t5 === "I am a doctor's son.", r);
+  ok("L4 the Story page and the first scene follow the father's job (Dr. Rajveer Kapoor); the game credit stays Rishabh Sharma", /Dr\. Rajveer Kapoor/.test(r.story) && /Aryan \(Aryan Kapoor\) is 9/.test(r.story) && /a big hospital far away needs me/.test(r.firstLine) && r.credit, r);
 
   // ---------------- V. Pictures ----------------
   for (const [i, name] of [[0, "08-prologue"], [1, "09-ch1"], [3, "10-ch3-hall"], [6, "11-ch6"]]) { await E((i) => { R.startChapter(i, true); play(0.4); if (G.mode === "dialog") R.skipDialog(); play(1); }, i); await shot(name); }

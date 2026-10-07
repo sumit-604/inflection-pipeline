@@ -4,7 +4,18 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A full 3D action story game in one HTML file (Three.js). It runs on a
-computer and on a phone. Version label: **Rish Hero v5** (bottom right).
+computer and on a phone. Version label: **Rish Hero v6** (bottom right).
+
+**First page:** the player types 3 things only: the hero's name, age, and
+what the father does (army officer, police officer, doctor, scientist,
+pilot, judge, engineer, journalist, firefighter, businessman or farmer).
+Every story line uses them: the hero's name, his age, his class, his
+father's title (Major, Inspector, Dr., Captain, Judge, Chief, Mr.), why the
+father is away, how the father stopped Marco Kade, and the bullies' taunts.
+"Change" in the menu edits them. The game credit always stays Rishabh Sharma.
+
+The gold marker always shows the next thing to do: the target, or the
+nearest person to untie, bomb to defuse, or enemy to stop.
 
 Real 3D: a low camera behind Rish's shoulder (or first person with V),
 look up and down by dragging, closed rooms with ceilings and lights,
@@ -12,8 +23,8 @@ buildings with roofs, windows and door frames.
 
 ## The story base
 
-- **Who:** Rish (Rishabh Sharma) is 10. His father, Major Rajveer Sharma,
-  is posted far away for one year. Rish joins Class 5 at Sunrise Public
+- **Who:** the hero (default: Rish, 10, father an army officer; the first
+  page changes all three). His father is away for one year. Rish joins Class 5 at Sunrise Public
   School, Suryanagar.
 - **Why the attack:** two years ago Major Sharma caught the smuggler Marco
   Kade. Marco's brother Viktor Kade leads the Black Viper gang. He wants
@@ -112,7 +123,8 @@ knocked out and arrested. No blood.
 (swiftshader WebGL): real walking, stealth, fights, quick moves, bombs,
 parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, diary pages, results, Play again,
   smoke pellets, friends' help, the 3D camera (ceilings, first person,
-  look up and down), the story base and clock, plus phone controls. 78 checks.
+  look up and down), the story base and clock, the gold marker for every
+  objective, the first page and the personal story, plus phone controls. 83 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

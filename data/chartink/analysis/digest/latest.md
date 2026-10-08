@@ -145,18 +145,16 @@ These are weekly or slower series. The date shown is their last reading.
 
 ## Market read
 
-Wednesday was a quiet pause after Tuesday's wide rally, and the pause split
-the market by size. The large indices fell. The Nifty lost about three quarters
-of a percent, and only 7 of 35 indices rose. Most stocks drifted lower too,
-about six in ten. Yet the stocks that moved hard moved up. 96 stocks jumped
-four and a half percent or more, against 31 that fell that hard. The short
-trend lines held their repair. The count above the fifty-day line edged up to
-757, still clear of its washout level near 700. The long line slipped. The
-count above the two-hundred-day line fell to 964, just under the shelf it had
-regained a day earlier. New yearly lows beat new highs again, 80 to 61. Fear
-rose a little. More than four stocks in ten moved less than three percent all
-day, one of the calmest sessions of the month. The small end still leads and the large
-end still trails. The market gave back none of its short repair, and it gained
-nothing on the long one.
+The market is trying to heal after a bad September, and on Wednesday it
+paused. The big names fell. The Nifty lost about three quarters of a percent,
+and only 7 of 35 indices closed higher. Most stocks slipped a little too.
+Yet among the stocks that moved hard, the risers won by three to one. The
+short repair held. 757 stocks sit above their fifty-day average, well clear
+of the washout level near 700. The long repair stalled. 964 stocks sit above
+their two-hundred-day average, a hair under the shelf near 970. That is only
+about four stocks in ten. New yearly lows still beat new highs, 80 to 61. The
+small companies hold their uptrend and the large ones sit below theirs. Fear
+is low. The picture is a market that has stopped falling but has not yet
+proved it is rising. It needs one wide, heavy buying day to prove it.
 
 Full brief: briefs/2026-10-07.html

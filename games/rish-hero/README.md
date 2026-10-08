@@ -4,7 +4,14 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A full 3D action story game in one HTML file (Three.js). It runs on a
-computer and on a phone. Version label: **Rish Hero v9** (bottom right).
+computer and on a phone. Version label: **Rish Hero v10** (bottom right).
+
+**Now inside RishSchoolDays (v10).** School Days v82 carries this whole
+story. Open it from the 🦸 button in School Days, or play the Annual Day
+attack when it comes on a school day. Inside School Days the hero is the
+School Days player, and after THE END the player goes back to School Days
+life as the famous hero. This file still runs alone too.
+A reload now keeps the name, father's job, dream, diary pages and Hero Life.
 
 **First page:** the player types 4 things: the hero's name, age, what he
 wants to become when he grows up (any words: doctor, astronaut, cricketer...),
@@ -173,7 +180,8 @@ parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, di
   objective, the first page and the personal story, Hero Life (city, school days,
   job, 9 emergencies, Black Viper attacks, fame, cape, fans, statue,
   Life Story, the dream job, 19 emergencies, the living city, friends,
-  medals, vehicles, family, the dog), plus phone controls. 99 checks.
+  medals, vehicles, family, the dog), the save after a reload, the School
+  Days embed, plus phone controls. 102 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

@@ -127,7 +127,7 @@ body.touch #topbtns { flex-direction: row; top: 112px; } body.touch #topbtns but
 <script type="module">
 import * as THREE from "three";
 // ===================== DATA: maps, people, story, puzzles =====================
-const VERSION = "Rish Hero v9";
+const VERSION = "Rish Hero v10";
 const CS = 2; // one map cell is 2 metres
 
 // Map legend
@@ -901,8 +901,9 @@ function after(sec, f) { G.later.push({ t: G.t + sec, f }); }
 const $ = (id) => document.getElementById(id);
 
 // ---- Saved progress (optional: works without storage) ----
-function loadSave() { try { const s = JSON.parse(localStorage.getItem("rishhero.v2") || "{}"); if (typeof s.unlocked === "number") G.save.unlocked = s.unlocked; if (typeof s.diff === "number") G.save.diff = s.diff; } catch (e) { /* no storage */ } G.diff = G.save.diff; }
-function writeSave() { try { localStorage.setItem("rishhero.v2", JSON.stringify(G.save)); } catch (e) { /* no storage */ } }
+function saveKey() { return G.embed ? "rishhero.v2.sd." + G.embed.slot : "rishhero.v2"; }
+function loadSave() { try { const s = JSON.parse(localStorage.getItem(saveKey()) || "{}"); if (typeof s.unlocked === "number") G.save.unlocked = s.unlocked; if (typeof s.diff === "number") G.save.diff = s.diff; for (const k of ["profile", "pages", "life", "storyDone"]) if (s[k] != null) G.save[k] = s[k]; } catch (e) { /* no storage */ } G.diff = G.save.diff; }
+function writeSave() { try { localStorage.setItem(saveKey(), JSON.stringify(G.save)); } catch (e) { /* no storage */ } }
 
 // ---- Three.js scene ----
 let renderer, scene, camera, hemi, sun;
@@ -1964,8 +1965,8 @@ function personalize1(s) {
 // The first page: only 3 questions.
 function login(next) {
   const p = profile();
-  showScr(`<h1 class="logo">RISH HERO</h1><p class="sub">Who is the hero of this story?</p>
-  <div class="login"><label>Your name<input id="lgName" maxlength="20" autocomplete="off" value="${G.save.profile ? p.name : ""}" placeholder="Type your name"></label>
+  showScr(`<h1 class="logo">RISH HERO</h1><p class="sub">Who is the hero of this story?</p>${G.embed ? `<p class="mut">The story of your school in RishSchoolDays. Tell us two more things.</p>` : ""}
+  <div class="login"><label>Your name<input id="lgName" maxlength="20" autocomplete="off" value="${G.save.profile || G.embed ? p.name : ""}" placeholder="Type your name"></label>
   <label>Your age<input id="lgAge" type="number" min="5" max="16" value="${p.age}"></label>
   <label>What do you want to become when you grow up?<input id="lgDream" maxlength="30" autocomplete="off" value="${G.save.profile && G.save.profile.dream ? G.save.profile.dream : ""}" placeholder="e.g. doctor, astronaut, cricketer, scientist"></label>
   <label>What does your father do?<select id="lgJob">${Object.entries(JOBS).map(([k, j]) => `<option value="${k}" ${k === p.job ? "selected" : ""}>${j.label}</option>`).join("")}</select></label>
@@ -2880,8 +2881,8 @@ function menu() {
   <p class="mut">One lonely year at Sunrise Public School. One day of fear. One hero.</p>
   <p class="who">👤 <b>${heroNames().first}</b>, age ${profile().age} · father: ${JOB().label} <button class="btn mini" id="m-who">Change</button></p>
   <div class="grid"><button class="btn go wide" id="m-play">▶ ${u > 0 ? `Continue: ${c.name}, ${c.title}` : "Start the story"}</button>
-  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button>${G.save.unlocked >= CHAPTERS.length - 1 || G.save.life ? `<button class="btn go wide" id="m-life">🦸 Hero Life${G.save.life && !G.save.life.done ? ` (age ${G.save.life.age})` : ""}</button>` : ""}${G.save.life ? `<button class="btn" id="m-med">🏅 Medals</button>` : ""}<button class="btn" id="m-story">📖 The Story</button><button class="btn" id="m-diary">📔 Rish's Diary (${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL})</button></div>`);
-  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about; $("m-diary").onclick = diary; $("m-who").onclick = () => login(menu); $("m-story").onclick = storyPage; if ($("m-life")) $("m-life").onclick = () => startLife(!G.save.life || G.save.life.done); if ($("m-med")) $("m-med").onclick = () => medals(menu);
+  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button>${G.embed ? `<button class="btn go wide" id="m-sd">🏠 Back to School Days</button>` : ""}${!G.embed && (G.save.unlocked >= CHAPTERS.length - 1 || G.save.life) ? `<button class="btn go wide" id="m-life">🦸 Hero Life${G.save.life && !G.save.life.done ? ` (age ${G.save.life.age})` : ""}</button>` : ""}${!G.embed && G.save.life ? `<button class="btn" id="m-med">🏅 Medals</button>` : ""}<button class="btn" id="m-story">📖 The Story</button><button class="btn" id="m-diary">📔 Rish's Diary (${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL})</button></div>`);
+  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about; $("m-diary").onclick = diary; $("m-who").onclick = () => login(menu); $("m-story").onclick = storyPage; if ($("m-life")) $("m-life").onclick = () => startLife(!G.save.life || G.save.life.done); if ($("m-med")) $("m-med").onclick = () => medals(menu); if ($("m-sd")) $("m-sd").onclick = () => sdBack(false);
 }
 function chapters() {
   showScr(`<h2>Chapters</h2><div class="chl">${CHAPTERS.map((c, i) => `<button class="btn ch" data-i="${i}" ${i > G.save.unlocked ? "disabled" : ""}><b>${c.name}</b> ${c.title} ${c.gun ? "🔫" : ""}${i > G.save.unlocked ? " 🔒" : ""}</button>`).join("")}</div><p class="mut">Stuck? Every chapter has a ⏭ Skip button.</p><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
@@ -2921,17 +2922,21 @@ function diary() {
   showScr(`<h2>📔 Rish's Diary</h2><p class="mut">Rish wrote these pages during his lonely year. Find them hidden in the chapters.</p><div class="diary">${rows}</div><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
   $("b").onclick = menu;
 }
+function sdBack(finished) {
+  if (!G.embed) return; try { resetWorld(); G.mode = "menu"; hideScr(); } catch (e) { /* leaving anyway */ }
+  G.embed.back({ finished: !!(finished || G.save.storyDone), unlocked: G.save.unlocked || 0, pages: Object.keys(G.save.pages || {}).length });
+}
 function credits() {
-  resetWorld(); G.mode = "menu"; G.save.unlocked = CHAPTERS.length - 1; writeSave();
-  showScr(`<h1 class="logo">THE END</h1><p class="sub">Rish Hero · RishSchoolDays Game 3</p><p>A lonely year. One brave day. A whole school of new friends.</p><p><b>Created by Ris&#104;abh Shar&#109;a</b>, age 9.</p><p class="sub"><b>Just live it!</b></p><p><b>But the story is not over.</b> Now Rish lives his whole life as the hero of Suryanagar. Accidents, fires, attacks: every year someone needs him. And the whole world knows his name.</p><p class="mut">📔 Diary pages found: ${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL}</p><div class="row"><button class="btn go" id="life">🦸 Continue: Hero Life</button><button class="btn" id="again">↺ Play again</button><button class="btn" id="dia">📔 Diary</button><button class="btn alt" id="b">Menu</button></div>`);
-  $("b").onclick = menu; $("again").onclick = () => { G.chFails = 0; startChapter(0); }; $("life").onclick = () => startLife(!G.save.life || G.save.life.done); $("dia").onclick = diary; G.stats.credits = 1;
+  resetWorld(); G.mode = "menu"; G.save.unlocked = CHAPTERS.length - 1; G.save.storyDone = true; writeSave();
+  showScr(`<h1 class="logo">THE END</h1><p class="sub">Rish Hero · RishSchoolDays Game 3</p><p>A lonely year. One brave day. A whole school of new friends.</p><p><b>Created by Ris&#104;abh Shar&#109;a</b>, age 9.</p><p class="sub"><b>Just live it!</b></p><p><b>But the story is not over.</b> Now Rish lives his whole life as the hero of Suryanagar. Accidents, fires, attacks: every year someone needs him. And the whole world knows his name.</p><p class="mut">📔 Diary pages found: ${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL}</p><div class="row"><button class="btn go" id="life">${G.embed ? "🏠 Back to School Days: live your hero life" : "🦸 Continue: Hero Life"}</button><button class="btn" id="again">↺ Play again</button><button class="btn" id="dia">📔 Diary</button><button class="btn alt" id="b">Menu</button></div>`);
+  $("b").onclick = menu; $("again").onclick = () => { G.chFails = 0; startChapter(0); }; $("life").onclick = () => (G.embed ? sdBack(true) : startLife(!G.save.life || G.save.life.done)); $("dia").onclick = diary; G.stats.credits = 1;
 }
 function togglePause() {
   if (G.mode === "pause") { hideScr(); G.mode = G.pauseBack; return; }
   G.pauseBack = G.mode; G.mode = "pause";
   const c = G.life ? { name: "Hero Life", title: `Age ${G.save.life.age}` } : CHAPTERS[G.ch];
-  showScr(`<h2>Paused</h2><p class="mut">${c.name}: ${c.title}</p><div class="grid"><button class="btn go" id="pr">▶ Resume</button><button class="btn" id="prs">↺ ${G.life ? "Restart this year" : "Restart chapter"}</button><button class="btn" id="psk">⏭ ${G.life ? "Skip this year" : "Skip this chapter"}</button><button class="btn alt" id="pm">Menu</button></div>`);
-  $("pr").onclick = togglePause; $("prs").onclick = () => (G.life ? lifeDay() : startChapter(G.ch, true)); $("psk").onclick = () => { hideScr(); G.mode = G.pauseBack; if (G.life) { G.em = null; yearEnd(); } else completeChapter(); }; $("pm").onclick = menu;
+  showScr(`<h2>Paused</h2><p class="mut">${c.name}: ${c.title}</p><div class="grid"><button class="btn go" id="pr">▶ Resume</button><button class="btn" id="prs">↺ ${G.life ? "Restart this year" : "Restart chapter"}</button><button class="btn" id="psk">⏭ ${G.life ? "Skip this year" : "Skip this chapter"}</button><button class="btn alt" id="pm">Menu</button>${G.embed && !G.life ? `<button class="btn alt" id="psd">🏠 School Days</button>` : ""}</div>`);
+  $("pr").onclick = togglePause; $("prs").onclick = () => (G.life ? lifeDay() : startChapter(G.ch, true)); $("psk").onclick = () => { hideScr(); G.mode = G.pauseBack; if (G.life) { G.em = null; yearEnd(); } else completeChapter(); }; $("pm").onclick = menu; if ($("psd")) $("psd").onclick = () => sdBack(false);
 }
 
 // ---- Phone controls ----
@@ -2966,15 +2971,20 @@ function frame(ts) {
   requestAnimationFrame(frame);
 }
 function boot() {
-  G.test = /test=1/.test(location.search);
+  G.embed = window.RH_EMBED || null;
+  G.test = /test=1/.test(location.search) || !!(G.embed && G.embed.test);
   loadSave(); initGfx(); initPointer(); initTouch();
-  $("ver").textContent = VERSION;
-  if (G.test || G.save.profile) menu(); else login(menu);
+  $("ver").textContent = G.embed ? `${G.embed.ver} · ${VERSION}` : VERSION;
+  if (G.embed) {
+    // Inside RishSchoolDays: the name and age come from the School Days player. Ask only the father's job and the dream, once.
+    const E = G.embed; if (G.save.profile) { G.save.profile.name = E.name; G.save.profile.age = E.age; writeSave(); menu(); }
+    else { G.save.profile = null; DEFAULT_PROFILE.name = E.name; DEFAULT_PROFILE.age = E.age; if (G.test) { G.save.profile = { name: E.name, age: E.age, job: "army", dream: "doctor" }; menu(); } else login(menu); }
+  } else if (G.test || G.save.profile) menu(); else login(menu);
   requestAnimationFrame(frame);
   window.__rh = {
     G, login, personalize, profile, JOBS, startLife, lifeDay, medals, mountVehicle, dismount, VEHS, SHADOWS, CASES, dreamJob, jobInfo, heroRun, setDaylight, emergency, emDone, yearEnd, lifeEnd, lifeFastForward, PLACES, EM_TYPES, fameLevel, lifeS, step: (dt = 1 / 60, n = 1) => { for (let i = 0; i < n; i++) step(dt); }, startChapter, completeChapter, skipNow, skipDialog, nextLine, retryFail, skipFail,
     keyDown, keyUp, safeWire, cutWire, codeKey, openCode, knockDown, hurtEnemy, propHit, fireGun, autoAim, CHAPTERS, MEMORIES, ENDING, CAST, MAPS, RIDDLES,
-    cell: (cx, cy) => cellCenter(cx, cy), cam: () => camera, CAM, ceilAt, clockText, storyPage, STORY, GUIDE, PAGES, PAGE_TOTAL, chapterResult, resultsCard, credits, diary, cellAt, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
+    cell: (cx, cy) => cellCenter(cx, cy), cam: () => camera, CAM, ceilAt, clockText, storyPage, STORY, GUIDE, PAGES, PAGE_TOTAL, chapterResult, resultsCard, credits, diary, cellAt, sdBack, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
     tp: (cx, cy) => { const p = cellCenter(cx, cy); G.P.x = p.x; G.P.z = p.z; G.P.safe = { x: p.x, z: p.z }; },
   };
 }

@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v9", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v9" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v10", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v10" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -391,6 +391,28 @@ const HELPERS = () => {
     r = await q.evaluate(() => { R.step(1 / 60, 2); return G.P.st; });
     ok("T2 phone: the J button punches", r === "punch", r);
     await q.evaluate(() => R.render()); await q.screenshot({ path: `${SHOTS}/12-phone.png` });
+    await q.close();
+  }
+
+  // ---------------- S. Save and RishSchoolDays embed ----------------
+  {
+    const q = await b.newPage({ viewport: { width: 1000, height: 640 } });
+    q.on("pageerror", (e) => errs.push("PE(save) " + e.message));
+    if (THREE_LOCAL) await q.route("https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", (rt) => rt.fulfill({ path: THREE_LOCAL, contentType: "application/javascript" }));
+    await q.goto("file://" + FILE); await q.waitForFunction(() => window.__rh && window.__rh.step, null, { timeout: 60000 });
+    await q.evaluate(() => localStorage.setItem("rishhero.v2", JSON.stringify({ unlocked: 3, diff: 1, profile: { name: "Meera Rao", age: 9, job: "doctor", dream: "pilot" }, pages: { "c1:0": 1, "c2:1": 1 }, storyDone: false })));
+    await q.reload(); await q.waitForFunction(() => window.__rh && window.__rh.step, null, { timeout: 60000 });
+    r = await q.evaluate(() => { const G = window.__rh.G; return { name: G.save.profile && G.save.profile.name, job: G.save.profile && G.save.profile.job, pages: Object.keys(G.save.pages || {}).length, unlocked: G.save.unlocked, login: !!document.getElementById("lgName") }; });
+    ok("S1 a reload keeps the hero's name, father's job, diary pages and chapter (no new login)", r.name === "Meera Rao" && r.job === "doctor" && r.pages === 2 && r.unlocked === 3 && !r.login, r);
+    await q.evaluate(() => localStorage.clear());
+    await q.addInitScript(() => { window.RH_EMBED = { name: "Aarav Mehta", age: 11, slot: "t1", ver: "School Days v82", back: (x) => { window.__backR = x; } }; });
+    await q.reload(); await q.waitForFunction(() => window.__rh && window.__rh.step, null, { timeout: 60000 });
+    r = await q.evaluate(() => ({ name: document.getElementById("lgName") && document.getElementById("lgName").value, ver: document.getElementById("ver").textContent }));
+    await q.evaluate(() => { document.getElementById("lgDream").value = "astronaut"; document.getElementById("lgJob").value = "pilot"; document.getElementById("lgGo").click(); });
+    const m = await q.evaluate(() => ({ sd: !!document.getElementById("m-sd"), life: !!document.getElementById("m-life"), who: document.querySelector(".who") && document.querySelector(".who").textContent, key: !!localStorage.getItem("rishhero.v2.sd.t1") }));
+    ok("S2 inside RishSchoolDays: the School Days name comes in, only job and dream are asked, Back to School Days, no separate Hero Life", r.name === "Aarav Mehta" && /School Days v82/.test(r.ver) && m.sd && !m.life && /Aarav/.test(m.who) && /11/.test(m.who) && m.key, { r, m });
+    r = await q.evaluate(() => { document.getElementById("m-sd").click(); const a = window.__backR; window.__backR = null; window.__rh.credits(); const t = document.getElementById("life").textContent; document.getElementById("life").click(); return { a, t, b: window.__backR }; });
+    ok("S3 Back to School Days at any time; after THE END the story returns to School Days as finished", r.a && r.a.finished === false && /School Days/.test(r.t) && r.b && r.b.finished === true && r.b.unlocked === 7, r);
     await q.close();
   }
 

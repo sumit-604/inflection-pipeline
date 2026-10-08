@@ -1047,7 +1047,19 @@ School Days now has the hero sim from Rish Hero. Normal life goes on, and emerge
 - A save gives fame, money, respect and a diary page. A BREAKING NEWS report names you. Too slow? Other rescuers help, and nobody is hurt.
 - Fame grows: your colony, Suryanagar, the whole state, all of India, Asia, the whole world. At Suryanagar fame you wear a red cape, and fans stop you in the street for autographs.
 - The 🦸 button (top right) shows your fame, 12 medals and the news. It has Hero alerts ON/OFF and "Find an emergency now".
-- The automatic check has a new group V (8 checks). The full run passes 233 of 233 checks.
+- The automatic check has a new group V (8 checks).
+
+## Rish Hero is inside School Days (v82)
+
+RishSchoolDays and Rish Hero are one game now. The whole Rish Hero story plays inside School Days, in full 3D, with your School Days player as the hero.
+
+- Open it from the 🦸 button: "Rish Hero story: the day the Black Viper gang attacked Sunrise Public School". It shows "Not played yet", the chapter you reached, or ✅ when you saved the school.
+- On a school day (day 3 or later, age 8 to 16) the Annual Day attack comes by itself, once: "BOOM! A blast shakes the school gate!" Choose Play the story now, or Later.
+- Your School Days name and age go into the story. The story asks only two more things, once: what your father does and what you want to become.
+- School Days waits while you play. "🏠 Back to School Days" (menu or pause) brings you back to the same moment. The story keeps your chapter.
+- After THE END you come back to School Days as the hero the whole world knows: BREAKING NEWS, the Sunrise Gold Medal prize (₹5,000), fame +500, and a diary page. Your normal life goes on: family, vehicles, school, job, and the 🚨 hero alerts.
+- After the story the Black Viper gang can come back as a 13th emergency: beat 3 men, then Bull, at the Railway Station.
+- New check group W (7 checks). The full run passes 240 of 240 checks.
 
 ## Files
 

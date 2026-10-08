@@ -618,10 +618,10 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
   if (want('V')) try {
     p = await fresh();
     const v0 = await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); window.__fin(); return { btn: !!document.getElementById('hero-btn'), ver: document.getElementById('version-tag').textContent, H: JSON.stringify(g.heroState()) }; });
-    ok('V1 a hero button (🦸) and version v81', v0.btn && /v81/.test(v0.ver), JSON.stringify(v0));
+    ok('V1 a hero button (🦸) and version v81 or later', v0.btn && /v8[1-9]/.test(v0.ver), JSON.stringify(v0));
     await p.click('#hero-btn'); await p.waitForTimeout(300);
     const v1 = await ev(p, () => { const t = document.getElementById('job-card') ? document.getElementById('job-card').textContent : document.body.innerText; return { panel: /Hero of Suryanagar/.test(t) && /Find an emergency now/.test(t) && /Hero alerts: ON/.test(t), meds: document.querySelectorAll('.hmed').length }; });
-    ok('V2 the hero panel: fame, saves, 12 medals, news, alerts on/off, find an emergency now', v1.panel && v1.meds === 12, JSON.stringify(v1));
+    ok('V2 the hero panel: fame, saves, 13 medals, news, alerts on/off, find an emergency now', v1.panel && v1.meds === 13, JSON.stringify(v1));
     await ev(p, () => { document.querySelector('#hero-close') && document.querySelector('#hero-close').click(); });
     const v3 = await ev(p, () => { const g = window.__game; const H = g.heroState(); H.next = 1; g._heroWait = 0; const t0 = performance.now(); for (let i = 0; i < 40 && !g._hero; i++) g._tickHero(0.05); return { started: !!g._hero, obj: document.getElementById('objective-text').textContent, type: g._hero && g._hero.type }; });
     ok('V3 while you live your normal life, an emergency starts by itself, with an objective and the compass', v3.started && /🚨/.test(v3.obj), JSON.stringify(v3));
@@ -641,6 +641,42 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     ok('V7 too slow: other rescuers help (no game over); hero alerts can be switched off', v8.failed && v8.off, JSON.stringify(v8));
     ok('V8 no page errors', p.errs.length === 0 && !(await ev(p, () => window.__game._lastErr)), p.errs.join(' | '));
   } catch (e) { ok('V hero sim', false, e.message.slice(0, 300)); }
+
+  // ---------- W. v82: Rish Hero is inside School Days (one game) ----------
+  if (want('W')) try {
+    p = await fresh();
+    const frameUp = () => p.waitForFunction(() => { const f = document.getElementById('rh-frame'); return !!(f && f.contentWindow && f.contentWindow.__rh && f.contentWindow.__rh.step && f.contentWindow.document.getElementById('card')); }, null, { timeout: 90000 });
+    const w0 = await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); window.__fin(); g.heroPanel(); const o = { ver: document.getElementById('version-tag').textContent, btn: !!document.getElementById('hero-story'), st: document.getElementById('hero-story-st').textContent, meds: document.querySelectorAll('.hmed').length, src: document.getElementById('rh-src').textContent.length }; return o; });
+    ok('W1 version v82; the 🦸 panel has the Rish Hero story (not played yet) and 13 medals', /v82/.test(w0.ver) && w0.btn && /Not played yet/.test(w0.st) && w0.meds === 13 && w0.src > 300000, JSON.stringify(w0));
+    await p.click('#hero-story'); await frameUp();
+    const w1 = await ev(p, async () => { const g = window.__game, W = document.getElementById('rh-frame').contentWindow, D = W.document; let n = 0; const o = g._tickDaily; g._tickDaily = function (dt) { n++; return o.call(this, dt); }; await new Promise((r) => setTimeout(r, 700)); g._tickDaily = o;
+      const b = document.getElementById('rh-wrap').getBoundingClientRect(); const want = String(g.playerName).replace(/[^A-Za-zऀ-ॿ ]/g, '').replace(/\s+/g, ' ').trim();
+      return { on: g._rhOn, full: b.width >= innerWidth - 1 && b.height >= innerHeight - 1, name: D.getElementById('lgName') && D.getElementById('lgName').value, want, ver: D.getElementById('ver').textContent, ticks: n }; });
+    ok('W2 the story opens full screen inside School Days; School Days waits; the hero is the School Days player', w1.on && w1.full && w1.name === w1.want && /School Days v82/.test(w1.ver) && w1.ticks === 0, JSON.stringify(w1));
+    const w2 = await ev(p, async () => { const g = window.__game, W = document.getElementById('rh-frame').contentWindow, D = W.document; const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      D.getElementById('lgDream').value = 'astronaut'; D.getElementById('lgJob').value = 'pilot'; D.getElementById('lgGo').click(); const menu = { sd: !!D.getElementById('m-sd'), life: !!D.getElementById('m-life') };
+      W.__rh.startChapter(2, true); await wait(800); const mode = W.__rh.G.mode, ch = W.__rh.G.ch; W.__rh.G.save.unlocked = 3; W.__rh.togglePause(); const psd = !!D.getElementById('psd'); D.getElementById('psd').click(); await wait(300);
+      const H = g.heroState(); let n = 0; const o = g._tickDaily; g._tickDaily = function (dt) { n++; return o.call(this, dt); }; await wait(500); g._tickDaily = o;
+      return { menu, mode, ch, psd, gone: !document.getElementById('rh-wrap'), on: g._rhOn, storyCh: H.storyCh, story: !!H.story, ticks: n }; });
+    ok('W3 father\'s job and dream asked once; play a chapter; 🏠 School Days from the pause menu goes back to the same life', w2.menu.sd && !w2.menu.life && w2.ch === 2 && w2.mode !== 'menu' && w2.psd && w2.gone && !w2.on && w2.storyCh === 3 && !w2.story && w2.ticks >= 1, JSON.stringify(w2));
+    const m0 = await ev(p, () => { const g = window.__game; window.__fin(); return { money: g.progress.money, fame: g.heroState().fame }; });
+    await ev(p, () => window.__game.rhStory()); await frameUp();
+    const w3 = await ev(p, async () => { const g = window.__game, W = document.getElementById('rh-frame').contentWindow, D = W.document; const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      const noLogin = !D.getElementById('lgName') && !!D.getElementById('m-sd'); W.__rh.credits(); const life = D.getElementById('life').textContent; D.getElementById('life').click(); await wait(900);
+      const H = g.heroState(); return { noLogin, life, gone: !document.getElementById('rh-wrap'), story: !!H.story, fame: H.fame, news: H.news[0], money: g.progress.money, diary: g.progress.diary.some((d) => /Sunrise Public School/.test(d)), talk: !!(g.dialogue && g.dialogue.active) }; });
+    ok('W4 the second time no questions; THE END brings you back to School Days as the famous hero: news, Gold Medal prize, fame, diary', w3.noLogin && /School Days/.test(w3.life) && w3.gone && w3.story && w3.fame >= m0.fame + 500 && /Sunrise Public School/.test(w3.news) && w3.money >= m0.money + 5000 && w3.diary && w3.talk, JSON.stringify(w3));
+    const w4 = await ev(p, async () => { const g = window.__game; const wait = (ms) => new Promise((r) => setTimeout(r, ms)); window.__fin(); g.heroPanel(); const st = document.getElementById('hero-story-st').textContent; document.querySelector('#hero-close').click();
+      g.heroStart('viper'); const goal = document.getElementById('objective-text').textContent; let k = 0;
+      while (g._hero && k++ < 30) { const acts = g.interactables.filter((o) => o._hero && (!o.visible || o.visible())); if (!acts.length) { await wait(200); continue; } const a = acts[0]; g.player.group.position.set(a.pos.x + 0.8, 0, a.pos.z + 0.3); await wait(80); a.activate(); await wait(30); if (g._hm) { const n = g._hm.n; for (let i = 0; i < n; i++) g._hm && g._hm.hit(); } await wait(60); }
+      return { st, goal, done: !g._hero, viper: g.heroState().kinds.viper }; });
+    ok('W5 after the story the Black Viper gang comes back as an emergency in School Days: beat 3 men, then Bull', /saved the school/.test(w4.st) && /Black Viper/.test(w4.goal) && w4.done && w4.viper === 1, JSON.stringify(w4));
+    const w5 = await ev(p, () => { const g = window.__game; window.__fin(); const H = g.heroState(), pr = g.progress, keep = { story: H.story, phase: g.phase, day: pr.day, age: pr.age };
+      H.story = false; H.storyOffered = false; g.phase = 'school'; pr.day = Math.max(3, pr.day || 0); pr.age = 10; g._rhOfferT = 0; for (let i = 0; i < 60 && !document.getElementById('rh-go'); i++) g._tickHero(0.5);
+      const offer = !!document.getElementById('rh-go') && /Black Viper/.test(document.body.innerText); const later = document.getElementById('rh-later'); if (later) later.click(); const once = H.storyOffered;
+      g._rhOfferT = 0; for (let i = 0; i < 60; i++) g._tickHero(0.5); const again = !!document.getElementById('rh-go'); H.story = keep.story; g.phase = keep.phase; pr.day = keep.day; pr.age = keep.age; return { offer, once, again }; });
+    ok('W6 on a school day the Annual Day attack offers the story once (Play now or Later)', w5.offer && w5.once && !w5.again, JSON.stringify(w5));
+    ok('W7 no page errors', p.errs.length === 0 && !(await ev(p, () => window.__game._lastErr)), p.errs.join(' | '));
+  } catch (e) { ok('W Rish Hero inside School Days', false, e.message.slice(0, 300)); }
 
   await browser.close();
   const fails = results.filter((r) => r[0] === 'FAIL'); console.log(`\n==== ${results.length - fails.length} PASS, ${fails.length} FAIL ====`); fails.forEach((f) => console.log('FAIL: ' + f[1] + ' -- ' + f[2]));

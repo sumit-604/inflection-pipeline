@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v8", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v8" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v9", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v9" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -327,7 +327,7 @@ const HELPERS = () => {
       if (G.mode === "puzzle" && G.puz && G.puz.kind === "wire") { const b = G.puz.b; R.cutWire(R.safeWire(b.w, b.serial)); sim(1.2); continue; }
       if (G.mode !== "play") { R.step(1 / 60); continue; }
       const foe = alive().filter((e) => e.active)[0]; if (foe) { brawl(foe, 30); continue; }
-      const zs = G.zones.filter((z) => !z.off && (!z.ok || z.ok()) && !/^(Talk|Sign)/.test(z.label)); if (!zs.length) { R.step(1 / 60, 3); continue; }
+      const zs = G.zones.filter((z) => !z.off && (!z.ok || z.ok()) && !z.low && !/^(Talk|Sign)/.test(z.label)); if (!zs.length) { R.step(1 / 60, 3); continue; }
       const z = zs[0], q = z.get ? z.get() : z; let tx = q.x, tz = q.z; for (const [ox, oz] of [[1, 0], [-1, 0], [0, 1], [0, -1], [1.4, 1.4], [0, 2.5], [0, -2.5]]) { const ch = R.cellAt(Math.floor((q.x + ox) / 2), Math.floor((q.z + oz) / 2)); if (!R.solidFor(ch, {})) { tx = q.x + ox; tz = q.z + oz; break; } }
       G.P.x = tx; G.P.z = tz; R.step(1 / 60, 2); tap("KeyE"); R.step(1 / 60, 3); }
     return !G.em; }; });
@@ -347,6 +347,13 @@ const HELPERS = () => {
   ok("HL6 at 22 his childhood dream (typed on the first page) comes true: an astronaut works at the City Office, then saves people too", r.noCard && r.job === "dream" && /astronaut/i.test(r.toast) && /City Office/.test(r.obj) && r.shift && r.em && /Astronaut/.test(r.clock) && r.cricket === "park" && r.doc === "hospital", r);
   r = await E(() => { const o = {}; const S = R.lifeS(); S.age = 25; S.viper = []; R.lifeDay(); sim(0.2); G.skipFn = null; R.emergency(); o.type = G.em.type; o.text = G.em.text; o.bull = G.enemies.some((e) => e.kind === "bull"); o.won = solveEm(180); talk(); return o; });
   ok("HL7 at 25 the Black Viper gang attacks again (Marco Kade escaped): 5 men and Bull at the River Bridge", r.type === "viper" && /Marco Kade/.test(r.text) && r.bull && r.won, r);
+
+  r = await E(() => { const o = {}; const S = R.lifeS(); S.age = 15; R.lifeDay(); sim(0.3); o.cycle = G.veh && G.veh.kind; o.dog = !!G.dog; S.age = 40; S.fame = 900; R.lifeDay(); sim(0.3); o.jeep = G.veh.kind; G.P.x = G.veh.x + 1; G.P.z = G.veh.z; sim(0.1); o.lbl = document.getElementById("prompt").textContent; tap("KeyE"); o.riding = G.P.vehicle; G.camYaw = Math.PI / 2; const x0 = G.P.x; R.keyDown("KeyW"); sim(1); R.keyUp("KeyW"); o.speed = +(G.P.x - x0).toFixed(1); o.off = document.getElementById("prompt").textContent; tap("KeyE"); o.walk = !G.P.vehicle;
+    o.fam = ["wife", "son", "daughter"].filter((k) => G.npcs[k]).length; o.sonSmall = G.npcs.son.g.userData.s < 0.75; const w = G.npcs.wife; G.P.x = w.x + 1; G.P.z = w.z; sim(0.1); tap("KeyE"); o.wifeTalk = G.mode === "dialog" && /dinner|TV/.test(G.dlg.lines[0][1]); talk();
+    const d0 = Math.hypot(G.dog.x - G.P.x, G.dog.z - G.P.z); R.tp(20, 7); sim(2); o.dogFollows = Math.hypot(G.dog.x - G.P.x, G.dog.z - G.P.z) < 4; S.age = 60; R.lifeDay(); sim(0.2); o.grand = !!G.npcs.grandkid && !!G.npcs.dad && G.npcs.son.g.userData.s > 0.95; S.age = 30; return o; });
+  ok("HL13 vehicles like RishSchoolDays: a bicycle as a boy, the Hero Jeep from 18; E to ride and get off; much faster than walking", r.cycle === "cycle" && r.jeep === "jeep" && /Hero Jeep/.test(r.lbl) && r.riding === "jeep" && r.speed > 12 && /Get off/.test(r.off) && r.walk, r);
+  ok("HL14 a family like RishSchoolDays: married at 28, a son at 31, a daughter at 34 (they grow up), Papa retired at home, a grandchild at 58", r.fam === 3 && r.sonSmall && r.wifeTalk && r.grand, r);
+  ok("HL15 Tiger the dog follows him everywhere from age 12", r.dog && r.dogFollows, r);
 
   r = await E(() => { const o = {}; const S = R.lifeS(); S.age = 30; S.fame = 900; S.job = "dream"; R.lifeDay(); sim(0.5); o.shadows = R.SHADOWS.used; o.clouds = (G.L.clouds || []).length; const c = G.cars[0]; const x0 = c.g.position.x; sim(1); o.carMoved = Math.abs(c.g.position.x - x0) > 3;
     G.P.x = c.g.position.x + c.dir * 2.5; G.P.z = c.z; const x1 = c.g.position.x; sim(1); o.carStops = Math.abs(c.g.position.x - x1) < 0.2; R.tp(5, 7);

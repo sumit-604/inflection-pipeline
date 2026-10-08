@@ -127,7 +127,7 @@ body.touch #topbtns { flex-direction: row; top: 112px; } body.touch #topbtns but
 <script type="module">
 import * as THREE from "three";
 // ===================== DATA: maps, people, story, puzzles =====================
-const VERSION = "Rish Hero v8";
+const VERSION = "Rish Hero v9";
 const CS = 2; // one map cell is 2 metres
 
 // Map legend
@@ -1035,8 +1035,9 @@ function updatePlayer(dt) {
   const running = (K.run || runToggle) && moving && !P.crouch;
   // --- actions ---
   if (pressed("crouch")) { if (running && P.onGround && !busy) { setPlayerState("slide", 0.8); P.dirX = mx / (ml || 1); P.dirZ = mz / (ml || 1); P.crouch = false; } else P.crouch = !P.crouch; }
-  if (pressed("jump") && P.onGround && !busy && G.mode === "play") { P.vy = 6.4; P.onGround = false; P.crouch = false; sfx("jump"); }
-  if (!busy && P.onGround) {
+  if (pressed("jump") && P.onGround && !busy && !P.vehicle && G.mode === "play") { P.vy = 6.4; P.onGround = false; P.crouch = false; sfx("jump"); }
+  if (P.vehicle) { if (pressed("act")) doAction(); for (const k of ["roll", "punch", "kick", "fire", "crouch"]) pressed(k); P.crouch = false; }
+  else if (!busy && P.onGround) {
     if (pressed("roll")) { setPlayerState("roll", 0.5); P.iv = 0.5; if (moving) { P.dirX = mx / ml; P.dirZ = mz / ml; } else { const fd = faceDir(P.yaw); P.dirX = fd.x; P.dirZ = fd.z; } P.yaw = Math.atan2(P.dirX, P.dirZ); P.crouch = false; sfx("whoosh"); }
     else if (pressed("punch")) startPunch();
     else if (pressed("kick")) { const e = nearestEnemy(2.6); if (e) P.yaw = Math.atan2(e.x - P.x, e.z - P.z); setPlayerState("kick", 0.5); sfx("whoosh"); }
@@ -1055,6 +1056,7 @@ function updatePlayer(dt) {
   if (P.st === "roll" && P.stT < P.dur) { sp = 6.2; vx = P.dirX; vz = P.dirZ; }
   else if (P.st === "slide" && P.stT < P.dur) { sp = 7.5 * (1 - P.stT / P.dur * 0.5); vx = P.dirX; vz = P.dirZ; }
   else if (P.st === "stagger" || P.st === "takedown" || P.st === "down") sp = 0;
+  else if (moving && P.vehicle) { sp = VEHS[P.vehicle].speed * (running ? 1.3 : 1); vx = mx / ml; vz = mz / ml; P.yaw += angDiff(P.yaw, Math.atan2(vx, vz)) * Math.min(1, dt * 6); }
   else if (moving) { sp = P.st === "block" ? 1.5 : P.crouch ? 2.3 : running ? (heroRun() ? 9.6 : 7.0) : 4.2; if (["punch", "kick", "throw"].includes(P.st)) sp *= 0.25; vx = mx / ml; vz = mz / ml; if (P.st !== "block") P.yaw += angDiff(P.yaw, Math.atan2(vx, vz)) * Math.min(1, dt * 12); }
   if (!P.onGround && moving) { vx = mx / ml; vz = mz / ml; sp = Math.max(sp, P.airSp || 4.2); }
   if (P.onGround) P.airSp = sp;
@@ -1082,9 +1084,10 @@ function updatePlayer(dt) {
   else if (P.st === "kick") pose = "kick"; else if (P.st === "block") pose = "block"; else if (P.st === "roll") pose = "roll";
   else if (P.st === "slide") pose = "slide"; else if (P.st === "throw") pose = "throw"; else if (P.st === "takedown") pose = "upper";
   else if (P.st === "stagger") pose = "hurt"; else if (P.st === "down") pose = "down";
-  else if (!P.onGround) pose = "jump"; else if (P.crouch) pose = "crouch"; else if (P.gun && G.flags.aiming) pose = "aim";
+  else if (P.vehicle) pose = P.vehicle === "cycle" ? "bike" : "sit"; else if (!P.onGround) pose = "jump"; else if (P.crouch) pose = "crouch"; else if (P.gun && G.flags.aiming) pose = "aim";
   applyPose(g, pose, pose === "roll" ? 1 : k, pose === "roll" ? P.stT / P.dur : G.t);
   g.position.y += g.userData.poseDy || 0;
+  if (P.vehicle && P.vmesh) { P.vmesh.position.set(P.x, P.y, P.z); P.vmesh.rotation.y = P.yaw; g.position.y += P.vehicle === "cycle" ? 0.55 : 1.0; if (P.vehicle === "jeep") { g.position.x -= Math.cos(P.yaw) * 0.45; g.position.z += Math.sin(P.yaw) * 0.45; } }
   if (P.carry && P.carry.mesh) { const hand = faceDir(P.yaw); P.carry.mesh.position.set(P.x + hand.x * 0.3, P.y + 1.25, P.z + hand.z * 0.3); }
 }
 function startPunch() {
@@ -1124,7 +1127,7 @@ function updateCamera(dt) {
       look = new THREE.Vector3(tgt.x + f.x * Math.cos(pt) * 4, eyeY - Math.sin(pt) * 4, tgt.z + f.z * Math.cos(pt) * 4);
       CAM.near = 0;
     } else {
-      const side = P.gun ? 0.55 : 0.3, dist = P.gun ? 2.8 : CAM.dist;
+      const side = P.gun ? 0.55 : P.vehicle ? 0 : 0.3, dist = P.gun ? 2.8 : P.vehicle ? 5.6 : CAM.dist;
       const T = new THREE.Vector3(P.x + r.x * side, P.y + 1.3, P.z + r.z * side);
       const D = new THREE.Vector3(T.x - f.x * Math.cos(pt) * dist, T.y + Math.sin(pt) * dist + 0.35, T.z - f.z * Math.cos(pt) * dist);
       tgt = clamp3(T, D); CAM.near = tgt.distanceTo(T);
@@ -1567,6 +1570,7 @@ function throwItem() {
 // ---- What E does here ----
 function currentAction() {
   if (!G.P || G.P.st === "down") return null;
+  if (G.P.vehicle) return { label: `Get off the ${VEHS[G.P.vehicle].name}`, fn: () => dismount() };
   const td = takedownTarget(); if (td) return { label: td.st === "stun" ? "Knock out" : "Silent takedown", fn: () => doTakedown(td) };
   const P = G.P;
   for (const pass of [0, 1]) for (const z of G.zones) { if (z.off || (z.ok && !z.ok()) || !!z.low !== !!pass) continue; const zx = z.get ? z.get().x : z.x, zz = z.get ? z.get().z : z.z; if (Math.hypot(zx - P.x, zz - P.z) < (z.r || 2.2)) return z; }
@@ -2465,7 +2469,7 @@ function lifeDay() {
   loadMap("city"); citySigns(G.L); setSky(0xbfe3ff, 70, 220);
   const d = PLACES.home.door; makePlayer(d[0], d[1] + 2, Math.PI / 2);
   if (S.fame >= 300) addCape(G.P.g);
-  spawnCivilians(); spawnFans(); spawnCars(); spawnFriends(); setDaylight(1);
+  spawnCivilians(); spawnFans(); spawnCars(); spawnFriends(); spawnFamily(); spawnVehicle(); spawnDog(); setDaylight(1);
   if (S.age >= 50) addStatue();
   G.em = null; G.lifeT = 0;
   if (S.age >= 22 && !S.job) { S.job = "dream"; writeSave(); center(`🌟 Dream come true!`, 2); toast(`Rish wanted to become ${dreamJob().job}. Today it comes true! And he is still the hero of the whole world.`, 6); }
@@ -2704,7 +2708,7 @@ function spawnFans() {
 function addCape(g) { if (g.userData.cape) return; const cape = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.85, 0.04), mat(0xc1121f)); cape.position.set(0, 0.95, -0.2); cape.rotation.x = 0.12; g.add(cape); const badge = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.03, 12), mat(0xffd60a, { emissive: 0x443300 })); badge.rotation.x = Math.PI / 2; badge.position.set(0, 1.12, 0.16); g.add(badge); g.userData.cape = cape; }
 function addStatue() { const P = PLACES.park; const c = cellCenter(P.x0 + 9, P.y0 + 3); const base = new THREE.Mesh(new THREE.BoxGeometry(2.2, 1.2, 2.2), mat(0x8d99ae)); base.position.set(c.x, 0.6, c.z); G.L.group.add(base); const st = makeHuman({ skin: 0xadb5bd, shirt: 0xadb5bd, trousers: 0xadb5bd, hair: 0xadb5bd, shoes: 0xadb5bd }); st.scale.setScalar(1.7); st.position.set(c.x, 1.2, c.z); st.rotation.y = Math.PI; st.userData.parts.armR.rotation.x = -2.8; G.L.group.add(st); addSign(G.L, personalize("Statue of Rish, Hero of Suryanagar"), P.x0 + 9, P.y0 + 3, 5.4, 0.7); G.L.statue = st; }
 function lifeUpdate(dt) {
-  const E = G.em, P = G.P; updateCars(dt);
+  const E = G.em, P = G.P; updateCars(dt); updateDog(dt);
   for (const n of Object.values(G.npcs)) { if (n.bob) { n.g.position.y = -0.85 + Math.sin(G.t * 3) * 0.12; } if (n.leaveT !== undefined) { n.leaveT -= dt; if (n.leaveT <= 0) { removeNpc(n.id); } } }
   for (const n of Object.values(G.npcs)) if (n.follow && P) { const f = faceDir(P.yaw), tx = P.x - f.x * 0.9 + f.z * 0.5, tz = P.z - f.z * 0.9 - f.x * 0.5; n.x += (tx - n.x) * Math.min(1, dt * 6); n.z += (tz - n.z) * Math.min(1, dt * 6); n.yaw = P.yaw; }
   if (!E) return;
@@ -2760,6 +2764,56 @@ function updateTicker() {
   t.style.display = on ? "block" : "none"; document.body.classList.toggle("ticker", !!on); if (!on) return;
   const txt = personalize("📺 NEWS · " + G.save.life.news.join("   ·   "));
   if (t.dataset.txt !== txt) { t.dataset.txt = txt; t.innerHTML = `<span>${txt}</span>`; }
+}
+
+// ---- Vehicles (like RishSchoolDays): a bicycle as a boy, the Hero Jeep from age 18 ----
+const VEHS = { cycle: { name: "bicycle", speed: 11 }, jeep: { name: "Hero Jeep", speed: 16 } };
+function makeVehMesh(kind) {
+  const g = new THREE.Group();
+  if (kind === "cycle") { for (const z of [-0.55, 0.55]) { const w = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.05, 6, 16), mat(0x111111)); w.rotation.y = Math.PI / 2; w.position.set(0, 0.36, z); g.add(w); } const fr = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.06, 1.1), mat(0x3a86ff)); fr.position.y = 0.62; g.add(fr); const hb = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.05, 0.05), mat(0x333333)); hb.position.set(0, 0.95, 0.5); g.add(hb); }
+  else { const body = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.9, 3.4), mat(0xc1121f)); body.position.y = 0.85; g.add(body); const bar = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.08, 0.08), mat(0x222222)); bar.position.set(0, 2.0, -0.4); g.add(bar); for (const x of [-0.85, 0.85]) { const p = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.9, 0.08), mat(0x222222)); p.position.set(x, 1.55, -0.4); g.add(p); } const st = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.06, 16), mat(0xffd60a)); st.rotation.x = Math.PI / 2; st.position.set(0, 0.9, 1.72); g.add(st);
+    for (const [x, z] of [[-0.95, 1.1], [0.95, 1.1], [-0.95, -1.1], [0.95, -1.1]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.3, 12), mat(0x111111)); w.rotation.z = Math.PI / 2; w.position.set(x, 0.42, z); g.add(w); } }
+  return g;
+}
+function spawnVehicle() {
+  const S = lifeS(), kind = S.age < 18 ? "cycle" : "jeep", d = PLACES.home.door, p = cellCenter(d[0] + 3, d[1] + 1);
+  const mesh = makeVehMesh(kind); mesh.position.set(p.x, 0, p.z); mesh.rotation.y = Math.PI / 2; G.L.group.add(mesh); G.veh = { kind, mesh, x: p.x, z: p.z };
+  addZone({ label: kind === "cycle" ? "Ride your bicycle" : "Drive your Hero Jeep", get: () => G.veh, r: 2.4, low: true, ok: () => !G.P.vehicle, fn: () => mountVehicle() });
+}
+function mountVehicle() { const P = G.P, V = G.veh; if (!V) return; P.vehicle = V.kind; P.vmesh = V.mesh; P.crouch = false; P.x = V.mesh.position.x; P.z = V.mesh.position.z; sfx(V.kind === "cycle" ? "jump" : "metal"); toast(V.kind === "cycle" ? "🚲 Ring ring! Ride to the emergency. E to get off." : "🚙 The Hero Jeep! Shift = turbo. E to get out.", 3500); G.stats.rides = (G.stats.rides || 0) + 1; }
+function dismount() { const P = G.P, V = G.veh; if (!P.vehicle) return; const r = { x: -Math.cos(P.yaw), z: Math.sin(P.yaw) }; V.x = V.mesh.position.x; V.z = V.mesh.position.z; P.vehicle = null; P.vmesh = null; moveBody(P, r.x * 1.4, r.z * 1.4, 0.3); toast("You get off.", 1500); }
+
+// ---- Family (like RishSchoolDays): marriage, children, grandchildren ----
+CAST.wife = { name: "Anaya", look: { shirt: 0x06d6a0, dress: true, hair: 0x1d1410 } };
+CAST.son = { name: "Veer", look: { shirt: 0x3a86ff, trousers: 0x1d3557, hair: 0x1d1410 }, kid: true };
+CAST.daughter = { name: "Myra", look: { shirt: 0xff8fab, dress: true, hair: 0x1d1410 }, kid: true };
+CAST.grandkid = { name: "Chhotu", look: { shirt: 0xffb703, trousers: 0x1d3557, hair: 0x1d1410 }, kid: true };
+Object.assign(MILESTONES, { 28: "Rish marries Anaya, a kind doctor he met at the City Hospital. The whole of Sunrise Public School comes to the wedding.", 31: "A baby boy! Rish and Anaya name him Veer.", 34: "A baby girl! Her name is Myra. Veer wants to teach her football.", 58: "Grandpa Rish! Veer's baby, little Chhotu, is born." });
+function kidScale(a) { return Math.max(0.42, Math.min(1, 0.4 + a * 0.032)) / KID; }
+function spawnFamily() {
+  const S = lifeS(), A = S.age, d = PLACES.home.door, list = [];
+  if (A >= 28) list.push(["wife", 6, [["wife", A >= 31 ? "The kids keep asking when Papa will be on TV again. Come home safe." : "Promise me one thing: save the world, but be home for dinner.", "happy"]], 1]);
+  if (A >= 31) { const a = A - 31; list.push(["son", 7, [["son", a < 6 ? "Papa! Papa! Up! Up!" : a < 18 ? "Papa, my friends do not believe you are MY papa. Come to my school!" : "Papa, I joined the fire service. I want to save people like you.", "laugh"]], kidScale(a)]); }
+  if (A >= 34) { const a = A - 34; list.push(["daughter", 8, [["daughter", a < 6 ? "Papa, cape! I want a red cape too!" : a < 18 ? "I made a poster of you for my school project. I got full marks!" : "Papa, I am going to be a doctor like Mummy, and a hero like you.", "happy"]], kidScale(a)]); }
+  if (A >= 58) { const a = A - 58; list.push(["grandkid", 1, [["grandkid", "Dadu! Tell me the story of the school attack again!", "laugh"]], kidScale(a)]); }
+  if (A >= 45) list.push(["dad", 2, [["dad", "I am retired now, beta. My best job was being your father.", "happy"]], 1]);
+  for (const [id, cx, lines, sc] of list) { const n = spawnNpc(id, cx, d[1], Math.PI, null, { scale: sc }); n.faceP = true; addZone({ label: `Talk to ${personalize(nameOf(id))}`, get: () => n, r: 1.9, low: true, fn: () => say(lines) }); }
+  G.familyCount = list.length;
+}
+// ---- Tiger the dog: from age 12 he follows you everywhere ----
+function spawnDog() {
+  const S = lifeS(); G.dog = null; if (S.age < 12) return;
+  const g = new THREE.Group(), c = mat(0xa0522d); const body = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.32, 0.75), c); body.position.y = 0.45; g.add(body); const head = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.28, 0.3), c); head.position.set(0, 0.68, 0.45); g.add(head);
+  for (const e of [-0.1, 0.1]) { const ear = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.14, 0.05), mat(0x5c3317)); ear.position.set(e, 0.86, 0.42); g.add(ear); } const legs = []; for (const [x, z] of [[-0.12, 0.28], [0.12, 0.28], [-0.12, -0.28], [0.12, -0.28]]) { const l = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.32, 0.08), c); l.position.set(x, 0.16, z); g.add(l); legs.push(l); }
+  const tail = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.05, 0.3), c); tail.position.set(0, 0.6, -0.48); tail.rotation.x = -0.6; g.add(tail);
+  const P = G.P; g.position.set(P.x + 1, 0, P.z + 1); G.L.group.add(g); G.dog = { g, legs, tail, x: P.x + 1, z: P.z + 1 };
+  addZone({ label: "Pet Tiger the dog", get: () => G.dog, r: 1.6, low: true, fn: () => { toast("🐕 Tiger wags his tail: 'Woof! Woof!'", 2200); sfx("heal"); } });
+}
+function updateDog(dt) {
+  const D = G.dog, P = G.P; if (!D || !P) return;
+  const f = faceDir(P.yaw), tx = P.x - f.x * 1.4 + f.z * 0.9, tz = P.z - f.z * 1.4 - f.x * 0.9, dx = tx - D.x, dz = tz - D.z, d = Math.hypot(dx, dz);
+  if (d > 25) { D.x = tx; D.z = tz; } else if (d > 0.3) { const sp = Math.min(d, Math.max(4.5, d * 2) * dt); D.x += dx / d * sp; D.z += dz / d * sp; D.g.rotation.y = Math.atan2(dx, dz); }
+  D.g.position.set(D.x, 0, D.z); const mv = d > 0.3 ? 1 : 0; D.legs.forEach((l, i) => (l.rotation.x = Math.sin(G.t * 14 + i * 1.6) * 0.6 * mv)); D.tail.rotation.y = Math.sin(G.t * 12) * 0.6;
 }
 
 
@@ -2918,7 +2972,7 @@ function boot() {
   if (G.test || G.save.profile) menu(); else login(menu);
   requestAnimationFrame(frame);
   window.__rh = {
-    G, login, personalize, profile, JOBS, startLife, lifeDay, medals, SHADOWS, CASES, dreamJob, jobInfo, heroRun, setDaylight, emergency, emDone, yearEnd, lifeEnd, lifeFastForward, PLACES, EM_TYPES, fameLevel, lifeS, step: (dt = 1 / 60, n = 1) => { for (let i = 0; i < n; i++) step(dt); }, startChapter, completeChapter, skipNow, skipDialog, nextLine, retryFail, skipFail,
+    G, login, personalize, profile, JOBS, startLife, lifeDay, medals, mountVehicle, dismount, VEHS, SHADOWS, CASES, dreamJob, jobInfo, heroRun, setDaylight, emergency, emDone, yearEnd, lifeEnd, lifeFastForward, PLACES, EM_TYPES, fameLevel, lifeS, step: (dt = 1 / 60, n = 1) => { for (let i = 0; i < n; i++) step(dt); }, startChapter, completeChapter, skipNow, skipDialog, nextLine, retryFail, skipFail,
     keyDown, keyUp, safeWire, cutWire, codeKey, openCode, knockDown, hurtEnemy, propHit, fireGun, autoAim, CHAPTERS, MEMORIES, ENDING, CAST, MAPS, RIDDLES,
     cell: (cx, cy) => cellCenter(cx, cy), cam: () => camera, CAM, ceilAt, clockText, storyPage, STORY, GUIDE, PAGES, PAGE_TOTAL, chapterResult, resultsCard, credits, diary, cellAt, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
     tp: (cx, cy) => { const p = cellCenter(cx, cy); G.P.x = p.x; G.P.z = p.z; G.P.safe = { x: p.x, z: p.z }; },

@@ -4,7 +4,7 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A full 3D action story game in one HTML file (Three.js). It runs on a
-computer and on a phone. Version label: **Rish Hero v8** (bottom right).
+computer and on a phone. Version label: **Rish Hero v9** (bottom right).
 
 **First page:** the player types 4 things: the hero's name, age, what he
 wants to become when he grows up (any words: doctor, astronaut, cricketer...),
@@ -118,6 +118,15 @@ College, the river and the bridge, and people walking in the streets.
   ticker of his saves, old friends grown up (Kabir the football coach, Diya
   at the hospital, Aarav the app maker, Maa at home), Hero Run for famous
   heroes, and a Medals room for 20 kinds of rescue.
+- **Vehicles, like RishSchoolDays:** a bicycle waits at home from age 10.
+  From 18 the Hero Jeep takes its place. Walk to it and press E to ride; press E
+  again to get off. Riding is faster, and the camera pulls back.
+- **Family, like RishSchoolDays:** at 28 he marries Anaya. Son Veer comes
+  at 31 and daughter Myra at 34. The children grow up year by year. At 45
+  Papa retires and lives with them. At 58 a grandchild, Chhotu, arrives.
+  The family stands at home. Walk to one and press E to talk.
+- **Tiger the dog:** from age 12 a pet dog follows him around the city.
+  Press E near Tiger to pet him.
 - **Milestones:** bravery awards, the World Hero Award, a Hero Academy, a
   statue in the park at 50, and at 70 the Life Story. "Play life again"
   starts a new life. Too slow? Other rescuers help, no game over.
@@ -164,7 +173,7 @@ parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, di
   objective, the first page and the personal story, Hero Life (city, school days,
   job, 9 emergencies, Black Viper attacks, fame, cape, fans, statue,
   Life Story, the dream job, 19 emergencies, the living city, friends,
-  medals), plus phone controls. 96 checks.
+  medals, vehicles, family, the dog), plus phone controls. 99 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

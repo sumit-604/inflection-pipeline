@@ -573,6 +573,11 @@ kbd { display: inline-block; border: 1px solid #d8cdb2; border-bottom-width: 3px
 #error-bar { position: absolute; left: 50%; top: 56px; transform: translateX(-50%); max-width: 92vw; background: #c1121f; color: #fff; padding: 8px 14px; border-radius: 12px; font-size: 13px; z-index: 60; box-shadow: 0 3px 10px rgba(0,0,0,0.3); }
 #error-bar[hidden] { display: none; }
 
+#hero-btn { position: absolute; top: 64px; right: 282px; width: 46px; height: 46px; border: none; border-radius: 12px; background: rgba(255,214,10,0.95); font-size: 22px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+.hm-bar { height: 22px; background: #e9ecef; border-radius: 11px; overflow: hidden; margin: 10px 0; } .hm-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #e63946, #ffb703); }
+.hm-n { font-size: 22px; font-weight: 800; text-align: center; margin: 4px 0; } .hm-t { text-align: center; color: #c1121f; font-weight: 700; }
+.hmeds { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 6px; margin: 8px 0; } .hmed { background: #f1f3f5; border-radius: 10px; padding: 6px; text-align: center; opacity: 0.55; font-size: 12px; } .hmed.on { opacity: 1; border: 2px solid #ffb703; } .hmed b { display: block; font-size: 22px; } .hmed i { color: #c1121f; font-style: normal; font-weight: 700; }
+.hnews p { margin: 3px 0; font-size: 14px; } .hbtns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 #phone-btn { position: absolute; top: 12px; right: 228px; width: 46px; height: 46px; border: none; border-radius: 12px; background: rgba(255,253,246,0.92); font-size: 22px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
 #map-search { flex: 1 1 100%; font-size: 15px; padding: 8px 12px; border: 2px solid #e2c7a8; border-radius: 12px; font-family: inherit; }
 #map-search-result { flex: 1 1 100%; margin: 0 0 4px; }
@@ -636,6 +641,7 @@ body.gentle #dialogue-text { font-size: 20px; }
     <button id="sound-btn" title="Sound on / off">🔊</button>
     <button id="bag-btn" title="Backpack (B)">🎒</button>
     <button id="phone-btn" title="Mobile (M)">📱</button>
+    <button id="hero-btn" title="Hero: emergencies, fame and medals">🦸</button>
     <button id="partner-btn" title="Talk to your partner (R)" hidden>👮</button>
     <button id="mic-btn" title="Say a command: call Maa, go to school, open map">🎤</button>
     <button id="controls-btn" title="Controls (H)">⌨️</button>
@@ -748,7 +754,7 @@ import * as THREE from 'three';
    label goes through L(). The voice follows the language.
    Questions and answers stay in English for now.
    ============================================================ */
-const GAME_VERSION = "v80";
+const GAME_VERSION = "v81";
 const LANGS = {
   en: { name: "English", voice: "en-IN" },
   hi: { name: "हिन्दी", voice: "hi-IN" },
@@ -6820,6 +6826,7 @@ class Game {
       return false;
     };
     { const pb = document.getElementById("phone-btn"); if (pb) pb.addEventListener("click", () => { if (panelOpen()) closePanel(); else this._phone(); }); }
+    { const hb = document.getElementById("hero-btn"); if (hb) hb.addEventListener("click", () => { if (panelOpen()) closePanel(); else if (!this._uiBlocking()) this.heroPanel(); }); }
     { const rb = document.getElementById("partner-btn"); if (rb) rb.addEventListener("click", () => { if (panelOpen()) closePanel(); else this._partnerMenu(); }); }
     try { this.gentle = localStorage.getItem("school-days.gentle") === "1"; } catch (e) { this.gentle = false; } if (this.gentle) document.body.classList.add("gentle");
     this.playerName = (this.player.avatar && this.player.avatar.name) || this.progress.childOf || (this.player.girl ? "Pinky" : "Bunty");
@@ -9205,7 +9212,7 @@ class Game {
     if (this.player.riding && this.player.riding.kind === "bike" && this.progress.energy <= 0 && !this.progress.cast && !panelOpen()) this._fallOffBike();
     if (!blocked && this.player.riding && this.player.riding.duty && this.input.keys && this.input.keys.has("f") && !this._sirenHeld) { this._sirenHeld = true; this._siren = !this._siren; showToast(this._siren ? L("🚨 Siren on") : L("Siren off"), 1200); } if (!(this.input.keys && this.input.keys.has("f"))) this._sirenHeld = false;
     const useP = !blocked && this.input.usePressed(); if (this._trial) { const eP = this.input.interactPressed(); this._tickTrial(dt, useP || eP); this.ui.setInteractPrompt(`${this._trial ? this._trial.spec.icon : ""} ${L(this._trial && this._trial.kind === "cricket" ? "Swing" : "Shoot")}  (F / E)`); }
-    this._tickDaily && this._tickDaily(dt); this._tickUnstick && this._tickUnstick(dt); this._tickGirl && this._tickGirl(); this._tickUtilities && this._tickUtilities(dt); this._tickCaseFx && this._tickCaseFx(dt); this._tickMystery && this._tickMystery();
+    this._tickDaily && this._tickDaily(dt); this._tickHero && this._tickHero(dt); this._tickUnstick && this._tickUnstick(dt); this._tickGirl && this._tickGirl(); this._tickUtilities && this._tickUtilities(dt); this._tickCaseFx && this._tickCaseFx(dt); this._tickMystery && this._tickMystery();
     this._tickPet(dt); this._tickRain(); this._tickP2(dt); this._tickDirections(dt); this._tickCrowd(dt); this._tickField(dt); this._tickPartner(dt); this._tickChase(dt); this._tickTraffic(elapsed); this._tickRoadLife(dt); this._tickTransport(dt, elapsed); this._tickLounge(dt, elapsed); this._tickOutings(dt); this._tickMatchTrip(); this._tickIdeas(dt, elapsed); this._tickNight(dt, elapsed); this._tickHaveli(dt); this._tickMission && this._tickMission(dt); this._tickDayClock(dt); this._tickDuty(dt); this._tickCityZone(dt); this._tickStay(dt); this._tickExtras(dt);
     sirenTick(!!(this.player.riding && this.player.riding.duty && this._siren), dt); if (this._dutyLights) { const on = Math.floor(elapsed * 4) % 2 === 0; this._dutyLights[0].material.emissiveIntensity = this._siren && on ? 2 : 0.2; this._dutyLights[1].material.emissiveIntensity = this._siren && !on ? 2 : 0.2; }
     if (this.world.setTimeOfDay) this.world.setTimeOfDay(this.world.currentRoom ? (this.world.currentRoom.type === "haveli" ? "haunt" : this.phase === "night" ? "nightroom" : "school") : this.phase);
@@ -13195,6 +13202,211 @@ class Game {
     this._timingGame({ name: L("School crossing warden"), icon: "🚦", cue: "Show STOP when the car is in the green!", hit: "Car stops! Children cross.", miss: "Too late, wait for the next gap", verb: "STOP" }, 5, (h) => { jl.wardenDay = this._dayKey(); jl.crossed = (jl.crossed || 0) + h * 4; this._punya && this._punya(h >= 3 ? 2 : 0); this._skill && this._skill("kind"); this._jsave(); showToast(L("🚦 {n} children crossed safely today. Total: {t}. Traffic Inspector Singh salutes you!", { n: h * 4, t: jl.crossed }), 3600, "good"); }, L("Traffic Inspector Singh"));
   }
 }
+
+// ===================== HERO SIM (v81): normal life AND a hero's life =====================
+// Like Rish Hero: emergencies happen in Suryanagar while you live your normal life. You run (or ride)
+// there and save people. No secret identity: every save is in the news and the whole world knows you.
+const HERO_FAME = [[0, "your colony"], [150, "Suryanagar"], [400, "the whole state"], [800, "all of India"], [1500, "Asia"], [2500, "the whole world"]];
+const HERO_INFO = {
+  fire: { icon: "🔥", title: "FIRE!", fame: 120, pay: 500 },
+  accident: { icon: "🚗", title: "ROAD ACCIDENT!", fame: 100, pay: 400 },
+  kitten: { icon: "🐈", title: "KITTEN IN A TREE!", fame: 50, pay: 100 },
+  thief: { icon: "👜", title: "THIEF!", fame: 90, pay: 300 },
+  lost: { icon: "🧒", title: "LOST CHILD!", fame: 80, pay: 200 },
+  cpr: { icon: "❤️", title: "HEART ATTACK!", fame: 120, pay: 400 },
+  gas: { icon: "💨", title: "GAS LEAK!", fame: 110, pay: 400 },
+  snake: { icon: "🐍", title: "SNAKE!", fame: 70, pay: 200 },
+  robbery: { icon: "🏦", title: "BANK ROBBERY!", fame: 140, pay: 600 },
+  flood: { icon: "🌊", title: "FLOOD!", fame: 120, pay: 400 },
+  wire: { icon: "⚡", title: "LIVE WIRE!", fame: 100, pay: 300 },
+  cart: { icon: "🛒", title: "RUNAWAY CART!", fame: 90, pay: 300 },
+};
+const HERO_TYPES = Object.keys(HERO_INFO);
+function heroFameLevel(f) { let n = HERO_FAME[0][1]; for (const [v, t] of HERO_FAME) if (f >= v) n = t; return n; }
+const HERO_METHODS = {
+  heroState() { const pr = this.progress; if (!pr.hero) pr.hero = { fame: 0, saves: 0, kinds: {}, news: [], on: true, next: 200, autographs: 0 }; return pr.hero; },
+  _heroDoor(label) { const d = this.world.doors.find((q) => q.label === label); if (!d) return null; const r = d.rot || 0; return { x: d.x, z: d.z, ox: Math.sin(r), oz: Math.cos(r), sx: Math.cos(r), sz: -Math.sin(r), label }; },
+  _heroCanStart() {
+    return !this._hero && !this._uiBlocking() && !this.world.currentRoom && !this._sim && !this._cut && this.phase !== "school" && !this._braveM && !this._matchTrip && !this._stay && !this._zone && !this._myst && !this._trial && !this._lounge && !this._park;
+  },
+  _tickHero(dt) {
+    const H = this.heroState(); const P = this.player.position;
+    this._heroCape();
+    if (this._hero) { this._heroUpdate(dt); return; }
+    if (H.fame >= 150 && !this.world.currentRoom && !this._uiBlocking()) { this._fanT = (this._fanT || 0) + dt; if (this._fanT > 28) { this._fanT = 0; const n = this.npcs.find((q) => q.group.visible && Math.hypot(q.position.x - P.x, q.position.z - P.z) < 9); if (n) { H.autographs = (H.autographs || 0) + 1; showToast(L("{n}: 'It's {p}! The real hero! I saw you on the news!'", { n: n.name || L("A fan"), p: this.playerName }), 3200, "good"); setMood(n.group, "happy", 4); } } }
+    if (!H.on || !this._heroCanStart()) return;
+    this._heroWait = (this._heroWait || 0) + dt;
+    if (this._heroWait >= (H.next || 120)) { this._heroWait = 0; H.next = 150 + Math.random() * 120; this.heroStart(); }
+  },
+  heroStart(type) {
+    const H = this.heroState(), pr = this.progress; if (this._hero) return false;
+    let list = HERO_TYPES.slice(); if ((pr.age || 10) < 10) list = list.filter((t) => !["fire", "gas", "wire"].includes(t));
+    type = type || list[(H.saves + (pr.day || 0)) % list.length];
+    const E = { type, t: 180, objs: [], people: [], made: [], step: 0 };
+    this._hero = E;
+    try { this["_hero_" + type](E); } catch (e) { this._reportError && this._reportError(e); this._heroClean(); return false; }
+    if (!E.site) E.site = L("Suryanagar");
+    playHorn(); showToast(`🚨 ${L(HERO_INFO[type].title)} ${E.text}`, 5200, "bad");
+    this.setObjective(`🚨 ${L(HERO_INFO[type].title)} ${E.goal || E.text}`, E.x, E.z);
+    return true;
+  },
+  _heroMesh(m) { this.world.scene.add(m); this._hero.objs.push(m); return m; },
+  _heroPerson(x, z, look, lying) { const g = makeVillager(look || { shirt: 0x8ecae6, trousers: 0x3b3f4a }); g.position.set(x, 0, z); if (lying) { g.rotation.z = Math.PI / 2; g.position.y = 0.25; } this._heroMesh(g); this._hero.people.push(g); return g; },
+  _heroAct(o) { o._hero = true; this.interactables.push(o); this._hero.made.push(o); return o; },
+  _heroFire(x, z) { const g = new THREE.Group(); const a = new THREE.Mesh(new THREE.ConeGeometry(0.8, 2, 8), new THREE.MeshBasicMaterial({ color: 0xff6b00, transparent: true, opacity: 0.9 })); a.position.y = 1; g.add(a); const b = new THREE.Mesh(new THREE.ConeGeometry(0.45, 1.2, 8), new THREE.MeshBasicMaterial({ color: 0xffd166 })); b.position.y = 0.65; g.add(b); g.position.set(x, 0, z); return this._heroMesh(g); },
+  _heroMash(title, n, secs, done) {
+    const card = openPanel(`<h2>${title}</h2><div class="hm-bar"><i id="hm-fill"></i></div><p class="hm-n" id="hm-n">0 / ${n}</p><p>${L("Press E or Space very fast, or tap the button!")}</p><button id="hm-tap" class="big-btn">💪 ${L("TAP!")}</button><p class="hm-t" id="hm-t"></p>`);
+    const M = this._hm = { n, c: 0, end: performance.now() + secs * 1000, done, over: false };
+    const fin = (ok) => { if (M.over) return; M.over = true; clearInterval(M.iv); this._hm = null; closePanel(); this.input.interactPressed && this.input.interactPressed(); if (!ok) showToast(L("Not fast enough! Press E there to try again."), 2600, "bad"); done(ok); };
+    M.hit = () => { if (M.over) return; M.c++; playPick(); const f = document.getElementById("hm-fill"); if (f) f.style.width = Math.min(100, M.c / n * 100) + "%"; const t = document.getElementById("hm-n"); if (t) t.textContent = `${M.c} / ${n}`; if (M.c >= n) fin(true); };
+    M.iv = setInterval(() => { const left = (M.end - performance.now()) / 1000; const t = document.getElementById("hm-t"); if (t) t.textContent = `⏱ ${Math.max(0, left).toFixed(1)} s`; if (left <= 0) fin(false); }, 100);
+    card.querySelector("#hm-tap").addEventListener("pointerdown", (e) => { e.preventDefault(); M.hit(); });
+    return M;
+  },
+  _heroDone(ok) {
+    const E = this._hero; if (!E) return; const H = this.heroState(), pr = this.progress, I = HERO_INFO[E.type];
+    this._heroClean();
+    if (!ok) { showToast(L("Other rescuers helped this time. Be faster next time!"), 3600); H.fame += 5; saveProgress(this.profile, pr); this.setObjective(null); return; }
+    const before = heroFameLevel(H.fame); H.saves++; H.kinds[E.type] = (H.kinds[E.type] || 0) + 1; H.fame += I.fame; const lvl = heroFameLevel(H.fame);
+    const head = E.news || L("{p} saves the day at {s}.", { p: this.playerName, s: E.site });
+    H.news = [L("Day {d}: {h}", { d: pr.day, h: head })].concat(H.news || []).slice(0, 8);
+    saveProgress(this.profile, pr); this.setObjective(null); playSuccess();
+    this.addMoney && this.addMoney(I.pay, L("Hero reward from the city"));
+    this.addRep && this.addRep(3);
+    this.diary(`🦸 ${head}`);
+    const lines = [L("BREAKING NEWS. {h}", { h: head }), L("{p} has saved people {n} times. Everybody knows who the hero is. Known in: {l}.", { p: this.playerName, n: H.saves, l: lvl })];
+    if (lvl !== before) lines.push(L("Now even people in {l} know {p}'s name!", { l: lvl, p: this.playerName }));
+    setTimeout(() => { if (!this.dialogue.active) this.dialogue.say("📺 " + L("Suryanagar News"), lines, null, { pitch: 380 }); }, 900);
+  },
+  _heroClean() {
+    const E = this._hero; if (!E) return;
+    for (const m of E.objs) this.world.scene.remove(m);
+    this.interactables = this.interactables.filter((o) => !o._hero);
+    this._hero = null;
+  },
+  _heroUpdate(dt) {
+    const E = this._hero, P = this.player.position;
+    E.t -= dt; if (E.t <= 0) { this._heroDone(false); return; }
+    E.objT = (E.objT || 0) - dt; if (E.objT <= 0) { E.objT = 1; const el = document.getElementById("objective-text"); if (el && this.objective && String(this.objective.label).startsWith("🚨")) el.textContent = `${this.objective.label} · ⏱ ${Math.ceil(E.t)} s`; }
+    for (const f of E.fires || []) if (f.alive) { f.mesh.scale.y = 1 + Math.sin(performance.now() / 90 + f.x) * 0.15; if (Math.hypot(P.x - f.x, P.z - f.z) < 1.1 && (E.burn = (E.burn || 0) - dt) <= 0) { E.burn = 1; showToast(L("🔥 Too hot! Spray it from a step away."), 1500, "bad"); } }
+    if (E.mover && E.path) { const m = E.mover, tgt = E.path[E.pi % E.path.length]; const dx = tgt.x - m.position.x, dz = tgt.z - m.position.z, d = Math.hypot(dx, dz); if (d < 0.6) E.pi++; else { const s = Math.min(d, E.speed * dt); m.position.x += dx / d * s; m.position.z += dz / d * s; m.rotation.y = Math.atan2(dx, dz); if (m.userData.parts && typeof animateHuman === "function") animateHuman(m, dt, true, 1.4, false); } E.x = m.position.x; E.z = m.position.z; if (this.bigmap.waypoint) { this.bigmap.waypoint.x = E.x; this.bigmap.waypoint.z = E.z; } if (E.cartHit && Math.hypot(m.position.x - E.cartHit.x, m.position.z - E.cartHit.z) < 1.5) { this._heroDone(false); return; } }
+    if (E.follower && E.following) { const f = E.follower, yaw = this.player.facing || 0; f.position.x += (P.x - Math.sin(yaw) * 0.9 - f.position.x) * Math.min(1, dt * 6); f.position.z += (P.z - Math.cos(yaw) * 0.9 - f.position.z) * Math.min(1, dt * 6); }
+    if (E.wire && Math.random() < dt * 6) { const s = this._heroMesh(new THREE.Mesh(new THREE.SphereGeometry(0.08, 6, 4), new THREE.MeshBasicMaterial({ color: 0x9bf6ff }))); s.position.set(E.wire.x + (Math.random() - 0.5) * 2, 0.2, E.wire.z + (Math.random() - 0.5) * 2); setTimeout(() => this.world.scene.remove(s), 250); }
+    if (E.kitten) E.kitten.rotation.y += dt;
+  },
+  // ---- The emergencies ----
+  _hero_fire(E) {
+    const sites = ["City Hospital", "Sunrise Apartments", "Apartments", "Lotus Plaza", "Tech Park", "Cinema Hall", "Community Hall", "Suryanagar Mall", "Post Office"].map((l) => this._heroDoor(l)).filter(Boolean);
+    const d = sites[(this.progress.day || 0) % sites.length]; E.site = d.label; E.text = L("A fire at the {s}! People are trapped inside.", { s: d.label }); E.goal = L("Fire at the {s}", { s: d.label }); E.news = L("{p} runs into the fire at the {s} and carries a family out.", { p: this.playerName, s: d.label });
+    const bx = d.x + d.ox * 3, bz = d.z + d.oz * 3; E.x = bx; E.z = bz; E.fires = [];
+    for (const k of [-4, -1.5, 1.5, 4]) { const x = bx + d.sx * k, z = bz + d.sz * k; const f = { x, z, alive: true, mesh: this._heroFire(x, z) }; E.fires.push(f);
+      this._heroAct({ pos: { x, z }, radius: 2.6, visible: () => E.ext && f.alive, prompt: () => L("Spray the fire"), activate: () => { f.alive = false; f.mesh.visible = false; playPick(); showToast(L("💨 Fire out: {n}/4", { n: E.fires.filter((q) => !q.alive).length }), 1500, "good"); } }); }
+    const ex = { x: d.x + d.ox * 9, z: d.z + d.oz * 9 }; const can = this._heroMesh(new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.8, 10), new THREE.MeshStandardMaterial({ color: 0xd00000 }))); can.position.set(ex.x, 0.4, ex.z);
+    this._heroAct({ pos: ex, radius: 2.4, visible: () => !E.ext, prompt: () => L("Take the fire extinguisher"), activate: () => { E.ext = true; can.visible = false; playPick(); showToast(L("🧯 Got it! Now spray each fire (E)."), 2600, "good"); } });
+    const v = this._heroPerson(d.x + d.ox * 1.2, d.z + d.oz * 1.2, { shirt: 0x6c757d }, false); setMood(v, "sad", 999);
+    this._heroAct({ pos: v.position, radius: 2.4, visible: () => E.fires.every((f) => !f.alive), prompt: () => L("Carry the family out"), activate: () => this._heroDone(true) });
+  },
+  _hero_accident(E) {
+    const I = this.world.intersections.filter((q) => Math.abs(q.x) < 150 && Math.abs(q.z) < 150); const c = I[(this.progress.day || 0) % I.length]; const x = c.x + 4, z = c.z + 4; E.x = x; E.z = z; E.site = L("the crossing"); E.text = L("A car crashed at a crossing. Someone is stuck under it!"); E.news = L("{p} lifts a crashed car and saves two people at the crossing.", { p: this.playerName });
+    const car = new THREE.Group(); const b = new THREE.Mesh(new THREE.BoxGeometry(2, 1.1, 4), new THREE.MeshStandardMaterial({ color: 0xc1121f })); b.position.y = 0.75; car.add(b); car.position.set(x, 0, z); car.rotation.set(0, 0.6, 0.25); this._heroMesh(car);
+    const v1 = this._heroPerson(x + 1.5, z, null, true), v2 = this._heroPerson(x - 2, z + 2, { shirt: 0xe76f51 }, true); let aid = 0;
+    this._heroAct({ pos: { x, z }, radius: 3, visible: () => !E.lifted, prompt: () => L("Lift the car!"), activate: () => this._heroMash(L("Lift the car!"), 12, 6, (ok) => { if (ok) { E.lifted = true; car.rotation.z = 0.9; car.position.y = 0.5; showToast(L("Now give first aid to both people (E)."), 2600, "good"); } }) });
+    for (const v of [v1, v2]) this._heroAct({ pos: v.position, radius: 2.2, visible: () => E.lifted && !v.userData.helped, prompt: () => L("Give first aid"), activate: () => { v.userData.helped = true; v.rotation.z = 0; v.position.y = 0; setMood(v, "happy", 9); aid++; playPick(); if (aid >= 2) this._heroDone(true); } });
+  },
+  _hero_kitten(E) {
+    const P = this.player.position; const trees = this.world.trees.filter((t) => Math.hypot(t.position.x - P.x, t.position.z - P.z) > 15 && Math.hypot(t.position.x - P.x, t.position.z - P.z) < 110); const t = trees[(this.progress.day || 0) % Math.max(1, trees.length)] || this.world.trees[0];
+    E.x = t.position.x; E.z = t.position.z; E.site = L("a tall tree"); E.text = L("A little girl is crying: her kitten is stuck high in a tree!"); E.news = L("{p} climbs a tall tree and saves a kitten. The video goes viral!", { p: this.playerName });
+    const cat = new THREE.Group(); const cb = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.25, 0.5), new THREE.MeshStandardMaterial({ color: 0xf4a261 })); cat.add(cb); const ch = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.25, 0.25), new THREE.MeshStandardMaterial({ color: 0xf4a261 })); ch.position.set(0, 0.15, 0.3); cat.add(ch); cat.position.set(E.x, 4.2, E.z); this._heroMesh(cat); E.kitten = cat;
+    const girl = this._heroPerson(E.x + 2, E.z + 1.5, { shirt: 0xff8fab, dress: true }); girl.scale.setScalar(0.62); setMood(girl, "sad", 999);
+    this._heroAct({ pos: { x: E.x + 1.2, z: E.z + 1.2 }, radius: 2.8, prompt: () => L("Climb up and save the kitten"), activate: () => this._heroMash(L("Climb the tree!"), 8, 5, (ok) => { if (ok) { cat.position.set(girl.position.x + 0.4, 0.3, girl.position.z); E.kitten = null; setMood(girl, "happy", 9); this._heroDone(true); } }) });
+  },
+  _hero_thief(E) {
+    const I = this.world.intersections.filter((q) => Math.abs(q.x) < 120 && Math.abs(q.z) < 120); const start = { x: 40, z: 64 };
+    I.sort((a, b) => Math.hypot(a.x - start.x, a.z - start.z) - Math.hypot(b.x - start.x, b.z - start.z)); E.path = I.slice(0, 4).map((q) => ({ x: q.x + 2, z: q.z + 2 })); E.pi = 0; E.speed = 4.2;
+    const th = this._heroPerson(start.x, start.z, { shirt: 0x111111, trousers: 0x222222 }); E.mover = th; E.x = start.x; E.z = start.z; E.site = L("the market street");
+    E.text = L("A thief snatched a lady's bag in the market street! Catch him!"); E.news = L("{p} chases a bag thief through Suryanagar and catches him.", { p: this.playerName });
+    const lady = this._heroPerson(start.x + 2, start.z, { shirt: 0x9d4edd, dress: true }); setMood(lady, "sad", 999);
+    this._heroAct({ pos: th.position, radius: 2.6, prompt: () => L("Catch the thief!"), activate: () => this._heroMash(L("Grab the thief!"), 6, 4, (ok) => { if (ok) { E.mover = null; th.rotation.z = Math.PI / 2; th.position.y = 0.25; setMood(lady, "happy", 9); this._heroDone(true); } }) });
+  },
+  _hero_lost(E) {
+    const mall = this._heroDoor("Suryanagar Mall") || this._heroDoor("Post Office"); const spots = ["Old Town Library", "Post Office", "City Hospital", "Sweet Shop", "Cinema Hall"].map((l) => this._heroDoor(l)).filter(Boolean); const s = spots[(this.progress.day || 0) % spots.length];
+    const mom = this._heroPerson(mall.x + mall.ox * 2, mall.z + mall.oz * 2, { shirt: 0xe75480, dress: true }); setMood(mom, "sad", 999);
+    const kid = this._heroPerson(s.x + s.ox * 3, s.z + s.oz * 3, { shirt: 0xffb703 }); kid.scale.setScalar(0.6); setMood(kid, "sad", 999); E.follower = kid;
+    E.x = kid.position.x; E.z = kid.position.z; E.site = L("the Mall"); E.text = L("A mother is crying at the Mall: her little boy is lost! He was last seen near the {s}.", { s: s.label }); E.news = L("{p} finds a lost little boy and brings him back to his mother.", { p: this.playerName });
+    this._heroAct({ pos: kid.position, radius: 2.2, visible: () => !E.following, prompt: () => L("Take the lost boy's hand"), activate: () => { E.following = true; setMood(kid, "happy", 999); this.setObjective(L("🚨 Take the boy back to his mother at the Mall"), mom.position.x, mom.position.z); showToast(L("'I want my mummy!' Take him to the Mall."), 3000, "good"); } });
+    this._heroAct({ pos: mom.position, radius: 2.6, visible: () => E.following, prompt: () => L("Give the boy back to his mother"), activate: () => { E.following = false; setMood(mom, "happy", 9); kid.position.set(mom.position.x + 0.7, 0, mom.position.z); this._heroDone(true); } });
+  },
+  _hero_cpr(E) {
+    const pg = this.world.playgrounds[(this.progress.day || 0) % this.world.playgrounds.length]; const x = pg.x + 3, z = pg.z + 3; E.x = x; E.z = z; E.site = L("the park");
+    E.text = L("An old man fell down in the park. He is not breathing well!"); E.news = L("{p} gives CPR to a grandpa in the park until the ambulance comes.", { p: this.playerName });
+    const man = this._heroPerson(x, z, { hair: 0xdddddd, shirt: 0xf4f1de }, true);
+    this._heroAct({ pos: man.position, radius: 2.4, prompt: () => L("Give CPR"), activate: () => this._heroMash(L("CPR: push the chest, hard and fast!"), 15, 8, (ok) => { if (ok) { man.rotation.z = 0; man.position.y = 0; setMood(man, "happy", 9); showToast(L("Grandpa: 'Thank you, child... the ambulance is coming.'"), 3200, "good"); this._heroDone(true); } }) });
+  },
+  _hero_gas(E) {
+    const d = this._heroDoor("Sunrise Apartments") || this._heroDoor("Apartments"); E.site = d.label; E.x = d.x + d.ox * 3; E.z = d.z + d.oz * 3;
+    E.text = L("Cooking gas is leaking at the {s}! People feel dizzy.", { s: d.label }); E.news = L("{p} turns off a gas leak and helps two people out at the {s}.", { p: this.playerName, s: d.label });
+    const vp = { x: d.x + d.sx * 3 + d.ox * 1.5, z: d.z + d.sz * 3 + d.oz * 1.5 }; const valve = this._heroMesh(new THREE.Mesh(new THREE.TorusGeometry(0.3, 0.06, 6, 14), new THREE.MeshStandardMaterial({ color: 0xd00000 }))); valve.position.set(vp.x, 1, vp.z);
+    this._heroAct({ pos: vp, radius: 2.2, visible: () => !E.valve, prompt: () => L("Turn off the gas valve"), activate: () => { E.valve = true; valve.rotation.z = 1.6; playPick(); showToast(L("Gas off! Now help the people out (E)."), 2600, "good"); } });
+    let out = 0; for (const k of [-1, 1]) { const v = this._heroPerson(d.x + d.ox * 1.5 + d.sx * k * 1.5, d.z + d.oz * 1.5 + d.sz * k * 1.5, null, true); this._heroAct({ pos: v.position, radius: 2.2, visible: () => E.valve && !v.userData.out, prompt: () => L("Help them out into fresh air"), activate: () => { v.userData.out = true; v.rotation.z = 0; v.position.y = 0; v.position.x += d.ox * 3; v.position.z += d.oz * 3; out++; playPick(); if (out >= 2) this._heroDone(true); } }); }
+  },
+  _hero_snake(E) {
+    const d = this._heroDoor("Aarav's House") || this._heroDoor("Our Home"); E.site = d.label; E.x = d.x + d.ox * 3; E.z = d.z + d.oz * 3;
+    E.text = L("A big cobra is at the door of {s}! The family is scared.", { s: d.label }); E.news = L("{p} calmly catches a cobra and frees it in the forest.", { p: this.playerName });
+    const sn = new THREE.Group(); for (let k = 0; k < 8; k++) { const s = new THREE.Mesh(new THREE.SphereGeometry(0.13, 8, 6), new THREE.MeshStandardMaterial({ color: 0x2d6a4f })); s.position.set(Math.sin(k * 0.8) * 0.3, 0.12, k * 0.22); sn.add(s); } sn.position.set(E.x, 0, E.z); this._heroMesh(sn);
+    this._heroAct({ pos: { x: E.x, z: E.z }, radius: 2.6, prompt: () => L("Catch the snake gently with a stick"), activate: () => this._heroMash(L("Stay calm and catch it!"), 8, 5, (ok) => { if (ok) { sn.visible = false; this._heroDone(true); } }) });
+  },
+  _hero_robbery(E) {
+    const d = this._heroDoor("City Bank") || this._heroDoor("Post Office"); E.site = d.label; E.x = d.x + d.ox * 3; E.z = d.z + d.oz * 3;
+    E.text = L("Robbers are inside the {s}! Ring the alarm and hold the gate.", { s: d.label }); E.news = L("{p} rings the alarm and holds the {s} gate shut until the police catch the robbers.", { p: this.playerName, s: d.label });
+    for (const k of [-1.2, 1.2]) { const r = this._heroPerson(d.x + d.sx * k - d.ox * 0.5, d.z + d.sz * k - d.oz * 0.5, { shirt: 0x111111, trousers: 0x222222 }); setMood(r, "angry", 999); }
+    const al = { x: d.x + d.sx * 3 + d.ox * 1, z: d.z + d.sz * 3 + d.oz * 1 }; const bell = this._heroMesh(new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.4, 0.2), new THREE.MeshStandardMaterial({ color: 0xffd60a }))); bell.position.set(al.x, 1.6, al.z);
+    this._heroAct({ pos: al, radius: 2.2, visible: () => !E.alarm, prompt: () => L("Ring the bank alarm"), activate: () => { E.alarm = true; playHorn(); showToast(L("🔔 ALARM! The police are coming. Hold the gate shut!"), 2800, "good"); } });
+    this._heroAct({ pos: { x: E.x, z: E.z }, radius: 2.6, visible: () => E.alarm, prompt: () => L("Hold the gate shut!"), activate: () => this._heroMash(L("Hold the gate! The police are coming!"), 14, 7, (ok) => { if (ok) { showToast(L("🚓 The police arrive and arrest the robbers!"), 3000, "good"); this._heroDone(true); } }) });
+  },
+  _hero_flood(E) {
+    const d = this._heroDoor("Fish Market") || this._heroDoor("Kirana Store"); E.site = d.label; E.x = d.x + d.ox * 4; E.z = d.z + d.oz * 4;
+    E.text = L("Heavy rain! The road near the {s} is flooding and children are stuck!", { s: d.label }); E.news = L("Flood at the {s}: {p} carries three children to safety.", { s: d.label, p: this.playerName });
+    const w = this._heroMesh(new THREE.Mesh(new THREE.BoxGeometry(14, 0.3, 10), new THREE.MeshStandardMaterial({ color: 0x3a86c8, transparent: true, opacity: 0.55 }))); w.position.set(E.x, 0.1, E.z);
+    let safe = 0; for (let i = 0; i < 3; i++) { const k = this._heroPerson(E.x - 4 + i * 4, E.z + (i - 1) * 2, { shirt: [0xffb703, 0x06d6a0, 0xef476f][i] }); k.scale.setScalar(0.6); setMood(k, "sad", 999);
+      this._heroAct({ pos: k.position, radius: 2.2, visible: () => !k.userData.safe, prompt: () => L("Carry the child to safety"), activate: () => { k.userData.safe = true; setMood(k, "happy", 9); k.position.x = d.x + d.ox * 11 + i; k.position.z = d.z + d.oz * 11; safe++; playPick(); if (safe >= 3) this._heroDone(true); } }); }
+  },
+  _hero_wire(E) {
+    const I = this.world.intersections.filter((q) => Math.abs(q.x) < 150 && Math.abs(q.z) < 150); const c = I[((this.progress.day || 0) + 3) % I.length]; E.wire = { x: c.x + 5, z: c.z }; E.x = E.wire.x; E.z = E.wire.z; E.site = L("the crossing");
+    E.text = L("A storm knocked down a power line! It is sparking on the road."); E.news = L("{p} keeps people away from a live wire until the power company switches it off.", { p: this.playerName });
+    const pole = this._heroMesh(new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 7, 8), new THREE.MeshStandardMaterial({ color: 0x6c757d }))); pole.position.set(E.x, 0.3, E.z); pole.rotation.z = Math.PI / 2 - 0.15;
+    let cones = 0; for (const [ox, oz] of [[-5, -4], [5, -4], [-5, 4], [5, 4]]) { const p = { x: E.x + ox, z: E.z + oz }; const cone = this._heroMesh(new THREE.Mesh(new THREE.ConeGeometry(0.3, 0.8, 8), new THREE.MeshStandardMaterial({ color: 0xff6b00 }))); cone.position.set(p.x, 0.4, p.z); cone.visible = false;
+      const a = this._heroAct({ pos: p, radius: 2.0, visible: () => !cone.visible, prompt: () => L("Put a safety cone here"), activate: () => { cone.visible = true; cones++; playPick(); showToast(L("Cones: {n}/4", { n: cones }), 1400, "good"); } }); }
+    this._heroAct({ pos: { x: E.x, z: E.z + 6 }, radius: 2.6, visible: () => cones >= 4, prompt: () => L("Call the power company"), activate: () => { showToast(L("📱 'A live wire at the crossing, please switch it off!' ... Power OFF."), 3200, "good"); E.wire = null; this._heroDone(true); } });
+  },
+  _hero_cart(E) {
+    const start = { x: 40, z: 90 }, end = { x: 40, z: 56 }; const cart = new THREE.Group(); const b = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.9, 2.2), new THREE.MeshStandardMaterial({ color: 0x8b5a2b })); b.position.y = 0.9; cart.add(b); const f = new THREE.Mesh(new THREE.BoxGeometry(1.5, 0.35, 2), new THREE.MeshStandardMaterial({ color: 0xff9f1c })); f.position.y = 1.5; cart.add(f); cart.position.set(start.x, 0, start.z); this._heroMesh(cart);
+    E.mover = cart; E.path = [end]; E.pi = 0; E.speed = 1.2; E.cartHit = end; E.x = start.x; E.z = start.z; E.site = L("the market street"); E.t = 60;
+    E.text = L("A heavy fruit cart is rolling down the market street toward children!"); E.news = L("{p} stops a runaway cart in the market street. The children are safe.", { p: this.playerName });
+    for (let i = 0; i < 3; i++) { const k = this._heroPerson(end.x - 1 + i, end.z - 1, { shirt: [0xffb703, 0x3a86ff, 0xef476f][i] }); k.scale.setScalar(0.6); }
+    this._heroAct({ pos: cart.position, radius: 3, prompt: () => L("Stop the cart!"), activate: () => this._heroMash(L("Hold the cart!"), 10, 5, (ok) => { if (ok) { E.mover = null; this._heroDone(true); } }) });
+  },
+  // ---- Looks and screens ----
+  _heroCape() {
+    const H = this.progress.hero; const g = this.player.group; if (!H || H.fame < 150 || g.userData.heroCape) return;
+    const cape = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.85, 0.04), new THREE.MeshStandardMaterial({ color: 0xc1121f })); cape.position.set(0, 0.95, -0.2); cape.rotation.x = 0.12; g.add(cape);
+    const badge = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.11, 0.03, 12), new THREE.MeshStandardMaterial({ color: 0xffd60a, emissive: 0x443300 })); badge.rotation.x = Math.PI / 2; badge.position.set(0, 1.12, 0.16); g.add(badge);
+    g.userData.heroCape = cape; showToast(L("🦸 Suryanagar gives you a hero cape! Now everybody knows you."), 3600, "good");
+  },
+  heroPanel() {
+    const H = this.heroState(); const kinds = HERO_TYPES.map((k) => `<div class="hmed ${H.kinds[k] ? "on" : ""}"><b>${H.kinds[k] ? HERO_INFO[k].icon : "🔒"}</b><span>${L(HERO_INFO[k].title.replace("!", ""))}</span><i>${H.kinds[k] ? "×" + H.kinds[k] : ""}</i></div>`).join("");
+    const card = openPanel(`<h2>🦸 ${L("Hero of Suryanagar")}</h2>
+      <p>${L("Live your normal life. When there is an emergency, run there and save people. No secret: the whole world knows you are the hero.")}</p>
+      <p>🌍 ${L("Known in")}: <b>${L(heroFameLevel(H.fame))}</b> · ${L("Fame")} <b>${H.fame}</b> · 🦸 ${L("Saves")} <b>${H.saves}</b> · ✍️ ${L("Autographs")} <b>${H.autographs || 0}</b></p>
+      <div class="hmeds">${kinds}</div>
+      <h3>📺 ${L("In the news")}</h3><div class="hnews">${(H.news || []).map((n) => `<p>${n}</p>`).join("") || `<p>${L("No news yet. Save someone!")}</p>`}</div>
+      <div class="hbtns"><button class="big-btn" id="hero-now">🚨 ${L("Find an emergency now")}</button><button class="big-btn" id="hero-tog">${H.on ? "🔔 " + L("Hero alerts: ON") : "🔕 " + L("Hero alerts: OFF")}</button><button class="big-btn" id="hero-close">${L("Close")}</button></div>`);
+    card.querySelector("#hero-close").addEventListener("click", () => closePanel());
+    card.querySelector("#hero-tog").addEventListener("click", () => { H.on = !H.on; saveProgress(this.profile, this.progress); closePanel(); this.heroPanel(); });
+    card.querySelector("#hero-now").addEventListener("click", () => { closePanel(); if (this._hero) { showToast(L("Finish this emergency first!"), 2200, "bad"); return; } if (this.world.currentRoom || this._zone || this._braveM || this._matchTrip || this._stay) { showToast(L("Go outside in Suryanagar first."), 2400, "bad"); return; } this.heroStart(); });
+  },
+};
+Object.assign(Game.prototype, HERO_METHODS);
+window.addEventListener("keydown", (e) => { const g = window.__game; if (!g || !g._hm) return; if (e.key === "e" || e.key === "E" || e.key === " ") { e.preventDefault(); g._hm.hit(); } });
 
 function boot() {
   const loadingScreen = document.getElementById("loading-screen");

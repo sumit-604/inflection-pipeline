@@ -21,6 +21,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
 
 (async () => {
   browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', args: ['--use-gl=swiftshader', '--enable-unsafe-swiftshader'] });
+  { const _np = browser.newPage.bind(browser); browser.newPage = async (o) => { const pg = await _np(o); if (process.env.THREE_LOCAL) await pg.route('https://cdn.jsdelivr.net/npm/three@0.160.0/**', (r) => { const u = r.request().url().replace('https://cdn.jsdelivr.net/npm/three@0.160.0/', ''); r.fulfill({ path: require('path').join(process.env.THREE_LOCAL, u), contentType: 'application/javascript' }); }); return pg; }; } // THREE_LOCAL=/path/to/three serves Three.js locally when the CDN is blocked
   let p;
   // ---------- A. Start screen ----------
   if (want('A')) try {
@@ -612,6 +613,34 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     ok('U7 no page errors', p.errs.length === 0 && !(await ev(p, () => window.__game._lastErr)), p.errs.join(' | '));
     await p.close();
   } catch (e) { ok('U scary ghost', false, e.message.slice(0, 300)); }
+
+  // ---------- V. v81: the Hero sim (normal life AND a hero's life) ----------
+  if (want('V')) try {
+    p = await fresh();
+    const v0 = await ev(p, () => { const g = window.__game; if (g.world.currentRoom) g._exitRoom(); window.__fin(); return { btn: !!document.getElementById('hero-btn'), ver: document.getElementById('version-tag').textContent, H: JSON.stringify(g.heroState()) }; });
+    ok('V1 a hero button (🦸) and version v81', v0.btn && /v81/.test(v0.ver), JSON.stringify(v0));
+    await p.click('#hero-btn'); await p.waitForTimeout(300);
+    const v1 = await ev(p, () => { const t = document.getElementById('job-card') ? document.getElementById('job-card').textContent : document.body.innerText; return { panel: /Hero of Suryanagar/.test(t) && /Find an emergency now/.test(t) && /Hero alerts: ON/.test(t), meds: document.querySelectorAll('.hmed').length }; });
+    ok('V2 the hero panel: fame, saves, 12 medals, news, alerts on/off, find an emergency now', v1.panel && v1.meds === 12, JSON.stringify(v1));
+    await ev(p, () => { document.querySelector('#hero-close') && document.querySelector('#hero-close').click(); });
+    const v3 = await ev(p, () => { const g = window.__game; const H = g.heroState(); H.next = 1; g._heroWait = 0; const t0 = performance.now(); for (let i = 0; i < 40 && !g._hero; i++) g._tickHero(0.05); return { started: !!g._hero, obj: document.getElementById('objective-text').textContent, type: g._hero && g._hero.type }; });
+    ok('V3 while you live your normal life, an emergency starts by itself, with an objective and the compass', v3.started && /🚨/.test(v3.obj), JSON.stringify(v3));
+    const v4 = await ev(p, async () => { const g = window.__game; g._heroClean(); const wait = (ms) => new Promise((r) => setTimeout(r, ms)); const out = {}; const m0 = g.progress.money;
+      for (const t of ['fire', 'accident', 'kitten', 'thief', 'lost', 'cpr', 'gas', 'snake', 'robbery', 'flood', 'wire', 'cart']) { window.__fin(); g.heroStart(t); let k = 0;
+        while (g._hero && k++ < 30) { const acts = g.interactables.filter((o) => o._hero && (!o.visible || o.visible())); if (!acts.length) { await wait(200); continue; } const a = acts[0]; g.player.group.position.set(a.pos.x + 0.8, 0, a.pos.z + 0.3); await wait(100); const near = g._nearestInteractable(); (near && near._hero ? near : a).activate(); await wait(50); if (g._hm) { const n = g._hm.n; for (let i = 0; i < n; i++) g._hm.hit(); } await wait(50); window.__fin(); }
+        out[t] = !g._hero; }
+      const H = g.heroState(); return { out, saves: H.saves, kinds: Object.keys(H.kinds).length, news: H.news.length, fame: H.fame, paid: g.progress.money - m0, diary: g.progress.diary.filter((d) => d.includes('🦸')).length, cape: !!g.player.group.userData.heroCape }; });
+    ok('V4 12 emergencies, each solved by playing: fire, accident, kitten, thief chase, lost child, CPR, gas leak, snake, bank robbery, flood, live wire, runaway cart', Object.values(v4.out).every(Boolean) && v4.kinds === 12, JSON.stringify(v4));
+    ok('V5 every save: fame, a city reward, a diary line and BREAKING NEWS; a famous hero gets a red cape', v4.saves >= 12 && v4.fame >= 1000 && v4.paid > 3000 && v4.diary >= 12 && v4.news === 8 && v4.cape, JSON.stringify(v4));
+    const v6 = await ev(p, async () => { const g = window.__game; window.__fin(); g.heroStart('kitten'); const a = g.interactables.find((o) => o._hero); g.player.group.position.set(a.pos.x + 0.8, 0, a.pos.z + 0.3); await new Promise((r) => setTimeout(r, 150)); a.activate(); return { mash: !!g._hm, n: g._hm && g._hm.n }; });
+    for (let i = 0; i < (v6.n || 8) + 1; i++) { await p.keyboard.press('e'); await p.waitForTimeout(40); }
+    const v7 = await ev(p, () => { const g = window.__game; window.__fin(); return { done: !g._hero, kitten: g.heroState().kinds.kitten }; });
+    ok('V6 the "press E fast" moves work with the real E key', v6.mash && v7.done && v7.kitten >= 2, JSON.stringify([v6, v7]));
+    const v8 = await ev(p, () => { const g = window.__game; window.__fin(); g.heroStart('snake'); g._hero.t = 0.01; g._tickHero(0.05); const failed = !g._hero && /Other rescuers/.test(document.getElementById('toast') ? document.getElementById('toast').textContent : document.body.innerText);
+      const H = g.heroState(); H.on = false; H.next = 1; g._heroWait = 0; for (let i = 0; i < 60; i++) g._tickHero(0.05); const off = !g._hero; H.on = true; return { failed, off }; });
+    ok('V7 too slow: other rescuers help (no game over); hero alerts can be switched off', v8.failed && v8.off, JSON.stringify(v8));
+    ok('V8 no page errors', p.errs.length === 0 && !(await ev(p, () => window.__game._lastErr)), p.errs.join(' | '));
+  } catch (e) { ok('V hero sim', false, e.message.slice(0, 300)); }
 
   await browser.close();
   const fails = results.filter((r) => r[0] === 'FAIL'); console.log(`\n==== ${results.length - fails.length} PASS, ${fails.length} FAIL ====`); fails.forEach((f) => console.log('FAIL: ' + f[1] + ' -- ' + f[2]));

@@ -72,6 +72,12 @@ from the jsdelivr CDN.
   puts you back about 100 m before the gap with a rolling start.
 - **Skill Park 2 (v13):** a second pad west of the Skill Park with Ring dash,
   Car bowling, Bullseye jump, Donut master and Balloon pop.
+- **Hero missions (v14):** two new missions in the mission menu, like the
+  hero sim in RishSchoolDays. Ambulance run: the game lends the ambulance;
+  take 3 patients to City Hospital before the timer ends. Fire call: the
+  game lends the fire truck; drive to 2 fires, stop within 18 m and press
+  H (the hose) for 4 seconds on each. 3 new badges: Ambulance hero, Fire
+  fighter and Hero of the city (3 hero calls). 41 badges.
 - **More races (v13):** Fiction Cup (hover, UFO, ghost), Bike battle, Rocket
   rally and Big rig race. The game lends the right vehicle and gives yours
   back. 38 badges.
@@ -191,3 +197,5 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   under gaps, clouds, ramps that sit on raised roads. 208 regression checks.
 - v13: sky tracks, 4 fiction tracks (22 in all), Skill Park 2 with 5 games,
   4 new races, rolling start after a fall, 38 badges. 212 regression checks.
+- v14: hero missions: Ambulance run and Fire call, 3 new badges (41).
+  215 regression checks.

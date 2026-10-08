@@ -1037,6 +1037,18 @@ Horror sounds: a low drone while she is near, a heartbeat that gets faster as sh
 
 The automatic check runs in four parts: RGROUPS=A,B,C,E,F,G,H,I,J, RGROUPS=K,L,M,N, RGROUPS=O,P,Q,R,S,T and RGROUPS=U (the ghost).
 
+## Hero life inside School Days (v81)
+
+School Days now has the hero sim from Rish Hero. Normal life goes on, and emergencies happen too. Like Shaktimaan, the player keeps a normal life and is also the saviour. There is no secret: the whole world knows.
+
+- About every 3 to 4 minutes outside, a 🚨 alert comes with a siren, a timer and a gold marker. It never comes in school, in a room, in a simulator or during a match.
+- 12 kinds of emergency: fire, road accident, kitten in a tree, thief, lost child, heart attack (CPR), gas leak, snake, bank robbery, flood, live wire and a runaway cart. Fire, gas and live wire wait until age 10.
+- Reach the place and press E. Then tap fast (E, Space or the TAP button) to fill the bar before the time ends.
+- A save gives fame, money, respect and a diary page. A BREAKING NEWS report names you. Too slow? Other rescuers help, and nobody is hurt.
+- Fame grows: your colony, Suryanagar, the whole state, all of India, Asia, the whole world. At Suryanagar fame you wear a red cape, and fans stop you in the street for autographs.
+- The 🦸 button (top right) shows your fame, 12 medals and the news. It has Hero alerts ON/OFF and "Find an emergency now".
+- The automatic check has a new group V (8 checks). The full run passes 233 of 233 checks.
+
 ## Files
 
 - `index.html` the whole game. Open it in a browser.

@@ -29,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v13", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v14", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -186,7 +186,7 @@ const HELPERS = () => {
   await E(() => { G.setPos(-39, 12, 0); G.car.s = 24; keys("up"); sim(1.05); keys(); }); await p.waitForTimeout(1200); await p.screenshot({ path: `${SHOTS}/10-jump.png` });
   // 13. Badges
   r = await E(() => { G.checkBadges(); G.openMenu(); document.querySelector("#m-badges").click(); return { n: document.querySelectorAll(".badge").length, on: document.querySelectorAll(".badge.on").length, jump: !!S.badges.jump1, wash: !!S.badges.wash, toll: !!S.badges.toll, plate: !!S.badges.plate }; });
-  ok("N13 38 badges, earned ones lit", r.n === 38 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
+  ok("N13 41 badges, earned ones lit", r.n === 41 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
   await p.screenshot({ path: `${SHOTS}/11-badges.png` });
   // 14. Village and Sunrise Hill: drive the road with a simple autopilot
   r = await E(() => { document.querySelector("#b-back").click(); document.querySelector("#m-free").click(); const W = G.world, v0 = S.stats.village, h0 = S.stats.hilltop; S.fuel = 100; G.setPos(-180, -3.5, -Math.PI / 2); keys("up"); let i = 0, maxY = 0;
@@ -493,6 +493,14 @@ const HELPERS = () => {
   r = await E(() => { G.setPos(-3.5, -150, 0); G.car.s = 0; const W = G.world, bx = W.boxes[0]; G.setPos((bx.x0 + bx.x1) / 2, bx.z0 - 2.2, 0); keys("up"); sim(3); keys(); return { kmh: G.car.kmh, toast: document.querySelector("#toast").textContent }; });
   ok("AC auto-unstick when pushing a wall", r.toast.includes("Unstuck"), r);
 
+
+  // v14: hero calls (ambulance run, fire call)
+  r = await E(() => { noTraffic(); const car0 = S.car; G.startAmbulance(); const lent = S.car === "amb"; let n = 0; while (G.mode.kind === "mission" && n < 30) { const b = G.beacon.position; G.setPos(b.x, b.z, 0); sim(0.3); n++; } return { lent, n, title: document.querySelector("#card h2")?.textContent, amb: S.stats.amb, back: S.car === car0 }; });
+  ok("H14a Ambulance run: the game lends the ambulance, 3 patients to the City Hospital, then gives your car back", r.lent && /3 patients saved/.test(r.title || "") && r.amb >= 3 && r.back, r);
+  r = await E(() => { const car0 = S.car; G.startFireCall(); const lent = S.car === "fire"; let n = 0, noSpray = 0; while (G.mode.kind === "mission" && n < 20) { const b = G.beacon.position; G.setPos(b.x + 4, b.z, 0); sim(0.5); if (n === 0) noSpray = G.mode.kind === "mission" ? 1 : 0; G.horn(); sim(4.5); n++; } return { lent, noSpray, n, title: document.querySelector("#card h2")?.textContent, fires: S.stats.fires, back: S.car === car0 }; });
+  ok("H14b Fire call: the fire truck, stop near the fire, press H to spray the water cannon; 2 fires out", r.lent && r.noSpray && /Both fires are out/.test(r.title || "") && r.fires >= 2 && r.back, r);
+  r = await E(() => { G.checkBadges(); return ["amb1", "fire1", "hero3"].every((k) => S.badges[k]); });
+  ok("H14c new badges: Ambulance hero, Fire fighter, Hero of the city", r, r);
   // Phone layout with touch buttons
   const m = await b.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
   const mp = await m.newPage(); mp.on("pageerror", (e) => errs.push("M " + e.message)); await mp.goto(URL); await mp.waitForFunction(() => window.__dd, null, { timeout: 90000 }); await mp.evaluate(HELPERS);

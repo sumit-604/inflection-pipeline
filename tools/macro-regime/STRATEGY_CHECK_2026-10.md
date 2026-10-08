@@ -330,3 +330,39 @@ time. Both metals were already up more than 20% on the year in the
 2006, 2011 and 2021-22 reflation months; after those, aluminium was
 flat (median -2.4%, n=23) and zinc still rose (median +22%, n=32).
 Small samples, three episodes; a prior, not a probability.
+
+## RBI publications as the India source, 2026-10-08 (operator ruling)
+
+Operator ruling 2026-10-08: India macro data is taken from RBI's own
+publications. First two in use: the Monetary Policy Report of October 2026
+and the Governor's Statement of 7 October 2026 (verbatim text under
+data/raw/rbi_*; parsed by build_data.py rbi(), no number typed).
+
+Cross-check against what the model already held:
+
+| Series | Model before | RBI | Effect |
+|---|---|---|---|
+| Manufacturing GVA YoY, Q1 FY26 to Q1 FY27 | 8.3, 10.0, 9.0, 7.9, 9.2 (MoSPI) | 8.3, 10.0, 9.0, 7.9, 9.2 (MPR Table III.9, p63) | identical |
+| Services GVA YoY, same quarters | 8.0, 9.1, 10.1, 11.5, 10.0 (MoSPI, three service industries) | 7.6, 8.9, 9.6, 11.0, 9.7 (RBI "Services" includes construction) | definition gap of 0.2 to 0.5 points; no quarter crosses 7% |
+| Bank credit YoY, Mar-25 to Dec-25 | 11.7, 12.5, 13.2, 16.8 (BIS via FRED) | 11.0, 9.5 (Jun), 10.4 (Sep), 14.5 (MPR Table II.5, p42) | BIS ran 0.7 to 3.0 points high; RBI now governs from 2025-03 |
+
+The credit correction moves the 2025 India read. With RBI credit at 9.5 to
+10.4% from June to September 2025, the credit test fails where BIS had it
+passing. The vote now reads 2025 as `GGGGDDDGGDGG` (was `GGGGDDDGGGGG`);
+the z-score dial reads `GGGGGGDDDDDD` (was all G). Python now agrees with
+the TradingView strip, which already read the RBI loan-growth feed.
+
+Current read (2026-09): India GOLDILOCKS, 3 of 3 growth tests pass (IIP
+3m mean 7.8%, services GVA 10.0%, RBI bank credit 19.1% in August).
+
+RBI's own outlook (Governor's Statement, 7 October 2026): repo rate
+raised 25 bps to 5.50%, stance changed to calibrated tightening, "rate
+cuts are off the table in the near term". CPI projected 4.9% Jul-Sep,
+6.0% Oct-Dec, 5.7% Jan-Mar, 5.6% Apr-Jun 2027; real GDP 7.2%, 6.9%, 6.8%,
+7.1%. On RBI's path India CPI crosses the 5% benchmark in Oct-Dec with
+growth still passing every test: the model's next India read would be
+REFLATION. latest.md now prints this line; it is a forecast and the model
+still switches only on the published CPI print.
+
+Open: RBI bank credit history before 2025-03 is still BIS. The RBI series
+(Handbook of Statistics / DBIE, SCB non-food credit) would replace it.

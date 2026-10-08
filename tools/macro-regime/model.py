@@ -73,8 +73,18 @@ def load_panel() -> pd.DataFrame:
         mf = _s("in_gva_yoy_q", "manufacturing_yoy"); mf.index = mf.index + 2
         c["in_mfg_gva_yoy"] = mf
     cr = _s("in_bank_credit_yoy_q")
+    rb = _s("in_bank_credit_rbi")
     if cr is not None:
         cr.index = cr.index + 1
+        if rb is not None:
+            # RBI publications govern India macro (operator ruling
+            # 2026-10-08): RBI bank credit from its first published point,
+            # BIS (FRED CRDQINBPABIS) before it. On the 2025-26 overlap BIS
+            # ran 0.7 to 3.0 points above RBI.
+            rb = rb.copy(); rb.index = rb.index + 1
+            # never let a release-lagged point open a new read month
+            rb = rb[rb.index <= c["nifty"].dropna().index[-1]]
+            cr = pd.concat([cr[cr.index < rb.index[0]], rb])
         c["in_bank_credit_yoy"] = cr
     # India CPI YoY: MoSPI (issuing body) from 2014-01, FRED OECD before.
     # The two differ by up to 5.6 points on the overlap; MoSPI wins there.
@@ -173,7 +183,7 @@ DIAL_INPUTS = {
          lambda p: p["in_iip_yoy"].rolling(3, min_periods=2).mean(), +1),
         ("India services GVA YoY (MoSPI, quarterly)",
          lambda p: p["in_services_gva_yoy"], +1),
-        ("India bank credit YoY (BIS, quarterly)",
+        ("India bank credit YoY (RBI from 2025-03, BIS before)",
          lambda p: p["in_bank_credit_yoy"], +1),
     ],
 }

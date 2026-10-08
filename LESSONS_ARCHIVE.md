@@ -1043,3 +1043,5 @@ OR-14 re-derivation (PR #193): SYSTANGO, SHYAMMETL, MANINDS ruled Small on
 2026-10-04 (PR #201). AIMTRON and ASIANENE: not re-derived; operator ruling
 2026-10-04 (standing ruling: framework rulings apply forward; closed names keep
 their record as of the run that produced it). Both stay CONCERN, Small.
+
+2026-10-08 tools/macro-regime (7e6fddc3, PR #210): open action, RBI bank credit history before 2025-03 (Handbook of Statistics / DBIE, SCB non-food credit) to replace the BIS series in the India growth vote; RBI points govern from 2025-03.

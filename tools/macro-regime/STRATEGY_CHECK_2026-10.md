@@ -277,3 +277,92 @@ Neither uses a price. Both sides (model.py, Pine) changed.
 The two agree in 70% of months since 1998-02 (the old dial agreed with the vote far less). Dial regime changes 62 in 344 months; vote 86 in 367. Both read 2025 and 2026 as GOLDILOCKS. Where they still differ (2010-2014) the dial reads S where the vote reads R: growth was healthy in absolute terms but below the 2005-2010 norm while CPI ran above 5%.
 
 Current read (2026-09): dial z +0.83 (2 of 3 inputs, credit NOT FOUND after 2026-04), vote 2 of 2. India GOLDILOCKS on both.
+
+## Asset read by regime, 2026-10-07 (reference numbers in the Pine table)
+
+Operator question 2026-10-07: what do the current regime and liquidity
+say for zinc and aluminium, and how to see it on the chart. The indicator
+now carries two "asset read" rows (inputs: Asset read, row 1 and row 2;
+defaults aluminium and zinc) that print, for the current global regime
+(India regime for nifty), the numbers below. They are hard-coded from this
+table, not computed on the chart, and are reference only: the exposure
+bands failed their bar and nothing here is a forecast.
+
+Level definition, months 2004-01 to 2025-09 (12-month forward windows).
+up = share of windows that ended higher; med = median 12m return; holds =
+median when the same regime was still in place 6 months later; turns =
+median when it had changed. n = months in the regime.
+
+| Asset | Regime | n | up | med | holds | turns |
+|---|---|---|---|---|---|---|
+| gold | REFLATION | 41 | 66% | +5.7% | +16.7% (n=16) | +2.9% (n=25) |
+| gold | GOLDILOCKS | 92 | 62% | +9.9% | +10.1% (n=43) | +5.7% (n=49) |
+| gold | STAGFLATION | 46 | 91% | +11.8% | +11.8% (n=26) | +12.5% (n=20) |
+| gold | DEFLATION | 82 | 77% | +16.6% | +17.7% (n=45) | +8.6% (n=37) |
+| silver | REFLATION | 41 | 51% | +2.3% | +34.6% (n=16) | -6.5% (n=25) |
+| silver | GOLDILOCKS | 92 | 52% | +0.6% | +7.9% (n=43) | -4.8% (n=49) |
+| silver | STAGFLATION | 46 | 70% | +9.0% | +8.5% (n=26) | +12.2% (n=20) |
+| silver | DEFLATION | 82 | 68% | +19.9% | +19.5% (n=45) | +22.7% (n=37) |
+| aluminium | REFLATION | 41 | 54% | +3.2% | +23.2% (n=16) | -10.9% (n=25) |
+| aluminium | GOLDILOCKS | 92 | 68% | +9.5% | +14.2% (n=43) | +1.1% (n=49) |
+| aluminium | STAGFLATION | 46 | 35% | -7.7% | -10.1% (n=26) | -5.1% (n=20) |
+| aluminium | DEFLATION | 82 | 57% | +5.6% | -4.4% (n=45) | +20.7% (n=37) |
+| zinc | REFLATION | 41 | 66% | +11.7% | +60.7% (n=16) | -4.4% (n=25) |
+| zinc | GOLDILOCKS | 92 | 57% | +8.4% | +15.7% (n=43) | -7.3% (n=49) |
+| zinc | STAGFLATION | 46 | 43% | -3.6% | -23.3% (n=26) | +7.8% (n=20) |
+| zinc | DEFLATION | 82 | 60% | +5.9% | -0.4% (n=45) | +24.0% (n=37) |
+| brent | REFLATION | 41 | 59% | +3.0% | +24.5% (n=16) | -2.2% (n=25) |
+| brent | GOLDILOCKS | 92 | 72% | +26.5% | +32.2% (n=43) | +11.4% (n=49) |
+| brent | STAGFLATION | 46 | 28% | -8.7% | -12.6% (n=26) | -5.5% (n=20) |
+| brent | DEFLATION | 82 | 48% | -1.4% | -17.7% (n=45) | +27.6% (n=37) |
+| nifty | REFLATION | 41 | 83% | +12.3% | +36.0% (n=16) | +9.9% (n=25) |
+| nifty | GOLDILOCKS | 92 | 77% | +13.0% | +15.4% (n=43) | +7.3% (n=49) |
+| nifty | STAGFLATION | 46 | 83% | +15.0% | +15.0% (n=26) | +12.1% (n=20) |
+| nifty | DEFLATION | 82 | 77% | +10.5% | +7.1% (n=45) | +19.6% (n=37) |
+
+Reading for the metals in REFLATION. On their own the REFLATION months
+are near a coin toss (aluminium up 54%, zinc 66%). The split is by what
+came next. When REFLATION was still in place six months on (16 months),
+aluminium's 12m median was +23% and zinc's +61%, up 88% and 100% of
+the time. When it had turned to STAGFLATION six months on (13 months),
+aluminium's median was -22% and zinc's -11%, up 15% and 23% of the
+time. Both metals were already up more than 20% on the year in the
+2006, 2011 and 2021-22 reflation months; after those, aluminium was
+flat (median -2.4%, n=23) and zinc still rose (median +22%, n=32).
+Small samples, three episodes; a prior, not a probability.
+
+## RBI publications as the India source, 2026-10-08 (operator ruling)
+
+Operator ruling 2026-10-08: India macro data is taken from RBI's own
+publications. First two in use: the Monetary Policy Report of October 2026
+and the Governor's Statement of 7 October 2026 (verbatim text under
+data/raw/rbi_*; parsed by build_data.py rbi(), no number typed).
+
+Cross-check against what the model already held:
+
+| Series | Model before | RBI | Effect |
+|---|---|---|---|
+| Manufacturing GVA YoY, Q1 FY26 to Q1 FY27 | 8.3, 10.0, 9.0, 7.9, 9.2 (MoSPI) | 8.3, 10.0, 9.0, 7.9, 9.2 (MPR Table III.9, p63) | identical |
+| Services GVA YoY, same quarters | 8.0, 9.1, 10.1, 11.5, 10.0 (MoSPI, three service industries) | 7.6, 8.9, 9.6, 11.0, 9.7 (RBI "Services" includes construction) | definition gap of 0.2 to 0.5 points; no quarter crosses 7% |
+| Bank credit YoY, Mar-25 to Dec-25 | 11.7, 12.5, 13.2, 16.8 (BIS via FRED) | 11.0, 9.5 (Jun), 10.4 (Sep), 14.5 (MPR Table II.5, p42) | BIS ran 0.7 to 3.0 points high; RBI now governs from 2025-03 |
+
+The credit correction moves the 2025 India read. With RBI credit at 9.5 to
+10.4% from June to September 2025, the credit test fails where BIS had it
+passing. The vote now reads 2025 as `GGGGDDDGGDGG` (was `GGGGDDDGGGGG`);
+the z-score dial reads `GGGGGGDDDDDD` (was all G). Python now agrees with
+the TradingView strip, which already read the RBI loan-growth feed.
+
+Current read (2026-09): India GOLDILOCKS, 3 of 3 growth tests pass (IIP
+3m mean 7.8%, services GVA 10.0%, RBI bank credit 19.1% in August).
+
+RBI's own outlook (Governor's Statement, 7 October 2026): repo rate
+raised 25 bps to 5.50%, stance changed to calibrated tightening, "rate
+cuts are off the table in the near term". CPI projected 4.9% Jul-Sep,
+6.0% Oct-Dec, 5.7% Jan-Mar, 5.6% Apr-Jun 2027; real GDP 7.2%, 6.9%, 6.8%,
+7.1%. On RBI's path India CPI crosses the 5% benchmark in Oct-Dec with
+growth still passing every test: the model's next India read would be
+REFLATION. latest.md now prints this line; it is a forecast and the model
+still switches only on the published CPI print.
+
+Open: RBI bank credit history before 2025-03 is still BIS. The RBI series
+(Handbook of Statistics / DBIE, SCB non-food credit) would replace it.

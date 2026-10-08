@@ -410,6 +410,65 @@ def fred_bis_credit():
           "row against a second fetch")
 
 
+# -------------------------------------------------------------------- RBI
+def rbi():
+    """India bank credit growth and RBI's own projections, from RBI
+    publications (operator ruling 2026-10-08: RBI publications are the
+    official source for India macro). Inputs are verbatim text extracted
+    from the Monetary Policy Report of October 2026 (Table II.5, p42) and
+    the Governor's Statement of 7 October 2026, both under data/raw/.
+
+    Bank credit (SCB, y-o-y %) supersedes the BIS series (FRED
+    CRDQINBPABIS) wherever RBI publishes a point; on the 2025-26 overlap
+    BIS runs 0.7 to 3.0 points above RBI. Points are stored at the month
+    they describe; the model shifts them one month for the release lag."""
+    import re
+    txt = (RAW / "rbi_mpr_2026-10_tables.txt").read_text()
+    hdr = re.search(r"Mar-25 Jun-25 Aug-25 Sep-25 Dec-25 Mar-26 Jun-26 Jul-26 Aug-26", txt)
+    row = re.search(r"^Bank Credit ([\d. ]+)$", txt, re.M)
+    vals = [float(v) for v in row.group(1).split()][2:]      # drop CAGR columns
+    mons = ["2025-03", "2025-06", "2025-08", "2025-09", "2025-12",
+            "2026-03", "2026-06", "2026-07", "2026-08"]
+    assert hdr and len(vals) == len(mons)
+    pts = dict(zip(mons, vals))
+    st = (RAW / "rbi_governor_statement_2026-10-07.txt").read_text()
+    st1 = " ".join(st.split())
+    m = re.search(r"bank credit registered a growth of ([\d.]+) per cent as on September 15, 2026", st1)
+    pts["2026-09"] = float(m.group(1))
+    df = pd.DataFrame({"value": pd.Series(pts)}).sort_index()
+    df.index.name = "month"
+    _save(df, "in_bank_credit_rbi", "RBI MPR Oct-2026 Table II.5 'Bank Credit'; "
+          "Governor's Statement 2026-10-07 fn 24",
+          "https://www.rbi.org.in (Monetary Policy Report, October 2026; "
+          "Governor's Statement, 7 October 2026)", "PRIMARY",
+          "SCB bank credit growth, y-o-y %, at the month described "
+          "(2026-09 = as on 15 Sep 2026); supersedes BIS from 2025-03")
+    # projections, policy rate, stance
+    q = lambda pat: float(re.search(pat, st1).group(1))
+    proj = {
+        "published": "2026-10-07",
+        "repo_rate": q(r"by 25 bps to ([\d.]+) per cent"),
+        "repo_change_bps": 25,
+        "stance": re.search(r"change the stance to ([a-z ]+)\.", st1).group(1),
+        "cpi": {"FY27": q(r"CPI inflation for 2026-27 is projected to be ([\d.]+)"),
+                "Q2FY27": q(r"with Q2 at ([\d.]+) per cent; Q3 at [\d.]+ per cent; and Q4 at [\d.]+ per cent\. Inflation"),
+                "Q3FY27": q(r"Q3 at ([\d.]+) per cent; and Q4 at [\d.]+ per cent\. Inflation"),
+                "Q4FY27": q(r"and Q4 at ([\d.]+) per cent\. Inflation"),
+                "Q1FY28": q(r"Inflation for Q1:2027-28 is projected at ([\d.]+)"),
+                "core_FY27": q(r"Core inflation is projected at ([\d.]+) per cent for 2026-27")},
+        "gdp": {"FY27": q(r"real GDP growth for 2026-27 is projected at ([\d.]+)"),
+                "Q2FY27": q(r"projected at [\d.]+ per cent; Q2 at ([\d.]+)"),
+                "Q3FY27": q(r"projected at [\d.]+ per cent; Q2 at [\d.]+ per cent; Q3 at ([\d.]+)"),
+                "Q4FY27": q(r"Q3 at [\d.]+ per cent; and Q4 at ([\d.]+) per cent\. The upward"),
+                "Q1FY28": q(r"Real GDP growth for Q1:2027-28 is projected at ([\d.]+)")},
+    }
+    (DATA / "rbi_projections.json").write_text(json.dumps(proj, indent=1))
+    LOG.append(dict(name="rbi_projections", code="Governor's Statement 2026-10-07",
+                    url="https://www.rbi.org.in", status="PRIMARY", first="2026-10",
+                    last="2026-10", rows=1, fetched="2026-10-08",
+                    note="repo rate, stance, RBI CPI and GDP projections by quarter (json)"))
+
+
 # ------------------------------------------------------- v1 cache reuse
 def v1_reuse():
     if not V1.exists():
@@ -463,7 +522,7 @@ def write_sources():
 
 if __name__ == "__main__":
     DATA.mkdir(exist_ok=True)
-    fred(); yahoo(); eia(); nsdl(); cftc(); mospi(); mospi_nas(); fred_bis_credit(); v1_reuse()
+    fred(); yahoo(); eia(); nsdl(); cftc(); mospi(); mospi_nas(); fred_bis_credit(); rbi(); v1_reuse()
     write_sources()
     for r in LOG:
         print(f"{r['status']:9} {r['name']:28} {str(r['first']):>8} -> "

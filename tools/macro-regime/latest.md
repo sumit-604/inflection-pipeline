@@ -2,7 +2,7 @@
 
 **Regime: REFLATION** (growth above its 5-year norm at z +0.59; inflation HIGH against the benchmarks CPI 3.0% / breakeven 2.5%, US CPI YoY 3.4%, breakeven 2.36%). Liquidity EASING. Global stress LOW. India stress NORMAL.
 
-**India regime: GOLDILOCKS** (India growth HIGH: 2 of 2 tests pass, IIP YoY 3m mean 7.8% vs 4.0%, services GVA YoY 10.0% vs 7.0%, bank credit YoY NOT FOUND vs 12.0%; India CPI YoY 4.82% against the 5.0% benchmark). **DIVERGENCE**: the India regime differs from the global one. The India regime governs Nifty and Indian rates; the global regime governs gold, silver, base metals and Brent.
+**India regime: GOLDILOCKS** (India growth HIGH: 3 of 3 tests pass, IIP YoY 3m mean 7.8% vs 4.0%, services GVA YoY 10.0% vs 7.0%, bank credit YoY 19.1% vs 12.0%; India CPI YoY 4.82% against the 5.0% benchmark). **DIVERGENCE**: the India regime differs from the global one. The India regime governs Nifty and Indian rates; the global regime governs gold, silver, base metals and Brent.
 
 | Dial | Level (z) | 6m change | Inputs voting | Reading |
 |---|---|---|---|---|
@@ -11,7 +11,7 @@
 | LIQUIDITY | +0.34 | -0.14 | 6 of 6 | mid, falling |
 | STRESS | -0.52 | -1.13 | 5 of 5 | low, falling |
 | IN_STRESS | +0.02 | -0.62 | 6 of 6 | mid, falling |
-| IN_GROWTH | +0.83 | +0.34 | 2 of 3 | high, rising |
+| IN_GROWTH | +1.12 | +0.80 | 3 of 3 | high, rising |
 
 Exposure bands are switched off: the band table failed condition (a) of PASS_BAR.md (EVALUATION_2026-10.md, section 5). What each quadrant, liquidity and stress tag has meant for the six assets over the following 12 months is in that file, section 4.
 
@@ -22,7 +22,9 @@ Inputs, latest z-score (sign already applied; "carried" = last published value c
 - LIQUIDITY: US M2 YoY +0.60 (carried); Fed assets 6m log change +0.70; Fed funds 6m change (inverted) +0.24; NFCI level (inverted) +1.13; dollar 6m change (inverted) +0.32; real yield 6m change (inverted) -1.03
 - STRESS: VIX level -0.47; Baa spread level -1.28; St Louis stress index -1.07; EPU US level +0.03; EPU global level -0.34 (carried)
 - IN_STRESS: India VIX level -0.43; EPU India level +1.04; USD/INR 6m log change -0.21; FPI equity 3m sum (inverted) -0.48; India call rate 6m change -0.20 (carried); India CPI YoY (MoSPI from 2014, OECD before) +0.05 (carried)
-- IN_GROWTH: India IIP YoY 3m mean (MoSPI) +1.18; India services GVA YoY (MoSPI, quarterly) +0.42; India bank credit YoY (BIS, quarterly) n/a
+- IN_GROWTH: India IIP YoY 3m mean (MoSPI) +1.18; India services GVA YoY (MoSPI, quarterly) +0.42; India bank credit YoY (RBI from 2025-03, BIS before) +1.68
+
+**RBI, 2026-10-07.** Repo rate 5.50% (+25 bps), stance calibrated tightening. RBI projects CPI 4.9% for Jul-Sep, 6.0% for Oct-Dec, 5.7% for Jan-Mar and 5.6% for Apr-Jun 2027 (core 4.4% for FY27); real GDP 7.2%, 6.9%, 6.8%, 7.1%. On RBI's own path India CPI crosses the 5.0% benchmark in Oct-Dec and growth stays above every test: the India read the model expects next is REFLATION. These are RBI forecasts, not inputs; the model switches only on the published CPI print.
 
 ### Analogues
 
@@ -61,7 +63,7 @@ Now, same features (z): G +0.59, I -0.16, L +0.34, S -0.52, IN +0.02, G6 +0.04, 
 
 ### India regime analogues
 
-**India GOLDILOCKS spells since 1998** (20, median length 3 months). What came next: REFLATION 9, DEFLATION 9, STAGFLATION 1.
+**India GOLDILOCKS spells since 1998** (21, median length 3 months). What came next: DEFLATION 10, REFLATION 9, STAGFLATION 1.
 
 | Start | End | Months | Next India regime | Global regime at end |
 |---|---|---|---|---|
@@ -84,7 +86,8 @@ Now, same features (z): G +0.59, I -0.16, L +0.34, S -0.52, IN +0.02, G6 +0.04, 
 | 2024-03 | 2024-05 | 3 | REFLATION | REFLATION |
 | 2024-07 | 2024-08 | 2 | REFLATION | DEFLATION |
 | 2025-01 | 2025-04 | 4 | DEFLATION | GOLDILOCKS |
-| 2025-08 | 2026-09 | 14 | ongoing | REFLATION |
+| 2025-08 | 2025-09 | 2 | DEFLATION | REFLATION |
+| 2025-11 | 2026-09 | 11 | ongoing | REFLATION |
 
 **Nifty 12 months on, by global x India pair** (months since 1998-02; the pair now is global REFLATION / India GOLDILOCKS). Regimes differ in 75% of months.
 

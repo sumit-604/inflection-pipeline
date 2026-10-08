@@ -103,6 +103,22 @@ def main():
             carried = " (carried)" if pd.notna(v) and pd.isna(raw) else ""
             bits.append(f"{lab} {v:+.2f}{carried}" if pd.notna(v) else f"{lab} n/a")
         L.append(f"- {k}: " + "; ".join(bits))
+    # RBI's own read, from the latest RBI publication in data/
+    rp = HERE / "data" / "rbi_projections.json"
+    if rp.exists():
+        import json
+        j = json.loads(rp.read_text())
+        c, g = j["cpi"], j["gdp"]
+        nxt = "REFLATION" if c["Q3FY27"] > IN_CPI_BENCH else row["in_quadrant"]
+        L += ["", f"**RBI, {j['published']}.** Repo rate {j['repo_rate']:.2f}% "
+              f"(+{j['repo_change_bps']} bps), stance {j['stance']}. RBI projects CPI "
+              f"{c['Q2FY27']}% for Jul-Sep, {c['Q3FY27']}% for Oct-Dec, {c['Q4FY27']}% for "
+              f"Jan-Mar and {c['Q1FY28']}% for Apr-Jun 2027 (core {c['core_FY27']}% for "
+              f"FY27); real GDP {g['Q2FY27']}%, {g['Q3FY27']}%, {g['Q4FY27']}%, {g['Q1FY28']}%. "
+              f"On RBI's own path India CPI crosses the {IN_CPI_BENCH}% benchmark in "
+              f"Oct-Dec and growth stays above every test: the India read the "
+              f"model expects next is {nxt}. These are RBI forecasts, not inputs; "
+              "the model switches only on the published CPI print."]
     L += analogue_section(p, d, r)
     # staleness
     L += ["", "Series ending before the read month:", ""]

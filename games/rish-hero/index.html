@@ -98,6 +98,7 @@ body.touch #dlg { bottom: 170px; }
 body.touch #topbtns { flex-direction: row; top: 112px; } body.touch #topbtns button { padding: 7px 10px; font-size: 14px; }
 #nogl { position: fixed; inset: 0; z-index: 30; background: #111; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
 @media (max-width: 640px) { #obj { max-width: 56vw; font-size: 12px; top: 8px; } #mini { width: 110px; height: 74px; } #topbtns { top: 92px; } #bars { width: 34vw; } }
+.trophies { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 6px; margin: 8px 0; } .trophy { background: rgba(255,255,255,0.08); border-radius: 10px; padding: 6px; text-align: center; opacity: 0.5; font-size: 12px; } .trophy.on { opacity: 1; border: 2px solid #ffd60a; } .trophy b { display: block; font-size: 24px; } .trophy i { display: block; font-style: normal; opacity: 0.8; }
 </style>
 <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
 </head>
@@ -127,7 +128,23 @@ body.touch #topbtns { flex-direction: row; top: 112px; } body.touch #topbtns but
 <script type="module">
 import * as THREE from "three";
 // ===================== DATA: maps, people, story, puzzles =====================
-const VERSION = "Rish Hero v10";
+const VERSION = "Rish Hero v11";
+// Hero suits (v11): win stars in the chapters to unlock them.
+const SUITS = [
+  { id: "uniform", name: "School uniform", need: 0, look: {} },
+  { id: "cape", name: "Red cape hero", need: 5, look: { shirt: 0x1d4ed8, trousers: 0x1d3557 }, cape: true },
+  { id: "ninja", name: "Night ninja", need: 9, look: { shirt: 0x15151a, trousers: 0x15151a, shoes: 0x0b0b0e } },
+  { id: "camo", name: "Army camo", need: 13, look: { shirt: 0x556b2f, trousers: 0x4b5320, shoes: 0x3a2a1c } },
+  { id: "gold", name: "Golden hero", need: 18, look: { shirt: 0xffc300, trousers: 0xb8860b }, cape: true },
+];
+// Trophy Room (v11): [id, icon, name, how to win].
+const TROPHIES = [
+  ["first", "🚪", "First step", "Finish the Prologue"], ["escape", "🔓", "Escape artist", "Finish Chapter 1"], ["ghost", "🤫", "Ghost", "3 silent takedowns in one chapter"],
+  ["bomb", "💣", "Bomb expert", "Finish Chapter 2 with no BOOM"], ["room", "💥", "Room master", "Use 10 room tricks (all chapters)"], ["counter", "🛡️", "Counter king", "5 counters (all chapters)"],
+  ["ko", "👊", "Fifty knockouts", "Knock out 50 men (all chapters)"], ["roof", "🏃", "Rooftop runner", "Finish Chapter 4"], ["chase", "🚲", "Chase master", "Finish Chapter 5"],
+  ["code", "🔢", "Code breaker", "Finish Chapter 6 without Aarav's hint"], ["pages", "📔", "Diary keeper", "Find all 15 diary pages"], ["perfect", "⭐", "Perfect chapter", "3 stars on any chapter"],
+  ["fast", "⏱", "Fast hero", "Finish a chapter in under 3 minutes"], ["end", "🏅", "Hero of Suryanagar", "Finish the story"], ["suit", "🦸", "Dress up", "Wear a new hero suit"],
+];
 const CS = 2; // one map cell is 2 metres
 
 // Map legend
@@ -651,7 +668,8 @@ function boxBatch(list) {
 // ---- People ----
 function makePerson(id, opts = {}) {
   const def = CAST[opts.as || id] || CAST.thug;
-  const g = makeHuman(Object.assign({}, def.look, id === "dad" ? JOB().look : {}, opts.look || {}));
+  const g = makeHuman(Object.assign({}, def.look, id === "dad" ? JOB().look : {}, id === "rish" ? suitOf().look : {}, opts.look || {}));
+  if (id === "rish" && suitOf().cape) addCape(g);
   g.rotation.order = "YXZ";
   const s = (def.kid ? KID : 1) * (def.scale || 1) * (opts.scale || 1);
   g.scale.setScalar(s); g.userData.s = s; g.userData.id = id;
@@ -902,7 +920,7 @@ const $ = (id) => document.getElementById(id);
 
 // ---- Saved progress (optional: works without storage) ----
 function saveKey() { return G.embed ? "rishhero.v2.sd." + G.embed.slot : "rishhero.v2"; }
-function loadSave() { try { const s = JSON.parse(localStorage.getItem(saveKey()) || "{}"); if (typeof s.unlocked === "number") G.save.unlocked = s.unlocked; if (typeof s.diff === "number") G.save.diff = s.diff; for (const k of ["profile", "pages", "life", "storyDone"]) if (s[k] != null) G.save[k] = s[k]; } catch (e) { /* no storage */ } G.diff = G.save.diff; }
+function loadSave() { try { const s = JSON.parse(localStorage.getItem(saveKey()) || "{}"); if (typeof s.unlocked === "number") G.save.unlocked = s.unlocked; if (typeof s.diff === "number") G.save.diff = s.diff; for (const k of ["profile", "pages", "life", "storyDone", "stars", "best", "trophies", "tot", "suit"]) if (s[k] != null) G.save[k] = s[k]; } catch (e) { /* no storage */ } G.diff = G.save.diff; }
 function writeSave() { try { localStorage.setItem(saveKey(), JSON.stringify(G.save)); } catch (e) { /* no storage */ } }
 
 // ---- Three.js scene ----
@@ -2091,17 +2109,49 @@ function chapterResult(cur) {
 function resultsCard(r, next) {
   const c = CHAPTERS[r.ch]; G.mode = "card";
   showScr(`<p class="kicker">${c.name} complete</p><h1>${c.title}</h1><p class="stars">${"⭐".repeat(r.stars)}${"☆".repeat(3 - r.stars)}</p>
-  <div class="res"><p>⏱ Time <b>${Math.floor(r.time / 60)}:${String(r.time % 60).padStart(2, "0")}</b></p><p>👊 Knocked out <b>${r.ko}</b></p><p>🤫 Silent takedowns <b>${r.takedowns}</b></p><p>💥 Room tricks used <b>${r.env}</b></p><p>📔 Diary pages <b>${r.pagesGot}/${r.pagesTotal}</b></p><p>😵 Tries <b>${r.fails + 1}</b></p></div>
+  <div class="res"><p>⏱ Time <b>${Math.floor(r.time / 60)}:${String(r.time % 60).padStart(2, "0")}</b></p><p>👊 Knocked out <b>${r.ko}</b></p><p>🤫 Silent takedowns <b>${r.takedowns}</b></p><p>💥 Room tricks used <b>${r.env}</b></p><p>📔 Diary pages <b>${r.pagesGot}/${r.pagesTotal}</b></p><p>😵 Tries <b>${r.fails + 1}</b></p><p>🏁 Best time <b>${mmss(r.bestTime)}</b>${r.newBest && r.prevBest ? " · <b>NEW BEST!</b>" : ""}</p></div>
   <p class="mut">⭐ finish · ⭐ find all diary pages · ⭐ no fails</p>
   <div class="row"><button class="btn go" id="rnext">▶ Next chapter</button><button class="btn" id="ragain">↺ Play again</button><button class="btn alt" id="rmenu">Menu</button></div>`);
   $("rnext").onclick = () => { hideScr(); next(); }; $("ragain").onclick = () => { G.chFails = 0; startChapter(r.ch); }; $("rmenu").onclick = () => menu();
 }
 function completeChapter() {
   const cur = G.ch, next = cur + 1; G.save.unlocked = Math.max(G.save.unlocked, Math.min(next, CHAPTERS.length - 1));
-  const r = chapterResult(cur); G.lastResult = r; G.save.stars = G.save.stars || {}; G.save.stars[cur] = Math.max(G.save.stars[cur] || 0, r.stars); writeSave(); G.chFails = 0;
+  const r = chapterResult(cur); G.lastResult = r; G.save.stars = G.save.stars || {}; G.save.stars[cur] = Math.max(G.save.stars[cur] || 0, r.stars);
+  G.save.best = G.save.best || {}; r.prevBest = G.save.best[cur] || 0; r.newBest = r.time > 0 && (!r.prevBest || r.time < r.prevBest); if (r.newBest) G.save.best[cur] = r.time; r.bestTime = G.save.best[cur] || 0;
+  checkTrophies(r, cur); writeSave(); G.chFails = 0;
   const go = () => { if (next >= CHAPTERS.length) credits(); else startChapter(next); };
   if (G.test || cur === 0 || next >= CHAPTERS.length) { go(); return; }
   resetWorld(); resultsCard(r, go);
+}
+// ---- Best times, trophies and hero suits (v11) ----
+function mmss(t) { t = Math.round(t || 0); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`; }
+function totalStars() { return Object.values(G.save.stars || {}).reduce((a, b) => a + (+b || 0), 0); }
+function suitOf() { const s = SUITS.find((q) => q.id === G.save.suit); return s && totalStars() >= s.need ? s : SUITS[0]; }
+function giveTrophy(id) {
+  G.save.trophies = G.save.trophies || {}; if (G.save.trophies[id]) return false;
+  G.save.trophies[id] = 1; writeSave(); const t = TROPHIES.find((q) => q[0] === id); if (t) { toast(`🏆 Trophy: ${t[1]} ${t[2]}!`, 4); sfx("heal"); } return true;
+}
+function checkTrophies(r, cur) {
+  const T = G.save.tot = G.save.tot || {}; for (const k of ["ko", "takedowns", "env", "counters"]) T[k] = (T[k] || 0) + (G.stats[k] || 0);
+  const fin = { 0: "first", 1: "escape", 4: "roof", 5: "chase" }; if (fin[cur]) giveTrophy(fin[cur]);
+  if ((r.takedowns || 0) >= 3) giveTrophy("ghost");
+  if (cur === 2 && !G.stats.booms) giveTrophy("bomb");
+  if (T.env >= 10) giveTrophy("room"); if (T.counters >= 5) giveTrophy("counter"); if (T.ko >= 50) giveTrophy("ko");
+  if (cur === 6 && !G.stats.hint) giveTrophy("code");
+  if (Object.keys(G.save.pages || {}).length >= PAGE_TOTAL) giveTrophy("pages");
+  if (cur >= 1 && r.stars >= 3) giveTrophy("perfect");
+  if (cur >= 1 && r.time > 0 && r.time < 180) giveTrophy("fast");
+}
+function trophies(back) {
+  const got = TROPHIES.filter((t) => G.save.trophies && G.save.trophies[t[0]]).length;
+  showScr(`<h2>🏆 Trophy Room</h2><p class="mut">${got} of ${TROPHIES.length} trophies.</p><div class="trophies">${TROPHIES.map(([id, ic, nm, how]) => { const on = G.save.trophies && G.save.trophies[id]; return `<div class="trophy ${on ? "on" : ""}"><b>${on ? ic : "🔒"}</b><span>${nm}</span><i>${how}</i></div>`; }).join("")}</div><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
+  $("b").onclick = back || menu;
+}
+function suits(back) {
+  const st = totalStars(), cur = suitOf().id;
+  showScr(`<h2>🦸 Hero suits</h2><p class="mut">⭐ ${st} stars. Win stars in the chapters to unlock more suits.</p><div class="chl">${SUITS.map((s) => `<button class="btn ch ${cur === s.id ? "go" : ""}" data-s="${s.id}" ${st < s.need ? "disabled" : ""}><b>${s.name}</b>${s.cape ? " + red cape" : ""}${st < s.need ? ` 🔒 ${s.need} ⭐` : cur === s.id ? " ✅" : ""}</button>`).join("")}</div><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
+  $("card").querySelectorAll("[data-s]").forEach((b) => b.onclick = () => { G.save.suit = b.dataset.s; writeSave(); if (b.dataset.s !== "uniform") giveTrophy("suit"); suits(back); });
+  $("b").onclick = back || menu;
 }
 function failChapter(msg, retry, skip) {
   if (G.mode === "fail") return;
@@ -2781,8 +2831,8 @@ function spawnVehicle() {
   const mesh = makeVehMesh(kind); mesh.position.set(p.x, 0, p.z); mesh.rotation.y = Math.PI / 2; G.L.group.add(mesh); G.veh = { kind, mesh, x: p.x, z: p.z };
   addZone({ label: kind === "cycle" ? "Ride your bicycle" : "Drive your Hero Jeep", get: () => G.veh, r: 2.4, low: true, ok: () => !G.P.vehicle, fn: () => mountVehicle() });
 }
-function mountVehicle() { const P = G.P, V = G.veh; if (!V) return; P.vehicle = V.kind; P.vmesh = V.mesh; P.crouch = false; P.x = V.mesh.position.x; P.z = V.mesh.position.z; sfx(V.kind === "cycle" ? "jump" : "metal"); toast(V.kind === "cycle" ? "🚲 Ring ring! Ride to the emergency. E to get off." : "🚙 The Hero Jeep! Shift = turbo. E to get out.", 3500); G.stats.rides = (G.stats.rides || 0) + 1; }
-function dismount() { const P = G.P, V = G.veh; if (!P.vehicle) return; const r = { x: -Math.cos(P.yaw), z: Math.sin(P.yaw) }; V.x = V.mesh.position.x; V.z = V.mesh.position.z; P.vehicle = null; P.vmesh = null; moveBody(P, r.x * 1.4, r.z * 1.4, 0.3); toast("You get off.", 1500); }
+function mountVehicle() { const P = G.P, V = G.veh; if (!V) return; P.vehicle = V.kind; P.vmesh = V.mesh; P.crouch = false; P.x = V.mesh.position.x; P.z = V.mesh.position.z; sfx(V.kind === "cycle" ? "jump" : "metal"); toast(V.kind === "cycle" ? "🚲 Ring ring! Ride to the emergency. E to get off." : "🚙 The Hero Jeep! Shift = turbo. E to get out.", 3.5); G.stats.rides = (G.stats.rides || 0) + 1; }
+function dismount() { const P = G.P, V = G.veh; if (!P.vehicle) return; const r = { x: -Math.cos(P.yaw), z: Math.sin(P.yaw) }; V.x = V.mesh.position.x; V.z = V.mesh.position.z; P.vehicle = null; P.vmesh = null; moveBody(P, r.x * 1.4, r.z * 1.4, 0.3); toast("You get off.", 1.5); }
 
 // ---- Family (like RishSchoolDays): marriage, children, grandchildren ----
 CAST.wife = { name: "Anaya", look: { shirt: 0x06d6a0, dress: true, hair: 0x1d1410 } };
@@ -2808,7 +2858,7 @@ function spawnDog() {
   for (const e of [-0.1, 0.1]) { const ear = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.14, 0.05), mat(0x5c3317)); ear.position.set(e, 0.86, 0.42); g.add(ear); } const legs = []; for (const [x, z] of [[-0.12, 0.28], [0.12, 0.28], [-0.12, -0.28], [0.12, -0.28]]) { const l = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.32, 0.08), c); l.position.set(x, 0.16, z); g.add(l); legs.push(l); }
   const tail = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.05, 0.3), c); tail.position.set(0, 0.6, -0.48); tail.rotation.x = -0.6; g.add(tail);
   const P = G.P; g.position.set(P.x + 1, 0, P.z + 1); G.L.group.add(g); G.dog = { g, legs, tail, x: P.x + 1, z: P.z + 1 };
-  addZone({ label: "Pet Tiger the dog", get: () => G.dog, r: 1.6, low: true, fn: () => { toast("🐕 Tiger wags his tail: 'Woof! Woof!'", 2200); sfx("heal"); } });
+  addZone({ label: "Pet Tiger the dog", get: () => G.dog, r: 1.6, low: true, fn: () => { toast("🐕 Tiger wags his tail: 'Woof! Woof!'", 2.2); sfx("heal"); } });
 }
 function updateDog(dt) {
   const D = G.dog, P = G.P; if (!D || !P) return;
@@ -2881,11 +2931,11 @@ function menu() {
   <p class="mut">One lonely year at Sunrise Public School. One day of fear. One hero.</p>
   <p class="who">👤 <b>${heroNames().first}</b>, age ${profile().age} · father: ${JOB().label} <button class="btn mini" id="m-who">Change</button></p>
   <div class="grid"><button class="btn go wide" id="m-play">▶ ${u > 0 ? `Continue: ${c.name}, ${c.title}` : "Start the story"}</button>
-  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button>${G.embed ? `<button class="btn go wide" id="m-sd">🏠 Back to School Days</button>` : ""}${!G.embed && (G.save.unlocked >= CHAPTERS.length - 1 || G.save.life) ? `<button class="btn go wide" id="m-life">🦸 Hero Life${G.save.life && !G.save.life.done ? ` (age ${G.save.life.age})` : ""}</button>` : ""}${!G.embed && G.save.life ? `<button class="btn" id="m-med">🏅 Medals</button>` : ""}<button class="btn" id="m-story">📖 The Story</button><button class="btn" id="m-diary">📔 Rish's Diary (${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL})</button></div>`);
-  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about; $("m-diary").onclick = diary; $("m-who").onclick = () => login(menu); $("m-story").onclick = storyPage; if ($("m-life")) $("m-life").onclick = () => startLife(!G.save.life || G.save.life.done); if ($("m-med")) $("m-med").onclick = () => medals(menu); if ($("m-sd")) $("m-sd").onclick = () => sdBack(false);
+  <button class="btn" id="m-ch">📖 Chapters</button><button class="btn" id="m-how">🎮 How to play</button><button class="btn" id="m-set">⚙️ Settings</button><button class="btn" id="m-about">ℹ️ About</button><button class="btn" id="m-tro">🏆 Trophies</button><button class="btn" id="m-suit">🦸 Suits</button>${G.embed ? `<button class="btn go wide" id="m-sd">🏠 Back to School Days</button>` : ""}${!G.embed && (G.save.unlocked >= CHAPTERS.length - 1 || G.save.life) ? `<button class="btn go wide" id="m-life">🦸 Hero Life${G.save.life && !G.save.life.done ? ` (age ${G.save.life.age})` : ""}</button>` : ""}${!G.embed && G.save.life ? `<button class="btn" id="m-med">🏅 Medals</button>` : ""}<button class="btn" id="m-story">📖 The Story</button><button class="btn" id="m-diary">📔 Rish's Diary (${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL})</button></div>`);
+  $("m-play").onclick = () => startChapter(u); $("m-ch").onclick = chapters; $("m-how").onclick = howTo; $("m-set").onclick = settings; $("m-about").onclick = about; $("m-tro").onclick = () => trophies(menu); $("m-suit").onclick = () => suits(menu); $("m-diary").onclick = diary; $("m-who").onclick = () => login(menu); $("m-story").onclick = storyPage; if ($("m-life")) $("m-life").onclick = () => startLife(!G.save.life || G.save.life.done); if ($("m-med")) $("m-med").onclick = () => medals(menu); if ($("m-sd")) $("m-sd").onclick = () => sdBack(false);
 }
 function chapters() {
-  showScr(`<h2>Chapters</h2><div class="chl">${CHAPTERS.map((c, i) => `<button class="btn ch" data-i="${i}" ${i > G.save.unlocked ? "disabled" : ""}><b>${c.name}</b> ${c.title} ${c.gun ? "🔫" : ""}${i > G.save.unlocked ? " 🔒" : ""}</button>`).join("")}</div><p class="mut">Stuck? Every chapter has a ⏭ Skip button.</p><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
+  showScr(`<h2>Chapters</h2><div class="chl">${CHAPTERS.map((c, i) => `<button class="btn ch" data-i="${i}" ${i > G.save.unlocked ? "disabled" : ""}><b>${c.name}</b> ${c.title} ${c.gun ? "🔫" : ""}${i > G.save.unlocked ? " 🔒" : ""}${G.save.stars && G.save.stars[i] ? " " + "⭐".repeat(G.save.stars[i]) : ""}${G.save.best && G.save.best[i] ? ` · ⏱ ${mmss(G.save.best[i])}` : ""}</button>`).join("")}</div><p class="mut">Stuck? Every chapter has a ⏭ Skip button.</p><div class="row"><button class="btn alt" id="b">◀ Back</button></div>`);
   $("card").querySelectorAll(".ch").forEach((b) => b.onclick = () => startChapter(+b.dataset.i)); $("b").onclick = menu;
 }
 function howTo() {
@@ -2927,7 +2977,7 @@ function sdBack(finished) {
   G.embed.back({ finished: !!(finished || G.save.storyDone), unlocked: G.save.unlocked || 0, pages: Object.keys(G.save.pages || {}).length });
 }
 function credits() {
-  resetWorld(); G.mode = "menu"; G.save.unlocked = CHAPTERS.length - 1; G.save.storyDone = true; writeSave();
+  resetWorld(); G.mode = "menu"; G.save.unlocked = CHAPTERS.length - 1; G.save.storyDone = true; writeSave(); giveTrophy("end");
   showScr(`<h1 class="logo">THE END</h1><p class="sub">Rish Hero · RishSchoolDays Game 3</p><p>A lonely year. One brave day. A whole school of new friends.</p><p><b>Created by Ris&#104;abh Shar&#109;a</b>, age 9.</p><p class="sub"><b>Just live it!</b></p><p><b>But the story is not over.</b> Now Rish lives his whole life as the hero of Suryanagar. Accidents, fires, attacks: every year someone needs him. And the whole world knows his name.</p><p class="mut">📔 Diary pages found: ${Object.keys(G.save.pages || {}).length}/${PAGE_TOTAL}</p><div class="row"><button class="btn go" id="life">${G.embed ? "🏠 Back to School Days: live your hero life" : "🦸 Continue: Hero Life"}</button><button class="btn" id="again">↺ Play again</button><button class="btn" id="dia">📔 Diary</button><button class="btn alt" id="b">Menu</button></div>`);
   $("b").onclick = menu; $("again").onclick = () => { G.chFails = 0; startChapter(0); }; $("life").onclick = () => (G.embed ? sdBack(true) : startLife(!G.save.life || G.save.life.done)); $("dia").onclick = diary; G.stats.credits = 1;
 }
@@ -2984,7 +3034,7 @@ function boot() {
   window.__rh = {
     G, login, personalize, profile, JOBS, startLife, lifeDay, medals, mountVehicle, dismount, VEHS, SHADOWS, CASES, dreamJob, jobInfo, heroRun, setDaylight, emergency, emDone, yearEnd, lifeEnd, lifeFastForward, PLACES, EM_TYPES, fameLevel, lifeS, step: (dt = 1 / 60, n = 1) => { for (let i = 0; i < n; i++) step(dt); }, startChapter, completeChapter, skipNow, skipDialog, nextLine, retryFail, skipFail,
     keyDown, keyUp, safeWire, cutWire, codeKey, openCode, knockDown, hurtEnemy, propHit, fireGun, autoAim, CHAPTERS, MEMORIES, ENDING, CAST, MAPS, RIDDLES,
-    cell: (cx, cy) => cellCenter(cx, cy), cam: () => camera, CAM, ceilAt, clockText, storyPage, STORY, GUIDE, PAGES, PAGE_TOTAL, chapterResult, resultsCard, credits, diary, cellAt, sdBack, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
+    cell: (cx, cy) => cellCenter(cx, cy), cam: () => camera, CAM, ceilAt, clockText, storyPage, STORY, GUIDE, PAGES, PAGE_TOTAL, chapterResult, resultsCard, credits, diary, cellAt, sdBack, chapters, trophies, suits, giveTrophy, totalStars, suitOf, SUITS, TROPHIES, mmss, render: () => renderer.render(scene, camera), menu, togglePause, solidFor,
     tp: (cx, cy) => { const p = cellCenter(cx, cy); G.P.x = p.x; G.P.z = p.z; G.P.safe = { x: p.x, z: p.z }; },
   };
 }

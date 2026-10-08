@@ -29,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v14", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v15", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -186,7 +186,7 @@ const HELPERS = () => {
   await E(() => { G.setPos(-39, 12, 0); G.car.s = 24; keys("up"); sim(1.05); keys(); }); await p.waitForTimeout(1200); await p.screenshot({ path: `${SHOTS}/10-jump.png` });
   // 13. Badges
   r = await E(() => { G.checkBadges(); G.openMenu(); document.querySelector("#m-badges").click(); return { n: document.querySelectorAll(".badge").length, on: document.querySelectorAll(".badge.on").length, jump: !!S.badges.jump1, wash: !!S.badges.wash, toll: !!S.badges.toll, plate: !!S.badges.plate }; });
-  ok("N13 41 badges, earned ones lit", r.n === 41 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
+  ok("N13 44 badges, earned ones lit", r.n === 44 && r.on >= 5 && r.jump && r.wash && r.toll && r.plate, r);
   await p.screenshot({ path: `${SHOTS}/11-badges.png` });
   // 14. Village and Sunrise Hill: drive the road with a simple autopilot
   r = await E(() => { document.querySelector("#b-back").click(); document.querySelector("#m-free").click(); const W = G.world, v0 = S.stats.village, h0 = S.stats.hilltop; S.fuel = 100; G.setPos(-180, -3.5, -Math.PI / 2); keys("up"); let i = 0, maxY = 0;
@@ -501,6 +501,15 @@ const HELPERS = () => {
   ok("H14b Fire call: the fire truck, stop near the fire, press H to spray the water cannon; 2 fires out", r.lent && r.noSpray && /Both fires are out/.test(r.title || "") && r.fires >= 2 && r.back, r);
   r = await E(() => { G.checkBadges(); return ["amb1", "fire1", "hero3"].every((k) => S.badges[k]); });
   ok("H14c new badges: Ambulance hero, Fire fighter, Hero of the city", r, r);
+  // v15: city jobs (school bus, Swachh truck) and the Black Viper van from Rish Hero
+  r = await E(() => { noTraffic(); const car0 = S.car; G.startSchoolBus(); const lent = S.car === "bus"; let n = 0; while (G.mode.kind === "mission" && n < 30) { const b = G.beacon.position; G.setPos(b.x, b.z, 0); sim(0.4); n++; } return { lent, n, title: document.querySelector("#card h2")?.textContent, runs: S.stats.busRuns, back: S.car === car0 }; });
+  ok("H15a School bus run: the game lends the City Bus, 4 children, then Sunrise Public School", r.lent && /Everyone is at school/.test(r.title || "") && r.runs >= 1 && r.n >= 5 && r.back, r);
+  r = await E(() => { const car0 = S.car; G.startCleanTruck(); const lent = S.car === "truck"; let n = 0; while (G.mode.kind === "mission" && n < 30) { const b = G.beacon.position; G.setPos(b.x, b.z, 0); sim(0.5); sim(1.5); n++; } return { lent, n, title: document.querySelector("#card h2")?.textContent, runs: S.stats.cleanRuns, back: S.car === car0 }; });
+  ok("H15b Swachh truck: the garbage truck, stop to load 5 piles, then the yard", r.lent && /is clean/.test(r.title || "") && r.runs >= 1 && r.n >= 3 && r.back, r);
+  r = await E(() => { const car0 = S.car; G.startViperVan(); const lent = S.car === "jeep"; sim(3); let n = 0; while (G.mode.kind === "mission" && n < 12) { const v = G.mode.ai[0]; G.setPos(v.x + 1, v.z, 0); sim(0.1); sim(1.6); n++; } return { lent, n, title: document.querySelector("#card h2")?.textContent, vipers: S.stats.vipers, back: S.car === car0 }; });
+  ok("H15c Black Viper van: the Desi Jeep, ram the van 3 times", r.lent && /van is stopped/.test(r.title || "") && r.vipers >= 1 && r.n >= 3 && r.back, r);
+  r = await E(() => { G.checkBadges(); return ["bus1", "clean1", "viper1"].every((k) => S.badges[k]); });
+  ok("H15d new badges: School bus driver, Swachh driver, Viper catcher", r, r);
   // Phone layout with touch buttons
   const m = await b.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
   const mp = await m.newPage(); mp.on("pageerror", (e) => errs.push("M " + e.message)); await mp.goto(URL); await mp.waitForFunction(() => window.__dd, null, { timeout: 90000 }); await mp.evaluate(HELPERS);

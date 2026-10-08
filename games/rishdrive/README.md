@@ -72,6 +72,13 @@ from the jsdelivr CDN.
   puts you back about 100 m before the gap with a rolling start.
 - **Skill Park 2 (v13):** a second pad west of the Skill Park with Ring dash,
   Car bowling, Bullseye jump, Donut master and Balloon pop.
+- **City jobs (v15):** three new missions. School bus run: the game lends
+  the City Bus; pick up 4 children (Aarav, Diya, Kabir, Meher) and take
+  them to Sunrise Public School before the bell, with a bonus for a smooth
+  ride. Swachh truck: the garbage truck; stop next to 5 piles to load them,
+  then drive to the yard. Black Viper van: the Desi Jeep; Viktor Kade from
+  Rish Hero escapes in a black van; ram it 3 times. 3 new badges: School
+  bus driver, Swachh driver and Viper catcher. 44 badges.
 - **Hero missions (v14):** two new missions in the mission menu, like the
   hero sim in RishSchoolDays. Ambulance run: the game lends the ambulance;
   take 3 patients to City Hospital before the timer ends. Fire call: the
@@ -199,3 +206,5 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   4 new races, rolling start after a fall, 38 badges. 212 regression checks.
 - v14: hero missions: Ambulance run and Fire call, 3 new badges (41).
   215 regression checks.
+- v15: School bus run, Swachh truck, Black Viper van, 3 new badges (44).
+  219 regression checks.

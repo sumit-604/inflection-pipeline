@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v10", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v10" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v11", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v11" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -368,6 +368,19 @@ const HELPERS = () => {
   ok("HL8 too slow: other rescuers help (no game over), and the day goes on", r.missed, r);
   r = await E(() => { const o = {}; const S = R.lifeS(); S.age = 49; R.lifeDay(); sim(0.1); G.skipFn(); sim(0.1); R.emDone(true); talk(); R.yearEnd(); sim(0.3); o.statue = !!G.L.statue; S.age = 69; R.yearEnd(); const t = document.getElementById("card").textContent; o.end = /A HERO'S LIFE/.test(t) && /age 70/.test(t) && /Play life again/.test(t) && /whole world knows his name/.test(t); document.getElementById("lagain").click(); sim(0.2); o.again = R.lifeS().age === 10 && G.life; R.menu(); return o; });
   ok("HL9 at 50 a statue in the City Park; at 70 the Life Story; Play life again starts a new life", r.statue && r.end && r.again, r);
+
+  // ---------------- R. v11: best times, Trophy Room, hero suits ----------------
+  r = await E(() => { const o = {}; G.save.trophies = {}; G.save.best = {}; R.startChapter(0, true); R.completeChapter(); o.first = !!G.save.trophies.first;
+    R.startChapter(1, true); G.chT = 100; R.completeChapter(); o.b1 = G.save.best[1]; R.startChapter(1, true); G.chT = 80; R.completeChapter(); o.b2 = G.save.best[1]; o.nb2 = G.lastResult.newBest;
+    R.startChapter(1, true); G.chT = 120; R.completeChapter(); o.b3 = G.save.best[1]; o.nb3 = G.lastResult.newBest; o.fast = !!G.save.trophies.fast; o.escape = !!G.save.trophies.escape;
+    R.chapters(); o.list = document.querySelector('#card .ch[data-i="1"]').textContent; R.resultsCard(Object.assign({}, G.lastResult, { newBest: true, prevBest: 90 }), () => {}); o.card = document.getElementById("card").textContent;
+    R.trophies(R.menu); o.room = document.querySelectorAll(".trophy").length; o.on = document.querySelectorAll(".trophy.on").length; R.menu(); o.menu = !!document.getElementById("m-tro") && !!document.getElementById("m-suit"); return o; });
+  ok("R1 best time per chapter: kept, beaten only by a faster run, shown in the chapter list and the results card", r.b1 === 100 && r.b2 === 80 && r.nb2 && r.b3 === 80 && !r.nb3 && /⏱ 1:20/.test(r.list) && /Best time/.test(r.card) && /NEW BEST/.test(r.card), r);
+  ok("R2 Trophy Room: 15 trophies, won by playing (first step, escape artist, fast hero), in the menu", r.room === 15 && r.on >= 3 && r.first && r.escape && r.fast && r.menu, r);
+  r = await E(() => { const o = {}; const keep = JSON.stringify(G.save.stars || {}); G.save.stars = { 1: 1, 2: 1 }; R.suits(R.menu); o.locked = [...document.querySelectorAll("[data-s]")].filter((b) => b.disabled).length; o.uniform = R.suitOf().id;
+    G.save.stars = { 1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3 }; R.suits(R.menu); o.open = [...document.querySelectorAll("[data-s]")].filter((b) => !b.disabled).length; document.querySelector('[data-s="gold"]').click(); o.suit = R.suitOf().id; o.trophy = !!G.save.trophies.suit;
+    R.startChapter(1, true); o.cape = !!G.P.g.userData.cape; G.save.stars = { 1: 1 }; o.lockedAgain = R.suitOf().id; G.save.stars = JSON.parse(keep); G.save.suit = "uniform"; R.startChapter(1, true); o.noCape = !G.P.g.userData.cape; R.menu(); return o; });
+  ok("R3 hero suits: 5 suits unlocked by stars; the Golden hero wears a red cape in the chapters", r.locked === 4 && r.uniform === "uniform" && r.open === 5 && r.suit === "gold" && r.trophy && r.cape && r.lockedAgain === "uniform" && r.noCape, r);
 
   // ---------------- V. Pictures ----------------
   for (const [i, name] of [[0, "08-prologue"], [1, "09-ch1"], [3, "10-ch3-hall"], [6, "11-ch6"]]) { await E((i) => { R.startChapter(i, true); play(0.4); if (G.mode === "dialog") R.skipDialog(); play(1); }, i); await shot(name); }

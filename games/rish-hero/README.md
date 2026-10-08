@@ -4,7 +4,7 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A full 3D action story game in one HTML file (Three.js). It runs on a
-computer and on a phone. Version label: **Rish Hero v10** (bottom right).
+computer and on a phone. Version label: **Rish Hero v11** (bottom right).
 
 **Now inside RishSchoolDays (v10).** School Days v82 carries this whole
 story. Open it from the 🦸 button in School Days, or play the Annual Day
@@ -140,6 +140,18 @@ College, the river and the bridge, and people walking in the streets.
 
 ## More to do
 
+- **Hero suits (v11):** 5 suits, unlocked by stars: School uniform, Red
+  cape hero (5 ⭐), Night ninja (9 ⭐), Army camo (13 ⭐) and Golden hero
+  with a red cape (18 ⭐). "🦸 Suits" in the menu. The hero wears the suit
+  in every chapter.
+- **Trophy Room (v11):** 15 trophies won by playing: First step, Escape
+  artist, Ghost (3 silent takedowns), Bomb expert (no BOOM), Room master,
+  Counter king, Fifty knockouts, Rooftop runner, Chase master, Code breaker
+  (no hint), Diary keeper, Perfect chapter, Fast hero (under 3 minutes),
+  Hero of Suryanagar and Dress up. "🏆 Trophies" in the menu.
+- **Best times (v11):** each chapter keeps your best time. The chapter
+  list shows your stars and best time; the results card says NEW BEST.
+
 - **Rish's Diary:** 15 pages hidden in the chapters (3 each). Rish wrote
   them in his lonely year. Found pages are kept and shown in the menu.
 - **Chapter results:** time, knockouts, takedowns, room tricks, diary
@@ -181,7 +193,8 @@ parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, di
   job, 9 emergencies, Black Viper attacks, fame, cape, fans, statue,
   Life Story, the dream job, 19 emergencies, the living city, friends,
   medals, vehicles, family, the dog), the save after a reload, the School
-  Days embed, plus phone controls. 102 checks.
+  Days embed, best times, trophies and suits, plus phone controls. 105
+  checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

@@ -1059,7 +1059,8 @@ RishSchoolDays and Rish Hero are one game now. The whole Rish Hero story plays i
 - School Days waits while you play. "🏠 Back to School Days" (menu or pause) brings you back to the same moment. The story keeps your chapter.
 - After THE END you come back to School Days as the hero the whole world knows: BREAKING NEWS, the Sunrise Gold Medal prize (₹5,000), fame +500, and a diary page. Your normal life goes on: family, vehicles, school, job, and the 🚨 hero alerts.
 - After the story the Black Viper gang can come back as a 13th emergency: beat 3 men, then Bull, at the Railway Station.
-- New check group W (7 checks). The full run passes 240 of 240 checks.
+- New check group W (7 checks).
+- v83 carries Rish Hero v11 inside: hero suits, a Trophy Room and best times for each chapter.
 
 ## Files
 

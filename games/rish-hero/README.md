@@ -4,10 +4,11 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A full 3D action story game in one HTML file (Three.js). It runs on a
-computer and on a phone. Version label: **Rish Hero v7** (bottom right).
+computer and on a phone. Version label: **Rish Hero v8** (bottom right).
 
-**First page:** the player types 3 things only: the hero's name, age, and
-what the father does (army officer, police officer, doctor, scientist,
+**First page:** the player types 4 things: the hero's name, age, what he
+wants to become when he grows up (any words: doctor, astronaut, cricketer...),
+and what the father does (army officer, police officer, doctor, scientist,
 pilot, judge, engineer, journalist, firefighter, businessman or farmer).
 Every story line uses them: the hero's name, his age, his class, his
 father's title (Major, Inspector, Dr., Captain, Judge, Chief, Mr.), why the
@@ -94,18 +95,29 @@ Police Station, Market, City Park, Bank, City Office, Apartments, Mall, City
 College, the river and the bridge, and people walking in the streets.
 
 - **Every year is one day.** Age 10 to 17: go to school. 18 to 21: college.
-  At 22 he picks ONE job (the same 11 jobs) and works a shift.
+  At 22 his dream from the first page comes true: he becomes that (a
+  doctor works at the City Hospital, a cricketer trains in the City Park, an
+  astronaut works at the City Office...) and works a shift.
 - **Every year there is an emergency**, with a timer and a gold marker:
   fire (take the extinguisher, spray 4 fires, carry the family out), road
   accident (lift the car, first aid), drowning (dive and swim), robbery at
   the Bank, kidnapping in the Park, a bomb in the Market (wire puzzle), an
   earthquake (lift the rubble), a runaway bus (hold it with your hands),
-  and a kitten on a tree. At 25, 40 and 55 the Black Viper gang attacks
+  a kitten on a tree, a gas leak, a stuck lift, a flood, a lost child, a live
+  wire after a storm, a bag thief to chase, a capsized boat, CPR for a
+  grandpa, a cobra in the school, and detective cases (3 clues around the
+  city, then catch the culprit: the stolen trophy, the missing painting,
+  the stolen medicine). At 25, 40 and 55 the Black Viper gang attacks
   the River Bridge again, with Bull.
 - **Like Shaktimaan:** one normal job, and also the saviour. **The
   difference: no secret.** Every save is BREAKING NEWS, and fame grows:
   known in Suryanagar, the whole state, all of India, Asia, the whole
   world. A red cape and badge, fans in the street, autographs.
+- **A living 3D city:** soft shadows under people, clouds, cars that
+  drive and stop for people, street lamps that glow at night, a news
+  ticker of his saves, old friends grown up (Kabir the football coach, Diya
+  at the hospital, Aarav the app maker, Maa at home), Hero Run for famous
+  heroes, and a Medals room for 20 kinds of rescue.
 - **Milestones:** bravery awards, the World Hero Award, a Hero Academy, a
   statue in the park at 50, and at 70 the Life Story. "Play life again"
   starts a new life. Too slow? Other rescuers help, no game over.
@@ -151,7 +163,8 @@ parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, di
   look up and down), the story base and clock, the gold marker for every
   objective, the first page and the personal story, Hero Life (city, school days,
   job, 9 emergencies, Black Viper attacks, fame, cape, fans, statue,
-  Life Story), plus phone controls. 92 checks.
+  Life Story, the dream job, 19 emergencies, the living city, friends,
+  medals), plus phone controls. 96 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

@@ -1063,6 +1063,8 @@ RishSchoolDays and Rish Hero are one game now. The whole Rish Hero story plays i
 - v83 carries Rish Hero v11 inside: hero suits, a Trophy Room and best times for each chapter.
 - v84 carries Rish Hero v12 inside: flying kick, spin kick, grab and throw, the ⚡ Hero Smash, slow-motion multi takedowns with the Rish Hero theme music. Inside the story the label says only "Rish Hero v12".
 - v85 carries Rish Hero v13 inside: a 🎵 Hero theme button in the story menu and Settings, and the theme at FINISH HIM on a boss.
+- v86 carries Rish Hero v14 inside: Settings in the story menu has "Your own hero song". Pick a song file from your own device and it plays in the big fight moments. It stays on that device only.
+  The story menu also has "🔍 Hero song": search any song like WhatsApp status music (Singham Again, Sooryavanshi...), listen, and use it as the fight song (a 30-second Apple Music preview; needs the internet).
 
 ## Files
 

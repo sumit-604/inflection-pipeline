@@ -282,7 +282,7 @@ const moved = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]) > 0.4;
     // K22 kite fight.
     await ev(p, () => { window.__game._kiteFight(); for (let k = 0; k < 5; k++) document.querySelector('#sp-hit').click(); document.querySelector('#sp-ok').click(); window.__fin(); }); ok('K22 kite fight', (await J()).kitesCut != null);
     // K23 Saanp Seedi: rolls move the tokens, Dadi rolls by herself.
-    await ev(p, () => window.__game._saanpSeedi()); await p.keyboard.press('ArrowUp'); await p.waitForTimeout(1300); const ss = await ev(p, () => document.querySelector('#ss-m').textContent);
+    await ev(p, () => window.__game._saanpSeedi()); await p.keyboard.press('ArrowUp'); await p.waitForFunction(() => /Dadi rolls/.test((document.querySelector('#ss-m') || {}).textContent || ''), null, { timeout: 8000 }).catch(() => {}); const ss = await ev(p, () => document.querySelector('#ss-m').textContent);
     ok('K23 Saanp Seedi: you roll, then Dadi rolls', /Dadi rolls/.test(ss), ss); await p.click('#f-x');
     // K24 chai.
     await ev(p, () => { window.__game._makeChai(); for (let k = 0; k < 8; k++) document.querySelector('#og-' + k).click(); window.__fin(); }); ok('K24 chai made in the right order', (await J()).chai === 1);

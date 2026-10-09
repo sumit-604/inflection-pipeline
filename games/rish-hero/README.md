@@ -4,8 +4,8 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A full 3D action story game in one HTML file (Three.js). It runs on a
-computer and on a phone. Version label: **Rish Hero v13** (bottom right). Inside School Days the
-label also says only "Rish Hero v13".
+computer and on a phone. Version label: **Rish Hero v15** (bottom right). Inside School Days the
+label also says only "Rish Hero v15".
 
 **Now inside RishSchoolDays (v10).** School Days v82 carries this whole
 story. Open it from the 🦸 button in School Days, or play the Annual Day
@@ -189,6 +189,24 @@ knocked out and arrested. No blood.
   action films. Settings has Hero theme music On/Off and "Play it now".
   The menu has a 🎵 Hero theme button (v13). The theme also plays at
   FINISH HIM, when Bull or Kade is beaten (v13).
+- **Search a hero song (v15), like WhatsApp status music:** menu "🔍 Hero
+  song" (or Settings, "Search a song"). Type any song, for example
+  Singham Again or Sooryavanshi, or tap a quick button. The songs come
+  with their pictures. ▶ listens, ✔ Use makes it the hero song: it plays
+  when you knock out 3 or more men at once, on the ⚡ Hero Smash and on a
+  boss. Songs come from Apple Music's free search and play a 30-second
+  preview from Apple's servers (the same kind of short licensed clip a
+  status uses), so the game file carries no film music and needs the
+  internet for this. No internet: the built-in Rish Hero theme plays.
+  "🎼 Built-in theme" goes back to it.
+- **Your own hero song (v14):** Settings, "🎵 Your own hero song", "📁
+  Choose a song": pick a music file that is on this computer or phone
+  (for example a film song you bought or downloaded). It plays at the big
+  fight moments instead of the built-in theme, for about 20 seconds, then
+  fades out. "Start at second" jumps to the best part. The song stays only
+  on that device (browser storage); it is never part of the game file, so
+  the game on Netlify carries no film music. "Remove my song" goes back to
+  the built-in theme.
 - Chapter 6 only: F or click shoots (hold F for the machine gun), R reload,
   X switch guns. The red laser shows the target; a gold ring means the room
   can do the work.
@@ -211,8 +229,8 @@ parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, di
   Life Story, the dream job, 19 emergencies, the living city, friends,
   medals, vehicles, family, the dog), the save after a reload, the School
   Days embed, best times, trophies and suits, the new moves, Hero Power,
-  multi takedowns and music, the theme button, plus phone controls (14
-  buttons). 112 checks.
+  multi takedowns and music, the theme button, your own hero song, the song search, plus
+  phone controls (14 buttons). 114 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

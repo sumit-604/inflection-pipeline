@@ -1,0 +1,19 @@
+stage: confidence-phase1
+company: MMP
+run_date: 2026-10-05
+confidence_delta:
+  numerical_acceptance: 96          # B12a run 1 (96%, 730 checked; Gate 0 tier re-audited in run 2 at 96.6%, 187 of 187); the lower of the two
+  redflag_coverage: 67              # B12b: 6 of 9 material caught (strict); 100% if partials credited
+  framework_adherence: 95.6         # B12c run 2, Gate 0 + EM half only (86 of 90 rules); valuation half pending phase 3
+  peer_utilisation: 100             # B12d: 8 of 8 peer transcripts used substantively (ARFIN selected, no transcripts collected)
+  overall: 67
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  band: "60-74: PROCEED verdicts downgrade one level"
+  pending_phase3: ["framework_adherence valuation half (B10, B11)"]
+verifier_a_identity_check: "B12a run 1 and run 2 hold 0 CRITICAL rows; no row struck by the orchestrator"
+rework_check: "No CONFIRMED Verifier A CRITICAL; no acceptance rate below 60% on a denominator of 4 or more (OR-29). No REWORK."
+remediation:
+  cycles: 1
+  run1_critical: "B12c run 1 F1 (Gate 0 E4 basis), with B12a run 1 MAJOR SF row on the same item; fixed by stage 1 run 2 (AVOID 39 -> AVERAGE 54) and stage 7 run 2 (combined AVOID -> AVERAGE)"
+  open_after_cycle: ["B12c run 2 F1 capex definition (core 54 vs 50, AVERAGE either way)", "B12c run 2 F2 M9 basis (moat MODERATE 12 vs THIN 10)", "B12c run 2 F5 capex_embedded_growth_pct (20.4 vs 8.7)", "B01 open rulings: rule 6 scope, ROCE proxy, confidence-tier basis, E2 window"]

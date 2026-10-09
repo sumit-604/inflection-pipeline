@@ -1,0 +1,51 @@
+stage: B02-notes-pass2
+company: "MMP"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: pass2_complete
+input_gaps:
+  - "B00 CORPUS GAPPED: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets are empty (no CSV); Data_Sheet.csv only"
+  - "B00: scanned Q4 FY26 and Q3 FY26 results are image scans with no OCR; not used in this pass (AR FY26 text used instead)"
+  - "B00: ARFIN transcripts absent; peer transcripts only APARINDS and MAANALU"
+  - "B00: NSE results clarifications of 2026-03-05 and 2026-06-23 have no company reply in the corpus"
+  - "B00: announcements and shareholding were repaired by hand; selection, not full list"
+  - "Notes-level (pass 1): insurer acceptance and collection of the 793.05 L claim, FY26 guidance text, number of fire deaths, nature of 703.86 L other receivables, Toyal contingent liabilities, capitalised interest, 5-year repayment schedule are NOT FOUND IN DOCUMENT"
+  - "Notes-level (pass 2): debris and disposal proceeds from the fire, Star OCI cause, counter-entry of 46.90 L forward MTM, MEPL own balance sheet, subsidiary headcount and gratuity, composition of interest income, preliminary expenditure policy, associate unrealised profit elimination, collateral behind the 2,000 L Federal Bank lien are NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CASH, reason: "CFO includes short-term borrowing increase (S 789.11 L, C 1,723.34 L); CFO ex-borrowings S 4,649.19 L vs 1,121.30 L; payables +70.2%; trade receivable ageing itself clean"}
+  - {type: FLAG-INSURANCE-RECEIVABLE, reason: "793.05 L receivable booked on claim bill, 47% of 1,672.01 L loss, nil received in FY26, acceptance not shown (S Notes 14, 37, 52)"}
+  - {type: FLAG-ASSOCIATE-PROFIT, reason: "Share of associate profit 820.78 L = 20.5% of C PBT; cash dividend 9.98 L (S Note 45 p.154); Star OCI share (168.32) L cuts comprehensive share to 574.37 L (C Note 49 p.237)"}
+  - {type: FLAG-GUARANTEES, reason: "Corporate guarantees 6,688 L = 22.0% of S net worth; two items each above 10% (S Note 47 p.157)"}
+  - {type: FLAG-CF-PRESENTATION, reason: "Cash flow add-back for PPE loss 23.45 L vs 371.45 L non-cash PPE losses; investing nets 436.82 L; CFO/investing split uncertain by 348 to 437 L; about 88 L gaps in inventory and PPE fire ties (S CF p.95; S Notes 2, 36, 52)"}
+  - {type: FLAG-FUNDING, reason: "Undrawn sanctioned subsidiary term loans 3,126.32 L vs C capital commitments 5,642.27 L; C maturity table nil over 5 years though loans run to 2032 and 2033 (C Notes 18, 39B, 52)"}
+  - {type: FLAG-COLLATERAL, reason: "Stated liens 2,545.72 L vs all term deposits 242.24 L; liquidity 298.62 L = cash 56.38 L + those deposits (S Notes 7, 14, 23, 39B)"}
+accounting_quality: 6   # preliminary, unchanged after pass 2, /10; pass 3 sets final
+pass_2_empty: false
+pass_3_empty: null      # not yet run
+top_findings:           # pass 2 new items only
+  - {rank: 1, finding: "Fire PPE loss 338.92 L: cash flow add-back only 23.45 L and investing shown net of 436.82 L; about 88 L unexplained gaps in both inventory and PPE fire ties; debris proceeds not disclosed", note_ref: "S CF p.95; S Notes 2, 36, 52 (p.116, 135, 159)", rating: "YELLOW", why: "CFO and investing split uncertain by 348 to 437 L; bears on cash conversion (LBF2, LBF4)"}
+  - {rank: 2, finding: "Start-up subsidiaries explain about 50 bps of the 133 bps EBITDA margin fall; C EBITDA 408.49 L below S ex-dividend; 26% of subsidiary pre-tax loss booked as DTA", note_ref: "C Notes 20, 33, 36, 50", rating: "YELLOW", why: "Splits the margin fall into parent 83 bps and subsidiaries 50 bps (LBF1)"}
+  - {rank: 3, finding: "Parent margin fall sits in the stock-build credit (0.68% vs 2.99% of revenue) while power +1.0% and employee +6.5% on revenue +18.8%", note_ref: "S Notes 31-36 p.133-135", rating: "YELLOW", why: "FY25 margin carried a stock-build credit; FY26 cost lines flattered by fire period (LBF1)"}
+  - {rank: 4, finding: "Undrawn sanctioned subsidiary term loans 3,126.32 L vs commitments 5,642.27 L; MCPL 16% drawn; C maturity table nil over 5 years and adds 54 L; instalment text contradictory", note_ref: "C Notes 18, 39B, 52", rating: "YELLOW", why: "Funding path of new-subsidiary capex leans on parent (LBF4)"}
+  - {rank: 5, finding: "Stated liens 2,545.72 L exceed all term deposits 242.24 L; liquidity 298.62 L is mostly margin money", note_ref: "S Notes 7, 14, 23d, 39B", rating: "YELLOW", why: "Liquidity cushion overstated or collateral text wrong (LBF4)"}
+  - {rank: 6, finding: "Star OCI share (168.32) L; comprehensive share 574.37 L vs profit share 742.70 L; no unrealised profit policy for associates", note_ref: "C Notes 1.2, 17, 46, 49", rating: "YELLOW", why: "Associate profit quality (LBF3)"}
+  - {rank: 7, finding: "Schedule III FY26 table misses C equity by 645.97 L (Toyal row printed (702.25) vs (56.28))", note_ref: "C Note 50 p.239; Note 39C p.221", rating: "YELLOW", why: "Disclosure error; MEPL loss is 70% of its cash equity, no impairment test shown"}
+  - {rank: 8, finding: "Forward MTM payable 57.02 L vs OCI hedge reserve 10.12 L gross; 46.90 L counter-entry not found; FVTPL vs cash flow hedge vs debt-instrument labels; 39B sensitivity opposite to Note 51", note_ref: "S Notes 25, 39A, 39B, 51", rating: "YELLOW", why: "Derivative accounting trail incomplete"}
+  - {rank: 9, finding: "77% of FY26 credit-loss charge (53.26 of 68.81 L) is on the non-current other receivable, not trade debtors", note_ref: "S Notes 7, 11, 36", rating: "YELLOW", why: "Receivable risk sits outside the clean trade ageing"}
+  - {rank: 10, finding: "Segment returns on segment assets: foils 3.2%, conductors 13.7% (PY 21.1%), insulators (9.4%), powder 18.4%", note_ref: "C Note 44 p.226-227", rating: "YELLOW", why: "Mix and capital intensity behind margin (LBF1)"}
+red_flags: []
+questions_for_mgmt:
+  - "Has the insurer accepted the 793.05 L claim, and how much has been received since 31 March 2026?"
+  - "What explains the 580.63 L of subsidiary reimbursement flows with no closing balance?"
+  - "What is the nature and age of the 703.86 L non-current other receivables, and why is 77% of the credit-loss charge on them?"
+  - "What caused the 67.9% rise in raw material stock?"
+  - "What were the PPE disposal and debris proceeds from the fire, and why does the cash flow add back only 23.45 L of PPE losses?"
+  - "What collateral stands behind the 2,000 L Federal Bank lien when term deposits total 242.24 L?"
+  - "How will the 5,642.27 L of group capital commitments be funded against 3,126.32 L of undrawn subsidiary term loans?"
+  - "Why did Star's OCI fall by 168.32 L (group share), and is unrealised profit on sales to Toyal eliminated?"
+receivables_trend: "stable to improving: trade receivables net 8,822.61 L vs 8,951.34 L (-1.4%) on revenue +18.8%; days 39.2 vs 47.2 (FY24 36.0); not due 96.3% (PY 92.9%); over 6 months 104.89 L = 1.18% of gross (PY 32.04 L = 0.36%); other non-current receivables 703.86 L at 40% reserve is a separate watch item and carries 53.26 L of the 68.81 L FY26 credit-loss charge"
+restatements_found:
+  - "None material. FY25 comparatives differ from AR2025 by under 2 L in several lines; Note 56 says regrouped"
+  - "Not a restatement: C Note 50 FY26 Schedule III table misstates Toyal net assets by 645.97 L; reported equity, profit and OCI tie"
+going_concern_language: "NONE as doubt. Only objective text: 'Safeguard the Company's ability to continue as going a going concern' (S Note 39C, p.142)"
+analyst_note: "Pass 2 adds ten YELLOW items, no RED. Three Pass 1 statements corrected: guarantees are not backed 1:1 by deposits (242.24 L deposits vs 445.72 L), Toyal Schedule III row misprinted, FX unhedged position differs between Note 39B and Note 51. Two readings are held open: P2-1 (cash flow add-back omitted vs undisclosed proceeds) and P2-2 (fire disruption vs FY25 stock-build inflation). Anchors use [page N] of the .txt; printed page = N minus 5. All figures INR Lakhs; derived items flagged. accounting_quality stays 6 pending Pass 3."

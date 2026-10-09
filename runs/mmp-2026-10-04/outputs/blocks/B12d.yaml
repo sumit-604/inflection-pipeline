@@ -1,0 +1,23 @@
+stage: B12d
+company: "MMP"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 3                # APARINDS (4 calls), MAANALU (4 calls), ARFIN (no transcripts)
+substantive_confirmed: 2        # APARINDS and MAANALU; all 8 call rows confirmed
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "MAANALU", missed_item: "Nov-25 call says it is 'adding customers' and 'growing' in UK, Israel, Europe, Australia; B06 Q6 states 'MAANALU lists no Europe growth' (misstatement, qualitative and promotional, no numbers)", anchor: "MAANALU-Concall_Nov_2025_Transcript.txt lines 199-200 (Ashish/management opening remarks, early pages)"}
+  - {peer: "MAANALU", missed_item: "Europe and US states require declaration of aluminium origin; Indian smelting origin preferred by export customers (Europe-leg context for MMP export claim)", anchor: "MAANALU-Concall_Jun_2026_Transcript.txt lines 533-545, printed p.13 of 14"}
+  - {peer: "APARINDS", missed_item: "Private rival with carbon-score conductor reported close to PGCIL approval; peer answer on PGCIL past-performance barrier (competitive context for MMP PGCIL registration)", anchor: "APARINDS-Concall_Jun_2026_Transcript.txt lines 739-745, file p.17 (printed p.16)"}
+claims_all_addressed: true      # 8 of 8 peer_questions have a verdict in B06 Part 1
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, finding: "B06 Q6 says MAANALU lists no Europe growth; MAANALU Nov-25 opening remarks say it is adding customers and growing in Europe. Does not change the scoped verdict (Europe for powder is UNVERIFIABLE) but the sentence is wrong.", anchor: "MAANALU Nov-25 transcript lines 199-200"}
+  - {severity: MINOR, finding: "B06 Q6 verdict CONTRADICTED rests on non-powder peers; B06 scopes it to West Asia, freight and price resistance and says so. Three independent anchors (MAANALU x2 calls, APARINDS) exist and the quotes are real. Label is stronger than the adjacent evidence; UNVERIFIABLE on powder demand with a flagged contradiction on route conditions would be the tighter reading. Not an upgrade from silence.", anchor: "B06 Part 1 Q6; MAANALU Jun-26 line 291, Aug-26 line 271; APARINDS Jun-26 lines 577-578"}
+  - {severity: MINOR, finding: "B06 Q7 PARTIALLY VERIFIED rests on peers saying metal is hedged (real quotes) and on an oil, not metal, inventory effect. No peer verifies MMP's 2-2.5 Cr gain; the evidence is a contrast. UNVERIFIABLE with contrast flag is tighter.", anchor: "MAANALU Nov-25 line 368, Feb-26 line 389, Aug-26 lines 300-304; APARINDS Nov-25 line 485"}
+  - {severity: MINOR, finding: "B06 Q5 PARTIALLY VERIFIED is direction only (approvals slow, dates slip); no utility or PGCIL duration from any peer. B06 states this itself. Acceptable.", anchor: "B06 Part 1 Q5"}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 100            # 3 of 3 peers handled correctly at MAJOR bar (minors noted)

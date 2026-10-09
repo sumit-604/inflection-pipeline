@@ -1,0 +1,42 @@
+stage: B02-notes-pass1
+company: "MMP"
+run_date: "2026-10-04"
+model: claude-sonnet-5-5
+status: pass1_complete
+input_gaps:
+  - "B00 CORPUS GAPPED: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets are empty (no CSV); Data_Sheet.csv only"
+  - "B00: scanned Q4 FY26 and Q3 FY26 results are image scans with no OCR; not used in this pass (AR FY26 text used instead)"
+  - "B00: ARFIN transcripts absent; peer transcripts only APARINDS and MAANALU"
+  - "B00: NSE results clarifications of 2026-03-05 and 2026-06-23 have no company reply in the corpus"
+  - "B00: announcements and shareholding were repaired by hand; selection, not full list"
+  - "Notes-level: insurer acceptance and collection of the 793.05 L claim, FY26 guidance text, number of fire deaths, nature of 703.86 L other receivables, Toyal contingent liabilities, capitalised interest, 5-year repayment schedule are NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CASH, reason: "CFO includes short-term borrowing increase (S 789.11 L, C 1,723.34 L); CFO ex-borrowings S 4,649.19 L vs 1,121.30 L; payables +70.2%; trade receivable ageing itself clean"}
+  - {type: FLAG-INSURANCE-RECEIVABLE, reason: "793.05 L receivable booked on claim bill, 47% of 1,672.01 L loss, nil received in FY26, acceptance not shown (S Notes 14, 37, 52)"}
+  - {type: FLAG-ASSOCIATE-PROFIT, reason: "Share of associate profit 820.78 L = 20.5% of C PBT; cash dividend 9.98 L (S Note 45 p.154)"}
+  - {type: FLAG-GUARANTEES, reason: "Corporate guarantees 6,688 L = 22.0% of S net worth; two items each above 10% (S Note 47 p.157)"}
+accounting_quality: 6   # preliminary, pass 1 only, /10
+pass_2_empty: null      # not yet run
+pass_3_empty: null      # not yet run
+top_findings:
+  - {rank: 1, finding: "Umred fire: gross loss 1,672.01 L, claim receivable 793.05 L booked on claim bill with no cash in FY26, net exceptional 878.96 L", note_ref: "S Notes 14, 32, 37, 52 (p.122, 134-136, 159)", rating: "YELLOW", why: "Recovery is 47% of loss and unproven; Note 14 date typo; policy on contingent assets conflicts"}
+  - {rank: 2, finding: "CFO includes short-term borrowing increase; CFO ex-borrowings 4,649.19 L vs 1,121.30 L; payables +70%", note_ref: "S CF p.95; Note 24; C CF p.173", rating: "YELLOW", why: "Cash conversion quality rests on payables and borrowing classification"}
+  - {rank: 3, finding: "Associate profit 820.78 L = 20.5% of C PBT, 26.5% of PAT; dividend 9.98 L; Star 90.5%; Star cross-holds 4.56% of MMP", note_ref: "C Notes 46, 49; S Note 16", rating: "YELLOW", why: "Earnings are non-cash and concentrated; Toyal liabilities moved to current"}
+  - {rank: 4, finding: "Subsidiary guarantees 6,688 L = 22.0% of net worth; MCPL 3,288 L called outstanding vs 512.70 L drawn; commitments 3,278.31 L S and 5,642.27 L C", note_ref: "S Notes 47, 48; C Note 18", rating: "YELLOW", why: "Parent carries funding risk of new capex vs liquidity of 298.62 L"}
+  - {rank: 5, finding: "Group debt 18,452.46 L +18.1%; DSCR C 2.51 vs 4.55; S cash 56.38 L; debt called low in capital note", note_ref: "S Notes 39B, 39C, 43; C Note 43", rating: "YELLOW", why: "Leverage and cover weaken as capex ramps"}
+  - {rank: 6, finding: "Subsidiary losses 352.81 L; DTA 125.62 L on losses; pre-operative 210.64 L; no impairment test", note_ref: "C Notes 4, 20, 44, 50", rating: "YELLOW", why: "Start-up drag and capitalisation judgement"}
+  - {rank: 7, finding: "Gratuity DBO +75% to 611.39 L unfunded; 94.73 L Labour Code exceptional; salary base +68.7% vs headcount +8%", note_ref: "S Notes 37, 44", rating: "YELLOW", why: "Rising unfunded liability and unexplained valuation input"}
+  - {rank: 8, finding: "Promoter-group payments 255.21 L; promoter collateral and guarantees; 280 L interest-free promoter loans to MEPL; about 580.63 L reimbursement flows without closing balance; 30.00 L related-party loan absent from RPT table", note_ref: "S Notes 18, 45; C Notes 18, 23, 46", rating: "YELLOW", why: "RPT scale small but disclosure thin; promoter support is visible"}
+  - {rank: 9, finding: "C EBITDA margin 8.04% vs 9.38%; foils 2.0%, conductors 4.9% vs 8.3%; Note 43 blames fire for ROCE although ROCE excludes exceptional items", note_ref: "C Note 44; S Note 43; C Note 43", rating: "YELLOW", why: "Margin fall is wider than the fire explanation"}
+  - {rank: 10, finding: "Disclosure inconsistencies: hedge policy vs reserve vs text vs 1,979.34 L forwards; non-deductible expense about 444 L; 703.86 L other receivable at 40% reserve; clerical slips", note_ref: "S Notes 1, 7, 20, 39B, 51", rating: "YELLOW", why: "Lowers confidence in note precision; none changes reported totals"}
+red_flags: []
+questions_for_mgmt:
+  - "Has the insurer accepted the 793.05 L claim, and how much has been received since 31 March 2026?"
+  - "What explains the 580.63 L of subsidiary reimbursement flows with no closing balance?"
+  - "What is the nature and age of the 703.86 L non-current other receivables?"
+  - "What caused the 67.9% rise in raw material stock?"
+receivables_trend: "stable to improving: trade receivables net 8,822.61 L vs 8,951.34 L (-1.4%) on revenue +18.8%; days 39.2 vs 47.2 (FY24 36.0); not due 96.3% (PY 92.9%); over 6 months 104.89 L = 1.18% of gross (PY 32.04 L = 0.36%); other non-current receivables 703.86 L at 40% reserve is a separate watch item"
+restatements_found:
+  - "None material. FY25 comparatives differ from AR2025 by under 2 L in several lines (S total assets 50,553.98 L vs 50,554.05 L; MSME payables 833.86 L vs 832.28 L); Note 56 says regrouped"
+going_concern_language: "NONE as doubt. Only objective text: 'Safeguard the Company's ability to continue as going a going concern' (S Note 39C, p.142)"
+analyst_note: "Pass 1 only; accounting_quality is preliminary. Anchors use the [page N] marker of the .txt; printed page = N minus 5. All figures INR Lakhs. Derived ratios flagged in the report. LBF1 guidance text is not in the notes; LBF2 claim is recognised but not shown collected; LBF3 associate profit is 20.5% of C PBT with 1.3% cash payout; LBF4 CFO includes borrowing increases and group capex rests on 6,688 L of parent guarantees."

@@ -1043,3 +1043,12 @@ OR-14 re-derivation (PR #193): SYSTANGO, SHYAMMETL, MANINDS ruled Small on
 2026-10-04 (PR #201). AIMTRON and ASIANENE: not re-derived; operator ruling
 2026-10-04 (standing ruling: framework rulings apply forward; closed names keep
 their record as of the run that produced it). Both stay CONCERN, Small.
+
+## 2026-10-05 MMP (Phase 1 via /step1, runs/mmp-2026-10-04)
+
+- Collector: no BSE code (NSE-only name), so announcements/ empty; no results or rating PDFs; screener sheets empty (no LibreOffice); duplicate PPT. Repaired by hand from the NSE API and crisil.com. Q4 FY26 and Q3 FY26 results are image scans and no OCR engine is on this machine.
+- Stage 1 run 1 scored Gate 0 E4 on the standalone guarantee note under a consolidated basis and missed AR25 and the peer Data_Sheets: AVOID 39. Verifier C CRITICAL plus Verifier A SF row; one remediation cycle moved it to AVERAGE 54. Cycle cost 707k tokens (15.1% of ledger). Fix candidate: stage 1 task message must name AR(n-1) and peer Data_Sheets explicitly.
+- Stage 2 (three passes) 709,653 tokens vs Kwick 474k; stage 3 412,218 vs 421k; stage 5 no-call bounded 200,857 vs 254k (target under 100k missed). Ledger total 4,670,340 subagent tokens.
+- Stages 2 pass 3, 5, 8 and 9 had no Edit tool and left self-reported slips (stray file, FX estimate, wrong %); orchestrator corrected each in place and logged it in run-log.md.
+- B00 mislabelled the FY26 mix as Q1 FY27 (from the deck slide header). Stage 9 ran in parallel with stage 7 and missed B07.capex_embedded_growth_pct.
+- No DOWNSHIFT FAILURE; no COST SPIKE (first MMP run).

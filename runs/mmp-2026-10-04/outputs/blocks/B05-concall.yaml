@@ -1,0 +1,102 @@
+stage: B05-concall
+company: "MMP"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "B00 CORPUS GAPPED: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets empty (Data_Sheet.csv only)"
+  - "B00: scanned Q4 FY26, Q3 FY26 and FY26 audited results are image scans with no OCR; Q1 FY27 results filing text is OCR-garbled (segment and P&L digits partly unreliable); press releases used for all quarterly numbers"
+  - "B00: ARFIN transcripts absent; peer transcripts only APARINDS and MAANALU; no transcript for Q2 FY26, Q3 FY26 or Q1 FY27 (press releases only); transcripts used: Jul 2022 (skim, promise pairs) and May 2026 (Q4 FY26 call)"
+  - "B00: NSE results clarifications of 2026-03-05 and 2026-06-23 have no company reply in the corpus"
+  - "B00: announcements and shareholding repaired by hand; selection, not full list; collector warnings on BSE scrip code, empty research/ and prospectus/"
+  - "Stage-level NOT FOUND: Q4 FY26 investor presentation (the 20-25% FY27 revenue growth asterisk is known only from the call, p.19-20); insurer acceptance and cash receipt of the 793.05 L claim; installed capacity in AR26 (the May 2026 call gives it); Q2 FY26 to Q1 FY27 analyst Q&A; dividend policy ratio; commissioning date of the second foil rolling mill"
+flags:
+  - {type: FLAG-GUIDANCE-CUT, reason: "FY27 consolidated revenue growth 20-25% (May-26 call p.19-20, management footnote) became 15-18% (Q1 FY27 PR p.3); export growth +50% (Q4 FY26 PR p.4) became 40-50% (Q1 FY27 PR p.3)"}
+  - {type: FLAG-NEW-VERTICAL-SLIPS, reason: "LT cable launch Q4 FY26 to Q1 FY27 to June 2026 to 7 Jul 2026; PGCIL registration early Q1 FY27 to Q2 FY27 to still open; MEPL ramp Q1 FY27 to Q3 FY27 to Q3/Q4 FY27; Umred LVPC H2 FY27 to H1 FY28; solar Q2 FY27 to Q3 FY27"}
+  - {type: FLAG-CONDUCTORS, reason: "Conductors: H2 FY26 revenue guided to double vs H1 (Q2 FY26 PR p.3, reiterated Q3 FY26 PR p.3), delivered +8% (520 vs 480 Mn, derived); Q1 FY27 revenue 171 Mn, -42% YoY and -38% QoQ (Q1 FY27 PR p.2)"}
+  - {type: FLAG-INSURANCE, reason: "AR25 p.24 'fully insured'; Q4 FY26 exceptional credit 76 Mn on claim receivable and salvage (Q4 PR p.3); no call or PR figure for cash received; no analyst asked on the May call"}
+  - {type: FLAG-FUNDING, reason: "Jul 2022 call p.6: no external borrowing, expansion from internal accruals; FY26 gross debt 18,452.46 L (B03); May-26 call p.15: net D/E not beyond 1 (FY26 0.53, C p.224); no analyst asked about guarantees, associates or RPTs"}
+quarters_analysed: ["Q1 FY23 (Jul 2022 call, skim)", "Q2 FY26 (PR)", "Q3 FY26 (PR)", "Q4 FY26 (PR, AR26, 25 May 2026 call)", "Q1 FY27 (PR, results filing)"]
+triggers:
+  - {priority: 1, name: "Aluminium powders: exports and volume growth", type: "VOLUME", timeframe: "near", conviction: "H", confirm_signal: "Powder revenue growth at or above 13-15% for FY27 with exports 40-50% higher; powder segment margin holds near 11-12%", kill_signal: "Q2 or Q3 FY27 powder revenue growth below 10% YoY, or export orders deferred again (Q1 FY27 PR p.2 notes delayed shipments)"}
+  - {priority: 2, name: "Foils: printed foil mix, lidding foil and security printing foil", type: "PRICE-MIX", timeframe: "near", conviction: "M", confirm_signal: "Lidding foil commercial launch in Q3 FY27; conversion utilisation rising from about 45% to 60-65%; foil segment margin stays above 4% (Q4 FY26 4.1%, derived)", kill_signal: "Lidding launch slips past Q3 FY27, or foil margin falls back to the FY26 level of 2.0% (C p.226)"}
+  - {priority: 3, name: "MEPL polymer insulators: PGCIL and EPC approvals, then ramp", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "PGCIL registration received; quarterly insulator revenue above 30 Mn by Q3 FY27 (the FY27 guide of 18-20 Cr needs about 60 Mn a quarter in Q2 to Q4)", kill_signal: "Q2 FY27 insulator revenue below 15 Mn, or segment loss above 1.0 Cr again (Q1 FY27 about 1.46 Cr, OCR)"}
+  - {priority: 4, name: "MCPL wire rod 18,000 MTPA backward integration", type: "COST", timeframe: "medium", conviction: "M", confirm_signal: "Plant trials by end Q3 FY27, commercial production Q4 FY27 as stated in Q1 FY27 PR p.5", kill_signal: "Trials move beyond Q4 FY27, or the July 2027 date in AR26 p.30 proves real"}
+  - {priority: 5, name: "LT power cable (Bhandara pilot, then Umred greenfield 6,000 MTPA)", type: "PRICE-MIX", timeframe: "medium", conviction: "L", confirm_signal: "BIS approval within 4-6 weeks of mid-Aug 2026 samples; commercial sales in Q3 FY27; Umred construction visible", kill_signal: "BIS approval not received by Q3 FY27 results; Umred start moves past H1 FY28"}
+  - {priority: 6, name: "Conductors: AL59 BIS approval and ABC demand recovery", type: "SECTORAL", timeframe: "near", conviction: "L", confirm_signal: "Conductor revenue back above 250 Mn a quarter and segment margin at or above 8.27% (FY25)", kill_signal: "Q2 FY27 conductor revenue below 200 Mn; Q1 FY27 PR p.4 expects utility payment delays to persist in Q2"}
+  - {priority: 7, name: "Captive solar park 7 MW, Rs 30 Cr", type: "COST", timeframe: "medium", conviction: "M", confirm_signal: "Commissioning in Q3 FY27", kill_signal: "A fifth date change (Q2 FY27, Q1 FY27, H1 FY27, Q3 FY27 so far)"}
+guidance:
+  - {item: "FY27 consolidated revenue growth", number: "15-18% (revised from 20-25% in the May call footnote)", timeframe: "FY27", stated_in: "Q1 FY27 PR p.3; May-26 call p.19-20"}
+  - {item: "FY27 blended EBITDA margin", number: "to improve, no number; subject to stable metal prices", timeframe: "FY27", stated_in: "Q1 FY27 PR p.3; CFO declined a % margin (May-26 call p.20)"}
+  - {item: "Powders FY27 revenue growth", number: "13-15%", timeframe: "FY27", stated_in: "Q4 FY26 PR p.4; AR26 p.26; May-26 call p.10"}
+  - {item: "Exports growth", number: "+50% then 40-50%", timeframe: "FY27", stated_in: "Q4 FY26 PR p.4; Q1 FY27 PR p.3"}
+  - {item: "Foils FY27 revenue growth", number: "15%, margin to improve YoY and QoQ", timeframe: "FY27", stated_in: "Q4 FY26 PR p.4; AR26 p.26"}
+  - {item: "EBITDA per tonne", number: "powder 37,000-42,000; foil 12,000-15,000; conductors 15,000-18,000 (after wire rod); wire rod standalone 10,000-12,000; LT cable 14-15% EBITDA margin", timeframe: "forward, undated", stated_in: "May-26 call p.14, p.20"}
+  - {item: "ROCE", number: "13-14% in FY27, above 15% in FY28 (FY26 10.12%)", timeframe: "FY27 to FY28", stated_in: "May-26 call p.19 (CFO); C p.224 for FY26"}
+  - {item: "Insulators revenue", number: "Rs 18-20 Cr FY27; Rs 45-50 Cr FY28; peak Rs 130-140 Cr; 3.5x asset turn; 20% EBITDA", timeframe: "FY27 to FY28", stated_in: "May-26 call p.11, p.14-16"}
+  - {item: "Capex programme", number: "Umred LVPC Rs 85-90 Cr (two phases of 6,000 MTPA); wire rod Rs 13-15 Cr; solar Rs 30 Cr; insulator balancing Rs 8-10 Cr; Star Circlips forging Rs 25 Cr from accruals", timeframe: "FY27 to FY28", stated_in: "Q3 FY26 PR p.5; May-26 call p.5, p.16; Q1 FY27 PR p.6"}
+  - {item: "Leverage ceiling", number: "net D/E not beyond 1.0 (FY26 0.53)", timeframe: "undated", stated_in: "May-26 call p.15 (CFO); C p.224"}
+  - {item: "Powder and foil capex and utilisation", number: "no capex for at least 2 years; powder about 80%, foil rolling 80-85%, conversion about 45%, target 60-65% in FY27", timeframe: "FY27 to FY28", stated_in: "May-26 call p.16, p.18, p.21"}
+  - {item: "Dividend", number: "maiden final dividend Rs 2 per share (20%); payout about 19% of standalone PAT (B03); no policy ratio stated", timeframe: "FY26", stated_in: "AR26 p.25"}
+  - {item: "Wire rod timing", number: "plant trials end Q3 FY27, commercial production Q4 FY27", timeframe: "FY27", stated_in: "Q1 FY27 PR p.5 (AR26 p.30 says installation from July 2027, trials H2 FY27)"}
+promise_delivery:
+  delivered: 7
+  partial: 2
+  missed: 9
+  rows:
+    - {promised_in: "AR25 p.18", promise: "Powders FY26 single-digit growth", outcome: "delivered", explanation: "+15.1% (S p.132); conservative guide"}
+    - {promised_in: "AR25 p.18", promise: "Phase III 2,500 MTPA fully operational by end Q2 FY26", outcome: "delivered", explanation: "Q2 FY26 PR p.3 states all planned capacities fully operational; no tonnage test possible"}
+    - {promised_in: "AR25 p.18, p.22", promise: "MEPL Phase I commercial production Q2 FY26", outcome: "delivered", explanation: "Phase I completed Q1 FY26 (Q2 FY26 PR p.4); commercial revenue only 23 Mn in FY26"}
+    - {promised_in: "Q3 FY26 PR p.3", promise: "MEPL Phase II commissioned by mid-March 2026", outcome: "delivered", explanation: "Fully operational (Q4 FY26 PR p.4; AR26 p.30)"}
+    - {promised_in: "Q2 FY26 PR p.3", promise: "Powders H2 FY26 revenue 20-25% above H1", outcome: "delivered", explanation: "2,804 vs 2,236 Mn = +25.4% (derived from Q3 and Q4 PR p.2)"}
+    - {promised_in: "Q2 FY26 PR p.3", promise: "Strong margin improvement in H2 FY26", outcome: "delivered", explanation: "H2 EBITDA margin 8.75% vs 7.13% in H1 (derived); the May call p.13 admits a 2-2.5 Cr inventory gain in Q4"}
+    - {promised_in: "Jul 2022 call p.6", promise: "Second foil rolling mill, 700 MT a month, from Q4 FY23 or Q1 FY24", outcome: "delivered", explanation: "Rolling mill capacity 8,400 tpa = 700 MT a month (May-26 call p.4); commissioning date NOT FOUND"}
+    - {promised_in: "AR25 p.24", promise: "Fire loss 150-200 Mn fully insured", outcome: "partial", explanation: "Loss 167.2 Mn inside range; claim recognised 793.05 L = 47.4%, nil received at 31 Mar 2026 (B03)"}
+    - {promised_in: "Jul 2022 call p.18", promise: "Foil revenue 240-250 Cr with the second rolling mill, from Q1 of the next year", outcome: "partial", explanation: "FY26 foil revenue 215 Cr (21,520 L, C p.226), about three years later and below range"}
+    - {promised_in: "AR25 p.18", promise: "Conductors positive momentum with further improved margins in FY26", outcome: "missed", explanation: "Revenue +3.4%, segment margin 4.86% vs 8.27% (C p.226-227); blamed on metal price and government payments"}
+    - {promised_in: "Q2 FY26 PR p.3 (reiterated Q3 FY26 PR p.3)", promise: "Conductors H2 FY26 revenue to double vs H1", outcome: "missed", explanation: "520 vs 480 Mn, +8% (derived); blamed on RDSS slowdown, metal prices, contractor payments"}
+    - {promised_in: "Q3 FY26 PR p.3", promise: "Conductor execution to pick up by end March", outcome: "missed", explanation: "Q4 FY26 276 Mn, -26% YoY; Q1 FY27 171 Mn, -38% QoQ"}
+    - {promised_in: "Q2 FY26 PR p.3", promise: "Capacity utilisation about 90% in H2 FY26", outcome: "missed", explanation: "Powder about 80%, foil rolling 80-85%, conversion about 45% (May-26 call p.16)"}
+    - {promised_in: "Q2 FY26 PR p.3", promise: "LT cable trials Dec 2025, launch Q4 FY26", outcome: "missed", explanation: "Machinery delay (Q3 FY26 PR p.3), then Q1 FY27, then June 2026; production started 7 Jul 2026 at 100 MT a month; BIS approval pending"}
+    - {promised_in: "Q2 FY26 PR p.4", promise: "Umred LVPC commercial production H2 FY27", outcome: "missed", explanation: "Moved to H1 FY28 in Q3 FY26 PR p.5, no reason given"}
+    - {promised_in: "Q3 FY26 PR p.4", promise: "PGCIL registration early Q1 FY27 and MEPL capacity ramp Q1 FY27", outcome: "missed", explanation: "May call moved them to Q2 and Q3 FY27; Q1 FY27 PR p.5 says approvals conclude 'over the coming months'; Q1 FY27 insulator revenue 5 Mn"}
+    - {promised_in: "Jul 2022 call p.6", promise: "No external borrowings; all expansion from internal accruals", outcome: "missed", explanation: "FY26 gross debt 18,452.46 L, 76.6% short-term (B03; C p.220)"}
+    - {promised_in: "Jul 2022 call p.7", promise: "Working capital cycle 60-70 days", outcome: "missed", explanation: "FY26 year-end cycle 102.5 days, FY25 121.5 (B03 derived; basis may differ from the 2022 statement)"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "When do EBITDA margin and return on capital reach a respectable level (same retail investor, both calls)", quarters_asked: ["Q1 FY23 (Jul 2022)", "Q4 FY26 (May 2026)"], classification: "deflected every time on a margin percentage; ROCE target given only in 2026 (13-14% FY27, above 15% FY28); answer changed from asset turn to ROCE"}
+credibility_grade: "C"
+credibility_basis: "No-concall default C held: over Q2 FY26 to Q1 FY27 core powder and foil guidance was met (powders +25.4% H2 vs +20-25% guided; H2 margin up 162 bps), but conductors, LT cable, PGCIL, MEPL ramp and Umred timelines missed or slipped and FY27 revenue guidance was cut from 20-25% to 15-18%; 7 delivered, 2 partial, 9 missed on 18 closed items"
+peer_questions:
+  - {question: "Is elevated aluminium price cutting conductor offtake, and how long does pass-through take on bare conductor and ABC orders?", why: "MMP blames conductor weakness (+3% FY26, -42% YoY in Q1 FY27) on metal price and utility payment delays (Q1 FY27 PR p.4)", check_peers: ["APARINDS", "MAANALU"]}
+  - {question: "Are state utility and RDSS payment delays slowing conductor and ABC execution for private EPC contractors, and when does recovery come?", why: "MMP says delays persist in Q2 FY27 and no pick-up came by March as promised (Q3 FY26 PR p.3; Q1 FY27 PR p.4)", check_peers: ["APARINDS"]}
+  - {question: "Is conductor demand shifting to AL59 alloy, and does it carry a margin premium?", why: "MMP claims the shift and BIS approval, traction from H1 FY27 (May-26 call p.21); no Q1 FY27 evidence", check_peers: ["APARINDS"]}
+  - {question: "What EBITDA per tonne do conductors and LT cables earn with and without own wire rod, and what do rod capex and lead time look like?", why: "MMP guides conductors 15,000-18,000 per tonne, rod 10,000-12,000 per tonne, LT cable 14-15% margin, on Rs 13-15 Cr rod capex (May-26 call p.5, p.14, p.20)", check_peers: ["APARINDS"]}
+  - {question: "How long do utility and PGCIL vendor approvals take, and how many quarters from approval to material order flow?", why: "MMP quotes 6-8 months for utilities and 1.5-2 years for full validation (May-26 call p.17) while its own dates slipped three times", check_peers: ["APARINDS"]}
+  - {question: "What are industry growth and export demand for aluminium powder and converter products from Europe and West Asia, and are customers resisting price rises?", why: "MMP guides exports +40-50% and powders +13-15% (Q1 FY27 PR p.3); AR26 gives no market size (B03 4C)", check_peers: ["MAANALU", "APARINDS"]}
+  - {question: "How large are inventory gains or losses when aluminium rises, and how is margin stated ex inventory effect?", why: "MMP CFO put the Q4 FY26 inventory gain at 2-2.5 Cr on 23 Cr standalone EBITDA (May-26 call p.13); B03 shows FY25 margin lifted by a 2,069.76 L stock credit", check_peers: ["MAANALU", "APARINDS"]}
+  - {question: "What utilisation, asset turn, net D/E and working-capital cycle do converters run while adding capex?", why: "MMP runs powder near 80%, funds about Rs 150 Cr of announced capex with 76.6% short-term debt and a 102.5 day cycle (B03)", check_peers: ["MAANALU", "APARINDS"]}
+red_flags:
+  - {severity: "HIGH", flag: "FY27 revenue guidance cut from 20-25% (May call) to 15-18% within 11 weeks; the 20-25% figure did not reconcile to segment guides (analyst arithmetic, May-26 call p.19-20)"}
+  - {severity: "HIGH", flag: "Conductor guidance missed three times running (FY26 momentum, H2 doubling, March pick-up); Q1 FY27 segment result about 42.5 L on 1,712 L revenue, about 2.5% (OCR, derived)"}
+  - {severity: "HIGH", flag: "Insulator Q1 FY27 revenue 5 Mn and segment loss about 145.6 L (OCR) against an FY27 guide of 18-20 Cr; approvals slipped again"}
+  - {severity: "MEDIUM", flag: "No analyst asked about the fire insurance claim, the 7 fatalities, guarantees, associates or RPTs, and management raised none"}
+  - {severity: "MEDIUM", flag: "Inconsistent approval claims: CFO cites approvals from several state boards (May-26 call p.9) while Rohini Bhandari names only Adani Renewables up to 33 kV (p.15); Q1 FY27 PR p.5 lists MSEDCL, PGVCL and CSPDCL"}
+  - {severity: "MEDIUM", flag: "Wire rod date conflict in AR26 p.30 and Q4 FY26 PR p.5 (installation July 2027, trials H2 FY27); Q1 FY27 PR p.5 says installation is underway with trials end Q3 FY27, so July 2027 looks like a typo that stayed in two filings"}
+  - {severity: "LOW", flag: "CMD calls the May 2026 call the 'first earning conference call' (p.3); the corpus holds a Jul 2022 call that a participant also called a first concall (Jul 2022 call p.9)"}
+  - {severity: "LOW", flag: "Toyal MMP: CMD says the collaboration is 'not very satisfactory' (May-26 call p.15)"}
+dropped_triggers:
+  - "Security printing foil: named in Q3 and Q4 FY26 PRs and the May call, absent from the Q1 FY27 PR (only lidding foil named)"
+  - "AL59 conductor traction from H1 FY27: promised in AR26 p.26 and the May call, not mentioned in the Q1 FY27 PR where conductor revenue fell 42%"
+  - "Hindalco as key foil stock supplier: named AR25 p.18 and Q2 FY26 PR p.4, absent from AR26 and the Q1 FY27 PR"
+  - "PP caps (value-added foil product, Q3 FY26 PR p.4): not mentioned later"
+timeline_slippages:
+  - "LT cable pilot launch: Q4 FY26 (Q2 PR) to Q1 FY27 (Q3 PR) to June 2026 (Q4 PR) to production 7 Jul 2026; commercial sales Q3 FY27 pending BIS"
+  - "PGCIL registration: early Q1 FY27 (Q3 PR) to Q2 FY27 (May call) to 'coming months' (Q1 FY27 PR)"
+  - "MEPL sales ramp: Q1 FY27 (Q3 PR) to Q3 FY27 (Q4 PR) to Q3/Q4 FY27 (Q1 FY27 PR)"
+  - "Umred LVPC greenfield: H2 FY27 (Q2 PR) to H1 FY28 (Q3 PR)"
+  - "Solar park: Q2 FY27 (Q2 PR) to Q1 FY27 (Q3 PR) to H1 FY27 (Q4 PR) to Q3 FY27 (May call, Q1 FY27 PR)"
+  - "Lidding foil: early Q3 FY27 launch (Q4 PR) to trial end Q2 and commercial Q3 FY27 (Q1 FY27 PR); mild"
+  - "MEPL commercial ramp about three quarters behind the AR25 plan (B03 G4)"
+analyst_note: "Core powder and foil delivered; new verticals and conductors did not. Grade stays C. The 20-25% FY27 revenue figure appeared only in a footnote added to the May transcript after a retail investor showed it did not add up; the Q1 FY27 PR then said 15-18%. Q1 FY27 revenue was 2,328 Mn, so Q2 to Q4 need +11.6% to +15.5% on Q2 to Q4 FY26 (derived), reachable if powder and foil hold. Two readings of margin: Q3 FY26 to Q1 FY27 EBITDA of 8.6-9.0% is the new base, or it carries inventory gains (2-2.5 Cr in Q4) while metal stays high. Separator: Q2 FY27 margin at a flat or falling aluminium price. Q1 FY27 results filing segment digits are OCR-garbled; trust them only against the press release."

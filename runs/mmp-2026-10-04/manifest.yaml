@@ -1,0 +1,26 @@
+company: MMP Industries Ltd
+ticker: MMP
+cmp: 450.0              # screener live page, captured 2026-10-04 by /step1 (Q1 FY27 deck shows Rs 345.20 on 12-Aug-2026)
+market_cap_cr: 1142.0
+run_date: 2026-10-04
+run_type: full
+concalls_available: false
+sector_cap_row: "Cables / Industrial products"   # resolved by /step1 Step D and stage 0, section-1b chunk 05 (25x)
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing."
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, ARFIN:Profit & Loss, ARFIN:Quarters, ARFIN:Balance Sheet, ARFIN:Cash Flow, ARFIN:Customization, APARINDS:Profit & Loss, APARINDS:Quarters, APARINDS:Balance Sheet, APARINDS:Cash Flow, APARINDS:Customization, MAANALU:Profit & Loss, MAANALU:Quarters, MAANALU:Balance Sheet, MAANALU:Cash Flow, MAANALU:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "only 2 concalls -> no-concall mode"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+listed_date: ""        # listed well over 3 years ago (NSE filings back to 2020); prospectus not expected
+step1_repairs:
+  - "2026-10-04 /step1: added 3 results filings from NSE (Q1 FY27 machine-readable copy, Q4 FY26, Q3 FY26); Q4 FY26 and Q3 FY26 are scanned images with 2/21 and 2/10 text pages; no OCR engine on this machine. Scanned Q1 FY27 copy moved to other/."
+  - "2026-10-04 /step1: rating = CRISIL letter PDF (30-Apr-2026) plus rationale text extracted from crisil.com HTML (27-Apr-2026)."
+  - "2026-10-04 /step1: announcements/ filled by hand from the NSE announcements API (11 filings, Nov 2025 to Sep 2026)."
+  - "2026-10-04 /step1: shareholding/ = Jun 2026 SHP converted from NSE XBRL to markdown, with an 8-quarter promoter trend."
+  - "2026-10-04 /step1: presentation/ duplicate Investor_Presentation_1.pdf removed (identical to the Q1 FY27 PPT); March 2026 PPT added."
+  - "2026-10-04 /step1: company holds about one earnings call a year (May 2026; July 2022 earlier); concalls_available stays false and both transcripts stay in concalls/ as supplementary evidence."
+  - "2026-10-04 /step1: no LibreOffice on this machine, so the empty screener P&L/BS/CF/Quarters sheets stay a gap; Data_Sheet.csv carries the raw values."

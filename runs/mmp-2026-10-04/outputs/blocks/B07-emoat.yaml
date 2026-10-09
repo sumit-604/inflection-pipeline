@@ -1,0 +1,55 @@
+stage: B07-emoat
+company: "MMP"
+run_date: "2026-10-05"
+model: claude-sonnet-5-5
+status: complete
+no_concall_mode: true
+run: 2
+input_gaps:
+  - "B00 CORPUS GAPPED: screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets empty (Data_Sheet only)"
+  - "B00: Q4 FY26, Q3 FY26 and FY26 audited results are image scans with no OCR; Q1 FY27 results filing OCR-garbled; press releases used for quarterly numbers"
+  - "B00: no concall for Q2 FY26, Q3 FY26, Q1 FY27; only May 2026 and Jul 2022 transcripts (supplementary); ARFIN transcripts absent; peer transcripts APARINDS and MAANALU only"
+  - "B00: NSE results clarifications of 2026-03-05 and 2026-06-23 have no company reply in the corpus"
+  - "B00: announcements and shareholding repaired by hand (selection, not full list); research/ and prospectus/ empty"
+  - "B01: no 10-year capex line, no trade payables before FY24; no peer data beyond three Data_Sheets; R&D, distribution reach, listed-player count NOT FOUND"
+  - "Stage 7 NOT FOUND: anti-dumping duty effective date and sunset; AVL Belgium contract value and tonnage; ISRO contract or qualification letter; funding source for solar park and Umred LVPC; insulator capex budget versus actual; customer concentration; export versus domestic margin; BIS filing status for LT cable; conductor and insulator utilisation; PLI or other scheme enrolment; MSEDCL load-factor incentive amount; exclusivity terms in AVL and Toyal agreements; purchases line to re-derive purchase-basis payable days"
+flags:
+  - {type: FLAG-BORDERLINE-BAND, reason: "em_score 11.6 sits 0.4 under the 12.0 MODEST floor. Two rows carry 0.5-0.7 points on weak evidence (E1 land bank 0.7, G2 WC trajectory 0.5). One approval-to-order conversion in B2 (+0.6) would cross into MODEST. Band is NONE as scored."}
+  - {type: FLAG-WIRE-ROD-BUDGET, reason: "Wire rod capex Rs 13-15 Cr (Q4 FY26 deck p.9; May-26 call p.5) became Rs 20-25 Cr (Q1 FY27 deck p.9): +54% to +67% in 11 weeks; AR26 p.30 installation date July 2027 conflicts with Q1 FY27 PR p.5 (installation underway, trials end Q3 FY27)"}
+  - {type: FLAG-SOLAR-CAPACITY-CONFLICT, reason: "AR26 p.43 states 1.5 MW solar at Umred and Bhandara; Q1 FY27 deck p.14 states a 5.5 MW solar roof plant meeting 20% of energy. H3 scored on the AR figure only"}
+  - {type: FLAG-CAPEX-FUNDING, reason: "Committed capex in execution Rs 50-55 Cr (wire rod, solar) against CFO net of borrowing and payables Rs 16.96 Cr (AR26 p.173, derived); planned Rs 93-100 Cr more; 76.6% of group debt due within a year (AR26 p.171, derived); funding source for solar and LVPC NOT FOUND"}
+  - {type: FLAG-EXECUTION-SPLIT, reason: "Physical build record is good (4 of 4 completed plants on or ahead of AR dates) but commercial ramp and new-vertical dates slip (LT cable, PGCIL, MEPL ramp, Umred LVPC, solar); stage 5 grade C carried"}
+  - {type: FLAG-B01-OPEN-RULINGS, reason: "Combined class AVERAGE on B01 run 2 primary reading (core 54). B01 open rulings (rule 6 scope full-window with ROCE proxy rejected: core 38; confidence tier keyed to 3-year shortest window: LIMITED) turn it to AVOID. EM score is the same under both. Decision stays human."}
+em_score: 11.6
+em_classification: "NONE"
+active_categories:
+  - {id: "B1", name: "Backward integration and RM security (wire rod 18,000 MTPA, in-house FRP rod)", strength: "Moderate", evidence_type: "documented", time_to_materialise: "Q4 FY27 trials to commercial; margin effect FY28"}
+  - {id: "E2", name: "China+1 / export beneficiary (export FOB +66.8%, Nepal and Venezuela orders)", strength: "Moderate", evidence_type: "documented (FY26 actual) plus claim (FY27 +40-50%)", time_to_materialise: "12 months"}
+  - {id: "H2", name: "Strategic partnerships (AVL Belgium know-how and contract, Toyal JV 26%)", strength: "Moderate", evidence_type: "documented relationship, claim on contract value", time_to_materialise: "12-24 months"}
+evidence_mix: {documented: 11, claim: 16, inference: 4}
+completionist_recount: "📄 recount performed: 11 documented items across 7 categories (B1, B2, E2, F2, H2, H3, R1); 9 categories scored above 0, 3 at Moderate, 0 at Strong"
+catalysts_12m:
+  - {catalyst: "LT power cable BIS approval and first commercial sales", window: "BIS Q2 FY27, sales Q3 FY27", evidence_type: "claim", anchor: "Q1 FY27 PR p.4; Q1 FY27 deck p.7"}
+  - {catalyst: "Lidding foil commercial launch with named dairy and food customers", window: "Q3 FY27", evidence_type: "claim", anchor: "Q1 FY27 PR p.3; Q1 FY27 deck p.7"}
+  - {catalyst: "PGCIL and utility vendor registrations, insulator sales ramp", window: "Q3-Q4 FY27", evidence_type: "claim", anchor: "Q1 FY27 PR p.4; AR26 p.30; May-26 call p.5, p.14"}
+  - {catalyst: "Wire rod plant trials then commercial production", window: "trials end Q3 FY27, commercial Q4 FY27", evidence_type: "documented capex, claim on dates", anchor: "AR26 p.30; Q1 FY27 PR p.5"}
+  - {catalyst: "7 MW captive solar park commissioning", window: "Q3 FY27", evidence_type: "claim (land acquired per deck)", anchor: "Q1 FY27 deck p.14; Q1 FY27 PR p.5"}
+  - {catalyst: "Q2 FY27 segment margins for powders and foils (separates margin readings; FY26 base powders 11.88%, foils 2.00%)", window: "Nov 2026 results", evidence_type: "inference", anchor: "AR26 p.226 (segment note, derived margins)"}
+capex_embedded_growth_pct: 20.4
+optionality_register:
+  - {optionality: "Polymer insulators in transmission (PGCIL, MSETCL, GETCO) to Rs 18-20 Cr FY27 and Rs 45-50 Cr FY28", converting_evidence: "PGCIL vendor registration letter plus first purchase order; quarterly insulator revenue above Rs 3 Cr (30 Mn)", first_appears: "Reg 30 press release, segment note in Q2 or Q3 FY27 results", window: "2-4 quarters"}
+  - {optionality: "LT power cable (Bhandara pilot 1,200 MTPA, Umred 6,000 MTPA greenfield, Rs 85-90 Cr)", converting_evidence: "BIS licence received, first invoices, board approval and visible construction at Umred", first_appears: "Q2 and Q3 FY27 press release; segment note", window: "3-6 quarters"}
+  - {optionality: "Lidding foil and security printing foil lift foil margin above 2.0%", converting_evidence: "First commercial sales to a named customer; foil segment margin above 4% for two quarters", first_appears: "Q3 FY27 press release and segment note", window: "2-3 quarters"}
+  - {optionality: "AVL Belgium long-term powder contract and European demand shift", converting_evidence: "Contract value and tonnage disclosed; export FOB in AR27 Annex D at or above Rs 5,372-5,755 Lakh (40-50% over Rs 3,836.87 Lakh)", first_appears: "AR27 Annex D, press release, call", window: "12 months"}
+  - {optionality: "ISRO advanced aluminium powder development", converting_evidence: "Signed supply order or qualification letter with revenue linkage", first_appears: "Reg 30 order announcement", window: "NOT FOUND, 12-36 months at earliest"}
+  - {optionality: "Captive solar 7 MW (Rs 30 Cr) cuts power cost (electricity Rs 2,358.51 Lakh, 2.9% of standalone revenue)", converting_evidence: "Commissioning notice, units generated, power cost per unit trend", first_appears: "Q3 FY27 press release, AR27 Annex D", window: "2-3 quarters"}
+  - {optionality: "Wire rod lifts conductor margin from 4.86% toward 8.27%", converting_evidence: "Commercial production date met; conductor segment margin at or above 8.27% for two quarters", first_appears: "Q4 FY27 press release, segment note", window: "3-5 quarters"}
+  - {optionality: "Polymer insulator exports (one third of mix target; US, Latin America, Nepal)", converting_evidence: "Named export orders above US$1 million; export share of insulator revenue disclosed", first_appears: "Reg 30 order announcements", window: "4-8 quarters"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 run 2 core 54 (AVERAGE, moat 12/60 MODERATE, M5 and M9) plus EM 11.6 (NONE): no forward row lifts the class; TURNAROUND and HIGH POTENTIAL tests fail; reads AVOID under B01's two open-ruling readings (core 38 or LIMITED tier). Flag, not a halt."
+top_moat_risks:
+  - "Approvals (PGCIL, BIS) slip again, leaving Rs 35-40 Cr insulator capex idle (Q1 FY27 insulator revenue Rs 5 Mn, Q1 FY27 PR p.2)"
+  - "Funding: Rs 143-155 Cr of committed plus planned capex against CFO net of borrowing and payables of Rs 16.96 Cr (AR26 p.173), with 76.6% of debt due within a year (AR26 p.171)"
+  - "Aluminium price spikes erase foil and conductor spread, so integration gains never reach margin"
+  - "Hazardous powder process repeats the April 2025 Umred incident (7 fatalities, 50-day stop, AR26 p.25)"
+analyst_note: "Run 2 scoped fix. Sparse scan, 11.6 against a 12.0 floor, scores unchanged. Combined class re-derived on B01 run 2: AVERAGE on core 54, AVOID under B01's two open rulings; EM is the same either way. Two readings: (A) the build phase is real, since four completed plants met or beat AR dates and wire rod capex is committed, so moats form from FY28; (B) the build is the easy part, since PGCIL, LT cable, MEPL ramp and Umred all slipped and wire rod budget rose 54-67% in 11 weeks. Separator: first PGCIL or utility order above Rs 3 Cr a quarter in Q2 or Q3 FY27, and foil segment margin above 4% (FY26 2.00%, AR26 p.226). capex_embedded_growth_pct 20.4 is mechanical (Rs 50-55 Cr x 3.196x on Rs 824.0 Cr); solar earns no revenue and wire rod is mostly captive, so consolidated revenue from committed capex is near zero. ND/EBITDA 2.75x (stage 2 EBITDA) or 2.81x (B01 EBITDA). Payable and WC days now revenue basis. I2 tested for B1, E2, H2: 0. M9 has no forward mechanism, no double credit."

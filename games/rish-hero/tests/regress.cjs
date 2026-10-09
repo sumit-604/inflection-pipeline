@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v12", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v12" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v13", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v13" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -391,6 +391,9 @@ const HELPERS = () => {
     const w = mk(1.2); R.fling(w, 40, G.P.yaw + Math.PI / 2, 0.5); sim(3); o.slam = G.stats.wallSlams || 0;
     const h = mk(1.3); G.comboN = 0; for (let i = 0; i < 3; i++) { R.hurtEnemy(h, 1, "punch"); R.step(1 / 60, 3); } R.step(1 / 60); o.combo = document.getElementById("combo").textContent; o.comboOn = document.getElementById("combo").style.display === "block"; clean(); return o; });
   ok("M6 three quick knockouts: TRIPLE TAKEDOWN, slow motion, music; a man knocked into a wall gets a WALL SLAM; a hit combo counter", r.slow && /TRIPLE TAKEDOWN/.test(r.title) && r.themes === 1 && r.slam >= 1 && r.comboOn && /3 HIT COMBO/.test(r.combo), r);
+  r = await E(() => { const o = {}; R.menu(); o.btn = !!document.getElementById("m-theme"); const t0 = G.stats.themes || 0; document.getElementById("m-theme").click(); o.menuPlay = (G.stats.themes || 0) - t0; o.toast = document.getElementById("toast").textContent;
+    begin(2); if (G.mode === "dialog") R.skipDialog(); const b0 = G.stats.themes || 0; const P = G.P; const bull = R.spawnEnemy("bull", Math.floor(P.x / 2), Math.floor(P.z / 2), 0); bull.st = "dazed"; R.hurtEnemy(bull, 9999, "env"); o.boss = (G.stats.themes || 0) - b0; o.low = bull && bull.st; R.menu(); return o; });
+  ok("M7 a 🎵 Hero theme button plays the music at any time; the theme also plays at FINISH HIM on a boss", r.btn && r.menuPlay === 1 && /Rish Hero theme/.test(r.toast) && r.boss >= 1 && r.low === "low", r);
 
   // ---------------- R. v11: best times, Trophy Room, hero suits ----------------
   r = await E(() => { const o = {}; G.save.trophies = {}; G.save.best = {}; R.startChapter(0, true); R.completeChapter(); o.first = !!G.save.trophies.first;

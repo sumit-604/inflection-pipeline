@@ -1062,6 +1062,7 @@ RishSchoolDays and Rish Hero are one game now. The whole Rish Hero story plays i
 - New check group W (7 checks).
 - v83 carries Rish Hero v11 inside: hero suits, a Trophy Room and best times for each chapter.
 - v84 carries Rish Hero v12 inside: flying kick, spin kick, grab and throw, the ⚡ Hero Smash, slow-motion multi takedowns with the Rish Hero theme music. Inside the story the label says only "Rish Hero v12".
+- v85 carries Rish Hero v13 inside: a 🎵 Hero theme button in the story menu and Settings, and the theme at FINISH HIM on a boss.
 
 ## Files
 

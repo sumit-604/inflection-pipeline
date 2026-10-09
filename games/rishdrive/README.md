@@ -72,6 +72,12 @@ from the jsdelivr CDN.
   puts you back about 100 m before the gap with a rolling start.
 - **Skill Park 2 (v13):** a second pad west of the Skill Park with Ring dash,
   Car bowling, Bullseye jump, Donut master and Balloon pop.
+- **Left drift fixed (v17):** many keyboards cannot read three keys at
+  once on the left side (Up + Left + Space, or W + S + A), so the left
+  drift did not start. Now: double-tap ⬅ (or A) and hold it for a one-key
+  power drift to the left; the same with ➡ or D to the right. B + a turn
+  key also drifts with two keys. On a phone, double-tap the ⬅ or ➡ button
+  and hold it.
 - **Police and flood (v16):** Police patrol: the Desi Jeep gets a red and
   blue light bar; catch 3 speeders (Speedy Sunny, Turbo Tinku, Rocket
   Raju) one after another and give each a challan. Flood rescue: the
@@ -218,3 +224,5 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   219 regression checks.
 - v16: Police patrol, Flood rescue, the Rish Hero theme on hero wins,
   2 new badges (46). 222 regression checks.
+- v17: one-key drift (double-tap a turn key) and B + turn, so the left
+  drift works on every keyboard. 226 regression checks.

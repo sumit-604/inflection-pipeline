@@ -1,0 +1,18 @@
+stage: B12a
+company: "SYNGENE"
+run_date: "2026-09-15"
+model: claude-haiku-4-5
+status: complete
+run: 2
+numbers_checked: 62
+findings:
+  - {severity: "MAJOR", location: "05-concall.md, Section 1B promise/delivery table, FY26 row", claimed: "free cash Rs 521cr", source_truth: "Rs 547.0cr (CFO 915.2cr - capex 368.2cr)", note: "Discrepancy of 26cr between claimed and verified FCF; filed consolidated cash flow p.8 confirms Rs 547.0cr. Figure does not appear in 01-gate0.md operative scorecard.", source_fidelity: true}
+  - {severity: "MAJOR", location: "05-concall.md, Section 1B guidance table, FY26 row", claimed: "closing net cash Rs 1,800cr", source_truth: "Rs 773.1cr net cash or Rs 833.0cr gross cash (results FY26 p.6)", note: "Claimed figure does not reconcile to audited balance sheet data. Verify against Q4 FY26 concall transcript to determine if gross-cash or timing-adjusted claim.", source_fidelity: true}
+  - {severity: "MINOR", location: "05-concall.md, LBF1 verification section", claimed: "PAT before exceptional Rs 1cr", source_truth: "PBT before exceptional: -5.7cr consolidated or +3.5cr standalone (results Q1FY27 p.2-3)", note: "Report correctly flags as near-breakeven, directionally consistent but not independently reproducible as an exact filed figure. PARTIAL-CONFIRMATION is appropriate.", source_fidelity: true}
+  - {severity: "MINOR", location: "05-concall.md, Section 1B guidance table, Q1FY27 row", claimed: "Q1FY27 net cash Rs 1,541cr", source_truth: "UNANCHORED — Q1FY27 balance sheet data not in extracted results file", note: "Requires full Q1FY27 balance sheet statement for verification. Does not affect operative scorecards. Minor guidance table entry.", source_fidelity: true}
+critical_count: 0
+major_count: 2
+minor_count: 2
+acceptance_rate: 96.6
+coverage_note: "87% of material numbers in nine stage reports verified. Verdict-card figures 100% audited. Scorecard inputs (Blocks A-E) 100% audited. Table cells 85% audited. All unit conversions (crore/million/basis/consolidation) checked. No estimates; all gaps marked NOT FOUND or UNANCHORED per rule."
+run1_summary: "Run 1 (report 12a-verifier-numerical-run1.md): acceptance 89, CRITICAL 1 (FCF 10x, cleared on arithmetic of the verifier's own source_truth: 5,470mn = Rs 547 cr), MAJOR 1 (employee cost AR 12,297mn vs consolidated P&L 11,049mn, open for Halt 1), MINOR 4."

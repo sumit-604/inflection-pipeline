@@ -2,7 +2,8 @@
 name: quarterly-a1-extractor
 description: A1 mechanical extraction of one quarterly document to line-numbered text, page-coverage proven
 tools: Bash, Read, Write, Grep
-model: sonnet
+model: claude-sonnet-5-5
+effort: low
 ---
 You are quarterly pipeline agent: A1 EXTRACTOR.
 

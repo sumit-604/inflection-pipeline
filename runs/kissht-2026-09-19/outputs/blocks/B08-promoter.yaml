@@ -1,0 +1,74 @@
+stage: B08-promoter
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: partial
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. -- REPAIRED IN PART: inputs/shareholding/BSE-shareholding-summary-Jun2026.txt (BSE API summary statement, Jun-2026). It gives promoter 24.80% / public 75.20%, no pledge, locked-in shares, ESOPs outstanding. It does NOT give the FII/DII split; the UA institutional qualifier stays OPEN."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them. Only <TICKER>-Data_Sheet.csv exists and it is the usable screening source."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet -- REPAIRED: Q1 FY27 and FY26 audited results downloaded from BSE into inputs/results/."
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet -- REPAIRED: CRISIL rationale for Si Creva dated 13-Feb-2026 rendered to text in inputs/rating/. It rates the subsidiary, not the listed parent."
+  - "COLLECTOR WARNING (verbatim): only 2 concalls -> no-concall mode -- OVERRIDDEN: concalls_available is true. Two transcripts (Q4 FY26, Q1 FY27) are ALL calls held since the 08-May-2026 listing."
+  - "COLLECTOR DEFECT: the BSE announcements fetch staged 10 of 69 filings and missed both results filings. 16 material filings plus the two results and the Q4 FY26 deck were added by hand."
+  - "results: 2 of up to 3 held (Q1 FY27 unaudited, FY26 audited incl. Q4). No Q3 FY26 results filing exists on BSE for this company: it was unlisted until 08-May-2026."
+  - "screening: SBICARD produced no Data_Sheet CSV. Peer screening data exists for POONAWALLA and UGROCAP only."
+  - "annual-report: only FY26 is held. The company was unlisted before May 2026 and published no listed-company AR for FY25. The RHP restated financials (FY23-FY25 and the 9M FY26 stub) carry the backward baseline."
+  - "shareholding: only the Jun-2026 summary statement. No trend: the company has one post-listing quarter."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "other: EMPTY."
+  - "STAGE-8 ADDITION: MCA/RoC active/dormant/struck-off status for the nine promoter-group entities (Shinka Technologies, Plebgraph Finance, Purple Bridge Innovations, Smardoce Solutions, ITOP Express LLP, The Filmi Stuff Company, DRP Productions, Swaran Trust, Rivas Trust, Riveroak Solutions, Krishnan Vishwanathan HUF) is NOT FOUND in this container; general web search returns no signal for these closely-held private entities; needs a paid MCA company-master lookup."
+  - "STAGE-8 ADDITION: exact dates for Si Creva's FIU-IND 'High Risk Financial Institution' classification and removal are NOT FOUND in the RHP text (only that both predate the RHP's 25-Apr-2026 filing date); no independent web source supplies a firmer date."
+  - "STAGE-8 ADDITION: SEBI SCORES complaint count/history for the company or promoters is NOT FOUND; not accessible via general web search in this container."
+  - "STAGE-8 ADDITION: independent court-docket verification of the two live NFAC personal tax writ/appeal matters against Ranvir Singh was not attempted; RHP disclosure treated as the primary source."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Two live NFAC personal income-tax assessment disputes against Ranvir Singh (Chairman/CEO): AY2022-23 demand Rs 73.79 mn (order 18-Mar-2024, disallowance u/s 54F, addition u/s 68); AY2023-24 demand Rs 175.97 mn plus a penalty SCN u/s 274/271AAC(1) (order 28-Mar-2025, disallowance u/s 54F, addition u/s 69). Combined ~Rs 249.76 mn (Rs 24.98 Cr) disputed demand, both under appeal.", evidence_tier: "VERIFIED", source: "RHP p.368-369 (OnEMI_RHP_2026-04-25.txt lines 25056-25086)", date: "orders dated 18-Mar-2024 and 28-Mar-2025; RHP filed 25-Apr-2026"}
+  - {finding: "Si Creva (wholly owned subsidiary) received a PMLA Section 50(2)/50(3) summons from the ED's Hyderabad Zonal Office dated 23-Mar-2023; no further ED communication received as of the RHP date (25-Apr-2026), i.e. disclosed as open/unclosed for over three years.", evidence_tier: "VERIFIED", source: "RHP p.39 and p.374 (lines 2850-2870, 25021-25024)", date: "summons 23-Mar-2023; status as of 25-Apr-2026"}
+  - {finding: "Si Creva was previously classified a 'High Risk Financial Institution' by FIU-IND under PMLA (non-submission of principal officer details); show-cause notice issued; subsequently resolved and removed from the list. Classification and removal dates are NOT disclosed in the RHP.", evidence_tier: "VERIFIED (undated)", source: "RHP p.41 (lines 3476-3494)", date: "NOT FOUND; predates RHP filing 25-Apr-2026"}
+  - {finding: "RBI declined Si Creva's Dec-2021 application to co-brand a prepaid payment instrument with ICICI Bank (rejection letter 10-Feb-2022) citing net-owned-funds shortfall after an FY21 net loss.", evidence_tier: "VERIFIED", source: "RHP p.40-41 (lines 3459-3474)", date: "application Dec-2021; rejected 10-Feb-2022"}
+  - {finding: "Independent Director Atul Bheda, who chaired the Audit Committee, resigned after under 5 months' tenure (appointed 8-Jul-2025, resigned 26-Nov-2025, 'personal reasons'), the same year the company completed its IPO.", evidence_tier: "VERIFIED", source: "Annual_Report_2026.txt p.46 and Corp Gov S.G (lines 3896-3898, 5007-5013)", date: "8-Jul-2025 to 26-Nov-2025"}
+  - {finding: "Board carries zero non-executive nominee directors after Piyush Kharbanda's (Vertex Ventures SEA nominee) resignation effective 17-Aug-2026, despite domestic+foreign institutions holding a combined 61.96% of the 31-Mar-2026 cap table and a fresh Rs 832 Cr institutional preferential issue underway with no disclosed nominee mechanism.", evidence_tier: "VERIFIED", source: "BSE announcement 20260817-93673f0b; AR p.51 shareholding table; cross-referenced from B03 FLAG-GOVERNANCE-STRUCTURE", date: "17-Aug-2026"}
+  - {finding: "Parent's corporate guarantee to Si Creva's lenders reached 228% of the parent's own standalone net worth in FY26, rising every year for four years, and is not named as a concentration risk in the AR's own 'Balanced liability base' liquidity-diversification narrative.", evidence_tier: "VERIFIED (carried from Stage 2/3, weighed here as a Board/promoter capital-stewardship conduct item)", source: "Standalone Note 32 p.88; CARO Annexure A p.118; B02/B03 cross-reference", date: "FY26 (year ended 31-Mar-2026)"}
+  - {finding: "CFO Amit Gupta's tenure lasted under 11 months (20-Aug-2024 to 17-Jul-2025, 'internal organisation alignment'); founder-promoter Krishnan Vishwanathan then re-took the CFO seat, leaving no non-founder professional holding either the CEO or CFO chair.", evidence_tier: "VERIFIED", source: "RHP p.250-251 (lines 16992-16998)", date: "20-Aug-2024 to 21-Jul-2025"}
+  - {finding: "COO Sonali Jindal and CTO Karan Mehta both resigned the same day, 29-Nov-2024, both citing 'other opportunities'.", evidence_tier: "VERIFIED", source: "RHP p.250 (lines 17001-17004)", date: "29-Nov-2024"}
+  - {finding: "Non-audit ('other services') fees of Rs 50.00 lakh marginally exceed the statutory audit fee of Rs 49.00 lakh on a consolidated basis; composition of 'other services' undisclosed.", evidence_tier: "VERIFIED", source: "AR Corp Gov Report S.9 (lines 6098-6107)", date: "FY26"}
+  - {finding: "Public consumer-complaint forums carry recurring allegations against Kissht/Si Creva of aggressive recovery conduct (home visits, contacting relatives, threats to circulate photos/videos); no regulatory penalty for these specific complaints is disclosed anywhere in the filed record.", evidence_tier: "FORUM/SOCIAL (uncorroborated by regulatory action)", source: "general web search (ConsumerComplaints.in, TrustGate and similar aggregators)", date: "undated, ongoing"}
+  - {finding: "A single independent analyst substack claims the RBI 'inspected [Si Creva] and caught them improperly upgrading NPA accounts back to standard' -- no independent corroboration found; not disclosed in the RHP, the AR, or any other source found.", evidence_tier: "UNVERIFIED (single non-primary source)", source: "kaustubhdalvi.substack.com/p/onemi-technology-solutions-kissht", date: "accessed 2026-09-19"}
+transition_evidence:
+  - "Rs 832 Cr preferential issue (board approval 17-Sep-2026) to 34 institutional/marquee investors (Axis MF, HDFC MF, Massachusetts Institute of Technology, Ashoka WhiteOak, 360 One, Groww MF, Bandhan MF, Citigroup Global Markets, Unity Small Finance Bank, others) for 2,64,93,882 shares at Rs 314.11/share, with zero promoter or promoter-group participation among the 34 allottees. Source: BSE announcements 20260917-acc1d37a and 20260918-4643d424."
+  - "Three new Independent Directors with credible, sector-relevant external credentials appointed Jun-Dec 2025 ahead of listing: Sangeeta Tanwani (Aditya Birla Fashion & Retail, Sula Vineyards), Alok Bansal (PB Fintech/Policybazaar), Yogesh Chadha (CA; Choice AMC, Mirae Asset Financial Services, Sharekhan). Source: RHP p.245, lines 16297-16311."
+  - "Internal auditor upgraded from KKC & Associates LLP to BDO India Services Pvt Ltd effective FY27 (board approval 9-Jul-2026). Source: announcement 20260709-295aada2."
+pledge_pct_latest: 0
+pledge_trend: "stable at 0% -- only two shareholding snapshots exist (pre-IPO RHP build-up and the Jun-2026 BSE summary), both show zero pledge, zero encumbrance, zero NDU; no multi-year trend possible for a company listed 08-May-2026."
+searches_performed:
+  - "Kissht Si Creva Enforcement Directorate ED investigation PMLA"
+  - "Kissht loan app RBI recovery harassment complaints"
+  - "Ranvir Singh Kissht co-founder McKinsey Shinka Technologies"
+  - "OnEMI Technology Solutions Kissht IPO SEBI"
+  - "WebFetch: kaustubhdalvi.substack.com/p/onemi-technology-solutions-kissht"
+  - "Kissht Glassdoor AmbitionBox employee reviews"
+  - "OnEMI OR Kissht IiAS proxy advisory governance"
+  - "Si Creva FIU-IND high risk financial institution 2023 date"
+  - "Si Creva RBI inspection observation NPA classification annual report"
+searches_skipped:
+  - "SEBI SCORES complaint database direct query -- not accessible as a general search-engine result"
+  - "MCA/RoC company-master-data lookups for the nine promoter-group entities -- needs a paid MCA lookup, out of scope for this container"
+  - "Court-docket verification (e-courts, Bombay HC cause list) of the two live NFAC tax writ/appeal matters -- RHP disclosure treated as primary source instead"
+  - "Named-individual criminal record search on Ranvir Singh / Krishnan Vishwanathan -- not reliably available via general web search without a paid background-check service"
+verdict_basis: "No proven misconduct or enforcement action against the promoters personally; CAUTION rests on the breadth of unresolved or under-disclosed items across six of ten dimensions -- two live personal tax disputes (~Rs 24.98 Cr), an ED summons open 3+ years with no closure confirmation, an undisclosed 228% guarantee-to-net-worth concentration, a 5-month independent Audit Committee Chairman exit, a board with zero nominee directors, and both founders holding all four top executive/finance seats with no succession plan -- not on any single severe finding."
+analyst_note: >
+  Two things do not fit neatly into the scorecard cells and deserve explicit note.
+  First, the promoters have not sold a single share and carry zero pledge through
+  the IPO and the Jun-2026 snapshot -- a genuinely clean "skin in the game" signal
+  that sits alongside, not against, the caution items above; it argues the caution
+  here is about disclosure and structure, not about promoters positioning to exit.
+  Second, the Rs 832 Cr preferential issue closing with zero promoter participation
+  and marquee long-only names is real transition evidence, but it lands at the same
+  moment the board loses its last nominee director -- new institutional money is
+  arriving with less board representation than the departing VC investor had, not
+  more. That juxtaposition, not any single adverse item, is why CAUTION rather than
+  TRUSTWORTHY is the right classification pending the operator's own read of the ED
+  and tax items.

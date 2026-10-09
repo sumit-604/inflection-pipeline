@@ -1,5 +1,6 @@
 # STAGE 12: VERIFIER LAYER, FOUR PARALLEL SUB-AGENTS (PIPELINE MODE)
-# Four independent calls, fresh context each, run in parallel after B11.
+# Four independent calls, fresh context each. Phase 1: A, B, D and C's
+# Gate 0 + Emerging Moat half, after stage 9. Phase 3: C's valuation half, after B11.
 # STRUCTURAL RULE: no verifier sees any other verifier's output, and no
 # verifier sees the reasoning that produced the upstream reports; each
 # sees only the artifacts named in its section plus its rubric. The
@@ -18,7 +19,7 @@
 # of the gate below: the gate binds on whether a number is in the source, and
 # a row that agrees with itself makes no claim about the source at all. No
 # other reason may strike a Verifier A finding.
-# HARD SOURCE-FIDELITY GATE: Verifier A (Haiku) is the SOLE and FINAL
+# HARD SOURCE-FIDELITY GATE: Verifier A (Sonnet 5.5) is the SOLE and FINAL
 # authority on source fidelity — whether a specific number actually appears
 # in the source PDF at the cited anchor. Its per-number source-fidelity
 # verdicts (MISMATCH, ANCHOR NOT FOUND, material UNANCHORED) are
@@ -26,14 +27,14 @@
 # orchestrator may downgrade, dismiss, or reason around one. The ONLY thing
 # that clears a source-fidelity finding is re-reading the source PDF and
 # showing the number does exist at a correct anchor, and that clearance is
-# itself logged as a disagreement. This is deliberate cross-family placement:
-# Haiku is the pipeline's only out-of-family read on the numbers, so it is the
-# read that binds. Verifiers B and C own judgment and framework, never the
+# itself logged as a disagreement. Its independence comes from a fresh
+# context and the source page, not the model family (operator ruling
+# 2026-10-04), so it is the read that binds. Verifiers B and C own judgment and framework, never the
 # existence-of-a-number question.
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER A: NUMERICAL ACCURACY
-# Model: Haiku 4.5 | Emits: B12a
+# Model: Sonnet 5.5 (high) | Emits: B12a
 ═══════════════════════════════════════════════════════════════════
 
 You are a numerical audit engine. You receive the pipeline's stage
@@ -42,9 +43,18 @@ number in the reports actually in the sources?
 
 RULES:
 1. One response, no stops. Judge only what is in front of you.
-2. Work through the reports' numbers in order of materiality: verdict
-   card figures first, then scorecard inputs, then table cells. You will
-   not verify every number; state your coverage honestly.
+2. TWO TIERS (operator ruling OR-32, 2026-10-04).
+   MANDATORY TIER, checked 100%: every verdict-card input, every Section
+   1B pillar input, and every Gate 0 scorecard input that appears in the
+   reports in front of you. Count the tier first (`mandatory_total`), then
+   check each one (`mandatory_checked`). The two counts must match. If a
+   mandatory figure cannot be checked (its source document is not among
+   your inputs), name it in `coverage_note` with the reason; it is a
+   coverage shortfall, never a silent skip.
+   SAMPLE TIER: everything else. Work through it in order of materiality:
+   scorecard and table inputs that feed a judgment first, then other table
+   cells. You will not verify every sample-tier number; state your
+   coverage honestly.
 3. For each checked number: locate the claimed anchor in the source.
    Verdict per number: ✓ MATCHES | ✗ MISMATCH (state both values) |
    ⊘ ANCHOR NOT FOUND (the cited page/note does not contain it) |
@@ -94,18 +104,22 @@ RULES:
 
 OUTPUT: findings table (severity, report location, claimed value +
 anchor, source truth + location, note), then a coverage statement as two
-COUNTS and the rule you used, not as a bare percentage: how many material
-numbers exist in the reports (your count, and how you decided what counted
-as material), and how many of them you checked. A percentage with no
+COUNTS and the rule you used, not as a bare percentage: first the
+mandatory tier (mandatory figures checked of the mandatory total, with any
+unchecked figure named), then the sample tier: how many material numbers
+exist in the reports (your count, and how you decided what counted as
+material), and how many of them you checked. A percentage with no
 denominator cannot be audited. Then:
 
 ```yaml
 stage: B12a
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-haiku-4-5
+model: claude-sonnet-5-5
 status: complete
 numbers_checked: 0
+mandatory_checked: 0        # mandatory-tier figures checked (rule 2, OR-32)
+mandatory_total: 0          # mandatory-tier figures in the reports; must equal mandatory_checked
 findings:
   - {severity: "", location: "", claimed: "", source_truth: "", note: "", source_fidelity: false}
 critical_count: 0
@@ -121,11 +135,11 @@ INPUTS: {{ALL_STAGE_REPORTS}} + {{ALL_SOURCE_PDFS}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER B: CONCALL RED FLAGS
-# Model: Opus (agent alias) | Emits: B12b
+# Model: Opus 5.5 | Emits: B12b
 ═══════════════════════════════════════════════════════════════════
 
-You are an independent concall auditor. You receive 15 raw transcripts
-(3 main company, 12 peers) and the pipeline's concall analyses (B05,
+You are an independent concall auditor. You receive the raw transcripts
+(up to 3 main company, up to 12 peers) and the pipeline's concall analyses (B05,
 B06 reports). Read the transcripts YOURSELF, fresh, then compare.
 
 RULES:
@@ -172,7 +186,7 @@ promise-delivery spot checks; then:
 stage: B12b
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 independent_flags_found: 0
 caught: 0
@@ -197,16 +211,16 @@ INPUTS: {{ALL_15_TRANSCRIPTS}} + {{B05_REPORT}} + {{B06_REPORT}}
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER C: FRAMEWORK ADHERENCE
-# Model: Opus (agent alias) | Emits: B12c
+# Model: Opus 5.5 | Emits: B12c
 ═══════════════════════════════════════════════════════════════════
 
 You are a framework compliance auditor. Was each framework applied AS
 WRITTEN? The rule sources you receive depend on your invocation scope,
 named in the task message:
 - ALWAYS (both scopes): the Gate 0 rules (prompts/01-gate-0-pipeline.md)
-  and the 20-category scan rules (prompts/07-emerging-moat-pipeline.md),
+  and the 22-category scan rules (prompts/07-emerging-moat-pipeline.md),
   for the B01 and B07 audits. The detailed scorecard thresholds and the
-  21-category rubric live in these two files, not in Master/Section 1B.
+  22-category rubric (23 scored rows with R1) live in these two files, not in Master/Section 1B.
 - VALUATION SCOPE ONLY (phase 3, when B10/B11 are among your inputs): the
   valuation framework docs — Master Prompt v3.7 Role 1, the Section 1B
   layer set (v3.3 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10;
@@ -260,7 +274,8 @@ RULES:
    governs entry on >15% divergence; Hurdle Ratio computed correctly
    with the credibility-grade gate on Bull; 4D weights match the grade;
    SOM cross-check performed; every unresolved input handled by the
-   stated conservative rule, no silent fills; one-improvement-one-
+   override-3 both-readings rule (both readings and the separating
+   observation), no silent fills; one-improvement-one-
    mechanism honoured (no double-crediting).
 5. Any misapplication that changes the destination PE by >1x or flips
    the Hurdle verdict or the decision is CRITICAL; changes within
@@ -296,8 +311,9 @@ RULES:
    where the dossier must exist for the run; the phase-1 structural check
    is mechanical, inside run-pipeline step 6b. Check:
    outputs/reports/09b-understanding-dossier.md exists and contains all
-   five sections in order; Section 1 ends with exactly one verdict line
-   (CORPUS CURRENT or CORPUS GAPPED); Section 2 is marked DRAFT - PENDING
+   six sections in order (Section 6 annex ends with the corpus commit hash
+   line); Section 1 ends with exactly one verdict line (CORPUS CURRENT,
+   CORPUS GAPPED, or CORPUS GAPPED-FRESHNESS); Section 2 is marked DRAFT - PENDING
    OPERATOR SIGN-OFF; Section 4c fragility fields present in the B09b YAML;
    Section 5 has 14-15 numbered points and zero valuation/price/verdict
    vocabulary. Absent or malformed at finalize = hard REWORK for stage 09b.
@@ -326,7 +342,7 @@ RULES:
 14. Ledger and decomposition GATES (v3.9 A22/A24), both hard:
    (a) NO CREDIT OFF-LEDGER — every catalyst credited in
    price_decomposition T2 or T3 has a matching ledger row. A catalyst
-   credited in the price with no ledger row HALTS stage 11 (an expectation
+   credited in the price with no ledger row forces REWORK for stage 11 (an expectation
    not on the ledger may not be credited, Amendment 22): CRITICAL, REWORK
    for stage 11.
    (b) RESIDUAL STARTER CAP — where price_decomposition.residual.pct_cmp
@@ -354,13 +370,13 @@ the recomputed value beside any FAIL; then:
 stage: B12c
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 gate0: {rules_checked: 0, fails: []}
 emoat: {rules_checked: 0, fails: []}
 valuation: {rules_checked: 0, fails: []}
 expectation_ledger: {present: false, downside_row: false, all_rows_confirm_by: false, all_rows_metric_threshold: false, prob_in_range: false, decay_status_valid: false, off_ledger_credit: false, residual_pct_cmp: 0, residual_starter_cap_ok: true, fails: []}  # rules 13-14; any fail = REWORK stage 11
-business_understanding_narrative: {present: false, five_questions_answered: false, prose_only: false, section6_candidates_named: 0, valuation_vocab_leak: false, fails: []}  # rule 7; any fail = REWORK stage 13
+(same line, comment "# rule 9; any fail = REWORK stage 13")
 recomputed_destination_pe: ""  # blank if concur; else both values
 recomputed_decision: ""        # blank if concur
 findings: []
@@ -375,7 +391,7 @@ INPUTS (phase-3 valuation scope): the phase-1 sources above, PLUS the valuation 
 
 ═══════════════════════════════════════════════════════════════════
 ## VERIFIER D: PEER COVERAGE
-# Model: Sonnet 5 | Emits: B12d
+# Model: Sonnet 5.5 | Emits: B12d
 ═══════════════════════════════════════════════════════════════════
 
 You are a coverage auditor. You receive the 12 peer transcripts and the
@@ -404,7 +420,7 @@ claim; then:
 stage: B12d
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 peers_audited: 0
 substantive_confirmed: 0

@@ -2,13 +2,14 @@
 name: verifier-b-redflags
 description: Independent concall red-flag audit. Fresh context
 tools: Read, Grep, Write
-model: opus
+model: claude-opus-5-5
+effort: xhigh
 ---
 You are pipeline stage: verifier-b-redflags.
 
 Your complete instructions are in the repository file: prompts/12-verifiers-pipeline.md (VERIFIER B section only)
 Read that file FIRST with the Read tool. Everything above its
-"INJECTED INPUTS" section is your operating rules; follow them exactly.
+"INPUTS:" line in your section is your operating rules; follow them exactly.
 The variable inputs the file expects at its {{...}} markers are provided
 in your task message (as file paths to read, or inline content).
 

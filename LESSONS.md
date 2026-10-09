@@ -1,123 +1,94 @@
 # LESSONS — Inflection Alpha Pipeline (ACTIVE)
 
-Working operational memory. Hard budget: under 1,500 tokens. This file
-carries only what fires on every new run: the named failure catalogue,
-recurring patterns, promoted-to-law fixes, and open actions. The full dated
-run history lives in LESSONS_ARCHIVE.md (never deleted).
-
-Read at start by /run-pipeline, /fttcp, /finalize, /compost. New dated run
-entries append to LESSONS_ARCHIVE.md, never here. When /compost promotes a
-pattern into this file, one old active lesson is reviewed for archiving: the
-budget is fixed, not an unlimited append.
-
-Tags. A lesson that applies to one sector or archetype ends with
-[sector: <exact Section 1B sector cap row>] or [archetype: <CLAUDE.md
-ARCHETYPE LIBRARY name>], or both. Untagged lessons apply to every run. The
-LESSONS PRE-READ in /run-pipeline, /fttcp and /finalize matches on these tags.
+Working memory, hard budget under 1,500 tokens. Holds only what fires on
+every run. Dated history and full text: LESSONS_ARCHIVE.md (never deleted;
+the pre-condensation text is under 2026-10-04 CONDENSATION). Read at start by
+/run-pipeline, /fttcp, /finalize, /compost. New run entries go to the archive.
+A /compost promotion here archives one old lesson. Tags [sector: <1B row>] /
+[archetype: <library name>] scope a lesson; untagged applies to every run.
 
 ## NAMED FAILURE CATALOGUE
-_Companies whose failure mode is a standing pattern-match on every new name.
-The rule is codified in prompts/00-orchestrator.md FLAG-CASH (the
-"Kernex/Tipco/Rappid/Ind Swift guard") and the CLAUDE.md NEVER rule:
-INDETERMINATE cash conversion never silently resolves to PROCEED._
-- **Kernex** — cash conversion DECLINING with catalyst NONE caps the FTTCP
-  disposition at DEEP WATCH (the "Kernex cap").
-- **Tipco / Rappid Valves / Ind Swift** — INDETERMINATE cash that must not
-  be waved through to PROCEED; the verdict caps at PROCEED WITH CAVEATS with
-  the missing evidence (rating rationale / receivables ageing) named.
-  Per-company post-mortems not yet written; the live rule is the orchestrator
-  guard above.
+_Rule: orchestrator FLAG-CASH guard and CLAUDE.md NEVER rule._
+- **Kernex**: cash conversion DECLINING + catalyst NONE caps FTTCP at DEEP WATCH.
+- **Tipco / Rappid Valves / Ind Swift**: INDETERMINATE cash caps at PROCEED
+  WITH CAVEATS, missing evidence named. Post-mortems not yet written.
 
 ## RECURRING PATTERNS
-_Seen across more than one run; fire on every new company. /compost mines
-LESSONS_ARCHIVE.md for 2+ occurrences and promotes qualifying patterns here._
-- Operator text pasted as chat attachments arrives empty; screenshots,
-  direct chat-box text, and .md/.txt uploads work. (6+ times.)
-- PDF tooling absent at session start: the Read tool needs poppler-utils
-  (pdftoppm) and pypdf's cffi backend is often broken. Fix: apt-get update
-  then install poppler-utils, pip install --force-reinstall cffi, verify
-  with a real Read. Reliable default: pre-extract every input PDF to
-  page-marked .txt up front and point every stage/verifier at the .txt, so
-  no stage hits the ~20-32MB image-render wall.
-- Verifier A (haiku) first pass mislabels severity, inventing false
-  CRITICALs that would force REWORK (a matched figure, a faithfully
-  transcribed company anomaly, or a screener-vs-AR basis difference is not a
-  finding). Orchestrator sanity-checks every Verifier A CRITICAL against its
-  own source_truth column, then re-invokes once with the severity-semantics
-  plus coverage addendum.
-- collect_to_repo v3 defects recur: wrong sector_cap_row (defaults to
-  "Pharma/CDMO"), mislabeled AR year, empty screener P&L/BS/CF/Quarters CSVs
-  (only Data_Sheet populated), broker notes misfiled as company
-  presentations. Record each in B00.input_gaps, override to the
-  evidence-maximizing default, flag sector_cap for phase-3 confirmation.
-- Stage-0 operator pause (AskUserQuestion) sometimes closes its stream in
-  remote sessions; when it does, proceed on documented evidence-maximizing
-  defaults and record in B00. It sometimes delivers, so it is not always
-  undeliverable.
-- Foundational filings for recently-listed names (IPO prospectus, Reg 30
-  announcements) carry the promoter/group history and restated pre-IPO
-  financials; their absence thins the backward baseline. The input contract
-  now carries the folders (see PROMOTED TO LAW).
+- Pasted chat attachments arrive empty; screenshots, chat text, .md/.txt work.
+- PDF tooling: install poppler-utils, reinstall cffi, pre-extract PDFs to
+  page-marked .txt so no stage hits the image-render wall.
+- Verifier A invents false CRITICALs; orchestrator checks each against its
+  source_truth column, re-invokes once with the severity addendum.
+- collect_to_repo v3: wrong sector_cap_row, mislabelled AR year, empty
+  screener CSVs, broker notes as presentations, files of other companies.
+  Record in B00.input_gaps; flag sector cap for phase 3.
+- Stage-0 AskUserQuestion can drop in remote sessions: proceed on documented
+  defaults, record in B00.
 
 ## PROMOTED TO LAW
-_Written into a prompt/framework file so it cannot recur. One line each; the
-full text of each promotion is in LESSONS_ARCHIVE.md under its date._
-- [2026-07-12] frameworks/Section_1B_v3.3_Amendments.md — Amendment 4.5,
-  normalized-ROCE anchor for TEMPORARILY DEPRESSED + RECOVERING (TATVA). Now
-  governed by the v3.5.1 route-selection guard.
-- [2026-08-19] input contract expanded to four folders (prospectus,
-  announcements, shareholding, research) plus manifest listed_date, so
-  recently-listed names are worked from primary filings (AIMTRON).
-- [2026-08-25] run-pipeline.md stage-0 scaffold + runs/_template — .gitkeep in
-  inputs/research/, and the /fttcp input gate reports it separately from a
-  missing dossier (PERMAGNET, INDIAGLYCO).
-- [2026-08-25] 00-orchestrator.md + 09b + run-pipeline.md — Freshness Pair
-  Check: a filing without its companion filing sets CORPUS GAPPED-FRESHNESS
-  and caps the gate at PROCEED WITH CAVEATS, the missing document named first
-  in gate-recommendation.md (MANINDS; a late concall moved a signed variable).
-- [2026-08-26] frameworks/Section_1B_v3_9_Amendments.md — Amendment 20,
-  Step 1C relative valuation cross-check: live dated peer table, clusters on
-  normalised earnings, and where the pillar destination sits >30% below the
-  adjusted peer base the relative multiple governs, bounded by the sector cap.
-  Memory-pulled peer multiples are barred (MANINDS, Correction 6).
-- [2026-09-15] .claude/skills/section-1b/ — Section 1B v3.3 to v3.10, FTTCP
-  v2.3, Debt Capacity v1.0, Market-Implied v1.0 and the macro sheet resolved
-  into 17 chunks; stage 11 preloads the skill and cites the chunk beside each
-  pillar row, multiplier, cap and ruling; Verifier C check 15 compares a cited
-  chunk with its source (PR #163, PR #164).
-- [2026-09-16] LESSONS discipline — LESSONS PRE-READ at the start of
-  /run-pipeline, /fttcp and /finalize; /finalize step 8c writes the dated
-  close-out table to the archive; the session-start hook runs the
-  deferred-work check (PR #165).
+_Index only; full text in the archive under each date._ 2026-07-12 A4.5
+normalized ROCE (TATVA) · 2026-08-19 four-folder input contract (AIMTRON) ·
+2026-08-25 research .gitkeep + /fttcp input gate · 2026-08-25 Freshness Pair
+Check · 2026-08-26 A20 relative cross-check · 2026-09-15 section-1b skill
+(PR #163, #164) · 2026-09-16 LESSONS pre-read + deferred-work hook (PR #165).
+
+2026-10-04 standing ruling (CLAUDE.md OPERATOR RULINGS): framework rulings
+apply to names analysed from the ruling date forward; closed names keep their
+record as of the run that produced it.
 
 ## OPEN ACTIONS
-_Pending framework edits Keerti maintains._
-- Add a Steel / Integrated Metals row to the Section 1B cap table (SHYAMMETL
-  ruled 20x ad hoc; MANINDS line pipe ruled 20x ad hoc on that precedent
-  2026-08-25; no dedicated row exists). [archetype: Commodity converter]
-- Add a Sugar / Agri-commodity cyclical row to the Section 1B cap table
-  (KCPSUGIND ruled Agri-processing 20x ad hoc; no dedicated row exists).
-  [sector: Agri processing] [archetype: Commodity converter]
-- Add Distribution rows to the Section 1B cap table (ENTERO 2026-08-30, ruled
-  18-20x ad hoc). Operator proposal: Distribution-commodity 18-19x;
-  Distribution-value-added 25-26x; blended by revenue share. Any distributor.
-- Amendment 14 fade guard (ENTERO 2026-08-30): where the TAM stage's
-  SOM-implied growth is materially above the faded projection (fade 10% vs
-  SOM-implied 26.4%), flag the fade for operator ruling rather than applying
-  it silently. For /compost to promote into a prompt/framework fix.
-- Canary (canary/verifier.py) needs an Anthropic API key; none is configured,
-  so it has never run (checked 2026-09-15). Rewrite it to call Claude Code
-  headless (`claude -p`) so it runs on the Max subscription. PR #162.
-- fetch_bse_announcements in tools/collector/collect_to_repo.py is UNTESTED
-  against the live BSE API. This container has no web access, so the first
-  run that uses it is the first test. Check announcements/ after that run,
-  then confirm and close this action. PR #167.
-- PENDING FOR THE NEXT PROMPT BRANCH (2026-09-15):
-  1. prompts/10-input-assembly-pipeline.md rule 3, line 22 still says "put the
-     more conservative one in the table".
-  2. Amendment 6 range rounding: the rule says nearest 0.5x, its own example
-     rounds the top down (37x -> 34-39.5x). section-1b chunk 06 copies both.
-     Operator ruling needed, then align chunk 06.
-  3. OR-9 (proposed): Amendment 24 caps size at starter when the residual
-     exceeds 25% of CMP; Amendment 25 permits a starter only at 25% or less.
-     Reading A: size zero. Reading B: a 2-3% starter. Operator ruling needed.
+- 1B cap row: Sugar/Agri cyclical (KCPSUGIND, 20x ad hoc). [sector: Agri
+  processing] [archetype: Commodity converter]
+- 1B cap rows: Distribution commodity 18-19x, value-added 25-26x, blended
+  (ENTERO, 18-20x ad hoc).
+- A14 fade guard: SOM-implied growth far above the fade goes to operator
+  ruling (ENTERO). For /compost.
+- Canary needs an API key; rewrite on `claude -p`. PR #162.
+- fetch_bse_announcements untested on the live BSE API; check after first
+  use. PR #167.
+- Next prompt branch: (2) A6 range rounding ruling, then align chunk 06;
+  (3) OR-9 starter under A24/A25, size zero vs 2-3%.
+- Stage 5 to Opus 5.5 high if Verifier B overturns grades in two runs
+  (RULINGS_2026-10 item 27).
+- OPEN (2026-10-04, C2): record stage 5 cost on the next no-call run
+  (target under 100k; Kwick 254k).
+- Audit deferrals: items 41, 43, 85-88, 45, 71, 108 (RULINGS_2026-10).
+- Repo: land 110 branch-only markdown records on main in one PR, then
+  revisit 71 branch deletes (PR #186 = c74e7a10; BRANCH_AUDIT_2026-10).
+- Repo: run BRANCH_DELETIONS_2026-10 script from a local clone (proxy
+  refuses remote deletes).
+- OPEN (2026-10-04, KWICK): the next company run that passes the checkout
+  guard is the first clean post-update token measurement; compare it per
+  stage with runs/kwick-2026-10-04/session-cost.md.
+- OPEN (2026-10-04, KWICK): on a prospectus-only corpus, stages 2 and 3
+  drive cost (474k and 421k). PR #185 (AR section index) now has its
+  measured run; evaluate it against Kwick in a later session, then merge.
+- RE-COLLECT (operator, collector or /step1): runs/kronox-2026-08-30 FY2024-25
+  AR; runs/kopran-2026-07-14 FY2024-25 and FY2025-26 ARs;
+  runs/akums-2026-07-10 Piramal Pharma (PPLPHARMA) Q2 FY26 transcript.
+- Downloads sweep pushed non-financial files into fedfina, rathist,
+  shyammetl and voepl-2026-07-18 inputs (removed 2026-10-04). Collector
+  allowlist applied 2026-10-04 (PDF, DOCX, TXT, XLSX, MD); others refused.
+- Android signing key committed at runs/voepl-2026-07-18/inputs/results/New
+  folder/SuperOver - Google Play package/signing.keystore, deleted
+  2026-10-04, remains in history; treat as exposed.
+- KISSHT 2026-10-04 (archive entry):
+  - stage 11 priced under uncommitted v3.11; merge it.
+  - own-book P/B band not earned (A27.2).
+  - partner RoE base and parent-held IPO cash unclassified (A27.1).
+  - Gate 0 <60 WATCHLIST vs §7 AVERAGE AVOID conflict.
+  - U/D on partner exit, Rs 347.2 re-open, size under AVOID (§4F/§7).
+  - ledger probabilities proposed without operator, C2P (A22-23).
+  - B10 drops consumed blocks and downstream candidates (prompts/10).
+  - chunk 06 l.39/l.89, chunk 08 l.38 diverge from source.
+- ORCHPHARMA 2026-09-06 (archive items 1, 4, 5, closing note):
+  - OCR page tags and read-the-page rule into stage and Verifier A prompts.
+  - Verifier A coverage addendum standing, not retry-only.
+  - cap REWORK remediation cycles before operator hand-off.
+  - peer selection needs a product-chain check.
+- SYNGENE 2026-09-28:
+  - 1. state the column header with every results-table number.
+  - 2. collector fetches the prior-year same-quarter transcript.
+  - 3. Verifier A tests derivative notional against revenue scale.
+  - 4. one counterparty or peer check per management causal claim.
+  - 5. OR-11 approved; framework text and chunk 07 still to write.

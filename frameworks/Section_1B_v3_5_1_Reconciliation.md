@@ -1,6 +1,6 @@
 # SECTION 1B v3.5.1 — RECONCILIATION OF AMENDMENT 9 AND AMENDMENT 4.5
 
-> **ACTIVE — not a superseded draft.** This file is the Pillar 1 normalization layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11 and governs capital-cycle ROCE route selection (Routes A and B). The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.3 Amendments, v3.6 Amendments, v3.7 Amendments, v3.8 Amendments); where they overlap, the later layer governs.
+> **ACTIVE — not a superseded draft.** This file is the Pillar 1 normalization layer of Section 1B, the sole exit-multiple authority. It lives in frameworks/ as a runtime input to stage 11 and governs capital-cycle ROCE route selection (Routes A and B). The version number tags this amendment layer, not a competing copy of the Master Prompt. Do not archive or delete it. Read it together with the other Section_1B_* files (v3.3, v3.6, v3.7, v3.8, v3.9 and v3.10 Amendments); where they overlap, the later layer governs.
 
 *Reconciliation session 12-Jul-2026 (Fable 5). Two amendments were adopted independently on the same day, both labelled v3.5, both modifying Pillar 1 for capital-cycle names: Amendment 9 (mid-cycle OPERATIONAL ROCE — capital-base normalization, adopted in the operator session) and Amendment 4.5 (normalized pre-depression ROCE anchor, promoted to law during the TATVA run). Left unreconciled, a run could apply both and double-credit the same recovery — the exact failure class Amendment 4 (single-credit rule) exists to prevent. This document supersedes both texts and replaces them with a single consolidated Amendment 9. Amendment 4.5 is RETIRED as a number; its mechanism survives as Route B below.*
 
@@ -46,7 +46,7 @@ Both channels understate true capital efficiency, drive the destination PE below
 ### INTERACTION WITH THE REST OF THE FRAMEWORK
 
 - Amendment 4 (single-credit for ROCE recovery across Pillar 1 / Strategic Premium) applies on top of this: whichever route is used, ROCE recovery credited in Pillar 1 bars the Strategic Premium route, as before.
-- Amendment 10 (intrinsic cross-check) triggers and mechanics are unaffected; where triggered, the DCF uses the same route-declared ROCE basis for its capital-efficiency assumptions.
+- Amendment 10 (intrinsic cross-check; text NOT FOUND in repo) triggers and mechanics are unaffected; where triggered, the DCF uses the same route-declared ROCE basis for its capital-efficiency assumptions.
 - FTTCP remains the sole source of the recovery verdict and probability. Neither route may be invoked on a STAGNANT or DECLINING ROCE verdict.
 
 ### WORKSHEET LINE (replaces the Amendment 9 worksheet line 1)

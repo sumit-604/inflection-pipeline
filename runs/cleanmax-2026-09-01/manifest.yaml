@@ -7,3 +7,10 @@ run_type: full
 concalls_available: true
 sector_cap_row: "Pharma / CDMO"
 notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+
+corpus_fixes:   # Job 1, maint/oct-2026-corpus-and-or14, operator approved 2026-10-04
+  - "2026-10-04 removed inputs/annual-report/SME_AR_25366_VINYAS_2023_2024_31082024141418.pdf: Vinyas Innovative Technologies document, not CleanMax; byte-identical copy already in runs/vinyas-2026-09-01. No stage output cited it."
+  - "2026-10-04 removed inputs/annual-report/Vinyas_PROSP.pdf: Vinyas Innovative Technologies document, not CleanMax; byte-identical copy already in runs/vinyas-2026-09-01. No stage output cited it."
+  - "2026-10-04 removed inputs/presentation/VINYAS_01062025194241_Investor_Presentation_H2FY2025.pdf: Vinyas Innovative Technologies document, not CleanMax; byte-identical copy already in runs/vinyas-2026-09-01. No stage output cited it."
+  - "2026-10-04 removed inputs/presentation/VINYAS_06112025180228_Investor_Presentation_H1_202526.pdf: Vinyas Innovative Technologies document, not CleanMax; byte-identical copy already in runs/vinyas-2026-09-01. No stage output cited it."
+  - "2026-10-04 removed inputs/presentation/VINYAS_29052026113314_Reg_30_Investor_Presentation_Fy_2526.pdf: Vinyas Innovative Technologies document, not CleanMax; byte-identical copy already in runs/vinyas-2026-09-01. No stage output cited it."

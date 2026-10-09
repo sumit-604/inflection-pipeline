@@ -1,0 +1,54 @@
+stage: B01-gate0
+company: "KISSHT"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "A1/A2/A4 ROCE: FY21-FY22 NOT FOUND (screener balance sheet does not split current/non-current liabilities for those years; AR/RHP restated data starts FY23)"
+  - "B2/B3 FCF: FY21-FY22 capex NOT FOUND (RHP restated cash flow data starts FY23; screener carries no capex/PPE-purchase line at all)"
+  - "B4 WC days change: NOT FOUND (no FY21 trade payables anywhere in the corpus; AR/RHP payables data starts FY23 at the earliest, full breakout only FY25-26)"
+  - "E2 promoter holding change over 3 years: NOT FOUND (company listed 08-May-2026; only one post-listing shareholding statement, Jun-2026, exists)"
+  - "E1 FII/DII split within Public shareholding: NOT FOUND (BSE shareholding summary gives Promoter 24.80% / Public 75.20% only, no institutional sub-split)"
+  - "M5 scale/dominance: SBICARD market cap NOT FOUND (no Data_Sheet CSV collected for this peer)"
+  - "M6 R&D/Revenue: NOT FOUND (no R&D line in any provided source for this company)"
+  - "FY23 CFO conflict unresolved: screener 48.36 Cr vs RHP restated consolidated 111.48 Cr (2.3x apart); no source in the corpus reconciles the two"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (Core 51/100). Historical depressors are archetype-driven: Block B (cash generation, 0/20) is depressed because AUM growth classifies as operating cash outflow under Ind AS 7 for a fast-growing lender, not going-concern distress. Block A (18/20) is inflated by the same mechanic in reverse (Finance cost added back into the ROCE numerator). Net effect roughly cancels at the Core-score level but both should be read through the lender lens downstream, not at face value."}
+  - {type: FLAG-CASH, reason: "Cumulative CFO FY21-26 -1,648.00 Cr vs cumulative PAT +671.20 Cr (screener-data), ratio -2.46x. Trend improving FY25->FY26 (-661.43 Cr to -460.82 Cr) but still deeply negative. Needs the Section 1B lender cash-conversion protocol at a later stage, not a manufacturer cash-quality read."}
+  - {type: FLAG-DATA-CONFLICT, reason: "FY23 consolidated CFO: screener shows 48.36 Cr, RHP restated consolidated cash flow statement (p.271) shows 111.48 Cr (1,114.78 million). All other years (FY24-26) reconcile exactly between screener and RHP/AR. Unresolved in the provided corpus; flagged for verification."}
+  - {type: FLAG-QUALITY, reason: "Cost-to-Income Ratio worsened from 45.54% (FY24) to 56.64% (FY26) even as PAT grew (AR p.10 KPI table) — a genuine operating-efficiency question, independent of the cash-flow-classification and ROCE-inflation mechanics named above. Not explainable by archetype accounting quirks; worth a direct look at opex/credit-cost drivers downstream."}
+data_years: 6
+fy_range: "FY21 to FY26"
+blocks: {A: 18, B: 0, C: 8, D: 17, E: 8}
+core_score: 51
+moat_score: 4
+grand_total: 55
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "AVERAGE"
+deal_breakers:
+  - "Block B <8 -> max GOOD (fired; Block B = 0; superseded by the stricter cap below)"
+  - "Cumulative CFO/PAT <0.50 -> max AVERAGE (fired; ratio = -2.46x; this is the binding cap, though the Core-score band (40-59) already places the run at AVERAGE independent of this deal-breaker)"
+history_downgrade: false
+data_notes:
+  - "Loss-to-profit swing, FY21 to FY22 (PAT -58.45 Cr to +62.62 Cr, screener-data); no synthetic PAT CAGR attempted (C2/C4 = 0 per the CAGR edge rule)."
+  - "ROCE (A1/A2/A4) computed as EBIT (PBT + Finance cost) / (Total Assets - Current Liabilities) from AR/RHP consolidated balance sheets, FY23-FY26 only. Caveat: Finance cost is the core cost of funds for a lender, not overhead; this measure is directionally useful but structurally inflated relative to a manufacturer's ROCE and should not be compared across archetypes."
+  - "Moat tests M1/M2/M9 initially computed with a naive (PBT+Interest+Depreciation)/Sales margin proxy, which is inflated by the same mechanic as the ROCE caveat above. Cross-checked against the AR's own disclosed Cost-to-Income Ratio (FY24-26): the two series point in opposite directions. M1 uses the Cost-to-Income basis as the more evidenced measure; M2/M9 retain the naive proxy only for the peer cross-section (POONAWALLA, UGROCAP) since no peer discloses Cost-to-Income in the data provided, and note the resulting basis mismatch explicitly."
+  - "Promoter & Promoter Group is 2 identified holders at 24.80% (BSE shareholding, Jun-2026) - not a 'no identified promoter' company, so the professionally-managed FII+DII>50% alternate for E1 does not apply."
+  - "WC-days-based tests (B4, M10, M12) are weak proxies for a lender since the loan book, not trade receivables/payables, is the real balance-sheet driver; scored per the literal formula and available data with the mismatch stated at each line."
+block_b_trend: "improving (CFO -661.43 Cr FY25 to -460.82 Cr FY26, screener-data; still deeply net negative, driven by loan-book growth classified as an operating outflow under Ind AS 7, not by a cash-quality failure in the manufacturer sense)"
+analyst_note: >
+  Core 51/AVERAGE is a real mechanical outcome, but two of its drivers point
+  the same direction for the same reason and roughly cancel: Block A's 18/20
+  and Block B's 0/20 both trace to Finance cost/loan-disbursal accounting
+  quirks unique to a fast-growing lender, not to independent evidence of
+  quality or distress. Downstream stages should not read Block A as proof
+  of strong capital efficiency, nor Block B as proof of cash-quality failure,
+  without the Section 1B lender variant re-testing both. The one flag that
+  is NOT an archetype artefact is the Cost-to-Income deterioration
+  (45.54% to 56.64%, FY24-26) under a rising PAT - that is worth a direct
+  look. Deal-breaker 4 (cumulative CFO/PAT) and deal-breaker 2 (Block B<8)
+  both fired but are non-binding here since the Core-score band (40-59)
+  already floors the classification at AVERAGE. FY23 CFO has an unresolved
+  2.3x conflict between screener and the RHP restated statement; every other
+  year reconciles exactly.

@@ -1,5 +1,5 @@
 # STAGE 11: ROLE 1 MULTI-MODAL VALUATION (PIPELINE MODE)
-# Model: Opus (agent alias) | Emits: B11-valuation
+# Model: Opus 5.5 | Emits: B11-valuation
 # DESIGN: this file is a THIN WRAPPER. The Section 1B and FTTCP rules come
 # from the section-1b skill, preloaded by the agent frontmatter
 # (.claude/skills/section-1b/): the resolved result of Section 1B v3.3,
@@ -96,8 +96,7 @@ mode:
    [ESTIMATE, X1] because standalone statements do not yet exist, carry the tag
    onto every leverage-, cash-, or ROCE-dependent cell it touches and note that
    the cell re-runs when the filed number arrives. Emit one B11 YAML block per
-   entity (entity name in the block). INDIAGLYCO discarded a run for valuing one
-   consolidated entity against a three-entity dossier; this gate prevents it.
+   entity (entity name in the block).
 13. RECOGNITION GAP RESOLUTION. The signed mental model's RECOGNITION GAP
    (09b Section 2 Part B4) is an OPEN QUESTION that resolves HERE, and it
    equals the PE-gap check: does the current PE already sit at the TO rung's
@@ -190,9 +189,8 @@ mode:
   Where they diverge >15%, state which track fits this company and why;
   the track that sets the entry zone follows section-1b chunk 06 (open
   ruling OR-1).
-- Continuous Pillar 1 formula (0.5 × ROCE% + 7.5, floor 9x; above 33%
-  ROCE the elite extension per v3.6 Amendment 11, Base PE = 24 + 0.3 ×
-  (ROCE% − 33), cap 30x; the old 24x cap is superseded),
+- Continuous Pillar 1 formula per section-1b chunk 01 (v3.6 Amendment 11
+  elite extension above 33% ROCE; the old 24x cap is superseded),
   with the FTTCP ROCE forward verdict as sole Pillar 1 authority and the
   single-credit rule for ROCE recovery (Pillar 1 midpoint OR Strategic
   Premium, never both; state which route, flag shared catalysts).
@@ -213,7 +211,8 @@ mode:
   readings (structural 0.65x, no offset; growth-induced 0.80x with its
   offset), name the observation that separates them and its confirm-by
   date, state which reading you value on and why (section-1b open ruling
-  OR-5), and cap the run at PROCEED WITH CAVEATS with the missing evidence
+  OR-5), and record in flags[] (FLAG-CASH, INDETERMINATE) that the gate
+  verdict caps at PROCEED WITH CAVEATS, with the missing evidence
   named. State the most evidenced reading, not a shaded one (the
   Amendment 26.3 principle).
 - Pillar 3 uses B10's EM score, catalyst proximity, and evidence mix.
@@ -225,8 +224,8 @@ mode:
   Pillar 1, P/B primary, 18x cap).
 - HURDLE RATIO is a feasibility check, not a verdict cap (v3.9 Amendment 24;
   operator ruling 2026-09-15, OR-2): HR = (1 + EPS CAGR)³ ×
-  (Destination PE mid ÷ Current PE), threshold 1.953 for Tier A, 1.728 for
-  Tier B. Compute the band and show it on the verdict card: PASS (the tier
+  (Destination PE mid ÷ Current PE), against the tier threshold in
+  section-1b chunk 06 (Tier A or Tier B). Compute the band and show it on the verdict card: PASS (the tier
   hurdle is feasible on base-case earnings); CONDITIONAL (base fails, bull
   passes) flag "growth-dependent with de-rating headwind"; STOP band (bull
   fails) the tier hurdle is infeasible even on bull-case earnings. No band
@@ -240,8 +239,9 @@ mode:
   single-point forecast. Recompute HR on it and carry it to
   expected_cagr_prob_weighted. The bull-EPS-CAGR credibility gate is
   unchanged.
-- 4D probability weights come ONLY from B10.credibility_grade
-  (A 20/50/30, B 25/50/25, C 35/45/20, D 45/40/15).
+- 4D probability weights come ONLY from B10.credibility_grade, the Role 5
+  grade over the trailing four quarters (Amendment 26.4); the grade-to-weights
+  table is section-1b chunk 17.
 - Cross-check: compare your base revenue CAGR against B10's SOM-implied
   CAGR; if your assumption exceeds it, justify or cut.
 - One quality improvement, one mechanism. Never credit the same
@@ -263,7 +263,7 @@ consolidated valuation:
 stage: B11-valuation
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: ""  # your exact model ID; the agent alias decides it
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
 status: complete
 entity: ""                     # entity name; "" or "consolidated single-entity" when entity_count is 1
 entity_count: 1                # from B10.entity_count (dossier Section 1); emit one block per entity when >1
@@ -321,7 +321,7 @@ one_line_thesis: ""
 ## INJECTED INPUTS (stable prefix = Master Role 1 + preloaded skill; table = variable)
 
 FRAMEWORK:
-{{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}
+{{MASTER_PROJECT_PROMPT_ROLE1_SECTIONS}}  (file Master_Project_Prompt_v3_6.md, content v3.7)
 Section 1B and FTTCP: the preloaded section-1b skill (no file injection).
 
 PRECEDENCE: the skill carries the resolved Section 1B layer order (v3.10 >

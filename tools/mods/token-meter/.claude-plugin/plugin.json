@@ -1,0 +1,6 @@
+{
+  "name": "token-meter",
+  "version": "0.1.0",
+  "description": "Live token band above the prompt (session tokens, per-subagent tokens, cache-hit rate); /stage-cost appends finished stages to a run's session-cost.md; /cost-bar toggles the band",
+  "types": "./types/index.d.ts"
+}

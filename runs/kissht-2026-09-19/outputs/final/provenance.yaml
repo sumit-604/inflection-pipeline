@@ -1,0 +1,6 @@
+run: kissht-2026-09-19
+produced_at: 2026-10-04
+framework_git_commit: b5dec91010efad7669eea2a03e8d3e5bfd7378c6
+framework_tag: fw-2026-07-18b-1257-gb5dec910
+framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10+v3.11 / FTTCP v2.3"
+framework_state_note: "Section 1B v3.11 (Amendment 27) is NOT on any commit. Stage 11 and Verifier C read it from the uncommitted working tree of the main checkout (C:/Users/SUMIT SHARMA/repos/inflection-pipeline: frameworks/Section_1B_v3_11_Amendments.md and .claude/skills/section-1b/), and subagent definitions in .claude/agents/ were also loaded from that working tree. The commit above does not reproduce that rulebook state. Open item I5."

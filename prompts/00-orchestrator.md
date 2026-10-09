@@ -1,7 +1,5 @@
 # INFLECTION ALPHA PIPELINE ORCHESTRATOR v1.0
-## Sonnet 5 Primary Pipeline with Claude Verification Layer
-
-Replaces the Gemini (Jaimini) upstream pipeline. One model family end to end.
+## Claude pipeline: Sonnet 5.5 evidence stages, assembly and Verifier A; Opus 5.5 valuation and synthesis
 Valuation authority: Master Project Prompt v3.7, Section 1B layer set (v3.3
 Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name) (Four-Pillar
 Framework, RRM dual-track, Hurdle Ratio), FTTCP v2.3. No other exit PE source
@@ -58,10 +56,10 @@ to the deliberation record.
 
 ## 1. INPUT CONTRACT
 
-Run folder structure (Google Drive, mirrored to local before run):
+Run folder structure (repo, collected by collect_to_repo.py):
 
 ```
-/inflection-alpha-runs/<ticker>-<YYYY-MM-DD>/
+runs/<ticker>-<YYYY-MM-DD>/
   manifest.yaml
   inputs/
     prospectus/       (0-2 PDF; DRHP / RHP. MANDATORY to attempt when the
@@ -163,8 +161,11 @@ Spear: HIT YYYY-MM-DD - entry <= Rs X - load-bearing facts: [2-4 items]
 or
 
 ```
-Spear: OVERRIDE YYYY-MM-DD (operator)
+Spear: OVERRIDE YYYY-MM-DD (operator ...)
 ```
+
+(Any text after "(operator" is accepted, including the /step1 form "(operator
+standing ruling 2026-09-05: Step-1 intake replaces the web spear)".)
 
 If neither line exists, STOP the run at once and direct the operator to run
 the spear pass with Claude web first. This is not a mechanical halt and not a
@@ -172,8 +173,9 @@ degradation; the run does not start. The spear runs on live web, which this
 container cannot reach, so Claude Code never performs it.
 
 On a HIT, the load-bearing facts named in the Spear line become the run's
-first verification priority: stage 0 records them in `B00` and every later
-stage checks them before its own work.
+first verification priority: stage 0 records them in `B00`, the orchestrator
+carries them in every stage task message, and every later stage checks them
+before its own work.
 
 ### FRESHNESS PAIR CHECK (stage 0 corpus audit, hard rule; per MANINDS 2026-08-21)
 
@@ -271,7 +273,9 @@ Stage 0 resolves the row and writes it into the manifest and into
 4. If no row fits, write `sector_cap_row: "NOT FOUND"` and record it as a HIGH
    gap. A missing row does not stop the evidence stages. It DOES block stage
    11: there is no default row and no round-number substitute, and an ad hoc
-   cap is an operator ruling, not a stage decision.
+   cap is an operator ruling, not a stage decision. The operator rules the
+   cap row once, at the /fttcp pillar-approval gate, together with the exit
+   PE base.
 
 A wrong cap row silently caps or uncaps the destination PE, which is why it
 carried into roughly twenty runs before anyone saw it. The row is evidence
@@ -326,10 +330,15 @@ Some companies hold no earnings calls. When `manifest.yaml` sets
 `concalls_available: false`, the `inputs/concalls/` folder is not required
 and the concall-dependent stages run in degraded mode:
 
-- **Stage 5** runs in degraded mode: instead of transcripts it reads the
-  annual report's MD&A, the chairman's letter, and the results
-  commentary. It extracts stated guidance and checks delivery against the
-  results PDFs. `credibility_grade` defaults to **C** and may rise to **B**
+- **Stage 5** runs in degraded mode as a bounded dispatch (operator
+  ruling 2026-10-04): instead of transcripts it reads the B03 report and
+  block, then only the MD&A, objects-of-issue or working-capital, and KPI
+  pages that B03 anchors, plus the results commentary. It never reads the
+  whole annual report or prospectus; token target under 100k. Stage 5
+  dispatches only after stage 3 is proven complete (report and B03 block
+  on disk); in this mode it never runs alongside stage 3. Pass it the B03
+  report and block paths. It extracts stated guidance and checks delivery
+  against the results PDFs. `credibility_grade` defaults to **C** and may rise to **B**
   only on documented AR-guidance-vs-results delivery evidence, never to
   **A**. The B05 block gains `no_concall_mode: true`.
 - **Stage 6** runs only if `inputs/peer-concalls/` contains files;
@@ -414,7 +423,8 @@ Stages must explicitly compare against the prior run where relevant:
 Prior operator overrides from the deliberation record
 (`fttcp-deliberation.md`) are surfaced, not silently inherited: synthesis
 lists each prior override with the question "does the new evidence still
-support this override?" and leaves the answer to Keerti.
+support this override?". The operator answers it once, at the
+/fttcp pillar-approval gate of the new run, not after synthesis.
 
 ---
 
@@ -422,27 +432,29 @@ support this override?" and leaves the answer to Keerti.
 
 | # | Stage | Prompt file | Model | Consumes | Emits block |
 |---|-------|-------------|-------|----------|-------------|
-| 0 | Input validation | (inline) | Haiku 4.5 | folder + manifest | `B00-inputs` |
-| 1 | Gate 0 scorecard | 01-gate-0-pipeline.md | Sonnet 5 | screener-data / results PDFs | `B01-gate0` |
-| 2 | Notes triple-pass | 02-notes-triple-pass-pipeline.md (3 calls) | Sonnet 5 | AR | `B02-notes` |
-| 3 | AR Deep Dive | 03-ar-deep-dive-pipeline.md | Sonnet 5 | AR + B02 | `B03-ardeep` |
-| 4 | Business Model Decoder | 04-business-model-pipeline.md | Sonnet 5 | AR + inv. pres. | `B04-bizmodel` |
-| 5 | Concall Analysis (main) | 05-concall-pipeline.md | Sonnet 5 | 3 transcripts (oldest first) | `B05-concall` |
-| 6 | Peer concall verification | 06-peer-concall-pipeline.md | Sonnet 5 | 12 peer transcripts + B05.peer_questions | `B06-peers` |
-| 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5 | AR + concalls + pres. + B01 | `B07-emoat` |
-| 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5 + web search | web + AR governance | `B08-promoter` |
-| 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5 + web search | web + AR + B04 | `B09-tam` |
-| 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Haiku 4.5 | B01..B09 + results PDFs | `B10-valinputs` |
-| 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus (agent alias) | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
-| 12a | Verifier A: numerical | verifier-a-numerical.md | Haiku 4.5 | all source PDFs + all reports | `B12a` |
-| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus (agent alias) | 15 transcripts + B05 + B06 | `B12b` |
-| 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus (agent alias) | B01, B07, B11 + framework docs | `B12c` |
-| 12d | Verifier D: peer coverage | verifier-d-peers.md | Sonnet 5 | peer transcripts + B06 | `B12d` |
-| 13 | Synthesis | 13-synthesis-pipeline.md | Opus (agent alias) | everything | final outputs |
+| 0 | Input validation | (inline) | orchestrator session model | folder + manifest | `B00-inputs` |
+| 1 | Gate 0 scorecard | 01-gate-0-pipeline.md | Sonnet 5.5 | screener-data / results PDFs | `B01-gate0` |
+| 2 | Notes triple-pass | 02-notes-triple-pass-pipeline.md (3 calls) | Sonnet 5.5 | AR | `B02-notes` |
+| 3 | AR Deep Dive | 03-ar-deep-dive-pipeline.md | Sonnet 5.5 | AR + B02 | `B03-ardeep` |
+| 4 | Business Model Decoder | 04-business-model-pipeline.md | Sonnet 5.5 | AR + inv. pres. | `B04-bizmodel` |
+| 5 | Concall Analysis (main) | 05-concall-pipeline.md | Sonnet 5.5 | 3 transcripts (oldest first) | `B05-concall` |
+| 6 | Peer concall verification | 06-peer-concall-pipeline.md | Sonnet 5.5 | 12 peer transcripts + B05.peer_questions | `B06-peers` |
+| 7 | Emerging Moat scan | 07-emerging-moat-pipeline.md | Sonnet 5.5 | AR + concalls + pres. + B01 | `B07-emoat` |
+| 8 | Promoter check | 08-promoter-pipeline.md | Sonnet 5.5 + web search | web + AR governance | `B08-promoter` |
+| 9 | TAM/SAM/SOM | 09-tam-pipeline.md | Sonnet 5.5 + web search | web + AR + B04 | `B09-tam` |
+| 10 | Valuation input assembly | 10-input-assembly-pipeline.md | Sonnet 5.5 (medium) | B01..B09 + results PDFs | `B10-valinputs` |
+| 11 | Role 1 valuation (v3.7) | 11-valuation-pipeline.md | Opus 5.5 | B10 + Master Prompt v3.7 + Section 1B layers + FTTCP v2.3 | `B11-valuation` |
+| 12a | Verifier A: numerical | 12-verifiers-pipeline.md (VERIFIER A) | Sonnet 5.5 (high) | all source PDFs + all reports | `B12a` |
+| 12b | Verifier B: concall red flags | verifier-b-redflags.md | Opus 5.5 | 15 transcripts + B05 + B06 | `B12b` |
+| 12c | Verifier C: framework adherence | verifier-c-framework.md | Opus 5.5 | B01, B07, B11 + framework docs | `B12c` |
+| 12d | Verifier D: peer coverage | verifier-d-peers.md | Sonnet 5.5 | peer transcripts + B06 | `B12d` |
+| 9b | Halt 1 dossier | 09b-halt1-dossier.md | Sonnet 5.5 | B00-B09 + verifier blocks | `B09b-dossier` |
+| 14 | Role 2 thesis | (agent file stage-14-thesis.md) | Opus 5.5 | B10, B11, deliberation record | `B14-thesis` |
+| 15 | Role 3 devil's advocate | (agent file stage-15-devil.md) | Opus 5.5 | B14 + all blocks | `B15-devil` |
 
 Stages 1 and 2 may run in parallel. Stages 4, 5, 8, 9 may run in parallel
-after stage 3. Stage 6 requires stage 5. Stage 7 requires stage 1. Stages
-12a-12d run in parallel after stage 11. Stage 13 requires all.
+after stage 3 (in NO-CONCALL MODE stage 5 reads B03 and waits for it). Stage 6 requires stage 5. Stage 7 requires stage 1. Verifiers A, B, D and the Gate 0 + Emerging Moat half of C run in phase 1
+after stage 9; C's valuation half runs in phase 3 after stage 11. Stage 13 requires all.
 
 Chronology rule for stage 5: transcripts are passed oldest first and each
 call is prefixed with an ordered list mapping filename to quarter. The stage
@@ -469,7 +481,7 @@ block:
 stage: B01-gate0
 company: GEMAROMA
 run_date: 2026-07-09
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete          # complete | partial | failed
 input_gaps: []            # carried forward from B00
 flags: []                 # list of flag objects, see Section 4
@@ -583,13 +595,14 @@ Position sizing logic in Role 2 already handles the override; the pipeline
 only surfaces it.
 
 **REWORK is about the analysis, not the company.** If Verifier A finds any
-CRITICAL numerical finding (fabricated or materially misread figure), or any
-verifier's acceptance_rate falls below 60%, the synthesis verdict is REWORK
+CONFIRMED CRITICAL numerical finding (fabricated or materially misread
+figure), or any verifier's acceptance_rate falls below 60% on a denominator
+of 4 or more (operator ruling OR-29, 2026-10-04), the synthesis verdict is REWORK
 regardless of company quality: the analysis cannot be trusted. This gate
 stays hard because it judges the pipeline, not the stock.
 
-**SOURCE FIDELITY IS A HARD, NON-OVERRIDABLE GATE.** Verifier A (Haiku) is the
-sole final authority on whether a number exists in the source. No downstream
+**SOURCE FIDELITY IS A HARD, NON-OVERRIDABLE GATE.** Verifier A (Sonnet 5.5,
+fresh context) is the sole final authority on whether a number exists in the source. No downstream
 step may clear, downgrade, or reason around a Verifier A source-fidelity
 finding (any B12a finding with `source_fidelity: true` — MISMATCH, ANCHOR NOT
 FOUND, or material UNANCHORED). A flagged number may not enter any downstream
@@ -600,9 +613,9 @@ Verifier C's re-derivations and the synthesis narrative are SUBORDINATE to
 Verifier A on the existence-of-a-number question; they own judgment and
 framework, never source fidelity. The only thing that clears a source-fidelity
 flag is re-reading the source PDF and showing the number does exist at a
-correct anchor, and that clearance is logged as a disagreement (below). The
-cross-family placement is the point: Haiku is the only out-of-family read on
-the numbers, so it is the one that binds.
+correct anchor, and that clearance is logged as a disagreement (below). Its
+independence comes from a fresh context and the source page, not the model
+family (operator ruling 2026-10-04), so it is the read that binds.
 
 **LOG EVERY VERIFIER DISAGREEMENT (from day one).** A disagreement is any point
 where a downstream step's conclusion conflicts with a Verifier A source-fidelity
@@ -610,7 +623,7 @@ finding: a Verifier C re-derivation that relied on a flagged number, a synthesis
 inclination to keep a figure Verifier A flagged, or a source re-check that
 CLEARED a Verifier A flag. Collect every one into a disagreement set. It is NOT
 a REWORK trigger by itself; it is the standing evidence that, over months, shows
-whether Haiku catches what the Opus verifiers miss or whether the disagreements
+whether Verifier A catches what the Opus verifiers miss or whether the disagreements
 are noise. Synthesis writes the set to `outputs/final/verifier-disagreement-log.md`
 and the Notion save appends each row to the "Verifier Disagreement Log" page.
 One row per disagreement, fixed shape:
@@ -647,7 +660,7 @@ EVERY RATIO NEEDS A DENOMINATOR THAT CAN CARRY IT. A component computed on
 fewer than 4 items is NOT APPLICABLE: it is dropped from `overall`, listed in
 `not_applicable` with its counts, and reported to the operator as a count
 rather than a percentage. One item must not move a confidence score by 25
-points, and `overall: min of the four` let exactly that decide a verdict.
+points.
 
 `redflag_coverage` runs on Verifier B's MATERIAL findings (CRITICAL + MAJOR),
 never on the length of its list. Verifier B is asked for a thorough
@@ -670,7 +683,8 @@ counts instead of a confidence band; it never fills the gap with a guess.
 
 Four files in `outputs/final/`:
 
-1. `business-narrative.md`: 10 to 12 lines, plain English, Keerti's written
+1. `business-narrative.md`: structure per prompts/13-synthesis-pipeline.md
+   DELIVERABLE 1, plain English, Keerti's written
    voice per anti-ai-writing-style.md (no em-dashes, no AI vocabulary,
    numbers first, symmetric bull-bear, no landing lines). Opens with the
    6-7 word ultra-short headline.
@@ -681,16 +695,18 @@ Four files in `outputs/final/`:
    GROWTH-INDUCED determination. No STOP verdict exists.
 3. `verifier-summary.md`: all four verifier findings tables, sorted by
    severity, each finding with location anchor.
-4. `fttcp-handoff.md`: the self-sufficient input package for manual FTTCP
-   v1.2 deliberation in a separate Opus session with no source PDFs. The
+4. `fttcp-handoff.md`: the archive dossier of the run, self-sufficient for
+   a reader with no source PDFs (the FTTCP v2.3 deliberation already ran in
+   phase 2 via /fttcp). The
    four transition data series, catalyst inventory, all flags with full
    underlying findings, credibility grade with the guidance-vs-delivery
    table, the scorecards and market sizing, valuation pillar detail from
    both tracks if stage 11 ran, and a gaps ledger. Density over brevity;
    every figure carries its source anchor.
 
-Plus one Notion save to COMPANIES MASTER (data_source_id
-345bb2b9-d3ab-8032-9b46-000ba16ab827) per Notion_Save_Instructions.docx:
+Plus one Notion save PAYLOAD for COMPANIES MASTER (data_source_id
+345bb2b9-d3ab-8032-9b46-000ba16ab827), written to
+outputs/final/notion-payload.md; claude.ai executes the write:
 fetch live page first if the company exists; never overwrite Decision
 Status from a pipeline run; append the run summary and link the Drive
 folder.
@@ -704,12 +720,40 @@ folder.
   handoff block. Re-emit the complete output ending with the block."
   Second failure: run halts, stage named.
 - API error / timeout: 3 retries, exponential backoff (30s, 120s, 480s).
-- stop_reason refusal: log, retry once on Opus 4.8, then halt with reason.
+- stop_reason refusal: log, retry once on the stage's own frontmatter model, then halt with reason.
 - Web-search stages (8, 9): if search quota or tool errors force skips,
   stage completes with searches_skipped[] populated; B08/B09 status =
   partial; synthesis must mention partial status in the verdict block.
 - Cost circuit breaker: if cumulative run cost exceeds 2.5x the estimate
   in Section 8, halt before the next stage and report per-stage spend.
+
+---
+
+## 7A. RESUME FROM DISK AFTER COMPACTION OR RESET
+
+The authoritative state of a run is the files on disk, never this
+conversation. `outputs/blocks/<stage>.yaml`, `outputs/reports/`, and
+`outputs/final/` (including the deliberation record) hold every completed
+stage's output and every operator ruling. A context compaction or a
+container reset mid-run is therefore recoverable and never corrupts a
+handoff.
+
+On ANY resume — after a compaction, a container reset, or re-invoking the
+command on an in-progress run — re-derive progress from disk before
+launching another stage:
+
+- List `outputs/blocks/` to see which stages already have a block.
+- For each, confirm its report in `outputs/reports/` ends with a closed
+  ```yaml block (tail it). A stage whose block is missing, or whose report
+  has no closed block, is NOT done: re-run it, do not trust memory.
+- Never assume a number, a determination, or an operator ruling from
+  conversation memory (CLAUDE.md: never estimate a missing number); read it back from the block, the report, or the
+  deliberation file. If memory and the file disagree, the file wins.
+
+Only after this disk check do you launch the next stage. This codifies the
+recovery already practiced when a stage's completion notification is missed.
+(Recovered from branch claude/auto-compact-threshold, operator ruling
+2026-10-03, branch audit item 4.)
 
 ---
 
@@ -720,8 +764,8 @@ Every stage prompt is ordered: [framework and rules, stable] then
 Across a 20-run month the framework text (Gate 0 tables, Section 1B, the
 22-category moat scan, FTTCP v2.3) is paid once and read at 10% thereafter.
 
-Per-run estimate at July 2026 prices (Sonnet 5 $2/$10 intro, Opus 4.8
-$5/$25, Haiku 4.5 $1/$5): $11-12 first run, $8-9 cached steady state,
+Model prices from 02-Oct-2026: Sonnet 5.5 $2/$10, Opus 5.5 $4/$20, Haiku 4.5 $1/$5 per MTok. The per-run estimate below was measured in July 2026 on Sonnet 5 ($2/$10) and Opus 4.8
+($5/$25); re-baseline it from the session-cost ledgers of the first 5.5-family runs: $11-12 first run, $8-9 cached steady state,
 roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
 
 ---
@@ -733,11 +777,10 @@ roughly ₹700-1,000. Web search adds ~$0.30-0.60 on stages 8-9.
   tables (B10) exist so downstream stages consume summaries, not archives.
 - Never lets any stage assume a number from conversation memory: stage 10
   is the only assembler of valuation inputs, and it must anchor every value.
-- Never lets any exit PE enter from outside the Section 1B layer set (v3.3
+- Never lets any exit PE enter from outside the Section 1B layer set named at the top of this file.
   Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name).
-- Never conflates the Emerging Moat scan (stage 7) with FTTCP: FTTCP runs
-  inside stage 11's framework inputs as final synthesis, per project
-  taxonomy.
+- Never conflates the Emerging Moat scan (stage 7) with FTTCP: FTTCP is the
+  phase 2 deliberation (/fttcp), a separate analysis with a separate name.
 - Never treats low institutional ownership as a risk. UA qualifiers are
   checked in stage 11 exactly per Amendment 3 ordering:
   min(Raw × 1.25, Sector Cap).

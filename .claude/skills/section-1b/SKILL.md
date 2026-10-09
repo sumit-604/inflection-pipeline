@@ -7,7 +7,7 @@ description: Resolved Section 1B exit-multiple authority for the Inflection Alph
 
 This skill carries the Section 1B layer set as one resolved rulebook. The layers stack in this precedence order, and a later layer governs the items it names:
 
-v3.10 (Amendment 26) > v3.9 (Amendments 20 to 25) > v3.8 (Amendments 18, 19) > v3.7 (Amendment 17) > v3.6 (Amendments 11 to 16) > v3.5.1 (consolidated Amendment 9) > v3.3 Amendments file (Amendments 1 to 8, 4.1 to 4.4) > Master Prompt v3.7 Section 1B base text.
+v3.10 (Amendment 26) > v3.9 (Amendments 20 to 25) > v3.8 (Amendments 18, 19; its Amendment 20 text is superseded by the v3.9 Amendment 20, which renumbers the governance rule to 20.5) > v3.7 (Amendment 17) > v3.6 (Amendments 11 to 16) > v3.5.1 (consolidated Amendment 9) > v3.3 Amendments file (Amendments 1 to 8, 4.1 to 4.4) > Master Prompt v3.7 Section 1B base text.
 
 Every chunk states the resolved rule only. Where a later layer replaced an earlier rule, the chunk carries the later rule and nothing of the earlier text.
 
@@ -27,7 +27,7 @@ The source files stay in `frameworks/` and remain the legal text. If a chunk and
 
 ## Rule labels
 
-Rules B, C and E are labels from the operator's claude.ai instruction copy; they are not defined in `frameworks/`. This skill uses the operator's mapping: Rule B = Amendment 26.1 base-case revenue basis, Rule C = Amendment 26.2 margin bridge, Rule E = Amendment 26.4 relevant-period track record. Rules F to J are defined in Master Prompt v3.7.
+Rules B, C and E are labels from the operator's claude.ai instruction copy; they are defined in `claude-web/PROJECT_INSTRUCTIONS.md` §2.2 (the repo copy), not in `frameworks/`. This skill uses the operator's mapping: Rule B = Amendment 26.1 base-case revenue basis, Rule C = Amendment 26.2 margin bridge, Rule E = Amendment 26.4 relevant-period track record. Rules F to J are defined in Master Prompt v3.7.
 
 ## Chunk index
 
@@ -68,12 +68,25 @@ Load only the chunks the current step needs. Paths are relative to this skill fo
 - OR-2. Hurdle Ratio. Amendment 24 governs: the Hurdle Ratio is a feasibility check, not a verdict cap. Its PASS / CONDITIONAL / STOP band is computed and shown on the verdict card; it caps no verdict. Chunk 06.
 - OR-6. Amendment 17.0 default for ambiguous classification. Kept as written: "Ambiguous cases classify CONVERTER (conservative default)", with the ambiguity stated. Chunk 11.
 - OR-8. Entry divisor. Confirmed: entry = exit-consistent fair value ÷ (1 + tier hurdle)^N, with 1.25 for Tier A and 1.20 for Tier B. Chunk 06.
+- OR-12 (operator, 2026-10-03). Amendment 25 fast-growth trigger. FTTCP defines no ACCELERATING state, so "FTTCP Revenue Transition = ACCELERATING" reads as the forward Revenue Transition verdict FIRING. The Amendment 21 run-rate test (growth of 40% YoY or more) is unchanged. Chunk 08.
+- OR-13 (operator, 2026-10-03). Steel sector caps. Commodity steel 20x (confirms the SHYAMMETL and MANINDS rulings). Value-added stainless and specialty steel 25x (new cap). Chunk 05.
+- OR-14 (operator, ruled 2026-09-09, recorded 2026-10-04). Promoter CONCERN splits into INTEGRITY (ledger cannot offset; Small ceiling; AVOID possible on the promoter alone) and STRUCTURE (three of the four Entrepreneur Ledger heads evidenced from filed or counterparty sources = TRUSTWORTHY for sizing, each concern a named tripwire; fewer = Small ceiling). A CONCERN never forces AVOID by itself. Master Role 2 Section 7. Chunk 03.
+
+## Ruled (operator, 2026-10-04, October audit; audits/RULINGS_2026-10.md)
+
+- OR-20 (item 48, G5-FTTCP-09). Category-Break Override competitor-absence source: a second-tier substitute counts only at ranks 1-3 of the Downstream Source Discovery Protocol Part 3. FTTCP Category-Break section. Chunk 05.
+- OR-21 (item 49, G5-FTTCP-10). FTTCP B2 minimum-ROCE default stays 13.5% for micro and small caps (Gate E, 13-Aug-2026, reconfirmed). It is separate from the RRM base r of 14%; a computed RRM r governs. Chunk 15.
+- OR-22 (item 50, G5-FTTCP-11). The lower bound (1.5x) of the 1.5-2.5x ROCE-led re-rating estimate is the BEAR reading; the base carries the most evidenced point with the separating observation named (A26.3). Chunk 04.
+- OR-25 (item 55, G4-MST-22). Master cap-raising sentence reads "the only EXCEPTIONAL mechanism"; the routine quality uplift is separate. Wording only: OR-4 itself stays open. Chunk 05.
+- OR-27 (item 60, G5-1B33-04). Hurdle check: Bull EPS CAGR enters only on a Role 5 trailing-four-quarter grade of A or B; on C or D the Bull row is Base + 5% maximum (A26.4). v3.3 Amendment 2 note. Chunk 06.
+- OR-28 (item 61, G5-1B33-05). Lender Pillar 1 uses ROE in the same continuous formula, including the v3.6 Amendment 11 band above 33% (cap 30x); the 24x lender cap is superseded. v3.3 lender carve-out. Chunk 01.
+- OR-31 (item 104, G5-1B39-04). The no-shading rule for all Role 1 projections is v3.10 Amendment 26.3; v3.9 Amendment 25 is the size-as-margin-of-safety tool for fast-growth names only. Non-fast-growth names keep the price-based margin of safety. CLAUDE.md NEVER cites both. Chunk 08.
 
 ## Open rulings (carried as written until the operator rules)
 
 - OR-1. Dual-track entry zone. Master §1B RRM and §4A carry "the more conservative track sets the entry zone". Amendment 26.3 limits itself to Role 1 projections, so it does not reach this rule. Chunk 06.
 - OR-3. Pillar 3 evidence gates against Amendment 22. 3a and 3c pay on 📄 evidence only, and the 3b table keys on evidence mix. Amendment 22 says evidence symbols feed the probability and no longer unlock a premium tier by themselves. No rule converts probability into 3a/3b/3c turns. Chunks 03, 04.
-- OR-4. Raising the sector cap. The Master calls the Category-Break Override the only mechanism that raises a cap, and also carries a routine ×1.25 quality uplift on UA-qualified names; the v3.5 reconciliation note treats both as live. Section 1B v3.9 Appendix C R1 (a blended infra-plus-platform cap row) is also pending. Chunk 05.
+- OR-4. Raising the sector cap. The Master calls the Category-Break Override the only (since OR-25: the only EXCEPTIONAL) mechanism that raises a cap, and also carries a routine ×1.25 quality uplift on UA-qualified names; the v3.5 reconciliation note treats both as live. Section 1B v3.9 Appendix C R1 (a blended infra-plus-platform cap row) is also pending. Chunk 05.
 - OR-5. Pillar 2 with an INDETERMINATE or Mixed structural/growth determination. No Section 1B layer sets a multiplier for it. CLAUDE.md caps the run verdict at PROCEED WITH CAVEATS with the missing evidence named. Chunk 02.
 - OR-7. Macro sheet regime note. The August 2026 sheet tells destination PEs where to sit inside their bands and suggests a regime stress on BUY verdicts. Section 1B places H inside its range through Amendment 15 and FTTCP B8 only. The note is not carried into this skill. Chunk 15.
 

@@ -7,13 +7,24 @@ $ARGUMENTS
 
 ## Resolving the run folder and session setup (do this first)
 
+CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
+`git fetch origin main`, then
+`git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+If the diff is not empty, print
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+and STOP: "Checkout is behind or ahead of origin/main in framework files;
+pull or commit before running." If the fetch fails, STOP with the same line
+plus " (fetch failed)". This is a mechanical halt, not a quality halt.
+
 NAME RESOLUTION: the argument may be a full path, a bare ticker (any
 case), or a company-name fragment. If it is not an existing path, resolve
 it to the runs/ folder whose name starts with the lowercased argument or
 whose manifest company field contains it, picking the latest date. State
 the resolved folder before starting. If nothing matches, list the
-available runs and stop. If more than one matches, list the matches and
-ask.
+available runs and stop. If more than one matches at the same latest
+date, pick the one whose manifest ticker matches exactly; if still
+ambiguous, take the first alphabetically and say which you took and why.
+Do not ask.
 
 LESSONS PRE-READ: after the run folder resolves and before any stage runs,
 read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
@@ -34,12 +45,13 @@ Verifiers must never skip source verification because rendering is
 unavailable; if a PDF is genuinely unreadable, name it in the run log and
 in the confidence delta note.
 
-EXECUTION DISCIPLINE: invoke every stage as a foreground subagent call
+EXECUTION DISCIPLINE: as in .claude/commands/run-pipeline.md, including the PROVE COMPLETION checks (report file exists and is not empty, block file exists and parses, block came from this invocation) before any later stage reads the output.
 that blocks until the subagent returns. Never use background task
 launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
-table allows. After each stage returns, validate its YAML block and commit
-before proceeding. A stage exceeding 45 minutes is noted in the run log,
+table allows. After each stage returns, validate its YAML block, append the
+stage's row to the run's session-cost.md, and commit before proceeding. Run
+the run-pipeline close-out summary over session-cost.md before step 9. A stage exceeding 45 minutes is noted in the run log,
 not killed.
 
 PHASE 3 turns the phase-1 evidence and the phase-2 deliberation into the
@@ -144,9 +156,13 @@ from the reply only if the stage failed to write it.
    anchors). Pass Role 2's output (B14 report) PLUS all blocks. Its output
    ends with the B15-devil YAML block (per-dimension survives / weakened /
    destroyed, overall, top counters). Collect B15.
+   RULE H LOOP (operator ruling OR-15, 2026-10-04): if stage 15 returns the
+   Rule H steelman gate table instead of a devil's advocate, re-invoke stage
+   14 once with the named gaps, then stage 15 again. On a second miss, mark
+   Role 3 VOID in B15, flag it in the verdict, and continue.
 
 5. VERIFIER C — VALUATION ADHERENCE (phase 3 half). Invoke
-   verifier-c-framework with the framework docs and B10, B11 for its
+   verifier-c-framework with B10, B11, frameworks/Master_Project_Prompt_v3_6.md (Master v3.7) and the section-1b skill chunks cited in B11, for its
    deferred valuation-adherence audit, EXTENDED to also check Role 2's
    (B14) decision rules and position-sizing logic against the Master
    prompt. Give it only the artifact paths its section names, never other
@@ -219,7 +235,7 @@ answered from the blocks, write "the run did not establish this" rather than fil
        expected here; this is the audit trail, not a reading document.
 
 7. NOTION PAYLOAD. Write outputs/final/notion-payload.md containing the
-   full save content structured per Notion_Save_Instructions conventions:
+   full save content structured per the claude.ai notion-save conventions (Notion_Save_Instructions, held in the claude.ai project, not in this repo):
    page title, THEN the BUSINESS UNDERSTANDING NARRATIVE (the same section
    defined in step 6, positioned before the verdict card so the operator
    reads the understanding first), then run summary, verdict, the PRICE
@@ -316,7 +332,7 @@ answered from the blocks, write "the run did not establish this" rather than fil
    verdict, and the paths to the four final deliverables plus
    outputs/final/notion-payload.md.
 
-   FINALIZE GATE (team workflow v2 — hash by default). End the report with
+   FINALIZE GATE (team workflow v2 — hash by default). Close the report section with
    the commit hash and the output of `git log -1 --stat`, so Claude web
    verifies against the repo and the operator never has to ask. A finalize
    report that omits the hash or the `--stat` is INCOMPLETE. If this run made
@@ -350,9 +366,3 @@ Rules for you, the orchestrator session:
 - Never paste full PDFs into subagent task messages; pass file PATHS.
 - Verifier independence is absolute.
 - Nothing halts on company quality; only mechanical failures halt.
-- Hash by default: end any report that involves a commit with the hash and
-  `git log -1 --stat`; a report without them is incomplete.
-- Dependency alignment: when an edit changes a status, ruling, or gate,
-  align every dependent section in the SAME commit and list what you aligned.
-- Self-contained ferry: any block the operator carries to Claude web holds
-  every path, hash, and exact text it needs; no reference to earlier messages.

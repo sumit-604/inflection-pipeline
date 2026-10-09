@@ -7,3 +7,6 @@ run_type: full
 concalls_available: false
 sector_cap_row: "Pharma / CDMO"
 notes: "Collected from screener.in by collect_to_repo.py v3. Sector row auto-picked; verify."
+
+corpus_fixes:   # Job 1, maint/oct-2026-corpus-and-or14, operator approved 2026-10-04
+  - "2026-10-04 inputs/annual-report/Annual_Report.pdf is the FY2020-21 AR. Kept. Superseded by runs/venusrem-2026-09-02 (FY25 and FY26 ARs held)."

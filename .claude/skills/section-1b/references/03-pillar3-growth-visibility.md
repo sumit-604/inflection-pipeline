@@ -66,7 +66,7 @@ Credit for building is evidence of forward delivery. Role 2 fills every row; NOT
 | Delivery under constraint | Growth delivered through tight capital, adverse cycle, or regulatory shock | 📄 |
 
 - A ledger showing capital deployed into capacity that then filled, and contrarian decisions that worked, is evidence of growth visibility.
-- A promoter with a CONCERN or AVOID verdict still gets a ledger. The ledger cannot lift the position cap that verdict imposes.
+- A promoter with a CONCERN or AVOID verdict still gets a ledger. The ledger cannot lift a cap set by an AVOID or an INTEGRITY concern. For a STRUCTURE concern the ledger decides the cap (operator ruling OR-14, Master Role 2 Section 7).
 
 ## Worksheet lines
 

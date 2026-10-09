@@ -105,11 +105,13 @@ reads standalone.
     reference A3 F16. Sustained silence on a deteriorating metric is a
     confirmatory negative, not a neutral gap.
 11. PLAIN-LANGUAGE BRIEF (MANDATORY every run; the final narrative section).
-    Four labelled parts: (1) SUMMARY NARRATIVE, (2) SECTOR INTELLIGENCE,
-    (3) BUSINESS-MODEL INTELLIGENCE, (4) COMPETITION INTELLIGENCE.
+    Five labelled parts: (1) SUMMARY NARRATIVE, (2) SECTOR INTELLIGENCE,
+    (3) BUSINESS-MODEL INTELLIGENCE, (4) COMPETITION INTELLIGENCE, (5) FORWARD
+    MAP of the next ~10-11 months (each dated catalyst with a bull fork and a
+    bear fork, built only from the monitorables list; no new number).
     - STYLE. The SUMMARY NARRATIVE follows Narrative_Writing_Style_v1.md (STE
       plus Zinsser: short sentences, active voice, numbers first, no AI tells)
-      and the Dhruva-Research output style. Length is the house standard: 200 to
+      and the house style in anti-ai-writing-style.md. Length is the house standard: 200 to
       400 words (Narrative_Writing_Style_v1.md Section 6), not a line count.
     - PROVENANCE. Label every figure with the house five-tier evidence system,
       never a two-way prior-vs-this-document split:
@@ -135,7 +137,7 @@ The review is regenerated whole so it stays self-contained, but the loop edit is
 surgical: every change traces to a named A5 finding, and nothing unchallenged is
 reworked.
 
-## VERDICT SET (the process verdict; canonical per CLAUDE.md and Master v3.6)
+## VERDICT SET (the process verdict; canonical per CLAUDE.md and Master v3.7)
 PROCEED / PROCEED WITH CAVEATS / PROCEED WITH FLAGS / REWORK / INSUFFICIENT
 EVIDENCE. No STOP verdict. Company quality never halts; only a mechanical
 failure does. This is the PROCESS verdict on the review's soundness. It is NOT
@@ -150,7 +152,7 @@ work, the FTTCP verdict, and Role 1 valuation. A document review that finds a
 valuation-relevant fact FLAGS it for the downstream chain and stops there.
 
 ## CHANGELOG
-- v1.1 — Step 10 provenance switched from a two-way prior-vs-document label to
+- v1.1 — Step 11 provenance switched from a two-way prior-vs-document label to
   the house five-tier system (FILED / AGENCY / MGMT / SECONDARY / INFERENCE)
   with presentation defaults; the brief now cites Narrative_Writing_Style_v1.md
   and the Dhruva-Research output style and adopts the 200-400 word house length.

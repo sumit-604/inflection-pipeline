@@ -434,203 +434,671 @@ date,time,group,market cap,category,sector,industry,% change,volume
 2026-09-15,15:29,TATACHEM,15602.5482,midcap,chemicals,chemicals,19.9935,1823658
 2026-09-15,15:29,TATAINVEST,32932.4782,largecap,financials,finance & investments,10.3626,24516580
 2026-09-15,15:29,WCIL,892.2101,smallcap,transportation,shipping,4.5023,455441
-2026-09-16,15:29,BAFNAPH,726.9592,smallcap,healthcare,pharmaceuticals - indian - formulations,0.5532,6535
-2026-09-16,15:29,EQUIPPP,241.2428,smallcap,i.t,computers - software - medium / small,4.2308,48431
-2026-09-16,15:29,FOSECOIND,4690.8131,smallcap,chemicals,chemicals,10.0104,178685
-2026-09-16,15:29,HMAAGRO,1172.302,smallcap,fmcg,food - processing - indian,-1.5805,11554697
-2026-09-16,15:29,IBULLSLTD,6392.2676,midcap,miscellaneous,diversified - medium / small,4.9198,62047779
-2026-09-16,15:29,INFOMEDIA,26.0006,smallcap,miscellaneous,printing & stationery,6.1776,9690
-2026-09-16,15:29,JARO,1046.5968,smallcap,services,miscellaneous,-0.4256,115000
-2026-09-16,15:29,JKPAPER,7290.8278,midcap,building materials,paper,3.7926,708260
-2026-09-16,15:29,KIRLFER,7669.671,midcap,metals & mining,steel - large,1.3015,140176
-2026-09-16,15:29,MITCON,139.3473,smallcap,miscellaneous,miscellaneous,0.325,3757
-2026-09-16,15:29,NPST,3420.5708,smallcap,i.t,computers - software - medium / small,11.9,3028115
-2026-09-16,15:29,ORCHASP,54.7352,smallcap,i.t,computers - software - medium / small,1.2658,529798
-2026-09-16,15:29,PARSVNATH,76.1567,smallcap,realty,construction,1.7143,5743240
-2026-09-16,15:29,PVRINOX,11990.2154,midcap,media,entertainment / electronic media software,2.7518,456245
-2026-09-16,15:29,TATACOMM,49826.6281,largecap,telecom-service,telecommunications - service provider,2.923,317034
-2026-09-16,15:29,UNITECH,1101.4627,smallcap,realty,construction,5.9382,14237019
-2026-09-16,15:29,VMSTMT,235.5497,smallcap,metals & mining,steel - medium / small,6.5529,298770
-2026-09-17,15:29,ABSLAMC,30567.2479,largecap,financials,finance & investments,2.9951,206442
-2026-09-17,15:29,ACE,13690.995,midcap,industrials,engineering,4.8621,685925
-2026-09-17,15:29,ADANIPORTS,397156.4693,largecap,transportation,miscellaneous,0.8412,791353
-2026-09-17,15:29,ALGOQUANT,1831.3406,smallcap,financials,finance & investments,7.6439,2084788
-2026-09-17,15:29,ASHOKAMET,36.2442,smallcap,metals & mining,trading,0.6897,123392
-2026-09-17,15:29,ASTAR,897.5013,smallcap,consumer discretionary,diamond cutting / jewellery,19.9929,1394
-2026-09-17,15:29,ASTEC,1475.0113,smallcap,chemicals,pesticides / agrochemicals - indian,14.0796,994540
-2026-09-17,15:29,AVL,8014.3074,midcap,consumer discretionary,trading,2.0384,68801
-2026-09-17,15:29,AXISCADES,7164.3451,midcap,aerospace & defence,computers - software - medium / small,9.9614,443978
-2026-09-17,15:29,BELLACASA,335.3301,smallcap,consumer discretionary,textiles - products,1.9043,12720
-2026-09-17,15:29,BLISSGVS,7217.1259,midcap,healthcare,pharmaceuticals - indian - formulations,1.4916,198123
-2026-09-17,15:29,CASTROLIND,18678.5871,midcap,chemicals,chemicals,1.5251,4924285
-2026-09-17,15:29,CONFIPET,2876.543,smallcap,miscellaneous,miscellaneous,0.2079,1445669
-2026-09-17,15:29,DICIND,560.193,smallcap,chemicals,chemicals,2.974,11357
-2026-09-17,15:29,DYNAMATECH,8202.0257,midcap,aerospace & defence,engineering,-2.1363,22275
-2026-09-17,15:29,FILATEX,3873.0771,smallcap,textiles,textiles - manmade,3.5886,7738959
-2026-09-17,15:29,FINCABLES,20839.5151,largecap,industrials,cables - power,2.4365,1123026
-2026-09-17,15:29,GCSL,1436.8771,smallcap,financials,finance & investments,-0.0673,611511
-2026-09-17,15:29,GESHIP,19867.4781,midcap,transportation,shipping,2.4073,831737
-2026-09-17,15:29,GKSL,1358.7057,smallcap,healthcare,healthcare,3.1858,214009
-2026-09-17,15:29,GMBREW,2085.1244,smallcap,fmcg,breweries & distilleries,2.6735,45315
-2026-09-17,15:29,GOCLCORP,2123.6855,smallcap,miscellaneous,diversified - medium / small,6.4776,1122429
-2026-09-17,15:29,GRAUWEIL,3335.295,smallcap,chemicals,chemicals,7.5177,1086236
-2026-09-17,15:29,HBLENGINE,19532.5419,midcap,auto,auto ancillaries,7.3937,8034626
-2026-09-17,15:29,INDIQUBE,4243.1326,smallcap,co-working,miscellaneous,1.1491,77034
-2026-09-17,15:29,INDOMIM,46782.8386,largecap,industrials,engineering,4.9783,2152019
-2026-09-17,15:29,IRISDOREME,1107.3485,smallcap,consumer discretionary,textiles - products,7.5112,1031078
-2026-09-17,15:29,IVP,217.2852,smallcap,chemicals,chemicals,2.0388,18661
-2026-09-17,15:29,IWP,220.7059,smallcap,fmcg,miscellaneous,0.6087,8869
-2026-09-17,15:29,KAMDHENU,1094.5517,smallcap,metals & mining,steel - medium / small,1.7255,738033
-2026-09-17,15:29,KIRANVYPAR,545.9298,smallcap,financials,finance & investments,3.4534,12978
-2026-09-17,15:29,KRYSTAL,916.0012,smallcap,miscellaneous,miscellaneous,2.9439,185098
-2026-09-17,15:29,LAURUSLABS,102944.558,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,2.2356,1645108
-2026-09-17,15:29,LYKALABS,289.6194,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,1.9973,5657
-2026-09-17,15:29,MAHSEAMLES,9285.4782,midcap,metals & mining,steel - medium / small,3.9325,436705
-2026-09-17,15:29,MANAKCOAT,1343.1625,smallcap,metals & mining,steel - medium / small,2.9613,1267746
-2026-09-17,15:29,MAXESTATES,9353.6788,midcap,realty,construction,0.9614,113120
-2026-09-17,15:29,MERCURYEV,742.4147,smallcap,auto,automobiles - passenger cars,4.5036,1438388
-2026-09-17,15:29,MGEL,514.1067,smallcap,services,trading,-0.5128,2126371
-2026-09-17,15:29,MOREPENLAB,6286.6728,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,5.0815,27513682
-2026-09-17,15:29,MOTISONS,1890.536,smallcap,consumer discretionary,diamond cutting / jewellery,7.9422,236263034
-2026-09-17,15:29,NEOGEN,6304.3566,midcap,chemicals,chemicals,4.048,605450
-2026-09-17,15:29,NITTAGELA,1595.1176,smallcap,chemicals,chemicals,0.5236,9697
-2026-09-17,15:29,NORTHARC,4782.1102,smallcap,financials,finance & investments,4.951,2358970
-2026-09-17,15:29,OBCL,120.1297,smallcap,transportation,miscellaneous,-2.0358,27171
-2026-09-17,15:29,ONWARDTEC,619.6869,smallcap,i.t,computers - software - medium / small,4.72,72827
-2026-09-17,15:29,PATANJALI,39715.9637,largecap,fmcg,solvent extraction,-2.8904,3350516
-2026-09-17,15:29,PDMJEPAPER,930.0353,smallcap,building materials,paper,4.5534,664472
-2026-09-17,15:29,PRIMESECU,963.0567,smallcap,financials,finance & investments,3.63,94994
-2026-09-17,15:29,PRSMJOHNSN,5765.4463,midcap,building materials,cement - north india,-0.9604,175995
-2026-09-17,15:29,QMSMEDI,317.6949,smallcap,healthcare,trading,2.8182,48218
-2026-09-17,15:29,RPGLIFE,4530.2016,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,3.1178,18681
-2026-09-17,15:29,SANSTAR,2259.2279,smallcap,fmcg,miscellaneous,2.42,348381
-2026-09-17,15:29,SEYAIND,33.532,smallcap,chemicals,chemicals,1.981,12515
-2026-09-17,15:29,SHARDAMOTR,5342.0741,midcap,auto,auto ancillaries,1.9128,63598
-2026-09-17,15:29,SIKKO,256.8384,smallcap,chemicals,pesticides / agrochemicals - indian,1.8707,551450
-2026-09-17,15:29,SVLL,924.3234,smallcap,transportation,miscellaneous,1.7595,1207
-2026-09-17,15:29,SYRMA,29140.5429,largecap,consumer discretionary,electronics - components,7.0474,9182371
-2026-09-17,15:29,TALBROAUTO,2585.1749,smallcap,auto,auto ancillaries,3.916,360775
-2026-09-17,15:29,TATAINVEST,34503.4621,largecap,financials,finance & investments,5.4769,3732302
-2026-09-17,15:29,TEGA,12900.177,midcap,industrials,engineering,11.8164,3909542
-2026-09-17,15:29,THEJO,2339.5843,smallcap,industrials,engineering,1.2333,10121
-2026-09-17,15:29,TREL,664.115,smallcap,transportation,miscellaneous,10.1369,726901
-2026-09-17,15:29,TTL,166.0939,smallcap,textiles,textiles - products,9.9533,626276
-2026-09-17,15:29,UNIMECH,7708.8863,midcap,aerospace & defence,engineering,3.6152,261719
-2026-09-17,15:29,VELJAN,856.17,smallcap,industrials,engineering,3.9788,2205
-2026-09-17,15:29,VETO,244.5567,smallcap,industrials,electric equipment,3.5876,71974
-2026-09-17,15:29,VISHNU,4671.0076,smallcap,chemicals,chemicals,2.1905,87175
-2026-09-17,15:29,YATHARTH,9464.8885,midcap,healthcare,healthcare,9.1724,3679332
-2026-09-18,15:29,ACMESOLAR,29073.7414,largecap,realty,engineering - turnkey services,5.823,12038412
-2026-09-18,15:29,ACUTAAS,27141.0957,largecap,healthcare,pharmaceuticals - indian - bulk drugs,3.7767,521496
-2026-09-18,15:29,AEGISLOG,47518.38,largecap,services,trading,4.5502,1333662
-2026-09-18,15:29,AIRAN,208.7834,smallcap,i.t,computers - software - medium / small,-0.0599,56051
-2026-09-18,15:29,ALIVUS,17033.3504,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,3.0984,304330
-2026-09-18,15:29,ALKALI,74.3832,smallcap,chemicals,chemicals,20,133798
-2026-09-18,15:29,ANANDRATHI,36651.9495,largecap,financials,finance & investments,0.9966,880377
-2026-09-18,15:29,ANSALAPI,55.4065,smallcap,realty,construction,1.9886,18299
-2026-09-18,15:29,APARINDS,74536.9471,largecap,industrials,electric equipment,5.9379,271798
-2026-09-18,15:29,APLLTD,16236.114,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,2.391,634938
-2026-09-18,15:29,ARFIN,1482.7332,smallcap,metals & mining,aluminium and aluminium products,1.98,2628465
-2026-09-18,15:29,ARTEMISMED,5237.5622,midcap,healthcare,healthcare,2.3122,335686
-2026-09-18,15:29,AUROPHARMA,97238.8643,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,2.6036,1209478
-2026-09-18,15:29,AVALON,14899.0214,midcap,consumer discretionary,electronics - components,13.7982,4310981
-2026-09-18,15:29,AYE,4466.3016,smallcap,financials,finance & investments,2.6191,854592
-2026-09-18,15:29,BBOX,13611.2031,midcap,i.t,computers - software - medium / small,4.5342,640804
-2026-09-18,15:29,BCG,1990.2626,smallcap,i.t,computers - software - medium / small,4.0568,9727064
-2026-09-18,15:29,BEML,16768.5744,midcap,aerospace & defence,engineering,6.0448,1380251
-2026-09-18,15:29,BHEL,149450.1592,largecap,industrials,electric equipment,2.493,7669374
-2026-09-18,15:29,BI,241.3386,smallcap,industrials,packaging,4.9951,75195
-2026-09-18,15:29,BILVYAPAR,13.017,smallcap,miscellaneous,miscellaneous,3.3735,14009
-2026-09-18,15:29,CENTRALBK,27516.2599,largecap,bank,banks - public sector,4.375,56472458
-2026-09-18,15:29,CLEAN,8801.7869,midcap,chemicals,chemicals,2.8678,891352
-2026-09-18,15:29,COMPUSOFT,102.388,smallcap,i.t,computers - education,5.3323,299192
-2026-09-18,15:29,CONTROLPR,965.2507,smallcap,i.t,computers - hardware,-0.4308,28633
-2026-09-18,15:29,CORDELIA,794.0233,smallcap,i.t,travel agencies,4.9872,2435983
-2026-09-18,15:29,CORONA,13269.2927,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,1.4841,12123
-2026-09-18,15:29,CSM,529.658,smallcap,i.t,computers - software - medium / small,7.0246,9116969
-2026-09-18,15:29,CUB,22968.4297,largecap,bank,banks - private sector,1.7125,2196738
-2026-09-18,15:29,CUBEXTUB,116.8858,smallcap,metals & mining,mining / minerals / metals,4.5204,247242
-2026-09-18,15:29,CYBERTECH,427.6225,smallcap,i.t,computers - software - medium / small,1.133,32580
-2026-09-18,15:29,CYIENTDLM,7092.9039,midcap,aerospace & defence,electronics - components,5.2826,469640
-2026-09-18,15:29,DHARMAJ,916.2447,smallcap,chemicals,pesticides / agrochemicals - indian,1.8628,40591
-2026-09-18,15:29,EBGNG,7543.572,midcap,services,trading,6.2571,1067215
-2026-09-18,15:29,EDELWEISS,12147.7872,midcap,financials,finance & investments,6.1633,9148549
-2026-09-18,15:29,ELGIRUBCO,304.354,smallcap,fmcg,miscellaneous,1.2991,74237
-2026-09-18,15:29,EMCURE,36225.1145,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,4.922,1744754
-2026-09-18,15:29,FCL,6170.6903,midcap,chemicals,chemicals,7.6052,26160940
-2026-09-18,15:29,GANDHAR,2636.8745,smallcap,energy,refineries,2.5241,670870
-2026-09-18,15:29,GANESHBE,901.3076,smallcap,miscellaneous,miscellaneous,1.3259,164083
-2026-09-18,15:29,GNA,2303.4521,smallcap,auto,auto ancillaries,4.1003,2062341
-2026-09-18,15:29,GPTHEALTH,1342.499,smallcap,healthcare,healthcare,1.5891,319398
-2026-09-18,15:29,GPTINFRA,1434.9964,smallcap,realty,construction,4.7552,3008060
-2026-09-18,15:29,HDFCLIFE,121006.8564,largecap,financials,finance & investments,-1.0862,5599030
-2026-09-18,15:29,HEXATRADEX,865.1873,smallcap,financials,finance & investments,1.0727,2261
-2026-09-18,15:29,HLEGLAS,2886.8862,smallcap,industrials,engineering,7.5183,1020903
-2026-09-18,15:29,HOMEFIRST,12263.9442,midcap,financials,finance - housing,5.7956,873253
-2026-09-18,15:29,IIFLCAPS,10561.7168,midcap,financials,finance & investments,2.4188,1665584
-2026-09-18,15:29,INDGN,14258.471,midcap,healthcare,miscellaneous,1.4111,469267
-2026-09-18,15:29,INNOVACAP,6578.0056,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,2.6359,32076
-2026-09-18,15:29,IONEXCHANG,6223.7967,midcap,realty,engineering - turnkey services,4.23,491666
-2026-09-18,15:29,ISFT,147.2292,smallcap,i.t,miscellaneous,5.4288,414668
-2026-09-18,15:29,ISHANCH,134.9656,smallcap,chemicals,dyes and pigments,3.2571,41286
-2026-09-18,15:29,JASH,3248.1572,smallcap,industrials,engineering,1.3911,166601
-2026-09-18,15:29,JSWINFRA,76109.5012,largecap,transportation,miscellaneous,6.6126,25470641
-2026-09-18,15:29,JUNIPER,4793.5914,smallcap,services,hotels,4.1264,274539
-2026-09-18,15:29,KABRAEXTRU,2212.9062,smallcap,industrials,engineering,7.7203,233883
-2026-09-18,15:29,KARMAENG,46.1755,smallcap,power & utilities,power generation and supply,3.4077,18883
-2026-09-18,15:29,KHANDSE,26.8162,smallcap,financials,finance & investments,2.901,894
-2026-09-18,15:29,KOVAI,6687.9105,midcap,healthcare,healthcare,1.8652,3229
-2026-09-18,15:29,KPIL,23896.2024,largecap,realty,transmisson line towers / equipment,3.3016,224766
-2026-09-18,15:29,KREBSBIO,119.6181,smallcap,healthcare,pharmaceuticals - indian - bulk drugs,3.2985,54497
-2026-09-18,15:29,LENSKART,118224.3077,largecap,fmcg,personal care - indian,4.0076,25690503
-2026-09-18,15:29,MACPOWER,1922.3994,smallcap,industrials,engineering,9.5181,237776
-2026-09-18,15:29,MADHAV,30.8672,smallcap,consumer discretionary,miscellaneous,2.7826,25672
-2026-09-18,15:29,MANBA,672.0023,smallcap,financials,finance & investments,0,78068
-2026-09-18,15:29,MANGALAM,50.6029,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,7.163,167646
-2026-09-18,15:29,MANINDS,6173.2877,midcap,metals & mining,steel - medium / small,3.469,1165509
-2026-09-18,15:29,MANUGRAPH,46.2005,smallcap,industrials,engineering,19.0915,591694
-2026-09-18,15:29,MAZDA,527.5586,smallcap,industrials,engineering,1.0628,166595
-2026-09-18,15:29,MEDANTA,38287.3418,largecap,healthcare,healthcare,5.2949,703445
-2026-09-18,15:29,MENONBE,1709.5002,smallcap,auto,auto ancillaries,3.8682,88392
-2026-09-18,15:29,METROPOLIS,12155.8733,midcap,healthcare,healthcare,1.9018,223299
-2026-09-18,15:29,MOBIKWIK,1564.2288,smallcap,i.t,miscellaneous,6.9674,5135376
-2026-09-18,15:29,NAZARA,13947.1544,midcap,i.t,telecommunications - service provider,1.8756,3038750
-2026-09-18,15:29,NESCO,7620.2447,midcap,realty,construction,2.7554,41377
-2026-09-18,15:29,NRBBEARING,4576.6852,smallcap,industrials,bearings,11.2876,9738086
-2026-09-18,15:29,OILCOUNTUB,334.0847,smallcap,metals & mining,steel - medium / small,1.9919,44331
-2026-09-18,15:29,ONEPOINT,1555.0081,smallcap,i.t,computers - software - medium / small,0.8455,579627
-2026-09-18,15:29,ONESOURCE,18114.0366,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,0.943,335793
-2026-09-18,15:29,ORIENTCER,551.6564,smallcap,building materials,refractories / intermediates,0.8892,53405
-2026-09-18,15:29,PCBL,12960.6582,midcap,chemicals,chemicals,2.2162,1255857
-2026-09-18,15:29,PEARLPOLY,28.1648,smallcap,plastic products,trading,2.1518,9783
-2026-09-18,15:29,POWERICA,7045.143,midcap,industrials,electric equipment,3.5207,141360
-2026-09-18,15:29,PRUDENT,13747.8459,midcap,financials,finance & investments,5.4635,57792
-2026-09-18,15:29,PWL,37073.3314,largecap,services,miscellaneous,6.8858,20005965
-2026-09-18,15:29,QPOWER,11537.622,midcap,industrials,electric equipment,3.1078,298373
-2026-09-18,15:29,RAMBHAJO,1219.3248,smallcap,consumer discretionary,diamond cutting / jewellery,9.2723,1439325
-2026-09-18,15:29,RATNAMANI,18943.0639,midcap,industrials,steel - medium / small,5.7907,64084
-2026-09-18,15:29,RBLBANK,62584.9729,largecap,bank,banks - private sector,2.9073,3792806
-2026-09-18,15:29,REMSONSIND,331.5577,smallcap,auto,auto ancillaries,3.7871,290021
-2026-09-18,15:29,RHL,300.4259,smallcap,services,hotels,3.3441,8021
-2026-09-18,15:29,SAMBHV,3803.9135,smallcap,metals & mining,steel - medium / small,14.3156,28285913
-2026-09-18,15:29,SANSERA,25070.6334,largecap,auto,auto ancillaries,6.0336,287946
-2026-09-18,15:29,SCHAEFFLER,62380.7947,largecap,industrials,bearings,5.6778,171857
-2026-09-18,15:29,SHILPAMED,18743.5833,midcap,healthcare,pharmaceuticals - indian - formulations,6.5477,1766385
-2026-09-18,15:29,SHIVAMAUTO,212.8908,smallcap,auto,auto ancillaries,19.9506,291980
-2026-09-18,15:29,SHREEJISPG,11257.6514,midcap,transportation,shipping,2.4674,854162
-2026-09-18,15:29,SHYAMMETL,30062.5006,largecap,metals & mining,steel - large,2.1356,1196160
-2026-09-18,15:29,SKFINDUS,14536.2443,midcap,industrials,bearings,1.493,1293995
-2026-09-18,15:29,SMLMAH,9002.0874,midcap,auto,automobiles - lcvs / hcvs,1.1575,53178
-2026-09-18,15:29,SRHHYPOLTD,888.4511,smallcap,chemicals,chemicals,1.0626,26767
-2026-09-18,15:29,SSWL,5473.8083,midcap,auto,auto ancillaries,6.9347,1835082
-2026-09-18,15:29,STEL,1166.197,smallcap,financials,finance & investments,3.529,12670
-2026-09-18,15:29,SUPERSPIN,39.545,smallcap,miscellaneous,miscellaneous,0.9736,17270
-2026-09-18,15:29,TECHNOE,11452.0191,midcap,realty,engineering - turnkey services,4.6461,286285
-2026-09-18,15:29,TIL,2060.6007,smallcap,industrials,engineering,3.0287,145867
-2026-09-18,15:29,TIMEX,6169.0545,midcap,consumer discretionary,miscellaneous,16.8712,6651306
-2026-09-18,15:29,TSFINV,9904.7216,midcap,financials,finance & investments,2.1751,153537
-2026-09-18,15:29,VIJAYA,15497.2762,midcap,healthcare,healthcare,3.5057,278137
-2026-09-18,15:29,VITAL,132.1861,smallcap,chemicals,chemicals,0.3805,4769
-2026-09-18,15:29,VRAJ,408.9515,smallcap,metals & mining,steel - sponge iron,3.0244,20078
-2026-09-18,15:29,WELENT,10778.2834,midcap,realty,construction,5.7339,1675361
-2026-09-18,15:29,WELSPUNLIV,20052.3721,largecap,textiles,textiles - products,1.1355,3513969
+2026-09-21,15:29,AARTIDRUGS,3941.0386,smallcap,healthcare,pharmaceuticals - indian - bulk drugs,0.8569,114136
+2026-09-21,15:29,AGI,4820.2784,smallcap,industrials,packaging,9.9725,1015912
+2026-09-21,15:29,AKUMS,12334.9668,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,4.8169,825339
+2026-09-21,15:29,ARVEE,191.8141,smallcap,chemicals,chemicals,19.9988,60933
+2026-09-21,15:29,ASHIANA,3566.1193,smallcap,realty,construction,14.3199,1011498
+2026-09-21,15:29,ASKAUTOLTD,12937.4831,midcap,auto,auto ancillaries,-0.1752,515955
+2026-09-21,15:29,BAJAJHCARE,1112.7193,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,1.5278,154070
+2026-09-21,15:29,BANDHANBNK,28193.865,largecap,bank,banks - private sector,2.2857,15271152
+2026-09-21,15:29,BGRENERGY,1844.5938,smallcap,realty,engineering - turnkey services,4.9996,89055
+2026-09-21,15:29,BIMETAL,244.8765,smallcap,industrials,bearings,3.4677,2287
+2026-09-21,15:29,BOROLTD,3099.8309,smallcap,building materials,glass & glass products,0.7446,101036
+2026-09-21,15:29,BSL,121.7152,smallcap,textiles,textiles - processing,6.6717,18835
+2026-09-21,15:29,CAPLIPOINT,20892.5748,largecap,healthcare,pharmaceuticals - indian - formulations,0.2911,91962
+2026-09-21,15:29,CARBORUNIV,21419.0894,largecap,industrials,abrasives and grinding wheels,4.847,3767733
+2026-09-21,15:29,CCHHL,212.6676,smallcap,services,hotels,0.0769,24687
+2026-09-21,15:29,CGPOWER,140488.149,largecap,industrials,electric equipment,2.0179,2999705
+2026-09-21,15:29,CMRGREEN,5079.2396,midcap,miscellaneous,miscellaneous,-0.8496,489891
+2026-09-21,15:29,CONCORDBIO,15633.8455,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,5.6879,561323
+2026-09-21,15:29,CROWN,125.7283,smallcap,miscellaneous,miscellaneous,11.8916,283904
+2026-09-21,15:29,DEEDEV,5031.6374,midcap,metals & mining,steel - medium / small,1.8467,284817
+2026-09-21,15:29,DISAQ,1754.0621,smallcap,industrials,engineering,0.5969,106
+2026-09-21,15:29,DRREDDY,98909.0823,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,1.1224,1718834
+2026-09-21,15:29,EMMVEE,22708.9171,largecap,industrials,electric equipment,3.8415,11448479
+2026-09-21,15:29,ENGINERSIN,14969.9986,midcap,realty,engineering - turnkey services,7.0959,10639611
+2026-09-21,15:29,ETERNAL,315421.7109,largecap,i.t,miscellaneous,2.7689,20274532
+2026-09-21,15:29,GANESHCP,683.787,smallcap,fmcg,food - processing - indian,1.3002,122957
+2026-09-21,15:29,GLOBE,93.2367,smallcap,textiles,textiles - products,8.6957,7221088
+2026-09-21,15:29,GOODLUCK,5157.7856,midcap,metals & mining,steel - medium / small,1.2856,603046
+2026-09-21,15:29,GUFICBIO,4372.3173,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,-0.0803,56909
+2026-09-21,15:29,GVKPIL,380.5897,smallcap,realty,engineering - turnkey services,1.6597,475114
+2026-09-21,15:29,HARSHA,4010.0376,smallcap,industrials,engineering,6.2323,776655
+2026-09-21,15:29,HDFCBANK,1125837.0397,largecap,bank,banks - private sector,1.1628,35482683
+2026-09-21,15:29,HINDCON,121.8849,smallcap,chemicals,chemicals,2.646,60207
+2026-09-21,15:29,HISARMETAL,83.4462,smallcap,metals & mining,steel - medium / small,2.9056,1020
+2026-09-21,15:29,ICICIAMC,158493.8796,largecap,financials,finance & investments,0.0343,424027
+2026-09-21,15:29,IGPL,1694.1787,smallcap,chemicals,chemicals,4.835,250011
+2026-09-21,15:29,INDHOTEL,104301.9964,largecap,services,hotels,1.6718,2983659
+2026-09-21,15:29,ISGEC,5781.2577,midcap,realty,engineering - turnkey services,8.4706,592841
+2026-09-21,15:29,IVP,222.056,smallcap,chemicals,chemicals,4.0086,30263
+2026-09-21,15:29,JAYKAY,2178.1392,smallcap,aerospace & defence,engineering,12.1905,4432715
+2026-09-21,15:29,JYOTICNC,23872.6024,largecap,industrials,engineering,6.1113,5723374
+2026-09-21,15:29,KILITCH,669.3391,smallcap,healthcare,pharmaceuticals - indian - formulations,4.9987,46481
+2026-09-21,15:29,KPL,3601.7858,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,10.7657,171018
+2026-09-21,15:29,LICHSGFIN,30151.7033,largecap,financials,finance - housing,3.6213,3749732
+2026-09-21,15:29,LUMAXTECH,14331.5206,midcap,auto,auto ancillaries,-1.6122,74594
+2026-09-21,15:29,MAXHEALTH,102122.4708,largecap,healthcare,healthcare,1.6487,965254
+2026-09-21,15:29,MEESHO,98828.1233,largecap,transportation,miscellaneous,2.1964,10943685
+2026-09-21,15:29,MFML,19.998,smallcap,textiles,textiles - products,-0.0531,5880
+2026-09-21,15:29,MGEL,515.425,smallcap,services,trading,0.8951,287061
+2026-09-21,15:29,MWL,126.2873,smallcap,metals & mining,steel - medium / small,0.0941,2523325
+2026-09-21,15:29,NECCLTD,198.2365,smallcap,transportation,miscellaneous,2.4249,44946
+2026-09-21,15:29,OAL,1730.2986,smallcap,chemicals,chemicals,6.749,72796
+2026-09-21,15:29,ONELIFECAP,127.0987,smallcap,financials,finance & investments,2.7043,167423
+2026-09-21,15:29,ORCHPHARMA,5019.6698,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,9.3059,573549
+2026-09-21,15:29,ORIENTHOT,2562.0052,smallcap,services,hotels,0.4252,1833650
+2026-09-21,15:29,PATINTLOG,89.86,smallcap,transportation,miscellaneous,4.5714,355563
+2026-09-21,15:29,PNB,134777.7457,largecap,bank,banks - public sector,0.6225,8624424
+2026-09-21,15:29,PODDARMENT,301.4832,smallcap,chemicals,dyes and pigments,1.7596,4695
+2026-09-21,15:29,PREMEXPLN,3592.5919,smallcap,aerospace & defence,chemicals,1.0326,165042
+2026-09-21,15:29,RAJOOENG,946.8004,smallcap,industrials,engineering,4.2272,578023
+2026-09-21,15:29,RATNAVEER,2137.4434,smallcap,metals & mining,steel - medium / small,11.7962,20650744
+2026-09-21,15:29,RML,3660.5388,smallcap,auto,auto ancillaries,1.5931,59658
+2026-09-21,15:29,RSL,1514.3295,smallcap,metals & mining,steel - medium / small,9.1993,1078964
+2026-09-21,15:29,RSWM,1038.1211,smallcap,textiles,textiles - cotton/blended,4.9909,334017
+2026-09-21,15:29,SAILIFE,33976.3769,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,0.4686,368349
+2026-09-21,15:29,SBCL,6314.5724,midcap,metals & mining,mining / minerals / metals,4.3696,526873
+2026-09-21,15:29,SHADOWFAX,14717.8036,midcap,transportation,couriers,8.4277,13465306
+2026-09-21,15:29,SINCLAIR,419.9732,smallcap,services,hotels,2.1726,45303
+2026-09-21,15:29,SOMANYCERA,2348.3933,smallcap,building materials,ceramics - tiles / sanitaryware,2.9427,391433
+2026-09-21,15:29,SUKHJITS,505.9966,smallcap,fmcg,miscellaneous,0.8398,34664
+2026-09-21,15:29,SUNDROP,2500.8092,smallcap,fmcg,food - processing - indian,6.7154,220799
+2026-09-21,15:29,SUPRIYA,7294.1562,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,5.6714,538805
+2026-09-21,15:29,TAINWALCHM,199.5533,smallcap,services,trading,3.0172,30823
+2026-09-21,15:29,THACKER,112.0351,smallcap,miscellaneous,diversified - medium / small,4.6505,19
+2026-09-21,15:29,USHAMART,15456.5147,midcap,metals & mining,steel - medium / small,5.2642,3336342
+2026-09-21,15:29,UTIAMC,11503.0178,midcap,financials,finance & investments,3.3296,129186
+2026-09-21,15:29,VARROC,13163.3123,midcap,auto,auto ancillaries,1.2768,233688
+2026-09-21,15:29,VINDHYATEL,3152.3296,smallcap,realty,construction,7.2632,171023
+2026-09-21,15:29,WELCORP,70170.9495,largecap,industrials,steel - large,3.857,2544698
+2026-09-21,15:29,WOCKPHARMA,33897.4914,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,4.8512,1771282
+2026-09-21,15:29,YESBANK,71310.7238,largecap,bank,banks - private sector,1.9806,52755958
+2026-09-21,15:29,ZOTA,3963.6996,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,12.5208,401249
+2026-09-22,15:29,AARTIPHARM,7675.5928,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,4.4066,1401079
+2026-09-22,15:29,AGSTRA,25.815,smallcap,miscellaneous,miscellaneous,4.4776,257095
+2026-09-22,15:29,AVTNPL,1371.1651,smallcap,fmcg,solvent extraction,9.1293,4546154
+2026-09-22,15:29,BEPL,3187.8769,smallcap,energy,petrochemicals,1.6628,1665214
+2026-09-22,15:29,BLSE,2882.422,smallcap,i.t,computers - software - medium / small,3.42,1257827
+2026-09-22,15:29,BLUESTONE,12884.8086,midcap,consumer discretionary,diamond cutting / jewellery,10.0479,3686322
+2026-09-22,15:29,BUILDPRO,3103.9137,smallcap,services,trading,2.4063,110920
+2026-09-22,15:29,CHEMPLASTS,2864.4712,smallcap,chemicals,chemicals,9.6594,7329815
+2026-09-22,15:29,CINEVISTA,81.2152,smallcap,realty,construction,2.6167,150406
+2026-09-22,15:29,COALINDIA,255568.3437,largecap,metals & mining,mining / minerals / metals,3.2071,16676174
+2026-09-22,15:29,DEVX,332.4421,smallcap,co-working,miscellaneous,-0.1993,87156
+2026-09-22,15:29,DOLPHIN,2736.3133,smallcap,energy,oil drilling / allied services,5.8918,205636
+2026-09-22,15:29,DSFCL,238.7066,smallcap,chemicals,chemicals,4.9927,120100
+2026-09-22,15:29,EMKAY,696.9183,smallcap,financials,finance & investments,3.7451,101420
+2026-09-22,15:29,EPACKPEB,2430.8911,smallcap,metals & mining,steel - medium / small,3.6304,1057801
+2026-09-22,15:29,EXCELSOFT,941.7337,smallcap,i.t,computers - software - medium / small,1.2465,921406
+2026-09-22,15:29,GANDHITUBE,1104.9814,smallcap,metals & mining,steel - medium / small,10.3266,315988
+2026-09-22,15:29,GEECEE,786.5947,smallcap,financials,finance & investments,-0.6115,2265
+2026-09-22,15:29,GEEKAYWIRE,322.9668,smallcap,metals & mining,steel - medium / small,5.9223,517452
+2026-09-22,15:29,GREAVESCOT,4625.9496,smallcap,industrials,engines,0.5489,2267387
+2026-09-22,15:29,IKS,30588.0628,largecap,i.t,computers - software - medium / small,4.8463,486580
+2026-09-22,15:29,INDOAMIN,964.4709,smallcap,chemicals,chemicals,1.4526,96970
+2026-09-22,15:29,INDSWFTLAB,3299.3215,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,6.8925,2018474
+2026-09-22,15:29,INOXWIND,13393.8431,midcap,industrials,electric equipment,0.5161,10089416
+2026-09-22,15:29,INVPRECQ,1368,smallcap,industrials,castings & forgings,1.9956,4183
+2026-09-22,15:29,ISFT,150.2142,smallcap,i.t,miscellaneous,12.9547,385240
+2026-09-22,15:29,ISHANCH,135.7029,smallcap,chemicals,dyes and pigments,2.173,73746
+2026-09-22,15:29,KDDL,4928.0755,smallcap,consumer discretionary,miscellaneous,-0.8411,35491
+2026-09-22,15:29,KINGFA,8214.8472,midcap,plastic products,plastics products,1.7568,21396
+2026-09-22,15:29,KLBRENG-B,2576.0165,smallcap,industrials,engineering,12.9348,1923203
+2026-09-22,15:29,KSB,13968.3878,midcap,industrials,pumps,2.1866,145461
+2026-09-22,15:29,KUANTUM,704.5665,smallcap,building materials,paper,5.2143,356156
+2026-09-22,15:29,MACPOWER,1956.1134,smallcap,industrials,engineering,7.2214,83048
+2026-09-22,15:29,MANKIND,100680.1595,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,1.7311,667075
+2026-09-22,15:29,MATRIMONY,1136.6231,smallcap,miscellaneous,miscellaneous,0.1728,13550
+2026-09-22,15:29,NIMBSPROJ,360.9706,smallcap,realty,construction,0.9045,29424
+2026-09-22,15:29,NTPCGREEN,76898.6846,largecap,power & utilities,power generation and supply,2.2463,10827047
+2026-09-22,15:29,ONWARDTEC,645.155,smallcap,i.t,computers - software - medium / small,-1.1894,26976
+2026-09-22,15:29,OPTIEMUS,5326.583,midcap,telecom,trading,20,8046819
+2026-09-22,15:29,PCJEWELLER,12419.7741,midcap,consumer discretionary,diamond cutting / jewellery,6.1767,638501220
+2026-09-22,15:29,PENINLAND,537.068,smallcap,realty,construction,5.1884,657910
+2026-09-22,15:29,PHOENIXLTD,68988.8476,largecap,realty,construction,1.2649,421114
+2026-09-22,15:29,PKTEA,294.2323,smallcap,fmcg,tea,4.9979,1408
+2026-09-22,15:29,PROTEAN,2389.9479,smallcap,i.t,computers - software - medium / small,5.4899,14817622
+2026-09-22,15:29,RACE,172.5547,smallcap,services,trading,19.992,682329
+2026-09-22,15:29,RBLBANK,62313.9752,largecap,bank,banks - private sector,5.169,7366610
+2026-09-22,15:29,RELIABLE,145.5223,smallcap,i.t,computers - software - medium / small,0.7375,20777
+2026-09-22,15:29,SAATVIKGL,5485.852,midcap,industrials,electric equipment,3.5102,345259
+2026-09-22,15:29,SGIL,929.6268,smallcap,industrials,castings & forgings,6.4705,39063
+2026-09-22,15:29,SILLYMONKS,22.1512,smallcap,media,entertainment / electronic media software,19.9875,200316
+2026-09-22,15:29,SSDL,238.7076,smallcap,textiles,trading,9.008,490278
+2026-09-22,15:29,SSWL,5686.0019,midcap,auto,auto ancillaries,0.8431,2427282
+2026-09-22,15:29,STLTECH,41813.159,largecap,industrials,cables - telephone,3.1832,1444247
+2026-09-22,15:29,SUNDARMFIN,51991.0513,largecap,financials,finance & investments,1.5472,90693
+2026-09-22,15:29,SUPERSPIN,38.885,smallcap,miscellaneous,miscellaneous,4.6676,55578
+2026-09-22,15:29,SURAJEST,1033.8639,smallcap,realty,construction,0.2726,622792
+2026-09-22,15:29,SURAKSHA,1818.1393,smallcap,healthcare,healthcare,1.2317,177064
+2026-09-22,15:29,SVLL,937.8859,smallcap,transportation,miscellaneous,6.3297,7371
+2026-09-22,15:29,TATVA,4119.8087,smallcap,chemicals,chemicals,-0.9653,53674
+2026-09-22,15:29,TEXRAIL,4655.7513,smallcap,industrials,engineering,4.1685,4041975
+2026-09-22,15:29,TIRUPATIFL,924.0642,smallcap,industrials,castings & forgings,4.9958,347410
+2026-09-22,15:29,TNTELE,42.2092,smallcap,industrials,cables - telephone,-1.4069,22551
+2026-09-22,15:29,VIDHIING,1770.3005,smallcap,chemicals,dyes and pigments,1.5517,72419
+2026-09-22,15:29,VIPCLOTHNG,191.5252,smallcap,textiles,textiles - products,1.9294,84807
+2026-09-22,15:29,WELINV,864.7952,smallcap,financials,finance & investments,1.796,227
+2026-09-23,15:29,AAKASH,90.72,smallcap,energy,oil drilling / allied services,1.8973,102979
+2026-09-23,15:29,AARTIDRUGS,3885.8203,smallcap,healthcare,pharmaceuticals - indian - bulk drugs,2.4662,198653
+2026-09-23,15:29,AASTHA,360.2886,smallcap,textiles,textiles - products,9.9853,2984740
+2026-09-23,15:29,ALMONDZ,356.6221,smallcap,financials,finance & investments,4.8257,407792
+2026-09-23,15:29,ANKITMETAL,25.2588,smallcap,metals & mining,steel - medium / small,1.676,12663
+2026-09-23,15:29,ANTELOPUS,3904.4282,smallcap,energy,oil drilling / allied services,4.5749,1138872
+2026-09-23,15:29,APOLLOHOSP,127040.9337,largecap,healthcare,healthcare,2.6427,419571
+2026-09-23,15:29,ASHOKAMET,35.7443,smallcap,metals & mining,trading,8.6713,325089
+2026-09-23,15:29,ATLASCYCLE,60.8434,smallcap,consumer discretionary,cycles and accessories,7.3864,239595
+2026-09-23,15:29,BILVYAPAR,13.2679,smallcap,miscellaneous,miscellaneous,1.4184,4423
+2026-09-23,15:29,BLBLIMITED,85.7474,smallcap,financials,finance & investments,6.8434,310344
+2026-09-23,15:29,CAPILLARY,4347.9122,smallcap,i.t,computers - software - medium / small,-0.2833,607870
+2026-09-23,15:29,CEIGALL,6571.0074,midcap,realty,construction,3.0885,610450
+2026-09-23,15:29,CEMPRO,22663.936,largecap,realty,construction,-0.614,196274
+2026-09-23,15:29,CENTRALBK,28394.2458,largecap,bank,banks - public sector,0.8288,4418230
+2026-09-23,15:29,CIFL,831.7768,smallcap,financials,finance & investments,0.3291,516089
+2026-09-23,15:29,CLEANMAX,16029.4808,midcap,power & utilities,power generation and supply,6.5814,1550273
+2026-09-23,15:29,CONFIPET,2882.5233,smallcap,miscellaneous,miscellaneous,2.7201,5623265
+2026-09-23,15:29,CYIENTDLM,7281.0425,midcap,aerospace & defence,electronics - components,5.048,523966
+2026-09-23,15:29,DAMODARIND,67.2671,smallcap,textiles,textiles - spinning - synthetic / blended,2.1476,7594
+2026-09-23,15:29,DCW,1417.3344,smallcap,energy,petrochemicals,4.1649,8719090
+2026-09-23,15:29,DELTACORP,1654.0221,smallcap,miscellaneous,recreation / amusement parks,11.1381,17802335
+2026-09-23,15:29,EASTSILK,32.625,smallcap,textiles,textiles - silk,4.9962,2717
+2026-09-23,15:29,ELECON,9437.1391,midcap,industrials,engineering,10.95,30987016
+2026-09-23,15:29,GALAPREC,1355.954,smallcap,industrials,fasteners,10.0378,143631
+2026-09-23,15:29,GANESHBE,901.4515,smallcap,miscellaneous,miscellaneous,4.6798,435311
+2026-09-23,15:29,GNA,2411.2084,smallcap,auto,auto ancillaries,6.2316,3594624
+2026-09-23,15:29,GNFC,8797.3387,midcap,chemicals,chemicals,4.0671,1894770
+2026-09-23,15:29,GREENPLY,3705.2192,smallcap,building materials,miscellaneous,0.5899,423550
+2026-09-23,15:29,HALDYNGL,768.9181,smallcap,building materials,glass & glass products,3.3415,28450
+2026-09-23,15:29,HALEOSLABS,453.4931,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,0.7133,1188
+2026-09-23,15:29,ICIL,8890.6593,midcap,textiles,textiles - cotton/blended,6.1595,1924680
+2026-09-23,15:29,IDFCFIRSTB,73543.9995,largecap,bank,banks - private sector,2.9636,64518343
+2026-09-23,15:29,INDUSTOWER,100804.1989,largecap,telecom,transmisson line towers / equipment,0.7066,4979379
+2026-09-23,15:29,INTLCONV,496.5989,smallcap,fmcg,miscellaneous,4.02,89727
+2026-09-23,15:29,IWP,220.514,smallcap,fmcg,miscellaneous,2.5239,3719
+2026-09-23,15:29,JAGRAN,1359.0333,smallcap,media,entertainment / electronic media software,1.5535,259841
+2026-09-23,15:29,JINDALSTEL,116392.0519,largecap,metals & mining,steel - large,3.0061,994851
+2026-09-23,15:29,JSL,61291.4743,largecap,metals & mining,steel - large,2.0311,906824
+2026-09-23,15:29,JSWDULUX,14286.4519,midcap,building materials,paints / varnishes,0.7587,86927
+2026-09-23,15:29,KABRAEXTRU,2330.0652,smallcap,industrials,engineering,9.9962,402751
+2026-09-23,15:29,KAMATHOTEL,698.8251,smallcap,services,hotels,1.3921,112995
+2026-09-23,15:29,KOTHARIPRO,380.0318,smallcap,services,trading,9.3765,132714
+2026-09-23,15:29,KPIGREEN,6848.3453,midcap,power & utilities,power generation and supply,1.0391,3884369
+2026-09-23,15:29,KUSUMGAR,6469.0434,midcap,textiles,textiles - manmade,3.0755,1299181
+2026-09-23,15:29,LCL,6130.8695,midcap,industrials,textile machinery,-0.4739,359664
+2026-09-23,15:29,LIKHITHA,899.3022,smallcap,realty,construction,0.5483,184606
+2026-09-23,15:29,LOYALTEX,103.5295,smallcap,textiles,textiles - composite,7.5739,52037
+2026-09-23,15:29,LXCHEM,4934.6431,smallcap,chemicals,chemicals,5.8592,3615692
+2026-09-23,15:29,MAHLOG,3971.876,smallcap,transportation,miscellaneous,4.0595,418086
+2026-09-23,15:29,MARKSANS,15088.0869,midcap,healthcare,pharmaceuticals - indian - formulations,4.4001,3317178
+2026-09-23,15:29,MBAPL,1451.8031,smallcap,chemicals,fertilizers,1.1045,806244
+2026-09-23,15:29,MCL,152.9497,smallcap,metals & mining,mining / minerals / metals,7.8083,247844
+2026-09-23,15:29,MITCON,139.5564,smallcap,miscellaneous,miscellaneous,3.1203,102341
+2026-09-23,15:29,MUKANDLTD,2043.3118,smallcap,metals & mining,steel - medium / small,11.1025,2525436
+2026-09-23,15:29,MWL,124.8319,smallcap,metals & mining,steel - medium / small,6.1861,3370765
+2026-09-23,15:29,NAGREEKEXP,67.6859,smallcap,textiles,textiles - cotton/blended,11.7728,97332
+2026-09-23,15:29,NAZARA,14251.0642,midcap,i.t,telecommunications - service provider,0.6074,1327663
+2026-09-23,15:29,NELCO,2308.6516,smallcap,telecom,telecommunications - service provider,0.8895,511625
+2026-09-23,15:29,NIBL,80.155,smallcap,industrials,bearings,1.3301,37193
+2026-09-23,15:29,NUVOCO,12102.2362,midcap,building materials,cement - north india,1.7412,312009
+2026-09-23,15:29,OLAELEC,17486.1266,midcap,auto,automobiles - motorcycles / mopeds,10.8258,390177989
+2026-09-23,15:29,OMAXAUTO,408.2154,smallcap,auto,auto ancillaries,9.9969,199826
+2026-09-23,15:29,PENIND,2349.9537,smallcap,metals & mining,steel - medium / small,5.2659,1703156
+2026-09-23,15:29,PGIL,5518.5401,midcap,consumer discretionary,textiles - products,8.8627,767765
+2026-09-23,15:29,PNB,134467.4362,largecap,bank,banks - public sector,1.1111,12840968
+2026-09-23,15:29,POLICYBZR,83516.424,largecap,i.t,miscellaneous,4.5042,2477939
+2026-09-23,15:29,POWERICA,7078.0465,midcap,industrials,electric equipment,2.0651,82043
+2026-09-23,15:29,PRECWIRE,8977.6997,midcap,metals & mining,mining / minerals / metals,1.5781,715914
+2026-09-23,15:29,PRIMESECU,984.9482,smallcap,financials,finance & investments,2.1192,41199
+2026-09-23,15:29,QPOWER,11551.562,midcap,industrials,electric equipment,4.2907,326604
+2026-09-23,15:29,RAIN,7384.133,midcap,miscellaneous,miscellaneous,1.0568,2970299
+2026-09-23,15:29,RAMASTEEL,742.7626,smallcap,metals & mining,steel - medium / small,2.6432,4512972
+2026-09-23,15:29,RAYMONDREL,3924.5214,smallcap,realty,construction,13.9016,12802316
+2026-09-23,15:29,REGAAL,998.5748,smallcap,miscellaneous,miscellaneous,-2.7261,3705161
+2026-09-23,15:29,REMSONSIND,341.1843,smallcap,auto,auto ancillaries,2.0957,332855
+2026-09-23,15:29,RMDRIP,1015.7096,smallcap,plastic products,plastics products,-0.4637,298267
+2026-09-23,15:29,RPGLIFE,4543.102,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,10.1387,143445
+2026-09-23,15:29,RPTECH,5822.5649,midcap,i.t,trading,1.7147,382200
+2026-09-23,15:29,SALSTEEL,1172.3207,smallcap,metals & mining,steel - sponge iron,4.9889,359860
+2026-09-23,15:29,SANATHAN,3977.9633,smallcap,textiles,textiles - cotton/blended,7.4369,484976
+2026-09-23,15:29,SCODATUBES,771.9262,smallcap,metals & mining,steel - medium / small,6.8995,2930843
+2026-09-23,15:29,SHANTIGOLD,1980.1853,smallcap,consumer discretionary,diamond cutting / jewellery,11.6377,12582362
+2026-09-23,15:29,SHYAMMETL,30539.816,largecap,metals & mining,steel - large,1.0694,418859
+2026-09-23,15:29,SMCGLOBAL,1726.0842,smallcap,financials,finance & investments,5.7139,2330867
+2026-09-23,15:29,SONACOMS,50322.6183,largecap,auto,auto ancillaries,2.9666,3183807
+2026-09-23,15:29,SPECIALITY,721.2678,smallcap,services,hotels,1.9528,36639
+2026-09-23,15:29,STEELXIND,1426.0296,smallcap,metals & mining,steel - medium / small,7.424,43409817
+2026-09-23,15:29,SUBEXLTD,1088.5997,smallcap,i.t,computers - software - medium / small,13.9907,70960363
+2026-09-23,15:29,SUNFLAG,6398.6915,midcap,metals & mining,steel - medium / small,9.9986,912957
+2026-09-23,15:29,SUNTV,19314.0872,midcap,media,entertainment / electronic media software,0.0204,1771617
+2026-09-23,15:29,TATASTEEL,230907.8829,largecap,metals & mining,steel - large,3.1627,39798327
+2026-09-23,15:29,TEXINFRA,1465.6606,smallcap,realty,construction,7.3466,2791859
+2026-09-23,15:29,TI,14221.0862,midcap,fmcg,breweries & distilleries,4.6724,1593921
+2026-09-23,15:29,TIL,2045.1837,smallcap,industrials,engineering,4.4423,96021
+2026-09-23,15:29,TIPSMUSIC,8459.8946,midcap,media,entertainment / electronic media software,1.3146,326612
+2026-09-23,15:29,TIRUMALCHM,1896.5362,smallcap,chemicals,chemicals,5.0216,2671402
+2026-09-23,15:29,TRANSRAILL,6406.0262,midcap,realty,engineering - turnkey services,2.4625,10396978
+2026-09-23,15:29,UNICHEMLAB,3793.1098,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,6.3944,294887
+2026-09-23,15:29,UNIDT,431.279,smallcap,industrials,engineering,10.7429,330560
+2026-09-23,15:29,VASCONEQ,728.4557,smallcap,realty,construction,4.93,942948
+2026-09-24,15:29,AARNAV,141.1615,smallcap,textiles,textiles - products,4.7277,63958
+2026-09-24,15:29,ASAHISONG,451.3343,smallcap,chemicals,dyes and pigments,1.3319,12997
+2026-09-24,15:29,BANARBEADS,74.7367,smallcap,building materials,glass & glass products,2.2775,7965
+2026-09-24,15:29,BLUSPRING,1981.438,smallcap,miscellaneous,diversified - large,6.011,1598336
+2026-09-24,15:29,CRIZAC,3088.4411,smallcap,services,miscellaneous,5.4391,1104991
+2026-09-24,15:29,DCMSIL,673.8415,smallcap,textiles,textiles - manmade,9.9923,396594
+2026-09-24,15:29,DEVX,331.2118,smallcap,co-working,miscellaneous,3.2286,160466
+2026-09-24,15:29,DIGIDRIVE,69.0258,smallcap,i.t,trading,-0.1117,12856
+2026-09-24,15:29,DIVISLAB,255486.9614,largecap,healthcare,pharmaceuticals - indian - bulk drugs,-0.2286,666667
+2026-09-24,15:29,DPWIRES,251.0142,smallcap,metals & mining,steel - medium / small,4.9895,25119
+2026-09-24,15:29,E2E,13056.454,midcap,i.t,computers - software - medium / small,1.8185,1060105
+2026-09-24,15:29,FRONTSP,1647.7942,smallcap,auto,auto ancillaries,8.3035,1615746
+2026-09-24,15:29,GMRP&UI,7664.125,midcap,realty,engineering - turnkey services,3.3425,3555672
+2026-09-24,15:29,HITECHGEAR,1055.3459,smallcap,auto,auto ancillaries,4.9915,6416
+2026-09-24,15:29,INDIAGLYCO,1727.2797,smallcap,fmcg,breweries & distilleries,18.7427,4841031
+2026-09-24,15:29,INDNIPPON,2851.8829,smallcap,auto,auto ancillaries,4.3785,98115
+2026-09-24,15:29,JAMNAAUTO,5179.2359,midcap,auto,auto ancillaries,6.8236,14203329
+2026-09-24,15:29,KHANDSE,27.4568,smallcap,financials,finance & investments,0.3889,729
+2026-09-24,15:29,KRONOX,695.2919,smallcap,chemicals,chemicals,4.9949,174809
+2026-09-24,15:29,KTKBANK,12974.2654,midcap,bank,banks - private sector,-1.4284,2049219
+2026-09-24,15:29,LALPATHLAB,32258.5361,largecap,healthcare,healthcare,1.9228,430163
+2026-09-24,15:29,LCCINFOTEC,64.7398,smallcap,services,computers - education,4.9479,120873
+2026-09-24,15:29,LGEINDIA,114997.6187,largecap,consumer discretionary,electronics - consumer,0.2066,527914
+2026-09-24,15:29,MCX,86034.2485,largecap,financials,miscellaneous,1.5916,4133428
+2026-09-24,15:29,PREMEXPLN,3629.6871,smallcap,aerospace & defence,chemicals,0.7924,405163
+2026-09-24,15:29,PREMIER,8.6562,smallcap,industrials,engineering,2.807,72701
+2026-09-24,15:29,PREMIERPOL,1013.0692,smallcap,plastic products,plastics products,3.9185,6670334
+2026-09-24,15:29,PROZONER,796.4344,smallcap,miscellaneous,miscellaneous,3.7747,667907
+2026-09-24,15:29,RADAAN,16.9526,smallcap,media,entertainment / electronic media software,-0.9585,317163
+2026-09-24,15:29,SEDEMAC,13405.7196,midcap,consumer discretionary,electronics - components,9.1724,1058936
+2026-09-24,15:29,SIGIND,211.3577,smallcap,services,trading,-1.727,21254
+2026-09-24,15:29,SIGNPOST,1463.9955,smallcap,miscellaneous,miscellaneous,-0.4016,86371
+2026-09-24,15:29,SOUTHBANK,12325.855,midcap,bank,banks - private sector,5.9898,57683718
+2026-09-24,15:29,STERTOOLS,806.7009,smallcap,industrials,fasteners,4.9964,79881
+2026-09-24,15:29,VINCOFE,2677.6073,smallcap,consumer discretionary,trading,-0.0218,3693467
+2026-09-24,15:29,WHIRLPOOL,10977.5851,midcap,consumer discretionary,domestic appliances,-1.3638,7497954
+2026-09-24,15:29,ZFSTEERING,638.4428,smallcap,auto,auto ancillaries,6.0328,11028
+2026-09-24,15:29,ZIMLAB,715.2009,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,3.1896,90235
+2026-09-24,15:29,ZUARIIND,830.5972,smallcap,fmcg,sugar,1.4163,133311
+2026-09-24,15:29,ZYDUSLIFE,116717.9234,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,0.8717,1965875
+2026-09-25,15:29,AAATECH,117.8013,smallcap,i.t,computers - software - medium / small,10.5183,735186
+2026-09-25,15:29,AETHER,21847.1443,largecap,chemicals,chemicals,7.3381,1686153
+2026-09-25,15:29,AIROLAM,132.5277,smallcap,building materials,miscellaneous,4.4714,5894
+2026-09-25,15:29,AJAXENGG,6580.6791,midcap,industrials,engineering,5.6589,695472
+2026-09-25,15:29,AJMERA,2371.5844,smallcap,realty,construction,0.2572,164978
+2026-09-25,15:29,ANTELOPUS,3976.6869,smallcap,energy,oil drilling / allied services,11.5611,7877531
+2026-09-25,15:29,ARTEMISMED,5266.8488,midcap,healthcare,healthcare,7.5143,18980196
+2026-09-25,15:29,BALPHARMA,167.201,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,2.5614,62694
+2026-09-25,15:29,BBOX,14126.2408,midcap,i.t,computers - software - medium / small,0.5469,814657
+2026-09-25,15:29,BLSE,2968.2814,smallcap,i.t,computers - software - medium / small,-0.6581,242706
+2026-09-25,15:29,BLUESTARCO,31356.2552,largecap,consumer discretionary,air-conditioners,2.623,570933
+2026-09-25,15:29,BOHRAIND,31.61,smallcap,chemicals,fertilizers,6.9658,75819
+2026-09-25,15:29,BOROLTD,3101.0268,smallcap,building materials,glass & glass products,2.1172,1348123
+2026-09-25,15:29,BOSCH-HCIL,4704.0229,smallcap,consumer discretionary,air-conditioners,4.7168,98241
+2026-09-25,15:29,DANGEE,45.7306,smallcap,fmcg,food - processing - indian,9.7643,909887
+2026-09-25,15:29,DMCC,735.8527,smallcap,chemicals,chemicals,3.4909,122619
+2026-09-25,15:29,EMIL,7277.9076,midcap,consumer discretionary,trading,5.8469,6776165
+2026-09-25,15:29,FCL,6529.3565,midcap,chemicals,chemicals,7.8652,47041849
+2026-09-25,15:29,GANESHBE,910.5942,smallcap,miscellaneous,miscellaneous,3.439,352767
+2026-09-25,15:29,GHCLTEXTIL,1293.658,smallcap,textiles,textiles - spinning - synthetic / blended,2.793,554170
+2026-09-25,15:29,GRAPHITE,15917.2496,midcap,industrials,electrodes - graphites,0.7365,1351331
+2026-09-25,15:29,HERANBA,689.312,smallcap,chemicals,pesticides / agrochemicals - indian,8.8988,3333268
+2026-09-25,15:29,HLEGLAS,2977.8719,smallcap,industrials,engineering,2.8805,257150
+2026-09-25,15:29,IBULLSLTD,6618.2334,midcap,miscellaneous,diversified - medium / small,4.9982,14185546
+2026-09-25,15:29,INDGN,14315.0953,midcap,healthcare,miscellaneous,2.4996,2095862
+2026-09-25,15:29,INTENTECH,195.7688,smallcap,i.t,computers - software - medium / small,2.6671,26803
+2026-09-25,15:29,IWP,219.3625,smallcap,fmcg,miscellaneous,1.9831,2763
+2026-09-25,15:29,JAGSNPHARM,1606.188,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,-0.6886,565222
+2026-09-25,15:29,JSWDULUX,14264.5926,midcap,building materials,paints / varnishes,2.1486,52257
+2026-09-25,15:29,KSB,13960.556,midcap,industrials,pumps,2.1131,270689
+2026-09-25,15:29,KSCL,4032.0516,smallcap,fmcg,miscellaneous,2.6408,9425259
+2026-09-25,15:29,KUSUMGAR,6510.515,midcap,textiles,textiles - manmade,1.0644,190712
+2026-09-25,15:29,LAMBODHARA,144.726,smallcap,textiles,textiles - cotton/blended,3.6641,644953
+2026-09-25,15:29,LCL,6080.6858,midcap,industrials,textile machinery,3.3273,1672547
+2026-09-25,15:29,LLOYDSENGG,14100.4947,midcap,industrials,engineering,8.4149,60674433
+2026-09-25,15:29,LORDSCHLO,385.3944,smallcap,chemicals,chlor alkali / soda ash,10.1859,302916
+2026-09-25,15:29,MAZDA,535.7689,smallcap,industrials,engineering,4.672,68878
+2026-09-25,15:29,MGEL,515.0954,smallcap,services,trading,2.3033,3205087
+2026-09-25,15:29,NCLIND,796.4137,smallcap,building materials,cement - south india,1.8118,50784
+2026-09-25,15:29,NURECA,326.6676,smallcap,i.t,trading,2.6727,13395
+2026-09-25,15:29,ORIENTCER,560.2704,smallcap,building materials,refractories / intermediates,2.0713,31332
+2026-09-25,15:29,PAGEIND,41827.0275,largecap,readymade garments/apparels,textiles - products,0.52,15467
+2026-09-25,15:29,PLASTIBLEN,493.0411,smallcap,chemicals,chemicals,7.0002,208830
+2026-09-25,15:29,POWERICA,7122.9724,midcap,industrials,electric equipment,3.5711,200960
+2026-09-25,15:29,PRIMO,540.183,smallcap,chemicals,chlor alkali / soda ash,13.4141,1374230
+2026-09-25,15:29,PRIVISCL,13819.9948,midcap,chemicals,chemicals,1.5885,97623
+2026-09-25,15:29,RETAIL,13.7181,smallcap,consumer discretionary,trading,19.9761,111518
+2026-09-25,15:29,RKEC,58.9743,smallcap,realty,construction,6.2172,768771
+2026-09-25,15:29,ROLEXRINGS,4940.3951,smallcap,auto,auto ancillaries,7.6843,7169312
+2026-09-25,15:29,SALONA,144.3213,smallcap,textiles,textiles - cotton/blended,0.1823,359
+2026-09-25,15:29,SANGAMIND,2912.793,smallcap,textiles,textiles - spinning - synthetic / blended,6.9346,434786
+2026-09-25,15:29,SATIN,2498.3009,smallcap,financials,finance & investments,4.6429,421528
+2026-09-25,15:29,SBC,2286.1882,smallcap,textiles,textiles - products,10.4353,23868200
+2026-09-25,15:29,SCHAND,483.6876,smallcap,miscellaneous,printing & stationery,5.8703,66326
+2026-09-25,15:29,SCODATUBES,801.5212,smallcap,metals & mining,steel - medium / small,2.1078,618113
+2026-09-25,15:29,SETCO,239.3097,smallcap,auto,auto ancillaries,3.242,119430
+2026-09-25,15:29,SHRIPISTON,20997.6737,largecap,auto,auto ancillaries,4.8623,110008
+2026-09-25,15:29,SPARC,6619.5914,midcap,healthcare,miscellaneous,2.4855,2233858
+2026-09-25,15:29,SSWL,5911.5558,midcap,auto,auto ancillaries,0.7046,1650357
+2026-09-25,15:29,STANLEY,772.4532,smallcap,consumer discretionary,miscellaneous,6.7298,375595
+2026-09-25,15:29,STEELCAS,3620.936,smallcap,"castings, forgings & fasteners",castings & forgings,5.2264,1078414
+2026-09-25,15:29,TAMBOLIIN,292.5904,smallcap,financials,finance & investments,1.9834,5508
+2026-09-25,15:29,TATVA,4043.5506,smallcap,chemicals,chemicals,3.7371,66589
+2026-09-25,15:29,TNTELE,42.529,smallcap,industrials,cables - telephone,6.4447,92723
+2026-09-25,15:29,TREL,683.0336,smallcap,transportation,miscellaneous,1.8705,116098
+2026-09-25,15:29,UGARSUGAR,627.4125,smallcap,fmcg,sugar,14.8108,13699429
+2026-09-25,15:29,WELCORP,71017.7174,largecap,industrials,steel - large,5.2076,2763523
+2026-09-25,15:29,WHEELS,5328.3513,midcap,auto,auto ancillaries,5.3008,615400
+2026-09-25,15:29,XELPMOC,110.3894,smallcap,i.t,computers - software - medium / small,19.9893,129401
+2026-09-28,15:29,3BBLACKBIO,1249.8084,smallcap,healthcare,healthcare,8.8312,84310
+2026-09-28,15:29,ADSL,653.4796,smallcap,i.t,computers - software - medium / small,0.9868,5747156
+2026-09-28,15:29,ADVANCE,791.4858,smallcap,chemicals,pesticides / agrochemicals - indian,-1.3158,359371
+2026-09-28,15:29,AEQUS,16501.7279,midcap,aerospace & defence,engineering,5.7102,33667541
+2026-09-28,15:29,BLACKROSE,590.682,smallcap,chemicals,trading,0.4317,101196
+2026-09-28,15:29,BLISSGVS,7473.782,midcap,healthcare,pharmaceuticals - indian - formulations,4.6758,2825169
+2026-09-28,15:29,COMFINTE,208.2797,smallcap,services,trading,10.7527,3901800
+2026-09-28,15:29,DAMCAPITAL,976.7391,smallcap,financials,finance & investments,14.8213,18844708
+2026-09-28,15:29,DRREDDY,100244.5636,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,1.6653,3401676
+2026-09-28,15:29,HALDYNGL,781.8722,smallcap,building materials,glass & glass products,4.7367,292097
+2026-09-28,15:29,HARSHA,4206.6929,smallcap,industrials,engineering,0.7575,196133
+2026-09-28,15:29,HBSL,40.028,smallcap,financials,finance & investments,-0.4993,2384
+2026-09-28,15:29,HITECHCORP,567.0557,smallcap,industrials,packaging,3.4227,38828
+2026-09-28,15:29,HMAAGRO,1200.8459,smallcap,fmcg,food - processing - indian,0.1668,2692734
+2026-09-28,15:29,JNPR,15138.2035,midcap,realty,engineering - turnkey services,1.4659,1111652
+2026-09-28,15:29,KPIGREEN,6715.9051,midcap,power & utilities,power generation and supply,5.1803,9434453
+2026-09-28,15:29,NITTAGELA,1543.3664,smallcap,chemicals,chemicals,1.0765,3566
+2026-09-28,15:29,OCCLLTD,837.5194,smallcap,chemicals,chemicals,4.0854,296533
+2026-09-28,15:29,PREMCO,130.6553,smallcap,textiles,textiles - products,0.0126,731
+2026-09-28,15:29,PRITIKAUTO,285.7357,smallcap,auto,auto ancillaries,9.965,1141258
+2026-09-28,15:29,QPOWER,11754.4655,midcap,industrials,electric equipment,4.9348,365360
+2026-09-28,15:29,RAJTV,55.8588,smallcap,media,entertainment / electronic media software,3.5316,120440
+2026-09-28,15:29,RBZJEWEL,723.48,smallcap,consumer discretionary,diamond cutting / jewellery,4.9981,80764
+2026-09-28,15:29,RSYSTEMS,2791.9247,smallcap,i.t,computers - software - medium / small,16.8025,61311130
+2026-09-28,15:29,SDBL,1545.9542,smallcap,fmcg,breweries & distilleries,8.4185,19487717
+2026-09-28,15:29,SHARDUL,484.7066,smallcap,financials,finance & investments,0.2888,10416
+2026-09-28,15:29,SOFTTECH,664.1458,smallcap,i.t,computers - software - medium / small,3.168,2982
+2026-09-28,15:29,STARTECK,260.1462,smallcap,financials,finance & investments,19.619,14621
+2026-09-28,15:29,SVLL,959.3791,smallcap,transportation,miscellaneous,-1.5994,1758
+2026-09-28,15:29,SYNCOMF,1884.7,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,10.7232,82454897
+2026-09-28,15:29,VIDYAWIRES,1925.7161,smallcap,industrials,electric equipment,0.5854,2421362
+2026-09-29,15:29,ADANIPORTS,401741.3479,largecap,transportation,miscellaneous,4.4905,4214197
+2026-09-29,15:29,AZAD,17586.9003,midcap,aerospace & defence,engineering,7.0138,5323693
+2026-09-29,15:29,BALPHARMA,166.803,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,7.0058,237163
+2026-09-29,15:29,BANSALWIRE,4972.217,smallcap,metals & mining,steel - medium / small,3.1644,125973
+2026-09-29,15:29,BBOX,13908.6817,midcap,i.t,computers - software - medium / small,3.786,1236329
+2026-09-29,15:29,CMLL,3430.9212,smallcap,metals & mining,mining / minerals / metals,3.4489,1050819
+2026-09-29,15:29,DOLLAR,1528.4994,smallcap,readymade garments/apparels,textiles - products,3.9889,218402
+2026-09-29,15:29,DPABHUSHAN,3168.9719,smallcap,consumer discretionary,diamond cutting / jewellery,19.9971,975157
+2026-09-29,15:29,GILLANDERS,229.1741,smallcap,fmcg,tea,3.1384,17774
+2026-09-29,15:29,GLAND,47772.3239,largecap,healthcare,pharmaceuticals - indian - formulations,3.2355,876878
+2026-09-29,15:29,GTECJAINX,27.48,smallcap,i.t,computers - education,9.974,14074
+2026-09-29,15:29,INDOCO,2298.9136,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,8.0663,19854651
+2026-09-29,15:29,JGCHEM,2432.6708,smallcap,chemicals,chemicals,6.097,1558962
+2026-09-29,15:29,JHS,77.0045,smallcap,fmcg,personal care - indian,17.8207,2324625
+2026-09-29,15:29,KIRLOSENG,31128.7536,largecap,industrials,engines,12.1801,5298949
+2026-09-29,15:29,KISSHT,5810.9794,midcap,i.t,finance & investments,3.9867,2096454
+2026-09-29,15:29,KSB,13944.8925,midcap,industrials,pumps,2.9392,755002
+2026-09-29,15:29,LALPATHLAB,32556.9313,largecap,healthcare,healthcare,0.4274,401450
+2026-09-29,15:29,LANDSMILL,104.3914,smallcap,services,trading,18.9189,18968243
+2026-09-29,15:29,LLOYDSENT,11652.171,midcap,services,trading,3.6683,4987982
+2026-09-29,15:29,MANOMAY,412.558,smallcap,textiles,textiles - products,3.4474,363665
+2026-09-29,15:29,MARINE,5992.4196,midcap,industrials,electric equipment,2.347,1949017
+2026-09-29,15:29,MARKSANS,15024.644,midcap,healthcare,pharmaceuticals - indian - formulations,3.3781,4594619
+2026-09-29,15:29,MAXIND,873.1052,smallcap,financials,finance & investments,3.1477,144805
+2026-09-29,15:29,NEOGEN,7199.0668,midcap,chemicals,chemicals,1.6275,157182
+2026-09-29,15:29,ORBTEXP,602.2008,smallcap,textiles,textiles - processing,15.3467,93205
+2026-09-29,15:29,PASHUPATI,1219.6297,smallcap,textiles,textiles - cotton/blended,19.9948,219755
+2026-09-29,15:29,POWERICA,7124.2379,midcap,industrials,electric equipment,6.537,755551
+2026-09-29,15:29,RAMRAT,5304.0943,midcap,metals & mining,mining / minerals / metals,2.7455,258622
+2026-09-29,15:29,RESPONIND,4308.3941,smallcap,plastic products,plastics products,4.0161,1341506
+2026-09-29,15:29,RHIM,7983.3451,midcap,building materials,refractories / intermediates,1.7072,714917
+2026-09-29,15:29,RPTECH,5825.2009,midcap,i.t,trading,4.6835,557981
+2026-09-29,15:29,SURAKSHA,1807.4627,smallcap,healthcare,healthcare,2.3051,88441
+2026-09-29,15:29,UNICHEMLAB,3776.5644,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,5.9657,4127586
+2026-09-29,15:29,UNIMECH,8219.4894,midcap,aerospace & defence,engineering,3.6382,595622
+2026-09-29,15:29,VHLTD,984.9589,smallcap,services,hotels,1.637,57692
+2026-09-30,15:29,ABBOTINDIA,57946.8466,largecap,healthcare,pharmaceuticals - multinational,-0.5317,5645
+2026-09-30,15:29,ACE,14359.0518,midcap,industrials,engineering,2.1728,343169
+2026-09-30,15:29,ADL,38.9638,smallcap,building materials,miscellaneous,10.8571,6985
+2026-09-30,15:29,ADVANCE,772.6501,smallcap,chemicals,pesticides / agrochemicals - indian,0.832,261919
+2026-09-30,15:29,AIROLAM,133.6078,smallcap,building materials,miscellaneous,4.2556,5335
+2026-09-30,15:29,ALICON,1189.6122,smallcap,"castings, forgings & fasteners",castings & forgings,19.9972,953310
+2026-09-30,15:29,ASAHISONG,452.8666,smallcap,chemicals,dyes and pigments,1.2884,10809
+2026-09-30,15:29,BANARBEADS,76.0364,smallcap,building materials,glass & glass products,4.7722,3639
+2026-09-30,15:29,BEEKAY,826.392,smallcap,metals & mining,steel - medium / small,4.535,12184
+2026-09-30,15:29,BLSE,2917.4017,smallcap,i.t,computers - software - medium / small,2.3357,445285
+2026-09-30,15:29,CAPITALSFB,1271.4339,smallcap,bank,banks - private sector,3.2004,137229
+2026-09-30,15:29,COMPUSOFT,105.7113,smallcap,i.t,computers - education,0.8982,24794
+2026-09-30,15:29,CPPLUS,44990.6012,largecap,consumer discretionary,trading,0.757,237687
+2026-09-30,15:29,CUPID,38726.2282,largecap,fmcg,personal care - indian,8.2118,66496228
+2026-09-30,15:29,DCMSIL,674.7114,smallcap,textiles,textiles - manmade,6.0469,216984
+2026-09-30,15:29,DGCONTENT,146.8642,smallcap,media,entertainment / electronic media software,0.7528,84649
+2026-09-30,15:29,DPWIRES,248.8751,smallcap,metals & mining,steel - medium / small,2.074,6309
+2026-09-30,15:29,E2E,13398.7195,midcap,i.t,computers - software - medium / small,-0.1994,479810
+2026-09-30,15:29,EDELWEISS,13040.3666,midcap,financials,finance & investments,3.6002,10840581
+2026-09-30,15:29,EMAMIPAP,717.6397,smallcap,building materials,paper,0.7924,38369
+2026-09-30,15:29,EMIL,7376.0185,midcap,consumer discretionary,trading,7.1201,14305072
+2026-09-30,15:29,ESAFSFB,2298.0493,smallcap,bank,banks - private sector,-0.0449,733692
+2026-09-30,15:29,ESSARSHPNG,350.8244,smallcap,transportation,shipping,11.4454,6789502
+2026-09-30,15:29,EVERESTIND,691.7073,smallcap,building materials,cement products,4.4355,19320
+2026-09-30,15:29,FINCABLES,21954.443,largecap,industrials,cables - power,1.031,452990
+2026-09-30,15:29,GANDHAR,2677.4945,smallcap,energy,refineries,1.9375,742278
+2026-09-30,15:29,GEECEE,785.5491,smallcap,financials,finance & investments,-0.386,3606
+2026-09-30,15:29,GPTINFRA,1462.2912,smallcap,realty,construction,2.2641,162220
+2026-09-30,15:29,HARSHA,4234.0061,smallcap,industrials,engineering,1.1289,95299
+2026-09-30,15:29,HLEGLAS,3018.8502,smallcap,industrials,engineering,1.0928,124676
+2026-09-30,15:29,HMAAGRO,1191.8321,smallcap,fmcg,food - processing - indian,0.5042,978980
+2026-09-30,15:29,HYBRIDFIN,52.4554,smallcap,financials,finance & investments,0.6734,3054
+2026-09-30,15:29,INDPRUD,1065.4991,smallcap,financials,finance & investments,-0.3382,76
+2026-09-30,15:29,INTENTECH,195.2253,smallcap,i.t,computers - software - medium / small,2.2147,18698
+2026-09-30,15:29,JSWINFRA,81550.0548,largecap,transportation,miscellaneous,1.8857,2191121
+2026-09-30,15:29,KMEW,7491.6302,midcap,transportation,miscellaneous,-0.7602,217728
+2026-09-30,15:29,KREBSBIO,121.6448,smallcap,healthcare,pharmaceuticals - indian - bulk drugs,6.6998,50966
+2026-09-30,15:29,LGHL,895.2542,smallcap,consumer discretionary,diamond cutting / jewellery,11.9293,71282
+2026-09-30,15:29,LIKHITHA,879.1433,smallcap,realty,construction,5.1335,271910
+2026-09-30,15:29,LOKESHMACH,744.4687,smallcap,industrials,engineering,7.1293,76813
+2026-09-30,15:29,LOTUSDEV,10466.0182,midcap,realty,construction,4.8471,1330015
+2026-09-30,15:29,MAHESHWARI,217.6282,smallcap,services,trading,-0.136,13129
+2026-09-30,15:29,MAHSEAMLES,9672.736,midcap,metals & mining,steel - medium / small,2.1888,1572414
+2026-09-30,15:29,MBAPL,1461.9679,smallcap,chemicals,fertilizers,2.2716,1417308
+2026-09-30,15:29,MEESHO,102869.9189,largecap,transportation,miscellaneous,2.034,15536460
+2026-09-30,15:29,MTARTECH,22842.0723,largecap,aerospace & defence,engineering,4.996,190323
+2026-09-30,15:29,NELCAST,1034.7053,smallcap,"castings, forgings & fasteners",castings & forgings,3.7585,394628
+2026-09-30,15:29,NINSYS,1369.3298,smallcap,i.t,computers - software - medium / small,3.9612,15354
+2026-09-30,15:29,PFS,1798.3933,smallcap,financials,finance & investments,3.8571,2963292
+2026-09-30,15:29,RAMASTEEL,732.9464,smallcap,metals & mining,steel - medium / small,1.7857,3775009
+2026-09-30,15:29,RGL,1763.7419,smallcap,consumer discretionary,diamond cutting / jewellery,0.4566,340639
+2026-09-30,15:29,SANSERA,27221.6844,largecap,auto,auto ancillaries,4.0186,247139
+2026-09-30,15:29,SAPPL,261.1191,smallcap,building materials,paper,2.2313,6609
+2026-09-30,15:29,SONACOMS,50736.2715,largecap,auto,auto ancillaries,1.7593,2734579
+2026-09-30,15:29,SOTL,4915.7818,smallcap,energy,petrochemicals,0.251,2590903
+2026-09-30,15:29,STLTECH,44534.2391,largecap,industrials,cables - telephone,4.9965,1691349
+2026-09-30,15:29,SWANDEF,14247.3606,midcap,transportation,miscellaneous,1.9302,19651
+2026-09-30,15:29,TDPOWERSYS,12144.417,midcap,industrials,electric equipment,1.1192,2612869
+2026-09-30,15:29,TECHNOE,11748.0015,midcap,realty,engineering - turnkey services,-0.1386,133810
+2026-09-30,15:29,TEXINFRA,1472.2868,smallcap,realty,construction,3.3495,649299
+2026-09-30,15:29,THELEELA,17819.9924,midcap,services,hotels,7.5337,1251659
+2026-09-30,15:29,UYFINCORP,395.125,smallcap,financials,finance & investments,4.9591,415001
+2026-09-30,15:29,VALIANTORG,1134.2803,smallcap,chemicals,chemicals,12.4815,606539
+2026-09-30,15:29,VENUSREM,2286.557,smallcap,healthcare,pharmaceuticals - indian - formulations,4.9982,28419
+2026-09-30,15:29,WEALTH,945.6313,smallcap,financials,finance & investments,2.293,2780
+2026-09-30,15:29,WELINV,889.8649,smallcap,financials,finance & investments,1.9302,30
+2026-09-30,15:29,WESTLIFE,9303.1516,midcap,consumer discretionary,hotels,-1.1314,58873
+2026-10-01,15:29,AAREYDRUGS,320.6296,smallcap,healthcare,pharmaceuticals - indian - bulk drugs,1.1001,449714
+2026-10-01,15:29,ADFFOODS,3091.5616,smallcap,fmcg,food - processing - indian,3.0392,266181
+2026-10-01,15:29,CONTROLPR,988.4423,smallcap,i.t,computers - hardware,1.7535,55775
+2026-10-01,15:29,DELPHIFX,169.2348,smallcap,financials,finance & investments,1.9202,312826
+2026-10-01,15:29,DIGIDRIVE,67.9075,smallcap,i.t,trading,-1.5651,16496
+2026-10-01,15:29,ESTER,996.2262,smallcap,industrials,packaging,-5.6313,807322
+2026-10-01,15:29,EUROTEXIND,13.7635,smallcap,textiles,textiles - cotton/blended,10,30574
+2026-10-01,15:29,FLEXITUFF,9.9125,smallcap,industrials,packaging,1.6835,11680
+2026-10-01,15:29,GALAXYSURF,8427.24,midcap,chemicals,chemicals,1.8904,216645
+2026-10-01,15:29,GKSL,1531.6878,smallcap,healthcare,healthcare,8.5004,34935174
+2026-10-01,15:29,GREENPLY,3793.2751,smallcap,building materials,miscellaneous,1.2502,393933
+2026-10-01,15:29,HBSL,40.7061,smallcap,financials,finance & investments,2.0397,4313
+2026-10-01,15:29,JAYBARMARU,1415.91,smallcap,auto,auto ancillaries,1.8771,746037
+2026-10-01,15:29,MANBA,698.378,smallcap,financials,finance & investments,1.5858,229896
+2026-10-01,15:29,MMWL,1762.5469,smallcap,media,entertainment / electronic media software,4.9933,428810
+2026-10-01,15:29,MOREPENLAB,7327.2369,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,6.1354,37973409
+2026-10-01,15:29,OMFREIGHT,328.3356,smallcap,transportation,miscellaneous,3.7234,26984
+2026-10-01,15:29,OMNI,7526.9323,midcap,industrials,engineering,7.9071,2667824
+2026-10-01,15:29,ONWARDTEC,647.9354,smallcap,i.t,computers - software - medium / small,1.0231,37991
+2026-10-01,15:29,RPEL,8352.7435,midcap,building materials,refractories / intermediates,0.5473,180052
+2026-10-01,15:29,SCHNEIDER,30495.3286,largecap,industrials,electric equipment,5.983,1444982
+2026-10-01,15:29,SHYAMCENT,106.0865,smallcap,metals & mining,mining / minerals / metals,0.6036,223042
+2026-10-01,15:29,SMLT,101.5506,smallcap,metals & mining,steel - medium / small,19.9935,112524
+2026-10-01,15:29,UNIDT,486.5644,smallcap,industrials,engineering,7.9213,130454
+2026-10-01,15:29,XELPMOC,138.6269,smallcap,i.t,computers - software - medium / small,16.7373,244539
+2026-10-06,15:29,AAREYDRUGS,321.3089,smallcap,healthcare,pharmaceuticals - indian - bulk drugs,3.6322,184313
+2026-10-06,15:29,ABAN,94.0849,smallcap,energy,oil drilling / allied services,4.9628,17386
+2026-10-06,15:29,ACE,14617.4623,midcap,industrials,engineering,2.0122,197550
+2026-10-06,15:29,AETHER,22043.5589,largecap,chemicals,chemicals,8.3564,1456255
+2026-10-06,15:29,AHLWEST,634.9909,smallcap,services,hotels,0,3
+2026-10-06,15:29,AMRUTANJAN,1497.8597,smallcap,healthcare,pharmaceuticals - indian - formulations,1.0809,27720
+2026-10-06,15:29,ARFIN,1476.4904,smallcap,metals & mining,aluminium and aluminium products,10.1131,9170776
+2026-10-06,15:29,ARIES,651.8425,smallcap,chemicals,fertilizers,-0.4489,24527
+2026-10-06,15:29,ATLANTAELE,14478.8655,midcap,industrials,electric equipment,-0.7223,339216
+2026-10-06,15:29,AVADHSUGAR,1682.2479,smallcap,fmcg,sugar,3.921,523457
+2026-10-06,15:29,BANSALWIRE,5057.54,midcap,metals & mining,steel - medium / small,0.8203,100324
+2026-10-06,15:29,BATLIBOI,423.9577,smallcap,industrials,engineering,7.1063,258938
+2026-10-06,15:29,BGLOBAL,5.4183,smallcap,i.t,computers - software - medium / small,4.5872,94562
+2026-10-06,15:29,BHAGERIA,1591.485,smallcap,chemicals,dyes and pigments,7.9254,361311
+2026-10-06,15:29,BHEL,149380.5179,largecap,industrials,electric equipment,5.3613,22865195
+2026-10-06,15:29,BIMETAL,244.8,smallcap,industrials,bearings,3.1875,833
+2026-10-06,15:29,BLUESTARCO,31047.833,largecap,consumer discretionary,air-conditioners,4.0728,867322
+2026-10-06,15:29,BUILDPRO,3069.7222,smallcap,services,trading,2.8122,126155
+2026-10-06,15:29,CAPILLARY,4339.965,smallcap,i.t,computers - software - medium / small,7.5261,290150
+2026-10-06,15:29,CAPTRUST,68.0048,smallcap,financials,finance & investments,4.9525,59977
+2026-10-06,15:29,CELLO,7511.1956,midcap,consumer discretionary,trading,8.5576,20298731
+2026-10-06,15:29,DAMCAPITAL,1037.3171,smallcap,financials,finance & investments,3.925,402836
+2026-10-06,15:29,DANGEE,44.9607,smallcap,fmcg,food - processing - indian,5.4794,78767
+2026-10-06,15:29,DBOL,830.044,smallcap,fmcg,sugar,10.2935,1202685
+2026-10-06,15:29,DHAMPURSUG,1137.2606,smallcap,fmcg,sugar,6.7628,3999385
+2026-10-06,15:29,DOLLAR,1556.2903,smallcap,readymade garments/apparels,textiles - products,1.5124,68600
+2026-10-06,15:29,EIMCOELECO,1293.2142,smallcap,industrials,engineering,5.7942,81588
+2026-10-06,15:29,FINEORG,15973.8475,midcap,chemicals,chemicals,6.2764,79818
+2026-10-06,15:29,GALAXYSURF,8278.6846,midcap,chemicals,chemicals,4.5996,99858
+2026-10-06,15:29,GLAND,48028.0114,largecap,healthcare,pharmaceuticals - indian - formulations,3.2492,373873
+2026-10-06,15:29,GMBREW,2165.6598,smallcap,fmcg,breweries & distilleries,3.5288,66739
+2026-10-06,15:29,GNA,2511.6665,smallcap,auto,auto ancillaries,5.256,895341
+2026-10-06,15:29,GNFC,8615.1322,midcap,chemicals,chemicals,7.3682,2291498
+2026-10-06,15:29,GPPL,8102.4529,midcap,transportation,miscellaneous,0.364,1125256
+2026-10-06,15:29,GRAPHITE,15950.4635,midcap,industrials,electrodes - graphites,4.2626,2456818
+2026-10-06,15:29,HBESD,179.3861,smallcap,services,hotels,-3.9677,180036
+2026-10-06,15:29,HBSL,39.8424,smallcap,financials,finance & investments,3.7442,4061
+2026-10-06,15:29,HFCL,38306.3878,largecap,telecom,cables - telephone,4.9986,6656282
+2026-10-06,15:29,HMAAGRO,1171.8013,smallcap,fmcg,food - processing - indian,4.9573,2144577
+2026-10-06,15:29,ICIL,8837.1847,midcap,textiles,textiles - cotton/blended,6.0399,981220
+2026-10-06,15:29,INDIAGLYCO,2033.2569,smallcap,fmcg,breweries & distilleries,5.1426,613990
+2026-10-06,15:29,INDUSTOWER,100302.948,largecap,telecom,transmisson line towers / equipment,2.3409,5484978
+2026-10-06,15:29,JAMNAAUTO,5375.1313,midcap,auto,auto ancillaries,7.2592,6124884
+2026-10-06,15:29,JGCHEM,2388.9783,smallcap,chemicals,chemicals,9.1528,750821
+2026-10-06,15:29,KAVDEFENCE,489.8925,smallcap,aerospace & defence,telecommunications - equipment,4.9951,167209
+2026-10-06,15:29,KMEW,7314.8993,midcap,transportation,miscellaneous,7.0109,268808
+2026-10-06,15:29,KOTAKBANK,413783.1008,largecap,bank,banks - private sector,3.8221,40021922
+2026-10-06,15:29,KPIL,23546.1186,largecap,realty,transmisson line towers / equipment,5.2727,652356
+2026-10-06,15:29,LAURUSLABS,106504.8028,largecap,healthcare,pharmaceuticals - indian - bulk drugs & formln,3.987,2197316
+2026-10-06,15:29,LCL,6116.6068,midcap,industrials,engineering,8.3945,2300964
+2026-10-06,15:29,LEMONTREE,8545.1704,midcap,services,hotels,2.0953,4208738
+2026-10-06,15:29,LXCHEM,4908.8624,smallcap,chemicals,chemicals,6.6524,4355804
+2026-10-06,15:29,MANALIPETC,1499.6613,smallcap,energy,petrochemicals,5.9296,10482494
+2026-10-06,15:29,MAXIND,843.7675,smallcap,financials,finance & investments,10.4643,422790
+2026-10-06,15:29,MBLINFRA,372.5514,smallcap,realty,construction,4.8117,209858
+2026-10-06,15:29,MEESHO,104386.1683,largecap,transportation,miscellaneous,5.1744,39917541
+2026-10-06,15:29,MIDHANI,8244.8334,midcap,aerospace & defence,steel - medium / small,5.0557,2140471
+2026-10-06,15:29,MOBIKWIK,1589.034,smallcap,i.t,miscellaneous,19.996,58640687
+2026-10-06,15:29,MOTILALOFS,60883.0532,largecap,financials,finance & investments,6.9281,2179004
+2026-10-06,15:29,MVELECTRO,2448.7613,smallcap,consumer discretionary,electronics - components,3.9608,4326577
+2026-10-06,15:29,NAVA,15768.8112,midcap,miscellaneous,diversified - large,3.2872,601625
+2026-10-06,15:29,NGLFINE,1846.1789,smallcap,healthcare,pharmaceuticals - indian - bulk drugs,4.4775,18062
+2026-10-06,15:29,NPST,3825.3227,smallcap,i.t,computers - software - medium / small,0.1091,67123
+2026-10-06,15:29,NUVAMA,33234.8468,largecap,financials,finance & investments,0.9886,641224
+2026-10-06,15:29,ONWARDTEC,646.712,smallcap,i.t,computers - software - medium / small,1.3242,29818
+2026-10-06,15:29,ORBTEXP,637.3281,smallcap,textiles,textiles - processing,2.683,8679
+2026-10-06,15:29,ORIENTHOT,2515.9266,smallcap,services,hotels,1.9451,869875
+2026-10-06,15:29,PANAMAPET,2917.0013,smallcap,energy,petrochemicals,4.5417,627296
+2026-10-06,15:29,PETRONET,43500.0026,largecap,energy,miscellaneous,2.5862,5098731
+2026-10-06,15:29,PRADPME,812.8126,smallcap,"castings, forgings & fasteners",castings & forgings,15.6379,104979
+2026-10-06,15:29,PREMCO,131.7954,smallcap,textiles,textiles - products,1.7803,425
+2026-10-06,15:29,QUINTEGRA,3.7539,smallcap,i.t,computers - software - medium / small,5,11789
+2026-10-06,15:29,RAJOOENG,982.1781,smallcap,industrials,engineering,3.602,838914
+2026-10-06,15:29,SKYGOLD,12791.0341,midcap,consumer discretionary,diamond cutting / jewellery,3.8443,4153944
+2026-10-06,15:29,SOTL,4985.7134,smallcap,energy,petrochemicals,6.6419,523424
+2026-10-06,15:29,SVLL,945.012,smallcap,transportation,miscellaneous,1.6298,2740
+2026-10-06,15:29,SWELECTES,909.6772,smallcap,industrials,electric equipment,2.283,28332
+2026-10-06,15:29,TRACXN,337.8997,smallcap,i.t,computers - software - medium / small,8.6365,493405
+2026-10-06,15:29,TRANSRAILL,6212.6976,midcap,realty,engineering - turnkey services,4.2464,2088541
+2026-10-06,15:29,UGARSUGAR,661.95,smallcap,fmcg,sugar,0.7138,228982
+2026-10-06,15:29,VBL,148685.7385,largecap,fmcg,food - processing - indian,-0.0682,4266861
+2026-10-06,15:29,VINCOFE,2660.1247,smallcap,consumer discretionary,trading,2.5303,1459907
+2026-10-06,15:29,YUKEN,1533.6336,smallcap,industrials,engineering,9.7077,282354
+2026-10-07,15:29,ADANIGREEN,216274.2292,largecap,power & utilities,power generation and supply,2.163,6420423
+2026-10-07,15:29,AEGISLOG,48996.09,largecap,services,trading,4.6063,1713087
+2026-10-07,15:29,AEROFLEX,7420.4478,midcap,metals & mining,steel - medium / small,0.5528,1019697
+2026-10-07,15:29,AIROLAM,132.4527,smallcap,building materials,miscellaneous,3.1487,15611
+2026-10-07,15:29,AKUMS,12822.1012,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,0.9697,153950
+2026-10-07,15:29,AMANTA,767.5786,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,4.7552,187306
+2026-10-07,15:29,APOLLO,15163.1181,midcap,aerospace & defence,electronics - components,1.642,9053893
+2026-10-07,15:29,AURUM,2231.8532,smallcap,i.t,computers - software - medium / small,0.026,124143
+2026-10-07,15:29,AVALON,16037.4937,midcap,consumer discretionary,electronics - components,1.2206,364773
+2026-10-07,15:29,BEEKAY,827.9178,smallcap,metals & mining,steel - medium / small,1.3706,1282
+2026-10-07,15:29,BGLOBAL,5.4183,smallcap,i.t,computers - software - medium / small,4.5872,141843
+2026-10-07,15:29,BHAGYANGR,1450.2281,smallcap,power & utilities,power generation and supply,4.989,601005
+2026-10-07,15:29,CHENNPETRO,20932.4755,largecap,energy,refineries,14.6973,20027812
+2026-10-07,15:29,CINEVISTA,79.4346,smallcap,realty,construction,11.1352,296344
+2026-10-07,15:29,CPCAP,281.1355,smallcap,financials,finance & investments,0.4465,135716
+2026-10-07,15:29,CYIENTDLM,7454.0983,midcap,aerospace & defence,electronics - components,5.2503,1350010
+2026-10-07,15:29,DIGIDRIVE,69.2186,smallcap,i.t,trading,0.8357,14204
+2026-10-07,15:29,DIVISLAB,253522.4939,largecap,healthcare,pharmaceuticals - indian - bulk drugs,0.3979,422217
+2026-10-07,15:29,EBGNG,7811.4991,midcap,services,trading,6.743,1130382
+2026-10-07,15:29,FAIRCHEMOR,855.6396,smallcap,chemicals,chemicals,3.614,129286
+2026-10-07,15:29,FRONTSP,1645.313,smallcap,auto,auto ancillaries,2.7792,79155
+2026-10-07,15:29,GODIGIT,23910.2356,largecap,financials,finance & investments,2.3782,818602
+2026-10-07,15:29,GUJRAFFIA,22.6232,smallcap,industrials,packaging,1.2183,4819
+2026-10-07,15:29,HAVISHA,20.8809,smallcap,services,hotels,11.7647,501425
+2026-10-07,15:29,HLEGLAS,3105.3214,smallcap,industrials,engineering,4.9989,322476
+2026-10-07,15:29,HYBRIDFIN,51.6901,smallcap,financials,finance & investments,1.5945,19378
+2026-10-07,15:29,IOLCP,6307.9062,midcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,2.4756,6360102
+2026-10-07,15:29,JAIPURKURT,52.2513,smallcap,textiles,textiles - products,4.1286,220174
+2026-10-07,15:29,KNACK,2414.7541,smallcap,industrials,packaging,7.3579,4515449
+2026-10-07,15:29,KRONOX,766.7542,smallcap,chemicals,chemicals,1.9115,38705
+2026-10-07,15:29,KUSUMGAR,6414.9728,midcap,textiles,textiles - manmade,2.5941,187736
+2026-10-07,15:29,LIKHITHA,894.1737,smallcap,realty,construction,3.3001,53476
+2026-10-07,15:29,MAJESAUT,383.8229,smallcap,miscellaneous,diversified - medium / small,-0.4199,2423
+2026-10-07,15:29,MANCREDIT,489.6333,smallcap,financials,finance & investments,3.7344,119524
+2026-10-07,15:29,MAWANASUG,578.4993,smallcap,fmcg,sugar,2.5492,526482
+2026-10-07,15:29,MBEL,1459.6226,smallcap,realty,construction,13.7778,7111495
+2026-10-07,15:29,MILKYMIST,24573.4017,largecap,fmcg,food - processing - indian,4.9969,2326916
+2026-10-07,15:29,MMP,1220.7226,smallcap,metals & mining,aluminium and aluminium products,3.7977,191291
+2026-10-07,15:29,MRPL,30621.4058,largecap,energy,refineries,4.6589,23675207
+2026-10-07,15:29,PGIL,11701.9119,midcap,readymade garments/apparels,textiles - products,0.5053,177377
+2026-10-07,15:29,PNGSREVA,1734.5364,smallcap,consumer discretionary,trading,15.3143,4514798
+2026-10-07,15:29,PTCIL,34670.2696,largecap,"castings, forgings & fasteners",castings & forgings,6.7459,117090
+2026-10-07,15:29,PVRINOX,12269.1033,midcap,media,entertainment / electronic media software,7.5556,5065408
+2026-10-07,15:29,PWL,38251.0914,largecap,services,miscellaneous,5.8471,34917953
+2026-10-07,15:29,RBZJEWEL,784.6,smallcap,consumer discretionary,diamond cutting / jewellery,1.6467,101810
+2026-10-07,15:29,RGL,1756.7629,smallcap,consumer discretionary,diamond cutting / jewellery,2.9642,600665
+2026-10-07,15:29,RPSGVENT,2756.4287,smallcap,i.t,computers - software - medium / small,4.4473,134474
+2026-10-07,15:29,SALONA,144.295,smallcap,textiles,textiles - cotton/blended,0.857,118
+2026-10-07,15:29,SEDEMAC,15015.1833,midcap,consumer discretionary,electronics - components,0.7648,116377
+2026-10-07,15:29,SETCO,243.724,smallcap,auto,auto ancillaries,1.427,43134
+2026-10-07,15:29,SIKA,2182.2061,smallcap,aerospace & defence,engineering,3.8181,41214
+2026-10-07,15:29,STEELCAS,3740.352,smallcap,"castings, forgings & fasteners",castings & forgings,1.0011,147905
+2026-10-07,15:29,TBOTEK,18386.0841,midcap,i.t,travel agencies,0.6674,1938711
+2026-10-07,15:29,TFCILTD,6511.7749,midcap,financials,finance - term-lending institutions,8.2403,19824302
+2026-10-07,15:29,VHL,1140.7188,smallcap,financials,finance & investments,0.6883,611
+2026-10-07,15:29,YASHO,5163.8126,midcap,chemicals,chemicals,1.2795,60414
+2026-10-07,15:29,ZIMLAB,742.029,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,5.8021,846341
+2026-10-08,15:29,ABANSENT,198.4356,smallcap,services,trading,2.8561,24469
+2026-10-08,15:29,BGLOBAL,5.4183,smallcap,i.t,computers - software - medium / small,4.5872,189124
+2026-10-08,15:29,BHARATGEAR,162.349,smallcap,auto,auto ancillaries,0.8201,29967
+2026-10-08,15:29,HINDCOMPOS,615.8673,smallcap,miscellaneous,diversified - medium / small,3.2817,61165
+2026-10-08,15:29,ICICIGI,81081.7994,largecap,financials,finance & investments,2.1384,896637
+2026-10-08,15:29,KOTIC,1675.8498,smallcap,services,trading,7.8035,1027245
+2026-10-08,15:29,NAZARA,14464.5705,midcap,i.t,telecommunications - service provider,-0.6474,3687557
+2026-10-08,15:29,SEJALLTD,773.547,smallcap,building materials,glass & glass products,-0.2939,57296
+2026-10-08,15:29,STERTOOLS,842.064,smallcap,"castings, forgings & fasteners",fasteners,5.8961,129326
+2026-10-08,15:29,TRU,51.8238,smallcap,financials,finance & investments,2.5882,56618
+2026-10-08,15:29,VHLTD,1045.0024,smallcap,services,hotels,4.9992,159535
+2026-10-08,15:29,VIVIMEDLAB,57.2935,smallcap,healthcare,pharmaceuticals - indian - bulk drugs & formln,4.8558,156192

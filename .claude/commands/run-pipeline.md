@@ -7,13 +7,24 @@ $ARGUMENTS
 
 ## Resolving the run folder and session setup (do this first)
 
+CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
+`git fetch origin main`, then
+`git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+If the diff is not empty, print
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+and STOP: "Checkout is behind or ahead of origin/main in framework files;
+pull or commit before running." If the fetch fails, STOP with the same line
+plus " (fetch failed)". This is a mechanical halt, not a quality halt.
+
 NAME RESOLUTION: the argument may be a full path, a bare ticker (any
 case), or a company-name fragment. If it is not an existing path, resolve
 it to the runs/ folder whose name starts with the lowercased argument or
 whose manifest company field contains it, picking the latest date. State
 the resolved folder before starting. If nothing matches, list the
-available runs and stop. If more than one matches, list the matches and
-ask.
+available runs and stop. If more than one matches at the same latest
+date, pick the one whose manifest ticker matches exactly; if still
+ambiguous, take the first alphabetically and say which you took and why.
+Do not ask.
 
 LESSONS PRE-READ: after the run folder resolves and before any stage runs,
 read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
@@ -29,8 +40,7 @@ overrides a prompt or framework, and it is never passed to a stage or
 verifier subagent.
 
 TOOLING GATE (before stage 0, not after the first failure). The
-session-start hook runs a PDF tooling preflight and reports its result in
-session context. Read that line first. Then confirm it yourself: test-read
+session-start hook runs a PDF tooling preflight on web sessions and reports its result in session context. Read that line first if present; on a local session there is none. Then confirm it yourself: test-read
 one inputs/ PDF end to end. Tooling that the hook could not install is
 installed here (apt-get install -y -qq poppler-utils; pip install -q pypdf;
 pip install -q --force-reinstall cffi when pypdf imports but fails on a real
@@ -41,7 +51,10 @@ the whole run to pre-extracted text FIRST: extract every inputs/ PDF to a
 page-marked .txt beside it (one "[page N]" marker per page), and pass the
 .txt path to every stage and every verifier in place of the PDF. Pre-extracted
 text is the reliable default on any large corpus in any case, because it also
-avoids the ~20-32MB image-render wall. Record the switch in B00.
+avoids the ~20-32MB image-render wall. Record the switch in B00. The tools:
+`python3 tools/extract_pdfs.py runs/<folder>` writes the .txt files, then
+`python3 tools/check_extraction.py runs/<folder>` flags blank or garbled
+files, which go to tools/ocr_repair.py before any stage reads them.
 
 Verifiers must never skip source verification because rendering is
 unavailable; if a PDF is genuinely unreadable by both routes, name it in the
@@ -76,7 +89,7 @@ launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
 table allows.
 
-PROVE COMPLETION, DO NOT ASSUME IT. Stages have repeatedly been dispatched
+PROVE COMPLETION. A returned call is not a finished stage. Before any later stage reads a stage's output:
 to the background despite the rule above, and the run carried on against
 reports that did not exist yet, because "the call returned" was treated as
 "the stage finished". The two are different events. Before you treat any
@@ -102,15 +115,18 @@ After each stage returns AND passes the completion check, validate its YAML
 block and commit before proceeding. At that same moment, before moving to
 the next stage, append one line to the per-stage token ledger in
 runs/<ticker>-<date>/session-cost.md, taken from the subagent result
-metadata: stage number, stage name, model, effort, input tokens, output
-tokens, total tokens, and wall time. Create the ledger with its header row
+metadata: stage number, stage name, model, effort, input tokens, cache-read
+tokens, cache-write tokens, output tokens, total tokens, and wall time.
+in_tok is uncached + cache_read + cache_write input tokens. When the
+token-meter mod is loaded, /stage-cost writes these rows; when a figure is
+not exposed, write n/a, never an estimate. Create the ledger with its header row
 when the first stage writes to it. Write one line per subagent run: if a
 stage runs as a loop or is retried, each run gets its own line with a run
 counter (run# 1, 2, ...) so the loop or retry total stays visible. Never
 defer these lines to the end of the run; each is written and committed with
 its own stage. The ledger row shape:
 
-    | # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
+    | # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |
 
 A stage exceeding 45 minutes is noted in the run log, not killed.
 
@@ -118,9 +134,8 @@ The pipeline is three phases (see prompts/00-orchestrator.md PHASES
 section):
 
 - PHASE 1 (this command): evidence gathering, stages 0-9, verifiers A, B,
-  D and the Gate 0 + EM half of verifier C, then a synthesis-lite. Ends by
-  handing off to /fttcp for deliberation.
-- PHASE 2: /fttcp runs/<folder> — operator deliberation, writes
+  D and the Gate 0 + EM half of verifier C, then a synthesis-lite and the 09b dossier. Ends at HALT 1; /fttcp runs only after the operator signs the Mental Model, records PROCEED, and the Role 5.5 tracker gate is met.
+- PHASE 2: /fttcp runs/<folder> — autonomous FTTCP draft, then operator review and the P/E base approval gate; writes
   outputs/final/fttcp-deliberation.md.
 - PHASE 3: /finalize runs/<folder> — assembly, valuation, thesis, devil's
   advocate, valuation verification, final synthesis.
@@ -128,7 +143,7 @@ section):
 Stages 10, 11, the valuation-adherence half of verifier C (12c), and the
 full synthesis do NOT run here. They run in PHASE 3.
 
-Read prompts/00-orchestrator.md now; it is the authority on sequence,
+Read prompts/00-orchestrator.md now; it is the authority on sequence, and its SPEAR GATE check runs before the stage 0 inventory below.
 handoff schemas, flag rules, and error handling. Then:
 
 1. VALIDATE (stage 0, do this yourself): inventory the run folder against
@@ -229,8 +244,7 @@ handoff schemas, flag rules, and error handling. Then:
    way the question is asked once and never again for the rest of the run.
    If the manifest has concalls_available: false, do
    not list concalls or peer-concalls as gaps: their absence is
-   declared, not accidental. This is the single permitted question in
-   the pipeline.
+   declared, not accidental. This is the single permitted question before Halt 1.
 
    COMPANY MEMORY: if companies/<TICKER>.md exists (the durable per-company
    memory written by prior /finalize runs), read it at stage 0 and carry it
@@ -248,7 +262,8 @@ handoff schemas, flag rules, and error handling. Then:
 
 2. EXECUTE stages 0 through 9 by invoking the matching subagent for each,
    in dependency order (1 and 2 can interleave; 4, 5, 8, 9 after 3; 6
-   after 5; 7 after 1). For each invocation, pass in the task message:
+   after 5; 7 after 1). In NO-CONCALL MODE stage 5 reads the B03 report
+   and block, so it dispatches only once stage 3 is proven complete. For each invocation, pass in the task message:
    the exact input file paths the stage needs, the injected content the
    prompt's {{...}} markers expect (prior YAML blocks inline, since
    blocks are small), the output path outputs/reports/<stage>.md, the BLOCK
@@ -282,7 +297,7 @@ handoff schemas, flag rules, and error handling. Then:
        (B07) compliance checks only, and pass it ONLY the two rule
        sources those checks need — prompts/01-gate-0-pipeline.md and
        prompts/07-emerging-moat-pipeline.md — alongside B01 and B07. Do
-       NOT pass the valuation framework docs (Master Prompt v3.6, Section
+       NOT pass the valuation framework docs (Master Prompt v3.7 at frameworks/Master_Project_Prompt_v3_6.md, Section
        1B layers, FTTCP v2.3): they are consumed only by the B11 valuation
        audit, which is deferred to PHASE 3, so in phase 1 they are dead
        context. Its valuation-adherence audit (B11, B10) must NOT run
@@ -390,21 +405,23 @@ handoff schemas, flag rules, and error handling. Then:
        every ledger row). Sum a stage's loop or retry runs into one stage
        total for the ranking.
    (b) DOWNSHIFT FAILURES. Any MECHANICAL stage that ran on Opus, flagged
-       "DOWNSHIFT FAILURE: <stage>". The mechanical stages are the ones
-       DISPATCH routes to haiku (stage 0 validation, stage 10 assembly,
-       verifier A); a mechanical stage on Opus means the downshift did not
-       take and the run overpaid. Write "none" if every mechanical stage
-       ran on haiku.
+       "DOWNSHIFT FAILURE: <stage>". In phase 1 the only mechanical stage
+       is verifier A (stage 10 runs in phase 3 and is checked there). Stage
+       0 runs inline on the session model by design and is not checked. A
+       mechanical stage on Opus means the downshift did not take and the
+       run overpaid. Write "none" if verifier A ran on its frontmatter
+       model.
    (c) COST SPIKES. Any stage whose total tokens exceed 1.5x the same
        stage in the previous run for this ticker (the most recent prior
        runs/<ticker>-<date>/session-cost.md ledger), flagged
        "COST SPIKE: <stage> (<this_total> vs <prior_total>)". Write "none"
        if no prior run exists or nothing crossed 1.5x.
-   (d) OPERATOR SNAPSHOT. A reminder line: the operator runs /cost and
-       /usage now and pastes the cache hit ratio and the loop totals into
-       this file under an "Operator snapshot" heading. The orchestrator
-       cannot read those interactive commands, so the operator fills the
-       snapshot.
+   (d) OPERATOR SNAPSHOT. Add a line "SESSION TOTAL (/cost)" with an
+       empty slot under it. The final message (step 7) reprints the
+       per-stage table from session-cost.md and tells the operator to run
+       /cost in the terminal and paste its output under that line. The
+       orchestrator cannot read /cost and the meter never records
+       orchestrator usage, so the operator fills the session total.
    If any DOWNSHIFT FAILURE or COST SPIKE is found, append one line naming the
    stage to this run's dated entry in LESSONS_ARCHIVE.md (the MEMORY rule's
    home for run history). Add a line under OPEN ACTIONS in LESSONS.md only
@@ -420,6 +437,11 @@ handoff schemas, flag rules, and error handling. Then:
    the dossier, the gate recommendation verdict line, flags active,
    phase-1 confidence delta overall, and the final file paths including
    outputs/reports/09b-understanding-dossier.md and session-cost.md.
+   Reprint the per-stage table from session-cost.md in full, then tell
+   the operator: "Run /cost in the terminal and paste the result into
+   session-cost.md under the line SESSION TOTAL (/cost)."
+   End the report with the commit hash and the output of
+   `git log -1 --stat`.
 
    PRINT FINALS IN CHAT: after writing the final files and committing,
    always print the primary human-readable documents in full in the chat,

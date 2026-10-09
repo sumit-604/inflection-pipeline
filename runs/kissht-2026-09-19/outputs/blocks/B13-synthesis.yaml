@@ -1,0 +1,57 @@
+stage: B13-synthesis
+company: "KISSHT"
+run_date: "2026-09-19"
+model: "claude-opus-5-5"
+status: complete
+mode: "phase 3 finalize (supersedes the phase 1 lite block; valuation, Role 2 and Role 3 integrated; priced under Section 1B v3.11 unmerged draft, open item I5)"
+files_written:
+  - runs/kissht-2026-09-19/outputs/final/business-narrative.md
+  - runs/kissht-2026-09-19/outputs/final/fttcp-recommendation.md
+  - runs/kissht-2026-09-19/outputs/final/verifier-summary.md
+  - runs/kissht-2026-09-19/outputs/final/verifier-disagreement-log.md
+  - runs/kissht-2026-09-19/outputs/final/fttcp-handoff.md
+  - runs/kissht-2026-09-19/outputs/final/notion-payload.md
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+verdict_path: "rule 1 REWORK not triggered (0 Verifier A CRITICAL; lowest acceptance 67; overall 67 >= 60; the one source fidelity item, FY23 CFO, is no verdict card or pillar input and is carried labelled). Rule 2 not triggered (decision relevant record intact; B10 unresolved holds no pillar input; the ~34% partner RoE basis (F3) and surplus cash base (F4) are operator ruled inputs carried as open rulings; if the operator rules either unresolved, rule 2 caps at INSUFFICIENT EVIDENCE). Rule 3: FLAG-CASH active, GROWTH-INDUCED by operator ruling 7 (04-Oct-2026) replacing phase 1 INDETERMINATE, missing evidence still named -> PROCEED WITH FLAGS. Confidence 67 band downgrade has no PROCEED family level below FLAGS; verdict holds."
+flags_active: ["FLAG-CASH (GROWTH-INDUCED, operator ruling 7; missing evidence named)", "FLAG-PROMOTER (operator Part 2.6 INTEGRITY concern, Small ceiling; B08 machine verdict CAUTION below the CONCERN trigger)", "FLAG-GATE0 (AVERAGE, core 51, grand 55/160)", "FLAG-DISAGREEMENT (FY23 CFO 48.36 vs 111.48 Cr, unresolved, gate held)", "FLAG-I5 (priced under unmerged v3.11)", "FLAG-ENTRY-OVERRIDE-VS-MECHANICAL", "FLAG-FV-LABEL-MARGIN", "FLAG-HURDLE-TRACK1", "FLAG-BOOK-BASE-CONFLICT (closable on AR figures, pending operator)", "FLAG-PILLAR2L-READING", "FLAG-DECOMP-PROBABILITIES-PROVISIONAL", "FLAG-UGLINESS-TEXT", "FLAG-MACRO-STALE", "FLAG-CONSUMED-BLOCKS-MISSING"]
+cash_determination: "GROWTH-INDUCED (operator ruling 7, fttcp-deliberation section 2); phase 1 INDETERMINATE superseded"
+cash_missing_evidence: ["H1 FY27 FLDG utilised cost in bps of avg off book AUM and its booking line", "numeric write off DPD trigger plus static pool / vintage loss curves", "asset side maturity ladder of the loan book"]
+cash_falsifying_quarterly_metric: "Q2 FY27 Stage 2 > 4.11% or GNPA > 2.92% vs Q2 FY26 (operator T3 trigger), by 30-Nov-2026"
+transition_posture: "VALUE-TRAP RISK (proof gate NOT FIRED + ugliness STRUCTURAL-FEATURE; recognition gap OPEN on forward basis, CLOSED on book counter reading which would engage the AVOID overlay; structural optic not named, D15-1)"
+decision_layers:
+  fttcp_band: "Composite +2 of 8. DEEP WATCH leaning AVOID. Posture VALUE-TRAP RISK."
+  role2_b14: "AVOID (Section 7, Gate 0 AVERAGE)"
+  stage11_b11: "WATCHLIST"
+  verifier_c_f12: "concurs AVOID"
+  carried: "AVOID"
+confidence_delta: {numerical: 100, redflag: 67, framework: 80.0, peer: 90.9, overall: 67}
+overall_set_by: redflag_coverage
+valuation_decision: "AVOID"
+entry_range: {low: 301.5, high: 350}
+entry_range_note: "high = operator override ~Rs 350 (BINDING, deliberation override 5); mechanical high Rs 344.2 (B11); FV CAGR 21.2% COMPOUNDER on Track 1 base (Reading B 17.9% HYBRID, entry Rs 317.2)"
+mos_price: 243.9
+destination_pe: {partner_track1: 18.62, partner_track2: 22.67, own_book_pb: "0.8/1.0/1.2", whole_company_track1: 12.16, whole_company_track2: 16.0, sector_cap_whole: 18.0, partner_cap: "22.67 operator blend, not a Section 1B row (F1)"}
+hurdle_verdict: "PASS (prob-weighted 2.04 on midpoint; Track 1 1.79 below 1.953; caps nothing)"
+fv_cagr: 21.2
+return_source_label: "COMPOUNDER (1.2 pp margin; HYBRID 17.9% on Reading B)"
+position_size: "None now (AVOID); ceiling Small (Part 2.6); B14 field reads Small, F10 open"
+zone_reachability: "price history unavailable (KISSHT screening PRICE row empty; listed 08-May-2026); no Tier B alternative (Tier B fails on Part 2.6 INTEGRITY)"
+headline: "Fast growing lender, true losses still hidden"
+falsification_metric: "Q2 FY27 Stage 2 above 4.11% or GNPA above 2.92% against Q2 FY26 (results due by 30-Nov-2026)"
+monitorables_count: 8
+open_operator_rulings:
+  verifier_c_phase3: ["F1 partner slice cap row", "F2 own book method under A27.2", "F3 ~34% partner RoE capital base and surplus cash inclusion", "F4 classification of ~Rs 171 Cr parent held IPO remainder", "F8 close BOOK on AR figures (Si Creva equity Rs 1,231.98 Cr AR p.57; consolidated Rs 1,342.78 Cr AR p.98)", "F9 strike the U/D trigger and the Rs 347.2 re-open price", "F10 position_size to read 'None (AVOID); ceiling Small if re-opened'"]
+  verifier_c_majors_carried: ["F5 Pillar 1 formula 24.3x", "F6 U/D on partner exit stress not Year 3 bear", "F7 Signal Gate not applied"]
+  devil_b15: ["D15-1 name the structural optic", "D15-2 partner exit stress sizing", "D15-3 partner slice Pillar 2L on own rows", "D15-4 T3 STARTING band looseness", "D15-5 cash line vs FLDG collateral", "D15-6 proof gate observability"]
+  run_items: ["I4 Q2 FY27 update not in corpus", "I5 Section 1B v3.11 unmerged", "DBB disbursement by book", "C2P ledger probabilities ratification", "G0V Gate 0 lender variant", "DB6 deal breaker 6 for financials", "CAPM partner cap revisit share measure", "2L Pillar 2L 0.80x reading", "UGLY structural optic not named", "BOOK closable on AR figures pending operator confirmation", "entry zone override ~Rs 350 vs mechanical Rs 344.2", "FY23 CFO conflict"]
+devil_overall: "WEAKENED BUT ALIVE"
+verifier_disagreements: "none (one Verifier A source fidelity item, FY23 CFO, gate held)"
+corrections_carried: ["B10 input_gaps mislabels the FY23 CFO conflict as FY26 (noted, no value change)", "B10.bvps_fy26_rs 131.33 not carried as valid (F24: consolidated Rs 143.2)", "phase 1 FY26 revenue Rs 2,209 Cr was the screener figure; revenue from operations Rs 2,179.25 Cr (results FY26 p.6) used", "cost of borrowing peer claim MIXED not CONTRADICTED (B12b)", "LAP breakeven inconsistency dropped (B12b)"]
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "KISSHT (OnEMI Technology Solutions) phase 3 finalize 2026-09-19"
+  summary: "Fast growing lender, true losses still hidden. Gate verdict PROCEED WITH FLAGS (rule 3; cash GROWTH-INDUCED by operator ruling; confidence 67). Valuation decision AVOID (Gate 0 AVERAGE; Stage 11 wrote WATCHLIST). FTTCP +2 of 8, DEEP WATCH leaning AVOID, VALUE-TRAP RISK. Entry Rs 301.5 to Rs 350 (operator override; mechanical Rs 344.2); FV CAGR 21.2% COMPOUNDER (17.9% HYBRID on Reading B). Priced under unmerged Section 1B v3.11 (I5)."
+  drive_link: "not recorded"
+  mode: append-never-overwrite-status

@@ -1,18 +1,17 @@
 # STAGE 09b: HALT 1 UNDERSTANDING DOSSIER (PIPELINE MODE)
-# Model: Sonnet 5 | Emits: B09b-dossier
+# Model: Sonnet 5.5 | Emits: B09b-dossier
 # Runs LAST in PHASE 1 (/run-pipeline): after stage 9 and the verifiers,
 # before the halt message. It is the Halt 1 deliverable the operator reads
-# to decide KILL / SHALLOW WATCH / PROCEED.
+# to decide KILL / SHALLOW / PROCEED.
 # ASSEMBLY ONLY: build from committed blocks (B01-B09) and the verifier
 # outputs already in outputs/blocks/. No new research, no web claims, no
 # re-analysis. Every claim traces to a block.
 # NO VALUATION: no price, no exit PE, no fair value, no BUY/WATCHLIST/AVOID,
 # no verdict-set language (PROCEED / REWORK / etc.) anywhere in this file.
-# ONE SCOPED EXCEPTION: Section 2 Part B4 (the recognition gap) poses, as an
+# NO VALUATION: rule 4 below (one scoped exception, Section 2 Part B4).
 # explicit OPEN QUESTION, whether the TO state looks already reflected in
 # market pricing, and names the PE gap as the thing Stage 11 resolves. It
 # states no number, no conclusion, no verdict. Nowhere else touches pricing.
-# The kill/proceed decision is the operator's, made after reading this.
 # Cache boundary: everything above INJECTED INPUTS is stable.
 
 You are the Halt 1 dossier assembler. You turn the committed evidence
@@ -129,7 +128,7 @@ B2. THE ENGINE. The one or two things that physically change to move it
     mechanism, not the narrative.
 B3. THE PROOF GATE. The hard binary observation, quarter by quarter, that
     proves the shift is real. State the exact metric and threshold. This
-    is the observation Stage 11 FTTCP tests. Until it fires, the
+    is the observation FTTCP (phase 2, /fttcp) tests. Until it fires, the
     transition is narrative and the name is research, not a trade.
 B4. THE RECOGNITION GAP (to be resolved at Stage 11). State, as an open
     question, whether the TO state appears already reflected in market
@@ -311,7 +310,7 @@ exactly this fenced YAML block:
 stage: B09b-dossier
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 corpus_verdict: ""              # CORPUS CURRENT | CORPUS GAPPED | CORPUS GAPPED-FRESHNESS
 corpus_gaps:                    # list, or [] if CORPUS CURRENT
@@ -326,7 +325,7 @@ transition:                     # PART B: the model itself, one entry per line t
     from_tier: ""              # B1: tier it leaves, from CLAUDE.md QUALITY LADDER
     to_tier: ""                # B1: tier it claims to reach, from CLAUDE.md QUALITY LADDER
     engine: ""                 # B2: the 1-2 things that physically change
-    proof_gate: ""             # B3: exact metric + threshold Stage 11 FTTCP tests
+    proof_gate: ""             # B3: exact metric + threshold FTTCP (/fttcp) tests
     recognition_gap: ""        # B4: open question, resolved at Stage 11 via the PE gap
     ugliness: ""               # B5: ARTIFACT-OF-CLIMB | STRUCTURAL-FEATURE
     transition_falsifier: ""   # B6: evidence that kills the transition thesis
@@ -359,7 +358,7 @@ Run date: {{RUN_DATE}}
 Corpus commit hash (for Section 6 annex question 10): {{CORPUS_COMMIT_HASH}}
 
 ALL COMMITTED BLOCKS (B00 through B09 + verifier blocks B12a/B12b/B12c-
-partial/B12d), inline:
+partial/B12d), as file paths under outputs/blocks/:
 {{ALL_BLOCKS_YAML}}
 
 STAGE REPORTS (for quote and cite retrieval only, never re-analysis):

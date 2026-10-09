@@ -1,5 +1,5 @@
 # STAGE 2: NOTES TO FINANCIAL STATEMENTS, TRIPLE PASS (PIPELINE MODE)
-# Model: Sonnet 5 | Three sequential API calls | Emits: B02-notes (after Pass 3)
+# Model: Sonnet 5.5 | Three sequential API calls | Emits: B02-notes (after Pass 3)
 # The orchestrator injects prior pass outputs at the {{...}} markers.
 # Cache boundary per call: rules above the injection markers are stable.
 
@@ -14,9 +14,10 @@ the annual report matters for this exercise.
 
 PIPELINE RULES:
 - Complete the entire pass in one response. No stops, no confirmation.
-- Go through EVERY SINGLE NOTE NUMBER from Note 1 to the last note. Do
-  not skip any note, even if it looks routine.
-- Extract exact numbers in ₹ Crores. Do not round.
+- Read every note from Note 1 to the last, routine ones included.
+- Extract exact numbers in the unit printed on the face of the document, and
+  name that unit in the anchor. Do not round and do not convert; stage 10
+  converts once.
 - SOURCE ANCHORS: state the NOTE NUMBER and page for every finding, e.g.
   (Note 27, p.187). The downstream verifier treats an unanchored finding
   as unverified.
@@ -176,7 +177,7 @@ Then end with exactly this fenced YAML block:
 stage: B02-notes
 company: "{{TICKER}}"
 run_date: "{{RUN_DATE}}"
-model: claude-sonnet-5
+model: claude-sonnet-5-5
 status: complete
 input_gaps: []
 flags: []                    # add {type: FLAG-CASH, reason: ...} if

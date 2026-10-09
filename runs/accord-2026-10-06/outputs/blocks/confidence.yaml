@@ -1,0 +1,18 @@
+stage: confidence-delta
+company: ACCORD
+run_date: 2026-10-06
+phase: 1
+verifier_a_identity_check: "0 CRITICAL rows in B12a; nothing to strike"
+confidence_delta:
+  numerical_acceptance: 97        # B12a, 812 checked; mandatory tier 212/212 (OR-32)
+  redflag_coverage: 62.5          # B12b, 5 of 8 material caught in full (8 of 8 if partial catches count)
+  framework_adherence: 93.5       # B12c phase-1 scope, 72 of 77 rules; valuation half pending phase 3
+  peer_utilisation: null          # B12d: 2 substantive of 3 peers; denominator 3 < 4 -> NOT APPLICABLE
+  overall: 62.5
+  overall_set_by: redflag_coverage
+  not_applicable:
+    - "peer_utilisation: 2 of 3 peers substantive (VOLTAMP has no transcripts); denominator 3 < 4; reported as a count"
+    - "framework_adherence valuation component: pending phase 3"
+band: "60-74: PROCEED verdicts downgrade one level"
+rework_triggers: "none: no CONFIRMED Verifier A CRITICAL; no acceptance rate below 60% on a denominator of 4 or more (OR-29)"
+verifier_disagreements: "none this run: no downstream step relied on, cleared or argued around a B12a source-fidelity finding (MAJOR #1 Block D ex-FD cash label; MINOR #4 no-export page cite; MINOR #5 lock-in and pledge page cites stand as flagged)"

@@ -1,0 +1,64 @@
+stage: B06-peers
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "VOLTAMP: no transcripts collected (screener has none); recorded UNUSED for call evidence; Data_Sheet used as screener-tier numbers only"
+  - "All three peers are 7x to 31x Accord's FY26 revenue (calc DS); no peer near Rs 70 Cr scale"
+  - "Danish has no quarterly data in Data_Sheet and no call after 11-May-26; Danish Q1/H1 FY27 read NOT FOUND"
+  - "Accord H1 FY27 EBITDA, gross margin, MVA made, receivables, PVC share of Rs 173 Cr book: NOT FOUND (B04, B05), so peer tests of margin and pass-through cannot close"
+  - "Accord figures taken from B04 and B05, not re-read from filings in this stage"
+flags:
+  - {type: PEER-CAPACITY-CEILING-GAP, reason: "Rs 150-200 Cr ceiling implies Rs 12.5-22.2 lakh per MVA on 900-1,200 MVA; peers run Rs 8.2-10.9 lakh per MVA incl. peak plans (D-M26 p10-11; S-M26 p12-13; S-O25 p7); peer rate on Accord MVA gives Rs 74-131 Cr at 100% fill (calc)"}
+  - {type: PEER-TIMELINE-CONTRADICTION, reason: "Accord 6 months minimum vs Shilchar 12-18 months (S-A25 p8 L77) and Danish 12-18 months (D-M26 p12 L481-482); both peers built on owned land and Danish slipped about 4 months (D-N25 p15)"}
+  - {type: PVC-SHARE-OUTLIER, reason: "Accord claims 100% PV pass-through above 3 months; Danish about 30% of book (D-M26 p9 L340-346); Shilchar partial, 50-60% recovered on in-hand orders (S-A26 p5 L101)"}
+  - {type: LBF-1-SEASONALITY-CHECK, reason: "Peer H1 share 38.1-50.6% (calc DS, calls) applied to H1 FY27 52.68 gives Rs 104-138 Cr; Rs 180 Cr needs H1 share 29.3%, below every peer; Rs 120 Cr needs 43.9%, inside range"}
+  - {type: DEFERRAL-SIZE-OUTLIER, reason: "Shilchar deferrals about 5-11% of FY26 revenue; Accord Rs 31 Cr about 44% (B05); single-customer event, no peer analogue"}
+  - {type: RECEIVABLE-PRECEDENT, reason: "Danish and Shilchar receivables grew 122% and 144% in a year of 28% and 57% sales growth, CFO lagged PAT, then Shilchar unwound; Accord same pattern FY25 (+319% vs +63%); H1 FY27 +90% points to a rebuild"}
+  - {type: PEER-MARGIN-SHOCK, reason: "Shilchar ex other income margin 33.0% (Q1 FY26) to 21.0% (Q4 FY26) to 16.4% (Q1 FY27) (calc DS); its Q1 FY27 headline EBITDA 29.23 includes other income 7.18; Voltamp 17.1% to 14.8%"}
+  - {type: PEER-CHANNEL-AVOIDANCE, reason: "Danish 90% private and avoids discoms for payment delay (D-N25 p28-29); Shilchar no state utilities (S-A26 p7 L122); Accord pursues UGVCL, MVVNL, Torrent bids"}
+verdict_counts: {verified: 2, partially_verified: 5, contradicted: 1, unverifiable: 3, total: 11}
+peers_provided: 3
+verified:
+  - {claim: "Q5: transformer oil, metal price and availability shock in 2026 and booking material at order as hedge (Accord 15% advance, 3-month terms unverified)", peers: ["DANISH", "SHILCTECH"], anchor_count: 5}
+  - {claim: "Q11: industry demand is strong (order books, inquiry flow, 55 GW renewables); Accord's guidance size not supported", peers: ["DANISH", "SHILCTECH"], anchor_count: 6}
+partially_verified:
+  - {claim: "Q1: price variation clause pass-through above 3 months (mechanism real; share 100% not corroborated, Danish about 30%)", peers: ["DANISH", "SHILCTECH"]}
+  - {claim: "Q2: 13-15% EBITDA and 9-11% PAT plausible (below peer FY26 EBITDA 16.5-29.2% and PAT 13.2-24.3%; no bridge; peers' 2026 margins fell sharply)", peers: ["DANISH", "SHILCTECH"]}
+  - {claim: "Q3: 75-80% utilisation and Rs 150-200 Cr ceiling on 1,200+ MVA (utilisation corroborated; ceiling needs Rs 12.5-22.2 lakh per MVA vs peers Rs 8.2-10.9)", peers: ["DANISH", "SHILCTECH"]}
+  - {claim: "Q4: customer-site deferrals of dispatch (phenomenon corroborated; size 44% of revenue vs peers about 5-11%)", peers: ["DANISH", "SHILCTECH"]}
+  - {claim: "Q10: receivable rebuild and weak CFO in fast-growth year (pattern in Danish and Shilchar from data sheets; call evidence thin)", peers: ["DANISH", "SHILCTECH"]}
+contradicted:
+  - {claim: "Q8: expansion ground work in 2-3 months, manufacturing in 6 months minimum", contradicting_peer: "SHILCTECH and DANISH", quote_anchor: "Shilchar: 'anywhere between 12 months to 18 months to complete the project and start production' (S-A25, Alay Shah, p8 L77). Danish: 'the timeline would be anywhere between 12 to 18 months for it to start coming live' (D-M26, Shivam Talwar, p12 L481-482)"}
+unverifiable:
+  - {claim: "Q6: utility tender win rates, L1 pricing, MVVNL Rs 125 Cr and Torrent Rs 100 Cr bids", peers_checked: ["DANISH", "SHILCTECH"]}
+  - {claim: "Q7: Voltamp once manufactured at Accord's factory; contract manufacturing; Gujarat and Maharashtra overlap", peers_checked: ["DANISH", "SHILCTECH"]}
+  - {claim: "Q9: customer concentration (Torrent 35-40% FY25; Rs 31 Cr order 44% FY26) and single large customer reliance", peers_checked: ["DANISH", "SHILCTECH"]}
+peer_coverage_map:
+  - {peer: "DANISH", quarter: "H1 FY26 (8-Nov-25)", usage: "SUBSTANTIVE", contribution: "Realisation falls with rating; entry margin concession; type-test and 12-18 month sequence; 90% private and discom payment delay; 20-30% conversion; order-announcement practice"}
+  - {peer: "DANISH", quarter: "H2 FY26 (11-May-26)", usage: "SUBSTANTIVE", contribution: "PV clause about 30% of book; oil +100% and firm-price hit; 5,500 MVA, Rs 900-1,000 Cr on 11,000 MVA; margin set by customer type; 12-18 months next phase"}
+  - {peer: "SHILCTECH", quarter: "Q4 FY25 (22-Apr-25)", usage: "SUBSTANTIVE", contribution: "12-18 months to production; Rs 10 lakh per MVA; 1-3% premium; LC-backed receivables; capacity race; competitor names"}
+  - {peer: "SHILCTECH", quarter: "Q2 FY26 (18-Oct-25)", usage: "SUBSTANTIVE", contribution: "Rs 90 Cr capex for 6,500 MVA; Rs 1,400-1,500 Cr ceiling on 14,000 MVA; no outsourcing; stepwise kV ladder; Rs 750 Cr FY26 target"}
+  - {peer: "SHILCTECH", quarter: "Q4 FY26 (5-May-26)", usage: "SUBSTANTIVE", contribution: "FY26 Rs 652 Cr, 29% EBITDA; Rs 11 lakh per MVA sum; 79% dispatch-basis utilisation; hedging at order; oil doubled; deferrals not cancellations; Rs 120 Cr capex"}
+  - {peer: "SHILCTECH", quarter: "Q1 FY27 (14-Aug-26)", usage: "SUBSTANTIVE", contribution: "50-60% pass-through; Q1 margin compression; no state utilities; export 10 points above domestic; Rs 30-35 Cr deferral; capex on track Apr-27"}
+  - {peer: "VOLTAMP", quarter: "none", usage: "UNUSED", contribution: "No transcript collected (screener has none). Data_Sheet cited as screener-tier numbers in Q2, Q10, Q11 and LBF-1 check only"}
+industry_cross_read:
+  demand: "Strong and structural at both transcript peers (order books Rs 500 Cr plus, renewables 55 GW in FY26); 2026 shock hit export-heavy Shilchar (Q1 FY27 sales -15.2%, calc) while domestic Voltamp grew 28.4% (calc DS)"
+  pricing_inputs: "Oil about +100% and metals +10-25%; pass-through partial and negotiated (Shilchar 50-60%; Danish PV clause about 30% of book); peer margins fell, Shilchar ex other income 33.0% to 16.4% year on year (calc DS)"
+  capex_cycle: "Industry-wide capacity race, not a lone expander: Shilchar 7,500 to 14,000 MVA, Danish 11,000 live plus a further 80-100% under decision, Waaree entering; Accord's 5,000 MVA vs 900.36 MVA is the largest relative step (5.5x, calc)"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Shipping and logistics shock, container cost 3-5x (S-A26 p4 L84)"
+  - "Supplier backing out and force majeure price demands after commodity spike (D-M26 p8 L302-303; S-M26 p16 L605-611)"
+  - "State discom payment delays and cycles; both peers avoid state utilities (D-N25 p29 L1414-1417; S-A26 p7 L122)"
+  - "Entry margin concessions and type-test cost on new voltage classes (D-N25 p17 L809-812; S-A26 p7 L121)"
+  - "220 kV bushing lead time and type-test and audit sequence before orders (S-M26 p13-14; D-M26 p6)"
+  - "Sheet metal fabrication as delivery and quality bottleneck (D-M26 p9 L365-374)"
+  - "Overcapacity and new entrants (Waaree by acquisition); analysts raise it on every Shilchar call (S-A25 p8; S-O25 p8; D-N25 p36-37)"
+  - "Utilisation definition: dispatch basis vs production (S-M26 p13 L491-495)"
+  - "Order-announcement materiality practice explains part but not all of Accord's filed-vs-inflow gap (D-N25 p33 L1623-1637)"
+  - "Peer guidance cuts of about 13% from external events despite order books near 1x revenue (Shilchar FY26; Danish FY26)"
+net_narrative_effect: "complicates"
+cross_peer_hypothesis: "Cost pass-through in this segment is relational, not contractual, and its capture rate is about half. Danish had a PV clause on about 30% of its book and called the rest bounded by firm prices (D-M26 p9, p14). Shilchar recovered 50-60% of the oil and metal rise on fixed-price orders by asking customers under force majeure (S-M26 p16; S-A26 p5). Together they show fixed-price books recover roughly half of a shock after one to two quarters, and only with repeat customers. Test for Accord: if its book is PV-covered above 3 months, its gross margin (FY26 24.1%) should not have fallen in H1 FY27 while Shilchar's ex other income margin fell from 33.0% to 16.4% in the same quarter; a fall means the 100% claim is a negotiated outcome, not a clause."
+analyst_note: "Peer tests close on direction, not size. Demand and the oil shock are corroborated by two peers. The build timeline is contradicted. The plant ceiling, PVC share and 44% deferral are outliers against peers. LBF-1 arithmetic: peer H1 shares (38.1-50.6%) applied to H1 FY27 52.68 give Rs 104-138 Cr; Rs 120 Cr needs 43.9%, Rs 180 Cr needs 29.3%, below every peer. Accord's order cover (1.36x-2.57x of the H2 need) beats both peers' cover at similar dates (71-75%), so conversion and unfiled orders, not cover, are the weak point. Basis note: margins are ex other income from PBT bridge on screener data (calc). Shilchar's Q1 FY27 headline EBITDA 29.23 includes other income 7.18. Accord inventory days use a sales basis here (127) and differ from B04's cost basis (146). Separating observations for later stages: H1 FY27 MVA made and mix, PVC share of the Rs 173 Cr book, H1 gross margin vs 24.1%, H1 receivables."

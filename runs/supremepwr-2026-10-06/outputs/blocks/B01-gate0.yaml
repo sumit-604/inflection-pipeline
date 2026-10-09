@@ -1,0 +1,41 @@
+stage: B01-gate0
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR: screener P&L, Quarters, Balance Sheet, Cash Flow sheets EMPTY; Data_Sheet CSV FY23-FY26 used (B00-inputs)"
+  - "HIGH: prospectus/ empty (Dec-2023 listing); promoter holding 3 years back NOT FOUND, E2 scored 0"
+  - "Capex and trade payables for FY23 and FY24 NOT FOUND in the provided corpus (FY25 AR not consumed); FCF years limited to FY25 and FY26"
+  - "FY23 current liabilities NOT FOUND, so FY23 ROCE not computed"
+  - "Peer data not provided: M2, M5, M6, M9 scored 0 PEER DATA NEEDED"
+flags:
+  - {type: FLAG-GATE0, reason: "History is 4 years (LIMITED confidence): classification downgraded one tier, GOOD+ to GOOD. Depressors are Block B (9/20, FCF negative FY25 -2.09 and FY26 -31.58 on the Kannur capex peak) and E2 (NOT FOUND, scored 0). No deal-breaker fired. Classification is fragile: if M3 scores 1 instead of 3 (CWIP in fixed assets), moats confirmed fall to 3, MODERATE, and the classification becomes AVERAGE."}
+data_years: 4
+fy_range: "FY23 to FY26"
+blocks: {A: 15, B: 9, C: 18, D: 14, E: 14}
+core_score: 70
+moat_score: 15
+grand_total: 85
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "GOOD"
+deal_breakers: []
+history_downgrade: true
+data_notes:
+  - "Data available: 4 years (FY23 to FY26). Units: screener Rs Cr; AR/results statements Rs Lakhs converted once (Lakhs/100) and stated in the report."
+  - "ROCE computed (screener Data Sheet has no ROCE): EBIT = PBT + interest; capital employed = total assets - current liabilities (AR p.12). FY24 28.14%, FY25 27.05%, FY26 20.07%. FY23 NOT FOUND (no current liabilities). A4 compares FY26 with FY24 (decline 8.07pp, score 0)."
+  - "ROE: FY23 on closing net worth (opening NOT FOUND); FY24 to FY26 on average net worth. Net worth FY24-FY26 from AR p.12 (includes NCI), FY23 from screener equity + reserves."
+  - "Loss-to-profit swing: none. All four years profitable."
+  - "Capex FY25 39.78 and FY26 57.48 from consolidated cash flow (AR p.82, Rs Lakhs 3,977.54 and 5,748.04). FY23 and FY24 capex NOT FOUND, FCF for those years NOT FOUND. B2 = 0 of 2 evaluable years positive; B3 negative. Scores 0 on the evaluable subset; B2 and B3 may be understated."
+  - "WC days on revenue basis (COGS not used). Payables FY24-FY26 from AR p.12 (22.7, 31.5, 62.2); FY23 payables NOT FOUND, so B4 compares FY26 93.9 days with FY24 203.1 days (decrease 109.2). FY26 payable days 125.0 now equal inventory days 124.8."
+  - "E1 uses SHP 31-Mar-2026 promoter and group 57.16% (14,284,665 shares). AR p.84 note f lists two named promoters only at 52.07%, 0.00% change in FY26. Gap of 5.09pp is promoter group holders; not reconciled in this stage. E1 scores 4 on either figure."
+  - "E2 NOT FOUND (Mar-2023 or listing-date promoter holding absent), scored 0."
+  - "E4: contingent liabilities nil in FY26 and FY25 (AR p.91, Note 30). Ratio 0%."
+  - "M3 FAT 2.01x uses net block 90.36 (screener; AR p.81 PPE 90.30 + intangibles 0.06). With CWIP 29.35 included FAT is 1.52x and M3 falls from 3 to 1. Then moats confirmed = 3 (M1, M4, M10), moat class MODERATE, classification AVERAGE after the history downgrade."
+  - "M11 scored 1 conservatively: history under 6 years, selling and admin share of revenue 2.29% FY23 to 2.44% FY26 (rising 0.15pp). Test is a poor structural fit for a transformer maker."
+  - "PEER DATA NEEDED: M2, M5, M6 (R&D spend also NOT FOUND in AR), M9. M7 and M8 scored 0: no licence or distribution-network data in provided inputs."
+  - "Consolidation caution carried to later stages: FY26 standalone revenue 190.08 vs consolidated 181.64 (Q1 FY27 results p.5 and p.8, Rs Lakhs 19,007.73 and 18,164.04); standalone PAT 20.44 equals consolidated attributable PAT 20.44. Danya Electric inter-company elimination is not tested in Gate 0."
+  - "Load-bearing fact 3 confirmed: CFO 25.90, capex 57.48, borrowings 49.97 (screener; AR p.12 33.1+16.9=50.0), inventory 62.10, payables 62.20. Fact 4 confirmed: Q1 FY27 revenue +37.5% (48.23 vs 35.07), consolidated profit for the period 4.95 (+9.6%), attributable 4.90 (+10.1%), employee cost 1.92 vs 0.81 (Q1 results p.8)."
+block_b_trend: "deteriorating: FCF -2.09 (FY25) to -31.58 (FY26); FY26 CFO 25.90 is 0.45x capex 57.48; CFO/PAT FY26 1.27 vs FY25 2.03"
+analyst_note: "Block C (18) and the ROCE level carry the score; Block B (9) is the weak block and it is a capex-peak effect, not a cash-conversion collapse: FY26 CFO was 25.90 after a 30.56 Cr inventory build. The real caution is the working capital shape. Payables of 62.20 now equal inventory of 62.10, so the 109-day WC improvement vs FY24 is funded by suppliers, and borrowings rose 18.75 to 49.97. ROCE fell from 28.1% (FY24) to 20.1% (FY26) as capital employed grew 93% while Kannur ran at 20-25% utilisation (operator context, unverified). Gate 0 cannot see whether payables include capex creditors. The moat count of 4 is mechanical and thin: M3 and M4 sit at the lowest passing bar."

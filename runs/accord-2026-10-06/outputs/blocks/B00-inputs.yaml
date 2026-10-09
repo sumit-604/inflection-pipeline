@@ -1,0 +1,133 @@
+stage: B00-inputs
+company: ACCORD
+run_date: 2026-10-06
+model: orchestrator (stage 0 run inline by the orchestrator session, claude-opus-5-5)
+status: complete
+spear:
+  line: "Spear: OVERRIDE 2026-10-06 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+  gate: PASS (recorded override in companies/ACCORD.md)
+  load_bearing_facts:
+    - "LBF-1 GUIDANCE VS DELIVERY: FY27 guidance Rs 120-180 Cr revenue, EBITDA 13-15%, PAT 9-11% (Jun-2026 call, operator context) vs H1 FY27 revenue Rs 52.68 Cr (+90.07% YoY, BSE business update 2026-10-05 p2) and order book Rs 173 Cr at 30-Sep-2026. H2 FY27 must deliver Rs 67-127 Cr. Verify the guidance wording in the transcript and the order-book bridge: Rs 164.25 Cr (18-Jan-2026, presentation p30) -> Rs 159 Cr (22-Jul-2026, Q1 update p2) -> Rs 173 Cr (30-Sep-2026), H1 FY27 inflow Rs 77 Cr."
+    - "LBF-2 LOANS AND ADVANCES: short-term loans and advances Rs 0.64 Cr -> Rs 8.90 Cr in FY26 (operator context). Name counterparty and purpose from AR notes, related-party note and CARO clause (iii)."
+    - "LBF-3 USE OF IPO MONEY AND DISCLOSURE CONDUCT: Rs 7.00 Cr moved from machinery capex to building/plant expansion (AGM 2026-09-26 special resolution); ESOP 2026 of 5,00,000 options (exercise price); customer name withheld on the two largest order filings (Rs 19.97 Cr 2026-06-29; Rs 20.02 Cr 2026-09-23); a Tipco Engineering India Ltd board outcome sits on Accord's BSE feed (2026-09-03); the H2 FY26 presentation Stock Data page carries another company's code (SRIGEE 544399)."
+    - "LBF-4 CASH CONVERSION: FY26 CFO Rs 8.70 Cr vs PAT Rs 4.50 Cr, cash Rs 22.3 Cr post-IPO; inventory days about 179 (operator context). Test repeatable vs IPO-period working-capital release."
+sector_cap_row: "Cables / Industrial products"
+sector_cap_row_evidence: >
+  25x, section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  sector cap table row "Cables / Industrial products"). Accord manufactures
+  distribution, power and inverter-duty transformers, switchgear panels,
+  compact substations and busducts (BSE H1 FY27 update 2026-10-05 p2; Q1 FY27
+  update 2026-07-27 p2): an industrial electrical-equipment maker. Collector
+  guess "Pharma / CDMO" rejected. Alternative row considered and rejected:
+  "EV charging / energy transition equipment" 28x; the EV-charging line is
+  claim-tier (no NHEV filing; two Megha EV-station transformer orders of
+  Rs 9.69 Cr incl. GST are ordinary transformer sales). Confirm in phase 3
+  against B04.
+listed_date: 2026-03-02
+recently_listed: true
+operator_context:
+  file: inputs/operator-notes.md
+  note: "Figures typed by the operator on 2026-10-06 are OPERATOR CONTEXT, cite as (operator, 2026-10-06), never anchored evidence. Every stage verifies them against filings and flags any that do not hold."
+corpus_cap:
+  instruction: "operator 2026-10-06: main company, at most 12 documents, priority order in step1-business-brief.md"
+  counted_documents:
+    - "1 H1 FY27 business update, announcements/20261005-4575ac94-*.pdf"
+    - "2 H2 FY26 earnings call transcript (call 2026-06-01), concalls/Concall_Jun_2026_Transcript.pdf"
+    - "3 H2 FY26 investor presentation, presentation/Investor_Presentation_1.pdf"
+    - "4 FY26 Annual Report (12th AR), annual-report/Annual_Report_2026.pdf"
+    - "5 Prospectus dated 2026-02-26, prospectus/Accord_Prospectus_Feb2026.pdf"
+    - "6 AGM notice 2026-09-03, announcements/20260903-3fff1ecd-*.pdf"
+    - "7 AGM bundle 2026-09-26: proceedings b5f4601b, voting results c9ffca43, ESOP approval 3aa16089"
+    - "8 Land/capex filing 2026-07-03, announcements/20260703-capex-land-10.67Cr.pdf"
+    - "9 Order-win and vendor-approval bundle since listing (2026-05-23 to 2026-09-29): 14 PDF + 4 Reg30 XBRL text notices in announcements/"
+    - "10 H2 FY26 audited results 2026-05-29, results/20260529-H2FY26-audited-results.pdf"
+    - "11 Q1 FY27 business update 2026-07-27, announcements/20260727-Q1FY27-business-update.pdf"
+    - "12 Board outcome 2026-09-03 (IPO-object alteration, ESOP), announcements/20260903-0bf73e52-*.pdf"
+  not_found: ["credit rating rationale: NOT FOUND (web search of ICRA/CRISIL/CARE/Acuite/Infomerics, 2026-10-06)", "NHEV EV-charging LOI: NOT FILED (no BSE filing found 2026-03-02 to 2026-10-06)"]
+  peers_outside_cap: "peer documents (6 transcripts, 4 Data_Sheets) are not counted against the main-company cap"
+reporting_units:
+  annual_report: "Rs lakh ('(₹ in Lakhs)', AR txt lines 860, 1382)"
+  presentation: "Rs lakh on financial slides ('In ₹ Lakhs', presentation p23); order book in Rs Cr"
+  results: "Rs lakh (H2 FY26 audited results; 18 of 24 pages are scans, see input_gaps)"
+  business_updates_and_order_filings: "Rs Cr or rupees in words; order values excl. GST unless stated"
+  prospectus: "Rs lakh (restated financial information)"
+  screener: "Rs Cr"
+  note: "1 crore = 100 lakh. No stage converts silently; conversion happens once, at stage 10."
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. -- NOT REPAIRED (BSE API Access Denied 2026-10-06). Presentation p28 shows promoter 61.97% / public 38.03% (as on 01-Jun-2026). UA also fails listed >=12 months (listed 2026-03-02) until 2027-03-02."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, DANISH:Profit & Loss, DANISH:Quarters, DANISH:Balance Sheet, DANISH:Cash Flow, DANISH:Customization, SHILCTECH:Profit & Loss, SHILCTECH:Quarters, SHILCTECH:Balance Sheet, SHILCTECH:Cash Flow, SHILCTECH:Customization, VOLTAMP:Profit & Loss, VOLTAMP:Quarters, VOLTAMP:Balance Sheet, VOLTAMP:Cash Flow, VOLTAMP:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. -- Data_Sheet.csv carries annual P&L/BS/CF FY21-FY26 for ACCORD (populated, checked for content); Quarters block blank (SME, half-yearly)."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again -- REPAIRED by step1: H2 FY26 audited results (BSE 2026-05-29) placed in results/. H1 FY27 results not yet filed (trading window closed 2026-09-28 for half year ended 30-Sep-2026)."
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way -- No rating found (web search 2026-10-06). rating/ ABSENT; NOT FOUND, not assumed nonexistent."
+  - "COLLECTOR WARNING (verbatim): only 1 concalls -> no-concall mode -- OVERRIDDEN by step1: the company held one call since listing (2026-06-01, H2 FY26); transcript present. concalls_available set true; stage 5 reads one transcript. Promise-delivery history is one call deep."
+  - "results: 20260529-H2FY26-audited-results.pdf pages 3-19 are image scans with no text layer (tesseract not installed locally). Stages read those pages as PDF images; the .txt covers pages 1-2 and 20-24 only."
+  - "announcements: collector fetch staged 2026-09-03 onward only; step1 added filings 2026-05-23 to 2026-08-03 by hand (order wins, UGVCL registration, Aditya Birla approval, land purchase, Q1 FY27 update) from bseindia AttachHis. Filings 2026-03-02 to 2026-05-22 not staged (listing-period filings)."
+  - "announcements: misfile on the company's own BSE feed: 2026-09-03 board outcome bd607fbe is a Tipco Engineering India Ltd document; moved to inputs/other/misfiled-third-party/ (finding for stage 8, not evidence about Accord's board)."
+  - "announcements: duplicates and non-substantive filings moved to inputs/other/not-consumed/ (newspaper clippings, media coverage, conference participation and outcome, trading-window closure, AR re-filed 2026-09-10 with only the cover-letter date changed)."
+  - "presentation: Investor_Presentation_1.pdf is the H2 FY26 earnings presentation; its p28 Stock Data shows BSE code SRIGEE / 544399 / INE0RJ901010 (another company) and p24 labels FY26 '9M FY26'. Use its financial slides only against the AR."
+  - "research: EMPTY. No effect on anchored evidence."
+  - "peers: VOLTAMP has no transcripts or presentation on screener; peer-concalls hold DANISH (2) and SHILCTECH (4) only."
+freshness_pairs:
+  - pair: "1 RESULTS to CONCALL"
+    trigger_doc: "results/20260529-H2FY26-audited-results.pdf (H2 FY26 and FY26)"
+    mate_expected: "H2 FY26 concall transcript"
+    status: PASS
+    missing_doc: ""
+  - pair: "2 RATING BULLETIN to RATIONALE"
+    trigger_doc: "none (no rating in corpus)"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+  - pair: "3 SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none referenced in corpus filings"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+  - pair: "4 AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "results FY26 audited (2026-05-29)"
+    mate_expected: "FY26 annual report"
+    status: PASS
+    missing_doc: ""
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict: CORPUS GAPPED
+corpus_manifest:
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: Accord Transformer & Switchgear Ltd, type: annual report, period: FY2025-26 (12th AR, filed 2026-09-05), folder_match: true}
+  - {path: inputs/prospectus/Accord_Prospectus_Feb2026.pdf, issuer: Accord Transformer & Switchgear Ltd, type: prospectus, period: dated 2026-02-26, folder_match: true}
+  - {path: inputs/concalls/Concall_Jun_2026_Transcript.pdf, issuer: Accord Transformer & Switchgear Ltd, type: earnings call transcript, period: H2 FY26 (call 2026-06-01), folder_match: true}
+  - {path: inputs/presentation/Investor_Presentation_1.pdf, issuer: Accord Transformer & Switchgear Ltd, type: earnings presentation, period: H2 FY26, folder_match: true}
+  - {path: inputs/results/20260529-H2FY26-audited-results.pdf, issuer: Accord Transformer & Switchgear Ltd, type: audited results, period: H2 FY26 and FY26, folder_match: true}
+  - {path: inputs/announcements/20261005-4575ac94-bbad-49a2-a7fb-0067fc2359a6.pdf, issuer: Accord, type: H1 FY27 business update, period: H1 FY27, folder_match: true}
+  - {path: inputs/announcements/20260727-Q1FY27-business-update.pdf, issuer: Accord, type: Q1 FY27 business update, period: Q1 FY27, folder_match: true}
+  - {path: inputs/announcements/20260703-capex-land-10.67Cr.pdf, issuer: Accord, type: Reg 30 land acquisition, period: 2026-07-03, folder_match: true}
+  - {path: inputs/announcements/20260903-3fff1ecd-3660-484b-a59e-df0712ab70ca.pdf, issuer: Accord, type: AGM notice, period: 12th AGM, folder_match: true}
+  - {path: inputs/announcements/20260903-0bf73e52-4ecd-47fb-86fb-f79dc9013fd6.pdf, issuer: Accord, type: board meeting outcome, period: 2026-09-03, folder_match: true}
+  - {path: inputs/announcements/20260926-b5f4601b-0939-4574-a569-88c6da486d24.pdf, issuer: Accord, type: AGM proceedings, period: 2026-09-26, folder_match: true}
+  - {path: inputs/announcements/20260926-c9ffca43-4dc8-4faf-852d-740f6c66cd48.pdf, issuer: Accord, type: AGM voting results, period: 2026-09-26, folder_match: true}
+  - {path: inputs/announcements/20260926-3aa16089-3ff9-4268-ad6d-bdcc5d6637cc.pdf, issuer: Accord, type: ESOP approval disclosure, period: 2026-09-26, folder_match: true}
+  - {path: "inputs/announcements/ order-win and approval notices (20260523, 20260611, 20260624 x2, 20260629, 20260706, 20260803, 20260904, 20260905, 20260907, 20260923 x2, 20260929, REG30PARAB x4 .txt)", issuer: Accord, type: Reg 30 order wins and vendor approvals, period: 2026-05-23 to 2026-09-29, folder_match: true}
+  - {path: inputs/other/misfiled-third-party/20260903-bd607fbe-5789-4488-bfc7-691ebd695aff.pdf, issuer: Tipco Engineering India Ltd, type: board meeting outcome, period: 2026-09-03, folder_match: false, moved_from: inputs/announcements/}
+  - {path: inputs/peer-concalls/DANISH-*.pdf, issuer: Danish Power Ltd, type: transcripts, period: Nov-2025, May-2026, folder_match: true}
+  - {path: inputs/peer-concalls/SHILCTECH-*.pdf, issuer: Shilchar Technologies Ltd, type: transcripts, period: Apr-2025, Oct-2025, May-2026, Aug-2026, folder_match: true}
+inventory:
+  prospectus: {count: 1, status: PRESENT, note: "RECENTLY-LISTED PRIORITY satisfied; restated FY23-FY25 and H1 FY26 stub"}
+  annual-report: {count: 1, status: PRESENT}
+  results: {count: 1, status: PRESENT (partly scanned)}
+  rating: {count: 0, status: ABSENT (NOT FOUND)}
+  concalls: {count: 1, status: PRESENT}
+  peer-concalls: {count: 6, status: PRESENT}
+  announcements: {count: 21, status: PRESENT}
+  shareholding: {count: 0, status: ABSENT (collector gap)}
+  research: {count: 0, status: EMPTY}
+  screening: {count: 4, status: "Data_Sheet only, populated annual blocks"}
+  presentation: {count: 1, status: PRESENT}
+  other: {count: 7, status: preserved, never consumed}
+peers:
+  - {ticker: DANISH, url: "https://www.screener.in/company/DANISH/consolidated/", why: "Jaipur transformer maker scaled on renewable inverter-duty transformers; closest engine and geography"}
+  - {ticker: SHILCTECH, url: "https://www.screener.in/company/SHILCTECH/", why: "distribution-to-power transformer climb with margin expansion; the climb template"}
+  - {ticker: VOLTAMP, url: "https://www.screener.in/company/VOLTAMP/", why: "scaled distribution/power transformer maker; mature margin and PVC reference; no transcripts"}
+empty_folder_confirmation: "SUPPRESSED by /step1 AUTONOMY CONTRACT; standing answer: proceed with the gaps (rating, shareholding, research)."
+tooling: "pypdf extraction OK on all PDFs except results pages 3-19 (scans); page-marked .txt beside each PDF (tools/extract_pdfs.py). Pass .txt paths; read results scan pages as PDF images."
+corpus_commit: 9fb42cc6
+input_gaps_carry: ["rating ABSENT", "shareholding ABSENT", "results pp3-19 scan-only", "listing-period announcements not staged", "VOLTAMP no transcripts", "one concall only"]
+flags: []
+correction_2026-10-06: "Stage 8 (B08) corrects stage 0: inputs/other/misfiled-third-party/20260903-bd607fbe is Accord's OWN board outcome with a Subject line naming Tipco Engineering India Ltd; body, CIN and signatory are Accord's; a corrected copy (20260903-0bf73e52) was filed the same day. It is a filing error, not a third-party document. Left in other/ as a superseded duplicate."
+analyst_note: "Recently listed SME (2026-03-02). Half-yearly reporting. FY26 revenue fell 11% while H1 FY27 rose 90%: the backward and forward pictures disagree, so every stage must keep both. Operator plans to buy 2026-10-07; the forward module runs in this session after Halt 1 and is not a pipeline stage."

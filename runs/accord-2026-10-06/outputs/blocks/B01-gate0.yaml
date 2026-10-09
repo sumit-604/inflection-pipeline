@@ -1,0 +1,47 @@
+stage: B01-gate0
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding pattern ABSENT: promoter pledge (E3) and latest promoter % rest on prospectus (2026-02-26) and AR Note 3(c) (31-Mar-2026); no post-listing pledge evidence"
+  - "results PDF pp3-19 scan-only and not readable in this run (pdftoppm missing); FY26 figures taken from the AR audited statements instead (AR pp77-79)"
+  - "FY21 and FY22: no filed document in the corpus; screener-data only. CFO FY21-22, current liabilities FY21-22 and trade payables FY21-22 NOT FOUND, so ROCE and WC days run FY23-FY26 only"
+  - "peer data not injected (peer Data_Sheets exist in inputs/screening but were not provided to this stage): M2, M5, M9 scored 0 PEER DATA NEEDED"
+  - "prospectus restated financials are in Rs THOUSANDS (Annexure I-III headers), not Rs lakh as the task note says"
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVERAGE (deal-breaker 4, cumulative CFO/PAT -0.18) with historical depressors identified: CFO negative in FY24 (Rs -4.82 Cr) and FY25 (Rs -8.18 Cr) on receivable and inventory build, then FY26 CFO Rs 8.70 Cr from a Rs 13.49 Cr receivable release (AR p79). Core 65 sits in the 60-79 band; the cap alone binds. Post-IPO rebase and WC-cycle case; position sizing may override AVERAGE."}
+  - {type: FLAG-CASH, reason: "FY26 CFO Rs 8.70 Cr vs PAT Rs 4.50 Cr is a one-off receivable release (FY25 build Rs 21.73 Cr, FY26 release Rs 13.49 Cr, AR p79), after Rs 9.09 Cr absorbed by loans and advances. FY25+FY26 cumulative CFO Rs 0.52 Cr vs PAT Rs 10.44 Cr. Not shown to be repeatable."}
+  - {type: FLAG-LBF2, reason: "Short-term loans and advances Rs 0.64 Cr to Rs 8.90 Cr (AR Note 17): vendor advances Rs 6.24 Cr (from Rs 0.31 Cr), revenue authorities Rs 1.95 Cr, retention Rs 0.56 Cr, loans Rs 0.15 Cr. CARO 3(iii) reports nil loans or advances in the nature of loans; related-party note shows no advance to a related party. Vendor counterparty NOT FOUND in the AR."}
+  - {type: FLAG-OPERATOR-FIGURE, reason: "Operator inventory days 179 does not reproduce on revenue basis (126.8 days). It reproduces only on raw-material-consumed basis (180.2). All other operator FY26 figures hold within rounding."}
+data_years: 6
+fy_range: "FY21 to FY26"
+blocks: {A: 13, B: 2, C: 18, D: 19, E: 13}
+core_score: 65
+moat_score: 15
+grand_total: 80
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB4: cumulative CFO/PAT FY23-FY26 = -0.18 (<0.50) -> max AVERAGE. Driven by FY24 CFO -4.82 and FY25 CFO -8.18 (screener-data, AR p79)"
+  - "DB2: Block B = 2 (<8) -> max GOOD (non-binding, DB4 is tighter)"
+history_downgrade: false
+data_notes:
+  - "Data available: 6 years (FY21 to FY26). 5-6 year band: may not have seen full cycle. CFO and ROCE and WC days cover 4 years (FY23-FY26)."
+  - "No loss-to-profit swing. PAT positive all six years."
+  - "ROCE computed (screener export has no ROCE row): EBIT = PBT + finance cost; capital employed = total assets minus current liabilities (current liabilities FY23-24 from prospectus Annexure I, FY25-26 from AR p77). FY23 33.0%, FY24 39.8%, FY25 37.8%, FY26 13.3%. AR reports 0.35 and 0.13 for FY25 and FY26 (AR MD&A ratio table)."
+  - "FY26 ROCE memo, not scored: capital employed includes Rs 22.33 Cr cash; excluding it ROCE is about 24.0%. No credit taken."
+  - "ROE = PAT / average net worth; FY21 uses closing (opening NOT FOUND). FY26 12.8% matches AR ratio table 12.79%."
+  - "WC days on revenue basis (no COGS line). Payables from AR Note 9 (FY25-26) and prospectus Annexure XI (FY23-24). FY23 24.5, FY24 69.8, FY25 145.4, FY26 108.3."
+  - "Inventory days FY26: 126.8 revenue basis; 180.2 on raw material consumed Rs 49.31 Cr; 167.1 on AR-implied COGS Rs 53.20 Cr."
+  - "Capex from filed cash flow statements: FY23 0.40, FY24 2.34 (prospectus Annexure III), FY25 3.13, FY26 1.46 (AR p79). CFO from screener-data; prospectus restated CFO differs (FY23 1.88, FY25 -8.93)."
+  - "Restated FY25 PAT in prospectus is Rs 6.05 Cr vs Rs 5.94 Cr in screener-data and AR comparative. Screener basis used."
+  - "AR internal inconsistencies: Note 3(c) total promoter row shows 84.94% at 31-Mar-2026 against 2 x 30.99% = 61.97%; cash flow statement adds back finance cost Rs 45.05 lakh vs P&L Rs 55.04 lakh; CFS closing cash Rs 1,342.70 lakh vs balance sheet cash and bank Rs 2,232.80 lakh (difference is bank FDs, Note 16: Rs 890.11 lakh)."
+  - "Promoter holding fell from 100.00% (two years before the prospectus) to 84.94% (pre-IPO) to 61.97% (post-IPO, fresh issue only, AR Note 3(c)). E2 scored 0 on the rule; the fall is IPO dilution, not a sale in the filings read."
+  - "E3 pledge 0%: prospectus 2026-02-26 states no promoter shares pledged. Post-listing pattern NOT FOUND. If scored 0 instead, E = 8 and core = 60, still the 60-79 band."
+  - "PEER DATA NEEDED: M2, M5, M9 (and M6 margin-versus-peer leg). M6 R&D expenditure is NIL (AR). M7 scored 0 as unregulated (no licence or regulator-set price in the filings read); M8 no distribution network disclosed."
+  - "M3 scored on period median ROCE (35.4%) and median FAT; on FY26-only ROCE (13.3%) M3 would be 1 and moats confirmed 2, class still MODERATE."
+  - "Operator figures verified against AR: revenue 70.07, other income 0.29, D&A 0.63, finance cost 0.55, PBT 6.06, PAT 4.50, EBITDA 6.95 (9.9%), CFO 8.70, cash 22.3 (includes Rs 8.90 Cr bank FDs), shares 2.057 Cr, L&A 0.64 to 8.90. H1 FY27 revenue 52.68 and order book 173 hold (BSE update 2026-10-05). Not checkable at Gate 0: Rs 31 Cr deferred order, guidance, plant ceiling, NHEV, land purchase, Aditya Birla orders."
+block_b_trend: "improving in latest year (FY26 CFO +8.70 vs FY25 -8.18; WC days 145.4 to 108.3) but cumulative CFO/PAT FY23-FY26 is -0.18 and the FY26 CFO is a receivable release, so not yet shown durable"
+analyst_note: "Core 65 would read GOOD; the AVERAGE label comes only from deal-breaker 4. Cash conversion is the one weak block (B 2 of 20) and it is a working-capital timing story: FY24 and FY25 consumed Rs 13.0 Cr of CFO as receivables rose from Rs 6.8 Cr to Rs 28.5 Cr, then FY26 gave back Rs 13.5 Cr. Whether that is repeatable depends on whether the H1 FY27 revenue jump (Rs 52.68 Cr) rebuilds receivables. FY26 ROCE 13.3% is depressed by Rs 22.3 Cr of IPO cash (ex-cash about 24%), not scored. The Rs 8.26 Cr rise in loans and advances is mostly vendor advances (Rs 5.93 Cr rise) with no named counterparty; it absorbed Rs 9.09 Cr of CFO. Margin FY26 10.0% (EBITDA, screener) is down 1.6pp from FY25 on lower revenue."

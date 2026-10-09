@@ -1,0 +1,24 @@
+stage: B02-notes-pass2
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+pass: 2
+pass_2_empty: false
+report: runs/accord-2026-10-06/outputs/reports/02-notes-pass2.md
+input_gaps:
+  - "rating ABSENT; shareholding ABSENT; results pp3-19 scan-only; listing-period announcements not staged; VOLTAMP no transcripts; one concall only (carried from B00)"
+  - "AR Note 12 (fixed assets) absent from the document itself, confirmed on page-images/p88.png (printed p.106 goes Note 11 to Note 13)"
+  - "vendor-advance counterparty, ageing, purpose NOT FOUND; AR states no borrowing rate, limit or security"
+open_questions_settled:
+  - "Note 2.11(b) wrong: HDFC CC Rs 1,100 lakh secured on stock and book debts, REPO+2.50% (Prospectus p.177)"
+  - "ABL loan: interest-free, repayable on demand, limit Rs 200 lakh; all FY26 flows complete by 31-Dec-25; FY25 AR comparatives do not reconcile"
+  - "Khairthal land Rs 10.67 Cr is a 3-Jul-2026 event, not in FY26 PPE"
+  - "stock in transit vs vendor advances: both arose in Q4; link NOT FOUND; double-count reading not supported by Q4 materials ratio"
+new_findings: 10
+flags:
+  - {type: FLAG-CASH, reason: "FY25 book overdraft Rs 569.38 lakh reclassed to borrowings in AR comparatives; FY25 D/E 0.55 on old basis (0.81 on AR balance sheet); if overdraft build is financing, FY25 CFO about (1,374.85) and two-year CFO about (505.35) lakh (calc, inference)"}
+corrections_to_pass1:
+  - "ABL creditors vs purchases explained by GST"
+  - "director and ABL loan rate: interest-free per prospectus p.170"
+  - "borrowings fell 25.2% like-for-like, not 49.5%"

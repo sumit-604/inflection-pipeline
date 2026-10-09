@@ -1,0 +1,86 @@
+stage: B04-bizmodel
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "investor presentation present (H2 FY26) but slide 28 Stock Data is another company's; slide 24 labels FY26 as 9M FY26; financial slides used only against the AR"
+  - "price variation clause text, indexed materials, weights, base month, lag and share of order book: NOT FOUND in AR, prospectus and order filings (management statements only, Tr. p.8, p.11)"
+  - "order book composition at 30-Sep-26 (customer, rating, product): NOT FOUND; only totals Rs 173 Cr (H1 update p.2)"
+  - "production MVA and utilisation after 31-Dec-25: NOT FOUND; prospectus FY26 figure is extrapolated (Pros. p.123)"
+  - "H1 FY27 revenue mix by product: NOT FOUND"
+  - "nature of Services (1.8%) and Raw materials and others (3.0%) lines: NOT FOUND"
+  - "customer concentration for FY26 and H1 FY27 in filings: NOT FOUND; two LOAs of Rs 39.99 Cr name no customer"
+  - "market share and distribution or inverter-duty transformer market size: NOT FOUND"
+  - "Voltamp metrics: NOT FOUND (no transcripts)"
+  - "prospectus order list header does not state whether kVA/MVA is per unit or per line (Pros. p.114)"
+flags:
+  - {type: FLAG-CAPACITY, reason: "900.36 MVA certified (Pros. p.123; Inv. Pres. slide 17) vs 1,200+ MVA (AR p.6; Inv. Pres. slide 6; Q1 update p.2) vs a 5,000 MVA new facility (Q1 update p.2); same presentation holds both figures"}
+  - {type: FLAG-CEILING-ARITHMETIC, reason: "Rs 150-200 Cr ceiling equals 900-1,200 MVA at 100% fill on FY25 revenue per MVA (16.69 lakh); on 9M FY26 realisation (11.29 lakh) the same plant gives Rs 101.6-135.5 Cr (calc); management also says Rs 120 Cr is 90% of capacity (Tr. p.12), about Rs 133 Cr at 100%"}
+  - {type: FLAG-PVC-UNVERIFIED, reason: "IEEMA price variation on 100% of supply beyond 3 months is a management claim (Tr. p.8, p.11); no clause text or share of book in any filing; Danish states about 30% of its book; Shilchar reports partial pass-through in Q1 FY27"}
+  - {type: FLAG-UNNAMED-CUSTOMER, reason: "LOAs Rs 19.97 Cr (incl. GST, 29-Jun-26) and Rs 20.02 Cr (excl. GST, 23-Sep-26) withhold the customer name: Rs 39.99 Cr, 51.9% of Rs 77 Cr H1 FY27 inflow (calc)"}
+  - {type: FLAG-MIX-RECONCILIATION, reason: "AR p.63 mix (panel 1.2%, services 1.8%) does not reconcile with 9M FY26 table (panel 0.24%, services 2.74%, Pros. p.113); chart has no period label; H1 FY27 mix NOT FOUND"}
+  - {type: FLAG-NHEV-NOT-FILED, reason: "NHEV 'collaboration' and 'supplies' language in presentation and Q1 update has no filed agreement or value; EV charging has no revenue line; operator Rs 1,600 Cr programme claim not found in any document read"}
+  - {type: FLAG-CERT-EXPIRY, reason: "Schneider EcoXpert LV panel certification valid to 31-Dec-26; Lucy Electric licence to 28-Sep-27 (Pros. p.124); UGVCL registration covers 500 kVA only (filing 20260624)"}
+business_type: manufacturing
+revenue_streams:
+  - {name: "Transformers (distribution, power, dry type, solar and wind duty)", type: "made-to-order project/tender sales", pct_of_revenue: 82.7, predictability: "M"}
+  - {name: "Compact and package substations (CSS, PSS)", type: "made-to-order project sales", pct_of_revenue: 11.3, predictability: "L"}
+  - {name: "Panels", type: "made-to-order", pct_of_revenue: 1.2, predictability: "L"}
+  - {name: "Service", type: "service, nature NOT FOUND", pct_of_revenue: 1.8, predictability: "NOT FOUND"}
+  - {name: "Raw materials and others", type: "unclassified, NOT FOUND", pct_of_revenue: 3.0, predictability: "NOT FOUND"}
+asset_intensity: light
+wc_intensity: high
+pricing_power: price-taker
+cyclicality: secular-growth
+moats_present:
+  - "Utility and developer vendor approvals (UGVCL 500 kVA 5 years, PGCIL, Aditya Birla): entry ticket, medium durability, shared with peers"
+  - "Cost advantage claim (in-house manufacture, tank fabrication unit since Sep-2024): low to medium durability, unproven; EBITDA margin about half of Danish"
+  - "Type tests (CPRI 17.6 MVA inverter duty): low durability"
+  - "No switching cost, network, brand or scale moat evidenced"
+valuation_methods:
+  primary: {method: "Forward P/E on normalised order-conversion earnings (Section 1B destination PE governs exit)", why: "Positive earnings, low debt after IPO, interest 0.8% of revenue so P/E and EV/EBITDA converge; earnings base must come from filed order conversion and capacity at stated revenue per MVA, not from FY26"}
+  secondary: {method: "EV/EBITDA against Danish, Shilchar, Voltamp on EBITDA ex-other income", why: "Peers earn about 19-22% EBITDA against Accord 10%; cross-check the multiple and the margin gap"}
+  tertiary: {method: "PEG", why: "GARP strategy sanity bound; growth is lumpy so not a lead method"}
+  not_applicable:
+    - "P/B and ROE-based: book is mostly IPO cash"
+    - "EV/Sales: margin differs about 2x from peers"
+    - "DDM: no dividend for one to two years (Tr. p.6)"
+    - "SOTP and NAV: single business"
+    - "DCF as primary: FCF negative FY25 and FY26 positive was a receivable unwind"
+irrelevant_ratios:
+  - "Spot FY26 ROE, ROCE, D/E, current ratio: IPO cash Rs 2,040.21 lakh unspent distorts them"
+  - "AR inventory turnover 5.51 to 2.51: FY25 revenue basis, FY26 cost basis; use days on one basis (83 to 146 cost basis)"
+  - "DSCR 0.81: not reproducible from filed figures"
+  - "Filed capacity utilisation 69.78%: extrapolated from nine months on 900.36 MVA"
+  - "YoY growth against FY26: base holds a Rs 21-22 Cr order deferral; H1 FY27 +90.07% is on Rs 27.72 Cr"
+  - "Printed EBITDA margin 10.39%: includes other income and ties to neither revenue nor total income"
+  - "Order book headline alone: Jan-26 book was 2.3x FY26 revenue while revenue fell 11.3%"
+  - "P/B and dividend yield: no dividend planned; book mostly IPO cash"
+must_track_metrics:
+  - {metric: "Order book and book-to-bill", healthy: "Rs 173 Cr at 30-Sep-26 and 1.46x in H1 FY27 (inflow Rs 77 Cr / revenue Rs 52.68 Cr, H1 update p.2); stays above 1.0x", red_flag: "Book below Rs 159 Cr (22-Jul-26) or book-to-bill below 1.0x"}
+  - {metric: "Revenue per MVA made and product mix", healthy: "Rs 16-17 lakh per MVA (FY25 16.69; UGVCL PO 17.18) supports Rs 150 Cr on 900 MVA", red_flag: "Near Rs 11.29 lakh (9M FY26), which caps 900 MVA near Rs 102 Cr"}
+  - {metric: "Operating EBITDA ex-other income and fixed cost per half", healthy: "13-15% guide with employee plus other cost near Rs 503 lakh per half (H2 FY26) and incremental margin about 18%", red_flag: "Below 9.9% with revenue up, or fixed cost above Rs 600 lakh per half"}
+  - {metric: "CFO/EBITDA, inventory days (cost) and receivable days", healthy: "CFO above 50% of H1 PAT; inventory days at or below 120; receivables at or below Rs 28.9 Cr", red_flag: "Inventory days above 146 (FY26), receivable days above 113, CFO negative"}
+  - {metric: "Price variation share of order book and gross margin after materials and direct cost", healthy: "Clause on more than half the book in writing; gross margin 24% or more (FY26 24.1%)", red_flag: "No share disclosed, or gross margin down 2 points in a half-year (Shilchar Q1 FY27 partial pass-through is the example)"}
+unit_economics:
+  unit: "One MVA of transformer rating made and sold; per-unit price set by kVA rating on each PO"
+  revenue_per_unit: "Rs 16.69 lakh per MVA made FY25 and Rs 11.29 lakh 9M FY26 (calc, Pros. p.110, p.123); price per kVA Rs 1,394-2,135 on 200-500 kVA UGVCL lots, Rs 609-938 on 3.5-5.6 MVA solar and wind units (calc, Pros. p.114-115; filing 20260923)"
+  margin_per_unit: "EBITDA per MVA made Rs 1.92 lakh FY25 and Rs 1.15 lakh 9M FY26 (calc, Pros. p.110, p.123); gross margin 24.1% FY26 against 20.6% FY25; incremental EBITDA margin 18.0% from H1 to H2 FY26 (calc)"
+  key_lever: "Realisation per MVA (mix) times fixed-cost absorption; materials 70.4% of revenue is the pass-through exposure (price variation clause unverified)"
+first_deterioration_signals:
+  - {risk: "Order deferral and customer concentration", first_signal: "Finished goods and WIP rising against billing, then book not converting to revenue"}
+  - {risk: "Metal price or lagged pass-through", first_signal: "Gross margin after materials and direct cost below 24.1%"}
+  - {risk: "Mix shift to large renewable units", first_signal: "Revenue per MVA made falling toward Rs 11 lakh"}
+  - {risk: "Receivable rebuild and hidden working capital", first_signal: "Receivables over 6 months, vendor advances above Rs 600 lakh, cash credit drawn"}
+  - {risk: "Capacity and execution claims", first_signal: "Inventory days above 146 and detention or late delivery charges in other expenses"}
+mgmt_questions:
+  - "What are H1 FY27 MVA made and mix, and is plant capacity 900.36 or 1,200+ MVA with a certificate?"
+  - "What share of the Rs 173 Cr book carries the IEEMA price variation clause, with materials, weights, base month and lag?"
+  - "Who are the customers behind the Rs 19.97 Cr and Rs 20.02 Cr LOAs, and do they sit inside the Rs 37 Cr Aditya Birla figure?"
+  - "Who is the counterparty on the UGVCL ROBUST 2.0-X PO of Rs 87.50 Cr and how does a 500 kVA registration cover the other ratings?"
+  - "Is the Rs 31 Cr deferred order billed in full at the original price and collected?"
+  - "What do the Rs 624.41 lakh vendor advance and Rs 619.50 lakh stock in transit consist of, and are they cleared at 30-Sep-26?"
+  - "What is the collection plan after +90% revenue and the retention and warranty exposure per order?"
+one_line_verdict: "An order-book transformer maker, a price-taker with no moat evidenced, whose Rs 173 Cr book and 90% H1 growth are real in orders but unproven in realisation per MVA, cash conversion and price-variation cover."
+analyst_note: "Archetype: order-book business, with build-to-spec pass-through as overlay metrics. Reason: revenue is booked on customer dispatch clearance against one PO per job; no design-win platform is filed. Key for stage 5 and Role 1: the Rs 150-200 Cr ceiling equals 900-1,200 MVA at FY25 revenue per MVA (16.69 lakh); on 9M FY26 realisation (11.29 lakh) the same plant gives Rs 102-136 Cr. Two readings: UGVCL-type mix restores realisation near 17 lakh per MVA (UGVCL PO gives 17.18); renewable-heavy mix keeps it near 6-10 lakh per MVA on 3.5-5.6 MVA units. Separating observation: H1 FY27 MVA made. The price variation clause is a management claim (Tr. p.8, p.11). H2 FY26 margin gain came from fixed-cost absorption (fixed cost +4.2% on revenue +52.8%), not clearly from gross margin."

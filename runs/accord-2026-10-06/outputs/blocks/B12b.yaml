@@ -1,0 +1,38 @@
+stage: B12b
+company: "ACCORD"
+run_date: "2026-10-06"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+independent_flags_found: 23
+caught: 12
+partially_caught: 7
+missed:
+  - {severity: "MINOR", item: "R16 Deferred-order footprint: 25 of 35 sets 'manufactured' worth Rs 21-22 Cr, but FG+WIP fell from 1,178.68 to 1,150.01 lakh at 31-Mar-26; fits only if WIP plus new stock in transit (619.50 lakh) is nearly all this one order [INFERENCE]", anchor: "Tr. L202-203 (Nitin Gupta); AR Note 14 L4412-4416; AR P&L L3803"}
+  - {severity: "MINOR", item: "R17 Siemens called a partner in the deck and prospectus summary, a competitor on the call; prospectus detail shows only SGB-SMIT 'expressed mutual interest'", anchor: "Deck L1569-1574; Prospectus L8524, L8994-8999; Tr. L346, L351 (Pradeep Verma)"}
+  - {severity: "MINOR", item: "R21 Filing hygiene: 23-May-26 filing says 'Gabion Technologies India Limited has received' the orders; pre-listing CIN U31500 on four post-listing filings; 24-Jun-26 filing names Sunsure under a name-withheld note", anchor: "20260523 L7, L34-35; 20260611 L61; 20260624 L61, L77-85; 20260803 L64"}
+  - {severity: "MINOR", item: "R23 Superlative: 17.60 MVA inverter duty transformer is 'the highest rating in the transformer industry for the renewable segment'; PENDING LIVE VERIFICATION", anchor: "Tr. L123-125 (Pradeep Verma)"}
+pipeline_flags_not_supported:
+  - "NOT SUPPORTED (MAJOR): B05 ORDER-FILING-GAP and 4D MEDIUM, repeated in B06 Part 2E item 8 and analyst_note: '~Rs 17 Cr of Aditya Birla orders not filed'. The 29-Jun-26 filing (Rs 19.97 Cr incl GST = Rs 16.93 Cr ex GST, calc; 3.6 MVA wind turbine transformers; 'Leading Private Sector EPC company'; 5 months; 20260629 L84, L94-107) plus the 23-Sep-26 LOA (Rs 20.02 Cr ex GST; 20260923-d54c506f L91-111) sum to Rs 36.95 Cr against Rs 37 Cr in the H1 update (L78-80). Residue: the June filing did not name the end project owner."
+  - "OVERSTATED (MINOR): B05 1C NEW row says Schneider and Lucy partnerships and PGCIL approval 'appeared in July'. All three are in the 1-Jun-26 call-day deck (Deck L515-543); Schneider and Lucy are in the prospectus (L9012-9036). Residue: the call left them out of the spoken approvals list (Tr. L136-139)."
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "lower: D. B05 keeps the unfiled Rs 1,600 Cr NHEV LOI claim out of the grade and misses the FY26 'improved profitability' misstatement and the IPO-variation reason that contradicts the prospectus; delivered items are facts the company controls. C stands only if H1 FY27 results reconcile with the pass-through and deferral claims."
+findings:
+  - {severity: "MAJOR", location: "B05 2C, 4D", issue: "R1 FY26 called 'steady growth and improved profitability' (Tr. L162-163); filed revenue -11.3%, PAT -24.2%, EBITDA margin 11.68% to 10.39%, H2 revenue -26.4%, H2 PAT -40.3% (calc, Deck L1211-1225, L1243-1248; AR p.55 L1650-1668); H2 question answered with the full-year gap (Tr. L194-197); false margin premise accepted (Tr. L431-435)", status: "PARTIALLY CAUGHT"}
+  - {severity: "MAJOR", location: "B05 2A P9, timeline_slippages", issue: "R5 Prospectus put the IPO machinery in the existing E-11 unit with 1,424.11 sq m free vs 700 sq m needed (Prospectus L5468-5496); call said 'for the new plant only' (Tr. L290-299); AR variation reason says machinery needs new built-up space first (AR p.51 L1441-1453); Rs 700 lakh = 53.7% of the object moved (calc), 0.00% of machinery spent (AR p.50 L1394-1396)", status: "PARTIALLY CAUGHT"}
+  - {severity: "MAJOR", location: "B06 Q1, Q5, 2B, PVC-SHARE-OUTLIER; B05 3C", issue: "R6 'we will not lose anything into the price variation' (Tr. L449-450) and only an oil availability remark (Tr. L400-401), weeks after Shilchar (S-M26 L318-320) and Danish (D-M26 L569-577, L599-600) reported oil +100% and firm-price hits; AR blames 'competitive pricing' for the FY26 margin fall (AR p.82 L3114-3116); about Rs 19.4 Cr of filed H1 FY27 orders sit in Accord's own fixed-price window (calc, mixed GST)", status: "PARTIALLY CAUGHT"}
+  - {severity: "MAJOR", location: "B05 ORDER-FILING-GAP, 4D MEDIUM; B06 Part 2E item 8, analyst_note", issue: "Pipeline flag '~Rs 17 Cr of Aditya Birla orders not filed' is contradicted by the 29-Jun-26 filing (Rs 16.93 Cr ex GST, calc), which closes the Rs 37 Cr H1-update figure to within Rs 0.05 Cr", status: "NOT SUPPORTED"}
+  - {severity: "MINOR", location: "not in B05 or B06", issue: "R16 deferred-order footprint vs AR inventory note [INFERENCE]; separating observation: 30-Sep-26 inventory note", status: "MISSED"}
+  - {severity: "MINOR", location: "not in B05 or B06", issue: "R17 Siemens labelled partner (Deck L1569-1574; Prospectus L8524) and competitor (Tr. L346, L351)", status: "MISSED"}
+  - {severity: "MINOR", location: "not in B05 or B06", issue: "R21 filing hygiene: Gabion named as recipient in Accord's 23-May-26 filing; pre-listing CIN on four filings; Sunsure named under a name-withheld note", status: "MISSED"}
+  - {severity: "MINOR", location: "B05 1A T11", issue: "R23 CPRI 'highest rating in the transformer industry' superlative recorded as fact (Tr. L123-125)", status: "MISSED"}
+  - {severity: "MINOR", location: "B05 3D", issue: "R18 global presence claimed (Q1 update L83; AR L1685, L2992-2993) against Nil FX earnings FY25-FY26 (AR L2609-2613) and 'no export operations' (Prospectus L9065-9069); claim inflation not flagged", status: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B05 1C NEW row", issue: "R19 B05 misdates Schneider, Lucy and PGCIL as July items (OVERSTATED); residue: call omitted them; PGCIL scope for a 33 kV maker (Deck L643-644) unverified while Shilchar seeks PGCIL only after its 220 kV plant (S-M26 L329-335)", status: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B05 1A T10, 4A row 8", issue: "R20 Moscow counterparty named three ways (Tr. L153, L537, L548); Russia sanctions in prospectus risk factors (L2988-2989) not addressed", status: "PARTIALLY CAUGHT"}
+  - {severity: "MINOR", location: "B05 4C (via B03)", issue: "R22 AR narrative 'improvement in receivables turnover' and 'comfortable debt servicing' vs its own table: 4.48 to 3.22 and DSCR 0.81 (AR p.82 L3091, L3102-3106; p.83 L3127-3128)", status: "PARTIALLY CAUGHT"}
+critical_count: 0
+major_count: 4
+minor_count: 8
+material_found: 8
+material_caught: 5
+acceptance_rate: 62.5
+coverage_basis: "8 material (all MAJOR, 0 CRITICAL) of 23 listed; 5 caught in full, 3 partially caught (R1, R5, R6) and counted as not caught under the strict rule (8 of 8 if partials counted); 0 material missed. One company transcript, so no cross-quarter evasion test ran and no CRITICAL can arise under that rule. critical/major/minor_count count finding rows (12), not list items."

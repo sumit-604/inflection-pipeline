@@ -1,0 +1,87 @@
+stage: B03-ardeep
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "rating ABSENT"
+  - "shareholding ABSENT: promoter pledge, FII/DII split NOT FOUND IN DOCUMENT; AR gives 61.97% promoters only (AR p.85)"
+  - "results pp3-19 scan-only (not used; AR audited statements used)"
+  - "listing-period announcements not staged"
+  - "VOLTAMP no transcripts; one concall only"
+  - "AR Note 12 (PPE schedule) absent from the printed document (AR p.88): gross block and useful lives NOT FOUND IN DOCUMENT"
+  - "AR holds no order-book number, no production or utilisation figure, no customer concentration table: NOT FOUND IN DOCUMENT (prospectus supplies Pros. p.114-115, p.123, p.111)"
+  - "board attendance marks on AR p.40-41 lost in text extraction and no page image staged: board attendance NOT FOUND IN DOCUMENT"
+  - "vendor-advance counterparty, ageing and purpose NOT FOUND IN DOCUMENT (LBF-2)"
+  - "non-audit fees paid to the auditor NOT FOUND IN DOCUMENT; internal auditor after 16-Jan-26 NOT FOUND IN DOCUMENT"
+  - "funding source of Rs 1,067 lakh land NOT FOUND IN DOCUMENT; counterparty on UGVCL ROBUST 2.0-X PO (Rs 87.50 Cr) NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CASH, reason: "FY26 CFO 869.50 lakh is a receivable release (+1,349.33); without it CFO is -479.83; two-year CFO 51.40 vs PAT 1,044.80 (4.9%); 91.4% of cash 2,232.80 is unspent IPO money; inventory days 146 on cost basis, 111 on revenue basis (AR p.79, p.73, p.64)"}
+  - {type: FLAG-OPERATOR-FIGURE, reason: "Operator plant ceiling Rs 150-200 Cr, utilisation 75-80% and inventory days 179 are not in the AR and do not reconcile to filed figures: prospectus utilisation 69.78% on 900.36 MVA (extrapolated), AR claims 1,200+ MVA; AR inventory turnover 2.51 = 145 days (Pros. p.123; AR p.64)"}
+  - {type: FLAG-TIMING, reason: "AR presents UGVCL approval (filed 24-Jun-26, 500 kVA only), Aditya Birla approval (filed 6-Jul-26) and the Tijara land (filed 3-Jul-26) as FY26 events; UGVCL PO of Rs 87.50 Cr (53% of the Jan-26 order book) is dated 17-Jan-26, before the registration (AR p.14, p.38, p.63; Pros. p.115)"}
+phase_verdicts: {p1: "YELLOW", p2: "YELLOW", p3: "YELLOW (RED sub-flag: cash repeatability)", p4: "YELLOW (near RED on consistency)", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "GARP with capex-led transition framing: WATCHLIST, no clean PASS"}
+overall_quality: 5.0
+quality_components: {governance: 4, accounting: 5, balance_sheet: 6, earnings: 5}
+kill_switch_notes:
+  - "P1: a human reviewer would not have reason to stop, because the opinion is unmodified and CARO is clean on defaults and fraud; would want the 2024 auditor switch (shared address and email) checked"
+  - "P2: would not have reason to stop, because no profit-moving mismatch is proven; would want the vendor ledger for the Rs 624.41 lakh advance before sizing"
+  - "P3: would have reason to pause, not stop, because FY26 CFO is a receivable unwind and two-year CFO is 4.9% of PAT; cleared or confirmed by H1 FY27 cash flow"
+  - "P4: would not have reason to stop, because six MD&A contradictions are disclosure sloppiness; would discount narrative text and lean on filed numbers"
+  - "P5: would not have reason to stop, because no fraud, pledge or promoter sale is found; would pause on the MD's DIN disqualification window (2016-2021) overlapping his 2019 board entry"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+  extensions:
+    - "inventory turnover FY25 5.51 is revenue/average inventory while FY26 2.51 is cost/average inventory; like-for-like 5.51 to 3.30 (revenue basis) or 4.37 to 2.51 (cost basis) (AR p.64; calc)"
+    - "DSCR 0.81 not reproducible; interest cover 12.0x; formula NOT FOUND IN DOCUMENT (AR p.64)"
+missing_risks:
+  - "Order-book concentration and approval gap: UGVCL ROBUST 2.0-X Rs 87.50 Cr (53% of Rs 164.26 Cr) ordered 17-Jan-26, registration 24-Jun-26 for 500 kVA only (Pros. p.115; filing 20260624)"
+  - "Customer concentration: top 5 73.62% and top 10 84.16% of FY25 revenue; 48.10% and 66.74% for nine months FY26, none in AR (Pros. p.111)"
+  - "Customer-site delay and deferral of a Rs 31 Cr order (25 of 35 sets built); AR calls the fall a 'calibrated business approach' (Tr. p.5; AR p.63)"
+  - "Working-capital intensity: vendor advance 624.41, transit stock 619.50, MSME payables 1,494.94, receivables over 6 months +214% (AR p.88-90)"
+  - "Warranty exposure: bank guarantees 532.46 (118% of PAT) with no warranty provision (AR p.83)"
+  - "IPO money idle and objects changed: machinery nil used against 1,302.67, WC 93.2% used in five months, 700 moved to civil work (AR p.32-33)"
+  - "Finance and control churn: CFO replaced twice, internal auditor was the departed CFO, finance heads joined 13-Sep-25 (Pros. p.148; AR p.40, p.45)"
+  - "Capacity claim 1,200+ MVA against certified 900.36 MVA (AR p.6; Pros. p.123)"
+  - "Related-party dependence: ABL Electricals is lender, supplier and personal guarantor (AR p.82; Pros. p.177-178)"
+  - "Compliance history: CHG-1 not filed (repeated in secretarial audit), MD DIN disqualification 2016-2021 vs director since 2019, board-meeting discrepancies (AR p.44, p.50; Pros. p.33, p.137)"
+  - "Section 43B(h) MSME payment-window risk on 1,494.94 (AR p.88)"
+  - "Export and FX claims against nil FX earnings (AR p.55 vs p.6; Pros. p.179)"
+guidance_table:
+  - {claim: "supported by a healthy order book", number: "none in AR; Rs 164.26 Cr at 18-Jan-26 in prospectus (Pros. p.114)", timeframe: "FY27", credibility: "unquantified in AR; FY26 revenue fell 11.3% with a Rs 164 Cr book at January"}
+  - {claim: "IPO working-capital use", number: "Rs 275.00 lakh FY26, Rs 725.00 lakh FY27 (Pros. p.75)", timeframe: "FY26-FY27", credibility: "Rs 242-262 lakh used by 31-Mar-26; 931.59 lakh (93.2%) by 2-Sep-26 (AR p.32); delivered early"}
+  - {claim: "IPO machinery spend", number: "Rs 1,302.67 lakh, all FY27 (Pros. p.75)", timeframe: "FY27", credibility: "nil used to 2-Sep-26; 700.00 lakh moved to building (AR p.32); slipped"}
+  - {claim: "Prospectus FY26 working-capital table: receivable days 96, inventory days 83, payable days 56", number: "implied FY26 revenue about Rs 119 Cr (calc, INFERENCE)", timeframe: "FY26", credibility: "delivered receivable days 113, inventory days 146 (cost basis), revenue Rs 70.07 Cr; missed"}
+  - {claim: "Construction of building/civil structure at Tijara", number: "9-10 months from 26-Sep-26 approval (AR p.33)", timeframe: "to about Jul-27", credibility: "no build history; risks named by company (AR p.34)"}
+  - {claim: "Installed capacity over 1,200 MVA", number: "1,200+ MVA (AR p.6, p.21)", timeframe: "FY26", credibility: "certified 900.36 MVA to 31-Dec-25 (Pros. p.123); no filed support for the step up"}
+  - {claim: "FY27 revenue guidance (transcript only, not in AR)", number: "Rs 120-180 Cr; PAT 9-11% (Tr. lines 480-491)", timeframe: "FY27", credibility: "not testable in AR; stage 5"}
+monitorables:
+  - {metric: "Vendor advances (Note 17)", threshold: "below Rs 300 lakh at 30-Sep-26 with matching inventory inflow; above Rs 600 lakh unexplained = unresolved", where: "H1 FY27 balance sheet, Nov-26 results", why: "LBF-2: 624.41 lakh, 70% of L&A, counterparty unknown"}
+  - {metric: "Stock in transit (Note 14)", threshold: "nil or converted to RM/FG by 30-Sep-26; payable cleared", where: "H1 FY27 inventory note", why: "619.50 lakh with no visible P&L offset; separates payable-funded transit stock from inflated assets"}
+  - {metric: "Receivable days on H1 revenue", threshold: "closing receivables at or below Rs 28.9 Cr (100 days on Rs 52.68 Cr H1 revenue annualised, calc)", where: "H1 FY27 results", why: "H1 revenue +90% will rebuild receivables; FY26 CFO was the unwind"}
+  - {metric: "Operating cash flow H1 FY27", threshold: "positive and above 50% of H1 PAT", where: "H1 FY27 cash flow statement", why: "two-year CFO 4.9% of PAT; FLAG-CASH"}
+  - {metric: "Inventory days, one stated basis", threshold: "cost basis at or below 120 days (FY26 146; FY25 83)", where: "H1 FY27 inventory note and ratios", why: "turnover basis mismatch in the AR; days rose 45% to 75%"}
+  - {metric: "IPO unused balance and building spend", threshold: "at least Rs 350 lakh of the 700 lakh building budget spent by 31-Mar-27; no second object change", where: "quarterly IPO utilisation statement; AR FY27", why: "unused 1,371.08 lakh at 2-Sep-26; machinery nil; 9-10 month build"}
+  - {metric: "Cash credit drawn while IPO cash idle", threshold: "cash credit below Rs 300 lakh at 30-Sep-26 (31-Mar-26: 621.37; 31-Dec-25: 167.42)", where: "H1 FY27 Note on borrowings", why: "cost of carry; Q4 draw of 453.95 lakh"}
+  - {metric: "Bank guarantees and warranty claims", threshold: "BG growth no faster than revenue; any warranty provision booked", where: "contingent liability note", why: "532.46 lakh, 118% of PAT, nil provision"}
+  - {metric: "UGVCL ROBUST 2.0-X PO (Rs 87.50 Cr): counterparty, ratings covered, billing", threshold: "at least 25% billed by 31-Mar-27; counterparty named", where: "order filings, Q3-Q4 FY27 updates", why: "53% of Jan-26 book; registration of 24-Jun-26 covers 500 kVA only"}
+  - {metric: "Employee cost / revenue", threshold: "at or below 8.3% as revenue rises (FY26 8.26%, FY25 4.58%)", where: "H1 FY27 P&L", why: "fixed-cost base built ahead of revenue; operating leverage test"}
+  - {metric: "Related-party loans and ABL balance", threshold: "ABL loan at or below 69.64 lakh; no new interest-free promoter money beyond 182.78", where: "RPT note H1 FY27", why: "promoter funds repayable on demand; arm's-length support NOT FOUND"}
+  - {metric: "Governance items", threshold: "independent internal auditor named; MD DIN history confirmed; CHG-1 filed", where: "Reg 30 filings; MCA", why: "internal auditor was the departed CFO; 2019 board entry inside 2016-2021 disqualification window"}
+ar_new_downstream_entities:
+  - {name: "Antelp Corporation Private Limited", where_in_ar: "Note 2.3 D and E p.82; AOC-2 p.54 (sale of goods 29.44 lakh; debtor 29.44; described as 'KMP relative has an interest')", entity_type: "related-party customer"}
+  - {name: "Aditya Birla Renewables Limited", where_in_ar: "Recent Business Highlights p.14; Chairman's letter p.21; Directors' Report p.38; MD&A p.62 (vendor approval; filed 6-Jul-26)", entity_type: "customer vendor approval, renewable developer"}
+  - {name: "Western Administrative District of the City of Moscow", where_in_ar: "p.14, p.21, p.38, p.62 (MoU, no value or date)", entity_type: "foreign government MoU counterparty"}
+  - {name: "Great Value Institute of Education (CSR00009173)", where_in_ar: "CSR annexure p.57 (Rs 7.71 lakh; implementing agency)", entity_type: "CSR implementing agency"}
+  # customers over 10% of revenue: NOT FOUND IN DOCUMENT in the AR (prospectus gives only unnamed top 5 and top 10 percentages, Pros. p.111)
+strengths_top3:
+  - "Post-IPO balance sheet: D/E 0.18, current ratio 2.23, interest cover 12.0x, debt down 49.5% (25.2% like-for-like) (AR p.64, p.77)"
+  - "Gross margin up 3.5 pp to 24.1% on lower revenue; unmodified audit; CARO clean on defaults and fraud; statements foot and cash flow ties to balance sheet (AR p.78-79, p.72-74)"
+  - "Order evidence at IPO Rs 164.26 Cr (Pros. p.114) and a stated cause of the FY26 shortfall (deferred Rs 31 Cr order, 25 of 35 sets built, Tr. p.5) that fits balance-sheet scale (WIP+FG+transit 1,769.51 lakh) [INFERENCE on fit]"
+red_flags_top3:
+  - "Q4 cluster with thin disclosure: vendor advance 624.41 lakh with no counterparty, stock in transit 619.50 with no visible P&L offset, cash credit drawn while 2,040.21 of IPO money sat unspent (AR p.87, p.89-90, p.73)"
+  - "Cash conversion is a receivable unwind: CFO 869.50 vs -479.83 without the 1,349.33 release; two-year CFO 4.9% of PAT (AR p.79)"
+  - "Narrative reliability: six MD&A contradictions, CARO vs Directors' Report on internal audit, FY27 events shown as FY26, 1,200+ MVA vs certified 900.36 MVA, and a 53% order-book line (UGVCL) dated before the registration that only partly covers it (AR p.63-65, p.47, p.74; Pros. p.115, p.123)"
+best_fit_strategy: "GARP with capex-led transition framing (WATCHLIST); Turnaround is a dip-and-recovery reading only"
+one_line_verdict: "Statements foot and the post-IPO balance sheet is clean, but FY26 cash flow is a receivable unwind, Rs 12.4 Cr of Q4 advances and transit stock are unexplained, and the AR narrative carries no order book, no utilisation and FY27 events labelled FY26: best fit GARP WATCHLIST, size small until H1 FY27 cash flow and the vendor-advance unwind are seen."
+analyst_note: "Three facts stage 5 needs from this report. (1) Order-book quality: of the Rs 164.26 Cr January book, UGVCL ROBUST 2.0-X is Rs 87.50 Cr (53%), LPPL-02 Rs 31.50 Cr (19%, size and 35-count match the Rs 31 Cr deferred order [INFERENCE]), one 5,600 kVA line Rs 15.23 Cr; UGVCL registration (24-Jun-26) is 500 kVA only. (2) Capacity: AR says 1,200+ MVA; certified 900.36 MVA; FY26 utilisation 69.78% is extrapolated; management's 75-80% and Rs 150-200 Cr ceiling do not reconcile to each other. (3) The prospectus WC table implied about Rs 119 Cr FY26 revenue (calc); reported Rs 70.07 Cr. Inventory turnover 5.51 to 2.51 mixes bases; use cost basis 83 to 146 days. All AR figures Rs lakh; prospectus Rs thousand converted by /100."

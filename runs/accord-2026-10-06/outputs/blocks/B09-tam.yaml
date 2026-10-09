@@ -1,0 +1,47 @@
+stage: B09-tam
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "B07 capex-embedded growth not available; planned 5,000 MVA facility capex NOT FOUND in any filing"
+  - "EHV/HVDC share of Rs 33,000 Cr, unorganised share, top-3 concentration, DISCOM-wise approvals: NOT FOUND"
+  - "compact substation, LV panel and EV-charging market sizes: NOT FOUND (excluded from SAM)"
+  - "H1 FY27 MVA made and production utilisation: NOT FOUND"
+flags:
+  - {type: FLAG-SAM-UPPER-BOUND, reason: "geography, channel and customer filters unquantified; DT share 48.6% from an unverified snippet; possible overlap with renewable duty"}
+  - {type: FLAG-CAPACITY-BINDS, reason: "900.36 MVA certified x 16.69 lakh = Rs 150 Cr; Rs 180 Cr FY27 top end exceeds half-year ceiling by Rs 27-52 Cr; market is not the limit"}
+  - {type: FLAG-MGMT-TAM-GLOBAL, reason: "presentation TAM is global USD 30.4 bn; 11.7x conservative India TAM"}
+  - {type: FLAG-NHEV-NOT-FILED, reason: "Rs 1,600 Cr NHEV compact substation claim is concall only; not in SAM or SOM"}
+  - {type: FLAG-FX-CONVENTION, reason: "USD converted at Rs 85.3, rate implied by Prospectus p.106; spot NOT FOUND"}
+market_definition: "India liquid and dry transformers up to 20 MVA/33 kV (distribution plus solar/wind inverter-duty), domestic customers; EHV, HVDC, exports, substations, panels excluded"
+tam_cr: {conservative: 22178, realistic: 33000}
+sam_cr: 19241
+sam_pct_of_tam: 58.3
+som_3yr_cr: 150
+som_5yr_cr: 200
+som_implied_revenue_cagr: {yr3: 28.9, yr5: 23.3}
+current_sam_share_pct: 0.30
+revenue_headroom_x: 274.6
+tam_growth_pct: 7.6
+runway_class: "MASSIVE"
+mgmt_claim_cr: 259312
+mgmt_claim_ratio: 11.7
+mgmt_claim_read: "inflated"
+capacity_check: "gap of Rs 29.7 Cr for Rs 180 Cr vs certified 900.36 MVA at FY25 realisation (Rs 78.4 Cr at 9M FY26 realisation); guidance top end is the optimistic side; Rs 120 Cr needs 89.6% of certified H2 capacity (67% of claimed)"
+methods_used: ["top-down (CRISIL, M&M, IMARC, Ken)", "bottom-up renewable duty (MNRE x Waaree ratio)", "peer revenue aggregation (floor)", "import substitution (not applicable to SAM)"]
+stale_data_flags:
+  - {datapoint: "IEEMA DT+PT market Rs 24,750 Cr", source: "IEEMA via Powerline snippet", year: 2022-23}
+  - {datapoint: "India switchgear USD 1,042.33 mn to 1,431.50 mn 2028F", source: "TechSci via Prospectus p.107", year: 2022}
+searches_performed: ["India transformer market size (IEEMA/M&M/IMARC/Ken)", "CRISIL transformer sales press release Aug 2025", "Powerline transformer outlook May 2026", "FY26 solar and wind additions MNRE", "inverter duty transformer market and Waaree order", "RDSS DT demand and unorganised share", "peer FY26 revenues", "wind FY27 target", "NHEV and Accord Rs 1,600 Cr"]
+searches_skipped: ["Ken Research fetch blocked", "CARE and IEEMA PDFs unreadable", "EHV share", "unorganised share", "CSS/panel/EV market size", "per-capita benchmarks", "FY27 solar target", "spot FX"]
+downstream_candidates:
+  - {signal: "UGVCL/GUVNL DT tenders and POs", entity_type: "end-customer", demand_link: "Largest evidenced distribution transformer buyer in the order book", likely_source: "GUVNL/UGVCL tender portal; BSE order filings", cadence: "event-driven", shared: false}
+  - {signal: "Aditya Birla Renewables and Sterling and Wilson awards", entity_type: "end-customer", demand_link: "Solar and wind inverter-duty transformer buyers", likely_source: "Counterparty exchange filings and releases", cadence: "event-driven", shared: false}
+  - {signal: "MNRE monthly solar and wind capacity additions", entity_type: "macro", demand_link: "Sets inverter-duty and wind transformer volume", likely_source: "MNRE physical progress; CEA", cadence: "monthly", shared: true}
+  - {signal: "IEEMA transformer production and order-book data", entity_type: "macro", demand_link: "Sector order book, price and MVA trend", likely_source: "IEEMA monthly statistics", cadence: "monthly", shared: true}
+  - {signal: "NHEV and Megha Engineering EV substation awards", entity_type: "counterparty", demand_link: "Tests the unfiled Rs 1,600 Cr compact substation claim", likely_source: "NHEV, MoRTH/NHAI releases; Megha filings", cadence: "event-driven", shared: false}
+  - {signal: "RDSS DT sanctions and DISCOM tenders", entity_type: "regulatory", demand_link: "Drives distribution transformer volume", likely_source: "Ministry of Power RDSS dashboard; DISCOM e-tenders", cadence: "quarterly", shared: true}
+  - {signal: "IEEMA price variation indices", entity_type: "macro", demand_link: "Tests price-variation pass-through on metals", likely_source: "IEEMA PVC index circulars", cadence: "monthly", shared: true}
+demand_externally_verifiable: true
+analyst_note: "SOM is capacity-bound, not market-bound: Rs 150 Cr (certified 900.36 MVA x 16.69 lakh) at 3 years, Rs 200 Cr (claimed 1,200 MVA) at 5 years. Market-side ceiling is Rs 312 Cr at 3 years on +1pp share, so use the lower. Reading B (realisation 11.29 lakh) gives Rs 101.6/135.5 Cr (CAGR 13.2/14.1%); H1 FY27 Rs 52.68 Cr needs at least 11.70 lakh per MVA at 100% fill of certified half-year capacity, which strains B. Separator: H1 FY27 MVA made. 5,000 MVA facility (Rs 834 Cr ceiling) uncarried: no capex filed. LBF-1: Rs 120 Cr plausible (H2 needs 89.6% of certified), Rs 180 Cr not supported, 30-50% after FY27 needs new capacity. SAM is an upper bound (filters 2-4 unquantified)."

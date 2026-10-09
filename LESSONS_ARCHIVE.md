@@ -1043,3 +1043,24 @@ OR-14 re-derivation (PR #193): SYSTANGO, SHYAMMETL, MANINDS ruled Small on
 2026-10-04 (PR #201). AIMTRON and ASIANENE: not re-derived; operator ruling
 2026-10-04 (standing ruling: framework rulings apply forward; closed names keep
 their record as of the run that produced it). Both stay CONCERN, Small.
+
+## 2026-10-06 SUPREMEPWR (/step1 intake + phase 1 + operator forward module)
+- Collector: SME has no BSE code, so announcements/ came empty; NSE corporate-announcements API (index=sme) filled results, orders, AGM, rating letter by hand. Worth automating for NSE SME names.
+- Screener P&L/BS/CF/Quarters sheets exported empty again (all four tickers); Data_Sheet carried the run.
+- No poppler locally: one scanned Reg 30 letter could not be OCR-ed; its filed XBRL carried the facts.
+- CRISIL full rationale is HTML on crisil.com; saved as page-marked text in rating/.
+- Sparse checkout blocked the first corpus commit; tools/sparse_session.sh must run before git add on a new run folder.
+- Stage 9 report ended with a summary YAML, not the full block; block file governed.
+- Verifier C: prompts/12 L379 holds an edit instruction instead of a field; prompts/12 names no input for rules 6, 9, 10. FLAG-GATE0 raised on a GOOD classification (stage 1 rule slip).
+- Operator commissioned valuation work (forward_module.md) on an unsigned model in the same session; recorded as ruling R1 for the operator to confirm.
+
+## 2026-10-06 ACCORD (/step1 intake + phase 1 + operator forward module)
+- Collector staged announcements from 2026-09-03 only; earlier Reg 30 filings fetched by hand from bseindia AttachHis (AttachLive returns 404).
+- Collector set concalls_available false on a 1-transcript count; overridden, the one call was read.
+- No pdftoppm/tesseract locally: 18 scanned results pages rendered to PNG with PyMuPDF so stages could read them.
+- Stage 0 misread a wrong Subject line ("Tipco") as a third-party filing; stage 8 corrected it. Read the body and CIN, not the Subject.
+- Stage 5 left a pointer instead of the YAML in its report; orchestrator copied the block file in.
+- Stage 2 pass 1 wrote a stray file outside the run folder (removed).
+- Verifier B acceptance 62.5% on 8 material items; overall confidence 62.5, set by redflag coverage.
+- Operator commissioned valuation (forward_module.md) on an unsigned model in the same session; recorded as ruling 1 for the operator.
+- session-cost ledger: Agent tool exposes only combined subagent tokens; splits n/a.

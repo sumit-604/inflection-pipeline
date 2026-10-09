@@ -1,0 +1,59 @@
+stage: B02-notes
+company: "ACCORD"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "rating ABSENT"
+  - "shareholding ABSENT"
+  - "results pp3-19 scan-only"
+  - "listing-period announcements not staged"
+  - "VOLTAMP no transcripts"
+  - "one concall only"
+  - "AR Note 12 (fixed assets schedule) absent from the printed document, confirmed on image p88; useful lives and gross block NOT FOUND"
+  - "vendor-advance counterparty, ageing and purpose NOT FOUND (LBF-2)"
+  - "AR states no borrowing rate, limit or security; filled from prospectus (31-Mar-25 position)"
+  - "Q4 FY26 split rests on restated prospectus 9M stub (derived, not filed)"
+flags:
+  - {type: FLAG-CASH, reason: "FY26 CFO 869.50 lakh is a receivable release (+1,349.33); ex-release (479.83); two-year CFO +51.40 vs PAT 1,044.80 (4.9%); on consistent overdraft basis about (505.35) (inference). 91.4% of cash 2,232.80 is unspent IPO money (CARO x(a) p.73). Inventory 145 days (Note 30) / 180 days (closing over RM consumed). (Cash Flow p.79; Note 15 p.89; Note 16 p.90)"}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "CFO 869.50 lakh is a one-year receivable unwind (+1,349.33); ex-release (479.83); two-year CFO +51.40 vs PAT 1,044.80", note_ref: "Cash Flow p.79; Note 15 p.89", rating: RED, why: "LBF-4 repeatability fails; feeds FLAG-CASH"}
+  - {rank: 2, finding: "Short-term loans and advances 63.86 to 890.45 lakh; 70% vendor advances 624.41 (Q4 +540.14), no vendor, ageing or RPT tag; CARO iii nil loans", note_ref: "Note 17 p.90; CARO iii p.72", rating: RED, why: "LBF-2: counterparty and purpose NOT FOUND; 12.8% of net worth"}
+  - {rank: 3, finding: "Stock in transit 619.50 lakh new in Q4 beside vendor advance 624.41; no offset visible in Notes 21/23; double-count not supported by margin test, link not proven", note_ref: "Note 14 p.89; Notes 21, 23", rating: YELLOW, why: "Overstated inventory or advance-funded pre-buying; needs vendor ledger"}
+  - {rank: 4, finding: "2,040.21 of cash 2,232.80 lakh (91.4%) is unspent IPO money; free cash 192.59; cash credit +453.95 in Q4", note_ref: "Note 16 p.90; CARO x(a) p.73; Note 8 p.87", rating: RED, why: "Rs 22.3 Cr is not free cash"}
+  - {rank: 5, finding: "Inventory +34.7% on revenue -11.3%; FG +252%; turnover 5.51 to 2.51; no NRV disclosure", note_ref: "Note 14 p.89; Note 30 p.95", rating: YELLOW, why: "Working-capital intensity; stage 10 must fix days basis"}
+  - {rank: 6, finding: "Q4 cluster: eight balance-sheet lines moved after listing; Q4 materials ratio 75.8% vs 68.0% in 9M (derived)", note_ref: "Notes 8, 9, 14, 15, 17; Prospectus p.160, p.170-173", rating: YELLOW, why: "Margin step-up and positioning question"}
+  - {rank: 7, finding: "FY25 comparatives restated without amounts; overdraft 569.38 reclassified to borrowings; FY25 D/E 0.55 on old basis (0.81); like-for-like debt fall 25.2% not 49.5%", note_ref: "Note 2.9 p.83; Note 8 p.87; Note 30 p.95", rating: YELLOW, why: "Trend metrics mix bases"}
+  - {rank: 8, finding: "Promoter-linked funding 182.78 lakh on demand (ABL 150.00 raised FY26), interest-free, no sanction letter; ABL FY25 column fails arithmetic; RPT table omits former CFO pay and 11.68 reimbursement to ABL", note_ref: "Note 2.3 p.81-82; Prospectus p.177, p.187-188", rating: YELLOW, why: "Governance input; arm's-length support NOT FOUND"}
+  - {rank: 9, finding: "Template errors: Note 2.11(b) wrong on secured borrowing; Note 2.7 assertions unsupported; Note 12 absent; two Note 28; Antelp relationship inconsistent; promoter % misprinted", note_ref: "Notes 2.11, 2.7, 12, 28, 3", rating: YELLOW, why: "Narrative notes low reliability; numbers mostly reconcile"}
+  - {rank: 10, finding: "Receivables over 6 months 83.08 (+214%), nil provision; retention money 499.86 with no ageing; bill-discount interest +350%, discounted bills undisclosed", note_ref: "Notes 15, 17, 18, 25", rating: YELLOW, why: "Unprovided aged debt and possible undisclosed recourse"}
+  - {rank: 11, finding: "MSME payables 1,494.94 (80.5%, +135%); payable days 136; 45-day and Section 43B(h) effect not disclosed", note_ref: "Note 9 p.87; MSME note p.88", rating: YELLOW, why: "Supplier funding props CFO; tax disallowance risk"}
+  - {rank: 12, finding: "Bank guarantees 532.46 (+158%, 10.9% of net worth) at 101.4% of Dec-25 sanction; no warranty provision", note_ref: "Note 2.5 p.83; Notes 7, 11", rating: YELLOW, why: "Unprovided warranty risk"}
+  - {rank: 13, finding: "Land Rs 1,067 lakh (21.8% of net worth) and Rs 700 lakh IPO-object shift post year-end; no subsequent-event or commitment note", note_ref: "AR p.32-33; Reg 30 3-Jul-26", rating: YELLOW, why: "Funding source undisclosed"}
+  - {rank: 14, finding: "Employee cost +59.9% on revenue -11.3%; promoter pay +78% on PBT -24.1%; legal, travel, R&M up 106-142%", note_ref: "Notes 24, 28 p.91-92; Note 2.3", rating: YELLOW, why: "Fixed-cost build ahead of revenue"}
+  - {rank: 15, finding: "Segment note has no segment profit; no product, geography or customer split; first export 97.15 lakh (9M)", note_ref: "Note 2.4 p.83; Note 19 p.90", rating: YELLOW, why: "Mix and concentration unreadable from notes"}
+red_flags:
+  - "Unaged, unexplained vendor advance 624.41 lakh (7.4x in Q4, calc) with CARO iii reporting nil loans (Note 17 p.90)"
+  - "Stock-in-transit offset not visible in Notes 21/23 (Note 14 p.89)"
+  - "FY26 CFO not repeatable: one-year receivable release; two-year CFO +51.40 vs PAT 1,044.80 (Cash Flow p.79)"
+  - "91.4% of cash is unspent IPO money while cash credit drawn +453.95 in Q4 (CARO x(a) p.73; Note 8)"
+  - "Restated FY25 comparatives with no amounts; ratio basis mix (Note 2.9 p.83; Note 30 p.95)"
+  - "Boilerplate assertions contradicted by numbers: Note 2.7 provisions, Note 2.11(b) secured borrowing (p.83-84)"
+  - "ABL FY25 related-party loan column fails its own arithmetic (Note 2.3 p.82)"
+  - "Note 12 fixed assets schedule absent from printed document"
+questions_for_mgmt:
+  - "Who are the vendors behind the Rs 624.41 lakh advance, what purchase and delivery date does each cover, and is it the same purchase as the Rs 619.50 lakh stock in transit?"
+  - "Which account holds the offset to stock in transit, and was any of it booked in purchases at 31-Mar-26?"
+  - "Why did cash credit rise Rs 453.95 lakh in Q4 while Rs 2,040.21 lakh of IPO money was unspent, and what funds the Rs 1,067 lakh land?"
+  - "Is any bill discounted with recourse at year end, and why is there no warranty provision against Rs 532.46 lakh of warranty-period guarantees?"
+  - "What lifted materials cost to 75.8% of revenue in Q4, and how do the FY25 comparatives bridge (overdraft reclassification, ABL loan columns, deferred tax, 8.24 finance-cost shift)?"
+receivables_trend: "deteriorating on quality, improving on level: total 2,850.81 to 1,501.48 lakh (closing days 131.7 to 78.2, calc) but average-based days rose 81 to 113 (turnover 4.48 to 3.22); over 6 months 26.45 to 83.08 (0.93% to 5.53%); not due 86.1% to 68.6%; provision nil; Q4 receivables +483.12 vs 31-Dec-25 (Note 15 p.89; Note 30 p.95)"
+restatements_found:
+  - "FY25 PBT 798.05 (AR) vs 817.44 (prospectus restated), gap 19.39 = prior-period expense (Note 2.9 p.83; Prospectus p.160)"
+  - "FY25 deferred tax credit 12.51 vs 4.64; 8.24 moved from other expenses to finance cost"
+  - "FY25 book overdraft 569.38 lakh moved from other current liabilities into borrowings; FY25 D/E 0.55 stays on the old basis (Note 8 p.87; Note 30 p.95)"
+going_concern_language: "NONE (CARO xix p.74: no material uncertainty on meeting liabilities for one year, with disclaimer of assurance; no going-concern language in any note)"
+analyst_note: "Numbers mostly reconcile; the weakness is disclosure and provisioning. The pivotal open item is the Q4 cluster: vendor advance 624.41, stock in transit 619.50, payables +1,297, cash credit +454, all after listing. Two readings: advance pre-buying for the FY27 order book, or year-end positioning. The separating observation is the Q1/H1 FY27 unwind of advances and cash credit plus the vendor ledger. Cash of Rs 22.3 Cr is 91.4% IPO money. FY25 trend metrics (D/E, two-year CFO) sit on mixed bases; stage 10 must pick one. Q4 figures are derived from a restated 9M stub, not filed."

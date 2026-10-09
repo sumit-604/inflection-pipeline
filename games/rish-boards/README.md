@@ -3,9 +3,9 @@
 RishSchoolDays series, Game 4. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
-Four board games in one HTML file, for a phone or a computer. Play the
+Nine board games in one HTML file, for a phone or a computer. Play the
 computer, or play with family on one screen. Version label: **Rish Board
-Games v1** (bottom right).
+Games v2** (bottom right).
 
 ## The games
 
@@ -28,6 +28,30 @@ Games v1** (bottom right).
   while it can, and the far row makes a king. Play the computer (Easy,
   Medium, Hard) or 2 players. Undo.
 
+- **Carrom (v2):** a real carrom board with physics: coins slide, bounce
+  and hit each other. Slide the striker along your line, press on it and
+  pull back like a slingshot (the arrow and the power show the shot), let
+  go. Your coin in = shoot again. The striker in a pocket is a foul: one
+  of your coins comes back. The red queen counts only when you cover it
+  with one of your coins in the same or the next shot, and the last coin
+  needs the queen covered first. The computer plays each shot out in its
+  head before it shoots. 2 players: white at the bottom, black at the top.
+- **Chaar Line (v2):** connect four. Drop discs; 4 in a line wins. The
+  computer blocks and attacks (Easy, Medium, Hard).
+- **Reversi (v2):** trap the other colour to flip it; a turn with no
+  move is skipped; most discs wins.
+- **Kaata Zero (v2):** tic-tac-toe. The Hard computer never loses.
+- **Dots and Boxes (v2):** 5 x 5 dots. The 4th side of a box wins it and
+  another line. The computer takes free boxes and avoids giving any away.
+
+## Pictures (v2)
+
+Wooden frames and shaded squares on every board; 3D tokens, dice and
+discs; shaded Ludo yards with gold safe stars; coloured, striped snakes
+with eyes and wooden ladders; chess pieces with light and dark shading
+that phones never turn into emoji; the carrom board drawn at the
+screen's full sharpness.
+
 ## More
 
 - Your name on the home screen goes into the games.
@@ -45,7 +69,11 @@ moves, scholar's mate, castling, en passant, pins, stalemate, promotion,
 the computer, hints and undo; Ludo rules (coming out, cuts, safe squares,
 exact home, three 6s, winning) and a full 4-computer game; Saanp Seedi
 ladders, snakes, exact 100 and a full game; Checkers forced jumps, double
-jumps, kings, winning, undo and computer games; and the phone layout.
-21 checks.
+jumps, kings, winning, undo and computer games;
+the new games (Kaata Zero never loses to 40 random games; Chaar Line
+blocking and winning; Reversi flips, passes and full games; Dots and
+Boxes boxes and a full game; Carrom rack, pots, fouls, the queen rule,
+a win, the sharp board and a full computer game); and the phone layout.
+28 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html

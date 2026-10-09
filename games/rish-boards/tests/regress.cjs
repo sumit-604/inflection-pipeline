@@ -19,7 +19,7 @@ const ok = (name, cond, info = "") => { if (cond) pass++; else fail++; console.l
 
   // ---------------- A. Home ----------------
   r = await E(() => ({ title: document.title, boxes: [...document.querySelectorAll(".box h2")].map((h) => h.textContent), ver: document.getElementById("ver").textContent, credit: document.querySelector(".credit").textContent }));
-  ok("A1 home: Rish Board Games with Ludo, Chess, Saanp Seedi, Checkers; version label; credit", r.title === "Rish Board Games" && r.boxes.join() === "Ludo,Chess,Saanp Seedi,Checkers" && r.ver === "Rish Board Games v1" && /Rishabh Sharma/.test(r.credit), r);
+  ok("A1 home: Rish Board Games with 9 games; version label; credit", r.title === "Rish Board Games" && r.boxes.join() === "Ludo,Chess,Carrom,Saanp Seedi,Checkers,Chaar Line,Reversi,Kaata Zero,Dots and Boxes" && r.ver === "Rish Board Games v2" && /Rishabh Sharma/.test(r.credit), r);
   await p.fill("#pname", "Rishabh"); await p.click("#b-about");
   r = await E(() => ({ name: window.__bg.SAVE.name, saved: JSON.parse(localStorage.getItem("rish-boards.v1") || "{}").name, photo: (document.querySelector(".modal img") || {}).src || "", text: document.querySelector(".modal").textContent }));
   ok("A2 your name is saved on this device; About shows the creator's photo and Game 4", r.name === "Rishabh" && r.saved === "Rishabh" && /^data:image/.test(r.photo) && /Game 4/.test(r.text), { ...r, photo: r.photo.slice(0, 20) });
@@ -110,6 +110,54 @@ const ok = (name, cond, info = "") => { if (cond) pass++; else fail++; console.l
     const m = K.moves(CH.G.b, "r")[0]; tap(m.path[0]); tap(m.path[1]); await until(() => CH.G.turn === "r" && !CH.G.thinking); o.replied = CH.G.hist.length === 2; document.getElementById("k-undo").click(); o.undo = CH.G.hist.length === 0 && CH.G.turn === "r";
     let b = K.start(), turn = "r", plies = 0, end = ""; while (plies < 300) { const ms = K.moves(b, turn); if (!ms.length) { end = turn + " lost"; break; } const mv = K.best(b, turn, 2, 30); b = K.apply(b, mv); turn = turn === "r" ? "b" : "r"; plies++; } o.selfplay = end || "draw by length"; o.plies = plies; return o; });
   ok("K3 the computer answers your move; Undo goes back to your turn; computer vs computer games finish", r.replied && r.undo && /lost|draw/.test(r.selfplay), r);
+
+  // ---------------- N. New games (v2) ----------------
+  r = await E(async () => { const B = window.__bg, T = B.TTT; const o = {}; let xWins = 0, games = 0;
+    for (let g = 0; g < 40; g++) { const b = Array(9).fill(null); let turn = "X", w = null; while (!(w = T.winner(b))) { const free = b.map((v, i) => (v ? -1 : i)).filter((i) => i >= 0); const i = turn === "X" ? free[Math.floor(Math.random() * free.length)] : T.cpuMove(b.slice(), "hard"); b[i] = turn; turn = turn === "X" ? "O" : "X"; } games++; if (w.p === "X") xWins++; }
+    o.xWins = xWins; o.games = games;
+    T.opt = { mode: "2p", level: "hard" }; T.start(); const tap = (i) => document.querySelector(`#tb [data-i="${i}"]`).click(); for (const i of [0, 3, 1, 4, 2]) { tap(i); await until(() => true); } await until(() => document.querySelector(".modal")); o.win = document.querySelector(".modal h2").textContent; o.line = document.querySelectorAll("#tb .tc.win").length; document.getElementById("m-home").click();
+    T.opt = { mode: "cpu", level: "hard" }; T.start(); tap(4); await until(() => T.G.b.filter(Boolean).length === 2); o.reply = T.G.b.filter(Boolean).length; return o; });
+  ok("N1 Kaata Zero: 3 in a row wins (the line lights up); the Hard computer never loses (40 games vs random moves); it answers your move", r.xWins === 0 && r.games === 40 && /wins/.test(r.win) && r.line === 3 && r.reply === 2, r);
+  await E(() => document.getElementById("m-home") && document.getElementById("m-home").click());
+  r = await E(async () => { const B = window.__bg, C = B.C4; const o = {}; const e = () => Array(42).fill(null);
+    let b = e(); for (const c of [0, 1, 2]) C.drop(b, c, "R"); o.block = C.best(b, "Y", 4); b = e(); for (const c of [0, 1, 2]) C.drop(b, c, "Y"); C.drop(b, 6, "R"); o.take = C.best(b, "Y", 4);
+    b = e(); for (let k = 0; k < 4; k++) C.drop(b, 2, "R"); o.vert = (C.win(b) || {}).p; b = e(); [[0, "R"], [1, "Y"], [1, "R"], [2, "Y"], [2, "Y"], [2, "R"], [3, "Y"], [3, "Y"], [3, "Y"], [3, "R"]].forEach(([c, p]) => C.drop(b, c, p)); o.diag = (C.win(b) || {}).p;
+    C.opt = { mode: "2p", level: "medium" }; C.start(); const tap = (c) => document.querySelector(`#c4b [data-c="${c}"]`).click(); tap(3); o.bottom = C.G.b[38]; o.drop = !!document.querySelector("#c4b .c4d.drop");
+    for (const c of [4, 3, 4, 3, 4, 3]) tap(c); await until(() => document.querySelector(".modal")); o.win = document.querySelector(".modal h2").textContent; o.cells = document.querySelectorAll("#c4b .c4d.win").length; document.getElementById("m-home").click();
+    C.opt = { mode: "cpu", level: "hard" }; C.start(); tap(3); await until(() => C.G.b.filter(Boolean).length === 2, 20000); o.reply = C.G.b.filter(Boolean).length; return o; });
+  ok("N2 Chaar Line: discs fall to the bottom; 4 down or slanting wins; the computer blocks your 3 and takes its own 4; it answers on Hard", r.block === 3 && r.take === 3 && r.vert === "R" && r.diag === "R" && r.bottom === "R" && r.drop && /Red wins/.test(r.win) && r.cells === 4 && r.reply === 2, r);
+  await E(() => document.getElementById("m-home") && document.getElementById("m-home").click());
+  r = await E(async () => { const B = window.__bg, R = B.RV; const o = {}; R.opt = { mode: "2p", level: "medium" }; R.start(); o.start = R.moves(R.G.b, "B").map((m) => m.i).sort((a, c) => a - c).join();
+    document.querySelector('#rvb [data-i="19"]').click(); o.flip = R.G.b[27] === "B" && R.G.b.filter((x) => x === "B").length === 4 && R.G.turn === "W";
+    let b = Array(64).fill(null); b[0] = "B"; b[1] = "W"; b[63] = "W"; R.start(b, "W"); o.passBoard = R.moves(R.G.b, "W").length;
+    b = Array(64).fill(null); b[0] = "B"; b[1] = "W"; R.start(b, "B"); document.querySelector('#rvb [data-i="2"]').click(); await until(() => document.querySelector(".modal")); o.end = document.querySelector(".modal").textContent; document.getElementById("m-home").click();
+    let bb = Array(64).fill(null); bb[27] = bb[36] = "W"; bb[28] = bb[35] = "B"; let turn = "B", n = 0; while (n < 80) { const ms = R.moves(bb, turn), op = turn === "B" ? "W" : "B"; if (!ms.length) { if (!R.moves(bb, op).length) break; turn = op; continue; } bb = R.apply(bb, R.best(bb, turn, 2, 10), turn); turn = op; n++; } o.selfplay = bb.filter(Boolean).length; return o; });
+  ok("N3 Reversi: 4 opening moves; a move flips the trapped disc; no move left for both = the game ends with the count; computer games fill the board", r.start === "19,26,37,44" && r.flip && /wins 3-0|Black wins/.test(r.end) && r.selfplay >= 50, r);
+  r = await E(async () => { const B = window.__bg, D = B.DB; const o = {}; o.lines = D.all().length; let L = {}; L["h0-0"] = L["v0-0"] = L["v0-1"] = "A"; o.take = D.cpuLine(L, "medium"); L = { "h0-0": "A", "v0-0": "A" }; const pick = D.cpuLine(L, "medium"); o.safe = !["h1-0", "v0-1"].includes(pick);
+    D.opt = { mode: "2p", level: "medium" }; D.start(); const click = (k) => document.querySelector(`#db .ln[data-k="${k}"]`).dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    click("h0-0"); click("v0-0"); click("v0-1"); o.turnB = D.G.turn === "B"; click("h1-0"); o.box = D.G.owner["0-0"] === "B" && D.G.score.B === 1 && D.G.turn === "B";
+    let LL = {}, turn = "A", sc = { A: 0, B: 0 }; while (Object.keys(LL).length < 40) { const k = D.cpuLine(LL, "hard"); LL[k] = turn; let got = 0; for (const [r, c] of D.boxesOf(k)) if (D.sides(LL, r, c) === 4) got++; sc[turn] += got; if (!got) turn = turn === "A" ? "B" : "A"; } o.total = sc.A + sc.B; return o; });
+  ok("N4 Dots and Boxes: 40 lines; the 4th side wins the box and another turn; the computer takes free boxes and avoids giving them away; a full game shares out all 16 boxes", r.lines === 40 && r.take === "h1-0" && r.safe && r.turnB && r.box && r.total === 16, r);
+  r = await E(async () => { const B = window.__bg, CR = B.CR, K = B.Carrom; const o = {}; const rk = CR.rack(); o.rack = [rk.filter((d) => d.c === "w").length, rk.filter((d) => d.c === "b").length, rk.filter((d) => d.c === "q").length].join();
+    let overlap = 0; for (let i = 0; i < rk.length; i++) for (let j = i + 1; j < rk.length; j++) if (Math.hypot(rk[i].x - rk[j].x, rk[i].y - rk[j].y) < rk[i].r + rk[j].r) overlap++; o.overlap = overlap;
+    const coin = [{ id: "w0", c: "w", x: 300, y: 300, vx: 0, vy: 0, r: 19, m: 1 }]; const P = CR.PK[0], ux = 300 - P[0], uy = 300 - P[1], ul = Math.hypot(ux, uy), gx = 300 + ux / ul * 44, gy = 300 + uy / ul * 44;
+    const sx = 500, sy = CR.BASE.b.y; o.pot = CR.simulate(coin, sx, sy, Math.atan2(gy - sy, gx - sx), 0.8).pocketed.map((d) => d.c).join(); o.foul = CR.simulate([], 230, sy, Math.atan2(CR.PK[2][1] - sy, CR.PK[2][0] - 230), 0.6).pocketed.map((d) => d.c).join();
+    // Rules, two players. Put a coin right in front of a pocket and shoot at it.
+    K.opt = { mode: "2p", level: "medium" }; K.start(); const G = () => K.G; const only = (list) => { G().coins.forEach((d) => (d.gone = true)); list.forEach(([id, x, y]) => { const d = G().coins.find((q) => q.id === id); d.gone = false; d.x = x; d.y = y; d.vx = d.vy = 0; }); };
+    const potShot = (x, y) => { const pr = CR.PK[0], a = x - pr[0], b2 = y - pr[1], l = Math.hypot(a, b2), gx2 = x + a / l * 44, gy2 = y + b2 / l * 44, B2 = CR.BASE[K.side()]; G().sx = 500; K.shoot(Math.atan2(gy2 - B2.y, gx2 - 500), 0.85); };
+    const wid = G().coins.filter((d) => d.c === "w").map((d) => d.id), bid = G().coins.filter((d) => d.c === "b").map((d) => d.id);
+    only([[wid[0], 300, 300], [wid[1], 700, 450], [bid[0], 650, 300], ["q", 500, 500]]); potShot(300, 300); o.own = G().pk.w === 1 && G().turn === "w";
+    G().sx = 230; K.shoot(Math.atan2(CR.PK[2][1] - CR.BASE.b.y, CR.PK[2][0] - 230), 0.6); o.foulRule = G().pk.w === 0 && G().turn === "b" && /Foul/.test(G().msg) && G().coins.filter((d) => d.c === "w" && !d.gone).length === 2;
+    G().turn = "w"; only([["q", 300, 300], [wid[0], 700, 450], [wid[1], 640, 520], [bid[0], 650, 300]]); potShot(300, 300); o.pending = G().pending === "w" && G().turn === "w" && /cover/.test(G().msg);
+    only([[wid[0], 300, 300], [wid[1], 700, 450], [bid[0], 650, 300]]); G().coins.find((d) => d.c === "q").gone = true; potShot(300, 300); o.covered = G().queen === "w" && G().turn === "w";
+    G().queen = null; G().pending = null; G().turn = "w"; only([["q", 300, 300], [wid[0], 700, 450], [bid[0], 650, 300]]); potShot(300, 300); G().sx = 500; K.shoot(Math.PI / 2 * -1, 0.05); o.notCovered = !G().coins.find((d) => d.c === "q").gone && G().pending === null && G().turn === "b";
+    G().turn = "w"; G().queen = "w"; G().pk.w = 8; only([[wid[0], 300, 300], [bid[0], 650, 300]]); potShot(300, 300); await until(() => document.querySelector(".modal")); o.win = document.querySelector(".modal").textContent; document.getElementById("m-home").click();
+    K.opt = { mode: "2p", level: "medium" }; K.start(); const c = document.getElementById("crc"); o.sharp = c.width === Math.round(c.clientWidth * Math.min(3, devicePixelRatio || 1)) && c.width > 0;
+    let shots = 0; const t0 = performance.now(); while (!K.G.over && shots < 400) { const s = K.cpuShot(); K.G.sx = s.x; K.shoot(s.dir, s.power); shots++; } o.aiShots = shots; o.aiOver = !!K.G.over; o.pocketed = K.G.pk.w + K.G.pk.b; o.ms = Math.round(performance.now() - t0); return o; });
+  ok("N5 Carrom: 9 white, 9 black and the red queen with no overlap; a straight shot pockets a coin; the striker in a pocket is a foul", r.rack === "9,9,1" && r.overlap === 0 && r.pot === "w" && r.foul === "s", r);
+  ok("N6 Carrom rules: your coin in = shoot again; foul = a coin comes back and the turn passes; the queen needs a cover; last coin + covered queen wins", r.own && r.foulRule && r.pending && r.covered && r.notCovered && /wins/.test(r.win), r);
+  ok("N7 Carrom: the board is drawn at the screen's full sharpness; the computer players finish a whole game", r.sharp && r.aiOver && r.pocketed >= 9, r);
+  await E(() => document.getElementById("m-home") && document.getElementById("m-home").click());
 
   // ---------------- P. Phone ----------------
   const q = await b.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });

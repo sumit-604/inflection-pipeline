@@ -4,7 +4,8 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A full 3D action story game in one HTML file (Three.js). It runs on a
-computer and on a phone. Version label: **Rish Hero v11** (bottom right).
+computer and on a phone. Version label: **Rish Hero v12** (bottom right). Inside School Days the
+label also says only "Rish Hero v12".
 
 **Now inside RishSchoolDays (v10).** School Days v82 carries this whole
 story. Open it from the 🦸 button in School Days, or play the Annual Day
@@ -172,6 +173,20 @@ knocked out and arrested. No blood.
 - E: takedown from behind, untie, pick up, use · F: throw a book, duster,
   brick, football (stuns longer) or smoke pellet (a cloud that blinds),
   at an enemy, or at a light or extinguisher near him
+- **New moves (v12):** Shift + K (or K in the air) = flying kick, a leap
+  that hits hard. B = spin kick, hits everyone around Rish. G = grab a man
+  and throw him: he flies and knocks over the men behind him. A man
+  knocked into a wall gets a WALL SLAM.
+- **⚡ Hero Power (v12):** every hit and knockout fills the ⚡ bar under
+  the health bar. When it is full, Z (⚡ on a phone) = HERO SMASH: Rish
+  jumps and smashes the ground, and every man around him flies.
+- **Feels real (v12):** heavy hits freeze for a moment, the camera shakes,
+  dust flies, a hit combo counter shows on the right. 3 or more men down
+  within 2.5 seconds = TRIPLE TAKEDOWN (or RAMPAGE, UNSTOPPABLE) in slow
+  motion with the Rish Hero theme music. The last man down = AREA CLEAR.
+- **Rish Hero theme:** an original filmy action theme made in the game
+  (dhol drums, brass, "Ho!" shouts, cymbals), in the style of big Hindi
+  action films. Settings has Hero theme music On/Off.
 - Chapter 6 only: F or click shoots (hold F for the machine gun), R reload,
   X switch guns. The red laser shows the target; a gold ring means the room
   can do the work.
@@ -193,8 +208,8 @@ parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, di
   job, 9 emergencies, Black Viper attacks, fame, cape, fans, statue,
   Life Story, the dream job, 19 emergencies, the living city, friends,
   medals, vehicles, family, the dog), the save after a reload, the School
-  Days embed, best times, trophies and suits, plus phone controls. 105
-  checks.
+  Days embed, best times, trophies and suits, the new moves, Hero Power,
+  multi takedowns and music, plus phone controls (14 buttons). 111 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

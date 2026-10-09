@@ -72,6 +72,14 @@ from the jsdelivr CDN.
   puts you back about 100 m before the gap with a rolling start.
 - **Skill Park 2 (v13):** a second pad west of the Skill Park with Ring dash,
   Car bowling, Bullseye jump, Donut master and Balloon pop.
+- **Police and flood (v16):** Police patrol: the Desi Jeep gets a red and
+  blue light bar; catch 3 speeders (Speedy Sunny, Turbo Tinku, Rocket
+  Raju) one after another and give each a challan. Flood rescue: the
+  Monster Truck drives through deep water to 3 people on roofs, then to
+  the relief camp. 2 new badges: Highway cop and Flood rescuer. 46 badges.
+- **Rish Hero theme (v16):** the big hero wins (police patrol, flood
+  rescue, Black Viper van, ambulance run, fire call) play the original
+  Rish Hero action theme: dhol, brass and "Ho!" shouts.
 - **City jobs (v15):** three new missions. School bus run: the game lends
   the City Bus; pick up 4 children (Aarav, Diya, Kabir, Meher) and take
   them to Sunrise Public School before the bell, with a bonus for a smooth
@@ -208,3 +216,5 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   215 regression checks.
 - v15: School bus run, Swachh truck, Black Viper van, 3 new badges (44).
   219 regression checks.
+- v16: Police patrol, Flood rescue, the Rish Hero theme on hero wins,
+  2 new badges (46). 222 regression checks.

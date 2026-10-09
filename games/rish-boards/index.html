@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rish Board Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Mukta:wght@400;600;700&display=swap">
+<style>
+/* Layout: a games room. One top bar, then a home shelf of four game boxes, or one game table: the board on the left, the score card on the right (stacked on phones). */
+:root {
+  --bg: #e9edf6; --surface: #ffffff; --surface2: #f3f5fb; --ink: #1b1f36; --muted: #5d6484; --line: #d3d8e8;
+  --accent: #f2711c; --accent-ink: #ffffff; --teal: #138a7d; --good: #1d8a4e; --bad: #c62f3a;
+  --felt: #20604f; --felt2: #174a3d;
+  --sq-light: #f0d9b5; --sq-dark: #b07d52; --sq-sel: #f6e05e; --sq-last: rgba(255, 214, 10, 0.45); --sq-check: #e5484d;
+  --lred: #e5383b; --lgreen: #2b9348; --lyellow: #f4b400; --lblue: #1e6fd9;
+  --font-display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Mukta", "Segoe UI", system-ui, sans-serif;
+  --shadow: 0 6px 20px rgba(27, 31, 54, 0.12);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121528; --surface: #1c2038; --surface2: #242946; --ink: #eef0fb; --muted: #a6acc9; --line: #343a5c;
+    --accent: #ff8a3d; --accent-ink: #1b1206; --teal: #3cc2b1; --good: #4cc77f; --bad: #ff6b72;
+    --felt: #164437; --felt2: #0f332a; --shadow: 0 6px 22px rgba(0, 0, 0, 0.45); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121528; --surface: #1c2038; --surface2: #242946; --ink: #eef0fb; --muted: #a6acc9; --line: #343a5c;
+  --accent: #ff8a3d; --accent-ink: #1b1206; --teal: #3cc2b1; --good: #4cc77f; --bad: #ff6b72;
+  --felt: #164437; --felt2: #0f332a; --shadow: 0 6px 22px rgba(0, 0, 0, 0.45); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.45 var(--font-body); -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; text-wrap: balance; margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; padding-block: 12px 40px; }
+/* Top bar */
+.bar { display: flex; align-items: center; gap: 10px; padding-block: 10px; }
+.bar h1 { font-size: clamp(22px, 4vw, 30px); flex: 1; min-width: 0; }
+.bar h1 small { display: block; font: 600 12px/1.2 var(--font-body); color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.ibtn { border: 1px solid var(--line); background: var(--surface); border-radius: 12px; min-width: 44px; height: 44px; padding: 0 12px; cursor: pointer; font-weight: 700; box-shadow: var(--shadow); }
+.ibtn:hover { border-color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.btn { border: 0; border-radius: 12px; padding: 10px 16px; font-weight: 700; cursor: pointer; background: var(--surface2); color: var(--ink); border: 1px solid var(--line); }
+.btn.go { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+.btn.small { padding: 6px 10px; font-size: 14px; border-radius: 10px; }
+.btn:disabled { opacity: 0.45; cursor: default; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.mut { color: var(--muted); }
+/* Home shelf */
+.hello { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 14px; }
+.hello label { font-weight: 700; }
+.hello input { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); width: 200px; max-width: 100%; }
+.shelf { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.box { text-align: left; border: 1px solid var(--line); background: var(--surface); border-radius: 18px; padding: 14px; cursor: pointer; display: grid; grid-template-rows: auto auto 1fr auto; gap: 6px; box-shadow: var(--shadow); transition: transform 0.15s; min-width: 0; }
+.box:hover { transform: translateY(-3px); border-color: var(--accent); }
+.box .art { height: 120px; border-radius: 12px; display: grid; place-items: center; overflow: hidden; }
+.box h2 { font-size: 24px; }
+.box p { margin: 0; color: var(--muted); font-size: 15px; }
+.box .wins { font-size: 13px; font-weight: 700; color: var(--teal); }
+.credit { margin-top: 18px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; color: var(--muted); font-size: 14px; }
+/* Game table */
+.table { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
+@media (max-width: 820px) { .table { grid-template-columns: minmax(0, 1fr); } }
+.boardwrap { width: min(100%, 78vh); margin: 0 auto; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px; box-shadow: var(--shadow); display: grid; gap: 10px; min-width: 0; }
+.card h3 { font-size: 20px; }
+.status { font-weight: 700; font-size: 17px; min-height: 1.4em; }
+.seat { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 10px; border: 1px solid var(--line); }
+.seat.on { border-color: var(--accent); background: var(--surface2); }
+.dotc { width: 16px; height: 16px; border-radius: 50%; flex: none; border: 2px solid rgba(0,0,0,0.25); }
+.opts { display: grid; gap: 8px; }
+.opts .row > span { min-width: 72px; font-weight: 700; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; flex-wrap: wrap; }
+.seg button { border: 0; background: var(--surface); padding: 6px 10px; cursor: pointer; font-weight: 600; font-size: 14px; }
+.seg button.on { background: var(--accent); color: var(--accent-ink); }
+.moves { max-height: 180px; overflow-y: auto; font: 14px/1.6 var(--font-body); font-variant-numeric: tabular-nums; background: var(--surface2); border-radius: 10px; padding: 6px 10px; }
+.caps { font-size: 22px; line-height: 1; min-height: 24px; letter-spacing: 1px; word-break: break-all; }
+/* Chess and checkers board */
+.grid8 { display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr); aspect-ratio: 1; width: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); border: 6px solid #5a3a22; }
+.sq { position: relative; border: 0; padding: 0; margin: 0; min-width: 0; min-height: 0; overflow: hidden; display: grid; place-items: center; cursor: pointer; font-size: min(9vw, 9.2vh, 64px); line-height: 1; user-select: none; }
+.sq.l { background: var(--sq-light); } .sq.d { background: var(--sq-dark); }
+.sq.last::before { content: ""; position: absolute; inset: 0; background: var(--sq-last); }
+.sq.sel::before { content: ""; position: absolute; inset: 0; background: var(--sq-sel); opacity: 0.8; }
+.sq.hint::before { content: ""; position: absolute; inset: 0; background: rgba(46, 196, 182, 0.55); }
+.sq.chk::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle, var(--sq-check) 0%, rgba(229,72,77,0.4) 55%, transparent 75%); }
+.sq .dot { position: absolute; width: 30%; height: 30%; border-radius: 50%; background: rgba(20, 30, 20, 0.35); z-index: 2; }
+.sq .ring { position: absolute; inset: 6%; border-radius: 50%; border: 5px solid rgba(20, 30, 20, 0.35); z-index: 2; }
+.sq .pc { position: relative; z-index: 3; }
+.pw { color: #fffaf0; text-shadow: 0 0 2px #000, 0 0 1px #000, 0 2px 3px rgba(0,0,0,0.6); }
+.pb { color: #1c1c22; text-shadow: 0 0 2px rgba(255,255,255,0.55), 0 2px 3px rgba(0,0,0,0.5); }
+.coord { position: absolute; font: 700 11px/1 var(--font-body); opacity: 0.7; z-index: 1; }
+.coord.f { right: 3px; bottom: 2px; } .coord.r { left: 3px; top: 2px; }
+.sq.l .coord { color: var(--sq-dark); } .sq.d .coord { color: var(--sq-light); }
+.disc { position: relative; z-index: 3; width: 74%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; font-size: 0.5em; box-shadow: inset 0 -5px 0 rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.45); }
+.disc.r { background: radial-gradient(circle at 35% 30%, #ff7b7f, #c1121f 70%); color: #ffe066; }
+.disc.b { background: radial-gradient(circle at 35% 30%, #6b6f80, #18191f 70%); color: #ffd60a; }
+.promo { display: flex; gap: 6px; flex-wrap: wrap; }
+.promo button { font-size: 40px; width: 64px; height: 64px; border-radius: 12px; border: 1px solid var(--line); background: var(--sq-light); cursor: pointer; }
+/* Ludo and Saanp Seedi */
+svg.bd { width: 100%; height: auto; display: block; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); touch-action: manipulation; }
+.tok { cursor: pointer; transition: transform 0.12s linear; }
+.tok.can circle.halo { animation: pulse 0.9s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.95; } }
+.dice { width: 84px; height: 84px; border-radius: 16px; border: 0; background: #fff; box-shadow: inset 0 -6px 0 rgba(0,0,0,0.12), 0 6px 14px rgba(0,0,0,0.25); display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); padding: 12px; cursor: pointer; }
+.dice i { width: 13px; height: 13px; border-radius: 50%; background: #1b1f36; place-self: center; visibility: hidden; }
+.dice i.on { visibility: visible; }
+.dice.roll { animation: shake 0.35s linear; }
+.dice:disabled { cursor: default; opacity: 0.7; }
+@keyframes shake { 0% { transform: rotate(0); } 25% { transform: rotate(-18deg); } 50% { transform: rotate(14deg); } 75% { transform: rotate(-8deg); } 100% { transform: rotate(0); } }
+.dicebox { display: flex; gap: 12px; align-items: center; }
+/* Overlay */
+.veil { position: fixed; inset: 0; background: rgba(10, 12, 25, 0.55); display: grid; place-items: center; padding: 16px; z-index: 20; }
+.modal { background: var(--surface); color: var(--ink); border-radius: 18px; padding: 20px; width: min(440px, 100%); display: grid; gap: 12px; box-shadow: var(--shadow); text-align: center; }
+.modal h2 { font-size: 30px; }
+.modal img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin: 0 auto; border: 4px solid var(--accent); }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 12px; font-weight: 700; z-index: 30; max-width: calc(100% - 32px); text-align: center; }
+#ver { position: fixed; right: 8px; bottom: calc(4px + env(safe-area-inset-bottom, 0px)); font: 600 11px/1 var(--font-body); color: var(--muted); z-index: 5; }
+@media (prefers-reduced-motion: reduce) { .tok, .box { transition: none; } .dice.roll, .tok.can circle.halo { animation: none; } }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<div id="ver"></div>
+<script>
+"use strict";
+// ===================== RISH BOARD GAMES: app shell =====================
+const VERSION = "Rish Board Games v1";
+const TEST = /test=1/.test(location.search);
+const $ = (id) => document.getElementById(id);
+const esc = (t) => String(t == null ? "" : t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const wait = (ms) => new Promise((r) => setTimeout(r, TEST ? 0 : ms));
+let RNG = Math.random; // tests may replace it with a seeded one
+const rnd = (n) => Math.floor(RNG() * n);
+
+// ---- Saved data (this device only) ----
+const SAVE = { name: "Rish", wins: { ludo: 0, chess: 0, snakes: 0, checkers: 0 }, played: { ludo: 0, chess: 0, snakes: 0, checkers: 0 }, sound: true };
+try { const s = JSON.parse(localStorage.getItem("rish-boards.v1") || "{}"); Object.assign(SAVE, s); SAVE.wins = Object.assign({ ludo: 0, chess: 0, snakes: 0, checkers: 0 }, s.wins || {}); SAVE.played = Object.assign({ ludo: 0, chess: 0, snakes: 0, checkers: 0 }, s.played || {}); } catch (e) { /* no storage */ }
+function save() { try { localStorage.setItem("rish-boards.v1", JSON.stringify(SAVE)); } catch (e) { /* no storage */ } }
+function myName() { return (SAVE.name || "Rish").trim() || "Rish"; }
+
+// ---- Sound: a tiny synth, only after the first tap ----
+let AC = null;
+function snd(kind) {
+  if (!SAVE.sound || TEST) return;
+  try {
+    if (!AC) { const C = window.AudioContext || window.webkitAudioContext; if (!C) return; AC = new C(); }
+    if (AC.state === "suspended") AC.resume();
+    const t0 = AC.currentTime;
+    const tone = (f, d, type = "triangle", v = 0.12, at = 0, f2) => { const o = AC.createOscillator(), g = AC.createGain(); o.type = type; o.frequency.setValueAtTime(f, t0 + at); if (f2) o.frequency.exponentialRampToValueAtTime(f2, t0 + at + d); g.gain.setValueAtTime(0.0001, t0 + at); g.gain.linearRampToValueAtTime(v, t0 + at + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t0 + at + d); o.connect(g).connect(AC.destination); o.start(t0 + at); o.stop(t0 + at + d + 0.02); };
+    const noise = (d, v = 0.2, fq = 1500, at = 0) => { const b = AC.createBuffer(1, Math.floor(AC.sampleRate * d), AC.sampleRate), a = b.getChannelData(0); for (let i = 0; i < a.length; i++) a[i] = (Math.random() * 2 - 1) * (1 - i / a.length); const s = AC.createBufferSource(); s.buffer = b; const f = AC.createBiquadFilter(); f.type = "bandpass"; f.frequency.value = fq; const g = AC.createGain(); g.gain.value = v; s.connect(f).connect(g).connect(AC.destination); s.start(t0 + at); };
+    ({
+      dice: () => { for (let i = 0; i < 5; i++) noise(0.05, 0.25, 2500 + i * 300, i * 0.06); },
+      step: () => tone(660, 0.06, "square", 0.05),
+      move: () => { noise(0.06, 0.35, 900); tone(220, 0.08, "sine", 0.1); },
+      cap: () => { noise(0.18, 0.5, 600); tone(160, 0.25, "sawtooth", 0.08, 0, 70); },
+      six: () => { tone(784, 0.1, "triangle", 0.1); tone(1046, 0.16, "triangle", 0.1, 0.1); },
+      up: () => [523, 659, 784, 1046].forEach((f, i) => tone(f, 0.12, "triangle", 0.1, i * 0.08)),
+      down: () => tone(500, 0.6, "sawtooth", 0.07, 0, 120),
+      check: () => { tone(880, 0.12, "square", 0.08); tone(880, 0.12, "square", 0.08, 0.16); },
+      win: () => [523, 659, 784, 1046, 784, 1046].forEach((f, i) => tone(f, 0.18, "triangle", 0.12, i * 0.13)),
+      lose: () => [392, 330, 262].forEach((f, i) => tone(f, 0.25, "triangle", 0.1, i * 0.2)),
+    }[kind] || (() => {}))();
+  } catch (e) { /* no sound */ }
+}
+
+// ---- Toast and pop-up ----
+let toastT = 0;
+function toast(msg, ms = 2200) { let t = $("toast"); if (!t) { t = document.createElement("div"); t.id = "toast"; t.className = "toast"; document.body.appendChild(t); } t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, ms); }
+function modal(html, wire) { closeModal(); const v = document.createElement("div"); v.className = "veil"; v.id = "veil"; v.innerHTML = `<div class="modal" role="dialog" aria-modal="true">${html}</div>`; document.body.appendChild(v); if (wire) wire(v); const b = v.querySelector("button"); if (b) b.focus(); return v; }
+function closeModal() { const v = $("veil"); if (v) v.remove(); }
+
+// ---- Screens ----
+let SCREEN = "home", GAME = null;
+function topBar(title, sub, back = true) {
+  return `<div class="bar">${back ? `<button class="ibtn" id="b-home" aria-label="Back to all games">◀</button>` : ""}<h1>${title}<small>${sub}</small></h1><button class="ibtn" id="b-snd" aria-label="Sound on or off">${SAVE.sound ? "🔊" : "🔇"}</button>${back ? "" : `<button class="ibtn" id="b-about" aria-label="About">ℹ️</button>`}</div>`;
+}
+function wireBar() {
+  if ($("b-home")) $("b-home").onclick = () => home();
+  $("b-snd").onclick = () => { SAVE.sound = !SAVE.sound; save(); $("b-snd").textContent = SAVE.sound ? "🔊" : "🔇"; snd("move"); };
+  if ($("b-about")) $("b-about").onclick = about;
+}
+const ART = {
+  ludo: `<svg viewBox="0 0 15 15" width="120" height="120" aria-hidden="true"><rect width="15" height="15" rx="1" fill="#fff"/><rect width="6" height="6" fill="#e5383b"/><rect x="9" width="6" height="6" fill="#2b9348"/><rect x="9" y="9" width="6" height="6" fill="#f4b400"/><rect y="9" width="6" height="6" fill="#1e6fd9"/><polygon points="6,6 9,6 7.5,7.5" fill="#2b9348"/><polygon points="9,6 9,9 7.5,7.5" fill="#f4b400"/><polygon points="9,9 6,9 7.5,7.5" fill="#1e6fd9"/><polygon points="6,9 6,6 7.5,7.5" fill="#e5383b"/>${[[1.8, 1.8], [4.2, 1.8], [1.8, 4.2], [4.2, 4.2]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="0.75" fill="#fff"/>`).join("")}</svg>`,
+  chess: `<div style="font-size:84px;line-height:1"><span class="pw">♞</span><span class="pb">♛</span></div>`,
+  snakes: `<svg viewBox="0 0 10 10" width="120" height="120" aria-hidden="true">${Array.from({ length: 25 }, (_, i) => `<rect x="${(i % 5) * 2}" y="${Math.floor(i / 5) * 2}" width="2" height="2" fill="${(i + Math.floor(i / 5)) % 2 ? "#ffd166" : "#06d6a0"}"/>`).join("")}<path d="M2 1 C 6 2, 1 5, 5 6 S 7 9, 8 9" stroke="#2d6a4f" stroke-width="0.8" fill="none" stroke-linecap="round"/><circle cx="2" cy="1" r="0.6" fill="#2d6a4f"/><g stroke="#8b5a2b" stroke-width="0.25"><line x1="7" y1="1" x2="8.5" y2="5"/><line x1="8" y1="0.6" x2="9.5" y2="4.6"/><line x1="7.3" y1="1.8" x2="8.3" y2="1.4"/><line x1="7.7" y1="3" x2="8.7" y2="2.6"/><line x1="8.1" y1="4.2" x2="9.1" y2="3.8"/></g></svg>`,
+  checkers: `<div style="display:flex;gap:8px"><span class="disc r" style="width:56px;font-size:28px">♛</span><span class="disc b" style="width:56px"></span></div>`,
+};
+function home() {
+  SCREEN = "home"; GAME = null; closeModal();
+  const g = [["ludo", "Ludo", "2 to 4 players. Roll a 6 to come out, cut the others, take all four home.", "#20604f"], ["chess", "Chess", "Play the computer (Easy, Medium, Hard) or a friend. Hints and undo.", "#5a3a22"], ["snakes", "Saanp Seedi", "Snakes and ladders, 1 to 100. Ladders take you up, snakes bite you down.", "#118ab2"], ["checkers", "Checkers", "Jump over the other pieces. Reach the end to become a king.", "#7a1f2b"]];
+  $("app").innerHTML = topBar("Rish Board Games", "RishSchoolDays · Game 4 · Just live it!", false) + `
+  <div class="hello"><label for="pname">Your name</label><input id="pname" maxlength="16" autocomplete="off" value="${esc(SAVE.name)}"></div>
+  <div class="shelf">${g.map(([id, name, info, c]) => `<button class="box" id="g-${id}"><div class="art" style="background:${c}">${ART[id]}</div><h2>${name}</h2><p>${info}</p><span class="wins">🏆 ${SAVE.wins[id] || 0} wins · ${SAVE.played[id] || 0} games</span></button>`).join("")}</div>
+  <div class="credit"><span>Made by <b>Rishabh Sharma</b>, age 9. RishSchoolDays series.</span><button class="btn small" id="h-about">About</button></div>`;
+  wireBar(); $("h-about").onclick = about;
+  $("pname").oninput = (e) => { SAVE.name = e.target.value.replace(/[<>]/g, "").slice(0, 16); save(); };
+  $("g-ludo").onclick = () => Ludo.setup(); $("g-chess").onclick = () => Chess.setup(); $("g-snakes").onclick = () => Snakes.setup(); $("g-checkers").onclick = () => Checkers.setup();
+}
+function about() {
+  modal(`<img src="data:image/jpeg;base64,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" alt="Rishabh Sharma"><h2>Rish Board Games</h2><p><b>Game 4</b> of the <b>RishSchoolDays</b> series, made by <b>Rishabh Sharma</b>, 9 years old. Slogan: <b>Just live it!</b></p><p class="mut">Ludo, Chess, Saanp Seedi and Checkers. Play with family on one phone or computer, or play the computer.</p><button class="btn go" id="m-ok">OK</button>`, (v) => { v.querySelector("#m-ok").onclick = closeModal; });
+}
+function gameOver(game, title, text, won) {
+  SAVE.played[game] = (SAVE.played[game] || 0) + 1; if (won) SAVE.wins[game] = (SAVE.wins[game] || 0) + 1; save();
+  snd(won ? "win" : "lose");
+  modal(`<h2>${title}</h2><p>${text}</p><div class="row" style="justify-content:center"><button class="btn go" id="m-again">↺ Play again</button><button class="btn" id="m-home">All games</button></div>`, (v) => {
+    v.querySelector("#m-again").onclick = () => { closeModal(); ({ ludo: Ludo, chess: Chess, snakes: Snakes, checkers: Checkers })[game].again(); };
+    v.querySelector("#m-home").onclick = home;
+  });
+}
+// A segmented choice: [[value, label], ...]
+function seg(id, list, cur) { return `<div class="seg" id="${id}">${list.map(([v, l]) => `<button data-v="${v}" class="${v === cur ? "on" : ""}">${l}</button>`).join("")}</div>`; }
+function wireSeg(id, fn) { const el = $(id); el.querySelectorAll("button").forEach((b) => b.onclick = () => { el.querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b)); fn(b.dataset.v); }); }
+
+// ===================== CHESS: rules engine (all legal moves), computer player, board =====================
+// Squares 0..63: 0 = a8, 7 = h8, 56 = a1, 63 = h1. White pieces are capital letters.
+const CE = (() => {
+  const KN = [[-2, -1], [-2, 1], [-1, -2], [-1, 2], [1, -2], [1, 2], [2, -1], [2, 1]];
+  const KG = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
+  const BD = [[-1, -1], [-1, 1], [1, -1], [1, 1]], RD = [[-1, 0], [1, 0], [0, -1], [0, 1]], QD = BD.concat(RD);
+  const col = (p) => (!p ? null : p === p.toUpperCase() ? "w" : "b");
+  const sqi = (s) => (8 - +s[1]) * 8 + (s.charCodeAt(0) - 97);
+  const sqn = (i) => String.fromCharCode(97 + (i & 7)) + (8 - (i >> 3));
+  const START = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+  function fromFen(fen) {
+    const [pl, t, c, ep, h, f] = fen.trim().split(/\s+/); const b = Array(64).fill(null); let i = 0;
+    for (const ch of pl) { if (ch === "/") continue; if (/\d/.test(ch)) i += +ch; else b[i++] = ch; }
+    return { b, turn: t || "w", castle: c && c !== "-" ? c : "", ep: ep && ep !== "-" ? sqi(ep) : -1, half: +h || 0, full: +f || 1 };
+  }
+  function toFen(s) {
+    let out = ""; for (let r = 0; r < 8; r++) { let e = 0; for (let f = 0; f < 8; f++) { const p = s.b[r * 8 + f]; if (!p) e++; else { if (e) out += e; e = 0; out += p; } } if (e) out += e; if (r < 7) out += "/"; }
+    return `${out} ${s.turn} ${s.castle || "-"} ${s.ep >= 0 ? sqn(s.ep) : "-"} ${s.half} ${s.full}`;
+  }
+  function attacked(b, sq, by) {
+    const r = sq >> 3, f = sq & 7, W = by === "w";
+    const pr = W ? r + 1 : r - 1;
+    if (pr >= 0 && pr < 8) for (const df of [-1, 1]) { const ff = f + df; if (ff >= 0 && ff < 8 && b[pr * 8 + ff] === (W ? "P" : "p")) return true; }
+    for (const [dr, df] of KN) { const rr = r + dr, ff = f + df; if (rr >= 0 && rr < 8 && ff >= 0 && ff < 8 && b[rr * 8 + ff] === (W ? "N" : "n")) return true; }
+    for (const [dr, df] of KG) { const rr = r + dr, ff = f + df; if (rr >= 0 && rr < 8 && ff >= 0 && ff < 8 && b[rr * 8 + ff] === (W ? "K" : "k")) return true; }
+    for (const [dirs, a, q] of [[BD, W ? "B" : "b", W ? "Q" : "q"], [RD, W ? "R" : "r", W ? "Q" : "q"]]) for (const [dr, df] of dirs) {
+      let rr = r + dr, ff = f + df; while (rr >= 0 && rr < 8 && ff >= 0 && ff < 8) { const p = b[rr * 8 + ff]; if (p) { if (p === a || p === q) return true; break; } rr += dr; ff += df; }
+    }
+    return false;
+  }
+  const kingSq = (b, c) => b.indexOf(c === "w" ? "K" : "k");
+  const inCheck = (b, c) => { const k = kingSq(b, c); return k >= 0 && attacked(b, k, c === "w" ? "b" : "w"); };
+  function pseudo(s) {
+    const me = s.turn, op = me === "w" ? "b" : "w", b = s.b, mv = [];
+    for (let i = 0; i < 64; i++) {
+      const p = b[i]; if (!p || col(p) !== me) continue; const r = i >> 3, f = i & 7, t = p.toLowerCase();
+      const add = (to, flag) => { const cap = b[to]; if (t === "p" && (to >> 3 === 0 || to >> 3 === 7)) { for (const pr of "qrbn") mv.push({ from: i, to, p, cap, promo: me === "w" ? pr.toUpperCase() : pr }); } else mv.push({ from: i, to, p, cap, flag }); };
+      if (t === "p") {
+        const d = me === "w" ? -1 : 1, r1 = r + d;
+        if (r1 >= 0 && r1 < 8 && !b[r1 * 8 + f]) { add(r1 * 8 + f); if (r === (me === "w" ? 6 : 1) && !b[(r + 2 * d) * 8 + f]) add((r + 2 * d) * 8 + f, "double"); }
+        if (r1 >= 0 && r1 < 8) for (const df of [-1, 1]) { const ff = f + df; if (ff < 0 || ff > 7) continue; const to = r1 * 8 + ff; if (b[to] && col(b[to]) === op) add(to); else if (to === s.ep && !b[to]) mv.push({ from: i, to, p, cap: me === "w" ? "p" : "P", flag: "ep" }); }
+      } else if (t === "n" || t === "k") {
+        for (const [dr, df] of t === "n" ? KN : KG) { const rr = r + dr, ff = f + df; if (rr < 0 || rr > 7 || ff < 0 || ff > 7) continue; const to = rr * 8 + ff; if (!b[to] || col(b[to]) === op) add(to); }
+        if (t === "k") {
+          if (me === "w" && i === 60) {
+            if (s.castle.includes("K") && !b[61] && !b[62] && b[63] === "R" && !attacked(b, 60, op) && !attacked(b, 61, op) && !attacked(b, 62, op)) mv.push({ from: 60, to: 62, p, flag: "OO" });
+            if (s.castle.includes("Q") && !b[59] && !b[58] && !b[57] && b[56] === "R" && !attacked(b, 60, op) && !attacked(b, 59, op) && !attacked(b, 58, op)) mv.push({ from: 60, to: 58, p, flag: "OOO" });
+          }
+          if (me === "b" && i === 4) {
+            if (s.castle.includes("k") && !b[5] && !b[6] && b[7] === "r" && !attacked(b, 4, op) && !attacked(b, 5, op) && !attacked(b, 6, op)) mv.push({ from: 4, to: 6, p, flag: "OO" });
+            if (s.castle.includes("q") && !b[3] && !b[2] && !b[1] && b[0] === "r" && !attacked(b, 4, op) && !attacked(b, 3, op) && !attacked(b, 2, op)) mv.push({ from: 4, to: 2, p, flag: "OOO" });
+          }
+        }
+      } else {
+        for (const [dr, df] of t === "b" ? BD : t === "r" ? RD : QD) { let rr = r + dr, ff = f + df; while (rr >= 0 && rr < 8 && ff >= 0 && ff < 8) { const to = rr * 8 + ff; if (b[to]) { if (col(b[to]) === op) add(to); break; } add(to); rr += dr; ff += df; } }
+      }
+    }
+    return mv;
+  }
+  function make(s, m) {
+    const b = s.b.slice(), me = s.turn; b[m.to] = m.promo || m.p; b[m.from] = null;
+    if (m.flag === "ep") b[m.to + (me === "w" ? 8 : -8)] = null;
+    if (m.flag === "OO") { if (me === "w") { b[63] = null; b[61] = "R"; } else { b[7] = null; b[5] = "r"; } }
+    if (m.flag === "OOO") { if (me === "w") { b[56] = null; b[59] = "R"; } else { b[0] = null; b[3] = "r"; } }
+    let c = s.castle; if (m.p === "K") c = c.replace(/[KQ]/g, ""); if (m.p === "k") c = c.replace(/[kq]/g, "");
+    for (const [sq, l] of [[63, "K"], [56, "Q"], [7, "k"], [0, "q"]]) if (m.from === sq || m.to === sq) c = c.replace(l, "");
+    return { b, turn: me === "w" ? "b" : "w", castle: c, ep: m.flag === "double" ? (m.from + m.to) / 2 : -1, half: m.p.toLowerCase() === "p" || m.cap ? 0 : s.half + 1, full: s.full + (me === "b" ? 1 : 0) };
+  }
+  const legal = (s) => pseudo(s).filter((m) => !inCheck(make(s, m).b, s.turn));
+  function perft(s, d) { if (d === 0) return 1; const ms = legal(s); if (d === 1) return ms.length; let n = 0; for (const m of ms) n += perft(make(s, m), d - 1); return n; }
+  function san(s, m) {
+    let out;
+    if (m.flag === "OO") out = "O-O"; else if (m.flag === "OOO") out = "O-O-O";
+    else {
+      const t = m.p.toUpperCase(), cap = !!m.cap;
+      if (t === "P") out = (cap ? sqn(m.from)[0] + "x" : "") + sqn(m.to) + (m.promo ? "=" + m.promo.toUpperCase() : "");
+      else {
+        const others = legal(s).filter((o) => o.p === m.p && o.to === m.to && o.from !== m.from); let dis = "";
+        if (others.length) { const sf = others.some((o) => (o.from & 7) === (m.from & 7)), sr = others.some((o) => o.from >> 3 === m.from >> 3); dis = !sf ? sqn(m.from)[0] : !sr ? sqn(m.from)[1] : sqn(m.from); }
+        out = t + dis + (cap ? "x" : "") + sqn(m.to);
+      }
+    }
+    const n = make(s, m); if (inCheck(n.b, n.turn)) out += legal(n).length ? "+" : "#";
+    return out;
+  }
+  // ---- The computer: material + piece squares, alpha-beta search, then captures only ----
+  const VAL = { p: 100, n: 320, b: 330, r: 500, q: 900, k: 0 };
+  const PST = {
+    p: [0, 0, 0, 0, 0, 0, 0, 0, 50, 50, 50, 50, 50, 50, 50, 50, 10, 10, 20, 30, 30, 20, 10, 10, 5, 5, 10, 25, 25, 10, 5, 5, 0, 0, 0, 20, 20, 0, 0, 0, 5, -5, -10, 0, 0, -10, -5, 5, 5, 10, 10, -20, -20, 10, 10, 5, 0, 0, 0, 0, 0, 0, 0, 0],
+    n: [-50, -40, -30, -30, -30, -30, -40, -50, -40, -20, 0, 0, 0, 0, -20, -40, -30, 0, 10, 15, 15, 10, 0, -30, -30, 5, 15, 20, 20, 15, 5, -30, -30, 0, 15, 20, 20, 15, 0, -30, -30, 5, 10, 15, 15, 10, 5, -30, -40, -20, 0, 5, 5, 0, -20, -40, -50, -40, -30, -30, -30, -30, -40, -50],
+    b: [-20, -10, -10, -10, -10, -10, -10, -20, -10, 0, 0, 0, 0, 0, 0, -10, -10, 0, 5, 10, 10, 5, 0, -10, -10, 5, 5, 10, 10, 5, 5, -10, -10, 0, 10, 10, 10, 10, 0, -10, -10, 10, 10, 10, 10, 10, 10, -10, -10, 5, 0, 0, 0, 0, 5, -10, -20, -10, -10, -10, -10, -10, -10, -20],
+    r: [0, 0, 0, 0, 0, 0, 0, 0, 5, 10, 10, 10, 10, 10, 10, 5, -5, 0, 0, 0, 0, 0, 0, -5, -5, 0, 0, 0, 0, 0, 0, -5, -5, 0, 0, 0, 0, 0, 0, -5, -5, 0, 0, 0, 0, 0, 0, -5, -5, 0, 0, 0, 0, 0, 0, -5, 0, 0, 0, 5, 5, 0, 0, 0],
+    q: [-20, -10, -10, -5, -5, -10, -10, -20, -10, 0, 0, 0, 0, 0, 0, -10, -10, 0, 5, 5, 5, 5, 0, -10, -5, 0, 5, 5, 5, 5, 0, -5, 0, 0, 5, 5, 5, 5, 0, -5, -10, 5, 5, 5, 5, 5, 0, -10, -10, 0, 5, 0, 0, 0, 0, -10, -20, -10, -10, -5, -5, -10, -10, -20],
+    k: [-30, -40, -40, -50, -50, -40, -40, -30, -30, -40, -40, -50, -50, -40, -40, -30, -30, -40, -40, -50, -50, -40, -40, -30, -30, -40, -40, -50, -50, -40, -40, -30, -20, -30, -30, -40, -40, -30, -30, -20, -10, -20, -20, -20, -20, -20, -20, -10, 20, 20, 0, 0, 0, 0, 20, 20, 20, 30, 10, 0, 0, 10, 30, 20],
+  };
+  function evalW(b) { let s = 0; for (let i = 0; i < 64; i++) { const p = b[i]; if (!p) continue; const t = p.toLowerCase(); if (p === t) s -= VAL[t] + PST[t][(7 - (i >> 3)) * 8 + (i & 7)]; else s += VAL[t] + PST[t][i]; } return s; }
+  const order = (ms) => ms.sort((a, c) => (c.cap ? VAL[c.cap.toLowerCase()] * 10 - VAL[c.p.toLowerCase()] : 0) + (c.promo ? 800 : 0) - ((a.cap ? VAL[a.cap.toLowerCase()] * 10 - VAL[a.p.toLowerCase()] : 0) + (a.promo ? 800 : 0)));
+  let nodes = 0;
+  function quies(s, alpha, beta, qd) {
+    nodes++; const stand = (s.turn === "w" ? 1 : -1) * evalW(s.b); if (stand >= beta) return beta; if (alpha < stand) alpha = stand; if (qd <= 0) return alpha;
+    for (const m of order(legal(s).filter((x) => x.cap || x.promo))) { const v = -quies(make(s, m), -beta, -alpha, qd - 1); if (v >= beta) return beta; if (v > alpha) alpha = v; }
+    return alpha;
+  }
+  function search(s, d, alpha, beta, ply) {
+    nodes++; const ms = legal(s);
+    if (!ms.length) return inCheck(s.b, s.turn) ? -100000 + ply : 0;
+    if (s.half >= 100) return 0;
+    if (d <= 0) return quies(s, alpha, beta, 4);
+    for (const m of order(ms)) { const v = -search(make(s, m), d - 1, -beta, -alpha, ply + 1); if (v >= beta) return beta; if (v > alpha) alpha = v; }
+    return alpha;
+  }
+  function best(s, depth, noise = 0) {
+    nodes = 0; const ms = order(legal(s)); let bestM = null, bestV = -Infinity;
+    for (const m of ms) { const a = bestV === -Infinity ? -Infinity : bestV - noise - 1; const v = -search(make(s, m), depth - 1, -Infinity, -a, 1) + (noise ? RNG() * noise : 0); if (v > bestV) { bestV = v; bestM = m; } }
+    return bestM;
+  }
+  function insufficient(b) { const ps = b.filter(Boolean).filter((p) => p.toLowerCase() !== "k"); return ps.length === 0 || (ps.length === 1 && "nNbB".includes(ps[0])); }
+  const key = (s) => s.b.map((p) => p || ".").join("") + s.turn + s.castle + s.ep;
+  return { START, fromFen, toFen, legal, make, perft, san, best, inCheck, insufficient, key, sqn, sqi, col, evalW, nodes: () => nodes };
+})();
+
+const GLYPH = { k: "♚", q: "♛", r: "♜", b: "♝", n: "♞", p: "♟" };
+const Chess = {
+  opt: { mode: "cpu", level: "medium", side: "w" },
+  setup() {
+    SCREEN = "chess"; const o = this.opt;
+    modal(`<h2>♞ Chess</h2><div class="opts">
+      <div class="row"><span>Play</span>${seg("c-mode", [["cpu", "🤖 Computer"], ["2p", "👫 2 players"]], o.mode)}</div>
+      <div class="row" id="c-lvl-row"><span>Level</span>${seg("c-lvl", [["easy", "Easy"], ["medium", "Medium"], ["hard", "Hard"]], o.level)}</div>
+      <div class="row" id="c-side-row"><span>You are</span>${seg("c-side", [["w", "♔ White"], ["b", "♚ Black"]], o.side)}</div></div>
+      <div class="row" style="justify-content:center"><button class="btn go" id="c-go">▶ Start</button><button class="btn" id="c-cancel">All games</button></div>`, () => {
+      const vis = () => { $("c-lvl-row").hidden = $("c-side-row").hidden = o.mode !== "cpu"; };
+      wireSeg("c-mode", (v) => { o.mode = v; vis(); }); wireSeg("c-lvl", (v) => (o.level = v)); wireSeg("c-side", (v) => (o.side = v)); vis();
+      $("c-go").onclick = () => { closeModal(); this.start(); }; $("c-cancel").onclick = home;
+    });
+  },
+  again() { this.start(); },
+  start(fen) {
+    SCREEN = "chess"; const o = this.opt;
+    const s = CE.fromFen(fen || CE.START);
+    GAME = this.G = { s, hist: [s], sans: [], keys: { [CE.key(s)]: 1 }, sel: -1, targets: [], last: null, hint: null, over: null, flip: o.mode === "cpu" && o.side === "b", thinking: false };
+    $("app").innerHTML = topBar("Chess", o.mode === "cpu" ? `You vs Computer · ${o.level}` : "2 players on one screen") + `
+      <div class="table"><div class="boardwrap"><div class="grid8" id="cb" role="grid" aria-label="Chess board"></div></div>
+      <div class="card"><div class="status" id="c-status"></div>
+        <div><div class="mut">Captured</div><div class="caps" id="c-caps"></div></div>
+        <div class="row"><button class="btn small" id="c-undo">↶ Undo</button><button class="btn small" id="c-hint">💡 Hint</button><button class="btn small" id="c-flip">⇅ Flip</button><button class="btn small" id="c-new">New game</button></div>
+        <div><div class="mut">Moves</div><div class="moves" id="c-moves"></div></div>
+        <p class="mut" style="margin:0;font-size:14px">Tap a piece, then tap a square with a dot. Kings must stay safe: a move that leaves your king in check is not allowed.</p></div></div>`;
+    wireBar();
+    $("c-undo").onclick = () => this.undo(); $("c-hint").onclick = () => this.showHint(); $("c-flip").onclick = () => { this.G.flip = !this.G.flip; this.render(); }; $("c-new").onclick = () => this.setup();
+    this.render(); this.maybeCpu();
+  },
+  cpuTurn() { const o = this.opt, G = this.G; return o.mode === "cpu" && G.s.turn !== o.side; },
+  render() {
+    const G = this.G, s = G.s, cb = $("cb"); if (!cb) return;
+    const chk = CE.inCheck(s.b, s.turn) ? s.b.indexOf(s.turn === "w" ? "K" : "k") : -1;
+    let h = "";
+    for (let k = 0; k < 64; k++) {
+      const i = G.flip ? 63 - k : k, r = i >> 3, f = i & 7, p = s.b[i];
+      const cls = ["sq", (r + f) % 2 ? "d" : "l"]; if (G.last && (G.last.from === i || G.last.to === i)) cls.push("last"); if (G.sel === i) cls.push("sel"); if (i === chk) cls.push("chk"); if (G.hint && (G.hint.from === i || G.hint.to === i)) cls.push("hint");
+      const tg = G.targets.find((m) => m.to === i);
+      const showF = G.flip ? r === 0 : r === 7, showR = G.flip ? f === 7 : f === 0;
+      h += `<button class="${cls.join(" ")}" data-i="${i}" aria-label="${CE.sqn(i)}${p ? " " + (CE.col(p) === "w" ? "white " : "black ") + { k: "king", q: "queen", r: "rook", b: "bishop", n: "knight", p: "pawn" }[p.toLowerCase()] : ""}">${showF ? `<span class="coord f">${CE.sqn(i)[0]}</span>` : ""}${showR ? `<span class="coord r">${CE.sqn(i)[1]}</span>` : ""}${tg ? (p ? `<span class="ring"></span>` : `<span class="dot"></span>`) : ""}${p ? `<span class="pc ${CE.col(p) === "w" ? "pw" : "pb"}">${GLYPH[p.toLowerCase()]}</span>` : ""}</button>`;
+    }
+    cb.innerHTML = h; cb.querySelectorAll(".sq").forEach((b) => b.onclick = () => this.tap(+b.dataset.i));
+    // Status, captured pieces, moves
+    const who = s.turn === "w" ? "White" : "Black", o = this.opt;
+    let st = G.over ? G.over : G.thinking ? "🤖 Computer is thinking..." : o.mode === "cpu" ? (s.turn === o.side ? `Your move (${who})` : "Computer's move") : `${who} to move`;
+    if (!G.over && chk >= 0) st = "⚠️ Check! " + st;
+    $("c-status").textContent = st;
+    const startCount = { p: 8, n: 2, b: 2, r: 2, q: 1 }; let caps = "";
+    for (const c of ["w", "b"]) { for (const t of "qrbnp") { const have = s.b.filter((p) => p === (c === "w" ? t.toUpperCase() : t)).length; for (let n = have; n < startCount[t]; n++) caps += `<span class="${c === "w" ? "pw" : "pb"}">${GLYPH[t]}</span>`; } caps += " "; }
+    $("c-caps").innerHTML = caps.trim() ? caps : `<span class="mut" style="font-size:14px">None yet</span>`;
+    let mv = ""; for (let i = 0; i < G.sans.length; i += 2) mv += `${i / 2 + 1}. ${G.sans[i]} ${G.sans[i + 1] || ""}<br>`;
+    $("c-moves").innerHTML = mv || `<span class="mut">No moves yet</span>`; $("c-moves").scrollTop = 1e6;
+    $("c-undo").disabled = G.hist.length < 2 || G.thinking;
+  },
+  tap(i) {
+    const G = this.G; if (G.over || G.thinking || this.cpuTurn()) return; const s = G.s; G.hint = null;
+    const ms = G.targets.filter((m) => m.to === i);
+    if (G.sel >= 0 && ms.length) {
+      if (ms.length > 1) return this.askPromo(ms);
+      return this.play(ms[0]);
+    }
+    if (s.b[i] && CE.col(s.b[i]) === s.turn) { G.sel = i; G.targets = CE.legal(s).filter((m) => m.from === i); snd("step"); }
+    else { G.sel = -1; G.targets = []; }
+    this.render();
+  },
+  askPromo(ms) {
+    const c = this.G.s.turn;
+    modal(`<h2>Pawn promotion</h2><p>Your pawn reached the end. Pick a new piece.</p><div class="promo" style="justify-content:center">${["q", "r", "b", "n"].map((t) => `<button data-t="${t}" class="${c === "w" ? "pw" : "pb"}" aria-label="${t}">${GLYPH[t]}</button>`).join("")}</div>`, (v) => {
+      v.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => { closeModal(); this.play(ms.find((m) => m.promo.toLowerCase() === b.dataset.t)); });
+    });
+  },
+  play(m) {
+    const G = this.G, s = G.s; const san = CE.san(s, m); const n = CE.make(s, m);
+    G.s = n; G.hist.push(n); G.sans.push(san); G.last = m; G.sel = -1; G.targets = []; G.hint = null;
+    const k = CE.key(n); G.keys[k] = (G.keys[k] || 0) + 1;
+    snd(m.cap ? "cap" : "move");
+    const legal = CE.legal(n), chk = CE.inCheck(n.b, n.turn), o = this.opt;
+    const winner = n.turn === "w" ? "Black" : "White";
+    if (!legal.length && chk) { G.over = `Checkmate! ${winner} wins.`; this.render(); const youWon = o.mode === "2p" || (n.turn !== o.side); return this.finish(o.mode === "cpu" ? (youWon ? "🏆 Checkmate! You win!" : "🤖 Checkmate. The computer wins.") : `🏆 Checkmate! ${winner} wins!`, o.mode === "cpu" ? (youWon ? `Well played, ${esc(myName())}!` : "Try again. Use 💡 Hint when you are stuck.") : `${winner} gave checkmate in ${Math.ceil(G.sans.length / 2)} moves.`, o.mode === "cpu" ? youWon : true); }
+    let draw = null; if (!legal.length) draw = "Stalemate: no legal move, but no check."; else if (n.half >= 100) draw = "50 moves with no capture and no pawn move."; else if (CE.insufficient(n.b)) draw = "Not enough pieces left to checkmate."; else if (G.keys[k] >= 3) draw = "The same position came 3 times.";
+    if (draw) { G.over = "Draw. " + draw; this.render(); return this.finish("🤝 Draw", draw, false); }
+    if (chk) snd("check");
+    this.render(); this.maybeCpu();
+  },
+  finish(title, text, won) { setTimeout(() => gameOver("chess", title, text, won), TEST ? 0 : 700); },
+  async maybeCpu() {
+    const G = this.G; if (G.over || !this.cpuTurn() || G.thinking) return;
+    G.thinking = true; this.render(); await wait(350); if (this.G !== G || G.over) return;
+    const lv = this.opt.level, m = CE.best(G.s, lv === "easy" ? 1 : lv === "medium" ? 2 : 3, lv === "easy" ? 120 : lv === "medium" ? 15 : 0);
+    G.thinking = false; if (m) this.play(m);
+  },
+  undo() {
+    const G = this.G; if (G.thinking || G.hist.length < 2) return; G.over = null; closeModal();
+    // Against the computer, go back to the last position where it is your move.
+    const pop = () => { const k = CE.key(G.hist.pop()); G.keys[k]--; G.sans.pop(); };
+    pop(); if (this.opt.mode === "cpu") while (G.hist.length > 1 && G.hist[G.hist.length - 1].turn !== this.opt.side) pop();
+    G.s = G.hist[G.hist.length - 1]; G.last = null; G.sel = -1; G.targets = []; G.hint = null; this.render(); this.maybeCpu();
+  },
+  showHint() { const G = this.G; if (G.over || G.thinking || this.cpuTurn()) return; const m = CE.best(G.s, 2); if (!m) return; G.hint = m; G.sel = m.from; G.targets = CE.legal(G.s).filter((x) => x.from === m.from); toast(`💡 Try ${CE.san(G.s, m)}`); this.render(); },
+};
+
+// ===================== LUDO =====================
+// Board: 15 x 15 cells. The track has 52 cells; each colour starts 13 cells after the one before it.
+// A token's step r: -1 in the yard, 0..50 on the track, 51..55 in its home lane, 56 = home (finished).
+const LD = (() => {
+  const T = [];
+  for (let x = 1; x <= 5; x++) T.push([x, 6]); for (let y = 5; y >= 0; y--) T.push([6, y]); T.push([7, 0]);
+  for (let y = 0; y <= 5; y++) T.push([8, y]); for (let x = 9; x <= 14; x++) T.push([x, 6]); T.push([14, 7]);
+  for (let x = 14; x >= 9; x--) T.push([x, 8]); for (let y = 9; y <= 14; y++) T.push([8, y]); T.push([7, 14]);
+  for (let y = 14; y >= 9; y--) T.push([6, y]); for (let x = 5; x >= 0; x--) T.push([x, 8]); T.push([0, 7]); T.push([0, 6]);
+  const COLORS = [
+    { id: "red", name: "Red", c: "#e5383b", off: 0, lane: [1, 2, 3, 4, 5].map((x) => [x, 7]), yard: [0, 0] },
+    { id: "green", name: "Green", c: "#2b9348", off: 13, lane: [1, 2, 3, 4, 5].map((y) => [7, y]), yard: [9, 0] },
+    { id: "yellow", name: "Yellow", c: "#f4b400", off: 26, lane: [13, 12, 11, 10, 9].map((x) => [x, 7]), yard: [9, 9] },
+    { id: "blue", name: "Blue", c: "#1e6fd9", off: 39, lane: [13, 12, 11, 10, 9].map((y) => [7, y]), yard: [0, 9] },
+  ];
+  const SAFE = new Set([0, 8, 13, 21, 26, 34, 39, 47]);
+  const abs = (ci, r) => (r >= 0 && r <= 50 ? (COLORS[ci].off + r) % 52 : -1);
+  return { T, COLORS, SAFE, abs };
+})();
+
+const Ludo = {
+  seats: ["human", "off", "cpu", "off"], // red, green, yellow, blue
+  setup() {
+    SCREEN = "ludo"; const S = this.seats;
+    const kinds = [["human", "👤 Player"], ["cpu", "🤖 Computer"], ["off", "— Off"]];
+    modal(`<h2>🎲 Ludo</h2><p class="mut">Pick who plays each colour. Players take turns on this screen.</p><div class="opts">${LD.COLORS.map((c, i) => `<div class="row"><span style="color:${c.c}">● ${c.name}</span>${seg("l-s" + i, kinds, S[i])}</div>`).join("")}</div>
+      <p class="mut" id="l-err"></p><div class="row" style="justify-content:center"><button class="btn go" id="l-go">▶ Start</button><button class="btn" id="l-cancel">All games</button></div>`, () => {
+      LD.COLORS.forEach((c, i) => wireSeg("l-s" + i, (v) => (S[i] = v)));
+      $("l-go").onclick = () => { if (S.filter((k) => k !== "off").length < 2) { $("l-err").textContent = "Pick at least 2 players."; return; } closeModal(); this.start(); };
+      $("l-cancel").onclick = home;
+    });
+  },
+  again() { this.start(); },
+  start(seats) {
+    SCREEN = "ludo"; if (seats) this.seats = seats.slice();
+    let humans = 0;
+    const players = this.seats.map((k, ci) => k === "off" ? null : { ci, kind: k, name: k === "cpu" ? `Computer ${LD.COLORS[ci].name}` : (humans++ === 0 ? myName() : `${LD.COLORS[ci].name} player`), tok: [-1, -1, -1, -1], rank: 0 }).filter(Boolean);
+    GAME = this.G = { players, turn: 0, dice: 0, rolled: false, sixes: 0, movable: [], ranks: [], over: false, busy: false, force: [], log: [] };
+    $("app").innerHTML = topBar("Ludo", `${players.length} players`) + `
+      <div class="table"><div class="boardwrap"><svg class="bd" id="lb" viewBox="0 0 15 15" role="img" aria-label="Ludo board"></svg></div>
+      <div class="card"><div class="status" id="l-status"></div>
+        <div class="dicebox"><button class="dice" id="l-dice" aria-label="Roll the dice">${"<i></i>".repeat(9)}</button><div class="mut" id="l-hint">Tap the dice or press Space.</div></div>
+        <div id="l-seats" class="opts"></div>
+        <p class="mut" style="margin:0;font-size:14px">Roll a 6 to bring a token out. A 6, a cut or a token reaching home gives another roll. Three 6s in a row lose the turn. ★ and start squares are safe. You need the exact number to reach home.</p></div></div>`;
+    wireBar(); $("l-dice").onclick = () => this.humanRoll();
+    this.drawBoard(); this.render(); this.next(true);
+  },
+  cur() { return this.G.players[this.G.turn]; },
+  cellOf(p, k) {
+    const r = p.tok[k], C = LD.COLORS[p.ci];
+    if (r < 0) { const [yx, yy] = C.yard; return [yx + (k % 2 ? 4 : 2), yy + (k < 2 ? 2 : 4)]; }
+    if (r <= 50) { const [x, y] = LD.T[LD.abs(p.ci, r)]; return [x + 0.5, y + 0.5]; }
+    if (r <= 55) { const [x, y] = C.lane[r - 51]; return [x + 0.5, y + 0.5]; }
+    const ctr = { red: [6.75, 7.5], green: [7.5, 6.75], yellow: [8.25, 7.5], blue: [7.5, 8.25] }[C.id], side = C.id === "red" || C.id === "yellow";
+    const o = (k - 1.5) * 0.3; return side ? [ctr[0], ctr[1] + o] : [ctr[0] + o, ctr[1]];
+  },
+  drawBoard() {
+    let h = `<rect width="15" height="15" fill="#fbfbf7"/>`;
+    for (const C of LD.COLORS) { const [x, y] = C.yard; h += `<rect x="${x}" y="${y}" width="6" height="6" fill="${C.c}"/><rect x="${x + 1}" y="${y + 1}" width="4" height="4" rx="0.4" fill="#fff"/>`; for (const [dx, dy] of [[2, 2], [4, 2], [2, 4], [4, 4]]) h += `<circle cx="${x + dx}" cy="${y + dy}" r="0.62" fill="${C.c}" opacity="0.25"/>`; }
+    LD.T.forEach(([x, y], i) => { const own = LD.COLORS.find((C) => C.off === i); h += `<rect x="${x}" y="${y}" width="1" height="1" fill="${own ? own.c : "#fff"}" stroke="#9aa0b5" stroke-width="0.04"/>`; if (LD.SAFE.has(i) && !own) h += `<text x="${x + 0.5}" y="${y + 0.75}" font-size="0.7" text-anchor="middle" fill="#9aa0b5">★</text>`; if (own) h += `<text x="${x + 0.5}" y="${y + 0.75}" font-size="0.7" text-anchor="middle" fill="#fff">★</text>`; });
+    for (const C of LD.COLORS) for (const [x, y] of C.lane) h += `<rect x="${x}" y="${y}" width="1" height="1" fill="${C.c}" stroke="#9aa0b5" stroke-width="0.04"/>`;
+    h += `<polygon points="6,6 9,6 7.5,7.5" fill="#2b9348"/><polygon points="9,6 9,9 7.5,7.5" fill="#f4b400"/><polygon points="9,9 6,9 7.5,7.5" fill="#1e6fd9"/><polygon points="6,9 6,6 7.5,7.5" fill="#e5383b"/>`;
+    h += `<g id="l-toks"></g>`;
+    $("lb").innerHTML = h;
+  },
+  render() {
+    const G = this.G; if (!$("lb")) return;
+    // tokens: group by cell so shared cells show side by side
+    const spots = {}; G.players.forEach((p) => p.tok.forEach((r, k) => { const [x, y] = this.cellOf(p, k); const key = r >= 0 && r <= 55 ? `${x},${y}` : `own${p.ci}-${k}`; (spots[key] = spots[key] || []).push([p, k, x, y]); }));
+    let h = "";
+    for (const list of Object.values(spots)) list.forEach(([p, k, x, y], j) => {
+      const n = list.length, dx = n > 1 ? ((j % 2) - 0.5) * 0.42 : 0, dy = n > 2 ? (Math.floor(j / 2) - 0.5) * 0.42 : 0, s = n > 1 ? 0.75 : 1;
+      const can = G.players[G.turn] === p && G.movable.includes(k) && p.kind === "human", C = LD.COLORS[p.ci];
+      h += `<g class="tok${can ? " can" : ""}" data-c="${p.ci}" data-k="${k}" transform="translate(${x + dx} ${y + dy}) scale(${s})" role="button" aria-label="${C.name} token ${k + 1}">${can ? `<circle class="halo" r="0.52" fill="none" stroke="#111" stroke-width="0.09"/>` : ""}<circle r="0.38" fill="${C.c}" stroke="#fff" stroke-width="0.1"/><circle r="0.15" fill="#fff" opacity="0.85"/></g>`;
+    });
+    $("l-toks").innerHTML = h;
+    $("l-toks").querySelectorAll(".tok").forEach((t) => t.onclick = () => this.pick(+t.dataset.c, +t.dataset.k));
+    const p = this.cur(), C = LD.COLORS[p.ci];
+    $("l-status").innerHTML = G.over ? "Game over" : `<span style="color:${C.c}">●</span> ${esc(p.name)}'s turn`;
+    const d = $("l-dice"); d.style.boxShadow = `inset 0 -6px 0 rgba(0,0,0,0.12), 0 0 0 4px ${C.c}`; d.disabled = G.over || G.rolled || p.kind !== "human" || G.busy;
+    const PIPS = { 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] }; d.querySelectorAll("i").forEach((el, i) => el.classList.toggle("on", !!G.dice && PIPS[G.dice].includes(i)));
+    $("l-hint").textContent = G.over ? "" : p.kind !== "human" ? "The computer is playing." : !G.rolled ? "Tap the dice or press Space." : G.movable.length ? "Tap a glowing token." : "No move this time.";
+    $("l-seats").innerHTML = G.players.map((q, i) => `<div class="seat${i === G.turn && !G.over ? " on" : ""}"><span class="dotc" style="background:${LD.COLORS[q.ci].c}"></span><b style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis">${esc(q.name)}</b><span class="mut">${q.rank ? ["", "🥇 1st", "🥈 2nd", "🥉 3rd", "4th"][q.rank] : `🏠 ${q.tok.filter((r) => r === 56).length}/4`}</span></div>`).join("");
+  },
+  canMove(p, k, d) { const r = p.tok[k]; if (r === 56) return false; if (r < 0) return d === 6; return r + d <= 56; },
+  async next(first) {
+    const G = this.G; if (G.over) return;
+    if (!first) { let n = 0; do { G.turn = (G.turn + 1) % G.players.length; n++; } while (G.players[G.turn].rank && n < 10); }
+    G.sixes = 0; G.rolled = false; G.dice = 0; G.movable = []; this.render();
+    if (this.cur().kind === "cpu") { await wait(500); if (this.G === G) this.roll(); }
+  },
+  humanRoll() { const G = this.G; if (G.over || G.rolled || G.busy || this.cur().kind !== "human") return; this.roll(); },
+  async roll() {
+    const G = this.G, p = this.cur(); if (G.rolled || G.over) return;
+    G.dice = G.force.length ? G.force.shift() : 1 + rnd(6); G.rolled = true; snd("dice");
+    const d = $("l-dice"); if (d) { d.classList.remove("roll"); void d.offsetWidth; d.classList.add("roll"); }
+    if (G.dice === 6) { G.sixes++; if (G.sixes === 3) { G.movable = []; this.render(); toast("Three 6s in a row! The turn is lost."); await wait(900); if (this.G === G) this.next(); return; } snd("six"); }
+    G.movable = [0, 1, 2, 3].filter((k) => this.canMove(p, k, G.dice));
+    this.render();
+    if (!G.movable.length) { await wait(800); if (this.G === G) { G.sixes = 0; this.next(); } return; }
+    if (p.kind === "cpu") { await wait(450); if (this.G === G) this.move(p, this.cpuPick(p)); }
+    else if (G.movable.length === 1 || new Set(G.movable.map((k) => p.tok[k])).size === 1) { await wait(350); if (this.G === G && G.rolled && !G.busy) this.move(p, G.movable[0]); }
+  },
+  pick(ci, k) { const G = this.G, p = this.cur(); if (G.over || G.busy || !G.rolled || p.ci !== ci || p.kind !== "human" || !G.movable.includes(k)) return; this.move(p, k); },
+  async move(p, k) {
+    const G = this.G; if (G.busy) return; G.busy = true; const d = G.dice; G.movable = [];
+    if (p.tok[k] < 0) { p.tok[k] = 0; snd("move"); this.render(); }
+    else for (let i = 0; i < d; i++) { p.tok[k]++; snd("step"); this.render(); await wait(110); if (this.G !== G) return; }
+    const r = p.tok[k]; let bonus = d === 6, cut = 0;
+    if (r <= 50) { const a = LD.abs(p.ci, r); if (!LD.SAFE.has(a)) for (const q of G.players) if (q !== p) q.tok.forEach((rq, kq) => { if (rq >= 0 && rq <= 50 && LD.abs(q.ci, rq) === a) { q.tok[kq] = -1; cut++; } }); }
+    if (cut) { bonus = true; snd("cap"); toast(`✂️ ${p.name} cut ${cut > 1 ? cut + " tokens" : "a token"}! Roll again.`); G.log.push(["cut", p.ci]); }
+    if (r === 56) { bonus = true; snd("up"); toast(`🏠 A ${LD.COLORS[p.ci].name} token reached home!`); if (p.tok.every((x) => x === 56)) { p.rank = G.ranks.push(p.ci); bonus = false; toast(`🏆 ${p.name} finished ${["", "1st", "2nd", "3rd"][p.rank] || ""}!`); } }
+    G.busy = false; G.rolled = false; G.dice = bonus ? G.dice : 0;
+    const left = G.players.filter((q) => !q.rank); if (left.length <= 1) { if (left[0]) left[0].rank = G.ranks.push(left[0].ci); return this.end(); }
+    this.render();
+    if (bonus) { G.dice = 0; this.render(); if (p.kind === "cpu") { await wait(500); if (this.G === G) this.roll(); } }
+    else this.next();
+  },
+  // The computer: cut if it can, then go home, come out on a 6, reach safety, and run from danger.
+  cpuPick(p) {
+    const G = this.G, d = G.dice; let best = G.movable[0], bestS = -1e9;
+    const danger = (a) => !LD.SAFE.has(a) && G.players.some((q) => q !== p && q.tok.some((rq) => { if (rq < 0 || rq > 50) return false; const dist = (a - LD.abs(q.ci, rq) + 52) % 52; return dist >= 1 && dist <= 6 && rq + dist <= 50; }));
+    for (const k of G.movable) {
+      const r = p.tok[k], nr = r < 0 ? 0 : r + d; let s = nr / 10;
+      if (r < 0) s += 40;
+      if (nr === 56) s += 100; else if (nr > 50) s += 30;
+      if (nr <= 50) { const a = LD.abs(p.ci, nr); if (!LD.SAFE.has(a) && G.players.some((q) => q !== p && q.tok.some((rq) => rq >= 0 && rq <= 50 && LD.abs(q.ci, rq) === a))) s += 80; if (LD.SAFE.has(a)) s += 20; if (danger(a)) s -= 30; }
+      if (r >= 0 && r <= 50 && danger(LD.abs(p.ci, r))) s += 25;
+      if (s > bestS) { bestS = s; best = k; }
+    }
+    return best;
+  },
+  end() {
+    const G = this.G; G.over = true; this.render();
+    const order = G.ranks.map((ci) => G.players.find((q) => q.ci === ci));
+    const won = !!order[0] && order[0].kind === "human";
+    setTimeout(() => gameOver("ludo", `🏆 ${esc(order[0].name)} wins!`, order.map((q, i) => `${["🥇", "🥈", "🥉", "4️⃣"][i]} ${esc(q.name)}`).join("<br>"), won), TEST ? 0 : 600);
+  },
+};
+addEventListener("keydown", (e) => { if (SCREEN === "ludo" && (e.code === "Space" || e.code === "Enter") && !$("veil") && e.target.tagName !== "INPUT") { e.preventDefault(); Ludo.humanRoll(); } });
+
+// ===================== SAANP SEEDI (snakes and ladders) =====================
+const SS = {
+  SNAKES: { 17: 7, 54: 34, 62: 19, 64: 60, 87: 36, 93: 73, 95: 75, 98: 79 },
+  LADDERS: { 4: 14, 9: 31, 20: 38, 28: 84, 40: 59, 51: 67, 63: 81, 71: 91 },
+  COLORS: [["Red", "#e5383b"], ["Blue", "#1e6fd9"], ["Green", "#2b9348"], ["Yellow", "#f4b400"]],
+  // Square n (1..100) -> centre on a 10 x 10 board; row 1 is at the bottom and rows snake back and forth.
+  xy(n) { const i = n - 1, row = Math.floor(i / 10), col = row % 2 ? 9 - (i % 10) : i % 10; return [col + 0.5, 9 - row + 0.5]; },
+};
+const Snakes = {
+  seats: ["human", "cpu", "off", "off"],
+  setup() {
+    SCREEN = "snakes"; const S = this.seats; const kinds = [["human", "👤 Player"], ["cpu", "🤖 Computer"], ["off", "— Off"]];
+    modal(`<h2>🐍 Saanp Seedi</h2><p class="mut">Who plays? First to reach 100 wins.</p><div class="opts">${SS.COLORS.map(([n, c], i) => `<div class="row"><span style="color:${c}">● ${n}</span>${seg("s-s" + i, kinds, S[i])}</div>`).join("")}</div>
+      <p class="mut" id="s-err"></p><div class="row" style="justify-content:center"><button class="btn go" id="s-go">▶ Start</button><button class="btn" id="s-cancel">All games</button></div>`, () => {
+      SS.COLORS.forEach((c, i) => wireSeg("s-s" + i, (v) => (S[i] = v)));
+      $("s-go").onclick = () => { if (S.filter((k) => k !== "off").length < 2) { $("s-err").textContent = "Pick at least 2 players."; return; } closeModal(); this.start(); };
+      $("s-cancel").onclick = home;
+    });
+  },
+  again() { this.start(); },
+  start(seats) {
+    SCREEN = "snakes"; if (seats) this.seats = seats.slice(); let humans = 0;
+    const players = this.seats.map((k, i) => k === "off" ? null : { i, kind: k, name: k === "cpu" ? `Computer ${SS.COLORS[i][0]}` : (humans++ === 0 ? myName() : `${SS.COLORS[i][0]} player`), pos: 0 }).filter(Boolean);
+    GAME = this.G = { players, turn: 0, dice: 0, busy: false, over: false, force: [], log: [] };
+    $("app").innerHTML = topBar("Saanp Seedi", "Snakes and ladders") + `
+      <div class="table"><div class="boardwrap"><svg class="bd" id="sb" viewBox="0 0 10 10" role="img" aria-label="Snakes and ladders board"></svg></div>
+      <div class="card"><div class="status" id="s-status"></div>
+        <div class="dicebox"><button class="dice" id="s-dice" aria-label="Roll the dice">${"<i></i>".repeat(9)}</button><div class="mut" id="s-hint"></div></div>
+        <div id="s-seats" class="opts"></div>
+        <p class="mut" style="margin:0;font-size:14px">A ladder takes you up. A snake bites you down. A 6 gives another roll. You need the exact number to land on 100.</p></div></div>`;
+    wireBar(); $("s-dice").onclick = () => this.humanRoll();
+    let h = "";
+    for (let n = 1; n <= 100; n++) { const [x, y] = SS.xy(n); h += `<rect x="${x - 0.5}" y="${y - 0.5}" width="1" height="1" fill="${(Math.floor((n - 1) / 10) + n) % 2 ? "#ffe8a3" : "#c8f2e6"}"/><text x="${x - 0.42}" y="${y - 0.22}" font-size="0.26" fill="#5d6484">${n}</text>`; }
+    for (const [a, b] of Object.entries(SS.LADDERS)) { const [x1, y1] = SS.xy(+a), [x2, y2] = SS.xy(b); const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy), nx = -dy / L * 0.17, ny = dx / L * 0.17; h += `<g stroke="#8b5a2b" stroke-width="0.09" stroke-linecap="round"><line x1="${x1 + nx}" y1="${y1 + ny}" x2="${x2 + nx}" y2="${y2 + ny}"/><line x1="${x1 - nx}" y1="${y1 - ny}" x2="${x2 - nx}" y2="${y2 - ny}"/>`; for (let t = 0.1; t < 0.95; t += 0.45 / L) h += `<line x1="${x1 + dx * t + nx}" y1="${y1 + dy * t + ny}" x2="${x1 + dx * t - nx}" y2="${y1 + dy * t - ny}"/>`; h += `</g>`; }
+    for (const [a, b] of Object.entries(SS.SNAKES)) { const [x1, y1] = SS.xy(+a), [x2, y2] = SS.xy(b); const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, dx = x2 - x1, dy = y2 - y1; const c1 = [mx - dy * 0.35 + (x1 - mx) * 0.4, my + dx * 0.35 + (y1 - my) * 0.4], c2 = [mx + dy * 0.35 + (x2 - mx) * 0.4, my - dx * 0.35 + (y2 - my) * 0.4]; const d = `M${x1} ${y1} C ${c1[0]} ${c1[1]}, ${c2[0]} ${c2[1]}, ${x2} ${y2}`; h += `<path d="${d}" stroke="#1b4332" stroke-width="0.32" fill="none" stroke-linecap="round"/><path d="${d}" stroke="#52b788" stroke-width="0.2" fill="none" stroke-linecap="round" stroke-dasharray="0.2 0.15"/><circle cx="${x1}" cy="${y1}" r="0.22" fill="#1b4332"/><circle cx="${x1 - 0.07}" cy="${y1 - 0.05}" r="0.05" fill="#fff"/><circle cx="${x1 + 0.07}" cy="${y1 - 0.05}" r="0.05" fill="#fff"/>`; }
+    h += `<g id="s-toks"></g>`; $("sb").innerHTML = h;
+    this.render(); this.turnStart();
+  },
+  cur() { return this.G.players[this.G.turn]; },
+  render() {
+    const G = this.G; if (!$("sb")) return;
+    const at = {}; G.players.forEach((p) => (at[p.pos] = at[p.pos] || []).push(p));
+    let h = ""; for (const [pos, list] of Object.entries(at)) list.forEach((p, j) => { const [x, y] = +pos ? SS.xy(+pos) : [-0.6 + 0.0, 9.5]; const n = list.length, dx = n > 1 ? ((j % 2) - 0.5) * 0.4 : 0, dy = n > 2 ? (Math.floor(j / 2) - 0.5) * 0.4 : 0; const px = +pos ? x + dx : 0.3 + j * 0.3; const py = +pos ? y + dy : 9.75; h += `<circle cx="${px}" cy="${py}" r="${+pos ? 0.24 : 0.14}" fill="${SS.COLORS[p.i][1]}" stroke="#fff" stroke-width="0.06"/>`; });
+    $("s-toks").innerHTML = h;
+    const p = this.cur(); $("s-status").innerHTML = G.over ? "Game over" : `<span style="color:${SS.COLORS[p.i][1]}">●</span> ${esc(p.name)}'s turn`;
+    const d = $("s-dice"); d.style.boxShadow = `inset 0 -6px 0 rgba(0,0,0,0.12), 0 0 0 4px ${SS.COLORS[p.i][1]}`; d.disabled = G.over || G.busy || p.kind !== "human";
+    const PIPS = { 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] }; d.querySelectorAll("i").forEach((el, i) => el.classList.toggle("on", !!G.dice && PIPS[G.dice].includes(i)));
+    $("s-hint").textContent = G.over ? "" : p.kind === "human" ? "Tap the dice or press Space." : "The computer is rolling.";
+    $("s-seats").innerHTML = G.players.map((q, i) => `<div class="seat${i === G.turn && !G.over ? " on" : ""}"><span class="dotc" style="background:${SS.COLORS[q.i][1]}"></span><b style="flex:1;min-width:0">${esc(q.name)}</b><span class="mut">${q.pos ? "on " + q.pos : "start"}</span></div>`).join("");
+  },
+  async turnStart() { const G = this.G; this.render(); if (!G.over && this.cur().kind === "cpu") { await wait(600); if (this.G === G) this.roll(); } },
+  humanRoll() { const G = this.G; if (G.over || G.busy || this.cur().kind !== "human") return; this.roll(); },
+  async roll() {
+    const G = this.G, p = this.cur(); if (G.busy || G.over) return; G.busy = true;
+    G.dice = G.force.length ? G.force.shift() : 1 + rnd(6); snd("dice"); const d = $("s-dice"); if (d) { d.classList.remove("roll"); void d.offsetWidth; d.classList.add("roll"); } this.render();
+    await wait(350); if (this.G !== G) return;
+    if (p.pos + G.dice > 100) { toast(`Need exactly ${100 - p.pos} to reach 100.`); G.log.push(["stay", p.i]); }
+    else {
+      for (let i = 0; i < G.dice; i++) { p.pos++; snd("step"); this.render(); await wait(140); if (this.G !== G) return; }
+      if (SS.LADDERS[p.pos]) { const to = SS.LADDERS[p.pos]; toast(`🪜 Ladder! ${p.pos} → ${to}`); G.log.push(["ladder", p.i, p.pos, to]); p.pos = to; snd("up"); }
+      else if (SS.SNAKES[p.pos]) { const to = SS.SNAKES[p.pos]; toast(`🐍 Snake bite! ${p.pos} → ${to}`); G.log.push(["snake", p.i, p.pos, to]); p.pos = to; snd("down"); }
+      this.render();
+      if (p.pos === 100) { G.over = true; G.busy = false; this.render(); return setTimeout(() => gameOver("snakes", `🏆 ${esc(p.name)} wins!`, `${esc(p.name)} reached 100 first.`, p.kind === "human"), TEST ? 0 : 600); }
+    }
+    await wait(300); if (this.G !== G) return;
+    G.busy = false; if (G.dice !== 6) G.turn = (G.turn + 1) % G.players.length; else toast("A 6! Roll again.");
+    G.dice = 0; this.turnStart();
+  },
+};
+addEventListener("keydown", (e) => { if (SCREEN === "snakes" && (e.code === "Space" || e.code === "Enter") && !$("veil") && e.target.tagName !== "INPUT") { e.preventDefault(); Snakes.humanRoll(); } });
+
+// ===================== CHECKERS (draughts, 8 x 8) =====================
+// Red ('r', king 'R') starts at the bottom and moves up. Black ('b', king 'B') starts at the top.
+// Jumping is a must. A jump that can go on must go on. A man that reaches the far row becomes a king.
+const CK = (() => {
+  const side = (p) => (!p ? null : p.toLowerCase());
+  const start = () => { const b = Array(64).fill(null); for (let i = 0; i < 64; i++) { const r = i >> 3, f = i & 7; if ((r + f) % 2) { if (r < 3) b[i] = "b"; else if (r > 4) b[i] = "r"; } } return b; };
+  const dirs = (p) => (p === "r" ? [[-1, -1], [-1, 1]] : p === "b" ? [[1, -1], [1, 1]] : [[-1, -1], [-1, 1], [1, -1], [1, 1]]);
+  const lastRow = (p, r) => (p === "r" && r === 0) || (p === "b" && r === 7);
+  // Every move is {path: [from, ..., to], caps: [captured squares]}.
+  function moves(b, me) {
+    const jumps = [], steps = [];
+    for (let i = 0; i < 64; i++) {
+      const p = b[i]; if (side(p) !== me) continue;
+      const dfs = (sq, path, caps, piece) => {
+        let more = false; const r = sq >> 3, f = sq & 7;
+        for (const [dr, df] of dirs(piece)) {
+          const mr = r + dr, mf = f + df, lr = r + 2 * dr, lf = f + 2 * df; if (lr < 0 || lr > 7 || lf < 0 || lf > 7) continue;
+          const mid = mr * 8 + mf, land = lr * 8 + lf, o = b[mid];
+          if (!o || side(o) === me || caps.includes(mid)) continue;
+          if (b[land] && land !== i) continue;
+          more = true; const np = [...path, land], nc = [...caps, mid];
+          if (piece === piece.toLowerCase() && lastRow(piece, lr)) jumps.push({ path: np, caps: nc }); // a man that becomes a king stops
+          else dfs(land, np, nc, piece);
+        }
+        if (!more && caps.length) jumps.push({ path, caps });
+      };
+      dfs(i, [i], [], p);
+      if (!jumps.length) for (const [dr, df] of dirs(p)) { const r = (i >> 3) + dr, f = (i & 7) + df; if (r < 0 || r > 7 || f < 0 || f > 7) continue; const to = r * 8 + f; if (!b[to]) steps.push({ path: [i, to], caps: [] }); }
+    }
+    return jumps.length ? jumps : steps;
+  }
+  function apply(b, m) { const n = b.slice(); const from = m.path[0], to = m.path[m.path.length - 1]; let p = n[from]; n[from] = null; for (const c of m.caps) n[c] = null; if (lastRow(p, to >> 3)) p = p.toUpperCase(); n[to] = p; return n; }
+  function evalR(b) { let s = 0; for (let i = 0; i < 64; i++) { const p = b[i]; if (!p) continue; const r = i >> 3, f = i & 7, center = f >= 2 && f <= 5 ? 4 : 0; if (p === "r") s += 100 + (7 - r) * 4 + center; else if (p === "R") s += 175 + center; else if (p === "b") s -= 100 + r * 4 + center; else s -= 175 + center; } return s; }
+  function search(b, me, d, a, beta) {
+    const ms = moves(b, me); if (!ms.length) return -100000 - d; if (d === 0) return (me === "r" ? 1 : -1) * evalR(b);
+    const op = me === "r" ? "b" : "r";
+    for (const m of ms) { const v = -search(apply(b, m), op, d - 1, -beta, -a); if (v >= beta) return beta; if (v > a) a = v; }
+    return a;
+  }
+  function best(b, me, depth, noise = 0) { let bm = null, bv = -Infinity; const op = me === "r" ? "b" : "r"; for (const m of moves(b, me)) { const v = -search(apply(b, m), op, depth - 1, -Infinity, Infinity) + (noise ? RNG() * noise : 0); if (v > bv) { bv = v; bm = m; } } return bm; }
+  return { start, moves, apply, best, side };
+})();
+
+const Checkers = {
+  opt: { mode: "cpu", level: "medium" },
+  setup() {
+    SCREEN = "checkers"; const o = this.opt;
+    modal(`<h2>⛀ Checkers</h2><div class="opts"><div class="row"><span>Play</span>${seg("k-mode", [["cpu", "🤖 Computer"], ["2p", "👫 2 players"]], o.mode)}</div>
+      <div class="row" id="k-lvl-row"><span>Level</span>${seg("k-lvl", [["easy", "Easy"], ["medium", "Medium"], ["hard", "Hard"]], o.level)}</div></div>
+      <p class="mut">You play red and move first.</p><div class="row" style="justify-content:center"><button class="btn go" id="k-go">▶ Start</button><button class="btn" id="k-cancel">All games</button></div>`, () => {
+      const vis = () => { $("k-lvl-row").hidden = o.mode !== "cpu"; };
+      wireSeg("k-mode", (v) => { o.mode = v; vis(); }); wireSeg("k-lvl", (v) => (o.level = v)); vis();
+      $("k-go").onclick = () => { closeModal(); this.start(); }; $("k-cancel").onclick = home;
+    });
+  },
+  again() { this.start(); },
+  start(board, turn) {
+    SCREEN = "checkers";
+    GAME = this.G = { b: board ? board.slice() : CK.start(), turn: turn || "r", cand: [], step: 0, sel: -1, last: null, over: false, thinking: false, quiet: 0, hist: [] };
+    $("app").innerHTML = topBar("Checkers", this.opt.mode === "cpu" ? `You (red) vs Computer · ${this.opt.level}` : "2 players on one screen") + `
+      <div class="table"><div class="boardwrap"><div class="grid8" id="kb" role="grid" aria-label="Checkers board"></div></div>
+      <div class="card"><div class="status" id="k-status"></div><div class="row" id="k-count"></div>
+        <div class="row"><button class="btn small" id="k-undo">↶ Undo</button><button class="btn small" id="k-new">New game</button></div>
+        <p class="mut" style="margin:0;font-size:14px">Pieces move one square forward on the dark squares. Jump over a piece to take it; if you can jump, you must. Keep jumping while you can. Reach the far side to become a king ♛, who moves both ways.</p></div></div>`;
+    wireBar(); $("k-undo").onclick = () => this.undo(); $("k-new").onclick = () => this.setup();
+    this.render(); this.maybeCpu();
+  },
+  cpuTurn() { return this.opt.mode === "cpu" && this.G.turn === "b"; },
+  render() {
+    const G = this.G, kb = $("kb"); if (!kb) return;
+    const all = G.over ? [] : CK.moves(G.b, G.turn), cand = G.sel >= 0 ? G.cand : [];
+    const next = new Set(cand.map((m) => m.path[G.step + 1]).filter((x) => x != null));
+    const movable = new Set(this.cpuTurn() ? [] : all.map((m) => m.path[0]));
+    let h = "";
+    for (let i = 0; i < 64; i++) {
+      const r = i >> 3, f = i & 7, p = G.b[i], cls = ["sq", (r + f) % 2 ? "d" : "l"];
+      if (G.last && G.last.path.includes(i)) cls.push("last"); if (G.sel === i) cls.push("sel");
+      h += `<button class="${cls.join(" ")}" data-i="${i}" aria-label="square ${i}">${next.has(i) ? `<span class="dot"></span>` : ""}${p ? `<span class="disc ${p.toLowerCase()}" style="${movable.has(i) && G.sel < 0 ? "outline:3px solid #ffd60a;outline-offset:2px" : ""}">${p === p.toUpperCase() ? "♛" : ""}</span>` : ""}</button>`;
+    }
+    kb.innerHTML = h; kb.querySelectorAll(".sq").forEach((b) => b.onclick = () => this.tap(+b.dataset.i));
+    const reds = G.b.filter((p) => p && p.toLowerCase() === "r").length, blacks = G.b.filter((p) => p && p.toLowerCase() === "b").length;
+    $("k-count").innerHTML = `<span class="disc r" style="width:22px;font-size:12px"></span> ${reds} &nbsp; <span class="disc b" style="width:22px"></span> ${blacks}`;
+    const who = G.turn === "r" ? "Red" : "Black";
+    $("k-status").textContent = G.over ? G.over : G.thinking ? "🤖 Computer is thinking..." : this.opt.mode === "cpu" ? (G.turn === "r" ? (all[0] && all[0].caps.length ? "Your move: you must jump!" : "Your move") : "Computer's move") : `${who} to move${all[0] && all[0].caps.length ? " (must jump)" : ""}`;
+    $("k-undo").disabled = !G.hist.length || G.thinking;
+  },
+  tap(i) {
+    const G = this.G; if (G.over || G.thinking || this.cpuTurn()) return;
+    const all = CK.moves(G.b, G.turn);
+    if (G.sel >= 0) {
+      const fit = G.cand.filter((m) => m.path[G.step + 1] === i);
+      if (fit.length) {
+        G.step++; G.cand = fit; snd("step");
+        const done = fit.find((m) => m.path.length === G.step + 1);
+        if (done && fit.length === 1) return this.play(done);
+        if (done) return this.play(done); // a shorter path ends here
+        this.render(); return;
+      }
+      if (G.step > 0) return; // in the middle of a jump: keep going
+    }
+    const mine = all.filter((m) => m.path[0] === i);
+    if (mine.length) { G.sel = i; G.cand = mine; G.step = 0; snd("step"); }
+    else { G.sel = -1; G.cand = []; G.step = 0; if (G.b[i] && CK.side(G.b[i]) === G.turn && all.length && all[0].caps.length) toast("You must jump! Pick a piece that can jump."); }
+    this.render();
+  },
+  play(m) {
+    const G = this.G; G.hist.push({ b: G.b, turn: G.turn, quiet: G.quiet });
+    G.b = CK.apply(G.b, m); G.last = m; G.sel = -1; G.cand = []; G.step = 0;
+    G.quiet = m.caps.length ? 0 : G.quiet + 1; snd(m.caps.length ? "cap" : "move");
+    G.turn = G.turn === "r" ? "b" : "r";
+    if (!CK.moves(G.b, G.turn).length) { const w = G.turn === "r" ? "Black" : "Red"; G.over = `${w} wins!`; this.render(); const you = this.opt.mode === "2p" || w === "Red"; return setTimeout(() => gameOver("checkers", this.opt.mode === "cpu" ? (w === "Red" ? "🏆 You win!" : "🤖 The computer wins") : `🏆 ${w} wins!`, `${w === "Red" ? "Black" : "Red"} has no move left.`, you), TEST ? 0 : 600); }
+    if (G.quiet >= 80) { G.over = "Draw: 40 moves each with no jump."; this.render(); return setTimeout(() => gameOver("checkers", "🤝 Draw", "40 moves each with no jump.", false), TEST ? 0 : 600); }
+    this.render(); this.maybeCpu();
+  },
+  async maybeCpu() {
+    const G = this.G; if (G.over || !this.cpuTurn() || G.thinking) return; G.thinking = true; this.render(); await wait(400); if (this.G !== G || G.over) return;
+    const lv = this.opt.level, m = CK.best(G.b, "b", lv === "easy" ? 2 : lv === "medium" ? 4 : 6, lv === "easy" ? 60 : 0); G.thinking = false; if (m) this.play(m);
+  },
+  undo() { const G = this.G; if (!G.hist.length || G.thinking) return; G.over = false; closeModal(); let h = G.hist.pop(); if (this.opt.mode === "cpu" && h.turn === "b" && G.hist.length) h = G.hist.pop(); G.b = h.b; G.turn = h.turn; G.quiet = h.quiet; G.sel = -1; G.cand = []; G.step = 0; G.last = null; this.render(); this.maybeCpu(); },
+};
+
+// ===================== Start =====================
+$("ver").textContent = VERSION;
+window.__bg = { CE, CK, LD, SS, Chess, Ludo, Snakes, Checkers, home, SAVE, setRng: (f) => { RNG = f; }, game: () => GAME, screen: () => SCREEN };
+home();
+
+</script>
+</body>
+</html>

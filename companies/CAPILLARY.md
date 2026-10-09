@@ -78,6 +78,16 @@ Brief: runs/capillary-2026-09-19/step1-business-brief.md
   which stage 10 and stage 11 must not apply.
 - 2026-10-09: Halt 1 decision PROCEED.
 
+## ROLE 5.5 TRACKER PROOF (recorded 2026-10-09)
+14 DOWNSTREAM SIGNAL TRACKER rows written by claude.ai and linked to the
+company page; row URLs and signal types in
+runs/capillary-2026-09-19/inputs/research/web-handover-dossier.md Section 5.
+Entities: 1. External signals: 3 (UnitedHealth/Optum counterparty filings
+https://app.notion.com/p/3f4bb2b9d3ab813f92afc625b12264b8; Eagle Eye peer
+benchmark https://app.notion.com/p/3f4bb2b9d3ab8116ae5cff6b2131f094; Adyen /
+Talon.One bundling threat https://app.notion.com/p/3f4bb2b9d3ab816b8506feeb18e5c1fe).
+Floor 3 met.
+
 ## ACTIVE TRIPWIRES
 Operator-confirmed falsifiers, 2026-10-09:
 1. Core NRR excluding Optum, constant currency, below 105% for two quarters.

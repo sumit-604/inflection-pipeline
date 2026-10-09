@@ -136,7 +136,7 @@ body.slowmo #cv { filter: saturate(1.6) contrast(1.15) sepia(0.15); }
 <script type="module">
 import * as THREE from "three";
 // ===================== DATA: maps, people, story, puzzles =====================
-const VERSION = "Rish Hero v15";
+const VERSION = "Rish Hero v16";
 // Hero suits (v11): win stars in the chapters to unlock them.
 const SUITS = [
   { id: "uniform", name: "School uniform", need: 0, look: {} },
@@ -1387,10 +1387,19 @@ function songLabel() { const c = curSong(); return !c ? "the built-in Rish Hero 
 const escH = (t) => String(t == null ? "" : t).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[ch]);
 // Song search like status music: Apple's free search gives every song with a short preview. fetch first, then JSONP if the browser blocks it.
 function songJsonp(u) { return new Promise((res, rej) => { const cb = "__rhSong" + Date.now() + Math.floor(Math.random() * 1000); const sc = document.createElement("script"); const done = () => { delete window[cb]; sc.remove(); }; const to = setTimeout(() => { done(); rej(new Error("timeout")); }, 12000); window[cb] = (j) => { clearTimeout(to); done(); res(j); }; sc.onerror = () => { clearTimeout(to); done(); rej(new Error("offline")); }; sc.src = u + "&callback=" + cb; document.head.appendChild(sc); }); }
+// Two free music searches with short previews: Apple Music first, then Deezer. G.songErr keeps the reason when both fail.
+addEventListener("securitypolicyviolation", (e) => { if (/itunes|deezer|apple|dzcdn/.test(e.blockedURI || "")) G.cspBlocked = true; });
 async function songSearchApi(term) {
-  const u = `https://itunes.apple.com/search?term=${encodeURIComponent(term)}&media=music&entity=song&limit=25&country=IN`;
-  let j; try { const r = await fetch(u); j = await r.json(); } catch (e) { j = await songJsonp(u); }
-  return (j.results || []).filter((x) => x.previewUrl).map((x) => ({ name: x.trackName, artist: x.artistName, album: x.collectionName, url: x.previewUrl, art: x.artworkUrl100 || x.artworkUrl60 || "", link: x.trackViewUrl || "" }));
+  const q = encodeURIComponent(term), why = []; G.cspBlocked = false;
+  const it = `https://itunes.apple.com/search?term=${q}&media=music&entity=song&limit=25&country=IN`;
+  const fromIt = (j) => (j && j.results || []).filter((x) => x.previewUrl).map((x) => ({ name: x.trackName, artist: x.artistName, album: x.collectionName, url: x.previewUrl, art: x.artworkUrl100 || x.artworkUrl60 || "", link: x.trackViewUrl || "", src: "Apple Music" }));
+  const fromDz = (j) => (j && j.data || []).filter((x) => x.preview).map((x) => ({ name: x.title, artist: x.artist && x.artist.name, album: x.album && x.album.title, url: x.preview, art: x.album && (x.album.cover_medium || x.album.cover) || "", link: x.link || "", src: "Deezer" }));
+  let gotAnswer = false;
+  try { const r = await fetch(it); const l = fromIt(await r.json()); gotAnswer = true; if (l.length) return l; } catch (e) { why.push("Apple: " + (e.message || "blocked")); }
+  if (!gotAnswer) try { const l = fromIt(await songJsonp(it)); gotAnswer = true; if (l.length) return l; } catch (e) { why.push("Apple (2): " + (e.message || "blocked")); }
+  try { const l = fromDz(await songJsonp(`https://api.deezer.com/search?q=${q}&limit=25&output=jsonp`)); gotAnswer = true; if (l.length) return l; } catch (e) { why.push("Deezer: " + (e.message || "blocked")); }
+  if (gotAnswer) return [];
+  G.songErr = why.join(" · "); throw new Error(G.cspBlocked ? "locked" : "offline");
 }
 async function songLoad() { try { const db = await songDB(); const v = await new Promise((res) => { const q = db.transaction("s").objectStore("s").get("hero"); q.onsuccess = () => res(q.result); q.onerror = () => res(null); }); setSong(v); } catch (e) { /* no storage: the built-in theme plays */ } }
 async function songSave(file, start) { const db = await songDB(); const v = { blob: file, name: file.name, start: start || 0 }; await new Promise((res, rej) => { const tx = db.transaction("s", "readwrite"); tx.objectStore("s").put(v, "hero"); tx.oncomplete = res; tx.onerror = () => rej(tx.error); }); setSong(v); }
@@ -3113,25 +3122,26 @@ function diary() {
 // Play the hero theme now (from the menu or Settings), even after it was switched off for fights.
 function playThemeNow() { const tm = G.test; G.test = false; const mu = G.mute; G.mute = false; const m = G.save.music; G.save.music = true; G.musicEnd = 0; heroTheme(); G.test = tm; G.mute = mu; G.save.music = m; toast(curSong() ? `🎵 Your hero song: ${songLabel()}. It plays in fights when you knock out 3 or more men at once, on the ⚡ Hero Smash and when you beat a boss.` : "🎵 The Rish Hero theme! It plays in fights when you knock out 3 or more men at once, on the ⚡ Hero Smash and when you beat a boss.", 4); }
 // Search a hero song, like picking music for a WhatsApp status.
+function songPageLocked() { return /claude\.ai|claudeusercontent|anthropic/.test(location.hostname || "") || G.cspBlocked; }
 function songSearch(back) {
   back = back || menu; const stopPrev = () => { if (G.prevEl) G.prevEl.pause(); };
   showScr(`<h2>🔍 Hero song</h2><p class="mut">Search any song, like music on a WhatsApp status. ▶ listens. ✔ Use makes it your hero song: it plays when you knock out 3 or more men at once, on the ⚡ Hero Smash and on a boss. Each song plays a 30-second part.</p>
   <div class="row srch"><input id="sq" maxlength="60" autocomplete="off" placeholder="Search a song: Singham Again, Sooryavanshi..."><button class="btn go" id="sgo">🔍 Search</button></div>
   <div class="row chips">${["Singham Again", "Sooryavanshi", "Singham", "Simmba", "Jai Ho"].map((t) => `<button class="btn mini" data-q="${t}">${t}</button>`).join("")}</div>
-  <p id="smsg" class="mut"></p><div id="sres" class="songs"></div>
-  <p class="mut">Now: <b id="snow"></b>. Song previews from Apple Music.<span id="slink"></span></p>
+  <p id="smsg" class="mut">${songPageLocked() ? "🔒 This page (the claude.ai preview) cannot open music websites. Song search works when the game is opened from your own website (Netlify)." : ""}</p><div id="sres" class="songs"></div>
+  <p class="mut">Now: <b id="snow"></b>. Song previews from Apple Music or Deezer.<span id="slink"></span></p>
   <div class="row"><button class="btn" id="sbi">🎼 Built-in theme</button><button class="btn alt" id="b">◀ Back</button></div>`);
-  const showNow = () => { $("snow").textContent = songLabel(); const w = !G.song && G.save.webSong; $("slink").innerHTML = w && /^https:\/\//.test(w.link) ? ` <a href="${escH(w.link)}" target="_blank" rel="noopener">Listen on Apple Music</a>` : ""; };
+  const showNow = () => { $("snow").textContent = songLabel(); const w = !G.song && G.save.webSong; $("slink").innerHTML = w && /^https:\/\//.test(w.link) ? ` <a href="${escH(w.link)}" target="_blank" rel="noopener">Listen on ${escH(w.src || "Apple Music")}</a>` : ""; };
   showNow(); $("sq").value = G.lastQ || "";
   const bindRows = () => {
     $("sres").querySelectorAll("[data-p]").forEach((b) => b.onclick = () => { const s = G.sres[+b.dataset.p], pv = G.prevEl = G.prevEl || new Audio(); const same = pv.dataset.u === s.url && !pv.paused; $("sres").querySelectorAll("[data-p]").forEach((x) => x.textContent = "▶"); if (same) { pv.pause(); return; } pv.dataset.u = s.url; pv.src = s.url; const pr = pv.play(); if (pr && pr.catch) pr.catch(() => {}); b.textContent = "⏸"; G.stats.previews = (G.stats.previews || 0) + 1; });
-    $("sres").querySelectorAll("[data-u]").forEach((b) => b.onclick = async () => { const s = G.sres[+b.dataset.u]; stopPrev(); await songClear(); G.save.webSong = { name: s.name, artist: s.artist, url: s.url, art: s.art, link: s.link }; writeSave(); G.songOk = false; $("smsg").textContent = `✅ Now your hero song: ${s.name}. Knock out 3 men at once to hear it!`; showNow(); });
+    $("sres").querySelectorAll("[data-u]").forEach((b) => b.onclick = async () => { const s = G.sres[+b.dataset.u]; stopPrev(); await songClear(); G.save.webSong = { name: s.name, artist: s.artist, url: s.url, art: s.art, link: s.link, src: s.src }; writeSave(); G.songOk = false; $("smsg").textContent = `✅ Now your hero song: ${s.name}. Knock out 3 men at once to hear it!`; showNow(); });
   };
   const run = async (q) => { q = String(q || "").trim(); if (!q) return; G.lastQ = q; $("sq").value = q; $("smsg").textContent = "Searching..."; $("sres").innerHTML = "";
     try { const list = await songSearchApi(q); if (!$("sres")) return; G.sres = list; if (!list.length) { $("smsg").textContent = "No songs found. Try other words."; return; }
       $("smsg").textContent = `${list.length} songs. ▶ to listen, ✔ Use to make it your hero song.`;
       $("sres").innerHTML = list.map((s, i) => `<div class="srow">${s.art ? `<img src="${escH(s.art)}" alt="">` : "<span class='noart'>🎵</span>"}<div class="sinfo"><b>${escH(s.name)}</b><small>${escH(s.artist)}${s.album ? " · " + escH(s.album) : ""}</small></div><button class="btn mini" data-p="${i}">▶</button><button class="btn mini go" data-u="${i}">✔ Use</button></div>`).join(""); bindRows(); }
-    catch (e) { if ($("smsg")) $("smsg").textContent = "No internet, so the songs cannot load. The built-in Rish Hero theme will play."; } };
+    catch (e) { if (!$("smsg")) return; $("smsg").innerHTML = (e.message === "locked" || songPageLocked() ? "🔒 This page is locked and cannot open music websites (the claude.ai preview is like this). Open the game from your own website (Netlify) to search songs. Here the built-in Rish Hero theme plays." : "📶 The music search did not answer. Check the internet and try again. Until then the built-in Rish Hero theme plays.") + `<br><small>Reason: ${escH(G.songErr || e.message)}</small>`; } };
   $("sgo").onclick = () => run($("sq").value); $("sq").onkeydown = (e) => { e.stopPropagation(); if (e.key === "Enter") run($("sq").value); };
   $("card").querySelectorAll("[data-q]").forEach((b) => b.onclick = () => run(b.dataset.q));
   $("sbi").onclick = async () => { stopPrev(); await songClear(); delete G.save.webSong; writeSave(); $("smsg").textContent = "🎼 The built-in Rish Hero theme will play."; showNow(); };

@@ -1065,6 +1065,7 @@ RishSchoolDays and Rish Hero are one game now. The whole Rish Hero story plays i
 - v85 carries Rish Hero v13 inside: a 🎵 Hero theme button in the story menu and Settings, and the theme at FINISH HIM on a boss.
 - v86 carries Rish Hero v14 inside: Settings in the story menu has "Your own hero song". Pick a song file from your own device and it plays in the big fight moments. It stays on that device only.
   The story menu also has "🔍 Hero song": search any song like WhatsApp status music (Singham Again, Sooryavanshi...), listen, and use it as the fight song (a 30-second Apple Music preview; needs the internet).
+- v87 carries Rish Hero v16 inside: the song search also asks Deezer when Apple does not answer, and shows the reason when it fails.
 
 ## Files
 

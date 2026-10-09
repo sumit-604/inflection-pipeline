@@ -73,7 +73,7 @@ const HELPERS = () => {
 
   // ---------------- A. Menu, data, story rules ----------------
   r = await E(() => ({ title: document.querySelector("#card h1")?.textContent, sub: document.querySelector(".sub")?.textContent, ver: document.querySelector("#ver").textContent, btns: document.querySelectorAll("#card .btn").length }));
-  ok("A1 menu: title, series line, version label Rish Hero v15", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v15" && r.btns >= 5, r);
+  ok("A1 menu: title, series line, version label Rish Hero v16", r.title === "RISH HERO" && /Game 3/.test(r.sub) && /Just live it/.test(r.sub) && r.ver === "Rish Hero v16" && r.btns >= 5, r);
   await shot("01-menu");
   r = await E(() => { document.querySelector("#m-ch").click(); const n = document.querySelectorAll(".ch").length, open = [...document.querySelectorAll(".ch")].filter((x) => !x.disabled).length; document.querySelector("#b").click();
     document.querySelector("#m-about").click(); const img = document.querySelector(".portrait-photo"), t = document.querySelector("#card").textContent; document.querySelector("#b").click();
@@ -413,6 +413,19 @@ const HELPERS = () => {
   r = await notBlank();
   ok("V1 the 3D view draws (many colours on screen)", r > 25, r);
 
+  // ---------------- LK. A locked page (like the claude.ai preview): the song search says so ----------------
+  {
+    const q = await b.newPage({ viewport: { width: 1000, height: 640 } });
+    const html = fs.readFileSync(FILE, "utf8");
+    await q.route(/game\.test\//, (rt) => rt.fulfill({ contentType: "text/html", body: html, headers: { "Content-Security-Policy": "default-src 'self' https://cdn.jsdelivr.net data: blob:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'unsafe-inline'; img-src * data: blob:; media-src 'self' blob: data:; connect-src 'self'" } }));
+    if (THREE_LOCAL) await q.route("https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", (rt) => rt.fulfill({ path: THREE_LOCAL, contentType: "application/javascript" }));
+    await q.goto("https://game.test/index.html?test=1"); await q.waitForFunction(() => window.__rh && window.__rh.step, null, { timeout: 60000 });
+    await q.evaluate(() => window.__rh.songSearch()); await q.fill("#sq", "Singham Again"); await q.click("#sgo"); await q.waitForFunction(() => /locked/.test(document.getElementById("smsg").textContent), null, { timeout: 40000 }).catch(() => {});
+    r = await q.evaluate(() => document.getElementById("smsg").textContent);
+    ok("LK1 on a locked page the song search says the page is locked and to open the game from Netlify (not 'no internet')", /locked/.test(r) && /Netlify/.test(r) && !/No internet/.test(r), r);
+    await q.close();
+  }
+
   // ---------------- T. Phone ----------------
   {
     const q = await b.newPage({ viewport: { width: 844, height: 390 }, hasTouch: true, isMobile: true });
@@ -472,11 +485,19 @@ const HELPERS = () => {
     await q.click('[data-u="0"]'); await q.waitForFunction(() => window.__rh.G.save.webSong, null, { timeout: 10000 });
     const used = await q.evaluate(() => { const G = window.__rh.G; const o = { song: G.save.webSong.name, msg: document.getElementById("smsg").textContent, now: document.getElementById("snow").textContent, link: !!document.querySelector("#slink a") }; G.test = true; window.__rh.heroTheme(); o.src = G.stats.themeSrc; G.test = false; return o; });
     await q.click('[data-q="Sooryavanshi"]'); await q.waitForFunction(() => /songs\./.test(document.getElementById("smsg").textContent), null, { timeout: 20000 }); const chip = await q.evaluate(() => document.getElementById("sq").value);
-    await q.unroute(/itunes\.apple\.com\/search/); await q.route(/itunes\.apple\.com\/search/, (rt) => rt.abort()); await q.click("#sgo"); await q.waitForFunction(() => /No internet/.test(document.getElementById("smsg").textContent), null, { timeout: 30000 });
+    await q.unroute(/itunes\.apple\.com\/search/); await q.route(/itunes\.apple\.com\/search/, (rt) => rt.abort()); await q.route(/api\.deezer\.com/, (rt) => rt.abort()); await q.click("#sgo"); await q.waitForFunction(() => /did not answer/.test(document.getElementById("smsg").textContent), null, { timeout: 30000 });
     const offline = await q.evaluate(() => document.getElementById("smsg").textContent);
     await q.reload(); await q.waitForFunction(() => window.__rh && window.__rh.G && window.__rh.G.save, null, { timeout: 30000 }); const kept2 = await q.evaluate(() => window.__rh.G.save.webSong && window.__rh.G.save.webSong.name);
     await q.evaluate(() => window.__rh.settings()); const setNow = await q.evaluate(() => document.getElementById("songNow").textContent); await q.click("#songDel"); await q.waitForFunction(() => !window.__rh.G.save.webSong, null, { timeout: 10000 });
-    ok("S5 search a song like WhatsApp status music: a search bar, songs with pictures, ▶ listens, ✔ Use makes it the hero song in fights; quick buttons; no internet = built-in theme; kept after a reload", menuBtn && r.rows === 2 && r.first === "Singham Again Title Track" && r.second === "Hero <Theme>" && /2 songs/.test(r.msg) && /a\.m4a/.test(prev.src || "") && prev.btn === "⏸" && used.song === "Singham Again Title Track" && /Now your hero song/.test(used.msg) && /Singham Again/.test(used.now) && used.link && used.src === "web" && chip === "Sooryavanshi" && /No internet/.test(offline) && kept2 === "Singham Again Title Track" && /Singham Again/.test(setNow), { menuBtn, r, prev, used, chip, offline, kept2, setNow });
+    ok("S5 search a song like WhatsApp status music: a search bar, songs with pictures, ▶ listens, ✔ Use makes it the hero song in fights; quick buttons; no answer = built-in theme with the reason; kept after a reload", menuBtn && r.rows === 2 && r.first === "Singham Again Title Track" && r.second === "Hero <Theme>" && /2 songs/.test(r.msg) && /a\.m4a/.test(prev.src || "") && prev.btn === "⏸" && used.song === "Singham Again Title Track" && /Now your hero song/.test(used.msg) && /Singham Again/.test(used.now) && used.link && used.src === "web" && chip === "Sooryavanshi" && /did not answer/.test(offline) && /Reason: .*Deezer/.test(offline) && kept2 === "Singham Again Title Track" && /Singham Again/.test(setNow), { menuBtn, r, prev, used, chip, offline, kept2, setNow });
+    // v16: Deezer answers when Apple does not
+    await q.unroute(/api\.deezer\.com/); const DZ = { data: [{ title: "Aila Re Aillaa", artist: { name: "Deezer Singer" }, album: { title: "Sooryavanshi", cover_medium: "data:image/gif;base64,R0lGODlhAQABAAAAACw=" }, preview: "https://cdnt-preview.dzcdn.net/test/c.mp3", link: "https://www.deezer.com/track/1" }] };
+    await q.route(/api\.deezer\.com/, (rt) => { const cb = new URL(rt.request().url()).searchParams.get("callback"); return cb ? rt.fulfill({ contentType: "text/javascript", body: `${cb}(${JSON.stringify(DZ)})` }) : rt.abort(); });
+    await q.evaluate(() => window.__rh.songSearch()); await q.fill("#sq", "Sooryavanshi"); await q.click("#sgo"); await q.waitForSelector(".srow", { timeout: 30000 });
+    const dz = await q.evaluate(() => ({ rows: document.querySelectorAll(".srow").length, first: document.querySelector(".srow .sinfo b").textContent }));
+    await q.click('[data-u="0"]'); await q.waitForFunction(() => window.__rh.G.save.webSong && window.__rh.G.save.webSong.src === "Deezer", null, { timeout: 10000 }); const dzLink = await q.evaluate(() => document.querySelector("#slink a") && document.querySelector("#slink a").textContent);
+    ok("S6 when Apple's search does not answer, Deezer's search gives the songs (with a Listen on Deezer link)", dz.rows === 1 && dz.first === "Aila Re Aillaa" && dzLink === "Listen on Deezer", { dz, dzLink });
+    await q.evaluate(() => window.__rh.settings()); await q.click("#songDel");
     await q.close();
   }
 

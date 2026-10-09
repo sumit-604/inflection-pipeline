@@ -4,8 +4,8 @@ RishSchoolDays series, Game 3. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
 A full 3D action story game in one HTML file (Three.js). It runs on a
-computer and on a phone. Version label: **Rish Hero v15** (bottom right). Inside School Days the
-label also says only "Rish Hero v15".
+computer and on a phone. Version label: **Rish Hero v16** (bottom right). Inside School Days the
+label also says only "Rish Hero v16".
 
 **Now inside RishSchoolDays (v10).** School Days v82 carries this whole
 story. Open it from the 🦸 button in School Days, or play the Annual Day
@@ -199,6 +199,11 @@ knocked out and arrested. No blood.
   status uses), so the game file carries no film music and needs the
   internet for this. No internet: the built-in Rish Hero theme plays.
   "🎼 Built-in theme" goes back to it.
+- **Song search fixes (v16):** when Apple's search does not answer, the
+  game asks Deezer's free search (30-second previews too). A locked page
+  that may not open music websites, such as the claude.ai preview link,
+  now says so and asks to open the game from Netlify, instead of "No
+  internet". When the search fails, a short reason line shows why.
 - **Your own hero song (v14):** Settings, "🎵 Your own hero song", "📁
   Choose a song": pick a music file that is on this computer or phone
   (for example a film song you bought or downloaded). It plays at the big
@@ -229,8 +234,9 @@ parkour, the chase, guns and the code, doors, the guide arrow, the E prompts, di
   Life Story, the dream job, 19 emergencies, the living city, friends,
   medals, vehicles, family, the dog), the save after a reload, the School
   Days embed, best times, trophies and suits, the new moves, Hero Power,
-  multi takedowns and music, the theme button, your own hero song, the song search, plus
-  phone controls (14 buttons). 114 checks.
+  multi takedowns and music, the theme button, your own hero song, the song search (Apple, then
+  Deezer, and the locked-page message), plus phone controls (14 buttons).
+  116 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html shots [three.module.js]
 

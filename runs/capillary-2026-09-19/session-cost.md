@@ -47,3 +47,9 @@ Run total (sum of ledger rows with token counts): 3,227,162 tokens.
 
 (d) OPERATOR SNAPSHOT
 - Operator: run /cost and /usage now and paste the cache hit ratio and loop totals under an "Operator snapshot" heading here.
+
+## PHASE 3 (finalize) LEDGER — 2026-10-10
+
+| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
+|---|---|---|---|---|---|---|---|---|
+| 10 | input assembly (phase 3) | claude-sonnet-5-5 | medium | n/a | n/a | 244012 | 8m10s | 1 |

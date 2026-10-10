@@ -1,0 +1,286 @@
+stage: B10-valinputs
+company: "CAPILLARY"
+run_date: "2026-09-19"
+phase: 3
+phase3_executed: "2026-10-10"
+model: claude-sonnet-5-5
+status: complete
+authority_note: "Phase 3. fttcp-deliberation.md (signed off 10-Oct-2026) is AUTHORITATIVE and supersedes earlier pipeline determinations. Dossier Section 6 (operator rulings 10-Oct-2026) sits beneath it. Where an earlier block conflicts, the deliberation value is carried and the earlier value is recorded in conflicts[]."
+units_header:
+  table_unit: "Rs Cr"
+  annual_report: "INR million (AR FY26, B00.reporting_units)"
+  results: "INR million (Q3 FY26, Q4 FY26, Q1 FY27 results: 'All amounts in Indian Rupees million'; Q1 FY27 p.9, Q4 FY26 p.14-16)"
+  investor_presentation: "INR million (Q1 FY27 deck pp.26, 28: Mn)"
+  prospectus: "INR million (UDRHP-I, B00.reporting_units)"
+  screener: "INR Cr (B00.reporting_units)"
+  conversion: "10 INR million = 1 INR Cr; done once, shown in each anchor"
+input_gaps:
+  - "No credit rating exists (AR FY26: neither obtained nor revised any credit rating; B00 input_gaps). rating_wc_quote unresolved."
+  - "FII/DII split not in BSE Reg 31 summary (B00). Kotak MF crossed 5% on 14-Aug-2026 (B08)."
+  - "Peer table: only RateGain live data held; rest PENDING LIVE PEER TABLE (dossier 6.3, deliberation B)."
+  - "FY26 top-10 customer concentration NOT FOUND (AR Note 36(iii) incomplete; B02, B03, B04). FY25 58.71% is stale (UDRHP-I, B00 LBF3)."
+  - "Q1 FY27 consolidated balance sheet not in the quarterly results; bridge date for net cash not anchored (deliberation Equity bridge row: stage 11 to anchor)."
+  - "Final RHP absent; Optum figures and warrant schedule cited by claude.ai from the RHP are not in the corpus (dossier Section 7)."
+flags:
+  - "STAGE 11 NOTE: the C.2 ledger probabilities in fttcp-draft.md are Claude Code proposals, NOT operator-ruled (draft C.2 header; deliberation Section C: 'Stage 11 must rule them or replace them'; LESSONS KISSHT C2P)."
+  - "30x approved exit P/E is an operator override of the pillar destination (Track 2 16.9x, Track 1 13.1x). Stage 11 must print both (Amendment 20.9) and the Step 1C adjusted peer base and gap. CLAUDE.md bars round-number exit defaults; deliberation B records 30x as a dated operator ruling with stated reasons (tension flagged there)."
+  - "Proof gate NOT FIRED. Posture RESEARCH / WATCH until Q2 FY27 print (about Nov-2026)."
+  - "Hurdle Ratio base 1.13 and bull 1.71 are both below the 1.953 Tier A threshold (STOP band, caps nothing under OR-2). Claude Code arithmetic; stage 11 confirms."
+  - "Amendment 25 starter condition fails at CMP (T1+T2 58.7% of CMP vs 75% needed; price where it reaches 75% is about Rs 444). Claude Code arithmetic; stage 11 confirms."
+  - "Cross-family grade did not run (no GEMINI_API_KEY); FTTCP confidence one notch lower (deliberation F)."
+  - "Verifier B rated stage 5 grade B as B-/C+ (B12b). Operator ruled B (O9)."
+  - "Prior FLAG-CASH (B01, B03) and FLAG-GATE0 (B01) remain on the record; B13 INDETERMINATE cash cap is superseded (O3)."
+table:
+  identity:
+    company: {value: "Capillary Technologies India Ltd", anchor: "manifest"}
+    ticker: {value: "CAPILLARY", anchor: "manifest"}
+    sector: {value: "Platform / SaaS / IT services (cloud SaaS, loyalty / CDP / engagement)", anchor: "B00.sector_cap_row_evidence; deliberation D (R1-R4)"}
+    business_model_type: {value: "platform (89.3% recurring subscription FY26; asset-light; wc_intensity low; secular-growth)", anchor: "B04.business_type, revenue_streams"}
+    signed_archetype: {value: "Outsourcing partner, system-of-record variant; NON-CONVERTER for both lines", anchor: "dossier Section 2"}
+    sector_cap_row: {value: "Platform / SaaS / IT services, 45x", anchor: "manifest.sector_cap_row; deliberation B pillar card; B04.analyst_note (confirmed)"}
+    cmp_rs: {value: 566.65, anchor: "deliberation header (NSE close 09-Oct-2026); dossier Section 2. manifest cmp 484.0 is stale"}
+    market_cap_cr_basic_shares: {value: 4503.3, anchor: "arithmetic: CMP 566.65 x 7.94719830 Cr shares outstanding (BSE SHP summary Jun-2026: 7,94,71,983). Dossier Section 2 states about 4,510 [INFERENCE]. manifest 3852.0 is stale"}
+    market_cap_cr_diluted_shares: {value: 4669.2, anchor: "arithmetic: CMP 566.65 x 8.24 Cr fully diluted (deliberation Approved Pillars EPS definition; dossier 6.4)"}
+    shares_outstanding_basic_cr: {value: 7.9471983, anchor: "BSE SHP summary Jun-2026 (7,94,71,983 shares)"}
+    shares_outstanding_diluted_cr: {value: 8.24, anchor: "deliberation Approved Pillars (8.24 crore fully diluted); BSE SHP Jun-2026 fully diluted 8,23,74,238 = 8.2374 Cr incl. 29,02,255 ESOP"}
+    net_cash_per_share_rs_bridge: {value: 57, anchor: "deliberation Approved Pillars equity bridge [INFERENCE, deck May-2026 p.59: cash and investments Rs 506.99 Cr less borrowings]"}
+    net_cash_cr_bridge: {value: 469.7, anchor: "arithmetic: Rs 57 x 8.24 Cr shares = 469.68"}
+    net_cash_cr_balance_sheet_31mar26: {value: 438.95, anchor: "Results Q4 FY26 p.15 (INR mn): cash 358.11 + other bank balances 3,232.40 + current investments 1,246.23 = 4,836.74 less borrowings 447.21 (current) + 0 (non-current) = 4,389.53 mn / 10 = 438.95 Cr. Excludes non-current investments 118.27 mn and lease liabilities 88.86 mn. Pre-SessionM payment (USD 20m, closed 01-May-2026)"}
+    enterprise_value_cr_bridge_basis: {value: 4199.5, anchor: "arithmetic: diluted mcap 4,669.2 - net cash 469.7 (Rs 57 bridge) = 4,199.5"}
+    enterprise_value_cr_balance_sheet_basis: {value: 4230.3, anchor: "arithmetic: diluted mcap 4,669.2 - net cash 438.95 (31-Mar-26 balance sheet) = 4,230.3"}
+    listed_date: {value: "2025-11-21", anchor: "manifest.listed_date"}
+  latest_financials:
+    basis: "Consolidated. FY26 audited (Results Q4 FY26). TTM Q1 FY27 = FY26 + Q1 FY27 - Q1 FY26."
+    revenue_fy26_cr: {value: 734.60, anchor: "Results Q4 FY26 p.14: 7,345.99 mn / 10"}
+    revenue_q1fy27_cr: {value: 256.64, anchor: "Results Q1 FY27 p.9: 2,566.44 mn / 10. YoY vs 1,798.93 mn = +42.7% (arithmetic); deck p.28 shows 43%"}
+    revenue_ttm_q1fy27_cr: {value: 811.35, anchor: "arithmetic: (7,345.99 + 2,566.44 - 1,798.93) mn / 10 (Results Q4 FY26 p.14; Results Q1 FY27 p.9)"}
+    ebitda_reported_fy26_cr: {value: 106.59, anchor: "Results Q4 FY26 p.14 'Profit before finance costs, depreciation, amortization and tax' 1,065.85 mn / 10 (includes other income 137.34 mn)"}
+    ebitda_adjusted_fy26_cr: {value: 106.92, anchor: "Q1 FY27 deck p.28: Adj. EBITDA 1,069.2 mn / 10 (company definition, deck p.29 glossary)"}
+    ebitda_adjusted_q1fy27_cr: {value: 44.02, anchor: "Q1 FY27 deck p.28: 440.2 mn / 10"}
+    ebitda_adjusted_ttm_cr: {value: 131.97, anchor: "arithmetic: (1,069.2 + 440.2 - 189.7) mn / 10 (deck p.28)"}
+    ebitda_operating_ex_other_income_fy26_cr: {value: 92.85, anchor: "B03 analyst_note and B01 data_notes (operating-EBITDA read, 12.64%)"}
+    esop_expense_fy26_cr: {value: 10.73, anchor: "Q1 FY27 deck p.28: 107.3 mn / 10"}
+    pat_fy26_cr: {value: 52.39, anchor: "Results Q4 FY26 p.14: 523.88 mn / 10. Includes exceptional income 24.96 Cr (249.60 mn) and net tax credit 1.28 Cr (12.78 mn)"}
+    pat_normalised_fy26_cr: {value: 32.3, anchor: "AR FY26 p.82 'Normalized PAT 323' mn / 10 (via fttcp-draft Part B B3)"}
+    pat_q1fy27_cr: {value: -9.55, anchor: "Results Q1 FY27 p.9: (95.52) mn / 10; after exceptional loss 333.86 mn (Rs 33.39 Cr cyber fraud)"}
+    diluted_eps_fy26_rs: {value: 6.87, anchor: "Results Q4 FY26 p.14 (diluted, continuing and discontinued)"}
+    diluted_eps_q1fy27_rs: {value: -1.20, anchor: "Results Q1 FY27 p.9"}
+    operating_eps_runrate_rs: {value: 6.96, anchor: "deliberation Section C earnings base: Q1 FY27 annualised operating PAT Rs 57.4 Cr / 8.24 Cr shares (Claude Code arithmetic; stage 11 confirms)"}
+    cfo_fy26_cr: {value: 149.91, anchor: "Results Q4 FY26 p.16: 1,499.07 mn / 10"}
+    cfo_fy25_cr: {value: -46.20, anchor: "Results Q4 FY26 p.16: (461.99) mn / 10"}
+    capex_fy26_cr: {value: 39.37, anchor: "Results Q4 FY26 p.16: purchase of PPE and intangible assets 393.74 mn / 10 (includes capitalised development; AR p.109 Rs 36.62 Cr per draft)"}
+    fcf_fy26_cr: {value: 110.54, anchor: "arithmetic: CFO 149.91 - capex 39.37; agrees with B01 FCF FY26 110.54 (draft 2C)"}
+    book_value_per_share_rs: {value: 128.9, anchor: "arithmetic: total equity 10,234.93 mn (Results Q4 FY26 p.15) / 79.405 mn shares (paid-up capital 158.81 mn / face value Rs 2)"}
+    ebitda_margin_adjusted_fy26_pct: {value: 14.55, anchor: "arithmetic: 1,069.2 / 7,346.0 (deck p.28; AR MD&A states 14.6%)"}
+    ebitda_margin_adjusted_q1fy27_pct: {value: 17.2, anchor: "arithmetic: 440.2 / 2,566.4 (deck p.28 shows 17%)"}
+    ebitda_margin_operating_fy26_pct: {value: 12.64, anchor: "B01 data_notes; B03 analyst_note"}
+    pat_margin_fy26_pct: {value: 7.13, anchor: "arithmetic: 52.39 / 734.60"}
+    roce_operating_ruled: {value: "FY25 1.5%; FY26 3.9%; TTM Q1 FY27 6.8%; Q1 FY27 annualised 13.6%; Q4 FY26 annualised 9.1%", anchor: "dossier 6.1 table; deliberation A O1/O2 and B. Operating ROCE = (adjusted EBITDA - ESOP - D&A) / invested capital ex cash. Operating EBIT Rs Cr FY25 6.6, FY26 21.2, TTM 41.0, Q1 FY27 20.3 (deck p.28 mn / 10); invested capital Rs Cr 431.9, 549.4, 598.6 (deck p.26: 4,318.5 / 5,494.0 / 5,986.2 mn / 10)"}
+    roce_latest_operating_ttm_pct: {value: 6.8, anchor: "dossier 6.1; deliberation B (41.0 / 598.6)"}
+    roce_2yr_trend: {value: "RISING (1.5% FY25 to 3.9% FY26 to 6.8% TTM Q1 FY27)", anchor: "dossier 6.1; deliberation B backward STRUCTURALLY LOW, forward RECOVERING"}
+    roce_other_bases_not_governing: {value: "company ROCE 2.8% FY25, 3.0% FY26, 5.2% TTM (capital employed incl cash); ROIC 3.2%, 4.8%, 7.3%; CROIC 17.4%, 21.8%, 23.2%; AR published ROCE 4.56% FY25, 8.82% FY26 (includes churn indemnity)", anchor: "Q1 FY27 deck p.26 (mn); AR FY26 p.83 per B01 data_notes. Shown for the record; O1 operating basis governs"}
+    roe_ronw_pct: {value: "FY25 3.0%; FY26 7.4%; TTM Q1 FY27 5.9%", anchor: "Q1 FY27 deck p.26 (RONW)"}
+    revenue_cagr_3yr_pct: {value: 42.2, anchor: "fttcp-draft R5: Rs 255.37 Cr FY23 (UDRHP-I p.55) to Rs 734.60 Cr FY26 (AR FY26 Note 22 p.232). Arithmetic check: (734.60/255.37)^(1/3)-1. Net-revenue CAGR 52.5% (same source)"}
+    pat_cagr_3yr_pct: {value: "N/M (loss to profit swing; PAT negative FY21-FY24)", anchor: "B01 data_notes"}
+    cfo_pat_latest: {value: 2.86, anchor: "arithmetic: 149.91 / 52.39 (draft 2C agrees). PAT includes exceptional gain"}
+    cfo_pat_cumulative: {value: "N/M (cumulative CFO FY21-FY26 Rs +189.14 Cr against cumulative PAT Rs -202.71 Cr)", anchor: "B01 flags (FLAG-GATE0)"}
+    cfo_to_adjusted_ebitda_fy26_pct: {value: 140, anchor: "dossier 6.2 reasons; B05 (approx 140%: Rs 150 Cr / Rs 107 Cr). Management stated sustainable range 105-110% (B05 guidance, Q3 FY26 call)"}
+    fcf_pat_fy26: {value: 2.11, anchor: "arithmetic: 110.54 / 52.39"}
+    p_fcf_x: {value: 42.2, anchor: "arithmetic: diluted mcap 4,669.2 / FCF FY26 110.54. On basic mcap 4,503.3: 40.7x"}
+    depreciation_amortisation_fy26_cr: {value: 74.97, anchor: "Results Q4 FY26 p.14: 749.71 mn / 10"}
+    depreciation_amortisation_q1fy27_cr: {value: 20.04, anchor: "Results Q1 FY27 p.9: 200.42 mn / 10"}
+    finance_cost_fy26_cr: {value: 5.46, anchor: "Results Q4 FY26 p.14: 54.64 mn / 10"}
+    dps_rs: {value: "nil (no dividend; reinvestment / M&A-funding phase)", anchor: "B04.valuation_methods not_applicable (dividend discount)"}
+    goodwill_cr: {value: 309.58, anchor: "Results Q4 FY26 p.15: 3,095.76 mn / 10 (24% of consolidated assets per B02)"}
+    exceptional_items: {value: "FY26 +24.96 Cr (churn indemnity, Kognitiv); Q1 FY27 -33.39 Cr (EUR 3.04m cyber-enabled fraud, Czech step-down subsidiary; Rs 4.67 Cr frozen)", anchor: "Results Q4 FY26 p.14 (249.60 mn) and p.18 note 9; Results Q1 FY27 p.9 and p.11 (333.86 mn; 46.69 mn frozen)"}
+    treasury_income_note: {value: "Q1 FY27 finance income, asset disposal, fair value and FX gains 56.8 mn; TTM 14.9 Cr", anchor: "deck p.28 (56.8 mn); dossier 6.1 Correction 36 (TTM Rs 14.9 Cr ties to p.28)"}
+  from_earlier_analysis:
+    guided_revenue_growth: {value: "FY27 revenue Rs 1,000-1,050 Cr (Q4 FY26 call); later 'will definitely beat Rs 1,065 Cr' and Rs 172 Cr EBITDA (Q1 FY27 call). Organic about 17% (23% total incl about 6% FX; Q1 FY27 call p.18). Q1 FY27 revenue Rs 256 Cr (+43% YoY, organic +17%), ARR Rs 1,026.6 Cr", anchor: "B05.guidance"}
+    guided_margin_band: {value: "FY27 adj. EBITDA at least Rs 172 Cr (about 16.2% on Rs 1,065 Cr); steady state 25-30%+ with no date given (70% gross margin); Q1 FY27 adj. EBITDA 17% (organic about 23%)", anchor: "B05.guidance (Q4 FY26 and Q1 FY27 calls)"}
+    guided_esop: {value: "Rs 12-15 Cr, 1-2% of top line, FY27", anchor: "B05.guidance (Q1 FY27 call)"}
+    management_delivery_track_record: {value: "Good (grade B). Operator ruled B on operating delivery", anchor: "B05.credibility_grade; deliberation A O9; mapping A=Excellent, B=Good"}
+    credibility_basis: {value: "5 of 9 promises delivered, 3 partial, 1 missed; only 3 quarters of listed record", anchor: "B05.promise_delivery, credibility_basis"}
+    growth_triggers_top3:
+      - {priority: 1, value: "Organic NRR holds 114-116% ex-large-account", anchor: "B05.triggers"}
+      - {priority: 2, value: "SessionM margin ramp to 35-40% contribution margin", anchor: "B05.triggers"}
+      - {priority: 3, value: "Kognitiv full migration to Capillary platform by Sept-2027", anchor: "B05.triggers"}
+    em_score_and_classification: {value: "24 / 92, MODEST; combined with Gate 0 AVERAGE. Verifier C recompute 21.9 before rescoring (see conflicts)", anchor: "B07.em_score, em_classification, combined_assessment; B13.verifier_corrections_carried"}
+    gate0: {value: "Core 51/100 AVERAGE; moat 17, grand total 68, moat class STRONG (stage). Verifier C: 66/160 MODERATE (see conflicts)", anchor: "B01.core_score, moat_score, grand_total, classification; B13.verifier_corrections_carried"}
+    primary_catalyst_and_proximity: {value: "Kognitiv first customer live on Capillary platform (stated 01-Sep-2026; first migration result due on Q2 FY27 call). Proof gate reads on Q2 FY27 results (about Nov-2026)", anchor: "B07.catalysts_12m (first row); dossier Section 5 row 5; deliberation B proof gate"}
+    evidence_quality_mix: {value: "mixed (documented 18, claim 14, inference 2)", anchor: "B07.evidence_mix"}
+    cash_determination: {value: "GROWTH-INDUCED (operator accepted R10, prepayment timing). Phase 1 INDETERMINATE and its PROCEED WITH CAVEATS cap are superseded", anchor: "deliberation A O3 and D; dossier 6.2"}
+    cash_evidence: {value: "Contract liabilities (deferred revenue plus customer advances) Rs 125.67 Cr FY24, 74.65 Cr FY25, 98.55 Cr FY26 (AR FY26 Note 22.3 p.233). FY26 build Rs 23.9 Cr of Rs 149.91 Cr CFO. Receivables consolidated trend improving (trade receivables +12.2% vs revenue +22.8%; credit-impaired receivables -65.3%). Phase 1 trend read: CFO Rs -46.2 Cr to +149.9 Cr but WC days 24.0 FY23 to 52.8 FY26, FY26 helped by payable days 66.6 to 37.0", anchor: "fttcp-draft R10 (AR p.233); B02.receivables_trend (Note 8 p.222-223); B01.block_b_trend, FLAG-CASH"}
+    pillar2_cash_multiplier: {value: 1.15, anchor: "deliberation A O4 (operator ruling). Reasons as ferried: upfront billing, CROIC 23.2% TTM (deck p.26), CFO/adjusted EBITDA 140% in FY26"}
+    rating_agency_wc_commentary: {value: "UNRESOLVED: no rating exists", anchor: "B00 input_gaps; AR FY26 states credit ratings 'Not obtained'"}
+    strategic_asset_or_monopoly: {value: "NO for the strategic premium: +0x, no scarcity. Forrester Leader with Kobie and Epsilon is a competitive position, not a barrier. Moats present (B04): switching costs (high), intangible certifications (medium-high), AI-led delivery cost advantage (medium), M&A process power (medium), usage-pricing counter-positioning (medium-low, unproven). Operator cites 'only listed enterprise loyalty SaaS business in India' as a reason for 30x, not as a scarcity premium", anchor: "deliberation B pillar card (strategic premium +0x), A O5; B04.moats_present; fttcp-draft R20; B07 H1 fails I2 copyability test (FLAG-EMOAT-COPYABLE-MOAT)"}
+    ua_qualifiers_check:
+      listed_12m: {value: false, anchor: "manifest.listed_date 2025-11-21; deliberation B: listed under 12 months to 21-Nov-2026"}
+      gate0_or_em: {value: false, anchor: "deliberation B: Gate 0 core 51 and EM 24 miss; B01.core_score, B07.em_score"}
+      fii_dii_lt3: {value: false, anchor: "deliberation B and B08: Kotak MF crossed 5% on 14-Aug-2026 (Reg 29(1) 20260817-D8805431). Full FII/DII split NOT FOUND (B00 input_gaps)"}
+      all_met: {value: false, anchor: "deliberation Approved Pillars: Undiscovered Alpha not applied"}
+    som_implied_revenue_cagr: {value: "22.8% (3yr), 21.1% (5yr); SOM Rs 1,361 Cr 3yr, Rs 1,913 Cr 5yr; SAM Rs 5,835 Cr; current SAM share 12.6%; runway STRONG; management TAM claim read inflated (18.2x)", anchor: "B09.som_implied_revenue_cagr, som_3yr_cr, sam_cr, runway_class, mgmt_claim_read"}
+    promoter: {value: "B08 CAUTION (5 clean, 5 caution, 0 red); pledge 0% in Dec-2025, Mar-2026, Jun-2026; promoter and group 51.45% at Jun-2026; CTIPL 44.78% after 10-Aug-2026 block", anchor: "B08.verdict, pledge_pct_latest; BSE SHP summary Jun-2026 (4,08,86,138 shares, 51.45%); dossier V6"}
+    peer_medians: {value: "UNRESOLVED / PENDING LIVE PEER TABLE. Old B01 peer EBITDA margin median 19.22% (FY26) was built on NEWGEN, INTELLECT, UNIECOM; Newgen and Intellect are now EXCLUDED by O10", anchor: "deliberation A O10; dossier 6.3; B01.data_notes (M2)"}
+  from_phase2_deliberation:
+    entity_count: {value: 1, anchor: "dossier Section 1 (ONE listed entity; two valuation lines inside it); deliberation Approved Pillars"}
+    consolidated_earnings: {value: "Consolidated earnings valued at 30x; separate line B option value ZERO; Option Resolution Calendar kept for tracking only (tracker rows 4, 5)", anchor: "deliberation A O8; dossier 6.7(1)"}
+    seasonal: {value: false, anchor: "UDRHP-I p.465 'our business is not seasonal'. Neither the deliberation nor B05 states seasonality. The Q1 FY27 deck revenue-stream slide labels installation revenue (4.8% of Q1 FY27) 'Seasonal fluctuation' (Investor_Presentation_1.txt). See analyst_note"}
+    pe_basis: {value: "forward", anchor: "deliberation A O6; Approved Pillars EARNINGS BASIS"}
+    approved_exit_pe: {value: "30x on BOTH tracks (operator override recorded at the P/E gate, 10-Oct-2026)", anchor: "deliberation A O5, Approved Pillars"}
+    pillar_destination_of_record: {value: "Track 2 additive 16.9x (range 15.5x to 18.0x); Track 1 RRM 13.1x (14.9 x 0.88, r 14.5%). Carry beside 30x so stage 11 prints both (Amendment 20.9)", anchor: "deliberation B pillar card; Approved Pillars"}
+    exit_timing: {value: "Exit at end-FY29 on FY30 operating EPS (one-year-forward); 3-year hold from Rs 566.65", anchor: "deliberation A O6; dossier 6.4, 6.6"}
+    step_1c: {value: "A20.9 governs: value on 30x and print pillar 16.9x, adjusted peer base and gap. Relative route opens at adjusted peer base above 24.1x (16.9 / 0.70). Section 1B supports 30x only if live adjusted peer base is about 30x", anchor: "deliberation B Step 1C; Approved Pillars Step 1C"}
+    fttcp_scores: {value: "Revenue FIRING/FIRING +2; Margin FIRING/FIRING +2; Cash IMPROVING/STARTING +1; ROCE STRUCTURALLY LOW (backward) / RECOVERING (forward) +1; composite 6/8; band BUY-candidate SMALL-MEDIUM; Kernex cap no; TRIM no", anchor: "deliberation B composite table, D"}
+    roce_forward_probability: {value: "about 0.65 (operating ROCE crosses 13.5% minimum on TTM basis by Q2 FY28 and proof-gate ROCE half fires on Q2 FY27 above 10%)", anchor: "deliberation B Forward RECOVERING"}
+    proof_gate: {value: "NOT FIRED. ROCE half: Q2 FY27 annualised operating ROCE above 10% (Q4 FY26 9.1%, Q1 FY27 13.6%; period = quarter, O2). Organic half: H1 FY27 constant-currency organic growth at least 15%. Both print with Q2 FY27 results (about Nov-2026). Posture RESEARCH / WATCH", anchor: "deliberation A O2, B; B09b.transition.proof_gate"}
+    pillar_card:
+      pillar1_roce_pct: {value: 10.9, anchor: "deliberation B pillar card: 0.6 x 6.8% (TTM) + 0.4 x 17.0% (FY28E [INFERENCE]: adj. EBITDA 220.5 - ESOP 15 - D&A 90 = 115.5 Cr over invested capital about 680 Cr)"}
+      route: {value: "A, operational; blend basis operational-consistent", anchor: "deliberation B pillar card"}
+      base_pe_x: {value: 12.9, anchor: "deliberation B: 0.5 x 10.9 + 7.5 (chunk 01)"}
+      pillar2_x: {value: 1.15, anchor: "deliberation A O4"}
+      quality_adjusted_base_c_x: {value: 14.9, anchor: "deliberation B pillar card"}
+      pillar3_x: {value: 2, anchor: "deliberation B pillar card (3a, grade B per O9). Amendment 16 crossover on operating ROCE FY27E about 11.7%, FY28E about 17.0%, eligible from FY28 [INFERENCE]"}
+      strategic_premium_x: {value: 0, anchor: "deliberation B"}
+      undiscovered_alpha: {value: "not applied", anchor: "deliberation B"}
+      track2_additive_x: {value: 16.9, anchor: "deliberation B (range 15.5x to 18.0x)"}
+      track1_rrm_x: {value: 13.1, anchor: "deliberation B (14.9 x 0.88, r 14.5%)"}
+      sensitivity: {value: "Midpoint blend 17.5x; run-rate 13.6% as current: 19.2x", anchor: "deliberation B pillar card"}
+      sector_cap_x: {value: 45, anchor: "deliberation B; manifest"}
+      governing_operator_x: {value: 30, anchor: "deliberation B: 78% above Track 2, 129% above Track 1"}
+    operator_approved_valuation_pillars_block:
+      Entity: "ONE (Capillary Technologies India Ltd); consolidated earnings, line B option value zero"
+      ROCE_basis: "Operating ROCE = (adj. EBITDA - ESOP - D&A) / invested capital ex cash (standing operator rule, 10-Oct-2026)"
+      Pillar_1: "ROCE forward verdict RECOVERING; Pillar 1 ROCE 10.9% (60/40 of TTM 6.8% and FY28E 17.0%); Route A operational; base PE 12.9x"
+      Pillar_2: "1.15x (operator ruling; growth-induced, not structural)"
+      Pillar_3: "+2x (3a), eligible from FY28 (Amendment 16 on operating ROCE)"
+      Strategic_premium: "+0x"
+      Undiscovered_Alpha: "not applied"
+      Sector_cap: "Platform / SaaS / IT services, 45x"
+      Pillar_destination_record: "Track 2 additive 16.9x (range 15.5x to 18.0x); Track 1 RRM 13.1x"
+      APPROVED_DESTINATION_EXIT_PE: "30x, both tracks (operator override of the pillar destination, 10-Oct-2026); reasons: 'the peer cross-check, and Capillary is the only listed enterprise loyalty SaaS business in India'"
+      EARNINGS_BASIS: "FORWARD: one-year-forward operating EPS; exit at end-FY29 on FY30 EPS. Operator reason: ruled with the 30x multiple ('applied to one-year-forward operating EPS')"
+      EPS_definition: "Operating EPS: excludes treasury income and all exceptional items; tax 25%; shelter in equity bridge; warrant charge inside revenue; acquired amortisation inside D&A; no capitalised development adjustment; 8.24 crore diluted shares"
+      Equity_bridge: "Net cash about Rs 57 per share [INFERENCE, deck May-2026 p.59]. Note: Q1 FY27 capital employed less invested capital implies cash and investments of about Rs 469 Cr (deck p.26), net of borrowings about Rs 52 per share; Stage 11 to anchor the bridge date"
+      Scenarios: "Dossier 6.5, approved; weights Good 25/50/25 (Excellent 20/50/30 as sensitivity)"
+      Management_grade: "B"
+      Step_1C: "Corrected peer set (O10); A20.9 governs: value on 30x and print pillar 16.9x, adjusted peer base and gap"
+      Tier: "A (25% hurdle)"
+      source_anchor: "deliberation, section 'OPERATOR-APPROVED VALUATION PILLARS (authoritative for Phase 3)'"
+    eps_definition_and_equity_bridge:
+      eps_definition: "Operating EPS excludes treasury income and all exceptional items (FY26 Kognitiv indemnity gain Rs 24.96 Cr; Q1 FY27 fraud loss Rs 33.39 Cr). Tax normalised at 25%; tax-loss shelter valued once, in the equity bridge. Optum warrant charge left inside revenue, not added back. Acquired-intangible amortisation left inside D&A, not added back. Capitalised development: no adjustment. Share count fully diluted 8.24 crore"
+      equity_bridge: "Net cash about Rs 57 per share added in the equity bridge [INFERENCE from deck May-2026 p.59, cash and investments Rs 506.99 Cr less borrowings]"
+      anchor: "dossier 6.4; deliberation Approved Pillars, A O7"
+    scenarios_approved:
+      common_inputs: "ESOP Rs 14/15/16/17 Cr; D&A Rs 85/90/95/100 Cr (FY27-FY30); finance cost Rs 5 Cr; tax 25%. All figures [INFERENCE]"
+      weights_good_25_50_25: "Bear 25 / Base 50 / Bull 25 (Rule E on trailing four quarters of delivery; grade B = Good). Excellent 20/50/30 as sensitivity"
+      bear: {revenue_cr: [1020, 1122, 1234, 1358], adj_ebitda_margin_pct: [15, 15, 15, 15], pat_cr: [37, 44, 52, 61], eps_rs: [4.5, 5.3, 6.3, 7.4]}
+      base: {revenue_cr: [1065, 1225, 1410, 1620], adj_ebitda_margin_pct: [16.2, 18.0, 19.9, 22.0], pat_cr: [51, 83, 123, 176], eps_rs: [6.2, 10.1, 15.0, 21.3]}
+      bull: {revenue_cr: [1100, 1320, 1584, 1901], adj_ebitda_margin_pct: [17, 20, 23, 25], pat_cr: [62, 116, 186, 265], eps_rs: [7.6, 14.0, 22.6, 32.2]}
+      columns: "FY27, FY28, FY29, FY30"
+      run_rate_cross_check: "Q1 FY27 adj. EBITDA Rs 44.0 Cr annualises to Rs 176 Cr; matches base FY27 (Rs 173 Cr)"
+      operator_stance: "inclined to the bull case; enters through weights and size, not the base case (Rule A)"
+      anchor: "dossier 6.5; deliberation A O11"
+    price_decomposition_and_hurdle_preview:
+      status: "Claude Code arithmetic in deliberation Section C. Stage 11 confirms. Not independently recomputed here."
+      runrate_earnings_base: "Q1 FY27 annualised: adj. EBITDA 44.02 - ESOP 3.69 - D&A 20.04 - finance cost 1.17 = PBT Rs 19.12 Cr a quarter (deck p.28); annualised operating PAT at 25% tax Rs 57.4 Cr; operating EPS Rs 6.96 on 8.24 Cr shares; run-rate operating P/E at CMP 81.4x"
+      value_per_share_end_fy29: {bear_rs: 279, base_rs: 696, bull_rs: 1023, formula: "30 x FY30 EPS + net cash Rs 57"}
+      cagr_3yr_from_566_65: {bear_pct: -21.0, base_pct: 7.1, bull_pct: 21.8}
+      entry_price_for_25pct_tier_a_dossier_6_6: {bear_rs: 143, base_rs: 356, bull_rs: 524}
+      hurdle_ratio_threshold_tier_a: 1.953
+      hurdle_ratio: {bear: 0.39, base: 1.13, bull: 1.71, prob_weighted_good: 1.09, formula: "(FY30 EPS / run-rate EPS) x (30 / 81.4)", band: "STOP band; caps nothing (OR-2)"}
+      expected_return_good_25_50_25: {expected_cagr_weighted_cagrs_pct: 3.7, cagr_of_weighted_value_pct: 5.9, weighted_value_rs: 674}
+      expected_return_excellent_20_50_30: {expected_cagr_weighted_cagrs_pct: 5.9, cagr_of_weighted_value_pct: 7.8, weighted_value_rs: 711}
+      a24_decomposition_at_cmp:
+        t1_confirmed: {rs: 265.8, pct_of_cmp: 46.9, basis: "run-rate EPS 6.96 x 30 = 208.8 plus net cash 57 (earnings 36.9%, cash 10.1%)"}
+        t2_high_probability: {rs: 67.0, pct_of_cmp: 11.8, basis: "ledger p >= 0.50 net of downside: Rs 18.4 Cr PAT x 30"}
+        t3_speculative: {rs: 103.0, pct_of_cmp: 18.2, basis: "ledger p < 0.50: Rs 28.3 Cr PAT x 30"}
+        residual: {rs: 130.8, pct_of_cmp: 23.1}
+        t1_plus_t2_pct: 58.7
+        a25_starter_condition: "T1 + T2 at 75% of CMP or more; fails at Rs 566.65; passes at about Rs 444. Q1 FY27 YoY growth 43% so A25 fast-growth sizing applies"
+        residual_at_pillar_destination_16_9x: "about 52%"
+        ledger_gap_for_stage_11: "Base case grows PAT Rs 57 Cr (run rate) to Rs 176 Cr (FY30); probability-weighted ledger supports about Rs 47 Cr of that growth. Under A23, growth not on the ledger cannot be credited in the price; stage 11 adds ledger rows or shows the gap as residual"
+        probabilities_not_operator_ruled: true
+      anchor: "deliberation Section C; dossier 6.6"
+    or16_sensitivity_o5:
+      basis: "ruled base case FY30 operating EPS Rs 21.3 plus net cash Rs 57; entry Rs 566.65"
+      rows:
+        - {pe_x: 30, source: "Operator ruling (O5)", base_rs: 696, base_cagr_pct: 7.1, bull_rs: 1023, bull_cagr_pct: 21.8, bear_rs: 279, bear_cagr_pct: -21.0}
+        - {pe_x: 19.5, source: "Claude web pillar re-derivation", base_rs: 472, base_cagr_pct: -5.9, bull_rs: 685, bull_cagr_pct: 6.5, bear_rs: 201, bear_cagr_pct: null}
+        - {pe_x: 16.9, source: "Claude Code pillar re-derivation, Track 2", base_rs: 417, base_cagr_pct: -9.7, bull_rs: 601, bull_cagr_pct: null, bear_rs: 182, bear_cagr_pct: null}
+        - {pe_x: 13.1, source: "Claude Code pillar re-derivation, Track 1 RRM", base_rs: 336, base_cagr_pct: -16.0, bull_rs: 479, bull_cagr_pct: null, bear_rs: 154, bear_cagr_pct: null}
+        - {pe_x: 12.1, source: "Draft 09-Oct, Track 2", base_rs: 315, base_cagr_pct: -17.8, bull_rs: 447, bull_cagr_pct: null, bear_rs: 147, bear_cagr_pct: null}
+      cost_of_override_at_base: "Rs 279 per share above Claude Code Track 2 pillar; Rs 224 above Claude web pillar"
+      anchor: "deliberation Section A, OR-16 table (null = CAGR not printed in the record)"
+    operator_overrides_o1_to_o11:
+      anchor: "deliberation Section A (table O1-O11)"
+      rows:
+        - {id: O1, item: "ROCE basis", draft: "Company clean ROCE on capital employed incl. cash; TTM 5.2% (R12, R17)", ruling: "Operating ROCE = (adj. EBITDA - ESOP - D&A) / invested capital ex cash. Standing rule, all names", reason: "ROCE is measured on operations only. Standing rule, not specific to Capillary", sensitivity: "Draft R13 'about 9% FY27' and R17 'about 6.2%' superseded (Correction 36: TTM finance income is Rs 14.9 Cr, not about 18.3)"}
+        - {id: O2, item: "Proof gate period", draft: "Not defined", ruling: "Period = a quarter; operating ROCE annualised on period-end invested capital. Q4 FY26 9.1%, Q1 FY27 13.6%; Q2 FY27 above 10% fires the ROCE half", reason: "Ruled, no further reason stated", sensitivity: "none stated"}
+        - {id: O3, item: "Cash determination", draft: "R10 GROWTH-INDUCED pending acceptance", ruling: "R10 ACCEPTED. Phase 1 PROCEED WITH CAVEATS cap lifted", reason: "Contract liabilities, AR FY26 p.233", sensitivity: "none stated"}
+        - {id: O4, item: "Pillar 2 multiplier", draft: "1.00x volatile band (R18)", ruling: "1.15x", reason: "upfront billing, CROIC 23.2% TTM (deck p.26), CFO/adjusted EBITDA 140% in FY26", sensitivity: "none stated"}
+        - {id: O5, item: "Destination exit P/E", draft: "Pillar preview 12.1x additive / 8.9x RRM", ruling: "30x on one-year-forward operating EPS", reason: "the peer cross-check, and Capillary is the only listed enterprise loyalty SaaS business in India", sensitivity: "see or16_sensitivity_o5"}
+        - {id: O6, item: "Earnings basis", draft: "Operator to decide", ruling: "One-year-forward operating EPS; exit at end-FY29 on FY30 EPS", reason: "Ruled", sensitivity: "none stated"}
+        - {id: O7, item: "EPS adjustments", draft: "Warrant charge not added back; tax 25% with shelter in bridge; acquired amortisation not added back; capitalised development no adjustment", ruling: "Same as draft on all four; 8.24 crore fully diluted; net cash about Rs 57 per share in bridge", reason: "Ruled", sensitivity: "none stated"}
+        - {id: O8, item: "Line B", draft: "Amendment 18 option slice, own multiple, calendar draft (R21)", ruling: "Consolidated earnings at 30x; separate line B option value zero; calendar kept for tracking only", reason: "Single credit", sensitivity: "none stated"}
+        - {id: O9, item: "Management grade", draft: "B, Verifier B B-/C+ flagged (R19)", ruling: "B (operating delivery). Pillar 3a stands at +2x. Bull case enters Hurdle Ratio at face value", reason: "Ruled", sensitivity: "Draft R19 stated at grade C only one 3a item qualifies and 3a pays +0x"}
+        - {id: O10, item: "Peer set for Step 1C", draft: "Not built (PENDING LIVE PEER TABLE)", ruling: "Eagle Eye, Affle, RateGain, Braze, Klaviyo, Tanla or Route Mobile; exclude Newgen and Intellect; Zaggle reference only", reason: "They sell to banks and governments, on a licence and project model, so not comparable", sensitivity: "none stated"}
+        - {id: O11, item: "Scenarios", draft: "Illustrative expected columns only", ruling: "Bear / base / bull FY27-FY30 approved (dossier 6.5)", reason: "'inclined to the bull case'; lean enters through weights and size, not the base case", sensitivity: "none stated"}
+conflicts:
+  - {field: "cmp_rs / market_cap", value_a: "484.0 / Rs 3,852 Cr", anchor_a: "manifest", value_b: "566.65 (NSE close 09-Oct-2026)", anchor_b: "deliberation header; dossier Section 2", used: "566.65 (deliberation authority; manifest is stale)"}
+  - {field: "cash_determination", value_a: "INDETERMINATE (caps verdict at PROCEED WITH CAVEATS)", anchor_a: "B13.cash_determination; B01 FLAG-CASH", value_b: "GROWTH-INDUCED, cap lifted", anchor_b: "deliberation A O3, D", used: "GROWTH-INDUCED (operator ruling)"}
+  - {field: "roce_basis_and_value", value_a: "company clean ROCE 3.0% FY26, 5.2% TTM; AR published 8.82% FY26 (incl. churn indemnity); draft operating 'about 6.2%'", anchor_a: "deck p.26; AR FY26 p.83; fttcp-draft R12, R17", value_b: "operating ROCE 3.9% FY26, 6.8% TTM, 13.6% Q1 annualised", anchor_b: "dossier 6.1; deliberation A O1", used: "operating basis (standing operator rule O1)"}
+  - {field: "roce_forward_verdict_and_composite", value_a: "STAGNANT, score 0, composite 5/8", anchor_a: "fttcp-draft Step 3 scorecard", value_b: "RECOVERING, score +1, composite 6/8", anchor_b: "deliberation B", used: "RECOVERING, 6/8 (deliberation; Claude web 'RECOVERING-to-FIRING' rounds down to RECOVERING per FTTCP)"}
+  - {field: "exit_pe", value_a: "pillar destination Track 2 16.9x, Track 1 13.1x (also drafts 12.1x / 8.9x and Claude web 19.5x)", anchor_a: "deliberation B and A OR-16 table", value_b: "30x both tracks (operator override)", anchor_b: "deliberation A O5, Approved Pillars", used: "30x as approved base; pillar 16.9x / 13.1x carried beside it (A20.9); CLAUDE.md round-number bar flagged in deliberation B"}
+  - {field: "pillar2_multiplier", value_a: "1.00x", anchor_a: "fttcp-draft R18", value_b: "1.15x", anchor_b: "deliberation A O4", used: "1.15x"}
+  - {field: "line_b_treatment", value_a: "Amendment 18 option slice, SOTP primary (signed Part 1)", anchor_a: "dossier Section 2; fttcp-draft R21", value_b: "consolidated earnings at 30x; line B option value zero", anchor_b: "deliberation A O8; dossier 6.7(1)", used: "O8"}
+  - {field: "credibility_grade", value_a: "B", anchor_a: "B05.credibility_grade", value_b: "B- to C+ (lower)", anchor_b: "B12b.credibility_grade_concur", used: "B (B05; operator ruling O9 'B (operating delivery)')"}
+  - {field: "gate0_and_em_scores", value_a: "Gate 0 grand total 68 (moat 17, STRONG); EM 24.0 MODEST", anchor_a: "B01; B07", value_b: "Gate 0 66/160 MODERATE (moat 15); EM 21.9 before A4/F1 rescoring, MODEST", anchor_b: "B13.verifier_corrections_carried (Verifier C, B12c)", used: "both shown. UA qualifier test is unaffected (core 51 and EM 24 or 21.9 both miss)"}
+  - {field: "net_cash_per_share_bridge", value_a: "about Rs 57 (deck May-2026 p.59: cash and investments Rs 506.99 Cr less borrowings)", anchor_a: "deliberation Approved Pillars; dossier 6.4", value_b: "about Rs 52 (Q1 FY27 capital employed less invested capital implies cash and investments about Rs 469 Cr, net of borrowings); balance sheet 31-Mar-26 gives Rs 53.3 (438.95 Cr / 8.24 Cr)", anchor_b: "deliberation Approved Pillars Equity bridge row; arithmetic from Results Q4 FY26 p.15", used: "Rs 57 as approved; stage 11 to anchor the bridge date"}
+  - {field: "fy26_other_income (audited figure, rule 3a)", value_a: "Rs 39 Cr / screener 38.69 Cr", anchor_a: "B00.load_bearing_facts LBF2(b); B01 data_notes (screener bundle)", value_b: "Rs 13.73 Cr other income (137.34 mn); the Rs 24.96 Cr churn indemnity is a separate exceptional line", anchor_b: "Results Q4 FY26 p.14 (137.34 mn / 10; exceptional 249.60 mn); B03 analyst_note correction 1", used: "13.73 Cr other income plus 24.96 Cr exceptional, as printed. B00 lead and the screener bundle misread the split"}
+  - {field: "c2_probabilities", value_a: "Claude Code proposals (0.55, 0.55, 0.40, 0.40, 0.15, 0.90, 0.80, 0.25)", anchor_a: "fttcp-draft C.2", value_b: "operator has not ruled them", anchor_b: "deliberation Section C ('Stage 11 must rule them or replace them')", used: "carried as given and flagged NOT OPERATOR-RULED"}
+unresolved:
+  - {field: "rating_wc_quote / rating agency, rating, outlook, date", why: "No credit rating obtained", where_it_might_be: "None. AR FY26 states ratings 'Not obtained'. Pillar 2 read runs on AR cash-flow and receivables evidence plus O3"}
+  - {field: "peer medians (P/E, EV/EBITDA, P/B, growth, ROCE) and adjusted peer base", why: "Corrected peer set not populated; only RateGain held", where_it_might_be: "Live peer table (Affle, Braze, Klaviyo, Tanla or Route Mobile, Eagle Eye) via Claude web / stage 11 Step 1C"}
+  - {field: "FY26 top-10 customer concentration", why: "AR Note 36(iii) incomplete", where_it_might_be: "FY27 AR or a quarterly filing; Q1 FY27 deck p.24 shows top-5 revenue Rs 727 mn Q1 FY26 to Rs 867 mn Q1 FY27 but the percentage is not captured here"}
+  - {field: "net cash at Q1 FY27 balance sheet date", why: "Quarterly results carry no balance sheet; bridge date not anchored", where_it_might_be: "H1 FY27 results (Nov-2026); deck May-2026 p.59 for the Rs 506.99 Cr figure"}
+  - {field: "FII and DII percentages", why: "Not in BSE Reg 31 summary", where_it_might_be: "Full Reg 31 category table on BSE"}
+  - {field: "line A stand-alone EPS and ROCE", why: "Single Ind AS 108 segment; card runs on consolidated figures", where_it_might_be: "None filed"}
+  - {field: "Optum revenue, warrant schedule, cloud commitment, cash tax", why: "Cited by claude.ai from the final RHP, which is not in the corpus", where_it_might_be: "Final RHP (capillarytech.com returned HTTP 403)"}
+  - {field: "SessionM purchase price allocation and assumed deferred revenue", why: "Preliminary PPA only (Results Q1 FY27 p.10 note 7)", where_it_might_be: "H1 FY27 results notes"}
+  - {field: "promoter holding 3-year trend", why: "Only 3 quarters since listing", where_it_might_be: "Future quarterly filings"}
+  - {field: "year-3 net debt / cash", why: "Depends on M&A spend", where_it_might_be: "NOT FOUND (draft Part B B7)"}
+rating_wc_quote: ""
+ua_qualifiers: {listed_12m: false, gate0_or_em: false, fii_dii_lt3: false, all_met: false}
+credibility_grade: "B"
+downstream_candidates:
+  - {signal: "Fortune 500 / large-enterprise new-logo referrals via System Integrators and Consulting Partners (about 40% of FY26 new logos)", entity_type: "counterparty", demand_link: "SI/consulting referrals feed the new-ACV pipeline that is the SAM-capture engine", likely_source: "Capillary Reg 30 filings / named partner-program announcements", cadence: "quarterly", shared: false}
+  - {signal: "US enterprise MarTech / customer-engagement software budget growth", entity_type: "macro", demand_link: "sets the ceiling on enterprise loyalty/CDP software spend; about 56% of FY26 revenue is US-sourced", likely_source: "Gartner Marketing Technology / CMO Spend Survey", cadence: "quarterly", shared: false}
+  - {signal: "USD/INR and other cross-currency rates", entity_type: "macro", demand_link: "FX contributed about 6% of Q1 FY27 reported revenue growth; a stronger rupee reverses the tailwind", likely_source: "RBI reference rate / company quarterly disclosure", cadence: "quarterly", shared: false}
+  - {signal: "Named large / flagship end-customer renewal and expansion decisions (Fortune 50 US retailer USD 20m / 5yr deal; the one large healthcare customer dragging NRR)", entity_type: "end-customer", demand_link: "top-10 concentration about 58.71% FY25 (FY26 NOT FOUND); one non-renewal moves NRR and revenue", likely_source: "Reg 30 non-renewal disclosures / the customer's own investor filings", cadence: "event-driven", shared: false}
+  - {signal: "Data-privacy regulatory activity (GDPR enforcement, US state privacy laws, India DPDP Rules)", entity_type: "regulatory", demand_link: "first-party-data mandates push brands toward owned CDP/loyalty platforms", likely_source: "EU Data Protection Board / MeitY DPDP notifications / US state AG offices", cadence: "event-driven", shared: false}
+  - {signal: "Enterprise generative-AI / agentic-AI adoption among marketing organisations", entity_type: "macro", demand_link: "drives aiRA monetisation upside and the build-vs-buy substitution risk", likely_source: "Gartner / Forrester enterprise AI adoption surveys", cadence: "annual", shared: true}
+demand_externally_verifiable: true
+ar_new_downstream_entities:
+  - {name: "Capillary Technologies DMCC", where_in_ar: "Auditor's Report Annexure I (consolidated entity list), p.186-187", entity_type: "step-down subsidiary (Dubai, UAE)"}
+  - {name: "Capillary Technologies (Shanghai) Co. Ltd", where_in_ar: "Auditor's Report Annexure I (consolidated entity list), p.186-187", entity_type: "step-down subsidiary (China)"}
+  - {name: "PT Capillary Technologies Indonesia", where_in_ar: "Auditor's Report Annexure I (consolidated entity list), p.186-187", entity_type: "step-down subsidiary (Indonesia)"}
+  - {name: "Capillary Technologies (Malaysia) Sdn. Bhd.", where_in_ar: "Auditor's Report Annexure I (consolidated entity list), p.186-187", entity_type: "step-down subsidiary (Malaysia)"}
+entity_count: 1
+seasonal: false
+exit_pe_base_approved: "30x on both tracks (operator override at the P/E gate, 10-Oct-2026). Entity ONE, consolidated earnings, line B option value zero. Pillar destination of record carried beside it: Track 2 additive 16.9x (range 15.5x to 18.0x), Track 1 RRM 13.1x. Sector cap 45x."
+pe_basis: "forward"
+expectation_ledger:
+  caveat: "FTTCP Section C.2 rows copied from fttcp-draft.md (target year FY29, increments [INFERENCE]). Probabilities are Claude Code PROPOSALS, NOT operator-ruled. Rows 3 and 4 are tagged line B in the draft; O8 sets the separate line B option value to zero while deliberation Section C keeps Rs 28.3 Cr in T3. Stage 11 rules."
+  anchor: "fttcp-draft C.2 table; deliberation Section C A24 table"
+  deliberation_section_c_use: "T2 net of downside Rs 18.4 Cr PAT (24.8 + 8.3 - 7.2 - 7.5); T3 Rs 28.3 Cr PAT (16.0 + 10.0 + 2.3)"
+  rows:
+    - {n: 1, catalyst: "Organic growth holds at 15% or more in constant currency, FY27 to FY29, incl. Fortune 50 go-live", pat_increment_cr: 45, probability: 0.55, prob_weighted_cr: 24.8, confirming_metric: "H1 FY27 cc organic growth at least 15%", confirm_by: "Q2 FY27 results (Nov-2026)", tier: T2}
+    - {n: 2, catalyst: "Organic EBITDA margin moves from about 23% toward 25% on cost leverage", pat_increment_cr: 15, probability: 0.55, prob_weighted_cr: 8.3, confirming_metric: "Organic EBITDA margin up in cc, two quarters", confirm_by: "Q3 FY27 results (Feb-2027)", tier: T2}
+    - {n: 3, catalyst: "SessionM reaches positive contribution margin of 15% or more by Q4 FY27 (line B)", pat_increment_cr: 40, probability: 0.40, prob_weighted_cr: 16.0, confirming_metric: "SessionM ARR at least USD 27m and CM at least 15%", confirm_by: "Q4 FY27 results (May-2027)", tier: T3}
+    - {n: 4, catalyst: "Kognitiv migration completes with retained revenue (line B)", pat_increment_cr: 25, probability: 0.40, prob_weighted_cr: 10.0, confirming_metric: "Kognitiv full migration, retained revenue at least 80% of FY26", confirm_by: "Sep-2027", tier: T3}
+    - {n: 5, catalyst: "aiRA reaches 5% of revenue", pat_increment_cr: 15, probability: 0.15, prob_weighted_cr: 2.3, confirming_metric: "15 or more paying customers", confirm_by: "Q4 FY27", tier: T3}
+    - {n: D1, catalyst: "Optum warrant charge steps up to about Rs 31 Cr a year (contra revenue)", pat_increment_cr: -8, probability: 0.90, prob_weighted_cr: -7.2, confirming_metric: "Contra revenue line in Note 22", confirm_by: "FY28 AR", tier: netted}
+    - {n: D2, catalyst: "Tax normalises toward 25% as losses are used (losses expire 2031/2032)", pat_increment_cr: -25, probability: 0.80, prob_weighted_cr: -20.0, confirming_metric: "Effective tax rate above 20%", confirm_by: "FY28 results", tier: "netted in draft; dropped in deliberation Section C (run-rate base already carries 25% tax)"}
+    - {n: D3, catalyst: "Optum repriced by more than 20% or not renewed by Mar-2029", pat_increment_cr: -30, probability: 0.25, prob_weighted_cr: -7.5, confirming_metric: "Optum account revenue (tracker row 2)", confirm_by: "Mar-2029", tier: netted}
+peer_table: "PENDING LIVE PEER TABLE. Partial data held: RateGain trailing P/E 41.8x, EV/EBITDA 21.6x, ROCE 12.6% (Value Research, 09-Oct-2026, per Claude web; dossier 6.3). Eagle Eye about 13x EBITDA and 2.9x ARR (dossier V4, secondary, older; NRR 111%). Affle, Braze, Klaviyo, Tanla or Route Mobile: pending. Newgen and Intellect excluded (O10). Zaggle reference only. One trailing P/E is not an adjusted peer base (Amendment 20 needs 4 to 6 peers on clean or forward earnings)."
+analyst_note: "Assembly caveats only. (1) Phase 3 carries the deliberation over earlier blocks; each override sits in conflicts[]. (2) seasonal=false comes from UDRHP-I p.465 because neither the deliberation nor B05 states it; installation revenue (4.8% of Q1 FY27) is labelled seasonal in the Q1 FY27 deck. (3) Market cap and EV are shown on basic and diluted share counts and on two net cash bases; stage 11 picks the bridge date. (4) Section C figures (hurdle, A24) are the deliberation's arithmetic, copied not recomputed. (5) Net cash 438.95 Cr is the 31-Mar-26 balance sheet, before the USD 20m SessionM payment."

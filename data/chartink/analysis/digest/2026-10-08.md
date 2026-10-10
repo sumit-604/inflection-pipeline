@@ -178,17 +178,16 @@ These are weekly or slower series. The date shown is their last reading.
 
 ## Market read
 
-Thursday broke the base the market had been building for a week. It was a
-heavy selling day. 314 stocks fell four and a half percent or more, against
-only 19 that rose that much. Almost nine stocks in ten closed lower. Not one
-stock index rose. The Nifty fell about one and a half percent, and the mid
-and small indices fell more. The count of stocks above the two-hundred-day
-average fell from 965 to 836. That is below the 1 October low near 900, and
-the lowest since mid-April. The count above the fifty-day average fell from
-758 to 561, well under the washout level near 700. New yearly lows beat new
-highs by more than five to one. Turnover ran about a third above a year ago,
-so the selling came with real volume. Fear jumped by a tenth. Only about one
-stock in three still holds its long trend. The repair failed, and the market
-is now making lower lows.
+Thursday was a heavy, wide selling day that broke the base of the past week.
+314 stocks fell four and a half percent or more, and only 19 rose that much.
+Almost nine stocks in ten closed lower, and no stock index rose. The count of
+stocks above the two-hundred-day average fell to 836, below the 1 October low
+near 900 and the lowest since mid-April. The count above the fifty-day
+average fell to 561. New yearly lows beat new highs by more than five to one.
+Turnover ran about a third above a year ago, so sellers came with size. Fear
+rose by a tenth. A small set of groups held up: jewellers, a few small metal
+names, sugar, small pharma leaders and defence. Friday's data has not yet
+arrived, so the market stands, for now, at a fresh lower low with no sign
+yet of buyers returning.
 
 Full brief: briefs/2026-10-08.html

@@ -54,3 +54,4 @@ Run total (sum of ledger rows with token counts): 3,227,162 tokens.
 |---|---|---|---|---|---|---|---|---|
 | 10 | input assembly (phase 3) | claude-sonnet-5-5 | medium | n/a | n/a | 244012 | 8m10s | 1 |
 | 11 | Role 1 valuation | claude-opus-5-5 | xhigh | n/a | n/a | 489015 | 38m56s | 1 |
+| 14 | Role 2 thesis | claude-opus-5-5 | high | n/a | n/a | 369783 | 16m11s | 1 |

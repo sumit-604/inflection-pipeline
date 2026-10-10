@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete  # PHASE 1 LITE: business-narrative.md, gate-recommendation.md, verifier-summary.md (disagreement log "none" carried inside verifier-summary.md; three files per task)
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3  # FLAG-PROMOTER CONCERN would set PROCEED WITH FLAGS; FLAG-CASH INDETERMINATE caps at PROCEED WITH CAVEATS; rule 4 concurs (verifier MAJORs; overall 76, band 75-89, no downgrade); rule 2 weighed, not fired (alternative reading named for operator)
+flags_active: ["FLAG-PROMOTER (CONCERN, STRUCTURE)", "FLAG-CASH (INDETERMINATE)"]  # FLAG-GATE0 not active per B12c F2; carried as fragility note
+confidence_delta: {numerical: 97.5, redflag: 76, framework: 94.9, peer: null, overall: 76}  # peer NOT APPLICABLE (denominator 3 < 4); framework is phase-1 scope; overall set by redflag_coverage
+valuation_decision: ""  # phase 1 lite: not formed; phase 3
+entry_range: {low: null, high: null}  # phase 1 lite: not computed; phase 3
+headline: "Full order book, slow plant, Danya questions"
+falsification_metric: "Q2 FY27 consolidated revenue below Rs 55 Cr (H1 FY27 results, NSE, November 2026; H1 below Rs 103.23 Cr if only the half is filed)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "SUPREMEPWR | Supreme Power Equipment | phase 1 evidence gate | 2026-10-06"
+  summary: "Phase 1 gate: PROCEED WITH CAVEATS (FLAG-PROMOTER CONCERN, structure type, on the Danya Electric loop and guarantee; FLAG-CASH INDETERMINATE; overall confidence 76). Order book Rs 590 Cr and Kannur 220 kV plant built; Kannur output, 220 kV type test, Q1 gross margin and float funded cash unproven until H1 FY27 results and the CPRI test. Credibility C. No valuation element; decision forms in phase 3."
+  drive_link: "none (repo run)"
+  mode: append-never-overwrite-status

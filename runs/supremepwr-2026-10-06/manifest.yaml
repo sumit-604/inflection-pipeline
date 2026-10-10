@@ -1,0 +1,17 @@
+company: Supreme Power Equipment Ltd
+ticker: SUPREMEPWR
+cmp: 239.0
+market_cap_cr: 598.0
+run_date: 2026-10-06
+run_type: full
+listed_date: "2023-12"     # NSE Emerge listing Dec-2023 (Q1 FY27 press release p4); within 3 years of run_date
+concalls_available: true
+sector_cap_row: "Cables / Industrial products"   # stage 0, 2026-10-06: transformers = electrical industrial products, 25x (section-1b chunk 05 line 38); same row as runs/kecl-2026-09-06
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing."
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, INDOTECH:Profit & Loss, INDOTECH:Quarters, INDOTECH:Balance Sheet, INDOTECH:Cash Flow, INDOTECH:Customization, 531201:Profit & Loss, 531201:Quarters, 531201:Balance Sheet, 531201:Cash Flow, 531201:Customization, DANISH:Profit & Loss, DANISH:Quarters, DANISH:Balance Sheet, DANISH:Cash Flow, DANISH:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Step-1 intake 2026-10-06. Peers INDOTECH (standalone), SHILCHAR (BSE 531201, standalone), DANISH (standalone). Main-company corpus capped at 12 documents by operator ruling 2026-10-06 (inputs/operator-notes.md); NSE filings fetched by hand into results/, announcements/, presentation/, rating/ (CRISIL HTML rationale as text), shareholding/ (XBRL). Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

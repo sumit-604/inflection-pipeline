@@ -1,0 +1,87 @@
+stage: B03-ardeep
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR: BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. (Filled by hand from the NSE API: 17 filings Mar-Sep 2026; Oct-2025 to Feb-2026 order intimations not pulled under the operator cap.)"
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. (Filled by hand: NSE SHP XBRL 31-Mar-2026; the Sep-2026 half-year pattern is not yet filed as of 2026-10-06.)"
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values): screener/INDOTECH/531201/DANISH Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. ABSENT documents. Data_Sheet CSVs carry FY23-FY26 raw values and are present."
+  - "COLLECTOR: no results PDFs (screener has none). (Filled by hand: Q1 FY27 and FY26 audited results from NSE.)"
+  - "COLLECTOR: no rating PDF. (Filled by hand: CRISIL full rationale 20-Mar-2026 as text.)"
+  - "HIGH: prospectus/ empty. Company listed Dec-2023, within 3 years of run_date. Not pulled: operator 12-document cap 2026-10-06 (inputs/operator-notes.md). Backward baseline runs on FY23-FY26 AR/screener only; promoter and group map from AR and web."
+  - "research/ empty (non-anchored; no effect on evidence)."
+  - "Peer INDOTECH: no transcripts on screener; peer-concalls cover SHILCHAR (4) and DANISH (2) only."
+  - "No Q2 FY27 business update filed as of 2026-10-06 (NSE announcement list checked through 26-Sep-2026)."
+  - "Operator document cap: Q3 FY26 transcript (concalls/Concall_Feb_2026) and the shareholding XBRL are over the 12-document cap, kept because stage 5 requires three transcripts and the UA qualifier needs the SHP; flagged for operator ruling."
+  - "Results PDFs carry an OCR-quality text layer (e.g. 'R, Lakhs'); read the page before taking a number."
+  - "STAGE 3: FY25 annual report not supplied, so Phase 6D tone drift is NOT FOUND; Danya partnership deed, Danya auditor, ICICI covenants and rate type, section 185 resolution trail and customer concentration are NOT FOUND IN DOCUMENT."
+flags:
+  - {type: FLAG-CASH, reason: "FY26 CFO 2,773.36 lakh (consolidated 2,590.47) vs capex 5,746.46 (5,748.04); payables plus customer advances added 4,522.84 lakh = 78.7% of consolidated capex; CFO net of payable stretch and advance excess about 220-303 lakh (11-15% of PAT, DERIVED sensitivity); FCF -2.09 then -31.58 Cr; no undrawn facilities (Note 25(2))."}
+  - {type: FLAG-GATE0, reason: "Carried from B01: history 4 years, classification GOOD downgraded one tier; fragile on the M3 CWIP choice. Not re-scored here."}
+  - {type: FLAG-RPT-STRUCTURE, reason: "Danya: BB-/A4+ firm, 61.3% of turnover to SPEL, 5,017.91 lakh gross elimination, no unrealised-profit elimination, guarantee 1,470 lakh with FY27 authority 2,500 and 7,500, MD loan 311.30 lakh, five labels in one AR; AGM Item 9 seeks approval 'for having given' the guarantee (section 185 timing vs CARO iv)."}
+phase_verdicts: {p1: "YELLOW", p2: "YELLOW", p3: "YELLOW", p4: "YELLOW", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "Capex-Led Growth (GARP on WATCHLIST)"}
+overall_quality: 5.5
+quality_components: {governance: 5, accounting: 6, balance_sheet: 5, earnings: 6}
+kill_switch_notes:
+  - "P1: would not stop (unmodified opinions, no default or fraud); would ask for the section 185 resolution trail on the Danya guarantee."
+  - "P2: would not stop (no misstatement proven); hold Danya terms and ICICI schedule as unresolved."
+  - "P3: would not stop (profits real, gearing moderate); size for a cash cycle funded by suppliers and customers."
+  - "P4: would not stop; treat the risk section as incomplete (10 missing risks) and discount forward numbers until the Kannur ramp and 220 kV qualification show in quarterly data."
+  - "P5: would not stop; ask for the independence analysis of the audit chair (personal guarantor on ICICI loan), the Danya deed and the section 185 trail."
+triple_pass_verification:
+  verified: 14
+  discrepancies:
+    - {finding_rank: 14, triple_pass_value: "Promoter group 57.16%; 63.9% of warrants from non-promoters; no pledge", ar_value: "Note 3 lists 52.07% (Vee 31.51%, Pradeep 20.56%); warrant allottee split, 57.16% and pledge status not in the AR", note_ref: "Note 3 p.64; Note 5 p.65; SHP outside AR. Not an arithmetic discrepancy: untestable in the AR. Warrant arithmetic 1,580.57 and the 27-Feb-2027 date verified."}
+missing_risks:
+  - {risk: "Danya loop and credit (BB-/A4+, 61.3% of its turnover to SPEL, no benchmark, guarantee authority to 7,500 lakh)", evidence: "Notes 20, 21, 30.1A; Notice Items 6 and 9 (AR p.28-33); absent from MD&A risk table p.20"}
+  - {risk: "Financing risk: debt 2.8x, DSCR 2.44x on next-year maturities, no undrawn lines, ICICI 97.2% of term debt, covenants undisclosed", evidence: "Notes 6, 9, 25(2), 34(c) (p.65-66, p.75-76)"}
+  - {risk: "Supplier and customer funded working capital that can reverse (payable days 126.3, advances 6.5x)", evidence: "Notes 10, 11 (p.66-67)"}
+  - {risk: "Fixed cost step-up: depreciation run-rate about 497 lakh vs 165.26; Q1 FY27 interest +217%, depreciation +371% (Data_Sheet)", evidence: "Note 13 (p.67), Note 27 (p.70); Chairman letter p.13 admits the cost build"}
+  - {risk: "Warrant exercise: 1,580.57 lakh due by 27-Feb-2027", evidence: "Note 5 (p.65); Board p.40"}
+  - {risk: "Key-person and technical depth: 112 staff for 9,000 MVA, R&D nil, NED with transformer-design history resigned 13-Aug-2026", evidence: "Board p.43; Annexure V p.53; Notice p.25; Directors profile p.11"}
+  - {risk: "Receivable tail 588.04 lakh over one year with nil provision; bank-statement gap about 169 lakh each quarter", evidence: "Notes 17, 30.6 (p.68-72)"}
+  - {risk: "Compliance: section 185 timing, no bonus policy, interest on statutory dues 55.34 lakh, MSMED interest not accrued at 126.3 payable days", evidence: "Notice Item 9 p.22; policy 11 p.63; Notes 26, 10"}
+  - {risk: "Product qualification gap: type tests cover up to 25 MVA/110 kV only", evidence: "Board's Report p.39; MD&A p.17, p.20"}
+  - {risk: "Interest rate type and FX on capital imports (CIF 105.34 lakh) not disclosed", evidence: "Notes 6, 17 (p.65-66, p.73)"}
+guidance_table:
+  - {claim: "FY27 consolidated revenue", number: "Rs 275-300 Cr (MD&A p.19)", timeframe: "FY27", credibility: "LOW-MEDIUM: needs Q2-Q4 average 75.6-83.9 Cr vs best quarter 70.61 Cr; order book 588.17 Cr is 2.0-2.1x the guide; FY26 guide cuts 225>200>190 and later 250-300 are outside the AR (B00, operator)"}
+  - {claim: "EBITDA margin", number: "15-18% (MD&A p.19)", timeframe: "FY27", credibility: "MEDIUM: below FY26 reported 18.3%; spans standalone 15.1% and consolidated 18.1%; operator-context 18-20% conflicts and needs stage 5 check"}
+  - {claim: "Kannur optimal utilisation", number: "about 90% (MD&A p.18; letter p.14)", timeframe: "2-3 years", credibility: "LOW: no interim milestone; AR says 45-50% utilisation (p.4) vs 1,750/9,000 MVA = 19.4%"}
+  - {claim: "Peak revenue potential", number: "about Rs 550 Cr (MD&A p.18)", timeframe: "NOT STATED", credibility: "LOW: 3.0x FY26 revenue; ramp and 220 kV qualification unproven"}
+  - {claim: "Order book conversion", number: "Rs 588.17 Cr at 27-May-2026, 3.24x FY26 revenue (p.13)", timeframe: "NOT STATED in AR", credibility: "MEDIUM: includes Danya orders (amount NOT FOUND); dated after year end"}
+  - {claim: "FY28 further step-up", number: "unquantified (MD&A p.19)", timeframe: "FY28", credibility: "NOT TESTABLE"}
+  - {claim: "Capex after Kannur", number: "NOT FOUND; borrowing and charge limit asked 300 Cr to 500 Cr (Items 7, 8)", timeframe: "NOT STATED", credibility: "NOT TESTABLE: limit is 10x gross debt, no project named"}
+monitorables:
+  - {metric: "Q2 FY27 consolidated revenue", threshold: "at least 55 Cr (floor for 250 guide) and 65 Cr (for 275) if FY27 follows FY26 shape (H1 share 41.4%)", where: "Q2 FY27 results, Nov-2026", why: "Tests the FY27 guide"}
+  - {metric: "Share of EBITDA gain absorbed by depreciation plus interest", threshold: "at most 50% (Q1 FY27 was 69.7%)", where: "Q2 FY27 results", why: "Tests PAT growth catching revenue growth"}
+  - {metric: "Quarterly depreciation", threshold: "near 1.26 Cr (gross-block run-rate); below 0.9 Cr needs explanation", where: "Q2 FY27 results", why: "In-service date and depreciation of Kannur assets"}
+  - {metric: "Kannur utilisation and MVA produced", threshold: "disclosed with basis; 30% by Q3 (operator context, unanchored)", where: "Q2 call and presentation", why: "Resolves 45-50% vs 19.4%"}
+  - {metric: "Danya gross trade with SPEL", threshold: "at most Rs 50.2 Cr a year (FY26 level), 25.1 Cr per half", where: "RPT disclosure, H1 results", why: "Loop shrinks or grows"}
+  - {metric: "SPEL guarantee for Danya", threshold: "stay at 14.70 Cr; move toward 25 Cr is a flag", where: "Reg 30 filings, AGM result", why: "Authority sought 25 Cr, s.185 75 Cr"}
+  - {metric: "Customer advances and payable days (standalone)", threshold: "advances 17.10 Cr, payables 59.54 Cr; advances below about 10 Cr with payables above 59 Cr signals reversal", where: "H1 FY27 balance sheet", why: "CFO float"}
+  - {metric: "Receivables over one year (standalone)", threshold: "at most 5.88 Cr; provision introduced if higher", where: "FY27 AR Note 17", why: "Collection tail"}
+  - {metric: "Warrant exercise", threshold: "Rs 15.81 Cr balance received by 27-Feb-2027", where: "Exchange allotment filings", why: "Funding of capex and debt service"}
+  - {metric: "Type-test or qualification news above 25 MVA/110 kV", threshold: "any filing", where: "Reg 30 filings, presentation", why: "Thesis gate for 72% power-transformer order book"}
+  - {metric: "Section 185 resolution date for the Danya guarantee", threshold: "special resolution dated before 28-Mar-2025", where: "20th AGM (19-Sep-2025) and 21st AGM (25-Sep-2026) results", why: "Compliance timing vs CARO iv"}
+  - {metric: "DSCR on company definition", threshold: "at least 2.0x (FY26 2.44x)", where: "FY27 AR Note 34(c)", why: "Debt service"}
+ar_new_downstream_entities:
+  - {name: "Siemens Gamesa Renewable Power Private Limited", where_in_ar: "Marquee clients testimonial, p.8 (inverter duty transformers for solar projects); first-time status NOT VERIFIABLE, FY25 AR not read", entity_type: "customer (named platform)"}
+  - {name: "PSG & Sons Charities (Metallurgy & Foundry Division)", where_in_ar: "Marquee clients testimonial, p.8; first-time status NOT VERIFIABLE", entity_type: "customer"}
+  - {name: "Kerala State Electricity Board / TNPDCL / TANGEDCO / KPTCL", where_in_ar: "Orders Rs 113.61 Cr (KSEB, TNPDCL, Danya) p.6, p.13, p.18; empanelment p.14, p.18", entity_type: "utility customers"}
+  - {name: "Unnamed Navratna PSE (Rs 60.90 Cr inverter duty order)", where_in_ar: "p.6, p.13, p.18", entity_type: "customer, name NOT FOUND"}
+  - {name: "Danya Electric Company", where_in_ar: "Notice Item 6 p.21, p.28-33; Notes 20, 21; AOC-1 p.48; AOC-2 p.47; also an order counterparty p.6", entity_type: "RPT counterparty, 90% profit-share firm, BB-/A4+"}
+  - {name: "Jai Bharath Exchangers", where_in_ar: "Note 21 p.73-74; AOC-2 p.47 (as Jai Bharat Exchangers)", entity_type: "RPT counterparty, firm where MD and WTD are partners"}
+  - {name: "Savita Pradeep; V Rajagopalan", where_in_ar: "Note 6 p.66 (personal guarantors on IndusInd loan)", entity_type: "guarantors, related persons not in the AS 18 table"}
+  - {name: "QMax Test Equipments Ltd", where_in_ar: "Notice Annexure A p.37-38 (new independent director Ramesh C Behera chairs Audit and NRC)", entity_type: "other board seat; listing status PENDING LIVE VERIFICATION"}
+strengths_top3:
+  - "Real growth and backlog: revenue CAGR 22.1% and PAT CAGR 23.6% FY23-FY26 (Data_Sheet); order book Rs 588.17 Cr = 3.24x FY26 revenue; 9,000 MVA / 220 kV capability built (AR p.4, p.13)"
+  - "Statutory hygiene: unmodified opinions, no tax disputes, no default, CSR met, no whistle-blower complaints, promoter pay flat three years (AR p.35, p.51, p.55-59)"
+  - "Serviceable leverage today: ND/EBITDA 1.23x, interest cover about 20x on interest expense, CRISIL BBB/Stable upgrade 20-Mar-2026 (AR p.46, p.81)"
+red_flags_top3:
+  - "Danya loop: BB-/A4+ firm, 61.3% of its turnover to SPEL, Rs 50.2 Cr gross flows netting to Rs 0.98 Cr, no benchmark, guarantee 1,470 lakh with authority up to 7,500, MD loan 311.30 lakh, no unrealised-profit elimination, five labels in one AR"
+  - "Cash: CFO 25.90 vs capex 57.48 Cr; payables plus advances funded 78.7% of capex; CFO net of float about Rs 2.2-3.0 Cr; debt 2.8x; no undrawn lines; DSCR 2.44x on next-year maturities"
+  - "Returns and governance: depreciation and interest took 69.7% of Q1 FY27 EBITDA gain; ROCE 27% to 20%; utilisation 19.4% vs 45-50% stated; section 185 retrospective approval; audit-chair guarantees company debt; NED exit"
+best_fit_strategy: "Capex-Led Growth (GARP on WATCHLIST)"
+one_line_verdict: "Capex-led growth with a real order book, held at 5.5 of 10 by a Danya loop, supplier-funded cash flow and a Kannur ramp and 220 kV qualification gate that the AR itself hedges."
+analyst_note: "Three AR-only findings a later stage cannot rebuild from the fields. (1) Gross SPEL-Danya trade of Rs 50.2 Cr nets to Rs 0.98 Cr; consolidated EBITDA equals standalone plus Danya EBITDA exactly, so no unrealised profit is removed, and the 18.1% consolidated margin vs 15.1% standalone is a denominator effect from removing pass-through revenue. (2) Utilisation: AR p.4 states 45-50% but 1,750 MVA produced vs 9,000 MVA installed is 19.4%; headline capacity claims depend on the basis. (3) AGM Item 9 asks approval for guarantees already given to a firm where the MD and WTD are partners; CARO iv says sections 185 and 186 were complied with. Stage 2 page anchors run marker+1 vs this report. Q1 FY27 and market data come from the Data_Sheet, not the AR."

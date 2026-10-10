@@ -1,0 +1,84 @@
+stage: B08-promoter
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: partial                # searches skipped: MCA, eCourts, SEBI/SAT direct, prospectus, 20th AGM notice fetch timed out
+input_gaps:
+  - "COLLECTOR: BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing. (Filled by hand from the NSE API: 17 filings Mar-Sep 2026; Oct-2025 to Feb-2026 order intimations not pulled under the operator cap.)"
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. (Filled by hand: NSE SHP XBRL 31-Mar-2026; the Sep-2026 half-year pattern is not yet filed as of 2026-10-06.)"
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values): screener/INDOTECH/531201/DANISH Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. ABSENT documents. Data_Sheet CSVs carry FY23-FY26 raw values and are present."
+  - "COLLECTOR: no results PDFs (screener has none). (Filled by hand: Q1 FY27 and FY26 audited results from NSE.)"
+  - "COLLECTOR: no rating PDF. (Filled by hand: CRISIL full rationale 20-Mar-2026 as text.)"
+  - "HIGH: prospectus/ empty. Company listed Dec-2023, within 3 years of run_date. Not pulled: operator 12-document cap 2026-10-06 (inputs/operator-notes.md). Backward baseline runs on FY23-FY26 AR/screener only; promoter and group map from AR and web."
+  - "research/ empty (non-anchored; no effect on evidence)."
+  - "Peer INDOTECH: no transcripts on screener; peer-concalls cover SHILCHAR (4) and DANISH (2) only."
+  - "No Q2 FY27 business update filed as of 2026-10-06 (NSE announcement list checked through 26-Sep-2026)."
+  - "Operator document cap: Q3 FY26 transcript (concalls/Concall_Feb_2026) and the shareholding XBRL are over the 12-document cap, kept because stage 5 requires three transcripts and the UA qualifier needs the SHP; flagged for operator ruling."
+  - "Results PDFs carry an OCR-quality text layer (e.g. 'R, Lakhs'); read the page before taking a number."
+  - "STAGE 8: group-company map is AR- and web-derived (prospectus absent). Danya deed, SPEL interest charged to Danya, MD loan terms, s.185 resolution date, FY25 AR, 20th AGM notice, AGM voting results, prior SHP periods NOT FOUND."
+flags:
+  - type: FLAG-PROMOTER
+    verdict: "CONCERN (STRUCTURE type, not INTEGRITY)"
+    top_findings:
+      - "Danya Electric: partnership firm rated BB-/A4+, SPEL holds 90% profit share, MD 7.5% and WTD 2.5% (AR p.29-33). SPEL guarantee Rs 14.70 Cr (87.8% of Danya net worth 16.74, DERIVED), authority sought Rs 25 Cr and Rs 75 Cr (s.185). FY27 RPT authority Rs 125 Cr against FY26 gross trade Rs 50.18 Cr. No external price benchmark (AR p.30-31)."
+      - "Section 185: Item 9 asks approval for guarantees 'for having given' (AR p.22); the Board resolution dates from 28-Mar-2025 (Note 21); EGM 14-Jul-2025 and AGM 19-Sep-2025 passed; CARO says ss.185/186 complied. Earlier notices not read, so open."
+      - "Audit chair Saimathy Soupramanien is a personal guarantor on the Rs 4.75 Cr ICICI tranche (AR Note 6); Board report says independents have no pecuniary link beyond sitting fees. MD sits on the Audit Committee."
+      - "Disclosure conflicts: NED Krishna Iyer paid Rs 15.00 lakh vs 'sitting fees only'; he resigned 13-Aug-2026; Board report says no director changes and recommended his re-appointment while Item 3 says he does not seek it; guarantors Savita Pradeep and V Rajagopalan missing from AS 18 table."
+      - "Mitigants: nil pledge (SHP), MD/WTD pay flat Rs 60/54 lakh FY24-FY26, personal guarantees on bank debt, no SEBI/regulator action found, clean audit record."
+verdict: CONCERN
+scorecard: {clean: 4, caution: 4, red: 2}
+deal_breakers: []              # none triggered; recorded checks in report 6C
+adverse_findings:
+  - {finding: "Danya Electric BB-/A4+ partnership, 90% SPEL profit share, 10% with MD and WTD; SPEL guarantee Rs 14.70 Cr = 87.8% of Danya net worth Rs 16.74 Cr (DERIVED); authority sought Rs 25 Cr guarantee, Rs 75 Cr s.185, Rs 125 Cr FY27 RPT (FY26 gross trade Rs 50.18 Cr); transfer pricing not externally evaluated", evidence_tier: VERIFIED, source: "AR FY2025-26 Notice Items 6 and 9 p.29-33; AOC-2 p.47; Note 21 p.73-74", date: "2026-08-13 (Notice); AGM 2026-09-25"}
+  - {finding: "Section 185 approval sought retrospectively ('for having given') for the Danya guarantee dated 28-Mar-2025; CARO states compliance; earlier AGM/EGM s.185 resolution not confirmed (20th AGM notice fetch timed out)", evidence_tier: VERIFIED, source: "AR Item 9 p.22, p.33; Note 21 footnote p.74; AGM proceedings", date: "2026-09-25"}
+  - {finding: "Loans to Danya set at 8.00-9.00% on demand, unsecured, while SPEL ICICI term debt costs 9.50% and Danya is BB-; source stated as internal accruals although CFO is below capex and no undrawn lines exist (INFERENCE)", evidence_tier: VERIFIED_PLUS_INFERENCE, source: "AR Item 6 p.31-32; Note 6 p.65-66; B02/B03", date: "2026-08-13"}
+  - {finding: "MD lent Rs 3.11 Cr (311.30 lakh) unsecured into Danya in FY26; rate, tenor, security NOT FOUND; other partners' capital Rs 4.07 Cr is about 24.3% of Danya net worth against 10% profit share (DERIVED); partnership deed NOT FOUND", evidence_tier: VERIFIED_PLUS_DERIVED, source: "Consol Notes 6, 7, 21 p.85, p.94; AR p.29", date: "FY2025-26"}
+  - {finding: "Audit Committee chair (independent) is personal guarantor on company ICICI loan Rs 474.89 lakh; MD is an Audit Committee member; Section 149(6) fit is a legal question, PENDING LIVE VERIFICATION", evidence_tier: VERIFIED_PLUS_INFERENCE, source: "AR Note 6 p.66; consol Note 7 p.86; Board report p.44", date: "2026-03-31"}
+  - {finding: "NED Devaraja Iyer Krishna Iyer (47 years transformer design) paid Rs 15.00 lakh vs Board report 'sitting fees only', resigned 13-Aug-2026 citing other commitments; Board report (27-May-2026) says no changes and recommended his re-appointment", evidence_tier: VERIFIED, source: "AR Note 21 p.74; Board report p.41; KMP XBRL 13-Aug-2026", date: "2026-08-13"}
+  - {finding: "Related-party table gaps: guarantors Savita Pradeep (promoter group 1.13%) and V Rajagopalan absent from AS 18 table; Jai Bharath receivable Rs 0.57 Cr vs sales Rs 0.01 Cr; two relatives of MD/WTD new on payroll (Rs 2.46 and 2.80 lakh)", evidence_tier: VERIFIED, source: "AR Note 6 p.66; Note 21 p.73-74", date: "FY2025-26"}
+  - {finding: "Authority stretch in one Notice: borrowing and security limit Rs 500 Cr each (about 10x consolidated debt Rs 50 Cr), s.186 Rs 120 Cr, MD/WTD salary band tops at 2.4x and 2.2x current monthly pay (ceiling, not payment)", evidence_tier: "VERIFIED_PLUS_DERIVED", source: "AR Items 7, 8, 10, 11, 12 p.21-23", date: "2026-08-13"}
+  - {finding: "Broker IPO page risk factor says promoters/directors are involved in certain legal proceedings; nature NOT FOUND (prospectus absent)", evidence_tier: MEDIA, source: "Arihant Capital IPO blog (web search 2026-10-06)", date: "2023-12"}
+transition_evidence:
+  - "New independent director Ramesh C Behera appointed 13-Aug-2026 (34 years finance/controls; chairs Audit and NRC at Q Max Test Equipments, listing PENDING LIVE VERIFICATION); independents rise from 2 of 5 to 3 of 5; untested (AR p.37-38; KMP XBRL). Strength LOW-MEDIUM."
+  - "CRISIL upgrade to BBB/Stable 20-Mar-2026 (credit, not promoter conduct). Strength LOW for promoter lens."
+  - "MD/WTD pay flat at Rs 60/54 lakh FY24-FY26 while staff pay rose about 24.3% (AR p.54, p.35). Strength MEDIUM."
+  - "MD subscribed 4,49,500 warrants at Rs 169 (Rs 7.60 Cr, 36% of issue); no pledge (SHP 31-Mar-2026). WTD holds none. Strength MEDIUM."
+  - "Not found: outside professional CEO, institutional entry above 1% (FPI 0.58%), Big-4 auditor, strategic stake sale. Same Notice enlarged Danya and borrowing authority, so no governance overhaul."
+pledge_pct_latest: 0
+pledge_trend: "stable at nil on the one SHP in the corpus (31-Mar-2026: pledge, NDU and other encumbrance flags all false; 35% of promoter shares locked in); earlier-period trend NOT FOUND"
+searches_performed:
+  - "WebSearch: Supreme Power Equipment Vee Rajmohan founder transformer Chennai"
+  - "WebSearch: Danya Electric Company Chennai transformer partnership"
+  - "WebSearch: Jai Bharath Exchangers Chennai radiators (nil)"
+  - "WebSearch: SPEL SEBI order/penalty/adjudication (nil)"
+  - "WebSearch: Vee Rajmohan / Pradeep Kumar litigation, court, NCLT (nil)"
+  - "WebSearch: SPEL IPO 2023 prospectus promoters group companies"
+  - "WebSearch: Krishna Iyer resignation Aug-2026 (nil beyond corpus filing)"
+  - "WebSearch: SPEL share price news governance Danya concerns 2026 (nil adverse)"
+  - "WebSearch: Vee Rajmohan DIN 00844400 other companies (nil)"
+  - "WebSearch: SPEL prospectus outstanding litigation / lead manager (Narnolia; generic litigation line)"
+  - "WebSearch: Saimathy Soupramanien directorships (Switching Technologies Gunther)"
+  - "WebSearch: Ramesh C Behera / Q Max Test Equipments (nil)"
+  - "WebSearch: PPN and Company auditor peer review (nil useful)"
+  - "WebSearch: SPEL IPO promoter holding pre/post issue (79.37 to 57.54; second source 72.23 to 52.37)"
+  - "WebSearch: Switching Technologies Gunther / Saimathy Soupramanien"
+  - "WebSearch: SPEL Glassdoor/AmbitionBox (nil)"
+  - "WebSearch: SPEL IiAS/SES/InGovern proxy advisory (nil; FY26 Danya limit Rs 75 Cr snippet)"
+  - "WebSearch: Vee Rajmohan honorary doctorate (nil)"
+  - "WebSearch: SPEL income tax/GST/DRI/ED/fraud (nil)"
+  - "WebSearch: Indotech / Pradeep Kumar / SPEL partnership history (1994 partnership origin)"
+  - "WebFetch: Arihant IPO blog (lead manager not named; generic litigation line)"
+  - "WebFetch: themachinemaker Danya order article (90% stake, 7-Jan-2025)"
+searches_skipped:
+  - "MCA21 master data and charge search for SPEL, Danya, Jai Bharath (login required; partnership firms not on MCA)"
+  - "eCourts / NCLT / High Court party-name case search (not queryable from search)"
+  - "SEBI orders database and SAT direct query (generic search only)"
+  - "Prospectus (DRHP/RHP) litigation and group-company chapters (absent from corpus; not fetched)"
+  - "20th AGM notice 26-Aug-2025 (WebFetch timed out twice): s.185 resolution date, FY26 Danya limit"
+  - "Groww IPO page fetch (blocked)"
+  - "Political donation / electoral bond data"
+  - "NSE SCORES and ASM/GSM surveillance status"
+  - "Promoter Reg 7 trade disclosures and prior SHP periods"
+  - "Dividend history"
+verdict_basis: "Danya structure (BB-/A4+ firm, 10% held by MD and WTD, SPEL guarantee Rs 14.70 Cr, Rs 125 Cr FY27 authority, no external price test, retrospective s.185 ask) plus an audit chair who guarantees company debt; offset by nil pledge, flat pay, promoter guarantees and no regulator action. STRUCTURE concern, not INTEGRITY."
+analyst_note: "Rule G ledger: BUILT (9,000 MVA / 220 kV Kannur plant, order book Rs 588.17 Cr), RAISED (IPO Rs 46.67 Cr, warrants Rs 21.07 Cr, MD Rs 7.60 Cr of it) and DEPLOYED (capex Rs 57.5 Cr) are evidenced; DELIVERED is partial (guidance missed twice). OR-14 reading: STRUCTURE concern, no AVOID, so ledger can feed sizing with tripwires: Danya guarantee above 14.70, Danya trade above 50.2, deed and price benchmark not given, s.185 date, audit-chair guarantee, MD loan terms, pledge or sale before Feb-2027 warrants, second director exit. Two readings: A convenience channel for state tenders; B value-shifting vehicle. Separator: Danya deed plus third-party price benchmark. Danya profit slice to promoters is only about Rs 0.235 Cr (1.2% of SPEL PAT), so the main exposure is the guarantee and loop, not the slice."

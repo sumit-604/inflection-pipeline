@@ -1,0 +1,68 @@
+stage: B09b-dossier
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Prospectus (Dec-2023 listing)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Order intimations Oct-2025 to Feb-2026"
+    expected_source: "NSE"
+    kind: "findable-missing"
+  - document: "Shareholding patterns before 31-Mar-2026"
+    expected_source: "NSE"
+    kind: "findable-missing"
+  - document: "20th AGM notice 26-Aug-2025 and AGM and EGM voting results"
+    expected_source: "NSE"
+    kind: "findable-missing"
+  - document: "Results filings Q1 FY26, H1 FY26, Q3 FY26"
+    expected_source: "NSE"
+    kind: "findable-missing"
+  - document: "Annual Report FY2023-24"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Danya Electric partnership deed, auditor and standalone accounts"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Peer INDOTECH transcripts"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Distribution and inverter duty transformers up to about 25 MVA (Unit 1)"
+    archetype: "Order-book business (EPC/defence/capital goods)"
+  - line: "Power transformers above 25 MVA up to 200 MVA / 220 kV (Kannur)"
+    archetype: "Order-book business (EPC/defence/capital goods)"
+transition:
+  - line: "Power transformers (Kannur)"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER (tender-market supplier, weak pricing power)"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Kannur load rising from 20-25% against a fixed cost base already in place; 160 MVA / 220 kV CPRI type test (planned Dec-2026/Jan-2027) lifting the qualification ceiling above 25 MVA / 110 kV"
+    proof_gate: "Q2 FY27 (Nov-2026): consolidated revenue >= Rs 55 Cr AND Kannur utilisation stated with basis >= 30% AND depreciation plus interest <= 50% of EBITDA gain; Q3 FY27 utilisation > 25%; CPRI certificate filed by 31-Mar-2027"
+    recognition_gap: "Open question for Stage 11: does market pricing already reflect the TO state? Resolved via the PE gap; no conclusion here"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Q2 FY27 revenue < Rs 55 Cr or Kannur utilisation <= 25% at Q3 FY27; CPRI test fails or slips past Mar-2027; depreciation plus interest > 70% of EBITDA gain again; a peer first 220 kV order at full margin"
+dominant_variables:
+  - "Kannur load: MVA produced and delivered per quarter with utilisation basis (20-25% stated now)"
+  - "220 kV qualification: CPRI certificate for 160 MVA / 220 kV and first 220 kV order margin"
+  - "Fixed-cost absorption: depreciation plus interest share of EBITDA gain (69.7% in Q1 FY27) and gross margin"
+  - "Funding of the climb: CFO vs capex, standalone advances and payables, DSCR, warrant balance Rs 15.81 Cr due 27-Feb-2027"
+business_falsifier: "A Danya deed or third-party price benchmark showing SPEL revenue and profit rest on pass-through trade with a firm co-owned by two promoter-directors, or a Danya default crystallising the Rs 14.70 Cr guarantee, or named-customer disclosure showing the Hyderabad inflow (65.4% of Q1 FY27) is one group with no repeat order"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "160 MVA / 220 kV CPRI type test (B07: fail or slip past Mar-2027 strands the Kannur premise)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 16
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "38be1cb6ba914fdbc823d1954ef2b1f3c98204bd"

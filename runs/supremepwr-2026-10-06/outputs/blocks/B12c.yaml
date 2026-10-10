@@ -1,0 +1,53 @@
+stage: B12c
+company: "SUPREMEPWR"
+run_date: "2026-10-06"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete  # phase-1 scope complete (Gate 0 + Emerging Moat); valuation half pending phase 3
+gate0: {rules_checked: 48, fails: ["G0-33 M6 marked PEER DATA NEEDED; tiers 5 and 3 need no peer data; score 0 unchanged (MINOR)", "G0-45 FLAG-GATE0 raised on classification GOOD; trigger is <= AVERAGE or a deal-breaker override (MINOR)", "G0-46 report-embedded YAML carries 14 of 21 template keys and is not the final element; block file complete (MINOR)"]}
+emoat: {rules_checked: 30, fails: ["EM-21 I2 answered for the 220 kV moat only; B2 (Moderate) not addressed; I2 = 0 unchanged (MINOR)"]}
+valuation: {rules_checked: 0, fails: []}  # pending phase 3: B10/B11 not yet produced; valuation framework docs not loaded
+expectation_ledger: {present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; pending phase 3; any fail = REWORK stage 11
+business_understanding_narrative: {present: null, five_questions_answered: null, prose_only: null, section6_candidates_named: null, valuation_vocab_leak: null, fails: []}  # rule 9; any fail = REWORK stage 13; pending /finalize (field restored per PROMPT_AUDIT VER-08, see report O11)
+recomputed_destination_pe: ""  # pending phase 3
+recomputed_decision: ""        # pending phase 3
+findings:
+  - id: "F1"
+    rule_row: "G0-33"
+    stage: "B01"
+    severity: "MINOR"
+    rule: "P01 L99-100 (mark PEER DATA NEEDED only when the test needs peer data); P01 L114-116 (M6 tiers 5 and 3 are company-only; only tier 1 uses a peer median)"
+    claimed: "M6 = 0, 'R&D spend NOT FOUND in AR; PEER DATA NEEDED' (01-gate0.md L109; B01-gate0.yaml L37)"
+    recomputed: "M6 = 0, unchanged. Binding gap is R&D spend, not peer data. B07 reads R&D expenditure Nil in AR Annexure V L.5009-5034 (07-emoat.md L157); if Verifier A confirms, every M6 tier fails and M6 = 0 is determinate"
+    impact: "none on Block F (15), moats confirmed (4) or classification (GOOD)"
+    fix: "stage 1: relabel M6 'R&D Nil, 0% of revenue' (or 'R&D NOT FOUND' if A does not confirm); remove M6 from the PEER DATA NEEDED list"
+  - id: "F2"
+    rule_row: "G0-45"
+    stage: "B01"
+    severity: "MINOR"
+    rule: "P01 L175-177 (FLAG-GATE0 if classification <= AVERAGE with historical depressors); prompts/00-orchestrator.md L591-593"
+    claimed: "FLAG-GATE0 raised (B01-gate0.yaml L13) with classification GOOD (L22) and no deal-breaker (L23)"
+    recomputed: "trigger not met; GOOD carries no FLAG-GATE0. Fragility text already in data_notes (B01-gate0.yaml L35) and analyst_note (L41)"
+    impact: "presentational; B07 carried the flag (B07-emoat.yaml L29), so stage 13 will print FLAG-GATE0 as active unless corrected"
+    fix: "stage 1: drop the flag and keep the fragility note, or operator rules that 'fragile to AVERAGE' fires FLAG-GATE0"
+  - id: "F3"
+    rule_row: "G0-46"
+    stage: "B01"
+    severity: "MINOR"
+    rule: "P01 L163-166 (report ends with exactly the template YAML block, P01 L168-197, 21 keys)"
+    claimed: "report YAML (01-gate0.md L134-149) has 14 keys and is followed by a pointer line (L150)"
+    recomputed: "7 keys missing from the report copy: input_gaps, flags, data_years, fy_range, data_notes, block_b_trend, analyst_note. Block file B01-gate0.yaml has all 21 keys; shared values match"
+    impact: "none on data; a reader of the report alone misses flags and data_notes"
+    fix: "stage 1: paste the full B01-gate0.yaml block as the report's last element"
+  - id: "F4"
+    rule_row: "EM-21"
+    stage: "B07"
+    severity: "MINOR"
+    rule: "P07 L139-141 (I2 question asked for each moat claimed anywhere in the scan)"
+    claimed: "I2 answered 'for the one moat claimed (220 kV qualification)' (07-emoat.md L347)"
+    recomputed: "scan claims two Moderate moats, A1 2.1 and B2 2.0 (07-emoat.md L376; B07-emoat.yaml L33-34). B2 unanswered; maker's own B2 reading (L250, access tickets open to any qualified vendor) gives 'nothing must be destroyed'. I2 = 0 and total 8.3 unchanged"
+    impact: "none on em_score (8.3) or band (NONE)"
+    fix: "stage 7: add an I2 line for B2 and one line covering the five Weak rows"
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 94.9  # 74 passed / 78 checked (Gate 0 45/48, Emerging Moat 29/30); phase-1 scope; denominator >= 4 so applicable

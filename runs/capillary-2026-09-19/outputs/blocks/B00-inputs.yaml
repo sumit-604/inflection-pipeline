@@ -1,0 +1,107 @@
+stage: B00-inputs
+company: CAPILLARY
+run_date: 2026-09-19
+model: orchestrator (stage 0 run inline by the orchestrator session)
+status: complete
+spear_gate: "PASS. companies/CAPILLARY.md carries 'Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:   # first verification priority for every stage (from companies/CAPILLARY.md SPEAR)
+  - "LBF1 GUIDANCE DECOMPOSITION: FY27 revenue guide Rs 1,000-1,050 Cr vs FY26 Rs 735 Cr. Split organic (17% claimed) from SessionM (USD 32 m ARR, ~11 months consolidated). Verify the SessionM consideration (~USD 20 m), purchase price allocation, goodwill and the 'profitable within two months' claim against the Q1 FY27 results, the SessionM Reg 30 filings (24-Feb, 26-Feb, 01-May-2026) and the Aug-2026 concall."
+  - "LBF2 GOVERNANCE AND EARNINGS QUALITY: (a) EUR 3.0 m cyber-enabled banking fraud at a recently acquired overseas step-down subsidiary (Reg 30, 06-Jul-2026); KPMG forensic audit initiated by the Audit Committee (31-Jul-2026); Rs 33.4 Cr exceptional loss in Q1 FY27; insurance recovery open. (b) FY26 other income ~Rs 39 Cr (~Rs 31.7 Cr in Q4 FY26) and Q1 FY27 other income ~Rs -27.7 Cr: name the contents. (c) Promoter entity Capillary Technologies International Pte Ltd (CTIPL, Singapore) sold ~4% on 10-Aug-2026 to fund Peak XV's exit; PE investors hold >30% of CTIPL and may exit the same way (clarification 25-Aug-2026)."
+  - "LBF3 CONCENTRATION AND RETENTION: top-10 customers 58.71% of FY25 revenue (IPO documents); NRR 114% organic FY26. Get the FY26 top-10 share, churn, and US exposure from the FY26 AR and the decks."
+  - "LBF4 CASH CONVERSION: CFO ~Rs -46 Cr (FY25) to ~Rs 150 Cr (FY26); debtor days ~90; fixed assets ~Rs 301 Cr to ~Rs 460 Cr. Separate capitalised product development, acquired intangibles, deferred revenue / unbilled revenue and IPO-proceeds effects."
+lbf_source_note: "The LBF figures are COMPANY MEMORY from runs/capillary-2026-09-19/step1-business-brief.md (live web + screener). They are leads, never anchored evidence. Every stage re-derives them from this run's filings."
+sector_cap_row: "Platform / SaaS / IT services"
+sector_cap_row_evidence: >
+  section-1b chunk 05 (.claude/skills/section-1b/references/05-sector-cap.md,
+  row 'Platform / SaaS / IT services | 45x'). The company sells cloud SaaS
+  (loyalty management, customer data platform, engagement, analytics) to
+  enterprise consumer brands on subscription. Q1 FY27 results carry revenue
+  from operations split into subscription and implementation/campaign
+  services, with subscription the large majority (stage 4 confirms the split
+  from the filings). Alternatives considered and rejected: 'CPaaS /
+  Communications platform' 28x (messaging pass-through is not the revenue
+  base); 'Consulting / Engineering services' 25x (services are a minority
+  slice). The collector guess 'Pharma / CDMO' is wrong and is discarded.
+  Stage 4 confirms or challenges the row from B04.
+reporting_units:
+  annual_report: "INR million (AR FY26, '(₹ in Million)')"
+  results: "INR million (Q3 FY26, Q4 FY26 and Q1 FY27 results: 'All amounts in Indian Rupees (₹) million')"
+  prospectus: "INR million (UDRHP-I restated financial information; confirm on the face of the statements)"
+  screener: "INR Cr (screener Data_Sheet)"
+  note: "Filings report in INR million; screener in INR Cr. 10 INR million = 1 INR Cr. Conversion happens once, at stage 10."
+listed_date: 2025-11-21
+recently_listed: true
+input_gaps:
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, NEWGEN:Profit & Loss, NEWGEN:Quarters, NEWGEN:Balance Sheet, NEWGEN:Cash Flow, NEWGEN:Customization, UNIECOM:Profit & Loss, UNIECOM:Quarters, UNIECOM:Balance Sheet, UNIECOM:Cash Flow, UNIECOM:Customization, INTELLECT:Profit & Loss, INTELLECT:Quarters, INTELLECT:Balance Sheet, INTELLECT:Cash Flow, INTELLECT:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "RESOLVED AT INTAKE: results/ filled from BSE (AttachHis): Q3 FY26 (06-Feb-2026), Q4 FY26 with audited FY26 (06-May-2026), Q1 FY27 (04-Aug-2026)."
+  - "RATING: NOT A COLLECTION GAP. The FY26 AR states the company 'has neither obtained nor revised any credit rating' and lists credit ratings as 'Not obtained' (AR FY26, Board's report and corporate governance report). No rating exists to collect. Stage 10 marks rating_wc_quote unresolved; the Pillar 2 read runs on AR cash-flow and receivables evidence."
+  - "PROSPECTUS (PARTIAL, MEDIUM gap): prospectus/ holds the SEBI-hosted UDRHP-I (June 2025, 581pp) with restated pre-IPO financials and promoter/group history. The final RHP / Prospectus (Nov-2025) sits on capillarytech.com but returned HTTP 403 to scripted download. Differences between UDRHP-I and the RHP (updated stub period, final offer size Rs 877.5 Cr, price band Rs 549-577) are not in the corpus. The recently-listed priority is met in substance."
+  - "RESOLVED AT INTAKE (PARTIAL): shareholding/ holds the BSE Reg 31 SUMMARY for Dec-2025, Mar-2026 and Jun-2026 as text. The FII / DII split is NOT in the summary, so the UA institutional-absence qualifier stays OPEN on filed evidence (Amendment 3 cannot apply on an unevidenced qualifier). Pledge / encumbrance status is in the summary."
+  - "screening: EMPTY-CSV defect present. Profit & Loss, Balance Sheet, Cash Flow and Quarters sheets are absent for the subject and all three peers. The four Data_Sheet CSVs (screener-Data_Sheet.csv for CAPILLARY) are populated with raw annual P&L, balance sheet, cash flow and quarterly rows. Stage 1 reads Data_Sheet only; FY26 AR and results PDFs govern."
+  - "annual-report/: FY26 AR only (Reg 34 filing, 271pp). The FY25 AR is not held (the company was unlisted in FY25); the UDRHP-I restated financials cover the pre-IPO years."
+  - "concalls: 3 transcripts, all post-listing: Q3 FY26 (Feb-2026), Q4 FY26 (May-2026), Q1 FY27 (Aug-2026). No Q2 FY26 call exists (listed 21-Nov-2025). Stage 5 has exactly three calls, oldest first."
+  - "peer-concalls: 12 transcripts, 4 per peer, Q2 FY26 to Q1 FY27 for each. NEWGEN: Nov-2025 (Q2 FY26), Jan-2026 (Q3 FY26), May-2026 (Q4 FY26), Jul-2026 (Q1 FY27). UNIECOM: Nov-2025 (Q2 FY26), Feb-2026 (Q3 FY26), May-2026 (Q4 FY26), Aug-2026 (Q1 FY27). INTELLECT: Nov-2025 (Q2 FY26), Feb-2026 (Q3 FY26), May-2026 (Q4 FY26), Aug-2026 (Q1 FY27)."
+  - "PEER SWAP: step1 first picked RAMCOSYS; screener's newest RAMCOSYS transcripts dated Nov-2022 to May-2024 (stale), so INTELLECT replaced it before classification. Rationale in step1-business-brief.md."
+  - "announcements/: 38 Reg 30 / SAST filings Nov-2025 to Sep-2026 staged by hand from BSE (60-day windows, AttachHis). The collector's own fetch found 6. Curated, not exhaustive: routine trading-window, ESOP-grant/allotment, newspaper, analyst-meet intimation and duplicate board-outcome filings were left out. Earnings-call transcripts filed as Reg 30 are held once, in concalls/."
+  - "announcements/ IMAGE-ONLY FILES: six scanned filings have no text layer (SAST Reg 29 disclosures of 25-Nov-2025, 22-Jun-2026, 11-Aug-2026 (B44A8DBB), 17-Aug-2026, 16-Sep-2026; Annual Secretarial Compliance Report 06-May-2026). Each .txt beside them points to PNG pages in inputs/announcements/page-images/. Read the PNGs."
+  - "presentation/: 4 decks: Q1 FY27 (Investor_Presentation_1.pdf, 59pp, 04-Aug-2026), a second Q1 FY27 deck (20260804-Investor-Presentation-30pp.pdf), the 14-May-2026 65pp investor deck, and the SessionM acquisition deck (24-Feb-2026). Q3 FY26 and Q4 FY26 earnings decks and the FY26 BRSR sit in other/ (preserved, not consumed)."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "TOOLING: pdftoppm absent (Read tool cannot render PDF pages). Every input PDF is pre-extracted to a page-marked .txt BESIDE the PDF (same basename, '[page N]' markers = PDF page numbers). Stages and verifiers read the .txt; anchors cite the PDF with the page number."
+freshness_pairs:
+  - pair: "RESULTS to CONCALL"
+    trigger_doc: "inputs/results/Results-Q1FY27-20260804.pdf (quarter ended 30-Jun-2026)"
+    mate_expected: "Q1 FY27 earnings call transcript"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/concalls/Concall_Aug_2026_Transcript.pdf (quarter ended June 30, 2026)"
+  - pair: "RATING BULLETIN to RATIONALE"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "No rating bulletin exists; the company has obtained no credit rating (AR FY26)."
+  - pair: "SEBI ORDER to ORDER TEXT"
+    trigger_doc: "none"
+    mate_expected: "n/a"
+    status: PASS
+    missing_doc: ""
+    note: "Corpus search found no SEBI order, adjudication order or show cause notice referenced in the AR, results, concalls or announcements."
+  - pair: "AR to LATEST AUDITED ANNUAL RESULTS"
+    trigger_doc: "inputs/results/Results-Q4FY26-audited-FY26-20260506.pdf (FY26 audited)"
+    mate_expected: "FY26 Annual Report"
+    status: PASS
+    missing_doc: ""
+    mate_found: "inputs/annual-report/Annual_Report_2026.pdf (year ended March 31, 2026)"
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_verdict_hint: "CORPUS GAPPED (final RHP, FII/DII split, research absent; screener sheets empty); freshness pairs OK"
+operator_pause: "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing answer 'proceed with the gaps'. Empty folders: rating/ (declared: no rating obtained), research/."
+corpus_manifest:
+  - {path: inputs/annual-report/Annual_Report_2026.pdf, issuer: Capillary Technologies India Ltd, type: "Annual Report FY2025-26 (Reg 34 filing)", period: FY26, folder_match: yes}
+  - {path: inputs/results/Results-Q1FY27-20260804.pdf, issuer: Capillary, type: "Unaudited results SA & consol (board outcome)", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/results/Results-Q4FY26-audited-FY26-20260506.pdf, issuer: Capillary, type: "Audited results SA & consol + board outcome", period: "Q4 / FY26", folder_match: yes}
+  - {path: inputs/results/Results-Q3FY26-20260206.pdf, issuer: Capillary, type: "Unaudited results SA & consol", period: "Q3 / 9M FY26", folder_match: yes}
+  - {path: inputs/prospectus/Capillary-UDRHP-I-SEBI-Jun2025.pdf, issuer: Capillary, type: "Updated Draft Red Herring Prospectus-I (SEBI)", period: "June 2025 (restated pre-IPO financials)", folder_match: yes}
+  - {path: inputs/concalls/Concall_Aug_2026_Transcript.pdf, issuer: Capillary, type: transcript, period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/concalls/Concall_May_2026_Transcript.pdf, issuer: Capillary, type: transcript, period: "Q4 FY26", folder_match: yes}
+  - {path: inputs/concalls/Concall_Feb_2026_Transcript.pdf, issuer: Capillary, type: transcript, period: "Q3 FY26", folder_match: yes}
+  - {path: inputs/presentation/Investor_Presentation_1.pdf, issuer: Capillary, type: "investor presentation (59pp)", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/presentation/20260804-Investor-Presentation-30pp.pdf, issuer: Capillary, type: "investor presentation (30pp)", period: "Q1 FY27", folder_match: yes}
+  - {path: inputs/presentation/20260514-Investor-Presentation-65pp.pdf, issuer: Capillary, type: "investor presentation (65pp, filed 14-May-2026)", period: "FY26 / Q4 FY26", folder_match: yes}
+  - {path: inputs/presentation/20260224-SessionM-Acquisition-Presentation.pdf, issuer: Capillary, type: "acquisition presentation (SessionM)", period: "24-Feb-2026", folder_match: yes}
+  - {path: "inputs/shareholding/BSE-SHP-summary-{Dec2025,Mar2026,Jun2026}.txt", issuer: "BSE (Reg 31 summary)", type: "shareholding summary", period: "Dec-2025, Mar-2026, Jun-2026", folder_match: yes}
+  - {path: "inputs/peer-concalls/NEWGEN-*.pdf (4)", issuer: Newgen Software Technologies Ltd, type: transcripts, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/UNIECOM-*.pdf (4)", issuer: Unicommerce eSolutions Ltd, type: transcripts, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: "inputs/peer-concalls/INTELLECT-*.pdf (4)", issuer: Intellect Design Arena Ltd, type: transcripts, period: "Q2 FY26, Q3 FY26, Q4 FY26, Q1 FY27", folder_match: yes}
+  - {path: "inputs/announcements/*.pdf (38)", issuer: Capillary, type: "Reg 30 / SAST / postal ballot / AGM / monitoring agency filings", period: "Nov-2025 to Sep-2026", folder_match: yes}
+  - {path: "inputs/screening/*-Data_Sheet.csv (4)", issuer: screener.in, type: "Data_Sheet export", period: "to Q1 FY27", folder_match: yes}
+  - {path: "inputs/other/ (3)", issuer: Capillary, type: "Q3 FY26 and Q4 FY26 earnings decks, BRSR FY26", period: FY26, folder_match: "preserved, not consumed"}
+flags: []
+analyst_note: >
+  Filings report in INR million; screener in INR Cr. Q1 FY27 is the first
+  quarter consolidating SessionM (closed 01-May-2026), so Q1 FY27 YoY growth
+  mixes organic and acquired revenue; keep them apart. Q1 FY27 carries an
+  exceptional loss from the step-down subsidiary fraud. Six scanned SAST /
+  secretarial filings must be read as PNG pages.

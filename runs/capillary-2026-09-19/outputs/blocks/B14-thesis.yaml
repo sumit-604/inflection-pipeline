@@ -1,0 +1,49 @@
+stage: B14-thesis
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: "claude-opus-5-5"
+status: complete
+verdict: "AVOID"
+entry_range: {low: 291.4, high: 327.7}
+position_size: "Small"
+position_size_override: ""
+thesis_broken_if: "Any one of: (1) core NRR ex Optum, constant currency, below 105% for two consecutive quarters; (2) Optum repriced by more than 20% or not renewed by Mar-2029, or warrant asset impaired early; (3) SessionM below USD 27m ARR by Q4 FY27 (May-2027) or still at break-even; (4) organic EBITDA margin falling in constant currency; (5) KPMG finding of insider involvement; (6) two consecutive quarters of organic EBITDA margin not rising together with SessionM or Kognitiv contribution margin below 15% by Q4 FY27; time stop: both proof-gate halves (H1 cc organic growth at least 15%; operating ROCE above 10% annualised for two consecutive quarters) not fired by Q2 FY28 results (Nov-2027)."
+monitoring_checklist:
+  - "H1 FY27 constant-currency organic growth (Q2 FY27 deck, Nov-2026): green at least 15%; red below 15%"
+  - "Operating ROCE annualised = (adj. EBITDA - ESOP - D&A) x 4 / invested capital: green above 10% in Q2 FY27 and the next quarter; red at or below 10% in Q2 FY27"
+  - "Adjusted EBITDA margin: green at least 17% in Q2 FY27 and organic margin up in cc two quarters; red below 15% in any quarter or organic margin down in cc"
+  - "NRR: green organic NRR at least 111% and core NRR ex Optum cc at least 105%; red core NRR ex Optum cc below 105% two quarters"
+  - "Kognitiv: green dated first migrated customer on the Q2 FY27 call and retained revenue at least 80% of FY26 by Sep-2027; red no dated go-live on the Q2 call or slip past Sep-2027"
+  - "SessionM: green ARR at least USD 27m and break-even by Q4 FY27, H1 FY27 PPA discloses cash acquired and assumed deferred revenue; red ARR below USD 27m or at break-even by Q4 FY27"
+  - "Cash: green FY27 OCF/adjusted EBITDA at least 60% and H1 receivable days at or below 90; red OCF/adjusted EBITDA below 60% or receivable days above 98"
+  - "Revenue: green H1 FY27 at least Rs 526 Cr and FY27 at least Rs 1,065 Cr; red guide walked back"
+  - "Optum account: green revenue flat or rising YoY each quarter; red YoY decline two quarters, repricing above 20% or non-renewal by Mar-2029"
+  - "New ACV: green FY27 new ACV at least Rs 157 Cr; red below Rs 139 Cr"
+  - "KPMG and insurance: green Reg 30 outcome with no insider finding by Nov-2026 and insurance quantified by Jan-2027; red insider finding or a second control event at an acquired unit"
+  - "Price and supply: green CMP at or below Rs 386 (U/D 2x) and Rs 328 (entry) with all other rows clear; red a price fall caused by a red signal (withdrawn zone); track CTIPL holding via SAST Reg 29 and the quarterly SHP"
+  - "Live adjusted peer base at /finalize: green at or above 30x; red below 24.0x"
+verdict_basis: "Role 2 Section 7 as written: AVOID fires on Gate 0 AVERAGE (core 51) and upside/downside 0.24x below 2x. Competing reading WATCHLIST (RULES Gate 0 below 60 default; B11 decision). Hardest verdict wins; open framework conflict flagged (same as KISSHT). Matrix cell per stage 11: PRICED NARRATIVE (TRAP); stage 13 applies the matrix"
+size_at_cmp: "zero (AVOID; A25 starter fails: T1+T2 54.9% vs 75%)"
+size_caps: "dispersion 111.7% caps Small; Gate 0 AVERAGE bars Medium; A25 starter at Rs 415.2 or below; promoter via OR-14 reads TRUSTWORTHY for sizing (4 of 4 ledger heads), lifts no cap; Sector Literacy log NOT FOUND"
+ledger_probabilities_note: "T2/T3 split, starter price Rs 415.2 and the trim ladder run on expectation-ledger probabilities ruled by stage 11, NOT operator-ruled; operator ratifies or replaces at /finalize"
+re_entry_gates: {entry_zone: "Rs 291.4-327.7", ud_2x_price: 386.2, a25_starter_price: 415.2, gate0_leg: "price-independent; median-ROCE deal-breaker cannot clear on FY27 data on B01's series (INFERENCE); may bind to FY28 data unless the operator rules the Gate 0 conflict", proof_gate: "both halves read on Q2 FY27 results, about Nov-2026"}
+a19: {fv_cagr_pct: 37.9, label: "COMPOUNDER", fv_today_rs: 265.8, fv_exit_rs: 697.1, pillar_16_8x_fv_cagr_pct: 33.7, note: "return would be business compounding, not a discount closing; CMP 2.13x today's FV, about 1.75 years ahead"}
+fast_growth: {flag: true, basis: "A21 run-rate +42.7% YoY (Results Q1 FY27 p.9); forward Revenue FIRING (OR-12)"}
+converter: "NON-CONVERTER (A17.0); input-cycle rule not applicable"
+promoter_or14: {b08_verdict: "CAUTION", governing_kind: "STRUCTURE", integrity_items: "none evidenced", ledger_heads_evidenced: "4 of 4 (built; capital raised vs deployed; contrarian, company-reported; skin, thin)", sizing_read: "TRUSTWORTHY for sizing", tripwires: ["further CTIPL or PE block sales", "KPMG insider finding re-classifies to INTEGRITY (Small ceiling, possible promoter AVOID)", "finance-SMP turnover inside the fraud window", "chairperson committee count vs LODR Reg 26(1)", "any chargesheet naming Gowthami Agro Industries or the family"]}
+entrepreneur_ledger:
+  built: "Incorporated 2012 (AR p.7); revenue Rs 255.37 Cr FY23 to Rs 734.60 Cr FY26; organic 42% CAGR (AR p.79); 415+ brands, 49 countries; founding capital, first product, first customer NOT FOUND"
+  capital_raised_vs_deployed: "IPO Rs 877.50 Cr = fresh Rs 345.00 Cr + OFS Rs 532.50 Cr (AR p.29); net Rs 322.91 Cr, Rs 119.69 Cr used by 30-Jun-2026 (Rs 85.01 Cr SessionM, Rs 34.68 Cr cloud; Results Q1 FY27 p.11); CTIPL OFS about Rs 492.8 Cr (arithmetic, exact tie) and Aug-2026 block Rs 171.5 Cr; acquisitions about Rs 107/111/39/122 Cr (AR p.80); pre-IPO venture rounds NOT FOUND"
+  contrarian: "Bought loss-making agency books at 0.4-3x revenue; Persuade -17.4% to 41.2%, Brierley+Persuade -3.6% to 40.4%, Rewards+ -1.9% to 45% contribution margin (AR p.80, company-reported); Kognitiv and SessionM open"
+  skin: "Founder direct 2.18% (AR p.62), did not sell in OFS; 7.53% economic of CTIPL; look-through about 5.6% (INFERENCE); pledge 0%; no dividend or buyback; pay Rs 1.72 Cr in band"
+  delivery_under_constraint: "EBITDA margin (22.84)% FY23 to 13.13% FY25 before IPO cash (UDRHP-I p.55; AR p.149); 17.15% adjusted margin in the Q1 FY27 fraud quarter"
+  pillar3_line: "Entrepreneur Ledger supports the +2x Pillar 3 premium, and no more, because capital deployed into acquired books converted on three of five deals and the margin turnaround was delivered before IPO cash arrived; it does not support more, because Kognitiv and SessionM are unconverted, the record is company-reported, and the founder look-through stake is about 5.6%"
+rule_h_confirmation:
+  forward_basis: "CONFIRMED: RUN-RATE FY27 (Rs 1,026.58 Cr; guide Rs 1,065 Cr) then GUIDANCE-DISCOUNTED 15% FY28-FY30; historical CAGR 42.2% shown as cross-check (11-valuation 3.1, 3.4)"
+  margin_bridge: "CONFIRMED: 14.55% FY26 to 19.90% FY29 to 22.00% FY30 via run-rate +260, organic leverage +65/+103, Kognitiv +109/+172, SessionM +175/+275, Optum warrant -74/-64 bps (11-valuation 3.2); paying chain carried as Chain 3"
+  second_order_chains: 8
+  chains_with_inference: 8
+  pending_live_verification: ["Chain 1 named SI/consulting partner", "Chain 2 Mastercard SEC filings on SessionM consideration", "Chain 5 UnitedHealth 10-K/10-Q vendor commentary", "Chain 6 Pandora/Neytiri ACRA owners", "Chain 8 Adyen/Talon.One bundling and AI adoption surveys"]
+  entrepreneur_ledger_filled: true
+cross_reference_flags: ["FLAG-VERDICT-CONFLICT", "FLAG-CROIC-BASIS", "FLAG-SESSIONM-BRIDGE", "FLAG-KPMG-OVERDUE", "FLAG-LEDGER-PROBABILITIES"]
+publish_candidate: false

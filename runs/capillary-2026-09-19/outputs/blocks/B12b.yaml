@@ -1,0 +1,58 @@
+stage: B12b
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: "claude-opus-5"
+status: complete
+independent_flags_found: 25
+caught: 6
+partially_caught: 7
+missed:
+  - {severity: "MAJOR", item: "Large healthcare customer contradiction: Q3 FY26 top-5 payer member base +50% with CY26 revenue bump vs Q1 FY27 largest (healthcare) customer did not grow, NRR 111% vs 116% ex it; never reconciled, identity unconfirmed", anchor: "Q3 FY26 Aneesh [p10-11] L432-449; Q1 FY27 Aneesh [p4] L166-167, [p18] L744-745; Anant [p21] L870"}
+  - {severity: "MAJOR", item: "SessionM acquired base restated from $35M business / 40+ logos (Q4) to $32M ARR / 45-odd customers (Q1) without comment", anchor: "Q4 FY26 Aneesh [p5] L203, [p11] L468; Q1 FY27 Aneesh [p7] L266-269, [p9] L364"}
+  - {severity: "MAJOR", item: "Gross margin statements contradict: Capillary platform 69-70% (Q3) vs organic >75% consistently for last few quarters (Q1); B05 says margin numbers repeated identically", anchor: "Q3 FY26 Aneesh [p6] L245, [p13] L558; Q1 FY27 Aneesh [p5] L195-198"}
+  - {severity: "MINOR", item: "Margin trajectory guide declined on two consecutive calls (steady-state range given)", anchor: "Q3 FY26 Aneesh [p15] L652; Q4 FY26 Anant [p11] L456-459"}
+  - {severity: "MINOR", item: "Tax narrative shifts each quarter (tax expense started / losses keep it negative / one-time DTL)", anchor: "Q3 FY26 [p8] L341-343; Q4 FY26 [p10] L418-420; Q1 FY27 [p8] L311"}
+  - {severity: "MINOR", item: "ROCE about 3% volunteered, reframed as cash ROIC 22%", anchor: "Q4 FY26 Anant [p10] L414-416"}
+  - {severity: "MINOR", item: "Management disputes reported FY25 growth (13% 'wrong', ~20% on net basis after gross-to-net accounting change)", anchor: "Q1 FY27 Aneesh [p18] L733-742"}
+  - {severity: "MINOR", item: "Product-mix shares exceed 100% (loyalty ~90, Engage 5-7, Rewards 5-7, AI 4-5); Insights monetisation statements conflict", anchor: "Q4 FY26 [p4] L145-156, [p17] L719; Q1 FY27 [p3] L154-155"}
+  - {severity: "MINOR", item: "UNIECOM NRR 100%+ is ex top-10 client churn, same ex-one-client normalisation Capillary uses; B06 omits qualifier", anchor: "UNIECOM May-2026 Kapil Makhija L517-519; Aug-2026 L557-558"}
+  - {severity: "MINOR", item: "D&A split (acquisition intangibles vs capitalised tech) asked, answered without split", anchor: "Q3 FY26 Rishi/Anant [p11] L452-462"}
+  - {severity: "MINOR", item: "On-call unit/label slips (142% as INR 142 crores; USD as INR million; PAT vs normalised PAT swapped)", anchor: "Q3 FY26 [p9] L363; Q4 FY26 [p11-12] L468, L514; Q1 FY27 [p8] L336-337"}
+  - {severity: "MINOR", item: "Analyst challenge: headcount flat but costs growing near revenue; answered by US sales ramp", anchor: "Q4 FY26 Bharat Gulati/Aneesh [p15] L613-629"}
+pipeline_flags_not_supported:
+  - "B06 2E / risks_peers_raise: build-it-yourself (vibe-coding) AI risk 'not named as a risk category anywhere in Capillary's own concalls' - raised and rebutted on Q1 FY27 call (Achint [p17-18] L694-717; Chintan/Anant [p21] L888-906)"
+promise_delivery_spot_checks: {checked: 5, confirmed: 3, wrong: 2}
+credibility_grade_concur: "lower (B- to C+): direction and playbook consistent, but aiRA size, SessionM ARR, platform gross margin and organic growth moved between calls unacknowledged, and ACV/NRR re-based by excluding one customer; 3-quarter record"
+findings:
+  - {severity: "MAJOR", location: "B05 1B guidance row, 4A", claimed: "full-year organic growth 20-23% incl ~6% currency; Q1 organic +17%", source_truth: "Aneesh final: 23% incl ~6% FX = ~17% organic (Q1 FY27 [p18] L742-747); analyst ~11% Q1 organic (L727-731); FY27 plan organic ~Rs 673 Cr vs FY26 acquisition-linked Rs 80-100 Cr of 735 implies +3-6% [INFERENCE] (Q1 [p11] L464-469; Q4 [p11] L463-465)", note: "organic growth rate unresolved; separating observation = H1 FY27 constant-currency organic revenue"}
+  - {severity: "MAJOR", location: "B05 3B/3D", claimed: "healthcare member step-up (Q3) and flat large account (Q1) cited separately", source_truth: "Q3 FY26 [p10-11] L432-449 vs Q1 FY27 [p4] L166-167, [p18] L744-745", note: "contradiction not linked or flagged; identity of account unconfirmed"}
+  - {severity: "MAJOR", location: "B05 1C, 2A aiRA", claimed: "quantification rising each quarter", source_truth: "Q4: few million $ and 4-5% of revenues from AI stack, not all live (Q4 [p4] L155, [p17] L719-720); Q1: $2-2.5M run-rate, <10 paying (Q1 [p10] L393, [p19] L782, [p6] L239-240)", note: "sizing regressed; Q4 4-5% of Rs 734 Cr = Rs 29-37 Cr vs ~Rs 21-28 Cr implied by management's own Rs17Cr=$1.5-2M pairing [INFERENCE]"}
+  - {severity: "MAJOR", location: "B05 3D", claimed: "SessionM $32m ARR retained, no surprises", source_truth: "Q4 FY26: $35 million business, 40 plus logos ([p5] L203)", note: "restatement not caught; benign reading = revenue vs ARR basis"}
+  - {severity: "MAJOR", location: "B05 1C, 2C", claimed: "$20m gross / Rs 17 Cr net after debt true-up; transparency positive", source_truth: "Anant: adjusted for net debt items; Aneesh: no debt, debt-free entities (Q1 FY27 [p22] L911-921)", note: "~$18M non-debt adjustment unexplained; payback claim rests on Rs 17 Cr ([p7] L279-285)"}
+  - {severity: "MAJOR", location: "B05 4D", claimed: "Kognitiv indemnity income = one of recurring normalisations, Low", source_truth: "churn indemnity Rs 25 Cr triggered as seller failed agreed commitments (Q4 FY26 Anant [p9-10] L396-399); inorganic NRR 96% to 94%", note: "acquired-book retention signal missed"}
+  - {severity: "MAJOR", location: "B05 2C", claimed: "margin playbook numbers repeated identically across all three calls", source_truth: "platform GM 69-70% (Q3 [p6] L245) vs organic >75% for last few quarters (Q1 [p5] L197-198)", note: "direct input to 26.2 margin bridge"}
+  - {severity: "MAJOR", location: "B05 4A trigger 6, 1B", claimed: "new ACV +75% ex one account; FY27 30-40% more than FY26 Rs 121 Cr", source_truth: "FY26 ACV Rs 121 Cr similar to LY (Q4 [p9] L390-391); +75% only ex one customer (Q1 [p8] L326-330); 30-40% guide base unstated (Q1 [p23] L944-946)", note: "selective base exclusion not flagged; Rs 121 Cr anchor not in transcript"}
+  - {severity: "MAJOR", location: "B06 2E, risks_peers_raise", claimed: "vibe-coding/build-it-yourself risk not named anywhere in Capillary concalls", source_truth: "Q1 FY27 Achint/Aneesh [p17-18] L694-717; Chintan/Anant [p21] L888-906", note: "NOT SUPPORTED"}
+  - {severity: "MINOR", location: "B05 timeline_slippages", claimed: "Kognitiv slippage only", source_truth: "SessionM upgrades 2-3 years, not starting till end of year (Q1 [p9] L359-362); generic cycle 12-18 to 18-24 months (Q4 [p6] L248-250; Q1 [p11] L454-455)", note: "partial capture"}
+  - {severity: "MINOR", location: "B05 2A Q1 margin softness row", claimed: "delivered, better than guided", source_truth: "adj EBITDA margin ~19% Q4 FY26 (Q4 [p6] L250-251) to 17% Q1 FY27 (Q1 [p8] L316)", note: "guided softness occurred; YoY base misapplied"}
+  - {severity: "MINOR", location: "B05 2A row, 4D flag OCF/EBITDA", claimed: "missed / never reconciled", source_truth: "Q4 FY26 Anant: bill and collect upfront in growing business ([p10] L409-412); Q3 105-110% was a norm, not a promise", note: "OVERSTATED"}
+  - {severity: "MINOR", location: "B05 2A SessionM row", claimed: "delivered, ahead of schedule", source_truth: "break-even was the Y1 promise (Q4 [p12] L497-501); evidence is Rs 5-6 Cr cash in 2 months (Q1 [p7] L270-273)", note: "cash not EBITDA in upfront-billing model"}
+  - {severity: "MINOR", location: "B06 flag 1, Q6", claimed: "Capillary less candid on AI risk than peers", source_truth: "Q3 FY26 Aneesh names disrupted segments, SMB, seat-based pricing ([p9-10] L387-422)", note: "OVERSTATED"}
+  - {severity: "MINOR", location: "B06 Q4, flag 3", claimed: "INTELLECT playbook lands at single-digit margin, not 65-75%", source_truth: "INTELLECT single-digit is operating margin (Feb-2026 L619-620); Capillary 65-75% is gross, 45% contribution (Q4 [p12] L511)", note: "basis mismatch"}
+  - {severity: "MINOR", location: "B06 2E NEWGEN Qatar", claimed: "volunteered on-call", source_truth: "raised by analyst Sanjay Gupta (NEWGEN Nov-2025 L621-625)", note: "OVERSTATED"}
+  - {severity: "MINOR", location: "B06 Q2", claimed: "UNIECOM NRR 100%+", source_truth: "above 100% excluding churn of top-10 client (UNIECOM May-2026 L517-519)", note: "qualifier omitted; parallels Capillary ex-one-customer NRR"}
+  - {severity: "MINOR", location: "B05 absent", claimed: "", source_truth: "margin-guide refusals Q3 [p15] L652, Q4 [p11] L456-459", note: "item 11"}
+  - {severity: "MINOR", location: "B05 absent", claimed: "", source_truth: "tax narrative Q3 [p8] L341-343; Q4 [p10] L418-420; Q1 [p8] L311", note: "item 12"}
+  - {severity: "MINOR", location: "B05 absent", claimed: "", source_truth: "ROCE ~3% / CROIC 22% Q4 [p10] L414-416", note: "item 13"}
+  - {severity: "MINOR", location: "B05 absent", claimed: "", source_truth: "FY25 growth disputed, gross-to-net Q1 [p18] L733-742", note: "item 14"}
+  - {severity: "MINOR", location: "B05 absent", claimed: "", source_truth: "mix >100% Q4 [p4] L145-156, [p17] L719", note: "item 15"}
+  - {severity: "MINOR", location: "B05 absent", claimed: "", source_truth: "D&A split unanswered Q3 [p11] L452-462", note: "item 22"}
+  - {severity: "MINOR", location: "B05 absent", claimed: "", source_truth: "unit/label slips Q3 L363; Q4 L468, L514; Q1 L336-337", note: "item 23"}
+  - {severity: "MINOR", location: "B05 absent", claimed: "", source_truth: "headcount vs cost challenge Q4 [p15] L613-629", note: "item 24"}
+critical_count: 0
+major_count: 9
+minor_count: 16
+material_found: 10
+material_caught: 7
+acceptance_rate: 70
+coverage_basis: "10 material (0 CRITICAL, 10 MAJOR) of 25 listed; material: 1 caught, 6 partially caught (counted as caught per rubric 'found but under-weighted or misclassified'), 3 missed = 7/10. Strict alternative (only partials the pipeline flagged as a concern: #3, #7, #9) = 4/10 = 40%. 3 company transcripts read in full; 12 peer transcripts searched; INTELLECT May/Aug .txt are one-word-per-line, token search only."

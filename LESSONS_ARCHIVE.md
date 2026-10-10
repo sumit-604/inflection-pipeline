@@ -1043,3 +1043,60 @@ OR-14 re-derivation (PR #193): SYSTANGO, SHYAMMETL, MANINDS ruled Small on
 2026-10-04 (PR #201). AIMTRON and ASIANENE: not re-derived; operator ruling
 2026-10-04 (standing ruling: framework rulings apply forward; closed names keep
 their record as of the run that produced it). Both stay CONCERN, Small.
+
+## 2026-09-19 — CAPILLARY (Capillary Technologies India) — /step1 intake, phase 1 to Halt 1
+
+Run: runs/capillary-2026-09-19, branch run/capillary-2026-09-19 (git worktree
+.claude/worktrees/capillary). Peers NEWGEN, UNIECOM, INTELLECT. Gate PROCEED
+WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage).
+- Concurrency: another session was using the shared tools/collector/companies.txt
+  (KISSHT) in the main tree. Ran a private collector copy with REPO_ROOT patched
+  to the worktree. The shared companies.txt was left untouched.
+- Machine memory pressure (13-200 MB free of 6 GB with several sessions live):
+  git worktree add failed once with a malloc error reported as a corrupt pack
+  (the object was intact); a low packedGitWindowSize/Limit retry worked. The
+  first collector pass failed to launch Chromium for the main company only.
+- Collector clears _download/ at exit; deleting inputs/ to re-classify forced
+  a full re-download. Re-run the collector, never hand-reset its staging.
+- Peer swap: RAMCOSYS's newest screener transcripts were 2022-2024; replaced by
+  INTELLECT before classification.
+- fetch_bse_announcements (open action, PR #167): found 6 of 38 material filings
+  again. 60-day windows plus AttachHis filled the set by hand; six SAST /
+  secretarial filings were image-only and rendered to PNG with pymupdf.
+- Final RHP on capillarytech.com returns HTTP 403 to scripted download; the
+  SEBI-hosted UDRHP-I (Jun-2025) was used.
+- Orchestrator omitted the peer Data_Sheet paths from the stage-1 task message;
+  stage 1 scored M2/M5/M9 as "no peer data" and was resumed to rescore.
+- 09b wrote the DRAFT marker with an em-dash, failing the exact-string check;
+  fixed by resuming the same agent (31 dashes replaced).
+- Verifier B redflag_coverage basis again split: 70 rubric vs 40 strict (strict
+  would force REWORK). Surfaced to the operator, not resolved.
+- DOWNSHIFT FAILURE: stage 0 ran inline on the Opus orchestrator (no haiku
+  stage-0 agent exists). Structural, not a routing slip.
+
+## 2026-10-10 · CAPILLARY /fttcp (draft 09-Oct, sign-off 10-Oct)
+- Handover dossier did not exist as a claude.ai file; Claude Code transcribed
+  Notion, then Section 6 arrived as a ferry block next day. Two-step dossier.
+- Draft Pillar 1 used ROCE on capital employed incl. IPO cash (5.2%); operator
+  ruled operating ROCE on invested capital ex cash as a STANDING rule. OPEN:
+  that rule needs a framework amendment PR (CLAUDE.md OPERATOR RULINGS and
+  section-1b chunk 01), on its own branch, not this run branch.
+- Correction 36: draft finance-income figure Rs 18.3 Cr vs deck Rs 14.9 Cr.
+- Exit P/E 30x is an operator override 78% above the pillar destination
+  (16.9x); Step 1C peer table still pending. A20.9 binds.
+- Cross-family grader skipped (no Gemini key). Python alias on PATH broke
+  mid-session; used the full interpreter path.
+
+## 2026-10-10 · CAPILLARY /finalize (runs/capillary-2026-09-19)
+| # | What went wrong or was corrected | Stage | File or rule | Status |
+|---|---|---|---|---|
+| 1 | Skill chunk drops "that sets the entry zone" from A20.5; Step 1C threshold printed 24.0x instead of 18.7x (Verifier C F-V1, MAJOR) | 11 valuation | .claude/skills/section-1b/references/15-cost-of-capital-relative-valuation.md l.92; Section 1B v3.9 A20.5 | OPEN |
+| 2 | Chunk 06 drops "downward" from Master 4G; chunk 08 l.31 has two conflicting tier-multiple sentences (F-V2, F-V3) | 11 valuation | chunks 06 and 08 | OPEN |
+| 3 | Verdict conflict AVOID (Role 2 Section 7) vs WATCHLIST (RULES Gate 0 below 60) recurs after KISSHT | 14 thesis | Master Role 2 Section 7 vs RULES | OPEN |
+| 4 | Operator override: exit 30x vs pillar 16.8x; Master 4G check fails at 30x and A20.9 binds | 11 valuation | deliberation O5; Master 4G | OPEN |
+| 5 | Standing operating-ROCE rule (O1) not yet in SKILL.md or CLAUDE.md | 11 valuation | CLAUDE.md OPERATOR RULINGS; chunk 01 | OPEN |
+| 6 | Stage 13 Notion payload omitted price decomposition, A25 ladder, triggers, checklist and expectation ledger; orchestrator copied them in | 13 synthesis | prompts/13-synthesis-pipeline.md (payload spec) | OPEN |
+| 7 | Verifier A ran in phase 1 only; three phase 3 pillar inputs lack OR-32 coverage | 12a verifier A | OR-32 | OPEN |
+| 8 | B14 YAML position_size has no "none" value (F-R2); B10 carried the struck F-G2 cash mechanism (F-V7) | 14 thesis / 10 assembly | .claude/agents/stage-14-thesis.md l.61; prompts/10 | OPEN |
+| 9 | Stage 11 replaced the unratified C.2 probabilities with its own; operator ratification still needed | 11 valuation | A22-23 (KISSHT C2P pattern) | OPEN |
+

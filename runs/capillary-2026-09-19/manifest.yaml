@@ -1,0 +1,16 @@
+company: Capillary Technologies India Ltd
+ticker: CAPILLARY
+cmp: 484.0
+market_cap_cr: 3852.0
+run_date: 2026-09-19
+run_type: full
+listed_date: 2025-11-21
+concalls_available: true
+sector_cap_row: "Platform / SaaS / IT services"   # step1 Step D pick (45x): subscription SaaS (94.5% of Q1 FY27 revenue) sold to enterprise brands. Stage 0 confirms against chunk 05
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, NEWGEN:Profit & Loss, NEWGEN:Quarters, NEWGEN:Balance Sheet, NEWGEN:Cash Flow, NEWGEN:Customization, UNIECOM:Profit & Loss, UNIECOM:Quarters, UNIECOM:Balance Sheet, UNIECOM:Cash Flow, UNIECOM:Customization, INTELLECT:Profit & Loss, INTELLECT:Quarters, INTELLECT:Balance Sheet, INTELLECT:Cash Flow, INTELLECT:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "STEP1 REPAIRS 2026-09-19: (1) Collector ran from a private copy pointed at worktree .claude/worktrees/capillary, because another session was using the shared tools/collector/companies.txt (KISSHT). First pass: main-company Chromium launch failed under memory pressure (13 MB free); full re-run succeeded. (2) Peer RAMCOSYS replaced by INTELLECT: screener's newest RAMCOSYS transcripts date Nov-2022 to May-2024. (3) results/ filled by hand from BSE AttachHis: Q3 FY26 (06-Feb-2026), Q4 FY26 + audited FY26 (06-May-2026), Q1 FY27 (04-Aug-2026). (4) prospectus/: SEBI-hosted UDRHP-I (Jun-2025, 581pp). The final RHP/Prospectus (Nov-2025) is on capillarytech.com but returns HTTP 403 to scripted download: gap, operator can push it. (5) shareholding/: BSE Reg 31 summaries Dec-2025, Mar-2026, Jun-2026 as text; FII/DII split is not in the summary. (6) announcements/: 38 BSE Reg 30/SAST filings Nov-2025..Sep-2026 (collector's 60-day-window fetch found 6); six scanned SAST/secretarial filings rendered to announcements/page-images/. (7) presentation/: Aug-2026 (2 decks), May-2026 65pp, SessionM acquisition deck (Feb-2026); older Feb/May decks and FY26 BRSR in other/. (8) No credit rating found on web search: rating/ empty. (9) screener P&L/BS/CF/Quarters sheets empty; Data_Sheet holds raw values. (10) Every PDF pre-extracted to page-marked .txt beside it. Collected from screener.in by collect_to_repo.py v3."

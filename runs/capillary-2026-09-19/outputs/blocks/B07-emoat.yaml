@@ -1,0 +1,53 @@
+stage: B07-emoat
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no credit rating exists (company obtained none)"
+  - "final RHP absent (UDRHP-I held)"
+  - "FII/DII split not in the BSE summary"
+  - "screener P&L/BS/CF/Quarters CSVs empty (Data_Sheet.csv used instead)"
+  - "research empty"
+  - "no R&D/technology spend disclosure found in AR or screener data"
+  - "FY26 top-10/top-5 customer concentration NOT FOUND at group level (AR Note 36(iii) incomplete; only stale FY25 UDRHP-I figure of 58.71% exists)"
+flags:
+  - type: FLAG-EMOAT-CONCENTRATION
+    reason: "The scan's second-strongest row (C1, customer ecosystem) sits directly above an unresolved risk: FY26 top-10 customer concentration is undisclosed and was never named on any of three concalls (B05 red flag), against a stale FY25 figure of 58.71%."
+  - type: FLAG-EMOAT-COPYABLE-MOAT
+    reason: "H1 (industry consolidation beneficiary), the highest-scoring row and the company's own core investment thesis, fails the I2 cannibalization-barrier test: a well-capitalised competitor could run the same fragmented-market roll-up without destroying anything of its own. This is an execution lead, not a structural barrier."
+  - type: FLAG-EMOAT-CASH-CONVERSION
+    reason: "F2 (execution moat) is capped at Moderate by B05's unreconciled OCF/adjusted-EBITDA ratio (~140% vs a stated 105-110% sustainable range), carried forward from the concall stage."
+em_score: 24
+em_classification: "MODEST"
+active_categories:
+  - {id: "C1", name: "Customer ecosystem / embedded relationships", strength: "Strong", evidence_type: "documented", time_to_materialise: "active"}
+  - {id: "H1", name: "Industry consolidation beneficiary", strength: "Strong", evidence_type: "management_claim", time_to_materialise: "ongoing"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "documented", time_to_materialise: "active"}
+  - {id: "A3", name: "Process innovation", strength: "Moderate", evidence_type: "management_claim", time_to_materialise: "12-24 months"}
+  - {id: "D1", name: "Proprietary data asset", strength: "Moderate", evidence_type: "management_claim", time_to_materialise: "active/compounding"}
+  - {id: "F2", name: "Execution moat", strength: "Moderate", evidence_type: "documented", time_to_materialise: "ongoing"}
+evidence_mix: {documented: 18, claim: 14, inference: 2}
+completionist_recount: "recount performed: 18 documented items across 6 categories (B2 four named enterprise security certifications; C1 one signed USD 20mn five-year contract; H1 five filed M&A completion dates; H2 one AR-disclosed partnership count; F2 filed quarterly revenue underlying the 15-consecutive-quarter growth claim; general company profile: three named analyst-leader placements, one CRISIL monitoring report, uptime metric, FY26 capex figure). Sparse 6-category read confirmed, no inflation detected."
+catalysts_12m:
+  - {catalyst: "Kognitiv first customer live on Capillary platform", window: "stated 01-Sep-2026", evidence_type: "management_claim", anchor: "Q1 FY27 concall / Inv. Pres. slide 27"}
+  - {catalyst: "aiRA rupee-revenue disclosure vs 5-10% of FY27 revenue target", window: "FY27 quarterly cycle", evidence_type: "management_claim", anchor: "Q1 FY27 concall; B05 guidance"}
+  - {catalyst: "SessionM contribution-margin ramp toward 35-45%", window: "quarterly through FY27-28", evidence_type: "management_claim", anchor: "Q4 FY26 / Q1 FY27 concalls"}
+  - {catalyst: "KPMG forensic audit final report and insurance settlement on Czech cyber fraud", window: "H2 FY27 (5-8 months from Jul-2026)", evidence_type: "documented", anchor: "Reg 30 filings 06-Jul-2026, 31-Jul-2026; Q1 FY27 Inv. Pres. slide 21"}
+  - {catalyst: "FY26 top-10 customer concentration disclosure", window: "next AR (FY27) or a quarterly filing", evidence_type: "documented_pending", anchor: "AR Note 36(iii), currently incomplete"}
+capex_embedded_growth_pct: 0
+optionality_register:
+  - {optionality: "aiRA scales from ~$2-2.5m ARR pilot to 5-10% of FY27 revenue", converting_evidence: "disclosed rupee-revenue figure for aiRA, consistent basis quarter to quarter", first_appears: "quarterly investor presentation / concall", window: "FY27"}
+  - {optionality: "Vertical Agentic Solutions (AASv) ship to named customers", converting_evidence: "first customer go-live announcement or Reg 30 product-launch filing", first_appears: "investor presentation or Reg 30 filing", window: "FY26-28"}
+  - {optionality: "aiRA harness/orchestration architecture becomes a filed patent", converting_evidence: "patent application with traceable filing number on ipindia.gov.in/Espacenet", first_appears: "AR IP note or Reg 30 filing", window: "unclear, no filing activity observed"}
+  - {optionality: "Talent-asymmetry claim converts from narrative to structural (I1)", converting_evidence: "named technical hire with unusual pedigree and disclosed above-market pay in AR remuneration annexure", first_appears: "AR KMP/remuneration note", window: "2-3 years"}
+  - {optionality: "Kognitiv/SessionM migration reaches guided steady state (~Rs398cr FY30 Adj. EBITDA from these two deals)", converting_evidence: "disclosed cohort-level post-migration profitability matching guided 60-65% GM / 30-35% FCF margin", first_appears: "AR MD&A or investor presentation", window: "CY2028-2029"}
+  - {optionality: "FY26 top-10/top-5 customer concentration resolved", converting_evidence: "AR or filing discloses actual FY26 top-10 percentage, filling incomplete Note 36(iii)", first_appears: "next AR (FY27) or a quarterly filing", window: "next annual cycle"}
+  - {optionality: "Czech cyber-fraud forensic audit and insurance recovery close cleanly", converting_evidence: "KPMG final report and insurer settlement amount disclosed", first_appears: "Reg 30 filing", window: "H2 FY27"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Backward AVERAGE (Gate 0, 68/160, real deal-breakers from FY21-24 losses) plus forward MODEST (24/92, boundary of the band) combine to AVERAGE, not HIGH POTENTIAL: the emerging score is dominated by H1, the company's own already-disclosed M&A thesis, not an unrecognised inflection."
+top_moat_risks:
+  - "H1 (the highest-scoring row) fails the I2 cannibalization-barrier test: a well-capitalised competitor can run the same fragmented-market roll-up without destroying anything of its own, making this an execution lead rather than a structural barrier."
+  - "C1 (customer ecosystem) sits above an unresolved and undisclosed FY26 top-10 customer concentration figure, never named on any of three concalls."
+  - "Strip the two Strong rows (C1, H1) and the adjusted score falls from 24.0 to approximately 12.4, the boundary of NO MEANINGFUL EMERGING MOAT."
+analyst_note: "The scan is top-heavy: two Strong rows (C1 signed cross-sell contract, H1 M&A roll-up) and four Moderate rows (B2 certifications, A3 process innovation, D1 data scale, F2 execution) carry the entire 24.0 total; every other category is None or Weak, and G2 (working capital) is contrary evidence, not absent evidence. R&D spend, patent filings, and FY26 customer concentration are all genuinely undisclosed (not estimated) gaps that would move several rows if filled. I1 and I2 both correctly score 0 under the rubric's own design; this is not a completionist failure, it is the honest answer for a young, recently-listed SaaS roll-up whose moat story is still mostly the M&A playbook itself."

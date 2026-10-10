@@ -1,0 +1,72 @@
+stage: B04-bizmodel
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - "no credit rating exists (company obtained none)"
+  - "final RHP absent (UDRHP-I held)"
+  - "FII/DII split not in the BSE summary"
+  - "screener sheets empty"
+  - "research empty"
+  - "no named product competitor found in AR or any investor presentation reviewed; competitive positioning map (2B) not buildable against real named rivals"
+  - "revenue-per-unit and cost-per-unit at individual-customer level NOT FOUND; no average ARR-per-customer figure disclosed"
+  - "FY26 top-10/top-5 customer concentration NOT FOUND at group level; AR Note 36(iii) is grammatically incomplete (confirmed by B02 and B03); only stale FY25 UDRHP-I figure (58.71%) exists"
+flags: []
+business_type: "platform"
+revenue_streams:
+  - {name: "Subscription (retainership and other services)", type: "recurring SaaS subscription", pct_of_revenue: 89.3, predictability: "H"}
+  - {name: "Installation revenue", type: "one-time implementation fee", pct_of_revenue: 9.8, predictability: "M"}
+  - {name: "Campaign services (agent basis)", type: "pass-through/agency fee", pct_of_revenue: 0.9, predictability: "L"}
+asset_intensity: "light"
+wc_intensity: "low"
+pricing_power: "moderate"
+cyclicality: "secular-growth"
+moats_present:
+  - {moat: "switching_costs", durability: "high"}
+  - {moat: "intangible_assets_certifications", durability: "medium-high"}
+  - {moat: "cost_advantage_ai_led_delivery", durability: "medium"}
+  - {moat: "process_power_ma_playbook", durability: "medium"}
+  - {moat: "counter_positioning_aira_usage_pricing", durability: "medium-low, unproven"}
+valuation_methods:
+  primary: {method: "EV/Revenue or EV/ARR", why: "high-growth SaaS, margin not yet mature, ARR/organic-inorganic split and NRR separately disclosed"}
+  secondary: {method: "DCF", why: "cross-check once forward revenue basis and margin bridge are built; organic growth (42% CAGR FY23-26) and margin trajectory both independently evidenced"}
+  tertiary: {method: "EV/EBITDA (normalised, ex-exceptional items)", why: "usable once organic EBITDA margin stabilises post-SessionM integration; unreliable today given FY26 one-off gain and net tax credit"}
+  not_applicable:
+    - "P/E (FY26 EPS distorted by Rs249.6mn one-off Kognitiv indemnity gain and a net tax credit)"
+    - "SOTP/NAV (single Ind AS 108 CRM-services segment, no divisible units)"
+    - "Asset-based/book value (asset-light, goodwill-heavy balance sheet)"
+    - "Dividend discount (no dividend, reinvestment/M&A-funding phase)"
+irrelevant_ratios:
+  - {ratio: "Inventory turnover/days", why: "no inventory; AR's own ratio table marks it NA (AR p.101)"}
+  - {ratio: "Standalone-entity ROE/ROCE/NPR/RoI", why: "standalone revenue 75.7% related-party via Singapore hub, FY26 transfer-pricing study still open at sign-off (AR Note 20/32, p.155-168)"}
+  - {ratio: "Reported undecomposed total revenue growth", why: "blends organic growth (42% CAGR) with acquisition-driven ARR (Kognitiv, SessionM); Company itself tracks organic vs inorganic separately (AR p.78-79)"}
+  - {ratio: "Headline FY26 EBITDA margin and PAT growth (unadjusted)", why: "inflated by Rs249.6mn one-off Kognitiv indemnity gain (49% of PBT) plus a net tax credit, not expense (AR p.101, Note 28 p.235)"}
+  - {ratio: "Debt/leverage ratios", why: "net-cash post-IPO, Debt-Equity 0.04x FY26; not where current risk sits (AR p.101)"}
+must_track_metrics:
+  - {metric: "Organic Net Revenue Retention", healthy: ">110%", red_flag: "<100%"}
+  - {metric: "Organic revenue growth rate", healthy: "20-40%+", red_flag: "sustained <15%"}
+  - {metric: "Organic/operating EBITDA margin ex-exceptional items", healthy: "rising toward 25%+", red_flag: "flat or declining once one-offs stripped"}
+  - {metric: "CAC as % of new ACV / payback period", healthy: "payback <18 months", red_flag: "payback >24 months"}
+  - {metric: "Return on Capital Employed", healthy: ">15%", red_flag: "sustained <10%"}
+unit_economics:
+  unit: "one enterprise customer subscription contract, priced on members/transactions, not seats"
+  revenue_per_unit: "NOT FOUND (no disclosed average ARR-per-customer figure)"
+  margin_per_unit: "subscription gross margin 67.2% FY26 at platform steady state, vs ~30% gross margin on newly acquired/as-acquired books (AR p.79, p.99)"
+  key_lever: "migrating acquired customer books from ~30% to 65-70% gross margin on the native platform, plus NRR-driven expansion revenue at higher incremental margin (AR p.79-80)"
+first_deterioration_signals:
+  - {risk: "customer concentration", first_signal: "top-5/top-10 revenue % rising in quarterly filings, or a Reg 30 non-renewal disclosure"}
+  - {risk: "one-off-inflated earnings", first_signal: "exceptional items/other income line recurring while headline EBITDA margin held flat"}
+  - {risk: "goodwill impairment", first_signal: "KAM commentary or WACC/growth assumption softening in next AR"}
+  - {risk: "M&A integration failure", first_signal: "recurring exceptional provisions tied to acquired entities (e.g. repeat cyber-fraud-type events)"}
+  - {risk: "related-party/transfer-pricing exposure", first_signal: "standalone-vs-consolidated P&L divergence widening, or a disclosed transfer-pricing adjustment"}
+mgmt_questions:
+  - "What is the actual FY26 top-10 customer concentration percentage, and what should Note 36(iii)'s incomplete sentence have said?"
+  - "Is the FY26 transfer-pricing study for the Capillary Pte Ltd (Singapore) related-party revenue now complete, and did it require an adjustment?"
+  - "What is aiRA's actual revenue or ARR contribution today, in rupees, not usage counts?"
+  - "What is the current status of the Czech-subsidiary cyber-fraud insurance claim, and is the Rs33.4 Cr exceptional loss final?"
+  - "Is the SessionM integration tracking to the 'profitable within two months' and USD32m ARR claims made at signing?"
+  - "Now that Peak XV has exited part of CTIPL, what is the remaining PE lock-in schedule, and is further promoter-entity selling planned?"
+  - "Why does the audit-trail/backup-location IFC exception remain open a year after a cyber-fraud event at an overseas subsidiary?"
+one_line_verdict: "Sticky-ledger SaaS roll-up: real margin engine, concentration and earnings-quality unresolved."
+analyst_note: "Sector cap row (Platform/SaaS/IT services, 45x) is CONFIRMED by the decoded model: 89.3% recurring subscription revenue, single Ind AS 108 CRM-services segment, asset-light goodwill-heavy balance sheet, AI-native roadmap. No named product competitor exists in any document reviewed (AR or four presentations); Forrester/Everest/QKS rank Capillary a Leader but their comparison sets are not reproduced in the filed corpus, so Section 2B could not name real rivals. WC intensity is labelled 'low' on absolute days (52.8 FY26) but the trend (24 to 52.8, FY23-FY26, per B01) is deteriorating and should be read alongside the flat classification. Cyclicality is called secular-growth on the recurring-subscription structure; a generic enterprise-IT-budget cyclicality risk exists but is not company-specifically evidenced in this corpus."

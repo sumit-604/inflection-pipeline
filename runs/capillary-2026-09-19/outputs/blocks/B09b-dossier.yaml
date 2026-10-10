@@ -1,0 +1,54 @@
+stage: B09b-dossier
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Final RHP / Prospectus (Nov-2025, final offer size Rs 877.5 Cr, band Rs 549-577)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "FII/DII split within institutional shareholding"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "screener P&L / Balance Sheet / Cash Flow / Quarters export sheets (CAPILLARY + 3 peers)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Sell-side research / broker coverage notes"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "CRM services (single Ind AS 108 segment)"
+    archetype: "fits no known archetype cleanly; nearest two are Platform/network (delivery model, but network effects absent) and Outsourcing partner/CDMO-EMS-IT services (client concentration, contract stickiness); the M&A roll-up growth engine is not named by the library"
+transition:
+  - line: "CRM services (single Ind AS 108 segment)"
+    from_tier: "between R1 and R2: real switching-cost pricing power but ROCE never cleared 10% in six disclosed years (median -1.83%, FY23-FY26)"
+    to_tier: "R3 VALUE-ADDED/SPEC'D SUPPLIER, with a stated ambition toward R4 FRANCHISE/SHARE-OF-WALLET LEADER (25-30%+ steady-state EBITDA margin, NRR-driven expansion above 110%)"
+    engine: "(1) migrating each acquired customer book from ~30% gross margin as-acquired to Capillary's own 65-70% steady-state gross margin over 3-4 years; (2) operating leverage, core cost base growing ~14% against 23% FY26 revenue growth, credited to AI-led delivery replacing agency-model headcount"
+    proof_gate: "H1 FY27 organic revenue growth at constant currency >=15% (Q2 FY27 results, ~Nov-2026), together with ROCE above 10% for two consecutive reporting periods"
+    recognition_gap: "OPEN: does current market pricing already reflect the TO-state margin/ROCE, or still price the FROM-state's sub-10% ROCE record. Stage 11 resolves via the Section 1B destination-PE gap; no number or conclusion stated here."
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Two consecutive quarters where organic EBITDA margin ex-exceptional fails to rise toward the 25-30% steady-state band AND either SessionM or Kognitiv contribution margin stalls below 15% by Q4 FY27"
+dominant_variables:
+  - "Organic revenue growth at constant currency (UNRESOLVED: 17% claimed, ~11% analyst reading, 3-6% plan-arithmetic inference)"
+  - "Acquired-book margin migration (SessionM, Kognitiv), both explicitly 'in progress'"
+  - "ROCE (8.82% FY26, best on record, still below the 10% Gate 0 deal-breaker threshold)"
+  - "Organic Net Revenue Retention ex-large-account (114% organic FY26; 111-116% Q1 FY27 depending on one customer's exclusion, identity unconfirmed)"
+business_falsifier: "Goodwill impairment on the Rs 309.58 Cr goodwill balance (24% of consolidated assets, 27.70% WACC, no disclosed sensitivity headroom) or a second cyber-fraud-type integration failure at an acquired entity, either showing the M&A engine destroying rather than creating value on integration"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "3 of 7 externally observable"
+  single_point_failure: "none - failure requires conjunction, though organic revenue growth is the variable every other reading depends on"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 12
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "281ce41dcbf55ff5ebc8fe2bd7849c9ebde8e072"

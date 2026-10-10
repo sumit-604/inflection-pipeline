@@ -1,0 +1,66 @@
+stage: B03-ardeep
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-sonnet-5
+status: complete
+input_gaps:
+  - no credit rating (none obtained)
+  - final RHP absent (UDRHP-I held)
+  - FII/DII split not in BSE summary
+  - screener P&L/BS/CF/Quarters CSVs empty
+  - research empty
+  - per-director annual attendance % not computable from AR's per-meeting attendance table
+  - independent-director appointment dates (other than Peeyush Ranjan) not in extract
+  - full ₹137.34mn other-income line not reconciled to source at line-item level (~₹33.42mn residual)
+flags:
+  - {type: FLAG-CASH, reason: "FY26 consolidated PAT growth (+294.5%) is 49%-of-PBT driven by a one-off Kognitiv Churn Indemnity exceptional gain (Rs249.60mn) plus a net tax CREDIT (not expense) of Rs12.78mn against a Rs511.10mn PBT in a profitable year; the AR's own EBITDA line (Rs1,065.85mn) includes Rs137.34mn of non-operating other income, inflating the headline margin ~160bps vs an operating-EBITDA read (Rs928.51mn, 12.64%) that reconciles to screener's Rs93 Cr/13% OPM. CFO itself genuinely improved (Rs-462mn to Rs1,499mn, one-off correctly excluded) so this is an earnings-quality, not a cash-quality, flag; carried forward given B01 Gate 0's WC-days deterioration finding."}
+  - {type: FLAG-DISCLOSURE-GAP, reason: "Confirmed via independent re-read: contingent liabilities note (Note 31 standalone/Note 34 consolidated) promises a claims description and supplies none; major-customer >10% sentence (Note 36(iii) consolidated) is grammatically incomplete with no name/amount/Nil; no dedicated capital-commitments note despite Rs979.85mn earmarked from IPO proceeds; forward-contract hedging policy stated with zero notional/MTM disclosed. Same pattern B02 found; independently confirmed against source pages in this stage."}
+  - {type: FLAG-RPT, reason: "Standalone revenue 75.7% related-party (Capillary Pte Ltd, Singapore hub); RP receivables 80.6%, RP payables 81.1% of totals; FY26 transfer-pricing study still in process at report date (6-May-2026 sign-off). Confirmed against Note 20/32 and cross-checked against the standalone P&L (PBT Rs28.90mn on Rs2,118.90mn income, nil tax) in this stage's own Phase 3 read."}
+  - {type: FLAG-GOVERNANCE-COMMITTEE, reason: "Independent Chairperson Neelam Dhawan holds Chairperson of 3 + Member of 9 = 12 Audit/Stakeholders Relationship Committee positions in OTHER public companies alone (Corporate Governance Report p.52, scope confirmed by AGM Notice Annexure-A p.268), at or above the SEBI LODR Reg 26(1) ceiling (10 as member, 5 as chairperson) depending on how chairpersonships count toward the member total. Not flagged as non-compliant by the Secretarial Audit report itself; needs independent SEBI-registry verification this container cannot perform."}
+phase_verdicts: {p1: "green - clean opinion, clean CARO, one shared audit-trail control exception", p2: "yellow - disclosure-completeness pattern, reconciles with triple-pass 6/10", p3: "yellow - real cash improvement, inflated earnings print (one-off + tax credit + EBITDA presentation)", p4: "yellow - candid on knowns, boilerplate/omits five material risk categories", p5: "yellow - clean except one cross-board committee-load item", p6: "yellow - two quiet-abandonment patterns (aiRA revenue unquantified; standalone entity dependence unstated)", p7_best_fit: "GARP/Turnaround, both WATCHLIST - real organic turnaround but ROCE never cleared 10%"}
+overall_quality: 6
+quality_components: {governance: 6, accounting: 6, balance_sheet: 6, earnings: 5}
+kill_switch_notes:
+  - "Phase 1: would not stop - both audit opinions unmodified, CARO clean at both entity levels; audit-trail exception carried forward with elevated weight given the FY27 cyber-fraud event outside this AR's period"
+  - "Phase 2: would not stop - disclosure-completeness and one presentation-choice issue, not fabrication signals; reconciles with B02's independent 6/10 score"
+  - "Phase 3: would not stop - would insist FY27 reads strip both the exceptional item and normalise the tax rate before extrapolating growth"
+  - "Phase 4: would not stop - would direct that the five omitted risk categories (cyber, goodwill, FX, promoter lock-in, key-person) be added at next filing"
+  - "Phase 5: would not stop - would flag the Chairperson's cross-board committee count for independent SEBI-registry verification"
+  - "Phase 6: would not stop - would carry the aiRA revenue-quantification gap and the standalone-entity dependence into Halt 1 Mental Model discussion"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Cybersecurity / data-breach / operational-technology risk absent from MD&A risk table despite ISO27001/PCI DSS/SOC1&2 certifications prominently touted as a strength", evidence_anchor: "MD&A risk table p.84-85; security certification paragraph MD&A p.85"}
+  - {risk: "Goodwill impairment risk not named in the MD&A risk table despite being a KAM at 24% of consolidated assets tested at 27.70% WACC with no disclosed sensitivity headroom", evidence_anchor: "Note 4 / KAM, Auditor's Report p.180-181"}
+  - {risk: "FX/treasury risk absent from risk table despite a stated 12-currency hedging policy with zero disclosed forward notional/MTM", evidence_anchor: "Note 34(2) per B02; MD&A risk table p.84-85 (absent)"}
+  - {risk: "Promoter/PE lock-in overhang risk not disclosed anywhere in the AR despite CTIPL (49.70% at FY26-end) housing PE-investor participation", evidence_anchor: "Board's Report Section 7, p.34 (CTIPL holding); no lock-in schedule found in extract"}
+  - {risk: "Key-person/founder-dependency risk not named despite the MD&CEO letter and Business Strengths section explicitly crediting founder-led, long-tenured leadership as a competitive strength", evidence_anchor: "MD&A Business Strengths, p.98; MD&CEO letter"}
+guidance_table:
+  - {claim: "Rule of 40 (revenue growth % + EBITDA margin %) target of at least 40", number: "38 achieved in FY26 (~23% growth + 14.6% margin)", timeframe: "ongoing, implied FY27 target", credibility: "High - company discloses its own shortfall rather than rounding up (MD&CEO letter)"}
+  - {claim: "New-acquisition capital allocation gated at 20%+ ROIC", number: ">=20% ROIC", timeframe: "per deal, evaluated over 3-4 year integration window", credibility: "Medium-high - cohort ROIC >20% claimed and evidenced for 3 of 5 completed deals; Kognitiv (FY26 vintage) explicitly marked 'in progress', not yet proven (MD&A M&A track record table, p.80)"}
+  - {claim: "Acquired-book contribution margin turnaround to 40-45% within 3-4 years of acquisition", number: "40-45% CM", timeframe: "3-4 years post-close", credibility: "Medium - evidenced for 3 of 5 deals (Persuade 41.2%, Brierley/Persuade combined 40.4%, Rewards+ 45%); small sample, Kognitiv/SessionM not yet at that stage (MD&A p.80)"}
+monitorables:
+  - {metric: "Consolidated ROCE", threshold: "sustain >10% for two consecutive periods", where: "MD&A Key Financial Ratios table / Note 36", why: "B01 Gate 0 deal-breaker; FY26 8.82% is the best year on record and still below 10% on every calculation basis (Phase 3B)"}
+  - {metric: "PBT/PAT excluding exceptional items and normalised for a statutory tax rate", where: "P&L exceptional-items note, tax reconciliation note", threshold: "organic PBT growth rate once both the one-off gain and the tax-credit effect are stripped", why: "FY26 reported PAT growth (+294.5%) is 49% one-off-driven plus a net tax credit; FY27 will show whether organic earnings growth alone can carry the thesis"}
+  - {metric: "Effective tax rate", threshold: "watch for reversion from a net credit toward a normal ~25-30% statutory rate as DTA/loss carry-forwards are used up", where: "Note 29 (tax reconciliation)", why: "Both FY25 and FY26 show a net tax CREDIT against positive PBT; normalisation will cut future PAT materially even absent any other change"}
+  - {metric: "Goodwill CGU headroom", threshold: "any softening of the 4-10% growth / 4% terminal-growth assumptions at 27.70% WACC", where: "Note 4 impairment note, next AR's KAM", why: "Goodwill is 24% of consolidated assets with no disclosed sensitivity headroom; SessionM will add a further CGU"}
+  - {metric: "FY27 top-10 customer concentration and NRR disclosure completeness", threshold: "whether Note 36(iii) finally names a customer/amount/Nil, and whether NRR/churn is disclosed at group level", where: "FY27 AR notes", why: "LBF3 remains unresolved by the FY26 AR; only geography (USA 55.6%) and the stale FY25 UDRHP figure (58.71%) exist today"}
+  - {metric: "aiRA revenue/ARR contribution", threshold: "any quantified product-line revenue, ARR, or bookings figure for aiRA, versus the current usage-only metrics", where: "FY27 MD&A / investor materials", why: "Phase 6E hedged-retreat finding - the AI-native re-pricing narrative is currently unquantified in P&L terms"}
+  - {metric: "SessionM PPA and Czech cyber-fraud resolution", threshold: "goodwill/intangible split disclosed; insurance recovery quantum against the Rs33.4 Cr Q1 FY27 exceptional loss", where: "FY27 quarterly filings / FY27 AR", why: "LBF1 and LBF2(a) remain open, both post-date this AR"}
+ar_new_downstream_entities:
+  - {name: "Capillary Technologies DMCC", where_in_ar: "Auditor's Report Annexure I (consolidated entity list), p.186-187", entity_type: "step-down subsidiary (Dubai, UAE)"}
+  - {name: "Capillary Technologies (Shanghai) Co. Ltd", where_in_ar: "Auditor's Report Annexure I (consolidated entity list), p.186-187", entity_type: "step-down subsidiary (China)"}
+  - {name: "PT Capillary Technologies Indonesia", where_in_ar: "Auditor's Report Annexure I (consolidated entity list), p.186-187", entity_type: "step-down subsidiary (Indonesia)"}
+  - {name: "Capillary Technologies (Malaysia) Sdn. Bhd.", where_in_ar: "Auditor's Report Annexure I (consolidated entity list), p.186-187", entity_type: "step-down subsidiary (Malaysia)"}
+strengths_top3:
+  - "Genuine operating turnaround: consolidated EBITDA margin from deeply negative (FY22-24) to +14.5% (FY26); organic revenue 42% CAGR FY23-26; CFO swung Rs-462mn to Rs1,499mn with the one-off gain correctly excluded"
+  - "Clean control opinions across the board: unmodified audit and IFC opinions, clean CARO both entity levels, clean secretarial audit, no fraud/whistleblower/SEBI-action findings"
+  - "Unusually candid maiden-AR disclosure: disaggregated organic-vs-inorganic revenue and NRR, self-reported Rule-of-40 shortfall, separately computed Normalized PAT line"
+red_flags_top3:
+  - "ROCE has not cleared 10% in any disclosed year (FY22-26); FY26's 8.82% is the best on record and confirms the B01 Gate 0 deal-breaker directly from this AR's own data"
+  - "FY26 PAT growth is 49%-of-PBT one-off-driven (Kognitiv Churn Indemnity) plus a net tax credit rather than expense in a profitable year - two compounding earnings-quality inflators in the same year"
+  - "Repeating disclosure-completeness gap (contingent liabilities, customer concentration, capital commitments, FX hedge notional) alongside a pre-existing audit-trail/backup-location control exception that reads materially more important given the FY27 cyber-fraud event this AR does not cover"
+best_fit_strategy: "GARP (watchlist) / Turnaround (watchlist)"
+one_line_verdict: "GARP watchlist name: real organic turnaround, ROCE and earnings quality not yet clean."
+analyst_note: "Two corrections to carry into COMPANY MEMORY: (1) 'FY26 other income Rs39 Cr' conflates the P&L other-income line (Rs13.7 Cr) with the separately-reported Rs24.96 Cr exceptional Churn Indemnity gain - they sit on different P&L lines and the exceptional item is stripped from CFO, not other income. (2) The AR's headline 'EBITDA' (Rs106.6 Cr, 14.5%) includes other income; the operating-EBITDA read (Rs92.85 Cr, 12.64%) is what reconciles to screener's Rs93 Cr/13% OPM. Both matter for any FY27 guidance bridge built off FY26 as a base."

@@ -19,6 +19,11 @@ Status: not written by the pipeline (operator rules).
   DCF 16.7x. Hurdle STOP band; expected CAGR 1.3%.
 - Matrix cell: PRICED NARRATIVE (TRAP): proof gate NOT FIRED, recognition gap
   CLOSED (run-rate P/E 81.4x). Devil's advocate WEAKENED BUT ALIVE.
+- SCENARIO REBUILD 2026-10-10 (page 64, operator instruction; file
+  runs/capillary-2026-09-19/outputs/final/scenario-rebuild-page64.md): base FY30
+  EPS Rs 25.73, value Rs 829 at 30x (13.5% CAGR from Rs 566.65); weighted Rs 809;
+  entry Rs 368 to Rs 414 (30x only); U/D 2.35x at CMP; dispersion 80.5% (Small).
+  Stage 11/14/15 figures above predate this rebuild.
 - Notion COMPANIES MASTER page: 3f4bb2b9-d3ab-81e1-928c-e20d99a4204d.
   Payload: runs/capillary-2026-09-19/outputs/final/notion-payload.md.
 

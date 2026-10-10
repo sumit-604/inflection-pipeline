@@ -150,6 +150,8 @@ Step 1C peer set, as corrected by the operator on 10-Oct-2026:
 
 ### 6.5 Scenarios (RULED: operator approved all three on 10-Oct-2026)
 
+SUPERSEDED IN PART (operator instruction 10-Oct-2026, scenario rebuild per page 64): the revenue and margin paths below are replaced by outputs/final/scenario-rebuild-page64.md. Common inputs, weights and every other Section 6 ruling stand. Section 6.6 values are superseded by the same file.
+
 Common inputs: ESOP Rs 14/15/16/17 Cr; D&A Rs 85/90/95/100 Cr (FY27-FY30); finance cost Rs 5 Cr; tax 25%. All figures [INFERENCE].
 
 | Case | Rs Cr | FY27 | FY28 | FY29 | FY30 |

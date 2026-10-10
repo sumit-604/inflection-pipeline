@@ -1086,3 +1086,17 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   (16.9x); Step 1C peer table still pending. A20.9 binds.
 - Cross-family grader skipped (no Gemini key). Python alias on PATH broke
   mid-session; used the full interpreter path.
+
+## 2026-10-10 · CAPILLARY /finalize (runs/capillary-2026-09-19)
+| # | What went wrong or was corrected | Stage | File or rule | Status |
+|---|---|---|---|---|
+| 1 | Skill chunk drops "that sets the entry zone" from A20.5; Step 1C threshold printed 24.0x instead of 18.7x (Verifier C F-V1, MAJOR) | 11 valuation | .claude/skills/section-1b/references/15-cost-of-capital-relative-valuation.md l.92; Section 1B v3.9 A20.5 | OPEN |
+| 2 | Chunk 06 drops "downward" from Master 4G; chunk 08 l.31 has two conflicting tier-multiple sentences (F-V2, F-V3) | 11 valuation | chunks 06 and 08 | OPEN |
+| 3 | Verdict conflict AVOID (Role 2 Section 7) vs WATCHLIST (RULES Gate 0 below 60) recurs after KISSHT | 14 thesis | Master Role 2 Section 7 vs RULES | OPEN |
+| 4 | Operator override: exit 30x vs pillar 16.8x; Master 4G check fails at 30x and A20.9 binds | 11 valuation | deliberation O5; Master 4G | OPEN |
+| 5 | Standing operating-ROCE rule (O1) not yet in SKILL.md or CLAUDE.md | 11 valuation | CLAUDE.md OPERATOR RULINGS; chunk 01 | OPEN |
+| 6 | Stage 13 Notion payload omitted price decomposition, A25 ladder, triggers, checklist and expectation ledger; orchestrator copied them in | 13 synthesis | prompts/13-synthesis-pipeline.md (payload spec) | OPEN |
+| 7 | Verifier A ran in phase 1 only; three phase 3 pillar inputs lack OR-32 coverage | 12a verifier A | OR-32 | OPEN |
+| 8 | B14 YAML position_size has no "none" value (F-R2); B10 carried the struck F-G2 cash mechanism (F-V7) | 14 thesis / 10 assembly | .claude/agents/stage-14-thesis.md l.61; prompts/10 | OPEN |
+| 9 | Stage 11 replaced the unratified C.2 probabilities with its own; operator ratification still needed | 11 valuation | A22-23 (KISSHT C2P pattern) | OPEN |
+

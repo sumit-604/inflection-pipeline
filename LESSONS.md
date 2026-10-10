@@ -37,6 +37,10 @@ apply to names analysed from the ruling date forward; closed names keep their
 record as of the run that produced it.
 
 ## OPEN ACTIONS
+- OPEN (2026-10-10, CAPILLARY, finalize): chunk 15 A20.5 clause, chunk 06/08 text,
+  stage 13 payload spec, stage 14 size enum, O1 operating-ROCE standing rule,
+  AVOID vs WATCHLIST rule conflict [section-1b, prompts]; see LESSONS_ARCHIVE.md
+  2026-10-10 CAPILLARY.
 - 1B cap row: Sugar/Agri cyclical (KCPSUGIND, 20x ad hoc). [sector: Agri
   processing] [archetype: Commodity converter]
 - 1B cap rows: Distribution commodity 18-19x, value-added 25-26x, blended

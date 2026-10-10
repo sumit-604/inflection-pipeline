@@ -4,22 +4,23 @@ Memory to weigh, never anchored evidence. Every number a stage reports comes
 from that run's own inputs, verified against the source PDFs.
 
 ## THESIS (one line)
-Not yet formed. Step-1 intake working question: can acquired ARR (SessionM,
-USD 32 m) plus 17% organic growth lift consolidated EBITDA margin from ~13%
-toward the 23% organic margin, with cash conversion that holds and earnings
-free of one-off other income?
+Not buying CAPILLARY at Rs 566.65: EPS can grow from Rs 6.96 to Rs 21.33 by FY30 on acquired-book margin migration and about 15% revenue compounding, but at the four-pillar destination of 16.8x (ROCE 10.9%, cash 1.15x, EM 24, sector cap 45x) that is Rs 415 (-9.8% CAGR), and even at the operator-approved 30x it is Rs 697 (7.2%; Rs 640 and 4.1% weighted with the DCF). Key risk: the 30x exit itself, since Section 1B and the DCF both land near 17x, plus acquired-book attrition. Cash quality: growth-induced. (B11, /finalize 2026-10-10)
 
 ## DECISION STATUS AND ENTRY ZONE
-Decision Status: blank, ruling pending (Notion, 2026-10-09). No Role 1 has
-run. Halt 1 decision PROCEED (operator, 2026-10-09). FTTCP signed off
-2026-10-10: composite 6/8 (BUY-candidate band), posture RESEARCH / WATCH
-until the proof gate fires at the Q2 FY27 print. Approved exit 30x on
-one-year-forward operating EPS (operator override; pillar 16.9x). Next step
-/finalize (Phase 3). Approximate read at 30x: base end-FY29 about Rs 696
-(7% CAGR); A25 starter price about Rs 444 (T1 + T2 = 75% of price).
-Notion COMPANIES MASTER page: 3f4bb2b9-d3ab-81e1-928c-e20d99a4204d
-(Halt 1 / Phase 2 section, 14 tracker rows linked). CMP Rs 566.65 (NSE close
-09-Oct-2026, operator via Notion).
+As of /finalize 2026-10-10 (run runs/capillary-2026-09-19). Notion Decision
+Status: not written by the pipeline (operator rules).
+- Gate verdict: PROCEED WITH CAVEATS (B13 phase 3).
+- Valuation decision: OPEN. Stage 11 WATCHLIST vs Role 2 AVOID (Section 7:
+  Gate 0 AVERAGE and upside/downside 0.24x). No position at Rs 566.65 either way.
+- Entry range Rs 291.4 to Rs 327.7; A25 starter at Rs 415.2 or below;
+  upside/downside 2x at Rs 386.2; MoS Rs 229.4. Size ceiling Small (dispersion
+  111.7%).
+- Exit 30x forward (operator override); pillar Track 2 16.8x, Track 1 13.1x;
+  DCF 16.7x. Hurdle STOP band; expected CAGR 1.3%.
+- Matrix cell: PRICED NARRATIVE (TRAP): proof gate NOT FIRED, recognition gap
+  CLOSED (run-rate P/E 81.4x). Devil's advocate WEAKENED BUT ALIVE.
+- Notion COMPANIES MASTER page: 3f4bb2b9-d3ab-81e1-928c-e20d99a4204d.
+  Payload: runs/capillary-2026-09-19/outputs/final/notion-payload.md.
 
 ## SPEAR
 Spear: OVERRIDE 2026-09-19 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -82,6 +83,11 @@ Brief: runs/capillary-2026-09-19/step1-business-brief.md
   choice (B04 primary EV/Revenue or EV/ARR, SOTP marked not applicable),
   which stage 10 and stage 11 must not apply.
 - 2026-10-09: Halt 1 decision PROCEED.
+- 2026-10-10 /finalize: open operator rulings listed in
+  runs/capillary-2026-09-19/outputs/final/fttcp-recommendation.md (AVOID vs
+  WATCHLIST; Verifier B basis 70 vs 40; stage 11 ledger probabilities; 30x vs
+  Master 4G; ugliness ARTIFACT vs STRUCTURAL; organic-metric definition for
+  the proof gate).
 - 2026-10-10 (FTTCP gate, dossier Section 6; deliberation file
   outputs/final/fttcp-deliberation.md):
   - STANDING RULE: ROCE is operating ROCE = (adj. EBITDA - ESOP - D&A) /
@@ -113,6 +119,9 @@ Talon.One bundling threat https://app.notion.com/p/3f4bb2b9d3ab816b8506feeb18e5c
 Floor 3 met.
 
 ## ACTIVE TRIPWIRES
+Thesis-broken (B14, 2026-10-10): Any one of: (1) core NRR ex Optum, constant currency, below 105% for two consecutive quarters; (2) Optum repriced by more than 20% or not renewed by Mar-2029, or warrant asset impaired early; (3) SessionM below USD 27m ARR by Q4 FY27 (May-2027) or still at break-even; (4) organic EBITDA margin falling in constant currency; (5) KPMG finding of insider involvement; (6) two consecutive quarters of organic EBITDA margin not rising together with SessionM or Kognitiv contribution margin below 15% by Q4 FY27; time stop: both proof-gate halves (H1 cc organic growth at least 15%; operating ROCE above 10% annualised for two consecutive quarters) not fired by Q2 FY28 results (Nov-2027).
+Falsification metric: H1 FY27 constant-currency organic growth below 15% (Q2 FY27, about Nov-2026).
+
 Operator-confirmed falsifiers, 2026-10-09:
 1. Core NRR excluding Optum, constant currency, below 105% for two quarters.
 2. Optum repriced by more than 20% or not renewed by Mar-2029, or warrant
@@ -143,4 +152,4 @@ Operator-confirmed falsifiers, 2026-10-09:
   development; management grade (operating B, M&A and product claims C).
 
 ## RUN FOLDERS
-- runs/capillary-2026-09-19/
+- runs/capillary-2026-09-19/ (phase 1 2026-09-19; FTTCP 2026-10-09/10; /finalize 2026-10-10)

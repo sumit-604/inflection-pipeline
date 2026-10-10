@@ -57,3 +57,22 @@ Run total (sum of ledger rows with token counts): 3,227,162 tokens.
 | 14 | Role 2 thesis | claude-opus-5-5 | high | n/a | n/a | 369783 | 16m11s | 1 |
 | 15 | Role 3 devil's advocate | claude-opus-5-5 | xhigh | n/a | n/a | 548244 | 38m53s | 1 |
 | 12c | verifier C phase-3 valuation half (parallel with 15) | claude-opus-5-5 | xhigh | n/a | n/a | 416630 | 21m24s | 1 |
+| 13 | final synthesis (phase 3) | claude-opus-5-5 | high | n/a | n/a | 425429 | 16m58s | 1 |
+
+## PHASE 3 CLOSE-OUT SUMMARY
+
+Phase 3 subagent total: 2,493,113 tokens (orchestrator usage not metered).
+
+(a) TOP FIVE BY TOKENS
+1. 15 devil's advocate: 548,244 (22.0%)
+2. 11 valuation: 489,015 (19.6%)
+3. 13 final synthesis: 425,429 (17.1%)
+4. 12c verifier C phase 3: 416,630 (16.7%)
+5. 14 thesis: 369,783 (14.8%)
+
+(b) DOWNSHIFT FAILURES: none (stage 10 ran on claude-sonnet-5-5 per frontmatter).
+
+(c) COST SPIKES: none (no prior phase 3 run for this ticker).
+
+(d) SESSION TOTAL (/cost)
+

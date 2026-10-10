@@ -1,5 +1,7 @@
 # FTTCP draft: Capillary Technologies India Ltd (CAPILLARY)
 
+SUPERSEDED IN PART (10-Oct-2026): operator rulings in dossier Section 6 and outputs/final/fttcp-deliberation.md govern. Changed: ROCE basis (operating), ROCE forward verdict (RECOVERING), composite (6/8), cash (R10 accepted, cap lifted), Pillar 2 (1.15x), exit P/E (30x forward, operator override), line B (option value zero). This file stays as the 09-Oct record.
+
 CMP Rs 566.65 (NSE close 09-Oct-2026, operator via Notion page 3f4bb2b9-d3ab-81e1-928c-e20d99a4204d). Manifest CMP Rs 484.0 (19-Sep-2026) is stale.
 Run folder: runs/capillary-2026-09-19. Draft date: 2026-10-09. Framework: FTTCP v2.3, Section 1B v3.3 to v3.10 via the section-1b skill.
 Mode: REFRESH by rule (companies/CAPILLARY.md exists), with no prior Decision Status, thesis or Role 1. Concall mode: normal (three actual transcripts, Q3 FY26 to Q1 FY27). Not NO-CONCALL MODE.

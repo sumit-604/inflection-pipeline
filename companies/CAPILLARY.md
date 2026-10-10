@@ -10,8 +10,13 @@ toward the 23% organic margin, with cash conversion that holds and earnings
 free of one-off other income?
 
 ## DECISION STATUS AND ENTRY ZONE
-Decision Status: blank, ruling pending (Notion, 2026-10-09). No valuation has
-run. Halt 1 decision PROCEED (operator, 2026-10-09); next step /fttcp.
+Decision Status: blank, ruling pending (Notion, 2026-10-09). No Role 1 has
+run. Halt 1 decision PROCEED (operator, 2026-10-09). FTTCP signed off
+2026-10-10: composite 6/8 (BUY-candidate band), posture RESEARCH / WATCH
+until the proof gate fires at the Q2 FY27 print. Approved exit 30x on
+one-year-forward operating EPS (operator override; pillar 16.9x). Next step
+/finalize (Phase 3). Approximate read at 30x: base end-FY29 about Rs 696
+(7% CAGR); A25 starter price about Rs 444 (T1 + T2 = 75% of price).
 Notion COMPANIES MASTER page: 3f4bb2b9-d3ab-81e1-928c-e20d99a4204d
 (Halt 1 / Phase 2 section, 14 tracker rows linked). CMP Rs 566.65 (NSE close
 09-Oct-2026, operator via Notion).
@@ -58,7 +63,7 @@ Brief: runs/capillary-2026-09-19/step1-business-brief.md
     Contract end by FY29 is a dated bear event.
   - aiRA: no line; speculative tier (T3) only.
   - CONVERTER test: NON-CONVERTER, both lines.
-  - NOT YET RECORDED HERE: the Option Resolution Calendar text; FROM/TO rung;
+  - NOT YET RECORDED HERE: FROM/TO rung;
     engine; proof gate; ugliness verdict; transition and business falsifiers
     as template fields (the five falsifiers below are operator-confirmed).
 - Halt 1 decision (KILL/SHALLOW/PROCEED): 2026-10-09 PROCEED (operator: "My
@@ -77,6 +82,25 @@ Brief: runs/capillary-2026-09-19/step1-business-brief.md
   choice (B04 primary EV/Revenue or EV/ARR, SOTP marked not applicable),
   which stage 10 and stage 11 must not apply.
 - 2026-10-09: Halt 1 decision PROCEED.
+- 2026-10-10 (FTTCP gate, dossier Section 6; deliberation file
+  outputs/final/fttcp-deliberation.md):
+  - STANDING RULE: ROCE is operating ROCE = (adj. EBITDA - ESOP - D&A) /
+    invested capital ex cash. Applies to all names (framework amendment
+    pending; see LESSONS_ARCHIVE 2026-10-10).
+  - Proof gate period = a quarter, operating ROCE annualised on period-end
+    invested capital. Q4 FY26 9.1%, Q1 FY27 13.6%; Q2 FY27 above 10% fires
+    the ROCE half.
+  - Cash GROWTH-INDUCED (R10 accepted); Phase 1 PROCEED WITH CAVEATS cap
+    lifted. Pillar 2 1.15x.
+  - Exit P/E 30x on one-year-forward operating EPS (exit end-FY29 on FY30
+    EPS). Operator override of the pillar destination (16.9x additive,
+    13.1x RRM). Reason: peer cross-check; only listed enterprise loyalty
+    SaaS in India.
+  - Line B option value zero; consolidated earnings at 30x. Calendar kept
+    for tracking (tracker rows 4, 5).
+  - Management grade B. Scenarios bear / base / bull approved (dossier 6.5).
+  - Step 1C peers: Eagle Eye, Affle, RateGain, Braze, Klaviyo, Tanla or Route
+    Mobile; Newgen and Intellect excluded; Zaggle reference only.
 
 ## ROLE 5.5 TRACKER PROOF (recorded 2026-10-09)
 14 DOWNSTREAM SIGNAL TRACKER rows written by claude.ai and linked to the
@@ -98,9 +122,9 @@ Operator-confirmed falsifiers, 2026-10-09:
 5. KPMG forensic finding of insider involvement.
 
 ## OPTIONALITY REGISTER (summary)
-- Line B acquired books (Kognitiv, SessionM, unmigrated remainder) →
-  converts on migration and margin lift; resolution dates per the Option
-  Resolution Calendar (text not yet recorded here).
+- Line B acquired books (Kognitiv, SessionM, unmigrated remainder): tracked
+  only; option value zero for valuation (operator 2026-10-10). Draft calendar
+  in fttcp-draft Section 7: SessionM FY28-FY29, Kognitiv by Sep-2027.
 - aiRA → T3 speculative only; about USD 2-2.5m run-rate, fewer than 10
   paying of 26 live (Q1 FY27 call, p.6, p.10).
 

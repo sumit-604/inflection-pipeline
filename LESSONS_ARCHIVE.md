@@ -1073,3 +1073,16 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   would force REWORK). Surfaced to the operator, not resolved.
 - DOWNSHIFT FAILURE: stage 0 ran inline on the Opus orchestrator (no haiku
   stage-0 agent exists). Structural, not a routing slip.
+
+## 2026-10-10 · CAPILLARY /fttcp (draft 09-Oct, sign-off 10-Oct)
+- Handover dossier did not exist as a claude.ai file; Claude Code transcribed
+  Notion, then Section 6 arrived as a ferry block next day. Two-step dossier.
+- Draft Pillar 1 used ROCE on capital employed incl. IPO cash (5.2%); operator
+  ruled operating ROCE on invested capital ex cash as a STANDING rule. OPEN:
+  that rule needs a framework amendment PR (CLAUDE.md OPERATOR RULINGS and
+  section-1b chunk 01), on its own branch, not this run branch.
+- Correction 36: draft finance-income figure Rs 18.3 Cr vs deck Rs 14.9 Cr.
+- Exit P/E 30x is an operator override 78% above the pillar destination
+  (16.9x); Step 1C peer table still pending. A20.9 binds.
+- Cross-family grader skipped (no Gemini key). Python alias on PATH broke
+  mid-session; used the full interpreter path.

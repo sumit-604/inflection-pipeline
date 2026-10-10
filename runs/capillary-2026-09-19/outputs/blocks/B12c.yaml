@@ -50,3 +50,12 @@ critical_count: 0
 major_count: 6
 minor_count: 12
 acceptance_rate: 86.7
+phase3_merge:
+  merged_on: "2026-10-10"
+  phase3_block: "outputs/blocks/B12c-phase3.yaml"
+  phase3_report: "outputs/reports/12c-verifier-c-phase3.md"
+  phase3_checks: {passed: 131, total: 140, valuation_half_pct: 94.2, role2_extended_pct: 89.5}
+  phase3_counts: {critical: 0, major: 1, minor: 8}
+  combined_framework_adherence: {passed: 196, total: 215, pct: 91.2}
+  rework_triggers: "none fired"
+

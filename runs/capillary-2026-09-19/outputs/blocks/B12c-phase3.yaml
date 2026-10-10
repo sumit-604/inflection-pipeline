@@ -1,0 +1,70 @@
+stage: B12c
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: "claude-opus-5-5"
+status: complete
+scope: "phase-3 valuation half: B10, B11, expectation-ledger.md, B14 extended scope (Role 2 decision rules and sizing); check 15 skill-to-source on every chunk B11 cites"
+phase1_block: "outputs/blocks/B12c.yaml (gate0 and emoat; unchanged by this pass)"
+gate0: {rules_checked: 0, fails: [], status: "PHASE 1, see B12c.yaml"}
+emoat: {rules_checked: 0, fails: [], status: "PHASE 1, see B12c.yaml"}
+valuation:
+  rules_checked: 121
+  rules_passed: 114
+  breakdown: {growth_symmetry: "12 of 12", role1_mechanics: "43 of 46", structural_rules_6_7_11_12: "14 of 14", ledger_rules_13_14: "9 of 9", operator_rulings_o1_o11: "11 of 11", stage10_assembly: "4 of 5", check15_skill_to_source: "21 of 24"}
+  fails:
+    - {id: F-V1, severity: MAJOR, location: "chunk 15 l.92; 11-valuation.md l.245-248, l.684, l.740; B11 YAML l.66; 14-thesis.md l.341", rule: "check 15; Section 1B v3.9 A20.5 (l.40) 'the governing-track destination that sets the entry zone'", stated: "relative route opens above 24.0x (Track 2 16.8x / 0.70); pillar 44.0% below 30x", recomputed: "Track 1 sets the entry zone under OR-1 as written (B11 l.217): opens above 18.7x (13.055 / 0.70); gap 56.5%; 30x still needs an adjusted base >= 30x; decision survives; fix the chunk"}
+    - {id: F-V2, severity: MINOR, location: "chunk 06 l.92", rule: "check 15; Master 4G l.897", stated: "revise the exit PE and recalculate", recomputed: "revise the exit PE downward and recalculate; no B11 value changes"}
+    - {id: F-V3, severity: MINOR, location: "chunk 08 l.31; prompts/11-valuation-pipeline.md l.133-140", rule: "check 15; v3.9 A24 l.110-112 with A20.9 l.58", stated: "tier multiple is the approved base, and also the pillar when no peer table exists", recomputed: "approved base governs where one exists, pillar as sensitivity; B11 already applied this; no value changes"}
+    - {id: F-V4, severity: MINOR, location: "11-valuation.md l.136-141, l.232", rule: "A21 (v3.9 l.67, l.237) run-rate base for every Section 1B pillar; Rule J symmetric bar", stated: "Pillar 1 current endpoint TTM 6.84%; Section 1B supports about 17x, single reading", recomputed: "reading (b) A21 endpoint 13.56%: Pillar 1 14.9%, base 15.0x, C 17.25x, Track 2 about 19.3x (deliberation l.82: 19.2x), Track 1 about 15.2x; operator-approved TTM stands; disclose both"}
+    - {id: F-V5, severity: MINOR, location: "11-valuation.md l.263-267", rule: "chunk 14 l.18; Market_Implied_Assumptions_v1_0.md l.27, l.29: Reading 1 at the operator's required return", stated: "Reading 1 FY30 EPS Rs 9.75, EPS CAGR 11.9% at r 14.5%", recomputed: "at 25%: Rs 1,106.7 end-FY29 value, FY30 EPS Rs 12.90, EPS CAGR 22.8%; flag unchanged"}
+    - {id: F-V6, severity: MINOR, location: "11-valuation.md l.744 (item 6), l.370", rule: "wrapper override 3 (prompts/11 l.37-43): both readings and separating observation for every unresolved input", stated: "B7 Year-3 net debt NOT FOUND; net cash held at Rs 469.7 Cr; no both-readings line", recomputed: "reading (b) no new M&A, interim base FCF Rs 389.4 Cr accrues: +Rs 47.3/share, weighted base FV Rs 687.4, 25% entry Rs 351.9, 30% entry Rs 312.9, base CAGR 6.6%; separating observation FY27 AR cash and any Reg 30 acquisition; decision unchanged"}
+    - {id: F-V7, severity: MINOR, location: "B10-valinputs.yaml l.112", rule: "phase-1 Verifier C corrections carried into assembly (B12c F-G2)", stated: "FY26 helped by payable days 66.6 to 37.0", recomputed: "66.6 to 37.0 is FY23 to FY26 and consumed cash; FY26 receivable days 98.3 to 89.8 and payable days 30.9 to 37.0 helped CFO; no B11 value depends on it (O3 governs)"}
+role2_extended:
+  rules_checked: 19
+  rules_passed: 17
+  fails:
+    - {id: F-R1, severity: MINOR, location: "14-thesis.md l.234; B14 YAML l.30", rule: "A16 (chunk 12 l.10-13): no Pillar 3 in pre-crossover years", stated: "pillar FV CAGR 33.7% (Rs 173.9 to Rs 415.4)", recomputed: "today (FY27, ROCE 11.7% < r 14.5%) at C 14.835x = Rs 160.3; FV CAGR about 37.4%; label COMPOUNDER unchanged"}
+    - {id: F-R2, severity: MINOR, location: "B14 YAML l.8", rule: "YAML agrees with the Section 7 box (14-thesis.md l.278 'NONE at CMP')", stated: "position_size: Small", recomputed: "none (ceiling Small); add a none value to the schema enum (.claude/agents/stage-14-thesis.md l.61)"}
+expectation_ledger: {present: true, downside_row: true, all_rows_confirm_by: true, all_rows_metric_threshold: true, prob_in_range: true, decay_status_valid: true, off_ledger_credit: false, residual_pct_cmp: 15.0, residual_starter_cap_ok: true, fails: [], note: "residual 15.0% with net cash in T1; 25.0% if the bridge sits outside the tiers (observation O-1)"}  # rules 13-14; any fail = REWORK stage 11
+business_understanding_narrative: {status: "NOT IN SCOPE (stage 13 output not among phase-3 inputs; rule 9 runs at /finalize)", fails: []}  # rule 9; any fail = REWORK stage 13
+skill_to_source: {rows_checked: 24, divergences: 3, chunks_with_findings: ["references/15-cost-of-capital-relative-valuation.md l.92 (MAJOR)", "references/06-summary-sanity-hurdle.md l.92 (MINOR)", "references/08-run-rate-base-price-decomposition.md l.31 (MINOR)"], b11_self_report: "none found; B11 opened no Section 1B source file"}
+rework_triggers: "none fired: rules 7, 11, 12, 13, 14 pass; acceptance 93.6% on a denominator of 140"
+recomputed_destination_pe: ""
+recomputed_decision: ""
+recomputed_values:
+  - "Step 1C relative-route threshold on the source reading: 18.7x (Track 1), not 24.0x"
+  - "Track 2 on the A21 current-ROCE endpoint: about 19.3x (sensitivity; operator-approved TTM 16.8x stands)"
+  - "Net cash reading (b): base weighted FV Rs 687.4, 25% entry Rs 351.9 (sensitivity)"
+  - "Market-implied Reading 1 at 25%: EPS CAGR 22.8% (stated 11.9%)"
+  - "B14 pillar FV CAGR with A16 timing: about 37.4% (stated 33.7%)"
+findings:
+  - {id: F-V1, stage: "chunk 15 / B11 / B14", severity: MAJOR, summary: "chunk drops 'that sets the entry zone' from A20.5; B11 used Track 2; threshold 24.0x should be 18.7x"}
+  - {id: F-V2, stage: "chunk 06", severity: MINOR, summary: "4G 'downward' dropped"}
+  - {id: F-V3, stage: "chunk 08 / wrapper", severity: MINOR, summary: "A24 tier-multiple sentences conflict when an approved base exists without a peer table"}
+  - {id: F-V4, stage: B11, severity: MINOR, summary: "A21 run-rate reading of the Pillar 1 current endpoint (about 19.3x) not disclosed"}
+  - {id: F-V5, stage: B11, severity: MINOR, summary: "market-implied Reading 1 solved at r, not at the 25% required return"}
+  - {id: F-V6, stage: B11, severity: MINOR, summary: "B7 Year-3 net debt unresolved input lacks both readings and the separating observation"}
+  - {id: F-V7, stage: B10, severity: MINOR, summary: "phase-1 F-G2 cash-mechanism correction not carried"}
+  - {id: F-R1, stage: B14, severity: MINOR, summary: "pillar FV CAGR cross-check credits Pillar 3 before the A16 crossover"}
+  - {id: F-R2, stage: B14, severity: MINOR, summary: "position_size Small on an AVOID verdict with NONE at CMP; schema lacks none"}
+observations_for_operator:
+  - "O-1 net cash placement in A24 (source silent): T1 46.9% / residual 15.0% / starter Rs 415 vs bridge outside tiers T1+T2 44.9% / residual 25.0% / starter about Rs 339"
+  - "O-2 Master 4G 'revise downward' vs A20.9 approved base: re-rule O5 at /finalize or record that 4G yields"
+  - "O-3 verdict conflict AVOID (Role 2 s7) vs WATCHLIST (RULES Gate 0 below 60; B11): standing ruling needed, as KISSHT"
+  - "O-4 Master l.296 carries the banned hybrid label; FTTCP l.438 and chunk 01 are correct"
+  - "O-5 Master l.1168 omits Gate 0 from what binds the A25 ladder; v3.9 l.241 includes it"
+  - "O-6 'Fundamental Base PE' undefined (Master l.559, chunk 15 l.26); on F Track 1 would be 14.8x"
+  - "O-7 O1 standing rule (all names) not recorded in SKILL.md or CLAUDE.md; it displaces the Route A 20% test (19.0%)"
+  - "O-8 wrapper prompts/11 l.239-240 ambiguity: prob-weighted EPS CAGR 26.7% has no YAML field"
+  - "O-9 margin bridge lever sizes allocated from the approved total in draft C.2 proportions"
+  - "O-10 ledger probabilities (L3 0.45) vs scenario weights (75% base-or-better): ratify or replace at /finalize"
+  - "O-11 three B14 chain monitors not yet on expectation-ledger.md"
+  - "O-12 phase-1 B12c.yaml model string 'claude-opus-5' differs from frontmatter claude-opus-5-5"
+critical_count: 0
+major_count: 1
+minor_count: 8
+phase3_checks_passed: 131
+phase3_checks_total: 140
+acceptance_rate: 93.6
+framework_adherence_pct_valuation_half: 94.2
+framework_adherence_pct_role2_extended: 89.5

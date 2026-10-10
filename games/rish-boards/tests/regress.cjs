@@ -19,7 +19,7 @@ const ok = (name, cond, info = "") => { if (cond) pass++; else fail++; console.l
 
   // ---------------- A. Home ----------------
   r = await E(() => ({ title: document.title, boxes: [...document.querySelectorAll(".box h2")].map((h) => h.textContent), ver: document.getElementById("ver").textContent, credit: document.querySelector(".credit").textContent }));
-  ok("A1 home: Rish Board Games with 9 games; version label; credit", r.title === "Rish Board Games" && r.boxes.join() === "Ludo,Chess,Carrom,Saanp Seedi,Checkers,Chaar Line,Reversi,Kaata Zero,Dots and Boxes" && r.ver === "Rish Board Games v2" && /Rishabh Sharma/.test(r.credit), r);
+  ok("A1 home: Rish Board Games with 15 games; version label; credit", r.title === "Rish Board Games" && r.boxes.join() === "Ludo,Chess,Carrom,Rish Business,Saanp Seedi,Checkers,Chaar Line,Reversi,Kaata Zero,Dots and Boxes,Navakankari,Bagh Bakri,Mancala,Navy Battle,Panch Line" && r.ver === "Rish Board Games v3" && /Rishabh Sharma/.test(r.credit), r);
   await p.fill("#pname", "Rishabh"); await p.click("#b-about");
   r = await E(() => ({ name: window.__bg.SAVE.name, saved: JSON.parse(localStorage.getItem("rish-boards.v1") || "{}").name, photo: (document.querySelector(".modal img") || {}).src || "", text: document.querySelector(".modal").textContent }));
   ok("A2 your name is saved on this device; About shows the creator's photo and Game 4", r.name === "Rishabh" && r.saved === "Rishabh" && /^data:image/.test(r.photo) && /Game 4/.test(r.text), { ...r, photo: r.photo.slice(0, 20) });
@@ -157,6 +157,61 @@ const ok = (name, cond, info = "") => { if (cond) pass++; else fail++; console.l
   ok("N5 Carrom: 9 white, 9 black and the red queen with no overlap; a straight shot pockets a coin; the striker in a pocket is a foul", r.rack === "9,9,1" && r.overlap === 0 && r.pot === "w" && r.foul === "s", r);
   ok("N6 Carrom rules: your coin in = shoot again; foul = a coin comes back and the turn passes; the queen needs a cover; last coin + covered queen wins", r.own && r.foulRule && r.pending && r.covered && r.notCovered && /wins/.test(r.win), r);
   ok("N7 Carrom: the board is drawn at the screen's full sharpness; the computer players finish a whole game", r.sharp && r.aiOver && r.pocketed >= 9, r);
+  await E(() => document.getElementById("m-home") && document.getElementById("m-home").click());
+
+  // ---------------- G. More games (v3) ----------------
+  r = await E(async () => { const B = window.__bg, GM = B.GM; const o = {}; const N = 15, e = () => Array(N * N).fill(null);
+    let b = e(); for (let c = 3; c < 8; c++) b[7 * N + c] = "B"; o.five = (GM.five(b, 7 * N + 5) || []).length; b = e(); for (let c = 3; c < 7; c++) b[7 * N + c] = "B"; o.block = [7 * N + 2, 7 * N + 7].includes(GM.best(b, "W")); b = e(); for (let c = 3; c < 7; c++) b[5 * N + c] = "W"; b[7 * N + 3] = b[7 * N + 4] = b[7 * N + 5] = "B"; o.win = [5 * N + 2, 5 * N + 7].includes(GM.best(b, "W"));
+    GM.opt = { mode: "2p", level: "medium" }; GM.start(); const tap = (i) => document.querySelector(`#gmb .gpt[data-i="${i}"]`).dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    for (const i of [112, 0, 113, 1, 114, 2, 115, 3, 116]) tap(i); await until(() => document.querySelector(".modal")); o.modal = document.querySelector(".modal h2").textContent; document.getElementById("m-home").click();
+    GM.opt = { mode: "cpu", level: "hard" }; GM.start(); tap(112); await until(() => GM.G.b.filter(Boolean).length === 2); o.reply = GM.G.b.filter(Boolean).length; return o; });
+  ok("G1 Panch Line: 5 in a row wins (across); the computer blocks your 4 and finishes its own 4; it answers your move", r.five === 5 && r.block && r.win && /Black wins/.test(r.modal) && r.reply === 2, r);
+  await E(() => document.getElementById("m-home") && document.getElementById("m-home").click());
+  r = await E(async () => { const B = window.__bg, NM = B.NM; const o = {}; NM.opt = { mode: "2p", level: "medium" }; NM.start(); const tap = (i) => document.querySelector(`#nmb .npt[data-i="${i}"]`).dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    o.first = NM.moves(NM.G.s).length; tap(0); tap(9); tap(1); tap(21); tap(2); o.mill = !!NM.G.pend && document.getElementById("nm-status").textContent.includes("Mill"); tap(9); o.took = NM.G.s.b[9] === null && NM.G.s.b[21] === "K" && NM.G.s.turn === "K";
+    const st = { b: Array(24).fill(null), turn: "R", hand: { R: 0, K: 0 }, quiet: 0 }; st.b[0] = st.b[1] = st.b[22] = "R"; st.b[9] = st.b[10] = st.b[11] = "K"; st.b[23] = "K"; o.fly = NM.moves(st).some((m) => m.from === 22 && m.to === 2);
+    const s2 = { b: Array(24).fill(null), turn: "R", hand: { R: 0, K: 0 }, quiet: 0 }; s2.b[0] = s2.b[1] = s2.b[3] = s2.b[14] = "R"; s2.b[9] = s2.b[10] = s2.b[22] = "K"; NM.start(s2); tap(14); tap(2); o.lost = !!NM.G.pend || NM.G.over; if (NM.G.pend) tap(22); await until(() => document.querySelector(".modal"), 3000); o.modal = (document.querySelector(".modal h2") || {}).textContent || ""; if (document.getElementById("m-home")) document.getElementById("m-home").click();
+    let s = { b: Array(24).fill(null), turn: "R", hand: { R: 9, K: 9 }, quiet: 0 }, n = 0; while (!NM.lost(s) && s.quiet <= 100 && n < 400) { s = NM.apply(s, NM.best(s, 2, 30)); n++; } o.selfplay = n; o.ended = NM.lost(s) || s.quiet > 100 || n >= 400; return o; });
+  ok("G2 Navakankari: 24 points to place on; a mill lets you tap a piece to take; 3 pieces left can fly; under 3 pieces loses; computer games run", r.first === 24 && r.mill && r.took && r.fly && /wins/.test(r.modal) && r.ended, r);
+  r = await E(async () => { const B = window.__bg, BG = B.BG; const o = {}; const s0 = BG.init(); o.goats = BG.moves(s0).length; o.tigerStart = BG.moves(Object.assign({}, s0, { turn: "T" })).length;
+    let s = BG.init(); s.b[1] = "G"; s.turn = "T"; o.jump = BG.moves(s).some((m) => m.from === 0 && m.to === 2 && m.cap === 1);
+    s = { b: Array(25).fill(null), turn: "T", left: 0, eaten: 0, quiet: 0 }; s.b[0] = "T"; for (const i of [1, 2, 5, 10, 6, 12]) s.b[i] = "G"; o.trapped = BG.result(s) === "G";
+    BG.opt = { mode: "2p", level: "medium", side: "goat" }; BG.start(); const tap = (i) => document.querySelector(`#bgb .bpt[data-i="${i}"]`).dispatchEvent(new MouseEvent("click", { bubbles: true })); tap(1); tap(0); tap(2); o.ate = BG.G.s.eaten === 1 && BG.G.s.b[1] === null && BG.G.s.b[2] === "T";
+    BG.opt = { mode: "cpu", level: "medium", side: "goat" }; BG.start(); tap(12); await until(() => BG.G.s.turn === "G"); o.cpuTiger = BG.G.s.b.filter((x) => x === "T").length === 4;
+    BG.opt = { mode: "cpu", level: "medium", side: "tiger" }; BG.start(); await until(() => BG.G.s.turn === "T"); o.cpuGoat = BG.G.s.left === 19;
+    let t = BG.init(), n = 0; while (!BG.result(t) && n < 300) { t = BG.apply(t, BG.best(t, 2, 10)); n++; } o.end = BG.result(t) || "running"; return o; });
+  ok("G3 Bagh Bakri: 25 points for the first goat; tigers start at 4 corners; a tiger jumps a goat to eat it; a trapped tiger loses; the computer plays tigers or goats", r.goats === 21 && r.tigerStart > 0 && r.jump && r.trapped && r.ate && r.cpuTiger && r.cpuGoat && r.end !== "running", r);
+  r = await E(async () => { const B = window.__bg, MC = B.MC; const o = {}; const s = MC.init(); let x = MC.sow(s, 2); o.again = x.again && x.s.b[6] === 1 && x.s.turn === 0; x = MC.sow(s, 0); o.normal = !x.again && x.s.turn === 1 && x.s.b[1] === 5;
+    const c = { b: [0, 0, 0, 1, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0], turn: 0 }; c.b[12] = 0; c.b[7] = 3; const before = c.b[8]; x = MC.sow({ b: [0, 0, 1, 0, 0, 0, 0, 2, 3, 4, 0, 0, 0, 0], turn: 0 }, 2); o.cap = x.cap === 5 && x.s.b[6] === 5 && x.s.b[9] === 0;
+    MC.opt = { mode: "2p", level: "medium" }; MC.start(); document.querySelector('#mcb .mpit[data-i="2"]').click(); o.ui = MC.G.s.b[6] === 1 && /again/.test(document.getElementById("mc-msg").textContent);
+    let g = MC.init(), n = 0, over = false; while (!over && n < 300) { const r2 = MC.sow(g, MC.best(g, 3, 2)); g = r2.s; over = r2.over; n++; } o.total = g.b[6] + g.b[13]; o.over = over;
+    MC.opt = { mode: "cpu", level: "hard" }; MC.start(); document.querySelector('#mcb .mpit[data-i="0"]').click(); await until(() => MC.G.s.turn === 0 && !MC.G.busy, 10000); o.cpu = MC.G.s.b.slice(7, 13).some((v) => v !== 4) || MC.G.s.b[13] > 0; return o; });
+  ok("G4 Mancala: last seed in your store = play again; seeds go round; an empty pit captures the seeds across; a full game keeps all 48 seeds; the computer plays", r.again && r.normal && r.cap && r.ui && r.over && r.total === 48 && r.cpu, r);
+  await E(() => document.getElementById("m-home") && document.getElementById("m-home").click());
+  r = await E(async () => { const B = window.__bg, BS = B.BS; const o = {}; const f = BS.place(); o.cells = f.used.size; o.ships = f.ships.map((s) => s.cells.length).join();
+    BS.opt = { mode: "cpu", level: "hard" }; BS.start(); const G = () => BS.G; const target = [...G().cpu.used.keys()][0]; document.querySelector(`#bs-enemy [data-i="${target}"]`).click(); o.hit = G().myShots[target] === "hit"; o.locked = document.getElementById("bs-shuffle").disabled;
+    await until(() => G().turn === "me"); o.cpuShots = Object.keys(G().cpuShots).length;
+    // Hunt mode: after a hit, the next shots go next to it.
+    G().cpuShots = {}; G().hunt = []; const ship = G().me.ships[0]; G().me.ships.forEach((s) => (s.hits = 0)); G().turn = "cpu"; const first = ship.cells[2]; BS.shot(G().me, G().cpuShots, first); const row = Math.floor(first / 10), col = first % 10; G().hunt = [[row - 1, col], [row + 1, col], [row, col - 1], [row, col + 1]].filter(([a, b]) => a >= 0 && a < 10 && b >= 0 && b < 10).map(([a, b]) => a * 10 + b); const nxt = BS.cpuPick(); o.hunt = Math.abs(nxt - first) === 1 || Math.abs(nxt - first) === 10;
+    BS.start(); for (const i of [...G().cpu.used.keys()]) { if (G().over) break; await until(() => G().turn === "me" || G().over); if (G().over) break; G().turn = "me"; document.querySelector(`#bs-enemy [data-i="${i}"]`).click(); }
+    await until(() => document.querySelector(".modal")); o.win = document.querySelector(".modal h2").textContent; document.getElementById("m-home").click(); return o; });
+  ok("G5 Navy Battle: 5 ships (5, 4, 3, 3, 2) on 17 squares; a shot on a ship is a hit; the computer fires back and hunts round a hit; sinking every ship wins", r.cells === 17 && r.ships === "5,4,3,3,2" && r.hit && r.locked && r.cpuShots === 1 && r.hunt && /win/.test(r.win), r);
+  r = await E(async () => { const B = window.__bg, BZ = B.BZ, Z = B.Business; const o = {}; o.squares = BZ.SQ.length; o.groups = new Set(BZ.SQ.filter((s) => s.t === "city").map((s) => s.g)).size;
+    Z.start(["human", "human", "off", "off"]); const G = () => Z.G, p0 = G().players[0], p1 = G().players[1]; const click = (id) => document.getElementById(id).click();
+    G().force = [[2, 1]]; click("bz-roll"); await until(() => G().phase === "buy"); click("bz-buy"); o.bought = G().own[3] === 0 && p0.cash === 1420; click("bz-end");
+    G().force = [[1, 2]]; click("bz-roll"); await until(() => G().phase === "end"); o.rent = p1.cash === 1500 - 8 && p0.cash === 1428; click("bz-end");
+    G().own[1] = 0; G().force = [[3, 1]]; click("bz-roll"); await until(() => G().phase === "buy" || G().phase === "end"); if (G().phase === "buy") click("bz-skip"); o.buildBtn = !!document.getElementById("bz-build"); Z.build(1); o.house = G().houses[1] === 1 && p0.cash === 1428 - 30; click("bz-end");
+    p1.pos = 0; G().force = [[1, 0]]; G().force[0] = [1, 2]; p1.pos = 25; G().force = [[1, 2]]; click("bz-roll"); await until(() => G().phase === "end" || G().phase === "buy"); o.passStart = p1.pos === 0 && p1.cash >= 1492 + 200 - 0; if (G().phase === "buy") click("bz-skip"); click("bz-end");
+    p0.pos = 18; G().force = [[1, 2]]; click("bz-roll"); await until(() => G().phase === "end"); o.jail = p0.pos === 7 && p0.jail === 1; click("bz-end");
+    click("bz-end" in {} ? "x" : "bz-roll"); await until(() => G().phase !== "roll" || G().turn === 0); 
+    if (G().turn === 1 && G().phase === "end") click("bz-end"); else if (G().phase === "buy") { click("bz-skip"); click("bz-end"); }
+    await until(() => G().turn === 0); o.bail = !!document.getElementById("bz-bail"); click("bz-bail"); o.bailed = p0.jail === 0;
+    G().forceCard = [6]; p0.pos = 0; G().force = [[1, 1]]; const c1 = p1.cash; click("bz-roll"); await until(() => G().phase !== "roll" || G().busy === false); o.card = p0.pos === 2 && p1.cash === c1 - 20;
+    // Bankrupt: the other player cannot pay a big rent.
+    p1.cash = 5; for (const k of Object.keys(G().own)) if (G().own[k] === 1) delete G().own[k]; Z.pay(p1, 500, p0); o.out = p1.out; await until(() => document.querySelector(".modal") || Z.checkEnd()); await until(() => document.querySelector(".modal")); o.win = document.querySelector(".modal h2").textContent; document.getElementById("m-home").click();
+    Z.rounds = 8; Z.start(["cpu", "cpu", "cpu", "cpu"]); const done = await until(() => Z.G.over, 60000); await until(() => document.querySelector(".modal"), 5000); o.cpuGame = done && /wins/.test((document.querySelector(".modal h2") || {}).textContent || ""); o.cpuBought = Object.keys(Z.G.own).length; o.rounds = Z.G.round; Z.rounds = 25; return o; });
+  ok("G6 Rish Business: 28 squares, 6 colour groups; buy a city; pay rent to its owner; build a house on a full colour; pass Start for ₹200; Go to Jail and pay to leave; a birthday card; running out of money ends it", r.squares === 28 && r.groups === 6 && r.bought && r.rent && r.buildBtn && r.house && r.passStart && r.jail && r.bail && r.bailed && r.card && r.out && /wins/.test(r.win), r);
+  ok("G7 Rish Business: four computer players buy cities and finish a short game (richest wins)", r.cpuGame && r.cpuBought >= 4 && r.rounds > 8, r);
   await E(() => document.getElementById("m-home") && document.getElementById("m-home").click());
 
   // ---------------- P. Phone ----------------

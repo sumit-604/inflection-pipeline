@@ -3,9 +3,9 @@
 RishSchoolDays series, Game 4. Created by Rishabh Sharma, age 9.
 Slogan: **Just live it!**
 
-Nine board games in one HTML file, for a phone or a computer. Play the
+Fifteen board games in one HTML file, for a phone or a computer. Play the
 computer, or play with family on one screen. Version label: **Rish Board
-Games v2** (bottom right).
+Games v3** (bottom right).
 
 ## The games
 
@@ -44,6 +44,29 @@ Games v2** (bottom right).
 - **Dots and Boxes (v2):** 5 x 5 dots. The 4th side of a box wins it and
   another line. The computer takes free boxes and avoids giving any away.
 
+- **Rish Business (v3):** 2 to 4 players or computers, ₹1,500 each. A
+  28-square board of Indian cities in 6 colours (Agra to Mumbai), 3
+  railway stations, the Electric Co. and Water Works, Chance and Treasury
+  cards, Income and Luxury Tax, Jail and Rest House. Buy what you land
+  on, pay rent on others' squares, own a whole colour to double the rent
+  and build up to 3 houses. Start pays ₹200; doubles roll again, 3
+  doubles go to Jail; pay ₹50 or roll doubles to leave. Short (15
+  rounds), normal (25) or no limit: the last player with money, or the
+  richest at the end, wins.
+- **Navakankari (v3):** India's old game of mills (nine men's morris).
+  Place 9 pieces, then move them; 3 in a row takes an enemy piece; 3
+  pieces left can fly. The computer looks 1 to 3 moves ahead.
+- **Bagh Bakri (v3):** tigers and goats (bagh-chal). 4 tigers jump goats
+  to eat them; 20 goats try to trap every tiger. Play either side against
+  the computer, or 2 players.
+- **Mancala (v3):** sowing seeds round 12 pits, like Pallanguzhi. Last
+  seed in your store plays again; an empty pit on your side captures the
+  seeds across.
+- **Navy Battle (v3):** battleship against the computer: 5 ships each,
+  move yours before the first shot. Medium and Hard hunt round a hit.
+- **Panch Line (v3):** gomoku on a 15 x 15 board: 5 in a row wins. The
+  computer blocks your lines and finishes its own.
+
 ## Pictures (v2)
 
 Wooden frames and shaded squares on every board; 3D tokens, dice and
@@ -73,7 +96,11 @@ jumps, kings, winning, undo and computer games;
 the new games (Kaata Zero never loses to 40 random games; Chaar Line
 blocking and winning; Reversi flips, passes and full games; Dots and
 Boxes boxes and a full game; Carrom rack, pots, fouls, the queen rule,
-a win, the sharp board and a full computer game); and the phone layout.
-28 checks.
+a win, the sharp board and a full computer game); the v3 games (Panch
+Line wins and blocks, Navakankari mills, flying and losing, Bagh Bakri
+jumps and traps, Mancala sowing and captures, Navy Battle hits and
+hunting, Rish Business buying, rent, houses, Start, Jail, cards,
+running out of money and a full computer game); and the phone layout.
+35 checks.
 
     NODE_PATH=$(npm root -g) node tests/regress.cjs index.html

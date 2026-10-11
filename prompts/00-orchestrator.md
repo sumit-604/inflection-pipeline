@@ -603,6 +603,11 @@ figure), or any verifier's acceptance_rate falls below 60% on a denominator
 of 4 or more (operator ruling OR-29, 2026-10-04), the synthesis verdict is REWORK
 regardless of company quality: the analysis cannot be trusted. This gate
 stays hard because it judges the pipeline, not the stock.
+Remediation after REWORK is capped at ONE cycle per Phase 1, and each verifier
+runs once per Phase 1 unless the operator approves a re-run (operator ruling
+2026-10-11). The counters live in manifest.yaml; /run-pipeline step 5b
+enforces them. A REWORK that one cycle does not clear goes to Halt 1 as an
+open item; the verdict stays REWORK.
 
 **SOURCE FIDELITY IS A HARD, NON-OVERRIDABLE GATE.** Verifier A (Sonnet 5.5,
 fresh context) is the sole final authority on whether a number exists in the source. No downstream

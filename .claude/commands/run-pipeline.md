@@ -263,6 +263,9 @@ handoff schemas, flag rules, and error handling. Then:
    treat its figures as anchored evidence; every number a stage reports
    still comes from this run's own inputs, verified against the source PDFs.
 
+   RE-RUN COUNTERS: write remediation_cycles and verifier_runs into
+   manifest.yaml if absent (step 5b has the fields and the rules).
+
    Create outputs/blocks, outputs/reports, outputs/final inside the run
    folder. Also plant inputs/research/.gitkeep alongside the other input
    directories if it is absent: git does not track empty directories, so a
@@ -343,6 +346,35 @@ handoff schemas, flag rules, and error handling. Then:
    the run log. This is the ONLY permitted reason to strike a Verifier A
    finding: the source-fidelity gate is otherwise absolute, and a CRITICAL
    that survives the identity check triggers REWORK exactly as written.
+
+5b. REMEDIATION AND RE-RUN CAP (operator ruling 2026-10-11). Enforced from
+   manifest.yaml counters, not from judgment. Stage 0 writes, if absent:
+
+       remediation_cycles: 0
+       verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+
+   and every count below is read from and written back to the manifest, then
+   committed with the run.
+   - A REMEDIATION CYCLE is any re-run of an evidence stage against named
+     verifier findings (the usual case: REWORK fires, a stage is re-run on the
+     gaps, its verifier re-checks it). Before starting one, read
+     remediation_cycles. At 0: set it to 1, commit the manifest, run the cycle.
+     At 1 or more: do NOT run it. Write the finding set to
+     outputs/final/gate-recommendation.md and the Halt 1 report as an OPEN
+     ITEM ("Remediation cap reached: <stage>, <findings>, cycle 1 result"),
+     and continue to synthesis-lite on the evidence as it stands.
+   - Each VERIFIER runs once per Phase 1. Increment verifier_runs.<X> on every
+     invocation that leaves a report. A second invocation of the same
+     verifier needs an operator approval given in this session and recorded
+     in inputs/operator-notes.md as a RULING. The orchestrator never asks for
+     it. Without it, the proposed re-run (verifier, reason, addendum) goes to
+     the Halt 1 report as an OPEN ITEM and the run continues. The Verifier A
+     severity-addendum re-run is such a re-run and needs that approval.
+   - The verifier re-check inside the one permitted remediation cycle is part
+     of the cycle and needs no separate approval.
+   - MECHANICAL re-runs do not count against either cap: a stage or verifier
+     whose report or block file is missing or empty (EXECUTION DISCIPLINE),
+     and the malformed-block retry in step 3. Do not increment for them.
 
 6. SYNTHESIS-LITE. Invoke stage-13-synthesis, instructing it in the task
    message to run in PHASE 1 LITE mode: produce exactly three files, no

@@ -335,6 +335,35 @@ handoff schemas, flag rules, and error handling. Then:
    not run; re-invoke that one alone, in the foreground.
    Collect B12a, B12b, B12c (partial), B12d into outputs/blocks/.
 
+   VERIFIER A SHADOW (operator ruling 2026-10-11; one run only). Read
+   .claude/shadow.yaml before the verifiers dispatch. If verifier_a_shadow is
+   not "armed", skip this block. If it is armed:
+   - FIRST set it to spent, with spent_by_run: runs/<ticker>-<date> and
+     spent_date, write `verifier_a_shadow: run` into this run's manifest.yaml,
+     and commit both. The switch flips before the shadow runs, so a crash or a
+     re-run of this command never runs it twice.
+   - Invoke verifier-a-shadow in the SAME message as the four verifiers, with
+     exactly the task message verifier-a-numerical gets, except the output
+     paths: runs/<ticker>-<date>/shadow/verifier-a-haiku.md and
+     runs/<ticker>-<date>/shadow/verifier-a-haiku.yaml. Neither verifier sees
+     the other's output. Apply the completion check to it. Give it its own
+     ledger row in session-cost.md, stage "verifier-a-shadow".
+   - Its findings count for nothing: never in B12a, the confidence delta, a
+     REWORK decision, verifier_runs, the gate recommendation or the synthesis.
+   - After both return, build runs/<ticker>-<date>/shadow/verifier-a-comparison.md
+     MECHANICALLY, one row per finding from either verifier:
+
+         | finding | Sonnet found (Y/N) | Haiku found (Y/N) | verdict-card / Section 1B / Gate 0 input (Y/N) |
+
+     Two findings are the same finding when location and claimed value match.
+     Where they match on one but not the other, mark both found columns "?".
+     The finding cell holds location, claimed value and each side's severity.
+     The input column takes the shadow row's tier (mandatory = Y, sample =
+     N); a finding located in the stage 1 Gate 0 report is Y; otherwise "?".
+     Head the file with the two totals and the count of "?" rows. Never judge
+     which verifier is right, and never re-check a source page for this table.
+   The shadow is a mechanical stage for the 6c(b) downshift check.
+
 5. COMPUTE the phase-1 confidence delta from the available verifier blocks
    per the orchestrator's Section 5 (numerical_acceptance, redflag_
    coverage, peer_utilisation, and the Gate 0 + EM portion of framework_
@@ -459,13 +488,14 @@ handoff schemas, flag rules, and error handling. Then:
        total for the ranking.
    (b) DOWNSHIFT FAILURES. Any MECHANICAL stage that ran on Opus, flagged
        "DOWNSHIFT FAILURE: <stage>". In phase 1 the mechanical stages
-       are stage-00-intake-check and verifier A (stage 10 runs in phase 3 and is checked there). The
-       stage 0 identity check runs on stage-00-intake-check; flag it too if
-       it ran on any model other than claude-haiku-5-5. The rest of stage 0
+       are stage-00-intake-check, verifier A and, when it ran,
+       verifier-a-shadow (stage 10 runs in phase 3 and is checked there).
+       Flag the intake check and the shadow too if either ran on any model
+       other than claude-haiku-5-5. The rest of stage 0
        runs inline on the session model by design and is not checked. A
        mechanical stage on Opus means the downshift did not take and the
-       run overpaid. Write "none" if verifier A ran on its frontmatter
-       model.
+       run overpaid. Write "none" if every mechanical stage ran on its
+       frontmatter model.
    (c) COST SPIKES. Any stage whose total tokens exceed 1.5x the same
        stage in the previous run for this ticker (the most recent prior
        runs/<ticker>-<date>/session-cost.md ledger), flagged

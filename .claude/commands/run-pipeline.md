@@ -194,11 +194,17 @@ handoff schemas, flag rules, and error handling. Then:
    hint to check. "NOT FOUND" is a valid answer and a HIGH gap; it blocks
    stage 11 in phase 3, not the evidence stages here.
 
-   DOCUMENT IDENTITY: run the orchestrator's DOCUMENT IDENTITY CHECK over
-   every PDF in inputs/ and write B00.corpus_manifest[]. Read the first page
-   of each document and take its issuer, type and period from the page, never
-   from the filename. Move a misfiled document and record both paths. A
-   broker note is research/ whatever it is called.
+   DOCUMENT IDENTITY: invoke stage-00-intake-check (claude-haiku-5-5,
+   operator ruling 2026-10-11) with the run folder and the list of files under
+   inputs/. It runs the orchestrator's DOCUMENT IDENTITY CHECK and a file-type
+   check, first page only, and writes outputs/blocks/B00-intake.yaml. It
+   proposes moves; it never moves a file. Apply the completion check to it.
+   Then verify before you act: for every row with folder_match false,
+   content_ok false or a note of UNIDENTIFIED, read that document's first page
+   yourself and confirm the row. Move a confirmed misfile and record both
+   paths; a row you cannot confirm stays where it is, marked UNIDENTIFIED.
+   Copy the verified rows into B00.corpus_manifest[]. A broker note is
+   research/ whatever it is called.
 
    UNITS: read the reporting unit off the face of the latest results filing
    and the AR and write B00.reporting_units. Name the unit in every stage
@@ -452,9 +458,11 @@ handoff schemas, flag rules, and error handling. Then:
        every ledger row). Sum a stage's loop or retry runs into one stage
        total for the ranking.
    (b) DOWNSHIFT FAILURES. Any MECHANICAL stage that ran on Opus, flagged
-       "DOWNSHIFT FAILURE: <stage>". In phase 1 the only mechanical stage
-       is verifier A (stage 10 runs in phase 3 and is checked there). Stage
-       0 runs inline on the session model by design and is not checked. A
+       "DOWNSHIFT FAILURE: <stage>". In phase 1 the mechanical stages
+       are stage-00-intake-check and verifier A (stage 10 runs in phase 3 and is checked there). The
+       stage 0 identity check runs on stage-00-intake-check; flag it too if
+       it ran on any model other than claude-haiku-5-5. The rest of stage 0
+       runs inline on the session model by design and is not checked. A
        mechanical stage on Opus means the downshift did not take and the
        run overpaid. Write "none" if verifier A ran on its frontmatter
        model.

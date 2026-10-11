@@ -90,9 +90,11 @@ import collections, glob, os, re, sys
 RUN = os.environ['REF_RUN']
 # Paths the instructions name but no reference run holds by design: Phase 2
 # and 3 outputs written later, operator files, quarterly intermediates, and
-# the screen list the collector reads on the operator's machine.
+# the screen list the collector reads on the operator's machine, and outputs
+# added after the reference run was made.
 EXPECTED = [r'fttcp-', r'notion-payload\.md$', r'provenance\.yaml$', r'expectation-ledger\.md$',
-            r'operator-notes\.md$', r'fulltext\.md$', r'structured\.md$', r'companies\.txt$']
+            r'operator-notes\.md$', r'fulltext\.md$', r'structured\.md$', r'companies\.txt$',
+            r'B00-intake\.yaml$', r'shadow/']  # 2026-10-11 outputs, absent from older runs
 files = sorted(glob.glob('.claude/agents/*.md') + glob.glob('.claude/commands/*.md')
                + glob.glob('.claude/skills/**/*.md', recursive=True) + glob.glob('prompts/*.md'))
 pat = re.compile(r'(?<![\w/.<{-])((?:\.claude|frameworks|prompts|tools|audits|companies|runs|outputs|inputs|verifiers|canary|screens|data)/[\w./<>{}*-]+|[\w.-]+\.(?:md|py|sh|yaml|yml|txt|json))')

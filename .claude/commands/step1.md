@@ -67,8 +67,10 @@ sign and dies under Windows cp1252 when its output is redirected).
 ## A. RESOLVE IDENTITY
 
 Resolve $ARGUMENTS to the screener ticker and URL. Search screener.in for the
-name if a ticker was not given. VERIFY the URL returns HTTP 200 and the page
-title is not "Error 404 Page Not Found" before trusting it. Prefer the
+name if a ticker was not given. VERIFY the URL with
+`PYTHONUTF8=1 py tools/check_url.py <url>` (no model; operator ruling 2026-10-11): it
+prints OK or FAIL per URL, and FAILs a non-200, a 200 titled 404 / Page Not
+Found, and a bot-challenge page. Trust only an OK line. Prefer the
 `/company/<TICKER>/consolidated/` URL when that page exists; fall back to the
 standalone `/company/<TICKER>/`. Some names resolve only by BSE code, not symbol
 (e.g. GEE Ltd = `/company/504028/`); use whatever URL actually loads. State the

@@ -289,7 +289,9 @@ folder it found a file in: broker notes filed as company presentations, an
 AR labelled with the wrong year, a peer's results in the main company folder.
 
 For every PDF in `inputs/`, stage 0 reads the first page and confirms three
-things, then records them in `B00.corpus_manifest[]` (one row per document:
+things (the reading runs on the stage-00-intake-check agent, which proposes;
+the orchestrator verifies every mismatch at the page before it moves a file;
+operator ruling 2026-10-11), then records them in `B00.corpus_manifest[]` (one row per document:
 path, issuer, document type, period, and whether it matched the folder):
 
 1. **Issuer.** Whose document is this? A peer's filing in a main-company

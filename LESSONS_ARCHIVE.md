@@ -1100,3 +1100,15 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
 | 8 | B14 YAML position_size has no "none" value (F-R2); B10 carried the struck F-G2 cash mechanism (F-V7) | 14 thesis / 10 assembly | .claude/agents/stage-14-thesis.md l.61; prompts/10 | OPEN |
 | 9 | Stage 11 replaced the unratified C.2 probabilities with its own; operator ratification still needed | 11 valuation | A22-23 (KISSHT C2P pattern) | OPEN |
 
+
+## 2026-10-11 · housekeeping (deferred-work phrase matches)
+- 17d3254a (TAALTECH INTEGRITY confirmed): the de-escalation trigger in
+  companies/TAALTECH.md is proposed, not approved. Operator ruling still
+  needed before it can lift the INTEGRITY cap.
+- 568fdf7a (merge of PR #170): the "open action" it names is the BSE
+  fetch_bse_announcements check, already in LESSONS.md OPEN ACTIONS (PR #167).
+  No new work.
+- ORCHPHARMA 2026-09-06 item 5 (how many REWORK remediation cycles before
+  operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
+  Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
+  OPEN ACTIONS.

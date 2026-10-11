@@ -82,3 +82,9 @@ a bull claim and a bear claim carry the identical bar, tier the evidence, trace
 the chain, name the confirming observation. Depth means more evidence per
 claim, not more words: do not pad the report with filler sections, repeated
 summaries, or boilerplate.
+
+Stuck rule (operator ruling 2026-10-11). If you repeat the same action three
+times with no change, or five turns pass with nothing new learned, stop. Write
+what you tried and what blocked you into your report, write your YAML block to
+the block path with `status: blocked`, and end. A blocked block is a finished
+run, not a died one: the orchestrator does not re-invoke it mechanically.

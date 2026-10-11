@@ -90,6 +90,12 @@ target, 3-5 year holds.
   10 assembly, verifier D, quarterly A2; effort high (set in the file):
   verifier A; effort low: quarterly A1; default (high): stages 2, 3, 5,
   7, 8, 9
+- claude-haiku-5-5 (Haiku 5.5), effort medium: stage-00-intake-check
+  (stage 0 document identity and file-type check; proposes, the orchestrator
+  verifies); effort high: verifier-a-shadow, one Phase 1 only, findings count
+  for nothing, switch .claude/shadow.yaml (operator ruling 2026-10-11). No
+  extraction stage (2, 3, 5, 7), verifier of record, synthesis or valuation
+  step runs on Haiku.
 - No stage runs on Haiku 4.5 (operator ruling 2026-10-04: stage 10 and
   verifier A moved to Sonnet 5.5; Verifier A's independence comes from a
   fresh context and the source page, not the model family)
@@ -134,6 +140,25 @@ Post-Kwick rulings, 2026-10-04 (audits/RULINGS_2026-10.md, post-Kwick section):
 - OR-32: Verifier A checks 100% of verdict-card, Section 1B pillar and
   Gate 0 inputs (mandatory_checked of mandatory_total in B12a); everything
   else stays a materiality sample with coverage stated honestly.
+Housekeeping rulings, 2026-10-11 (PR #212):
+- Remediation cap: one remediation cycle per Phase 1, counted in
+  manifest.yaml remediation_cycles; a second is refused and goes to Halt 1 as
+  an open item, the verdict standing as it is (/run-pipeline step 5b).
+- Verifier re-run cap: each verifier runs once per Phase 1, counted in
+  manifest.yaml verifier_runs. A re-run needs an operator approval recorded
+  in inputs/operator-notes.md; the Verifier A severity-addendum re-run is
+  one. The verifier re-check inside the one permitted cycle is part of the
+  cycle. Mechanical re-runs (missing or empty report, malformed block) do
+  not count.
+- Stuck rule: every agent stops after three unchanged repeats or five turns
+  with nothing new learned, reports what it tried, and writes its block with
+  status: blocked. A blocked block is a finished run, never re-invoked.
+- Halt 1 report: file path and at most ten summary lines per deliverable,
+  never the full body in chat; it ends with "Change that would make the next
+  run cheaper: ___". /finalize keeps printing its finals in full.
+- session-cost.md ends with fresh tokens, re-read tokens and the re-read
+  multiple. Subagent prompt cache TTL is 1h (.claude/settings.json), judged
+  on that multiple in the next run.
 
 ## WORDS
 - "done" for a stage = full report written AND valid YAML block emitted
@@ -154,6 +179,12 @@ Post-Kwick rulings, 2026-10-04 (audits/RULINGS_2026-10.md, post-Kwick section):
   collect_to_repo.py collector runs on the operator's machine, out of
   session; in-session it appears only as collect_to_repo.py --push-again.
   Exception: /step1 runs it with --dry-run on the operator's desktop.
+- Trim long command output, never documents (operator ruling 2026-10-11).
+  Long shell output, test output, and build and render logs are kept to the
+  first part plus a short summary. Paths, numbers and error lines stay
+  exact. This rule never applies to corpus documents (annual reports,
+  transcripts, filings, presentations): those are always quoted verbatim
+  with page anchors.
 - Sparse checkout (operator ruling 2026-10-03): a pipeline session first runs
   tools/sparse_session.sh runs/<folder> [more folders]. It keeps everything
   outside runs/, runs/_template/, every run's session-cost.md and
@@ -227,7 +258,13 @@ operator rulings with dates, active tripwires, the optionality register
 summary, and links to every run folder for the ticker. It is memory to
 weigh, never anchored evidence.
 
+Root HANDOFF.md holds framework and housekeeping state. The main session reads
+it at session start; subagents do not. Update it at each milestone and before
+ending a session; delete items once closed. Keep it under 1,500 words. Run
+status stays in companies/<TICKER>.md and the run manifest.
+
 ## STRUCTURE
+- HANDOFF.md     framework and housekeeping state (main session only)
 - prompts/       stage instructions, single source of truth
 - frameworks/    Master v3.7 (file Master_Project_Prompt_v3_6.md; the path
                  is stable, the version is in the banner), Section 1B layer set

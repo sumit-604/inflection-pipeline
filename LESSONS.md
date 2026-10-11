@@ -18,7 +18,8 @@ _Rule: orchestrator FLAG-CASH guard and CLAUDE.md NEVER rule._
 - PDF tooling: install poppler-utils, reinstall cffi, pre-extract PDFs to
   page-marked .txt so no stage hits the image-render wall.
 - Verifier A invents false CRITICALs; orchestrator checks each against its
-  source_truth column, re-invokes once with the severity addendum.
+  source_truth column. A severity-addendum re-run needs operator approval
+  (2026-10-11 verifier cap).
 - collect_to_repo v3: wrong sector_cap_row, mislabelled AR year, empty
   screener CSVs, broker notes as presentations, files of other companies.
   Record in B00.input_gaps; flag sector cap for phase 3.
@@ -35,6 +36,15 @@ Check · 2026-08-26 A20 relative cross-check · 2026-09-15 section-1b skill
 2026-10-04 standing ruling (CLAUDE.md OPERATOR RULINGS): framework rulings
 apply to names analysed from the ruling date forward; closed names keep their
 record as of the run that produced it.
+
+## 2026-10-11 HOUSEKEEPING (full text: CLAUDE.md rulings 2026-10-11)
+- Caps: 1 remediation cycle, 1 run per verifier (manifest counters).
+- Stuck agent: status: blocked, never re-invoked.
+- Stage 0 identity on Haiku 5.5; verify mismatches at the page.
+- Verifier A Haiku shadow: next Phase 1 only (.claude/shadow.yaml).
+- Halt 1: paths + ten-line summaries + cheaper-run line.
+- Cache 1h: judge on session-cost re-read multiple.
+- Trim command output; never corpus documents.
 
 ## OPEN ACTIONS
 - OPEN (2026-10-10, CAPILLARY, finalize): chunk 15 A20.5 clause, chunk 06/08 text,
@@ -88,7 +98,6 @@ record as of the run that produced it.
 - ORCHPHARMA 2026-09-06 (archive items 1, 4, 5, closing note):
   - OCR page tags and read-the-page rule into stage and Verifier A prompts.
   - Verifier A coverage addendum standing, not retry-only.
-  - cap REWORK remediation cycles before operator hand-off.
   - peer selection needs a product-chain check.
 - SYNGENE 2026-09-28:
   - 1. state the column header with every results-table number.

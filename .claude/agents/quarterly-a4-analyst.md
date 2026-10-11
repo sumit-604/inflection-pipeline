@@ -39,3 +39,9 @@ Non-negotiables:
   that exists only in a reply is lost when the reply is truncated or the
   transcript is compacted, and the run then re-invokes a stage that already
   did its work. Write the file first, then reply.
+
+Stuck rule (operator ruling 2026-10-11). If you repeat the same action three
+times with no change, or five turns pass with nothing new learned, stop. Write
+what you tried and what blocked you into your report, write your YAML block to
+the block path with `status: blocked`, and end. A blocked block is a finished
+run, not a died one: the orchestrator does not re-invoke it mechanically.

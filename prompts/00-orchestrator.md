@@ -289,7 +289,9 @@ folder it found a file in: broker notes filed as company presentations, an
 AR labelled with the wrong year, a peer's results in the main company folder.
 
 For every PDF in `inputs/`, stage 0 reads the first page and confirms three
-things, then records them in `B00.corpus_manifest[]` (one row per document:
+things (the reading runs on the stage-00-intake-check agent, which proposes;
+the orchestrator verifies every mismatch at the page before it moves a file;
+operator ruling 2026-10-11), then records them in `B00.corpus_manifest[]` (one row per document:
 path, issuer, document type, period, and whether it matched the folder):
 
 1. **Issuer.** Whose document is this? A peer's filing in a main-company
@@ -482,7 +484,10 @@ stage: B01-gate0
 company: GEMAROMA
 run_date: 2026-07-09
 model: claude-sonnet-5-5
-status: complete          # complete | partial | failed
+status: complete          # complete | partial | failed | blocked
+                          # blocked = the agent hit its stuck rule and
+                          # stopped; a finished run, never re-invoked as
+                          # a mechanical failure; goes to Halt 1 open items
 input_gaps: []            # carried forward from B00
 flags: []                 # list of flag objects, see Section 4
 analyst_note: ""          # optional, <=200 words (strict cap, excess
@@ -600,6 +605,11 @@ figure), or any verifier's acceptance_rate falls below 60% on a denominator
 of 4 or more (operator ruling OR-29, 2026-10-04), the synthesis verdict is REWORK
 regardless of company quality: the analysis cannot be trusted. This gate
 stays hard because it judges the pipeline, not the stock.
+Remediation after REWORK is capped at ONE cycle per Phase 1, and each verifier
+runs once per Phase 1 unless the operator approves a re-run (operator ruling
+2026-10-11). The counters live in manifest.yaml; /run-pipeline step 5b
+enforces them. A REWORK that one cycle does not clear goes to Halt 1 as an
+open item; the verdict stays REWORK.
 
 **SOURCE FIDELITY IS A HARD, NON-OVERRIDABLE GATE.** Verifier A (Sonnet 5.5,
 fresh context) is the sole final authority on whether a number exists in the source. No downstream

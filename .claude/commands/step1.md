@@ -36,11 +36,21 @@ complete, never to reach a verdict.
 CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
 `git fetch origin main`, then
 `git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
-If the diff is not empty, print
-`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
-and STOP: "Checkout is behind or ahead of origin/main in framework files;
-pull or commit before running." If the fetch fails, STOP with the same line
-plus " (fetch failed)". This is a mechanical halt, not a quality halt.
+If the diff is not empty, name the cause and STOP with the line that fits
+(print every line that applies; <paths> is the list printed by
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`):
+- `git status --short -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+  lists files: "Uncommitted edits in framework files: <paths>. Commit them on
+  a framework/ branch and open a PR, then rerun /step1."
+- `git log --oneline HEAD..origin/main -- <same paths>` lists commits:
+  "Checkout is behind origin/main in <paths>. Run: git pull origin main, then
+  rerun /step1."
+- `git log --oneline origin/main..HEAD -- <same paths>` lists commits: "This
+  branch has framework commits not on main: <paths>. Merge their PR, then
+  run: git checkout main && git pull origin main, then rerun /step1."
+If the fetch fails, STOP: "git fetch origin main failed. Fix network or
+GitHub access, run git fetch origin main until it succeeds, then rerun
+/step1." This is a mechanical halt, not a quality halt.
 
 Claude Code desktop has live web (WebSearch/WebFetch) in this setup. Steps B and
 C use it. If web is unavailable at run time, degrade: build the business read
@@ -57,8 +67,10 @@ sign and dies under Windows cp1252 when its output is redirected).
 ## A. RESOLVE IDENTITY
 
 Resolve $ARGUMENTS to the screener ticker and URL. Search screener.in for the
-name if a ticker was not given. VERIFY the URL returns HTTP 200 and the page
-title is not "Error 404 Page Not Found" before trusting it. Prefer the
+name if a ticker was not given. VERIFY the URL with
+`PYTHONUTF8=1 py tools/check_url.py <url>` (no model; operator ruling 2026-10-11): it
+prints OK or FAIL per URL, and FAILs a non-200, a 200 titled 404 / Page Not
+Found, and a bot-challenge page. Trust only an OK line. Prefer the
 `/company/<TICKER>/consolidated/` URL when that page exists; fall back to the
 standalone `/company/<TICKER>/`. Some names resolve only by BSE code, not symbol
 (e.g. GEE Ltd = `/company/504028/`); use whatever URL actually loads. State the

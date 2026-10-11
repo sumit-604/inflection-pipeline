@@ -106,7 +106,7 @@ if git fetch origin main >&2 2>&1; then
     OUTSIDE="$(printf '%s\n' "$CONFLICTS" | grep -vE "$ALLOW" || true)"
     if [ -n "$OUTSIDE" ]; then
       git merge --abort >&2 2>&1 || true
-      WARN="MERGE ABORTED. Conflicts outside frameworks/, prompts/, .claude/ need manual resolution against origin/main before rules are trusted. Conflicted paths: $(printf '%s ' $CONFLICTS)"
+      WARN="MERGE ABORTED. Conflicts outside frameworks/, prompts/, .claude/ need manual resolution against origin/main before rules are trusted. Conflicted paths: $(printf '%s ' $CONFLICTS). Run: git merge origin/main, resolve the listed files, commit, then restart the session."
     else
       # Keep origin/main (theirs) for every conflicted allowed path.
       while IFS= read -r f; do
@@ -119,7 +119,7 @@ if git fetch origin main >&2 2>&1; then
     fi
   fi
 else
-  WARN="git fetch origin main FAILED (network?). Framework and prompt rules may be STALE this session."
+  WARN="git fetch origin main FAILED (network?). Framework and prompt rules may be STALE this session. Run: git fetch origin main && git merge origin/main before any pipeline command."
 fi
 
 SHAS="$(git ls-tree -r HEAD -- frameworks/ 2>/dev/null | awk '{print $3"  "$4}')"

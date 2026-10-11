@@ -482,7 +482,10 @@ stage: B01-gate0
 company: GEMAROMA
 run_date: 2026-07-09
 model: claude-sonnet-5-5
-status: complete          # complete | partial | failed
+status: complete          # complete | partial | failed | blocked
+                          # blocked = the agent hit its stuck rule and
+                          # stopped; a finished run, never re-invoked as
+                          # a mechanical failure; goes to Halt 1 open items
 input_gaps: []            # carried forward from B00
 flags: []                 # list of flag objects, see Section 4
 analyst_note: ""          # optional, <=200 words (strict cap, excess

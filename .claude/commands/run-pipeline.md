@@ -284,6 +284,11 @@ handoff schemas, flag rules, and error handling. Then:
    Malformed block, or absent from both file and reply: re-invoke once with
    the retry addendum from the orchestrator; second failure halts the run
    with the stage named.
+   A block with `status: blocked` means the agent hit its stuck rule (operator
+   ruling 2026-10-11). It is a finished run, not a failure: do not re-invoke
+   it. Downstream stages run degraded on it, and the gate recommendation and
+   the Halt 1 report name it as an open item with what it tried and what
+   blocked it.
 
 4. VERIFY (after stages 1-9). Invoke the phase-1 verifiers in parallel,
    each with only the artifact paths its section names, never other

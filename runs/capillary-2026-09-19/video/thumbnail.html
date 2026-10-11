@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Thumbnail A</title>
+<style>
+@font-face { font-family: 'Fraunces'; src: url('assets/fonts/Fraunces.ttf'); font-weight: 100 900; }
+@font-face { font-family: 'Inter'; src: url('assets/fonts/Inter.ttf'); font-weight: 100 900; }
+html, body { margin: 0; background: #F4EEF8; }
+</style></head>
+<body>
+<svg id="s" xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBF7FF"/><stop offset="1" stop-color="#D9C2F6"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F7CE62"/><stop offset="1" stop-color="#E3A13B"/></linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1060" cy="560" r="330" fill="#C9A7F0" opacity=".35"/>
+  <circle cx="120" cy="700" r="200" fill="#F2C14E" opacity=".25"/>
+  <!-- headline -->
+  <text x="64" y="270" font-family="Fraunces" font-weight="900" font-size="150" fill="#2A1C3C">Who</text>
+  <text x="64" y="420" font-family="Fraunces" font-weight="900" font-size="150" fill="#2A1C3C">runs</text>
+  <text x="64" y="570" font-family="Fraunces" font-weight="900" font-size="150" fill="#2A1C3C">this?</text>
+  <rect x="64" y="596" width="360" height="16" rx="8" fill="url(#gold)"/>
+  <!-- cable -->
+  <path d="M600 560 C 700 640, 760 330, 880 300" fill="none" stroke="#2A1C3C" stroke-width="22" stroke-linecap="round" opacity=".25" transform="translate(0,8)"/>
+  <path d="M600 560 C 700 640, 760 330, 880 300" fill="none" stroke="url(#gold)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M600 560 C 700 640, 760 330, 880 300" fill="none" stroke="#FFF3C4" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 30"/>
+  <!-- phone -->
+  <g transform="translate(520,470) rotate(-8)">
+    <rect x="-90" y="-170" width="180" height="340" rx="30" fill="#2A1C3C"/>
+    <rect x="-78" y="-156" width="156" height="312" rx="22" fill="#3B2A55"/>
+    <circle cx="0" cy="-92" r="16" fill="#F2C14E"/>
+    <text x="0" y="-8" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="64" fill="#F2C14E">+40</text>
+    <text x="0" y="40" text-anchor="middle" font-family="Inter" font-weight="800" font-size="30" fill="#F4EEF8">points</text>
+    <rect x="-50" y="84" width="100" height="14" rx="7" fill="#C9A7F0"/>
+  </g>
+  <!-- server -->
+  <g transform="translate(1030,300)">
+    <rect x="-170" y="-130" width="340" height="260" rx="24" fill="#2A1C3C" stroke="#C9A7F0" stroke-width="6"/>
+    <rect x="-170" y="-130" width="340" height="70" rx="24" fill="url(#gold)"/>
+    <rect x="-170" y="-90" width="340" height="30" fill="url(#gold)"/>
+    <text x="0" y="-80" text-anchor="middle" font-family="Inter" font-weight="900" font-size="38" letter-spacing="4" fill="#2A1C3C">CAPILLARY</text>
+    <rect x="-146" y="-32" width="292" height="40" rx="8" fill="#4B3868"/><circle cx="118" cy="-12" r="8" fill="#F2C14E"/><rect x="-128" y="-18" width="110" height="12" rx="6" fill="#8B74B8"/>
+    <rect x="-146" y="24" width="292" height="40" rx="8" fill="#4B3868"/><circle cx="118" cy="44" r="8" fill="#F2C14E"/><rect x="-128" y="38" width="80" height="12" rx="6" fill="#8B74B8"/>
+    <rect x="-146" y="80" width="292" height="30" rx="8" fill="#4B3868"/><circle cx="118" cy="95" r="8" fill="#C9A7F0"/>
+  </g>
+  <!-- KS mark -->
+  <g transform="translate(1180,76)">
+    <rect x="-52" y="-52" width="104" height="104" rx="22" fill="#2A1C3C"/>
+    <text x="0" y="18" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="60" fill="#F2C14E">KS</text>
+  </g>
+  <!-- chip -->
+  <rect x="64" y="40" width="270" height="52" rx="14" fill="#E3A13B"/>
+  <text x="199" y="75" text-anchor="middle" font-family="Inter" font-weight="800" font-size="28" fill="#111">Business Decoded</text>
+</svg>
+<script>document.fonts.ready.then(() => { window.READY = true; });</script>
+</body></html>

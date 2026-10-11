@@ -154,6 +154,12 @@ Post-Kwick rulings, 2026-10-04 (audits/RULINGS_2026-10.md, post-Kwick section):
   collect_to_repo.py collector runs on the operator's machine, out of
   session; in-session it appears only as collect_to_repo.py --push-again.
   Exception: /step1 runs it with --dry-run on the operator's desktop.
+- Trim long command output, never documents (operator ruling 2026-10-11).
+  Long shell output, test output, and build and render logs are kept to the
+  first part plus a short summary. Paths, numbers and error lines stay
+  exact. This rule never applies to corpus documents (annual reports,
+  transcripts, filings, presentations): those are always quoted verbatim
+  with page anchors.
 - Sparse checkout (operator ruling 2026-10-03): a pipeline session first runs
   tools/sparse_session.sh runs/<folder> [more folders]. It keeps everything
   outside runs/, runs/_template/, every run's session-cost.md and

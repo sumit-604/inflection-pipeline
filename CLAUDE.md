@@ -233,7 +233,13 @@ operator rulings with dates, active tripwires, the optionality register
 summary, and links to every run folder for the ticker. It is memory to
 weigh, never anchored evidence.
 
+Root HANDOFF.md holds framework and housekeeping state. The main session reads
+it at session start; subagents do not. Update it at each milestone and before
+ending a session; delete items once closed. Keep it under 1,500 words. Run
+status stays in companies/<TICKER>.md and the run manifest.
+
 ## STRUCTURE
+- HANDOFF.md     framework and housekeeping state (main session only)
 - prompts/       stage instructions, single source of truth
 - frameworks/    Master v3.7 (file Master_Project_Prompt_v3_6.md; the path
                  is stable, the version is in the banner), Section 1B layer set

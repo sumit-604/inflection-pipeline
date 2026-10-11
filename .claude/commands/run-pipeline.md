@@ -446,7 +446,7 @@ handoff schemas, flag rules, and error handling. Then:
    the run outputs are committed and their PR opens. By now
    runs/<ticker>-<date>/session-cost.md already holds the per-stage token
    ledger built during the run (EXECUTION DISCIPLINE). Append a summary
-   block to the same file with four parts:
+   block to the same file with five parts:
    (a) TOP FIVE BY TOKENS. The stages ranked by total tokens, the top five,
        each with its share of the run total (its total_tok over the sum of
        every ledger row). Sum a stage's loop or retry runs into one stage
@@ -469,6 +469,15 @@ handoff schemas, flag rules, and error handling. Then:
        /cost in the terminal and paste its output under that line. The
        orchestrator cannot read /cost and the meter never records
        orchestrator usage, so the operator fills the session total.
+   (e) FRESH VS RE-READ (operator ruling 2026-10-11). The last three lines
+       of the file, summed over every ledger row (subagents only; the
+       orchestrator's own usage is in the /cost paste, not here):
+         Fresh tokens (cache write + output + uncached input): <n>
+         Re-read tokens (cache read): <n>
+         Re-read multiple (re-read / cache write): <x.x>
+       Uncached input per row = in_tok - cache_read - cache_write. A row with
+       n/a in any of those columns is left out of the sums, and the line
+       names how many rows were left out. Never estimate a missing figure.
    If any DOWNSHIFT FAILURE or COST SPIKE is found, append one line naming the
    stage to this run's dated entry in LESSONS_ARCHIVE.md (the MEMORY rule's
    home for run history). Add a line under OPEN ACTIONS in LESSONS.md only
@@ -490,10 +499,14 @@ handoff schemas, flag rules, and error handling. Then:
    End the report with the commit hash and the output of
    `git log -1 --stat`.
 
-   PRINT FINALS IN CHAT: after writing the final files and committing,
-   always print the primary human-readable documents in full in the chat,
-   in this order: 09b-understanding-dossier.md, then business-narrative.md,
-   then gate-recommendation.md. Then tell the operator exactly:
+   HALT 1 DELIVERABLES IN CHAT (operator ruling 2026-10-11): never print a
+   deliverable's full body into the chat. For each of
+   09b-understanding-dossier.md, business-narrative.md and
+   gate-recommendation.md, in that order, write its file path and a summary
+   of at most ten lines. The summary lines are lifted from the document's own
+   text (its verdict lines, corpus and fragility verdicts, Section 5
+   plain-language points, flag headers), never new analysis. The operator
+   opens the file for the rest. Then tell the operator exactly:
 
    "HALT 1 — UNDERSTANDING GATE. The dossier is at
    outputs/reports/09b-understanding-dossier.md. Operator decisions
@@ -508,6 +521,11 @@ handoff schemas, flag rules, and error handling. Then:
    and end with exactly:
 
    "Files committed. Ask me anything about this analysis — I have the sources."
+
+   followed by one last line: "Change that would make the next run cheaper:
+   <one change>". Name a single change, taken from session-cost.md (the top
+   stage by tokens, a DOWNSHIFT FAILURE, a COST SPIKE, a stage loop, or the
+   re-read multiple), with the stage and the token figure it rests on.
 
 Rules for you, the orchestrator session:
 - You coordinate; you do not analyse. Never write analytical content

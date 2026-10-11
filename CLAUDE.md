@@ -90,6 +90,12 @@ target, 3-5 year holds.
   10 assembly, verifier D, quarterly A2; effort high (set in the file):
   verifier A; effort low: quarterly A1; default (high): stages 2, 3, 5,
   7, 8, 9
+- claude-haiku-5-5 (Haiku 5.5), effort medium: stage-00-intake-check
+  (stage 0 document identity and file-type check; proposes, the orchestrator
+  verifies); effort high: verifier-a-shadow, one Phase 1 only, findings count
+  for nothing, switch .claude/shadow.yaml (operator ruling 2026-10-11). No
+  extraction stage (2, 3, 5, 7), verifier of record, synthesis or valuation
+  step runs on Haiku.
 - No stage runs on Haiku 4.5 (operator ruling 2026-10-04: stage 10 and
   verifier A moved to Sonnet 5.5; Verifier A's independence comes from a
   fresh context and the source page, not the model family)
@@ -134,6 +140,25 @@ Post-Kwick rulings, 2026-10-04 (audits/RULINGS_2026-10.md, post-Kwick section):
 - OR-32: Verifier A checks 100% of verdict-card, Section 1B pillar and
   Gate 0 inputs (mandatory_checked of mandatory_total in B12a); everything
   else stays a materiality sample with coverage stated honestly.
+Housekeeping rulings, 2026-10-11 (PR #212):
+- Remediation cap: one remediation cycle per Phase 1, counted in
+  manifest.yaml remediation_cycles; a second is refused and goes to Halt 1 as
+  an open item, the verdict standing as it is (/run-pipeline step 5b).
+- Verifier re-run cap: each verifier runs once per Phase 1, counted in
+  manifest.yaml verifier_runs. A re-run needs an operator approval recorded
+  in inputs/operator-notes.md; the Verifier A severity-addendum re-run is
+  one. The verifier re-check inside the one permitted cycle is part of the
+  cycle. Mechanical re-runs (missing or empty report, malformed block) do
+  not count.
+- Stuck rule: every agent stops after three unchanged repeats or five turns
+  with nothing new learned, reports what it tried, and writes its block with
+  status: blocked. A blocked block is a finished run, never re-invoked.
+- Halt 1 report: file path and at most ten summary lines per deliverable,
+  never the full body in chat; it ends with "Change that would make the next
+  run cheaper: ___". /finalize keeps printing its finals in full.
+- session-cost.md ends with fresh tokens, re-read tokens and the re-read
+  multiple. Subagent prompt cache TTL is 1h (.claude/settings.json), judged
+  on that multiple in the next run.
 
 ## WORDS
 - "done" for a stage = full report written AND valid YAML block emitted

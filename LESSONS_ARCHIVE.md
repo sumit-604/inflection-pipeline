@@ -1108,3 +1108,7 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
 - 568fdf7a (merge of PR #170): the "open action" it names is the BSE
   fetch_bse_announcements check, already in LESSONS.md OPEN ACTIONS (PR #167).
   No new work.
+- ORCHPHARMA 2026-09-06 item 5 (how many REWORK remediation cycles before
+  operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
+  Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
+  OPEN ACTIONS.

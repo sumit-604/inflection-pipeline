@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Capillary Technologies - Business Decoded 6</title>
+<style>
+@font-face { font-family: 'Fraunces'; src: url('assets/fonts/Fraunces.ttf'); font-weight: 100 900; }
+@font-face { font-family: 'Inter'; src: url('assets/fonts/Inter.ttf'); font-weight: 100 900; }
+@font-face { font-family: 'Caveat'; src: url('assets/fonts/Caveat.ttf'); font-weight: 400 700; }
+html, body { margin: 0; padding: 0; background: #2A1C3C; overflow: hidden; }
+svg { display: block; }
+text { font-kerning: normal; }
+</style>
+<script src="timeline.js"></script>
+</head>
+<body>
+<svg id="root" xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+<script>
+"use strict";
+/* ============ basics ============ */
+const NS = 'http://www.w3.org/2000/svg';
+const C = { base: '#2A1C3C', text: '#F4EEF8', gold: '#F2C14E', lilac: '#C9A7F0', chip: '#E3A13B', deep: '#1F1430', mid: '#3B2A55', soft: '#51397A', coral: '#E8756B', teal: '#6CC6BE', paper: '#F4EEF8', ink: '#2A1C3C', red: '#E5484D', grey: '#8A8396' };
+const FPS = TL.fps;
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = x => 1 - Math.pow(1 - clamp(x), 3);
+const eio = x => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const lerp = (a, b, t) => a + (b - a) * t;
+const P = (t, a, b) => clamp((t - a) / (b - a));
+const back = x => { x = clamp(x); const c = 1.70158; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+function E(tag, a, p) { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+function G(p, a) { return E('g', a || {}, p); }
+function T(p, s, x, y, o = {}) {
+  const e = E('text', { x, y, 'font-family': o.f || 'Inter', 'font-size': o.s || 32, 'font-weight': o.w || 500, fill: o.c || C.text, 'text-anchor': o.a || 'middle' }, p);
+  if (o.ls) e.setAttribute('letter-spacing', o.ls);
+  e.textContent = s; return e;
+}
+function tf(e, x, y, s, r) { e.setAttribute('transform', 'translate(' + x + ',' + y + ') rotate(' + (r || 0) + ') scale(' + (s == null ? 1 : s) + ')'); }
+function op(e, v) { v = clamp(v); e.setAttribute('opacity', v); e.style.display = v < 0.002 ? 'none' : ''; }
+function rect(p, x, y, w, h, fill, rx, extra) { return E('rect', Object.assign({ x, y, width: w, height: h, fill, rx: rx || 0 }, extra || {}), p); }
+function circ(p, x, y, r, fill, extra) { return E('circle', Object.assign({ cx: x, cy: y, r, fill }, extra || {}), p); }
+function path(p, d, a) { return E('path', Object.assign({ d, fill: 'none' }, a || {}), p); }
+
+/* ============ timing helpers (all from TL) ============ */
+const PARTS = [];
+TL.scenes.forEach(sc => sc.rows.forEach(r => r.parts.forEach(p => PARTS.push({ a: p.start, b: p.end, spk: r.speaker }))));
+function talking(t, spk) { return PARTS.some(p => t >= p.a && t <= p.b && (spk == null || p.spk === spk)); }
+function mouthAmt(t, spk) { if (!talking(t, spk)) return 0; return clamp(.35 + .65 * Math.abs(Math.sin(t * 17.3)) * (.65 + .35 * Math.sin(t * 5.1 + 1))); }
+function blinkAmt(t, ph) { const c = (t + ph) % 3.7; return c > 3.55 ? Math.sin((c - 3.55) / .15 * Math.PI) : 0; }
+const rowSpan = r => [r.start, r.end];
+
+/* ============ characters ============ */
+function person(o) {
+  const root = G(null); const sh = E('ellipse', { cx: 0, cy: 2, rx: 62, ry: 11, fill: '#000', opacity: .28 }, root);
+  const body = G(root);
+  const legs = [-1, 1].map(sd => { const g = G(body, {}); rect(g, -15, 0, 30, 120, o.bottom, 12); E('ellipse', { cx: 7, cy: 120, rx: 24, ry: 10, fill: o.shoe || '#1A1028' }, g); g.dataset.hx = sd * 20; return g; });
+  const armBack = G(body); const armFront = G(body);
+  const torso = G(body);
+  rect(torso, -48, -274, 96, 152, o.top, 28);
+  rect(torso, -10, -286, 20, 22, o.skin, 6);
+  if (o.tie) { path(torso, 'M-12,-268 L12,-268 L7,-250 L14,-196 L0,-182 L-14,-196 L-7,-250Z', { fill: o.tie }); }
+  if (o.lanyard) { path(torso, 'M-18,-272 L0,-205 L18,-272', { stroke: C.gold, 'stroke-width': 4, fill: 'none' }); rect(torso, -17, -208, 34, 44, '#F4EEF8', 6); rect(torso, -11, -200, 22, 8, C.lilac, 3); rect(torso, -11, -184, 16, 5, C.grey, 2); }
+  if (o.collar) { path(torso, 'M-22,-274 L0,-246 L22,-274 Z', { fill: o.collar }); }
+  const head = G(body);
+  if (o.hair === 'pony') path(head, 'M-36,-338 Q-96,-326 -84,-250 Q-72,-292 -38,-306Z', { fill: o.hairC });
+  if (o.hair === 'bun' || o.hair === 'pony') circ(head, 0, -318, 49, o.hairC);
+  circ(head, 0, -312, 42, o.skin);
+  E('ellipse', { cx: -43, cy: -310, rx: 6, ry: 10, fill: o.skin }, head); E('ellipse', { cx: 43, cy: -310, rx: 6, ry: 10, fill: o.skin }, head);
+  if (o.hair === 'bun') { circ(head, 0, -372, 21, o.hairC); path(head, 'M-45,-316 Q-42,-364 0,-364 Q42,-364 45,-316 Q22,-340 -8,-338 Q-30,-334 -45,-316Z', { fill: o.hairC }); }
+  if (o.hair === 'pony') path(head, 'M-45,-316 Q-44,-362 0,-362 Q44,-362 45,-316 Q18,-342 -10,-338 Q-30,-334 -45,-316Z', { fill: o.hairC });
+  if (o.hair === 'short') path(head, 'M-45,-318 Q-48,-368 0,-368 Q48,-368 45,-318 Q30,-346 0,-343 Q-30,-346 -45,-318Z', { fill: o.hairC });
+  if (o.hair === 'grey') { path(head, 'M-44,-324 Q-48,-350 -26,-352 Q-40,-336 -40,-316Z', { fill: o.hairC }); path(head, 'M44,-324 Q48,-350 26,-352 Q40,-336 40,-316Z', { fill: o.hairC }); path(head, 'M-30,-352 Q0,-366 30,-352 Q0,-358 -30,-352Z', { fill: o.hairC }); }
+  const eyes = [-16, 16].map(x => { const g = G(head); E('ellipse', { cx: x, cy: 0, rx: 5, ry: 6.5, fill: '#2A1C3C' }, g); g.dataset.cx = x; return g; });
+  path(head, 'M-24,-333 Q-16,-338 -8,-334', { stroke: o.hairC, 'stroke-width': 3, 'stroke-linecap': 'round' });
+  path(head, 'M8,-334 Q16,-338 24,-333', { stroke: o.hairC, 'stroke-width': 3, 'stroke-linecap': 'round' });
+  E('ellipse', { cx: -26, cy: -300, rx: 7, ry: 4, fill: '#E8756B', opacity: .25 }, head); E('ellipse', { cx: 26, cy: -300, rx: 7, ry: 4, fill: '#E8756B', opacity: .25 }, head);
+  const mouthC = path(head, 'M-10,-297 Q0,-290 10,-297', { stroke: '#7A3B3B', 'stroke-width': 3.2, 'stroke-linecap': 'round' });
+  const mouthO = E('ellipse', { cx: 0, cy: -295, rx: 8, ry: 4, fill: '#7A2E3A' }, head);
+  if (o.glasses) { circ(head, -16, -318, 15, 'none', { stroke: '#1A1028', 'stroke-width': 3 }); circ(head, 16, -318, 15, 'none', { stroke: '#1A1028', 'stroke-width': 3 }); path(head, 'M-1,-318 L1,-318', { stroke: '#1A1028', 'stroke-width': 3 }); }
+  // arms drawn after torso for front
+  [armBack, armFront].forEach((g, i) => { rect(g, -13, 0, 26, 114, o.top, 13); circ(g, 0, 120, 15, o.skin); g.dataset.px = i === 0 ? -50 : 50; });
+  const api = {
+    g: root,
+    set(s) {
+      const sc = s.s == null ? .85 : s.s, dir = s.dir || 1, sw = s.walk || 0, ph = (s.x || 0) / 34;
+      const bob = sw ? Math.abs(Math.sin(ph)) * 5 : Math.sin((s.t || 0) * 2.1) * 1.6;
+      tf(root, s.x || 0, (s.y || 0) - bob * sc, sc, 0);
+      body.setAttribute('transform', 'scale(' + dir + ',1)');
+      legs.forEach((g, i) => { const a = sw ? Math.sin(ph + i * Math.PI) * 30 * sw : 0; g.setAttribute('transform', 'translate(' + g.dataset.hx + ',-126) rotate(' + (-a) + ')'); });
+      [armBack, armFront].forEach((g, i) => {
+        let a = i === 0 ? s.armB : s.armF;
+        if (a == null) a = sw ? Math.sin(ph + (i ? 0 : Math.PI)) * 28 * sw : (i ? 3 : -3);
+        g.setAttribute('transform', 'translate(' + g.dataset.px + ',-250) rotate(' + (-a) + ')');
+      });
+      const m = s.mouth || 0; op(mouthC, m > .05 ? 0 : 1); op(mouthO, m > .05 ? 1 : 0); mouthO.setAttribute('ry', 3 + 9 * m); mouthO.setAttribute('rx', 7 + 3 * m);
+      const bl = s.blink || 0; eyes.forEach(g => g.setAttribute('transform', 'translate(' + g.dataset.cx + ',-318) scale(1,' + (1 - .9 * bl) + ')'));
+    },
+    hand(s, side) { // world position of a hand; side 'F' (front) or 'B'
+      const sc = s.s == null ? .85 : s.s, dir = s.dir || 1; const a = (((side === 'B' ? s.armB : s.armF) == null ? 40 : (side === 'B' ? s.armB : s.armF))) * Math.PI / 180; const px = side === 'B' ? -50 : 50;
+      return { x: (s.x || 0) + dir * sc * (px + 120 * Math.sin(a)), y: (s.y || 0) + sc * (-250 + 120 * Math.cos(a)) };
+    }
+  };
+  return api;
+}
+const CAST = {
+  shopper: () => person({ skin: '#E7B28C', hair: 'pony', hairC: '#3A2418', top: '#F2C14E', bottom: '#4B3868', shoe: '#1A1028' }),
+  meera: () => person({ skin: '#D79B72', hair: 'bun', hairC: '#1F1430', top: '#C9A7F0', bottom: '#3B2A55', shoe: '#1A1028' }),
+  ramesh: () => person({ skin: '#B97D55', hair: 'short', hairC: '#1B1210', top: '#6CC6BE', bottom: '#2F3B5C', shoe: '#1A1028', lanyard: true, collar: '#4EA9A1' }),
+  officer: () => person({ skin: '#E2B08A', hair: 'grey', hairC: '#B9B3C4', top: '#7B4A66', bottom: '#2B2236', shoe: '#1A1028', tie: '#F2C14E', glasses: true }),
+};
+
+/* ============ shared props ============ */
+function bubble(p, text, w, h, tailDir) {
+  const g = G(p); rect(g, -w / 2, -h / 2, w, h, '#F4EEF8', 22);
+  path(g, 'M' + (tailDir || -1) * 24 + ',' + (h / 2 - 2) + ' L' + (tailDir || -1) * 44 + ',' + (h / 2 + 26) + ' L' + (tailDir || -1) * 4 + ',' + (h / 2 - 2) + 'Z', { fill: '#F4EEF8' });
+  const lines = text.split('|'); lines.forEach((l, i) => T(g, l, 0, (i - (lines.length - 1) / 2) * 32 + 10, { s: 28, w: 600, c: C.ink }));
+  return g;
+}
+function phoneProp(p, w, h) {
+  const g = G(p); rect(g, -w / 2, -h / 2, w, h, '#120B1C', 16); rect(g, -w / 2 + 6, -h / 2 + 8, w - 12, h - 16, '#241636', 11);
+  const scr = G(g); return { g, scr, w, h };
+}
+function serverBox(p, label, w, h) {
+  const g = G(p); rect(g, -w / 2, -h / 2, w, h, '#2F1F47', 14, { stroke: C.lilac, 'stroke-width': 3 });
+  const leds = [];
+  for (let i = 0; i < 3; i++) { rect(g, -w / 2 + 16, -h / 2 + 52 + i * 34, w - 32, 24, '#3F2C5E', 5); leds.push(circ(g, w / 2 - 34, -h / 2 + 64 + i * 34, 5, C.gold)); rect(g, -w / 2 + 28, -h / 2 + 60 + i * 34, 70, 8, '#5A4380', 3); }
+  rect(g, -w / 2, -h / 2, w, 38, C.gold, 14); rect(g, -w / 2, -h / 2 + 20, w, 18, C.gold, 0);
+  T(g, label, 0, -h / 2 + 28, { s: 24, w: 800, c: '#1F1430', ls: 3 });
+  return { g, leds };
+}
+function thread(p, d, w) { const base = path(p, d, { stroke: C.gold, 'stroke-width': w || 6, 'stroke-linecap': 'round' }); const L = base.getTotalLength(); const flow = path(p, d, { stroke: '#FFF3C4', 'stroke-width': (w || 6) / 2, 'stroke-linecap': 'round', 'stroke-dasharray': '2 26' }); return { base, flow, L }; }
+function setThread(th, prog, t) { th.base.setAttribute('stroke-dasharray', (th.L * prog) + ' ' + th.L); op(th.flow, prog > .98 ? 1 : 0); th.flow.setAttribute('stroke-dashoffset', -t * 60); }
+function check(p, x, y, s, col, sw) { return path(p, 'M' + (x - 14 * s) + ',' + y + ' L' + (x - 3 * s) + ',' + (y + 12 * s) + ' L' + (x + 16 * s) + ',' + (y - 14 * s), { stroke: col || C.gold, 'stroke-width': sw || 7, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }); }
+function pathProg(e, prog) { const L = e.getTotalLength(); e.setAttribute('stroke-dasharray', L); e.setAttribute('stroke-dashoffset', L * (1 - clamp(prog))); }
+function coin(p, r) { const g = G(p); circ(g, 0, 0, r, C.gold, { stroke: '#B8860B', 'stroke-width': 3 }); T(g, '₹', 0, r * .36, { s: r * 1.1, w: 800, c: '#6B4A00' }); return g; }
+function floor(p, y, col) { rect(p, 0, y, 1920, 1080 - y, col || '#241733'); rect(p, 0, y, 1920, 4, '#3B2A55'); }
+function label(p, s, x, y, o) { return T(p, s, x, y, Object.assign({ s: 30, w: 600 }, o)); }
+function card(p, x, y, w, h, fill, rx, stroke) { return rect(p, x, y, w, h, fill, rx == null ? 20 : rx, stroke ? { stroke, 'stroke-width': 3 } : {}); }
+
+/* ============ scenes ============ */
+const SCENES = {};
+function bobAnimate(t, i) { return Math.sin(t * 2 + i) * 2; }
+
+/* ---- Scene 1: points at the till ---- */
+SCENES[1] = function (g, S) {
+  const R = S.rows;
+  floor(g, 860);
+  // cafe wall: menu board + lamps
+  card(g, 300, 150, 360, 200, '#1F1430', 14, C.lilac); T(g, 'COFFEE', 480, 214, { f: 'Fraunces', s: 46, w: 700, c: C.gold }); T(g, 'Latte · Filter · Cold brew', 480, 262, { s: 22, w: 500, c: C.lilac }); T(g, 'Points on every cup', 480, 308, { s: 22, w: 600, c: C.text });
+  [880, 1120].forEach(x => { path(g, 'M' + x + ',0 L' + x + ',120', { stroke: '#51397A', 'stroke-width': 4 }); path(g, 'M' + (x - 36) + ',170 Q' + x + ',100 ' + (x + 36) + ',170 Z', { fill: C.gold, opacity: .9 }); });
+  // counter
+  rect(g, 1070, 690, 640, 170, C.mid, 8); rect(g, 1050, 664, 680, 30, C.lilac, 8);
+  for (let i = 0; i < 6; i++) rect(g, 1090 + i * 100, 720, 70, 110, '#46326B', 6);
+  // till
+  rect(g, 1180, 580, 150, 86, '#120B1C', 10); rect(g, 1192, 590, 126, 40, '#2F1F47', 6); T(g, 'TILL', 1255, 620, { s: 22, w: 700, c: C.lilac }); rect(g, 1170, 640, 170, 26, '#3F2C5E', 6);
+  // coffee machine + cup
+  rect(g, 1480, 520, 120, 146, '#51397A', 12); rect(g, 1498, 546, 84, 24, '#1F1430', 6); circ(g, 1540, 606, 10, C.gold);
+  rect(g, 1395, 622, 44, 44, '#F4EEF8', 8); path(g, 'M1439,634 q22,0 0,22', { stroke: '#F4EEF8', 'stroke-width': 6 });
+  const steam = path(g, 'M1417,606 q-10,-18 0,-34 q10,-16 0,-32', { stroke: C.lilac, 'stroke-width': 4, opacity: .5, 'stroke-linecap': 'round' });
+  // server + thread + brands + profit card
+  const srv = serverBox(g, 'CAPILLARY', 270, 190); const srvG = srv.g; tf(srvG, 1520, 210, 1, 0);
+  const pin = G(g); path(pin, 'M0,0 q-18,-26 0,-44 q18,18 0,44z', { fill: C.coral }); circ(pin, 0, -30, 5, '#fff'); T(pin, 'Bengaluru', 30, -14, { a: 'start', s: 26, w: 700, c: C.text });
+  tf(pin, 1450, 292, .8, 0);
+  const brands = [0, 1, 2].map(i => { const b = G(g); rect(b, -62, -34, 124, 68, '#2F1F47', 10, { stroke: C.lilac, 'stroke-width': 2 }); path(b, 'M-62,-34 l14,-20 h96 l14,20z', { fill: [C.coral, C.lilac, C.gold][i], opacity: .85 }); T(b, 'BRAND', 0, 12, { s: 22, w: 700, c: C.text }); tf(b, 1330 + i * 190, 410 + (i === 1 ? 14 : 0), 1, 0); const ln = path(g, 'M' + (1470 + (i - 1) * 40) + ',322 L' + (1330 + i * 190) + ',' + (370 + (i === 1 ? 14 : 0)), { stroke: C.lilac, 'stroke-width': 3, 'stroke-dasharray': '6 8', opacity: .8 }); return { b, ln }; });
+  const prof = G(g); card(prof, -270, -86, 540, 172, '#1F1430', 22, C.gold); T(prof, 'Quarterly operating profit', 0, -42, { s: 26, w: 600, c: C.lilac });
+  T(prof, 'under ₹1 crore', -128, 26, { s: 30, w: 700, c: C.text }); T(prof, '→', 0, 26, { s: 38, w: 700, c: C.gold }); T(prof, 'about ₹20 crore', 142, 26, { s: 30, w: 800, c: C.gold });
+  tf(prof, 480, 520, 1, 0);
+  // people
+  const shop = CAST.shopper(); g.appendChild(shop.g); const meera = CAST.meera(); g.appendChild(meera.g);
+  const phone = phoneProp(g, 74, 130); const pts = G(phone.scr); T(pts, '+40', 0, 4, { s: 34, w: 800, c: C.gold }); T(pts, 'points', 0, 34, { s: 16, w: 600, c: C.text }); circ(phone.scr, 0, -36, 9, C.gold);
+  const pop = G(g); card(pop, -118, -34, 236, 68, C.gold, 34); T(pop, '+40 points', 0, 12, { s: 34, w: 800, c: '#1F1430' });
+  const bub = bubble(g, 'One latte, please', 290, 66, -1);
+  let th = null; const [w0a, w0b] = [R[0].start + .15, R[0].end - .1];
+  const buzz = R[0].cues[0].t + .35; const mW = [R[3].start + .1, R[3].end - .2];
+  const card1 = G(g); rect(card1, -640, -170, 1280, 340, '#1F1430', 36, { stroke: C.gold, 'stroke-width': 4 }); T(card1, 'Capillary Technologies', 0, -26, { f: 'Fraunces', s: 96, w: 700, c: C.text }); T(card1, 'Business Decoded #6', 0, 74, { f: 'Fraunces', s: 56, w: 600, c: C.gold }); tf(card1, 960, 440, 1, 0);
+  const finalX = 930, phoneBase = { x: 0, y: 0 };
+  let thPath = null;
+  return function (t) {
+    const wk = P(t, w0a, w0b); const x = lerp(-120, finalX - 60, eio(wk)); const walking = wk > 0 && wk < 1;
+    const arriveT = w0b; const raise = P(t, arriveT - .6, arriveT + .3);
+    const st = { x, y: 860, dir: 1, walk: walking ? 1 : 0, t, mouth: 0, blink: blinkAmt(t, 0), armF: 20 + 85 * ease(raise), armB: walking ? undefined : 5 };
+    if (!walking) { st.armB = 6; }
+    shop.set(st);
+    const h = shop.hand(st, 'F'); const shake = (t > buzz && t < buzz + .7) ? Math.sin(t * 60) * 4 : 0;
+    tf(phone.g, h.x + 22 + shake, h.y - 52, 1, -8); op(phone.g, ease(P(t, w0a, w0a + .3)));
+    pts.setAttribute('opacity', t > buzz ? 1 : 0); phone.scr.firstChild && 0;
+    // thread from phone to server
+    if (!th && t > buzz) { const px = h.x + 22, py = h.y - 100; th = thread(g, 'M' + px + ',' + py + ' C' + (px + 120) + ',' + (py - 160) + ' 1180,230 1385,190', 6); }
+    if (th) setThread(th, ease(P(t, buzz + .3, buzz + 1.6)), t);
+    op(bub, (t > R[0].start + .2 && t < w0b - .2) ? 1 : 0); tf(bub, x + 110, 470, 1, 0);
+    // pop of +40
+    const pp = P(t, buzz, buzz + .5); op(pop, t < buzz ? 0 : Math.max(0, 1 - P(t, buzz + 2.2, buzz + 2.8))); tf(pop, finalX + 40, 380 - 40 * ease(pp), .6 + .4 * back(pp), 0);
+    // server
+    const sIn = ease(P(t, R[1].start, R[1].start + .7)); op(srvG, sIn); tf(srvG, 1520, 210 + (1 - sIn) * -40, 1, 0);
+    srv.leds.forEach((l, i) => op(l, .45 + .55 * (Math.sin(t * 5 + i * 2) > 0 ? 1 : 0)));
+    const gl = P(t, R[2].start, R[2].start + .5); srvG.setAttribute('filter', ''); op(pin, ease(P(t, R[2].cues ? R[2].start + 1.0 : 0, R[2].start + 1.5)));
+    brands.forEach((b, i) => { const a = ease(P(t, R[2].start + 2.0 + i * .55, R[2].start + 2.5 + i * .55)); op(b.b, a * (1 - .6 * P(t, R[3].start, R[3].start + .5))); op(b.ln, a * (1 - .7 * P(t, R[3].start, R[3].start + .5))); });
+    const pa = ease(P(t, R[3].start + .3, R[3].start + .9)); op(prof, pa); tf(prof, 480, 520 - (1 - pa) * 30, .95 + .05 * pa, 0);
+    // Meera walks in during row 3 (her entrance happens while the narrator speaks)
+    const mk = P(t, mW[0], mW[1]); const mx = lerp(-100, 520, eio(mk)); const mWalk = mk > 0 && mk < 1;
+    meera.set({ x: mx, y: 860, dir: 1, walk: mWalk ? 1 : 0, t, mouth: mouthAmt(t, 'Meera'), blink: blinkAmt(t, 1.3) }); op(meera.g, mk > 0 ? 1 : 0);
+    op(card1, ease(P(t, R[5].start, R[5].start + .6))); card1.setAttribute('transform', 'translate(960,' + (440 - 20 * (1 - ease(P(t, R[5].start, R[5].start + .6)))) + ') scale(' + (.94 + .06 * ease(P(t, R[5].start, R[5].start + .6))) + ')');
+    steam.setAttribute('opacity', .35 + .25 * Math.sin(t * 2));
+  };
+};
+
+/* ---- Scene 2: what Capillary sells ---- */
+SCENES[2] = function (g, S) {
+  const R = S.rows;
+  floor(g, 860);
+  // office back wall elements
+  card(g, 230, 120, 250, 300, '#1F1430', 10, '#51397A'); [0, 1, 2].forEach(i => { rect(g, 250 + i * 70, 560 - 400 + 20 + (i % 2) * 24, 52, 110 - (i % 2) * 24, C.lilac, 4, { opacity: .5 }); }); T(g, 'City view', 355, 400, { s: 20, c: C.lilac, w: 500 });
+  // desk right
+  const officer = CAST.officer(); g.appendChild(officer.g);
+  const desk = G(g); rect(desk, 1230, 690, 480, 24, C.lilac, 6); rect(desk, 1250, 714, 440, 146, C.mid, 4); rect(desk, 1350, 724, 240, 40, '#1F1430', 6); T(desk, 'BRAND · MARKETING HEAD', 1470, 752, { s: 18, w: 700, c: C.gold, ls: 1 });
+  rect(desk, 1560, 640, 100, 52, '#120B1C', 6); rect(desk, 1568, 646, 84, 38, '#2F1F47', 4);
+  const ob = bubble(g, 'Show me|every offer', 280, 96, 1); tf(ob, 1330, 520, 1, 0);
+  const ram = CAST.ramesh(); g.appendChild(ram.g);
+  const lap = G(g); rect(lap, -62, -42, 124, 80, '#120B1C', 8); rect(lap, -54, -35, 108, 64, '#2F1F47', 5); path(lap, 'M-78,40 h156 l-10,12 h-136z', { fill: '#51397A' });
+  // dashboard panel (callout)
+  const dash = G(g); card(dash, 0, 0, 700, 380, '#1F1430', 24, C.lilac); T(dash, 'Loyalty dashboard', 350, 50, { f: 'Fraunces', s: 36, w: 600, c: C.text });
+  const tiles = [['Points', 'who earns'], ['Offers', 'what goes out'], ['Customers', 'what each bought']].map((tt, i) => {
+    const t1 = G(dash); rect(t1, 30 + i * 218, 86, 202, 262, '#33224A', 16); T(t1, tt[0], 131 + i * 218, 130, { s: 28, w: 700, c: C.gold }); T(t1, tt[1], 131 + i * 218, 160, { s: 18, w: 500, c: C.lilac });
+    if (i === 0) [0, 1, 2, 3].forEach(k => rect(t1, 52 + k * 42, 300 - (30 + k * 30), 28, 30 + k * 30, C.lilac, 4));
+    if (i === 1) [0, 1].forEach(k => { rect(t1, 52, 190 + k * 70, 158, 54, '#51397A', 10); T(t1, k ? 'Free coffee' : '10% off', 131, 224 + k * 70, { s: 22, w: 600 }); });
+    if (i === 2) [0, 1, 2, 3].forEach(k => { circ(t1, 64, 206 + k * 36, 10, C.lilac); rect(t1, 84, 200 + k * 36, 100, 12, '#51397A', 5); });
+    return t1;
+  });
+  tf(dash, 560, 120, 1, 0);
+  // contracts strip
+  const con = G(g); card(con, 0, 0, 900, 330, '#1F1430', 24, C.lilac); T(con, 'Contract: 3 to 7 years', 450, 56, { f: 'Fraunces', s: 40, w: 600, c: C.gold }); T(con, 'the brand pays every year', 450, 92, { s: 24, w: 500, c: C.lilac });
+  const yrs = []; for (let i = 0; i < 7; i++) { const x = 70 + i * 126; rect(con, x - 40, 190, 110, 20, i < 3 ? C.lilac : '#51397A', 6, { opacity: i < 3 ? 1 : .8 }); T(con, 'Yr ' + (i + 1), x + 15, 246, { s: 20, w: 600, c: C.lilac }); const cn = coin(con, 24); tf(cn, x + 15, 150, 1, 0); yrs.push(cn); }
+  tf(con, 560, 110, 1, 0);
+  // wires + nine icons
+  const hub = G(g); const hubC = G(hub);
+  const nine = ['till', 'app', 'website', 'card machine', 'email', 'SMS', 'chat', 'kiosk', 'wallet'];
+  const icons = nine.map((nm, i) => {
+    const a = (i / 9) * Math.PI * 2 - Math.PI / 2; const cx = 1100 + Math.cos(a) * 330, cy = 300 + Math.sin(a) * 150;
+    const w = path(hub, 'M1100,300 L' + cx + ',' + cy, { stroke: C.gold, 'stroke-width': 4, 'stroke-linecap': 'round' });
+    const ic = G(hub); card(ic, -52, -34, 104, 68, '#33224A', 14, C.lilac);
+    const sk = { stroke: C.lilac, 'stroke-width': 3, fill: 'none', 'stroke-linejoin': 'round' };
+    if (nm === 'till') { rect(ic, -26, -18, 52, 22, 'none', 4, sk); rect(ic, -30, 6, 60, 10, C.lilac, 3); }
+    if (nm === 'app') { rect(ic, -14, -26, 28, 44, 'none', 6, sk); circ(ic, 0, 12, 3, C.lilac); }
+    if (nm === 'website') { rect(ic, -28, -22, 56, 40, 'none', 5, sk); path(ic, 'M-28,-10 h56', sk); circ(ic, -20, -16, 2.5, C.coral); }
+    if (nm === 'card machine') { rect(ic, -18, -26, 36, 50, 'none', 6, sk); rect(ic, -10, -20, 20, 12, C.lilac, 2); [0, 1, 2].forEach(k => circ(ic, -8 + k * 8, 6, 2.5, C.lilac)); }
+    if (nm === 'email') { rect(ic, -26, -16, 52, 34, 'none', 5, sk); path(ic, 'M-26,-14 L0,6 L26,-14', sk); }
+    if (nm === 'SMS') { path(ic, 'M-24,-20 h48 v30 h-30 l-12,12 v-12 h-6z', sk); }
+    if (nm === 'chat') { path(ic, 'M-26,-22 h34 v22 h-16 l-8,8 v-8 h-10z', sk); path(ic, 'M12,-8 h14 v20 h-6 v8 l-8,-8 h-8z', { stroke: C.gold, 'stroke-width': 3, fill: 'none' }); }
+    if (nm === 'kiosk') { rect(ic, -16, -26, 32, 36, 'none', 4, sk); path(ic, 'M0,10 v14 M-14,24 h28', sk); }
+    if (nm === 'wallet') { rect(ic, -26, -16, 52, 34, 'none', 7, sk); circ(ic, 14, 1, 4, C.gold); }
+    T(ic, nm, 0, 56, { s: 19, w: 600, c: C.lilac }); tf(ic, cx, cy, 1, 0);
+    return { w, ic };
+  });
+  const hubBox = G(hub); card(hubBox, -110, -52, 220, 104, '#2F1F47', 20, C.gold); T(hubBox, 'CAPILLARY', 0, 8, { s: 30, w: 800, c: C.gold, ls: 2 }); tf(hubBox, 1100, 300, 1, 0);
+  const cnt = G(g); circ(cnt, 0, 0, 56, C.gold); T(cnt, '9', 0, 22, { f: 'Fraunces', s: 70, w: 800, c: '#1F1430' }); T(cnt, 'systems per customer', 0, 94, { s: 24, w: 600, c: C.lilac }); tf(cnt, 1600, 150, 1, 0);
+  const cntT = cnt.querySelectorAll('text')[0];
+  const lock = G(g); card(lock, -240, -64, 480, 128, '#1F1430', 22, C.gold); rect(lock, -190, -10, 54, 44, C.gold, 8); path(lock, 'M-180,-10 v-18 a17,17 0 0 1 34,0 v18', { stroke: C.gold, 'stroke-width': 7 }); T(lock, 'Wired in', -100, -2, { a: 'start', s: 34, w: 700 }); T(lock, 'moving out: a big project', -100, 38, { a: 'start', s: 24, w: 500, c: C.lilac }); tf(lock, 1120, 590, 1, 0);
+  // churn grid
+  const grid = G(g); card(grid, 0, 0, 640, 380, '#1F1430', 24, C.lilac); T(grid, 'Customers who leave in a year', 320, 48, { s: 28, w: 700, c: C.text });
+  const dots = []; for (let i = 0; i < 100; i++) { const d = circ(grid, 60 + (i % 20) * 27, 96 + Math.floor(i / 20) * 40, 10, C.lilac); dots.push(d); }
+  const leave = [3, 27, 49, 72, 95]; T(grid, 'about 5 in 100', 320, 340, { f: 'Fraunces', s: 40, w: 700, c: C.gold }); tf(grid, 600, 120, 1, 0);
+  const rent = G(g); card(rent, -300, -150, 600, 300, '#1F1430', 24, C.lilac); T(rent, 'RENT', 0, 20, { f: 'Fraunces', s: 110, w: 800, c: C.gold }); const rq = T(rent, '?', 220, 30, { f: 'Fraunces', s: 130, w: 800, c: C.lilac }); const adv = T(rent, 'paid in advance', 0, 100, { s: 36, w: 600, c: C.text }); tf(rent, 1050, 300, 1, 0);
+  const calRent = G(rent); [0, 1, 2, 3].forEach(k => rect(calRent, -130 + k * 70, -110, 56, 28, C.gold, 5, { opacity: .9 }));
+  const wlk = [R[0].start + .2, R[0].end - .2];
+  return function (t) {
+    // Ramesh walks in during row 0
+    const k = P(t, wlk[0], wlk[1]); const x = lerp(-120, 330, eio(k)); const walking = k > 0 && k < 1;
+    const handUp = P(t, R[3].start, R[3].start + .3);
+    const rs = { x, y: 860, dir: 1, walk: walking ? 1 : 0, t, mouth: mouthAmt(t, 'Ramesh'), blink: blinkAmt(t, .6), armF: walking ? undefined : 65 - 25 * handUp * 0, armB: walking ? undefined : 10 };
+    ram.set(rs); const hp = ram.hand(rs, 'F'); tf(lap, hp.x + 40, hp.y - 20, .9, 0); lap.setAttribute('opacity', 1);
+    officer.set({ x: 1470, y: 860, dir: -1, t, mouth: 0, blink: blinkAmt(t, 2.2), armF: 20, armB: 25 });
+    op(ob, (t > R[0].start + 1 && t < R[0].end - .3) ? 1 : 0);
+    // row 0: dashboard
+    const d0 = ease(P(t, R[0].start, R[0].start + .6)) * (1 - ease(P(t, R[1].start, R[1].start + .4)));
+    op(dash, d0); tf(dash, 560, 120, 1, 0);
+    tiles.forEach((tl, i) => { const hi = R[0].cues[i] ? P(t, R[0].cues[i].t, R[0].cues[i].t + .3) * (1 - P(t, R[0].cues[i].t + 1.6, R[0].cues[i].t + 2.0)) : 0; tl.setAttribute('transform', 'translate(0,' + (-10 * hi) + ')'); tl.firstChild.setAttribute('fill', hi > .3 ? '#4A3470' : '#33224A'); });
+    // row 1: contract
+    const c1 = ease(P(t, R[1].start, R[1].start + .5)) * (1 - ease(P(t, R[2].start, R[2].start + .4))); op(con, c1);
+    yrs.forEach((cn, i) => { const a = back(P(t, R[1].start + .6 + i * .45, R[1].start + 1.0 + i * .45)); op(cn, a); tf(cn, 70 + i * 126 + 15, 150 + (1 - a) * -50, .6 + .4 * a, 0); });
+    // row 2: wires
+    const h2 = ease(P(t, R[2].start, R[2].start + .5)) * (1 - ease(P(t, R[4].start, R[4].start + .4))); op(hub, h2);
+    icons.forEach((ic, i) => { const at = R[2].start + .5 + (i / 9) * (R[2].end - R[2].start - 1.0); const a = ease(P(t, at, at + .35)); op(ic.ic, a); op(ic.w, a); ic.w.setAttribute('stroke', R[3] && t > R[3].start ? C.gold : C.lilac); });
+    const n = Math.min(9, icons.filter((ic, i) => t >= R[2].start + .5 + (i / 9) * (R[2].end - R[2].start - 1.0)).length);
+    cntT.textContent = String(n); op(cnt, ease(P(t, R[2].start + .3, R[2].start + .8)) * (1 - ease(P(t, R[4].start, R[4].start + .4))));
+    const lk = ease(P(t, R[3].start + .2, R[3].start + .8)) * (1 - ease(P(t, R[4].start, R[4].start + .4))); op(lock, lk); tf(lock, 1120, 590 - 20 * (1 - lk), 1, 0);
+    // row 4: grid
+    const g4 = ease(P(t, R[4].start, R[4].start + .5)) * (1 - ease(P(t, R[5].start, R[5].start + .4))); op(grid, g4);
+    dots.forEach((d, i) => { const l = leave.indexOf(i); if (l >= 0) { const a = P(t, R[4].start + 1.4 + l * .3, R[4].start + 2.0 + l * .3); d.setAttribute('fill', a > 0 ? C.coral : C.lilac); d.setAttribute('cy', 96 + Math.floor(i / 20) * 40 - 12 * ease(a)); d.setAttribute('opacity', 1 - .75 * ease(a)); } });
+    // row 5/6: rent
+    const r5 = ease(P(t, R[5].start, R[5].start + .5)); op(rent, r5); tf(rent, 1050, 300, .9 + .1 * r5, 0);
+    op(rq, 1 - ease(P(t, R[6].start, R[6].start + .3))); op(adv, ease(P(t, R[6].start + .5, R[6].start + 1.0))); op(calRent, ease(P(t, R[6].start + .5, R[6].start + 1.0)));
+  };
+};
+
+/* ---- Scene 3: cash comes first ---- */
+SCENES[3] = function (g, S) {
+  const R = S.rows;
+  const tanks = G(g);
+  function tank(x, name, col) { const gg = G(tanks); rect(gg, x - 150, 200, 300, 460, '#1F1430', 26, { stroke: C.lilac, 'stroke-width': 4 }); const fill = rect(gg, x - 142, 652, 284, 0, col, 18); T(gg, name, x, 740, { s: 34, w: 700, c: C.text }); const lvl = T(gg, '', x, 440, { f: 'Fraunces', s: 40, w: 700, c: '#1F1430' }); return { fill, lvl }; }
+  const cash = tank(660, 'Cash received', C.gold), rev = tank(1260, 'Revenue booked', C.lilac);
+  const tag = T(tanks, 'cash arrives first', 960, 130, { f: 'Fraunces', s: 54, w: 600, c: C.gold });
+  const ar = path(tanks, 'M830,440 h260', { stroke: C.gold, 'stroke-width': 6, 'stroke-linecap': 'round' }); const ah = path(tanks, 'M1070,420 l26,20 l-26,20', { stroke: C.gold, 'stroke-width': 6, 'stroke-linecap': 'round' });
+  // EBITDA tiles
+  const tiles = G(g); const words = [['E', 'earnings (profit)'], ['B', 'before'], ['I', 'interest'], ['T', 'tax'], ['D', 'depreciation'], ['A', 'amortisation']];
+  const tl = words.map((w, i) => { const t1 = G(tiles); card(t1, 0, 0, 200, 140, i === 0 ? '#51397A' : '#33224A', 18, C.lilac); T(t1, w[0], 100, 78, { f: 'Fraunces', s: 70, w: 800, c: C.gold }); T(t1, w[1], 100, 118, { s: 20, w: 600, c: C.text }); tf(t1, 260 + i * 220, 170, 1, 0); return t1; });
+  const eb = T(g, 'EBITDA', 260, 140, { a: 'start', f: 'Fraunces', s: 46, w: 700, c: C.gold });
+  // bars
+  const bars = G(g); const base = 800, k = 230; rect(bars, 1000, base, 700, 4, C.lilac, 2);
+  const b1 = rect(bars, 1130, base, 170, 0, C.lilac, 12), b2 = rect(bars, 1410, base, 170, 0, C.gold, 12);
+  T(bars, 'Adjusted EBITDA', 1215, base + 46, { s: 28, w: 600 }); T(bars, 'Cash from operations', 1495, base + 46, { s: 28, w: 600 }); T(bars, 'FY26', 1350, 330, { f: 'Fraunces', s: 48, w: 700, c: C.lilac });
+  const ratio = G(bars); card(ratio, 0, 0, 220, 90, '#1F1430', 22, C.gold); T(ratio, '≈ 1.4×', 110, 62, { f: 'Fraunces', s: 52, w: 800, c: C.gold }); tf(ratio, 1590, 410, 1, 0);
+  const guide = path(bars, 'M1130,' + (base - k) + ' H1580', { stroke: C.lilac, 'stroke-width': 3, 'stroke-dasharray': '8 8' });
+  const ok = G(g); circ(ok, 0, 0, 50, C.gold); check(ok, 0, 4, 1.7, '#1F1430', 10); T(ok, 'healthy sign for a growing software company', 0, 100, { s: 24, w: 600, c: C.text });
+  tf(ok, 1350, 250, 1, 0);
+  return function (t) {
+    const full = 410;
+    const c = ease(P(t, R[0].start + .3, R[0].start + 3.2)); const r = ease(P(t, R[0].start + 1.6, R[0].start + 6.5)) * .62;
+    cash.fill.setAttribute('height', full * c); cash.fill.setAttribute('y', 652 - full * c); rev.fill.setAttribute('height', full * r); rev.fill.setAttribute('y', 652 - full * r);
+    cash.lvl.textContent = ''; rev.lvl.textContent = '';
+    const shrink = ease(P(t, R[1].start - .1, R[1].start + .7)); const s = 1 - .45 * shrink;
+    tanks.setAttribute('transform', 'translate(' + (-250 * shrink) + ',' + (80 * shrink) + ') translate(960,430) scale(' + s + ') translate(-960,-430)');
+    op(tag, 1 - shrink); op(ar, 1 - shrink); op(ah, 1 - shrink);
+    tl.forEach((x, i) => { const at = R[1].start + .5 + i * (R[1].end - R[1].start - 1.1) / 6 * 1.0; const a = back(P(t, at, at + .4)); op(x, a); tf(x, 260 + i * 220, 170 + (1 - a) * 30, .85 + .15 * a, 0); });
+    op(eb, ease(P(t, R[1].start, R[1].start + .4)) * (1 - ease(P(t, R[2].start + .5, R[2].start + 1.0))));
+    const tShrink = ease(P(t, R[2].start + .3, R[2].start + 1.0)); tiles.setAttribute('transform', 'translate(' + (-0) + ',' + (-50 * tShrink) + ') translate(260,170) scale(' + (1 - .0 * tShrink) + ') translate(-260,-170)'); op(tiles, 1 - .85 * tShrink);
+    const bp = ease(P(t, R[2].start + .6, R[2].start + 1.6)); const bq = ease(P(t, R[2].start + 1.6, R[2].start + 3.0));
+    b1.setAttribute('height', k * bp); b1.setAttribute('y', base - k * bp); b2.setAttribute('height', k * 1.4 * bq); b2.setAttribute('y', base - k * 1.4 * bq);
+    op(bars, ease(P(t, R[2].start + .3, R[2].start + .8)));
+    // fix b2 height to show 1.4x: use k for EBITDA and 1.4k for cash
+    op(ratio, ease(P(t, R[2].start + 3.0, R[2].start + 3.6))); op(guide, bp);
+    op(ok, back(P(t, R[3].start + .3, R[3].start + 1.0))); tf(ok, 1350, 250 - 30, 1, 0);
+  };
+};
+
+/* ---- Scene 4: one very large client ---- */
+SCENES[4] = function (g, S) {
+  const R = S.rows;
+  floor(g, 860);
+  // building
+  const bld = G(g); rect(bld, 210, 170, 320, 690, '#33224A', 8, { stroke: C.lilac, 'stroke-width': 3 }); rect(bld, 210, 170, 320, 70, '#1F1430', 8); T(bld, 'US HEALTH INSURER', 370, 215, { s: 25, w: 800, c: C.gold, ls: 1 });
+  for (let r = 0; r < 8; r++) for (let c = 0; c < 4; c++) rect(bld, 236 + c * 74, 270 + r * 72, 52, 44, (r * 3 + c) % 5 === 0 ? C.gold : '#51397A', 5, { opacity: .9 });
+  rect(bld, 340, 790, 60, 70, '#1F1430', 5);
+  // table with contract
+  const tab = G(g); rect(tab, 640, 740, 340, 22, C.lilac, 6); rect(tab, 660, 762, 18, 98, C.mid); rect(tab, 942, 762, 18, 98, C.mid);
+  const pap = G(g); rect(pap, -80, -52, 160, 104, '#F4EEF8', 6); [0, 1, 2, 3].forEach(i => rect(pap, -60, -34 + i * 16, 120 - (i === 3 ? 60 : 0), 5, '#9A8FB0', 2)); path(pap, 'M20,34 q10,-14 20,0 t20,0', { stroke: '#2A1C3C', 'stroke-width': 3 }); tf(pap, 740, 700, 1, 0);
+  const env = G(g); rect(env, -52, -34, 104, 68, '#F2C14E', 6); path(env, 'M-52,-34 L0,8 L52,-34', { stroke: '#B8860B', 'stroke-width': 3, fill: 'none' });
+  const stamp = G(env); rect(stamp, -48, -14, 96, 30, 'none', 4, { stroke: C.red, 'stroke-width': 3 }); T(stamp, 'WARRANTS', 0, 8, { s: 18, w: 800, c: C.red }); stamp.setAttribute('transform', 'rotate(-8)');
+  const srv = serverBox(g, 'CAPILLARY', 200, 150); tf(srv.g, 1090, 760, 1, 0); // receiving box on right of table
+  const officer = CAST.officer(); g.appendChild(officer.g); const meera = CAST.meera(); g.appendChild(meera.g);
+  // revenue chart
+  const ch = G(g); const base = 520, sc = 3.0; rect(ch, 1290, base, 420, 3, C.lilac, 2);
+  const bars = [['₹12 cr', 'FY24', 1310, 12, C.lilac], ['₹99 cr', 'FY25', 1470, 99, C.gold]].map(b => { const r = rect(ch, b[2], base, 120, 0, b[4], 10); const v = T(ch, b[0], b[2] + 60, base - 14, { f: 'Fraunces', s: 40, w: 800 }); T(ch, b[1], b[2] + 60, base + 40, { s: 28, w: 700, c: C.lilac }); return { r, v, h: b[3] * sc, b: b[2] }; });
+  T(ch, 'Revenue from Optum', 1500, 130, { f: 'Fraunces', s: 40, w: 600 });
+  const cut = [['−₹21 cr', 'this year', 21], ['−₹31 cr', 'a year after', 31]].map((b, i) => { const gg = G(ch); const x = 1610 + i * 0, y0 = base - 99 * sc; return { gg, b, x }; });
+  const disc = G(g); card(disc, 1190, 610, 370, 190, '#1F1430', 22, C.coral); T(disc, 'Warrant discount off revenue', 1375, 650, { s: 24, w: 700, c: C.text });
+  const d1 = G(disc), d2 = G(disc); T(d1, '−₹21 cr', 1290, 730, { f: 'Fraunces', s: 40, w: 800, c: C.coral }); T(d1, 'this year', 1290, 770, { s: 22, c: C.lilac }); T(d2, '−₹31 cr', 1465, 730, { f: 'Fraunces', s: 40, w: 800, c: C.coral }); T(d2, 'a year after', 1465, 770, { s: 22, c: C.lilac });
+  // calendar
+  const cal = G(g); rect(cal, -110, -100, 220, 200, '#F4EEF8', 16); rect(cal, -110, -100, 220, 50, C.coral, 16); rect(cal, -110, -70, 220, 20, C.coral, 0); T(cal, 'Contract runs to', 0, -66, { s: 20, w: 700, c: '#fff' });
+  const yr = T(cal, '2027', 0, 36, { f: 'Fraunces', s: 78, w: 800, c: C.ink }); const early = T(cal, 'early', 0, 76, { s: 22, w: 700, c: '#7A3B3B' });
+  const q = T(g, '?', 0, 0, { f: 'Fraunces', s: 120, w: 800, c: C.lilac }); const eye = G(g); circ(eye, 0, 0, 30, 'none', { stroke: C.gold, 'stroke-width': 5 }); circ(eye, 0, 0, 10, C.gold);
+  const wlk = [R[1].start, R[1].end]; const stampT = TL.stamps.warrants;
+  return function (t) {
+    const bi = ease(P(t, R[0].start, R[0].start + .7)); op(bld, 1); tf(bld, 0, 30 * (1 - bi), 1, 0); op(bld, bi);
+    // officer by table: facing right; signs
+    const sign = P(t, R[2].start, R[2].start + 1.1); const arm = 40 + Math.sin(t * 9) * 5 * (sign > 0 && sign < 1 ? 1 : 0);
+    officer.set({ x: 560, y: 860, dir: 1, t, mouth: 0, blink: blinkAmt(t, 1), armF: sign > 0 ? 62 + Math.sin(t * 10) * 5 : 15, armB: 10 });
+    op(tab, 1); op(pap, ease(P(t, R[2].start - .3, R[2].start)) );
+    // envelope slide
+    const sl = ease(P(t, R[2].start + 1.0, stampT - .2)); const ex = lerp(740, 940, ease(P(t, stampT + .1, stampT + 1.2)));
+    const ey = lerp(560, 700, ease(P(t, stampT - 0.55, stampT - .05))); const sFall = P(t, stampT - .55, stampT);
+    op(env, ease(P(t, R[2].start + .8, R[2].start + 1.1)));
+    tf(env, ex, (t < stampT ? lerp(640, 712, ease(P(t, R[2].start + .8, stampT - .1))) : 712 - 10 * Math.sin(P(t, stampT, stampT + 1.2) * Math.PI)), 1, 0);
+    const sp = P(t, stampT - .3, stampT); op(stamp, sp > 0 ? 1 : 0); stamp.setAttribute('transform', 'rotate(-8) scale(' + (sp < 1 ? 2.4 - 1.4 * ease(sp) : 1 + .08 * Math.max(0, 1 - (t - stampT) * 6)) + ')');
+    const shake = (t > stampT && t < stampT + .3) ? Math.sin(t * 90) * 3 * (1 - (t - stampT) / .3) : 0; g.setAttribute('transform', 'translate(0,' + shake + ')');
+    srv.g.setAttribute('opacity', ease(P(t, R[2].start, R[2].start + .6))); srv.leds.forEach((l, i) => op(l, .4 + .6 * (Math.sin(t * 5 + i) > 0 ? 1 : 0)));
+    // chart
+    op(ch, ease(P(t, R[1].start, R[1].start + .5)));
+    bars.forEach((b, i) => { const at = R[1].cues[i] ? R[1].cues[i].t : R[1].start + i * 2; const k = ease(P(t, at, at + 1.0)); b.r.setAttribute('height', b.h * k); b.r.setAttribute('y', base - b.h * k); b.v.setAttribute('y', base - b.h * k - 14); op(b.v, k); });
+    // discount
+    op(disc, ease(P(t, R[3].start, R[3].start + .5))); op(d1, ease(P(t, R[3].cues[0].t, R[3].cues[0].t + .4))); op(d2, ease(P(t, R[3].cues[1].t, R[3].cues[1].t + .4)));
+    // calendar flip to 2029
+    const fl = P(t, R[4].start + .1, R[4].start + 2.2); const stepi = Math.floor(fl * 3); const yrs = ['2027', '2028', '2029', '2029']; const fp = (fl * 3) % 1;
+    yr.textContent = yrs[Math.min(3, stepi)]; const sy = Math.abs(Math.cos(fp * Math.PI)); yr.setAttribute('transform', 'translate(0,36) scale(1,' + (fl >= 1 ? 1 : Math.max(.08, sy)) + ') translate(0,-36)');
+    const calIn = ease(P(t, R[4].start, R[4].start + .4)); op(cal, calIn); tf(cal, 900, 330 - 20 * (1 - calIn), 1, 0);
+    const ask = P(t, R[5].start, R[5].start + .5); op(q, ease(ask) * (t < R[6].start + .2 ? 1 : .0 + .5 + .5 * Math.sin(t * 4))); tf(q, 1060, 330, 1 + .08 * Math.sin(t * 5), 8);
+    op(eye, ease(P(t, R[6].start + 1.2, R[6].start + 1.8))); tf(eye, 1060, 450, 1 + .08 * Math.sin(t * 5), 0);
+    meera.set({ x: 1655, y: 860, dir: -1, t, mouth: mouthAmt(t, 'Meera'), blink: blinkAmt(t, 1.9), armF: 5, armB: 5 });
+  };
+};
+
+/* ---- Scene 5: growth that was bought ---- */
+SCENES[5] = function (g, S) {
+  const R = S.rows;
+  floor(g, 860);
+  const ram = CAST.ramesh(); g.appendChild(ram.g); const truck = G(g);
+  // hand truck with two boxes
+  path(truck, 'M0,-300 L0,-20', { stroke: '#8A8396', 'stroke-width': 10, 'stroke-linecap': 'round' }); path(truck, 'M0,-300 q-26,-6 -40,6', { stroke: '#8A8396', 'stroke-width': 10, 'stroke-linecap': 'round', fill: 'none' }); path(truck, 'M0,-24 H110', { stroke: '#8A8396', 'stroke-width': 10, 'stroke-linecap': 'round' }); circ(truck, 40, -4, 26, '#1F1430', { stroke: '#8A8396', 'stroke-width': 8 });
+  const bx1 = G(truck), bx2 = G(truck);
+  rect(bx1, 12, -146, 270, 130, '#C58B54', 8); rect(bx1, 125, -146, 24, 130, '#A8703F', 0); T(bx1, 'KOGNITIV', 147, -106, { s: 28, w: 800, c: '#2A1C3C', ls: 1 });
+  rect(bx2, 12, -278, 270, 130, '#D6A06A', 8); rect(bx2, 125, -278, 24, 130, '#B88150', 0); T(bx2, 'SESSIONM', 147, -238, { s: 28, w: 800, c: '#2A1C3C', ls: 1 });
+  const tag1 = G(truck), tag2 = G(truck);
+  [[tag1, 'from US bankruptcy'], [tag2, 'from Mastercard, May 2026']].forEach(a => { const tg = a[0]; path(tg, 'M0,-40 V0', { stroke: C.lilac, 'stroke-width': 3 }); rect(tg, -132, 0, 264, 44, C.paper, 8); T(tg, a[1], 0, 30, { s: 19, w: 700, c: C.ink }); });
+  const tagPos = [[147, -90], [147, -222]];
+  // fee panel: two thirds kept
+  const kept = G(g); card(kept, 0, 0, 640, 250, '#1F1430', 22, C.lilac); T(kept, 'Low prices', 320, 48, { f: 'Fraunces', s: 34, w: 600, c: C.gold }); T(kept, 'revenue bought → kept in earlier deals', 320, 82, { s: 22, w: 500, c: C.lilac });
+  [0, 1, 2].forEach(i => { rect(kept, 60 + i * 180, 112, 160, 84, i < 2 ? C.gold : 'none', 14, i < 2 ? {} : { stroke: C.lilac, 'stroke-width': 3, 'stroke-dasharray': '8 8' }); }); T(kept, 'about two thirds kept', 320, 232, { s: 28, w: 700, c: C.text }); tf(kept, 1000, 110, 1, 0);
+  // gauge across both boxes
+  const gau = G(g); const gx = 0, gy = 0; path(gau, 'M-120,0 A120,120 0 0 1 120,0', { stroke: '#51397A', 'stroke-width': 26 }); path(gau, 'M-120,0 A120,120 0 0 1 -60,-104', { stroke: C.coral, 'stroke-width': 26 }); path(gau, 'M60,-104 A120,120 0 0 1 120,0', { stroke: C.gold, 'stroke-width': 26, opacity: .35 });
+  const needle = G(gau); path(needle, 'M0,0 L0,-100', { stroke: C.text, 'stroke-width': 7, 'stroke-linecap': 'round' }); circ(needle, 0, 0, 12, C.text);
+  T(gau, '₹20 cr EBITDA', 0, 78, { f: 'Fraunces', s: 40, w: 800, c: C.gold }); T(gau, 'both bought businesses', 0, 110, { s: 22, w: 500, c: C.lilac }); tf(gau, 930, 590, 1, 0);
+  const brk = path(g, 'M725,650 Q800,650 815,600', { stroke: C.lilac, 'stroke-width': 3, 'stroke-dasharray': '6 6' }); const brk2 = path(g, 'M725,780 Q790,780 810,610', { stroke: C.lilac, 'stroke-width': 3, 'stroke-dasharray': '6 6' });
+  // flag
+  const flag = G(g); rect(flag, 0, 0, 10, 440, '#8A8396', 4); const fl = G(flag); path(fl, 'M10,0 h270 l-30,70 l30,70 h-270z', { fill: 'rgba(242,193,78,.18)', stroke: C.gold, 'stroke-width': 4, 'stroke-dasharray': '12 8' }); T(fl, '₹130 cr · FY30', 145, 62, { f: 'Fraunces', s: 40, w: 800, c: C.gold }); T(fl, "management's plan", 145, 104, { s: 24, w: 600, c: C.text }); tf(flag, 1470, 330, 1, 0);
+  const nyet = G(g); card(nyet, -170, -34, 340, 68, '#1F1430', 16, C.lilac); T(nyet, 'not yet in the numbers', 0, 10, { s: 26, w: 700, c: C.lilac }); tf(nyet, 1630, 835, 1, 0);
+  const wlk = [R[0].start + .1, R[0].end - .15];
+  return function (t) {
+    const k = P(t, wlk[0], wlk[1]); const x = lerp(-250, 340, eio(k)); const walking = k > 0 && k < 1;
+    const point = P(t, R[4].start + .2, R[4].start + .7);
+    const rs = { x, y: 860, dir: 1, walk: walking ? 1 : 0, t, mouth: mouthAmt(t, 'Ramesh'), blink: blinkAmt(t, .4), armF: walking ? 55 : (point > 0 ? 78 * ease(point) + 8 : 50), armB: walking ? 40 : 6 };
+    if (walking) { rs.armF = 55; rs.armB = 45; }
+    ram.set(rs); op(ram.g, 1);
+    tf(truck, x + 85, 860, 1, 0);
+    const sl = ease(P(t, R[0].end - .2, R[0].end + .01));
+    op(bx1, 1); op(bx2, 1); op(truck, ease(P(t, R[0].start, R[0].start + .4)));
+    const d1 = P(t, R[1].cues[0].t, R[1].cues[0].t + .6), d2 = P(t, R[1].cues[1].t, R[1].cues[1].t + .6);
+    const drop = f => f <= 0 ? -120 : -120 * (1 - back(f)); op(tag1, f1(d1)); op(tag2, f1(d2)); function f1(v) { return v > 0 ? 1 : 0; }
+    tag1.setAttribute('transform', 'translate(' + tagPos[0][0] + ',' + (tagPos[0][1] + drop(d1)) + ')'); tag2.setAttribute('transform', 'translate(' + tagPos[1][0] + ',' + (tagPos[1][1] + drop(d2)) + ')');
+    op(kept, ease(P(t, R[2].start, R[2].start + .5)) * (1 - .0)); tf(kept, 1000, 110, 1, 0);
+    const gIn = ease(P(t, R[3].start + .2, R[3].start + .8)); op(gau, gIn); op(brk, gIn); op(brk2, gIn); needle.setAttribute('transform', 'rotate(' + (-62 + 6 * Math.sin(t * 2) * 0) + ')');
+    const fIn = ease(P(t, R[4].start, R[4].start + .9)); op(flag, fIn); tf(flag, 1440, 420 + (1 - fIn) * 250, 1, 0); fl.setAttribute('transform', 'translate(0,' + (-1) + ') rotate(' + (Math.sin(t * 2.2) * 1.5) + ' 10 0)');
+    op(nyet, ease(P(t, R[5].start + .8, R[5].start + 1.3)));
+    if (t > R[2].start + 3) { op(kept, 1 - .35 * P(t, R[3].start, R[3].start + .5)); }
+  };
+};
+
+/* ---- Scene 6: two growth numbers ---- */
+SCENES[6] = function (g, S) {
+  const R = S.rows;
+  const base = 830, ppx = 16; // 16 px per percentage point
+  rect(g, 300, base, 1320, 4, C.lilac, 2);
+  const title = T(g, 'Revenue growth, June 2026 quarter: 40%+', 960, 130, { f: 'Fraunces', s: 52, w: 600, c: C.text });
+  const bar = G(g); const core = G(bar); const coreR = rect(core, 740, base, 240, 0, C.gold, 8);
+  const parts = [['bought businesses', C.coral, 0], ['Optum', C.lilac, 1], ['currency', '#8C7BC9', 2]];
+  const segH = (40 - 12) * ppx / 3;
+  const segs = parts.map((p, i) => { const s = G(bar); rect(s, 0, 0, 280, segH - 4, p[1], 8); T(s, p[0], 140, segH / 2 + 8, { s: 26, w: 700, c: '#1F1430' }); return s; });
+  const top = T(bar, '40%+', 860, 0, { f: 'Fraunces', s: 56, w: 800, c: C.text });
+  const coreLbl = G(g); T(coreLbl, '11-13% (estimate)', 0, 0, { f: 'Fraunces', s: 54, w: 800, c: C.gold, a: 'start' }); T(coreLbl, 'core growth', 0, 40, { s: 28, w: 600, c: C.lilac, a: 'start' });
+  const band = rect(g, 730, base - 13 * ppx, 260, 2 * ppx, 'none', 4, { stroke: C.text, 'stroke-width': 3, 'stroke-dasharray': '8 6' });
+  const note = T(g, 'Sizes of the three removed blocks are illustrative.', 1300, 800, { s: 22, w: 500, c: C.lilac, a: 'middle' });
+  const fixTag = G(g); card(fixTag, 0, 0, 380, 64, '#1F1430', 16, C.coral); T(fixTag, 'the bought part has to be fixed', 190, 42, { s: 24, w: 700, c: C.text });
+  const steady = G(g); path(steady, 'M0,40 C60,36 100,28 160,22 S260,6 320,0', { stroke: C.gold, 'stroke-width': 6, 'stroke-linecap': 'round' }); path(steady, 'M292,-6 l30,6 l-14,26', { stroke: C.gold, 'stroke-width': 6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }); T(steady, 'the core grows steadily', 160, 80, { s: 26, w: 700, c: C.text });
+  return function (t) {
+    const h = 40 * ppx * ease(P(t, R[0].start + .2, R[0].start + 2.4));
+    const col = (k) => k;
+    // stacked layout at start: core at the bottom, then three segs
+    const coreH = Math.min(h, 12 * ppx); coreR.setAttribute('height', coreH); coreR.setAttribute('y', base - coreH);
+    const rest = Math.max(0, h - 12 * ppx);
+    segs.forEach((s, i) => {
+      const cueT = R[1].cues[i].t; const mv = ease(P(t, cueT, cueT + .9));
+      const sy = base - 12 * ppx - segH * (i + 1) + (segH - 4) * 0; const grow = clamp(rest / (segH * 3) * 3 - i, 0, 1);
+      const x = 740 + mv * (540 + i * 0); const y = sy + mv * (i * 0);
+      s.setAttribute('transform', 'translate(' + (x) + ',' + (y + (1 - grow) * segH) + ')'); op(s, grow * (1 - 0));
+      const tgt = P(t, R[4].start + .3, R[4].start + .9); s.setAttribute('transform', 'translate(' + (x + mv * 0) + ',' + (y + (1 - grow) * segH + mv * (i * 0)) + ')');
+    });
+    top.setAttribute('y', base - h - 18); op(top, ease(P(t, R[0].start + 1.5, R[0].start + 2.4)) * (1 - ease(P(t, R[1].start, R[1].start + .6))));
+    op(title, ease(P(t, R[0].start, R[0].start + .6)));
+    const cm = ease(P(t, R[2].start, R[2].start + .6)); op(coreLbl, cm); tf(coreLbl, 1020, base - 6 * ppx - 20, 1, 0); op(band, cm);
+    op(note, ease(P(t, R[1].start + 1.5, R[1].start + 2.1)) * (1 - 0)); 
+    const ft = ease(P(t, R[4].start + 1.8, R[4].start + 2.4)); op(fixTag, ft); tf(fixTag, 1220, base - 12 * ppx - 190 - 0, 1, 0);
+    const st = ease(P(t, R[4].start + .6, R[4].start + 1.2)); op(steady, st); tf(steady, 1030, base - 6 * ppx - 130, 1, 0);
+    core.setAttribute('transform', 'translate(0,' + (-3 * Math.sin(t * 2)) + ')');
+  };
+};
+
+/* ---- Scene 7: the profit staircase ---- */
+SCENES[7] = function (g, S) {
+  const R = S.rows; const base = 800, ppx = 560 / 20.3;
+  rect(g, 330, base, 1260, 4, C.lilac, 2);
+  const head = T(g, 'Operating profit, ₹ crore per quarter', 960, 126, { f: 'Fraunces', s: 52, w: 600 });
+  const defn = G(g); card(defn, 0, 0, 1180, 190, '#1F1430', 24, C.lilac);
+  T(defn, 'Operating profit', 590, 54, { f: 'Fraunces', s: 40, w: 700, c: C.gold });
+  T(defn, 'after staff share costs and depreciation', 590, 100, { s: 30, w: 600, c: C.text });
+  T(defn, 'leaving out interest on the IPO cash and one-off items', 590, 144, { s: 28, w: 500, c: C.lilac }); tf(defn, 370, 230, 1, 0);
+  const data = [['Jun-25', 0.6], ['Sep-25', 0.7], ['Dec-25', 7.4], ['Mar-26', 12.5], ['Jun-26', 20.3]];
+  const bars = data.map((d, i) => { const x = 420 + i * 235; const b = rect(g, x, base, 160, 0, i === 4 ? C.gold : C.lilac, 12); const v = T(g, '₹' + d[1].toFixed(1), x + 80, base, { f: 'Fraunces', s: 46, w: 800, c: i === 4 ? C.gold : C.text }); T(g, d[0], x + 80, base + 46, { s: 28, w: 600, c: C.lilac }); return { b, v, x, val: d[1] }; });
+  const trend = path(g, 'M500,' + (base - 0.6 * ppx) + ' L735,' + (base - 0.7 * ppx) + ' L970,' + (base - 7.4 * ppx) + ' L1205,' + (base - 12.5 * ppx) + ' L1440,' + (base - 20.3 * ppx), { stroke: C.gold, 'stroke-width': 4, 'stroke-dasharray': '10 8', opacity: .6 });
+  const ctr = G(g); card(ctr, 0, 0, 330, 120, '#1F1430', 22, C.gold); const ctrT = T(ctr, '₹0.0 cr', 165, 82, { f: 'Fraunces', s: 66, w: 800, c: C.gold }); tf(ctr, 360, 330, 1, 0);
+  const note = G(g); card(note, 0, 0, 640, 170, '#1F1430', 22, C.coral); T(note, 'Headline result, June quarter: a loss', 28, 54, { a: 'start', s: 28, w: 700, c: C.text }); T(note, 'because of a one-off fraud charge', 28, 92, { a: 'start', s: 24, w: 500, c: C.lilac });
+  T(note, '↗ The operating line kept rising', 28, 142, { a: 'start', s: 28, w: 700, c: C.gold }); tf(note, 360, 330 - 120, 1, 0);
+  let shown = 0;
+  return function (t) {
+    op(head, ease(P(t, R[0].start, R[0].start + .6)));
+    const dI = ease(P(t, R[1].start, R[1].start + .5)) * (1 - ease(P(t, R[2].start, R[2].start + .5))); op(defn, dI);
+    const cues = R[2].cues.map(c => c.t);
+    let cur = 0, prev = 0, ct = 0;
+    bars.forEach((b, i) => { const k = ease(P(t, cues[i], cues[i] + .7)); const h = Math.max(2, b.val * ppx) * k; b.b.setAttribute('height', h); b.b.setAttribute('y', base - h); b.v.setAttribute('y', base - h - 16); op(b.v, k); if (t >= cues[i]) { prev = i ? bars[i - 1].val : 0; cur = b.val; ct = cues[i]; } });
+    const v = cur ? lerp(prev, cur, ease(P(t, ct, ct + .6))) : 0; ctrT.textContent = '₹' + v.toFixed(1) + ' cr';
+    op(ctr, ease(P(t, cues[0] - .2, cues[0] + .3)) * (1 - ease(P(t, R[3].start, R[3].start + .4))));
+    op(trend, ease(P(t, cues[4], cues[4] + .8)) * .6);
+    const nI = ease(P(t, R[3].start + .2, R[3].start + .9)); op(note, nI); tf(note, 330, 250 - 20 * (1 - nI), 1, 0);
+  };
+};
+
+/* ---- Scene 8: return on the money tied up ---- */
+SCENES[8] = function (g, S) {
+  const R = S.rows; const cx = 960, cy = 700, rad = 330;
+  const head = T(g, 'Operating profit ÷ money tied up (leaving out spare cash)', 960, 120, { f: 'Fraunces', s: 46, w: 600 });
+  const ang = v => Math.PI * (1 - v / 20); const pt = (v, r) => [cx + r * Math.cos(ang(v)), cy - r * Math.sin(ang(v))];
+  function arc(v0, v1, r, col, w) { const a = pt(v0, r), b = pt(v1, r); return path(g, 'M' + a[0] + ',' + a[1] + ' A' + r + ',' + r + ' 0 0 1 ' + b[0] + ',' + b[1], { stroke: col, 'stroke-width': w, 'stroke-linecap': 'butt' }); }
+  arc(0, 10, rad, '#51397A', 44); arc(10, 20, rad, 'rgba(242,193,78,.4)', 44);
+  for (let v = 0; v <= 20; v += 5) { const a = pt(v, rad + 46), b = pt(v, rad + 66); path(g, 'M' + b[0] + ',' + b[1] + ' L' + a[0] + ',' + a[1], { stroke: C.lilac, 'stroke-width': 3 }); const l = pt(v, rad + 96); T(g, v + '%', l[0], l[1] + 8, { s: 26, w: 600, c: C.lilac }); }
+  const t10 = pt(10, rad + 40), t10b = pt(10, 40); const test = path(g, 'M' + t10b[0] + ',' + t10b[1] + ' L' + t10[0] + ',' + (t10[1] - 20), { stroke: C.gold, 'stroke-width': 5, 'stroke-dasharray': '4 12', 'stroke-linecap': 'round' });
+  const tl = G(g); card(tl, -90, -34, 180, 62, '#1F1430', 14, C.gold); T(tl, 'the test', 0, 10, { s: 30, w: 800, c: C.gold }); tf(tl, 960, 290, 1, 0);
+  const needle = G(g); path(needle, 'M0,0 L' + (rad - 30) + ',0', { stroke: C.text, 'stroke-width': 9, 'stroke-linecap': 'round' }); circ(needle, 0, 0, 20, C.text); circ(needle, 0, 0, 8, C.base); tf(needle, cx, cy, 1, 180);
+  const val = T(g, '0.0%', 960, 830, { f: 'Fraunces', s: 96, w: 800, c: C.gold }); const sub = T(g, '', 960, 880, { s: 32, w: 600, c: C.text });
+  const trend = G(g); card(trend, 0, 0, 430, 250, '#1F1430', 22, C.lilac); T(trend, 'Above 10%, two quarters in a row', 215, 52, { s: 24, w: 700, c: C.text });
+  const qs = [0, 1].map(i => { const b = G(trend); rect(b, 30 + i * 195, 90, 175, 120, '#33224A', 16, { stroke: C.lilac, 'stroke-width': 2 }); T(b, 'quarter ' + (i + 1), 117 + i * 195, 128, { s: 22, w: 600, c: C.lilac }); T(b, '?', 117 + i * 195, 190, { f: 'Fraunces', s: 56, w: 800, c: C.gold }); return b; }); tf(trend, 1380, 220, 1, 0);
+  const one = G(g); card(one, 0, 0, 420, 110, '#1F1430', 22, C.coral); T(one, 'One strong quarter', 210, 48, { s: 30, w: 700 }); T(one, 'a start, not a trend', 210, 86, { s: 26, w: 500, c: C.lilac }); tf(one, 180, 560, 1, 0);
+  const stops = [[1.5, 'FY25'], [3.9, 'FY26'], [13.6, 'June-quarter pace']];
+  function ang2(v) { return 180 + 180 * (v / 20); }
+  return function (t) {
+    op(head, ease(P(t, R[0].start, R[0].start + .6)));
+    const c = R[1].cues.map(x => x.t); let a = 180, v = 0, lab = '';
+    const seq = [[R[0].end + .1, c[0] - .1, 0, 0], [c[0], c[0] + 1.0, 0, 1.5], [c[1], c[1] + 1.0, 1.5, 3.9], [c[2], c[2] + 1.3, 3.9, 13.6]];
+    let cur = 0;
+    seq.forEach((s, i) => { if (t >= s[0]) { const k = P(t, s[0], s[1]); const e = i === 3 ? back(k) : back(k); cur = lerp(s[2], s[3], Math.min(1.05, e)); } });
+    needle.setAttribute('transform', 'translate(' + cx + ',' + cy + ') rotate(' + ang2(cur) + ')');
+    const shownV = t >= c[2] ? 13.6 * ease(P(t, c[2], c[2] + 1.0)) + 3.9 * (1 - ease(P(t, c[2], c[2] + 1.0))) : (t >= c[1] ? lerp(1.5, 3.9, ease(P(t, c[1], c[1] + .9))) : (t >= c[0] ? lerp(0, 1.5, ease(P(t, c[0], c[0] + .9))) : 0));
+    val.textContent = shownV.toFixed(1) + '%'; const idx = t >= c[2] ? 2 : t >= c[1] ? 1 : t >= c[0] ? 0 : -1; sub.textContent = idx >= 0 ? stops[idx][1] : '';
+    op(val, idx >= 0 ? 1 : 0); op(sub, idx >= 0 ? 1 : 0);
+    op(tl, ease(P(t, R[0].start + .5, R[0].start + 1.1))); op(test, ease(P(t, R[0].start + .5, R[0].start + 1.1)));
+    op(one, ease(P(t, R[2].start, R[2].start + .5)) * (1 - ease(P(t, R[3].start, R[3].start + .4))));
+    op(trend, ease(P(t, R[4].start, R[4].start + .6))); qs.forEach((q, i) => { const a2 = ease(P(t, R[4].start + 1.2 + i * .9, R[4].start + 1.7 + i * .9)); q.setAttribute('transform', 'translate(0,' + (-6 * a2) + ')'); });
+  };
+};
+
+/* ---- Scene 9: the AI add-on ---- */
+SCENES[9] = function (g, S) {
+  const R = S.rows; floor(g, 860);
+  const ram = CAST.ramesh(); g.appendChild(ram.g);
+  rect(g, 230, 700, 1100, 22, C.lilac, 6); rect(g, 260, 722, 18, 138, C.mid); rect(g, 1280, 722, 18, 138, C.mid);
+  const lap = G(g); rect(lap, -250, -260, 500, 300, '#120B1C', 20); rect(lap, -234, -244, 468, 268, '#2F1F47', 12); path(lap, 'M-290,40 h580 l-26,26 h-528z', { fill: '#51397A' }); tf(lap, 1000, 700, 1, 0);
+  const sc = G(lap);
+  const robot = G(sc); rect(robot, -50, -40, 100, 80, C.lilac, 22); circ(robot, -20, -4, 11, '#1F1430'); circ(robot, 20, -4, 11, '#1F1430'); path(robot, 'M-18,24 h36', { stroke: '#1F1430', 'stroke-width': 5, 'stroke-linecap': 'round' }); path(robot, 'M0,-40 v-26', { stroke: C.lilac, 'stroke-width': 5 }); const ant = circ(robot, 0, -70, 9, C.gold); tf(robot, -120, -140, 1, 0);
+  T(sc, 'aiRA', -120, -50, { f: 'Fraunces', s: 40, w: 800, c: C.gold });
+  const typed = G(sc); const typ = T(typed, '', 50, -150, { a: 'start', s: 24, w: 600, c: C.text }); T(sc, 'writing an offer…', 50, -184, { a: 'start', s: 20, c: C.lilac, w: 500 });
+  const offer = G(g); card(offer, -210, -110, 420, 220, C.paper, 18); T(offer, 'OFFER', 0, -50, { s: 22, w: 800, c: C.coral, ls: 4 }); T(offer, '20% off', 0, 22, { f: 'Fraunces', s: 70, w: 800, c: C.ink }); T(offer, 'for weekend shoppers', 0, 74, { s: 28, w: 600, c: C.ink });
+  const cnt = G(g); card(cnt, 0, 0, 640, 240, '#1F1430', 26, C.gold); T(cnt, '26 live', 320, 100, { f: 'Fraunces', s: 90, w: 800, c: C.text }); T(cnt, 'fewer than 10 paying', 320, 190, { f: 'Fraunces', s: 54, w: 700, c: C.gold }); tf(cnt, 1120, 150, 1, 0);
+  const wt = G(g); const beam = G(wt); path(beam, 'M-150,0 H150', { stroke: C.text, 'stroke-width': 8, 'stroke-linecap': 'round' }); path(beam, 'M-150,0 v70 M150,0 v70', { stroke: C.lilac, 'stroke-width': 4 }); path(beam, 'M-190,70 h80 M110,70 h80', { stroke: C.lilac, 'stroke-width': 8, 'stroke-linecap': 'round' }); path(wt, 'M0,0 V120 M-60,120 H60', { stroke: C.text, 'stroke-width': 8, 'stroke-linecap': 'round' });
+  T(wt, "weight in Keerti Sharma's numbers: none", 0, 190, { s: 28, w: 700, c: C.lilac }); tf(wt, 1380, 560, 1, 0);
+  const sp = [R[0].start + .2, R[0].end - .2];
+  return function (t) {
+    ram.set({ x: 560, y: 860, dir: 1, t, mouth: mouthAmt(t, 'Ramesh'), blink: blinkAmt(t, .9), armF: 52 + 8 * Math.sin(t * 3) * (t < R[0].start + 1.5 ? 1 : 0), armB: 8 });
+    const lI = ease(P(t, R[0].start - .1, R[0].start + .5)); tf(lap, 1000, 700 + (1 - lI) * 60, 1, 0); op(lap, lI);
+    const txt = '20% off for weekend shoppers'; const n = Math.floor(txt.length * ease(P(t, R[0].start + 1.5, R[0].start + 4.2))); typ.textContent = txt.slice(0, n);
+    ant.setAttribute('fill', Math.sin(t * 8) > 0 ? C.gold : C.coral);
+    const o = ease(P(t, R[0].start + 4.0, R[0].start + 4.8)); op(offer, o * (1 - .0)); tf(offer, 1420 - 0, 330 - 40 * (1 - o) + 0, .9 + .1 * o, 0);
+    const o2 = ease(P(t, R[0].start + 4.6, R[1].start - .05)); 
+    const cI = ease(P(t, R[1].start, R[1].start + .6)); op(cnt, cI); tf(cnt, 1120, 170 - 20 * (1 - cI) + 0, 1, 0); if (t > R[1].start) { op(offer, 1 - .0); tf(offer, 1420, 580 - 0 * 1, .6, 0); }
+    if (t > R[1].start) { tf(offer, 1420, lerp(330, 560 + 0, ease(P(t, R[1].start, R[1].start + .7))), lerp(1, .0001 + .0, 0) * .95, 0); op(offer, 1 - ease(P(t, R[1].start, R[1].start + .6))); }
+    const wI = ease(P(t, R[2].start + .3, R[2].start + .9)); op(wt, wI); tf(wt, 1380, 560 - 20 * (1 - wI), 1, 0);
+    beam.setAttribute('transform', 'rotate(' + (Math.sin(t * 1.4) * 1.2) + ')');
+  };
+};
+
+/* ---- Scene 10: the case against ---- */
+SCENES[10] = function (g, S) {
+  const R = S.rows;
+  const head = T(g, 'The case against', 960, 150, { f: 'Fraunces', s: 74, w: 700, c: C.text });
+  const labels = [['Core growth', '11-13%'], ['One client,', 'contract to 2029'], ['The fix is', 'a plan'], ['Big global', 'rivals']];
+  const cards = labels.map((l, i) => { const c = G(g); const x = 280 + i * 360; rect(c, -150, -190, 300, 380, C.paper, 24); rect(c, -150, -190, 300, 72, C.gold, 24); rect(c, -150, -150, 300, 32, C.gold, 0); T(c, String(i + 1), 0, -135, { f: 'Fraunces', s: 56, w: 800, c: '#1F1430' }); T(c, l[0], 0, -20, { f: 'Fraunces', s: 36, w: 700, c: C.ink }); T(c, l[1], 0, 36, { f: 'Fraunces', s: 32, w: 700, c: i === 1 || i === 0 ? '#7A3B3B' : C.ink }); tf(c, x + 90, 520, 1, 0); return c; });
+  const gov = G(g); card(gov, -380, -60, 760, 120, '#6B6578', 20); T(gov, 'Governance', -340, -4, { a: 'start', s: 34, w: 700, c: '#E9E5F0' }); T(gov, 'one note, details in the description', -340, 40, { a: 'start', s: 26, w: 500, c: '#E9E5F0' }); tf(gov, 960, 800, 1, 0);
+  return function (t) {
+    op(head, ease(P(t, R[0].start, R[0].start + .6)));
+    cards.forEach((c, i) => { const at = R[i + 1].start; const k = P(t, at, at + .6); const sx = Math.abs(Math.cos(k * Math.PI / 2 + (k < 1 ? Math.PI / 2 : 0)));
+      const flip = k <= 0 ? 0 : (k >= 1 ? 1 : Math.abs(Math.sin(k * Math.PI / 2))); op(c, k > 0 ? 1 : 0); const x = 280 + i * 360 + 90 - 0; c.setAttribute('transform', 'translate(' + x + ',' + (520 + (1 - ease(k)) * 40 + Math.sin(t * 1.6 + i) * 3) + ') scale(' + Math.max(.02, flip) + ',1)'); });
+    const gI = ease(P(t, R[5].start, R[5].start + .8)); op(gov, gI * .95); tf(gov, 960, 830 - 14 * (1 - gI), 1, 0);
+  };
+};
+
+/* ---- Scene 11: the next four years ---- */
+SCENES[11] = function (g, S) {
+  const R = S.rows; const V = TL.values; const fmt = n => n.toLocaleString('en-IN');
+  const head = T(g, 'Base case, ₹ crore', 960, 118, { f: 'Fraunces', s: 52, w: 600 });
+  const tab = G(g); const cols = [660, 910, 1160, 1410]; const heads = ['FY27 est.', 'FY28 est.', 'FY29 est.', 'FY30 est.'];
+  rect(tab, 230, 150, 1480, 66, '#1F1430', 14); T(tab, 'Line', 260, 195, { a: 'start', s: 28, w: 700, c: C.lilac }); heads.forEach((h, i) => T(tab, h, cols[i] + 100, 195, { a: 'end', s: 28, w: 700, c: C.gold }));
+  const rows = [
+    ['Revenue', [V.REV27, V.REV28, V.REV29, V.REV30].map(fmt), 0, 1],
+    ['Adjusted EBITDA', V.EBITDA.map(String), 1, 2],
+    ['EBITDA margin', V.M.map(m => m.toFixed(1) + '%'), 1, 2],
+    ['Operating PAT', V.PAT.map(String), 2, 3],
+    ['PAT margin', V.PAT.map((p, i) => V.PM[i].toFixed(1) + '%'), 2, 3],
+  ];
+  const rg = rows.map((r, i) => { const gg = G(tab); const y = 232 + i * 84; rect(gg, 230, y, 1480, 74, i % 2 ? '#2F1F47' : '#33224A', 12); const bold = !/margin/.test(r[0]);
+    T(gg, r[0], 260, y + 50, { a: 'start', s: bold ? 32 : 28, w: bold ? 700 : 500, c: bold ? C.text : C.lilac }); r[1].forEach((v, k) => T(gg, v, cols[k] + 100, y + 50, { a: 'end', s: bold ? 36 : 30, w: bold ? 800 : 600, c: k === 3 ? C.gold : C.text, f: bold ? 'Fraunces' : 'Inter' })); return gg; });
+  const chip = G(g); card(chip, 0, 0, 220, 52, C.gold, 26); T(chip, 'ESTIMATE', 110, 36, { s: 26, w: 800, c: '#1F1430', ls: 3 }); tf(chip, 1470, 76, 1, 0);
+  // path chart
+  const ch = G(g); const x0 = 400, x1 = 1500, y0 = 800, ppc = 2.0;
+  path(ch, 'M' + x0 + ',' + y0 + ' H' + (x1 + 60), { stroke: C.lilac, 'stroke-width': 3 }); const xs = [0, 1, 2, 3].map(i => x0 + 60 + i * ((x1 - x0 - 60) / 3));
+  ['FY27', 'FY28', 'FY29', 'FY30'].forEach((l, i) => T(ch, l, xs[i], y0 + 44, { s: 28, w: 600, c: C.lilac }));
+  [0, 100, 200, 300].forEach(v => { path(ch, 'M' + x0 + ',' + (y0 - v * ppc) + ' H' + (x1 + 60), { stroke: '#51397A', 'stroke-width': 1.5, 'stroke-dasharray': '4 8' }); T(ch, String(v), x0 - 20, y0 - v * ppc + 8, { a: 'end', s: 22, c: C.lilac }); });
+  T(ch, 'Operating PAT, ₹ crore', 960, 140, { f: 'Fraunces', s: 46, w: 600 });
+  const sets = [['Fix stalls (bear)', V.BEAR_PAT, C.lilac, 5], ['Base', V.PAT, C.gold, 8], ['Fix runs faster (bull)', V.BULL_PAT, C.text, 5]];
+  const lines = sets.map((s, si) => { const pts = s[1].map((v, i) => [xs[i], y0 - v * ppc]); const d = 'M' + pts.map(p => p.join(',')).join(' L'); const gg = G(ch); const pl = path(gg, d, { stroke: s[2], 'stroke-width': s[3], 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }); const labs = pts.map((p, i) => { const first = i === 0, last = i === 3; const dy = first ? [-8, 0, 28][si] * 1 - [0, 0, 0][si] : (si === 0 ? 38 : -22); const l = T(gg, String(s[1][i]), first ? p[0] - 28 : (last ? p[0] + 40 : p[0]), first ? p[1] + (si === 2 ? -8 : si === 1 ? 8 : 24) : p[1] + dy, { s: 26, w: 700, c: s[2], a: first ? 'end' : (last ? 'start' : 'middle') }); const dt = circ(gg, p[0], p[1], 8, s[2]); return { l, dt }; }); const nm = T(gg, s[0], pts[3][0] + 44, pts[3][1] + (si === 0 ? 76 : si === 1 ? 44 : -48), { s: 22, w: 600, c: s[2], a: 'start' }); return { gg, pl, labs, nm }; });
+  return function (t) {
+    op(head, 1 - ease(P(t, R[4].start, R[4].start + .5))); op(chip, ease(P(t, R[1].start, R[1].start + .4)));
+    const tI = 1 - ease(P(t, R[4].start + .1, R[4].start + .7)); op(tab, tI);
+    rg.forEach((r, i) => { const at = R[rows[i][2] + 1].start + (rows[i][0].includes('margin') ? 1.8 : 1.0) ; const a = ease(P(t, at - .2, at + .4)); op(r, a); r.setAttribute('transform', 'translate(' + (-30 * (1 - a)) + ',0)'); });
+    const hI = ease(P(t, R[1].start, R[1].start + .4)); tab.firstChild.setAttribute('opacity', hI);
+    const hl = P(t, R[4].start - .0, R[4].start + .6); 
+    op(ch, ease(P(t, R[4].start + .5, R[4].start + 1.1)));
+    const cu = R[5].cues.map(c => c.t);
+    pathProg(lines[1].pl, ease(P(t, R[4].start + 1.0, R[4].start + 3.4))); lines[1].labs.forEach((l, i) => { const a = P(t, R[4].start + 1.0 + i * .7, R[4].start + 1.4 + i * .7); op(l.l, a); op(l.dt, a); }); op(lines[1].nm, ease(P(t, R[4].start + 3.2, R[4].start + 3.8)));
+    pathProg(lines[0].pl, ease(P(t, cu[0] - 1.2, cu[0] + .6))); lines[0].labs.forEach((l, i) => { const a = P(t, cu[0] - 1.2 + i * .45, cu[0] - .8 + i * .45); op(l.l, a); op(l.dt, a); }); op(lines[0].nm, ease(P(t, cu[0], cu[0] + .4)));
+    pathProg(lines[2].pl, ease(P(t, cu[1] - 1.2, cu[1] + .6))); lines[2].labs.forEach((l, i) => { const a = P(t, cu[1] - 1.2 + i * .45, cu[1] - .8 + i * .45); op(l.l, a); op(l.dt, a); }); op(lines[2].nm, ease(P(t, cu[1], cu[1] + .4)));
+  };
+};
+
+/* ---- Scene 12: how to value it (paper) ---- */
+SCENES[12] = function (g, S) {
+  const R = S.rows;
+  const sheet = G(g); rect(sheet, -700, -360, 1400, 720, C.paper, 18); for (let i = 0; i < 8; i++) path(sheet, 'M-660,' + (-260 + i * 80) + ' H660', { stroke: '#D9CDEB', 'stroke-width': 2 }); rect(sheet, -640, -360, 5, 720, '#E7A0A0', 0); tf(sheet, 960, 500, 1, -.6);
+  const cp = E('clipPath', { id: 'wclip' }, g); const cr = rect(cp, 0, 0, 0, 200, '#fff');
+  const hand = G(g);
+  const fo = T(g, 'Value = next year\'s operating profit × a multiple', 340, 296, { f: 'Caveat', s: 68, w: 700, c: C.ink, a: 'start' }); fo.setAttribute('clip-path', 'url(#wclip)');
+  const items = [['Steady growth?', 520], ['Cash first?', 640], ['Hard to replace?', 760]];
+  const it = items.map((x, i) => { const gg = G(g); T(gg, x[0], 400, x[1], { f: 'Caveat', s: 78, w: 700, c: C.ink, a: 'start' }); const mk = G(gg); if (i === 0) { T(mk, '?', 830, x[1] + 8, { f: 'Caveat', s: 120, w: 700, c: '#7B4FC4', a: 'start' }); } else { const p = path(mk, 'M' + (870 + (i === 2 ? 60 : -80)) + ',' + (x[1] - 22) + ' l26,34 l58,-84', { stroke: '#D79A1E', 'stroke-width': 14, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }); mk.p = p; } return { gg, mk }; });
+  // pen
+  const pen = G(hand); path(pen, 'M0,0 l16,-60 l16,6 l-16,60z', { fill: '#51397A' }); path(pen, 'M0,0 l6,-22', { stroke: C.gold, 'stroke-width': 6 }); circ(pen, 28, -60, 22, '#D79A1E');
+  return function (t) {
+    const wk = ease(P(t, R[0].start + .3, R[0].start + 3.8)); const fullW = 1300;
+    op(sheet, ease(P(t, R[0].start - .05, R[0].start + .4)));
+    cr.setAttribute('x', 330); cr.setAttribute('y', 180); cr.setAttribute('width', fullW * wk); cr.setAttribute('height', 200);
+    op(pen, wk > 0 && wk < 1 ? 1 : 0); tf(pen, 340 + fullW * wk, 300 + Math.sin(t * 14) * 5, 1, 12);
+    const cue = R[1].cues.map(c => c.t);
+    it.forEach((x, i) => { const a = ease(P(t, cue[i], cue[i] + .6)); op(x.gg.firstChild, a); x.gg.firstChild.setAttribute('transform', 'translate(' + (-20 * (1 - a)) + ',0)');
+      const mt = R[2].cues[i === 0 ? 1 : 0].t + (i === 2 ? .9 : 0); const m = ease(P(t, mt, mt + .6)); op(x.mk, m);
+      if (x.mk.p) pathProg(x.mk.p, m); else x.mk.setAttribute('transform', 'translate(0,' + (-8 * Math.sin(t * 3) * (m >= 1 ? 1 : 0)) + ')'); });
+  };
+};
+
+/* ---- Scene 13: check it yourself ---- */
+SCENES[13] = function (g, S) {
+  const R = S.rows; floor(g, 860);
+  const meera = CAST.meera(); g.appendChild(meera.g);
+  rect(g, 190, 700, 520, 22, C.lilac, 6); rect(g, 220, 722, 18, 138, C.mid); rect(g, 660, 722, 18, 138, C.mid);
+  const clip = G(g); rect(clip, -60, -80, 120, 160, '#8A6A3A', 10); rect(clip, -50, -64, 100, 138, C.paper, 6); rect(clip, -22, -92, 44, 24, '#B8B3C4', 6); [0, 1, 2, 3].forEach(i => { rect(clip, -34, -42 + i * 28, 14, 14, 'none', 3, { stroke: '#51397A', 'stroke-width': 2 }); rect(clip, -12, -38 + i * 28, 40, 6, '#9A8FB0', 3); });
+  const board = G(g); rect(board, 780, 120, 900, 760, '#8A6A3A', 28); rect(board, 800, 160, 860, 700, C.paper, 14); rect(board, 1130, 120, 200, 64, '#B8B3C4', 14);
+  T(board, 'Four checks · all in public filings', 1230, 244, { f: 'Fraunces', s: 40, w: 700, c: C.ink });
+  const items = [['November results', 'return on money tied up above 10% again?'], ['Growth without Optum and currency', 'steady near 11-13%, or slipping?'], ['By March 2027', 'SessionM and Kognitiv making real money?'], ['The KPMG report', 'what did it find?']];
+  const it = items.map((x, i) => { const gg = G(board); const y = 282 + i * 84; rect(gg, 840, y, 44, 44, 'none', 8, { stroke: C.ink, 'stroke-width': 4 }); T(gg, String(i + 1) + ' · ' + x[0], 910, y + 22, { a: 'start', s: 30, w: 700, c: C.ink }); T(gg, x[1], 910, y + 58, { a: 'start', s: 25, w: 500, c: '#51397A' }); const ck = check(gg, 862, y + 24, 1.3, '#D79A1E', 9); return { gg, ck }; });
+  const stamp = G(g); rect(stamp, -190, -56, 380, 112, 'none', 14, { stroke: C.red, 'stroke-width': 9 }); T(stamp, 'WRONG IF', 0, 26, { f: 'Fraunces', s: 78, w: 900, c: C.red, ls: 3 });
+  const l1 = G(g), l2 = G(g); T(l1, 'existing customers spend less for two quarters in a row', 1230, 782, { s: 28, w: 600, c: C.ink }); T(l2, 'or the bought businesses still break even by March 2027', 1230, 826, { s: 28, w: 600, c: C.ink });
+  const stampT = TL.stamps.wrongif;
+  return function (t) {
+    meera.set({ x: 470, y: 860, dir: 1, t, mouth: mouthAmt(t, 'Meera'), blink: blinkAmt(t, 2.4), armF: 30, armB: 10 });
+    const h = meera.hand({ x: 470, y: 860, dir: 1, armF: 30 }, 'F'); tf(clip, h.x + 24, h.y - 40, .9, -6);
+    op(board, ease(P(t, R[0].start, R[0].start + .6))); tf(board, 0, 24 * (1 - ease(P(t, R[0].start, R[0].start + .6))), 1, 0);
+    it.forEach((x, i) => { const a = back(P(t, R[i + 1].start + .9, R[i + 1].start + 1.5)); op(x.gg, ease(P(t, R[i + 1].start, R[i + 1].start + .4))); op(x.ck, a); });
+    const c = R[5].cues.map(x => x.t); op(l1, ease(P(t, c[0], c[0] + .5))); op(l2, ease(P(t, c[1], c[1] + .5)));
+    const sp = P(t, stampT - .3, stampT); const scl = sp < 1 ? 2.6 - 1.6 * ease(sp) : 1 + .1 * Math.max(0, 1 - (t - stampT) * 5); op(stamp, sp > 0 ? 1 : 0); stamp.setAttribute('transform', 'translate(1230,680) rotate(-7) scale(' + scl + ')');
+    const shake = (t > stampT && t < stampT + .3) ? Math.sin(t * 90) * 4 * (1 - (t - stampT) / .3) : 0; g.setAttribute('transform', 'translate(0,' + shake + ')');
+  };
+};
+
+/* ---- Scene 14: close ---- */
+SCENES[14] = function (g, S) {
+  const R = S.rows; floor(g, 860);
+  card(g, 300, 150, 360, 200, '#1F1430', 14, C.lilac); T(g, 'COFFEE', 480, 214, { f: 'Fraunces', s: 46, w: 700, c: C.gold }); T(g, 'Points on every cup', 480, 270, { s: 24, w: 600, c: C.text });
+  rect(g, 1070, 690, 640, 170, C.mid, 8); rect(g, 1050, 664, 680, 30, C.lilac, 8); for (let i = 0; i < 6; i++) rect(g, 1090 + i * 100, 720, 70, 110, '#46326B', 6);
+  rect(g, 1180, 580, 150, 86, '#120B1C', 10); rect(g, 1192, 590, 126, 40, '#2F1F47', 6); T(g, 'TILL', 1255, 620, { s: 22, w: 700, c: C.lilac });
+  const srv = serverBox(g, 'CAPILLARY', 270, 190); tf(srv.g, 1520, 210, 1, 0);
+  const shop = CAST.shopper(); g.appendChild(shop.g); const phone = phoneProp(g, 74, 130); T(phone.scr, '+40', 0, 4, { s: 34, w: 800, c: C.gold }); T(phone.scr, 'points', 0, 34, { s: 16, w: 600, c: C.text });
+    const coins = [0, 1, 2].map(() => coin(g, 20));
+  const pill1 = G(g); card(pill1, 0, 0, 560, 70, '#1F1430', 35, C.gold); circ(pill1, 40, 35, 20, C.gold); check(pill1, 40, 36, .9, '#1F1430', 5); T(pill1, 'Brands need this software', 76, 46, { a: 'start', s: 30, w: 700 }); tf(pill1, 260, 430, 1, 0);
+  const pill2 = G(g); card(pill2, 0, 0, 700, 70, '#1F1430', 35, C.lilac); circ(pill2, 40, 35, 20, C.lilac); T(pill2, '?', 40, 48, { s: 32, w: 900, c: '#1F1430' }); T(pill2, 'Can the bought businesses earn like the core?', 76, 46, { a: 'start', s: 30, w: 700 }); tf(pill2, 260, 520, 1, 0);
+  const wt = G(g); [[0, .6, C.lilac], [1, 1, C.gold]].forEach((b, i) => rect(wt, 40 + i * 120, 230 - 150 * b[1], 90, 150 * b[1], b[2], 10)); T(wt, 'growth', 85, 264, { s: 22, c: C.lilac, w: 600 }); T(wt, 'profit', 205, 264, { s: 22, c: C.gold, w: 700 }); card(wt, 0, 0, 340, 290, 'none', 22, C.gold); tf(wt, 1300, 360, 1, 0);
+  const segs = [[R[0].start + .1, R[0].end - .1, 760, 1300], [R[1].parts[0].start + .1, R[1].parts[0].end - .1, 1300, 1620], [R[1].parts[1].start + .1, R[1].parts[1].end - .1, 1620, 2060]];
+  return function (t) {
+    let x = 760, walking = false; segs.forEach(sg => { if (t >= sg[0]) { x = lerp(sg[2], sg[3], P(t, sg[0], sg[1])); walking = t < sg[1]; } });
+    const st = { x, y: 860, dir: 1, walk: walking ? 1 : 0, t, blink: blinkAmt(t, .7), armF: walking ? undefined : 80, armB: walking ? undefined : 6, mouth: 0 }; if (!walking) st.armF = 82;
+    shop.set(st); const h = shop.hand(Object.assign({}, st, { armF: st.armF == null ? 40 : st.armF }), 'F'); tf(phone.g, h.x + 22, h.y - 52 + (walking ? 40 : 0), 1, -8);
+        const ph0 = { x: h.x + 22, y: h.y - 60 }; coins.forEach((c, i) => { const a = P(t, R[0].start + .6 + i * .6, R[0].start + 1.9 + i * .6); op(c, a > 0 && a < 1 ? 1 : 0); const u = ease(a); tf(c, lerp(ph0.x, 1440, u) + Math.sin(u * Math.PI) * -60, lerp(ph0.y, 250, u), 1, 0); });
+    srv.leds.forEach((l, i) => op(l, .4 + .6 * (Math.sin(t * 5 + i) > 0 ? 1 : 0)));
+    op(pill1, ease(P(t, R[1].start + .3, R[1].start + .9))); op(pill2, ease(P(t, R[1].start + 3.0, R[1].start + 3.6)));
+    const wI = ease(P(t, R[2].start + .2, R[2].start + .9)); op(wt, wI); tf(wt, 1300, 360 - 14 * (1 - wI), 1, 0);
+  };
+};
+
+/* ---- End card ---- */
+function buildEnd(g) {
+  const mark = G(g); rect(mark, -70, -70, 140, 140, C.gold, 28); T(mark, 'KS', 0, 24, { f: 'Fraunces', s: 78, w: 900, c: '#1F1430' }); tf(mark, 960, 250, 1, 0);
+  T(g, 'KEERTI SHARMA', 960, 396, { s: 52, w: 700, ls: 8 });
+  const ch = G(g); rect(ch, -190, -30, 380, 60, C.chip, 14); T(ch, 'Business Decoded', 0, 10, { s: 30, w: 700, c: '#111' }); tf(ch, 960, 470, 1, 0);
+  T(g, '#6', 960, 585, { f: 'Fraunces', s: 90, w: 800, c: C.gold });
+  return function (t, k) { op(g, k); mark.setAttribute('transform', 'translate(960,' + (250 + 6 * Math.sin(t * 1.2)) + ')'); };
+}
+
+/* ============ overlays ============ */
+const root = document.getElementById('root');
+rect(root, 0, 0, 1920, 1080, C.base);
+const scenesG = {}; const updaters = {};
+TL.scenes.forEach(sc => { const g = G(root); g.style.display = 'none'; scenesG[sc.id] = g; updaters[sc.id] = null; });
+const endG = G(root); const endUpd = buildEnd(endG); op(endG, 0);
+const over = G(root);
+rect(over, 0, 950, 1920, 130, 'rgba(18,10,28,.62)');
+const chipG = G(over); rect(chipG, 56, 30, 232, 46, C.chip, 12); T(chipG, 'Business Decoded', 172, 62, { s: 24, w: 700, c: '#111' });
+const wm = T(over, 'KEERTI SHARMA', 1864, 62, { a: 'end', s: 24, w: 600, ls: 5 }); wm.setAttribute('opacity', .45);
+const srcT = T(over, '', 960, 930, { s: 21, w: 500, c: C.lilac }); const capT = [T(over, '', 960, 1030, { s: 44, w: 600 }), T(over, '', 960, 1030, { s: 44, w: 600 })];
+const pill = G(over); const pillR = rect(pill, 56, 1000, 150, 40, C.lilac, 20); const pillT = T(pill, '', 131, 1029, { s: 20, w: 800, c: '#1F1430', ls: 2 });
+const allPages = []; TL.scenes.forEach(sc => sc.rows.forEach(r => r.pages.forEach(p => allPages.push({ a: p.start, b: p.end, lines: p.lines, spk: r.speaker }))));
+allPages.sort((x, y) => x.a - y.a);
+
+function sceneAt(t) { for (const sc of TL.scenes) if (t >= sc.t0 - .3 && t < sc.t1 + .3) { } return null; }
+function setFrame(f) {
+  const t = f / FPS; let srcShown = '';
+  TL.scenes.forEach((sc, i) => {
+    const g = scenesG[sc.id]; const fin = i === 0 ? 1 : P(t, sc.t0 - .3, sc.t0 + .3); const fout = 1 - P(t, sc.t1 - .3, sc.t1 + .3);
+    const a = Math.min(fin, fout); if (a <= 0) { g.style.display = 'none'; return; }
+    if (!updaters[sc.id]) { g.style.display = ''; updaters[sc.id] = SCENES[sc.id](g, sc); }
+    g.style.display = ''; const eaIn = ease(fin); g.setAttribute('opacity', Math.min(eaIn, ease(fout)));
+    updaters[sc.id](t - 0); if (a > .5 && sc.source) srcShown = sc.source;
+    if (sc.source && t >= sc.t0 + .3 && t < sc.t1 - .1) srcShown = sc.source;
+  });
+  const ek = ease(P(t, TL.end_t0 - .3, TL.end_t0 + .3)); op(endG, ek); if (ek > 0) endUpd(t, ek);
+  // caption
+  let page = null; for (let i = 0; i < allPages.length; i++) { if (allPages[i].a <= t + .02) page = allPages[i]; else break; }
+  const show = page && t < page.b + .45 && t < TL.end_t0 - .2;
+  capT.forEach((c, i) => { c.textContent = ''; });
+  if (show) { const n = page.lines.length; page.lines.forEach((l, i) => { capT[i].textContent = l; capT[i].setAttribute('y', n === 1 ? 1030 : 1006 + i * 54); capT[i].setAttribute('fill', page.spk === 'Meera' ? C.lilac : page.spk === 'Ramesh' ? '#FFD98A' : C.text); });
+    if (page.spk !== 'Narrator') { op(pill, 1); pillT.textContent = page.spk.toUpperCase(); pillR.setAttribute('fill', page.spk === 'Meera' ? C.lilac : C.gold); } else op(pill, 0); } else op(pill, 0);
+  rect_set(over.firstChild, show || srcShown ? .62 : 0);
+  srcT.textContent = (t < TL.end_t0 - .3) ? srcShown : ''; srcT.setAttribute('opacity', 1);
+  op(chipG, 1 - ek);
+}
+function rect_set(r, a) { r.setAttribute('fill', 'rgba(18,10,28,' + (show_band ? a : 0) + ')'); }
+let show_band = true;
+window.setFrame = setFrame; window.TOTAL_FRAMES = Math.ceil(TL.total * FPS);
+document.fonts.ready.then(() => { window.READY = true; setFrame(0); });
+</script>
+</body>
+</html>

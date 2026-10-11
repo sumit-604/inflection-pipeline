@@ -89,7 +89,7 @@ launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
 table allows.
 
-PROVE COMPLETION. A returned call is not a finished stage. Before any later stage reads a stage's output:
+PROVE COMPLETION, DO NOT ASSUME IT. Stages have repeatedly been dispatched
 to the background despite the rule above, and the run carried on against
 reports that did not exist yet, because "the call returned" was treated as
 "the stage finished". The two are different events. Before you treat any

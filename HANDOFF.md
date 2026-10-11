@@ -10,8 +10,8 @@ Last updated: 2026-10-11 (framework/oct-11-housekeeping).
 ## Open PRs
 
 Framework and tools:
-- framework/oct-11-housekeeping (this session): items 1-8 of the 11-Oct
-  housekeeping list. Status in Pending amendments below.
+- #212 framework/oct-11-housekeeping: items 1-8 of the 11-Oct housekeeping
+  list and three extras, all landed. Run tools/dry_check.sh, then merge.
 - #185 framework/ar-section-index, DRAFT. DO NOT MERGE before a measured run;
   evaluate against runs/kwick-2026-10-04/session-cost.md first.
 - #202 tools/macro-direction: monthly cross-asset direction model and backtest.
@@ -24,10 +24,7 @@ Run PRs (Phase 1 to Halt 1, waiting on operator Halt 1 decisions):
 
 ## Pending amendments
 
-- 11-Oct housekeeping, on framework/oct-11-housekeeping. Landed: item 4 dry_check
-  messages, item 5 output-trim rule, item 6 this file, item 8b check_url.py,
-  claude-haiku-5-5 in dry_check, and the three extras. See the PR body for
-  any item still waiting on .claude/ edits.
+- PR #212 (11-Oct housekeeping): complete on its branch; waits on merge.
 - Section 1B skill fixes from CAPILLARY /finalize (chunk 15 A20.5 clause,
   chunk 06/08 text) and KISSHT (chunk 06 l.39/l.89, chunk 08 l.38). Own branch.
 - Standing operating-ROCE rule (CAPILLARY O1): CLAUDE.md OPERATOR RULINGS and
@@ -52,6 +49,11 @@ Run PRs (Phase 1 to Halt 1, waiting on operator Halt 1 decisions):
   runs/<run>/shadow/verifier-a-comparison.md and rule on Haiku 5.5 for Verifier A.
 - Subagent cache 1h (item 1): judge on the re-read multiple in the next
   run's session-cost.md.
+- LESSONS.md is over its 1,500-token budget (about 1,710 by a chars/3.6
+  estimate). Run /compost to archive old lessons.
+- Verifier A tier tag: B12a findings carry no tier field, so the shadow
+  comparison's input column is "?" for findings only Sonnet found. Decide
+  whether Verifier A should tag tier (a prompts/12 change).
 
 ## Gotchas
 
@@ -65,9 +67,10 @@ Run PRs (Phase 1 to Halt 1, waiting on operator Halt 1 decisions):
   collector run on the operator's machine.
 - An Android signing key sits in history under runs/voepl-2026-07-18. Treat it
   as exposed.
-- The auto-mode permission classifier can refuse edits under .claude/ as
-  self-modification. Get operator approval in the session before a framework
-  change there.
+- The auto-mode permission classifier refuses edits under .claude/ as
+  self-modification. Switch the session to Accept edits mode before a
+  framework change there.
+- .claude/shadow.yaml is armed. The next /run-pipeline flips it to spent.
 - RE-COLLECT pending: KRONOX FY2024-25 AR; KOPRAN FY2024-25 and FY2025-26
   ARs; AKUMS peer PPLPHARMA Q2 FY26 transcript.
 - fetch_bse_announcements untested on the live BSE API (PR #167).

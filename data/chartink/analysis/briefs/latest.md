@@ -1,436 +1,478 @@
 ---
 title: "Market Breadth Brief"
-subtitle: "Friday, 2026-10-09 trade date · written 2026-10-11 · for Sumit Sharma"
+subtitle: "Monday, 2026-10-12 trade date · written 2026-10-12 · for Sumit Sharma"
 ---
 
-# Market read, 9 October 2026
+# Market read, 12 October 2026
 
-This brief uses the 34 Chartink table files for the 9 October trade date. All
-34 are present, so every section has its data. The Friday evening run found
-no files, because the 21:00 collection never landed. The collector ran again
-on Sunday 11 October. Over the weekend the dashboards still show Friday's
-close, and every file carries a 9 October date stamp. The full figures sit in
-the data appendix, `2026-10-09-appendix.html`.
+This brief uses the 34 Chartink table files for the 12 October trade date.
+All 34 are present, so every section has its data. Every file carries a 12
+October date stamp. The full figures sit in the data appendix,
+`2026-10-12-appendix.html`. Monday starts a new week, so every weekly index
+change tonight equals the daily change. This brief does not treat them as
+two facts.
 
 Claude Code has no web access. This brief checks no news and gives no reason
 for any move. It describes what the market is doing. It is not advice to buy
-or sell anything. The operator decides. The history file revised Thursday a
-little. It now reads 315 hard fallers, 839 stocks above the two-hundred-day
-line and 564 above the fifty-day line, and this brief uses those. The previous
-brief named three signs that buyers were back and three signs that the fall
-was getting worse. On Friday none of the six fired in full.
+or sell anything. The operator decides. The history file revised Friday a
+little. It now reads 90 big risers and 856 stocks above the two-hundred-day
+line, and this brief uses those. The previous brief named three tests for
+the cautious read and three tests for a worse read. On Monday one cautious
+test passed in part. New lows fell under 100, but the VIX rose instead of
+easing. None of the worse tests fired.
 
 ## The picture in one paragraph
 
-Friday bounced after Thursday's break, and the bounce was ordinary. 91 stocks
-rose four and a half percent or more, against 27 that fell that much. About six
-stocks in ten closed higher, and 32 of 35 indices rose. The Nifty gained about
-1.3 percent, led by IT, consumer staples and state banks. The big
-companies led. Small and micro companies barely moved. The count of stocks
-above the two-hundred-day average rose only from 839 to 861. That is still
-below the 1 October low near 900. New yearly lows still beat new highs by
-about five to one. Fear eased, and turnover came in lighter. A thrust day
-would need about 300 big risers. Friday had under a third of that. The
-market repaired a little of Thursday's damage and proved nothing yet.
+Monday split the market in two. The Nifty fell about 0.7 percent, and the
+small company index rose about 1.4 percent. About as many stocks rose as
+fell. Yet 118 stocks jumped four and a half percent or more, against 38 that
+fell that much. New yearly lows almost halved, from 151 to 83, and new highs
+rose from 30 to 46. The count of stocks above the fifty-day average climbed
+back above its 1 October low. The count above the two-hundred-day average
+did not. It stands at 875, still under the 1 October mark of about 900. Fear
+rose while small stocks rose: the VIX climbed about six percent to about 15.
+Turnover ran below a year ago. The repair under the surface kept going for a
+second day, while the big names sagged. It is a slow repair, not a thrust.
 
 ## Where the market stands
 
-Start with the three trend lines under each of about 2,260 stocks. The short
+Start with the three trend lines under each of about 2,250 stocks. The short
 line is the twenty-day average. The middle line is the fifty-day average. The
-long line is the two-hundred-day average. On Friday 861 stocks stood above
-the long line, about four in ten. 577 stood above the middle line, about one
-in four. 500 stood above the short line, about one in five. The short count
-gained the most, about 85 stocks. The long count gained about 20. A bounce
-that lifts the short line and leaves the long line flat is a bounce in price,
-not yet a change in trend.
+long line is the two-hundred-day average. On Monday 875 stocks stood above the
+long line, a little under four in ten. 634 stood above the middle line, a
+little over one in four. 570 stood above the short line, about one in four.
+All three counts rose for the second day in a row. The middle count gained
+the most, about 60 stocks. The long count gained about 20, the same as
+Friday.
 
-Thursday's break still stands. On 1 October the long count had fallen to
-about 900. It climbed back near 980 over the next few sessions, then fell to
-839 on Thursday. Friday's 861 sits well under both of those marks. The middle
-count tells the same story. It stood near 760 on Wednesday, fell to 564 on
-Thursday, and gained just 13 names on Friday. For the repair to count, these
-counts must climb back above their 1 October lows. Friday did not reach them.
+The middle count passed a test that matters. On 1 October it had fallen to
+622. On Thursday it fell further, to 561. On Monday it reached 634, back
+above the 1 October low. The short count did the same: 570 against 485 on 1
+October. The long count is the slow one, and it still lags. It reached 875.
+The 1 October low was 900, and the level before Thursday's break was about
+960. The long count must clear 900 for the trend picture to repair in full.
+At the end of August about 1,300 stocks held the long line. In late March
+fewer than 300 did. The market sits between those two points, nearer the
+weak end than the strong end.
 
-The history file shows what usually follows a shock day like Thursday. After
-the 15 September shock, the next day brought 76 big risers, about the same as
-Friday. The market bounced for a few days, then slid to a lower low on 1
-October.
-After the 12 May shock, the next day brought about 140 big risers, and June
-repaired the damage slowly. The real turns looked different. On 24 March,
-the day after the worst crash day of the year, about 300 stocks jumped. On 1
-April more than 1,100 did. Friday's 91 belongs with the ordinary relief days,
-not with the turns.
+The day itself was a good day for the broad market and a poor day for the
+index. 118 stocks rose four and a half percent or more. That is more than
+Friday's 90 and fewer than the 203 of 6 October. A thrust day, the kind that
+marks a real turn, looks different in this history. On 24 March about 300
+stocks jumped, and on 1 April more than 1,100 did. On 8 April almost 900 did.
+Monday belongs with the ordinary up days. Yet the advance came with the
+weight in the right place. The new low list shrank hard, and the new high
+list grew.
 
-The day was calmer than Thursday in every way. About a third of stocks moved
-less than three percent all day, against fewer than one in five on Thursday.
-About one stock in six traded four percent above its prior close at some
-point, and almost four in ten of those held the gain. About one in ten traded
-four percent below, and only a quarter of those closed near the low. So the
-sellers stepped back. Yet the buyers did not press hard either. Turnover came
-to about 450 crore against about 400 a year ago. The share of busy stocks fell
-near the bottom of its recent range. A rise on light volume is a rise
-nobody had to chase.
+The volume did not back the move. Turnover came to about 423 crore against
+about 449 crore a year ago. That is the first session below the year-ago
+figure since 7 October. The share of busy stocks sat near the bottom of its range for
+the second day. Inside the day, about one stock in five traded four percent
+above its prior close at some point. About a third of those held the gain.
+About one in ten traded four percent below, and about a third of those closed
+near the low. Sellers pressed a little harder than on Friday. Buyers did not
+press harder at all.
 
-Fear eased but stayed above normal. The India VIX, a gauge of what traders pay
-for protection, fell about six percent to about 14.4. It still sits about five
-percent above its thirty-week average and is up about a fifth over three
-months. Gold funds are down about seven percent over the month, and the Nifty
-is down about six. Gold still offers no shelter against stocks. For the week
-as a whole, the Nifty ended up a little under half a percent. That small gain
-hides a week that swung from repair to break and back to a bounce.
+Fear moved the wrong way for a rally. The India VIX, a gauge of what traders
+pay for protection, rose about six percent to about 15.3. It now sits about
+eleven percent above its thirty-week average and is up about thirty percent
+over three months. In a healthy broad rally the VIX tends to ease. On Monday
+it rose while small stocks rose. That fits the index story. The Nifty fell, so
+protection on the Nifty got dearer. Gold funds are down about seven percent
+over the month, and the Nifty is down about six. Gold still offers no shelter
+against stocks.
 
 ## What the sectors say
 
-The sector table improved, and only part of the way back. The sheet tracks,
-for each of 28 sectors, what share of its stocks sits above weekly trend lines
-from four weeks to fifty-two. On Friday 20 of 28 sectors showed the short
-reading weaker than the medium one. On Thursday it was 25. On Wednesday it was
-18. Across sectors, about one stock in four now holds its four-week line, up
-from one in five. About one in three holds the forty-week line, unchanged.
-Friday undid about half of Thursday's short damage and none of the long.
+The sector table improved again, slowly. The sheet tracks, for each of 28
+sectors, what share of its stocks sits above weekly trend lines from four
+weeks to fifty-two. On Monday 18 of 28 sectors showed the short reading
+weaker than the medium one. On Friday it was 20, and on Thursday 25. Across
+sectors, about three stocks in ten now hold the four-week line, up from one
+in four on Friday. About three in eight hold the forty-week line. 27 of 35
+indices still sit under their thirty-week lines. The short repair is real.
+The long trend has not turned.
 
-Banks made the clearest move underneath. The share of bank stocks above the
-four-week line doubled in one day, from about one in five to about four in
-ten. The bank index rose more than one percent, and the state bank
-index about one and a half. Banks led the week: the private bank, state
-bank and financial services indices all sit in the top five weekly gainers.
-HDFC Bank, the largest stock on the list, crossed up from a deeply sold daily
-reading. Kotak Bank holds fresh weekly momentum. Banks and financials are the only large
-sectors where the short reading now beats the medium one. That is the first
-group to show a real turn underneath.
+Defence is still the clearest leader. The defence index rose about 1.3
+percent, the best of the large sector lines. More than half of defence stocks
+hold the four-week line. About two in three hold the forty-week line. That is
+the strongest reading in the table on both clocks. Dynamatic sits on five
+screens. Krishna Defence joined the new leadership list for the week. HAL
+crossed up from a deeply sold daily reading. Castings and forgings sit close
+behind, with six in ten stocks on the four-week line.
 
-IT led the day and kept its turn going. The IT index rose about three
-percent, the best of all 35 lines. On Thursday it was the only index that
-barely fell. Tech Mahindra and LTM crossed up from deeply sold daily readings.
-TCS crossed up from a deeply sold weekly reading. Persistent and Coforge hold
-fresh weekly momentum, and Persistent rose about five and a half percent on
-the day. IT still sits about five percent under its thirty-week line and is
-down about seven percent over three months. Two good days in a row in the
-sector sold hardest is how a bottom often starts. Two days do not make one.
+Media shows an index running ahead of its stocks. The media index rose about
+4.6 percent, the best of all the stock indices. Underneath, only about one
+media stock in four holds the four-week line. Fewer than one in five hold the
+forty-week line. The index carries a few big names. The sector as a whole
+remains one of the weakest in the table. One strong day on a narrow index is
+a weak signal.
 
-Consumer staples bounced from deep under their trend. The FMCG index rose
-about two percent and leads the week. ITC, Nestle, Britannia and United
-Spirits all crossed up from deeply sold daily readings. The index still sits
-about seven percent under its thirty-week line. Underneath, only about one
-FMCG stock in four holds the four-week line. The big names bounced. The
-sector as a whole has not yet turned.
+Consumer staples split in a way the index hides. The FMCG index fell about
+1.7 percent, the worst of the day, and sits about eight percent under its
+thirty-week line. That is the furthest of any index. Yet the share of FMCG
+stocks above the four-week line rose to about one in three. Sugar mills drove
+that. Mawana, Uttam, Dalmia Bharat Sugar, Rajshree, Avadh and Magadh all sit on
+tonight's leader lists. Balrampur and Dhampur sit on the lists of stocks above
+the day's average price. The index holds the big staple makers, and they fell.
+The small sugar mills rose as a group.
 
-Defence held its shape. The defence index rose about half a percent. Almost
-half of defence stocks hold the four-week line, and about two in three hold
-the forty-week line, the same as Thursday. It is still the strongest large
-sector on the long reading. It did not join Friday's bounce with any force,
-which fits a sector that had less to repair.
+Chemicals rose in the index and on the screens. The chemicals index gained
+about 1.2 percent. Chemicals supply eight names to the yearly high list, more
+than any other sector. They supply 22 names to the trend template screen.
+Navin Fluorine crossed into fresh weekly momentum. Neogen, IVP, Bhageria,
+Oriental Carbon and Sanginita sit on six screens or close to it. About half of
+chemicals stocks hold the forty-week line. This is the sector where the index
+and the depth agree best tonight.
 
-Healthcare stayed tired. The pharma index rose about half a percent and still
-sits about three percent above its thirty-week line, the best of the sector
-indices. Underneath, only about one healthcare stock in six holds the
-four-week line. Just over half hold the forty-week line. Bafna and Kilitch
-held their screens, and Zim Labs joined at a yearly high. The leaders stand
-up. The sector's depth did not come back on Friday.
+Banks gave back part of Friday's turn. The bank index fell about 0.6 percent,
+and the state bank index about 1.2. The share of bank stocks above the
+four-week line slipped from about four in ten to about one in three. The
+split ran by size. Karur Vysya, City Union and DCB Bank crossed into fresh
+weekly momentum. Bank of Baroda crossed up from a deeply sold weekly reading.
+Kotak sits on the large-cap list above the day's average price. Smaller banks
+held the turn better than the big index.
 
-Metals, realty and energy stayed the weekly losers. Metals and realty each
-fell almost four percent over the week, despite a small gain on Friday. Oil
-and gas was the only stock index to fall on the day. Energy rose
-less than half a percent. Vedanta crossed up from a deeply sold daily reading,
-and that is the one sign of life among the big metal names. Arfin, the small
-metal leader, slipped from six screens to four and left the yearly high list.
+IT lost its three-day test. The IT index fell about 0.8 percent after two
+good days. About one IT stock in three holds the four-week line. Persistent
+crossed into strong daily momentum, and HCL Tech crossed up from a deeply sold
+daily reading. So single names kept turning. The index did not follow. The
+sector still sits about five percent under its thirty-week line.
 
-Auto bounced in the index and not in the stocks. The auto index rose about
-one and a half percent. Yet fewer than one auto stock in ten holds its
-four-week line, the second lowest in the table. Sona Comstar sits on the
-large-cap list of stocks above the day's average price. The parts makers
-still carry what strength the sector has.
+Healthcare stays a leader that is tired. The pharma index rose about half a
+percent and sits about three percent above its thirty-week line, the best of
+the sector indices. Underneath, only about one healthcare stock in five holds
+the four-week line. Just over half hold the forty-week line. Laurus Labs and
+Dr Reddy's crossed into strong daily momentum. Aurobindo crossed into fresh
+weekly momentum. Bafna still ranks among the leaders on five time horizons.
+The big names turned up. The depth has not come back.
 
-Power remains the weakest sector on every horizon. Only about one power and
-utilities stock in fifteen holds any weekly line. Media and realty sit just
-above it on the long reading. Nothing in Friday's bounce reached these.
+Auto bounced in the stocks a little. The auto index rose about 0.9 percent.
+It is still down about thirteen percent over three months, the worst of all
+35 lines. The share of auto stocks above the four-week line rose from under
+one in ten to about one in six. Omax Auto and Wheels India sit on the
+breakout screen. Sona Comstar sits on the large-cap list above the day's
+average price and on both institutional buying lists. Eicher crossed up from
+a deeply sold daily reading. The parts makers still carry what strength the
+sector has.
+
+Power remains the weakest sector on every clock. Only about one power and
+utilities stock in thirty holds the four-week line, and about one in ten holds
+the forty-week line. NTPC Green crossed into strong daily momentum, and it is
+the one sign of life among the big names. Telecom services, media and realty
+sit just above power on the long reading. Realty rose about 0.8 percent on
+the day. It is still down about ten percent over three months, and only about
+one realty stock in four holds any weekly line.
+
+Metals fell in the index and rose in the small names. The metals index slipped
+about 0.4 percent. Yet Goodluck tops the whole confluence list, on eight
+screens. Gallantt rose about eighteen percent and crossed up from a deeply
+sold daily reading. Metals and mining supply 20 names to the trend template
+screen, third behind industrials and chemicals. The big metal names hold the
+index down. The small ones carry the screens.
 
 ## What is leading
 
-The yearly high list grew a little. 37 stocks closed within a rupee of a
-yearly high, up from 30 on Thursday and well below 79 on Wednesday. Almost
-eight in ten are small companies. Two are large. Consumer discretionary leads
-the list with six names, most of them jewellers. The stocks on it rose a
-typical ten percent over the week. The high list is small, and the names on
-it are strong.
+The yearly high list grew for the second day. 63 stocks closed within a
+rupee of a yearly high, up from 37 on Friday and 30 on Thursday. Seven in ten
+are small companies. Four are large. Chemicals lead with eight names, and
+FMCG and financials follow with six each. The stocks on the list rose a
+typical four percent over the week. The list is back near the middle of its
+recent range and still well under Wednesday's 79.
 
-The trend screens steadied, and the breakout screens grew. The trend template
-screen checks eight conditions of a healthy uptrend. It rose from 175 names
-to 180. The Darvas screen wants a stock that has doubled off its low and trades
-near its high. It rose from 75 to 79. The breakout screen wants short averages
-stacked above long ones near a ten-year high. It rose from 46 to 58, and large
-companies now make up about three in ten of it, up from under two in ten. The
-near-high screen with rising volume rose from 27 to 31. The slow screens held
-their ground. The fast screens got back about a quarter of Thursday's loss.
+Every trend screen grew. The trend template screen checks eight conditions of
+a healthy uptrend. It rose from 180 names to 199. The Darvas screen wants a
+stock that has doubled off its low and trades near its high. It rose from 79
+to 88. The breakout screen wants short averages stacked above long ones near a
+ten-year high. It rose from 58 to 84, and large companies now make up more
+than a third of it. The near-high screen with rising volume rose from 31 to
+54. The fast screens have now made back more than Thursday took away.
 
-The bounce lists exploded, and they are led by giants. The sheet uses a
-reading called CCI, which measures how far price has stretched from its recent
-average. 109 stocks crossed up from a deeply sold daily reading, against 36
-on Thursday. HDFC Bank, ITC, Nestle, DLF, Tech Mahindra, Britannia, Aditya
-Birla Capital, Vedanta and United Spirits lead it by size. On the weekly clock,
-51 crossed up from a deeply sold reading, led by Bharti Airtel, TCS and HDFC
-Life. 28 stocks crossed into strong daily momentum, up from 12. Blue Star,
-PC Jeweller and Cyient are the largest of those. Friday was a day for beaten
-large companies to bounce, not a day for new leaders to break out.
+Volume picked out a few clear groups. West Coast Paper rose twenty percent on
+about 28 times its usual yearly volume. It sits on eight screens. Star Paper
+and Andhra Paper crossed into fresh weekly momentum. That makes paper a small
+group that moved together. Premier Polyfilm traded about 21 times its usual
+volume. Uttam Sugar traded about 21 times, and Mawana about 16 times. Sugar is
+the larger group, and it moved on heavy volume.
 
-Intraday buying came back at every size. The sheet counts stocks trading above
-the day's average price with the fifty-day average above the two-hundred-day.
-The large-cap list rose from 12 names to 38. The mid-cap list rose from 24 to
-74. The small-cap list rose from 42 to 112. That is about three times
-Thursday at each size. It is still less than Wednesday's mid-cap and small-cap
-counts. Buyers came back inside the day. They have not come back in full.
+The momentum readings grew at both ends. The sheet uses a reading called CCI,
+which measures how far price has stretched from its recent average. 70 stocks
+crossed into strong daily momentum, up from 28. Trent, BHEL, HDFC Life, Laurus
+Labs, Meesho, Dr Reddy's, Persistent and MCX lead that list by size. 246
+stocks crossed up from a deeply sold daily reading, up from 109. LIC, HCL
+Tech, HAL, Bajaj Finserv, Adani Green, Eicher, Pidilite and ABB lead that list
+by size. So the big names were mostly still repairing. The new strength sat in
+the mid-size and small names.
 
-CP Plus now tops the confluence list. It sits on seven screens, including the
-yearly high list and fresh weekly momentum, with foreign holding rising. Dhampur Bio
-Organics also sits on seven. A stock on many independent lists is a stronger
-fact than a stock on one. 126 stocks now sit on three or more screens, up
-from 112 on Thursday.
+Intraday buying held, and it grew at the large end. The sheet counts stocks
+trading above the day's average price with the fifty-day average above the
+two-hundred-day. The large-cap list rose from 38 names to 48. The mid-cap list
+held at about 72, and the small-cap list held at about 111. This is a useful
+detail. The Nifty fell, yet more large companies traded above their own day's
+average. The index fell on a few heavy names. It did not fall on broad large-
+cap selling.
 
-Jewellers still form the clearest group. Shanti Gold and DP Abhushan each sit
-on six screens. Sky Gold sits on five. PC Jeweller closed at a yearly high and
-crossed into strong daily momentum. RBZ Jewellers sits on the small-cap list
-above the day's average price. Augmont and Shanti Gold rank among the top
-two-week gainers. Shanti Gold traded about seven times its usual volume.
-Gold funds fell about seven percent over the month. The jewellers keep rising
-against the metal. The cause sits in their own business, which this data
-cannot show.
+Goodluck now tops the confluence list. It sits on eight screens, including
+the yearly high list and fresh weekly momentum, with foreign and domestic
+holding both rising. West Coast Paper also sits on eight. Mawana, Oriental
+Carbon, Premier Polyfilm, Swan Defence, TD Power and Vindhya Telelinks sit on
+seven. A stock on many independent lists is a stronger fact than a stock on
+one. 157 stocks now sit on three or more screens, up from 126 on Friday.
+Friday's top name, CP Plus, does not appear in the part of the list the sheet
+prints.
 
-Small pharma and specialty textiles held as groups. Bafna sits on six screens
-and ranks among the leaders on five time horizons. Kilitch and Zim Labs sit on
-five. SBC Exports and Filatex sit on six. United Polyfab and Indo Rama sit on
-five, and United Polyfab traded about ten times its usual volume. Industrials,
+Jewellers still form a group. Shanti Gold sits on six screens and DP Abhushan
+on five. Shringar House of Mangalsutra rose twenty percent and crossed into
+fresh weekly momentum. Kalyan Jewellers sits on the large-cap list above the
+day's average price. TBZ ranks near the top of the one-month and three-month
+gainers. Gold funds fell about seven percent over the month. The jewellers
+keep rising against the metal. The cause sits in their own business, which
+this data cannot show.
+
+Specialty textiles and small pharma held. SBC Exports sits on six screens.
+Filatex and Indo Rama sit on five. Bafna sits on six and ranks among the
+leaders on five time horizons, more than any other name. Industrials,
 chemicals, metals and healthcare still supply the most names across the
-momentum screens.
+momentum screens, about four in ten of them together.
 
 Large-cap momentum lives in the same few names. The momentum ranking divides a
-stock's long-run gain by how bumpy the ride was. Neuland, Bosch, Apar, PTC
-Industries, Solar Industries, Hitachi Energy, Page Industries and MTAR lead it
-in almost the same order as all week. PTC Industries and Solar Industries sit
-on the large-cap list above the day's average price again. Cupid, STL Tech,
-Motilal Oswal, HFCL, Sona Comstar and Meesho join them there.
+stock's long-run gain by how bumpy the ride was. Bosch, PTC Industries, Apar,
+Neuland, Solar Industries, Hitachi Energy, Page Industries and MTAR lead it,
+the same set as all of last week. PTC Industries and Solar Industries sit on
+the large-cap list above the day's average price for the third session
+running. PNB Housing, Motilal Oswal, STL Tech, Anthem, Sona Comstar, Star
+Health and BHEL join them there.
 
-Froth stays low. 15 stocks rose ten percent or more, against 12 on Thursday.
-82 rose five percent or more, against 32. About 300 rose three percent or
-more. The very top of the gainers list repeats several of Thursday's exact
-figures, including the same rights entitlement up almost 39 percent. Those
-rows look carried over, so this brief does not lean on the top of that list.
-On the down side, 11 stocks are down twenty percent or more in five days,
-about the same as Thursday. MBECL and Swan Defence still show huge return
-figures that come from a relisting or a data gap. They do not count as
-leadership.
+Froth rose a little and stays low. 25 stocks rose ten percent or more, up
+from 15 on Friday. 114 rose five percent or more, and about 330 rose three
+percent or more. Only one row rose twenty percent or more. It is the same
+rights entitlement up almost 39 percent, the same figure for the third night,
+so this brief does not lean on the top of that list. 17 stocks are up twenty
+percent in five days, against 9 down that much. MBECL and Swan Defence still
+show huge return figures that come from a relisting or a data gap. They do not
+count as leadership.
 
 ## Who is buying
 
 First a caveat in plain words. Many rows in the shareholding files show zero
 in the older quarters. A zero usually means a new listing or a gap in the
 record. It does not mean a holder rose from nothing. This brief counts only
-names with a real three-quarter history. For foreign money that is 786 of
+names with a real three-quarter history. For foreign money that is 785 of
 1,000 rows. For domestic institutions it is only 208 of 929, so that list is
 the thinnest evidence. These files come from quarterly filings and barely
-moved this week. They describe the last few quarters, not Friday.
+moved since Friday. They describe the last few quarters, not Monday.
 
 Foreign money buys lenders and things that get built. Yes Bank and ICICI Bank
 show large three-quarter rises on the lender side. MTAR, Adani Green, Shriram
-Pistons, Foseco and TCC carry the build side. Ice Make is a new name near the
-top. Asian Hotels North still tops the list at more than fifty points, a size
-that needs checking before it means anything. 729 of the 786 real records
-show a rise, at a typical half a point. The buying is wide and shallow.
-Several of Friday's leaders carry a foreign rise: CP Plus, Bafna, Cupid, DP
-Abhushan, TFCI and Sky Gold.
+Pistons, Foseco and TCC carry the build side. Asian Hotels North still tops
+the list at more than fifty points, a size that needs checking before it means
+anything. 729 of the 785 real records show a rise, at a typical half a point.
+The buying is wide and shallow. Several of Monday's leaders carry a foreign
+rise: Goodluck, Oriental Carbon, Premier Polyfilm, Bafna, IVP, SBC Exports
+and Laurus Labs.
 
 Domestic institutions buy platforms and smaller lenders. Swiggy, PolicyBazaar,
-Eternal and Delhivery show large three-quarter rises. So do Five Star and
-Bandhan. DOMS joins the three-quarter list. Corona shows the largest
-single-quarter addition. Kotak Bank shows a sizable single-quarter addition
-and holds fresh weekly momentum. Eternal and Meesho sit on the large-cap list
-above the day's average price. 47 names sit on both the foreign and the
-domestic list. TCPL Packaging is one, and it sits on five screens. Sona
-Comstar is another, and it held above the day's average price. Neuland is a
-third, and it tops the momentum ranking.
+Eternal and Delhivery show the largest three-quarter rises. Five Star and
+Bandhan sit close behind. Corona shows the largest single-quarter addition.
+Kotak and City Union show sizable single-quarter additions. City Union crossed
+into fresh weekly momentum on Monday, and Kotak held above the day's average
+price. 47 names sit on both the foreign and the domestic list. Goodluck, Pearl
+Global and TCPL Packaging are three of them, and each sits on six or
+more screens tonight. Sona Comstar and Neuland are two more.
 
 Retail holding rose in all 997 names with a real record, by about one point
 typically. The heaviest crowding sits in Shrenik, IRB, Dharan, One Life
 Capital, Allcargo, Muthoot Microfin, Gensol and Kaynes, each with a
 double-digit rise. Low institutional holding is never a risk under this
 framework. Retail holding that rose after a big move is a different point.
-That float tends to sell first on heavy down days. Shanti Gold, One Life
-Capital, Oil Country Tubular and United Polyfab are leaders with retail
-rising. Promoters show the other habit. Sanginita and Sigma Advanced show the
-largest promoter increases. Sanginita traded about sixteen times its usual
-volume on Friday.
+That float tends to sell first on heavy down days. Mawana, Oriental Carbon,
+Swan Defence, Vindhya Telelinks, Neogen, Shanti Gold and One Life Capital are
+leaders with retail rising. Promoters show the other habit. Sanginita and
+Sigma Advanced show the largest promoter increases. Sanginita traded about 17
+times its usual volume and sits at a yearly high.
 
 ## Thirty points
 
 ### For the trader
 
-**1. The bounce is real and unproven.** 91 stocks rose four and a half percent
-and 27 fell that much. That is a fair up day. A thrust day that marks a turn
-has needed about 300 risers in this history.
+**1. The repair is two days old and still unproven.** 118 stocks rose four and
+a half percent and 38 fell that much. That beats Friday. A thrust day that
+marks a turn has needed about 300 risers or more in this history.
 
-**2. Friday looks like 16 September.** The day after the 15 September shock
-brought 76 big risers. The market bounced for a few days, then slid to a
-lower low by 1 October. Friday's bounce is the same size.
+**2. The day split by size.** The Nifty fell about 0.7 percent, and the
+small company index rose about 1.4. Friday was the reverse, with big names
+leading. Two days that favour different ends of the market show no single
+group in charge.
 
-**3. The swing vote went to the buyers, narrowly.** About six stocks in ten
-closed higher. On Thursday almost nine in ten closed lower. One day of mild
-buying does not cancel one day of heavy selling.
+**3. The swing vote was a tie.** About as many stocks rose as fell. On Friday
+about six in ten rose. The big moves leaned up, while the ordinary moves were
+even.
 
-**4. Volume did not back the bounce.** Turnover ran only a little above a year
-ago. The share of busy stocks fell near the bottom of its recent range.
-A rise on thin volume shows sellers stepping back, not buyers rushing in.
+**4. Volume fell short again.** Turnover ran below the year-ago figure, the
+first time since 7 October. The share of busy stocks sat near the bottom of
+its range. A rise on thin volume shows sellers stepping back, not buyers
+rushing in.
 
-**5. The sellers stopped pressing.** Only a quarter of stocks that traded four
-percent down closed near the low. On Thursday more than half did. That is the
-first sign the selling pressure eased.
+**5. Sellers pressed a little harder.** About a third of stocks that traded four
+percent down closed near the low. On Friday a quarter did. That is a small
+step back from Friday's calm.
 
-**6. Breakouts held better.** Almost four in ten stocks that traded four percent
-up kept the gain. On Thursday fewer than a quarter did. Strength was not sold
-straight back.
+**6. New lows halved.** 83 stocks made a new yearly low, against 151 on Friday
+and 205 on Thursday. That is the clearest repair of the day. The old 1 October
+reading was 214.
 
-**7. Shorting got harder, and the down tail did not shrink.** The share of stocks
-down ten percent in five days fell from about one in twenty to about one in
-thirty. Yet 11 stocks are still down twenty percent in five days. The worst
-breaks have not healed.
+**7. The middle count cleared its 1 October low.** 634 stocks sit above the
+fifty-day line, against 622 on 1 October. The previous brief asked for exactly
+this. The long count has not done the same.
 
-**8. Big companies led small ones.** The Nifty rose about 1.3 percent.
-The microcap index rose about a quarter of a percent and the smallcap 250
-about half. A bounce led by large companies is often index buying, not broad
-demand.
+**8. The VIX rose with small caps.** Protection got about six percent dearer
+while small stocks rallied. That gap says the index, not the broad market,
+carries the worry. A falling VIX would confirm the repair.
 
-**9. Banks show the clearest turn underneath.** The share of bank stocks above
-the four-week line doubled in a day to about four in ten. HDFC Bank crossed up
-from a deeply sold reading. Banks are the group setup the data favours most
-this week.
+**9. Index-versus-breadth traps run both ways tonight.** The media index rose
+about 4.6 percent with only one stock in four above its four-week line. The
+FMCG index fell 1.7 percent while one in three staples stocks held that line.
+The index alone misreads both.
 
-**10. IT turned up two days running.** IT held flat on Thursday and led on
-Friday with a three percent gain. TCS, Tech Mahindra and LTM crossed up from
-deeply sold readings. A third good day would make this a turn worth noting.
+**10. Sugar is the group with volume.** Mawana, Uttam, Dalmia Bharat Sugar,
+Rajshree, Avadh and Magadh moved together, several on many times normal
+volume. A group that moves together on heavy volume is a stronger fact than
+one stock. The data favours the group setup.
 
-**11. The bounce lists belong to beaten giants.** 109 stocks crossed up from a
-deeply sold daily reading, led by HDFC Bank, ITC and Nestle. These are
-oversold bounces. They need follow-through to become trends.
+**11. Banks split by size.** The big bank index fell, while Karur Vysya, City
+Union and DCB Bank crossed into fresh weekly momentum. Friday's turn held in
+the smaller banks. The big bank turn needs a second day.
 
-**12. Metals and realty stayed weak.** Both fell almost four percent over the
-week despite a small Friday gain. Arfin left the yearly high list. The data
-still penalises these sectors.
+**12. IT lost the third day.** The IT index fell about 0.8 percent after two
+good days. Persistent and HCL Tech kept turning as single names. The sector
+turn is on hold until the index joins them.
 
-**13. Jewellers kept their lead.** Shanti Gold and DP Abhushan sit on six screens
-each, and PC Jeweller closed at a yearly high. This group held through the
-break and rose on the bounce.
+**13. Breakout screens are back above Thursday's loss.** The breakout screen
+rose from 58 to 84, and the near-high screen from 31 to 54. Fresh setups
+came back faster than the long trend.
 
-**14. CP Plus is the new top of the confluence list.** It sits on seven screens,
-holds fresh weekly momentum, and closed at a yearly high. It is the clearest
-large name that strengthened through the week.
+**14. Large-cap intraday buying grew on a red Nifty day.** The large-cap list
+above the day's average price rose from 38 to 48. The index fell on a few
+heavy names. That is a better day under the surface than the Nifty shows.
 
-**15. Breakout screens grew back by a quarter.** The breakout screen rose from
-46 to 58, with more large companies on it. The near-high screen rose from 27
-to 31. Fresh setups came back slowly.
+**15. Shorting got harder again.** The deep down tail shrank to nine stocks down
+twenty percent in five days. Seventeen stocks are up that much. The data
+penalises broad short setups this week.
 
-**16. Intraday buying tripled.** The lists of stocks above the day's average
-price roughly tripled in large, mid and small caps. They remain below
-Wednesday's mid and small counts.
+**16. Froth is low and rising.** 25 stocks rose ten percent or more, up from 15.
+The top of the gainers list repeats the same rights entitlement for a third
+night. Speculation is not the issue in this tape yet.
 
-**17. Froth is low.** 15 stocks rose ten percent or more. The top of the gainers
-list repeats Thursday's figures and looks carried over. Speculation is not
-the issue in this tape.
+**17. Defence keeps its edge.** More than half of defence stocks hold the
+four-week line, the best short reading of any large sector. The index rose
+about 1.3 percent on a down day for the Nifty. The data favours this sector on
+both clocks.
 
 ### For the investor
 
-**18. About four stocks in ten hold the long trend.** 861 stocks sit above the
-two-hundred-day line. In early August about 1,375 did. Most stocks remain in
-long downtrends.
+**18. A little under four stocks in ten hold the long trend.** 875 stocks sit
+above the two-hundred-day line. At the end of August about 1,300 did. Most
+stocks remain in long downtrends.
 
-**19. The long count barely moved.** It rose by about 20 stocks while the short
-count rose by about 85. Price bounced faster than trend. The long count must
-clear about 900 to undo Thursday.
+**19. The long count must clear 900.** It rose by about 20 stocks for the
+second day. The 1 October low was about 900, and the level before Thursday's
+break was about 960. Until it clears 900, the trend picture has not repaired.
 
-**20. It is still not March.** In March the fifty-day count fell near 210. On
-Friday it stood at 577. The decline is serious, and it is not a washout.
+**20. It is far from a washout.** In late March fewer than 300 stocks held the
+long line, and the middle count fell near 170. Monday's 634 on the middle line
+sits well above that. The decline is serious, and it is not a March.
 
-**21. New lows still lead.** 151 stocks made a new yearly low and 30 a new high.
-That is better than Thursday's 205 lows, and still five to one. A base needs
-new lows to fall back under about 100.
-
-**22. The barbell sits level.** About half of stocks sit within thirty percent
+**21. The barbell sits level.** About half of stocks sit within thirty percent
 of a yearly high, and about half within thirty percent of a low. On that
 measure the market has no tilt either way.
 
-**23. The bottom is still crowded.** About a third of stocks sit within fifteen
-percent of a yearly low. Fewer than two in ten sit within fifteen percent of a
-high. Friday hardly changed that.
+**22. The bottom is still crowded.** About three stocks in ten sit within
+fifteen percent of a yearly low. Fewer than two in ten sit within fifteen
+percent of a high. Two good days barely changed that.
 
-**24. The small end is losing its lead.** The microcap index still sits about
-three percent above its thirty-week line and is up over three months. It
-lagged on Friday's bounce. The long-run edge of small companies is fading.
+**23. The small end took the lead back for a day.** The small company index
+rose about 1.4 percent, and the microcap index sits about four percent above
+its thirty-week line. The Nifty sits about six percent under its line. The
+long-run edge still belongs to the small end.
 
-**25. Defence is the clearest long-run leader.** About two defence stocks in three
-hold the forty-week line, and almost half hold the four-week line. Castings
-and forgings hold just over half on the long line. The long trend still
-favours these.
+**24. Defence and castings lead the long trend.** About two defence stocks in
+three hold the forty-week line. Castings and forgings hold just over half. The
+long trend still favours these sectors.
 
-**26. Healthcare is a leader that is tiring.** Just over half its stocks hold the
-forty-week line. Only one in six holds the four-week line. Bafna, Kilitch and
-Zim Labs hold up while the sector thins.
+**25. Chemicals is where index and depth agree.** The index rose, eight
+chemicals stocks sit at yearly highs, and about half the sector holds the
+forty-week line. Navin Fluorine crossed into fresh weekly momentum. This is a
+sector turning with its stocks, not ahead of them.
 
-**27. Long-run weakness is wide.** Power holds about one stock in fifteen on the
-forty-week line. Media and realty hold about one in five. Auto, commodities,
-oil and gas and FMCG are the indices furthest under their slow lines.
+**26. Healthcare is a leader that is tiring.** Just over half its stocks hold
+the forty-week line. Only one in five holds the four-week line. Laurus, Dr
+Reddy's and Aurobindo turned up as single names while the sector thins.
 
-**28. Banks and IT are turning from the bottom.** Both sit under their
-thirty-week lines, and both showed the best short readings of the week. A
-turn in large, beaten sectors is how broad repairs usually begin.
+**27. Long-run weakness is wide.** Power holds about one stock in ten on the
+forty-week line. Media, telecom services and realty hold fewer than one in
+four. FMCG, commodities, oil and gas, infrastructure and auto are the indices
+furthest under their slow lines.
 
-**29. Large-cap momentum lives in a few names.** Neuland, Bosch, Apar, PTC
-Industries, Solar Industries, Hitachi Energy and MTAR lead the ranking all
-week. PTC and Solar Industries held above the day's average price on both the
-bad day and the good one.
+**28. Staples hide a turn in the small names.** The FMCG index sits furthest
+under its slow line of all 35 indices. Yet the sugar mills inside the sector
+lead the screens. Sector weakness and group strength can live in the same
+label.
 
-**30. Foreign money is wide and shallow.** 729 of 786 real records rose, at a
-typical half a point. The themes are lenders and builders. Several of
-Friday's leaders carry a foreign rise.
+**29. Large-cap momentum lives in a few names.** Bosch, PTC Industries, Apar,
+Neuland, Solar Industries, Hitachi Energy and MTAR lead the ranking all week.
+PTC and Solar Industries held above the day's average price for three
+sessions in a row, through the break and both bounce days.
 
-**31. Domestic money buys platforms and smaller lenders.** Swiggy, PolicyBazaar,
-Eternal and Delhivery lead the three-quarter list. Only 208 names carry a real
-record, so read the direction and not the size.
+**30. Foreign money is wide and shallow.** 729 of 785 real records rose, at a
+typical half a point. The themes are lenders and builders. Goodluck, Oriental
+Carbon, Premier Polyfilm and Laurus are among tonight's leaders with a foreign
+rise.
 
-**32. Persistence with institutional backing sits in a few names.** TCPL
-Packaging and Sona Comstar show foreign and domestic holding both rising and
-sit on Friday's leader lists. Neuland shows both and tops the momentum
-ranking. Kotak shows domestic buying and holds weekly momentum.
+**31. Domestic money buys platforms and smaller lenders.** Swiggy,
+PolicyBazaar, Eternal and Delhivery lead the three-quarter list. City Union
+shows a fresh domestic addition and fresh weekly momentum. Only 208 names
+carry a real record, so read the direction and not the size.
+
+**32. Persistence with institutional backing sits in a few names.** Goodluck,
+Pearl Global and TCPL Packaging show foreign and domestic holding both
+rising and sit on six or more screens. Sona Comstar shows both and held above
+the day's average price. Neuland shows both and ranks high on momentum.
 
 **33. Promoters buy at highs, and retail crowds in.** Sanginita and Sigma
-Advanced show the largest promoter increases. Shanti Gold, One Life Capital
-and United Polyfab are leaders with retail rising. Retail float is the first
-supply on a heavy down day.
+Advanced show the largest promoter increases, and Sanginita sits at a yearly
+high. Mawana, Swan Defence, Shanti Gold and One Life Capital are leaders with
+retail rising. Retail float is the first supply on a heavy down day.
 
-**34. Fear eased, and it is not cheap.** The VIX fell to about 14.4, still about
-five percent above its thirty-week average. Gold funds keep falling faster
-than the Nifty. Protection costs less than on Thursday and more than three
-months ago.
+**34. Fear is not cheap.** The VIX rose to about 15.3, about eleven percent above
+its thirty-week average and up about thirty percent over three months. Gold
+funds keep falling faster than the Nifty. Neither offers cheap protection
+tonight.
 
 **35. Pipeline names on tonight's lists, as memory to weigh and never
-evidence.** Kabra Extrusion sits on five screens, ranks second among
-three-month gainers, and shows foreign holding rising. Indegene sits on the
-mid-cap list above the day's average price. Aurum sits on the small-cap
-version and shows a large foreign increase. Kronox sits on both the foreign
-and the domestic list. Shyam Metalics and CleanMax, on Thursday's lists, do
-not appear in the parts the sheet prints. The sheet prints only the top of
-each list, so other pipeline names cannot be checked.
+evidence.** Kabra Extrusion sits on five screens, ranks among the top
+three-month and six-month gainers, and shows foreign holding rising. Shyam
+Metalics sits on the large-cap list above the day's average price. Indegene
+sits on the mid-cap version. Kronox sits on the small-cap version and on both
+the foreign and the domestic list. Aurum shows a large foreign increase. The
+sheet prints only the top of each list, so other pipeline names cannot be
+checked.
 
 ## What would change this read
 
-The read tonight is a failed repair followed by a thin relief bounce. It turns
-worse if the long count falls below about 800, under the mid-April level. It
-turns worse if new yearly lows climb back above about 200, or if the deep down
-tail grows past about 15 names. A second shock day with about 300 hard fallers
-inside a week would match the September pattern and open the way to a lower
-low. The step after that is a March-style washout, with the fifty-day count
-falling toward about 300.
+The read tonight is a slow repair underneath a weak index. It turns worse if
+the long count falls back below about 830, Thursday's low. It turns worse if
+new yearly lows climb back above about 200, or if the deep down tail grows
+past about 15 names. A second shock day with about 300 hard fallers would
+match the September pattern and open the way to a lower low. A VIX that keeps
+rising toward 17 while the Nifty falls would say the index weakness is
+spreading. The middle count slipping back under about 620 would undo Monday's
+one passed test.
 
-The cautious read fails if Friday's bounce gets help. The first test is a
-thrust day of about 300 or more stocks jumping four and a half percent, on
-turnover well above its year-ago level. The second is the long count climbing
-back above about 900, the 1 October low, within a few sessions. The third is
-new yearly lows falling back under about 100 while the VIX eases below 14.
-Banks and IT holding their short turn for another week would support all
-three. Until one of these tests passes, the data favours caution over hope.
+The cautious read fails if the repair gets help. The first test is a thrust
+day of about 300 or more stocks jumping four and a half percent, on turnover
+well above its year-ago level. The second is the long count climbing above
+about 900, the 1 October low, within a few sessions. The third is new yearly
+lows staying under 100 while the VIX eases back below about 14. Big banks and
+IT joining the small banks and the sugar and chemicals groups would support
+all three. Until one of these tests passes in full, the data favours patience
+over hope.

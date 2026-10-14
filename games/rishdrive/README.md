@@ -72,6 +72,12 @@ from the jsdelivr CDN.
   puts you back about 100 m before the gap with a rolling start.
 - **Skill Park 2 (v13):** a second pad west of the Skill Park with Ring dash,
   Car bowling, Bullseye jump, Donut master and Balloon pop.
+- **Arrow-key drift (v18):** ⬆ + ⬇ + ⬅ drifts to the left, and
+  ⬆ + ⬇ + ➡ drifts to the right. The car body swings into the slide, nose
+  in and tail out. If the keyboard drops one of the three arrow keys, the
+  drift keeps going while the turn key stays down. At speed, ⬇ + ⬅ alone
+  also drifts. For a corkscrew on the mega ramp, hold ⬇ before the ramp
+  and press ⬅ in the air.
 - **Left drift fixed (v17):** many keyboards cannot read three keys at
   once on the left side (Up + Left + Space, or W + S + A), so the left
   drift did not start. Now: double-tap ⬅ (or A) and hold it for a one-key
@@ -226,3 +232,5 @@ NODE_PATH=$(npm root -g) node tests/regress.cjs http://localhost:8765/test.html 
   2 new badges (46). 222 regression checks.
 - v17: one-key drift (double-tap a turn key) and B + turn, so the left
   drift works on every keyboard. 226 regression checks.
+- v18: ⬆ + ⬇ + ⬅ arrow-key drift with a drift latch, ⬇ + turn drift at
+  speed, and the body swing into the slide. 231 regression checks.

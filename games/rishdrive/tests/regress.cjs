@@ -29,7 +29,7 @@ const HELPERS = () => {
 
   // A. Start and menu
   let r = await E(() => ({ menu: visible("#m-free"), n: document.querySelectorAll("#card .btn").length, ver: document.querySelector("#ver").textContent, pts: document.querySelector("#pts").textContent, title: document.querySelector(".title").textContent, sub: document.querySelector(".sub").textContent }));
-  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v17", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
+  ok("A1 menu opens", r.menu, r); ok("A2 version label bottom right", r.ver === "RishDrive v18", r.ver); ok("A3 chip shows 300 points", r.pts === "300", r.pts);
   ok("A4 title and slogan", r.title === "RishDrive" && r.sub.includes("Just live it!"), r); ok("A5 menu buttons", r.n >= 9, r.n);
   await p.screenshot({ path: `${SHOTS}/01-menu.png` });
 
@@ -373,8 +373,8 @@ const HELPERS = () => {
   ok("W9-03 big ramp, hold ⬇: a double backflip, landed clean", r.bigS.flips === 2 && r.bigS.dmg === 0 && r.backs >= 3 && r.bigS.s > 20, r.bigS);
   ok("W9-04 gas and brake held together still flip; in a race the held gas does not flip", r.parkWS.flips === 1 && r.raceW.flips === 0, { WS: r.parkWS, race: r.raceW });
   ok("W9-05 Flip master badge", r.badge, r);
-  r = await E(() => { const { MEGA, TRAMPS } = __dd; const jump = (setup, held) => { G.startFree(); S.damage = 0; const st0 = JSON.parse(JSON.stringify(S.stats)); setup(); const v0 = G.car.s, h0 = G.car.h; keys(...held); let air = 0, side = 0; for (let i = 0; i < 140; i++) { const c = G.car; c.h = h0; if (!c.air && air === 0) c.s = v0; G.T += 0.05; G.step(0.05); if (c.air) { air += 0.05; const dx = G.camera.position.x - c.x, dz = G.camera.position.z - c.z; side = Math.max(side, Math.abs(dx * Math.cos(c.h) - dz * Math.sin(c.h))); } if (air > 0 && !c.air) break; } keys(); const d = (k) => (S.stats[k] || 0) - (st0[k] || 0); return { air, flips: d("flips"), spins: d("spins"), cork: d("corkscrews"), tr: d("tramps"), dmg: S.damage, side }; };
-    const o = { mega: jump(() => { G.setPos(MEGA.x - 60, MEGA.z, Math.PI / 2); G.car.s = 40; }, ["down", "left"]), tramp: jump(() => { G.setPos(TRAMPS[1][0], TRAMPS[1][1] - 6, 0); G.car.s = 8; }, ["down"]) }; G.checkBadges(); o.spinBadge = !!S.badges.spin5 || (S.stats.spins || 0) < 5; S.damage = 0; G.startFree(); return o; });
+  r = await E(() => { const { MEGA, TRAMPS } = __dd; const jump = (setup, held, airHeld) => { G.startFree(); S.damage = 0; const st0 = JSON.parse(JSON.stringify(S.stats)); setup(); const v0 = G.car.s, h0 = G.car.h; keys(...held); let air = 0, side = 0; for (let i = 0; i < 140; i++) { const c = G.car; c.h = h0; if (!c.air && air === 0) c.s = v0; G.T += 0.05; G.step(0.05); if (c.air) { if (air === 0 && airHeld) keys(...airHeld); air += 0.05; const dx = G.camera.position.x - c.x, dz = G.camera.position.z - c.z; side = Math.max(side, Math.abs(dx * Math.cos(c.h) - dz * Math.sin(c.h))); } if (air > 0 && !c.air) break; } keys(); const d = (k) => (S.stats[k] || 0) - (st0[k] || 0); return { air, flips: d("flips"), spins: d("spins"), cork: d("corkscrews"), tr: d("tramps"), dmg: S.damage, side }; };
+    const o = { mega: jump(() => { G.setPos(MEGA.x - 60, MEGA.z, Math.PI / 2); G.car.s = 40; }, ["down"], ["down", "left"]), tramp: jump(() => { G.setPos(TRAMPS[1][0], TRAMPS[1][1] - 6, 0); G.car.s = 8; }, ["down"]) }; G.checkBadges(); o.spinBadge = !!S.badges.spin5 || (S.stats.spins || 0) < 5; S.damage = 0; G.startFree(); return o; });
   ok("W10-01 mega ramp: flips plus 360 spins make a CORKSCREW", r.mega.air > 1.2 && r.mega.flips >= 1 && r.mega.spins >= 1 && r.mega.cork === 1 && r.mega.dmg === 0, r.mega);
   ok("W10-02 trampoline throws the car up for a double flip", r.tramp.tr === 1 && r.tramp.flips === 2 && r.tramp.dmg === 0, r.tramp);
   ok("W10-03 stunt camera shows the car from the side in the air", r.mega.side > 8, r.mega);
@@ -532,6 +532,20 @@ const HELPERS = () => {
   ok("H17c B + A: a two-key left power drift", r.pd > 20 && r.lat > 5 && r.turn > 1 && rd2.drifts >= 1, { r, rd2 });
   r = await E(() => { const ev = (type) => window.dispatchEvent(new KeyboardEvent(type, { key: "a", bubbles: true })); G._tapT = -9999; G.tapDrift = null; ev("keydown"); ev("keyup"); G._tapT -= 900; ev("keydown"); const t = G.tapDrift; ev("keyup"); return { single: t }; });
   ok("H17d two slow taps (more than 0.4 s apart) steer normally, no drift", !r.single, r);
+  // v18: ⬆ + ⬇ + ⬅ drift with real arrow keys, the body swings into the slide, a dropped key keeps the drift, ⬇ + ⬅ alone drifts at speed
+  const arrowRun = async (downKeys, liftKey) => { await E(() => { noTraffic(); G.keys.clear(); G.tapDrift = null; G.endMode(); document.querySelector("#m-free") && document.querySelector("#m-free").click(); G.hide && G.hide(); G.setPos(-3.5, -300, 0); keys("up"); sim(4); G.keys.clear(); }); for (const k of downKeys) await p.keyboard.down(k);
+    const a = await E(() => { const h0 = G.car.h; let pd = 0, yaw = 0; for (let i = 0; i < 16; i++) { sim(0.05); if (G.car.pdOn) pd++; if (Math.abs(G.car.dyaw) > Math.abs(yaw)) yaw = G.car.dyaw; } return { keys: [...G.keys].join(","), pd, yaw: +yaw.toFixed(2), turn: +(G.car.h - h0).toFixed(2), kmh: Math.round(G.car.kmh) }; });
+    let b2 = null; if (liftKey) { await p.keyboard.up(liftKey); b2 = await E(() => { let pd = 0; for (let i = 0; i < 10; i++) { sim(0.05); if (G.car.pdOn) pd++; } return { keys: [...G.keys].join(","), pd }; }); }
+    for (const k of downKeys) if (k !== liftKey) await p.keyboard.up(k); await E(() => { G.keys.clear(); sim(1); }); return { a, b2 }; };
+  r = await arrowRun(["ArrowUp", "ArrowDown", "ArrowLeft"], "ArrowDown");
+  ok("H18a ⬆ + ⬇ + ⬅ (real arrow keys): LEFT power drift, the car turns left and the body swings into the slide", r.a.pd > 12 && r.a.turn > 0.5 && r.a.yaw > 0.2, r);
+  ok("H18b the keyboard drops ⬇ mid-drift: the left drift keeps going while ⬆ + ⬅ stay down", r.b2.pd >= 8, r);
+  r = await arrowRun(["ArrowUp", "ArrowDown", "ArrowRight"]);
+  ok("H18c ⬆ + ⬇ + ➡ (real arrow keys): right drift, mirror of the left", r.a.pd > 12 && r.a.turn < -0.5 && r.a.yaw < -0.2, r);
+  r = await arrowRun(["ArrowDown", "ArrowLeft"]);
+  ok("H18d at speed ⬇ + ⬅ alone also drifts left (for keyboards that drop a third arrow key)", r.a.pd > 6 && r.a.turn > 0.3, r);
+  r = await E(() => { G.keys.clear(); G.setPos(-3.5, -300, 0); G.car.s = 0; keys("down", "left"); sim(1); const pd = G.car.pdOn; G.keys.clear(); return { pd, s: +G.car.s.toFixed(1) }; });
+  ok("H18e standing still, ⬇ + ⬅ reverses and steers, no drift", !r.pd && r.s < 0, r);
   await E(() => { G.keys.clear(); G.tapDrift = null; yesTraffic(); });
   // Phone layout with touch buttons
   const m = await b.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });

@@ -1,0 +1,83 @@
+stage: B11-valuation
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: "claude-opus-5-5"
+status: complete
+entity: "consolidated single-entity"
+entity_count: 1
+input_gaps:
+  - "Debt Capacity output block not run (consumed input NOT FOUND); company is net cash (borrowings Rs 44.72 Cr vs cash Rs 506.99 Cr at 31-Mar-2026), so capacity does not bind"
+  - "Market-Implied Assumptions block not run in claude.ai (consumed input NOT FOUND); stage 11 computed its own reverse-engineered growth for the recognition-gap resolution"
+  - "Step 1C live peer table PENDING LIVE PEER TABLE: only RateGain trailing P/E 41.8x held; no adjusted peer base"
+  - "Borrowings at 30-Jun-2026 NOT FOUND (no Q1 FY27 balance sheet); bridge carried at the approved Rs 57 (31-Mar-2026 anchor)"
+  - "Tax-loss shelter value NOT FOUND in corpus; O7 places it in the equity bridge but the Rs 57 bridge is net cash only; shelter carried at zero"
+  - "FY30 Optum warrant charge schedule NOT FOUND (RHP not in corpus); ledger D1 carried at the FY28-29 step-up level"
+  - "FTTCP B7 Year-3 net debt NOT FOUND (depends on M&A); net cash held at the anchored figure (A19.0)"
+  - "Invested capital FY29-FY30 NOT FOUND; operating ROCE FY29E 23.2% and FY30E 30.5% in 2D are stage 11 [INFERENCE]"
+  - "Year 5 (FY31) not in the approved scenarios; the DCF uses a named FY31 extension (A14 industry growth 12%, B09)"
+  - "FY26 top-10 customer concentration NOT FOUND"
+flags:
+  - "FLAG-EXITPE-OVERRIDE: valued on operator-approved 30x both tracks (O5, A20.9). Re-derived pillar Track 2 16.8x (15.5-18.0x; record 16.9x, rounding of row C), Track 1 13.1x (r 14.5%, RRM 0.88). 30x is +78.6% vs Track 2 and +129.0% vs Track 1; DCF implies 16.7x on FY30 EPS; a Year-3-metric pillar gives about 24x; 30x needs a Pillar 1 ROCE of about 34% at 1.15x and +2x. Master 4G check 6 FAILS and says revise down; operator ruling binds; divergence reported, no other multiple substituted"
+  - "FLAG-RECOGNITION-GAP: CLOSED. Run-rate operating P/E 81.4x vs TO rung R3 (about 19x) and ambition R4 (about 21x). Re-rating engine negative (81.4x to a 30x exit, -63%); return rides EPS CAGR alone. With proof NOT FIRED and ARTIFACT-OF-CLIMB the Transition Decision Matrix cell is PRICED NARRATIVE (TRAP), not the RESEARCH / WATCH (gap OPEN) carried before resolution; stage 13 applies the matrix"
+  - "FLAG-HURDLE: STOP band vs Tier A 1.953. HR on the probability-weighted ledger EPS (A21 base) 0.75; base scenario 1.13; bull 1.70 (bull usable, grade B, O9); bear 0.39. Caps nothing (OR-2)"
+  - "FLAG-A25: fast-growth Y (A21 run-rate +42.7% YoY; forward revenue FIRING, OR-12). Starter FAILS at CMP: T1+T2 54.9% of CMP vs 75% needed; starter price Rs 415.2 (deliberation's Rs 444 used the draft ledger). Residual 15.0%, under the 25% cap"
+  - "FLAG-DISPERSION: (bull - bear) / base = 111.7% on the weighted FV (106.4% on 30x P/E only) > 80%: position capped at Small"
+  - "FLAG-C2-PROBABILITIES: C.2 replaced. Ledger rebuilt to FY30 (exit-basis symmetry) with all Rs 118.44 Cr of base-case PAT growth on rows; probabilities ruled by stage 11 with stated evidence, NOT operator-ruled; operator to ratify or replace at /finalize"
+  - "FLAG-CASH: carried. Determination GROWTH-INDUCED (operator O3); multiplier applied 1.15x (operator O4). Chunk 02 band reading on filed CFO/PAT is 1.00x (volatile: FY25 CFO negative, FY26 2.86x). Phase 1 INDETERMINATE cap superseded by O3"
+  - "FLAG-A14-FADE: approved base holds about 15% growth through Year 4; EM MODEST fades to industry growth (12%, B09) by Year 3. A14-faded FY30 EPS Rs 19.67, value at 30x Rs 647 (-Rs 50). Valued on the approved scenarios (O11)"
+  - "FLAG-METHODS: P/E at 30x (base Rs 697.1) and DCF (base Rs 412.5) diverge 69%; the DCF agrees with the pillar destination, not with 30x"
+  - "FLAG-BRIDGE: approved Rs 57 anchors to 31-Mar-2026 (deck May-2026 p.59), pre-SessionM close and pre-fraud, and reconstructs on the basic share count; latest-dated reading (30-Jun-2026, diluted) Rs 51.5; re-ruling moves every value -Rs 5.5; no verdict changes"
+  - "FLAG-MACRO-STALE: macro-sheet.md is the August 2026 fill (next refresh 1-Sep-2026), stale on 10-Oct-2026; Nifty PE 20.5x, market CoE 14.1% and terminal cap 6.0% used with that flag"
+  - "FLAG-PROOF-GATE: NOT FIRED; both halves read on Q2 FY27 results (about Nov-2026)"
+  - "FLAG-CROSSGRADE: cross-family grade did not run (no GEMINI_API_KEY); FTTCP confidence one notch lower"
+  - "FLAG-MULTI-RUNG: 30x sits above the R5 neighbourhood (about 24x); FROM R1-R2 to an R5-level multiple inside 3 years is a multi-rung leap (CLAUDE.md red flag)"
+framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
+pe_basis: "forward"
+exit_pe_base_approved: "30x on both tracks (operator override O5 at the P/E gate, 10-Oct-2026), applied to one-year-forward operating EPS; exit end-FY29 on FY30 EPS (O6). Range +/-7.5%: 28.0x-32.5x. Sector cap 45x"
+destination_pe:
+  track1_rrm: {low: 12.0, mid: 13.1, high: 14.0, r_used: 14.5, rrm: 0.88}
+  track2_additive: {low: 15.5, mid: 16.8, high: 18.0}
+  divergence_pct: 22.5
+  governing_track: "Neither pillar track: the operator-approved 30x governs both tracks (O5, A20.9), so Track 1 and Track 2 fair values coincide; pillar tracks are cross-checks and OR-1 is moot for the entry zone"
+pillar_detail:
+  roce_used: 10.9
+  roce_base: 12.9
+  roce_recovery_route: "pillar1-midpoint (Pillar 1 route; RECOVERING 40-60% row, 60/40 blend of TTM 6.84% and FY28E 16.99%)"
+  pillar1_normalization_route: "A-operational"
+  cash_multiplier: 1.15
+  structural_or_growth: "growth-induced"
+  growth_offset: 0
+  growth_premium: 2
+  strategic_premium: 0
+  shared_catalyst_flag: true
+  ua_applied: false
+  sector_cap_used: 45
+hurdle_ratio: {base: 0.75, bull_used: true, verdict: "STOP"}
+run_rate_base:
+  basis: "single-quarter-annualised"
+  pat_run_rate_cr: 57.36
+  one_offs_adjusted: "Q1 FY27 (deck p.28; Results Q1 FY27 p.9): exceptional cyber-fraud loss Rs 33.39 Cr stripped; finance income, asset disposal, fair value and FX gains Rs 5.68 Cr a quarter stripped (depleting IPO cash pile); tax normalised to 25% (printed tax includes a one-time DTL Rs 1.61 Cr on a sheltered base; shelter belongs in the bridge, O7). Operating PBT Rs 19.12 Cr a quarter x 4 x 0.75 = Rs 57.36 Cr; EPS Rs 6.961 on 8.24 Cr; run-rate P/E 81.4x. Not adjusted, named: SessionM in Q1 for 2 of 3 months (PAT-neutral at break-even); FX about 6 points of growth"
+  annual_model_divergence_pct: 77.6
+price_decomposition:
+  t1_confirmed: {rs_cr: 2190.4, rs_per_share: 265.83, pct_cmp: 46.9}
+  t2_high_prob: {rs_cr: 375.2, rs_per_share: 45.54, pct_cmp: 8.0}
+  t3_speculative: {rs_cr: 1405.1, rs_per_share: 170.52, pct_cmp: 30.1}
+  residual: {rs_cr: 698.4, rs_per_share: 84.76, pct_cmp: 15.0}
+  step1c_peer_base_crosscheck: "PENDING LIVE PEER TABLE. Pillar destination 16.8x; adjusted peer base not buildable from held data (RateGain trailing 41.8x only); relative route opens above 24.0x; Section 1B reaches 30x only at an adjusted peer base of 30x or more; pillar sits 44.0% below the approved 30x. At the pillar 16.8x the residual would be 47.9%"
+  governing_multiple: "operator-approved 30x (A20.9) in the pillar slot; pillar 16.8x is the cross-check; relative route not open (no live peer table)"
+fair_values:
+  track1: {bear: 259.2, base: 640.1, bull: 974.2}
+  track2: {bear: 259.2, base: 640.1, bull: 974.2}
+expected_cagr_prob_weighted: 1.3
+entry_range: {low: 291.4, high: 327.7}
+mos_price: 229.4
+upside_downside_ratio: 0.24
+decision: "WATCHLIST: no position at Rs 566.65 (on valuation; base CAGR 4.1% weighted, 7.2% at 30x P/E only). Bands: A25 starter <= Rs 415; 25% entry <= Rs 328 (Rs 357 at 30x P/E only); 30% entry <= Rs 291"
+unresolved_inputs_used:
+  - "INPUT UNRESOLVED: net cash at the Q1 FY27 balance sheet date. Assumption used: Rs 57.00/share (Rs 469.7 Cr), because operator-approved (O7); date anchored 31-Mar-2026 (deck May-2026 p.59, Rs 506.99 Cr less borrowings Rs 44.72 Cr and leases Rs 8.89 Cr = Rs 453.38 Cr over 7.947 Cr basic shares = Rs 57.05 [INFERENCE reconstruction]). Both readings: 31-Mar-2026 Rs 57.0 / 30-Jun-2026 Rs 51.5 (Rs 469.0 Cr gross cash, Q1 FY27 deck p.26, less last filed borrowings, on 8.24 Cr). Separating observation: H1 FY27 consolidated balance sheet, confirm-by Nov-2026"
+  - "INPUT UNRESOLVED: peer medians / adjusted peer base. Assumption used: none; Step 1C PENDING; approved 30x governs (A20.9). Both readings: adjusted base >= 30x (Section 1B supports 30x) / < 24.0x (pillar 16.8x would govern). Separating observation: live peer table from Claude web, confirm-by /finalize"
+  - "INPUT UNRESOLVED: tax-loss shelter value. Assumption used: Rs 0 (NOT FOUND in corpus). Both readings: Rs 0 / claude.ai INFERENCE Rs 35-45 Cr (about Rs 4.2-5.5/share). Separating observation: FY27 AR tax note, confirm-by Jul-2027"
+  - "INPUT UNRESOLVED: FY30 Optum warrant charge. Assumption used: FY28-29 step-up level carried (D1 -Rs 8 Cr PAT). Both readings: charge ends after FY29 / persists at about Rs 31 Cr on renewal. Separating observation: Optum renewal terms, confirm-by Mar-2029"
+  - "INPUT UNRESOLVED: invested capital FY29-FY30 (2D ROCE only). Assumption used: +Rs 52 Cr a year [INFERENCE]. Both readings: no new M&A (ROCE 23-31%) / new deal resets IC higher. Separating observation: FY27 AR invested capital, confirm-by Jul-2027"
+som_cagr_crosscheck: "justified excess: base FY26-FY29 revenue CAGR 24.3% vs SOM-implied 22.8% (FY29 Rs 1,410 Cr vs SOM Rs 1,361 Cr, +3.6%); the excess is the closed SessionM acquisition (B09: +37.2% one-off step its SOM math does not underwrite); FY28-FY30 base growth of 15% sits below SOM 22.8% (3yr) / 21.1% (5yr)"
+one_line_thesis: "Not buying CAPILLARY at Rs 566.65: EPS can grow from Rs 6.96 to Rs 21.33 by FY30 on acquired-book margin migration and about 15% revenue compounding, but at the four-pillar destination of 16.8x (ROCE 10.9%, cash 1.15x, EM 24, sector cap 45x) that is Rs 415 (-9.8% CAGR), and even at the operator-approved 30x it is Rs 697 (7.2%; Rs 640 and 4.1% weighted with the DCF). Key risk: the 30x exit itself, since Section 1B and the DCF both land near 17x, plus acquired-book attrition. Cash quality: growth-induced."

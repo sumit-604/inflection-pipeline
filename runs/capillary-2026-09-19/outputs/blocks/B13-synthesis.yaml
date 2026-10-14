@@ -1,0 +1,22 @@
+stage: B13-synthesis
+company: "CAPILLARY"
+run_date: "2026-09-19"
+phase: 3   # FINALIZE mode, executed 2026-10-10; supersedes B13-synthesis-lite (phase 1)
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 4        # rule 3 fired first (FLAG-CASH GROWTH-INDUCED -> PROCEED WITH FLAGS); rule 4 band (overall 70, set by redflag_coverage) downgrades one level. Verifier B strict basis (40) would force REWORK of stage 5: operator choice open
+flags_active: ["FLAG-CASH", "FLAG-GATE0", "FLAG-EXITPE-OVERRIDE", "FLAG-RECOGNITION-GAP", "FLAG-VERDICT-CONFLICT", "FLAG-HURDLE", "FLAG-A25", "FLAG-DISPERSION", "FLAG-C2-PROBABILITIES", "FLAG-UGLINESS-CONTESTED", "FLAG-ORGANIC-DEFINITION", "FLAG-MGMT-OUTLOOK-VS-BASE", "FLAG-RETENTION-BASE-RATE", "FLAG-SESSIONM-FIVE-FIGURES", "FLAG-KPMG-OVERDUE", "FLAG-BRIDGE", "FLAG-MACRO-STALE", "FLAG-CROSSGRADE", "FLAG-MULTI-RUNG", "FLAG-VERIFIER-A-PHASE3-COVERAGE"]
+confidence_delta: {numerical: 100, redflag: 70, framework: 91.2, peer: 100, overall: 70}   # redflag strict basis 40 surfaced; overall_set_by redflag_coverage
+valuation_decision: "WATCHLIST"   # as computed by B11; B14 Role 2 Section 7 verdict is AVOID; conflict OPEN for operator ruling (FLAG-VERDICT-CONFLICT, B12c-phase3 O-3); size zero at CMP under both
+entry_range: {low: 291.4, high: 327.7}
+headline: "Sticky loyalty ledger, price ahead of value"
+falsification_metric: "H1 FY27 constant-currency organic revenue growth below 15%, printed with the Q2 FY27 results (about Nov-2026)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: "CAPILLARY | Capillary Technologies India Ltd | Phase 3 finalize 2026-10-10"
+  summary: "PROCEED WITH CAVEATS. Valuation WATCHLIST (B11) vs thesis AVOID (B14), open for operator ruling; no position at Rs 566.65. Entry Rs 291.4-327.7; A25 starter Rs 415.2; MoS Rs 229.4. Exit 30x operator override on both tracks; pillar Track 2 16.8x, Track 1 13.1x; DCF 16.7x. Hurdle STOP; expected CAGR 1.3%. Matrix PRICED NARRATIVE (TRAP). Devil: WEAKENED BUT ALIVE."
+  drive_link: "NOT FOUND (not supplied to stage 13)"
+  mode: append-never-overwrite-status

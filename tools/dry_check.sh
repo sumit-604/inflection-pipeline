@@ -43,7 +43,7 @@ except ImportError:
 # Commands whose "Usage:" description line is not strict YAML. Claude Code
 # reads them leniently; they are warnings, not failures.
 PRE = {'compost', 'finalize', 'fttcp', 'run-pipeline', 'run-quarterly', 'step1'}
-MODELS = {'claude-opus-5-5', 'claude-sonnet-5-5', 'haiku'}
+MODELS = {'claude-opus-5-5', 'claude-sonnet-5-5', 'claude-haiku-5-5'}
 EFFORTS = {'low', 'medium', 'high', 'xhigh', 'max'}
 fails, warns, n = [], [], 0
 files = sorted(glob.glob('.claude/agents/*.md') + glob.glob('.claude/commands/*.md')
@@ -52,7 +52,7 @@ for f in files:
     n += 1
     m = re.match(r'---\n(.*?)\n---\n', open(f, encoding='utf-8').read(), re.S)
     if not m:
-        fails.append(f'{f}: no frontmatter'); continue
+        fails.append(f'{f}: no frontmatter. Add a --- block with name, description, tools and model at the top of {f}.'); continue
     try:
         d = yaml.safe_load(m.group(1)) or {}
     except Exception as e:
@@ -63,21 +63,20 @@ for f in files:
         msg = f'{f}: strict YAML: ' + str(e).split('\n')[0]
         (warns if f.split('/')[-1][:-3] in PRE else fails).append(msg)
     if '/agents/' in f:
-        if d.get('model') not in MODELS: fails.append(f'{f}: model {d.get("model")}')
-        if 'effort' in d and d['effort'] not in EFFORTS: fails.append(f'{f}: effort {d["effort"]}')
-        if d.get('model') == 'haiku' and 'effort' in d: fails.append(f'{f}: effort set on haiku')
+        if d.get('model') not in MODELS: fails.append(f'{f}: model {d.get("model")} not allowed. Set model to one of: ' + ', '.join(sorted(MODELS)) + '.')
+        if 'effort' in d and d['effort'] not in EFFORTS: fails.append(f'{f}: effort {d["effort"]} not allowed. Set effort to low, medium, high, xhigh or max.')
         for k in ('name', 'description', 'tools'):
-            if not d.get(k): fails.append(f'{f}: missing {k}')
+            if not d.get(k): fails.append(f'{f}: missing {k}. Add {k}: to the frontmatter of {f}.')
     elif '/commands/' in f:
-        if not d.get('description'): fails.append(f'{f}: missing description')
-        if 'model' in d: fails.append(f'{f}: command pins a model')
+        if not d.get('description'): fails.append(f'{f}: missing description. Add description: to the frontmatter of {f}.')
+        if 'model' in d: fails.append(f'{f}: command pins a model. Delete the model: line; commands never pin a model (CLAUDE.md DISPATCH).')
     elif not d.get('name') or not d.get('description'):
-        fails.append(f'{f}: skill missing name or description')
+        fails.append(f'{f}: skill missing name or description. Add name: and description: to the SKILL.md frontmatter.')
 pr = 0
 for f in sorted(glob.glob('prompts/*.md') + glob.glob('.claude/skills/section-1b/references/*.md')):
     pr += 1
     try: open(f, encoding='utf-8').read()
-    except Exception: fails.append(f'{f}: not UTF-8')
+    except Exception: fails.append(f'{f}: not UTF-8. Re-save {f} as UTF-8, then run: tools/dry_check.sh 1')
 print(f'  frontmatter files: {n}; prompt and reference files read: {pr}')
 for w in warns: print('  warn (pre-existing):', w)
 for x in fails: print('  FAIL:', x)
@@ -91,9 +90,11 @@ import collections, glob, os, re, sys
 RUN = os.environ['REF_RUN']
 # Paths the instructions name but no reference run holds by design: Phase 2
 # and 3 outputs written later, operator files, quarterly intermediates, and
-# the screen list the collector reads on the operator's machine.
+# the screen list the collector reads on the operator's machine, and outputs
+# added after the reference run was made.
 EXPECTED = [r'fttcp-', r'notion-payload\.md$', r'provenance\.yaml$', r'expectation-ledger\.md$',
-            r'operator-notes\.md$', r'fulltext\.md$', r'structured\.md$', r'companies\.txt$']
+            r'operator-notes\.md$', r'fulltext\.md$', r'structured\.md$', r'companies\.txt$',
+            r'B00-intake\.yaml$', r'shadow/']  # 2026-10-11 outputs, absent from older runs
 files = sorted(glob.glob('.claude/agents/*.md') + glob.glob('.claude/commands/*.md')
                + glob.glob('.claude/skills/**/*.md', recursive=True) + glob.glob('prompts/*.md'))
 pat = re.compile(r'(?<![\w/.<{-])((?:\.claude|frameworks|prompts|tools|audits|companies|runs|outputs|inputs|verifiers|canary|screens|data)/[\w./<>{}*-]+|[\w.-]+\.(?:md|py|sh|yaml|yml|txt|json))')
@@ -122,7 +123,7 @@ bad, expected = [], 0
 for p, locs in sorted(refs.items()):
     if not missing(p): continue
     if any(re.search(e, p) for e in EXPECTED): expected += 1; continue
-    bad.append(f'{p}  ({locs[0]}{" +%d" % (len(locs) - 1) if len(locs) > 1 else ""})')
+    bad.append(f'{p} does not exist (cited at {locs[0]}{" +%d more" % (len(locs) - 1) if len(locs) > 1 else ""}). Fix the path there or create the file, then run: tools/dry_check.sh 2')
 print(f'  distinct paths: {len(refs)}; expected absences: {expected}; unresolved: {len(bad)}')
 for b in bad: print('  FAIL:', b)
 sys.exit(1 if bad else 0)
@@ -131,7 +132,7 @@ EOF
 
 check3() {
   if [ -n "$(git status --short)" ]; then
-    echo "  FAIL: working tree not clean; commit first, then re-run check 3"; return 1
+    echo "  FAIL: working tree not clean. Run: git status --short, commit the changes, then run: tools/dry_check.sh 3"; return 1
   fi
   local rc=0 was_sparse=0 saved=()
   if [ "$(git config --get core.sparseCheckout)" = "true" ]; then
@@ -182,14 +183,14 @@ EOF
   local disk tracked
   disk=$(find runs -type f | wc -l); tracked=$(git ls-files runs | wc -l)
   echo "  after --off: $disk files on disk under runs/, $tracked tracked"
-  [ "$disk" -eq "$tracked" ] || { echo "  FAIL: full tree not restored"; rc=1; }
-  [ -z "$(git status --short)" ] || { echo "  FAIL: git status not clean after --off"; rc=1; }
+  [ "$disk" -eq "$tracked" ] || { echo "  FAIL: full tree not restored. Run: tools/sparse_session.sh --off, then run: tools/dry_check.sh 3"; rc=1; }
+  [ -z "$(git status --short)" ] || { echo "  FAIL: git status not clean after --off. Run: git status --short, restore each listed file with git restore <file>, then run: tools/dry_check.sh 3"; rc=1; }
   if [ "$was_sparse" -eq 1 ]; then
     git sparse-checkout set --no-cone "${saved[@]}"
     if [ "$(git sparse-checkout list)" = "$(printf '%s\n' "${saved[@]}")" ] && [ -z "$(git status --short)" ]; then
       echo "  sparse tree restored: ${#saved[@]} patterns, $(find runs -type f | wc -l) files under runs/"
     else
-      echo "  FAIL: sparse tree not restored as found"; rc=1
+      echo "  FAIL: sparse tree not restored as found. Run: tools/sparse_session.sh <your run folders> to put your sparse set back"; rc=1
     fi
   fi
   return $rc
@@ -198,18 +199,18 @@ EOF
 check4() {
   local rc=0
   grep -q "^## 7A. RESUME FROM DISK" prompts/00-orchestrator.md \
-    || { echo "  FAIL: orchestrator section 7A missing"; rc=1; }
+    || { echo "  FAIL: prompts/00-orchestrator.md lost section 7A. Run: git checkout origin/main -- prompts/00-orchestrator.md, or re-add the 7A heading"; rc=1; }
   grep -q "to DISK and not only" .claude/commands/fttcp.md \
-    || { echo "  FAIL: fttcp disk-write rule missing"; rc=1; }
+    || { echo "  FAIL: .claude/commands/fttcp.md lost the disk-write rule. Run: git checkout origin/main -- .claude/commands/fttcp.md, or re-add the rule"; rc=1; }
   grep -q "^6\. \*\*MANAGEMENT VISION AND ACTION" .claude/commands/fttcp.md \
-    || { echo "  FAIL: fttcp part 6 missing"; rc=1; }
+    || { echo "  FAIL: .claude/commands/fttcp.md lost part 6. Run: git checkout origin/main -- .claude/commands/fttcp.md, or re-add part 6"; rc=1; }
   if command -v claude >/dev/null; then
     claude plugin validate tools/mods/token-meter >/dev/null 2>&1 \
-      && echo "  token-meter: validate ok" || { echo "  FAIL: token-meter validate"; rc=1; }
+      && echo "  token-meter: validate ok" || { echo "  FAIL: token-meter validate. Run: claude plugin validate tools/mods/token-meter and fix what it prints"; rc=1; }
     claude plugin test tools/mods/token-meter 2>&1 | tail -1 | sed 's/^/  token-meter test: /'
-    claude plugin test tools/mods/token-meter >/dev/null 2>&1 || { echo "  FAIL: token-meter tests"; rc=1; }
+    claude plugin test tools/mods/token-meter >/dev/null 2>&1 || { echo "  FAIL: token-meter tests. Run: claude plugin test tools/mods/token-meter and fix the failing test"; rc=1; }
   else
-    echo "  FAIL: claude CLI not on PATH; token-meter not checked"; rc=1
+    echo "  FAIL: claude CLI not on PATH; token-meter not checked. Install Claude Code or add it to PATH (check: which claude), then run: tools/dry_check.sh 4"; rc=1
   fi
   return $rc
 }
@@ -217,17 +218,17 @@ check4() {
 check5() {
   local rc=0 guarded=(.claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md)
   if ! git fetch -q origin main 2>/dev/null; then
-    echo "  FAIL: git fetch origin main failed"; return 1
+    echo "  FAIL: git fetch origin main failed. Check network or GitHub access, then run: tools/dry_check.sh 5"; return 1
   fi
   if git merge-base --is-ancestor origin/main HEAD; then
     echo "  HEAD contains origin/main ($(git rev-parse --short origin/main))"
   else
-    echo "  FAIL: branch is behind origin/main ($(git rev-parse --short origin/main)); merge or pull main first"; rc=1
+    echo "  FAIL: branch is behind origin/main ($(git rev-parse --short origin/main)); Run: git merge origin/main, then run: tools/dry_check.sh 5"; rc=1
   fi
   if git diff --quiet HEAD -- "${guarded[@]}"; then
     echo "  guarded paths: no uncommitted edits"
   else
-    echo "  FAIL: uncommitted edits in guarded paths:"
+    echo "  FAIL: uncommitted edits in guarded paths. Commit these files, then run: tools/dry_check.sh 5"
     git diff --name-only HEAD -- "${guarded[@]}" | sed 's/^/    /'; rc=1
   fi
   local ahead

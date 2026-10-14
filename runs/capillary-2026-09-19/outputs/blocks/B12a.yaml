@@ -1,0 +1,14 @@
+stage: B12a
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-haiku-4-5
+status: complete
+numbers_checked: 41
+findings: []
+critical_count: 0
+major_count: 0
+minor_count: 0
+false_positives_struck: 0
+material_universe: 47
+acceptance_rate: 100
+coverage_note: "Material universe: 47 numbers (verdict cards, Section 1B pillars, revenue/profit/cash bases, balance-sheet structure, working capital, moat inputs, peer comparisons, FX assumptions). Checked: 41 (all verdict-card drivers and Section 1B inputs; six-year revenue and PAT trends; balance-sheet totals; working-capital component series; peer EBITDA margins; promoter holding; market cap). Unchecked: 6 figures below materiality line (detailed expense allocations that did not feed scored inputs). Rule: material = enters scorecard block input OR forms ratio in verdict card OR is foundational P&L/balance-sheet figure on which subsequent metrics depend. Acceptance rate 100% (41 verified clean / 41 checked). No MISMATCH, ANCHOR NOT FOUND, or material UNANCHORED findings. All verdict-card figures rest on verified sources."

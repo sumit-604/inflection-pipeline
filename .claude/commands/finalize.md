@@ -10,11 +10,21 @@ $ARGUMENTS
 CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
 `git fetch origin main`, then
 `git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
-If the diff is not empty, print
-`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
-and STOP: "Checkout is behind or ahead of origin/main in framework files;
-pull or commit before running." If the fetch fails, STOP with the same line
-plus " (fetch failed)". This is a mechanical halt, not a quality halt.
+If the diff is not empty, name the cause and STOP with the line that fits
+(print every line that applies; <paths> is the list printed by
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`):
+- `git status --short -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+  lists files: "Uncommitted edits in framework files: <paths>. Commit them on
+  a framework/ branch and open a PR, then rerun /finalize."
+- `git log --oneline HEAD..origin/main -- <same paths>` lists commits:
+  "Checkout is behind origin/main in <paths>. Run: git pull origin main, then
+  rerun /finalize."
+- `git log --oneline origin/main..HEAD -- <same paths>` lists commits: "This
+  branch has framework commits not on main: <paths>. Merge their PR, then
+  run: git checkout main && git pull origin main, then rerun /finalize."
+If the fetch fails, STOP: "git fetch origin main failed. Fix network or
+GitHub access, run git fetch origin main until it succeeds, then rerun
+/finalize." This is a mechanical halt, not a quality halt.
 
 NAME RESOLUTION: the argument may be a full path, a bare ticker (any
 case), or a company-name fragment. If it is not an existing path, resolve

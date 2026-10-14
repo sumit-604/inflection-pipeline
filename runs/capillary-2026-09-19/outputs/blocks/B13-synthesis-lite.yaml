@@ -1,0 +1,28 @@
+stage: B13-synthesis
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: claude-opus-5
+phase: 1
+mode: LITE
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3
+verdict_basis: "INDETERMINATE cash-conversion determination caps at PROCEED WITH CAVEATS; confidence band 60-74 (overall 70) and 16 carried MAJORs converge on the same level. Operator choice open: Verifier B strict redflag basis (40) would force REWORK under rule 1, routed to stage 5 with scoped stage 6 fixes."
+flags_active: ["FLAG-CASH", "FLAG-GATE0"]
+promoter_flag: "not triggered (B08 CAUTION, below CONCERN/AVOID); caution items surfaced"
+cash_determination: "INDETERMINATE"
+transition_posture_provisional: "RESEARCH / WATCH (proof NOT FIRED, ugliness ARTIFACT-OF-CLIMB, gap UNRESOLVED until stage 11)"
+confidence_delta: {numerical: 100, redflag: 70, redflag_strict: 40, framework: 86.7, peer: 100, overall: 70}
+verifier_corrections_carried: ["Gate 0 66/160 MODERATE (stage 68 STRONG)", "EM 21.9 before rescoring (stage 24.0), MODEST", "FLAG-CASH mechanism per B12c F-G2", "R&D Rs 1,212 Mn disclosed AR p.41", "B12b 3 MAJOR misses and B05 direction errors"]
+valuation_decision: ""    # excluded in LITE mode; formed in phase 3
+entry_range: {low: 0, high: 0}
+headline: "Loyalty ledger rollup, organic growth unresolved"
+falsification_metric: "H1 FY27 organic revenue growth at constant currency below 15%, printed with the Q2 FY27 results"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+notion_save_deferred: "phase 3 (LITE mode emits no Notion payload)"

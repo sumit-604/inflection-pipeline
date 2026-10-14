@@ -1,0 +1,78 @@
+# SESSION COST LEDGER — CAPILLARY 2026-09-19 (step1 intake + phase 1)
+
+Token counts come from subagent result metadata (total only; the harness does
+not split input/output, so in_tok/out_tok read n/a).
+
+| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
+|---|---|---|---|---|---|---|---|---|
+| 0 | step1 intake + corpus repair + input validation | orchestrator (opus, inline) | n/a | n/a | n/a | n/a | ~70m | 1 |
+| 1 | gate 0 scorecard | claude-sonnet-5 | default | n/a | n/a | 132485 | 11m58s | 1 |
+| 2 | notes triple-pass, pass 1 | claude-sonnet-5 | default | n/a | n/a | 223637 | 10m17s | 1 |
+| 1 | gate 0 scorecard (rescore with peer Data_Sheets; orchestrator omitted them in run 1) | claude-sonnet-5 | default | n/a | n/a | 173165 | 3m29s | 2 |
+| 2 | notes triple-pass, pass 2 | claude-sonnet-5 | default | n/a | n/a | 110157 | 8m25s | 2 |
+| 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5 | default | n/a | n/a | 76439 | 3m20s | 3 |
+| 3 | AR backward deep dive (8 phases) | claude-sonnet-5 | default | n/a | n/a | 212500 | 14m45s | 1 |
+| 4 | business model decoder | claude-sonnet-5 | default | n/a | n/a | 122636 | 7m29s | 1 |
+| 5 | concall analysis (3 transcripts) | claude-sonnet-5 | default | n/a | n/a | 171704 | 8m32s | 1 |
+| 8 | promoter check (web) | claude-sonnet-5 | default | n/a | n/a | 232448 | 10m03s | 1 |
+| 6 | peer concall verification | claude-sonnet-5 | default | n/a | n/a | 354991 | 10m13s | 1 |
+| 7 | emerging moat scan | claude-sonnet-5 | default | n/a | n/a | 219716 | 11m14s | 1 |
+| 9 | TAM/SAM/SOM (web) | claude-sonnet-5 | default | n/a | n/a | 189634 | 13m25s | 1 |
+| 12a | verifier A numerical | claude-haiku-4-5 | default | n/a | n/a | 96287 | 3m53s | 1 |
+| 12b | verifier B red flags | claude-opus-5 | default | n/a | n/a | 207309 | 8m58s | 1 |
+| 12c | verifier C framework (phase-1 half) | claude-opus-5 | default | n/a | n/a | 142726 | 6m46s | 1 |
+| 12d | verifier D peers | claude-sonnet-5 | default | n/a | n/a | 87416 | 4m19s | 1 |
+| 13 | synthesis-lite (phase 1) | claude-opus-5 | default | n/a | n/a | 237436 | 8m17s | 1 |
+| 9b | Halt 1 understanding dossier | claude-sonnet-5 | default | n/a | n/a | 236476 | 9m52s | 1 |
+| 9b | Halt 1 dossier marker fix (em-dash in DRAFT marker; resumed same agent) | claude-sonnet-5 | default | n/a | n/a | n/a | ~2m | 2 |
+
+## CLOSE-OUT SUMMARY
+
+Run total (sum of ledger rows with token counts): 3,227,162 tokens.
+
+(a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share |
+|---|---|---|---|
+| 1 | 2 notes triple-pass (3 runs) | 410,233 | 12.7% |
+| 2 | 6 peer concall verification | 354,991 | 11.0% |
+| 3 | 1 gate 0 scorecard (2 runs) | 305,650 | 9.5% |
+| 4 | 13 synthesis-lite | 237,436 | 7.4% |
+| 5 | 9b Halt 1 dossier (2 runs; fix run untallied) | 236,476 | 7.3% |
+
+(b) DOWNSHIFT FAILURES
+- DOWNSHIFT FAILURE: stage 0 (input validation ran inline in the Opus orchestrator session, as run-pipeline step 1 directs "do this yourself"; no haiku stage-0 agent exists). Verifier A ran on haiku as routed.
+
+(c) COST SPIKES
+- none (no prior CAPILLARY run ledger exists).
+
+(d) OPERATOR SNAPSHOT
+- Operator: run /cost and /usage now and paste the cache hit ratio and loop totals under an "Operator snapshot" heading here.
+
+## PHASE 3 (finalize) LEDGER — 2026-10-10
+
+| # | stage | model | effort | in_tok | out_tok | total_tok | wall | run# |
+|---|---|---|---|---|---|---|---|---|
+| 10 | input assembly (phase 3) | claude-sonnet-5-5 | medium | n/a | n/a | 244012 | 8m10s | 1 |
+| 11 | Role 1 valuation | claude-opus-5-5 | xhigh | n/a | n/a | 489015 | 38m56s | 1 |
+| 14 | Role 2 thesis | claude-opus-5-5 | high | n/a | n/a | 369783 | 16m11s | 1 |
+| 15 | Role 3 devil's advocate | claude-opus-5-5 | xhigh | n/a | n/a | 548244 | 38m53s | 1 |
+| 12c | verifier C phase-3 valuation half (parallel with 15) | claude-opus-5-5 | xhigh | n/a | n/a | 416630 | 21m24s | 1 |
+| 13 | final synthesis (phase 3) | claude-opus-5-5 | high | n/a | n/a | 425429 | 16m58s | 1 |
+
+## PHASE 3 CLOSE-OUT SUMMARY
+
+Phase 3 subagent total: 2,493,113 tokens (orchestrator usage not metered).
+
+(a) TOP FIVE BY TOKENS
+1. 15 devil's advocate: 548,244 (22.0%)
+2. 11 valuation: 489,015 (19.6%)
+3. 13 final synthesis: 425,429 (17.1%)
+4. 12c verifier C phase 3: 416,630 (16.7%)
+5. 14 thesis: 369,783 (14.8%)
+
+(b) DOWNSHIFT FAILURES: none (stage 10 ran on claude-sonnet-5-5 per frontmatter).
+
+(c) COST SPIKES: none (no prior phase 3 run for this ticker).
+
+(d) SESSION TOTAL (/cost)
+

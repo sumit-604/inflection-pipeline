@@ -1,0 +1,9 @@
+wav/
+frames/
+assets
+out/
+*.mp4
+*.wav
+__pycache__/
+wav_shorts/
+frames/

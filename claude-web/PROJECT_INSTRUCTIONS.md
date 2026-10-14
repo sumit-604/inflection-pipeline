@@ -1,5 +1,6 @@
 # STOCK ANALYSIS REPOSITORY — PROJECT INSTRUCTIONS v4.1
 Version 4.1, 04-Oct-2026. Supersedes v4.0 (draft of 09-Sep-2026). The repo copy is claude-web/PROJECT_INSTRUCTIONS.md in sumit-604/inflection-pipeline. The operator keeps this project copy in sync with it.
+Amended 11-Oct-2026 (housekeeping rulings, PR #212): Part 4.3 Phase 1 and Part 4.4 Pipeline run caps. No framework or Section 1B text changed.
 
 Changes from v4.0:
 - Role 1 runs in one pass. The operator reviews twice: at the /fttcp pillar-approval gate and at the final verdict (operator ruling 2026-10-03). The five section-end stops are now checkpoint lines.
@@ -603,7 +604,7 @@ Operating manual for every company analysed. Claude web (this project) works wit
 
 **Phase 0: Intake (Claude Code).** `/step1 <company>` writes the Spear OVERRIDE line, picks peers, collects the corpus and runs Phase 1 to Halt 1 (Part 2.5). A web spear runs here only on operator request; a MISS ends there.
 
-**Phase 1: Pipeline (Claude Code).** Run by /step1, or directly as `/run-pipeline runs/<ticker>-<date>`. Stages 0-9, verifiers, stage 09b. At Halt 1 Claude Code delivers: corpus completeness audit (CURRENT or GAPPED), draft mental model, business understanding narrative, downstream dossier with fragility read, research brief, 14-15 point plain-language summary.
+**Phase 1: Pipeline (Claude Code).** Run by /step1, or directly as `/run-pipeline runs/<ticker>-<date>`. Stages 0-9, verifiers, stage 09b. At Halt 1 Claude Code delivers: corpus completeness audit (CURRENT or GAPPED), draft mental model, business understanding narrative, downstream dossier with fragility read, research brief, 14-15 point plain-language summary. In chat it gives each deliverable's file path and a summary of at most ten lines, never the full body (operator ruling 2026-10-11); the operator opens the files. The report ends with "Change that would make the next run cheaper: ___". Open items at Halt 1 can include a refused second remediation cycle, a proposed verifier re-run awaiting approval, and any stage that stopped with status: blocked.
 
 **Phase 2: Understanding stress-test (Claude web).**
 a. Read the corpus audit. If GAPPED, name what is missing and where to fetch it. Distinguish findable-but-missing from does-not-exist.
@@ -635,6 +636,8 @@ e. Deliver the signed mental model for sign-off. Once signed, the ruling is reco
 **Session-branch discipline.** Any Claude Code session that commits a framework or prompt amendment opens a PR to main the same day. Framework amendments and run outputs travel on separate branches. Unmerged amendments are stranded and every future run silently uses stale framework. Check for stranded amendments at the end of every deep dive.
 
 **Sparse checkout.** A Claude Code pipeline session runs `tools/sparse_session.sh runs/<folder> [more folders]` right after the clone, before any pipeline command (operator ruling 2026-10-03). It keeps everything outside runs/, runs/_template/, every run's session-cost.md and manifest.yaml, and the named run folders, so the tree is about 80 MB, not 4.8 GB. Claude Code adds a folder the same way; `tools/sparse_session.sh --off` restores the full tree. An extraction prompt that needs a run folder names it.
+
+**Pipeline run caps (operator ruling 2026-10-11).** One remediation cycle per Phase 1; each verifier runs once per Phase 1, and a re-run (including the Verifier A severity-addendum re-run) needs the operator's approval recorded in the run's inputs/operator-notes.md. Every agent stops when stuck (three unchanged repeats or five turns with nothing new learned) and reports status: blocked. Stage 0's document identity check runs on Haiku 5.5 and is verified by the orchestrator. One Phase 1 runs a Haiku 5.5 shadow of Verifier A whose findings count for nothing; its comparison table sits at runs/<run>/shadow/verifier-a-comparison.md for the operator's ruling on Verifier A's model.
 
 **No re-reading corpus documents.** Write an extraction prompt instead. Exception: documents uploaded directly here.
 

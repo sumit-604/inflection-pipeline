@@ -1,0 +1,21 @@
+stage: B15-devil
+company: "CAPILLARY"
+run_date: "2026-09-19"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+rule_h_gate: "PASS: forward basis (11-valuation 3.4, 2C-w line), margin bridge (11-valuation 3.2), 8 chains each with [INFERENCE] (14-thesis 3.5), Entrepreneur Ledger filled (14-thesis 3G)"
+dimensions:
+  growth_triggers: "weakened"       # survives | weakened | destroyed
+  moat_durability: "survives"       # survives | weakened | destroyed
+  management_trust: "weakened"      # survives | weakened | destroyed
+  valuation_safety: "weakened"      # survives | weakened | destroyed
+overall: "WEAKENED BUT ALIVE"       # SURVIVES | WEAKENED BUT ALIVE | DESTROYED
+top_counters:
+  - "Organic is not like for like: the company defines it as revenue on its platform (Q1 FY27 deck p.29; call p.16), so migrated acquired customers flow in. Ex the healthcare account and FX, core organic ran near 11-13% (FY25 about 11%; Q1 FY27 about 11% cc, call p.13, p.18), and proof-gate half 1 is measured on this metric."
+  - "Management's own May-2026 outlook (deck p.44, p.51, p.64) builds FY30 revenue near Rs 1,323 Cr (organic +15% a year, acquired books cut to 75%), below the approved bear Rs 1,358 Cr and 18% under the base Rs 1,620 Cr; its EBITDA (Rs 372-412 Cr) sits above base, so the plans differ on composition, not EBITDA."
+  - "Acquired-revenue retention record is 68% (May-2026 deck p.48) while ledger L5 needs 80%; Kognitiv churn already beat its indemnity threshold (Results Q1 FY27 p.11), 'over 30 enterprise brands' (AR p.78) became 'about 16-17 customers' (call p.11), and the bridge credits Rs 27.9 Cr of Kognitiv EBITDA vs management's Rs 10-20 Cr (call p.11)."
+  - "The re-entry zone exists only at the operator's 30x: at the pillar 16.8x it returns 8.2-12.5% a year and upside/downside at Rs 328 is 0.6x; at CMP the price needs FY30 EPS Rs 26.45, the top of management's own plan (Rs 22.8-26.4)."
+  - "Shared catalyst: one margin-migration path carries Pillar 1, the A16 crossover, the proof-gate ROCE half and the 30x EPS; a one-year slip of every dated catalyst gives Rs 506 at end-FY29 (-3.7% a year from CMP), two years Rs 359; with six deals in five years the ROCE denominator refills by design (call p.18)."
+  - "Disclosure drift: SessionM's price appears five ways (USD 20 m EV; USD 9.0 m paid; about USD 0.6 m net in May; Rs 16.91 Cr net in Aug; '$1.5 million or a couple of million'), with a USD 11 m 'net debt' deduction on 'debt-free entities' (call p.22); Kognitiv's filed Rs 147.23 Cr (AR p.254) is shown as about Rs 122 Cr in the cohort ROIC table."
+  - "Cash multiplier reasons weaken: contract liabilities fell from 23.9% of revenue (FY24) to 13.4% (FY26) and dropped Rs 51 Cr in FY25 (AR p.233; UDRHP-I p.55), against the 'model design, not a one-off' claim (May-2026 deck p.58); CROIC is EBITDA-based."
+  - "UGLINESS contested in the open: the carried ARTIFACT-OF-CLIMB (09b B5, unsigned in Part 1) holds only if M&A stops; goodwill is 52% of invested capital and the CEO runs M&A as 'a sales motion' (call p.18), so sub-10% company ROCE reads as a STRUCTURAL-FEATURE until a no-deal year proves otherwise."

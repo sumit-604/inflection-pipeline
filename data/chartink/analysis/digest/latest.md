@@ -151,15 +151,16 @@ These are weekly or slower series. The date shown is their last reading.
 ## Market read
 
 Wednesday was the fourth repair day since the 8 October break, and the
-strongest underneath. The Nifty slipped about half a percent, yet most stocks
-rose. 145 stocks jumped four and a half percent or more, and only 10 fell that
-much, the fewest hard fallers in a month. New yearly lows collapsed from 98 to
-28. The count of stocks above the two-hundred-day average climbed to 919, so
-about two thirds of the 8 October damage is now repaired. The count above the
-twenty-day average already stands higher than before the break. Turnover came
-back to its year-ago level after two thin days. Two things did not fit. The big
-names paused, with pharma, finance and auto pulling the Nifty down. And the
-VIX, the price of protection, rose while the broad market rose. The market
-under the index is healing faster than the index itself.
+strongest one underneath. The Nifty slipped about half a percent, yet most
+stocks rose. 145 stocks jumped four and a half percent or more, and only 10
+fell that much. New yearly lows dropped from 98 to 28, the fewest in three
+weeks, and new highs beat new lows for the first time since the break. The
+count of stocks above the 200 day average rose to 919, about two thirds of the
+way back to where it stood before the break. The short trend has already fully
+repaired. Two things did not fit. The big names paused, with pharma, finance
+and auto pulling the index down. And the VIX, the price of index protection,
+rose while most stocks rose. The market under the index is healing faster than
+the index. It is still well short of the late September high, and it has not
+had the one big day that marks a real turn.
 
 Full brief: briefs/2026-10-14.html

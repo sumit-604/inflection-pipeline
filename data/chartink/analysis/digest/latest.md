@@ -150,15 +150,6 @@ These are weekly or slower series. The date shown is their last reading.
 
 ## Market read
 
-Thursday turned the repair inside out. The Nifty rose about 1.7 percent, led by private banks, IT, auto and finance. Under
-it, most stocks fell. 116 stocks dropped four and a half percent or more, and
-only 56 rose that much. The microcap and small company indices fell more than
-one percent each. This is the same shape as 24 September, the day after the
-last repair peaked, with one difference. Then the long trend lost about a
-hundred stocks in a day. On Thursday it lost only 11, and 909 stocks still
-hold the 200 day line. The damage sat in the short trend, which gave back
-about a third of its repair. The money moved from the small end to the big
-names, on turnover well above a year ago, while the VIX fell. The broad
-repair has stalled. It has not broken.
+The market spent five sessions repairing the 8 October break, then gave part of it back on Thursday while the Nifty rose. From the break to Wednesday, the count of stocks above their 200 day line climbed from 837 to 920. Thursday it slipped to 909. The short trend took the real hit: about 120 stocks fell back under their 20 day line in one session. 116 stocks fell four and a half percent or more, against 56 that rose that much. The Nifty rose about 1.7 percent on private banks, IT, autos and brokers, while the microcap and small company indices fell. Money moved from the small end to the big names. The long trend held, so the repair has stalled rather than broken. Friday's data is not yet in, so Thursday is still the last word.
 
 Full brief: briefs/2026-10-15.html

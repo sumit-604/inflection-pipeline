@@ -1,0 +1,39 @@
+stage: A5-adversary
+company: "AURUM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 2
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop2_closure:
+  - "L1-F1 CLOSED: REV L442, L450, L608, L751, L768; blocks/a4.yaml L63, L80; no 'both readings' / 'either reading' / 'fires under' text remains in either file"
+  - "L1-M1 CLOSED: REV L431 (item 6 NOT DETERMINABLE / AMBER), L436, L615, L655-L656, L758; blocks/a4.yaml L70"
+  - "L1-M2 CLOSED: REV L664 (61/30/9 collection split, DECK L333; overlap about 30% [INFERENCE])"
+  - "L1-S1, L1-S2, L1-S3 applied: REV L242, L635, L644"
+  - "Run-1 A4-F1, F2, F3, C1, A2-C2, M1, M2, M3 closed in loop 1 and still closed"
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L2-S1 (A4): optional REA inference from L1-BC3 not grafted (RES L558-L559, L573-L574); the required 30% qualifier is in"
+    - "L2-S2 (A4): Rental on the same revenue-share key is Rs(2.08) Cr (0.93 - 3.01); not stated at REV L430; optional"
+    - "L2-S3 (A1/A2): run-1 S1, S7, S10 remain open as logged"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "L2-S1: optionally add the REA 'held both, exchanged both' inference to competition bullet 1"
+  - "L2-S2: optionally state Rental's loaded result Rs(2.08) Cr under watchlist item 5"
+  - "L2-S3: re-anchor consolidated rows R106, R119-R121, R125-R128, R1663; re-key under N-C3/N-C5; move R080 to N-C8; deck bio tokens and AP01 merge stay logged"
+analyst_note: "Loop 2 is scoped to the changed passages and the deliverable gate, per the operator-approved final loop. L1-F1 is closed. Reading B is now stated as unresolved for Q2 on both bases, with the Rs2.86 Cr threshold, the Q1 and H1 bounds, and trigger 1 firing on Reading A only. No stale 'both readings' text remains in the review or in a4.yaml. L1-M1 is closed. Watchlist item 6 moves to NOT DETERMINABLE / AMBER with the Rs6.97 Cr corporate-cost counter, and the 6B summary is re-counted. L1-M2 is closed with the 30% developer-overlap line. The changed passages add only bear qualifiers with correct tiers and figures, so they introduce no new FACTUAL, MISSING or CONTRADICTION. Three STYLE notes remain, and none loops. The proposed Decision Status (AVOID, unchanged) was never affected by any finding across run 1, loop 1 and loop 2."

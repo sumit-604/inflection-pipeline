@@ -1,0 +1,33 @@
+# Run log: AURUM Q2 FY27 (/run-quarterly, 2026-10-17)
+- Checkout guard PASSED 2026-10-17 (fetch ok, diff empty). Worktree run/quarterly-q2fy27-2026-10-17 cut from origin/main e24a5bdb.
+- Protocols present: Results v1_4, Concall v1_1, Document_Review v1_1, Master v3_6.
+- Toolchain: poppler 25.07 (winget), tesseract 5.4 (winget); PATH prefixed per call.
+- Doc class: Aurum_Q2FY27_Results.pdf -> results (Reg 30 Board Outcome cover + Reg 33 results).
+- Doc class: Aurum_Q2FY27_Investor_Presentation.pdf -> presentation (Reg 30 cover + slide deck).
+- Doc class: Aurum_Q2FY27_Press_Release.pdf -> presentation class, file tag "pressrelease" (media release on results; orchestrator has no press-release doctype; tag disambiguates file names).
+- No concall in --docs -> FULL QUARTER run, Role 4 only (Role 5 not passed).
+- Forensics files named forensics_<doctag>_aurum_q2fy27.md (one per document; doctag avoids overwrite).
+- Notion live fetch 2026-10-17: page 39ebb2b9-d3ab-817e-8d09-d887dc5b6a93, last edited 2026-10-14. Decision Status AVOID. Entry max 89, MoS 71. Prior quarter page 3a4bb2b9-d3ab-8185-ac83-c7412fd428b8 (Q1 FY27 results review) read for the prior Questions table.
+- Notion thesis written to work/notion-thesis.md (orchestrator copy of the live fetch, passed to A4 by path; Decision Status also inline).
+- Prior-quarter ledger: not available on main (ND).
+- A1 x3 GATE PASS (results 20/20 pages, hybrid: pp1-4 text, pp5-20 zero-char scans OCR'd at 200dpi and image-verified tables; presentation 38/38, p3 OCR; pressrelease 4/4). Tokens: results 178,108; presentation 91,270; pressrelease 48,160.
+- Mechanical note: parallel A1s shared work/ for temp files (stale raw.txt/body.txt collisions); no output affected. Later runs give each A1 its own work/a1-<doctag>/ temp dir.
+- A2 x3 GATE PASS, orphan_ids empty. Cost check pass: results 81,437 < 178,108; presentation 43,027 < 91,270; pressrelease 35,724 < 48,160.
+- A2 results MISSING_FROM_STRUCTURED: 9 note-2 entity mentions (L530-543), all restating auditor-list entities already held in structured rows. Logged as low severity; no A1 loop (ledger carries them as rows).
+- A3 x3 GATE PASS (F1-F17 all statused, every FINDING line-cited). Tokens: results 188,941; presentation 137,033; pressrelease 65,159.
+- A4 review written (tokens 252,276). Protocol verdict PROCEED WITH FLAGS; trigger 1 fired on the 03-Oct test (core PBT ex-OI Q2 -0.52 Cr after Q1 -4.86 Cr).
+- A5 run 1 verdict INCOMPLETE (tokens: see session-cost). Arithmetic and coverage PASS; 3 FACTUAL, 2 CONTRADICTION, 3 MISSING, 10 STYLE.
+- LOOP ITERATION 1 (cap 1): A2 annotation fix (note-2 entity count 14->15); A3 skipped (no new rows or IDs); A4 applies F1-F3, C1, M1-M3; then A5 re-audit once.
+- Loop 1 A2 annotation fix done (tokens 82,482 incl. resumed context).
+- Loop 1 A4 rewrite done (verdict PROCEED WITH FLAGS unchanged; 22 questions, 13 monitorables, 15 flags). A5 re-audit started.
+- A4 cumulative tokens after loop 1: 322,753 (run 1 252,276; loop delta ~70,477).
+- A5 loop-1 re-audit: INCOMPLETE. All 8 run-1 items CLOSED. New: L1-F1 FACTUAL (trigger 1 "fires under both readings" with capitalisation expensed is unsupported for Reading B Q2), L1-M1 MISSING (Distribution 16.3% before Rs6.97 Cr corporate cost; loaded ~11.0%), L1-M2 MISSING (Housing.com developer share 30%). loop_back_to A4 only. Trigger 1 still fires on Reading A; AVOID unaffected.
+- LOOP CAP REACHED (1 iteration). STOP: operator asked before a second iteration (via parent session, 2026-10-17).
+- A5 cumulative tokens after loop-1 re-audit: 404,733 (run 1 305,862; loop delta ~98,871).
+- OPERATOR APPROVAL 2026-10-17 (quoted via parent session): "Yes. Approve one second iteration for Aurum: A4 fixes the three items, A5 re-audits once." loop_iterations = 2. If still INCOMPLETE after this: no further loop; close out with open items flagged.
+- Operator load cap: at most 2 subagents at once.
+- Session restart between loop 1 and loop 2 (Claude Code process exit); state recovered from files.
+- Loop 2 A4 fix done (L1-F1, L1-M1, L1-M2 applied; 16 flags; item 6 NOT DETERMINABLE/AMBER). A5 loop-2 re-audit started, scoped to changed passages + deliverable gate.
+- A4 cumulative tokens after loop 2: 376,731 (loop-2 delta ~53,978).
+- TOKEN CORRECTION: subagent_tokens on a resumed agent is that invocation's own cost (it re-reads full context), not cumulative. Additive figures: A2 results 81,437 + 82,482 (loop 1); A4 252,276 + 322,753 (loop 1) + 376,731 (loop 2); A5 305,862 + 404,733 (loop 1) + loop 2 pending.
+- Close-out 2026-10-17: A5 COMPLETE (loop 2). notion-payload.md written (gate not waited per operator; batch approval later). session-cost.md total_run_tok 3,071,525. Temp OCR rasters and scratch dirs (work/a1res, work/a2-*, work/*.jpg, work/*.txt) left uncommitted.

@@ -1,0 +1,81 @@
+stage: A4-analyst
+company: "AURUM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 2
+docs_merged: [results, presentation, pressrelease]
+ledger_reconciliation:
+  notes: 34
+  turns: 0
+  slides: 42
+  all_reviewed: true
+  a3_findings_incorporated: [F1-01, F1-02, F1-03, F2-01, F2-02, F2-03, F4-01, F6-01, F6-02, F6-03, F6-04, F8-01, F8-02, F9-01, F10-01, F10-02, F12-01, F12-02, F12-03, F14-01, F14-02, F14-03, F14-04, F14-05, F14-06, F14-07, F15-01, F15-02, FN-01, FN-02, FN-03, FN-04, FN-05, FN-06, FN-07, FN-08, FN-09, FN-10, FN-11, FN-12, FN-13, FN-14, FN-15, FN-16, A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "AVOID"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap_pct: 60.7}
+  - {period: "Q1 FY27", gap_pct: -117.5}
+  - {period: "Q2 FY26", gap_pct: -626.2}
+  - {period: "H1 FY27", gap_pct: -14.3}
+  - {period: "H1 FY26", gap_pct: -891.6}
+  - {period: "FY26", gap_pct: -302.3}
+questions_for_management:
+  - {q: "Q2 rupee split of lease-termination gains, provision reversals and PPE gains inside Q2 OI Rs7.12 Cr", from_finding_id: "F2-02, FN-06, A3-07, A3-08, A3-12"}
+  - {q: "Locon (Housing.com) FY26 and H1 FY27 revenue, EBITDA, PAT; separate Q3 disclosure yes/no", from_finding_id: "FN-09, FN-14, F15-01, A3-04"}
+  - {q: "Housing.com integration completion date, synergy target, one-time cost and its Adjusted EBITDA treatment", from_finding_id: "A3-01, FN-10"}
+  - {q: "Locon intangible classes, useful lives, quarterly amortisation from Q3; goodwill CGU allocation", from_finding_id: "F6-01, F12-02, FN-10"}
+  - {q: "Gross DTA/DTL by entity and Locon PPA DTL; note 12 sign conflict", from_finding_id: "F8-01, F8-02, F14-04"}
+  - {q: "Borrower, rate and security of Rs9.52 Cr loan earning Rs2.01 Cr in H1; any AREDL loan or advance at 30-Sep-2026", from_finding_id: "F2-03, A3-14"}
+  - {q: "Objects for Rs29.51 Cr warrant cash and Rs88.52 Cr optional balance; plan if AREDL does not exercise", from_finding_id: "F6-02, A3-14"}
+  - {q: "Basic and diluted weighted shares for Q1, Q2, H1 FY27; reconcile implied 867 lakh", from_finding_id: "F10-01, F10-02"}
+  - {q: "Distribution revenue by brand and Distribution segment EBITDA (segment D&A), Q2 FY26 and Q2 FY27", from_finding_id: "A3-05, FN-08, F12-03"}
+  - {q: "PropTiger gross commission and net revenue in Rs Cr, both quarters", from_finding_id: "A3-09"}
+  - {q: "Q2 FY26 Adjusted EBITDA 3.1% vs -3.2% (build-up supports 3.1%); published base; contents of Impact of IND AS Rs1.19 Cr", from_finding_id: "FN-01, A3-06, F14-06, FN-12"}
+  - {q: "Group lease payments Rs24.25 Cr split by HelloWorld, NestAway, offices; H1 lease-exit costs", from_finding_id: "FN-03, FN-04"}
+  - {q: "Which ratio supports the improving expense-to-income claim (own figures 69.9% to 70.2%)", from_finding_id: "FN-02"}
+  - {q: "Rental lease interest inside Rs6.32 Cr finance cost; Rental result after lease interest", from_finding_id: "F12-01, FN-05, FN-07"}
+  - {q: "NestAway Q1 and Q2 FY27 bookings in units and Rs Cr", from_finding_id: "A3-10, FN-07"}
+  - {q: "Receivables ageing Sep-26 and Mar-26 incl. over-1-year bucket; specific share of Rs4.44 Cr provision", from_finding_id: "F1-02"}
+  - {q: "Integrow re-consolidation or restructuring by 31-Mar-2027; SM-REIT vehicle; driver of associate swing", from_finding_id: "F6-03, F4-01"}
+  - {q: "AMSA first SM-REIT scheme filed; target AUM; launch date", from_finding_id: "A3-13, FN-11"}
+  - {q: "HelloWorld Living inside limited-review scope; revenue and assets", from_finding_id: "F14-02"}
+  - {q: "Confirm +57% base includes discontinued Rs3.14 Cr; continuing growth +62.5%", from_finding_id: "A3-02"}
+  - {q: "Which transaction does the deck disclaimer's 'business combination' refer to", from_finding_id: "FN-13"}
+  - {q: "Q2 FY26 capitalised development amount, capitalisation policy, amortisation inside D&A (Q2 Rs3.74 Cr, H1 Rs7.11 Cr)", from_finding_id: "A5-BC1 (note C11)"}
+monitorables:
+  - {item: "H1 Reg 23(9) RPT disclosure: AREDL loan test; Rs9.52 Cr loan borrower", implied_date: "2026-10-16 (results date) [INFERENCE: Reg 23(9)]; obtain now", source_ref: "NOTION L52; F2-03"}
+  - {item: "Housing.com first consolidated quarter with split", implied_date: "Q3 FY27 results, by ~2027-02-14", source_ref: "DECK L112; FN-14; RES L561"}
+  - {item: "Locon PPA amortisation and DTL unwind start; capitalised development amount", implied_date: "Q3 FY27 results", source_ref: "F6-01, F8-01, F15-01; RES L603"}
+  - {item: "Integrow control abeyance ends", implied_date: "2027-03-31", source_ref: "RES L585; F6-03"}
+  - {item: "SM-REIT first scheme filed (item 3 FY27 green deadline)", implied_date: "2027-03-31", source_ref: "NOTION L38; FN-11"}
+  - {item: "Q4 FY27 / FY27 audited results: re-entry pair, goodwill impairment test", implied_date: "by ~2027-05-30", source_ref: "NOTION L13; RES L405"}
+  - {item: "FY27 Annual Report: receivables ageing, RPT, CARO", implied_date: "~2027-08/09", source_ref: "NOTION L22, L43"}
+  - {item: "Q1 FY28 results", implied_date: "by ~2027-08-14", source_ref: "Reg 33 timeline [INFERENCE]"}
+  - {item: "Locon PPA finalised", implied_date: "by 2027-09-29", source_ref: "RES L563-L564"}
+  - {item: "AREDL warrant exercise Rs88.52 Cr balance (optional)", implied_date: "by ~2028-04-13", source_ref: "RES L570-L571; F6-02"}
+  - {item: "Unpaid rights calls Rs1.84 Cr", implied_date: "none stated", source_ref: "RES L552-L554; F6-04"}
+  - {item: "Housing.com integration and AI OS build", implied_date: "undated", source_ref: "PR L62-L64, L83; A3-01"}
+  - {item: "Operator rulings 16, 17, 40", implied_date: "pending", source_ref: "NOTION L56-L58"}
+flags:
+  - "FLAG-TRIGGER-1-FIRED: core PBT ex-OI Rs(4.86) Cr Q1, Rs(0.52) Cr Q2 on the 03-Oct named test (Reading A); proposed status AVOID unchanged. Reading B stays unresolved for Q2 on both bases; with capitalisation expensed, Q2 turns negative only if Q2 one-time OI exceeds Rs2.86 Cr (6.60 - 3.74), against Rs6.60 Cr reported; Q1 is negative on that basis (at most Rs(1.06) Cr); H1 at most Rs(5.60) Cr. Trigger 1 still fires on Reading A."
+  - "FLAG-CAPITALISATION: Rs3.74 Cr Q2 / Rs7.11 Cr H1 own team cost capitalised (RES L603); expensed core PBT Rs(4.26) Cr Q2, Rs(8.23) Cr Q1, Rs(12.48) Cr H1; capitalisation alone can carry the re-entry metric across zero"
+  - "FLAG-CASH INDETERMINATE-WITH-DIRECTION: lease-adjusted CFO H1 Rs13.06 Cr vs Rs(21.76) Cr; Rs9.38 Cr ex Rs3.68 Cr tax refunds; lease-adjusted FCF Rs0.63 Cr ex refunds; Rs46.25 Cr (89.7%) of net cash rise is building-sale and Locon cash; missing receivables ageing, RPT disclosure, Housing.com WC"
+  - "FLAG-INTANGIBLE-HEAVY: goodwill + intangibles Rs959.50 Cr = 94.7% of owners' equity; PPA provisional"
+  - "FLAG-HOUSING.COM UNDISCLOSED: no financials; multiple NOT COMPUTABLE; goodwill 74.7% of price; 20.5% share-count addition; Q3 breaks like-for-like"
+  - "FLAG-RPT TEST OPEN: AREDL test not determinable; Rs9.52 Cr loan ~42% annualised, borrower unnamed"
+  - "FLAG-OI QUALITY: >=51.9% of H1 OI non-recurring; Q2 PAT positive only on OI"
+  - "FLAG-SEGMENT MARGIN BASIS: Distribution 16.3% is before Rs6.97 Cr Q2 corporate operating cost outside segments (RES L376, L380); revenue-share loaded margin 11.0% [INFERENCE] (Q1 8.4%, Q2 FY26 12.9%), below 12%; segment D&A ND; item 6 NOT DETERMINABLE / AMBER"
+  - "FLAG-EPS DENOMINATORS: implied 867 lakh Q2 shares vs ~765 lakh; possible 11% understatement"
+  - "FLAG-DECK CLAIMS: FN-01 3.1% vs -3.2% (build-up supports 3.1%); FN-02 expense ratio contradicted; FN-07 'scaled' on -25%; slide 3 'Others 11' folds OI Rs7.12 Cr into a business bar"
+  - "FLAG-WARRANT OPTIONALITY: Rs29.51 Cr of Rs118.02 Cr paid; Rs88.52 Cr at AREDL's option within 18 months; issue ~1.9% below CMP Rs236 on file"
+  - "FLAG-GOODWILL BASELINE: Notion Rs174.25 Cr vs audited Mar-26 Rs207.17 Cr"
+  - "FLAG-TAX: deferred credits every period; consolidated note 12 sign conflict"
+  - "FLAG-TRACKER: rows not supplied; fewer than three signals; 3 Case B/A candidates as payload"
+  - "FLAG-UDIN: both UDINs OCR-illegible; verify on ICAI"
+  - "FLAG-DEFERRED (OR-30): Steps 6.5 and 7 deferred to /fttcp and Role 1"
+plain_language_brief_included: true
+analyst_note: "Loop 2 applied A5 L1-F1, L1-M1, L1-M2 and style L1-S1 to L1-S3. Trigger 1 fires on Reading A, the pre-named basis: Q1 Rs(4.86) Cr, Q2 Rs(0.52) Cr. Reading B stays unresolved for Q2 on both bases: with capitalisation expensed, Q2 turns negative only if Q2 one-time OI exceeds Rs2.86 Cr. Q1 is negative on that basis and H1 is at most Rs(5.60) Cr. Capitalised team cost (Rs3.74 Cr in Q2) can carry the re-entry metric across zero, so Step 8C requires both bases. Watchlist item 6 moves to NOT DETERMINABLE / AMBER: the 16.3% Distribution margin is before Rs6.97 Cr of corporate cost, and a revenue-share loading gives 11.0%. The Housing.com overlap with developer tools covers about 30% of its collections. The cash gain partly rests on a tax refund and on one-time cash. The warrant price is certain only on Rs29.51 Cr. None of this changes AVOID."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\review_aurum_q2fy27.md"

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "AURUM"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 20
+formfeed_count: 4
+line_count: 1074
+unit_convention: "Lakhs (statements); Crores (press release pp 2-4)"
+conversion_factor_to_cr: "Lakhs -> x0.01; Crores -> x1"
+text_layer_present: true
+extraction_mode: text-only  # pages 1-4 only; pages 5-20 image-only, OCR (hybrid, see rendered_pages)
+render_candidates: ["5-20: zero-character pages, all data-bearing (auditor reports, statements, notes)"]
+rendered_pages: ["5-20 rendered at 200dpi and OCR'd; tables on 6,8,9,10,11,13,16,17,18,20 visually verified and transcribed"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (quarter and half year ended 30 September 2026)"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\aurum-q2fy27\extracted\aurum-results-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\aurum-q2fy27\extracted\aurum-results-q2fy27-structured.md"
+structured_counts:
+  number: 1540
+  entity: 59
+  forward: 19
+  date: 58
+  qualifier: 52
+structured_id_range: "R001-R1728"
+gate_a1: pass
+gap_note: ""

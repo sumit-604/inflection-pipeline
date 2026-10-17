@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "AURUM"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 38
+formfeed_count: 38
+line_count: 1081
+unit_convention: "Crores (some Lakhs; USD/INR Bn/Mn also shown)"
+conversion_factor_to_cr: "Crores x1; Lakhs x0.01"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: [2, 22, 27, 29, 31, 3]
+rendered_pages: ["3 (OCR, disclaimer baked in image)", "2,9,14,18,22,27,29,31 (inspection only; photo/divider, no data, no OCR merged)"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (quarter and half year ended 30 September 2026)"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\aurum-q2fy27\extracted\aurum-presentation-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\aurum-q2fy27\extracted\aurum-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 192
+  entity: 94
+  forward: 26
+  date: 27
+  qualifier: 28
+structured_id_range: "R001-R367"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,74 @@
+stage: A3-forensics
+company: "AURUM"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\forensics_results_aurum_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "F1-01", check: "F1", line: "L327-L330, L627", classification: "NEUTRAL-FACT", implication: "Q2 discontinued ops nil; 4,552 of H1 net profit 4,947 (92%) is the Q1 building gain; residual held-for-sale liabilities 170 to settle"}
+  - {id: "F1-02", check: "F1", line: "L465, L418", classification: "AMBIGUOUS", implication: "Doubtful-debt provision 444 in H1 FY27 vs nil H1 FY26 (1,487 over 18 months vs receivables 4,811); no ageing in filing; checklist item 4 unscored; bear lean"}
+  - {id: "F1-03", check: "F1", line: "L498, L916-L917", classification: "NEUTRAL-FACT", implication: "No related-party borrowing/repayment in H1 FY27 (H1 FY26 repaid 1,589); does not answer the AREDL-loan named test"}
+  - {id: "F2-01", check: "F2", line: "L325, L796, L318", classification: "NEUTRAL-FACT", implication: "Consolidated minus standalone PAT gap swung from -117.5% to +60.7% of standalone PAT QoQ; subs+elims -127 to +140; Locon drives the gap from Q3"}
+  - {id: "F2-02", check: "F2", line: "L317, L309, L74", classification: "CONFIRMATORY-NEGATIVE", implication: "Operating PBT ex-OI -52 (Rs -0.52 Cr), second negative quarter after Q1 -4.86 Cr; at least 741 of H1 OI 1,429 non-recurring; PR claims positive PBT"}
+  - {id: "F2-03", check: "F2", line: "L467, L421", classification: "AMBIGUOUS", implication: "Interest on loans 201 in H1 on a flat external loan book of 952 (about 42% annualised); borrower outside group not named; bears on AREDL named test"}
+  - {id: "F4-01", check: "F4", line: "L264-L269, L318", classification: "AMBIGUOUS", implication: "Management-certified associate (79) = 20% of H1 continuing PAT; Q2 swing of +123 is 22% of QoQ PBT improvement on unreviewed numbers"}
+  - {id: "F6-01", check: "F6", line: "L561-L564, L405-L406", classification: "FORWARD-SIGNAL", implication: "Provisional Locon PPA: goodwill +34,228, intangibles +31,907; D&A step-up from Q3; split can move until about 29 Sep 2027"}
+  - {id: "F6-02", check: "F6", line: "L566-L571", classification: "FORWARD-SIGNAL", implication: "Warrants: 2,950.62 received 13 Oct 2026; optional 8,851.85 by about 13 Apr 2028; 51 lakh shares = 5.3% dilution; same Rs 231.42 price as Locon swap"}
+  - {id: "F6-03", check: "F6", line: "L583-L585, L589", classification: "FORWARD-SIGNAL", implication: "Integrow control abeyance ends 31 Mar 2027 with a prospective equity restructuring; re-consolidation or restructuring is a dated catalyst; confirm the SM-REIT link"}
+  - {id: "F6-04", check: "F6", line: "L552-L554", classification: "NEUTRAL-FACT", implication: "Unpaid rights calls of 184 on 3,42,697 shares, open since Mar 2025; forfeiture or recovery; immaterial"}
+  - {id: "F8-01", check: "F8", line: "L321-L324, L606", classification: "FORWARD-SIGNAL", implication: "Deferred credit in every period; Q2 ETR 37.1% reported vs 56.9% current-only; shield 1,979 bps Q2 / 3,272 bps H1; Locon intangibles will enlarge non-cash credits from Q3"}
+  - {id: "F8-02", check: "F8", line: "L411, L437, L830", classification: "AMBIGUOUS", implication: "Net deferred tax +2,766 to -5,044 (7,810 swing, likely Locon PPA DTL about 8,031 [inference]); consolidated DTA nil while parent DTA 602 implies cross-entity netting"}
+  - {id: "F9-01", check: "F9", line: "L802", classification: "NEUTRAL-FACT", implication: "Standalone remeasurement (3)/(2) per quarter exceeds FY26 total (1); immaterial; check discount rate at FY27 AR"}
+  - {id: "F10-01", check: "F10", line: "L351, L355, L808, L812, L560", classification: "AMBIGUOUS", implication: "Implied basic denominators Q1 767 / Q2 about 867 / H1 about 865 lakh vs about 769 expected with shares issued 29 Sep; Q2 and H1 cannot both be right; EPS possibly understated about 11%"}
+  - {id: "F10-02", check: "F10", line: "L352, L356, L569-L570", classification: "FORWARD-SIGNAL", implication: "Basic-to-diluted spread widened from 2.0% (Q1) to 3.8% (H1); warrants allotted 13 Oct 2026 add up to 51 lakh potential shares from Q3"}
+  - {id: "F12-01", check: "F12", line: "L373, L379, L389, L435, L441", classification: "AMBIGUOUS", implication: "Rental segment +93 Q2 is before finance cost; lease liabilities 21,691 appear to sit in Rental; breakeven definition for checklist item 5 is open; bear lean"}
+  - {id: "F12-02", check: "F12", line: "L384, L386, L390", classification: "AMBIGUOUS", implication: "Unallocable assets +57,150 hold acquired goodwill/intangibles [inference] while Distribution liabilities +27,373 (4.9x); Distribution capital employed understated; CGU allocation pending"}
+  - {id: "F12-03", check: "F12", line: "L368, L374", classification: "AMBIGUOUS", implication: "Distribution segment result margin 20.3% to 14.2% to 16.3% (down 400 bps YoY); not EBITDA, so checklist item 6 is unscored"}
+  - {id: "F14-01", check: "F14", line: "L268, L238, L243", classification: "NEUTRAL-FACT", implication: "Auditor para 6 calls the associate 'this subsidiary'; Locon listed twice in the entity table"}
+  - {id: "F14-02", check: "F14", line: "L542, L227-L244", classification: "AMBIGUOUS", implication: "HelloWorld Living in note 2 Group list but absent from auditor para 4 list; review scope unclear"}
+  - {id: "F14-03", check: "F14", line: "L541, L235, L577, L531, L240, L532, L231", classification: "NEUTRAL-FACT", implication: "PropTiger date 26 vs 25 Sep 2025 (OCR_VERIFY); Monk Tech Labs and HelloWorld Technologies labels differ between note 2 and auditor list"}
+  - {id: "F14-04", check: "F14", line: "L606, L323, L437", classification: "AMBIGUOUS", implication: "Consolidated note 12 says DTL recognised 133/267 but the P&L shows a benefit (135)/(266) and BS DTL rose 5,044; standalone note 12 ties"}
+  - {id: "F14-05", check: "F14", line: "L505-L508, L660-L663, L502, L920", classification: "NEUTRAL-FACT", implication: "H1 FY26 discontinued CF differs main vs note 14c (D (60) vs 14); H1 FY26 interest paid 1,711 exceeds FY26 148; lease cash cost about 4,779 per half"}
+  - {id: "F14-06", check: "F14", line: "L64-L66", classification: "AMBIGUOUS", implication: "Adjusted EBITDA undefined (implied about 15.8 Cr vs EBITDA ex-OI 33.9 Cr); Q2 FY26 base 88 Cr includes discontinued 314; continuing growth +62.5%"}
+  - {id: "F14-07", check: "F14", line: "L289, L765", classification: "NEUTRAL-FACT", implication: "Both UDINs OCR-illegible; operator to verify on ICAI portal from the exchange copy"}
+  - {id: "F15-01", check: "F15", line: "L238, L543, L561", classification: "FORWARD-SIGNAL", implication: "Locon added wef 29 Sep 2026; full BS but about 2 days of P&L; Q3 first quarter with Housing.com P&L, PPA amortisation and DTL unwind"}
+  - {id: "F15-02", check: "F15", line: "L230, L232, L234, L542", classification: "NEUTRAL-FACT", implication: "Three 'formerly known as' renames and HelloWorld Living (wef 31 Dec 2025) cannot be dated against a prior list; no prior fulltext on file"}
+forward_signals: ["F6-01", "F6-02", "F6-03", "F8-01", "F10-02", "F15-01"]
+ambiguous: ["F1-02", "F2-03", "F4-01", "F8-02", "F10-01", "F12-01", "F12-02", "F12-03", "F14-02", "F14-04", "F14-06"]
+commitments:
+  - {commitment: "Locon PPA provisional fair values and goodwill to be finalised", implied_date: "by 2027-09-29 (Ind AS 103 cap)", ref: "C-note 4 L563-L564; S-note 4 L966", status_word: "underway"}
+  - {commitment: "AREDL warrant exercise, 75% balance INR 8,851.85 lakhs, optional", implied_date: "by about 2028-04-13", ref: "C-note 5 L569-L571; S-note 5 L972-L974", status_word: "initiated"}
+  - {commitment: "Integrow equity restructuring; board control in abeyance", implied_date: "2027-03-31", ref: "C-note 7 L584-L585; S-note 7 L988-L989", status_word: "underway"}
+  - {commitment: "Unpaid rights calls INR 184 lakhs on 3,42,697 shares", implied_date: "none stated", ref: "C-note 3 L552-L554", status_word: "underway"}
+  - {commitment: "Housing.com integration into the Aurum ecosystem", implied_date: "none stated", ref: "PR L56", status_word: "underway"}
+  - {commitment: "AI-native real estate operating system build", implied_date: "none stated", ref: "PR L57, L77", status_word: "underway"}
+  - {commitment: "Product development capitalisation (374 Q2 / 711 H1 lakhs)", implied_date: "ongoing", ref: "C-note 11 L602-L604", status_word: "underway"}
+  - {commitment: "Locon consideration discharged by issue of 1,97,93,309 shares", implied_date: "2026-09-29", ref: "C-note 4 L559-L560", status_word: "completed"}
+  - {commitment: "Navi Mumbai buildings sale at INR 11,200 lakhs", implied_date: "Q1 FY27", ref: "C-note 14 L625-L627", status_word: "completed"}
+  - {commitment: "ASSL merged into LIV", implied_date: "2026-05-15", ref: "C-note 13 L608-L610", status_word: "completed"}
+  - {commitment: "NestAway Technologies CCPS, holding to 99.78%", implied_date: "Q2 FY27", ref: "C-note 9 L596-L597", status_word: "completed"}
+  - {commitment: "Rights-call corporate action, 30,047 shares fully paid", implied_date: "2026-09-30", ref: "C-note 3 L551-L552", status_word: "completed"}
+  - {commitment: "NestAway PropTech Mena further equity INR 101.63 lakhs", implied_date: "Q2 FY27", ref: "C-note 8 L594", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Headline positive PBT (682) rests on other income: PBT before associate minus OI is -52 lakhs, the second negative quarter on checklist item 1 (Q1 -4.86 Cr). Q2 is the last quarter without Housing.com P&L. Q3 brings three moving parts together: amortisation of about 31,900 lakhs of provisional PPA intangibles, a larger non-cash DTL unwind credit that flatters ETR, and full-quarter Locon revenue. Separate them before reading margins. Checklist item 8 cannot be closed from this filing. There is no RPT note, and the 952-lakh external loan earning 201 lakhs in H1 (about 42% annualised) is the item to trace in the Reg 23(9) disclosure. The Rental breakeven and the Distribution margin are both segment-result figures before lease interest and before goodwill allocation. They are not checklist-grade metrics. The checklist goodwill baseline of 174.25 Cr does not match the audited Mar-26 figure of 207.17 Cr (L405). Reconcile it before scoring item 7. EPS denominators look internally inconsistent, in the understating direction."

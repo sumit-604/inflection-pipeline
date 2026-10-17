@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "AURUM"
+quarter: "q2fy27"
+doctype: "presentation (pressrelease)"
+model: claude-sonnet-5-5
+status: complete
+page_count: 4
+formfeed_count: 4
+line_count: 172
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (quarter and half year ended 30 September 2026)"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\aurum-q2fy27\extracted\aurum-pressrelease-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\aurum-q2fy27\extracted\aurum-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 47
+  entity: 22
+  forward: 7
+  date: 11
+  qualifier: 9
+structured_id_range: "R001-R096"
+gate_a1: pass
+gap_note: ""

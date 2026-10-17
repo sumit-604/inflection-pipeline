@@ -1,0 +1,58 @@
+stage: A3-forensics
+company: "AURUM"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\forensics_presentation_aurum_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FN-01", check: "F14", line: "L97 vs L818 (slide 3 vs slide 29); R020/R269", classification: "AMBIGUOUS", implication: "Q2 FY26 Adj EBITDA margin 3.1% vs -3.2%; build-up 2.65/84.80 and +840 bps support 3.1%; ask if base was restated from published figure"}
+  - {id: "FN-02", check: "F14", line: "L820-822, L827 (slide 29); L247 (slide 7)", classification: "FORWARD-SIGNAL", implication: "'improving Expense to Total Income ratios' contradicted: 69.9% to 70.2%; expenses +57.3% vs income +56.6%; no operating leverage on reported cost base"}
+  - {id: "FN-03", check: "F16", line: "L817, L818, L834 (slide 29)", classification: "FORWARD-SIGNAL", implication: "+840 bps adj margin = +711 bps lease share +152 bps RoU OI +45 ESOP -75 underlying; reported EBITDA margin fell 30.1% to 29.8%; gain is mix shift from leased co-living"}
+  - {id: "FN-04", check: "F16", line: "L834 (slide 29); L169 (slide 5)", classification: "AMBIGUOUS", implication: "lease payments +14% while beds -14%; ~+32% per bed if co-living driven; ask lease split by business and exit costs"}
+  - {id: "FN-05", check: "F12", line: "L150, L126 (slide 4); L826, L840 (slide 29)", classification: "AMBIGUOUS", implication: "segment profit 12.38 - 5.95 = PBT 6.60 leaves ~7.31 Cr implied other income unplaced; Rental Rs 93 lakh may rest on 2.50 Cr RoU other income (checklist 5)"}
+  - {id: "FN-06", check: "F16", line: "L87, L108 (slide 3); L840 (slide 29)", classification: "AMBIGUOUS", implication: "headline dropped consecutive count; profit is PBT pre-exceptional incl ~7.31 Cr OI; derived ex-OI -0.71 Cr (range -2.21/+0.79); checklist 1 strike-two risk; no PAT/tax/exceptional shown"}
+  - {id: "FN-07", check: "F16", line: "L201-203 (slide 6) vs L169 (slide 5)", classification: "FORWARD-SIGNAL", implication: "'Scaled platform' on signed units -25%; beds decline sped up -8% (Q1) to -14%; rental revenue shrinking, checklist 5 pressured"}
+  - {id: "FN-08", check: "F16", line: "L169-177 (slide 5); L212 (slide 6); L121-126 (slide 4); L435-438 (slide 15)", classification: "AMBIGUOUS", implication: "YoY shown selectively; no segment prior period; no organic ex-PropTiger split; PropTiger date ambiguous (R186) decides Q2 FY26 base"}
+  - {id: "FN-09", check: "F16", line: "L372-382 (slide 12); L112 (slide 3); L434 (slide 15)", classification: "FORWARD-SIGNAL", implication: "Housing.com: no revenue/EBITDA/loss in 4 slides; swap shown as 'Joined forces', no shares/stake/nominee; Q3 P&L absorbs undisclosed profitability"}
+  - {id: "FN-10", check: "F15", line: "L432-435 (slide 15)", classification: "FORWARD-SIGNAL", implication: "Housing.com added Sep 2026, legal entity NOT FOUND; closed 29-Sep so 30-Sep balance sheet may carry goodwill while P&L excludes it (checklist 7)"}
+  - {id: "FN-11", check: "F16", line: "L441-443 (slide 15); L776-805 (slide 27)", classification: "CONFIRMATORY-NEGATIVE", implication: "SM-REIT ~40 months post-registration, no scheme/AUM/date; Capital Rs 4 Cr revenue; checklist 3 red path"}
+  - {id: "FN-12", check: "F16", line: "L837, L839, L844 (slide 29)", classification: "AMBIGUOUS", implication: "finance cost 1.24 to 0.01 and net Ind AS plug add +2.31 Cr of +13.56 Cr PBT swing; debt repaid (warrant money? checklist 9) or reclassified"}
+  - {id: "FN-13", check: "F7", line: "L78-80 (slide 2, OCR)", classification: "AMBIGUOUS", implication: "disclaimer cites 'the business combination'; ask whether it is Housing.com/REA or another pending transaction"}
+  - {id: "FN-14", check: "F6", line: "L112 (slide 3); L149 (slide 4); L507 (slide 16)", classification: "FORWARD-SIGNAL", implication: "Housing.com consolidation dated Q3 FY27; like-for-like comparisons break; track delivery and request ex-Housing.com bridge"}
+  - {id: "FN-15", check: "F6", line: "L223, L235, L242 (slide 7); L212-216 (slide 6)", classification: "NEUTRAL-FACT", implication: "AI status words underway/progressing; stage markers not extractable (R118); new pay-per-use stream unquantified"}
+  - {id: "FN-16", check: "F14", line: "L928 (slide 33) vs L1024 (slide 36)", classification: "NEUTRAL-FACT", implication: "Onkar Shetye 18 vs 15 years experience; deck-quality data point with FN-01, FN-02"}
+forward_signals: ["FN-02", "FN-03", "FN-07", "FN-09", "FN-10", "FN-14"]
+ambiguous: ["FN-01", "FN-04", "FN-05", "FN-06", "FN-08", "FN-12", "FN-13"]
+commitments:
+  - {commitment: "Housing.com figures integrated into consolidated reporting", implied_date: "Q3 FY27 (to 31-Dec-2026)", ref: "L112/L149/L507; R029, R052, R201", status_word: "initiated"}
+  - {commitment: "Housing.com brought into Aurum via REA Group transaction", implied_date: "September 2026", ref: "L432-435; R165, R166", status_word: "completed"}
+  - {commitment: "AI transformation across platforms", implied_date: "undated", ref: "L223; R111", status_word: "underway"}
+  - {commitment: "AI-first core re-architecture of sales CRM", implied_date: "undated", ref: "L235; R115", status_word: "underway"}
+  - {commitment: "AI-led Lead Enrichment pay-per-use revenue stream", implied_date: "Q2 FY27", ref: "L212-216; R103", status_word: "completed"}
+  - {commitment: "AI voice agents/chatbot default first touch; auto-triage to vendors", implied_date: "Q2 FY27", ref: "L229-230; R113", status_word: "completed"}
+  - {commitment: "AI buyer qualification; AI CMS extended across booking", implied_date: "Q2 FY27", ref: "L238-239; R116", status_word: "completed"}
+  - {commitment: "Aurum Qonvo scaled; 3 developers onboarded", implied_date: "Q2 FY27", ref: "L211-213; R096, R097", status_word: "completed"}
+  - {commitment: "AMSA SM-REIT SEBI registration (first scheme: no commitment, NOT FOUND)", implied_date: "June 2023", ref: "L441-443; R170, R171", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck's margin story is mix, not efficiency. Reported EBITDA margin fell (30.1% to 29.8%) and the expense ratio worsened (69.9% to 70.2%), against the deck's own claim. The +840 bps adjusted gain comes from lease payments (+711 bps) and RoU other income (+152 bps) falling as a share of income, while co-living shrinks (beds -14%, faster than Q1's -8%). 'Profitable' is PBT before exceptional items. That PBT holds about 7.3 Cr of other income the deck never shows as a line; slide 3 folds it into 'Others 11'. PBT ex other income derives to about -0.7 Cr, but segment rounding leaves the sign open, so checklist 1 strike two is likely, not proven. The results filing settles it from the other-income and exceptional lines. Segment profit less 5.95 already equals PBT, so Rental's 93 lakh profit may depend on RoU other income. Housing.com gets four slides and no financials. Consolidation next quarter resets Q3 comparisons and brings goodwill. The 3.1% vs -3.2% conflict resolves to 3.1% on arithmetic; ask whether the base was restated. Prior deck unavailable: dropped-slide and silence counts untested."

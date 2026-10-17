@@ -1,0 +1,21 @@
+stage: A2-enumerator
+company: "AURUM"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\aurum-q2fy27\work\ledger_presentation_aurum_q2fy27.md"
+counts:
+  slides: 38
+  slide_numbers: 192
+  line_items: 0
+  zero_standing: 0
+  notes: 28
+flags_raised: [RESTATED, VALUE_CONFLICT, GROUPED_SUMMARY, SCOPE_QUALIFIER, DIVIDER]
+ids_in_structured: 367
+ids_referenced: 367
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Counts: NUMBER 192, ENTITY 94, FORWARD 26, DATE 27, QUALIFIER 28 (footnotes) reconcile with A1 header. Zero ZERO_STANDING rows. VALUE_CONFLICT: Q2 FY26 Adjusted EBITDA margin is 3.1% on slide 3 (R020) but -3.2% on slide 29 reconciliation (R269); same metric and period, A3/A4 should check which basis. Housing.com is excluded from Q2 figures and slated for consolidation next quarter (R028, R029, R052). Slide 4 'Others' 11 Cr (R019) vs Capital 4 Cr (R037): different labels. Prior ledger unavailable so DROPPED_SLIDE untested. Pdf p36/p37 IDs interleave (R364, R365)."

@@ -1,0 +1,28 @@
+# Run log: FEDFINA Q2 FY27 (/run-quarterly, 2026-10-17)
+- Checkout guard PASSED for the batch 2026-10-17 (worktree run/quarterly-q2fy27-2026-10-17 cut from origin/main e24a5bdb); not rerun per batch instruction.
+- Protocols present: Results v1_4, Concall v1_1, Document_Review v1_1. Toolchain: poppler 25.07, tesseract (PATH prefixed per call).
+- Ticker: no companies/FEDFINA.md on record; ticker FEDFINA (NSE symbol on every filing cover). Business type LENDER (NBFC): 1L/5L variants, F1-F17 in full (F4, F5, F12 emphasised).
+- Doc class: Fedbank_Q2FY27_Results.pdf (15 pp) -> results (Board Outcome, Reg 30/33/51/52/54, unaudited results + limited review).
+- Doc class: Fedbank_Q2FY27_Investor_Presentation.pdf (42 pp) -> presentation (Reg 46(2) cover + investor deck).
+- Doc class: Fedbank_Q2FY27_Press_Release.pdf (3 pp) -> presentation class, file tag "pressrelease" (Reg 30 press release on results).
+- Inputs copied to inputs/ and renamed fedfina-<doctag>-q2fy27.pdf.
+- No concall in --docs -> FULL QUARTER run, Role 4 only (Role 5 not passed).
+- Notion live fetch 2026-10-17: page 39fbb2b9-d3ab-81d9-b09d-dd45266d56c2, last edited 2026-09-30. Decision Status WATCHLIST / AVOID. Entry max 77, MoS 61. Thesis copy at work/notion-thesis.md.
+- Prior-quarter ledger: runs/fedfina-q1fy27 not in the tree (ND). Prior quarter was concall-only; no prior results extract.
+- Per-A1 temp dirs work/a1-<doctag>/.
+- A1 x3 GATE PASS (text layer, text-only, no renders). results 15/15 pp, R001-R748, Lakhs x0.01 (Annexure I p13 in Cr); OCR_UNCERTAIN values flagged by A1 (p5 FY26 reserves, p7 L405-406, p13 L767/L771, p14 L862/L889), RPT table p15 partly garbled, FOOTNOTE_UNRESOLVED p9 L527. presentation 42/42 pp, R001-R1102, Cr; chart series pp19,22,24-28 partly positional; p25 yield/spread series do not reconcile. pressrelease 3/3 pp, R001-R247, Cr.
+- A1 tokens: results 88,024 (340s); presentation 106,689 (467s); pressrelease 50,591 (303s).
+- A2 x3 GATE PASS, orphan_ids empty. Cost check pass: results 73,255 < 88,024 (247s); presentation 51,715 < 106,689 (138s); pressrelease 42,064 < 50,591 (64s).
+- A2 results MISSING_FROM_STRUCTURED: MFS-1 enclosures 1(c)-(e) prose only; MFS-2/3 UDINs garbled in text layer. Low severity, no A1 loop (identity strings, no financial value). R718 FOOTNOTE_UNRESOLVED.
+- A3 x3 GATE PASS (F1-F17 statused, findings line-cited, blank_checks empty). Tokens: results 166,179 (446s); presentation 179,555 (648s); pressrelease 75,361 (280s).
+- A3 results flagged A1 sign misreads ("(" read as "1") on R101, R134-R137, R158-R160; A3 presentation flagged slide 22 order and slide 25 yield swap. Orchestrator rendered results p5 and deck slides 22, 25 and confirmed the corrections (work/orch-check/extraction-check.md). Slide 25 label position puts CoB at 7.9% and spread at 8.8% for Q2 FY27, against A3 FN25's reading; passed to A4 as an extraction note. No A1 re-run (text layer itself is OCR-noisy; corrections are recorded, not re-extracted).
+- A4 complete (319,476 tok, 1,070s): PROCEED WITH FLAGS; Decision UNCHANGED WATCHLIST / AVOID; Pillar 2L baseline ruling flagged; 30 management questions.
+- A5 run 1 (381,867 tok, 1,098s): INCOMPLETE. FACTUAL F1-F3 (A4), MISSING M1-M2 (A2), M3-M6 (A4), CONTRADICTION C1-C2 (A4), STYLE S1-S10 logged. Loop 1 started: A2 results, A3 results addendum, A4 revision resumed in their own contexts.
+- Loop 1 fixes: A2 results (77,468 tok as reported on resume, 25s) GATE PASS, orphan_ids empty, MFS-4/5 + signatures 7; A3 results addendum (185,940 tok, 141s) no new finding; A4 revision (396,064 tok, 411s) F1-F3, M3-M6, C1-C2 applied, verdict PROCEED WITH FLAGS. A5 re-audit started (resumed context).
+- A5 re-audit loop 1: INCOMPLETE. All 11 loop-0 items resolved. New A4-only defects: F4 (L476 trigger count 6 of 10, not 5) and C3 (brief L653 'out of reach' vs AT RISK; 14.0 t tonnage condition at L200/L447/L612/L788). STYLE S11-S12 logged. LOOP CAP reached: STOP, operator asked before a second iteration (2026-10-17).
+- A5 re-audit tokens: 474,761 (346s, resumed context).
+- Operator approval 2026-10-17 (relayed by parent session, quoted): "Standing rule for this batch: approve one second loop for any company still INCOMPLETE after loop 1, including Fedbank, Indo Rama and Premier Polyfilm. No third loop: close with open items flagged." Loop 2 started: A4 edits F4, C3 (+S11), then one A5 re-check.
+- Laptop restart killed the A4 loop-2 agent before any edit (review unchanged at L476/L653). Operator (2026-10-17, via parent): continue without waiting. Fresh A4 loop-2 agent dispatched (mechanical re-run, not a loop count).
+- A4 loop 2 (fresh, 140,625 tok, 477s): F4 L476, C3 L653 + L200/L447/L612/L794, S11 L85 applied; LOOP 2 CHANGES L705-709. Fresh A5 loop-2 re-check dispatched.
+- A5 loop 2 (fresh, scoped, 139,349 tok, 549s): F4, C3, S11 resolved. New F5 (one word in A4 YAML analyst_note, 'only' -> 'mainly ... (55%)'): INCOMPLETE. No third loop per operator ruling: F5 carried as an open item (review 'OPEN ITEMS AT CLOSE' section, payload, report). Verdict PROCEED WITH FLAGS unchanged.
+- notion-payload.md and session-cost.md written. total_run_tok 2,948,983. Committing runs/fedfina-q2fy27 only.

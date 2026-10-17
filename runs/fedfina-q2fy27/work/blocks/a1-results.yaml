@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 15
+formfeed_count: 15
+line_count: 997
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01 (Annexure I page 13 is in INR crore, x1)"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\fedfina-q2fy27\extracted\fedfina-results-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\fedfina-q2fy27\extracted\fedfina-results-q2fy27-structured.md"
+structured_counts:
+  number: 610
+  entity: 38
+  forward: 8
+  date: 35
+  qualifier: 57
+structured_id_range: "R001-R748"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\fedfina-q2fy27\work\ledger_pressrelease_fedfina_q2fy27.md"
+counts:
+  notes: 2
+  line_items: 25
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 14
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 3
+  slide_numbers: 214
+flags_raised: [RESTATED]
+ids_in_structured: 247
+ids_referenced: 247
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Press release, 3 pages, no guidance. 200 of 214 numbers are 25 table rows x 8 values; H1 columns for AUM, disbursements, BVPS, branches, employees duplicate Q2 point values. Watch items for A3/A4: Net Gain on Direct Assignment negative (R026,R027,R031); Gross NPA +27bps and Net NPA +22bps QoQ (R164,R172); disbursements -1.2% QoQ (R132); credit cost Rs 27.1 Cr down 20.5% QoQ while narrative cites 0.6% (R204, basis not stated); Other Income down YoY. No ZERO_STANDING rows, no prior ledger so ENTITY_CHANGE and DROPPED_SLIDE not assessable."

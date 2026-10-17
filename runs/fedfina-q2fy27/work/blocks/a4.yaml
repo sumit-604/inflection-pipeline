@@ -1,0 +1,104 @@
+stage: A4-analyst
+company: "FEDFINA"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, presentation, pressrelease]
+ledger_reconciliation:
+  notes: 38
+  turns: 0
+  slides: 45
+  all_reviewed: true
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, FN01, FN02, FN03, FN04, FN05, FN06, FN07, FN08, FN09, FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25, FND-01, FND-02, FND-03, FND-04, FND-05, FND-06, FND-07, FND-08, FND-09, FND-10, FND-11, FND-12, FND-13]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "WATCHLIST / AVOID (DEEP WATCH)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - "Q2FY27: 0.0 (standalone only; no subsidiary/associate/JV, Note 6 Res R702 L432)"
+  - "Q1FY27: 0.0 (standalone only)"
+  - "Q2FY26: 0.0 (standalone only)"
+  - "H1FY27: 0.0 (standalone only)"
+  - "H1FY26: 0.0 (standalone only)"
+  - "FY26: 0.0 (standalone only)"
+questions_for_management:
+  - {q: "What share of the Rs 587 Cr Q2 Stage 2 book is gold loans (Stage 2 +34.6% QoQ, coverage 16.53% to 12.61%; stressed coverage 24.5% to 20.2%)?", from_finding_id: "A3-11, FN09, FN10, FND-05"}
+  - {q: "What were gold auction losses in Q2 FY27, in Rs Cr?", from_finding_id: "FN11"}
+  - {q: "Which gold loan industry change on slide 29 lifted gold Stage 3 from 0.1% to 0.5%?", from_finding_id: "FN03"}
+  - {q: "Of the Rs 1,085 Cr Q2 sell-down (Rs 876.89 Cr filed as DA; Rs 208 Cr unreconciled), what share went to Federal Bank?", from_finding_id: "FN07, A3-12"}
+  - {q: "What was the gross gain on pools assigned in Q2 FY27, before reversal on older pools?", from_finding_id: "FN08, FND-06, A3-09"}
+  - {q: "At what CRAR level will the board raise equity (D/E 4.61x vs 6x cap, unchanged from Mar-26; CRAR 22.40% to 20.96% in H1)?", from_finding_id: "A3-04, FN16, FND-07"}
+  - {q: "Which of the five FY27 guidance items from the Q1 call do you now revise?", from_finding_id: "FN02, FND-13"}
+  - {q: "Will the company refile Q2 FY27 basic EPS (printed 3.56 vs 3.49 implied by H1 6.54 less Q1 3.05)?", from_finding_id: "A3-10"}
+  - {q: "How many of the 126 remaining FY27 branches will open by 31-Mar-2027?", from_finding_id: "FN15, FND-08"}
+  - {q: "What 12-month AUM per branch do you target for the 74 Q2 branches?", from_finding_id: "FN15, FND-08"}
+  - {q: "What drove the Q2 ETR of 26.54% vs 25.17% statutory?", from_finding_id: "A3-05, FN04, FND-01"}
+  - {q: "What is the outstanding FCY/ECB borrowing at 30-Sep-2026 (Q2 hedge OCI gain Rs 43.48 Cr)?", from_finding_id: "A3-08, FN05, FND-04"}
+  - {q: "What principal outstanding did the 48 accounts sold to ARCs carry (L525 blank)?", from_finding_id: "A3-02"}
+  - {q: "What were total H1 FY27 write-offs, in Rs Cr?", from_finding_id: "A3-02, FN09"}
+  - {q: "What makes up other financial liabilities of Rs 468.19 Cr at Sep-26 (Rs 216.38 Cr at Mar-26)?", from_finding_id: "A3-12"}
+  - {q: "Who appointed V. Sankar Aiyar & Co. as joint statutory auditor, on what date, under which rule?", from_finding_id: "A3-03"}
+  - {q: "Does the trust deed define total outstanding liability as borrowings only (filed TOL/ATNW 4.61x on 31-Mar-2026 audited figures vs 4.79x computed on the same figures)?", from_finding_id: "A3-15"}
+  - {q: "How did the Federal Bank derivative margin deposit reach Rs 16.16 Cr with nil opening and nil flow?", from_finding_id: "A3-16"}
+  - {q: "What is the Rs 1.85 Cr H1 brand-usage fee to Federal Bank based on, and from what date?", from_finding_id: "A3-16"}
+  - {q: "What is Gross Stage 3 % for North-originated mortgages of FY25-FY26 vintage?", from_finding_id: "FN12"}
+  - {q: "What undrawn sanctioned lines did the company hold at 30-Sep-2026 (ALM <3m surplus Rs 186 Cr)?", from_finding_id: "FN17"}
+  - {q: "Is the Q2 FY26 ECL column on the same basis as Q1 and Q2 FY27?", from_finding_id: "FN20"}
+  - {q: "How many NAPS apprentices were on the rolls at 30-Sep-2026?", from_finding_id: "FN21"}
+  - {q: "What were FY26 yield, CoB and spread on the old two-point basis?", from_finding_id: "FN24"}
+  - {q: "Which CoB series does management steer on: slide 25 7.9% or daily I-GAAP 7.79%?", from_finding_id: "FN25, FN22"}
+  - {q: "Is the press-release H1 FY27 Shareholder's Fund of Rs 2,926.1 Cr the 31-Mar-2026 opening balance?", from_finding_id: "FND-03"}
+  - {q: "Why did other income fall 1.9% YoY to Rs 27.78 Cr while AUM grew 36.6%?", from_finding_id: "FND-09"}
+  - {q: "Is the 0.6% credit cost on two-point or daily average total assets?", from_finding_id: "FND-12"}
+  - {q: "Publish gold 30+ and 60+ DPD for Q2 FY27 (carried from Q1, not addressed).", from_finding_id: "carried Q1 Q4; A3-11"}
+  - {q: "Give the bridge for Stage 3 ECL from Rs 96.8 Cr to Rs 104.7 Cr (carried from Q1, not addressed).", from_finding_id: "carried Q1 Q9; FN09"}
+  - {q: "Through which route did the Rs 208 Cr of the Q2 sell-down not filed as direct assignment leave the book: co-lending, securitisation, or other?", from_finding_id: "FN07, A3-12, FND-07"}
+monitorables:
+  - {item: "Q2 FY27 earnings-call transcript filed; grade questions", implied_date: "about 2026-10-22 [INFERENCE]", source_ref: "Deck R006, fulltext L30-35"}
+  - {item: "Results newspaper publication", implied_date: "about 2026-10-17", source_ref: "Res R649 L61"}
+  - {item: "Q3 FY27 results: credit cost (single cleanest metric; bull <=0.8%, bear >=1.0%), PCR, Stage 2, stressed coverage, gold Stage 3, DA line", implied_date: "mid-January 2027 [INFERENCE]", source_ref: "Res R657, R662"}
+  - {item: "Remaining 126 of 200 FY27 branches", implied_date: "2027-03-31", source_ref: "Deck R033; Notion promise log"}
+  - {item: "Gold tonnage +10-12% FY27 (13.86-14.11 t)", implied_date: "2027-03-31", source_ref: "Deck R491; Notion"}
+  - {item: "Gold AUM +25-30% FY27 on a price-flat basis (price-flat pace about +19% to +26%)", implied_date: "2027-03-31", source_ref: "Deck R441-R443, R489-R491, R499-R501"}
+  - {item: "Entity AUM +20-22% FY27 (Rs 24,184-24,587 Cr)", implied_date: "2027-03-31", source_ref: "Deck R423; Notion"}
+  - {item: "Credit cost below 1% FY27", implied_date: "2027-03-31", source_ref: "Notion promise log"}
+  - {item: "CRAR >= 16% (07041, 07058) and >= 15% (07066)", implied_date: "at all times; next audited test 2027-03-31", source_ref: "Res R654-R655"}
+  - {item: "D/E within 6x (07066, 30-Sep-2026 basis); TOL/ATNW <= 7.0 (07041, 07058; filed 4.61x on 31-Mar-2026 audited figures)", implied_date: "tenor; next TOL/ATNW test on 31-Mar-2027 audited figures", source_ref: "Res R653, R543-R544, R743-R745"}
+  - {item: "GNPA <= 4-5%, NNPA <= 3-4% covenants", implied_date: "tenor; half-yearly", source_ref: "Res R523-R542"}
+  - {item: "Security cover >= 1.10x on Rs 278.75 Cr secured NCDs", implied_date: "ongoing; next certificate Q4 FY27", source_ref: "Res R367-R368, R519-R520"}
+  - {item: "Management certification of other NCD covenants", implied_date: "2027-03-31", source_ref: "Res R652"}
+  - {item: "FY27 audited results; write-offs and full-year credit cost", implied_date: "late April 2027 [INFERENCE]", source_ref: "Res R664"}
+  - {item: "Q1 FY28 results", implied_date: "mid-July 2027 [INFERENCE]", source_ref: "Res R662"}
+  - {item: "FY27 Annual Report and AGM: actuarial, FVOCI, joint-auditor tenure", implied_date: "about late September 2027 [INFERENCE]", source_ref: "Notion AGM record; A3-03, A3-07"}
+  - {item: "ESG KPI evaluation metrics being developed", implied_date: "undated", source_ref: "Deck R1091"}
+  - {item: "Nation Skill Building CSR apprentice programme", implied_date: "undated", source_ref: "Deck R1099"}
+  - {item: "Digital ecosystem build", implied_date: "undated", source_ref: "Deck R1081"}
+  - {item: "Operator ruling on Pillar 2L self-withdrawal baseline (QoQ vs FY26)", implied_date: "before next /fttcp or Role 1 refresh", source_ref: "Res R440-R442; Notion Pillar 2L"}
+flags:
+  - "PILLAR2L-SELFWITHDRAW-CONDITION: PCR 38.36% to 35.37% QoQ meets 'PCR thins further' on QoQ baseline, not vs FY26 32.29%; operator ruling"
+  - "PCR-EROSION: checklist item 2 AMBER; 32% red line holds"
+  - "COVERAGE-RELEASE-PAT [INFERENCE]: ~Rs 19.3 Cr ECL gap at Q1 stage coverage; ~88% of QoQ PAT gain; Stage 1 took 12.0 of 21.8 Cr build; stressed +195 Cr got 10.0 Cr (5.1%); stressed coverage 24.5% to 20.2%"
+  - "STAGE2-SURGE: Stage 2 +34.6% QoQ, coverage 16.53% to 12.61%"
+  - "GOLD-GROWTH-QUALITY: tonnage +1.6% QoQ vs gold AUM +6.5%; LTV 68.0% vs origination 72.1%; gold GS3 0.1% to 0.5% QoQ (+10 bps YoY)"
+  - "GOLD-TRIGGER-AT-RISK: gold AUM +25-30% reachable at a flat gold price only if FY27 tonnage reaches about 14.0 t (+11.2% on 12.6 t) vs +2.4% in H1; price-flat pace about +19% to +26%; Q2 growth about 70% price"
+  - "OFFBOOK-DEPENDENCE: AUF +27 Cr vs AUM +899 Cr; gold AUF -52 Cr; buyer identity ND"
+  - "SELLDOWN-DA-GAP: deck sell-down Rs 1,085 Cr vs filed DA Rs 876.89 Cr; Rs 208 Cr unreconciled, route NOT DISCLOSED; CLM size unresolved"
+  - "DA-DRAG: net DA loss -12.9 / -1.2 Cr"
+  - "LEVERAGE-LED-ROE / CAPITAL-COMPRESSION: leverage 5.0x to 6.0x; CRAR -144 bps H1; D/E 4.61x vs 6x; H1 net de-leverage nil"
+  - "EPS-MISPRINT: Q2 basic 3.56 printed vs 3.49 derived"
+  - "CREDITCOST-BASIS: Notion mixes avg AUM (FY26 0.64%) and avg assets (company FY26 0.8%)"
+  - "NOTION-STALE: CMP 164; gold mix 46.5% vs 54.1%; secured 98.9% vs 99.4%"
+  - "PRIOR-FVOCI-UNIT: Notion '~585cr' vs filed Q1 FVOCI-loans OCI Rs 58.51 Cr"
+  - "CASHCONV-INDETERMINATE-WITH-DIRECTION: growth-induced; collection efficiency and write-offs ND"
+  - "DISCLOSURE-SILENCE: 0 of 13 prior questions fully answered (8 partial, 5 not addressed); guidance, CE, write-offs, Tier I, DPD ND"
+  - "GROWTH-TRIGGERS-LAGGING: entity AUM, branches, tonnage, de-leverage DELAYED; mortgage, co-lending WEAKENED; gold AUM AT RISK"
+  - "TRACKER-ROWS-ND: 0 signals supplied; reopen Role 5.5; 3 Case B candidates"
+  - "ENTRY-ZONE-BELOW-BOOK: zone max Rs 77 < BVPS Rs 84.4 (Role 1)"
+  - "PROJECTIONS-ND: no bear/base/bull P&L; 6A landing not assessable"
+  - "CONCALL-NOT-IN-RUN: call held per deck cover letter; transcript absent"
+  - "PIPELINE: A1 OCI sign misreads and slide 22/25 attribution errors, resolved via orchestrator check; A2 adds results rows L525, L526, L812, L932 in loop 1"
+  - "DEFERRED-OR30: Role 4 Steps 6.5 and 7 deferred to /fttcp and Role 1"
+plain_language_brief_included: true
+loop_2: "F4, C3, S11 applied"
+analyst_note: "Loop 1 revision. YoY headline is real: core PBT ex-treasury +70.3%; treasury, not ETR, is the main wedge to PAT growth. QoQ, about 76% of the +24.5 Cr PBT gain came from the DA loss narrowing and lower provisions. The coverage fork now leans bear: total ECL/AUF rose only because Stage 1 took 12.0 of the 21.8 Cr build; Rs 195 Cr of new stressed assets got Rs 10 Cr, so stressed coverage fell 24.5% to 20.2%. Reading B (release) carries at least equal weight. Gold AUM growth fails its own price-flat condition: Q2 was about 70% price, H1 was LTV-led, and LTV sits 4 pp below origination; the trigger is AT RISK and needs about 14.0 t of FY27 tonnage at a flat price. H1 net de-leverage is nil (D/E 4.61x at Mar-26 and Sep-26). The deck sell-down (Rs 1,085 Cr) exceeds filed DA (Rs 876.89 Cr) by Rs 208 Cr with no stated route. The Pillar 2L baseline ruling stays with the operator. loop_2: F4, C3, S11 applied."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\fedfina-q2fy27\\work\\review_fedfina_q2fy27.md"

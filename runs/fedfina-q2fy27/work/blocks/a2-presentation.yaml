@@ -1,0 +1,24 @@
+stage: A2-enumerator
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/q2fy27/runs/fedfina-q2fy27/work/ledger_presentation_fedfina_q2fy27.md"
+counts:
+  slides: 42
+  slide_numbers: 971
+  line_items: 1
+  zero_standing: 1
+  entities: 57
+  forward_statements: 20
+  dates: 17
+  footnotes: 37
+flags_raised: [ZERO_STANDING, RESTATED, SERIES_BY_POSITION, SERIES_NOT_RESOLVABLE, NO_STRUCTURED_ROWS]
+ids_in_structured: 1102
+ids_referenced: 1102
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Presentation only; DROPPED_SLIDE not assessable (no prior ledger). Slides 4, 9, 20, 32, 37 are text dividers with no rows. One ZERO_STANDING row (R1024, DA gain over assets 0.0 percent on the RoA tree). Series attribution on slides 8, 16, 19, 25, 26, 28 rests on layout position; A3 should cross-check before relying on it, e.g. spread = yield minus CoB on slide 25."

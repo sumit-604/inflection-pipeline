@@ -1,0 +1,63 @@
+stage: A3-forensics
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/q2fy27/runs/fedfina-q2fy27/work/forensics_presentation_fedfina_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FN01", check: "F1", line: "1088 (R1024); 1057", classification: "NEUTRAL-FACT", implication: "0.0% DA/assets is a rounded -Rs 1.2 Cr; live DA line, feeds FN08"}
+  - {id: "FN02", check: "F6", line: "86 (R021)", classification: "AMBIGUOUS", implication: "No numeric FY27 guidance in deck; checklist item 1 needs the concall"}
+  - {id: "FN03", check: "F7", line: "921 (R722)", classification: "AMBIGUOUS", implication: "Stage 3 rise pre-attributed to unnamed gold industry changes; gold GS3 may stay elevated"}
+  - {id: "FN04", check: "F8", line: "1071-1073 (R996-R1003)", classification: "AMBIGUOUS", implication: "ETR 26.6% vs 25.17% statutory, ~Rs 2.5 Cr excess; cause not in deck"}
+  - {id: "FN05", check: "F9", line: "980, 982, 1036", classification: "AMBIGUOUS", implication: "ECL partly routed via OCI on fair-valued loans; reserves +31.2 Cr / -38.4 Cr beyond PAT in Q2 / Q1"}
+  - {id: "FN06", check: "F10", line: "1035 (R918-R921)", classification: "NEUTRAL-FACT", implication: "Share capital 374 -> 375 Rs Cr, no stated corporate action; no EPS in deck"}
+  - {id: "FN07", check: "F12", line: "119, 826, 832, 846", classification: "FORWARD-SIGNAL", implication: "Gold AUM +726 Cr but on-book gold AUF -52 Cr; total AUF +27 vs AUM +899; growth rides assignment buyers"}
+  - {id: "FN08", check: "F12", line: "1057, 846", classification: "AMBIGUOUS", implication: "DA gain -12.9 / -1.2 Cr while sell-down doubled to 1,085 Cr; EIS unwind vs thin-spread sales"}
+  - {id: "FN09", check: "F12", line: "961-974, 1069", classification: "FORWARD-SIGNAL", implication: "At Q1 coverage ECL would be ~19.4 Cr higher; credit cost ~1.0% vs 0.6% reported and 1.1% tripwire; ~88% of QoQ PAT gain"}
+  - {id: "FN10", check: "F12", line: "909-911 (R714-R715)", classification: "CONFIRMATORY-NEGATIVE", implication: "PCR 38.4% -> 35.4%; checklist item 2 missed; Pillar 2L override clause 'PCR thins further' reads as met; operator flag"}
+  - {id: "FN11", check: "F12", line: "914, 942, 678-679, 665", classification: "FORWARD-SIGNAL", implication: "Gold GS3 0.1% -> 0.5% (Rs 47.6 Cr), LTV 59.3% -> 68.0%, tonnage +1.6% QoQ vs AUM +6.5%; price-driven growth, thinner collateral cushion"}
+  - {id: "FN12", check: "F12", line: "698-702, 911, 939", classification: "AMBIGUOUS", implication: "Mortgage North share 6% -> 32%; unseasoned book; mortgage GS3 3.2% -> 3.4%"}
+  - {id: "FN13", check: "F12", line: "623-636, 641", classification: "CONFIRMATORY-NEGATIVE", implication: "Corrected slide 22: STL disbursals 1,475 (FY24) -> 904 (FY26), MTL 2,303 -> 2,180; A1 R455-R464 misattributed"}
+  - {id: "FN14", check: "F12", line: "541-548, 677", classification: "NEUTRAL-FACT", implication: "Branch split resolved: gold 558 -> 634, co-located 70 -> 72, MSME hubs 129 -> 125; all adds are gold"}
+  - {id: "FN15", check: "F12", line: "123, 691, 1065, 1011", classification: "FORWARD-SIGNAL", implication: "+74 branches, +544 staff, opex +7.8% QoQ, AUM per branch 17.7 -> 16.9; H2 C/I depends on ramp"}
+  - {id: "FN16", check: "F12", line: "1098, 1016", classification: "FORWARD-SIGNAL", implication: "About half the RoE gain (12.0% -> 17.0%) is leverage 5.0x -> 6.0x; SF +16.8% vs borrowings +42.7%; capital need if DA slows"}
+  - {id: "FN17", check: "F12", line: "779-781", classification: "AMBIGUOUS", implication: "ALM <3m cumulative surplus Rs 186 Cr on 3,291 Cr outflows (5.7%)"}
+  - {id: "FN18", check: "F14", line: "776, 805-807", classification: "NEUTRAL-FACT", implication: "ALM header says cumulative; >5 year row is a bucket"}
+  - {id: "FN19", check: "F14", line: "973", classification: "NEUTRAL-FACT", implication: "ECL slide 'Total assets' 16,264 is AUF, not balance-sheet total assets 18,540"}
+  - {id: "FN20", check: "F14", line: "957, 979-982", classification: "AMBIGUOUS", implication: "Only Q2 FY26 column carries */^ basis markers; YoY coverage may not be like-for-like"}
+  - {id: "FN21", check: "F14", line: "159, 1231-1233", classification: "AMBIGUOUS", implication: "Headcount excludes apprentices while a CSR apprentice programme runs; productivity overstated by unknown amount"}
+  - {id: "FN22", check: "F14", line: "469, 485, 815", classification: "NEUTRAL-FACT", implication: "I-GAAP and Ind-AS bases mixed across slides 17, 25, 26, 35"}
+  - {id: "FN23", check: "F16", line: "743-744, 751, 756, 762", classification: "NEUTRAL-FACT", implication: "A1 swapped R560/R561; corrected Q1 FY27 yield 16.4%, Q2 FY27 16.7%; slide 25 then reconciles internally"}
+  - {id: "FN24", check: "F16", line: "768 (R583)", classification: "AMBIGUOUS", implication: "Annual yield / CoB / spread restated to quarterly average; not comparable with prior decks"}
+  - {id: "FN25", check: "F16", line: "756, 781, 815, 1051-1053, 1038", classification: "AMBIGUOUS", implication: "Slide 25 CoB 8.8% vs P&L-implied 7.87% and I-GAAP daily 7.79%; gap widened 51 -> 101 bps; slide 25 basis undefined"}
+forward_signals: ["FN07", "FN09", "FN11", "FN15", "FN16"]
+ambiguous: ["FN02", "FN03", "FN04", "FN05", "FN08", "FN12", "FN17", "FN20", "FN21", "FN24", "FN25"]
+commitments:
+  - {commitment: "74 new branches commissioned; total 831 across 18 states and UTs", implied_date: "Q2 FY27", ref: "slide 5 line 123 (R033, R034)", status_word: "completed"}
+  - {commitment: "Stree Sakthi Gold Loan Schemes portfolio crossed Rs 100 Cr", implied_date: "launched 2026-01-07; milestone by Q2 FY27", ref: "slide 40 line 1211 (R1095, R1096)", status_word: "completed"}
+  - {commitment: "ESG KPI evaluation metrics being developed", implied_date: "undated", ref: "slide 40 lines 1194-1198 (R1091)", status_word: "underway"}
+  - {commitment: "Nation Skill Building CSR programme for apprentices", implied_date: "undated; first in Q2 FY27 deck", ref: "slide 41 line 1231 (R1099)", status_word: "initiated"}
+  - {commitment: "Future-ready digital ecosystem build", implied_date: "undated", ref: "slide 38 line 1135 (R1081)", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Two A1 attribution errors were corrected by column offset and identity. Slide 25 Q1/Q2 FY27 yields are 16.4%/16.7%; with that, yield minus CoB equals spread in every period. Slide 22 annual MTL/STL values were assigned in ascending order; offsets and the FY26 tie (2,180 + 904 = 3,084) show STL disbursals fell from 1,475 (FY24) to 904 (FY26). The quarter's strength rests on two levers the deck does not foreground. First, coverage: at Q1 stage-wise coverage the ECL stock would be about Rs 19 Cr higher, which puts credit cost near 1.0% of average assets against the 1.1% tripwire and absorbs most of the QoQ PAT gain. Second, off-book: on-book AUF grew Rs 27 Cr while AUM grew Rs 899 Cr, and on-book gold shrank. PCR fell from 38.4% to 35.4%, which meets the literal 'PCR thins further' clause of the Pillar 2L override; the decision stays with the operator. The benign reading for both levers is a mix shift into low-LGD gold. The separating observation is product-wise Stage 2/3 coverage and gold auction losses, from the concall or the results filing."

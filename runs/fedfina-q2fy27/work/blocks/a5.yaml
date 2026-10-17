@@ -1,0 +1,38 @@
+stage: A5-adversary
+company: "FEDFINA"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches:
+  - {metric: "A4 analyst_note cause of the total ECL/AUF rise", a4_value: "'total ECL/AUF rose only because Stage 1 took 12.0 of the 21.8 Cr build' (review L814)", recomputed: "1.365% (221.7/16,237) to 1.497% (243.5/16,264), +13.2 bps. With Stage 1 ECL held at 52.8 the ratio is still 1.423% (231.5/16,264), +5.8 bps. Split: Stage 1 +7.4 bps; Stage 2+3 +6.0 bps (Rs 9.8-10.0 Cr); denominator -0.2 bps. Body L304 gives Stage 1 as 55% of the build.", source_line: "Deck R762-R763, R774-R775, R786-R787, R792-R796; review L294, L302-L304"}
+surviving_bear_counters: []
+findings_by_type:
+  factual:
+    - "F5 (A4): review L814 (A4 YAML analyst_note) says total ECL/AUF 'rose only because Stage 1 took 12.0 of the 21.8 Cr build'. The extract does not support 'only': with no Stage 1 build the ratio still rises 1.365% to 1.423%, and the stressed buckets added Rs 9.8-10.0 Cr (about 6 of 13.2 bps). Body L304 is right (55%). The clause most likely dates from loop 1; A5's loop-1 re-audit missed it."
+  missing: []
+  contradiction: []
+  style:
+    - "S13 (new): L476 names gold AT RISK twice and drops 'growth triggers'; suggested text in the audit (R5)"
+    - "S14 (new): L814 note opens 'Loop 1 revision' but carries loop-2 text; 'Gold AUM growth fails its own price-flat condition' reads as a failed trigger, and H1 was near price-flat (+0.7%); suggested text in the audit (R5)"
+    - "S12 (carried, open): A2 results ledger YAML missing_from_structured (L630) omits SIG-6/SIG-7"
+    - "S7 (carried, open): A1 PR fulltext header and A2 PR ledger YAML (L124) say doctype presentation"
+    - "S8 (carried, open): A2 presentation ledger YAML line_items: 1 (L257) has no count-test category"
+    - "S9 (carried, open): uncaptured decorative deck text (11 taglines, slide 10 bullet, 'Nine' at Deck L1135) and PR 'Encl.: a/a' (L57)"
+    - "S10 (carried, open): four NA-only Annexure I template rows uncaptured (Res L761, L768, L788, L790)"
+loop_back_to: "A4"
+gap: "A4 only. F5: review L814 (A4 YAML analyst_note), replace 'total ECL/AUF rose only because Stage 1 took 12.0 of the 21.8 Cr build' with 'total ECL/AUF rose mainly because Stage 1 took 12.0 (55%) of the 21.8 Cr build'. No body number, flag, protocol verdict or Decision Status changes. Loop-1 items F4, C3 and S11 are resolved. No A2 or A3 work remains."
+style_notes:
+  - "S13: L476 cell wording (gold AT RISK stated twice; noun 'growth triggers' dropped)"
+  - "S14: L814 note label 'Loop 1 revision' and the gold 'fails its own price-flat condition' wording"
+  - "S7-S10 and S12 carried, open, logged only"
+analyst_note: "Loop 2 fixed all three loop-1 items. F4: the 6D table recounts to 4 DELAYED and 2 WEAKENED of 10, plus gold AUM AT RISK, and L476 now says so. C3: the brief and every AT RISK clause carry the derived condition. At a flat price and LTV, AUM per tonne is 923.8, so the Rs 12,940 Cr floor needs 14.007 t. S11: L85 cites R543-R544 and R745, and R545 stays cited at L86. The review grew by exactly the 6-line change log, so the body edits were in place. One FACTUAL defect sits in A4's YAML analyst note, a field loop 2 edited. It says the total ECL/AUF rise came 'only' from Stage 1. With no Stage 1 build the ratio still rises 6 bps. The body (L304, 55%) is right. The clause most likely dates from loop 1, and my loop-1 re-audit missed it. Rule J holds this bear overstatement to the same bar as C3. The fix is one word. It changes no figure, flag, protocol verdict or Decision Status. If the cap bars a further A4 cycle, carry F5 to the operator as an open item."

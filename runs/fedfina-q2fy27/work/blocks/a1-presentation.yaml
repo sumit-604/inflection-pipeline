@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 42
+formfeed_count: 42
+line_count: 1247
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\fedfina-q2fy27\extracted\fedfina-presentation-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\fedfina-q2fy27\extracted\fedfina-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 971
+  entity: 57
+  forward: 20
+  date: 17
+  qualifier: 37
+structured_id_range: "R001-R1102"
+gate_a1: pass
+gap_note: ""

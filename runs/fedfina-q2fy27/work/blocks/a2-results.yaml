@@ -1,0 +1,28 @@
+stage: A2-enumerator
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\fedfina-q2fy27\work\ledger_results_fedfina_q2fy27.md"
+counts:
+  notes: 36
+  line_items: 339
+  zero_standing: 38
+  agenda_items: 6
+  auditor_paras: 19
+  entities: 38
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+  signatures: 7
+flags_raised: [ZERO_STANDING, RESTATED, FOOTNOTE_UNRESOLVED, MISSING_FROM_STRUCTURED]
+ids_in_structured: 748
+ids_referenced: 748
+orphan_ids: []
+missing_from_structured: [MFS-1 agenda enclosures 1(c)-(e) prose only, MFS-2 review report UDINs garbled, MFS-3 certificate UDIN garbled, MFS-4 Note 10(I) aggregate principal outstanding blank (L525) NOT DISCLOSED, MFS-5 Note 10(I) weighted average residual tenor blank (L526) NOT DISCLOSED]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Single-item board outcome (results only; no AR, AGM, dividend, director, auditor or fund-raise items). Consolidation list is empty (Note 6, R648); ENTITY_CHANGE untestable, no prior ledger. 38 ZERO_STANDING rows: Note 8 resolution table (Corporate persons, MSME, Others, write-offs), Note 10 NPA transfer to ARCs (net book value, additional consideration), no loans acquired, no ESOS grants, and RPT opening/closing balances at zero (Derivative Margin Deposit approved Rs 24,500 lakhs, opening nil, closing 1,615.50). R718 asterisk on NPA transfer table has no footnote text. Annexure labelling differs between cover letter (Annexure 1 security cover, 2 RPT) and filing pages. Line items counted as page/line/label groups, not rows. Correction loop 1: added MFS-4/5 (blank Note 10(I) cells) and Annexure I (L812) and II (L932) signature blocks; signatures now 7."

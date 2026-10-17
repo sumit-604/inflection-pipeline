@@ -1,0 +1,47 @@
+stage: A3-forensics
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\fedfina-q2fy27\\work\\forensics_pressrelease_fedfina_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: PASS
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FND-01", check: "F8", line: "90-91", classification: "AMBIGUOUS", implication: "ETR 26.6% Q2 vs 25.17% statutory and 25.5% Q1; ~2.5 Cr excess tax; no deferred split; ask cause"}
+  - {id: "FND-02", check: "F10", line: "93-94", classification: "NEUTRAL-FACT", implication: "Implied shares (SF/BVPS) +0.2-0.5% YoY, ESOP-consistent; EPS absent so diluted spread NOT FOUND"}
+  - {id: "FND-03", check: "F11", line: "93-94", classification: "AMBIGUOUS", implication: "Sep-2026 net worth 3165.0 (Q2 col) vs 2926.1 (H1 col), 7.5% gap; basis differs from BVPS row; ask basis"}
+  - {id: "FND-04", check: "F11", line: "92-93", classification: "AMBIGUOUS", implication: "SF +162.2 Cr QoQ vs PAT 130.8 Cr; 31.4 Cr non-PAT accretion (OCI/FVOCI on DA pools?); needs equity statement"}
+  - {id: "FND-05", check: "F12", line: "89, 126-127, 130", classification: "FORWARD-SIGNAL", implication: "GS3 +27bps, NS3 +22bps, credit cost -20.5% QoQ; implied PCR ~37.5% to ~33% (range 28.6-37.8%); incremental cover ~19%; Pillar 2L self-withdrawal condition ('PCR thins further') appears met on implied figures; credit cost catch-up risk"}
+  - {id: "FND-06", check: "F12", line: "83", classification: "AMBIGUOUS", implication: "Net DA gain negative two quarters (-12.9, -1.2; H1 -14.0); EIS reversal or fair-value loss; ask if assignment paused, pool size, run-rate"}
+  - {id: "FND-07", check: "F12", line: "93, 102, 128", classification: "AMBIGUOUS", implication: "AUM +36.6% YoY, SF +16.8%, CRAR only -68bps; implied RWA growth ~20%; ask on/off-book AUM, Tier 2, raise horizon"}
+  - {id: "FND-08", check: "F12", line: "102-103, 135-136", classification: "FORWARD-SIGNAL", implication: "+74 branches, +544 staff in one quarter while disbursements -1.2% QoQ; AUM/branch 27.9 to 26.5 Cr; opex drag ahead; gold-branch split undisclosed"}
+  - {id: "FND-09", check: "F12", line: "85", classification: "AMBIGUOUS", implication: "Other income -1.9% YoY, -10.1% H1 against AUM +36.6%; fee/cross-sell shrinking; ask composition"}
+  - {id: "FND-10", check: "F14", line: "103", classification: "NEUTRAL-FACT", implication: "H1 disbursement cells repeat Q2 flow (6,676 vs Q1+Q2 13,436); column unusable; true H1 NOT FOUND"}
+  - {id: "FND-11", check: "F14", line: "83, 126, 130", classification: "NEUTRAL-FACT", implication: "'Net Gain' label on losses; 'Gross NPA' vs 'Gross Stage III' for same figure; four drafting inconsistencies cumulatively"}
+  - {id: "FND-12", check: "F16", line: "131", classification: "AMBIGUOUS", implication: "Credit cost 0.6% with no denominator; ~0.58% on ROA-implied avg assets, ~0.50% on avg AUM; tripwire not fired on implied basis; confirm basis and Q1 comparable"}
+  - {id: "FND-13", check: "F16", line: "74, 120-131, 144", classification: "AMBIGUOUS", implication: "No PCR, product mix, gold tonnage, gold branches, ST LAP, FY27 guidance; 5 of 8 checklist items undisclosed; drop-diff not assessable (prior ND)"}
+forward_signals: ["FND-05", "FND-08"]
+ambiguous: ["FND-01", "FND-03", "FND-04", "FND-06", "FND-07", "FND-09", "FND-12", "FND-13"]
+commitments:
+  - {commitment: "Press release and intimation uploaded on company website (procedural)", implied_date: "2026-10-15", ref: "line 36 / R229", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Headline is strong: ROE 17.0%, ROA 2.8%, C/I 52.5%, and every disclosed checklist ratio is met. The forensic weight sits in what the 2-page release omits. Stage 3 rose (+27/+22 bps) while credit cost fell 20.5% QoQ. Implied PCR thinned from about 37.5% to about 33%, inside a rounding band that crosses the 32% red line. The Notion override text self-withdraws Pillar 2L to 0.80x if PCR thins further, so FND-05 is the load-bearing item. It is an inference from rounded ratios; reported PCR and Q2 write-offs decide it. Second cluster: DA losses two quarters running, 31.4 Cr net worth accretion beyond PAT, and CRAR barely moving against 36.6% AUM growth. Together these hint at off-book or FVOCI mechanics that the results filing must explain. The branch build (+74) ran ahead of disbursements (-1.2% QoQ). H1 disbursement and H1 net worth columns are unusable. Pipeline notes: A1 line drift on R204-R208 (+1 line); A2 mislabelled R134-R136 as stock duplicates."

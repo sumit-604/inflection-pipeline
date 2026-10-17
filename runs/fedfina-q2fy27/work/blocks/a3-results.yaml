@@ -1,0 +1,59 @@
+stage: A3-forensics
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\fedfina-q2fy27\\work\\forensics_results_fedfina_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: PASS
+  F3: PASS
+  F4: PASS
+  F5: FINDING
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "L244-245, L281, L371-372", classification: "NEUTRAL-FACT", implication: "New G-sec FVOCI book in FY27 (nil in FY26); investments 40,167 to 79,853; OCI MTM exposure on liquidity book"}
+  - {id: "A3-02", check: "F1", line: "L524-529", classification: "AMBIGUOUS", implication: "48 NPA/written-off accounts sold to ARCs for Rs 3 lakh; principal outstanding and tenor blank, asterisk footnote missing; write-off pool cannot be sized"}
+  - {id: "A3-03", check: "F5", line: "L168-175", classification: "AMBIGUOUS", implication: "New Other Matter: first joint review with V Sankar Aiyar in Q2 FY27; no EoM or Going Concern; appointment trigger and tenure not in filing"}
+  - {id: "A3-04", check: "F6", line: "L483, L493, L884-891, L803", classification: "FORWARD-SIGNAL", implication: "Newest NCD caps D/E at 6x vs 4.61x (peak 4.89 Jun 26); CRAR 22.40 to 20.96; DA acting as leverage valve; capital raise or more DA needed at H1 growth pace"}
+  - {id: "A3-05", check: "F8", line: "L231-235", classification: "AMBIGUOUS", implication: "Q2 ETR 26.54% vs 25.17% statutory and 25.48% Q1; current tax 29.5% of PBT; DT credit shield 298 bps; DTA +1,675 ties exactly"}
+  - {id: "A3-06", check: "F8", line: "L234", classification: "NEUTRAL-FACT", implication: "Earlier-years tax (18) in FY26 only; immaterial"}
+  - {id: "A3-07", check: "F9", line: "L239-241", classification: "NEUTRAL-FACT", implication: "Actuarial (361) Q1 and +198 Q2 each exceed FY26 full-year (58); assumption change; verify at FY27 AR"}
+  - {id: "A3-08", check: "F9", line: "L247, L276, L300", classification: "AMBIGUOUS", implication: "Q2 cash-flow hedge gain 4,348 exceeds FY26 full year 3,182; derivative asset +6,344; FCY borrowing size and hedge tenor unknown"}
+  - {id: "A3-09", check: "F9", line: "L243, L249", classification: "AMBIGUOUS", implication: "FVOCI loans (5,851) Q1 FY27 (tie-out corrected) is 5.2x FY26 full year; likely recycling to P&L on assignment; DA gain share of PBT is a profit-quality question"}
+  - {id: "A3-10", check: "F10", line: "L254-255, L505-506, L251", classification: "AMBIGUOUS", implication: "Q2 EPS 3.56/3.53 does not reconcile: Q1+Q2 = 6.61 vs H1 6.54; diluted shares implied below basic; filed twice, not OCR"}
+  - {id: "A3-11", check: "F12", line: "L494-497, L226", classification: "FORWARD-SIGNAL", implication: "GNPA 1.55 to 1.82, NNPA 0.96 to 1.18, PCR 38.36 to 35.37 while impairment fell 20.5% QoQ; Q2 profit partly from under-provisioning; checklist item 2 fails; Pillar 2L 'PCR thins further' met QoQ"}
+  - {id: "A3-12", check: "F12", line: "L533-537, L352, L310", classification: "AMBIGUOUS", implication: "Rs 877 Cr DA in Q2 (23m residual, 10% retention); EIS adjustment flip to +1,405; other financial liabilities +116% to 46,819; off-book AUM and DA gain reliance"}
+  - {id: "A3-13", check: "F12", line: "L274, L281, L357, L366, L956-961", classification: "NEUTRAL-FACT", implication: "H1 loan build Rs 1,843 Cr funded by 42% cash drawdown and borrowing; OCF (71,888); Federal Bank term loan falling; 48,766 held at promoter bank (p15 OCR-garbled)"}
+  - {id: "A3-14", check: "F14", line: "L49-50, L179, L559", classification: "NEUTRAL-FACT", implication: "Cover letter 'V. Sankar Aiyar & Associates' vs report/certificate 'V. Sankar Aiyar & Co.'"}
+  - {id: "A3-15", check: "F14", line: "L841-844, L866-869", classification: "AMBIGUOUS", implication: "TOL/ATNW filed 4.61x equals D/E; computed TOL/ATNW 4.79x Mar 26 and 4.90x Sep 26; definition or label mismatch; headroom to 7.0 holds"}
+  - {id: "A3-16", check: "F14", line: "L963-966", classification: "AMBIGUOUS", implication: "RPT derivative margin deposit nil opening and nil flow but 1,615.50 closing (p15 OCR-garbled); brand fee to promoter 184.97 in H1"}
+  - {id: "A3-17", check: "F14", line: "L55-58, L734, L824, L936, L423, L784", classification: "NEUTRAL-FACT", implication: "Annexure numbering collision; Note 3 NCD 27,875 vs Annexure 279.28 Cr; certificate scope columns A-J only"}
+forward_signals: ["A3-04", "A3-11"]
+ambiguous: ["A3-02", "A3-03", "A3-05", "A3-08", "A3-09", "A3-10", "A3-12", "A3-15", "A3-16"]
+commitments:
+  - {commitment: "Publish Q2/H1 results in Business Standard and Pratahkal", implied_date: "within Reg 47 timelines, about 2026-10-17", ref: "cover letter L61-64", status_word: "initiated"}
+  - {commitment: "CRAR >= 16% at all times (INE007N07041, 07058)", implied_date: "until Final Settlement Date", ref: "Annexure II L833-861", status_word: "complied 20.96%"}
+  - {commitment: "CRAR >= 15% at all times (INE007N07066)", implied_date: "until Final Settlement Date", ref: "Annexure II L882-886", status_word: "complied 20.96%"}
+  - {commitment: "NNPA <= 4%, GNPA <= 5% (07041, 07058); NNPA <= 3%, GNPA <= 4% (07066)", implied_date: "tenor of debentures", ref: "Annexure II L836-890", status_word: "complied 1.18%/1.82%"}
+  - {commitment: "TOL/ATNW <= 7.0 (07041, 07058)", implied_date: "tenor; audited 31 Mar 2026 basis", ref: "Annexure II L841-869", status_word: "complied 4.61x as filed"}
+  - {commitment: "Debt/Equity within 6x (07066)", implied_date: "tenor; 30 Sep 2026 basis", ref: "Annexure II L891-894", status_word: "complied 4.61x"}
+  - {commitment: "Security cover >= 1.10x on secured NCDs Rs 27,875 Lakhs", implied_date: "ongoing", ref: "Note 3 L423-424; Annexure I L819", status_word: "complied 1.24x"}
+  - {commitment: "Implement RBI/regulator guidance as and when issued", implied_date: "ongoing", ref: "Note 1 L418-419", status_word: "boilerplate"}
+  - {commitment: "Management certifies compliance with other NCD covenants", implied_date: "as at 2026-09-30", ref: "Annexure II Part B L926-927", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "loop_1: reviewed (L525, L526, L812, L932; no new finding). The main signal is lender asset quality (A3-11). GNPA rose 1.55% to 1.82% and PCR fell 38.36% to 35.37%, while the impairment charge fell 20.5% QoQ. Part of the 16% QoQ PBT rise came from provisioning that did not track Stage 3. Checklist item 2 fails; the 32% red line holds. The Pillar 2L clause 'PCR thins further' is met QoQ but not against March (32.29%), so the operator must name the baseline. Leverage (A3-04): D/E fell 4.89 to 4.61 in the quarter of Rs 877 Cr direct assignment, and the newest NCD caps D/E at 6x, so DA works as a leverage valve. A3-09 and A3-12 ask how much DA gain sits in profit. Q2 EPS 3.56 does not reconcile with PAT, share count or H1 6.54 (A3-10). PIPELINE: A1 misread '(' as '1' on R101, R134-R137 and R158-R160; tie-out values need source confirmation. OCR_UNCERTAIN rows R187, R364, R366, R489, R493, R531 and R541 resolve by tie-out. Gold, LAP and tonnage items are not in a results filing."

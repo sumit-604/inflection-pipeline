@@ -1,0 +1,54 @@
+stage: A3-forensics
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/supremepwr-h1fy27/work/forensics_results_supremepwr_h1fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "1012; 1179", classification: "FORWARD-SIGNAL", implication: "No warrant exercise in H1FY27; 75% balance Rs 1,580.57 lakh due by about 27-Feb-2027 while SA cash is 21.91, gross debt 5,502.09 and finance costs 3.2x YoY; full conversion +4.99% shares."}
+  - {id: "A3-02", check: "F2", line: "883; 1042", classification: "AMBIGUOUS", implication: "CON minus SA revenue flips from -546.66 (H1FY26) to +817.12; EBITDA gap narrows 8.9 pp of SA PAT HoH; Danya external growth vs lower intercompany sales unresolved."}
+  - {id: "A3-03", check: "F2", line: "890, 1049; 893, 1052", classification: "AMBIGUOUS", implication: "Consolidated employee cost (H2FY26 -43.59) and other expenses (H1FY26 -43.41) sit below standalone; intercompany charges or reclass; Danya staff cost 66.04 to 10.92."}
+  - {id: "A3-04", check: "F4", line: "472-474; 1132; 1164", classification: "AMBIGUOUS", implication: "Unaudited subsidiary with no Rs amount stated; derived 8.85% of CON PAT (12.6% prior half); Danya-attributable receivables build 867.82 of 1,583.64 (163.42 to 1,031.24) rests on unaudited numbers."}
+  - {id: "A3-05", check: "F6", line: "853-854; 314-315", classification: "FORWARD-SIGNAL", implication: "Dated catalyst: 18-month conversion window closes about 27-Feb-2027; zero conversions at 30-Sep-2026; promoter split NOT FOUND."}
+  - {id: "A3-06", check: "F6", line: "818-825; 834", classification: "FORWARD-SIGNAL", implication: "98.8% of the 526.86 tranche used under one blended object (factory, WC, GCP); no-deviation claim untestable by object; 1,580.57 pending for same object."}
+  - {id: "A3-07", check: "F7", line: "321-322; 686-688", classification: "AMBIGUOUS", implication: "Balance-confirmation hedge over payables (26.2% of SA E&L) and advances; adjustments deferred to year of confirmation."}
+  - {id: "A3-08", check: "F8", line: "1071", classification: "NEUTRAL-FACT", implication: "Prior-year tax 0.37 charge in CON H2FY26/FY26 (Danya); immaterial, rule-mandated."}
+  - {id: "A3-09", check: "F8", line: "903-904; 931", classification: "NEUTRAL-FACT", implication: "SA ETR 23.64% equals 25.18% ex exempt firm share 109.73; persistent deferred charges defer cash tax 432 bps of PBT (801 bps H2FY26)."}
+  - {id: "A3-10", check: "F10", line: "910-911; 1087; 325-326", classification: "AMBIGUOUS", implication: "Diluted count frozen at 2,50,67,330 across H2FY26, FY26, H1FY27 against note 6 day-weighting; implies one fixed price of about Rs 135 under treasury-stock method; diluted EPS shows 0.3% vs 4.99% full-conversion dilution."}
+  - {id: "A3-11", check: "F12", line: "887; 323; 948", classification: "AMBIGUOUS", implication: "All material cost labelled stock-in-trade, no materials-consumed line, while a factory is under construction (CWIP 3,190.70, +392.72); archetype and rung hinge on manufacturing vs trading mix."}
+  - {id: "A3-12", check: "F14", line: "684; 434, 473; 476-477", classification: "AMBIGUOUS", implication: "Unresolved bracket on subsidiary review status plus plural-subsidiary template text; Danya most likely management-certified only."}
+  - {id: "A3-13", check: "F14", line: "954; 988; 942; 994", classification: "NEUTRAL-FACT", implication: "Resolved by arithmetic pending A1 re-read: Mar-26 SA receivables 4,521.09 and CF change (715.82) balance the BS (0.01) and the CF subtotal (305.21 vs 305.20); reclass reading eliminated; A4 uses neither value until A1 confirms."}
+  - {id: "A3-14", check: "F14", line: "983; 950; 1007; 985; 1003, 1006; 979", classification: "AMBIGUOUS", implication: "H1FY27 firm-share treatment ties (1,267.73 + 274.59 + 109.73 = 1,652.05); FY26 SA CF removes none of about 211.50 Danya profit, so FY26 SA CFO 2,773.36 likely carries non-cash firm profit offset in the 9.23 investment line; Mar-25 investment NOT FOUND."}
+  - {id: "A3-15", check: "F14", line: "894; 904; 937; 1013; 1011; 1173; 756; 999; 1018", classification: "NEUTRAL-FACT", implication: "A1 extraction items fail arithmetic: R043, R065 sign, R106, R153, R190 (219.99), R382 (30.00), R383, R185, R169/R195, R252; loop back to A1 before margin, ETR or cash-flow work."}
+  - {id: "A3-16", check: "F15", line: "674-675; 1180; 1007; 950; 1108; 1110, 1114", classification: "AMBIGUOUS", implication: "MD is 7.5% partner in sole subsidiary; parent left its full share in Danya and injected 274.59 while minority drew 20.00 (capital share 19.5% vs 10% profit share); Danya term debt fell 296.45 as the parent borrowed; no interest on capital to the parent; partner payments to MD NOT FOUND."}
+  - {id: "A3-17", check: "F12", line: "992; 940; 1119; 1169", classification: "AMBIGUOUS", implication: "Other current liabilities fell 400.29 (21.9%) after a 1,455.53 FY26 build that supplied 52.5% of FY26 SA CFO; customer-advance unwind (order intake lagging) vs capex-creditor or statutory paydown or re-presentation into short-term borrowings."}
+  - {id: "A3-18", check: "F14", line: "161; 516; 1041; 90-92; 432-435", classification: "NEUTRAL-FACT", implication: "Audit-status labels match the review scope in all six statements (H1FY27 Unaudited, FY26 Audited); but the H2FY26 column is an unreviewed balancing figure with no balancing-figure note and no Other Matter on comparatives, so H2FY26 cells used in A3-02, A3-03, A3-09 carry no half-level assurance."}
+forward_signals: ["A3-01", "A3-05", "A3-06"]
+ambiguous: ["A3-02", "A3-03", "A3-04", "A3-07", "A3-10", "A3-11", "A3-12", "A3-14", "A3-16", "A3-17"]
+commitments:
+  - {commitment: "Warrant balance Rs 126.75 x 12,47,000 = Rs 1,580.57 lakh payable on exercise; 12,47,000 shares (4.99%)", implied_date: "about 27-Feb-2027 (18 months from 27-Aug-2025)", ref: "SA note 3 lines 306-319; certificate lines 842-857", status_word: "initiated"}
+  - {commitment: "Warrant proceeds object factory/WC/GCP, allocation Rs 2,107.43 lakh; 520.31 of 526.86 utilised", implied_date: "30-Sep-2026 for received tranche; balance on exercise", ref: "certificate lines 811-825, 834-836", status_word: "underway"}
+  - {commitment: "Adjustments from confirmation/reconciliation of payables, loans and advances, other current liabilities", implied_date: "year of confirmation (undated)", ref: "SA note 4 lines 321-322; CON note 5 lines 686-688", status_word: "in process"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Pre-thesis read; every diff is a baseline. Register covers all 589 ledger IDs (554 R + 35 M): 156 cited, 138 routed, 295 reviewed with no finding. Three items matter. (1) Funding. SA cash fell from 973.79 to 21.91 and CFO was negative against PAT of 1,365.09. The uncalled warrant balance of Rs 1,580.57 lakh, due about 27-Feb-2027, is the nearest funding source. (2) Danya. The MD holds 7.5% of the sole subsidiary, and its numbers are unaudited. The parent capital roll ties: 274.59 cash plus the 109.73 share. Danya repaid 296.45 of term debt and the minority drew 20.00, so parent borrowing replaced Danya debt. FY26 SA CFO may carry about 211.50 of non-cash firm profit. (3) Liabilities. Other current liabilities fell 400.29 after a 1,455.53 FY26 build. Loop 2: audit-status labels match the review scope in all six statements, and all 14 signing-date lines equal the 16-10-2026 board date. H2FY26 is an unreviewed balancing column with no note (A3-18). Route R153, R190, R382, R383 and R185 to A1; they are not replacement values."

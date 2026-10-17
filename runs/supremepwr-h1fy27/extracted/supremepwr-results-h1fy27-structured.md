@@ -1,0 +1,578 @@
+# A1 STRUCTURED EXTRACTION: SUPREMEPWR results h1fy27
+source: SupremePower_H1FY27_Results.pdf | fulltext: runs/supremepwr-h1fy27/extracted/supremepwr-results-h1fy27-fulltext.md
+ROW ID RANGE: R001-R554
+counts: NUMBER 441 | ENTITY 20 | FORWARD 10 | DATE 35 | QUALIFIER 48
+units: Rs Lakhs (x0.01 to Rs Crores); per-share in Rs; share counts in numbers. Values verbatim, not converted.
+line numbers refer to the fulltext file (header included). Lines 874 onward are the supplementary 300dpi re-OCR section (cleaner tables); its page column is the source page.
+flag OCR_UNCERTAIN = digits disagree between the embedded text layer and the re-OCR, or are unreadable; both readings stated; nothing estimated. ZERO_STANDING = dash/nil.
+Pages 1-13 are scanned images with an embedded hidden OCR text layer (poor fidelity on tables); pages 14-15 OCR'd by A1.
+Auditor review report paragraphs (pages 2-3, 8-9) are in the fulltext; their qualifiers, entities, dates are rows here.
+
+## NUMBER
+ID | page | line | TYPE | value | context | flag
+R001 | page 1 | line 19 | NUMBER | 16.10.2026 | letter date
+R002 | page 1 | line 51 | NUMBER | 02:30 p.m. to 04:30 p.m. | board meeting time
+R003 | page 4 | line 883 | NUMBER | 12,713.79 | Revenue from operations, standalone H1 FY27 (30-Sep-26)
+R004 | page 4 | line 883 | NUMBER | 10,941.63 | Revenue from operations, standalone H2 FY26 (31-Mar-26)
+R005 | page 4 | line 883 | NUMBER | 8,066.10 | Revenue from operations, standalone H1 FY26 (30-Sep-25)
+R006 | page 4 | line 883 | NUMBER | 19,007.73 | Revenue from operations, standalone FY26
+R007 | page 4 | line 884 | NUMBER | 130.19 | Other income, standalone H1 FY27 (30-Sep-26)
+R008 | page 4 | line 884 | NUMBER | 136.95 | Other income, standalone H2 FY26 (31-Mar-26)
+R009 | page 4 | line 884 | NUMBER | 96.56 | Other income, standalone H1 FY26 (30-Sep-25)
+R010 | page 4 | line 884 | NUMBER | 233.51 | Other income, standalone FY26 | OCR_UNCERTAIN
+R011 | page 4 | line 885 | NUMBER | 12,843.98 | Total income, standalone H1 FY27 (30-Sep-26)
+R012 | page 4 | line 885 | NUMBER | 11,078.59 | Total income, standalone H2 FY26 (31-Mar-26)
+R013 | page 4 | line 885 | NUMBER | 8,162.65 | Total income, standalone H1 FY26 (30-Sep-25)
+R014 | page 4 | line 885 | NUMBER | 19,241.24 | Total income, standalone FY26 | OCR_UNCERTAIN
+R015 | page 4 | line 887 | NUMBER | 12,064.96 | Purchases of stock in trade, standalone H1 FY27 (30-Sep-26)
+R016 | page 4 | line 887 | NUMBER | 10,047.21 | Purchases of stock in trade, standalone H2 FY26 (31-Mar-26)
+R017 | page 4 | line 887 | NUMBER | 7,163.52 | Purchases of stock in trade, standalone H1 FY26 (30-Sep-25)
+R018 | page 4 | line 887 | NUMBER | 17,210.72 | Purchases of stock in trade, standalone FY26
+R019 | page 4 | line 888 | NUMBER | (2,487.75) | Changes in inventories, standalone H1 FY27 (30-Sep-26)
+R020 | page 4 | line 888 | NUMBER | (1,401.81) | Changes in inventories, standalone H2 FY26 (31-Mar-26)
+R021 | page 4 | line 888 | NUMBER | (900.98) | Changes in inventories, standalone H1 FY26 (30-Sep-25)
+R022 | page 4 | line 888 | NUMBER | (2,302.79) | Changes in inventories, standalone FY26
+R023 | page 4 | line 889 | NUMBER | 312.82 | Other direct expenses, standalone H1 FY27 (30-Sep-26)
+R024 | page 4 | line 889 | NUMBER | 127.13 | Other direct expenses, standalone H2 FY26 (31-Mar-26)
+R025 | page 4 | line 889 | NUMBER | 117.92 | Other direct expenses, standalone H1 FY26 (30-Sep-25)
+R026 | page 4 | line 889 | NUMBER | 245.05 | Other direct expenses, standalone FY26
+R027 | page 4 | line 890 | NUMBER | 409.27 | Employee benefits expenses, standalone H1 FY27 (30-Sep-26)
+R028 | page 4 | line 890 | NUMBER | 279.83 | Employee benefits expenses, standalone H2 FY26 (31-Mar-26)
+R029 | page 4 | line 890 | NUMBER | 152.01 | Employee benefits expenses, standalone H1 FY26 (30-Sep-25)
+R030 | page 4 | line 890 | NUMBER | 431.84 | Employee benefits expenses, standalone FY26
+R031 | page 4 | line 891 | NUMBER | 280.11 | Finance costs, standalone H1 FY27 (30-Sep-26)
+R032 | page 4 | line 891 | NUMBER | 154.50 | Finance costs, standalone H2 FY26 (31-Mar-26)
+R033 | page 4 | line 891 | NUMBER | 87.08 | Finance costs, standalone H1 FY26 (30-Sep-25)
+R034 | page 4 | line 891 | NUMBER | 241.58 | Finance costs, standalone FY26
+R035 | page 4 | line 892 | NUMBER | 199.30 | Depreciation and amortisation, standalone H1 FY27 (30-Sep-26)
+R036 | page 4 | line 892 | NUMBER | 130.18 | Depreciation and amortisation, standalone H2 FY26 (31-Mar-26)
+R037 | page 4 | line 892 | NUMBER | 35.08 | Depreciation and amortisation, standalone H1 FY26 (30-Sep-25)
+R038 | page 4 | line 892 | NUMBER | 165.26 | Depreciation and amortisation, standalone FY26
+R039 | page 4 | line 893 | NUMBER | 277.90 | Other expenses, standalone H1 FY27 (30-Sep-26)
+R040 | page 4 | line 893 | NUMBER | 276.92 | Other expenses, standalone H2 FY26 (31-Mar-26)
+R041 | page 4 | line 893 | NUMBER | 280.78 | Other expenses, standalone H1 FY26 (30-Sep-25)
+R042 | page 4 | line 893 | NUMBER | 557.70 | Other expenses, standalone FY26
+R043 | page 4 | line 894 | NUMBER | 11,086.31 (text layer 11,0631) | Total expenses, standalone H1 FY27 (30-Sep-26) | OCR_UNCERTAIN
+R044 | page 4 | line 894 | NUMBER | 9,613.96 | Total expenses, standalone H2 FY26 (31-Mar-26)
+R045 | page 4 | line 894 | NUMBER | 6,935.41 | Total expenses, standalone H1 FY26 (30-Sep-25)
+R046 | page 4 | line 894 | NUMBER | 16,549.37 | Total expenses, standalone FY26
+R047 | page 4 | line 896 | NUMBER | 1,787.67 | Profit before exceptional and extraordinary items and tax, standalone H1 FY27 (30-Sep-26)
+R048 | page 4 | line 896 | NUMBER | 1,464.63 | Profit before exceptional and extraordinary items and tax, standalone H2 FY26 (31-Mar-26)
+R049 | page 4 | line 896 | NUMBER | 1,227.24 | Profit before exceptional and extraordinary items and tax, standalone H1 FY26 (30-Sep-25)
+R050 | page 4 | line 896 | NUMBER | 2,691.87 | Profit before exceptional and extraordinary items and tax, standalone FY26
+R051 | page 4 | line 897 | NUMBER | - | Exceptional items, standalone H1 FY27 (30-Sep-26) | ZERO_STANDING
+R052 | page 4 | line 897 | NUMBER | - | Exceptional items, standalone H2 FY26 (31-Mar-26) | ZERO_STANDING
+R053 | page 4 | line 897 | NUMBER | - | Exceptional items, standalone H1 FY26 (30-Sep-25) | ZERO_STANDING
+R054 | page 4 | line 897 | NUMBER | - | Exceptional items, standalone FY26 | ZERO_STANDING
+R055 | page 4 | line 901 | NUMBER | 1,787.67 | Profit before tax, standalone H1 FY27 (30-Sep-26)
+R056 | page 4 | line 901 | NUMBER | 1,464.63 | Profit before tax, standalone H2 FY26 (31-Mar-26)
+R057 | page 4 | line 901 | NUMBER | 1,227.24 | Profit before tax, standalone H1 FY26 (30-Sep-25)
+R058 | page 4 | line 901 | NUMBER | 2,691.87 | Profit before tax, standalone FY26
+R059 | page 4 | line 903 | NUMBER | 345.40 | Current tax, standalone H1 FY27 (30-Sep-26)
+R060 | page 4 | line 903 | NUMBER | 244.09 | Current tax, standalone H2 FY26 (31-Mar-26)
+R061 | page 4 | line 903 | NUMBER | 286.66 | Current tax, standalone H1 FY26 (30-Sep-25)
+R062 | page 4 | line 903 | NUMBER | 530.75 | Current tax, standalone FY26
+R063 | page 4 | line 904 | NUMBER | 77.17 (text layer 7717; OCR 717) | Deferred tax, standalone H1 FY27 (30-Sep-26) | OCR_UNCERTAIN
+R064 | page 4 | line 904 | NUMBER | 117.36 | Deferred tax, standalone H2 FY26 (31-Mar-26) | OCR_UNCERTAIN
+R065 | page 4 | line 904 | NUMBER | 0.30 (text layer 030; OCR 30) | Deferred tax, standalone H1 FY26 (30-Sep-25) | OCR_UNCERTAIN
+R066 | page 4 | line 904 | NUMBER | 117.06 | Deferred tax, standalone FY26
+R067 | page 4 | line 194 | NUMBER | 1,365.09 | Profit for the period (PAT), standalone H1 FY27 (30-Sep-26)
+R068 | page 4 | line 194 | NUMBER | 1,103.18 | Profit for the period (PAT), standalone H2 FY26 (31-Mar-26)
+R069 | page 4 | line 194 | NUMBER | 940.87 | Profit for the period (PAT), standalone H1 FY26 (30-Sep-25)
+R070 | page 4 | line 194 | NUMBER | 2,044.06 | Profit for the period (PAT), standalone FY26
+R071 | page 4 | line 907 | NUMBER | 5.46 | EPS basic Rs, standalone H1 FY27 (30-Sep-26)
+R072 | page 4 | line 907 | NUMBER | 4.41 | EPS basic Rs, standalone H2 FY26 (31-Mar-26)
+R073 | page 4 | line 907 | NUMBER | 3.76 | EPS basic Rs, standalone H1 FY26 (30-Sep-25)
+R074 | page 4 | line 907 | NUMBER | 8.18 | EPS basic Rs, standalone FY26
+R075 | page 4 | line 908 | NUMBER | 5.45 | EPS diluted Rs, standalone H1 FY27 (30-Sep-26)
+R076 | page 4 | line 908 | NUMBER | 4.40 | EPS diluted Rs, standalone H2 FY26 (31-Mar-26)
+R077 | page 4 | line 908 | NUMBER | 3.76 | EPS diluted Rs, standalone H1 FY26 (30-Sep-25)
+R078 | page 4 | line 908 | NUMBER | 8.15 | EPS diluted Rs, standalone FY26
+R079 | page 4 | line 910 | NUMBER | 2,49,91,135 | Weighted average shares (basic), standalone H1 FY27 (30-Sep-26)
+R080 | page 4 | line 910 | NUMBER | 2,49,91,135 | Weighted average shares (basic), standalone H2 FY26 (31-Mar-26)
+R081 | page 4 | line 910 | NUMBER | 2,49,91,135 | Weighted average shares (basic), standalone H1 FY26 (30-Sep-25)
+R082 | page 4 | line 910 | NUMBER | 2,49,91,135 | Weighted average shares (basic), standalone FY26
+R083 | page 4 | line 911 | NUMBER | 2,50,67,330 | Weighted average shares (diluted), standalone H1 FY27 (30-Sep-26)
+R084 | page 4 | line 911 | NUMBER | 2,50,67,330 | Weighted average shares (diluted), standalone H2 FY26 (31-Mar-26)
+R085 | page 4 | line 911 | NUMBER | 2,49,91,135 | Weighted average shares (diluted), standalone H1 FY26 (30-Sep-25)
+R086 | page 4 | line 911 | NUMBER | 2,50,67,330 | Weighted average shares (diluted), standalone FY26
+R087 | page 4 | line 912 | NUMBER | 10.00 | Face value per share Rs, standalone H1 FY27 (30-Sep-26)
+R088 | page 4 | line 912 | NUMBER | 10.00 | Face value per share Rs, standalone H2 FY26 (31-Mar-26)
+R089 | page 4 | line 912 | NUMBER | 10.00 | Face value per share Rs, standalone H1 FY26 (30-Sep-25)
+R090 | page 4 | line 912 | NUMBER | 10.00 | Face value per share Rs, standalone FY26
+R091 | page 5 | line 926 | NUMBER | 2,499.11 | Share capital, standalone 30-Sep-26
+R092 | page 5 | line 926 | NUMBER | 2,499.11 | Share capital, standalone 31-Mar-26
+R093 | page 5 | line 927 | NUMBER | 10,159.80 | Reserves and surplus, standalone 30-Sep-26
+R094 | page 5 | line 927 | NUMBER | 8,794.70 | Reserves and surplus, standalone 31-Mar-26
+R095 | page 5 | line 928 | NUMBER | 526.86 | Money received against share warrants, standalone 30-Sep-26
+R096 | page 5 | line 928 | NUMBER | 526.86 (OCR $96 86; text layer 5726 86) | Money received against share warrants, standalone 31-Mar-26 | OCR_UNCERTAIN
+R097 | page 5 | line 930 | NUMBER | 3,504.67 | Long-term borrowings, standalone 30-Sep-26
+R098 | page 5 | line 930 | NUMBER | 2,993.80 | Long-term borrowings, standalone 31-Mar-26 | OCR_UNCERTAIN
+R099 | page 5 | line 931 | NUMBER | 212.10 | Deferred tax liabilities (net), standalone 30-Sep-26
+R100 | page 5 | line 931 | NUMBER | 134.93 | Deferred tax liabilities (net), standalone 31-Mar-26
+R101 | page 5 | line 932 | NUMBER | 29.99 | Long-term provisions, standalone 30-Sep-26
+R102 | page 5 | line 932 | NUMBER | 23.87 | Long-term provisions, standalone 31-Mar-26
+R103 | page 5 | line 934 | NUMBER | 1,997.42 | Short-term borrowings, standalone 30-Sep-26
+R104 | page 5 | line 934 | NUMBER | 1,578.90 | Short-term borrowings, standalone 31-Mar-26
+R105 | page 5 | line 937 | NUMBER | 3,103.72 (text layer 310372; OCR unreadable) | Trade payables, micro and small enterprises, standalone 30-Sep-26 | OCR_UNCERTAIN
+R106 | page 5 | line 937 | NUMBER | 2,870.29 (text layer 287029; OCR 2,879.29) | Trade payables, micro and small enterprises, standalone 31-Mar-26 | OCR_UNCERTAIN
+R107 | page 5 | line 939 | NUMBER | 4,457.00 | Trade payables, other creditors, standalone 30-Sep-26
+R108 | page 5 | line 939 | NUMBER | 3,074.78 (text layer 307478) | Trade payables, other creditors, standalone 31-Mar-26 | OCR_UNCERTAIN
+R109 | page 5 | line 940 | NUMBER | 1,428.53 (text layer 1428 53; OCR 1,428.55) | Other current liabilities, standalone 30-Sep-26 | OCR_UNCERTAIN
+R110 | page 5 | line 940 | NUMBER | 1,828.83 | Other current liabilities, standalone 31-Mar-26
+R111 | page 5 | line 941 | NUMBER | 883.25 | Short-term provisions, standalone 30-Sep-26
+R112 | page 5 | line 941 | NUMBER | 538.61 | Short-term provisions, standalone 31-Mar-26
+R113 | page 5 | line 942 | NUMBER | 28,802.45 (text layer) | Total equity and liabilities, standalone 30-Sep-26 | OCR_UNCERTAIN
+R114 | page 5 | line 942 | NUMBER | 28,736.9? (OCR 2873.69; text layer 28736) | Total equity and liabilities, standalone 31-Mar-26 | OCR_UNCERTAIN
+R115 | page 5 | line 946 | NUMBER | 8,891.93 | Property plant and equipment, standalone 30-Sep-26
+R116 | page 5 | line 946 | NUMBER | 8,664.94 | Property plant and equipment, standalone 31-Mar-26
+R117 | page 5 | line 945 | NUMBER | 5.02 | Intangible assets, standalone 30-Sep-26
+R118 | page 5 | line 945 | NUMBER | 5.61 | Intangible assets, standalone 31-Mar-26
+R119 | page 5 | line 948 | NUMBER | 3,190.70 | Capital work in progress, standalone 30-Sep-26
+R120 | page 5 | line 948 | NUMBER | 2,797.98 | Capital work in progress, standalone 31-Mar-26
+R121 | page 5 | line 949 | NUMBER | 174.42 | Intangible assets under development, standalone 30-Sep-26
+R122 | page 5 | line 949 | NUMBER | 137.01 | Intangible assets under development, standalone 31-Mar-26
+R123 | page 5 | line 950 | NUMBER | 1,652.05 | Non-current investments, standalone 30-Sep-26
+R124 | page 5 | line 950 | NUMBER | 1,267.73 | Non-current investments, standalone 31-Mar-26
+R125 | page 5 | line 951 | NUMBER | 539.99 | Other non-current assets, standalone 30-Sep-26
+R126 | page 5 | line 951 | NUMBER | 643.50 | Other non-current assets, standalone 31-Mar-26
+R127 | page 5 | line 953 | NUMBER | 7,044.00 | Inventories, standalone 30-Sep-26
+R128 | page 5 | line 953 | NUMBER | 4,556.25 | Inventories, standalone 31-Mar-26
+R129 | page 5 | line 954 | NUMBER | 5,236.91 | Trade receivables, standalone 30-Sep-26
+R130 | page 5 | line 954 | NUMBER | 4,821.09 | Trade receivables, standalone 31-Mar-26
+R131 | page 5 | line 955 | NUMBER | 21.91 | Cash and cash equivalents, standalone 30-Sep-26
+R132 | page 5 | line 955 | NUMBER | 973.79 | Cash and cash equivalents, standalone 31-Mar-26
+R133 | page 5 | line 956 | NUMBER | 2,045.52 | Other current assets, standalone 30-Sep-26
+R134 | page 5 | line 956 | NUMBER | 1,305.79 | Other current assets, standalone 31-Mar-26
+R135 | page 5 | line 270 | NUMBER | 28,802 (text layer) | Total assets, standalone 30-Sep-26 | OCR_UNCERTAIN
+R136 | page 5 | line 270 | NUMBER | 34,873.69? (text layer 3487369) | Total assets, standalone 31-Mar-26 | OCR_UNCERTAIN
+R137 | page 7 | line 976 | NUMBER | 1,787.67 | CF profit before extraordinary items and tax, standalone H1 FY27
+R138 | page 7 | line 976 | NUMBER | 2,691.87 | CF profit before extraordinary items and tax, standalone FY26
+R139 | page 7 | line 978 | NUMBER | 199.30 | CF depreciation adjustment, standalone H1 FY27
+R140 | page 7 | line 978 | NUMBER | 165.26 | CF depreciation adjustment, standalone FY26
+R141 | page 7 | line 979 | NUMBER | 4.37 | CF gratuity provision adjustment, standalone H1 FY27 | OCR_UNCERTAIN
+R142 | page 7 | line 979 | NUMBER | - | CF gratuity provision adjustment, standalone FY26 | ZERO_STANDING
+R143 | page 7 | line 980 | NUMBER | 246.60 | CF interest expense adjustment, standalone H1 FY27
+R144 | page 7 | line 980 | NUMBER | 128.24 | CF interest expense adjustment, standalone FY26
+R145 | page 7 | line 981 | NUMBER | (18.80) | CF interest income adjustment, standalone H1 FY27
+R146 | page 7 | line 981 | NUMBER | (20.43) | CF interest income adjustment, standalone FY26
+R147 | page 7 | line 983 | NUMBER | NOT LEGIBLE | CF share of profit from partnership firm, standalone H1 FY27 | OCR_UNCERTAIN
+R148 | page 7 | line 983 | NUMBER | (109.73) | CF share of profit from partnership firm, standalone FY26 | OCR_UNCERTAIN
+R149 | page 7 | line 985 | NUMBER | 2,110.46 | CF operating profit before working capital changes, standalone H1 FY27
+R150 | page 7 | line 985 | NUMBER | 2,963.37 | CF operating profit before working capital changes, standalone FY26
+R151 | page 7 | line 987 | NUMBER | (2,487.75) | CF change in inventories, standalone H1 FY27
+R152 | page 7 | line 987 | NUMBER | (2,302.79) | CF change in inventories, standalone FY26
+R153 | page 7 | line 988 | NUMBER | (718.82) | CF change in trade receivables, standalone H1 FY27
+R154 | page 7 | line 988 | NUMBER | (163.81) | CF change in trade receivables, standalone FY26
+R155 | page 7 | line 989 | NUMBER | 103.51 | CF change in other non-current assets, standalone H1 FY27
+R156 | page 7 | line 989 | NUMBER | (222.08) | CF change in other non-current assets, standalone FY26
+R157 | page 7 | line 990 | NUMBER | (521.97) | CF change in other current assets, standalone H1 FY27
+R158 | page 7 | line 990 | NUMBER | (801.82) | CF change in other current assets, standalone FY26
+R159 | page 7 | line 991 | NUMBER | 1,606.65 | CF change in trade payables, standalone H1 FY27
+R160 | page 7 | line 991 | NUMBER | 2,489.23 | CF change in trade payables, standalone FY26
+R161 | page 7 | line 992 | NUMBER | (400.29) | CF change in other current liabilities, standalone H1 FY27
+R162 | page 7 | line 992 | NUMBER | 1,455.53 | CF change in other current liabilities, standalone FY26
+R163 | page 7 | line 993 | NUMBER | - | CF change in provisions, standalone H1 FY27 | ZERO_STANDING
+R164 | page 7 | line 993 | NUMBER | 16.92 | CF change in provisions, standalone FY26
+R165 | page 7 | line 994 | NUMBER | (305.20) | CF cash generated from operations, standalone H1 FY27
+R166 | page 7 | line 994 | NUMBER | 3,434.54 | CF cash generated from operations, standalone FY26
+R167 | page 7 | line 998 | NUMBER | (217.76) | CF income taxes paid, standalone H1 FY27
+R168 | page 7 | line 998 | NUMBER | (661.18) | CF income taxes paid, standalone FY26
+R169 | page 7 | line 999 | NUMBER | (522.9? text layer s22.90) | CF net cash from operating activities before extraordinary items, standalone H1 FY27 | OCR_UNCERTAIN
+R170 | page 7 | line 999 | NUMBER | 2,773.36 | CF net cash from operating activities before extraordinary items, standalone FY26
+R171 | page 7 | line 1003 | NUMBER | (855.85) | CF purchase of tangible and intangible assets, standalone H1 FY27
+R172 | page 7 | line 1003 | NUMBER | - | CF purchase of tangible and intangible assets, standalone FY26 | ZERO_STANDING
+R173 | page 7 | line 1004 | NUMBER | 18.80 | CF interest received (investing), standalone H1 FY27
+R174 | page 7 | line 1004 | NUMBER | 20.43 | CF interest received (investing), standalone FY26
+R175 | page 7 | line 1005 | NUMBER | - | CF proceeds from sale of fixed assets, standalone H1 FY27 | ZERO_STANDING
+R176 | page 7 | line 1005 | NUMBER | 1.60 | CF proceeds from sale of fixed assets, standalone FY26
+R177 | page 7 | line 1006 | NUMBER | - | CF fixed assets purchased including CWIP, standalone H1 FY27 | ZERO_STANDING
+R178 | page 7 | line 1006 | NUMBER | (5,746.46) | CF fixed assets purchased including CWIP, standalone FY26
+R179 | page 7 | line 1007 | NUMBER | (274.59) | CF (increase)/decrease in non-current investments, standalone H1 FY27
+R180 | page 7 | line 1007 | NUMBER | 9.23 | CF (increase)/decrease in non-current investments, standalone FY26
+R181 | page 7 | line 1009 | NUMBER | (246.60) | CF interest paid (financing), standalone H1 FY27
+R182 | page 7 | line 1009 | NUMBER | (128.24) | CF interest paid (financing), standalone FY26
+R183 | page 7 | line 1010 | NUMBER | 510.87 | CF increase in long-term borrowings, standalone H1 FY27
+R184 | page 7 | line 1010 | NUMBER | 2,130.06 | CF increase in long-term borrowings, standalone FY26
+R185 | page 7 | line 1011 | NUMBER | 419.51 | CF increase in short-term borrowings, standalone H1 FY27
+R186 | page 7 | line 1011 | NUMBER | 808.82 | CF increase in short-term borrowings, standalone FY26
+R187 | page 7 | line 1012 | NUMBER | - | CF proceeds from share warrants, standalone H1 FY27 | ZERO_STANDING
+R188 | page 7 | line 1012 | NUMBER | 526.86 | CF proceeds from share warrants, standalone FY26
+R189 | page 7 | line 1013 | NUMBER | 682.72 | CF net cash from financing, standalone H1 FY27
+R190 | page 7 | line 1013 | NUMBER | 3,557.49 | CF net cash from financing, standalone FY26
+R191 | page 7 | line 1014 | NUMBER | 973.79 | CF opening cash and cash equivalents, standalone H1 FY27
+R192 | page 7 | line 1014 | NUMBER | 578.13 | CF opening cash and cash equivalents, standalone FY26
+R193 | page 7 | line 1017 | NUMBER | 21.91 (OCR 21ot) | CF cash and cash equivalents per balance sheet, standalone H1 FY27 | OCR_UNCERTAIN
+R194 | page 7 | line 1017 | NUMBER | 973.79 | CF cash and cash equivalents per balance sheet, standalone FY26
+R195 | page 7 | line 1018 | NUMBER | 21.98 (OCR; vs 21.91 elsewhere) | CF cash and cash equivalents at end of period, standalone H1 FY27 | OCR_UNCERTAIN
+R196 | page 7 | line 1018 | NUMBER | 973.79 | CF cash and cash equivalents at end of period, standalone FY26
+R197 | page 10 | line 1042 | NUMBER | 13,530.91 | Revenue from operations, consolidated H1 FY27 (30-Sep-26)
+R198 | page 10 | line 1042 | NUMBER | 10,644.60 | Revenue from operations, consolidated H2 FY26 (31-Mar-26)
+R199 | page 10 | line 1042 | NUMBER | 7,519.44 | Revenue from operations, consolidated H1 FY26 (30-Sep-25)
+R200 | page 10 | line 1042 | NUMBER | 18,164.04 | Revenue from operations, consolidated FY26
+R201 | page 10 | line 1043 | NUMBER | 26.45 | Other income, consolidated H1 FY27 (30-Sep-26)
+R202 | page 10 | line 1043 | NUMBER | 29.96 | Other income, consolidated H2 FY26 (31-Mar-26)
+R203 | page 10 | line 1043 | NUMBER | 16.16 | Other income, consolidated H1 FY26 (30-Sep-25)
+R204 | page 10 | line 1043 | NUMBER | 46.12 | Other income, consolidated FY26
+R205 | page 10 | line 1044 | NUMBER | 13,557.36 | Total income, consolidated H1 FY27 (30-Sep-26)
+R206 | page 10 | line 1044 | NUMBER | 10,674.56 | Total income, consolidated H2 FY26 (31-Mar-26)
+R207 | page 10 | line 1044 | NUMBER | 7,535.61 | Total income, consolidated H1 FY26 (30-Sep-25)
+R208 | page 10 | line 1044 | NUMBER | 18,210.16 | Total income, consolidated FY26
+R209 | page 10 | line 1046 | NUMBER | 12,653.73 | Purchases of stock in trade, consolidated H1 FY27 (30-Sep-26)
+R210 | page 10 | line 1046 | NUMBER | 9,695.02 | Purchases of stock in trade, consolidated H2 FY26 (31-Mar-26)
+R211 | page 10 | line 1046 | NUMBER | 6,900.07 | Purchases of stock in trade, consolidated H1 FY26 (30-Sep-25)
+R212 | page 10 | line 1046 | NUMBER | 16,595.10 | Purchases of stock in trade, consolidated FY26
+R213 | page 10 | line 1047 | NUMBER | (2,535.78) | Changes in inventories, consolidated H1 FY27 (30-Sep-26)
+R214 | page 10 | line 1047 | NUMBER | (1,681.62) | Changes in inventories, consolidated H2 FY26 (31-Mar-26)
+R215 | page 10 | line 1047 | NUMBER | (1,373.92) | Changes in inventories, consolidated H1 FY26 (30-Sep-25)
+R216 | page 10 | line 1047 | NUMBER | (3,055.54) | Changes in inventories, consolidated FY26
+R217 | page 10 | line 1048 | NUMBER | 323.88 | Other direct expenses, consolidated H1 FY27 (30-Sep-26)
+R218 | page 10 | line 1048 | NUMBER | 137.18 | Other direct expenses, consolidated H2 FY26 (31-Mar-26)
+R219 | page 10 | line 1048 | NUMBER | 126.56 | Other direct expenses, consolidated H1 FY26 (30-Sep-25)
+R220 | page 10 | line 1048 | NUMBER | 263.74 | Other direct expenses, consolidated FY26
+R221 | page 10 | line 1049 | NUMBER | 420.19 | Employee benefits expenses, consolidated H1 FY27 (30-Sep-26)
+R222 | page 10 | line 1049 | NUMBER | 236.24 | Employee benefits expenses, consolidated H2 FY26 (31-Mar-26)
+R223 | page 10 | line 1049 | NUMBER | 218.05 | Employee benefits expenses, consolidated H1 FY26 (30-Sep-25)
+R224 | page 10 | line 1049 | NUMBER | 454.29 | Employee benefits expenses, consolidated FY26
+R225 | page 10 | line 1050 | NUMBER | 291.79 | Finance costs, consolidated H1 FY27 (30-Sep-26)
+R226 | page 10 | line 1050 | NUMBER | 201.84 | Finance costs, consolidated H2 FY26 (31-Mar-26)
+R227 | page 10 | line 1050 | NUMBER | 100.80 | Finance costs, consolidated H1 FY26 (30-Sep-25)
+R228 | page 10 | line 1050 | NUMBER | 302.64 | Finance costs, consolidated FY26
+R229 | page 10 | line 1051 | NUMBER | 204.10 | Depreciation and amortisation, consolidated H1 FY27 (30-Sep-26)
+R230 | page 10 | line 1051 | NUMBER | 134.64 | Depreciation and amortisation, consolidated H2 FY26 (31-Mar-26)
+R231 | page 10 | line 1051 | NUMBER | 39.60 | Depreciation and amortisation, consolidated H1 FY26 (30-Sep-25)
+R232 | page 10 | line 1051 | NUMBER | 174.24 | Depreciation and amortisation, consolidated FY26
+R233 | page 10 | line 1052 | NUMBER | 333.44 | Other expenses, consolidated H1 FY27 (30-Sep-26)
+R234 | page 10 | line 1052 | NUMBER | 386.66 | Other expenses, consolidated H2 FY26 (31-Mar-26)
+R235 | page 10 | line 1052 | NUMBER | 237.37 | Other expenses, consolidated H1 FY26 (30-Sep-25)
+R236 | page 10 | line 1052 | NUMBER | 624.03 | Other expenses, consolidated FY26
+R237 | page 10 | line 1053 | NUMBER | 11,691.35 | Total expenses, consolidated H1 FY27 (30-Sep-26)
+R238 | page 10 | line 1053 | NUMBER | 9,109.97 | Total expenses, consolidated H2 FY26 (31-Mar-26)
+R239 | page 10 | line 1053 | NUMBER | 6,248.53 | Total expenses, consolidated H1 FY26 (30-Sep-25)
+R240 | page 10 | line 1053 | NUMBER | 15,358.50 | Total expenses, consolidated FY26
+R241 | page 10 | line 1055 | NUMBER | 1,866.01 | Profit before exceptional and extraordinary items and tax, consolidated H1 FY27 (30-Sep-26)
+R242 | page 10 | line 1055 | NUMBER | 1,564.59 | Profit before exceptional and extraordinary items and tax, consolidated H2 FY26 (31-Mar-26)
+R243 | page 10 | line 1055 | NUMBER | 1,287.07 | Profit before exceptional and extraordinary items and tax, consolidated H1 FY26 (30-Sep-25)
+R244 | page 10 | line 1055 | NUMBER | 2,851.66 | Profit before exceptional and extraordinary items and tax, consolidated FY26
+R245 | page 10 | line 1058 | NUMBER | - | Exceptional items, consolidated H1 FY27 (30-Sep-26) | ZERO_STANDING
+R246 | page 10 | line 1058 | NUMBER | - | Exceptional items, consolidated H2 FY26 (31-Mar-26) | ZERO_STANDING
+R247 | page 10 | line 1058 | NUMBER | - | Exceptional items, consolidated H1 FY26 (30-Sep-25) | ZERO_STANDING
+R248 | page 10 | line 1058 | NUMBER | - | Exceptional items, consolidated FY26 | ZERO_STANDING
+R249 | page 10 | line 1064 | NUMBER | 1,866.01 | Profit before tax, consolidated H1 FY27 (30-Sep-26)
+R250 | page 10 | line 1064 | NUMBER | 1,564.59 | Profit before tax, consolidated H2 FY26 (31-Mar-26)
+R251 | page 10 | line 1064 | NUMBER | 1,287.07 | Profit before tax, consolidated H1 FY26 (30-Sep-25)
+R252 | page 10 | line 1064 | NUMBER | 2,851.06 (OCR; text layer 285166; item V shows 2,851.66) | Profit before tax, consolidated FY26 | OCR_UNCERTAIN
+R253 | page 10 | line 1067 | NUMBER | 411.44 | Current tax, consolidated H1 FY27 (30-Sep-26)
+R254 | page 10 | line 1067 | NUMBER | 329.27 | Current tax, consolidated H2 FY26 (31-Mar-26)
+R255 | page 10 | line 1067 | NUMBER | 337.01 | Current tax, consolidated H1 FY26 (30-Sep-25)
+R256 | page 10 | line 1067 | NUMBER | 666.28 | Current tax, consolidated FY26
+R257 | page 10 | line 1069 | NUMBER | 77.28 | Deferred tax, consolidated H1 FY27 (30-Sep-26)
+R258 | page 10 | line 1069 | NUMBER | 117.65 | Deferred tax, consolidated H2 FY26 (31-Mar-26)
+R259 | page 10 | line 1069 | NUMBER | -0.20 | Deferred tax, consolidated H1 FY26 (30-Sep-25)
+R260 | page 10 | line 1069 | NUMBER | 117.45 | Deferred tax, consolidated FY26
+R261 | page 10 | line 1071 | NUMBER | - | Tax adjustments for earlier years, consolidated H1 FY27 (30-Sep-26) | OCR_UNCERTAIN ZERO_STANDING
+R262 | page 10 | line 1071 | NUMBER | 0.37 or -; column unclear | Tax adjustments for earlier years, consolidated H2 FY26 (31-Mar-26) | OCR_UNCERTAIN
+R263 | page 10 | line 1071 | NUMBER | - | Tax adjustments for earlier years, consolidated H1 FY26 (30-Sep-25) | OCR_UNCERTAIN ZERO_STANDING
+R264 | page 10 | line 1071 | NUMBER | 0.37 or (0.37); column unclear | Tax adjustments for earlier years, consolidated FY26 | OCR_UNCERTAIN
+R265 | page 10 | line 1072 | NUMBER | 1,377.29 | Profit for the period, consolidated H1 FY27 (30-Sep-26)
+R266 | page 10 | line 1072 | NUMBER | 1,117.29 | Profit for the period, consolidated H2 FY26 (31-Mar-26)
+R267 | page 10 | line 1072 | NUMBER | 950.26 | Profit for the period, consolidated H1 FY26 (30-Sep-25)
+R268 | page 10 | line 1072 | NUMBER | 2,067.56 | Profit for the period, consolidated FY26
+R269 | page 10 | line 1073 | NUMBER | 12.19 | Share of minority interest, consolidated H1 FY27 (30-Sep-26)
+R270 | page 10 | line 1073 | NUMBER | 14.11 | Share of minority interest, consolidated H2 FY26 (31-Mar-26)
+R271 | page 10 | line 1073 | NUMBER | 9.39 | Share of minority interest, consolidated H1 FY26 (30-Sep-25)
+R272 | page 10 | line 1073 | NUMBER | 23.50 | Share of minority interest, consolidated FY26
+R273 | page 10 | line 1074 | NUMBER | 1,365.10 | Net profit transferred to reserves and surplus, consolidated H1 FY27 (30-Sep-26)
+R274 | page 10 | line 1074 | NUMBER | 1,103.18 | Net profit transferred to reserves and surplus, consolidated H2 FY26 (31-Mar-26)
+R275 | page 10 | line 1074 | NUMBER | 940.87 | Net profit transferred to reserves and surplus, consolidated H1 FY26 (30-Sep-25)
+R276 | page 10 | line 1074 | NUMBER | 2,044.06 | Net profit transferred to reserves and surplus, consolidated FY26
+R277 | page 10 | line 1080 | NUMBER | 5.46 | EPS basic Rs, consolidated H1 FY27 (30-Sep-26)
+R278 | page 10 | line 1080 | NUMBER | 4.41 | EPS basic Rs, consolidated H2 FY26 (31-Mar-26)
+R279 | page 10 | line 1080 | NUMBER | 3.76 | EPS basic Rs, consolidated H1 FY26 (30-Sep-25)
+R280 | page 10 | line 1080 | NUMBER | 8.18 | EPS basic Rs, consolidated FY26
+R281 | page 10 | line 1082 | NUMBER | 5.45 | EPS diluted Rs, consolidated H1 FY27 (30-Sep-26)
+R282 | page 10 | line 1082 | NUMBER | 4.40 | EPS diluted Rs, consolidated H2 FY26 (31-Mar-26)
+R283 | page 10 | line 1082 | NUMBER | 3.76 | EPS diluted Rs, consolidated H1 FY26 (30-Sep-25)
+R284 | page 10 | line 1082 | NUMBER | 8.15 | EPS diluted Rs, consolidated FY26
+R285 | page 10 | line 1085 | NUMBER | 2,49,91,135 | Weighted average shares (basic), consolidated H1 FY27 (30-Sep-26)
+R286 | page 10 | line 1085 | NUMBER | 2,49,91,135 | Weighted average shares (basic), consolidated H2 FY26 (31-Mar-26)
+R287 | page 10 | line 1085 | NUMBER | 2,49,91,135 | Weighted average shares (basic), consolidated H1 FY26 (30-Sep-25)
+R288 | page 10 | line 1085 | NUMBER | 2,49,91,135 | Weighted average shares (basic), consolidated FY26
+R289 | page 10 | line 1087 | NUMBER | 2,50,67,330 | Weighted average shares (diluted), consolidated H1 FY27 (30-Sep-26)
+R290 | page 10 | line 1087 | NUMBER | 2,50,67,330 | Weighted average shares (diluted), consolidated H2 FY26 (31-Mar-26)
+R291 | page 10 | line 1087 | NUMBER | 2,49,91,135 | Weighted average shares (diluted), consolidated H1 FY26 (30-Sep-25)
+R292 | page 10 | line 1087 | NUMBER | 2,50,67,330 | Weighted average shares (diluted), consolidated FY26
+R293 | page 10 | line 1089 | NUMBER | 10.00 | Face value per share Rs, consolidated H1 FY27 (30-Sep-26)
+R294 | page 10 | line 1089 | NUMBER | 10.00 | Face value per share Rs, consolidated H2 FY26 (31-Mar-26)
+R295 | page 10 | line 1089 | NUMBER | 10.00 | Face value per share Rs, consolidated H1 FY26 (30-Sep-25)
+R296 | page 10 | line 1089 | NUMBER | 10.00 | Face value per share Rs, consolidated FY26
+R297 | page 11 | line 1105 | NUMBER | 2,499.11 | Share capital, consolidated 30-Sep-26
+R298 | page 11 | line 1105 | NUMBER | 2,499.11 | Share capital, consolidated 31-Mar-26
+R299 | page 11 | line 1106 | NUMBER | 10,159.80 | Reserves and surplus, consolidated 30-Sep-26
+R300 | page 11 | line 1106 | NUMBER | 8,794.70 | Reserves and surplus, consolidated 31-Mar-26
+R301 | page 11 | line 1107 | NUMBER | 526.86 | Money received against share warrants, consolidated 30-Sep-26
+R302 | page 11 | line 1107 | NUMBER | 526.86 | Money received against share warrants, consolidated 31-Mar-26
+R303 | page 11 | line 1108 | NUMBER | 398.95 | Minority interest, consolidated 30-Sep-26
+R304 | page 11 | line 1108 | NUMBER | 406.76 | Minority interest, consolidated 31-Mar-26
+R305 | page 11 | line 1110 | NUMBER | 3,526.02 | Long-term borrowings, consolidated 30-Sep-26
+R306 | page 11 | line 1110 | NUMBER | 3,311.60 | Long-term borrowings, consolidated 31-Mar-26
+R307 | page 11 | line 1111 | NUMBER | 227.39 (text layer 221.39) | Deferred tax liabilities (net), consolidated 30-Sep-26 | OCR_UNCERTAIN
+R308 | page 11 | line 1111 | NUMBER | 150.11 | Deferred tax liabilities (net), consolidated 31-Mar-26
+R309 | page 11 | line 1112 | NUMBER | 32.04 | Long-term provisions, consolidated 30-Sep-26
+R310 | page 11 | line 1112 | NUMBER | 25.45 | Long-term provisions, consolidated 31-Mar-26
+R311 | page 11 | line 1114 | NUMBER | 2,218.54 | Short-term borrowings, consolidated 30-Sep-26
+R312 | page 11 | line 1114 | NUMBER | 1,685.70 | Short-term borrowings, consolidated 31-Mar-26
+R313 | page 11 | line 1116 | NUMBER | 4,083.10 | Trade payables, micro and small enterprises, consolidated 30-Sep-26
+R314 | page 11 | line 1116 | NUMBER | 3,593.03 | Trade payables, micro and small enterprises, consolidated 31-Mar-26
+R315 | page 11 | line 1118 | NUMBER | 4,376.18 | Trade payables, other creditors, consolidated 30-Sep-26
+R316 | page 11 | line 1118 | NUMBER | 2,627.00 | Trade payables, other creditors, consolidated 31-Mar-26
+R317 | page 11 | line 1119 | NUMBER | 1,441.77 | Other current liabilities, consolidated 30-Sep-26
+R318 | page 11 | line 1119 | NUMBER | 1,844.40 | Other current liabilities, consolidated 31-Mar-26
+R319 | page 11 | line 1120 | NUMBER | 1,085.07 | Short-term provisions, consolidated 30-Sep-26
+R320 | page 11 | line 1120 | NUMBER | 674.38 | Short-term provisions, consolidated 31-Mar-26
+R321 | page 11 | line 1121 | NUMBER | 30,574.82 (OCR 80,574.82) | Total equity and liabilities, consolidated 30-Sep-26 | OCR_UNCERTAIN
+R322 | page 11 | line 1121 | NUMBER | 26,139.10 | Total equity and liabilities, consolidated 31-Mar-26
+R323 | page 11 | line 1125 | NUMBER | 9,264.22 | Property plant and equipment, consolidated 30-Sep-26
+R324 | page 11 | line 1125 | NUMBER | 9,030.02 | Property plant and equipment, consolidated 31-Mar-26
+R325 | page 11 | line 1126 | NUMBER | 5.02 | Intangible assets, consolidated 30-Sep-26
+R326 | page 11 | line 1126 | NUMBER | 5.61 | Intangible assets, consolidated 31-Mar-26
+R327 | page 11 | line 1127 | NUMBER | 3,190.70 | Capital work in progress, consolidated 30-Sep-26
+R328 | page 11 | line 1127 | NUMBER | 2,797.98 | Capital work in progress, consolidated 31-Mar-26
+R329 | page 11 | line 1128 | NUMBER | 174.42 | Intangible assets under development, consolidated 30-Sep-26
+R330 | page 11 | line 1128 | NUMBER | 137.01 | Intangible assets under development, consolidated 31-Mar-26
+R331 | page 11 | line 1129 | NUMBER | 719.67 | Other non-current assets, consolidated 30-Sep-26
+R332 | page 11 | line 1129 | NUMBER | 823.19 | Other non-current assets, consolidated 31-Mar-26
+R333 | page 11 | line 1131 | NUMBER | 8,745.50 | Inventories, consolidated 30-Sep-26
+R334 | page 11 | line 1131 | NUMBER | 6,209.72 | Inventories, consolidated 31-Mar-26
+R335 | page 11 | line 1132 | NUMBER | 6,268.15 | Trade receivables, consolidated 30-Sep-26
+R336 | page 11 | line 1132 | NUMBER | 4,684.51 | Trade receivables, consolidated 31-Mar-26
+R337 | page 11 | line 1133 | NUMBER | 24.81 | Cash and cash equivalents, consolidated 30-Sep-26
+R338 | page 11 | line 1133 | NUMBER | 974.55 | Cash and cash equivalents, consolidated 31-Mar-26
+R339 | page 11 | line 1134 | NUMBER | 2,182.33 | Other current assets, consolidated 30-Sep-26
+R340 | page 11 | line 1134 | NUMBER | 1,476.52 | Other current assets, consolidated 31-Mar-26
+R341 | page 11 | line 1135 | NUMBER | 30,574.82 (OCR line truncated s74.82; text layer 30,574.82) | Total assets, consolidated 30-Sep-26 | OCR_UNCERTAIN
+R342 | page 11 | line 1135 | NUMBER | 26,139.10 | Total assets, consolidated 31-Mar-26
+R343 | page 13 | line 1154 | NUMBER | 1,866.01 | CF profit before extraordinary items and tax, consolidated H1 FY27
+R344 | page 13 | line 1154 | NUMBER | 2,851.66 | CF profit before extraordinary items and tax, consolidated FY26
+R345 | page 13 | line 1156 | NUMBER | 204.10 | CF depreciation adjustment, consolidated H1 FY27
+R346 | page 13 | line 1156 | NUMBER | 174.24 | CF depreciation adjustment, consolidated FY26
+R347 | page 13 | line 1157 | NUMBER | 5.84 | CF gratuity provision adjustment, consolidated H1 FY27
+R348 | page 13 | line 1157 | NUMBER | 17.53 | CF gratuity provision adjustment, consolidated FY26
+R349 | page 13 | line 1158 | NUMBER | 254.18 | CF interest expenses adjustment, consolidated H1 FY27
+R350 | page 13 | line 1158 | NUMBER | 147.06 | CF interest expenses adjustment, consolidated FY26
+R351 | page 13 | line 1159 | NUMBER | (18.80) | CF interest income adjustment, consolidated H1 FY27
+R352 | page 13 | line 1159 | NUMBER | (33.39) | CF interest income adjustment, consolidated FY26
+R353 | page 13 | line 1160 | NUMBER | - | CF exchange difference on forex, consolidated H1 FY27 | ZERO_STANDING
+R354 | page 13 | line 1160 | NUMBER | - | CF exchange difference on forex, consolidated FY26 | ZERO_STANDING
+R355 | page 13 | line 1161 | NUMBER | - | CF profit on sale of fixed assets, consolidated H1 FY27 | ZERO_STANDING
+R356 | page 13 | line 1161 | NUMBER | (1.57) | CF profit on sale of fixed assets, consolidated FY26
+R357 | page 13 | line 1162 | NUMBER | 2,311.34 | CF operating profit before working capital changes, consolidated H1 FY27
+R358 | page 13 | line 1162 | NUMBER | 3,155.53 | CF operating profit before working capital changes, consolidated FY26
+R359 | page 13 | line 1164 | NUMBER | (1,583.64) | CF change in trade receivables, consolidated H1 FY27
+R360 | page 13 | line 1164 | NUMBER | (169.43) | CF change in trade receivables, consolidated FY26
+R361 | page 13 | line 1165 | NUMBER | (2,535.78) | CF change in inventories, consolidated H1 FY27
+R362 | page 13 | line 1165 | NUMBER | (3,055.54) | CF change in inventories, consolidated FY26
+R363 | page 13 | line 1166 | NUMBER | (495.81) | CF change in other current assets, consolidated H1 FY27
+R364 | page 13 | line 1166 | NUMBER | (749.81) | CF change in other current assets, consolidated FY26
+R365 | page 13 | line 1167 | NUMBER | 103.51 | CF change in other non-current assets, consolidated H1 FY27
+R366 | page 13 | line 1167 | NUMBER | (265.71) | CF change in other non-current assets, consolidated FY26
+R367 | page 13 | line 1168 | NUMBER | 2,239.25 | CF change in trade payables, consolidated H1 FY27
+R368 | page 13 | line 1168 | NUMBER | 3,066.68 | CF change in trade payables, consolidated FY26
+R369 | page 13 | line 1169 | NUMBER | (402.63) | CF change in other current liabilities, consolidated H1 FY27 | OCR_UNCERTAIN
+R370 | page 13 | line 1169 | NUMBER | 1,456.16 | CF change in other current liabilities, consolidated FY26
+R371 | page 13 | line 1170 | NUMBER | (210.00) | CF income taxes paid, consolidated H1 FY27
+R372 | page 13 | line 1170 | NUMBER | (847.42) | CF income taxes paid, consolidated FY26
+R373 | page 13 | line 747 | NUMBER | (363.76) | CF cash generated from operations, consolidated H1 FY27
+R374 | page 13 | line 747 | NUMBER | 3,437.89 | CF cash generated from operations, consolidated FY26
+R375 | page 13 | line 750 | NUMBER | (573.76) | CF net cash from operating activities, consolidated H1 FY27
+R376 | page 13 | line 750 | NUMBER | 2,590.47 | CF net cash from operating activities, consolidated FY26
+R377 | page 13 | line 752 | NUMBER | (867.85) | CF purchase of tangible and intangible assets, consolidated H1 FY27
+R378 | page 13 | line 752 | NUMBER | (5,748.04) | CF purchase of tangible and intangible assets, consolidated FY26
+R379 | page 13 | line 1172 | NUMBER | - | CF proceeds from sale of fixed assets, consolidated H1 FY27 | ZERO_STANDING
+R380 | page 13 | line 1172 | NUMBER | 1.60 | CF proceeds from sale of fixed assets, consolidated FY26
+R381 | page 13 | line 1173 | NUMBER | 18.80 | CF interest received (investing), consolidated H1 FY27
+R382 | page 13 | line 1173 | NUMBER | 3.39 (OCR garbled; text layer 339) | CF interest received (investing), consolidated FY26 | OCR_UNCERTAIN
+R383 | page 13 | line 1174 | NUMBER | (849.08) | CF net cash from investing, consolidated H1 FY27
+R384 | page 13 | line 1174 | NUMBER | (5,713.05) | CF net cash from investing, consolidated FY26
+R385 | page 13 | line 1176 | NUMBER | (254.18) | CF interest paid (financing), consolidated H1 FY27
+R386 | page 13 | line 1176 | NUMBER | (147.06) | CF interest paid (financing), consolidated FY26
+R387 | page 13 | line 1177 | NUMBER | 214.42 | CF increase in long-term borrowings, consolidated H1 FY27
+R388 | page 13 | line 1177 | NUMBER | 2,402.36 | CF increase in long-term borrowings, consolidated FY26
+R389 | page 13 | line 1178 | NUMBER | 532.84 | CF increase in short-term borrowings, consolidated H1 FY27
+R390 | page 13 | line 1178 | NUMBER | 720.39 | CF increase in short-term borrowings, consolidated FY26
+R391 | page 13 | line 1179 | NUMBER | - | CF moneys raised through share warrants, consolidated H1 FY27 | ZERO_STANDING
+R392 | page 13 | line 1179 | NUMBER | 526.86 | CF moneys raised through share warrants, consolidated FY26
+R393 | page 13 | line 1180 | NUMBER | (20.00) | CF net additional/(withdrawn) by other partners in subsidiary firm, consolidated H1 FY27
+R394 | page 13 | line 1180 | NUMBER | 14.69 | CF net additional/(withdrawn) by other partners in subsidiary firm, consolidated FY26
+R395 | page 13 | line 768 | NUMBER | 473.07 | CF net cash from financing, consolidated H1 FY27
+R396 | page 13 | line 768 | NUMBER | 3,517.23 | CF net cash from financing, consolidated FY26
+R397 | page 13 | line 769 | NUMBER | (949.74) | CF net increase/(decrease) in cash, consolidated H1 FY27
+R398 | page 13 | line 769 | NUMBER | 394.65 | CF net increase/(decrease) in cash, consolidated FY26
+R399 | page 13 | line 1181 | NUMBER | 974.55 (OCR 974.58) | CF opening cash and cash equivalents, consolidated H1 FY27 | OCR_UNCERTAIN
+R400 | page 13 | line 1181 | NUMBER | 579.90 | CF opening cash and cash equivalents, consolidated FY26
+R401 | page 13 | line 1182 | NUMBER | 24.81 (OCR illegible; BS shows 24.81) | CF closing cash and cash equivalents, consolidated H1 FY27 | OCR_UNCERTAIN
+R402 | page 13 | line 1182 | NUMBER | 974.55 (OCR 974.85) | CF closing cash and cash equivalents, consolidated FY26 | OCR_UNCERTAIN
+R403 | page 14 | line 819 | NUMBER | Rs 2,107.43 Lakhs | Original allocation of warrant proceeds, object 1 (certificate)
+R404 | page 14 | line 824 | NUMBER | Rs 526.86 Lakhs | Subscription received, 25% of original allocation
+R405 | page 14 | line 818 | NUMBER | 520.31 | Actual utilised amount till 30-09-26, Rs Lakhs (OCR column assignment per table row) | OCR_UNCERTAIN
+R406 | page 14 | line 818 | NUMBER | 6.55 | Unutilised amount as on 30-09-26, Rs Lakhs (OCR column assignment per table row) | OCR_UNCERTAIN
+R407 | page 14 | line 823 | NUMBER | 25% | Subscription share of original allocation
+R408 | page 14 | line 802 | NUMBER | NSE/CML/2024/23 | NSE circular number
+R409 | page 15 | line 838 | NUMBER | Rs. 5,26,85,750 | Warrant proceeds received 27.08.2025
+R410 | page 15 | line 839 | NUMBER | 25% | Upfront receipt of total consideration
+R411 | page 15 | line 842 | NUMBER | 12,47,000 | Convertible equity share warrants allotted 27-Aug-2025
+R412 | page 15 | line 845 | NUMBER | Rs.169/- | Warrant issue price
+R413 | page 15 | line 845 | NUMBER | Rs.42.25 (25% of issue price) | Warrant subscription price
+R414 | page 15 | line 846 | NUMBER | Rs.126.75 (75% of issue price) | Warrant exercise price
+R415 | page 15 | line 848 | NUMBER | Rs.5,26,85,750/- | Subscription amount received as of reporting date
+R416 | page 15 | line 853 | NUMBER | 126.75 (balance per warrant); face value 10 (OCR "<10") | Balance payable per warrant and face value | OCR_UNCERTAIN
+R417 | page 15 | line 853 | NUMBER | 18 months | Warrant conversion window from allotment
+R418 | page 15 | line 861 | NUMBER | 0136238 | Auditor firm registration (certificate) | OCR_UNCERTAIN
+R419 | page 15 | line 862 | NUMBER | 020690 | Peer review certificate no
+R420 | page 15 | line 869 | NUMBER | 238452 | Partner membership no
+R421 | page 15 | line 870 | NUMBER | 26238452QAPRXM5385 | UDIN, certificate
+R422 | page 6 | line 306 | NUMBER | 12,47,000 (text layer 12:47.000) | Warrants allotted 27-Aug-2025, standalone note 3
+R423 | page 6 | line 306 | NUMBER | Rs 169 (text layer 169) | Warrant issue price, standalone note 3 | OCR_UNCERTAIN
+R424 | page 6 | line 309 | NUMBER | Rs 42.25 (25%) and Rs 126.75 (75%) | Warrant subscription and exercise price, standalone note 3 | OCR_UNCERTAIN
+R425 | page 6 | line 310 | NUMBER | Rs 5,26,85,750 | Subscription amount received (text layer 5.26,85.750) | OCR_UNCERTAIN
+R426 | page 6 | line 314 | NUMBER | 18 months | Conversion window, standalone note 3
+R427 | page 12 | line 674 | NUMBER | 90% | Holding Company share in Danya Electric Company profits/losses
+R428 | page 12 | line 675 | NUMBER | 7.5% | Mr Vee Rajmohan share in Danya Electric Company
+R429 | page 12 | line 675 | NUMBER | 2.5% | Mr K.V. Pradeep Kumar share in Danya Electric Company
+R430 | page 9 | line 499 | NUMBER | 238452 | Auditor partner membership no
+R431 | page 9 | line 491 | NUMBER | 013623S | Auditor firm registration, consolidated report
+R432 | page 9 | line 492 | NUMBER | 020690 | Peer review certificate no, consolidated report
+R433 | page 9 | line 500 | NUMBER | 262384520LVCDF9963 | UDIN consolidated LRR | OCR_UNCERTAIN
+R434 | page 3 | line 138 | NUMBER | 0136235 | Auditor firm registration, standalone report (text layer) | OCR_UNCERTAIN
+R435 | page 3 | line 139 | NUMBER | 020690 | Peer review certificate no, standalone report
+R436 | page 3 | line 147 | NUMBER | 238452 | Partner membership no, standalone report
+R437 | page 3 | line 148 | NUMBER | 26238452HYPQTBY855 | UDIN standalone LRR | OCR_UNCERTAIN
+R438 | page 3 | line 120 | NUMBER | CIR/CFD/CMD1/44/2019 | SEBI circular referenced in review report
+R439 | page 2 | line 105 | NUMBER | SRE 2410 | Review standard, standalone report
+R440 | page 4 | line 876 | NUMBER | L31200TN2005PLC056666 | Company CIN
+R441 | page 4 | line 877 | NUMBER | 600124 | Registered office PIN
+
+## ENTITY
+ID | page | line | TYPE | value | context | flag
+R442 | page 1 | line 22 | ENTITY | National Stock Exchange of India Limited | listing exchange
+R443 | page 1 | line 26 | ENTITY | SUPREMEPWR | trading symbol
+R444 | page 1 | line 66 | ENTITY | Priyanka Bansal, Company Secretary and Compliance Officer | filing signatory
+R445 | page 1 | line 41 | ENTITY | Statutory Auditors of the Company | limited review
+R446 | page 2 | line 69 | ENTITY | P P N and Company, Chartered Accountants, Chennai | statutory auditor
+R447 | page 2 | line 106 | ENTITY | Institute of Chartered Accountants of India | standard issuer
+R448 | page 3 | line 145 | ENTITY | R. Rajaram, Partner | auditor signatory
+R449 | page 3 | line 120 | ENTITY | Securities and Exchange Board of India | regulator
+R450 | page 4 | line 875 | ENTITY | Supreme Power Equipment Limited | reporting company
+R451 | page 6 | line 302 | ENTITY | Ministry of Corporate Affairs | regulator, Ind AS exemption
+R452 | page 6 | line 336 | ENTITY | Vee Rajmohan, Managing Director, DIN 00844400 | signatory
+R453 | page 6 | line 305 | ENTITY | Promoter and Promoter Group | warrant allottees
+R454 | page 6 | line 307 | ENTITY | Non-Promoter allottees | warrant allottees
+R455 | page 9 | line 469 | ENTITY | Danya Electric Company | subsidiary, consolidated per AS 21
+R456 | page 12 | line 673 | ENTITY | Danya Electric Company, partnership firm, 90% held | only subsidiary
+R457 | page 12 | line 675 | ENTITY | Mr. Vee Rajmohan, partner 7.5% | Danya partner
+R458 | page 12 | line 675 | ENTITY | Mr. K.V. Pradeep Kumar, partner 2.5% | Danya partner
+R459 | page 14 | line 802 | ENTITY | NSE Circular NSE/CML/2024/23 dated September 05, 2024 | certificate basis
+R460 | page 14 | line 790 | ENTITY | P P N and Company, Chartered Accountants (certificate issuer) | Utilization of Funds Certificate
+R461 | page 14 | line 801 | ENTITY | Board of Directors, Supreme Power Equipment Limited | certificate addressee
+
+## FORWARD
+ID | page | line | TYPE | value | context | flag
+R462 | page 6 | line 312 | FORWARD | Balance amount payable upon exercise of the warrants (Rs 126.75 per warrant) | warrant balance, standalone note 3
+R463 | page 6 | line 313 | FORWARD | Each warrant entitles holder to one fully paid-up equity share of face value Rs 10 on payment of balance | warrant conversion right
+R464 | page 6 | line 314 | FORWARD | Conversion can occur in one or more tranches within 18 months from allotment | warrant conversion window
+R465 | page 6 | line 318 | FORWARD | Warrants valid for period per SEBI ICDR; holders may exercise right to convert into equity shares | warrant validity
+R466 | page 6 | line 321 | FORWARD | Balances subject to confirmation; adjustments, if any, to be accounted in year of confirmation/reconciliation | pending reconciliation, standalone
+R467 | page 12 | line 686 | FORWARD | Balances subject to confirmation; adjustments, if any, to be accounted in year of confirmation/reconciliation | pending reconciliation, consolidated
+R468 | page 15 | line 849 | FORWARD | Balance amount payable upon exercise of the warrants | warrant balance, certificate
+R469 | page 15 | line 853 | FORWARD | Conversion in one or more tranches within 18 months of allotment | warrant conversion window, certificate
+R470 | page 15 | line 856 | FORWARD | Warrants valid per SEBI ICDR; holders may exercise right to convert within this period | warrant validity, certificate
+R471 | page 14 | line 823 | FORWARD | Warrant proceeds object: factory establishment/development, working capital and general corporate purposes (Rs 2,107.43 Lakhs allocation, 25% received) | use of proceeds
+
+## DATE
+ID | page | line | TYPE | value | context | flag
+R472 | page 1 | line 19 | DATE | 16.10.2026 | letter date
+R473 | page 1 | line 30 | DATE | Friday, October 16th 2026 | board meeting
+R474 | page 1 | line 39 | DATE | Half Year ended 30th September 2026 | reporting period
+R475 | page 1 | line 62 | DATE | 2026.10.16 16:37:54 +05:30 | digital signature time
+R476 | page 2 | line 78 | DATE | September 30, 2026 | review period end, standalone
+R477 | page 3 | line 120 | DATE | March 29, 2019 | SEBI circular date
+R478 | page 3 | line 147 | DATE | 16-10-2026 | standalone review report date
+R479 | page 6 | line 306 | DATE | July 14, 2025 | EGM date
+R480 | page 6 | line 306 | DATE | August 27, 2025 | warrant allotment date
+R481 | page 6 | line 295 | DATE | 16-10-2026 | board approval date, standalone note 1
+R482 | page 6 | line 302 | DATE | February 16, 2015 | MCA notification date
+R483 | page 4 | line 880 | DATE | 30TH SEPTEMBER, 2026 | standalone results period
+R484 | page 5 | line 923 | DATE | 30TH SEPTEMBER, 2026 | standalone BS date
+R485 | page 5 | line 964 | DATE | 16-10-2026 | signing date standalone BS
+R486 | page 7 | line 972 | DATE | SEPTEMBER 30, 2026 | standalone cash flow period end
+R487 | page 7 | line 1027 | DATE | 16-10-2026 | signing date standalone CF
+R488 | page 8 | line 422 | DATE | September 30, 2026 | consolidated review period
+R489 | page 9 | line 463 | DATE | March 29, 2019 | SEBI circular date
+R490 | page 9 | line 497 | DATE | 16-10-2026 | consolidated review report date
+R491 | page 10 | line 1035 | DATE | SEPTEMBER 30, 2026 | consolidated results period end
+R492 | page 11 | line 1100 | DATE | 30TH SEPTEMBER, 2026 | consolidated BS date
+R493 | page 11 | line 1143 | DATE | 16-10-2026 | signing date consolidated BS
+R494 | page 12 | line 667 | DATE | February 16, 2015 | MCA notification date, consolidated note 2
+R495 | page 12 | line 661 | DATE | 16-10-2026 | board approval date, consolidated note 1
+R496 | page 13 | line 1151 | DATE | 30th September 2026 | consolidated CF period end
+R497 | page 13 | line 1151 | DATE | 31st March 2026 | FY26 comparative year end
+R498 | page 14 | line 802 | DATE | September 05, 2024 | NSE circular date
+R499 | page 14 | line 809 | DATE | September 30, 2026 | expenditure certified up to
+R500 | page 14 | line 814 | DATE | 30-09-26 | unutilised as on date
+R501 | page 15 | line 838 | DATE | 27.08.2025 | warrant proceeds received
+R502 | page 15 | line 842 | DATE | August 27, 2025 | warrant allotment
+R503 | page 15 | line 844 | DATE | July 14, 2025 | EGM date
+R504 | page 15 | line 836 | DATE | half year ended September 30, 2026 | certificate period
+R505 | page 15 | line 872 | DATE | 16-10-2026 | certificate date
+R506 | page 15 | line 853 | DATE | 18 months from allotment date | conversion window
+
+## QUALIFIER
+ID | page | line | TYPE | value | context | flag
+R507 | page 1 | line 38 | QUALIFIER | Un-Audited Financial Results (Standalone and Consolidated), Half Year ended 30 Sep 2026, with Limited Review Report | results unaudited, limited review only
+R508 | page 1 | line 58 | QUALIFIER | Digitally signed by Priyanka Bansal 16:37:54 +05:30 | filing signature
+R509 | page 2 | line 107 | QUALIFIER | Review gives moderate assurance; not an audit | review scope, standalone
+R510 | page 3 | line 117 | QUALIFIER | No audit performed; no audit opinion expressed | review scope, standalone
+R511 | page 4 | line 879 | QUALIFIER | All Amounts are in Rs. Lakhs except for No. of Shares & EPS | unit convention standalone P&L
+R512 | page 4 | line 161 | QUALIFIER | Column status: H1 FY27 Unaudited, H2 FY26 Unaudited, H1 FY26 Unaudited, FY26 Audited (per text layer) | standalone P&L status
+R513 | page 4 | line 200 | QUALIFIER | EPS share counts are Weighted Average | EPS basis
+R514 | page 5 | line 922 | QUALIFIER | All Amounts are in Rs. Lakhs | unit, standalone BS
+R515 | page 5 | line 957 | QUALIFIER | Figures of the previous period/year have been rearranged/reclassified wherever necessary | reclassification
+R516 | page 6 | line 294 | QUALIFIER | Note 1: results per Reg 33, reviewed by Audit Committee, approved by Board 16-10-2026; prepared per AS under Section 133 | standalone note 1
+R517 | page 6 | line 302 | QUALIFIER | Note 2: SME-exchange-listed companies exempt from adoption of Ind AS (MCA notification 16 Feb 2015) | Ind AS exemption
+R518 | page 6 | line 306 | QUALIFIER | Note 3: warrant allotment 27 Aug 2025, 12,47,000 warrants, 25% received | warrant note
+R519 | page 6 | line 321 | QUALIFIER | Note 4: balances subject to confirmation and reconciliation | standalone note 4
+R520 | page 6 | line 323 | QUALIFIER | Note 5: single business segment; segment disclosure not applicable | segment
+R521 | page 6 | line 325 | QUALIFIER | Note 6: half-year EPS on weighted average shares by days; sum of half-year EPS may not reconcile to annual EPS | EPS
+R522 | page 6 | line 329 | QUALIFIER | Note 7: previous period figures regrouped/reclassified | regrouping
+R523 | page 6 | line 330 | QUALIFIER | Note 8: no exceptional and extra-ordinary items | exceptional
+R524 | page 7 | line 971 | QUALIFIER | All Amounts are in Rs. Lakhs | unit, standalone CF
+R525 | page 7 | line 1019 | QUALIFIER | Note (i): Figures in brackets are outflows/deductions | CF note
+R526 | page 7 | line 1020 | QUALIFIER | Note (ii): Cash Flow Statement prepared under Indirect Method per AS-3 | CF note
+R527 | page 8 | line 453 | QUALIFIER | Review gives moderate assurance; not an audit | review scope, consolidated
+R528 | page 8 | line 460 | QUALIFIER | No audit opinion expressed | review scope, consolidated
+R529 | page 9 | line 469 | QUALIFIER | Statement includes results of subsidiary Danya Electric Company (AS 21) | consolidation scope
+R530 | page 9 | line 473 | QUALIFIER | Subsidiary results are unaudited and based solely on unaudited interim financial information | reliance on unaudited subsidiary
+R531 | page 10 | line 1033 | QUALIFIER | Rs. in Lakhs except for No. of Shares & EPS | unit, consolidated P&L
+R532 | page 10 | line 1041 | QUALIFIER | Column status: H1 FY27 Unaudited, H2 FY26 Unaudited, H1 FY26 Unaudited, FY26 Audited | consolidated P&L status
+R533 | page 11 | line 1099 | QUALIFIER | Rs. in Lakhs | unit, consolidated BS
+R534 | page 11 | line 1136 | QUALIFIER | Figures of previous period/year rearranged/reclassified | reclassification
+R535 | page 12 | line 656 | QUALIFIER | Notes on Consolidated Financial Results (header) | consolidated notes
+R536 | page 12 | line 658 | QUALIFIER | Note 1: results per Reg 33, reviewed by Audit Committee and approved by Board 16-10-2026 | consolidated note 1
+R537 | page 12 | line 670 | QUALIFIER | Note 2: SME-listed companies exempt from Ind AS | Ind AS exemption
+R538 | page 12 | line 673 | QUALIFIER | Note 3: consolidated per AS 21 line-by-line; Danya Electric Company 90%; intercompany eliminated; minority interest = other partners share | consolidation basis
+R539 | page 12 | line 684 | QUALIFIER | Note 4: subsidiary results unaudited, "[reviewed by the Statutory Auditors / certified by the management]" (alternative left unresolved in filing) | subsidiary status
+R540 | page 12 | line 686 | QUALIFIER | Note 5: balances subject to confirmation and reconciliation | consolidated note 5
+R541 | page 12 | line 689 | QUALIFIER | Note 6: EPS on weighted average by days; half-year EPS may not sum to annual | EPS
+R542 | page 12 | line 692 | QUALIFIER | Note 7: single business segment | segment
+R543 | page 12 | line 694 | QUALIFIER | Note 8: previous period figures regrouped/reclassified | regrouping
+R544 | page 12 | line 696 | QUALIFIER | Note 9: no exceptional/extra-ordinary items | exceptional
+R545 | page 13 | line 1149 | QUALIFIER | Rs. in Lakhs | unit, consolidated CF
+R546 | page 13 | line 1184 | QUALIFIER | Note (i): Figures in brackets are outflows/deductions | CF note
+R547 | page 13 | line 1185 | QUALIFIER | Note (ii): Cash Flow Statement under Indirect Method per AS-3 | CF note
+R548 | page 14 | line 808 | QUALIFIER | Certificate: expenditure incurred up to Sep 30, 2026 certified per NSE circular | certificate scope
+R549 | page 14 | line 811 | QUALIFIER | Objects for which funds raised and where there has been a deviation (table) | deviation table heading
+R550 | page 14 | line 812 | QUALIFIER | Table amounts in Rs. in Lakhs | certificate unit
+R551 | page 15 | line 834 | QUALIFIER | No deviation or variation in use of Preferential Issue of Convertible Warrants proceeds for half year ended Sep 30, 2026 | statement of deviation
+R552 | page 15 | line 839 | QUALIFIER | Upfront receipt of 25% of total consideration | proceeds received basis
+R553 | page 15 | line 841 | QUALIFIER | Notes:- 1. warrant allotment terms (12,47,000 warrants, Rs.169, 25%/75% split) | certificate note
+R554 | page 15 | line 848 | QUALIFIER | Only subscription amount (25%) received; balance payable on exercise | certificate note

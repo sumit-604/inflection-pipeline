@@ -1,0 +1,22 @@
+stage: A2-enumerator
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/supremepwr-h1fy27/work/ledger_results_supremepwr_h1fy27.md"
+counts:
+  notes: 21
+  line_items: 153
+  zero_standing: 13
+  agenda_items: 2
+  auditor_paras: 9
+  entities: 20
+flags_raised: [ZERO_STANDING, OCR_UNCERTAIN, FOOTNOTE_UNRESOLVED, RESTATED, MISSING_FROM_STRUCTURED]
+ids_in_structured: 554
+ids_referenced: 554
+orphan_ids: []
+missing_from_structured: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11, M12, M13, M14, M15, M16, M17, M18, M19, M20, M21, M22, M23, M24, M25, M26, M27, M28, M29, M30, M31, M32, M33, M34, M35]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Prior ledger absent, so ENTITY_CHANGE is untestable (only subsidiary: Danya Electric Company, 90%). Eight dash rows were missing from A1 (standalone and consolidated Extraordinary Items, Tax Adjustments for Earlier Years, standalone CF dividends, interest and extraordinary lines); Correction loop 1 added M12-M18 (item VII PBT SA and CON, SA CF profit on sale of fixed asset and operating total (A) with unreadable values, SA and CON management-responsibility paras, Audit Committee). M08 is unreadable standalone CF rows (net investing, net increase, closing cash). M10/M11 are the unmodified auditor conclusions. No Emphasis of Matter or Going Concern found. CON note 4 leaves the subsidiary review alternative unresolved (FOOTNOTE_UNRESOLVED).  Correction loop 2: independent fulltext sweep found 17 more units A1 lacks (M19-M35): Unaudited/Audited column headers on SA and CON BS and CF, six signing dates (L283,L339,L412,L649,L708,L1192), column date headers and period titles. Loop back to A1 only if it needs these as rows. Board outcome has only 2 agenda items; meeting ran 2 hours."

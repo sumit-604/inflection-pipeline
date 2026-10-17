@@ -1,0 +1,46 @@
+stage: A5-adversary
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "L214 SA BS column audit status (30-Sep-26 Unaudited / 31-Mar-26 Audited), QUALIFIER"
+    - "L349 and L974 SA CF column audit status (H1FY27 Unaudited / FY26 Audited), QUALIFIER"
+    - "L588 CON BS column audit status, QUALIFIER"
+    - "L725 CON CF column audit status, QUALIFIER"
+    - "L339 SA notes page signing date 16-10-2026, DATE"
+    - "L708 CON notes page signing date 16-10-2026, DATE"
+    - "L1192 CON CF page signing date 16-10-2026, DATE"
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "PAT ties to the rupee because standalone books the Danya share; consolidated is the economic view; headline numbers tie (rev 234, 217, 617)", counter: "Elimination arithmetic proves two-way goods trade with the MD-co-owned firm in FY26: CON purchases below SA by Rs 6.16 Cr (parent bought at least that from Danya), CON revenue below SA by Rs 8.44 Cr (parent sold at least that into Danya), CON other creditors below SA by Rs 4.48 Cr at 31-Mar-26 (parent owed Danya, or a regrouping). Owners PAT equals SA PAT in all four periods, so no unrealised profit was ever eliminated, though Danya implied stock rose Rs 7.53 Cr in FY26 to Rs 17.02 Cr at 30-Sep-26 (19.5% of group inventory). Upper bound of unremoved margin about Rs 1.62 Cr pre-tax in FY26 [INFERENCE]; H1FY27 growth not inflated.", source_line: "L887 vs L1046; L883 vs L1042; L939 vs L1118; L194 vs L1074; L679; L953 vs L1131; L888 vs L1047", type: MISSING}
+  - {claim: "Parent earns 13.3% post-tax on Danya capital, above after-tax cost of debt; minority subsidises the parent (rev 431, 647)", counter: "The yield rests on Danya profit earned partly on two-way trade with the parent at undisclosed prices and possibly sitting in Rs 17.02 Cr of stock run on near-nil cash (CON minus SA cash 2.90 lakh); the parent's exposure is the Rs 16.52 Cr capital account plus trade balances in both directions.", source_line: "L955 vs L1133; L953 vs L1131; L950; L939 vs L1118", type: MISSING}
+findings_by_type:
+  factual: []
+  missing:
+    - "M-1 (A2): seven fulltext units absent from structured and ledger: column audit-status headers L214, L349/L974, L588, L725; signing dates L339, L708, L1192. A2 count test for dates and qualifiers recounted A1 rows instead of grepping the fulltext."
+    - "M-2 (A4): two-way intercompany goods trade not identified: CON purchases below SA by Rs 2.63 / 3.52 / 6.16 Cr in H1FY26 / H2FY26 / FY26 (L887 vs L1046); CON revenue below SA by Rs 8.44 Cr FY26; CON other creditors below SA by Rs 4.48 Cr at 31-Mar-26 (L939 vs L1118). rev 234 names two cost lines below standalone and omits purchases. Graft at rev 234, 431, flags, brief part 3; widen Q7."
+    - "M-3 (A4): nil unrealised-profit elimination not tested: owners PAT equals SA PAT in all four periods (L194 vs L1074) while Danya implied stock is Rs 17.02 Cr (L953 vs L1131) after a Rs 7.53 Cr FY26 build (L888 vs L1047), cash near nil. Graft at rev 234, 617, 431, flags; add a management question."
+  contradiction: []
+  style:
+    - "S-1: rev 422 '1.10 x 2 = 2.19' should read '109.73 lakh x 2 = 219.46 lakh'."
+    - "S-2: rev 571 and 701 'Danya repaid Rs 2.96 Cr' should say term debt; Danya short-term borrowings rose Rs 1.14 Cr, net Rs 1.82 Cr (L1110-1114 vs L930-934)."
+    - "S-3: Paid up Equity Share Capital label rows (L199/L909, L572/L1083) carry no value; A2 may log as label-only rows."
+    - "S-4: A1 anchors R117/R118 cite L945; values sit on L947; logged for A1."
+loop_back_to: "A2"
+gap: "A2: add the seven fulltext units in coverage.missing_from_ledger as M rows (MISSING, low materiality). A3: dispose the new rows. A4: graft M-2 (two-way trade with Danya proven by CON purchases and revenue below SA in FY26 and CON other creditors below SA at 31-Mar-26) and M-3 (nil unrealised-profit elimination against Rs 17.02 Cr Danya stock and near-nil Danya cash) at rev 234, 431, 617, the flags and brief part 3, widen Q7, add one question; apply S-1 and S-2."
+style_notes:
+  - "S-1: rev 422 arithmetic text slip (1.10 x 2 = 2.19); figures stand."
+  - "S-2: Q13 should say term debt and net Danya debt change Rs 1.82 Cr."
+  - "S-3: blank Paid up Equity Share Capital label rows; no figure affected."
+  - "S-4: A1 line anchor R117/R118 off by two lines; unused by A4."
+analyst_note: "Arithmetic is clean: every derived cell in A4 recomputes within rounding, and the CON statements foot and tie. The gap is analytical. Elimination arithmetic proves two-way goods trade with Danya in FY26: CON purchases sit Rs 6.16 Cr below SA, so the parent bought at least that from the firm beyond the firm's own third-party buying; CON revenue sits Rs 8.44 Cr below SA, so the parent sold at least that into the firm; CON other creditors sit Rs 4.48 Cr below SA at 31-Mar-26. Owners PAT equals SA PAT to the rupee in all four periods, so no unrealised profit was ever eliminated, although Danya's implied stock rose Rs 7.53 Cr in FY26 to Rs 17.02 Cr (19.5% of group inventory) with near-nil cash. H1FY27 growth is not inflated by this (Danya stock +0.48 Cr); FY26 CON profit could carry up to about Rs 1.62 Cr pre-tax of unremoved margin. The coverage gap is mechanical and low materiality. A4's orphan disposition rests on the A3 register by reference; my spot-check of uncited ranges found nothing material left unaddressed."

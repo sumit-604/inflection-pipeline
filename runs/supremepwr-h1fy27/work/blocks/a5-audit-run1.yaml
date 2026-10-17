@@ -1,0 +1,46 @@
+stage: A5-adversary
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: ["R087-R090", "R095-R096", "R101-R102", "R109-R110", "R111-R112", "R117-R118", "R123-R124", "R125-R126", "R135-R136", "R139-R140", "R141-R142", "R143-R144", "R145-R146", "R149-R150", "R165-R166", "R173-R174", "R175-R176", "R181-R182", "R183-R184", "R185-R186", "R189-R190", "R191-R192", "R193-R194", "R195-R196", "R285-R288", "R289-R292", "R293-R296", "R297-R298", "R299-R300", "R301-R302", "R309-R310", "R317-R318", "R319-R320", "R321-R322", "R325-R326", "R329-R330", "R331-R332", "R339-R340", "R341-R342", "R343-R344", "R345-R346", "R347-R348", "R349-R350", "R351-R352", "R353-R354", "R355-R356", "R379-R380", "R381-R382", "R383-R384", "R385-R386", "R387-R388", "R389-R390", "R391-R392", "R395-R396", "R397-R398", "R399-R400", "R401-R402", "R002", "R475/R508/R444", "R446/R447/R439/R438/R449", "R529", "R430-R437/R418-R421", "R448/R476/R478/R488/R490", "R444", "R446", "R447", "R448", "R459", "R460", "R438-R441"]
+  missing_from_ledger: ["FT L899 SA P&L item VII Profit Before Extraordinary Items and Tax (1,787.67/1,464.63/1,227.24/2,691.87)", "FT L1060 CON P&L item VII (1,866.01/1,564.59/1,287.07/2,851.66)", "FT L982 SA CF Profit On Sale of Fixed Asset (H1FY27 dash; FY26 garbled, ties as (1.57))", "FT L379 SA CF NET CASH FLOWS FROM OPERATING ACTIVITIES (A) (values garbled)", "FT L97-102 SA auditor management-responsibility paragraph, AS 25 qualifier", "FT L440-447 CON auditor management-responsibility paragraph, AS 25 qualifier", "FT L39-40/L295/L660 entity Audit Committee"]
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Growth is real at PBT; ~98% of PBT change recurring (A4 L250, L317, L656)", counter: "CON-over-SA revenue Rs 8.17 Cr equals CON-over-SA receivable build Rs 8.65 Cr; under stable intercompany balances the non-parent revenue was uncollected at 30-Sep-26", source_line: "R197, R003, R359, R153 (FT L1042, L883, L1164, L988)", type: MISSING}
+  - {claim: "Indicative ROCE 23.6%; margin near 17% as strength (A4 L417, L454, L580)", counter: "Capital base excludes Rs 84.59 Cr supplier credit (147% of debt); Rs 40.83 Cr (48.3%) is MSE dues; floor 52.7 days of total spend (~44.7 GST-inclusive) vs 45-day statutory term [INFERENCE]; no overdue-MSE disclosure", source_line: "R313-R316, R209, R217, R233, R377 (FT L1116-1118, L1046-1052, L752)", type: MISSING}
+  - {claim: "Danya capital contribution (acquisition-economics probe, nearest analogue; A4 L504)", counter: "Parent capital in Danya +30.3% to Rs 16.52 Cr (7.5x annualised share, 13.3% yield) while Danya PAT fell 13.6% HoH; Danya pre-tax return 18.3% vs group 23.6%; Danya tax 35.2% vs parent 25.18%; minority withdrew 20.00 vs 12.19 share", source_line: "R123-R124, R179, R249, R055, R253, R059, R257, R063, R269-R271, R303-R304, R393", type: MISSING}
+findings_by_type:
+  factual:
+    - "F-1 A4 Q11 (A4 L503): 'Rs 8.65 Cr sits in Danya' unsupported; extract supports only CON-minus-SA receivable change (R359 - R153), which nets intercompany balances. Route A4."
+    - "F-2 A4 L562 and L66: warrant balance called 'due' / 'payable within 18 months'; extract says payable upon optional exercise (FT L312, L849-857). Route A4."
+    - "F-3 A4 L524: 'BSE/NSE results filing'; filing addressed to NSE only (FT L21-26). Route A4."
+  missing:
+    - "M-1 Ledger lacks 4 valued line items: FT L899, L1060, L982, L379. Route A2."
+    - "M-2 Ledger lacks 2 auditor management-responsibility paragraphs with AS 25 qualifier: FT L97-102, L440-447. Route A2."
+    - "M-3 Ledger lacks entity Audit Committee (FT L39-40, L295, L660). Route A2."
+    - "M-4 70 orphan ledger rows with no A4 citation or 'reviewed, no finding' mark (list in coverage.orphan_rows); real review needed for R123-R124, R317-R320, R383-R384, R185-R186/R189-R190, R195-R196, R289. Route A3."
+    - "M-5 Surviving bear counter not in A4: CON-over-SA revenue vs receivable match (Claim 1). Route A4."
+    - "M-6 Surviving bear counter not in A4: MSE share of supplier credit and floor test (Claim 2). Route A4."
+    - "M-7 Surviving bear counter not in A4: Danya capital return, tax cost, HoH profit fall, BS tie (acquisition probe). Route A4."
+  contradiction:
+    - "C-1 A4 Q13 (A4 L505) asks IR about a Rs 3.03 Cr receivable gap built on R130, which A4 L23 excludes; 5-for-8 digit readings at R130 and R153 would foot the Mar-26 SA BS (24,873.69 vs 24,873.68) and close the CF residual (0.01), same pattern as R043. Hold Q13 pending A1 re-read. Route A4."
+  style:
+    - "S-1 A4 L266 label 'H1FY28 and earlier' should be 'H1FY25 and earlier'."
+    - "S-2 A4 L454 CON ROCE capital employed includes MI but formula omits it (ex MI 24.1%)."
+    - "S-3 A4 L16 'auditor paragraphs 9 (+M10, M11)': ledger 9 already includes M10, M11."
+    - "S-4 A4 L560 causal 'because' tagged FILED; causal link is INFERENCE."
+    - "S-5 CON payable days change +5.5 rounded vs +5.57 unrounded."
+    - "S-6 Two forward-map catalysts undated (A4 L588-589); name first observation point."
+loop_back_to: "A2"
+gap: "A2: add MISSING_FROM_STRUCTURED rows for FT L899, L1060, L982, L379 line items, FT L97-102 and L440-447 AS 25 auditor paragraphs, Audit Committee entity (route to A1). A3: review or mark 'reviewed, no finding' 70 orphan ledger rows; real review for R123-R124, R317-R320, R383-R384, R185-R186/R189-R190, R195-R196, R289. A4: graft 3 surviving bear counters (revenue-receivable match; MSE share and floor; Danya capital return and tax cost); C-1 hold Q13 pending A1 re-read of R130/R153/R043; F-1 Q11 attribution; F-2 warrant balance is an option, not due; F-3 NSE not BSE/NSE."
+style_notes: ["S-1 A4 L266 H1FY28 label should be H1FY25", "S-2 CON ROCE CE includes MI, formula omits it", "S-3 auditor paragraph count wording", "S-4 causal clause tagged FILED", "S-5 payable days +5.5 vs +5.57 rounding", "S-6 two undated forward-map catalysts"]
+analyst_note: "Arithmetic is clean: every derived A4 cell recomputes within rounding, and both consolidated statements foot and tie. INCOMPLETE comes from completeness, not numbers. First, A1 and A2 dropped four valued line items, two of them item VII rows that A4 itself cites as tie anchors. Second, 70 ledger rows carry no A4 citation; A4's 'no unreviewed ledger row' repeats A2's ID count. A 'reviewed, no finding' register clears most of them. R123-R124 needs real review: the parent's Danya capital rose Rs 3.84 Cr, of which Rs 1.10 Cr is the retained profit share. That confirms A3's H1FY27 column reading for the partnership share. Third, Q13 would send IR a question built on R130, a row A4 itself excludes. One 5-for-8 digit misread at R130 and at R153 foots the Mar-26 SA balance sheet and closes the cash-flow residual, the same pattern as R043. A1 should re-read before any IR letter. Fourth, three bear counters survive and are not in A4. The loop starts at A2; A3 and A4 follow."

@@ -1,0 +1,23 @@
+# Run log: SUPREMEPWR H1 FY27 (/run-quarterly, 2026-10-17)
+- Checkout guard PASSED 2026-10-17 for the batch (worktree run/quarterly-q2fy27-2026-10-17 from origin/main e24a5bdb); not rerun per batch instruction.
+- Protocol present: Quarterly_Results_Review_Protocol_v1_4.md. Toolchain: poppler 25.07, tesseract 5.4 (PATH prefixed per call).
+- Doc class: SupremePower_H1FY27_Results.pdf (15 pp) -> results (Reg 30 Board Outcome cover dated 16.10.2026; Reg 33 standalone + consolidated half-year results; Reg 32 deviation statement on preferential warrants).
+- Period detected from page 1: half year ended 30-Sep-2026 (SME half-yearly filer). Run folder named runs/supremepwr-h1fy27, quarter tag h1fy27. Sparse pattern added for it.
+- No concall, no presentation -> FULL QUARTER (half-year) run, Role 4 only.
+- Notion live search 2026-10-17: no company page. companies/SUPREMEPWR.md absent; no spear on record. PRE-THESIS READ. Thesis copy at work/notion-thesis.md.
+- Prior-period ledger / extract: none in repo (ND).
+- A1 GATE PASS: 15/15 pages (pp1-13 image pages with hidden OCR text layer, text-only; pp14-15 zero-char auditor certificate OCR'd 200dpi; pp4,5,7,10,11,13 garbled layer re-OCR'd 300dpi, appended L874-1193). Units Rs Lakhs x0.01. R001-R554, 46 OCR_UNCERTAIN rows. Tokens 109,578, wall 9m47s.
+- A2 GATE PASS: count test matched all categories, 554/554 IDs referenced, orphan_ids empty. Cost check pass: 76,630 < 109,578. Wall 3m31s. MISSING_FROM_STRUCTURED M01-M11 (8 dash ZERO_STANDING rows, M08 garbled standalone CF totals, M10-M11 unmodified auditor conclusions); ledger carries them as rows; no A1 loop (Aurum precedent; gate A2 tests count + orphans only).
+- A3 GATE PASS: F1-F17 all statused (FINDING 10, PASS 4, N.A. 3), 16 findings each line-cited; 3 FORWARD-SIGNAL + 10 AMBIGUOUS to A4 questions. Tokens 150,593, wall 8m58s. A3-15 flags A1 rows R043/R023/R065/R106/R130/R147-148 failing arithmetic; no gate mandates an A1 loop here, so carried to A4/A5 (A5 loop trigger governs).
+- A4 done: PROCEED WITH FLAGS, PRE-THESIS READ, 17 QfM rows (YAML 18, Q1 split), 7 monitorables, brief present. Tokens 185,423, wall 17m40s.
+- A5 run1 INCOMPLETE (loop_back_to A2): MISSING M-1..M-3 (A2), M-4 (A3), M-5..M-7 (A4); CONTRADICTION C-1 (A4, Q13 on excluded R130); FACTUAL F-1..F-3 (A4); STYLE S-1..S-6 logged. Zero arithmetic mismatches. Tokens 257,520, wall 18m42s. Loop iteration 1 starts: A2 -> A3 -> A4 -> A5.
+- LOOP 1 A2: M12-M18 added, gate pass, 554/554, orphans empty. Tokens 46,159, wall 0m41s.
+- LOOP 1 A3: section 6 register 572 IDs (154 cited, 136 routed, 282 reviewed-no-finding); six targeted reviews; new A3-17; A3-13 -> NEUTRAL-FACT (extraction misread). F1-F17 unchanged. Tokens 185,773, wall 11m58s.
+- LOOP 1 A4: verdict PROCEED WITH FLAGS unchanged; M-4..M-7, C-1, F-1..F-3 and style fixed; 19 QfM rows (table = YAML). Tokens 171,443, wall 9m56s. A4 notes auditor-paragraph count follows the ledger (9 structured + M10/M11/M16/M17 separate).
+- LOOP 1 A5 re-audit killed by laptop restart (no output written; audit file still run 1). Mechanical re-run per parent instruction; not counted against loop cap.
+- LOOP 1 A5 re-audit (mechanical re-run) INCOMPLETE: M-1 (A2, 7 date/qualifier units: 4 Unaudited/Audited column headers, 3 signing dates), M-2 (A4, two-way parent-Danya goods flow FY26), M-3 (A4, no unrealised-profit elimination, Danya stock). No FACTUAL/CONTRADICTION; zero arithmetic mismatches. STYLE S-1..S-4 logged. Tokens 268,727, wall 18m52s. LOOP 2 starts under batch loop rule relayed by parent session (operator 2026-10-17: finish without waiting).
+- LOOP 2 A2: M19-M35 added from independent fulltext date/qualifier sweep; gate pass; 554/554, orphans empty. Tokens 60,151, wall 2m13s.
+- LOOP 2 A3: M19-M35 disposed (register 589 IDs: 156 cited, 138 routed, 295 reviewed-no-finding); new A3-18 NEUTRAL-FACT (H2FY26 column is an unaudited balancing figure); signing dates all 16-10-2026, F13 PASS. Tokens 139,401, wall 6m19s.
+- LOOP 2 A4: PROCEED WITH FLAGS unchanged; 589-ID preamble, A3-18 caveats, M-2 (Q20), M-3 (Q21), style fixed; 21 QfM (table = YAML). Tokens 160,264, wall 8m49s.
+- LOOP 2 A5 final INCOMPLETE: F-1 FACTUAL (A4 unrealised-profit 'bound' is constant-mix; FY26 max Rs 3.57 Cr; H1FY27 -3.57 to +4.20 Cr), C-1 CONTRADICTION (Rs 8.17 Cr gap wording vs A4 L243/L248), M-2 MISSING (A2 bookkeeping duplicates, nil content). STYLE S-1..S-7. Verdict unaffected. Tokens 287,055, wall 19m25s. No third loop (batch rule); closed with open items flagged.
+- Commit excludes scratch page images (work/a1-results/*.png, *.jpg; 11 MB), matching the Aurum run. notion-payload.md and session-cost.md written.

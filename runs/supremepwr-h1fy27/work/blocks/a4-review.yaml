@@ -1,0 +1,70 @@
+stage: A4-analyst
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results]
+ledger_reconciliation:
+  notes: 21
+  turns: 0
+  slides: 0
+  all_reviewed: true
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3-18]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "ND (no Notion page; companies/SUPREMEPWR.md absent; no spear). PRE-THESIS READ, treated as not held"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "H1FY26", owners_pat_gap_pct: 0.00, group_pat_incl_mi_gap_pct: 1.00}
+  - {period: "H2FY26", owners_pat_gap_pct: 0.00, group_pat_incl_mi_gap_pct: 1.28}
+  - {period: "FY26", owners_pat_gap_pct: 0.00, group_pat_incl_mi_gap_pct: 1.15}
+  - {period: "H1FY27", owners_pat_gap_pct: 0.00, group_pat_incl_mi_gap_pct: 0.89}
+questions_for_management:
+  - {q: "Promoter share of the 12,47,000 warrants, exact exercise-window end date, and do holders intend to exercise and pay the Rs 15.81 Cr balance before it (yes/no)?", from_finding_id: "A3-01, A3-05"}
+  - {q: "Undrawn sanctioned working capital limits at 30-Sep-26 in Rs Cr, given SA cash Rs 0.22 Cr and net debt Rs 54.80 Cr?", from_finding_id: "A3-01"}
+  - {q: "Share of the Rs 70.44 Cr SA inventory that is order-backed finished goods, and order book at 30-Sep-26 in Rs Cr?", from_finding_id: "A4-step5"}
+  - {q: "Percent of H1FY27 revenue manufactured in-house vs traded, and why no cost of materials consumed line?", from_finding_id: "A3-11"}
+  - {q: "What asset is CWIP Rs 31.91 Cr, what capacity, and what commissioning month?", from_finding_id: "A3-11"}
+  - {q: "Split of the Rs 5.20 Cr warrant proceeds utilised across factory, working capital and GCP, in Rs lakh?", from_finding_id: "A3-06"}
+  - {q: "Danya revenue and intercompany sales with the parent in H1FY27 and H1FY26, in Rs Cr?", from_finding_id: "A3-02"}
+  - {q: "Gross margin bridge in bps for the 129 bps CON gross margin fall: input cost or price and mix?", from_finding_id: "A3-02"}
+  - {q: "Did staff or expenses move between Danya and the parent; why are CON other expenses Rs 0.43 Cr below SA in H1FY26 and CON employee cost Rs 0.44 Cr below SA in H2FY26 (unassured balancing column)?", from_finding_id: "A3-03"}
+  - {q: "Were Danya H1FY27 results auditor-reviewed or management-certified, and will note 4 be corrected?", from_finding_id: "A3-12, A3-04"}
+  - {q: "Of the at-least Rs 8.65 Cr by which the CON receivables build exceeded SA, how much is Danya external receivables vs a change in the parent's receivable from Danya; will Danya revenue, PAT and receivables be disclosed each half?", from_finding_id: "A3-04"}
+  - {q: "Does Danya pay the MD or the other partner interest on capital or remuneration (FY26, H1FY27 amounts); why did minority partners withdraw Rs 0.20 Cr, above their Rs 0.12 Cr share, while the parent injected Rs 2.75 Cr?", from_finding_id: "A3-16"}
+  - {q: "Danya repaid Rs 2.96 Cr of term debt while its short-term debt rose Rs 1.14 Cr (total debt down Rs 1.82 Cr) as the parent took on term debt: why did debt move to the parent, and why grow parent capital in Danya 30.3% in a firm taxed about 35% earning about 18% pre-tax vs group 23.6%; any merger or partner buyout plan?", from_finding_id: "A3-16"}
+  - {q: "Where was the about Rs 2.12 Cr Danya profit share removed in the FY26 SA cash flow, what was the parent's investment in Danya at 31-Mar-2025, and how much of FY26 SA CFO Rs 27.73 Cr is non-cash?", from_finding_id: "A3-14"}
+  - {q: "Percent of SA trade payables (Rs 75.61 Cr) confirmed at the FY26 audit and adjustments booked, in Rs?", from_finding_id: "A3-07"}
+  - {q: "Of the Rs 40.83 Cr consolidated MSE dues at 30-Sep-26, how much was beyond the agreed or statutory term, what MSMED s.16 interest was accrued, and any s.43B(h) disallowance expected for FY27?", from_finding_id: "A3-07"}
+  - {q: "Breakup of other current liabilities (customer advances, capital creditors, statutory dues, current maturities) at 31-Mar-26 and 30-Sep-26; did customer advances fall in H1FY27?", from_finding_id: "A3-17"}
+  - {q: "Method and price behind the frozen diluted count 2,50,67,330 across H2FY26, FY26 and H1FY27 (implied fixed price about Rs 135)?", from_finding_id: "A3-10"}
+  - {q: "Top customer and top-five share of H1FY27 revenue; any state utilities?", from_finding_id: "A4-step5"}
+  - {q: "FY26: parent sold at least Rs 8.44 Cr to Danya and bought at least Rs 6.16 Cr from it. Intercompany sales each way in FY26 and H1FY27 in Rs Cr, goods and pricing basis each way, and amount owed by the parent to Danya at 31-Mar-26 and 30-Sep-26 (CON other creditors Rs 4.48 Cr below SA at 31-Mar-26)?", from_finding_id: "A3-02, A3-03 (A4 loop 2, 1-SVC)"}
+  - {q: "Owners' PAT equals SA PAT in all four periods, so no unrealised profit was eliminated: how much of Danya's Rs 17.02 Cr stock (Rs 16.53 Cr at 31-Mar-26) was bought from the parent, at what margin, why no elimination, what Danya holds, and how it funds that stock with Rs 2.90 lakh cash?", from_finding_id: "A3-02 (A4 loop 2, Step 2 bear counter 2)"}
+monitorables:
+  - {item: "Warrant exercise or lapse, 12,47,000 warrants, Rs 15.81 Cr balance payable only on exercise, +4.99% shares on full exercise", implied_date: "about 27-Feb-2027", source_ref: "A3-01, A3-05; R417, R464, R480; L314-315, L848-855"}
+  - {item: "Next Reg 32 utilisation certificate with object-wise split", implied_date: "about 30-May-2027 (with FY27 results, implied)", source_ref: "A3-06; R403-R406, R551; L818-836"}
+  - {item: "FY27 results: CON cash conversion cycle (bull <=104.4 days, bear >120.6 days), payable days, FY27 CFO/PAT, net debt, OCL level", implied_date: "about 30-May-2027 (implied, Reg 33)", source_ref: "Step 5, Step 8C; A3-17"}
+  - {item: "Balance-confirmation adjustments on payables, advances, other current liabilities", implied_date: "undated by company; earliest with FY27 audited results, about 30-May-2027", source_ref: "A3-07; R466, R467; L321-322, L686-688"}
+  - {item: "CWIP Rs 31.91 Cr capitalisation (D&A step, PPE jump)", implied_date: "undated (no commissioning date filed); earliest in FY27 results, about 30-May-2027", source_ref: "A3-11; R119, R120"}
+  - {item: "FY27 Annual Report: Danya review status and audited figures, partner payments, intercompany sales each way and Danya stock by source (unrealised-profit elimination), MSMED overdue principal and interest, OCL breakup", implied_date: "before AGM (by about 30-Sep-2027)", source_ref: "A3-02, A3-04, A3-12, A3-16, A3-17; R539, R456-R458; 1-SVC; Step 2 bear counter 2; Step 7"}
+flags:
+  - "PRE-THESIS READ: no Notion page, no companies file, no spear line; Decision Status ND; all thesis fields ND"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION (deteriorating): CFO CON Rs (5.74) Cr, SA Rs (5.23) Cr vs PAT Rs 13.77 / 13.65 Cr; CON CCC 104.36 to 120.61 days; missing: order book, inventory mix, OCL breakup, undrawn limits, FY27 CFO"
+  - "Funding strain: SA cash Rs 9.74 Cr to Rs 0.22 Cr; SA net debt +Rs 18.81 Cr (+52.3%); CON net debt +42.2% to Rs 57.20 Cr"
+  - "Warrant balance Rs 15.81 Cr unexercised and payable only if holders exercise; window closes about 27-Feb-2027; zero conversions at 30-Sep-26"
+  - "S-vs-C divergence: CON Op EBITDA margin -151 bps YoY (18.77% to 17.26%) vs SA +128 bps; revenue gap flipped from Rs (5.47) Cr to +Rs 8.17 Cr; CON receivables build exceeds SA by at least Rs 8.65 Cr"
+  - "Two-way intercompany trade (FY26 audited): parent sold at least Rs 8.44 Cr to and bought at least Rs 6.16 Cr from Danya; CON other creditors Rs 4.48 Cr below SA at 31-Mar-26 (L1118 vs R108 L939)"
+  - "No unrealised profit eliminated: owners' PAT = SA PAT in all four periods (L194 vs L1074); Danya stock Rs 17.02 Cr (19.5% of group) with Rs 2.90 lakh cash; FY26 CON profit could carry up to about Rs 1.62 Cr pre-tax (INFERENCE bound); H1FY27 at most Rs 0.12 Cr (Danya stock +Rs 0.48 Cr), so H1FY27 growth not inflated"
+  - "Supplier funding outside ROCE: CON trade payables Rs 84.59 Cr = 147.3% of borrowings; MSE dues Rs 40.83 Cr = at least 52.7 days of half-year spend (44.7 with GST) vs 45-day statutory term (INFERENCE, background law); no overdue-MSE disclosure; ROCE 16.8% with payables counted"
+  - "Governance: sole subsidiary Danya is unaudited, review-status bracket unresolved in note 4, MD is a 7.5% partner; parent capital in Danya +30.3% to Rs 16.52 Cr (Rs 2.75 Cr cash) while partners withdrew Rs 0.20 Cr; Danya earns 18.3% pre-tax vs group 23.6%, taxed 35.2%"
+  - "Other current liabilities fell Rs 4.00 Cr SA (21.9%) after the FY26 Rs 14.56 Cr build that supplied 52.5% of FY26 SA CFO (A3-17)"
+  - "Archetype unresolved: all material cost labelled stock-in-trade while a factory is built (CWIP Rs 31.91 Cr)"
+  - "H2FY26 column is an unassured balancing figure (A3-18): H2FY26-based HoH deltas and cells in A3-02, A3-03, A3-09 weighted lower"
+  - "Extraction integrity: SA H1FY27 total expenses ND (R043 fails footing); SA Mar-26 receivables (R130, R153) held out pending A1 re-read (A3-13 NEUTRAL-FACT); R065 read as credit; R117/R118 anchor L945 vs values at L947; routing list in preamble"
+  - "Capex absorption: CON D&A +415% and finance cost +190% vs revenue +80% YoY"
+  - "Tracker rows not supplied: Step 5.5 ND, zero signals (below the floor of three)"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar-relevant facts flagged in review"
+plain_language_brief_included: true
+analyst_note: "Growth is real at PBT (CON core PBT +44.74%, other income immaterial), with three bear counters. (1) The Rs 8.17 Cr of revenue booked outside the parent came with a receivables build at least Rs 8.65 Cr above the parent's. (2) FY26 audited figures show goods moving both ways: the parent sold at least Rs 8.44 Cr to Danya and bought at least Rs 6.16 Cr from it. Owners' PAT equals SA PAT in all four periods, so no unrealised profit was eliminated; FY26 CON profit could carry up to about Rs 1.62 Cr pre-tax (INFERENCE, parent gross margin as transfer-margin proxy). H1FY27 is not inflated (Danya stock +Rs 0.48 Cr). (3) The 23.6% spot ROCE excludes Rs 84.59 Cr of trade payables; 16.8% with them. Margin is read on consolidated. H2FY26 is an unassured balancing column (A3-18), so HoH reads are weighted lower. FLAGS, not CAVEATS: negative CFO with near-zero cash, related-party subsidiary governance, unresolved archetype. Not REWORK: headline statements tie. A3-13 goes to A1. Spot ROCE must not feed Section 1B before the FTTCP verdict and archetype exist."
+review_path: "runs/supremepwr-h1fy27/work/review_supremepwr_h1fy27.md"

@@ -1,0 +1,52 @@
+stage: A5-adversary
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "Paid up Equity Share Capital, SA P&L, blank all columns (FT L909; text layer L199)"
+    - "Paid up Equity Share Capital, CON P&L, blank all columns (FT L1083; text layer L572)"
+    - "Date lines unanchored: FT L35 (meeting date repeat), L345-L346 (SA CF title, text layer), L511-L515 and L1036-L1040 (CON P&L column date headers), L815-L816 (certificate utilised-column date)"
+    - "Text-layer qualifier copies unanchored (class of M33/M35): FT L154, L209, L272, L344, L506, L584, L636-L637, L715, L773-L777"
+arithmetic_mismatches:
+  - {metric: "Unrealised profit in Danya stock, FY26 effect 'upper bound'", a4_value: "at most 162.4 lakh (Rs 1.62 Cr), 5.7% of FY26 CON PBT (A4 L304)", recomputed: "max 1,653.47 x 21.57% = 356.65 lakh (Rs 3.57 Cr), 12.5% of FY26 CON PBT; 162.4 is a constant-mix estimate", source_line: "FT L953 vs L1131; L883, L887, L888; L1055"}
+  - {metric: "Unrealised profit, H1FY27 effect 'at most'", a4_value: "at most 11.85 lakh (Rs 0.12 Cr) (A4 L305, L375)", recomputed: "range -356.65 to +419.76 lakh (up to 22.5% of H1FY27 CON PBT); +63.14 lakh even at 100% parent-sourced stock on A4's own proxy margins (1,701.50 x 24.67% - 1,653.47 x 21.57%)", source_line: "FT L953, L1131, L883, L887-L888, L1064"}
+  - {metric: "Unrealised profit, H1FY26 base", a4_value: "up to 105.75 lakh (A4 L305)", recomputed: "not boundable; Danya stock at 30-Sep-25 not filed (A4 L228 marks it ND)", source_line: "A4 L228"}
+surviving_bear_counters:
+  - {claim: "H1FY27 growth is not inflated by unrealised profit; at most Rs 0.12 Cr; YoY if anything understated (A4 L305, L375, L666, L757)", counter: "Bound valid only at constant parent-sourced share and transfer margin; filing constrains neither (A4 L248); range -3.57 to +4.20 Cr; +0.63 Cr even at full parent sourcing on A4's proxies; CON reserves equal SA reserves at both dates so the full stock-level margin sits in group equity", source_line: "FT L953, L1131, L194 vs L1074, L927 vs L1106", type: FACTUAL}
+  - {claim: "Growth is real at PBT: CON core PBT +44.74%, PAT +45% (A4 L295, L768)", counter: "Cash and unaudited-Danya counters already in A4; surviving part: group PBT carries an unsigned unrealised-margin term of up to Rs 4.20 Cr (22.5% of H1FY27 CON PBT), H1FY26 term unknown, so clean core PBT growth cannot be signed until Q21 is answered", source_line: "FT L194 vs L1074, L927 vs L1106, L1131, L953", type: FACTUAL}
+findings_by_type:
+  factual:
+    - {id: F-1, route: A4, gap: "Unrealised-profit 'upper bound' (FY26 Rs 1.62 Cr) and 'at most Rs 0.12 Cr' (H1FY27) are constant-mix estimates, not bounds; 'H1FY27 not inflated' and 'YoY understated' unsupported. Correct: FY26 max Rs 3.57 Cr; H1FY27 -3.57 to +4.20 Cr; +0.63 Cr at full parent sourcing; H1FY26 unboundable", lines: "A4 L304-L305, L375, L438, L525, L609, L648, L666, L757, L768"}
+  missing:
+    - {id: M-2, route: A2, gap: "Fresh-pass units absent from structured and ledger: blank Paid up Equity Share Capital rows (FT L909/L199, L1083/L572); date lines FT L35, L345-L346, L511-L515, L1036-L1040, L815-L816; text-layer qualifier copies FT L154, L209, L272, L344, L506, L584, L636-L637, L715, L773-L777. Ledger count test overstates completeness (LG L5, L11, L12). Content materiality nil", lines: "LG L5, L11, L12"}
+  contradiction:
+    - {id: C-1, route: A4, gap: "Rs 8.17 Cr CON-minus-SA revenue gap stated as 'sales booked outside the parent' and called uncollected, against A4's own identity (L243) and caveat that H1FY27 parent-to-Danya sales cannot be excluded (L248); Danya external sales are 8.17 Cr plus undisclosed parent sales into Danya; add reading 3, make L648/L662 conditional", lines: "A4 L243, L248, L296, L648, L662"}
+  style:
+    - "S-1 D&A + FC share of CON revenue 3.67% should be 3.66% on lakh inputs (A4 L308, L679)"
+    - "S-2 'FY26 capex plus CWIP' reads additive (A4 L308)"
+    - "S-3 A1 routing list omits R114 and R136 misread Mar-26 SA totals; foots at 24,873.69 (A4 L56)"
+    - "S-4 Summary narrative 9 paragraph lines vs 10-20 line spec (A4 L659-L667)"
+    - "S-5 Brief hyphenated compound modifiers (A4 L670, L686, L690) and sentences over 20 words (A4 L660, L686)"
+    - "S-6 Brief 13.3% Danya return line omits accrual and related-party caveat (A4 L680)"
+    - "S-7 280 R rows dispositioned only by category reference to A3 6b; append ID ranges (A4 L21)"
+loop_back_to: "A2"
+gap: "A2 (M-2, MISSING): add ledger rows for blank Paid up Equity Share Capital lines (FT L909/L199, L1083/L572) and either row or rule out (one-anchor-per-unit) the unanchored date/qualifier duplicates, correcting LG L11-L12. A3: dispose of new IDs. A4 (F-1, FACTUAL): replace unrealised-profit 'upper bound/at most' with FY26 max Rs 3.57 Cr and H1FY27 range -3.57 to +4.20 Cr, withdraw 'H1FY27 not inflated' across A4 L304-L305, L375, L438, L525, L609, L648, L666, L757, L768. A4 (C-1, CONTRADICTION): restate Rs 8.17 Cr as the CON-minus-SA gap and add reading 3 to bear counter 1 (A4 L296, L648, L662)."
+style_notes:
+  - "S-1 3.67% to 3.66% (A4 L308, L679)"
+  - "S-2 capex plus CWIP wording (A4 L308)"
+  - "S-3 add R114/R136 to A1 routing list (A4 L56)"
+  - "S-4 narrative line count (A4 L659-L667)"
+  - "S-5 brief hyphens and long sentences (A4 L660, L670, L686, L690)"
+  - "S-6 brief Danya return caveat (A4 L680)"
+  - "S-7 list A3 6b IDs as ranges in A4 (A4 L21)"
+analyst_note: "Numbers are clean: every other A4 cell, bridge, ratio and day count recomputed from A1 lakh values ties within rounding, and the CON and SA balance sheets and CON cash flow foot. The loop is driven by one logic error and one dropped qualifier. A4's unrealised-profit bound multiplies the change in Danya stock by a margin; that holds only if the parent-sourced share and transfer margin were the same at both dates, and the filing constrains neither. CON reserves equal SA reserves at both dates (FT L927 vs L1106), so the whole margin on parent-sourced goods in Danya's stock, whatever it is, sits in group equity. On A4's own proxy margins the H1FY27 effect spans about -Rs 3.57 Cr to +Rs 4.20 Cr and is +Rs 0.63 Cr even at full parent sourcing. The claim 'H1FY27 not inflated' must go; Q21 already names the separating observation. The A2 gaps are bookkeeping: each duplicates an anchored row or is blank and already read by A4 (L56). Ledger-to-A4 coverage rests on A4's attestation of the A3 6b register, which input discipline keeps from A5; totals tie at 589. Protocol verdict unaffected."

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "TATACOMM"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 9
+formfeed_count: 9
+line_count: 196
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: ["p2 (9 chars, divider, skipped: no data)", "p9 (32 chars, thank-you, skipped: no data)"]
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/tatacomm-q2fy27/extracted/tatacomm-presentation-q2fy27-fulltext.md"
+structured_path: "runs/tatacomm-q2fy27/extracted/tatacomm-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 33
+  entity: 25
+  forward: 3
+  date: 7
+  qualifier: 6
+structured_id_range: "R001-R074"
+gate_a1: pass
+gap_note: ""

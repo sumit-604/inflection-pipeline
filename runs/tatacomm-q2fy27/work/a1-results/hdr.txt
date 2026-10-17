@@ -1,0 +1,16 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: TataComm_Q2FY27_Results_with_Press_Release.pdf
+doctype: results
+page_count_pdfinfo: 33
+formfeed_count: 33
+line_count: LINECOUNT
+unit_convention: Rs Million (standalone/consolidated statements, check) and Rs Crore (press release) - see statements
+conversion_factor_to_cr: Millions -> x0.1; Crores -> x1 (verify per statement header)
+text_layer_present: yes
+extraction_mode: text-only
+render_candidates: none (no zero-character pages)
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: Q2 FY27 (quarter and half-year ended 30 September 2026)
+extraction_date: 2026-10-17
+=== END HEADER ===

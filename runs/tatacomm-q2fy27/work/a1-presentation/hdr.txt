@@ -1,0 +1,16 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: TataComm_Q2FY27_Investor_Presentation.pdf
+doctype: presentation
+page_count_pdfinfo: 9
+formfeed_count: 9
+line_count: 196
+unit_convention: Crores (INR Cr as shown on p6; no financial tables)
+conversion_factor_to_cr: Crores -> x1
+text_layer_present: yes
+extraction_mode: text-only
+render_candidates: [p2 (9 chars, Q2FY27 title divider: skipped, no data); p9 (32 chars, thank-you page: skipped, no data); p6 (543 chars, chart labels in text layer: not rendered)]
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: Q2 FY27
+extraction_date: 2026-10-17
+=== END HEADER ===

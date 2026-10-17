@@ -1,0 +1,11 @@
+agent	model	total_tok	wall_s	run
+A1-presentation	claude-sonnet-5-5	40027	148	1
+A2-presentation	claude-sonnet-5-5	36356	104	1
+A1-results	claude-sonnet-5-5	115119	394	1
+A3-presentation	claude-opus-5-5	67515	314	1
+A2-results	claude-sonnet-5-5	130982	577	1
+A3-results	claude-opus-5-5	270427	613	1
+A4	claude-opus-5-5	346211	975	1
+A5	claude-opus-5-5	285689	1077	1
+LOOP1-A4-fix	claude-opus-5-5	421306	413	loop1
+LOOP1-A5-reaudit	claude-opus-5-5	359215	242	loop1

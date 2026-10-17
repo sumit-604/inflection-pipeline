@@ -1,0 +1,33 @@
+stage: A2-enumerator
+company: "TATACOMM"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/tatacomm-q2fy27/work/ledger_results_tatacomm_q2fy27.md"
+counts:
+  notes: 18
+  footnotes: 28
+  line_items: 356
+  line_item_cells: 1260
+  zero_standing: 87
+  agenda_items: 3
+  auditor_paras: 11
+  entities: 132
+  entities_consolidation_list: 75
+  dates: 71
+  forward_statements: 32
+  signature_blocks: 4
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, FOOTNOTE_UNRESOLVED, RESTATED, EMPHASIS_OF_MATTER, OTHER_AUDITOR_RELIANCE, MGMT_FURNISHED_UNREVIEWED, SIGNATURE_BEFORE_MEETING_END, CONTINGENT_LIABILITY, DISCONTINUED_OPS, NAME_NOT_DISCLOSED, OUTCOME_NOT_DISCLOSED]
+ids_in_structured: 1778
+ids_referenced: 1778
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "87 ZERO_STANDING cells on 36 lines; the template signal lines are discontinued ops, loss on sale of subsidiary and EPS from discontinued ops (zero in the three quarter columns and H1 FY27, non-zero in H1 FY26 and FY26), plus several cash flow lines. Ten ENTITY_CHANGE rows in the auditor annexure, two inside the current half-year: Kaleyra Africa excluded upto 04-Sep-2026 and TComm Turkey added from 21-May-2026. No prior list, so no list diff. Attachment D moves Kaleyra Inc under TCNL; read it with the Kaleyra Africa exit. Auditor emphasis paragraphs: DOT contingent liability Rs 7,513.71cr and a Rs 365.80cr subsidiary VAT matter; two subsidiaries and three associates are management-furnished and unreviewed. The National Court VAT ruling was due 13-Oct-2026 and the note is silent on the outcome. CEO and auditor signature stamps (12:58, 13:05, 13:04) precede the 13:45 meeting close; A3 to judge. Press release headline metrics (EBITDA, digital margin, data revenue) carry no definition."

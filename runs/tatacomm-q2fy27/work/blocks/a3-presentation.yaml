@@ -1,0 +1,49 @@
+stage: A3-forensics
+company: "TATACOMM"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/tatacomm-q2fy27/work/forensics_presentation_tatacomm_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F16", line: "138,147,151 (slide 6)", classification: "AMBIGUOUS", implication: "Quarter rupee loss (-INR 107 Cr) charted beside full-year loss (-INR 886Cr); Q2 annualised INR 428 Cr [DERIVED] = 48% of FY25, a halving not an 88% cut"}
+  - {id: "A3-02", check: "F16", line: "142 (slide 6)", classification: "AMBIGUOUS", implication: "Q1FY27 bar shows -6.9% with no rupee label in text layer; absolute Q1-to-Q2 change and revenue-vs-cost source of 330 bps gain not readable"}
+  - {id: "A3-03", check: "F16", line: "151 (slide 6)", classification: "AMBIGUOUS", implication: "Baseline set at FY25; FY26 and Q2FY26 absent, no YoY comparator; lean bear, may mask an FY26 setback"}
+  - {id: "A3-04", check: "F6", line: "132 (slide 6)", classification: "FORWARD-SIGNAL", implication: "Undated Digital breakeven claim; -9.7% to -6.9% to -3.6%; linear pace implies 1-2 quarters [DERIVED, not company statement]; catalyst candidate, margin and perimeter undefined"}
+  - {id: "A3-05", check: "F16", line: "137-138,145-147 (slide 6)", classification: "AMBIGUOUS", implication: "Implied Digital revenue Q2FY27 ~INR 2,930-3,010 Cr vs FY25 ~INR 2,270-2,300 Cr per quarter [DERIVED], about +30%; growth or perimeter change"}
+  - {id: "A3-06", check: "F16", line: "112,115-117 (slide 5)", classification: "AMBIGUOUS", implication: "Goal is absolute EBITDA growth, no margin target or number; deck has no consolidated financials; prior targets untestable (prior ND)"}
+  - {id: "A3-07", check: "F16", line: "85,98-109,111 (slides 4-5)", classification: "FORWARD-SIGNAL", implication: "Reset framing: new Tower org and one-page plan with 5 levers; new promise-vs-delivery baseline"}
+  - {id: "A3-08", check: "F16", line: "184-193 (slide 8)", classification: "AMBIGUOUS", implication: "AI case studies anonymised, '700+ agents live', '600K+ voice AI mins / month'; no revenue or contract value; AI monetisation unquantified"}
+  - {id: "A3-09", check: "F6", line: "162-163 (slide 7)", classification: "AMBIGUOUS", implication: "GPU capex in India stated complete with no amount, capacity or utilisation; depreciation and return drag on Digital unknown"}
+  - {id: "A3-10", check: "F16", line: "88-90 (slide 4)", classification: "NEUTRAL-FACT", implication: "Reach claims (70% of India FS live data traffic; 300 of Fortune 500) unsourced and undated; verify before use"}
+  - {id: "A3-11", check: "F14", line: "132,70 (slides 6,3)", classification: "NEUTRAL-FACT", implication: "Drafting errors 'PORFOLIO' and 'this presentations'; cumulative governance data point only"}
+forward_signals: ["A3-04", "A3-07"]
+ambiguous: ["A3-01", "A3-02", "A3-03", "A3-05", "A3-06", "A3-08", "A3-09"]
+commitments:
+  - {commitment: "Digital portfolio to reach breakeven", implied_date: "ND", ref: "slide 6 L132", status_word: "underway"}
+  - {commitment: "Drive absolute EBITDA growth, NPS and ESAT", implied_date: "ND", ref: "slide 5 L112", status_word: "underway"}
+  - {commitment: "Five plan levers (Network Growth; Digital Profitability; Platforms Mix; Sales Contribution; Agility in Operations)", implied_date: "ND", ref: "slide 5 L122-128", status_word: "initiated"}
+  - {commitment: "GPU infrastructure in India for sovereign AI", implied_date: "ND (past tense, amount ND)", ref: "slide 7 L162-163", status_word: "completed"}
+  - {commitment: "Leadership team and Tower structure in place", implied_date: "ND", ref: "slide 4 L85", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck's only financial content is the slide 6 Digital margin chart, and its framing flatters. It sets a single-quarter rupee loss (-INR 107 Cr) beside a full-year one (-INR 886Cr), skips FY26, and drops the Q1 rupee label. On a like-for-like annualised basis the loss halved; it did not fall 88%. The percent path (-9.7, -6.9, -3.6) is real and steep, so the undated breakeven claim is the deck's main catalyst candidate. Implied Digital revenue runs about 30% above the FY25 quarterly average [DERIVED]. A perimeter change would produce the same chart, so ask for a restated FY25. 'THE TEAM IS IN PLACE' plus 'PLAN ON PAGE' reads as a reset deck, with absolute EBITDA growth as the goal and no margin number; test against the results filing and the concall. A1 QA: R026 value is wrong (5 levers, not 6); nine rows carry cite offsets of 1 to 9 lines; R070 is a paraphrase. None is load-bearing; R020 value verified at L147."

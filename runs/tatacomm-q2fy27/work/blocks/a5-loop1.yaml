@@ -1,0 +1,38 @@
+stage: A5-adversary
+company: "TATACOMM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L1-S1 Step 4 rev L343 'absorbed most of the credit swing': ex-credit other expenses fell 53.55 of 110.79 (about half, 48%); credit-cost P&L line not disclosed (wording from A5 loop-0 text)"
+    - "L1-S2 Brief rev L725 labels 'about 90%' as subsidiaries with eliminations; 5C gives 92.9% subsidiaries plus eliminations, 89.6% all non-parent sources"
+    - "L1-S3 Diagnostic 1 rev L261 named components sum to 588.15; add Real Estate -0.01 (L237)"
+    - "L1-S4 Brief rev L741 '114% quarterly jump' reads as QoQ; say 'on the year-ago quarter'"
+    - "L1-S5 Preamble rev L22 lists R1514 (Mgage) as context only while rev L316 and Q27 use it as a Digital perimeter fact"
+    - "L1-S6 Loop-0 A1/A2 style items S6, S7, S8, S10, S11 remain open (not A4)"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "L1-S1 'most' should read 'about half' (53.55 of 110.79)"
+  - "L1-S2 align brief attribution label with 5C"
+  - "L1-S3 add Real Estate -0.01 to the revenue decomposition"
+  - "L1-S4 '114% quarterly jump' to 'rise on the year-ago quarter'"
+  - "L1-S5 drop R1514 from the no-finding disposition list"
+  - "L1-S6 A1/A2 items S6, S7, S8, S10, S11 carried, no loop"
+analyst_note: "Loop 1 re-audit is COMPLETE. Every loop-0 FACTUAL and MISSING item is resolved in the revised review, checked against the A1 fulltext lines. One loop-0 finding was an A5 error: F2. My 185.39 (89.6%) was consolidated parent PAT less standalone PAT, which also holds the associate swing (-7.60) and NCI (+0.91). A4's original 192.08 (92.9%) was correct for its label, subsidiaries plus eliminations. The revised 5C shows both bases, the parts sum to the 206.80 rise, and the conclusion is unchanged. The Step 4 phrase 'absorbed most of the credit swing' also traces to my loop-0 wording; on H1 numbers it is about half, logged as STYLE. Coverage is unchanged and clean. Every new derived number ties; one 0.01 Real Estate omission is rounding-level. Re-reading the three most positive remaining claims (operating gain, cash direction, Digital breakeven path) finds counters that survive but are already in the review. The acquisition probe is satisfied. A1/A2 style notes S6, S7, S8, S10, S11 carry with no loop."

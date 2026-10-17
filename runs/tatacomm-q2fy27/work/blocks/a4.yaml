@@ -1,0 +1,96 @@
+stage: A4-analyst
+company: "TATACOMM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, presentation]
+ledger_reconciliation:
+  notes: 18
+  turns: 0
+  slides: 9
+  all_reviewed: true
+  a3_findings_incorporated: ["R-A3-01", "R-A3-02", "R-A3-04", "R-A3-05", "R-A3-06", "R-A3-07", "R-A3-08", "R-A3-09", "R-A3-10", "R-A3-11", "R-A3-12", "R-A3-13", "R-A3-14", "R-A3-15", "R-A3-16", "R-A3-17", "R-A3-18", "R-A3-19", "R-A3-20", "R-A3-21", "R-A3-22", "R-A3-23", "R-A3-24", "R-A3-25", "R-A3-26", "R-A3-27", "R-A3-28", "R-A3-29", "R-A3-30", "P-A3-01", "P-A3-02", "P-A3-03", "P-A3-04", "P-A3-05", "P-A3-06", "P-A3-07", "P-A3-08", "P-A3-09", "P-A3-10", "P-A3-11"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE ON RECORD (no Notion page; live search 2026-10-17); framed as PRE-THESIS READ"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY26", gap_pct: -13.2}
+  - {period: "Q1 FY27", gap_pct: 28.5}
+  - {period: "Q2 FY27", gap_pct: 171.0}
+  - {period: "H1 FY26", gap_pct: 7.4}
+  - {period: "H1 FY27", gap_pct: 106.4}
+  - {period: "FY26", gap_pct: 26.2}
+questions_for_management:
+  - {q: "What rupee amount of Q2 consolidated employee (-60.98 QoQ) and other-expense (-63.07 QoQ) reduction was non-recurring?", from_finding_id: "R-A3-04"}
+  - {q: "Same question for Data Services: what one-offs sit in the +175.18 QoQ segment result on +107.41 revenue?", from_finding_id: "R-A3-22"}
+  - {q: "What was the Digital rupee loss in Q1 FY27, Q2 FY26 and FY26 on the Q2 FY27 perimeter?", from_finding_id: "P-A3-01"}
+  - {q: "What was the Q1 FY27 Digital rupee loss and revenue, and how much of the 330 bps QoQ gain came from revenue vs cost?", from_finding_id: "P-A3-02"}
+  - {q: "What were FY26 and Q2 FY26 Digital margin in % and Rs?", from_finding_id: "P-A3-03"}
+  - {q: "In which fiscal quarter will Digital margin reach zero, and is it EBITDA, EBIT or contribution?", from_finding_id: "P-A3-04"}
+  - {q: "Did the National Court deliver its 13-Oct-2026 VAT judgment on 365.80 Cr, and for or against the Group?", from_finding_id: "R-A3-08"}
+  - {q: "What is FY27 capex guidance and the Board's net debt / EBITDA ceiling?", from_finding_id: "R-A3-23"}
+  - {q: "Which entity raised the 2,628.15 Cr H1 long-term debt, and is it parent-guaranteed (yes/no)?", from_finding_id: "R-A3-05"}
+  - {q: "Total staff cost optimisation programme cost, amount remaining, end quarter?", from_finding_id: "R-A3-11"}
+  - {q: "Expected FY27 ETR, and remaining unrecognised DTA on accumulated losses?", from_finding_id: "R-A3-14"}
+  - {q: "Campaign Registry: cause of the Q2 FY26 result dip (122.93 to 75.58), Canada entity contribution before its 14-Jan-2026 exit, and any contract or rule renewal within 12 months?", from_finding_id: "R-A3-20"}
+  - {q: "Parent wrote off 116.73 of 161.23 Cr H1 bad debts (standalone ratio 8.57% vs 1.90%): which customer or contract, and what further amount is at risk?", from_finding_id: "R-A3-06"}
+  - {q: "Is the 50.00 Cr contractual-obligation provision a receivable, advance or guarantee, and same counterparty as the write-offs?", from_finding_id: "R-A3-13"}
+  - {q: "Which associate received 356.10 Cr in H1, what return is expected (TTM associate share 16.66 vs carrying 2,331.73), and what capital is committed for FY27-FY28?", from_finding_id: "R-A3-07"}
+  - {q: "Name the two management-furnished unreviewed subsidiaries (Q2 loss 14.83 on revenue 3.11).", from_finding_id: "R-A3-07"}
+  - {q: "DoT demand aggregate at 31-Mar-2026 and 30-Jun-2026 vs 7,844.57; any new notice in Q2?", from_finding_id: "R-A3-09"}
+  - {q: "Standalone carrying value of Kaleyra, Inc. vs FMV USD 92.625m; expected standalone gain or loss?", from_finding_id: "R-A3-10"}
+  - {q: "Expected Kaleyra transfer completion date; any TCNL external financing or stake sale planned?", from_finding_id: "R-A3-29"}
+  - {q: "Kaleyra Africa exit on 04-Sep-2026: mode, consideration, P&L impact?", from_finding_id: "R-A3-27"}
+  - {q: "TComm Turkey (wef 21-May-2026): purpose and capital committed?", from_finding_id: "R-A3-28"}
+  - {q: "Fire provision 30.10 Cr: insurance claim filed, amount, expected recovery date?", from_finding_id: "R-A3-12"}
+  - {q: "H1 FY27 tax refund received and remaining refundable balance in 1,498.33 Cr non-current tax assets?", from_finding_id: "R-A3-15"}
+  - {q: "Which actuarial assumption drove the standalone Q1 FY27 OCI loss of 9.37 Cr?", from_finding_id: "R-A3-16"}
+  - {q: "Forfeiture reversal inside H1 SBP accrual 2.02 Cr vs 24.01 Cr; new FY27 grants (yes/no)?", from_finding_id: "R-A3-18"}
+  - {q: "Transformation Services revenue -33.70% YoY: client loss (how many) or group in-sourcing?", from_finding_id: "R-A3-21"}
+  - {q: "Does Zubin Adil Patel leave, move within the group, or retire on 01-Nov-2026?", from_finding_id: "R-A3-24"}
+  - {q: "Reconcile press-release Q2 FY26 Data revenue 5,179 to filed 5,204.47; define Digital Portfolio.", from_finding_id: "R-A3-25"}
+  - {q: "Asset held for sale 7.40 Cr: identity, buyer, price, completion date?", from_finding_id: "R-A3-01"}
+  - {q: "Was FY25 Digital restated to the current perimeter; what revenue came in (Commotion, FY26 acquisition cash 136.96) and went out (Mgage, Kaleyra Africa)?", from_finding_id: "P-A3-05"}
+  - {q: "Does any earlier quantified margin or revenue target still stand (yes/no)?", from_finding_id: "P-A3-06"}
+  - {q: "When did the Tower structure take effect, and which of the 11 named heads joined in the last 12 months?", from_finding_id: "P-A3-07"}
+  - {q: "Q2 FY27 AI-platform revenue and paying-customer count?", from_finding_id: "P-A3-08"}
+  - {q: "India GPU capex amount, utilisation, and is its depreciation inside the Digital margin?", from_finding_id: "P-A3-09"}
+monitorables:
+  - {item: "National Court VAT judgment outcome (365.80 Cr)", implied_date: "scheduled 2026-10-13; disclosure by Q3 FY27 results", source_ref: "L572; R1558; R-A3-08"}
+  - {item: "Q2 FY27 concall transcript for Role 5", implied_date: "call held 2026-10-15; transcript pending", source_ref: "P-L33"}
+  - {item: "Ridhi Sood takes office as Company Secretary", implied_date: "2026-11-01", source_ref: "L72; L1542; R1585"}
+  - {item: "Kaleyra, Inc. transfer to TCNL completes", implied_date: "ND; check Q3 FY27 consolidation list", source_ref: "L45-53; L1519-1524; R-A3-10"}
+  - {item: "Q3 FY27 consolidated Op EBITDA margin vs 21.0% bull / 19.5% bear", implied_date: "quarter end 2026-12-31; filing date ND", source_ref: "Step 8C"}
+  - {item: "Digital portfolio breakeven", implied_date: "ND", source_ref: "P-L132; P-A3-04"}
+  - {item: "Staff cost optimisation programme end", implied_date: "ND, ongoing", source_ref: "L528-531; R-A3-11"}
+  - {item: "Asset held for sale (7.40) disposal", implied_date: "ND", source_ref: "L344; L460; R-A3-01"}
+  - {item: "CWIP 1,120.81 capitalisation and D&A step-up", implied_date: "ND", source_ref: "L318; R-A3-23"}
+  - {item: "Fire provision true-up", implied_date: "ND", source_ref: "L541-542; R-A3-12"}
+  - {item: "DoT AGR appeals at SC and TDSAT", implied_date: "ND", source_ref: "L552-559; R-A3-09"}
+  - {item: "CEO H2 FY27 momentum claim tested", implied_date: "Q3 and Q4 FY27 results", source_ref: "L1375-1376"}
+  - {item: "DC-to-DC connectivity USD 1bn opportunity", implied_date: "ND", source_ref: "L1400"}
+  - {item: "FY27 full-year cash flow (FCF; CFO/EBITDA vs FY26 92.88%)", implied_date: "year end 2027-03-31; filing date ND", source_ref: "Step 5"}
+  - {item: "FY27 Annual Report: actuarial basis of Q1 OCI; entity-level subsidiary results", implied_date: "ND, after FY27 close", source_ref: "L639; R-A3-16"}
+  - {item: "Five plan levers and reset baseline", implied_date: "ND", source_ref: "P-L85; P-L122-128; P-A3-07"}
+flags:
+  - "PRE-THESIS: no Notion page, no Decision Status, no Spear line; /step1 gates any pipeline run"
+  - "Q2 profit jump is a subsidiary event: non-parent sources supplied 185.39 (89.6%) of the 206.80 QoQ parent PAT rise (subsidiaries plus eliminations 192.08 before associates and NCI); cause undisclosed; Digital explains about half at most (R-A3-04)"
+  - "Half of the 248.26 YoY EBITDA gain is cost-out; gross spread -305 bps"
+  - "Net debt +1,606.60 (+16.8%) to 11,197.04 in H1; FCF after lease and interest (584.30); dividend 498.78 > H1 parent PAT 475.26"
+  - "Debt migrated to subsidiaries (+2,482.20); standalone Reg 52(4) leverage ratios flatter the consolidated position (R-A3-05)"
+  - "DoT contingent liability 7,513.71 = 2.21x consolidated parent equity; emphasis of matter (R-A3-09)"
+  - "VAT judgment on 365.80 due 13-Oct-2026; note says the Group 'awaits the National Court's decision' (R-A3-08)"
+  - "ETR 26.80% rests on recurring deferred credits; current tax 36.14% (R-A3-14)"
+  - "OCF supported by 315.42 lower tax paid (R-A3-15)"
+  - "Credit costs: 161.23 H1 write-offs (116.73 at parent); standalone bad-debts ratio 8.57% vs 1.90%; current ratio 0.36 vs 0.57; 50.00 recoverability provision; counterparties unnamed (R-A3-06, R-A3-13)"
+  - "'One-time' staff charge recurs every quarter shown (R-A3-11)"
+  - "Campaign Registry: 23.80% of segment result on 4.15% of revenue; YoY +114.38% on a depressed base, H1/H1 +55.75%; Canada entity deconsolidated 14-Jan-2026 (R-A3-20)"
+  - "Associates 2,331.73 (68.6% of parent equity, ~140x TTM share of profit 16.66) on unreviewed numbers; 356.10 added in H1 (R-A3-07)"
+  - "Press-release and deck metrics do not tie to filed lines; Digital chart framing flatters (R-A3-25, P-A3-01..05)"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); tracker rows not supplied; Role 5.5 not run"
+  - "Concall held 15-Oct-2026; transcript not in run; Role 5 pending"
+plain_language_brief_included: true
+analyst_note: "Group numbers look strong: revenue +9.6%, Op EBITDA +21.2%, margin 21.26%. Two facts temper them. First, half the EBITDA gain is opex reduction while the network spread fell 305 bps, and non-parent sources supplied about 90% (185.39) of the QoQ parent PAT rise with no cause stated. The Digital loss cut can explain at most about 101 of the 195 QoQ subsidiary EBITDA rise unless Q1 Digital revenue exceeded Q2's, so one-off cost credits or other subsidiaries must carry the rest. Q3 margin against 21.0%/19.5% separates the readings. Second, the balance sheet weakened: net debt +16.8% in six months, debt moved into subsidiaries, FCF after lease and interest negative, dividend above H1 PAT, and 356 more into associates carried at ~140x their TTM profit share. Campaign Registry's +114% YoY rests on a weak base; H1/H1 is +56%. Cash is INDETERMINATE-WITH-DIRECTION. No thesis exists; the spear gate applies before any pipeline run."
+review_path: "runs/tatacomm-q2fy27/work/review_tatacomm_q2fy27.md"
+correction_loop: 1

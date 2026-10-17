@@ -1,0 +1,17 @@
+=== A2 COUNT TEST ===
+category: notes            grep_count: 18   sweep_count: 18   match: yes
+category: footnotes        grep_count: 28   sweep_count: 28   match: yes   (+3 FOOTNOTE_UNRESOLVED in 2c)
+category: line_items (fulltext lines with decimal cells vs ledger lines)  grep_count: 330   sweep_count: 330   match: yes
+category: line_item_cells  grep_count: 1260   sweep_count: 1260   match: yes   (ledger line rows: 356)
+category: zero_standing    grep_count: 87   sweep_count: 87   match: yes   (lines with a zero cell: 36)
+category: agenda_items     grep_count: 3   sweep_count: 3   match: yes   (letter items (i)-(iii); A4 timing and A5 absence rows added)
+category: auditor_paras    grep_count: 11   sweep_count: 11   match: yes
+category: entities_consol  grep_count: 75   sweep_count: 75   match: yes
+category: entities_total   grep_count: 132   sweep_count: 132   match: yes
+category: dates            grep_count: 71   sweep_count: 71   match: yes
+category: forward          grep_count: 32   sweep_count: 32   match: yes
+category: signatures       grep_count: 4   sweep_count: 4   match: yes
+category: slides / turns / questions: not applicable (results filing)
+@@IDLINE@@
+@@GATE@@
+=== END COUNT TEST ===

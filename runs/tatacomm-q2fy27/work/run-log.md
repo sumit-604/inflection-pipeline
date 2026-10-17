@@ -1,0 +1,24 @@
+# Run log: TATACOMM Q2 FY27 (/run-quarterly, 2026-10-17)
+- Checkout guard PASSED 2026-10-17 for the batch (worktree run/quarterly-q2fy27-2026-10-17 cut from origin/main e24a5bdb). Not rerun.
+- Protocols present: Results v1_4, Concall v1_1, Document_Review v1_1, Master v3_6.
+- Toolchain: poppler 25.07, tesseract 5.4 (winget); PATH prefixed per call.
+- Ticker: no companies/ file; ticker TATACOMM (NSE symbol on filing cover).
+- Doc class: TataComm_Q2FY27_Results_with_Press_Release.pdf -> results (Reg 30/33 Board Outcome cover + Attachment A unaudited standalone and consolidated results). One file, 33 pages: pp28-31 are Attachment C press release, pp32-33 Attachments D-E Reg 30 details. Classified by dominant content as ONE results document; the press-release pages are extracted inside it (not split), page coverage stays 100%.
+- Doc class: TataComm_Q2FY27_Investor_Presentation.pdf -> presentation (Reg 30 cover p1 + earnings-call slide deck, 9 pages).
+- No concall in --docs -> FULL QUARTER run, Role 4 only (Role 5 not passed).
+- Forensics files named forensics_<doctag>_tatacomm_q2fy27.md.
+- Notion live fetch 2026-10-17: no company page found (two searches). No companies/TATACOMM.md -> no spear on record. PRE-THESIS READ. Record in work/notion-thesis.md.
+- Each A1 gets its own temp dir work/a1-<doctag>/.
+- A1 presentation GATE PASS: 9/9 pages, text-only, R001-R074. 40,027 tok, 148 s. Note: p6 chart label pairing flagged unconfirmed by A1.
+- A2 presentation GATE PASS: 74/74 IDs referenced, orphan_ids empty, counts match. Cost check pass: 36,356 < 40,027. Flags: RESTATED, CHART_LABEL_UNPAIRED, COUNT_DISCREPANCY (R026 six levers vs R060 five), ANONYMISED_CLIENT.
+- A1 results GATE PASS: 33/33 pages, text-only, R001-R1778 (number 1417, entity 132, forward 32, date 71, qualifier 126). 115,119 tok, 394 s. A1 notes: p12 discontinued-ops period placement layout-inferred; EBITDA/data revenue definitions FOOTNOTE_UNRESOLVED in press release.
+- Parent session load cap received: at most 2 subagents at once. Currently 2 running (A2 results, A3 presentation); compliant.
+- A3 presentation GATE PASS: F1-F17 statused (F6, F14, F16 FINDING; F7 PASS; rest N.A.), 11 findings line-cited, ledger 100% reconciled. A3 QA on A1: R026 value wrong (5 levers not 6), nine rows with 1-9 line cite offsets, R070 paraphrase; none load-bearing. No source read.
+- A2 results GATE PASS: 1,778/1,778 IDs referenced, orphan_ids empty, all count tests match, MISSING_FROM_STRUCTURED none. 130,982 tok, 577 s.
+- A2 results COST CHECK FAIL: 130,982 > A1 115,119. A3 results had already been launched when the figure arrived (orchestrator sequencing slip, logged). Diagnosis run at once: A2 scratch scripts (work/a2-results/*) hold no source PDF, ConcallPipeline or inputs/ reference; A2 report states only the structured file and fulltext were opened. Cause is structural: the structured file is 203,401 bytes, 1.7x the 117,915-byte fulltext (1,778 atomic rows with anchors), and A2's enumeration source is the structured file. A1's own input was the smaller text layer. Verdict: no source re-ingestion; token figure not compromised; A3 allowed to continue. Lesson candidate: on a large results filing the A2 < A1 test can fail without a breach when structured > fulltext.
+- A3 results GATE PASS: F1-F17 statused (F3 PASS; F16, F17 N.A.; 14 FINDING), 29 findings line-cited (ID A3-03 unused, numbering only), ledger 100% reconciled. 270,427 tok, 613 s. No source read. A4 launched with Role 4 v1_4 only, PRE-THESIS READ framing, tracker rows not supplied.
+- A4 complete: PROCEED WITH FLAGS (PRE-THESIS READ), 31 QfM rows, 16 flags, cash conversion INDETERMINATE-WITH-DIRECTION. 346,211 tok, 975 s. A5 launched with paths only.
+- A5 run 1: INCOMPLETE. FACTUAL 3 (CCC -55.83 not -61.83; subsidiary share 185.39/89.6% not 192.08/93%; H1 other expenses rose), MISSING 4 (Campaign Registry base effect; Digital 101.10 Cr ceiling; associate stake-buy ~140x; Reg 52(4) bad-debt and current ratios), STYLE 13, CONTRADICTION 0. Coverage clean. loop_back_to A4. 285,689 tok, 1,077 s. Loop iteration 1 started: A4 resumed (same agent) with the audit path.
+- Loop 1 A4 fix complete: F1, F3, M1-M4 applied; F2 partly disputed (185.39 = all non-parent sources, now the headline at ~90%; 192.08 kept as subsidiaries-plus-eliminations component). 421,306 tok (resume of the same agent, 4 tool uses; figure is this resume only per the notification), 413 s. A5 resumed for the one re-audit.
+- Loop 1 A5 re-audit: COMPLETE (factual 0, missing 0, contradiction 0, style 6). A5 withdrew loop-0 F2 numeric claim (192.08 was right for its label). 359,215 tok (resume only), 242 s. Loop iterations: 1.
+- notion-payload.md written (not sent; CREATE page proposed, no page exists). session-cost.md written: total_run_tok 2,072,847 (base 1,292,326 + loop 1 780,521).

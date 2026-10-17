@@ -1,0 +1,75 @@
+stage: A3-forensics
+company: "TATACOMM"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/tatacomm-q2fy27/work/forensics_results_tatacomm_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: FINDING
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "L460, L461, L344", classification: "FORWARD-SIGNAL", implication: "Held-for-sale asset (7.40) got a 4.00 advance in H1 with no proceeds or gain yet; exceptional gain line set to reactivate on completion."}
+  - {id: "A3-02", check: "F1", line: "L162-163, L210-211, L589-597", classification: "NEUTRAL-FACT", implication: "Discontinued-ops and loss-on-sale lines are a template carry of the FY26 NetFoundry event; zero in all FY27 columns."}
+  - {id: "A3-04", check: "F2", line: "L166, L637, L146, L631", classification: "AMBIGUOUS", implication: "S-vs-C PAT gap -13.2% to +28.5% to +171.0% of standalone PAT; 93% of the 206.80 QoQ parent PAT rise came from subsidiaries; subsidiary EBITDA +195.09 on +89.54 revenue, so cost-out or a one-off."}
+  - {id: "A3-05", check: "F2", line: "L854-855, L877-878, L476-477, L751, L956-957", classification: "FORWARD-SIGNAL", implication: "Debt migrated to subsidiaries: standalone gross debt -1,209.34, subsidiary gross debt +2,482.20; standalone Reg 52(4) ratios flatter; standalone interest income from subsidiary loans will fall."}
+  - {id: "A3-06", check: "F2", line: "L419-420, L825, L829, L940, L338", classification: "AMBIGUOUS", implication: "Consol net credit cost H1 +69.90 vs net release (40.89) a year ago; standalone bad-debt ratio 8.57% in H1 vs 1.90% in FY26."}
+  - {id: "A3-07", check: "F4", line: "L1125-1140, L326, L462, L158", classification: "AMBIGUOUS", implication: "Unreviewed PAT 5.4% (passes), but unreviewed associate carrying value 2,331.73 = 68.6% of parent equity and associate share turned to a loss (3.25)."}
+  - {id: "A3-08", check: "F5", line: "L571-574, L1107-1109", classification: "FORWARD-SIGNAL", implication: "VAT judgment on 365.80 (10.8% of parent equity) was due 13-Oct-2026, before sign-off; no update; payment suspended so an adverse ruling is a cash event."}
+  - {id: "A3-09", check: "F5", line: "L545-547, L560-562, L1101-1105, L1319-1323", classification: "AMBIGUOUS", implication: "DoT contingent liability 7,513.71 = 2.21x consol parent equity; aggregate 'revised over a period of time'; no prior text to diff."}
+  - {id: "A3-10", check: "F6", line: "L45-53, L1493-1524", classification: "FORWARD-SIGNAL", implication: "Kaleyra, Inc. (FMV USD 92.625m) moves under the Netherlands holdco; standalone carrying value vs FMV undisclosed; completion date ND."}
+  - {id: "A3-11", check: "F6", line: "L528-531, L515, L990-993, L972", classification: "AMBIGUOUS", implication: "'One-time' staff cost charge recurs (98.26, 44.78, 36.54) under a phased program with no end date or total cost."}
+  - {id: "A3-12", check: "F7", line: "L541-542, L1003-1004, L522, L417, L495", classification: "AMBIGUOUS", implication: "Fire provision 30.10 (25.67 impairment) stated on estimate; true-up either way pending."}
+  - {id: "A3-13", check: "F7", line: "L543-544, L1005-1006, L524, L981", classification: "AMBIGUOUS", implication: "50.00 recoverability provision at the parent, counterparty unnamed; reads with credit write-offs."}
+  - {id: "A3-14", check: "F8", line: "L153-154, L635-636, L329, L740, L600-601", classification: "FORWARD-SIGNAL", implication: "Deferred tax credit every period; shields 935 bps of Q2 PBT; current tax 36.1%; ETR step-up risk if DTA recognition stops."}
+  - {id: "A3-15", check: "F8", line: "L440-441, L330, L741, L842", classification: "FORWARD-SIGNAL", implication: "315.42 of the 609.06 YoY OCF rise is lower tax paid from refunds; non-recurring."}
+  - {id: "A3-16", check: "F9", line: "L639, L188, L598-599", classification: "AMBIGUOUS", implication: "Standalone Q1 OCI (9.37) exceeds FY26 full-year 0.97; verify actuarial assumptions at the Annual Report."}
+  - {id: "A3-17", check: "F10", line: "L200, L481, L883, L207-208", classification: "NEUTRAL-FACT", implication: "About 90,000 shares allotted at par; dilution 0.03%; basic-diluted spread stable."}
+  - {id: "A3-18", check: "F10", line: "L422, L820, L140", classification: "AMBIGUOUS", implication: "SBP accrual -91.6% YoY (24.01 to 2.02) lowers employee cost about 11 a quarter; possible forfeiture reversals."}
+  - {id: "A3-19", check: "F11", line: "L361-368, L774-776, L954, L647-648, L479", classification: "NEUTRAL-FACT", implication: "Consol parent equity 33.0% of standalone net worth (gap 6,904.86); consol gross debt 3.49x parent equity vs standalone D/E 0.34; dividend exceeded H1 PAT."}
+  - {id: "A3-20", check: "F12", line: "L238, L246, L273, L282, L1244-1245", classification: "FORWARD-SIGNAL", implication: "Campaign Registry earns 23.8% of segment result on 4.2% of revenue, up from 15.3%; profit concentrating in one regulated niche."}
+  - {id: "A3-21", check: "F12", line: "L236, L239, L271, L280", classification: "AMBIGUOUS", implication: "Transformation Services revenue -33.7% YoY, liabilities -35.7%; 57.67 of the fall not explained by inter-segment."}
+  - {id: "A3-22", check: "F12", line: "L235, L243, L139-143, L270, L279", classification: "AMBIGUOUS", implication: "Data Services result +175.18 QoQ on revenue +107.41 (163% incremental margin); one-offs unknown."}
+  - {id: "A3-23", check: "F12", line: "L284, L318, L323, L458, L441, L373, L382", classification: "FORWARD-SIGNAL", implication: "Net debt +1,606.60 (+16.8%) in H1; CWIP +47.2%; capex 96% of OCF; debt-funded build and later D&A step-up."}
+  - {id: "A3-30", check: "F12", line: "L234, L242, L269, L278, L675", classification: "CONFIRMATORY-NEGATIVE", implication: "Voice result down each period (34.93, 20.61, 18.13); liabilities exceed assets; structural decline."}
+  - {id: "A3-24", check: "F13", line: "L67-72, L99-100, L1540-1542", classification: "AMBIGUOUS", implication: "CS successor named from 01-Nov-2026; incumbent cessation, date and reason not disclosed."}
+  - {id: "A3-25", check: "F14", line: "L1363-1364, L1382-1384, L235", classification: "AMBIGUOUS", implication: "Press-release Q2 FY26 data base 5,179 vs filed 5,204.47; filed growth 11.7% not 12.2%; digital metrics untied to filing."}
+  - {id: "A3-26", check: "F14", line: "L41, L1082, L1111, L973-976, L202, L589, L1387", classification: "NEUTRAL-FACT", implication: "Cumulative drafting slips (opinion vs conclusion, broken table numbering, blank reserves line, PAT growth rounding)."}
+  - {id: "A3-27", check: "F15", line: "L1246", classification: "AMBIGUOUS", implication: "Kaleyra Africa left the group 04-Sep-2026 with no disclosed mode, consideration or P&L impact."}
+  - {id: "A3-28", check: "F15", line: "L1256, L463", classification: "FORWARD-SIGNAL", implication: "TComm Turkey added 21-May-2026 with no acquisition outflow; new geography, purpose undisclosed."}
+  - {id: "A3-29", check: "F15", line: "L1519-1521, L1239, L1197", classification: "FORWARD-SIGNAL", implication: "Kaleyra, Inc. to become a step-down subsidiary of TCNL; next consolidation list should reflect it."}
+forward_signals: ["A3-01", "A3-05", "A3-08", "A3-10", "A3-14", "A3-15", "A3-20", "A3-23", "A3-28", "A3-29"]
+ambiguous: ["A3-04", "A3-06", "A3-07", "A3-09", "A3-11", "A3-12", "A3-13", "A3-16", "A3-18", "A3-21", "A3-22", "A3-24", "A3-25", "A3-27"]
+commitments:
+  - {commitment: "Transfer 100% of Kaleyra, Inc. (FMV USD 92.625m) to TCNL for 3,17,632 TCNL shares at USD 291.6", implied_date: "ND", ref: "Board letter (ii) L45-53; Attachment D L1493-1524", status_word: "initiated"}
+  - {commitment: "Kaleyra, Inc. becomes direct subsidiary of TCNL; ultimate ownership unchanged", implied_date: "on completion, ND", ref: "Attachment D item 4 L1519-1524", status_word: "initiated"}
+  - {commitment: "Transfer not expected to have material impact on consolidated financial position", implied_date: "on completion, ND", ref: "Attachment D item 2 L1512-1513", status_word: "initiated"}
+  - {commitment: "Ridhi Sood appointed Company Secretary and Compliance Officer", implied_date: "2026-11-01", ref: "Board letter (iii) L67-72; Attachment E L1540-1542", status_word: "initiated"}
+  - {commitment: "Organisational changes in a phased manner (staff cost optimisation)", implied_date: "ND, ongoing", ref: "Consol note 2a L528-531; standalone note a L990-993", status_word: "underway"}
+  - {commitment: "Defend DoT AGR demand position; appeals pending at SC and TDSAT", implied_date: "ND", ref: "Consol note 3 L552-559; standalone note 3 L1013-1018", status_word: "underway"}
+  - {commitment: "National Court VAT appeal judgment", implied_date: "2026-10-13 (scheduled, passed)", ref: "Consol note 4 L569-574", status_word: "underway"}
+  - {commitment: "Disposal of asset held for sale (7.40 carrying, 4.00 advance received)", implied_date: "ND", ref: "BS L344; CF L460 (inferred)", status_word: "initiated"}
+  - {commitment: "Fire incident provision on estimate, true-up pending", implied_date: "ND", ref: "Consol note 2d L541-542; standalone note d L1003-1004", status_word: "initiated"}
+  - {commitment: "Labour Codes provision re-estimated (reversal 18.52 consol)", implied_date: "Q1 FY27", ref: "Consol note 2c L534-540; standalone note c L996-1002", status_word: "completed"}
+  - {commitment: "Enter H2 FY27 with momentum and confidence (CEO outlook)", implied_date: "H2 FY27", ref: "Press release L1375-1376", status_word: "n.a."}
+  - {commitment: "DC-to-DC connectivity USD 1bn opportunity; ongoing investments", implied_date: "ND", ref: "Press release L1374-1375, L1398-1402", status_word: "n.a."}
+  - {commitment: "Investor data pack uploaded", implied_date: "2026-10-15", ref: "Press release L1433-1434", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The Q2 profit jump is a subsidiary event. Parent PAT rose 206.80 QoQ and subsidiaries plus eliminations supplied 192.08 (93%). Standalone pre-exceptional PBT fell 7.3%. Subsidiary EBITDA rose 195.09 on 89.54 more revenue, so cost-out or a one-off credit drove it; A4 must ask which, with the SBP accrual collapse and recurring 'one-time' staff charges in view. Debt moved down the group: subsidiaries raised 2,628.15 long-term and repaid 2,641.16 to the parent, so standalone Reg 52(4) ratios improved while consolidated net debt rose 1,606.60. Consolidated parent equity is 33% of standalone net worth and gross debt is 3.49x it. OCF strength is partly tax refunds (315.42 less tax paid YoY). Reported ETR stays near 27% only because deferred credits recur; current tax runs 36%. The VAT ruling (365.80) was due 13-Oct, two days before sign-off, and the note is silent. Read the Kaleyra move to the Netherlands holdco together with the Kaleyra Africa exit on 04-Sep. With no prior-quarter text, F5 and F15 rest on in-document dates only."

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "INDORAMA"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 3
+formfeed_count: 3
+line_count: 180
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/indorama-q2fy27/extracted/indorama-pressrelease-q2fy27-fulltext.md"
+structured_path: "runs/indorama-q2fy27/extracted/indorama-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 94
+  entity: 16
+  forward: 3
+  date: 8
+  qualifier: 11
+structured_id_range: "R001-R132"
+gate_a1: pass
+gap_note: ""

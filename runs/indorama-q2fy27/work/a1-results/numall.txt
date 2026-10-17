@@ -1,0 +1,555 @@
+1|34|NUMBER|Regulation 30 / Regulation 33|SEBI LODR regs cited for outcome
+1|47|NUMBER|Regulation 47(1)(b)|publication of results extract
+1|28|NUMBER|500207|BSE stock code
+1|30|NUMBER|INE156A01020|ISIN
+1|53|NUMBER|12:00 Noon IST|board meeting start time
+1|53|NUMBER|14:35 PM IST|board meeting end time
+1|65|NUMBER|ACS: 14223|company secretary membership number
+2|135|NUMBER|UDIN: 26092671NZAYBJ4662|standalone review report UDIN
+2|127|NUMBER|000756N/N500441|auditor firm registration number
+2|134|NUMBER|092671|auditor partner membership number
+3|161|NUMBER|817.91|standalone revenue from operations, Q1 FY27 (quarter 30 Jun 2026)
+3|161|NUMBER|1,166.29|standalone revenue from operations, Q2 FY26
+3|161|NUMBER|2,066.24|standalone revenue from operations, H1 FY27
+3|161|NUMBER|2,351.23|standalone revenue from operations, H1 FY26
+3|161|NUMBER|451873|standalone revenue from operations, FY26 (OCR separators lost)
+3|166|NUMBER|1,248.33|standalone revenue from operations, Q2 FY27 (column by position)
+3|167|NUMBER|582|standalone other income, Q2 FY27 (OCR decimal lost)
+3|167|NUMBER|685|standalone other income, Q1 FY27 (OCR decimal lost)
+3|167|NUMBER|364|standalone other income, Q2 FY26 (OCR decimal lost)
+3|167|NUMBER|1267|standalone other income, H1 FY27 (OCR decimal lost)
+3|167|NUMBER|837|standalone other income, H1 FY26 (OCR decimal lost)
+3|167|NUMBER|2752|standalone other income, FY26 (OCR decimal lost)
+3|168|NUMBER|1,254.15|standalone total income, Q2 FY27
+3|168|NUMBER|824.76|standalone total income, Q1 FY27
+3|168|NUMBER|1,169.93|standalone total income, Q2 FY26
+3|168|NUMBER|2,078.91|standalone total income, H1 FY27
+3|168|NUMBER|2,359.60|standalone total income, H1 FY26
+3|168|NUMBER|4,546.25|standalone total income, FY26
+3|171|NUMBER|1530.25|standalone cost of materials consumed, value 1 of 3 (garbled row, period unlabelled)
+3|171|NUMBER|181698|standalone cost of materials consumed, value 2 of 3 (garbled row)
+3|171|NUMBER|352397|standalone cost of materials consumed, value 3 of 3 (garbled row)
+3|172|NUMBER|24204|standalone cost of materials/purchase row, garbled value
+3|172|NUMBER|56821|standalone cost of materials/purchase row, garbled value
+3|172|NUMBER|93830|standalone cost of materials/purchase row, garbled value
+3|173|NUMBER|17.45|standalone purchase of stock-in-trade, garbled period
+3|173|NUMBER|4.05|standalone purchase of stock-in-trade, garbled period
+3|173|NUMBER|59.56|standalone purchase of stock-in-trade, garbled period
+3|173|NUMBER|1211|standalone purchase of stock-in-trade, garbled period
+3|173|NUMBER|1733|standalone purchase of stock-in-trade, garbled period
+3|176|NUMBER|4211|standalone changes in inventories row, garbled value
+3|177|NUMBER|2530|standalone changes in inventories row, garbled value
+3|177|NUMBER|2050|standalone changes in inventories row, garbled value
+3|177|NUMBER|016|standalone changes in inventories row, garbled value
+3|178|NUMBER|59.71|standalone employee benefits expense, H1 FY27 (OCR 5971)
+3|178|NUMBER|62.83|standalone employee benefits expense, H1 FY26 (OCR 6283)
+3|178|NUMBER|119.42|standalone employee benefits expense, FY26
+3|178|NUMBER|012|standalone employee benefits row, garbled value
+3|178|NUMBER|2059|standalone employee benefits row, garbled value
+3|178|NUMBER|3093|standalone employee benefits row, garbled value
+3|179|NUMBER|128.76|standalone other expenses, Q2 FY27
+3|179|NUMBER|85.37|standalone other expenses, Q1 FY27
+3|179|NUMBER|148.75|standalone other expenses, Q2 FY26
+3|179|NUMBER|214.13|standalone other expenses, H1 FY27
+3|179|NUMBER|285.16|standalone other expenses, H1 FY26
+3|179|NUMBER|556.10|standalone other expenses, FY26
+3|182|NUMBER|1,161.01|standalone total expenses before D&A, finance, FX; Q2 FY27
+3|182|NUMBER|752.54|standalone total expenses before D&A, finance, FX; Q1 FY27
+3|182|NUMBER|1,008.73|standalone total expenses before D&A, finance, FX; Q2 FY26
+3|182|NUMBER|1,913.55|standalone total expenses before D&A, finance, FX; H1 FY27
+3|182|NUMBER|2,216.58|standalone total expenses before D&A, finance, FX; H1 FY26
+3|182|NUMBER|4,247.96|standalone total expenses before D&A, finance, FX; FY26
+3|185|NUMBER|8515|standalone profit from ops before D&A etc, garbled (Q2 FY27 position)
+3|185|NUMBER|222|standalone profit from ops before D&A etc, garbled (Q1 FY27 position)
+3|185|NUMBER|7120|standalone profit from ops before D&A etc, garbled (Q2 FY26 position)
+3|185|NUMBER|165.38|standalone profit from ops before D&A etc, H1 FY27 position
+3|185|NUMBER|143.02|standalone profit from ops before D&A etc, H1 FY26 position
+3|185|NUMBER|208.29|standalone profit from ops before D&A etc, FY26 position
+3|186|NUMBER|959|standalone D&A row, garbled value
+3|186|NUMBER|18.50|standalone D&A row, garbled value
+3|186|NUMBER|1915|standalone D&A row, garbled value
+3|186|NUMBER|824|standalone D&A row, garbled value
+3|187|NUMBER|987|standalone D&A row, garbled value
+3|187|NUMBER|963|standalone D&A row, garbled value
+3|188|NUMBER|2565|standalone finance costs row, garbled value
+3|188|NUMBER|2579|standalone finance costs row, garbled value
+3|188|NUMBER|28.74|standalone finance costs, Q2 FY26 position
+3|188|NUMBER|51.44|standalone finance costs, H1 FY27
+3|188|NUMBER|52.16|standalone finance costs, H1 FY26
+3|188|NUMBER|1119|standalone finance costs, FY26 position (OCR)
+3|192|NUMBER|257|standalone FX fluctuation loss row, garbled value
+3|192|NUMBER|305|standalone FX fluctuation loss row, garbled value
+3|192|NUMBER|.83|standalone FX fluctuation loss row, garbled value
+3|192|NUMBER|562|standalone FX fluctuation loss row, garbled value
+3|192|NUMBER|16.36|standalone FX fluctuation loss row, garbled value
+3|192|NUMBER|%14|standalone FX fluctuation loss row, garbled value
+3|193|NUMBER|1,199.10|standalone total expenses, Q2 FY27
+3|193|NUMBER|791.01|standalone total expenses, Q1 FY27
+3|193|NUMBER|1,146.89|standalone total expenses, Q2 FY26
+3|193|NUMBER|1,990.11|standalone total expenses, H1 FY27
+3|193|NUMBER|2,304.25|standalone total expenses, H1 FY26
+3|193|NUMBER|4,433.53|standalone total expenses, FY26
+3|196|NUMBER|55.06|standalone profit before exceptional items and tax, Q2 FY27
+3|196|NUMBER|3375|standalone profit before exceptional items and tax, Q1 FY27 (OCR)
+3|196|NUMBER|23.04|standalone profit before exceptional items and tax, Q2 FY26
+3|196|NUMBER|88.80|standalone profit before exceptional items and tax, H1 FY27
+3|196|NUMBER|5535|standalone profit before exceptional items and tax, H1 FY26 (OCR)
+3|196|NUMBER|11272|standalone profit before exceptional items and tax, FY26 (OCR)
+3|199|NUMBER|269|standalone exceptional item employee benefit, FY26 position (OCR)
+3|199|NUMBER|-|standalone exceptional items, other periods ZERO_STANDING
+3|200|NUMBER|55.05|standalone profit before tax, Q2 FY27
+3|200|NUMBER|3375|standalone profit before tax, Q1 FY27 (OCR)
+3|200|NUMBER|23.04|standalone profit before tax, Q2 FY26
+3|200|NUMBER|88.80|standalone profit before tax, H1 FY27
+3|200|NUMBER|55.35|standalone profit before tax, H1 FY26
+3|200|NUMBER|110.03|standalone profit before tax, FY26
+3|204|NUMBER|-|standalone current and deferred tax, all periods ZERO_STANDING
+3|208|NUMBER|5505|standalone net profit, Q2 FY27 (OCR)
+3|208|NUMBER|375|standalone net profit, Q1 FY27 (OCR)
+3|208|NUMBER|23.08|standalone net profit, Q2 FY26 (OCR)
+3|208|NUMBER|88.80|standalone net profit, H1 FY27
+3|208|NUMBER|5535|standalone net profit, H1 FY26 (OCR)
+3|208|NUMBER|110,03|standalone net profit, FY26 (OCR)
+3|210|NUMBER|0.77|standalone OCI items not reclassified, period unlabelled
+3|213|NUMBER|55.05|standalone total comprehensive income, Q2 FY27
+3|213|NUMBER|3375|standalone total comprehensive income, Q1 FY27 (OCR)
+3|213|NUMBER|23.04|standalone total comprehensive income, Q2 FY26
+3|213|NUMBER|85.80|standalone total comprehensive income, H1 FY27 (OCR)
+3|213|NUMBER|5535|standalone total comprehensive income, H1 FY26 (OCR)
+3|213|NUMBER|1080|standalone total comprehensive income, FY26 (OCR)
+3|214|NUMBER|261.11|standalone paid-up equity share capital (FV Rs 10), all periods
+3|215|NUMBER|302.65|standalone other equity, 31 Mar 2026
+3|219|NUMBER|2.11|standalone basic EPS Rs, Q2 FY27
+3|219|NUMBER|1.29|standalone basic EPS Rs, Q1 FY27
+3|219|NUMBER|0.88|standalone basic EPS Rs, Q2 FY26
+3|219|NUMBER|3.40|standalone basic EPS Rs, H1 FY27
+3|219|NUMBER|2.12|standalone basic EPS Rs, H1 FY26
+3|218|NUMBER|4.21|standalone basic EPS Rs, FY26
+3|223|NUMBER|2.11|standalone diluted EPS Rs, Q2 FY27
+3|223|NUMBER|1.29|standalone diluted EPS Rs, Q1 FY27
+3|223|NUMBER|0.88|standalone diluted EPS Rs, Q2 FY26
+3|223|NUMBER|3.40|standalone diluted EPS Rs, H1 FY27
+3|223|NUMBER|2.12|standalone diluted EPS Rs, H1 FY26
+3|223|NUMBER|4.21|standalone diluted EPS Rs, FY26
+4|233|NUMBER|858.86|standalone PPE, 30 Sep 2026
+4|233|NUMBER|867.19|standalone PPE, 31 Mar 2026
+4|234|NUMBER|6.01|standalone right of use assets, 30 Sep 2026
+4|234|NUMBER|7.07|standalone right of use assets, 31 Mar 2026
+4|235|NUMBER|35.42|standalone CWIP, 30 Sep 2026
+4|235|NUMBER|36.91|standalone CWIP, 31 Mar 2026
+4|236|NUMBER|0.04|standalone intangible assets, 30 Sep 2026
+4|236|NUMBER|-|standalone intangible assets, 31 Mar 2026 ZERO_STANDING
+4|238|NUMBER|16.10|standalone investments, 30 Sep 2026
+4|238|NUMBER|16.10|standalone investments, 31 Mar 2026
+4|239|NUMBER|76.10|standalone non-current loans, 30 Sep 2026
+4|239|NUMBER|127.85|standalone non-current loans, 31 Mar 2026
+4|240|NUMBER|2.04|standalone other non-current financial assets, 30 Sep 2026
+4|240|NUMBER|2.08|standalone other non-current financial assets, 31 Mar 2026
+4|241|NUMBER|25861|standalone deferred tax assets net, 30 Sep 2026 (OCR)
+4|241|NUMBER|25861|standalone deferred tax assets net, 31 Mar 2026 (OCR)
+4|242|NUMBER|468|standalone non-current tax assets, 30 Sep 2026 (OCR)
+4|242|NUMBER|8.42|standalone non-current tax assets, 31 Mar 2026
+4|243|NUMBER|26.88|standalone other non-current assets, 30 Sep 2026
+4|243|NUMBER|26.47|standalone other non-current assets, 31 Mar 2026
+4|244|NUMBER|1284.72|standalone total non-current assets, 30 Sep 2026
+4|244|NUMBER|1350.70|standalone total non-current assets, 31 Mar 2026
+4|247|NUMBER|609.01|standalone inventories, 30 Sep 2026
+4|247|NUMBER|596.88|standalone inventories, 31 Mar 2026
+4|249|NUMBER|285.60|standalone trade receivables, 30 Sep 2026
+4|249|NUMBER|379.70|standalone trade receivables, 31 Mar 2026
+4|250|NUMBER|1.65|standalone cash and cash equivalents, 30 Sep 2026
+4|250|NUMBER|10.49|standalone cash and cash equivalents, 31 Mar 2026
+4|251|NUMBER|1.46|standalone other bank balances, 30 Sep 2026
+4|251|NUMBER|1.44|standalone other bank balances, 31 Mar 2026
+4|252|NUMBER|151|standalone current loans, 30 Sep 2026 (OCR)
+4|252|NUMBER|1.24|standalone current loans, 31 Mar 2026
+4|253|NUMBER|604.16|standalone other current financial assets, 30 Sep 2026
+4|253|NUMBER|607.59|standalone other current financial assets, 31 Mar 2026
+4|254|NUMBER|77.87|standalone other current assets, 30 Sep 2026
+4|254|NUMBER|63.04|standalone other current assets, 31 Mar 2026
+4|255|NUMBER|1581.26|standalone total current assets, 30 Sep 2026
+4|255|NUMBER|1660.38|standalone total current assets, 31 Mar 2026
+4|256|NUMBER|2,865.98|standalone total assets, 30 Sep 2026
+4|256|NUMBER|3011.08|standalone total assets, 31 Mar 2026
+4|260|NUMBER|261.11|standalone equity share capital, 30 Sep 2026
+4|260|NUMBER|261,11|standalone equity share capital, 31 Mar 2026
+4|261|NUMBER|391.45|standalone other equity, 30 Sep 2026
+4|261|NUMBER|302.65|standalone other equity, 31 Mar 2026
+4|262|NUMBER|652.56|standalone total equity, 30 Sep 2026
+4|262|NUMBER|563.76|standalone total equity, 31 Mar 2026
+4|265|NUMBER|285.28|standalone non-current borrowings, 30 Sep 2026
+4|265|NUMBER|350.77|standalone non-current borrowings, 31 Mar 2026
+4|266|NUMBER|6.44|standalone non-current lease liabilities, 30 Sep 2026
+4|266|NUMBER|6.92|standalone non-current lease liabilities, 31 Mar 2026
+4|267|NUMBER|52.89|standalone non-current provisions, 30 Sep 2026
+4|267|NUMBER|50.02|standalone non-current provisions, 31 Mar 2026
+4|268|NUMBER|344.61|standalone total non-current liabilities, 30 Sep 2026
+4|268|NUMBER|407.71|standalone total non-current liabilities, 31 Mar 2026
+4|271|NUMBER|434,14|standalone current borrowings, 30 Sep 2026
+4|271|NUMBER|593.21|standalone current borrowings, 31 Mar 2026
+4|272|NUMBER|0.49|standalone current lease liabilities, 30 Sep 2026
+4|272|NUMBER|1.35|standalone current lease liabilities, 31 Mar 2026
+4|274|NUMBER|11.09|standalone trade payables MSME, 30 Sep 2026
+4|274|NUMBER|13.28|standalone trade payables MSME, 31 Mar 2026
+4|276|NUMBER|1347.56|standalone trade payables other creditors, 30 Sep 2026
+4|276|NUMBER|1367.48|standalone trade payables other creditors, 31 Mar 2026
+4|277|NUMBER|3023|standalone other current financial liabilities, 30 Sep 2026 (OCR)
+4|277|NUMBER|20.05|standalone other current financial liabilities, 31 Mar 2026
+4|278|NUMBER|9.81|standalone other current liabilities, 30 Sep 2026
+4|278|NUMBER|8.75|standalone other current liabilities, 31 Mar 2026
+4|279|NUMBER|35.49|standalone current provisions, 30 Sep 2026
+4|279|NUMBER|35.49|standalone current provisions, 31 Mar 2026
+4|280|NUMBER|1868.81|standalone total current liabilities, 30 Sep 2026
+4|280|NUMBER|2039.61|standalone total current liabilities, 31 Mar 2026
+4|281|NUMBER|2865.98|standalone total equity and liabilities, 30 Sep 2026
+4|281|NUMBER|3011.08|standalone total equity and liabilities, 31 Mar 2026
+5|289|NUMBER|88.80|standalone cash flow PBT, H1 FY27
+5|289|NUMBER|55.35|standalone cash flow PBT, H1 FY26
+5|291|NUMBER|19.50|standalone cash flow D&A, H1 FY27
+5|291|NUMBER|19.15|standalone cash flow D&A, H1 FY26
+5|293|NUMBER|0.03|standalone gain/loss on PPE disposal, H1 FY27
+5|293|NUMBER|(0.42)|standalone gain/loss on PPE disposal, H1 FY26
+5|295|NUMBER|51.44|standalone cash flow finance costs, H1 FY27
+5|295|NUMBER|52.16|standalone cash flow finance costs, H1 FY26
+5|296|NUMBER|(5.95)|standalone interest income, H1 FY27
+5|296|NUMBER|(3.71)|standalone interest income, H1 FY26
+5|297|NUMBER|0.01|standalone debts/advances written off, H1 FY27
+5|297|NUMBER|0.12|standalone debts/advances written off, H1 FY26
+5|298|NUMBER|153.83|standalone operating profit before WC changes, H1 FY27
+5|298|NUMBER|122,65|standalone operating profit before WC changes, H1 FY26
+5|300|NUMBER|94.09|standalone change in trade receivables, H1 FY27
+5|300|NUMBER|(90.33)|standalone change in trade receivables, H1 FY26
+5|301|NUMBER|3.20|standalone change in other financial assets and loans, H1 FY27
+5|301|NUMBER|(65.48)|standalone change in other financial assets and loans, H1 FY26
+5|302|NUMBER|(14.83)|standalone change in other assets, H1 FY27
+5|302|NUMBER|21.84|standalone change in other assets, H1 FY26
+5|304|NUMBER|(12.13)|standalone change in inventories, H1 FY27
+5|304|NUMBER|65.45|standalone change in inventories, H1 FY26
+5|306|NUMBER|(22.11)|standalone change in trade payables, H1 FY27
+5|306|NUMBER|(9.92)|standalone change in trade payables, H1 FY26
+5|308|NUMBER|2.87|standalone change in provisions, H1 FY27
+5|308|NUMBER|2.87|standalone change in provisions, H1 FY26
+5|309|NUMBER|10.57|standalone change in other financial liabilities, H1 FY27
+5|309|NUMBER|1.73|standalone change in other financial liabilities, H1 FY26
+5|310|NUMBER|1.05|standalone change in other liabilities, H1 FY27
+5|310|NUMBER|(2.02)|standalone change in other liabilities, H1 FY26
+5|312|NUMBER|216.54|standalone cash generated from operations before tax, H1 FY27
+5|312|NUMBER|46.79|standalone cash generated from operations before tax, H1 FY26
+5|313|NUMBER|3.78|standalone income taxes refund/(paid) net, H1 FY27
+5|313|NUMBER|1.62|standalone income taxes refund/(paid) net, H1 FY26
+5|314|NUMBER|220.30|standalone net cash from operating activities, H1 FY27
+5|314|NUMBER|48.41|standalone net cash from operating activities, H1 FY26
+5|317|NUMBER|(8.44)|standalone purchase of PPE incl CWIP, H1 FY27
+5|317|NUMBER|(®.57)|standalone purchase of PPE incl CWIP, H1 FY26 (OCR garbled)
+5|319|NUMBER|-|standalone proceeds from sale of PPE, H1 FY27 ZERO_STANDING
+5|319|NUMBER|0.82|standalone proceeds from sale of PPE, H1 FY26
+5|320|NUMBER|51.75|standalone loans to subsidiaries (net), H1 FY27
+5|320|NUMBER|(7.50)|standalone loans to subsidiaries (net), H1 FY26
+5|321|NUMBER|(0.02)|standalone other bank balances net, H1 FY27
+5|321|NUMBER|1.69|standalone other bank balances net, H1 FY26
+5|323|NUMBER|5.94|standalone interest received, H1 FY27
+5|323|NUMBER|3.73|standalone interest received, H1 FY26
+5|324|NUMBER|49.23|standalone net cash from investing activities, H1 FY27
+5|324|NUMBER|(9.83)|standalone net cash from investing activities, H1 FY26
+5|327|NUMBER|(17.58)|standalone repayment of non-current borrowings, H1 FY27
+5|327|NUMBER|(54.54)|standalone repayment of non-current borrowings, H1 FY26
+5|328|NUMBER|0.00|standalone proceeds from non-current borrowings, H1 FY27 ZERO_STANDING
+5|328|NUMBER|44.00|standalone proceeds from non-current borrowings, H1 FY26
+5|329|NUMBER|(206.98)|standalone movement in current borrowings net, H1 FY27
+5|329|NUMBER|8.27|standalone movement in current borrowings net, H1 FY26
+5|330|NUMBER|(1.34)|standalone lease principal paid, H1 FY27
+5|330|NUMBER|(1.24)|standalone lease principal paid, H1 FY26
+5|331|NUMBER|(0.39)|standalone lease interest paid, H1 FY27
+5|331|NUMBER|(0.48)|standalone lease interest paid, H1 FY26
+5|332|NUMBER|(52.08)|standalone finance costs paid, H1 FY27
+5|332|NUMBER|(52.64)|standalone finance costs paid, H1 FY26
+5|333|NUMBER|(278.37)|standalone net cash from financing activities, H1 FY27
+5|333|NUMBER|(56.83)|standalone net cash from financing activities, H1 FY26
+5|334|NUMBER|(8.84)|standalone net change in cash, H1 FY27
+5|334|NUMBER|(18.085)|standalone net change in cash, H1 FY26 (OCR)
+5|335|NUMBER|10.49|standalone opening cash, H1 FY27
+5|335|NUMBER|19.56|standalone opening cash, H1 FY26
+5|336|NUMBER|1.65|standalone closing cash, H1 FY27
+5|336|NUMBER|1.51|standalone closing cash, H1 FY26
+6|367|NUMBER|DIN 00206807|CMD DIN, standalone results signature
+6|351|NUMBER|one reportable segment|standalone segment count
+6|343|NUMBER|Notes 1 to 4|standalone notes count
+8|457|NUMBER|000756N|auditor firm registration, consolidated report
+8|464|NUMBER|092671|auditor partner membership number
+8|465|NUMBER|UDIN: 26092671GASHHZ5629|consolidated review report UDIN
+8|436|NUMBER|4 subsidiaries|subsidiary count in consolidation
+9|485|NUMBER|134064|consolidated revenue from operations, Q2 FY27 (OCR)
+9|485|NUMBER|936.64|consolidated revenue from operations, Q1 FY27
+9|485|NUMBER|122064|consolidated revenue from operations, Q2 FY26 (OCR)
+9|485|NUMBER|227728|consolidated revenue from operations, H1 FY27 (OCR)
+9|485|NUMBER|252635|consolidated revenue from operations, H1 FY26 (OCR)
+9|485|NUMBER|491006|consolidated revenue from operations, FY26 (OCR)
+9|486|NUMBER|171|consolidated other income row, garbled value
+9|486|NUMBER|656|consolidated other income row, garbled value
+9|486|NUMBER|456|consolidated other income row, garbled value
+9|486|NUMBER|1895|consolidated other income row, garbled value
+9|487|NUMBER|340|consolidated other income row, garbled value
+9|487|NUMBER|356|consolidated other income row, garbled value
+9|487|NUMBER|432001|consolidated other income row, garbled value
+9|488|NUMBER|1,344.04|consolidated total income, Q2 FY27
+9|488|NUMBER|24020|consolidated total income, Q1 FY27 position (OCR)
+9|488|NUMBER|122238|consolidated total income, Q2 FY26 (OCR)
+9|488|NUMBER|2,284.24|consolidated total income, H1 FY27
+9|488|NUMBER|253091|consolidated total income, H1 FY26 (OCR)
+9|490|NUMBER|94432|consolidated cost of materials row, garbled value
+9|490|NUMBER|58461|consolidated cost of materials row, garbled value
+9|490|NUMBER|31.31|consolidated cost of materials row, garbled value
+9|490|NUMBER|152893|consolidated cost of materials row, garbled value
+9|490|NUMBER|175402|consolidated cost of materials row, garbled value
+9|490|NUMBER|353296|consolidated cost of materials row, garbled value
+9|491|NUMBER|11622|consolidated purchase of stock-in-trade row, garbled value
+9|491|NUMBER|48.30|consolidated purchase of stock-in-trade row, garbled value
+9|491|NUMBER|7876|consolidated purchase of stock-in-trade row, garbled value
+9|491|NUMBER|164.52|consolidated purchase of stock-in-trade row, garbled value
+9|491|NUMBER|16116|consolidated purchase of stock-in-trade row, garbled value
+9|491|NUMBER|196 60|consolidated purchase of stock-in-trade row, garbled value
+9|492|NUMBER|(2299)|consolidated changes in inventories row, garbled value
+9|492|NUMBER|6214|consolidated changes in inventories row, garbled value
+9|492|NUMBER|(69.94)|consolidated changes in inventories row, garbled value
+9|492|NUMBER|2920|consolidated changes in inventories row, garbled value
+9|492|NUMBER|1453)|consolidated changes in inventories row, garbled value
+9|492|NUMBER|3621|consolidated changes in inventories row, garbled value
+9|494|NUMBER|3153|consolidated employee benefits row, garbled value
+9|494|NUMBER|3097|consolidated employee benefits row, garbled value
+9|494|NUMBER|3238|consolidated employee benefits row, garbled value
+9|494|NUMBER|6250|consolidated employee benefits row, garbled value
+9|494|NUMBER|€579|consolidated employee benefits row, garbled value
+9|494|NUMBER|12631|consolidated employee benefits row, garbled value
+9|495|NUMBER|15725|consolidated other expenses row, garbled value
+9|495|NUMBER|108.14|consolidated other expenses row, garbled value
+9|495|NUMBER|169,46|consolidated other expenses row, garbled value
+9|495|NUMBER|26339|consolidated other expenses row, garbled value
+9|495|NUMBER|33382|consolidated other expenses row, garbled value
+9|495|NUMBER|66868|consolidated other expenses row, garbled value
+9|496|NUMBER|456076|consolidated total expenses before D&A row, garbled value
+9|497|NUMBER|114197|consolidated total expenses before D&A row, garbled value
+9|497|NUMBER|2,058.54|consolidated total expenses before D&A row, garbled value
+9|497|NUMBER|235026|consolidated total expenses before D&A row, garbled value
+9|499|NUMBER|1226.38|consolidated total expenses before D&A row, garbled value
+9|499|NUMBER|83218|consolidated total expenses before D&A row, garbled value
+9|500|NUMBER|180.65|consolidated profit from ops before D&A row, garbled value
+9|500|NUMBER|36825|consolidated profit from ops before D&A row, garbled value
+9|504|NUMBER|1766|consolidated profit from ops before D&A row, garbled value
+9|504|NUMBER|108.04|consolidated profit from ops before D&A row, garbled value
+9|504|NUMBER|80.3¢|consolidated profit from ops before D&A row, garbled value
+9|504|NUMBER|22570|consolidated profit from ops before D&A row, garbled value
+9|505|NUMBER|1230|consolidated D&A row, garbled value
+9|505|NUMBER|1201|consolidated D&A row, garbled value
+9|505|NUMBER|1198|consolidated D&A row, garbled value
+9|505|NUMBER|2431|consolidated D&A row, H1 FY27 position
+9|505|NUMBER|2391|consolidated D&A row, H1 FY26 position
+9|505|NUMBER|4776|consolidated D&A row, FY26 position
+9|506|NUMBER|2899|consolidated finance costs row, garbled value
+9|506|NUMBER|293|consolidated finance costs row, garbled value
+9|506|NUMBER|33857|consolidated finance costs row, garbled value
+9|506|NUMBER|5837|consolidated finance costs row, H1 FY27 position
+9|506|NUMBER|6260|consolidated finance costs row, H1 FY26 position
+9|506|NUMBER|13031|consolidated finance costs row, FY26 position
+9|507|NUMBER|251|consolidated FX loss row, garbled value
+9|507|NUMBER|291|consolidated FX loss row, garbled value
+9|507|NUMBER|1028|consolidated FX loss row, garbled value
+9|507|NUMBER|542|consolidated FX loss row, garbled value
+9|507|NUMBER|1684|consolidated FX loss row, garbled value
+9|507|NUMBER|3727|consolidated FX loss row, garbled value
+9|508|NUMBER|127048|consolidated total expenses row, garbled value
+9|508|NUMBER|o75.46|consolidated total expenses row, garbled value
+9|508|NUMBER|1497.80|consolidated total expenses row, garbled value
+9|508|NUMBER|2,48.64|consolidated total expenses row, garbled value
+9|508|NUMBER|245361|consolidated total expenses row, garbled value
+9|508|NUMBER|477690|consolidated total expenses row, garbled value
+9|509|NUMBER|137.60|consolidated profit before exceptional items and tax row, H1 FY27 position
+9|509|NUMBER|730|consolidated profit before exceptional items and tax row, H1 FY26 position (OCR)
+9|509|NUMBER|15291|consolidated profit before exceptional items and tax row, FY26 position (OCR)
+9|510|NUMBER|7386|consolidated profit before exceptional items and tax row, Q2 FY27 position (OCR)
+9|510|NUMBER|6374|consolidated profit before exceptional items and tax row, Q1 FY27 position (OCR)
+9|510|NUMBER|24585|consolidated profit before exceptional items and tax row, Q2 FY26 position (OCR)
+9|511|NUMBER|270|consolidated exceptional item employee benefit (OCR)
+9|512|NUMBER|285|consolidated exceptional item row (OCR)
+9|512|NUMBER|197.60|consolidated profit before tax row, garbled value
+9|512|NUMBER|77.30|consolidated profit before tax, H1 FY26
+9|512|NUMBER|15021|consolidated profit before tax, FY26 (OCR)
+9|513|NUMBER|7386|consolidated profit before tax, Q2 FY27 position (OCR)
+9|513|NUMBER|6374|consolidated profit before tax, Q1 FY27 position (OCR)
+9|514|NUMBER|-|consolidated current tax expense, all periods ZERO_STANDING
+9|515|NUMBER|©22)|consolidated deferred tax credit row, garbled value
+9|516|NUMBER|7408|consolidated net profit, Q2 FY27 (OCR)
+9|516|NUMBER|2455|consolidated net profit, Q2 FY26 position (OCR)
+9|516|NUMBER|13782|consolidated net profit, H1 FY27 (OCR)
+9|516|NUMBER|77.30|consolidated net profit, H1 FY26
+9|516|NUMBER|15021|consolidated net profit, FY26 (OCR)
+9|518|NUMBER|075|consolidated OCI items not reclassified (OCR)
+9|523|NUMBER|2455|consolidated total comprehensive income row, garbled value
+9|523|NUMBER|13782|consolidated total comprehensive income row, garbled value
+9|523|NUMBER|16096|consolidated total comprehensive income row, FY26 position
+9|524|NUMBER|7408|consolidated total comprehensive income row, Q2 FY27 position
+9|524|NUMBER|674|consolidated total comprehensive income row, garbled value
+9|525|NUMBER|6374|consolidated profit attributable to owners row, garbled value
+9|525|NUMBER|2455|consolidated profit attributable to owners row, garbled value
+9|525|NUMBER|13182|consolidated profit attributable to owners row, garbled value
+9|525|NUMBER|730|consolidated profit attributable to owners row, garbled value
+9|525|NUMBER|15021|consolidated profit attributable to owners row, garbled value
+9|526|NUMBER|-|consolidated profit attributable to non-controlling interest ZERO_STANDING
+9|528|NUMBER|075|consolidated OCI attributable to owners (OCR)
+9|532|NUMBER|2455|consolidated total comprehensive income attributable to owners row, garbled value
+9|532|NUMBER|13782|consolidated total comprehensive income attributable to owners row, garbled value
+9|532|NUMBER|7.3|consolidated total comprehensive income attributable to owners row, garbled value
+9|532|NUMBER|15096|consolidated total comprehensive income attributable to owners row, garbled value
+9|533|NUMBER|7408|consolidated total comprehensive income attributable to owners row, garbled value
+9|535|NUMBER|-|consolidated total comprehensive income attributable to NCI ZERO_STANDING
+9|536|NUMBER|261.11|consolidated paid-up equity share capital (FV Rs 10), periods
+9|537|NUMBER|25806|consolidated other equity, 31 Mar 2026 (OCR)
+9|539|NUMBER|284|consolidated basic EPS Rs, Q2 FY27 (OCR)
+9|539|NUMBER|244|consolidated basic EPS Rs, Q1 FY27 (OCR)
+9|539|NUMBER|084|consolidated basic EPS Rs, Q2 FY26 (OCR)
+9|539|NUMBER|528|consolidated basic EPS Rs, H1 FY27 (OCR)
+9|539|NUMBER|2%|consolidated basic EPS, H1 FY26 (OCR unreadable)
+9|539|NUMBER|575|consolidated basic EPS Rs, FY26 (OCR)
+9|540|NUMBER|284|consolidated diluted EPS Rs, Q2 FY27 (OCR)
+9|540|NUMBER|244|consolidated diluted EPS Rs, Q1 FY27 (OCR)
+9|540|NUMBER|094|consolidated diluted EPS Rs, Q2 FY26 (OCR)
+9|540|NUMBER|528|consolidated diluted EPS Rs, H1 FY27 (OCR)
+9|540|NUMBER|2%|consolidated diluted EPS, H1 FY26 (OCR unreadable)
+9|540|NUMBER|575|consolidated diluted EPS Rs, FY26 (OCR)
+10|552|NUMBER|1,214.65|consolidated PPE, 30 Sep 2026
+10|552|NUMBER|1,225.06|consolidated PPE, 31 Mar 2026
+10|553|NUMBER|6.01|consolidated right of use assets, 30 Sep 2026
+10|553|NUMBER|7.07|consolidated right of use assets, 31 Mar 2026
+10|554|NUMBER|38.45|consolidated CWIP, 30 Sep 2026
+10|554|NUMBER|42,03|consolidated CWIP, 31 Mar 2026
+10|555|NUMBER|0.04|consolidated intangible assets, 30 Sep 2026
+10|557|NUMBER|249|consolidated other non-current financial assets, 30 Sep 2026 (OCR)
+10|557|NUMBER|251|consolidated other non-current financial assets, 31 Mar 2026 (OCR)
+10|558|NUMBER|268.20|consolidated deferred tax assets net, 30 Sep 2026
+10|558|NUMBER|25861|consolidated deferred tax assets net, 31 Mar 2026 (OCR)
+10|559|NUMBER|731|consolidated non-current tax assets, 30 Sep 2026 (OCR)
+10|559|NUMBER|10.02|consolidated non-current tax assets, 31 Mar 2026
+10|560|NUMBER|27.75|consolidated other non-current assets, 30 Sep 2026
+10|560|NUMBER|2653|consolidated other non-current assets, 31 Mar 2026 (OCR)
+10|561|NUMBER|1.564.90|consolidated total non-current assets, 30 Sep 2026 (OCR)
+10|561|NUMBER|157183|consolidated total non-current assets, 31 Mar 2026 (OCR)
+10|563|NUMBER|690.81|consolidated inventories, 30 Sep 2026
+10|563|NUMBER|666.86|consolidated inventories, 31 Mar 2026
+10|565|NUMBER|103.08|consolidated trade receivables, 30 Sep 2026
+10|565|NUMBER|24332|consolidated trade receivables, 31 Mar 2026 (OCR)
+10|566|NUMBER|562|consolidated cash and cash equivalents, 30 Sep 2026 (OCR)
+10|566|NUMBER|16.82|consolidated cash and cash equivalents, 31 Mar 2026
+10|567|NUMBER|144|consolidated other bank balances, 30 Sep 2026 (OCR)
+10|567|NUMBER|144|consolidated other bank balances, 31 Mar 2026 (OCR)
+10|568|NUMBER|151|consolidated current loans, 30 Sep 2026 (OCR)
+10|568|NUMBER|124|consolidated current loans, 31 Mar 2026 (OCR)
+10|569|NUMBER|667.63|consolidated other current financial assets, 30 Sep 2026
+10|569|NUMBER|658.25|consolidated other current financial assets, 31 Mar 2026
+10|570|NUMBER|95.51|consolidated other current assets, 30 Sep 2026
+10|570|NUMBER|8433|consolidated other current assets, 31 Mar 2026 (OCR)
+10|571|NUMBER|1,566.78|consolidated total current assets, 30 Sep 2026
+10|571|NUMBER|167226|consolidated total current assets, 31 Mar 2026 (OCR)
+10|572|NUMBER|3,131.68|consolidated total assets, 30 Sep 2026
+10|572|NUMBER|3,244.09|consolidated total assets, 31 Mar 2026
+10|576|NUMBER|26141|consolidated equity share capital, 30 Sep 2026 (OCR)
+10|576|NUMBER|261.11|consolidated equity share capital, 31 Mar 2026
+10|577|NUMBER|39588|consolidated other equity, 30 Sep 2026 (OCR)
+10|577|NUMBER|258.06|consolidated other equity, 31 Mar 2026
+10|578|NUMBER|656.99|consolidated total equity, 30 Sep 2026
+10|578|NUMBER|51847|consolidated total equity, 31 Mar 2026 (OCR)
+10|581|NUMBER|33218|consolidated non-current borrowings, 30 Sep 2026 (OCR)
+10|581|NUMBER|44458|consolidated non-current borrowings, 31 Mar 2026 (OCR)
+10|582|NUMBER|6.44|consolidated non-current lease liabilities, 30 Sep 2026
+10|582|NUMBER|692|consolidated non-current lease liabilities, 31 Mar 2026 (OCR)
+10|583|NUMBER|53.45|consolidated non-current provisions, 30 Sep 2026
+10|583|NUMBER|50.58|consolidated non-current provisions, 31 Mar 2026
+10|584|NUMBER|937|consolidated deferred tax liabilities net, 30 Sep 2026 (OCR)
+10|584|NUMBER|B|consolidated deferred tax liabilities net, 31 Mar 2026 (OCR unreadable)
+10|585|NUMBER|401.44|consolidated total non-current liabilities, 30 Sep 2026
+10|585|NUMBER|502.08|consolidated total non-current liabilities, 31 Mar 2026
+10|588|NUMBER|527.95|consolidated current borrowings, 30 Sep 2026
+10|588|NUMBER|687.02|consolidated current borrowings, 31 Mar 2026
+10|589|NUMBER|049|consolidated current lease liabilities, 30 Sep 2026 (OCR)
+10|589|NUMBER|1.35|consolidated current lease liabilities, 31 Mar 2026
+10|591|NUMBER|17.60|consolidated trade payables MSME, 30 Sep 2026
+10|591|NUMBER|17.33|consolidated trade payables MSME, 31 Mar 2026
+10|592|NUMBER|1,444.43|consolidated trade payables other creditors, 30 Sep 2026
+10|592|NUMBER|143326|consolidated trade payables other creditors, 31 Mar 2026 (OCR)
+10|593|NUMBER|3543|consolidated other current financial liabilities, 30 Sep 2026 (OCR)
+10|593|NUMBER|2529|consolidated other current financial liabilities, 31 Mar 2026 (OCR)
+10|594|NUMBER|11.85|consolidated other current liabilities, 30 Sep 2026
+10|594|NUMBER|23.09|consolidated other current liabilities, 31 Mar 2026
+10|595|NUMBER|35.50|consolidated current provisions, 30 Sep 2026
+10|595|NUMBER|35.50|consolidated current provisions, 31 Mar 2026
+10|596|NUMBER|2,073.25|consolidated total current liabilities, 30 Sep 2026
+10|596|NUMBER|2,222.84|consolidated total current liabilities, 31 Mar 2026
+10|598|NUMBER|3,131.68|consolidated total equity and liabilities, 30 Sep 2026
+10|598|NUMBER|3,244.09|consolidated total equity and liabilities, 31 Mar 2026
+11|606|NUMBER|137.60|consolidated cash flow PBT, H1 FY27
+11|606|NUMBER|77.30|consolidated cash flow PBT, H1 FY26
+11|608|NUMBER|24.31|consolidated cash flow D&A, H1 FY27
+11|608|NUMBER|2391|consolidated cash flow D&A, H1 FY26 (OCR)
+11|609|NUMBER|0.03|consolidated gain/loss on PPE disposal, H1 FY27
+11|609|NUMBER|(0.42)|consolidated gain/loss on PPE disposal, H1 FY26
+11|610|NUMBER|58.37|consolidated cash flow finance costs, H1 FY27
+11|610|NUMBER|62.60|consolidated cash flow finance costs, H1 FY26
+11|611|NUMBER|(3.60)|consolidated interest income, H1 FY27
+11|611|NUMBER|(2.12)|consolidated interest income, H1 FY26
+11|612|NUMBER|0.02|consolidated debts/advances written off, H1 FY27
+11|612|NUMBER|0.12|consolidated debts/advances written off, H1 FY26
+11|613|NUMBER|216.73|consolidated operating profit before WC changes, H1 FY27
+11|613|NUMBER|161.39|consolidated operating profit before WC changes, H1 FY26
+11|615|NUMBER|140.26|consolidated change in trade receivables, H1 FY27
+11|615|NUMBER|3.50|consolidated change in trade receivables, H1 FY26
+11|616|NUMBER|(9.62)|consolidated change in other financial assets and loans, H1 FY27
+11|616|NUMBER|(103.53)|consolidated change in other financial assets and loans, H1 FY26
+11|617|NUMBER|(11.18)|consolidated change in other assets, H1 FY27
+11|617|NUMBER|8.09|consolidated change in other assets, H1 FY26
+11|618|NUMBER|(23.95)|consolidated change in inventories, H1 FY27
+11|618|NUMBER|20.80|consolidated change in inventories, H1 FY26
+11|619|NUMBER|1145|consolidated change in trade payables, H1 FY27 (OCR)
+11|619|NUMBER|(2.84)|consolidated change in trade payables, H1 FY26
+11|620|NUMBER|2.87|consolidated change in provisions, H1 FY27
+11|620|NUMBER|287|consolidated change in provisions, H1 FY26 (OCR)
+11|621|NUMBER|10.53|consolidated change in other financial liabilities, H1 FY27
+11|621|NUMBER|1.84|consolidated change in other financial liabilities, H1 FY26
+11|622|NUMBER|(11.34)|consolidated change in other liabilities, H1 FY27
+11|622|NUMBER|(1.41)|consolidated change in other liabilities, H1 FY26
+11|623|NUMBER|325.75|consolidated cash generated from operations before tax, H1 FY27
+11|623|NUMBER|90.71|consolidated cash generated from operations before tax, H1 FY26
+11|624|NUMBER|27|consolidated income taxes (paid)/refund net, H1 FY27 (OCR)
+11|624|NUMBER|0.75|consolidated income taxes (paid)/refund net, H1 FY26
+11|625|NUMBER|328.46|consolidated net cash from operating activities, H1 FY27
+11|625|NUMBER|91.46|consolidated net cash from operating activities, H1 FY26
+11|629|NUMBER|.83)|consolidated purchase of PPE incl CWIP, H1 FY27 (OCR truncated)
+11|629|NUMBER|(9.99)|consolidated purchase of PPE incl CWIP, H1 FY26
+11|631|NUMBER|-|consolidated proceeds from sale of PPE, H1 FY27 ZERO_STANDING
+11|631|NUMBER|0.82|consolidated proceeds from sale of PPE, H1 FY26
+11|632|NUMBER|-|consolidated other bank balances net, H1 FY27 ZERO_STANDING
+11|632|NUMBER|170|consolidated other bank balances net, H1 FY26 (OCR)
+11|633|NUMBER|3.59|consolidated interest received, H1 FY27
+11|633|NUMBER|2.14|consolidated interest received, H1 FY26
+11|634|NUMBER|(6.24)|consolidated net cash used in investing activities, H1 FY27
+11|634|NUMBER|(5.33)|consolidated net cash used in investing activities, H1 FY26
+11|637|NUMBER|(64.49)|consolidated repayment of non-current borrowings, H1 FY27
+11|637|NUMBER|(93.63)|consolidated repayment of non-current borrowings, H1 FY26
+11|638|NUMBER|-|consolidated proceeds from non-current borrowings, H1 FY27 ZERO_STANDING
+11|638|NUMBER|44.00|consolidated proceeds from non-current borrowings, H1 FY26
+11|639|NUMBER|(206.98)|consolidated movement in current borrowings net, H1 FY27
+11|639|NUMBER|8.27|consolidated movement in current borrowings net, H1 FY26
+11|640|NUMBER|(1.34)|consolidated lease principal paid, H1 FY27
+11|640|NUMBER|(1.24)|consolidated lease principal paid, H1 FY26
+11|641|NUMBER|(0.39)|consolidated lease interest paid, H1 FY27
+11|641|NUMBER|(0.48)|consolidated lease interest paid, H1 FY26
+11|642|NUMBER|(59.02)|consolidated finance costs paid, H1 FY27
+11|642|NUMBER|(63.10)|consolidated finance costs paid, H1 FY26
+11|643|NUMBER|(332.22)|consolidated net cash from financing activities, H1 FY27
+11|643|NUMBER|(106.18)|consolidated net cash from financing activities, H1 FY26
+11|644|NUMBER|(10.00)|consolidated net change in cash, H1 FY27
+11|644|NUMBER|(20.05)|consolidated net change in cash, H1 FY26
+11|645|NUMBER|16 82|consolidated opening cash, H1 FY27
+11|645|NUMBER|24.21|consolidated opening cash, H1 FY26
+11|646|NUMBER|6.62|consolidated closing cash, H1 FY27
+11|646|NUMBER|4.15|consolidated closing cash, H1 FY26
+12|680|NUMBER|DIN 00206807|CMD DIN, consolidated results signature
+12|666|NUMBER|one reportable segment|consolidated segment count
+12|652|NUMBER|Notes 1 to 4|consolidated notes count

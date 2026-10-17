@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "INDORAMA"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 12
+formfeed_count: 12
+line_count: 837
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: false   # GlyphLessFont invisible OCR layer only; scan (orchestrator ruling)
+extraction_mode: scan-ocr
+render_candidates: []
+rendered_pages: [1,2,3,4,5,6,7,8,9,10,11,12]   # scan, no usable text layer; 300 dpi, tesseract psm 6; pages 3,4,5,9,10,11 image-verified
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/indorama-q2fy27/extracted/indorama-results-q2fy27-fulltext.md"
+structured_path: "runs/indorama-q2fy27/extracted/indorama-results-q2fy27-structured.md"
+structured_counts:
+  number: 642
+  entity: 24
+  forward: 2
+  date: 17
+  qualifier: 36
+structured_id_range: "R001-R721"
+gate_a1: pass
+gap_note: ""

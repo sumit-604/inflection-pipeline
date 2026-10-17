@@ -1,0 +1,44 @@
+stage: A3-forensics
+company: "INDORAMA"
+quarter: "Q2 FY27"
+doctype: "presentation (pressrelease: Reg 30 cover + media release)"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/indorama-q2fy27/work/forensics_pressrelease_indorama_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FN-01", check: "F6", line: "139-140", classification: "FORWARD-SIGNAL", implication: "Rs 200 cr specialty fibre/filament capex over 12-18 months (window Oct 2027-Apr 2028); 0.89x H1 EBITDA; no funding, approval, tonnage or returns stated"}
+  - {id: "FN-02", check: "F16", line: "73-74; 100; 130-131", classification: "FORWARD-SIGNAL", implication: "Margin expansion headline is YoY only; QoQ EBITDA margin 11.5% to 8.8% (-270 bp); CMD says cost volatility continued; Q3 spread risk"}
+  - {id: "FN-03", check: "F16", line: "96; 111-113", classification: "AMBIGUOUS", implication: "Derived Q1FY27 total income -28.1% YoY; Q2FY27 only 2.7% above Q1FY26; +43% QoQ is rebound; volume vs price split absent"}
+  - {id: "FN-04", check: "F16", line: "75; 96; 129", classification: "AMBIGUOUS", implication: "Headline revenue growth is Total Income growth; revenue from operations and other income undisclosed; other income may sit in EBITDA"}
+  - {id: "FN-05", check: "F16", line: "98; 102", classification: "AMBIGUOUS", implication: "Implied D&A 14.8 vs 22.3 YoY (-34%) supplies 7.5 of 44.8 cr EBIT growth; cause undisclosed"}
+  - {id: "FN-06", check: "F8", line: "102; 104", classification: "AMBIGUOUS", implication: "EBIT-PAT wedge flat 28.8-29.4 cr in 3 of 4 quarters; either near-nil tax (statutory tax would cut PAT to about 55 cr) or finance cost fell to about 3.9 cr; results filing separates"}
+  - {id: "FN-07", check: "F14", line: "104; 120", classification: "NEUTRAL-FACT", implication: "Q2FY26 PAT table 246 is glyph loss; 24.6 confirmed by margin, H1 and YoY tie-outs"}
+  - {id: "FN-08", check: "F14", line: "85; 89", classification: "NEUTRAL-FACT", implication: "Card YoY percentages absent from text layer; card values are rounded table values"}
+forward_signals: ["FN-01", "FN-02"]
+ambiguous: ["FN-03", "FN-04", "FN-05", "FN-06"]
+commitments:
+  - {commitment: "Invest approx. Rs 200 cr to diversify into specialty fibre and filament products", implied_date: "Oct 2027 to Apr 2028", ref: "line 139 (R114-R116)", status_word: "planned"}
+  - {commitment: "Broaden portfolio, raise value-added participation, support growth", implied_date: "medium term, undated", ref: "line 140-142 (R117)", status_word: "expected"}
+  - {commitment: "Further strengthen operating and financial performance", implied_date: "undated", ref: "line 138 (R113)", status_word: "aspirational"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "This is a press release only. It carries no notes, auditor text, standalone, segment or balance sheet data, so F1-F5, F9-F13, F15 and F17 are N.A. No prior deck exists, so F16 is a within-document reading. FN-06 is the load-bearing item. EBIT minus PAT holds at 28.8-29.4 cr in three of four quarters while EBIT moves from 81.8 to 102.9 cr. A flat wedge fits finance cost with little profit-linked tax. In that case, 74.1 cr PAT carries a tax shield, and at 25.17% on implied PBT PAT would be about 55 cr. The other reading needs finance cost near 3.9 cr, against about 25 cr a year earlier. The finance cost and tax lines in the results filing separate the two readings. The 202% PAT headline rests on a weak base of 24.6 cr. Derived Q1FY27 income fell 28.1% YoY, and Q2FY27 is only 2.7% above Q1FY26. Margin fell 270 bp QoQ while the headline claims expansion. The Rs 200 cr capex states no funding, tonnage or approval."

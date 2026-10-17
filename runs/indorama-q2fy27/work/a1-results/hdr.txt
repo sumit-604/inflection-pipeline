@@ -1,0 +1,16 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: IndoRama_Q2FY27_Results.pdf
+doctype: results
+page_count_pdfinfo: 12
+formfeed_count: 12 (raw pdftotext pass)
+line_count: 684
+unit_convention: Rs Lakhs (financial tables; verify against table headings)
+conversion_factor_to_cr: Lakhs -> x0.01
+text_layer_present: yes (pdffonts: GlyphLessFont, embedded OCR-type invisible text layer on every page)
+extraction_mode: text-only
+render_candidates: none (no zero-character pages; min 1497 chars)
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: Q2 FY27
+extraction_date: 2026-10-17
+=== END HEADER ===

@@ -1,0 +1,16 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: IndoRama_Q2FY27_Results.pdf
+doctype: results
+page_count_pdfinfo: 12
+formfeed_count: 12
+line_count: @@LINES@@
+unit_convention: Crores (tables headed "Rs in crores, unless otherwise stated"; EPS in Rs)
+conversion_factor_to_cr: Crores -> x1
+text_layer_present: no (pdffonts lists only GlyphLessFont, an invisible OCR layer over page images; document is a scan; that layer garbled the P&L tables on pages 3 and 9; orchestrator ruling 2026-10-17: treat as scan)
+extraction_mode: scan-ocr
+render_candidates: none
+rendered_pages: [1-12, pdftoppm 300 dpi png, tesseract --psm 6; reason: scan with no usable text layer. Pages 3, 4, 5, 9, 10, 11 viewed as images and every table value confirmed or corrected; these appear as VER- lines in an IMAGE-VERIFIED block after each page's raw OCR text]
+page_coverage: 100%
+detected_quarter: Q2 FY27
+extraction_date: 2026-10-17
+=== END HEADER ===

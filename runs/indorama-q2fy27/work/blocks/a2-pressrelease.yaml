@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "INDORAMA"
+quarter: "Q2 FY27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/indorama-q2fy27/work/ledger_pressrelease_indorama_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 6
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 16
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 3
+  slide_numbers: 94
+flags_raised: [RESTATED, OCR_GLYPH_DOUBT, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 132
+ids_referenced: 132
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Press release only: no notes, agenda, auditor, entity list or board times exist, so zero counts there are absences, not misses. R063 (PAT Q2FY26 table 246) conflicts with body R092 (24.6); R064 201.8% fits 24.6. R114-R116 rupees 200 cr / 12-18 months specialty fibre capex is the only quantified forward item; no funding source in doc. Card YoY values unresolved (R030)."

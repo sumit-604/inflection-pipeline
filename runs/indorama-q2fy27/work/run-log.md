@@ -1,0 +1,31 @@
+# Run log: INDORAMA Q2 FY27 (/run-quarterly, 2026-10-17)
+- Retry session. No earlier attempt left runs/indorama-q2fy27/ (folder absent at start); fresh run.
+- Checkout guard PASSED 2026-10-17 in the parent session (not rerun, per brief). Worktree run/quarterly-q2fy27-2026-10-17.
+- Protocols present (parent check): Results v1_4, Concall v1_1, Document_Review v1_1, Master v3_6.
+- Toolchain: poppler 25.07, tesseract (winget); PATH prefixed per call.
+- Ticker: no companies/INDORAMA.md; NSE code INDORAMA, BSE 500207 (filing cover). Spear: no spear on record.
+- Doc class: IndoRama_Q2FY27_Results.pdf (12 pp) -> results (Reg 30 + Reg 33 Board Outcome cover, standalone + consolidated results, LRRs). Tag "results".
+- Doc class: IndoRama_Q2FY27_Press_Release.pdf (3 pp) -> presentation class, tag "pressrelease" (media release on results).
+- Doc class: IndoRama_Capex_Board_Outcome.pdf (1 p) -> results class (Reg 30 Board Outcome disclosure, 16-Oct-2026, approx Rs 200 Cr capex), tag "capex". Board Outcome items enumerated and assessed.
+- No concall in --docs -> FULL QUARTER run, Role 4 only (Role 5 not passed).
+- Forensics files named forensics_<doctag>_indorama_q2fy27.md; each A1 gets its own temp dir work/a1-<doctag>/.
+- Concurrency cap: at most 2 subagents at once (brief).
+- Notion live fetch 2026-10-17: no page found (3 searches). PRE-THESIS READ; no spear on record. work/notion-thesis.md written.
+- A1 pressrelease GATE PASS (3/3 pages, text-only; OCR-quality layer garbles rupee sign; PAT Q2FY26 table "246" vs body 24.6 tagged OCR_GLYPH_DOUBT). R001-R132. Tokens 51,640, wall 177s.
+- A1 results run 1: GATE PASS on coverage (12/12) but pdffonts showed only GlyphLessFont and both P&L tables (pp3, 9) came out garbled, decimals dropped. Tokens 101,148, wall 378s.
+- ORCHESTRATOR RULING: a GlyphLessFont-only layer is an OCR overlay on a scan, so the document falls under the A1 SCAN branch (whole-document render). A1 results resumed for run 2: render 12 pp at 300 dpi, OCR, image-verify table pages, rewrite both files with fresh IDs (A2 not yet run, so no citations broken). Counted as a mechanical re-run.
+- A1 capex GATE PASS (1/1, scan branch: GlyphLessFont overlay, 300 dpi OCR, image-verified). R001-R047. Tokens 42,484, wall 51s.
+- A2 pressrelease GATE PASS, 132/132 IDs, orphans none. Cost check pass 36,974 < 51,640. Wall 38s.
+- A2 capex GATE PASS, 47/47 IDs, orphans none. Cost check pass 31,241 < 42,484. Wall 26s.
+- A3 pressrelease GATE PASS (F1-F17 statused, findings line-cited; 4 FINDING). Tokens 60,555, wall 194s.
+- A1 results run 2 (scan branch) GATE PASS 12/12, all pages rendered 300 dpi, tables on pp3,4,5,9,10,11 image-verified. R001-R721. Tokens 164,806 (resumed context, includes run 1 context), wall 253s.
+- A2 results GATE PASS, 721/721 IDs, orphans none. Cost check pass 53,057 < 164,806. Wall 68s.
+- A3 capex GATE PASS (F1-F17 statused; 3 FINDING). Tokens 45,793, wall 128s. A3 notes minor A1 cite drift (R018 line 21 vs 22; R022) with no meaning change; logged, no loop.
+- A3 results GATE PASS (F1-F17 statused; 7 FINDING, 8 PASS, 2 N.A.; 10 AMBIGUOUS + 1 FORWARD-SIGNAL to A4). Tokens 145,976, wall 364s. A3 notes: R145/R478 period label is 31-Mar-2026 balance, not H1 FY26; R640 truncated FRN (full at fulltext L520).
+- A4 review written. Verdict PROCEED WITH FLAGS (pre-thesis read; cash conversion INDETERMINATE-WITH-DIRECTION caps at CAVEATS or lower). 20 management questions, 12 monitorables, plain-language brief present. Tokens 231,866, wall 706s.
+- A5 run 1 verdict INCOMPLETE. Coverage PASS (900 IDs), brief PASS, ~250 figures recomputed. 4 FACTUAL (F1-F4), 1 CONTRADICTION (C1), 5 MISSING (M1-M5), 5 STYLE (logged only). Tokens 223,553, wall 792s.
+- LOOP ITERATION 1 (cap 1): A4 only (no re-enumeration; A2/A3 untouched). A4 resumed with the A5 gap text verbatim; then A5 re-audit once.
+- Loop 1 A4 fixes applied (F1-F4, C1, M1-M5; S1-S4 optional also applied). No A4 disagreement with A5. New finding A4-06 (leverage on book equity). Verdict unchanged PROCEED WITH FLAGS.
+- A5 loop 1 re-audit verdict INCOMPLETE. All 10 run-1 items closed; 2 new: F5 (sector brief L712 "without a crude shock" tagged FILED; filings carry no crude attribution for FY26) and M6 (new claim "deleveraging mostly earned" L417: the 152.45 is pre-tax cash; about 52/48 at 25.17%; capex 40.4% of D&A). 4 STYLE (S5-S8) logged. Tokens 316,053, wall 361s.
+- LOOP CAP REACHED. Per orchestrator step 5, STOP: operator ruling needed before a second iteration. Notion save not performed (A5 not COMPLETE); notion-payload.md written as PENDING.
+- Commit scope: inputs/, extracted/, work/ text files, session-cost.md, notion-payload.md. Page renders (work/a1-*/img/*.png, about 16 MB) left uncommitted as derived artifacts, per the .gitignore rule for scan renders.

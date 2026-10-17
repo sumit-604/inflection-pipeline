@@ -1,0 +1,132 @@
+1|19|DATE|16t October 2026 (16 October 2026)|letter date
+1|18|NUMBER|2026-27|letter reference year IRSL:STEXCH
+1|22|ENTITY|National Stock Exchange of India Limited (NSE), Corporate Listing Department|addressee exchange
+1|23|ENTITY|BSE Limited, Corporate Relations Department|addressee exchange
+1|26|NUMBER|400 051|NSE address pin code
+1|26|NUMBER|400 001|BSE address pin code
+1|28|ENTITY|Stock Code NSE: INDORAMA|exchange code
+1|28|ENTITY|Stock Code BSE: 500207|exchange code
+1|30|NUMBER|ISIN INE156A01020|ISIN
+1|32|QUALIFIER|Disclosure under Regulation 30 of the SEBI (LOD) Regulations, 2015|basis of disclosure
+1|34|DATE|Press Release dated 16 October 2026|enclosure date
+1|40|DATE|second quarter and half year ended September 30, 2026|results period
+1|39|QUALIFIER|Un-audited Financial Results|results are unaudited
+1|42|NUMBER|10%|cover title revenue growth y-o-y Q2FY27
+1|42|NUMBER|202%|cover title PAT growth y-o-y Q2FY27
+1|55|ENTITY|Ashok Yadav, Company Secretary and Compliance Officer|signatory
+1|57|NUMBER|ACS: 14223|signatory membership number
+1|52|DATE|2026.10.16 21:47:58 +05'30'|digital signature timestamp
+1|67|NUMBER|CIN: L17124MH1986PLC166615|company CIN
+1|65|ENTITY-SUMMARY|address block: Corporate Off. Plot 53 and 54 Delhi Press Building Udyog Vihar Gurugram-122015 Haryana; Regd Office A-31 MIDC Butibori Nagpur-441122 Maharashtra; Tel 0124-4997000, 07104663000/01; corp@indorama-ind.com; www.indoramaindia.com|letterhead addresses
+2|75|NUMBER|10%|headline revenue growth y-o-y Q2FY27
+2|75|NUMBER|202%|headline PAT growth y-o-y Q2FY27
+2|77|DATE|16 October 2026, Gurugram|press release dateline
+2|77|ENTITY|Indo Rama Synthetics (India) Ltd|issuer
+2|78|DATE|Quarter Ending September 30, 2026|results period
+2|80|QUALIFIER|Consolidated Financial Highlights, Q2FY27|cards are consolidated
+2|85|NUMBER|Rs 1,344 Cr|Total Income card Q2FY27 consolidated
+2|85|NUMBER|Rs 118 Cr|EBITDA card Q2FY27 consolidated
+2|85|NUMBER|Rs 74 Cr|PAT card Q2FY27 consolidated
+2|89|QUALIFIER|Yoy labels on cards with no percentage legible in text layer|card YoY values missing FOOTNOTE_UNRESOLVED
+2|92|QUALIFIER|Key Consolidated Financial Performance|table basis consolidated
+2|94|QUALIFIER|Particulars (Rs) column unit; currency glyph garbled in text layer|table unit, Rs Crore per body text
+2|96|NUMBER|1,344.0|Total Income Q2FY27
+2|96|NUMBER|1,222.4|Total Income Q2FY26
+2|96|NUMBER|10.0%|Total Income YoY Q2FY27
+2|96|NUMBER|940.2|Total Income Q1FY27
+2|96|NUMBER|43.0%|Total Income QoQ Q2FY27
+2|96|NUMBER|2,284.2|Total Income H1FY27
+2|96|NUMBER|2,530.9|Total Income H1FY26
+2|96|NUMBER|-9.7%|Total Income H1FY27 vs H1FY26 (unlabelled last column)
+2|98|NUMBER|117.7|EBITDA Q2FY27
+2|98|NUMBER|80.4|EBITDA Q2FY26
+2|98|NUMBER|46.4%|EBITDA YoY Q2FY27
+2|98|NUMBER|108.0|EBITDA Q1FY27
+2|98|NUMBER|8.9%|EBITDA QoQ Q2FY27
+2|98|NUMBER|225.7|EBITDA H1FY27
+2|98|NUMBER|180.7|EBITDA H1FY26
+2|98|NUMBER|24.9%|EBITDA H1FY27 vs H1FY26
+2|100|NUMBER|8.8%|EBITDA Margin Q2FY27
+2|100|NUMBER|6.6%|EBITDA Margin Q2FY26
+2|100|NUMBER|11.5%|EBITDA Margin Q1FY27
+2|100|NUMBER|9.9%|EBITDA Margin H1FY27
+2|100|NUMBER|7.1%|EBITDA Margin H1FY26
+2|102|NUMBER|102.9|EBIT Q2FY27
+2|102|NUMBER|58.1|EBIT Q2FY26
+2|102|NUMBER|77.0%|EBIT YoY Q2FY27
+2|102|NUMBER|93.1|EBIT Q1FY27
+2|102|NUMBER|10.4%|EBIT QoQ Q2FY27
+2|102|NUMBER|196.0|EBIT H1FY27
+2|102|NUMBER|139.9|EBIT H1FY26
+2|102|NUMBER|40.1%|EBIT H1FY27 vs H1FY26
+2|104|NUMBER|74.1|PAT Q2FY27
+2|104|NUMBER|246 (table text; body text says 24.6)|PAT Q2FY26 OCR_GLYPH_DOUBT
+2|104|NUMBER|201.8%|PAT YoY Q2FY27
+2|104|NUMBER|63.7|PAT Q1FY27
+2|104|NUMBER|16.2%|PAT QoQ Q2FY27
+2|104|NUMBER|137.8|PAT H1FY27
+2|104|NUMBER|77.3|PAT H1FY26
+2|104|NUMBER|78.3%|PAT H1FY27 vs H1FY26
+2|106|NUMBER|5.5%|PAT Margin Q2FY27
+2|106|NUMBER|2.0%|PAT Margin Q2FY26
+2|106|NUMBER|6.8%|PAT Margin Q1FY27
+2|106|NUMBER|6.0%|PAT Margin H1FY27
+2|106|NUMBER|3.1%|PAT Margin H1FY26
+2|110|NUMBER|Rs 1,344.0 crore|total income Q2FY27 narrative
+2|111|NUMBER|10.0% YoY|total income growth Q2FY27 narrative
+2|111|NUMBER|43.0% QoQ|total income growth Q2FY27 narrative
+2|111|NUMBER|Rs 2,284.2 crore|total income H1FY27 narrative
+2|112|NUMBER|degrowth of 9.7%|total income H1FY27 narrative
+2|112|QUALIFIER|H1 degrowth "due to supply chain issues in view of geopolitical issues in the middle east"|stated cause of H1 decline
+2|113|ENTITY|Middle east (geopolitical issues)|cited cause of supply chain issues
+2|114|NUMBER|46.4% YoY|EBITDA growth Q2FY27 narrative
+2|114|NUMBER|Rs 117.7 crore|EBITDA Q2FY27 narrative
+2|115|NUMBER|Rs 80.4 crore|EBITDA Q2FY26 narrative
+2|115|NUMBER|24.9% YoY|EBITDA H1FY27 growth narrative
+2|115|NUMBER|Rs 225.7 crore|EBITDA H1FY27 narrative
+2|117|NUMBER|8.8%|EBITDA margin Q2FY27 narrative
+2|117|NUMBER|6.6%|EBITDA margin Q2FY26 narrative
+2|118|NUMBER|9.9%|EBITDA margin H1FY27 narrative
+2|118|NUMBER|7.1%|EBITDA margin H1FY26 narrative
+2|119|NUMBER|Rs 74.1 crore|PAT Q2FY27 narrative
+2|120|NUMBER|Rs 24.6 crore|PAT Q2FY26 narrative
+2|120|NUMBER|201.8% YoY|PAT growth Q2FY27 narrative
+2|120|NUMBER|78.3% YoY|PAT H1FY27 growth narrative
+2|121|NUMBER|Rs 137.8 crore|PAT H1FY27 narrative
+2|122|NUMBER|5.5%|PAT margin Q2FY27 narrative
+2|122|NUMBER|2.0%|PAT margin Q2FY26 narrative
+2|123|NUMBER|6.0%|PAT margin H1FY27 narrative
+2|123|NUMBER|3.1%|PAT margin H1FY26 narrative
+2|110|DATE|Q2 FY27, Q2 FY26, H1 FY27, H1 FY26|periods used in highlights
+3|128|ENTITY|Mr. Om Prakash Lohia, Chairman & Managing Director|quoted speaker
+3|129|QUALIFIER|"revenue from operations improving despite a challenging operating environment"|CMD characterisation Q2FY27
+3|130|ENTITY|Geopolitical developments in the Middle East|cited driver of crude price rise
+3|130|QUALIFIER|Crude oil price rise resulted in higher raw material costs and volatility across polyester value chain|CMD stated cost driver
+3|133|NUMBER|1344.0 crore|consolidated total income Q2FY27 CMD quote
+3|133|NUMBER|Rs 117.7 crore|EBITDA Q2FY27 CMD quote
+3|134|NUMBER|8.8%|EBITDA margin Q2FY27 CMD quote
+3|134|NUMBER|Rs 74.1 crore|PAT Q2FY27 CMD quote
+3|135|NUMBER|Rs 2284.2 crore|consolidated total income H1FY27 CMD quote
+3|135|NUMBER|Rs 225.7 crore|EBITDA H1FY27 CMD quote
+3|135|NUMBER|9.9%|EBITDA margin H1FY27 CMD quote
+3|135|NUMBER|Rs 137.8 crore|PAT H1FY27 CMD quote (glyph Y)
+3|138|FORWARD|we remain focused on further strengthening our operating and financial performance|CMD outlook, no figures
+3|139|FORWARD|plan to invest approximately Rs 200 crore over the next 12-18 months to diversify in specialty fibre and filament products|planned investment, diversification
+3|139|NUMBER|approximately Rs 200 crore|planned investment specialty fibre and filament
+3|139|NUMBER|12-18 months|investment horizon
+3|140|FORWARD|investment expected to broaden product portfolio, increase participation in value-added segments, support sustainable growth over medium term|expected benefits of Rs 200 crore plan
+3|146|DATE|Established in 1986|incorporation year
+3|147|ENTITY|Butibori, Nagpur integrated manufacturing platform|plant
+3|148|ENTITY|Products: Polyester Staple Fibre (PSF), Polyester Filament Yarn (PFY/PQY), DTY, polyester chips, bottle-grade PET resin|product range
+3|149|NUMBER|6.72 lakh TPA|total polyester production capacity
+3|150|NUMBER|2.52 lakh TPA|PET resin capacity
+3|150|NUMBER|1.75 lakh TPA|DTY capacity
+3|151|NUMBER|19 states/UTs in India|customer reach
+3|151|NUMBER|28 countries|global customer reach
+3|154|ENTITY|Technology providers from Japan, Germany, the United States and other countries|technology collaborations
+3|155|NUMBER|71.08 MW|standby captive power capacity
+3|155|ENTITY|Captive power: coal-based and furnace-oil-based systems|captive power types
+3|155|QUALIFIER|71.08 MW is "stand by" captive capacity, coal-based and furnace-oil-based|defines captive power figure
+3|160|ENTITY-SUMMARY|contact block: Indo Rama Synthetics (India) Ltd, CIN L17124MH1986PLC166615, Email corp@indorama-ind.com|footer contact
+3|173|ENTITY-SUMMARY|safe harbor legal text: forward-looking statements, risks (industry downtrend, political/economic change, tax laws, litigation, labour, exchange rates, technology, costs), no obligation to update|decorative disclaimer
+3|174|QUALIFIER|Safe Harbor: forward-looking statements based on assumptions not guaranteed; actual results may differ materially|disclaimer re FORWARD rows

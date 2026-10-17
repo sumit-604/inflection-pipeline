@@ -1,0 +1,51 @@
+stage: A3-forensics
+company: "INDORAMA"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/indorama-q2fy27/work/forensics_results_indorama_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: PASS
+  F5: PASS
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: PASS
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "211, 605", classification: "AMBIGUOUS", implication: "Employee-benefit exceptional 2.69 S / 2.70 C in H2 FY26; line retained; ask nature and whether further scheme planned"}
+  - {id: "A3-02", check: "F1", line: "614", classification: "NEUTRAL-FACT", implication: "NCI nil all periods; four subsidiaries wholly owned (implied)"}
+  - {id: "A3-03", check: "F1", line: "399, 791", classification: "NEUTRAL-FACT", implication: "No new term debt (H1 FY26 44.00) and no PPE sales in H1 FY27; debt fall is pure repayment"}
+  - {id: "A3-04", check: "F2", line: "609, 215", classification: "AMBIGUOUS", implication: "PAT gap % of S PAT 34.6% Q2 FY27 vs 88.9% Q1 FY27 vs 6.6% Q2 FY26; subs 25.7%-47.1% of C PAT with no entity split"}
+  - {id: "A3-05", check: "F2", line: "594, 200", classification: "AMBIGUOUS", implication: "Subsidiary stock-in-trade purchases 74.11 in Q2 FY27; subsidiary revenue is trading-led, earnings ride trading margin and inventory timing"}
+  - {id: "A3-06", check: "F2", line: "690, 300", classification: "AMBIGUOUS", implication: "C receivables 103.06 below S 285.60; at least 182.54 (63.9%) of parent receivables are intercompany, up at least 46.16 in H1"}
+  - {id: "A3-07", check: "F2", line: "699, 309", classification: "NEUTRAL-FACT", implication: "C other equity 44.59 below S at 31 Mar 2026, +4.43 at 30 Sep 2026; subsidiary deficit erased by H1 profit"}
+  - {id: "A3-08", check: "F3", line: "596, 593, 680", classification: "AMBIGUOUS", implication: "Subs hold 355.79 PPE but payroll 1.41/qtr and C materials below S in 4 of 6 periods; partial-shell or trading-vehicle signature; per-entity split ND"}
+  - {id: "A3-09", check: "F8", line: "213, 214, 295", classification: "FORWARD-SIGNAL", implication: "S ETR 0% all periods, DTA frozen at 258.61; H1 FY27 shield 22.35 S / 34.85 C (~2,517-2,533 bps); C H1 EPS at statutory rate 3.94 vs reported 5.28; ETR step-up risk"}
+  - {id: "A3-10", check: "F8", line: "608, 685, 704", classification: "AMBIGUOUS", implication: "C DTA +9.59 and new DTL 9.37 net to the 0.22 credit; first subsidiary-level tax line; ask entity and cause"}
+  - {id: "A3-11", check: "F12", line: "701, 706, 774", classification: "AMBIGUOUS", implication: "C borrowings -271.47 (-24.0%) funded by receivables -57.6% (~7 days of sales); WC unwind vs durable deleveraging; ask factoring/discounting and H2 repeat"}
+  - {id: "A3-12", check: "F12", line: "694, 709", classification: "AMBIGUOUS", implication: "Other financial assets 21.3% and trade payables 46.7% of C total assets (~126 days of purchases); composition, related-party share and cost undisclosed; payables may be debt-like"}
+  - {id: "A3-13", check: "F14", line: "57, 59", classification: "NEUTRAL-FACT", implication: "Item b heading says Audited, body says Un-audited; template carryover"}
+  - {id: "A3-14", check: "F14", line: "460-461, 505, 811", classification: "AMBIGUOUS", implication: "Review report para 1 says its subsidiary (singular) while para 4 lists four; possible perimeter change since template set"}
+  - {id: "A3-15", check: "F14", line: "225, 415, 63", classification: "NEUTRAL-FACT", implication: "Duplicate Note 1/Note 2 numbering and 14:35 PM time format; cosmetic, cumulative governance data point"}
+  - {id: "A3-16", check: "F15", line: "506-509", classification: "AMBIGUOUS", implication: "Four subsidiaries, prior list ND so no diff possible; ask entry date and any rename/reclassification in last four quarters"}
+forward_signals: ["A3-09"]
+ambiguous: ["A3-01", "A3-04", "A3-05", "A3-06", "A3-08", "A3-10", "A3-11", "A3-12", "A3-14", "A3-16"]
+commitments:
+  - {commitment: "Publish extract of unaudited Q2/H1 FY27 results in newspapers (Reg 47(1)(b))", implied_date: "not stated in filing; statutory Reg 47 window after 16 Oct 2026", ref: "Board outcome item b, lines 57-60 (R667)", status_word: "initiated"}
+  - {commitment: "Publish extract on www.indoramaindia.com", implied_date: "not stated in filing", ref: "Board outcome item b, line 60 (R668)", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three reads matter for A4. First, every rupee of reported profit is pre-tax: standalone tax is nil in all six periods while the 258.61 DTA did not move, so at 25.17% consolidated H1 EPS is 3.94, not 5.28. The tax-loss pool size is NOT FOUND here; the AR tax note decides how long the shield runs. Second, the subsidiaries supplied 25.7%-47.1% of consolidated PAT, run on trading purchases and 1.41 of payroll a quarter, and owe the parent at least 182.54 of receivables. The quarter's earnings mix and the parent's receivable quality both depend on four wholly owned entities with no per-entity disclosure. Third, the 271.47 debt fall came from a receivable release to about 7 days of sales, with payables at about 126 days. Until the factoring and acceptance terms are known, A3 treats it as working-capital timing, not proven deleveraging. Limits: prior quarter ND, so the F5 and F15 diffs did not run. R145/R478 are mislabelled H1 FY26; they are the 31 Mar 2026 balances."

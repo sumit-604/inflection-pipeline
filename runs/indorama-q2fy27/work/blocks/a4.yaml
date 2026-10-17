@@ -1,0 +1,77 @@
+stage: A4-analyst
+company: "INDORAMA"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+docs_merged: [results, presentation]   # results = Reg 33 filing + Reg 30 capex Board Outcome (results class); presentation = press release
+ledger_reconciliation:
+  notes: 12
+  turns: 0
+  slides: 3
+  all_reviewed: true
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, PR-FN-01, PR-FN-02, PR-FN-03, PR-FN-04, PR-FN-05, PR-FN-06, PR-FN-07, PR-FN-08, CX-FN-01, CX-FN-02, CX-FN-03, CX-FN-04, CX-FN-05, CX-FN-06]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NOT ON RECORD (no Notion page, live search 2026-10-17); framed as PRE-THESIS READ"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap_pct_of_s_pat: 34.6, c_minus_s: 19.03}
+  - {period: "Q1 FY27", gap_pct_of_s_pat: 88.9, c_minus_s: 29.99}
+  - {period: "Q2 FY26", gap_pct_of_s_pat: 6.6, c_minus_s: 1.51}
+  - {period: "H1 FY27", gap_pct_of_s_pat: 55.2, c_minus_s: 49.02}
+  - {period: "H1 FY26", gap_pct_of_s_pat: 39.7, c_minus_s: 21.95}
+  - {period: "FY26", gap_pct_of_s_pat: 36.5, c_minus_s: 40.18}
+questions_for_management:
+  - {q: "Unabsorbed loss/depreciation pool at 31-Mar-2026 and the FY in which current tax starts (S tax nil all six periods; DTA flat at 258.61)", from_finding_id: "A3-09; PR-FN-06"}
+  - {q: "Realised spread per tonne Q2 FY27 vs Q2 FY26 (C gross margin 22.60% vs 22.98%; 25.79% in Q1 FY27; 25.67% in Q1 FY26)", from_finding_id: "PR-FN-02; A4-01"}
+  - {q: "Share of the 12.21 cr YoY fall in C other expenses that is power and fuel cost (other expenses alone = 24.65% of C PAT gain, 62.45% of S)", from_finding_id: "A4-02; PR-FN-02"}
+  - {q: "Total sales volume (tonnes) Q2 FY27 vs Q2 FY26 and Q1 FY27", from_finding_id: "PR-FN-03; A4-01"}
+  - {q: "Which subsidiary earned the C-minus-S proxy profit of 19.03 cr (Q2) and 29.99 cr (Q1); each entity's H1 FY27 revenue", from_finding_id: "A3-04; A3-08"}
+  - {q: "Value of H1 FY27 subsidiary stock-in-trade purchases from related parties (C-minus-S proxy about 74.11 cr in Q2)", from_finding_id: "A3-05"}
+  - {q: "Intercompany receivable owed to the parent at 30-Sep-2026 and 31-Mar-2026 (at least 182.54 at 30-Sep; S-minus-C gap rose 46.16) and its credit period", from_finding_id: "A3-06"}
+  - {q: "Receivables discounted/factored without recourse at 30-Sep-2026 and 31-Mar-2026 (C receivables 243.32 to 103.06)", from_finding_id: "A3-11"}
+  - {q: "Acceptances/LC-backed credit within 1,462.03 cr trade payables and their interest cost", from_finding_id: "A3-12"}
+  - {q: "Composition of 667.63 cr other current financial assets and related-party share", from_finding_id: "A3-12"}
+  - {q: "Capacity (tpa) added by the Rs 200 cr specialty capex and revenue at full use", from_finding_id: "CX-FN-01; PR-FN-01"}
+  - {q: "Dated milestones (machinery order, civil start, trial run) toward COD 16-Oct-2027 to 16-Apr-2028", from_finding_id: "CX-FN-02; PR-FN-01"}
+  - {q: "Term-loan amount sanctioned for the capex and its interest rate", from_finding_id: "CX-FN-03"}
+  - {q: "Split of the Rs 200 cr between the Company and IVYPL", from_finding_id: "CX-FN-04"}
+  - {q: "Which subsidiary recognised the new 9.37 cr deferred tax liability", from_finding_id: "A3-10"}
+  - {q: "Whether another employee-benefit scheme (FY26 exceptional 2.70 cr) is planned in H2 FY27", from_finding_id: "A3-01"}
+  - {q: "Date each of the four subsidiaries entered the group; any rename in the last four quarters", from_finding_id: "A3-14; A3-16"}
+  - {q: "Unhedged foreign-currency payable at 30-Sep-2026 (FX loss 10.28 cr Q2 FY26 vs 2.51 cr Q2 FY27)", from_finding_id: "PR-FN-05"}
+  - {q: "Will press releases headline revenue from operations and EBITDA excluding other income from Q3 FY27", from_finding_id: "PR-FN-04"}
+  - {q: "Exchange dissemination time of the separately filed capex approval (signed 14:51:58; meeting closed 14:35)", from_finding_id: "CX-FN-05"}
+monitorables:
+  - {item: "Reg 47(1)(b) newspaper extract of Q2/H1 FY27 results", implied_date: "not stated; Reg 47 window after 16-Oct-2026 (about 18-Oct-2026, INFERENCE)", source_ref: "RF L57-60 (R667)"}
+  - {item: "Website publication of results extract", implied_date: "not stated; underway", source_ref: "RF L60 (R668)"}
+  - {item: "Q3 FY27 results: C gross margin (bull >=23.92%, bear <=22.13%), tax line, receivable days", implied_date: "by 2027-02-14 (INFERENCE: Reg 33 45-day window)", source_ref: "Step 8C"}
+  - {item: "Term-loan sanction for Rs 200 cr capex (amount, rate, borrower)", implied_date: "not stated; before or during build", source_ref: "CX L43-44 (R033, R034)"}
+  - {item: "Capex split Company vs IVYPL", implied_date: "not stated", source_ref: "CX L39-40 (R023, R044)"}
+  - {item: "Capex milestones: machinery order, civil start, trial run", implied_date: "not stated; before COD window", source_ref: "CX L42 (R032)"}
+  - {item: "FY27 audited results with H2 cash flow (receivable days, payables, CFO ex-WC)", implied_date: "by 2027-05-30 (INFERENCE: Reg 33 60-day window)", source_ref: "Step 5"}
+  - {item: "FY27 Annual Report: tax-loss pool, related-party note, subsidiary financials, other financial assets", implied_date: "by 2027-09-30 (INFERENCE: AGM deadline)", source_ref: "A3-09, A3-12, A3-04"}
+  - {item: "COD of specialty filament and fibre capacity at Butibori", implied_date: "2027-10-16 to 2028-04-16 (estimated)", source_ref: "CX L41-43 (R012, R040); PR L139 (R114-R116)"}
+  - {item: "Middle East supply-chain normalisation", implied_date: "undated", source_ref: "PR L112-113 (R080)"}
+  - {item: "Further strengthening of operating and financial performance", implied_date: "undated", source_ref: "PR L138 (R113)"}
+  - {item: "Portfolio broadening into value-added segments", implied_date: "medium term, undated", source_ref: "PR L140-142 (R117)"}
+flags:
+  - "ZERO-TAX EARNINGS: S current tax nil all six periods, DTA flat 258.61; C ETR -0.30% Q2; statutory-rate (25.17%) C H1 EPS 3.94 vs 5.28 reported; reported is 33.6% above statutory basis (A3-09)"
+  - "SPREAD NOT WIDENED: C gross margin 22.60% vs 22.98% YoY (-38 bp), 25.79% QoQ (-319 bp; FY26 Q1-to-Q2 was 25.67% to 22.98%); op EBITDA margin +273 bp YoY came from other expenses -12.21 and FX loss -7.77 (A4-01)"
+  - "TROUGH BASE: C core PBT +208.49% YoY is off the Q2 FY26 trough; +41.20% vs Q1 FY26 (49.90); FX swing 16.32% of the rise"
+  - "STANDALONE GROSS PROFIT FELL 1.04 YoY on revenue +7.03%; S PAT growth all from cost lines, FX, finance cost, OI (A4-02)"
+  - "SUBSIDIARY OPACITY: C-minus-S proxy 25.7% (Q2) / 47.1% (Q1) of C PAT, no entity split; >=182.54 intercompany receivables (level bound); trading share 8.67% of C revenue vs 6.45% (A3-04/05/06/08, A4-05)"
+  - "NET-DEBT SPLIT: -261.47 = 152.45 (58.3%) operating cash before WC + 109.02 (41.7%) WC release; receivables 8.28 days; payables 154.42 days; factoring and acceptances undisclosed (A3-11/12, A4-06)"
+  - "LEVERAGE ON BOOK EQUITY: net DTA 258.83 = 39.4% of C equity; ND/equity ex-DTA 2.14x (4.27x at 31-Mar); ND/TTM op EBITDA 2.34x, 2.89x if capex fully debt-funded (A4-06)"
+  - "CASH CONVERSION INDETERMINATE-WITH-DIRECTION: missing factoring at both dates, payables composition/cost, other financial assets composition, H2 cash flow; verdict capped"
+  - "PRESS RELEASE REFRAMING: revenue = total income; EBITDA includes OI and excludes FX; margin-expansion headline YoY only (PR-FN-02/04)"
+  - "CAPEX Rs 200 cr: term loan + accruals unquantified; Company/IVYPL split unstated; COD 2027-10-16 to 2028-04-16 (CX-FN-01..04)"
+  - "NO THESIS: Decision Status NOT ON RECORD; no spear; /step1 required before any pipeline run (spear gate)"
+  - "TRACKER BELOW FLOOR: 0 downstream signals supplied; Role 5.5 to open at workup"
+  - "CONVERTER CAUTION: if /fttcp classifies CONVERTER, Amendment 17 bars spot ROCE and rupee WC trends from Section 1B"
+  - "OR-30: Steps 6.5 and 7 deferred to /fttcp and Role 1; pillar facts flagged in Step 7 table"
+  - "A1 DATA NOTES: R145/R478 are 31-Mar-2026 other equity; R640 FRN truncated (full 000756N/N500441 at RF L520); PR Q2 FY26 PAT '246' = 24.6"
+plain_language_brief_included: true
+analyst_note: "Pre-thesis read; no decision framing. Loop 1 applied all A5 FACTUAL, CONTRADICTION and MISSING items after line checks; no disagreement. The headline (C PAT 74.08 vs 24.55) is real pre-tax but runs off the trough quarter; against Q1 FY26 core PBT is +41.20%. Three facts cap the reading. Tax: no current tax, so reported EPS is 33.6% above a statutory-rate basis; any Amendment 18 entry/exit pairing must fix the tax basis first. Margin source: gross margin fell 38 bp YoY; the operating gain is other expenses and FX of undisclosed composition, and FY26 showed the same Q1-to-Q2 gross-margin fall, so spread durability is unproven until volume is disclosed. Balance sheet: net debt fell 261.47, of which 152.45 was operating cash and 109.02 a WC release that can reverse; 39.4% of book equity is a deferred tax asset whose value rests on the undisclosed loss pool, and TTM net debt / EBITDA is 2.34x. Statutory 25.17% is A3's sensitivity rate; the company's tax regime is ND."
+review_path: "runs/indorama-q2fy27/work/review_indorama_q2fy27.md"

@@ -1,0 +1,38 @@
+1|39|QUALIFIER|Un-audited Standalone and Consolidated Financial Results|results are unaudited, limited review only
+1|42|QUALIFIER|Limited Review Reports ... submitted by the Auditors of the Company|limited review, not audit
+1|47|QUALIFIER|Board item b heading reads "Extract of Audited Financial Results" while body says Un-audited|internal wording inconsistency in source
+1|36|QUALIFIER|Board "has inter-alia considered and approved the following" (items a and b)|agenda scope, two items listed
+2|108|QUALIFIER|review obtains moderate assurance; substantially less in scope than an audit|review scope limit, standalone
+2|114|QUALIFIER|Accordingly, we do not express an audit opinion|standalone review report
+2|116|QUALIFIER|nothing has come to our attention ... material misstatement (unmodified conclusion)|standalone review conclusion
+3|150|QUALIFIER|(Rs in crores, unless otherwise stated)|standalone P&L unit convention (source shows Z)
+3|160|QUALIFIER|(Unaudited) for five columns; (Audited) for year ended 31 March 2026|audit status per column, standalone P&L
+3|217|QUALIFIER|Earnings per share (not annualised for the quarters)|EPS qualifier standalone
+3|203|QUALIFIER|extractor flag: OCR layer garbled on standalone P&L, column alignment lost, see lines 161-223|EXTRACTOR_FLAG not source text
+4|226|QUALIFIER|Notes:1 Unaudited Standalone Statement of Assets and Liabilities (Rs in crores, unless otherwise stated)|balance sheet heading and unit
+4|230|QUALIFIER|Unaudited (30 Sep 2026) / Audited (31 Mar 2026)|audit status per column
+5|284|QUALIFIER|Note:2 Unaudited Standalone Statement of Cash Flows (Rs in crores, unless otherwise stated)|cash flow heading and unit
+5|287|QUALIFIER|Unaudited (both six-month periods)|cash flow audit status
+5|317|QUALIFIER|Purchase of PPE [including capital work-in-progress, capital advances and creditors]|capex definition
+5|314|QUALIFIER|Operating cash flow [A], investing [B], financing [C]; taxes shown net|cash flow structure
+6|343|QUALIFIER|Note 1: results prepared under Ind AS, Section 133 Companies Act 2013, Reg 33 LODR|basis of preparation, standalone
+6|347|QUALIFIER|Note 2: reviewed by Audit Committee, approved by Board 16 Oct 2026; statutory auditors carried out limited review|approval and review, standalone
+6|351|QUALIFIER|Note 3: one reportable segment, manufacturing and trading of polyester goods (Ind AS 108)|segment note, standalone
+6|356|QUALIFIER|Note 4: more details at Investor Relations section of website and NSE/BSE sites|reference note, standalone
+7|403|QUALIFIER|review obtains moderate assurance; substantially less in scope than an audit|review scope limit, consolidated
+7|409|QUALIFIER|Accordingly, we do not express an audit opinion|consolidated review report
+7|414|QUALIFIER|procedures also performed per SEBI circular under Regulation 33(8), to extent applicable|consolidated review extra procedure
+8|441|QUALIFIER|nothing has come to our attention ... material misstatement (unmodified conclusion)|consolidated review conclusion
+8|435|QUALIFIER|Consolidation covers Holding Company and four subsidiaries|consolidation perimeter
+9|476|QUALIFIER|(Rs in crores, unless otherwise stated)|consolidated P&L unit convention (source shows 2)
+9|483|QUALIFIER|(Unaudited) for five columns; (Audited) for year ended 31 March 2026|audit status per column, consolidated P&L
+9|539|QUALIFIER|Earnings per share (not annualised for the quarters)|EPS qualifier consolidated
+9|484|QUALIFIER|extractor flag: OCR layer garbled on consolidated P&L, column alignment lost, see lines 485-540|EXTRACTOR_FLAG not source text
+10|544|QUALIFIER|Note No. 1: Unaudited Consolidated Statement of Assets and Liabilities (Rs in crores, unless otherwise stated)|balance sheet heading and unit
+10|548|QUALIFIER|Unaudited (30 Sep 2026) / Audited (31 Mar 2026)|audit status per column
+11|601|QUALIFIER|Note No. 2: Unaudited Consolidated Statement of Cash Flows (Rs in crores, unless otherwise stated)|cash flow heading and unit
+11|628|QUALIFIER|Purchase of PPE [including capital work-in-progress, capital advances and creditors]|capex definition
+12|652|QUALIFIER|Note 1: consolidated results prepared under Ind AS, Section 133, Reg 33 LODR|basis of preparation, consolidated
+12|657|QUALIFIER|Note 2: prepared per Ind AS 110; reviewed by Audit Committee, approved by Board 16 Oct 2026; limited review by auditors|consolidation and approval note
+12|664|QUALIFIER|Note 3: Group operates in one reportable segment, manufacturing and trading of polyester goods|segment note, consolidated
+12|669|QUALIFIER|Note 4: more details at Investor Relations section of website and NSE/BSE sites|reference note, consolidated

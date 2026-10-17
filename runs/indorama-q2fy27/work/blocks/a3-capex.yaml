@@ -1,0 +1,42 @@
+stage: A3-forensics
+company: "INDORAMA"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/indorama-q2fy27/work/forensics_capex_indorama_q2fy27.md"
+ledger_reconciled_pct: 100        # 47 of 47 rows read at cited line
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: FINDING
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "FN-01", check: "F6", line: "38-41", classification: "FORWARD-SIGNAL", implication: "Board-approved capex approx Rs 200 Cr for speciality filament and speciality fibre at Butibori; tracker entry; ask capacity, mix, revenue at full use, brownfield scope."}
+  - {id: "FN-02", check: "F6", line: "42-43", classification: "FORWARD-SIGNAL", implication: "Estimated COD 16-Oct-2027 to 16-Apr-2028; earliest revenue Q3 FY28, latest Q1 FY29; catalyst timeline holds a range; ask milestone path."}
+  - {id: "FN-03", check: "F6", line: "43-44", classification: "AMBIGUOUS", implication: "Term loan plus internal accrual, split unquantified; lean bear: most of Rs 200 Cr may be new debt with interest ahead of revenue; ask quantum, lender, tenor, rate, borrowing entity, sanction status."}
+  - {id: "FN-04", check: "F13", line: "39-40", classification: "AMBIGUOUS", implication: "Outlay spans Company and IVYPL (wholly owned material subsidiary) with no split; decides where assets, debt and revenue land in standalone vs consolidated; ask split and IVYPL funding route."}
+  - {id: "FN-05", check: "F14", line: "38, 53", classification: "AMBIGUOUS", implication: "No meeting start/end time; only signature 14:51:58; disclosure timeliness untestable; verify meeting times and exchange dissemination time."}
+  - {id: "FN-06", check: "F14", line: "18, 31, 36", classification: "NEUTRAL-FACT", implication: "Reference number has no serial; 'Regulations 30' vs 'Regulation 30'; immaterial drafting slips, cumulative governance count only."}
+forward_signals: ["FN-01", "FN-02"]
+ambiguous: ["FN-03", "FN-04", "FN-05"]
+commitments:
+  - {commitment: "Capex approx Rs 200 Cr, Company plus IVYPL, speciality filament and speciality fibre, Butibori", implied_date: "approved 2026-10-16", ref: "line 38-41 (R011, R030, R031)", status_word: "approved (not yet initiated)"}
+  - {commitment: "Commercial operation of new speciality capacity", implied_date: "2027-10-16 to 2028-04-16 (estimated)", ref: "line 42-43 (R012, R032, R040)", status_word: "approved (not yet initiated)"}
+  - {commitment: "Financing by term loan with mix of internal accrual, split not stated", implied_date: "not stated", ref: "line 43-44 (R033, R034, R046)", status_word: "proposed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "One-page Reg 30 letter tagged doctype results; it holds no financials, so F1-F5, F8-F12 and F15 are N.A. on content, not skipped. The forward content is three parameters, each softened: amount 'approx.', date 'estimated', funding 'would be'. The two missing splits matter more than the hedges. Company vs IVYPL decides which books carry the asset, the loan and the revenue, so next quarter's F2/F3 standalone-vs-consolidated read depends on it. Debt vs accrual decides leverage and interest drag during a 12-18 month build with no revenue. Lean bear on funding until the term-loan sanction is disclosed. 'Speciality' product language is a possible mix-shift signal; A3 does not judge it, A4 should ask for capacity and mix. Structured-file cite drift (R018 line 21 vs 22; R022 full name not on line 39) does not change any meaning. No prior-quarter text and no Notion checklist, so no diff or silence audit was possible."

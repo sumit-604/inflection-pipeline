@@ -1,0 +1,61 @@
+stage: A3-forensics
+company: "KARNIKA"
+quarter: "h1fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/karnika-h1fy27/work/forensics_results_karnika_h1fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "238; 137; 264; 198", classification: "AMBIGUOUS", implication: "PPE sale gain 59.48 on proceeds 308.83; standalone PPE -47.9%; Q2 D&A 17.47 vs 41.29; capacity sold or moved to job-work? 92% of H1 Other Income is treasury or one-off"}
+  - {id: "A3-02", check: "F2", line: "206; 486; 498; 469", classification: "FORWARD-SIGNAL", implication: "C-S PAT gap 6.4% FY26 -> 24.3% Q1 -> 32.5% Q2 of standalone PAT; parent-attributable 21.0% above standalone in H1; consolidated print now depends on Kidcity"}
+  - {id: "A3-03", check: "F2", line: "499; 483-484; 203-204", classification: "AMBIGUOUS", implication: "Q1 NCI 14.98 = 25% of Kidcity Q1 tax 59.92, not of PAT 178.56; Q2 NCI 117.62 is the H1 plug; Q1 parent PAT overstated ~29.66; weak quarterly close"}
+  - {id: "A3-04", check: "F3", line: "319; 427; 476; 474", classification: "AMBIGUOUS", implication: "Kidcity described as kids-wear retail but has 1.0% staff cost, 19.3% PBT margin, ~168-day receivables, stock-in-trade model; B2B trading book or conduit; related-party check"}
+  - {id: "A3-05", check: "F4", line: "370; 290-291; 487", classification: "NEUTRAL-FACT", implication: "Associate (15.53, 0.67% of PAT) outside the named review scope; no Other Matters paragraph; new vs 0.00 FY26"}
+  - {id: "A3-06", check: "F6", line: "308-312", classification: "FORWARD-SIGNAL", implication: "39,66,860 warrants at Rs 121; ~3,599.9 Lakhs balance due on exercise; 6.40% dilution; expiry ~Nov-Dec 2027 (allotment date not disclosed)"}
+  - {id: "A3-07", check: "F6", line: "337-342", classification: "FORWARD-SIGNAL", implication: "Pending 26% of RDB Elementa Sports Academy for Rs 5.20 lakh; second non-textile associate; Elementa name shared with new associate; related-party question"}
+  - {id: "A3-08", check: "F6", line: "303-304; 417", classification: "AMBIGUOUS", implication: "Kidcity software under development; consolidated CWIP flat at 91.00 Mar-26 to Sep-26; stalled or uncapitalised; no date or cost"}
+  - {id: "A3-09", check: "F8", line: "205; 203-204", classification: "NEUTRAL-FACT", implication: "Earlier-year tax 6.34 in FY26; ETR 26.3-29.3% vs 25.17% statutory; no DTA shield, no step-up risk"}
+  - {id: "A3-10", check: "F9", line: "208; 210", classification: "AMBIGUOUS", implication: "New reclassifiable OCI (246.40) in H1, zero in all FY26, mirrors non-reclassifiable +273.17 in both quarters; FVOCI or hedge on ~2,553 investment book; verify at AR"}
+  - {id: "A3-11", check: "F10", line: "217; 214; 241", classification: "AMBIGUOUS", implication: "Prior EPS implies 205-285 lakh weighted shares vs 619.975 lakh paid-up shown; non-cash FY26 share increase not restated; Q2 EPS reads -47% YoY while PAT +15.2%"}
+  - {id: "A3-12", check: "F10", line: "218; 510", classification: "FORWARD-SIGNAL", implication: "Basic-diluted spread opened: Q2 4.0%, H1 2.7% standalone; warrant dilution up to 6.40%"}
+  - {id: "A3-13", check: "F11", line: "437; 507; 420; 422; 494", classification: "AMBIGUOUS", implication: "Mar-26 consolidated OE 3,635.61 vs 3,442.02 in results; gap 193.59 = FY26 OCI; investments +251.03 and DTA -57.43 match; FY26 FVOCI loss looks unbooked in the audited comparative; H1 BS movements misstated"}
+  - {id: "A3-14", check: "F12", line: "300-302; 149; 263; 429", classification: "AMBIGUOUS", implication: "Single textile segment declared, but loans +102.9% to 3,141.23 (outside group), investments 2,552.91, Lifespaces associate, sports academy; 22.8% of standalone assets non-textile, funded by debt"}
+  - {id: "A3-15", check: "F12", line: "147; 248; 259; 274; 553", classification: "FORWARD-SIGNAL", implication: "Receivables +63.1% vs revenue +37.5%; days 109.7 -> 141.7; CFO (487.90) vs PAT 1,816.87; funded by term debt +1,046.65 and warrant money; H2 collection is the test"}
+  - {id: "A3-16", check: "F14", line: "229; 522; 44; 110", classification: "NEUTRAL-FACT", implication: "Half-year cash flows labelled Audited while results are limited-review only"}
+  - {id: "A3-17", check: "F14", line: "313-316; 607-611", classification: "AMBIGUOUS", implication: "Utilisation table dated 30.06.2026 in a 30.09.2026 filing, balance blank; 1,199.97 used in Q1 with no stated object while corporate loans rose 1,593.47"}
+  - {id: "A3-18", check: "F14", line: "289; 583; 318; 337", classification: "NEUTRAL-FACT", implication: "Both notes blocks headed Consolidated; no standalone notes; notes 7-10 missing; year-under-review wording in half-year filing"}
+  - {id: "A3-19", check: "F14", line: "258; 203; 552; 253; 272; 168", classification: "AMBIGUOUS", implication: "Tax paid line equals current-tax accrual in every period; ST provisions +202.88 mirrors ST borrowing repayment 202.88; round 6,768.00 closing; actual cash tax unknown"}
+  - {id: "A3-20", check: "F14", line: "428; 197; 235; 477; 529; 542-546", classification: "NEUTRAL-FACT", implication: "Asterisk without footnote; finance cost P&L vs CF 0.55 gap; consolidated WC lines off BS by ~28 each, netting to 0.73"}
+  - {id: "A3-21", check: "F14", line: "80; 359; 118; 397", classification: "NEUTRAL-FACT", implication: "Auditor firm renamed (formerly Uttam Agarwal & Associates); same FRN and partner; confirm rename, not change"}
+  - {id: "A3-22", check: "F15", line: "343-348; 487", classification: "FORWARD-SIGNAL", implication: "New 40% associate Elementa Lifespaces (Rs 200 lakh); share of loss 15.53 in 69 days, ~41% of cost per year annualised; business and related-party status undisclosed"}
+  - {id: "A3-23", check: "F15", line: "318; 334-336; 468", classification: "NEUTRAL-FACT", implication: "Kidcity in group but not in Sep-25 comparative periods; no consolidated YoY filed; YoY only on standalone"}
+forward_signals: ["A3-02", "A3-06", "A3-07", "A3-12", "A3-15", "A3-22"]
+ambiguous: ["A3-01", "A3-03", "A3-04", "A3-08", "A3-10", "A3-11", "A3-13", "A3-14", "A3-17", "A3-19"]
+commitments:
+  - {commitment: "Conversion of 39,66,860 warrants at Rs 121; 75% balance ~3,599.9 Lakhs due", implied_date: "within 18 months of allotment; ~Nov-Dec 2027 (allotment date not disclosed)", ref: "Note 4, lines 305-312", status_word: "initiated"}
+  - {commitment: "Use of preferential proceeds 1,199.97 of 1,199.98", implied_date: "as on 30.06.2026; no 30.09.2026 update", ref: "Note 4, lines 313-316", status_word: "completed"}
+  - {commitment: "Subscribe 52,000 shares (26%) of RDB Elementa Sports Academy for Rs 5,20,000", implied_date: "NOT DISCLOSED", ref: "Note 11, lines 337-342", status_word: "initiated"}
+  - {commitment: "40% of Elementa Lifespaces for Rs 2,00,00,000", implied_date: "effective 24.07.2026", ref: "Note 12, lines 343-348", status_word: "completed"}
+  - {commitment: "Software under development at Kidcity", implied_date: "NOT DISCLOSED", ref: "Note 3 tail, lines 303-304; CWIP line 417", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three arithmetic breaks, all derived from filed numbers, outweigh any single line. (1) The Audited Mar-26 consolidated BS carries Other Equity 3,635.61 vs 3,442.02 in the results table. The H1 roll ties only from 3,442.02. The 193.59 gap equals FY26 OCI, and investments (+251.03) and DTA (-57.43) carry the same pre-tax and tax amounts, so the group comparative reads as if the FY26 FVOCI loss was never booked. (2) Q1 NCI 14.98 equals 25% of Kidcity's Q1 tax (59.92), not its PAT; Q2 NCI is the H1 plug. (3) Prior EPS uses 205-285 lakh shares while paid-up shows 619.975 lakh; H1 FY26 had no share proceeds, so the increase looks non-cash and unrestated. The business pattern matters as much: CFO (487.90) against PAT 1,816.87, receivables +63%, and 1,593 of new corporate loans plus two Elementa-named non-textile stakes, funded by term debt and warrant money, in a company that declares one textile segment. Kidcity's 1% staff cost and 168-day receivables do not read as retail. Lean bear on each until management explains."

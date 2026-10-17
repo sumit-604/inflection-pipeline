@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "KARNIKA"
+quarter: "H1 FY27 (Q2 FY27 also in scope)"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 14
+formfeed_count: 14
+line_count: 687
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "x0.01"
+text_layer_present: true
+extraction_mode: text-only  # page 1 text layer; pages 2-14 image-only scans, rendered and OCR'd under the zero-character exception
+render_candidates: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]  # zero characters, each a data-bearing full-page scan
+rendered_pages: [1 (letterhead image only, viewed), 2, 3, 4 (rotated), 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]  # 300 ppi, tesseract psm 6; pages 3, 4, 9, 10 re-transcribed from image after OCR dropped rows
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 and H1 FY27 (period ended 30-Sep-2026)"
+fulltext_path: "runs/karnika-h1fy27/extracted/karnika-results-h1fy27-fulltext.md"
+structured_path: "runs/karnika-h1fy27/extracted/karnika-results-h1fy27-structured.md"
+structured_counts:
+  number: 621
+  entity: 66
+  forward: 7
+  date: 38
+  qualifier: 48
+structured_id_range: "R001-R780"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,29 @@
+# Orchestrator copy: the A1 agent reported writing this block, but the file was absent at close. Copied verbatim from the agent's hand-back YAML.
+stage: A1-extractor
+company: "KARNIKA"
+quarter: "h1fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 32
+formfeed_count: 32
+line_count: 610
+unit_convention: "Crores (INR Cr; USD bn for market size p10)"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: ["p2 (1 char, title slide: skipped no data)", "p4 (1 char, contents slide: skipped no data)", "p16 (7 chars, divider: skipped no data)"]
+rendered_pages: []   # p2 and p4 viewed at 60dpi for inspection only, no OCR, no text merged
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 and H1 FY27"
+fulltext_path: "runs/karnika-h1fy27/extracted/karnika-presentation-h1fy27-fulltext.md"
+structured_path: "runs/karnika-h1fy27/extracted/karnika-presentation-h1fy27-structured.md"
+structured_counts:
+  number: 445
+  entity: 26
+  forward: 31
+  date: 30
+  qualifier: 21
+structured_id_range: "R001-R553"
+gate_a1: pass
+gap_note: ""

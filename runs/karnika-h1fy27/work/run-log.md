@@ -1,0 +1,36 @@
+# Run log: KARNIKA H1 FY27 (/run-quarterly, 2026-10-17)
+- Checkout guard PASSED 2026-10-17 for the batch (worktree run/quarterly-q2fy27-2026-10-17 cut from origin/main e24a5bdb); not rerun per batch instruction.
+- Protocols present: Results v1_4, Concall v1_1, Document_Review v1_1, Master v3_6.
+- Toolchain: poppler 25.07 + tesseract (winget), PATH prefixed per call.
+- Ticker: KARNIKA (NSE symbol on cover pages; no companies/ file).
+- Doc class: Karnika_H1FY27_Results.pdf -> results (Board Outcome cover + Reg 33 standalone and consolidated results, half year ended 30-Sep-2026). 14 pp.
+- Doc class: Karnika_H1FY27_Concall_Transcript.pdf -> concall (Reg 30(6) cover, call 13-Oct-2026). 18 pp.
+- Doc class: Karnika_H1FY27_Investor_Presentation.pdf -> presentation (Reg 30 cover + deck, "1st Half and 2nd Quarter FY2026-27"). 32 pp.
+- FULL QUARTER run: Role 4 (results) + Role 5 (concall).
+- Period: covers say half year ended 30-Sep-2026 (NSE SME half-yearly filer). Folder runs/karnika-h1fy27, tentative until A1 confirms.
+- Sparse checkout: added /runs/karnika-h1fy27/** (batch pattern was karnika-q2fy27).
+- Notion live search 2026-10-17: no page. companies/KARNIKA.md absent. PRE-THESIS READ, no spear on record. work/notion-thesis.md.
+- Each A1 gets its own temp dir work/a1-<doctype>/.
+- A1 concall GATE PASS: 18/18 pp text-only, 1109 lines, 246 rows R001-R246. Period confirmed Q2/H1 FY27 (ended 30-Sep-2026). Tokens 73,965.
+- A1 presentation GATE PASS: 32/32 pp text-only (p2, p4, p16 near-empty title/contents/divider, no data), 610 lines, 553 rows R001-R553. Flags: chart series/legend mapping unresolved p9/p10/p11/p28; p14/p15 headers print Q1FY26 over Q2 panels; FY26 revenue 249 (p28) vs 248 (p25, p30). Tokens 81,538.
+- 2026-10-17 load cap from parent session: max 2 subagents at once. Three already in flight (A1 results, A2 concall, A2 presentation) left to finish; no new launch until <2 run.
+- A2 presentation GATE PASS: 553/553 IDs referenced, orphan_ids empty, counts match A1. Cost check pass: 47,302 < 81,538.
+- A2 concall GATE PASS: 246/246 IDs, orphans none, 167 turns, 66 questions, 100 mgmt numbers. Turn index built from fulltext speaker labels (A1 has no turn IDs).
+- COST CHECK A2 concall FAIL then DIAGNOSED: 75,251 > A1 73,965 (+1,286, 1.7%). No inputs/ or .pdf reference in A2 scripts or ledger. Cause: A1 concall structured has no turn IDs, so A2 read the 57 KB fulltext to build 167 turns. Not source re-ingestion; token figure not compromised. Proceeded. Lesson candidate: A1 concall should emit turn IDs.
+- A1 results GATE PASS: 14/14 pp; p1 text, pp2-14 zero-char JPEG scans OCR'd (p4 rotated); OCR-dropped rows on pp3,4,9,10 re-transcribed from images. Units Lakhs (x0.01). 780 rows R001-R780. Flags: cash flow headed 'Audited'; consolidated has no comparatives (Kidcity acquired 4-Oct-2025); note numbering 6->11; pp12-13 repeat pp6-7; ISIN OCR_UNCERTAIN. Tokens 134,793. Period confirmed: folder name h1fy27 stands.
+- A3 presentation GATE PASS: F1-F17 all statused, 27 findings line-cited (4 FORWARD-SIGNAL, 18 AMBIGUOUS). A3 notes A1 line drift 1-10 lines on 11 rows (values verified nearby); A2 RESTATED on ROE/ROCE not upheld. Tokens 148,718.
+- A3 concall GATE PASS: F1-F17 statused (5 FINDING, 12 N.A.), 17 findings line-cited (4 FORWARD-SIGNAL, 12 AMBIGUOUS), commitment register C01-C22. Tokens 123,574.
+- A2 results GATE PASS: 780/780 IDs, orphans none, notes 20, line items 210, zero-standing 45, agenda 1, auditor paras 8, entities 4. Cost check pass: 98,091 < 134,793.
+- A3 results GATE PASS: F1-F17 statused (14 FINDING, 3 PASS... F16/F17 N.A.), 23 findings line-cited (6 FORWARD-SIGNAL, 10 AMBIGUOUS). Tokens 169,153.
+- A4 launched once with 3 structured, 3 fulltext, 3 ledgers, 3 forensics, Role 4 + Role 5 protocols, PRE-THESIS framing.
+- A4 complete: PROCEED WITH FLAGS, cash INDETERMINATE-WITH-DIRECTION, 36 questions cover all 54 FS/AMB findings, brief included. Tokens 430,343. A5 launched with review + 3 fulltext + 3 structured + 3 ledgers only.
+- A5 run 1: INCOMPLETE (3 FACTUAL, 7 MISSING, 8 STYLE). Arithmetic PASS, brief gate PASS. LOOP iteration 1 started: A2 concall delta -> A3 concall delta -> A4 delta -> A5 re-audit.
+- LOOP1 A2 concall delta: T87 -> q36 (questions 67), M001-M005 MISSING_FROM_STRUCTURED (mgmt numbers 105). Gate stays pass. Tokens 39,791.
+- LOOP1 A3 concall delta: no status change; new C-A3-18 (AMBIGUOUS), C-A3-19 (NEUTRAL-FACT). Gate pass. Tokens 84,659. A4 delta launched with A5 gap (a)-(f) + STYLE S1-S8.
+- 2026-10-17 operator standing rule for the batch, relayed by the parent session (quoted): "approve one second loop for any company still INCOMPLETE after loop 1 ... No third loop: close with open items flagged." Applies if A5 re-audit after loop 1 is INCOMPLETE.
+- LOOP1 A4 delta: finished before the laptop restart (block a4-loop1.yaml 15:25, review change log present). Token count lost: NOT RECORDED. Operator (via parent, 2026-10-17): continue without waiting; killed-agent re-runs are mechanical and do not count against the loop cap. Next: A5 re-audit (loop 1).
+- LOOP1 A5 re-audit: INCOMPLETE (3 FACTUAL, 4 MISSING, 1 CONTRADICTION, 5 STYLE); verdict PROCEED WITH FLAGS unaffected. LOOP 2 started under the operator batch rule: A2 append -> A4 delta -> A5 final audit. No third loop.
+- LOOP2 A2: M006 + forward M007-M020 (forward rows 47->61, mgmt numbers 106); independent sweep 95 lines, 0 unmapped. Gate pass. A3: no new forensic work per audit (A4 cites new rows). A4 loop 2 launched.
+- LOOP2 A4: all audit items closed; OPEN ITEMS none (Karnika-to-Kidcity sales ND pending Q15). Specificity 0.41, lean EVASIVE; contradictions 3. Review 131,141 -> 155,410 bytes (full rewrite, no loss of sections). Tokens 238,198. Final A5 launched.
+- LOOP2 A5 final audit: INCOMPLETE (1 FACTUAL, 2 MISSING, 6 STYLE), A4-only local edits; coverage and arithmetic PASS; verdict unaffected. No third loop (operator rule). Orchestrator added 'OPEN ITEMS AT CLOSE' table OI-1..OI-3 at the top of the review (A5 wording, not applied). Run closed.
+- Close: work/blocks/a1-presentation.yaml was absent although A1 reported writing it; orchestrator wrote it verbatim from the A1 hand-back YAML (marked in the file).

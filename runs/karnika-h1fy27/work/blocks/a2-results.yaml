@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "KARNIKA"
+quarter: "h1fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/karnika-h1fy27/work/ledger_results_karnika_h1fy27.md"
+counts:
+  notes: 20
+  line_items: 210
+  zero_standing: 45
+  agenda_items: 1
+  auditor_paras: 8
+  entities: 4
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, FOOTNOTE_UNRESOLVED, NOTE_NUMBER_GAP, NO_COMPARATIVE, LABEL_INCONSISTENT, BALANCE_NOT_PRINTED, OCR_UNCERTAIN, PENDING_ITEM, RESTATED, RESTATED_DIFFERS, FORWARD]
+ids_in_structured: 780
+ids_referenced: 780
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Notes run 1-6 then 11-13 (7-10 absent), and the whole notes block repeats on pp12-13. Board outcome letter has one agenda item only (results). Meeting ran 19:00-20:30; signature stamp 22:12 is after close. Consolidated review names Kidcity only; new 40% associate Elementa Lifespaces (from 24.07.2026) is not in the reviewed list. Auditor firm renamed. Consolidated results carry no Sep-25 comparatives. Cash flows are labelled Audited on a half-year; consolidated cash line has an unresolved asterisk. Standalone H1 finance cost (R104 272.49) differs from cash-flow (R214 271.94). Preferential-issue utilisation is as at 30.06.2026 with the unutilised balance blank. Warrant money 1,199.98 is new this half (nil at 31.03.2026). Gross receivables rose 6,740.70 to 10,991.47 on standalone."

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "KARNIKA"
+quarter: "h1fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/karnika-h1fy27/work/ledger_concall_karnika_h1fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 53
+  turns: 167
+  questions: 67
+  mgmt_numbers: 105
+  slides: 0
+  slide_numbers: 0
+flags_raised: [REPEAT_QUESTION, RESTATED, FORWARD_COMMITMENT, HEDGE_OR_QUALIFIER, MD_SILENT_IN_QA, NAME_VARIANT, DIVERGENCE_CHECK, ANALYST_STATED_NOT_MGMT, ANALYST_CORRECTED, FORWARD_AS_PRESENT_FACT, TRANSCRIPTION_ANOMALY, HEDGE_CONTRADICTION_CHECK]
+ids_in_structured: 246
+ids_referenced: 246
+orphan_ids: []
+missing_from_structured: [M001, M002, M003, M004, M005]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Loop 1: T87 reclassified as a question (66->67); five words-written numbers added M001-M005 (100->105). A1 carries no turn or question IDs, so turns (167) and questions (67) were built from the A1 fulltext speaker labels; each turn lists the R-IDs falling in its line range. The MD speaks only in prepared remarks (T3); the CFO answers all 77 Q&A answer turns (78 CFO turns incl. T4 prepared remarks). Store-target divergence for A3: 55-plus kiosks (R010/R160, deck-style opening) vs roughly 50 stores FY27-28 (R184/R245), with 1,300-1,400 outlets by FY29-30 (R186). Airport hedge pair R236/R237 (not profitable, break-even at best, then 'maybe we might be wrong'). R203 states SIS break-even as present fact. R240 is a transcription anomaly (100 square feet vs km radius). Mgmt widened the analyst's 18-19 percent margin frame to 17-20 percent (R049/R050). Kidcity H1 INR40cr vs INR80-100cr FY target (R052/R054) implies a steep H2 ramp."

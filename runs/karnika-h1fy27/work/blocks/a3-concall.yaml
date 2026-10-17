@@ -1,0 +1,72 @@
+stage: A3-forensics
+company: "KARNIKA"
+quarter: "h1fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/karnika-h1fy27/work/forensics_concall_karnika_h1fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: FINDING
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F2", line: "L395-396; L425-426", classification: "AMBIGUOUS", implication: "140+40=180 with no intercompany elimination though Karnika makes 60% of Kidcity goods; standalone growth may be overstated; results filing S-vs-C revenue separates the readings"}
+  - {id: "A3-02", check: "F2", line: "L216-217; L221-222", classification: "AMBIGUOUS", implication: "PAT +51% vs EBITDA +38.1% with margin -190bps; EBITDA-PAT gap 7.2pp->5.4pp; gain is below EBITDA, not operating leverage; check ETR, other income, MI in results filing"}
+  - {id: "A3-03", check: "F2", line: "L215; L223; L262", classification: "FORWARD-SIGNAL", implication: "derived Q1 FY27 YoY ~+121% vs Q2 +52.3%; Kidcity acquisition date and stake undisclosed; growth likely slows toward 30-35% as base laps"}
+  - {id: "A3-04", check: "F6", line: "L981-983; L989-993; L117-118", classification: "FORWARD-SIGNAL", implication: "debt capped; preferential allotment or equity named for Brands of Brand; main board migration precedes; dilution not in PBT guidance"}
+  - {id: "A3-05", check: "F6", line: "L1065-1072; L719-720; L546-548; L697", classification: "FORWARD-SIGNAL", implication: "MG INR6-8cr vs derived INR25cr revenue at 50 stores x INR50 lakh (24-32%); airports break-even at best; FY28 margin drag vs 17-20% band"}
+  - {id: "A3-06", check: "F6", line: "L164-165; L300-301; L584-593; L602-603; L670; L844", classification: "AMBIGUOUS", implication: "'kiosk' names SIS, EBO and airport formats; 55-plus vs analyst-sourced 50; base of one; store tracker needs one definition"}
+  - {id: "A3-07", check: "F6", line: "L446-447; L471-472; L578", classification: "AMBIGUOUS", implication: "Brands of Brand launch drifts Dec-2026 to Mar-2027 in one call; no airport space secured; rollout back-ended into FY28"}
+  - {id: "A3-08", check: "F6", line: "L379; L385-387", classification: "FORWARD-SIGNAL", implication: "Q2 driver includes one-time puja buying by chains with 'gaps available in buying'; Q3 Karnika B2B may soften"}
+  - {id: "A3-09", check: "F6", line: "L189-190; L373-375; L821", classification: "AMBIGUOUS", implication: "CAGR base year unstated; PBT not EPS; no FY27 number when asked; H1 +74.7% implies sharp H2 slowdown"}
+  - {id: "A3-10", check: "F6", line: "L345; L362; L367-370", classification: "AMBIGUOUS", implication: "analyst 18-19% widened to 17-20%; FY 17% needs H2 below 17% vs H1 18.2%; one-quarter pass-through lag; derived Q1 ~17.6%"}
+  - {id: "A3-11", check: "F6", line: "L180; L790-799; L828-838", classification: "AMBIGUOUS", implication: "143d (H1) vs 178d (FY) not like-for-like; CFO says B2B ~4 months and WC intensity unchanged; year-end WC days may revert"}
+  - {id: "A3-12", check: "F6", line: "L1000-1002; L217-218", classification: "AMBIGUOUS", implication: "capex-light via job work makes processing a variable cost; processing charges named in Q2 margin drop"}
+  - {id: "A3-13", check: "F7", line: "L547-548; L565; L571-572", classification: "AMBIGUOUS", implication: "airport outlets go from not profitable to break-even to profitable at 15 pcs/day in three turns; unit economics unsettled"}
+  - {id: "A3-14", check: "F7", line: "L403; L411-412", classification: "AMBIGUOUS", implication: "hedged Kidcity FY27 INR80-100cr; low end needs H2 = H1 INR40cr; weak signal on H2 B2C demand; FY28 and FY29-30 targets rest on it"}
+  - {id: "A3-15", check: "F7", line: "L257-259; L893; L903-906; L926", classification: "AMBIGUOUS", implication: "billing to few buying houses; geography from buyer data; CFO contradicts on wholesaler sales; counterparty and debtor concentration undisclosed"}
+  - {id: "A3-16", check: "F14", line: "L57-62; L73; L766; L791-792; L179", classification: "NEUTRAL-FACT", implication: "MD name variant, unit transcription error, by/to wording; minor filing-care data point"}
+  - {id: "A3-17", check: "F17", line: "L281; L373-375; L535-536; L667-670; L986-989; L130; L262", classification: "AMBIGUOUS", implication: "6 non-answers plus 7 undisclosed topics (exports, debt quantum, Kidcity stake, concentration, OCF, intercompany, MD in Q&A); silence count 1 quarter"}
+forward_signals: ["A3-03", "A3-04", "A3-05", "A3-08"]
+ambiguous: ["A3-01", "A3-02", "A3-06", "A3-07", "A3-09", "A3-10", "A3-11", "A3-12", "A3-13", "A3-14", "A3-15", "A3-17"]
+commitments:
+  - {commitment: "NSE main board migration, subject to regulatory and procedural requirements", implied_date: "effective 2026-10-13; completion pending", ref: "T3 L117-118", status_word: "initiated"}
+  - {commitment: "Revenue and PBT CAGR 30-35% through FY28 (base year unstated)", implied_date: "FY28", ref: "T3 L189", status_word: "target"}
+  - {commitment: "EBITDA margin 17-20% (FY27 and through FY28)", implied_date: "FY27-FY28", ref: "T3 L190; T22 L370", status_word: "target"}
+  - {commitment: "FY27 margin almost same as H1; cotton stable next half", implied_date: "H2 FY27", ref: "T16 L345-347; T18 L353-354", status_word: "target"}
+  - {commitment: "Input-cost pass-through with one-quarter lag", implied_date: "rolling", ref: "T20 L360-364", status_word: "ongoing"}
+  - {commitment: "55-plus kiosks at airports/high-street from base of one", implied_date: "undated", ref: "T3 L164-165", status_word: "initiated"}
+  - {commitment: "About 50 stores (analyst figure, confirmed Yes)", implied_date: "FY27-FY28", ref: "T58-T61 L584-593", status_word: "initiated"}
+  - {commitment: "Brands of Brand launch; capex INR10-15 lakh plus inventory INR10-15 lakh per store", implied_date: "Dec-2026 to Mar-2027 (drifts within call)", ref: "T36 L446-448; T41 L471-481", status_word: "initiated"}
+  - {commitment: "Airport space with GMR Delhi, Kolkata, Lucknow", implied_date: "undated", ref: "T57 L578-581", status_word: "initiated"}
+  - {commitment: "Cross-city exchange tech close", implied_date: "Feb-Mar 2027", ref: "T84 L710-713", status_word: "underway"}
+  - {commitment: "Kidcity FY27 revenue INR80-100cr (hedged)", implied_date: "FY27", ref: "T28 L403-411", status_word: "target"}
+  - {commitment: "Kidcity FY28 revenue about INR180-200cr", implied_date: "FY28", ref: "T28 L411-412", status_word: "target"}
+  - {commitment: "Kidcity PAT margin 10-13%", implied_date: "FY27", ref: "T30 L418", status_word: "target"}
+  - {commitment: "Kidcity INR500cr; ~1,000 SIS; 300-400 EBO/kiosk", implied_date: "FY29-30", ref: "T63 L600-603; T78 L670-671", status_word: "target"}
+  - {commitment: "Per-EBO INR50 lakh a year at 13-14% margin (conditional)", implied_date: "undated", ref: "T86 L719-720", status_word: "target"}
+  - {commitment: "SIS break-even in 9-12 months", implied_date: "per store", ref: "T76 L664", status_word: "stated"}
+  - {commitment: "Karnika standalone growth 20-25% YoY", implied_date: "annual", ref: "T104 L821-822", status_word: "target"}
+  - {commitment: "Debtor cycle to 90-100 days from about 4 months", implied_date: "undated", ref: "T100 L790-799", status_word: "initiated"}
+  - {commitment: "Debt held flat; next round via preferential allotment or equity", implied_date: "when requirement arises", ref: "T144 L981-983; T146 L989-993", status_word: "initiated"}
+  - {commitment: "No significant Karnika capex; job work; accessories outsourced", implied_date: "ongoing", ref: "T34 L435-437; T148 L1000-1002; T150 L1009", status_word: "stated"}
+  - {commitment: "About 12 licensed brands, MG INR6-8cr a year", implied_date: "from Brands of Brand launch", ref: "T158 L1065; T160 L1071-1072", status_word: "initiated"}
+  - {commitment: "Central India / MP expansion; own Indian character long run", implied_date: "undated", ref: "T137 L951; T156 L1057; T162 L1079-1081", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Pre-thesis read; no prior quarter or checklist, so F17 silence counts are 1. Three threads matter most. First, headline growth quality: derived Q1 FY27 YoY of about +121% falling to +52.3% in Q2, plus an acquired subsidiary with no stated stake or date, points to an acquisition base effect; the 140+40=180 split carries no intercompany elimination though Karnika makes 60% of Kidcity goods. Second, the earnings bridge: PAT outgrew EBITDA while EBITDA margin fell 190 bps, so the gain sits below EBITDA (tax, other income or MI), not in the operating leverage the CFO cited. Third, the B2C build: licence MG of INR6-8cr against about INR25cr revenue at 50 stores, break-even airports, a launch date that drifts within one call, and equity named as the funding route. Together these put the 17-20% margin band and EPS (not PBT) growth at risk in FY28. A1 line drifts are logged in report section 0 and change no finding."

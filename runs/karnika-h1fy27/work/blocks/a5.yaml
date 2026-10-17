@@ -1,0 +1,58 @@
+stage: A5-adversary
+company: "KARNIKA"
+quarter: "h1fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "concall question 67 = T87 (cc L723, answered cc L726); A2 classed it as acknowledgement; fresh count 67 vs ledger 66"
+    - "concall MISSING_FROM_STRUCTURED spelled-out mgmt numbers: cc L306, L704-705, L867, L901, L1027"
+arithmetic_mismatches:
+  - {metric: "Step 6C 'maybe' hedge count (other soft hedges)", a4_value: "3 (L547, L565, L571); other soft hedges 9", recomputed: "4 (adds cc L471); other soft hedges 10", source_line: "cc L471"}
+surviving_bear_counters:
+  - {claim: "Kidcity PAT margin 10-13% delivered or above at 13.8% H1 (rev L663, L870, L413); deck frames Kidcity deal as a win", counter: "Derived consideration ~Rs 3.67 Cr for 75% (two routes: investment elimination 367.42 L; goodwill 14.03 L + 75% of NCI-implied net assets 353.40 L) = ~0.70x Kidcity TTM PAT Rs 7.01 Cr, ~1.04x book. Cheap because pre-deal base was ~Rs 4.71 Cr; post-deal margin doubled 7.1% to 13.8% while Karnika makes 60% of Kidcity goods, so transfer prices set the margin and 25% leaks to an undisclosed NCI holder (Rs 1.33 Cr H1). Kidcity holds >= Rs 35.40 Cr receivables and ~Rs 4.61 Cr debt.", source_line: "res L140, L418, L420, L439, L487, L499; cc L425-426, L308-311", type: MISSING}
+  - {claim: "Pass-through worked in Q2 at gross level; brief: raw material cost was passed on (rev L233, L1020)", counter: "Holds only on Q2 YoY gross line against a base already 1,069 bps below Q1 FY26; H1 gross margin -384 bps; COGS/other-expense split unconfirmed (A4 Q17); material-plus-conversion spread -167 bps YoY in Q2; CFO says next increase absorbed for a quarter", source_line: "res L189, L193-195, L199; cc L217-218, L362-363; ppt L559", type: MISSING}
+  - {claim: "Consolidated CCC better 182.2 to 159.5; mgmt 178 to 143 direction partly supported (rev L344, L865)", counter: "Mar-26 days mix full Kidcity balances with ~6 months of Kidcity flows; scope-matched Mar-26 CCC 151.9 (rec 110.0, inv 100.7, pay 58.8 on annualised H2 FY26 group flows) so CCC worsened ~7.6 days and receivable days rose 110.0 to 147.4; net WC +Rs 41.30 Cr (+36.9%)", source_line: "res L425, L427, L451-452, L469, L473-475; cc L835-838", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1 (A4): Q27 'why is there no goodwill?' wrong; consolidated Goodwill Rs 14.03 lakh at both dates (res L418)"
+    - "F2 (A4): Q27 'Deck timeline says 2024' unsupported; ppt L529 cols 108-129 sit on 2025 label (ppt L538 cols 116-119); A1 rows R525-R528 shifted one column (CIN 2022, res L20)"
+    - "F3 (A4): 'maybe' count 3 should be 4 (cc L471); other soft hedges 10 not 9"
+  missing:
+    - "M1 (A4): mandatory acquisition multiple absent; Kidcity ~Rs 3.67 Cr / TTM PAT 7.01 Cr = ~0.70x, ~1.04x book; bear reading survives; add Elementa ~Rs 2.05 Cr annualised loss (41% of implied equity) to Q6"
+    - "M2 (A4): 7A omits CFO 'no debtors at Kidcity' (cc L828-831) vs >= Rs 35.40 Cr Kidcity receivables (~168 days, +14.85 Cr in H1; res L427, L147, L542, L248); regrade Q&A row 43"
+    - "M3 (A4): Mar-26 consolidated BS omits FY26 FVOCI loss across three lines (investments +2.51 Cr, DTA -0.57 Cr, OE +1.94 Cr; res L420, L422, L437, L208-209, L507); Sep-26 OE rolls exactly from 34.42; Q8 'typo' fork weak"
+    - "M4 (A4): pass-through qualifier (H1 GM -384 bps; Q2 conversion spread -167 bps)"
+    - "M5 (A4): CCC scope-matched counter (Mar-26 151.9 vs Sep-26 159.5 days; net WC +41.30 Cr)"
+    - "M6 (A2): concall T87 question missing from question ledger (66 vs 67)"
+    - "M7 (A2): 5 spelled-out mgmt numbers missing from structured (cc L306, L704-705, L867, L901, L1027)"
+  contradiction: []
+  style:
+    - "S1: six A3 IDs only in YAML list, no body anchor (R-A3-20, R-A3-23, P-A3-10, P-A3-14, P-A3-23, P-A3-24)"
+    - "S2: A2-flagged rows lack individual disposition (R104/R214, R129/R211, R697, R620, R745, cc R240)"
+    - "S3: brief competition bullet 4 sentence 2 untagged; anchor airport half to cc L568-570"
+    - "S4: brief competition bullet 2 tags analyst-raised peers as MGMT"
+    - "S5: two forward-map rows undated"
+    - "S6: associate loss '(0.16) per quarter and rising' is a 69-day stub; ~0.21 Cr full-quarter [INFERENCE]"
+    - "S7: rounding on rounded inputs (cons PPE -46.7 vs -46.63; CE 175.48 vs 175.49; +7.21 vs +7.22; CCC +1.4 vs +1.33)"
+    - "S8: deck 32% ROCE 'matches' derived 32.8%; say 'approximates'"
+loop_back_to: "A2"
+gap: "A2: add concall question 67 (T87, cc L723-726) and flag 5 MISSING_FROM_STRUCTURED spelled-out numbers (cc L306, L704-705, L867, L901, L1027); delta only. A3: review those units only. A4: (a) state Kidcity purchase multiple (~Rs 3.67 Cr for 75% = ~0.70x TTM PAT 7.01 Cr, ~1.04x book) and graft the group-routed-earnings / NCI-leakage bear reading into rev L663, L870, L413, Q15, Q27, brief s3, plus Elementa annualised loss into Q6; (b) add 7A CONTRADICTED row: CFO 'no debtors' at Kidcity (cc L828-831) vs >= Rs 35.40 Cr Kidcity receivables, regrade row 43; (c) fix Q27: goodwill Rs 14.03 lakh exists (res L418) and deck places Kidcity at 2025 not 2024; (d) graft three-line Mar-26 FVOCI omission into Q8; (e) qualify pass-through (rev L233, L1020) and CCC (rev L344, L865); (f) 'maybe' count 4; extend Q&A inventory and tally to 67."
+style_notes:
+  - "S1: anchor six YAML-only A3 IDs in body"
+  - "S2: add one-line dispositions for A2-flagged rows R104/R214, R129/R211, R697, R620, R745, cc R240"
+  - "S3: tag brief competition bullet 4 sentence 2 (INFERENCE; airport half cc L568-570)"
+  - "S4: retag analyst-raised peers in brief competition bullet 2"
+  - "S5: date or mark the two undated forward-map rows"
+  - "S6: restate associate loss as 69-day stub, ~0.21 Cr full quarter [INFERENCE]"
+  - "S7: compute from raw lakhs, not rounded crores"
+  - "S8: 'approximates' not 'matches' for deck ROCE 32% vs 32.8%"
+analyst_note: "Arithmetic is clean: every derived cell reproduces from res/cc/ppt lines within rounding. The audit fails on content. (1) Mandatory acquisition probe: two independent routes (investment elimination; goodwill plus NCI) put the Kidcity price at ~Rs 3.67 Cr for 75%, ~0.70x Kidcity TTM PAT of Rs 7.01 Cr and ~1.04x deal-date book. The low multiple fits a small pre-deal base plus a post-deal margin doubling (7.1% to 13.8%) on goods Karnika makes; 25% of profit booked there goes to an undisclosed holder. (2) The CFO's 'no debtors at Kidcity' is contradicted by at least Rs 35.40 Cr of Kidcity receivables. (3) The Mar-26 consolidated balance sheet omits the FY26 FVOCI loss across investments, DTA and Other Equity, tied to the lakh; Q8's typo fork is weak. (4) Q27 errs twice: goodwill exists (Rs 0.14 Cr) and the deck dates Kidcity to 2025; A1 timeline DATE rows R525-R528 are shifted one column. A2 misclassified T87 and missed five spelled-out numbers; low materiality, but they are ledger gaps, so the loop starts at A2 as a delta."

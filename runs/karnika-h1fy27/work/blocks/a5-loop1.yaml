@@ -1,0 +1,53 @@
+```yaml
+stage: A5-adversary
+company: "KARNIKA"
+quarter: "h1fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "concall mgmt_numbers: cc L378 'two growth drivers' (CFO, T24); append as M006 (same class as R040, R042, M004)"
+    - "concall forward statements absent from FORWARD rows R158-R204: cc L156-160, L196-199, L228-230, L521-524, L684-685, L704-707, L1094-1095; secondary L531, L869-870, L1051-1053; append as MISSING_FROM_STRUCTURED"
+arithmetic_mismatches:
+  - {metric: "Share of H1 consolidated OI from interest, MF gain, PPE gain (Step 6.5, rev L539)", a4_value: "92%", recomputed: "89.1% (250.63 / 281.44 lakh); 92% is the standalone share (250.63 / 272.53)", source_line: "res L470, L532, L533, L537, L190"}
+  - {metric: "Concall specificity ratio (Step 6B, rev L924)", a4_value: "24/47 = 0.51 (above 0.5)", recomputed: "24/49 = 0.49 with A4's own Forward Soft claims 19 and 25; about 24/54 = 0.44 on the fresh-pass set", source_line: "cc L196-199, L228-230; rev L697, L703"}
+surviving_bear_counters:
+  - {claim: "Kidcity bought cheaply: ~Rs 3.67 Cr for 75% = ~0.70x TTM PAT Rs 7.01 Cr, 1.04x book (1-K2)", counter: "Kidcity H1 CFO +Rs 0.47 Cr (consol (440.63) minus standalone (487.90) lakh) on PAT Rs 5.30 Cr = 0.09x; receivable build 14.85 Cr; opex 2.8% of revenue; the 0.70x prices a peak-shaped accrual year", source_line: "res L553, L259, L486, L206, L542, L248, L476, L196, L479, L199", type: MISSING}
+  - {claim: "Kidcity delivered its 10-13% PAT margin guide at 13.8% (6A-M, Step 3, 7A)", counter: "transfer-price and NCI reading already grafted; add the same cash test (CFO/PAT 0.09x) to the three delivery rows", source_line: "cc L418; res L553, L259", type: MISSING}
+  - {claim: "The business grows like-for-like: standalone Q2 +17.4%, H1 +37.5% (Step 2, Brief, Section C)", counter: "standalone includes sales to Kidcity, acquired 04-Oct-2025 after both base periods; CFO ties Karnika growth to making 60% of Kidcity goods; Kidcity purchases Rs 13.37 Cr Q2, Rs 26.68 Cr H1; illustrative ex-intra growth ~+6% Q2, ~+22% H1 [INFERENCE]", source_line: "res L318, L474, L194; cc L425-427, L395-396", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1 (A4): Step 6.5 OI share 92% is the standalone basis; consolidated is 89.1% (res L470, L532, L533, L537)"
+    - "F2 (A4): 'continue with this debt level' (cc L981) is forward intent from the Sep-26 level, made after the H1 rise; relabel from CONTRADICTED and cut same-quarter contradictions from four to three (rev L446, L503, L752, L947, L968, L1036, L1054, L1069, L1263)"
+    - "F3 (A4): rev L864 says non-elimination overstates standalone growth; mechanism inverted, since standalone includes intra-group sales regardless and non-elimination overstates consolidated revenue"
+  missing:
+    - "M1 (A2): cc L378 'two growth drivers' absent from structured file and ledger"
+    - "M2 (A2): seven core plus three secondary management forward statements absent from FORWARD rows and ledger (cc L156-160, L196-199, L228-230, L521-524, L684-685, L704-707, L1094-1095; L531, L869-870, L1051-1053)"
+    - "M3 (A4): Kidcity cash test absent from 1-K2 and the margin-delivery rows: CFO +Rs 0.47 Cr on PAT Rs 5.30 Cr (0.09x), opex 2.8% of revenue"
+    - "M4 (A4): standalone like-for-like YoY carries no intra-group qualifier (Kidcity joined after both base periods; cc L425-427)"
+  contradiction:
+    - "C1 (A4): Step 6B specificity denominator omits cc L198-199 and L228-230, which A4 Step 1 types Forward Soft; ratio 0.51 becomes 0.49 (below the 0.5 A4 cites in 6E), ~0.44 on the fresh-pass set"
+  style:
+    - "S1: A2-flagged presentation rows (R018-R036, R055-R064, R205-R209, R458, R546-R548) lack one-line dispositions"
+    - "S2: 1-K2 (rev L231) asserts when Karnika began supplying Kidcity; the transcript gives no date; tag [INFERENCE]"
+    - "S3: Q21 'from loss to profit' should read 'from break-even at best to profitable' (cc L547-548, L565, L572)"
+    - "S4: Q23, F1, P5 Kidcity H2 thresholds use mgmt's Rs 40 Cr H1; on filed Rs 38.36 Cr the low end needs H2 Rs 41.64 Cr; state basis"
+    - "S5: Q2 'receivables +63.1% vs revenue +37.5%' mixes balance change and H1 YoY; name both bases"
+loop_back_to: "A2"
+gap: "A2: append concall ledger rows M006 (cc L378 'two growth drivers') and forward statements cc L156-160, L196-199, L228-230, L521-524, L684-685, L704-707, L1094-1095 (+ L531, L869-870, L1051-1053) as MISSING_FROM_STRUCTURED. A3: no new forensic work expected. Then A4: (C1) restate specificity on the completed denominator (0.49 on A4's own typing) in 6B, 6E, Concall Verdict block and OVERPROMISER lean, citing the new rows; (F1) Step 6.5 OI share 92% to 89% consolidated; (F2) relabel 'continue with this debt level' as untested forward intent with an undisclosed H1 rise and cut contradictions four to three; (F3) fix rev L864 mechanism; (M3) graft Kidcity H1 CFO +0.47 Cr vs PAT 5.30 Cr (0.09x) and opex 2.8% into 1-K2, 6A-M, Step 3, 7A, Brief part 3; (M4) qualify every standalone like-for-like YoY with intra-group sales to Kidcity (res L318, L474, L194; cc L425-427) plus illustrative sizing [INFERENCE]."
+style_notes:
+  - "S1: add one-line dispositions for A2-flagged presentation rows R018-R036, R055-R064, R205-R209, R458, R546-R548"
+  - "S2: tag the 1-K2 'came after Karnika began making 60%' line [INFERENCE]"
+  - "S3: Q21 wording, break-even at best to profitable, not loss to profit"
+  - "S4: Q23, F1, P5 thresholds: state mgmt Rs 40 Cr vs filed Rs 38.36 Cr basis"
+  - "S5: Q2 receivables vs revenue growth: name the two bases"
+analyst_note: "Loop 1 fixes hold. I recomputed every derived figure from raw lakhs and all tie, except two: the Step 6.5 OI share (92% is the standalone basis; consolidated is 89%) and the specificity ratio. The ratio sits on A1's 47 forward rows. The fulltext holds at least seven more management forward statements, two of which A4 itself types Forward Soft, so the ratio falls below 0.5. Two bear counters survive and are not in the review. Kidcity's H1 cash flow (consolidated minus standalone CFO, exact regardless of eliminations) is +Rs 0.47 Cr on PAT Rs 5.30 Cr, so the 0.70x multiple prices accrual earnings. Standalone 'like-for-like' growth includes sales to Kidcity, which joined after both base periods; the CFO ties Karnika's growth to that supply, and A4's L864 inverts the mechanism. One bear claim overreaches: 'continue with this debt level' is forward intent stated after the H1 rise, so it is undisclosed, not contradicted. No finding moves PROCEED WITH FLAGS. The A2 fix is an append only."
+```

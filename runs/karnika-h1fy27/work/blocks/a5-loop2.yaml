@@ -1,0 +1,42 @@
+stage: A5-adversary
+company: "KARNIKA"
+quarter: "h1fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Kidcity delivered a 13.8% H1 PAT margin and was bought at ~0.70x TTM PAT; its H1 profit converted 0.09x to cash (+Rs 0.47 Cr CFO)", counter: "The +Rs 0.47 Cr CFO rests on a Rs 5.74 Cr payables rise and a Rs 3.43 Cr inventory release; without them Kidcity H1 CFO is about -Rs 8.70 Cr. Kidcity payables are at least Rs 23.51 Cr (~161 days of purchases); with 60% of goods from Karnika, part is likely owed to Karnika and sits in Karnika's Rs 109.91 Cr standalone receivables (size ND)", source_line: "res L546, L252, L541, L247, L451-452, L170-171, L147; cc L425", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1: Step 3 (rev L419) says the H2 FY26 base holds 'about one quarter' of Kidcity supply. Kidcity joined 04-Oct-2025 (res L318), so H2 FY26 is a full post-deal half, and its H2 FY26 purchases were Rs 27.25 Cr (res L474 5,440.27 less L194 2,715.64, FY26) vs Rs 26.68 Cr in H1 FY27. At 60%, about Rs 16.35 Cr of sales to Kidcity sit in the H2 FY26 base [INFERENCE]. The sentence also contradicts 1-K2's 'first post-deal half'"
+  missing:
+    - "M1: Q8, Top-3 rationale, Brief line 11, CONSOLIDATION ERRORS flag, M16: the deck FY26 balance sheet (ppt R337 34, R345 98, R401 20, R405 1, R413 29, R445 215) carries the FVOCI-corrected figures (34.42, 98.02, 19.92, 0.86, 29.44, 214.94), not the filing's Mar-26 comparative column (36.36, 99.96, 22.43, 0.28, 31.38, 216.87). This favours Q8's bull fork: the error is most likely confined to this H1 filing's comparative column"
+    - "M2: Kidcity cash test (1-K2, 5-K, 6A-M, 7A, 8C, Forward Map, Brief part 3, flag) omits that the +Rs 0.47 Cr H1 CFO includes a +Rs 5.74 Cr payables rise and a +Rs 3.43 Cr inventory release (about -Rs 8.70 Cr without them), omits Kidcity payables of at least Rs 23.51 Cr (~161 days), and omits that any Kidcity debt to Karnika sits in the standalone receivables behind the 8C metric"
+  contradiction: []
+  style:
+    - "S1: Q34 labels Rs 146 Cr (receivables 88 + inventory 58) as working capital; net is ~Rs 112 Cr"
+    - "S2: A2-flagged presentation disposition list omits R224-R231, R516/R518/R543/R544, R549 (covered in substance by Q19 and Step 3)"
+    - "S3: distribution-partner counts unreconciled: 500-plus (cc L132), 540+ (ppt R015), 150+ (ppt R220)"
+    - "S4: 6B excludes relative-date rows R167-R169 from quantified; including them gives 27/61 = 0.44, same band"
+    - "S5: Kidcity staff cost 'about 1%' in Q4 vs 1.27% in 1-K2"
+    - "S6: 1-K FY26 column carries an elimination (C-S other expenses -0.74 Cr, res L479 vs L199); add a footnote"
+loop_back_to: "A4"
+gap: "A4 only, no A2/A3 rework. (F1, FACTUAL) Step 3 rev L419: replace 'about one quarter of Kidcity supply' with a full post-deal half; Kidcity H2 FY26 purchases Rs 27.25 Cr (res L474 less L194) vs H1 FY27 Rs 26.68 Cr; carry into M8/T4. (M1, MISSING) Q8, Top-3 rationale, Brief line 11, flag, M16: add that the deck FY26 balance sheet (ppt R337, R345, R401, R405, R413, R445) carries the FVOCI-corrected figures, narrow the bear fork, use 98.02 as the primary Mar-26 equity. (M2, MISSING) Kidcity cash: add the payables row (at least Rs 23.51 Cr, ~161 days) to 5-K; restate the CFO as +0.47 after a 5.74 payables rise and a 3.43 inventory release (about -8.70 without them); add the intra-group receivable qualifier to 8C and the Forward Map; extend Q15 or Q2. Exact replacement text is in the audit file, section 4."
+style_notes:
+  - "S1: Q34 'working capital' Rs 146 Cr is gross (receivables + inventory)"
+  - "S2: complete the A2-flagged presentation disposition list (R224-R231, R516/R518/R543/R544, R549)"
+  - "S3: distribution-partner counts differ across documents"
+  - "S4: state the 6B choice on relative-date rows"
+  - "S5: one figure for Kidcity staff-cost share"
+  - "S6: footnote the FY26 C-S elimination in 1-K"
+analyst_note: "Fresh enumeration matches all three ledgers (167 turns, 67 questions, 106 management numbers, 61 forward rows, 32 slides, 445 deck numbers, 210 result lines); A2 is clean. Every derived metric ties to the lakh. The three gaps are content, not arithmetic. F1: H2 FY26 already holds a full half of sales to Kidcity, so the FY26 base of the 20-25% guide is not intra-group-free. M1: the deck's FY26 balance sheet carries the FVOCI-corrected figures on all six affected lines. That weakens Q8's bear fork (audited accounts omit the loss) and points to a comparative-column error in this filing. M2: Kidcity's positive CFO rests on payables and inventory release. Its payables of at least Rs 23.51 Cr, with 60% of goods from Karnika, make the standalone receivable-days metric partly a group credit-terms number. None of the three changes PROCEED WITH FLAGS or the cash class. All three are local A4 edits with exact text in the audit file."

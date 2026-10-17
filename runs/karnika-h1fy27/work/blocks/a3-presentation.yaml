@@ -1,0 +1,73 @@
+stage: A3-forensics
+company: "KARNIKA"
+quarter: "h1fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/karnika-h1fy27/work/forensics_presentation_karnika_h1fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: PASS
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "l297 S14; l540-544 S28", classification: "AMBIGUOUS", implication: "Associate line first non-zero in Q2FY27 at (0.2) Cr, about 10% of the Rs 2 Cr Elementa cost in one quarter; H1FY27 cell prints 0, inconsistent with Q1 0 + Q2 (0.2)"}
+  - {id: "A3-02", check: "F1", line: "l588, l594 S30", classification: "AMBIGUOUS", implication: "Long- and short-term provisions zero in all four years despite 4 plants and Rs 8 Cr employee cost; gratuity funded, below rounding, or not provided (AS 15)"}
+  - {id: "A3-03", check: "F1", line: "l583 S30; l530-531 S28", classification: "AMBIGUOUS", implication: "Goodwill zero in all years despite the 75% Kidcity stake; consideration undisclosed"}
+  - {id: "A3-04", check: "F1", line: "l591, l593 S30", classification: "AMBIGUOUS", implication: "Cash zero at FY25 and FY26 while other financial assets reach 22 and ST borrowings 75; liquidity location and restriction unknown"}
+  - {id: "A3-05", check: "F6", line: "l139-140 S7", classification: "FORWARD-SIGNAL", implication: "Kiosk target 55+ with no date or baseline; Role 5 tracker item"}
+  - {id: "A3-06", check: "F6", line: "l448, l460 S24", classification: "FORWARD-SIGNAL", implication: "2028 growth-phase slide with 2028 axis unvalued; undisclosed target, ask for the figure and FY/CY"}
+  - {id: "A3-07", check: "F6", line: "l413 S22", classification: "FORWARD-SIGNAL", implication: "EBO expansion named only here, no count; new owned-retail format changes capital intensity"}
+  - {id: "A3-08", check: "F10", line: "l305 S14; l571-572 S29; l580 S30", classification: "AMBIGUOUS", implication: "EPS not bonus-adjusted (implied shares 1.24/2.1/2.9/4.2/6.4 Cr); printed EPS falls (38.9%)/(43.2%) are artefacts; adjusted Q2 EPS up about 30%; check filed results for AS 20 compliance"}
+  - {id: "A3-09", check: "F10", line: "l304-305 S14", classification: "AMBIGUOUS", implication: "Implied diluted shares about 6.4 Cr in Q1FY27 rising to about 7.06 Cr in Q2FY27, up about 11% QoQ vs 6.2 Cr paid-up; possible allotment, warrants or minority-interest effect"}
+  - {id: "A3-10", check: "F11", line: "l522 S27; l591 S30", classification: "NEUTRAL-FACT", implication: "FY24 net D/E printed 1.0x vs 0.75x computed net (gross basis 0.98x); definition inconsistent with FY23 2.8x"}
+  - {id: "A3-11", check: "F11", line: "l584, l591-593 S30; l564 S29", classification: "AMBIGUOUS", implication: "Investments + loans + other financial assets went 1 (FY24) to 19 (FY25) to 57 Cr (FY26), 58% of net worth, while ST debt rose 59 to 75; capital leaving operations, debt-funded; counterparties unknown"}
+  - {id: "A3-12", check: "F14", line: "l268, l278 S13; l289-290 S14", classification: "NEUTRAL-FACT", implication: "Q1FY26 column is Q1FY27 data (180 = 106 + 74; actual Q1FY26 = 33); Q1FY27 YoY about +124%; strong seasonality"}
+  - {id: "A3-13", check: "F14", line: "l536-537 S28; l580 S30", classification: "AMBIGUOUS", implication: "Bonus printed 1:4 but capital rose 12 to 62 (5.2x), which fits 4 bonus for 1 held; confirm from record-date filing"}
+  - {id: "A3-14", check: "F14", line: "l496 S27; l456 S24; l556 S29", classification: "NEUTRAL-FACT", implication: "FY26 revenue 249 vs 248 across slides; cumulative drafting record"}
+  - {id: "A3-15", check: "F14", line: "l289 S14; l554-555 S29; l576-577 S30", classification: "AMBIGUOUS", implication: "Deck never states consolidated vs standalone; minority-interest and associate lines imply consolidated; F2/F3 not runnable from the deck"}
+  - {id: "A3-16", check: "F15", line: "l421 S23; l529-533 S28; l583 S30", classification: "AMBIGUOUS", implication: "Kidcity minority interest first appears FY26 vs timeline 2024; Acquisition Rationale slide still in H1FY27 deck; possible further step (remaining 25%/merger)"}
+  - {id: "A3-17", check: "F15", line: "l539-544 S28", classification: "AMBIGUOUS", implication: "Elementa Lifespaces 40% associate added 2026; business and related-party status undisclosed; first loss in Q2FY27"}
+  - {id: "A3-18", check: "F15", line: "l532-533 S28", classification: "AMBIGUOUS", implication: "Karni International (2017 restructuring entity) current relationship unstated"}
+  - {id: "A3-19", check: "F16", line: "l233-235 S10; l563-564 S29", classification: "AMBIGUOUS", implication: "FY26 PAT margin +100 bps on flat EBITDA margin; other income 4 to 9 Cr (23% of PBT), about 7-9 Cr of it in H2FY26 (about 36% of H2 PBT); margin expansion is non-operating"}
+  - {id: "A3-20", check: "F16", line: "l280 S13; l562-563 S29", classification: "FORWARD-SIGNAL", implication: "H1FY26 EBITDA margin 18.9% vs FY26 15.0%; implied H2FY26 about 12.1%; do not annualise H1FY27 18.2%, expect lower H2"}
+  - {id: "A3-21", check: "F16", line: "l217-218 S10; l557-563 S29; l172, l175 S8", classification: "AMBIGUOUS", implication: "Gross margin 50.4% to 33.6% while EBITDA margin rose and opex fell 41 to 39 on +98% revenue; about 10 pts moved COGS vs opex in FY26; reclassification or low-margin fabric/trading mix"}
+  - {id: "A3-22", check: "F16", line: "l209-211 S10; l325-330 S16; l580-582 S30", classification: "AMBIGUOUS", implication: "Investment-Led/capacity expansion title vs no-capex claim at 90%+ utilisation; PPE 7 to 6, CWIP 1; the investment is financial not capacity"}
+  - {id: "A3-23", check: "F16", line: "l516 S27; l591 S30; l535 S28", classification: "NEUTRAL-FACT", implication: "Leverage ratio fell on equity growth; ST borrowings rose 52 to 75 (+44%) despite IPO debt-reduction claim"}
+  - {id: "A3-24", check: "F16", line: "l351, l356-357 S18; l546 S28", classification: "CONFIRMATORY-NEGATIVE", implication: "Exports below 1% of H1FY27 revenue three years after initiation; Expanding Global Footprint framing unearned"}
+  - {id: "A3-25", check: "F16", line: "l101-102, l104-106 S5; l316 S16; l519 S27", classification: "AMBIGUOUS", implication: "ROCE shown as 32%/26%/25.5%; FY26 ROCE includes 9 Cr other income (about 20% ex other income); no H1 balance sheet or cash flow to verify H1 ratios"}
+  - {id: "A3-26", check: "F16", line: "l90-92 S5; l324, l333 S16; l589-590 S30", classification: "AMBIGUOUS", implication: "Asset-light claim vs receivables about 130 days and inventory about 128 days (146 Cr vs PPE 6); H1FY27 FATR 75x not reproducible"}
+  - {id: "A3-27", check: "F16", line: "l87-88 S5", classification: "AMBIGUOUS", implication: "Unsourced India's largest integrated kidswear platform claim at Rs 248 Cr revenue; tone evidence only"}
+forward_signals: ["A3-05", "A3-06", "A3-07", "A3-20"]
+ambiguous: ["A3-01", "A3-02", "A3-03", "A3-04", "A3-08", "A3-09", "A3-11", "A3-13", "A3-15", "A3-16", "A3-17", "A3-18", "A3-19", "A3-21", "A3-22", "A3-25", "A3-26", "A3-27"]
+commitments:
+  - {commitment: "Kiosks targeting 55+ on airports, high end streets", implied_date: "none stated", ref: "S7 l139-140", status_word: "targeted"}
+  - {commitment: "SIS expansion; 85+ as of H1FY27", implied_date: "none stated", ref: "S7 l141-148", status_word: "underway"}
+  - {commitment: "EBO and kiosk expansion", implied_date: "none stated", ref: "S22 l413", status_word: "stated"}
+  - {commitment: "2028 next growth phase (brand, distribution, efficiencies); no figure", implied_date: "2028", ref: "S24 l448-460", status_word: "stated"}
+  - {commitment: "Expanding export presence (<1% of H1FY27 revenue)", implied_date: "none stated", ref: "S5 l95; S18 l356-357; S28 l546", status_word: "initiated"}
+  - {commitment: "Superior ROCE/ROE trajectory over the medium term", implied_date: "medium term", ref: "S10 l232-234", status_word: "stated"}
+  - {commitment: "Scalable capacity without additional plant capex", implied_date: "none stated", ref: "S16 l328-330", status_word: "stated"}
+  - {commitment: "Forward integration into retail; Tier 2/3 reach", implied_date: "none stated", ref: "S22 l407, l411", status_word: "stated"}
+  - {commitment: "Kidcity 75% controlling stake", implied_date: "2024 per timeline; FY26 per minority interest", ref: "S28 l529-533", status_word: "completed"}
+  - {commitment: "Bonus issue printed 1:4", implied_date: "2025 (FY26)", ref: "S28 l535-537", status_word: "completed"}
+  - {commitment: "Elementa Lifespaces 40% for Rs 2 crore", implied_date: "2026", ref: "S28 l539-544", status_word: "completed"}
+  - {commitment: "IPO funds utilized for debt reduction, WC, modernization", implied_date: "2022-23", ref: "S28 l532-537", status_word: "completed"}
+  - {commitment: "Automation, ERP, export operations", implied_date: "2023", ref: "S28 l539-548", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Pre-thesis read; no prior deck, so diffs ran within the deck only. Three threads matter. (1) Earnings quality: FY26 PAT margin rose 100 bps on a flat EBITDA margin. Other income rose 4 to 9 Cr, about 7-9 Cr of it in H2FY26. Investments, loans and other financial assets rose from 1 Cr (FY24) to 57 Cr (FY26), 58% of net worth, while short-term debt rose to 75 Cr. Get the counterparties and the related-party schedule from the results filing or the AR. (2) Seasonality: H1 EBITDA margins run near 18-19%; the implied H2FY26 margin was about 12%. Do not annualise H1FY27. (3) Share count: deck EPS is not bonus-adjusted, so the printed EPS declines are artefacts. Separately, implied diluted shares rose about 11% QoQ in Q2FY27; check for an allotment or warrants. The column labelled Q1FY26 holds Q1FY27 data. Pipeline notes: A1 line cites drift by 1-10 lines on 11 rows; the values were verified at adjacent lines. The A2 RESTATED flag on ROE/ROCE is not upheld: values match across the two slides, and the series were resolved by computation."

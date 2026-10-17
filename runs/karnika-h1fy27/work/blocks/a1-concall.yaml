@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "KARNIKA"
+quarter: "h1fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 18
+formfeed_count: 18
+line_count: 1109
+unit_convention: "Crores (lakhs for per-store figures)"
+conversion_factor_to_cr: "Crores x1; Lakhs x0.01"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 / H1 FY27 (period ended 30-Sep-2026; call 13-Oct-2026)"
+fulltext_path: "runs/karnika-h1fy27/extracted/karnika-concall-h1fy27-fulltext.md"
+structured_path: "runs/karnika-h1fy27/extracted/karnika-concall-h1fy27-structured.md"
+structured_counts:
+  number: 104
+  entity: 53
+  forward: 47
+  date: 22
+  qualifier: 20
+structured_id_range: "R001-R246"
+gate_a1: pass
+gap_note: ""

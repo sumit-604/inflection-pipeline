@@ -1,0 +1,60 @@
+stage: A3-forensics
+company: "EIMCOELECO"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/eimcoeleco-q2fy27/work/forensics_results_eimcoeleco_q2fy27.md"
+ledger_reconciled_pct: 100        # 470/470 structured IDs + M001
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: PASS
+  F10: PASS
+  F11: FINDING
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "FN01", check: "F1", line: "211", classification: "NEUTRAL-FACT", implication: "Other NCA 4,824.68 belongs to 31.03.26; Sep-26 blank; line emptied in H1 (see FN09)"}
+  - {id: "FN02", check: "F1", line: "315, 243", classification: "AMBIGUOUS", implication: "Borrowing began H2 FY26, doubled to 574.91 while holding 21,277.57 investments; ask facility nature"}
+  - {id: "FN03", check: "F1", line: "236, 237", classification: "NEUTRAL-FACT", implication: "New NC liability classes 28.37 and 8.89; track size"}
+  - {id: "FN04", check: "F6", line: "408", classification: "FORWARD-SIGNAL", implication: "18-20% margin target, undated; Q2 18.9% computed depends on FN11"}
+  - {id: "FN05", check: "F6", line: "374, 377, 381, 386, 413-414", classification: "FORWARD-SIGNAL", implication: "Order book Rs 133 cr vs 44 Sep-25 (chart unmapped), 0.50x TTM revenue; basis and inflow not given"}
+  - {id: "FN06", check: "F8", line: "171", classification: "NEUTRAL-FACT", implication: "FY26 prior-period tax credit (10.54); rule-triggered, low weight"}
+  - {id: "FN07", check: "F8", line: "172, 173, 239", classification: "AMBIGUOUS", implication: "H1 ETR 22.8% vs 25.17% from Q1 deferred credit 93.59; DTL fell despite FV gains and capitalisation; ~300 bps step-up risk"}
+  - {id: "FN08", check: "F11", line: "230, 319, 308", classification: "AMBIGUOUS", implication: "Reserve roll implies FY26 DPS Rs 4.00 vs Rs 5.00 FY25 (derived); confirm and ask why"}
+  - {id: "FN09", check: "F12", line: "204, 205, 211, 303, 164, 405", classification: "FORWARD-SIGNAL", implication: "~Rs 47 cr advance capitalised into PPE in H1, no note, no D&A step-up; land or late capitalisation; Q3 D&A is the tell"}
+  - {id: "FN10", check: "F12", line: "217, 214, 288, 289, 300", classification: "AMBIGUOUS", implication: "H1 OCF/PAT 7.9%; receivables +25.8%, DSO ~124d; cash conversion INDETERMINATE until H2"}
+  - {id: "FN11", check: "F12", line: "165, 166", classification: "AMBIGUOUS", implication: "Distributor comp 5.6% of revenue vs 11.2-11.9%; at Q1 rate Q2 EBITDA margin is 13.3%; Other Expenses rose to 22.3%; possible reclass"}
+  - {id: "FN12", check: "F12", line: "158-160, 154, 369", classification: "FORWARD-SIGNAL", implication: "Q2 FG/WIP build 1,149.94 with revenue -26.7% QoQ; H2 dispatch loading or slow stock; product/spares split unmapped"}
+  - {id: "FN13", check: "F12", line: "155, 278, 209, 216", classification: "NEUTRAL-FACT", implication: "FV gains 74.7% of H1 OI; OI swing explains 64% of QoQ PBT fall; core PBT ex-OI +226% YoY Q2"}
+  - {id: "FN14", check: "F12", line: "260, 261, 262, 294", classification: "AMBIGUOUS", implication: "Other financial liabilities +110%, other current liabilities -17.7% while order book rose; ask contents and customer advances"}
+  - {id: "FN15", check: "F12", line: "154, 393", classification: "NEUTRAL-FACT", implication: "Q2 -26.7% QoQ mirrors FY26 seasonality (-50.8%); H2-heavy year; press release shows YoY only"}
+  - {id: "FN16", check: "F13", line: "41-44, 46-50, 474-475", classification: "FORWARD-SIGNAL", implication: "CFO exits 30 Oct 2026, no successor named; Q3 close is the first without him"}
+  - {id: "FN17", check: "F13", line: "486, 18, 489", classification: "AMBIGUOUS", implication: "Letter 5 Sep 2026, disclosed 13 Oct 2026 (38 days); addressed to ED; ask receipt date and earlier intimation"}
+  - {id: "FN18", check: "F14", line: "406-407, 380-384", classification: "AMBIGUOUS", implication: "Margins improved claim next to PAT while PAT margin fell 16.1% to 13.8%"}
+  - {id: "FN19", check: "F14", line: "374, 413-414", classification: "AMBIGUOUS", implication: "Rs 133 cr called both order book and open order pipeline; firm vs pipeline unresolved"}
+  - {id: "FN20", check: "F14", line: "403-404, 363-366, 303-307", classification: "AMBIGUOUS", implication: "Press-release EBITDA not reproducible (18.9% vs 18.8%, +105.8% vs +108.8%); H1 FY26 investing comparatives row-misaligned"}
+forward_signals: ["FN04", "FN05", "FN09", "FN12", "FN16"]
+ambiguous: ["FN02", "FN07", "FN08", "FN10", "FN11", "FN14", "FN17", "FN18", "FN19", "FN20"]
+commitments:
+  - {commitment: "Begwani ceases as CFO and KMP", implied_date: "2026-10-30", ref: "lines 41-43, 474-475", status_word: "initiated"}
+  - {commitment: "Ceases as materiality KMP and Risk Committee member", implied_date: "2026-10-30", ref: "lines 46-50", status_word: "initiated"}
+  - {commitment: "Structured handover incl. statutory reporting and audit closures", implied_date: "2026-10-30", ref: "lines 508-511", status_word: "initiated"}
+  - {commitment: "Successor CFO appointment (not stated)", implied_date: "NOT FOUND; statutory window for A4 to verify", ref: "lines 41-44, 476", status_word: "not started"}
+  - {commitment: "EBITDA margin targeted range 18-20%", implied_date: "undated", ref: "line 408", status_word: "in line"}
+  - {commitment: "Execute Rs 133 cr open order pipeline / order book", implied_date: "undated, as at 2026-09-30", ref: "lines 374, 413-414", status_word: "underway"}
+  - {commitment: "Continue to invest in capabilities", implied_date: "undated", ref: "line 409", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Pre-thesis read, standalone-only filer, no EoM. Three things matter for A4. (1) The Q2 EBITDA margin of 18.9% (computed) rests on Compensation to Distributors falling to 5.6% of revenue from 11.2-11.9%. Other Expenses rose to 22.3% from 14.0% (FY26). Combined, the two lines moved little (27.9% vs 25.5%), so a Note 4 reclassification is possible. Do not credit the 18-20% target until this is answered. (2) Cash conversion is weak. H1 OCF is 183.78 lakhs against PAT of 2,321.09 (7.9%). Receivables hold 68% of H1 billing. Q2 built 1,149.94 of FG/WIP while revenue fell 26.7% QoQ. Either H2 dispatch loading or slow collection explains it; Q3 separates the two. (3) About Rs 47 cr moved from Other NCA (a Mar-26 capital advance) into PPE in H1, with no note and no D&A step-up. The asset is land or was capitalised late; Q3 D&A is the observation. The CFO exits 30 Oct 2026 with no successor, after a 38-day letter-to-disclosure gap. Derived, not filed: FY26 DPS Rs 4.00 vs Rs 5.00. Fair-value gains make up 74.7% of other income; core PBT ex-OI rose 226% YoY."

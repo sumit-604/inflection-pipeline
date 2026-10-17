@@ -1,0 +1,58 @@
+stage: A5-adversary
+company: "EIMCOELECO"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - claim: "Core operating PBT +226.4% YoY; 'the cleanest test passes'; 'the operating quarter is real at the core-PBT line' (rev L139, L149, L431)"
+    counter: "Base effect. Q2 FY26 core PBT Rs 2.62 cr is the trough. Q2 FY27 Rs 8.55 cr is below Q1 FY26 Rs 10.32 cr, the H2 FY26 quarterly average Rs 10.21 cr and Q1 FY27 Rs 11.86 cr, and fails A4's own 8C bull bar. Less distorted growth: H1 +57.7%, TTM +22.4% (Rs 40.82 cr vs Rs 33.35 cr). 60% of the Rs 5.93 cr YoY gain equals the distributor-rate drop alone (Rs 3.57 cr at the Q2 FY26 rate of 11.85%)."
+    source_line: "res L154, L155, L165, L168 [d]"
+    type: MISSING
+  - claim: "The +321 bps margin gain is 'operating leverage on a fixed cost base'; 'the rise came from fixed costs spread over more sales' (rev L148, L182, L349, L450, A4 analyst_note)"
+    counter: "A4's own decomposition: GM -1,187 bps + employee +814 + manufacturing +314 = -59 bps. Without the distributor plus other line, Q2 FY27 margin is about 15.11%, below Q2 FY26 15.71%. All of the +321 bps rests on that line (+380 bps). Other Expenses rose 92.3% vs revenue +70.9%. Compensation to Distributors fell 19.6% in rupees (Rs 3.94 cr to Rs 3.17 cr). Note 4 says comparatives are regrouped to be comparable, yet Q1 FY27 and Q2 FY26 still show 11.2% and 11.9%, so the filed text leans against the reclass reading."
+    source_line: "res L154, L158-166, L193 [d]"
+    type: FACTUAL
+  - claim: "'Large treasury book': net cash incl. investments Rs 207.03 cr (+Rs 6.05 cr) = Rs 358.9 per share; borrowing 'not a funding need' (rev L233, L246, L317)"
+    counter: "The liquid treasury fell. Current investments went from Rs 13.86 cr to Rs 2.81 cr (-79.7%). Liquid net cash (current investments + cash + bank - borrowings) moved from +Rs 11.86 cr to -Rs 1.53 cr. 98.7% of the book is non-current, composition undisclosed. The +Rs 6.05 cr net-cash rise is below the Rs 7.21 cr FV and sale gains (about -Rs 1.17 cr without MTM). H1 CFO Rs 1.84 cr did not cover capex Rs 2.11 cr, so the Rs 2.32 cr dividend was in effect funded by Rs 2.87 cr of new borrowing."
+    source_line: "res L209, L216, L218, L219, L243, L278, L300, L303, L315, L319 [d]"
+    type: MISSING
+findings_by_type:
+  factual:
+    - "A5-F01: rev L447 'Q1-high, Q2-low, H2-heavy pattern in both years [FILED]' is unsupported. H2 FY27 is not filed. Only Q2 < Q1 is filed for both years (33.24 < 67.57; 56.80 < 77.52), and H2 = 56.3% applies to FY26 only (res L154 [d]). Loop A4."
+    - "A5-F02: The 'fixed-cost leverage' margin attribution (rev L148, L182, L349, L450, analyst_note) is contradicted by the decomposition. Fixed-cost lines net -59 bps against the GM fall. The entire +321 bps is the distributor plus other line, and Note 4 leans against the reclass reading (res L154, L158-166, L193 [d]). Loop A4."
+  missing:
+    - "A5-M01: The core PBT +226% headline (rev L139, L149, L431) lacks the base-effect qualifier: TTM +22.4%, H1 +57.7%. Q2 FY27 Rs 8.55 cr is below Q1 FY26 Rs 10.32 cr and the H2 FY26 average Rs 10.21 cr. 60% of the YoY gain equals the distributor-rate drop (res L154-168 [d]). Loop A4."
+    - "A5-M02: The treasury liquidity qualifier is absent from Step 5 and Step 6.5 (rev L233, L246, L317). Liquid net cash went from +Rs 11.86 cr to -Rs 1.53 cr. Current investments fell 79.7%. The net-cash rise of Rs 6.05 cr is below the Rs 7.21 cr FV gains. The H1 dividend was in effect funded by borrowing (res L209-219, L243, L278, L300-319 [d]). Loop A4."
+  contradiction: []
+  style:
+    - "S01: rev L461 anchor 'pres L428-434' points to slide 19 balance-sheet rows. The cited text is res L428-434 (or pr L137-143)."
+    - "S02: Rounding-basis artefacts, no conclusion change: H1 margin +122 vs +121.5 bps; manufacturing -315 vs -314.3 bps; Q2 ETR +263 vs +263.6 bps; H1 FY27 distributor plus other 26.75% vs 26.74%; FY26 revenue -6.6% labelled '(247 to 231)', which computes to -6.5%."
+    - "S03: rev L122 'deck margins run 0.1-0.3 pp below'. The actual range is 0.08 to 0.32 pp."
+    - "S04: rev L210 '25.17% statutory' has no provenance marker. It is statute, not filing, and the tax-regime election is NOT FOUND."
+    - "S05: rev L446 'Q2 FY26 revenue had fallen 50.8% [FILED]' is derived. Tag it [FILED, derived]."
+    - "S06: The presentation ledger line_items count of 130 merges 9 same-label rows. Physical table lines are 139. All IDs are referenced. A2 should state the convention."
+    - "S07: A4 coverage is a range-level 'reviewed' statement (rev L13), not row-level 'reviewed, no finding'. Accepted."
+    - "S08: CFO flag balance (Rule J). ED Kamlesh Shah is an FCA with about 27 years in financial operations and treasury (pres L212-217), the evident interim cover. The flag stands."
+loop_back_to: "A4"
+gap: "Fix 2 FACTUAL claims and graft 3 surviving bear counters. (1) rev L447 'H2-heavy in both years [FILED]' is unsupported: H2 FY27 is not filed. (2) The 'fixed-cost leverage' attribution (rev L148, L182, L349, L450, analyst_note) is contradicted: GM -1,187 + employee +814 + mfg +314 = -59 bps, so all of the +321 bps rests on the distributor plus other line (+380 bps); add the Note 4 point (res L193) to Q3. (3) Core PBT +226% needs the base-effect qualifier: TTM +22.4%, H1 +57.7%, Q2 Rs 8.55 cr below the H2 FY26 average Rs 10.21 cr, and 60% of the YoY gain is the distributor-rate drop. (4) Treasury (rev L233, L246, L317): liquid net cash went from +Rs 11.86 cr to -Rs 1.53 cr, current investments fell 79.7%, the net-cash rise of Rs 6.05 cr is below the Rs 7.21 cr FV gains, and the H1 dividend was in effect funded by Rs 2.87 cr of borrowing."
+style_notes:
+  - "S01: change the rev L461 anchor prefix from pres to res (res L428-434)."
+  - "S02: compute bps and pp deltas from lakhs, or state the rounded basis."
+  - "S03: restate the deck margin gap as 0.08-0.32 pp."
+  - "S04: mark 25.17% as [statute, not in filing]; regime election NOT FOUND."
+  - "S05: tag the Q2 FY26 -50.8% QoQ as [FILED, derived]."
+  - "S06: A2 to state the same-label merge convention in the presentation line_items count (130 merged, 139 physical)."
+  - "S07: row-level 'reviewed, no finding' marking would make the next audit cheaper."
+  - "S08: forward map M1 and Q8 could name the ED (FCA, about 27 years in finance) as the evident interim."
+analyst_note: "Coverage and arithmetic are clean. Fresh counts tie on all three documents. 52 metric groups recompute within rounding. Every cash-flow and balance-sheet total ties, and A4 handles the R150 correction and the H1 FY26 investing misalignment correctly. The loop is about reading, not numbers. A4's own decomposition shows the fixed-cost lines only offset the gross-margin fall. Without the distributor plus other line, the YoY margin fell 59 bps. So the Q2 margin and most of the core-PBT gain hang on one unexplained line. Note 4's regrouping language makes the reclass reading weaker, not stronger. The +226% core PBT is off a trough base; TTM growth is +22.4%. In H1 the liquid part of the treasury turned into net debt, and the dividend was in effect paid from new borrowing. That matters before the Rs 358.9 per share figure reaches /fttcp. These are grafts, not a rework. The PROCEED WITH FLAGS verdict can stand once they are in. The documents describe no acquisition, so the probe is not triggered. One A4 correction cycle should close all four items."

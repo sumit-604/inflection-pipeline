@@ -1,0 +1,32 @@
+# Run log: EIMCOELECO Q2 FY27 (/run-quarterly, 2026-10-17)
+- Session restart: first attempt lost its brief and left no run folder; nothing reused. Brief resent by parent session.
+- Checkout guard PASSED 2026-10-17 by parent session (not rerun). Worktree run/quarterly-q2fy27-2026-10-17.
+- Protocols present: Results v1_4, Concall v1_1, Document_Review v1_1.
+- Toolchain: poppler 25.07, tesseract (winget); PATH prefixed per call.
+- Ticker EIMCOELECO (no companies/ file; NSE symbol from filing cover). Sparse pattern /runs/eimcoeleco-q2fy27/** added.
+- Doc class: Eimco_Q2FY27_Results.pdf -> results (Reg 30 Board Outcome cover + Reg 33 results, 11 pages).
+- Doc class: Eimco_Q2FY27_Investor_Presentation.pdf -> presentation (Reg 30 cover + deck, 39 pages).
+- Doc class: Eimco_Q2FY27_Press_Release.pdf -> presentation class, file tag "pressrelease" (4 pages).
+- No concall in --docs -> FULL QUARTER run, Role 4 only.
+- Forensics files named forensics_<doctag>_eimcoeleco_q2fy27.md. Each A1 has its own temp dir work/a1-<doctag>/.
+- Concurrency: at most 2 subagents at once (batch load rule).
+- Notion live search 2026-10-17: no Eimco Elecon page (KCP 'Eimco' hits are another entity). No companies/ file, no spear on record -> PRE-THESIS READ. work/notion-thesis.md written.
+- A1 results GATE PASS: 11/11 pages, text-only, R001-R470, units Lakhs pp4-6 / Crores pp7-8. Flags: TEXT_LAYER_GLITCH tokens p4/p6 kept verbatim; p7 chart tokens CHART_UNMAPPED; R150 COLUMN_UNRESOLVED. Block at work/a1-results/a1-block.yaml.
+- A1 presentation GATE PASS: 39/39 pages, text-only, R001-R946, units Crores x1. Charts pp15-17 recorded by position (legend ambiguous); chart vs P&L label differences kept as shown.
+- A1 pressrelease GATE PASS: 4/4 pages, text-only, R001-R092, Crores x1. p2 chart rows cited by line range; Product/Spares split inferred from position.
+- A2 results GATE PASS, orphan_ids empty (470/470). MISSING_FROM_STRUCTURED: M001 net cash from financing (C), fulltext L322; ledger carries it as a row (Aurum precedent: low severity, no A1 loop). A2 also flags R150 column mislabel (4,824.68 belongs to 31.03.26) and H1 FY26 investing column shift L303-308; passed to A3 via ledger.
+- A2 results COST CHECK FAIL: 87,736 > A1 76,253. Diagnosed: no source re-ingestion (ledger names no inputs/ file or PDF). Cause: A1 wrote the 47 KB structured file by script (work/a1-results/gen.py), so A1 never held it in context; A2 must read it whole. Structural, not a breach. Proceeding to A3; recorded for the batch lesson (cost check assumes A1 reads its own output).
+- A2 presentation GATE PASS, orphan_ids empty (946/946), all categories match, no MISSING_FROM_STRUCTURED.
+- A2 presentation cost check PASS: 60,599 < 102,461.
+- A2 pressrelease GATE PASS, orphan_ids empty (92/92), counts match.
+- A2 pressrelease cost check PASS: 36,216 < 50,825.
+- A3 results GATE PASS: F1-F17 all statused (7 FINDING, 5 PASS, 4 N.A.), 20 findings line-cited, ledger 100% incl. M001. Confirms R150 column and H1 FY26 investing row misalignment.
+- A3 presentation GATE PASS: F1-F17 all statused (6 FINDING, 2 PASS, 9 N.A.), 16 findings line-cited, ledger 946/946.
+- A3 pressrelease GATE PASS: F1-F17 all statused (4 FINDING, 1 PASS, 12 N.A.), 8 findings line-cited, ledger 92/92. Minor A1 cite slip: R061 cited L140, name at L160 (no forensic impact).
+- All documents pass A1-A3. A4 invoked once, Role 4 v1_4 only (no concall), PRE-THESIS READ framing, notion-thesis.md by path.
+- A4 review written: PROCEED WITH FLAGS, PRE-THESIS READ, branch 8A-W, 26 management questions, cash conversion INDETERMINATE-WITH-DIRECTION. Steps 6.5/7 deferred (OR-30).
+- A5 run 1 verdict INCOMPLETE. Coverage and arithmetic PASS (52 metric groups). 2 FACTUAL (F01 H2 pattern claim; F02 fixed-cost leverage attribution), 2 MISSING (M01 core PBT base effect; M02 treasury liquidity), 0 CONTRADICTION, 8 STYLE.
+- LOOP ITERATION 1 (cap 1): A4 applies F01, F02, M01, M02 as grafts (no A1-A3 rerun: no new rows or IDs); then fresh A5 re-audit once.
+- Loop 1 A4 fixes applied (F01, F02, M01, M02; style S01, S04, S05). Verdict stays PROCEED WITH FLAGS. A5 run 1 audit kept as audit_eimcoeleco_q2fy27.run1.md; fresh A5 re-audit writes audit_eimcoeleco_q2fy27.md.
+- A5 re-audit (loop 1) verdict INCOMPLETE: 1 FACTUAL (F03 customer roster), 2 MISSING (M03 TTM base; M04 CFO dependency on other financial liabilities), 1 CONTRADICTION (C01 GM outlier vs tender pricing), 11 STYLE. Coverage and arithmetic PASS. LOOP CAP reached: STOP, operator asked before a second iteration. Verdict PROCEED WITH FLAGS unaffected per A5.
+- notion-payload.md written (PENDING, NOT WRITTEN; new COMPANIES MASTER page; Decision Status not written). session-cost.md written: total_run_tok 2,024,297.

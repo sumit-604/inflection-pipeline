@@ -1,0 +1,16 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: Eimco_Q2FY27_Results.pdf
+doctype: results
+page_count_pdfinfo: 11
+formfeed_count: 11
+line_count: 521
+unit_convention: Lakhs (financial statements pp1-6ish); Crores (press release/investor slides, stated in text)
+conversion_factor_to_cr: Lakhs -> x0.01; Crores -> x1
+text_layer_present: yes
+extraction_mode: text-only
+render_candidates: none (all 11 pages yield characters; min 454 chars on p2)
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: Q2 FY27
+extraction_date: 2026-10-17
+=== END HEADER ===

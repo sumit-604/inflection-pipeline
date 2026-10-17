@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "EIMCOELECO"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/eimcoeleco-q2fy27/work/ledger_results_eimcoeleco_q2fy27.md"
+counts:
+  notes: 7
+  line_items: 99
+  zero_standing: 11
+  agenda_items: 2
+  auditor_paras: 4
+  entities: 29
+  turns: 0
+  questions: 0
+  mgmt_numbers: 10
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, RESTATED, TIMING_GAP, FOOTNOTE_UNRESOLVED, CHART_UNMAPPED, COLUMN_MISLABEL, COLUMN_MISALIGNMENT_SUSPECT, MISSING_FROM_STRUCTURED]
+ids_in_structured: 470
+ids_referenced: 470
+orphan_ids: []
+missing_from_structured: ["M001: CF net cash from financing activities (C) (0.93) / (128.42) / (327.09), fulltext line 322"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "A1 error: R150 (other non-current assets 4,824.68) is labelled 30.09.26 but belongs to 31.03.26; NCA sums confirm it, so 30.09.26 is blank and PPE rose 6,410.76 to 11,154.88. A1 omitted the financing total (C), added as M001. H1 FY26 investing column (R265-R280) looks shifted against labels; check before any cash-flow arithmetic. CFO resignation letter is dated 5 Sep 2026 but the board noted it 13 Oct 2026 (38 days); successor CFO not named. No EoM or going-concern language. Block path assumed as work/blocks/a2-results.yaml (none given in task)."

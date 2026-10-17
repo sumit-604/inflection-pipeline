@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "EIMCOELECO"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 4
+formfeed_count: 4
+line_count: 166
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/eimcoeleco-q2fy27/extracted/eimcoeleco-pressrelease-q2fy27-fulltext.md"
+structured_path: "runs/eimcoeleco-q2fy27/extracted/eimcoeleco-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 50
+  entity: 14
+  forward: 7
+  date: 14
+  qualifier: 7
+structured_id_range: "R001-R092"
+gate_a1: pass
+gap_note: ""

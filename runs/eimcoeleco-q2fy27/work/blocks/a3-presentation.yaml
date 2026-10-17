@@ -1,0 +1,55 @@
+stage: A3-forensics
+company: "EIMCOELECO"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/eimcoeleco-q2fy27/work/forensics_presentation_eimcoeleco_q2fy27.md"
+ledger_reconciled_pct: 100        # 946 of 946 structured IDs read at fulltext line
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: PASS
+  F11: PASS
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "413, 414, 420, 453, 395 (slides 19, 20, 18)", classification: "FORWARD-SIGNAL", implication: "Rs 48 cr Other Non-Current Assets (Mar-26) capitalised into PPE (64 to 112) in H1 with CWIP 0, investing CF -1, depreciation flat at 2/qtr; asset unnamed in deck; land or a coming depreciation step-up"}
+  - {id: "A3-02", check: "F1", line: "418, 426, 398, 427 (slide 19, 18)", classification: "AMBIGUOUS", implication: "First short-term borrowings (3 at Mar-26, 6 at Sep-26) beside cash 1 and investments 213; finance cost rounds to 0; nature of facility unknown"}
+  - {id: "A3-03", check: "F1", line: "401, 399, 709-710, 419, 422", classification: "NEUTRAL-FACT", implication: "Exceptional line zero in all quarterly periods and absent from historical template; small lease and other NCL balances appear"}
+  - {id: "A3-04", check: "F6", line: "327 (slide 15); 393, 704", classification: "FORWARD-SIGNAL", implication: "Only quantified target: EBITDA margin 18-20%, undated; sits below FY25 actual 22.7%; caps a margin-reset bull unless raised"}
+  - {id: "A3-05", check: "F6", line: "487, 182-186, 173-177 (slides 23, 9)", classification: "AMBIGUOUS", implication: "MCAR-E, MUV, CM-3500 launched; no orders, units or revenue disclosed"}
+  - {id: "A3-06", check: "F7", line: "579, 627, 595-598, 590, 616 (slides 28-30)", classification: "AMBIGUOUS", implication: "Outlook built on third-party sector data, self-hedged ('separate disclosures', 'not current committed capex', 'subject to'); no Eimco-specific pipeline"}
+  - {id: "A3-07", check: "F7", line: "646-649, 641-644, 326 (slides 31, 15)", classification: "FORWARD-SIGNAL", implication: "Neutral construction sentiment chosen for piling-rig slide plus 'unstable market' pre-empts flat piling-rig demand in H2"}
+  - {id: "A3-08", check: "F8", line: "400, 404, 406, 711-714, 421", classification: "AMBIGUOUS", implication: "Margin-derived ETR below 25.17% in 6 of 9 periods (H1 FY27 22.8%, Q1 21.3% with OI 8; Q2 25.0% with OI 2); ETR rises toward statutory if treasury income fades"}
+  - {id: "A3-09", check: "F14", line: "405 vs 341, 351; 406 vs 346", classification: "NEUTRAL-FACT", implication: "PAT YoY 46.7% table vs 46.5% text/chart; Q2 FY26 PAT margin 16.0% vs 16.1%; use slide 18 table"}
+  - {id: "A3-10", check: "F14", line: "148 vs 472; 321; 428-429; 431 vs 742; 457-461", classification: "NEUTRAL-FACT", implication: "Drafting slips (52 vs 50 years, F27 typo, duplicate (iii), dash vs 0, H1 cash roll not footing); cumulative governance data point"}
+  - {id: "A3-11", check: "F16", line: "376-377, 382, 445, 451, 405, 426, 762, 713", classification: "FORWARD-SIGNAL", implication: "WC days framed as improving (232 to 219) while rupee WC +16, receivables 72 to 91, H1 OCF 2 vs PAT 23; FY23-FY26 OCF/PAT about 50%; H2 collections are the test"}
+  - {id: "A3-12", check: "F16", line: "363, 365, 376-377, 433, 413, 416", classification: "AMBIGUOUS", implication: "Key ratios do not tie to balance sheet (current ratio 3.8 shown vs 3.53 period-end; NFAT 2.8 vs 2.22); formula undisclosed; use balance-sheet values downstream"}
+  - {id: "A3-13", check: "F16", line: "321, 325, 386, 388-389, 396-397, 400, 405-406", classification: "AMBIGUOUS", implication: "YoY framing on low base hides QoQ falls (revenue -26.7%, EBIT -46.9%, PAT -49.2%) and GM -870 bps; EBIT/PBT/PAT margins fell YoY; EBITDA gain from flat employee cost"}
+  - {id: "A3-14", check: "F16", line: "302-320, 389", classification: "AMBIGUOUS", implication: "Product/Spares legend unmapped; upper-segment share tracks gross margin in all periods ([INFERENCE] upper = spares); equipment-heavy mix and order book imply H2 GM pressure"}
+  - {id: "A3-15", check: "F16", line: "331, 334, 343, 349, 354-356", classification: "FORWARD-SIGNAL", implication: "Order book 133 (+202% YoY, 0.50x TTM revenue 264) supports H2; YoY-only, no sequential point, inflow, GST basis, spares scope or execution period"}
+  - {id: "A3-16", check: "F16", line: "394, 402, 705, 710, 418, 425, 352, 414, 453", classification: "AMBIGUOUS", implication: "Other income 30-48% of PBT, Q1 8 vs Q2 2; investments 38% of assets rose 8 with investing CF -1 (non-cash fair value element); OCI and dividend NOT FOUND; track operating PBT"}
+forward_signals: ["A3-01", "A3-04", "A3-07", "A3-11", "A3-15"]
+ambiguous: ["A3-02", "A3-05", "A3-06", "A3-08", "A3-12", "A3-13", "A3-14", "A3-16"]
+commitments:
+  - {commitment: "EBITDA margin targeted range 18-20%", implied_date: "undated, standing", ref: "slide 15 line 327 (R822)", status_word: "underway"}
+  - {commitment: "Order book provides strong visibility going forward", implied_date: "H2 FY27 (implied)", ref: "slide 16 line 355 (R823)", status_word: "underway"}
+  - {commitment: "Battery-operated MUV and MCAR-E entry", implied_date: "2026", ref: "slide 9 lines 182-186 (R853); slide 23 line 487", status_word: "completed"}
+  - {commitment: "CM-3500 launch", implied_date: "2025", ref: "slide 9 lines 173-177 (R849)", status_word: "completed"}
+  - {commitment: "EC216 India manufacturing, local spares and service", implied_date: "undated, stated as in place", ref: "slide 31 line 643", status_word: "completed"}
+  - {commitment: "Bauma ConExpo India showcase EC125/EC216/EC267", implied_date: "15-18 Sep 2026", ref: "slide 26 lines 539-544 (R874)", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Two items carry the most weight. First, cash conversion: H1 OCF is 2 cr against PAT of 23, with receivables up 19. The slide 17 working-capital days improve only because the TTM revenue denominator rose. FY23-FY26 conversion is about 50%. Second, an unnamed Rs 48 cr asset (75% of the prior PPE base) was capitalised in H1 out of an FY26 advance, with depreciation unchanged so far. The first short-term borrowings appear while the company holds 213 cr of investments. This points to tight operating liquidity, not a funding need. Gross margin follows the product/spares mix in every period shown. A tripled, likely equipment-heavy order book therefore lifts revenue but should pressure H2 gross margin. Other income is about a third of PBT, partly non-cash, and it drives the ETR swing. Use operating PBT as the earnings series. The 18-20% EBITDA band sits below FY25's 22.7%. Treat it as management's own bar. The outlook slides are third-party sector data that the deck itself hedges; they are not order evidence."

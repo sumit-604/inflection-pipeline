@@ -1,0 +1,82 @@
+stage: A4-analyst
+company: "EIMCOELECO"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, presentation, pressrelease]
+ledger_reconciliation:
+  notes: 7
+  turns: 0
+  slides: 43
+  all_reviewed: true
+  a3_findings_incorporated: [FN01, FN02, FN03, FN04, FN05, FN06, FN07, FN08, FN09, FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN20, A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, PR/F6-1, PR/F6-2, PR/F6-3, PR/F12-1, PR/F14-1, PR/F14-2, PR/F16-1, PR/F16-2]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "ND (no Notion COMPANIES MASTER page; PRE-THESIS READ; orchestrator live fetch 2026-10-17)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap: "N.A. (standalone-only filer; Note 3, res L192)"}
+  - {period: "Q1 FY27", gap: "N.A."}
+  - {period: "Q2 FY26", gap: "N.A."}
+  - {period: "H1 FY27", gap: "N.A."}
+  - {period: "FY26", gap: "N.A."}
+questions_for_management:
+  - {q: "Rs cr of the Rs 91.18 cr receivables overdue >180 days at 30 Sep 2026?", from_finding_id: "FN10, A3-11"}
+  - {q: "Share of receivables due from CIL subsidiaries and contracted payment days?", from_finding_id: "FN10, A3-11"}
+  - {q: "Was any amount reclassified between Compensation to Distributors (3.17 cr, 5.6%) and Other Expenses (12.66 cr, 22.3%) in Q2: yes/no, Rs cr? (Note 4 regrouped comparatives still show 11.2% / 11.9%)", from_finding_id: "FN11, FN04, A3-04, PR/F6-1"}
+  - {q: "What asset was capitalised into PPE (64.11 to 111.55 cr), Rs cr, date?", from_finding_id: "FN09, A3-01, PR/F6-3"}
+  - {q: "Annual depreciation added by the H1 capitalisation, Rs cr?", from_finding_id: "FN09, A3-01"}
+  - {q: "Rs cr of the Rs 133 cr that are signed POs not yet executed, net of GST?", from_finding_id: "FN19, FN05, A3-15, PR/F16-2, PR/F6-2"}
+  - {q: "Order book at 31 Mar 2026 and 30 Jun 2026 on the same definition?", from_finding_id: "FN05, A3-15, PR/F6-2"}
+  - {q: "Name and start date of successor or interim CFO?", from_finding_id: "FN16"}
+  - {q: "Date the 5 Sep 2026 CFO letter was received; earlier Reg 30 intimation yes/no?", from_finding_id: "FN17"}
+  - {q: "Product vs spares revenue Rs cr for Q2 FY26, Q1 FY27, Q2 FY27; which chart segment is spares?", from_finding_id: "FN12, A3-14, PR/F12-1"}
+  - {q: "Bps split of the 1,187 bps YoY gross-margin fall between mix and price?", from_finding_id: "A3-13, FN12"}
+  - {q: "Share of Rs 115.48 cr inventory against orders shipping in Q3 FY27?", from_finding_id: "FN12"}
+  - {q: "Did any Q2 order slip to H2: yes/no, Rs cr?", from_finding_id: "PR/F16-1, A3-13, FN18"}
+  - {q: "Facility type and rate of the Rs 5.75 cr borrowing, given liquid net cash moved to Rs (1.53) cr?", from_finding_id: "FN02, A3-02"}
+  - {q: "Which temporary difference reversed in the Rs 0.94 cr Q1 deferred-tax credit?", from_finding_id: "FN07, A3-08"}
+  - {q: "Share of the Rs 209.96 cr non-current investment book in equity or equity funds?", from_finding_id: "A3-16"}
+  - {q: "Confirm FY26 DPS Rs 4.00 vs Rs 5.00; cut to fund FY26 capex yes/no?", from_finding_id: "FN08"}
+  - {q: "Rs cr of the Rs 11.10 cr other current financial liabilities that are capital creditors?", from_finding_id: "FN14"}
+  - {q: "Customer advances at 31 Mar 2026 and 30 Sep 2026, Rs cr?", from_finding_id: "FN14"}
+  - {q: "Company EBITDA definition (18.8% stated vs 18.9% computed; 108.8% vs 105.8%)?", from_finding_id: "FN20, PR/F14-1"}
+  - {q: "Is the 18-20% band EBITDA ex-OI, and is 20% a ceiling given FY25 22.7%?", from_finding_id: "FN04, A3-04, PR/F6-1"}
+  - {q: "Which margin does 'Margins improved year-on-year' refer to, given PAT margin fell 16.1% to 13.8%?", from_finding_id: "FN18, A3-13"}
+  - {q: "Units delivered and Rs cr in order book for CM-3500, MUV, MCAR-E?", from_finding_id: "A3-05"}
+  - {q: "Rs cr of the order book for CIL reopened UG mines vs metal mines?", from_finding_id: "A3-06"}
+  - {q: "Piling-rig orders (units) booked after Bauma ConExpo India 15-18 Sep 2026?", from_finding_id: "A3-07"}
+  - {q: "Formulas for slide 17 ROCE 11.7%, current ratio 3.8, NFAT 2.8?", from_finding_id: "A3-12"}
+monitorables:
+  - {item: "CFO Begwani ceases as CFO/KMP/Risk Committee member", implied_date: "2026-10-30", source_ref: "res L41-50, L474-475 (FN16)"}
+  - {item: "CFO handover incl. statutory reporting and audit closures", implied_date: "2026-10-30", source_ref: "res L508-511"}
+  - {item: "Successor CFO appointment", implied_date: "NOT STATED; s.203(4) six months implies 2027-04-30 (PENDING LIVE VERIFICATION)", source_ref: "res L41-44, L476 (FN16)"}
+  - {item: "Q3 FY27 results: core PBT, D&A after Rs 47 cr capitalisation, distributor comp", implied_date: "by 2027-02-14", source_ref: "res L154-168 (FN09, FN11)"}
+  - {item: "EBITDA margin vs 18-20% band", implied_date: "undated, every quarter", source_ref: "res L408; pres L327"}
+  - {item: "Execution of Rs 133 cr order book", implied_date: "H2 FY27 (about six months at TTM run-rate, derived)", source_ref: "res L374, L413-415; pres L354-356"}
+  - {item: "Invest in capabilities: asset named", implied_date: "undated", source_ref: "res L409 (PR/F6-3)"}
+  - {item: "FY27 full-year CFO/PAT", implied_date: "by 2027-05-30", source_ref: "res L300 (FN10, A3-11)"}
+  - {item: "FY27 AR: tax note, PPE schedule, OCI, investment composition", implied_date: "AGM date ND", source_ref: "FN06, FN07, FN09, A3-16"}
+  - {item: "Borrowings, liquid net cash and new NC liability lines", implied_date: "Mar-27 balance sheet", source_ref: "res L216-219, L236-237, L243 (FN02, FN03)"}
+  - {item: "Deck Exceptional line non-zero", implied_date: "each quarter", source_ref: "pres L401 (A3-03)"}
+  - {item: "New products commercial data", implied_date: "next deck, by 2027-02-14", source_ref: "pres L487 (A3-05)"}
+  - {item: "Piling-rig orders after Bauma ConExpo", implied_date: "next deck", source_ref: "pres L539-544 (A3-07)"}
+  - {item: "FY27 DPS vs implied FY26 Rs 4.00", implied_date: "Q4 FY27 board outcome", source_ref: "res L319, L230 (FN08)"}
+flags:
+  - "PRE-THESIS READ: no Notion page, no companies file, no spear; Decision Status ND"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION (lean structural): H1 FY27 CFO/PAT 0.08x, FY26 0.57x, FY23-FY26 0.50x; receivables +25.8% in H1"
+  - "CFO exits 2026-10-30 with no successor named; letter dated 2026-09-05 disclosed 2026-10-13 (38 days)"
+  - "Rs 47.44 cr net PPE addition in H1 with no note; D&A not yet stepped up; Q3 D&A is the tell"
+  - "Whole +321 bps YoY margin gain rests on the distributor plus other line (fixed-cost lines net -59 bps vs GM fall); distributor comp 5.6% of Q2 revenue vs 11.2-11.9%; Note 4 regrouped comparatives lean against a reclass; Q2 margin 18.9% not creditable until answered"
+  - "Core PBT +226% YoY is off a trough base: TTM +22.4%, H1 +57.7%; Q2 Rs 8.55 cr below H2 FY26 quarterly average Rs 10.21 cr; 60% of YoY gain equals the distributor-rate drop"
+  - "Treasury liquidity: liquid net cash Rs 11.86 cr to Rs (1.53) cr in H1; current investments -79.7%; book 98.7% non-current, composition undisclosed; Rs 358.9/share net cash is not a liquid figure; H1 dividend in effect funded by borrowing"
+  - "Rs 133 cr labelled both order book and open order pipeline; definition unresolved"
+  - "Other income 32.1% of H1 PBT; 74.7% of H1 OI is FV gains (largely MTM)"
+  - "Q1 FY27 deferred-tax credit Rs 0.94 cr; ex-deferred H1 ETR 25.91%"
+  - "Implied FY26 DPS cut Rs 5.00 to Rs 4.00 (derived from reserve roll)"
+  - "Data corrections applied: R150 belongs to 31.03.26; H1 FY26 investing comparatives row-misaligned (H1 FY26 capex ND); text glitches R014/R153/R242 resolved"
+  - "Downstream tracker rows not supplied; zero signals; reopen Role 5.5 at initial workup"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged in review"
+plain_language_brief_included: true
+analyst_note: "Loop 1 applied (A5-F01, F02, M01, M02). Core PBT rose from Rs 2.62 cr to 8.55 cr YoY, but off a trough base: TTM +22.4%, H1 +57.7%. Q2 sits below the H2 FY26 quarterly average of Rs 10.21 cr. The +321 bps margin gain is not fixed-cost leverage. Gross margin -1,187 bps, employee +814 and manufacturing +314 net to -59 bps. The whole gain rests on the distributor plus other line (+380 bps). The distributor-rate drop alone equals 60% of the YoY core-PBT gain. Note 4's regrouped comparatives still show 11.2% and 11.9%, which leans against a Q2 reclass. Cash conversion is the binding weakness. FY26 (revenue down, CFO/PAT 0.57x) leans structural, hence INDETERMINATE-WITH-DIRECTION. Liquid net cash moved from Rs 11.86 cr to Rs (1.53) cr. 98.7% of the treasury is non-current and undisclosed, so the Rs 358.9 per share figure is not liquid. PROCEED WITH FLAGS stands: the fixes sharpen the flags but trigger no REWORK. 8A-W applies because the name is not held. Statutory dates are marked for live verification."
+review_path: "runs/eimcoeleco-q2fy27/work/review_eimcoeleco_q2fy27.md"

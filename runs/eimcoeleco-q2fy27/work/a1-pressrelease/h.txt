@@ -1,0 +1,16 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: Eimco_Q2FY27_Press_Release.pdf
+doctype: presentation (media release on results)
+page_count_pdfinfo: 4
+formfeed_count: 4
+line_count: 166
+unit_convention: Crores
+conversion_factor_to_cr: x1 (figures stated as Rs crore)
+text_layer_present: yes
+extraction_mode: text-only
+render_candidates: none (no zero-character pages)
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: Q2 FY27 (quarter and half-year ended 30 September 2026)
+extraction_date: 2026-10-17
+=== END HEADER ===

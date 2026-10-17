@@ -1,0 +1,31 @@
+stage: A2-enumerator
+company: "POONAWALLA"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/poonawalla-q2fy27/work/ledger_results_poonawalla_q2fy27.md"
+counts:
+  notes: 27                  # cons 10, stand 13, Annexure II 4
+  footnotes_unnumbered: 10
+  line_items: 245            # 219 statement lines + 26 Reg 52(4) lines
+  zero_standing: 33          # rows, on 17 source lines
+  agenda_items: 11
+  annexure_a_items: 5
+  auditor_paras: 25          # cons LRR 7, stand LRR 6, certificate 12
+  entities: 2                # JASPL JV, PFL Employee Welfare Trust
+  signature_blocks: 6
+  annexure_table_lines: 129
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ZERO_STANDING_CANDIDATE, BLANK_STANDING, AUDITOR_CHANGE, FOOTNOTE_UNRESOLVED, RESTATED, MEETING_DURATION, MISSING_FROM_STRUCTURED, OCR_SUSPECT, COLUMN_UNRESOLVED]
+ids_in_structured: 1327
+ids_referenced: 1327
+orphan_ids: []
+missing_from_structured: [M001, M002, M003, M004, M005, M006]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "M001-M006 are text units A1 did not anchor: director independence and no-debarment confirmations (cover letter, Annexure A items 4 and 5) and the three unmodified conclusions (cons LRR para 5, stand LRR para 4, certificate para 10). A3 should read opinion type from the ledger, not from A1 rows. Zero-standing: 33 A1 rows reconcile to the dash/NIL sweep on the same 17 lines. Five sweep-only dash lines (1111 on p20; 1656, 1662, 1664, 1686 on p30 Annexure II) sit in garbled column areas and are NOT counted; R797 (RPS value, blank beside NIL quantity) is a blank standing item. Notes use N] markers, so the strict N. grep returns 0; two OCR-garbled markers (cons and stand note 10) were found on re-sweep. Both auditors cite Kirtane and Pandit LLP as previous joint auditor; ENTITY_CHANGE cannot be tested, no prior ledger. JASPL sale is held for sale since 2021 and is restated in note 9 and LRR para 4."

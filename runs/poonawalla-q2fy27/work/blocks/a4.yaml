@@ -1,0 +1,102 @@
+stage: A4-analyst
+company: "POONAWALLA"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+findings_applied:
+  - "F1: Step 6C hedge breakdown 'approximately' 9 -> 10 (Call L160-L1045, 10 hits)"
+  - "F2: Step 0C EPS basic-diluted spread -> 0.00 to 0.02 (Res L343-344; Q2 FY26 and H1 FY26 zero)"
+  - "F3: Brief auditor bullet reworded: Kirtane & Pandit LLP named as previous joint auditor; whether the other firm changed not stated (Res L249-257)"
+  - "M1: Deck fee split cited (Deck L802-803, R390-R395): cross-sell 118/91/68, servicing 91/70/37; QoQ bridge split +27/+21; cross-sell 23.5% of Q2 PBT; insurance risk re-based to cross-sell line in Step 4, Q8, flag 16, M20, brief"
+  - "M2: Core PBT sensitivity at Q1 computed credit-cost ratio 2.34%: +31.0% core, +12.7% headline (Step 3, Step 4, 7A, flag 14, brief)"
+  - "M3: GNPA GREEN qualified with Q2 ARC transfer 161.60 cr principal (Res L903-906); conditional pre-transfer GNPA 1.42%, like-for-like 1.55% -> 1.42%; Q27 added (Step 5L, 7A, flag 15, brief)"
+  - "M4: Ratio-set check relabelled arithmetic identity on one denominator (~68,650 cr); RoA 2.03% at 2.40%, 1.82% at 2.67% (Step 7A, flag 14, brief)"
+style_notes_not_applied: ["S1", "S2", "S3"]
+docs_merged: [results, concall, presentation, pressrelease]
+ledger_reconciliation:
+  notes: 27
+  turns: 45
+  slides: 42
+  all_reviewed: true
+  a3_findings_incorporated: ["R:F1-1","R:F1-2","R:F4-1","R:F5-1","R:F6-1","R:F8-1","R:F8-2","R:F9-1","R:F9-2","R:F10-1","R:F12-1","R:F12-2","R:F12-3","R:F12-4","R:F13-1","R:F14-1","R:F14-2","R:F14-3","R:F17-1","C:F6-01","C:F6-02","C:F6-03","C:F6-04","C:F6-05","C:F6-06","C:F6-07","C:F7-01","C:F7-02","C:F7-03","C:F12-01","C:F12-02","C:F12-03","C:F12-04","C:F14-01","C:F14-02","C:F14-03","C:F14-04","C:F17-01","C:F17-02","C:F17-03","P:FN-01","P:FN-02","P:FN-03","P:FN-04","P:FN-05","P:FN-06","P:FN-07","P:FN-08","P:FN-09","P:FN-10","P:FN-11","P:FN-12","P:FN-13","P:FN-14","P:FN-15","P:FN-16","P:FN-17","P:FN-18","P:FN-19","P:FN-20","P:FN-21","P:FN-22","PR:A3-01","PR:A3-02","PR:A3-03","PR:A3-04","PR:A3-05","PR:A3-06","PR:A3-07","PR:A3-08","PR:A3-09","PR:A3-10","PR:A3-11","PR:A3-12"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE ON RECORD (no Notion page; PRE-THESIS READ)"
+position_branch: "8A-W"
+sc_gap_pat_pct: [{period: "Q2FY27", gap_pct: 0.0}, {period: "Q1FY27", gap_pct: 0.0}, {period: "Q2FY26", gap_pct: 0.0}, {period: "H1FY27", gap_pct: 0.0}, {period: "H1FY26", gap_pct: 0.0}, {period: "FY26", gap_pct: 0.0}]
+questions_for_management:
+  - {q: "Gross write-offs, recoveries on written-off accounts and gross slippages in Rs cr for Q1 and Q2 FY27, given rupee credit cost 375.70 vs 373.33", from_finding_id: "C:F6-02, C:F17-01, P:FN-02, P:FN-10, P:FN-11, PR:A3-07, PR:A3-11"}
+  - {q: "Stage 2 PCR fell 23.63% to 14.61% while Stage 2 assets rose 577 to 661 cr: any ECL recalibration or overlay release in FY27; Stage 2 by product", from_finding_id: "P:FN-09, C:F12-01, PR:A3-11"}
+  - {q: "Which P&L line took the 83.92 cr consideration on 10,558 written-off accounts sold in Q2, and how much did it reduce impairment of 346.37 cr", from_finding_id: "R:F12-3"}
+  - {q: "Tier 1 or leverage level and quarter that trigger the next equity raise, given D/E 3.82x to 4.30x in Q2 and no enabling resolution", from_finding_id: "R:F12-1, C:F12-02, P:FN-05, PR:A3-02"}
+  - {q: "Decompose the 26.03 cr gap between P&L derecognition loss 29.33 and note 11(c) NBV-less-consideration loss 3.30", from_finding_id: "R:F12-4"}
+  - {q: "Floating vs fixed mix of non-NCD borrowings, CoB sensitivity to 50 bps repo hike, Q2FY26-Q2FY27 CoB series, marginal NCD cost", from_finding_id: "C:F6-03, C:F7-03, C:F12-04, P:FN-14, PR:A3-10"}
+  - {q: "Level of the June 2028 ROA commitment and the sustainable medium-term ROA", from_finding_id: "C:F6-01"}
+  - {q: "Insurance commission share of the 118 cr Cross Sell Income (Deck L802; fee line 207.47 cr), fee impact if the proposed framework passes, and core NIM ex fees", from_finding_id: "C:F7-02, PR:A3-10, A5:M1"}
+  - {q: "GNPA and credit cost by product incl. Instant Consumer Loan (20% of AUM) and Mid-market NBFC exposure (15%)", from_finding_id: "P:FN-12, C:F6-06, C:F12-03, PR:A3-09"}
+  - {q: "6MOB 30+ series for last four cohorts with and without gold and mid-market; base cohort of the 12MoB 90+ '53% better' claim", from_finding_id: "C:F14-01, C:F14-02, P:FN-12"}
+  - {q: "Reaffirm 35-40% AUM CAGR vs 55.1% YoY and reconcile the 5-6x in 5 years aspiration; give total disbursement in Rs cr", from_finding_id: "P:FN-04, C:F17-03, PR:A3-06"}
+  - {q: "Is direct assignment a planned H2 funding tool and at what volume; size of off-book pool; why servicing income rose 70 to 91 cr", from_finding_id: "R:F1-1, P:FN-01, PR:A3-09"}
+  - {q: "Confirm direction of the 10-25 bps opex band (4.06% to 4.15%); reconcile ~200 branches FY27 vs 300-400 a year; end-FY26 branch base", from_finding_id: "C:F6-05, C:F6-07, C:F7-01, P:FN-15, PR:A3-01"}
+  - {q: "Reason for the joint-auditor change after 17 July 2026, appointment date, approving body, any review differences on Q1", from_finding_id: "R:F5-1"}
+  - {q: "Buyer and price of the 227.66 cr Welfare Trust treasury share sale, shares remaining, reconciliation of 0.97 cr paid-up residual and ~268 cr non-PAT equity, promoter absolute stake", from_finding_id: "R:F4-1, R:F10-1, P:FN-07, P:FN-08"}
+  - {q: "SR book in Rs cr at 30 Sep 2026, share of 3,077.80 cr investments, provisioning on 5 unrated SR trusts", from_finding_id: "R:F12-3"}
+  - {q: "Instruments maturing in the 6-12 month and 3-5 year buckets and whether the 2,264 cr Q2 investment rise is pre-funding", from_finding_id: "P:FN-13"}
+  - {q: "Hedged notional, currency and tenor behind the 34.07 cr Q2 cash-flow hedge OCI gain", from_finding_id: "R:F9-2"}
+  - {q: "JASPL closing date, price, counterparty, date of regulatory approval and Ind AS 105 basis beyond 12 months", from_finding_id: "R:F1-2, R:F6-1"}
+  - {q: "What the 16 January 2026 QIP date on the Reg 32(1) form represents vs 13 April 2026 in the notes", from_finding_id: "R:F14-1"}
+  - {q: "Correct Annexure II 'Others' figure (939.30 vs 871.26) and pari-passu NCD cover net of ECL", from_finding_id: "R:F14-2, R:F12-2"}
+  - {q: "Temporary difference driving the H1 deferred-tax credit of 24.33 cr after a 124.47 cr FY26 charge", from_finding_id: "R:F8-2"}
+  - {q: "Products per customer now vs a year ago", from_finding_id: "C:F17-02"}
+  - {q: "Disbursement yield level and trend of the portfolio-to-disbursement yield gap", from_finding_id: "C:F6-04"}
+  - {q: "Shopkeeper Loan status at 1 cr AUM; new-product share on one basis; base of the >2x CD franchise target", from_finding_id: "P:FN-03, P:FN-16, P:FN-17"}
+  - {q: "State reporting basis in deck and release; prior-quarter CRAR/Tier 1, absolute Stage 2/3, YoY comparators, readable borrowing mix", from_finding_id: "R:F17-1, P:FN-22, PR:A3-04, PR:A3-08, PR:A3-12"}
+  - {q: "Asset classification (Stage 2 / Stage 3 / SMA) at transfer of the Q1 and Q2 ARC-transferred loans (Q2 principal 161.60 cr, H1 280.50 cr, Res L903-906) and GNPA before transfers at 30 Jun and 30 Sep 2026", from_finding_id: "A5:M3, R:F12-3"}
+monitorables:
+  - {item: "Q3 FY27 results: credit cost ratio and rupees, write-offs, Stage 2 PCR, CoB, opex/AUM", implied_date: "mid-Jan 2027 [INFERENCE]", source_ref: "Step 8C"}
+  - {item: "Postal ballot: Kemisha Soni ID re-appointment 30 Jan 2027-29 Jan 2030", implied_date: "before 2027-01-30", source_ref: "Res L78-92; R:F13-1"}
+  - {item: "Rate pass-through test, no profitability impact", implied_date: "Q3 FY27 (Jan 2027)", source_ref: "Call L839-841, L850; C:F6-03"}
+  - {item: "AI depth phase progress report", implied_date: "Q3 FY27 call", source_ref: "Call L565-572"}
+  - {item: "NCD pari-passu security cover (100.7% gross at 30 Sep)", implied_date: "2026-12-31 quarter-end", source_ref: "Res L1742; R:F12-2"}
+  - {item: "~200 new gold branches in FY27 (550 as on 09 Oct 2026)", implied_date: "2027-03-31", source_ref: "Call L225-226; Deck L126"}
+  - {item: "CD customer franchise about doubles this year", implied_date: "2027-03-31", source_ref: "Call L664"}
+  - {item: "First full-year audit by new joint-auditor pair", implied_date: "Apr-May 2027 [INFERENCE]", source_ref: "Res L249-257; R:F5-1"}
+  - {item: "Capital raise window (CAR 18.68% vs 15% floor)", implied_date: "Jun-Sep 2027 [INFERENCE]", source_ref: "PR L98-99; PR:A3-02; P:FN-05"}
+  - {item: "ALM 6-12 month net outflow ~5,538 cr", implied_date: "Apr-Sep 2027 [DERIVED]", source_ref: "Deck L644; P:FN-13"}
+  - {item: "Products-per-customer metric becomes relevant", implied_date: "~Oct 2027", source_ref: "Call L723-724; C:F17-02"}
+  - {item: "Gold Q2 cohort breakeven ~13 months", implied_date: "~Nov 2027", source_ref: "Call L687"}
+  - {item: "Credit cost strength-to-strength over 1-2 years", implied_date: "Oct 2027-Oct 2028", source_ref: "Call L900-901"}
+  - {item: "Margin positive on all three vectors; opex/AUM key ROA contributor", implied_date: "Oct 2027-Oct 2028", source_ref: "Call L855-858, L913-915"}
+  - {item: "June 2028 ROA commitment (level unstated)", implied_date: "2028-06", source_ref: "Call L853-854; C:F6-01"}
+  - {item: "AUM ~35-40% CAGR over next couple of years", implied_date: "~Sep 2028", source_ref: "Deck L156-157; P:FN-04"}
+  - {item: "ROA peak 2.5-3 years out", implied_date: "Apr-Oct 2029", source_ref: "Call L908"}
+  - {item: "5-6x AUM aspiration", implied_date: "~FY31", source_ref: "Deck L297-301"}
+  - {item: "JASPL sale completion and S vs C P&L split", implied_date: "undated (in due course)", source_ref: "Res L509-513; R:F6-1, R:F1-2"}
+  - {item: "Insurance commission regulation fee impact (exposed base: cross-sell income 118 cr)", implied_date: "undated (conditional)", source_ref: "Call L1060-1066; Deck L802; C:F7-02; A5:M1"}
+  - {item: "DA restart (none in Q2; 1,000.34 cr in Q1)", implied_date: "each quarter, note 11(a)", source_ref: "Res L874-875; R:F1-1"}
+  - {item: "Opex/AUM quarterly movement within 10-25 bps", implied_date: "quarterly", source_ref: "Call L188"}
+  - {item: "COVID resolution book run-off (7.46 cr)", implied_date: "ongoing", source_ref: "Res L961"}
+  - {item: "Write-off disclosure; second silence = 2-concall asset-quality evasion", implied_date: "Q3 FY27 (Jan 2027)", source_ref: "Call L998-1048; C:F17-01"}
+flags:
+  - "PRE-THESIS READ: no Notion page, no Decision Status, no spear; all thesis fields ND"
+  - "Credit cost improvement denominator-led: rupees 373.33 to 375.70 cr while AUM +10.4% QoQ"
+  - "Stage 2 PCR 23.63% to 14.61% over four quarters; ~20 cr Stage 2 release in Q2 [DERIVED]"
+  - "Write-offs undisclosed in all four documents; derived 290-320 cr/qtr [DERIVED, not disclosed]"
+  - "83.92 cr written-off pool consideration P&L line NOT FOUND; 26.03 cr derecognition-loss gap unexplained"
+  - "Capital runway: D/E 3.82x to 4.30x in one quarter; RoE ~11% [DERIVED]; no enabling resolution"
+  - "Joint-auditor change after 17 Jul 2026, reason undisclosed, not raised on call"
+  - "Unreviewed Welfare Trust sold 227.66 cr treasury shares in H1; 0.97 cr paid-up residual"
+  - "QIP date conflict; Annexure II 68.04 cr cross-foot break; NCD cover 100.7% gross of ECL"
+  - "Operating leverage claim contradicted in Q2: opex +12.96% vs income +12.30%"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION (lender; credit-loss cash realisation undisclosed)"
+  - "Deferred-tax credit 13.36 cr flatters Q2 PAT by 3.6% [DERIVED]"
+  - "Spoken-number drift (credit cost 25 vs 21 bps; 6MOB 41 vs 32 bps; yield 14.8 vs 14.08): use filed numbers"
+  - "Bull-side: Q2 PAT clean of DA gain; core PBT +41.7% QoQ, ~+31.0% at Q1 computed credit-cost ratio 2.34% (headline ~+12.7%) [DERIVED]; ratio set 9.26-4.15-2.19 is an arithmetic identity on one denominator (~68,650 cr), not evidence; RoA 2.03% at 2.40% credit cost [DERIVED]"
+  - "GNPA -18 cr (863 to 845) in the quarter 161.60 cr stressed principal went to ARCs (Res L903-906); classification at transfer ND; GNPA GREEN conditional; pre-transfer 1.42% if Stage 3 [DERIVED]"
+  - "Fee concentration: cross-sell income 118 cr = 23.5% of Q2 PBT; cross-sell + servicing supplied 53% of QoQ PBT rise; insurance-commission exposure on cross-sell line, share ND (Deck L802-803)"
+  - "OR-30: Role 4 Steps 6.5 and 7 and Role 5 Step 8D deferred to /fttcp and Role 1; pillar-relevant facts flagged"
+  - "Tracker rows not supplied: 0 downstream signals; 3 Case B candidates proposed, none written"
+plain_language_brief_included: true
+analyst_note: "Profit ramp is real; Q2 carries no assignment gain, so core PBT rose 41.7% QoQ against a 21.8% headline. Loop 1 qualifies that headline: at Q1's computed credit-cost ratio core growth is about 31%, and the deck fee split (cross-sell 118 cr, servicing 91 cr) supplied 53% of the QoQ PBT rise. The insurance-commission risk sits on the 118 cr cross-sell line, 23.5% of Q2 PBT, insurance share ND. GNPA GREEN is conditional: 161.60 cr of stressed principal went to ARCs in Q2, classification at transfer undisclosed; if Stage 3, pre-transfer GNPA was 1.42%, though like-for-like with Q1's transfers the ratio still falls from 1.55%. The ratio-set RoA check is an identity, not evidence. Two readings fit credit cost: losses flat in rupees while pricing holds (bull), or a denominator effect that reverses when growth slows on a young book (bear). Rupee credit cost and write-offs in Q3-Q4 FY27 separate them. Capital is the second clock: D/E 3.82x to 4.30x in one quarter at ~11% RoE. Cash conversion INDETERMINATE-WITH-DIRECTION. Verdict unchanged. Pre-thesis: no position framing."
+review_path: "runs/poonawalla-q2fy27/work/review_poonawalla_q2fy27.md"

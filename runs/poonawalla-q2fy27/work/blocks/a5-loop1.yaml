@@ -1,0 +1,43 @@
+stage: A5-adversary
+company: "POONAWALLA"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "GNPA 1.37%->1.20% GREEN on reported ratio, AMBER-CONDITIONAL on ARC classification; NNPA GREEN on ratio, 439->430 (Rev L279-280, L303, L384, L708, L849)", counter: "Note 11(c) NBV 92.49 vs principal 161.60 implies 42.8% ECL cover at transfer in Q2 (Q1 54.3%, H1 47.7%), at the Stage 3 PCR level (49.1%) and ~3x Stage 2 PCR (14.6-17.9%); Q2 residual tenor 77 months points to long-tenor secured lines. Stage 3 reading better evidenced [INFERENCE]: pre-transfer GNPA +2.5% in rupees (981.9->1,006.6) and NNPA +5.9% (493.29->522.49) vs reported -2.1% each; like-for-like ratios still fall (GNPA 1.55%->1.42%, NNPA 0.79%->0.74%). NNPA and the Step 7 pillar row carry no ARC qualifier.", source_line: "Res L904-906; Deck L363, L709-718", type: MISSING}
+findings_by_type:
+  factual:
+    - "FL1-1: 'Cross-sell income is the line exposed to the rule' stated as fact (Rev L645, L803, L830, L860, L895, YAML L975/L996); extract does not define Cross Sell Income (Deck L802) and management uses 'cross-sell' for loan cross-sell (Call L244-245, L298-307). Tag [INFERENCE]; name the second reading; keep Q8. Origin: A5 run-1 M1 wording."
+    - "FL1-2: Step 0D ANXII-N3 described as 'Column-reporting note' (Rev L106); filed note 3 says secured NCD book value = principal plus accrued interest (Res L1753; R1326). Correct the row. Pre-existing; missed in run 1."
+  missing:
+    - "ML1-1: GNPA ARC graft omits filed cover evidence: NBV/principal implies 42.8% ECL cover at transfer in Q2, 54.3% in Q1, vs Stage 3 PCR 49.1% and Stage 2 PCR 14.6% (Res L904-906; Deck L709-718); Stage 3 reading better evidenced [INFERENCE]; rupee GNPA +2.5% pre-transfer, ratio like-for-like 1.55%->1.42%. Graft into Rev L100, L279, L442 (Q27 bull/bear), L708, L802, L849."
+    - "ML1-2: ARC qualifier missing on NNPA (Rev L280, L303) and on the Step 7 Asset-Quality Multiplier pillar row (Rev L384). If Stage 3: pre-transfer NNPA 493.29->522.49 (+5.9%) vs reported -2.1%; like-for-like 0.79%->0.74% [DERIVED]."
+  contradiction: []
+  style:
+    - "SL1-1: Brief L846 and 7A L710 label +41.7% as ex DA gain; it also strips other income (6.70 Q1); ex DA gain alone growth is 39.1% (501.30/360.33). Wording only."
+    - "SL1-2: 'About half of the profit rise came from fee income' (L854) / '53%' (L803) is a gross-contribution share; core NII added +183.34 to a +90.04 net rise. Use absolute bridge figures."
+    - "SL1-3: Servicing income tagged Recurring (L255) while its derived off-book base fell; implied yield ~5.0%->7.4%->9.7% annualised; nature ND; add to Q12. Recurring share stays 95.3% YoY even ex servicing growth."
+    - "SL1-4: Brief grafts (L846, L849, L852, L854, L860, L869, L895) carry no [LOOP-1] tag despite Rev L8."
+    - "S1 (run 1, carried): brief book mix omits Machinery & Medical Equipment 1% and Professional Loan 1% (Deck L386, L391)."
+    - "S2 (run 1, carried): forward map 5,538 cr is a net structural outflow, not gross debt maturities (Deck L644)."
+    - "S3 (run 1, carried): optional collection-efficiency table question (Deck L731-745)."
+loop_back_to: "A4"
+gap: "MISSING ML1-1: graft filed ARC-transfer cover evidence (NBV 92.49 vs principal 161.60 = 42.8% ECL cover at transfer, Q1 54.3%, vs Stage 3 PCR 49.1% and Stage 2 PCR 14.6%; Res L904-906, Deck L709-718), mark the Stage 3 reading better evidenced [INFERENCE], show rupee GNPA +2.5% pre-transfer vs like-for-like ratio 1.55%->1.42%, at Rev L100, L279, L442, L708, L802, L849. MISSING ML1-2: carry the ARC qualifier to NNPA (L280, L303) and the Step 7 pillar row (L384): pre-transfer NNPA +5.9%, ratio 0.79%->0.74%. FACTUAL FL1-1: tag the cross-sell-exposure claim [INFERENCE] at L645, L803, L830, L860, L895 and YAML. FACTUAL FL1-2: correct ANXII-N3 (Res L1753: NCD book value = principal plus accrued interest)."
+style_notes:
+  - "SL1-1: 41.7% label also strips other income; ex DA gain alone 39.1%."
+  - "SL1-2: replace 'about half' fee framing with absolute bridge figures."
+  - "SL1-3: servicing income Recurring tag; implied off-book yield 5.0%->7.4%->9.7%; add to Q12."
+  - "SL1-4: brief grafts lack [LOOP-1] tags."
+  - "S1-S3 (run 1): carried, not applied (allowed)."
+analyst_note: "Run-1 F1-F3 and M1-M4 are applied, and every loop-1 figure recomputes exactly. Coverage is unchanged and clean: 2,386 rows, 27 notes, 45 turns, 42 slides, no orphans. The re-audit fails on the asset-quality graft. Note 11(c) gives Q2 ARC transfers an NBV of 92.49 against principal of 161.60. That is 42.8% ECL cover at transfer (Q1 54.3%), at the 49% Stage 3 PCR and three times the 14.6% Stage 2 PCR. The Stage 3 reading is better evidenced, though classification stays undisclosed. On it, rupee GNPA rose 2.5% before transfers, while the like-for-like ratio still fell. NNPA and the Step 7 pillar row carry no ARC qualifier. Two errors are partly mine: run 1 stated cross-sell income as the regulation-exposed line, and I missed the Annexure II note 3 misreading. Both fixes cut toward the bull or are neutral. All fixes are A4 text grafts; no A2 or A3 loop. PROCEED WITH FLAGS stands. The review marks this iteration 1 of 1, so the orchestrator decides between a second graft pass and operator escalation."

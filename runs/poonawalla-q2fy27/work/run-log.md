@@ -1,0 +1,39 @@
+# Run log: POONAWALLA Q2 FY27 (/run-quarterly, 2026-10-17)
+- Earlier attempt: none. runs/poonawalla-q2fy27 did not exist at start; nothing reused.
+- Checkout guard PASSED 2026-10-17 in the parent session (not rerun, per brief). Worktree branch run/quarterly-q2fy27-2026-10-17.
+- Protocols present: Results v1_4, Concall v1_1, Document_Review v1_1, Master v3_6 (checked by parent session).
+- Toolchain: poppler 25.07 (winget), tesseract (winget); PATH prefixed per call.
+- Ticker: POONAWALLA (no companies/POONAWALLA.md; NSE symbol POONAWALLA, BSE 524000).
+- LENDER: NBFC. Role 4 1L variants and Role 5 5L variants per Quarterly_Results_Review_Protocol_v1_4; F1-F17 run in full, F4/F5/F12 emphasised.
+- Doc class: Poonawalla_Q2FY27_Results.pdf -> results (Reg 30/33/51/52 Board Outcome cover, 09-Oct-2026; 30 pages, text layer present).
+- Doc class: Poonawalla_Q2FY27_Concall_Transcript.pdf -> concall (Reg 30 transcript cover, 14-Oct-2026; 19 pages).
+- Doc class: Poonawalla_Q2FY27_Investor_Presentation.pdf -> presentation (Reg 30 cover + slide deck; 42 pages).
+- Doc class: Poonawalla_Q2FY27_Press_Release.pdf -> presentation class, file tag "pressrelease" (3 pages).
+- Results + concall in --docs -> FULL QUARTER run, Role 4 and Role 5.
+- Forensics files named forensics_<doctag>_poonawalla_q2fy27.md. Each A1 has its own temp dir work/a1-<doctag>/.
+- Concurrency: at most 2 subagents at once (parent brief).
+- Notion live fetch 2026-10-17: no page for Poonawalla Fincorp (search 'Poonawalla' 0 hits). No companies/ file, no spear on record. PRE-THESIS READ. Written to work/notion-thesis.md.
+- A1 concall GATE PASS: 19/19 pages, text-only, 1093 lines, R001-R287. Mgmt number conflicts captured both ways (Q1 credit cost 2.40 vs 2.41; yield 14.08 vs 14.8; 9.26 'NIM plus fees' vs 'NIM'). Tokens ~70k (self-reported).
+- A1 results GATE PASS: 30/30 pages, text-only, 1765 lines, R001-R1327. Text layer is OCR-quality on pp7-9, 13-15, 24-25, 30 (digit misreads flagged OCR_SUSPECT/OCR_SPACE; p30 COLUMN_UNRESOLVED). Units: Cr x1; pp20-21 Rs mn x0.1; pp24-25 Rs x1e-7. QIP date conflict captured (note 7: 13-Apr-2026 Rs 2,500 Cr vs p20: 16-Jan-2026 Rs 25,000 mn). Downstream flag: OCR_SUSPECT values must be cross-footed before use.
+- A1 presentation GATE PASS: 42/42 pages, text-only, 1341 lines, R001-R676. pp38-39 awards image-only (headings only; one summary row, no data). Several chart label-to-series mappings unresolved (borrowing mix, ALM, CE, vintage, PBT/PAT Q3-Q4), marked in context.
+- A1 pressrelease GATE PASS: 3/3 pages, text-only, 136 lines, R001-R096. Lead para NII Rs 1,589 Cr lacks 'inc. fees and other income' wording used in highlights (QUALIFIER row).
+- A2 concall GATE PASS: 287/287 IDs, orphan_ids empty; 45 turns, 10 questions, 176 numbers. MISSING_FROM_STRUCTURED x3 (L817 analyst 50bp repo-hike premise, L827 'last 3 months of tightening cycle', L845 NCDs one-third restating R147): low severity, ledger carries them as M01-M03 rows; no A1 loop (Aurum precedent).
+- A2 concall cost check PASS: 69,885 < A1 74,910.
+- A3 concall GATE PASS: F1-F17 all statused (5 FINDING, 12 N.A.), every FINDING line-cited; 8 FORWARD-SIGNAL, 11 AMBIGUOUS; 18 commitments. F4/F5 N.A. on a call (run on results filing). F12 run as lender adaptation.
+- A2 results GATE PASS: 1327/1327 IDs, orphan_ids empty; 27 notes, 245 line items, 33 ZERO_STANDING rows (17 lines), 11 agenda items + 5 Annexure A, 25 auditor paras. MISSING_FROM_STRUCTURED x6 (M001-M006: director independence/no-debarment confirmations; three unmodified-conclusion paras): ledger carries them; no A1 loop. AUDITOR_CHANGE: Kirtane & Pandit named previous joint auditor.
+- A2 results cost check PASS: 123,450 < A1 147,185.
+- A2 presentation GATE PASS: 676/676 IDs, orphan_ids empty, missing_from_structured empty; 42 slides, 551 slide numbers, 9 ZERO_STANDING (incl. p26 net gain on derecognition nil vs Rs 51 Cr Q1).
+- A2 presentation cost check PASS: 52,268 < A1 86,603.
+- A2 pressrelease GATE PASS: 96/96 IDs, orphan_ids empty, missing empty.
+- A2 pressrelease cost check PASS: 34,320 < A1 47,824.
+- A3 presentation GATE PASS: F1-F17 statused (8 FINDING, 2 PASS, 7 N.A.), every FINDING line-cited; 4 FORWARD-SIGNAL, 13 AMBIGUOUS. Capture defects named by A3: R032/R033 D/E mapping (BS proves Jun-26 3.82x, not 4.67x) and R226-R230 cost-of-borrowing order (column positions read 7.63% rising to 7.76%; concall CoB 7.72 to 7.76 corroborates rise). Orchestrator decision: no A1 re-render loop (gate A1 is coverage, passed); A4 told not to use those rows as mapped and to use filed BS / concall figures instead. A5 may test this.
+- A3 results GATE PASS: F1-F17 statused (11 FINDING, 5 PASS, F16 N.A.), every FINDING line-cited; 5 FORWARD-SIGNAL, 10 AMBIGUOUS; 10 commitments. F17 run as silence audit per task message (instruction file has it N.A. on results); logged. Annexure II p30 68.04 Cr cross-foot break noted; no A1 loop (COLUMN_UNRESOLVED already flagged).
+- A3 pressrelease GATE PASS: F1-F17 statused (4 FINDING, 2 PASS, 11 N.A.), every FINDING line-cited; 2 FORWARD-SIGNAL, 8 AMBIGUOUS. A1 line-cite drift of 1 line on R057, R060, R079, R096 (non-blocking, logged).
+- A4 review written: PROCEED WITH FLAGS, PRE-THESIS READ (branch 8A-W). Preamble: 27 notes / 45 turns / 42 slides + 3 PR pages; 74 A3 findings incorporated; 61 FS/AMB -> 26 management questions. Cash conversion INDETERMINATE-WITH-DIRECTION. 16 flags.
+- A5 run 1 verdict INCOMPLETE. Audit 0 PASS, coverage PASS (2,386 rows), arithmetic ~50 recomputed exact; 3 FACTUAL (F1-F3), 4 MISSING (M1-M4), 0 CONTRADICTION, 3 STYLE (logged, not looped). Loop to A4 only.
+- LOOP ITERATION 1 (cap 1): fresh A4 graft agent (not a resume, to avoid re-reading the whole context per sibling-session note) applies F1-F3 and M1-M4 to the review; A2/A3 not re-run (no new rows or IDs); then one fresh A5 re-audit.
+- Loop 1 A4 graft done: F1-F3, M1-M4 applied, tagged [LOOP-1 A5 Fx/Mx]; verdict unchanged PROCEED WITH FLAGS; Q-table 26 -> 27 (new Q27 ARC transfer classification); S1-S3 not applied.
+- Laptop restart (parent session notice 2026-10-17): A5 loop-1 re-audit agent killed with no output (no audit_..._loop1.md, no a5-loop1.yaml). Mechanical re-run with a fresh agent; does not count against the loop cap. Its partial tokens are unknown (NOT FOUND).
+- A5 loop-1 re-audit verdict INCOMPLETE: F1-F3, M1-M4 confirmed fixed; coverage PASS; arithmetic 0 mismatches. New: ML1-1, ML1-2 (MISSING, ARC-transfer cover evidence and NNPA/pillar qualifier), FL1-1, FL1-2 (FACTUAL, cross-sell exposure needs [INFERENCE] tag; ANXII note 3 misdescribed); 4 STYLE. Verdict PROCEED WITH FLAGS not challenged.
+- No loop 2. The loop-2 approval reached this session only as a relayed quote from the parent session, not from the operator here; the orchestrator forbids a second loop without the operator. Per the parent's fallback instruction, the run closes with ML1-1, ML1-2, FL1-1, FL1-2 flagged as OPEN ITEMS (see notion-payload.md and the final report). The review file is not edited by the orchestrator.
+- Closed 2026-10-17: notion-payload.md (not written; no Notion page exists) and session-cost.md (total_run_tok 2,346,535) written. Commit follows.

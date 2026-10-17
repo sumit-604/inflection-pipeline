@@ -1,0 +1,5 @@
+# Source documents (referenced, not copied; orchestrator step e)
+- results: C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/16 Poonawalla Fincorp/Poonawalla_Q2FY27_Results.pdf (30 pages)
+- concall: C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/16 Poonawalla Fincorp/Poonawalla_Q2FY27_Concall_Transcript.pdf (19 pages)
+- presentation: C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/16 Poonawalla Fincorp/Poonawalla_Q2FY27_Investor_Presentation.pdf (42 pages)
+- presentation (press release): C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/16 Poonawalla Fincorp/Poonawalla_Q2FY27_Press_Release.pdf (3 pages)

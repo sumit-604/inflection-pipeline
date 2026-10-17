@@ -1,0 +1,44 @@
+stage: A5-adversary
+company: "POONAWALLA"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches:
+  - {metric: "Concall hedge breakdown, count of 'approximately' (Section B Step 6C)", a4_value: "9", recomputed: "10", source_line: "Call L160, L163, L164, L179, L180, L193, L226, L254, L797, L1045; A2 concall ledger s6"}
+  - {metric: "EPS basic vs diluted spread range (Step 0C)", a4_value: "0.01 to 0.02 in every period", recomputed: "0.00 to 0.02 (Q2 FY26 0.95/0.95; H1 FY26 1.76/1.76)", source_line: "Res L343-344"}
+surviving_bear_counters:
+  - {claim: "Profits real and rising; Q2 clean run-rate quarter; core PBT +41.7% QoQ (Rev L201, L261, L835, L842, flag 14)", counter: "53% of the QoQ PBT rise (+48.07 of +90.04) came from the fee line; deck splits it into Cross Sell Income 91->118 and Servicing Income 70->91. Cross-sell income (118 cr = 23.5% of Q2 PBT) is the line exposed to the proposed insurance commission rule; A4 never cites it. At Q1's computed credit-cost ratio (2.34%) Q2 credit cost would be ~413.4 cr and core PBT growth ~+31% (headline ~+12.7%).", source_line: "Deck L802-803 (R390-R395); Call L1060-1061; Res L302-303, L308; Deck L557-558", type: MISSING}
+  - {claim: "Asset quality GREEN: GNPA 1.37%->1.20%, absolute 863->845 cr, CONFIRMED QoQ (Rev L271, L699)", counter: "Same quarter: 5,312 stressed accounts, principal 161.60 cr (NBV 92.49), transferred to ARCs, plus 10,558 written-off accounts sold. GNPA fell only 18 cr. Classification at transfer undisclosed; if Stage 3, pre-transfer GNPA ~1,006.6 cr (~1.42%), up from 1.37%. H1: GNPA +27 cr vs 280.50 cr transferred.", source_line: "Res L903-906, L912-914; Deck L703-713", type: MISSING}
+  - {claim: "Management ratio set internally consistent: 9.26-4.15-2.19 = 2.92% pre-tax, 2.18% post-tax = disclosed RoA (Rev L709, L792, L857)", counter: "Arithmetic identity: all three ratios back-solve to one denominator (~68,650 cr), so they must sum to PBT over it; no input is validated (A4's own NIM check is 9.01%, UNVERIFIABLE). The identity carries the unproven credit cost into RoA: 2.03% at Q1's 2.40%, 1.82% at Q2 FY26's 2.67%.", source_line: "Call L596, L599, L603-604; PR L83; Rev L704", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1: Section B Step 6C hedge breakdown says 'approximately' 9; fulltext and A2 give 10 (Call L160-1045). Fix to 10."
+    - "F2: Step 0C says EPS basic-diluted spread is 0.01 to 0.02 in every period; Q2 FY26 and H1 FY26 are 0.00 (Res L343-344). Fix to 0.00 to 0.02."
+    - "F3: Brief says 'The audit firms changed'; extract supports only that Kirtane & Pandit LLP is a previous joint auditor, not whether the other firm changed (Res L249-257, L598-607, L1425-1427). Reword."
+  missing:
+    - "M1: Deck fee split absent: Cross Sell Income 118/91/68 and Servicing Income 91/70/37 cr (Deck L802-803, R390-R395). Graft into brief part 2, Step 4 QoQ bridge, Q8 and the claim-1 qualifier."
+    - "M2: Core PBT +41.7% QoQ not tied to flat rupee credit cost; ~+31% at Q1's computed ratio (Res L302-303, L308; Deck L557-558). Graft into Step 3, brief bullet 2, flag 14."
+    - "M3: GNPA GREEN without ARC qualifier; 161.60 cr stressed principal to ARCs in Q2 vs GNPA -18 cr; conditional pre-transfer GNPA ~1.42% (Res L903-906; Deck L703-713). Graft into Step 5L, Step 7A, brief; add classification-at-transfer question."
+    - "M4: Ratio-set consistency (flag 14, Step 7A) is an arithmetic identity on one denominator (~68,650 cr); RoA 2.03% at 2.40% credit cost. Requalify and add sensitivity."
+  contradiction: []
+  style:
+    - "S1: Brief book mix omits Machinery & Medical Equipment 1% and Professional Loan 1% (Deck L386, L391)."
+    - "S2: Forward map calls 5,538 cr '6-12 month debt maturities'; it is the net structural outflow, cumulative gap 9,384 to 3,846 (Deck L644)."
+    - "S3: Collection efficiency correctly ND under the chart caveat; optional question asking for a CE table (Deck L731-745)."
+loop_back_to: "A4"
+gap: "MISSING: graft three surviving bear counters before save. M1 deck fee split (cross-sell income 118 cr, servicing 91 cr, Deck L802-803) into brief part 2, Step 4 QoQ bridge and Q8. M2 core PBT +41.7% is ~+31% at Q1's credit-cost ratio. M3 conditional GNPA counter (161.60 cr stressed principal to ARCs in Q2, Res L903-906) plus a classification-at-transfer question. M4 ratio-set check is an identity; RoA 2.03% at 2.40% credit cost. FACTUAL (same pass): F1 hedge count 9->10; F2 EPS spread 0.00 to 0.02; F3 auditor-change wording in the brief."
+style_notes:
+  - "S1: add Machinery & Medical Equipment 1% and Professional Loan 1% to the brief book mix (Deck L386, L391)."
+  - "S2: relabel the 5,538 cr as a net structural outflow (Deck L644)."
+  - "S3: optional question asking for collection efficiency as a table (Deck L731-745)."
+analyst_note: "Coverage and arithmetic are clean. Every count I re-derived from the fulltexts matches A2: 27 notes, 10 footnotes, 245 line items, 45 turns, 10 questions, 42 slides, 3 release pages, 2,386 rows. About 50 A4 derived figures recompute exactly, including both PAT bridges, the ECL-stock identity and the Annexure II break. The audit fails on the adversarial read. A4 never cites the deck's fee split (cross-sell 118 cr, servicing 91 cr), so its insurance-commission risk runs on the wrong base. Its clean-quarter headline also hides that 53% of the QoQ PBT rise came from those two lines. GNPA is rated GREEN with no note that 161.60 cr of stressed principal went to ARCs that quarter. The classification at transfer is undisclosed, so that counter is conditional. The ratio-set check A4 lists as bull evidence is an arithmetic identity. Three minor factual fixes ride the same pass. None of this changes PROCEED WITH FLAGS. It changes how the bull flags read. The acquisition probe was not triggered: no purchase or stake buy is described."

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "POONAWALLA"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 3
+formfeed_count: 3
+line_count: 136
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/poonawalla-q2fy27/extracted/poonawalla-pressrelease-q2fy27-fulltext.md"
+structured_path: "runs/poonawalla-q2fy27/extracted/poonawalla-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 51
+  entity: 13
+  forward: 8
+  date: 13
+  qualifier: 11
+structured_id_range: "R001-R096"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,50 @@
+stage: A3-forensics
+company: "POONAWALLA"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/poonawalla-q2fy27/work/forensics_pressrelease_poonawalla_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: PASS
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F6", line: "105-106, 117", classification: "AMBIGUOUS", implication: "59 of 143 AI projects open, undated; AI credited for gains but implied opex +12.9% QoQ vs NII +12.3%, cost/income flat about 44.8%; no rupee benefit disclosed"}
+  - {id: "A3-02", check: "F6", line: "98-99", classification: "FORWARD-SIGNAL", implication: "CAR 18.68% vs 15% floor; at about 10.6% QoQ avg-base growth the 3.68 pp buffer lasts about 3-4 quarters [INFERENCE, RWA tracks book]; capital raise or growth slowdown ahead"}
+  - {id: "A3-03", check: "F14", line: "67-68 vs 83, 90", classification: "NEUTRAL-FACT", implication: "lead para drops NII incl-fees and credit-cost avg-AUM qualifiers; headline NII is not core NII"}
+  - {id: "A3-04", check: "F14", line: "63-65, 71", classification: "AMBIGUOUS", implication: "standalone vs consolidated basis never stated; F2-F4 blocked until results filing fixes it"}
+  - {id: "A3-05", check: "F14", line: "55", classification: "NEUTRAL-FACT", implication: "INTERNAL classification marking on a public exchange filing; template residue"}
+  - {id: "A3-06", check: "F16", line: "60, 67, 73, 113, 128", classification: "AMBIGUOUS", implication: "AUM growth withheld while PAT/NII/PPoP growth shown; derived avg base +10.6% QoQ (about 50% annualised); per-avg-AUM ratios flattered, seasoning lag 12-18 months"}
+  - {id: "A3-07", check: "F16", line: "67-68, 83, 86, 116-117", classification: "FORWARD-SIGNAL", implication: "rupee credit cost flat about Rs 373-377 cr both quarters (two derivations); 21 bps fall and RoA structural lift are denominator effects; ratios reverse if growth slows"}
+  - {id: "A3-08", check: "F16", line: "80-81", classification: "AMBIGUOUS", implication: "only RoA gets a three-quarter series; no YoY comparator for any metric; selective baseline"}
+  - {id: "A3-09", check: "F16", line: "94, 114-115", classification: "AMBIGUOUS", implication: "52:48 secured:unsecured mix has no Q1 comparator; off-book share unsized; newly incubated verticals with no AUM split"}
+  - {id: "A3-10", check: "F16", line: "77-78, 103", classification: "AMBIGUOUS", implication: "NIM includes fees and other income; core NIM undisclosed; NIM +16 bps vs CoB +4 bps may be fee or unsecured-mix driven"}
+  - {id: "A3-11", check: "F17", line: "86-88, 96", classification: "AMBIGUOUS", implication: "quarterly credit cost >=42% of GNPA stock upper bound implies heavy write-offs, undisclosed; implied Stage 2 about 0.9% thin for 48% unsecured book; coverage about 49%"}
+  - {id: "A3-12", check: "F17", line: "71-106", classification: "AMBIGUOUS", implication: "9 lender monitorables silent (disbursement, write-offs, ECL coverage, Stage 2/3, ALM, borrowing mix, YoY, RoE/net worth, off-book share); silence count 1, first observed quarter"}
+forward_signals: ["A3-02", "A3-07"]
+ambiguous: ["A3-01", "A3-04", "A3-06", "A3-08", "A3-09", "A3-10", "A3-11", "A3-12"]
+commitments:
+  - {commitment: "AI programme 143 projects, 84 implemented, 59 open, 42 added Q2", implied_date: "none stated", ref: "lines 105-106 (R046-R048)", status_word: "underway"}
+  - {commitment: "CAR provides enough headroom for growth", implied_date: "none stated; about 3-4 quarters runway [INFERENCE]", ref: "lines 98-99 (R066)", status_word: "claim"}
+  - {commitment: "focus on consumer and MSME finance", implied_date: "standing", ref: "line 64 (R065)", status_word: "standing"}
+  - {commitment: "structural RoA lift from lower credit cost; disciplined AUM expansion", implied_date: "implied ongoing", ref: "lines 113, 116-117 (R068, R070)", status_word: "claim"}
+  - {commitment: "newly incubated verticals", implied_date: "none stated", ref: "line 115 (R069)", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Press release only: no statements, auditor text or segments, so F1-F5 and F8-F12 are N.A. Run them on the results filing. Three independent ratios (RoA, NIM, credit cost) imply the same average base: about Rs 68.7k cr in Q2 vs 62.2k cr in Q1, so about 10.6% QoQ growth. The release withholds that growth rate. On that base, rupee credit cost is flat at about Rs 375 cr. The headline 21 bps credit-cost fall, the GNPA fall and the CEO's 'structural lift in RoA' are mostly denominator effects of fast book growth on a 48% unsecured book. Quarterly credit cost is at least 42% of the GNPA stock, which points to write-offs doing the work behind a low GNPA. The bear reading: ratios reverse when growth slows and seasoning arrives. The bull reading: pricing and fee income lift PPoP while losses stay flat in rupees. The separating observation is rupee credit cost and gross write-offs over the next two quarters against disbursement growth. At this growth pace, capital headroom of 3.68 pp is about 3-4 quarters, so watch for a raise. A1 line-cite drift on R057, R060, R079 and R096 is non-blocking."

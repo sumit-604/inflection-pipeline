@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "POONAWALLA"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 19
+formfeed_count: 19
+line_count: 1093
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/poonawalla-q2fy27/extracted/poonawalla-concall-q2fy27-fulltext.md"
+structured_path: "runs/poonawalla-q2fy27/extracted/poonawalla-concall-q2fy27-structured.md"
+structured_counts:
+  number: 176
+  entity: 30
+  forward: 45
+  date: 20
+  qualifier: 16
+structured_id_range: "R001-R287"
+gate_a1: pass
+gap_note: ""

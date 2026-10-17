@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "POONAWALLA"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 30
+formfeed_count: 30
+line_count: 1765
+unit_convention: "Crores (exceptions: pp20-21 Rs million; pp24-25 absolute rupees)"
+conversion_factor_to_cr: "Crores x1; Rs million x0.1; absolute rupees x0.0000001"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/poonawalla-q2fy27/extracted/poonawalla-results-q2fy27-fulltext.md"
+structured_path: "runs/poonawalla-q2fy27/extracted/poonawalla-results-q2fy27-structured.md"
+structured_counts:
+  number: 975
+  entity: 118
+  forward: 13
+  date: 108
+  qualifier: 113
+structured_id_range: "R001-R1327"
+gate_a1: pass
+gap_note: ""

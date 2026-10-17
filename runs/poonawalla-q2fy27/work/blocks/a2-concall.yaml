@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "POONAWALLA"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/poonawalla-q2fy27/work/ledger_concall_poonawalla_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 30
+  turns: 45
+  questions: 10
+  mgmt_numbers: 176
+  slides: 0
+  slide_numbers: 0
+flags_raised: [RESTATED, VALUE_CONFLICT, REPEAT_QUESTION, MGMT_ABSENCE, METRIC_LABEL_AMBIGUITY, MISSING_FROM_STRUCTURED]
+ids_in_structured: 287
+ids_referenced: 287
+orphan_ids: []
+missing_from_structured: [M01 L817 analyst 50bp repo hike premise, M02 L827 last 3 months of tightening cycle, M03 L845 NCDs one-third]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Concall: 45 turns, 10 questions (13 analyst turns), 176 numbers (161 spoken by mgmt, 10 analyst/moderator-stated, 5 cover), 45 forward rows, 80 hedge-regex hits. Value conflicts for A3/A4: credit cost Q1 2.4%/2.40% vs 2.41% (R116); new-product share 28% mgmt vs 18% analyst (R140); portfolio yield 14.08% vs 14.8% (R175); 'NIM plus fees' vs 'NIM' both 9.26% (R280). Q03 repeats Q01 with no number given (product-per-customer undisclosed). Insurance commission question asked three times. Analyst premise 60-65% of book under 12 months seasoned (R167) is unchallenged by mgmt. No prior ledger, so no diffs. Hedge counts are regex only; A3 owns the lexicon."

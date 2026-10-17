@@ -1,0 +1,62 @@
+stage: A3-forensics
+company: "POONAWALLA"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/poonawalla-q2fy27/work/forensics_results_poonawalla_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: PASS
+  F3: PASS
+  F4: FINDING
+  F5: FINDING
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "F1-1", check: "F1", line: "296, 648, 874-876", classification: "FORWARD-SIGNAL", implication: "Q2 derecognition gain is nil (Q1 50.93 = 12.4% of PBT; FY26 216.83 = 30.0% of PBT); DA 1,000.34 Cr all in Q1; DA restart in H2 makes reported PBT lumpy"}
+  - {id: "F1-2", check: "F1", line: "239, 226, 379, 734", classification: "FORWARD-SIGNAL", implication: "JASPL carried at 50.70 Cr (C) vs 0.02 Cr (S); on sale S books gain above 0.02, C gain or loss vs 50.70; first S-vs-C P&L split"}
+  - {id: "F4-1", check: "F4", line: "580-584, 451, 809", classification: "AMBIGUOUS", implication: "Unreviewed PAT 0% (passes 10% test) but unreviewed Welfare Trust sold 227.66 Cr treasury shares in H1 vs 3.54 Cr (64x); 33.4% of H1 PAT, straight to equity"}
+  - {id: "F5-1", check: "F5", line: "249-257, 598-607", classification: "AMBIGUOUS", implication: "Joint-auditor pair changed after 17 Jul 2026; second predecessor unnamed; no reason given; FY27 audit is new pair's first look at ECL; no EoM/GC; prior text not supplied"}
+  - {id: "F6-1", check: "F6", line: "509-513, 858-861, 226-227", classification: "FORWARD-SIGNAL", implication: "JASPL sale undated after ~4.8 years held for sale; regulatory approval received; Ind AS 105 basis and closing date to confirm"}
+  - {id: "F8-1", check: "F8", line: "311, 663", classification: "NEUTRAL-FACT", implication: "Earlier-year tax (0.19) Q1 FY27 and (0.01) FY26; ETR 24.97-25.22% vs 25.17% statutory, S = C"}
+  - {id: "F8-2", check: "F8", line: "312, 664, 371, 445", classification: "AMBIGUOUS", implication: "DT flipped from FY26 124.47 charge to H1 FY27 24.33 credit (267 bps shield); DTA 72.70 to 91.16 ties; cash tax 2.8x; driver of the build to confirm"}
+  - {id: "F9-1", check: "F9", line: "317, 669", classification: "NEUTRAL-FACT", implication: "Q1 actuarial loss 2.66 exceeds full FY26 2.04; verify assumptions at FY27 AR"}
+  - {id: "F9-2", check: "F9", line: "326, 362", classification: "AMBIGUOUS", implication: "Q2 cash-flow hedge OCI 34.07 = 97% of FY26; derivatives 399.56; hedged borrowing size NOT FOUND"}
+  - {id: "F10-1", check: "F10", line: "339, 683, 493, 497-498, 451", classification: "AMBIGUOUS", implication: "Paid-up +14.53 Cr vs 13.56 explained by QIP and ESOP; 0.97 Cr (~4.87m shares) residual, likely trust treasury release; EPS spread stable 0.01-0.02"}
+  - {id: "F12-1", check: "F12", line: "365, 389-391, 989, 1722-1736", classification: "FORWARD-SIGNAL", implication: "Loans +24.3% in H1; D/E 4.67x to 4.30x only via QIP; 71.5% of new debt from banks; leverage rebuilds fast; no capital-raise enabling item"}
+  - {id: "F12-2", check: "F12", line: "1742, 1752, 862-864", classification: "AMBIGUOUS", implication: "Pari-passu NCD cover 100.7% on gross book value; 131.53 Cr headroom = 0.73% of pool; net-of-ECL cover NOT FOUND"}
+  - {id: "F12-3", check: "F12", line: "912-914, 903-908, 926, 934-937, 366", classification: "FORWARD-SIGNAL", implication: "Stressed and written-off pools sold to ARCs for SR-inclusive consideration (Q2 89.19 + 83.92); 5 of 20 SR trusts unrated; if recovery sits in impairment, Q2 credit cost netted by up to 24%"}
+  - {id: "F12-4", check: "F12", line: "302, 906, 908", classification: "AMBIGUOUS", implication: "P&L derecognition loss 29.33 Q2 / 49.09 H1 vs note 11(c) NBV gap 3.30 / 6.32; 26.03 / 42.77 unexplained"}
+  - {id: "F13-1", check: "F13", line: "78-80, 90-92, 127-130", classification: "NEUTRAL-FACT", implication: "Forensic-audit ID renewed to 29 Jan 2030 via postal ballot; no AR, AGM, dividend, auditor or capital-raise items"}
+  - {id: "F14-1", check: "F14", line: "497, 850, 1078", classification: "AMBIGUOUS", implication: "QIP date 13 Apr 2026 (notes) vs 16 Jan 2026 (Reg 32 form); share-capital trend supports April"}
+  - {id: "F14-2", check: "F14", line: "1740, 1741, 1482", classification: "AMBIGUOUS", implication: "Annexure II Others row 939.30 vs 871.26; 68.04 Cr cross-foot break despite certificate claiming arithmetic verified"}
+  - {id: "F14-3", check: "F14", line: "1018-1019, 994, 61, 866, 1039, 504", classification: "NEUTRAL-FACT", implication: "Sector ratios S-only, RPS value blank, Reg 54 circular date mismatch, exchange naming; cumulative governance data point"}
+  - {id: "F17-1", check: "F17", line: "1017-1019, 71-72", classification: "AMBIGUOUS", implication: "Filing silent on 11 of 13 lender monitorables (no CRAR, Stage 2, PCR, AUM, disbursement, ALM); source from investor presentation; checklist not supplied"}
+forward_signals: ["F1-1", "F1-2", "F6-1", "F12-1", "F12-3"]
+ambiguous: ["F4-1", "F5-1", "F8-2", "F9-2", "F10-1", "F12-2", "F12-4", "F14-1", "F14-2", "F17-1"]
+commitments:
+  - {commitment: "Sell JASPL JV shareholding; regulatory approval received", implied_date: "undated (in due course); held for sale since 13 Dec 2021", ref: "C note 9 L509-513; S note 9 L858-861", status_word: "underway"}
+  - {commitment: "Re-appoint Kemisha Soni as ID, 30 Jan 2027 to 29 Jan 2030, special resolution via postal ballot", implied_date: "before 30 Jan 2027", ref: "cover letter L78-92; Annexure A L127-130", status_word: "initiated"}
+  - {commitment: "Upload investor presentation to website", implied_date: "after 09 Oct 2026", ref: "L71-73", status_word: "initiated"}
+  - {commitment: "Publish results in newspaper", implied_date: "after 09 Oct 2026", ref: "L44-45", status_word: "initiated"}
+  - {commitment: "File results with BSE/NSE and website", implied_date: "09 Oct 2026", ref: "C note 4 L487; S note 4 L844", status_word: "completed"}
+  - {commitment: "QIP 2,500 Cr completed, proceeds fully utilised, escrow closed", implied_date: "13 Apr 2026 per notes (16 Jan 2026 per Reg 32 form)", ref: "C note 7 L497-500; S note 7 L850-853; p21 L1144-1153", status_word: "completed"}
+  - {commitment: "Q2 NCD issues 2,265 Cr in 7 tranches, fully utilised, no deviation", implied_date: "03 Jul to 16 Sep 2026", ref: "p22 L1186; p23 L1233-1247; p24-25 L1273-1341", status_word: "completed"}
+  - {commitment: "Maintain required security cover on secured NCDs at all times", implied_date: "standing (101% pari-passu at 30 Sep 2026)", ref: "S note 10 L862-866; p30 L1742", status_word: "underway"}
+  - {commitment: "File Reg 54(3) security cover certificate", implied_date: "09 Oct 2026", ref: "S note 10 L865-866; certificate L1357-1531", status_word: "completed"}
+  - {commitment: "COVID resolution-framework book run-off", implied_date: "ongoing (7.46 Cr at 30 Sep 2026)", ref: "S note 12 L941-962", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Earnings quality and funding carry the forward signal. Q2 PAT 374.85 Cr has no assignment gain (Q1 50.93; FY26 216.83 = 30% of PBT), so Q2 is cleaner than Q1 on that axis. Against that, written-off pools sold for 83.92 Cr of SR-inclusive consideration in Q2; the P&L line taking it is NOT FOUND. If it nets inside impairment, Q2 credit cost is flattered by up to 24%. Five SR trusts are unrated, four new FY27 series. The derecognition loss (29.33) does not tie to note 11(c) (3.30). Leverage fell to 4.30x only through the 2,500 Cr QIP. Loans grew 24.3% in six months, new debt is 72% bank lines, and pari-passu NCD cover is 101% gross of ECL. S equals C on P&L; JASPL's 50.68 Cr carrying gap will split them on sale. Auditor pair changed after Q1. The QIP date conflict and the 68.04 Cr Annexure II break are drafting signals. Prior-quarter text and checklist not supplied: all diffs are within-filing."

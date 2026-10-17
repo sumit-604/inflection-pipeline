@@ -1,0 +1,16 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: Poonawalla_Q2FY27_Press_Release.pdf
+doctype: presentation (press release with Reg 30 cover letter)
+page_count_pdfinfo: 3
+formfeed_count: 3
+line_count: 137
+unit_convention: Crores
+conversion_factor_to_cr: x1 (amounts shown in Rs crore; symbol is rupee sign)
+text_layer_present: yes
+extraction_mode: text-only
+render_candidates: none (no zero-character pages)
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: Q2 FY27
+extraction_date: 2026-10-17
+=== END HEADER ===

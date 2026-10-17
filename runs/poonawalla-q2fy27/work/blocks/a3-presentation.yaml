@@ -1,0 +1,68 @@
+stage: A3-forensics
+company: "POONAWALLA"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/poonawalla-q2fy27/work/forensics_presentation_poonawalla_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: PASS
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "FN-01", check: "F1", line: "L806 (s26)", classification: "AMBIGUOUS", implication: "Derecognition gain nil in Q2 vs Rs 51 cr Q1; sell-down paused? derived off-book fell 4,018 to 3,492 while servicing income rose 70 to 91; core PBT +39% QoQ ex-derecognition vs 21.8% headline"}
+  - {id: "FN-02", check: "F1", line: "L124 (s6)", classification: "AMBIGUOUS", implication: "Only 'no accelerated write-off' stated; normal write-offs, slippages, recoveries not disclosed"}
+  - {id: "FN-03", check: "F1", line: "L344 (s13); L207 (s8)", classification: "AMBIGUOUS", implication: "Shopkeeper Loan (FY25 new-product cohort) at Rs 1 cr AUM; pilot, paused or re-scoped"}
+  - {id: "FN-04", check: "F6", line: "L156 (s7); L297-301 (s12)", classification: "FORWARD-SIGNAL", implication: "5-6x AUM in 5 yrs needs 38-43% CAGR, at or above the 35-40% two-year guidance; no credit cost/RoA/leverage guidance paired"}
+  - {id: "FN-05", check: "F11", line: "L154 (s7); L836-842 (s27)", classification: "FORWARD-SIGNAL", implication: "NW +Rs 643 cr vs borrowings +Rs 8,999 cr in Q2; D/E 3.82x to 4.30x in one quarter; ~11% RoE cannot fund 35-40% AUM CAGR; next equity raise likely within ~12-18 months"}
+  - {id: "FN-06", check: "F11", line: "L147-152, L162 (s7); L836-842 (s27)", classification: "NEUTRAL-FACT", implication: "Capture: BS gives Jun-26 D/E 3.82x; A1 R033 maps 4.67x to Jun-26; do not use R032/R033 as mapped"}
+  - {id: "FN-07", check: "F10", line: "L840, L842 (s27)", classification: "AMBIGUOUS", implication: "About Rs 268 cr non-PAT equity added in Q2 with share capital +1; ESOP/warrant/OCI; no EPS so dilution spread not assessable"}
+  - {id: "FN-08", check: "F10", line: "L1284-1285 (s40); L840 (s27)", classification: "AMBIGUOUS", implication: "Promoter absolute share-capital units rose (102.98 to 103.86) despite QIP dilution; warrant conversion or purchase to verify"}
+  - {id: "FN-09", check: "F12", line: "L710 (s23)", classification: "FORWARD-SIGNAL", implication: "Stage 2 PCR 23.63% to 14.61% over 4 quarters while Stage 2 assets rose; about Rs 20 cr Stage 2 release in Q2 supports flat credit cost"}
+  - {id: "FN-10", check: "F12", line: "L811 (s26); L709-714 (s23)", classification: "AMBIGUOUS", implication: "Derived ECL stock +~Rs 55 cr vs credit cost Rs 376 cr implies ~Rs 320 cr/qtr write-offs or other charges (derived, undisclosed)"}
+  - {id: "FN-11", check: "F12", line: "L713, L715 (s23)", classification: "AMBIGUOUS", implication: "GNPA Rs +18.8% YoY while ratio fell 39 bps; denominator-led improvement"}
+  - {id: "FN-12", check: "F12", line: "L750 (s24); L381 (s14)", classification: "AMBIGUOUS", implication: "6MoB excludes Mid Market and Gold (18% of AUM); no product-level asset quality incl ICL 20% of AUM"}
+  - {id: "FN-13", check: "F12", line: "L644 (s21); L828 (s27)", classification: "AMBIGUOUS", implication: "Derived bucket net outflow Rs 5,538 cr in 6-12m and Rs 4,461 cr in 3-5Y; investments +Rs 2,264 cr = pre-funding / negative carry"}
+  - {id: "FN-14", check: "F16", line: "L626-630, L647 (s21)", classification: "AMBIGUOUS", implication: "Column positions show cost of borrowing rising 7.63% to 7.76% over Q1-Q2 FY27, opposite to A1 mapping; render check needed; lean bear"}
+  - {id: "FN-15", check: "F16", line: "L119-121 (s6); L682 (s22); L809 (s26)", classification: "FORWARD-SIGNAL", implication: "Opex +12.8% QoQ vs income +12.3% despite 'strong operating leverage' caption; 'Ongoing' collections and tech investment"}
+  - {id: "FN-16", check: "F16", line: "L279-282 (s12); L206 (s8)", classification: "AMBIGUOUS", implication: "New-product share switches basis (incremental vs total disbursement vs AUM); total disbursement not disclosed"}
+  - {id: "FN-17", check: "F16", line: "L285-286 (s12); L181 (s8)", classification: "AMBIGUOUS", implication: "CD reach metric renamed retailers to dealer points; '>2x Consumer Durables franchise' has no base or date"}
+  - {id: "FN-18", check: "F16", line: "L126-127 (s6); L175 (s8)", classification: "NEUTRAL-FACT", implication: "Gold branch count is post-quarter 'as on date'; ~Rs 4.3 cr AUM per branch; branches ahead of book"}
+  - {id: "FN-19", check: "F16", line: "L626-645 (s21); L671, L686 (s22); L743 (s24)", classification: "NEUTRAL-FACT", implication: "Truncated chart axes magnify small moves; prior baseline not testable"}
+  - {id: "FN-20", check: "F14", line: "L62; L1313; L1326; L394; L374; L134 vs L801", classification: "NEUTRAL-FACT", implication: "Cumulative drafting slippage incl INTERNAL stamp and dual NII meaning; governance data point"}
+  - {id: "FN-21", check: "F14", line: "L964-968 (s33)", classification: "NEUTRAL-FACT", implication: "Capture: R599 'Sunil Samdani ED & CFO' conflicts with column layout; do not use for KMP tracking"}
+  - {id: "FN-22", check: "F17", line: "L595 (s21); deck-wide", classification: "AMBIGUOUS", implication: "Silent on NIM/yield, write-offs, Tier 1, total disbursement, product asset quality, off-book pool, reporting basis; borrowing mix unreadable; 1 quarter (floor)"}
+forward_signals: ["FN-04", "FN-05", "FN-09", "FN-15"]
+ambiguous: ["FN-01", "FN-02", "FN-03", "FN-07", "FN-08", "FN-10", "FN-11", "FN-12", "FN-13", "FN-14", "FN-16", "FN-17", "FN-22"]
+commitments:
+  - {commitment: "AUM growth ~35-40% CAGR", implied_date: "next couple of years (~FY27-FY29)", ref: "L156-157 R609", status_word: "initiated"}
+  - {commitment: "5-6x AUM aspiration", implied_date: "next 5 years (~FY31)", ref: "L297-301 R610", status_word: "initiated"}
+  - {commitment: ">2x Consumer Durables franchise (base undefined)", implied_date: "FY27 onwards, undated", ref: "L281-283 R612", status_word: "initiated"}
+  - {commitment: "Gold Loan network expansion", implied_date: "FY27 onwards", ref: "L126, L175, L283-284", status_word: "underway"}
+  - {commitment: "Digital Business Loans scale priority", implied_date: "FY27 onwards", ref: "L284-285 R612", status_word: "initiated"}
+  - {commitment: "AI-powered consumer ecosystem", implied_date: "FY27 onwards", ref: "L290-295 R613", status_word: "initiated"}
+  - {commitment: "AI projects 59 underway, 42 new (84 of 143 delivered)", implied_date: "undated", ref: "L859-860 R621", status_word: "underway"}
+  - {commitment: "Collections GenAI voice bots, preparing for scale", implied_date: "undated", ref: "L525-532 R614", status_word: "underway"}
+  - {commitment: "Email Bot rollout", implied_date: "undated", ref: "L1103", status_word: "underway"}
+  - {commitment: "Zero-Click HR ecosystem", implied_date: "undated", ref: "L1117-1118 R618", status_word: "initiated"}
+  - {commitment: "Distribution franchise and growth corridors", implied_date: "undated", ref: "L1089-1107 R615 R616", status_word: "initiated"}
+  - {commitment: "IIT Bombay research support", implied_date: "FY26-FY27", ref: "L1241-1243 R620", status_word: "completed"}
+  - {commitment: "QIP Rs 2,500 cr", implied_date: "April-26", ref: "L148-150 R035", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Pre-thesis read with no prior deck, so F16/F17 diffs are within-deck and silence counts floor at 1. Three items matter most. (1) Capital runway: net worth grew Rs 643 cr in Q2 while borrowings grew Rs 8,999 cr. About 11% annualised RoE cannot fund 35-40% AUM CAGR, so D/E climbs from 4.30x unless equity comes again, and the QIP was only April-26. (2) Credit cost quality: Stage 2 PCR fell four straight quarters (23.63% to 14.61%). Derived ECL stock rose only ~Rs 55 cr against Rs 376 cr credit cost, which implies ~Rs 320 cr a quarter of write-offs or other charges the deck does not disclose. GNPA ratio gains are denominator-led. (3) Two A1 chart mappings conflict with text-layer column positions. For D/E, the balance sheet proves Jun-26 = 3.82x, not 4.67x. For cost of borrowing, the column reading shows 7.63% rising to 7.76%, not falling. Render-check slide 21 before A4 uses R226-R230. Bull side, same bar: Q2 carried zero derecognition gain against Rs 51 cr in Q1, so core PBT growth beats the 21.8% headline. The deck never states whether it is standalone or consolidated."

@@ -1,5 +1,5 @@
 stage: A5-adversary
-loop: 1
+loop: 2
 company: "PREMIERPOL"
 quarter: "Q2 FY27"
 model: "claude-opus-5-5"
@@ -16,33 +16,40 @@ coverage:
   missing_from_ledger: []
 arithmetic_mismatches: []
 surviving_bear_counters:
-  - {claim: "Trade WC flat while revenue grew; CCC improved 16.40 days like-for-like; receivable days near 34 as a strength (RL264-RL273, RL549, RL553)", counter: "31-03-2026 base follows a FY26 build of about 22.51 Cr in inventory plus receivables: CF FY26 (1,829) L194 and (422) L196; current receivables +80% on A1 labels or inventories +57% on the A4-04 layout; drag moved from trade items (FY26) to other current assets (H1 FY27); CFO/PAT below 1.0x in both periods", source_line: "L194, L196, L197, L339, L342, L108", type: MISSING}
-  - {claim: "Net cash 19.36 Cr BS basis; answer depends only on debt location (RL279, RL531)", counter: "Both readings count 12.46 Cr current investments as cash; investment book +174 vs H1 OCI +166 and quarterly OCI +384/(218) show market marks; cash-only vs D/E-implied debt gives net debt 10.71-12.39 Cr (0.06-0.07x equity); low debt survives, net-cash framing needs the qualifier", source_line: "L109, L330, L341, L343, L147, L364", type: MISSING}
+  - claim: "FCF positive: FY26 17.75 Cr; H1 FY27 2.86 to 7.41 Cr (Step 5, rev L274)"
+    counter: "FY26 investing 'Other inflows (outflows)' of (1,920) lakh (R214) is undescribed and absent from the review: 60.2% of FY26 PAT, 71.9% of derived CFO, 4.2x the H1 455. FY26 CFO less all investing (0.89) Cr. 18-month undescribed outflows 2,375 lakh vs capex 1,476. FY26 FCF 17.75 Cr on a treasury reading (interest received 48 to 76 lakh), (1.45) Cr otherwise. 31-03-2025 balances ND"
+    source_line: "L244, L245, L268, L269, L271, L272, L296, L298, L321, L330, L336, L341"
+    type: MISSING
+  - claim: "Headline growth real at the operating level; about 79% of PAT change recurring (rev L201, L258)"
+    counter: "Incremental Op EBITDA margin 3.40% QoQ (48/1,410) and 7.22% YoY (208/2,879); already carried in substance (Step 3 +3.81% on +16.15%, Reading 3); no graft"
+    source_line: "L75, L76, L84, L85, L87, L95"
+    type: STYLE
 findings_by_type:
   factual:
-    - "A5-F2: Step 5 RL263 says FY26 WC rows ND (rows blank); FY26 column carries (1,829) L194, (422) L196, (64) L197 (R196, R198, R200), gross (23.15) Cr. Loop A4."
+    - "A5-F3: 'inventory plus receivables +22.51 Cr on either label reading' (rev L301, L302 and 9 dependent cells) fails on A1's labels: L194 and L196 are both receivables there and inventories L192 has no value in the text layer, so the FY26 inventory movement is ND. Only the layout reading gives inventory 18.29 + current receivables 4.22. Each reading shows one elevated day-count base, not two. 22.51 Cr and 70.6% stand as the sum of the two trade cells. Loop A4"
   missing:
-    - "A5-M5: surviving bear counter vs WC-discipline claim; FY26 inventory plus receivable build about 22.51 Cr (70.6% of FY26 PAT) not stated; graft into Step 5, F-11 read, Q4, brief parts 3-4, flag 7. Loop A4."
-    - "A5-M6: surviving bear counter vs net-cash claim; current investments 12.46 Cr counted as cash with OCI-linked marks; net debt 10.71-12.39 Cr on cash-only reading; graft into Step 5 net-debt rows, RL300, Step 6A, brief part 1. Loop A4."
+    - "A5-M7: FY26 undescribed investing outflow (1,920) lakh at L271 (R214) not in the review; FY26 FCF 17.75 Cr carries no qualifier, while the H1 455 gets two readings. Graft: FY26 FCF qualifier, two readings, Q17, M12 (fetch FY26 audited annual results), brief part 1 and 5 lines, verdict flag 7. Loop A4"
   contradiction: []
   style:
-    - "S-11: A2 count-test labels X004/X013 vs section 10A X002/X008"
-    - "S-12: A2 section 2 '13 line items' = 10 zero-standing + 3 blank-in-source rows"
-    - "S-13: six immaterial contact/reference tokens unenumerated (L5, L6, L10, L416, L417/L419, L426)"
-    - "S-14: blank template rows not enumerated; FY26 financing parts dropped by text layer, so blank L282/L286 is not evidence of nil"
-    - "S-15: RL287 blank-L200 argument weak; CF cast (hidden +167 vs about +60 identifiable) supports the allocation"
-    - "S-16: RL264 six-month WC change vs YoY growth; half-on-half net revenue +18.43%"
-    - "S-17: Q8 bull answer conflicts with Ind AS dividend recognition on approval"
-    - "S-18: traded purchases 3.1% of Q2 FY27 material cost vs 12.1% Q1 FY27; margin fall not traded-goods mix"
+    - "S-19: 0C cites blank L276/L278 without period; H1 FY27 nil by financing cast, FY26 parts not in text layer; paid-up 1,059 carries it"
+    - "S-20 (A1/A2): blank CF/EPS template rows outside R390 scope (L141-L143, L226-L230, L233-L267, L274-L289, L293-L295) lack a covering qualifier row; no value; A4 reviews the four it cites"
+    - "S-21: hidden-flow cast treats OCFL -94 as operating while F-01 puts debt there; net of 147 repayment residual about -40 vs +360; allocation holds"
+    - "S-22: cast-derived other NCFA 232 (L334 - L330) is +100 in H1; Reading B max 274, still below 455"
+    - "S-23 (A1): L98 '0' sits at the Q2 FY26 column, not Q2 FY27; nil either way"
+    - "S-24: typo '(422.00 at L196' in Step 5 column note"
+    - "S-25: add incremental Op EBITDA margin 3.40% QoQ, 7.22% YoY to Step 3"
+    - "S-26 (A1/A2): auditor para 1 (L451-L459) folded into R396; count unchanged"
+    - "S-27: implied cost of D/E-implied debt 4.6% to 5.0% fits buyer's credit; supports Q3 bull answer"
 loop_back_to: "A4"
-gap: "A5-F2 (FACTUAL): restate Step 5 FY26 WC cell with filed rows (1,829) L194, (422) L196, (64) L197. A5-M5 (MISSING): graft FY26 inventory/receivable build counter (about 22.51 Cr; +80% receivables on A1 labels or +57% inventories on A4-04) into Step 5, F-11 read, Q4, brief parts 3-4, flag 7. A5-M6 (MISSING): graft current-investments qualifier (net debt 10.71-12.39 Cr on cash-only reading) into Step 5 net-debt rows, RL300, Step 6A, brief part 1."
+gap: "A5-M7 MISSING: FY26 'Other inflows (outflows)' investing outflow (1,920) lakh at L271 (R214) is absent; graft the FY26 FCF qualifier (17.75 Cr treasury reading vs (1.45) Cr otherwise; CFO less all investing (0.89) Cr), two readings, Q17, M12 and brief/verdict lines per audit graft text. A5-F3 FACTUAL: restate the FY26 base effect as 22.51 Cr of trade cells L194+L196 (receivables on A1's labels with inventory ND; inventory plus current receivables on the layout reading), one elevated base per reading, in 11 places"
 style_notes:
-  - "S-11 A2 X-ID labels in count test"
-  - "S-12 A2 zero-standing line-item sub-count"
-  - "S-13 immaterial identifiers unenumerated"
-  - "S-14 blank template rows; FY26 financing parts dropped"
-  - "S-15 replace blank-L200 reasoning with CF cast"
-  - "S-16 half-on-half revenue +18.43% for the WC juxtaposition"
-  - "S-17 Q8 bull answer dividend timing"
-  - "S-18 traded-goods datum narrows Reading 2"
-analyst_note: "Arithmetic is clean: every derived cell in Steps 1 to 6.5 recomputes within rounding, and the balance sheet casts once the four F-10 cells take their cast values (142/130/232/628). Coverage is clean: 105 line items, 337 cells, 49 nil cells and 413 ledger rows match a fresh fulltext pass. Loop-0 fixes are in. The new gap is the FY26 cash-flow column. A4 calls the FY26 WC rows blank, but L194, L196 and L197 carry (1,829), (422) and (64). On either label reading, inventory plus receivables rose about 22.51 Cr in FY26, so the H1 day-count gain starts from an elevated base and the cash drag changed lines rather than vanished. Second, both net-cash readings treat 12.46 Cr of current investments as cash while the review's own Reading B ties the investment book to OCI marks. A CF cast (hidden adjustments +167 lakh vs about +60 identifiable) supports A4's +400 allocation; the blank-L200 argument does not, because the same text layer drops D&A. The grafts sharpen flag 7 and the net-debt range; on my read they do not move the PROCEED WITH FLAGS verdict."
+  - "S-19 0C period qualifier for L276/L278"
+  - "S-20 A1/A2 covering qualifier for blank CF template rows"
+  - "S-21 OCFL net of repayment in hidden-flow cast"
+  - "S-22 other NCFA +100 as a Reading B candidate"
+  - "S-23 R097 column tag likely Q2 FY26"
+  - "S-24 missing parenthesis rev L267"
+  - "S-25 incremental margins in Step 3"
+  - "S-26 auditor para 1 row"
+  - "S-27 implied debt cost 4.6% to 5.0%"
+analyst_note: "Loop 2 re-audit on a fresh grep of the fulltext. Gate 0 passes. Coverage passes: 105 line items, 337 cells, 49 zero-standing, 42 qualifiers, 413 IDs, no orphan. Every A4 derived metric recomputes within rounding. Two A4 items, both bounded grafts with exact text in the audit; no Step 1 to 4 value changes. (1) MISSING: FY26 investing 'Other inflows (outflows)' of (1,920) lakh (L271, R214) appears nowhere in the review. It is 60.2% of FY26 PAT and 4.2x the H1 455 that A4 reads two ways, yet FY26 FCF 17.75 Cr carries no qualifier. FY26 CFO less all investing was (0.89) Cr. The interest-received jump (48 lakh FY26 to 76 lakh in H1 alone) favours a treasury placement, so the verdict likely holds, but the review must say so. The FY26 audited annual results, already due under Reg 33 and not in this corpus, would settle this, the L194/L196 labels and the dividend now. (2) FACTUAL: 'inventory plus receivables 22.51 Cr on either reading' fails on A1's labels, where the FY26 inventory cell is missing from the text layer. Nine STYLE notes are logged."

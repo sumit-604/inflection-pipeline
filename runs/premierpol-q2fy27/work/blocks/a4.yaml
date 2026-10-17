@@ -1,5 +1,5 @@
 stage: A4-analyst
-loop: 1
+loop: 2
 company: "PREMIERPOL"
 quarter: "Q2 FY27"
 model: "claude-opus-5-5"
@@ -26,7 +26,7 @@ questions_for_management:
   - {q: "Of the 613 bps YoY gross margin drop (37.29% to 31.16% of GST-net revenue), how many bps came from PVC resin cost not yet passed through?", from_finding_id: "F-09"}
   - {q: "CWIP 50 to 397 lakh and other non-current assets 99 to 579 lakh in H1 FY27, deferred grants nil: what is the project's total approved cost and its commissioning month?", from_finding_id: "F-08"}
   - {q: "Borrowing lines nil, NC financial liabilities subtotal nil (L373), debt securities blank (L128), yet D/E 0.11, finance cost 24 lakh, H1 repayment 147 lakh: which BS line holds the debt and what is its amount at 30-09-2026?", from_finding_id: "F-01"}
-  - {q: "CF shows non-current receivables +422 lakh FY26 and -162 lakh H1 FY27 with nil on BS: which BS line holds it and is any part overdue over 180 days?", from_finding_id: "F-11"}
+  - {q: "CF shows non-current receivables +422 lakh FY26 and -162 lakh H1 FY27 with nil on BS: which BS line holds it and is any part overdue over 180 days? And is the FY26 1,829 lakh increase at L194 receivables or inventories, with what 31-03-2025 balance?", from_finding_id: "F-11"}
   - {q: "CF other-current-assets adjustment 1,084 lakh vs BS other current assets +590 and other current financial assets +400: which items make up the 1,084, with the two largest amounts?", from_finding_id: "A4-02, A4-06"}
   - {q: "GST fell to 11.85% of reported revenue from 12.66% YoY: what share of Q2 FY27 net revenue was exports?", from_finding_id: "F-09"}
   - {q: "What share of H1 FY27 net revenue of 18,876 lakh came from vinyl flooring?", from_finding_id: "F-14"}
@@ -34,13 +34,13 @@ questions_for_management:
   - {q: "EPS across six columns implies about 1,048 lakh weighted shares vs 1,059 lakh paid-up: how many treasury, partly paid or forfeited shares at 30-09-2026?", from_finding_id: "F-06"}
   - {q: "Did Q2 FY26 current tax of 299 lakh (ETR 27.18%) include earlier-years tax? Yes or no, and the amount.", from_finding_id: "F-04"}
   - {q: "Of H1 Other Operating Income of 171 lakh (CF interest received 76, dividends 2), what amount is interest, dividend or fair value gain?", from_finding_id: "A4-01"}
-  - {q: "OCI +384 lakh Q1 FY27 and (218) lakh Q2 FY27: what amount of each is fair value change on FVOCI equity investments?", from_finding_id: "F-05"}
+  - {q: "OCI +384 lakh Q1 FY27 and (218) lakh Q2 FY27: what amount of each is fair value change on FVOCI equity investments, and are the 1,246 lakh current investments cash-like?", from_finding_id: "F-05"}
   - {q: "Payables fell 2,074 to 1,887 lakh while H1 material cost reached 12,790 lakh (payable days about 41 to 27): did resin suppliers shorten credit terms? Yes or no.", from_finding_id: "A4-03"}
   - {q: "Confirm the 10-10-2026 limited review report has no Emphasis of Matter, Other Matter or modified conclusion, and state its UDIN (filed copy L515 unreadable).", from_finding_id: "F-03"}
   - {q: "Conditional on A1 image re-read: confirm the 30-09-2026 values for DTA (442), DTL (430), other NCFA (932) and total NCL (6,228), which do not cast.", from_finding_id: "F-10"}
   - {q: "Net revenue +39.63% YoY but gross profit +16.69% and conversion costs +15.48%: what were sales volumes (tonnes or square metres) in Q2 FY27 and Q2 FY26?", from_finding_id: "F-09"}
 monitorables:
-  - {item: "A1 image re-read of BS cells L333, L335, L376, L379 and CF labels L192-L196", implied_date: "before any model use", source_ref: "F-10, F-11, A4-04"}
+  - {item: "A1 image re-read of BS cells L333, L335, L376, L379 and CF labels L192-L196 (incl. FY26 1,829 and 422)", implied_date: "before any model use", source_ref: "F-10, F-11, A4-04"}
   - {item: "Clean copy of limited review report; confirm no EoM; legible UDIN verified on ICAI portal", implied_date: "by 2027-02-14", source_ref: "F-03, R316"}
   - {item: "Q3 FY27 gross margin on net revenue vs 33.49% bull / 31.16% bear; Q4 FY26 margin derivable from Q3 FY26 comparative; conversion-cost ratio vs 17.94%", implied_date: "by 2027-02-14", source_ref: "F-09, 8C"}
   - {item: "FY26 dividend and AGM status (BSE/NSE announcements)", implied_date: "by 2027-02-14; equity confirmed in 31-03-2027 BS", source_ref: "F-07"}
@@ -48,22 +48,22 @@ monitorables:
   - {item: "Debt location: borrowing lines vs D/E", implied_date: "by 2027-05-30", source_ref: "F-01"}
   - {item: "FY27 CFO/PAT vs 0.70x H1 and 0.84x FY26; other current assets and other current financial assets unwind; CF adjustment vs BS rise tie (494 lakh H1 gap)", implied_date: "by 2027-05-30", source_ref: "Step 5, A4-02, A4-06"}
   - {item: "FY27 year-end deferred tax and ETR", implied_date: "by 2027-05-30", source_ref: "F-04"}
-  - {item: "FY27 Annual Report: OCI composition, share basis, receivable ageing, investing outflow 455 lakh detail", implied_date: "by 2027-09-30", source_ref: "F-05, F-06, F-11"}
+  - {item: "FY27 Annual Report: OCI composition, nature of current investments, share basis, receivable ageing, investing outflow 455 lakh detail", implied_date: "by 2027-09-30", source_ref: "F-05, F-06, F-11"}
   - {item: "Q1 FY28 revenue run-rate and margin", implied_date: "by 2027-08-14", source_ref: "Step 3"}
   - {item: "IR email answers to the 16 questions; log answer status", implied_date: "send now; review at Q3 FY27", source_ref: "Step 8.5"}
 flags:
   - "PRE-THESIS READ: no Notion page, no spear, Decision Status ND; spear gate (/step1) required before any pipeline run"
   - "Gross margin on GST-net revenue 31.16% vs 37.29% YoY (-613 bps); prior derivable points Q1 FY26 37.24%, Q2 FY26 37.29%, H2 FY26 combined 37.16% (Q3/Q4 FY26 ND), so the fall began in Q4 FY26 or Q1 FY27; cause undisclosed"
-  - "Revenue +39.63% in value only; volume ND; gross profit +16.69%, conversion costs +15.48%; price-led reading open"
-  - "Debt location unresolved: borrowing lines and NC financial liabilities subtotal nil, debt securities blank, vs D/E 0.11, 147 lakh repayment, rising finance cost; net cash 19.36 Cr or about zero"
+  - "Revenue +39.63% in value only; volume ND; gross profit +16.69%, conversion costs +15.48%; price-led reading open; traded goods 3.11% of Q2 material cost, so not a traded-goods mix effect"
+  - "Debt location unresolved: borrowing lines and NC financial liabilities subtotal nil, debt securities blank, vs D/E 0.11, 147 lakh repayment, rising finance cost; net cash 19.36 Cr or about zero; both count 12.46 Cr OCI-marked current investments as cash, and on cash alone net debt is 10.71-12.39 Cr (0.06-0.07x equity); debt low on every reading"
   - "Four 30-09-2026 BS cells OCR-ambiguous (DTA 442, DTL 430, other NCFA 932, NCL 6228); excluded from all computation"
   - "Undisclosed capex build: CWIP 0.50 to 3.97 Cr, other NCA 0.99 to 5.79 Cr, H1 capex 65% of FY26; no grant booked"
   - "Auditor AMBER: EoM status unverifiable (garbled paras 3-4) and UDIN unreadable (L515); copy cannot authenticate the review report"
-  - "Cash conversion INDETERMINATE-WITH-DIRECTION: CFO/PAT 0.70x H1 vs 0.84x FY26; drag in undisclosed other current assets (+590) and other current financial assets (+400); CF adjustment 1,084 exceeds BS rise 590 by 494 lakh"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION: CFO/PAT 0.70x H1 vs 0.84x FY26; drag in undisclosed other current assets (+590) and other current financial assets (+400); CF adjustment 1,084 exceeds BS rise 590 by 494 lakh; H1 day-count gains start from a base after a FY26 build of about 22.51 Cr in inventory plus receivables (70.6% of FY26 PAT; CF L194 1,829, L196 422); drag moved from trade items (FY26) to other current assets (H1 FY27)"
   - "EPS share basis unreconciled (about 1,048 vs 1,059 lakh shares)"
   - "Revenue reported gross of GST; all margins here on GST-net revenue"
   - "Tracker rows not supplied; zero signals; Role 5.5 not run"
   - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar-relevant facts flagged"
 plain_language_brief_included: true
-analyst_note: "Loop 1 fixes A5-F1, C1, M3, M4 and carries the A2/A3 loop rows; no first-pass table value changed. The +400 other current financial assets now sits only in the operating drag: the CF line for current other financial assets (L200) is blank, so the 1,084 adjustment is its only home, and 590 + 400 leaves 94 unexplained. Investing Reading B shrinks to investments +174, close to H1 OCI +166, so it may be non-cash marks; Reading A (capital advances +480) fits the 455 better and the 2.86 Cr FCF floor gains support. Gross margin before Q1 FY27 is known only for Q1 FY26, Q2 FY26 and H2 FY26 combined, so a Q4 FY26 start of the fall cannot be excluded; the Q3 FY27 filing's Q3 FY26 column will date it. The price-led third reading rests on conversion costs tracking volume, an untested assumption. Other Operating Income still treated wholly as Other Income (treasury 46% of it). A2 count-test labels X004/X013 for the blank rows conflict with section 10A (X002/X008); 10A used."
+analyst_note: "Loop 2 (final) fixes A5-F2, M5, M6 and free style notes S-14 to S-18. The Step 5 FY26 working-capital cell was wrong: L194, L196 and L197 carry (1,829), (422) and (64), gross (23.15) Cr; only the FY26 total, payables and other WC rows are missing from the text layer. On either label reading, inventory plus receivables rose about 22.51 Cr in FY26 (70.6% of PAT), so the H1 day-count gain may be partly an unwind, and the drag moved lines rather than vanished. Cash stays INDETERMINATE-WITH-DIRECTION. Net cash now carries three readings: 19.36 Cr (BS), about zero (D/E-implied debt), and net debt 10.71 to 12.39 Cr on cash alone, because the 12.46 Cr current investments move with OCI. Debt is low on all three. The +400 allocation now rests on the CF cast (hidden +167 vs about +60 identifiable), not on the blank L200. Traded goods fell to 3.11% of Q2 material cost, so Reading 2 narrows to manufactured mix, exports or price. Verdict unchanged. S-11 to S-13 are A1/A2 items."
 review_path: "runs/premierpol-q2fy27/work/review_premierpol_q2fy27.md"

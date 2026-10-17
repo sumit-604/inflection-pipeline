@@ -2,7 +2,7 @@
 
 DOCUMENT REVIEW SUMMARY
 ticker | date | doctype | pages | a1_extracted_text_tok | total_run_tok | loop_iterations
-PREMIERPOL | 2026-10-17 | results | 8 | ~11,600 (fulltext 46,356 bytes / 4; A1 reported no token count) | 1,188,067 | 1
+PREMIERPOL | 2026-10-17 | results | 8 | ~11,600 (fulltext 46,356 bytes / 4; A1 reported no token count) | 1,565,666 | 2
 
 ## Base run
 | agent | model | total_tok | wall | run# |
@@ -24,8 +24,16 @@ PREMIERPOL | 2026-10-17 | results | 8 | ~11,600 (fulltext 46,356 bytes / 4; A1 r
 | A5 adversary, re-audit | claude-opus-5-5 | 210,177 | 904s | loop 1 |
 | loop subtotal | | 488,994 | 1,652s | |
 
-total_run_tok (base + loop, subagents): 1,188,067
-loop_iterations: 1 (cap reached; A5 still INCOMPLETE, operator asked before a second)
+## Correction loop 2 (own rows; operator-approved 2026-10-17)
+| agent | model | total_tok | wall | run# |
+|---|---|---|---|---|
+| A4 analyst, grafts A5-F2/M5/M6 | claude-opus-5-5 | 148,651 | 487s | loop 2 |
+| A5 adversary, re-audit | claude-opus-5-5 | 228,948 | 1,053s | loop 2 |
+| loop 2 subtotal | | 377,599 | 1,540s | |
+
+loop total (1 + 2): 866,593
+total_run_tok (base + both loops, subagents): 1,565,666
+loop_iterations: 2 (operator ruling: no third; final A5 INCOMPLETE, open items flagged in review)
 Not counted: the orchestrator session's own tokens.
 
 Notes

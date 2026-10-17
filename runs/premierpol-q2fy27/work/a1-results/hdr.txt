@@ -1,0 +1,17 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: PremierPolyfilm_Q2FY27_Results.pdf
+doctype: results
+page_count_pdfinfo: 8
+formfeed_count: 8
+line_count: 522 (numbered body lines below; anchors in the structured file cite these body line numbers)
+unit_convention: Lakhs (stated on pages 2, 4, 6: "Figures: Rs. In Lakhs"); per-share data in Rs; ratios in x
+conversion_factor_to_cr: Lakhs -> x0.01
+text_layer_present: yes   # pdffonts lists only GlyphLessFont (OCR text layer over scanned pages)
+extraction_mode: text-only
+render_candidates: none (no zero-character pages; all 8 pages yield text)
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: Q2 FY27 (quarter and half year ended 30-09-2026)
+extraction_date: 2026-10-17
+ocr_quality_note: text layer is OCR over scans. Garbled/missing items logged: p2 line 76 "96,00" (Q2FY26 other op income; reads 96); p2 line 84 H1 FY26 Finance Costs shows "At" (unreadable); p2 line 71 "32-03-2026" header (reads 31-03-2026 elsewhere); p2 line 87 "1053" (reads 1,053); p3 rows 19-20 attribution block has no values; p3 line 140 "134"/"3,04" (reads 1.34 / 3.04); p4 many cash-flow rows have labels but no values (inventories, payables, D&A, etc.); p4 line 224-231 values without period columns resolved; p7 line 379 "6228" (reads 628 or 6,228 unclear; FY26 col 603); p8 auditor letter text interleaved/garbled, sections of paragraph 3-4 missing. Layout below is verbatim from pdftotext -layout; the cat -n style number prefix is the line anchor.
+=== END HEADER ===

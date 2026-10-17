@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "PREMIERPOL"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 8
+formfeed_count: 8
+line_count: 539
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "x0.01"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/premierpol-q2fy27/extracted/premierpol-results-q2fy27-fulltext.md"
+structured_path: "runs/premierpol-q2fy27/extracted/premierpol-results-q2fy27-structured.md"
+structured_counts:
+  number: 319
+  entity: 23
+  forward: 0
+  date: 19
+  qualifier: 40
+structured_id_range: "R001-R401"
+gate_a1: pass
+gap_note: ""

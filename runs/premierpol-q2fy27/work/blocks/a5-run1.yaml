@@ -1,0 +1,45 @@
+stage: A5-adversary
+company: "PREMIERPOL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: ["R312", "R314", "R316"]
+  missing_from_ledger: ["L86 Other Expenses header (2 cells)", "L94 Exceptional Items (blank row)", "L96 Tax Expenses header (2 cells incl. unexplained token '2')", "L98 Deferred Tax (third token '-')", "L104 Tax of discontinued ops (5 cells)", "L105 Net profit discontinued ops (6 cells)", "L106 Share of associates/JVs (5 cells)", "L128 Details of debt securities (blank row)", "L373 Total NC financial liabilities (2 cells)", "L377 Deferred govt grants NC (1 cell)", "L390 Deferred govt grants current (2 cells)", "L393 Liabilities held for sale (1 cell)"]
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Revenue growth is not in doubt; operating leverage absorbed 376 bps (rev L360, L133, L152, L151, L485)", counter: "Volume and price split is ND. Gross profit +16.69% (2,709 to 3,161) and conversion costs +15.48% (1,576 to 1,820) against net revenue +39.63%. If conversion costs track volume, revenue is partly price-led and the opex gain is denominator inflation that reverses with resin. Name it as a third reading with its separating observation.", source_line: "L75, L80-L83, L87, L88", type: MISSING}
+  - {claim: "Gross margin held near 37.2% for four quarters, then fell (rev L464, L174, L334, L453, L561)", counter: "Q3 and Q4 FY26 are not filed. Only Q1 FY26 37.24%, Q2 FY26 37.29% and H2 FY26 combined 37.16% derive. The fall may have begun in Q4 FY26, which weighs against a short resin-lag reading.", source_line: "L75, L80-L82, L87; rev L165-L166", type: FACTUAL}
+  - {claim: "Trade WC is not the drag; CCC improved 23.64 days (rev L242, L224, L488)", counter: "On H2 FY26 flows the 31-03-2026 CCC was 95.08 days, so the like-for-like gain is 16.40 days. A4's own Q5 bull answer (supplier advances, GST credit; rev L377) is trade WC in substance: trade WC plus other current assets rose 78.14 to 84.31 Cr (+7.90%).", source_line: "L75, L80-L82, L339, L342, L349, L383", type: MISSING}
+findings_by_type:
+  factual:
+    - "A5-F1 (A4): 'four steady quarters' of gross margin near 37.2% is not filed; only Q1 FY26 37.24%, Q2 FY26 37.29%, H2 FY26 combined 37.16% derive (L75, L80-L82, L87). Restate at rev L174, L334, L453, L464, L561."
+  missing:
+    - "A5-M1 (A2): 12 fulltext lines absent from structured file and ledger (L86, L94, L96, L98 third token, L104, L105, L106, L128, L373, L377, L390, L393; 27 cells, 2 blank rows); missing_from_structured wrongly empty."
+    - "A5-M2 (A3): orphan rows R312, R314 (CIN_OCR_MISMATCH) and R316 (UDIN_UNRESOLVED) have no A4 disposition; unreadable UDIN (L515) belongs with F-03 AMBER, Q14, M2."
+    - "A5-M3 (A4): surviving counter AR-1, price-led third reading (gross profit +16.69%, conversion costs +15.48% vs net revenue +39.63%) not named."
+    - "A5-M4 (A4): surviving counter AR-3, like-for-like CCC gain 16.40 days not 23.64; supplier-advance substance lifts trade WC plus OCA 78.14 to 84.31 Cr."
+  contradiction:
+    - "A5-C1 (A4): other current financial assets +400 (L346) used in both the CFO drag (rev L242) and Reading B of the 455 investing outflow (rev L236); CF OCA adjustment 1,084 (L197) vs BS OCA rise 590 (L349), 494 gap unstated; investments +174 vs H1 OCI +166 (L109) suggests Reading B is non-cash marks."
+  style:
+    - "S-1 H1 margin change -96 bps should be -95 bps (rev L147)."
+    - "S-2 opex ratio +376 bps should be +375 bps (rev L151, L485)."
+    - "S-3 ETR share 14.4% on rounded 26 lakh; 14.6% unrounded (rev L197, L202)."
+    - "S-4 implied shares about 1,048 lakh on cross-column EPS bands, not 1,044 (rev L43, L338, L381)."
+    - "S-5 equity anchor L147 should be L364 (rev L231)."
+    - "S-6 Note 2 row 'about 12% of revenue' should read relative 12% (rev L49)."
+    - "S-7 forward-map M4 entry undated (rev L502)."
+    - "S-8 A2 zero-standing header '13 line items' lists 10 plus 3 blank rows."
+    - "S-9 R233/R234 subtotal 6,407 undisposed; casts as PPE + CWIP + intangibles."
+    - "S-10 reserves 10,728 basis (previous year-end reserves) unstated at rev L331."
+loop_back_to: "A2"
+gap: "A2: add 12 fulltext lines missing from structured file and ledger (L86, L94, L96, L98 third token, L104, L105, L106, L128, L373, L377, L390, L393; 27 cells), fix missing_from_structured, recount line_items 105, zero_standing 49, qualifiers 42. A3: dispose orphan rows R312/R314 (CIN_OCR_MISMATCH) and R316 (UDIN_UNRESOLVED, tie to F-03). A4: (1) FACTUAL restate 'four steady quarters' at rev L174, L334, L453, L464, L561; (2) CONTRADICTION allocate other current financial assets +400 once (rev L236 vs L242), state the 1,084 vs 590 gap (L197, L349) and the investments +174 vs OCI +166 reading; (3) MISSING graft AR-1 (price-led third reading, gross profit +16.69%) and AR-3 (like-for-like CCC gain 16.40 days; supplier-advance substance)."
+style_notes: ["S-1 -96 to -95 bps (rev L147)", "S-2 +376 to +375 bps (rev L151, L485)", "S-3 ETR share 14.6% unrounded (rev L197, L202)", "S-4 implied shares about 1,048 lakh (rev L43, L338, L381)", "S-5 equity anchor L364 not L147 (rev L231)", "S-6 GST understatement is relative 12% (rev L49)", "S-7 date the M4 forward-map entry (rev L502)", "S-8 A2 zero-standing line-item label", "S-9 dispose R233/R234 fixed-asset subtotal", "S-10 state reserves 10,728 basis (rev L331)"]
+analyst_note: "Verdict INCOMPLETE on six loop findings. The A2 and A3 items are mechanical: nil template rows, two blank rows, and three identifier rows whose A2 flags A4 never disposed. They change no A4 number, so the re-run can stay narrow. The A4 items carry substance. One: 'four steady quarters' is not filed. Q3 and Q4 FY26 exist only as an H2 average of 37.16%, so the margin fall may have begun in Q4 FY26, which weakens the resin-lag reading. Two: the cash-flow other-current-assets adjustment (1,084) exceeds the balance-sheet rise (590) by 494, and A4 uses the +400 other current financial assets twice. Investments rose 174 against H1 OCI of +166, so Reading B may be non-cash marks; the conservative FCF of 2.86 Cr gains support. Three: gross profit rose 16.69% and conversion costs 15.48% against revenue +39.63%, so volume against price is open. P&L and cash-flow casts tie; the balance sheet ties with the four F-10 cells at cast values 142, 130, 232, 628. No arithmetic mismatch above rounding. No acquisition in the filing."

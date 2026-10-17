@@ -1,0 +1,50 @@
+stage: A3-forensics
+company: "PREMIERPOL"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+forensics_path: "runs/premierpol-q2fy27/work/forensics_results_premierpol_q2fy27.md"
+ledger_reconciled_pct: 100        # 413 of 413 (R001-R401 + X001-X012)
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: PASS
+  F5: FINDING
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "F-01", check: "F1", line: "370, 373, 382, 128, 147, 283, 84", classification: "AMBIGUOUS", implication: "Borrowings and NC financial liabilities subtotal nil both dates, debt securities blank, yet D/E 0.11 (derived debt ~1,845), H1 repayment 147, finance cost 24/qtr; any debt is unlisted and current, likely other current financial liabilities 2,363"}
+  - {id: "F-03", check: "F5", line: "490, 477-485, 513-515", classification: "AMBIGUOUS", implication: "Review conclusion fragment unmodified; paras 3-4 garbled so EoM/Other Matter absence unconfirmed; UDIN unreadable (R316, L515), copy cannot be authenticated; no prior text to diff; baseline quarter"}
+  - {id: "F-04", check: "F8", line: "96, 97, 98, 99", classification: "AMBIGUOUS", implication: "ETR 25.17% vs 27.18% YoY adds ~26 to PAT (~3pp of 22.5% growth), base effect; interim deferred tax nil, year-end true-up risk"}
+  - {id: "F-05", check: "F9", line: "109", classification: "AMBIGUOUS", implication: "Q1 OCI +384 and Q2 (218) each exceed FY26 full-year (97); likely FVOCI investment marks; verify composition at AR"}
+  - {id: "F-06", check: "F10", line: "126, 139, 145", classification: "AMBIGUOUS", implication: "EPS implies ~1,044-1,049 lakh weighted shares vs 1,059 lakh paid-up (FV Rs 1); treasury/partly-paid/forfeited shares; basic = diluted"}
+  - {id: "F-07", check: "F11", line: "361, 110, 130", classification: "AMBIGUOUS", implication: "Other Equity +2,055 = H1 TCI exactly; no FY26 dividend or appropriation in H1 though FY26 roll had 158 non-TCI reduction"}
+  - {id: "F-08", check: "F12", line: "321, 336, 245, 271, 377, 390", classification: "FORWARD-SIGNAL", implication: "CWIP 50 to 397, other NCA 99 to 579, H1 capex 581 = 65% of FY26; no deferred grant booked; undisclosed build, project/cost/commissioning date unknown"}
+  - {id: "F-09", check: "F12", line: "155, 62, 87, 80", classification: "AMBIGUOUS", implication: "Single segment vs four product lines; GST/gross revenue 11.85% vs 12.72% QoQ, material cost 68.8% vs 62.7% YoY of net revenue; net revenue +39.6% YoY with PBT margin 12.8% vs 14.9%"}
+  - {id: "F-10", check: "F14", line: "335, 376, 333, 379", classification: "AMBIGUOUS", implication: "DTA 442, DTL 430, other NCFA 932, NCL 6228 do not cast; totals tie with 142/130/232/628; A1 re-read; net DT 12 unchanged"}
+  - {id: "F-11", check: "F14", line: "196, 331", classification: "AMBIGUOUS", implication: "CF shows non-current receivables (422) FY26 and +162 H1 while BS non-current receivables nil both dates; possible stretched receivable"}
+  - {id: "F-12", check: "F14", line: "153, 75, 87", classification: "NEUTRAL-FACT", implication: "Revenue reported gross of GST despite Ind AS note; use net revenue Q2FY27 10,143, Q1FY27 8,733, Q2FY26 7,264, FY26 29,658"}
+  - {id: "F-13", check: "F14", line: "37, 113, 95, 131, 521, 94, 128", classification: "NEUTRAL-FACT", implication: "Blank results link, unlabelled half-year header, stray markers, Exceptional Items and debt securities lines fully blank (not dashed); note and auditor scope agree (limited review); CIN difference is OCR, not counted"}
+  - {id: "F-14", check: "F17", line: "151-158", classification: "AMBIGUOUS", implication: "Silent on capex project, debt location, product/export mix, FY26 dividend, share basis; 1 quarter each (first observation); Notion checklist not available"}
+flagged_row_dispositions:
+  - {rows: "R312, R314", flag: "CIN_OCR_MISMATCH", line: "5 vs 67", disposition: "reviewed, no finding: chars 2-21 identical, L read as 1 by OCR"}
+  - {rows: "R316", flag: "UDIN_UNRESOLVED", line: "515", disposition: "carried into F-03 (F5): UDIN unreadable, review report not authenticable from this copy"}
+forward_signals: ["F-08"]
+ambiguous: ["F-01", "F-03", "F-04", "F-05", "F-06", "F-07", "F-09", "F-10", "F-11", "F-14"]
+commitments: []
+gate_a3: pass
+blank_checks: []
+analyst_note: "The quiet story is growth bought with margin plus an undisclosed build. GST-net revenue grew 39.6% YoY. Material intensity rose 6pp and PBT margin fell about 2pp, while the GST ratio dropped, so mix or exports likely shifted. CWIP rose 8x and other non-current assets 5x with no note and no grant booked, so a capacity project is under way. Its size and timing are the first concall question. Three items need resolution before any model uses this balance sheet. First, the debt location: D/E 0.11 against nil borrowing lines, a nil non-current financial liabilities subtotal and a blank debt securities line, so any debt is current and unlisted. Second, four BS cells that fail casting (likely OCR; A1 re-read). Third, CF non-current receivables with no BS home. The review report copy cannot be authenticated: UDIN unreadable, paragraphs 3-4 garbled. EPS runs about 1% above PAT/paid-up, so ask the share basis. PAT growth is flattered about 3pp by the ETR base effect. Revenue is gross of GST; use net revenue downstream."

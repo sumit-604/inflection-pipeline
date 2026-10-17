@@ -1,0 +1,29 @@
+stage: A2-enumerator
+loop: 1
+company: "PREMIERPOL"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/premierpol-q2fy27/work/ledger_results_premierpol_q2fy27.md"
+counts:
+  notes: 5
+  line_items: 105
+  zero_standing: 49
+  qualifiers: 42
+  agenda_items: 1
+  auditor_paras: 5
+  entities: 23
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [MISSING_FROM_STRUCTURED, BLANK_IN_SOURCE, ZERO_STANDING, FOOTNOTE_UNRESOLVED, OCR_UNREADABLE, PERIOD_COLUMN_UNRESOLVED, CIN_OCR_MISMATCH, UDIN_UNRESOLVED, OCR_AMBIGUOUS]
+ids_in_structured: 401
+ids_referenced: 401
+orphan_ids: []
+missing_from_structured: [L86, L94, L96, L98, L104, L105, L106, L128, L373, L377, L390, L393]  # ledger rows X001-X012; 27 cells, 2 blank rows
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Loop 1 (A5-M1): 12 fulltext lines added as X001-X012; line_items 96 to 105, zero_standing 23 to 49, qualifiers 40 to 42, cells 310 to 337. L373 nil NC financial liabilities and L128 blank debt securities bear on the nil-borrowings vs D/E 0.11 question below. Original note: Single-item board agenda, 60-minute meeting, standalone only (Note 5: no subsidiary), so no ENTITY_CHANGE test. 23 nil cells across 13 line items: borrowings nil on BS while Debt/Equity ratio 0.11 is non-zero (R173-R178 vs R277,R291), worth A3 attention. Reserve excl. reval R141/R142/R144 repeats 13,661 across three period columns while FY26 shows 10,728, likely column misread. Total non-current liabilities R289 reads 6228 vs 603 prior (OCR ambiguous). Cash flow period columns unresolved for R201-R204, R217, R218. Auditor paras 3-4 garbled, so absence of EoM or Going Concern language cannot be confirmed. Four footnote markers lack footnotes; results link missing."

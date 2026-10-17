@@ -1,0 +1,24 @@
+# Run log: PREMIERPOL Q2 FY27 (/run-quarterly, 2026-10-17)
+- Checkout guard PASSED 2026-10-17 for the batch (worktree run/quarterly-q2fy27-2026-10-17 from origin/main e24a5bdb); not rerun.
+- Protocols present: Results v1_4, Concall v1_1, Document_Review v1_1.
+- Toolchain: poppler 25.07, tesseract 5.4 (winget); PATH prefixed per call.
+- Ticker: no companies/ file for Premier Polyfilm; ticker PREMIERPOL (NSE code on filing cover p1). No spear on record.
+- Doc class: PremierPolyfilm_Q2FY27_Results.pdf -> results (Reg 33 cover letter, standalone unaudited results, limited review report). 8 pages. pdffonts shows GlyphLessFont only (OCR text layer on a scan).
+- Standalone only: cover letter states the Board approved standalone results; no consolidated statement filed.
+- No concall, no presentation in --docs -> FULL QUARTER run, Role 4 only.
+- Notion live search 2026-10-17: no page for Premier Polyfilm / PREMIERPOL. PRE-THESIS READ; no spear on record. work/notion-thesis.md written.
+- A1 GATE PASS: 8/8 pages, text-only (OCR GlyphLessFont layer), Lakhs x0.01, R001-R401. Tokens 63,240, wall 287s. OCR defects flagged on rows: p2 H1 FY27 finance cost 'At' unreadable; p4 cash-flow adjustment values missing and several totals PERIOD_COLUMN_UNRESOLVED; p7 non-current liabilities '6228' ambiguous; p8 auditor report interleaved. Text-layer gate forbids re-OCR of text-layer pages; carried as flags.
+- A2 GATE PASS: count test matched all categories; 401/401 IDs referenced; orphan_ids empty. Tokens 63,929, wall 199s.
+- A2 COST CHECK: A2 63,929 > A1 63,240 (+689, 1.1%). Halted and diagnosed before A3 (resumed A2 with a three-line question; diagnostic call 65,856 tok, wall 15s, logged separately). Finding: no inputs/ or source PDF access, fulltext never opened. Cause: first cat of the structured file truncated, lines 20-420 re-read with Read. No source re-ingestion; run token figure not compromised. A1 was cheap because extraction is mechanical (pdftotext, 8 pages). Proceeded to A3.
+- A3 GATE PASS: F1-F17 all statused, every FINDING line-cited. 13 findings (1 FORWARD-SIGNAL, 10 AMBIGUOUS). Tokens 97,979, wall 325s.
+- A3 asked for an A1 image re-read of four 30-Sep BS cells (DTA 442, DTL 430, other NC fin assets 932, NC liabilities 6228; totals tie only with 142/130/232/628). Not actioned: the orchestrator has no loop at GATE A3 and the A1 text-layer gate bars rasterising text-layer pages. Carried to A4 as an OCR flag; any loop must come from A5.
+- A3 note: F17 run as FINDING against a generic results-filing disclosure set (no Notion checklist).
+- A4 done: PROCEED WITH FLAGS, PRE-THESIS READ, 15 QfM rows. Tokens 195,334, wall 790s.
+- A5 run 1: INCOMPLETE. Loop findings: A2 MISSING (12 fulltext lines L86,L94,L96,L98,L104-L106,L128,L373,L377,L390,L393 absent from structured + ledger); A3 MISSING (R312/R314 CIN mismatch, R316 UDIN unresolved); A4 FACTUAL (gross margin "steady four quarters"), CONTRADICTION (other current fin assets +400 used twice; 494 gap unstated), MISSING (price-led revenue counter), MISSING (WC counter). 10 STYLE notes logged. Tokens 212,735, wall 1013s.
+- LOOP 1 started (cap: one iteration): A2 fix -> A3 fix -> A4 re-merge -> A5 re-audit.
+- LOOP 1 A2 fix: X001-X012 added (ledger 10A), counts 105 line items / 337 cells / 49 zero / 42 qualifiers, orphans empty, gate pass. Tokens 40,102, wall 59s.
+- LOOP 1 A3 fix: R312/R314 CIN = OCR, no finding; R316 UDIN into F-03; X rows into F1/F-01/F-08/F-13; 413/413 reconciled; gate pass. Tokens 77,074, wall 206s.
+- LOOP 1 A4 re-merge: five A5 fixes applied, 16 QfM rows, verdict PROCEED WITH FLAGS unchanged. Tokens 161,641, wall 483s. A4 notes an A2 ledger label slip (count-test line names X004/X013 for L94/L128; section 10A uses X002/X008); counts unaffected; left for A5 to judge.
+- A5 run-1 audit preserved as work/audit_premierpol_q2fy27_run1.md and blocks/a5-run1.yaml. A5 re-audit writes the orchestrator audit path.
+- A5 re-audit (loop 1): INCOMPLETE. Coverage PASS, arithmetic PASS (0 mismatches), brief gate PASS. Loop findings, A4 only: A5-F2 FACTUAL (Step 5 says FY26 WC rows blank; L194/L196/L197 carry (1,829)/(422)/(64)); A5-M5 MISSING (FY26 inventory+receivables build ~22.51 Cr = 70.6% of FY26 PAT); A5-M6 MISSING (net cash counts 12.46 Cr current investments that move with OCI; cash-only vs D/E-implied debt = net debt 10.71-12.39 Cr). STYLE S-11..S-18 logged. Tokens 210,177, wall 904s.
+- LOOP CAP REACHED: one iteration done, A5 still INCOMPLETE. STOP: operator asked before a second iteration. Notion payload saved as DRAFT pending that ruling (orchestrator: save only after A5 COMPLETE).

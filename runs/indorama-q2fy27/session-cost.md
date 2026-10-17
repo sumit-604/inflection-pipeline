@@ -2,7 +2,7 @@
 
 DOCUMENT REVIEW summary row:
 ticker | date | doctype | pages | a1_extracted_text_tok | total_run_tok | loop_iterations
-INDORAMA | 2026-10-17 | results + pressrelease (presentation) + capex (results) | 12 + 3 + 1 = 16 | 14,052 (56,206 fulltext chars / 4; results 11,066, pressrelease 2,220, capex 766) | 1,811,269 | 1
+INDORAMA | 2026-10-17 | results + pressrelease (presentation) + capex (results) | 12 + 3 + 1 = 16 | 14,052 (56,206 fulltext chars / 4; results 11,066, pressrelease 2,220, capex 766) | 2,539,688 | 2
 
 ## Per-agent ledger (base run)
 | agent | doc | model | total_tok | wall | run# |
@@ -28,7 +28,15 @@ Base run subtotal: 1,189,093
 | A5 adversary (loop 1 re-audit, resumed) | claude-opus-5-5 | 316,053 | 361 s | loop 1 |
 Loop subtotal: 622,176
 
-total_run_tok: 1,811,269 (base 1,189,093 + loop 622,176). Orchestrator session tokens not included.
+## Correction loop rows (iteration 2, operator-approved 2026-10-17, final)
+| agent | model | total_tok | wall | run# |
+|---|---|---|---|---|
+| A4 analyst (loop 2 fixes, resumed; completed edits) | claude-opus-5-5 | 366,433 | 392 s | loop 2 |
+| A4 analyst (loop 2 fresh re-run after restart; overlapped, wrote nothing) | claude-opus-5-5 | 180,385 | 453 s | loop 2 (mechanical) |
+| A5 adversary (loop 2 re-audit, fresh) | claude-opus-5-5 | 181,601 | 542 s | loop 2 |
+Loop 2 subtotal: 728,419
+
+total_run_tok: 2,539,688 (base 1,189,093 + loop 1 622,176 + loop 2 728,419). Orchestrator session tokens not included.
 Note: resumed-agent rows are the harness subagent_tokens figure for that invocation, which re-reads the agent's earlier context.
 Cost check: every A2 below its A1. No A2-A5 agent read inputs/ (each reported so).
-Status at close: A5 INCOMPLETE after loop 1 (F5, M6 open); second iteration awaits operator ruling.
+Status at close: A5 COMPLETE after loop 2 (operator-approved). 7 STYLE notes open (S5-S11), logged only.

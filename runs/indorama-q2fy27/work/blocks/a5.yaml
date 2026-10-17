@@ -3,8 +3,8 @@ company: "INDORAMA"
 quarter: "Q2 FY27"
 model: "claude-opus-5-5"
 status: complete
-loop_iteration: 1
-verdict: INCOMPLETE
+loop_iteration: 2
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -15,24 +15,27 @@ coverage:
   orphan_rows: []
   missing_from_ledger: []
 arithmetic_mismatches: []
-surviving_bear_counters:
-  - {claim: "The deleveraging is mostly earned, not borrowed from working capital; 58.3% of the net-debt fall from operating cash (review L417, L466, L538, L705)", counter: "The 152.45 is pre-tax cash: nil current tax and a 2.71 refund in H1; at the 25.17% sensitivity rate H1 tax is about 34.63 and the split becomes about 52% operating cash / 48% WC (117.82/226.84); capex 9.83 was 40.4% of D&A 24.31", source_line: "RF L607, L783, L767, L785, L768", type: MISSING}
+surviving_bear_counters: []
 findings_by_type:
-  factual:
-    - "F5: sector brief (review L712) says the FY26 Q1-to-Q2 gross-margin fall came 'without a crude shock' and tags it FILED, derived; the only crude text in the filings is the Q2 FY27 CMD quote (PR L130-131); 3C L315 correctly says 'no crude attribution'"
-  missing:
-    - "M6: surviving bear counter to the loop-1 claim 'deleveraging mostly earned' (review L417): the earned 152.45 is pre-tax cash (RF L607, L783); about 52/48 at 25.17%; capex 40.4% of D&A (RF L785, L768); graft beside L417 and qualify L466 and brief L705"
+  factual: []
+  missing: []
   contradiction: []
   style:
     - "S5 (carried): A1 results structured file has no row for auditor para 2 (RF L106-111, L467-473); boilerplate"
-    - "S6: loop-response table review L746 cites RF L532 for 31-Mar equity 519.17; correct line is RF L700"
-    - "S7: 5C review L456 'profit run is recent' rests on reading the -44.59 equity gap as a deficit; tag [INFERENCE]"
-    - "S8: competition review L719 'It does not mean the company makes its own PTA or MEG' is categorical; soften to 'the filings give no sign that'"
-loop_back_to: "A4"
-gap: "A4, two one-sentence edits, no re-enumeration: (F5) review L712 replace 'without a crude shock' with 'with no crude attribution in the filings' or cite a SECONDARY source; (M6) beside review L417 state that the 152.45 earned share is pre-tax cash (nil current tax RF L607, 2.71 refund RF L783; at 25.17% the split is about 52/48) and capex was 40.4% of D&A (RF L785, L768), and add 'pre-tax' to review L466 and brief L705"
+    - "S6 (carried): loop-1 response row review L748 cites RF L532 for 31-Mar equity 519.17; correct line is RF L700"
+    - "S7 (carried): 5C review L457 'profit run is recent' needs an [INFERENCE] tag"
+    - "S8 (carried): competition review L721 PTA/MEG sentence is categorical; soften to 'the filings give no sign that'"
+    - "S9: review L418 'about half earned at a normal tax rate and capex level'; the 52/48 is at actual capex (40.4% of D&A); add the D&A-level figure 48.7% (103.34/212.36); call the 109.02 a net WC release (receivables 140.26 gross, other lines -31.24), not a receivable release"
+    - "S10: results SIGNATURE_TIME_ND (ledger L298) and PR cover-letter timestamp 21:47:58 (PR L52) get no remark beside A4-04/Q20; rows covered by the 721/721 and 132/132 marks; non-material; not named in A5's earlier traces"
+    - "S11: Step 7 review L561 'All pre-tax' cites RF L607 (C) only; S basis is RF L213-214 and S refund RF L390"
+loop_back_to: ""
+gap: ""
 style_notes:
   - "S5: A1 auditor para 2 has no structured row; boilerplate"
-  - "S6: review L746 anchor RF L532 should be RF L700"
-  - "S7: tag review L456 'profit run is recent' as [INFERENCE]"
-  - "S8: soften review L719 PTA/MEG sentence"
-analyst_note: "Loop 1 closes all ten run-1 items (F1-F4, C1, M1-M5) and fixes S1-S4. Every new figure recomputes from the fulltext, and coverage and the brief gate still pass. Two items remain, each a one-sentence edit. First, the C1 fix created a new most-positive claim: 'the deleveraging is mostly earned' (review L417). Its strongest counter survives. The 152.45 is pre-tax cash (nil current tax, RF L607; a 2.71 refund, RF L783). At A4's own 25.17% sensitivity rate the earned share falls to about 52%, and capex ran at 40% of D&A. A4 ties the tax shield to EPS but not to the cash split. Second, the sector brief says the FY26 Q1-to-Q2 gross-margin fall came 'without a crude shock' and tags it FILED. The only crude text in the filings is the Q2 FY27 CMD quote (PR L130-131). Two other counters were tested and fail: the Q1 FY26 benchmark is on the same nil-tax basis and is if anything harsh, and ex-WC cash conversion holds at 1.20x on a taxed basis. The PROCEED WITH FLAGS verdict is unaffected."
+  - "S6: review L748 anchor RF L532 should be RF L700"
+  - "S7: tag review L457 'profit run is recent' as [INFERENCE]"
+  - "S8: soften review L721 PTA/MEG sentence"
+  - "S9: review L418 add the D&A-level earned share 48.7%; call 109.02 a net WC release"
+  - "S10: note results SIGNATURE_TIME_ND and PR timestamp 21:47:58 beside A4-04/Q20"
+  - "S11: review L561 add S anchors RF L213-214, L390"
+analyst_note: "Loop 2 closes both loop-1 items. F5: the sector brief now says the FY26 Q1-to-Q2 gross-margin fall came with no crude attribution in the filings (review L714); 'crude shock' remains only in the change log. M6: every place that carries the 58.3% earned share now says pre-tax and gives the 52/48 split at a 25.17% tax. All loop-2 figures recompute from the fulltext (34.63, 117.82, 51.9%, 40.4%), and no run-1 error text has returned. Coverage is unchanged: fresh greps give 198 VER rows, 12 notes, 3 PR pages and 900 structured IDs, all ledgered and marked reviewed. Three positive claims were attacked again. 'About half the deleveraging is earned' holds at D&A-level capex (48.7%) and without the prior-period refund (51.4%). The Q1 FY26 benchmark holds on an H1-average basis (+30.9%). The QoQ EBITDA rise is already offset by the stated 251 bp margin fall. No counter survives. Seven STYLE notes are logged. S10 records two signature-time flags that my earlier traces did not name; they are non-material. Verdict COMPLETE; PROCEED WITH FLAGS stands."

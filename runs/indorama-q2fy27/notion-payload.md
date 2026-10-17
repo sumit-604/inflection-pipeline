@@ -1,9 +1,9 @@
-# Notion payload: INDORAMA Q2 FY27 (PENDING, NOT WRITTEN)
+# Notion payload: INDORAMA Q2 FY27 (READY FOR OPERATOR APPROVAL, NOT WRITTEN)
 
-STATUS: NOT ELIGIBLE TO SAVE YET. A5 is INCOMPLETE after correction loop 1 (open: F5, M6;
-see work/audit_indorama_q2fy27.md, "Re-audit, loop 1"). The Notion save runs only after A5
-COMPLETE or an operator ruling. Under the write gate, every write also needs the operator's
-explicit approval. Decision Status is never written.
+STATUS: A5 COMPLETE after correction loop 2 (operator-approved 2026-10-17). Write gate
+(operator ruling 2026-10-03): no Notion write happens without the operator's explicit
+approval of this exact payload. Decision Status is never written. Open STYLE notes S5-S11
+are logged in work/audit_indorama_q2fy27.md and do not block the save.
 
 TARGET: no COMPANIES MASTER page exists (live search 2026-10-17: "Indo Rama Synthetics",
 "Indorama", "IRSL polyester" returned none). The save therefore needs a NEW page.
@@ -13,15 +13,15 @@ TARGET: no COMPANIES MASTER page exists (live search 2026-10-17: "Indo Rama Synt
   - Ticker: "INDORAMA"
   - Sector: "Textiles / Polyester"
   - date:Analysis Date 1:start: "2026-10-17"
-  - Key Notes (new page, so no prior trail to preserve; escape | as \|):
-    "2026-10-17 \| Q2 FY27 pre-thesis read (/run-quarterly; results + press release + Reg 30 capex letter, all 16-Oct-2026): C PAT 74.08 vs 24.55 (+201.75% YoY off a trough base; core PBT +41.20% vs Q1 FY26) on nil current tax (statutory-rate H1 EPS 3.94 vs 5.28); gross margin 22.60% vs 22.98% YoY, gain from opex and FX; net debt -261.47 in H1 (152.45 operating cash pre-tax, 109.02 WC release); net DTA 39.4% of C equity; subsidiaries 25.7-47.1% of C PAT with no split; Rs 200 cr specialty capex approved, term loan + accruals, COD Oct-2027 to Apr-2028. Verdict PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION. No thesis, no spear; Decision Status not set (operator-only)."
+  - Key Notes (new page, so no prior trail to preserve; | escaped as \|):
+    "2026-10-17 \| Q2 FY27 pre-thesis read (/run-quarterly; results + press release + Reg 30 capex letter, all 16-Oct-2026; A5 COMPLETE after 2 loops): C PAT 74.08 vs 24.55 (+201.75% YoY off a trough base; core PBT +41.20% vs Q1 FY26) on nil current tax (statutory-rate H1 EPS 3.94 vs 5.28); gross margin 22.60% vs 22.98% YoY, gain from other expenses and FX; net debt -261.47 in H1 (152.45 pre-tax operating cash + 109.02 WC release; about 52/48 at a 25.17% tax); net DTA 39.4% of C equity; subsidiaries 25.7-47.1% of C PAT with no split; Rs 200 cr specialty capex approved, term loan + accruals, COD Oct-2027 to Apr-2028. Verdict PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION. No thesis, no spear; Decision Status not set (operator-only)."
   - Decision Status: NOT WRITTEN (operator-only)
 - Call 2..n: insert_content, position end, in sequential chunks: the full A4 review below
   (complete tables, includes the PLAIN-LANGUAGE BRIEF), then the three A3 forensics
   tables, then the A5 audit verdict block.
 
 =====================================================================
-## CONTENT PART 1: A4 MERGED REVIEW (work/review_indorama_q2fy27.md, verbatim)
+## CONTENT PART 1: A4 MERGED REVIEW (work/review_indorama_q2fy27.md, verbatim, loop 2)
 =====================================================================
 # A4 MERGED REVIEW: Indo Rama Synthetics (India) Ltd (INDORAMA), Q2 FY27
 
@@ -29,7 +29,7 @@ Quarter: Q2 FY27 (quarter ended 30-Sep-2026; filings dated 16-Oct-2026)
 Protocol: Role 4, Quarterly Results Review Protocol v1.4 (frameworks/Quarterly_Results_Review_Protocol_v1_4.md). Role 5 not run: no concall in --docs.
 Documents merged: results filing (Reg 33, standalone + consolidated, limited review), press release (presentation class), capex Board Outcome (Reg 30, one page).
 Framing: **PRE-THESIS READ, not a thesis check.** No Notion page, no Decision Status on record, no companies/INDORAMA.md, no spear on record (runs/indorama-q2fy27/work/notion-thesis.md, lines 3-14).
-Model: claude-opus-5-5. Reviewer: A4 analyst. Date: 2026-10-17. **Revision: correction loop iteration 1 (A5 audit runs/indorama-q2fy27/work/audit_indorama_q2fy27.md). Change log at the end.**
+Model: claude-opus-5-5. Reviewer: A4 analyst. Date: 2026-10-17. **Revision: correction loop iterations 1 and 2 (A5 audit runs/indorama-q2fy27/work/audit_indorama_q2fy27.md). Change logs at the end.**
 
 Anchor key: RF = runs/indorama-q2fy27/extracted/indorama-results-q2fy27-fulltext.md; PR = .../indorama-pressrelease-q2fy27-fulltext.md; CX = .../indorama-capex-q2fy27-fulltext.md. "L" = fulltext line. Results table values cite the image-verified VER- lines (RF L196-222 standalone P&L; RF L288-323 standalone balance sheet; RF L374-407 standalone cash flow; RF L590-622 consolidated P&L; RF L680-714 consolidated balance sheet; RF L767-799 consolidated cash flow). "d:" = derived by A4 from the cited lines (arithmetic on filed numbers, not a filed figure). S = standalone, C = consolidated. Unit: Rs crore throughout.
 
@@ -337,7 +337,7 @@ Q3 FY26 and Q4 FY26 are not reported individually in this filing, so they are ND
 
 ### 3C. Diagnostics
 - **Trajectory: a dip and a recovery, not a staircase.** The full derivable C core-PBT sequence is 49.90 (Q1 FY26), 22.84 (Q2 FY26), 29.26 (H2 FY26 per-quarter average), 60.18 (Q1 FY27), 70.46 (Q2 FY27). The last two readings are the highest. The earlier run fell to a trough before it recovered (A5 M5). C revenue recovered from a disrupted Q1 FY27 (936.64) to 1,340.64. That is only 2.68% above Q1 FY26 (1,305.71). H1 FY27 revenue is still -9.86% YoY. Op EBITDA margin fell from 10.84% to 8.34%. In absolute terms, operating EBITDA still rose 10.02% QoQ (101.57 to 111.75).
-- **One-off distortion:** Q1 FY27 carried a revenue disruption that management attributes to the Middle East (PR L112-113, MGMT). Q1 FY27 also had the highest gross margin of any reported period (25.79%). **Q1 FY26 gross margin was almost the same, 25.67% (d), and fell 269 bp to 22.98% in Q2 FY26 with no crude attribution (A5 M1).** The Q1-to-Q2 FY27 drop of 319 bp may therefore be partly a recurring Q1-to-Q2 pattern. The YoY -38 bp is the cleaner spread read. Inventory gains on rising input prices may also play a part, but the filing does not disclose them [INFERENCE]. Q2 FY26 carried an FX loss of 10.28. H2 FY26 carried the 2.70 exceptional.
+- **One-off distortion:** Q1 FY27 carried a revenue disruption that management attributes to the Middle East (PR L112-113, MGMT). Q1 FY27 also had the highest gross margin of any reported period (25.79%). **Q1 FY26 gross margin was almost the same, 25.67% (d), and fell 269 bp to 22.98% in Q2 FY26 with no crude attribution in the filings (A5 M1).** The Q1-to-Q2 FY27 drop of 319 bp may therefore be partly a recurring Q1-to-Q2 pattern. The YoY -38 bp is the cleaner spread read. Inventory gains on rising input prices may also play a part, but the filing does not disclose them [INFERENCE]. Q2 FY26 carried an FX loss of 10.28. H2 FY26 carried the 2.70 exceptional.
 - **H1 run-rate test:** H1 FY27 C average quarterly revenue is 1,138.64 (d: 2,277.28 / 2). Q2 exceeds it by 17.74%. Q2 operating EBITDA (111.75) exceeds the H1 average (106.66). Q2 margin (8.34%) is below the H1 margin (9.37%). No capex was commissioned in the period (CWIP 42.03 to 38.45, RF L682), so the commissioning version of this test does not apply.
 - **Implied Q3 FY27 base:** to keep the YoY trajectory, Q3 FY27 C revenue needs to clear the H2 FY26 per-quarter average of 1,191.86, and operating EBITDA needs to clear 75.04 (d: 150.08 / 2). To keep the sequential step-up, Q3 needs revenue of at least 1,340.64 and an operating EBITDA margin of at least 8.34%. Q3 FY26 alone is ND, so an exact YoY base is not available.
 
@@ -403,7 +403,7 @@ Q3 FY26 and Q4 FY26 are not reported individually in this filing, so they are ND
 | CFO (RF L784) | 91.46 | 328.46 | +237.00 | Strong, but 109.02 is a working-capital release |
 | CFO/PAT (L784 / L609) | 1.18x (91.46 / 77.30) | 2.38x (328.46 / 137.82) | +1.20x | Inflated by WC release and by finance cost sitting in financing |
 | CFO ex-WC, after interest paid, / PAT (d: L784 - WC - L795) | 1.28x ((91.46 + 70.68 - 63.10) / 77.30) | 1.16x ((328.46 - 109.02 - 59.02) / 137.82) | -0.12x | Underlying conversion is adequate and slightly lower |
-| Capex (PPE + CWIP) (L785) | (9.99) | (9.83) | +0.16 | Maintenance level only |
+| Capex (PPE + CWIP) (L785) | (9.99) | (9.83) | +0.16 | Maintenance level only: 40.4% of H1 D&A of 24.31 (L768) |
 | FCF (CFO - Capex) (d) | 81.47 | 318.63 | +237.16 | WC release supplies 109.02 of it |
 | Working capital change (d: sum L774-L781) | (70.68) absorbed | +109.02 released | +179.70 | Receivables +140.26 (L774), offset by -31.24 in other WC lines |
 | Receivable days (d: closing / period revenue x days) | 18.09 (243.32 / 4,910.06 x 365; L690, L590 FY) | 8.28 (103.06 / 2,277.28 x 183) | -9.81 days | Very low; factoring/discounting ND (A3-11) |
@@ -414,11 +414,11 @@ Q3 FY26 and Q4 FY26 are not reported individually in this filing, so they are ND
 | CWIP (L682) | 42.03 | 38.45 | -3.58 | No major capitalisation |
 | Gross borrowings (L701 + L706) | 1,131.60 | 860.13 | -271.47 (-23.99%) | Repayment only; no new term debt (A3-03, L791) |
 | Cash + other bank balances (L691 + L692) | 18.26 | 8.26 | -10.00 | |
-| Net Debt (ex-lease) (d) | 1,113.34 | 851.87 | -261.47 | **Funded 152.45 (58.3%) by operating cash before WC, and 109.02 (41.7%) by the WC release** (split below) |
+| Net Debt (ex-lease) (d) | 1,113.34 | 851.87 | -261.47 | **Funded 152.45 (58.3%) by pre-tax operating cash before WC, and 109.02 (41.7%) by the WC release.** At a 25.17% tax the split is about 52/48 (split below) |
 | Net Debt incl. lease (d: + L702 + L707) | 1,121.61 | 858.80 | -262.81 | |
 | Net debt / equity (d: / L700) | 2.14x (/ 519.17) | 1.30x (/ 656.99) | -0.84x | Book equity includes the net deferred tax asset (next rows) |
 | Net deferred tax asset in equity (d: L685 - L704) | 258.61 (49.8% of 519.17) | 258.83 (39.4% of 656.99) | +0.22 | Its value rests on the loss pool that is NOT FOUND (A3-09) |
-| Net debt / equity excluding net DTA (d) | 4.27x (1,113.34 / 260.56) | 2.14x (851.87 / 398.16) | -2.13x | Leverage on tangible-ish equity is higher than the headline |
+| Net debt / equity excluding net DTA (d) | 4.27x (1,113.34 / 260.56) | 2.14x (851.87 / 398.16) | -2.13x | Leverage on equity excluding the DTA is higher than the headline |
 | Net debt / op EBITDA, H1 annualised (d) | 3.60x (/ FY26 309.33) | 2.00x (/ H1 213.32 x 2) | -1.60x | H1 carries the 10.84% Q1 FY27 margin |
 | Net debt / op EBITDA, trailing 4 quarters (d: / TTM 363.40, Step 6.5) | 3.60x | 2.34x | -1.26x | **The steadier basis**; 2.89x if the full Rs 200 cr capex is debt-funded (1,051.87 / 363.40) |
 | Op EBIT / finance cost, quarter (d) | 1.68x (Q2 FY26: 56.41 / 33.57) | 3.43x (Q2 FY27: 99.45 / 28.99) | +1.75x | |
@@ -433,13 +433,14 @@ Q3 FY26 and Q4 FY26 are not reported individually in this filing, so they are ND
 | Finance costs paid | -59.02 | | L795 |
 | Capex net of interest received (net investing) | -6.24 | | L789 |
 | Lease payments (principal + interest) | -1.73 | | L793-794 |
-| **Operating cash before WC, after interest, capex and leases** | **152.45** | **58.3%** | d |
+| **Operating cash before WC, after interest, capex and leases (pre-tax)** | **152.45** | **58.3%** | d |
 | **Working-capital release** | **109.02** | **41.7%** | d: sum L774-L781 |
 | of which receivables (gross) | 140.26 | 53.6% | L774 |
 | of which other WC lines (net) | -31.24 | -11.9% | d |
 | **Total = net-debt fall** | **261.47** | **100%** | 1,113.34 - 851.87 |
+| Memo: operating cash after a 25.17% tax on H1 PBT 137.60 (d: 152.45 - 34.63) | 117.82 | 51.9% of 226.84 (vs WC 48.1%) | L606 |
 
-The deleveraging is mostly earned, not borrowed from working capital. The receivable release still funded 41.7% of it, and that part can reverse in H2.
+**The 152.45 earned share is pre-tax cash (A5 M6).** Current tax is nil (RF L607), and H1 included a 2.71 income-tax refund (RF L783). At 25.17% on H1 PBT of 137.60, tax would be 34.63. The earned share would then be 117.82, and the split about 52/48 against the 109.02 WC release. H1 capex was 9.83, only 40.4% of H1 D&A of 24.31 (RF L785, L768). The earned share therefore also assumes maintenance-level reinvestment, before the Rs 200 cr build starts. Read this way, about half the deleveraging is earned at a normal tax rate and capex level. The other half is a receivable release that can reverse in H2.
 
 ### 5B. Standalone
 
@@ -485,10 +486,10 @@ Balance-sheet blocks with no disclosed composition (A3-12): C other current fina
 ### 5D. Mandatory questions
 - **CFO/PAT vs Pillar 2 band:** no valuation exists, so no band is assumed (ND). Reported H1 C CFO/PAT is 2.38x. The ex-WC, after-interest reading is 1.16x C and 1.19x S. Band selection is deferred to /fttcp and Role 1 (OR-30). Flagged as a pillar fact in Step 7.
 - **WC drag structural or growth-induced?** Neither. H1 had a WC *release* (109.02 C) while H1 revenue fell 9.86%, which is the pattern of a shrinking or recovering half [INFERENCE]. The "stopped growing" test cannot run on one half-year. No rating-agency commentary was passed (ND). Receivables at 8.28 days are far below FY26's 18.09 days. Payables rose to 154.42 days. Both point to financing-type working capital (discounting, acceptances), and neither is disclosed.
-- **Did CWIP capitalise?** No major commissioning was expected or seen. CWIP fell 3.58 and PPE fell 10.41 net. H1 capex of 9.83 is below H1 D&A of 24.31 (L768).
-- **Net debt vs projection:** no projection exists (ND). Net debt fell 261.47 to 851.87. Of that, 152.45 (58.3%) came from operating cash before WC, and 109.02 (41.7%) from the WC release. The new capex is "financed by taking term loan" (CX L43). If the full Rs 200 cr were debt-funded, net debt would return toward 1,051.87 (d: 851.87 + 200). That figure is a bound, not an estimate; the split is ND.
+- **Did CWIP capitalise?** No major commissioning was expected or seen. CWIP fell 3.58 and PPE fell 10.41 net. H1 capex of 9.83 is 40.4% of H1 D&A of 24.31 (L785, L768).
+- **Net debt vs projection:** no projection exists (ND). Net debt fell 261.47 to 851.87. Of that, 152.45 (58.3%) came from pre-tax operating cash before WC, and 109.02 (41.7%) from the WC release. At a 25.17% tax the split is about 52/48. The new capex is "financed by taking term loan" (CX L43). If the full Rs 200 cr were debt-funded, net debt would return toward 1,051.87 (d: 851.87 + 200). That figure is a bound, not an estimate; the split is ND.
 
-**Cash conversion classification: INDETERMINATE-WITH-DIRECTION.** Direction is positive: underlying ex-WC, after-interest CFO covers PAT 1.16x (C), and 58.3% of the debt fall came from operating cash. Evidence still missing: (1) the receivables discounted or factored at 30-Sep-2026 vs 31-Mar-2026; (2) the composition and cost of 1,462.03 trade payables (acceptances or LC); (3) the composition of 667.63 other current financial assets; (4) the H2 FY27 cash flow, to show whether the release reverses. Under the house rule this caps the verdict at PROCEED WITH CAVEATS or below.
+**Cash conversion classification: INDETERMINATE-WITH-DIRECTION.** Direction is positive: underlying ex-WC, after-interest CFO covers PAT 1.16x (C), and 58.3% of the debt fall came from pre-tax operating cash (about 52% after a statutory-rate tax). Evidence still missing: (1) the receivables discounted or factored at 30-Sep-2026 vs 31-Mar-2026; (2) the composition and cost of 1,462.03 trade payables (acceptances or LC); (3) the composition of 667.63 other current financial assets; (4) the H2 FY27 cash flow, to show whether the release reverses. Under the house rule this caps the verdict at PROCEED WITH CAVEATS or below.
 
 **Checkpoint.** Cash quality tables and answers complete.
 
@@ -560,7 +561,7 @@ No condition can fire. The IMMEDIATE EXIT overlay does not apply.
 
 Pre-thesis observation, for whoever writes a thesis. Two candidate triggers are visible in the filings. These are observations, not credited triggers:
 (1) the Rs 200 cr specialty fibre and filament capex, with COD 16-Oct-2027 to 16-Apr-2028 (CX L39-43; PR L139-142);
-(2) deleveraging, with net debt down 261.47 in H1, of which 58.3% came from operating cash. Its counter: trailing net debt / EBITDA is 2.34x, and 39.4% of book equity is a deferred tax asset (Step 5A).
+(2) deleveraging, with net debt down 261.47 in H1, of which 58.3% came from pre-tax operating cash (about 52% after a statutory-rate tax). Its counter: trailing net debt / EBITDA is 2.34x, and 39.4% of book equity is a deferred tax asset (Step 5A).
 One candidate risk is visible: the tax shield ending (A3-09).
 
 **Checkpoint.** 6A-6D presented, all ND by construction.
@@ -582,7 +583,7 @@ Pillar-relevant facts flagged for 6.5A. These are inputs, not a base:
 | Pillar / Input | Original Assumption | Fact this quarter (anchored) | Flag for /fttcp and Role 1 |
 |---|---|---|---|
 | ROCE Base (Pillar 1) | ND | H1 FY27 C operating EBIT 189.01 (d: 213.32 - 24.31). C equity 656.99 (L700). Net debt 851.87 (d). Capital employed 1,508.86 (d). **That capital employed includes the net DTA of 258.83 (d: L685 - L704), 17.2% of it.** Ex-DTA capital employed is 1,250.03 (d). | Archetype candidate is Commodity converter. **If /fttcp classifies it CONVERTER, Amendment 17 bars spot-period ROCE and rupee WC trends from Section 1B.** A4 does not compute a pillar ROCE. /fttcp decides whether the DTA belongs in the ROCE denominator. |
-| Cash Multiplier (Pillar 2) | ND | CFO/PAT 2.38x reported; 1.16x ex-WC after interest (C); S 2.48x / 1.19x | Band choice must use the ex-WC reading or wait for H2. Cash conversion INDETERMINATE-WITH-DIRECTION. |
+| Cash Multiplier (Pillar 2) | ND | CFO/PAT 2.38x reported; 1.16x ex-WC after interest (C); S 2.48x / 1.19x. All pre-tax (nil current tax, RF L607). | Band choice must use the ex-WC reading or wait for H2. Cash conversion INDETERMINATE-WITH-DIRECTION. |
 | Growth Visibility Premium | ND | Rs 200 cr specialty capex, COD 16-Oct-2027 to 16-Apr-2028 (CX L39-43). No tonnage, revenue or return target disclosed. H1 C revenue -9.86%. | Catalyst exists, but its size and economics are ND. |
 | Strategic Premium | ND | No moat evidence in the filings. "specialty" and "value-added segments" language only (PR L139-141, MGMT). | Single-credit rule: none credited. |
 | UA Multiplier | ND | Institutional ownership and coverage ND in these filings | Qualifiers not testable here. |
@@ -659,7 +660,7 @@ Ordered by materiality to a future thesis. Each question references a number fro
 
 ## STEP 9: NOTION UPDATE
 No Notion page exists, so A4 makes no write. Decision Status is never written by /run-quarterly. Proposed payload for the operator, used only if a page is created:
-- Key Notes prefix: "2026-10-17 | Q2 FY27 pre-thesis read: C PAT 74.08 (+201.75% YoY off a trough base) on nil tax; gross margin -38 bp YoY; net debt -261.47 (152.45 operating cash, 109.02 WC release); Rs 200 cr specialty capex approved, COD Oct-2027 to Apr-2028; verdict PROCEED WITH FLAGS."
+- Key Notes prefix: "2026-10-17 | Q2 FY27 pre-thesis read: C PAT 74.08 (+201.75% YoY off a trough base) on nil tax; gross margin -38 bp YoY; net debt -261.47 (152.45 pre-tax operating cash, 109.02 WC release; about 52/48 at a 25.17% tax); Rs 200 cr specialty capex approved, COD Oct-2027 to Apr-2028; verdict PROCEED WITH FLAGS."
 - Catalyst status: ND (no thesis). Thesis status: ND (pre-thesis).
 - Source: Reg 33 results and Reg 30 filings dated 16-Oct-2026 (RF L18; PR L19; CX L19). Auditor: unmodified limited review. Business type: standard.
 
@@ -674,7 +675,7 @@ No Notion page exists, so A4 makes no write. Decision Status is never written by
 | A4-03 | Press-release "EBIT" deducts the FX loss, and "EBITDA" includes OI. This resolves PR-FN-05 (no D&A fall) and PR-FN-06 (Reading A, nil tax). | PR L98-104; RF L599-608 | NEUTRAL-FACT |
 | A4-04 | The capex letter was signed at 14:51:58, 16 min 58 s after the 14:35 meeting close. That partly resolves CX-FN-05; dissemination time is still ND. | CX L53; RF L63 | NEUTRAL-FACT |
 | A4-05 | Stock-in-trade rose to 8.67% of C revenue in Q2 FY27 (116.22 / 1,340.64), from 6.45% in Q2 FY26 (78.76 / 1,220.64). The trading share is rising. | RF L594, L590 | AMBIGUOUS (business-mix drift) |
-| A4-06 | The H1 net-debt fall of 261.47 splits 152.45 (58.3%) operating cash before WC and 109.02 (41.7%) WC release. Net DTA of 258.83 is 39.4% of C equity, and net debt / TTM op EBITDA is 2.34x. | RF L685, L700, L704, L773-L797 | AMBIGUOUS (leverage read) |
+| A4-06 | The H1 net-debt fall of 261.47 splits 152.45 (58.3%) pre-tax operating cash before WC and 109.02 (41.7%) WC release; about 52/48 at a 25.17% tax, with capex at 40.4% of D&A. Net DTA of 258.83 is 39.4% of C equity, and net debt / TTM op EBITDA is 2.34x. | RF L607, L685, L700, L704, L768, L773-L797 | AMBIGUOUS (leverage read) |
 
 ---
 
@@ -706,7 +707,7 @@ Flags:
 2. **Spread did not widen.** C gross margin -38 bp YoY, -319 bp QoQ (FY26 showed a similar Q1-to-Q2 fall). The operating-margin gain is opex and FX (A4-01, A4-02).
 3. **Trough base.** Core PBT +208.49% YoY is measured off Q2 FY26, the trough. Against Q1 FY26 it is +41.20%.
 4. **Subsidiary opacity.** The C-minus-S proxy is 25.7% of Q2 and 47.1% of Q1 C PAT, with no entity split. At least 182.54 of parent receivables is intercompany. Trading share is rising (A3-04, A3-05, A3-06, A3-08, A4-05).
-5. **Financing-type working capital.** CFO includes a 109.02 WC release (41.7% of the net-debt fall). Receivables are at 8.28 days and payables at 154.42 days of COGS. Factoring and acceptances are undisclosed (A3-11, A3-12).
+5. **Financing-type working capital.** CFO includes a 109.02 WC release (41.7% of the net-debt fall). The other 152.45 is pre-tax operating cash; at a 25.17% tax and with capex at 40.4% of D&A, the split is about 52/48. Receivables are at 8.28 days and payables at 154.42 days of COGS. Factoring and acceptances are undisclosed (A3-11, A3-12).
 6. **Leverage on book equity.** Net DTA 258.83 is 39.4% of C equity; net debt / equity ex-DTA is 2.14x; net debt / TTM op EBITDA is 2.34x (A4-06).
 7. **Cash conversion INDETERMINATE-WITH-DIRECTION.** Missing evidence: factoring at both dates, payables composition and cost, other-financial-asset composition, H2 cash flow.
 8. **Press-release reframing.** "Revenue" means total income; EBITDA includes OI and excludes FX; the margin-expansion headline is YoY only (PR-FN-02, PR-FN-04).
@@ -727,14 +728,15 @@ That comparison starts from a weak quarter. Against Q1 FY26 (Rs 49.90 cr), core 
 The company paid no current tax [FILED]. At a normal 25.17% rate, quarterly profit would be about Rs 55.27 cr [INFERENCE]. Nobody outside the company yet knows how long the tax shield lasts.
 The raw-material spread did not widen. Gross margin was 22.60%, against 22.98% a year ago [FILED, derived]. Most of the margin gain came from Rs 12.21 cr lower other expenses and a Rs 7.77 cr smaller currency loss [FILED].
 The half-year was weak. Q1 revenue fell 28.27% year on year [FILED, derived]. Management blames Middle East supply problems [MGMT].
-Net debt fell Rs 261.47 cr in six months [FILED, derived]. Rs 152.45 cr of that came from operating cash, and Rs 109.02 cr from releasing working capital [FILED, derived]. Receivables are now about 8 days of sales, and payables about 154 days of cost [FILED, derived].
+Net debt fell Rs 261.47 cr in six months [FILED, derived]. Rs 152.45 cr of that came from pre-tax operating cash, and Rs 109.02 cr from releasing working capital [FILED, derived]. After a normal tax, the two parts would be about equal [INFERENCE].
+Receivables are now about 8 days of sales, and payables about 154 days of cost [FILED, derived].
 A deferred tax asset makes up 39.4% of book equity [FILED, derived].
 Four subsidiaries made a quarter to nearly half of group profit, and the filing gives no split [FILED, derived].
 The board approved Rs 200 cr for specialty fibre and filament, mostly on a term loan, starting output between October 2027 and April 2028 [FILED].
 There is no thesis on record, so this read changes no decision. The verdict is PROCEED WITH FLAGS.
 
 ### 2. Sector intelligence
-Polyester makers buy crude-linked inputs, usually PTA and MEG, and sell fibre, yarn and resin [SECONDARY]. Profit depends on the spread between the two, not on revenue. The CMD says Middle East events raised crude and raw-material costs and kept the chain volatile [MGMT, PR L130-131]. Gross margin fell from 25.79% to 22.60% QoQ [FILED, derived]. A similar Q1-to-Q2 fall happened last year without a crude shock (25.67% to 22.98%) [FILED, derived], so crude explains only part of it [INFERENCE]. Rising input prices also lift reported revenue without more tonnes [INFERENCE]. That is why the missing volume figure matters. Demand cycle, import competition, and trade-protection measures on polyester inputs and fibre are not mentioned in these filings [not disclosed]. A crude spike usually squeezes non-integrated spreads first and relieves them later [SECONDARY].
+Polyester makers buy crude-linked inputs, usually PTA and MEG, and sell fibre, yarn and resin [SECONDARY]. Profit depends on the spread between the two, not on revenue. The CMD says Middle East events raised crude and raw-material costs and kept the chain volatile [MGMT, PR L130-131]. Gross margin fell from 25.79% to 22.60% QoQ [FILED, derived]. A similar Q1-to-Q2 fall happened last year, with no crude attribution in the filings (25.67% to 22.98%) [FILED, derived]. So crude may explain only part of this year's fall [INFERENCE]. Rising input prices also lift reported revenue without more tonnes [INFERENCE]. That is why the missing volume figure matters. Demand cycle, import competition, and trade-protection measures on polyester inputs and fibre are not mentioned in these filings [not disclosed]. A crude spike usually squeezes non-integrated spreads first and relieves them later [SECONDARY].
 
 ### 3. Business-model intelligence
 The company converts bought raw material into polyester staple fibre, filament yarn, textured yarn, chips and bottle-grade PET resin at one Butibori site [MGMT, PR L146-149]. Stated capacity is 6.72 lakh tonnes a year, including 2.52 lakh tonnes of PET resin and 1.75 lakh tonnes of textured yarn [MGMT, PR L149-150]. Materials and traded goods take 77.4% of revenue, so a 1-point spread move shifts EBITDA by about Rs 13 cr a quarter [FILED, derived; INFERENCE]. The balance sheet runs on supplier credit: payables of Rs 1,462.03 cr fund a negative cash cycle of about 73 days [FILED, derived].
@@ -792,6 +794,25 @@ A4 checked every A5 number against the fulltext lines before using it. No disagr
 | S4 | STYLE | Core PBT YoY 208.50% corrected to 208.49% | 2A; 2D.3 |
 | S5 | STYLE | No action (A1 structured-file boilerplate; no conclusion depends on it) | n/a |
 
+## LOOP 2 RESPONSE
+
+A4 checked each loop-2 number against its fulltext line. No disagreement.
+
+| A5 item | A4 check (fulltext lines) | Result |
+|---|---|---|
+| F5 crude wording | The FY26 Q1-to-Q2 gross-margin fall (25.67% to 22.98%) has no crude attribution in any of the three filings. The CMD's crude remark (PR L130-131) covers Q2 FY27 only. A4 holds no SECONDARY source for FY26 crude moves, so the wording now states only what the filings show. | Agree; wording replaced |
+| M6 pre-tax | Current tax nil (RF L607); refund 2.71 (RF L783); tax at 25.17% on H1 PBT 137.60 (RF L606) = 34.63; 152.45 - 34.63 = 117.82; 117.82 / (117.82 + 109.02) = 51.9%, so about 52/48 | Agree |
+| M6 capex | Capex 9.83 (RF L785) / D&A 24.31 (RF L768) = 40.4% | Agree |
+
+## LOOP 2 CHANGE LOG
+
+| Item | Type | Fix | Location |
+|---|---|---|---|
+| F5 | FACTUAL | "without a crude shock" replaced with "with no crude attribution in the filings"; 3C uses the same wording | Sector brief (part 2); 3C |
+| M6 | MISSING | Stated that the 152.45 earned share is pre-tax cash (nil current tax RF L607; 2.71 refund RF L783); about 52/48 at a 25.17% tax (117.82 vs 109.02); capex 40.4% of D&A (RF L785, L768). Memo row added to the sources table | 5A net-debt row, capex row, sources table and paragraph |
+| M6 (same claim elsewhere) | MISSING | "pre-tax" and the 52/48 split added wherever the 58.3% earned share appears | 5D; cash-conversion classification; 6D; Step 7 Pillar 2 row; Step 9 Key Notes; A4-06; Verdict Flag 5; brief summary; YAML flags; analyst note |
+| S6-S8 | STYLE | Optional; not applied. A4 did not re-read the audit file in this loop, per the coordinator's instruction | n/a |
+
 Verdict unchanged: PROCEED WITH FLAGS. Cash classification unchanged: INDETERMINATE-WITH-DIRECTION.
 
 ---
@@ -802,7 +823,7 @@ company: "INDORAMA"
 quarter: "Q2 FY27"
 model: "claude-opus-5-5"
 status: complete
-loop_iteration: 1
+loop_iteration: 2
 docs_merged: [results, presentation]   # results = Reg 33 filing + Reg 30 capex Board Outcome (results class); presentation = press release
 ledger_reconciliation:
   notes: 12
@@ -857,11 +878,11 @@ monitorables:
   - {item: "Portfolio broadening into value-added segments", implied_date: "medium term, undated", source_ref: "PR L140-142 (R117)"}
 flags:
   - "ZERO-TAX EARNINGS: S current tax nil all six periods, DTA flat 258.61; C ETR -0.30% Q2; statutory-rate (25.17%) C H1 EPS 3.94 vs 5.28 reported; reported is 33.6% above statutory basis (A3-09)"
-  - "SPREAD NOT WIDENED: C gross margin 22.60% vs 22.98% YoY (-38 bp), 25.79% QoQ (-319 bp; FY26 Q1-to-Q2 was 25.67% to 22.98%); op EBITDA margin +273 bp YoY came from other expenses -12.21 and FX loss -7.77 (A4-01)"
+  - "SPREAD NOT WIDENED: C gross margin 22.60% vs 22.98% YoY (-38 bp), 25.79% QoQ (-319 bp; FY26 Q1-to-Q2 was 25.67% to 22.98%, no crude attribution in the filings); op EBITDA margin +273 bp YoY came from other expenses -12.21 and FX loss -7.77 (A4-01)"
   - "TROUGH BASE: C core PBT +208.49% YoY is off the Q2 FY26 trough; +41.20% vs Q1 FY26 (49.90); FX swing 16.32% of the rise"
   - "STANDALONE GROSS PROFIT FELL 1.04 YoY on revenue +7.03%; S PAT growth all from cost lines, FX, finance cost, OI (A4-02)"
   - "SUBSIDIARY OPACITY: C-minus-S proxy 25.7% (Q2) / 47.1% (Q1) of C PAT, no entity split; >=182.54 intercompany receivables (level bound); trading share 8.67% of C revenue vs 6.45% (A3-04/05/06/08, A4-05)"
-  - "NET-DEBT SPLIT: -261.47 = 152.45 (58.3%) operating cash before WC + 109.02 (41.7%) WC release; receivables 8.28 days; payables 154.42 days; factoring and acceptances undisclosed (A3-11/12, A4-06)"
+  - "NET-DEBT SPLIT: -261.47 = 152.45 (58.3%) pre-tax operating cash before WC (nil current tax RF L607; 2.71 refund RF L783) + 109.02 (41.7%) WC release; about 52/48 at a 25.17% tax; capex 40.4% of D&A; receivables 8.28 days; payables 154.42 days; factoring and acceptances undisclosed (A3-11/12, A4-06)"
   - "LEVERAGE ON BOOK EQUITY: net DTA 258.83 = 39.4% of C equity; ND/equity ex-DTA 2.14x (4.27x at 31-Mar); ND/TTM op EBITDA 2.34x, 2.89x if capex fully debt-funded (A4-06)"
   - "CASH CONVERSION INDETERMINATE-WITH-DIRECTION: missing factoring at both dates, payables composition/cost, other financial assets composition, H2 cash flow; verdict capped"
   - "PRESS RELEASE REFRAMING: revenue = total income; EBITDA includes OI and excludes FX; margin-expansion headline YoY only (PR-FN-02/04)"
@@ -872,13 +893,11 @@ flags:
   - "OR-30: Steps 6.5 and 7 deferred to /fttcp and Role 1; pillar facts flagged in Step 7 table"
   - "A1 DATA NOTES: R145/R478 are 31-Mar-2026 other equity; R640 FRN truncated (full 000756N/N500441 at RF L520); PR Q2 FY26 PAT '246' = 24.6"
 plain_language_brief_included: true
-analyst_note: "Pre-thesis read; no decision framing. Loop 1 applied all A5 FACTUAL, CONTRADICTION and MISSING items after line checks; no disagreement. The headline (C PAT 74.08 vs 24.55) is real pre-tax but runs off the trough quarter; against Q1 FY26 core PBT is +41.20%. Three facts cap the reading. Tax: no current tax, so reported EPS is 33.6% above a statutory-rate basis; any Amendment 18 entry/exit pairing must fix the tax basis first. Margin source: gross margin fell 38 bp YoY; the operating gain is other expenses and FX of undisclosed composition, and FY26 showed the same Q1-to-Q2 gross-margin fall, so spread durability is unproven until volume is disclosed. Balance sheet: net debt fell 261.47, of which 152.45 was operating cash and 109.02 a WC release that can reverse; 39.4% of book equity is a deferred tax asset whose value rests on the undisclosed loss pool, and TTM net debt / EBITDA is 2.34x. Statutory 25.17% is A3's sensitivity rate; the company's tax regime is ND."
+analyst_note: "Pre-thesis read; no decision framing. Loops 1 and 2 applied every A5 FACTUAL, CONTRADICTION and MISSING item after line checks; no disagreement. The headline (C PAT 74.08 vs 24.55) is real pre-tax but runs off the trough quarter; against Q1 FY26 core PBT is +41.20%. Three facts cap the reading. Tax: no current tax, so reported EPS is 33.6% above a statutory-rate basis; any Amendment 18 entry/exit pairing must fix the tax basis first. Margin source: gross margin fell 38 bp YoY; the operating gain is other expenses and FX of undisclosed composition, and FY26 showed the same Q1-to-Q2 gross-margin fall, so spread durability is unproven until volume is disclosed. Balance sheet: net debt fell 261.47; 152.45 was pre-tax operating cash at maintenance capex (40.4% of D&A) and 109.02 a WC release that can reverse, about 52/48 at a 25.17% tax. 39.4% of book equity is a deferred tax asset resting on the undisclosed loss pool; TTM net debt / EBITDA is 2.34x."
 review_path: "runs/indorama-q2fy27/work/review_indorama_q2fy27.md"
 ```
 
-=====================================================================
 ## CONTENT PART 2: A3 FORENSICS, RESULTS (verbatim)
-=====================================================================
 # A3 FORENSIC NOTES: INDORAMA (Indo Rama Synthetics (India) Ltd), Q2 FY27, doctype: results
 
 Inputs read: A1 structured `runs/indorama-q2fy27/extracted/indorama-results-q2fy27-structured.md` (R001-R721, all rows); A1 fulltext `runs/indorama-q2fy27/extracted/indorama-results-q2fy27-fulltext.md` (lines 1-837, all lines; VER- image-verified lines govern over the OCR text); A2 ledger `runs/indorama-q2fy27/work/ledger_results_indorama_q2fy27.md`. Prior-quarter fulltext: ND. Notion checklist: NONE (no Notion page, no spear on record). Source PDF and `inputs/` not opened.
@@ -1249,15 +1268,15 @@ blank_checks: []
 analyst_note: "One-page Reg 30 letter tagged doctype results; it holds no financials, so F1-F5, F8-F12 and F15 are N.A. on content, not skipped. The forward content is three parameters, each softened: amount 'approx.', date 'estimated', funding 'would be'. The two missing splits matter more than the hedges. Company vs IVYPL decides which books carry the asset, the loan and the revenue, so next quarter's F2/F3 standalone-vs-consolidated read depends on it. Debt vs accrual decides leverage and interest drag during a 12-18 month build with no revenue. Lean bear on funding until the term-loan sanction is disclosed. 'Speciality' product language is a possible mix-shift signal; A3 does not judge it, A4 should ask for capacity and mix. Structured-file cite drift (R018 line 21 vs 22; R022 full name not on line 39) does not change any meaning. No prior-quarter text and no Notion checklist, so no diff or silence audit was possible."
 ```
 
-## CONTENT PART 5: A5 AUDIT VERDICT (work/blocks/a5.yaml, loop 1)
+## CONTENT PART 5: A5 AUDIT VERDICT (work/blocks/a5.yaml, loop 2)
 ```yaml
 stage: A5-adversary
 company: "INDORAMA"
 quarter: "Q2 FY27"
 model: "claude-opus-5-5"
 status: complete
-loop_iteration: 1
-verdict: INCOMPLETE
+loop_iteration: 2
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -1268,25 +1287,28 @@ coverage:
   orphan_rows: []
   missing_from_ledger: []
 arithmetic_mismatches: []
-surviving_bear_counters:
-  - {claim: "The deleveraging is mostly earned, not borrowed from working capital; 58.3% of the net-debt fall from operating cash (review L417, L466, L538, L705)", counter: "The 152.45 is pre-tax cash: nil current tax and a 2.71 refund in H1; at the 25.17% sensitivity rate H1 tax is about 34.63 and the split becomes about 52% operating cash / 48% WC (117.82/226.84); capex 9.83 was 40.4% of D&A 24.31", source_line: "RF L607, L783, L767, L785, L768", type: MISSING}
+surviving_bear_counters: []
 findings_by_type:
-  factual:
-    - "F5: sector brief (review L712) says the FY26 Q1-to-Q2 gross-margin fall came 'without a crude shock' and tags it FILED, derived; the only crude text in the filings is the Q2 FY27 CMD quote (PR L130-131); 3C L315 correctly says 'no crude attribution'"
-  missing:
-    - "M6: surviving bear counter to the loop-1 claim 'deleveraging mostly earned' (review L417): the earned 152.45 is pre-tax cash (RF L607, L783); about 52/48 at 25.17%; capex 40.4% of D&A (RF L785, L768); graft beside L417 and qualify L466 and brief L705"
+  factual: []
+  missing: []
   contradiction: []
   style:
     - "S5 (carried): A1 results structured file has no row for auditor para 2 (RF L106-111, L467-473); boilerplate"
-    - "S6: loop-response table review L746 cites RF L532 for 31-Mar equity 519.17; correct line is RF L700"
-    - "S7: 5C review L456 'profit run is recent' rests on reading the -44.59 equity gap as a deficit; tag [INFERENCE]"
-    - "S8: competition review L719 'It does not mean the company makes its own PTA or MEG' is categorical; soften to 'the filings give no sign that'"
-loop_back_to: "A4"
-gap: "A4, two one-sentence edits, no re-enumeration: (F5) review L712 replace 'without a crude shock' with 'with no crude attribution in the filings' or cite a SECONDARY source; (M6) beside review L417 state that the 152.45 earned share is pre-tax cash (nil current tax RF L607, 2.71 refund RF L783; at 25.17% the split is about 52/48) and capex was 40.4% of D&A (RF L785, L768), and add 'pre-tax' to review L466 and brief L705"
+    - "S6 (carried): loop-1 response row review L748 cites RF L532 for 31-Mar equity 519.17; correct line is RF L700"
+    - "S7 (carried): 5C review L457 'profit run is recent' needs an [INFERENCE] tag"
+    - "S8 (carried): competition review L721 PTA/MEG sentence is categorical; soften to 'the filings give no sign that'"
+    - "S9: review L418 'about half earned at a normal tax rate and capex level'; the 52/48 is at actual capex (40.4% of D&A); add the D&A-level figure 48.7% (103.34/212.36); call the 109.02 a net WC release (receivables 140.26 gross, other lines -31.24), not a receivable release"
+    - "S10: results SIGNATURE_TIME_ND (ledger L298) and PR cover-letter timestamp 21:47:58 (PR L52) get no remark beside A4-04/Q20; rows covered by the 721/721 and 132/132 marks; non-material; not named in A5's earlier traces"
+    - "S11: Step 7 review L561 'All pre-tax' cites RF L607 (C) only; S basis is RF L213-214 and S refund RF L390"
+loop_back_to: ""
+gap: ""
 style_notes:
   - "S5: A1 auditor para 2 has no structured row; boilerplate"
-  - "S6: review L746 anchor RF L532 should be RF L700"
-  - "S7: tag review L456 'profit run is recent' as [INFERENCE]"
-  - "S8: soften review L719 PTA/MEG sentence"
-analyst_note: "Loop 1 closes all ten run-1 items (F1-F4, C1, M1-M5) and fixes S1-S4. Every new figure recomputes from the fulltext, and coverage and the brief gate still pass. Two items remain, each a one-sentence edit. First, the C1 fix created a new most-positive claim: 'the deleveraging is mostly earned' (review L417). Its strongest counter survives. The 152.45 is pre-tax cash (nil current tax, RF L607; a 2.71 refund, RF L783). At A4's own 25.17% sensitivity rate the earned share falls to about 52%, and capex ran at 40% of D&A. A4 ties the tax shield to EPS but not to the cash split. Second, the sector brief says the FY26 Q1-to-Q2 gross-margin fall came 'without a crude shock' and tags it FILED. The only crude text in the filings is the Q2 FY27 CMD quote (PR L130-131). Two other counters were tested and fail: the Q1 FY26 benchmark is on the same nil-tax basis and is if anything harsh, and ex-WC cash conversion holds at 1.20x on a taxed basis. The PROCEED WITH FLAGS verdict is unaffected."
+  - "S6: review L748 anchor RF L532 should be RF L700"
+  - "S7: tag review L457 'profit run is recent' as [INFERENCE]"
+  - "S8: soften review L721 PTA/MEG sentence"
+  - "S9: review L418 add the D&A-level earned share 48.7%; call 109.02 a net WC release"
+  - "S10: note results SIGNATURE_TIME_ND and PR timestamp 21:47:58 beside A4-04/Q20"
+  - "S11: review L561 add S anchors RF L213-214, L390"
+analyst_note: "Loop 2 closes both loop-1 items. F5: the sector brief now says the FY26 Q1-to-Q2 gross-margin fall came with no crude attribution in the filings (review L714); 'crude shock' remains only in the change log. M6: every place that carries the 58.3% earned share now says pre-tax and gives the 52/48 split at a 25.17% tax. All loop-2 figures recompute from the fulltext (34.63, 117.82, 51.9%, 40.4%), and no run-1 error text has returned. Coverage is unchanged: fresh greps give 198 VER rows, 12 notes, 3 PR pages and 900 structured IDs, all ledgered and marked reviewed. Three positive claims were attacked again. 'About half the deleveraging is earned' holds at D&A-level capex (48.7%) and without the prior-period refund (51.4%). The Q1 FY26 benchmark holds on an H1-average basis (+30.9%). The QoQ EBITDA rise is already offset by the stated 251 bp margin fall. No counter survives. Seven STYLE notes are logged. S10 records two signature-time flags that my earlier traces did not name; they are non-material. Verdict COMPLETE; PROCEED WITH FLAGS stands."
 ```

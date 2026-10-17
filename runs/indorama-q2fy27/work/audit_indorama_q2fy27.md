@@ -386,3 +386,153 @@ style_notes:
   - "S8: soften review L719 PTA/MEG sentence"
 analyst_note: "Loop 1 closes all ten run-1 items (F1-F4, C1, M1-M5) and fixes S1-S4. Every new figure recomputes from the fulltext, and coverage and the brief gate still pass. Two items remain, each a one-sentence edit. First, the C1 fix created a new most-positive claim: 'the deleveraging is mostly earned' (review L417). Its strongest counter survives. The 152.45 is pre-tax cash (nil current tax, RF L607; a 2.71 refund, RF L783). At A4's own 25.17% sensitivity rate the earned share falls to about 52%, and capex ran at 40% of D&A. A4 ties the tax shield to EPS but not to the cash split. Second, the sector brief says the FY26 Q1-to-Q2 gross-margin fall came 'without a crude shock' and tags it FILED. The only crude text in the filings is the Q2 FY27 CMD quote (PR L130-131). Two other counters were tested and fail: the Q1 FY26 benchmark is on the same nil-tax basis and is if anything harsh, and ex-WC cash conversion holds at 1.20x on a taxed basis. The PROCEED WITH FLAGS verdict is unaffected."
 ```
+
+---
+---
+
+# RE-AUDIT, LOOP 2
+
+Date: 2026-10-17. Same auditor. Inputs: the three A1 fulltexts, the three A1 structured files, the three A2 ledgers, and the revised review. A3 files, the source PDF and inputs/ were not opened.
+Under audit: the review after loop 2 (874 lines). Revision note at review L7. Loop 2 response at L772-780, loop 2 change log at L782-791, A4 YAML at L795-873. "review L" below refers to THIS revision.
+
+## L2-0. DELIVERABLE-COMPLETENESS AUDIT (gate)
+
+| Brief part | Location (loop 2) | Status |
+|---|---|---|
+| (1) Summary narrative | review L700-711 (11 source lines, about 270 words) | PRESENT |
+| (2) Sector intelligence | review L713-714 | PRESENT |
+| (3) Business-model intelligence | review L716-718 | PRESENT |
+| (4) Competition intelligence | review L720-721 | PRESENT |
+| (5) Forward map | review L723-731: make-or-break reading plus 7 catalysts (M1/M2, M4, M5/M6, M3, M7, M8, M9), each with a Bull and a Bear fork | PRESENT |
+
+**Gate: PASS.**
+
+## L2-1. COVERAGE (fresh grep pass this loop)
+
+| Document | Category | A2 count | Fresh count this loop (method) | Orphan rows | Status |
+|---|---|---|---|---|---|
+| Results | Line items (VER rows) | 198 | 198 (grep `^VER-(3,4,5,9,10,11) \|` over RF) | none | PASS |
+| Results | Notes | 12 | 12: numbered RF L415, L419, L423, L428 (S); L805, L810, L817, L822 (C); labels L225, L326, L625, L717 | none | PASS |
+| Results | Agenda items | 2 | 2 (RF L49, L57) | none | PASS |
+| Results | Structured IDs | 721 ledgered (ledger L13) | 721 (grep `^R\d{3} \|` over structured) | none | PASS |
+| Press release | Pages / slides | 3 | 3 (PR L17, L69, L125) | none | PASS |
+| Press release | Structured IDs | 132 ledgered (ledger L2) | 132 | none | PASS |
+| Capex letter | Structured IDs; agenda | 47 ledgered (ledger L2); 1 | 47; 1 | none | PASS |
+| All | Turns | 0 | 0 | none | PASS |
+
+- The other run-1 categories (table cells 626, zero-standing 85, auditor paragraphs 10, entities 24 and 12, PR line items 6, forward items 2 / 3 / 5) stand. The A1 structured files and the A2 ledgers carry the same headers and ID totals as in run 1. The start-of-session git status lists only the review, the A4 block and the run log as modified in this run folder.
+- **A2 flag sweep (new this loop).** I grepped all three ledgers for every upper-case flag token. Flags found: ZERO_STANDING, EXTRACTOR_FLAG, MISMATCH_NOTE / FOOTNOTE_UNRESOLVED (R688), ENTITY_CHANGE_UNKNOWN (R659-R662), SIGNATURE_TIME_ND (results ledger L298), SPLIT_NOT_STATED, FUNDING_UNQUANTIFIED, MEETING_TIMES_ABSENT (capex ledger L16-19), OCR_GLYPH_DOUBT (PR R063), FOOTNOTE_UNRESOLVED (PR R030), and "MISSING_FROM_STRUCTURED: none" (PR ledger L91). Body anchors: R688 at review L85; R659-R662 at L86 and Q17 L622; R063 at L34 and L214; R030 at L217; the capex flags at Q13 L618, Q14 L619, M4 L664, M5 L665; MEETING_TIMES_ABSENT at A4-04 L651 (RF L63).
+- **Two signature-time flags have no remark in the body.** These are results SIGNATURE_TIME_ND (R678 and R685 carry a date but no clock time, ledger L298) and the PR cover-letter timestamp "2026.10.16 21:47:58" (PR L52; PR ledger L75). The rows themselves are covered: the preamble marks 721/721 and 132/132 reviewed, and the body uses the 16-Oct-2026 dates. No number or conclusion depends on either flag. Neither my run-1 trace nor my loop-1 trace named them. Logged as STYLE S10, not an orphan.
+- Finding-ID trace: all 30 incorporated A3 IDs keep their body anchors (A3-07 L457, A3-15 L87, PR-FN-08 L217, CX-FN-06 L88; the others unchanged).
+
+**orphan_rows: none. missing_from_ledger: none. Coverage: PASS.**
+
+## L2-2. STATUS OF OPEN ITEMS FROM RUN 1 AND LOOP 1
+
+| ID | Type | Gap | Fix in loop-2 review (checked against fulltext) | Status |
+|---|---|---|---|---|
+| F5 | FACTUAL | "without a crude shock" tagged FILED (sector brief) | Sector L714 now reads "with no crude attribution in the filings (25.67% to 22.98%) [FILED, derived]", followed by "So crude may explain only part of this year's fall [INFERENCE]". 3C L315 and YAML flag L856 use the same wording. A grep finds "crude shock" only in the change-log row L786. A grep of the three fulltexts for timestamps and crude text still finds crude only at PR L130-131 (Q2 FY27). | CLOSED |
+| M6 | MISSING | Pre-tax counter to "deleveraging mostly earned" | 5A net-debt row L392 ("pre-tax", 52/48); capex row L381 (40.4% of D&A); sources-table label L411 "(pre-tax)"; memo row L416 (117.82, 51.9% vs 48.1%); paragraph L418 (nil tax RF L607, refund RF L783, 34.63, 117.82, capex 40.4% of D&A); 5D L465; classification L467; 6D L539; Step 7 L561; Step 9 L638; A4-06 L653; Flag 5 L685; brief L706; YAML flag L860; A4 analyst note L871. Every instance of the 58.3% share now carries "pre-tax" and the 52/48 split. | CLOSED |
+| F1-F4, C1, M1-M5 (run 1) | mixed | as logged | Regression grep for the run-1 error strings ("2.6x", "rose by at least", "about 25% above", "26.37% of the C PAT gain", "funded by the WC release", "on a receivable release", "208.50") finds them only in change-log rows L758 and L769. | STILL CLOSED |
+| S5-S8 | STYLE | as logged | Not applied. A4 records them as optional (L789). | LOGGED, no loop |
+
+## L2-3. ARITHMETIC RE-AUDIT (loop-2 figures, plus a spot re-check of unchanged cells)
+
+| Metric | A4 value | Recomputed | Source line | Status |
+|---|---|---|---|---|
+| Statutory-rate tax on H1 PBT (L416, L418) | 34.63 | 137.60 x 0.2517 = 34.634 | RF L606 | PASS |
+| Taxed operating cash (L416, L418) | 117.82 | 152.45 - 34.63 = 117.82 | derived | PASS |
+| Taxed split (L416, L392, L465, L539, L638, L653, L685) | 51.9% / 48.1%; "about 52/48" | 117.82 / 226.84 = 51.94%; 109.02 / 226.84 = 48.06% | derived | PASS |
+| Capex / D&A (L381, L418, L464, L653, L685) | 40.4% | 9.83 / 24.31 = 40.44% | RF L785, L768 | PASS |
+| Pre-tax operating cash re-foot (L411) | 152.45 | 216.73 + 2.71 - 59.02 - 6.24 - 1.73 = 152.45 | RF L773, L783, L795, L789, L793-794 | PASS |
+| WC release re-foot (L412) | 109.02 | 140.26 - 9.62 - 11.18 - 23.95 + 11.45 + 2.87 + 10.53 - 11.34 = 109.02 | RF L774-781 | PASS |
+| Net-debt fall (L415) | 261.47 | (444.58 + 687.02 - 16.82 - 1.44) - (332.18 + 527.95 - 6.82 - 1.44) = 1,113.34 - 851.87. Borrowings fell 271.47 = 64.49 + 206.98, so there is no non-cash movement. | RF L701, L706, L691-692, L790, L792 | PASS |
+| Refund basis inside the taxed figure | 2.71 kept | The 2.71 equals the fall in non-current tax assets, 10.02 to 7.31 (RF L686). It is prior-period cash, so keeping it is defensible. Without it: 115.11 / 224.13 = 51.4%. | RF L783, L686 | PASS (basis note) |
+| "About half earned at a normal tax rate and capex level" (L418) | about half | At D&A-level capex: 117.82 - (24.31 - 9.83) = 103.34; 103.34 / 212.36 = 48.7%. With the refund also removed: 100.63 / 209.65 = 48.0%. "About half" holds on every basis. The 52/48 itself is at actual capex. | RF L768, L785 | PASS (wording: STYLE S9) |
+| "All pre-tax" covers the S ratios (Step 7 L561) | all pre-tax | S P&L tax nil (RF L213-214); S cash flow shows a 3.76 refund (RF L390). Holds. The anchor cited is the C line RF L607. | RF L390, L213-214 | PASS (anchor: STYLE S11) |
+| Spot re-check, unchanged cells | C Q2 op EBITDA 111.75; GP 303.04 / GM 22.60%; ex-WC CFO/PAT 1.16x / 1.28x; H1 FY26 WC (70.68); S ex-WC 1.19x and WC 62.71; days 8.28 / 72.96 / 154.42, CCC -73.18; ND/E 1.30x; net DTA 258.83 (39.4%); TTM op EBITDA 363.40; 5C Q2 gap 19.03 (34.6%) | all same | RF L590-609, L680-714, L767-799, L374-407 | PASS |
+
+**No arithmetic mismatch.**
+
+## L2-4. ADVERSARIAL READ ON THE LOOP-2 REVIEW
+
+The three most positive claims in this revision:
+
+### Claim A: "Read this way, about half the deleveraging is earned at a normal tax rate and capex level" (L418; with "Direction is positive", L467; 6D candidate trigger, L539)
+**Bear counters tested (same extract):**
+(i) Capex at D&A level. H1 capex was 9.83 against D&A of 24.31 (RF L785, L768). If capex had matched D&A, the earned share would be 103.34, which is 48.7% of the fall on a taxed basis.
+(ii) Prior-period refund. Removing the 2.71 refund (RF L783) gives 115.11, or 51.4%.
+(iii) Both together give 100.63, or 48.0%.
+**Survives: NO.** On every basis the earned share is 48-52%, so "about half" holds. One wording point remains. The 52/48 split is at actual capex, which A4 itself calls 40.4% of D&A. "At a normal ... capex level" therefore needs the 48.7% figure behind it. Also, "the other half is a receivable release" describes a net WC release of 109.02, made of receivables 140.26 less other lines 31.24 (L413-414). Both points are logged as STYLE S9. No graft is needed.
+
+### Claim B: "The fully reverted 64.62 is +22.50% [vs Q1 FY26] ... the better guide to underlying progress"; core PBT +41.20% vs Q1 FY26 (L364, L702, Flag 3 L683, A4 analyst note L871)
+**Bear counter tested: catch-up volume.** Q2 FY27 revenue rose 43.13% QoQ after a disrupted Q1 (PR L112-113). Part of Q2 may be Q1 demand that slipped into Q2 [INFERENCE]. If so, one quarter overstates the run-rate. Test this on H1 so that any catch-up nets out. H1 FY27 core PBT averages 65.32 a quarter (d: 130.64 / 2, RF L606, L591). That is +30.9% over Q1 FY26 (49.90) and +79.6% over the H1 FY26 average (36.37). Q1 FY26 is also the high-margin season (GM 25.67%, L293), so it is not a soft base.
+**Survives: NO.** Progress holds on the H1 basis. No graft.
+
+### Claim C: "Operating EBITDA ... Strong" +63.40% YoY (2A L230) and "operating EBITDA still rose 10.02% QoQ" (3C L314)
+**Bear counter tested: negative incremental leverage QoQ.** Revenue rose 404.00 QoQ, but operating EBITDA rose only 10.18, an incremental margin of 2.52% (d: 10.18 / 404.00, RF L590). On YoY, the trough base and the 17.9% FX share are already in the 2A row (L230). Q1 FY26 operating EBITDA of 90.86 is in 3A L293.
+**Survives: NO.** The review already states the substance: the margin fell 251 bp QoQ (L232, L275, L314). The incremental-margin figure restates that fact. No graft.
+
+### Mandatory acquisition-economics probe
+**Not triggered.** Re-run this loop: a grep of the three fulltexts for acqui|stake|takeover|amalgamat|merger|share purchase|investment in gives 0 hits. The Rs 200 cr is organic capex (CX L39-44). Its capacity, revenue and return are NOT FOUND. A4 routes them to Q11-Q14 (L616-619).
+
+## L2-5. NEW FINDINGS (loop 2)
+
+No FACTUAL, MISSING or CONTRADICTION finding. Three new STYLE notes (S9-S11) are logged below.
+
+## L2-6. VERDICT, LOOP 2
+
+**COMPLETE.** Both loop-1 items are closed: F5 (FACTUAL) and M6 (MISSING). All ten run-1 items stay closed. The brief gate passes, and coverage passes with no orphan rows and nothing missing from the ledger. No arithmetic mismatch remains, and no bear counter survives. The open findings are STYLE only, and they do not loop. The review may proceed to the operator-approved Notion step. The protocol verdict PROCEED WITH FLAGS and the INDETERMINATE-WITH-DIRECTION cash classification stand.
+
+## L2-7. STYLE NOTES, LOOP 2 (logged, no loop)
+- S5 (carried): the A1 results structured file has no row for auditor paragraph 2 (RF L106-111, L467-473). Boilerplate.
+- S6 (carried): the loop-1 response row (review L748) cites "RF L532" for the 31-Mar equity of 519.17. The correct line is RF L700.
+- S7 (carried): 5C L457, "The subsidiaries' profit run is recent, so their earnings history is short", should carry an [INFERENCE] tag.
+- S8 (carried): competition L721, "It does not mean the company makes its own PTA or MEG", is categorical. Soften to "The filings give no sign that it makes its own PTA or MEG."
+- S9 (new): L418, "about half the deleveraging is earned at a normal tax rate and capex level". The 52/48 split is at actual capex (40.4% of D&A). Add the D&A-level figure, 48.7% (103.34 / 212.36). In the same paragraph, "the other half is a receivable release" should read "a net WC release (receivables 140.26 gross, other lines -31.24)".
+- S10 (new): results SIGNATURE_TIME_ND (ledger L298) and the PR cover-letter timestamp 21:47:58 (PR L52) get no remark beside A4-04 / Q20. The results filing carries no signing time, so the 30-minute timing test runs only for the capex letter. One sentence would record this. My earlier traces also did not name these flags.
+- S11 (new): Step 7 L561 cites RF L607 (C) for "All pre-tax". The S ratios rest on RF L213-214 and the S refund at RF L390.
+
+```yaml
+stage: A5-adversary
+company: "INDORAMA"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 2
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S5 (carried): A1 results structured file has no row for auditor para 2 (RF L106-111, L467-473); boilerplate"
+    - "S6 (carried): loop-1 response row review L748 cites RF L532 for 31-Mar equity 519.17; correct line is RF L700"
+    - "S7 (carried): 5C review L457 'profit run is recent' needs an [INFERENCE] tag"
+    - "S8 (carried): competition review L721 PTA/MEG sentence is categorical; soften to 'the filings give no sign that'"
+    - "S9: review L418 'about half earned at a normal tax rate and capex level'; the 52/48 is at actual capex (40.4% of D&A); add the D&A-level figure 48.7% (103.34/212.36); call the 109.02 a net WC release (receivables 140.26 gross, other lines -31.24), not a receivable release"
+    - "S10: results SIGNATURE_TIME_ND (ledger L298) and PR cover-letter timestamp 21:47:58 (PR L52) get no remark beside A4-04/Q20; rows covered by the 721/721 and 132/132 marks; non-material; not named in A5's earlier traces"
+    - "S11: Step 7 review L561 'All pre-tax' cites RF L607 (C) only; S basis is RF L213-214 and S refund RF L390"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S5: A1 auditor para 2 has no structured row; boilerplate"
+  - "S6: review L748 anchor RF L532 should be RF L700"
+  - "S7: tag review L457 'profit run is recent' as [INFERENCE]"
+  - "S8: soften review L721 PTA/MEG sentence"
+  - "S9: review L418 add the D&A-level earned share 48.7%; call 109.02 a net WC release"
+  - "S10: note results SIGNATURE_TIME_ND and PR timestamp 21:47:58 beside A4-04/Q20"
+  - "S11: review L561 add S anchors RF L213-214, L390"
+analyst_note: "Loop 2 closes both loop-1 items. F5: the sector brief now says the FY26 Q1-to-Q2 gross-margin fall came with no crude attribution in the filings (review L714); 'crude shock' remains only in the change log. M6: every place that carries the 58.3% earned share now says pre-tax and gives the 52/48 split at a 25.17% tax. All loop-2 figures recompute from the fulltext (34.63, 117.82, 51.9%, 40.4%), and no run-1 error text has returned. Coverage is unchanged: fresh greps give 198 VER rows, 12 notes, 3 PR pages and 900 structured IDs, all ledgered and marked reviewed. Three positive claims were attacked again. 'About half the deleveraging is earned' holds at D&A-level capex (48.7%) and without the prior-period refund (51.4%). The Q1 FY26 benchmark holds on an H1-average basis (+30.9%). The QoQ EBITDA rise is already offset by the stated 251 bp margin fall. No counter survives. Seven STYLE notes are logged. S10 records two signature-time flags that my earlier traces did not name; they are non-material. Verdict COMPLETE; PROCEED WITH FLAGS stands."
+```

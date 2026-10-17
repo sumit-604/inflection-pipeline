@@ -3,7 +3,7 @@ company: "INDORAMA"
 quarter: "Q2 FY27"
 model: "claude-opus-5-5"
 status: complete
-loop_iteration: 1
+loop_iteration: 2
 docs_merged: [results, presentation]   # results = Reg 33 filing + Reg 30 capex Board Outcome (results class); presentation = press release
 ledger_reconciliation:
   notes: 12
@@ -58,11 +58,11 @@ monitorables:
   - {item: "Portfolio broadening into value-added segments", implied_date: "medium term, undated", source_ref: "PR L140-142 (R117)"}
 flags:
   - "ZERO-TAX EARNINGS: S current tax nil all six periods, DTA flat 258.61; C ETR -0.30% Q2; statutory-rate (25.17%) C H1 EPS 3.94 vs 5.28 reported; reported is 33.6% above statutory basis (A3-09)"
-  - "SPREAD NOT WIDENED: C gross margin 22.60% vs 22.98% YoY (-38 bp), 25.79% QoQ (-319 bp; FY26 Q1-to-Q2 was 25.67% to 22.98%); op EBITDA margin +273 bp YoY came from other expenses -12.21 and FX loss -7.77 (A4-01)"
+  - "SPREAD NOT WIDENED: C gross margin 22.60% vs 22.98% YoY (-38 bp), 25.79% QoQ (-319 bp; FY26 Q1-to-Q2 was 25.67% to 22.98%, no crude attribution in the filings); op EBITDA margin +273 bp YoY came from other expenses -12.21 and FX loss -7.77 (A4-01)"
   - "TROUGH BASE: C core PBT +208.49% YoY is off the Q2 FY26 trough; +41.20% vs Q1 FY26 (49.90); FX swing 16.32% of the rise"
   - "STANDALONE GROSS PROFIT FELL 1.04 YoY on revenue +7.03%; S PAT growth all from cost lines, FX, finance cost, OI (A4-02)"
   - "SUBSIDIARY OPACITY: C-minus-S proxy 25.7% (Q2) / 47.1% (Q1) of C PAT, no entity split; >=182.54 intercompany receivables (level bound); trading share 8.67% of C revenue vs 6.45% (A3-04/05/06/08, A4-05)"
-  - "NET-DEBT SPLIT: -261.47 = 152.45 (58.3%) operating cash before WC + 109.02 (41.7%) WC release; receivables 8.28 days; payables 154.42 days; factoring and acceptances undisclosed (A3-11/12, A4-06)"
+  - "NET-DEBT SPLIT: -261.47 = 152.45 (58.3%) pre-tax operating cash before WC (nil current tax RF L607; 2.71 refund RF L783) + 109.02 (41.7%) WC release; about 52/48 at a 25.17% tax; capex 40.4% of D&A; receivables 8.28 days; payables 154.42 days; factoring and acceptances undisclosed (A3-11/12, A4-06)"
   - "LEVERAGE ON BOOK EQUITY: net DTA 258.83 = 39.4% of C equity; ND/equity ex-DTA 2.14x (4.27x at 31-Mar); ND/TTM op EBITDA 2.34x, 2.89x if capex fully debt-funded (A4-06)"
   - "CASH CONVERSION INDETERMINATE-WITH-DIRECTION: missing factoring at both dates, payables composition/cost, other financial assets composition, H2 cash flow; verdict capped"
   - "PRESS RELEASE REFRAMING: revenue = total income; EBITDA includes OI and excludes FX; margin-expansion headline YoY only (PR-FN-02/04)"
@@ -73,5 +73,5 @@ flags:
   - "OR-30: Steps 6.5 and 7 deferred to /fttcp and Role 1; pillar facts flagged in Step 7 table"
   - "A1 DATA NOTES: R145/R478 are 31-Mar-2026 other equity; R640 FRN truncated (full 000756N/N500441 at RF L520); PR Q2 FY26 PAT '246' = 24.6"
 plain_language_brief_included: true
-analyst_note: "Pre-thesis read; no decision framing. Loop 1 applied all A5 FACTUAL, CONTRADICTION and MISSING items after line checks; no disagreement. The headline (C PAT 74.08 vs 24.55) is real pre-tax but runs off the trough quarter; against Q1 FY26 core PBT is +41.20%. Three facts cap the reading. Tax: no current tax, so reported EPS is 33.6% above a statutory-rate basis; any Amendment 18 entry/exit pairing must fix the tax basis first. Margin source: gross margin fell 38 bp YoY; the operating gain is other expenses and FX of undisclosed composition, and FY26 showed the same Q1-to-Q2 gross-margin fall, so spread durability is unproven until volume is disclosed. Balance sheet: net debt fell 261.47, of which 152.45 was operating cash and 109.02 a WC release that can reverse; 39.4% of book equity is a deferred tax asset whose value rests on the undisclosed loss pool, and TTM net debt / EBITDA is 2.34x. Statutory 25.17% is A3's sensitivity rate; the company's tax regime is ND."
+analyst_note: "Pre-thesis read; no decision framing. Loops 1 and 2 applied every A5 FACTUAL, CONTRADICTION and MISSING item after line checks; no disagreement. The headline (C PAT 74.08 vs 24.55) is real pre-tax but runs off the trough quarter; against Q1 FY26 core PBT is +41.20%. Three facts cap the reading. Tax: no current tax, so reported EPS is 33.6% above a statutory-rate basis; any Amendment 18 entry/exit pairing must fix the tax basis first. Margin source: gross margin fell 38 bp YoY; the operating gain is other expenses and FX of undisclosed composition, and FY26 showed the same Q1-to-Q2 gross-margin fall, so spread durability is unproven until volume is disclosed. Balance sheet: net debt fell 261.47; 152.45 was pre-tax operating cash at maintenance capex (40.4% of D&A) and 109.02 a WC release that can reverse, about 52/48 at a 25.17% tax. 39.4% of book equity is a deferred tax asset resting on the undisclosed loss pool; TTM net debt / EBITDA is 2.34x."
 review_path: "runs/indorama-q2fy27/work/review_indorama_q2fy27.md"

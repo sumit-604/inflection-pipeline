@@ -1,0 +1,60 @@
+stage: A5-adversary
+company: "EIMCOELECO"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - claim: "On less distorted bases core PBT grew 57.7% in H1 and 22.4% on TTM; TTM core PBT Rs 40.82 cr, +22.4% vs FY26 (rev L139, L144, L149, L318, L434, L454, L586)"
+    counter: "TTM is not trough-free. The TTM gain of Rs 7.47 cr equals the H1 gain (12.94 to 20.41), and Rs 5.93 cr of it (79%) is the Q2 recovery off the Q2 FY26 trough. The trough-free comparison, Q1 FY27 vs Q1 FY26, is +14.9% (10.32 to 11.86). TTM EPS Rs 72.97 is 14.4% below FY25 EPS Rs 85.25. TTM core PBT Rs 40.82 cr is below FY25 about Rs 48 cr (PBT 66 less OI 18, deck rounded). TTM operating EBITDA margin 19.08% is below FY25 22.7%. TTM revenue is only 7.0% above FY25 Rs 247 cr. Profit has not recovered the FY25 level."
+    source_line: "res L154, L155, L168, L185 [d]; pres L697, L704, L705, L710, L715"
+    type: MISSING
+  - claim: "Payable days lengthening (supports cash); Q18 bull answer 'capital creditors tied to the H1 asset' (rev L227, L386)"
+    counter: "H1 CFO Rs 1.84 cr includes a Rs 7.14 cr inflow from other financial liabilities (Rs 0.09 cr in all of FY26; Rs 0.53 lakh in H1 FY26). Without that line H1 CFO is Rs (5.30) cr. Trade payables added Rs 8.61 cr more. If capital creditors sit inside this operating line, reported CFO is overstated and capex understated, so the Q18 bull answer is a cash-quality bear."
+    source_line: "res L260, L292, L294, L300 [d]"
+    type: MISSING
+findings_by_type:
+  factual:
+    - "A5-F03: rev L474 'the customer roster is mostly state-owned miners [MGMT, pres L513]' is unsupported. The slide lists 16 names: 8 state-owned (ECL, MCL, SECL, WCL, Singareni, MOIL, Hutti Gold, UCIL) and 8 private (Adept, Inderdeep, JMS, Minop, Singh & Sons, SMS, Technoblast, Tata Steel) (pres L515-532). The deck cites both public and private customers (pres L356). rev L490 'dependence on state-owned buyers' has no filed support. Loop A4."
+  missing:
+    - "A5-M03: the Loop 1 base-effect qualifier calls TTM a less distorted base, but the TTM core-PBT gain (Rs 7.47 cr) equals the H1 gain and 79% of it is the Q2 trough recovery. The trough-free Q1 YoY is +14.9%. TTM EPS Rs 72.97 is 14.4% below FY25 Rs 85.25 (pres L715); TTM core PBT is below FY25 about Rs 48 cr (pres L705, L710). Graft into rev L149, L318, L434, L454, L586. Loop A4."
+    - "A5-M04: Step 5 never ties H1 CFO Rs 1.84 cr to the Rs 7.14 cr other-financial-liabilities inflow (res L294); without it H1 CFO is Rs (5.30) cr. Q18 (rev L386) labels capital creditors as the bull answer, which would mean CFO is overstated. Graft the dependency line into Step 5 and re-fork Q18. Loop A4."
+  contradiction:
+    - "A5-C01: rev L170 calls Q2 FY26 gross margin 71.75% an outlier base, yet rev L491 reads the YoY fall from it as possible tender pricing. Sequentially Q2 FY27 GM 59.88% is above Q1 FY27 54.14%, Q1 FY26 58.25%, H2 FY26 52.81% and FY26 57.13%. Under the A3-14 chart reading, GM ranks with the spares share (48%, 35%, 21%, 18%) in all four quarters with a split. The extract shows mix, not price. Loop A4."
+  style:
+    - "S10: rev L434 'all statements tie' should read 'all column totals tie' (R150 position and H1 FY26 investing labels need the rev L18-20 corrections)."
+    - "S11: rev L454 and L457 tag derived figures [FILED]; use [FILED, derived]."
+    - "S12: rounding-basis artefacts (26.75 vs 26.74%; +122 vs +121.5 bps; +263 vs +263.6 bps; +2.20 vs +2.19; FY26 revenue -6.6% labelled 247 to 231, which gives -6.5%)."
+    - "S13: rev L122 deck margin gap is 0.08-0.32 pp, not 0.1-0.3 pp."
+    - "S14: rev L221 '-22.6 pp' applies pp to a ratio in x; write -0.23x."
+    - "S15: rev L500 30 Apr 2027 CFO date lacks the PENDING LIVE VERIFICATION tag carried in M3; a shorter listing-regulation timeline may apply (outside the extract)."
+    - "S16: CFO flag balance: ED Kamlesh Shah signs the statements (res L337-339) and is an ICAI fellow with about 27 years in financial operations and treasury (pres L212-217)."
+    - "S17: rev L233 liquid net cash excludes leases while the net-debt rows include them; with leases Sep-26 is Rs (2.93) cr."
+    - "S18: rev L241 NFAT 2.22 basis unstated; it ties to TTM revenue / (PPE + CWIP + intangibles) = 264.26 / 119.03."
+    - "S19: A4 coverage is a range-level reviewed statement (rev L13); accepted; row-level marking would make the next audit cheaper."
+    - "S20: presentation ledger line_items 130 merges 9 same-label lines (139 physical); A2 to state the convention."
+loop_back_to: "A4"
+gap: "Four A4 grafts, no re-enumeration. (1) FACTUAL rev L474 and L490: restate the customer roster as 8 state-owned and 8 private of 16 names (pres L515-532, L356); make the slow-payer inference conditional. (2) MISSING rev L149, L318, L434, L454, L586: the TTM core-PBT gain of Rs 7.47 cr equals the H1 gain and 79% of it is the Q2 trough recovery; trough-free Q1 YoY +14.9%; TTM EPS Rs 72.97 is 14.4% below FY25 Rs 85.25 (pres L715); TTM core PBT below FY25 about Rs 48 cr (pres L705, L710). (3) MISSING Step 5 and Q18 (rev L224, L239, L386): H1 CFO Rs 1.84 cr includes a Rs 7.14 cr other-financial-liabilities inflow (res L294), so CFO without it is Rs (5.30) cr; re-fork Q18. (4) CONTRADICTION rev L170 vs L491: add the sequential gross-margin series (59.88% vs 54.14%, 58.25%, 52.81%, 57.13%) and the spares-share ranking before any tender-pricing inference."
+style_notes:
+  - "S10: qualify 'all statements tie' to 'all column totals tie'."
+  - "S11: tag derived summary figures [FILED, derived]."
+  - "S12: compute bps and pp deltas from lakhs, or state the rounded basis."
+  - "S13: restate the deck margin gap as 0.08-0.32 pp."
+  - "S14: express the CFO/PAT change as -0.23x."
+  - "S15: add PENDING LIVE VERIFICATION to the 30 Apr 2027 forward-map date."
+  - "S16: name the ED (ICAI fellow, about 27 years in finance) as the continuity mitigant in the CFO flag."
+  - "S17: state that liquid net cash excludes leases (Rs (2.93) cr with leases)."
+  - "S18: state the NFAT 2.22 basis."
+  - "S19: row-level reviewed marking would make the next audit cheaper."
+  - "S20: A2 to state the same-label merge convention (130 merged, 139 physical)."
+analyst_note: "Loop 1 applied all four prior items; I confirmed each in the review. Coverage and arithmetic are clean again. Fresh counts tie on all three documents, and every derived metric recomputes within rounding from lakhs. This loop is about reading. First, the roster claim fails on the deck's own slide: 8 state-owned, 8 private. Second, the Loop 1 base-effect text, which the prior A5 worded, calls TTM a less distorted base. But the TTM gain is the H1 gain, and 79% of it is the Q2 trough recovery. The trough-free Q1 comparison is +14.9%, and TTM EPS is still 14.4% below FY25. This corrects the prior A5's own wording. Third, H1 CFO is positive only because other financial liabilities rose Rs 7.14 cr, and Q18's bull fork would make cash quality worse. Fourth, the competition brief reads a possible price cut from a gross-margin fall the review itself calls an outlier base; sequential margins track mix. None of this moves PROCEED WITH FLAGS. No acquisition is described, so the probe does not apply. One A4 pass closes all four."

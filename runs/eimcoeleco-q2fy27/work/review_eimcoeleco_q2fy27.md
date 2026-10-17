@@ -1,6 +1,6 @@
 # A4 REVIEW: Eimco Elecon (India) Limited (EIMCOELECO) | Q2 FY27 | Role 4 (Quarterly Results Review Protocol v1.4)
 
-Run: /run-quarterly A4 analyst | Model: claude-opus-5-5 | Date: 2026-10-17 | Revision: Loop 1 (A5 audit items A5-F01, A5-F02, A5-M01, A5-M02 applied; log at end)
+Run: /run-quarterly A4 analyst | Model: claude-opus-5-5 | Date: 2026-10-17 | Revision: Loop 2 (Loop 1: A5-F01, A5-F02, A5-M01, A5-M02; Loop 2: A5-F03, A5-M03, A5-M04, A5-C01; logs at end)
 Docs merged: results filing (Reg 33 statement, BS, CF, limited review report, board outcome, embedded press release, Annexures B and C), investor presentation (39 slides), press release (4 pages). No concall in this run, so Role 5 is not run.
 Framing: PRE-THESIS READ. No Notion COMPANIES MASTER page, no companies/EIMCOELECO.md, no spear on record. Decision Status: ND (no page). This review is not a thesis check.
 
@@ -136,17 +136,17 @@ Checkpoint: every cell is a filed number, a [d] derivation of filed numbers, or 
 | Finance Costs | 0.16 | 0.12 | -25.5% | Immaterial | res L163 |
 | EBIT (operating, ex-OI) | 2.78 | 8.67 | +211.6% | Strong YoY, off a trough base | [d] Op EBITDA - D |
 | Other Income | 4.27 | 1.89 | -55.7% | Treasury drag on headline | res L155 |
-| Core Operating PBT (PBT - OI) | 2.62 | 8.55 | +226.4% | Off a trough base: TTM +22.4%, H1 +57.7%; Q2 FY27 level is below the H2 FY26 quarterly average (10.21) | [d] |
+| Core Operating PBT (PBT - OI) | 2.62 | 8.55 | +226.4% | Off a trough base. H1 +57.7% and TTM +22.4% carry the same Rs 7.47 cr gain, 79% of it from Q2; trough-free Q1 YoY +14.9%; Q2 FY27 level is below the H2 FY26 quarterly average (10.21) | [d] |
 | Reported PBT | 6.89 | 10.44 | +51.5% | Understates YoY core growth | res L168 |
 | PAT | 5.35 | 7.83 | +46.4% | Understates YoY core growth | res L174 |
 | EPS (share-adjusted, Rs) | 9.28 | 13.58 | +46.3% | Same as PAT | res L185 |
 
-H1 YoY (H1 FY27 vs H1 FY26) for context: revenue +33.2% (100.81 to 134.32); operating EBITDA +42.6% (17.53 to 24.99); margin +122 bps (17.39% to 18.61%); OI -22.0% (12.36 to 9.65); core PBT +57.7% (12.94 to 20.41); PBT +18.8% (25.31 to 30.06); PAT +17.0% (19.83 to 23.21); EPS +17.0% (34.38 to 40.24). TTM core PBT Rs 40.82 cr vs FY26 Rs 33.35 cr = +22.4%. All [d] from res L154-L185.
+H1 YoY (H1 FY27 vs H1 FY26) for context: revenue +33.2% (100.81 to 134.32); operating EBITDA +42.6% (17.53 to 24.99); margin +122 bps (17.39% to 18.61%); OI -22.0% (12.36 to 9.65); core PBT +57.7% (12.94 to 20.41); PBT +18.8% (25.31 to 30.06); PAT +17.0% (19.83 to 23.21); EPS +17.0% (34.38 to 40.24). TTM core PBT Rs 40.82 cr vs FY26 Rs 33.35 cr = +22.4%. TTM less FY26 equals H1 FY27 less H1 FY26, so the TTM gain (Rs 7.47 cr) is the H1 gain, and Rs 5.93 cr of it (79%) is the Q2 recovery. Trough-free Q1 FY27 vs Q1 FY26 core PBT: +14.9% (10.32 to 11.86). All [d] from res L154-L185.
 
 Mandatory diagnostic answers:
 1. Did revenue grow YoY? Yes. Q2 FY27 revenue of Rs 56.80 cr vs Q2 FY26 Rs 33.24 cr = +70.9% YoY. There is no company annual guidance in the filings and no Notion base case, so the comparison to guidance and to base is ND.
-2. Margin YoY? Expanded. Q2 FY27 operating EBITDA margin 18.92% vs Q2 FY26 15.71% = +321 bps. The gain does not come from fixed-cost leverage. Filing-basis gross margin fell 1,187 bps (71.75% to 59.88%). Employee cost fell from 17.90% to 9.76% of revenue (+814 bps to margin) and manufacturing expense from 6.49% to 3.34% (+314 bps). Those fixed-cost lines only offset the gross-margin fall: net -59 bps. Without the distributor plus other line, Q2 FY27 operating EBITDA margin would be about 15.11%, below Q2 FY26's 15.71% [d]. The whole +321 bps rests on distributor comp plus other expenses falling from 31.66% to 27.86% of revenue (+380 bps). Inside that line, Other Expenses rose 92.3% in rupees (6.58 to 12.66) against revenue +70.9%, and Compensation to Distributors fell 19.6% in rupees (3.94 to 3.17) [d, res L154, L158-166]. The line is unexplained (FN11). Note 4 (res L193) leans against a reclassification reading (Step 0D).
-3. Core operating PBT YoY? Grew. Rs 2.62 cr to Rs 8.55 cr = +226.4%. This is off a trough base: Q2 FY26 revenue had fallen 50.8% QoQ. In level terms Q2 FY27 core PBT sits below Q1 FY26 (Rs 10.32 cr), the H2 FY26 quarterly average (Rs 10.21 cr) and Q1 FY27 (Rs 11.86 cr). On less distorted bases core PBT grew 57.7% in H1 and 22.4% on TTM. The distributor-rate drop alone is worth Rs 3.57 cr: at the Q2 FY26 rate of 11.85%, Q2 FY27 distributor comp would be Rs 6.73 cr, not the filed Rs 3.17 cr. That is 60% of the Rs 5.93 cr YoY core-PBT gain [d, res L154, L165]. Headline PAT growth (+46.4%) understates YoY core growth, but the core gain itself rests heavily on one unexplained line.
+2. Margin YoY? Expanded. Q2 FY27 operating EBITDA margin 18.92% vs Q2 FY26 15.71% = +321 bps. The gain does not come from fixed-cost leverage. Filing-basis gross margin fell 1,187 bps (71.75% to 59.88%). Employee cost fell from 17.90% to 9.76% of revenue (+814 bps to margin) and manufacturing expense from 6.49% to 3.34% (+314 bps). Those fixed-cost lines only offset the gross-margin fall: net -59 bps. Without the distributor plus other line, Q2 FY27 operating EBITDA margin would be about 15.11%, below Q2 FY26's 15.71% [d]. The whole +321 bps rests on distributor comp plus other expenses falling from 31.66% to 27.86% of revenue (+380 bps). Inside that line, Other Expenses rose 92.3% in rupees (6.58 to 12.66) against revenue +70.9%, and Compensation to Distributors fell 19.6% in rupees (3.94 to 3.17) [d, res L154, L158-166]. The line is unexplained (FN11). Note 4 (res L193) leans against a reclassification reading (Step 0D). The YoY gross-margin fall is measured from the Q2 FY26 outlier; the sequential series is in Step 3.
+3. Core operating PBT YoY? Grew. Rs 2.62 cr to Rs 8.55 cr = +226.4%. This is off a trough base: Q2 FY26 revenue had fallen 50.8% QoQ. In level terms Q2 FY27 core PBT sits below Q1 FY26 (Rs 10.32 cr), the H2 FY26 quarterly average (Rs 10.21 cr) and Q1 FY27 (Rs 11.86 cr). H1 (+57.7%) and TTM (+22.4%) are not trough-free bases (A5-M03). The TTM core-PBT gain of Rs 7.47 cr equals the H1 gain, and Rs 5.93 cr of it (79%) is the Q2 recovery off the Q2 FY26 trough [d]. The trough-free comparison, Q1 FY27 vs Q1 FY26, is +14.9% (10.32 to 11.86) [d]. TTM EPS of Rs 72.97 is 14.4% below FY25's Rs 85.25 [MGMT, pres L715]. TTM core PBT of Rs 40.82 cr is below FY25's about Rs 48 cr (PBT 66 less OI 18, deck rounded) [MGMT, pres L705, L710]. Profit has not yet recovered the FY25 level. The distributor-rate drop alone is worth Rs 3.57 cr: at the Q2 FY26 rate of 11.85%, Q2 FY27 distributor comp would be Rs 6.73 cr, not the filed Rs 3.17 cr. That is 60% of the Rs 5.93 cr YoY core-PBT gain [d, res L154, L165]. Headline PAT growth (+46.4%) understates YoY core growth, but the core gain itself rests heavily on one unexplained line.
 4. Gap between core PBT growth and PAT growth: Other Income fell Rs 2.38 cr (4.27 to 1.89). ETR rose 263 bps (22.36% to 24.99%), costing Rs 0.28 cr. Finance cost fell Rs 0.04 cr. No exceptional items. Bridge in Step 4.
 5. D&A and finance costs scaling faster than revenue? No. Both fell YoY while revenue rose 70.9%. Watch item: PPE rose Rs 47.44 cr in H1 (64.11 to 111.55, res L204) with no D&A step-up yet (Q1 2.11, Q2 2.07). Either the asset is non-depreciable (land) or capitalisation came late in the half and a Q3 step-up follows (FN09, A3-01). No absorption deficit is visible yet.
 6. Other Income concentration changing? Yes, falling. OI was 62.0% of PBT in Q2 FY26 and 18.1% in Q2 FY27. H1 OI fell 22.0% YoY. 74.7% of H1 FY27 OI is fair-value and sale gains on investments (7.21 of 9.65; res L278), which are non-cash MTM in large part (investments rose 8.24 = 1.03 purchases + 7.21 FV gain; A3 tie-out). OI is volatile within the half: Q1 7.76, Q2 1.89 (res L155). Stripping OI gives the cleaner read.
@@ -165,9 +165,21 @@ Mandatory diagnostic answers:
 
 QoQ (Q2 FY27 vs Q1 FY27): revenue -26.7%; operating EBITDA -24.6% (14.25 to 10.74); core PBT -27.9% (11.86 to 8.55); OI -75.6% (7.76 to 1.89); PBT -46.8%; PAT -49.1% (15.38 to 7.83). [d]
 
+Sequential gross margin and spares share (A5-C01) [d, res L154, L158-160; spares share under the A3-14 chart reading, spares = upper segment, res L364-367]:
+| Period | Gross margin (filing basis) | Spares share of revenue (chart, A3-14 reading) | Anchor |
+|---|---|---|---|
+| Q1 FY26 [d: H1 FY26 - Q2 FY26] | 58.25% | 21% | [d] res L154, L158-160, L364-367 |
+| Q2 FY26 | 71.75% | 48% | [d] res L154, L158-160, L364-366 |
+| H2 FY26 [d: FY26 - H1 FY26] | 52.81% | ND (no H2 chart) | [d] res L154, L158-160 |
+| FY26 | 57.13% | ND (no FY chart) | [d] res L154, L158-160 |
+| Q1 FY27 [d: H1 FY27 - Q2 FY27] | 54.14% | 18% | [d] res L154, L158-160, L364-367 |
+| Q2 FY27 | 59.88% | 35% | [d] res L154, L158-160, L364-366 |
+
+Q2 FY27 gross margin is above every period on file except the Q2 FY26 outlier. In the four quarters with a chart split, gross margin ranks in the same order as the spares share (Q2 FY26 > Q2 FY27 > Q1 FY26 > Q1 FY27). The filed series shows a mix effect. It shows no price erosion. The chart segment labels are unmapped (A3-14), so Q10 and Q11 confirm or break this reading.
+
 Diagnostics:
 - Trajectory: Recovering YoY, dipping QoQ. Q2 was below Q1 in both years on file (33.24 < 67.57; 56.80 < 77.52), and H2 was 56.3% of FY26 revenue (one H2 observed; FN15). Read as seasonal and dispatch-lumpy, not as a step-up.
-- One-off distortion: Q2 FY26 is the distorted base (weak quarter, gross margin 71.75%, outlier vs every other period; FN12). Q1 FY27 PAT carries a Rs 0.94 cr deferred-tax credit. No exceptional items anywhere.
+- One-off distortion: Q2 FY26 is the distorted base (weak quarter, gross margin 71.75%, outlier vs every other period; FN12). Sequentially Q2 FY27 gross margin rose to 59.88% from 54.14% in Q1 FY27 (table above). Q1 FY27 PAT carries a Rs 0.94 cr deferred-tax credit. No exceptional items anywhere.
 - Latest quarter vs H1 average: Q2 FY27 revenue Rs 56.80 cr is below the H1 FY27 quarterly average of Rs 67.16 cr. Capex-commissioning test: PPE rose Rs 47.44 cr in H1 while the latest quarter fell below the H1 average. If the asset is productive capacity, this is the protocol's red-flag pattern. If it is land, the test does not apply. The filings do not say which (FN09, A3-01).
 - Implied next base: Q3 FY26 standalone is ND, so a Q3 YoY comparator is ND. The H2 FY26 per-quarter average is Rs 64.97 cr revenue and Rs 10.21 cr core PBT. To hold H1's +33.2% YoY into H2, H2 FY27 revenue must reach at least Rs 173.1 cr (129.94 x 1.3325) [d, arithmetic threshold, not a forecast]. The Rs 133 cr order book (res L374, L413) covers 77% of that threshold, before spares and before definition is confirmed.
 
@@ -217,34 +229,37 @@ Prior period: H1 FY26 for flows; 31 Mar 2026 for stock items (no Sep-25 balance 
 
 | Metric | Prior period | Current period | Change | Verdict | Anchor |
 |---|---|---|---|---|---|
-| CFO (H1) | 6.04 (H1 FY26); 22.11 (FY26) | 1.84 (H1 FY27) | -69.6% vs H1 FY26 | Weak | res L300 |
-| CFO / PAT | 0.30x (H1 FY26); 0.57x (FY26) | 0.08x (H1 FY27) | -22.6 pp vs H1 FY26 | Below every Pillar 2 band (floor 0.65x) | [d] res L174, L300 |
+| CFO (H1) | 6.04 (H1 FY26); 22.11 (FY26) | 1.84 (H1 FY27) | -69.6% vs H1 FY26 | Weak; positive only because of a Rs 7.14 cr other-financial-liabilities inflow (next row but one) | res L300 |
+| CFO / PAT | 0.30x (H1 FY26); 0.57x (FY26) | 0.08x (H1 FY27) | -0.23x vs H1 FY26 | Below every Pillar 2 band (floor 0.65x) | [d] res L174, L300 |
+| CFO excluding the other-financial-liabilities inflow (A5-M04) | 6.04 (H1 FY26; line 0.01); 22.02 (FY26; line 0.09) | (5.30) (H1 FY27; line 7.14) | ND | Negative. Reported H1 CFO rests on one line; (0.23)x of H1 PAT on this basis | [d] res L174, L294, L300 |
 | Capex (PPE + CWIP payments) | ND (H1 FY26 column row-misaligned, FN20); 60.55 (FY26) | 2.11 (H1 FY27) | ND | Low cash capex in H1; the FY26 advance was capitalised (FN09) | res L303 |
-| FCF (CFO - capex) | ND (H1 FY26); (38.44) (FY26) | (0.28) (H1 FY27) | ND | Negative | [d] res L300, L303 |
-| Working capital change (CF) | (6.08) (H1 FY26); (11.31) (FY26) | (15.76) (H1 FY27) | -9.68 vs H1 FY26 | Absorbing | [d] res L288-294 |
+| FCF (CFO - capex) | ND (H1 FY26); (38.44) (FY26) | (0.28) (H1 FY27) | ND | Negative; Rs (7.42) cr without the other-financial-liabilities inflow [d] | [d] res L294, L300, L303 |
+| Working capital change (CF) | (6.08) (H1 FY26); (11.31) (FY26) | (15.76) (H1 FY27) | -9.68 vs H1 FY26 | Absorbing, even after Rs 8.61 cr from trade payables and Rs 7.14 cr from other financial liabilities | [d] res L288-294 |
 | Receivable days (period-end receivables / annualised revenue x 365) | 114.7 (Mar-26, on FY26 revenue) | 123.9 (Sep-26, on H1 x 2) | +9.2 days | Stretching | [d] res L154, L217 |
 | Inventory days (on COGS: materials + purchases + inventory change) | 400.4 (Mar-26) | 361.2 (Sep-26, H1 x 2) | -39.2 days | High; improves on a larger H1 COGS base | [d] res L158-160, L214 |
-| Payable days (on same COGS) | 65.1 (Mar-26) | 81.2 (Sep-26) | +16.1 days | Lengthening (supports cash) | [d] res L252-257 |
+| Payable days (on same COGS) | 65.1 (Mar-26) | 81.2 (Sep-26) | +16.1 days | Lengthening; trade payables added Rs 8.61 cr to H1 CFO (res L292), so this props up reported cash | [d] res L252-257 |
 | Cash Conversion Cycle | 450.0 (Mar-26) | 403.9 (Sep-26) | -46.1 days | Very long; H1-annualised basis is seasonal, read direction with care | [d] |
 | PPE | 64.11 (Mar-26) | 111.55 (Sep-26) | +47.44 (+74.0%) | Large unexplained addition | res L204 |
 | CWIP | 1.57 (Mar-26) | 0.45 (Sep-26) | -1.12 | Capitalised | res L205 |
 | Other non-current assets | 48.25 (Mar-26; A2 Z5 correction) | ND (blank, Sep-26) | -48.25 | Emptied into PPE (FN01, FN09, A3-01) | res L211 |
 | Net debt / (net cash) excluding investments | 3.55 net debt (Mar-26) | 5.75 net debt (Sep-26) | +2.20 | Small, rising | [d] res L218-219, L235, L243-244 |
-| Liquid net cash / (net debt): current investments + cash + bank - borrowings | 11.86 net cash (Mar-26) | (1.53) net debt (Sep-26) | -13.39 | Liquid treasury turned to net borrowing in H1 (A5-M02) | [d] res L216, L218, L219, L243 |
+| Liquid net cash / (net debt): current investments + cash + bank - borrowings | 11.86 net cash (Mar-26) | (1.53) net debt (Sep-26) | -13.39 | Liquid treasury turned to net borrowing in H1 (A5-M02). Excludes lease liabilities (Rs 1.56 cr Mar-26; Rs 1.41 cr Sep-26), which the two net-debt rows include; with leases Sep-26 is Rs (2.93) cr [d] | [d] res L216, L218, L219, L235, L243, L244 |
 | Net debt / (net cash) including all investments | (200.98) net cash (Mar-26) | (207.03) net cash (Sep-26) | +6.05 net cash | Book is 98.7% non-current, composition undisclosed; the +6.05 rise is below the 7.21 FV and sale gains, so ex-MTM net cash fell about 1.17 | [d] res L209, L216, L218-219, L235, L243-244, L278 |
 | Promoter pledge | ND | ND | ND | Not in filings | ND |
 
-Supporting stock items (Rs cr): trade receivables 72.49 (Mar-26) to 91.18 (Sep-26), +18.70 (+25.8%) (res L217); inventories 108.52 to 115.48, +6.96 (+6.4%) (res L214); borrowings 2.79 to 5.75 (res L243); current investments 13.86 to 2.81 (-79.7%) (res L216); non-current investments 190.68 to 209.96 (res L209); total investments 204.54 to 212.78 (37.95% of total assets of 560.61; 98.7% non-current) (res L209, L216, L224); trade payables 17.63 to 25.95 (res L252-257); other current financial liabilities 5.27 to 11.10 (+110%) (res L260); other current liabilities 14.21 to 11.69 (-17.7%) (res L261); total equity 467.51 to 488.41 (res L231).
+Supporting stock items (Rs cr): trade receivables 72.49 (Mar-26) to 91.18 (Sep-26), +18.70 (+25.8%) (res L217); inventories 108.52 to 115.48, +6.96 (+6.4%) (res L214); borrowings 2.79 to 5.75 (res L243); current investments 13.86 to 2.81 (-79.7%) (res L216); non-current investments 190.68 to 209.96 (res L209); total investments 204.54 to 212.78 (37.95% of total assets of 560.61; 98.7% non-current) (res L209, L216, L224); trade payables 17.63 to 25.95 (res L252-257); other current financial liabilities 5.27 to 11.10 (+110%) (res L260); other non-current financial liabilities nil to 0.28 (res L236); other current liabilities 14.21 to 11.69 (-17.7%) (res L261); total equity 467.51 to 488.41 (res L231).
 
 H1 cash funding [d]: CFO Rs 1.84 cr did not cover capex of Rs 2.11 cr (res L300, L303). The Rs 2.32 cr dividend paid (res L319) was in effect funded by Rs 2.87 cr of new borrowing (res L315), not by drawing the treasury.
+
+CFO dependency (A5-M04) [d]: H1 CFO of Rs 1.84 cr includes a Rs 7.14 cr operating inflow from other financial liabilities (res L294). The same line gave Rs 0.09 cr in all of FY26 and Rs 0.01 cr in H1 FY26 (res L294). Without that line H1 CFO is Rs (5.30) cr and H1 FCF is Rs (7.42) cr. Trade payables added a further Rs 8.61 cr (res L292). The balance-sheet rise in other financial liabilities is Rs 6.11 cr: current 5.27 to 11.10 (res L260) plus non-current nil to 0.28 (res L236). The filing does not reconcile that rise to the Rs 7.14 cr cash-flow line. If capital creditors for the H1 asset sit inside this operating line, reported CFO is overstated and cash capex understated by up to that amount [INFERENCE]. Q18 asks for the split.
 
 Deck working-capital days (TTM basis, formula undisclosed): 232 (FY26) to 219 (H1 FY27) (pres L376-377, L382). In rupees working capital absorbed Rs 15.76 cr in H1, and receivable days stretched. The deck's improvement comes from a larger TTM revenue denominator (A3-11). The deck key ratios do not tie to its own balance sheet (current ratio 3.8 shown vs 3.53 period-end; NFAT 2.8 vs 2.22; A3-12). This review uses period-end balance-sheet values, never the slide 17 ratios.
 
 Multi-year conversion (deck, rounded): FY23-FY26 cumulative OCF Rs 74 cr vs PAT Rs 149 cr = 0.50x (pres L762, L713).
 
 Mandatory answers:
-- Is CFO/PAT meeting the Pillar 2 cash multiplier assumption? No Notion assumption exists (ND). On the filed numbers, H1 FY27 0.08x, FY26 0.57x and FY23-FY26 0.50x all sit below the lowest band of 0.65x. Pillar-relevant fact flagged for /fttcp and Role 1.
-- Is the WC drag structural or growth-induced? Test: "If the company stopped growing tomorrow, would WC days still be high?" FY26 revenue fell 6.6% (247 to 231, pres L697) and CFO/PAT was still 0.57x. Inventory sits at about a year of COGS at both dates. That leans structural. H1 is seasonally the weak cash half, and no rating-agency commentary is in the files. Classification: INDETERMINATE-WITH-DIRECTION (lean structural). Missing evidence that would resolve it: receivable ageing and CIL-subsidiary payment terms; FY27 full-year CFO (Q4 FY27 filing); any CARE/ICRA/CRISIL WC assessment (none in files). Per house rule this caps the verdict at PROCEED WITH CAVEATS or below.
+- Is CFO/PAT meeting the Pillar 2 cash multiplier assumption? No Notion assumption exists (ND). On the filed numbers, H1 FY27 0.08x, FY26 0.57x and FY23-FY26 0.50x all sit below the lowest band of 0.65x. Reported H1 CFO itself rests on the Rs 7.14 cr other-financial-liabilities inflow; without it H1 CFO is Rs (5.30) cr. Pillar-relevant fact flagged for /fttcp and Role 1.
+- Is the WC drag structural or growth-induced? Test: "If the company stopped growing tomorrow, would WC days still be high?" FY26 revenue fell 6.6% (247 to 231, pres L697) and CFO/PAT was still 0.57x. Inventory sits at about a year of COGS at both dates. That leans structural. H1 is seasonally the weak cash half, and no rating-agency commentary is in the files. Classification: INDETERMINATE-WITH-DIRECTION (lean structural). Missing evidence that would resolve it: receivable ageing and state-owned vs private customer payment terms; the capital-creditor share of the Rs 7.14 cr other-financial-liabilities inflow; FY27 full-year CFO (Q4 FY27 filing); any CARE/ICRA/CRISIL WC assessment (none in files). Per house rule this caps the verdict at PROCEED WITH CAVEATS or below.
 - Did CWIP capitalise as expected? No expectation exists (ND). Rs 47.44 cr net PPE addition came from the Rs 48.25 cr Mar-26 other non-current assets balance (a capital-advance pattern paid in FY26: FY26 capex payments Rs 60.55 cr, res L303) plus Rs 1.12 cr CWIP. No note names the asset (FN09, A3-01, PR/F6-3).
 - Net debt within projected range? No projection (ND). Gross borrowing doubled to Rs 5.75 cr. On a liquid basis the company moved from Rs 11.86 cr net cash to Rs 1.53 cr net debt, because current investments fell 79.7% (13.86 to 2.81) while borrowing rose. The Rs 212.78 cr headline book is 98.7% non-current, and its composition and liquidity are undisclosed (FN02, A3-02, A3-16). The borrowing is a liquid funding need at the operating level. Whether the non-current book can be drawn is ND (Q14, Q16).
 
@@ -269,7 +284,7 @@ No signal written. Under /run-quarterly any write goes through the operator-appr
 | CIL underground coal: continuous-miner fleet and reopened UG mines (47 CMs at 27 mines; 23 discontinued UG mines awarded June 2024; 100 Mt UG target by 2030) | Customer capex / regulatory | Quarterly / event | pres L561-575 | Coal equipment order inflow |
 | Hindustan Copper ore capacity (about 4 to 12.2 MTPA by FY2029-30) | Customer capex | Event | pres L589-597 | Metal-mine LHD demand |
 | ICEMA domestic construction-equipment sales forecast FY27 (9-12%, raised from about 7%) | Industry volume | Annual / revision | pres L641-642 | Piling-rig demand |
-| CIL subsidiary payment behaviour (ECL, MCL, SECL, WCL in customer roster) | Customer liquidity | Quarterly | pres L513 | Receivable days (FN10, A3-11) |
+| CIL subsidiary payment behaviour (ECL, MCL, SECL, WCL in customer roster; 8 of 16 roster names are state-owned) | Customer liquidity | Quarterly | pres L515-532 | Receivable days (FN10, A3-11) |
 
 ### 5.5D. Feed to Step 6
 No signal-reconciled forward view is possible. Step 6 rests on the single-quarter filing alone, which raises the weight of conservative interpretation.
@@ -315,7 +330,7 @@ Candidate growth triggers the filings make observable (for a future thesis, not 
 
 Deferred to /fttcp and Role 1 (operator ruling OR-30). No expectation ledger exists for this name (ND). Pillar-relevant facts flagged for the A21 base:
 - Seasonality: Q2 < Q1 in both years on file and H2 = 56.3% of FY26 (one H2 observed; FN15). A trailing-four-quarter base is the declared basis, not single-quarter annualisation.
-- TTM to Sep-26 [d, FY26 - H1 FY26 + H1 FY27]: revenue Rs 264.26 cr; operating EBITDA Rs 50.43 cr (19.08%); Other Income Rs 14.29 cr; core PBT Rs 40.82 cr (+22.4% vs FY26); PAT Rs 42.09 cr; EPS Rs 72.97.
+- TTM to Sep-26 [d, FY26 - H1 FY26 + H1 FY27]: revenue Rs 264.26 cr; operating EBITDA Rs 50.43 cr (19.08%); Other Income Rs 14.29 cr; core PBT Rs 40.82 cr (+22.4% vs FY26); PAT Rs 42.09 cr; EPS Rs 72.97. Base qualifier (A5-M03): TTM is not a trough-free base. The TTM core-PBT gain of Rs 7.47 cr equals the H1 gain, and Rs 5.93 cr of it (79%) is the Q2 recovery off the Q2 FY26 trough [d]. The trough-free comparison, Q1 FY27 vs Q1 FY26, is +14.9% [d]. Against FY25 (deck, rounded): TTM EPS Rs 72.97 is 14.4% below Rs 85.25 (pres L715); TTM core PBT Rs 40.82 cr is below about Rs 48 cr (PBT 66 less OI 18, pres L705, L710); TTM operating EBITDA margin 19.08% is below 22.7% (pres L704); TTM revenue is 7.0% above Rs 247 cr (pres L697) [d]. Profit has not yet recovered the FY25 level.
 - Known one-offs to adjust: Q1 FY27 deferred-tax credit Rs 0.94 cr; H1 FV gains Rs 7.21 cr on investments (non-operating, largely MTM); FY26 earlier-period tax credit Rs 0.11 cr. The Q2 margin rests on the unexplained distributor plus other line (FN11); do not fold it into the base until answered.
 - Treasury: investments Rs 212.78 cr; net cash including investments Rs 207.03 cr = Rs 358.9 per share [d, 57.684 lakh shares]. LIQUIDITY QUALIFIER (A5-M02): this per-share figure is not a liquid figure. 98.7% of the book (Rs 209.96 cr) is non-current with undisclosed composition. Liquid net cash is Rs (1.53) cr at Sep-26, down from Rs 11.86 cr at Mar-26. The H1 rise in net cash (Rs 6.05 cr) is less than the H1 FV gains (Rs 7.21 cr). Any treasury credit at /fttcp or Role 1 must first establish the book's liquidity and composition (Q14, Q16). Book value per share Rs 846.7 [d, res L231].
 
@@ -326,12 +341,12 @@ Deferred to /fttcp and Role 1 (operator ruling OR-30). No Section 1B or FTTCP au
 | Pillar / Input | Original Assumption | Current Reading (pillar-relevant fact) | Action |
 |---|---|---|---|
 | ROCE base (Pillar 1) | ND | Deck ROCE 11.7% H1 FY27 TTM, 10.7% FY26; ROE 9.0% / 8.3% (pres L361-366); formula undisclosed and slide 17 ratios do not tie (A3-12). Investments are 37.95% of total assets, which depresses reported ROCE. | Deferred to /fttcp (FTTCP verdict sole authority). Compute operating ROCE ex-treasury there. |
-| Cash multiplier (Pillar 2) | ND | CFO/PAT 0.08x H1 FY27, 0.57x FY26, 0.50x FY23-FY26 (res L300; pres L762, L713). Below the 0.65x floor band. | Deferred to Role 1. FLAG. |
+| Cash multiplier (Pillar 2) | ND | CFO/PAT 0.08x H1 FY27, 0.57x FY26, 0.50x FY23-FY26 (res L300; pres L762, L713). Below the 0.65x floor band. Without the Rs 7.14 cr other-financial-liabilities inflow, H1 CFO is Rs (5.30) cr (res L294) [d]. | Deferred to Role 1. FLAG. |
 | Growth visibility premium | ND | Order book Rs 133 cr = 0.50x TTM revenue (res L374; [d]); definition unresolved (order book vs "open order pipeline", FN19, PR/F16-2). | Deferred. Do not credit until the definition is answered. |
 | Strategic premium | ND | No moat evidence in filings; product launches carry no orders or revenue (A3-05). | Deferred. |
 | UA multiplier | ND | Shareholding and institutional ownership not in the filings. | Deferred (ND). |
 | Sector cap | ND | Capital goods / mining equipment; single segment Machinery and Spares (res L191). | Deferred. |
-| Hurdle ratio recheck | ND | No CMP and no EPS CAGR baseline in inputs. TTM EPS Rs 72.97 [d]. | Deferred (ND). |
+| Hurdle ratio recheck | ND | No CMP and no EPS CAGR baseline in inputs. TTM EPS Rs 72.97 [d], 14.4% below FY25 EPS Rs 85.25 (pres L715). | Deferred (ND). |
 
 No destination PE or fair value is computed or revised here.
 
@@ -349,7 +364,7 @@ Decision Status verified: ND (no Notion page). The name is not held in any recor
 ### 8B. Add-back / trim trigger refinement
 - Original add-back trigger: ND. Revised: ND.
 - Original trim ladder: ND. Revised: ND.
-- New information on execution quality for any future thesis: fixed-cost leverage only offset the gross-margin fall (net -59 bps); the whole +321 bps margin gain rests on the unexplained distributor plus other line. Cash conversion is the binding weakness. The liquid treasury turned to net debt. The Rs 47 cr asset is undisclosed.
+- New information on execution quality for any future thesis: fixed-cost leverage only offset the gross-margin fall (net -59 bps); the whole +321 bps margin gain rests on the unexplained distributor plus other line. Cash conversion is the binding weakness, and reported H1 CFO rests on one Rs 7.14 cr liability inflow. The liquid treasury turned to net debt. The Rs 47 cr asset is undisclosed.
 
 ### 8C. Single cleanest metric for next quarter
 Metric: **Q3 FY27 core operating PBT (PBT - Other Income)**, from the Q3 FY27 results (LODR Reg 33 timeline: within 45 days of 31 Dec 2026, so by 14 Feb 2027).
@@ -367,7 +382,7 @@ Ordered by materiality. Each question references a filed number and asks for a n
 | # | Cat | Question | Why it matters | Bull answer | Bear answer | From finding |
 |---|---|---|---|---|---|---|
 | 1 | D | H1 FY27 CFO was Rs 1.84 cr against PAT of Rs 23.21 cr, and trade receivables rose from Rs 72.49 cr to Rs 91.18 cr. How much of the Rs 91.18 cr was overdue more than 180 days at 30 Sep 2026? | Cash conversion is the binding weakness (0.08x H1, 0.50x FY23-FY26). | Under Rs 5 cr overdue; the build is Q2 dispatches billed late in September. | A material overdue share, or a refusal to give ageing. | FN10, A3-11 |
-| 2 | D | What share of the Rs 91.18 cr receivables is due from Coal India subsidiaries, and what are the contracted payment days? | Tests whether WC is structural (PSU terms) or timing. | Short contracted days with a dated collection plan. | Long PSU terms that make the drag structural. | FN10, A3-11 |
+| 2 | D | What share of the Rs 91.18 cr receivables, and of H1 revenue, is due from state-owned customers (Coal India subsidiaries, Singareni, MOIL, Hutti Gold, UCIL) vs private customers, and what are the contracted payment days for each group? | The customer slide lists 8 state-owned and 8 private names with no revenue or receivable share (pres L515-532). Tests whether WC is structural (state-payer terms) or timing. | Short contracted days with a dated collection plan. | Long state-payer terms on a dominant receivable share, which make the drag structural. | FN10, A3-11 |
 | 3 | A | Compensation to Distributors fell to Rs 3.17 cr (5.6% of revenue) in Q2 from Rs 8.71 cr (11.2%) in Q1, while Other Expenses rose to Rs 12.66 cr (22.3%) from Rs 11.39 cr. Was any amount reclassified between these two lines in Q2: yes or no, and how many Rs cr? | The whole +321 bps YoY margin gain rests on this line group; at the Q1 distributor rate, Q2 EBITDA margin would be 13.3%, not 18.9%. Note 4 (res L193) says comparatives were regrouped to be comparable, yet Q1 FY27 and Q2 FY26 still show 11.2% and 11.9%, which leans against a Q2 reclass. | A dated shift to direct (non-distributor) sales, with the Rs cr named; or a stated reclass with restated comparatives. | No reclassification and no channel change: the Q2 margin rests on a line that reverts. | FN11, FN04, A3-04, PR/F6-1 |
 | 4 | F | PPE rose from Rs 64.11 cr to Rs 111.55 cr in H1 while other non-current assets of Rs 48.25 cr went to nil and H1 cash capex was Rs 2.11 cr. What asset was capitalised (land, building or plant), for how many Rs cr, and on what date? | A Rs 47 cr asset is 74% of the prior PPE base, with no note. | Land, or plant with a named capacity and a dated revenue ramp. | Plant capitalised late in Q2 with no capacity disclosure. | FN09, A3-01, PR/F6-3 |
 | 5 | F | What annual depreciation charge does the asset capitalised in H1 FY27 add, in Rs cr? | Q2 D&A fell to Rs 2.07 cr; a step-up hits core PBT from Q3. | Nil (land) or small. | A step-up that offsets the H2 order-book margin. | FN09, A3-01 |
@@ -376,14 +391,14 @@ Ordered by materiality. Each question references a filed number and asks for a n
 | 8 | G | Who is the successor or interim CFO, and on what date will that person take office? | The CFO leaves on 30 Oct 2026; Q3 FY27 close and limited review will be the first without him. | A named appointee before 30 Oct 2026. | No appointee by the Q3 board meeting. | FN16 |
 | 9 | G | On what date did the company receive Mr. Begwani's letter dated 5 Sep 2026, and was an earlier Reg 30 intimation filed: yes or no? | The exchange disclosure came 38 days after the letter date. | Received close to 13 Oct, or an earlier intimation exists. | Received early September with no earlier disclosure. | FN17 |
 | 10 | C | What were product revenue and spares revenue in Rs cr for Q2 FY26, Q1 FY27 and Q2 FY27, and which chart segment is spares? | Gross margin tracks the unlabelled chart segment in every period; mix drives margin. | Spares share stable or rising. | Equipment-heavy growth with spares share falling (35% Q2 FY27 vs 48% Q2 FY26 under one reading). | FN12, A3-14, PR/F12-1 |
-| 11 | C | Filing-basis gross margin fell from 71.75% in Q2 FY26 to 59.88% in Q2 FY27. How many bps of that fall is product mix, and how many is price? | The gross-margin fall (-1,187 bps) was larger than the fixed-cost recovery (+1,128 bps). | Mostly mix, with stable equipment pricing. | Price erosion on equipment orders. | A3-13, FN12 |
+| 11 | C | Filing-basis gross margin fell from 71.75% in Q2 FY26 to 59.88% in Q2 FY27. How many bps of that fall is product mix, and how many is price? | The gross-margin fall (-1,187 bps) was larger than the fixed-cost recovery (+1,128 bps). Sequentially Q2 FY27 gross margin is above Q1 FY27 (54.14%), and margin ranks with the spares share, which points to mix (Step 3). This question tests that reading. | Mostly mix, with stable equipment pricing. | Price erosion on equipment orders. | A3-13, FN12 |
 | 12 | A | Q2 built Rs 11.50 cr of finished goods and WIP while revenue fell 26.7% QoQ. What share of the Sep-26 inventory of Rs 115.48 cr is against orders scheduled to ship in Q3 FY27? | Inventory sits at about a year of COGS. | Most of the build ships in Q3. | Slow-moving stock with no dispatch date. | FN12 |
 | 13 | A | Q2 FY27 revenue of Rs 56.80 cr was 26.7% below Q1 FY27 (Rs 77.52 cr). Did any order planned for Q2 slip to H2: yes or no, and for how many Rs cr? | The release says "sustained momentum" but shows YoY only. | No slippage; seasonal dispatch pattern. | A named slippage. | PR/F16-1, A3-13, FN18 |
 | 14 | F | Borrowings rose from Rs 2.79 cr to Rs 5.75 cr while investments stood at Rs 212.78 cr and current investments fell to Rs 2.81 cr. What is the facility type and interest rate? | Liquid net cash moved from Rs 11.86 cr to Rs (1.53) cr; the H1 dividend was in effect funded by borrowing. | A cheap working-capital line kept for banking relations. | A liquidity need the treasury book cannot meet (illiquid or locked investments). | FN02, A3-02 |
 | 15 | C | Q1 FY27 carried a deferred-tax credit of Rs 0.94 cr and DTL fell from Rs 7.70 cr to Rs 6.76 cr. Which temporary difference reversed? | Ex-deferred H1 ETR is 25.91%; the credit may not recur. | A named one-time item, with FY27 ETR guided near 25%. | No explanation. | FN07, A3-08 |
 | 16 | D | Of H1 Other Income of Rs 9.65 cr, Rs 7.21 cr is fair-value and sale gains. What share of the Rs 209.96 cr non-current investment book is equity or equity funds? | OI is 32.1% of H1 PBT and mostly MTM; the book is 98.7% non-current. | Mostly debt instruments with stable accrual and short redemption terms. | Mostly equity or locked instruments, so PBT carries market risk and the book is not liquid. | A3-16 |
 | 17 | F | The reserve roll implies an FY26 dividend of Rs 4.00 per share vs Rs 5.00 for FY25. Confirm the FY26 DPS, and was the cut made to fund the Rs 60.55 cr FY26 capex: yes or no? | Capital allocation signal. | Yes, a one-time capex funding decision. | A cut with no stated reason. | FN08 |
-| 18 | D | Other current financial liabilities rose from Rs 5.27 cr to Rs 11.10 cr. How many Rs cr of the Rs 11.10 cr are capital creditors? | It may hold unpaid capex for the Rs 47 cr asset. | Capital creditors tied to the H1 asset. | Unexplained. | FN14 |
+| 18 | D | Other current financial liabilities rose from Rs 5.27 cr to Rs 11.10 cr, and the H1 cash-flow statement books a Rs 7.14 cr operating inflow from other financial liabilities (Rs 0.09 cr in all of FY26). How many Rs cr of that inflow are capital creditors, and on what date will the balance be settled? | H1 CFO is Rs 1.84 cr with the line and Rs (5.30) cr without it. Capital creditors carried inside operating cash flow would overstate CFO and understate cash capex. | Operating accruals with a dated settlement, and H1 CFO stated without them. | Capital creditors carried inside operating cash flow, or dues that unwind in H2. | FN14 |
 | 19 | D | Other current liabilities fell from Rs 14.21 cr to Rs 11.69 cr while the order book rose. What were customer advances in Rs cr at 31 Mar 2026 and 30 Sep 2026? | Falling advances with a rising book means weaker customer funding of WC. | Advances stable or up. | Advances down. | FN14 |
 | 20 | C | The release states Q2 EBITDA margin 18.8% and growth 108.8%; the filed statement gives 18.9% and 105.8% on PBT plus D&A plus finance cost less Other Income. What is the company's EBITDA definition? | Undefined headline metric. | A stated definition that reconciles. | No definition. | FN20, PR/F14-1 |
 | 21 | C | The 18-20% targeted range: is it EBITDA excluding Other Income, and is 20% a ceiling given FY25 EBITDA margin of 22.7%? | The band sits below the FY25 peak; it may cap a margin reset. | EBITDA ex-OI; 20% is a floor for FY28. | 20% is the ceiling. | FN04, A3-04, PR/F6-1 |
@@ -419,7 +434,7 @@ Channel recommendation: IR email. No concall is in this run and none is schedule
 | M5 | EBITDA margin vs "targeted range of 18-20%" | Undated, every quarter | res L408; pres L327 (FN04, A3-04, PR/F6-1) | Operating EBITDA margin each quarter |
 | M6 | Execution of Rs 133 cr order book / "open order pipeline" | Undated; about six months at the TTM run-rate, so H2 FY27 [d] | res L374, L413-415; pres L354-356 (FN05, A3-15, PR/F6-2) | Sequential order book and inflow in the Q3 deck |
 | M7 | "continuing to invest in capabilities" | Undated | res L409 (PR/F6-3) | Capex note; asset named |
-| M8 | Q4 FY27 / FY27 audited results with H2 cash flow: full-year CFO/PAT | by 2027-05-30 (LODR Reg 33, 60 days after 31 Mar 2027) | res L300 (FN10, A3-11) | Bull at or above 0.80x; bear below 0.57x |
+| M8 | Q4 FY27 / FY27 audited results with H2 cash flow: full-year CFO/PAT | by 2027-05-30 (LODR Reg 33, 60 days after 31 Mar 2027) | res L294, L300 (FN10, A3-11) | Bull at or above 0.80x; bear below 0.57x; CFO with and without the other-financial-liabilities line |
 | M9 | FY27 annual report: tax note (DTL reversal), PPE schedule (asset class of the Rs 47 cr addition), actuarial OCI, related parties, investment composition | AGM date ND | FN06, FN07, FN09, A3-16, Z2-Z4 | Verify each at the Role 6 deep dive |
 | M10 | Borrowings, liquid net cash and new non-current liability lines (Rs 0.28 cr and Rs 0.09 cr) | Mar-27 balance sheet | res L216-219, L236-237, L243 (FN02, FN03) | Size and nature; liquid net cash back above zero or not |
 | M11 | Exceptional line in the deck template | Each quarter | pres L401 (A3-03) | Any non-zero entry |
@@ -431,13 +446,13 @@ Channel recommendation: IR email. No concall is in this run and none is schedule
 
 ## VERDICT
 
-Protocol verdict: **PROCEED WITH FLAGS**. The filed numbers are clean: unmodified limited review, all statements tie, no exceptional items, standalone-only filer. Core PBT grew 226% YoY, but off a trough base: TTM core PBT grew 22.4%, and Q2's Rs 8.55 cr sits below the H2 FY26 quarterly average of Rs 10.21 cr. 60% of the YoY gain equals the unexplained distributor-rate drop. Four items need to be surfaced, and cash conversion caps the verdict below PROCEED in any case:
-1. Cash conversion INDETERMINATE-WITH-DIRECTION (lean structural): H1 CFO/PAT 0.08x; FY23-FY26 0.50x. Missing evidence named in Step 5.
-2. Governance: CFO exits 30 Oct 2026 with no successor named, after a 38-day letter-to-disclosure gap.
+Protocol verdict: **PROCEED WITH FLAGS**. The filed numbers are clean: unmodified limited review, all column totals tie (two cell positions need the data corrections listed under the preamble), no exceptional items, standalone-only filer. Core PBT grew 226% YoY, but off a trough base. H1 and TTM carry the same Rs 7.47 cr gain, 79% of it the Q2 recovery; the trough-free Q1 YoY is +14.9%. TTM EPS of Rs 72.97 is 14.4% below FY25's Rs 85.25 (pres L715), so profit has not recovered the FY25 level. Q2's Rs 8.55 cr sits below the H2 FY26 quarterly average of Rs 10.21 cr. 60% of the YoY gain equals the unexplained distributor-rate drop. Four items need to be surfaced, and cash conversion caps the verdict below PROCEED in any case:
+1. Cash conversion INDETERMINATE-WITH-DIRECTION (lean structural): H1 CFO/PAT 0.08x; FY23-FY26 0.50x. H1 CFO is Rs (5.30) cr without a Rs 7.14 cr other-financial-liabilities inflow (res L294). Missing evidence named in Step 5.
+2. Governance: CFO exits 30 Oct 2026 with no successor named, after a 38-day letter-to-disclosure gap. Mitigant: ED Kamlesh Shah signs the statements (res L337-339) and is an ICAI fellow with about 27 years in financial operations and treasury (pres L212-217). That gives continuity. It does not address the 38-day gap or the missing successor.
 3. Disclosure gaps that move the margin read: an unnamed Rs 47.44 cr capitalisation, and the distributor plus other line, which carries the whole +321 bps margin gain. Note 4's regrouped comparatives lean against the reclass reading.
 4. Treasury liquidity: liquid net cash moved from Rs 11.86 cr to Rs (1.53) cr in H1; the Rs 212.78 cr book is 98.7% non-current with undisclosed composition.
 
-The Loop 1 fixes strengthen the flags. They raise no mechanical failure and no REWORK trigger, so the verdict stands.
+The Loop 1 and Loop 2 fixes strengthen the flags. They raise no mechanical failure and no REWORK trigger, so the verdict stands.
 
 Standalone vs consolidated gap (A3 F2): N.A. in every period. Note 3 (res L192) states no subsidiary, associate or JV. No consolidated statement exists.
 
@@ -451,13 +466,15 @@ Provenance tiers: FILED (results filing), MGMT (company deck or release statemen
 Eimco Elecon sold Rs 56.80 cr in Q2 FY27, up 70.9% from Rs 33.24 cr a year ago [FILED].
 The base was weak. Q2 FY26 revenue had fallen 50.8% from the quarter before it [FILED, derived].
 Against Q1 FY27, revenue fell 26.7% [FILED]. Q2 was below Q1 in both years, and H2 was 56.3% of FY26 revenue [FILED, derived]. Only one H2 is on file.
-Core profit before tax, after taking out other income, rose from Rs 2.62 cr to Rs 8.55 cr [FILED]. That growth is off a trough base. Over twelve months core profit grew 22.4% [FILED, derived].
+Core profit before tax, after taking out other income, rose from Rs 2.62 cr to Rs 8.55 cr [FILED, derived]. That growth is off a trough base.
+The twelve-month gain of Rs 7.47 cr equals the first-half gain, and 79% of it is the Q2 rebound [FILED, derived].
+Q1 against Q1, free of the trough, core profit grew 14.9% [FILED, derived]. Twelve-month EPS of Rs 72.97 is still 14.4% below FY25's Rs 85.25 [MGMT, pres L715].
 Q2's Rs 8.55 cr is below last year's H2 quarterly average of Rs 10.21 cr [FILED, derived].
 Reported profit after tax rose 46.4% to Rs 7.83 cr, because treasury income fell [FILED].
-Operating margin rose to 18.9% from 15.7% [FILED]. Gross margin fell from 71.8% to 59.9% [FILED].
+Operating margin rose to 18.9% from 15.7% [FILED, derived]. Gross margin fell from 71.8% to 59.9% [FILED, derived]. Against Q1 FY27, gross margin rose from 54.1% [FILED, derived].
 Lower staff and factory costs per rupee of sales only made up for the lower gross margin [FILED, derived]. The whole margin rise came from one cost group, distributor payments plus other expenses [FILED, derived].
 Inside that group, distributor payments fell while sales rose 71%, and other expenses rose 92% [FILED]. Until the company explains this, the 18.9% margin is not proven [INFERENCE].
-Cash is the weak point. The first half produced Rs 1.84 cr of operating cash against Rs 23.21 cr of profit [FILED].
+Cash is the weak point. The first half produced Rs 1.84 cr of operating cash against Rs 23.21 cr of profit [FILED]. Without a Rs 7.14 cr rise in other financial liabilities, operating cash was Rs 5.30 cr negative [FILED, derived].
 Receivables grew 25.8% in six months to Rs 91.18 cr [FILED].
 The liquid part of the treasury moved from Rs 11.86 cr net cash to Rs 1.53 cr net borrowing [FILED, derived].
 Plant and equipment jumped by Rs 47.44 cr with no note to say what was bought [FILED].
@@ -471,7 +488,7 @@ Coal: the government targets 100 Mt of underground coal by 2030 [SECONDARY, PIB,
 Metals: Hindustan Copper plans ore capacity of 12.2 MTPA by FY2029-30, from about 4 [SECONDARY, pres L589-597]. The deck calls uranium projects an in-principle pipeline, not committed capex [MGMT, pres L627].
 Construction: real construction GVA grew 7.7% in Apr-Jun 2026 [SECONDARY, MoSPI, pres L636]. ICEMA expects 9-12% FY27 equipment sales across all construction equipment, not piling rigs alone [SECONDARY, pres L641-643]. A real-estate survey reads neutral at 50 [SECONDARY, pres L646].
 Read: the coal and metals tailwinds are real at sector level. The deck gives no Eimco order figure tied to any of them [INFERENCE, A3-06].
-Payer mix: the customer roster is mostly state-owned miners (Coal India subsidiaries, Singareni, MOIL, Hutti Gold, UCIL) [MGMT, pres L513]. State payers usually pay slowly [INFERENCE]. That fits the cash picture.
+Payer mix: the customer slide shows 16 names, 8 state-owned (four Coal India subsidiaries, Singareni, MOIL, Hutti Gold, UCIL) and 8 private (mining contractors and Tata Steel) [MGMT, pres L515-532]. The deck cites demand from both public and private customers [MGMT, pres L356]. A logo count gives no revenue or receivable share; Q2 asks for it. If state payers dominate receivables, slow payment would fit the cash picture [INFERENCE].
 
 ### 3. Business-model intelligence
 The company makes underground loaders (LHDs and side-dump loaders), continuous-miner packages, man-riding chair lifts, piling rigs and new battery vehicles [MGMT, pres L476, L487].
@@ -487,8 +504,8 @@ The company did not disclose: product vs spares revenue, order inflow, order-boo
 The filings name no competitor, and Notion passed no peer set.
 From general industry knowledge, not from these filings [INFERENCE, PENDING LIVE VERIFICATION]: global loader and continuous-miner makers such as Sandvik, Epiroc and Komatsu Mining compete for Coal India and metal-mine tenders. BEML is a domestic state-owned mining-equipment maker.
 Where Eimco looks strong: a long-installed fleet that needs spares, a domestic plant and service network (1 plant, 10 sales offices) [MGMT, pres L262-273], and an early position in semi-mechanised underground coal [MGMT, pres L155].
-Where it looks weaker: small scale (TTM revenue Rs 264.26 cr) [FILED, derived], dependence on state-owned buyers, and slow cash collection [FILED].
-Competitive risk to watch: gross margin on new equipment orders. A fall from 71.8% to 59.9% YoY may reflect tender pricing, not only mix [INFERENCE]. Question 11 separates the two.
+Where it looks weaker: small scale (TTM revenue Rs 264.26 cr) [FILED, derived], an undisclosed customer mix, and slow cash collection [FILED].
+Competitive risk to watch: gross margin on new equipment orders. YoY gross margin fell from 71.8% to 59.9%, but Q2 FY26 is the outlier base [FILED, derived]. Sequentially, Q2 FY27's 59.88% is above Q1 FY27 (54.14%), Q1 FY26 (58.25%), H2 FY26 (52.81%) and FY26 (57.13%) [FILED, derived]. In four quarters, gross margin ranks in the same order as the spares share (48%, 35%, 21%, 18%) under the A3-14 chart reading [INFERENCE]. The filed series shows mix, not price erosion. Tender pricing would show as a margin fall at a stable spares share. Question 11 is the test.
 
 ### 5. Forward map (next ~10-11 months)
 Make-or-break reading: Q3 FY27 core profit before tax, in the Q3 results due by 14 Feb 2027. Bull at or above Rs 10.21 cr. Bear below Rs 8.55 cr.
@@ -497,8 +514,8 @@ Make-or-break reading: Q3 FY27 core profit before tax, in the Q3 results due by 
 - Every quarter, margin band 18-20%. Bull: operating EBITDA margin holds inside the band with the distributor line explained. Bear: the distributor line reverts and margin falls toward 13%.
 - H2 FY27, Rs 133 cr order book. Bull: a firm, net-of-GST book that grows sequentially. Bear: the figure turns out to include bids, or the sequential book falls.
 - Next deck (with Q3 results), new products and piling rigs. Bull: named orders for CM-3500, MUV, MCAR-E or piling rigs. Bear: no commercial data again.
-- By 30 Apr 2027, statutory CFO window. Bull: a permanent CFO in office. Bear: the vacancy is still open.
-- By 30 May 2027, FY27 results with full-year cash flow. Bull: CFO/PAT at or above 0.80x and liquid net cash back above zero. Bear: CFO/PAT below 0.57x, which confirms the structural reading.
+- By 30 Apr 2027, statutory CFO window [statute, not in filing; PENDING LIVE VERIFICATION; a shorter listing-regulation timeline may apply]. Bull: a permanent CFO in office. Bear: the vacancy is still open.
+- By 30 May 2027, FY27 results with full-year cash flow. Bull: CFO/PAT at or above 0.80x and liquid net cash back above zero. Bear: CFO/PAT below 0.57x, or CFO that again rests on the other-financial-liabilities line, which confirms the structural reading.
 
 ---
 
@@ -511,6 +528,25 @@ All figures were rechecked against the A1 results fulltext (res L154-174, L193, 
 - A5-M02 (MISSING): treasury liquidity is added to Step 5, both in a new liquid net cash row (11.86 to (1.53)) and in the qualified all-investments row (98.7% non-current; the +6.05 rise is below the 7.21 FV gains). Step 5 also gains the H1 cash funding line (CFO 1.84 < capex 2.11; dividend 2.32 in effect funded by 2.87 of new borrowing) and a rewritten net-debt answer. The qualifier is attached to the Rs 358.9 per share figure in Step 6.5. Q14, Q16, M10, the business-model brief, the summary and a new verdict item 4 are updated.
 - Style applied at no extra cost: S01 (sector anchor pres L428-434 corrected to res L428-434); S04 (25.17% marked [statute, not in filing; tax-regime election NOT FOUND]); S05 (Q2 FY26 -50.8% tagged [FILED, derived]).
 - Verdict unchanged: PROCEED WITH FLAGS. Flags were added and sharpened; no REWORK or INSUFFICIENT EVIDENCE trigger arises.
+
+## LOOP 2 CHANGES (A5 re-audit, work/audit_eimcoeleco_q2fy27.md)
+
+Every new figure was checked against the A1 fulltexts before writing: res L154-174 (P&L, lakhs), L236, L260, L292-300 (BS and CF), L337-339 (ED signature), L364-367 (chart split); pres L212-217 (ED profile), L356, L515-532 (customer slide), L697-715 (FY25 history). Lakh-level arithmetic: Q1 FY26 gross margin 3,935.87 / 6,756.99 = 58.25%; H2 FY26 6,862.36 / 12,994.02 = 52.81%; Q1 FY27 core PBT 1,185.91 vs Q1 FY26 1,032.14 = +14.9%; CFO 183.78 - 713.83 = (530.05); FCF (530.05) - 211.48 = (741.53); liquid net cash with leases (152.54) - 140.53 = (293.07).
+- A5-F03 (FACTUAL): the sector-brief payer-mix line now states the roster as 16 names, 8 state-owned and 8 private (pres L515-532), cites the deck's "both public-sector and private-sector customers" (pres L356), and makes the slow-payer reading conditional on a receivable share that Q2 now asks for. The competition brief replaces "dependence on state-owned buyers" with "an undisclosed customer mix". Q2 (question, why, bear), the Step 5 missing-evidence list and the 5.5C candidate-signal anchor (pres L513 to L515-532) are aligned.
+- A5-M03 (MISSING): every place that called H1 or TTM a less distorted base now carries the qualifier: Step 2 table and H1 context line, diagnostic 3, Step 6.5 TTM bullet, Step 7 hurdle row, the verdict, the summary, flag 6 and analyst_note. The qualifier: the TTM core-PBT gain of Rs 7.47 cr equals the H1 gain, and Rs 5.93 cr (79%) is the Q2 recovery; trough-free Q1 YoY +14.9%; TTM EPS Rs 72.97 is 14.4% below FY25 Rs 85.25 (pres L715); TTM core PBT Rs 40.82 cr is below FY25 about Rs 48 cr (pres L705, L710); TTM margin 19.08% vs FY25 22.7% (pres L704); TTM revenue +7.0% vs FY25 Rs 247 cr (pres L697). The Loop 1 log above is left as a record.
+- A5-M04 (MISSING): Step 5 gains a "CFO excluding the other-financial-liabilities inflow" row ((5.30) H1 FY27; 6.04 H1 FY26; 22.02 FY26), an FCF note ((7.42)), revised CFO, WC and payable-days verdicts, and a CFO dependency paragraph. That paragraph also states that the Rs 7.14 cr cash-flow line exceeds the Rs 6.11 cr balance-sheet rise in other financial liabilities (res L236, L260), with no reconciliation in the filing. Q18 is re-forked: bull = operating accruals with a dated settlement and CFO stated without them; bear = capital creditors inside operating cash flow, or dues that unwind in H2. The cash answer, Pillar 2 row, 8B, M8, verdict item 1, summary, forward map and flag 2 are aligned.
+- A5-C01 (CONTRADICTION): Step 3 gains a sequential gross-margin and spares-share table (Q1 FY26 58.25% / 21%; Q2 FY26 71.75% / 48%; H2 FY26 52.81%; FY26 57.13%; Q1 FY27 54.14% / 18%; Q2 FY27 59.88% / 35%). Gross margin ranks with the spares share in all four quarters with a split. The competition brief now states the series and the ranking before any pricing reading; the tender-pricing reading is conditional, and Q11 stays the test. Step 2 diagnostic 2, the Step 3 one-off line, Q11 (why), the summary and a new flag are aligned.
+- Style applied at no extra cost: S10 ("all column totals tie", with the data-correction pointer); S11 (derived summary figures tagged [FILED, derived]); S14 (CFO/PAT change written -0.23x); S15 (PENDING LIVE VERIFICATION on the 30 Apr 2027 forward-map date); S16 (ED Kamlesh Shah as the continuity mitigant in verdict item 2 and the CFO flag); S17 (liquid net cash row states it excludes leases; Rs (2.93) cr with leases). S12, S13 and S18 were not requested and are left as logged.
+- Verdict unchanged: PROCEED WITH FLAGS. Cash conversion stays INDETERMINATE-WITH-DIRECTION (lean structural); A5-M04 strengthens the structural lean but the missing evidence (ageing, capital-creditor split, FY27 full-year CFO) is still missing. No REWORK or INSUFFICIENT EVIDENCE trigger arises.
+
+## OPEN ITEMS AT CLOSE (orchestrator flag; loop cap reached, operator ruling 2026-10-17: no third loop)
+
+The loop 2 A5 re-audit (work/audit_eimcoeleco_q2fy27.md) returned INCOMPLETE. These three items are NOT fixed in the text above. Read the review with them:
+- A5-F04 (FACTUAL): "the filed series shows mix, not price erosion" (rev L178, L508, L614, L625) is not supported. The Q1 FY27 vs Q1 FY26 pair shows gross margin -411 bps with spares share +2.7 pp. Even at a 100% spares gross margin, mix explains at most about 285 of the 613 bps H1 fall. At least about 330 bps (H1, Q2) and about 120 bps (Q1) is an intra-segment fall: price, input cost or equipment mix, not separable from the filing. Q11 stays the test.
+- A5-M05 (MISSING): the ED continuity mitigant (rev L451, L610) needs a qualifier. The CFO letter is addressed to an unnamed "Executive Director" (res L489), and the board has two EDs (pres L201-213). Q9 should also ask which ED received the letter, and on what date.
+- A5-M06 (MISSING): the liquid-treasury flag needs its cause. Rs 11.05 cr (82%) of the Rs 13.39 cr fall is current investments moving to non-current inside the book. The total book rose Rs 8.24 cr (1.03 net purchases + 7.21 gains), and the company net-bought Rs 1.03 cr while borrowing Rs 2.87 cr. Two readings: a liquidity need, or a choice to borrow short rather than sell. Q14 and Q16 separate them.
+None of the three challenges the PROCEED WITH FLAGS verdict (A5). Style notes S19-S28 are logged in the audit only.
+
 
 ```yaml
 stage: A4-analyst
@@ -537,7 +573,7 @@ sc_gap_pat_pct:
   - {period: "FY26", gap: "N.A."}
 questions_for_management:
   - {q: "Rs cr of the Rs 91.18 cr receivables overdue >180 days at 30 Sep 2026?", from_finding_id: "FN10, A3-11"}
-  - {q: "Share of receivables due from CIL subsidiaries and contracted payment days?", from_finding_id: "FN10, A3-11"}
+  - {q: "Share of receivables and H1 revenue due from state-owned customers (CIL subsidiaries, Singareni, MOIL, Hutti Gold, UCIL) vs private customers, and contracted payment days for each? (slide lists 8 state-owned, 8 private names)", from_finding_id: "FN10, A3-11"}
   - {q: "Was any amount reclassified between Compensation to Distributors (3.17 cr, 5.6%) and Other Expenses (12.66 cr, 22.3%) in Q2: yes/no, Rs cr? (Note 4 regrouped comparatives still show 11.2% / 11.9%)", from_finding_id: "FN11, FN04, A3-04, PR/F6-1"}
   - {q: "What asset was capitalised into PPE (64.11 to 111.55 cr), Rs cr, date?", from_finding_id: "FN09, A3-01, PR/F6-3"}
   - {q: "Annual depreciation added by the H1 capitalisation, Rs cr?", from_finding_id: "FN09, A3-01"}
@@ -546,14 +582,14 @@ questions_for_management:
   - {q: "Name and start date of successor or interim CFO?", from_finding_id: "FN16"}
   - {q: "Date the 5 Sep 2026 CFO letter was received; earlier Reg 30 intimation yes/no?", from_finding_id: "FN17"}
   - {q: "Product vs spares revenue Rs cr for Q2 FY26, Q1 FY27, Q2 FY27; which chart segment is spares?", from_finding_id: "FN12, A3-14, PR/F12-1"}
-  - {q: "Bps split of the 1,187 bps YoY gross-margin fall between mix and price?", from_finding_id: "A3-13, FN12"}
+  - {q: "Bps split of the 1,187 bps YoY gross-margin fall between mix and price? (sequential GM 59.88% vs 54.14% Q1 FY27 ranks with spares share)", from_finding_id: "A3-13, FN12"}
   - {q: "Share of Rs 115.48 cr inventory against orders shipping in Q3 FY27?", from_finding_id: "FN12"}
   - {q: "Did any Q2 order slip to H2: yes/no, Rs cr?", from_finding_id: "PR/F16-1, A3-13, FN18"}
   - {q: "Facility type and rate of the Rs 5.75 cr borrowing, given liquid net cash moved to Rs (1.53) cr?", from_finding_id: "FN02, A3-02"}
   - {q: "Which temporary difference reversed in the Rs 0.94 cr Q1 deferred-tax credit?", from_finding_id: "FN07, A3-08"}
   - {q: "Share of the Rs 209.96 cr non-current investment book in equity or equity funds?", from_finding_id: "A3-16"}
   - {q: "Confirm FY26 DPS Rs 4.00 vs Rs 5.00; cut to fund FY26 capex yes/no?", from_finding_id: "FN08"}
-  - {q: "Rs cr of the Rs 11.10 cr other current financial liabilities that are capital creditors?", from_finding_id: "FN14"}
+  - {q: "Rs cr of the Rs 7.14 cr H1 other-financial-liabilities CFO inflow (Rs 0.09 cr in FY26) that are capital creditors, and settlement date? (H1 CFO Rs (5.30) cr without it)", from_finding_id: "FN14"}
   - {q: "Customer advances at 31 Mar 2026 and 30 Sep 2026, Rs cr?", from_finding_id: "FN14"}
   - {q: "Company EBITDA definition (18.8% stated vs 18.9% computed; 108.8% vs 105.8%)?", from_finding_id: "FN20, PR/F14-1"}
   - {q: "Is the 18-20% band EBITDA ex-OI, and is 20% a ceiling given FY25 22.7%?", from_finding_id: "FN04, A3-04, PR/F6-1"}
@@ -570,7 +606,7 @@ monitorables:
   - {item: "EBITDA margin vs 18-20% band", implied_date: "undated, every quarter", source_ref: "res L408; pres L327"}
   - {item: "Execution of Rs 133 cr order book", implied_date: "H2 FY27 (about six months at TTM run-rate, derived)", source_ref: "res L374, L413-415; pres L354-356"}
   - {item: "Invest in capabilities: asset named", implied_date: "undated", source_ref: "res L409 (PR/F6-3)"}
-  - {item: "FY27 full-year CFO/PAT", implied_date: "by 2027-05-30", source_ref: "res L300 (FN10, A3-11)"}
+  - {item: "FY27 full-year CFO/PAT, with and without the other-financial-liabilities line", implied_date: "by 2027-05-30", source_ref: "res L294, L300 (FN10, A3-11)"}
   - {item: "FY27 AR: tax note, PPE schedule, OCI, investment composition", implied_date: "AGM date ND", source_ref: "FN06, FN07, FN09, A3-16"}
   - {item: "Borrowings, liquid net cash and new NC liability lines", implied_date: "Mar-27 balance sheet", source_ref: "res L216-219, L236-237, L243 (FN02, FN03)"}
   - {item: "Deck Exceptional line non-zero", implied_date: "each quarter", source_ref: "pres L401 (A3-03)"}
@@ -579,13 +615,15 @@ monitorables:
   - {item: "FY27 DPS vs implied FY26 Rs 4.00", implied_date: "Q4 FY27 board outcome", source_ref: "res L319, L230 (FN08)"}
 flags:
   - "PRE-THESIS READ: no Notion page, no companies file, no spear; Decision Status ND"
-  - "Cash conversion INDETERMINATE-WITH-DIRECTION (lean structural): H1 FY27 CFO/PAT 0.08x, FY26 0.57x, FY23-FY26 0.50x; receivables +25.8% in H1"
-  - "CFO exits 2026-10-30 with no successor named; letter dated 2026-09-05 disclosed 2026-10-13 (38 days)"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION (lean structural): H1 FY27 CFO/PAT 0.08x, FY26 0.57x, FY23-FY26 0.50x; receivables +25.8% in H1; H1 CFO Rs (5.30) cr without the Rs 7.14 cr other-financial-liabilities inflow (res L294); capital-creditor share unknown (Q18)"
+  - "CFO exits 2026-10-30 with no successor named; letter dated 2026-09-05 disclosed 2026-10-13 (38 days); mitigant only: ED Kamlesh Shah (ICAI fellow, about 27 years in finance and treasury) signs the statements"
   - "Rs 47.44 cr net PPE addition in H1 with no note; D&A not yet stepped up; Q3 D&A is the tell"
   - "Whole +321 bps YoY margin gain rests on the distributor plus other line (fixed-cost lines net -59 bps vs GM fall); distributor comp 5.6% of Q2 revenue vs 11.2-11.9%; Note 4 regrouped comparatives lean against a reclass; Q2 margin 18.9% not creditable until answered"
-  - "Core PBT +226% YoY is off a trough base: TTM +22.4%, H1 +57.7%; Q2 Rs 8.55 cr below H2 FY26 quarterly average Rs 10.21 cr; 60% of YoY gain equals the distributor-rate drop"
-  - "Treasury liquidity: liquid net cash Rs 11.86 cr to Rs (1.53) cr in H1; current investments -79.7%; book 98.7% non-current, composition undisclosed; Rs 358.9/share net cash is not a liquid figure; H1 dividend in effect funded by borrowing"
+  - "Core PBT +226% YoY is off a trough base: H1 (+57.7%) and TTM (+22.4%) carry the same Rs 7.47 cr gain, 79% from the Q2 recovery; trough-free Q1 YoY +14.9%; TTM EPS Rs 72.97 is 14.4% below FY25 Rs 85.25; TTM core PBT Rs 40.82 cr below FY25 about Rs 48 cr; Q2 Rs 8.55 cr below H2 FY26 quarterly average Rs 10.21 cr; 60% of YoY gain equals the distributor-rate drop"
+  - "YoY gross-margin fall (71.75% to 59.88%) is off the Q2 FY26 outlier; sequential GM 59.88% vs Q1 FY27 54.14% and ranks with the spares share (A3-14 reading); no filed evidence of price erosion; Q11 tests"
+  - "Treasury liquidity: liquid net cash Rs 11.86 cr to Rs (1.53) cr in H1 (Rs (2.93) cr with leases); current investments -79.7%; book 98.7% non-current, composition undisclosed; Rs 358.9/share net cash is not a liquid figure; H1 dividend in effect funded by borrowing"
   - "Rs 133 cr labelled both order book and open order pipeline; definition unresolved"
+  - "Customer slide: 8 state-owned, 8 private of 16 names; no revenue or receivable share disclosed (Q2)"
   - "Other income 32.1% of H1 PBT; 74.7% of H1 OI is FV gains (largely MTM)"
   - "Q1 FY27 deferred-tax credit Rs 0.94 cr; ex-deferred H1 ETR 25.91%"
   - "Implied FY26 DPS cut Rs 5.00 to Rs 4.00 (derived from reserve roll)"
@@ -593,6 +631,6 @@ flags:
   - "Downstream tracker rows not supplied; zero signals; reopen Role 5.5 at initial workup"
   - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged in review"
 plain_language_brief_included: true
-analyst_note: "Loop 1 applied (A5-F01, F02, M01, M02). Core PBT rose from Rs 2.62 cr to 8.55 cr YoY, but off a trough base: TTM +22.4%, H1 +57.7%. Q2 sits below the H2 FY26 quarterly average of Rs 10.21 cr. The +321 bps margin gain is not fixed-cost leverage. Gross margin -1,187 bps, employee +814 and manufacturing +314 net to -59 bps. The whole gain rests on the distributor plus other line (+380 bps). The distributor-rate drop alone equals 60% of the YoY core-PBT gain. Note 4's regrouped comparatives still show 11.2% and 11.9%, which leans against a Q2 reclass. Cash conversion is the binding weakness. FY26 (revenue down, CFO/PAT 0.57x) leans structural, hence INDETERMINATE-WITH-DIRECTION. Liquid net cash moved from Rs 11.86 cr to Rs (1.53) cr. 98.7% of the treasury is non-current and undisclosed, so the Rs 358.9 per share figure is not liquid. PROCEED WITH FLAGS stands: the fixes sharpen the flags but trigger no REWORK. 8A-W applies because the name is not held. Statutory dates are marked for live verification."
+analyst_note: "Loop 2 applied (A5-F03, M03, M04, C01). Core PBT rose from Rs 2.62 cr to 8.55 cr YoY, off a trough base. H1 and TTM carry the same Rs 7.47 cr gain, 79% of it the Q2 recovery. The trough-free Q1 YoY is +14.9%, and TTM EPS is still 14.4% below FY25. The +321 bps margin gain rests wholly on the distributor plus other line; fixed-cost lines net -59 bps. The YoY gross-margin fall is off an outlier base. Sequential gross margin ranks with the spares share, so the filed series shows mix, not price. Cash conversion is the binding weakness. H1 CFO of Rs 1.84 cr is positive only because of a Rs 7.14 cr other-financial-liabilities inflow; without it CFO is Rs (5.30) cr. If that line holds capital creditors, CFO is overstated. The lean stays structural, but ageing and the creditor split are missing, so INDETERMINATE-WITH-DIRECTION holds. Liquid net cash moved from Rs 11.86 cr to Rs (1.53) cr. The customer slide is 8 state-owned and 8 private names, so the slow-payer reading is conditional. PROCEED WITH FLAGS stands. 8A-W applies because the name is not held."
 review_path: "runs/eimcoeleco-q2fy27/work/review_eimcoeleco_q2fy27.md"
 ```

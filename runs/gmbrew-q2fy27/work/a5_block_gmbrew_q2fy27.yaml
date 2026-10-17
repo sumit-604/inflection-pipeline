@@ -1,0 +1,40 @@
+stage: A5-adversary
+company: "GMBREW"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - claim: "Loop 2 evidence rank: FN-05 reading A 'supported' by the filed tie and 'most evidenced'; FN-14 reading B weak because the CF capex line already includes capital advances (rv l358-l361, l364, l631, l831)"
+    counter: "Rule J bull counter, identical bar. The same label (ft l219-l220) gives a filed reason for the 3.28 Cr capex excess that reading A calls tax. Every CF working-capital line equals its raw BS difference (ONCA 404.73 Lakh, ft l139, l208). If about 3.28 Cr of capital advances sit in other non-current assets [INFERENCE], l208 counts them twice and the round 23.00 Cr tax line (ft l215) offsets. Same tie (332.08 vs 332.18 Lakh); CFO 9,553.12 Lakh = 95.53 Cr, 1.24x; capex 5.34 Cr; FCF 90.19 Cr. Range, FCF, cash class, cap and verdict hold; Q8 (rv l563) separates the readings."
+    source_line: "ft l106, l138, l139, l166, l208, l215, l219-l220"
+    type: STYLE
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "A5-S16 rv l358-l361, l364, l631, l831: capex label ft l219-l220 used against bull reading B only; a capital-advance double count via l208, offset by the round tax line (ft l215), fits the same tie at CFO 95.53 Cr (1.24x). Say the tie fits both and Q8 separates them; drop 'most evidenced'; rv l361 'no filed line shows one' -> 'no filed line labels an operating item as capital advances'; '(M2)' -> 'monitorable M2'."
+    - "A5-S17 rv l713, l736 'deposits and cash': the added items are other NC financial assets 119.67 Cr (ft l137, content ND, operating CF ft l206), other bank balances 1.22 Cr (ft l146) and cash 0.83 Cr (ft l145); 'deposits' is filed only for the bank balances (ft l223-l224). Say 'other financial assets (content not disclosed), bank balances and cash'."
+    - "A5-S18 rv l494 '68.3% of assets are non-operating': 68.3% is investments plus investment property (87,635.63 / 1,28,372.86 Lakh; ft l133, l136, l149); the 7A book is 77.7% of assets at Sep-2026 (99,806.82 / 1,28,372.86). Name the base."
+    - "A5-S15 (carried, A2) lg l17 grep_count 16 is the A1 row count; the fulltext grep is 9 paragraphs."
+    - "A5-S8 (carried, A1) A1 structured rows lack the RPT 'Approved' / ratification cells (ft l249-l259)."
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "A5-S16 rank FN-05 reading A and the capital-advance reading equally on the tie; Q8 separates them (rv l359, l361, l364, l631, l831)"
+  - "A5-S17 'other financial assets, bank balances and cash', not 'deposits and cash' (rv l713, l736)"
+  - "A5-S18 name the 68.3% base as investments plus investment property (rv l494)"
+  - "A5-S15 (carried) ledger auditor_paras grep field should hold 9 (lg l17)"
+  - "A5-S8 (carried) RPT approval cells not extracted by A1 (ft l249-l259)"
+analyst_note: "A5-C1 is closed. The 5D text, the verdict re-check, flag 2 and every carrier now state the range. It runs 1.02x-1.29x around the 1.24x print. Reading B is ranked weak with its reason. S9 to S14 are applied; S10 leaves two small base-label residues (S17, S18). Every loop 2 number recomputes from raw Lakhs in 9 checks. The CCC change is -10.0154, so -10.02 is right. Loop 2 changed no ledger or fulltext line, and every run-1 orphan ID is still cited. The one adversarial point is a Rule J note on the new evidence rank. The capex label weakens bull reading B. It also gives a filed reason for the capex excess that bear reading A calls tax. A capital-advance double count fits the same tie and leaves CFO near the printed 1.24x. I tag it STYLE, as with the loop 1 'likelier cause' rank (S12). No table number, range, FCF, cash class, cap or verdict moves, and Q8 already asks the separating question. If the operator wants the reading carried as a table row, it is a one-line A4 edit. PROCEED WITH FLAGS and INDETERMINATE-WITH-DIRECTION stand."

@@ -1,0 +1,620 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: GM_Breweries_Q2FY27_Results.pdf
+doctype: results
+page_count_pdfinfo: 14
+formfeed_count: 14 (pdftotext raw; per-page markers [page 1]..[page 14] in this file)
+line_count: 620
+unit_convention: Lakhs (Rs. Lakhs, stated in statement titles; RPT annexure "in lakhs"; Limited Review/Default table header "INR crore" with Nil values). Balance sheets and cash flows carry two decimals, P&L whole numbers, all Rs. Lakhs.
+conversion_factor_to_cr: Lakhs -> x0.01 (100 lakhs = 1 crore). Extracted text NOT converted.
+text_layer_present: no (pdffonts: single non-embedded Type 1 Helvetica, no embedded font; pdftotext overlay is a garbled scanner OCR layer, e.g. "Phiroze f eej eebhoy", "G43.711", "L,34,674.24"; treated as no usable text layer)
+extraction_mode: scan-ocr (tesseract --psm 6 on pdftoppm -r 200 JPEG of all 14 pages; the pdftotext overlay was rejected as unreliable)
+render_candidates: none (no zero-character pages; all pages had overlay text)
+rendered_pages: [1-14 all, reason: no usable text layer / scan; page 6 additionally rendered at 300dpi and rotated 270 deg (landscape RPT annexure); pages 3, 10 table bodies transcribed from page image because OCR garbled total rows (Total Revenue, Other Income, Total Expenses, tax, OCI); pages 5 and 12 cash flow visually verified against image (two OCR parenthesis slips fixed: p5 "(1,874.41)", p12 "(366.49)"); pages 4 and 11 balance sheets verified by footing arithmetic (all totals foot)]
+page_coverage: 100%
+detected_quarter: Q2 FY27 (quarter and half year ended 30 September 2026)
+extraction_date: 2026-10-17
+source_notes: p10 consolidated results title reads "September 30, 2025" in source (as printed; column headers say 30.09.2026). Pages 4,11 balance sheets in Rs. Lakhs with two decimals. Stamp/signature/handwriting not text-transcribed beyond "Annexure: 1".
+=== END HEADER ===
+[page 1]
+[OCR page 1]
+Regd. Office : Ganesh Niwas, S. Veer Savarkar Marg, Prabhadevi, Mumbai-400 025.
+Phone : 2422 9922/2433 1150/2433 1151/2437 1805/2437 1841 @ GSTN : 27AAACG1653N1ZG
+Email_: gmbl@gmbreweries.com_@ Website : www.gmbreweries.com @ CIN: L15500MH1981PLC025809
+October 08, 2026
+National Stock Exchange of India Limited Bombay Stock Exchange Limited
+Listing Department Listing Department
+Exchange Plaza, C-1, Block G, Phiroze Jeejeebhoy Towers
+Bandra-Kurla Complex, Bandra (E), Dalal Street,
+Mumbai- 400 051 Mumbai - 400 001
+Scrip Code: GMBREW Scrip Code: 507488
+Dear Sir,
+Sub: Outcome of the Board meeting
+Sub: Outcome of the Board Meeting held on October 08, 2026
+Kindly take a note that the Board of Directors of the Company at its meeting held today on
+October 08, 2026 has inter alia:
+
+1) Considered and approved the unaudited Consolidated & Standalone financial results
+of the company for the quarter/half year ended September 30, 2026. In compliance
+with Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015 we are attaching herewith :
+
+a. unaudited Financial Results (Consolidated & Standalone) for the quarter &
+half year ended September 30, 2026
+b. Limited Review Report by the statutory auditors of the company on
+(Consolidated & Standalone) unaudited financial results for Quarter/half
+year ended September 30, 2026.
+The Board meeting commenced at 11.30 A.M. and concluded at 12.20 P.M.
+The above intimation and unaudited standalone financial results are also being
+uploaded on company’s website www.gmbreweries.com
+ER/,
+x c
+{2 (muMBaA =
+“a Sy
+Cray
+a
+Factory : S. Veer Savarkar Marg, Virar (East), Dist. PalgharPin Code 401 305 (India)
+Phone : S.T.D. Code (0250) 2528 728, 2528 793, 2529 127
+
+[page 2]
+[OCR page 2]
+4 G M. PB rcewuden Fitted
+Regd. Office : Ganesh Niwas, S. Veer Savarkar Marg, Prabhadevi, Mumbai-400 025.
+Phone : 2422 9922/2433 1150/2433 1151/2437 1805/2437 1841 @ GSTN : 27AAACG1653N1ZG
+Email_: gmbl@gmbreweries.com_@ Website : www.gmbreweries.com @ CIN: L15500MH1981PLC025809
+Kindly take the same on record.
+Warm Regards
+For GM BREWERIES LTD AVERIE
+& wy
+4
+AS
+Sandeep Kutchhi Oe &
+Vice President Finance & Company Secretary
+Encl: As Above.
+ee
+Factory : S. Veer Savarkar Marg, Virar (East), Dist. PalgharPin Code 401 305 (india)
+Phone : S.T.D. Code (0250) 2528 728, 2528 793, 2529 127
+
+[page 3]
+[OCR page 3 - garbled in OCR, transcribed from page image at 200-300dpi]
+Regd. Office : Ganesh Niwas, S. Veer Savarkar Marg, Prabhadevi, Mumbai-400 025.
+Phone : 2422 9922/2433 1150/2433 1151/2437 1805/2437 1841/2438 5540/2438 5541
+Email : gmbl@gmbreweries.com ● Website : www.gmbreweries.com ● CIN: L15500MH1981PLC025809
+Standalone Unaudited Financial results for the quarter / Half year ended September 30, 2026 (Rs. Lakhs)
+                                                         Unaudited   Unaudited   Unaudited   Unaudited   Unaudited   Audited
+                                                         Quarter     Quarter     Quarter     Half Year   Half Year   Year
+Particulars                                              Ended       Ended       Ended       Ended       Ended       Ended
+                                                         30.09.2026  30.06.2026  30.09.2025  30.09.2026  30.09.2025  31.03.2026
+Revenue from operations
+a) Sales / Income from operations (inclusive of Excise Duty & VAT)  86,062  80,290  71,785  1,66,352  1,35,586  2,97,657
+b) Other operating revenue                                          -       -       -       -         -         -
+Total Revenue from Operations                                       86,062  80,290  71,785  1,66,352  1,35,586  2,97,657
+Other Income                                                        414     555     303     969       816       3,024
+Total Income                                                        86,476  80,845  72,088  1,67,321  1,36,402  3,00,681
+Expenses
+a) Cost of Materials Consumed                                       14,656  13,825  12,428  28,481    24,539    51,182
+b) Purchase of stock in trade                                       -       -       -       -         -         -
+c) Changes in inventories of finished goods, work in progress and stock in trade  78  (118)  17  (40)  (41)  168
+d) Employee benefits expenses                                       300     295     312     595       589       1,261
+e) Excise duty, VAT & TCS                                           64,710  60,332  53,733  1,25,042  1,01,248  2,22,872
+f) Finance Cost                                                     4       7       1       11        28        32
+g) Depreciation and amortisation expenses                           150     150     120     300       240       519
+h) Other Expenditure                                                1,327   1,311   814     2,638     1,680     4,103
+Total Expenses                                                      81,225  75,802  67,425  1,57,027  1,28,283  2,80,137
+Profit from continuing operation before exceptional item and tax    5,251   5,043   4,663   10,294    8,119     20,544
+Exceptional item                                                    -       -       -       -         -         -
+Profit from continuing operations before tax                        5,251   5,043   4,663   10,294    8,119     20,544
+Tax expenses ( Current & Deffered Taxes)                            1,322   1,269   1,174   2,591     2,044     4,861
+Profit for the period                                               3,929   3,774   3,489   7,703     6,075     15,683
+Other comprehensive Income
+Items that will not be reclassified subsequently to profit or loss
+Gain/ Loss on fair valuation of investment in equity shares (Net of Taxes)  -  -  -  -  -  -
+Total Comprehensive Income                                          3,929   3,774   3,489   7,703     6,075     15,683
+Earning Per share of Rs.10 each , Basic & Diluted                   17.20   16.52   15.27   33.72     26.59     68.64
+NOTES:
+1) The aforesaid results have been reviewed by audit committee and taken on record by the Board of Directors at its meeting held on October 08, 2026.
+2) Provision for taxation includes provision for current tax .
+3) The company's operation at present is confined to only one segment namely Country Liquor.
+4) Figures of previous year/period have been regrouped, whereever necessary.
+
+[page 4]
+[OCR page 4]
+‘ G M. ZB. ‘ Femited
+; pEeweEentvEes
+Regd. Office : Ganesh Niwas, S. Veer Savarkar Marg, Prabhadevi, Mumbai-400 025.
+Phone : 2422 9922/2433 1150/2433 1151/2437 1805/2437 1841 @ GSTN: 27AAACG1653N1ZG
+Email_: gmbl@gmbreweries.com_@ Website : www.gmbreweries.com @ CIN: L15500MH1981PLC025809
+5) Standalone Balancesheet
+As at September As at March
+30, 2026 31, 2026
+ASSETS
+Non Current Assets
+a) Property, Plant and Equipment 4,042.35 4,210.37
+b) Capital Work- In- Progress 4,814.23 4,739.86
+c) Investment Property 21,671.89 21,447.34
+d) Intangible Assets 4.00 4.10
+e) Financial Assets
+- Non Current Investments 65,963.74 57,039.76
+-Other Non Current Financial Assets 11,966.53 10,692.94
+f) Non Current Tax Assets (Net) 136.98 95.90
+g)Other non-current assets 4,976.33 4,571.60
+Total Non Current Assets 1,13,576.05 102,801.87
+Current Assets
+a) Inventories 3,314.45 3,423.60
+b) Financial Assets
+-Trade receivables 505.82 223.70
+-Cash and cash equivalents 83.03 156.63
+-Other Bank Balances 121.63 1,058.95
+c) Other Current Assets 10,771.88 14,877.38
+Total Current Assets 14,796.81 19,740.26
+Total Assets 1,28,372.86 122,542.13
+oe LES ee
+EQUITY AND LIABILITIES
+Equity
+a) Equity Share Capital 2,285.54 2,285.54
+b) Other Equity 1,11,405.03 1,05,540.82
+Total Equity 1,13,690.57 1,07,826.36
+Liabilities
+Non Current Liabilities
+a)Deferred Tax Liabilities 83.63 83.63
+b)Other non current liabilities 34.64 29.42
+Total Non Current Liabilities 118.27 113.05
+Current Liabilities
+a) Financial Liabilities
+-Trade payables ( Other than Micro & Small enterprises) 2,480.40 1,109.52
+-Other Current financial liabilities 1,685.08 3,559.49
+b) Other Current Liabilities 10,236.08 9,775.19
+c) Provisions 162.46 158.52
+d) Current Tax Liabilities (Net) :
+Total Current Liabilities 14,564.02 14,602.72
+Total Liabilities 14,682.29 14,715.77
+Total Equities and Liabilities 1,28,372.86 122,542.13
+For G M Breweries Limited
+Sun the _——
+a AQERIE
+Mumbai Jyoti Almeida Kashyap fee NS
+October 8, 2026 Executive Director Les \c\
+| MUMBAI) =]
+‘ =
+aA AS
+5, 37
+=F
+eee re ee
+Factory : S. Veer Savarkar Marg, Virar (East), Dist. PalgharPin Code 401 305 (India)
+Phone : S.T.D. Code (0250) 2528 728, 2528 793, 2529 127
+
+[page 5]
+[OCR page 5]
+Regd. Office : Ganesh Niwas, S. Veer Savarkar Marg, Prabhadevi, Mumbai-400 025.
+Phone : 2422 9922/2433 1150/2433 1151/2437 1805/2437 1841 @ GSTN: 27AAACG1653N1ZG
+Email_: gmabl@gmbreweries.com_@ Website : www.gmbreweries.com @ CIN: Li5500MH1981PLC025809
+G.M.BREWERIES LIMITED
+STANDALONE CASH FLOW STATEMENT FOR THE HALF YEAR ENDED SEPTEMBER 30, 2026 (Rs. Lakhs
+Particulars September 30, 2026 September 30, 2025
+A. Cash Flow from Operating Activities
+Net Profit before tax 10,294.40 8,119.00
+Adjustments for :
+Depreciation 300.00 240.00
+Finance Cost 10.82 28.11
+Indirect Taxes paid 1,25,042.01 1,01,248.06
+Dividend Received (38.16) (1.85)
+Interest Received (487.12) (447.44)
+Other Non-Operating Income (443.71) (366.49)
+Operating Profit before Working Capital Changes 1,34,678.24 1,08,819.39
+Adjustments for (increase) /decrease in operating assets:
+Trade Receivables (282.12) (0.98)
+Inventories 109.15 (453.60)
+Other Financial Assets- Non Current (1,273.59) -
+Other Current Assets 4,105.50 4,012.75
+Other Non Current Assets (404.73) (669.60)
+Adjustments for increase/(decrease) in operating liabilities:
+Trade Payables 1,370.88 (46.34)
+Other non current liabilities 5.22 :
+Other Current Liabilities 460.89 1,175.28
+Other financial liabilities - Current (1,874.41) (5,785.98)
+Cash generated from Operations 1,36,895.03 1,07,050.92
+Direct Taxes Paid 2,300.00 1,800.00
+Indirect Taxes Paid 1,25,042.01 1,01,248.06
+Net Cash from Operating Activities (A) 9,553.02 4,002.86
+B. Cash Flow from Investing Activities
+Increase/Decrease in Property, Plant and Equipment inculding Capital
+Advances (534.49) 1.94
+Increase/Decrease in Investment Property (224.55) (599.63)
+Increase/Decrease in Financial Assets- Investments (8,923.98) (1,257.82)
+Redemption/ (Purchase) of Fixed Deposits (with Maturity more than
+three months) 937.32 (1,271.29)
+Interest Received 487.12 447.44
+Dividend Received 38.16 1.85
+Other Non-Operating Income 443.71 366.49
+Net Cash (used in) /from Investing activities (B) (7,776.71) (2,311.02)
+C. Cash Flow from Financing Activities
+Interest / financial charges Paid (10.82) (28.11)
+Dividend Paid (1,839.09) (1,561.97)
+Net Cash (used in) /from Financing activities (C ) (1,849.91) (1,590.08)
+D. Net Changes in Cash and Cash Equivalents (A+B+C) (73.60) 101.76
+E. Cash and Cash Equivalents at beginning of the Period 156.63 75.58
+F. Cash and Cash Equivalents at End of the Period 83.03 177.34
+For G M Breweries Limited frERe aK. |
+‘ a pO / A\\
+lcm (C2; MUMBAI z))
+Mumbai Jyoti Almeida Kashyap \¢ J= i}
+October 8, 2026 Executive Director es—_<9y /
+a
+Factory : S. Veer Savarkar Marg, Virar (East), Dist. PalgharPin Code 401 305 (India)
+Phone : S.T.D. Code (0250) 2528 728, 2528 793, 2529 127
+
+[page 6]
+[OCR page 6 - garbled in OCR, transcribed from page image at 200-300dpi]
+Annexure: 1   (handwritten)
+Related party transactions for the half year / quarter ended September 30, 2026   (in lakhs)
+Columns: Sr No | Listed entity name | PAN | Counterparty name | Counterparty PAN | Relationship | Type of RPT | Details of other RPT | Value approved by audit committee | Remarks on approval by audit committee | Value ratified | Date of AC meeting of ratification | Value of transaction during reporting period | Opening balance | Closing balance | (loan/ICD columns blank)
+1 | GM BREWERIES LIMITED | AAACG1653N | JIMMY ALMEIDA KASHAP | AADPA4837A | Chairman and Managing Director | Remuneration | - | 180.00 | Approved | - | - | 90.00 | 0.00 | 0.00
+2 | GM BREWERIES LIMITED | AAACG1653N | JYOTI ALMEIDA KASHYAP | ACGPA3738D | Executive Director | Remuneration | - | 132.00 | Approved | - | - | 66.00 | 0.00 | 0.00
+3 | GM BREWERIES LIMITED | AAACG1653N | KIRAN PARASHARE | ALEPP3153G | Executive Director | Remuneration | - | 36.00 | Approved | - | - | 18.00 | 0.00 | 0.00
+4 | GM BREWERIES LIMITED | AAACG1653N | S SWAMINATHAN | ABBPS3446G | CFO | Remuneration | - | 30.25 | Approved | - | - | 15.13 | 0.00 | 0.00
+5 | GM BREWERIES LIMITED | AAACG1653N | SANDEEP KUTCHHI | ASKPK6502D | Vice President Finance & Company Secretary | Remuneration | - | 25.54 | Approved | - | - | 12.77 | 0.00 | 0.00
+6 | GM BREWERIES LIMITED | AAACG1653N | JIMMY ALMEIDA KASHAP | AADPA4837A | Chairman and Managing Director | Any other transaction | Lease Rentals | 297.74 | Approved | - | - | 148.87 | 0.00 | 0.00
+7 | GM BREWERIES LIMITED | AAACG1653N | JIMMY ALMEIDA KASHYAP | AADPA4837A | Chairman and Managing Director | Any other transaction | Dividend | 1269.92 | Approved | - | - | 1269.92 | 0.00 | 0.00
+8 | GM BREWERIES LIMITED | AAACG1653N | JYOTI ALMEIDA KASHYAP | ACGPA3738D | Executive Director | Any other transaction | Dividend | 40.92 | Approved | - | - | 40.92 | 0.00 | 0.00
+9 | GM BREWERIES LIMITED | AAACG1653N | ALMEIDA HOLDINGS PVT LTD | AAACA3918L | Promoter | Any other transaction | Dividend | 219.63 | Approved | - | - | 219.63 | 0.00 | 0.00
+10 | GM BREWERIES LIMITED | AAACG1653N | BUILDFORT INFRADEV PRIVATE LIMITED | AANCB4068R | Subsidiary Company | Any other transaction | Loans and Advances | 101.05 | Approved | - | - | 101.05 | 0.00 | 0.00
+Total value of transaction during the reporting period | 2,333.05 (approved value) | 1,982.29 (transaction value)
+[page is landscape/rotated; table transcribed from page image; handwritten Annexure: 1; company stamp and signature]
+
+[page 7]
+[OCR page 7]
+\ G M. B. ‘ WOOD,
+: 7 HEWEHES
+Regd. Office : Ganesh Niwas, S. Veer Savarkar Marg, Prabhadevi, Mumbai-400 025.
+Phone : 2422 9922/2433 1150/2433 1151/2437 1805/2437 1841 @ GSTN : 27AAACG1653N1ZG
+Email_: gmbl@gmbreweries.com_@ Website : www.gmbreweries.com @ CIN: Li5500MH1981PLC025809
+B, STATEMENT ON DEVIATION OR VARIATION FOR PROCEEDS OF PUBLIC ISSUE, RIGHTS
+ISSUE, PREFERENTIAL ISSUE, QUALIFIED INSTITUTIONS PLACEMENT ETC.
+Not Applicable
+C. FORMAT FOR DISCLOSING OUTSTANDING DEFAULT ON LOANS AND DEBT SECURITIES
+Sr. | Particulars in INR crore
+No. |
+1 Loans / revolving facilities like cash credit from
+banks / financial institutions
+[| A Total amount outstanding as on date
+B Of the total amount outstanding, amount of default | Nil
+as on date
+Unlisted debt securities ie. NCDs and NCRPS | ti‘“‘S™sSCSCSY
+| | A Total amount outstanding as on date
+B Of the total amount outstanding, amount of default | Nil
+as on date |
+3 Total financial indebtedness of the listed entity | Nil
+including short-term and long-term debt
+D. FORMAT FOR DISCLOSURE OF RELATED PARTY TRANSACTIONS (APPLICABLE ONLY
+FOR HALF YEARLY FILING THAT IS 2ND AND 4TH QUARTER):
+Annexure 1
+E. STATEMENT ON IMPACT OF AUDIT QUALIFICATIONS (FOR AUDIT REPORT WITH
+MODIFIED OPINION) SUBMITTED ALONGWITH ANNUAL AUDITED FINANCIAL RESULTS
+(Standalone and Consolidated separately) (applicable only for Annual Filing ie. 4th
+quarter):
+Not Applicable.
+Statutory Auditors of the Company have issued Limited Review Reports on Financial
+Statements as prepared under the Companies Act, 2013 and Financial Results as prepared
+under the SEBI Listing Regulations, 2015 for the Quarter/ Half year ended September 30,
+2026.
+ee
+Factory : S. Veer Savarkar Marg, Virar (East), Dist. PalgharPin Code 401 305 (India)
+Phone : S.T.D. Code (0250) 2528 728, 2528 793, 2529 127
+
+[page 8]
+[OCR page 8]
+— VIPUL P. MEHTA | F.C.A
+OAS V. P. MEHTA & CO.
+LIMITED REVIEW REPORT
+The Board of Directors
+G M Breweries Limited
+Re: Limited Review of the unaudited financial results of G.M Breweries Limited for the
+Quarter ended September 30, 2026.
+
+1. We have reviewed the accompanying “Statement of standalone unaudited Financial
+Results of G. M. Breweries Limited for the Quarter ended September 30, 2026”
+attached herewith, being submitted by the company pursuant to the requirement of
+Regulation 33 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations, 2015,
+
+2. This statement is the responsibility of the company’s management and has been
+approved by the Board of Directors, has been prepared in accordance with the
+recognition and measurement principles laid down in the Indian Accounting
+Standard 34 “Interim Financial Reporting” (‘Ind As 34”), prescribed under section
+133 of the Companies Act, 2013 read with relevant rules issued there under and
+other accounting principles generally accepted in India. Our responsibility is to issue
+a report on these Financial Statements based on our review.
+
+3. We conducted our review of the statement in accordance with the Standard on
+Review Engagement (SRE) 2410, “Review of Interim Financial information
+performed by the Independent Auditor of the Entity”, issued by the institute of
+Chartered Accountants of India (ICAI). A review of interim financial information
+consists of making inquiries, primarily of the company’s personnel responsible for
+financial and accounting matters, and applying analytical and other review
+procedures. A review is substantially less in scope than an audit conducted in
+accordance with standards on auditing specified under section 143(10) of the
+Companies Act, 2013 and consequently does not enable us to obtain assurance that
+
+we would become aware of all significant matters that might be identified in an
+audit. Accordingly we do not express an audit opinion.
+
+Digitally signed by VIPUL
+
+MEHTA
+
+Date: 2026.10.08 10:28:02
+
++05'30' ;
+@ 601, Surya House, 6th Floor, Road No. 7, Shree Golvalkar Guruji Marg, Vidyavihar (East), Mumbai - 400 077.
+@® 17 Hem Prakash, 3rd Floor, 90/92 Kazi Syed Street, Masjid (West), Mumbai - 400 003.
+
+[page 9]
+[OCR page 9]
+4. Based on our review conducted as stated in paragraph 3 above, nothing has come to
+our attention that causes us to believe that the accompanying statement of
+standalone unaudited Financial Results, prepared in accordance with the
+recognition and measurement principles laid down in the aforesaid accounting
+standards and other accounting principles generally accepted in India, has not
+disclosed the information required to be disclosed in terms of regulation 33 of the
+SEBI (Listing Obligations and Disclosure Requirements) Regulations 2015, as
+amended, including the manner in which it is to be disclosed, or that it contains any
+material misstatement.
+
+For V. P. Mehta & Co
+
+Chartered Accountants
+
+(Firm Registration No: 0106326W)
+Digitally signed by VIPUL MEHTA
+Date: 2026.10.08 10:27:50
++05'30'
+
+Vipul P. Mehta
+
+Proprietor
+
+Membership No: 035722
+
+UDIN: 26035722GQTJQY7770
+
+Date: 08-10-2026
+
+Place: Mumbai
+
+[page 10]
+[OCR page 10 - garbled in OCR, transcribed from page image at 200-300dpi]
+Regd. Office : Ganesh Niwas, S. Veer Savarkar Marg, Prabhadevi, Mumbai-400 025.
+Phone : 2422 9922/2433 1150/2433 1151/2437 1805/2437 1841/2438 5540/2438 5541
+Email : gmbl@gmbreweries.com ● Website : www.gmbreweries.com ● CIN: L15500MH1981PLC025809
+Consolidated Unaudited Financial results for the quarter / Half year ended September 30, 2025 (Rs. Lakhs)
+                                                         Unaudited   Unaudited   Unaudited   Unaudited   Unaudited   Audited
+                                                         Quarter     Quarter     Quarter     Half Year   Half Year   Year
+Particulars                                              Ended       Ended       Ended       Ended       Ended       Ended
+                                                         30.09.2026  30.06.2026  30.09.2025  30.09.2026  30.09.2025  31.03.2026
+Revenue from operations
+a) Sales / Income from operations (inclusive of Excise Duty & VAT)  86,062  80,290  71,785  1,66,352  1,35,586  2,97,657
+b) Other operating revenue                                          -       -       -       -         -         -
+Total Revenue from Operations                                       86,062  80,290  71,785  1,66,352  1,35,586  2,97,657
+Other Income                                                        414     555     303     969       816       3,024
+Total Income                                                        86,476  80,845  72,088  1,67,321  1,36,402  3,00,681
+Expenses
+a) Cost of Materials Consumed                                       14,656  13,825  12,428  28,481    24,539    51,182
+b) Purchase of stock in trade                                       -       -       -       -         -         -
+c) Changes in inventories of finished goods, work in progress and stock in trade  78  (118)  17  (40)  (41)  168
+d) Employee benefits expenses                                       300     295     312     595       589       1,261
+e) Excise duty, VAT & TCS                                           64,710  60,332  53,733  1,25,042  1,01,248  2,22,872
+f) Finance Cost                                                     4       7       1       11        28        32
+g) Depreciation and amortisation expenses                           150     150     120     300       240       519
+h) Other Expenditure                                                1,327   1,311   814     2,638     1,680     4,103
+Total Expenses                                                      81,225  75,802  67,425  1,57,027  1,28,283  2,80,137
+Profit from continuing operation before exceptional item and tax    5,251   5,043   4,663   10,294    8,119     20,544
+Exceptional item                                                    -       -       -       -         -         -
+Profit from continuing operations before tax                        5,251   5,043   4,663   10,294    8,119     20,544
+Tax expenses ( Current & Deffered Taxes)                            1,322   1,269   1,174   2,591     2,044     4,861
+Profit for the period                                               3,929   3,774   3,489   7,703     6,075     15,683
+Other comprehensive Income
+Items that will not be reclassified subsequently to profit or loss
+Gain/ Loss on fair valuation of investment in equity shares (Net of Taxes)  -  -  -  -  -  -
+Total Comprehensive Income                                          3,929   3,774   3,489   7,703     6,075     15,683
+Earning Per share of Rs.10 each , Basic & Diluted                   17.20   16.52   15.27   33.72     26.59     68.64
+NOTES:
+1) The aforesaid results have been reviewed by audit committee and taken on record by the Board of Directors at its meeting held on October 08, 2026.
+2) Provision for taxation includes provision for current tax .
+3) The company's operation at present is confined to only one segment namely Country Liquor.
+4) Figures of previous year/period have been regrouped, whereever necessary.
+
+[page 11]
+[OCR page 11]
+: : HEWEHMES
+Regd. Office : Ganesh Niwas, S. Veer Savarkar Marg, Prabhadevi, Mumbai-400 025.
+Phone : 2422 9922/2433 1150/2433 1151/2437 1805/2437 1841 @ GSTN : 27AAACG1653N1ZG
+Email : gmbl@gmbreweries.com @ Website : www.gmbreweries.com @ CIN: L15500MH1981PLC025809
+RS
+5) Consolidated Balancesheet
+As at September As at March
+30, 2026 31, 2026
+ASSETS
+Non Current Assets
+a) Property, Plant and Equipment 4,042.35 4,210.37
+b) Capital Work- In- Progress 4,814.23 4,739.86
+c) Investment Property 21,671.89 21,447.34
+d) Intangible Assets 4.00 4.10
+e) Financial Assets
+- Non Current Investments 65,962.74 57,038.80
+-Other Non Current Financial Assets 11,966.53 10,692.94
+f) Non Current Tax Assets (Net) 136.98 95.90
+g)Other non-current assets 4,976.33 4,571.60
+Total Non Current Assets 1,13,575.05 1,02,800.91
+Current Assets
+a) Inventories 3,314.45 3,423.60
+b) Financial Assets
+-Trade receivables 505.82 223.70
+-Cash and cash equivalents 83.40 157.11
+-Other Bank Balances 121.63 1,058.95
+c) Other Current Assets 10,873.12 14,877.84
+Total Current Assets 14,898.42 19,741.20
+Total Assets 1,28,473.47 122,542.11
+EQUITY AND LIABILITIES
+Equity
+a) Equity Share Capital 2,285.54 2,285.54
+b) Other Equity 1,11,404.47 1,05,540.68
+Total Equity 1,13,690.01 1,07,826.22
+Liabilities
+Non Current Liabilities
+a)Deferred Tax Liabilities 83.63 83.63
+b)Other non current liabilities 34.64 29.42
+Total Non Current Liabilities 118.27 113.05
+Current Liabilities
+a) Financial Liabilities
+-Trade payables ( Other than Micro & Small enterprises) 2,480.40 1,109.52
+-Other Current financial liabilities 1,685.08 3,559.61
+b) Other Current Liabilities 10,337.25 9,775.19
+c) Provisions 162.46 158.52
+d) Current Tax Liabilities (Net) : :
+Total Current Liabilities 14,665.19 14,602.84
+Total Liabilities 14,783.46 14,715.89
+Total Equities and Liabilities 1,28,473.47 1,22,542.11 -
+For G M Breweries Limited
+Miactedle-
+eee
+Mumbai Jyoti Almeida Kashyap ——
+October 8, 2026 Executive Director At R IN
+[Re / Nel
+(MUMBAI S|
+}
+p ~
+9% 9
+ee
+Factory : S. Veer Savarkar Marg, Virar (East), Dist. Palghar Pin Code 401 305 (india)
+Phone : S.T.D. Code (0250) 2528 728, 2528 793, 2529 127
+
+[page 12]
+[OCR page 12]
+. G MUM. B : Semen
+: : HEWEMES
+Regd. Office : Ganesh Niwas, S. Veer Savarkar Marg, Prabhadevi, Mumbai-400 025.
+Phone : 2422 9922/2433 1150/2433 1151/2437 1805/2437 1841 @ GSTN : 27AAACG1653N1ZG
+Email_:_gmbl@gmbreweries.com_@ Website : www.gmbreweries.com @ CIN: Li5500MH1981PLC025809
+G.M.BREWERIES LIMITED
+CONSOLIDATED CASH FLOW STATEMENT FOR THE HALF YEAR ENDED SEPTEMBER 30, 2026 (Rs. Lakhs)
+Particulars September 30, 2026 September 30, 2025
+A. Cash Flow from Operating Activities
+Net Profit before tax 10,293.98 8,119.00
+Adjustments for :
+Depreciation 300.00 240.00
+Finance Cost 10.82 28.11
+Indirect Taxes paid 1,25,042.01 1,01,248.06
+Dividend Received (38.16) (1.85)
+Interest Received (487.12) (447.44)
+Other Non-Operating Income (443.71) (366.49)
+Operating Profit before Working Capital Changes 1,34,677.82 1,08,819.39
+Adjustments for (increase) /decrease in operating assets:
+Trade Receivables (282.12) (0.98)
+Inventories 109.15 (453.60)
+Other Financial Assets- Non Current (1,273.59) -
+Other Current Assets 4,004.76 4,012.75
+Other Non Current Assets (404.73) (669.60)
+Adjustments for increase/(decrease) in operating liabilities:
+Trade Payables 1,370.88 (46.34)
+Other non current liabilities 5.22 :
+Other Current Liabilities 561.94 1,175.28
+Other financial liabilities - Current (1,874.41) (5,785.98)
+Cash generated from Operations 1,36,894.92 1,07,050.92
+Direct Taxes Paid 2,300.00 1,800.00
+Indirect Taxes Paid 1,25,042.01 1,01,248.06
+Net Cash from Operating Activities (A) 9,552.91 4,002.86
+B. Cash Flow from Investing Activities
+Increase/Decrease in Property, Plant and Equipment inculding Capital
+Advances (534.49) 1.94
+Increase/Decrease in Investment Property (224.55) (599.63)
+Increase/Decrease in Financial Assets- Investments (8,923.98) (1,257.82)
+Redemption/ (Purchase) of Fixed Deposits (with Maturity more than
+three months) 937.32 (1,271.29)
+Interest Received 487.12 447.44
+Dividend Received 38.16 1.85
+Other Non-Operating Income 443.71 366.49
+Net Cash (used in)/from Investing activities (B) (7,776.71) (2,311.02)
+C. Cash Flow from Financing Activities
+Interest / financial charges Paid (10.82) (28.11)
+Dividend Paid (1,839.09) (1,561.97)
+Net Cash (used in)/from Financing activities (C ) (1,849.91) (1,590.08)
+D. Net Changes in Cash and Cash Equivalents (A+B+C) (73.71) 101.76
+E. Cash and Cash Equivalents at beginning of the Period 157.11 75.58
+F. Cash and Cash Equivalents at End of the Period 83.40 177.34
+For G M Breweries Limited fy eK
+Wrreid X/ roa Nel
+Mumbai Jyoti Almeida Kashyap \e, Af
+October 8, 2026 Executive Director weed
+ooo
+Factory : S. Veer Savarkar Marg, Virar (East), Dist. PalgharPin Code 401 305 (India)
+Phone : S.T.D. Code (0250) 2528 728, 2528 793, 2529 127
+
+[page 13]
+[OCR page 13]
+—— VIPUL P. MEHTA | F.C.A
+CH V. P. MEHTA & CO.
+LIMITED REVIEW REPORT
+The Board of Directors
+GM Breweries Limited
+Re: Limited Review of the unaudited financial results of G.M Breweries Limited for the
+Quarter ended September 30, 2026.
+
+1. We have reviewed the accompanying “Statement of consolidated unaudited
+Financial Results of G. M. Breweries Limited (the holding company) and Buildfort
+Infradev Private Limited (wholly owned subsidiary) for the Quarter ended
+September 30, 2026” attached herewith, being submitted by the company pursuant
+to the requirement of Regulation 33 of the SEBI (Listing Obligations and Disclosure
+Requirements) Regulations, 2015 as amended (the “ Listing Regulations” ).
+
+2. This statement is the responsibility of the company’s management and has been
+approved by the Board of Directors, has been prepared in accordance with the
+recognition and measurement principles laid down in the Indian Accounting
+Standard 34 “Interim Financial Reporting” (‘Ind As 34”), prescribed under section
+133 of the Companies Act, 2013 read with relevant rules issued there under and
+other accounting principles generally accepted in India. Our responsibility is to issue
+a report on these Financial Statements based on our review.
+
+3. We conducted our review of the statement in accordance with the Standard on
+Review Engagement (SRE) 2410, “Review of Interim Financial information
+performed by the Independent Auditor of the Entity”, issued by the institute of
+Chartered Accountants of India (ICAI). A review of interim financial information
+consists of making inquiries, primarily of the company’s personnel responsible for
+financial and accounting matters, and applying analytical and other review
+procedures. A review is substantially less in scope than an audit conducted in
+accordance with standards on auditing specified under section 143(10) of the
+Companies Act, 2013 and consequently does not enable us to obtain assurance that
+we would become aware of all significant matters that might be identified in an
+audit. Accordingly we do not express an audit opinion.
+
+Digitally signed by VIPUL
+MEHTA
+Date: 2026.10.08 10:28:21
++05'30'
+
+& 17 Herm Prakash. 3rd Floor, 9O/92 Kazi Syed Street, Masjid LESS Mumbai - 400 003.
+
+[page 14]
+[OCR page 14]
+’
+4. The statement includes the result of the following entities
+a. GM Breweries Limited - Holding Company
+b. Buildfort Infradev Private Limited - Wholly owned subsidiary
+5. Based on our review conducted as stated in paragraph 3 above, nothing has come to
+our attention that causes us to believe that the accompanying statement of
+standalone unaudited Financial Results, prepared in accordance with the
+recognition and measurement principles laid down in the aforesaid accounting
+standards and other accounting principles generally accepted in India, has not
+disclosed the information required to be disclosed in terms of regulation 33 of the
+SEBI (Listing Obligations and Disclosure Requirements) Regulations 2015, as
+amended, including the manner in which it is to be disclosed, or that it contains any
+material misstatement.
+For V. P. Mehta & Co
+Chartered Accountants
+(Firm Registration No: 0106326W)
+Digitally signed by VIPUL MEHTA
+Date: 2026.10.08 10:28:32 +05'30'
+Vipul P. Mehta
+Proprietor
+Membership No: 035722
+UDIN: 26035722ZXAWAO6812
+Date: 08-10-2026
+Place: Mumbai

@@ -1,0 +1,47 @@
+stage: A3-forensics
+company: "GMBREW"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/gmbrew-q2fy27/work/forensics_results_gmbrew_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: PASS
+  F5: PASS
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: PASS
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "FN-01", check: "F1", line: "l110, l136, l222, l91", classification: "AMBIGUOUS", implication: "Equity fair-value OCI line zero in all 6 periods incl. audited FY26. Investments Rs 659.64 Cr (51% of assets) rose exactly by cash spent (89.24 Cr), so no interim fair-value change. H2 FY26 other income Rs 22.08 Cr vs H1 8.16 Cr. Likely year-end gain recognition; Q4 FY27 other-income step-up likely; measurement basis unknown."}
+  - {id: "FN-02", check: "F2", line: "l165, l470, l212, l519, l259", classification: "AMBIGUOUS", implication: "Consolidated assets and OCL exceed standalone by Rs 1.01 Cr. Consolidated CF OCL change exceeds standalone by 1.0105 Cr = RPT loan to Buildfort. Reads as a missed intercompany elimination. RPT closing balance 0.00 conflicts. Immaterial in Rs; consolidation-quality point."}
+  - {id: "FN-03", check: "F3", line: "l562-563, l453, l147, l501, l194", classification: "FORWARD-SIGNAL", implication: "Buildfort Infradev is a shell (identical cost lines, H1 loss Rs 0.0042 Cr) and was activated this half: OCA 0.0046 -> 1.0124 Cr, funded by the parent. A real-estate-named subsidiary next to Rs 216.72 Cr investment property may start a non-liquor activity."}
+  - {id: "FN-04", check: "F8", line: "l106, l115, l158", classification: "AMBIGUOUS", implication: "Interim ETR flat 25.16-25.18%; FY26 23.66%, H2 FY26 22.67%, shield Rs 3.10 Cr (151 bps). DTL frozen at 0.84 Cr, so no interim deferred tax. Likely lower-rate gains on year-end treasury income (approx. 2.80 Cr). Expect a Q4 true-up below statutory."}
+  - {id: "FN-05", check: "F8", line: "l215, l220, l138, l166, l167, l131-134 [R429-R430, R435, R279-R280, R317-R318, M1]", classification: "AMBIGUOUS", implication: "L1 revised. Tax gap 2.9110 + NCTA rise 0.4108 = capex residual 3.2824 + provisions 0.0394 = Rs 3.3218 Cr; closes to the paisa, so the plug is confined to the CF tax and capex lines. Reading A: tax outflow understated 3.32 Cr, capex overstated; CFO 92.25 Cr (119.8% of PAT) not 95.53, capex 2.06 not 5.34. Reading B: H1 tax provision unbooked, non-tax item in NCTA. FCF 90.19 Cr unchanged either way."}
+  - {id: "FN-06", check: "F12", line: "l116, l133, l136, l222, l217", classification: "AMBIGUOUS", implication: "Single segment 'at present', but investment property plus investments = Rs 876.36 Cr, 68.3% of assets. H1 investment purchases 89.24 Cr = 93% of CFO (H1 FY26 12.58 Cr). Capital is being deployed away from liquor."}
+  - {id: "FN-07", check: "F12", line: "l147, l207, l163, l164, l217", classification: "AMBIGUOUS", implication: "OCA released 41.06 Cr (it also released 40.13 Cr in H1 FY26), payables +13.71 Cr (+123%), OCFL -52.7%. H1 CFO 124% of PAT as printed (119.8% on FN-05 reading A) vs 66% last H1. Seasonal pattern; H2 FY27 CFO likely gives back part of the release."}
+  - {id: "FN-08", check: "F12", line: "l132, l131", classification: "AMBIGUOUS", implication: "CWIP Rs 48.14 Cr exceeds net PPE Rs 40.42 Cr and grew only 0.74 Cr in H1. Either near-capitalisation (depreciation step-up, new capacity) or stalled (impairment risk). Check the AR CWIP ageing."}
+  - {id: "FN-09", check: "F14", line: "l344, l368, l590, l614, l46, l319-320, l568-569 [R689, R690, R693, R694, R749, M2]", classification: "AMBIGUOUS", implication: "L1 extended. All four LRR signatures (10:27:50-10:28:32 IST) precede the 11:30 board start by 61-62 minutes, yet para 2 of BOTH LRRs (standalone l319-320; consolidated l568-569, ledger M2) says the statement 'has been approved by the Board'. Pre-signing or wrong clock; governance data point."}
+  - {id: "FN-10", check: "F14", line: "l310-311, l313-314, l558-564 vs l43-45, l295-298, l82, l388 [R747, R748, R754, R699, R746]", classification: "AMBIGUOUS", implication: "L1 revised. Company states twice the LRRs cover quarter and half year; auditor titles and para 1 name the quarter only but misquote the attached statement's quarter/half-year title, so a drafting slip is likelier. Auditor wording governs: H1 BS and CF review is claimed by the company, not confirmed by the auditor. Lower severity than first pass."}
+  - {id: "FN-11", check: "F14", line: "l388, l601-603, l250, l256, l47", classification: "NEUTRAL-FACT", implication: "Consolidated title prints 2025; consolidated LRR concludes on the 'standalone' statement; CMD name spelled two ways under one PAN; only standalone results uploaded to website. Cumulative low drafting quality. Unchanged by ledger M2-M4."}
+  - {id: "FN-12", check: "F14", line: "l255, l131-l170, l160, l99, l197, l229-l232, l101 [R564-R568, R632, R309, R064, R397, R451-R454, R076]", classification: "AMBIGUOUS", implication: "L1 new. CMD lease rentals Rs 1.4887 Cr H1 (50% of 2.9774 Cr approved) with no ROU asset, no lease liability, no CFF lease outflow; NCL only 1.18 Cr. Either a yearly-renewed short-term lease (rent resets at promoter discretion) or Ind AS 116 not applied (liability understated, amount NOT FOUND). Rent likely in other expenditure (5.6% of it)."}
+  - {id: "FN-13", check: "F14", line: "l250-l254, l255, l256, l97 [R539-R563, R632-R636, R565, R570, R052]", classification: "NEUTRAL-FACT", implication: "L1 new. KMP pay Rs 2.0190 Cr H1, exactly 50% of approved on every row, no excess, 33.9% of employee benefits. CMD rent (1.49 Cr) exceeds CMD pay (0.90 Cr); CMD total H1 receipts Rs 15.09 Cr incl. dividend 12.70 Cr."}
+  - {id: "FN-14", check: "F12", line: "l139, l445, l208, l515, l131, l219-220 [R281-R282, R343-R344, R417-R418, R491-R492]", classification: "AMBIGUOUS", implication: "L1 new. Other non-current assets Rs 49.76 Cr exceed net PPE, built 4.05 Cr H1 FY27 and 6.70 Cr H1 FY26 inside CFO; content ND. Authority deposits (possible disputed demands) or capital advances (capex understated to 6.11 Cr, CFO understated 4.05 Cr)."}
+forward_signals: ["FN-03"]
+ambiguous: ["FN-01", "FN-02", "FN-04", "FN-05", "FN-06", "FN-07", "FN-08", "FN-09", "FN-10", "FN-12", "FN-14"]
+commitments: []
+gate_a3: pass
+blank_checks: []
+analyst_note: "Loop 1 adds FN-12 to FN-14 and revises FN-05, FN-09 and FN-10. Tax and capex: the non-current tax asset rise closes the FN-05 residual to the paisa (2.9110 + 0.4108 = 3.2824 + 0.0394 = Rs 3.3218 Cr). The plug sits between the CF tax line and the capex line. FCF of Rs 90.19 Cr holds on any reading. On reading A, CFO is Rs 92.25 Cr (120% of PAT, not 124%) and capex Rs 2.06 Cr. Leases: the CMD earns Rs 1.49 Cr of H1 rent, more than his Rs 0.90 Cr pay. No right-of-use asset, lease liability or lease outflow appears, and non-current liabilities of Rs 1.18 Cr leave no room for one. Either the lease renews yearly or Ind AS 116 is not applied; the FY26 AR lease note decides. Other non-current assets (Rs 49.76 Cr, above net PPE) grow inside CFO each H1, content unknown; capital advances would move CFO the other way. Review scope: the company twice claims a quarter and half-year review. The auditor names the quarter only but misquotes the statement title, so drafting is the likelier cause. H1 BS and CF assurance stays auditor-unconfirmed. Original threads stand."

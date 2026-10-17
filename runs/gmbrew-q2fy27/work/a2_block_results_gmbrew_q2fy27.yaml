@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "GMBREW"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/gmbrew-q2fy27/work/ledger_results_gmbrew_q2fy27.md"
+counts:
+  notes: 10
+  line_items: 173
+  zero_standing: 60
+  agenda_items: 1
+  auditor_paras: 16
+  entities: 31
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, SIG_BEFORE_MEETING, PERIOD_MISMATCH, A1_VALUE_DISCREPANCY, PARSE_FRAGMENT, MISSING_FROM_STRUCTURED, RESTATED, WORDING_AS_PRINTED, BLANK_DISCLOSURE]
+ids_in_structured: 757
+ids_referenced: 757
+orphan_ids: []
+missing_from_structured: ["M1 fulltext l167 p4 standalone BS: d) Current Tax Liabilities (Net) blank row both periods", "M2 fulltext l568-l574 consolidated LRR para 2 has no A1 row", "M3 fulltext l278 Statement C item 1A total amount outstanding blank (ZERO_STANDING)", "M4 fulltext l282 Statement C item 2A total amount outstanding blank (ZERO_STANDING)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Four units missed by A1 (loop 1): M1 standalone BS Current Tax Liabilities blank (l167); M2 consolidated LRR para 2 (l568-l574), so 9 of 9 fulltext LRR paragraphs now covered, 8 had rows; M3 and M4 Statement C items 1A and 2A blank outstanding (l278, l282), ZERO_STANDING; garbled cell at l281 noted, not a value. Zero total 57 NUMBER cells plus M1, M3, M4 = 60. A1 R387/R388 look column-shifted; R388 mis-tagged ZERO_STANDING. LRR signature stamps (R689, R690, R693, R694) read 10:27-10:28 IST, before the 11:30 board start (R597). Consolidated P&L title prints 2025 (R667, R723). All 22 P&L lines match standalone to consolidated; 31 BS/CF cell pairs differ (ledger 2c). One agenda item. No prior ledger, so no ENTITY_CHANGE assessment."

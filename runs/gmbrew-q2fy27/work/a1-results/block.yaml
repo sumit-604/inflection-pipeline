@@ -1,0 +1,30 @@
+```yaml
+stage: A1-extractor
+company: "GMBREW"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 14
+formfeed_count: 14
+line_count: 620
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "x0.01"
+text_layer_present: false
+extraction_mode: scan-ocr
+render_candidates: []
+rendered_pages: ["1-14 (all, no usable text layer: single non-embedded Helvetica, garbled overlay)", "6 (300dpi, rotated 270, landscape RPT annexure, transcribed from image)", "3, 10 (P&L tables transcribed from image, OCR garbled totals)", "5, 12 (cash flows visually verified)"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/gmbrew-q2fy27/extracted/gmbrew-results-q2fy27-fulltext.md"
+structured_path: "runs/gmbrew-q2fy27/extracted/gmbrew-results-q2fy27-structured.md"
+structured_counts:
+  number: 615
+  entity: 31
+  forward: 1
+  date: 50
+  qualifier: 60
+structured_id_range: "R001-R757"
+gate_a1: pass
+gap_note: ""
+```

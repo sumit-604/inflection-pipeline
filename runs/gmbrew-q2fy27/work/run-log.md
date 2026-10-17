@@ -1,0 +1,32 @@
+# Run log: GMBREW Q2 FY27 (/run-quarterly, 2026-10-17)
+- Checkout guard PASSED 2026-10-17 for the batch (worktree run/quarterly-q2fy27-2026-10-17 cut from origin/main e24a5bdb). Not rerun.
+- Protocols present: Results v1_4, Concall v1_1, Document_Review v1_1.
+- Toolchain: poppler 25.07, tesseract (winget); PATH prefixed per call.
+- Ticker: GMBREW (no companies/ file; NSE scrip code GMBREW on cover p1). Sparse pattern /runs/gmbrew-q2fy27/** added.
+- Doc class: GM_Breweries_Q2FY27_Results.pdf (14 pages, Canon scan with non-embedded Helvetica OCR overlay) -> results (Reg 30 Board Outcome cover + Reg 33 results + limited review).
+- No concall, no presentation in --docs -> FULL QUARTER run, Role 4 only.
+- Notion live search 2026-10-17: no G M Breweries page. No companies/GMBREW.md, no spear on record. PRE-THESIS READ. Written to work/notion-thesis.md.
+- A1 GATE PASS: 14/14 pages. No usable text layer (non-embedded Helvetica, garbled overlay): all 14 pages OCR'd at 200dpi; p6 RPT annexure 300dpi rotated, image-transcribed; p3, p10 P&L tables image-transcribed; p5, p12 cash flows image-verified; balance sheets foot. Units Rs Lakhs, x0.01 to Cr. R001-R757. Tokens 104,725; wall 566 s.
+- A2 GATE PASS (logged on resume): 757/757 IDs referenced, orphan_ids empty, count test match. Tokens 90,933; wall 258 s (from the prior session's task notification, session local_42086b67). Cost check pass: 90,933 < 104,725 (A1).
+- SESSION RESUME 2026-10-17 (new session, started from parent local_17bd2132): previous session stopped after A2. Resumed from A3. Loop rule (operator standing ruling 2026-10-17, via parent): if A5 INCOMPLETE after loop 1, one second loop; no third; close with open items flagged.
+- A3 started (results). Load cap: at most 2 subagents at once.
+- A3 GATE PASS: F1-F17 all statused (FINDING F1,F2,F3,F8,F12,F14; PASS 9; N.A. F16,F17), every FINDING line-cited, blank_checks empty. 11 findings: 1 FORWARD-SIGNAL (FN-03), 9 AMBIGUOUS, 1 NEUTRAL-FACT. All casts tie; A1 column shift at R387/R388 confirmed (EX-1). Tokens 169,053; wall 550 s. Block: work/a3_block_results_gmbrew_q2fy27.yaml.
+- A4 started: FULL QUARTER, Role 4 protocol only (Results v1_4), no concall. PRE-THESIS READ (work/notion-thesis.md). Tracker rows not supplied.
+- A4 review written: protocol verdict PROCEED WITH FLAGS; cash INDETERMINATE-WITH-DIRECTION; Decision Status NONE; branch 8A-W; 12 questions, 8 monitorables. Steps 6.5/7 deferred (OR-30). Tokens 233,673; wall 740 s.
+- A5 run 1 started (inputs: review, fulltext, structured, ledger only).
+- A5 run 1 verdict INCOMPLETE. Arithmetic PASS, deliverable gate PASS, coverage FAIL. 1 FACTUAL (A5-F1), 8 MISSING (A5-M1..M8), 0 CONTRADICTION, 8 STYLE. loop_back_to A2.
+- LOOP ITERATION 1: fresh agents (not resumed) given audit path + exact item list. A2 annotation fix (A5-M4, M5) -> A3 addendum (A5-M1, M2, M3) -> A4 fix (A5-F1, M6, M7, M8; STYLE S1-S7 optional, no re-run on style) -> A5 re-audit once.
+- A5 run 1 tokens 264,838; wall 1,048 s.
+- Loop 1 A2 fix GATE PASS: M2 (consolidated LRR para 2, l568-l574), M3/M4 (Statement C 1A/2A blanks, l278, l282) added; auditor_paras 16 rows, 9/9 fulltext paragraphs covered; zero_standing 60; 757/757 IDs, orphans empty. Tokens 42,724; wall 55 s.
+- Loop 1 A3 addendum started (A5-M1, M2, M3 + new rows M2-M4).
+- Loop 1 A3 addendum GATE PASS: F1-F17 statuses unchanged, blank_checks empty. FN-05, FN-09, FN-10 revised; FN-12 (CMD lease, no ROU/lease liability), FN-13 (KMP pay), FN-14 (other NC assets 49.76 Cr) new. 14 findings: 1 FORWARD-SIGNAL, 11 AMBIGUOUS, 2 NEUTRAL-FACT. Tokens 147,834; wall 626 s.
+- Loop 1 A4 fix started (fresh agent): A5-F1, M1-M3 carry-through, M6, M7, M8.
+- Loop 1 A4 fix done: verdict PROCEED WITH FLAGS unchanged; cash INDETERMINATE-WITH-DIRECTION; 14 questions, 8 monitorables, 15 flags; FN-01..FN-14 incorporated; STYLE S1-S7 applied. Tokens 189,142; wall 646 s.
+- Loop 1 A5 re-audit started (fresh agent; review, prior audit, fulltext, structured, ledger).
+- Loop 1 A5 re-audit: INCOMPLETE. All 9 run-1 items CLOSED; coverage, arithmetic (32 recomputes), deliverable gate PASS. New: A5-C1 CONTRADICTION (rv l358/l625 call 1.24x CFO/PAT the high end while 5D shows FN-14 reading B at 1.29x). 7 new STYLE (S9-S15). loop_back_to A4 only.
+- LOOP ITERATION 2 under operator standing ruling 2026-10-17 (via parent session: one second loop if INCOMPLETE after loop 1; no third). Fresh A4 fixes A5-C1 (+ S9-S14 where cheap); fresh A5 re-audits once, scoped.
+- Loop 1 A5 re-audit tokens 221,921; wall 787 s.
+- Loop 2 A4 fix done: A5-C1 resolved (range 1.02x-1.29x around 1.24x print, reading B ranked weak, ft l219-l220); S9-S14 applied; verdict unchanged. Tokens 152,726; wall 488 s.
+- Loop 2 A5 re-audit started (fresh, scoped to LOOP 2 CHANGE LOG + deliverable gate).
+- Loop 2 A5 re-audit: COMPLETE. A5-C1 CLOSED; S9-S14 applied; coverage, arithmetic (9 recomputes), deliverable gate PASS. Open STYLE only (S16 capital-advance reading, S17, S18, S15, S8); no loop. Tokens 220,034; wall 925 s.
+- Close-out 2026-10-17: notion-payload.md written (no Notion page exists; create-row proposal only; gate not waited per operator; Decision Status never written). session-cost.md total_run_tok 1,837,603, loop_iterations 2.

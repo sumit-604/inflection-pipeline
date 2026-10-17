@@ -1,0 +1,17 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: GM_Breweries_Q2FY27_Results.pdf
+doctype: results
+page_count_pdfinfo: 14
+formfeed_count: 14 (pdftotext raw; per-page markers [page 1]..[page 14] in this file)
+line_count: 620
+unit_convention: Lakhs (Rs. Lakhs, stated in statement titles; RPT annexure "in lakhs"; Limited Review/Default table header "INR crore" with Nil values). Balance sheets and cash flows carry two decimals, P&L whole numbers, all Rs. Lakhs.
+conversion_factor_to_cr: Lakhs -> x0.01 (100 lakhs = 1 crore). Extracted text NOT converted.
+text_layer_present: no (pdffonts: single non-embedded Type 1 Helvetica, no embedded font; pdftotext overlay is a garbled scanner OCR layer, e.g. "Phiroze f eej eebhoy", "G43.711", "L,34,674.24"; treated as no usable text layer)
+extraction_mode: scan-ocr (tesseract --psm 6 on pdftoppm -r 200 JPEG of all 14 pages; the pdftotext overlay was rejected as unreliable)
+render_candidates: none (no zero-character pages; all pages had overlay text)
+rendered_pages: [1-14 all, reason: no usable text layer / scan; page 6 additionally rendered at 300dpi and rotated 270 deg (landscape RPT annexure); pages 3, 10 table bodies transcribed from page image because OCR garbled total rows (Total Revenue, Other Income, Total Expenses, tax, OCI); pages 5 and 12 cash flow visually verified against image (two OCR parenthesis slips fixed: p5 "(1,874.41)", p12 "(366.49)"); pages 4 and 11 balance sheets verified by footing arithmetic (all totals foot)]
+page_coverage: 100%
+detected_quarter: Q2 FY27 (quarter and half year ended 30 September 2026)
+extraction_date: 2026-10-17
+source_notes: p10 consolidated results title reads "September 30, 2025" in source (as printed; column headers say 30.09.2026). Pages 4,11 balance sheets in Rs. Lakhs with two decimals. Stamp/signature/handwriting not text-transcribed beyond "Annexure: 1".
+=== END HEADER ===

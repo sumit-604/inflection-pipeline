@@ -1,0 +1,66 @@
+stage: A4-analyst
+company: "GMBREW"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results]
+ledger_reconciliation:
+  notes: 10
+  turns: 0
+  slides: 0
+  all_reviewed: true
+  a3_findings_incorporated: ["FN-01", "FN-02", "FN-03", "FN-04", "FN-05", "FN-06", "FN-07", "FN-08", "FN-09", "FN-10", "FN-11", "FN-12", "FN-13", "FN-14"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE (no Notion page; live fetch 2026-10-17; PRE-THESIS READ)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY26", gap_pct: 0.00}
+  - {period: "Q1 FY27", gap_pct: 0.00}
+  - {period: "Q2 FY27", gap_pct: 0.00}
+  - {period: "H1 FY26", gap_pct: 0.00}
+  - {period: "H1 FY27", gap_pct: 0.00, note: "printed; CF-implied PBT gap -0.0042 Cr = -0.005%"}
+  - {period: "FY26", gap_pct: 0.00}
+questions_for_management:
+  - {q: "Cases sold in Q2 FY27 vs Q2 FY26 (net revenue +18.28% YoY, 180.52 to 213.52 Cr)", from_finding_id: "A4-Step2"}
+  - {q: "Which cost line drove the 5.13 Cr rise in other expenditure (8.14 to 13.27 Cr; 171 bps of net revenue vs a 145 bps margin fall), and is it recurring?", from_finding_id: "A4-Step2"}
+  - {q: "Is there a written board cap on non-operating assets (876.36 Cr, 68.3% of assets; 93% of H1 CFO invested; recognised pre-tax yield 3.34% on a 951.01 Cr average book), and what is it?", from_finding_id: "FN-06"}
+  - {q: "Ind AS 109 category of the 659.64 Cr investments, and the Q4 FY26 share of FY26 other income of 30.24 Cr? (H1 OI 9.69 Cr all cash items, no fair-value gain; 5.17% recognised yield on investments alone)", from_finding_id: "FN-01"}
+  - {q: "What did the 1.01 Cr advance to Buildfort Infradev fund, and what is the FY27 funding limit?", from_finding_id: "FN-03"}
+  - {q: "Three largest items in OCFL (16.85 Cr, outflow 18.74 Cr H1) and OCA (107.72 Cr, 41.06 Cr release), and why did trade payables rise from 11.10 to 24.80 Cr? (YoY CFO jump = OCFL +39.12 Cr, payables +14.17 Cr, OCA +0.93 Cr)", from_finding_id: "FN-07"}
+  - {q: "What is the 48.14 Cr CWIP project and its capitalisation date?", from_finding_id: "FN-08"}
+  - {q: "H1 direct tax actually paid (advance tax, TDS, self-assessment) vs the round 23.00 Cr printed, and what the 5.34 Cr PPE and capital-advance line holds beyond 2.06 Cr of additions? (3.32 Cr residual closes to within 0.10 Lakh between CF tax and capex lines; reading A CFO 92.25 Cr)", from_finding_id: "FN-05"}
+  - {q: "Was the FY26 ETR of 23.66% (3.10 Cr shield) from capital-gains rate or a prior-year reversal?", from_finding_id: "FN-04"}
+  - {q: "Was the 1.01 Cr Buildfort advance eliminated on consolidation, and why is the RPT closing balance 0.00?", from_finding_id: "FN-02"}
+  - {q: "What time did the audit committee meet on 08-Oct-2026, given all four LRR signatures (10:27:50-10:28:32 IST) precede the 11:30 board and both LRR para 2s say the board had approved?", from_finding_id: "FN-09"}
+  - {q: "Company says the LRRs cover quarter and half year (l43-l45, l295-l298); auditor names the quarter only (l311, l559). Will the auditor confirm the H1 columns, half-year BS and CF were reviewed?", from_finding_id: "FN-10"}
+  - {q: "Which property does the CMD lease to the company (1.49 Cr H1 rent, 2.98 Cr approved, no ROU or lease liability); annual rent, escalation, term, Ind AS 116 treatment, Q2 FY26 and FY26 rent?", from_finding_id: "FN-12"}
+  - {q: "Three largest items in other non-current assets of 49.76 Cr (built 4.05 Cr H1 FY27, 6.70 Cr H1 FY26); any linked to disputed demands?", from_finding_id: "FN-14"}
+monitorables:
+  - {item: "Q2 FY27 shareholding pattern: promoter %, pledge, institutional %; 83.2% promoter-group dividend share is not a holding figure", implied_date: "2026-10-21 (Reg 31; inference)", source_ref: "Step 5 pledge ND; A3 F10; M1"}
+  - {item: "FY26 Annual Report notes: investment category, CWIP ageing, tax reconciliation and tax-asset note, OCA breakdown, Ind AS 116 lease note, other non-current assets note, Buildfort AOC-1", implied_date: "date ND (FY26 AR filing date not in corpus)", source_ref: "FN-01, FN-03, FN-04, FN-05, FN-07, FN-08, FN-12, FN-14"}
+  - {item: "Q3 FY27 results: op EBITDA margin on net revenue (bull >=24.82%, bear <23.27%), gross margin on net revenue (vs 30.99%), other expenses/net revenue, excise intensity", implied_date: "by 2027-02-14 (Reg 33; inference)", source_ref: "Step 8C; Step 3; FN-08"}
+  - {item: "Q3 FY27 board outcome: LRR signing time vs meeting, LRR period scope, title dates", implied_date: "by 2027-02-14 (inference)", source_ref: "FN-09, FN-10, FN-11"}
+  - {item: "Q3 FY27 shareholding pattern", implied_date: "2027-01-21 (Reg 31; inference)", source_ref: "M1 follow-up"}
+  - {item: "FY27 audited results: Q4 OI step-up, year-end ETR true-up, H2 CFO (OCA rebuild, OCFL and payables reversal, other NC asset build), H2 RPT (Buildfort balance, CMD rent and KMP pay vs approval), audit scope", implied_date: "by 2027-05-30 (Reg 33; inference)", source_ref: "FN-01, FN-02, FN-03, FN-04, FN-07, FN-10, FN-12, FN-13, FN-14"}
+  - {item: "FY27 Annual Report and AGM: Buildfort financials, segment wording, investment schedule", implied_date: "by 2027-09-30 (Companies Act s.96; inference)", source_ref: "FN-03, FN-06"}
+  - {item: "IR email reply to the fourteen questions", implied_date: "ND (operator sends)", source_ref: "Step 8.5"}
+flags:
+  - "PRE-THESIS READ: no Notion page, no spear, no companies/GMBREW.md"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION: H1 CFO/PAT 1.24x printed; YoY jump from OCFL (+39.12 Cr) and payables (+14.17 Cr), OCA flat (+0.93 Cr); readings span 1.02x-1.29x: 1.06x ex payables stretch, 1.20x on FN-05 reading A, 1.29x on FN-14 reading B (weakly evidenced: CF capex line already includes capital advances, ft l219-l220); FY CFO ND (FN-07, FN-05, FN-14)"
+  - "LRR digital signatures 10:27:50-10:28:32 IST precede 11:30 board by 61-62 min; both LRR para 2s say board approved (FN-09)"
+  - "LRR scope: company claims quarter and half year, auditor names quarter only; auditor wording governs; H1 BS and CF review claimed by company, not confirmed by auditor (FN-10)"
+  - "Consolidated assets/OCL gross up 1.01 Cr vs standalone; RPT closing balance 0.00 conflicts (FN-02)"
+  - "Buildfort Infradev shell funded 1.01 Cr by parent; purpose undisclosed (FN-03)"
+  - "Investments plus investment property 876.36 Cr = 68.3% of assets; 89.24 Cr H1 investment purchases = 93% of CFO; recognised pre-tax yield 3.34% on the 951.01 Cr average non-operating book (5.17% if all OI is attributed to investments alone), no fair-value gain; 'at present' single segment (FN-06, FN-01)"
+  - "Q2 op EBITDA margin on net revenue -145 bps YoY (24.82% to 23.37%) on other expenditure +63.0%; FY26 gross margin ran 25.99% to 33.61%"
+  - "Excise intensity +34 bps YoY (74.85% to 75.19%)"
+  - "Tax: interim ETR 25.17% vs FY26 23.66% (FN-04); 3.32 Cr tax residual closes to within 0.10 Lakh against the capex line; FCF 90.19 Cr on either reading (FN-05)"
+  - "CMD lease rentals 1.49 Cr H1 with no ROU asset, lease liability or lease outflow; CMD rent above CMD pay 0.90 Cr (FN-12, FN-13)"
+  - "Other non-current assets 49.76 Cr, above net PPE, built inside CFO in both H1s shown; content ND (FN-14)"
+  - "Role 4 Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged"
+  - "Downstream tracker: zero signals; Role 5.5 never run"
+  - "A1 extraction defects EX-1..EX-3 loop to A1; no used value depends on them"
+plain_language_brief_included: true
+analyst_note: "Loop 2 is scoped to A5-C1 and style notes S9-S14; nothing else was re-derived. The verdict holds at PROCEED WITH FLAGS and cash stays INDETERMINATE-WITH-DIRECTION. No cap or verdict moved; two derived cells changed at the 0.01 level as S14 rounding fixes (CCC change -10.02; 5E row 4 at 50.02%). H1 CFO/PAT prints 1.24x. The YoY rise from 0.66x is a smaller OCFL payout (+39.12 Cr) and a payables stretch (+14.17 Cr); OCA was flat (+0.93 Cr). The alternative readings span 1.02x-1.29x, and each takes the same evidence bar. FN-05 reading A (1.20x, bear) rests on a filed tie of the tax and capex residuals to within 0.10 Lakh. The payables test (1.06x, bear) is a timing sensitivity. FN-14 reading B (1.29x, bull) is weakly evidenced, because the CF capex line already includes capital advances (ft l219-l220). FCF of 90.19 Cr holds on both accounting readings. Pre-WC conversion of about 0.95x stays the structural anchor; full-year CFO is ND. The 3.34% recognised yield is on the 951.01 Cr average non-operating book, so /fttcp must value it apart from the liquor business. S15 belongs to A2, S8 to A1."
+review_path: "runs/gmbrew-q2fy27/work/review_gmbrew_q2fy27.md"

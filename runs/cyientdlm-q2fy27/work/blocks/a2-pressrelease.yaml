@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "CYIENTDLM"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\cyientdlm-q2fy27\work\ledger_pressrelease_cyientdlm_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 16
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 3
+  slide_numbers: 24
+flags_raised: [RESTATED, FOOTNOTE_UNRESOLVED, ENTITY_CHANGE]
+ids_in_structured: 60
+ids_referenced: 60
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Press release has no financial tables, notes or footnotes, so line_items and zero_standing are 0 by construction. Three undefined bases are flagged FOOTNOTE_UNRESOLVED (R056 normalized PAT, R058 order book, R059 FCF). EBITDA growth 9.5% (R005) against revenue growth 26.5% (R001) is a margin signal for A3. Reported PAT 34.0 includes one-off 18.2 (R012). No prior ledger, so no DROPPED_SLIDE or entity diff."

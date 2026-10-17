@@ -1,0 +1,58 @@
+stage: A3-forensics
+company: "CYIENTDLM"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/cyientdlm-q2fy27/work/forensics_presentation_cyientdlm_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: PASS
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FN01", check: "F16", line: "L255-257 p11; L375-381 p14", classification: "FORWARD-SIGNAL", implication: "Deck blames margin on opex investment; table shows material ratio +379 bps, opex -245 bps; margin loss is a material-cost cause"}
+  - {id: "FN02", check: "F7", line: "L374-375 p14; L186 p8", classification: "FORWARD-SIGNAL", implication: "DMC rise labelled one-off mix while Box Build +86% is the stated strategy; compression may be structural to the mix shift"}
+  - {id: "FN03", check: "F14", line: "L430-431 p16", classification: "AMBIGUOUS", implication: "'Mainly Q2' hides Q1 FY27 material ratio +226 bps YoY; two consecutive YoY gross-margin compressions"}
+  - {id: "FN04", check: "F16", line: "L146, L165 p7; L229-230 p10", classification: "FORWARD-SIGNAL", implication: "Q2 EBITDA 8.7% below deck's own today band 9-11% in year 1 of 11-13% target; margin metric undefined; proof gate not met"}
+  - {id: "FN05", check: "F14", line: "L384-385 p14; L447-449 p16; L192 p8", classification: "FORWARD-SIGNAL", implication: "Recurring 'one-off' earnout reversal = 53.5% of Q2 reported PAT; implies Altek missed earn-out; goodwill test FY27; 182 Mn base for Q2 FY28"}
+  - {id: "FN06", check: "F8", line: "L387-388 p14; L446-447 p16", classification: "NEUTRAL-FACT", implication: "Reported ETR 11.8-18.2% is the untaxed earnout; ex-earnout ETR 25.1-25.9%; no shield"}
+  - {id: "FN07", check: "F16", line: "L305-315, L287-292 p12", classification: "FORWARD-SIGNAL", implication: "Customer advance days 33 to 13 over four quarters, DPO 83 to 68; NWC +14 days YoY despite DIO -10; growth absorbs more working capital"}
+  - {id: "FN08", check: "F16", line: "L284, L305-311 p12", classification: "AMBIGUOUS", implication: "Deck NWC basis (Q4'26 145) differs from Notion FY26 169; falsifier test 1 needs basis ruling; Q1'27 printed 161 at the confirm line"}
+  - {id: "FN09", check: "F14", line: "L381-382 p14; L442-443 p16", classification: "AMBIGUOUS", implication: "Lower working-capital borrowings while NWC days and revenue rose; funding source of NWC unstated"}
+  - {id: "FN10", check: "F16", line: "L325 p12", classification: "AMBIGUOUS", implication: "OpFCF 172 Mn undefined, unresolved asterisk, no H1 or prior figure; not CFO"}
+  - {id: "FN11", check: "F14", line: "L250, L253, L256, L267, L271 p11", classification: "AMBIGUOUS", implication: "Q3'26 34 Mn EBITDA one-off unexplained; 'EBITDA % Normalized' 10.2% includes it (normalized 9.1%); PAT chart not split"}
+  - {id: "FN12", check: "F16", line: "L353-362 p13", classification: "AMBIGUOUS", implication: "Growth withheld for Cables, Mech & Others (holds B2S), Auto & Others; residual product buckets implied down ~12-28% YoY; B2S share undisclosed"}
+  - {id: "FN13", check: "F16", line: "L153-161 p7", classification: "AMBIGUOUS", implication: "One of '+3 NEW' industries (Semicon Cap Equipment) is carved from foundation 'Industrial/Semicon'; no revenue line for any new industry"}
+  - {id: "FN14", check: "F15", line: "L192-194 p8", classification: "AMBIGUOUS", implication: "Altek renamed Cyient DLM Electronics Inc.; earn-out closure, residual contingent consideration and separate reporting unknown"}
+  - {id: "FN15", check: "F14", line: "L242 p11; L371, L427; L374, L430", classification: "NEUTRAL-FACT", implication: "Tables do not state consolidated/standalone; marker 1 unresolved; DMC % discussed but never printed"}
+  - {id: "FN16", check: "F14", line: "L115-116, L127-129, L140 p6", classification: "NEUTRAL-FACT", implication: "Market-size arithmetic does not tie (robotics ~96 vs 111 Bn; upside ~1.04 vs 1.1 Tn); mixed sources; low weight"}
+  - {id: "FN17", check: "F6", line: "L146-165 p7; L191-194 p8", classification: "FORWARD-SIGNAL", implication: "Dated targets 11-13% FY27-29, 13-18% FY30+, 7 industries FY27-29 enter the Role 5 tracker; H1 FY27 EBITDA 9.6%"}
+  - {id: "FN18", check: "F16", line: "L359-361 p13", classification: "NEUTRAL-FACT", implication: "India 7% of revenue, ROW 93%; no prior mix in deck; A4 compares for Notion test 6"}
+forward_signals: ["FN01", "FN02", "FN04", "FN05", "FN07", "FN17"]
+ambiguous: ["FN03", "FN08", "FN09", "FN10", "FN11", "FN12", "FN13", "FN14"]
+commitments:
+  - {commitment: "EXPAND stage margins ~11-13%", implied_date: "FY27-FY29", ref: "p7 slide 6 L150, L165", status_word: "initiated"}
+  - {commitment: "TRANSFORM stage margins ~13-18% (B2S platform moat)", implied_date: "FY30+", ref: "p7 slide 6 L150, L165", status_word: "initiated"}
+  - {commitment: "4 to 7 industries: Semicon Cap Equipment, Robotics, AI Data Center", implied_date: "FY27-FY29", ref: "p7 slide 6 L153-161; p8 L192", status_word: "underway"}
+  - {commitment: "New platforms / Expanded Electronic Product Capabilities", implied_date: "FY30+", ref: "p7 slide 6 L162", status_word: "initiated"}
+  - {commitment: "Altek integration, renamed Cyient DLM Electronics Inc.", implied_date: "by Q2 FY27", ref: "p8 slide 7 L192-194", status_word: "completed"}
+  - {commitment: "Build AI/data-center, robotics, semicap engines; strengthen B2S", implied_date: "undated", ref: "p8 slide 7 L191-194", status_word: "underway"}
+  - {commitment: "Continued investment in sales, strategy, capabilities", implied_date: "ongoing", ref: "p11 L255-257; p14 L378-379; p16 L434-436", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Two findings carry the weight. First, gross margin: material cost rose 226 bps (Q1) and 379 bps (Q2) YoY, while the deck credits the margin to opex investment (p11) and calls the mix 'one-off' (p14). Opex leverage masked Q1. If Box Build's +86% raises material intensity, the 11-13% EXPAND target needs a lever the deck does not name. Second, earnings quality: the earnout reversal is over half of Q2 reported PAT, recurs each Q2, and implies Altek missed its earn-out. It lands as Altek is renamed, so goodwill and residual consideration are open. Cash: advance days fell 33 to 13 as the book hit a record; on the deck basis NWC is 153, and the Notion 169 sits on another basis, so test 1 needs a basis ruling. All chart periods were tied by arithmetic (H1 sums, NWC identity), not position. Industry pie slices were left unassigned. Bull side: book +22.8% YoY, 1.6x book-to-bill ties to implied inflow, DIO -10 days, other expense -269 bps."

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "CYIENTDLM"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/cyientdlm-q2fy27/work/ledger_presentation_cyientdlm_q2fy27.md"
+counts:
+  notes: 30
+  line_items: 34
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 20
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 18
+  slide_numbers: 280
+flags_raised: [ENTITY_CHANGE, FOOTNOTE_UNRESOLVED, RESTATED, CHART_LABEL_JUMBLED, SLICE_UNASSIGNED]
+ids_in_structured: 372
+ids_referenced: 372
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "No ZERO_STANDING rows exist; both P&L tables carry 17 non-zero lines. Notes reference a DMC % line that no table shows. DROPPED_SLIDE could not be run: no prior ledger. Chart pages 11-12 and the p13 pie carry period or slice assignments A1 could not fix, so A3/A4 must not read period meaning into R061-R148 labels without the fulltext. Two unresolved footnotes: marker 1 (R343) and the OpFCF asterisk (R350). The earnout reversal (196M FY26, 182M FY27) is restated on pp 10, 11, 14, 15, 16 and drives the normalized-vs-reported PAT gap."

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "CYIENTDLM"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/cyientdlm-q2fy27/work/ledger_results_cyientdlm_q2fy27.md"
+counts:
+  notes: 8
+  line_items: 862          # NUMBER ids in financial tables (264 line x scope x pass groups)
+  zero_standing: 18
+  agenda_items: 3
+  auditor_paras: 9
+  entities: 3              # consolidation list; A1 ENTITY rows 35
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, BLANK_STANDING, ENTITY_CHANGE, FOOTNOTE_UNRESOLVED, A1_NOTE_MISMATCH, MISSING_FROM_STRUCTURED]
+ids_in_structured: 993
+ids_referenced: 993
+orphan_ids: []
+missing_from_structured: ["Annexure-B Sl.4 director relationships: Not applicable (fulltext line 508)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "A1 notes say the Board letter has 2 agenda items; it has 3 (item 3: 10,000 RSU units and 2,63,400 ASOP options). Content is in A1, count was wrong. 71 superseded originals accounted. Note 3(ii) earnout gain 181.95 mn sits inside Q Sep-26 consolidated other income 226.15 (vs 2.65 in Q Jun-26); Notes 3(ii) and 4 have text gaps (FOOTNOTE_UNRESOLVED). Standalone HY Sep-25 expense lines foot 300.00 below printed total (R677). Both auditor reports are unmodified limited reviews with no EoM, Other Matters or Going Concern paragraph; UDINs garbled in A1. R601 subsidiary rename (Altek) flagged ENTITY_CHANGE, no prior ledger. Standalone current/non-current borrowings: Mar-26 dash, Sep-26 current 287.91 (new standalone debt)."

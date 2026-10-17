@@ -1,0 +1,34 @@
+stage: A5-adversary
+company: "CYIENTDLM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 2
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+closed_items: [LC1, LF1, N1, N2, N3, LS1, LS2]
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction:
+    - "OI-1: rev L542 Q10 bull answer 'Internal cash; borrowings are US refinancing only' contradicts the filed H1 borrowing composition: consolidated +258.35 Mn (1,061.25 to 1,319.60) = standalone +287.91 Mn new current borrowings (proceeds 287.08) and subsidiaries -29.56 Mn (drew 95.31, repaid 140.12) (res L170, L177, L243, L245, L565); the review's own Q7 (L539), Step 5B (L374) and DEBT flag (L765) state the India borrowing. Not introduced by the loop-2 grafts as far as the record shows; open item, no loop."
+  style:
+    - "LS3: rev L320 reading (b) cites pres L378-L379, which explains the YoY employee-cost rise; QoQ employee moved +3 bps and other expenses +122 bps; the reading rests on pres L255-L257"
+loop_back_to: "A4"
+no_further_loop: true
+open_items:
+  - "OI-1 (CONTRADICTION, owner A4): rev L542 Q10 bull answer; one-cell fix to 'Operating cash and the India short-term line fund the build, repaid from collections by Q4; US borrowings refinanced, not grown'. Flag at close; do not loop."
+gap: "Final loop; no re-run. Open item OI-1: rev L542 Q10 bull answer 'Internal cash; borrowings are US refinancing only' contradicts the filed H1 borrowing composition (standalone +287.91 Mn new current borrowings; subsidiaries -29.56 Mn; res L170, L177, L243, L245, L565) and the review's own Q7, Step 5B and DEBT flag. One-cell fix; flag, do not loop."
+style_notes:
+  - "LS3: rev L320 drop the pres L378-L379 cite from reading (b) or scope it to employee cost; reading (b) rests on pres L255-L257"
+analyst_note: "Loop 2 closed all five loop-1 items. LC1 now reads four rises in five measured QoQ moves. LF1 drops the deck-versus-balance-sheet conflict. The YoY finance-cost cause is untestable without the 30-Sep-2025 balance, and H1 FY26 repayments and a 33% fall in interest paid fit it. A4 grafted N1, N2 and N3 across Step 2C, Step 4, 6B, 6.5, 8C, Q30, the brief and the flags. Every figure recomputes from res L538-L552 and pres L334-L362. The grafts introduced no new defect. One contradiction sits inside the revised Q10 row. Its bull answer, 'borrowings are US refinancing only', cannot be true: the whole H1 borrowing rise is India's 287.91 Mn, and subsidiary borrowings fell 29.56 Mn. It most likely predates loop 2, and both earlier A5 passes missed it. It is a one-cell fix to a hypothetical answer and changes no number, flag or verdict. No loop remains, so it goes forward as a flagged open item. The tagging rule makes the verdict INCOMPLETE. The review is otherwise complete."

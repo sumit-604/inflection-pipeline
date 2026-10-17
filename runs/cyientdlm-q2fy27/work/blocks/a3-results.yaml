@@ -1,0 +1,58 @@
+stage: A3-forensics
+company: "CYIENTDLM"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\cyientdlm-q2fy27\\work\\forensics_results_cyientdlm_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: PASS
+  F12: PASS
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "L557; L285-286", classification: "AMBIGUOUS", implication: "Cash flow hedge line nil in all FY27 columns (0.12 in FY26); standalone forex swung (20.55) to 18.89 in other income; standalone PBT ex-forex flat QoQ (242.70 vs 243.48). Ask hedging policy."}
+  - {id: "A3-02", check: "F1", line: "L555; L290-291; L141", classification: "AMBIGUOUS", implication: "FVOCI investee line nil Q1/Q2 FY27 after (207.16) in FY26; carrying 102.33 unchanged [INFERENCE]; next print is recovery or further write-down. Ask whether re-valued at 30-Sep-26."}
+  - {id: "A3-03", check: "F1", line: "L565; L177; L243", classification: "FORWARD-SIGNAL", implication: "New standalone current borrowings 287.91 from nil; funded inventory build (434.34) and capex (141.99) against standalone CFO 25.31; standalone FCF (116.68)."}
+  - {id: "A3-04", check: "F2", line: "L552; L539; L288; L213", classification: "FORWARD-SIGNAL", implication: "S-vs-C PAT gap -2.5% to +75.5% of standalone PAT QoQ (+78 pp) on 181.95 earnout gain (46.3% of cons PBT). Ex-gain subs PBT (50.41) vs (0.83) Q1; PAT (35.60) vs (4.14) [INFERENCE untaxed gain]."}
+  - {id: "A3-05", check: "F2", line: "L538-548", classification: "FORWARD-SIGNAL", implication: "Subs EBITDA 11.51 (1.17%) vs 57.43 (6.32%) Q1; subs GM 38.85% vs 47.39%; cons EBITDA margin 8.69% vs 10.48% Q1 and 10.04% Q2 FY26 (-135 bps YoY); proof-gate margin leg moved the wrong way. Eliminations visible in other expenses."}
+  - {id: "A3-06", check: "F2", line: "L288; L213; L137-138; L183", classification: "FORWARD-SIGNAL", implication: "Second Q2 earnout write-back (195.75 then 181.95, cumulative 377.70); subs other current financial liabilities 223.12 to 47.56 [INFERENCE earnout residual]; subs goodwill 730.94 plus intangibles 447.97 (11.0% of net worth) face Ind AS 36 impairment-indicator risk at FY27 annual test."}
+  - {id: "A3-07", check: "F2", line: "L541-542", classification: "FORWARD-SIGNAL", implication: "Cons gross margin 41.22% (Q2 FY26) to 37.94% (Q1) to 37.41% (Q2); H2 FY26 avg 40.05% implied; no component-cost explanation in notes. Third-quarter count needs Q3/Q4 FY26 split."}
+  - {id: "A3-08", check: "F2", line: "L229; L221; L170; L177; L180-181; L245", classification: "FORWARD-SIGNAL", implication: "H1 cons CFO 147.51 = 20.1% of EBITDA 733.33; subs payables +115.6%; ~278 of subs term debt moved to current [INFERENCE]; group net cash 396.75 to 226.38. NWC 189.0 days TTM on stated basis; Notion 169-day basis not reproducible."}
+  - {id: "A3-09", check: "F2", line: "L216", classification: "AMBIGUOUS", implication: "Standalone H1 ECL write-back 30.53 (4.6% of standalone H1 EBITDA) vs 10.08 charge last H1; quarter and P&L line NOT FOUND."}
+  - {id: "A3-10", check: "F2", line: "L149; L156; L184", classification: "AMBIGUOUS", implication: "Other current liabilities -164.23 cons (advances consumed or fewer new advances); contract assets +32.7% all standalone; other current assets +244.36. Ask customer advances and contract-asset ageing."}
+  - {id: "A3-11", check: "F8", line: "L549-551; L143", classification: "FORWARD-SIGNAL", implication: "Cons ETR 13.48% vs 25.17%; ex-gain 25.09% [INFERENCE]; subs DT credit 14.48 = 368 bps of cons PBT; subs DTA 49.03 to 63.50 recognised on US losses; FY26 H1 credit reversed in H2. Standalone ETR normal."}
+  - {id: "A3-12", check: "F10", line: "L163; L242; L42; L214", classification: "NEUTRAL-FACT", implication: "+19,000 shares from ESOP exercise; EPS spread <=0.01; new grants 273,400 units = 0.34%; SBP 22.00 vs (39.58) credit = 61.58 YoY employee-cost headwind."}
+  - {id: "A3-13", check: "F13", line: "L39-40; L486-487; L42-43", classification: "AMBIGUOUS", implication: "CHRO appointed, term undated, no predecessor named; grant recipients, vesting and exercise price unstated. No AR/AGM/dividend/fund-raise item."}
+  - {id: "A3-14", check: "F14", line: "L543; L547; L91", classification: "AMBIGUOUS", implication: "Cons Q Sep-25 expense lines foot 2,768.18 vs printed 2,968.18 (gap 200.00); employee 329.42 likely 529.42. A4 must not compute YoY employee growth from 329.42."}
+  - {id: "A3-15", check: "F14", line: "L562-563; L552", classification: "NEUTRAL-FACT", implication: "Standalone HY Sep-26 basic EPS 4.35{F} below diluted 4.54; PAT/shares gives 4.55; treat 4.35 as read defect."}
+  - {id: "A3-16", check: "F14", line: "L288; L290", classification: "AMBIGUOUS", implication: "Note 3(ii) gives no entity, no cause and has a text gap for a gain worth 46.3% of cons PBT; Note 4 missing word. Ask earnout terms, missed metric, residual liability."}
+  - {id: "A3-17", check: "F14", line: "L78; L322-323; L399-400", classification: "NEUTRAL-FACT", implication: "Auditor-quoted statement title ('six month period') differs from statement header ('Half Year'). Wording only."}
+  - {id: "A3-18", check: "F14", line: "L233; L239", classification: "AMBIGUOUS", implication: "'Payment towards acquisition of business' 83.78 carries an inflow sign in cons HY Sep-25 (footing confirms); possible purchase-price refund [INFERENCE], consistent with earnout write-backs. Ask what it was."}
+  - {id: "A3-19", check: "F15", line: "L434", classification: "AMBIGUOUS", implication: "Altek Electronics Inc. renamed Cyient DLM Electronics Inc.; rename date NOT FOUND. Ask date and whether earnout terms changed with it."}
+  - {id: "A3-20", check: "F6", line: "L291", classification: "AMBIGUOUS", implication: "Only substantive commitment: investee value to improve as products launch 'over the next few years'; undated, not falsifiable as written. Track against FVOCI line."}
+  - {id: "A3-21", check: "F7", line: "L290", classification: "AMBIGUOUS", implication: "Zero exact hedge-lexicon hits; Note 4 pre-explains investee write-down by long order lead time and is retained though the line is nil in FY27. Ask investee order status."}
+forward_signals: ["A3-03", "A3-04", "A3-05", "A3-06", "A3-07", "A3-08", "A3-11"]
+ambiguous: ["A3-01", "A3-02", "A3-09", "A3-10", "A3-13", "A3-14", "A3-16", "A3-18", "A3-19", "A3-20", "A3-21"]
+commitments:
+  - {commitment: "IP-communications investee value to improve as products launch", implied_date: "over the next few years (undated)", ref: "Note 4, L291", status_word: "expected"}
+  - {commitment: "Sandip Mishra appointed Senior VP and CHRO (SMP)", implied_date: "effective 2026-10-15; term end NOT FOUND", ref: "Board item 2, L39-40; Annexure-B Sl.2, L486-487", status_word: "completed"}
+  - {commitment: "Grant of 10,000 RSUs and 2,63,400 ASOP options", implied_date: "granted 2026-10-15; vesting NOT FOUND", ref: "Board item 3, L42-43", status_word: "initiated"}
+  - {commitment: "Outcome posted on company website", implied_date: "on filing", ref: "L50", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Q2 consolidated PAT of 340.14 rests 53% on a 181.95 earnout write-back. This is the second Q2 write-back in a row (195.75 in HY Sep-25). Ex-gain, the US subsidiaries lost money: PBT (50.41) vs (0.83) in Q1, and their EBITDA fell to 11.51 from 57.43. A shrinking earnout implies the acquired business is missing targets [INFERENCE]. That is an impairment indicator for 730.94 of subsidiary goodwill at the FY27 annual test. Standalone India is growing: revenue +25.1% YoY, EBITDA margin 11.20%. Its PBT gain QoQ is the forex swing (18.89 vs (20.55)). Cash is the weak leg: H1 CFO 147.51 on EBITDA 733.33. Standalone took 287.91 new short-term debt. US debt moved to current and US payables doubled. Two data defects bind A4: cons Q Sep-25 employee 329.42 fails footing by 200.00 (likely 529.42); A1 R451 (19.33 loan repaid) belongs to HY Sep-25 by footing. The Notion 169-day NWC basis is not reproducible from this filing."

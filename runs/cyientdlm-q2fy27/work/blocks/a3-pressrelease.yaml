@@ -1,0 +1,48 @@
+stage: A3-forensics
+company: "CYIENTDLM"
+quarter: "q2fy27"
+doctype: "presentation (press release, file tag pressrelease)"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\cyientdlm-q2fy27\\work\\forensics_pressrelease_cyientdlm_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: FINDING
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FN-01", check: "F16", line: "60, 65, 70", classification: "AMBIGUOUS", implication: "EBITDA +9.5% vs revenue +26.5% implies YoY margin ~10.05% to 8.7% (~-135 bps), cause undisclosed, framed as 'healthy profitability'; runs against Notion test 4, bears on test 2; ask GM vs opex split"}
+  - {id: "FN-02", check: "F16", line: "71", classification: "AMBIGUOUS", implication: "Normalized PAT undefined; PAT margin flat ~4.0% while EBITDA margin -135 bps implies ~130 bps below-EBITDA improvement with no source named; possible non-recurring other income or ETR"}
+  - {id: "FN-03", check: "F6", line: "72-73, 103", classification: "FORWARD-SIGNAL", implication: "18.2 Cr earn-out reversal = 53.5% of reported PAT; acquiree below earn-out targets; [INFERENCE] Altek, second reversal after FY26; goodwill impairment risk at FY27 test; ask remaining contingent consideration and Altek vs targets"}
+  - {id: "FN-04", check: "F15", line: "103-104", classification: "NEUTRAL-FACT", implication: "Altek Electronics renamed Cyient DLM Electronics Inc.; update entity map; A2 R036 note has direction reversed"}
+  - {id: "FN-05", check: "F16", line: "74, 94", classification: "AMBIGUOUS", implication: "Order book walk implies intake 607.9 = 1.55x book-to-bill vs stated 1.6 (~21 Cr gap: cancellations, FX, basis); order book basis undefined; 1.79 years cover, 12-month executable share not given; Notion test 3 not triggered (book rising)"}
+  - {id: "FN-06", check: "F16", line: "75-76", classification: "AMBIGUOUS", implication: "FCF 17.2 Cr undefined, 'improvement' with no comparator; no CFO or NWC days, so Notion test 1 cash falsifier untestable from this document"}
+  - {id: "FN-07", check: "F6", line: "107-108", classification: "AMBIGUOUS", implication: "Outlook 'positive for the year' carries no figure and no named FY; guidance-softening diff impossible without prior deck; ask whether any numeric FY27 guide stands"}
+  - {id: "FN-08", check: "F6", line: "85-87, 97, 100-101, 110-111", classification: "FORWARD-SIGNAL", implication: "Continued investment ahead of revenue (sales, strategy, B2S, AI/data centre, robotics, semicap); likely opex cause of margin compression; >=100 bps margin uplift (test 4) not imminent; no design-led share disclosed"}
+forward_signals: ["FN-03", "FN-08"]
+ambiguous: ["FN-01", "FN-02", "FN-05", "FN-06", "FN-07"]
+commitments:
+  - {commitment: "Integration of Altek Electronics (Connecticut, U.S.)", implied_date: "Q2 FY27 (qe 30-Sep-2026)", ref: "l.103, R035, R055", status_word: "completed"}
+  - {commitment: "Altek Electronics renamed Cyient DLM Electronics Inc.", implied_date: "Q2 FY27 or earlier", ref: "l.103-104, R036", status_word: "completed"}
+  - {commitment: "Positive outlook for the year, no figure", implied_date: "FY27 implied, year not named", ref: "l.107, R044, R054", status_word: "none (outlook)"}
+  - {commitment: "Execute existing order book, operating discipline, invest selectively", implied_date: "ongoing, undated", ref: "l.110-111, R045", status_word: "underway"}
+  - {commitment: "Invest in sales, strategy and B2S capabilities", implied_date: "ongoing, undated", ref: "l.97, R047", status_word: "underway"}
+  - {commitment: "Invest in AI/data centre, robotics, semiconductor capital equipment", implied_date: "long-term, undated", ref: "l.85-87, l.100-101, R042, R043", status_word: "underway"}
+  - {commitment: "Deepen customer relationships, add customers, broaden lifecycle participation", implied_date: "longer term, undated", ref: "l.111-113, R046", status_word: "none (intent)"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The release reframes a weak margin quarter. Revenue rose 26.5% but EBITDA rose 9.5%, an implied ~135 bps YoY margin drop. The headline leads with normalized PAT, which matched revenue growth only because costs below EBITDA improved by ~130 bps, source unstated. Reported PAT is 53.5% one-off: an 18.2 Cr earn-out reversal. The release does not name the acquiree. Linking it to Altek is inference, from the same-quarter integration completion and Notion's FY26 earn-out gain. If the link holds, two reversals say the US arm runs below its acquisition case. That points to an impairment test, and it flatters consolidated PAT against standalone. The book-to-bill of 1.6 does not tie to the order book walk (1.55x implied). Only Notion test 3 (order book) is answerable here, and it holds. Tests 1, 2, 4, 5 and 6 need the results filing and the concall. A2 R036 has the rename direction reversed. The fulltext governs: Altek became Cyient DLM Electronics Inc."

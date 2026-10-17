@@ -1,0 +1,36 @@
+# Run log: CYIENTDLM Q2 FY27 (/run-quarterly, 2026-10-17)
+- Checkout guard PASSED 2026-10-17 (session start). Worktree branch run/quarterly-q2fy27-2026-10-17.
+- Doc class: CyientDLM_Q2FY27_Results.pdf -> results (Reg 30 Board Outcome, 2 agenda items: results; CHRO appointment).
+- Doc class: CyientDLM_Q2FY27_Investor_Presentation.pdf -> presentation.
+- Doc class: CyientDLM_Q2FY27_Press_Release.pdf -> presentation class, tag pressrelease.
+- Earnings call held 15-Oct-2026 (Notion Key Notes), but no transcript in --docs. Role 4 only.
+- companies/CYIENTDLM.md: absent. Spear line: none on record in companies/. Prior run runs/cyientdlm-2026-09-06 (Phase 1, Halt 1 pending).
+- Notion live fetch 2026-10-17: page 3d8bb2b9-d3ab-81fc-b72e-faa77c718141, last edited 2026-10-13. Decision Status NOT SET, mental model UNSIGNED, no entry/MoS. Framed as PRE-THESIS READ with the page's Q2 test list as context (work/notion-thesis.md).
+- Each A1 gets its own temp dir work/a1-<doctag>/ (Aurum collision lesson).
+- A1 pressrelease GATE PASS 3/3 pages, text-only, R001-R060. Tokens 51,530.
+- A2 pressrelease GATE PASS, 60/60 IDs, no orphans. Tokens 33,252 < A1 51,530 (cost check pass).
+- A1 results GATE PASS 9/9 pages (text-only), R001-R675, unit Rs Millions (x0.1). BUT page 2 P&L text layer is a corrupted embedded OCR layer (cells like "J,738.00", "4lI9.74").
+- ORCHESTRATOR DECISION (mechanical, for operator review): page 2 treated as the scan case (its text layer is itself OCR of an image). Same A1 continued to render page 2 at 200dpi, transcribe against the image, add rows from R676, mark garbled rows SUPERSEDED_BY. Not a quality halt; not a verifier re-run. Rationale: the text-only rule targets sparse pages; this page is the primary P&L and is not sparse.
+- A1 presentation GATE PASS 18/18 pages, text-only, R001-R372, INR Mn. Tokens 68,544. Chart-label period order on pp11-12 unresolved (flagged).
+- A2 presentation GATE PASS 372/372 IDs. Tokens see session-cost (below A1 68,544 to confirm).
+- A2 presentation tokens 60,048 < A1 68,544 (cost check pass).
+- A3 pressrelease GATE PASS (17/17 statused, 0 blank). A2 R036 rename direction reversed in ledger note; fulltext governs (Altek -> Cyient DLM Electronics Inc.); passed to A4.
+- A1 results page-2 re-extraction done: hybrid, R676-R993 added (318), 71 rows SUPERSEDED_BY, fulltext L533-565 appended (original 531 lines untouched). GATE A1 still pass. Clipped standalone HY Sep-25 cells flagged PARTIAL_LEGIBILITY; footing gap 300 noted.
+- A1 results tokens: run 81,444; page-2 continuation 121,417 (cumulative counter, so A1 total 121,417).
+- A3 presentation GATE PASS (17/17 statused). Chart periods pp11-12 tied by arithmetic; p13 pie slices unassigned.
+- A2 results GATE PASS 993/993 IDs (71 superseded accounted). A1 note agenda count corrected: 3 items (RSU/ASOP grant). MISSING_FROM_STRUCTURED: Annexure-B Sl.4 'Not applicable' (L508), low materiality, no loop.
+- A2 results tokens 87,400 < A1 121,417 (cost check pass).
+- A3 results GATE PASS (17/17 statused, 0 blank; 10 FINDING, 5 PASS, 2 N.A.). Tokens ND: the process exited before the completion record; outputs and block present.
+- Data defects named by A3 for A4: cons Q2 FY26 employee 329.42 fails footing by 200 (likely 529.42); R451 period belongs to HY Sep-25; standalone HY basic EPS 4.35 < diluted 4.54 (read defect); Notion 169-day NWC basis not reproducible (189.0 days TTM on stated basis).
+- Operator load cap: at most 2 subagents at once.
+- TOKEN CORRECTION: resumed-agent figures are additive. A1 results = 81,444 + 121,417 = 202,861.
+- A4 review written. Verdict PROCEED WITH FLAGS, PRE-THESIS READ, branch 8A-W. 29 questions, 17 monitorables. A4 named upstream errors (A3 FN04 FY26 revenue 12,614 not 14,614; A3 pres book-to-bill tie claim; R036 rename direction). A5 started.
+- A4 tokens 317,838, wall 1,099 s.
+- OPERATOR STANDING RULE 2026-10-17 (quoted via parent session): "approve one second loop for any company still INCOMPLETE after loop 1 ... No third loop: close with open items flagged."
+- Laptop restart: A5 run 1 died with no audit or block (mechanical failure). Fresh A5 re-run started (mechanical re-run; not a loop, not counted against the cap). Operator instruction (via parent): finish without waiting for orders.
+- A5 (re-run) verdict INCOMPLETE, tokens 250,514, wall 1,028 s. Coverage and arithmetic PASS; 2 CONTRADICTION, 4 MISSING, 6 STYLE. LOOP ITERATION 1: fresh A4 (old agent dead after restart) applies C1, C2, M1-M4; A2/A3 not re-run (no row change).
+- Loop 1 A4 fix (fresh agent) done: tokens 165,491, wall 497 s. Verdict unchanged. A5 loop-1 re-audit (fresh agent, scoped) started.
+- A5 loop-1 re-audit: INCOMPLETE, tokens 224,756, wall 1,014 s. Run-1 items all CLOSED. New: LC1 CONTRADICTION, LF1 FACTUAL, N1-N3 MISSING. LOOP ITERATION 2 under the operator standing rule (no ask). Final loop; re-audit scoped to the five items.
+- Loop 2 A4 fix (fresh) done: tokens 173,697, wall 543 s. Final A5 re-audit (fresh, scoped to LC1, LF1, N1-N3 closure + deliverable gate; no new adversarial pass) started.
+- A5 loop-2 re-audit: INCOMPLETE on 1 open item (OI-1 CONTRADICTION: Q10 bull answer 'borrowings are US refinancing only' vs filed India +287.91 Mn). Tokens 194,955, wall 633 s. All loop-1 items CLOSED. No third loop (operator rule): CLOSE with OI-1 flagged in review record, payload and report. Orchestrator did not edit the review.
+- Close-out 2026-10-17: closed with OI-1 flagged (payload carries the open-item note). notion-payload.md written (gate not waited per operator). session-cost.md total_run_tok 1,998,261 known (2 ND rows). Temp scratch dirs (work/a1-*, work/a2-*) left uncommitted.

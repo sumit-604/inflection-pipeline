@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "CYIENTDLM"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 9
+formfeed_count: 9
+line_count: 565
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: hybrid  # text-only pages 1,3-9; page 2 scan case
+render_candidates: []
+rendered_pages: ["page 2 (scan case, corrupted OCR text layer; transcribed appendix lines 533-565)", "page 3 region (borrowings placement, line 565)"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/q2fy27/runs/cyientdlm-q2fy27/extracted/cyientdlm-results-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/q2fy27/runs/cyientdlm-q2fy27/extracted/cyientdlm-results-q2fy27-structured.md"
+structured_counts:
+  number: 891
+  entity: 35
+  forward: 5
+  date: 20
+  qualifier: 42
+structured_id_range: "R001-R993"
+gate_a1: pass
+gap_note: ""

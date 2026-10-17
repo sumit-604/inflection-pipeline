@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 16
+formfeed_count: 16
+line_count: 782
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true   # native text on pages 1,7,8,14-16; pages 2-6 and 9-13 are a scan with an OCR layer
+extraction_mode: mixed     # text-only (1,7,8,14-16) + scan-ocr with image verification (2-6, 9-13)
+render_candidates: []
+rendered_pages: [2, 3, 4, 5, 6, 9, 10, 11, 12, 13]   # 300 dpi, tesseract psm 6, image-verified; scan under OCR layer
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/heritgfood-q2fy27/extracted/heritgfood-results-q2fy27-fulltext.md"
+structured_path: "runs/heritgfood-q2fy27/extracted/heritgfood-results-q2fy27-structured.md"
+structured_counts:
+  number: 1141
+  entity: 28
+  forward: 0
+  date: 23
+  qualifier: 50
+structured_id_range: "R001-R1242"
+gate_a1: pass
+gap_note: ""

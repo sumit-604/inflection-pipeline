@@ -1,0 +1,54 @@
+stage: A3-forensics
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/heritgfood-q2fy27/work/forensics_pressrelease_heritgfood_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F16", line: "L63-64; L101; L170-171", classification: "AMBIGUOUS", implication: "Headline reports revenue YoY but margin QoQ; omits EBITDA margin -133 bps and PAT -39% YoY. YoY margin trough not yet passed."}
+  - {id: "A3-02", check: "F16", line: "L100-101; L111-112", classification: "AMBIGUOUS", implication: "EBITDA -4% YoY vs PAT -39%. Derived EBITDA-minus-PAT drag +158-175 Mn YoY in Q2 vs +15-63 Mn in Q1. Bridge not disclosed. Recurring D&A or interest vs one-off unresolved; lean bear."}
+  - {id: "A3-03", check: "F16", line: "L131-132; L136-138; L100", classification: "AMBIGUOUS", implication: "VAP contribution denominator about 12,730 Mn, not consolidated 13,196 Mn. Consolidated VAP mix 1.2-1.6 pp below stated."}
+  - {id: "A3-04", check: "F16", line: "L130-131; L136", classification: "FORWARD-SIGNAL", implication: "VAP growth slowed from derived ~39% YoY (Q1) to 32% (Q2), hidden by H1 framing. Possible capacity limit; watch Q3."}
+  - {id: "A3-05", check: "F16", line: "L65; L132", classification: "NEUTRAL-FACT", implication: "4.1 is percentage points (35.4-31.3), labelled %. Quote as pp."}
+  - {id: "A3-06", check: "F6", line: "L76-77; L83-84; L180-181", classification: "FORWARD-SIGNAL", implication: "Cost +Rs 4.74/L vs derived ASP +Rs 3.42/L, ~72% pass-through, spread -9.5%. 'near-term cost pressures persist' pre-signals Q3 YoY gross-margin pressure."}
+  - {id: "A3-07", check: "F6", line: "L175; L182-183", classification: "FORWARD-SIGNAL", implication: "Undated, unquantified VAP capacity and strategic-investment commitment. Links to A3-02 fixed-charge step-up and A3-04 capacity limit."}
+  - {id: "A3-08", check: "F6", line: "L72-74; L82; L121; L126", classification: "AMBIGUOUS", implication: "Procurement +7% vs liquid milk sales +2.5%. Non-liquid draw 4.93 LLPD vs derived 4.10 (+20%). VAP absorption vs commodity or inventory build at inflated cost."}
+  - {id: "A3-09", check: "F16", line: "L142-144; L146-148; L100", classification: "AMBIGUOUS", implication: "Nutrivet gets revenue and PBT; Novandie and 71%-owned Get-A-Way get no numbers. PAT basis (total vs owners) not stated. Possible source of A3-02 drag; lean bear."}
+  - {id: "A3-10", check: "F16", line: "L100-101; L111-112", classification: "NEUTRAL-FACT", implication: "Derived opex/revenue -138 bps YoY (H1 -104 bps) offset about half the 271 bps gross-margin loss. Supports operating-leverage claim before fixed charges."}
+forward_signals: ["A3-04", "A3-06", "A3-07"]
+ambiguous: ["A3-01", "A3-02", "A3-03", "A3-08", "A3-09"]
+commitments:
+  - {commitment: "Village-level milk procurement outreach intensified", implied_date: "none stated (ongoing)", ref: "p2 L73-74 (R149)", status_word: "underway"}
+  - {commitment: "Expand VAP capacity", implied_date: "none stated", ref: "p4 L175 (R150)", status_word: "none (stated intent)"}
+  - {commitment: "Sustained profitability improvement from mix, volume and pricing", implied_date: "none stated", ref: "p4 L176-178 (R151)", status_word: "none (stated intent)"}
+  - {commitment: "Sustainable margin improvement; near-term cost pressures persist", implied_date: "none stated; near term excluded", ref: "p4 L180-182 (R152)", status_word: "none (stated intent)"}
+  - {commitment: "Strategic investments behind long-term profitable growth", implied_date: "none stated", ref: "p4 L182-183 (R153)", status_word: "none (stated intent)"}
+  - {commitment: "Earnings call", implied_date: "2026-10-16 11:00 IST", ref: "p4 L191 (R154, R166)", status_word: "scheduled"}
+  - {commitment: "Investor presentation filed with exchanges and hosted on website", implied_date: "none stated", ref: "p4 L195-196 (R155)", status_word: "pending"}
+  - {commitment: "Press release uploaded to company website", implied_date: "none stated", ref: "p1 L39 (R148)", status_word: "pending"}
+  - {commitment: "Nourish+ High Protein Curd and Greek Yogurt launched", implied_date: "Q2 FY27", ref: "p3 L150-152 (R136-R137)", status_word: "completed"}
+  - {commitment: "Alpenvie Ice Cream additions and Organic Curd introduced", implied_date: "Q2 FY27", ref: "p4 L158-159 (R138-R139)", status_word: "completed"}
+  - {commitment: "Curd >500 tons/day; yogurt >100 tons in quarter", implied_date: "Q2 FY27", ref: "p2 L92-93 (R031-R032)", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The release gives headline numbers only. It has no line below EBITDA, no segment results, no tax and no share data, so most checks are N.A. here and testable on the results filing. The load-bearing signal is A3-02. Q2 EBITDA fell 4% YoY while PAT fell 39%. Derived from the stated growth rates, the EBITDA-minus-PAT drag rose about Rs 16-17 Cr YoY in Q2 against Rs 2-6 Cr in Q1. It also rose Rs 6 Cr sequentially, so something new hit in Q2. Candidates: D&A or interest from VAP capacity or acquisitions, lower other income, tax, or a base-quarter one-off. The release gives Nutrivet's PBT but no numbers for Novandie or Get-A-Way (A3-09), so the reading leans bear until the filing resolves it. VAP share uses a base about Rs 47 Cr below consolidated revenue (A3-03). Bull side: opex fell about 138 bps of revenue, offsetting half the gross-margin loss (A3-10). Milk cost pass-through was about 72%, and management says cost pressure persists. A1 line cites drift 1-3 lines on 45 rows. All values match; the findings cite actual fulltext lines."

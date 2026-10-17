@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 5
+formfeed_count: 5
+line_count: 229
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/heritgfood-q2fy27/extracted/heritgfood-pressrelease-q2fy27-fulltext.md"
+structured_path: "runs/heritgfood-q2fy27/extracted/heritgfood-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 117
+  entity: 30
+  forward: 8
+  date: 12
+  qualifier: 13
+structured_id_range: "R001-R180"
+gate_a1: pass
+gap_note: ""

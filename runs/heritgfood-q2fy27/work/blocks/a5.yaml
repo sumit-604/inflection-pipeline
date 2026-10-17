@@ -1,0 +1,46 @@
+stage: A5-adversary
+company: "HERITGFOOD"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: 2
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S13: rounded-figure arithmetic: 5B CFO/PAT change +0.43x vs +0.42x unrounded (R-L487; L250, L94); ROCE denominator 1,486.06 vs 1,486.05 Cr (R-L644; L533, L536, L544)"
+    - "S14: bare L prefix on press-release ranges L130-133, L122-123, L127-128 (R-L302, R-L351, R-L353); write PR-L"
+    - "S15: YAML monitorables (R-L918-931) omit table row M6 (R-L751)"
+    - "S16: R-L171 'Others arithmetic fits reading B better' overstates: Others-(C-S) = S-(Milk+VAP+Fat) is one identity; reading-A residual (+42.9% Q2, +44.8% H1) tracks C-S inter-segment feed (+48.0% Q2, +41.9% H1; L465, L122); say the arithmetic does not separate the readings"
+    - "S17: R-L787 'two cross-statement movements' vs three listed at R-L508 (L255/L163, L246/L190+L202, L247/L194+L203)"
+    - "S18: R-L398 '+17.5%' is the Q1 FY27 step; H1 FY27 average is +16.73% over the H2 FY26 average (L407)"
+    - "S19: optional: slide 14 'Boosted Profitability' (P-l485-490) vs Dairy segment margin -229 bps YoY (L461, L468); slide 18 '188' vs slide 22 '191' chilling centres (P-l589, P-l687)"
+    - "S20: optional: NCI balance 47.93 -> 40.39 m (L532) equals H1 NCI loss (L440); 29% holder's share of Get-A-Way net assets -15.7% in six months [INFERENCE]; supports Q15 bear fork"
+    - "S21: upstream A1 R599 swaps slide 37 projection years (urban population 2030 (P), healthy food 2035 (P); P-l1094-1095)"
+    - "S3-S7 carried (upstream A1/A2): agenda_items count, slide-8 dash cells, number-word rows, R250 label, R178/R181 species flag"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S13: compute deltas and sums from unrounded figures (R-L487, R-L644)"
+  - "S14: PR-L prefix on three press-release ranges (R-L302, R-L351, R-L353)"
+  - "S15: add M6 to YAML monitorables"
+  - "S16: replace 'fits reading B better' at R-L171 with 'does not separate the readings' plus the inter-segment feed indicator for reading A"
+  - "S17: 'three' cross-statement movements, or match the F7 grouping (R-L787)"
+  - "S18: name Q1 FY27 as the +17.55% step (R-L398)"
+  - "S19: optional deck-claim checks for Q21 / F8"
+  - "S20: optional NCI-erosion line for Step 5F / Q15"
+  - "S21, S3-S7: upstream A1/A2 hygiene, logged only"
+analyst_note: "Loop-2 re-audit. All 15 prior loop findings are resolved: run-1 F1-F4, C1-C2 and M1-M7, and loop-1 F1-F2. The loop-2 edits recompute: parent residual 41.41 to 44.88 Cr (Q2) and 81.85 to 82.73 Cr (H1); Others +27.6 and +53.5 Cr against C-S +24.1 and +52.6 Cr; 34.18% vs 30.72% and 35.42% vs 31.35%; 13.5% of the VAP rise. No Get-A-Way product claim remains. The gate passes, all three ledgers reconcile, and no orphan or missing row exists. Every derived metric recomputes; two values differ by rounding only. The three most positive claims carry their counters already, and the acquisition probe stands in Step 5F. Verdict COMPLETE with nine new STYLE notes. S16 matters most. 'Others tracks the C-S gap' and 'the parent residual moves little' are one identity, not two facts. Under reading A the residual grows in step with group feed sold into the dairy segment (+48% Q2). So the arithmetic does not separate the readings, and 'fits B better' overstates. My loop-1 pass made the same overstatement. No number, flag or verdict changes."

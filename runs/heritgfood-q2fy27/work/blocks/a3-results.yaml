@@ -1,0 +1,49 @@
+stage: A3-forensics
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/heritgfood-q2fy27/work/forensics_results_heritgfood_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: PASS
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "F1-1", check: "F1", line: "L89, L296-298", classification: "AMBIGUOUS", implication: "GST flavoured-milk refund 'following a favourable order'; finality and total deposit not stated; Q2 FY26 PBT held 93.56 exceptional, so reported PBT -35.0% YoY vs -23.8% pre-exceptional"}
+  - {id: "F1-2", check: "F1", line: "L85, L225, L299, L254-255, L507", classification: "FORWARD-SIGNAL", implication: "FY26 booked 5.37 HNFL investment impairment; parent funded subsidiaries 72.00 equity + 4.86 loans in H1 FY27; goodwill 71.85; NCI losses widening; FY27 year-end impairment risk"}
+  - {id: "F1-3", check: "F1", line: "L421, L772", classification: "NEUTRAL-FACT", implication: "Associate SKIL Raigam Power contributes nil in all FY27 periods; carrying value likely nil [INFERENCE]"}
+  - {id: "F2-1", check: "F2", line: "L94, L428, L436, L440, L468-470", classification: "FORWARD-SIGNAL", implication: "S-vs-C PAT gap narrowed 6.24% to 0.98% of standalone PAT (6M, 5.26 pp); subsidiary EBITDA 53.10 to 28.50 YoY; feed result 52.50 to 33.29; dairy subsidiary drag 13.29 to 20.51; NCI loss 0.86 to 5.06"}
+  - {id: "F4-1", check: "F4", line: "L721-725", classification: "AMBIGUOUS", implication: "Unreviewed unnamed subsidiary: Q2 loss 10.82 (3.5% of PAT) vs implied Q1 loss 0.94; revenue 195.73 to 142.62 QoQ"}
+  - {id: "F8-1", check: "F8", line: "L90, L92-93, L424, L426-427", classification: "AMBIGUOUS", implication: "Q2 ETR consolidated 27.56%, standalone 26.39% vs 25.17%; standalone up from 24.59% in Q1; subsidiary increment taxed at 70%; deferred tax an expense in all periods, no DTA shield"}
+  - {id: "F9-1", check: "F9", line: "L97, L431", classification: "NEUTRAL-FACT", implication: "YoY quarterly OCI swing 3.57 exceeds FY26 full-year 1.76; FY27 quarters book 1.76/4 pro rata; immaterial; verify actuarial assumptions at FY27 AR"}
+  - {id: "F12-1", check: "F12", line: "L125, L134, L139, L158, L83", classification: "FORWARD-SIGNAL", implication: "Dairy assets +34.4% and liabilities +39.4% YoY, result -27.7%, margin 5.82% to 3.60%; CWIP 466.13 to 1,275.79 with no project note; finance cost +105% YoY; depreciation and interest step up at capitalisation"}
+  - {id: "F12-2", check: "F12", line: "L463, L470, L465, L122", classification: "AMBIGUOUS", implication: "Feed revenue +46.7% but result -36.6%, margin 9.03% to 3.91%; extra consolidated inter-segment revenue +177.43 vs feed growth +271.38, so growth may be mostly intra-group [INFERENCE]"}
+  - {id: "F12-3", check: "F12", line: "L139, L246-247, L190, L194, L202-203", classification: "AMBIGUOUS", implication: "Dairy liabilities -323.52 QoQ; CF other financial liabilities +270.11 vs BS -148.12; CF other liabilities (93.26) vs BS +80.04; trade lines tie"}
+  - {id: "F14-1", check: "F14", line: "L97-98, L431-432, L437", classification: "NEUTRAL-FACT", implication: "OCI caption signs inverted vs TCI arithmetic; drafting quality"}
+  - {id: "F14-2", check: "F14", line: "L255, L163, L225", classification: "AMBIGUOUS", implication: "Standalone CF (72.00) investment in subsidiaries vs BS investment +0.50 and nil impairment; about 71.50 untraced on the face of the statements"}
+  - {id: "F14-3", check: "F14", line: "L600, L255", classification: "AMBIGUOUS", implication: "Consolidated CF investment in subsidiaries +85.00 in 6M FY26 vs standalone (85.00); likely net cash acquired on HNFL control [INFERENCE]; low materiality"}
+  - {id: "F14-4", check: "F14", line: "L475, L130", classification: "AMBIGUOUS", implication: "Consolidated Q2 interest income (0.89) vs standalone +2.00; implies a reversal of about 2.89 at subsidiary or elimination level"}
+  - {id: "F14-5", check: "F14", line: "L296, L293, L639, L642, L421-424, L472-474, L473, L128, L721", classification: "NEUTRAL-FACT", implication: "Cumulative typos ('quatter', 'Decesion', '22025'), duplicate PBT caption, JV caption with no JV listed, mixed sign convention, 0.01 cross-table mismatches, unreviewed subsidiary unnamed"}
+  - {id: "F15-1", check: "F15", line: "L300, L645, L768", classification: "AMBIGUOUS", implication: "HNFL converted from Private to public company and moved from JV to subsidiary (16 Jun 2025); conversion may come before a stake change or fund raise [INFERENCE]; prior list ND"}
+forward_signals: ["F1-2", "F2-1", "F12-1"]
+ambiguous: ["F1-1", "F4-1", "F8-1", "F12-2", "F12-3", "F14-2", "F14-3", "F14-4", "F15-1"]
+commitments: []
+gate_a3: pass
+blank_checks: []
+analyst_note: "This is a pre-thesis read. No prior-quarter extract was available, so the F5 and F15 diffs are single-period only. The filing holds no forward language, so the forward content sits in the numbers. Three threads matter. One: standalone Dairy added Rs 3,942m of assets YoY (+34%) while its result fell 28%. CWIP nearly tripled in six months, and no note names the project. Finance cost doubled. The commissioning date sets when depreciation and interest step up again. Two: subsidiaries are turning from contributors into drags. Feed margin fell from 9.0% to 3.9%. Dairy subsidiaries lost Rs 20.5m. The NCI loss rose about 6x. The unreviewed subsidiary went from a Rs 0.9m loss in Q1 to a Rs 10.8m loss in Q2. The parent keeps funding them (Rs 76.9m in H1), but the investment carrying value rose only Rs 0.5m. Either the money sits on another line or an impairment is building. FY26 already booked Rs 5.37m on HNFL, and goodwill is Rs 71.85m. Three: the YoY PAT fall overstates the operating decline, because Q2 FY26 included a Rs 93.56m GST exceptional."

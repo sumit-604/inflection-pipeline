@@ -1,0 +1,40 @@
+# Run log: HERITGFOOD Q2 FY27 (/run-quarterly, 2026-10-17)
+- Checkout guard PASSED 2026-10-17 (run by the parent session; not rerun). Worktree branch run/quarterly-q2fy27-2026-10-17.
+- No earlier attempt: runs/heritgfood-q2fy27/ did not exist at start. Nothing reused.
+- Protocols present (parent session check): Results v1_4, Concall v1_1, Document_Review v1_1, Master v3_6.
+- Toolchain: poppler 25.07 (winget), tesseract (winget); PATH prefixed per call.
+- Ticker: no companies/ file for Heritage Foods; ticker HERITGFOOD (NSE), BSE 519552.
+- Doc class: Heritage_Q2FY27_Results.pdf -> results (Reg 30 Board Outcome cover + Reg 33 results, 16 pp).
+- Doc class: Heritage_Q2FY27_Investor_Presentation.pdf -> presentation (Reg 30 cover + slide deck, 45 pp).
+- Doc class: Heritage_Q2FY27_Press_Release.pdf -> presentation class, file tag "pressrelease" (5 pp).
+- No concall in --docs -> FULL QUARTER run, Role 4 only (Role 5 not passed).
+- Forensics files named forensics_<doctag>_heritgfood_q2fy27.md.
+- Parallelism: at most 2 subagents at once (parent instruction). Each A1 uses its own temp dir work/a1-<doctag>/.
+- Notion live fetch 2026-10-17: no Heritage Foods page in COMPANIES MASTER (3 searches). No companies/ file, no spear on record. PRE-THESIS READ. Written to work/notion-thesis.md.
+- Prior-quarter ledger: not available (ND).
+- A1 results + A1 pressrelease launched in parallel (2 max); A1 presentation queued.
+- A1 pressrelease GATE PASS 5/5 pages, text-only, unit Millions x0.1, R001-R180. tokens 52,520, wall 137s.
+- A1 results run 1: 16/16 pages, text-only, unit Millions x0.1, R001-R1143. tokens 76,333, wall 215s. A1 flagged pp2-6 and pp9-13 (financial statements) as a low-fidelity text layer (e.g. "9,01<,.72", "18,760.Sl"; 54 COLUMN_MISMATCH, 95 OCR_NOISE rows).
+- Orchestrator decision (mechanical, extraction discipline): pdfimages shows a full-page 150 dpi JPEG on each of those pages and the starred fonts are non-embedded OCR substitutes. The text layer is an OCR layer over a scan, so the A1 scan case applies to those pages. A1 results resumed for a fidelity re-read: 300 dpi render, tesseract, image-verified tables, fulltext and structured rebuilt. Same precedent as Aurum pp5-20. Logged as an A1 mechanical fix, not a correction loop.
+- A1 presentation GATE PASS 45/45 pages, text-only (Word-produced), unit Millions x0.1, R001-R651. tokens 83,302, wall 292s. Flags: CHART_LABEL_UNMAPPED, CHART_PERIOD_ORDER_INFERRED, COLUMN_UNRESOLVED (p8 table).
+- A2 pressrelease launched.
+- A2 pressrelease GATE PASS: count test match, 180/180 IDs, orphan_ids empty. tokens 39,993 < A1 52,520 (cost check pass), wall 53s. A2 presentation launched.
+- A2 presentation GATE PASS: count test match, 651/651 IDs, orphan_ids empty. tokens 51,595 < A1 83,302 (cost check pass), wall 72s. Slide 24 NO_STRUCTURED_ROWS (text-only). A3 pressrelease launched.
+- A3 pressrelease GATE PASS (F1-F17 statused; F6, F16 FINDING; F7 PASS; 14 N.A.; every FINDING line-cited). tokens 83,294, wall 330s. A3 noted A1 pressrelease structured line anchors drift 1-3 lines on 45 rows (values match); A3 cites actual fulltext lines. Logged for A5; not a gate failure. A3 presentation launched.
+- A1 results fidelity re-read GATE PASS: 16/16, pp2-6 and 9-13 rendered 300 dpi, tesseract psm 6, image-verified; R001-R1242; 66 tie-out checks pass (P&L 6 cols standalone+consolidated, BS totals, CFO subtotals). 4 IMAGE_PARTIAL cells (blurred CF cells, subtotal ties). Cumulative A1 results tokens 172,364 (run 1 76,333 + re-read 96,031), wall 1,047s cumulative. A2 results launched.
+- A2 results GATE PASS: count test match (notes 12, line_items 299, zero_standing 60), 1242/1242 IDs, orphan_ids empty. tokens 49,303 < A1 172,364 (cost check pass), wall 89s. A2 reports agenda_items 0 because A1 has no agenda rows. Orchestrator check: the Board Outcome letter (fulltext L35-46) lists only item 1 (results) and item 2 (limited review report); no item beyond 2 exists. Low severity, no A1 loop; A3 told to read L35-46. A3 results launched.
+- A3 presentation GATE PASS (F1-F17 statused: 10 FINDING, 1 PASS, 6 N.A.; 21 findings line-cited; 696/696 ledger rows). A3 resolved slide-8 columns by arithmetic; noted 2 A1 line-cite slips (R030, R040; values correct). tokens 149,427, wall 474s.
+- A3 results GATE PASS (F1-F17 statused: 8 FINDING, 7 PASS, 2 N.A.; every FINDING line-cited; 1242/1242 rows). Net worth and equity roll-forwards tie. tokens 192,948, wall 421s. A4 launched (Role 4 only; PRE-THESIS READ).
+- A4 review written (tokens 369,864, wall 1,279s). Verdict PROCEED WITH FLAGS; PRE-THESIS READ; cash conversion INDETERMINATE-WITH-DIRECTION; 28 management questions; Steps 6.5/7 deferred (OR-30). A5 run 1 launched.
+- A5 run 1 verdict INCOMPLETE (tokens 335,144, wall 1,290s). Audit 0 and coverage PASS; arithmetic core PASS; 4 FACTUAL, 2 CONTRADICTION, 7 MISSING, 8 STYLE. loop_back_to A4.
+- A5 disclosure: one grep over work/*.md matched two lines of A3 presentation forensics; A5 states it did not open or use them. Logged; not a source breach (no inputs/ access).
+- LOOP ITERATION 1 (cap 1): A4 applies F1-F4, C1-C2, M1-M7 (M1/M2 routed to A4 per A5, derived with line anchors; no A3 re-run). Fresh A4 instance given the review, the audit and the evidence paths (cheaper than resuming the full A4 context). Then a fresh A5 re-audits once. STYLE S1-S8 carried to the report; no re-run on style.
+- Operator standing rule for this batch, relayed by the parent session 2026-10-17 (quoted): "approve one second loop for any company still INCOMPLETE after loop 1 ... No third loop: close with open items flagged." Applies if A5 re-audit after loop 1 is INCOMPLETE; loop 2 logged as its own session-cost rows.
+- Laptop restart (operator, 2026-10-17) killed loop-1 A4 before it wrote; review unchanged (mtime 14:50). Tokens of killed agent: ND (no completion record). Mechanical re-run of loop-1 A4 with a fresh agent; not counted against the loop cap. Pre-loop review kept as work/review_heritgfood_q2fy27_preloop.md. Operator words relayed by parent: "Please continue with all the sessions ... don't wait for my orders. Please finish the task."
+- Loop 1 A4 (re-run) done: F1-F4, C1-C2, M1-M7, S1, S2, S8 applied, none rejected; Loop 1 disposition table appended; cash conversion now INDETERMINATE; verdict PROCEED WITH FLAGS; Questions 34. tokens 213,028, wall 754s. Fresh A5 re-audit (loop 1) launched.
+- A5 loop-1 re-audit verdict INCOMPLETE (tokens 301,578, wall 1,154s). All 13 run-1 findings resolved. New: 2 FACTUAL (F1 VAP-share basis asserted RESOLVED, two readings needed; F2 "Get-A-Way = ice cream" not in corpus), 4 STYLE (S9-S12). No MISSING, no CONTRADICTION. Audit kept as work/audit_heritgfood_q2fy27_loop1.md; review kept as work/review_heritgfood_q2fy27_loop1.md.
+- LOOP ITERATION 2 (operator standing rule, quoted above): fresh A4 applies F1, F2 (+S9-S11 if cheap); fresh A5 re-audits once. No third loop: close with open items flagged.
+- Loop 2 A4 done: F1, F2, S9-S12 applied, none rejected; verdict unchanged PROCEED WITH FLAGS. tokens 197,218, wall 631s. Fresh A5 loop-2 re-audit launched (final; no third loop).
+- A5 loop-2 re-audit verdict COMPLETE (tokens 333,945, wall 1,131s). 0 FACTUAL/MISSING/CONTRADICTION; STYLE S13-S21 logged, carried to report; S16 flagged for operator (VAP 'fits reading B better' overstates). All 15 prior loop findings resolved.
+- notion-payload.md written (no company page; create-or-hold decision left to operator). session-cost.md written: total_run_tok 2,625,523, loop_iterations 2.
+- Commit excludes the 10 rendered 300 dpi PNGs in work/a1-results/ (15 MB; regenerable with pdftoppm -r 300 on pp2-6, 9-13). OCR text and scripts are committed.

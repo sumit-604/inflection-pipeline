@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/heritgfood-q2fy27/work/ledger_results_heritgfood_q2fy27.md"
+counts:
+  notes: 12
+  line_items: 299
+  zero_standing: 60
+  agenda_items: 0
+  auditor_paras: 30
+  entities: 28
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, RESTATED, ENTITY_CHANGE, UNREVIEWED_SUBSIDIARY, FOOTNOTE_UNRESOLVED, IMAGE_PARTIAL, BOARD_DURATION, AUDITOR_SIGNED_BEFORE_BOARD_CONCLUSION]
+ids_in_structured: 1242
+ids_referenced: 1242
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Statement rows (1114) are grouped into 299 line items by table, page and line. 60 dash rows are ZERO_STANDING, itemised in the ledger (Impairment losses all 5 periods; Exceptional items in most periods). Entity flag: Heritage Novandie Foods became a subsidiary on 16 Jun 2025 (R1188, R1229); prior ledger ND, so ENTITY_CHANGE is unconfirmed. One unnamed subsidiary is unreviewed and management-furnished (R1233, R1168). Four IMAGE_PARTIAL cash flow cells (R1238-R1241) are carried for A3. Both auditor signatures (13:04, 13:05) fall inside the 11:30-14:50 board meeting. A1 holds no Board Outcome agenda beyond results and no director profiles; agenda_items is 0 because A1 has none, not because the letter has none."

@@ -1,0 +1,17 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: Heritage_Q2FY27_Results.pdf
+doctype: results
+page_count_pdfinfo: 16
+formfeed_count: 16
+line_count: LINECOUNT
+unit_convention: Millions (Rs; all statements "in millions")
+conversion_factor_to_cr: Millions -> x0.1
+text_layer_present: yes (pages 1, 7, 8, 14-16 native text; pages 2-6 and 9-13 carry an OCR layer over a full-page 150 dpi JPEG scan, so the scan case applies to those pages)
+extraction_mode: mixed: text-only for pages 1, 7, 8, 14, 15, 16; scan-ocr with image verification for pages 2-6 and 9-13
+render_candidates: none (no zero-character pages)
+rendered_pages: [2, 3, 4, 5, 6, 9, 10, 11, 12, 13] rendered at 300 dpi with pdftoppm, OCR engine tesseract (--psm 6), every statement table value then image-verified by page-image read; the image value governs where OCR and image differ. Reason: embedded text on these pages is a low-fidelity OCR layer over a scan.
+image_verified: yes, pages 2-6 and 9-13 (financial statements and notes). Cells where the image digit was blurred are listed in the QUALIFIER rows with flag IMAGE_PARTIAL.
+page_coverage: 100%
+detected_quarter: Q2 FY27
+extraction_date: 2026-10-17
+=== END HEADER ===

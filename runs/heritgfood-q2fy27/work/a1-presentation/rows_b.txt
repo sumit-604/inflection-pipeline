@@ -1,0 +1,116 @@
+ENTITY|1|24|BSE Limited|exchange addressee
+ENTITY|1|26|National Stock Exchange of India Limited|exchange addressee
+ENTITY|1|30|Scrip Code HERITGFOOD|NSE symbol
+ENTITY|1|36|SEBI LODR Regulations 2015, Regulation 30|regulator/regulation cited
+ENTITY|1|49|Heritage Foods Limited|issuer
+ENTITY|1|57|Umakanta Barik|Company Secretary and Compliance Officer, M No FCS-6317
+ENTITY|5|132|Mr. A V Girija Kumar|Chairperson, quoted
+ENTITY|11|343|Heritage Nutrivet Limited|wholly owned subsidiary, cattle feed
+ENTITY|12|383|Nourish+|high protein platform brand
+ENTITY|12|397|World Food Program & GOI study|source of protein deficiency claim
+ENTITY|13|445|LIVO|yogurt/cravings brand
+ENTITY|14|459|Heritage Purity Promise|milk QR purity campaign
+ENTITY|14|467|Suman TV|investigative video amplifier
+ENTITY|14|480|Telangana|core market for purity campaign
+ENTITY|16|521|Top brand in Southern metro cities|brand recall claim (Brand Health Track internal study)
+ENTITY|19|614|Mrs. Nara Bhuvaneswari|Vice-Chairperson and MD
+ENTITY|25|761|Indian Wind Power Association (IWPA)|award body, wind farm award
+ENTITY|25|764|Mrs. N Brahmani|Executive Director, Fortune India Most Powerful Women 2026
+ENTITY|25|766|Narketpally Plant|Best Environmental Award, Telangana Pollution Control Board
+ENTITY|25|769|Digital CIO Excellence Awards|IT Head award
+ENTITY|25|771|Investor Relations Society|IR Excellence Award, Food and Beverage
+ENTITY|25|774|Confederation of Indian Industry (CII)|Food Safety certificate of appreciation 2025
+ENTITY|25|782|Golden Peacock Award for Excellence in Corporate Governance|award 2025
+ENTITY|25|784|IOD Distinguished Fellowship Award 2025|award to VC&MD
+ENTITY|26|792|Mrs. Nara Brahmani|Executive Director, quoted
+ENTITY|28|832|Processing plant map: Sangvi; Vadamadurai; Pammaru; Bayyavaram; Bobbili; B. Kothakota; Manor; Narketpally; Shamirpet; Uppal; Yadavanahalli; Sindhanur; Kalluru; Gokul; Rai|plant names as printed (state grouping not text-resolvable)
+ENTITY|30|907|SARVAGUN; Truly Good Gawa ghee; Livo Drinkables; Total Curd; Scoop of Happiness|product brands
+ENTITY|31|939|DMS (Distributor Management System); Customer Live Application; Heritage VET+; DIGIT Centre|digital tools
+ENTITY|32|951|Dr. M. Sambasiva Rao|Whole Time Director, quoted
+ENTITY|35|1006|Srideep Kesavan|CEO, quoted
+ENTITY|36|1036|Fortune Business Insights; National Dairy Development Board; Ilattice Analysis|market data sources
+ENTITY|36|1048|NAPD; NPDD; Interest Subvention on Working Capital Loans for Dairy Sector|government schemes cited
+ENTITY|37|1077|CareEdge Research; Redseer; Technopak Report; Market Research Future|market data sources
+ENTITY|38|1123|HFWA; VET+ app|farmer welfare initiative; digital vet
+ENTITY|40|1156|Mr. Angara Venkata Girija Kumar|Chairperson, Independent Director; ex-Chairman and MD Oriental Insurance; Member FSIB
+ENTITY|40|1156|Mrs. Aparna Surabhi|Independent Director; CFO and CHRO Caliber Technologies Pvt Ltd
+ENTITY|40|1156|Mr. M P Vijay Kumar|Independent Director; Executive Director and Group CFO Sify Technologies Ltd
+ENTITY|40|1168|Mrs. Bhuvaneswari Nara|Vice Chairperson and Managing Director
+ENTITY|40|1168|Mrs. Brahmani Nara|Executive Director; Santa Clara University, Stanford MBA; joined 2014
+ENTITY|40|1168|Dr. M Sambasiva Rao|Whole Time Director; former IAS
+ENTITY|41|1184|Mr. Srideep Kesavan|CEO; ex Coca-Cola India, Olam International Singapore
+ENTITY|41|1184|CA A. Prabhakara Naidu|CFO
+ENTITY|41|1184|Mr. J Samba Murty|COO; with Heritage since 2007; prior APDDCF, Visakha Dairy, NDDB, Reliance
+ENTITY|41|1183|Mr. Umakanta Barik|Company Secretary and Compliance Officer
+ENTITY|45|1323|Go India Advisors (Garima Singla, Sheetal Khanduja)|investor relations advisor
+ENTITY-SUMMARY|1|23|address block: BSE Phiroze Jeejeebhoy Towers Dalal Street Mumbai 400 001; NSE Exchange Plaza C-1 G Block BKC Bandra East Mumbai 400 051|postal addresses
+ENTITY-SUMMARY|25|760|Awards roster: 10 award/recognition bullets (individually captured above where body named)|industry recognition slide
+ENTITY-SUMMARY|45|1317|contact block: hfl@heritagefoods.in; garima@goindiaadvisors.com; sheetal@goindiaadvisors.com|email addresses
+ENTITY-SUMMARY|3|70|table of contents: Highlights, Business Overview, USPs, Strategic Updates, Annexure|navigation slide
+ENTITY-SUMMARY|20|626|USP list: Strong relationship with farmers; Federated Supply Chain; Integrated Distribution Network; Collaborative Business Planning; R&D and Marketing Capabilities; Strategic Working Capital Management; Focus on Logistic Efficiencies|slide headings
+FORWARD|5|122|Focus on strengthening procurement ecosystem, expanding VAP capacity and accelerating innovation across premium and nutrition-led categories|chairperson message
+FORWARD|5|123|Broad-based volume growth, calibrated pricing and higher-value mix positioning for sustained profitability improvement|chairperson message
+FORWARD|5|127|Confident of driving sustainable margin improvement via premiumisation, cost control, operating leverage, disciplined execution|chairperson message
+FORWARD|5|127|Near-term cost pressures persist|chairperson message
+FORWARD|5|129|Long-term vision of profitable growth supported by strategic investments|chairperson message
+FORWARD|9|264|Milk procurement costs continue to rise (standard cost/litre rising April to September)|slide title/statement
+FORWARD|12|407|Nourish+ New Addition (range extension)|product launch
+FORWARD|13|450|Plain now. Flavours next. (yogurt flavour roadmap)|product plan
+FORWARD|27|803|Strategic priorities: Geographical Footprint, Brand Building, Margin Expansion, Highly Tech Enabled|future growth drivers
+FORWARD|29|870|VAP portfolio to improve margins; VAP (exc bulk fats) share and gross margin rising FY20 to FY26 to FY28E|FY28E target chart
+FORWARD|29|885|FY28E projection for VAP contribution and gross margin (values 32%/23%/27%/18% unmapped)|estimate
+FORWARD|29|891|Category organised-market CAGR next 7 years: ice cream 18-20%, curd 21-23%, paneer 23-25%, ghee 9-12%|industry outlook
+FORWARD|36|1012|India dairy industry poised for significant growth; market CY32(E), organised share CY30P|industry projection
+FORWARD|37|1056|Macro tailwinds: Q-commerce FY28(P), middle class CY28(P), healthy food 2030(P), urban population 2035(P)|industry projections
+FORWARD|14|486|Started firing in core markets (purity campaign), boosted profitability|campaign claim
+DATE|1|21|October 15, 2026|letter date
+DATE|1|38|quarter and six months ended September 30, 2026|reporting period
+DATE|2|67|Q2 & H1 FY27|presentation period
+DATE|1|54|2026.10.15 16:57:24 +05:30|digital signature timestamp
+DATE|8|226|Q2FY27, Q2FY26, Q1FY27, H1FY27, H1FY26|table periods
+DATE|9|293|Apr to Sep|cost chart months
+DATE|11|374|FY23, FY24, FY25, FY26, H1 FY27|Nutrivet chart periods
+DATE|16|514|FY22-FY26|revenue CAGR window
+DATE|16|531|As of FY26|metrics date
+DATE|17|540|FY23-FY26|3 year CAGR window
+DATE|21|671|FY21 to H1 FY27|procurement chart periods
+DATE|25|761|FY2025-26|wind farm award year
+DATE|25|764|2026|Fortune India Most Powerful Women
+DATE|25|769|2026|Digital CIO Excellence Award
+DATE|25|774|2025|CII food safety certificate
+DATE|25|777|2025|Outstanding Dairy Professional Award
+DATE|25|780|2025|Business Today award
+DATE|25|782|2025|Golden Peacock Award
+DATE|29|885|FY20, FY26, FY28E|VAP chart periods
+DATE|29|891|next 7 years|category CAGR horizon
+DATE|34|997|FY15 to FY26|dividend history
+DATE|36|1033|CY20, CY21-CY25, CY30P, CY32(E)|industry chart periods
+DATE|37|1075|FY22-FY25(E), FY28(P), CY18, CY23, CY28(P), 2009, 2015-2024, 2030(P), 2035(P)|industry chart periods
+DATE|42|1205|FY24, FY25, FY26|income statement periods
+DATE|43|1244|FY24, FY25, FY26|balance sheet periods
+DATE|44|1286|FY25, FY26|ratio periods
+DATE|40|1173|1994; 2014|Bhuvaneswari tenure; Brahmani joined
+DATE|41|1189|since 2007|Samba Murty association
+QUALIFIER|5|106|VAP segment definition: VAP revenue Rs 4,510 mn excludes consumer packs of Ghee and Butter|VAP basis
+QUALIFIER|5|111|VAP revenue Rs 5,408 mn is when including consumer packs of Ghee and Butter|VAP incl. basis
+QUALIFIER|6|138|(Rs. In Mn.) unit for consolidated financial chart|unit
+QUALIFIER|7|182|(Rs. In Mn.) unit for segment revenue chart|unit
+QUALIFIER|8|226|Particulars (INR Mn) unit; consolidated|unit
+QUALIFIER|9|265|Cow milk accounts for ~80% of procurement (cost basis: standard cost/litre)|basis
+QUALIFIER|11|361|(in Rs. Million) Nutrivet chart unit|unit
+QUALIFIER|12|398|^ World Food Program & GOI study (marker on 73% protein deficient)|footnote
+QUALIFIER|13|455|Primary TG: 20-35 years, males and females, urban. MRP shown. (note on Livo slide, line 455 on page 13)|note
+QUALIFIER|14|477|TG* marker on 9.4% milk growth; *Executed in our core Telangana market (line 481 definition)|footnote resolved
+QUALIFIER|16|531|*Brand Health Track - internal study (marker on brand recall/loyalty claim)|footnote
+QUALIFIER|16|531|*As of FY26 (marker on operating metrics)|footnote
+QUALIFIER|16|517|Metrics 'as of FY26' include 23.4% gross margin, 5.9% EBITDA margin, 0.33 net debt/equity, 13.95% ROCE|period basis
+QUALIFIER|21|675|LLPD - Lakh Litres Per Day (definition)|footnote
+QUALIFIER|29|885|FY28E = estimate|forward basis
+QUALIFIER|29|877|Higher Contribution of VAP (exc. Bulk FATS) to Revenue; definition excludes bulk fats|metric definition
+QUALIFIER|36|1036|Source: Fortune Business Insights; NDDB; Ilattice Analysis|source attribution
+QUALIFIER|37|1077|Source: CareEdge Research; Redseer, Broker Reports; Technopak Report; Market Research Future|source attribution
+QUALIFIER|8|230|Expenses Q2FY26 printed as 10.353 (as printed, presumed 10,353)|printing anomaly
+QUALIFIER|8|241|Share of Profit/(Loss) of an associate and JV: single value (13) printed, column not resolvable from text|column unresolved|FOOTNOTE_UNRESOLVED
+QUALIFIER|44|1268|Ratios shown FY25 vs FY26 without legend; chart label mapping not resolvable from text|ratio basis|FOOTNOTE_UNRESOLVED
+QUALIFIER|16|514|Revenue CAGR 14% (FY22-FY26)|window
+QUALIFIER|11|351|Nutrivet figures Q2 FY27 revenue up 47% YoY (subsidiary level)|basis

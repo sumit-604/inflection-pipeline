@@ -1,0 +1,62 @@
+stage: A3-forensics
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/heritgfood-q2fy27/work/forensics_presentation_heritgfood_q2fy27.md"
+ledger_reconciled_pct: 100        # 696 of 696 (45 slide rows + R001-R651)
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: FINDING
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "l242, l245, l1221-1223, l1251", classification: "AMBIGUOUS", implication: "Associate line kept with nil investment; exceptional line non-zero FY25/Q2FY26/FY26, recurring. Ask transaction class."}
+  - {id: "A3-02", check: "F1", line: "l245, l247", classification: "NEUTRAL-FACT", implication: "Q2FY26 PBT 678 includes +94 gain; clean Q2 PBT YoY -27% not -37%; H1 -33% not -38%."}
+  - {id: "A3-03", check: "F2", line: "l351, l363-374, l207", classification: "AMBIGUOUS", implication: "Nutrivet H1FY27 PBT margin 3.6% vs FY26 8.4% (positional); Others (feed) 13% of Q2 revenue growth. Ask Q2 PBT."}
+  - {id: "A3-04", check: "F6", line: "l122, l236, l238, l1248, l1253, l1258", classification: "FORWARD-SIGNAL", implication: "VAP capacity commitment undated/unquantified; D&A +37%, finance cost +89%, PPE +54%, gross debt +107%."}
+  - {id: "A3-05", check: "F7", line: "l127, l265, l270-293, l97-103", classification: "FORWARD-SIGNAL", implication: "Cow cost YoY rose monthly +4.8% to +8.3% (Sep); procurement +11% vs selling price +6%; Q3 starts on higher cost base."}
+  - {id: "A3-06", check: "F7", line: "l300, l304", classification: "AMBIGUOUS", implication: "'Almost All' admits unnamed volume decliners after price hikes. Ask which and their share."}
+  - {id: "A3-07", check: "F7", line: "l885, l1033, l1075", classification: "NEUTRAL-FACT", implication: "No safe-harbour statement while carrying FY28E and third-party projections; weight as unhedged marketing."}
+  - {id: "A3-08", check: "F8", line: "l249, l1227, l1254", classification: "AMBIGUOUS", implication: "Q2FY27 ETR 27.5% (+233 bps vs 25.17%), series high; DTL +45% FY26; no split. Ask ETR bridge."}
+  - {id: "A3-09", check: "F10", line: "l259, l1237, l1247", classification: "AMBIGUOUS", implication: "Q2 EPS 3.4 vs 3.33 implied (309/92.8 Mn); H1 6.1 vs 6.01. NCI loss, share change or misprint. Basic EPS absent."}
+  - {id: "A3-10", check: "F11", line: "l521, l1253, l1258, l1259", classification: "AMBIGUOUS", implication: "'Net Debt/Equity 0.33' equals gross D/E 3,615/11,081; cash-net 0.26. Ask definition; ST debt 3.8x."}
+  - {id: "A3-11", check: "F11", line: "l1248-1254", classification: "AMBIGUOUS", implication: "FY26 non-current asset lines sum 12,528 vs total 12,562; 34 Rs Mn unallocated. Check at AR."}
+  - {id: "A3-12", check: "F14", line: "l1223, l1225, l245", classification: "AMBIGUOUS", implication: "Exceptional 87 (FY25) is a charge, 101 (FY26) a gain, printed alike. Clean FY26 PBT -28% vs reported -22%."}
+  - {id: "A3-13", check: "F14", line: "l230, l234, l253, l255, l589, l687", classification: "NEUTRAL-FACT", implication: "Typo 10.353; Q2 margin change in % vs H1 in bps; OCI (112)% on an improvement; chilling centres 188 vs 191."}
+  - {id: "A3-14", check: "F15", line: "l1250, l1251, l1221, l242, l343", classification: "AMBIGUOUS", implication: "FY26: associate to nil, MI 0 to 48 though Nutrivet wholly owned, intangibles 65 to 246. Unnamed subsidiary; ask entity change."}
+  - {id: "A3-15", check: "F16", line: "l97, l102, l107, l112", classification: "AMBIGUOUS", implication: "Overview bullets run 01, 02, 03, 05; item 04 missing. Ask what was removed."}
+  - {id: "A3-16", check: "F16", line: "l118-119, l232-253", classification: "AMBIGUOUS", implication: "'Strong execution' on sequential +98 bps while YoY EBITDA -4%, margin -133 bps, PAT -39%. Is 5.6% a floor?"}
+  - {id: "A3-17", check: "F16", line: "l1268-1306", classification: "CONFIRMATORY-NEGATIVE", implication: "'Strengthening Financial Health' while D/E, current ratio, ROCE (23.6 to 14.0), FATR and turnovers all weakened."}
+  - {id: "A3-18", check: "F16", line: "l870-885", classification: "FORWARD-SIGNAL", implication: "FY28E VAP share and gross margin bars carry no values. Unquantified dated target; ask numbers."}
+  - {id: "A3-19", check: "F16", line: "l106-113, l187, l228", classification: "AMBIGUOUS", implication: "VAP share 35.4% vs 34.2% from deck numbers; incl. packs 42.5% vs 41.0%. Denominator undisclosed."}
+  - {id: "A3-20", check: "F16", line: "l473-490", classification: "AMBIGUOUS", implication: "Milk growth 9.4% is Telangana only; company milk +8.5%, so rest grew less. 'Boosted Profitability' unquantified."}
+  - {id: "A3-21", check: "F16", line: "l187-189, l206-208", classification: "AMBIGUOUS", implication: "Derived VAP YoY Q1 +39.7% to Q2 +32.0%; milk Q1 +4.5% to Q2 +8.5%. Seasonality, base or capacity?"}
+forward_signals: ["A3-04", "A3-05", "A3-18"]
+ambiguous: ["A3-01", "A3-03", "A3-06", "A3-08", "A3-09", "A3-10", "A3-11", "A3-12", "A3-14", "A3-15", "A3-16", "A3-19", "A3-20", "A3-21"]
+commitments:
+  - {commitment: "Expand VAP capacity", implied_date: "none stated", ref: "slide 5 l122", status_word: "none stated"}
+  - {commitment: "Sustainable margin improvement via premiumisation, cost control, operating leverage", implied_date: "none stated", ref: "slide 5 l127-128", status_word: "none stated"}
+  - {commitment: "Higher VAP (exc. bulk fats) share and gross margin by FY28E (unquantified)", implied_date: "FY28", ref: "slide 29 l870-885", status_word: "none stated"}
+  - {commitment: "Livo yogurt flavours ('Plain now. Flavours next.')", implied_date: "next (undated)", ref: "slide 13 l450", status_word: "initiated"}
+  - {commitment: "Nourish+ curd added (New Addition)", implied_date: "Q2 FY27", ref: "slide 12 l409-414", status_word: "completed"}
+  - {commitment: "Nourish+ crossed 4,633 LPD/KGPD", implied_date: "Q2 FY27", ref: "slide 12 l405-406", status_word: "completed"}
+  - {commitment: "Livo yogurt crossed 100 tons", implied_date: "Q2 FY27", ref: "slide 13 l444-446", status_word: "completed"}
+  - {commitment: "Strategic priorities: footprint, brand, margin expansion, tech", implied_date: "none stated", ref: "slide 27 l803-826", status_word: "none stated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Pre-thesis read. No prior deck, so cross-deck diffs are untestable and every F16 item is within-deck. Arithmetic resolved A1's unresolved columns: Q2FY26 PBT carries a +94 exceptional gain, FY25 an 87 charge, FY26 a 101 gain, all printed alike. Clean PBT fell 27% YoY in Q2, not 37%; FY26 clean PBT fell 28%, not 22%. The balance sheet shows a FY26 structural event the deck never names: associate investment to nil, minority interest appears though the one named subsidiary is wholly owned, intangibles near 4x, gross debt doubled, PPE +54%. That one event may explain the 94 gain, the EPS-above-PAT gap and the 27.5% ETR; A4 should ask it as one question. The heaviest forward signal is the cost exit rate: cow milk cost YoY inflation rose every month to +8.3% in September while milk realisation grew 6%. Q2's 98 bps sequential gain starts Q3 against a higher cost base. Chart values on slides 9, 11, 21, 29 and 44 rest on column-position mapping, arithmetic-checked where possible; treat them as inference."

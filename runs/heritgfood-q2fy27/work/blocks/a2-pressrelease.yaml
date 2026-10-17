@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/heritgfood-q2fy27/work/ledger_pressrelease_heritgfood_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 30
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 5
+  slide_numbers: 117
+flags_raised: [RESTATED, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 180
+ids_referenced: 180
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Press release, not a deck or filing: no financial tables, so line_items and zero_standing are 0 by construction; headline metrics sit as NUMBER rows. Slides = 5 pages. Many numbers restated across pages (19%, 98 bps, 5.6%, 13,196, 26,577); RESTATED cross-refs added. LLPD is undefined in the release (R175). Release has no footnotes (R174) and omits segment results (R180). Board meeting times are not given, so signature timestamp (R159, 15:26 on 15 Oct) cannot be checked. DROPPED_SLIDE and ENTITY_CHANGE not assessable without a prior ledger."

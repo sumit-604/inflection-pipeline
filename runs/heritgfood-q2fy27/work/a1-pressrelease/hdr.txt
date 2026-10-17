@@ -1,0 +1,17 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: Heritage_Q2FY27_Press_Release.pdf
+doctype: presentation (press release, pressrelease tag)
+page_count_pdfinfo: 5
+formfeed_count: 5
+line_count: 212 (body, excluding this header)
+unit_convention: Millions (INR Mn) in tables and text; per-litre prices in INR; volumes in LLPD (lakh litres per day)
+conversion_factor_to_cr: Millions -> x0.1 (INR 13,196 Mn = Rs 1,319.6 Cr)
+text_layer_present: yes
+extraction_mode: text-only
+render_candidates: none (no zero-character pages)
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: Q2 FY27 (quarter and six months ended September 30, 2026)
+extraction_date: 2026-10-17
+note: line numbers cited in structured file are lines of THIS file including the 18 header lines above
+=== END HEADER ===

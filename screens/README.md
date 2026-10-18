@@ -265,3 +265,102 @@ than after:
 
 Two names returned zero guidance records, which is itself a finding recorded on
 both cards: **MARINE** and **AVTNPL**.
+
+## Fourth run, 2026-10-18
+
+Eight operator picks, screened in one session: Onward Technologies, Tips Music,
+Marushika Technology, Oriental Hotels, DelaPlex, California Software, Mahamaya
+Steel, JTL Industries.
+
+**Verdicts.** PROCEED to `/step1` on ONWARDTEC. WATCH on TIPSMUSIC and DELAPLEX.
+PASS on MARUSHIKA, ORIENTHOT, CALSOFT, MAHASTEEL and JTLIND. The run-wide
+forward table is `screens/forward-view-2026-10-18.md`.
+
+**The corpus rule held in full this time.** This session had egress. Every
+document is a PDF on the operator's disk with a page-marked `.txt` beside it.
+No Bull AI or Trendlyne call was made. Sources:
+- screener.in collector (`screener_collect.py --output-dir --no-drive`, run
+  under `py -3.14`; the default `py` lacks `python-dotenv` and `playwright`):
+  FY25 and FY26 annual reports, up to four transcripts, the latest deck,
+  Financials.xlsx.
+- screener.in quarter links (`/company/source/quarter/<id>/<m>/<y>/`), which
+  redirect to the BSE PDF; downloaded from `AttachLive/` or `AttachHis/`.
+- NSE announcements API (`/api/corporate-announcements`, cookie from the home
+  page first; `index=sme` for Emerge names): results, decks, transcripts,
+  orders, rating letters and regulatory notices, filtered by subject.
+- `fetch_ratings.py` for CARE, CRISIL and Infomerics PDFs. ICRA pages are
+  script shells; the rationale PDF downloads plainly from
+  `https://www.icra.in/Rating/ShowRationalReportFilePdfViewer/<Id>`.
+- Prospectuses: Marushika (17-Feb-2026, from the SEBI filing page iframe) and
+  DelaPlex (2024 RHP, NSE Emerge archive).
+- Market cap and shareholding: screener.in company page, saved per company as
+  `market-data-2026-10-18.md` and labelled a service record.
+- Tesseract OCR (`C:\Program Files\Tesseract-OCR`, via pymupdf) for scanned
+  pages, marked `[OCR]`. Analysts read OCR table digits from the page image.
+
+BSE's own API answered Access Denied to every scripted call. The BSE archive
+paths still serve PDFs.
+
+### Findings worth carrying out of the cards
+
+- **CALSOFT.** Qualified FY26 audit opinion: profit "overstated" by Rs 10.88
+  crore of overdue receivables. Rs 20 crore of receivables reclassified as an
+  advance for shares in a foreign company, with an emphasis of matter on
+  recoverability. Six internal-control material weaknesses. The promoter holds
+  86% of the partly paid shares with the Rs 7.50 call unpaid; the call closed
+  9-Oct-2026 and what followed is NOT FOUND.
+- **MAHASTEEL.** ICRA (B+) and CARE (BB+) both carry it as Non-Cooperating;
+  Infomerics BBB and Brickwork BBB+ sit six notches higher, and the AR
+  discloses only Brickwork. The pattern fits rating shopping.
+- **JTLIND.** Rs 195 crore of related-party loans, all repayable on demand or
+  without terms per CARO. Three years of negative operating cash flow
+  (Rs -335 crore against Rs 315 crore of profit). An Income Tax Benami Act
+  provisional attachment on promoter-held land (02-Mar-2026).
+- **ORIENTHOT** is now a merger stub: 25 IHCL shares for 117 OHL shares,
+  approved 24-Aug-2026, 25 days after shareholders approved a new 20-year IHCL
+  management agreement. The valuation reports are not held.
+- **MARUSHIKA.** A Rs 45.06 crore HFCL order announced 29-Apr-2026 and
+  cancelled two days later. The certified order book is Rs 35.45 crore, while
+  the AR claims Rs 108.56 crore "under execution".
+- **DELAPLEX.** About 60% of FY25 revenue went to the promoter-family US parent
+  at cost plus. NSE queried its results format twice.
+- **TIPSMUSIC.** Related-party purchases from loss-making Tips Films rose to
+  26.42% of purchases; AOC-2 shows the Rs 15.53 crore advance as NIL.
+- **ONWARDTEC.** A Rs 2.93 crore R&D credit sits inside Q2 FY27 expenses and
+  lifts the quarter's margin by 1.7 points; neither the press release nor the
+  deck names it.
+
+### Corpus defects recorded
+
+- **Screener quarter links are not reliable for the latest period.** For
+  MAHASTEEL the Sep-2026 link served a Reg 74(5) certificate; for CALSOFT it
+  served AGM voting results. Neither company has reported Sep-2026. For the two
+  SME names every quarter link pointed at the wrong document; those were
+  deleted and the NSE originals used. Check the period on page 1 before trusting
+  a file name.
+- **DELAPLEX FY26 annual report is truncated at source.** NSE serves 9,299,265
+  bytes of a file whose linearisation header declares 9,681,762. No reader
+  opens it. A `/step1` must get it from the company or BSE.
+- **ONWARDTEC Q1 FY27 deck** is truncated (5,767,168 of 5,905,298 bytes). The
+  Q2 FY27 deck supersedes it.
+- Some PDFs carry a garbled embedded text layer and no `[OCR]` marker
+  (ORIENTHOT q-2026-06 and q-2025-12, TIPSMUSIC q-2026-09, MARUSHIKA board
+  outcome of 22-May-2026). The extractor only OCRs near-empty pages. Analysts
+  read figures from page images.
+- Marushika's FY26 AR is 106 MB, over the Read tool's limit; its image-only
+  overview pages were rendered and read visually.
+- Many filings are byte-identical duplicates of screener downloads.
+- `Financials.xlsx` template sheets are empty for most names; data sits only
+  in the Data Sheet.
+
+### Known limits of this run
+
+- Cards ran 2,478 to 2,878 words against the framework's 1,400 to 1,900,
+  under a brief that asked for 1,900 to 2,600. Flagged rather than trimmed.
+- MARUSHIKA and DELAPLEX report half-yearly; the proof test is a
+  two-half-year test on both.
+- Credit ratings are old or absent on five names: ONWARDTEC (ICRA withdrawn
+  Nov-2023), TIPSMUSIC (CARE withdrawn Jan-2022), JTLIND (2021-2023 only),
+  MARUSHIKA, DELAPLEX and CALSOFT (none found).
+- No Q2 FY27 transcript was held for ONWARDTEC or TIPSMUSIC; both calls had
+  just happened.

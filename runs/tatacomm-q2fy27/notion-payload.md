@@ -1279,3 +1279,23 @@ style_notes:
   - "L1-S5 drop R1514 from the no-finding disposition list"
   - "L1-S6 A1/A2 items S6, S7, S8, S10, S11 carried, no loop"
 analyst_note: "Loop 1 re-audit is COMPLETE. Every loop-0 FACTUAL and MISSING item is resolved in the revised review, checked against the A1 fulltext lines. One loop-0 finding was an A5 error: F2. My 185.39 (89.6%) was consolidated parent PAT less standalone PAT, which also holds the associate swing (-7.60) and NCI (+0.91). A4's original 192.08 (92.9%) was correct for its label, subsidiaries plus eliminations. The revised 5C shows both bases, the parts sum to the 206.80 rise, and the conclusion is unchanged. The Step 4 phrase 'absorbed most of the credit swing' also traces to my loop-0 wording; on H1 numbers it is about half, logged as STYLE. Coverage is unchanged and clean. Every new derived number ties; one 0.01 Real Estate omission is rounding-level. Re-reading the three most positive remaining claims (operating gain, cash direction, Digital breakeven path) finds counters that survive but are already in the review. The acquisition probe is satisfied. A1/A2 style notes S6, S7, S8, S10, S11 carry with no loop."
+
+---
+
+## ROLE 5 ADDENDUM (2026-10-18): NOT WRITTEN; no Notion page exists (first look)
+
+If the operator creates a page, add this Key Notes line (pipes escaped):
+
+```
+18-Oct-2026 \| Q2 FY27 CONCALL (15-Oct call, machine transcript of company recording; Role 5 A1-A5, 2 loops, final A5 INCOMPLETE on 1 minor open item L2-C1, flagged). Verdict PROCEED WITH FLAGS unchanged; concall impact WEAKENED. Currency gave about half the headline growth: cc Data growth ~6% vs 12.2% reported; cc EBITDA ~10% vs 21.2% (period unstated: Q2 -> currency ~half, H1 -> ~a third). The profit jump's cause stays unnamed; a speaker inferred as the CFO says "no one-offs". Net debt/EBITDA 2.17 = TTM basis; "held steady" UNVERIFIABLE (no 30-Jun figure filed). New disclosure: Canada Revenue Agency tax matter (long-standing; contingent Rs1,658 Cr at 31-Mar-2026) settled in principle, direction ND. VAT judgment (Rs365.80 Cr, due 13-Oct) not mentioned. FY27 promise: double-digit EBITDA growth (reported H2 bar +5.60%; cc basis asked). Digital breakeven: no date. Of 31 filing questions: 0 answered, 4 partial, 2 evaded, 25 not addressed; RQ32-RQ47 added. No Decision Status (no page).
+```
+
+Content additions: the merged review runs/tatacomm-q2fy27/work/review_tatacomm_q2fy27.md now carries "## ROLE 5: CONCALL ANALYSIS" and "(Role 5 addendum)" passages (loops 1 and 2 applied); A3 concall forensics: work/forensics_concall_tatacomm_q2fy27.md; Role 5 audit: work/audit_tatacomm_q2fy27_role5.md.
+
+Role 5 audit verdict block:
+```
+Role 5 A5 verdict: INCOMPLETE on 1 minor open item after loop 2 of 2 (operator rule: no third loop, close with open items flagged).
+OPEN ITEM L2-C1 (CONTRADICTION, minor, owner A4): brief 1b, Digital-driver row, still reads "Filing wins; the cause is still open" and lists the QoQ Digital ceiling under "Filing shows (FILED)", while Step 7A now tags the claim UNVERIFIABLE (no YoY Digital comparator is disclosed). Fix: Read column "Cannot be checked; no YoY Digital comparator is disclosed; the cause is still open"; tag the ceiling as MGMT-based context. No number, tally, verdict, cash class, branch or WEAKENED moves.
+Run 1: 6 FACTUAL, 2 MISSING, 3 CONTRADICTION -> closed in loop 1. Loop 1: 1 FACTUAL, 1 MISSING, 2 CONTRADICTION -> closed in loop 2. Coverage 199/199 concall rows, C01-C19 cited; DoT 7,844.57 - 276.68 - 54.18 = 7,513.71 reconciled.
+```
+Source caveat: machine transcript of the company's own recording, speakers inferred; on any number conflict the filing wins.

@@ -22,3 +22,23 @@
 - Loop 1 A4 fix complete: F1, F3, M1-M4 applied; F2 partly disputed (185.39 = all non-parent sources, now the headline at ~90%; 192.08 kept as subsidiaries-plus-eliminations component). 421,306 tok (resume of the same agent, 4 tool uses; figure is this resume only per the notification), 413 s. A5 resumed for the one re-audit.
 - Loop 1 A5 re-audit: COMPLETE (factual 0, missing 0, contradiction 0, style 6). A5 withdrew loop-0 F2 numeric claim (192.08 was right for its label). 359,215 tok (resume only), 242 s. Loop iterations: 1.
 - notion-payload.md written (not sent; CREATE page proposed, no page exists). session-cost.md written: total_run_tok 2,072,847 (base 1,292,326 + loop 1 780,521).
+- ROLE 5 ADDENDUM 2026-10-18 (operator request): checkout guard PASSED (fetch ok, diff empty). Concall source is a MACHINE transcript of the company recording (faster-whisper medium.en, local CPU), not an official transcript; speakers unlabelled; names corrected against filings. Doc class: concall.
+- ORCHESTRATOR DECISION (mechanical): input is .txt, not PDF, so the A1 pdffonts gate is N.A.; A1 coverage unit = 10-minute time block ("page"). Every finding from the concall carries the machine-transcript caveat; filings win on any number conflict.
+- Role 5 runs as an addendum: A1-A3 on the transcript, then A4 merges a Role 5 section into the existing review, then A5 re-audits. Loop counts for this addendum are logged separately from the Role 4 run.
+- A1 concall GATE PASS 6/6 time blocks, R001-R199, T001-T058, Q01-Q19 (6 analysts). Timestamp gaps noted (largest 19:54-21:33).
+- A1 concall tokens 97,816, wall 317 s.
+- A2 concall GATE PASS 199/199 IDs; 58 turns, 19 questions (6 analysts), 51 mgmt numbers. Restatements flagged (H1 EBITDA 15% vs 14.8%; ND/EBITDA '2.17F' unit unclear; CRA settlement in-principle).
+- A2 concall tokens 51,632 < A1 97,816 (cost check pass).
+- A3 concall GATE PASS (17/17). Silence audit: 31 review questions -> 22 silent, 7 partial, 1 declined, 1 deflected, 0 full. DoT figure to reconcile (7,513.71 contingent vs 7,844.57 aggregate).
+- A3 concall tokens 114,061, wall 319 s.
+- A4 Role 5 merge done: verdict PROCEED WITH FLAGS unchanged; answer status 0 answered / 7 partial / 2 evaded / 22 not addressed; new questions RQ32-RQ47; CRA Canada tax contingent 1,658 Cr (31-Mar) surfaced from call; DoT 7,844.57 - 276.68 - 54.18 = 7,513.71 reconciled.
+- A4 Role 5 merge tokens 307,000, wall 1,218 s.
+- A5 Role 5 audit: INCOMPLETE (F-A..F-F FACTUAL, M-A, M-B MISSING, C-A..C-C CONTRADICTION; 14 STYLE). Gate 0, coverage and arithmetic pass; Role 4 unchanged. Loop 1 (Role 5 addendum) to A4 only.
+- A5 Role 5 audit tokens 317,801, wall 1,258 s.
+- Role 5 LOOP 1: fresh A4 wrote role5_parts/loop1_edits.md (77 edits; tokens 182,139, wall 532 s); orchestrator applied all 77 with strict-anchor apply_edits.py (each FIND unique). Verdict unchanged; answer status 0/4/2/25; 7A tally 6/3/0/12. Loop-1 re-audit (A5) next.
+- Role 5 LOOP 1 RE-AUDIT: INCOMPLETE (all 10 run-1 items CLOSED; new L1-F1 FACTUAL, L1-M1 MISSING, L1-C1, L1-C2 CONTRADICTION). LOOP 2 under the operator standing rule (one second loop, no third).
+- Loop-1 re-audit tokens 279,111, wall 1,070 s.
+- Role 5 LOOP 2: fresh A4 wrote loop2_edits.md (30 edits; tokens see notification); orchestrator applied all 30 (strict anchors). 7A 6/2/0/13; touched rows 10. Final re-audit (closure only) next.
+- Role 5 loop-2 A4 tokens 134,845, wall 330 s.
+- Role 5 LOOP 2 RE-AUDIT (final): INCOMPLETE on 1 minor open item L2-C1 (brief 1b rev L1296 Digital-driver row still 'Filing wins'; owner A4). All loop-1 items CLOSED; no Role 4 number moved. Per operator rule: no third loop; CLOSE with L2-C1 flagged.
+- Role 5 loop-2 re-audit tokens 246,844, wall 812 s.

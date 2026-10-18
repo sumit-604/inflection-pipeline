@@ -1,0 +1,146 @@
+stage: A4-analyst
+company: "TATACOMM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, presentation, concall]
+ledger_reconciliation:
+  notes: 18
+  turns: 58
+  slides: 9
+  all_reviewed: true
+  a3_findings_incorporated: ["R-A3-01", "R-A3-02", "R-A3-04", "R-A3-05", "R-A3-06", "R-A3-07", "R-A3-08", "R-A3-09", "R-A3-10", "R-A3-11", "R-A3-12", "R-A3-13", "R-A3-14", "R-A3-15", "R-A3-16", "R-A3-17", "R-A3-18", "R-A3-19", "R-A3-20", "R-A3-21", "R-A3-22", "R-A3-23", "R-A3-24", "R-A3-25", "R-A3-26", "R-A3-27", "R-A3-28", "R-A3-29", "R-A3-30", "P-A3-01", "P-A3-02", "P-A3-03", "P-A3-04", "P-A3-05", "P-A3-06", "P-A3-07", "P-A3-08", "P-A3-09", "P-A3-10", "P-A3-11", "C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19"]
+protocol_verdict: "PROCEED WITH FLAGS"
+role5_addendum: true
+role5_verdict: "PROCEED WITH FLAGS (unchanged by Role 5). Concall impact on the pre-thesis read: WEAKENED. Credibility ND (baseline quarter, 18 commitments logged). Archetype UNCLASSIFIED, low-specificity row (0.20). Role 1 track-record input ND."
+concall_verdict:
+  credibility_grade: "ND (no scorable history; baseline)"
+  credibility_ratio: "ND (0/0; prior log not passed)"
+  archetype: "UNCLASSIFIED (specificity 0.20 <= 0.5; credibility ND)"
+  role1_track_record_input: "ND"
+  net_impact: "WEAKENED (pre-thesis read)"
+  specificity_ratio: 0.20
+  defensive_phrase_count: 15
+  commitments_logged: 18
+  qa_grades: {A: 0, B: 9, C: 8, D: 1, E: 0, na: 1}
+  filing_crosscheck: {confirmed: 7, partially_confirmed: 4, contradicted: 1, unverifiable: 9}
+  peer_crosscheck: "UNVERIFIABLE this run (peer concalls not supplied)"
+  step_8d: "deferred to /fttcp and Role 1 (OR-30); pillar-relevant facts flagged"
+answer_status_counts: {answered: 0, partially: 7, evaded: 2, not_addressed: 22, total: 31}
+new_question_ids: ["RQ32", "RQ33", "RQ34", "RQ35", "RQ36", "RQ37", "RQ38", "RQ39", "RQ40", "RQ41", "RQ42", "RQ43", "RQ44", "RQ45", "RQ46", "RQ47"]
+dot_reconciliation: "Aggregate demand 7,844.57 less 276.68 remote less 54.18 provision = contingent 7,513.71 (L545-562); both filed, both used correctly in Role 4"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE ON RECORD (no Notion page; live search 2026-10-17); framed as PRE-THESIS READ"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY26", gap_pct: -13.2}
+  - {period: "Q1 FY27", gap_pct: 28.5}
+  - {period: "Q2 FY27", gap_pct: 171.0}
+  - {period: "H1 FY26", gap_pct: 7.4}
+  - {period: "H1 FY27", gap_pct: 106.4}
+  - {period: "FY26", gap_pct: 26.2}
+questions_for_management:
+  - {q: "What rupee amount of Q2 consolidated employee (-60.98 QoQ) and other-expense (-63.07 QoQ) reduction was non-recurring?", from_finding_id: "R-A3-04"}
+  - {q: "Same question for Data Services: what one-offs sit in the +175.18 QoQ segment result on +107.41 revenue?", from_finding_id: "R-A3-22"}
+  - {q: "What was the Digital rupee loss in Q1 FY27, Q2 FY26 and FY26 on the Q2 FY27 perimeter?", from_finding_id: "P-A3-01"}
+  - {q: "What was the Q1 FY27 Digital rupee loss and revenue, and how much of the 330 bps QoQ gain came from revenue vs cost?", from_finding_id: "P-A3-02"}
+  - {q: "What were FY26 and Q2 FY26 Digital margin in % and Rs?", from_finding_id: "P-A3-03"}
+  - {q: "In which fiscal quarter will Digital margin reach zero, and is it EBITDA, EBIT or contribution?", from_finding_id: "P-A3-04"}
+  - {q: "Did the National Court deliver its 13-Oct-2026 VAT judgment on 365.80 Cr, and for or against the Group?", from_finding_id: "R-A3-08"}
+  - {q: "What is FY27 capex guidance and the Board's net debt / EBITDA ceiling?", from_finding_id: "R-A3-23"}
+  - {q: "Which entity raised the 2,628.15 Cr H1 long-term debt, and is it parent-guaranteed (yes/no)?", from_finding_id: "R-A3-05"}
+  - {q: "Total staff cost optimisation programme cost, amount remaining, end quarter?", from_finding_id: "R-A3-11"}
+  - {q: "Expected FY27 ETR, and remaining unrecognised DTA on accumulated losses?", from_finding_id: "R-A3-14"}
+  - {q: "Campaign Registry: cause of the Q2 FY26 result dip (122.93 to 75.58), Canada entity contribution before its 14-Jan-2026 exit, and any contract or rule renewal within 12 months?", from_finding_id: "R-A3-20"}
+  - {q: "Parent wrote off 116.73 of 161.23 Cr H1 bad debts (standalone ratio 8.57% vs 1.90%): which customer or contract, and what further amount is at risk?", from_finding_id: "R-A3-06"}
+  - {q: "Is the 50.00 Cr contractual-obligation provision a receivable, advance or guarantee, and same counterparty as the write-offs?", from_finding_id: "R-A3-13"}
+  - {q: "Which associate received 356.10 Cr in H1, what return is expected (TTM associate share 16.66 vs carrying 2,331.73), and what capital is committed for FY27-FY28?", from_finding_id: "R-A3-07"}
+  - {q: "Name the two management-furnished unreviewed subsidiaries (Q2 loss 14.83 on revenue 3.11).", from_finding_id: "R-A3-07"}
+  - {q: "DoT demand aggregate at 31-Mar-2026 and 30-Jun-2026 vs 7,844.57; any new notice in Q2?", from_finding_id: "R-A3-09"}
+  - {q: "Standalone carrying value of Kaleyra, Inc. vs FMV USD 92.625m; expected standalone gain or loss?", from_finding_id: "R-A3-10"}
+  - {q: "Expected Kaleyra transfer completion date; any TCNL external financing or stake sale planned?", from_finding_id: "R-A3-29"}
+  - {q: "Kaleyra Africa exit on 04-Sep-2026: mode, consideration, P&L impact?", from_finding_id: "R-A3-27"}
+  - {q: "TComm Turkey (wef 21-May-2026): purpose and capital committed?", from_finding_id: "R-A3-28"}
+  - {q: "Fire provision 30.10 Cr: insurance claim filed, amount, expected recovery date?", from_finding_id: "R-A3-12"}
+  - {q: "H1 FY27 tax refund received and remaining refundable balance in 1,498.33 Cr non-current tax assets?", from_finding_id: "R-A3-15"}
+  - {q: "Which actuarial assumption drove the standalone Q1 FY27 OCI loss of 9.37 Cr?", from_finding_id: "R-A3-16"}
+  - {q: "Forfeiture reversal inside H1 SBP accrual 2.02 Cr vs 24.01 Cr; new FY27 grants (yes/no)?", from_finding_id: "R-A3-18"}
+  - {q: "Transformation Services revenue -33.70% YoY: client loss (how many) or group in-sourcing?", from_finding_id: "R-A3-21"}
+  - {q: "Does Zubin Adil Patel leave, move within the group, or retire on 01-Nov-2026?", from_finding_id: "R-A3-24"}
+  - {q: "Reconcile press-release Q2 FY26 Data revenue 5,179 to filed 5,204.47; define Digital Portfolio.", from_finding_id: "R-A3-25"}
+  - {q: "Asset held for sale 7.40 Cr: identity, buyer, price, completion date?", from_finding_id: "R-A3-01"}
+  - {q: "Was FY25 Digital restated to the current perimeter; what revenue came in (Commotion, FY26 acquisition cash 136.96) and went out (Mgage, Kaleyra Africa)?", from_finding_id: "P-A3-05"}
+  - {q: "Does any earlier quantified margin or revenue target still stand (yes/no)?", from_finding_id: "P-A3-06"}
+  - {q: "When did the Tower structure take effect, and which of the 11 named heads joined in the last 12 months?", from_finding_id: "P-A3-07"}
+  - {q: "Q2 FY27 AI-platform revenue and paying-customer count?", from_finding_id: "P-A3-08"}
+  - {q: "India GPU capex amount, utilisation, and is its depreciation inside the Digital margin?", from_finding_id: "P-A3-09"}
+  - {q: "RQ32: Q2 FY27 constant-currency YoY growth for revenue, Data revenue and EBITDA; is cc EBITDA ~10% for Q2 or H1?", from_finding_id: "C02"}
+  - {q: "RQ33: Is the FY27 double-digit EBITDA promise on reported or cc EBITDA (reported needs only +5.60% in H2)?", from_finding_id: "C03"}
+  - {q: "RQ34: Which earlier revenue and margin targets still stand (yes/no each); will the Feb-2027 call restate or replace them?", from_finding_id: "C04"}
+  - {q: "RQ35: Quarter in which Digital EBITDA reaches zero; Q1 FY27 Digital revenue ('less than half' of Q1 losses needs Q1 revenue above 3,101 Cr)?", from_finding_id: "C05"}
+  - {q: "RQ36: CRA settlement amount, years, P&L line, payment date, provision at 30-Sep-2026, contingent at 30-Sep-2026 vs 1,658 Cr; why absent from Q2 notes?", from_finding_id: "C06"}
+  - {q: "RQ37: Define net debt/EBITDA 2.17 (TTM, ex-lease?); 'held steady' vs which date; 30-Jun-2026 value (filed 1.99x at 31-Mar to 2.17x TTM)?", from_finding_id: "C07"}
+  - {q: "RQ38: Was the 13-Oct-2026 National Court judgment delivered, deferred or reserved; Reg 30 disclosure within 24 hours (yes/no)?", from_finding_id: "C08"}
+  - {q: "RQ39: Split the 206.80 Cr QoQ parent PAT rise into Digital loss cut, cost savings, FX and other (Rs).", from_finding_id: "C09"}
+  - {q: "RQ40: AI platform paying customers, Q2 revenue, and share from Tata group (related-party) companies?", from_finding_id: "C10"}
+  - {q: "RQ41: Commotion Q2 FY27 revenue and organic Digital growth, reported and cc, on the Q2 FY26 perimeter?", from_finding_id: "C11"}
+  - {q: "RQ42: Order book value or YoY growth at 30-Sep-2026; what Q3 FY27 cc Data growth shows the 'one more quarter' conversion?", from_finding_id: "C12"}
+  - {q: "RQ43: Internal AI transformation: headcount change, restructuring charge, period; will charges stay in exceptional as 'one-time'?", from_finding_id: "C13"}
+  - {q: "RQ44: Media 'Olympics next year': LA 2028 or another event; revenue timing; Rs impact of Middle East cancellations?", from_finding_id: "C14"}
+  - {q: "RQ45: FY27 cash capex split by undersea cable, DC-to-DC, cloud and GPU; GPU utilisation %?", from_finding_id: "C15"}
+  - {q: "RQ46: Answer in writing the 22 NOT ADDRESSED Step 8.5 questions (Q4, Q6-Q24, Q26, Q27) and open parts of the 7 PARTIALLY rows.", from_finding_id: "C19"}
+  - {q: "RQ47: Define Q2 FCF 212 Cr; Q1 FCF and Q2 CFO on the same definition; basis of 72% OCF conversion and ROCE 15.9%?", from_finding_id: "C01"}
+monitorables:
+  - {item: "National Court VAT judgment outcome (365.80 Cr); not mentioned on the call", implied_date: "scheduled 2026-10-13; disclosure by Q3 FY27 results", source_ref: "L572; R1558; R-A3-08; C08"}
+  - {item: "Q2 FY27 concall transcript for Role 5", implied_date: "completed 2026-10-18 (Role 5 run)", source_ref: "P-L33; C-L23"}
+  - {item: "Ridhi Sood takes office as Company Secretary", implied_date: "2026-11-01", source_ref: "L72; L1542; R1585"}
+  - {item: "Kaleyra, Inc. transfer to TCNL completes", implied_date: "ND; check Q3 FY27 consolidation list", source_ref: "L45-53; L1519-1524; R-A3-10"}
+  - {item: "Q3 FY27 consolidated Op EBITDA margin vs 21.0% bull / 19.5% bear", implied_date: "quarter end 2026-12-31; filing date ND", source_ref: "Step 8C"}
+  - {item: "Digital portfolio EBITDA breakeven ('hopefully in the coming quarters')", implied_date: "ND; earliest Q3 FY27", source_ref: "P-L132; P-A3-04; C-L415; C05"}
+  - {item: "Staff cost optimisation programme end", implied_date: "ND, ongoing", source_ref: "L528-531; R-A3-11"}
+  - {item: "Asset held for sale (7.40) disposal", implied_date: "ND", source_ref: "L344; L460; R-A3-01"}
+  - {item: "CWIP 1,120.81 capitalisation and D&A step-up", implied_date: "ND", source_ref: "L318; R-A3-23"}
+  - {item: "Fire provision true-up", implied_date: "ND", source_ref: "L541-542; R-A3-12"}
+  - {item: "DoT AGR appeals at SC and TDSAT", implied_date: "ND", source_ref: "L552-559; R-A3-09"}
+  - {item: "CEO H2 FY27 momentum claim tested", implied_date: "Q3 and Q4 FY27 results", source_ref: "L1375-1376; C-L215"}
+  - {item: "DC-to-DC connectivity USD 1bn opportunity", implied_date: "ND", source_ref: "L1400"}
+  - {item: "FY27 full-year cash flow (FCF; CFO/EBITDA vs FY26 92.88%)", implied_date: "year end 2027-03-31; filing date ND", source_ref: "Step 5"}
+  - {item: "FY27 Annual Report: actuarial basis of Q1 OCI; entity-level subsidiary results", implied_date: "ND, after FY27 close", source_ref: "L639; R-A3-16"}
+  - {item: "Five plan levers and reset baseline", implied_date: "ND", source_ref: "P-L85; P-L122-128; P-A3-07"}
+  - {item: "P1: FY27 double-digit EBITDA growth (FY27 Op EBITDA >= 5,304.71; H2 >= 2,652.69, +5.60%)", implied_date: "FY27 results (year end 2027-03-31)", source_ref: "C-L211; C-L456; C03"}
+  - {item: "P2: cc Data growth step-up from ~6% ('wait one more quarter')", implied_date: "Q3 FY27 results (quarter end 2026-12-31)", source_ref: "C-L152; C-L234; C12"}
+  - {item: "P3: February investor call: earlier targets restated or withdrawn; business framing; AI transformation detail", implied_date: "2027-02", source_ref: "C-L213-214; C-L409; C-L416; C04"}
+  - {item: "P5: CRA settlement disclosure (amount, P&L line, cash); contingent 1,658 Cr at 31-Mar-2026", implied_date: "undated ('in due course'); Q3 FY27 results at latest [INFERENCE]", source_ref: "C-L161-163; C06"}
+  - {item: "P14: net debt / TTM Op EBITDA vs 2.17x baseline", implied_date: "each quarter; 2027-03-31", source_ref: "C-L168-171; C07"}
+  - {item: "P10: internal AI-led transformation; next restructuring charge", implied_date: "Q3 FY27 results; detail Feb-2027", source_ref: "C-L408-409; C13"}
+  - {item: "P7/P8: media cost initiatives; LA Olympics support", implied_date: "coming quarters; Olympics date PENDING LIVE VERIFICATION", source_ref: "C-L329-343; C14"}
+  - {item: "P9: more languages at the insurer client", implied_date: "'soon'", source_ref: "C-L124"}
+  - {item: "IR email: NOT ADDRESSED, EVADED and open PARTIALLY rows plus RQ32-RQ47", implied_date: "send now", source_ref: "Step 8.5D"}
+flags:
+  - "PRE-THESIS: no Notion page, no Decision Status, no Spear line; /step1 gates any pipeline run"
+  - "Q2 profit jump is a subsidiary event: non-parent sources supplied 185.39 (89.6%) of the 206.80 QoQ parent PAT rise (subsidiaries plus eliminations 192.08 before associates and NCI); cause undisclosed; Digital explains about half at most (R-A3-04)"
+  - "Half of the 248.26 YoY EBITDA gain is cost-out; gross spread -305 bps"
+  - "Net debt +1,606.60 (+16.8%) to 11,197.04 in H1; FCF after lease and interest (584.30); dividend 498.78 > H1 parent PAT 475.26"
+  - "Debt migrated to subsidiaries (+2,482.20); standalone Reg 52(4) leverage ratios flatter the consolidated position (R-A3-05)"
+  - "DoT contingent liability 7,513.71 = 2.21x consolidated parent equity; emphasis of matter (R-A3-09)"
+  - "VAT judgment on 365.80 due 13-Oct-2026; note says the Group 'awaits the National Court's decision' (R-A3-08)"
+  - "ETR 26.80% rests on recurring deferred credits; current tax 36.14% (R-A3-14)"
+  - "OCF supported by 315.42 lower tax paid (R-A3-15)"
+  - "Credit costs: 161.23 H1 write-offs (116.73 at parent); standalone bad-debts ratio 8.57% vs 1.90%; current ratio 0.36 vs 0.57; 50.00 recoverability provision; counterparties unnamed (R-A3-06, R-A3-13)"
+  - "'One-time' staff charge recurs every quarter shown (R-A3-11)"
+  - "Campaign Registry: 23.80% of segment result on 4.15% of revenue; YoY +114.38% on a depressed base, H1/H1 +55.75%; Canada entity deconsolidated 14-Jan-2026 (R-A3-20)"
+  - "Associates 2,331.73 (68.6% of parent equity, ~140x TTM share of profit 16.66) on unreviewed numbers; 356.10 added in H1 (R-A3-07)"
+  - "Press-release and deck metrics do not tie to filed lines; Digital chart framing flatters (R-A3-25, P-A3-01..05)"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); tracker rows not supplied; Role 5.5 not run"
+  - "Role 5 addendum: concall held 15-Oct-2026; Role 5 run 2026-10-18 on a machine transcript with inferred speakers; Step 8D deferred to /fttcp and Role 1 (OR-30)"
+  - "Role 5 addendum: currency supplies about half of headline growth: cc Data ~6% vs 12.2%; cc EBITDA ~10% vs 21.2% (MGMT; C02)"
+  - "Role 5 addendum: new contingent outside the filing: CRA settlement in principle, contingent 1,658 Cr at 31-Mar-2026 (48.1% of parent equity then); not in Q2 results notes; amount and timing ND (C06)"
+  - "Role 5 addendum: CFO said net debt/EBITDA 'held steady'; filed 1.99x at 31-Mar-2026 to 2.17x TTM at 30-Sep-2026; filing wins (C07)"
+  - "Role 5 addendum: VAT judgment unmentioned while a favourable tax item was volunteered; of 31 filing questions 0 answered, 7 partially, 2 evaded, 22 not addressed (C08, C19)"
+  - "Role 5 addendum: profit-step cause still unnamed; call credits Digital and operating leverage and says no one-offs (inferred CFO) vs filing cost reduction (C01, C09)"
+  - "Role 5 addendum: only quantified FY27 promise is double-digit EBITDA growth, met at +5.60% H2; earlier targets deferred to Feb-2027 (C03, C04)"
+  - "Role 5 addendum: hedge-heavy call: specificity 0.20, 15 defensive phrases; AI customer count withheld; one named AI win is a group company (C10)"
+plain_language_brief_included: true
+analyst_note: "Role 5 leaves PROCEED WITH FLAGS unchanged. Every backward headline on the call ties to the filing; the claims that explain the print's quality do not. Management said currency supplied about half the growth (cc Data ~6% vs 12.2%; cc EBITDA ~10% vs 21.2%). The profit-step cause stays unnamed: the call credits Digital and operating leverage, and an inferred-CFO turn says no one-offs, while the filing shows half the YoY EBITDA gain is cost reduction. The CFO's 2.17 ties to net debt over TTM Op EBITDA, so A3's 2.17 vs 2.11 gap is a basis difference; but 'held steady' contradicts 1.99x at 31-Mar-2026. A CRA contingent of 1,658 Cr appears on the call but not in the Q2 notes, while the VAT judgment due 13-Oct went unmentioned. Of 31 filing questions: 0 answered, 7 partial, 2 evaded, 22 not addressed. With no prior transcript, credibility and archetype are ND; 18 commitments form the baseline, with P1 (FY27 double-digit EBITDA; H2 needs +5.60%), P2 (Q3 cc Data step-up) and P3 (February call) dated. DoT: 7,844.57 demand less 276.68 remote less 54.18 provision = 7,513.71 contingent; Role 4 used both correctly."
+review_path: "runs/tatacomm-q2fy27/work/review_tatacomm_q2fy27.md"
+correction_loop: 1

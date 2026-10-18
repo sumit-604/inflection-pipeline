@@ -36,3 +36,26 @@
 - Orchestrator session's own tokens are not in total_run_tok (read per session at close).
 - Fresh tokens, re-read tokens, re-read multiple: NOT FOUND (task notifications report totals only, no cache split).
 - Parallelism: at most 2 subagents at once after the parent's load cap (received mid-run; never exceeded).
+
+## ROLE 5 ADDENDUM (2026-10-18): concall machine transcript, A1-A5 plus correction loops
+
+Source: faster-whisper medium.en transcript of the company recording (local CPU; transcription itself not in subagent tokens). Figures from each task notification; fresh agents throughout.
+
+| agent | model | total_tok | wall | run# |
+|---|---|---|---|---|
+| A1-concall | claude-sonnet-5-5 | 97,816 | 317 s | R5-1 |
+| A2-concall | claude-sonnet-5-5 | 51,632 | 79 s | R5-1 |
+| A3-concall | claude-opus-5-5 | 114,061 | 319 s | R5-1 |
+| A4-role5-merge | claude-opus-5-5 | 307,000 | 1,218 s | R5-1 |
+| A5-role5-audit | claude-opus-5-5 | 317,801 | 1,258 s | R5-1 |
+| **Role 5 base subtotal** | | **888,310** | | |
+| R5-LOOP1-A4-fix (77 edits) | claude-opus-5-5 | 182,139 | 532 s | R5 loop 1 |
+| R5-LOOP1-A5-reaudit | claude-opus-5-5 | 279,111 | 1,070 s | R5 loop 1 |
+| R5-LOOP2-A4-fix (30 edits; standing rule) | claude-opus-5-5 | 134,845 | 330 s | R5 loop 2 |
+| R5-LOOP2-A5-reaudit (final) | claude-opus-5-5 | 246,844 | 812 s | R5 loop 2 |
+| **Role 5 loops subtotal** (iterations: 2) | | **842,939** | | |
+| **Role 5 addendum total** | | **1,731,249** | | |
+
+**total_run_tok (Role 4 + Role 5) = 3,804,096** (Role 4 2,072,847 + Role 5 1,731,249). Role 5 loop_iterations: 2. Final A5: INCOMPLETE on one minor open item (L2-C1), closed under the no-third-loop rule.
+- Edits were applied by the orchestrator with a strict-anchor script (each FIND unique), not by rewriting the review.
+- Change that would make the next run cheaper: give A4 a scoped edit tool for addenda, so the parts-and-spec splice step is not needed.

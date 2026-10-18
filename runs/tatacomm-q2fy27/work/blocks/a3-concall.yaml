@@ -1,0 +1,70 @@
+stage: A3-forensics
+company: "TATACOMM"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\tatacomm-q2fy27\\work\\forensics_concall_tatacomm_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "C01", check: "F6", line: "L364-366", classification: "AMBIGUOUS", implication: "Inferred-CFO says no one-offs and ~45% core margin achievable; filing says half YoY margin gain is staff/other cuts; 21.26% may not be run-rate"}
+  - {id: "C02", check: "F7", line: "L152; L232", classification: "FORWARD-SIGNAL", implication: "Currency supplies about half of reported data growth (12.2% vs ~6% cc) and EBITDA growth (21.2% vs ~10% cc); rupee reversal removes it"}
+  - {id: "C03", check: "F6", line: "L456; L155", classification: "FORWARD-SIGNAL", implication: "Only quantified FY27 promise is double-digit EBITDA growth, already exceeded in H1 (14.8%); low bar, FX is the main miss route"}
+  - {id: "C04", check: "F17", line: "L189; L213-214", classification: "AMBIGUOUS", implication: "Earlier revenue and margin targets neither reaffirmed nor withdrawn; deferred to Feb-2027 investor call"}
+  - {id: "C05", check: "F6", line: "L60; L415", classification: "FORWARD-SIGNAL", implication: "Digital breakeven undated and hedged 'hopefully'; metric is EBITDA (L158); Q3 needs ~360 bps more"}
+  - {id: "C06", check: "F8", line: "L161-163", classification: "FORWARD-SIGNAL", implication: "CRA prior-year tax settlement in-principle; contingent 1,658 Cr at 31-Mar-2026; undisclosed amount likely hits H2 P&L and cash"}
+  - {id: "C07", check: "F14", line: "L169-171", classification: "AMBIGUOUS", implication: "Spoken leverage 2.17 and 'held steady' vs filing 1.99x to 2.11x and net debt +1,606.60 Cr H1; filing wins"}
+  - {id: "C08", check: "F17", line: "L161", classification: "AMBIGUOUS", implication: "Favourable Canada tax item volunteered; VAT judgment (365.80 Cr) due 13-Oct-2026 unmentioned; selective disclosure, email IR at once"}
+  - {id: "C09", check: "F17", line: "L157; L454-455", classification: "AMBIGUOUS", implication: "Call credits digital and operating leverage only; ~90% of QoQ parent PAT rise from non-parent sources has no named cause"}
+  - {id: "C10", check: "F7", line: "L379-380; L118", classification: "AMBIGUOUS", implication: "AI customer count and revenue withheld; one of two showcase wins is a group (related-party) company"}
+  - {id: "C11", check: "F6", line: "L87; L149; L153", classification: "AMBIGUOUS", implication: "Digital +18.6% includes Commotion perimeter (wef 01-Dec-2025); no organic split, cc growth unquantified"}
+  - {id: "C12", check: "F6", line: "L226-227; L234", classification: "FORWARD-SIGNAL", implication: "Dated test: Q3 FY27 cc data growth must step up from ~6% after 2.5 years of double-digit order growth"}
+  - {id: "C13", check: "F6", line: "L408-409", classification: "FORWARD-SIGNAL", implication: "Internal AI-led transformation signals more restructuring; recurring 'one-time' staff charges likely continue"}
+  - {id: "C14", check: "F6", line: "L329-332", classification: "AMBIGUOUS", implication: "LA Olympics 'next year' vs Games scheduled Jul-2028 [external, verify]; media catalyst ~7 quarters out"}
+  - {id: "C15", check: "F6", line: "L164; L166; L412", classification: "FORWARD-SIGNAL", implication: "Capex rising (cable, DC-DC, cloud, GPUs) with thin FCF; debt-funded build continues; no capex guidance or leverage ceiling"}
+  - {id: "C16", check: "F7", line: "L305; L315", classification: "NEUTRAL-FACT", implication: "Voice revival hedged 'too early to say'; no forecast value"}
+  - {id: "C17", check: "F7", line: "L56", classification: "NEUTRAL-FACT", implication: "'Highest since the recent M&As' limits the base and sits on the FX-aided reported basis"}
+  - {id: "C18", check: "F6", line: "L132; L235", classification: "NEUTRAL-FACT", implication: "Neo cloud win unquantified, small vs 6,688 Cr quarterly revenue; order growth broad, no large wins"}
+  - {id: "C19", check: "F17", line: "L177-512; L507", classification: "AMBIGUOUS", implication: "Of 31 Role 4 questions: 22 silent, 7 partial, 1 declined, 1 deflected, 0 answered; first quarter of silence; all to IR email"}
+forward_signals: ["C02", "C03", "C05", "C06", "C12", "C13", "C15"]
+ambiguous: ["C01", "C04", "C07", "C08", "C09", "C10", "C11", "C14", "C19"]
+commitments:
+  - {commitment: "Digital portfolio EBITDA breakeven/positive", implied_date: "coming quarters, no date (earliest Q3 FY27)", ref: "T002 L60; T040 L415; T050 L456", status_word: "underway"}
+  - {commitment: "Double-digit EBITDA growth FY27", implied_date: "FY27", ref: "T006 L211; T050 L456", status_word: "underway"}
+  - {commitment: "Constant-currency data growth visible after one more quarter", implied_date: "Q3 FY27 results (about Jan-2027)", ref: "T012 L234", status_word: "initiated"}
+  - {commitment: "Order book converts to revenue", implied_date: "coming years", ref: "T012 L234; T015 L238", status_word: "underway"}
+  - {commitment: "Investor call/day: long-term growth, revenue mix, internal AI transformation", implied_date: "Feb-2027", ref: "T006 L213-214; T036 L409; T040 L416", status_word: "initiated"}
+  - {commitment: "CRA settlement disclosures in due course", implied_date: "undated (likely H2 FY27)", ref: "T003 L161-163", status_word: "initiated"}
+  - {commitment: "Core connectivity ~45% margin achievable", implied_date: "coming quarters", ref: "T030 L364-365", status_word: "completed"}
+  - {commitment: "Media cost initiatives play out", implied_date: "coming quarters", ref: "T026 L342-343", status_word: "underway"}
+  - {commitment: "LA Olympics media support", implied_date: "'next year' as spoken; Games Jul-2028 [verify]", ref: "T025 L329-331", status_word: "initiated"}
+  - {commitment: "More languages for SDFC Ergo voice AI", implied_date: "soon", ref: "T002 L124", status_word: "initiated"}
+  - {commitment: "Internal AI-led company transformation", implied_date: "already happening; detail at investor day", ref: "T036 L408-409", status_word: "underway"}
+  - {commitment: "CIS business to AI-led platform, better profitability", implied_date: "undated", ref: "T036 L407", status_word: "initiated"}
+  - {commitment: "Invest in own cloud; GPU utilisation", implied_date: "in the future", ref: "T038 L411-413", status_word: "underway"}
+  - {commitment: "Scale capacity in line with demand, anchor-customer-led", implied_date: "ongoing", ref: "T002 L137", status_word: "underway"}
+  - {commitment: "Chief transformation officer leads transformation agenda", implied_date: "joined since last investor call", ref: "T002 L45-46", status_word: "completed"}
+  - {commitment: "More unified-stack solutions", implied_date: "undated ('That is our hope')", ref: "T019 L285-286", status_word: "initiated"}
+  - {commitment: "Infra leader, platform innovator; expand with profitability", implied_date: "undated", ref: "T054 L486-487", status_word: "underway"}
+  - {commitment: "Disciplined capital allocation", implied_date: "undated, no ceiling", ref: "T003 L168", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The call tells a profit-quality story on a reported basis. Two spoken numbers carry the weight: cc data growth about 6% (L152) vs 12.2% reported, and cc EBITDA about 10% (L232) vs 21.2% reported. Currency supplies roughly half the growth the CEO calls the highest since the M&As. The filing adds that half the YoY margin gain is staff and other cuts, and that non-parent sources gave about 90% of the QoQ profit rise. The call names neither, and an inferred-CFO turn says there are no one-offs (L365). The only quantified FY27 promise (double-digit EBITDA, L456) is already met by H1's 14.8%, and earlier targets were deferred to February. The CFO volunteered a favourable Canada tax settlement (L161) but said nothing on the VAT judgment due 13-Oct. That is selective disclosure, but it is one quarter, so AMBIGUOUS, not confirmatory. Pipeline note: the task brief gives DoT contingent Rs 7,513.71 Cr and review Q14 gives 7,844.57. A4 must reconcile from the filing. 'LA Olympics next year' (L330) conflicts with the 2028 Games date [external, verify]."

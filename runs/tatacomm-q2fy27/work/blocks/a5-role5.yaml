@@ -1,0 +1,43 @@
+stage: A5-adversary
+company: "TATACOMM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 2
+final_loop: true
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+closed_this_loop: ["L1-F1", "L1-M1", "L1-C1", "L1-C2"]
+role4_numbers_changed: false
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction:
+    - "L2-C1 minor: brief 1b rev L1296 reads the C-L157 Digital-driver claim as 'Filing wins; the cause is still open' and lists 'Digital explains about half of the subsidiary jump at most' under 'Filing shows (FILED)'. After loop-2 E01, 7A rev L1111 tags the claim UNVERIFIABLE (no YoY Digital comparator: P-L137-151, L1366, L1384) and calls the QoQ ceiling MGMT-based context, not a test; Digital loss reduction can run through the filed cost lines (126.24 of 248.26, L135-143). Loop 1 aligned the matching held-steady row (rev L1298); this row was missed"
+  style:
+    - "L2-S1 7A rev L1111: 'press release gives Digital revenue but no margin (L1384)' should read 'no Q2 FY26 Digital margin (L1384; L1366 gives Q2 FY27 -3.6% only)'; 'Q2 is NOT ADDRESSED' should read '8.5A Q2 is NOT ADDRESSED'; tag unchanged"
+    - "L2-S2 8.5 rule rev L607: Q6 cites C-L408-409 as a forward signal, not only to show its topic did not come up; write 'Q4 and Q6 cite concall lines as context; neither topic came up'; no count change"
+    - "L2-S3 P2 rev L918, monitorable 19 rev L711, YAML rev L1475: add 'if Q3 gives no cc Data figure, P2 scores UNCLEAR (excluded)'; the cc print is MGMT (7A rev L1108)"
+    - "L2-S4 brief 1a rev L1290 'about half' lacks the DERIVED tag that brief 2 now carries (LS2); outside the loop-2 edits, logged only"
+    - "L2-S5 LS7 carried (run-1 S8, S10, S11, S14)"
+loop_back_to: "A4"   # owner of the open item; final loop, so it is flagged, not looped
+gap: "Final loop (loop 2). L1-F1, L1-M1, L1-C1 and L1-C2 are CLOSED; every changed figure recomputes; no Role 4 number moved. One open item, to be flagged, not looped: L2-C1 CONTRADICTION (minor), owner A4. Brief 1b rev L1296 reads the C-L157 Digital-driver claim as 'Filing wins' and lists the QoQ Digital ceiling under 'Filing shows (FILED)'. 7A rev L1111 (loop-2 E01) now tags the claim UNVERIFIABLE (no YoY Digital comparator: P-L137-151, L1366, L1384) and calls the ceiling MGMT-based context. Fix: rev L1296 Read column 'Cannot be checked; no YoY Digital comparator is disclosed; the cause is still open'; tag the ceiling 'QoQ ceiling on MGMT Digital figures, context only' or move it out of the FILED column. No number, tally, verdict, cash class, branch or WEAKENED moves."
+open_items:
+  - {id: "L2-C1", type: "CONTRADICTION", severity: "minor", owner: "A4", location: "rev L1296 (brief 1b, Digital-driver row)", fix: "Read column: 'Cannot be checked; no YoY Digital comparator is disclosed; the cause is still open'. Keep the filed cost split (126.24 of 248.26, L135-143) in the FILED column; tag the Digital ceiling 'QoQ ceiling on MGMT Digital figures, context only' or move it out of that column", moves: "no number, tally, verdict, cash class, branch or WEAKENED", disposition: "flag, not loop (final loop)"}
+style_notes:
+  - "L2-S1 7A rev L1111: press release gives no Q2 FY26 Digital margin (L1366 gives Q2 FY27 only); write '8.5A Q2'"
+  - "L2-S2 rev L607 rule: 'Q4 and Q6 cite concall lines as context; neither topic came up'"
+  - "L2-S3 P2: no cc figure at Q3 means P2 scores UNCLEAR"
+  - "L2-S4 brief 1a rev L1290: tag 'about half' DERIVED, as brief 2 does"
+  - "L2-S5 LS7 carried (run-1 S8, S10, S11, S14)"
+analyst_note: "Loop 2 closed all four loop-1 findings. The 7A Digital-driver claim is now UNVERIFIABLE. It reads YoY, and no input holds a Q2 FY26 Digital loss (deck P-L137-151; press release L1366, L1384). On a QoQ reading it is MGMT against MGMT, so the tag holds either way. The tally recounts to 6/2/0/13. P2 now names both readings in eight places, with RQ42 or the Q3 cc print against 10% as the separator. Q27 is touched with fork NEITHER. Touched rows are 10, bear fired stays 6, and the call never touched 21 of the 25 NOT ADDRESSED rows. The three dated-commitment passages now use one wording. Every changed figure recomputes. No Role 4 number moved and no cite was lost. One minor contradiction is new. Brief 1b still says 'Filing wins' on the Digital claim and lists a MGMT-based ceiling as FILED. 7A now calls that ceiling context, and the claim unverifiable. Loop 1 aligned the matching held-steady row; this row was missed. The fix is one cell. No loop remains, so it goes forward as a flagged open item. Verdict, cash class, branch and WEAKENED do not change."

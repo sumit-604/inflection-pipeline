@@ -1,7 +1,7 @@
 # A4 MERGED REVIEW: Tata Communications Limited (TATACOMM), Q2 FY27
 
-Quarter and half-year ended 30-Sep-2026. Run type: FULL QUARTER (results filing plus earnings presentation; no concall transcript in --docs).
-Protocol: Role 4, Quarterly Results Review Protocol v1.4. Role 5 not run (no concall passed).
+Quarter and half-year ended 30-Sep-2026. Run type: FULL QUARTER (results filing plus earnings presentation; no concall transcript in --docs). (Role 5 addendum, 2026-10-18: the concall machine transcript was added after the Role 4 audit; Role 5 section below.)
+Protocol: Role 4, Quarterly Results Review Protocol v1.4. Role 5 not run in the first pass (no concall passed). (Role 5 addendum) Role 5, Quarterly Concall Analysis Protocol v1.1, run 2026-10-18 and merged below; Role 4 numbers and question text unchanged, with columns, rows and status notes added as logged (Role 5 addendum, loop 1: wording corrected).
 Framing: **PRE-THESIS READ.** No Notion company page exists (live search 2026-10-17). No companies/TATACOMM.md. No spear on record. Decision Status: NONE ON RECORD.
 Model: claude-opus-5-5. Reviewed 2026-10-17. Revised in correction loop 1 (A5 audit, same date); change log at the end.
 
@@ -22,6 +22,8 @@ Anchor convention. "L###" = line in runs/tatacomm-q2fy27/extracted/tatacomm-resu
 A2 flags with no finding (reviewed, no finding): SIGNATURE_BEFORE_MEETING_END (CEO 12:58:01 L1028, auditor 13:05:38 L1159 and 13:04:44 L1335, meeting close 13:45 L33; approval of item (i) before items (ii)-(iii) is a coherent order, per R-A3 reconciliation); ENTITY_CHANGE R1482, R1495, R1514, R1518 (all dated in FY26, context only); ANONYMISED_CLIENT P-R055, P-R056 (carried into Q30); slides 2, 3 and 9 (title, safe harbour, closing; no data).
 
 A1 QA carried from P-A3 reconciliation: P-R026 value is wrong (5 plan levers at P-L122-128, not 6). Nine presentation rows carry 1-9 line cite offsets. None is load-bearing.
+
+(Role 5 addendum) The concall ledger (58 turns) has its own preamble at the start of the ROLE 5 section.
 
 ---
 
@@ -602,46 +604,48 @@ Section checkpoint passed.
 
 Every R-A3 and P-A3 finding classified FORWARD-SIGNAL or AMBIGUOUS maps to at least one question below (coverage shown in the "From" column).
 
+(Role 5 addendum) The last column gives each question's ANSWER STATUS on the 15-Oct-2026 call, from the A3 concall silence audit (forensics Section 4), checked at the cited lines. Status set: ANSWERED / PARTIALLY / EVADED / NOT ADDRESSED. "C-L###" = concall fulltext line. (Role 5 addendum, loop 1) PARTIALLY needs at least one requested item. NOT ADDRESSED means no requested item was given: either no analyst asked and management did not raise the topic, or the topic came up but the call gave none of the items the question asks for (marked "topic touched"). It is not a refusal; a refusal after a direct ask is EVADED. Each row the call touched also records its FORK OUTCOME against the pre-set Bull and Bear answers: BULL, BEAR, SPLIT (one half each) or NEITHER. Rows the call did not touch have no fork outcome; Q4 and Q6 cite concall lines only to show that their topic did not come up (rule reworded, Role 5 addendum, loop 2). Source caveat: machine transcript, speakers inferred; on any number conflict the filing wins. Count (loop 1): ANSWERED 0, PARTIALLY 4 (Q1, Q3, Q25, Q29), EVADED 2 (Q28, Q30), NOT ADDRESSED 25 (of 31; Q2, Q5 and Q31 regraded from PARTIALLY, topic touched; Q27 marked topic touched in loop 2, status unchanged). Fork outcomes on the 10 touched rows (Role 5 addendum, loop 2): BEAR 5 (Q1, Q2, Q5, Q25, Q30), SPLIT 1 (Q3: definition bull, date bear), NEITHER 4 (Q27, Q28, Q29, Q31). A pre-set bear answer fired on 6 rows (Q1, Q2, Q3 date half, Q5, Q25, Q30). New questions from the concall findings are in 8.5E (RQ32-RQ47).
+
 ### 8.5A. Primary table (ordered by materiality)
 
-| # | Cat | Question | Why it matters | Bull answer | Bear answer | From |
-|---|---|---|---|---|---|---|
-| 1 | C | Consolidated employee cost fell 60.98 and other expenses fell 63.07 QoQ in Q2 while revenue rose 105.07 (L140, L143). What rupee amount of Q2 cost was non-recurring (provision releases, SBP reversals, FX, credits)? | Non-parent sources supplied about 90% (185.39) of the 206.80 QoQ parent PAT rise; Digital can explain about half at most; the cause decides whether 21.26% margin is a run-rate | Under 20 Cr non-recurring; savings named and permanent | Over 75 Cr non-recurring, or no number given | R-A3-04, R-A3-22 |
-| 2 | C | What was the Digital portfolio rupee loss in Q1 FY27, Q2 FY26 and FY26, on the Q2 FY27 perimeter and margin definition? | The deck sets a quarter (-107 Cr) beside a full year (-886 Cr) and skips FY26; the Q1 figure sets how much of the jump Digital explains | A consistent quarterly series showing the cut | Perimeter or definition changed; series not given | P-A3-01, P-A3-02, P-A3-03 |
-| 3 | B | In which fiscal quarter do you expect Digital portfolio margin to reach zero, and is "Digital Margin" EBITDA, EBIT or contribution? | Breakeven is the deck's main catalyst and it has no date | A named quarter within FY28, EBITDA-level definition | No date, or contribution-level only | P-A3-04 |
-| 4 | A | Did the National Court deliver its 13-Oct-2026 judgment on the 365.80 Cr VAT and penalty appeal, and was it for or against the Group? | Payment is suspended pending appeal, so a loss is a cash and P&L event (10.8% of parent equity) | Delivered, in the Group's favour | Delivered against, or deferred with no date | R-A3-08 |
-| 5 | F | Net debt rose 1,606.60 to 11,197.04 in H1 and capex used 96% of CFO. What is FY27 capex guidance, and what net debt / EBITDA ceiling does the Board hold? | The build is debt-funded; leverage rose from 1.99x to 2.11x | Capex guided, ceiling at or below 2.5x, FCF positive in H2 | No ceiling; capex rising again in FY28 | R-A3-23, R-A3-05 |
-| 6 | G | What is the total cost of the staff cost optimisation programme, how much remains, and in which quarter does it end? | A "one-time" charge recurred in Q2 FY26, Q1 FY27 and Q2 FY27 (98.26, 44.78, 36.54) | Total and end date stated, under 50 Cr left | Open-ended, no total | R-A3-11 |
-| 7 | D | What FY27 effective tax rate do you expect, and how much DTA on accumulated losses remains to recognise? | Deferred credits shield 935 bps of Q2 PBT; current tax runs 36.14% | ETR guided near 27% with a stated DTA pool | ETR steps toward 36% | R-A3-14 |
-| 8 | E | Campaign Registry result fell from 122.93 (Q1 FY26) to 75.58 (Q2 FY26) and is 162.03 now. What caused the Q2 FY26 dip, what did Campaign Registry Inc (Canada) contribute before its 14-Jan-2026 exit, and does any operator contract or regulatory term renew in the next 12 months? | One niche earns 23.80% of segment result on 4.15% of revenue; the YoY +114.38% rests on that dip | Dip was a one-off; Canada immaterial; no renewal inside 12 months | Recurring volatility, material Canada loss, or a renewal or rule change due | R-A3-20 |
+| # | Cat | Question | Why it matters | Bull answer | Bear answer | From | Answer status (Role 5 addendum) |
+|---|---|---|---|---|---|---|---|
+| 1 | C | Consolidated employee cost fell 60.98 and other expenses fell 63.07 QoQ in Q2 while revenue rose 105.07 (L140, L143). What rupee amount of Q2 cost was non-recurring (provision releases, SBP reversals, FX, credits)? | Non-parent sources supplied about 90% (185.39) of the 206.80 QoQ parent PAT rise; Digital can explain about half at most; the cause decides whether 21.26% margin is a run-rate | Under 20 Cr non-recurring; savings named and permanent | Over 75 Cr non-recurring, or no number given | R-A3-04, R-A3-22 | PARTIALLY: "no such events that are impacting our Q2 performance" (C-L365-366, inferred CFO); no rupee figure; cost named once, "razor sharp focus on cost" (C-L455). Fork: BEAR fired ("or no number given"); the "no one-offs" assertion stays untested until Q3 (Role 5 addendum, loop 1) |
+| 2 | C | What was the Digital portfolio rupee loss in Q1 FY27, Q2 FY26 and FY26, on the Q2 FY27 perimeter and margin definition? | The deck sets a quarter (-107 Cr) beside a full year (-886 Cr) and skips FY26; the Q1 figure sets how much of the jump Digital explains | A consistent quarterly series showing the cut | Perimeter or definition changed; series not given | P-A3-01, P-A3-02, P-A3-03 | NOT ADDRESSED, topic touched (loop 1 regrade from PARTIALLY): margins only, -3.6 vs -6.9, losses "less than half" of Q1 (C-L58-59), which repeat the deck (-6.9%, P-L142) and the press release "halved" (L1366); no rupee series for Q1 FY27, Q2 FY26 or FY26. Fork: BEAR ("series not given") (Role 5 addendum, loop 1) |
+| 3 | B | In which fiscal quarter do you expect Digital portfolio margin to reach zero, and is "Digital Margin" EBITDA, EBIT or contribution? | Breakeven is the deck's main catalyst and it has no date | A named quarter within FY28, EBITDA-level definition | No date, or contribution-level only | P-A3-04 | PARTIALLY: metric called "EBITDA margin" (C-L158); no quarter, "hopefully ... in the coming quarters" (C-L415). Fork: SPLIT: definition half BULL ("EBITDA", C-L158); date half BEAR ("No date", C-L415) (Role 5 addendum, loop 1) |
+| 4 | A | Did the National Court deliver its 13-Oct-2026 judgment on the 365.80 Cr VAT and penalty appeal, and was it for or against the Group? | Payment is suspended pending appeal, so a loss is a cash and P&L event (10.8% of parent equity) | Delivered, in the Group's favour | Delivered against, or deferred with no date | R-A3-08 | NOT ADDRESSED: no line; the CFO's tax remarks cover the Canada matter only (C-L161-163) |
+| 5 | F | Net debt rose 1,606.60 to 11,197.04 in H1 and capex used 96% of CFO. What is FY27 capex guidance, and what net debt / EBITDA ceiling does the Board hold? | The build is debt-funded; leverage rose from 1.99x to 2.11x | Capex guided, ceiling at or below 2.5x, FCF positive in H2 | No ceiling; capex rising again in FY28 | R-A3-23, R-A3-05 | NOT ADDRESSED, topic touched (loop 1 regrade from PARTIALLY): "Cash CapEx trended up" (C-L166) and leverage "held steady" (C-L171) look backward; no capex guidance, no ceiling. Fork: BEAR ("No ceiling"); the FY28 capex half is untested (Role 5 addendum, loop 1) |
+| 6 | G | What is the total cost of the staff cost optimisation programme, how much remains, and in which quarter does it end? | A "one-time" charge recurred in Q2 FY26, Q1 FY27 and Q2 FY27 (98.26, 44.78, 36.54) | Total and end date stated, under 50 Cr left | Open-ended, no total | R-A3-11 | NOT ADDRESSED: no line; the CEO's internal "massive transformation" signals more (C-L408-409) |
+| 7 | D | What FY27 effective tax rate do you expect, and how much DTA on accumulated losses remains to recognise? | Deferred credits shield 935 bps of Q2 PBT; current tax runs 36.14% | ETR guided near 27% with a stated DTA pool | ETR steps toward 36% | R-A3-14 | NOT ADDRESSED: no line |
+| 8 | E | Campaign Registry result fell from 122.93 (Q1 FY26) to 75.58 (Q2 FY26) and is 162.03 now. What caused the Q2 FY26 dip, what did Campaign Registry Inc (Canada) contribute before its 14-Jan-2026 exit, and does any operator contract or regulatory term renew in the next 12 months? | One niche earns 23.80% of segment result on 4.15% of revenue; the YoY +114.38% rests on that dip | Dip was a one-off; Canada immaterial; no renewal inside 12 months | Recurring volatility, material Canada loss, or a renewal or rule change due | R-A3-20 | NOT ADDRESSED: no line; Campaign Registry never named on the call |
 
 ### 8.5B. Coverage table (each remaining FORWARD-SIGNAL / AMBIGUOUS finding)
 
-| # | Cat | Question | Bull answer | Bear answer | From |
-|---|---|---|---|---|---|
-| 9 | F | Which entity raised the 2,628.15 Cr of H1 long-term borrowings (L476), and does the parent guarantee it (yes/no)? | Named entity, INR or hedged, no guarantee needed | Guaranteed USD debt at a high rate | R-A3-05 |
-| 10 | D | The parent wrote off 116.73 Cr of the 161.23 Cr H1 bad debts (L829, L419) and the standalone bad-debts ratio rose to 8.57% from 1.90% (L940). Which customer or contract is it, and is any further amount at risk (Rs)? | One legacy account, fully provided earlier | Several accounts, more at risk | R-A3-06 |
-| 11 | D | Is the 50.00 Cr Q1 contractual-obligation provision (L524) a receivable, an advance or a guarantee, and is it the same counterparty as the write-offs (yes/no)? | Receivable, recovery action filed | Guarantee, more exposure | R-A3-13 |
-| 12 | F | Which associate received the 356.10 Cr H1 investment (L462), what return do you expect on it, and what further capital is committed for FY27-FY28 (Rs)? The group's TTM share of all associates' profit is 16.66 Cr against a 2,331.73 Cr carrying value. | Named, committed amount stated, earnings ramp dated | Open-ended capital calls, no return date | R-A3-07 |
-| 13 | G | Which two subsidiaries are management-furnished and unreviewed (loss 14.83 on revenue 3.11 in Q2, L1127-1128)? | Named, wind-down planned | Unnamed, losses growing | R-A3-07 |
-| 14 | A | What was the DoT demand aggregate at 31-Mar-2026 and 30-Jun-2026 against 7,844.57 now, and was any new notice received in Q2 (yes/no)? | Flat aggregate, no new notice | Aggregate rising | R-A3-09 |
-| 15 | F | What is the standalone carrying value of the Kaleyra, Inc. investment against the FMV of USD 92.625m (L1506), and what standalone gain or loss do you expect on transfer (Rs)? | Carrying value near FMV, no loss | Large standalone loss | R-A3-10 |
-| 16 | F | On what date do you expect the Kaleyra, Inc. transfer to TCNL to complete, and is any external financing or stake sale planned at TCNL (yes/no)? | Date given; simplification only | Overseas raise or stake sale planned | R-A3-10, R-A3-29 |
-| 17 | G | How did Kaleyra Africa (Pty) Limited leave the group on 04-Sep-2026 (sale, liquidation or strike-off), and what was the consideration and P&L impact (Rs)? | Small sale, no loss | Write-off, unstated loss | R-A3-27 |
-| 18 | F | What is the purpose of TComm Turkey (wef 21-May-2026, L1256), and how much capital is committed (Rs)? | Small sales entity, capital stated | Large undisclosed commitment | R-A3-28 |
-| 19 | D | For the Q1 fire provision of 30.10 Cr, has an insurance claim been filed, for what amount, and by when do you expect recovery? | Claim filed, recovery dated | No insurance, more losses | R-A3-12 |
-| 20 | D | What tax refund amount did the Group receive in H1 FY27, and what refundable balance remains in the 1,498.33 Cr non-current tax assets (L330)? | Amount and years stated, balance large | Refund one-off, balance small | R-A3-15 |
-| 21 | D | What discount-rate or actuarial change drove the standalone Q1 FY27 OCI loss of 9.37 Cr (L639)? | Single assumption change stated | No explanation | R-A3-16 |
-| 22 | C | What forfeiture reversal sits in the H1 SBP accrual of 2.02 Cr against 24.01 Cr a year ago (L422), and were new grants made in FY27 (yes/no)? | Small reversal, grants continue | Large reversal inside EBITDA | R-A3-18 |
-| 23 | E | Transformation Services revenue fell 33.70% YoY (286.74 to 190.11, L236). Was this a client loss (how many clients) or group in-sourcing? | In-sourcing, margin held | Client loss | R-A3-21 |
-| 24 | G | Does Zubin Adil Patel leave the company, move within the group, or retire when Ridhi Sood takes over on 01-Nov-2026? | Planned internal move | Unexplained exit | R-A3-24 |
-| 25 | A | Please reconcile press-release Data revenue of 5,179 Cr for Q2 FY26 (L1383) to filed Data Services revenue of 5,204.47 Cr (L235), and define "Digital Portfolio". | Definitional, reconciliation given | No reconciliation | R-A3-25 |
-| 26 | F | What is the 7.40 Cr asset held for sale (L344), who is the buyer, at what price, and by what date does it complete? | Named, price above book, dated | No date | R-A3-01 |
-| 27 | A | Was FY25 Digital restated to the current perimeter (yes/no)? What Digital revenue came from entities added after FY25 (Commotion wef 01-Dec-2025; FY26 acquisition cash 136.96 Cr, L463), and what left (Mgage SA de CV 01-Oct-2025, Kaleyra Africa 04-Sep-2026)? | Restated; net perimeter effect small | Not restated; growth is perimeter | P-A3-05 |
-| 28 | B | Does any earlier quantified margin or revenue target still stand (yes/no), and if withdrawn, when? | Target stands and is on track | Withdrawn without notice | P-A3-06 |
-| 29 | G | When did the Tower structure take effect, and which of the 11 named heads joined in the last 12 months? | Stable team, few new heads | Many new heads mid-reset | P-A3-07 |
-| 30 | E | What was AI-platform revenue in Q2 FY27 (Rs), and how many paying customers does it have (the deck's two case studies are unnamed)? | Disclosed, growing | Not disclosed | P-A3-08 |
-| 31 | F | What did the India GPU infrastructure cost (Rs), what share is in use, and is its depreciation inside the Digital margin (yes/no)? | Amount stated, high use, included | Large, idle, excluded | P-A3-09 |
+| # | Cat | Question | Bull answer | Bear answer | From | Answer status (Role 5 addendum) |
+|---|---|---|---|---|---|---|
+| 9 | F | Which entity raised the 2,628.15 Cr of H1 long-term borrowings (L476), and does the parent guarantee it (yes/no)? | Named entity, INR or hedged, no guarantee needed | Guaranteed USD debt at a high rate | R-A3-05 | NOT ADDRESSED: no line |
+| 10 | D | The parent wrote off 116.73 Cr of the 161.23 Cr H1 bad debts (L829, L419) and the standalone bad-debts ratio rose to 8.57% from 1.90% (L940). Which customer or contract is it, and is any further amount at risk (Rs)? | One legacy account, fully provided earlier | Several accounts, more at risk | R-A3-06 | NOT ADDRESSED: no line |
+| 11 | D | Is the 50.00 Cr Q1 contractual-obligation provision (L524) a receivable, an advance or a guarantee, and is it the same counterparty as the write-offs (yes/no)? | Receivable, recovery action filed | Guarantee, more exposure | R-A3-13 | NOT ADDRESSED: no line |
+| 12 | F | Which associate received the 356.10 Cr H1 investment (L462), what return do you expect on it, and what further capital is committed for FY27-FY28 (Rs)? The group's TTM share of all associates' profit is 16.66 Cr against a 2,331.73 Cr carrying value. | Named, committed amount stated, earnings ramp dated | Open-ended capital calls, no return date | R-A3-07 | NOT ADDRESSED: no line |
+| 13 | G | Which two subsidiaries are management-furnished and unreviewed (loss 14.83 on revenue 3.11 in Q2, L1127-1128)? | Named, wind-down planned | Unnamed, losses growing | R-A3-07 | NOT ADDRESSED: no line |
+| 14 | A | What was the DoT demand aggregate at 31-Mar-2026 and 30-Jun-2026 against 7,844.57 now, and was any new notice received in Q2 (yes/no)? | Flat aggregate, no new notice | Aggregate rising | R-A3-09 | NOT ADDRESSED: no line. 7,844.57 is the aggregate demand; the contingent is 7,513.71 (reconciled in the ROLE 5 section) |
+| 15 | F | What is the standalone carrying value of the Kaleyra, Inc. investment against the FMV of USD 92.625m (L1506), and what standalone gain or loss do you expect on transfer (Rs)? | Carrying value near FMV, no loss | Large standalone loss | R-A3-10 | NOT ADDRESSED: no line |
+| 16 | F | On what date do you expect the Kaleyra, Inc. transfer to TCNL to complete, and is any external financing or stake sale planned at TCNL (yes/no)? | Date given; simplification only | Overseas raise or stake sale planned | R-A3-10, R-A3-29 | NOT ADDRESSED: no line |
+| 17 | G | How did Kaleyra Africa (Pty) Limited leave the group on 04-Sep-2026 (sale, liquidation or strike-off), and what was the consideration and P&L impact (Rs)? | Small sale, no loss | Write-off, unstated loss | R-A3-27 | NOT ADDRESSED: no line |
+| 18 | F | What is the purpose of TComm Turkey (wef 21-May-2026, L1256), and how much capital is committed (Rs)? | Small sales entity, capital stated | Large undisclosed commitment | R-A3-28 | NOT ADDRESSED: no line |
+| 19 | D | For the Q1 fire provision of 30.10 Cr, has an insurance claim been filed, for what amount, and by when do you expect recovery? | Claim filed, recovery dated | No insurance, more losses | R-A3-12 | NOT ADDRESSED: no line |
+| 20 | D | What tax refund amount did the Group receive in H1 FY27, and what refundable balance remains in the 1,498.33 Cr non-current tax assets (L330)? | Amount and years stated, balance large | Refund one-off, balance small | R-A3-15 | NOT ADDRESSED: no line |
+| 21 | D | What discount-rate or actuarial change drove the standalone Q1 FY27 OCI loss of 9.37 Cr (L639)? | Single assumption change stated | No explanation | R-A3-16 | NOT ADDRESSED: no line |
+| 22 | C | What forfeiture reversal sits in the H1 SBP accrual of 2.02 Cr against 24.01 Cr a year ago (L422), and were new grants made in FY27 (yes/no)? | Small reversal, grants continue | Large reversal inside EBITDA | R-A3-18 | NOT ADDRESSED: no line |
+| 23 | E | Transformation Services revenue fell 33.70% YoY (286.74 to 190.11, L236). Was this a client loss (how many clients) or group in-sourcing? | In-sourcing, margin held | Client loss | R-A3-21 | NOT ADDRESSED: no line |
+| 24 | G | Does Zubin Adil Patel leave the company, move within the group, or retire when Ridhi Sood takes over on 01-Nov-2026? | Planned internal move | Unexplained exit | R-A3-24 | NOT ADDRESSED: no line |
+| 25 | A | Please reconcile press-release Data revenue of 5,179 Cr for Q2 FY26 (L1383) to filed Data Services revenue of 5,204.47 Cr (L235), and define "Digital Portfolio". | Definitional, reconciliation given | No reconciliation | R-A3-25 | PARTIALLY: Digital drivers named, interaction, next-gen connectivity, IoT (C-L150); no reconciliation; the CFO repeats the 12.2% press-release basis (C-L148). Fork: BEAR ("No reconciliation") (Role 5 addendum, loop 1) |
+| 26 | F | What is the 7.40 Cr asset held for sale (L344), who is the buyer, at what price, and by what date does it complete? | Named, price above book, dated | No date | R-A3-01 | NOT ADDRESSED: no line |
+| 27 | A | Was FY25 Digital restated to the current perimeter (yes/no)? What Digital revenue came from entities added after FY25 (Commotion wef 01-Dec-2025; FY26 acquisition cash 136.96 Cr, L463), and what left (Mgage SA de CV 01-Oct-2025, Kaleyra Africa 04-Sep-2026)? | Restated; net perimeter effect small | Not restated; growth is perimeter | P-A3-05 | NOT ADDRESSED, topic touched (Role 5 addendum, loop 2): Commotion named only as a capability (C-L87) and run with SaaS "as one entity under one leader as one PNO" (C-L397-398); no restatement answer, no perimeter split. Fork: NEITHER (no item given to test either fork) (Role 5 addendum, loop 2) |
+| 28 | B | Does any earlier quantified margin or revenue target still stand (yes/no), and if withdrawn, when? | Target stands and is on track | Withdrawn without notice | P-A3-06 | EVADED: asked directly (C-L189). The CEO said "We are on track" (C-L197) and "This year, we will absolutely deliver what we have promised" (C-L211), but named no target; "the longer-term growth" deferred to "the investor call in February" (C-L213-214). Fork: NEITHER: the wording sits near the bull text, but with no target named "stands" cannot be scored; nothing was withdrawn (Role 5 addendum, loop 1) |
+| 29 | G | When did the Tower structure take effect, and which of the 11 named heads joined in the last 12 months? | Stable team, few new heads | Many new heads mid-reset | P-A3-07 | PARTIALLY: "the full team is in place"; one new head named, Narotan Sharma (C-L44-46; deck spelling "Narottam Sharma", P-L104); "individual towers" (C-L390); no date. Fork: NEITHER: one head dated "since our last investor call" (C-L45); join dates of the other heads not given (Role 5 addendum, loop 1) |
+| 30 | E | What was AI-platform revenue in Q2 FY27 (Rs), and how many paying customers does it have (the deck's two case studies are unnamed)? | Disclosed, growing | Not disclosed | P-A3-08 | EVADED: "Let me not disclose the number of customers yet" (C-L379-380); pricing model given (C-L381); revenue not given. Fork: BEAR ("Not disclosed") (Role 5 addendum, loop 1) |
+| 31 | F | What did the India GPU infrastructure cost (Rs), what share is in use, and is its depreciation inside the Digital margin (yes/no)? | Amount stated, high use, included | Large, idle, excluded | P-A3-09 | NOT ADDRESSED, topic touched (loop 1 regrade from PARTIALLY): "focused on the GPU utilization which we have bought" (C-L412) states a focus only; no rupee, no %, no treatment. Fork: NEITHER (no item given to test either fork) (Role 5 addendum, loop 1) |
 
 ### 8.5C. Top 3 by likelihood of thesis-changing information
 
@@ -649,9 +653,36 @@ Every R-A3 and P-A3 finding classified FORWARD-SIGNAL or AMBIGUOUS maps to at le
 2. **Q5 (capex and net-debt ceiling).** No ceiling with capex rising would confirm the Bear case: a debt-funded build with thin FCF.
 3. **Q4 (VAT judgment).** A binary, dated fact. A non-answer two weeks after the hearing date tests management transparency.
 
+(Role 5 addendum, loop 1) After the call: Q1 PARTIALLY (an assertion, no number); its pre-set bear answer "or no number given" fired. Q5 NOT ADDRESSED, topic touched (no guidance, no ceiling); its bear answer "No ceiling" fired. Q4 NOT ADDRESSED. All three stay the top 3. RQ36 (CRA settlement) joins them as a fourth priority.
+
 ### 8.5D. Channel
 
 The earnings call took place on 15-Oct-2026 at 4:00 pm IST (P-R064, P-L33), but its transcript was not in --docs. Channel: **wait for the concall transcript, run Role 5 on it, then send an IR email** with every question the call did not answer, verbatim. IR contact named in the press release: Rajiv Sharma (L1439). Q4 (VAT) is material and dated: if the transcript is silent, email it at once.
+
+(Role 5 addendum) The transcript was received and Role 5 has run. The call was silent on Q4. **Send the IR email now.** Include the 25 NOT ADDRESSED rows, the 2 EVADED rows, the open parts of the 4 PARTIALLY rows, and RQ32-RQ47 (counts per Role 5 addendum, loop 1). Put Q4 (VAT) and RQ36 (CRA) first.
+
+### 8.5E. New questions from the concall (Role 5 addendum)
+
+Every A3 concall finding classified FORWARD-SIGNAL (C02, C03, C05, C06, C12, C13, C15) or AMBIGUOUS (C01, C04, C07, C08, C09, C10, C11, C14, C19) maps to at least one row. C16, C17 and C18 are NEUTRAL-FACT and need no question. Source caveat: machine transcript, speakers inferred; on any number conflict the filing wins.
+
+| # | Cat | Question | Why it matters | Bull answer | Bear answer | From |
+|---|---|---|---|---|---|---|
+| RQ32 | C | What was Q2 FY27 YoY growth in constant currency for consolidated revenue, Data revenue and EBITDA (%)? Is the cc EBITDA "around 10%" (C-L232) for Q2 or for H1? | Currency supplies about half of Data growth: Data ~6% cc vs 12.2% (C-L148, C-L152). EBITDA ~10% cc has no stated period: about half of EBITDA growth if Q2 (21.15% reported), about a third if H1 (14.78% reported) [DERIVED from MGMT] (Role 5 addendum, loop 1) | cc figures disclosed each quarter; Q2 cc EBITDA at or above 10% | Not disclosed, or cc EBITDA below 10% | C02 |
+| RQ33 | B | Is the FY27 "double digit EBITDA growth" promise (C-L456) on reported or constant-currency EBITDA? On reported numbers H2 needs only +5.60% over H2 FY26's 2,512.03 Cr [DERIVED, Role 5 Step 2]. | Defines the only quantified FY27 promise | cc basis, so the bar is real | Reported basis only | C03 |
+| RQ34 | B | Which earlier revenue-growth and EBITDA-margin targets (C-L189) still stand (yes/no for each)? Will the February 2027 investor call restate or replace them? | Targets not restated become DROPPED in next quarter's promise audit | Restated with dates | Replaced without comment | C04 |
+| RQ35 | B | Name the quarter in which Digital EBITDA reaches zero. Give Q1 FY27 Digital revenue (Rs): losses "less than half" of Q1 (C-L59) need Q1 Digital revenue above 3,101 Cr [DERIVED: 2 x 107 / 0.069], above Q2's 3,016 Cr (L1384). Did Digital revenue fall QoQ? | Tests the arithmetic behind the main catalyst | Named quarter; series reconciles | No date; series does not reconcile | C05 |
+| RQ36 | D | Canada Revenue Agency settlement (Canada subsidiary): settlement amount (Rs), years covered, P&L line (current tax or exceptional), payment date, provision held at 30-Sep-2026, and the contingent at 30-Sep-2026 against 1,658 Cr at 31-Mar-2026 (C-L162). Why is the matter absent from the Q2 results notes? | A contingent equal to 48.1% of 31-Mar-2026 parent equity [DERIVED: 1,658 / 3,447.04] moves to cash or P&L | Settlement well below the contingent and already provided | Large unprovided cash outflow in H2 FY27 | C06 |
+| RQ37 | F | Define net debt to EBITDA "2.17" (C-L170): trailing-twelve-month EBITDA and ex-lease (yes/no)? "Held steady" (C-L171) against which date? On filed numbers it rose from 1.99x at 31-Mar-2026 to 2.17x TTM at 30-Sep-2026 [DERIVED]. What was the 30-Jun-2026 value? | The CFO's "held steady" is UNVERIFIABLE: "this quarter" (C-L171) sets 30-Jun-2026 as the comparator, which the filing does not give; against 31-Mar-2026 the ratio rose (Role 5 addendum, loop 1) | Definition given; Board ceiling stated | No definition; no ceiling | C07 |
+| RQ38 | A | Was the National Court judgment delivered, deferred or reserved on 13-Oct-2026? Will the Group file a Reg 30 disclosure of the outcome within 24 hours of receipt (yes/no)? | The call volunteered a tax item management was "pleased" to share (C-L161) and skipped this dated one. The answer separates two readings of the silence: selective disclosure, or a decision still awaited (L572) (Role 5 addendum, loop 1) | Disclosure filed; outcome stated | Silence through the Q3 FY27 results | C08 |
+| RQ39 | C | Split the 206.80 Cr QoQ rise in parent PAT (L166) into Digital loss reduction, cost-programme savings, FX and other (Rs each). | The call credits Digital and operating leverage only (C-L157, C-L454-455); the filing says about 90% came from non-parent sources | Split given; FX and one-offs small | No split | C09, C01 |
+| RQ40 | G | AI platform: number of paying customers, Q2 revenue (Rs), and share of AI revenue from Tata group companies (related parties, e.g. Tata Consumer, C-L118). | The headline AI win is a group company; the customer count was withheld (C-L379) | Count and revenue given; group share small | Withheld again; group share large | C10 |
+| RQ41 | E | What did Commotion contribute to Q2 FY27 revenue and to EBITDA or PAT (Rs), and what was organic Digital growth, reported and cc, on the Q2 FY26 perimeter? (PAT ask added, Role 5 addendum, loop 1) | Commotion and SaaS run as one P&L (C-L397-398); Digital +18.6% may be partly perimeter | Organic growth double digit | Organic growth single digit | C11 |
+| RQ42 | E | Give the order book value or its YoY growth (%) at 30-Sep-2026. What cc Data growth in Q3 FY27 would show the "one more quarter" conversion (C-L234): double digit, as the question asked (C-L227), or any step-up from about 6%? (Role 5 addendum, loop 2) | Dated test of order-to-revenue conversion after 2.5 years of double-digit order growth (analyst premise, C-L226). The answer separates the two readings of P2 (Role 5 addendum, loop 2) | Order growth disclosed; Q3 cc Data growth at or above 10%, which meets both readings (Role 5 addendum, loop 2) | No disclosure; Q3 cc Data growth near 6%. A print between about 6% and 10% meets reading B only (Role 5 addendum, loop 2) | C12 |
+| RQ43 | G | For the internal AI-led transformation (C-L408-409): expected headcount change, restructuring charge (Rs) and period. Will charges keep running through the exceptional line as "one-time"? | Staff charges recur (98.26, 44.78, 36.54; L515) | Total and end date given | Open-ended | C13 |
+| RQ44 | E | Media: is the "Olympics coming up next year" (C-L329-331) the LA 2028 Games or another event? What is the revenue timing, and the Rs impact of the Middle East cancellations (C-L332)? | The media catalyst may sit about 7 quarters out [external date PENDING LIVE VERIFICATION] | A near-term event named | 2028 only; cancellations material | C14 |
+| RQ45 | F | FY27 cash capex (Rs), split by undersea cable, DC-to-DC, cloud and GPU; current GPU utilisation (%). | Capex "trended up" (C-L166) with thin FCF and rising net debt | Guided; utilisation high | No guidance; low utilisation | C15 |
+| RQ46 | A | Please answer in writing the 25 Step 8.5 questions marked NOT ADDRESSED (Q2, Q4-Q24, Q26, Q27, Q31) and the open parts of the 4 PARTIALLY rows (Q1, Q3, Q25, Q29) (Role 5 addendum, loop 1). | No analyst raised a balance-sheet, contingent, entity or tax item on the call | Written answers | No reply | C19 |
+| RQ47 | F | Define Q2 FCF of 212 Cr (C-L164): CFO less capex, or after lease and interest? Give Q1 FY27 FCF and Q2 CFO on the same definition, the basis of the 72% EBITDA-to-OCF conversion (C-L165), and the definition of ROCE 15.9% (C-L172). | The filing gives H1 only: FCF 62.01 (CFO less capex), (584.30) after lease and interest (Step 5A) | Same-definition quarterly series | Definition differs from the filing | Role 5 Step 7A |
 
 ---
 
@@ -659,23 +690,32 @@ The earnings call took place on 15-Oct-2026 at 4:00 pm IST (P-R064, P-L33), but 
 
 | # | Item | Implied date | Source | Status |
 |---|---|---|---|---|
-| 1 | National Court VAT judgment outcome (365.80 Cr) | Judgment scheduled 13-Oct-2026; disclosure due at the next filing at the latest (Q3 FY27 results) | L572; R1558; R-A3-08 | Outcome ND |
-| 2 | Q2 FY27 concall transcript (Role 5 input) | Call held 15-Oct-2026; transcript expected within days [INFERENCE, exchange practice] | P-L33 | Pending |
+| 1 | National Court VAT judgment outcome (365.80 Cr) | Judgment scheduled 13-Oct-2026; disclosure due at the next filing at the latest (Q3 FY27 results) | L572; R1558; R-A3-08 | Outcome ND. (Role 5 addendum) Not mentioned on the 15-Oct-2026 call (C08) |
+| 2 | Q2 FY27 concall transcript (Role 5 input) | Call held 15-Oct-2026; transcript expected within days [INFERENCE, exchange practice] | P-L33 | (Role 5 addendum) Received (machine transcript); Role 5 run 2026-10-18. Completed |
 | 3 | Ridhi Sood takes office as Company Secretary | 01-Nov-2026 | L72; L1542; R1585 | Initiated |
 | 4 | Kaleyra, Inc. transfer to TCNL completes | ND (not stated); check the Q3 FY27 consolidation list | L45-53; L1519-1524; R-A3-10, R-A3-29 | Initiated |
 | 5 | Q3 FY27 results (quarter ending 31-Dec-2026): Op EBITDA margin vs 21.0% / 19.5% thresholds | Quarter end 31-Dec-2026; filing date ND | Step 8C | Pending |
-| 6 | Digital portfolio breakeven | ND (no date) | P-L132; P-A3-04 | Underway |
+| 6 | Digital portfolio breakeven | ND (no date) | P-L132; P-A3-04 | Underway. (Role 5 addendum) Call: "hopefully ... in the coming quarters" (C-L415), "at the soonest" (C-L456); metric EBITDA (C-L158); still undated (C05) |
 | 7 | Staff cost optimisation programme end | ND, ongoing | L528-531; R-A3-11 | Underway |
 | 8 | Asset held for sale (7.40) disposal, gain to exceptional line | ND | L344, L460; R-A3-01 | Initiated (4.00 advance) |
 | 9 | CWIP 1,120.81 capitalises; D&A step-up | ND | L318; R-A3-23 | Building |
 | 10 | Fire provision true-up (insurance or further loss) | ND | L541-542; R-A3-12 | Provisional |
 | 11 | DoT AGR appeals at SC and TDSAT | ND | L552-559; R-A3-09 | Underway |
-| 12 | CEO outlook: "enter the second half ... with momentum and confidence" | H2 FY27 (Q3 and Q4 FY27 results) | L1375-1376 | Outlook |
+| 12 | CEO outlook: "enter the second half ... with momentum and confidence" | H2 FY27 (Q3 and Q4 FY27 results) | L1375-1376; (Role 5 addendum) call "entering H2 with a lot of confidence" (C-L215) | Outlook |
 | 13 | DC-to-DC connectivity "$1 billion opportunity" | ND | L1400 | Outlook (MGMT) |
 | 14 | FY27 full-year results with full-year cash flow (FCF, CFO/EBITDA vs FY26 92.88%) | Year end 31-Mar-2027; filing date ND | Step 5 | Pending |
 | 15 | FY27 Annual Report: actuarial assumptions behind Q1 OCI (9.37); entity-level subsidiary results | ND (after FY27 close) | L639; R-A3-16 | Pending |
 | 16 | Plan levers (5) and "THE TEAM IS IN PLACE" reset baseline | ND | P-L85, P-L122-128; P-A3-07 | Initiated |
 | 17 | GPU infrastructure in India (amount ND) | Stated complete | P-L162-163; P-A3-09 | Completed (per deck) |
+| 18 | (Role 5 addendum) P1: FY27 double-digit EBITDA growth; needs FY27 Op EBITDA at or above 5,304.71 Cr, so H2 at or above 2,652.69 Cr (+5.60%) [DERIVED], reported bar; cc basis asked (RQ33) (Role 5 addendum, loop 2) | FY27 results (year end 31-Mar-2027) | C-L211, C-L456; C03 | Promise logged |
+| 19 | (Role 5 addendum) P2: cc Data growth ("let's wait one more quarter, you will definitely see"). (Role 5 addendum, loop 2) Two readings: (A) double-digit cc growth from Q3 FY27, the frame of the question (C-L227); (B) any step-up from ~6%. Separator: management's definition (RQ42), or the Q3 cc print against 10%. A print between ~6% and 10% scores DELIVERED only under B. The filed reported Data growth is context, not the test | Q3 FY27 results (quarter end 31-Dec-2026) | C-L152, C-L227, C-L234; C12 | Promise logged |
+| 20 | (Role 5 addendum) P3: February 2027 investor call: earlier targets restated or withdrawn; platform / infra / services framing; internal AI transformation detail | February 2027 | C-L213-214, C-L409, C-L416; C04 | Scheduled |
+| 21 | (Role 5 addendum) P5: CRA settlement disclosure (amount, P&L line, cash); contingent 1,658 Cr at 31-Mar-2026 | Undated ("in due course"); Q3 FY27 results at the latest [INFERENCE] | C-L161-163; C06 | Initiated (in-principle agreement) |
+| 22 | (Role 5 addendum) P14: net debt / TTM Op EBITDA against the 2.17x baseline at 30-Sep-2026 [DERIVED] | Each quarter; 31-Mar-2027 | C-L168-171; C07 | Baseline set |
+| 23 | (Role 5 addendum) P10: internal AI-led transformation; next restructuring charge | Q3 FY27 results; detail at the February 2027 call | C-L408-409; C13 | Underway |
+| 24 | (Role 5 addendum) P7, P8: media cost initiatives; LA Olympics support | "coming quarters"; Olympics "next year" as spoken, date PENDING LIVE VERIFICATION | C-L329-343; C14 | Initiated |
+| 25 | (Role 5 addendum) P9: more languages at the "SDFC Ergo" (as transcribed) insurer | "soon" | C-L124 | Initiated |
+| 26 | (Role 5 addendum, loop 1) IR email with Q2, Q4-Q24, Q26-Q28, Q30, Q31, open parts of the PARTIALLY rows (Q1, Q3, Q25, Q29), RQ32-RQ47 | Send now | 8.5D | Pending |
 
 ---
 
@@ -688,6 +728,8 @@ Not executed by A4. No Notion company page exists, so there is no page to append
 ## VERDICT AND FLAGS
 
 **Protocol verdict: PROCEED WITH FLAGS.** Cash conversion is INDETERMINATE-WITH-DIRECTION, which caps the verdict at PROCEED WITH CAVEATS; the flags below are material enough to set PROCEED WITH FLAGS. No mechanical failure. No REWORK trigger. Correction loop 1 changes no verdict.
+
+(Role 5 addendum) **Role 5 does not change the verdict. PROCEED WITH FLAGS stands.** The call adds flags 17 to 23. It resolves none of the four missing cash-conversion items in 5D: its Q2 FCF (212 Cr) and 72% conversion are unfiled MGMT figures. Cash conversion stays INDETERMINATE-WITH-DIRECTION. No REWORK trigger. Concall verdict: credibility ND (baseline quarter); archetype UNCLASSIFIED (low-specificity row); net impact on the pre-thesis read WEAKENED.
 
 Flags (surfaced; decisions stay with the operator):
 1. PRE-THESIS: no Notion page, no Decision Status, no Spear line. /step1 is the gate before any pipeline run.
@@ -705,13 +747,521 @@ Flags (surfaced; decisions stay with the operator):
 13. Associates carried at 2,331.73 (68.6% of parent equity, about 140x TTM share of profit 16.66) on unreviewed numbers; 356.10 added in H1; associate share turned to a loss (R-A3-07).
 14. Press-release and deck metrics do not tie to filed lines; Digital chart framing flatters (R-A3-25, P-A3-01 to P-A3-05).
 15. Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30). Tracker rows not supplied; Role 5.5 not run.
-16. Concall held 15-Oct-2026; transcript not in this run; Role 5 pending.
+16. (Role 5 addendum) Concall held 15-Oct-2026. Role 5 run 2026-10-18 on a machine transcript with inferred speakers; see the ROLE 5 section. Step 8D deferred to /fttcp and Role 1 (OR-30).
+17. (Role 5 addendum, loop 1) Currency supplies about half of Data revenue growth: cc Data ~6% vs 12.2% reported (MGMT, C-L152). For EBITDA, cc "around 10%" (C-L232) has no stated period. On a Q2 reading (21.15% reported) currency is about half of EBITDA growth; on an H1 reading (14.78% reported) about a third [DERIVED from MGMT: (21.15 - 10) / 21.15 = 53%; (14.78 - 10) / 14.78 = 32%]. RQ32 separates the two (C02).
+18. (Role 5 addendum, loop 1) Pre-existing contingent moving to settlement. Management calls the CRA matter "a long-standing tax matter", with a contingent of 1,658 Cr at 31-Mar-2026 (48.1% of parent equity then) (C-L161-162). Its FY26 Annual Report status is ND (the AR is not in this run); it is absent from the Q2 results notes. What is new is the in-principle settlement. Amount, provision, cash and timing are ND, so its direction is ND (C06).
+19. (Role 5 addendum, loop 1) The CFO said net debt to EBITDA "has held steady despite dividend payments this quarter" (C-L171). "This quarter" sets 30-Jun-2026 as the comparator, and the filing does not give it: UNVERIFIABLE. Context: 1.99x at 31-Mar-2026 and 2.17x TTM at 30-Sep-2026 [DERIVED]. The claim holds if about 1,077 of the 1,606.60 H1 net debt rise fell in Q1 [DERIVED: Q1 TTM Op EBITDA 4,822.46 - 1,136.81 + 1,230.14 = 4,915.79; 2.17 x 4,915.79 = 10,667; less 9,590.44]. RQ37 asks for the 30-Jun-2026 value (C07).
+20. (Role 5 addendum, loop 1) Silence: the VAT judgment due 13-Oct-2026 went unmentioned while the CFO volunteered the CRA settlement. Two readings: selective disclosure, or nothing to report, since the same-day filing says the Group "awaits the National Court's decision" (L572). RQ38 (delivered, deferred or reserved) separates them. Of 31 filing questions: 0 ANSWERED, 4 PARTIALLY, 2 EVADED, 25 NOT ADDRESSED; a pre-set bear answer fired on 6 rows (C08, C19).
+21. (Role 5 addendum) Profit-step cause still unnamed. The call credits Digital and operating leverage and says no one-offs (inferred CFO). The filing shows half the YoY EBITDA gain is cost reduction (C01, C09).
+22. (Role 5 addendum, loop 1) The only quantified FY27 promise is double-digit EBITDA growth. On reported numbers H2 meets it at +5.60% [DERIVED]. The CEO also said "Our focus is going to be constant currency growth" (C-L232); on a cc basis the bar is cc EBITDA growth of about 10% or more, near the "around 10%" management gives for an unstated period. RQ33 separates the two readings. The CEO deferred "the longer-term growth" to February 2027 (C-L213-214); that the earlier targets move there is INFERENCE (C03, C04).
+23. (Role 5 addendum, loop 1) Hedge-heavy call: forward specificity 0.20; 16 defensive phrases (deferral count corrected to 5, adding C-L408); AI customer count withheld; one of two named AI wins is a group company (C10).
+
+---
+
+## ROLE 5: CONCALL ANALYSIS (Q2 FY27 call, 15-Oct-2026; machine transcript)
+
+(Role 5 addendum, 2026-10-18. Protocol: Quarterly Concall Analysis Protocol v1.1, Steps 0-8. Step 8D deferred to /fttcp and Role 1 (OR-30), pillar-relevant facts flagged. Step 9 Notion save not executed: no page. The Role 4 numbers and question text above are unchanged; columns, rows and status notes were added as logged below (Role 5 addendum, loop 1: wording corrected).)
+
+**Source caveat (binds every concall-derived statement in this section).** The source is a faster-whisper MACHINE transcript, not an official transcript (C-L4, C-L24). A1 inferred every speaker from cue lines. Names, terms and numbers may be misheard (for example "SDFC Ergo", "Novama", "Vykaria", "2.17F"). Every concall figure below is MGMT tier, spoken and machine-transcribed. **On any number conflict, the filing wins.**
+
+Anchor convention (Role 5). "C-L###" = line in extracted/tatacomm-concall-q2fy27-fulltext.md. "T###" = A1 turn. "CQ01-CQ19" = A1 analyst question IDs Q01-Q19. "Q#" and "RQ#" = review Step 8.5 question numbers (Q1-Q31 from Role 4; RQ32-RQ47 added in 8.5E). "C01-C19" = A3 concall findings (not the filing notes C-1 to C-6). "P1-P18" = baseline promise log rows (Step 3). L### and P-L### keep their Role 4 meaning.
+
+### LEDGER RECONCILIATION PREAMBLE (concall)
+
+**Ledger contains 58 turns. All 58 reviewed. Findings incorporated: C01, C02, C03, C04, C05, C06, C07, C08, C09, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19.**
+- Also reviewed: 19 of 19 analyst questions (Q01-Q19); 199 of 199 structured rows (R001-R199: 60 NUMBER, 40 ENTITY, 55 FORWARD, 19 DATE, 25 QUALIFIER); 11 participants.
+- A2 count test: every category "match: yes"; ids_in_structured 199 = ids_referenced 199; orphan_ids []; gate_a2 pass. A3 ledger_reconciled_pct 100.
+- Unreviewed ledger rows: none.
+
+A2 flags dispositioned:
+- SPEAKER_INFERRED (T007, T013, T015, T028, T030, T037, T039, T041, T042, T044): carried as inferred. T030, the "no one-offs" turn, is inferred CFO, so C01 rests on an inferred speaker.
+- TRUNCATED_OPENING (T007/CQ02, T042/CQ15) and timestamp gaps over 25 s (fulltext L18; 10 gaps, all inside Q&A): content lost in the gaps is ND.
+- CONNECTION_LOST (Sanjay Jain): CQ04 cut off (C-L239-242); CQ15-CQ16 attributed to him by inference.
+- AUDIO_POOR (CQ17, C-L448): question repeated and read at C-L453.
+- ANALYST_NUMBER (R041-R043, R045-R047, R051, R058): not treated as management figures. R043 (cc Data ~6%) matches management's own R021 (C-L152).
+- RESTATED rows: reconcile within rounding (A3 Section 0). NOT_SPOKEN R001: header count. A3 hygiene notes (R093, R094 contexts; cue lines are source lines, the range column is fulltext lines; "2.17F" garbled) accepted.
+
+### STEP 0: PRE-FLIGHT
+
+**0A. Notion.** As Role 4 Step 0A. Decision Status NONE ON RECORD (work/notion-thesis.md, live fetch 2026-10-17). No thesis, growth triggers, thesis-broken conditions, management grade or Devil's Advocate findings. **Prior concall log: not passed; no prior transcript exists in the corpus. Promise-vs-delivery tracking starts with this call as the baseline.** Framing: PRE-THESIS READ; no HOLD/ADD/TRIM/EXIT language.
+
+**0B. Participants**
+
+| Role | Name | Notes |
+|---|---|---|
+| Hosting broker / IR | No broker named; moderator unnamed in its own lines (C-L27-37); the CEO thanks and addresses "Inba" (C-L38, C-L43), probably the moderator [INFERENCE] (Role 5 addendum, loop 1); closes "on behalf of Tata Communications" (C-L510) | Company-hosted call [INFERENCE]; house-broker test not applicable |
+| CMD / Chairman | Not on call | No promoter representative. A2 MGMT_ABSENCE: none raised (professional management). Not scored as a yellow flag; noted |
+| Managing Director and CEO | Ganesh Lakshminarayanan (C-L30) | "exactly six months since I took over" (C-L39). Led 16 of 19 answers; CQ09-CQ10 inferred CFO; CQ04 unanswered |
+| CEO (if different) | Same person | |
+| CFO | Siddharth Mundra (C-L31) | Prepared remarks T003; media cost (T026); digital verticals (T028, inferred); core margin (T030, inferred). All financial domain: no CFO-on-operations yellow flag |
+| COO / Other senior | Narotan Sharma (deck spelling "Narottam Sharma", Transformation Group, P-L101-104), chief transformation officer, joined "since our last investor call" (C-L45-48) | Introduced; did not speak. Not in the results filing (no match in results fulltext); named in the same-day deck (Role 5 addendum, loop 1). Introduced, so no undisclosed-transition flag |
+| IR | Rajiv Sharma, Head of IR; Deshna Patnaik, DGM IR (C-L31) | Intro only |
+
+Yellow flags from the participant list: none fired. Observation: a CEO six months in (C-L39) with a team only now complete (C-L44-49; deck "THE TEAM IS IN PLACE", P-L85) has no delivery record yet.
+
+**0C. Structure**
+
+| Item | Value | Anchor |
+|---|---|---|
+| Call date and time | 15-Oct-2026, 4:00 pm IST | C-L23; P-L34 (anchor corrected, Role 5 addendum, loop 1) |
+| Quarter | Q2 FY27 (ended 30-Sep-2026) | C-L28 |
+| Lag after filing | Same day; Board meeting closed 13:45 (L33), call at 16:00: 2 h 15 min [DERIVED] | Protocol label: same day = canned |
+| Duration | 57.4 min (00:00:00 to 00:57:22) | C-L27, C-L512 |
+| Q&A duration | 40.5 min (00:16:43 to 00:57:13) = 70.6% of the call [DERIVED] | C-L178, C-L510 |
+| Analysts | 6 distinct; 19 questions | A2 ledger Section 3 |
+| Audio gaps | 10 gaps over 25 s, all in Q&A; lost content ND | fulltext L18 |
+
+Read: a 57-minute call with 70.6% Q&A and 6 analysts. Typical length; the Q&A share is healthy.
+
+**0D. Safe harbour.** Two standard lines: forward-looking risks, and no undertaking to update (C-L35-36; R179, R180). Narrow. Prior caveats: ND. No specific caveat was added for currency or tax, though both are material later in the call (C-L151, C-L161).
+
+**0E. Business type.** Standard operating business. Step 2 applies (not 2L).
+
+Checkpoint (no wait). Notion verified; participants listed; structure noted; caveats logged; business type stated.
+
+### STEP 1: OPENING REMARKS CLAIMS INVENTORY (T002 CEO, C-L38-144; T003 CFO, C-L145-176)
+
+| # | Claim | Type | Quantified? | Source line |
+|---|---|---|---|---|
+| 1 | Six months since taking over as MD and CEO | Backward | YES | C-L39 |
+| 2 | Full team in place; Narotan Sharma joined as chief transformation officer to lead the enterprise transformation agenda | Operational | YES (binary) | C-L44-46 |
+| 3 | Plan: take care of customers and employees, focus on absolute EBITDA growth | Strategic | NO | C-L52-53 |
+| 4 | EBITDA "crossed 1400 crores"; growth "about 21.2%" | Backward | YES | C-L55 |
+| 5 | "highest year on year EBITDA growth ever achieved since the recent M&As" | Backward | YES (qualified base) | C-L56 |
+| 6 | Digital EBITDA margin -3.6% vs -6.9% in Q1 | Backward | YES | C-L58 |
+| 7 | Digital losses "less than half of what was in Q1" | Backward | YES | C-L59 |
+| 8 | "very close to a EBITDA breakeven for the overall digital portfolio" | Forward Soft | NO | C-L60 |
+| 9 | Order growth this quarter "robust double-digit" | Customer/Order | YES (threshold; value ND) | C-L62 |
+| 10 | Wins across regions: UK and APAC financial services; Americas neo clouds and hyperscalers; India cloud uptick; GCC repeat business | Customer/Order | NO | C-L63-68 |
+| 11 | "growing proportion of our recent wins are from AI-led demand" | Customer/Order | NO | C-L69 |
+| 12 | AI experiments with no ROI "definitely coming to an end" (after meeting close to 200 customers) | Macro/Tailwind | NO | C-L72-75 |
+| 13 | AI-enabled customer journeys "will become an important growth driver" | Forward Soft | NO | C-L76-77 |
+| 14 | Unified AI stack: sovereign hardware layer, Commotion intelligence layer, action layer; "Our real moat" | Strategic | NO | C-L79-99 |
+| 15 | AI win with Tata Consumer (SalesSati field-sales assistant); "Tata Consumer is our sister company" | Customer/Order | YES (named; size ND) | C-L103-118 |
+| 16 | Voice AI agents live at "SDFC Ergo General Insurance" (as transcribed); "more languages planned soon" | Customer/Order | YES (named; size ND) | C-L119-124 |
+| 17 | AI demand "remains robust and diversified" | Forward Soft | NO | C-L131 |
+| 18 | "multi-million dollar engagement" with an unnamed global neo cloud provider, India AI data-centre build-out | Customer/Order | NO (size and name ND) | C-L132 |
+| 19 | DC-to-DC demand "remains robust", driven by AI infrastructure | Macro/Tailwind | NO | C-L134-135 |
+| 20 | India: 80,000 km terrestrial fibre, 30,000 km metro fibre, 118 data centres connected | Operational | YES | C-L136 |
+| 21 | Scale capacity in line with demand; anchor-customer-led expansion | Operational | NO | C-L137 |
+| 22 | "Color of the growth is changing"; "It is driving profitability" | Strategic | NO | C-L139-142 |
+| 23 | Revenue 6,688 Cr, +9.6% YoY | Backward | YES | C-L147 |
+| 24 | Data revenue 5,810 Cr, +12.2% YoY | Backward | YES | C-L148 |
+| 25 | Digital portfolio revenue +18.6% YoY; broad based (interaction, next-gen connectivity, IoT) | Backward | YES | C-L149-150 |
+| 26 | Forex from "a strengthening dollar"; normalised, Data revenue growth "about 6%" | Backward | YES | C-L151-152 |
+| 27 | Digital growth at constant currency "healthy double digits" | Backward | YES (threshold) | C-L153 |
+| 28 | EBITDA 1,422 Cr, +21.2%; H1 EBITDA growth 14.8%; margin 21.3% | Backward | YES | C-L154-156 |
+| 29 | Profit improvement "driven by significant reduction in losses across the digital portfolio" | Backward | NO (attribution unquantified) | C-L157 |
+| 30 | Digital EBITDA margin -3.6%; "steady progress towards breakeven"; "remain committed to driving the portfolio breakeven" | Forward Soft | NO (no date) | C-L158-159, C-L173 |
+| 31 | PAT after minority interest 341 Cr, +86% | Backward | YES | C-L160 |
+| 32 | In-principle agreement with the Canada Revenue Agency on "a long-standing tax matter in our Canada subsidiary"; contingent 1,658 Cr at 31-Mar-2026; terms "under finalisation"; "necessary disclosures in due course" | Forward Soft | PARTIAL (contingent YES; settlement amount and date NO) | C-L161-163 |
+| 33 | Q2 FCF 212 Cr; negative FCF in Q1 | Backward | YES | C-L164 |
+| 34 | EBITDA-to-operating-cash-flow conversion 72% | Backward | YES | C-L165 |
+| 35 | "Cash CapEx trended up": undersea cable, DC-to-DC network | Operational | NO (amount ND) | C-L166-167 |
+| 36 | "remain disciplined in our capital allocation"; "sustaining healthy portfolio level ROCE" | Strategic | NO | C-L168 |
+| 37 | Net debt 11,197 Cr; net debt to EBITDA "2.17F" (unit garbled) | Backward | YES | C-L169-170 |
+| 38 | Net debt to EBITDA "has held steady despite dividend payments this quarter" | Backward | NO (direction only) | C-L171 |
+| 39 | ROCE 15.9%, +71 bps YoY | Backward | YES | C-L172 |
+| 40 | Gains from "focus execution and increasing operating leverage"; "uplift in order book" | Backward | NO | C-L174-175 |
+
+Diagnostics.
+1. **Quantified share.** 21 of 40 YES (52.5%), 1 PARTIAL, 18 NO. (Role 5 addendum, loop 2) On a strict number-or-date criterion the count is 15 of 40 (37.5%); the conclusion holds. Sixteen of the 21 are backward results, most already in the press release. Of 5 Forward Soft claims (#8, #13, #17, #30, #32), none is quantified; #32 gives a contingent amount, not a settlement amount or date. The prepared remarks contain no dated forward number.
+2. **New vs reaffirmed.** Prior transcript ND, so the test runs against the same-day press release and deck. Reaffirmed: #4, #6, #23-#25, #28, #31 (L1363-1388; P-L137). New on the call: #26 cc Data ~6%, #32 CRA settlement (the contingent itself is dated 31-Mar-2026, C-L162), #33 FCF 212, #34 72%, #37 2.17, #39 ROCE 15.9%, #15-#16 named AI clients, #18 neo cloud win, #20 India network size. (Role 5 addendum, loop 1) #2 is reaffirmed, not new: the same-day deck names "Narottam Sharma" under Transformation Group (P-L101-104).
+3. **Quietly dropped prior commitments.** Cannot be scored (prior log not passed). Pointer: in CQ01 the analyst says management "used to talk about certain revenue growth numbers and EBITDA margin targets" (C-L189). The opening restated none of them. The CEO deferred to February (C-L213-214). Candidate DROPPED for next quarter if the February call does not restate them (C04).
+4. **Internal contradictions.** (a) "highest ... EBITDA growth" (#5) sits beside cc EBITDA "around 10%" (C-L232) and cc Data ~6% (#26): currency supplies about half of Data growth; for EBITDA about half on a Q2 reading of the 10%, about a third on an H1 reading (period not stated; RQ32) (C02). (b) "held steady" leverage (#38) against net debt +1,606.60 Cr in H1 (Role 4 5A): a tension, not a proven contradiction, since "this quarter" sets a 30-Jun-2026 comparator the filing does not give (7A: UNVERIFIABLE) (Role 5 addendum, loop 1). (c) The profit gain is credited to Digital loss reduction (#29), while the CEO in Q&A credits "razor sharp focus on cost" (C-L455) and the filing shows half the YoY EBITDA gain is staff and other cost reduction (Role 4 Step 2). (d) Losses "less than half" of Q1 (#7) need Q1 Digital revenue above Q2's (Step 7A).
+
+Checkpoint (no wait). Inventory and four diagnostics shown.
+
+### STEP 2: FORWARD GUIDANCE
+
+| Metric | This quarter's guidance | Last quarter's | Two quarters ago | Trajectory | Confidence |
+|---|---|---|---|---|---|
+| Revenue growth (FY27) | None. "we are entering H2 with a lot of confidence" (C-L215) | ND (prior log not passed) | ND | ND; earlier targets referenced (C-L189), not restated | LOW |
+| Revenue growth (FY28 onward) | None; "longer-term growth" deferred to the February investor call (C-L213-214) | ND | ND | ND | n.a. |
+| EBITDA growth (FY27) (added row) | "making sure that we deliver double digit EBITDA growth this year" (C-L456); "This year, we will absolutely deliver what we have promised" (C-L211) | ND | ND | New | HIGH on wording (threshold, said twice); low bar on reported basis; real test on cc (RQ33) (Role 5 addendum, loop 2) |
+| EBITDA margin band | None for the group. Core connectivity ~45% (analyst-derived, C-L362) "should be an achievable" (C-L364-365, inferred CFO) | ND | ND | New | LOW ("we believe") |
+| Digital EBITDA breakeven (added row) | "very close" (C-L60); "hopefully ... in the coming quarters" (C-L415); "at the soonest" (C-L456) | ND | ND | New | LOW (no date) |
+| Order book / pipeline | Q2 order growth "robust double-digit" (C-L62); "best quarter in Q2" (C-L230); value ND; "no large wins" (C-L235) | ND | ND | New | LOW |
+| cc Data revenue growth (added row) | "let's wait one more quarter, you will definitely see" (C-L234), after cc ~6% (C-L152), in answer to a question on double-digit cc Data growth (C-L227). (Role 5 addendum, loop 2) Two readings: (A) double-digit cc from Q3 FY27; (B) any step-up from ~6%. Separator: management's definition (RQ42), or the Q3 cc print against 10% | ND | ND | New | LOW (dated, no number; "I'm hoping", C-L234) |
+| Capex envelope | None. "Cash CapEx trended up" (C-L166) | ND | ND | ND | n.a. |
+| Utilisation target / timeline | None. "focused on the GPU utilization" (C-L412) | ND | ND | ND | n.a. |
+| Strategic order execution timeline | None. Neo cloud engagement unsized and undated (C-L132) | ND | ND | ND | n.a. |
+| Working capital / CCC band | None. OCF conversion 72% is backward (C-L165) | ND | ND | ND | n.a. |
+| Net debt trajectory | None. "remain disciplined" (C-L168); no ceiling | ND | ND | ND | LOW |
+| Segment guidance | Media cost initiatives "in the coming quarters" (C-L343); LA Olympics "next year" (C-L329-331); voice "too early to say" (C-L315) | ND | ND | New | LOW |
+| New product / contract milestones | "more languages planned soon" (C-L124); investor call "in February" (C-L213) | ND | ND | New | MEDIUM (event dated to a month) |
+| Dividend / payout policy | None | ND | ND | ND | n.a. |
+| Tax settlement (added row) | CRA terms "under finalisation"; disclosures "in due course" (C-L163) | ND | ND | New | LOW (no amount, no date) |
+
+Diagnostics.
+- **Widened or tightened.** Cannot be judged: no prior log.
+- **Dropped without acknowledgment.** Earlier revenue and margin targets (C-L189) were neither restated nor withdrawn (C04). Not scored DROPPED (prior wording ND). Carried to the February test.
+- **Internal consistency.** FY27 double-digit EBITDA growth needs FY27 Op EBITDA at or above 5,304.71 Cr [DERIVED: 1.10 x 4,822.46, Role 4 1B]. H1 FY27 delivered 2,652.02. H2 then needs at or above 2,652.69 Cr, which is +5.60% over H2 FY26's 2,512.03 [DERIVED]. Two quarters at Q2's 1,421.88 would exceed the need by 191.07 [DERIVED]. With cc EBITDA "around 10%" (C-L232), a currency reversal is the main way the promise misses (C03). The bar does not test the Q2 step-up. (Role 5 addendum, loop 1) That bar assumes the promise is on reported EBITDA. The same answer says "Our focus is going to be constant currency growth" (C-L232); on a cc basis the bar is cc EBITDA growth of about 10% or more, near the stated run-rate, and the promise is a real test. RQ33 separates the two readings.
+- **vs Four-Pillar projections.** ND (no projections).
+- **Guidance refused.** Earlier targets (CQ01), medium-term Digital margin (CQ14), AI client count (CQ11), Digital share of revenue (CQ15), core connectivity growth rate (CQ19), cc Data growth date as a number (CQ03). Every refused item is a number or a date.
+
+Checkpoint (no wait). Guidance table and diagnostics shown.
+
+### STEP 3: PROMISE vs DELIVERY AUDIT
+
+- **3A. Last quarter's commitments:** ND, prior log not passed; no prior transcript in the corpus.
+- **3B. Cumulative track record:** ND. Credibility ratio ND (0 scorable commitments; denominator 0). Grade ND. DROPPED scored: 0.
+- **3C. Pattern recognition:** ND (one call).
+- **3D. Management grade update:** none. Role 1 track-record input: ND; no session judgment substitutes for the ratio.
+- **3E. Questions answered:** applied to this quarter's Role 4 Step 8.5 (filing and call on the same day). Answer status added to 8.5A and 8.5B: 0 ANSWERED, 4 PARTIALLY, 2 EVADED, 25 NOT ADDRESSED; a pre-set bear answer fired on 6 of the 10 rows the call touched (Role 5 addendum, loop 2: Q27 added, fork NEITHER). Consecutive quarters of evasion or silence: 1 for every row (first look; not yet a governance signal).
+
+**Baseline promise log (this call; scored at the next Role 5).** Every dated or testable commitment, seeded from the A3 commitment register (18 rows).
+
+| P# | Commitment (verbatim core) | Speaker (inferred) | Implied test date | Test metric (filing first) | Anchor | A3 |
+|---|---|---|---|---|---|---|
+| P1 | "making sure that we deliver double digit EBITDA growth this year"; "we will absolutely deliver what we have promised" | CEO | FY27 results (year end 31-Mar-2027) | FY27 Op EBITDA at or above 5,304.71 Cr [DERIVED]; cc basis asked (RQ33) | C-L456, C-L211 | C03 |
+| P2 | "let's wait one more quarter, you will definitely see", in answer to "when should we see this constant currency growth of double digit in data business" (C-L227). Two readings (Role 5 addendum, loop 2): (A) double-digit cc Data growth from Q3 FY27, the frame of the question; (B) any visible step-up from ~6% (C-L152) | CEO | Q3 FY27 results (quarter end 31-Dec-2026) | Management cc Data growth. At or above 10%: DELIVERED under both readings. Between ~6% and 10%: DELIVERED only under reading B. Near ~6%: delivered under neither. Separator: management's definition (RQ42), else the Q3 cc print against 10%. Filed Data Services YoY vs Q2's +11.65% is context, not the test: it is reported growth, and a currency tailwind can meet it (Role 5 addendum, loop 2) | C-L227, C-L234, C-L152 | C12 |
+| P3 | "We will come back to you in the investor call in February"; longer-term growth, business framing, internal AI transformation | CEO | February 2027 | Event held; earlier targets restated or withdrawn (RQ34) | C-L213-214, C-L217, C-L409, C-L416 | C04 |
+| P4 | Digital "EBITDA positive as soon as possible ... you will hopefully see that in the coming quarters" | CEO, CFO | Undated; earliest Q3 FY27 | Digital margin from -3.6% to at least 0%; rupee loss from -107 Cr (P-L138) | C-L60, C-L159, C-L173, C-L415, C-L456 | C05 |
+| P5 | CRA settlement: "we will make necessary disclosures in due course" | CFO | Undated; Q3 FY27 results at the latest [INFERENCE] | Settlement amount, P&L line, cash outflow | C-L161-163 | C06 |
+| P6 | Core connectivity ~45% margin "should be an achievable ... in the coming quarters"; "no such events ... impacting our Q2 performance" | CFO (inferred) | Coming quarters; Q3 FY27 first | Consolidated Op EBITDA margin vs Role 4 8C thresholds (21.0% / 19.5%) | C-L364-366 | C01 |
+| P7 | Media cost initiatives: "some of that will start playing out in the coming quarters" | CFO | Coming quarters | Media sub-line ND in filing; MGMT only | C-L342-343, C-L348 | n.a. |
+| P8 | "getting ready to provide support for the LA Olympics" ("next year") | CEO | "next year" as spoken; Games date PENDING LIVE VERIFICATION (A3: July 2028) | Media revenue (MGMT) | C-L329-331 | C14 |
+| P9 | "more languages planned soon" at the "SDFC Ergo" insurer | CEO | "soon" | Binary | C-L124 | n.a. |
+| P10 | "a massive transformation of our own company using this AI product ... it's already happening" | CEO | Detail at the February 2027 investor day | Staff-optimisation charges (C-2a); employee cost (L140) | C-L408-409 | C13 |
+| P11 | CIS business "will really become an AI-led platform-enabled business" and "improve profitability" | CEO | Undated | ND | C-L407 | n.a. |
+| P12 | "definitely investing in the cloud business"; GPU utilisation focus | CEO | "in the future" | Capex (L458); utilisation ND | C-L411-413 | C15 |
+| P13 | Scale capacity "in line with customer demand"; anchor-customer-led expansion | CEO | Ongoing | Capex vs revenue | C-L137 | C15 |
+| P14 | "remain disciplined in our capital allocation" | CFO | Ongoing; no ceiling | Net debt / TTM Op EBITDA, baseline 2.17x at 30-Sep-2026 [DERIVED, 7A] | C-L168 | C07, C15 |
+| P15 | Order book "should convert to revenue"; "in the coming years ... Correct" | CEO; management (inferred) | Coming years | Revenue growth (L135) | C-L234, C-L237-238 | C12 |
+| P16 | "we will see more solutions like this ... That is our hope" | CEO | Undated | ND | C-L285-286 | n.a. |
+| P17 | "leader in the infrastructure ... innovator in the platform side"; "keep the profitability alive" | CEO | Undated | ND | C-L486-487 | n.a. |
+| P18 | Narotan Sharma "will lead our enterprise wide transformation agenda" | CEO | Done (appointment) | Binary | C-L45-46 | n.a. |
+
+Scoring rule at the next Role 5: protocol 3A points (DELIVERED 1.0, PARTIALLY 0.5, DELAYED 0.25 first time, MISSED 0, DROPPED 0 plus flag, UNCLEAR excluded). Only P1, P2 and P3 carry a test date; P5 is dated by INFERENCE (Q3 FY27 results at the latest) (Role 5 addendum, loop 2); P4 and P6 carry a test metric without a date. P7-P17 enter the log but score UNCLEAR unless a date or number appears.
+
+Checkpoint (no wait). 3A-3E shown; baseline log set.
+
+### STEP 4: Q&A DECOMPOSITION
+
+**4A. Q&A inventory**
+
+| CQ | Analyst and firm (as transcribed) | Question (1 line) | Category | Grade | Substance |
+|---|---|---|---|---|---|
+| CQ01 | Balaji Subramanian, IIFL | Do earlier revenue-growth and EBITDA-margin targets stand; how to view them going forward | Forward Guidance | C | "We are on track" (C-L197); H1 EBITDA 15%, next-gen connectivity 27%, Digital 18% (C-L199-202); targets deferred to February (C-L213) |
+| CQ02 | Balaji Subramanian, IIFL (opening lost in a gap) | Do newly launched offerings carry superior margin | Financial | B | Yes: NR-to-GR shift, platform revenue (C-L219-222); no numbers |
+| CQ03 | Sanjay Jain, ICSA Securities | 2.5 years of double-digit order growth but cc Data growth ~6%: when double digit; order-book colour | Forward Guidance | C | "let's wait one more quarter" (C-L234); cc EBITDA ~10% (C-L232); order value ND; "no large wins" (C-L235) |
+| CQ04 | Sanjay Jain, ICSA Securities | Unified AI stack share of revenue | Customer/Order | n.a. (connection lost, C-L240-242) | Not answered; partly re-asked as CQ15 |
+| CQ05 | Vibhor Singal, "Novama Equities" | AI stack deals: inside existing sub-verticals or a new business | Strategic | B | Layer-by-layer description (C-L254-286); revenue ND |
+| CQ06 | Vibhor Singal | Does deal revenue spread across segments | Clarification | B | Yes: "the fabric makers will get their portion" (C-L294-296) |
+| CQ07 | Vibhor Singal | Voice business revival | Strategic | B | "too early to say whether it's a material or not" (C-L315) |
+| CQ08 | Vibhor Singal | Media soft YoY; when does it support growth | Operational | C | Cyclical; Olympics "next year"; Middle East cancellations (C-L328-332); CFO cost initiatives (C-L340-348); no timing |
+| CQ09 | Vibhor Singal, to CFO | Which Digital verticals improved most | Financial | C | "across all the verticals" (C-L357-359, inferred CFO); no vertical figures |
+| CQ10 | Vibhor Singal | Implied core connectivity margin ~45%: sustainable | Financial | B | "should be an achievable"; "no such events that are impacting our Q2 performance" (C-L364-366, inferred CFO) |
+| CQ11 | Avneesh Tiwari, "Vykaria" | AI layer revenue model; client count | Customer/Order | C (model); E on client count | "Let me not disclose the number of customers yet" (C-L379); platform fee plus consumables (C-L381-391) |
+| CQ12 | Avneesh Tiwari | SaaS revenue growth; AI synergy | Strategic | B | Commotion and SaaS run "as one entity under one leader as one PNO" (C-L397-398); no numbers |
+| CQ13 | Avneesh Tiwari (inferred) | Muted cloud growth: deliberate own-cloud focus | Strategic | B | Yes: own AI and sovereign cloud; GPU utilisation focus (C-L411-413) |
+| CQ14 | Avneesh Tiwari (inferred) | Medium-term Digital margin targets | Forward Guidance | D | "as soon as possible ... hopefully ... in the coming quarters"; framing deferred to investor day (C-L415-417) |
+| CQ15 | Sanjay Jain (inferred; opening lost) | Digital services share of revenue now and in 2-3 years | Forward Guidance | C | DC demand; "70 petabytes of traffic needed by 2036" (C-L421-433); share not given |
+| CQ16 | Sanjay Jain (inferred) | AI stack: India only or global | Strategic | B | "I don't think it's restricted to India"; Middle East and Europe talks (C-L437-441) |
+| CQ17 | Harbik Goyal, Union Mutual Fund | Drivers of the 330 bps QoQ Digital margin gain | Financial | B | Revenue +18%, GR/NR mix, operating leverage, "razor sharp focus on cost" (C-L454-457); no split |
+| CQ18 | Varaj Sheth, Quest Investment Managers | Core connectivity drivers; when in the numbers; EBITDA effect | Strategic | C | Next-gen +27%; MCC Flex; dynamic DC-to-DC (C-L462-487); no timing |
+| CQ19 | Varaj Sheth | Past core growth 1-3%: will it improve, and when | Forward Guidance | C | Cable cuts hurt the past (C-L490); AI east-west demand (C-L491-504); no rate, no date |
+
+Grade tally: A 0; B 9 (CQ02, CQ05, CQ06, CQ07, CQ10, CQ12, CQ13, CQ16, CQ17); C 8 (CQ01, CQ03, CQ08, CQ09, CQ11, CQ15, CQ18, CQ19); D 1 (CQ14); E 0 as a whole question (one partial refusal inside CQ11); n.a. 1 (CQ04). Total 19.
+
+**4B. Pattern analysis**
+- **Most repeated.** Digital margin path: CQ02, CQ09, CQ14, CQ17 (four questions, four analysts: Balaji, Vibhor, Avneesh, Harbik; count corrected, Role 5 addendum, loop 1). Core connectivity and cc growth: CQ03, CQ10, CQ18, CQ19 (four questions, three analysts). AI stack revenue: CQ04, CQ05, CQ06, CQ11, CQ15, CQ16. The repeats show the market wants the numbers behind both growth stories.
+- **Graded C, D or E.** Every request for a number or a date: targets (CQ01), cc Data timing (CQ03), Digital margin target (CQ14), AI client count (CQ11), Digital revenue share (CQ15), core growth rate (CQ19). Management answers with narrative, not numbers. One quarter: not yet a pattern.
+- **Buy-side vs sell-side.** Sell-side 3 analysts, 12 questions (IIFL 2, ICSA 4 including inferred CQ15-CQ16, Nuvama 6). Buy-side 2 analysts, 3 questions (Union MF 1, Quest 2). "Vykaria" type ND, 4 questions. Buy-side was present.
+- **Hosting broker.** None named. Four of six analysts opened with congratulations (C-L186, C-L246, C-L446, C-L460). The first question (targets) was substantive.
+- **Pushback.** Sanjay Jain set 2.5 years of double-digit order growth against ~6% cc Data growth (C-L226-227), and challenged "a lot of it looks like India market" (C-L436). The CEO rejected the second (C-L437). Those are the contested topics.
+- **The obvious questions no analyst asked.** Net debt rise, capex amount, contingents (DoT, VAT, CRA), the subsidiary profit jump, credit write-offs, tax rate, Campaign Registry. Pre-screening cannot be tested from the transcript. Of the 25 NOT ADDRESSED Role 4 questions, the call never touched 21; they go to the IR email with the rest (C19) (Role 5 addendum, loop 2).
+
+**4C. The three most important exchanges**
+
+**Exchange 1 (CQ03, Sanjay Jain, C-L226-238): cc growth vs order book.**
+- Question (verbatim): "I think this is two and a half years of double digit order book growth. And if you look at data business adjusted for currency, the growth is around 6% ... So when should we see this constant currency growth of double digit in data business now that order book has been quite strong." (C-L226-227)
+- Response (verbatim): "You see that even in constant currency terms, our EBITDA has been around 10% on a year to year basis ... I think, you know, let's wait one more quarter, you will definitely see. I'm hoping that ... network growth which we have seen in the order book should convert to revenue." (C-L232-234)
+- Said: cc EBITDA ~10%; a one-quarter wait; order book diversified, "no large wins" (C-L235).
+- Not said: order-book value or growth %; a cc revenue target; why 2.5 years of order growth produced ~6% cc Data growth; whether "around 10%" is Q2 or H1.
+- Implication (Role 5 addendum, loop 1): about half of reported Data growth is currency [DERIVED from MGMT: ~6% vs 12.2%]. For EBITDA the share depends on the period of "around 10%", which the answer does not state: about half if Q2 (vs 21.15%), about a third if H1 (vs 14.78%) [DERIVED from MGMT]. The same answer says "Our focus is going to be constant currency growth" (C-L232), which bears on the basis of the FY27 promise (RQ33). In local-currency terms Q2 Data is weaker than its headline. Q3 FY27 is now a dated test (P2).
+- Follow-up: RQ32, RQ42.
+
+**Exchange 2 (CQ10, Vibhor Singal, C-L360-366): core margin and one-offs.**
+- Question (verbatim): "the implied margin for the core connectivity business comes out to almost 44.8%, around 45%, a very healthy margin indeed. So do you believe that margin is sustainable at these levels?" (C-L361-363)
+- Response (verbatim; speaker inferred CFO): "What we have achieved as of now for the quarter and in the coming quarters, we believe that that should be an achievable, we don't know one-offs or there's no such events that are impacting our Q2 performance." (C-L364-366)
+- Said: margin sustainable; no one-offs.
+- Not said: the rupee size of the Q2 employee (-60.98) and other-expense (-63.07) QoQ falls (Q1); any provision release or SBP reversal inside EBITDA; why the "one-time" staff charge (36.54 in Q2, L515) recurs.
+- Implication: management now owns a "no one-offs" statement. If the Q3 Op EBITDA margin falls to 19.5% or below (Role 4 8C bear), the statement fails and the log records a miss. It does not separate the two Role 4 readings: it is an assertion, not a number. The filing wins.
+- Follow-up: Q1 (open), RQ39.
+
+**Exchange 3 (CQ01, Balaji Subramanian, C-L188-217): earlier targets.**
+- Question (verbatim): "You used to talk about certain revenue growth numbers and EBITDA margin targets. Can we have some color with the progress that you have recently achieved? How should one look at these going forward?" (C-L189-191)
+- Response (verbatim): "We are on track ... We have seen 15% EBITDA growth in the first half of FY 27 ... This year, we will absolutely deliver what we have promised ... We will come back to you in the investor call in February and talk about the longer-term growth, which is ahead of us." (C-L197-214)
+- Said: on track; H1 EBITDA growth; FY27 delivery promised; a February event.
+- Said, with no target named (Role 5 addendum, loop 1): "We are on track" (C-L197); "This year, we will absolutely deliver what we have promised" (C-L211).
+- Not said: which targets; whether any named target stands; what "what we have promised" means in numbers (only "double digit EBITDA growth", C-L456, later in the call).
+- Implication: the only quantified FY27 promise is double-digit EBITDA growth. On reported numbers H2 clears it at +5.60% [DERIVED, Step 2]; on a cc basis the bar is cc growth of about 10% or more (RQ33) (Role 5 addendum, loop 1). Prior targets stay in limbo until February (C04). Next quarter's audit marks them DROPPED if the February call is silent.
+- Follow-up: RQ34.
+
+Checkpoint (no wait). 4A, 4B and 4C shown.
+
+### STEP 5: NEW INFORMATION AUDIT
+
+**5A. New disclosures**
+
+| Disclosure | Type | Material? | Thesis impact |
+|---|---|---|---|
+| CRA in-principle settlement, Canada subsidiary; contingent 1,658 Cr at 31-Mar-2026 = 48.1% of parent equity 3,447.04 at that date [DERIVED]; terms and amount ND (C-L161-163) | Tax resolution, direction ND / regulatory (Role 5 addendum, loop 1) | YES | Pre-existing: management calls it "a long-standing tax matter" and dates the contingent to 31-Mar-2026 (C-L161-162); its FY26 Annual Report status is ND (AR not in this run). New is the in-principle settlement; management is "pleased" (C-L161), but amount, provision and cash are ND, so the direction is ND. Not in the Q2 results notes: only DoT (C-3) and VAT (C-4) carry notes; no CRA, Canada-tax or provision note in the results fulltext. Tata Communications (Canada) Ltd. is in the entity list (L1187). Settlement cost ND; likely tax P&L and cash in H2 FY27 [INFERENCE]; adds to net debt if paid (C06) |
+| cc Data growth ~6% vs 12.2% reported; cc EBITDA ~10% (period not stated) vs 21.15% Q2 / 14.78% H1 reported (C-L151-152, C-L232) | Negative surprise (growth quality) | YES | Currency supplies about half of Data growth (C02). For EBITDA about half on a Q2 reading, about a third on an H1 reading [DERIVED from MGMT]; RQ32 separates them. In neither the filing nor the press release (Role 5 addendum, loop 1) |
+| Q2 FCF 212 Cr; Q1 negative; EBITDA-to-OCF 72% (C-L164-165) | New quarterly split | YES (moderate) | First quarterly cash split; the filing gives H1 only. See 7A |
+| Net debt to EBITDA 2.17 (C-L170); ROCE 15.9%, +71 bps (C-L172) | Metric definition | NO | 2.17 ties to net debt / TTM Op EBITDA [DERIVED, 7A] |
+| Commotion and SaaS run "as one entity under one leader as one PNO" (C-L397-398) | Reporting structure | YES | Commotion's contribution cannot be separated; organic Digital growth ND (C11). Acquisition multiple: 136.96 (FY26 acquisition cash, L463; link to Commotion an INFERENCE by date, wef 01-Dec-2025) / Commotion PAT NOT FOUND, so not computable (Role 5 addendum, loop 1) |
+| February 2027 investor call / investor day (C-L213, C-L409, C-L416) | Forward catalyst pre-announced | YES | Earlier targets, revenue-mix framing and AI transformation detail are due there (C04) |
+| Internal "massive" AI-led transformation, "already happening" (C-L408-409) | Strategic / cost | YES | Signals more restructuring; staff charges (C-2a) likely continue (C13) |
+| Narotan Sharma, chief transformation officer (C-L45-48) | New senior management | NO | Introduced; completes the team. Named in the same-day deck (P-L104); the call adds the join timing, "since our last investor call" (C-L45) (Role 5 addendum, loop 2) |
+| AI wins: Tata Consumer, a group company (C-L103-118); "SDFC Ergo" insurer (C-L119-124); sizes ND | New customer | NO | The headline AI win is a group-company sale [INFERENCE: related party; RPT status not tested] (C10) |
+| Neo cloud "multi-million dollar engagement", India (C-L132) | New contract | NO | Unsized and unnamed (C18) |
+| India network: 80,000 km terrestrial, 30,000 km metro, 118 data centres (C-L136); dynamic DC-to-DC product launched about six months ago (C-L473) | New capability / product | NO | Context for the DC-to-DC claim |
+| AI pricing: platform fee plus consumables; revenue goes back "into individual towers" (C-L381-391) | Business model | NO | AI revenue has no line of its own |
+| Middle East media events cancelled (C-L332) | Negative surprise | NO | Unquantified |
+| Past core connectivity growth "impacted by cable cuts" (C-L490); past rate "one, two, three percent" (analyst, C-L488) | Backward | NO | Context only |
+
+**5B. What was NOT discussed**
+
+| Expected topic | Why it should have been discussed | Significance of silence |
+|---|---|---|
+| National Court VAT judgment, 365.80 Cr, scheduled 13-Oct-2026 (L572) | Dated binary event two days before the call; the CFO discussed a different tax matter (C-L161) | RED-AMBER (C08). Two readings (Role 5 addendum, loop 1): selective disclosure, a tax item volunteered and a dated adverse risk skipped; or nothing to report, since the same-day filing says the Group "awaits the National Court's decision" (L572). RQ38 (delivered, deferred or reserved) separates them. Grade held on conservative bias; one quarter, not confirmatory |
+| DoT demand 7,844.57 / contingent 7,513.71 (L545-562) | Largest contingent; Emphasis of Matter in both reports | AMBER |
+| Subsidiary-driven profit jump: 185.39 (89.6%) of the 206.80 QoQ parent PAT rise (Role 4 5C) | The main filing finding | AMBER (C09) |
+| "One-time" staff optimisation charge recurring (36.54 in Q2, L515) | Recurs in every quarter shown | AMBER; the CEO signals more (C13) |
+| Network cost +17.17% YoY vs revenue +9.64%; gross spread -305 bps (Role 4 2D) | Core unit economics | AMBER |
+| Net debt +1,606.60 Cr in H1; subsidiary debt +2,482.20 (Role 4 5A, 5C) | The CFO said "held steady" this quarter (C-L171); the 30-Jun-2026 comparator is not filed, so the claim is UNVERIFIABLE (7A); the H1 rise itself went unexplained | AMBER (C07) (Role 5 addendum, loop 1) |
+| Credit write-offs 161.23 Cr; 50.00 Cr recoverability provision (L419, L524) | Adverse credit-cost swing of 110.79 (R-A3-06) | AMBER |
+| Associate investment 356.10 Cr (L462) | Capital use at under 1% return on book | AMBER |
+| Campaign Registry: 23.80% of segment result on 4.15% of revenue (Role 4 1E) | Profit concentration | AMBER: never named on the call |
+| Transformation Services -33.70% YoY (L236) | Segment decline | AMBER |
+| ETR and deferred tax credits (43.27 in Q2, L154) | ETR 26.80% vs current tax 36.14% | Neutral to AMBER |
+| FY27 capex amount | Only "trended up" (C-L166) | AMBER |
+| Kaleyra transfer to TCNL; Kaleyra Africa exit; TComm Turkey | Entity moves in the filing | Routine, neutral |
+| Company Secretary change, 01-Nov-2026 (L72) | Board item | Routine, neutral |
+| Peer developments | Peer concalls not supplied | UNVERIFIABLE this run |
+| Topics from the prior concall | Prior transcript ND | ND |
+
+Checkpoint (no wait). 5A and 5B shown.
+
+### STEP 6: TONE AND SPECIFICITY
+
+**6A. Tone comparison.** Prior concall ND. Every row is the BASELINE for next quarter's comparison.
+
+| Topic | Prior concall phrase | This concall phrase | Direction |
+|---|---|---|---|
+| Digital breakeven | ND | "very close" (C-L60); "steady progress" (C-L159); "hopefully ... in the coming quarters" (C-L415) | BASELINE |
+| AI demand | ND | "robust and diversified" (C-L131) | BASELINE |
+| Order book | ND | "robust double-digit" (C-L62); "best quarter in Q2" (C-L230) | BASELINE |
+| Core connectivity | ND | "significant demand ... coming up" (C-L233); "wait one more quarter" (C-L234) | BASELINE |
+| H2 outlook | ND | "a lot of confidence" (C-L215); press release "momentum and confidence" (L1376) | BASELINE |
+| Leverage | ND | "held steady" (C-L171); "disciplined" (C-L168) | BASELINE |
+| Voice | ND | "too early to say" (C-L305, C-L315) | BASELINE |
+| Media | ND | "very, very bullish" (C-L333, C-L338) | BASELINE |
+| Cost | ND | "razor sharp focus on cost" (C-L455) | BASELINE |
+
+**6B. Specificity score**
+- Forward statements: 55 (A1 FORWARD rows R101-R155).
+- Quantified (number, named date or binary event): 11. R115, R118, R140, R146 (the same investor event); R121 ("one more quarter"); R128, R129 (Olympics, date in doubt); R135 (refers to the analyst's ~45%); R149, R150 (macro projections); R152 (double-digit EBITDA FY27).
+- Unquantified: 44.
+- **Specificity ratio: 11 / 55 = 0.20.** Below 0.3: heavy hedge language. Only R152 and R121 are testable operating commitments. (Role 5 addendum, loop 1) Criterion sensitivity: counting R101, R106, R111 and R114 (binary events or named periods) gives 15 / 55 = 0.27, still below 0.3; the conclusion holds.
+
+**6C. Defensive language**
+
+| Pattern | Count | Lines |
+|---|---|---|
+| Deferral ("come back to you", "You will hear more from us on this", "share more ... on the investor day") | 5 (loop 1: C-L408 added) | C-L213, C-L217, C-L408, C-L409, C-L416 |
+| Non-disclosure ("Let me not disclose") | 1 | C-L379-380 |
+| "we believe" | 3 | C-L76, C-L364, C-L426 |
+| "hoping" / "hopefully" / "our hope" | 5 | C-L230, C-L234, C-L286, C-L412, C-L415 |
+| "too early to say" | 2 | C-L305, C-L315 |
+| "take this offline", "bilateral", "cannot comment", "without giving specific guidance", "in line with industry trends" | 0 | none |
+| **Total** | **16** | (Role 5 addendum, loop 1) |
+
+Over 5: a hedge-heavy call. Prior count ND; 16 is the baseline (Role 5 addendum, loop 1). The hedges cluster on timing.
+
+**6D. Confidence indicators**
+- Named wins with deal size: none. Tata Consumer and the insurer are named without size; the neo cloud win is sized only as "multi-million dollar" and unnamed.
+- Specific dates: February 2027 investor call; "one more quarter".
+- Numerical commitments: one (double-digit EBITDA growth in FY27).
+- Misses acknowledged with a recovery timeline: none. Cable cuts are named as a past drag (C-L490) with no recovery date.
+- Promoter on call: no. The CEO answered every operating question himself.
+- Volunteered disclosures (Role 5 addendum, loop 1): the CRA settlement, cc Data ~6% and Digital cc "healthy double digits", all in the CFO's script (C-L151-153, C-L161-163). The cc EBITDA "around 10%" came from the CEO in Q&A, after an analyst's cc question (C-L232); none of the cc figures is in the press release. Candour on currency is a positive. The VAT silence offsets it under the selective-disclosure reading; under the second reading the decision was still awaited (L572). RQ38 separates them.
+
+**6E. Management archetype.** Specificity 0.20 puts management in the lower row (0.5 or below). The credibility ratio is ND (no history). The two lower cells, MEASURED & CREDIBLE and EVASIVE, differ only on credibility. **Archetype: UNCLASSIFIED, low-specificity row (provisional).** First scored at the next Role 5 against P1-P5. Conservative bias: no "credible" credit before delivery.
+
+Checkpoint (no wait). 6A-6E shown.
+
+### STEP 7: CROSS-REFERENCE vs FILING AND PEERS
+
+**7A. Concall narrative vs filing numbers**
+
+| Concall claim | Filing evidence | Reconciliation |
+|---|---|---|
+| Revenue 6,688 Cr, +9.6% (C-L147) | 6,687.89 vs 6,099.75, +9.64% (L135) | CONFIRMED |
+| EBITDA 1,422 Cr, +21.2%; margin 21.3% (C-L154, C-L156) | Op EBITDA 1,421.88, +21.15%; margin 21.26% (Role 4 1B, 2A) | CONFIRMED |
+| H1 EBITDA growth 14.8% (C-L155); "15%" (C-L199) | 2,652.02 vs 2,310.43, +14.78% (Role 4 2C) | CONFIRMED (rounding) |
+| PAT after minority interest 341 Cr, +86% (C-L160) | 341.03 vs 183.06, +86.29% (L166) | CONFIRMED |
+| Data revenue 5,810 Cr, +12.2% (C-L148) | Filed Data Services 5,810.99 vs 5,204.47 = +11.65% (L235). The 12.2% uses the press-release base of 5,179 (L1383) | PARTIALLY CONFIRMED: the level ties; the growth runs on an unreconciled base (R-A3-25, Q25). Filing wins: +11.65% |
+| cc Data ~6%; cc EBITDA ~10% (C-L152, C-L232) | No constant-currency disclosure in the filing | UNVERIFIABLE |
+| Digital revenue +18.6%; margin -3.6% (C-L149, C-L158) | MGMT only: press release 3,016 vs 2,542 (L1384); deck -107 Cr (P-L138). No filed line | UNVERIFIABLE (MGMT ties to MGMT) |
+| Digital losses "less than half" of Q1 (C-L59); press release "halved" (L1366) | Q1 rupee loss ND (P-A3-02). "Less than half" needs a Q1 loss above 214 Cr [DERIVED: 2 x 107], so Q1 Digital revenue above 3,101 Cr at -6.9% [DERIVED: 214 / 0.069], above Q2's 3,016 (L1384). With Q1 revenue at or below 3,016, Q2's 107 is at least 51.4% of Q1's maximum loss of 208.10 (Role 4 cross-read) | UNVERIFIABLE. The arithmetic holds only if Digital revenue fell QoQ or the percentages use another base (RQ35) |
+| Profit improvement "driven by significant reduction in losses across the digital portfolio" (C-L157) | The Digital cut is at most 101.10 of the 195.09 QoQ subsidiary EBITDA rise (Role 4 cross-read). 126.24 of the 248.26 YoY EBITDA gain is employee plus other cost reduction (Role 4 2D) | UNVERIFIABLE (Role 5 addendum, loop 2: re-tagged from PARTIALLY CONFIRMED). The claim reads YoY: it follows the YoY figures at C-L154-156. No Q2 FY26 Digital loss is disclosed: the deck gives Digital margins for FY25, Q1 FY27 and Q2 FY27 only (P-L137-151), the press release gives Digital revenue but no margin (L1384), and Q2 is NOT ADDRESSED. Context, not a test: the QoQ ceiling rests on MGMT Digital figures (row above, UNVERIFIABLE) and caps Digital at about half of the QoQ step; Digital loss reduction can itself run through cost lines. The call names cost once (C-L455) |
+| "no such events that are impacting our Q2 performance" (C-L365-366, inferred CFO) | Inside EBITDA: no non-recurring amount disclosed (Q1 open). Below EBITDA: Q2 books a 36.54 exceptional staff charge labelled "one-time" (L148, L515, L528-531) and a 43.27 deferred tax credit (L154) | UNVERIFIABLE inside EBITDA. The statement does not cover the filed exceptional charge |
+| Net debt 11,197 Cr (C-L169) | 11,197.04 ex-lease (Role 4 5A) | CONFIRMED |
+| Net debt to EBITDA "2.17F" (C-L170) | 11,197.04 / TTM Op EBITDA 5,164.05 = 2.17x [DERIVED: TTM = 4,822.46 - 2,310.43 + 2,652.02]. Role 4's 2.11x uses H1 x 2 (5A). Both rest on filed numbers | CONFIRMED on the TTM basis. A3 C07's 2.17 vs 2.11 gap is a basis difference, not an error |
+| Net debt to EBITDA "has held steady despite dividend payments this quarter" (C-L171) | 31-Mar-2026: 9,590.44 / 4,822.46 = 1.99x; 30-Sep-2026: 2.17x TTM [DERIVED]. The 30-Jun-2026 balance sheet is not filed. Net debt +1,606.60 in H1; dividend paid 498.78 in H1 (L479) | UNVERIFIABLE (Role 5 addendum, loop 1: re-tagged from CONTRADICTED). "This quarter" sets 30-Jun-2026 as the comparator, which is not filed. Context: 1.99x to 2.17x from 31-Mar-2026 (+0.18x). The claim fits the filing if about 1,077 of the 1,606.60 H1 rise fell in Q1 [DERIVED: 2.17 x Q1 TTM Op EBITDA 4,915.79 = 10,667, less 9,590.44] |
+| Q2 FCF 212 Cr; Q1 FCF negative (C-L164) | H1 CFO less capex 62.01 (Role 4 5A); no quarterly split filed. On the same definition Q1 would be (149.99) [DERIVED, conditional]. After lease and interest, H1 is (584.30) | PARTIALLY CONFIRMED: the sign is consistent on CFO less capex; definition ND (RQ47). (Role 5 addendum, loop 1) Joint check, MGMT on MGMT: 212 FCF and 72% conversion give Q2 CFO about 1,024 (0.72 x 1,421.88) and Q2 capex about 812; Q1 capex is then about 689 (1,500.69 - 812, L458) and Q1 FCF about (150): Q1 CFO 538.95 (H1 CFO 1,562.70, L441, less Q2 CFO 1,023.75) less Q1 capex 688.94 = (149.99) (Role 5 addendum, loop 2), consistent with the filed H1 totals [DERIVED, MGMT basis; not a filed test] |
+| EBITDA-to-OCF conversion 72% (C-L165) | H1 CFO / Op EBITDA 58.92% (Role 4 5A); Q2 CFO not filed | UNVERIFIABLE for Q2; H1 is 58.92% |
+| Cash capex "trended up this quarter" (C-L166) | Filed only for H1 FY27, H1 FY26 and FY26: H1 1,500.69 vs 1,139.43, +31.71% (L458). Q1 FY27 and Q2 FY26 capex not filed | UNVERIFIABLE (Role 5 addendum, loop 1: re-tagged from CONFIRMED). A quarterly claim with no quarterly capex filed. Context: H1 +31.71% YoY; the MGMT-on-MGMT joint check in the FCF row fits but is not a filed test |
+| ROCE 15.9%, +71 bps YoY (C-L172) | Definition ND. Filed bases on closing capital 14,796.19 (Role 4 6A): TTM segment result 2,201.40 = 14.88% [DERIVED: 1,995.72 - 965.96 + 1,171.64, L247], the TTM basis that ties the CFO's 2.17; H1 annualised 2,343.28 = 15.84% (Role 4 6A); Q2 annualised 2,723.76 = 18.41% [DERIVED: 680.94 x 4, L247]. No 30-Sep-2025 balance sheet for the YoY comparator | UNVERIFIABLE (Role 5 addendum, loop 1: re-tagged from PARTIALLY CONFIRMED). Definition ND; filed bases run 14.88% to 18.41%; the YoY change cannot be tested |
+| CRA contingent 1,658 Cr at 31-Mar-2026 (C-L162) | Q2 results notes carry DoT and VAT only; no CRA note or provision found | UNVERIFIABLE (FY26 Annual Report not in this run) |
+| Order growth "robust double-digit"; "best quarter" (C-L62, C-L230) | No order book in the filing | UNVERIFIABLE |
+| Next-gen connectivity +27% (C-L201, C-L465) | Not in the filing | UNVERIFIABLE |
+| Core connectivity margin ~45% (analyst, C-L362) | Sub-segment EBITDA not filed; Data Services segment result 7.33% after D&A (L243) | UNVERIFIABLE |
+
+Tally (Role 5 addendum, loop 2): 6 CONFIRMED, 2 PARTIALLY CONFIRMED, 0 CONTRADICTED, 13 UNVERIFIABLE (21 claims). Loop 1 re-tagged "held steady" (from CONTRADICTED), capex "trended up" (from CONFIRMED) and ROCE 15.9% (from PARTIALLY CONFIRMED). Loop 2 re-tagged the Digital-driver claim (C-L157) from PARTIALLY CONFIRMED: it reads YoY, and no YoY Digital comparator is disclosed. Every backward headline the filing can test ties. Every claim that would explain the quality of the print is unverifiable or only partly confirmed.
+
+**7B. Peer concall cross-check.** UNVERIFIABLE this run: peer concalls were not supplied. Notion holds peer pages (E2E Networks, iValue, Tejas), but none was passed.
+
+| Topic | This company said | Peer 1 said | Peer 2 said | Most credible narrative |
+|---|---|---|---|---|
+| DC-to-DC / AI infrastructure demand | "remains robust" (C-L134) | UNVERIFIABLE | UNVERIFIABLE | ND |
+| Enterprise AI demand | "robust and diversified" (C-L131) | UNVERIFIABLE | UNVERIFIABLE | ND |
+| Currency tailwind | "strengthening dollar" (C-L151) | UNVERIFIABLE | UNVERIFIABLE | ND |
+
+**7C. Industry channel checks**
+
+| Concall claim | External source | External says | Alignment |
+|---|---|---|---|
+| Media: "a big Olympics coming up next year ... the LA Olympics" (C-L329-331) | A3 C14 external note | Games scheduled July 2028 [PENDING LIVE VERIFICATION] | Misaligned if verified; "next year" may be misheard |
+| Rating-agency or industry-body commentary | Not supplied | ND | ND |
+
+Checkpoint (no wait). 7A, 7B and 7C shown.
+
+### STEP 8: THESIS AND POSITION
+
+**8A. Growth trigger status.** No thesis, so no adopted triggers. The candidate triggers from Role 4 6D are read against the call.
+
+| Trigger | Status pre-concall | Concall evidence | Status post-concall |
+|---|---|---|---|
+| Digital portfolio breakeven | Candidate; undated | "very close"; "hopefully ... in the coming quarters"; metric EBITDA (C-L60, C-L158, C-L415) | Candidate; ON TRACK on direction on two data points only; the rupee series does not reconcile (7A, RQ35); undated (C05) (Role 5 addendum, loop 1) |
+| Campaign Registry profit growth | Candidate | Not mentioned | Candidate; no concall evidence (silence AMBER) |
+| DC-to-DC connectivity | Candidate (MGMT) | "remains robust"; neo cloud win unsized; dynamic DC-to-DC product (C-L132-136, C-L473) | Candidate; MGMT only |
+| Cost programme | Candidate | "razor sharp focus on cost" (C-L455); internal AI transformation (C-L408-409) | Candidate; signals more charges (C13) |
+| cc Data growth step-up | n.a. | "let's wait one more quarter" (C-L234), answering "when ... double digit" cc Data growth (C-L227) | NEW candidate; test at Q3 FY27 (C12). (Role 5 addendum, loop 2) Two readings: (A) double-digit cc from Q3 FY27; (B) any step-up from ~6%. A cc print between ~6% and 10% meets the trigger only under B; management's definition (RQ42) or the Q3 cc print against 10% separates them |
+| February 2027 investor call | n.a. | C-L213 | NEW candidate catalyst (C04) |
+
+**8B. Watchlist items.** None on record. The Role 4 8B proposed watch conditions, read against the call:
+
+| # | Watchlist item | This concall reading | Status |
+|---|---|---|---|
+| a | Q3 FY27 Op EBITDA margin at or above 21.0% with non-recurring credits under 20 Cr | Management: no one-offs; ~45% core margin "achievable" (C-L364-366) | Pending Q3; the claim is on record |
+| b | Net debt / annualised Op EBITDA at or below 2.11x at 31-Mar-2027 | INFERENCE: the company appears to use TTM, since 2.17x ties to TTM Op EBITDA at 30-Sep-2026 [DERIVED]; RQ37 asks for the definition (Role 5 addendum, loop 1). The Role 4 condition uses H1 x 2 | Basis note: pick one basis before adoption. On TTM the start point is 2.17x |
+| c | VAT judgment disclosed and favourable | Not mentioned | Open; email IR (Q4, RQ38) |
+
+**8C. Thesis-broken trigger check.** None on record; not applicable. No going-concern language and no FIRED condition, so the OR-19 overlay does not apply.
+
+**8D. Four-pillar inputs: deferred to /fttcp and Role 1 (OR-30).** No pillar recompute here. Pillar-relevant concall facts:
+
+| Pillar / input | Concall fact | Anchor | Why it matters |
+|---|---|---|---|
+| Pillar 1 (ROCE) | ROCE 15.9%, +71 bps (MGMT; definition ND; UNVERIFIABLE) vs filed bases 14.88% (TTM), 15.84% (H1 annualised, Role 4 6A) and 18.41% (Q2 annualised) [DERIVED, L247] (Role 5 addendum, loop 1) | C-L172 | The FTTCP ROCE verdict governs |
+| Pillar 2 (cash) | Q2 FCF 212 Cr and 72% conversion (MGMT, unfiled); CRA settlement cash ND | C-L164-165, C-L161-163 | Use filed H1 FCF; CRA is a pending outflow |
+| Growth visibility | cc Data ~6%; cc EBITDA ~10%; FY27 promise double-digit EBITDA; Digital breakeven undated | C-L152, C-L232, C-L456, C-L415 | Currency supplies about half of Data growth; for EBITDA about half (Q2 reading) or a third (H1 reading), period ND (RQ32); the FY27 promise basis is ND (RQ33). The base revenue path should run on cc evidence (Role 5 addendum, loop 1) |
+| Pillar 3 / Emerging Moat | Unified AI stack; client count withheld; headline AI win is a group company | C-L379, C-L118 | Evidence tier MGMT; no revenue line |
+| Strategic Premium | DC-to-DC: "we are the only one provider who can do this globally" (deterministic latency) | C-L478, C-L496 | MGMT only; single-credit rule state ND |
+| Balance-sheet overlay | CRA contingent 1,658 Cr (31-Mar-2026), not in Q2 notes; DoT 7,513.71; VAT 365.80 | C-L162; L560; L574 | The contingent stack for the pillar session |
+
+**8E. Position decision.** Decision Status NONE ON RECORD. Branch 8A-W, pre-thesis. No Decision Status proposed. Concall overrides applied:
+- Credibility below 60%: not computable (ND). No discount rule fires. Commentary is unscored, so the filing governs.
+- Two DROPPED in trailing 4: 0 scored.
+- Undisclosed material risk (Role 5 addendum, loop 1): not established. The CRA matter is "long-standing", with a contingent of 1,658 Cr dated 31-Mar-2026 (C-L161-162); whether the FY26 Annual Report disclosed it is ND (AR not in this run). It is absent from the Q2 results notes. What is new is the in-principle settlement, direction ND. The trim rule binds held names only; not held. Flagged (flag 18).
+- Narrative contradicts filing (Role 5 addendum, loop 1): not established. "Held steady" is UNVERIFIABLE: the 30-Jun-2026 comparator is not filed (7A). The filing governs; the next-quarter watchlist is tightened on the TTM basis, start point 2.17x (RQ37; monitorable 22).
+- Entry zone: ND (Role 1 not run). The spear gate stands.
+
+**8F. Updated questions for next quarter.** See Step 8.5E (RQ32-RQ47) and the open rows of 8.5A and 8.5B. These feed the next Role 4 Step 8.5.
+
+STOP (section checkpoint under /run-quarterly; no wait). 8A-8F shown.
+
+### CONCALL VERDICT
+
+- Management credibility (this quarter): ND. No scorable history. Baseline set: 18 commitments logged; P1, P2 and P3 dated; P5 by INFERENCE (Q3 FY27 results at the latest) (Role 5 addendum, loop 2).
+- Trailing 4-quarter credibility ratio: ND (0 / 0; prior log not passed).
+- Management archetype (6E): UNCLASSIFIED, low-specificity row (specificity 0.20; credibility ND).
+- Role 1 track-record input: ND (no Role 5 history; no session substitution).
+- Net concall impact on thesis: no thesis to move. On the pre-thesis read: **WEAKENED** (quality of the Q2 print). Reasons restated in Role 5 addendum, loop 1: (1) cc Data growth about 6% vs 12.2% reported, so currency supplies about half of Data growth (C-L152); for EBITDA the currency share is about half on a Q2 reading and about a third on an H1 reading (C-L232, period not stated). (2) The cause of the profit step is still unnamed. (3) Forward specificity 0.20 and 16 defensive phrases. (4) A pre-set bear answer fired on 6 of the 31 rows (Q1, Q2, Q3 date half, Q5, Q25, Q30). (5) 25 of 31 filing questions not addressed, 2 evaded, 4 partial. Removed in loop 1: "leverage called steady when it rose" (now UNVERIFIABLE, no 30-Jun-2026 comparator) and "a new 1,658 Cr contingent" (pre-existing at 31-Mar-2026; the settlement is new, direction ND).
+- Position decision: none (8A-W pre-thesis); entry zone ND.
+- Protocol verdict: PROCEED WITH FLAGS, unchanged by Role 5.
+
+*Concall reviewed 2026-10-18 | Source: extracted/tatacomm-concall-q2fy27-fulltext.md (A1, machine transcript), work/ledger_concall_tatacomm_q2fy27.md, work/forensics_concall_tatacomm_q2fy27.md.*
+
+### DoT FIGURE RECONCILIATION (A3 pipeline note)
+
+Both figures are filed in note C-3, and both are correct. They measure different things.
+
+| Item | Rs Cr | Anchor |
+|---|---|---|
+| Aggregate DoT show-cause-cum-demand notices, FY2005-06 to FY2024-25 | 7,844.57 | L545-547 |
+| less: disallowance of deductions for three years, assessed as remote | (276.68) | L548-550, L561-562 |
+| less: provision held | (54.18) | L560 |
+| **= Contingent liability disclosed (net of provision)** | **7,513.71** | L560 (standalone L1019; auditor EoM L1322) |
+
+Check: 7,844.57 - 276.68 - 54.18 = 7,513.71 [DERIVED; ties exactly]. Role 4 used each figure correctly. Note C-3, note S-3, flag 6 and the Step 7 overlay carry the contingent 7,513.71 (2.21x parent equity 3,401.18). Q14 asks about the aggregate demand 7,844.57. The A3 note set the contingent (from the task brief) against the demand (from Q14). No Role 4 number changes.
+
+### PASSAGES CHANGED OUTSIDE THIS SECTION (Role 5 addendum log)
+
+| Passage | Change |
+|---|---|
+| Header, lines 3-4 | Run type and protocol lines note the Role 5 addendum |
+| Role 4 ledger preamble | One pointer line to the concall preamble |
+| Step 8.5 intro, 8.5A, 8.5B | Answer status column added; intro paragraph added; question text unchanged |
+| 8.5C, 8.5D | One addendum paragraph each |
+| 8.5E | New table, RQ32-RQ47 |
+| Monitorables | Status updated for rows 1, 2, 6, 12; rows 18-26 added |
+| Verdict and flags | Addendum paragraph (verdict unchanged); flag 16 replaced; flags 17-23 added |
+| Plain-language brief | One line added to part 1; parts 1a and 1b added; one sentence each in parts 2, 3 and 4; part 5 concall bullet updated and five bullets added |
+| Closing YAML | Concall merged: docs, turns, C findings, Role 5 fields, questions, monitorables, flags, analyst note |
+
+### ROLE 5 CORRECTION LOOP 1 LOG (A5 Role 5 audit, 2026-10-18)
+
+Each item was checked against the concall fulltext (C-L###) and the filing fulltexts at the cited lines. No Role 4 number changed. Verdict, cash classification and position branch unchanged.
+
+| A5 item | Change | Verified at |
+|---|---|---|
+| F-A | Q2, Q5, Q31 regraded PARTIALLY to NOT ADDRESSED (topic touched); definition widened in the 8.5 intro; recount 0 / 4 / 2 / 25. Aligned: 8.5 intro, 8.5C, 8.5D, RQ46, monitorable 26, flag 20, 3E, net impact, YAML counts, flags, RQ46 and analyst note | C-L58-59, C-L166, C-L171, C-L412; P-L142; L1366 |
+| C-A | Forward-map concall bullet and 8.5C now say the bear fork fired ("no number"); Q3 margin stays the next test | C-L365-366 |
+| M-A | Fork outcome added to the 9 touched rows (BEAR 5, SPLIT 1, NEITHER 3; bear fired on 6 counting Q3's date half). Loop 2: Q27 added as touched, so 10 rows, NEITHER 4 (see loop 2 log). Q28 quotes C-L197 and C-L211; Exchange 3 "Not said" corrected | C-L158, C-L197, C-L211, C-L379, C-L415 |
+| F-B | "Held steady" re-tagged UNVERIFIABLE (comparator 30-Jun-2026 not filed; fits if about 1,077 of the H1 rise fell in Q1). Aligned: diag 4(b), 5B, 7A, tally, 1b, flag 19, 8E, net impact, RQ37, YAML | C-L171; L479; Role 4 1B, 5A |
+| F-C | Capex "trended up this quarter" re-tagged UNVERIFIABLE; tally and YAML aligned | C-L166; L458 |
+| F-D | ROCE 15.9% re-tagged UNVERIFIABLE; filed bases 14.88% / 15.84% / 18.41% shown in 7A and 8D | C-L172; L247 |
+| C-B | cc EBITDA period (Q2 about half, H1 about a third) and FY27 promise basis (reported +5.60% H2, cc about 10%) named as two readings in flags 17 and 22, brief 1a, Exchanges 1 and 3, 5A, 8D, Step 2, diag 4(a), RQ32 and YAML; C-L232 "Our focus is going to be constant currency growth" used | C-L155, C-L232; Role 4 1B |
+| C-C | CRA reworded as pre-existing (31-Mar-2026, "long-standing"), FY26 AR status ND, settlement direction ND; 5A type changed; flag 18, 8E, net impact, YAML aligned | C-L161-163 |
+| M-B | VAT silence: second reading (decision still awaited) added with RQ38 as separator in 5B, flag 20, 6D, RQ38 | L572 |
+| F-F | (a) brief 1a: CFO raised net debt and the Canada tax matter; (b) 4B four analysts; (c) deferral 5, total 16 in 6C, flag 23, YAML; (d) diag 2: #2 reaffirmed (deck P-L101-104); (e) 6D: cc EBITDA from the CEO in Q&A | C-L161-171, C-L408, C-L218, C-L351-356, C-L414, C-L447-453; P-L104 |
+| STYLE applied | S1 (header and Role 5 intro wording), S2 (P-L34), S3 (Inba; deck spelling), S4, S5, S6, S7, S9, S12, S13 | as cited in each edit |
+| STYLE not applied | S8 (CQ17 grade is a judgment; B kept), S10, S11 (A1/A2 items), S14 (Role 4 text not touched) | n.a. |
+
+### ROLE 5 CORRECTION LOOP 2 LOG (A5 loop 1 re-audit, 2026-10-18)
+
+Each item was checked against the concall fulltext (C-L###) and the deck and results fulltexts at the cited lines. No Role 4 table or number changed. Verdict, cash classification, position branch and WEAKENED unchanged.
+
+| A5 item | Change | Verified at |
+|---|---|---|
+| L1-F1 | 7A Digital-driver claim (C-L157) re-tagged UNVERIFIABLE: it reads YoY, and no Q2 FY26 Digital loss is disclosed; the QoQ ceiling on MGMT data is context. Tally 6 / 2 / 0 / 13 of 21 in 7A and YAML | C-L154-157; P-L137-151; L1384 |
+| L1-M1 | P2 (C-L234) carries two readings: (A) double-digit cc Data growth from Q3 FY27, the frame of the question at C-L227; (B) any step-up from about 6%. Separator: management's definition (RQ42), or the Q3 cc print against 10%. A print between about 6% and 10% scores DELIVERED only under B. The filed reported Data metric is context, not the test. Applied in P2, monitorable 19, Step 2, 8A, RQ42, forward map, YAML monitorable and YAML RQ42 | C-L152, C-L227, C-L232, C-L234 |
+| L1-C1 | Q27 marked NOT ADDRESSED, topic touched, fork NEITHER. Rule reworded: rows the call did not touch have no fork outcome. Touched rows 10: BEAR 5, SPLIT 1, NEITHER 4 (Q27, Q28, Q29, Q31); bear fired stays 6. Aligned: 8.5 intro, 3E ("6 of the 10 rows"), 4B (21 untouched of the 25 NOT ADDRESSED), YAML fork_outcomes, loop 1 log M-A row | C-L87, C-L397-398 |
+| L1-C2 | One wording in three places (3B scoring rule, concall verdict, analyst note): P1, P2 and P3 dated; P5 by INFERENCE (Q3 FY27 results at the latest) | C-L161-163 |
+| STYLE applied | LS1 (7A FCF joint check split into CFO and FCF steps), LS2 (brief 2 "about half" tagged DERIVED), LS3 (monitorable 18, YAML P1 and Step 2 cc basis), LS4 (5A Narotan Sharma: deck naming, call join timing), LS5 (4B pre-screening untestable), LS6 (diag 1 criterion sensitivity 15 of 40) | L441, L458; C-L45, C-L151-152; P-L104 |
+| STYLE not applied | LS7 (run-1 S8, S10, S11, S14 carried) | n.a. |
 
 ---
 
 ## PLAIN-LANGUAGE BRIEF
 
-Provenance tiers: FILED (this quarter's results filing), MGMT (press release, deck, CEO quote), SECONDARY (none used), AGENCY (none supplied), INFERENCE (analyst reasoning, labelled). No prior Notion or peer work exists for this company. Every figure below is from this quarter's documents unless marked INFERENCE.
+Provenance tiers: FILED (this quarter's results filing), MGMT (press release, deck, CEO quote), SECONDARY (none used), AGENCY (none supplied), INFERENCE (analyst reasoning, labelled). No prior Notion or peer work exists for this company. Every figure below is from this quarter's documents unless marked INFERENCE. (Role 5 addendum) Concall figures are MGMT from a machine transcript with inferred speakers; where they conflict with the filing, the filing wins.
 
 ### 1. Summary narrative
 
@@ -730,25 +1280,44 @@ A dispute with the telecom department carries Rs 7,514 Cr of contingent liabilit
 A foreign VAT case of Rs 366 Cr had a court date on 13 October; the filing says the group awaits the decision (FILED).
 This is a first read, with no thesis, no entry zone and no Decision Status.
 The verdict is PROCEED WITH FLAGS.
+(Role 5 addendum) The 15 October earnings call does not change the verdict.
 The next quarter's margin decides whether Q2 was a new level or a one-off.
+
+### 1a. What management said on the call (Role 5 addendum)
+
+Source: machine transcript, speakers inferred. All figures MGMT unless marked.
+
+(Role 5 addendum, loop 1) Currency gains made up about half of data revenue growth. Without them, data revenue grew about 6%, against 12.2% reported (MGMT, C-L152). Management said EBITDA grew about 10% without them, but did not say for which period (MGMT, C-L232). If it is the quarter (21.2% reported), currency gave about half of EBITDA growth. If it is the half-year (14.8% reported), currency gave about a third (INFERENCE, arithmetic on MGMT and FILED numbers). The only number promised for FY27 is double-digit EBITDA growth (MGMT, C-L456). The first half already grew 14.8% (FILED). On reported numbers, the second half meets the promise with 5.6% growth (INFERENCE, arithmetic on FILED numbers). The CEO also said "Our focus is going to be constant currency growth" (MGMT, C-L232). On that basis the bar is about 10% growth, a real test. The digital business is "very close" to breakeven, with no date (MGMT, C-L60, C-L415). A long-standing tax dispute in Canada is close to settlement. Its contingent liability was Rs 1,658 Cr at March 2026, and the cost of settling is not yet known (MGMT, C-L161-163). Older growth and margin targets were neither restated nor withdrawn. The CEO said management would talk about longer-term growth at an investor call in February 2027 (MGMT, C-L213-214); that the old targets move there is INFERENCE. Management did not give the number of AI customers (MGMT, C-L379). One of the two AI wins it named is a Tata group company (MGMT, C-L118). No analyst asked about debt, the tax and telecom disputes, or the subsidiaries. The CFO raised two of these in the prepared remarks: net debt (C-L169-171) and the Canada tax matter (C-L161-163). Management did not raise the telecom dispute, the VAT case or the subsidiary profit jump.
+
+### 1b. Management said vs filing shows (Role 5 addendum)
+
+| Management said (MGMT, transcript) | Filing shows (FILED) | Read |
+|---|---|---|
+| Profit rose mainly because Digital losses fell (C-L157) | Half the yearly EBITDA gain is lower staff and other costs; Digital explains about half of the subsidiary jump at most (Step 2, cross-read) | Filing wins; the cause is still open |
+| No one-offs affected Q2 (C-L365-366, inferred CFO) | Q2 carries a Rs 36.54 Cr "one-time" staff charge (L148); credits inside EBITDA are not disclosed | Unproven |
+| Net debt to EBITDA "held steady" this quarter (C-L171) | No 30-Jun-2026 figure is filed. 1.99x at 31-Mar-2026, 2.17x at 30-Sep-2026 on trailing EBITDA [DERIVED]; net debt up Rs 1,607 Cr in six months | Cannot be checked; the six-month ratio rose (Role 5 addendum, loop 1) |
+| Data revenue grew 12.2% (C-L148) | Filed Data Services grew 11.65% (L235) | Filing wins |
+| Free cash flow Rs 212 Cr in Q2 (C-L164) | Half-year free cash flow Rs 62 Cr before lease and interest, negative after them (Step 5A) | Quarterly split not filed |
+| Canada tax contingent Rs 1,658 Cr (C-L162) | Not in the Q2 results notes | Cannot be checked here |
+| Telecom department dispute: not mentioned | Contingent Rs 7,513.71 Cr; demand notices Rs 7,844.57 Cr (L545-562) | Silence |
 
 ### 2. Sector intelligence
 
-Demand for data links between data centres in India is rising; the CEO calls it a "$1 billion opportunity" (MGMT, L1400). The company also holds a stake in a data-centre associate, STT Global Data Centres India (FILED, L1260). AI workloads add demand for GPU capacity, which the company says it has built in India (MGMT, P-L162). Voice is in structural decline: revenue fell 8.9% and profit fell 48% (FILED). Regulation is a live risk. The telecom department's demands date back to FY2005-06 and are "revised over a period of time" (FILED, L545-547). New Labour Codes moved staff costs in FY26 and Q1 FY27 (FILED). Growth in AI and data-centre traffic as a tailwind for the whole sector is INFERENCE; no sector data was supplied.
+Demand for data links between data centres in India is rising; the CEO calls it a "$1 billion opportunity" (MGMT, L1400). The company also holds a stake in a data-centre associate, STT Global Data Centres India (FILED, L1260). AI workloads add demand for GPU capacity, which the company says it has built in India (MGMT, P-L162). Voice is in structural decline: revenue fell 8.9% and profit fell 48% (FILED). Regulation is a live risk. The telecom department's demands date back to FY2005-06 and are "revised over a period of time" (FILED, L545-547). New Labour Codes moved staff costs in FY26 and Q1 FY27 (FILED). Growth in AI and data-centre traffic as a tailwind for the whole sector is INFERENCE; no sector data was supplied. (Role 5 addendum) Management credits a strengthening dollar for part of data growth (MGMT, C-L151-152). The share, about half, is DERIVED from about 6% constant-currency growth against 12.2% reported (Role 5 addendum, loop 2). A stronger rupee would reverse that gain (INFERENCE).
 
 ### 3. Business-model intelligence
 
-The company earns 87% of revenue from Data Services: network connectivity plus digital platforms (FILED, L235). Its biggest cost is the network it rents and runs, at 48% of revenue (FILED). The digital platforms (messaging, customer engagement, AI tools) still lose money, at -3.6% margin, though the loss is shrinking (MGMT). A small US business, Campaign Registry, checks text-message campaigns for mobile operators. It earns 58% margins and now makes 24% of segment profit on 4% of revenue (FILED). Its profit rose 56% half-year on half-year; the 114% quarterly jump flatters because the year-ago quarter was weak (FILED). Model drift this quarter: profit leans on cost cuts and on one niche, while the core network spread narrows. Core connectivity appears to grow about 6% a year (INFERENCE, derived from MGMT revenue lines that do not tie to the filing). Most profit and most new debt now sit in subsidiaries, not the parent (FILED). The group keeps putting money into associates that earn under 1% on their book value so far (FILED, Step 5D).
+The company earns 87% of revenue from Data Services: network connectivity plus digital platforms (FILED, L235). Its biggest cost is the network it rents and runs, at 48% of revenue (FILED). The digital platforms (messaging, customer engagement, AI tools) still lose money, at -3.6% margin, though the loss is shrinking (MGMT). A small US business, Campaign Registry, checks text-message campaigns for mobile operators. It earns 58% margins and now makes 24% of segment profit on 4% of revenue (FILED). Its profit rose 56% half-year on half-year; the 114% quarterly jump flatters because the year-ago quarter was weak (FILED). Model drift this quarter: profit leans on cost cuts and on one niche, while the core network spread narrows. Core connectivity appears to grow about 6% a year (INFERENCE, derived from MGMT revenue lines that do not tie to the filing). Most profit and most new debt now sit in subsidiaries, not the parent (FILED). The group keeps putting money into associates that earn under 1% on their book value so far (FILED, Step 5D). (Role 5 addendum) AI is sold as a platform fee plus usage and booked inside the existing business lines, so it has no revenue line of its own (MGMT, C-L381-391).
 
 ### 4. Competition intelligence
 
-The filings name no competitor. The company claims 300 of the Fortune 500 as customers and 70% of India's live financial-services data traffic (MGMT, unsourced). Its likely strength is a global subsea and enterprise network that new entrants cannot copy quickly (INFERENCE). Its likely weak spots are messaging and engagement platforms, where global software firms compete on price, and voice, which is shrinking (INFERENCE; the filed voice decline supports the second point). In Indian enterprise connectivity the large mobile operators compete for the same customers (INFERENCE). Peer market shares and peer margins: ND. Notion holds pages for E2E Networks, iValue and Tejas that cite Tata Communications as a peer, but no peer figures were passed to this review. Risk to watch: price pressure on Campaign Registry or a rule change by US carriers, since one niche carries a quarter of segment profit (INFERENCE from FILED concentration).
+The filings name no competitor. The company claims 300 of the Fortune 500 as customers and 70% of India's live financial-services data traffic (MGMT, unsourced). Its likely strength is a global subsea and enterprise network that new entrants cannot copy quickly (INFERENCE). Its likely weak spots are messaging and engagement platforms, where global software firms compete on price, and voice, which is shrinking (INFERENCE; the filed voice decline supports the second point). In Indian enterprise connectivity the large mobile operators compete for the same customers (INFERENCE). Peer market shares and peer margins: ND. Notion holds pages for E2E Networks, iValue and Tejas that cite Tata Communications as a peer, but no peer figures were passed to this review. Risk to watch: price pressure on Campaign Registry or a rule change by US carriers, since one niche carries a quarter of segment profit (INFERENCE from FILED concentration). (Role 5 addendum) On the call the CEO said the company is the only provider able to offer fixed-latency links between data centres worldwide (MGMT, C-L478); no peer evidence tests the claim.
 
 ### 5. Forward map (next about 10-11 months)
 
 Make-or-break reading: **Q3 FY27 consolidated operating EBITDA margin (quarter ending 31-Dec-2026).** At or above 21.0%, the Q2 step looks real. At or below 19.5%, Q2 held one-off credits.
 - **VAT judgment (court date 13-Oct-2026; disclosure by Q3 FY27 results).** Bull: ruling for the group, the Rs 365.80 Cr contingent falls away. Bear: ruling against, a cash payment and a P&L charge.
-- **Concall transcript (call held 15-Oct-2026).** Bull: management names the Q2 cost credits and they are small. Bear: no number, or a large one-off.
+- **Concall transcript (call held 15-Oct-2026).** Bull: management names the Q2 cost credits and they are small. Bear: no number, or a large one-off. (Role 5 addendum, loop 1) Outcome: the bear fork fired. No number was given; management said Q2 had no one-offs (C-L365-366), an assertion without a figure. The Q3 margin is now the next test of that assertion.
 - **New Company Secretary (01-Nov-2026).** Bull: planned handover explained. Bear: unexplained exit of the incumbent.
 - **Kaleyra, Inc. transfer to TCNL (date ND).** Bull: simple re-housing, no standalone loss. Bear: a standalone write-down or an overseas debt raise.
 - **Digital breakeven (date ND).** Bull: margin moves from -3.6% toward zero in Q3. Bear: the loss widens again.
@@ -756,6 +1325,11 @@ Make-or-break reading: **Q3 FY27 consolidated operating EBITDA margin (quarter e
 - **Net debt at 31-Mar-2027 (FY27 results).** Bull: at or below 2.11x operating EBITDA with positive H2 free cash flow. Bear: above it, with capex still rising.
 - **Staff cost programme (end date ND).** Bull: an end date and total cost are given. Bear: another charge each quarter.
 - **Asset held for sale, Rs 7.40 Cr (date ND).** Bull: sale completes with a gain. Bear: it stays unsold.
+- **(Role 5 addendum) Constant-currency data growth (Q3 FY27 results; management said "wait one more quarter").** Bull: growth reaches 10% or more, the double digit the analyst asked about (C-L227). Bear: it stays near 6%. (Role 5 addendum, loop 2) Between about 6% and 10%, the promise is met only if it meant any step-up. Management's own definition (RQ42) or the Q3 print against 10% settles which.
+- **(Role 5 addendum) Canada tax settlement disclosure (undated; Q3 FY27 results at the latest, INFERENCE).** Bull: cost well below Rs 1,658 Cr and already provided. Bear: a large cash payment in H2.
+- **(Role 5 addendum) Investor call (February 2027).** Bull: earlier targets restated with dates. Bear: targets dropped without comment.
+- **(Role 5 addendum) FY27 double-digit EBITDA growth (FY27 results).** Bull: met in constant currency. Bear: met only through currency gains.
+- **(Role 5 addendum) Next restructuring charge from the internal AI programme (Q3 FY27 results).** Bull: total cost and end date given. Bear: another "one-time" charge.
 
 ---
 
@@ -792,14 +1366,33 @@ company: "TATACOMM"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
 status: complete
-docs_merged: [results, presentation]
+docs_merged: [results, presentation, concall]
 ledger_reconciliation:
   notes: 18
-  turns: 0
+  turns: 58
   slides: 9
   all_reviewed: true
-  a3_findings_incorporated: ["R-A3-01", "R-A3-02", "R-A3-04", "R-A3-05", "R-A3-06", "R-A3-07", "R-A3-08", "R-A3-09", "R-A3-10", "R-A3-11", "R-A3-12", "R-A3-13", "R-A3-14", "R-A3-15", "R-A3-16", "R-A3-17", "R-A3-18", "R-A3-19", "R-A3-20", "R-A3-21", "R-A3-22", "R-A3-23", "R-A3-24", "R-A3-25", "R-A3-26", "R-A3-27", "R-A3-28", "R-A3-29", "R-A3-30", "P-A3-01", "P-A3-02", "P-A3-03", "P-A3-04", "P-A3-05", "P-A3-06", "P-A3-07", "P-A3-08", "P-A3-09", "P-A3-10", "P-A3-11"]
+  a3_findings_incorporated: ["R-A3-01", "R-A3-02", "R-A3-04", "R-A3-05", "R-A3-06", "R-A3-07", "R-A3-08", "R-A3-09", "R-A3-10", "R-A3-11", "R-A3-12", "R-A3-13", "R-A3-14", "R-A3-15", "R-A3-16", "R-A3-17", "R-A3-18", "R-A3-19", "R-A3-20", "R-A3-21", "R-A3-22", "R-A3-23", "R-A3-24", "R-A3-25", "R-A3-26", "R-A3-27", "R-A3-28", "R-A3-29", "R-A3-30", "P-A3-01", "P-A3-02", "P-A3-03", "P-A3-04", "P-A3-05", "P-A3-06", "P-A3-07", "P-A3-08", "P-A3-09", "P-A3-10", "P-A3-11", "C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14", "C15", "C16", "C17", "C18", "C19"]
 protocol_verdict: "PROCEED WITH FLAGS"
+role5_addendum: true
+role5_verdict: "PROCEED WITH FLAGS (unchanged by Role 5). Concall impact on the pre-thesis read: WEAKENED. Credibility ND (baseline quarter, 18 commitments logged). Archetype UNCLASSIFIED, low-specificity row (0.20). Role 1 track-record input ND."
+concall_verdict:
+  credibility_grade: "ND (no scorable history; baseline)"
+  credibility_ratio: "ND (0/0; prior log not passed)"
+  archetype: "UNCLASSIFIED (specificity 0.20 <= 0.5; credibility ND)"
+  role1_track_record_input: "ND"
+  net_impact: "WEAKENED (pre-thesis read)"
+  specificity_ratio: 0.20
+  defensive_phrase_count: 16  # Role 5 loop 1: deferral 5 (C-L408 added)
+  commitments_logged: 18
+  qa_grades: {A: 0, B: 9, C: 8, D: 1, E: 0, na: 1}
+  filing_crosscheck: {confirmed: 6, partially_confirmed: 2, contradicted: 0, unverifiable: 13}  # Role 5 loop 1: held steady, capex, ROCE re-tagged UNVERIFIABLE; loop 2: Digital-driver claim (C-L157) re-tagged UNVERIFIABLE
+  peer_crosscheck: "UNVERIFIABLE this run (peer concalls not supplied)"
+  step_8d: "deferred to /fttcp and Role 1 (OR-30); pillar-relevant facts flagged"
+answer_status_counts: {answered: 0, partially: 4, evaded: 2, not_addressed: 25, total: 31}  # Role 5 loop 1: Q2, Q5, Q31 regraded
+fork_outcomes: {touched_rows: 10, bear: 5, split: 1, neither: 4, bear_fired_incl_split: 6}  # Role 5 loop 2: Q27 touched, fork NEITHER
+new_question_ids: ["RQ32", "RQ33", "RQ34", "RQ35", "RQ36", "RQ37", "RQ38", "RQ39", "RQ40", "RQ41", "RQ42", "RQ43", "RQ44", "RQ45", "RQ46", "RQ47"]
+dot_reconciliation: "Aggregate demand 7,844.57 less 276.68 remote less 54.18 provision = contingent 7,513.71 (L545-562); both filed, both used correctly in Role 4"
 cash_conversion: "INDETERMINATE-WITH-DIRECTION"
 decision_status_verified: "NONE ON RECORD (no Notion page; live search 2026-10-17); framed as PRE-THESIS READ"
 position_branch: "8A-W"
@@ -845,23 +1438,48 @@ questions_for_management:
   - {q: "When did the Tower structure take effect, and which of the 11 named heads joined in the last 12 months?", from_finding_id: "P-A3-07"}
   - {q: "Q2 FY27 AI-platform revenue and paying-customer count?", from_finding_id: "P-A3-08"}
   - {q: "India GPU capex amount, utilisation, and is its depreciation inside the Digital margin?", from_finding_id: "P-A3-09"}
+  - {q: "RQ32: Q2 FY27 constant-currency YoY growth for revenue, Data revenue and EBITDA; is cc EBITDA ~10% for Q2 or H1?", from_finding_id: "C02"}
+  - {q: "RQ33: Is the FY27 double-digit EBITDA promise on reported or cc EBITDA (reported needs only +5.60% in H2)?", from_finding_id: "C03"}
+  - {q: "RQ34: Which earlier revenue and margin targets still stand (yes/no each); will the Feb-2027 call restate or replace them?", from_finding_id: "C04"}
+  - {q: "RQ35: Quarter in which Digital EBITDA reaches zero; Q1 FY27 Digital revenue ('less than half' of Q1 losses needs Q1 revenue above 3,101 Cr)?", from_finding_id: "C05"}
+  - {q: "RQ36: CRA settlement amount, years, P&L line, payment date, provision at 30-Sep-2026, contingent at 30-Sep-2026 vs 1,658 Cr; why absent from Q2 notes?", from_finding_id: "C06"}
+  - {q: "RQ37: Define net debt/EBITDA 2.17 (TTM, ex-lease?); 'held steady' vs which date; 30-Jun-2026 value (filed 1.99x at 31-Mar to 2.17x TTM)?", from_finding_id: "C07"}
+  - {q: "RQ38: Was the 13-Oct-2026 National Court judgment delivered, deferred or reserved; Reg 30 disclosure within 24 hours (yes/no)?", from_finding_id: "C08"}
+  - {q: "RQ39: Split the 206.80 Cr QoQ parent PAT rise into Digital loss cut, cost savings, FX and other (Rs).", from_finding_id: "C09"}
+  - {q: "RQ40: AI platform paying customers, Q2 revenue, and share from Tata group (related-party) companies?", from_finding_id: "C10"}
+  - {q: "RQ41: Commotion Q2 FY27 revenue and EBITDA or PAT, and organic Digital growth, reported and cc, on the Q2 FY26 perimeter?", from_finding_id: "C11"}
+  - {q: "RQ42: Order book value or YoY growth at 30-Sep-2026; what Q3 FY27 cc Data growth shows the 'one more quarter' conversion: double digit (C-L227) or any step-up from ~6%? (loop 2)", from_finding_id: "C12"}
+  - {q: "RQ43: Internal AI transformation: headcount change, restructuring charge, period; will charges stay in exceptional as 'one-time'?", from_finding_id: "C13"}
+  - {q: "RQ44: Media 'Olympics next year': LA 2028 or another event; revenue timing; Rs impact of Middle East cancellations?", from_finding_id: "C14"}
+  - {q: "RQ45: FY27 cash capex split by undersea cable, DC-to-DC, cloud and GPU; GPU utilisation %?", from_finding_id: "C15"}
+  - {q: "RQ46: Answer in writing the 25 NOT ADDRESSED Step 8.5 questions (Q2, Q4-Q24, Q26, Q27, Q31) and open parts of the 4 PARTIALLY rows (Q1, Q3, Q25, Q29).", from_finding_id: "C19"}
+  - {q: "RQ47: Define Q2 FCF 212 Cr; Q1 FCF and Q2 CFO on the same definition; basis of 72% OCF conversion and ROCE 15.9%?", from_finding_id: "C01"}
 monitorables:
-  - {item: "National Court VAT judgment outcome (365.80 Cr)", implied_date: "scheduled 2026-10-13; disclosure by Q3 FY27 results", source_ref: "L572; R1558; R-A3-08"}
-  - {item: "Q2 FY27 concall transcript for Role 5", implied_date: "call held 2026-10-15; transcript pending", source_ref: "P-L33"}
+  - {item: "National Court VAT judgment outcome (365.80 Cr); not mentioned on the call", implied_date: "scheduled 2026-10-13; disclosure by Q3 FY27 results", source_ref: "L572; R1558; R-A3-08; C08"}
+  - {item: "Q2 FY27 concall transcript for Role 5", implied_date: "completed 2026-10-18 (Role 5 run)", source_ref: "P-L33; C-L23"}
   - {item: "Ridhi Sood takes office as Company Secretary", implied_date: "2026-11-01", source_ref: "L72; L1542; R1585"}
   - {item: "Kaleyra, Inc. transfer to TCNL completes", implied_date: "ND; check Q3 FY27 consolidation list", source_ref: "L45-53; L1519-1524; R-A3-10"}
   - {item: "Q3 FY27 consolidated Op EBITDA margin vs 21.0% bull / 19.5% bear", implied_date: "quarter end 2026-12-31; filing date ND", source_ref: "Step 8C"}
-  - {item: "Digital portfolio breakeven", implied_date: "ND", source_ref: "P-L132; P-A3-04"}
+  - {item: "Digital portfolio EBITDA breakeven ('hopefully in the coming quarters')", implied_date: "ND; earliest Q3 FY27", source_ref: "P-L132; P-A3-04; C-L415; C05"}
   - {item: "Staff cost optimisation programme end", implied_date: "ND, ongoing", source_ref: "L528-531; R-A3-11"}
   - {item: "Asset held for sale (7.40) disposal", implied_date: "ND", source_ref: "L344; L460; R-A3-01"}
   - {item: "CWIP 1,120.81 capitalisation and D&A step-up", implied_date: "ND", source_ref: "L318; R-A3-23"}
   - {item: "Fire provision true-up", implied_date: "ND", source_ref: "L541-542; R-A3-12"}
   - {item: "DoT AGR appeals at SC and TDSAT", implied_date: "ND", source_ref: "L552-559; R-A3-09"}
-  - {item: "CEO H2 FY27 momentum claim tested", implied_date: "Q3 and Q4 FY27 results", source_ref: "L1375-1376"}
+  - {item: "CEO H2 FY27 momentum claim tested", implied_date: "Q3 and Q4 FY27 results", source_ref: "L1375-1376; C-L215"}
   - {item: "DC-to-DC connectivity USD 1bn opportunity", implied_date: "ND", source_ref: "L1400"}
   - {item: "FY27 full-year cash flow (FCF; CFO/EBITDA vs FY26 92.88%)", implied_date: "year end 2027-03-31; filing date ND", source_ref: "Step 5"}
   - {item: "FY27 Annual Report: actuarial basis of Q1 OCI; entity-level subsidiary results", implied_date: "ND, after FY27 close", source_ref: "L639; R-A3-16"}
   - {item: "Five plan levers and reset baseline", implied_date: "ND", source_ref: "P-L85; P-L122-128; P-A3-07"}
+  - {item: "P1: FY27 double-digit EBITDA growth (FY27 Op EBITDA >= 5,304.71; H2 >= 2,652.69, +5.60%, reported bar; cc basis asked, RQ33; loop 2)", implied_date: "FY27 results (year end 2027-03-31)", source_ref: "C-L211; C-L456; C03"}
+  - {item: "P2: cc Data growth ('wait one more quarter'); loop 2: two readings, (A) double-digit cc from Q3 FY27 (question frame, C-L227), (B) any step-up from ~6%; separator RQ42 definition or Q3 cc print vs 10%; a ~6-10% print scores DELIVERED only under B; filed reported growth is context, not the test", implied_date: "Q3 FY27 results (quarter end 2026-12-31)", source_ref: "C-L152; C-L227; C-L234; C12"}
+  - {item: "P3: February investor call: earlier targets restated or withdrawn; business framing; AI transformation detail", implied_date: "2027-02", source_ref: "C-L213-214; C-L409; C-L416; C04"}
+  - {item: "P5: CRA settlement disclosure (amount, P&L line, cash); contingent 1,658 Cr at 31-Mar-2026", implied_date: "undated ('in due course'); Q3 FY27 results at latest [INFERENCE]", source_ref: "C-L161-163; C06"}
+  - {item: "P14: net debt / TTM Op EBITDA vs 2.17x baseline", implied_date: "each quarter; 2027-03-31", source_ref: "C-L168-171; C07"}
+  - {item: "P10: internal AI-led transformation; next restructuring charge", implied_date: "Q3 FY27 results; detail Feb-2027", source_ref: "C-L408-409; C13"}
+  - {item: "P7/P8: media cost initiatives; LA Olympics support", implied_date: "coming quarters; Olympics date PENDING LIVE VERIFICATION", source_ref: "C-L329-343; C14"}
+  - {item: "P9: more languages at the insurer client", implied_date: "'soon'", source_ref: "C-L124"}
+  - {item: "IR email: NOT ADDRESSED, EVADED and open PARTIALLY rows plus RQ32-RQ47", implied_date: "send now", source_ref: "Step 8.5D"}
 flags:
   - "PRE-THESIS: no Notion page, no Decision Status, no Spear line; /step1 gates any pipeline run"
   - "Q2 profit jump is a subsidiary event: non-parent sources supplied 185.39 (89.6%) of the 206.80 QoQ parent PAT rise (subsidiaries plus eliminations 192.08 before associates and NCI); cause undisclosed; Digital explains about half at most (R-A3-04)"
@@ -878,9 +1496,17 @@ flags:
   - "Associates 2,331.73 (68.6% of parent equity, ~140x TTM share of profit 16.66) on unreviewed numbers; 356.10 added in H1 (R-A3-07)"
   - "Press-release and deck metrics do not tie to filed lines; Digital chart framing flatters (R-A3-25, P-A3-01..05)"
   - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); tracker rows not supplied; Role 5.5 not run"
-  - "Concall held 15-Oct-2026; transcript not in run; Role 5 pending"
+  - "Role 5 addendum: concall held 15-Oct-2026; Role 5 run 2026-10-18 on a machine transcript with inferred speakers; Step 8D deferred to /fttcp and Role 1 (OR-30)"
+  - "Role 5 addendum, loop 1: currency supplies about half of Data growth (cc ~6% vs 12.2%); cc EBITDA ~10% has no stated period: about half of EBITDA growth if Q2 (21.15%), about a third if H1 (14.78%); RQ32 separates (MGMT; C02)"
+  - "Role 5 addendum, loop 1: pre-existing CRA contingent ('long-standing', 1,658 Cr at 31-Mar-2026, 48.1% of parent equity then; FY26 AR status ND) moving to an in-principle settlement; not in Q2 results notes; amount, provision, cash, timing and direction ND (C06)"
+  - "Role 5 addendum, loop 1: CFO said net debt/EBITDA 'held steady' this quarter: UNVERIFIABLE (30-Jun-2026 comparator not filed); context 1.99x at 31-Mar-2026 to 2.17x TTM at 30-Sep-2026; fits if about 1,077 of the 1,606.60 H1 rise fell in Q1 (C07)"
+  - "Role 5 addendum, loop 1: VAT judgment unmentioned while the CRA settlement was volunteered; two readings, selective disclosure or decision still awaited (L572), RQ38 separates; of 31 filing questions 0 answered, 4 partially, 2 evaded, 25 not addressed; bear answer fired on 6 rows (C08, C19)"
+  - "Role 5 addendum: profit-step cause still unnamed; call credits Digital and operating leverage and says no one-offs (inferred CFO) vs filing cost reduction (C01, C09)"
+  - "Role 5 addendum, loop 1: only quantified FY27 promise is double-digit EBITDA growth; reported basis needs +5.60% in H2, cc basis about 10% cc growth ('Our focus is going to be constant currency growth', C-L232); RQ33 separates; longer-term growth deferred to Feb-2027 (C03, C04)"
+  - "Role 5 addendum, loop 1: hedge-heavy call: specificity 0.20, 16 defensive phrases; AI customer count withheld; one named AI win is a group company (C10)"
 plain_language_brief_included: true
-analyst_note: "Group numbers look strong: revenue +9.6%, Op EBITDA +21.2%, margin 21.26%. Two facts temper them. First, half the EBITDA gain is opex reduction while the network spread fell 305 bps, and non-parent sources supplied about 90% (185.39) of the QoQ parent PAT rise with no cause stated. The Digital loss cut can explain at most about 101 of the 195 QoQ subsidiary EBITDA rise unless Q1 Digital revenue exceeded Q2's, so one-off cost credits or other subsidiaries must carry the rest. Q3 margin against 21.0%/19.5% separates the readings. Second, the balance sheet weakened: net debt +16.8% in six months, debt moved into subsidiaries, FCF after lease and interest negative, dividend above H1 PAT, and 356 more into associates carried at ~140x their TTM profit share. Campaign Registry's +114% YoY rests on a weak base; H1/H1 is +56%. Cash is INDETERMINATE-WITH-DIRECTION. No thesis exists; the spear gate applies before any pipeline run."
+analyst_note: "Role 5 leaves PROCEED WITH FLAGS unchanged; loops 1 and 2 correct readings, not sums. Every backward headline on the call ties to the filing; the claims that explain the print's quality do not. Currency supplied about half of Data growth (cc ~6% vs 12.2%). The cc EBITDA 'around 10%' has no stated period: currency is about half (Q2) or a third (H1) of EBITDA growth. The FY27 double-digit promise needs +5.60% in H2 if reported, about 10% if cc (RQ33). The profit-step cause stays unnamed; the Digital-driver claim is now UNVERIFIABLE (no YoY Digital comparator). 'Held steady', capex and ROCE 15.9% are UNVERIFIABLE (filed ROCE bases 14.88% to 18.41%). 7A tally 6/2/0/13. P2 has two readings: double-digit cc from Q3 FY27, or any step-up from ~6%; RQ42 or the Q3 print against 10% separates them. The CRA contingent is long-standing; the settlement is new, direction ND. VAT silence has two readings; RQ38 separates them. Answer status 0/4/2/25 of 31; 10 rows touched; bear fired on six. WEAKENED stands. P1, P2 and P3 dated; P5 by INFERENCE. DoT: 7,844.57 less 276.68 less 54.18 = 7,513.71."
 review_path: "runs/tatacomm-q2fy27/work/review_tatacomm_q2fy27.md"
 correction_loop: 1
+role5_correction_loop: 2
 ```

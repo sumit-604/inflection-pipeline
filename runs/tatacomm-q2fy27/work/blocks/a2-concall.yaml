@@ -1,0 +1,31 @@
+stage: A2-enumerator
+company: "TATACOMM"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/tatacomm-q2fy27/work/ledger_concall_tatacomm_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 40
+  turns: 58
+  questions: 19
+  mgmt_numbers: 51
+  slides: 0
+  slide_numbers: 0
+  participants: 11
+  forward_phrases: 55
+  hedge_qualifiers: 25
+  dates: 19
+flags_raised: [REPEAT_QUESTION, SPEAKER_INFERRED, TRUNCATED_OPENING, RESTATED, UNIT_UNCLEAR, ANALYST_NUMBER, CONNECTION_LOST, NON_DISCLOSURE, SETTLEMENT_NOT_FINAL, SOURCE_PROVENANCE]
+ids_in_structured: 199
+ids_referenced: 199
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Machine transcript: all 58 turns and the speaker of Q15/Q16 (likely Sanjay Jain) are INFERRED, so turn-level attribution is soft. Q02 and Q15 openings are cut by timestamp gaps; Q04 is cut by connection loss. Repeat clusters: digital margin (Q09,Q14,Q17), AI stack (Q04,Q05,Q06), core connectivity (Q18,Q19), order book (Q01,Q03). Management numbers differ across restatements: H1 EBITDA growth 15% (R037) vs 14.8% (R025); EBITDA 1400 vs 1422 crores; ND/EBITDA '2.17F' unit unclear. CRA settlement in-principle only (R186,R188). No MGMT_ABSENCE: CEO and CFO both present."

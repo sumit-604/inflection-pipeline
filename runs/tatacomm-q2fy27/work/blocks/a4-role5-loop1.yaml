@@ -1,0 +1,55 @@
+stage: A4-analyst
+company: "TATACOMM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+scope: "Role 5 addendum, correction loop 1 (A5 Role 5 audit INCOMPLETE)"
+loop_iteration: 1
+edit_file: "runs/tatacomm-q2fy27/work/role5_parts/loop1_edits.md"
+edit_count: 77
+review_path: "runs/tatacomm-q2fy27/work/review_tatacomm_q2fy27.md"
+role4_numbers_changed: false
+docs_merged: [results, presentation, concall]
+ledger_reconciliation:
+  notes: 18
+  turns: 58
+  slides: 9
+  all_reviewed: true
+  a3_findings_incorporated: ["C01-C19 (unchanged from the Role 5 addendum)", "R-A3-01..30", "P-A3-01..11"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE ON RECORD (no Notion page); PRE-THESIS READ"
+position_branch: "8A-W"
+concall_net_impact: "WEAKENED (reasons restated: cc Data about half; profit cause unnamed; specificity 0.20 and 16 hedges; bear answer fired on 6 rows; 25 of 31 not addressed)"
+answer_status_counts: {answered: 0, partially: 4, evaded: 2, not_addressed: 25, total: 31}
+fork_outcomes: {touched_rows: 9, bear: 5, split: 1, neither: 3, bear_fired_incl_split: 6}
+filing_crosscheck_7a: {confirmed: 6, partially_confirmed: 3, contradicted: 0, unverifiable: 12}
+defensive_phrase_count: 16
+edits_by_finding:
+  F-A: [E02, E04, E06, E11, E12, E13, E18, E19, E23, E33, E60, E67, E69, E73, E76]
+  C-A: [E03, E12, E64]
+  M-A: [E02, E03, E04, E05, E06, E07, E08, E09, E10, E11, E36]
+  F-B: [E06, E15, E22, E31, E42, E49, E53, E59, E60, E63, E66, E72, E76]
+  F-C: [E51, E53, E66, E76]
+  F-D: [E52, E53, E56, E66, E76]
+  C-B: [E14, E20, E24, E31, E32, E35, E37, E39, E57, E60, E62, E70, E74, E76]
+  C-C: [E21, E30, E38, E58, E60, E62, E71, E76]
+  M-B: [E16, E23, E41, E47, E73]
+  F-F: {a: [E62], b: [E34], c: [E25, E44, E45, E46, E65, E75], d: [E28, E30], e: [E47]}
+  log: [E61, E77]
+style_applied:
+  S1: [E01, E26]
+  S2: [E29]
+  S3: [E09, E27, E28]
+  S4: [E48]
+  S5: [E50]
+  S6: [E54]
+  S7: [E55]
+  S9: [E43]
+  S12: [E17, E40, E68]
+  S13: [E24, E62]
+style_not_applied: ["S8 (CQ17 grade is a judgment; B kept)", "S10", "S11 (A1/A2 emission)", "S14 (Role 4 text not touched)"]
+verified_against: ["concall fulltext C-L38-67, C-L145-239, C-L350-459", "results fulltext L236-249, L455-459, L463, L566-575, L1366", "presentation fulltext P-L34, P-L96-107, P-L142"]
+flags: []
+plain_language_brief_included: true
+analyst_note: "All ten A5 findings are fixed through 77 anchored edits. No Role 4 number changed. Q2, Q5 and Q31 move to NOT ADDRESSED, with the definition widened to 'no requested item given' (topic touched). The recount is 0/4/2/25. The 9 rows the call touched now carry fork outcomes. The bear answer fired on 6 rows (Q1, Q2, Q3 date half, Q5, Q25, Q30). Q28 stays EVADED, quoting C-L197 and C-L211. Three 7A tags are now UNVERIFIABLE: 'held steady', capex 'trended up' and ROCE 15.9%. No quarterly comparator is filed, and the ROCE bases run from 14.88% to 18.41%. The tally is 6/3/0/12. The cc EBITDA period and the FY27 promise basis are each written as two readings. The CRA matter is reframed as pre-existing with the settlement direction ND. VAT silence gets its second reading (L572). WEAKENED stands on restated reasons. Verdict, cash class and branch are unchanged. CQ17 kept at B (S8 is a judgment)."

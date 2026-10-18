@@ -2,7 +2,7 @@
 
 Source: committed review (work/review_premierpol_q2fy27.md), A5 audit (work/audit_premierpol_q2fy27.md) and work/notion-thesis.md. No agent was re-run.
 
-1. **What the company does.** Premier Polyfilm makes PVC products at one plant in Sahibabad, near Delhi. It makes vinyl flooring, PVC sheets, pond and canal liners, and artificial leather cloth. Its main raw material is PVC resin. It has no subsidiaries, so there is one set of accounts.
+1. **What the company does.** Premier Polyfilm makes PVC products at two plants in Uttar Pradesh, Sahibabad and Sikandarabad. A third plant is coming up at Chennai. (Corrected 2026-10-18 from the Crisil rating rationale of 7 August 2026; the filing letterhead names only Sahibabad. See work/crisil_rating_2026-08-07.md.) It makes vinyl flooring, PVC sheets, pond and canal liners, and artificial leather cloth. Its main raw material is PVC resin. It has no subsidiaries, so there is one set of accounts.
 
 2. **Earlier analysis.** This is a first look, with no earlier analysis on record. There is no Notion page, no thesis, no Decision Status, no entry zone and no tripwires. So no tripwire moved, and there is no thesis to hold or break.
 

@@ -1,0 +1,41 @@
+stage: A5-adversary
+company: "AURUM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 2
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches:
+  - {metric: "1A and rule-line restated-filed-figure count (REV L1342, L569)", a4_value: "Four of the 15 (rows 4, 8, 17, 22)", recomputed: "Five of the 15 (rows 4, 7, 8, 17, 22)", source_line: "REV L539 row 7 'Amounts only (CALL L156-L157)'; RES L566-L571"}
+surviving_bear_counters:
+  - {claim: "E02/E03: lease-inclusive net debt 'down from Rs83.80 Cr at Mar-26' (REV L851, L1133)", counter: "Rs46.25 Cr of the Rs51.58 Cr ex-lease net cash rise is building-sale and Locon cash; the rest of the Rs57.70 Cr fall is Rs6.12 Cr of lease run-off; already carried at REV L331-L332, L374 and cited by the edits, so pointer only", source_line: "REV L331, L332, L374; RES L417-L441", type: "STYLE"}
+findings_by_type:
+  factual:
+    - "L2-F1: REV L1342 (E01) and the REV L569 rule-line list say four NOT ADDRESSED rows (4, 8, 17, 22) got only a restated filed figure; row 7 (REV L539) also qualifies: the call gave only the filed warrant amounts (CALL L156-L157; RES L566-L571), neither ask answered; correct count five (rows 4, 7, 8, 17, 22); no tally moves"
+  missing: []
+  contradiction: []
+  style:
+    - "L2-S1: Mar-26 comparator Rs83.80 Cr uses face lines; Mar-26 disposal group Rs40.98 Cr assets / Rs64.13 Cr liabilities unsplit (RES L426, L450); direction holds on any split (floor Rs42.82 Cr); same basis as Role 4 REV L332"
+    - "L2-S2: E02/E03 'down from Rs83.80 Cr' without the one-time attribution (Rs46.25 Cr of Rs51.58 Cr; REV L331, L374); cite to REV L332 carries it"
+    - "L2-S3: 6A (REV L1078) quotes 'effectively debt-free' bare in the tone table; optional pointer to 7A row 10"
+    - "Carried, not applied by A4: L1-S1, L1-S2, L1-S3, L1-S4, L1-S6, L1-S7, L1-S8; run-1 S3, S4, S6 row 21"
+loop_back_to: "A4"
+gap: "OPEN ITEM, flag only: loop 2 was final and no loop remains. L2-F1 FACTUAL at REV L1342 and REV L569: change 'Four of the 15 (rows 4, 8, 17, 22)' to 'Five of the 15 (rows 4, 7, 8, 17, 22)', and the rule-line list '(rows 4, 8, 17, 22)' to '(rows 4, 7, 8, 17, 22)'. Row 7 (REV L539) got only the filed warrant amounts (CALL L156-L157; RES L566-L571), with neither ask answered. No tally, grade, flag or verdict moves. L1-C1 and L1-M1 are CLOSED."
+open_items:
+  - {id: "L2-F1", type: "FACTUAL", where: "REV L1342, REV L569", fix: "Five of the 15 (rows 4, 7, 8, 17, 22)", owner: "A4", disposition: "flag; no loop remains"}
+closed_this_loop: ["L1-C1 (CONTRADICTION)", "L1-M1 (MISSING)", "L1-S5 (STYLE, applied)", "L1-S9 (STYLE, applied)"]
+style_notes:
+  - "L2-S1 Mar-26 net-debt comparator basis (disposal group RES L426, L450)"
+  - "L2-S2 one-time attribution of the net-debt fall (REV L331, L374)"
+  - "L2-S3 6A REV L1078 pointer to 7A row 10"
+  - "Carried: L1-S1, L1-S2, L1-S3, L1-S4, L1-S6, L1-S7, L1-S8; run-1 S3, S4, S6 row 21"
+analyst_note: "Loop 2 closes both loop-1 findings. 1A now matches the rule line at L569, so L1-C1 is closed. Row 10 and the Step 2 net-debt cell now carry the lease-basis qualifier, so L1-M1 is closed. I recomputed every changed figure from the results fulltext. Cash, bank balances and current investments are Rs191.61 Cr. Leases are Rs216.91 Cr and borrowings Rs0.80 Cr, so net debt including leases is Rs26.10 Cr. Mar-26 is Rs83.80 Cr, and the one-time other income is Rs7.41 Cr. All five edits replace text in place inside Role 5 or brief 1A. No Role 4 number, grade, tally or flag moved. One changed count fails the recount. Row 7 (L539) got only the warrant amounts, and the filing carries them (RES L566-L571). Under A4's own rule that makes five restated-figure rows, not four. The fix is a text change at L1342 and L569, and no tally moves. Loop 2 was final, so this stays an open FACTUAL item for the operator. Three STYLE notes are logged. AVOID, 8A-W and PROCEED WITH FLAGS stand."

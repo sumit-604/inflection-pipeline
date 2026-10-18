@@ -47,3 +47,24 @@ See review section STEP 5.5C for the three new signal candidates. Not written.
 - New: reconcile goodwill baseline (Rs174.25 Cr vs audited Rs207.17 Cr) before item 7 is scored.
 - Verify both auditor UDINs on the ICAI portal from the exchange copy (OCR-illegible).
 - Obtain the H1 Reg 23(9) RPT disclosure (filed with results, 16-Oct) to close the AREDL loan test.
+
+---
+
+## ROLE 5 ADDENDUM (2026-10-18): NOT WRITTEN; awaiting operator batch approval
+
+Prepend this Key Notes line too (pipes escaped), after the 17-Oct line:
+
+```
+18-Oct-2026 \| Q2 FY27 CONCALL (16-Oct call, the company's "22nd earnings call"; machine transcript of company recording; Role 5 A1-A5, 2 loops, final A5 INCOMPLETE on 1 minor open item L2-F1, flagged). Verdict PROCEED WITH FLAGS unchanged; AVOID case MAINTAINED, BUY-break path WEAKENED. SM-REIT not mentioned: TRIGGER 3 NOT DETERMINABLE (about 14 calls since the Jun-2023 registration on Reading A = FIRED [INFERENCE]; 1 evidenced since the trigger was set on Reading B = NOT FIRED); operator to rule the count start date. Housing.com: management declined its base numbers (first evasion on record); break-even internal 4-6 qtrs (~Q2-Q4 FY28), after the earliest re-entry pair; Rs120 Cr cost cut, Rs150 Cr revenue add. Call vs filing: other income "mainly treasury" vs H1 >=51.9% one-time; "fourth consecutive profitable quarter" true only on PBT (Q1 FY27 continuing PAT Rs(0.34) Cr); "effectively debt-free" holds ex-leases only (net debt incl. leases Rs26.10 Cr). Notion goodwill baseline (Rs174.25 Cr = 61% of NW) is stale: equity is Rs1,019.64 Cr. Of 22 filing questions: 0 answered, 7 partial, 1 evaded part, 15 not addressed. Decision Status AVOID unchanged (operator-only).
+```
+
+insert_content additions: the merged review runs/aurum-q2fy27/work/review_aurum_q2fy27.md now carries "## ROLE 5: CONCALL ANALYSIS (Q2 FY27 call, 16-Oct-2026; machine transcript)" and "(Role 5 addendum)" passages; insert the Role 5 section and the updated Step 8.5 table (ANSWER STATUS column, rows 23-35). A3 concall forensics: work/forensics_concall_aurum_q2fy27.md.
+
+Role 5 audit verdict block:
+```
+Role 5 A5 verdict: INCOMPLETE on 1 minor open item after loop 2 of 2 (operator rule: no third loop, close with open items flagged).
+OPEN ITEM L2-F1 (FACTUAL, minor, owner A4): review brief 1A (REV L1342) and the Step 8.5 rule line (REV L569) say four NOT ADDRESSED rows (4, 8, 17, 22) got only a restated filed figure; row 7 also qualifies (the call gave only the filed warrant amounts). Correct text: "Five of the 15 (rows 4, 7, 8, 17, 22)". No tally, grade, flag or verdict moves.
+Run 1: 3 MISSING, 2 FACTUAL (+ hedge count) -> closed in loop 1. Loop 1: 1 CONTRADICTION, 1 MISSING -> closed in loop 2. Coverage 341/341 concall rows, A3C-01 to A3C-31 cited.
+```
+New operator rulings needed: (a) trigger 3 count start date; (b) re-base the goodwill baseline for watchlist item 7 and trigger 4 (audited Mar-26 Rs207.17 Cr; Sep-26 Rs549.45 Cr provisional).
+Source caveat: machine transcript of the company's own recording, speakers inferred; on any number conflict the filing wins.

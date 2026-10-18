@@ -1,0 +1,30 @@
+stage: A1-extractor
+company: "AURUM"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 6   # 10-minute time blocks (plain-text machine transcript)
+formfeed_count: 0
+line_count: 417
+unit_convention: "Crores (lakhs also spoken)"
+conversion_factor_to_cr: "Crores x1; Lakhs x0.01"
+text_layer_present: true   # N.A., plain text input
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\aurum-q2fy27\extracted\aurum-concall-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\aurum-q2fy27\extracted\aurum-concall-q2fy27-structured.md"
+structured_counts:
+  number: 185
+  entity: 43
+  forward: 54
+  date: 23
+  qualifier: 36
+structured_id_range: "R001-R341"
+turns: 65          # T001-T065
+questions: 19      # Q01-Q19 (11 questioners queued, 10 heard)
+gate_a1: pass
+gap_note: ""

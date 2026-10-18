@@ -31,3 +31,24 @@
 - A4 cumulative tokens after loop 2: 376,731 (loop-2 delta ~53,978).
 - TOKEN CORRECTION: subagent_tokens on a resumed agent is that invocation's own cost (it re-reads full context), not cumulative. Additive figures: A2 results 81,437 + 82,482 (loop 1); A4 252,276 + 322,753 (loop 1) + 376,731 (loop 2); A5 305,862 + 404,733 (loop 1) + loop 2 pending.
 - Close-out 2026-10-17: A5 COMPLETE (loop 2). notion-payload.md written (gate not waited per operator; batch approval later). session-cost.md total_run_tok 3,071,525. Temp OCR rasters and scratch dirs (work/a1res, work/a2-*, work/*.jpg, work/*.txt) left uncommitted.
+- ROLE 5 ADDENDUM 2026-10-18 (operator request): checkout guard PASSED (fetch ok, diff empty). Concall source is a MACHINE transcript of the company recording (faster-whisper medium.en, local CPU), not an official transcript; speakers unlabelled; names corrected against filings. Doc class: concall.
+- ORCHESTRATOR DECISION (mechanical): input is .txt, not PDF, so the A1 pdffonts gate is N.A.; A1 coverage unit = 10-minute time block ("page"). Every finding from the concall carries the machine-transcript caveat; filings win on any number conflict.
+- Role 5 runs as an addendum: A1-A3 on the transcript, then A4 merges a Role 5 section into the existing review, then A5 re-audits. Loop counts for this addendum are logged separately from the Role 4 run.
+- A1 concall GATE PASS 6/6 time blocks, R001-R341, T001-T065, Q01-Q19 (10 of 11 questioners heard; Yash Sajpal audio lost). Housing.com MAU conflict in call (45 mn L90 vs 12 mn L340) captured.
+- A1 concall tokens 76,807, wall 182 s.
+- A2 concall GATE PASS 341/341 IDs; 65 turns, 19 questions (10 of 11 heard), 179 mgmt numbers. In-call conflicts flagged (MAU 45 vs 12 mn; occupancy 82 vs 88%; PBT margin bps; carry-forward losses). CFO listed, no inferred turn.
+- A2 concall tokens 70,986 < A1 76,807 (cost check pass).
+- A3 concall GATE PASS (17/17; 7 FS, 16 AMB, 4 CN, 4 NF). SM-REIT never mentioned (trigger 3 test for A4). Silence: 9 checklist items -> 5 not addressed; review Q6 (Rs9.52 Cr borrower / AREDL) and Q8 silent.
+- A3 concall tokens 151,371, wall 548 s.
+- A4 Role 5 (rerun) tokens 342,366, wall 1,527 s. Wrote role5_parts/ (01a-01d, 02, 03 spec U1-U21). Trigger 3 NOT DETERMINABLE (count basis: operator ruling). A3C-15 resolved: Notion goodwill baseline stale.
+- ORCHESTRATOR MECHANICAL MERGE 2026-10-18: applied U1-U21g (27 ops) with a strict-anchor script; review 770 -> 1,528 lines. Post-merge checks 1-5 pass (60 addendum marks; no-concall phrases gone; order ok; Step 8.5 35 rows; one YAML block parses). Diff: only spec-named lines replaced. Pre-merge copy kept uncommitted.
+- A5 Role 5 audit: INCOMPLETE (M1-M3 MISSING; F1-F2 FACTUAL; trigger-3 tags STYLE). Gate 0, coverage, arithmetic pass; Role 4 ties. AVOID / 8A-W / PROCEED WITH FLAGS unchanged. Loop 1 (Role 5) to A4.
+- A5 Role 5 audit tokens 333,089, wall 1,216 s.
+- Role 5 LOOP 1: fresh A4 wrote loop1_edits.md (53 edits); orchestrator applied all 53 (strict anchors). Tally 0/7/1/15; 7A 24/8/3/7/1 on 43 claims (row 43 added by M3). Hedges 29.
+- Role 5 loop-1 A4 tokens 190,975, wall 483 s.
+- Role 5 LOOP 1 RE-AUDIT: INCOMPLETE (all 6 run-1 items CLOSED; new L1-C1 CONTRADICTION 'two of 15' -> four; L1-M1 MISSING lease-inclusive net debt). LOOP 2 under the operator standing rule (final).
+- Role 5 loop-1 re-audit tokens 292,896, wall 976 s.
+- Role 5 LOOP 2: fresh A4 wrote loop2_edits.md (5 edits); orchestrator applied all 5 (strict anchors). 6A L1078 bare 'effectively debt-free' left (outside gap). Final re-audit (closure only) next.
+- Role 5 loop-2 A4 tokens 62,580, wall 121 s.
+- Role 5 loop-2 re-audit tokens 177,342, wall 652 s. FINAL: INCOMPLETE on 1 open item L2-F1 (FACTUAL, minor: restated-figure rows should be five (4, 7, 8, 17, 22), not four; REV L1342 and L569; no tally moves). Closed under the no-third-loop rule with L2-F1 flagged.
+- Note: the first A4 Role 5 run died in a session restart and wrote nothing; its tokens are ND.

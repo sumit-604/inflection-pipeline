@@ -1,0 +1,48 @@
+stage: A4-analyst
+company: "AURUM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+scope: "Role 5 addendum, correction loop 1 (A5 audit work/audit_aurum_q2fy27_role5.md, verdict INCOMPLETE)"
+loop_iteration: 1
+docs_merged: [results, presentation, pressrelease, concall]
+edit_file: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\role5_parts\\loop1_edits.md"
+edit_count: 53
+edits_by_finding:
+  M1: [E15, E29, E39, E44, E46]
+  M2: [E02, E11, E24, E38, E44, E50]
+  M3: [E06, E16, E18, E36, E48]
+  F1: [E03, E05, E08, E12, E44, E45, E51]
+  F2: [E07, E13, E17, E20, E21, E28, E31, E33, E34, E37, E40, E41, E47, E52]
+  F3: [E14, E25, E26, E27, E53]
+  S1: [E01, E10, E22, E44, E49]
+  S2: [E30]
+  S5: [E32]
+  S6: [E04]
+  S7: [E42]
+  S8: [E09, E12, E19, E43, E51]
+  S9: [E23, E35]
+style_not_applied: ["S3 (A1/A2 index hygiene; not an A4 item)", "S4 (A3C-25 body anchor; needs the A3 file re-read, left for a later pass)", "S6 row 21 (kept PARTIALLY (indirect); A5 counts it defensible)"]
+ledger_reconciliation:
+  notes: 34
+  turns: 65
+  slides: 42
+  all_reviewed: true
+  a3_findings_incorporated: "unchanged from the Role 5 addendum (A3C-01 to A3C-31 plus the Role 4 set)"
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "AVOID"
+position_branch: "8A-W"
+role4_tables_changed: false
+revised_counts:
+  step85_rows_1_22: {answered: 0, partially: 7, evaded_components: 1, not_addressed: 15}
+  step7a: {claims: 43, confirmed: 24, partially_confirmed: 8, contradicted: 3, unverifiable: 7, not_scored: 1}
+  hedges_6c: {we_believe: 16, other: 12, offline: 1, total: 29, total_if_L394_excluded: 28}
+verified_against:
+  - "RES L325 (Q1 FY27 continuing PAT (34) lakh = Rs(0.34) Cr), L337 (owners 5 lakh), L327 (Q2 FY26 discontinued PBT (57) lakh), L384/L390 (Distribution assets 25,159 to 41,133; liabilities 7,058 to 34,431 lakh), L464/L501-L502 (FY26 2,686 / 8,891 / 148 lakh), L488, L559-L561, L603"
+  - "CALL L45-L46, L60-L61, L122-L124, L130, L134, L145, L149, L172, L176, L222, L234-L238, L255-L257, L266-L267, L273-L274, L321, L323, L332, L382, L385, L394"
+  - "DECK L112, L164-L165, L169, L177-L178, L187; PR L80; concall structured R145"
+flags_changed: ["FLAG 17 tier tags", "FLAG 19 Housing.com earnings negative", "FLAG 20 tally 0/7/15", "FLAG 21 beds removed from conflicts", "FLAG 26 hedges 29"]
+plain_language_brief_included: true
+analyst_note: "Loop 1 fixes A5 M1-M3 and F1-F3 by 53 anchored edits; no Role 4 table or number moves. M1: the profit streak holds only on PBT. Q1 FY27 continuing PAT was Rs(0.34) Cr (RES L325), and the deputy CFO calls Q2 a return to profit. M2: management's break-even guidance makes Housing.com loss-making now. Row 2's bear fork is recorded as resolved, and price / PAT on Rs458.06 Cr is not meaningful (negative). M3: the deck defines revenue per team member (DECK L187) and gives five business values but no group figure. Q28 is narrowed and 7A row 43 is added as UNVERIFIABLE. Because of row 43, the 7A tally is 24/8/3/7/1 on 43 claims, not A5's pre-M3 24/8/3/6/1 on 42. F1: rows 4 and 22 move to NOT ADDRESSED (7/15). F2: row 6 is PARTIALLY, row 32 UNVERIFIABLE, row 37 not scored, three narrative contradictions. F3: 29 hedges. Style items S1, S2, S5-S9 are applied; S3 and S4 are not. AVOID, 8A-W and PROCEED WITH FLAGS are unchanged."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\review_aurum_q2fy27.md"

@@ -1,0 +1,98 @@
+stage: A4-analyst
+company: "AURUM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+role: "Role 5 addendum (Quarterly Concall Analysis Protocol v1.1)"
+merge_state: "MERGED 2026-10-18 by the orchestrator (scratchpad merge_ops.py; U1-U21g each anchor unique at apply time; post-merge checks 1-5 pass)"
+docs_merged: [results, presentation, pressrelease, concall]
+ledger_reconciliation:
+  notes: 34
+  turns: 65
+  slides: 42
+  all_reviewed: true
+  concall_rows_reviewed: "341 of 341 (R001-R341); 19 questions; orphan IDs none; gate_a2 pass"
+  a3_findings_incorporated: [A3C-01, A3C-02, A3C-03, A3C-04, A3C-05, A3C-06, A3C-07, A3C-08, A3C-09, A3C-10, A3C-11, A3C-12, A3C-13, A3C-14, A3C-15, A3C-16, A3C-17, A3C-18, A3C-19, A3C-20, A3C-21, A3C-22, A3C-23, A3C-24, A3C-25, A3C-26, A3C-27, A3C-28, A3C-29, A3C-30, A3C-31]
+  role4_findings_carried: "58 IDs listed in the review YAML (unchanged)"
+protocol_verdict: "PROCEED WITH FLAGS"
+protocol_verdict_changed_by_role5: false
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "AVOID"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap_pct: 60.7}
+  - {period: "Q1 FY27", gap_pct: -117.5}
+  - {period: "Q2 FY26", gap_pct: -626.2}
+  - {period: "H1 FY27", gap_pct: -14.3}
+  - {period: "H1 FY26", gap_pct: -891.6}
+  - {period: "FY26", gap_pct: -302.3}
+role5:
+  call_date: "2026-10-16"
+  source_nature: "machine transcript (faster-whisper); speakers inferred; filing wins on number conflicts"
+  prior_concall_log: "ND (prior log not passed); this call opens the baseline promise log; chairman calls it the 22nd earnings call (CALL L34)"
+  baseline_commitments_logged: 22
+  credibility_ratio: "ND (0 points / 0 scoreable; 22 UNCLEAR)"
+  management_grade: "ND"
+  role1_track_record_input: "ND (no Role 5 history; first scored at Q3 FY27 call)"
+  archetype_6e: "NOT CLASSIFIABLE (specificity 0.31 statement basis, 0.59 commitment basis; credibility ND); watch OVERPROMISER"
+  hedge_count_6c: 27
+  qa_grades: {A: 2, B: 8, C: 6, D: 2, E: 0, not_graded: 1}
+  claims_vs_filing_7a: {confirmed: 25, partially_confirmed: 7, contradicted: 5, unverifiable: 5}
+  step85_rows_1_22_answer_status: {answered: 0, partially: 9, evaded_components: 1, not_addressed: 13}
+  q1fy27_questions_answer_status: {answered: 0, partially: 4, evaded_components: 1, not_addressed: 6}
+  trigger_1: "FIRED (unchanged; Role 4 Reading A)"
+  trigger_3: "NOT DETERMINABLE: FIRED on Reading A (count from Jun-2023 registration, about 14 calls [INFERENCE]); NOT FIRED on Reading B (count from trigger date, 1 evidenced, at most 2). Separating observation: operator's start date for the count. AVOID unchanged either way."
+  a3c15_resolution: "Call 1,020 Cr = filed total equity incl. NCI Rs1,019.64 Cr vs Rs510.06 Cr (RES L433). Gap is in the Notion line: Rs174.25 Cr = 61% of NW implies ~Rs285.66 Cr; reconstructs to ~Rs280.91 Cr pre-FY26 [INFERENCE]. Item 7 and trigger 4 baselines stale."
+  net_concall_impact: "MAINTAINED (AVOID case); BUY-break path WEAKENED"
+  position_decision: "AVOID, no change; Decision Status not written"
+  peer_concalls: "UNVERIFIABLE this run (not passed)"
+  step_8d: "DEFERRED to /fttcp and Role 1 (OR-30); pillar facts flagged"
+questions_for_management:
+  - {q: "Housing.com target metric (EBITDA or PBT before/after PPA amortisation), start quarter of the 4-6 / 6-8 quarter count, FY26 and Q2 FY27 base result", from_finding_id: "A3C-03"}
+  - {q: "Rs120 Cr Housing.com cut: annual or cumulative; one-time cost, quarter and P&L line; pre-deal cost base", from_finding_id: "A3C-04"}
+  - {q: "Q3 FY27 deck yes/no: Housing.com line inside Distribution; organic vs synergy slide; Distribution YoY ex-PropTiger and ex-Housing.com; current KPIs kept", from_finding_id: "A3C-05, A3C-06, A3C-27"}
+  - {q: "Where is H1 FY27 lease interest paid; does the Rs47.77 Cr lease repayment line include it", from_finding_id: "A3C-08"}
+  - {q: "KuberX legal entity and segment; gross vs net take rate; Q2 revenue; Oct and Nov disbursals; replaces SM-REIT as Capital engine?", from_finding_id: "A3C-09, A3C-22"}
+  - {q: "Define revenue per team member (revenue and headcount basis); Q2 and Q3 values with and without Housing.com", from_finding_id: "A3C-10"}
+  - {q: "Locon Rs1,020 Cr losses: type, expiry, change-of-ownership limits; merger plan; unrecognised DTA at 30-Sep-2026", from_finding_id: "A3C-12"}
+  - {q: "Goodwill by CGU at Mar-26 (Rs207.17 Cr) and Sep-26 (Rs549.45 Cr); amount in negative-net-worth subsidiaries; Locon goodwill in Distribution or unallocated", from_finding_id: "A3C-15, A3C-16"}
+  - {q: "Housing.com MAU vs visits with source and period; competitor basis for 1.2x", from_finding_id: "A3C-18"}
+  - {q: "88% occupancy target date; beds and signed units by brand Q2 FY26, Q1 FY27, Q2 FY27; Mar-2027 bed target", from_finding_id: "A3C-19"}
+  - {q: "Confirm the +1270 bps PBT margin base includes discontinued operations", from_finding_id: "A3C-20"}
+  - {q: "Integration subcommittee members, independents, terms of reference, first report date, formal status", from_finding_id: "A3C-23"}
+  - {q: "Calls since June 2023 SM-REIT registration that stated a launch date or AUM; FY27 scheme plan and entity", from_finding_id: "A3C-26"}
+  - {q: "Existing Step 8.5 rows 1, 4, 6, 7, 8, 9, 14, 16, 17 also carry concall findings A3C-02, 14, 16, 29, 30, 13, 27, 07, 28, 22", from_finding_id: "A3C-02, A3C-07, A3C-13, A3C-14, A3C-16, A3C-22, A3C-27, A3C-28, A3C-29, A3C-30"}
+monitorables:
+  - {item: "Investor connect next week; put Q2, Q6, Q8, Q23 live", implied_date: "~2026-10-23 (possibly misheard)", source_ref: "CALL L413"}
+  - {item: "Q3 FY27 deck: Housing.com line in Distribution; organic vs synergy slide; KPIs kept; beds vs 16,502", implied_date: "Q3 FY27 results, by ~2027-02-14", source_ref: "CALL L172, L294-L295, L308-L311; DECK L169"}
+  - {item: "Rs120 Cr Housing.com cut visible; one-time cost", implied_date: "Q3 FY27 results", source_ref: "CALL L317-L321"}
+  - {item: "Occupancy 88% target (82% at Q2)", implied_date: "Dec-2026 or Mar-2027 (undefined)", source_ref: "CALL L276-L277; DECK L173"}
+  - {item: "Synergies visible in two quarters", implied_date: "by Q4 FY27 results, ~2027-05-30", source_ref: "CALL L307-L308"}
+  - {item: "Revenue per team member up QoQ; 56 lakh", implied_date: "each quarter; 56 lakh by 2027-03-31", source_ref: "CALL L69, L323"}
+  - {item: "KuberX run rate toward Rs25,000 Cr", implied_date: "each quarter; target Q2-Q4 FY28", source_ref: "CALL L212-L216, L339"}
+  - {item: "Housing.com break-even internal 4-6 / external 6-8 qtrs; profitable 12-18 months; +Rs150 Cr revenue", implied_date: "Q2-Q4 FY28 internal; to Q2 FY29 external", source_ref: "CALL L61, L234-L239, L321"}
+  - {item: "Locon tax-loss opinion; DTA recognition", implied_date: "undated", source_ref: "CALL L378-L385"}
+  - {item: "Rent and education payments restart", implied_date: "undated", source_ref: "CALL L341-L342"}
+  - {item: "Channel partners 50,000; developers 4,000+", implied_date: "undated", source_ref: "CALL L361, L363"}
+  - {item: "No inorganic deal in the short run", implied_date: "undated (standing)", source_ref: "CALL L333-L334"}
+  - {item: "Operator ruling on trigger 3 count basis", implied_date: "pending", source_ref: "Role 5 Step 8C"}
+  - {item: "Q3 FY27 concall: first scored credibility ratio and archetype", implied_date: "~2027-02, with Q3 results", source_ref: "Role 5 Step 3B"}
+flags:
+  - "FLAG-TRIGGER-3-COUNT: SM-REIT not mentioned on the 22nd call; count basis NOT DETERMINABLE (about 14 calls since Jun-2023 on Reading A, FIRED; 1 evidenced on Reading B, NOT FIRED); operator rules; AVOID unchanged"
+  - "FLAG-OI-CLAIM-CONTRADICTED: 'mainly treasury and deposit income' (CALL L138) vs H1 >=51.9% one-time, 28.1% treasury and deposit (RES L466-L473)"
+  - "FLAG-HOUSING.COM BREAK-EVEN AFTER RE-ENTRY PAIR: internal 4-6 qtrs (~Q2-Q4 FY28), external 6-8 qtrs; base declined; Rs120 Cr cut with no stated one-time cost"
+  - "FLAG-CONCALL NON-ANSWERS: Step 8.5 rows 1-22: 0 answered, 9 partial, 13 not addressed; Q1 list: 0 / 4 / 6; Housing.com base EVADED"
+  - "FLAG-CALL-VS-DECK CONFLICTS: operating leverage vs falling QoQ margin; beds +20-30% vs deck -14%; 45m visits relabelled as MAU"
+  - "FLAG-LEASE-CASH LINE: Rs47.77 Cr 'net of interest' repayment, Rs0.02 Cr interest paid, Rs13.23 Cr finance cost added back; lease-cover claim holds by Rs4.31 Cr on one reading only"
+  - "FLAG-TAX LOSSES: Locon Rs1,020 Cr losses, use 'yet to be seen'; later DTA recognition would be non-cash PAT"
+  - "FLAG-NOTION GOODWILL BASELINE STALE (A3C-15): call 1,020 Cr = filed total equity Rs1,019.64 Cr; Notion 61%-of-NW line implies ~Rs285.66 Cr, pre-FY26 basis [INFERENCE]"
+  - "FLAG-KUBERX: 10.4x run-rate target in 4-6 qtrs on one month; entity and segment unnamed"
+  - "FLAG-HEDGE-HEAVY CALL: 27 defensive phrases; specificity 0.31; credibility ND; archetype NOT CLASSIFIABLE"
+  - "FLAG-MACHINE TRANSCRIPT: speakers inferred; CFO listed but silent; filing wins on every number conflict"
+plain_language_brief_included: true
+analyst_note: "Role 5 addendum on a machine transcript; the filing wins on every conflict. Every statement figure read on the call ties to the filing. The failures sit in narrative claims: other income 'mainly treasury' (H1 filing: at least 51.9% one-time), operating leverage (QoQ margin fell), bed growth (deck -14%), and MAU (the deck says 45m visits). A3C-15 resolves: the call's 1,020 Cr is total equity incl. NCI (RES L433); the Notion 61%-of-NW line implies about Rs286 Cr and reconstructs to a pre-FY26 balance sheet [INFERENCE], so the item 7 and trigger 4 baselines are stale. Trigger 3: the chairman calls this the 22nd call, and about 14 fall after the June 2023 registration on a one-call-a-quarter inference. The trigger's start date is not in the record, so FIRED vs NOT FIRED needs an operator ruling; AVOID holds either way. A3C-26's 'at least 6' was not carried. Housing.com break-even on management's internal tier lands after the earliest re-entry pair, which weakens the BUY-break path. No credibility ratio exists yet; the 22-item baseline log is first scored at the Q3 FY27 call. Verdict unchanged: PROCEED WITH FLAGS."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\review_aurum_q2fy27.md"
+parts_dir: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\role5_parts"
+parts: [01a_role5_steps0-2.md, 01b_role5_steps3-4.md, 01c_role5_steps5-7.md, 01d_role5_step8-verdict.md, 02_step85_replacement.md, 03_inplace_updates.md]
+merge_spec_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\role5_parts\\03_inplace_updates.md"
+merge_order_note: "Apply U1-U21 in order. U7 and U8 anchors are unique in the original file, but the U14 Role 5 text repeats their prefixes (Step 8B and 8C rows), so U7 and U8 must run before U14."

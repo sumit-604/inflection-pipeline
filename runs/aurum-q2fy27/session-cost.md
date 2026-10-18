@@ -49,3 +49,25 @@ Accounting note: a resumed agent (SendMessage) reports its own invocation cost, 
 - Resume re-reads drive loop cost: A5 re-audits cost 405k and 458k against a 306k first audit. A scoped re-audit (loop 2) still cost more than the full first audit, because the resumed context is re-read. A fresh A5 given only the review, the audit file and the changed-line list would likely be cheaper.
 - A1-results ran OCR on pages 5-20 (zero-character scans): 178k, the largest A1.
 - Change that would make the next run cheaper: send loop fixes to a fresh agent with the audit file path and the exact line list, not a resumed agent carrying its full prior context.
+
+## ROLE 5 ADDENDUM (2026-10-18): concall machine transcript, A1-A5 plus correction loops
+
+Source: faster-whisper medium.en transcript of the company recording (local CPU; transcription itself not in subagent tokens). Figures from each task notification; fresh agents throughout.
+
+| agent | model | total_tok | wall | run# |
+|---|---|---|---|---|
+| A1-concall | claude-sonnet-5-5 | 76,807 | 182 s | R5-1 |
+| A2-concall | claude-sonnet-5-5 | 70,986 | 143 s | R5-1 |
+| A3-concall | claude-opus-5-5 | 151,371 | 548 s | R5-1 |
+| A4-role5 (died in restart, no output) | claude-opus-5-5 | ND | ND | R5-1 (mechanical failure) |
+| A4-role5 rerun (parts + merge spec; orchestrator spliced) | claude-opus-5-5 | 342,366 | 1,527 s | R5-1r |
+| A5-role5-audit | claude-opus-5-5 | 333,089 | 1,216 s | R5-1 |
+| **Role 5 base subtotal (known)** | | **974,619** | | |
+| R5-LOOP1-A4-fix (53 edits) | claude-opus-5-5 | 190,975 | 483 s | R5 loop 1 |
+| R5-LOOP1-A5-reaudit | claude-opus-5-5 | 292,896 | 976 s | R5 loop 1 |
+| R5-LOOP2-A4-fix (5 edits; standing rule) | claude-opus-5-5 | 62,580 | 121 s | R5 loop 2 |
+| R5-LOOP2-A5-reaudit (final) | claude-opus-5-5 | 177,342 | 652 s | R5 loop 2 |
+| **Role 5 loops subtotal** (iterations: 2) | | **723,793** | | |
+| **Role 5 addendum total (known)** | | **1,698,412** | | |
+
+**total_run_tok (Role 4 + Role 5) = 4,769,937 known** (Role 4 3,071,525 + Role 5 1,698,412; one Role 5 row ND). Role 5 loop_iterations: 2. Final A5: INCOMPLETE on one minor open item (L2-F1), closed under the no-third-loop rule.

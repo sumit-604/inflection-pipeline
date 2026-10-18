@@ -1,0 +1,40 @@
+stage: A4-analyst
+company: "AURUM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+scope: "Role 5 addendum, correction loop 2, final (A5 LOOP 1 RE-AUDIT, work/audit_aurum_q2fy27_role5.md; a5-role5.yaml gap)"
+loop_iteration: 2
+docs_merged: [results, presentation, pressrelease, concall]
+edit_file: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\role5_parts\\loop2_edits.md"
+edit_count: 5
+edits_by_finding:
+  L1-C1: [E01]
+  L1-M1: [E02, E03]
+  L1-S5: [E04]
+  L1-S9: [E05]
+style_not_applied: ["L1-S1 Q28 cells and REV L1402 wording", "L1-S2 Step 1 (e) anchor and tag", "L1-S3 Role 4 pointers (Role 4 text; out of scope)", "L1-S4 Role 4 REV L477 (Role 4 text; out of scope)", "L1-S6 Q10 cross-reference", "L1-S7 row 25 inference tag", "L1-S8 Key Notes clause order", "Run-1 S3, S4, S6 row 21 carried"]
+ledger_reconciliation:
+  notes: 34
+  turns: 65
+  slides: 42
+  all_reviewed: true
+  a3_findings_incorporated: "unchanged from the Role 5 addendum (A3C-01 to A3C-31 plus the Role 4 set)"
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "AVOID"
+position_branch: "8A-W"
+role4_tables_changed: false
+grades_tallies_flags_changed: false
+revised_counts:
+  step85_rows_1_22: {answered: 0, partially: 7, evaded_components: 1, not_addressed: 15, not_addressed_restated_figure_only: 4}
+  step7a: {claims: 43, confirmed: 24, partially_confirmed: 8, contradicted: 3, unverifiable: 7, not_scored: 1}
+verified_against:
+  - "RES L417/L419/L420 (Sep-26 current investments 4,382 + cash 8,316 + other bank 6,463 = 19,161 lakh = Rs191.61 Cr; Mar-26 5,996 + 1,754 + 6,346 = Rs140.96 Cr)"
+  - "RES L434/L440 (borrowings 50 + 30 = Rs0.80 Cr; Mar-26 45 + 128 = Rs1.73 Cr); RES L435/L441 (leases 13,865 + 7,826 = Rs216.91 Cr; Mar-26 15,018 + 7,285 = Rs223.03 Cr)"
+  - "Net debt incl. leases 216.91 + 0.80 - 191.61 = Rs26.10 Cr; Mar-26 223.03 + 1.73 - 140.96 = Rs83.80 Cr; matches REV L332, L417"
+  - "RES L470/L472/L473 (451 + 23 + 267 = 741 lakh = Rs7.41 Cr one-time OI); REV L452"
+  - "CALL L34, L139, L141, L142, L160, L161; REV L569 (restated-figure rows 4, 8, 17, 22)"
+plain_language_brief_included: true
+analyst_note: "Loop 2 makes five single-line text edits. No Role 4 table, grade, tally or flag moves. E01 closes L1-C1: 1A now says four of the 15 NOT ADDRESSED rows (4, 8, 17, 22) got only a restated filed figure, per the rule line at REV L569. E02 and E03 close L1-M1 at 7A row 10 and the Step 2 net-debt cell. 'Effectively debt-free' holds ex-leases only. On the Ind AS 116 basis the call uses for EBITDA, lease liabilities of Rs216.91 Cr exceed cash and liquid investments of Rs191.61 Cr. Net debt including leases is Rs26.10 Cr, down from Rs83.80 Cr at Mar-26. I re-derived every figure from the results fulltext (lakhs x0.01). Row 10 stays CONFIRMED on its quoted bank-debt words. Two cheap style items are applied: S5 adds the Rs7.41 Cr one-time OI pointer at row 13, and S9 adds the tier tag at 8B item 3. 6A (REV L1078) still quotes 'effectively debt-free' bare. It sat outside the gap, so I left it; the row 10 qualifier covers the claim. AVOID, 8A-W and PROCEED WITH FLAGS are unchanged."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\aurum-q2fy27\\work\\review_aurum_q2fy27.md"

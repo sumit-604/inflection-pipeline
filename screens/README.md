@@ -364,3 +364,92 @@ paths still serve PDFs.
   MARUSHIKA, DELAPLEX and CALSOFT (none found).
 - No Q2 FY27 transcript was held for ONWARDTEC or TIPSMUSIC; both calls had
   just happened.
+
+## Fifth run, 2026-10-18 (second batch)
+
+Fourteen operator picks: Ratnaveer Precision, Jayaswal Neco, Mahamaya Steel,
+Sagardeep Alloys, Silkflex Polymers, National Fittings, Sharvaya Metals, Aztec
+Fluids & Machinery, Singer India, McLeod Russel, Solara Active Pharma,
+Dhanlaxmi Bank, Monolithisch India, Valiant Laboratories. Mahamaya Steel had
+been screened that morning from the same corpus (fourth run) and was not
+repeated. Valiant's 2026-09-06 card was rewritten in full, with a "what
+changed" section.
+
+**Verdicts.** No PROCEED. WATCH on JAYNECOIND, DHANBANK, SILKFLEX, NATFITTING,
+SOLARA, SINGERIND, MONOLITH and VALIANTLAB. PASS on RATNAVEER, SAGARDEEP,
+SHARVAYA, AZTEC and MCLEODRUSS. Forward table:
+`screens/forward-view-2026-10-18b.md`.
+
+**Sources, as in the fourth run, plus two new routes.**
+- **BSE-only names** (NATFITTING, SHARVAYA, AZTEC): BSE's API refuses scripted
+  calls, but the same call made from the bseindia.com page in the in-app
+  browser returns the announcement list (the date range must be 12 months or
+  less). Attachments then download plainly from `AttachHis/` or `AttachLive/`.
+  Bull AI `list_document_availability` (free) confirmed what exists.
+- **India Ratings** pages are script shells. JAYNECOIND's 05-Feb-2026 release
+  was rendered in the browser and saved verbatim as text.
+- OCR now runs per page inside the extractor, so every OCR'd page carries
+  `[OCR]`. Pages with a garbled native text layer still carry no marker;
+  analysts read those figures from the page image.
+
+### Findings worth carrying out of the cards
+
+- **MCLEODRUSS.** Adverse audit opinion plus a going-concern paragraph. The
+  Rs 1,288.95 crore debt write-back is booked but revocable until the NARCL
+  restructuring agreement is signed. ICRA D, issuer not cooperating, since 2019.
+- **JAYNECOIND.** Cheapest real earnings in the batch (about 11x forward), but
+  the MD's conviction is under appeal, an ED attachment hearing is set for
+  28-Oct-2026, and 99.87% of promoter shares are pledged to the NCD holders.
+- **NATFITTING** is a change of control: Himgiri Castings and the Agarwal
+  family bought 34.04% at Rs 130 and now merge two family companies into the
+  listed one, issuing 78% new equity. The valuation report is not held.
+- **SHARVAYA.** EBITDA margin fell from about 16% to 2.9% in H2 FY26, then the
+  board approved a share swap with a family-owned die-caster at the SEBI floor
+  price, with relatives classed as public taking almost half.
+- **AZTEC.** A bank classed subsidiary Jet Inks as NPA from Aug-2025 to
+  Mar-2026; the annual report does not mention it.
+- **RATNAVEER** capitalised self-generated costs of Rs 179 crore over FY25 and
+  FY26, 1.6x the profit of those years; FY26 operating cash flow was negative;
+  promoters took none of the Rs 330 crore rights issue.
+- **SOLARA.** The turnaround profit is untaxed. Strides, a promoter-group
+  company, bought 24% of FY26 revenue. The ibuprofen review is due within 12
+  weeks of 16-Oct-2026.
+- **MONOLITH.** A Rs 157 crore take-or-pay quartzite block, 6.8x FY26 profit.
+  The holding company is missing from the related-party list, and the company
+  lent the Chairman Rs 1.55 crore without repayment terms.
+- **SILKFLEX** is a licensed distributor of a Malaysian brand's textile inks
+  and binders, not a hose maker; the brief had it wrong. The CFO could not
+  reconcile the trading and manufacturing margins on the April 2026 call.
+- **VALIANTLAB.** Three NSE queries in 12 months. India Ratings calls the
+  Q1 FY27 margin "unlikely to sustain". Corrections to the first card include
+  FY26 EBITDA of Rs 6.4 crore, not Rs 64 crore.
+
+### Corpus defects recorded
+
+- **Truncated downloads are the main defect of this run.** Found by analysts:
+  MONOLITH FY26 annual report (re-fetched whole, 26.2 MB, card updated),
+  NATFITTING price clarification (re-fetched whole, card updated), AZTEC FY26
+  results, SHARVAYA 14-Oct-2026 acquisition filing, VALIANTLAB NSE reply of
+  01-Jun-2026, MONOLITH Q1 press release, JAYNECOIND Q2 FY27 press release
+  (NSE itself serves 2.26 MB of a declared 21.95 MB). The download loops
+  accepted any file over 15 KB. **Fix for the next run:** open every PDF after
+  download and re-fetch with resume (`curl -C -`) until it parses; where the
+  file name carries a byte count (NSE annual reports do), check against it.
+- NATFITTING's April 2026 default disclosure is listed by BSE but its archive
+  serves an error page under both paths.
+- NATFITTING's six Acuité rationale links return 404.
+- Byte-identical duplicates across `screener/` and `filings/` on most names.
+- Mislabelled files: JAYNECOIND "press release" files are full decks; SOLARA's
+  `Investor_Presentation_1.pdf` is a press release; JAYNECOIND `RESULT_FINAL`
+  holds EGM votes.
+
+### Known limits of this run
+
+- Cards ran 2,624 to 3,117 words, over the 1,900 to 2,600 the brief asked for.
+- Half-yearly reporters, two-half proof test: SILKFLEX, SHARVAYA, AZTEC.
+  MONOLITH reports quarterly by choice.
+- No transcript exists in the corpus for JAYNECOIND, SAGARDEEP, NATFITTING,
+  SHARVAYA, MCLEODRUSS or DHANBANK.
+- Credit views are stale or absent on SAGARDEEP (CARE 2017), MCLEODRUSS (ICRA
+  D since 2019), NATFITTING (links dead), AZTEC (no SEBI-registered rating)
+  and MONOLITH (none).

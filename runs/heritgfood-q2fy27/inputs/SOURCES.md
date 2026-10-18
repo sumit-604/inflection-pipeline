@@ -2,3 +2,4 @@
 - results: C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/09 Heritage Foods/Heritage_Q2FY27_Results.pdf (16 pages)
 - presentation: C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/09 Heritage Foods/Heritage_Q2FY27_Investor_Presentation.pdf (45 pages)
 - presentation (press release): C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/09 Heritage Foods/Heritage_Q2FY27_Press_Release.pdf (5 pages)
+- concall (ASR transcript): runs/heritgfood-q2fy27/inputs/Heritage_Q2FY27_Concall_16Oct2026_ASR_transcript.txt (from operator audio C:/Users/SUMIT SHARMA/Downloads/Audio-Q2-FY27-Earnings Call-16102026.mp3, 66:25; faster-whisper small.en; 2026-10-18)

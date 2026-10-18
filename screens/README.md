@@ -453,3 +453,14 @@ SHARVAYA, AZTEC and MCLEODRUSS. Forward table:
 - Credit views are stale or absent on SAGARDEEP (CARE 2017), MCLEODRUSS (ICRA
   D since 2019), NATFITTING (links dead), AZTEC (no SEBI-registered rating)
   and MONOLITH (none).
+
+**Integrity sweep, after both batches.** All 724 corpus PDFs across the 21
+names were opened. Nine would not parse. Six were re-fetched whole with
+resumed downloads and their `.txt` regenerated: MAHASTEEL Q3 FY26 results
+(13-Feb-2026), MONOLITH H1 press release (16-Oct-2025), VALIANTLAB NSE reply
+(01-Jun-2026) and Q4 FY26 outcome (14-May-2026), SHARVAYA acquisition filing
+(14-Oct-2026), AZTEC FY26 results (29-May-2026). The cards were written
+before this repair, from page-image recovery or other filings; the now
+readable files are there for `/step1` to confirm against. Three stay broken
+because the exchange serves them short: DELAPLEX FY26 annual report,
+JAYNECOIND Q2 FY27 press release, ONWARDTEC Q1 FY27 deck.

@@ -34,3 +34,25 @@
 - Loop 2 A4 fix (fresh) done: tokens 173,697, wall 543 s. Final A5 re-audit (fresh, scoped to LC1, LF1, N1-N3 closure + deliverable gate; no new adversarial pass) started.
 - A5 loop-2 re-audit: INCOMPLETE on 1 open item (OI-1 CONTRADICTION: Q10 bull answer 'borrowings are US refinancing only' vs filed India +287.91 Mn). Tokens 194,955, wall 633 s. All loop-1 items CLOSED. No third loop (operator rule): CLOSE with OI-1 flagged in review record, payload and report. Orchestrator did not edit the review.
 - Close-out 2026-10-17: closed with OI-1 flagged (payload carries the open-item note). notion-payload.md written (gate not waited per operator). session-cost.md total_run_tok 1,998,261 known (2 ND rows). Temp scratch dirs (work/a1-*, work/a2-*) left uncommitted.
+- ROLE 5 ADDENDUM 2026-10-18 (operator request): checkout guard PASSED (fetch ok, diff empty). Concall source is a MACHINE transcript of the company recording (faster-whisper medium.en, local CPU), not an official transcript; speakers unlabelled; names corrected against filings. Doc class: concall.
+- ORCHESTRATOR DECISION (mechanical): input is .txt, not PDF, so the A1 pdffonts gate is N.A.; A1 coverage unit = 10-minute time block ("page"). Every finding from the concall carries the machine-transcript caveat; filings win on any number conflict.
+- Role 5 runs as an addendum: A1-A3 on the transcript, then A4 merges a Role 5 section into the existing review, then A5 re-audits. Loop counts for this addendum are logged separately from the Role 4 run.
+- A1 concall GATE PASS 7/7 time blocks, R001-R303, T001-T097, 8 analysts asked. Tokens: see notification.
+- A1 concall tokens 80,671, wall 196 s.
+- A2 concall GATE PASS 303/303 IDs; 17 moderator turns confirmed independently, 80 inferred; 10 slots, 8 analysts. Tokens 56,296 < A1 80,671 (cost check pass).
+- A3 concall GATE PASS (17/17, 0 blank; 11 FORWARD-SIGNAL, 11 AMBIGUOUS, 3 NEUTRAL). Silence audit: 30 review questions -> 1 answered, 7 partial, 2 declined, 20 silent.
+- A3 concall tokens 150,035, wall 523 s.
+- A4 Role 5 tokens 285,266, wall 1,644 s. A4 had Write only and could not rewrite the 777-line review in one call; it wrote role5_parts/ (01a-01c sections, 02 Step 8.5 table, 03 merge spec U1-U15).
+- ORCHESTRATOR MECHANICAL MERGE 2026-10-18: applied U1-U15 with a strict-anchor script (each FIND matched exactly once, else abort). Review 776 -> 1,467 lines. Diff check: only spec-named lines replaced; closing YAML parses (42 questions, 32 monitorables, 27 flags). Pre-merge copy kept uncommitted as review_cyientdlm_q2fy27_pre-role5.md. No analysis changed by the orchestrator.
+- Role 5 result (A4): verdict PROCEED WITH FLAGS unchanged; answer status 1/6/4/19 of 30; new Q31-Q42; OI-1 corrected in Q10.
+- A5 Role 5 audit: INCOMPLETE (F1-F4 FACTUAL, C1-C3 CONTRADICTION, M1-M3b MISSING; A2 ledger note: concall L238 semicap revenue line has no row). Verdict, cash class and WEAKENED net impact unchanged. Loop 1 (Role 5) to A4 + A2 note.
+- A5 Role 5 audit tokens 326,902, wall 1,220 s.
+- Role 5 LOOP 1: fresh A4 wrote loop1_edits.md (76 edits); orchestrator applied all 76 (strict anchors). Tally 1/4/4/21; 7A 10/3/8+1/2. S2 narrative trim not applied (25 lines, STYLE). A2 ledger note for cc L238 still open.
+- Role 5 loop-1 A4 tokens 202,875, wall 644 s.
+- Role 5 LOOP 1 RE-AUDIT: INCOMPLETE (8 of 11 run-1 items clean; new L1-C1, L1-C2 CONTRADICTION; L1-M1, L1-M2, L1-M3 MISSING; 6 STYLE). LOOP 2 under the operator standing rule (final).
+- Role 5 loop-1 re-audit tokens 307,424, wall 1,141 s.
+- Role 5 LOOP 2: fresh A4 wrote loop2_edits.md (32 edits); orchestrator applied all 32 (strict anchors). Final re-audit (closure only) next.
+- Role 5 loop-2 A4 tokens 147,094, wall 463 s.
+- Role 5 LOOP 2 RE-AUDIT (final): COMPLETE. All loop-1 items CLOSED; no open items; Role 4 integrity pass. STYLE carried: L2-S1..S4, run-1 S2 (25-line narrative).
+- Role 5 loop-2 re-audit tokens 224,336, wall 790 s.
+- A2 ledger note M001 (cc L238) added; tokens 30,091, wall 33 s.

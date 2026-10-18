@@ -49,3 +49,26 @@ Accounting note: a resumed or continued agent reports its own invocation cost (i
 - Fresh agents for loop fixes (given the audit path and exact gap list) cost 165-195k per row here, against 323-458k for resumed agents in the Aurum run.
 - Page 2 of the results carried a corrupted embedded OCR layer. It passed the text-layer gate and needed a second A1 pass (121k). A1 could check character quality on the primary statement pages, not only character count.
 - Change that would make the next run cheaper: have A1 flag a garbled-glyph ratio on statement pages in its first pass, so the scan re-extraction happens in one run.
+
+## ROLE 5 ADDENDUM (2026-10-18): concall machine transcript, A1-A5 plus correction loops
+
+Source: faster-whisper medium.en transcript of the company recording (local CPU; transcription itself not in subagent tokens). Figures from each task notification; fresh agents throughout.
+
+| agent | model | total_tok | wall | run# |
+|---|---|---|---|---|
+| A1-concall | claude-sonnet-5-5 | 80,671 | 196 s | R5-1 |
+| A2-concall | claude-sonnet-5-5 | 56,296 | 129 s | R5-1 |
+| A3-concall | claude-opus-5-5 | 150,035 | 523 s | R5-1 |
+| A4-role5 (parts + merge spec; orchestrator spliced) | claude-opus-5-5 | 285,266 | 1,644 s | R5-1 |
+| A5-role5-audit | claude-opus-5-5 | 326,902 | 1,220 s | R5-1 |
+| **Role 5 base subtotal** | | **899,170** | | |
+| R5-LOOP1-A4-fix (76 edits) | claude-opus-5-5 | 202,875 | 644 s | R5 loop 1 |
+| R5-LOOP1-A2-ledger-note (M001, cc L238) | claude-sonnet-5-5 | 30,091 | 33 s | R5 loop 1 |
+| R5-LOOP1-A5-reaudit | claude-opus-5-5 | 307,424 | 1,141 s | R5 loop 1 |
+| R5-LOOP2-A4-fix (32 edits; standing rule) | claude-opus-5-5 | 147,094 | 463 s | R5 loop 2 |
+| R5-LOOP2-A5-reaudit (final) | claude-opus-5-5 | 224,336 | 790 s | R5 loop 2 |
+| **Role 5 loops subtotal** (iterations: 2) | | **911,820** | | |
+| **Role 5 addendum total** | | **1,810,990** | | |
+
+**total_run_tok (Role 4 + Role 5) = 3,809,251 known** (Role 4 1,998,261 known, lower bound with 2 ND rows + Role 5 1,810,990). Role 5 loop_iterations: 2. Final A5: COMPLETE.
+- The Role 5 section and both loops were spliced in by the orchestrator with strict-anchor scripts; pre-merge copy kept uncommitted.

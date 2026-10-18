@@ -1,0 +1,44 @@
+stage: A5-adversary
+company: "CYIENTDLM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 2
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []          # coverage not re-run in loop 2 (scope); each edit replaces one line, no row reference removed
+  missing_from_ledger: []  # cc L238 (R5-M4) handled separately per task; not re-flagged
+arithmetic_mismatches: []  # every loop-2 figure recomputes within rounding (loop-2 section 3)
+loop1_closure:
+  L1-C1: CLOSED
+  L1-C2: CLOSED
+  L1-M1: CLOSED
+  L1-M2: CLOSED
+  L1-M3: CLOSED
+  LS1-LS6: CLOSED
+  S2: "OPEN (STYLE; summary narrative 25 lines vs 10-20)"
+role4_numbers_changed: false
+open_items: []             # no FACTUAL / MISSING / CONTRADICTION open
+surviving_bear_counters:
+  - {claim: "On mix the chairman agrees with the deck; the mix leg has the chairman's support (rev L520, L536, L1096, L1247)", counter: "Same sentence: 'it's not the revenue mix, revenue mix is always going to be there' (cc L284); 'this quarter thing' scopes the CFO's mention, not non-recurrence; his premise, gross and contribution margin higher (cc L282), is contradicted by the filed -381 bps (rev L1271). Partly lands; structural-mix bear already at rev L521 and L1247, so logged, not looped", source_line: "cc L282-L284; res L538, L541, L542", type: STYLE}
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L2-S1: rev L520, L536, L1096, L1247 say the chairman agrees with the deck on mix ('this quarter thing', cc L284) but omit the same-line clause 'revenue mix is always going to be there' (cc L284); support is partial (Q2 scoping, not non-recurrence) on a premise the filing contradicts (cc L282 vs rev L1271); no grade, count or threshold moves; fix at rev L1096: 'On mix he scopes the CFO's mention to this quarter and adds revenue mix is always going to be there (cc L284): partial support'"
+    - "L2-S2: rev L1027 (not edited) pairs cc L231 'some of these one-offs' with cc L291 'not a one-off thing' under 'product development cost', untagged; the tension holds as CEO vs chairman on whether the margin drag is one-off; retopic 'margin drag: one-off or investment' and tag [INFERENCE] to match row 24"
+    - "L2-S3: rev L1096 places the audio gap at cc L292-L294; the cc L291 fragment ends at the page break (cc L292), the transcript resumes at cc L293 (00:40:00), and the 30-second gap is cc L293-L294 (00:40:00 to 00:40:30), as rev L811 records; reading unchanged"
+    - "L2-S4: rev L1317 neutral band sits in the bull-fork cell; labelled, but set it apart on the Notion render ('Neutral (not bull):')"
+    - "S2 (run 1, open): summary narrative 25 lines vs 10-20 spec (rev L1242-L1266)"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "L2-S1 to L2-S4 and run-1 S2 as listed under findings_by_type.style; logged, no re-run"
+analyst_note: "Loop 2 closes all five loop-1 findings and the six loop-1 style notes. Every changed figure recomputes from res L538-L546 and pres L247-L294: five walk quarters, the 797.9 Cr H2 FY26 intake and the +50% need, the 1,128.89 Mn P07 base and its +11.2% headroom, and the H2 split. No Role 4 number moved; Table 1A ties on 90 cells. Four style notes remain; none moves a grade, count or threshold. The one with substance runs bull-side: the review now says the chairman agrees with the deck on mix, but the same sentence says revenue mix 'is always going to be there' (cc L284), on a premise the filing contradicts. His support is partial. The structural-mix bear is already in the review (Step 8C reading b; the deck calls the mix shift the strategy), so it is logged, not looped. An aside for the Q3 read: the FY26-shape split of the H2 floor equals the 30%-per-quarter bar, so on that reading Q3 lands on the neutral/bear boundary. Near 394 Cr, read the Q4 need, not the fork label. Verdict, cash class and WEAKENED impact are unchanged."

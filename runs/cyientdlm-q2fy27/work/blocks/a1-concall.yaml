@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "CYIENTDLM"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 7
+formfeed_count: 0
+line_count: 488
+unit_convention: "MIXED (Rs million/billion by CFO; Rs crores by others; USD)"
+conversion_factor_to_cr: "Millions x0.1; Billions x100; Crores x1"
+text_layer_present: false
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\cyientdlm-q2fy27\extracted\cyientdlm-concall-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\q2fy27\runs\cyientdlm-q2fy27\extracted\cyientdlm-concall-q2fy27-structured.md"
+structured_counts:
+  number: 160
+  entity: 37
+  forward: 53
+  date: 22
+  qualifier: 31
+structured_id_range: "R001-R303"
+turns: 97
+gate_a1: pass
+gap_note: ""

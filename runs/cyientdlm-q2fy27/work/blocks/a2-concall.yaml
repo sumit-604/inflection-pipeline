@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "CYIENTDLM"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/cyientdlm-q2fy27/work/ledger_concall_cyientdlm_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 37
+  turns: 97
+  questions: 10
+  mgmt_numbers: 160
+  slides: 0
+  slide_numbers: 0
+flags_raised: [REPEAT_QUESTION, NO_RESPONSE, SPEAKER_INFERRED, MACHINE_TEXT_RENAME, ENTITY_NEW_HIRE, NOT_DISCLOSED, SOURCE_CAVEAT]
+ids_in_structured: 303
+ids_referenced: 303
+orphan_ids: []
+missing_from_structured: ["M001 line 238 T017 forward (semicap revenue in last two quarters)"]
+gate_a2: pass
+mismatch_note: "Loop 1 (A5 R5-M4): one row M001 added as MISSING_FROM_STRUCTURED; structured file unchanged; counts of R001-R303 unchanged."
+analyst_note: "Machine transcript, speakers unlabelled. Turn count 97 is A1's; only the 17 moderator turns were independently confirmed against fulltext cue lines, the other 80 are inferred speaker changes. Question slots 10 confirmed by 10 moderator cue lines; 8 analysts asked (26 analyst question turns), Meeth Jain no response, Suman Kumar dropped. Repeated topics: product development spend and no-capitalisation (5 analysts), $1 billion order book and pipeline conversion (6), B2S (3), FY27 margin (2). Four pre-call header rows (R161, R251, R273, R274, lines 19-21) have no turn. Zero standing items: none (concall). Audio gap 00:40:00-00:40:30 low confidence. Mixed units (Rs million, billion, crore) are not converted."

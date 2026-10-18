@@ -1,0 +1,59 @@
+stage: A4-analyst
+company: "CYIENTDLM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+scope: "Role 5 addendum, correction loop 1 (A5 Role 5 verdict INCOMPLETE)"
+loop_iteration: 1
+edit_file: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\cyientdlm-q2fy27\\work\\role5_parts\\loop1_edits.md"
+edits_total: 76   # E01-E76, applied in order; every FIND is a single line (review uses CRLF); E38 REPLACE adds one table row (Step 7A row 24)
+docs_merged: [results, presentation, pressrelease, concall]
+ledger_reconciliation:
+  notes: 8
+  turns: 97
+  slides: 21
+  all_reviewed: true
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3-18, A3-19, A3-20, A3-21, FN01, FN02, FN03, FN04, FN05, FN06, FN07, FN08, FN09, FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN-01, FN-02, FN-03, FN-04, FN-05, FN-06, FN-07, FN-08, CF01, CF02, CF03, CF04, CF05, CF06, CF07, CF08, CF09, CF10, CF11, CF12, CF13, CF14, CF15, CF16, CF17, CF18, CF19, CF20, CF21, CF22, CF23, CF24, CF25]
+protocol_verdict: "PROCEED WITH FLAGS"   # unchanged
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"   # unchanged
+decision_status_verified: "NOT SET (Halt 1 pending; mental model unsigned; pre-thesis read)"
+position_branch: "8A-W"
+role5_net_impact: "WEAKENED"   # unchanged
+role4_tables_touched: false   # Role 4 numbers unchanged; only Role 5 addendum cells (ANSWER STATUS column) and an appended note on the Step 8C bull text (E01)
+finding_map:
+  R5-F1: [E03, E19, E42, E52, E72, E76]
+  R5-F2: [E07, E15, E16, E33, E41, E54, E69, E74, E76]
+  R5-F3: [E02, E12, E14, E22, E26, E28, E34, E44, E50, E53, E61, E73, E76]
+  R5-F4: [E38, E39, E49, E60]
+  R5-C1: [E04, E06, E09, E10, E23, E47, E59, E75]
+  R5-C2: [E63]
+  R5-C3: [E68]
+  R5-M1: [E17, E18, E20, E24, E27, E28, E29, E31, E35, E43, E45, E48, E58, E67, E76]
+  R5-M2: [E11, E21, E45, E66, E67, E70, E76]
+  R5-M3a: [E13, E37, E55, E64, E65]
+  R5-M3b: [E01, E02, E05, E38, E39, E56]
+  S1: [E08, E30, E36, E46, E51, E62, E71]
+  S2: "NOT APPLIED: trimming 25 to 20 lines needs line deletion; the review is CRLF, so a multi-line FIND risks an anchor abort. Bullets were corrected in place (E55-E60)"
+  S3: [E40]
+  S4: [E33]
+  S5: [E57]
+  S6: [E02]
+  S7: [E25]
+  S8: [E66]
+  S9: [E32]
+  S10: "no change (A5: within rounding)"
+not_in_scope:
+  - "R5-M4 (A2 ledger annotation for cc L238; A5 assigned it to A2). No preamble line added; the task scoped this loop to F1-F4, C1-C3, M1, M2, M3a, M3b"
+recomputed_figures:
+  - "Call mix (cc L151-L152; res L538): Aerospace 0.47 x 3,930.90 = 1,847.52, prior 1,140.44, +707.08 Mn (85.75% of 824.56); Industrial 1,218.58, prior 944.64, +273.94; A+I +981.02 Mn = 118.97%; other 22% 1,021.26 to 864.80 = -15.32%; +/-0.5 pp share band 969.1-993.0 Mn, -13.8% to -16.9%"
+  - "H2 test (res L538; pres L247-L249): H2 FY26 672.42 x 1.3 = 874.15 Cr; Q3 bar 303.3 x 1.3 = 394.29 = +0.31% on 393.09; Q4 need 479.86 = +21.70% QoQ, +30.01% on 369.1; 874.15 / 2 = 437.08"
+  - "Earnout share: 181.95 / 226.15 = 80.46% (res L288, L539)"
+  - "Inventory days 187.3 (Mar-26) to 177.8 (Sep-26), review Step 5A"
+answer_status_counts: {ANSWERED: 1, PARTIALLY: 4, EVADED: 4, NOT_ADDRESSED: 21}
+step7a_tally: {CONFIRMED: 10, PARTIALLY_CONFIRMED: 3, CONTRADICTED_FILING_OR_DECK: 8, CONTRADICTED_WITHIN_CALL: 1, UNVERIFIABLE: 2, rows: 24}
+questions_changed: [Q4, Q5, Q10, Q18, Q28, Q37]
+monitorables_changed: [18]
+tripwires_changed: [f, g]
+plain_language_brief_included: true
+analyst_note: "Loop 1 fixes A5's eleven A4 findings in both directions. Bear-side over-reads withdrawn: EXPAND entry 'not before FY29' (FY28 is guided at a 10% floor, so entry is unguided with FY28 the earliest year; DELAYED holds because FY27 misses); the pipeline 'fall to just over $1 bn' (the chairman puts 1.4 and 1.5 on one unweighted basis, low confidence); the CFO-chairman margin 'contradiction' (both scope mix to Q2; the chairman's gross-margin claim against the filing stands); the filing leg of Step 7A row 23 (inventory days improved); and the brief's finance-cost row (YoY cause untestable). Bull-side leniency removed: the S&M pledge is net new only, has no base and drops to MEDIUM; the H2 pledge is tested on H2 at 874.15 Cr because the Q3 30% bar is +0.3% QoQ; Q10 and Q28 regrade to NOT ADDRESSED (tally 1/4/4/21); the call's mix fixes Aerospace plus Industrial at about 119% of the rise; the chairman's 'not a one-off' now cross-references the deck's one-off label (new Step 7A row 24, call vs deck). Verdict, cash class and WEAKENED impact unchanged. S2 trim not applied: the review is CRLF and line deletion needs multi-line anchors. R5-M4 is A2's."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\cyientdlm-q2fy27\\work\\review_cyientdlm_q2fy27.md"

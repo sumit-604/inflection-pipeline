@@ -1,0 +1,47 @@
+stage: A4-analyst
+company: "CYIENTDLM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+scope: "Role 5 addendum, correction loop 2 (final; A5 loop-1 re-audit INCOMPLETE)"
+loop_iteration: 2
+edit_file: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\cyientdlm-q2fy27\\work\\role5_parts\\loop2_edits.md"
+edits_total: 32   # E01-E32, applied in order; every FIND is single-line and was grep-verified to occur exactly once in the current review; no edit adds or removes a line
+docs_merged: [results, presentation, pressrelease, concall]
+ledger_reconciliation:
+  notes: 8
+  turns: 97
+  slides: 21
+  all_reviewed: true
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3-18, A3-19, A3-20, A3-21, FN01, FN02, FN03, FN04, FN05, FN06, FN07, FN08, FN09, FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN-01, FN-02, FN-03, FN-04, FN-05, FN-06, FN-07, FN-08, CF01, CF02, CF03, CF04, CF05, CF06, CF07, CF08, CF09, CF10, CF11, CF12, CF13, CF14, CF15, CF16, CF17, CF18, CF19, CF20, CF21, CF22, CF23, CF24, CF25]
+protocol_verdict: "PROCEED WITH FLAGS"   # unchanged
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"   # unchanged
+decision_status_verified: "NOT SET (Halt 1 pending; mental model unsigned; pre-thesis read)"
+position_branch: "8A-W"
+role5_net_impact: "WEAKENED"   # unchanged
+role4_tables_touched: false   # no Role 4 table number changed; E01 edits the loop-1 note on the Step 8C bull text, E02-E03 the Role 5 ANSWER STATUS column, E04-E06 Role 5 addendum monitorable rows
+finding_map:
+  L1-C1: [E01, E02, E03, E18, E25, E32]   # rev L520, L536, L550, L1096 row 24, L1247, L1466
+  L1-C2: [E23]                             # rev L1186
+  L1-M1: [E04, E13, E21, E26, E27, E29, E32]   # rev L620, L856, L1150, L1312, L1317, L1417, L1466
+  L1-M2: [E05, E08, E14, E16, E17, E19, E20, E22, E30, E32]   # rev L621, L812, L857, L983, L1054, L1126, L1140, L1161, L1418, L1466
+  L1-M3: [E06, E12, E31]                   # rev L622, L854, L1419
+  LS1: [E04, E13, E21, E26, E29]   # 'weakest base' replaced; L1317 wording removed by E27
+  LS2: [E09, E11]
+  LS3: [E24]
+  LS4: [E15]
+  LS5: [E10]
+  LS6: [E07, E28]
+  S2: "NOT APPLIED: trimming the summary from 25 to 20 lines needs line deletion; single-line CRLF anchoring only"
+step7a_tally: {CONFIRMED: 10, PARTIALLY_CONFIRMED: 3, CONTRADICTED_FILING_OR_DECK: 8, CONTRADICTED_WITHIN_CALL: 1, UNVERIFIABLE: 2, rows: 24}   # unchanged; row 24 retagged CONTRADICTED [INFERENCE], PD-purchase leg only
+answer_status_counts: {ANSWERED: 1, PARTIALLY: 4, EVADED: 4, NOT_ADDRESSED: 21}   # unchanged
+recomputed_figures:
+  - "Book walk (pres L247-L249, L289-L294; res L538): Q2 FY26 22,911-21,318+3,106 = 4,699; Q3 FY26 23,494-22,911+3,033 = 3,616; Q4 FY26 24,166-23,494+3,691 = 4,363; Q1 FY27 25,989-24,166+3,738 = 5,561; Q2 FY27 28,137-25,989+3,931 = 6,079 Mn; 600 Cr met 1 of 5; H2 FY26 797.9 Cr; 1,200 / 797.9 = +50.4%"
+  - "P07 (res L538, L543, L546): Q2 FY27 678.87 + 450.02 = 1,128.89 Mn = 28.72% of 3,930.90; 0.28718 x 4,370.8 = 1,255.2 Mn = +11.2% QoQ"
+  - "H2 shape (res L538; pres L247-L249; rev Step 3): Q3 FY26 3,033 / 6,724.24 = 45.1%; 874.15 x 0.451 = 394.3 / 479.9 Cr; Q4 FY26 step 3,691 / 3,033 = +21.69%; at the bar 394.29 / 303.3 = +30.0%, 479.86 / 369.1 = +30.0%; bull bar 437.08 / 303.3 = +44.1% YoY"
+verified_quotes: ["cc L199 as a policy, today", "cc L256 probably you will be expecting it", "cc L257 analyst rejection", "cc L283-L284 this quarter thing", "cc L286 going on for a while", "cc L291 not a one-off thing ... there was a...", "cc L292-L294 page break and 30-second gap", "cc L297 no future investment"]
+not_in_scope:
+  - "rev L1027 (Step 6A within-call row: CEO 'some of these one-offs' cc L231 vs chairman cc L291) left as is: both statements concern the investment drag, so the within-call reading holds"
+plain_language_brief_included: true
+analyst_note: "Loop 2 fixes the five A5 loop-1 findings in both directions with 32 single-line edits. Bear-side over-reads withdrawn: the chairman's 'not a one-off thing' (cc L291) now reads as the S&M and PD investment drag, not the deck's material-cost item; on mix he agrees with the deck ('this quarter thing', cc L283-L284); only the PD-purchase leg is undercut, by inference from 'going on for a while' (cc L286). Step 7A row 24 stays CONTRADICTED, retagged [INFERENCE], so the count stays 8 of 24. The Q3 forks gain a neutral band: a Q3 of 394.29-437 Cr does not decide H2, and at the bar both H2 quarters grow 30% YoY, with Q4 needing the +21.7% step Q4 FY26 made. Bull-side leniency removed: the 600 Cr intake guide carries its 'probably' and the walk base rate (1 of 5 quarters; H2 needs about 50% above H2 FY26) and leaves the 6D pledge list; P07 gains an absolute expense co-reading (1,128.89 Mn; a ratio pass allows +11.2%). The stale 8F pipeline cell is aligned to Q37. Style LS1-LS6 applied; S2 not. Verdict, cash class and WEAKENED impact unchanged."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\cyientdlm-q2fy27\\work\\review_cyientdlm_q2fy27.md"

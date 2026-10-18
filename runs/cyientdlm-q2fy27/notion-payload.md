@@ -53,3 +53,22 @@ Four candidate signals in review section 5.5C. Not written.
 - Rulings still open from 11-Sep: Gate 0 window, sector cap row (no EMS row), archetype rung, Rule G for a parent promoter, stage 5/6/7 rework.
 - Run Role 5 on the 15-Oct-2026 earnings call transcript (not in this run).
 - Filing data defects to note: consolidated Q2 FY26 employee cost misprint (329.42 vs 529.42 Mn by footing); standalone H1 basic EPS read 4.35 (4.55 by arithmetic); UDINs illegible.
+
+---
+
+## ROLE 5 ADDENDUM (2026-10-18): NOT WRITTEN; awaiting operator batch approval
+
+Supersedes the Key Notes line above if the operator approves both: prepend this line instead (pipes escaped).
+
+```
+18-Oct-2026 \| Q2 FY27 CONCALL (15-Oct call, machine transcript of company recording; Role 5 A1-A5, A5 COMPLETE after 2 loops). Verdict PROCEED WITH FLAGS unchanged; concall impact WEAKENED. Call vs filing: chairman says gross/contribution margin rose and "not the revenue mix" vs filed gross margin -381 bps; earnout reversal called "one-time" though the deck shows one in both Q2s (80.5% of Q2 other income); US unit "as per plans" at 1.17% EBITDA. Guidance: FY27 EBITDA "close to 9%" / "9-10%" (at 9%, H2 ~8.5%, below Q2); FY28 "double digits"; FY27 revenue 30-35%, H2 >30% (Q3 bar 394.29 Cr is +0.3% QoQ; test H2 >= 874.15 Cr). B2S revenue now FY29-FY30; FY27 double-digit B2S target unanswered. 600 Cr quarterly intake guide "probably" (met 1 of 5 walk quarters). Of 30 filing questions: 1 answered, 4 partial, 4 evaded, 21 not addressed; Q31-Q42 added. OI-1 (Q10 bull answer) corrected. Decision Status not set (operator-only).
+```
+
+insert_content additions (position end, after the Q2 FY27 review section):
+1. The merged review runs/cyientdlm-q2fy27/work/review_cyientdlm_q2fy27.md now carries "## ROLE 5: CONCALL ANALYSIS (Q2 FY27 call, 15-Oct-2026; machine transcript)" and "(Role 5 addendum)" passages; insert the Role 5 section in full and the updated Step 8.5 table (ANSWER STATUS column, Q31-Q42) in place of the earlier copy.
+2. A3 concall forensics table: runs/cyientdlm-q2fy27/work/forensics_concall_cyientdlm_q2fy27.md.
+3. Role 5 audit verdict block:
+```
+Role 5 A5 verdict: COMPLETE (loop 2 of 2, operator standing rule). Run 1: 4 FACTUAL, 3 CONTRADICTION, 4 MISSING (both directions: 4 too bearish, 3 too lenient) -> closed in loop 1. Loop 1: 2 CONTRADICTION, 3 MISSING -> closed in loop 2. Coverage 303/303 concall rows, CF01-CF25 cited; M001 (cc L238) added to the ledger. STYLE open: 25-line summary narrative vs 10-20 spec; L2-S1 (chairman's "revenue mix is always going to be there" clause unquoted).
+```
+Source caveat for every Role 5 line: machine transcript of the company's own recording, speakers inferred; on any number conflict the filing wins.

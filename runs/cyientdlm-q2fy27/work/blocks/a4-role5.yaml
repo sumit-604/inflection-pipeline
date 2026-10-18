@@ -1,0 +1,106 @@
+stage: A4-analyst
+company: "CYIENTDLM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+run_type: "role5-addendum"
+merge_state: "MERGED 2026-10-18 by the orchestrator (scratchpad merge_role5.py; every anchor matched once; only spec-named lines replaced). Original note: the Role 5 content is complete, but it was written as four part files plus an exact merge spec, not into review_cyientdlm_q2fy27.md. A4 has Write only (no Edit). Rewriting the 777-line review in one call went over the output limit. The review file is untouched."
+part_files:
+  - "runs/cyientdlm-q2fy27/work/role5_parts/01a_role5_steps0-3.md"
+  - "runs/cyientdlm-q2fy27/work/role5_parts/01b_role5_steps4-6.md"
+  - "runs/cyientdlm-q2fy27/work/role5_parts/01c_role5_steps7-9.md"
+  - "runs/cyientdlm-q2fy27/work/role5_parts/02_step85_table_replacement.md"
+  - "runs/cyientdlm-q2fy27/work/role5_parts/03_inplace_updates.md"
+docs_merged: [results, presentation, concall]
+ledger_reconciliation:
+  notes: 0
+  turns: 97
+  slides: 0
+  rows: 303
+  all_reviewed: true
+  a3_findings_incorporated: [CF01, CF02, CF03, CF04, CF05, CF06, CF07, CF08, CF09, CF10, CF11, CF12, CF13, CF14, CF15, CF16, CF17, CF18, CF19, CF20, CF21, CF22, CF23, CF24, CF25]
+protocol_verdict: "PROCEED WITH FLAGS"
+protocol_verdict_changed_by_role5: false
+role5_verdict:
+  summary: "PROCEED WITH FLAGS (unchanged); concall impact WEAKENED; credibility ND (baseline log); archetype UNCLASSIFIED"
+  management_credibility_this_quarter: "ND (baseline quarter; no scored commitments)"
+  credibility_ratio_trailing4: "ND (0 points / (23 forward commitments - 23 UNCLEAR); P17 completion recorded, not scored)"
+  dropped_verified: 0
+  dropped_candidates: ["FY27 double-digit B2S share (analyst recall cc L375-L376; Notion memory; unverified)"]
+  management_archetype: "UNCLASSIFIED (credibility ND; specificity 29/53 = 0.55 raw, 22/46 = 0.48 de-duplicated)"
+  role1_track_record_input: "ND"
+  net_concall_impact: "WEAKENED (pre-thesis read)"
+  position_decision: "none (8A-W; Decision Status NOT SET; no entry zone)"
+  override_fired: "concall narrative contradicts filing numbers materially (margin cause, earnout recurrence, US arm): trust filing, note credibility, tighten watchlist"
+  call_vs_filing_7A: {confirmed: 10, partially: 3, contradicted: 8, unverifiable: 2}
+  qa_grades_4A: {A: 3, B: 11, C: 5, D: 4, E: 1, no_question_slots: 2}
+  defensive_phrases_6C: 11
+  probably_count: 12
+  peer_concalls: "not supplied; UNVERIFIABLE this run"
+  step_8d: "DEFERRED to /fttcp and Role 1 (OR-30); pillar facts flagged"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NOT SET (Halt 1 pending; mental model unsigned; pre-thesis read)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY26", reported_pct: 137.5, ex_earnout_pct: -7.1}
+  - {period: "Q1 FY27", reported_pct: -2.5, ex_earnout_pct: -2.5}
+  - {period: "Q2 FY27", reported_pct: 75.5, ex_earnout_pct: -18.4}
+  - {period: "H1 FY26", reported_pct: 59.7, ex_earnout_pct: -19.2}
+  - {period: "H1 FY27", reported_pct: 39.4, ex_earnout_pct: -11.0}
+  - {period: "FY26", reported_pct: 30.1, ex_earnout_pct: "ND"}
+answer_status_counts: {ANSWERED: 1, PARTIALLY: 6, EVADED: 4, NOT_ADDRESSED: 19, total: 30}
+answer_status_detail:
+  ANSWERED: [Q19]
+  PARTIALLY: [Q4, Q5, Q10, Q15, Q17, Q28]
+  EVADED: [Q3, Q14, Q16, Q18]
+  NOT_ADDRESSED: [Q1, Q2, Q6, Q7, Q8, Q9, Q11, Q12, Q13, Q20, Q21, Q22, Q23, Q24, Q25, Q26, Q27, Q29, Q30]
+  a3_differences: "Q3 A3 PARTIAL -> EVADED (US question asked cc L433-L436, no figure); A3 DECLINED (Q14, Q18) -> EVADED"
+oi_1_corrected: true
+oi_1_note: "Q10 bull answer 'Internal cash; borrowings are US refinancing only' contradicted the filed standalone short-term draw Rs 287.91 Mn (res L565); replaced with 'Internal cash plus the standalone short-term line drawn in H1 (Rs 287.91 Mn), repaid from H2 collections; finance cost holds near Rs 61 Mn a quarter'"
+new_question_ids: [Q31, Q32, Q33, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q41, Q42]
+questions_for_management:
+  - {q: "Q31 Which end of the FY27 9-10% EBITDA band applies; at 9% H2 runs ~8.5%, below Q2 8.69%: what holds H2 below Q2 if investment intensity falls from Q3?", from_finding_id: [CF01]}
+  - {q: "Q32 Define 'contribution margin'; Q2 FY27 vs Q2 FY26 values; reconcile with the filed -381 bps gross margin", from_finding_id: [CF03]}
+  - {q: "Q33 S&M cost (Rs Mn) Q2 FY27 vs Q2 FY26 and PD cost expensed in Q2 FY27 (drag sized 100-150, ~100 and 150-200 bps)", from_finding_id: [CF04, CF05]}
+  - {q: "Q34 Base and year of the 'around 200 bps' expansion (audio gap); does 'from Q1 onwards double-digit' mean Q1 FY28?", from_finding_id: [CF06, CF24]}
+  - {q: "Q35 Is the FY27 double-digit B2S share target withdrawn; H1 FY27 B2S share?", from_finding_id: [CF07]}
+  - {q: "Q36 Signed vs unsigned value of the ~$1 bn across four B2S programmes; which customers?", from_finding_id: [CF08]}
+  - {q: "Q37 Unweighted pipeline at 30-Jun-2026 and 30-Sep-2026 on one basis ($1.4 bn to >$1 bn vs $1.5 bn)", from_finding_id: [CF09]}
+  - {q: "Q38 Component categories limiting conversion; dated inventory-days and NWC-days targets", from_finding_id: [CF11]}
+  - {q: "Q39 Residual earnout open for Q2 FY28 (deck: reversal in both Q2s); Q2 FY27 export-incentive amount (Rs Mn)", from_finding_id: [CF12]}
+  - {q: "Q40 Semicap revenue (Rs Mn) in Q1 and Q2 FY27; semicap order book", from_finding_id: [CF18]}
+  - {q: "Q41 Will PD stay fully expensed through FY28; would a switch be disclosed with its EBITDA effect?", from_finding_id: [CF20]}
+  - {q: "Q42 Date for the Honeywell build-to-print programme's return to serial production", from_finding_id: [CF21]}
+monitorables:
+  - {item: "Q3 FY27 YoY revenue growth >= 30% (H2 pledge; Q3 >= 394.29 Cr on deck Q3 FY26 base)", implied_date: "about mid-Jan 2027 [INFERENCE]", source_ref: "cc L361 (P09)"}
+  - {item: "Order intake 600 Cr plus in Q3 and Q4 FY27 (book walk >= Rs 6,000 Mn each)", implied_date: "Q3 and Q4 FY27", source_ref: "cc L256 (P10)"}
+  - {item: "Investment intensity lower: combined opex ratio below Q2 28.72%", implied_date: "Q3 or Q4 FY27", source_ref: "cc L295 (P07)"}
+  - {item: "No net new S&M until quarterly revenue ~Rs 7,862 Mn", implied_date: "every quarter, open-ended", source_ref: "cc L288, L297 (P06)"}
+  - {item: "FY27 EBITDA margin 9-10% (at 9% H2 ~8.5% [INFERENCE])", implied_date: "about Apr-May 2027 [INFERENCE]", source_ref: "cc L230, L244 (P01)"}
+  - {item: "AI DC and robotics update: position, opportunities, pipeline", implied_date: "Q4 FY27 call, about Apr-May 2027 [INFERENCE]", source_ref: "cc L217, L460-L461 (P15)"}
+  - {item: "Semicap growth every quarter (amount not disclosed)", implied_date: "from Q3 FY27", source_ref: "cc L238, L459 (P16)"}
+  - {item: "Double-digit EBITDA margin from Q1 (read Q1 FY28)", implied_date: "about late Jul 2027 [INFERENCE]", source_ref: "cc L231 (P03)"}
+  - {item: "FY28 EBITDA margin double digits / 10 plus", implied_date: "FY28", source_ref: "cc L266, L476 (P02)"}
+  - {item: "B2S ~$1 bn into order book after design/prototype; production FY29, full ramp FY30", implied_date: "undated / FY29-FY30", source_ref: "cc L309-L310, L409-L411, L428-L429 (P13, P14)"}
+  - {item: "Honeywell build-to-print programme back to serial production", implied_date: "undated", source_ref: "cc L405-L407 (P21)"}
+  - {item: "PD fully expensed; any capitalisation is a tripwire", implied_date: "ongoing", source_ref: "cc L199, L389-L391, L473 (P22)"}
+  - {item: "Pipeline $1.5 bn unweighted; win ratio ~40%; $400-500 Mn order impact", implied_date: "undated", source_ref: "cc L262, L332, L338 (P12)"}
+  - {item: "More US revenue traction; large orders from the new sales team", implied_date: "undated", source_ref: "cc L439, L478-L479 (P18, P20)"}
+  - {item: "Growth sustains into FY28", implied_date: "FY28", source_ref: "cc L56, L298-L299 (P24)"}
+flags:
+  - "CALL vs FILING, MARGIN CAUSE: chairman (T039, inferred) says gross/contribution margin higher YoY, 'not the revenue mix' (cc L282-L284); filing GM -381 bps, combined opex ratio -245 bps; deck names revenue mix (pres L374-L375)"
+  - "EARNOUT LABEL: 'one-time' Rs 182 Mn (cc L133, L163) vs deck 'both Q2 FY26 and Q2 FY27' (pres L384-L385); CFO omitted it when asked if Q2 other income recurs (cc L464-L465); 80.4% of Q2 other income (res L288, L539)"
+  - "GUIDANCE ARITHMETIC: FY27 ~9% / 9-10% on 30-35% growth needs H2 8.51-8.54% at 9% (below Q2 8.69%), 10.36-10.38% at 10% [INFERENCE]; conflicts with 'intensity lower from Q3 or Q4' (cc L295)"
+  - "PROOF GATE TIMELINE: B2S production FY29 'probably', full ramp FY30 (cc L428-L429); FY27 double-digit B2S target unanswered (cc L376): DROPPED candidate; share leg cannot fire before FY29-FY30 [INFERENCE]; EXPAND band not before FY29"
+  - "US ARM: 'doing as per our plans' (cc L438) vs subsidiary op EBITDA 1.17% and second earnout write-back"
+  - "NOTION TEST 2: no component-cost answer; stated cause changed across three calls (April, July per Notion memory; October CFO vs chairman)"
+  - "HEDGE-HEAVY: 11 protocol-listed defensive phrases plus 12 'probably'; specificity 0.55 raw / 0.48 de-dup; archetype UNCLASSIFIED"
+  - "ANALYST COVERAGE: 8 of 10 slots asked; large-broker slot dropped; no question on CFO, debt build, gross margin figure or parent RPT"
+  - "PIPELINE DIRECTION: CEO implies fall $1.4 bn to >$1 bn (cc L331); chairman says rise to $1.5 bn (cc L338-L339); unresolved"
+  - "ACCOUNTING OPTION: PD fully expensed, option to capitalise retained (cc L389-L391); a switch could meet the proof-gate margin leg through accounting (tripwire candidate)"
+  - "SOURCE: machine transcript, inferred speakers; S&M freeze pledge and contribution-margin claim rest on inferred chairman attribution (T039)"
+  - "TRACK RECORD: no prior concall log; credibility ratio and Role 1 track-record input ND until the Q3 FY27 call scores the 24-row baseline log"
+plain_language_brief_included: true
+analyst_note: "Role 5 runs on a machine transcript with inferred speakers; the filing wins on every conflict. Three call statements conflict with the filing or the company's own deck. The chairman says gross and contribution margin rose YoY and it is not the revenue mix; the filing shows gross margin down 381 bps and the opex ratio down 245 bps. The earnout is called one-time, but the deck shows one in both Q2s, and the CFO left it out when asked whether Q2 other income recurs. The US business is called on plan at 1.17% subsidiary EBITDA. The FY27 guide does not reconcile: 9% on 30-35% growth needs H2 near 8.5%, below Q2, while investment intensity is said to fall. Only the 10% end fits. B2S revenue moves to FY29-FY30, so the proof-gate share leg cannot fire inside the window; the FY27 double-digit target is a DROPPED candidate, not scored. The testable positives: H2 growth above 30%, 600 Cr intake in Q3 and Q4, an S&M freeze until quarterly revenue doubles, and full expensing of product development. Credibility and archetype stay ND until Q3 FY27. Verdict unchanged."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\cyientdlm-q2fy27\\work\\review_cyientdlm_q2fy27.md"
+block_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\q2fy27\\runs\\cyientdlm-q2fy27\\work\\blocks\\a4-role5.yaml"

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "GALLANTT"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/gallantt-q2fy27/work/ledger_results_gallantt_q2fy27.md"
+counts:
+  notes: 15
+  line_items: 96
+  zero_standing: 27
+  agenda_items: 1
+  auditor_paras: 51
+  entities: 1
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, SUPERSEDED_ID, STANDALONE_STATEMENT_ABSENT, DATE_INCONSISTENCY, AUDITOR_CHANGE, OTHER_AUDITOR_RELIANCE, RESTATED, ASSOCIATE_LINE_NO_ASSOCIATE_IN_PERIMETER, UDIN_DIFFERS, PINCODE_DIFFERS, SIGNATORY_NAME_ILLEGIBLE]
+ids_in_structured: 449
+ids_referenced: 449
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "line_items=96 distinct statement lines (296 cells: P&L 156, BS 70, CF 70); notes=15 rows (5 distinct P&L notes + 2 cash-flow notes, restated on pp6/11 and pp5/10). zero_standing=27 cells incl 6 nil-subsidiary figures. 8 SUPERSEDED garbled rows (R028,R035,R039,R042,R065,R228,R302,R361) all accounted, pointing to transcription L1056-1156. Filing has standalone auditor review report (R402/R403) but no standalone statements. Subject date 03-Nov-2025 (R009/R010) vs body 19-Oct-2026. Associate profit line R180-R185 present though perimeter lists only one wholly-owned subsidiary; H1FY26 169.37 vs FY26 nil. Auditor changed (predecessor unnamed R409/R412). Standalone and consolidated UDINs differ in format (R418 vs R449) and auditor pincode differs (R399 vs R421), as extracted. Dividend Rs2 approved at AGM 30-Sep but H1 dividend paid nil (R370). Cash fell 10,165.48 to 111.58."

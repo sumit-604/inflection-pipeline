@@ -1,0 +1,11 @@
+| agent | doc | model | total_tok | wall_s |
+| A1 | results (run 1) | sonnet-5.5 | 113501 | 535 |
+| A1 | results (verify continuation) | sonnet-5.5 | 132132 | 736 |
+| A2 | results | sonnet-5.5 | 70789 | 231 |
+| A3 | results | opus-5.5 | 141876 | 463 |
+| A4 | Role 4 review | opus-5.5 | 204006 | 1213 |
+| A5 | audit | opus-5.5 | 193828 | 860 |
+| A4 | loop 1 fix (continuation) | opus-5.5 | 270238 | 435 |
+| A5 | loop 1 re-audit | opus-5.5 | 142296 | 469 |
+| A4 | loop 2 fix (continuation) | opus-5.5 | 326471 | 308 |
+| A5 | loop 2 final re-audit | opus-5.5 | 105113 | 167 |

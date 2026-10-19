@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "GALLANTT"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 15
+formfeed_count: 15
+line_count: 1157
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["7 P&L scrambled", "8 balance sheet scrambled", "9 cash flow A/B scrambled", "10 cash flow C scrambled (pdftoppm 200 dpi, image transcription; pages 2-5 also rendered 200 dpi and read: Consolidated, identical to 7-10, no separate transcription needed)", "2 P&L verify", "3 balance sheet verify", "4 cash flow A/B verify", "5 cash flow C verify"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/gallantt-q2fy27/extracted/gallantt-results-q2fy27-fulltext.md"
+structured_path: "runs/gallantt-q2fy27/extracted/gallantt-results-q2fy27-structured.md"
+structured_counts:
+  number: 320
+  entity: 40
+  forward: 1
+  date: 35
+  qualifier: 53
+structured_id_range: "R001-R449"
+gate_a1: pass
+gap_note: ""

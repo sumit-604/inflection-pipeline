@@ -1,0 +1,54 @@
+stage: A3-forensics
+company: "GALLANTT"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/gallantt-q2fy27/work/forensics_results_gallantt_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: PASS
+  F5: FINDING
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "L1075; L429", classification: "AMBIGUOUS", implication: "Associate share 169.37 in Q2/H1FY26 but nil in audited FY26 column; H2FY26 offset or re-presentation; ask identity, exit, gain/loss booking"}
+  - {id: "A3-02", check: "F1", line: "L1112; L1116; L1123; L1125", classification: "AMBIGUOUS", implication: "MSME payables 757.56, current provisions 280.20, FV gain 65.29, ECL 36.16 all nil at audited FY26, live in first new-auditor period; reclassification or new policy; 43B(h) relevance"}
+  - {id: "A3-03", check: "F2", line: "L887; L54", classification: "AMBIGUOUS", implication: "Standalone review report but no standalone statements filed; S-vs-C proxy gap ~0 in FY27 vs 1.94% of PAT in Q2FY26 (<5pp); confirm standalone on exchanges (Reg 33)"}
+  - {id: "A3-04", check: "F3", line: "L1013-1015", classification: "AMBIGUOUS", implication: "Suryalaxmi Technologies is a nil-revenue shell holding 627.35 lakhs assets; ask what it holds and plan"}
+  - {id: "A3-05", check: "F5", line: "L926; L1032", classification: "AMBIGUOUS", implication: "Auditor changed between 27 Jul and 19 Oct 2026; predecessor unnamed; rotation vs resignation; first-review reclass risk"}
+  - {id: "A3-06", check: "F6", line: "L52-55", classification: "AMBIGUOUS", implication: "Committed standalone+consolidated results on exchange sites; standalone absent here; no project commitment despite CWIP +71%"}
+  - {id: "A3-07", check: "F8", line: "L1072; L1073", classification: "FORWARD-SIGNAL", implication: "ETR 25.73% H1FY27 (Q2 27.25%) vs 19.83% FY26 with 634 bps deferred credit; PAT -32.0% YoY vs PBT -19.3%; do not carry FY26 ETR forward"}
+  - {id: "A3-08", check: "F9", line: "L1077", classification: "NEUTRAL-FACT", implication: "Quarterly OCI (+52.18, -33.66) exceeds FY26 full year 28.74; immaterial; verify assumptions at AR"}
+  - {id: "A3-09", check: "F10", line: "L1082; L1076", classification: "AMBIGUOUS", implication: "No dilution (paid-up flat, basic=diluted) but comparative EPS 3.62/10.82 computed on pre-associate PAT (3.69/10.89 on reported)"}
+  - {id: "A3-10", check: "F11", line: "L1104; L1080; L458; L1151", classification: "AMBIGUOUS", implication: "Other equity roll-forward misses by 1,405.65; Rs 2 dividend (4,825.62) approved on BS date not visible as liability or cash outflow"}
+  - {id: "A3-11", check: "F12", line: "L1085; L1141; L1065", classification: "FORWARD-SIGNAL", implication: "CWIP +24,931.62 (+71.4%) in 6m, H1 capex 80% of FY26; no project/cost/COD disclosed; D&A +17.9% QoQ with PPE down"}
+  - {id: "A3-12", check: "F12", line: "L1097; L1144; L1111", classification: "AMBIGUOUS", implication: "Loan book 26,578.46 built from nil in FY26 beside 50,568.66 current borrowings; interest income 14.2% of H1 PBT; ask counterparties, related-party status"}
+  - {id: "A3-13", check: "F12", line: "L1095; L1140; L1128", classification: "FORWARD-SIGNAL", implication: "Cash 10,165.48 to 111.58; CFO 49% of PAT after 11,788.93 inventory build; debt shifting short; Q3 must fund dividend 4,825.62"}
+  - {id: "A3-14", check: "F12", line: "L448-455; L1061; L1060", classification: "AMBIGUOUS", implication: "Single-segment note while stock-in-trade purchases 11.3x QoQ on flat revenue; material cost 79.0% vs 72.7%; computed EBITDA margin 9.6% vs 16.2% Q1"}
+  - {id: "A3-15", check: "F13", line: "L457-460; L35", classification: "FORWARD-SIGNAL", implication: "AGM held 30 Sep so FY26 AR available for Role 6; dividend payable by ~30 Oct 2026 (s.127), 5.1x FY26 outflow; auditor appointment likely at AGM (confirm)"}
+  - {id: "A3-16", check: "F14", line: "L34; L37; L885; L874; L953", classification: "NEUTRAL-FACT", implication: "Cover letter carries 03 Nov 2025 (last year's Q2 date); 'Gallant' misspelt; auditor pincode mismatch; cumulative governance data point"}
+  - {id: "A3-17", check: "F15", line: "L993; L1075", classification: "AMBIGUOUS", implication: "Year-ago associate absent from current perimeter; name, exit date and mode not stated"}
+forward_signals: ["A3-07", "A3-11", "A3-13", "A3-15"]
+ambiguous: ["A3-01", "A3-02", "A3-03", "A3-04", "A3-05", "A3-06", "A3-09", "A3-10", "A3-12", "A3-14", "A3-17"]
+commitments:
+  - {commitment: "Publish results extract in Business Standard and Hindi daily (Reg 47)", implied_date: "~2026-10-21", ref: "Cover letter L52-54", status_word: "initiated"}
+  - {commitment: "Full standalone and consolidated results on BSE/NSE websites", implied_date: "2026-10-19", ref: "Cover letter L54-57", status_word: "initiated"}
+  - {commitment: "Pay FY26 final dividend Rs 2/share (4,825.62 lakhs computed)", implied_date: "~2026-10-30 (s.127)", ref: "Note 5 L457-460; CF L1151", status_word: "underway"}
+  - {commitment: "Capital project in CWIP 59,836.94", implied_date: "NOT FOUND", ref: "BS L1085; CF L1141", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Consolidated-only results filing. The standalone set is missing despite a standalone review report. Three threads for A4. (1) Q2 earnings quality fell. Computed EBITDA margin was 9.6% against 16.2% in Q1. Material cost rose to 79.0% of revenue from 72.7%. Stock-in-trade purchases rose 11.3x on flat revenue. Tax normalised to 25.7% from FY26's 19.8%, so PAT fell 32% YoY on a 19% PBT fall. (2) The liquidity squeeze looks like a choice, not a shortfall. Cash is 111.58 lakhs, but 40,165.53 of bank balances and a 26,578.46 inter-corporate loan book sit beside 50,568.66 of short-term debt. CWIP rose 71% with no project disclosed. A 4,825.62 lakh dividend falls due by about 30 Oct 2026. The loan counterparties are the top question. (3) This is the first review by a new auditor, and the predecessor is unnamed. Four lines that were nil at audited FY26 went live. Other equity misses its roll-forward by 1,405.65. Comparative EPS ignores the associate share. The cover letter carries last year's date. Each item is small. Together they say the books were re-cut this quarter. Lean bear until management explains."

@@ -1,0 +1,28 @@
+stage: A5-adversary
+company: "GALLANTT"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S14: verdict-list flag 3 (A4 L501) omits the net-interest readings (0.56x H1, 1.25x FY26) that the loop-2 YAML flag 3 (A4 L652) carries; no disagreement, detail differs."
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S14: harmonise A4 L501 flag 3 with A4 L652 flag 3 (net-interest readings). Optional, no re-run."
+analyst_note: "Loop 2 closure audit. M4 is closed at A4 L60, L253, L281, L294 and L379, and in YAML flag 3 and the analyst_note. The net-interest view recomputes from L1140, L1146, L1150 and L1076: H1 10,293.19 / 18,417.78 = 0.56x, FY26 60,561.10 / 48,426.70 = 1.25x, change -0.69x. The received-only 0.65x and 1.33x remain only as labelled gross figures marked not used. I tested A4's claim that H1 sits below the 0.65x floor on every consistent basis against the strongest combination, net-interest plus ex-L1132. It gives 0.63x, so the claim holds. The FY26 1.25x still contains the L1132 release. Net of both adjustments FY26 is 1.01x. That is 0.01x from the 1.00x row shown beside it, so no counter survives. S7-S13 are applied with correct arithmetic. A1 and A2 are unchanged: 101 page 7-10 lines (96 statement), 449 IDs, no orphans. One STYLE note only. PROCEED WITH FLAGS stands."

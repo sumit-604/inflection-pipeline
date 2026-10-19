@@ -1,0 +1,76 @@
+stage: A4-analyst
+company: "GALLANTT"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results]
+ledger_reconciliation:
+  notes: 15
+  turns: 0
+  slides: 0
+  all_reviewed: true
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE - no COMPANIES MASTER page (notion-search 20-Oct-2026); screener.in watchlist only; framed as PRE-THESIS READ"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY26", filed: "ND (standalone not filed)", proxy_pct: 1.90, basis: "associate 169.37 / consolidated PAT 8,892.62 (L1075, L1076)"}
+  - {period: "Q2 FY27", filed: "ND (standalone not filed)", proxy_pct: 0.0002, basis: "subsidiary loss 0.01 lakhs / 6,051.07 (L1015, L1076)"}
+  - {period: "H1 FY27", filed: "ND (standalone not filed)", proxy_pct: 0.0001, basis: "subsidiary loss 0.01 lakhs / 18,417.78 (L1015, L1076)"}
+questions_for_management:
+  - {q: "Of the Rs 265.78 Cr current loans at 30-Sep-2026 (L1097), what amount is lent to related parties?", from_finding_id: "A3-12"}
+  - {q: "What amount of the Rs 326.09 Cr other current financial assets (L1098) is owed by related parties?", from_finding_id: "A3-12"}
+  - {q: "What revenue did the Rs 98.87 Cr of Q2 traded-goods purchases (L1061) generate, and at what gross margin?", from_finding_id: "A3-14"}
+  - {q: "What were own-manufactured TMT and billet sales in tonnes in Q2 FY27 versus Q1 FY27?", from_finding_id: "A3-14"}
+  - {q: "Which project sits in the Rs 598.37 Cr CWIP (L1085), and what is its commissioning date?", from_finding_id: "A3-11"}
+  - {q: "What part of the Rs 401.66 Cr other bank balances (L1096) is lien-marked or held as margin money?", from_finding_id: "A3-13"}
+  - {q: "Who was the predecessor statutory auditor, and did it resign before completing its term?", from_finding_id: "A3-05"}
+  - {q: "Which movement explains the Rs 14.06 Cr gap in the other-equity roll-forward (L1104, L1080)?", from_finding_id: "A3-10"}
+  - {q: "On what date was the Rs 48.26 Cr FY26 dividend paid, and was it funded from bank balances or borrowing?", from_finding_id: "A3-15"}
+  - {q: "Which entity was the associate that contributed Rs 1.69 Cr in Q2 FY26 (L1075), and on what date did it cease to be an associate?", from_finding_id: "A3-01"}
+  - {q: "Will the Q2 FY26 comparative EPS of Rs 3.62 be restated to Rs 3.69 to include the associate share?", from_finding_id: "A3-09"}
+  - {q: "What is the name and exit mode of the year-ago associate absent from the current consolidation perimeter?", from_finding_id: "A3-17"}
+  - {q: "Has the Q2 FY27 standalone statement been filed on BSE and NSE, and on what date?", from_finding_id: "A3-03"}
+  - {q: "Has the full-format standalone and consolidated result promised in the cover letter (L54-55) been posted on both exchange websites?", from_finding_id: "A3-06"}
+  - {q: "What effective tax rate do you expect for FY27, given the Q2 FY27 rate of 27.25%?", from_finding_id: "A3-07"}
+  - {q: "Were the MSME payables, current provisions, ECL and fair value gain lines new in H1 FY27 a reclassification of FY26 balances?", from_finding_id: "A3-02"}
+  - {q: "Which asset was capitalised, or which useful-life change was made, to lift Q2 D&A 17.90% QoQ to Rs 35.51 Cr?", from_finding_id: "A3-11"}
+  - {q: "What assets make up the Rs 6.27 Cr held by Suryalaxmi Technologies Pvt Ltd, and do you plan to wind it up?", from_finding_id: "A3-04"}
+  - {q: "What share of Q2 FY27 revenue came from the top 10 customers?", from_finding_id: "A3-14"}
+  - {q: "Did the 30-Sep-2026 AGM approve the appointment of Singhi & Co., and for what term?", from_finding_id: "A3-05"}
+monitorables:
+  - {item: "Standalone Q2 FY27 statement visible on BSE and NSE", implied_date: "2026-10-19", source_ref: "Cover letter L54-57; A3-03, A3-06"}
+  - {item: "Reg 47 results extract published", implied_date: "~2026-10-21", source_ref: "Cover letter L52-54"}
+  - {item: "Q2 FY27 shareholding pattern, promoter pledge", implied_date: "~2026-10-21 (Reg 31, inference)", source_ref: "Step 5 pledge ND"}
+  - {item: "Earnings call held; answers to Step 8.5 questions", implied_date: "ND (intimated 2026-10-14)", source_ref: "orchestrator task message"}
+  - {item: "FY26 final dividend Rs 48.26 Cr paid", implied_date: "~2026-10-30 (s.127)", source_ref: "Note 5 L457-460; CF L1151; A3-15"}
+  - {item: "AGM outcome: auditor appointment and term", implied_date: "ND (AGM 2026-09-30)", source_ref: "A3-05, A3-15"}
+  - {item: "FY26 Annual Report Role 6 deep dive (loans, other current financial assets, related parties)", implied_date: "available now", source_ref: "A3-15, A3-08, A3-12"}
+  - {item: "Q3 FY27 results: gross margin vs 27.35% / 21.00%, traded purchases, ETR, D&A", implied_date: "by 2027-02-14", source_ref: "Step 8C; A3-07, A3-11, A3-14"}
+  - {item: "CWIP Rs 598.37 Cr project commissioning", implied_date: "NOT FOUND", source_ref: "BS L1085; CF L1141; A3-11"}
+  - {item: "FY27 audited results, first full Singhi audit", implied_date: "by 2027-05-30", source_ref: "A3-05, A3-10, A3-12, A3-13"}
+  - {item: "Q1 FY28 results", implied_date: "by 2027-08-14", source_ref: "Step 3"}
+  - {item: "FY27 Annual Report and AGM: related-party loans, associate, OCI", implied_date: "by 2027-09-30", source_ref: "A3-08, A3-12, A3-17"}
+  - {item: "Filing hygiene: cover-letter date, name, auditor address", implied_date: "next filing", source_ref: "A3-16"}
+flags:
+  - "PRE_THESIS_READ: no Notion page, no Decision Status"
+  - "STANDALONE_STATEMENT_ABSENT (L887; Reg 33)"
+  - "CASH_CONVERSION_INDETERMINATE_WITH_DIRECTION: H1 CFO/PAT 0.49x (0.56x net-interest) vs FY26 1.24x reported, 1.00x without the Rs 118.59 Cr L1132 release, 1.25x net-interest"
+  - "MARGIN_COMPRESSION: Op EBITDA margin 9.57% vs 12.99% YoY, 16.16% QoQ; core PBT -27.59% YoY"
+  - "TRADED_GOODS_SURGE: Rs 98.87 Cr vs Rs 8.78 Cr QoQ; +Rs 93.76 Cr YoY = 70.4% of revenue rise"
+  - "AUDITOR_CHANGE: predecessor unnamed; first Singhi review"
+  - "OTHER_EQUITY_ROLLFORWARD_BREAK: Rs 14.06 Cr"
+  - "UNDISCLOSED_FINANCIAL_ASSET_POOLS: loans Rs 265.78 Cr (built in FY26 from nil) + other current financial assets Rs 326.09 Cr = Rs 591.88 Cr, 17.0% of equity"
+  - "LIQUIDITY_DRAWDOWN: cash Rs 1.12 Cr vs current borrowings Rs 505.69 Cr; net debt Rs 165.86 Cr; dividend Rs 48.26 Cr due ~30-Oct-2026"
+  - "CWIP_BUILD_UNDISCLOSED: Rs 598.37 Cr (+71.4%)"
+  - "ETR_NORMALISED: 27.25% Q2 FY27 vs 15.31% Q2 FY26"
+  - "ASSOCIATE_AND_EPS_INCONSISTENCY"
+  - "FILING_HYGIENE: cover letter dated 03-Nov-2025"
+  - "TRACKER_ROWS_NOT_SUPPLIED: zero signals"
+  - "STEPS_6.5_7_DEFERRED to /fttcp and Role 1 (OR-30)"
+  - "NO_CONCALL: Role 5 not run; call intimated 14-Oct-2026"
+plain_language_brief_included: true
+analyst_note: "Pre-thesis read. With no Notion page, Steps 6A-6D are ND by construction and 8A-W yields no entry zone. Verdict is FLAGS, not CAVEATS: cash conversion alone caps at CAVEATS, but five governance data points need a human call. Loop 1 grafted three A5 counters: traded purchases matched 70.4% of the YoY revenue rise (own-made proxy +3.9% YoY, -7.9% QoQ, inference); the loan book was built in FY26 from nil and joins Rs 326.09 Cr of other current financial assets in a Rs 591.88 Cr undisclosed pool (17.0% of equity); FY26 CFO/PAT is 1.00x without a Rs 118.59 Cr non-trade release. The seasonality claim is withdrawn. Loop 2 made the interest view symmetric: with interest received added and interest paid deducted, CFO/PAT is 0.56x H1 FY27 and 1.25x FY26, so H1 sits below the 0.65x Pillar 2 floor on every consistent basis. The gross-margin line (-Rs 51.02 Cr) exceeds the PAT fall (-Rs 28.42 Cr), so Q3 gross margin stays the single test. Bank-balance lien status is unknown."
+review_path: "runs/gallantt-q2fy27/work/review_gallantt_q2fy27.md"
+loop: 2

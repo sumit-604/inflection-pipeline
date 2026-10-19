@@ -1,0 +1,93 @@
+stage: A4-analyst
+company: "TATVA"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, presentation, notice]
+ledger_reconciliation:
+  notes: 13
+  turns: 0
+  slides: 42
+  all_reviewed: true
+  a3_findings_incorporated: [RES-A3-01, RES-A3-02, RES-A3-03, RES-A3-04, RES-A3-05, RES-A3-06, RES-A3-07, RES-A3-08, RES-A3-09, RES-A3-10, RES-A3-11, RES-A3-12, RES-A3-13, PPT-A3-P-01, PPT-A3-P-02, PPT-A3-P-03, PPT-A3-P-04, PPT-A3-P-05, PPT-A3-P-06, PPT-A3-P-07, PPT-A3-P-08, PPT-A3-P-09, PPT-A3-P-10, PPT-A3-P-11, PPT-A3-P-12, PPT-A3-P-13, PPT-A3-P-14, PPT-A3-P-15, PPT-A3-P-16, PPT-A3-P-17, PPT-A3-P-18, PPT-A3-P-19, PPT-A3-P-20, NTC-A3-01, NTC-A3-02, NTC-A3-03, NTC-A3-04, NTC-A3-05]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "WATCHLIST / AVOID (not held)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - "Q2 FY26: 10.9% of std PAT (cons 9.92 vs std 8.94 Rs Cr)"
+  - "Q1 FY27: 53.0% (15.98 vs 10.45)"
+  - "Q2 FY27: 39.4% (21.45 vs 15.39); +28.5pp YoY, -13.6pp QoQ"
+  - "H1 FY26: 17.7% (16.57 vs 14.07)"
+  - "H1 FY27: 44.9% (37.43 vs 25.83)"
+  - "FY26: 7.6% (42.05 vs 39.08); H2 FY26 derived 1.9%"
+questions_for_management:
+  - {q: "Commit to FY27 consolidated CFO/EBITDA in per cent (H1 CFO Rs -3.68 Cr vs op EBITDA Rs 72.99 Cr; WC absorbed 99% of pre-WC profit)", from_finding_id: "PPT-A3-P-19, NTC-A3-05"}
+  - {q: "Customer 1 receivable at 30-Sep and amount overdue beyond terms (receivables +Rs 59.35 Cr to Rs 178.38 Cr)", from_finding_id: "PPT-A3-P-19, PPT-A3-P-20"}
+  - {q: "Does the 20-22% FY27 EBITDA band stand, yes or no (Q2 18.72%; H2 needs 20.9-24.7%)", from_finding_id: "PPT-A3-P-07, PPT-A3-P-13, PPT-A3-P-06"}
+  - {q: "Per cent of the 60-100% solvent increase recovered in Q2 prices, and repricing lag in days", from_finding_id: "PPT-A3-P-11, PPT-A3-P-06"}
+  - {q: "Transfer-pricing method for US/EU subsidiaries (no plant, staff or debt; 28.3% of Q2 PAT) and intercompany debtor days at 30-Sep", from_finding_id: "RES-A3-06, RES-A3-03"}
+  - {q: "Driver of standalone op EBITDA margin decline (H2 FY26 19.60% -> Q1 16.38% -> Q2 15.05%) while group held 18.72%", from_finding_id: "RES-A3-04"}
+  - {q: "Risk of year-end true-up reducing H1 subsidiary profit Rs 11.60 Cr (H2 FY26 gap Rs 0.48 Cr)", from_finding_id: "RES-A3-03"}
+  - {q: "Nature of std-over-cons other income Rs 2.20 Cr H1, and P&L line (other income or other expenses) of the Rs 3.91 Cr unrealised FX gain", from_finding_id: "RES-A3-05"}
+  - {q: "Nature, cash/non-cash, tax treatment and recurrence of the Rs 1.32 Cr Q1 exceptional charge", from_finding_id: "RES-A3-01, PPT-A3-P-04"}
+  - {q: "Dahej-III term-loan sanction, draw schedule and peak net debt/EBITDA (ST debt +Rs 50.17 Cr, LT proceeds nil)", from_finding_id: "RES-A3-02, PPT-A3-P-05"}
+  - {q: "Dahej-III share of the H1 CWIP rise of Rs 19.48 Cr (project split ND), equipment PO status, spend vs Rs 200 Cr, commissioning month", from_finding_id: "PPT-A3-P-08"}
+  - {q: "Quarter from which current tax rises to the full P&L charge (std DTA Rs 0.77 Cr)", from_finding_id: "RES-A3-07"}
+  - {q: "Price vs volume split of Q2 growth and how momentum holds at Rs 869 Cr annualised vs Rs 800-850 Cr ceiling", from_finding_id: "PPT-A3-P-07, PPT-A3-P-14"}
+  - {q: "SDA ~45% of Q2 vs ~34% of Q1: is Customer 1 an SDA buyer, how many new SDA customers invoiced, volume and tenor of Euro 7 contracts", from_finding_id: "PPT-A3-P-14"}
+  - {q: "Does ESS Rs 40-50 Cr FY27 guide stand (H1 Rs 13.2 Cr); hybrid-battery first supply date", from_finding_id: "PPT-A3-P-09"}
+  - {q: "FY27 R&D budget in rupees (H1 1.19% of revenue vs 'accelerate' claim)", from_finding_id: "PPT-A3-P-10"}
+  - {q: "Status of pharma molecules two and three due by Q3 end (deck names one product)", from_finding_id: "PPT-A3-P-20"}
+  - {q: "Correct classification of the Rs 3.82 Cr dividend difference; Note 7 reclass lines and amounts", from_finding_id: "RES-A3-09, RES-A3-10"}
+  - {q: "RoE and Debt/EBITDA formula per p14 column; why FY26/H1 basis differs; which control failed", from_finding_id: "PPT-A3-P-01, PPT-A3-P-02"}
+  - {q: "Cause of call cancellation; decided in or after the 11:30-15:45 board; reschedule date or written Q&A", from_finding_id: "NTC-A3-01, NTC-A3-02, NTC-A3-03, NTC-A3-04, RES-A3-08"}
+monitorables:
+  - {item: "Rescheduled call or written Q&A", implied_date: "none given", source_ref: "NTC L39-40; NTC-A3-01"}
+  - {item: "Solvent/freight normalisation within Q3", implied_date: "2026-12-31", source_ref: "PPT L140-141 (R035)"}
+  - {item: "Q3 op EBITDA margin: bull >=20.0%, bear <18.0% (Q2 18.72%)", implied_date: "2027-02-14", source_ref: "PPT L142 (R037); Step 8C"}
+  - {item: "Q3 revenue vs Q2 base Rs 217.32 Cr and Rs 800-850 Cr ceiling", implied_date: "2027-02-14", source_ref: "PPT L141 (R036); RES L145"}
+  - {item: "Hybrid-battery first commercial supply", implied_date: "2026-11-30", source_ref: "PPT L168 (R045); memory Oct-Nov CY2026"}
+  - {item: "ESS FY27 Rs 40-50 Cr (H1 Rs 13.2 Cr)", implied_date: "2027-05-30", source_ref: "PPT L674 (R542)"}
+  - {item: "Two further pharma molecules", implied_date: "2026-12-31", source_ref: "PPT L174 (R047); memory"}
+  - {item: "Dahej-III equipment PO", implied_date: "2026-12-31", source_ref: "PPT L194 (R054); memory"}
+  - {item: "Dahej-III term-loan sanction and draw", implied_date: "2027-05-30", source_ref: "RES L315, L317; RES-A3-02"}
+  - {item: "Std DTA exhaustion; cash tax step-up ~Rs 3.5 Cr/qtr", implied_date: "2026-12-31", source_ref: "RES L500, L464; RES-A3-07"}
+  - {item: "FY27 CFO/op EBITDA (bull >70%, bear <30%) and receivable days", implied_date: "2027-05-30", source_ref: "RES L289, L215"}
+  - {item: "H2 FY27 subsidiary profit share / year-end true-up", implied_date: "2027-05-30", source_ref: "RES L164, L466; RES-A3-03"}
+  - {item: "Standalone op EBITDA margin trend (H2 FY26 19.60%, Q1 16.38%, Q2 15.05%)", implied_date: "2027-02-14", source_ref: "RES L447-L459; RES-A3-04"}
+  - {item: "Nature of Rs 1.32 Cr exceptional", implied_date: "2027-09-30", source_ref: "RES L158, L460; RES-A3-01"}
+  - {item: "Note 7 reclass amounts; FY26 CFO basis; P&L line of Rs 3.91 Cr unrealised FX gain", implied_date: "2027-09-30", source_ref: "RES L371, L268; RES-A3-10"}
+  - {item: "FY27 R&D <2% second year (H1 1.19%)", implied_date: "2027-09-30", source_ref: "PPT L1108 (R724)"}
+  - {item: "Deck disclosure controls in Q3 deck", implied_date: "2027-02-14", source_ref: "PPT L48-49; PPT-A3-P-01"}
+  - {item: "MD new term starts after 43.5% institutional dissent", implied_date: "2027-02-01", source_ref: "Notion 28-Sep-2026 note (memory)"}
+  - {item: "FPI holding check vs NSE SHP", implied_date: "2027-01-21", source_ref: "PPT L1110; PPT-A3-P-18"}
+  - {item: "Operator rulings 50 and 51", implied_date: "pending", source_ref: "Notion brief s.4 (memory)"}
+  - {item: "ROCE clears 8% by FY28", implied_date: "2028-05-30", source_ref: "Notion s.4 (memory)"}
+  - {item: "Dahej-III commissioning Q3-Q4 FY28", implied_date: "2027-10-01 to 2028-03-31", source_ref: "PPT L194-197; memory"}
+  - {item: "Semiconductor conversion condition", implied_date: "not before Q4 CY2028", source_ref: "PPT L185-191; memory"}
+  - {item: "Website posting of results and notice (administrative)", implied_date: "2026-10-19", source_ref: "RES L47, L368, L641; NTC L44-45"}
+  - {item: "M25 Q3 FY27 SDA revenue vs Q2 (about Rs 97 Cr; share 45%); bull holds with new customers named, bear falls toward Rs 55-60 Cr", implied_date: "2027-02-14", source_ref: "PPT L614, L623, L1106"}
+flags:
+  - "TRIGGER (a) AT EDGE: H1 CFO Rs -3.68 Cr on revenue +59.9%; receivable days 84.9 d (H1) / 100.2 d (TTM) vs 185 line; NOT FIRED as written; bear separating metric met on CFO leg; operator ruling 50 decides, not resolved by A4"
+  - "CASH: WC absorbed 99% of pre-WC profit; FCF Rs -34.52 Cr funded by ST debt +Rs 50.13 Cr; INDETERMINATE-WITH-DIRECTION (structural lean); missing: receivable ageing, Customer 1 balance, intercompany days, Sep-25 balance sheet, Note 7 amounts"
+  - "PILLAR 2: H1 CFO/PAT -0.10x vs 0.80x multiplier on file; points to 0.65x (deferred to /fttcp and Role 1, OR-30)"
+  - "PILLAR 1: H1 annualised ROCE 11.6% (10.6% operating) vs 6.6% current leg on file; TTM 9.5% below the Q1 8D 12% reassess line (deferred)"
+  - "LEVERAGE: net debt/TTM op EBITDA 1.22x vs 0.65x band; 97.4% of debt short-term; no term debt drawn for the capex"
+  - "PROFIT LOCATION: subsidiaries with no plant, staff or debt earn 28.3% of Q2 group PAT; parent op margin H2 FY26 19.60% -> Q1 16.38% -> Q2 15.05%; parent materials +810 bps YoY vs staff/other -493 bps; std other income exceeds cons by Rs 2.20 Cr H1"
+  - "CORE PROFIT QUALIFIER: P&L line of Rs 3.91 Cr H1 unrealised FX gain ND; if inside other expenses it is up to 8.3% of H1 core PBT and 16.5% of the H1 core-PBT increase; 95% core share is an upper bound"
+  - "SDA: step-up sits in one quarter (Q1 ~34%, Q2 ~45% of revenue); Euro 7 link MGMT only; new-customer leg ND; trigger FIRED on revenue, durability unproven (M25)"
+  - "MARGIN: op EBITDA 18.72% Q2, second quarter below the 20-22% guide; above the 18% red line"
+  - "DISCLOSURE: call cancelled 16:03 IST, 15 min after results signed, no cause named, no new date; cash Q&A silent two quarters, now CONFIRMATORY-NEGATIVE"
+  - "DISCLOSURE: same-day deck restatement RoE 2.6% -> 6.3% and Debt/EBITDA 4.30 -> 1.16, both flattering; corrected RoE fails the FY23-FY25 basis"
+  - "DISCLOSURE: Rs 1.32 Cr exceptional item unexplained for a second filing"
+  - "CF CLASSIFICATION: Rs 3.82 Cr dividend difference (financing cons vs operating std); cons CFO Rs -3.68 to -7.50 Cr by treatment; Note 7 reclass unquantified"
+  - "TAX: std DTA Rs 0.77 Cr left; cash tax steps up from Q3 FY27"
+  - "CAPACITY: Q2 annualised revenue Rs 869 Cr at or above the Rs 800-850 Cr existing-footprint ceiling (memory)"
+  - "GUIDANCE: ESS behind (H1 Rs 13.2 Cr vs Rs 40-50 Cr FY27); R&D 1.19% of revenue"
+  - "NOTION: no Bear/Base/Bull P&L table, so Step 6A not gradeable; verdict-block entry Rs 97-121 stale vs properties Rs 118-147; ruling 51 pending"
+  - "TRACKER: rows not supplied; fewer than three signals; OR-17 gate will need them before /fttcp"
+  - "DATA: RES-A3-13 std EPS cells re-verify; PPT PN-1 to PN-4 anchor issues; NTC anchor offsets R015/R023/R026; PPT-A3-P-01 call-timing inference void (call cancelled before deck filed); CWIP project split ND"
+plain_language_brief_included: true
+analyst_note: "Group profit grew (core PBT +114.8% YoY) but cash went the other way: H1 CFO -3.68 Cr on revenue +59.9%, funded by short-term debt. Cash is INDETERMINATE-WITH-DIRECTION, not structural, because receivable and inventory days are flat on the H1 basis; the structural lean rests on FY26 CFO/EBITDA of 33.8% and a ~300-day cycle. Trigger (a) is not fired on the 185-day text; the bear separating metric is met on the CFO leg, so ruling 50 decides. PROCEED WITH FLAGS, not CAVEATS, because the flags are substantive. Loop 1 grafted three bear counters beside the bull claims: the FX gain's P&L line is ND (core share is an upper bound); the parent's materials rose 810 bps against 493 bps of cost leverage, so the group offset depends on staffless subsidiaries; SDA's step-up is one quarter old (M25). CWIP is now an H1 change with no project split. Notion has no Bear/Base/Bull table, so 6A cannot grade. Q2 segment values are H1 FILED minus Q1 memory."
+review_path: "runs/tatva-q2fy27/work/review_tatva_q2fy27.md (single merged file; supersedes parts/review_tatva_q2fy27.part2.md)"

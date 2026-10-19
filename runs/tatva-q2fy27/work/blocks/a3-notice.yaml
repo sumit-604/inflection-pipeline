@@ -1,0 +1,41 @@
+stage: A3-forensics
+company: "TATVA"
+quarter: "Q2 FY27"
+doctype: "presentation (notice)"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/tatva-q2fy27/work/forensics_notice_tatva_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: PASS
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F6", line: "L34-36, L39-40", classification: "FORWARD-SIGNAL", implication: "13-Oct call commitment (19-Oct 17:00 IST) cancelled, no new date; Q2 has no management commentary venue; Role 5 logs missed disclosure commitment"}
+  - {id: "A3-02", check: "F6", line: "L58-59; L36", classification: "AMBIGUOUS", implication: "signed 16:03:53 IST, 56 min before 17:00 call; notice silent on whether board/results concluded first; check results filing timestamp"}
+  - {id: "A3-03", check: "F7", line: "L39-40", classification: "AMBIGUOUS", implication: "'unforeseen circumstances' names no cause; neutral (logistics) vs bear (results-day event) reading; lean bear, ask cause"}
+  - {id: "A3-04", check: "F16", line: "L44-45", classification: "AMBIGUOUS", implication: "only promise is posting this notice; no reschedule, written Q&A or deck named; live Q&A channel dropped"}
+  - {id: "A3-05", check: "F17", line: "L39-40", classification: "AMBIGUOUS", implication: "all 8 checklist items unaddressed; cash/receivable-days Q&A silent 2 consecutive quarters; upgrade to CONFIRMATORY-NEGATIVE if H1 CFO negative or receivable days rising"}
+forward_signals: ["A3-01"]
+ambiguous: ["A3-02", "A3-03", "A3-04", "A3-05"]
+commitments:
+  - {commitment: "Earnings call per 13-Oct-2026 intimation", implied_date: "2026-10-19 17:00 IST", ref: "L34-36 (R019, R020, R005)", status_word: "cancelled"}
+  - {commitment: "Rescheduled earnings call", implied_date: "none given", ref: "L39-40 (R017)", status_word: "not given"}
+  - {commitment: "Post this intimation on www.tatvachintan.com", implied_date: "not dated", ref: "L44-45 (R016, R015)", status_word: "promised"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "One-page Reg 30 notice; only F6, F7, F16, F17 carry content. The load-bearing facts are timing and vagueness: signed 16:03:53 IST, 56 minutes before the 17:00 call, cause 'unforeseen circumstances', no new date, no substitute channel. The notice does not say whether the board approved results that day, so A4 should compare the results filing timestamp before reading intent into the cancellation. Per the Notion brief, this call was the live venue for the cash-vs-profit and receivable-days questions, and the Q1 call was already silent on cash/WC, so Q2 makes two consecutive quarters with no cash Q&A; the page's own rule says that strengthens the structural-cash leaning. I hold it AMBIGUOUS, not CONFIRMATORY-NEGATIVE, because the silence comes from a cancellation rather than evasion on a live call, and my inputs show no metric deterioration. Upgrade if H1 CFO is negative or receivable days rise on rising revenue. A1 anchors for R015, R023, R026 are one line off (L45, L34, L34); all quotes verbatim, no reconciliation gap."

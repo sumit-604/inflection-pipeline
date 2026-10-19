@@ -1,0 +1,5 @@
+# Source documents (referenced, not copied; downloaded 2026-10-19 from BSE AttachLive, byte sizes match the BSE API)
+- results: C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/19 Tatva Chintan/Tatva_Q2FY27_Results.pdf (14 pages; BSE 19-Oct 15:55; text layer nearly empty, 4,487 chars: scan case)
+- presentation: C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/19 Tatva Chintan/Tatva_Q2FY27_Investor_Presentation_Updated.pdf (42 pages; BSE 19-Oct 21:16, 'Updated Investor Presentation', supersedes the 18:07 41-page version also held at C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/19 Tatva Chintan/Tatva_Q2FY27_Investor_Presentation_Original.pdf)
+- presentation (notice, tag notice): C:/ConcallPipeline/Daily Concall Intelligence/Q2 FY27 Results/19 Tatva Chintan/Tatva_Earnings_Call_Cancellation.pdf (1 page; BSE 19-Oct 16:17; cancellation of the 19-Oct earnings call)
+- concall: NONE. The company cancelled the 19-Oct call; no recording exists (screener.in shows no REC link).

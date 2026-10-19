@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "TATVA"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 1
+formfeed_count: 1
+line_count: 65
+unit_convention: "none"
+conversion_factor_to_cr: "n/a"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/tatva-q2fy27/extracted/tatva-notice-q2fy27-fulltext.md"
+structured_path: "runs/tatva-q2fy27/extracted/tatva-notice-q2fy27-structured.md"
+structured_counts:
+  number: 7
+  entity: 8
+  forward: 2
+  date: 7
+  qualifier: 4
+structured_id_range: "R001-R028"
+gate_a1: pass
+gap_note: ""

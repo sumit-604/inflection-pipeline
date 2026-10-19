@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "TATVA"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/tatva-q2fy27/work/ledger_presentation_tatva_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 6
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 51
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 42
+  slide_numbers: 591
+flags_raised: [ZERO_STANDING, VERSION_DIFF, SUPERSEDED, CHART_ORDER_UNRESOLVED, LAYOUT_SCRAMBLED, LABEL_MISMATCH]
+ids_in_structured: 738
+ids_referenced: 738
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Counts: 591 NUMBER rows = 567 active + 24 superseded (R165-169, R622-627, R642-650, R692-695), successors R714-R738; R734 promoter 72.02% has no predecessor. Five version-diff units enumerated (p1 text/ref/timestamp, new p2 annexure, RoE H1FY27 2.6->6.3, Debt/EBITDA 4.30->1.16, Note 2 added); live values R207 and R217. Footer page numbers run 2 below PDF pages, so annexure page 12 is PDF p14. Zero standing: Exceptional items dash in 5 of 6 annual columns (R288-293 except R290), Long-term borrowings FY25 (R449). Eight slides (10,17,19,27,31,33,35,37) are dividers with no rows. R543/R550 print Q1FY27 where other slides say H1FY27. No prior deck, so no DROPPED_SLIDE test. Note: a first Bash call accidentally re-ran a sibling scratchpad script (a2.py, HFCL mareport) and regenerated runs/hfcl-q2fy27/work/ledger_mareport_hfcl_q2fy27.md from its unchanged inputs; verify it if HFCL was mid-edit."

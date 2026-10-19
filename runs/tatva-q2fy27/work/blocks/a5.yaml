@@ -1,0 +1,57 @@
+stage: A5-adversary
+company: "TATVA"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - claim: "Group profit growth is real; core PBT +114.8% YoY; about 95% of the PAT change is core (REV L208, L227, L280, L662)"
+    counter: "The P&L line of the Rs 3.91 Cr H1 unrealised FX gain is not disclosed; A4 tests only the other-income case (REV L230). If FX sits in other expenses it is inside op EBITDA and core PBT: up to 8.3% of H1 core PBT (3.91 of 46.84) and up to 16.5% of the H1 core-PBT increase (4.33 of 26.23, incl. the H1 FY26 loss of Rs 0.43 Cr). The 95% core share is an upper bound; Q2 split ND."
+    source_line: "RES L268, L155, L146, L157"
+    type: MISSING
+  - claim: "Operating leverage offset the input-cost hit; operating leverage is real (REV L226, L685)"
+    counter: "At the parent the offset fails: Q2 YoY materials rose from 44.59% to 52.69% of revenue (+810 bps) against employee -411 bps and other expenses -82 bps, so parent op EBITDA margin fell 317 bps. The group +74 bps exists only after the subsidiary layer (no plant, payroll or debt; H2 FY26 gap Rs 0.48 Cr). Readings: real factory cost squeeze, or margin moved by transfer price; both make the group offset depend on subsidiary profit holding at year end."
+    source_line: "RES L447, L451, L453, L454, L457"
+    type: MISSING
+  - claim: "SDA Euro 7 trigger FIRED; SDA watch item GREEN (REV L407, L487, L676)"
+    counter: "Filed figures alone (H1 SDA Rs 154.6 Cr = 40% of H1 revenue; Q2 share 45%) imply Q1 SDA of about Rs 56-58 Cr (about 34% of Q1 revenue, near the FY26 quarterly average of Rs 51.1 Cr) and Q2 of about Rs 97-99 Cr: the step-up is one quarter. The Euro 7 link is MGMT only; no customer, volume or contract data; the new-customer leg of GREEN is ND. No SDA monitorable or forward-map row, although SDA gave about 78% of the QoQ gain. Separating observation: Q3 FY27 SDA at or above about Rs 97 Cr."
+    source_line: "PPT L614, L623, L1106, L160-L161"
+    type: MISSING
+findings_by_type:
+  factual:
+    - "F1 (A4): CWIP +Rs 19.48 Cr is described as 'since the 20-Jul groundbreaking' and 'Dahej-III build' and used as Dahej-III confirming evidence (REV L311, L343, L440, L488). RES L203 gives only the 31-Mar to 30-Sep change with no project split. Restate: H1 CWIP change, project split ND."
+  missing:
+    - "M1 (A4): graft the FX-location qualifier to the 'core profit is real / 95% core' claims (REV L208, L227, L230, L280, L662); RES L268."
+    - "M2 (A4): graft the parent-level bridge (materials +810 bps vs leverage -493 bps YoY) to 'operating leverage offset the input-cost hit' (REV L226, L685); RES L447-L457."
+    - "M3 (A4): graft the one-quarter and MGMT-attribution qualifier to SDA FIRED and GREEN (REV L407, L487, L676); add Q3 SDA monitorable M25 and a forward-map row with the separating observation; PPT L614, L623, L1106."
+  contradiction:
+    - "C1 (A4): guidance tally (REV L452) says 4 consistent or on track and 6 not testable; the 17 row statuses (REV L434-L450) give 3 consistent or on track, 5 not testable, 1 FAR (#14), 1 NEAR (#15). Restate the tally."
+  style:
+    - "S1: REV L670 'with no reason'; the notice says 'unforeseen circumstances' (NTC L39-40). Write 'no cause named'."
+    - "S2: REV L664 attributes the net 99% WC absorption to stock and customer dues; those two took Rs 116.77 Cr, offset by payables (RES L275-L281)."
+    - "S3: REV L85 'written as the call script' is an inference (PPT L111, L199); tag [INFERENCE]."
+    - "S4: A2 LABEL_ANOMALY (R1005, R1040; RES L321, L610) has no named disposition in A4; add 'reviewed, no finding'."
+    - "S5: REV L6 and L808 describe two files; the audited file is merged (part 2 from REV L358)."
+    - "S6: FY26 Rs 4.00 Cr non-current investment (RES L207, L295, L584) not named in A4; investee ND; 0.49% of equity."
+    - "S7: A2 presentation count test uses A1 header totals as its grep side (LED-P L17); A5 fulltext sweep found no gap."
+loop_back_to: "A4"
+gap: "Graft three surviving bear counters (M1 FX location behind 'core profit is real'; M2 parent-level input cost vs leverage behind 'operating leverage offset'; M3 SDA one-quarter and MGMT-attribution qualifier plus Q3 SDA monitorable and forward-map row); restate the CWIP rise as an H1 change with project split ND (F1); fix the guidance tally to 3 consistent or on track, 5 not testable, 1 far, 1 near (C1). Exact text is in the audit correction list."
+style_notes:
+  - "S1: say 'no cause named', not 'no reason' (REV L670; NTC L39-40)."
+  - "S2: '99%' is net working capital, not stock and dues alone (REV L664; RES L275-L286)."
+  - "S3: tag the call-script reading [INFERENCE] (REV L85)."
+  - "S4: dispose of A2 LABEL_ANOMALY by name (RES L321, L610)."
+  - "S5: update the two-files self-description (REV L6, L808)."
+  - "S6: name the FY26 Rs 4.00 Cr investment as ND (RES L207, L295)."
+  - "S7: A2 should grep the presentation fulltext for its count test (LED-P L17)."
+analyst_note: "Coverage and arithmetic are clean. Fresh fulltext counts match all three ledgers, every structured ID is in a ledger, and about 150 derived cells recompute within rounding. The loop comes from the adversarial read. Each of A4's three most positive claims has a counter that the extract supports and A4 does not state beside the claim. (1) 'Core profit is real' assumes the Rs 3.91 Cr H1 unrealised FX gain sits in other income, but its line is undisclosed. (2) 'Leverage offset input cost' holds only after adding the staffless subsidiaries; at the factory, materials rose 810 bps against 493 bps of leverage. (3) SDA 'FIRED' rests on one quarter and a management attribution, and no SDA monitorable exists. These are grafts, not rework: no table number changes. F1 and C1 are one-line edits. The acquisition probe found no business acquisition; the only stake buy is a FY26 Rs 4 Cr investment with an undisclosed investee, so no multiple can be computed."

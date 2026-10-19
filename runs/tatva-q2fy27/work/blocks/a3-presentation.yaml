@@ -1,0 +1,65 @@
+stage: A3-forensics
+company: "TATVA"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/tatva-q2fy27/work/forensics_presentation_tatva_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: N.A.
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-P-01", check: "F16", line: "p1 L41, L45, L65-66; p2 L76-81", classification: "AMBIGUOUS", implication: "Same-day restatement (18:05 to 20:54) of RoE 2.6->6.3% and Debt/EBITDA 4.30->1.16, called typographical; both flattering; earlier values tie to wrong cells (Q2 PAT/NW 2.64%; H1 debt/H1FY26 EBITDA 4.30); original filed after 17:00 call start [memory]"}
+  - {id: "A3-P-02", check: "F16", line: "p14 L397-401", classification: "AMBIGUOUS", implication: "Corrected RoE 6.3% fails PAT/closing NW basis that ties FY23-FY25; on that basis FY26 5.4% (printed 7.2%), H1 4.6% (9.2% annualised); FY26/H1 fit pre-tax PBEIT/NW truncated"}
+  - {id: "A3-P-03", check: "F16", line: "p14 L407-415", classification: "NEUTRAL-FACT", implication: "Debt/EBITDA uses EBITDA incl other income FY23-FY25, excl other income FY26-H1; net debt/EBITDA 1.06x annualised vs 0.65x band"}
+  - {id: "A3-P-04", check: "F1", line: "p15 L437-438, L449", classification: "AMBIGUOUS", implication: "Exceptional items nil FY24-FY26, H1FY27 13.18 charge undisclosed; p12 PBT math puts it in Q1; Q1 open question unanswered second quarter"}
+  - {id: "A3-P-05", check: "F1", line: "p16 L490, L494, L509, L517", classification: "FORWARD-SIGNAL", implication: "LT borrowings nil FY25, 44.65 now; 97% of 1,699.95 debt is short-term; Dahej-III term debt not yet drawn, leverage to rise before capacity earns"}
+  - {id: "A3-P-06", check: "F6", line: "p6 L136-141", classification: "FORWARD-SIGNAL", implication: "Solvent (+60-100%) and freight (+100%) normalisation dated within Q3 FY27; Q3 margin must recover from 18.7%"}
+  - {id: "A3-P-07", check: "F6", line: "p6 L141-142; p18 L543", classification: "FORWARD-SIGNAL", implication: "Unquantified 'similar momentum' and margin guide; H2 needs 20.9-24.7% margin for 20-22% FY27; Q2 annualised Rs 869 Cr at Rs 800-850 Cr footprint ceiling [memory]"}
+  - {id: "A3-P-08", check: "F6", line: "p8 L194-197", classification: "FORWARD-SIGNAL", implication: "Greenfield 'in line with planned schedule' with no schedule, capex or milestone; CWIP +194.79 Mn only trace"}
+  - {id: "A3-P-09", check: "F6", line: "p7 L167-169; p23 L674; L1106", classification: "FORWARD-SIGNAL", implication: "ESS flat QoQ (~65 vs ~67); FY27 Rs 40-50 Cr guide [memory] needs H2 at least 2.0x H1; hybrid battery undated"}
+  - {id: "A3-P-10", check: "F6", line: "p7 L176-179; p29 L1108", classification: "FORWARD-SIGNAL", implication: "R&D 1.19% of H1 revenue (FY26 1.55%) against 'accelerate' pipeline claim; <2%-second-year watch item on course to fire"}
+  - {id: "A3-P-11", check: "F7", line: "p9 L207-208; p6 L137", classification: "FORWARD-SIGNAL", implication: "'progressively where appropriate' signals incomplete solvent pass-through; Q3 margin exposed if normalisation slips"}
+  - {id: "A3-P-12", check: "F7", line: "p8 L185-192", classification: "NEUTRAL-FACT", implication: "Semiconductor 'working patiently'; no conversion condition met (no supply agreement, capex line or revenue)"}
+  - {id: "A3-P-13", check: "F7", line: "p6 L133-135; p12 L329-330", classification: "AMBIGUOUS", implication: "Margin miss framed as 'temporary'; 20-22% band not restated; -2% employee and other cost claim unverifiable from deck"}
+  - {id: "A3-P-14", check: "F12", line: "p13 L1106; p20-24", classification: "FORWARD-SIGNAL", implication: "SDA ~+72% QoQ supplied ~80% of the 502 Mn QoQ revenue gain; SDA 45% of Q2; growth guide rests on Euro 7 SDA"}
+  - {id: "A3-P-15", check: "F14", line: "p23 L676; p24 L707", classification: "NEUTRAL-FACT", implication: "'Revenue in Q1FY27' labels are H1 values (sum ties to 3,844); left uncorrected in the Updated deck"}
+  - {id: "A3-P-16", check: "F14", line: "p16 L503", classification: "NEUTRAL-FACT", implication: "'Tangible net worth' printed on total equity 8,146.51; intangibles 65.46 not deducted"}
+  - {id: "A3-P-17", check: "F14", line: "p41 L1087; p42 L1101", classification: "NEUTRAL-FACT", implication: "Stale boilerplate (COVID-19, Copyright 2021, EBIDTA); cumulative disclosure-control data point with P-01 and P-15"}
+  - {id: "A3-P-18", check: "F14", line: "p40 L1067-1072 vs L1110", classification: "NEUTRAL-FACT", implication: "Text layer places 19.58% at FPI, image at PUBLIC; verify against NSE Sept 2026 SHP"}
+  - {id: "A3-P-19", check: "F17", line: "p15-16; p16 L485-496", classification: "AMBIGUOUS", implication: "No cash flow in deck, CFO NOT FOUND; H1 net WC +806.76 > EBITDA 729.85, debt +496.22; receivable days ~85; second quarter of cash silence"}
+  - {id: "A3-P-20", check: "F17", line: "p6-9; p7 L174", classification: "AMBIGUOUS", implication: "12 of 18 checklist/open items not addressed, incl. two pharma molecules by Q3 end, Customer 1 36%, subsidiary receivables, Rs 1,000 Cr ceiling"}
+forward_signals: ["A3-P-05", "A3-P-06", "A3-P-07", "A3-P-08", "A3-P-09", "A3-P-10", "A3-P-11", "A3-P-14"]
+ambiguous: ["A3-P-01", "A3-P-02", "A3-P-04", "A3-P-13", "A3-P-19", "A3-P-20"]
+commitments:
+  - {commitment: "Solvent prices and freight to normalise within Q3", implied_date: "by 2026-12-31", ref: "p6 L140-141 (R035)", status_word: "underway"}
+  - {commitment: "Revenue growth with similar momentum over the next quarters", implied_date: "Q3-Q4 FY27", ref: "p6 L141 (R036)", status_word: "initiated"}
+  - {commitment: "EBITDA margin to resume its healthy trajectory (no number)", implied_date: "Q3 FY27 onward", ref: "p6 L142 (R037)", status_word: "initiated"}
+  - {commitment: "Customer pricing adjusted progressively where appropriate", implied_date: "undated", ref: "p9 L208 (R056)", status_word: "underway"}
+  - {commitment: "ESS hybrid-battery application progressing towards commercialisation", implied_date: "undated (Oct-Nov CY2026 per Q1 call, memory)", ref: "p7 L168 (R045)", status_word: "underway"}
+  - {commitment: "Additional ESS products being scaled up", implied_date: "undated", ref: "p7 L169 (R045)", status_word: "underway"}
+  - {commitment: "Pharma product beginning to contribute", implied_date: "Q2 FY27", ref: "p7 L174 (R047)", status_word: "completed"}
+  - {commitment: "Accelerate PASC pipeline piloting, process development, commercialisation", implied_date: "undated (years ahead)", ref: "p7 L176-179 (R048)", status_word: "initiated"}
+  - {commitment: "Five semiconductor products in development, validation, customer qualification", implied_date: "undated (years ahead)", ref: "p8 L185-191 (R052)", status_word: "underway"}
+  - {commitment: "Greenfield project progressing in line with planned schedule", implied_date: "not stated (Q3-Q4 FY28 commissioning, memory)", ref: "p8 L194 (R054)", status_word: "underway"}
+  - {commitment: "Capex to boost capacities and higher revenues", implied_date: "undated", ref: "p34 L936-940 (R638)", status_word: "underway"}
+  - {commitment: "Steps taken to prevent recurrence of filing errors", implied_date: "next filing (Q3 FY27)", ref: "p1 L48-49", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The restatement is the lead item. Both corrected H1 ratios moved in the flattering direction, and the letter calls the errors typographical. The arithmetic points to wrong-cell links instead: 2.6% equals Q2 PAT over closing net worth, and 4.30 equals H1 debt over H1FY26 EBITDA. The corrected 6.3% still fails the PAT/net-worth basis that reproduces FY23-FY25. On that basis FY26 is 5.4%, not 7.2%. Both p14 ratio series change basis at the FY26 column. The original deck was filed about an hour after the 17:00 call start (timing from memory), so ratios quoted on the call may be on the wrong basis. In operations, Q2 was an SDA quarter: SDA rose about 70% QoQ and carried about 80% of the revenue gain. ESS was flat, and R&D fell to 1.2% of revenue. H1 net working capital rose 807 Mn, more than H1 EBITDA of 730 Mn, and debt rose 496 Mn. The deck has no cash flow statement, so CFO stays NOT FOUND until A4 reads the results filing. Q2 annualised revenue of Rs 869 Cr already sits at the capacity ceiling management gave on the Q1 call."

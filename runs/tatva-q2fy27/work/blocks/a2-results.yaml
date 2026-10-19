@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "TATVA"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/tatva-q2fy27/work/ledger_results_tatva_q2fy27.md"
+counts:
+  notes: 13
+  line_items: 241
+  zero_standing: 69
+  agenda_items: 1
+  auditor_paras: 10
+  entities: 3
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, MISSING_FROM_STRUCTURED, RESTATED, LABEL_ANOMALY, DIVIDEND_PAID_DIFF, LONG_MEETING_NO_AGENDA, RECLASS_UNQUANTIFIED]
+ids_in_structured: 1090
+ids_referenced: 1090
+orphan_ids: []
+missing_from_structured: []   # 16 Other lines closed by A1 supplement R1049-R1090
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "A1 first pass dropped all 16 (now closed, R1049-R1090) 'Other ...' lines (Other expenses, Other intangible assets, Other non-current/current assets, Other equity, Other non-current/current liabilities, Other non-cash items) in both statements. Without them no total foots; With them added, all footing checks pass for standalone and consolidated: P&L, balance sheet, cash flow, H1 = Q2+Q1, EPS, closing cash vs balance sheet. No transcription defect found in A1 cells. Items for A3: dividend paid H1 FY27 is 46.78 consolidated vs 8.55 standalone (cash flow foots both ways); exceptional item 13.18 in Q1 FY27 only, nature not noted; board meeting ran 4h15m with only the results item on the letter; cash flow caption 'Net decrease' with positive values; reclassification note gives no amounts. Auditor reports unmodified, no EoM or going concern. Prior ledger absent so ENTITY_CHANGE untested."

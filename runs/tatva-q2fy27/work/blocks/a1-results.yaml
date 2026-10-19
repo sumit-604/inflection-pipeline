@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "TATVA"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 14
+formfeed_count: 14
+line_count: 653
+unit_convention: "Millions (Rs million)"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true   # fonts embedded, but only pages 1 and 9 carry text; 12 pages image-only
+extraction_mode: "text-only p1,p9; scan-ocr (manual visual transcription via Read, tesseract absent) p2-8,p10-14"
+render_candidates: [2,3,4,5,6,7,8,10,11,12,13,14]
+rendered_pages: [2,3,4,5,6,7,8,10,11,12,13,14]   # image-only pages holding financial statements, notes, auditor report; p9 viewed to repair garbled text layer
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/tatva-q2fy27/extracted/tatva-results-q2fy27-fulltext.md"
+structured_path: "runs/tatva-q2fy27/extracted/tatva-results-q2fy27-structured.md"
+structured_counts:
+  number: 914
+  entity: 44
+  forward: 3
+  date: 57
+  qualifier: 72
+structured_id_range: "R001-R1090"
+gate_a1: pass
+gap_note: ""

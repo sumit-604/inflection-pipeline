@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "TATVA"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 42
+formfeed_count: 42
+line_count: 1110
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["13: current-period chart, label order unresolved in text", "29: R&D chart, period order unresolved", "36: country share chart, label order unresolved", "40: shareholding chart, label order unresolved"]  # orchestrator-approved
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/tatva-q2fy27/extracted/tatva-presentation-q2fy27-fulltext.md"
+structured_path: "runs/tatva-q2fy27/extracted/tatva-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 591
+  entity: 51
+  forward: 17
+  date: 46
+  qualifier: 33
+structured_id_range: "R001-R738"
+gate_a1: pass
+gap_note: ""

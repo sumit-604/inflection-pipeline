@@ -1,0 +1,36 @@
+stage: A5-adversary
+company: "TATVA"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L1: REV L283 '95% core share is an upper bound' holds on H1 evidence (H1 FX gain 39.06 Mn vs H1 FY26 loss 4.26 Mn, RES L268); Q2 FX split ND, so for the Q2 change the share is conditional. Reword; no number changes."
+    - "L2: REV L408 'Q1 about Rs 57 Cr' vs 6D derived 57.8 (L478), which rounds to 58; within filed-only range Rs 55.7-57.9 Cr."
+    - "L3: REV L680 '[INFERENCE from FILED deck values]' and L486 'From filed figures alone' mis-tag deck values; the review key (L662) tags the deck MGMT."
+    - "L4: REV L233 separating observation names only the FY27 AR and Q8; M15 (L626) names the FY26 AR as the check now. Align."
+    - "S7 (carried from loop 0): A2 presentation count test grep side is A1 header totals (LED-P L17); A2 to grep the fulltext next run."
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "L1: write 'an upper bound on the H1 evidence; the Q2 split is ND' (REV L283; RES L268)."
+  - "L2: 'Q1 about Rs 58 Cr' or 'about Rs 56-58 Cr' (REV L408; 6D L478)."
+  - "L3: tag deck-derived SDA inference MGMT, not FILED (REV L486, L680; key L662)."
+  - "L4: name the FY26 AR FX-presentation note as the earliest separating check in diag 6 (REV L233; M15 L626)."
+  - "S7: A2 should grep the presentation fulltext for its count test (LED-P L17)."
+analyst_note: "Loop 1 closes every loop-0 trigger. F1: CWIP is now an H1 change with project split ND at all nine sites, and no Dahej-III attribution survives a grep. C1: the tally matches the 17 row statuses. M1-M3 are grafted beside each bull claim with both readings and a separating observation; M25 and its forward-map row exist. New arithmetic recomputes from Mn cells. Parent bridge: materials +809.7 bps, employee -411.4, other -81.7, margin -316.6 bps. SDA from filed deck values only: Q2 Rs 96.7-98.9 Cr, Q1 Rs 55.7-57.9 Cr (33.4-34.7% share). FX bounds: 8.34% of H1 core PBT; the swing is 16.51% of the H1 core-PBT increase. Coverage spine unchanged at 1,856 IDs. The four new STYLE notes are wording precision; two (L1, L3) trace to A5's own loop-0 correction text, so they are logged rather than looped."

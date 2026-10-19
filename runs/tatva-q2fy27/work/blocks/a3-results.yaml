@@ -1,0 +1,49 @@
+stage: A3-forensics
+company: "TATVA"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/tatva-q2fy27/work/forensics_results_tatva_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: PASS
+  F5: PASS
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: PASS
+  F10: PASS
+  F11: PASS
+  F12: PASS
+  F13: FINDING
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "158, 460", classification: "AMBIGUOUS", implication: "Q1 exceptional charge 13.18 booked by parent, still no note in second filing; nature, cash, tax, recurrence unknown"}
+  - {id: "A3-02", check: "F1", line: "315, 317, 240, 203", classification: "FORWARD-SIGNAL", implication: "LT borrowing nil in H1 while ST debt +501.67 and CWIP +194.79; capex and WC funded short, term-loan draw or refinance expected"}
+  - {id: "A3-03", check: "F2", line: "164, 365", classification: "FORWARD-SIGNAL", implication: "Cons-minus-std PAT gap 10.9% to 39.4% of std PAT YoY (+28.5pp), 53.0% to 39.4% QoQ; gap fell to 4.78 in H2 FY26, year-end true-up risk"}
+  - {id: "A3-04", check: "F2", line: "447-459", classification: "FORWARD-SIGNAL", implication: "Parent EBITDA margin 18.22% to 16.38% to 15.05% over 3 quarters while group holds 18.72% via subsidiaries"}
+  - {id: "A3-05", check: "F2", line: "146, 448", classification: "AMBIGUOUS", implication: "Std other income exceeds cons by 22.04 in H1 FY27 vs nil in H1 FY26; new intra-group income in parent profit"}
+  - {id: "A3-06", check: "F3", line: "149-154, 451-456, 452, 215, 506, 244, 533", classification: "AMBIGUOUS", implication: "Subsidiaries have no materials, payroll or debt yet earn 28.3% Q2 / 31.0% H1 of group PAT; intercompany receivable and liability proxies 104.94 and 168.94"}
+  - {id: "A3-07", check: "F8", line: "209, 500, 463, 464", classification: "FORWARD-SIGNAL", implication: "Std DTA 81.68 to 7.65; deferred tax 79.7% of std H1 tax; shield exhausts Q3 FY27, cash tax up about 35 per quarter"}
+  - {id: "A3-08", check: "F13", line: "50, 41, 60", classification: "AMBIGUOUS", implication: "4h15m meeting with results as only disclosed item; call cancelled after filing (external context)"}
+  - {id: "A3-09", check: "F14", line: "314, 603, 282, 571, 243, 532", classification: "AMBIGUOUS", implication: "Dividend 38.24 sits in financing (cons) and operating (std); std CFO -47.46 on cons basis; bear read cons CFO -75.00"}
+  - {id: "A3-10", check: "F14", line: "371, 643, 289", classification: "AMBIGUOUS", implication: "Reclassification unquantified; FY26 column CFO 314.89 vs memory ~349; verify at FY26 AR before trending CFO"}
+  - {id: "A3-11", check: "F14", line: "350-351, 635, 98", classification: "NEUTRAL-FACT", implication: "Notes call a limited-review conclusion an opinion; drafting data point"}
+  - {id: "A3-12", check: "F14", line: "321, 610, 322, 362", classification: "NEUTRAL-FACT", implication: "Net decrease caption on positive values; year captions in half-year statement; Note 5 labels revenue as total income"}
+  - {id: "A3-13", check: "F14", line: "472, 473", classification: "NEUTRAL-FACT", implication: "Std EPS 6.57 and 6.01 vs computed 6.578 and 6.017; truncation or transcription, re-verify page 10 image"}
+forward_signals: ["A3-02", "A3-03", "A3-04", "A3-07"]
+ambiguous: ["A3-01", "A3-05", "A3-06", "A3-08", "A3-09", "A3-10"]
+commitments:
+  - {commitment: "Results information on company website", implied_date: "2026-10-19", ref: "cover letter line 47", status_word: "initiated"}
+  - {commitment: "Consolidated results on BSE, NSE, company website", implied_date: "2026-10-19", ref: "cons Note 6 line 368", status_word: "initiated"}
+  - {commitment: "Standalone results on BSE, NSE, company website", implied_date: "2026-10-19", ref: "std Note 5 line 641", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Cash is the main message. Group H1 CFO is -36.76 on revenue +59.9%. Working capital absorbed 99% of pre-WC operating profit, funded by +501.27 short-term debt. Receivable days are 85-100, far under the 185 line, so trigger (a) turns on operator ruling 50, not on the arithmetic. Two items can move the CFO read: the 38.24 dividend classification split (A3-09; bear read cons CFO -75.00) and the unquantified reclassification (A3-10). Profit quality: subsidiaries with no staff, plant or debt now earn 28-31% of group PAT, while parent EBITDA margin fell to 15.1%. The subsidiary gap fell to 4.78 in H2 FY26, so a year-end true-up is a live risk. Cash tax steps up from Q3: standalone DTA is down to 7.65. The 19-Oct call was cancelled (task message, not a filed line), so no checklist item got a management answer; A4 should treat all eight as unanswered. Pages 2-8 and 10-14 are manual image transcriptions; A3-13 is the one cell to re-verify."

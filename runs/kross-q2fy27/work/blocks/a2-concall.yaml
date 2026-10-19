@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "KROSS"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/kross-q2fy27/work/ledger_concall_kross_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 43
+  turns: 65
+  questions: 9
+  mgmt_numbers: 107
+  slides: 0
+  slide_numbers: 0
+flags_raised: [MISSING_FROM_STRUCTURED, REPEAT_QUESTION, MGMT_ABSENCE_QA, NUMBER_CONFLICT, DATE_CONFLICT, RESTATED, AUDIO_GAP, ASR_GARBLE, HEDGE, ANALYST_FIGURE, HOST_NAME_CONFLICT, NAME_FLAG, TIMELINE_WATCH]
+ids_in_structured: 334
+ids_referenced: 334
+orphan_ids: []
+missing_from_structured: ["M1: analyst figure 1 6 3 7 or 4 routes (fulltext L325-326, ASR garble of seamless budget; see R071)", "M2: analyst figure phase 1 would be 2 percent of that (fulltext L454, ASR garble; see R101, R102)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Counts reconcile (grep, sweep, A1 header). questions: 9 analyst slots across 22 analyst turns; 7 unique analysts. Seamless-tube funding was asked three times (Batra, Vignesh, Rajat) and the answers conflict (110 vs 70+60, 110.70, debt 35/80/115/165-170); A3 should treat R072-R090 as one cluster. Receivables and axle volumes also repeat. Sudhir Rai (CMD) speaks only in opening remarks; no Q&A answer is attributed to him, so MGMT_ABSENCE_QA is raised, not a promoter absence. Audio gap 00:48:16-00:48:48 (R333) lost a Batra question and answer, probably on margin. Seamless trial timing varies: Feb or Mar 2027, end Q4, equipment Nov or Dec. 15 NUMBER rows are analyst-spoken, so 90 are management numbers."

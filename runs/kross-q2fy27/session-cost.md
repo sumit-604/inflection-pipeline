@@ -1,0 +1,45 @@
+# Session cost: KROSS Q2 FY27 (/run-quarterly, 2026-10-19/20 overnight batch)
+
+ticker | date | doctype | pages | a1_extracted_text_tok | total_run_tok | loop_iterations
+---|---|---|---|---|---|---
+KROSS | 2026-10-20 | results + release + deck + concall (machine transcript) | 47 (results 7, release 2, deck 38) + 49.5-min call | ~36,735 (approx, chars/4 of all A1 fulltexts) | 6,341,338 | Role 4: 2; Role 5: 2
+
+## Per-agent ledger (one row per subagent run; a resumed agent's row counts its continuation only)
+| agent | doc | model | total_tok | wall_s |
+|---|---|---|---|---|
+| A1 | results (run 1) | sonnet-5.5 | 50838 | 628 |
+| A1 | pressrelease (run 1) | sonnet-5.5 | 48412 | 707 |
+| A1 | presentation (run 1) | sonnet-5.5 | 79898 | 977 |
+| A1 | pressrelease (render continuation) | sonnet-5.5 | 57688 | 1158 |
+| A1 | results (render continuation) | sonnet-5.5 | 84532 | 733 |
+| A1 | presentation (render continuation) | sonnet-5.5 | 95365 | 404 |
+| A2 | pressrelease | sonnet-5.5 | 40194 | 281 |
+| A2 | results | sonnet-5.5 | 55199 | 564 |
+| A3 | pressrelease | opus-5.5 | 88780 | 401 |
+| A2 | presentation | sonnet-5.5 | 57123 | 822 |
+| A3 | results | opus-5.5 | 122530 | 510 |
+| A3 | presentation | opus-5.5 | 156779 | 516 |
+| A4 | Role 4 review | opus-5.5 | 249809 | 1026 |
+| A5 | audit | opus-5.5 | 351062 | 1662 |
+| A2 | presentation (loop 1, continuation) | sonnet-5.5 | 61103 | 61 |
+| A3 | presentation (loop 1, continuation) | opus-5.5 | 183702 | 213 |
+| A4 | loop 1 fix (continuation) | opus-5.5 | 349712 | 573 |
+| A5 | loop 1 re-audit | opus-5.5 | 169322 | 586 |
+| A4 | loop 2 fix (continuation) | opus-5.5 | 415244 | 472 |
+| T | transcript clean-up (general-purpose) | sonnet-5.5 | 108391 | 424 |
+| A1 | concall | sonnet-5.5 | 74199 | 285 |
+| A5 | loop 2 final re-audit | opus-5.5 | 103533 | 396 |
+| A2 | concall | sonnet-5.5 | 81860 | 429 |
+| A3 | concall | opus-5.5 | 148821 | 510 |
+| A4 | Role 5 addendum (continuation) | opus-5.5 | 556233 | 605 |
+| A5 | Role 5 addendum audit | opus-5.5 | 297621 | 1269 |
+| A2 | concall (R5 loop 1, continuation) | sonnet-5.5 | 86172 | 118 |
+| A3 | concall (R5 loop 1, continuation) | opus-5.5 | 180497 | 229 |
+| A4 | Role 5 loop 1 fix (continuation) | opus-5.5 | 633298 | 900 |
+| A5 | Role 5 loop 1 re-audit | opus-5.5 | 242958 | 797 |
+| A2 | concall (R5 loop 2, continuation) | sonnet-5.5 | 89298 | 88 |
+| A3 | concall (R5 loop 2, continuation) | opus-5.5 | 209718 | 212 |
+| A4 | Role 5 loop 2 fix (continuation) | opus-5.5 | 689688 | 456 |
+| A5 | Role 5 loop 2 final re-audit | opus-5.5 | 121759 | 312 |
+
+Loop rows are labelled "loop N". Orchestrator session tokens are not included (one orchestrator session ran the whole five-company batch).

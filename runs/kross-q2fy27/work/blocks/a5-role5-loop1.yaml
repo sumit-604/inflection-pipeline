@@ -1,0 +1,42 @@
+stage: A5-adversary
+company: "KROSS"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "CC L454: analyst-spoken 'So phase 1 would be 2 percent of that' (NUMBER, ANALYST_FIGURE, ASR_GARBLE; T58 src 432); no structured row (R323 is L453, R101 is L457) and no ledger row"
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Brief L1431 / Step 2 L959: full retrospective compensation for steel and conversion costs, mostly in Q3 and Q4", counter: "Only the conversion-settlement impact is dated Q3-Q4 (CC L474-L477); retrospective compensation is undated, settlements 'underway' (CC L485-L489); steel catch-up undated (CC L471-L472); OEMs expect another steel rise in Q3 (CC L479)", source_line: "CC L471-L489", type: FACTUAL}
+  - {claim: "Brief L1429: axle volume rose only about 5-11% QoQ [MGMT-CALL]; most of the step was suspensions and price", counter: "Q1 base 9,500 is an analyst's recall (CC L413), uncontested; 'most' is A4 arithmetic on CC L415-L416; body carries the caveat (L1085, L1109), the brief drops it though prior M3 required it", source_line: "CC L223, L412-L416", type: MISSING}
+findings_by_type:
+  factual:
+    - "L1-F1 (A4): brief L1431 and Step 2 L959 date full retrospective compensation of steel and conversion to 'mostly Q3 and Q4'; the call dates only the conversion settlement (CC L474-L477); retrospective compensation undated (CC L485-L489)"
+  missing:
+    - "L1-M1 (A2): CC L454 analyst figure 'phase 1 would be 2 percent of that' has no structured or ledger row; add ledger-only row M2 via MISSING_FROM_STRUCTURED; A3 one-line disposition; A4 cite"
+    - "L1-M2 (A4): brief L1429 drops the analyst-recall caveat on the Q1 base (CC L413) that prior M3 required and tags the derived 5-11% as MGMT-CALL; retag MGMT-CALL plus INFERENCE with the caveat; tag 'most of the step' INFERENCE"
+  contradiction:
+    - "L1-C1 (A2): ledger row M1 says T39 Vignesh Q5 (LED L480); ledger's own T35 (LED L73) and Q4 row (LED L112) and the fulltext (CC L298-L326) put it in Batra's Q4 question; relabel to T35"
+  style:
+    - "L1-S1: Review L1427 untagged inference; add INFERENCE"
+    - "L1-S2: Review L1428 'trailer axles' should be the trailer axle and suspension segment (PPT L787)"
+    - "L1-S3: Review L965, L1076 'less ~78-80 drawn leaves 32-42': say 'less the filed Rs 77.94 Cr'"
+    - "L1-S4: Review L1488 debt forks leave 159-165 unassigned; 'within 149-159' excludes lower prints"
+    - "L1-S5: Review L1483 top-5 share falling appears in both forks; name trailer revenue as the discriminator"
+    - "L1-S6: Review L1454 4,000-4,500 axles/month vs Q2 ~10,000-10,500 per quarter; add the conflict"
+    - "L1-S7: LED L475, L509 stale 'MISSING_FROM_STRUCTURED none' and analyst-row count; align in the A2 pass"
+    - "L1-S8: some numbers sit only in FORWARD or QUALIFIER rows (CC L196, L211, L356, L440, L453); content captured; extends S13"
+loop_back_to: "A2"
+gap: "A2: add ledger-only row M2 for CC L454 analyst figure 'phase 1 would be 2 percent of that' (ANALYST_FIGURE, ASR_GARBLE, T58) via MISSING_FROM_STRUCTURED (L1-M1), and relabel row M1 from T39/Vignesh/Q5 to T35/Batra/Q4 (L1-C1). A3: disposition for the new row only. A4: cite the new row and update preamble counts; L1-F1 split the brief L1431 and Step 2 L959 sentence so only the conversion settlement carries the Q3-Q4 date and retrospective compensation stays undated (CC L474-L489); L1-M2 retag brief L1429 as MGMT-CALL plus INFERENCE with the analyst-recall caveat on the Q1 base (CC L413) and tag 'most of the step' INFERENCE."
+style_notes:
+  - "L1-S1 to L1-S8 logged in runs/kross-q2fy27/work/audit_kross_q2fy27_role5_loop1.md section 7; no re-run"
+analyst_note: "Role 5 loop 1 re-audit on a machine transcript; filed numbers win. The brief gate passes. All seven prior items are closed in the body. The 6B recount ties at 30/52 = 0.58 on my own walk, so OVERPROMISER holds. Debt readings tie: 149.20-159.20 on sanction plus filed WC, 2.85-3.04x; 165-170 is 3.15-3.25x. Allotment cash ties at Rs 39.75 Cr. The 81%/81% and QoQ volume figures tie. Four small defects remain. Coverage: CC L454 carries an unrowed analyst figure, the same class as prior M1, so the chain restarts at A2. A2 also labelled M1 as T39 when its own turn table says T35. In the brief, the F2 rewrite dates full retrospective compensation to Q3-Q4, but the call dates only the conversion settlement. That is the bull-side mirror of F2. The brief also drops the analyst-recall caveat on the 5-11% QoQ volume figure that M3 required. Each fix is one row, one label or one sentence. Verdict, cash class, net impact and archetype stand."

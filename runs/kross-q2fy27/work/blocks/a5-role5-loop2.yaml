@@ -1,0 +1,33 @@
+stage: A5-adversary
+company: "KROSS"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L2-S1: Review L1646 change-log row 'L1-M2 (ledger)' should be L1-M1; L1-C1 has no row of its own"
+    - "L2-S2: Review L860 '335 of 335 in the A3 loop-1 file' is stale; A3 now carries M2 under CC-F6-08; note it as L865 does for M1"
+    - "L2-S3: Review L1431 'Most of the step was suspensions and price' untagged A4 inference; add INFERENCE (L1429 likewise, carry of L1-S1)"
+    - "L2-S4: Review L1439 bull reading 'price recovery lands in Q3 and Q4' could split conversion settlement (dated) from retrospective credits (undated)"
+    - "L2-S5: LED L475, L477, L510 stale ('MISSING_FROM_STRUCTURED none'; 'added in loop 1'; 15 analyst NUMBER rows, now 17 of 107); carry of L1-S7"
+    - "L2-S6: prior L1-S2, L1-S3, L1-S4, L1-S6 remain as logged; L1-S5 resolved at L1485; L1-S8 A1-level"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "L2-S1 to L2-S6 logged in runs/kross-q2fy27/work/audit_kross_q2fy27_role5_loop2.md section 7; no re-run"
+analyst_note: "Role 5 loop 2 closure audit on a machine transcript; filed numbers win. All open items are closed. Ledger row M2 sits at T58 (CC L453 = src 431 on the page-5 offset), counts tie at 105 + 2 = 107 NUMBER and 334 + 2 = 336 units, A3 carries M2 under CC-F6-08, and A4 cites it in the preamble, 4A row 21, Exchange 2 and YAML. M1 now reads T35 in the ledger, matching its own turn table. The brief and every listed copy now date only the conversion settlement to Q3-Q4 and leave retrospective compensation undated; A1 rows R203 vs R204-R205 make the same split. The 5-11% QoQ volume figure carries the analyst-base caveat in the brief. Structured file unchanged (334 rows; 105/43/57/37/92). Merged and standalone addendum agree on the loop-2 strings. Six STYLE notes, mostly carried labels and untagged inferences; none changes a number or the verdict. Verdict, cash class, net impact and archetype stand."

@@ -1,0 +1,76 @@
+stage: A3-forensics
+company: "KROSS"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/kross-q2fy27/work/forensics_concall_kross_q2fy27.md"
+ledger_reconciled_pct: 100        # 336 of 336 units read (R001-R334 + M1 + M2; Role 5 loops 1-2)
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "CC-F6-01", check: "F6", line: "L99-L100; L331-L333; L440-L442", classification: "FORWARD-SIGNAL", implication: "Seamless 'commercial Q4 FY27' now trials in Q4 FY27, full captive use end H1 FY28; equipment in transit; no revenue date; cost before benefit"}
+  - {id: "CC-F6-02", check: "F6", line: "L324-L326; L328; L335-L339; L366-L367", classification: "AMBIGUOUS", implication: "Three funding splits across three answers (accruals 50/60, term loan drawn 50/60/70, loan 110/110-120); analyst budget figure (M1) garbled, unconfirmed; own contribution front-loaded (L336-L337) explains part of H1 cash drain"}
+  - {id: "CC-F6-03", check: "F6", line: "L368-L376", classification: "FORWARD-SIGNAL", implication: "FY27-end debt ~Rs 165-170 Cr confirmed, ~3.2x FY26-end; 'no further debt' conditional on equipment timing and excludes WC lines"}
+  - {id: "CC-F6-04", check: "F6", line: "L345-L351; L355-L359; L288-L289; L106", classification: "FORWARD-SIGNAL", implication: "H2 capex ~Rs 110 Cr plus cold drawn Rs 20-25 Cr; ~Rs 23.85 Cr of the ~60 Cr needs promoter warrant conversion inside an 18-month window; gap means accruals or debt"}
+  - {id: "CC-F6-05", check: "F6", line: "L470-L477; L485-L489", classification: "FORWARD-SIGNAL", implication: "Pass-through and retrospective compensation claimed for Q3-Q4; conflicts with Notion 'no retrospective mechanism' on trailer; a booked retrospective credit inflates its quarter"}
+  - {id: "CC-F6-06", check: "F6", line: "L188-L197", classification: "FORWARD-SIGNAL", implication: "Commitment: receivable days ~80, WC cycle under 90-95 days; Q2 81 days is growth-flattered; test at FY27 balance sheet"}
+  - {id: "CC-F6-07", check: "F6", line: "L63-L64; L318-L323", classification: "FORWARD-SIGNAL", implication: "H2 20% above H1 implies ~Rs 503 Cr H2 and ~Rs 923 Cr FY27 if revenue; trailer Q3-Q4 at or above Q2; test Q3 revenue >= Rs 235 Cr"}
+  - {id: "CC-F6-08", check: "F6", line: "L438-L451; L453-L459", classification: "AMBIGUOUS", implication: "3-4% margin benefit basis unclear (axles vs company, ~1.5-2.0 pts at company level); phase 1 share rests on one corrected answer (30%, L458) after 'Absolutely.' to a garbled 2% (M2, L454-L455); capacity base garbled; captive phase 1, merchant surplus is an Amendment 17 question"}
+  - {id: "CC-F6-09", check: "F6", line: "L408-L412; L417", classification: "AMBIGUOUS", implication: "Q2 volumes promised privately to one analyst; figure moved 10,500 to 10,000; fair-disclosure and data-quality question"}
+  - {id: "CC-F7-01", check: "F7", line: "L477-L482", classification: "FORWARD-SIGNAL", implication: "14-15% guide not reaffirmed or dated; costs rising each quarter; working case ~13% for H2; re-engage trigger 1 unlikely at Q3"}
+  - {id: "CC-F7-02", check: "F7", line: "L331-L333; L357-L359; L368-L369", classification: "AMBIGUOUS", implication: "Three conditional hedges on equipment timing gate seamless trials, H2 capex and the 'only debt' claim"}
+  - {id: "CC-F7-03", check: "F7", line: "L148-L153; L313-L316; L322-L323", classification: "FORWARD-SIGNAL", implication: "Part of Q2 trailer jump is monsoon pent-up demand and one region; sustainability answer cut off 'unless something'"}
+  - {id: "CC-F7-04", check: "F7", line: "L269-L274", classification: "NEUTRAL-FACT", implication: "Agri Q4 depends on OEM inventory; tractor 10-11% of revenue; monitor only"}
+  - {id: "CC-F7-05", check: "F7", line: "L425-L427; L432-L434", classification: "AMBIGUOUS", implication: "Tata Motors named as trailer-axle competitor while a customer per Notion; largest customer 15-16%; insourcing risk"}
+  - {id: "CC-F16-01", check: "F16", line: "L69-L70; L208-L215; L223", classification: "AMBIGUOUS", implication: "Extrusion 'utilization' is share of output, not plant fill (~56% of 7,500/month); 4,000-4,500/month run rate vs ~3,500/month Q2 average; saving is long-dated"}
+  - {id: "CC-F16-02", check: "F16", line: "L64", classification: "AMBIGUOUS", implication: "H2 vs H1 uplift 20% on call vs 10-15% in deck vs 1.49x in FY26 revenue; metric undefined"}
+  - {id: "CC-F17-01", check: "F17", line: "L116; L480-L482", classification: "CONFIRMATORY-NEGATIVE", implication: "Two straight quarters below the 14-15% guide (12.2%, 13.0%); guide not reaffirmed"}
+  - {id: "CC-F17-02", check: "F17", line: "L255-L261", classification: "FORWARD-SIGNAL", implication: "Tipping jacks flat QoQ; new path 400-480/month by Q4, below the 500/month promise; revenue question answered with a unit price"}
+  - {id: "CC-F17-03", check: "F17", line: "none (zero hits for mould/casting/HPML in L1-L509)", classification: "AMBIGUOUS", implication: "HP moulding line due Sept-2026 not mentioned; date passed; 1 quarter of silence; send review Q13 by IR email"}
+  - {id: "CC-F17-04", check: "F17", line: "L49-L50; L106; L345-L347", classification: "AMBIGUOUS", implication: "Silent on preferential approval, allotment and allottees; issue 'ongoing'; H2 capex depends on it"}
+  - {id: "CC-F17-05", check: "F17", line: "L339-L341", classification: "CONFIRMATORY-NEGATIVE", implication: "Silent on H1 CFO and cash while filed CFO/PAT is 0.14x; silence on a deteriorating metric"}
+  - {id: "CC-F17-06", check: "F17", line: "none (zero hits for ROCE in L1-L509)", classification: "CONFIRMATORY-NEGATIVE", implication: "Re-engage trigger 2 and the ROCE core tension not addressed; ROCE flat ~15.5% per review"}
+  - {id: "CC-F17-07", check: "F17", line: "L490-L495", classification: "AMBIGUOUS", implication: "Only balance-sheet question (CWIP ~Rs 55 Cr) lost in the 00:48:16-00:48:48 gap; route Q4, Q5, Q8, Q11, Q12, Q22 to IR email"}
+  - {id: "CC-F17-08", check: "F17", line: "L223-L224; L234-L244; L413-L416", classification: "AMBIGUOUS", implication: "Trailer value +98% YoY / +53% QoQ vs axle volume +50-55% YoY / ~+10% QoQ; gap is suspension mix and commodity pass-through, low-margin revenue"}
+  - {id: "CC-F17-09", check: "F17", line: "L30-L31; L89-L91", classification: "NEUTRAL-FACT", implication: "CMD spoke only in opening remarks; no Q&A answer attributed (speakers inferred)"}
+forward_signals: ["CC-F6-01", "CC-F6-03", "CC-F6-04", "CC-F6-05", "CC-F6-06", "CC-F6-07", "CC-F7-01", "CC-F7-03", "CC-F17-02"]
+ambiguous: ["CC-F6-02", "CC-F6-08", "CC-F6-09", "CC-F7-02", "CC-F7-05", "CC-F16-01", "CC-F16-02", "CC-F17-03", "CC-F17-04", "CC-F17-07", "CC-F17-08"]
+commitments:
+  - {commitment: "Extruded axle beam commercial production", implied_date: "done", ref: "T4 L69", status_word: "completed"}
+  - {commitment: "Trailer axles 100% on extruded beam (80% today)", implied_date: "Q3 or Q4 FY27", ref: "T4 L73-L74; T17 L211, L215", status_word: "underway"}
+  - {commitment: "Seamless sizing and straightening mills received and installed", implied_date: "done", ref: "T5 L99", status_word: "completed"}
+  - {commitment: "Seamless remaining equipment received (furnace mostly ready, piercing mill almost ready)", implied_date: "end Nov or Dec 2026", ref: "T36 L330-L332", status_word: "underway"}
+  - {commitment: "Seamless production trials", implied_date: "Feb-Mar 2027 / end Q4 FY27", ref: "T5 L100; T36 L332-L333; T55 L440", status_word: "not started"}
+  - {commitment: "Seamless phase 1 (~30% capacity per one corrected answer, captive); full backward integration", implied_date: "end H1 FY28", ref: "T55 L438-L442; T58 L453-L459", status_word: "not started"}
+  - {commitment: "Seamless cost 8-10% below buying price; axle margin +3-4%", implied_date: "H1 FY28 onward", ref: "T55 L443-L444; T57 L449-L451", status_word: "not started"}
+  - {commitment: "Seamless balance capex ~Rs 50 Cr of ~Rs 170 Cr, all in H2", implied_date: "H2 FY27, if equipment on time", ref: "T36 L335; T39 L350-L351, L356-L359", status_word: "underway"}
+  - {commitment: "Only debt is seamless term loan; no further debt; FY27-end debt ~Rs 165-170 Cr", implied_date: "FY27", ref: "T41 L364-L370; T42-T43 L371-L377", status_word: "underway"}
+  - {commitment: "Capex ~Rs 60 Cr via warrants and preferential (shaft lines, robotic automation)", implied_date: "H2 FY27", ref: "T39 L345-L349, L355; T5 L106", status_word: "initiated"}
+  - {commitment: "Cold drawn tube line and metal treatment ~Rs 20-25 Cr, partly merchant", implied_date: "not dated", ref: "T28 L280-L292", status_word: "initiated"}
+  - {commitment: "Receivable days ~80; WC cycle under 90-95 days", implied_date: "not dated (FY27 balance sheet)", ref: "T14 L196-L197", status_word: "not started"}
+  - {commitment: "Q3 and Q4 volumes above Q2; H2 20% up on H1", implied_date: "H2 FY27", ref: "T4 L63-L64", status_word: "guidance"}
+  - {commitment: "Trailer revenue Q3-Q4 at Q2 level or higher", implied_date: "Q3-Q4 FY27", ref: "T33-T34 L318-L323", status_word: "guidance"}
+  - {commitment: "Price revision and conversion settlement impact; retrospective compensation", implied_date: "Q3-Q4 FY27", ref: "T4 L55-L57; T61 L474-L477, L485-L489", status_word: "underway"}
+  - {commitment: "Tipping jacks at 50-60% of ~800 capacity", implied_date: "Q4 FY27", ref: "T24 L257-L258", status_word: "underway"}
+  - {commitment: "Exports +45% YoY", implied_date: "FY27", ref: "T4 L87-L88", status_word: "guidance"}
+  - {commitment: "Send exact Q2 axle and suspension volumes to analyst", implied_date: "post call", ref: "T51 L408-L412, L417", status_word: "promised"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Machine transcript; filings win. Three points the rows cannot rebuild. (1) The Q2 trailer jump is mostly price and mix, not axles. Trailer value is +98% YoY and +53% QoQ (L238-L244). Axle volume is +50-55% YoY and about +10% QoQ on an unconfirmed analyst Q1 figure (L223, L235, L413). Management credited suspension and commodity-driven prices (L415-L416). Pass-through revenue carries little margin, which fits the falling gross margin. (2) The seamless own contribution was paid first (L336-L337), which explains part of the H1 cash drain. FY27-end debt of about Rs 165-170 Cr was confirmed (L373-L375), about 3.2x FY26-end. 'No further debt' is conditional on equipment timing (L368-L369), and about Rs 24 Cr of the Rs 60 Cr H2 capex rests on promoter warrant conversion. (3) Every Q1-call promise slipped or went silent: margin guide not reaffirmed (L482), tipping jacks below 500/month even at Q4 (L257-L258), seamless now trials in Q4 with full captive use by end H1 FY28 (L440-L442), HP moulding line not mentioned. Review Q1-Q22: 0 answered, 11 partial, 1 declined, 10 silent. M1 and M2 change no finding."

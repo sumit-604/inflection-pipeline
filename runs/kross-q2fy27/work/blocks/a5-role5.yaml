@@ -1,0 +1,54 @@
+stage: A5-adversary
+company: "KROSS"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "CC L326: analyst-spoken seamless figure '1 6 3 7 or 4 routes' (NUMBER, ANALYST_FIGURE, ASR_GARBLE); only question row R299 (STR L317) exists"
+arithmetic_mismatches:
+  - {metric: "6B specificity ratio (count under A4's own rule: number, date or binary milestone)", a4_value: "0.43 (23 / 53)", recomputed: "0.60 (31 / 52) uniform; 0.54 (28 / 52) minimal pairwise fix", source_line: "STR L166 R152 vs L217 R203; L186-L187 R172-R173 vs L168 R154; L172 R158 vs L194 R180; L214 R200 vs L213 R199; L199 R185 vs L207 R193; L183 R169; L205 R191; L195 R181 analyst (CC L276-L277)"}
+surviving_bear_counters:
+  - {claim: "Trailer revenue ~Rs 115 Cr (+53% QoQ) sustainable in Q3-Q4 (CC L318-L320)", counter: "Axle volume rose only ~5-11% QoQ (Q2 10,000-10,500 vs Q1 9,500; CC L223, L225, L412-L413) against value +53%; value per axle +39-47% QoQ, mostly suspensions and commodity price (CC L415-L416); suspension volumes undisclosed (CC L408-L417). Machine transcript; Q1 figure is an analyst recall", source_line: "CC L223, L225, L238-L242, L412-L416", type: MISSING}
+  - {claim: "BEAR CLAIM (Rule J): FY27-end gross debt ~Rs 165-170 Cr, 3.2x, 'confirmed'", counter: "BULL COUNTER: analyst's sum (115 + 50 undrawn) assented 'Yeah, correct'; management's sanction 110 / 110-120 less ~78-80 drawn (filed NCL 77.94 Cr; H1 LT draw 48.80 Cr) leaves ~30-42 Cr, so ~Rs 149-159 Cr (2.85-3.04x) with WC flat at filed 39.20 Cr", source_line: "CC L335-L336, L366-L367, L371-L377; RES L458, L463, L506", type: MISSING}
+  - {claim: "BEAR CLAIM (Rule J): brief 'It said a return is difficult currently'", counter: "BULL COUNTER: management said it is difficult to say WHEN; it expects full retrospective compensation, conversion impact Q3-Q4", source_line: "CC L474-L489; STR L350 (R332)", type: FACTUAL}
+  - {claim: "BEAR CLAIM (Rule J): specificity 0.43, archetype EVASIVE", counter: "Uniform count under A4's own rule gives 0.54-0.60, above the 0.5 line used in 6E", source_line: "Review L1149-L1152, L1173-L1174; STR L163-L219", type: FACTUAL}
+  - {claim: "Updated brief replaces the Role 4 brief in full (Review L1401)", counter: "Drops A5-F3 bear counter B: ~81% of QoQ rise from trailer half and ~81% from top 5 (Role 4 L642) and the top-5 test in the Q3 forward-map row (Role 4 L696 vs L1463)", source_line: "Review L642, L696, L801, L1440, L1463", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1 (A4): 6B specificity miscount under A4's stated rule; uniform recount 0.54-0.60 crosses the 0.5 line that sets EVASIVE (Review L1149-L1152, L1173-L1174); re-derive 6E and every copy of the archetype"
+    - "F2 (A4): brief L1409 paraphrases 'difficult to say when' (CC L480-L482, R332) as 'a return is difficult'; reword and keep the retrospective-compensation half (CC L485-L489)"
+  missing:
+    - "M1 (A2): CC L326 analyst figure '1 6 3 7 or 4 routes' has no NUMBER row; add via MISSING_FROM_STRUCTURED; A3 disposition for that row only; A4 cite"
+    - "M2 (A4): FY27-end debt shows only 165-170 Cr as confirmed; add the sanction reading ~Rs 149-159 Cr (CC L335-L336, L367, L375; RES L458, L463, L506) with Q23 as the separating observation; keep filed Rs 117.14 Cr in the brief"
+    - "M3 (A4): graft QoQ test: axle volume +5-11% vs trailer value +53% (CC L223, L225, L238-L242, L412-L416) into Exchange 3 (L1083) and brief (L1411)"
+    - "M4 (A4): restore A5-F3 concentration counter (81% / 81%) in the brief summary and the top-5 test in the Q3 forward-map row (Role 4 L642, L696 vs L1463)"
+  contradiction:
+    - "C1 (A4): forward-map bull fork (L1459) has allotment funding Rs 60 Cr of H2 lines; Step 2 (b) (L972) and flag (L1568) put allotment cash at Rs 39.75 Cr; make the bull fork require warrant conversion within H2"
+  style:
+    - "S1: Review L1083 reword '28-32% of the YoY value growth per unit' to 'value per axle rose ~28-32% YoY'"
+    - "S2: Review L1408 'the margin gain' lacks a referent; restore the operating-margin line"
+    - "S3: Review L1423 'timing' is INFERENCE, not MGMT-CALL"
+    - "S4: Review L1442, L1098, L1265 '70% of seamless output sold outside': capacity not output; MGMT-DECK (PPT L254) plus INFERENCE; phase 1 may be a 30% first build"
+    - "S5: 7A omits three tying claims (PAT +143%, PBT >100%, H1 FY26 rev 270); H1 EBITDA 53.32 repeats the H1 column with the 1.65 Mn footing gap"
+    - "S6: 7A could set the WC-cycle target <90-95 days against the filed 124.4-day cash cycle"
+    - "S7: Role 4 M2 (Review L552) still 'pending'; close it"
+    - "S8: status vocabulary differs from Role 4 L542; add a mapping"
+    - "S9: CC-F7-04 routed to monitoring with no M-row named"
+    - "S10: Review L1465 '800 kits' should be '800 kits/month'"
+    - "S11: Review L1387 'every dated lever slipped' should be 'every dated Q1-call promise'"
+    - "S12: Review L960 seamless Rs 167 Cr is also MGMT-DECK (PPT L251)"
+    - "S13: A1 DATE tagging uneven for date tokens inside forward rows; no content lost"
+loop_back_to: "A2"
+gap: "A2: add a NUMBER row for CC L326 analyst figure '1 6 3 7 or 4 routes' (ANALYST_FIGURE, ASR_GARBLE) via MISSING_FROM_STRUCTURED (M1). A3: disposition for that one row only. A4: F1 recount 6B specificity under one stated rule and re-derive the 6E archetype in every copy; F2 fix the brief's margin paraphrase (timing, not feasibility); M2 carry both FY27-end debt readings (~Rs 149-159 Cr on sanction 110-120 less ~78-80 drawn vs ~Rs 165-170 Cr analyst sum), drop 'confirmed', keep filed Rs 117.14 Cr in the brief; M3 graft the QoQ axle-volume (+5-11%) vs trailer-value (+53%) test; M4 restore the A5-F3 81%/81% concentration line and the top-5 Q3 test in the brief; C1 make the preferential bull fork require warrant conversion (Rs 39.75 Cr lands at allotment)."
+style_notes:
+  - "S1-S13 logged in runs/kross-q2fy27/work/audit_kross_q2fy27_role5.md section 6; no re-run"
+analyst_note: "Role 5 addendum audit on a machine transcript; filed numbers win throughout. The brief gate passes. Arithmetic is clean: every derived figure I recomputed ties within rounding to RES L412-L508 and deck lines. Coverage ties on 65 turns, 9 slots, 22 analyst turns and 25 A3 IDs; one analyst figure (CC L326) has no row, so the chain restarts at A2 for one row. The substantive failures are same-bar failures. Three bear claims are stated above the extract. FY27-end debt 165-170 is the analyst's sum; management's own sanction less the filed draw gives about 149-159. The brief turns 'difficult to say when' into 'a return is difficult'. The specificity count mixes rules, and a uniform count crosses the 0.5 line that sets EVASIVE. On the bull side, the trailer step needs its QoQ test: axle volume +5-11% against value +53%, so most of the step is suspensions and price. The updated brief also dropped the 81% concentration counter that A5 required in loop 1. The addendum's direction (WEAKENED, Role 4 verdict unchanged) likely survives; numbers and labels need fixing before save."

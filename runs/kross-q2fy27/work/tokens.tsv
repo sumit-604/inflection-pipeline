@@ -21,3 +21,15 @@
 | T | transcript clean-up (general-purpose) | sonnet-5.5 | 108391 | 424 |
 | A1 | concall | sonnet-5.5 | 74199 | 285 |
 | A5 | loop 2 final re-audit | opus-5.5 | 103533 | 396 |
+| A2 | concall | sonnet-5.5 | 81860 | 429 |
+| A3 | concall | opus-5.5 | 148821 | 510 |
+| A4 | Role 5 addendum (continuation) | opus-5.5 | 556233 | 605 |
+| A5 | Role 5 addendum audit | opus-5.5 | 297621 | 1269 |
+| A2 | concall (R5 loop 1, continuation) | sonnet-5.5 | 86172 | 118 |
+| A3 | concall (R5 loop 1, continuation) | opus-5.5 | 180497 | 229 |
+| A4 | Role 5 loop 1 fix (continuation) | opus-5.5 | 633298 | 900 |
+| A5 | Role 5 loop 1 re-audit | opus-5.5 | 242958 | 797 |
+| A2 | concall (R5 loop 2, continuation) | sonnet-5.5 | 89298 | 88 |
+| A3 | concall (R5 loop 2, continuation) | opus-5.5 | 209718 | 212 |
+| A4 | Role 5 loop 2 fix (continuation) | opus-5.5 | 689688 | 456 |
+| A5 | Role 5 loop 2 final re-audit | opus-5.5 | 121759 | 312 |

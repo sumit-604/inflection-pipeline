@@ -1,0 +1,117 @@
+stage: A4-analyst-role5
+company: "KROSS"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [concall]
+source_caveat: "MACHINE TRANSCRIPT of the company recording; speakers inferred; filed results win on any number conflict"
+ledger_reconciliation:
+  notes: 0
+  turns: 65
+  slides: 0
+  questions: 9
+  analysts_unique: 7
+  structured_ids: 334
+  ledger_only_rows: ["M1 (CC L325-L326, T35 Batra; analyst seamless budget figure, ASR garble, unconfirmed)", "M2 (CC L453-L454, T58 Shah; analyst 'phase 1 would be 2 percent of that', ASR garble, unconfirmed; management said 30%, CC L458)"]
+  units_reviewed: 336
+  all_reviewed: true
+  a3_findings_incorporated: [CC-F6-01, CC-F6-02, CC-F6-03, CC-F6-04, CC-F6-05, CC-F6-06, CC-F6-07, CC-F6-08, CC-F6-09, CC-F7-01, CC-F7-02, CC-F7-03, CC-F7-04, CC-F7-05, CC-F16-01, CC-F16-02, CC-F17-01, CC-F17-02, CC-F17-03, CC-F17-04, CC-F17-05, CC-F17-06, CC-F17-07, CC-F17-08, CC-F17-09]
+protocol_verdict: "PROCEED WITH FLAGS"
+protocol_verdict_changed: false
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+cash_conversion_changed: false
+decision_status_verified: "NOT SET (blank, operator-only); watchlist, no position; pre-thesis read"
+position_branch: "8A-W"
+step_8D: "deferred to /fttcp and Role 1 (OR-30)"
+credibility:
+  formal_trailing4_ratio: "ND (prior log not passed)"
+  provisional_ratio: "12.5% (0.5 / 4; Q1-call items from Notion memory)"
+  provisional_grade: "D"
+  dropped_confirmed: 0
+  dropped_candidates: 1
+  role1_track_record_input: "Poor (provisional; verify with Q1 FY27 transcript)"
+specificity_ratio: "0.58 (30 / 52 management forward statements; 0.60 with borderline R198)"
+hedge_count: 17
+archetype: "OVERPROMISER (provisional; specificity above 0.5, credibility below 60%)"
+net_concall_impact: "WEAKENED"
+fy27_end_gross_debt:
+  filed_30_sep_2026: "Rs 117.14 Cr (RES L458, L463)"
+  management_basis: "~Rs 149-159 Cr (2.85-3.04x FY26-end): sanction 110 / 110-120 less ~78-80 drawn"
+  analyst_sum_assented: "~Rs 165-170 Cr (3.15-3.25x): 115 + 50 undrawn, 'Yeah, correct'"
+  separating_observation: "sanctioned term loan and amount drawn at 30-Sep-2026 (Q23)"
+q1_q22_status:
+  - {q: "Q1", status: "PARTIAL", line: "CC L470-L477"}
+  - {q: "Q2", status: "DECLINED", line: "CC L480-L482"}
+  - {q: "Q3", status: "PARTIAL", line: "CC L398; L303-L305; L313-L316"}
+  - {q: "Q4", status: "SILENT", line: "none"}
+  - {q: "Q5", status: "SILENT", line: "none"}
+  - {q: "Q6", status: "PARTIAL", line: "CC L188-L197"}
+  - {q: "Q7", status: "PARTIAL", line: "CC L100; L331-L333; L440-L442"}
+  - {q: "Q8", status: "SILENT", line: "none (adjacent L352-L353, L371-L376)"}
+  - {q: "Q9", status: "SILENT", line: "none"}
+  - {q: "Q10", status: "SILENT", line: "none (adjacent L49-L50, L106)"}
+  - {q: "Q11", status: "PARTIAL", line: "CC L288-L289; L345-L355; L491-L494"}
+  - {q: "Q12", status: "SILENT", line: "none"}
+  - {q: "Q13", status: "SILENT", line: "none (zero hits)"}
+  - {q: "Q14", status: "PARTIAL", line: "CC L170-L177; L208-L215"}
+  - {q: "Q15", status: "PARTIAL", line: "CC L255-L261"}
+  - {q: "Q16", status: "PARTIAL", line: "CC L63-L64; L318-L320; L87"}
+  - {q: "Q17", status: "PARTIAL", line: "CC L82; L163; L193-L195"}
+  - {q: "Q18", status: "PARTIAL", line: "CC L64"}
+  - {q: "Q19", status: "SILENT", line: "none (adjacent L397)"}
+  - {q: "Q20", status: "PARTIAL", line: "CC L384-L386"}
+  - {q: "Q21", status: "SILENT", line: "none"}
+  - {q: "Q22", status: "SILENT", line: "none"}
+q_status_totals: {answered: 0, partial: 11, declined: 1, silent: 10}
+q_status_mapping: "PARTIAL = PARTIALLY ANSWERED; DECLINED = EVADED; SILENT = NOT ADDRESSED; ANSWERED = ANSWERED SPECIFICALLY"
+questions_for_management:
+  - {q: "Q23: Seamless funding in Rs Cr: term-loan sanction, amount drawn at 30-Sep-2026, own money spent to date (three answers conflicted; analyst figure M1 at T35 garbled)", from_finding_id: "CC-F6-02"}
+  - {q: "Q24: FY27-end gross debt: analyst sum ~Rs 165-170 Cr (assented) vs management sanction basis ~Rs 149-159 Cr; which is right, and what was CC-limit use at 30-Sep (filed current borrowings Rs 39.20 Cr vs stated ~Rs 32 Cr limit)?", from_finding_id: "CC-F6-03"}
+  - {q: "Q25: Which seamless equipment is in transit, from which supplier, shipped and delivery dates; first external-sale quarter?", from_finding_id: "CC-F7-02, CC-F6-01"}
+  - {q: "Q26: Allotment brings ~Rs 39.75 Cr; will promoters convert warrants within H2 FY27 (yes/no) to fund ~Rs 60 Cr of H2 lines; if not, which source; when was exchange approval received?", from_finding_id: "CC-F6-04, CC-F17-04"}
+  - {q: "Q27: Rs Cr of retrospective compensation agreed but not booked at 30-Sep; booking quarter (only the conversion impact is dated, Q3-Q4); trailer customers included; shown separately?", from_finding_id: "CC-F6-05, CC-F7-01"}
+  - {q: "Q28: Receivable target ~80 days and WC cycle <90-95 days (filed 124.4 days): on which revenue basis and by which balance-sheet date?", from_finding_id: "CC-F6-06"}
+  - {q: "Q29: H2 '20% up on H1' (call) vs 10-15% (deck): which metric; does management expect H2 FY27 revenue of at least Rs 503 Cr (yes/no)?", from_finding_id: "CC-F6-07, CC-F16-02"}
+  - {q: "Q30: Is the seamless '3 to 4 percent' margin on axle or company revenue; is phase 1 (30% of capacity) a captive share or a first build; what share of capacity is sold outside?", from_finding_id: "CC-F6-08"}
+  - {q: "Q31: Will Q2 axle and suspension volumes (promised privately) be published; what was the September exit rate vs 4,000-4,500/month?", from_finding_id: "CC-F6-09, CC-F16-01"}
+  - {q: "Q32: Axle volume ~+5-11% QoQ (on an analyst's Q1 base of 9,500) vs trailer value ~+53%: split the ~Rs 41 Cr QoQ trailer rise into axle volume, suspension mix, commodity pass-through, Chhattisgarh or monsoon-deferred orders", from_finding_id: "CC-F7-03, CC-F17-08"}
+  - {q: "Q33: Is the largest customer (15-16%) Tata Motors, and does Tata Motors make competing trailer axles?", from_finding_id: "CC-F7-05"}
+  - {q: "Q34: Q2 tipping-jack kits supplied and revenue in Rs Cr?", from_finding_id: "CC-F17-02"}
+  - {q: "Q35: (Re-send Q13) HPML: second line or the Unit-V line; capex Rs Cr; commissioning date; casting tonnes/month before and after", from_finding_id: "CC-F17-03"}
+  - {q: "Q36: (Re-send audio-gap question) Reconcile ~Rs 120 Cr seamless spend to filed H1 capex Rs 59.16 Cr and CWIP Rs 54.92 Cr; answer Q4, Q5, Q8, Q12, Q22", from_finding_id: "CC-F17-07"}
+  - {q: "Q37: Tractor ~10-11% of revenue (call) vs 8.38% (deck chart): which is right?", from_finding_id: "A4 7A conflict"}
+  - {q: "Q38: Sales direct to OEMs and Tier-1s only (call) vs three exclusive dealers and distribution partners (deck): what share of trailer revenue goes through dealers?", from_finding_id: "A4 7A conflict"}
+monitorables:
+  - {item: "Seamless remaining equipment received", implied_date: "end Nov or Dec 2026", source_ref: "CC L330-L332"}
+  - {item: "Extruded beam for 100% of trailer axles", implied_date: "Q3 or Q4 FY27", source_ref: "CC L73-L74, L211"}
+  - {item: "Trailer revenue Q3 and Q4 at or above ~Rs 115 Cr, read with axle volume and top-5 share", implied_date: "Q3 FY27 results by 2027-02-14 (Reg 33; verify)", source_ref: "CC L318-L323; PPT L788"}
+  - {item: "Conversion settlement impact (dated Q3-Q4); retrospective compensation (undated); another OEM steel increase", implied_date: "Q3-Q4 FY27 (conversion); undated (retrospective)", source_ref: "CC L474-L489"}
+  - {item: "Agri Q3 similar to Q2; TAFE 13,000-14,000 tractors Oct-Nov", implied_date: "Q3 FY27", source_ref: "CC L266-L275"}
+  - {item: "H2 capex ~Rs 110 Cr", implied_date: "H2 FY27", source_ref: "CC L345-L359"}
+  - {item: "Tipping jacks at 50-60% of ~800 kits/month", implied_date: "Q4 FY27", source_ref: "CC L257-L258; PPT L236"}
+  - {item: "Exports +45% on FY26", implied_date: "FY27", source_ref: "CC L87-L88"}
+  - {item: "FY27-end gross debt: ~Rs 149-159 Cr (management basis) vs ~Rs 165-170 Cr (analyst sum); no further debt", implied_date: "FY27 BS by 2027-05-30 (Reg 33; verify)", source_ref: "CC L335-L336, L364-L377; RES L458, L463"}
+  - {item: "Receivable days ~80; WC cycle <90-95 days (filed 124.4)", implied_date: "FY27 BS by 2027-05-30", source_ref: "CC L196-L197"}
+  - {item: "Seamless full backward integration; 8-10% saving", implied_date: "end H1 FY28 (Sep-2027)", source_ref: "CC L438-L458"}
+  - {item: "Cold drawn tube line ~Rs 20-25 Cr", implied_date: "undated", source_ref: "CC L288-L289"}
+  - {item: "European propeller-shaft customer to mass production", implied_date: "undated", source_ref: "CC L384-L386"}
+  - {item: "Public release of Q2 axle and suspension volumes", implied_date: "next filing or deck", source_ref: "CC L408-L417"}
+  - {item: "Q3 FY27 concall: re-test Q1-Q38 status and Q1-call items", implied_date: "Q3 FY27 call (date ND)", source_ref: "this addendum"}
+  - {item: "Agri Q4 post-Diwali dip vs OEM inventory (CC-F7-04)", implied_date: "Q4 FY27", source_ref: "CC L269-L275"}
+flags:
+  - "Role 4 verdict PROCEED WITH FLAGS unchanged; cash class INDETERMINATE-WITH-DIRECTION unchanged"
+  - "Credibility provisional D (12.5% on a one-concall memory baseline); formal ratio ND; archetype OVERPROMISER (provisional; specificity 0.58)"
+  - "14-15% margin target not reaffirmed: 'difficult currently' to say when (CC L480-L482); conversion settlement impact dated Q3-Q4 (CC L474-L477); full retrospective compensation expected, undated (CC L485-L489); H2 working case ~13%"
+  - "FY27-end gross debt ~Rs 149-159 Cr (management basis, 2.85-3.04x) or ~Rs 165-170 Cr (analyst sum, 3.15-3.25x), from filed Rs 117.14 Cr, before seamless benefit"
+  - "Seamless funding given three ways; H2 capex ~Rs 110 Cr vs ~Rs 39.75 Cr preferential cash at allotment (memory); rest needs warrant conversion"
+  - "Seamless full captive end H1 FY28; tipping jacks 400-480/month by Q4 (below 500); HPML silent"
+  - "Q2 trailer step: axle volume ~+5-11% QoQ (Q1 base 9,500 is an analyst's figure, CC L413) vs value ~+53%; mostly suspensions and price; ~81% of the QoQ rise from the trailer half and ~81% from the top 5"
+  - "Q2 volumes promised privately to one analyst; figure moved 10,500 to 10,000"
+  - "MGMT vs MGMT conflicts: tractor 10-11% (call) vs 8.38% (deck); direct sales only (call) vs dealer network (deck)"
+  - "Silence on CFO, cash, ROCE, other income, EPS defect, preferential status, HPML"
+  - "Only balance-sheet question lost in a 32-second audio gap"
+  - "Machine transcript; speakers inferred; filings win"
+  - "Step 8D deferred to /fttcp and Role 1 (OR-30)"
+plain_language_brief_included: true
+analyst_note: "Machine transcript; filings win. Role 5 loop 2 edit. The call keeps the Role 4 verdict and cash class: it adds guidance, not filed evidence. Margin: management did not reaffirm 14-15% and said it is difficult to say when margin returns there; only the conversion settlement is dated (Q3-Q4); full retrospective compensation is expected but undated; strip any booked credit before the 8C test. Debt: FY27-end gross debt has two readings, ~Rs 149-159 Cr on management's sanction less the filed draw, or ~Rs 165-170 Cr on the analyst's sum that management assented to; Q23 separates them; either way debt roughly triples before seamless benefit. Trailer: axle volume rose ~5-11% QoQ on an analyst's Q1 base against value ~53%, so most of the Q2 step is suspensions and price; the 81% concentration stands. Specificity 0.58 under one rule: provisional archetype OVERPROMISER; credibility stays provisional D on a memory baseline that Role 1 must not use until a Q1 transcript is verified."
+review_path: "runs/kross-q2fy27/work/review_kross_q2fy27_role5.md"

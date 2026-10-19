@@ -1,0 +1,51 @@
+stage: A3-forensics
+company: "KROSS"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/kross-q2fy27/work/forensics_results_kross_q2fy27.md"
+ledger_reconciled_pct: 100        # 372 of 372 ledger IDs read at cited line
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: PASS
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "F1-01", check: "F1", line: "L478, L448, L487", classification: "AMBIGUOUS", implication: "Zero ECL charge both halves while receivables rise to 2,062.91 (28% of assets); latent provisioning hit to PAT; ask ageing and BS allowance"}
+  - {id: "F1-02", check: "F1", line: "L507, L506, L458, L463", classification: "AMBIGUOUS", implication: "Nil LT repayment H1 FY27; NCL borrowings +487.96 equals LT proceeds, no current-maturity reclass; moratorium vs interim practice; ask repayment schedule"}
+  - {id: "F1-03", check: "F1", line: "L503, L442", classification: "NEUTRAL-FACT", implication: "Non-current investment 49.62 flat, not a subsidiary/associate; identify at AR"}
+  - {id: "F6-01", check: "F6", line: "L238-L241", classification: "FORWARD-SIGNAL", implication: "15,00,000 shares + 15,00,000 warrants pending exchange in-principle approval at 17-Oct; 4.65% dilution on 64.51 Mn shares; diluted EPS spread opens on allotment"}
+  - {id: "F8-01", check: "F8", line: "L424, L425, L461", classification: "NEUTRAL-FACT", implication: "Earlier-years tax 1.16 in Q2 FY26 comparative; deferred tax is a DTL build (+17.94), no DTA shield; Q2 ETR 26.96% vs 25.17%"}
+  - {id: "F12-01", check: "F12", line: "L439, L497, L506, L508, L496, L418, L511", classification: "FORWARD-SIGNAL", implication: "CWIP 160.00 to 549.16; capex 591.60 debt-funded (borrowings +647.71 exact tie, CFO 47.28); net debt 269.91 to 889.12; D&A and finance cost step-up on capitalisation; ask capitalised interest and CWIP project mix"}
+  - {id: "F12-02", check: "F12", line: "L452, L489", classification: "AMBIGUOUS", implication: "Other current assets +238.89 (+78.5%), largest WC use; GST credit on capex vs supplier advances; ask components"}
+  - {id: "F12-03", check: "F12", line: "L468, L467, L492, L493", classification: "AMBIGUOUS", implication: "Other current liabilities -85%, other financial liabilities -42% (91.15 released); customer-advance unwind vs capital creditors paid; ask"}
+  - {id: "F12-04", check: "F12", line: "L448, L412, L487", classification: "AMBIGUOUS", implication: "Debtor days 106.9 to 90.0 on FY basis but 89.1 to 90.0 on like-for-like half-year basis; trigger-1 leg 2 not shown to pass"}
+  - {id: "F12-05", check: "F12", line: "L496, L427, L484, L494, L514", classification: "CONFIRMATORY-NEGATIVE", implication: "H1 CFO/PAT 14.3%; WC absorbed 403.94 of 547.57; Mar-26 cash 44.40 now filed"}
+  - {id: "F12-06", check: "F12", line: "L413, L483, L480, L422", classification: "AMBIGUOUS", implication: "Other income 21.73 vs 3.92 QoQ; 14.43 of H1 OI unexplained; Q2 EBITDA margin 13.02% ex-OI vs 13.94% incl, straddling ~14% trigger; ask nature"}
+  - {id: "F12-07", check: "F12", line: "L412, L415, L416, L417, L420", classification: "AMBIGUOUS", implication: "Material intensity 56.10% Q2 vs 55.21% Q1 vs 53.77% Q2 FY26; margin gain from operating leverage, not pass-through; ask whether steel settlement booked in Q2"}
+  - {id: "F14-01", check: "F14", line: "L416, L422, L427, L432, L564-L566, L246", classification: "AMBIGUOUS", implication: "H1 does not foot to Q1+Q2 by 1.65 (inventory change); Q2 EPS 3.08 ties to H1 less Q1, Q2 PAT 196.86 implies 3.05; three readings; separate at Q3 9M column"}
+  - {id: "F14-02", check: "F14", line: "L226, L114-L115, L81, L148", classification: "NEUTRAL-FACT", implication: "Note 1 calls the limited review an opinion; letter says no audit opinion; title mismatches; drafting-care data point"}
+  - {id: "F14-03", check: "F14", line: "L240-L241, L23", classification: "NEUTRAL-FACT", implication: "Exchange names in Note 4 differ from covering letter"}
+forward_signals: ["F6-01", "F12-01"]
+ambiguous: ["F1-01", "F1-02", "F12-02", "F12-03", "F12-04", "F12-06", "F12-07", "F14-01"]
+commitments:
+  - {commitment: "Preferential allotment of 15,00,000 equity shares", implied_date: "on BSE/NSE in-principle approval; not dated in filing", ref: "Note 4, L238-L241", status_word: "initiated"}
+  - {commitment: "Allotment of 15,00,000 convertible warrants", implied_date: "on BSE/NSE in-principle approval; conversion date not in filing", ref: "Note 4, L238-L241", status_word: "initiated"}
+  - {commitment: "Results placed on company website", implied_date: "17-Oct-2026", ref: "Note 7, L248; letter L49", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Trigger 1 does not pass on filed evidence; A4 rules. Leg 1: Q2 EBITDA margin 13.02% ex other income, 13.94% including it. The ~14% line sits between the two, so the nature of the unexplained 14.43 of H1 other income (F12-06) decides the borderline reading. Leg 2: debtor days fall only on a full-year denominator inflated by 80% YoY growth; like-for-like half-year days are flat at ~90 (F12-04). Margin gain came from operating leverage while material intensity rose (F12-07), so pass-through recovery is not visible. The balance sheet carries the forward story: CWIP 3.4x, borrowings 2.2x, CFO/PAT 14%, no LT repayment yet and no current-maturity reclass (F1-02), all before the preferential cash lands. F14-01 is immaterial in size, but the Q2 PBT, PAT and EPS columns cannot all be right; the Q3 9M column will separate the readings. No prior-quarter fulltext, so F5/F15 diffs rest on this filing alone."

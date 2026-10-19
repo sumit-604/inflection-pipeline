@@ -1,0 +1,41 @@
+stage: A5-adversary
+company: "KROSS"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction:
+    - "C1: Forward-map row 'By 30-May-2027' (review L699). Bear fork: 'Margin under 14%, days flat or higher, H2 revenue under Rs 461 Cr: the bear case becomes the working case'. This contradicts 6B #1 (review L388), where the bear becomes the working case at margin at or below ~12.5% and 12.5-14% is AMBER. It also contradicts 6A (review L363): H2 needed is 370.57 Bear, 410.57 Base and 460.57 Bull, so an H2 of Rs 411-460 Cr is FY27 revenue of Rs 830-880 Cr, Base to Bull. The bull fork adds H2 revenue to trigger 1, which has two legs, margin and debtor days (review L56, L400, L480). The 461-482 Cr test separates the seasonal and plateau readings (review L173); it is not a Bear threshold. Loop A4."
+  style:
+    - "S-L1: p15 Unit-V sits before the 16-Sep-2024 listing; strict two-row alternation gives 2022 (R321); 'year not resolvable' is defensible; either reading is past, consistent with p24 (PPT L339-L355)."
+    - "S-L2: p24 says the 2023 HPML 'will double casting capacity' (PPT L513-L515), the same doubling language as p5/p6; leans to Reading A; optional cite at review L427, L526."
+    - "S-L3: review L30 says R416-R438 cited; body cites R416-R435; R436-R438 (deck CAGRs 23/31/46%) only under the all-reviewed statement; revenue CAGR is front-loaded (FY23-FY26 CAGR 11.3%)."
+    - "S-L4: Key Notes payload (review L617) '+4.1% vs H2 FY26' needs the 'H1' label; Q2 vs H2 FY26 avg qtr is +16.7% (review L199)."
+    - "S-L5: Q3 bear fork (review L697) 'trailer and top-5 shares fall back' is bear only with revenue below Q2; add the revenue condition."
+    - "S-L6: brief review L671 says other current assets are in the 124-day cash cycle; the CCC is receivable + inventory - payable days (review L283-L287)."
+    - "S-L7: concatenated header (review L8) still says 'this file is part 1'."
+loop_back_to: "A4"
+gap: "A4: rewrite the forward-map row 'By 30-May-2027' (review L699) so it agrees with 6A and 6B. (a) Trigger 1 fires or stays unfired on its two legs only: operating margin ex-OI at or above ~14% AND like-for-like debtor days lower. (b) H2 FY27 revenue against Rs 461-482 Cr separates the seasonal reading from the plateau reading (Step 2 diag 1). It is not a Bear threshold, and H2 at or above Rs 410.57 Cr keeps FY27 revenue at Base or better (6A). (c) The Bear case becomes the working case only at operating margin at or below ~12.5% (6B #1) or H2 revenue below Rs 370.57 Cr (below Bear, 6A). No other change is required. Prior F1-F7 are closed, coverage reconciles at 1,173 rows, and every new figure ties."
+style_notes:
+  - "S-L1: p15 order places Unit-V before the Sep-2024 listing; alternation gives 2022; no reading changes."
+  - "S-L2: cite p24 'will double casting capacity' (PPT L513-L515) as leaning to Reading A."
+  - "S-L3: R436-R438 CAGR rows under blanket coverage only; align review L30 wording."
+  - "S-L4: label the Key Notes '+4.1%' as H1 vs H2 FY26 before the Notion save."
+  - "S-L5: add 'with revenue below Q2' to the Q3 share fall-back bear fork."
+  - "S-L6: describe the 124-day CCC as receivable plus inventory less payable days."
+  - "S-L7: header part-1 wording in the concatenated file."
+analyst_note: "Loop 1 closes all seven prior findings. M001 is in the PPT ledger and the review cites it with both HPML readings. The three bear counters are grafted beside A4's view, with bull readings and separating observations. The other non-current assets line and the FY22-FY26 gross-margin history are cited. The dilution label is fixed in every copy. Coverage reconciles: 372 + 135 + 665 + M001 = 1,173 rows, no orphans, and the p15 re-sweep finds nothing else. Every new or changed figure recomputes within rounding. The one failure is a single forward-map row that mapped the new Rs 461 Cr seasonality test to 'the bear case becomes the working case'. Rs 461 Cr is roughly the Bull H2 figure in 6A, and 6B puts the bear line at ~12.5% margin, not 14%. A Base-to-Bull outcome would be labelled Bear in the deliverable the operator reads first, so this is a CONTRADICTION, not STYLE. The fix is one row with no A2 or A3 work. A re-check can be limited to that row."

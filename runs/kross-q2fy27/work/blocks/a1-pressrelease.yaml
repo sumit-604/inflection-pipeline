@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "KROSS"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 2
+formfeed_count: 2
+line_count: 124
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["page 1 table only, 200 dpi: text layer column-scrambled (orchestrator decision)"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/kross-q2fy27/extracted/kross-pressrelease-q2fy27-fulltext.md"
+structured_path: "runs/kross-q2fy27/extracted/kross-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 99
+  entity: 12
+  forward: 10
+  date: 8
+  qualifier: 6
+structured_id_range: "R001-R135"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,34 @@
+stage: A5-adversary
+company: "KROSS"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S-L7 (carried, wider): review header L3, L8, L34 still describe part 1 / part 2 files; YAML review_path L789 and Loop 2 change log L824 say one file. No number, fact or verdict changes."
+    - "S-L8: forward-map L698 and L699 each say 'the Bear case applies only ...'; each 'only' is scoped to its test, but together they can read as exclusive. The two routes are margin at or below ~12.5% (6B #1, L387) and H2 revenue below Rs 370.57 Cr (6A, L362). Add 'on this test'."
+    - "S-L9: L699 bear fork leaves H2 Rs 370.57-410.57 Cr unlabelled; 6A (L362) grades it between Bear and Base (FY27 Rs 790-830 Cr). No outcome is mislabelled."
+    - "Carried open from loop 1, unchanged text: S-L1, S-L2, S-L3, S-L5, S-L6. S-L4 closed at L616."
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S-L7: rewrite review L3, L8, L34 to describe one file."
+  - "S-L8: add 'on this test' to the two 'Bear case applies only' bear forks (L698, L699)."
+  - "S-L9: label H2 Rs 370.57-410.57 Cr as between Bear and Base in L699."
+  - "Loop-1 S-L1, S-L2, S-L3, S-L5, S-L6 remain open in unchanged text; optional at save."
+analyst_note: "Loop 2 closes C1. The 30-May-2027 row is now two rows. Test 1 is trigger 1 on its two legs (margin ex-OI at or above 14%; like-for-like debtor days lower), with the Bear case only at margin at or below ~12.5%, as in 6B #1. Test 2 is H2 FY27 revenue against Rs 461-482 Cr (H1 x 1.10-1.15), seasonal vs plateau, with Base to Bull down to Rs 410.57 Cr and Bear only below Rs 370.57 Cr, as in 6A. All thresholds recompute from RES L412. The Key Notes relabel ties (+79.6%, +4.1%, +16.7%, 13.02%, -232 bps, 14%, 88.9 Cr). A grep finds no stale copy of the old row. Coverage is unchanged at 1,173 rows. Only STYLE remains. Pipeline note, not a finding: extracted/kross-concall-q2fy27-fulltext.md now exists. A5 did not read it. The Role 5 addendum can be scheduled against it."

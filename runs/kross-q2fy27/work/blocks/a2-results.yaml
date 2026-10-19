@@ -1,0 +1,22 @@
+stage: A2-enumerator
+company: "KROSS"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/kross-q2fy27/work/ledger_results_kross_q2fy27.md"
+counts:
+  notes: 7
+  line_items: 304
+  zero_standing: 18
+  agenda_items: 2
+  auditor_paras: 4
+  entities: 0
+flags_raised: [ZERO_STANDING, FOOTING_GAP, RESTATED, SUPERSEDED_BY]
+ids_in_structured: 372
+ids_referenced: 372
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Superseded IDs accounted: R008-R027 and R030 (21) point to image-based R069+ rows; R068 RESOLVED. Standalone, no consolidation list, so ENTITY_CHANGE untestable and no prior ledger. H1 FY27 PBT, PAT and total expenses differ from Q1+Q2 by 1.65, traced by A1 to the H1 inventory change (20.46) equalling Q2 alone; unreconciled and not adjusted, carry to A3. Zero-standing: IPO proceeds nil both halves, investment in shares nil, ECL nil, LT borrowing repayment nil in H1 FY27. Note 4 preferential issue (15 lakh shares plus 15 lakh warrants) awaits in-principle exchange approval. Auditor report: limited review, unmodified, no EoM, Other Matters or Going Concern language. Meeting ran 116 min; digital signature 1 min after close, no flag."

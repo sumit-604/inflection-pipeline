@@ -1,0 +1,23 @@
+| agent | doc | model | total_tok | wall_s |
+| A1 | results (run 1) | sonnet-5.5 | 50838 | 628 |
+| A1 | pressrelease (run 1) | sonnet-5.5 | 48412 | 707 |
+| A1 | presentation (run 1) | sonnet-5.5 | 79898 | 977 |
+| A1 | pressrelease (render continuation) | sonnet-5.5 | 57688 | 1158 |
+| A1 | results (render continuation) | sonnet-5.5 | 84532 | 733 |
+| A1 | presentation (render continuation) | sonnet-5.5 | 95365 | 404 |
+| A2 | pressrelease | sonnet-5.5 | 40194 | 281 |
+| A2 | results | sonnet-5.5 | 55199 | 564 |
+| A3 | pressrelease | opus-5.5 | 88780 | 401 |
+| A2 | presentation | sonnet-5.5 | 57123 | 822 |
+| A3 | results | opus-5.5 | 122530 | 510 |
+| A3 | presentation | opus-5.5 | 156779 | 516 |
+| A4 | Role 4 review | opus-5.5 | 249809 | 1026 |
+| A5 | audit | opus-5.5 | 351062 | 1662 |
+| A2 | presentation (loop 1, continuation) | sonnet-5.5 | 61103 | 61 |
+| A3 | presentation (loop 1, continuation) | opus-5.5 | 183702 | 213 |
+| A4 | loop 1 fix (continuation) | opus-5.5 | 349712 | 573 |
+| A5 | loop 1 re-audit | opus-5.5 | 169322 | 586 |
+| A4 | loop 2 fix (continuation) | opus-5.5 | 415244 | 472 |
+| T | transcript clean-up (general-purpose) | sonnet-5.5 | 108391 | 424 |
+| A1 | concall | sonnet-5.5 | 74199 | 285 |
+| A5 | loop 2 final re-audit | opus-5.5 | 103533 | 396 |

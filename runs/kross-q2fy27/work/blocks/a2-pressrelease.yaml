@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "KROSS"
+quarter: "Q2 FY27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/kross-q2fy27/work/ledger_pressrelease_kross_q2fy27.md"
+counts:
+  notes: 6
+  line_items: 42
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 12
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 57
+flags_raised: [RESTATED, FOOTNOTE_UNRESOLVED, SUPERSEDED]
+ids_in_structured: 135
+ids_referenced: 135
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "R004-R045 (42 ids) are superseded by R094-R135 and accounted in ledger section 2. Active numbers = 57. Table is standalone only with 7 metric rows; no nil rows, so no ZERO_STANDING. Forwards (10) carry no numeric guidance; only three are dated."

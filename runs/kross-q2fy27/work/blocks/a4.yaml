@@ -1,0 +1,88 @@
+stage: A4-analyst
+company: "KROSS"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, presentation, press_release]
+ledger_reconciliation:
+  notes: 7
+  turns: 0
+  slides: 38
+  all_reviewed: true
+  a3_findings_incorporated: [RES-F1-01, RES-F1-02, RES-F1-03, RES-F6-01, RES-F8-01, RES-F12-01, RES-F12-02, RES-F12-03, RES-F12-04, RES-F12-05, RES-F12-06, RES-F12-07, RES-F14-01, RES-F14-02, RES-F14-03, PR-A3-01, PR-A3-02, PR-A3-03, PR-A3-04, PR-A3-05, PR-A3-06, PR-A3-07, PR-A3-08, PR-A3-09, PR-A3-10, PR-A3-11, PR-A3-12, PR-A3-13, PR-A3-14, PPT-FN-01, PPT-FN-02, PPT-FN-03, PPT-FN-04, PPT-FN-05, PPT-FN-06, PPT-FN-07, PPT-FN-08, PPT-FN-09, PPT-FN-10, PPT-FN-11, PPT-FN-12, PPT-FN-13, PPT-FN-14, PPT-FN-15, PPT-FN-16, PPT-FN-17, PPT-FN-18]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NOT SET (blank, operator-only); watchlist, no position; pre-thesis read"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap: "N.A. (standalone only; Note 5, RES L243)"}
+  - {period: "Q1 FY27", gap: "N.A. (standalone only; Note 5, RES L243)"}
+  - {period: "Q2 FY26", gap: "N.A. (standalone only; Note 5, RES L243)"}
+  - {period: "H1 FY27", gap: "N.A. (standalone only; Note 5, RES L243)"}
+  - {period: "H1 FY26", gap: "N.A. (standalone only; Note 5, RES L243)"}
+  - {period: "FY26", gap: "N.A. (standalone only; Note 5, RES L243)"}
+questions_for_management:
+  - {q: "Q1: Does Q2 COGS include a retrospective steel settlement (yes/no, Rs Cr), given GM 43.90% vs 46.23% YoY and price revisions concluded with most OEMs?", from_finding_id: "RES-F12-07, PPT-FN-03"}
+  - {q: "Q2: Is the 14-15% EBITDA margin guide still valid, and for Q4 FY27 exit or FY27 full year?", from_finding_id: "PR-A3-08, PPT-FN-14"}
+  - {q: "Q3: About 81% of the Rs 50.75 Cr QoQ revenue rise came from the trailer half and from the top 5. What share came from the largest customer, and was any of it a one-time fleet order?", from_finding_id: "PPT-FN-04, PPT-FN-06, PR-A3-14"}
+  - {q: "Q4: What is the Rs 1.44 Cr of H1 other income not explained by interest and FVTPL gains, and does it recur?", from_finding_id: "RES-F12-06, PPT-FN-09, PR-A3-09"}
+  - {q: "Q5: Of the Rs 23.89 Cr H1 rise in other current assets, how many Rs Cr are GST input credit on capex vs supplier advances?", from_finding_id: "RES-F12-02"}
+  - {q: "Q6: What share of Rs 206.29 Cr receivables is overdue beyond 180 days, and what is the ECL allowance at 30-Sep-2026?", from_finding_id: "RES-F1-01, RES-F12-04"}
+  - {q: "Q7: What is the seamless tube commercial production date and first revenue quarter, and when does the ~18-month timeline start?", from_finding_id: "PR-A3-02, PR-A3-07, PPT-FN-01"}
+  - {q: "Q8: What is the moratorium end and first repayment quarter on the new term loans, and how much borrowing cost was capitalised in H1?", from_finding_id: "RES-F1-02, RES-F12-01, PPT-FN-10"}
+  - {q: "Q9: Q2 EPS 3.08 vs 3.05 on Q2 PAT (deck EPS QoQ 47.9% also implies ~3.05); H1 exceeds Q1+Q2 by Rs 0.165 Cr via inventory change. Which column is correct, and will Q3 restate?", from_finding_id: "RES-F14-01, PR-A3-06, PR-A3-10, PPT-FN-07"}
+  - {q: "Q10: When was exchange in-principle approval received, what are the allotment date and issue price, and who are the four non-promoter allottees?", from_finding_id: "RES-F6-01, PR-A3-13"}
+  - {q: "Q11: How is CWIP Rs 54.92 Cr split by project, and what capex (Rs Cr, debt share) is budgeted for robotic axle shaft and cold drawn tubes?", from_finding_id: "RES-F12-01, PR-A3-04, PR-A3-13, PPT-FN-10, PPT-FN-11"}
+  - {q: "Q12: Was the fall in other current liabilities (4.55 to 0.67 Cr) and other financial liabilities (12.47 to 7.23 Cr) customer advances, statutory dues, or capital creditors?", from_finding_id: "RES-F12-03"}
+  - {q: "Q13: The deck calls an HPML 'Established' at Unit-V (p15) and 'set up' in 2023 (p24) but says HPML installation is 'progressing'. Is the line being installed a second line (yes/no)? Give capex (Rs Cr), commissioning date, and casting tonnes/month before and after.", from_finding_id: "PPT-FN-18, PPT-FN-02, PR-A3-12"}
+  - {q: "Q14: How many OEMs approved the extruded beam, what is extrusion-only capacity, and when does the saving reach COGS?", from_finding_id: "PR-A3-01, PPT-FN-12"}
+  - {q: "Q15: How many tipping-jack kits were supplied in Q2, and in which month will supplies reach 500/month?", from_finding_id: "PR-A3-03, PPT-FN-13"}
+  - {q: "Q16: What is the order book (Rs Cr) at 30-Sep-2026, the FY27 revenue guide, and which projects are nearing completion, with dates?", from_finding_id: "PR-A3-05"}
+  - {q: "Q17: What is Q2 export revenue in Rs Cr, reconciling 3.21% of revenue with ~8% of the component business?", from_finding_id: "PPT-FN-05"}
+  - {q: "Q18: Does 'H2 always 10-15% above H1' apply to company revenue (yes/no), given FY26 H2 was 1.49x H1?", from_finding_id: "PPT-FN-15"}
+  - {q: "Q19: Is the tractor EBITDA margin above or below the company margin?", from_finding_id: "PPT-FN-16"}
+  - {q: "Q20: What are the value, product and start date of the European Tier-1 PO, and is it the first export customer beyond Leax?", from_finding_id: "PPT-FN-17"}
+  - {q: "Q21: Will the company report ROCE and receivable days each half-year in its deck (yes/no)?", from_finding_id: "PR-A3-11"}
+  - {q: "Q22: Other non-current assets rose Rs 3.68 Cr to Rs 50.35 Cr via investing cash flow. Are they capital advances, and for which project?", from_finding_id: "A5-F5 (RES R225, R226, R333)"}
+monitorables:
+  - {item: "Preferential allotment 15,00,000 shares + 15,00,000 warrants", implied_date: "on BSE/NSE in-principle approval; undated", source_ref: "RES Note 4 L238-L241"}
+  - {item: "Q2 FY27 concall transcript (Role 5 addendum)", implied_date: "ND", source_ref: "run note"}
+  - {item: "Parivartan scheme start", implied_date: "2026-10-30", source_ref: "NOTION (memory)"}
+  - {item: "Tipping jacks volume scale-up", implied_date: "H2 FY27 (Oct-2026 to Mar-2027)", source_ref: "PR L59-L60; PPT L112, L233"}
+  - {item: "Tractor momentum into Q3", implied_date: "Q3 FY27", source_ref: "PPT L106"}
+  - {item: "M&HCV Q3/Q4 stronger than Q2; H2 +10-15% vs H1; H2 FY27 revenue vs 461-482 Cr", implied_date: "Q3-Q4 FY27", source_ref: "PPT L102; A5 claim A"}
+  - {item: "HPML commissioning; same line vs second line", implied_date: "undated (memory Sept-2026)", source_ref: "PR L66-L67; PPT L116; PPT M001 L341-L346; PPT L511-L515; PPT-FN-18"}
+  - {item: "Extrusion utilisation from ~60-65%; cost benefit to COGS", implied_date: "coming quarters", source_ref: "PR L61-L62, L81; PPT L104-L105"}
+  - {item: "Q3 FY27 results: gross margin (8C, both readings), op margin ex-OI, core PBT vs 24.78 Cr, trailer/top-5 shares, 9M footing", implied_date: "by 2027-02-14 (Reg 33; verify)", source_ref: "Step 8C; RES-F14-01"}
+  - {item: "Seamless tube production trials", implied_date: "Feb-Mar 2027", source_ref: "PR L63; PPT L114, L247"}
+  - {item: "Price revisions with remaining OEMs", implied_date: "undated", source_ref: "PPT L103"}
+  - {item: "Q4 FY27 / FY27 results: H2 BS, debtor days, FY CFO/PAT, LT current maturities, other non-current assets", implied_date: "by 2027-05-30 (Reg 33; verify)", source_ref: "RES-F12-04, RES-F1-02; A5-F5"}
+  - {item: "FY27 healthy growth; initiatives nearing completion", implied_date: "FY27", source_ref: "PR L83; PPT L123-L124"}
+  - {item: "Seamless tube completion ~18 months", implied_date: "start undated", source_ref: "PPT L255-L259"}
+  - {item: "Robotic axle shaft capacity; cold drawn tubes", implied_date: "undated", source_ref: "PR L68-L72; PPT L117-L120"}
+  - {item: "Export POs (Sweden-based co.; European Tier-1) supply start", implied_date: "undated", source_ref: "PPT L278-L281"}
+  - {item: "Agri share to 15% of revenue", implied_date: "~H1 FY29", source_ref: "PPT L274-L276"}
+  - {item: "Warrant conversion", implied_date: "18 months from allotment (memory)", source_ref: "NOTION"}
+  - {item: "FY27 AR: receivables ageing, ECL, non-current investment identity, fixed-asset schedule (HPML), top-5 customers", implied_date: "FY27 AR (date ND)", source_ref: "RES-F1-01, RES-F1-03; PPT-FN-18"}
+  - {item: "3 MW PPA installation", implied_date: "soon", source_ref: "PPT L752-L754"}
+flags:
+  - "Re-engage trigger 1 NOT fired: op margin 13.02% ex-OI (13.94% incl OI); like-for-like debtor days 89.1 to 90.0"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION (leaning structural): H1 CFO/PAT 14.3%; FCF -54.85 Cr (basis 1) / -58.53 Cr (basis 2, worse by 4.50 Cr)"
+  - "Capex basis 2 (incl. other non-current assets +3.68 Cr) 63.26 Cr, +7.0% YoY"
+  - "Debt-funded capex: borrowings 52.37 to 117.14 Cr; net debt 26.99 to 88.91 Cr; no LT repayment in H1"
+  - "Gross margin -232 bps YoY, -89 bps QoQ; margin gain is operating leverage; FY22-FY26 GM 46.1/40.7/42.6/43.0/45.7%"
+  - "Growth concentrated: ~81% of the QoQ rise from the trailer half and ~81% from the top 5 (MGMT, legend-reading caveat)"
+  - "Base effect: Q2 FY26 was a trough; H1 FY27 revenue +4.1% and core PBT -12.1% vs H2 FY26"
+  - "PAT at Base only with unexplained OI: ex-OI H1 PAT 32.10 Cr vs 32.5 Cr pro-rata; EPS 4.86 on 66.01 Mn vs 4.95"
+  - "Seamless tube reframed to trials Feb-Mar 2027; HPML not commissioned past Sept-2026 (memory) and line identity unclear (PPT-FN-18, M001)"
+  - "Filing integrity: H1 does not foot to Q1+Q2 by Rs 1.65 Mn; Q2 EPS 3.08 vs 3.05 computed"
+  - "Rs 1.44 Cr of H1 other income unexplained"
+  - "Preferential not allotted at 17-Oct-2026; full conversion: share count +4.65%, EPS -4.44%"
+  - "Upside: H1 revenue between page base and bull pro-rata; Q2 x 4 = 940.37 Cr (extrapolates a concentrated step)"
+  - "Pre-thesis read: mental model UNSIGNED, no Spear line, no companies/KROSS.md"
+  - "Tracker rows not supplied (Step 5.5 empty)"
+  - "Concall pending Role 5 addendum"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30)"
+plain_language_brief_included: true
+analyst_note: "Loop 1 rewrite closes A5-F1 to F7; loop 2 splits the 30-May-2027 forward-map row into separate tests (C1). Pre-thesis read; Decision Status NOT SET, so 8A-W. Growth is real YoY (revenue +79.6%, core PBT +129.9%), but the base is a trough: half-on-half, revenue is +4.1% and core PBT -12.1% vs H2 FY26. Margin gain is cost absorption while gross margin fell 232 bps; about 81% of the QoQ rise came from the trailer half and from the top 5. H1 CFO/PAT 14.3%; capex debt-funded and +7.0% once other non-current assets are included. Trigger 1 does not fire on either margin basis; like-for-like receivable days are flat at about 90. 6A carries two readings: reported PAT and EPS at Base; ex the 1.44 Cr unexplained OI, PAT falls between Bear and Base. The Q4 answer separates them. 8C gross-margin thresholds are read against FY22-FY26 (40.7-46.1%). HPML line identity (PPT-FN-18) is unresolved; Q13 asks. Dilution: share count +4.65%, EPS -4.44%. Concall pending Role 5 addendum."
+review_path: "runs/kross-q2fy27/work/review_kross_q2fy27.md (single file, loop 2)"

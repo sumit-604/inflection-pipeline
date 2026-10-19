@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "KROSS"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 7
+formfeed_count: 7
+line_count: 600
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: [4, 6, 7]  # corrupted text layer over primary tables, orchestrator decision; image transcription
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/kross-q2fy27/extracted/kross-results-q2fy27-fulltext.md"
+structured_path: "runs/kross-q2fy27/extracted/kross-results-q2fy27-structured.md"
+structured_counts:
+  number: 334
+  entity: 12
+  forward: 3
+  date: 11
+  qualifier: 12
+structured_id_range: "R001-R372"
+gate_a1: pass
+gap_note: "Coverage 100%. Pages 4,6,7 image-transcribed; R068 resolved. All 77 intra-statement footing checks pass; 3 cross-period gaps as filed (H1 FY27 PBT, PAT, Total Expenses differ from Q2+Q1 by 1.65, from H1 inventory change (20.46) equal to Q2 alone)."

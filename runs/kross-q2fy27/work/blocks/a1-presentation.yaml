@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "KROSS"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 38
+formfeed_count: 38
+line_count: 788
+unit_convention: "Crores (CSR on p35 in Lakhs)"
+conversion_factor_to_cr: "Crores x1; Lakhs x0.01"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["8: orchestrator-approved, Q-o-Q cells unresolved", "19: product-slice mapping", "20: Q2FY27 top-5 split"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/kross-q2fy27/extracted/kross-presentation-q2fy27-fulltext.md"
+structured_path: "runs/kross-q2fy27/extracted/kross-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 464
+  entity: 84
+  forward: 51
+  date: 46
+  qualifier: 20
+structured_id_range: "R001-R665"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "KROSS"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 5                # 10-minute time blocks (machine transcript .txt; no PDF pages)
+formfeed_count: 0
+line_count: 509              # fulltext file lines (17 header + 487 source + 5 page markers)
+unit_convention: "Crores (as spoken; mixed: 196 million PAT garble, Rs 1.4 lakh per tipping set)"
+conversion_factor_to_cr: "Crores x1; Lakhs x0.01; Millions x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/kross-q2fy27/extracted/kross-concall-q2fy27-fulltext.md"
+structured_path: "runs/kross-q2fy27/extracted/kross-concall-q2fy27-structured.md"
+structured_counts:
+  number: 105
+  entity: 43
+  forward: 57
+  date: 37
+  qualifier: 92
+structured_id_range: "R001-R334"
+gate_a1: pass
+gap_note: "MACHINE TRANSCRIPT caveat binds all downstream. Source has audio gap near 00:48:16-00:48:48 (Batra question and answer lost). 65 inferred speaker turns, all SPEAKER_INFERRED. Sumit Rai as spoken (memory: Sumeet). Internal number conflicts flagged (PAT 196 million vs 19.69 cr; EBITDA 36 vs 30.6 cr; seamless funding 110/70/60/50)."

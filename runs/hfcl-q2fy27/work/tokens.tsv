@@ -1,0 +1,22 @@
+﻿| agent | doc | model | total_tok | wall_s |
+| A1 | presentation | sonnet-5.5 | 68550 | 755 |
+| A1 | results (run 1) | sonnet-5.5 | 93966 | 851 |
+| A1 | mareport (run 1) | sonnet-5.5 | 95887 | 898 |
+| A2 | presentation | sonnet-5.5 | 43542 | 480 |
+| A1 | results (render continuation) | sonnet-5.5 | 143512 | 1508 |
+| A1 | mareport (render continuation) | sonnet-5.5 | 143393 | 1770 |
+| A2 | mareport | sonnet-5.5 | 60942 | 392 |
+| A2 | results | sonnet-5.5 | 98083 | 1157 |
+| A3 | mareport | opus-5.5 | 145678 | 442 |
+| A3 | presentation | opus-5.5 | 138745 | 482 |
+| A3 | results | opus-5.5 | 283568 | 1092 |
+| A4 | Role 4 review | opus-5.5 | 361042 | 1616 |
+| A5 | audit | opus-5.5 | 386365 | 1325 |
+| A2 | presentation (loop 1, continuation) | sonnet-5.5 | 49216 | 57 |
+| A2 | results (loop 1, continuation) | sonnet-5.5 | 103841 | 79 |
+| A3 | presentation (loop 1, continuation) | opus-5.5 | 167093 | 269 |
+| A3 | results (loop 1, continuation) | opus-5.5 | 320106 | 306 |
+| A4 | loop 1 fix (continuation) | opus-5.5 | 464975 | 659 |
+| A5 | loop 1 re-audit | opus-5.5 | 222564 | 790 |
+| A4 | loop 2 fix (continuation) | opus-5.5 | 546486 | 622 |
+| A5 | loop 2 final re-audit | opus-5.5 | ND | ND |

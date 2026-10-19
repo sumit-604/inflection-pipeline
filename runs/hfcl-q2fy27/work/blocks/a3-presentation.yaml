@@ -1,0 +1,74 @@
+stage: A3-forensics
+company: "HFCL"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/hfcl-q2fy27/work/forensics_presentation_hfcl_q2fy27.md"
+ledger_reconciled_pct: 100        # 431 of 431 rows (R001-R424 + PM01-PM07, loop iteration 1)
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: PASS
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FN-01", check: "F7", line: "slide 5, lines 124-129", classification: "FORWARD-SIGNAL", implication: "'evaluating various strategic options' for verticals with distinct working capital profiles; reopens demerger history and trigger #6 (not fired, no structure announced)"}
+  - {id: "FN-02", check: "F16", line: "slide 5, lines 111-113", classification: "FORWARD-SIGNAL", implication: "guide hardened to 'now expect' >=80%; implied H2 ~Rs4,452 Cr (~Rs2,226 Cr/q) is below Q2 Rs2,541.79 Cr; floor or H2 step-down"}
+  - {id: "FN-03", check: "F16", line: "slide 19, lines 503-504", classification: "FORWARD-SIGNAL", implication: "EBITDA target raised to >27% by FY29 (from 22-25% memory); Q2 25.89% is 111 bps short, preform only by Oct-2028"}
+  - {id: "FN-04", check: "F16", line: "slide 5, lines 125-127", classification: "AMBIGUOUS", implication: "EBITDA may include other income (Q1 reported 23.25% vs operating 21.63% memory); verify Q2 operating margin in results filing"}
+  - {id: "FN-05", check: "F16", line: "slide 11, lines 302-314; slide 19, lines 507-510; slide 20, line 532", classification: "FORWARD-SIGNAL", implication: "book mix (govt >=35%, non-product >=31.7%, export 57%) runs against revenue mix (8%, ~9%, 63%) and all slide-19 targets; WC intensity may rise"}
+  - {id: "FN-06", check: "F14", line: "slide 19, lines 502-504 and 507-508; slide 20, line 532", classification: "AMBIGUOUS", implication: ">70% vs 65%+ FY27 export targets on one slide; >70% needs 77-80% H2 export share; product target ~90% already below ~91% actual"}
+  - {id: "FN-07", check: "F16", line: "slide 17, lines 469-470; slide 5, line 123", classification: "FORWARD-SIGNAL", implication: "own defence book ~Rs250 Cr vs Rs500 Cr FY27 aspiration; Rs~1,600 Cr sits in an entity not yet acquired"}
+  - {id: "FN-08", check: "F16", line: "slide 17, line 469", classification: "AMBIGUOUS", implication: "defence book down ~Rs450 Cr total, ~Rs400 Cr in target vs Q1 memory; executed, cancelled or redefined"}
+  - {id: "FN-09", check: "F16", line: "slide 5, line 114; slide 11, lines 300-314; slide 20, lines 534-536", classification: "AMBIGUOUS", implication: "unclear if 'confirmed' Rs28,911 Cr includes target entity's Rs~1,600 Cr; category split implies Networks <=17.5% vs ~65% Q1 memory"}
+  - {id: "FN-10", check: "F16", line: "slide 16, lines 428-434", classification: "AMBIGUOUS", implication: "Dec-2026 interim capacity step absent; OF 'Current' still 28 mn fkm; possible silent fold-in to July-2028"}
+  - {id: "FN-11", check: "F16", line: "slide 5, line 118; slide 16, lines 436-442", classification: "AMBIGUOUS", implication: "MMHG Rs230 Cr vs Rs275 Cr memory; Rs215 Cr DC facility absent; deck capex ~Rs2,030 Cr vs ~Rs2,500 Cr broker; no funding split"}
+  - {id: "FN-12", check: "F16", line: "slide 20, lines 538-540; slide 19, lines 503-506", classification: "AMBIGUOUS", implication: "two WC claims ('lowering working-capital intensity', 'ease working capital') with no receivables/unbilled/CFO metric; tripwire #4 rests on results filing and concall"}
+  - {id: "FN-13", check: "F14", line: "slide 24, line 628; slide 13, lines 366-368; slide 17, lines 470-474", classification: "AMBIGUOUS", implication: "HASPL defined in glossary but unused; acquisition target unnamed, phrased three ways incl. plural 'Acquisitions'"}
+  - {id: "FN-14", check: "F10", line: "slide 8, lines 208 and 215; slide 22, line 574", classification: "AMBIGUOUS", implication: "diluted EPS only, no basic (Q1 token 1.49 matches file); 7.5 cr warrants (memory, 4.9% of 153.06 cr shares) unmentioned; spread unreadable"}
+  - {id: "FN-15", check: "F14", line: "slide 1, lines 40-41", classification: "NEUTRAL-FACT", implication: "cover letter claims standalone and consolidated; deck is consolidated-only; no disclaimer slide despite hard guidance"}
+  - {id: "FN-16", check: "F14", line: "slide 3, lines 80-89; lines 93, 146, 321, 479, 552, 499, 557", classification: "NEUTRAL-FACT", implication: "chapter numbering mismatches contents, duplicate '02', typo; cumulative governance data point"}
+  - {id: "FN-17", check: "F6", line: "slide 5, lines 119-120", classification: "AMBIGUOUS", implication: "'Secured raw materials' with no counterparty, tenor, volume or price; captive preform only by Oct-2028, so margin target rests on bought-in input until then"}
+  - {id: "FN-18", check: "F16", line: "slide 17, lines 467-471", classification: "AMBIGUOUS", implication: "'higher value realization amid a structural demand upcycle' with no realisation metric; long-term contract priced below spot (memory) may miss the upcycle"}
+  - {id: "FN-19", check: "F16", line: "slide 17, lines 467-471", classification: "AMBIGUOUS", implication: "PCS/DC 'high-growth adjacency' with no revenue, book or margin; Rs215 Cr DC facility absent from capex slides"}
+  - {id: "FN-20", check: "F14", line: "slide 20, lines 532-533; slide 13, line 347", classification: "AMBIGUOUS", implication: "'#1 in OFC' drops slide 13's 'in India' qualifier; no source or metric; Wi-Fi/UBR share unquantified"}
+  - {id: "FN-21", check: "F14", line: "slide 20, lines 537-539; slide 19, lines 514-515", classification: "AMBIGUOUS", implication: "BharatNet roll-out promoted while 'deliberately shifting from low-profit turnkey work'; no BharatNet III revenue, margin or receivables; checklist 6-7 silent at deck level"}
+forward_signals: ["FN-01", "FN-02", "FN-03", "FN-05", "FN-07"]
+ambiguous: ["FN-04", "FN-06", "FN-08", "FN-09", "FN-10", "FN-11", "FN-12", "FN-13", "FN-14", "FN-17", "FN-18", "FN-19", "FN-20", "FN-21"]
+commitments:
+  - {commitment: "FY27 revenue growth at least 80% over FY26", implied_date: "FY27", ref: "slide 5, line 111", status_word: "initiated"}
+  - {commitment: "Rs10,000 Cr revenue earlier than FY29", implied_date: "before FY29", ref: "slide 5, lines 112-113", status_word: "initiated"}
+  - {commitment: "pipeline at advanced stages of conversion", implied_date: "undated", ref: "slide 5, line 115", status_word: "underway"}
+  - {commitment: "~Rs1,800 Cr investment in OF, OFC and preform", implied_date: "to Oct-2028", ref: "slide 5, line 118", status_word: "initiated"}
+  - {commitment: "FY27 defence revenue ~Rs500 Cr (aspiration)", implied_date: "FY27", ref: "slide 5, line 123", status_word: "initiated"}
+  - {commitment: "evaluating strategic options for business verticals", implied_date: "undated", ref: "slide 5, lines 124-129", status_word: "initiated"}
+  - {commitment: "OF capacity 28 to 43.1 mn fkm", implied_date: "July 2028", ref: "slide 16, lines 428-434", status_word: "underway"}
+  - {commitment: "OFC capacity 39 to 62 mn fkm", implied_date: "July 2028", ref: "slide 16, lines 428-434", status_word: "underway"}
+  - {commitment: "preform 600 MT/annum, capex Rs1,250 Cr", implied_date: "October 2028", ref: "slide 16, lines 436-442", status_word: "initiated"}
+  - {commitment: "MMHG Phase-1 facility Rs230 Cr, Andhra Ammunition Complex", implied_date: "undated", ref: "slide 16, lines 436-439", status_word: "initiated"}
+  - {commitment: "acquire aerospace business (Rs~1,600 Cr export book)", implied_date: "undated in deck", ref: "slide 17, lines 469-474; slide 20, lines 534-536", status_word: "initiated"}
+  - {commitment: "EBITDA margin >27% by FY29", implied_date: "FY29", ref: "slide 19, lines 503-504", status_word: "initiated"}
+  - {commitment: "~90% product revenue and >70% export revenue", implied_date: "FY27", ref: "slide 19, lines 502-504", status_word: "initiated"}
+  - {commitment: "exports 65%+ of revenue", implied_date: "from FY27 onwards", ref: "slide 19, lines 507-508", status_word: "initiated"}
+  - {commitment: "domestic defence serial production commences", implied_date: "undated", ref: "slide 20, lines 538-544", status_word: "underway"}
+  - {commitment: "SBTi FY2030 targets (Scope 1&2 -42%, Scope 3 -25%, 51.1% suppliers)", implied_date: "FY2030; approved 15-Sep-2026", ref: "slide 23, lines 588-607", status_word: "completed"}
+  - {commitment: "new defence and fiber products under development", implied_date: "undated", ref: "slide 17, lines 455-474", status_word: "underway"}
+  - {commitment: "raw materials secured (terms not given)", implied_date: "undated, stated as done", ref: "slide 5, lines 119-120", status_word: "completed"}
+  - {commitment: "higher value-added products to aid margins and ease WC; high-end OFC and interconnect for hyperscalers", implied_date: "undated", ref: "slide 19, lines 503-512", status_word: "underway"}
+  - {commitment: "move to higher value-added defence and aerospace offerings", implied_date: "undated", ref: "slide 19, lines 514-518", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Loudest signal: lines 124-129. Management is 'evaluating various strategic options' because verticals differ in 'working capital profile'. On this name that wording sits on the demerger-flip slip and trigger #6. No structure is announced, so nothing fires, but A4 should make it question one. Second: the order book's own mix runs against all three slide-19 targets under any pairing. Government is at least 35% of the book against 8% of revenue, non-product at least 32% against ~9%, export 57% against 63% now and >70% targeted. Reading A: long-dated O&M/EPC inflates those shares and product orders turn fast. Reading B: revenue mix reverts toward government, EPC and domestic work as BharatNet III executes, and WC intensity rises. Separating observation: order book by execution year. Third: the Rs500 Cr FY27 defence aspiration rests on a ~Rs250 Cr own book; Rs1,600 Cr sits in an entity not yet owned. Cross-quarter diffs use Notion memory, not a prior deck. Loop 1 added FN-17 to FN-21; none displaces the top three."

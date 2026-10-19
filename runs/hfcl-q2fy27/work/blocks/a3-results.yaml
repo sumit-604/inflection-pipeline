@@ -1,0 +1,75 @@
+stage: A3-forensics
+company: "HFCL"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/hfcl-q2fy27/work/forensics_results_hfcl_q2fy27.md"
+ledger_reconciled_pct: 100        # 1,515 of 1,515 ledger rows (1,507 structured IDs + M01-M08)
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "FN-01", check: "F1", line: "L917, L937", classification: "AMBIGUOUS", implication: "Standalone-only held-for-sale group, net 21.24 -> 41.26 in H1; consolidated nil; buyer may be intra-group; identify buyer and consolidated line"}
+  - {id: "FN-02", check: "F1", line: "L818, L885", classification: "FORWARD-SIGNAL", implication: "Exceptional line nil all periods; H2 candidates are FN-01 disposal, aerospace acquisition, liquidation recycling"}
+  - {id: "FN-03", check: "F1", line: "L987, L920", classification: "AMBIGUOUS", implication: "No dividend paid H1 FY27 (14.42 prior H1); other-equity roll-forward gap (30.6) both bases, about Re0.20/share; ask movement"}
+  - {id: "FN-04", check: "F2", line: "L822, L236, L246, L931, L829", classification: "AMBIGUOUS", implication: "C-minus-S PAT gap 47.09% of standalone (Q1 37.07%), +10.0pp; 80.9% of subsidiary revenue eliminated; parent margin -352bps; profit location and transfer pricing"}
+  - {id: "FN-05", check: "F2", line: "L915, L913", classification: "AMBIGUOUS", implication: "Non-parent other current assets +260.66 in H1 (net +137.60 with other financial assets); unbilled build vs intra-group settlement; tripwire #4 neither fired nor cleared"}
+  - {id: "FN-06", check: "F2", line: "L809, L907, L955", classification: "FORWARD-SIGNAL", implication: "Subsidiaries released about 43.13 of FG/WIP in Q2 after a 127.61 Q1 build; part of Q2 jump is a stock unwind that does not repeat"}
+  - {id: "FN-07", check: "F2", line: "L810", classification: "NEUTRAL-FACT", implication: "Parent employee cost -21.9% QoQ is seasonal (same Q1>Q2 pattern FY26); about 66bps of Q2 margin gain, not structural"}
+  - {id: "FN-08", check: "F3", line: "L218-222, L896, L902, L924", classification: "NEUTRAL-FACT", implication: "Three unnamed shell subsidiaries (nil revenue, 8.84 assets, TCI = NPAT per M06); 3+4+2=9 reconciles; no going concern"}
+  - {id: "FN-09", check: "F4", line: "L233-241, L243-253, L218-231", classification: "AMBIGUOUS", implication: "Strict unreviewed share 6.14% (<10%, falling); but 31.30% of PAT rests on one joint auditor and doubled QoQ"}
+  - {id: "FN-10", check: "F6", line: "L700, L743", classification: "AMBIGUOUS", implication: "80% guide basis unstated: consolidated lets H2 run 12.4% below Q2 rate; standalone needs Q2 rate held"}
+  - {id: "FN-11", check: "F6", line: "L709-710, L755-756, L840", classification: "AMBIGUOUS", implication: "Defence H1 78.68 = 15.7% of 500; H2 needs 3.83x Q2 run rate; unclear if aspiration includes acquired aerospace business"}
+  - {id: "FN-12", check: "F6", line: "L754, L968, L897, L44", classification: "FORWARD-SIGNAL", implication: "Aerospace acquisition dated to close by 31-Dec-2026; no counterparty, price, cash or goodwill yet; expect Q3 entity addition"}
+  - {id: "FN-13", check: "F6", line: "L681, L697-699", classification: "AMBIGUOUS", implication: "28,911 book over 6-7 years = 46-54% of FY27 guided revenue a year; long-tenor tail vs book-and-bill outside the order book"}
+  - {id: "FN-14", check: "F6", line: "L905, L970, L895, L706", classification: "FORWARD-SIGNAL", implication: "Other non-current assets +276.72 (about 63% of H1 PPE cash), read as capital advances [INFERENCE from L970 label]; H1 FCF about +6.12; remaining capex needs debt and warrant money"}
+  - {id: "FN-15", check: "F7", line: "L743, L709, L747", classification: "AMBIGUOUS", implication: "No hedges in notes; press release hard on revenue, soft on Defence ('aspiration'); no safe-harbour disclaimer"}
+  - {id: "FN-16", check: "F8", line: "L820-821, L926", classification: "FORWARD-SIGNAL", implication: "ETR 25.24% S / 26.81% C; persistent deferred credits shield 139-185bps; step-up if credits stop; DTL roll ties"}
+  - {id: "FN-17", check: "F9", line: "L823-824, L901, L968", classification: "AMBIGUOUS", implication: "Q1 OCI item 4.0x full FY26, reversed Q2; near-zero tax and +57.44 investments with nil cash suggest fair-value-OCI equity; verify at AR"}
+  - {id: "FN-18", check: "F10", line: "L834-835, L832, L869, L979", classification: "FORWARD-SIGNAL", implication: "Basic-diluted spread opens 0 -> 0.01 as 7.5cr Rs74 warrants turn dilutive; exercise brings 416.25 and 4.90% dilution; allotment date unstated"}
+  - {id: "FN-19", check: "F12", line: "L841, L846, L855, L861", classification: "CONFIRMATORY-NEGATIVE", implication: "Turnkey revenue -51.5% QoQ, loss -90.1% of revenue, H1 loss > FY26 full year, net capital up to 2,545.16"}
+  - {id: "FN-20", check: "F12", line: "L861, L855", classification: "AMBIGUOUS", implication: "Turnkey liabilities -185.25 QoQ (-17.0%); WC unwinding vs paydown; ask liability breakup"}
+  - {id: "FN-21", check: "F12", line: "L840, L854, L860", classification: "FORWARD-SIGNAL", implication: "Defence assets +9.0% QoQ, liabilities -20.9%; 83.8% equity-funded; assets 1.52x annualised revenue"}
+  - {id: "FN-22", check: "F12", line: "L853, L859", classification: "AMBIGUOUS", implication: "Standalone Telecom assets +654.08 and liabilities +508.62 vs consolidated +330.28 and +54.69; intra-group balances vs subsidiary unwind"}
+  - {id: "FN-23", check: "F12", line: "L899, L971, L898", classification: "AMBIGUOUS", implication: "Intangibles under development 407.48 (4.42% of assets) grew 1.6% in H1, spend 12.60 vs 63.45; commercialisation timing, amortisation or impairment risk"}
+  - {id: "FN-24", check: "F13", line: "L44, L33-35, L80-83", classification: "AMBIGUOUS", implication: "Letter and enclosure list (M03) cover results only with 'inter-alia', 40-minute meeting; check for separate Reg 30 filings; no AR event"}
+  - {id: "FN-25", check: "F14", line: "L239-240, L204, L250, L224-225, L816, L950, L833, L920-921, L942, L196, L869, L946", classification: "NEUTRAL-FACT", implication: "Nine drafting gaps (opinion vs conclusion, audited vs reviewed, JCE 0.02 mismatch, P&L Other Equity includes NCI, allotment date omitted); signatories consistent (M05)"}
+  - {id: "FN-26", check: "F14", line: "L716-717, L805", classification: "NEUTRAL-FACT", implication: "PR EBITDA includes other income; operating EBITDA margin 24.81% vs stated 25.89%; name the basis on any margin threshold"}
+  - {id: "FN-27", check: "F15", line: "L885, L818, L825, L197", classification: "NEUTRAL-FACT", implication: "HFCL Pty liquidated 19-Aug-2026; no exceptional or visible FCTR recycling; cross-quarter diff impossible without prior fulltext"}
+  - {id: "FN-28", check: "F2", line: "L236-238, L223, L248-249, L989, L975", classification: "AMBIGUOUS", implication: "Para 7 subsidiaries H1 NPAT 186.19 vs net cash (0.29) (M07); subsidiary cash flows sum 36.09 = group-minus-parent cash change 36.08; no dividends upstreamed; profit held as intra-group receivable vs spent on own WC/capex"}
+  - {id: "FN-29", check: "F6", line: "L749-750", classification: "AMBIGUOUS", implication: "M08 forward claim on OFC portfolio and DC connectivity has no metric or date; DC-connectivity revenue undisclosed inside Telecom; ask for revenue and order book baseline"}
+forward_signals: ["FN-02", "FN-06", "FN-12", "FN-14", "FN-16", "FN-18", "FN-21"]
+ambiguous: ["FN-01", "FN-03", "FN-04", "FN-05", "FN-09", "FN-10", "FN-11", "FN-13", "FN-15", "FN-17", "FN-20", "FN-22", "FN-23", "FN-24", "FN-28", "FN-29"]
+commitments:
+  - {commitment: "FY27 revenue growth at least 80% over FY26 (basis unstated)", implied_date: "31-Mar-2027", ref: "PR L700, L743", status_word: "initiated (raised, 'now expected')"}
+  - {commitment: "Defence and Aerospace revenue about Rs500 Cr FY27", implied_date: "31-Mar-2027", ref: "PR L709-710, L755-756", status_word: "underway ('on track')"}
+  - {commitment: "Aerospace business acquisition completion", implied_date: "31-Dec-2026", ref: "PR L754", status_word: "underway ('ongoing')"}
+  - {commitment: "About Rs1,800 Cr capex in OF, OFC, preform", implied_date: "undated", ref: "PR L706, L748; L905, L970", status_word: "initiated ('planned'; other non-current assets rise read as advances [INFERENCE])"}
+  - {commitment: "Ammunition facility, Andhra Pradesh", implied_date: "undated", ref: "PR L779", status_word: "underway ('now establishing')"}
+  - {commitment: "Preform facility, Madhya Pradesh", implied_date: "undated", ref: "PR L779-780", status_word: "underway ('now establishing')"}
+  - {commitment: "Rs10,000 Cr revenue milestone", implied_date: "before FY29", ref: "PR L747-748", status_word: "initiated ('we believe')"}
+  - {commitment: "Warrant 75% balance Rs416.25 Cr on exercise", implied_date: "18 months from allotment (date unstated; about Nov-2027 if allotted near 25-May-2026)", ref: "Note 3(ii) L869", status_word: "initiated (25% received 25-May-2026)"}
+  - {commitment: "Warrant money deployment, Rs90 Cr in FD", implied_date: "undated", ref: "Note 3(ii) L869", status_word: "underway (48.75 of 138.75 used)"}
+  - {commitment: "QIP balance Rs24.33 Cr deployment", implied_date: "undated", ref: "Note 3(i) L868", status_word: "underway (525.67 of 550.00 used)"}
+  - {commitment: "HFCL Pty liquidation and deregistration", implied_date: "19-Aug-2026", ref: "Note 4(o) L885", status_word: "completed"}
+  - {commitment: "Order book Rs28,911 Cr, visibility 6-7 years and beyond", implied_date: "FY27 to about FY33-34", ref: "PR L681, L697-699", status_word: "claim"}
+  - {commitment: "OFC portfolio and DC connectivity solutions continue to strengthen", implied_date: "undated", ref: "PR L749-750 (M08)", status_word: "claim (no metric)"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Profit is moving out of the parent. Consolidated PAT exceeds standalone by 47.1% (Q1 37.1%). Four subsidiaries reviewed by one joint auditor earned Rs123.40 Cr, 31.3% of group PAT, double Q1. NCI can only come from HTL or Raddef. Parent gross margin fell 352 bps while group margin held, and parent payables exceed group payables, so intra-group trade is large (Rs1,544 Cr eliminated in Q2). Transfer pricing is the lead question. The 80% guide is soft on a consolidated basis (H2 can run 12% below Q2) and tight on standalone; the basis is unstated. Turnkey's Q2 loss equalled 90% of its revenue while its net capital rose, and its liabilities fell Rs185 Cr: unwinding or paydown is unresolved. Three balance-sheet items lack an explanation: a Rs261 Cr non-parent rise in other current assets, a standalone-only held-for-sale group (nil consolidated, so the buyer may be intra-group), and a Rs30.6 Cr other-equity debit that matches Re0.20 per share. Para 7 subsidiaries earned Rs186.19 Cr in H1, but their cash fell Rs0.29 Cr."

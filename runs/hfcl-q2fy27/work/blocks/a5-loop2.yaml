@@ -1,0 +1,34 @@
+stage: A5-adversary
+company: "HFCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L2-S1: Reading C visible-uses list (52.33 deposits, 80.69 debt, 55.33 capex) is consolidated less standalone and does not net intra-group flows; non-parent loans line +23.30 inflow [6.60 - (-16.70), R-L972], interest residual (6.19) (R-L976); add 'intra-group flows not netted; part may be parent-funded' (rev L519, L522); conclusion unchanged"
+    - "L2-S2: cons CFO/PAT tax-accrual change +1.29 is the rounded-cell difference; unrounded +1.28 (0.5187 + 0.7656); other change cells agree either way (rev L448, L1102)"
+    - "L2-S3: review_path still names review_hfcl_q2fy27.part2.md in a parenthetical; L10 narrates the part-file write method (rev L10, L1073)"
+    - "L1-S6 (carried): A2 ledger header and placement housekeeping; A2 not re-run (ledger_results L3, L13, L52-55; ledger_presentation L6, L9)"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "L2-S1: rev L519 add intra-group caveat to the Reading C visible-uses list (R-L972, R-L976)"
+  - "L2-S2: rev L448 +1.29 -> +1.28 (unrounded)"
+  - "L2-S3: rev L1073 review_path -> merged file path only"
+  - "L1-S6 (carried): A2 ledger header and M08 placement housekeeping"
+analyst_note: "L1-F1 is closed. The para 7 figure now reads as a 0.29 fall in cash balances after investing and financing (R-L238), with CFO NOT FOUND. That wording appears at all seven loop 1 locations, at M07, Q36 and the A4 analyst note. A grep finds no residual 'no cash' or 'turned into' claim. Reading C is added, and attribution by paragraph is stated as NOT FOUND. Every loop 2 cell recomputes from R-L820, R-L966-967 and R-L970-981. The new prior-period tax-accrual cells are cons (32.63) / (0.77) / (229.83) and SA (56.09) / (2.94) / (232.59). The +364.50 vs +498.87 swing gap is exactly 123.40 + 10.97. One judgment is logged, not failed. Consolidated-less-standalone cash uses do not net intra-group flows (parent loans out 16.70 vs consolidated +6.60). So Reading C may be partly parent-funded. A4 already presents C as one of three readings, with Q36 as the separator, so no conclusion changes. The deliverable gate and coverage pass. Verdict COMPLETE; style notes only."

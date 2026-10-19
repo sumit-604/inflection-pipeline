@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "HFCL"
+quarter: "Q2 FY27"
+doctype: "presentation (mareport)"
+model: claude-sonnet-5-5
+status: complete
+page_count: 25
+formfeed_count: 25
+line_count: 1282
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: [6, 7, 8, 9, 16, 19, 20, 22]  # table alignment, orchestrator-approved
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/hfcl-q2fy27/extracted/hfcl-mareport-q2fy27-fulltext.md"
+structured_path: "runs/hfcl-q2fy27/extracted/hfcl-mareport-q2fy27-structured.md"
+structured_counts:
+  number: 172
+  entity: 66
+  forward: 11
+  date: 59
+  qualifier: 103
+structured_id_range: "R001-R411"
+gate_a1: pass
+gap_note: ""

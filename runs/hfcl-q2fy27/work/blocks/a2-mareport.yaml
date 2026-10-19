@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "HFCL"
+quarter: "Q2 FY27"
+doctype: "mareport"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/hfcl-q2fy27/work/ledger_mareport_hfcl_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 148
+  zero_standing: 45
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 66
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 25
+  slide_numbers: 172
+flags_raised: [ZERO_STANDING, SUPERSEDED_BY, SUPERSEDING, RESTATED, DELAY, COMMINGLING, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 411
+ids_referenced: 411
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Doctype is two CARE monitoring-agency reports; counts use report sections, not results-filing categories (notes, agenda, auditor, turns are 0 by doctype; slides = 25 pages). zero_standing 45 = 31 A1-tagged + 14 A2-added nil/blank/0.00 rows (39 excluding 6 superseded). All 10 superseded IDs kept on ledger and mapped to R391-R409. Items for A3/A4: preferential Rs 90 cr HFCL Advance Systems object past original 30-Sep-2026 deadline, extended to 31-Dec-2026 by circulation resolution 25-Sep-2026, delay 'Not Ascertainable', tied to defence consolidation conditions precedent; Rs 416.25 cr warrant balance unreceived; QIP R&D Rs 24.27 cr left against FY27 deadline; commingling via CC account (Rs 8.44 cr R&D salaries); QIP Rs 24.53 cr deployed vs 24.33 unutilised (0.20 FDR interest); one FD matured 9-Oct-2026; p11 Item Head^ footnote unresolved (defined only on p24 for preferential)."

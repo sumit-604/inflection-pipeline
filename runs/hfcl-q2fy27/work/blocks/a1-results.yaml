@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "HFCL"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 11
+formfeed_count: 11
+line_count: 994
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: "text-only pp1-4, 9-11; scan-ocr by image reading pp5-8 (orchestrator decision: garbled embedded layer treated as scan case)"
+render_candidates: []
+rendered_pages: [5, 6, 7, 8]   # 200 dpi, images in work/a1-results/
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/hfcl-q2fy27/extracted/hfcl-results-q2fy27-fulltext.md"
+structured_path: "runs/hfcl-q2fy27/extracted/hfcl-results-q2fy27-structured.md"
+structured_counts:
+  number: 1325
+  entity: 77
+  forward: 21
+  date: 35
+  qualifier: 49
+structured_id_range: "R001-R1507"
+gate_a1: pass
+gap_note: "Image transcription at fulltext lines 801-994; R371-R1507. 124 earlier OCR_GARBLED rows (pp5-8) marked SUPERSEDED_BY. Footing: every statement line foots to its subtotal and total (P&L, segments, balance sheet, cash flow, both standalone and consolidated). Press release p10 cross-check: revenue, PBT, PAT (Q2 FY27, Q1 FY27, Q2 FY26, H1 FY27, H1 FY26) all match; EBITDA ties to item III + finance costs + D&A, so it includes other income and excludes JCE share; margins match. No mismatch. Pages 2 and 4 UDIN OCR-uncertain rows remain flagged."

@@ -1,0 +1,40 @@
+stage: A5-adversary
+company: "HFCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "RES-FN-28 as adopted by A4: para 7 subsidiaries' H1 profit 'has not yet shown up as cash anywhere in the group' / 'produced no cash' / 'added no cash'; para 8 'turned 46.14 of NPAT into +36.24 of net cash' (rev L129, L521, L529, L708, L893, L934, L1061)", counter: "R-L238 (0.29) is net change in cash after investing and financing, not cash conversion; no subsidiary CFO filed (A4 Q36). Group-level non-parent uses in H1 [COMPUTED, consolidated less standalone]: net bank deposits placed 52.33 (R-L974; BS other bank balances +52.44, R-L911); net external borrowings repaid 80.69 (R-L980-981; BS -81.17, R-L923, R-L928); capex 55.33 (R-L970-971); with cash change 36.08 these total 224.43 vs subsidiaries' combined H1 NPAT 232.15, before intra-group flows. Attribution to para 7 NOT FOUND, so para 7 conversion is NOT FOUND, not zero", source_line: "R-L238, R-L911, R-L923, R-L928, R-L970-974, R-L980-981, R-L989", type: FACTUAL}
+findings_by_type:
+  factual:
+    - "L1-F1 (A4): para 7 net cash flow (0.29) read as 'no cash anywhere in the group' / 'produced no cash', and para 8 net cash read as profit 'turned into' cash; the extract supports only 'cash balances fell 0.29; CFO NOT FOUND'; non-parent entities placed 52.33 in deposits, repaid 80.69 external debt and spent 55.33 on capex in H1, unattributed; Reading C missing (rev L129, L521, L529, L708, L893, L934, L1061)"
+  missing: []
+  contradiction: []
+  style:
+    - "L1-S1: review points to non-existent review_hfcl_q2fy27.part2.md; Part 2 is appended at rev L539-1072 (rev L10-12, L537, L541, L1070)"
+    - "L1-S2: prior-period tax-accrual cells ND but computable: cons CFO (32.63), CFO/PAT (0.77), FCF (229.83); SA (56.09), (2.94), (232.59)"
+    - "L1-S3: rev L529 'deferred tax payment' should read 'unpaid current tax'"
+    - "L1-S4: rev L477 advance-tax INFERENCE broader than needed; conclusion unchanged"
+    - "L1-S5: rev L691 '43.13 revenue' is an inventory release at cost (R-L809)"
+    - "L1-S6: A2 ledger headers not updated for M01-M08 / PM02-PM05; M08 filed under auditor paragraphs; M05 pointer L262 vs R-L263; A1 R141/R162 tags still show old supersession targets (ledger documents the correction)"
+loop_back_to: "A4"
+gap: "A4: restate the para 7 subsidiary-cash reading at rev L129, L521, L529(g), L708, L893, L934, L1061 to 'para 7 cash and cash equivalents fell 0.29 in H1 (R-L238); CFO NOT FOUND (Q36)'; replace 'turned 46.14 of H1 NPAT into +36.24 of net cash' with 'net cash flows +36.24 against H1 NPAT 46.14'; add Reading C: non-parent entities placed 52.33 net in bank deposits (R-L974), repaid 80.69 net external borrowings (R-L980-981) and spent 55.33 on capex (R-L970-971) in H1, attribution by paragraph NOT FOUND. Text-only fix; no table number changes."
+style_notes:
+  - "L1-S1: point review header and review_path at the single merged file"
+  - "L1-S2: fill prior-period tax-accrual cells (cons (32.63)/(0.77)/(229.83); SA (56.09)/(2.94)/(232.59)); tax-accrual YoY CFO swing +364.50 vs +498.87 reported"
+  - "L1-S3: rev L529 'deferred tax payment' -> 'unpaid current tax'"
+  - "L1-S4: rev L477 -> 'falls due under the remaining advance-tax instalments by year-end'"
+  - "L1-S5: rev L691 '43.13 revenue' -> '43.13 at cost (inventory release)'"
+  - "L1-S6: A2 ledger header and placement housekeeping (results L3, L13, L54-55; presentation L6, L9)"
+analyst_note: "All eight prior items are closed. F1, M1-M5, C1 and C2 each tie to the fulltext. The patched rows match it word for word, and every new number recomputes: tax-accrual CFO/PAT 0.52 consolidated and 0.30 standalone, tax-accrual FCF (117.28) and (258.09), guide pace 2,225.96 with H2 YoY +46.69%, defence-book share 86.5%. Coverage is clean. One new fault sits in the loop 1 text. A4 took the para 7 net cash flow of (0.29) as proof that H1 profit never became cash anywhere in the group. That figure comes after capex, deposits and debt, and no subsidiary CFO is filed. At group level the non-parent entities placed 52 in deposits, repaid 81 of debt and spent 55 on capex in H1. Those uses cannot be split by paragraph. The bear claim fails the same evidence bar a bull claim must meet (Rule J). The fix is a text-only restatement plus a Reading C. No number in any table changes, so A4 alone re-runs."

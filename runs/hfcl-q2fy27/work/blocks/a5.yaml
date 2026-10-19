@@ -1,0 +1,54 @@
+stage: A5-adversary
+company: "HFCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: ["results ledger M01 (R-L57-58 Reg 47 publication)", "results ledger M02 (R-L60 website posting)", "results ledger M03 (R-L80-83 enclosure list)", "results ledger M05 (R-L262, R-L135 Oswal partner membership 056931)"]
+  missing_from_ledger:
+    - "R-L221-222: auditor para 6 total comprehensive income Q2 (0.17) and H1 (0.18) Cr; paras 7-8 TCI are captured at R064-R065, R072-R073"
+    - "R-L238: auditor para 7 net cash flows H1 FY27 (0.29) Cr; paras 6 and 8 cash flows captured at R055, R074"
+    - "R-L749-750: PR forward claim 'Our advanced optical fiber cable portfolio and data centre connectivity solutions continue to strengthen'"
+    - "P-L215: slide 8 token 1.49 (Q1 FY27 diluted EPS); slide 8 fresh count 72 vs ledger 71"
+    - "P-L119-120: slide 5 'Secured raw materials and advanced cable capabilities strengthen our ability to capture this long-term opportunity'"
+    - "P-L467-471 col 1: slide 17 OF/OFC 'higher value realization amid a structural demand upcycle'"
+    - "P-L467-471 col 2: slide 17 PCS/DC 'Emerging as a high-growth adjacency to the OFC business, driven by exports and hyper-scalers/data centers' (A4 cites it at rev L619)"
+    - "P-L503-518 col 1: slide 19 strategic-priority intent lines (value-added products to aid margins and ease working capital; hyperscaler OFC; defence value chain)"
+    - "P-L532-533: slide 20 'strong market share in Wifi and UBR'"
+    - "P-L537-538: slide 20 'Actively catering to Domestic telcos and Bharatnet for rapid roll out'"
+arithmetic_mismatches:
+  - {metric: "Step 3A consolidated table, Q1 FY27 OCI (rev L352)", a4_value: "+74.24", recomputed: "+74.49 consolidated OCI items not reclassified, or +72.16 consolidated OCI after tax; 74.24 is the standalone cell", source_line: "R-L823, R-L826"}
+surviving_bear_counters:
+  - {claim: "Cash also turned; H1 CFO/PAT 0.71 sits between the 0.65 and 0.80 markers; Pillar 2 flag first reading in the 0.65-0.80 zone (rev L423, L489, L648, L840)", counter: "H1 current tax 243.29 vs taxes paid 119.89: Rs123.40 Cr accrued but unpaid (current tax liabilities 59.99 to 194.03, current tax assets 12.75 to 23.38, net +123.41). Tax-paid CFO 331.87, CFO/PAT 0.52 consolidated, below 0.65; standalone 0.30; tax-paid FCF (117.28). Advance-tax instalments reverse it in H2", source_line: "R-L820, R-L914, R-L933, R-L966, R-L967", type: MISSING}
+  - {claim: "Q2 and H1 run far above both the old base case and the new guide (rev L326)", counter: "On run-rate H1 equals the guide (H1 x2 8,913.54 vs 8,908.69, rev L554). The guide needs H2 FY27 4,451.92 vs H2 FY26 3,034.91, i.e. H2 YoY +46.69% vs H1 +132.81%", source_line: "R-L700, R-L724, R-L804", type: CONTRADICTION}
+  - {claim: "Defence growth engine via a ~Rs1,600 Cr 'confirmed unexecuted export order book through proposed aerospace business being acquired' (P-L533-537; rev L526, L618)", counter: "Acquisition probe: consideration NOT FOUND / target PAT NOT FOUND = multiple NOT COMPUTABLE. 86.5% of the ~1,850 Cr defence book sits in an unowned, unpriced entity; HASPL Rs90 Cr object undeployed, deadline moved 30-Sep to 31-Dec-2026, delay Not Ascertainable; no accretion creditable; A4 asks no consideration or target-financials question", source_line: "R-L754, R-L968, P-L469-470, P-L533-537, M-L1274, M-L1282", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1 (A4): rev L352 Step 3A consolidated Q1 FY27 OCI +74.24 is the standalone cell; consolidated +74.49 (items not reclassified) or +72.16 (after tax); conflicts with rev L138 (R-L823, R-L826)"
+  missing:
+    - "M1 (A2): results fresh-pass units absent from structured file and ledger: R-L221-222 para 6 TCI x2; R-L238 para 7 net cash flows; R-L749-750 PR forward claim"
+    - "M2 (A2): presentation fresh-pass units absent: P-L215; P-L119-120; P-L467-471 x2 (PCS line cited by A4 at rev L619); P-L503-518; P-L532-533; P-L537-538"
+    - "M3 (A3): orphan ledger rows M01, M02, M03, M05 absent from A4; A4 reconciliation counts only structured IDs (rev L36)"
+    - "M4 (A4): surviving bear counter, H1 CFO carries Rs123.40 Cr unpaid current tax; tax-paid CFO/PAT 0.52 cons / 0.30 SA, not in A4 (R-L820, L914, L933, L966)"
+    - "M5 (A4): acquisition-economics probe, multiple NOT COMPUTABLE; A4 lacks no-accretion line, consideration and target-financials question, and price condition on 31-Dec bull fork (rev L141, L713, L883)"
+  contradiction:
+    - "C1 (A4): rev L326 says H1 runs far above the new guide; rev L554 shows H1 x2 at the guide; guide implies H2 YoY +46.69% vs H1 +132.81%"
+    - "C2 (A2): results ledger superseded pointers R141->R763 and R162->R1485 contradict fulltext; correct rows R1479 (R-L869) and R1486 (R-L889)"
+  style:
+    - "S1: rev L375 +14.07% recomputes to +14.06% (rounding)"
+    - "S2: rev L37 says 7 no-data slides; ledger shows 5 (4, 6, 12, 18, 21)"
+    - "S3: rev L862 tiers capital advances as FILED; BS line is Other non-current assets (R-L905), label inferred from R-L970"
+loop_back_to: "A2"
+gap: "A2: add 10 MISSING_FROM_STRUCTURED units (R-L221-222 x2, R-L238, R-L749-750, P-L215, P-L119-120, P-L467-471 x2, P-L503-518, P-L532-533, P-L537-538) and fix superseded pointers R141->R1479, R162->R1486. A3: review the new rows and orphan rows M01, M02, M03, M05. A4: graft tax-paid CFO/PAT 0.52/0.30 counter; add acquisition-probe line, consideration/target-PAT question and price condition; restate rev L326 (H1 at guide; H2 YoY +46.69%); fix rev L352 OCI to consolidated basis; list M01-M05 as reviewed."
+style_notes:
+  - "S1: rev L375 +14.07% -> +14.06%"
+  - "S2: rev L37 7 divider slides -> 5 no-row slides (4, 6, 12, 18, 21)"
+  - "S3: rev L862 capital advances tier FILED -> FILED plus INFERENCE (R-L905, R-L970)"
+analyst_note: "Numbers are clean. Every A4 table cell and derived metric recomputes from the fulltext within rounding, except one basis slip (rev L352 OCI). The material gaps are interpretive. First, H1 CFO 455.27 carries Rs123.40 Cr of current tax charged but unpaid (243.29 charged, 119.89 paid; current tax liabilities 59.99 to 194.03). On a tax-paid basis CFO/PAT is 0.52, below the 0.65 marker A4 says the half cleared; standalone is 0.30. Advance-tax instalments reverse this in H2, so the Pillar 2 flag must carry both readings. Second, the aerospace acquisition is unpriced in all three documents. The multiple is NOT COMPUTABLE, no accretion can be credited, and the consideration must be asked. Third, rev L326 says H1 runs far above the new guide; on run-rate H1 equals it, and the guide implies H2 YoY growth of 46.69% vs 132.81% in H1. Coverage defects are mechanical: 10 units missing from A1 and A2 (the PCS line A4 cites is one), two wrong pointers A4 already caught, four M-rows A4 never counted. Cheapest path: A2 ledger patch, A3 review-only, A4 grafts."

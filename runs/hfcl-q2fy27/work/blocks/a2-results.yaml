@@ -1,0 +1,31 @@
+stage: A2-enumerator
+company: "HFCL"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/hfcl-q2fy27/work/ledger_results_hfcl_q2fy27.md"
+counts:
+  notes: 10
+  line_items: 153
+  line_items_press_release: 14
+  zero_standing: 105
+  zero_standing_line_items: 24
+  agenda_items: 1
+  auditor_paras: 11
+  entities: 15
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+  forward_rows: 21
+  superseded_ids: 124
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, RESTATED, MISSING_FROM_STRUCTURED, INTER_ALIA_OTHER_ITEMS_UNLISTED, UDIN_OCR_UNCERTAIN, UNREVIEWED_ENTITIES]
+ids_in_structured: 1507
+ids_referenced: 1507
+orphan_ids: []
+missing_from_structured: [M01 Reg47 newspaper publication, M02 website posting, M03 enclosure list, M04 Reg30 basis, M05 Oswal partner membership 056931, M06 para6 TCI L221-222, M07 para7 net cash flow L238, M08 PR outlook L749-750]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Loop 1 patch: M06-M08 added; pointers R141->R1479, R162->R1486 fixed; R164/R165 hold Turnkey values; para 6 entities were reviewed by other auditors. All 1507 IDs accounted; 124 superseded OCR rows (R082-R219) mapped to image-transcription IDs, 14 non-superseded rows in that range kept. Zero-standing: 105 rows = 101 A1-tagged statement cells + 2 untagged 0.00 (R1268, R1270 Liquidated Damages) + R051/R052 nil revenue of 3 unreviewed subs. Entity lists differ: review report names 11 entities, Note 4 names 15 (parent, Canada, UK, Pty). HFCL Pty liquidated 19 Aug 2026 = ENTITY_CHANGE; no prior ledger to diff. Board letter names one agenda item only (results) with inter-alia. Auditor reports: unmodified limited review, no Emphasis/Other Matter/Going Concern; paras 6-8 rely on other auditors (3 subs + 2 JCE unreviewed, 4 subs by one joint auditor, 2 foreign subs mgmt-converted). Four UDINs OCR-uncertain. Press release PBT/PAT tie to filing consolidated R557/R593."

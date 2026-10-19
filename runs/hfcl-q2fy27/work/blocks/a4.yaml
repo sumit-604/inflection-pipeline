@@ -1,0 +1,106 @@
+stage: A4-analyst
+company: "HFCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, presentation, mareport]
+ledger_reconciliation:
+  notes: 10
+  turns: 0
+  slides: 25
+  all_reviewed: true
+  a3_findings_incorporated: [RES-FN-01, RES-FN-02, RES-FN-03, RES-FN-04, RES-FN-05, RES-FN-06, RES-FN-07, RES-FN-08, RES-FN-09, RES-FN-10, RES-FN-11, RES-FN-12, RES-FN-13, RES-FN-14, RES-FN-15, RES-FN-16, RES-FN-17, RES-FN-18, RES-FN-19, RES-FN-20, RES-FN-21, RES-FN-22, RES-FN-23, RES-FN-24, RES-FN-25, RES-FN-26, RES-FN-27, RES-FN-28, RES-FN-29, PPT-FN-01, PPT-FN-02, PPT-FN-03, PPT-FN-04, PPT-FN-05, PPT-FN-06, PPT-FN-07, PPT-FN-08, PPT-FN-09, PPT-FN-10, PPT-FN-11, PPT-FN-12, PPT-FN-13, PPT-FN-14, PPT-FN-15, PPT-FN-16, PPT-FN-17, PPT-FN-18, PPT-FN-19, PPT-FN-20, PPT-FN-21, MA-FN-01, MA-FN-02, MA-FN-03, MA-FN-04, MA-FN-05, MA-FN-06, MA-FN-07, MA-FN-08, MA-FN-09, MA-FN-10, MA-FN-11, MA-FN-12, MA-FN-13, MA-FN-14]
+  ledger_rows_reviewed: {results: 1515, presentation: 431, mareport: 411, a2_added: [M01, M02, M03, M04, M05, M06, M07, M08, PM01, PM02, PM03, PM04, PM05, PM06, PM07]}
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "WATCHLIST (DO NOT INITIATE); not held"
+position_branch: "8A-W"
+sc_gap_pat_pct: ["Q2FY26: 17.06", "Q1FY27: 37.07", "Q2FY27: 47.09", "H1FY26: 123.14", "H1FY27: 43.07", "FY26: 30.28"]
+questions_for_management:
+  - {q: "Q1 Does any strategic option leave listed holders with <100% of OFC/Defence/Aerospace economics? Y/N", from_finding_id: "PPT-FN-01, PPT-FN-13, RES-FN-24"}
+  - {q: "Q2 Receivables >6m and unbilled inside other current assets Rs2,147.96 Cr (+317.31 H1)?", from_finding_id: "RES-FN-05, PPT-FN-12, RES-FN-22"}
+  - {q: "Q3 Which subsidiary earns most of the Rs126.20 Cr C-minus-S PAT; parent margin on sales to it?", from_finding_id: "RES-FN-04, RES-FN-09, RES-FN-22"}
+  - {q: "Q4 Is the >=80% guide on consolidated FY26 Rs4,949.27 Cr (H2 YoY +46.69%); is Q3 below Q2 Rs2,541.79 Cr? Y/N", from_finding_id: "RES-FN-10, PPT-FN-02"}
+  - {q: "Q5 Which defence-consolidation CPs open at 30-Sep; Rs90 Cr HASPL deployed by 31-Dec-2026? Y/N", from_finding_id: "RES-FN-12, MA-FN-01, MA-FN-10, RES-FN-02"}
+  - {q: "Q6 Aerospace acquisition consideration; target revenue, PAT, net debt/cash, ROCE; customers and tenure behind ~Rs1,600 Cr book?", from_finding_id: "A5-M5, PPT-FN-07, PPT-FN-09, MA-FN-01, RES-FN-12"}
+  - {q: "Q7 Which quarter does Turnkey result reach zero (Q2 loss Rs122.58 Cr)?", from_finding_id: "RES-FN-20"}
+  - {q: "Q8 Q2 export OFC revenue to hyperscalers in Rs Cr?", from_finding_id: "PPT-FN-05"}
+  - {q: "Q9 Full warrant conversion and Rs416.25 Cr receipt before 25-Nov-2027? Y/N and quarter", from_finding_id: "RES-FN-18, MA-FN-03, MA-FN-04, PPT-FN-14"}
+  - {q: "Q10 Turnkey liabilities -185.25 QoQ: advances consumed vs payables paid?", from_finding_id: "RES-FN-20"}
+  - {q: "Q11 How much Q2 revenue was Q1-built subsidiary stock (~Rs43 Cr inventory release at cost)?", from_finding_id: "RES-FN-06"}
+  - {q: "Q12 Name the aerospace target(s); does Rs28,911 Cr book include its ~Rs1,600 Cr? Y/N", from_finding_id: "PPT-FN-09, PPT-FN-13"}
+  - {q: "Q13 Rs Cr of Rs500 Cr FY27 defence aspiration that depends on the acquisition closing in FY27?", from_finding_id: "RES-FN-11, PPT-FN-07, RES-FN-21"}
+  - {q: "Q14 Target defence book ~2,000 to ~1,600: executed vs cancelled?", from_finding_id: "PPT-FN-08"}
+  - {q: "Q15 Debt/accruals/warrant split of Rs1,800 Cr + Rs230 Cr capex; FY27 capex?", from_finding_id: "RES-FN-14, PPT-FN-11"}
+  - {q: "Q16 FY27 export guide >70% or 65%+; is 63% Q2 or H1?", from_finding_id: "PPT-FN-06, PPT-FN-05"}
+  - {q: "Q17 Order book executing in FY27 and FY28, Rs Cr each?", from_finding_id: "RES-FN-13, PPT-FN-05, PPT-FN-09"}
+  - {q: "Q18 Is >27% FY29 EBITDA target incl. other income? Y/N", from_finding_id: "PPT-FN-03, PPT-FN-04"}
+  - {q: "Q19 OF 33.9 / OFC 42.36 mn fkm by Dec-2026? Y/N", from_finding_id: "PPT-FN-10"}
+  - {q: "Q20 Buyer of held-for-sale group (net Rs41.26 Cr); group entity?", from_finding_id: "RES-FN-01"}
+  - {q: "Q21 Item behind ~Rs30.6 Cr other-equity debit in H1?", from_finding_id: "RES-FN-03"}
+  - {q: "Q22 Source and end-year of recurring deferred-tax credit (Rs7.49 Cr Q2)?", from_finding_id: "RES-FN-16"}
+  - {q: "Q23 Which investment drove Q1 consolidated OCI +74.49 and Q2 -13.71; valuation basis?", from_finding_id: "RES-FN-17"}
+  - {q: "Q24 Products in Rs407.48 Cr intangibles under development; capitalisation quarter?", from_finding_id: "RES-FN-23"}
+  - {q: "Q25 QIP-funded R&D payroll expensed or capitalised?", from_finding_id: "MA-FN-07"}
+  - {q: "Q26 Remaining Rs24.27 Cr QIP R&D used by 31-Mar-2027? Y/N", from_finding_id: "MA-FN-06, MA-FN-08"}
+  - {q: "Q27 QIP money moved to CC account in Q1 FY27 and balance left there?", from_finding_id: "MA-FN-05"}
+  - {q: "Q28 Rs10.30 Cr FD matured 09-Oct-2026: re-deposited or spent; LCs secured by Rs21.22 Cr FD?", from_finding_id: "MA-FN-09"}
+  - {q: "Q29 Item-wise use of Rs93 Cr QIP GCP (Q4 FY26)?", from_finding_id: "MA-FN-11"}
+  - {q: "Q30 Rs175 Cr to HFCL Technologies as equity or loan; preform at cost-plus to parent?", from_finding_id: "MA-FN-13"}
+  - {q: "Q31 Why circular resolution for Rs90 Cr extension; Reg 32 statement to audit committee? Y/N", from_finding_id: "MA-FN-02, MA-FN-10"}
+  - {q: "Q32 Any 19-Oct board item besides results? Y/N", from_finding_id: "RES-FN-24"}
+  - {q: "Q33 FY of Rs10,000 Cr milestone; is Rs500 Cr defence a forecast?", from_finding_id: "RES-FN-15"}
+  - {q: "Q34 Promoter pledge zero at 30-Sep-2026? Y/N", from_finding_id: "Notion Q1 Q12 carry-forward"}
+  - {q: "Q35 Planned FY27 defence investment beyond Rs279.91 Cr net segment assets?", from_finding_id: "RES-FN-21"}
+  - {q: "Q36 Para 7 subsidiaries: H1 CFO and receivable from HFCL (NPAT 186.19; cash balances fell 0.29)?", from_finding_id: "RES-FN-28"}
+  - {q: "Q37 Q2 PCS/DC connectivity revenue and order book, Rs Cr?", from_finding_id: "RES-FN-29, PPT-FN-19"}
+  - {q: "Q38 'Secured raw materials': suppliers, volume, tenor, fixed or market price?", from_finding_id: "PPT-FN-17"}
+  - {q: "Q39 Q2 OFC realisation per fkm vs Q1; share of volume on long-term contracts below spot?", from_finding_id: "PPT-FN-18"}
+  - {q: "Q40 '#1 in OFC': India or global; source and share %?", from_finding_id: "PPT-FN-20"}
+  - {q: "Q41 Q2 BharatNet III revenue and remaining BharatNet book, Rs Cr?", from_finding_id: "PPT-FN-21"}
+  - {q: "Q42 Advance tax due in H2 FY27 (H1 charged 243.29, paid 119.89)?", from_finding_id: "A5-M4"}
+monitorables:
+  - {item: "Role 5 addendum: call silence on ageing/unbilled (tripwire #4)", implied_date: "pending", source_ref: "Step 6C; PPT-FN-12"}
+  - {item: "Rs90 Cr HASPL investment deployed", implied_date: "2026-12-31", source_ref: "M-L1095-1108, M-L1166-1167"}
+  - {item: "Aerospace acquisition completion with consideration and target financials filed", implied_date: "2026-12-31", source_ref: "R-L754; Step 6E"}
+  - {item: "Nivetti completion (possible link, INFERENCE)", implied_date: "2026-12-31", source_ref: "Notion memory"}
+  - {item: "OF 33.9 / OFC 42.36 mn fkm interim step", implied_date: "2026-12", source_ref: "Notion memory; PPT-FN-10"}
+  - {item: "Payment of Rs123.40 Cr H1 unpaid current tax", implied_date: "H2 FY27 (remaining advance-tax instalments by year-end, INFERENCE)", source_ref: "R-L820, R-L966, R-L933"}
+  - {item: "Q3 FY27 Telecom Products revenue vs 2,321.98 bull / 2,006.15 bear; first exceptional item; entity addition", implied_date: "Q3 results, date not filed", source_ref: "Step 8C; R-L839"}
+  - {item: "Strategic-options outcome", implied_date: "undated", source_ref: "P-L124-129"}
+  - {item: "Held-for-sale disposal completion", implied_date: "undated", source_ref: "R-L917, R-L937"}
+  - {item: "FY27 revenue >= 8,908.69 consolidated (>=80%)", implied_date: "2027-03-31", source_ref: "R-L700, R-L743"}
+  - {item: "Defence revenue ~Rs500 Cr", implied_date: "2027-03-31", source_ref: "R-L709-710; P-L123"}
+  - {item: "Exports 65%+ / >70%; ~90% product revenue", implied_date: "FY27", source_ref: "P-L502-508"}
+  - {item: "QIP R&D Rs24.27 Cr used", implied_date: "2027-03-31", source_ref: "M-L563-565"}
+  - {item: "FY27 year-end CFO after advance tax and ageing disclosure", implied_date: "Q4 FY27 results, date not filed", source_ref: "Part 1 Step 5D"}
+  - {item: "Defence facility Rs15 Cr first tranche", implied_date: "2027-09-30", source_ref: "M-L1088-1089"}
+  - {item: "Rs215 Cr DC-connectivity facility", implied_date: "2027-09", source_ref: "Notion memory; PPT-FN-11"}
+  - {item: "Warrant conversion, Rs416.25 Cr", implied_date: "~2027-11-25 (computed)", source_ref: "M-L1056-1058; R-L869"}
+  - {item: "Preferential WC Rs140 Cr, GCP Rs100 Cr, defence Rs35 Cr", implied_date: "FY28", source_ref: "M-L1090-1091, M-L1148-1155"}
+  - {item: "Preform Rs175 Cr via HFCL Technologies", implied_date: "2028-07-31", source_ref: "M-L1085-1086"}
+  - {item: "OF 43.1 / OFC 62 mn fkm", implied_date: "2028-07", source_ref: "P-L428-434"}
+  - {item: "Preform 600 MT, Rs1,250 Cr", implied_date: "2028-10", source_ref: "P-L436-442"}
+  - {item: "EBITDA >27%; Rs10,000 Cr before FY29", implied_date: "FY29", source_ref: "P-L503-504; R-L747-748"}
+  - {item: "MMHG Phase-1 Rs230 Cr; AP ammunition and MP preform facilities", implied_date: "undated", source_ref: "P-L436-439; R-L779-780"}
+  - {item: "Order book Rs28,911 Cr visibility 6-7 years", implied_date: "FY27 to ~FY33-34", source_ref: "R-L681, R-L697"}
+  - {item: "Unquantified claims to baseline: OFC/DC strengthen (M08), secured raw materials (PM02), value realization (PM03), WC easing (PM05)", implied_date: "undated", source_ref: "RES C13; PPT C-18 to C-20"}
+  - {item: "Operator ruling: Promoter Verdict CONCERN toward AVOID (slip #5)", implied_date: "operator", source_ref: "Notion memory"}
+flags:
+  - "Trigger #6 proximity: deck 'evaluating various strategic options' (P-L127); not fired"
+  - "Tripwire #4 at risk: ageing/unbilled undisclosed; other current assets +317.31; decided by Role 5 addendum"
+  - "HASPL Rs90 Cr object missed 30-Sep-2026; extended to 31-Dec-2026 by circular resolution; slip-log ruling operator-only"
+  - "Acquisition unpriced: target, consideration, target PAT NOT FOUND; multiple NOT COMPUTABLE; 86.5% of defence book in unowned entity; no accretion credited"
+  - "Cash quality: H1 CFO includes Rs123.40 Cr current tax charged not paid; CFO/PAT 0.71 reported vs 0.52 cons / 0.30 SA tax-accrual"
+  - "Turnkey loss 122.58 above Rs80-90 Cr guide (memory); H1 loss 210.11 > FY26 full year"
+  - "S/C PAT gap 47.09% (Q1 37.07%); 31.30% of PAT on single joint auditor review; that pool's cash balances fell 0.29 and its CFO is NOT FOUND (RES-FN-28)"
+  - "Notion projections stale on upside vs old base; H1 only AT new guide on run-rate; guide implies H2 YoY +46.69%; re-base at /fttcp and Role 1"
+  - "Guide basis unstated: consolidated reading allows H2 12.43% below Q2"
+  - "Disclosure pattern: targets raised, dated milestones dropped, qualitative claims with no metric (M08, PM02-PM05)"
+  - "Memory corrections: warrant balance 416.25 not 412.5; FII+DII 27.62% not 18.54%; HFCL Technologies is a WOS, not HTL Limited"
+  - "Tracker rows not supplied; OR-17 three-signal floor untested"
+  - "Role 5 pending; Role 4 Steps 6.5 and 7 and Role 5 Step 8D deferred (OR-30)"
+plain_language_brief_included: true
+analyst_note: "P&L strength is real: core PBT grew faster than reported PBT, gross margin is flat, and the margin gain is operating leverage carried by Telecom Products at 30.85%. H1 sits at the new 80% guide on run-rate, not above it; the guide lets H2 grow 46.69%. Cash is weaker than reported: Rs123.40 Cr of H1 current tax was charged but unpaid, so CFO/PAT is 0.52, not 0.71, once tax is counted. The para 7 subsidiaries' cash fell 0.29, but their CFO is not filed, so profit-to-cash for that pool is unknown, not zero; Q36 separates the three readings. The defence acquisition is unpriced; no accretion is credited. Governance and disclosure hold the verdict at PROCEED WITH FLAGS: strategic-options language near trigger #6, ageing withheld again (tripwire #4 turns on the call), HASPL slip. Scoring is filings-only; the Role 5 addendum must re-mark 57 questions."
+review_path: "runs/hfcl-q2fy27/work/review_hfcl_q2fy27.md (single document; this agent wrote Part 1 to that path and Part 2 to review_hfcl_q2fy27.part2.md for the orchestrator to join)"
+loop_iteration: 2

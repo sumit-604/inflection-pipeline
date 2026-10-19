@@ -1,0 +1,55 @@
+stage: A3-forensics
+company: "QPOWER"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/qpower-q2fy27/work/forensics_egm_qpower_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: N.A.
+  F12: N.A.
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "FN01", check: "F13", line: "148-149", classification: "AMBIGUOUS", implication: "No voting result in document; QIP, swap and promoter RPT stay proposed until Reg 44 result (due ~21-Oct-2026); if Res 3 is ordinary, non-related holders decide it"}
+  - {id: "FN02", check: "F13", line: "106-108", classification: "FORWARD-SIGNAL", implication: "QIP up to 700 crore enabling resolution; four uses named, no rupee split or timing; Notion ~Rs575 Cr open item answered by category only"}
+  - {id: "FN03", check: "F13", line: "107-108", classification: "FORWARD-SIGNAL", implication: "New named capex use: Global Design Centre at Sangli; not on Notion trigger table; no cost or date"}
+  - {id: "FN04", check: "F13", line: "96-97", classification: "AMBIGUOUS", implication: "'future strategic opportunities' implies QIP sized for unnamed further deals; plural 'promoter financing arrangements' vs one facility at L109"}
+  - {id: "FN05", check: "F13", line: "109-111; 142-144", classification: "FORWARD-SIGNAL", implication: "Unsecured promoter bridge up to 175 crore at 9% = up to Rs15.75 Cr/yr interest at full draw; second promoter loan in ~1 year (FY26 Rs70 Cr, memory); net-cash company borrowing from promoters"}
+  - {id: "FN06", check: "F14", line: "110-111", classification: "AMBIGUOUS", implication: "'9% per annum for 11 years' contradicts a bridge ending on QIP receipt; drafting error vs long-dated promoter debt; lean bear until Res 3 explanatory statement read"}
+  - {id: "FN07", check: "F14", line: "59-67", classification: "AMBIGUOUS", implication: "Director table offset by one row; independent directors 3 or 4 of 8; shift reading matches L146 JMD and memory WTD; matters for promoter RPT oversight"}
+  - {id: "FN08", check: "F14", line: "72; 98; 102", classification: "NEUTRAL-FACT", implication: "Attendee table offset; L72 places CFO beside Sarika Jadhav; prose L98/L102 confirms Rajesh Jayaraman is CFO"}
+  - {id: "FN09", check: "F14", line: "45, 70; 98, 102; 100", classification: "NEUTRAL-FACT", implication: "Officer-name misspellings (Suryanshi, Jeyaraman), 'compilation' for completion, duplicated CFO hand-off; cumulative 5 drafting defects in 4 pages"}
+  - {id: "FN10", check: "F14", line: "136-139", classification: "AMBIGUOUS", implication: "Resolution type column Special/Special/Ordinary not aligned to items 1-3; which is ordinary unresolved; sets vote threshold and voter eligibility"}
+  - {id: "FN11", check: "F10", line: "136-138; 140-141", classification: "FORWARD-SIGNAL", implication: "Two equity channels (preferential swap + QIP up to 700 crore); share count and paid-up NOT FOUND in document; memory ~7% total; test vs >8%/24-month amber with ESOP"}
+  - {id: "FN12", check: "F15", line: "95-96", classification: "FORWARD-SIGNAL", implication: "WSIL becomes a new subsidiary on completion; consolidation perimeter and goodwill change in Q3/Q4 FY27 results"}
+  - {id: "FN13", check: "F17", line: "145-147", classification: "AMBIGUOUS", implication: "Q&A held, content unrecorded; second consecutive general meeting with undisclosed Q&A; Sangli commissioning, WSIL profit and closure timing silent"}
+  - {id: "FN14", check: "F13", line: "79; 90", classification: "NEUTRAL-FACT", implication: "35 members attended, quorum count not stated, 40-minute meeting; outcome rests on e-voting"}
+  - {id: "FN15", check: "F6", line: "103-105", classification: "AMBIGUOUS", implication: "'expected operational benefits' unquantified; WSIL profit undisclosed for second filing; feeds checklist item 12"}
+forward_signals: ["FN02", "FN03", "FN05", "FN11", "FN12"]
+ambiguous: ["FN01", "FN04", "FN06", "FN07", "FN10", "FN13", "FN15"]
+commitments:
+  - {commitment: "Declare consolidated voting results; display at registered office and company, BSE, NSE, RTA websites", implied_date: "by ~2026-10-21 (48h after 16:40 IST 19-Oct conclusion)", ref: "L148-153", status_word: "initiated"}
+  - {commitment: "QIP up to 700 crore for acquisition, working capital, Global Design Centre at Sangli, general corporate purposes", implied_date: "undated in document", ref: "L106-108, L140-141", status_word: "initiated"}
+  - {commitment: "Establish Global Design Centre at Sangli (QIP use)", implied_date: "undated in document", ref: "L107-108", status_word: "initiated"}
+  - {commitment: "Acquire Winwin Speciality Insulators Limited, partly by preferential share swap", implied_date: "undated in document (memory: by 2027-03-31)", ref: "L95-96, L103-105, L136-138", status_word: "initiated"}
+  - {commitment: "Unsecured promoter bridge loan up to 175 crore, 9% p.a., 'for 11 years', pending QIP proceeds", implied_date: "drawdown before QIP receipt; tenor contradictory", ref: "L109-111", status_word: "initiated"}
+  - {commitment: "Related-party transaction(s) between Company and Promoters / Promoter Group", implied_date: "undated in document", ref: "L142-144", status_word: "initiated"}
+  - {commitment: "Remote e-voting 16-18 Oct and in-meeting e-voting open 15 minutes after conclusion", implied_date: "2026-10-16 to 2026-10-19", ref: "L122-126, L154-156", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The document proves no resolution passed. It carries no vote counts (L148-149). Treat the QIP, swap and RPT as proposed until the Reg 44 result files. The forensic weight sits in promoter financing. The bridge loan has stated terms (175 crore, 9%, unsecured, L109-111); the FY26 Rs70 Cr Chitra Pandyan loan had none (memory). Reading A: a short bridge to close the WSIL cash leg before the QIP, with '11 years' a drafting error. Reading B: long-dated promoter debt at 9% in a company with Rs212 Cr FY26 net cash (memory). The separating observation is the Res 3 explanatory statement tenor and the drawn amount at the Q3 FY27 balance sheet. 'Future strategic opportunities' and the plural 'arrangements' (L97) suggest the 700 crore is sized beyond WSIL. The Sangli design centre (L107-108) is an unpriced new use. The offset director table (L59-67) leaves independent directors at 3 or 4 of 8, which matters for a promoter RPT. Sangli commissioning, a thesis-broken item, gets no mention."

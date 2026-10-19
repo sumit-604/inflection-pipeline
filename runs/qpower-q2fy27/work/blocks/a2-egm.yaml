@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "QPOWER"
+quarter: "Q2 FY27"
+doctype: "presentation (egm)"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/qpower-q2fy27/work/ledger_egm_qpower_q2fy27.md"
+counts:
+  notes: 2
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 3
+  auditor_paras: 0
+  entities: 24
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [RESTATED, FOOTNOTE_UNRESOLVED, ENTITY_CHANGE, NO_VOTING_RESULTS, MISSING_FROM_STRUCTURED]
+ids_in_structured: 68
+ids_referenced: 68
+orphan_ids: []
+missing_from_structured: [M1 quorum line 90, M2 Reg 30 line 33, M3 shareholder Q&A lines 145-147, M4 registered office and website lines 150-152, M5 promoter financing arrangements line 97]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Anchor check against fulltext: R025, R045, R046 had wrong lines (corrected in ledger); R021, R047, R062, R028 imprecise; R065 is a task label, not document text. Resolution types (Special/Special/Ordinary) cannot map to items 1-3 from layout. Document has no vote counts. Director and attendee designation tables are misaligned (stray Independent Director line 67), so R031 designation rests on p4 line 146."

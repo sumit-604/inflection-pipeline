@@ -1,0 +1,71 @@
+stage: A4-analyst
+company: "QPOWER"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [presentation]   # two one-off Reg 30 disclosures: EGM outcome 19-Oct-2026; Turkiye PCS commencement 17-Oct-2026; no results filing, no concall
+ledger_reconciliation:
+  notes: 0     # notes to accounts; the 2 A1 foot notes (EGM) are counted in the preamble
+  turns: 0
+  slides: 1
+  all_reviewed: true
+  a3_findings_incorporated: ["EGM-FN01", "EGM-FN02", "EGM-FN03", "EGM-FN04", "EGM-FN05", "EGM-FN06", "EGM-FN07", "EGM-FN08", "EGM-FN09", "EGM-FN10", "EGM-FN11", "EGM-FN12", "EGM-FN13", "EGM-FN14", "EGM-FN15", "TRK-FN-01", "TRK-FN-02", "TRK-FN-03", "TRK-FN-04", "TRK-FN-05"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE"
+decision_status_verified: "WATCHLIST (not held)"
+position_branch: "8A-W"
+sc_gap_pat_pct: ["EGM 19-Oct-2026: ND (no financials)", "TRK 17-Oct-2026: ND (no financials)"]
+questions_for_management:
+  - {q: "File the Reg 44 voting result: for/against on Res 1-3 and non-promoter votes on Res 3", from_finding_id: "EGM-FN01"}
+  - {q: "Which of Res 1-3 is the ordinary resolution (type column L136-139 misaligned)?", from_finding_id: "EGM-FN10"}
+  - {q: "Is the promoter facility a bridge ending on QIP receipt or 11 years? Prepayable without penalty? Does Res 3 cover it?", from_finding_id: "EGM-FN06"}
+  - {q: "Which promoter lends the up-to-175 crore facility, how much is drawn, what triggers repayment?", from_finding_id: "EGM-FN05"}
+  - {q: "Filing gives timing as the reason (L110-111); what is present cash, why can March 2026 net cash Rs212 Cr not fund the ~Rs124 Cr cash leg, and why is the facility ~Rs51 Cr above it?", from_finding_id: "EGM-FN05"}
+  - {q: "List every 'promoter financing arrangement' (plural, L97) with amount, rate, tenor", from_finding_id: "EGM-FN04"}
+  - {q: "What 'future strategic opportunities' (L97) does the QIP fund beyond WSIL?", from_finding_id: "EGM-FN04"}
+  - {q: "Rupee split of the up-to-700 crore QIP across four uses, and launch window", from_finding_id: "EGM-FN02"}
+  - {q: "Cost and opening date of the Global Design Centre at Sangli; separate from Sangli HVDC plant capex?", from_finding_id: "EGM-FN03"}
+  - {q: "Shares issued by swap and QIP, post-issue share count, ESOP pool and strike", from_finding_id: "EGM-FN11"}
+  - {q: "WSIL FY26 EBITDA, PAT, net debt, ROCE; quantify 'expected operational benefits' incl. insulator lead times", from_finding_id: "EGM-FN15"}
+  - {q: "WSIL stake at completion, completion date; if a subsidiary, first consolidation quarter and expected goodwill", from_finding_id: "EGM-FN12"}
+  - {q: "Publish a summary of the EGM shareholder Q&A (L145-147)", from_finding_id: "EGM-FN13"}
+  - {q: "Sangli HVDC plant: did the trial run happen, and what is the commercial production date?", from_finding_id: "EGM-FN13"}
+  - {q: "Confirm board size, designations of Bharanidharan Pandyan, Chitra Pandyan, Rajendra Iyer, independent-director count, audit committee approval of Res 3", from_finding_id: "EGM-FN07"}
+  - {q: "Is Nigde PCS output commercial production with customer-accepted units, or trial runs? What was the internal target date?", from_finding_id: "TRK-FN-01"}
+  - {q: "Phase 1 capacity, capex spent vs $2M Phase 1, first PCS revenue quarter", from_finding_id: "TRK-FN-02"}
+  - {q: "Share of PCS output for in-group BESS vs third-party or non-BESS customers", from_finding_id: "TRK-FN-02"}
+  - {q: "Current international BESS order book, share using in-house PCS, in-house PCS margin vs bought-in cost; how does the plant change the group's system integration capability (L45), and which BESS projects used bought-in PCS or outside integration before?", from_finding_id: "TRK-FN-03"}
+  - {q: "Effect of in-house PCS on Endoks share of consolidated PAT in FY27 and FY28", from_finding_id: "TRK-FN-03"}
+  - {q: "Will power electronics and energy storage be reported as a separate segment or revenue line from Q2 or Q3 FY27?", from_finding_id: "TRK-FN-05"}
+  - {q: "Share of the up-to-700 crore QIP and group capex going to power electronics and energy storage; target revenue share of the strand by FY28", from_finding_id: "TRK-FN-05"}
+monitorables:
+  - {item: "Reg 44 voting result, Res 1-3", implied_date: "~2026-10-21", source_ref: "EGM L148-149; EGM-FN01"}
+  - {item: "EGM notice explanatory statement: bridge tenor, lender, prepayment, Res 3 loan coverage", implied_date: "ND (notice already filed)", source_ref: "EGM L110-111, L142-144; EGM-FN06"}
+  - {item: "Q2 FY27 results: revenue, margin, CFO/PAT, Sangli update", implied_date: "by 2026-11-14 (Reg 33 statutory deadline, INFERENCE)", source_ref: "Notion s7 items 1-5; TRK-FN-04"}
+  - {item: "Bridge drawdown and balance", implied_date: "Q3 FY27 balance sheet (quarter end 2026-12-31)", source_ref: "EGM L109-111; EGM-FN05"}
+  - {item: "QIP launch: price, share count, use split, total dilution vs 8% amber", implied_date: "undated in document", source_ref: "EGM L106-108; EGM-FN02, EGM-FN11"}
+  - {item: "WSIL completion, stake, first consolidation, profit disclosure (51.5% net margin needed to match 31x yardstick)", implied_date: "by 2027-03-31 (Notion memory)", source_ref: "EGM L95-96, L104-105; EGM-FN12, EGM-FN15"}
+  - {item: "Sangli HVDC commercial production (thesis-broken if after Mar-2027)", implied_date: "Dec 2026-Jan 2027 guidance (memory); test 2027-03-31", source_ref: "Notion s4, s5; EGM-FN13"}
+  - {item: "Nigde PCS commercial status, capacity, first PCS revenue", implied_date: "Q3 FY27 results, by 2027-02-14 (Reg 33 statutory, INFERENCE)", source_ref: "TRK L35-36, L50-51; TRK-FN-01, TRK-FN-02"}
+  - {item: "International BESS order book figure", implied_date: "ND", source_ref: "TRK L45-46 (M02, R016); TRK-FN-03"}
+  - {item: "Endoks share of consolidated PAT vs 55% falsifier", implied_date: "FY27 annual results, ND", source_ref: "Notion s4; TRK-FN-03"}
+  - {item: "Global Design Centre at Sangli cost and date", implied_date: "undated in document", source_ref: "EGM L107-108; EGM-FN03"}
+  - {item: "Promoter background re-verification", implied_date: "ND (open on Notion)", source_ref: "Notion s4; EGM L109-111, L142-144"}
+  - {item: "Board size and independent-director count (Reg 17(1)(b) half-independent floor, INFERENCE)", implied_date: "ND", source_ref: "EGM L57-67; EGM-FN07"}
+  - {item: "Segment reporting and capital share for power electronics / energy storage", implied_date: "Q2 or Q3 FY27 filings, ND", source_ref: "TRK L41-43 (M01); TRK-FN-05"}
+flags:
+  - "NO_VOTING_RESULT: EGM document does not show that any resolution passed (L148-149); QIP, swap, RPT stay proposed until Reg 44 result ~21-Oct-2026"
+  - "BRIDGE_TENOR_TENSION: '9% per annum for 11 years' sits against 'pending receipt of QIP proceeds' (EGM L110-111); Reading B full draw = Rs173.25 Cr simple interest over 11 years; lean bear until explanatory statement read"
+  - "PROMOTER_FINANCING: second unsecured promoter loan in ~1 year; up to 15.75 crore/yr interest at full draw (derived, L110); facility ~Rs51 Cr above WSIL cash leg (memory arithmetic); STRUCTURE item on this evidence"
+  - "SANGLI_SILENCE: thesis-broken item unmentioned in 2 consecutive company documents (memory count); make-or-break at Q2 FY27 results"
+  - "QUARTER_TAG: both events fall in Q3 FY27 (TRK L36; EGM L29, L122-123); log tracker entries in Q3 FY27, not Q2"
+  - "DILUTION_AMBER_WATCH: swap + QIP ~7% (memory INFERENCE); ESOP ND; amber >8% within 24 months"
+  - "BOARD_COMPOSITION_UNRESOLVED: 3 or 4 of the 8 directors present are independent (EGM L57-67); board size ND; promoter RPT on agenda"
+  - "TRK_PROVISIONAL_START: Nigde PCS manufacturing start ahead of a memory target; no filed target date; 'manufacturing operations' not commercial production (TRK L19, L35-36); not yet a counter-example to the capex-slip pattern"
+  - "WSIL_ECONOMICS_UNTESTED: price/PAT NOT COMPUTABLE (PAT NOT FOUND); ~16.0x FY26 sales; 51.5% net margin needed at 31x; cash-leg carry at 9% ~Rs11.15 Cr/yr = 65.3% of WSIL sales (memory inputs)"
+  - "CASH_INDETERMINATE: no cash-flow statement or balance sheet; verdict capped"
+  - "DRAFTING_CARE: 7 drafting defects in 4-page EGM filing incl. L100 'compilation', plus a possible eighth (double CFO hand-off)"
+  - "NOTION_GAPS: mental model not signed on page; no Q1 FY27 reconciliation; CMP stale (24-Sep); page '59%' fall text fits the Rs1,400 CMP, actual 62.3% to Rs570 / 69.9% to Rs456 from Rs1,513.4"
+plain_language_brief_included: true
+analyst_note: "Loop 2: F-7 closed; TRK L45 says the plant 'strengthens' an existing system integration capability, so the brief and Q19 no longer call it new. S-11 to S-13 applied. Loop 1 closed all 10 earlier A5 items. Verdict and WATCHLIST unchanged. Two one-off Reg 30 letters with no financial statements, so cash conversion is INDETERMINATE (cap CAVEATS); flags take it to PROCEED WITH FLAGS. The weight sits in promoter financing: a 175 crore unsecured 9% facility called a bridge but worded '11 years'. Reading A: short bridge, drafting error. Reading B: long-dated related-party debt, Rs173.25 Cr interest at full draw. Separating observation: notice explanatory statement and the Q3 FY27 drawn balance. WSIL price/PAT is not computable; about 16.0x sales. The Nigde start is ahead of a memory target only; the letter has no target date and no 'commercial'. Both events fall in Q3 FY27. Regulatory deadlines 14-Nov-2026 and 14-Feb-2027 are INFERENCE from Reg 33."
+review_path: "runs/qpower-q2fy27/work/review_qpower_q2fy27.md"

@@ -1,0 +1,30 @@
+stage: A5-adversary
+company: "QPOWER"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S-14: Rev L222, L417, L438, L448 paraphrase TRK L41 as the company calling the plant 'an expansion into' power electronics; filed text says 'This development represents an important step in the Group's expansion into'. Quote is verbatim, predicate compressed; no fact or conclusion changes."
+    - "S-15 (incidental, sentence not in loop-2 change log): Rev L417 'The first notice is from Endoks'; filer is Quality Power (TRK L60, L62-69), letter concerns the Endoks facility (TRK L34-35); para 1 Rev L415 already states Quality Power filed both."
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S-14: replace 'calls/describes the plant an expansion into' with the filed 'an important step in the Group's expansion into' (TRK L41)"
+  - "S-15: 'The first notice is from Endoks' -> 'The first notice concerns Endoks' (Rev L417)"
+analyst_note: "Loop 2 closure audit, scope-limited per task. F-7 closed: business-model bullet 2 (Rev L438) quotes TRK L45 'strengthens' and reads integration as an existing capability; Q19 body (Rev L310) and YAML copy (Rev L552) match and no longer assume the capability is new. Residue grep found no remaining 'new' applied to the integration capability. Gate passes: five brief parts present, narrative 367 words against the 200-400 Document Review Protocol range. Regression checks: TRK 28 IDs plus M01-M02 all cited or listed no-finding, fresh pass over TRK L1-71 finds no unit outside the ledger; EGM line-only rows spot-mapped and still cited; all derived figures recompute. Loop-2 edits S-11 (EGM L95-111, L136-144, all 'proposed'), S-12 (TRK L38-39) and S-13 quotes are verbatim and supported. WSIL price/PAT remains NOT COMPUTABLE from the extract; the 16.0x-sales bear graft from loop 1 is intact. Two STYLE notes only; no re-run."

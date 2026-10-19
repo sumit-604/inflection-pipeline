@@ -1,0 +1,37 @@
+stage: A5-adversary
+company: "QPOWER"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual:
+    - "F-7 RV L438: 'It also claims new system integration capabilities (MGMT, TRK L45)' misreads TRK L45 'The new facility strengthens the Group's manufacturing and system integration capabilities'; 'new' modifies the facility, the capability is 'strengthened' (existing). A4's own 2C row RV L145 quotes 'strengthens'. Same premise in Q19 RV L310 and YAML RV L542 ('add that the group did not have'). Fix A4."
+  missing: []
+  contradiction: []
+  style:
+    - "S-1 EGM address numbers L23, L25 not itemised (A1/A2, carried)"
+    - "S-2r EGM ledger '170 lines' vs 171; TRK ledger M02 note 'remainder of L45-47' should be L46-48 (A2)"
+    - "S-11 RV L441 'now funds growth' states proposed items as done (A4, carried text)"
+    - "S-12 RV L417 drops 'and other grid-connected applications' (TRK L38-39) (A4)"
+    - "S-13 RV L448, L364 'new' put in company's mouth; RV L259 drops 'power quality solutions' (A4)"
+loop_back_to: "A4"
+gap: "F-7 (FACTUAL): RV L438 says the company 'claims new system integration capabilities'; TRK L45 says the facility 'strengthens' them (an existing capability), and A4's own RV L145 quotes 'strengthens'. Fix RV L438 to the filed verb, and reword Q19 (RV L310) and its YAML copy (RV L542) so they do not presume the capability is new. All prior findings F-1 to F-6 and M-1 to M-4 are closed; no A2 or A3 re-run needed. STYLE S-1, S-2r, S-11 to S-13 may ride the same fix."
+style_notes:
+  - "S-1 (A1/A2, carried): EGM Plot No. C/1 and 400 001 (L23), 400 051 (L25) not itemised; TRK itemises the same boilerplate (R002-R004 under R019)."
+  - "S-2r (A2): EGM ledger L14 '170 lines' vs A1 header 171; TRK ledger L55 M02 note 'remainder of L45-47 is R021' -> L46-48 (A4 anchor table RV L63 already has 46-48)."
+  - "S-11 (A4, carried text): RV L441 'the group now funds growth with outside equity, a share swap and promoter debt at once' -> 'plans to fund ... (proposed; vote result ND)', per flag 1 RV L392."
+  - "S-12 (A4): RV L417 'These converters go into large battery storage systems' -> add 'and other grid-connected applications' (TRK L38-39); A4's 6B row RV L222 reads scope as wider than BESS."
+  - "S-13 (A4): RV L448 'a technology the group calls new to it' and RV L364 'names a new strand' -> quote 'expansion into' / 'complementing its established portfolio' (TRK L41-43); RV L259 'established high-voltage portfolio' drops 'power quality solutions' (TRK L42-43)."
+analyst_note: "Loop 1 re-audit. All ten prior loop findings (F-1 to F-6, M-1 to M-4) are closed. The TRK ledger now carries M01 (L41-43) and M02 (the L45 clause), both verbatim-exact. The fresh coverage pass matches both ledgers with no orphan. Every grafted figure recomputes: 62.3% / 69.9%, Rs173.25 Cr, 16.0x sales, 51.5% margin at 31x, Rs11.15 Cr carry at 65.3% of sales. The brief narrative runs 362 words. One new FACTUAL error sits in new text. The Business-Model bullet says the company 'claims new system integration capabilities', but TRK L45 says the plant 'strengthens' them, and A4's own 2C row quotes 'strengthens'. The difference bears on the archetype question the M01/M02 rows were added to answer. 'Strengthens' points to an existing integrator going deeper, not a model change. Q19 carries the same premise. The fix is two lines in A4, with no A2 or A3 re-run. A4's claims about A3 (TRK-FN-05, 20 of 20, gate_a3) and the earlier Rs1,400 CMP are outside A5 inputs and unverified; the arithmetic on them holds. No finding moves PROCEED WITH FLAGS or WATCHLIST."

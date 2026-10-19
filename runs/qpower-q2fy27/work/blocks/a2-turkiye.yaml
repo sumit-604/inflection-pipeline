@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "QPOWER"
+quarter: "Q2 FY27"
+doctype: "presentation (Turkiye PCS commencement, one-off disclosure)"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/qpower-q2fy27/work/ledger_turkiye_qpower_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 12
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 1
+  slide_numbers: 14
+flags_raised: [RESTATED, NO_FIGURES_DISCLOSED, FORWARD_NO_DATES_OR_VOLUMES, A1_NONDATE_IN_DATE_TABLE, MISSING_FROM_STRUCTURED]
+ids_in_structured: 28
+ids_referenced: 28
+orphan_ids: []
+missing_from_structured: [M01 L41-43 expansion into power electronics beyond established portfolio, M02 L45 system integration capabilities]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Loop 1: added M01 (L41-43) and M02 (L45 first clause), both qualitative positioning claims A1 omitted; A1 file unchanged. Single-page Reg 30 letter, no financials, no qualifiers, no zero-standing rows. Substantive units are R011-R016 (Endoks owns Nigde PCS plant, commenced 16-Oct-2026, BESS converters) and R020-R021 (forward claims with no dates, volumes, capex, capacity or order-book figure). Absence of any quantification is itself the finding for A3/A4. R026 and R028 sit in A1's DATE table but are not dates (signature label; quarter tag). R012 location text is pdftotext-damaged ('Nide'); A1 note says Nigde. Page is a PDF letter, so 'slide' count of 1 means page 1."

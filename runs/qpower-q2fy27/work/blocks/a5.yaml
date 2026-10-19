@@ -1,0 +1,78 @@
+stage: A5-adversary
+company: "QPOWER"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "TRK fulltext L41-43: 'This development represents an important step in the Group's expansion into power electronics and energy storage technologies, complementing its established portfolio of high-voltage equipment and power quality solutions.' No A1 row, no A2 row, not cited by A4."
+    - "TRK fulltext L45: 'The new facility strengthens the Group's manufacturing and system integration capabilities' (precedes R021 verbatim, which starts at 'supports' L46). No A1 row, no A2 row; A4 cites L45-48 only for the order-book clause (RV L253)."
+arithmetic_mismatches:
+  - metric: "Fall from page CMP needed to reach entry zone (Step 6D)"
+    a4_value: "about 59% (RV L221)"
+    recomputed: "62.3% to Rs570 (1 - 570/1513.4); 69.9% to Rs456 (1 - 456/1513.4); a 59% fall lands at Rs620.5"
+    source_line: "RV L17 page figures (Entry Max Rs570, MoS Rs456, CMP Rs1,513.4); Notion memory, not extract"
+  - metric: "Drafting defects in the 4-page EGM filing"
+    a4_value: "5 (RV L337, L359)"
+    recomputed: "at least 6: FN06-FN10 set plus 'After the compilation of the speech' (for 'completion')"
+    source_line: "EGM L100"
+surviving_bear_counters:
+  - claim: "Nigde PCS delivered early; first counter-example to the capex-slip pattern; 'first time a plant beat its date' (RV L201, L374)"
+    counter: "The filed letter has no target date (its only dates are TRK L19, L36, L65) and records a start of 'manufacturing operations' (L35-36), not commercial production; Sangli's slip is measured on commercial production, so the milestones differ. L41-43 calls PCS an expansion outside the group's established portfolio; output follows customer delivery schedules (L50-51). Not yet a counter-example."
+    source_line: "TRK L19, L29-30, L35-36, L41-43, L50-51"
+    type: MISSING
+  - claim: "WSIL buy answers a real insulator supply constraint; bull fork 'profit disclosed and adds to earnings' (RV L388, L404, L422)"
+    counter: "Price/PAT NOT COMPUTABLE: the filing names 'consideration' and 'expected operational benefits' with no figures (EGM L104-105); WSIL PAT NOT FOUND. On memory inputs: Rs272.34 Cr / Rs17.07 Cr FY26 sales = ~16.0x sales; at 31x earnings WSIL needs PAT Rs8.79 Cr, a 51.5% net margin (79.8% at 20x); carrying the Rs123.84 Cr cash leg at the 9% bridge rate (EGM L110-111) costs Rs11.15 Cr a year, 65.3% of WSIL sales. ROCE, debt, cash, customer tenure all ND. The 54.5% share leg in richly priced QPOWER paper softens the cost but does not clear the earnings test."
+    source_line: "EGM L104-105, L110-111, L136; memory inputs per RV L230, L286, L404"
+    type: MISSING
+  - claim: "Equity markets are open to the sector (RV L389)"
+    counter: "The extract shows a request, not access: QIP 'proposed' (EGM L106); Res 2 is an approval to raise (L140-141); no vote result (L148-149); no launch, price or book; a promoter bridge covers the gap 'pending receipt of QIP proceeds' (L110-111)."
+    source_line: "EGM L106, L110-111, L140-141, L148-149"
+    type: FACTUAL
+findings_by_type:
+  factual:
+    - "F-1 RV L221: 'fall of about 59%' from page CMP Rs1,513.4; recomputed 62.3% to Rs570 and 69.9% to Rs456 (RV L17). Fix A4."
+    - "F-2 RV L372: 'Neither notice carries a financial number' is false; EGM L106 (700 crore), L110 (175 crore, 9%). Fix A4: 'no financial statement or results figure'."
+    - "F-3 RV L378: (a) 'Both cannot be true': L110-111 states purpose, not term end; an 11-year facility can bridge the deal (A4's own Reading B, Q3 RV L267). (b) 'Why it needs promoter money is not explained': L109 records the CFO explained terms and rationale; L110-111 gives timing; the gap is why March 2026 net cash [memory] cannot fund it, and present cash is ND. Fix A4."
+    - "F-4 RV L160: 'WSIL will become a new subsidiary on completion (EGM L95-96)': L95-96 says only 'proposed acquisition'; stake and subsidiary status ND; Res 1 swap is to 'certain selling shareholders' (L136). Fix A4: mark ND or [Notion]."
+    - "F-5 RV L389: 'Equity markets are open to the sector' not supported by EGM L106, L110-111, L140-141, L148-149. Fix A4 per surviving counter 3."
+    - "F-6 RV L337, L359: '5 drafting defects'; EGM L100 'compilation' (for 'completion') makes at least 6. Fix A4."
+  missing:
+    - "M-1 TRK L41-43 and L45 clause: no A1 row, no A2 row, not cited by A4. Fix A2 (add MISSING_FROM_STRUCTURED rows), A3 review, A4 cite in Business-Model Intelligence."
+    - "M-2 Claim 1 counter: milestone mismatch (manufacturing start vs commercial production) and absent filed target date not in A4 (RV L201, L374). Fix A4 graft."
+    - "M-3 Claim 2 counter: acquisition-economics test (price/PAT not computable; ~16.0x sales; 51.5% break-even margin at 31x; Rs11.15 Cr/yr cash-leg carry) absent from A4 (RV L388, L404, L422). Fix A4 graft."
+    - "M-4 'present' qualifier (EGM L57) dropped in M13, flag 7, forward map (RV L308, L356, L425, L489); board size ND. Fix A4."
+  contradiction: []
+  style:
+    - "S-1 EGM address numbers L23, L25 not itemised (A1/A2)"
+    - "S-2 uncorrected anchors EGM R057, R026, R031 note; TRK R021; ledger line count 170 vs 171 (A1/A2)"
+    - "S-3 33 no-finding rows rest on A4 blanket mark; list by ID (A4)"
+    - "S-4 'Proceedings signed' cell gives cover-letter signature (A4)"
+    - "S-5 YAML notes: 0 vs A2's 2 foot notes (A4)"
+    - "S-6 flag 1 wording 'proves no resolution passed' (A4)"
+    - "S-7 F11 status 'underway' vs 'supports' (A4)"
+    - "S-8 Res 3 to bridge-loan mapping unlabelled inference (A4)"
+    - "S-9 optional Reading B 11-year interest Rs173.25 Cr (A4)"
+    - "S-10 sector bullet 1 lacks tier tag (A4)"
+loop_back_to: "A2"
+gap: "A2: add TRK MISSING_FROM_STRUCTURED rows for fulltext L41-43 and the L45 clause (M-1). A3: review those two rows. A4: cite them in Business-Model Intelligence; graft surviving counters M-2, M-3 and F-5; fix F-1 (59% stated vs 62.3% to Rs570 / 69.9% to Rs456 recomputed), F-2, F-3, F-4, F-6 and M-4. STYLE S-1 to S-10 may ride the same cycle; none re-runs an agent on its own."
+style_notes:
+  - "S-1 (A1/A2): EGM Plot No. C/1 and 400 001 (L23), 400 051 (L25) not itemised; TRK itemises the same boilerplate (R002-R004 under R019). Add an EGM address-summary row during the A2 loop."
+  - "S-2 (A1/A2): EGM R057 L53 -> L54 (heading L52); EGM R026 22-24 -> 22-26; EGM R031 note 'line 145' -> L146; TRK R021 45-47 -> 46-48; EGM ledger '170 lines' vs header 171."
+  - "S-3 (A4): list the 19 EGM no-finding rows (R001-R004, R015-R018, R023, R026, R027, R029, R039, R040, R042, R044, R054, R060, R066) and 14 TRK rows (R001, R002, R004-R010, R017, R018, R022, R025, R027) by ID as 'reviewed, no finding'."
+  - "S-4 (A4): RV L109 'Proceedings signed 19:34:16' is the cover letter (L43-44, R056); p4 proceedings signature is 19:34:56 (L166, R060)."
+  - "S-5 (A4): YAML ledger_reconciliation notes: 0 vs A2 count of 2 A1 foot notes; annotate the key or carry 2."
+  - "S-6 (A4): flag 1 'proves no resolution passed' (RV L350, L483) -> 'does not show that any resolution passed'."
+  - "S-7 (A4): F11 status 'underway' (RV L253) -> 'initiated'; the letter says 'supports' (TRK L46), filed one day after start."
+  - "S-8 (A4): M2 and 6D (RV L223, L297) map Res 3 to the bridge loan; L142-144 does not name the loan; label [INFERENCE]."
+  - "S-9 (A4): optional; Reading B full draw over 11 years = 15.75 x 11 = Rs173.25 Cr simple interest, about equal to principal; add to flags 2 and 3."
+  - "S-10 (A4): RV L386 'Utilities need more transmission, more renewable links and more storage' has no tier tag."
+analyst_note: "Gate 0 passes; the brief narrative runs 310 words. The loop starts at A2 because TRK L41-43 and the L45 clause never became rows, so A3 and A4 never reviewed them. They are the company's only filed words on the scope of the new line: PCS sits outside the 'established portfolio', and the group claims system-integration capability. That bears on the archetype in the signed model. Most A4 fixes are one-line edits. Two hold A4's bear case to the same bar as a bull claim: 'Both cannot be true' (an 11-year facility can still bridge the deal, which is A4's own Reading B) and 'not explained' (L109 records a rationale). The acquisition probe cannot compute price/PAT because WSIL earnings are NOT FOUND. On memory inputs the deal costs about 16.0x sales. At 31x earnings WSIL would need a 51.5% net margin, and carrying the cash leg at 9% costs Rs11.15 Cr a year, 65% of WSIL sales. Paying 54.5% in richly priced shares softens the cost but does not clear the earnings test. The 59% fall figure fits a CMP near Rs1,390 [INFERENCE]. No finding moves the process verdict or WATCHLIST."

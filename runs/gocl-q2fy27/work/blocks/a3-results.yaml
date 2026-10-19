@@ -1,0 +1,73 @@
+stage: A3-forensics
+company: "GOCL"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/gocl-q2fy27/work/forensics_results_gocl_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: FINDING
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: FINDING
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "F1-1", check: "F1", line: "L856", classification: "NEUTRAL-FACT", implication: "FVOCI template line fired first time (1,443.19); assessed at F9-1"}
+  - {id: "F1-2", check: "F1", line: "L920, L1024", classification: "AMBIGUOUS", implication: "Nil MSME payables both dates vs 2,252.51 other payables at a manufacturer; MSMED classification question"}
+  - {id: "F1-3", check: "F1", line: "L935, L951, L961-L964", classification: "NEUTRAL-FACT", implication: "No land-sale gain in H1; lines anticipate next Kukatpally tranche; dividend 14,871.75 falls in Q3 cash flow; debt-free"}
+  - {id: "F2-1", check: "F2", line: "L853, L988", classification: "NEUTRAL-FACT", implication: "C-S net PAT gap 20.6% of standalone (Q1 25.8%, -5.2pp; Q2FY26 -45.5%); fully HGHL interest + FX"}
+  - {id: "F2-2", check: "F2", line: "L844, L436-L437", classification: "AMBIGUOUS", implication: "Unrealised put-option FX gain labelled exceptional in all six periods; 4.9% of Q2 PBT; ACHT buyback timing unknown"}
+  - {id: "F3-1", check: "F3", line: "L160-L161, L836/L973, L1003", classification: "AMBIGUOUS", implication: "HGHL UK is a non-operating shell with 26.2% of group assets, about 72,109 of loans to unnamed borrowers, on 87.46 cost"}
+  - {id: "F4-1", check: "F4", line: "L159-L162, L173-L175", classification: "AMBIGUOUS", implication: "Unreviewed PAT 17.1% Q2 / 18.8% H1 (>10%), assets 26.2%; Ind AS figures rest on management conversion"}
+  - {id: "F4-2", check: "F4", line: "L839, L961", classification: "NEUTRAL-FACT", implication: "YoY HGHL swing from (521.89) to +692.74 driven by debt repaid in H1 FY26"}
+  - {id: "F5-1", check: "F5", line: "L143-L155, L556-L568", classification: "CONFIRMATORY-NEGATIVE", implication: "EoM repeats at Rs 131,610 lakhs in both reports; regularisation still in process 104 days after Jul 7 approval; QoQ diff not run"}
+  - {id: "F5-2", check: "F5", line: "L471-L473, L775", classification: "FORWARD-SIGNAL", implication: "Guarantees secured on GOCL immovable property; land sales may need charge release; HEIL guarantee given Dec 2025"}
+  - {id: "F6-1", check: "F6", line: "L447, L802, L953, L927", classification: "FORWARD-SIGNAL", implication: "Squarespace advance 11,168.42 with no sale in H1; next Kukatpally tranche from the 107.29 acres left"}
+  - {id: "F6-2", check: "F6", line: "L489-L492", classification: "FORWARD-SIGNAL", implication: "Ecopolis ~81,500 deal at CP stage 206 days after ATS, no date; large gain vs 7,838.56 total held-for-sale; JDA with group entity"}
+  - {id: "F6-3", check: "F6", line: "L449-L450", classification: "AMBIGUOUS", implication: "Detonator cessation approval still 'initiated' ~23 months after Nov 28, 2024"}
+  - {id: "F7-1", check: "F7", line: "L476-L477, L209, L971", classification: "AMBIGUOUS", implication: "Guarantee 'adjustments' flow through Other income (P&L refers Note 4); amount not disclosed"}
+  - {id: "F8-1", check: "F8", line: "L980-L983", classification: "AMBIGUOUS", implication: "Standalone ETR 31.27% vs 25.17%; deferred credit flipped to expense (287 bps drag vs 163 bps shield in Q1)"}
+  - {id: "F8-2", check: "F8", line: "L850-L852, L464, L817", classification: "AMBIGUOUS", implication: "Discontinued PBT 463.33 from negative expenses (195.89) plus a tax credit; non-recurring 12.7% of Q2 PAT"}
+  - {id: "F8-3", check: "F8", line: "L925, L948", classification: "FORWARD-SIGNAL", implication: "Income tax liabilities 28,274.96 exceed cash 17,525.04, most of which went on the post-quarter dividend; settlement needs ICD recall"}
+  - {id: "F9-1", check: "F9", line: "L856, L439-L440, L902-L903", classification: "FORWARD-SIGNAL", implication: "57 Whitehall FVOCI loss 1,443.19 in one quarter vs nil FY26; stake down 24.9%; 21,189.70 exposure depends on ACHT buyback; verify assumptions at AR"}
+  - {id: "F12-1", check: "F12", line: "L866, L874, L882, L887", classification: "AMBIGUOUS", implication: "EMS assets +34.5% QoQ, liabilities -31.4%, revenue -6.9%, loss nearly doubled to (213.66); equity-funded build"}
+  - {id: "F12-2", check: "F12", line: "L883, L888, L1013, L944", classification: "AMBIGUOUS", implication: "Realty assets -45.3% and liabilities -74.1% QoQ; apparent receivable collection, unconfirmed"}
+  - {id: "F12-3", check: "F12", line: "L868, L876, L943", classification: "CONFIRMATORY-NEGATIVE", implication: "Operating segments loss-making; unallocable income 93.9% of total income; operating cash before WC negative (426.70)"}
+  - {id: "F12-4", check: "F12", line: "L841, L978, L878", classification: "AMBIGUOUS", implication: "Other expense +794.90 QoQ (+146%) sits in unallocated corporate cost; nature and recurrence unknown"}
+  - {id: "F12-5", check: "F12", line: "L889, L919, L922", classification: "NEUTRAL-FACT", implication: "Unallocable liabilities +44.1% are dividend payable and tax, not debt; borrowings nil"}
+  - {id: "F12-6", check: "F12", line: "L1012, L1061-L1063, L907", classification: "AMBIGUOUS", implication: "Standalone loans +6,800 to 2,34,990.00, counterparty unnamed; group loans 81.8% of assets; high rollover churn; interest serviced"}
+  - {id: "F12-7", check: "F12", line: "L916, L1021", classification: "AMBIGUOUS", implication: "Non-current provisions 10,079.32 (+423.83 H1), nature undisclosed"}
+  - {id: "F13-1", check: "F13", line: "L44-L56", classification: "FORWARD-SIGNAL", implication: "NCLT-convened merger vote Nov 24, 2026 is a binary catalyst; no AR/AGM/director items"}
+  - {id: "F14-1", check: "F14", line: "L472, L775, L144", classification: "AMBIGUOUS", implication: "HNPCL guarantee 109,640 (cons) vs 109,610 (standalone); only 109,610 ties to EoM 131,610"}
+  - {id: "F14-2", check: "F14", line: "L501, L431, L493, L824", classification: "NEUTRAL-FACT", implication: "Consolidated notes dated Oct 18 vs Oct 19 approval; AGM Sep 28 vs Sep 29; OCR risk"}
+  - {id: "F14-3", check: "F14", line: "L447, L802, L445, L800", classification: "NEUTRAL-FACT", implication: "Note amounts differ cons vs standalone (11,166.42/11,168.42; 1,855.18/1,955.18); OCR risk"}
+  - {id: "F14-4", check: "F14", line: "L455, L204", classification: "NEUTRAL-FACT", implication: "Note calls FY26 results unaudited; header says Audited"}
+  - {id: "F14-5", check: "F14", line: "L960, L966, L997", classification: "NEUTRAL-FACT", implication: "Three immaterial footing gaps in H1 FY26 comparatives"}
+  - {id: "F14-6", check: "F14", line: "L294, L885, L890", classification: "AMBIGUOUS", implication: "Ecopolis sits in the '#' discontinued segment the footnote limits to Energetics/IDL"}
+  - {id: "F14-7", check: "F14", line: "L161, L834, L971, L940", classification: "AMBIGUOUS", implication: "OM says HGHL revenue Nil, yet the C-S other income gap of 1,273.28 H1 equals the interest gap"}
+forward_signals: ["F5-2", "F6-1", "F6-2", "F8-3", "F9-1", "F13-1"]
+ambiguous: ["F1-2", "F2-2", "F3-1", "F4-1", "F6-3", "F7-1", "F8-1", "F8-2", "F12-1", "F12-2", "F12-4", "F12-6", "F12-7", "F14-1", "F14-6", "F14-7"]
+commitments:
+  - {commitment: "HNPCL merger: NCLT-convened shareholder and unsecured creditor meetings, then NCLT sanction", implied_date: "2026-11-24", ref: "Letter L44-L56; Note C5 L479-L484; S5 L782-L787", status_word: "underway"}
+  - {commitment: "Regularisation of Rs 131,610 lakhs guarantees via applications to regulators", implied_date: "none stated", ref: "EoM L149; Note C4 L475; S4 L778", status_word: "initiated"}
+  - {commitment: "Ecopolis sale (~Rs 81,500 lakhs) conditions precedent to sale deed", implied_date: "none stated", ref: "Note C7 L487-L492; S6 L789-L795", status_word: "underway"}
+  - {commitment: "Kukatpally land sale: 157.21 of 264.50 acres sold; Rs 11,168.42 lakhs advance received in Q2", implied_date: "none stated", ref: "Note C3 L442-L447; S7 L797-L802", status_word: "underway"}
+  - {commitment: "Approval for cessation of detonator operations at Kukatpally", implied_date: "none stated", ref: "Note C3 L449-L450; S7 L804-L805", status_word: "initiated"}
+  - {commitment: "FY26 final dividend Rs 30/share, Rs 14,871.75 lakhs", implied_date: "after 2026-09-30", ref: "Note C8 L493-L494; S8 L824-L825", status_word: "completed"}
+  - {commitment: "NCLAT appeal against NCLT Jul 30, 2026 observations", implied_date: "2026-09-25", ref: "Note C5 L481-L483; S5 L784-L785", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The filing's profit is treasury income. Operating segments lost 209.47 lakhs in Q2. Unallocable income, mostly ICD interest, was 93.9% of total income, and H1 operating cash before working capital was negative. The ICD book grew: standalone loans rose Rs 68 Cr to Rs 2,349.90 Cr, counterparty unnamed. HGHL UK, reviewed by another auditor and holding 26% of group assets, holds about Rs 721 Cr more in loans (derived by subtraction). Two cash calls sit against Rs 175 Cr cash: the Rs 148.72 Cr dividend paid after the quarter and Rs 282.75 Cr of income tax liabilities. Paying both needs an ICD recall, and whether one happens tests the leakage tripwire. The EoM guarantees are secured on company property, so land sales may need lender consent. Several note-text mismatches (guarantee 109,640 vs 109,610, dates, advance amount) come from an OCR text layer; verify on the page image first. A1 put the Mar-26 'Reserves' value in the H1 FY26 column at R1606/R2073. No prior-quarter fulltext was supplied, so the F5 and F15 diffs were not run verbatim."

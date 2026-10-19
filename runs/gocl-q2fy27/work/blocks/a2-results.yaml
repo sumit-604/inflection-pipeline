@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "GOCL"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/gocl-q2fy27/work/ledger_results_gocl_q2fy27.md"
+counts:
+  notes: 16
+  line_items: 231
+  zero_standing: 53
+  agenda_items: 4
+  auditor_paras: 12
+  entities: 26
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, SUPERSEDED, IMAGE_VERIFIED, FOOTING_GAP, PRINTED_DIFF, RESTATED, EOM, OTHER_MATTER]
+ids_in_structured: 2233
+ids_referenced: 2233
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Superseded old OCR rows: 949 by row count (grep -c shows 950 because header line 5 repeats the token); all mapped to their page image group. Zero_standing: 31 nil/dash image cells across 21 line items, plus 1 A1-flagged non-superseded text row (R011). Three footing gaps sit on R1912 (investing B, H Sep25, +2.00), R1924 (net cash change, H Sep25, 10.00), R2090 (standalone EPS total, H Sep25, +0.20); printed values kept, not corrected. Guarantee to HNPCL prints as 109,640 lakhs in consolidated Note 4 (R1407) and 109,610 in standalone Note 4 (R1430), against 131,610 total in the EoM: PRINTED_DIFF. Both auditor reports carry an EoM on Note 4 guarantees not processed as RPT; conclusion unmodified. Meeting ran 05:30 to 07:20 p.m.; signature 20:19 follows. No prior ledger, so no ENTITY_CHANGE test."

@@ -1,0 +1,57 @@
+stage: A5-adversary
+company: "GOCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "L956 consolidated CF 'Repayment of loans from Companies': label only, no value printed either period, no structured row (A1 header L930). Tagged STYLE S1, no loop; A2 appends as line 232."
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Interest is cash-backed (RL327, RL350, brief RL748)", counter: "H1 net new lending equals 80.0% of interest received consolidated (8,815.79 / 11,017.17) and 69.6% standalone (6,800.00 / 9,766.00); net cash recovered from the loan book Rs 22.01 Cr / Rs 29.66 Cr; standalone counterparty singular 'Other Company'", source_line: "L957-L959, L907, L1061-L1063, L1012", type: MISSING}
+  - {claim: "HNPCL merger ON TRACK with Notion BVPS step-up (RL501); bull fork 'larger book value' (RL768)", counter: "Purchase multiple NOT DETERMINABLE: no swap ratio, shares issued, HNPCL PAT or net worth in filing; only quality marker on file is leverage, guaranteed HNPCL borrowings at least Rs 1,096.10 Cr = 52.4% of standalone equity; NCLT declined 30-Jul-2026 before NCLAT reversal", source_line: "L479-L484, L775, L472, L1020, L481-L482, L49-L52", type: MISSING}
+  - {claim: "Debt-free balance sheet / debt-free parent can fund losses (brief RL752, RL757)", counter: "Rs 1,316.10 Cr guarantees secured on company immovable property = 62.9% of standalone equity; post-dividend liquid cash Rs 68.73 Cr vs tax Rs 282.75 Cr; already carried elsewhere in review, qualifier missing in-sentence", source_line: "L144, L472, L775, L1020, L905-L906, L494, L925", type: STYLE}
+findings_by_type:
+  factual:
+    - "F1 (A4): RL263 cites EMS segment assets +34.5% QoQ as commissioned-capex evidence and RL727 tags 'new capacity came into use' as [FILED Q2]; filing never states capacity; capitalised CWIP Rs 0.76 Cr (L894), H1 capex Rs 2.73 Cr (L950), Q2 EMS asset rise Rs 5.47 Cr after Q1 fall Rs 2.34 Cr (L882). Re-tag as INFERENCE; state capitalised amount; drop or relabel the +34.5%."
+  missing:
+    - "M1 (A4): graft net-new-lending vs interest-received counter into Step 5 (RL327, RL350, 5-III), brief RL748, missing-evidence RL397 and Q1 RL581 (L957-L959, L1061-L1063)."
+    - "M2 (A4): state HNPCL purchase multiple NOT DETERMINABLE (swap ratio, shares issued, HNPCL PAT, net worth absent, L479-L484); name the Notice and Explanatory Statement (L49-L52) as missing source; mark 6D BVPS step-up untested; add swap ratio and HNPCL PAT to Q2 (RL582)."
+  contradiction: []
+  style:
+    - "S1 (A2): ledger lacks blank-label line L956; append as line 232."
+    - "S2 (A1): five pending units not tagged FORWARD; R1239 'ceased' overstates L449-L450."
+    - "S3 (A1): SEBI and ICAI named in boilerplate only, not ENTITY rows."
+    - "S4 (A2): auditor para C1 mapped to Board-letter rows; C2, S1-S3 no row ID; RESTATED used for duplicate notes."
+    - "S5 (A1): R1606/R2073 reserves in H Sep30,2025 column equal Mar-26 other equity (L914, L1019)."
+    - "S6 (A4): RL7, RL429, YAML review_path name a non-existent part2 file."
+    - "S7 (A4): last-digit truncations (revenue YoY 84.9 vs 84.95; inventory days -194.0 vs -194.1; payable days, CCC; Q1 revenue 'about 4.2')."
+    - "S8 (A4): brief RL752 and RL757 'debt-free' need in-sentence guarantee and liquidity qualifier."
+    - "S9 (A4, optional): unrealised FX loss add-back L941 vs L1044 (about Rs 7.55 Cr outside standalone H1 FY27) unplaced in P&L; add to Q18."
+    - "S10 (A4, optional): H1 FY26 land gain sat in Q1 FY26 per realty segment income L867; RL254 'quarter split ND' resolvable."
+    - "S11 (A4, optional): RL741 causal clause and RL728 'corporate cost' label carry FILED tags on inference."
+    - "S12 (info): borrowings 61.52 repaid inside finance cost paid 63.93 (L919, L942, L963); IDL proceeds in H1 FY26 column before 15-Nov-2025 sale date (L952, L454)."
+loop_back_to: "A4"
+gap: "A4 text grafts only: (F1) RL263/RL727 EMS capex evidence and FILED tag unsupported, CWIP Rs 0.76 Cr vs Q2 EMS asset rise Rs 5.47 Cr (L882, L894, L950); (M1) add net new lending vs interest received, consolidated 80.0% re-lent and Rs 22.01 Cr net recovered (L957-L959), standalone 69.6% and Rs 29.66 Cr (L1061-L1063), to Step 5, brief RL748, RL397 and Q1; (M2) state HNPCL purchase multiple NOT DETERMINABLE with swap ratio, shares issued, HNPCL PAT and net worth named as missing (L479-L484), source Explanatory Statement (L49-L52) not in inputs, add them to Q2, mark 6D BVPS step-up untested."
+style_notes:
+  - "S1 L956 blank label missing from ledger (A2)"
+  - "S2 FORWARD tagging gaps; R1239 descriptor (A1)"
+  - "S3 SEBI/ICAI boilerplate entities (A1)"
+  - "S4 auditor-para mapping and RESTATED usage (A2)"
+  - "S5 reserves column placement R1606/R2073 (A1)"
+  - "S6 part2 file reference (A4)"
+  - "S7 last-digit truncations (A4)"
+  - "S8 debt-free qualifier in brief (A4)"
+  - "S9 FX loss add-back question (A4, optional)"
+  - "S10 land-gain quarter resolvable (A4, optional)"
+  - "S11 provenance tags RL741, RL728 (A4, optional)"
+  - "S12 finance-cost-paid and IDL proceeds timing (info)"
+analyst_note: "A4's arithmetic is clean: every derived cell recomputes from the image-transcribed lines to rounding, and the review is bearish and well anchored. The gaps sit in its positive claims. 'Interest is cash-backed' holds on gross receipts only. In H1 the group lent a net Rs 88.16 Cr back out, 80% of the Rs 110.17 Cr interest it received, and the standalone counterparty prints as a single 'Other Company'. That is the strongest bear counter on file, and A4 does not state it. The HNPCL scheme is an acquisition by absorption. The filing carries no swap ratio and no HNPCL earnings, so the purchase multiple cannot be computed. Yet A4 grades the merger ON TRACK on a Notion 'BVPS step-up' and asks only for debt and net worth. The terms sit in the Explanatory Statement the Board reviewed (L49-L52), which this run did not receive. The one ledger diff (L956) is a blank cash-flow label with no value in either period. I logged it as STYLE, not a loop; the operator may overrule. All three loop items are text grafts to A4."

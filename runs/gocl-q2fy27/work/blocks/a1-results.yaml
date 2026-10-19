@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "GOCL"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 16
+formfeed_count: 16
+line_count: 1078
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "x0.01"
+text_layer_present: true
+extraction_mode: text-only   # pages 4,5,6,7,12,13,14 read as images (degraded OCR layer), orchestrator-approved
+render_candidates: [4,5,6,7,12,13,14]
+rendered_pages: [4,5,6,7,12,13,14]   # 200 dpi, orchestrator decision; transcription appended at fulltext lines 832-1078
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/gocl-q2fy27/extracted/gocl-results-q2fy27-fulltext.md"
+structured_path: "runs/gocl-q2fy27/extracted/gocl-results-q2fy27-structured.md"
+structured_counts:
+  number: 2016   # 1220 original (old garbled rows marked SUPERSEDED) + 796 image rows
+  entity: 26
+  forward: 20
+  date: 103
+  qualifier: 68
+structured_id_range: "R001-R2233"
+gate_a1: pass
+gap_note: "Footing gaps in printed figures: consolidated cash flow H Sep30,2025 investing (B) components sum 98,090.33 vs printed 98,092.33 and net change -599.73 vs printed -609.73 (possible misread of one cell, e.g. interest received 9,946.62); standalone total EPS H Sep30,2025 248.87 printed vs 248.67 from components. All other statements foot. Standalone FY26 total EPS 291.66 partly under a stamp."

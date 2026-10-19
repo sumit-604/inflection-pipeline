@@ -1,0 +1,85 @@
+stage: A4-analyst
+company: "GOCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results]
+ledger_reconciliation:
+  notes: 16
+  turns: 0
+  slides: 0
+  all_reviewed: true
+  a3_findings_incorporated: [F1-1, F1-2, F1-3, F2-1, F2-2, F3-1, F4-1, F4-2, F5-1, F5-2, F6-1, F6-2, F6-3, F7-1, F8-1, F8-2, F8-3, F9-1, F12-1, F12-2, F12-3, F12-4, F12-5, F12-6, F12-7, F13-1, F14-1, F14-2, F14-3, F14-4, F14-5, F14-6, F14-7]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "HELD (momentum bucket; Chandelier Exit governs; fundamentals AVOID; do not convert to value)"
+position_branch: "8A"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap_pct_of_standalone: 20.6, gap_lakhs: 692.75}
+  - {period: "Q1 FY27", gap_pct_of_standalone: 25.8, gap_lakhs: 829.10}
+  - {period: "Q2 FY26", gap_pct_of_standalone: -45.5, gap_lakhs: -1169.37}
+  - {period: "H1 FY27", gap_pct_of_standalone: 23.2, gap_lakhs: 1521.85}
+  - {period: "H1 FY26", gap_pct_of_standalone: 0.3, gap_lakhs: 385.53}
+  - {period: "FY26", gap_pct_of_standalone: 5.3, gap_lakhs: 7610.16}
+questions_for_management:
+  - {q: "Name each borrower of the Rs 2,349.90 Cr standalone and about Rs 721.09 Cr HGHL loan book, with balance, rate, tenor, security, and H1 amounts lent and realised", from_finding_id: "F12-6, F3-1"}
+  - {q: "On sanction, what is the swap ratio, how many GOCL shares will be issued, and what were HNPCL FY26 PAT, net worth and gross debt; does the 24-Nov resolution need a public-shareholder majority", from_finding_id: "F13-1"}
+  - {q: "Split the Rs 282.75 Cr income tax liabilities into FY26 self-assessed vs disputed, with payment date", from_finding_id: "F8-3"}
+  - {q: "Which properties, by location and acreage, secure the Rs 1,316.10 Cr guarantees", from_finding_id: "F5-2"}
+  - {q: "Which acreage does the Rs 111.68 Cr Squarespace advance cover, is it refundable, and what is the deed date", from_finding_id: "F6-1"}
+  - {q: "Which Ecopolis conditions precedent remain open and what is the deed target date", from_finding_id: "F6-2"}
+  - {q: "What was the Rs 7.95 Cr QoQ other-expense jump, and will it recur until sanction", from_finding_id: "F12-4"}
+  - {q: "EMS order book in Rs Cr and the quarter of segment breakeven", from_finding_id: "F12-1"}
+  - {q: "Name the HGHL component auditor and quantify GAAP conversion adjustments in H1 PAT of Rs 15.22 Cr", from_finding_id: "F4-1"}
+  - {q: "What valuation change caused the Rs 14.43 Cr FVOCI loss on 57 Whitehall", from_finding_id: "F9-1"}
+  - {q: "Date and price of ACHT's buyback settlement; why unrealised put FX is exceptional every period", from_finding_id: "F2-2"}
+  - {q: "Amount of Note 4 guarantee adjustment in Q2 and H1 other income, and whether received in cash", from_finding_id: "F7-1"}
+  - {q: "Which receivable produced the Rs 46.07 Cr fall in other financial assets, and was the payer a related party", from_finding_id: "F12-2"}
+  - {q: "Regulator and filing date of the guarantee regularisation applications", from_finding_id: "F5-1"}
+  - {q: "What reversed in deferred tax in Q2 and what is the FY27 run-rate ETR", from_finding_id: "F8-1"}
+  - {q: "What liabilities were written back in discontinued operations (Rs 4.53 Cr H1)", from_finding_id: "F8-2"}
+  - {q: "Itemise the Rs 100.79 Cr non-current provisions", from_finding_id: "F12-7"}
+  - {q: "Is HGHL interest income outside 'revenue' in the other auditor's report or created in conversion", from_finding_id: "F14-7"}
+  - {q: "Carrying value of Ecopolis inside the Rs 78.39 Cr held-for-sale assets", from_finding_id: "F14-6"}
+  - {q: "Is the HNPCL guarantee Rs 1,096.40 Cr or Rs 1,096.10 Cr", from_finding_id: "F14-1"}
+  - {q: "Which approval for ending detonator operations is pending, from which authority", from_finding_id: "F6-3"}
+  - {q: "How are suppliers classified under the MSMED Act given nil MSME dues", from_finding_id: "F1-2"}
+  - {q: "Status of APTEL Appeal 743/2023 and its treatment in the scheme", from_finding_id: "Notion tripwire 1"}
+  - {q: "Consequences of the June-2024 Swiss conviction for banking lines, guarantee counterparties, board", from_finding_id: "Notion tripwire 6"}
+  - {q: "Which P&L line carries the Rs 7.55 Cr HGHL unrealised FX loss added back in the consolidated cash flow", from_finding_id: "A5 S9, F14-7"}
+monitorables:
+  - {item: "Operator ruling 20: record Chandelier level", implied_date: "overdue (before 2026-10-19)", source_ref: "Notion s4"}
+  - {item: "Obtain Notice and Explanatory Statement (swap ratio, shares to be issued, HNPCL financials)", implied_date: "before 2026-11-24 (dispatch date ND)", source_ref: "L49-L52"}
+  - {item: "Operator ruling 42: pre-committed exit on scheme passage or Chandelier", implied_date: "before 2026-11-24 11:00 IST", source_ref: "Notion s4; L54-L56"}
+  - {item: "NCLT-convened shareholder and unsecured creditor meeting on HNPCL scheme", implied_date: "2026-11-24 11:00 IST", source_ref: "L54-L56; F13-1"}
+  - {item: "NCLT sanction of scheme", implied_date: "ND", source_ref: "L483-L484"}
+  - {item: "Q3 FY27 results: core PBT ex-OI (bull <= 6.12 Cr loss; bear > 15.35 Cr loss)", implied_date: "by 2027-02-14 (Reg 33)", source_ref: "Step 8C; L834, L843"}
+  - {item: "FY27 audited results: loan book, net new lending vs interest received, tax liability, dividend outflow, H2 CFO", implied_date: "by 2027-05-30 (Reg 33)", source_ref: "L907, L957-L959, L925, L494"}
+  - {item: "Kukatpally next-tranche sale deed (advance Rs 111.68 Cr)", implied_date: "none stated", source_ref: "L446-L447, L802; F6-1"}
+  - {item: "Ecopolis sale deed (about Rs 815 Cr)", implied_date: "none stated", source_ref: "L487-L492; F6-2"}
+  - {item: "Guarantee regularisation applications", implied_date: "none stated", source_ref: "L149-L150; F5-1"}
+  - {item: "Detonator cessation approval", implied_date: "none stated", source_ref: "L449-L450; F6-3"}
+  - {item: "ACHT buyback of 57 Whitehall", implied_date: "none stated", source_ref: "L434-L435; F2-2, F9-1"}
+  - {item: "Settlement of Rs 282.75 Cr tax liabilities", implied_date: "ND; FY27 balance sheet", source_ref: "L925, L948; F8-3"}
+  - {item: "FY26 dividend Rs 148.72 Cr paid after quarter", implied_date: "Q3 FY27 (completed)", source_ref: "L493-L494"}
+  - {item: "FY27 Annual Report: RPT loan note, HGHL auditor, ICL KAM", implied_date: "about Aug-Sep 2027 (inference)", source_ref: "L493, L824"}
+flags:
+  - "Guarantee EoM repeats in both review reports (Rs 1,316.10 Cr), regularisation still in process"
+  - "Unreviewed subsidiary HGHL: 17.1% of Q2 PAT, 18.8% of H1 PAT, 26.2% of assets; Ind AS conversion by management"
+  - "ICD book up: standalone +Rs 68.00 Cr to Rs 2,349.90 Cr, group +Rs 88.16 Cr; counterparty printed as one unnamed 'Other Company'; tripwire 4 adverse move (no fire threshold)"
+  - "Interest received gross but 80.0% (group) / 69.6% (standalone) re-lent to the same book in H1; net cash recovered Rs 22.01 Cr / Rs 29.66 Cr"
+  - "Core operating PBT ex-OI widened to Rs (15.35) Cr from (6.12) QoQ; other expense +Rs 7.95 Cr unexplained"
+  - "Capex-commissioning test RED on CWIP-to-nil: Rs 0.76 Cr capitalised, EMS revenue -6.9% QoQ, loss doubled; capacity not stated in filing"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION: H1 CFO is a one-off WC release; pre-WC operating cash negative"
+  - "Tax liabilities Rs 282.75 Cr vs about Rs 68.73 Cr liquid cash after dividend; 51% of period-end cash is a land advance"
+  - "HNPCL purchase multiple NOT DETERMINABLE: swap ratio, shares, HNPCL PAT, net worth absent; Explanatory Statement (L49-L52) not in run inputs; Notion BVPS step-up untested"
+  - "Chandelier level not on file; ruling 20 overdue; stop status cannot be determined"
+  - "Ruling 42 time-bound: scheme vote 2026-11-24 11:00 IST"
+  - "Downstream tracker rows not supplied; Step 5.5 not reconcilable"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged: ROCE down, cash multiplier at floor"
+  - "No Notion projections: Step 6A cells ND"
+  - "OCR note-text mismatches need image verification: F14-1, F14-2, F14-3"
+  - "9 of 13 prior-quarter questions not addressed"
+plain_language_brief_included: true
+analyst_note: "Loop 1 applied A5 grafts F1, M1, M2 and style notes. GOCL earns its profit from interest on a Rs 3,071 Cr loan book; operating segments lose money and the core loss widened to Rs 15.35 Cr. Interest arrives in cash, but 70-80% of it was re-lent to the same book in H1, so net cash recovered was Rs 22 Cr (group). CFO is positive only via a one-off receivable release with an unnamed payer, so cash conversion stays indeterminate with a negative direction. The position is a momentum HOLD under 8A; the Chandelier level is not on file, so the only exit rule is untested. Ruling 42 matters more than this print: the HNPCL purchase multiple cannot be computed from the filing; the swap ratio and HNPCL financials sit in the Explanatory Statement this run did not receive. The Rs 1,096 Cr HNPCL guarantee would become GOCL debt on sanction (inference). EMS capex evidence is Rs 0.76 Cr capitalised; capacity is not stated. Steps 6.5 and 7 deferred; no fair value touched."
+review_path: "runs/gocl-q2fy27/work/review_gocl_q2fy27.md"

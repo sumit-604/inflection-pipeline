@@ -1,0 +1,40 @@
+stage: A5-adversary
+company: "GOCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "L956 consolidated CF 'Repayment of loans from Companies': label only, no value either period (A1 header L930); carried from Loop 0 as STYLE S1, no loop."
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L1-S1 (A4; wording from A5 Loop 0): 6D RL513 'guaranteed HNPCL borrowings of at least Rs 1,096.10 Cr [INFERENCE: a guarantee does not exceed the borrowing it backs]'; premise not general, guarantee given in earlier year can exceed amortised outstanding debt; restate as GOCL guarantee Rs 1,096.10 Cr (L775), 52.4% of standalone equity (L1020), HNPCL debt not disclosed. No number, grade or verdict changes; operator may overrule to FACTUAL."
+    - "L1-S2 (A4): last-digit differences from rounded subtraction: RL330 +10.70 vs 10.71; RL360 +162.78 vs 162.77; RL355 +46.67 vs 46.66."
+    - "L1-S3 (A4): change log RL902 'every Step 1 to Step 4 figure unchanged' conflicts with its own S7/F1 rows (Step 2 revenue YoY, Step 3 Q1 revenue, Step 3 +34.5% removed)."
+    - "L1-S4 (A4, info): review file ends with the change log, not the YAML; A4 YAML is still the last fenced block (RL796-RL882)."
+    - "L1-S5 (A4, optional): brief RL743 'three causes' omits exceptional FX +Rs 3.46 Cr (13.1% of YoY PAT change, RL302, L844)."
+    - "L1-S6 (A4, optional): brief RL756 'to one buyer' not stated in Note 3 (L442-L446)."
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "L1-S1 HNPCL debt floor inference wording in 6D (A4; from A5 Loop 0)"
+  - "L1-S2 last-digit rounded differences RL330, RL355, RL360 (A4)"
+  - "L1-S3 change log 'Step 1-4 unchanged' line vs its own S7/F1 rows (A4)"
+  - "L1-S4 change log follows YAML block (A4, info)"
+  - "L1-S5 brief 'three causes' omits exceptional FX (A4, optional)"
+  - "L1-S6 brief 'to one buyer' provenance (A4, optional)"
+  - "Loop 0 S1-S5 upstream (A1/A2) carried, no loop"
+analyst_note: "Loop 1 closes all three Loop 0 loop items. F1: the RED capex grade now rests on the CWIP-to-nil test, the review states Rs 0.76 Cr capitalised, and EMS segment assets carry a total-assets label. M1: net new lending against interest received sits in 5-III with H1 FY26 comparatives, and every downstream line uses the gross-versus-net wording. Both net-lending figures tie to the balance-sheet loan movement (L907, L1012). M2: 6D states the HNPCL multiple is not determinable and names the missing inputs and the Explanatory Statement (L49-L52). No new FACTUAL, MISSING or CONTRADICTION finding. One STYLE note needs the operator's eye. The 'at least Rs 1,096.10 Cr' HNPCL debt floor assumes a guarantee never exceeds the borrowing it backs. That is not general: debt can amortise below a guarantee given in an earlier year. The wording came from A5's own Loop 0 audit. It changes no number, grade or verdict, so I logged it as STYLE; the operator may overrule. Coverage carries forward because the A1 and A2 artifacts are unchanged."

@@ -172,9 +172,13 @@ stages.
 Built from the B09 SECTION 6 downstream candidates plus the whole evidence
 base.
 
-a. VERTICALS FRAMED: for each dominant variable from Section 2, write one
-   vertical. State what the corpus establishes (with block cites), what it
-   cannot establish, and the 2-3 questions that decide it.
+a. VERTICALS FRAMED: per frameworks/Downstream_Analysis_Guardrail.md
+   (OR-33), list the revenue streams first, each with its share of
+   revenue, and map each dominant variable from Section 2 to the stream
+   where its outside signal lives. Then write one vertical per material
+   revenue stream. State what the corpus establishes (with block cites),
+   what it cannot establish, and the 2-3 questions that decide it. The
+   corpus frames each question; outside sources answer it at Role 5.5.
 b. CANDIDATE SIGNAL TABLE: expand each B09 candidate with a draft
    falsifier, a draft cadence (Monthly / Quarterly / Event-Driven), and
    the likely source per Downstream_Source_Discovery_Protocol_v1_0. These

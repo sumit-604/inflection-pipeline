@@ -35,6 +35,11 @@ target, 3-5 year holds.
   each with a labelled [INFERENCE]. A chain with no inference is a
   summary. Live-web links this container cannot reach are marked PENDING
   LIVE VERIFICATION and named, never fabricated.
+- Never organise downstream verticals by dominant variable or build them
+  on the company's own financials. One vertical per revenue stream,
+  outside sources only, signal rows at the end
+  (frameworks/Downstream_Analysis_Guardrail.md, OR-33). Internal work is
+  labelled "Internal checks" and never reaches the tracker.
 - Never run Role 3 against a bull case that was not built to depth
   (Master v3.7 Rule H). Confirm the forward basis, the margin bridge, five
   chains, and a filled Entrepreneur Ledger first. If one is missing, STOP
@@ -140,6 +145,12 @@ Post-Kwick rulings, 2026-10-04 (audits/RULINGS_2026-10.md, post-Kwick section):
 - OR-32: Verifier A checks 100% of verdict-card, Section 1B pillar and
   Gate 0 inputs (mandatory_checked of mandatory_total in B12a); everything
   else stays a materiality sample with coverage stated honestly.
+Downstream guardrail ruling, 2026-10-19 (audits/RULINGS_2026-10.md, downstream guardrail section):
+- OR-33: downstream verticals run one per material revenue stream, never one
+  per dominant variable; stream list first, Demand Chain Map opens each,
+  outside sources only, signal rows close each. Work on the company's own
+  financials goes to "Internal checks: inputs to the /fttcp gate" and never
+  reaches the tracker (frameworks/Downstream_Analysis_Guardrail.md).
 Housekeeping rulings, 2026-10-11 (PR #212):
 - Remediation cap: one remediation cycle per Phase 1, counted in
   manifest.yaml remediation_cycles; a second is refused and goes to Halt 1 as
@@ -278,7 +289,10 @@ status stays in companies/<TICKER>.md and the run manifest.
                  in the same commit), plus
                  Downstream_Source_Discovery_Protocol_v1_0.md (source
                  registry for downstream signal candidates; Role 5.5
-                 verifies against it in claude.ai)
+                 verifies against it in claude.ai), plus
+                 Downstream_Analysis_Guardrail.md (OR-33: one downstream
+                 vertical per revenue stream, outside sources only;
+                 read before any downstream analysis)
 - claude-web/PROJECT_INSTRUCTIONS.md   repo copy of the claude.ai project
                  instructions (v4.1); the operator pastes it into the
                  project settings and keeps the two in sync

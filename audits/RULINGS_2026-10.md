@@ -139,3 +139,11 @@ Ruled by Keerti Kaushik, 2026-10-04, after the KWICK Phase 1 run (branch run/kwi
 | Ruling | Text | Applied in |
 |---|---|---|
 | OR-32 | Verifier A checks 100% of verdict-card inputs, Section 1B pillar inputs and Gate 0 inputs (the mandatory tier). Everything else stays a materiality sample with coverage stated honestly. B12a reports `mandatory_checked` against `mandatory_total`, beside `numbers_checked` and `material_universe`. | prompts/12-verifiers-pipeline.md (VERIFIER A rule 2, output statement, B12a YAML); CLAUDE.md OPERATOR RULINGS |
+
+## Ruling 2026-10-19: downstream analysis guardrail (OR-33)
+
+Ruled by Keerti Kaushik, 2026-10-19, after the Kross downstream work (branch run/kross-2026-09-27). Project instructions Phase 2d said "one vertical per dominant variable"; the Downstream Source Discovery Protocol said "one map per revenue stream". On Kross this produced verticals built on the company's own financials (margin, working capital, funding). Applied on branch framework/downstream-guardrail-2026-10-19.
+
+| Ruling | Text | Applied in |
+|---|---|---|
+| OR-33 | Downstream verticals run one per material revenue stream (10% or more of revenue, or thesis-dependent), never one per dominant variable. The stream list comes first. Each vertical opens with the Demand Chain Map, verifies only from sources outside the company, and closes with at least one signal row. Work built on the company's own financials goes in a separate "Internal checks: inputs to the /fttcp gate" block, is never numbered as a vertical, and never reaches the tracker. | frameworks/Downstream_Analysis_Guardrail.md (new); frameworks/Downstream_Source_Discovery_Protocol_v1_0.md (PART 1 pointer); claude-web/PROJECT_INSTRUCTIONS.md (Part 4.3 Phase 2d); CLAUDE.md (NEVER, OPERATOR RULINGS, STRUCTURE) |

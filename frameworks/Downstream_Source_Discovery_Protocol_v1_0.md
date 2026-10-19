@@ -14,6 +14,8 @@ That move was ad-hoc. This protocol makes it procedural. The claim underneath it
 
 ## PART 1 — THE DEMAND CHAIN MAP
 
+> Before building any map, apply frameworks/Downstream_Analysis_Guardrail.md (OR-33, 19-Oct-2026): one vertical per revenue stream, stream list first, outside sources only, signal rows last.
+
 For every material revenue stream of the target company, complete this decomposition. One map per revenue stream, not one per company. A company with three revenue streams gets three maps.
 
 | # | Field | Question it answers | Example (AESL/Oilmax, Amguri asset) |

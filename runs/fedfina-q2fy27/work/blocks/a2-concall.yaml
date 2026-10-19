@@ -1,0 +1,34 @@
+stage: A2-enumerator
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "work/ledger_concall_fedfina_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 1
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 35
+  participants: 17
+  turns: 74
+  questions: 26
+  mgmt_numbers: 141
+  mgmt_numbers_mfs: 4
+  mgmt_numbers_total: 145
+  forward_phrases: 58
+  hedge_qualifiers: 22
+  dates: 14
+  slides: 0
+  slide_numbers: 0
+flags_raised: [MISSING_FROM_STRUCTURED, ZERO_STANDING, REPEAT_QUESTION, MGMT_ABSENCE, SPEAKER_INFERRED, MIXED_TURN, DECLINED_GUIDANCE, NO_TURN_IDENTIFIED]
+ids_in_structured: 267
+ids_referenced: 267
+orphan_ids: []
+missing_from_structured:
+  - "loop_1: 15 counted units, MFS-C1 to C21 in section 9 (4 mgmt NUMBER, 9 FORWARD, 1 DATE, 1 QUALIFIER; plus 4 repeats and 2 time refs not counted)"
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "loop_1: applied. A5 findings M7, M8, M9, F6 closed. Added 21 MFS rows (no A1 ID): 4 new management numbers (L57, L113, L482, L483), 9 forward phrases, 1 date (L270), 1 qualifier (L715-716); 4 repeats and 2 time refs listed, not counted. Every line read verbatim first; all held the named unit. Mixed turns now T22, T26, T33, T47, T50, T51, T54, T62, T71. Question turns 26 (added L687-690, L723-726, L743-746). F6: R121-R123 moved to management, R130-R131 to analyst. Management numbers 141 on A1 rows, 145 with the 4 MFS. Analyst numbers 8. 52 of 74 turns SPEAKER_INFERRED, so side split rests on A1 inference. T58 uncertain as a question. R157-R159 have no speaking turn. R100 is the one ZERO_STANDING. R198 is declined yield guidance. Count test re-run, all categories match, orphan_ids empty."

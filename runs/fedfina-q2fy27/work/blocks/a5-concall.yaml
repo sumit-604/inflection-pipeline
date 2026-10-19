@@ -1,0 +1,31 @@
+stage: A5-adversary
+company: "FEDFINA"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S28: 4A Q06 (review L807) still reads '90-95% take the maximum; LTV set by exposure slab caps of 75% and 80%' while Q41 (L578) and flag 5 (L1184, YAML L1419) now say 'want the maximum'. L807 fairly summarises Call L480, and Q07 (L808) records the CEO's 72-74% on the next row, so no fact changes. Write '90-95% want the maximum their exposure slab allows, 75% or 80%'"
+    - "S29 (A5's own C7 replacement text): Q41 (L578) and flag 5 (L1184, YAML L1419) state the 72-74% working mix twice; drop one. The loop-1 gap string lost the quote marks round the transcript phrases 'minus or two percent' and 'not everybody at that highest one' (L578, L1184, L1373, L1419); restore them and gloss the first [ASR: plus or minus two percent], as Q07 (L808) reads it"
+    - "Carried, open: S13 (review L484), S23 (A1 line anchors), S25 (A2 ledger), S7-S10, S12"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S28, S29 new (Re-audit loop 2); S24, S26, S27 applied and closed (review L705, L574, L815); S15-S22 closed in loop 1; S13, S23, S25, S7-S10, S12 carried, open"
+  - "Resolved and carried as resolved: C7 (loop-1 CONTRADICTION) closed at review L578, L1184, L1419 and L1373 (the task's L1420 is the unchanged GOLD-TRIGGER-AT-RISK YAML line); all 16 loop-0 findings (F6, M7, M8, M9, F7, F8, C4, C5, C6, M10-M15) stay closed"
+analyst_note: "Loop 2 closes C7. A4 put my text into Q41 (L578) and aligned flag 5 (L1184), its YAML line (L1419) and the YAML Q41 question (L1373); a4.yaml carries the same lines. Each cite holds: Call L480-L483 (90-95% want the maximum; 75% and 80% caps), Call L497-L506 (CEO: 72-74% mix, 'not everybody at that highest one') and Deck R327 (72.1% average gold origination LTV, Q2 slide). The cells now agree with 7A L970, 6D L450 and the brief. S24, S26 and S27 are applied verbatim. With no git and no pre-loop-2 copy, I tested regression by line fingerprint and fix strings. Every loop-1 anchor still sits at its line up to L1449. The last text line moves from L1495 to L1505: +1 for role5_loop_2, +9 for the loop-2 change log. Every edit I found is in that log. An unlisted in-place edit outside the lines I read cannot be fully excluded; nothing points to one. Two STYLE notes: Q06 still says 'take the maximum', and my own replacement text repeats 72-74% and lost its quote marks. Verdict COMPLETE."

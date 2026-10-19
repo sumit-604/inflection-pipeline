@@ -1,0 +1,80 @@
+stage: A3-forensics
+company: "FEDFINA"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "work/forensics_concall_fedfina_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: PASS
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "FN-01", check: "F1", line: "L420-424, L400-401 (T18-T19, inferred, ASR_GARBLED L420)", classification: "AMBIGUOUS", implication: "Zero auction-loss record rests on a garbled negation; mgmt 'fully geared' for auctions as Stage 2 rises; ask Q2 auction count/value and any shortfall"}
+  - {id: "FN-02", check: "F6", line: "L387-394, L414-415 (T18, inferred); L160", classification: "FORWARD-SIGNAL", implication: "Stage 2 2.2->2.7->3.6% not called peaked; 1-2 more quarters; GNPA 1.8% vs own <2% guide leaves 20 bps"}
+  - {id: "FN-03", check: "F6", line: "L167-171 (T05); L94", classification: "FORWARD-SIGNAL", implication: "PCR 38.36->35.37% (-299 bps); checklist 2 fails; Pillar 2L 'thins further' wording met; gold PCR 10.5% keeps pulling blend toward 32%; deck segment blend 33.0% vs reported 35.4% unexplained"}
+  - {id: "FN-04", check: "F6", line: "L727-733 (T51, inferred); L888", classification: "AMBIGUOUS", implication: "'Not revised' guidance restated as ROA +30-40bps / AUM 20-25% vs Q1 log +20-30bps / entity 20-22% / gold 25-30%; either entity guide raised or gold guide cut; credibility data point"}
+  - {id: "FN-05", check: "F6", line: "L734-736 (T51), L947-948 (T73), inferred", classification: "FORWARD-SIGNAL", implication: "ROA 3 pulled forward undated while Q2 2.8% already tops restated range; bar rises into NIM pressure"}
+  - {id: "FN-06", check: "F6", line: "L307-309, L652, L661, L681-682, L632-633 (inferred)", classification: "FORWARD-SIGNAL", implication: "NIM compression signalled for H2: yield guide declined, 43% EBLR borrowings transmit hikes, deck spread ~-50bps QoQ; FTTCP NIM leg at risk"}
+  - {id: "FN-07", check: "F14", line: "L138-143 (T05, explicit)", classification: "AMBIGUOUS", implication: "CFO 'optical increase' 29bps in yield vs deck 16.7->16.4%; CoB 'flat 7.80' on i-GAAP basis vs deck CoB 8.6->8.8%; flattering basis on both spread legs"}
+  - {id: "FN-08", check: "F6", line: "L56 (T04); L148-150 (T05, explicit)", classification: "FORWARD-SIGNAL", implication: "'Reduce reliance on DA' vs record Rs 1,085 Cr sell-down; spoken ~700 vs filed 876.89 Cr DA with 23-month residual maturity on a 'gold' pool; D/E back only to Mar-26 4.61 via asset sales"}
+  - {id: "FN-09", check: "F6", line: "L259, L321, L484-485, L498-501 (all inferred)", classification: "FORWARD-SIGNAL", implication: "Book LTV 68% vs working mix 72-74% and IGL to 85% (20% of disbursal); AUM per tonne +4.8% QoQ on flat gold fits LTV creep; thinner collateral cushion"}
+  - {id: "FN-10", check: "F6", line: "L588-591, L611-613, L464, L800 (inferred)", classification: "FORWARD-SIGNAL", implication: "Dated Q3 FY27 test: ST LAP disbursal best of 8-9 quarters (>Rs 289 Cr, confirm series), yield >14.9%; approval rates up to early/mid 40s in aggressive market = vintage risk"}
+  - {id: "FN-11", check: "F6", line: "L885-886, L670, L757-759 (inferred)", classification: "FORWARD-SIGNAL", implication: "Tonnage H1 +2.4% (12.6->12.9t); 10-12% FY27 needs +7.4-9.4% in H2 (13.9-14.1t); AUM H2 needs +9.8-14.3%; guide framed only on flat/rising gold"}
+  - {id: "FN-12", check: "F7", line: "L188-192 (T05, explicit); L174-175; L542", classification: "FORWARD-SIGNAL", implication: "C/I downtrend stalls in H2: CFO only 'hopeful' of containing at ~52.5% with >=150 branches; opex/ATA 4.8->4.9%"}
+  - {id: "FN-13", check: "F7", line: "L197-199 (T05); L905-907 (T68, inferred)", classification: "FORWARD-SIGNAL", implication: "Insurance-distribution change pre-emptively raised, framed 'whenever'; ~10bps of ROA exposed; substitute unnamed"}
+  - {id: "FN-14", check: "F7", line: "L307, L394, L589, L646-647 (inferred)", classification: "AMBIGUOUS", implication: "Three numbers declined (gold yield, Stage 2, ST LAP disbursal), exactly the H2 swing variables; hard numbers only on lagging outcomes"}
+  - {id: "FN-15", check: "F14", line: "L67-68, L94 vs L167, L152-153", classification: "NEUTRAL-FACT", implication: "Gold branches spoken 831 vs filed 706; PCR 35.4/35.5 vs 35.37; mortgage sentence garbled; with FN-04/07/08 four spoken-vs-filed drifts on one call"}
+  - {id: "FN-16", check: "F17", line: "L167-171 (nearest)", classification: "CONFIRMATORY-NEGATIVE", implication: "PCR floor and segment PCR silent 2 consecutive quarters on the most-at-risk, deteriorating tripwire"}
+  - {id: "FN-17", check: "F17", line: "L607-610 (nearest, inferred)", classification: "AMBIGUOUS", implication: "ST LAP collections in-housing completion unconfirmed 2 quarters; disbursal leg met"}
+  - {id: "FN-18", check: "F17", line: "L756-759 (nearest, inferred)", classification: "AMBIGUOUS", implication: "No gold-price-down scenario; with 72-74% incremental LTV a fall feeds LTV breaches, auctions, Stage 3"}
+  - {id: "FN-19", check: "F17", line: "L160-161 (nearest)", classification: "CONFIRMATORY-NEGATIVE", implication: "Gold DPD buckets, GS3 provision bridge, write-offs silent 2 quarters while Stage 2/3 rise; 'entirely gold' attribution unproven"}
+  - {id: "FN-20", check: "F17", line: "L129, L150 (nearest)", classification: "AMBIGUOUS", implication: "CRAR/Tier I equity-raise floor and co-lending partner count silent 2 quarters; CRAR uplift came via DA"}
+  - {id: "FN-21", check: "F17", line: "L140-141 (nearest)", classification: "AMBIGUOUS", implication: "DA-unwinding drag and DA-income-neutral date unquantified 2 quarters (partial); matters more after record Q2 assignment"}
+forward_signals: ["FN-02", "FN-03", "FN-05", "FN-06", "FN-08", "FN-09", "FN-10", "FN-11", "FN-12", "FN-13"]
+ambiguous: ["FN-01", "FN-04", "FN-07", "FN-14", "FN-17", "FN-18", "FN-20", "FN-21"]
+commitments:
+  - {commitment: "Credit cost below 1% of avg total assets FY27", implied_date: "Mar-27", ref: "L89, L370, L943-945", status_word: "underway"}
+  - {commitment: "GNPA below 2%", implied_date: "Mar-27", ref: "L372-373", status_word: "underway"}
+  - {commitment: "AUM growth ~20-25% FY27 on flat gold", implied_date: "Mar-27", ref: "L733, L757-759, L888", status_word: "underway"}
+  - {commitment: "ROA +30-40bps over FY26 ~2.4% (restated; log +20-30)", implied_date: "Mar-27", ref: "L728-729", status_word: "underway"}
+  - {commitment: "ROA 3 sooner than promised; ROE target (number lost in ASR)", implied_date: "undated", ref: "L735-736, L947-948", status_word: "underway"}
+  - {commitment: ">=150 branches in H2 FY27", implied_date: "Mar-27", ref: "L188-189, L539-541", status_word: "initiated"}
+  - {commitment: "Contain C/I at ~52.5% despite H2 branches", implied_date: "H2 FY27", ref: "L190-192", status_word: "initiated"}
+  - {commitment: "Continue opex-reduction trajectory", implied_date: "medium term", ref: "L179-180, L553, L562", status_word: "underway"}
+  - {commitment: "Gold tonnage +10-12% a year; H2 trajectory change", implied_date: "Mar-27", ref: "L885-886, L670", status_word: "underway"}
+  - {commitment: "Gold growth per guidance Q3-Q4; H2 beats H1", implied_date: "Q3-Q4 FY27", ref: "L248-249, L262-267, L938", status_word: "underway"}
+  - {commitment: "Gold customer-behaviour transition in 1-2 more quarters", implied_date: "Q3-Q4 FY27", ref: "L414-415", status_word: "underway"}
+  - {commitment: "No auction loss on principal or interest (ASR-garbled L420)", implied_date: "standing", ref: "L420-424", status_word: "underway"}
+  - {commitment: "ST LAP Q3 best disbursal of 8-9 quarters, yield above Q2", implied_date: "Dec-26", ref: "L588-591, L611-613", status_word: "initiated"}
+  - {commitment: "ST LAP pedal pressed Q3-Q4", implied_date: "H2 FY27", ref: "L460-465, L941-942", status_word: "initiated"}
+  - {commitment: "ST LAP ROA rises toward gold ROA", implied_date: "undated", ref: "L851-857", status_word: "initiated"}
+  - {commitment: "ST LAP credit-cost stabilisation", implied_date: "done", ref: "L455-458", status_word: "completed"}
+  - {commitment: "IGL product live since April", implied_date: "Apr-26", ref: "L268-271", status_word: "completed"}
+  - {commitment: "DA ~Rs 700 Cr gold book to de-leverage (filed 876.89); D/E 4.9->4.6", implied_date: "Q2 FY27", ref: "L148-150", status_word: "completed"}
+  - {commitment: "Reduce reliance on direct assignment", implied_date: "standing", ref: "L56", status_word: "underway"}
+  - {commitment: "Fund growth through internal accruals (ASR 'internal approvals')", implied_date: "standing", ref: "L129", status_word: "underway"}
+  - {commitment: "Substitute insurance income when distribution change lands", implied_date: "conditional", ref: "L906-907, L197-199", status_word: "initiated"}
+  - {commitment: "Hold gold ROA flat at 20-25% AUM growth via opex leverage", implied_date: "Mar-27", ref: "L893-899", status_word: "underway"}
+  - {commitment: "Gold branches extend ST LAP footprint", implied_date: "undated", ref: "L912-920", status_word: "underway"}
+  - {commitment: "Absorb rate shock, deliver superior ROA/ROE; handle NIM compression via other levers", implied_date: "H2 FY27", ref: "L686, L661-662", status_word: "initiated"}
+  - {commitment: "Medium ticket LAP continues trajectory (ASR_GARBLED)", implied_date: "undated", ref: "L825-826", status_word: "underway"}
+  - {commitment: "Entry into eastern India", implied_date: "Q2 FY27", ref: "L69", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The call reads clean on lagging outcomes and soft on leading variables. Credit cost 0.6%, ROA 2.8%, ROE 17% all tie to filings. Every swing variable for H2 was declined or hedged: gold yield, Stage 2, ST LAP number, C/I 'hopeful', insurance 'whenever'. Three threads join. (1) Collateral: book LTV 68% but working mix 72-74%, IGL to 85%, AUM per tonne +4.8% QoQ on flat gold, no price-down case. (2) Coverage: PCR -299 bps on gold mix; gold PCR 10.5% means every gold Stage 3 step pulls toward 32%; the Pillar 2L 'thins further' wording is met and needs a ruling. (3) Funding: de-leveraging came from a record DA (filed 876.89 vs spoken ~700, 23-month residual on a 'gold' pool), against the stated priority to cut DA reliance. Four spoken-vs-filed drifts plus a 'not revised' guidance claim that differs from the Q1 log feed CREDIBILITY-ND. Most findings sit in SPEAKER_INFERRED turns; the CFO prepared remarks (T05, explicit) carry FN-03, FN-07, FN-08, FN-12."

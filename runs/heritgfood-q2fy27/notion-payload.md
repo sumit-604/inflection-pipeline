@@ -24,3 +24,8 @@ Status: payload only. No Notion write was made in this run. The operator approve
 
 ## Tracker candidates (Step 5.5C; not written; fewer than three external signals)
 See review Step 5.5C. Tracker rows were not supplied to this run.
+
+## Addendum 2026-10-20: Role 5 concall (NOT WRITTEN; awaiting operator approval)
+- Key Notes line to prepend (if the page is created): 2026-10-19 \| Q2 FY27 concall (ASR transcript): Q3 milk cost +11% YoY 'might continue' vs 'not 47 to 50'; EBITDA floor promised; cow (80% of procurement) the more inflationary species; 26 of 34 questions not addressed (not asked); credibility ND (first call); PROCEED WITH FLAGS. Role 5 A5 INCOMPLETE at close, 6 open items flagged (no third loop).
+- Content: the merged review (runs/heritgfood-q2fy27/work/review_heritgfood_q2fy27.md, now with the ROLE 5 section, Step 8.5 call-status column and the open-items table), the concall forensics (work/forensics_concall_heritgfood_q2fy27.md) and the final Role 5 audit (work/audit_heritgfood_q2fy27_role5.md).
+- Source caveat to carry on the page: the concall is a machine (ASR) transcript of the call recording, not a company-filed transcript.

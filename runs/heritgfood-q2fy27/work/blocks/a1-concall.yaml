@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 7                # ten-minute time blocks (transcript is plain text, not PDF)
+formfeed_count: 0            # N.A., text file; 7 [page N] markers inserted
+line_count: 853              # fulltext file lines (732 source lines + 114 header + 7 page markers)
+unit_convention: "Millions (Rs million); Crores; lakh litres per day; Rs per litre; lakh crore"
+conversion_factor_to_cr: "Millions x0.1; Crores x1; lakh crore x100000; volumes and per-litre prices not converted"
+text_layer_present: false    # N.A. plain-text ASR transcript, pdffonts gate not applicable
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (and H1 FY27)"
+fulltext_path: "runs/heritgfood-q2fy27/extracted/heritgfood-concall-q2fy27-fulltext.md"
+structured_path: "runs/heritgfood-q2fy27/extracted/heritgfood-concall-q2fy27-structured.md"
+structured_counts:
+  number: 162
+  entity: 52
+  forward: 60
+  date: 20
+  qualifier: 42
+structured_id_range: "R001-R336"
+gate_a1: pass
+gap_note: ""

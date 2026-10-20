@@ -1,0 +1,171 @@
+# SUPERSEDED: Role 5 run-1 block. Merge is done; see a4-role5-loop1.yaml and a4-role5-loop2.yaml.
+stage: A4-analyst
+company: "HERITGFOOD"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: "role5-run1"
+role4_loops_applied: [1, 2]
+merge_into_review: "pending: no Edit tool and the per-reply output limit blocked a verbatim rewrite of the 987-line review; addendum delivered as part files with exact find/replace (see analyst_note)"
+docs_merged: [results, presentation, pressrelease, concall]
+ledger_reconciliation:
+  notes: 12
+  turns: 81
+  slides: 50   # 45 presentation slides + 5 press-release pages
+  concall_questions: 24
+  concall_rows: 336
+  all_reviewed: true
+  a3_findings_incorporated: [RES-F1-1, RES-F1-2, RES-F1-3, RES-F2-1, RES-F4-1, RES-F8-1, RES-F9-1, RES-F12-1, RES-F12-2, RES-F12-3, RES-F14-1, RES-F14-2, RES-F14-3, RES-F14-4, RES-F14-5, RES-F15-1, PRE-A3-01, PRE-A3-02, PRE-A3-03, PRE-A3-04, PRE-A3-05, PRE-A3-06, PRE-A3-07, PRE-A3-08, PRE-A3-09, PRE-A3-10, PRE-A3-11, PRE-A3-12, PRE-A3-13, PRE-A3-14, PRE-A3-15, PRE-A3-16, PRE-A3-17, PRE-A3-18, PRE-A3-19, PRE-A3-20, PRE-A3-21, PR-A3-01, PR-A3-02, PR-A3-03, PR-A3-04, PR-A3-05, PR-A3-06, PR-A3-07, PR-A3-08, PR-A3-09, PR-A3-10, CC-A3-01, CC-A3-02, CC-A3-03, CC-A3-04, CC-A3-05, CC-A3-06, CC-A3-07, CC-A3-08, CC-A3-09, CC-A3-10, CC-A3-11, CC-A3-12, CC-A3-13, CC-A3-14, CC-A3-15, CC-A3-16, CC-A3-17, CC-A3-18, CC-A3-19, CC-A3-20, CC-A3-21]
+  a4_observations: [A4-OBS-1, A4-OBS-2, A4-OBS-3]
+  a5_loop1_findings_applied: [F1, F2, F3, F4, C1, C2, M1, M2, M3, M4, M5, M6, M7, S1, S2, S8]
+  a5_loop2_findings_applied: [F1, F2, S9, S10, S11, S12]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE"
+decision_status_verified: "ND: no Notion company page, no companies/HERITGFOOD.md, no spear (orchestrator fetch 2026-10-17; re-verified for Role 5 2026-10-19); framed as PRE-THESIS READ"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", total_pat_gap_pct: 1.12, owners_pat_gap_pct: 2.78}
+  - {period: "Q1 FY27", total_pat_gap_pct: 0.81, owners_pat_gap_pct: 1.81}
+  - {period: "Q2 FY26", total_pat_gap_pct: 5.35, owners_pat_gap_pct: 5.53}
+  - {period: "H1 FY27", total_pat_gap_pct: 0.98, owners_pat_gap_pct: 2.34}
+  - {period: "H1 FY26", total_pat_gap_pct: 6.24, owners_pat_gap_pct: 6.37}
+  - {period: "FY26", total_pat_gap_pct: 7.47, owners_pat_gap_pct: 7.75}
+questions_for_management:
+  - {q: "Q1 Landed milk cost +Rs 4.74/L (+11%) vs realisation +6%: what liquid-milk price increase (%, effective date) since 30 Sep 2026?", from_finding_id: "PRE-A3-05, PR-A3-06", call_status_16oct: "partly (CC-L364-367, CC-L638-639)"}
+  - {q: "Q2 Standalone CWIP Rs 46.61 Cr to Rs 127.58 Cr in H1: project, budgeted cost, commissioning month?", from_finding_id: "RES-F12-1, PRE-A3-04, PR-A3-07, PR-A3-02", call_status_16oct: "silent"}
+  - {q: "Q3 C-S PAT gap Rs 0.34 Cr vs Rs 2.59 Cr YoY: Q2 revenue and PBT of Heritage Novandie and Get-A-Way separately?", from_finding_id: "RES-F2-1, PR-A3-09", call_status_16oct: "silent"}
+  - {q: "Q4 Op EBITDA margin 5.61% vs 6.94% YoY: which quarter does the YoY change turn positive?", from_finding_id: "PRE-A3-16, PR-A3-01", call_status_16oct: "partly (CC-L603-604)"}
+  - {q: "Q5 VAP growth ~39.7% (Q1) to 32.0% (Q2): which VAP categories above 85% utilisation?", from_finding_id: "PRE-A3-21, PR-A3-04", call_status_16oct: "silent"}
+  - {q: "Q6 Feed revenue +46.7% to Rs 85.25 Cr: how much sold to group companies?", from_finding_id: "RES-F12-2", call_status_16oct: "silent (CC-L703-704 names an integration vertical)"}
+  - {q: "Q7 Standalone CF Rs 7.20 Cr into subsidiaries vs investment line +Rs 0.05 Cr: where carried, which subsidiary?", from_finding_id: "RES-F14-2", call_status_16oct: "silent"}
+  - {q: "Q8 Which subsidiary (Q2 revenue Rs 14.26 Cr, loss Rs 1.08 Cr) was not reviewed? (hypothesis: Heritage Novandie)", from_finding_id: "RES-F4-1", call_status_16oct: "silent"}
+  - {q: "Q9 Feed margin 9.03% to 3.91% YoY: input cost or lower selling price?", from_finding_id: "RES-F12-2, PRE-A3-03", call_status_16oct: "answered (CC-L700-705)"}
+  - {q: "Q10 Procurement +7% vs milk sales +2.5%: how many LLPD to SMP or bulk fat?", from_finding_id: "PR-A3-08", call_status_16oct: "partly (CC-L531)"}
+  - {q: "Q11 Standalone ETR 26.39% vs 24.59% Q1 and 25.17% statutory: what lifted it?", from_finding_id: "RES-F8-1, PRE-A3-08", call_status_16oct: "silent"}
+  - {q: "Q12 Flavoured-milk GST order (Rs 6.93 Cr refund): final or under appeal?", from_finding_id: "RES-F1-1", call_status_16oct: "silent"}
+  - {q: "Q13 HNFL private-to-public conversion: stake sale, raise or listing in FY27?", from_finding_id: "RES-F15-1", call_status_16oct: "silent"}
+  - {q: "Q14 HNFL carrying value at 30 Sep 2026 and FY27 impairment headroom on Rs 20.63 Cr goodwill plus intangibles?", from_finding_id: "RES-F1-2", call_status_16oct: "silent"}
+  - {q: "Q15 Which entity carries the Rs 4.04 Cr NCI, and the group holding?", from_finding_id: "PRE-A3-14, PR-A3-09", call_status_16oct: "partly (CC-L229-230, CC-L774-775)"}
+  - {q: "Q16 FY28E VAP share and gross margin targets (slide 29 bars without values)?", from_finding_id: "PRE-A3-18", call_status_16oct: "silent"}
+  - {q: "Q17 Which products lost volume after Q2 price increases, and their revenue share?", from_finding_id: "PRE-A3-06", call_status_16oct: "partly (CC-L522-524)"}
+  - {q: "Q18 Standalone CF +Rs 27.01 Cr other financial liabilities vs BS -Rs 14.81 Cr: what are the Rs 19.63 Cr non-current other liabilities?", from_finding_id: "RES-F12-3", call_status_16oct: "silent"}
+  - {q: "Q19 Is the Q2 VAP Rs 451.0 Cr standalone or consolidated? Separates reading A (+3.45 pp) from B (+4.07 pp)", from_finding_id: "PRE-A3-19, PR-A3-03 (L2-F1)", call_status_16oct: "silent (CC-L201, CC-L476-477 repeat without basis)"}
+  - {q: "Q20 'Net Debt/Equity 0.33' = borrowings plus leases over equity: what does management deduct?", from_finding_id: "PRE-A3-10", call_status_16oct: "silent"}
+  - {q: "Q21 Milk revenue growth outside Telangana in Q2?", from_finding_id: "PRE-A3-20", call_status_16oct: "silent"}
+  - {q: "Q22 Same commentary attributed to independent Chairperson (deck) and ED (release): who is the author?", from_finding_id: "A4-OBS-1", call_status_16oct: "silent (WTD presented on the call, CC-L147)"}
+  - {q: "Q23 FY25 exceptional Rs 8.7 Cr; any JV beside associate SKIL Raigam Power?", from_finding_id: "PRE-A3-01, PRE-A3-12", call_status_16oct: "silent"}
+  - {q: "Q24 Q2 overview slide numbers highlights 01, 02, 03, 05: what was item 04?", from_finding_id: "PRE-A3-15", call_status_16oct: "silent"}
+  - {q: "Q25 Consolidated Q2 interest income Rs (0.09) Cr vs standalone +Rs 0.20 Cr: what reversal?", from_finding_id: "RES-F14-4", call_status_16oct: "silent"}
+  - {q: "Q26 Is the +Rs 8.50 Cr H1 FY26 'investment in subsidiaries' inflow the cash acquired on HNFL control?", from_finding_id: "RES-F14-3", call_status_16oct: "silent"}
+  - {q: "Q27 Slide 8 EPS on owners' PAT (Rs 31.36 Cr); add basic EPS?", from_finding_id: "PRE-A3-09", call_status_16oct: "silent"}
+  - {q: "Q28 Is the Rs 3.4 Cr FY26 slide 43 gap the Rs 3.48 Cr intangibles under development?", from_finding_id: "PRE-A3-11", call_status_16oct: "silent"}
+  - {q: "Q29 Slide 9: which series is cow milk; Q2 cost per litre by species? (call favours cow = Rs 39-41 series)", from_finding_id: "PRE-A3-05 (A5-M1); CC-A3-16", call_status_16oct: "partly (CC-L500-502, CC-L672, CC-L686)"}
+  - {q: "Q30 Slide 17 6% procurement CAGR vs slide 21 1.6%: which is right; why did FY26 procurement fall?", from_finding_id: "A5-M2", call_status_16oct: "silent (analyst repeated 6%, CC-L741)"}
+  - {q: "Q31 Price increases by product, and Novandie/Get-A-Way share of Q2 VAP Rs 451.0 Cr?", from_finding_id: "PR-A3-04, PRE-A3-21 (A5-M4, L2-F1)", call_status_16oct: "partly (CC-L357-358, CC-L790-795)"}
+  - {q: "Q32 Consideration for HNFL control and 71% of Get-A-Way; allocation of Rs 7.19 Cr goodwill and Rs 13.45 Cr intangibles?", from_finding_id: "RES-F1-2, PRE-A3-14 (A5-M7)", call_status_16oct: "silent"}
+  - {q: "Q33 Consolidated H1 FY27 CFO +Rs 10.98 Cr other financial liabilities (L592): what, and will it reverse?", from_finding_id: "RES-F12-3 (A5-M5)", call_status_16oct: "silent"}
+  - {q: "Q34 FG and WIP fell Rs 48.32 Cr in Q2: cost per litre vs September replacement cost?", from_finding_id: "PR-A3-08 (A5-M6)", call_status_16oct: "silent"}
+  - {q: "Q35 Q3 guide: '11% might continue' (Rs 50.56/L on Rs 45.55) or 'not 47 to 50'? October landed cost per litre?", from_finding_id: "CC-A3-01, CC-A3-11", call_status_16oct: "new"}
+  - {q: "Q36 EBITDA floor: margin (5.61%) or absolute (Rs 73.97 Cr)? Does it hold at Rs 50/L?", from_finding_id: "CC-A3-02", call_status_16oct: "new"}
+  - {q: "Q37 Cost-ratio declines (1%, 0.6%, 0.1%): YoY or QoQ, consolidated or standalone?", from_finding_id: "CC-A3-09 (FC-2)", call_status_16oct: "new"}
+  - {q: "Q38 What does '90% of everything they sell' measure; Q2 revenue by curd, paneer, ghee, ice cream?", from_finding_id: "CC-A3-12", call_status_16oct: "new"}
+  - {q: "Q39 Get-A-Way supply 3,272 L/day: transfer price; inside ice cream growth, own ice cream revenue and VAP line? Base year of the Rs 500 Cr target?", from_finding_id: "CC-A3-08, CC-A3-17", call_status_16oct: "new"}
+  - {q: "Q40 Heritage farm-gate price vs Aavin in overlapping cow-milk catchments, Q2 and October?", from_finding_id: "CC-A3-13", call_status_16oct: "new"}
+  - {q: "Q41 Who bears the cattle-feed subsidy; any guarantee or first-loss cover on facilitated farmer loans?", from_finding_id: "CC-A3-14", call_status_16oct: "new"}
+  - {q: "Q42 What changed in the Get-A-Way ('now hold 71%') and Novandie ('now wholly owned') holdings, when, at what consideration?", from_finding_id: "CC-A3-15", call_status_16oct: "new"}
+  - {q: "Q43 Which large projects were capitalised at the start of FY27, at what cost; expected FY27 D&A?", from_finding_id: "CC-A3-03", call_status_16oct: "new"}
+  - {q: "Q44 Liquid-milk consumer price per litre from 1 Oct vs Q2 average Rs 60.34?", from_finding_id: "CC-A3-04", call_status_16oct: "new"}
+  - {q: "Q45 Bangalore share of milk sales; Heritage price action after Karnataka's +Rs 8/L on 1 Nov?", from_finding_id: "CC-A3-05", call_status_16oct: "new"}
+  - {q: "Q46 Q3 ghee volume growth YoY after flat Q2 volume on ~20% revenue growth?", from_finding_id: "CC-A3-06", call_status_16oct: "new"}
+  - {q: "Q47 NutriVate H2 PBT margin vs Q2 4.3%; share of feed revenue through the integration vertical?", from_finding_id: "CC-A3-07", call_status_16oct: "new"}
+  - {q: "Q48 Milk not sold as liquid rose ~4.10 to 4.93 LLPD (+20%): SMP, bulk in 'Others', or VAP?", from_finding_id: "CC-A3-18 (FC-3)", call_status_16oct: "new"}
+  - {q: "Q49 Call said sequential EBITDA gain beat PBT/PAT due to depreciation; filing shows PBT +26.97%, PAT +23.59% vs EBITDA +19.58% QoQ: was YoY meant?", from_finding_id: "A4-OBS-2 (FC-1)", call_status_16oct: "new"}
+  - {q: "Q50 Conglomerate entrant (ice cream, drinkables): which categories and cities; ice cream price gap?", from_finding_id: "A4-OBS-3", call_status_16oct: "new"}
+  - {q: "Q51 In the last milk-cost down-cycle, did Heritage and cooperatives hold liquid-milk prices?", from_finding_id: "CC-A3-10", call_status_16oct: "new"}
+monitorables:
+  - {item: "M1 Q2 concall: ASR transcript obtained, Role 5 run 2026-10-19; company-filed transcript pending", implied_date: "filed transcript: date ND", source_ref: "PR-L191, CC-L115-127"}
+  - {item: "M2 Q3 FY27 consolidated gross margin YoY gap vs Q3 FY26 (bull narrower than -271 bps, bear wider), S-vs-C gap, CWIP", implied_date: "by 2027-02-14 [INFERENCE: Reg 33]", source_ref: "Step 8C"}
+  - {item: "M3 VAP capacity expansion: CWIP project capitalisation and COD", implied_date: "none stated; review point Q3 FY27 results by 2027-02-14", source_ref: "P-l122, PR-L175, L158"}
+  - {item: "M4 Sustainable margin improvement (premiumisation, cost control, operating leverage)", implied_date: "none stated", source_ref: "P-l127-128, PR-L180-182"}
+  - {item: "M5 Village-level procurement outreach; procurement LLPD", implied_date: "ongoing; Q3 FY27", source_ref: "PR-L73-74"}
+  - {item: "M6 Strategic investments behind growth", implied_date: "none stated", source_ref: "PR-L182-183"}
+  - {item: "M7 Livo yogurt flavours launch", implied_date: "next, undated", source_ref: "P-l450"}
+  - {item: "M8 FY27 impairment test on HNFL investment, Rs 7.19 Cr goodwill and Rs 13.45 Cr other intangibles outside the parent (Rs 20.63 Cr)", implied_date: "by 2027-05-30 [INFERENCE: Reg 33]", source_ref: "L299, L507-508, L160"}
+  - {item: "M9 FY27 full-year CFO/PAT and EBITDA-basis conversion; reversal of the +Rs 10.98 Cr L592 inflow", implied_date: "by 2027-05-30", source_ref: "Step 5D, L592"}
+  - {item: "M10 FY27 Annual Report: subsidiary P&L, GST and farmer-loan contingent liabilities, actuarial assumptions, acquisition consideration", implied_date: "before FY27 AGM, date ND; review point 2027-05-30", source_ref: "RES-F9-1, RES-F1-1, CC-A3-14"}
+  - {item: "M11 FY28E VAP share and gross margin targets (unquantified)", implied_date: "FY28", source_ref: "P-l870-885"}
+  - {item: "M12 Unreviewed subsidiary review status and loss", implied_date: "Q3 FY27 results", source_ref: "L721-733"}
+  - {item: "M13 Q1 FY28 flush-season procurement cost YoY and margin vs 4.62%", implied_date: "by 2027-08-14 [INFERENCE: Reg 33]", source_ref: "PRE-A3-05"}
+  - {item: "M14 Slide 9 species mapping: call favours cow = Rs 39-41 series (working reading B); Q2 Rs/L by species still ND", implied_date: "filed transcript (date ND) or labelled Q3 FY27 slide 9 by 2027-02-14", source_ref: "P-l263-295, CC-L500-502, CC-L686"}
+  - {item: "M15 Q3 landed cost per litre vs Rs 50.0 (K5) and Rs 50.56 (K4)", implied_date: "by 2027-02-14", source_ref: "CC-L381, CC-L618-621"}
+  - {item: "M16 EBITDA floor: Q3 op EBITDA vs Rs 73.97 Cr and 5.61% (K6)", implied_date: "by 2027-02-14", source_ref: "CC-L603-604"}
+  - {item: "M17 Karnataka +Rs 8/L consumer price from 1 Nov 2026; Heritage Bangalore pass-through (K12)", implied_date: "2026-11-01; check at Q3 call", source_ref: "CC-L396-403"}
+  - {item: "M18 Q3 ghee volume growth (K9)", implied_date: "Q3 FY27 results or call", source_ref: "CC-L525-527"}
+  - {item: "M19 NutriVate H2 PBT margin vs Q2 4.3%, H1 3.5% (K16)", implied_date: "Q3 read by 2027-02-14; H2 by 2027-05-30", source_ref: "CC-L706-709, PR-L142-144"}
+  - {item: "M20 Q3 operating leverage (opex below 16.23% of revenue), VAP share expansion, D&A at or above Rs 27.47 Cr (K7, K8, K10)", implied_date: "by 2027-02-14", source_ref: "CC-L476-486"}
+  - {item: "M21 Own ice cream FY27 Rs 170-200 Cr; Rs 500 Cr in 5-7 years excl. Get-A-Way (K17)", implied_date: "FY27 review point 2027-05-30; target FY32-FY34 [derived]", source_ref: "CC-L770-775"}
+  - {item: "M22 Q3 consumer price action decision (K3)", implied_date: "Q3 FY27", source_ref: "CC-L638-639"}
+  - {item: "M23 Q3 FY27 concall: score nine scorable commitments; re-test silent CWIP and subsidiary-P&L items", implied_date: "after Q3 results, about mid-Feb 2027 [INFERENCE]", source_ref: "Role 5 Step 3, CC-A3-20"}
+  - {item: "M24 IR email: 26 silent questions plus Q35-Q51", implied_date: "before /fttcp; date ND", source_ref: "PR-L222-225, CC-A3-20"}
+  - {item: "M25 Post-Diwali procurement cooling and buffalo flush (K20, K21)", implied_date: "Nov-Dec 2026 (date not in corpus)", source_ref: "CC-L296-299, CC-L372-374"}
+flags:
+  - "F1 PRE-THESIS READ: no Notion page, no spear, no companies file; Steps 6A-6D and 8B ND"
+  - "F2 Core operating PBT -26.31% YoY consolidated (-22.76% standalone) on revenue +18.61%"
+  - "F3 Milk cost +11% vs ASP +6%; spread about -9.5%; call: cow about 80% of procurement and the more inflationary species, working reading B (cow +14.5% YoY in September); Q3 11% 'might continue'; October cost above September"
+  - "F4 CWIP Rs 129.35 Cr (+177.5% in H1), project undisclosed (silent on the call); D&A +36.61%, finance cost +89.12% YoY; FCF FY26 -Rs 145.21 Cr"
+  - "F5 Subsidiaries now add little: C-S PAT gap 5.35% to 1.12% (Q2), 6.24% to 0.98% (H1), still positive; dairy subsidiaries loss-making; consideration NOT FOUND; Rs 20.63 Cr at FY27 impairment test; call gives no subsidiary numbers; intra-group ice cream supply to Get-A-Way"
+  - "F6 Cash conversion INDETERMINATE (direction not established); call added no cash evidence"
+  - "F7 Untraced Rs 7.20 Cr subsidiary investment; standalone CF/BS liability mismatch"
+  - "F8 Disclosure quality: sequential-first headline, VAP basis undisclosed, one quote attributed to two people plus a third presenter, 'Net Debt/Equity 0.33' is borrowings + leases, 6% vs 1.6% procurement CAGR uncorrected on the call; call bridge claims conflict with the filing (FC-1, FC-2)"
+  - "F9 Tracker rows not supplied (<3 signals): reopen Role 5.5 at workup"
+  - "F10 Concall 16 Oct 2026: ASR transcript only; Role 5 run; every concall claim [MGMT, ASR]; company-filed transcript pending"
+  - "F11 Role 4 Steps 6.5, 7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30); pillar facts flagged"
+  - "F12 Q3 cost guidance internally inconsistent: 11% (Rs 50.56/L) vs 'not 47 to 50'; management declined three times to call the cycle"
+  - "F13 EBITDA floor promised without a price number; at Rs 50.0-50.56/L needs ~2.7-3.4% Q3 realisation step on Q2 volume"
+  - "F14 26 of 34 Role 4 questions not addressed (not asked); IR email before /fttcp"
+  - "F15 Concall-derived material risks not in filings (Q3 cost, cow inflation, October cost up, intra-group ice cream, farmer-loan exposure); held-name trim rule n/a"
+  - "F16 Credibility ratio, grade, archetype ND (first call); Role 1 track-record input ND until Q3 scoring"
+  - "F17 Hedge-heavy call: specificity 0.29; 19 hedge or decline phrases; 11 of 24 answers graded C or worse"
+  - "F18 Role 5 Step 8 STOP as flag: operator reviews 8A-8F; no position decision (non-held)"
+  - "F19 Role 5 Step 9 STOP as flag: no Notion save (no page)"
+  - "F20 MD absent from the call; no CFO-attributable turn (ASR)"
+role5:
+  protocol: "frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md"
+  call_date: "2026-10-16"
+  source_tier: "MGMT, ASR (machine transcript of the recording; not company-filed; speakers mostly unattributed)"
+  ledger: {turns: 81, analyst_questions: 24, rows: 336, all_reviewed: true}
+  a3_findings_incorporated: [CC-A3-01, CC-A3-02, CC-A3-03, CC-A3-04, CC-A3-05, CC-A3-06, CC-A3-07, CC-A3-08, CC-A3-09, CC-A3-10, CC-A3-11, CC-A3-12, CC-A3-13, CC-A3-14, CC-A3-15, CC-A3-16, CC-A3-17, CC-A3-18, CC-A3-19, CC-A3-20, CC-A3-21]
+  role4_question_status: {total: 34, answered: 1, partly: 7, silent: 26}
+  monitorable_status: {total: 14, answered: 2, partly: 5, silent: 7}
+  new_questions: "Q35-Q51 (17)"
+  new_monitorables: "M15-M25 (11)"
+  opening_claims: {total: 29, quantified: 21, forward_quantified: 0}
+  response_grades: {A: 5, B: 8, C: 9, D: 1, E: 1}
+  specificity_ratio: 0.29
+  hedge_phrase_count: 19
+  commitments_registered: 24
+  commitments_scorable_q3: 9
+  credibility_ratio: "ND (first call reviewed; prior log not passed)"
+  management_grade: "ND"
+  archetype_6e: "NOT CLASSIFIABLE (specificity 0.29, lower row; credibility ND)"
+  role1_track_record_input: "ND"
+  net_concall_impact: "n/a (pre-thesis); evidence leans weaker on the Q3 margin path"
+  position_decision: "none (8A-W, non-held; no entry zone)"
+  step_8d: "deferred to /fttcp and Role 1 (OR-30); pillar-relevant facts flagged"
+  slide9_species: "working reading B (cow = Rs 38.80-40.73/L series) on CC-L500-502, CC-L672, CC-L686 [MGMT, ASR]; reading A kept as fallback"
+  vap_basis: "two readings unchanged; call adds intra-group ice cream supply to Get-A-Way (Q39)"
+  get_a_way_product_tag: "ice cream business [MGMT, ASR] (CC-L227-232); filings still silent"
+  filing_vs_call_conflicts:
+    - {id: "FC-1", call: "sequential EBITDA gain beat PBT/PAT due to depreciation (CC-L479-483)", filing: "QoQ EBITDA +19.58%, PBT +26.97%, PAT +23.59%; D&A +Rs 0.98 Cr (L415-428; PR-L102)", winner: "filing"}
+    - {id: "FC-2", call: "cost ratios -1%/-0.6%/-0.1% offered for the QoQ margin move (CC-L727-732)", filing: "fit YoY only; QoQ employee ratio +0.23 pp (L414)", winner: "filing"}
+    - {id: "FC-3", call: "milk sales volume +2% (CC-L191)", filing: "+2.5% (PR-L82, PR-L126)", winner: "release"}
+    - {id: "FC-4", call: "1.8 m L/day; Rs 0.5/L ~Rs 3 Cr/month, 0.7% (CC-L631-633)", filing: "17.28 LLPD: Rs 2.65 Cr/month, 0.60% (PR-L121, L407)", winner: "release/filing"}
+    - {id: "FC-5", call: "NutriVate 'strong quarter two' (CC-L699)", filing: "Feed margin 3.91% vs 9.03% YoY (L463, L470)", winner: "filing"}
+    - {id: "FC-6", call: "analyst's 6% procurement CAGR uncorrected (CC-L741)", filing: "deck slide 21: 1.6% (P-l647-671)", winner: "deck"}
+    - {id: "FC-7", call: "'strong performance in Q2' (CC-L156)", filing: "core PBT -26.31%, PAT -39.49% YoY; release PAT -39% (PR-L101)", winner: "filing"}
+  in_call_conflicts: ["IC-1 11% Q3 vs 'not 47 to 50' (CC-L381 vs CC-L618)", "IC-2 ice cream FY27 200 vs 170-180 Cr (CC-L771-772)", "IC-3 horizon 6-7 vs 5-6 yrs (CC-L770, CC-L774)", "IC-4 90% vs 95% (CC-L521)", "IC-5 paneer 1200 vs 200-230 Cr (CC-L717-718)", "IC-6 VAP +4.1 'in Q3' ASR run-on (CC-L476-477)"]
+  notion_write: "none (no page)"
+  role5_part_files: ["runs/heritgfood-q2fy27/work/review_role5_part1_steps0-4.md", "runs/heritgfood-q2fy27/work/review_role5_part2_steps5-9.md", "runs/heritgfood-q2fy27/work/review_role5_part3_inplace_role4.md", "runs/heritgfood-q2fy27/work/review_role5_part4_step85.md", "runs/heritgfood-q2fy27/work/review_role5_part5_flags_brief.md", "runs/heritgfood-q2fy27/work/review_role5_part6_changelog.md"]
+plain_language_brief_included: true
+analyst_note: "Role 5 addendum on the 16 Oct call. The transcript is machine ASR, so call claims are [MGMT, ASR] and filings win. Verdict stays PROCEED WITH FLAGS; cash stays INDETERMINATE: the call added no cash evidence. The load-bearing signal is Q3 milk cost. Management said 11% YoY 'might continue' and that cost will not go 'from 47 to 50'. On its own Q3 FY26 base of Rs 45.55, 11% is Rs 50.56, so they conflict; last year's Q2-to-Q3 step alone reaches Rs 50.29. Cow milk, about 80% of procurement, is the more inflationary species, so slide 9 reading B is the working reading. October cost rose on September. Management promised EBITDA will not fall; at Rs 50.0-50.56/L that needs about 2.7-3.4% more Q3 realisation. Two call claims conflict with the filing (FC-1, FC-2). VAP-basis readings stay open. No analyst asked 26 of 34 questions; send the IR email. MERGE PENDING: no Edit tool and the reply output cap blocked a verbatim rewrite; the six part files carry the addendum and exact find/replace edits."
+review_path: "runs/heritgfood-q2fy27/work/review_heritgfood_q2fy27.md (Role 5 merge pending; addendum in work/review_role5_part1..part6)"

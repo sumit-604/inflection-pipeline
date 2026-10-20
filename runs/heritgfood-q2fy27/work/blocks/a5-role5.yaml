@@ -1,0 +1,68 @@
+stage: A5-adversary
+company: "HERITGFOOD"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: "role5-loop2"
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows:
+    - "M33-M61 (29 rows; MATERIAL M33, M35, M39, M47, M53): A4 marks them not reviewed (R-L23, R-L846, R-L1583). Material ones are cited in substance (R-L921, R-L1062, R-L1018, R-L1089, R-L1026, R-L1190). No cite at all: M56 CC-L388, M58 CC-L274-275, M60 CC-L750-751, M61 CC-L636-637"
+  missing_from_ledger:
+    - "Y1 CC-L441-443 T028 NUMBER-unquantified 'a lot of third-party lending' (restated CC-L822-824, CC-L306-309) (MATERIAL)"
+    - "Y2 CC-L816-817 T078 NUMBER-unquantified 'we supply subsidized cattle feed' (MATERIAL)"
+    - "Y3 CC-L393 T022 DATE 'in this quarter, we saw two significant events' (Aavin steps) (MATERIAL)"
+    - "Y4 CC-L651-654 T062 NUMBER-unquantified ANALYST_STATED 'cow milk has been more inflationary versus the buffalo milk' (MATERIAL)"
+    - "Y5 CC-L183 T003 NUMBER-unquantified 'milk procurement inflation remains elevated across the country'"
+    - "Y6 CC-L185-186 T003 NUMBER-unquantified cost drivers: sustained demand, limited arrivals, higher feed and fodder"
+    - "Y7 CC-L187-188 T003 NUMBER-unquantified 'pressures continue to weigh on near-term profitability across the dairy industry'"
+    - "Y8 CC-L195-196 T003 FORWARD 'Our focus remains on balancing volume growth with calibrated pricing'"
+    - "Y9 CC-L225-226 T003 FORWARD 'attractive long-term growth potential'"
+    - "Y10 CC-L286 T006 DATE 'in the coming months'"
+    - "Y11 CC-L316 T007 NUMBER ANALYST_STATED 'this 32% growth'"
+    - "Y12 CC-L324-328 T008 NUMBER-unquantified metro rainfall 'normal or even above normal'"
+    - "Y13 CC-L378 T015 FORWARD ANALYST_STATED 'in Q3 we are expecting softer than that'"
+    - "Y14 CC-L422-423 T026 NUMBER-unquantified 'premium portfolio contribution is going up'"
+    - "Y15 CC-L466-467 T031 DATE ANALYST_STATED 'normalizing post-agorn monsoon' (ASR)"
+    - "Y16 CC-L473-474 T032 FORWARD 'So, we will continue to do this'"
+    - "Y17 CC-L506-507 T040 NUMBER ANALYST_STATED 'near zero price increases'"
+    - "Y18 CC-L510 T041 ENTITY 'rural Andhra'"
+    - "Y19 CC-L673 T063 NUMBER-unquantified 'Protein is also lower'"
+    - "Y20 CC-L718 T070 NUMBER-unquantified paneer 'growing on a quarterly basis'"
+    - "Y21 CC-L742-743 T075 NUMBER ANALYST_STATED ASR 'McTean's revenue value world' (mid-teens, INFERENCE)"
+    - "Y22 CC-L840-841 T078 NUMBER 'all payments happen online at the farmer level'"
+arithmetic_mismatches:
+  - {metric: "6B specificity ratio", a4_value: "16/59 = 0.27; 18/59 = 0.31 with festival anchors ('just above 0.3')", recomputed: "16/62 = 0.26; 18/62 = 0.29 (M41-M43 management FORWARD, T045, unquantified); 16/65 = 0.25 if Y8, Y9, Y16 land", source_line: "LG-L579-581; R-L1141-1143"}
+  - {metric: "Brief part 1 reading-2 range on the Jul-Sep average step", a4_value: "Rs 48.4-50.1", recomputed: "Rs 49.69-50.05 (48.40-48.51 is the flat path)", source_line: "R-L1382 vs R-L961; P-l276-288"}
+  - {metric: "A4 block concall_rows", a4_value: "397 = R001-R336 plus M01-M32", recomputed: "336 + 32 = 368; 397 needs M01-M61", source_line: "work/blocks/a4-role5-loop2.yaml L20, L141"}
+surviving_bear_counters:
+  - {claim: "Floor bull end 0.8-0.9% and reading-2 low end Rs 48.40-48.51/L 'if cost holds at the September level'", counter: "October already ran above September (CC-L375); a flat Q3 average needs Nov-Dec below September, i.e. the flush management only hopes for and will not forecast (CC-L372-374, CC-L605); A4's own disposition says the flat path does not expect a rise (R-L1698); qualify the flat path at every location", source_line: "CC-L375, CC-L372-374, CC-L605; R-L961-962, R-L1698", type: MISSING}
+findings_by_type:
+  factual:
+    - {id: F2-1, loop: A4, gap: "6B on 59 management FORWARD rows; closed ledger adds M41-M43: 16/62 = 0.26 (not 0.27), festival variant 18/62 = 0.29 (not 0.31 'just above 0.3'); fix 6B, 6E, Concall Verdict, F17, R-L846, YAML; 6E row unchanged"}
+    - {id: F2-2, loop: A4, gap: "brief part 1 R-L1382 gives Rs 48.4-50.1 for the Jul-Sep average step; that path is Rs 49.7-50.1, 48.4 is the flat path"}
+  missing:
+    - {id: M2-1, loop: A3, gap: "orphan rows M33-M61 marked not reviewed by A4; material ones cited in substance; M56, M58, M60, M61 uncited; mark each cited or 'reviewed, no finding'"}
+    - {id: M2-2, loop: A2, gap: "22 fresh-pass units Y1-Y22 absent from the closed ledger; 4 material (CC-L441-443 lending, CC-L816-817 subsidised feed, CC-L393 'this quarter', CC-L651-654 analyst cow reading), all already cited by A4"}
+    - {id: M2-3, loop: A4, gap: "surviving bear counter P2: flat-at-September path (Rs 48.40-48.51; floor 0.8-0.9%) needs Nov-Dec below September after the reported October rise (CC-L375); qualify at R-L961-962, R-L1049, R-L1248, R-L762-763, R-L1351-1352, R-L1382-1383, YAML F12/F13, analyst note"}
+  contradiction:
+    - {id: C2-1, loop: A4, gap: "ledger status: YAML all_reviewed true (R-L1464) vs false (R-L1583); 'every ledger row was reviewed' (R-L23), 'No orphan IDs' (R-L846), 'all four ledgers reconciled' (R-L1361) vs 29 rows open; A4 block says 397 = R001-R336 plus M01-M32 and all_reviewed true"}
+  style:
+    - "S2-1 'rose/grew each month to September' true only from July (R-L1382, R-L1617)"
+    - "S2-2 8C 'holds or narrows': about -277 bps (6 bps wider) at the 11% path on the H2 FY26 base proxy [INFERENCE]"
+    - "S2-3 provenance: orchestrator-entered text inside the A4 review (OI-1 notes; edits applied by the orchestrator)"
+    - "S2-4 loop-1 S-7 still open: run1 block a4-role5.yaml reads merge pending, no superseded header"
+loop_back_to: "A2"
+gap: "FINAL LOOP: flag, do not re-run. A2: 22 fresh-pass units Y1-Y22 missing from the closed ledger (4 material, all already cited by A4). A3 (protocol): orphan rows M33-M61 marked not reviewed by A4; material ones cited in substance; M56, M58, M60, M61 uncited. A4: F2-1 6B ratio 0.26 not 0.27 and festival variant 0.29 not 0.31 (M41-M43); F2-2 brief R-L1382 path range misattributed; M2-3 flat-path qualifier (October above September, CC-L375); C2-1 all_reviewed true vs false and block '397 = M01-M32'. PROCEED WITH FLAGS and cash INDETERMINATE not at stake."
+style_notes:
+  - "S2-1 say 'each month from July to September'"
+  - "S2-2 optional 8C qualifier: within about 6 bps at the 11% path"
+  - "S2-3 keep orchestrator-provenance labels in the A4 review"
+  - "S2-4 mark the run1 A4 block superseded"
+analyst_note: "Final Role 5 re-audit. All earlier findings are resolved, and A4's loop-2 arithmetic ties: slide 9 paths, floor need 0.8-3.4%, 8C cost YoY. Open items: (1) A4 marks M33-M61 not reviewed. The five material rows are already cited in substance, so the gap is mostly a review mark, but one number moves. M41-M43 are management FORWARD rows, so 6B is 0.26, not 0.27, and the festival variant is 0.29, not 'just above 0.3'. The 6E row holds. (2) The YAML and A4's block disagree on whether every row was reviewed, and the block's 397 = M01-M32 does not add up. (3) My spine pass finds 22 more class units. Four are material: lending, subsidised feed, the 'this quarter' date, and the analyst's cow reading. A4 cites all four. Three passes have not closed the class rule. (4) The flat-at-September path, which sets the floor's 0.8% bull end, needs Nov-Dec below September, because October already rose (CC-L375). Nothing touches a filed number or PROCEED WITH FLAGS."

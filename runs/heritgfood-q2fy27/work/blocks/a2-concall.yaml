@@ -1,0 +1,25 @@
+stage: A2-enumerator
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/heritgfood-q2fy27/work/ledger_concall_heritgfood_q2fy27.md"
+counts:
+  turns: 81
+  questions: 24
+  mgmt_numbers: 144
+  analyst_stated_numbers: 18
+  numbers_total: 162
+  forward_rows: 60
+  entities: 52
+  dates: 20
+  qualifiers: 42
+flags_raised: [REPEAT_QUESTION, IN_CALL_CONFLICT, ASR_GARBLE, ASR_NAME, SPEAKER_UNATTRIBUTED, SPEAKER_UNMAPPED, MGMT_DECLINE, AMBIGUOUS_PERIOD, RESTATED, ENTITY_UNRESOLVED]
+ids_in_structured: 336
+ids_referenced: 336
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "ASR source: most management answers (T006-T078) are unattributed, so no speaker was inferred. Five in-call conflicts matter for Role 5: ice cream FY27 revenue 200 vs 170-180 cr (R152/R153), 500 cr horizon 6-7 vs 5-6 yrs (R150/R154), paneer 1200 vs 200+230 cr (R136/R137), ghee/paneer/curd share 90 vs 95% (R093), and VAP 4.1% labelled Q3 at 15 days into the quarter (R089/R090). R125 (analyst 1.8m L/day) vs R010 (17.28 lakh) is an analyst rounding, not a management conflict. Q3 price and procurement was asked six times (Q03,Q04,Q06,Q15,Q16,Q18/Q19); the 11% Q3 procurement line (R230) is a management hedge ('might continue'), and R252/R325 decline to forecast raw milk. Revenue prints as dollars (R002), ASR artefact. Mgmt vs analyst split of NUMBER rows is by turn map plus 'Analyst' in A1 context."

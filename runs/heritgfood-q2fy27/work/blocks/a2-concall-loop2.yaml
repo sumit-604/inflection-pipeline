@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+loop: role5-loop2-final
+ledger_path: "runs/heritgfood-q2fy27/work/ledger_concall_heritgfood_q2fy27.md"
+counts:
+  turns: 81
+  questions: 24
+  mgmt_numbers: 178
+  analyst_stated_numbers: 19
+  numbers_total_with_addenda: 197
+  forward_rows: 65
+  entities_with_addenda: 57
+  dates_with_addenda: 29
+  qualifiers: 49
+  ledger_rows_total: 397
+flags_raised: [MISSING_FROM_STRUCTURED, REPEAT_QUESTION, IN_CALL_CONFLICT, ASR_GARBLE, ASR_NAME, SPEAKER_UNATTRIBUTED, SPEAKER_UNMAPPED, MGMT_DECLINE, AMBIGUOUS_PERIOD, RESTATED, ENTITY_UNRESOLVED, ANALYST_STATED]
+ids_in_structured: 336
+ids_referenced: 336
+orphan_ids: []
+missing_from_structured: [M01-M10 (loop 1), M11-M32 (= A5 V1-V22, all real), M33-M61 (closing sweep, 29)]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Loop 2. All 22 A5 units V1-V22 verified against the fulltext and appended as M11-M32; none duplicated an R or M row. One final sweep of CC-L130-853 under the A5 class rule added 29 units, M33-M61 (NUMBER 18, FORWARD 3, DATE 5, QUALIFIER 2, ENTITY 1). This sweep closes the ledger at 397 rows: 336 structured plus 61 MISSING_FROM_STRUCTURED. Final by type: NUMBER 197, ENTITY 57, FORWARD 65, DATE 29, QUALIFIER 49. MATERIAL tags: M16, M18, M19, M21, M22, M23, M25, M26, M28, M30, M32 from the audit, and M33, M35, M39, M47, M53 from the sweep. A4 already cites most of these by CC-L line; C-A needs the 397 total. Two turn notes: M19 sits on a line shared with T033 and M29 on a line the A1 map gives to T066; both follow the audit."

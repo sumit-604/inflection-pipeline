@@ -1,0 +1,28 @@
+stage: A2-enumerator
+company: "HERITGFOOD"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+loop: role5-loop1
+ledger_path: "runs/heritgfood-q2fy27/work/ledger_concall_heritgfood_q2fy27.md"
+counts:
+  turns: 81
+  questions: 24
+  mgmt_numbers: 144
+  analyst_stated_numbers: 18
+  numbers_total_structured: 162
+  numbers_total_with_addendum: 169
+  forward_rows: 60
+  entities_with_addendum: 53
+  dates_with_addendum: 22
+  qualifiers: 42
+  ledger_rows_total: 346
+flags_raised: [MISSING_FROM_STRUCTURED, REPEAT_QUESTION, IN_CALL_CONFLICT, ASR_GARBLE, ASR_NAME, SPEAKER_UNATTRIBUTED, SPEAKER_UNMAPPED, MGMT_DECLINE, AMBIGUOUS_PERIOD, RESTATED, ENTITY_UNRESOLVED]
+ids_in_structured: 336
+ids_referenced: 336
+orphan_ids: []
+missing_from_structured: [M01 CC-L479-481, M02 CC-L481-482, M03 CC-L667-669, M04 CC-L672, M05 CC-L677, M06 CC-L686, M07 CC-L699-701, M08 CC-L798-799, M09 CC-L725-726, M10 CC-L779-780]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Loop 1 addendum from A5 finding M1. All ten units verified in the fulltext; no structured row holds any, so none duplicated. M04 and M06 (cow milk cheaper on solids, inflation in hardcore cow milk) carry slide 9 working reading B, so A1 should add structured rows R337-R346 if re-extraction is run. R236 moved to FORWARD_MGMT at T024 (turn table anchors swapped). C3 is now labelled as two readings, not a contradiction. C5 corrected to management turn T054 (R125); C6 corrected to T032. The old analyst_note line calling R125 an analyst rounding is withdrawn: A1 and the turn map place it with management."

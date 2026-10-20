@@ -40,3 +40,28 @@ HERITGFOOD | 2026-10-17 | results+presentation+pressrelease | 66 (16+45+5) | 38,
 - loop cost: 1,045,769 (39.8% of total)
 - Orchestrator session tokens: ND (not metered in session).
 - Fresh tokens / re-read tokens / re-read multiple: ND (subagent usage reports give totals only).
+
+## Role 5 concall addendum (2026-10-19 to 2026-10-20)
+Document review baseline row (concall): HERITGFOOD | 2026-10-19 | concall (ASR transcript) | 7 ten-minute blocks (66:25) | a1_extracted_text_tok ND (not measured) | 2,461,542 | 2
+
+| agent | model | total_tok | wall | run# | note |
+|---|---|---|---|---|---|
+| A1 extractor (concall) | claude-sonnet-5-5 | 140,090 | 412s | r5-1 | 7/7 blocks, R001-R336 |
+| A2 enumerator (concall) | claude-sonnet-5-5 | 75,775 | 148s | r5-1 | < A1, pass |
+| A3 forensics (concall) | claude-opus-5-5 | 181,918 | 644s | r5-1 | F17 vs 34 questions |
+| A4 analyst (Role 5 parts) | claude-opus-5-5 | 376,625 | 1,979s | r5-1 | 6 part files; orchestrator merged |
+| A5 adversary (Role 5) | claude-opus-5-5 | 316,611 | 963s | r5-1 | INCOMPLETE |
+| Role 5 base subtotal | | 1,091,019 | | | |
+| A2 ledger addendum | claude-sonnet-5-5 | 50,172 | 74s | r5-loop1 | M01-M10 |
+| A4 edit list (61 edits) | claude-opus-5-5 | 240,357 | 727s | r5-loop1 | |
+| A5 re-audit | claude-opus-5-5 | 386,017 | 1,253s | r5-loop1 | INCOMPLETE |
+| Role 5 loop 1 subtotal | | 676,546 | | | |
+| A2 + A4 (killed by session restart) | | ND | ND | r5-loop2-a | wrote nothing; mechanical re-run |
+| A2 ledger addendum (re-run) | claude-sonnet-5-5 | 120,636 | 342s | r5-loop2 | M11-M61, 397 rows |
+| A4 edit list (44 edits, re-run) | claude-opus-5-5 | 197,101 | 601s | r5-loop2 | |
+| A5 final re-audit | claude-opus-5-5 | 376,240 | 1,123s | r5-loop2 | INCOMPLETE; 6 open items flagged |
+| Role 5 loop 2 subtotal | | 693,977 | | | |
+
+- Role 5 total_run_tok: 2,461,542 (loop cost 1,370,523, 55.7%).
+- Transcription (faster-whisper on local CPU, 1,938 s) used no model tokens.
+- Grand total_run_tok (Role 4 run 2,625,523 + Role 5 addendum 2,461,542): 5,087,065.

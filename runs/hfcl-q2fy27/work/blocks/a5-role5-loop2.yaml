@@ -1,0 +1,32 @@
+stage: A5-adversary
+company: "HFCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "NS1-NS6 carried from loop-1 audit, not applied by A4 (RV-L2120); logged for next run"
+    - "NS7 unchanged shorthand 'aspiration' citing only C-L252/C-L770 at 0D RV-L1224, T018 RV-L1398, 3B RV-L1557, 7C RV-L1650, 8A #5 RV-L1669, 8D RV-L1714 ('only'), MQ46 RV-L1803; register, brief and YAML carry all three framings incl. C-L278-279; optional '(A4 classification)' tag"
+    - "NS8 unchanged range format '39.90% (lower reading, cap) to 44.81%' at 8D RV-L1714 and YAML RV-L2016 (block L35); labelled cap so correct; optional harmonise to the NF1 'up to 39.90% ...; 44.81% only if ...' wording"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "NS1-NS6 carried (anchors; Reading B 'only'; capacity flag wording; mix-shift cites; A1 enumeration rule; A3 file lacks M01-M14)"
+  - "NS7 residual 'aspiration' shorthand without C-L278-279 at unchanged sites"
+  - "NS8 residual 'cap to' range format at 8D and YAML hyperscaler_share_of_book"
+analyst_note: "Loop 2 closes both open items. NF1: all six named sites now say hyperscalers are up to 39.90% of the book on the export-orders reading (C-L171-172), a ceiling that may be lower. 44.81% applies only if the 70% covers the whole Rs18,500 Cr. No floor-style range remains, and the Notion Key Notes line is fixed. NM1: the MD's 'should not be difficult ... a 5000 crores figure' (C-L278-279) now sits beside 'in expiration' (C-L252-253) and 'possibly' (C-L770) at all named sites and three extra YAML fields. The aspiration reading is labelled as A4's INFERENCE, and 'not a target' is gone from brief part 2. All quotes match the fulltext. A4's block matches the review. No number, ruling or verdict field changed. Coverage holds at 629 rows with M01-M14 cited. The brief gate passes. Two optional STYLE harmonisations are logged on unchanged text."

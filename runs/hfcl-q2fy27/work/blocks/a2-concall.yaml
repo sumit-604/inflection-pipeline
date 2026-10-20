@@ -17,11 +17,12 @@ counts:
   dates: 46
   zero_standing: 1
   timestamp_gaps: 3
+  missing_from_structured: 14
 flags_raised: [ZERO_STANDING, NUMBER_CONFLICT, RESTATED, REPEAT_QUESTION, ANALYST_FIGURE, ASR_GARBLE, HEDGED_NUMBER, DATE_ANOMALY, TIMESTAMP_GAP, MISSING_QUESTION]
 ids_in_structured: 615
 ids_referenced: 615
 orphan_ids: []
-missing_from_structured: []
+missing_from_structured: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11, M12, M13, M14]
 gate_a2: pass
 mismatch_note: ""
-analyst_note: "615 = R001-R470 plus T001-T145. Questions are analyst turns excluding close/thanks; 21 carry REPEAT_QUESTION (order book timing, Q2 connectivity revenue, price vs volume, germanium and preform, defence). Key NUMBER_CONFLICT clusters for A3/A4: order book 28,900 vs 28,000/29,000/30,000; quarter orders 3000 added vs 5500 received; aerospace order book 1600 vs 1800; capacity target 63m vs 53m vs 43m; defence 5000 crore in three years vs two years; Q2 connectivity 200-300 vs 300; OFC illustrative revenue and EPC loss figures garbled by ASR (R119-R122, R074-R075). R155 Q1 connectivity nil is the single ZERO_STANDING row. Defence question before T018 is missing (R420 gap). Turn mapping from fulltext line is coarse at boundaries. No MGMT_ABSENCE: MD present, CFO never gets own turn."
+analyst_note: "615 = R001-R470 plus T001-T145. Questions are analyst turns excluding close/thanks; 21 carry REPEAT_QUESTION (order book timing, Q2 connectivity revenue, price vs volume, germanium and preform, defence). Key NUMBER_CONFLICT clusters for A3/A4: order book 28,900 vs 28,000/29,000/30,000; quarter orders 3000 added vs 5500 received; aerospace order book 1600 vs 1800; capacity target 63m vs 53m vs 43m; defence 5000 crore in three years vs two years; Q2 connectivity 200-300 vs 300; OFC illustrative revenue and EPC loss figures garbled by ASR (R119-R122, R074-R075). R155 Q1 connectivity nil is the single ZERO_STANDING row. Defence question before T018 is missing (R420 gap). Turn mapping from fulltext line is coarse at boundaries. No MGMT_ABSENCE: MD present. Loop 1 (A5 M1): M01-M14 added from the fulltext; they are not A1 IDs, so 615 stands."

@@ -1,5 +1,6 @@
 stage: A4-analyst
 substage: role5-addendum
+loop: 2
 company: "HFCL"
 quarter: "Q2 FY27"
 model: "claude-opus-5-5"
@@ -11,79 +12,90 @@ ledger_reconciliation:
   turns: 145
   slides: 0
   structured_ids: 615
+  missing_from_structured_rows: 14
+  missing_from_structured_ids: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11, M12, M13, M14]
+  ledger_rows_total: 629
   question_rows: 54
   all_reviewed: true
   a3_findings_incorporated: [CC-FN-01, CC-FN-02, CC-FN-03, CC-FN-04, CC-FN-05, CC-FN-06, CC-FN-07, CC-FN-08, CC-FN-09, CC-FN-10, CC-FN-11, CC-FN-12, CC-FN-13, CC-FN-14, CC-FN-15, CC-FN-16, CC-FN-17, CC-FN-18, CC-FN-19, CC-FN-20, CC-FN-21, CC-FN-22, CC-FN-23, CC-FN-24, CC-FN-25]
+  pipeline_note: "A3 forensics file still records MISSING_FROM_STRUCTURED 0 (line 17); no A3 reading of M01-M14 on file. A4 read each at its fulltext line; no finding, count, grade or ruling changes"
 protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE-WITH-DIRECTION"
 decision_status_verified: "WATCHLIST (DO NOT INITIATE); not held"
 position_branch: "8A-W"
-proposed_decision_status: "AVOID (proposal under 8A-W after tripwire #4 fired; operator decides; not written)"
-tripwire_4_ruling: "FIRED on the silence limb (two consecutive quarters: Q1 per memory, Q2 results/deck/call); NOT FIRED on the unbilled limb (no number). Reversal: written ageing and unbilled at 30-Sep-2026 with >6m ageing <=25% and the +317.31 other-current-assets rise explained"
-trigger_6_ruling: "NOT FIRED; imminent test ~early to mid Nov-2026 (committee recommendation, board ~10 days, decision ~2 weeks; scope unstated)"
+proposed_decision_status: "AVOID (proposal under 8A-W after tripwire #4 fired; operator decides; not written; supersedes Role 4 Step 9 'no change / No trigger fired' for the save)"
+tripwire_4_ruling: "FIRED on the silence limb (two consecutive quarters: Q1 per memory, Q2 results/deck/call); most evidenced reading on the trigger wording and the Role 4 6C pre-commitment. Unbilled limb UNTESTABLE (no number). Counter-reading corrected: 140.78 receivable days sit above the 130-day red line (Role 4 item 2 AMBER, BUY gate (b) NOT MET); only TR/TTM 38.57% is green. Reversal: written ageing and unbilled at 30-Sep-2026 with >6m ageing <=25% and the +317.31 other-current-assets rise explained"
+trigger_6_ruling: "NOT FIRED; imminent test ~early to mid Nov-2026 (committee recommendation, board ~10 days after, finalisation within ~2 weeks; scope unstated)"
 role5_step_8D: "deferred to /fttcp and Role 1 (OR-30)"
-specificity: {quantified: 45, unquantified: 67, total_forward_rows: 112, ratio: 0.40, company_only_ratio: 0.39}
-credibility: {formal_trailing4: "ND (prior log not passed)", provisional_ratio_pct: 40.0, provisional_points: 4.0, provisional_scored: 10, provisional_grade: "C (Mixed)", dropped_confirmed: 1, dropped_candidates: 2}
+specificity: {quantified: 45, unquantified: 67, total_forward_rows: 112, ratio: 0.40, ratio_excl_market_size_rows: 0.39, with_M_forward_rows: "46/115 = 0.40", borderline_range: "0.38-0.43; band unchanged"}
+credibility: {formal_trailing4: "ND (prior log not passed)", provisional_ratio_pct: 40.0, provisional_points: 4.0, provisional_scored: 10, provisional_grade: "C (Mixed)", point_schedule: "D 1.0, P 0.5, M 0, Dl 0, Dr 0 + flag, U excluded", delayed_at_half_pct: 50.0, dropped_confirmed: 1, dropped_candidates: 2}
 archetype: "provisional EVASIVE (specificity 0.40, provisional credibility 40%), with OVERPROMISER traits on forward targets; shift from provisional OVERPROMISER-watch flagged"
 defensive_phrases: 12
 qa_grades: {A: 5, B: 31, C: 13, D: 2, E: 2, unanswered: 1}
+hyperscaler_share_of_book: "39.90% (lower reading, cap: 70% of export orders x 57% export share of book) to 44.81% (upper reading: 70% of the full Rs18,500 Cr); base 'the export orders' (C-L171-173); not firm"
+defence_5000: "aspiration, not a commitment (A4 classification, INFERENCE from C-L252, C-L713, C-L770); MD framings: C-L252-253 'in expiration'; C-L278-279 'it should not be difficult for us to reach the 2000 crores figure and a 5000 crores figure'; C-L770 'possibly'; horizon FY29 or FY30"
 sc_gap_pat_pct: ["Q2FY26: 17.06", "Q1FY27: 37.07", "Q2FY27: 47.09", "H1FY26: 123.14", "H1FY27: 43.07", "FY26: 30.28"]
 questions_for_management:
-  - {q: "Q43 Restructuring scope (EPC only or OFC/defence/aerospace); every entity mirrors listed HFCL holding? Y/N", from_finding_id: "CC-FN-06"}
-  - {q: "Q44 Is >=80% FY27 on consolidated FY26 Rs4,949.27 Cr?", from_finding_id: "CC-FN-02"}
-  - {q: "Q45 Fiscal year revenue first exceeds Rs10,000 Cr?", from_finding_id: "CC-FN-03"}
-  - {q: "Q46 Defence ~Rs5,000 Cr in FY29 or FY30; FY27 split own vs acquired?", from_finding_id: "CC-FN-04"}
-  - {q: "Q47 Target book Rs1,600 or Rs1,800 Cr; executed or unexecuted?", from_finding_id: "CC-FN-05"}
-  - {q: "Q48 Unbilled BharatNet work at 30-Sep (Rs Cr) and its balance-sheet line; two-quarter Turnkey loss ceiling?", from_finding_id: "CC-FN-07, CC-FN-22"}
-  - {q: "Q49 Does Rs5,000 Cr O&M book include unsigned Army AMC via BSNL; signed yet?", from_finding_id: "CC-FN-08"}
-  - {q: "Q50 Gross borrowings expected at 31-Mar-2027, Rs Cr?", from_finding_id: "CC-FN-09"}
-  - {q: "Q51 Preform contract expiries; fixed-price share of FY28 need?", from_finding_id: "CC-FN-10"}
-  - {q: "Q52 Preform midterm solution: nature, related party?, capital committed?", from_finding_id: "CC-FN-11"}
-  - {q: "Q53 Connectivity revenue Q1 and Q2 FY27 Rs Cr; Rs215 Cr DC facility still planned?", from_finding_id: "CC-FN-01, CC-FN-12"}
-  - {q: "Q54 Current cable capacity 34 or 39 mn fkm; date fibre reaches 34?", from_finding_id: "CC-FN-13"}
-  - {q: "Q55 Q2 physical fkm output vs installed capacity?", from_finding_id: "CC-FN-14"}
-  - {q: "Q56 CFO to provide H1 export-OFC revenue, Q2 connectivity revenue, price/volume split in writing?", from_finding_id: "CC-FN-15, CC-FN-23"}
-  - {q: "Q57 Single $1.1B order share of Rs18,500 Cr book; number of hyperscaler customers?", from_finding_id: "CC-FN-16"}
-  - {q: "Q58 Price share of Q2 QoQ growth (pp); Q3 realisation per fkm vs Q2?", from_finding_id: "CC-FN-17"}
-  - {q: "Q59 Germanium contract date and source countries?", from_finding_id: "CC-FN-18"}
-  - {q: "Q60 Reply date for emailed questions; official transcript to be filed?", from_finding_id: "CC-FN-25, CC-FN-21"}
-  - {q: "Q61 Fuze approval status and date?", from_finding_id: "CC-FN-24"}
+  - {q: "MQ43 Restructuring scope (EPC only or OFC/defence/aerospace); every entity mirrors listed HFCL holding? Y/N", from_finding_id: "CC-FN-06"}
+  - {q: "MQ44 Is >=80% FY27 on consolidated FY26 Rs4,949.27 Cr?", from_finding_id: "CC-FN-02"}
+  - {q: "MQ45 Fiscal year revenue first exceeds Rs10,000 Cr?", from_finding_id: "CC-FN-03"}
+  - {q: "MQ46 Defence ~Rs5,000 Cr: target or aspiration; FY29 or FY30; FY27 split own vs acquired?", from_finding_id: "CC-FN-04"}
+  - {q: "MQ47 Target book Rs1,600 or Rs1,800 Cr; executed or unexecuted?", from_finding_id: "CC-FN-05"}
+  - {q: "MQ48 Unbilled BharatNet work at 30-Sep (Rs Cr) and its balance-sheet line; two-quarter Turnkey loss ceiling?", from_finding_id: "CC-FN-07, CC-FN-22"}
+  - {q: "MQ49 Does Rs5,000 Cr O&M book include unsigned Army AMC via BSNL; signed yet?", from_finding_id: "CC-FN-08"}
+  - {q: "MQ50 Gross borrowings expected at 31-Mar-2027, Rs Cr?", from_finding_id: "CC-FN-09"}
+  - {q: "MQ51 Preform contract expiries; fixed-price share of FY28 need; customer contracts repricing in H2 FY27; short-term (no reset) share of book?", from_finding_id: "CC-FN-10"}
+  - {q: "MQ52 Preform midterm solution: nature, related party?, capital committed?", from_finding_id: "CC-FN-11"}
+  - {q: "MQ53 Connectivity revenue Q1 and Q2 FY27 Rs Cr; Rs215 Cr DC facility still planned?", from_finding_id: "CC-FN-01, CC-FN-12"}
+  - {q: "MQ54 Current cable capacity 34 or 39 mn fkm; date fibre reaches 34?", from_finding_id: "CC-FN-13"}
+  - {q: "MQ55 Q2 physical fkm output vs installed capacity?", from_finding_id: "CC-FN-14"}
+  - {q: "MQ56 CFO to provide H1 export-OFC revenue, Q2 connectivity revenue, price/volume split in writing?", from_finding_id: "CC-FN-15, CC-FN-23"}
+  - {q: "MQ57 Is ~70% hyperscaler share on export orders or full Rs18,500 Cr book; single $1.1B order share; number of hyperscaler customers?", from_finding_id: "CC-FN-16"}
+  - {q: "MQ58 Price share of Q2 QoQ growth (pp); Q3 realisation per fkm vs Q2?", from_finding_id: "CC-FN-17"}
+  - {q: "MQ59 Germanium contract date and source countries?", from_finding_id: "CC-FN-18"}
+  - {q: "MQ60 Reply date for emailed questions; official transcript to be filed?", from_finding_id: "CC-FN-25, CC-FN-21"}
+  - {q: "MQ61 Fuze approval status and date?", from_finding_id: "CC-FN-24"}
 q1_q42_status: {answered: 1, partial: 11, evaded: 1, not_addressed: 29}
 q1fy27_15_status: {answered: 2, partial: 9, evaded: 0, not_addressed: 4}
 monitorables:
   - {item: "Army AMC via BSNL signed", implied_date: "~end-Oct-2026", source_ref: "C-L418-423"}
-  - {item: "IR reply to emailed Q1-Q61", implied_date: "immediately (score actual date)", source_ref: "C-L1011-1014"}
+  - {item: "IR reply to emailed Q1-Q42 and MQ43-MQ61", implied_date: "from 2026-10-20 ('immediately'); missed if none by the Q3 FY27 review", source_ref: "C-L1011-1014"}
   - {item: "Foliage radar second trial / approval", implied_date: "~early Nov-2026", source_ref: "C-L262-263, C-L397-399"}
   - {item: "Restructuring recommendation, board meeting, decision; trigger #6 test", implied_date: "~early to mid Nov-2026 (INFERENCE)", source_ref: "C-L535-545"}
-  - {item: "Aerospace close with price and target financials; consolidation from Q3", implied_date: "Nov-2026", source_ref: "C-L404-406"}
+  - {item: "Aerospace close with price and target financials; consolidation from Q3", implied_date: "Nov-2026", source_ref: "C-L404-406, C-L274-275 (M02)"}
   - {item: "Official company transcript of 19-Oct call", implied_date: "ND", source_ref: "CC-FN-21"}
   - {item: "Tripwire #4 reversal evidence: written ageing and unbilled at 30-Sep-2026", implied_date: "next IR reply or Q3 deck", source_ref: "Step 8C"}
   - {item: "BharatNet bills submitted; Q3 Turnkey loss lower", implied_date: "Q3 FY27", source_ref: "C-L435-439"}
-  - {item: "Q3 revenue above Q2 Rs2,541.79 Cr; Q3 realisation per fkm", implied_date: "Q3 FY27 results, date not filed", source_ref: "C-L608, C-L646-648"}
+  - {item: "Q3 revenue above Q2 Rs2,541.79 Cr; Q3 realisation per fkm; Q3 gross and Telecom result margin vs realisation (margin readings A/B)", implied_date: "Q3 FY27 results, date not filed", source_ref: "C-L608, C-L646-648; Step 4C Exchange 2"}
   - {item: "Preform midterm solution begins", implied_date: "Q1 CY2027", source_ref: "C-L580-583"}
   - {item: "In-DC connectivity product revenue starts", implied_date: "Q4 FY27 or early FY28", source_ref: "C-L366-369"}
   - {item: "Connectivity > Rs800 Cr; defence Rs500-600 Cr", implied_date: "2027-03-31", source_ref: "C-L369-370, C-L251"}
   - {item: "Gross borrowings below Rs1,840.13 Cr", implied_date: "2027-03-31", source_ref: "C-L551-555"}
+  - {item: "Full-year FY27 CFO/PAT on both readings vs 0.65 marker (cash class re-test)", implied_date: "FY27 results, date not filed", source_ref: "Role 4 5A"}
   - {item: "Turnkey segment profit", implied_date: "Q1 FY28 results, date not filed", source_ref: "C-L443"}
   - {item: "Connectivity Rs2,000 Cr; defence >= Rs2,000 Cr", implied_date: "FY28", source_ref: "C-L371, C-L251-252"}
   - {item: "Debt substantially lower", implied_date: "2028-03-31", source_ref: "C-L553-555"}
   - {item: "Germanium supply contracted", implied_date: "before Oct-2028", source_ref: "C-L593-600, C-L969"}
-  - {item: "Defence ~Rs5,000 Cr", implied_date: "FY29 or FY30", source_ref: "C-L252-253, C-L770"}
+  - {item: "Defence ~Rs5,000 Cr (A4 classification: aspiration, not a commitment; MD also said 'should not be difficult', C-L278-279)", implied_date: "FY29 or FY30", source_ref: "C-L252-253, C-L278-279, C-L770"}
   - {item: "Rs10,000 Cr revenue", implied_date: "year unnamed (implied FY28)", source_ref: "C-L484-486"}
   - {item: "Ammunition complex construction; revenue ~2 years; MMHG tender outcome", implied_date: "soon; ~late 2028; undated", source_ref: "C-L134, C-L282-285"}
-  - {item: "Preform supply contract expiries (cost reset)", implied_date: "undated", source_ref: "C-L330-334"}
+  - {item: "Preform supply contract expiries and yearly customer price resets", implied_date: "undated", source_ref: "C-L330-339"}
 flags:
-  - "Tripwire #4 FIRED (silence limb): receivables ageing/DSO/unbilled absent in Q1 (memory) and in Q2 results, deck and call; proposal AVOID under 8A-W; operator decides; reversal conditions stated"
-  - "Trigger #6 imminent: E&Y-advised restructuring committee near recommendation; board ~10 days; decision ~mid-Nov; scope unstated"
+  - "Tripwire #4 FIRED (silence limb): receivables ageing/DSO/unbilled absent in Q1 (memory) and in Q2 results, deck and call; Role 4 6C pre-committed the test; counter-reading weaker than first stated (140.78 days above the 130-day red line); proposal AVOID under 8A-W; operator decides; reversal conditions stated"
+  - "Trigger #6 imminent: E&Y-advised restructuring committee near recommendation; board ~10 days after; decision ~mid-Nov; scope unstated"
   - "Aerospace close 'within November'; target, price and profit NOT FOUND; book stated 1,600 / 1,800 / '16 or 1800'; no accretion credited"
-  - "Q2 margin carries ~20% fibre price rise the MD did not foresee; price/volume split refused; preform contracts reset at expiry; own preform covers half from Oct-2028"
+  - "Q2 fibre price +~20% the MD did not foresee; price/volume split refused; two margin readings: price widened the spread, or passed through at a near-constant spread (gross margin 38.82% to 38.25% QoQ; Telecom result margin 30.44% to 30.85%); Q3 margins vs realisation separate them"
+  - "Customer long-term contracts reset yearly in both directions; no price floor; no new capacity before July 2028 (fibre at 100%); preform contracts reset at expiry; own preform covers half from Oct-2028"
+  - "Hyperscaler share of book: up to 39.90% if the 70% applies only to export orders, as the MD said (C-L171-173; a ceiling, the share may be lower); 44.81% only if it applies to the whole Rs18,500 Cr"
+  - "Defence Rs5,000 Cr read by A4 as an aspiration, not a commitment (INFERENCE); MD framings: 'in expiration' (C-L252), 'it should not be difficult for us to reach ... a 5000 crores figure' (C-L278-279), 'possibly' (C-L770)"
   - "Guide floor 80% sits below MD's own 'definitely growth in Q3' path; basis still unstated"
   - "Targets raised inside one call and vs broker figures two weeks earlier (defence, connectivity); narrative-amplification counter candidate (operator)"
-  - "Specificity 0.40; 12 defensive phrases on delivered-period data; provisional credibility 40% (C); provisional archetype EVASIVE with overpromiser traits"
-  - "Narrative vs filing contradictions: debt direction in H1, current cable capacity 34 vs 39, prior order book 26,000 vs 26,665"
-  - "Cash class unchanged INDETERMINATE-WITH-DIRECTION; both Role 4 readings stand (CFO/PAT 0.71 reported, 0.52 tax-accrual)"
+  - "Specificity 0.40 (range 0.38-0.43); 12 defensive phrases on delivered-period data; provisional credibility 40% (C); provisional archetype EVASIVE with overpromiser traits"
+  - "Narrative vs filing contradictions: debt direction in H1, current cable capacity 34 vs 39; prior order book 26,000 is a hedged rounding (not counted)"
+  - "Cash class unchanged INDETERMINATE-WITH-DIRECTION; both Role 4 readings stand (H1 CFO/PAT 0.71 reported, 0.52 tax-accrual); FY27 full-year CFO re-test is the resolver"
   - "Machine transcript with audio gaps at three load-bearing points; request official transcript"
+  - "A3 forensics file does not yet record M01-M14 (A4 read them at line)"
   - "Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30)"
 plain_language_brief_included: true
-analyst_note: "The call strengthens the growth story and weakens disclosure. The MD calls 80% a floor and promises Q3 growth, but admits a ~20% price rise he did not foresee, refuses the price/volume split, and leaves input contracts that reset at expiry. Receivables went unmentioned in every Q2 channel after a silent Q1; I rule tripwire #4 fired on its silence limb under the conservative reading, with the counter-reading (balance sheet discloses receivables, days improved, no analyst asked) and a written-disclosure reversal test stated. That makes AVOID the 8A-W proposal; the operator decides. Trigger #6 is a live test within weeks. Credibility is provisional (40%, from memory items), so the archetype is provisional too. Machine transcript; filings govern."
-review_path: "runs/hfcl-q2fy27/work/review_hfcl_q2fy27_role5.md (single document; written as Part 1 there and Part 2 in review_hfcl_q2fy27_role5.part2.md for the orchestrator to join)"
+analyst_note: "Loop 2 changes text only; rulings and verdict fields stand. Tripwire #4 FIRED on the silence limb is the most evidenced reading. Role 4 pre-committed that a call silent on ageing and unbilled fires it, and the call gave neither. The corrected counter-reading is weaker: 140.78 receivable days sit above the 130-day red line, and only TR/TTM is green. AVOID stays a proposal under 8A-W; the operator decides. Trigger #6 is a live test in early to mid November. Three positive claims are bounded. The H2 bull case rests on mix, connectivity and some cable headroom, not on a price floor or new capacity. The MD tied the 70% hyperscaler share to the export orders, so hyperscalers are at most 39.90% of the book on that base, and may be less; 44.81% assumes the whole book. I read the Rs5,000 Cr defence figure as an aspiration, though the MD also said it 'should not be difficult' to reach. The bear claim that price drives margin carries its filed counter: gross margin fell QoQ while prices rose about 20%. Q3 margins against realisation per fkm separate the readings. Machine transcript; filings govern."
+review_path: "runs/hfcl-q2fy27/work/parts/review_hfcl_q2fy27_role5.loop2.part1.md + runs/hfcl-q2fy27/work/parts/review_hfcl_q2fy27_role5.loop2.part2.md + runs/hfcl-q2fy27/work/parts/review_hfcl_q2fy27_role5.loop2.part3.md, joined in that order into runs/hfcl-q2fy27/work/review_hfcl_q2fy27_role5.md"

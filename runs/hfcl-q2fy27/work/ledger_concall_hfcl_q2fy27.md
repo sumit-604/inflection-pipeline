@@ -12,6 +12,7 @@ category: partition mgmt_numbers+analyst_figures = 126+40 vs NUMBER 166   match:
 category: partition participants+other_entities = 20+48 vs 68   match: yes
 category: partition source+gaps+hedges = 9+3+66 vs 78   match: yes
 category: questions   sweep_count: 54  (analyst turns excl. close/thanks; T018 answer has no recorded question)
+category: missing_from_structured   grep_count: 14   sweep_count: 14   match: yes (loop 1, audit M1)
 gate_a2: pass
 === END COUNT TEST ===
 ids_in_structured: 615 (R 470 + T 145) | ids_referenced_in_ledger: 615 | orphan_ids: [] | match: yes
@@ -720,4 +721,18 @@ R391 | date | turn T113 (ANALYST Smith Gara) | ASR_GARBLE |
 R392 | date | turn T139 (MD) | - | 
 
 ## 12. MISSING_FROM_STRUCTURED
-none found
+ROW_ID | fulltext line | turn / speaker | A2 flags | claim text (verbatim from fulltext)
+M01 | C-L238 | T017 (MD) | NUMBER_PERIOD; MISSING_FROM_STRUCTURED | "since last two years": telcos have not been buying much (period)
+M02 | C-L275 | T018 (MD) | FORWARD; MISSING_FROM_STRUCTURED | "that revenue also will get consolidated after acquisition being completed", dated by C-L274 "in this quarter itself"; C-L273 pending order of 1800 crores
+M03 | C-L432-433 | T036 (MD) | NUMBER; MISSING_FROM_STRUCTURED | "25 different steps"; "25th steps ... goes back to step 0 and then comes back to step 25" (BharatNet bill verification; ASR line break)
+M04 | C-L676 | T083 (MD) | FORWARD; MISSING_FROM_STRUCTURED | "talking to international telcos also where we think we'll get some orders"
+M05 | C-L700 | T086 (ANALYST Debashish Mazumdar) | NUMBER; ANALYST_FIGURE; ASR_GARBLE; MISSING_FROM_STRUCTURED | "2 years time frame", "10,000 column number" (garbled; analyst challenge on average delivery; line is in T086 text per fulltext 699-701)
+M06 | C-L745-746 | T094 (ANALYST Sagar Parikh) | NUMBER; ANALYST_FIGURE; MISSING_FROM_STRUCTURED | "3 year 2 years", "6 7000 crores" (visibility beyond run rate)
+M07 | C-L755-756 | T095 (MD) | FORWARD; MISSING_FROM_STRUCTURED | "we will keep on receiving more orders ... orders would be more than the supply we do"; C-L755 "5500 crores or more orders"
+M08 | C-L852 | T121 (ANALYST) | NUMBER; ANALYST_FIGURE; MISSING_FROM_STRUCTURED | "50, 50, 60, 40 or 70, 30" ratio ballpark asked; C-L853 MD declines to give a ballpark
+M09 | C-L878 | T127 (MD) | NUMBER; MISSING_FROM_STRUCTURED | "short term contract note 4 to 6 points there is no reset clause" (4 to 6 months; R463 holds the qualifier only)
+M10 | C-L880-881 | T127 (MD) | NUMBER; MISSING_FROM_STRUCTURED | "four to six months" price always higher; "five year" (contract tenors; ASR garbled)
+M11 | C-L980 | T140 (ANALYST) | NUMBER_PERIOD; ANALYST_FIGURE; MISSING_FROM_STRUCTURED | "four to five years" planned data center story
+M12 | C-L391 | T033 (ANALYST) | DATE_PERIOD; ANALYST_FIGURE; MISSING_FROM_STRUCTURED | "into 3 or Q4" (period reference); C-L389-392 defence "200 crore quarter", "hundred for the defense business"
+M13 | C-L767 | T098 (ANALYST Sagar Parikh) | DATE_PERIOD; ANALYST_FIGURE; MISSING_FROM_STRUCTURED | "next 2 years" visibility; C-L765-766 "25000 crores supply" (likely 2500), "orders of 5500 crores"
+M14 | C-L835 | T119 (ANALYST) | DATE_PERIOD; ANALYST_FIGURE; MISSING_FROM_STRUCTURED | "Q3 and Q4" realization vs volume question

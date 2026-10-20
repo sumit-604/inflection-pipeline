@@ -1,0 +1,40 @@
+stage: A5-adversary
+company: "HFCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual:
+    - "NF1 (A4): hyperscaler lower reading 39.90% is a CEILING (70% of export orders x export share <=57% of book, C-L171-173, P-L314) but is presented as the floor of a '39.90%-44.81%' range at 8A RV-L1664, 9B RV-L1786, Key Notes RV-L1788, brief part 4 RV-L1956, YAML flag RV-L2068 and analyst_note RV-L2079; correct at 5A RV-L1511, 8D RV-L1713, YAML RV-L2014. Fix: 'up to 39.90% if the 70% applies only to export orders; 44.81% if it applies to the whole Rs18,500 Cr'"
+  missing:
+    - "NM1 (A4): defence Rs5,000 Cr framings omit C-L278-279 'it should not be difficult for us to reach the 2000 crores figure and a 5000 crores figure' (cited only for Rs2,000 Cr at 9A #21); add to 9A #22 RV-L1766, 6D RV-L1603, Step 2 RV-L1291, 5A RV-L1506, N18 RV-L1894, YAML RV-L2015; brief part 2 RV-L1938 'an aspiration, not a target' attributes 'not a target' to the MD, which the extract does not support. The aspiration classification may stand as A4's call"
+  contradiction: []
+  style:
+    - "NS1 anchors: '[ROLE 4 7A]' should be Role 4 2D/2A (RV-L348, RV-L306); '[ROLE 4 2A]' for QoQ gross margin should be Role 4 1B (RV-L242); brief gross-margin tag should be 'FILED, Q2, computed'"
+    - "NS2 Reading B / Q48: 'only' not said; restore the MD's condition 'if prices of raw material go up' (C-L879) and balancing clause (C-L880-881, M10)"
+    - "NS3 YAML flag 'no new capacity before July 2028' should read 'no capacity step dated before July 2028'; forward-map 31-Dec bull fork 'capacity reached' should read 'Dec-2026 step confirmed in a filing'"
+    - "NS4 Exchange 2 bull leg (a) 'mix shift' cites a level only; add C-L203-205, C-L739-740 (support) and C-L242-245, C-L671-677 (telco counter)"
+    - "NS5 enumeration convention: analyst framing periods inside question rows tagged unevenly (R390-R391, M12-M14 tagged; C-L177, C-L198, C-L349-350, C-L483, C-L605, C-L641, C-L713-715, C-L831, C-L838, C-L855, C-L922 not); MD repeats untagged; one A1 rule next run; no content lost"
+    - "NS6 process: A3 forensics file does not record M01-M14; A5 checked each at line; none changes a finding"
+loop_back_to: "A4"
+gap: "A4 text-only fixes: NF1 (FACTUAL) restate the hyperscaler range at 8A RV-L1664, 9B RV-L1786, Key Notes RV-L1788, brief part 4 RV-L1956, YAML flag RV-L2068 and analyst_note RV-L2079 so 39.90% reads as the ceiling of the export-orders reading (up to 39.90%), not a floor; NM1 (MISSING) add C-L278-279 'should not be difficult ... 5000 crores figure' beside 'in expiration' / 'possibly' at 9A #22, 6D, Step 2, 5A, N18 and YAML defence_5000, and remove 'not a target' as an MD attribution in brief part 2 RV-L1938. Prior F1, C1, M1-M4 closed; coverage and arithmetic pass; rulings unchanged."
+style_notes:
+  - "NS1 anchor and provenance fixes (Role 4 2D/1B; 'computed')"
+  - "NS2 Reading B 'only' and C-L879-881 balancing clause"
+  - "NS3 capacity flag and 31-Dec bull fork wording"
+  - "NS4 bull leg (a) mix-shift cites both sides"
+  - "NS5 A1 rule for analyst framing periods and repeats"
+  - "NS6 A3 file lacks M01-M14 record (process)"
+analyst_note: "Loop 1 closes every prior FACTUAL, MISSING and CONTRADICTION item. A2 added M01-M14, matching the prior list one for one; A4 lists and cites all 14; ledger 629 rows, no orphans. My fresh digit and number-word passes over the fulltext found no material unit missing. Arithmetic recomputes clean, including the filed Telecom margins (483.92/1,589.53 = 30.44%; 716.24/2,321.98 = 30.85%) and gross margin 38.82% to 38.25%. Two new text errors remain, both one-line fixes. First, 39.90% is the ceiling of the export-orders reading, yet the brief and the Notion Key Notes show it as a floor. Second, the Rs5,000 Cr fix dropped the MD's 'should not be difficult ... 5000 crores figure' line, and the brief puts 'not a target' in his mouth. Rulings unchanged: tripwire #4 FIRED with the AVOID proposal; trigger #6 imminent."

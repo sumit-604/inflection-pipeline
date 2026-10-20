@@ -1,0 +1,43 @@
+# Session cost: HFCL Q2 FY27 (/run-quarterly, 2026-10-19/20 overnight batch)
+
+ticker | date | doctype | pages | a1_extracted_text_tok | total_run_tok | loop_iterations
+---|---|---|---|---|---|---
+HFCL | 2026-10-20 | results + deck + monitoring agency report + concall (machine transcript) | 61 (results 11, deck 25, MA report 25) + 82.9-min call | ~82,412 (approx, chars/4 of all A1 fulltexts) | 6,036,798 (floor, 2 rows ND) | Role 4: 2; Role 5: 2
+
+## Per-agent ledger (one row per subagent run; a resumed agent's row counts its continuation only)
+| agent | doc | model | total_tok | wall_s |
+|---|---|---|---|---|
+| A1 | presentation | sonnet-5.5 | 68550 | 755 |
+| A1 | results (run 1) | sonnet-5.5 | 93966 | 851 |
+| A1 | mareport (run 1) | sonnet-5.5 | 95887 | 898 |
+| A2 | presentation | sonnet-5.5 | 43542 | 480 |
+| A1 | results (render continuation) | sonnet-5.5 | 143512 | 1508 |
+| A1 | mareport (render continuation) | sonnet-5.5 | 143393 | 1770 |
+| A2 | mareport | sonnet-5.5 | 60942 | 392 |
+| A2 | results | sonnet-5.5 | 98083 | 1157 |
+| A3 | mareport | opus-5.5 | 145678 | 442 |
+| A3 | presentation | opus-5.5 | 138745 | 482 |
+| A3 | results | opus-5.5 | 283568 | 1092 |
+| A4 | Role 4 review | opus-5.5 | 361042 | 1616 |
+| A5 | audit | opus-5.5 | 386365 | 1325 |
+| A2 | presentation (loop 1, continuation) | sonnet-5.5 | 49216 | 57 |
+| A2 | results (loop 1, continuation) | sonnet-5.5 | 103841 | 79 |
+| A3 | presentation (loop 1, continuation) | opus-5.5 | 167093 | 269 |
+| A3 | results (loop 1, continuation) | opus-5.5 | 320106 | 306 |
+| A4 | loop 1 fix (continuation) | opus-5.5 | 464975 | 659 |
+| A5 | loop 1 re-audit | opus-5.5 | 222564 | 790 |
+| A4 | loop 2 fix (continuation) | opus-5.5 | 546486 | 622 |
+| A5 | loop 2 final re-audit | opus-5.5 | 153365 | 488 |
+| T | transcript clean-up (general-purpose) | sonnet-5.5 | 123850 | 80 |
+| A1 | concall | sonnet-5.5 | 116035 | 360 |
+| A2 | concall | sonnet-5.5 | 70809 | 149 |
+| A3 | concall | opus-5.5 | 212731 | 634 |
+| A4 | Role 5 addendum (continuation) | opus-5.5 | 749481 | 957 |
+| A5 | Role 5 addendum audit | opus-5.5 | ND (session ended before the completion record) | ND |
+| A2 | concall (R5 loop 1) | sonnet-5.5 | 40707 | 50 |
+| A4 | Role 5 loop 1 fix (fresh agent) | opus-5.5 | 208452 | 689 |
+| A5 | Role 5 loop 1 re-audit (rerun) | opus-5.5 | 233532 | 671 |
+| A4 | Role 5 loop 2 fix (fresh agent) | opus-5.5 | 190282 | 591 |
+| A5 | Role 5 loop 2 final re-audit | opus-5.5 | ND | ND |
+
+Loop rows are labelled "loop N". Orchestrator session tokens are not included (one orchestrator session ran the whole five-company batch).

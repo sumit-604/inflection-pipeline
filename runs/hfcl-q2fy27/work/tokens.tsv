@@ -1,4 +1,4 @@
-﻿| agent | doc | model | total_tok | wall_s |
+| agent | doc | model | total_tok | wall_s |
 | A1 | presentation | sonnet-5.5 | 68550 | 755 |
 | A1 | results (run 1) | sonnet-5.5 | 93966 | 851 |
 | A1 | mareport (run 1) | sonnet-5.5 | 95887 | 898 |
@@ -26,3 +26,8 @@
 | A3 | concall | opus-5.5 | 212731 | 634 |
 | A4 | Role 5 addendum (continuation) | opus-5.5 | 749481 | 957 |
 | A5 | Role 5 addendum audit | opus-5.5 | ND (session ended before the completion record) | ND |
+| A2 | concall (R5 loop 1) | sonnet-5.5 | 40707 | 50 |
+| A4 | Role 5 loop 1 fix (fresh agent) | opus-5.5 | 208452 | 689 |
+| A5 | Role 5 loop 1 re-audit (rerun) | opus-5.5 | 233532 | 671 |
+| A4 | Role 5 loop 2 fix (fresh agent) | opus-5.5 | 190282 | 591 |
+| A5 | Role 5 loop 2 final re-audit | opus-5.5 | ND | ND |

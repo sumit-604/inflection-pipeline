@@ -2,7 +2,7 @@
 
 ticker | date | doctype | pages | a1_extracted_text_tok | total_run_tok | loop_iterations
 ---|---|---|---|---|---|---
-HFCL | 2026-10-20 | results + deck + monitoring agency report + concall (machine transcript) | 61 (results 11, deck 25, MA report 25) + 82.9-min call | ~82,412 (approx, chars/4 of all A1 fulltexts) | 6,036,798 (floor, 2 rows ND) | Role 4: 2; Role 5: 2
+HFCL | 2026-10-20 | results + deck + monitoring agency report + concall (machine transcript) | 61 (results 11, deck 25, MA report 25) + 82.9-min call | ~82,412 (approx, chars/4 of all A1 fulltexts) | 6,115,445 (floor, 1 rows ND) | Role 4: 2; Role 5: 2
 
 ## Per-agent ledger (one row per subagent run; a resumed agent's row counts its continuation only)
 | agent | doc | model | total_tok | wall_s |
@@ -38,6 +38,6 @@ HFCL | 2026-10-20 | results + deck + monitoring agency report + concall (machine
 | A4 | Role 5 loop 1 fix (fresh agent) | opus-5.5 | 208452 | 689 |
 | A5 | Role 5 loop 1 re-audit (rerun) | opus-5.5 | 233532 | 671 |
 | A4 | Role 5 loop 2 fix (fresh agent) | opus-5.5 | 190282 | 591 |
-| A5 | Role 5 loop 2 final re-audit | opus-5.5 | ND | ND |
+| A5 | Role 5 loop 2 final re-audit | opus-5.5 | 78647 | 166 |
 
 Loop rows are labelled "loop N". Orchestrator session tokens are not included (one orchestrator session ran the whole five-company batch).

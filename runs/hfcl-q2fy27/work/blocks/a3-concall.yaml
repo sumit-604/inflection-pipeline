@@ -1,0 +1,92 @@
+stage: A3-forensics
+company: "HFCL"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/hfcl-q2fy27/work/forensics_concall_hfcl_q2fy27.md"
+ledger_reconciled_pct: 100        # 615 of 615 IDs (R001-R470 + T001-T145); fulltext lines 1-1020 read in full
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: FINDING
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "CC-FN-01", check: "F1", line: "819-820; 796-802, 815-816", classification: "AMBIGUOUS", implication: "Q1 connectivity nil (ZERO_STANDING R155), Q2 ~Rs300 Cr hedged, FY27 Rs800 Cr needs only ~Rs250 Cr/q in H2; line 820 contradicts nil; ask Q1/Q2 in Rs Cr"}
+  - {id: "CC-FN-02", check: "F6", line: "107-109; 181; 560-561; 607-609", classification: "FORWARD-SIGNAL", implication: "MD's Q3>Q2 path implies FY27 >= Rs9,540 Cr (+92.8%) vs 'at least 80%' floor Rs8,909 Cr; sandbag or Q4 drop; basis unstated; guide history omits broker '60%' step"}
+  - {id: "CC-FN-03", check: "F6", line: "109-110; 484-487", classification: "FORWARD-SIGNAL", implication: "'avoid giving any guidance for 28' plus 'see the run rate' (Q2 x4 = Rs10,167 Cr) = implicit FY28 >= Rs10,000 Cr; year unnamed"}
+  - {id: "CC-FN-04", check: "F6", line: "129-130; 251-253; 278-279; 407-408; 769-770", classification: "FORWARD-SIGNAL", implication: "defence FY27 500 -> 500-600 -> 'surely'; FY28 >=2,000 vs ~1,500 broker 05-Oct; 5,000 in 3 vs 2 years vs FY30 memory; H2 needs 5.4-6.6x H1 Rs78.68 Cr; amplification-counter candidate"}
+  - {id: "CC-FN-05", check: "F6", line: "124-126; 273-277; 402-407", classification: "FORWARD-SIGNAL", implication: "FY27 defence Rs500 Cr leans on consolidating an unnamed, unpriced aerospace target 'within November'; book 1,600/1,800/'16 or 1800' in one call; no price or target financials"}
+  - {id: "CC-FN-06", check: "F13", line: "532-547", classification: "FORWARD-SIGNAL", implication: "E&Y-advised restructuring committee at recommendation; board meeting ~10 days then finalise ~2 weeks (~mid-Nov 2026); scope (EPC only vs verticals) and 100%-economics not stated; trigger #6 test imminent; line 547 cut off"}
+  - {id: "CC-FN-07", check: "F6", line: "409-443; 526-530", classification: "FORWARD-SIGNAL", implication: "Turnkey loss ~121 (filed 122.58) above Rs80-90 Cr guide; profit moved to Q1 FY28; Q3 carries catch-up billing of Q2 cost (not run-rate); Army AMC cost incurred before contract signature; 2-quarter ceiling unreadable"}
+  - {id: "CC-FN-08", check: "F6", line: "418-423; 522-523", classification: "AMBIGUOUS", implication: "Rs5,000 Cr O&M book inside 'secured' Rs28,900 Cr may count the unsigned Army/BSNL AMC"}
+  - {id: "CC-FN-09", check: "F6", line: "548-555; 785", classification: "FORWARD-SIGNAL", implication: "debt to fall from FY27 and 'substantially' by Mar-27/Mar-28 (analyst-framed, MD-affirmed) though gross debt rose Rs126.76 Cr in H1 and Rs1,800 Cr capex pending with no funding split"}
+  - {id: "CC-FN-10", check: "F6", line: "330-334; 703-709; 874-878; 927-944", classification: "FORWARD-SIGNAL", implication: "preform supplier contracts 12-24 months, spot up ~600%, own 600 MT covers ~half capacity only from Oct-2028; 'price variation has to be there' at expiry vs 'no chance worse' margins; expiry dates undisclosed"}
+  - {id: "CC-FN-11", check: "F7", line: "580-583; 882-890", classification: "AMBIGUOUS", implication: "undisclosed preform 'midterm solution' from Q1 CY2027; nature, counterparty and capital withheld ('trade statement'); possible capital or related-party commitment"}
+  - {id: "CC-FN-12", check: "F6", line: "364-371; 815-816; 857-858; 898-900", classification: "FORWARD-SIGNAL", implication: "connectivity FY28 Rs2,000 Cr vs Rs800-1,000 Cr Q1 promise log (2-2.5x raise); in-DC products from Q4 FY27; Rs215 Cr DC facility unmentioned"}
+  - {id: "CC-FN-13", check: "F14", line: "360-362; 377-378; 584-588; 716-717; 768", classification: "AMBIGUOUS", implication: "capacity steps undated on call; interim 28->34 fibre step (Dec-2026 memory) still named; current cable 34 vs deck 39 vs Q1 30.5; '34 to 53' outlier vs 63"}
+  - {id: "CC-FN-14", check: "F7", line: "318-322; 502-509; 733-741", classification: "AMBIGUOUS", implication: "utilisation defined 'in money terms'; with ~20% price rise it reads 100%+ while some lines idle; volume headroom unreadable; ask physical fkm output"}
+  - {id: "CC-FN-15", check: "F7", line: "42-43; 168-171; 516; 796; 853; 885", classification: "AMBIGUOUS", implication: "delivered-period splits declined or hedged while forward targets stated as round numbers with 'surely'/'no chance'; CFO present with no attributed turn; overpromiser-watch pattern"}
+  - {id: "CC-FN-16", check: "F7", line: "163-172; 514-520", classification: "AMBIGUOUS", implication: "~Rs12,950 Cr hyperscaler book = 44.8% of total book; $1.1B order up to ~78% of it; names under NDA; one line on 'other Hyperscaler orders'"}
+  - {id: "CC-FN-17", check: "F7", line: "641-648; 839-853; 865-870; 915-926", classification: "FORWARD-SIGNAL", implication: "Q2 margin carries ~20-25% fibre price rise MD did not foresee in Q1; price/volume split withheld; 'some increase, but not as much'; reversion risk as global capacity adds 40-50%"}
+  - {id: "CC-FN-18", check: "F7", line: "589-600; 963-974", classification: "AMBIGUOUS", implication: "germanium for Oct-2028 preform not contracted; export restrictions acknowledged; input risk to backward-integration margin step"}
+  - {id: "CC-FN-19", check: "F14", line: "58-70", classification: "NEUTRAL-FACT", implication: "opening arithmetic ties; 25.89% EBITDA and +264 bps tie to Q1 reported Rs445.27 Cr / 23.25%, the other-income-inclusive basis; 'PED margin' 15.51% = PAT/revenue"}
+  - {id: "CC-FN-20", check: "F14", line: "750-755; 764-765", classification: "NEUTRAL-FACT", implication: "MD's prior base 26,000 vs Q1 deck 26,665; filed inflow ~Rs4,788 Cr vs spoken 5,500; book-to-bill ~1.9x either way; filing governs"}
+  - {id: "CC-FN-21", check: "F14", line: "48; 249-250; 482-483; 665-666; 776-778", classification: "NEUTRAL-FACT", implication: "audio gaps at defence question, FY28 guidance question and margin-source answer; defence-gap question cut off; 'September 13' ASR; re-read against official transcript"}
+  - {id: "CC-FN-22", check: "F17", line: "427-438; 1011-1012", classification: "CONFIRMATORY-NEGATIVE", implication: "no receivables ageing/DSO/unbilled number on call, none asked; second consecutive quarter of receivables silence (Q1 memory + Q2 call) = tripwire #4 limb wording; A4 rules against Q2 filing"}
+  - {id: "CC-FN-23", check: "F17", line: "513-517; 78", classification: "CONFIRMATORY-NEGATIVE", implication: "export-OFC/hyperscaler revenue withheld second consecutive quarter across results, deck and call; trigger #1 delivery pace untestable"}
+  - {id: "CC-FN-24", check: "F17", line: "122; 259-264; 284-285; 396-399", classification: "CONFIRMATORY-NEGATIVE", implication: "fuze approval silent (after 5 quarters of 'couple of months' and Q1 silence); same short-horizon idiom now on foliage radar, stated two ways; MMHG participated not won; BMP-2 silent"}
+  - {id: "CC-FN-25", check: "F17", line: "1011-1014", classification: "AMBIGUOUS", implication: "pledge, warrants, Nivetti, S-vs-C PAT gap, HASPL Rs90 Cr, QIP use, tax accrued unpaid Rs123.40 Cr all silent; MD commits to 'immediately reply' by email; route all SILENT/DECLINED questions to IR and date the reply"}
+forward_signals: ["CC-FN-02", "CC-FN-03", "CC-FN-04", "CC-FN-05", "CC-FN-06", "CC-FN-07", "CC-FN-09", "CC-FN-10", "CC-FN-12", "CC-FN-17"]
+ambiguous: ["CC-FN-01", "CC-FN-08", "CC-FN-11", "CC-FN-13", "CC-FN-14", "CC-FN-15", "CC-FN-16", "CC-FN-18", "CC-FN-25"]
+commitments:
+  - {commitment: "FY27 revenue growth at least 80% (third raise: 20, 40, 80)", implied_date: "FY27", ref: "lines 104-108 (T003)", status_word: "initiated"}
+  - {commitment: "Q3 revenue above Q2", implied_date: "Q3 FY27", ref: "lines 607-611 (T072)", status_word: "initiated"}
+  - {commitment: "Q2 not a peak", implied_date: "undated", ref: "lines 88-89 (T003)", status_word: "initiated"}
+  - {commitment: "Rs10,000 Cr revenue much before FY29", implied_date: "before FY29", ref: "lines 109-110; 484-485 (T044)", status_word: "initiated"}
+  - {commitment: "FY28 better than current", implied_date: "FY28", ref: "lines 487-495 (T044)", status_word: "initiated"}
+  - {commitment: "pipeline converting; order book to strengthen", implied_date: "undated", ref: "lines 86-87, 93 (T003)", status_word: "underway"}
+  - {commitment: "~Rs1,800 Cr capex OF/OFC/preform (pending)", implied_date: "to Oct-2028", ref: "lines 112-113; 785 (T106)", status_word: "underway"}
+  - {commitment: "fibre 28->34->43, cable 34->63 mn fkm", implied_date: "undated on call", ref: "lines 360-362 (T032); 716-717 (T093)", status_word: "underway"}
+  - {commitment: "preform plant construction start", implied_date: "soon, undated", ref: "line 377 (T032)", status_word: "initiated"}
+  - {commitment: "own preform 600 MT", implied_date: "Oct-2028", ref: "lines 377-378; 584-588 (T067)", status_word: "underway"}
+  - {commitment: "preform midterm solution (undisclosed)", implied_date: "Q1 CY2027", ref: "lines 580-583 (T067)", status_word: "initiated"}
+  - {commitment: "germanium supply tie-up", implied_date: "before Oct-2028", ref: "lines 593-600; 963-970", status_word: "initiated"}
+  - {commitment: "margins only improve, 'no chance' worse", implied_date: "undated", ref: "lines 201-202 (T015); 343 (T028)", status_word: "initiated"}
+  - {commitment: "connectivity revenue more than Rs800 Cr", implied_date: "FY27", ref: "lines 369-370; 815-816", status_word: "underway"}
+  - {commitment: "connectivity revenue Rs2,000 Cr", implied_date: "FY28", ref: "line 371; 858", status_word: "initiated"}
+  - {commitment: "in-DC connectivity products start revenue", implied_date: "Q4 FY27 or early FY28", ref: "lines 366-369 (T032)", status_word: "initiated"}
+  - {commitment: "aerospace acquisition completes", implied_date: "within Nov-2026", ref: "lines 124; 273-274; 404", status_word: "underway"}
+  - {commitment: "aerospace revenue consolidated", implied_date: "Q3 FY27", ref: "lines 275; 406", status_word: "initiated"}
+  - {commitment: "large aerospace export orders", implied_date: "next few months", ref: "lines 276-277 (T018)", status_word: "initiated"}
+  - {commitment: "defence revenue ~Rs500 Cr (500-600)", implied_date: "FY27", ref: "lines 129-130; 251; 407-408", status_word: "underway"}
+  - {commitment: "defence revenue at least Rs2,000 Cr", implied_date: "FY28", ref: "lines 251-252, 278; 769", status_word: "initiated"}
+  - {commitment: "defence revenue ~Rs5,000 Cr", implied_date: "three years (252) / next two years (770)", ref: "lines 252-253; 770", status_word: "initiated"}
+  - {commitment: "foliage penetration radar second trial / approval", implied_date: "~2 weeks (early Nov-2026)", ref: "lines 262-263; 397-399", status_word: "underway"}
+  - {commitment: "ground surveillance radar export orders", implied_date: "undated", ref: "lines 268-269 (T018)", status_word: "initiated"}
+  - {commitment: "ammunition complex construction; revenue in ~2 years", implied_date: "soon; ~late 2028", ref: "lines 134; 281-283", status_word: "initiated"}
+  - {commitment: "MMHG 800,000-unit tender (participated)", implied_date: "undated", ref: "lines 284-285 (T018)", status_word: "underway"}
+  - {commitment: "Army AMC (year 1 via BSNL) approved and signed", implied_date: "~end-Oct 2026", ref: "lines 418-423 (T036)", status_word: "underway"}
+  - {commitment: "BharatNet milestone bills submitted", implied_date: "Q3 FY27", ref: "lines 435-437 (T036)", status_word: "underway"}
+  - {commitment: "no repeat of unbilled-expense Turnkey loss; two-quarter ceiling (unreadable)", implied_date: "Q3-Q4 FY27", ref: "lines 438-441 (T036)", status_word: "initiated"}
+  - {commitment: "Turnkey segment profit", implied_date: "Q1 FY28", ref: "line 443 (T038)", status_word: "initiated"}
+  - {commitment: "restructuring recommendation, board meeting, finalisation", implied_date: "~mid-Nov 2026", ref: "lines 535-545 (T056)", status_word: "underway"}
+  - {commitment: "debt reduction starts FY27; substantially lower Mar-27 and Mar-28", implied_date: "31-Mar-2027 / 31-Mar-2028", ref: "lines 551-555 (T058-T060)", status_word: "initiated"}
+  - {commitment: "large telco orders", implied_date: "undated", ref: "lines 243-245 (T017)", status_word: "initiated"}
+  - {commitment: "IR to immediately reply to emailed queries", implied_date: "immediate", ref: "lines 1011-1014 (T143)", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Machine transcript; filings govern. Three reads matter. First, trigger #6 gets tested within weeks: an E&Y-advised committee is at recommendation, a board meeting is promised in ~10 days, then ~2 weeks to finalise. The scope (EPC only, or the deck's 'verticals') was never stated, and line 547 is cut off. Second, the guide sits below the MD's own words. 'Definitely growth in Q3' with Q4 flat implies ~+93% against an 'at least 80%' floor. But he admits a ~20% fibre price rise he did not foresee. The preform contracts that shield margin run 12-24 months, spot is up ~600%, and own preform covers half the capacity only from Oct-2028. Reading A: floor plus durable mix. Reading B: a price-cycle peak with a cost reset to come. Separating observation: Q3 realisation per fkm and preform contract expiry dates. Third, the pattern: delivered-period splits are withheld (export-OFC, connectivity Q2, price/volume), while defence and connectivity targets rise inside the call and against broker figures from two weeks earlier. Receivables were not discussed at all: the second silent quarter under tripwire #4's wording. A4 rules on firing."

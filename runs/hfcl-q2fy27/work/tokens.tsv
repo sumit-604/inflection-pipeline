@@ -19,4 +19,10 @@
 | A4 | loop 1 fix (continuation) | opus-5.5 | 464975 | 659 |
 | A5 | loop 1 re-audit | opus-5.5 | 222564 | 790 |
 | A4 | loop 2 fix (continuation) | opus-5.5 | 546486 | 622 |
-| A5 | loop 2 final re-audit | opus-5.5 | ND | ND |
+| A5 | loop 2 final re-audit | opus-5.5 | 153365 | 488 |
+| T | transcript clean-up (general-purpose) | sonnet-5.5 | 123850 | 80 |
+| A1 | concall | sonnet-5.5 | 116035 | 360 |
+| A2 | concall | sonnet-5.5 | 70809 | 149 |
+| A3 | concall | opus-5.5 | 212731 | 634 |
+| A4 | Role 5 addendum (continuation) | opus-5.5 | 749481 | 957 |
+| A5 | Role 5 addendum audit | opus-5.5 | ND (session ended before the completion record) | ND |

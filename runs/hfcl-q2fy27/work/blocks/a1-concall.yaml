@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "HFCL"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 9              # 10-minute time blocks (text input, no PDF pages)
+formfeed_count: 0
+line_count: 992             # source lines; fulltext file 1020 lines incl. header and 9 page markers
+unit_convention: "Crores (as spoken; mixed units, ASR garbles flagged)"
+conversion_factor_to_cr: "Crores -> x1; Lakhs -> x0.01; Millions -> x0.1"
+text_layer_present: false   # plain .txt machine transcript; pdffonts N.A.
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/hfcl-q2fy27/extracted/hfcl-concall-q2fy27-fulltext.md"
+structured_path: "runs/hfcl-q2fy27/extracted/hfcl-concall-q2fy27-structured.md"
+structured_counts:
+  number: 166
+  entity: 68
+  forward: 112
+  date: 46
+  qualifier: 78
+structured_id_range: "R001-R470"
+speaker_turns_indexed: 145  # SPEAKER_INFERRED, coarse ranges
+gate_a1: pass
+gap_note: ""

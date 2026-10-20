@@ -1,0 +1,73 @@
+stage: A5-adversary
+company: "HFCL"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "C-L432-433 '25 different steps' / 'step 0 ... step 25' (MD, T036)"
+    - "C-L878 '4 to 6' months, no-reset short-term contracts (MD, T127; R463 qualifier only, no NUMBER row)"
+    - "C-L880-881 'four to six months', 'five year' (MD, T127)"
+    - "C-L238 'since last two years' (MD, T017)"
+    - "C-L700 '2 years time frame', '10,000' (analyst, T086)"
+    - "C-L745-746 '3 year 2 years', '6 7000 crores' (analyst, T094)"
+    - "C-L852 '50, 50, 60, 40 or 70, 30' (analyst, T121)"
+    - "C-L980 'four to five years' (analyst, T140)"
+    - "C-L275 forward: revenue consolidated after acquisition, dated 'this quarter itself' C-L274 (MD, T018)"
+    - "C-L676 forward: international telco orders expected (MD, T083)"
+    - "C-L755-756 forward: orders to exceed supply (MD, T095)"
+    - "C-L391, C-L767, C-L835 analyst period references (low materiality)"
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Exchange 2 bull reading: volume from new capacity plus a price floor in long-term contracts keeps H2 above Q2 (RV-L1448)", counter: "No floor: customer long-term contracts reset year to year in both directions; no new capacity in H2 FY27: fibre at 100%, capacity unchanged, no step dated before July 2028", source_line: "C-L336-339, C-L877-878, C-L308, C-L502; RV-L396, RV-L660", type: FACTUAL}
+  - {claim: "Hyperscalers about 70% of the Rs18,500 Cr book = Rs12,950 Cr = 44.81% of total (RV-L1480, RV-L1678, RV-L1911)", counter: "70% is tied to 'the export orders'; MD 'I do not have the exact number'; 44.81% is the upper reading", source_line: "C-L171-173", type: MISSING}
+  - {claim: "Defence ~Rs5,000 Cr in 2-3 years registered as a commitment (RV-L1722, RV-L1850, RV-L1569)", counter: "Framed as aspiration ('in expiration ... three years time frame') and 'possibly'; analyst calls them 'your aspirations'", source_line: "C-L252-253, C-L770, C-L713", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1 RV-L1447-1448: Exchange 2 bull reading premises contradicted/unsupported (two-way yearly customer resets C-L336-339, C-L877-878; no H2 FY27 capacity add, fibre at 100% C-L308/C-L502, RV-L396, RV-L660); 'Not said: when long-term contracts reset' contradicted by C-L336-338"
+  missing:
+    - "M1 (A2): fulltext units with no A1 row and no ledger row: C-L238, C-L275, C-L432-433, C-L676, C-L700, C-L745-746, C-L755-756, C-L852, C-L878, C-L880-881, C-L980 (+ C-L391, C-L767, C-L835); content already reflected in A4"
+    - "M2 (A4): hyperscaler 70% base qualifier ('of the export orders', C-L171-173) dropped at RV-L1480, RV-L1678, RV-L1911, RV-L1340, RV-L1630"
+    - "M3 (A4): defence Rs5,000 Cr aspiration/possibly qualifier (C-L252-253, C-L770, C-L713) dropped at RV-L1722, RV-L1850, RV-L1569, RV-L1525, RV-L1615"
+    - "M4 (A4): bear claim 'Part of the margin is price' (RV-L1877, RV-L1477, RV-L1635, RV-L1676, RV-L2012) lacks filed counter: gross margin 38.82% to 38.25% QoQ (RV-L242), Telecom result margin 30.44% to 30.85% (RV-L343), MD raw-material framing and pass-through (C-L869-879); add two readings and separating observation"
+  contradiction:
+    - "C1 (A4): Tripwire #4 Reading B (RV-L1666) says days 140.78 'inside the Notion green band'; Role 4 says above the 130-day red line (RV-L453, RV-L531c), item 2 AMBER (RV-L618), BUY gate (b) NOT MET (RV-L730); only TR/TTM 38.57% is green (RV-L455). Correction strengthens the FIRED ruling"
+  style:
+    - "S1 specificity borderline rows R313/R271/R320/R302 undisclosed (range 0.40-0.43); soft untagged forward lines; company-only label"
+    - "S2 credibility point schedule unstated; DELAYED at 0.5 gives 50.0%/55.6%, grade unchanged"
+    - "S3 Q43-Q61 management questions collide with analyst rows Q43-Q54"
+    - "S4 brief CFO line lacks 'half year'"
+    - "S5 forward map: IR reply undated; Nivetti 'second' should be third; full-year CFO re-test dropped"
+    - "S6 brief tripwire line: point to counter-reading and IR test"
+    - "S7 7A '26,000' hedged rounding labelled CONTRADICTED"
+    - "S8 supersession line for Role 4 Step 9 'No trigger fired' clauses"
+    - "S9 Exchange 1 decision timing sequence"
+    - "S10 unbilled limb label UNTESTABLE not NOT FIRED"
+    - "S11 Q24 omits admitted 2-3 month machine delay (C-L584-588)"
+    - "S12 analyst speech inside MD turns T093/T110; R119-R122 partition"
+    - "S13 brief 'first half runs at that pace' wording"
+loop_back_to: "A2"
+gap: "A2: add MISSING_FROM_STRUCTURED rows for concall fulltext C-L238, C-L275, C-L432-433, C-L676, C-L700, C-L745-746, C-L755-756, C-L852, C-L878 (number), C-L880-881, C-L980 (+ C-L391, C-L767, C-L835). A3: read them at line. A4: list them as reviewed in the preamble; fix F1 (FACTUAL, RV-L1447-1448 bull reading and 'Not said' line vs C-L336-339, C-L877-878, C-L308, C-L502), C1 (CONTRADICTION, RV-L1666 Reading B vs RV-L453/RV-L618/RV-L730), M2 (70% of export orders, C-L171-173), M3 (defence Rs5,000 Cr aspiration/possibly, C-L252-253, C-L770), M4 (two readings for 'margin is price' with RV-L242, RV-L343, C-L869-879). Rulings stand: #4 FIRED (silence limb), AVOID proposal; #6 NOT FIRED."
+style_notes:
+  - "S1 specificity borderline disclosure (range 0.40-0.43; band unchanged)"
+  - "S2 state credibility point schedule (DELAYED 0.5 sensitivity 50.0%)"
+  - "S3 prefix management question IDs"
+  - "S4 brief CFO period"
+  - "S5 forward map: date IR reply; Nivetti third extension; restore FY27 CFO re-test"
+  - "S6 brief tripwire counter-reading pointer"
+  - "S7 relabel 26,000 as ROUNDED"
+  - "S8 Role 4 Step 9 supersession line"
+  - "S9 restructuring timing wording"
+  - "S10 unbilled limb UNTESTABLE"
+  - "S11 Q24 machine delay"
+  - "S12 turn segmentation T093/T110"
+  - "S13 brief run-rate wording"
+analyst_note: "Both rulings hold. Tripwire #4 FIRED on the silence limb is the most evidenced reading, not only the conservative one. Role 4 6C pre-committed that a call silent on ageing and unbilled fires it. The Notion G4 green test is 'ageing and unbilled disclosed'. The call gave neither. Reading B is overstated (140.78 days sit above the 130-day red line), so the fix strengthens the ruling. The AVOID proposal follows 8A-W as Role 4 anticipated. Trigger #6 NOT FIRED is correct: no structure was announced, and the test is pre-committed. INCOMPLETE rests on five things. A1/A2 dropped about 11 spoken units; A4 already reflects them, so the A4 work there is a preamble listing. One bull reading is unsupported (price floor, new capacity). Two qualifiers are dropped on positive claims (70% of export orders; defence Rs5,000 Cr as aspiration). One bear claim lacks its filed counter (gross margin fell QoQ while price rose about 20%). No arithmetic mismatch above rounding. Specificity 0.40 and provisional credibility 40% hold within stated sensitivities; band, grade and archetype are unchanged."

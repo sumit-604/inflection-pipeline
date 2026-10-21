@@ -131,6 +131,7 @@ Run date: {{RUN_DATE}}
 
 ANNUAL REPORT (business sections, MD&A, segment data):
 {{ANNUAL_REPORT}}
+(If the orchestrator passed a section range from the AR section index, read that range first; the full .txt path is the fallback of record. Read the full text whenever the slice looks truncated or you need another section.)
 
 INVESTOR PRESENTATION (if available):
 {{INVESTOR_PRESENTATION_OR_NOT_PROVIDED}}

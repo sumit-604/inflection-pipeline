@@ -156,3 +156,4 @@ Run date: {{RUN_DATE}}
 
 AR GOVERNANCE EXTRACTS (shareholding, board, RPT sections):
 {{AR_GOVERNANCE_EXTRACTS}}
+(If the orchestrator passed a section range from the AR section index, read that range first; the full .txt path is the fallback of record. Read the full text whenever the slice looks truncated or you need another section.)

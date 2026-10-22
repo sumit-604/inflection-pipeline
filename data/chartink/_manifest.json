@@ -3,21 +3,6 @@
     {
       "dashboard": "mbm-swing-ka-sultan",
       "dashboard_id": "133280",
-      "widget_id": 1310091,
-      "name": "MBM 2.0 (magnitude)",
-      "file": "mbm-swing-ka-sultan/mbm-2-0-magnitude-1310091.csv",
-      "kind": "market",
-      "result_type": "table",
-      "columns": [
-        "abv 10ma",
-        "abv 20ma",
-        "abv 50ma",
-        "abv 200ma"
-      ]
-    },
-    {
-      "dashboard": "mbm-swing-ka-sultan",
-      "dashboard_id": "133280",
       "widget_id": 1310098,
       "name": "Above 50MA",
       "file": "mbm-swing-ka-sultan/above-50ma-1310098.csv",
@@ -54,39 +39,6 @@
     {
       "dashboard": "mbm-swing-ka-sultan",
       "dashboard_id": "133280",
-      "widget_id": 1310100,
-      "name": "Above 200MA",
-      "file": "mbm-swing-ka-sultan/above-200ma-1310100.csv",
-      "kind": "market",
-      "result_type": "areachart",
-      "columns": [
-        "above 200ma"
-      ]
-    },
-    {
-      "dashboard": "mbm-swing-ka-sultan",
-      "dashboard_id": "133280",
-      "widget_id": 1310101,
-      "name": "MBM 2.0 (velocity) - basic",
-      "file": "mbm-swing-ka-sultan/mbm-2-0-velocity-basic-1310101.csv",
-      "kind": "market",
-      "result_type": "table",
-      "columns": [
-        "4% advance",
-        "4% decline",
-        "net breadth",
-        "3% range",
-        "5d range",
-        "volume",
-        "+15% in 5d",
-        "-10% in 5d",
-        "10% + 10ema",
-        "10% - 10ema"
-      ]
-    },
-    {
-      "dashboard": "mbm-swing-ka-sultan",
-      "dashboard_id": "133280",
       "widget_id": 1310104,
       "name": "MBM 2.0 (velocity) - advanced",
       "file": "mbm-swing-ka-sultan/mbm-2-0-velocity-advanced-1310104.csv",
@@ -106,19 +58,6 @@
         "30% 52wh",
         "30% 52 wl",
         "net 30% h-l"
-      ]
-    },
-    {
-      "dashboard": "mbm-swing-ka-sultan",
-      "dashboard_id": "133280",
-      "widget_id": 1310105,
-      "name": "4% Advance & Decline",
-      "file": "mbm-swing-ka-sultan/4-advance-decline-1310105.csv",
-      "kind": "market",
-      "result_type": "linechart",
-      "columns": [
-        "4% advance",
-        "4% decline"
       ]
     },
     {
@@ -196,31 +135,6 @@
       "result_type": "areachart",
       "columns": [
         "net breadth"
-      ]
-    },
-    {
-      "dashboard": "mbm-swing-ka-sultan",
-      "dashboard_id": "133280",
-      "widget_id": 1310113,
-      "name": "15% up & 10% down",
-      "file": "mbm-swing-ka-sultan/15-up-10-down-1310113.csv",
-      "kind": "market",
-      "result_type": "linechart",
-      "columns": [
-        "+15% in 5d",
-        "-10% in 5d"
-      ]
-    },
-    {
-      "dashboard": "mbm-swing-ka-sultan",
-      "dashboard_id": "133280",
-      "widget_id": 1310114,
-      "name": "Net NH NL",
-      "file": "mbm-swing-ka-sultan/net-nh-nl-1310114.csv",
-      "kind": "market",
-      "result_type": "areachart",
-      "columns": [
-        "net nh-nl"
       ]
     }
   ],
@@ -315,19 +229,6 @@
       "columns": [
         "ltp",
         "vwap"
-      ]
-    },
-    {
-      "dashboard": "market-breadth-analysis",
-      "dashboard_id": "148889",
-      "widget_id": 1485950,
-      "name": "% Stocks above 50 EMA",
-      "file": "market-breadth-analysis/stocks-above-50-ema-1485950.csv",
-      "kind": "market",
-      "result_type": "linechart",
-      "columns": [
-        "%",
-        "50/50"
       ]
     },
     {
@@ -448,19 +349,6 @@
     {
       "dashboard": "market-breadth-analysis",
       "dashboard_id": "148889",
-      "widget_id": 1486326,
-      "name": "% Stocks at 52 Week High/ Low ( within 10% range )",
-      "file": "market-breadth-analysis/stocks-at-52-week-high-low-within-10-range-1486326.csv",
-      "kind": "market",
-      "result_type": "linechart",
-      "columns": [
-        "low",
-        "high"
-      ]
-    },
-    {
-      "dashboard": "market-breadth-analysis",
-      "dashboard_id": "148889",
       "widget_id": 1527198,
       "name": "Momentum Investing",
       "file": "market-breadth-analysis/momentum-investing-1527198.csv",
@@ -471,19 +359,6 @@
         "std deviation",
         "annual std dev",
         "roc"
-      ]
-    },
-    {
-      "dashboard": "market-breadth-analysis",
-      "dashboard_id": "148889",
-      "widget_id": 1485948,
-      "name": "% Stocks above 20 EMA",
-      "file": "market-breadth-analysis/stocks-above-20-ema-1485948.csv",
-      "kind": "market",
-      "result_type": "linechart",
-      "columns": [
-        "%",
-        "50/50"
       ]
     },
     {
@@ -767,34 +642,6 @@
     {
       "dashboard": "market-breadth-analysis",
       "dashboard_id": "148889",
-      "widget_id": 2938363,
-      "name": "Breakouts v2",
-      "file": "market-breadth-analysis/breakouts-v2-2938363.csv",
-      "kind": "stock",
-      "result_type": "table",
-      "columns": [
-        "sector",
-        "market cap",
-        "1 week %",
-        "vol > yr avg"
-      ]
-    },
-    {
-      "dashboard": "market-breadth-analysis",
-      "dashboard_id": "148889",
-      "widget_id": 1485958,
-      "name": "Oversold vs Overbought Stocks: RSI",
-      "file": "market-breadth-analysis/oversold-vs-overbought-stocks-rsi-1485958.csv",
-      "kind": "market",
-      "result_type": "linechart",
-      "columns": [
-        "oversold",
-        "overbought"
-      ]
-    },
-    {
-      "dashboard": "market-breadth-analysis",
-      "dashboard_id": "148889",
       "widget_id": 2938347,
       "name": "Mid Cap Stocks Above VWAP",
       "file": "market-breadth-analysis/mid-cap-stocks-above-vwap-2938347.csv",
@@ -871,27 +718,6 @@
     {
       "dashboard": "market-breadth-analysis",
       "dashboard_id": "148889",
-      "widget_id": 1485954,
-      "name": "Market Breadth: Number above 500 indicates trend reversal",
-      "file": "market-breadth-analysis/market-breadth-number-above-500-indicates-trend-reversal-1485954.csv",
-      "kind": "market",
-      "result_type": "table",
-      "columns": [
-        "up 4.5%+ today",
-        "down 4.5%+ today",
-        "up 20%+ in 5d",
-        "down 20%+ in 5d",
-        "above 20dma",
-        "below 20dma",
-        "above 50dma",
-        "below 50dma",
-        "above 200dma",
-        "below 200dma"
-      ]
-    },
-    {
-      "dashboard": "market-breadth-analysis",
-      "dashboard_id": "148889",
       "widget_id": 2938356,
       "name": "Stocks Where Retail is Increasing Shareholding",
       "file": "market-breadth-analysis/stocks-where-retail-is-increasing-shareholding-2938356.csv",
@@ -903,19 +729,6 @@
         "% 1 qtr ago",
         "% current qtr",
         "change in 3 qtrs"
-      ]
-    },
-    {
-      "dashboard": "market-breadth-analysis",
-      "dashboard_id": "148889",
-      "widget_id": 3043744,
-      "name": "Weekly RSI 50:50",
-      "file": "market-breadth-analysis/weekly-rsi-50-50-3043744.csv",
-      "kind": "market",
-      "result_type": "linechart",
-      "columns": [
-        "% below rsi 50",
-        "% above rsi 50"
       ]
     }
   ]

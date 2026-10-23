@@ -25,7 +25,7 @@ Loop rows are labelled "loop N". Orchestrator session tokens are not included (o
 
 ticker | date | doctype | pages | a1_extracted_text_tok | total_run_tok | loop_iterations
 ---|---|---|---|---|---|---
-GALLANTT | 2026-10-23 | resultsrev + presentation + concall (ASR) | 15 + 38 + 419 segments | ~44,594 (approx, chars/4 of the three new A1 fulltexts, 178,376 chars) | 2,609,654 | 1
+GALLANTT | 2026-10-23 | resultsrev + presentation + concall (ASR) | 15 + 38 + 419 segments | ~44,594 (approx, chars/4 of the three new A1 fulltexts, 178,376 chars) | 3,145,981 (incl. loop 2; base 2,050,002, loop 1 559,652, loop 2 536,327) | 2
 
 ## Per-agent ledger (one row per subagent run; a resumed agent's row counts its continuation only = reported cumulative minus its prior report)
 | agent | doc | model | total_tok | wall_s |
@@ -56,3 +56,15 @@ GALLANTT | 2026-10-23 | resultsrev + presentation + concall (ASR) | 15 + 38 + 41
 
 Base run 2,050,002; loop 1 559,652 (21.4% of total). Local ASR (faster-whisper small, CPU) took about 1h50m wall under memory pressure (62-177 MB free on a 6 GB machine with four ASR jobs from parallel sessions); no tokens.
 Fresh tokens: NOT FOUND (not exposed in session). Re-read tokens: NOT FOUND. Re-read multiple: NOT FOUND.
+
+## Loop 2 (operator approval dated 2026-10-24, forwarded by the parent session: "complete them fully"; machine clock 2026-10-23)
+| agent | doc | model | total_tok | wall_s |
+|---|---|---|---|---|
+| A3 | loop 2: concall C1 (continuation; usage not reported after app restart) | opus-5.5 | NOT FOUND | NOT FOUND |
+| A3 | loop 2: presentation M12 (continuation) | opus-5.5 | 32985 | 273 |
+| A4 | loop 2: resumed graft, stalled at 600 s, nothing written (mechanical failure) | opus-5.5 | NOT FOUND | 600+ |
+| A4 | loop 2: fresh agent, patch file P1-P71 (mechanical re-run) | opus-5.5 | 232112 | 687 |
+| A5 | loop 2: final fresh re-audit | opus-5.5 | 271230 | 762 |
+
+Loop 2 cost (reported rows): 536,327. Loop iterations now 2. Run total with loop 2 (reported rows): 3,145,981.
+

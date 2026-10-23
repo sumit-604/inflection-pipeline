@@ -213,6 +213,16 @@ The YAML block now carries a `deck_errors` list so A4 can list every deck error 
 
 Scorecard: no status changes. F14 now includes A3P-01 as a deck error. The F16 basis stays as amended above.
 
+## Loop 2 addition (A5 M12)
+Date: 2026-10-24 (loop 2, operator-approved). Source: A5 re-audit work/audit_gallantt_q2fy27_loop1.md item M12; cells P:R015, R086, R373, R479, R1092, R1093, R1101 and R1084-R1088, R1094-R1095, R1103-R1107. This section governs over the sections above where they differ. A3P-03 stays as the AMBIGUOUS definitional question. The two findings below split out its arithmetic as deck errors, so A4 can list them.
+
+| id | check | ledger row ref | line / cell | short verbatim quote | classification | forward implication |
+|---|---|---|---|---|---|---|
+| A3P-28 | F14 (deck error; also F16) | R015, R086, R373, R479, R1101, R1092, R1093 | p6 l123; p11 l231-233; p21 l451; p23 l505, l513 | "45.7% QoQ" (p6, p23); "(45.7)% QoQ" (p11); "QoQ (45.7) %" (p21); chart "135 185 111" | NEUTRAL-FACT (DECK ERROR) | The headline EBITDA fall of 45.7% QoQ ties only to a Q1 FY27 base that includes other income: 110.52 / 203.40 = -45.66%. The deck's own Q1 FY27 EBITDA cell is 185 (R1092), and on it the fall is 110.52 / 185 = -40.3%. The deck prints this headline four times (p6, p11, p21, p23), and it overstates the QoQ fall by about 5.4 pp against its own chart. Carry -40.3% when using the deck's EBITDA series; -45.7% is valid only on an incl-other-income basis that the deck does not use for Q1. |
+| A3P-29 | F14 (deck error; also F16) | R1106, R1107, R1094, R1095, R1087, R1088 | p23 l499-503 | margin bars "16.2 17.0 18.0" with FY25 17.0 and FY26 18.0 (R1106, R1107); cells "710", "776", "4,293", "4,419" | NEUTRAL-FACT (DECK ERROR) | The FY margin bars do not tie to the deck's own cells. FY25 is 710 / 4,293 = 16.5%, not 17.0%. FY26 is 776 / 4,419 = 17.6%, not 18.0%. The quarterly bars tie (Q2 FY26 13.3, Q1 FY27 16.2, Q2 FY27 9.6). The FY bars overstate by 0.4-0.5 pp, on top of the other income already inside FY26 776 (A3P-03). Use 16.5% and 17.6%, or 16.2% for FY26 on an operating basis (716.44 / 4,418.92), never the bar values. |
+
+deck_errors list now: A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27, A3P-28, A3P-29. Scorecard: no status changes. F14 adds A3P-28 and A3P-29.
+
 ```yaml
 stage: A3-forensics
 company: "GALLANTT"
@@ -242,7 +252,7 @@ checklist:
   F17: FINDING
 findings:
   - {id: "A3P-01", check: "F14", line: "p6 l123; p21 l457; p23 l511; R018, R1096-R1098, R1485", classification: "NEUTRAL-FACT", implication: "DECK ERROR (closes A2 CONFLICT R018): p6 prints EBITDA/t '30% QoQ' (down arrow); the deck's own captions give -23.2% (8,010.40 to 6,148.56), as p21 prints; 30% is the inverted base. Carry -23%."}
-  - {id: "A3P-03", check: "F16", line: "p23 l499, l505, l511; p21 l451; R1091-R1095, R1103-R1107", classification: "AMBIGUOUS", implication: "EBITDA basis varies: FY26 776 includes other income, Q1 185 excludes it, the -45.7% QoQ implies an incl-OI base, Q2 FY26 135 ties to neither; FY26 8,785/t overstated by about Rs 675/t; FY margin bars 17.0/18.0 vs 16.5/17.6 on the deck's own EBITDA."}
+  - {id: "A3P-03", check: "F16", line: "p23 l499, l505, l511; p21 l451; R1091-R1095, R1103-R1107", classification: "AMBIGUOUS", implication: "EBITDA basis varies: FY26 776 includes other income, Q1 185 excludes it, the -45.7% QoQ implies an incl-OI base, Q2 FY26 135 ties to neither; FY26 8,785/t overstated by about Rs 675/t. Arithmetic errors split out as A3P-28 and A3P-29; this row stays as the definition question."}
   - {id: "A3P-04", check: "F16", line: "p24 l539; p6 l121, l127; R853-R856, R1487", classification: "AMBIGUOUS", implication: "EBITDA/t and the bridge divide all revenue, trading included, by billet production tonnes (180/231/204 KT); the +13,964/t NSR bar is not realisation."}
   - {id: "A3P-05", check: "F17", line: "p18 l405, l402, l391, l401, l399; R928-R932, R898-R902, R913-R914", classification: "CONFIRMATORY-NEGATIVE", implication: "Answers review Q4 bear: TMT sales 164 vs 192 KT QoQ (-14.6%), vs 176 KT YoY (-6.8%); revenue held up on DRI (46 vs 34 KT YoY), pellet and traded sales; billet sales fell 27 to 20 KT."}
   - {id: "A3P-06", check: "F6", line: "p10 l206-208; p11 l231-233", classification: "AMBIGUOUS", implication: "'No incremental debt' conflicts with filed borrowings +Rs 44.28 Cr in H1 and cash at Rs 1.12 Cr; Rs 2,347 Cr balance to FY30 implies external funding at the H1 CFO pace."}
@@ -267,10 +277,12 @@ findings:
   - {id: "A3P-25", check: "F16", line: "p34 l707, l713-715; p35 l743", classification: "NEUTRAL-FACT", implication: "Stale policy items (200-day safeguard from Apr-25, FY26 budget); safeguard status PENDING LIVE VERIFICATION."}
   - {id: "A3P-26", check: "F17", line: "p22 l460, l492; p37 l755-762; p15 l307-314", classification: "AMBIGUOUS", implication: "Deck answers 1 of 17 review questions, partly answers 3, is silent on 13 (all governance and balance-sheet items); silence count 1; carry to the call."}
   - {id: "A3P-27", check: "F14", line: "p22 l479; R1075, R1076, R1488", classification: "NEUTRAL-FACT", implication: "DECK ERROR: Q1 FY27 tax printed 411 vs filed Rs 41.15 Cr; the printed -45% QoQ matches 41."}
-deck_errors: ["A3P-01", "A3P-15", "A3P-17", "A3P-18", "A3P-19", "A3P-27"]
+  - {id: "A3P-28", check: "F14", line: "p6 l123; p11 l231-233; p21 l451; p23 l505, l513; R015, R086, R373, R479, R1101, R1092", classification: "NEUTRAL-FACT", implication: "DECK ERROR: headline EBITDA '45.7% QoQ' ties only to Q1 EBITDA incl other income 203.40 (110.52/203.40 = -45.66%); on the deck's own Q1 cell 185 the fall is -40.3%; printed four times; overstates the fall by about 5.4 pp."}
+  - {id: "A3P-29", check: "F14", line: "p23 l499-503; R1106, R1107, R1094, R1095, R1087, R1088", classification: "NEUTRAL-FACT", implication: "DECK ERROR: FY margin bars 17.0% (FY25) and 18.0% (FY26) vs the deck's own cells 710/4,293 = 16.5% and 776/4,419 = 17.6%; quarterly bars tie; use the computed margins, never the bar values."}
+deck_errors: ["A3P-01", "A3P-15", "A3P-17", "A3P-18", "A3P-19", "A3P-27", "A3P-28", "A3P-29"]
 withdrawn: ["A3P-02"]          # 2026-10-23: render R1485 shows down arrows on every p6/p23 delta
 amended: ["A3P-01", "A3P-03", "A3P-12", "A3P-15", "A3P-22", "A3P-24"]
-added: ["A3P-27"]
+added: ["A3P-27", "A3P-28", "A3P-29"]
 forward_signals: ["A3P-07", "A3P-08", "A3P-11", "A3P-20"]
 ambiguous: ["A3P-03", "A3P-04", "A3P-06", "A3P-09", "A3P-10", "A3P-14", "A3P-15", "A3P-16", "A3P-21", "A3P-24", "A3P-26"]
 commitments:
@@ -286,5 +298,5 @@ commitments:
   - {commitment: "Rs 3.50 crore annual cost savings", implied_date: "not stated", ref: "p11 l244", status_word: "not stated"}
 gate_a3: pass
 blank_checks: []
-analyst_note: "The deck's value is the volume data the filing lacked. TMT sales fell 14.6% QoQ and 6.8% YoY while revenue held flat QoQ and rose 13% YoY. Own steel did not carry revenue; DRI, pellet and traded sales did (A3P-05, render-confirmed). This confirms the review's bear reading of the traded-goods surge. The deck's own metrics hide it. EBITDA/t and the NSR bridge divide all revenue, trading included, by billet production tonnes (A3P-04). EBITDA mixes bases, and FY26 carries other income plus inflated margin bars (A3P-03). The p6/p10 ratios are six-month or non-standard (A3P-12); none feeds Section 1B. 'Self-funded, no incremental debt' conflicts with filed H1 borrowings (A3P-06). The tracker covers Rs 1,191 Cr of Rs 3,000 Cr, and the Q4 FY27 solar is 2.1% spent (A3P-07, A3P-08). Sidhpur is counted outside existing capacity on p17, and the call puts its restart in November, despite 'Commissioned Jul 2026' (A3P-15). Promoter buying of about 0.9 pp in a falling quarter is the one bull datum (A3P-20). Six deck errors are listed for A4."
+analyst_note: "The deck's value is the volume data the filing lacked. TMT sales fell 14.6% QoQ and 6.8% YoY while revenue held flat QoQ and rose 13% YoY. Own steel did not carry revenue; DRI, pellet and traded sales did (A3P-05, render-confirmed). This confirms the review's bear reading of the traded-goods surge. The deck's own metrics hide it. EBITDA/t and the NSR bridge divide all revenue, trading included, by billet production tonnes (A3P-04). EBITDA mixes bases (A3P-03): the 45.7% headline fall uses an incl-other-income Q1 base (A3P-28), and the FY margin bars overstate (A3P-29). The p6/p10 ratios are six-month or non-standard (A3P-12); none feeds Section 1B. 'Self-funded, no incremental debt' conflicts with filed H1 borrowings (A3P-06). The tracker covers Rs 1,191 Cr of Rs 3,000 Cr; the Q4 FY27 solar is 2.1% spent (A3P-07, A3P-08). p17 and the call put Sidhpur outside the operating base despite 'Commissioned Jul 2026' (A3P-15). Promoter buying of about 0.9 pp in a falling quarter is the one bull datum (A3P-20). Eight deck errors are listed for A4."
 ```

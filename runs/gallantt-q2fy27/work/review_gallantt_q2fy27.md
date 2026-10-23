@@ -3,10 +3,10 @@
 Protocols: Quarterly Results Review Protocol v1.4 (Role 4) and Quarterly Concall Analysis Protocol v1.1 (Role 5). No Master, FTTCP, Section 1B or RDE manual loaded.
 Framing: PRE-THESIS READ. notion-search "Gallantt Ispat" on 23-Oct-2026 found no COMPANIES MASTER page. There is no companies/GALLANTT.md and no Spear line. Decision Status: none on record. Tracker rows: not supplied.
 Prior review of this quarter: work/review_gallantt_q2fy27_resultsonly.md (results only, written 20-Oct before the call, A5 COMPLETE after two loops). Its 17 Questions for Management are the prior question set. Its 13 monitorables are the prior list. Its consolidated arithmetic is carried here unchanged; it was re-footed twice by A5.
-Revision: Loop 1, final permitted iteration (A5 work/audit_gallantt_q2fy27.md, verdict INCOMPLETE, all findings MISSING, arithmetic clean). Grafts M3-M9 and style notes S1-S6 applied. The change log follows the closing YAML.
+Revision: Loop 2, operator-approved 2026-10-24 (A5 work/audit_gallantt_q2fy27_loop1.md, verdict INCOMPLETE: C1 CONTRADICTION, M10-M12 MISSING, arithmetic clean). Grafts C1, M10, M11, M12 and style notes S9, S10, S11 applied. A3 loop 2 amended A3C-13 and added A3C-24, A3P-28 and A3P-29. Loop 1 (A5 work/audit_gallantt_q2fy27.md, verdict INCOMPLETE, all findings MISSING, arithmetic clean) applied grafts M3-M9 and style notes S1-S6. Both change logs follow the closing YAML.
 Docs merged (four): (1) results, original 19-Oct filing, consolidated only; (2) resultsrev, revised board outcome filed 21-Oct 16:56, adds standalone pp2-6; (3) presentation, 21-Oct 18:29, rendered cell map R761-R1491 governs pp6, 12, 16, 17, 18, 19, 22, 23, 24; (4) concall, 21-Oct, MACHINE-TRANSCRIBED (faster-whisper small, YouTube upload), no speaker labels.
 Evidence order: FILED (results, resultsrev) > DECK (presentation; the deck disclaimer marks every figure "indicative and provisional", P:p3 l93) > ASR (call text; numbers are ASR text and attributions are INFERRED). Filed beats spoken. ASR numbers that A3 marked as errors ("330" savings, "33,000 rupees a ton", "1113") are not carried.
-Inputs read: A1 structured and fulltext for all four documents, the four A2 ledgers, the four A3 forensics (including the loop 1 additions), and the A5 audit for this loop. The source PDFs, the audio and inputs/ were not opened.
+Inputs read: A1 structured and fulltext for all four documents, the four A2 ledgers, the four A3 forensics (including the loop 1 and loop 2 additions), and the A5 audits for loops 1 and 2. The source PDFs, the audio and inputs/ were not opened.
 
 Anchor key:
 - R:Lnnnn = original results fulltext line. The consolidated pages are identical in the revised file at line + 101 (RR structured L759-768; resultsrev ledger L412).
@@ -33,11 +33,11 @@ Row coverage: every ledger row carries an A2 classification, and A3 read every r
 Unreviewed rows: none.
 Stale A1 artefacts not quoted (per A3R pipeline note): resultsrev R697 context (superseded by R744) and RR fulltext L1258.
 
-Findings incorporated (81):
+Findings incorporated (84):
 - Results: A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17. Their status follows the resultsrev status table (CLOSED 1, CHANGED 7, LEFT OPEN 9).
 - Resultsrev: A3R-01 to A3R-15 (A3R-15 added in loop 1: FY26 PPE sale).
-- Presentation: A3P-01, A3P-03 to A3P-27 (26). Loop 1: A3P-01 restated as a deck error (closes the A2 R018 conflict); A3P-15 amended and reclassified NEUTRAL-FACT to AMBIGUOUS. A3P-02 is WITHDRAWN by the rendered cell map (every p6 and p23 delta carries a down arrow, P:R1485). It produces no question.
-- Concall: A3C-01 to A3C-23.
+- Presentation: A3P-01, A3P-03 to A3P-29 (28). Loop 1: A3P-01 restated as a deck error (closes the A2 R018 conflict); A3P-15 amended and reclassified NEUTRAL-FACT to AMBIGUOUS. Loop 2: A3P-28 (EBITDA "45.7% QoQ" on a Q1 base that includes other income) and A3P-29 (FY25 and FY26 margin bars) added as deck errors. A3P-02 is WITHDRAWN by the rendered cell map (every p6 and p23 delta carries a down arrow, P:R1485). It produces no question.
+- Concall: A3C-01 to A3C-24. Loop 2: A3C-13 amended (the mill is Kutch; the deck contradicts the spoken 66% to 68% gain); A3C-24 added (Kutch fell at every stage with no named Q2 shutdown).
 
 ---
 
@@ -257,7 +257,8 @@ Mandatory diagnostics:
    - Management's two explanations conflict. Prepared remarks: "former realizations helped offset the effect of the shutdowns on our volumes" (C:l66-67). Q&A: "the realization increased much later, not making any impact in Q2 broadly" (C:l265-266). The call never mentions trading (A3C-04).
    - Bull reading: the volume loss is a one-off from the two Gorakhpur shutdowns; prices firmed from September; own volume returns when the expanded plant starts (about 10-Nov, C:l351).
    - Bear reading: own steel volume fell on both bases; low-margin trading and merchant DRI carried the headline; Q3 revenue depends on trading continuing.
-   - Separating observation: Q3 FY27 traded purchases (filed) together with TMT sales tonnes (deck) against 164 KT and 192 KT.
+   - Kutch counter to the one-off frame (loop 2; A3C-24): management places both shutdowns at Gorakhpur ("Margins were compressed this quarter by the two shutdowns at Gorakhpur", C:l158), and the Gujarat shutdown is a Q4 event (C:l397). Kutch still fell QoQ at every stage: power 43 to 32 (-25.6%, P:R803-R805), DRI 89 to 73 (-18.0%, P:R833-R835), billets 90 to 73 (-18.9%, P:R848-R850), TMT output 69 to 56 (-18.8%, P:R863-R865) and TMT sales 67 to 59 (-11.9%, P:R923-R925) [computed]. On plant sums Kutch carries 30-37% of the group's QoQ fall: 8 of 27 KT of TMT sales, 17 of 52 KT of billets and 13 of 35 KT of TMT output (P:R918-R919, R843-R844, R858-R859 for Gorakhpur) [computed]. Kutch also fell YoY in the same season: TMT sales 65 to 59 (-9.2%, P:R926), billets 85 to 73 (-14.1%, P:R851), power 46 to 32 (-30.4%, P:R806) [computed]. The only Kutch reason given is lean-monsoon demand (C:l363-364). A seasonal reason does not explain a YoY fall in the same season. Production fell more than sales, while Kutch DRI sales rose from 2 to 14 KT and billet sales from 12 to 16 KT (P:R893-R894, R908-R909). That pattern fits a supply limit, possibly Kutch captive power before the debottleneck "completed ... in the last month" (C:l424-425) [INFERENCE: no Kutch downtime is stated]. So the two Gorakhpur shutdowns explain only part of the Q2 volume loss.
+   - Separating observation: Q3 FY27 traded purchases (filed) together with TMT sales tonnes (deck) against 164 KT and 192 KT. For the one-off frame: Q3 FY27 Kutch TMT sales against 67 KT (P:R924), with Kutch power near 43 and billets near 90 KT (P:R804, R849) (monitorable 29).
 2. Operating EBITDA margin: 9.57% vs 12.99% = -342 bps YoY. Sequential 16.16% to 9.57% = -658 bps. Down on both bases.
 3. Core operating PBT: -27.59% YoY (Rs 89.79 Cr to Rs 65.02 Cr). Reported PBT fell less (-19.25%) because other income rose Rs 4.94 Cr. The headline flatters the core by 8.3 pp.
 4. Gap from core PBT to reported PAT (lakhs): core PBT -2,476.97; other income +493.59; tax -688.80; associate -169.37. Reported PAT change -2,841.55. ETR 15.31% to 27.25% (A3-07, A3R-06: standalone tax equals consolidated in every column).
@@ -281,7 +282,7 @@ Checkpoint: YoY table and six answers shown.
 Diagnostics:
 - Trajectory: DIPPING. Revenue is on a Rs 1,128-1,146 Cr plateau in four of five readings. Margin fell 658 bps in one quarter. Own volume fell harder than revenue: TMT sales -14.6% QoQ, billet output -22.1% QoQ.
 - Seasonality: the filing still cannot show that Q2 is the seasonal low (Q3 and Q4 FY26 are not split). Management calls Q2 the "lean period, the monsoon period" (C:l254) and says demand "usually stays low" (C:l364) [MGMT, ASR]. Q2 FY27 also sits 342 bps below Q2 FY26, so seasonality does not explain the YoY fall.
-- Distortions: two shutdowns at Gorakhpur (management). Traded purchases 11.25x Q1. Pellet output of 228 KT is 115% of a 198 KT quarterly nameplate (792 K MTPA, P:p13 l285) (A3P-21).
+- Distortions: two shutdowns at Gorakhpur (management). Kutch had no named shutdown, yet it fell 18.0-25.6% QoQ at every production stage and 11.9% in TMT sales (P:R803-R865, R923-R925; A3C-24), so the shutdowns explain only part of the QoQ volume fall. Traded purchases 11.25x Q1. Pellet output of 228 KT is 115% of a 198 KT quarterly nameplate (792 K MTPA, P:p13 l285) (A3P-21).
 - Latest quarter vs H1 average: revenue Rs 1,145.89 Cr vs H1 average Rs 1,145.78 Cr (match). Core PBT Rs 65.02 Cr vs Rs 105.76 Cr (38.5% short).
 - Capex commissioning test: CWIP has not capitalised (Rs 598.37 Cr, R:L1085). Management dates the expanded Gorakhpur start at about 10-Nov-2026 (C:l351), so the pre/post run-rate test runs at Q4 FY27, the first full quarter after start.
 - Implied Q3 FY27 base to hold trajectory: revenue >= Rs 1,145.78 Cr and operating margin >= 14.84% (H2 FY26 average). Q3 starts handicapped: the expanded Gorakhpur plant was not running on 21-Oct (C:l297, l351). Up to about 40 days of Q3 run without it [INFERENCE: whether all Gorakhpur units stood idle is not stated]. Q4 FY27 carries a Gujarat shutdown to synchronise the DRI unit (C:l397). Q3 FY26 alone: ND, so the Q3 YoY base cannot be set from these filings.
@@ -440,7 +441,7 @@ No condition can fire.
 ### 6D. Growth trigger status (candidate triggers surfaced by the deck and call; not on record)
 | Trigger | Original Confidence | Confirming Evidence | Killing Evidence | Updated Status |
 |---|---|---|---|---|
-| Gorakhpur 1.0 to 1.23 MT debottleneck (P:p17 l370-371; C:l87-88) | ND | Rs 318.62 Cr of Rs 330.00 Cr spent (P:R764-R765); start about 10-Nov (C:l351). The old Gorakhpur plant was capacity-bound: billets at about 95% of nameplate in Q1 FY27 (142 / 150 KT) and 86% in FY26 (514.3 / 600 KT) (P:R844, R960; P:p17 l356) [computed] | Timing: plant not running at 21-Oct; ramp conditional on "no major issues" (C:l352). Absorption: the 2,35,700 MT step lands at Gorakhpur (C:l87-88, l133-135), a 6 lakh MTPA plant (P:p17 l356), so about +39% there [INFERENCE: the deck does not split post-enhancement capacity by plant]. 85-90% of about 8.36 lakh MTPA (C:l349-352) is about 178-188 KT of billets a quarter, against 142 KT in Q1 and 107 KT in Q2 (P:R843-R844) [computed]. Construction steel demand grows about 7% (C:l288); share is already above 25% of the served UP market (C:l146-147); own TMT sales grew 1.5% at Gorakhpur and 1.6% in total in FY26 (P:R1005-R1006, R1011-R1013). About 59 KT a quarter of extra steel [computed] needs share gain, new markets or lower prices; the call offers only "a ready channel" (C:l147); the Kutch mill moved 66% to 68% after a focus quarter (C:l142-143, l363-364); the post-enhancement cell carries an asterisk with no footnote (P:R1491) | ON TRACK on timing; absorption UNTESTED (candidate). Separating observation: Q4 FY27 Gorakhpur TMT sales against 125 KT in Q1 FY27 (P:R919), read with Q4 gross margin against 27.35% [INFERENCE threshold] |
+| Gorakhpur 1.0 to 1.23 MT debottleneck (P:p17 l370-371; C:l87-88) | ND | Rs 318.62 Cr of Rs 330.00 Cr spent (P:R764-R765); start about 10-Nov (C:l351). The old Gorakhpur plant was capacity-bound: billets at about 95% of nameplate in Q1 FY27 (142 / 150 KT) and 86% in FY26 (514.3 / 600 KT) (P:R844, R960; P:p17 l356) [computed] | Timing: plant not running at 21-Oct; ramp conditional on "no major issues" (C:l352). Absorption: the 2,35,700 MT step lands at Gorakhpur (C:l87-88, l133-135), a 6 lakh MTPA plant (P:p17 l356), so about +39% there [INFERENCE: the deck does not split post-enhancement capacity by plant]. 85-90% of about 8.36 lakh MTPA (C:l349-352) is about 178-188 KT of billets a quarter, against 142 KT in Q1 and 107 KT in Q2 (P:R843-R844) [computed]. Construction steel demand grows about 7% (C:l288); share is already above 25% of the served UP market (C:l146-147); own TMT sales grew 1.5% at Gorakhpur and 1.6% in total in FY26 (P:R1005-R1006, R1011-R1013). About 59 KT a quarter of extra steel [computed] needs share gain, new markets or lower prices; the call offers only "a ready channel" (C:l147); the Kutch mill, last quarter's focus area, fell rather than rose: deck Kutch TMT output 69 to 56 KT (P:R863-R865), about 69% to 56% of the 4 lakh MTPA Kutch plant (P:R147) [INFERENCE: capacity base], so the spoken 66% to 68% (C:l142-144) is not carried (DECK > ASR; A3C-13); the post-enhancement cell carries an asterisk with no footnote (P:R1491). Integration (loop 2, M11): Gorakhpur adds capacity "at every stage of the chain at Gorakhpur except Spongyarind" (C:l134-135; ASR for sponge iron). Gorakhpur used 0.91 t of own DRI per billet tonne in FY26 ((577.6 made - 110.4 sold) / 514.3, P:R951, R987, R960) and 0.97 t in Q1 FY27 ((148 - 10) / 142, P:R829, R889, R844) [computed]. At 178-188 KT of billets a quarter it needs about 162-183 KT of DRI, against about 144-148 KT made (FY26 average, Q1 FY27 peak), a gap of about 14-39 KT a quarter [computed; INFERENCE: constant charge mix; Gorakhpur DRI capacity NOT FOUND]. Diverted merchant DRI (32 KT sold at Gorakhpur in Q2, P:R888) or bought metallics, whose prices "rose sharply" (C:l129-130), fill the gap, so the new tonnes are less integrated than the base | ON TRACK on timing; absorption UNTESTED; integration of the added tonnes partial (no sponge-iron addition) (candidate). Separating observation: Q4 FY27 Gorakhpur TMT sales against 125 KT in Q1 FY27 (P:R919), read with Q4 gross margin against 27.35% [INFERENCE threshold] |
 | Prayagraj 60 MW solar, Q4 FY27 (P:p9 l195; C:l153) | ND | Date reaffirmed; Rs 170 Cr of H2 budget (C:l311) | Rs 3.74 Cr of Rs 175.00 Cr spent at 30-Sep (P:R770-R771) | ON TRACK on words; spend back-ended (candidate) |
 | Iron ore mines, Rs 2,000/t EBITDA (P:p13 l290; C:l166, l276) | ND | Clearances "underway" (C:l157). Economics on management's numbers: Rs 249.00 Cr raw-material plan (P:R767; Rs 240 Cr in H2, C:l311) against about Rs 153 Cr a year (Rs 2,000/t on FY26 TMT sales of 765.8 KT, P:R1011) to Rs 246 Cr (on 12.29 lakh MT capacity, P:R157) = 1.0-1.6x one year's claimed EBITDA, a payback of about 1-1.6 years [computed] | Why so cheap on paper: (i) Rs 2,000/t is a "management estimate" (P:p13 l290-291) whose scope moves between three levers (C:l165-167) and iron ore alone (C:l276-277); (ii) the benefit year is FY28 on the call (C:l157) and FY30 in the deck (P:p9 l194), and the mines will not feed 100% for "a year or two post FY28" (C:l278-281); (iii) the cost base may be incomplete, with Rs 1,809 Cr of the programme not itemised (P:R776, R791); (iv) the gain runs "on the beta of the steel prices" (C:l277); (v) Rs 240 Cr leaves in H2 FY27 while clearances are still underway, 1.5-3.5 years before the benefit; existing mines capacity is "Nil" (P:R1490); Rs 8.25 Cr of Rs 249.00 Cr spent (P:R767-R768) | DELAYED vs call wording; outside 12-month window (candidate) |
 | Coal block (C:l78-79) | ND | Award dated "August, 2026" (C:l79) and also "just allotted last month", which is September on a 21-Oct call (C:l376) | Still in due diligence; go/no-go in about a month (C:l377-379); consideration and reserves NOT FOUND | NOT YET COMMITTED (candidate) |
@@ -454,7 +455,7 @@ Checkpoint: 6A-6D shown.
 DEFERRED to /fttcp and Role 1 (operator ruling OR-30). No ledger rows exist.
 Pillar-relevant facts flagged for the A21 base (computed; not a refreshed base):
 - Q2 FY27 annualised PAT Rs 242.04 Cr (EPS Rs 10.03). Trailing four quarters: revenue Rs 4,569.95 Cr; operating EBITDA Rs 632.84 Cr (13.85%); PAT Rs 405.72 Cr; EPS Rs 16.82 (prior review).
-- Known distortions in any base: Q2 FY27 carries two Gorakhpur shutdowns and Rs 98.87 Cr of trading; Q3 FY27 carries the expanded-plant start (about 10-Nov) and partial downtime; Q4 FY27 carries a Gujarat DRI synchronisation shutdown (C:l397). A single-quarter annualisation of Q2 or Q3 is distorted; /fttcp declares the base.
+- Known distortions in any base: Q2 FY27 carries two Gorakhpur shutdowns, an 18-26% QoQ Kutch output fall with no stated cause (A3C-24) and Rs 98.87 Cr of trading; Q3 FY27 carries the expanded-plant start (about 10-Nov) and partial downtime; Q4 FY27 carries a Gujarat DRI synchronisation shutdown (C:l397). A single-quarter annualisation of Q2 or Q3 is distorted; /fttcp declares the base.
 - Capacity: 9,93,300 MT to 12,29,000 MT (+23.7%) (P:p17 l370-371), concentrated at Gorakhpur; absorption untested (6D).
 - Seasonality: management calls Q2 the monsoon low (C:l254, l364) [MGMT, ASR]. Not shown by the filing.
 - One-offs: FY26 deferred credits Rs 38.30 Cr; Q2 FY26 associate Rs 1.69 Cr; treasury income on a pool now being drawn for capex; FY26 PPE sale inflow Rs 110.30 Cr (cash flow only).
@@ -520,8 +521,8 @@ The call was held on 21-Oct without these answers. Every A3 FORWARD-SIGNAL or AM
 | 6 | D | What part of the Rs 401.66 Cr other bank balances (R:L1096) is lien-marked or held as margin money? | The CFO counts it as liquid (C:l198). Free liquidity depends on it. | Mostly free. | Mostly lien-marked; free cash near Rs 1.12 Cr. | A lien figure | A3-13, A3C-02 |
 | 7 | A | What revenue did the Rs 98.87 Cr of Q2 traded purchases (R:L1061) earn, at what gross margin, and which product was traded? | The call credited realisation, then said realisation did not help Q2 (C:l66 vs l265-266). Trading was never mentioned. | Billets bought to serve dealers during the shutdown, positive margin, ending in Q3. | Recurring low-margin trading that props up revenue. | Q3 traded purchases | A3-14, A3C-04, A3P-04 |
 | 8 | B / A | On what date did the expanded Gorakhpur plant start commercial production, and what were October and November TMT sales in tonnes? Map the Rs 598.37 Cr CWIP to projects. | Start "proposed currently by 10th of November" (C:l351); ramp to 85-90% by December end (C:l352). | Started by 10-Nov; November TMT sales at or above 64 KT [INFERENCE threshold: one third of Q1's 192 KT]. | Slip past November; ramp issues. | COD date and monthly tonnes | A3C-06, A3P-09, A3-11, A3R-10 |
-| 9 | C | What did the two Gorakhpur shutdowns cost Q2 EBITDA in Rs Cr (lost volume plus bought power), separate from the coal effect? | Management calls the hit "all one-time" (C:l70) but gives no number (A3C-05). | A large share, so the core spread held. | Small share; coal and spread drove the fall. | A Rs Cr split | A3C-05 |
-| 10 | C | Define the EBITDA in the deck and on the call, and restate Q2 FY26 (Rs 135 Cr), H1 FY26 (Rs 382 Cr) and FY26 (Rs 776 Cr) on the Q2 FY27 basis. | FY26 includes other income; Q1 FY27 excludes it; Q2 FY26 ties to neither (A3P-03, A3C-16). | One basis, restated. | Mixed bases kept. | Consistent comparatives in the Q3 deck | A3P-03, A3C-16 |
+| 9 | C | What did the two Gorakhpur shutdowns cost Q2 EBITDA in Rs Cr (lost volume plus bought power), separate from the coal effect? Kutch had no named shutdown, yet its power fell 43 to 32, DRI 89 to 73, billets 90 to 73 and TMT output 69 to 56 (P:R803-R865). How many Kutch downtime days were there in Q2, what caused them, and what did they cost? | Management calls the hit "all one-time" (C:l70) but gives no number (A3C-05). The call puts all Q2 disruption at Gorakhpur (C:l158), but Kutch carries about a third of the group's QoQ volume fall (A3C-24). | A large share, so the core spread held; the Kutch downtime was the dated power debottleneck work, now done (C:l424-425). | Small share; coal and spread drove the fall; Kutch fell on weak demand or an unnamed problem. | A Rs Cr split, and Kutch downtime days with a cause | A3C-05, A3C-24 |
+| 10 | C | Define the EBITDA in the deck and on the call, and restate Q2 FY26 (Rs 135 Cr), H1 FY26 (Rs 382 Cr) and FY26 (Rs 776 Cr) on the Q2 FY27 basis. Correct two deck figures. (a) The "45.7% QoQ" EBITDA fall printed on p6, p11, p21 and p23 ties only to a Q1 FY27 base that includes other income: 110.52 (the call's 9.64% basis, 7A) / 203.40 - 1 = -45.66% (R:L1064-1070). On the deck's own Q1 cell of Rs 185 Cr it is -40.3% (P:R015, R086, R373, R479, R1092, R1101). (b) The p23 FY25 and FY26 margin bars, 17.0% and 18.0% (P:R1106-R1107), compute to 16.5% and 17.6% from the slide's own cells (710 / 4,293 and 776 / 4,419, P:R1087-R1088, R1094-R1095). | FY26 includes other income; Q1 FY27 excludes it; Q2 FY26 ties to neither (A3P-03, A3C-16). The headline QoQ fall overstates the deck's own chart by about 5.4 pp (A3P-28), and the FY bars overstate by 0.4-0.5 pp (A3P-29). | One basis, restated, with the headline and the bars corrected. | Mixed bases kept; the errors repeat. | Consistent comparatives in the Q3 deck | A3P-03, A3C-16, A3P-28, A3P-29 |
 | 11 | C | Restate EBITDA per tonne and the per-tonne bridge on own-steel sales tonnes, excluding traded goods and merchant DRI and pellets. | The NSR bar divides all revenue by billet tonnes produced (A3P-04). | Restated bridge shows price gains. | Refusal; trading stays inside NSR. | Q3 bridge basis | A3P-04 |
 | 12 | D | Split the Rs 668.64 Cr inventory at 30-Sep (RR:L324) into raw material, WIP, finished goods and stores. What level do you target at 31-Dec-2026? | "It will normalize in Q3" (C:l293) has no level; Q3 has no balance sheet. | Raw material stock for the new capacity; target near Rs 551 Cr. | Finished goods; no target. | A number on the Q3 call | A3C-14, A3R-10 |
 | 13 | B / F | What capacity, location, cost and funding cap will the greenfield plan carry, and do you exclude an equity issue? | Promised for Q2 FY27, re-dated to Q4 FY27; "we will decide the mix of the funding" (C:l237). | Phased, internally funded, no equity. | Large, debt or equity funded. | Plan date held at Q4 FY27 | A3C-07, A3P-07 |
@@ -543,8 +544,8 @@ The call was held on 21-Oct without these answers. Every A3 FORWARD-SIGNAL or AM
 | 29 | E | What share of Q2 TMT sales were premium grades, and on what basis is the brand premium 5-6% in UP (C:l340-341) when the deck says 2-3% (P:R762)? | The premium chart has no values (A3P-24); the call and deck disagree (A3C-11). | A rising, numbered premium-grade share; one premium basis. | No number. | A chart with values | A3P-24, A3C-11 |
 | 30 | C | What Q3 FY23 margin is the base for "+1000 bps" to Q2 FY27 (P:p9 l197-199)? | A 9.64% margin implies a Q3 FY23 base near -0.4% (A3P-16). | A stated base, or a corrected slide. | Stale carry-over left in. | Slide corrected | A3P-16 |
 | 31 | A | What is the pellet plant's real capacity, given Q2 output of 228 KT against a 198 KT quarterly nameplate (P:R813; P:p13 l285)? | Output at 115% of nameplate (A3P-21). | Debottlenecked capacity disclosed. | Unexplained. | A capacity figure | A3P-21 |
-| 32 | A | What utilisation target and date do you set for the Kutch rolling mill, now at 68% (C:l143)? | Named a focus area last quarter; +2 pp delivered (A3C-13). | A target above 80% with a date. | No target again. | A number | A3C-13 |
-| 33 | B | What FY27 and FY28 sales volumes do you plan in tonnes, where will Gorakhpur sell about 59 KT a quarter of extra steel, what base does the "3 to 5 percent" utilisation gain use (C:l399), and how long is the Q4 Gujarat shutdown (C:l397)? | The guidance answer gave drivers only (A3C-22, A3C-20); the step is about +39% at Gorakhpur in a market growing about 7% (6D). | Tonnes, named new markets and a shutdown length. | Drivers only again. | Volume guidance | A3C-22, A3C-20 |
+| 32 | A | The call says the Kutch rolling mill rose from 66% to 68% (C:l142-144). The deck shows Kutch TMT output fell from 69 to 56 KT (P:R863-R865), about 69% to 56% of the 4 lakh MTPA Kutch plant (P:R147), and Kutch TMT sales fell from 67 to 59 KT (P:R923-R925). On what base is the 68% computed, what were Kutch operating days in Q2, and what utilisation target and date do you set? | Named a focus area last quarter (C:l143, l360). The deck shows a fall of about 13 pp, not a gain; DECK > ASR, so the commitment is scored MISSED (A3C-13). | A stated running-hours base that reconciles to the deck, and a target above 80% with a date. | No base and no target; the focus area missed again. | A Kutch utilisation figure on a stated base | A3C-13, A3C-24 |
+| 33 | B | What FY27 and FY28 sales volumes do you plan in tonnes, where will Gorakhpur sell about 59 KT a quarter of extra steel, what base does the "3 to 5 percent" utilisation gain use (C:l399), and how long is the Q4 Gujarat shutdown (C:l397)? Gorakhpur adds capacity at every stage "except" sponge iron (C:l134-135). What is Gorakhpur DRI capacity, and how will you feed the about 14-39 KT a quarter of extra iron that 85-90% utilisation implies (less merchant DRI, or bought sponge and pig iron)? | The guidance answer gave drivers only (A3C-22, A3C-20); the step is about +39% at Gorakhpur in a market growing about 7% (6D). The added tonnes are less integrated than the base, and metallics prices "rose sharply" late in Q2 (C:l129-130) [INFERENCE on the DRI gap; Gorakhpur DRI capacity NOT FOUND]. | Tonnes, named new markets and a shutdown length; spare DRI capacity that covers the step. | Drivers only again; the step runs on bought metallics. | Volume guidance and Gorakhpur DRI capacity | A3C-22, A3C-20 |
 | 34 | G | The promoter holding rose 0.86-0.95 pp in Q2 (P:p37 l756) with no new shares. Was it an open-market purchase, an off-market transfer or a reclassification? If a purchase, about 20.75-22.92 lakh shares worth about Rs 112-158 Cr: which entity bought, with what funds, and is any promoter share pledged? | A purchase in a falling quarter would be a bull datum; the mechanism and funding are undisclosed (A3P-20), in a half when company cash fell to Rs 1.12 Cr. | Open-market purchase from personal funds; SAST/PIT filings; no pledge. | Transfer or reclassification; or funding linked to company loans; pledge. | Filed shareholding pattern and SAST/PIT disclosures | A3P-20 |
 | 35 | G | Will management answer this list in writing before the Q3 FY27 call, and file a transcript of that call? | The call raised none of nine governance items; the deck was silent too (A3C-19, A3P-26). Only an audio link was filed (C:l20). | Written answers; filed transcript. | Silence a second quarter. | Silence count 2 | A3C-19, A3P-26 |
 | 36 | E | What share of Q2 FY27 revenue went to the top 10 buyers, including the traded-goods buyers? | 80% of sales go through dealers (P:p15 l312); the rest is not described. | Dealer-led and diverse. | A few trading buyers. | A concentration figure | A3-14 |
@@ -554,8 +555,8 @@ Coverage map (FORWARD-SIGNAL and AMBIGUOUS findings -> question #):
 - Results: A3-01 (23), A3-02 (27), A3-03 (24), A3-04 (25), A3-05 (20), A3-06 (24), A3-07 (26), A3-09 (23), A3-10 (21), A3-11 (8, 18), A3-12 (1, 2, 3), A3-13 (4, 6), A3-14 (7, 36), A3-15 (4, 22), A3-17 (3, 23).
 - Resultsrev: A3R-01 (27), A3R-02 (23), A3R-03 (25), A3R-04 (25), A3R-05 (22, 24), A3R-06 (26), A3R-08 (23), A3R-09 (21), A3R-10 (1, 8, 12), A3R-11 (4, 22), A3R-12 (24), A3R-14 (23, 25), A3R-15 (3).
 - Presentation: A3P-03 (10), A3P-04 (7, 11), A3P-06 (4, 5), A3P-07 (13, 14), A3P-08 (17), A3P-09 (8), A3P-10 (19), A3P-11 (16), A3P-14 (28), A3P-15 (18, 37), A3P-16 (30), A3P-20 (34), A3P-21 (31), A3P-24 (29), A3P-26 (35).
-- Concall: A3C-01 (5), A3C-02 (1, 6), A3C-03 (4), A3C-04 (7), A3C-05 (9), A3C-06 (8), A3C-07 (13), A3C-08 (15), A3C-09 (16), A3C-10 (18, 37), A3C-11 (29), A3C-13 (32), A3C-14 (12), A3C-16 (10), A3C-17 (17), A3C-19 (35), A3C-20 (33), A3C-22 (33).
-- NEUTRAL-FACT and CONFIRMATORY-NEGATIVE findings go to the monitor list: A3-08, A3-16, A3R-07, A3R-13, A3P-01 (deck error), A3P-05, A3P-12, A3P-13, A3P-17, A3P-18, A3P-19, A3P-22, A3P-23, A3P-25, A3P-27, A3C-12, A3C-15, A3C-18, A3C-21, A3C-23. A3P-02 is withdrawn.
+- Concall: A3C-01 (5), A3C-02 (1, 6), A3C-03 (4), A3C-04 (7), A3C-05 (9), A3C-06 (8), A3C-07 (13), A3C-08 (15), A3C-09 (16), A3C-10 (18, 37), A3C-11 (29), A3C-13 (32), A3C-14 (12), A3C-16 (10), A3C-17 (17), A3C-19 (35), A3C-20 (33), A3C-22 (33), A3C-24 (9, 32).
+- NEUTRAL-FACT and CONFIRMATORY-NEGATIVE findings go to the monitor list: A3-08, A3-16, A3R-07, A3R-13, A3P-01 (deck error), A3P-05, A3P-12, A3P-13, A3P-17, A3P-18, A3P-19, A3P-22, A3P-23, A3P-25, A3P-27, A3P-28 and A3P-29 (deck errors; also asked in Q10), A3C-12, A3C-15, A3C-18, A3C-21, A3C-23. A3P-02 is withdrawn.
 
 Category coverage: A (7, 8, 18, 19, 31, 32, 37), B (8, 13, 15, 16, 17, 33), C (9, 10, 11, 26, 28, 30), D (1, 2, 3, 6, 12, 21, 22, 27), E (28, 29, 36), F (4, 5, 13, 14, 25), G (1, 2, 3, 20, 23, 24, 25, 34, 35, 37).
 
@@ -630,7 +631,7 @@ Standard operating business. Step 2 standard rows apply, not 2L.
 | 16 | TMT prices in September about 21% above a year earlier | Macro/Tailwind | YES | C:l127-128 |
 | 17 | Coal and freight elevated; metallics rose sharply late in the quarter | Macro/Tailwind | NO | C:l129-130 |
 | 18 | TMT sales 165,000 t vs about 192,000 t in Q1 | Backward | YES | C:l141-142 |
-| 19 | Kutch rolling mill utilisation 68% vs 66% (prior-quarter focus area) | Backward / Operational | YES | C:l142-144 |
+| 19 | Kutch rolling mill utilisation 68% vs 66% (prior-quarter focus area). Contradicted by the deck: Kutch TMT output 69 to 56 KT (P:R863-R865); not carried (A3C-13) | Backward / Operational | YES | C:l142-144 |
 | 20 | Enhanced Gorakhpur capacity operational in November 2026 | Operational | YES (date) | C:l144-145 |
 | 21 | More than 25% of the serviceable UP market | Strategic | YES | C:l146-147 |
 | 22 | Extended power-plant shutdown (turbine); plant to resume within a week | Operational | YES (date) | C:l148-150 |
@@ -644,7 +645,7 @@ Standard operating business. Step 2 standard rows apply, not 2L.
 | 30 | Solar, Gujarat debottlenecking and mines to add about Rs 2,000/t to EBITDA | Forward Guidance | YES | C:l165-167 |
 | 31 | H1 capex Rs 278 Cr | Backward | YES | C:l170 |
 | 32 | Disruptions "largely behind us" | Forward Soft | NO | C:l172-173 |
-| 33 | EBITDA Rs 111 Cr (9.64%) vs Rs 185 Cr (16.19%) Q1 and Rs 135 Cr (12.91%) Q2 FY26 | Backward | YES | C:l181-183 (T07) |
+| 33 | EBITDA Rs 111 Cr (9.64%) vs Rs 185 Cr (16.19%) Q1 and Rs 135 Cr (12.91%, ASR_SUSPECT: 135 / 1,012.75 = 13.33%; the deck's (368) bps YoY implies 13.32%; 12.91% is the H1 FY27 margin spoken at C:l192) Q2 FY26 | Backward | YES | C:l181-183 (T07) |
 | 34 | EBITDA/t Rs 6,150 vs Rs 8,010 | Backward | YES | C:l183 |
 | 35 | PBT Rs 83 Cr; PAT Rs 61 Cr (5.3%) vs Rs 124 Cr and Rs 89 Cr | Backward | YES | C:l186-189 |
 | 36 | H1 revenue Rs 2,292 Cr (+7%); EBITDA Rs 296 Cr; PAT Rs 184 Cr; EPS 7.63 | Backward | YES | C:l191-194 |
@@ -660,7 +661,7 @@ Diagnostics:
 - Quantified share: 30 of 43 claims (69.8%).
 - New vs reaffirmed: no prior transcript, so the split cannot be tested. Management marks two items as carried from earlier calls: the growth plan (C:l95-96) and the Kutch rolling mill focus (C:l143). The rest are new to this pipeline.
 - Quietly dropped: the growth plan was not dropped. It was re-dated with an explanation (C:l97-109). That counts as DELAYED.
-- Internal contradictions: (a) claim 5 vs the Q&A answer that realisation did not help Q2 (C:l265-266) (A3C-04); (b) claim 6 "all one-time" vs claim 1 and the coal attribution at C:l268-269 (A3C-05); (c) claim 11 "1.23 million" vs "1.3 million" at C:l134 (rounding, A3C-15); (d) claim 38 "net cash positive" vs the deck's net debt of Rs 190.58 Cr (P:p6 l134) (A3C-02); (e) claim 30 lists three levers, while C:l276-277 assigns Rs 2,000/t to iron ore alone (A3C-09); (f) claim 8 dates the coal block award to August, while C:l376 says "last month".
+- Internal contradictions: (a) claim 5 vs the Q&A answer that realisation did not help Q2 (C:l265-266) (A3C-04); (b) claim 6 "all one-time" vs claim 1 and the coal attribution at C:l268-269 (A3C-05); (c) claim 11 "1.23 million" vs "1.3 million" at C:l134 (rounding, A3C-15); (d) claim 38 "net cash positive" vs the deck's net debt of Rs 190.58 Cr (P:p6 l134) (A3C-02); (e) claim 30 lists three levers, while C:l276-277 assigns Rs 2,000/t to iron ore alone (A3C-09); (f) claim 8 dates the coal block award to August, while C:l376 says "last month"; (g) claim 19, the Kutch mill at 68% vs 66%, against the deck's Kutch TMT output of 69 to 56 KT (P:R863-R865) and management's own "not much result" (C:l363-364) (A3C-13).
 
 ## STEP 2 - FORWARD GUIDANCE EXTRACTION
 
@@ -684,7 +685,7 @@ Diagnostics:
 - Prior guidance dropped without acknowledgment? No. The growth-plan slip was acknowledged with a reason.
 - Internal consistency: about Rs 500 Cr of H2 capex plus a Rs 48.26 Cr dividend, "funded internally" (C:l313), against H1 CFO of Rs 90.82 Cr and cash of Rs 1.12 Cr. That reconciles only by drawing down the bank balances and the "treasury" loan book [INFERENCE] (A3C-03). The guidance does not reconcile to "no incremental debt" unless H2 CFO is far above H1. The 85-90% utilisation target also implies about 178-188 KT of billets a quarter at an enlarged Gorakhpur, against a market growing about 7% (6D).
 - Versus Four-Pillar projections: ND (none on record).
-- Refused or unanswered: FY27/FY28 volume or revenue guidance (Q6c, A3C-22); H2 margin level and shutdown cost (Q2b, A3C-05); greenfield funding mix (Q1b, C:l237); rolling mill settle level (Q5c); share of coal needs met by the block (Q6a); IT savings number (Q4a).
+- Refused or unanswered: FY27/FY28 volume or revenue guidance (Q6c, A3C-22); H2 margin level and shutdown cost (Q2b, A3C-05); greenfield funding mix (Q1b, C:l237); rolling mill settle level (Q5c); share of coal needs met by the block (Q6a); IT savings number (Q4a); import effect on rebar price (Q3a).
 
 ## STEP 3 - PROMISE vs DELIVERY AUDIT
 
@@ -693,21 +694,21 @@ Diagnostics:
 |---|---|---|---|
 | ND (prior log not passed) | ND | ND | ND |
 | Self-referenced: share the medium-term growth plan "this quarter" (C:l95-96) | Re-dated to Q4 FY27 with a reason (C:l97-109) | DELAYED (first delay) | 0.25 (provisional; source is management's own reference, not a prior inventory) |
-| Self-referenced: Kutch rolling mill utilisation as a "focus area" (C:l143) | 66% to 68% (C:l143) | UNCLEAR (no quantified target was stated) | excluded |
-| Deck self-reported: Sidhpur 18 MW solar "Delivered", Jul 2026 (P:p9 l193; P:p6 l137 "Commissioned Jul 2026") | Deck p17 counts Sidhpur outside existing solar (7 MW existing, 85 MW = 7 + 18 + 60 post-enhancement, P:R1490); call: "set to resume operations by November" (C:l152), "in commissioning phase" (C:l302) | DISPUTED: UNCLEAR, leaning NOT DELIVERED (p17 and the call agree the plant is not in the operating base) (A3P-15, A3C-10) | excluded (UNCLEAR); log as open |
+| Self-referenced: Kutch rolling mill utilisation as a "focus area" (C:l143) | Spoken: 66% to 68% (C:l142-144), DISPUTED. Deck: Kutch TMT output 69 to 56 KT (-18.8%, P:R863-R865), about 69% to 56% of the 4 lakh MTPA plant (P:R147) [INFERENCE: capacity base]; Kutch TMT sales 67 to 59 KT (P:R923-R925). Management: "not much result" (C:l363-364). No base in the deck gives a rise (A3C-13) | MISSED on the deck (DECK > ASR; A3 promise log C20 MISSED). The spoken gain stays DISPUTED; it may be ASR for 58% (A3C-13 reading 2), which is still a fall | 0 |
+| Deck self-reported: Sidhpur 18 MW solar "Delivered", Jul 2026 (P:p9 l193; P:p6 l137 "Commissioned Jul 2026") | Deck p17 counts Sidhpur outside existing solar (7 MW existing, 85 MW = 7 + 18 + 60 post-enhancement, P:R1490); call: "set to resume operations by November" (C:l152), "in commissioning phase" (C:l302; the same line says "22 megawatt in Gujarat" against 18 MW, ASR_SUSPECT). The deck's Kutch solar tracker shows Rs 39.58 Cr spent of a Rs 50.00 Cr plan, with Rs 10.42 Cr still to spend (P:R785-R787) | DISPUTED: UNCLEAR, leaning NOT DELIVERED (p17 and the call agree the plant is not in the operating base) (A3P-15, A3C-10) | excluded (UNCLEAR); log as open |
 
 ### 3B. Cumulative track record (trailing 4 concalls)
 | Concall Date | Total Commitments | Delivered | Partially | Missed | Delayed | Dropped | Unclear | Points |
 |---|---|---|---|---|---|---|---|---|
-| 21-Oct-2026 (Q2 FY27; provisional, self-referenced only) | 3 | 0 | 0 | 0 | 1 | 0 | 2 | 0.25 |
+| 21-Oct-2026 (Q2 FY27; provisional, self-referenced only) | 3 | 0 | 0 | 1 | 1 | 0 | 1 | 0.25 |
 | Q1 FY27 and earlier | ND (prior log not passed) | ND | ND | ND | ND | ND | ND | ND |
-Credibility ratio: ND. The provisional figure (0.25 / 1 = 25%) rests on one self-referenced item and is not a trailing-4 ratio. It does not feed Role 1. Role 1 track record input: ND (no Role 5 history). DROPPED count: 0.
+Credibility ratio: ND. The provisional figure (0.25 / 2 = 12.5%) rests on two self-referenced items (the growth plan DELAYED; the Kutch mill focus area MISSED on the deck) and is not a trailing-4 ratio. Loop 2 moved the Kutch item from UNCLEAR to MISSED; the figure was 0.25 / 1 = 25%. It does not feed Role 1. Role 1 track record input: ND (no Role 5 history). DROPPED count: 0.
 
 ### 3C. Pattern recognition
-One quarter only. Early pattern to watch: dates move later (growth plan Q2 to Q4 FY27; mines FY28 on the call vs FY30 in the deck), and status words disagree across slides and the call (Sidhpur "Delivered" on p9 vs future capacity on p17 and "resume" on the call; savings; brand premium).
+One quarter only. Early pattern to watch: dates move later (growth plan Q2 to Q4 FY27; mines FY28 on the call vs FY30 in the deck), and status words disagree across slides and the call (Sidhpur "Delivered" on p9 vs future capacity on p17 and "resume" on the call; savings; brand premium). Spoken operating figures can also run against the deck: the Kutch mill "68%" vs a deck output fall of 69 to 56 KT (A3C-13).
 
 ### 3D. Promoter Verdict / Management Grade
-No grade on record. No change proposed. Data points logged for the first grade: one delayed commitment; four call-vs-deck conflicts (A3C-09, A3C-10, A3C-11, A3C-12); one deck-internal conflict (Sidhpur, A3P-15); two narratives that conflict with the filing (revenue explanation, "no incremental debt"); one material FY26 transaction left unexplained (A3R-15).
+No grade on record. No change proposed. Data points logged for the first grade: one delayed and one missed commitment (the Kutch mill focus area, A3C-13); five call-vs-deck conflicts (A3C-09, A3C-10, A3C-11, A3C-12, A3C-13); one deck-internal conflict (Sidhpur, A3P-15); two narratives that conflict with the filing (revenue explanation, "no incremental debt"); one material FY26 transaction left unexplained (A3R-15); one Kutch volume fall with no stated cause (A3C-24).
 
 ### 3E. Prior Questions for Management (results-only review, resultsonly L428-446): answer status across the revised filing, the deck and the call
 
@@ -742,23 +743,23 @@ Tally: answered 3 (Q4, Q5, Q11); partly 8 (Q1, Q2, Q8, Q9, Q10, Q14, Q15, Q16); 
 | Q2a | Preeti Sharma, Inverse Force Advisors (T15) | Sustainability of the TMT price rise; October read | Macro | B | Prices to stay strong as construction peaks from December (C:l253-259); no number |
 | Q2b | Preeti Sharma (T17) | Margin fall: shutdown vs input cost; H2 margin level | Financial | C | Coal 4.5-5% of sales; price rise lands in Q3 (C:l263-274); no shutdown cost, no H2 margin |
 | Q2c | Preeti Sharma (T19) | Is Rs 2,000/t from captive iron ore right; ramp after FY28 | Forward Guidance | B | Rs 2,000/t from iron ore; FY28 start; full one to two years later (C:l276-281) |
-| Q3a | Anirudh Sharma (T23) | Effect of steel imports on rebar price or demand | Macro | B | Construction steel demand +7%; price hike about 21% in September (C:l287-291) |
+| Q3a | Anirudh Sharma (T23) | Effect of steel imports on rebar price or demand | Macro | C | Construction steel demand +7%; price hike about 21% in September (C:l287-291). The import effect asked at C:l285-286 got demand data only (loop 2, S11: B to C) |
 | Q3b | Anirudh Sharma (T25) | Driver of the Rs 118 Cr inventory rise; when WC normalises | Financial | B | Shutdowns plus stock for added capacity; "it will normalize in Q3" (C:l293-297); no level |
 | Q3c | Anirudh Sharma (T27, T29) | Full-year capex and funding of the balance | Forward Guidance | A | About Rs 500 Cr remaining: Rs 400 Cr Gorakhpur (240 mines, 170 Prayagraj solar; 410 on the ASR text), Rs 100 Cr Kutch; internally funded (C:l307-313). CFO answered only when invited |
 | Q4a | Vedant Trivedi, Vinayat Capital (T35) | Cost initiatives beyond mines and solar | Operational | C | "difficult to quantify" (C:l324, l333); deck claims Rs 3.50 Cr a year (P:p11 l244) |
 | Q4b | Vedant Trivedi (question NOT_TRANSCRIBED) | Unknown; the answer covers brand premium | ND | ND (question not transcribed) | Premium 5-6% UP, 3-4% Gujarat (C:l340-342) vs deck 2-3% (P:R762) |
 | Q5a | Namesh Pandya, individual (T39) | Gorakhpur ramp speed; utilisation Q4 FY27 and FY28 | Operational | A | Start about 10-Nov; 85-90% by December end; full in Q4 (C:l349-355); FY28 not given |
 | Q5b | Namesh Pandya (T40) | Power still bought after the 22 MW addition | Operational | A | 5-7 MW, about 5-6% of need, until Prayagraj in Q4 (C:l357-358) |
-| Q5c | Namesh Pandya (T41) | Rolling mill utilisation: action and settle level | Operational | C | Distribution work; improvement in Q3-Q4 (C:l363-365); no target |
+| Q5c | Namesh Pandya (T41) | Rolling mill utilisation: action and settle level | Operational | C | Distribution work; "not much result" this quarter on lean-monsoon demand; improvement in Q3-Q4 (C:l363-365); no target. The question names Kutch (C:l360), whose TMT output fell 69 to 56 KT on the deck (P:R863-R865; A3C-13) |
 | Q6a | "jimma maitha", maitha investments (T44) | Coal block next steps; share of coal needs met | Operational | C | One month to decide; two to three years to operate (C:l376-379); share of needs not answered |
 | Q6b | "jimma maitha" (T46) | Change to South African coal imports | Strategic | B | Gorakhpur to stop imported coal once the block runs (C:l382-387); no numbers |
 | Q6c | "jimma maitha" (T48, T50) | Guidance for coming years; utilisation gain | Forward Guidance | D | Drivers only (Rs 2,000/t, Rs 30-40 Cr, 1.23 MT) (C:l389-394); utilisation "3 to 5 percent", base not stated (C:l398-399) |
 | Q7 | Dhanraj Tolani, Kuber Advisors (T54) | Timing and benefit of Gujarat debottlenecking | Operational | B | Power debottleneck done last month, results in Q3-Q4; DRI unit commissions in Q4, benefit from FY28 (C:l423-432) |
-Grades: A 3 (Q3c, Q5a, Q5b); B 7 (Q1a, Q2a, Q2c, Q3a, Q3b, Q6b, Q7); C 5 (Q1b, Q2b, Q4a, Q5c, Q6a); D 1 (Q6c); E 0; ND 1 (Q4b).
+Grades: A 3 (Q3c, Q5a, Q5b); B 6 (Q1a, Q2a, Q2c, Q3b, Q6b, Q7); C 6 (Q1b, Q2b, Q3a, Q4a, Q5c, Q6a); D 1 (Q6c); E 0; ND 1 (Q4b).
 
 ### 4B. Question pattern analysis
 - Repeated topics: capacity ramp and utilisation (Q5a, Q5c, Q6c follow-up), and raw-material integration (Q1a, Q2c, Q6a, Q6b). Four analysts asked about the coal and iron ore story. Nobody asked about trading, the loan book, the FY26 asset sale, the auditor or cash conversion. Nobody asked where the extra Gorakhpur tonnes will sell.
-- C/D/E topics: funding (Q1b), margin attribution and H2 margin (Q2b), quantified cost savings (Q4a), utilisation targets (Q5c), coal coverage (Q6a), and guidance (Q6c). Management avoids numbers on margins, funding mix and volumes.
+- C/D/E topics: funding (Q1b), margin attribution and H2 margin (Q2b), the import effect on rebar price (Q3a), quantified cost savings (Q4a), utilisation targets (Q5c), coal coverage (Q6a), and guidance (Q6c). Management avoids numbers on margins, funding mix and volumes.
 - Buy-side vs sell-side: no hosting broker. Participants are small advisory firms, an individual and investment houses (names ASR) [INFERENCE: no institutional buy-side or sell-side house identified]. No mutual fund or AIF analyst is identifiable. Yellow flag.
 - Hosting broker softballs: none hosted. Three analysts opened with congratulations: "a good set of numbers" (C:l248, l284) and "this good results" (C:l373), in a quarter when consolidated PAT fell 31.95% YoY.
 - Pushback: none. The analyst's "660 crores" spent (C:l298) went uncorrected against management's own Rs 650 Cr (C:l203).
@@ -824,6 +825,8 @@ Exchange Q3c (capex and funding, T27-T32, read with the CFO remarks at C:l195-20
 | ETR 27.25% | Tax and the lost associate turned a 19.25% PBT fall into a 31.95% PAT fall | Routine to AMBER |
 | Late standalone filing | Same-day revision before the call | AMBER |
 | Where the extra Gorakhpur tonnes will sell | About +39% at Gorakhpur in a market growing about 7% (6D) | AMBER |
+| Cause of the Kutch volume fall | Kutch fell 18.0-25.6% QoQ at every production stage and 11.9% in TMT sales with no named shutdown; production fell more than sales (A3C-24) | AMBER: the only Kutch reason given is lean-monsoon demand (C:l363-364), which does not explain the YoY fall |
+| Gorakhpur iron feed for the added capacity | No sponge-iron addition at Gorakhpur (C:l134-135); DRI gap about 14-39 KT a quarter at 85-90% [INFERENCE] (6D) | AMBER |
 | Thermal overrun and +31 MW to 160 MW | Deck tracker (A3P-10) | AMBER |
 | Rs 1,809 Cr unallocated programme | Deck (A3P-07) | AMBER |
 | Mines "70,00,000 MT" post-enhancement | Deck p17 (A3P-11) | Routine |
@@ -841,7 +844,7 @@ Silence count: 1 for each row (first tracked quarter). Peer silence test: not ap
 | Disruptions | ND | "largely behind us" (C:l173); "it is behind us" (C:l397) | ND |
 | Demand | ND | "domestic fundamentals remain strong" (C:l54); "demand held up well" (C:l124-125) | ND |
 | Growth plan | Promised for this quarter (per C:l95-96) | "We therefore intend to present our growth plan in quarter four, 27" (C:l108-109) | DOWNGRADED (timing) |
-| Kutch rolling mill | "focus area in the last quarter" (C:l143) | 68% vs 66%; "should structurally further improve" (C:l364-365) | MAINTAINED (no target) |
+| Kutch rolling mill | "focus area in the last quarter" (C:l143) | Spoken 68% vs 66% (DISPUTED; the deck shows Kutch TMT output 69 to 56 KT, P:R863-R865); "not much result" this quarter (C:l363-364); "should structurally further improve" (C:l364-365) | DOWNGRADED on the deck (no target; A3C-13) |
 | Same-quarter deck vs call: Sidhpur solar | Deck p6 and p9: "Commissioned Jul 2026", "Delivered" (P:p6 l137, p9 l193); deck p17: outside existing capacity (P:R1490) | "set to resume operations by November" (C:l152) | Within-quarter conflict; p17 and the call agree |
 | Same-quarter deck vs call: net debt | Deck: net debt Rs 190.58 Cr (P:p6 l134) | "we remain net cash positive" (C:l199) | Within-quarter conflict |
 
@@ -867,7 +870,7 @@ Protocol-pattern count: 10 (>5, hedge-heavy by count). With the supplementary fo
 - The promoter-chair (CMD) was not on the call; the Vice Chairman spoke for the board.
 
 ### 6E. Management archetype
-Specificity 0.625 (>0.5). Credibility ratio: ND (no trailing record; provisional single item 25%). Archetype: ND, PROVISIONAL WATCH. The specificity is high, and the only self-referenced commitment was delayed. If the next two calls show missed dates, the cell is OVERPROMISER. Until then, anchor to filed numbers and require pre-committed thresholds for any action.
+Specificity 0.625 (>0.5). Credibility ratio: ND (no trailing record; provisional 12.5% on two items). Archetype: ND, PROVISIONAL WATCH. The specificity is high, and of the two scored self-referenced commitments one was delayed and one missed. If the next two calls show missed dates, the cell is OVERPROMISER. Until then, anchor to filed numbers and require pre-committed thresholds for any action.
 
 ## STEP 7 - CROSS-REFERENCE
 
@@ -876,7 +879,7 @@ Specificity 0.625 (>0.5). Credibility ratio: ND (no trailing record; provisional
 |---|---|---|
 | Revenue Rs 1,146 Cr, +13% YoY, flat QoQ (C:l63-65, l179-180) | Rs 1,145.89 Cr; +13.15% YoY; +0.02% QoQ (R:L1057). "1113" for Q2 FY26 is ASR for 1,013 (A3C-16) | CONFIRMED |
 | Firmer realisation offset the volume loss (C:l66-67) | Traded purchases Rs 98.87 Cr (R:L1061); own TMT -14.6% QoQ (deck); management's own Q&A says realisation did not help Q2 (C:l265-266) | CONTRADICTED (by the filing mix and by management's own answer) |
-| Margin effects "all one-time" (C:l70) | Gross margin 21.00% vs 27.35% (computed); coal 4.5-5% of sales per management (C:l268-269) | PARTIALLY CONFIRMED (shutdown leg plausible; coal leg not one-time on management's words) |
+| Margin effects "all one-time" (C:l70) | Gross margin 21.00% vs 27.35% (computed); coal 4.5-5% of sales per management (C:l268-269); Kutch, with no named Q2 shutdown (C:l158), fell 18.0-25.6% QoQ in production and 11.9% in TMT sales (P:R803-R865, R923-R925; A3C-24) | PARTIALLY CONFIRMED (shutdown leg plausible at Gorakhpur only; the Kutch fall has no stated one-time cause; coal leg not one-time on management's words) |
 | EBITDA Rs 111 Cr at 9.64% (C:l181-182) | Filed operating EBITDA Rs 109.69 Cr at 9.57% (computed); basis unstated | PARTIALLY CONFIRMED (Rs 0.83 Cr basis gap) |
 | PAT Rs 61 Cr vs Rs 89 Cr a year ago (C:l188-189) | Rs 60.51 Cr vs Rs 88.93 Cr consolidated including the associate (R:L1076); standalone Rs 87.23 Cr (RR:L208) | CONFIRMED (consolidated; associate unnamed) |
 | No term loans for projects (C:l90-91, l197) | Non-current borrowings Rs 86.29 Cr, nature undisclosed (R:L1106) | UNVERIFIABLE |
@@ -889,6 +892,7 @@ Specificity 0.625 (>0.5). Credibility ratio: ND (no trailing record; provisional
 | Dividend approved at the 30-Sep AGM (C:l204-205) | Note 5 (RR:L557-559); unpaid at 30-Sep (RR:L523) | CONFIRMED |
 | Balance sheet strong (C:l205-206) | Equity Rs 3,486.54 Cr; debt/equity 0.17x; but cash Rs 1.12 Cr and CFO/PAT 0.49x | PARTIALLY CONFIRMED |
 | TMT sales 165k t vs 192k t (C:l141-142) | Not in the filing; deck 164 vs 192 KT (P:R928-R929) | UNVERIFIABLE vs filing; CONFIRMED vs deck |
+| Kutch rolling mill utilisation 66% to 68% (C:l142-144) | Not in the filing; deck Kutch TMT output 69 to 56 KT (P:R863-R865), about 69% to 56% of 4 lakh MTPA (P:R147) [INFERENCE: capacity base]; Kutch TMT sales 67 to 59 KT (P:R923-R925) | UNVERIFIABLE vs filing; CONTRADICTED by the deck (A3C-13) |
 
 ### 7B. Peer concall cross-check
 | Topic | This Company Said | Peer 1 Said | Peer 2 Said | Most Credible Narrative |
@@ -940,11 +944,11 @@ DEFERRED to /fttcp and Role 1 (OR-30). Pillar-relevant concall facts flagged:
 ### 8E. Position decision
 Decision Status verified: NONE. Branch 8A-W. Concall-specific overrides:
 - Credibility ratio below 60%? ND (no trailing record). Discount rule cannot be applied mechanically. Conservative reading: treat forward commentary as unconfirmed until delivered.
-- Two or more DROPPED commitments? No (0 dropped; 1 delayed).
+- Two or more DROPPED commitments? No (0 dropped; 1 delayed; 1 missed).
 - Undisclosed material risk? Yes: Q3 starts with the expanded Gorakhpur plant idle until about 10-Nov, and Q4 carries a Gujarat shutdown. The trim rule applies to held names only. Logged as a flag.
 - Undisclosed material positive? A dated capacity step and a coal block. Hold pending verification; do not act on call commentary alone.
 - Evasion across 3+ quarters? Not testable.
-- Narrative contradicts filing numbers materially? Yes, on funding ("no incremental debt", "all funded through internal accruals") and on the revenue explanation. Trust the filing. Note the credibility issue. Tighten the next-quarter watchlist (seed rows 3, 6, 7, 8).
+- Narrative contradicts filing numbers materially? Yes, on funding ("no incremental debt", "all funded through internal accruals") and on the revenue explanation. The deck also contradicts the call on the Kutch mill (A3C-13), and the call's shutdown frame leaves the Kutch fall unexplained (A3C-24). Trust the filing, then the deck. Note the credibility issue. Tighten the next-quarter watchlist (seed rows 3, 6, 7, 8; monitorable 29).
 Output: no entry zone, no gate, no proposed Decision Status. The operator decides on /step1.
 
 ### 8F. Updated questions for the next quarter
@@ -955,12 +959,12 @@ The forward question set is the Step 8.5 table above (37 rows, with a "What to w
 # SECTION C - COMBINED VERDICT
 
 - Filing-derived signals: core PBT -27.59% YoY; operating margin 9.57% (-342 bps YoY, -658 bps QoQ); traded purchases Rs 98.87 Cr; H1 CFO/PAT 0.49x on standalone and consolidated sets; net debt Rs 165.86 Cr; cash Rs 1.12 Cr; Rs 591.88 Cr in undisclosed loan and financial-asset pools; an unexplained Rs 110.30 Cr FY26 PPE sale at book; S-vs-C PAT gap 0.00% in Q2 FY27; governance data points (auditor change, Rs 14.06 Cr equity roll break, associate column conflict, standalone set filed 42 hours late).
-- Deck-derived signals: own TMT sales -14.6% QoQ and -6.8% YoY; billet output -22.1% QoQ; capacity 9,93,300 to 12,29,000 MT; Rs 3,000 Cr programme with Rs 1,191 Cr itemised; promoter holding +0.86-0.95 pp, mechanism undisclosed; six deck errors (A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27) and non-standard ratios.
-- Concall-derived signals: two shutdowns and coal explain the margin; the expanded plant starts about 10-Nov; inventory to normalise in Q3; Rs 500 Cr H2 capex funded internally; loan book called treasury; growth plan delayed to Q4 FY27; no governance question asked.
-- Reconciliation: the call explains the volume loss but not the trading. Its funding narrative conflicts with the filing (borrowings up, cash near zero). Filing numbers win.
-- Net thesis impact: no thesis exists. The quarter is weaker in substance than the headline revenue shows. The dated capacity step is the main new positive, but its absorption at Gorakhpur is untested. No new datum is a clean bull signal.
+- Deck-derived signals: own TMT sales -14.6% QoQ and -6.8% YoY; billet output -22.1% QoQ; Kutch -18.0% to -25.6% QoQ at every production stage with no named shutdown (A3C-24); Kutch TMT output 69 to 56 KT against the call's mill gain (A3C-13); capacity 9,93,300 to 12,29,000 MT; Rs 3,000 Cr programme with Rs 1,191 Cr itemised; promoter holding +0.86-0.95 pp, mechanism undisclosed; eight deck errors (A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27, A3P-28, A3P-29) and non-standard ratios.
+- Concall-derived signals: management says two Gorakhpur shutdowns and coal explain the margin; the Kutch mill gain it reports is contradicted by the deck; the expanded plant starts about 10-Nov; Gorakhpur adds no sponge iron; inventory to normalise in Q3; Rs 500 Cr H2 capex funded internally; loan book called treasury; growth plan delayed to Q4 FY27; no governance question asked.
+- Reconciliation: the call explains the Gorakhpur volume loss, but not the Kutch loss and not the trading. Kutch had no named Q2 shutdown, yet it fell 18.0-25.6% QoQ in production and carries 30-37% of the group's QoQ volume fall (A3C-24). The deck also contradicts the call's Kutch mill gain of 66% to 68%: Kutch TMT output fell from 69 to 56 KT (A3C-13). Its funding narrative conflicts with the filing (borrowings up, cash near zero). Filing numbers win, and deck cells beat ASR text.
+- Net thesis impact: no thesis exists. The quarter is weaker in substance than the headline revenue shows. The dated capacity step is the main new positive, but its absorption at Gorakhpur is untested. Its new tonnes are also less integrated, because Gorakhpur adds no sponge iron (C:l134-135; DRI gap about 14-39 KT a quarter [INFERENCE]). No new datum is a clean bull signal.
 - Position decision: 8A-W pre-thesis; no Decision Status proposed.
-- Watchpoints for next quarter: Q3 gross margin (single cleanest metric), Q3 traded purchases, Q3 TMT tonnes, the Gorakhpur start date, the dividend payment, and written answers to Q1-Q37.
+- Watchpoints for next quarter: Q3 gross margin (single cleanest metric), Q3 traded purchases, Q3 TMT tonnes, Q3 Kutch power and billets against 43 and 90 KT, the Gorakhpur start date, the dividend payment, and written answers to Q1-Q37.
 
 Protocol verdict: PROCEED WITH FLAGS.
 Basis: all four documents are readable and the statements re-foot. Cash conversion is INDETERMINATE-WITH-DIRECTION, which alone caps the verdict at PROCEED WITH CAVEATS (missing evidence named in Step 5). Governance and disclosure data points push it to FLAGS for a human decision; loop 1 adds one more (the FY26 PPE sale). No mechanical failure, so not REWORK. The evidence supports a full Role 4 and Role 5 read, so not INSUFFICIENT EVIDENCE.
@@ -994,11 +998,12 @@ Basis: all four documents are readable and the statements re-foot. Cash conversi
 | 21 | FY27 Annual Report and AGM: related parties, loans, associate, OCI, auditor term | by 30-Sep-2027 | A3-08, A3-12, A3-17, A3R-07 |
 | 22 | FY26 Annual Report Role 6 deep dive (related parties, loan book, associate exit, Suryalaxmi, the Rs 110.30 Cr FY26 PPE sale: asset, buyer, Reg 30 disclosure) | available now | A3-15, A3R-03, A3R-14, A3R-15 |
 | 23 | Coal block operational; Gorakhpur off imported coal | FY29-FY30 [INFERENCE: 2-3 years after a Nov-2026 go] | C:l378-379, l382-387 |
-| 24 | Filing and deck hygiene: next filing and deck. Deck errors: A3P-01 (p6 EBITDA/t "30% QoQ"; -23.2% is right), A3P-15 (Sidhpur status; "(per Q1 FY2 deck)" note), A3P-17 (power totals), A3P-18 (PAT bps swapped), A3P-19 (shareholding 100.09%), A3P-27 (Q1 tax "411"); plus +1000 bps base, misspelling, pincode | next filing (Q3 FY27) | A3-16, A3R-13, A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27 |
+| 24 | Filing and deck hygiene: next filing and deck. Deck errors: A3P-01 (p6 EBITDA/t "30% QoQ"; -23.2% is right), A3P-15 (Sidhpur status; "(per Q1 FY2 deck)" note), A3P-17 (power totals), A3P-18 (PAT bps swapped), A3P-19 (shareholding 100.09%), A3P-27 (Q1 tax "411"), A3P-28 (EBITDA "45.7% QoQ" on a Q1 base including other income; -40.3% on the deck's own Rs 185 Cr), A3P-29 (FY25 and FY26 margin bars 17.0% and 18.0% vs 16.5% and 17.6% from the deck's own cells); plus +1000 bps base, misspelling, pincode | next filing (Q3 FY27) | A3-16, A3R-13, A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27, A3P-28, A3P-29 |
 | 25 | Deck metric bases (A17; do not feed forward): ROCE 7.09% six months, ROCE chart EBITDA-based, D/E 0.289, net debt/EBITDA 0.64x on half-year EBITDA (0.30x TTM), WC Rs 1,274 Cr | each deck | A3P-12, A3P-13 |
 | 26 | OCI actuarial assumptions | FY26 / FY27 Annual Report | A3-08, A3R-07 |
 | 27 | Safeguard duty status | PENDING LIVE VERIFICATION | A3P-25 |
 | 28 | ASR clusters not carried ("330", "33,000/t", "1113"); spoken savings and premium vs deck | next call (filed transcript) | A3C-12, A3C-15, A3C-21, A3C-23 |
+| 29 | Q3 FY27 Kutch recovery test (loop 2): Kutch power near 43, billets near 90 KT, TMT output near 69 KT and TMT sales near 67 KT (Q1 FY27 levels); Kutch rolling-mill utilisation on a stated base. A recovery points to a Q2 supply limit now fixed (power debottleneck, C:l424-425) [INFERENCE]. No recovery points to weak Gujarat demand, before the Q4 DRI-sync shutdown | Q3 FY27 deck, by 14-Feb-2027 [INFERENCE: deck issued with the results] | P:R804, R849, R864, R924; C:l424-425; A3C-24, A3C-13 |
 
 Removed from the prior list: "Standalone Q2 FY27 statement visible on BSE and NSE" (done 21-Oct, late) and "Earnings call held" (done 21-Oct). "CWIP project commissioning" (NOT FOUND) is now items 5, 13 and 14. "AGM outcome: auditor term" moves to question Q20.
 
@@ -1008,7 +1013,7 @@ Removed from the prior list: "Standalone Q2 FY27 statement visible on BSE and NS
 1. PRE_THESIS_READ: no Notion page, no Decision Status, no companies/GALLANTT.md, no Spear line.
 2. STANDALONE_FILED_LATE (replaces STANDALONE_STATEMENT_ABSENT): standalone set filed 21-Oct 16:56, about 42 hours after the meeting; no reason stated (A3R-12).
 3. CASH_CONVERSION_INDETERMINATE_WITH_DIRECTION: H1 CFO/PAT 0.49x on both sets (0.56x ex-line and net-interest) vs FY26 1.24x reported, 1.00x ex-line; inventory +21.41% while own TMT sales fell; Q3 normalisation claimed without a level.
-4. MARGIN_COMPRESSION_VOLUME_AND_COST: operating margin 9.57%; billet output -22.1% QoQ; management cites two Gorakhpur shutdowns and coal at 4.5-5% of sales.
+4. MARGIN_COMPRESSION_VOLUME_AND_COST: operating margin 9.57%; billet output -22.1% QoQ; management cites two Gorakhpur shutdowns and coal at 4.5-5% of sales. Kutch, with no named Q2 shutdown, fell 18.0-25.6% QoQ in production (power 43 to 32, billets 90 to 73, TMT output 69 to 56) and 11.9% in TMT sales, about a third of the group's QoQ volume fall; cause unstated (A3C-24).
 5. OWN_VOLUME_DECLINE_MASKED_BY_TRADING: TMT sales -6.8% YoY and -14.6% QoQ while revenue rose 13.15% YoY; traded purchases Rs 98.87 Cr; the call is silent on trading and gives two conflicting revenue explanations.
 6. AUDITOR_CHANGE: predecessor unnamed; call silent.
 7. OTHER_EQUITY_ROLLFORWARD_BREAK: Rs 14.06 Cr, located in the parent, unexplained.
@@ -1016,18 +1021,18 @@ Removed from the prior list: "Standalone Q2 FY27 statement visible on BSE and NS
 9. FY26_PPE_SALE_UNEXPLAINED: parent sold PPE for Rs 110.30 Cr at book (loss Rs 0.24 Cr) in FY26, the year the loan book was built from nil, Rs 13.13 Cr of investments were exited and the associate left; asset, buyer, related-party status and use of proceeds undisclosed; deck and call silent (A3R-15).
 10. LIQUIDITY_AND_FUNDING_GAP: cash Rs 1.12 Cr; H2 need about Rs 548 Cr vs H1 CFO Rs 90.82 Cr; "no incremental debt" vs borrowings +Rs 44.29 Cr in H1; deck net debt Rs 190.58 Cr vs call "net cash positive".
 11. Q3_STARTS_WITH_DOWNTIME: expanded Gorakhpur plant idle until about 10-Nov; Q4 Gujarat DRI shutdown.
-12. CAPACITY_ABSORPTION_UNTESTED: the +23.7% step is about +39% at Gorakhpur [INFERENCE]; 85-90% implies about 178-188 KT of billets a quarter vs a 142 KT Q1 peak, in a market growing about 7%, after own TMT sales grew 1.6% in FY26.
+12. CAPACITY_ABSORPTION_UNTESTED: the +23.7% step is about +39% at Gorakhpur [INFERENCE]; 85-90% implies about 178-188 KT of billets a quarter vs a 142 KT Q1 peak, in a market growing about 7%, after own TMT sales grew 1.6% in FY26. Gorakhpur adds no sponge iron (C:l134-135), so the new tonnes need about 14-39 KT a quarter of diverted merchant DRI or bought metallics [computed; INFERENCE; Gorakhpur DRI capacity NOT FOUND].
 13. GROWTH_PLAN_DELAYED: promised for Q2 FY27; re-dated to Q4 FY27; greenfield; funding mix open.
 14. CWIP_PARTLY_DISCLOSED: projects and dates given; CWIP-by-project map not given; Rs 1,809 Cr of the programme undefined.
 15. MINES_ECONOMICS_UNCOSTED: Rs 249.00 Cr plan vs Rs 153-246 Cr a year of claimed EBITDA (1.0-1.6x) rests on a management estimate with shifting scope and a FY28-FY30 benefit year.
 16. ETR_NORMALISED: 27.25% Q2 FY27 vs 15.31% Q2 FY26; FY26 deferred credit in the parent.
 17. ASSOCIATE_AND_EPS_INCONSISTENCY: audited FY26 carries no associate; H1 FY26 comparative carries Rs 1.69 Cr; consolidated EPS = standalone EPS in every column.
 18. SUBSIDIARY_ACTIVE: Suryalaxmi spent Rs 5.35 Cr in H1 on a Rs 6.03 Cr parent loan; possible uneliminated Rs 0.22 Cr intra-group interest (small).
-19. FILING_AND_DECK_HYGIENE: late revision; six deck errors (A3P-01 p6 EBITDA/t "30% QoQ" vs the correct -23.2%; A3P-15 Sidhpur "Delivered" vs p17 future capacity, plus a stale "(per Q1 FY2 deck)" note; A3P-17 power totals; A3P-18 swapped PAT bps; A3P-19 100.09% shareholding; A3P-27 Q1 tax "411"); +1000 bps base; four call-vs-deck conflicts.
+19. FILING_AND_DECK_HYGIENE: late revision; eight deck errors (A3P-01 p6 EBITDA/t "30% QoQ" vs the correct -23.2%; A3P-15 Sidhpur "Delivered" vs p17 future capacity, plus a stale "(per Q1 FY2 deck)" note; A3P-17 power totals; A3P-18 swapped PAT bps; A3P-19 100.09% shareholding; A3P-27 Q1 tax "411"; A3P-28 EBITDA "45.7% QoQ" on a Q1 base including other income, -40.3% on the deck's own Rs 185 Cr; A3P-29 FY25 and FY26 margin bars 17.0% and 18.0% vs 16.5% and 17.6% from the deck's own cells); +1000 bps base; five call-vs-deck conflicts (loop 2 adds the Kutch mill, A3C-13).
 20. DECK_METRICS_NONSTANDARD_A17: ROCE 7.09% six months; ROCE chart EBITDA-based; D/E 0.289 on total liabilities; net debt/EBITDA 0.64x on half-year EBITDA (0.30x on TTM operating EBITDA); WC includes bank and loans. None fed forward.
 21. ASR_TRANSCRIPT_UNVERIFIED: no filed transcript; speakers inferred; Q4b not transcribed.
 22. CMD_ABSENT_FROM_CALL; GOVERNANCE_SILENCE_ON_CALL: no analyst raised any of nine governance items.
-23. CREDIBILITY_RATIO_ND: no prior concall log; one self-referenced commitment delayed; Sidhpur delivery disputed.
+23. CREDIBILITY_RATIO_ND: no prior concall log; one self-referenced commitment delayed and one missed (the Kutch mill focus area: deck output fell 69 to 56 KT; A3C-13); provisional 12.5% on two items; Sidhpur delivery disputed.
 24. PROMOTER_HOLDING_ROSE_MECHANISM_UNDISCLOSED: +0.86-0.95 pp in a quarter when the price fell 22.1%, with no new shares; purchase, transfer or reclassification not shown; if a purchase, about Rs 112-158 Cr; funding and pledge undisclosed.
 25. TRACKER_ROWS_NOT_SUPPLIED: zero signals; five candidates proposed.
 26. STEPS_6.5_7_8D_DEFERRED to /fttcp and Role 1 (OR-30).
@@ -1062,14 +1067,14 @@ Removed from the prior list: "Standalone Q2 FY27 statement visible on BSE and NS
 | Associate | Nil in FY26 vs Rs 1.69 Cr in H1 FY26 | Audited FY26 carries no associate; the H1 FY26 column is the inconsistent one; CFO quotes figures including it | A3R-02; RR:L208 vs L1175; C:l189 |
 | Comparative EPS | Rs 3.62 on pre-associate PAT | Mechanism found: consolidated EPS = standalone EPS in every column; not corrected | RR:L214 vs L1183 |
 | Suryalaxmi subsidiary | Nil-revenue shell | Active asset buyer: Rs 5.35 Cr H1 spend on a Rs 6.03 Cr parent loan | A3R-03; RR:L316-330 vs L1185-1199 |
-| Filing hygiene | Cover letter dated 03-Nov-2025 | Date fixed; standalone filed about 42 hours late; six deck errors | RR:L38; A3R-12; A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27 |
+| Filing hygiene | Cover letter dated 03-Nov-2025 | Date fixed; standalone filed about 42 hours late; eight deck errors | RR:L38; A3R-12; A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27, A3P-28, A3P-29 |
 | ETR | 27.25%, cause unknown | Unchanged; FY26 deferred credit sits in the parent; call silent | RR:L205-207 |
 | D&A +17.90% QoQ | Driver unknown | Partly, and weakened: Sidhpur "commissioned Jul 2026" on p6, but p17 counts it as future capacity and the call says it resumes in November | P:p6 l137; P:R1490; C:l152 |
 | Promoter holding / pledge | ND | 70.98% vs 70.03% (+0.86-0.95 pp); mechanism undisclosed; if a purchase, about Rs 112-158 Cr; pledge still ND | P:p37 l756, l761 |
 | Market data | ND | Price Rs 537.90 at 30-Sep (-22.1% QoQ); market cap Rs 12,978 Cr; 32.0x TTM EPS (computed) | P:p37 l760-762 |
-| Role 5 | NOT RUN | Run on ASR text: 7 analysts, 17 questions, grades A3/B7/C5/D1; specificity 0.625; credibility ND | C:l208-437 |
+| Role 5 | NOT RUN | Run on ASR text: 7 analysts, 17 questions, grades A3/B6/C6/D1 (loop 2: Q3a B to C); specificity 0.625; credibility ND (provisional 12.5% on two items: one delayed, one missed); five call-vs-deck conflicts | C:l208-437 |
 | Prior 17 questions | All open | Answered 3, partly 8, open 6 | Role 5 Step 3E |
-| Monitorables | 13 | 28 (two closed, CWIP split into three dated items, absorption test added) | Monitorables table |
+| Monitorables | 13 | 29 (two closed, CWIP split into three dated items, absorption test added; loop 2 adds the Q3 Kutch recovery test) | Monitorables table |
 | Single cleanest metric | Q3 gross margin, 27.35% / 21.00% | Unchanged | Step 8C |
 | Growth triggers | None | Five candidates; growth plan DELAYED from Q2 to Q4 FY27; mines economics uncosted (1.0-1.6x) | C:l94-109; 6D |
 
@@ -1085,13 +1090,13 @@ Ten plain lines:
 9. The funding story conflicts with the filing. Debt rose Rs 44.29 Cr in H1, and H2 needs about Rs 548 Cr.
 10. The promoter holding rose about 0.9 pp in a falling quarter, but no document shows a purchase. No clean bull datum remains.
 
-Why the verdict and the class do not change: the verdict rests on two things, the cash-conversion cap and the governance flags. The call and deck supplied volumes and project dates, which were inputs to diagnosis, not to the cap. The missing cash evidence (inventory split, pool contents, FY27 cash flow) is still missing. The governance items (auditor, equity break, loan counterparties, associate) are still unanswered, and the late revision and the unexplained FY26 asset sale add two more. The class does not move because management's growth-induced reading of the inventory build is MGMT-tier ASR text with a quarter but no number, and the filing cannot test it before 31-Mar-2027. Loop 1 changes neither: its grafts weaken bull readings and add a governance item, and they all point the same way.
+Why the verdict and the class do not change: the verdict rests on two things, the cash-conversion cap and the governance flags. The call and deck supplied volumes and project dates, which were inputs to diagnosis, not to the cap. The missing cash evidence (inventory split, pool contents, FY27 cash flow) is still missing. The governance items (auditor, equity break, loan counterparties, associate) are still unanswered, and the late revision and the unexplained FY26 asset sale add two more. The class does not move because management's growth-induced reading of the inventory build is MGMT-tier ASR text with a quarter but no number, and the filing cannot test it before 31-Mar-2027. Loop 1 changes neither: its grafts weaken bull readings and add a governance item, and they all point the same way. Loop 2 changes neither. It removes a spoken Kutch gain that the deck contradicts. It adds a Kutch volume fall with no stated cause, a less integrated capacity step and two deck errors. None of these touches the missing cash evidence or answers a governance item.
 
 ---
 
 ## PLAIN-LANGUAGE BRIEF
 
-Provenance key (all from this quarter's documents; no prior Notion or peer work exists): FILED = the 19-Oct results or the 21-Oct revised results (computed figures are arithmetic on filed cells). AGENCY = a rating agency view, here only as quoted in the deck. MGMT = the company's deck, or the call as machine-transcribed text (marked ASR). SECONDARY = none used. INFERENCE = analyst reasoning with no filed number. Not disclosed in any document: Q2 realisation per tonne, traded-goods revenue, inventory split, loan and other-financial-asset counterparties, the asset and buyer in the FY26 PPE sale, bank-balance lien, promoter pledge and the mechanism of the promoter stake rise, predecessor auditor, associate name, premium-grade share, FY27 volume guidance.
+Provenance key (all from this quarter's documents; no prior Notion or peer work exists): FILED = the 19-Oct results or the 21-Oct revised results (computed figures are arithmetic on filed cells). AGENCY = a rating agency view, here only as quoted in the deck. MGMT = the company's deck, or the call as machine-transcribed text (marked ASR). SECONDARY = none used. INFERENCE = analyst reasoning with no filed number. Not disclosed in any document: Q2 realisation per tonne, traded-goods revenue, inventory split, loan and other-financial-asset counterparties, the asset and buyer in the FY26 PPE sale, bank-balance lien, promoter pledge and the mechanism of the promoter stake rise, predecessor auditor, associate name, premium-grade share, FY27 volume guidance, the cause of the Kutch Q2 volume fall, Gorakhpur DRI capacity.
 
 ### 1. SUMMARY NARRATIVE
 Gallantt sold Rs 1,145.89 Cr in Q2 FY27, up 13.15% on a year ago and flat on Q1 [FILED].
@@ -1100,6 +1105,7 @@ Goods bought for resale, Rs 98.87 Cr, held the revenue up, along with sponge iro
 Core profit before tax, without treasury income, fell 27.59% to Rs 65.02 Cr [FILED, computed].
 Profit after tax fell 31.95% to Rs 60.51 Cr [FILED].
 Management blames two shutdowns at Gorakhpur and dearer coal [MGMT, ASR].
+Kutch had no named shutdown. Its output still fell 18-26% on Q1 at every stage, so the shutdowns explain only part of the loss [MGMT, deck; computed].
 Cash was weak. Operating cash covered 0.49x of half-year profit, on both the company and group accounts [FILED, computed].
 Cash on hand fell to Rs 1.12 Cr, and debt rose Rs 44.29 Cr in the half [FILED].
 The CFO says the company is net cash. That holds only if Rs 265.78 Cr of loans to others counts as cash [MGMT, ASR; FILED, computed].
@@ -1109,7 +1115,7 @@ Capacity rises 23.7% to 12.29 lakh tonnes, with a start near 10-Nov-2026 [MGMT].
 That step lands mostly at Gorakhpur, which grows by about 39%, in a market that grows about 7% [MGMT; INFERENCE].
 The promoter holding rose about 0.9 points while the share price fell 22.1%. No document shows whether that was a purchase [MGMT, deck; FILED: absence].
 The standalone accounts came two days late, and a new auditor signed them [FILED].
-What it means: there is still no thesis to test. The volume story is now clear, but the cash and governance questions are not.
+What it means: there is still no thesis to test. The volume fall is now measured, but its Kutch cause, the cash and the governance questions are still open.
 Decision: PROCEED WITH FLAGS. The operator decides whether to run /step1.
 
 ### 2. SECTOR INTELLIGENCE
@@ -1147,7 +1153,7 @@ Where it is weaker: it has no captive ore or coal yet. Mines start in FY28 at th
 Its own TMT sales grew only 1.6% in FY26, so a 39% larger Gorakhpur must win share from these peers [MGMT, deck; INFERENCE].
 Risk to watch: large mills that add long-steel capacity in North India can cut regional bar prices [INFERENCE].
 Bull reading: integration and regional reach protect the spread better than rolling mills without integration.
-Bear reading: until the mines run, Gallantt pays the same input cost as rivals with less scale, and it must cut price to place its new tonnes.
+Bear reading: until the mines run, Gallantt pays the same input cost as rivals with less scale, and it must cut price to place its new tonnes. Gorakhpur also adds no sponge-iron capacity, so its new tonnes need about 14-39 KT a quarter of iron that it must divert from merchant sales or buy [MGMT, ASR; computed; INFERENCE].
 The observation that separates them: whether Q3 gross margin recovers while traded purchases fall back [FILED, when filed].
 
 ### 5. FORWARD MAP (next about 10-11 months)
@@ -1158,10 +1164,10 @@ Make-or-break reading: Q3 FY27 gross margin, due by 14-Feb-2027. Bull at or abov
 - About 21-Nov-2026, coal block decision. Bull: a go with reserves and cost. Bear: a walk-away or no numbers.
 - By 31-Dec-2026, Gorakhpur at 85-90%. Bull: reached. Bear: commissioning problems.
 - Before the Q3 call, written answers to Q1-Q37. Bull: loan counterparties and the FY26 asset buyer named and unrelated. Bear: silence a second quarter.
-- By 14-Feb-2027, Q3 FY27 results. Bull: margin back above 27.35%, traded purchases near Rs 8.78 Cr, TMT tonnes near 192 thousand. Bear: margin near 21.00% and trading continues.
+- By 14-Feb-2027, Q3 FY27 results. Bull: margin back above 27.35%, traded purchases near Rs 8.78 Cr, TMT tonnes near 192 thousand, Kutch power and billets back near 43 and 90. Bear: margin near 21.00%, trading continues, or Kutch stays near 32 and 73.
 - Q4 FY27, Prayagraj solar, Gujarat DRI unit and the growth plan. Bull: all on time; the plan is self-funded. Bear: slips, or a plan that needs debt or equity.
 - By 30-May-2027, FY27 audited results and Q4 deck. Bull: equity roll ties, inventory back near Rs 551 Cr, cash cover at least 1.00x, Gorakhpur TMT sales well above 125 thousand tonnes. Bear: restatements, the cash shortfall continues, or Gorakhpur tonnes stall.
-- By 14-Aug-2027, Q1 FY28 results. Bull: the first full quarter at 12.29 lakh tonnes lifts volume at a steady margin. Bear: volume stays near 164 thousand tonnes, or the added tonnes sell only at a lower spread.
+- By 14-Aug-2027, Q1 FY28 results. Bull: the first full quarter at 12.29 lakh tonnes lifts volume at a steady margin. Bear: volume stays near 164 thousand tonnes, the added tonnes sell only at a lower spread, or they run on bought metallics because Gorakhpur adds no sponge iron.
 
 ---
 
@@ -1177,7 +1183,7 @@ ledger_reconciliation:
   turns: 60
   slides: 38
   all_reviewed: true
-  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3R-01, A3R-02, A3R-03, A3R-04, A3R-05, A3R-06, A3R-07, A3R-08, A3R-09, A3R-10, A3R-11, A3R-12, A3R-13, A3R-14, A3R-15, A3P-01, A3P-03, A3P-04, A3P-05, A3P-06, A3P-07, A3P-08, A3P-09, A3P-10, A3P-11, A3P-12, A3P-13, A3P-14, A3P-15, A3P-16, A3P-17, A3P-18, A3P-19, A3P-20, A3P-21, A3P-22, A3P-23, A3P-24, A3P-25, A3P-26, A3P-27, A3C-01, A3C-02, A3C-03, A3C-04, A3C-05, A3C-06, A3C-07, A3C-08, A3C-09, A3C-10, A3C-11, A3C-12, A3C-13, A3C-14, A3C-15, A3C-16, A3C-17, A3C-18, A3C-19, A3C-20, A3C-21, A3C-22, A3C-23]
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3R-01, A3R-02, A3R-03, A3R-04, A3R-05, A3R-06, A3R-07, A3R-08, A3R-09, A3R-10, A3R-11, A3R-12, A3R-13, A3R-14, A3R-15, A3P-01, A3P-03, A3P-04, A3P-05, A3P-06, A3P-07, A3P-08, A3P-09, A3P-10, A3P-11, A3P-12, A3P-13, A3P-14, A3P-15, A3P-16, A3P-17, A3P-18, A3P-19, A3P-20, A3P-21, A3P-22, A3P-23, A3P-24, A3P-25, A3P-26, A3P-27, A3P-28, A3P-29, A3C-01, A3C-02, A3C-03, A3C-04, A3C-05, A3C-06, A3C-07, A3C-08, A3C-09, A3C-10, A3C-11, A3C-12, A3C-13, A3C-14, A3C-15, A3C-16, A3C-17, A3C-18, A3C-19, A3C-20, A3C-21, A3C-22, A3C-23, A3C-24]
 protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE-WITH-DIRECTION"
 decision_status_verified: "NONE - no COMPANIES MASTER page (notion-search 23-Oct-2026); no companies/GALLANTT.md; no Spear line; framed as PRE-THESIS READ"
@@ -1198,8 +1204,8 @@ questions_for_management:
   - {q: "What part of the Rs 401.66 Cr other bank balances is lien-marked or margin money?", from_finding_id: "A3-13, A3C-02"}
   - {q: "What revenue and gross margin did the Rs 98.87 Cr of Q2 traded purchases earn, and which product was traded?", from_finding_id: "A3-14, A3C-04, A3P-04"}
   - {q: "On what date did the expanded Gorakhpur plant start commercial production; October and November TMT tonnes; CWIP by project?", from_finding_id: "A3C-06, A3P-09, A3-11, A3R-10"}
-  - {q: "What did the two Gorakhpur shutdowns cost Q2 EBITDA in Rs Cr, separate from coal?", from_finding_id: "A3C-05"}
-  - {q: "Define EBITDA and restate Q2 FY26, H1 FY26 and FY26 on the Q2 FY27 basis.", from_finding_id: "A3P-03, A3C-16"}
+  - {q: "What did the two Gorakhpur shutdowns cost Q2 EBITDA in Rs Cr, separate from coal? Kutch had no named shutdown yet fell 18-26% QoQ at every stage: how many Kutch downtime days in Q2, what cause, what cost?", from_finding_id: "A3C-05, A3C-24"}
+  - {q: "Define EBITDA and restate Q2 FY26, H1 FY26 and FY26 on the Q2 FY27 basis; correct the 45.7% QoQ headline (-40.3% on the deck's own Q1 185) and the FY25/FY26 margin bars (17.0/18.0 vs 16.5/17.6 from own cells).", from_finding_id: "A3P-03, A3C-16, A3P-28, A3P-29"}
   - {q: "Restate EBITDA per tonne and the per-tonne bridge on own-steel sales tonnes, excluding trading and merchant DRI and pellets.", from_finding_id: "A3P-04"}
   - {q: "Split the Rs 668.64 Cr inventory into raw material, WIP, finished goods and stores; target level at 31-Dec-2026?", from_finding_id: "A3C-14, A3R-10"}
   - {q: "What capacity, location, cost and funding cap will the greenfield plan carry, and is an equity issue excluded?", from_finding_id: "A3C-07, A3P-07"}
@@ -1221,8 +1227,8 @@ questions_for_management:
   - {q: "What share of Q2 TMT sales were premium grades, and on what basis is the brand premium 5-6% vs the deck's 2-3%?", from_finding_id: "A3P-24, A3C-11"}
   - {q: "What Q3 FY23 margin is the base for +1000 bps?", from_finding_id: "A3P-16"}
   - {q: "What is the pellet plant's real capacity given 228 KT output vs a 198 KT quarterly nameplate?", from_finding_id: "A3P-21"}
-  - {q: "What utilisation target and date for the Kutch rolling mill?", from_finding_id: "A3C-13"}
-  - {q: "FY27 and FY28 sales volumes in tonnes; where will Gorakhpur sell ~59 KT a quarter extra; base for the 3-5% utilisation gain; Q4 Gujarat shutdown length?", from_finding_id: "A3C-22, A3C-20"}
+  - {q: "The call says Kutch mill 66% to 68%; the deck shows Kutch TMT output 69 to 56 KT (~69% to 56% of 4 lakh MTPA). On what base is 68% computed, what were Kutch Q2 operating days, and what target and date?", from_finding_id: "A3C-13, A3C-24"}
+  - {q: "FY27 and FY28 sales volumes in tonnes; where will Gorakhpur sell ~59 KT a quarter extra; base for the 3-5% utilisation gain; Q4 Gujarat shutdown length? Gorakhpur adds no sponge iron: what is Gorakhpur DRI capacity, and how is the ~14-39 KT a quarter iron gap fed?", from_finding_id: "A3C-22, A3C-20"}
   - {q: "Was the 0.86-0.95 pp promoter holding rise a purchase, transfer or reclassification; if a purchase (~Rs 112-158 Cr), which entity, what funds, any pledge?", from_finding_id: "A3P-20"}
   - {q: "Will management answer this list in writing before the Q3 call and file a transcript of that call?", from_finding_id: "A3C-19, A3P-26"}
   - {q: "What share of Q2 FY27 revenue went to the top 10 buyers, including traded-goods buyers?", from_finding_id: "A3-14"}
@@ -1251,16 +1257,17 @@ monitorables:
   - {item: "FY27 Annual Report and AGM: related parties, loans, associate, OCI, auditor term", implied_date: "by 2027-09-30", source_ref: "A3-08, A3-12, A3-17, A3R-07"}
   - {item: "FY26 Annual Report Role 6 deep dive, incl. the Rs 110.30 Cr FY26 PPE sale (asset, buyer, Reg 30)", implied_date: "available now", source_ref: "A3-15, A3R-03, A3R-14, A3R-15"}
   - {item: "Coal block operational; Gorakhpur off imported coal", implied_date: "FY29-FY30 (inference)", source_ref: "C:l378-387"}
-  - {item: "Filing and deck hygiene; deck errors A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27", implied_date: "next filing", source_ref: "A3-16, A3R-13, A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27"}
+  - {item: "Filing and deck hygiene; deck errors A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27, A3P-28, A3P-29", implied_date: "next filing", source_ref: "A3-16, A3R-13, A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27, A3P-28, A3P-29"}
   - {item: "Deck metric bases, A17 do-not-feed-forward (incl. net debt/EBITDA 0.64x half-year vs 0.30x TTM)", implied_date: "each deck", source_ref: "A3P-12, A3P-13; P:p6 l137"}
   - {item: "OCI actuarial assumptions", implied_date: "FY26 / FY27 Annual Report", source_ref: "A3-08, A3R-07"}
   - {item: "Safeguard duty status", implied_date: "PENDING LIVE VERIFICATION", source_ref: "A3P-25"}
   - {item: "ASR clusters not carried; spoken vs deck figures", implied_date: "next call", source_ref: "A3C-12, A3C-15, A3C-21, A3C-23"}
+  - {item: "Q3 Kutch recovery test: power near 43, billets near 90 KT, TMT output near 69 KT, TMT sales near 67 KT; Kutch mill utilisation on a stated base", implied_date: "Q3 FY27 deck, by 2027-02-14 (inference)", source_ref: "P:R804, R849, R864, R924; C:l424-425; A3C-24, A3C-13"}
 flags:
   - "PRE_THESIS_READ: no Notion page, no Decision Status, no company memory, no Spear line"
   - "STANDALONE_FILED_LATE: standalone set filed 21-Oct 16:56, ~42h after the meeting, no reason (A3R-12)"
   - "CASH_CONVERSION_INDETERMINATE_WITH_DIRECTION: H1 CFO/PAT 0.49x on S and C (0.56x ex-line, net-interest); inventory +21.41% while own TMT sales fell"
-  - "MARGIN_COMPRESSION_VOLUME_AND_COST: op margin 9.57%; billet output -22.1% QoQ; two shutdowns plus coal per management"
+  - "MARGIN_COMPRESSION_VOLUME_AND_COST: op margin 9.57%; billet output -22.1% QoQ; two shutdowns plus coal per management; Kutch, with no named shutdown, fell 18-26% QoQ in production and 11.9% in TMT sales, ~a third of the group fall, cause unstated (A3C-24)"
   - "OWN_VOLUME_DECLINE_MASKED_BY_TRADING: TMT sales -6.8% YoY, -14.6% QoQ vs revenue +13.15% YoY; traded purchases Rs 98.87 Cr unmentioned on call"
   - "AUDITOR_CHANGE: predecessor unnamed; call silent"
   - "OTHER_EQUITY_ROLLFORWARD_BREAK: Rs 14.06 Cr in the parent"
@@ -1268,23 +1275,23 @@ flags:
   - "FY26_PPE_SALE_UNEXPLAINED: parent sold PPE for Rs 110.30 Cr at book in FY26, same year as the loan book, Rs 13.13 Cr investment exit and associate exit; asset, buyer, related-party status undisclosed (A3R-15)"
   - "LIQUIDITY_AND_FUNDING_GAP: cash Rs 1.12 Cr; H2 need ~Rs 548 Cr vs H1 CFO Rs 90.82 Cr; borrowings +Rs 44.29 Cr vs 'no incremental debt'"
   - "Q3_STARTS_WITH_DOWNTIME: expanded Gorakhpur idle to ~10-Nov; Q4 Gujarat DRI shutdown"
-  - "CAPACITY_ABSORPTION_UNTESTED: step ~+39% at Gorakhpur; 85-90% implies ~178-188 KT billets/quarter vs 142 KT Q1 peak; market ~+7%; own TMT sales +1.6% in FY26"
+  - "CAPACITY_ABSORPTION_UNTESTED: step ~+39% at Gorakhpur; 85-90% implies ~178-188 KT billets/quarter vs 142 KT Q1 peak; market ~+7%; own TMT sales +1.6% in FY26; no sponge-iron addition, DRI gap ~14-39 KT/quarter (inference; DRI capacity NOT FOUND)"
   - "GROWTH_PLAN_DELAYED: Q2 FY27 to Q4 FY27; funding mix open"
   - "CWIP_PARTLY_DISCLOSED: projects dated; CWIP map not given; Rs 1,809 Cr of programme undefined"
   - "MINES_ECONOMICS_UNCOSTED: Rs 249 Cr plan vs Rs 153-246 Cr/yr claimed EBITDA (1.0-1.6x); estimate, shifting scope, FY28-FY30"
   - "ETR_NORMALISED: 27.25% vs 15.31% YoY"
   - "ASSOCIATE_AND_EPS_INCONSISTENCY: audited FY26 has no associate; consolidated EPS = standalone EPS"
   - "SUBSIDIARY_ACTIVE: Suryalaxmi Rs 5.35 Cr H1 spend on Rs 6.03 Cr parent loan"
-  - "FILING_AND_DECK_HYGIENE: late revision; six deck errors (A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27); four call-vs-deck conflicts"
+  - "FILING_AND_DECK_HYGIENE: late revision; eight deck errors (A3P-01, A3P-15, A3P-17, A3P-18, A3P-19, A3P-27, A3P-28, A3P-29); five call-vs-deck conflicts (adds Kutch mill, A3C-13)"
   - "DECK_METRICS_NONSTANDARD_A17: ROCE 7.09% six months, chart EBITDA-based, D/E 0.289, ND/EBITDA 0.64x half-year (0.30x TTM), WC incl. bank and loans; not fed forward"
   - "ASR_TRANSCRIPT_UNVERIFIED: no filed transcript; speakers inferred; Q4b not transcribed"
   - "CMD_ABSENT_FROM_CALL; GOVERNANCE_SILENCE_ON_CALL"
-  - "CREDIBILITY_RATIO_ND: no prior concall log; one self-referenced commitment delayed; Sidhpur delivery disputed"
+  - "CREDIBILITY_RATIO_ND: no prior concall log; one self-referenced commitment delayed, one missed (Kutch mill, deck output 69 to 56 KT; A3C-13); provisional 12.5% on two items; Sidhpur delivery disputed"
   - "PROMOTER_HOLDING_ROSE_MECHANISM_UNDISCLOSED: +0.86-0.95 pp with no new shares; purchase not evidenced; if a purchase ~Rs 112-158 Cr"
   - "TRACKER_ROWS_NOT_SUPPLIED: zero signals; five candidates proposed, not written"
   - "STEPS_6.5_7_8D_DEFERRED to /fttcp and Role 1 (OR-30)"
 plain_language_brief_included: true
-analyst_note: "Loop 1 final. Verdict and cash class are unchanged: the new documents supplied diagnosis (own volumes, project dates, margin causes) but not the missing cash evidence (inventory split, pool counterparties, FY27 cash flow) or any governance answer. Loop 1 adds an unexplained FY26 parent PPE sale of Rs 110.30 Cr at book, in the year the loan book appeared and the associate left; with the Rs 265.78 Cr 'treasury' loans it makes Q1 and Q3 the transparency tests. Loop 1 also removes the bull reading of the promoter stake: the holding rose about 0.9 pp, but no document shows a purchase. The capacity step stays the main positive, but absorption is untested: about +39% at Gorakhpur in a market growing about 7%. The mines payback of 1-1.6 years rests on an estimate. Deck p17 sides with the call that Sidhpur is not yet operating. The call is ASR text, so no credibility ratio is set. Gross margin remains the single Q3 test."
+analyst_note: "Loop 2 (operator-approved 2026-10-24) grafts A5 items C1 and M10-M12; verdict and cash class are unchanged. The deck shows Kutch TMT output fell from 69 to 56 KT, so the call's Kutch mill gain of 66% to 68% is not carried (DECK > ASR). The focus-area commitment is scored MISSED, and the provisional credibility figure falls to 12.5% on two items. Kutch had no named Q2 shutdown, yet it fell 18-26% QoQ at every production stage and carries about a third of the group's QoQ volume fall. The 'two shutdowns at Gorakhpur' frame explains only part of the loss. Production fell more than sales, which fits a Kutch supply limit such as power [INFERENCE]; the Q3 test is Kutch power near 43 and billets near 90. Gorakhpur adds no sponge iron, so the added tonnes need about 14-39 KT a quarter of diverted or bought iron [INFERENCE]. Two more deck errors: the 45.7% QoQ EBITDA fall uses a Q1 base with other income (40.3% on the deck's own 185), and the FY25-FY26 margin bars overstate. Every graft points the same way as the existing flags. Gross margin remains the single Q3 test."
 review_path: "runs/gallantt-q2fy27/work/review_gallantt_q2fy27.md"
 ```
 
@@ -1313,3 +1320,24 @@ review_path: "runs/gallantt-q2fy27/work/review_gallantt_q2fy27.md"
 | S8 | STYLE (A1 convention) | No review change. The rhetorical counts carry no figure and no review cell uses them. | n/a |
 
 Verdict and cash class: unchanged (PROCEED WITH FLAGS; INDETERMINATE-WITH-DIRECTION). Loop 1 adds governance and bear evidence and removes one bull reading. Nothing in it lifts the cash-conversion cap or clears a flag.
+
+---
+
+## Loop 2 change log (A5 work/audit_gallantt_q2fy27_loop1.md)
+
+Loop 2 was operator-approved on 2026-10-24. A5 verdict INCOMPLETE: one CONTRADICTION (C1), three MISSING (M10-M12), arithmetic clean. A3 loop 2 amended A3C-13 and added A3C-24, A3P-28 and A3P-29. Findings incorporated rise from 81 to 84. The ledgers are unchanged (30 notes / 60 turns / 38 slides, all reviewed).
+
+| A5 ID | Type | Change made | Where in the review |
+|---|---|---|---|
+| C1 | CONTRADICTION (A3C-13 amended upstream) | The spoken Kutch mill gain of 66% to 68% (C:l142-144) is no longer carried as delivered. Deck Kutch TMT output fell from 69 to 56 KT (P:R863-R865), about 69% to 56% of the 4 lakh MTPA plant (P:R147), and Kutch TMT sales fell from 67 to 59 KT (P:R923-R925). DECK > ASR. The focus-area commitment is scored MISSED (A3 promise log C20), and the spoken figure is marked DISPUTED. A5 asked for DISPUTED, leaning NOT DELIVERED. A4 carries MISSED because every A3 reading gives a fall on the deck, and MISSED is the more conservative score. Consequences: 3B tally (missed 1, unclear 1), provisional credibility 25% to 12.5%, 3D, 6E and 8E; call-vs-deck conflicts rise from four to five. | 6D Gorakhpur row; Step 8.5 Q32; Role 5 Step 1 claim 19 and diagnostic (g); 3A, 3B, 3C, 3D; 4A Q5c; 6A Kutch row; 6E; 7A new Kutch row; 8E; Section C deck, concall and reconciliation lines; Flags 19, 23; change-table Role 5 row; YAML (Q32, flags) |
+| M10 | MISSING | Kutch volume counter grafted. Kutch had no named Q2 shutdown (C:l158; Gujarat shutdown is Q4, C:l397), yet it fell QoQ at every stage: power -25.6%, DRI -18.0%, billets -18.9%, TMT output -18.8%, TMT sales -11.9%. It carries 30-37% of the group's QoQ fall and fell YoY in the same season. Production fell more than sales, which fits a supply limit [INFERENCE] (A3C-24). New Q3 recovery test: Kutch power near 43, billets near 90. | Step 2 (new Kutch line; separating observation); Step 3 distortions; Step 6.5 distortions; Step 8.5 Q9 and coverage map (A3C-24 to Q9, Q32); Role 5 5B new row; 7A margin row; 8E; Section C deck, reconciliation and watchpoint lines; Flag 4; new monitorable 29; change-table monitorables row; brief part 1 (one line added, now 18 lines) and the Q3 forward-map fork; YAML (Q9, flag 4, monitorable) |
+| M11 | MISSING | Gorakhpur no-sponge-iron counter grafted (C:l134-135). Own DRI per billet tonne 0.91 (FY26) to 0.97 (Q1 FY27). At 85-90% the DRI gap is about 14-39 KT a quarter [computed; INFERENCE: constant charge mix; Gorakhpur DRI capacity NOT FOUND]. Merchant DRI (32 KT at Gorakhpur in Q2) or bought metallics fill it, so the new tonnes are less integrated. | 6D Gorakhpur row (killing evidence and status); Step 8.5 Q33; Role 5 5B new row; Section C concall line and net thesis impact; Flag 12; brief provenance key, part 4 bear reading and the Q1 FY28 bear fork; YAML (Q33, flag 12) |
+| M12 | MISSING (A3P-28, A3P-29 added upstream) | Two deck errors added; the list grows from six to eight. A3P-28: "45.7% QoQ" EBITDA ties only to a Q1 base with other income (203.40); -40.3% on the deck's own 185. A3P-29: FY25 and FY26 margin bars 17.0% and 18.0% vs 16.5% and 17.6% from the slide's own cells. | Preamble findings list; Step 8.5 Q10 and neutral list; Section C deck line; Monitorable 24; Flag 19; change-table filing-hygiene row; YAML (Q10, monitorable, flag 19, findings list) |
+| S9 | STYLE | Q2 FY26 12.91% marked ASR_SUSPECT (135 / 1,012.75 = 13.33%; deck (368) bps implies 13.32%; 12.91% is the H1 FY27 margin at C:l192). | Role 5 Step 1 claim 33 |
+| S10 | STYLE (optional; applied) | Kutch solar tracker evidence added for Sidhpur: Rs 39.58 Cr spent of Rs 50.00 Cr, Rs 10.42 Cr to spend (P:R785-R787). The "22 megawatt in Gujarat" at C:l302 is marked ASR_SUSPECT against 18 MW. The reading stays DISPUTED, leaning NOT DELIVERED. | Role 5 3A Sidhpur row |
+| S11 | STYLE | Q3a graded C, not B: the import-effect half (C:l285-286) got demand data only (C:l287-291). Grade tally now A 3, B 6, C 6, D 1, ND 1. | Role 5 4A Q3a and tally; 4B C/D/E list; Role 5 Step 2 refused list; change-table Role 5 row |
+| S12 | STYLE (A1 convention) | No review change. The review already cites the correct concall file lines. | n/a |
+| Header | Housekeeping | Revision and inputs lines updated for loop 2; findings count 81 to 84; presentation and concall finding lists updated. | Header; preamble |
+
+Ten plain lines: unchanged. Loop 2 makes no line false; line 6 still reports what management blamed, and line 5 still holds.
+Verdict and cash class: unchanged (PROCEED WITH FLAGS; INDETERMINATE-WITH-DIRECTION). Loop 2 removes one spoken positive (the Kutch mill gain). It adds one unexplained volume fall, one integration gap in the capacity step and two deck errors. None of it touches the missing cash evidence or answers a governance item, so the cap and the flags stand.

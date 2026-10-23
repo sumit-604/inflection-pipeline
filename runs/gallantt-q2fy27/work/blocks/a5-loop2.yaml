@@ -1,0 +1,41 @@
+stage: A5-adversary
+company: "GALLANTT"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - claim: "Kutch Q2 fall 'fits a supply limit', possibly captive power now debottlenecked; a Q3 return to Q1 levels points to a fix (rev L260, Q9 L524, monitorable 29 L1006, Q3 fork L1167)"
+    counter: "Kutch's own FY26 cells show a Q2 dip: Q2 FY26 TMT output 62 vs 76.0 KT avg of other three FY26 quarters (-18.5%), TMT sales 65 vs 76.1 (-14.6%), billets 85 vs 94.7 (-10.2%), DRI 84 vs 84.4 (-0.4%) [computed; INFERENCE: average base]. Q2 FY27 Kutch TMT falls (-18.8%, -11.9%) sit inside that pattern, fitting management's lean-monsoon reason (C:l360-364); non-seasonal signals are the YoY falls and upstream excess (DRI ~-18 pp, billets ~-9 pp). A Q3 TMT rebound is expected under either reading, so monitorable 29 does not separate them; separating cells are Kutch DRI ~84-89 KT, billets ~90-95 KT, DRI/billet sales back to ~2/12 KT. Kutch billet sales rose 12 to 16 KT while billets left for the mill fell 78 to 57 KT, so the mill was not billet-short. 60 MW of captive power is WHRB (P:p29 l602-607), so the power fall can follow lower DRI [INFERENCE]."
+    source_line: "P:R834, R836, R849, R851, R863-R866, R894, R908-R909, R923-R926, R954, R963, R972, R1008; P:p29 l602-607; C:l360-364, l424-425"
+    type: MISSING
+findings_by_type:
+  factual: []
+  missing:
+    - "M13 (A4, LOW): graft the Kutch seasonal baseline and supply-limit counter (Claim 3) at rev L260-L261, L284/L460/L1055, Q9 bull L524, monitorable 29 L1006 and YAML, Q3 fork L1167, brief L1108; re-specify the Q3 Kutch test on upstream cells (DRI ~84-89 KT, billets ~90-95 KT, DRI/billet sales ~2/12 KT, P:R834, R849, R894, R909) and YoY Q2 FY28 vs 56/59 KT"
+  contradiction: []
+  style:
+    - "S12 (carried, A1): concall context notes cite source lines offset by 17 (cc-R046 'line 175' = C:l192; cc-R104 'line 135' = C:l152)"
+    - "S13: loop 2 approval dated 2026-10-24 (rev L6, L1328, YAML) is later than the 2026-10-23 run date; check and correct at save"
+    - "S14: Q10 (rev L525) calls 110.52 'the call's 9.64% basis'; it is the deck p6 cell (P:p6 l121); the call said Rs 111 Cr (C:l181)"
+    - "S15: 6D (rev L444) 'capacity-bound' on 86% FY26 utilisation; reword to 'near capacity in Q1 FY27 (95%)'"
+    - "S16: flag 4 / Step 6.5 / brief provenance say Kutch cause 'unstated'; Step 2 and 5B record the lean-monsoon reason (C:l363-364); align to 'no adequate stated cause'"
+loop_back_to: "A4"
+gap: "A4 (M13, MISSING, LOW): the loop 2 Kutch graft reads the Q2 fall as fitting a supply limit now fixed, and monitorable 29 treats a Q3 return to Q1 levels as proof. Kutch's own FY26 cells show a Q2 dip of about the same size in TMT: Q2 FY26 output 62 vs 76.0 KT avg of other FY26 quarters (-18.5%), sales 65 vs 76.1 (-14.6%) (P:R866, R972, R926, R1008) [computed]; this fits management's lean-monsoon reason (C:l360-364). Upstream fell beyond the pattern: DRI -18.0% vs -0.4%, billets -18.9% vs -10.2% (P:R836, R954, R851, R963). Kutch billet sales rose 12 to 16 KT while billets left for its mill fell 78 to 57 KT (P:R908-R909, R848-R849). Graft the qualifier at rev L260-L261, L284, Q9 L524, monitorable 29 L1006, Q3 fork L1167 and brief L1108, and re-specify the Q3 test on upstream cells (DRI ~84-89 KT, billets ~90-95 KT, DRI/billet sales ~2/12 KT) and YoY Q2 FY28. Loop 1 C1, M10, M11, M12 all CLOSED; brief passes; coverage and arithmetic clean; verdict and cash class unaffected."
+style_notes:
+  - "S12: fix the A1 concall context-note line convention (offset 17)"
+  - "S13: correct the loop 2 approval date (2026-10-24 vs run date 2026-10-23) at save"
+  - "S14: cite P:p6 l121 for the 110.52 EBITDA in Q10"
+  - "S15: reword 'capacity-bound' in 6D"
+  - "S16: align 'cause unstated' (flag 4, Step 6.5, brief provenance) with the recorded lean-monsoon reason"
+analyst_note: "Final re-audit after loop 2. C1, M10, M11 and M12 are CLOSED. A4 scored the Kutch focus area MISSED rather than DISPUTED. That is the more conservative score, so it is accepted. The brief passes. Coverage re-counts clean at 449, 744, 1,491 and 263 IDs. Every loop 2 figure re-foots against the p18 and p19 cells, and the filed tables re-foot from raw lakhs. One new MISSING finding, M13, qualifies the Kutch graft that I asked for as M10. Kutch's own FY26 cells show a Q2 TMT dip about as large as this quarter's QoQ fall. So the lean-monsoon reason fits the Kutch TMT QoQ fall. It does not fit the YoY falls or the upstream DRI and billet falls. As written, monitorable 29 cannot separate a fixed supply limit from a seasonal rebound. The upstream cells and intermediate sales can. Kutch also sold more billets while its mill rolled less, so the mill was not short of billets. Nothing changes the verdict, the cash class, a flag or a table number. A narrow A4-only patch of about five lines closes M13. Running that patch or carrying M13 as an open item is the operator's call."

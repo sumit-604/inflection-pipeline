@@ -1,0 +1,73 @@
+stage: A4-analyst
+company: "GHVINFRA"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results]
+ledger_reconciliation:
+  notes: 19
+  turns: 0
+  slides: 0
+  all_reviewed: true
+  a3_findings_incorporated: [FN01, FN02, FN03, FN04, FN05, FN06, FN07, FN08, FN09, FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "AVOID"
+position_branch: "8A-W"
+sc_gap_pat_pct: ["Q2FY26: ND (no C comparative, note 5 l775)", "H1FY26: ND", "FY26: +16.00", "Q1FY27: -34.57", "Q2FY27: -5.47", "H1FY27: -16.52"]
+questions_for_management:
+  - {q: "Rs amount of the 40.76 Cr unreviewed subsidiary assets receivable from or advanced against Rana Exim on Erisha", from_finding_id: "FN06"}
+  - {q: "Is the Erisha EPC contract the Rs 2,645 Cr UAE contract; state its value", from_finding_id: "FN10"}
+  - {q: "Who started the Erisha legal proceedings and what is the Rs claim on each side", from_finding_id: "FN10"}
+  - {q: "Does the parent carry an Erisha guarantee, back-to-back sub-contract or receivable from FZ-LLC; Rs amount", from_finding_id: "FN10"}
+  - {q: "By which quarter will the Erisha outcome be ascertainable; will Q3 FY27 carry a provision assessment", from_finding_id: "FN08"}
+  - {q: "Basis for 'not material' at 19.78% of H1 C PAT; date of auditor review of FZ-LLC", from_finding_id: "FN06"}
+  - {q: "Make-up of the 452.14 Cr current other financial assets in Rs", from_finding_id: "FN24"}
+  - {q: "Related-party share of the 267.50 Cr trade receivables", from_finding_id: "FN24"}
+  - {q: "Debt schedule for 377.90 Cr current borrowings; repayment or reclass of the 133.89 Cr non-current fall", from_finding_id: "FN25"}
+  - {q: "Planned FY27 equity raise: amount and date", from_finding_id: "FN16"}
+  - {q: "Name the outgoing CFO; is the change linked to the audit or debt build-up (yes/no)", from_finding_id: "FN16"}
+  - {q: "Exercise deadline and price of 21,83,333 pending warrants; will JHV convert", from_finding_id: "FN07"}
+  - {q: "16,16,667 vs 16,66,667 warrants converted; which is correct; corrected filing", from_finding_id: "FN13"}
+  - {q: "Weighted share count behind H1 EPS Rs 4.09 S and Rs 3.43 C", from_finding_id: "FN14"}
+  - {q: "Any dilutive instrument besides the pending warrants (yes/no)", from_finding_id: "FN15"}
+  - {q: "Temporary difference behind the 2.02 Cr Q2 deferred credit and 2.34 Cr DTA; FY27 ETR", from_finding_id: "FN11"}
+  - {q: "What cost sat in Q1 WIP (13.51 Cr) and why it released in Q2", from_finding_id: "FN01"}
+  - {q: "Is the 22.15 Cr bank balance lien-marked (yes/no)", from_finding_id: "FN03"}
+  - {q: "What is the 29.97 Cr other non-current assets; capital advances paid to whom", from_finding_id: "FN03"}
+  - {q: "What was the 9.94 Cr FY26 subsidiary revenue booked with no direct cost", from_finding_id: "FN05"}
+  - {q: "Wind down or redeploy FZ-LLC and GHV Infra Inc.; decision date", from_finding_id: "FN02"}
+  - {q: "Will C notes carry the auditor reliance caveat instead of 'reviewed' (yes/no)", from_finding_id: "FN19"}
+  - {q: "ID and Audit Committee independent counts after Seth; Additional IDs regularised at AGM", from_finding_id: "FN17"}
+  - {q: "Which entity is the CF 'Partnership Firm' (0.22 Cr); correct H1 adjustment", from_finding_id: "FN21"}
+  - {q: "Who are RKS and TCIPL; is either a related party (yes/no)", from_finding_id: "FN23"}
+  - {q: "Why H1 FY26 CFO included 44.68 Cr borrowings in WC; will FY27 reclassify", from_finding_id: "FN22"}
+  - {q: "H1 FY27 BCA royalty and management fee paid to the parent in Rs", from_finding_id: "FN04"}
+  - {q: "30-Sep-2026 order book and non-RPT share; CBI matter status", from_finding_id: "6C-reentry"}
+monitorables:
+  - {item: "Q3 FY27 results: Erisha reassessment, finance cost, ETR, S-vs-C gap", implied_date: "2027-02-14", source_ref: "S note 5 l488; C note 8 l792"}
+  - {item: "Erisha outcome disclosure and any provision", implied_date: "undated", source_ref: "S note 5 l489; C note 8 l793"}
+  - {item: "Conversion of 21,83,333 pending warrants", implied_date: "NOT FOUND", source_ref: "S note 3 l475; C note 6 l782"}
+  - {item: "BIL JV commencement", implied_date: "NOT FOUND", source_ref: "C note 4 l772"}
+  - {item: "Musamji reclassification exchange approval", implied_date: "NOT FOUND", source_ref: "S note 4 l476-480"}
+  - {item: "New CFO in office; KMP churn watch", implied_date: "2026-10-22 onward", source_ref: "l52-54"}
+  - {item: "Board and Audit Committee recomposition after Seth exit", implied_date: "2027-01-22 [INFERENCE, Reg 25(6)]", source_ref: "l60-63; l827"}
+  - {item: "FY26 Annual Report Role 6 deep dive: FY26 CFO, RPT, BCA", implied_date: "now (AGM 2026-09-25)", source_ref: "l476"}
+  - {item: "FY27 audited results: FY27 CFO (cleanest metric), re-entry (c)", implied_date: "2027-05-30", source_ref: "Step 8C"}
+  - {item: "Q1 FY28 results", implied_date: "2027-08-14", source_ref: "Reg 33 calendar [INFERENCE]"}
+  - {item: "Rs 213 Cr parent order completion", implied_date: "about 2027-08-22", source_ref: "Notion prior record"}
+  - {item: "Possible QIP or preferential raise", implied_date: "NOT FOUND", source_ref: "l127-136 [INFERENCE]"}
+flags:
+  - "Erisha FZ-LLC contract ended early with legal proceedings; up to 40.52 Cr subsidiary assets unprovided and unreviewed"
+  - "H1 FY27 S CFO -244.37 Cr vs PAT 29.64 Cr (-8.24x); cash conversion INDETERMINATE-WITH-DIRECTION (structural lean)"
+  - "Gross debt 191.61 to 411.77 Cr in H1; current borrowings 377.90 Cr; net debt/equity 1.91x"
+  - "38.5% of Q2 PAT gain from unexplained ETR drop to 16.70%"
+  - "C PAT below S PAT in Q1, Q2, H1"
+  - "Drafting: warrant count 16,16,667 printed vs 16,66,667 arithmetic; H1 EPS; C note 2 vs auditor para 6; stale CF plug"
+  - "New CFO and ID resignation on results day"
+  - "Notion record conflict: three CFO changes in 13 months vs first CFO about 2 years"
+  - "UAE Rs 2,645 Cr catalyst likely dead; operator ruling 1 pending"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); Role 5 not run (no concall)"
+plain_language_brief_included: true
+analyst_note: "The quarter reads strong on revenue and weak on everything that converts revenue into owner value. Core PBT grew 37.88% against revenue 63.30%; finance cost doubled and took 37% of operating EBITDA; an unexplained deferred tax credit supplied 38.5% of the PAT gain. Q1 and Q2 single-quarter margins are both distorted by a 13.51 Cr WIP swing, so H1 (12.25%) is the only clean margin, and it sits 540 bps below H2 FY26. The decisive new fact is Erisha: the subsidiary's only named third-party contract ended in a dispute, its assets are management-certified, and the notes defer any loss to an undated outcome. The structural-vs-growth cash call cannot close without the make-up of the 452.14 Cr other financial assets and the related-party share of receivables; both are the separating observations. Nothing here meets any AVOID re-entry condition. The Notion page carries an internal conflict on CFO history that the operator should resolve."
+review_path: "runs/ghvinfra-q2fy27/work/review_ghvinfra_q2fy27.md"

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "GHVINFRA"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/ghvinfra-q2fy27/work/ledger_results_ghvinfra_q2fy27.md"
+counts:
+  notes: 19
+  line_items: 196
+  zero_standing: 41
+  agenda_items: 4
+  auditor_paras: 11
+  entities: 4
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, RESTATED, MANAGEMENT_FURNISHED, NO_PRIOR_YEAR_COMPARATIVE, FOOTNOTE_UNRESOLVED, CONTINGENCY, PROMOTER_RECLASS, WARRANT_CONVERSION]
+ids_in_structured: 821
+ids_referenced: 821
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Results filing is a full Reg 33 set; Q1 baseline was a media release, so entity, note and auditor counts have no prior diff. Four entities (2 foreign subs, 2 JVs) were consolidated only from the Dec-2025 quarter, and three of them (two subs, one JV) are management-furnished and unreviewed by the auditor. Standalone and consolidated figures diverge (Q1 PAT 1,125.48 vs 753.14 lakhs; Investments 1,189.90 vs 0.50), so A3 should read both sets. 41 dash/Nil cells include consolidated NCI rows and the zero-revenue foreign subs. Erisha UAE EPC contract concluded with legal proceedings and no provision (notes S5/C8). Board result day also carried CFO appointment and Independent Director resignation. Row R677 relationship cell is OCR-blank; R795 label anomaly is source-printed."

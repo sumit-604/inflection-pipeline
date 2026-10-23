@@ -1,0 +1,19 @@
+# Run log: ghvinfra q2fy27 (/run-quarterly, orchestrator session)
+
+- 2026-10-23 Checkout guard: git fetch origin main OK; diff over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md empty. PASS.
+- Protocol check: frameworks/Quarterly_Results_Review_Protocol_v1_4.md present. No concall in --docs, Role 5 protocol not needed.
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract v5.4.0 at C:\Program Files\Tesseract-OCR\tesseract.exe (not on PATH).
+- FETCH (BSE 505504, AnnSubCategoryGetData 01-Sep to 23-Oct-2026): results filing 4c6bcf9d-f31c-4e3a-90bb-5f24ce2e61b9.pdf (22-Oct-2026 20:54). Board Outcome, Change in Management and Change in Directorate attachments are the same 17-page PDF (md5 5f87ab50...), kept once as GHV_Q2FY27_Results_Reg33_2026-10-22.pdf. CFO resignation 21-Oct-2026 (3 pages) kept as context.
+- No concall: BSE shows no analyst-meet / concall intimation in the window. No investor presentation or press release filed on BSE. Company site ghvinfra.com sits behind a bot-verification page; not bypassed. No transcript, no audio, so no ASR step.
+- Doc class: GHV_Q2FY27_Results_Reg33_2026-10-22.pdf -> results (p1 "Outcome of the Board Meeting", item 1 Unaudited Standalone and Consolidated Financial Results with limited review; BSE category Result). Pages 1-4 have a text layer; pages 5-17 return 1 character each in pdftotext (image scans of the statements).
+- CFO resignation letter: read for identity only by the orchestrator (dated 21-Oct-2026, Reg 30). Not run through A1-A3; its facts reach A4 through the Notion context (22-Oct entry). New CFO appointment is inside the results PDF.
+- Notion: page 387bb2b9-d3ab-81de-8c50-d96623d49e02 fetched live (read only). Decision Status AVOID. Context written to work/notion_context.md.
+- Prior quarter: runs/ghvinfra-q1fy27 is not on main; extract and ledger copied from commit c53fbc07 into work/prior/.
+- Sequence: one heavy job at a time (machine memory shared with six other reviews).
+- A1 GATE: 17/17 page markers ([page 1-4], [OCR page 5-17]); R001-R821; units Rs Lakhs x0.01. PASS. A1 tokens 124,743.
+- A2 GATE: 821/821 IDs referenced, 0 orphans, count tests matched. PASS. A2 tokens 111,758 (< A1, cost check PASS).
+- A3 GATE: F1-F17 all statused (11 FINDING, 3 PASS, 3 N.A.), 25 findings line-cited. PASS. A3 tokens 181,965.
+- A1 page-image re-check (requested by orchestrator on A3 FN13 OCR-RISK): page 10 note 3 (l471) and page 16 note 6 (l778) both PRINT "16,16,667" warrants; 83,33,335 shares printed on both. FN13 is a source drafting inconsistency, not OCR. Fulltext l786 "Musanjji" is an OCR error; page 16 image prints "Musamji". Fulltext not edited.
+- A4: review 804 lines + block written 08:20; hand-back received; its task notification later read 'stopped' after the machine restart, files complete, no re-run. A4 tokens: NOT FOUND (usage record lost). Cleanup: removed A1 scratch work/raw.txt and empty work/ocr_tmp.
+- A5 (base): INCOMPLETE. 4 MISSING + 2 FACTUAL + 7 STYLE. Gap owners A3 then A4. Audit 12:39, block 12:40; task notification read 'stopped' after restart, files complete. A5 tokens: NOT FOUND (usage record lost).
+- LOOP iteration 1 of 1 started: A3 addendum on orphan rows L030 L134 L080 L158 L082 L055 L056 L074 L075.

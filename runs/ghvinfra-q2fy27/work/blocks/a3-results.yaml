@@ -1,0 +1,67 @@
+stage: A3-forensics
+company: "GHVINFRA"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/ghvinfra-q2fy27/work/forensics_ghvinfra_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: PASS
+  F12: N.A.
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "FN01", check: "F1", line: "335, 627; prior 95-96", classification: "AMBIGUOUS", implication: "Q1 WIP credit 1,351.01 reversed in Q2; Q1 S PBT ex-credit 201.74, Q1 release EBITDA margin 12.83% falls to 6.65%; read H1 only"}
+  - {id: "FN02", check: "F1", line: "571-572", classification: "FORWARD-SIGNAL", implication: "Foreign subs Nil revenue on 4,075.53 assets vs FY26 sub revenue 994.23; recovery risk, not execution"}
+  - {id: "FN03", check: "F1", line: "376-377, 383, 443", classification: "AMBIGUOUS", implication: "New DTA 234.31, other NCA 2,996.59, earmarked bank 2,215.20; ask lien status and capital-advance nature"}
+  - {id: "FN04", check: "F2", line: "347, 639, 641-642", classification: "FORWARD-SIGNAL", implication: "C-S PAT gap +16.00% FY26 -> -34.57% Q1 -> -5.47% Q2; FY26 uplift from 76%-margin sub revenue reversed"}
+  - {id: "FN05", check: "F3", line: "624, 626, 628, 630", classification: "AMBIGUOUS", implication: "Subs dormant overhead carriers (110.44 Q2, 372.34 Q1); wind-down vs redeploy; FY26 sub revenue booked with no direct cost"}
+  - {id: "FN06", check: "F4", line: "569-571, 586-588", classification: "FORWARD-SIGNAL", implication: "H1 unreviewed 19.78% of C PAT; 4,075.53 sub assets = 19.75% of C equity, ~4,051.91 Erisha-linked, no provision, called not material"}
+  - {id: "FN07", check: "F6", line: "475, 782", classification: "FORWARD-SIGNAL", implication: "21,83,333 pending warrants = ~1,09,16,665 shares (+13.58%) and ~6,550.00 L inflow [derived]; deadline NOT FOUND"}
+  - {id: "FN08", check: "F6", line: "488-489, 792-793", classification: "FORWARD-SIGNAL", implication: "Erisha impact deferred to undated outcome; one-quarter provision risk; next checkpoint Q3 FY27"}
+  - {id: "FN09", check: "F6", line: "591-592, 772", classification: "NEUTRAL-FACT", implication: "BIL JV not commenced; partner, project and start date NOT FOUND"}
+  - {id: "FN10", check: "F7", line: "481-486, 787-791", classification: "FORWARD-SIGNAL", implication: "Erisha contract ended early with legal proceedings; first in record; parent exposure via standalone note to be asked"}
+  - {id: "FN11", check: "F8", line: "343-344, 346, 376, 398", classification: "FORWARD-SIGNAL", implication: "Q2 S ETR 16.70%; deferred credit 915 bps Q2 / 626 bps H1; DTA 234.31 unexplained; ETR step-up risk"}
+  - {id: "FN12", check: "F8", line: "345, 637", classification: "NEUTRAL-FACT", implication: "FY26 excess provision of earlier years (42.85); do not extrapolate"}
+  - {id: "FN13", check: "F10", line: "470-472, 778-779, 448-449", classification: "AMBIGUOUS", implication: "Note says 16,16,667 warrants; arithmetic (83,33,335 shares, 6,666.67, 3,850.00) closes on 16,66,667; OCR-RISK, page-image re-check"}
+  - {id: "FN14", check: "F10", line: "356-357, 660-661", classification: "AMBIGUOUS", implication: "H1 EPS 4.09/3.43 vs ~4.02/~3.36 on Q2-consistent weighting; diluted H1 also high; ask H1 weighted share computation"}
+  - {id: "FN15", check: "F10", line: "357, 661", classification: "AMBIGUOUS", implication: "Basic-diluted spread 2.6% -> 5.1% -> 8.6% (S); treasury-method price effect vs undisclosed instrument"}
+  - {id: "FN16", check: "F13", line: "52-54, 127-136", classification: "FORWARD-SIGNAL", implication: "Fund-raising CFO plus current borrowings 37,789.84 and CFO -24,436.77 point to an equity raise [INFERENCE]; predecessor not named"}
+  - {id: "FN17", check: "F13", line: "60-63, 188, 192-193, 826-831", classification: "FORWARD-SIGNAL", implication: "ID left Audit/NRC on results day, term not disclosed, keeps two other listed boards; ask committee composition and Additional ID regularisation"}
+  - {id: "FN18", check: "F13", line: "476-480", classification: "NEUTRAL-FACT", implication: "AGM held 25-Sep-2026, FY26 AR out: schedule Role 6; 5.20% promoter reclassified to Public"}
+  - {id: "FN19", check: "F14", line: "768-769 vs 569-571", classification: "AMBIGUOUS", implication: "C note 2 says Group reviewed; auditor says two subs and one JV unreviewed"}
+  - {id: "FN20", check: "F14", line: "640, 655, 754", classification: "NEUTRAL-FACT", implication: "Template label errors in C P&L and C CF; checklist item 7"}
+  - {id: "FN21", check: "F14", line: "426, 731, 641, 729, 629", classification: "AMBIGUOUS", implication: "CF deducts stale FY26 JV share (21.88) in H1 FY27; C CF uses S finance cost 2,527.52 vs 2,529.38"}
+  - {id: "FN22", check: "F14", line: "433, 448", classification: "AMBIGUOUS", implication: "H1 FY26 CFO includes borrowings 4,467.50 (ex = -19,719.25); warrant money labelled share proceeds"}
+  - {id: "FN23", check: "F15", line: "543-548, 770-771, 426", classification: "AMBIGUOUS", implication: "Entity baseline set (2 subs, 2 JVs); CF Partnership Firm not identified; ask RKS/TCIPL counterparties"}
+  - {id: "FN24", check: "OBS", line: "437-439, 381, 384, 375", classification: "FORWARD-SIGNAL", implication: "H1 CFO -24,436.77 vs PAT 2,963.91; current other financial assets +32,814.28; receivables + OFA ~253 days"}
+  - {id: "FN25", check: "OBS", line: "452-453, 396, 402, 441", classification: "AMBIGUOUS", implication: "Borrowing CF lines equal BS deltas; refinance vs reclass; debt 19,161.45 -> 41,176.57; capex 4,370.88"}
+forward_signals: ["FN02", "FN04", "FN06", "FN07", "FN08", "FN10", "FN11", "FN16", "FN17", "FN24"]
+ambiguous: ["FN01", "FN03", "FN05", "FN13", "FN14", "FN15", "FN19", "FN21", "FN22", "FN23", "FN25"]
+commitments:
+  - {commitment: "Convert balance 21,83,333 warrants", implied_date: "NOT FOUND", ref: "S note 3 l475; C note 6 l782", status_word: "initiated"}
+  - {commitment: "Erisha: monitor and reassess at each reporting date", implied_date: "each reporting date; next 2026-12-31", ref: "S note 5 l488; C note 8 l792", status_word: "underway"}
+  - {commitment: "Erisha: disclose and recognise impact when ascertainable", implied_date: "undated, outcome-dependent", ref: "S note 5 l489; C note 8 l793", status_word: "initiated"}
+  - {commitment: "Erisha EPC contract concluded (ended early)", implied_date: "fourth week of Sep 2026", ref: "S note 5 l482; C note 8 l788", status_word: "completed"}
+  - {commitment: "BIL JV commencement of operations", implied_date: "NOT FOUND", ref: "C note 4 l772; auditor para 7 l591", status_word: "not commenced"}
+  - {commitment: "Husena A. Musamji reclassified Promoter to Public", implied_date: "members approved 2026-09-25; exchange approval NOT FOUND", ref: "S note 4 l476-480", status_word: "approved"}
+  - {commitment: "Salim Yahoo appointed CFO", implied_date: "2026-10-22", ref: "Board item 2 l52-54", status_word: "completed"}
+  - {commitment: "Ravi Kumar Seth ceases as ID and Audit/NRC member", implied_date: "2026-10-22 close of business", ref: "Board item 3 l60-63; Annexure 3 l827", status_word: "completed"}
+  - {commitment: "Results uploaded to company website", implied_date: "2026-10-22", ref: "Board item 1 l49-50", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The filing turns on GHV Infra FZ-LLC. Its Sep-26 assets of 4,075.53 L reconcile exactly to the S-to-C balance-sheet deltas (receivables 1,080.34, other current assets 2,971.57, PPE 22.80, cash 0.82). They sit on an EPC contract the notes call concluded after delays, now in legal proceedings. No provision is booked, and neither the auditor nor any component auditor reviewed the numbers. The exposure is 1.6x H1 consolidated PAT, yet management calls it not material. FY26 consolidated PAT beat standalone by 676 L on 994 L of sub revenue booked with no materials or sub-contracting cost, and that uplift has reversed. Second, the Q1 media-release margin rested on a 1,351.01 L WIP deferral that Q2 reversed, so read H1. Third, cash: H1 CFO was -24,437 L against PAT of 2,964 L, funded by current borrowings rising to 37,790 L. The new CFO's QIP/IPO profile and 21,83,333 pending warrants point to a raise. Drafting: the 16,16,667 warrant count conflicts with the arithmetic (16,66,667), and H1 EPS does not reconcile with the quarterly weighting. Pages 10 and 16 are raw OCR, so re-check the warrant figure on the page image."

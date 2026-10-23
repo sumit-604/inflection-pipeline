@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "GHVINFRA"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 17
+formfeed_count: 17
+line_count: 843
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "x0.01"
+text_layer_present: true
+extraction_mode: text-only  # pages 1-4 text; pages 5-17 image scans OCR'd (mixed)
+render_candidates: [5,6,7,8,9,10,11,12,13,14,15,16,17]
+rendered_pages: [5,6,7,8,9,10,11,12,13,14,15,16,17]  # zero-char data-bearing scans; statement pages 7,8,9,13,14,15 read from page image
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/ghvinfra-q2fy27/extracted/ghvinfra-results-q2fy27-fulltext.md"
+structured_path: "runs/ghvinfra-q2fy27/extracted/ghvinfra-results-q2fy27-structured.md"
+structured_counts:
+  number: 615
+  entity: 81
+  forward: 7
+  date: 42
+  qualifier: 76
+structured_id_range: "R001-R821"
+gate_a1: pass
+gap_note: ""

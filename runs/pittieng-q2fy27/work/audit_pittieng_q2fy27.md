@@ -2,10 +2,10 @@
 
 Agent: A5 adversary | Model: claude-opus-5-5 | Date: 2026-10-23
 Instruction file: prompts/quarterly-a5-adversary.md
-Inputs read: work/review_pittieng_q2fy27.md (A4); extracted/pittieng-results-q2fy27-fulltext.md and -structured.md; extracted/pittieng-presentation-q2fy27-fulltext.md and -structured.md; work/ledger_results_pittieng_q2fy27.md; work/ledger_presentation_pittieng_q2fy27.md.
-Not read: source PDFs, anything under inputs/, A3 forensic notes, orchestrator commentary.
-Cite convention: review:L### = line in the A4 review. results:L### and presentation:L### = A1 fulltext lines. R### = A1 structured row IDs (they restart per document). All Rs figures are crores unless marked lakh.
-Note: sections 0-6 below are the iteration-1 audit, kept as written; review:L### there refer to the pre-revision review. The ITERATION 2 and ITERATION 3 re-audit sections follow. The ITERATION 3 RE-AUDIT section at the end holds the final verdict and the governing YAML block.
+Inputs read: work/review_pittieng_q2fy27.md (A4); extracted/pittieng-results-q2fy27-fulltext.md and -structured.md; extracted/pittieng-presentation-q2fy27-fulltext.md and -structured.md; work/ledger_results_pittieng_q2fy27.md; work/ledger_presentation_pittieng_q2fy27.md. Concall merge pass adds: extracted/pittieng-concall-q2fy27-fulltext.md and -structured.md; work/ledger_concall_pittieng_q2fy27.md.
+Not read: source PDFs or audio, anything under inputs/, A3 forensic notes, orchestrator commentary.
+Cite convention: review:L### = line in the A4 review. results:L###, presentation:L### and concall:L### = A1 fulltext lines. R### = A1 structured row IDs (they restart per document). All Rs figures are crores unless marked lakh.
+Note: sections 0-6 below are the iteration-1 audit, kept as written; review:L### there refer to the pre-revision review. The ITERATION 2, ITERATION 3, CONCALL MERGE AUDIT and CONCALL MERGE RE-AUDIT sections follow. The CONCALL MERGE RE-AUDIT section at the end holds the final verdict and the governing YAML block.
 
 ---
 
@@ -184,7 +184,7 @@ Coverage (PASS) and the brief gate (PASS) need no re-run of A2 or A3. A3 may mir
 ---
 
 ```yaml
-# ITERATION 1 BLOCK (superseded by the ITERATION 3 block at the end of this file)
+# ITERATION 1 BLOCK (superseded by the CONCALL MERGE RE-AUDIT block at the end of this file)
 stage: A5-adversary
 company: "PITTIENG"
 quarter: "Q2 FY27"
@@ -304,7 +304,7 @@ No other new error was found. I recomputed every new number in the changed passa
 - This was loop 1 of 1. The orchestrator decides whether A5-C1 goes to Halt 1 as an open item, or takes the replacement text with operator approval.
 
 ```yaml
-# ITERATION 2 BLOCK (superseded by the ITERATION 3 block at the end of this file)
+# ITERATION 2 BLOCK (superseded by the CONCALL MERGE RE-AUDIT block at the end of this file)
 stage: A5-adversary
 company: "PITTIENG"
 quarter: "Q2 FY27"
@@ -400,6 +400,7 @@ A5-C1: **CLOSED.**
 - The review may proceed to the Notion save gate. The save still needs the operator's approval of the printed payload.
 
 ```yaml
+# ITERATION 3 BLOCK (superseded by the CONCALL MERGE RE-AUDIT block at the end of this file)
 stage: A5-adversary
 company: "PITTIENG"
 quarter: "Q2 FY27"
@@ -435,4 +436,316 @@ style_notes:
   - "A5-S5 A2 zero-standing description"
   - "A5-S6 Q8 Reading B range rounded to 'about -2'"
 analyst_note: "Iteration 3, loop 2, the last permitted. A5-C1 is closed. Other income now carries two labelled readings everywhere it appears, and every figure re-derives from the A1 fulltexts. Reading A (Q2 FY26 item one-off): Rs 3.6-5.3 Cr a quarter lost, Q2 recurring pre-tax change +2.5 to +4.2. Reading B (item recurs yearly): about Rs 34 Cr a year lost, change +0.2 to -2.2, or -11.4 if seasonal. The Q8 answer and Q2 FY25 other income separate them; Q2 FY25 is outside this corpus and correctly marked ND (K17). Grep confirms no residual pairing of one reading's level with the other's gain. STYLE S3 and S4 are applied. No new non-STYLE error was found in the changed passages. Remaining notes are cosmetic: 0.01 rounding drift, A2 ledger wording and a rounded range in Q8 that came from A5's own replacement text. Across three passes A5 raised 8 non-STYLE findings and all 8 closed. The brief gate and coverage passed at every pass."
+```
+
+---
+
+## CONCALL MERGE AUDIT (concall merge pass, iteration 1 of this pass) (2026-10-24)
+
+Trigger: coordinator new audit. The review now merges a third document: the 23-Oct-2026 call, an ASR machine transcript of a partial third-party upload. The opening remarks are missing and speaker labels are inferred. Role 5 now runs in full. Role 4 steps, the 55-row Q-for-M table, the promise log, tracker readings, flags, Key Notes and the brief were updated.
+Added inputs read: extracted/pittieng-concall-q2fy27-fulltext.md (read in full, L1-L769), extracted/pittieng-concall-q2fy27-structured.md, work/ledger_concall_pittieng_q2fy27.md.
+Line numbers in this section (review:L###) refer to the MERGED review. Scope: full audit (brief gate, coverage, arithmetic, adversarial read), plus three explicit checks:
+- every concall-sourced number is quoted as heard;
+- filed numbers win on conflict;
+- the earlier results and presentation sections still hold.
+
+### CM0. Deliverable-completeness gate (merged brief)
+| Brief part | Location | Content check | Status |
+|---|---|---|---|
+| Source note | review:L1098 | ASR source, partial recording, inferred speakers, filing wins | present |
+| 1. Summary narrative | review:L1101-L1118 | 18 lines (limit 10-20); every line tiered (FILED / MGMT, ASR / derived / INFERENCE) | present |
+| 2. Sector intelligence | review:L1121-L1128 | 8 bullets: demand, mix, input costs, localisation, state support, trade policy, regulation, gaps | present |
+| 3. Business-model intelligence | review:L1131-L1138 | 8 bullets incl. call-sourced margin structure, scrap, funding drift, earnings-mix drift | present |
+| 4. Competition intelligence | review:L1141-L1146 | 6 bullets incl. customer grouping by owner and export localisation risk | present |
+| 5. Forward map | review:L1149-L1162 | make-or-break reading plus 10 dated or undated catalysts, each with a bull and a bear fork | present |
+
+Gate result: PASS.
+
+### CM1. Coverage audit (concall)
+| Category | A2 count | Fresh count | Fresh method (spine = concall fulltext) | Orphan rows | Status |
+|---|---|---|---|---|---|
+| Timestamped lines (coverage unit) | 727 (A1 header b0-b10 sum) | 727 | grep "^\[\d\d:\d\d\]" on the fulltext | n/a | PASS |
+| Turns | 158 | 158 | grep TURN rows; spot sweep of turn boundaries L33-L769 | none | PASS |
+| Questions | 47 | 47 | My own read of every analyst turn. Follow-up clarifications inside one exchange are not counted (L70, L211, L254, L521, L736, L739), the same granularity A1 uses | none | PASS |
+| Askers | 13 (12 moderator-named + 1 unnamed) | 13 | grep "next question (is )?from the line" = 12 hits (L75, L177, L276, L336, L365, L400, L450, L477, L528, L610, L688, L698), plus the unnamed asker at L33 | none | PASS |
+| Numbers | 176 | 176 | grep NUMBER rows R206-R381; fulltext sweep of every spoken figure found no unit missing (spot proofs: 4.61 L39 = R207; 15500 L423 = R309; 172,000 L596 = R344; "closer to 23" L738 = R374) | none | PASS |
+| Forward | 60 | 60 | grep FORWARD rows | none | PASS |
+| Entities / dates / qualifiers | 50 / 37 / 61 | 148 combined | grep ENTITY, DATE, QUALIFIER rows | none | PASS |
+| All concall IDs | 589 | 589 | per-type grep total | none | PASS |
+
+- Ledger accountability: ledger_concall L7 shows 589 of 589 IDs referenced, orphans none. A4 review:L17 marks all 589 reviewed, including 158 turns.
+- Spot test of material rows. Every question row maps to a 4A exchange row: 47 questions sit in 44 rows, where Q5+Q6, Q16+Q17 and Q43+Q44 are merged and Q27 (R185) is re-read as a management add-on (row 25). Every A3C finding A3C-01 to A3C-28 sits in the incorporated list (review:L1196). Every ASR_UNCERTAIN number that A4 uses is marked [MGMT, ASR] or "ASR uncertain", with one exception: CM-M4 below.
+- Rows A4 does not cite are covered by the blanket mark. Example: R309 "15500 tons" (L423), logged as STYLE CM-S2.
+- A1 anchoring: R520 ("done by FY31") cites line 490, but the words sit at L493. This is an A1 anchor offset with no loop.
+- orphan_rows: none. missing_from_ledger: none.
+
+Coverage result: PASS.
+
+### CM2. Arithmetic audit (new and changed numbers; earlier rows re-checked)
+| # | Metric | A4 value | Recomputed | Source line | Status |
+|---|---|---|---|---|---|
+| 1 | Net debt if the payables rise is LC acceptances | 770.20 | 538.68 + 231.52 = 770.20 | results:L246-L274 | PASS |
+| 2 | Q2 op EBITDA ex spoken FX; margin; YoY | 93.49; 16.16%; about -9 bps | 88.88 + 4.61 = 93.49; / 578.44 = 16.162%; vs 16.256% = -9.4 bps | results:L187-L203; concall:L39 (R207) | PASS (spoken input) |
+| 3 | Other expenses ex-FX / revenue; YoY | 14.03%; -75 bps | 81.17 / 578.44 = 14.033%; vs 14.777% = -74.4 bps | results:L197 | PASS |
+| 4 | Q2 net FX; core PBT ex all FX | loss 2.81; 45.97 | 4.61 - 1.8 = 2.81; 43.16 - 1.8 + 4.61 = 45.97 | presentation:L255; concall:L39 | PASS |
+| 5 | Margin-change split ex-FX (bridge) | -4.6 FX / -0.5 other | 578.44 x -0.094 pp = -0.54 | review:L264 | PASS |
+| 6 | Rs 370 Cr check: Q2 x 4 adjusted / operating / ex-FX adjusted | 365.2 / 355.5 / 383.6 | 91.3 x 4; 88.88 x 4 = 355.52; 95.91 x 4 = 383.64 | presentation:L244; results | PASS |
+| 7 | Revenue guide at Q3 pricing: H2 need; vs Q2 x 2; vs H1; share achieved | 1,242-1,292; +7.4% to +11.7%; +12.2% to +16.7%; 46.2-47.1% | 2,350 / 2,400 - 1,107.53; / 1,156.88; / 1,107.53; 1,107.53 / 2,400 and / 2,350 | results:L187; concall:L734-L738 | PASS |
+| 8 | Laminations: H1 share; H2 need; per quarter vs Q2 | 49.9%; 41,111; 20,556 (-5.1%) | 40,889 / 82,000 = 49.86%; 82,000 - 40,889; / 2 = 20,555.5; / 21,671 = -5.1% | presentation:R073, R070; concall:L515-L516 | PASS |
+| 9 | Castings utilisation on sales; at 4,900 MT produced | 50.2%; about 80% | 3,086 / 6,150 = 50.18%; 4,900 / 6,150 = 79.7% | presentation:L163, L195; concall:L569 | PASS |
+| 10 | Machining hours used; hours per tonne | 84.6%; about 57 h/t | 172,000 / 203,400 = 84.56%; 172,000 / ~3,000 = 57.3 | concall:L596; presentation:L149 | PASS |
+| 11 | Employee cost YoY / QoQ | +24.9% / +8.1% | 49.66 / 39.77; 49.66 / 45.92 | results:L194 | PASS |
+| 12 | Incentive receivable vs net debt | about 13% | 70 / 538.68 = 13.0% | concall:L679 (analyst figure) | PASS |
+| 13 | Capex spoken vs filed gap | 116.83 | 256.83 - 140 | results:L310; concall:L748 | PASS |
+| 14 | A3C-15: Q1 FY27 L&A | 19,218 MT | 40,889 - 21,671 | presentation:R073, R070 | PASS |
+| 15 | A3C-16: op EBITDA per tonne QoQ | 44.9k to 41.0k (-8.7%); 38.9k to 35.9k (-7.8%) | 86.37 / 19,218; 88.88 / 21,671; 86.37 / 22,186; 88.88 / 24,757 | results:L187-L203; presentation:L193, L195 | PASS |
+| 16 | Traction and railway: 27% x 580; YoY range | about Rs 156 Cr; -2% to +2% | 156.6; 156 / 159.70 = -2.3%, 156 / 152.87 = +2.0% | concall:L656-L659; results:L187, L189 | PASS |
+| 17 | Q33: FX share of margin | about 80 bps | 4.61 / 578.44 = 0.797% | concall:L39 | PASS |
+| 18 | Q41 / Q44 / Q45 / Q53 derived gaps | 120; 200; +4-6%; 950 | 400 - 7 x 40; 450 - 250; 2,500 / 2,400 and / 2,350; 3,800 - 850 - 2,000 | concall:L66, L148, L219, L287-L288, L323 | PASS |
+| 19 | Q-status split; grades; specificity; hedges | 1/7/1/23; A8 B22 C12 D2; 20/30 = 0.67; 11 | re-counted from review:L507-L561, L689-L732, L941-L970, L834-L844 | review | PASS |
+
+Arithmetic result: PASS. No mismatch above rounding.
+
+Earlier sections hold. Points 1-5, Step 1 filed rows, Steps 2-5 filed metrics, 5A, the Step 4 bridge and the iteration-1 to iteration-3 fixes are unchanged in substance. Every filed figure I re-checked matches the S1 / R1 / section-2 tables above. The merge added only labelled spoken-input rows next to them.
+
+### CM3. Quoted-as-heard and filing-wins checks
+- Filing wins on every spoken-vs-filed conflict A4 logs:
+  - H1 capex cash: about 140 spoken vs 256.83 filed.
+  - Castings: 3,198 and 3,086 spoken vs 3,086 used; the 52% does not reproduce on sales.
+  - Payables: 470 / 236 spoken vs 474.79 / 243.27 filed.
+  - Capitalised 100 spoken vs PPE +86.01 filed.
+  - "161700 tons" spoken: flagged implausible and not used.
+  - Spoken FX: shown as a separate spoken-input row; the filed -89 bps stands.
+  - Result: PASS.
+- Quoted as heard: PASS on every spot-checked figure (4.61, 470 / 236, 40,889, 21,671, 3,086, 3,198, 172,000, "6 hours" / "two hours", "nine or percent", "850 or crores", "250" at L344, 2350-2400, 35-36, 57 / 44 / 40, 125 / 150), with one exception: **CM-M4**. A4 renders "closer to 23" (concall:L738; R374 ASR_UNCERTAIN) as "about Rs 2,300 Cr at Q2 pricing". The other spot-checked verbatim quotes match the fulltext: Exchanges A, B and C; L127-L136; L316; L460-L461; L568-L570; L726; L751-L752; L763-L764.
+- Attribution (STYLE CM-S3):
+  - Point 1 (review:L98) quotes "recorded in other expenses which is above EBITDA" (L41-L42) as management's words. In the MIXED turn this reads as the analyst's confirmation question, answered "Yes". Management's own words are at L674-L675 ("forex loss, which I mentioned, which is booked in the other expense").
+  - Step 2 diag 6 (L229) cites "we're deferring" (L232). Those are the analyst's words; management's own words are "by deferring it by a year" (L248).
+  - The substance holds in both cases.
+
+### CM4. Adversarial read (merged review): three most positive claims
+**Claim 1: the call "leans to Reading B". "The FY26 level looks like a recurring yearly incentive, paused for FY27 and expected back in FY28, not stopped." The FY28 restart is a bull fork that would show "Reading B confirmed as a pause". The ~Rs 70 Cr receivable is an "undisclosed material positive".** (review:L229, L461, L486, L514, L768, L899, L1078, L1103-L1104, L1137, L1157, L1162, L1299)
+- Counter 1a: the incentive may never have been booked. The same exchange supports a second reading, in which the 7-year recovery window has not started and the incentive is a new line from FY28, not a resumption:
+  - The analyst asks what management "will actually be able to book from next year, not the cap" (L62-L65). Management answers with the eligibility per year and "not more than 40 crores per annum ... at least in the near term" (L66-L69).
+  - The sanction is recent: "When we had initially applied for this scheme, we were expecting ... nine-year ... However, the approval and sanction that we got was for seven years" (L236-L244). The deferral moves the start of the window: "by deferring it by a year ... by next year we should be running at a rate of about 40 crores" (L248-L249).
+  - Only the analyst's "start recovering again" (L255, ASR) points to earlier booking.
+  - Consequence: on this reading the call does not explain FY24-FY26 other income at all. An incentive that appears in FY28 other income would appear under Reading A or B alike, so it cannot "confirm" Reading B (L1162).
+  - Survives: **MISSING, A4 (CM-M1).**
+- Counter 1b: the receivable is not a positive. The analyst calls it "receivables from the Maharashtra government", and management confirms it is "in the process for disbursement" (L682-L683). A receivable is income or a grant already recognised:
+  - Its disbursement lowers net debt but adds nothing to earnings or net worth. It is an asset conversion, not an "undisclosed material positive".
+  - On A4's own Reading B, about Rs 70 Cr of past incentive income was still uncollected at 30-Sep-2026, about 1.75 years at Rs 40 Cr [INFERENCE; analyst figure]. That weakens the cash backing of the very other income Reading B treats as recurring.
+  - A4 already notes "do not credit" (L899) and asks where the receivable sits (Q42), but it frames receipt as a bull fork (L1157).
+  - Survives: **MISSING, A4 (CM-M2).**
+
+**Claim 2: "Management said Rs 4.61 Cr of currency loss sits in other expenses. If that is right, the margin was almost flat."** (Brief L1107; also 5A L775, R5 Step 9 offsets L923, Combined Verdict L930)
+- Counter: the brief drops the condition that Step 2 diagnostic 2 states (L221: "holds only if Q2 FY26 other expenses carried no FX loss, which is ND").
+- The filing gives evidence against that condition. The prior-year half carried FX losses: H1 FY26 shows an unrealised FX loss of Rs 5.91 Cr (results:L299, 591.18 lakh; R358), and Q2 FY26 shows an FX loss of Rs 1.0 Cr in finance cost (presentation:L255; R199). H1 FY27 instead shows a net unrealised FX gain of Rs 2.34 Cr (results:L299, (233.86) lakh; R357).
+- So the base-period-nil assumption behind "almost flat" is weakly supported, and the filing does not corroborate a net FX drag in H1 FY27.
+- Survives: **MISSING, A4 (CM-M3).**
+
+**Claim 3: guides held. "82,000 tonnes of laminations and about Rs 370 Cr of EBITDA" (L1115); "The lamination guide does reconcile" (L655).**
+- Counter: 82,000 MT is exactly H1 x 2 ("if I just double this", L516) while a Q3 dip is pre-announced (L519-L520). If Q3 falls back to Q1's 19,218 MT, Q4 must reach about 21,893 MT, above the Q2 record of 21,671. And Rs 370 Cr clears only ex-FX.
+- A4 already carries the Rs 370 Cr arithmetic (L407, L655, Q38), the Q3 dip, and the -5.1% H2 per-quarter requirement. Management's "Q4 similar to quarter two, maybe slightly stronger" (L518) is consistent with the 21,893 MT path.
+- Result: the counter is supported but incorporated. No graft.
+
+**Additional MISSING found in the scan (not a positive claim): CM-M5, the FY27 capex envelope vs filed H1.**
+- Management: "the first year would be something like 300 or 250 to 300", with the Hyderabad land and building "in current year" (L355-L356). A4 dates this C13 "FY27 onward" (L953).
+- The filed H1 FY27 capex cash of Rs 256.83 Cr (results:L310) is already 86-103% of that envelope. So on the filing, either H2 FY27 capex is about Rs 0-43 Cr or FY27 overshoots the spoken envelope. On the spoken H1 of about Rs 140 Cr, H2 would be Rs 110-160 Cr.
+- A4 logs the H1 conflict (Q34, Flag 15) but does not draw this test. That test makes the conflict checkable at the FY27 cash flow. The same holds if "first year" is not FY27; then C13's date is wrong instead.
+
+**Acquisition-economics probe (concall):**
+- The call adds only "when we acquired Bagadia-Sahedra industries, they were operating two units, income passing around 80,000 square feet" (L193-L195).
+- Consideration: NOT FOUND. The floor of about 6.7x FY26 contribution PAT (section 3) stands. A4 already carries the goodwill bear (Point 3, P1-a, Flag 4). No graft.
+
+### CM5. Findings register (concall merge pass)
+| ID | Type | Fix agent | Finding | Anchor |
+|---|---|---|---|---|
+| CM-M1 | MISSING | A4 | The incentive counter-reading is absent. The call also supports a new FY28 line whose 7-year window has not started ("book from next year"; recent 7-year sanction; "deferring it by a year"). On that reading the call does not explain FY24-FY26 other income, and an FY28 restart does not confirm Reading B. Add it beside the Reading B lean. Replace the Q1 FY28 bull fork "Reading B confirmed as a pause" with "incentive appears in other income (does not by itself separate Readings A and B)" | review:L229, L461, L486, L514, L768, L1011, L1078, L1103-L1104, L1137, L1162, L1299; concall:L62-L69, L236-L249, L255 |
+| CM-M2 | MISSING | A4 | The ~Rs 70 Cr receivable is framed as an "undisclosed material positive" and as a bull fork. If it is a booked receivable (L682), disbursement is an asset conversion: net debt down about 13%, no earnings. On Reading B it shows about Rs 70 Cr of past incentive income still uncollected [INFERENCE; analyst figure]. Re-tag it, and add the cash-backing qualifier to Reading B | review:L332, L368, L444, L778, L899, L1157; concall:L678-L686 |
+| CM-M3 | MISSING | A4 | Brief L1107 "If that is right, the margin was almost flat" drops the Q2 FY26-nil-FX condition. The filing shows prior-year FX losses: H1 FY26 unrealised FX loss Rs 5.91 Cr and Q2 FY26 finance-cost FX Rs 1.0 Cr. H1 FY27 shows a net unrealised FX gain of Rs 2.34 Cr. Restore the condition in the brief, and cite results:L299 as counter-evidence in Step 2 diag 2, 5A, R5 Step 9 and the Combined Verdict | review:L1107, L221, L775, L923, L930; results:L299 (R357, R358); presentation:L255 (R199) |
+| CM-M4 | MISSING | A4 | Not quoted as heard: "closer to 23" (concall:L738; R374 ASR_UNCERTAIN) is rendered as "about Rs 2,300 Cr at Q2 pricing". This breaks the review's own rule (L7). Write: "'closer to 23' at Q2 prices (concall:L738, ASR; read as about Rs 2,300 Cr [INFERENCE])" | review:L220, L406, L631, L730, L1044 |
+| CM-M5 | MISSING | A4 | The FY27 capex envelope ("250 to 300" in the first year, current year; L355-L356; C13 dated FY27) is not tested against filed H1 capex of Rs 256.83 Cr (86-103% of the envelope). On the filing, H2 FY27 capex is about Rs 0-43 Cr or the envelope is exceeded; on the spoken H1, H2 is Rs 110-160 Cr. Add this to C13 and Q34 | review:L638, L953, L540, L331; results:L310; concall:L355-L356, L744-L748 |
+| CM-S1 | STYLE | none | 4B says capex and funding was "asked by three askers". Five askers raised it: Mohit Jain, Pratik Jain, Vive Ganguly, Saksham Tyagi and Preneru Chatterjee (rows 7, 14, 16-18, 29, 43) | review:L738 |
+| CM-S2 | STYLE | none | 7A has no row for the spoken "15500 tons" of loose laminations (L423; R309) vs the deck's 14,476 MT (presentation:R052). The spoken figure ties to 14,476 + 1,059 = 15,535 if other machined components are included. The filed figure is already the one used | review:L854-L872 |
+| CM-S3 | STYLE | none | Quote attribution in two places. L41-L42 reads as the analyst's confirmation question (cite management's own words at L674-L675). "we're deferring" (L232) is the analyst's phrase (cite management at L248) | review:L98, L229 |
+| CM-S4 | STYLE | none | 7A marks the 17%+ margin claim "PARTIALLY CONFIRMED ex-FX" although ex-FX is 16.2% operating and 16.6% adjusted, both below 17%. "NOT CONFIRMED; gap narrows ex-FX" is closer | review:L862 |
+| CM-S5 | STYLE | none | 4A row 25 re-reads A1's analyst question Q27 (R185, turn 86) as a management add-on without saying so. The re-reading is plausible ("We have ... get up our manpower", L439); say it | review:L713 |
+| CM-S6 | STYLE | none | The forward map lists "Late Oct to Nov 2026" before "24-Oct-2026"; put the rows in date order | review:L1153-L1154 |
+| A5-S1 / S5 / S6 | STYLE | none | Carried over: 0.01 drift; A2 wording; the Q8 "about -2" rounding | as logged |
+
+Counts (this pass): FACTUAL 0, MISSING 5, CONTRADICTION 0, STYLE 6 new plus 3 carried.
+
+### CM6. Verdict
+**INCOMPLETE.** Failing agent: **A4**. Finding type: MISSING (CM-M1 to CM-M5). No FACTUAL or CONTRADICTION finding.
+- Coverage (PASS), arithmetic (PASS) and the brief gate (PASS) need no re-run of A2 or A3.
+- One correction loop is pre-approved for this pass. All five fixes are wording or added qualifiers on the existing extract, so no new extraction is needed.
+
+Exact gap for the A4 pass:
+1. **CM-M1.** Add the counter-reading at each place the review leans to Reading B: L229, L461, L486, L514, L768, L1011, L1078, L1103-L1104, L1137 and L1299. Suggested text: "Counter-reading from the same exchange: the 7-year sanction is recent and booking starts 'from next year' (concall:L62-L65, L236-L249); if the incentive was never booked, it is a new FY28 line, not a resumption, and the call does not explain FY24-FY26 other income." At L1162, replace "(Reading B confirmed as a pause)" with "(does not by itself separate Readings A and B)".
+2. **CM-M2.** At L899 and L1157, re-tag the ~Rs 70 Cr receivable as an asset conversion. Suggested text: "If booked, disbursement cuts net debt about 13% but adds no earnings; on Reading B it means about Rs 70 Cr of past incentive income was uncollected at 30-Sep-2026 [INFERENCE; analyst figure]."
+3. **CM-M3.** At L1107, write: "If that is right, and if Q2 FY26 carried no such loss, the margin was almost flat. The filing does not show it, and it shows FX losses in the prior-year half (H1 FY26 unrealised FX loss Rs 5.91 Cr, results:L299)." Add the same citation at L221, L775, L923 and L930.
+4. **CM-M4.** At L220, L406, L631, L730 and L1044, write: "'closer to 23' at Q2 prices (concall:L738, ASR; read as about Rs 2,300 Cr [INFERENCE])".
+5. **CM-M5.** In C13 (L953) and Q34 (L540), write: "Filed H1 capex Rs 256.83 Cr is 86-103% of the spoken FY27 envelope of Rs 250-300 Cr (concall:L355-L356); on the filing H2 FY27 capex is about Rs 0-43 Cr or the envelope is exceeded; the FY27 cash flow decides it."
+
+```yaml
+# CONCALL MERGE AUDIT BLOCK (superseded by the CONCALL MERGE RE-AUDIT block at the end of this file)
+stage: A5-adversary
+company: "PITTIENG"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+re_audit: false
+audit_pass: "concall merge pass, iteration 1"
+docs_audited: [results, presentation, concall]
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+  concall_counts: {turns: 158, questions: 47, numbers: 176, forward: 60, entities: 50, dates: 37, qualifiers: 61, ids: 589, askers: 13, timestamp_lines: 727}
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - claim: "Call leans to Reading B: FY26 other income is a recurring incentive paused for FY27, back in FY28; FY28 restart would confirm B (review L229, L1078, L1103-L1104, L1162)"
+    counter: "Same exchange supports a new FY28 line whose 7-year window has not started: 'book from next year' (L62-L65), recent 7-year sanction (L236-L244), 'deferring it by a year' (L248); then the call does not explain FY24-FY26 other income and an FY28 incentive does not separate A and B"
+    source_line: "concall:L62-L69, L236-L249, L255"
+    type: MISSING
+  - claim: "~Rs 70 Cr incentive receivable is an undisclosed material positive; bull fork 'paid in FY27; net debt about 13% lower' (review L899, L1157)"
+    counter: "A government receivable (L682) is income already recognised; disbursement is an asset conversion with no earnings; on Reading B about Rs 70 Cr of past incentive income was uncollected at 30-Sep-2026 [INFERENCE; analyst figure]"
+    source_line: "concall:L678-L686"
+    type: MISSING
+  - claim: "Brief: Rs 4.61 Cr FX loss in other expenses means the margin was almost flat (review L1107)"
+    counter: "Holds only if Q2 FY26 carried no FX loss; filing shows H1 FY26 unrealised FX loss Rs 5.91 Cr and Q2 FY26 finance-cost FX loss Rs 1.0 Cr, while H1 FY27 shows a net unrealised FX gain of Rs 2.34 Cr"
+    source_line: "results:L299 (R357, R358); presentation:L255 (R199); concall:L39"
+    type: MISSING
+findings_by_type:
+  factual: []
+  missing:
+    - "CM-M1 (A4): incentive counter-reading absent (new FY28 line, window not started); FY28 restart cannot confirm Reading B (L1162)"
+    - "CM-M2 (A4): ~Rs 70 Cr receivable framed as a positive; it is an asset conversion and, on Reading B, uncollected past income"
+    - "CM-M3 (A4): brief L1107 'margin almost flat' drops the Q2 FY26-nil-FX condition; filing shows prior-year FX losses (results:L299)"
+    - "CM-M4 (A4): 'closer to 23' (L738, ASR_UNCERTAIN) rendered as 'about Rs 2,300 Cr' at L220, L406, L631, L730, L1044; not quoted as heard"
+    - "CM-M5 (A4): spoken FY27 capex envelope Rs 250-300 Cr not tested against filed H1 Rs 256.83 Cr (86-103%); H2 about Rs 0-43 Cr on the filing"
+  contradiction: []
+  style:
+    - "CM-S1: 4B 'three askers' on capex; five asked"
+    - "CM-S2: 7A lacks spoken 15500 t loose laminations (L423) vs deck 14,476 t; ties if 1,059 t added"
+    - "CM-S3: attribution of L41-L42 and L232 quotes; cite management at L674-L675 and L248"
+    - "CM-S4: 7A 17%+ margin 'PARTIALLY CONFIRMED ex-FX' though ex-FX 16.2-16.6%"
+    - "CM-S5: 4A row 25 re-reads A1 question R185 as a management add-on without saying so"
+    - "CM-S6: forward map row order (Late Oct-Nov before 24-Oct)"
+    - "A5-S1 / A5-S5 / A5-S6 carried (0.01 drift; A2 wording; Q8 'about -2')"
+closed_findings: [A5-F1, A5-F2, A5-F3, A5-F4, A5-F5, A5-M1, A5-M2, A5-C1, A5-S2, A5-S3, A5-S4]
+loop_back_to: "A4"
+gap: "A4 concall-merge fixes, 5 items: (1) CM-M1 add the incentive counter-reading (7-year window not started; 'book from next year' L62-L65, L236-L249; new FY28 line, not a resumption) wherever the review leans to Reading B, and change the L1162 bull fork to 'does not by itself separate Readings A and B'; (2) CM-M2 re-tag the ~Rs 70 Cr receivable at L899, L1157 as an asset conversion (net debt -13%, no earnings; on Reading B uncollected past income); (3) CM-M3 restore the Q2 FY26-nil-FX condition at brief L1107 and cite results:L299 (H1 FY26 unrealised FX loss Rs 5.91 Cr) at L221, L775, L923, L930; (4) CM-M4 quote 'closer to 23' (L738, ASR) read as Rs 2,300 Cr [INFERENCE] at L220, L406, L631, L730, L1044; (5) CM-M5 test C13/Q34: filed H1 capex Rs 256.83 Cr is 86-103% of the spoken FY27 Rs 250-300 Cr envelope, H2 about Rs 0-43 Cr on the filing"
+style_notes:
+  - "CM-S1 askers count on capex"
+  - "CM-S2 15500 t spoken vs 14,476 t deck"
+  - "CM-S3 quote attribution L41-L42, L232"
+  - "CM-S4 17% claim status wording"
+  - "CM-S5 row 25 re-read not stated"
+  - "CM-S6 forward-map row order"
+  - "A5-S1, A5-S5, A5-S6 carried"
+analyst_note: "Concall merge pass. Coverage reproduces exactly (158 turns, 47 questions, 176 numbers, 60 forward, 589 IDs, 13 askers). Every new number re-derives, A4's two A3C corrections check out against A1 rows, and the earlier results and presentation sections hold. Filing wins on every logged spoken-vs-filed conflict. Five qualifiers are missing, all in A4 and all wording. The biggest: the call is read as leaning to Reading B (a paused recurring incentive), but the same words fit a new FY28 incentive whose 7-year window has not started. On that reading, the call explains nothing about FY24-FY26 other income, and an FY28 restart cannot confirm B. The Rs 70 Cr receivable is an asset conversion, not a positive. The brief's 'margin almost flat ex-FX' drops its own base-year condition, and the filing shows prior-year FX losses. 'Closer to 23' is not quoted as heard. Filed H1 capex already fills the spoken FY27 envelope. One loop is pre-approved."
+```
+
+---
+
+## CONCALL MERGE RE-AUDIT (concall pass, its one correction loop) (2026-10-24)
+
+Trigger: coordinator re-audit for the concall merge pass. This is the pass's one correction loop; no further loop exists on this pass. A4 applied CM-M1 to CM-M5 using the CM6 text, plus CM-S1 to CM-S6, and added Q56 (revision line review:L4; CONCALL PASS CORRECTION LOG review:L1057-L1070).
+Scope: (a) check each fix against the A1 fulltexts; (b) scan the changed passages for new errors; (c) re-run the brief gate and coverage.
+Line numbers in this section (review:L###) refer to the concall-loop REVISED review.
+Passages scanned:
+- L4, L21; Point 1 L98; Step 1 L167-L168, L185, L196; Step 2 table L208; diagnostics 1, 2 and 6 (L221, L222, L226-L230); Step 3 L254; Step 4 L265, L270, L281-L282;
+- Step 5 L299, L332-L333; T1 caveat (f) L369; 5.5C item 3 L382; 6A L396, L407, L413; 6B rows 8-10 L427-L429; 6D L443, L447; P1-c, P2-b, E-a, E-b L461-L465;
+- 8A-W L489; 8B L494; Q7, Q8, Q33, Q34, Q40, Q42, Q45 and Q56 (L516-L565); status split L567; top-3 and IR email L572-L582;
+- R5 Step 2 L631-L661; 4A rows 1, 4, 17, 25, 42, 43 (L693-L735); 4B L742; Exchange C L767-L773; 5A L779-L793; 7A L863-L870; R5 8B row 7 L896; 8E L906; 8F L916-L917; R5 Step 9 L930; Combined Verdict L935-L940;
+- promise log C06, C08, C13, C23 (L953-L970); K7 L993; K20 L1006; Key Notes L1018; correction log L1057-L1070; Flags 5 and 14-16 (L1100, L1109-L1111); Brief L1121-L1185; YAML flags and analyst_note L1326-L1351.
+
+Residual-wording grep: "Reading B confirmed", "undisclosed material positive" (applied to the receivable), and an unquoted "about Rs 2,300 Cr at Q2" no longer appear. The remaining hits are the labelled [INFERENCE] reading at L221, the correction log at L1061, and 8E L906, where the "material positive" is now the FY28 incentive and the receivable is stated "not a positive".
+
+### CR1. Fixes re-checked against the extract
+| ID | Type | Fix in revised review | Re-check against A1 fulltext | Status |
+|---|---|---|---|---|
+| CM-M1 | MISSING | Counter-reading added at diag 6 (L230), Step 4 (L270, L281-L282), 5.5C (L382), 6D (L447), E-a (L464), 8A-W (L489), Q8 (L517), Q40 (L549), Q42 (L551), Exchange C (L772), 5A (L781), R5 Step 2 (L651), C06 (L953), Combined Verdict (L937), Key Notes (L1018), Flag 5 (L1100), Brief (L1127, L1160), YAML (L1331, L1351). Q1 FY28 bull fork now reads "Incentive appears in other income (does not by itself separate Readings A and B)" (L1185). The receivable's balance-sheet status (Q42) is named as the separating observation | L64-L65 quote "will actually be able to book from next year, not the cap" is verbatim. L236-L244 quote is verbatim ("When we had initially applied ... However, the approval and sanction that we got was for seven years"). L248-L249 quote is verbatim. L255 "start recovering again" is cited as the analyst's (R ASR). Q42 as the separating observation is logically sound: a recognised receivable implies prior booking | CLOSED |
+| CM-M2 | MISSING | Receivable re-tagged as an asset conversion at Step 5 Q4 (L333), T1 (f) (L369), 6B row 8 (L427), P2-b (L463), E-a (L464), Q42 (L551), Exchange C (L772), 5A (L782), R5 8B (L890), 8E (L906), C08 (L955), Brief (L1134), forward map (L1180), YAML flag (L1332) | L682 "the receivables from the Maharashtra government" and L683 "in the process for disbursement" are quoted correctly. 70 / 538.68 = 13.0%; 70 / 40 = 1.75 years. [INFERENCE; analyst figure] is carried at each use | CLOSED |
+| CM-M3 | MISSING | Condition restored and counter-evidence cited at Step 1 (new unrealised-FX row L168 and note L196), Step 2 table (L208), diag 2 (L222), Step 4 (L265), 6A (L396), 6B row 9 (L428), E-b (L465), Q33 (L542), 5A (L779), 7A (L865), R5 Step 9 (L930), Combined Verdict (L937), Flag 16 (L1111), Brief (L1130), YAML (L1335) | results:L299: H1 FY26 +591.18 lakh = Rs 5.91 Cr loss; H1 FY27 (233.86) lakh = Rs 2.34 Cr gain (R358, R357). presentation:L255: Q2 FY26 FX loss Rs 1.0 Cr (R199). L196 correctly says the cash-flow line is a half-year non-cash add-back, not a split of P&L FX by line | CLOSED |
+| CM-M4 | MISSING | "That would be closer to 23, not 2350 to 2400. That would be based on Q3 pricing" quoted at diag 1 (L221), 6A (L407), R5 Step 2 (L635), 4A row 42 (L734), 5A (L793) and C23 (L970), each read as about Rs 2,300 Cr [INFERENCE]; flag added (L1337) | concall:L738 verbatim; R374 ASR_UNCERTAIN carried. "2350 to 2400 crores" (L734) is quoted at Step 3 L254, 6A, Q45 and C23. 6A share 1,107.53 / 2,400 = 46.15%, printed as 46.1% (was 46.2%): correct | CLOSED |
+| CM-M5 | MISSING | Envelope test at Step 5 table (L299) and Q3 (L332), 6A (L413), 6B row 10 (L429), 6D (L443), P1-c (L461), 8B (5) (L494), R5 Step 2 (L642, L659, L661), 4A rows 17 and 43 (L709, L735), 5A (L786), 7A (L863), R5 8B row 7 (L896), 8F (L916), C13 "OPEN (at risk)" (L960), Q7 (L516), Q34 (L543), new Q56 (L565), K7 (L993), Flag 15 (L1110), Brief (L1137, L1159), forward map (L1183) | L355-L356 quote is verbatim ("So see with the 290 crores the Hyderabad land and building in current year ... So the first year would be something like 300 or 250 to 300"). 256.83 / 300 = 85.6%; 256.83 / 250 = 102.7%; H2 300 - 256.83 = 43.17; spoken H2 250-300 less 140 = 110-160. The "if 'first year' is not FY27, the date is wrong" qualifier is carried at L332, L565 and L960 | CLOSED |
+| CM-S1 to CM-S6 | STYLE | five capex askers (L742); 15500 t row (L870); attribution (L98, L230, L693); 17% claim "NOT CONFIRMED; the gap narrows ex-FX" (L867); row 25 re-read stated (L717); forward map in date order (L1176-L1177) | L423, R052, L674-L675, L248, R185 and L439 all match | CLOSED |
+
+### CR2. New-error scan
+- No new FACTUAL, MISSING or CONTRADICTION finding.
+- New numbers recomputed and tied: the unrealised FX row (5.91 / (2.34)); 86-103%; 0-43; 110-160; 1.75 years; 46.1%; Q-status split (Q33-Q56 = 24 NEW, total 56). The A2 count in the preamble (59 findings to rows, plus Q56 from CM-M5) is consistent.
+- Q56 (L565) adds no ledger row ID. Its anchors (concall:L355-L356, results:L310) are existing rows R290-R291 and R377, already in the ledgers.
+- New STYLE notes (logged only, no loop):
+  - **CM2-S1.** Brief L1127 says "about Rs 14 to 34 Cr a year of other income is missing this year". The FY27 line is about Rs 34 Cr below FY26 under every reading. Rs 14-34 Cr is the range of *recurring* loss across Readings A and B. Say "of recurring other income".
+  - **CM2-S2.** Forward map L1180 bull fork says "(a balance-sheet gain, not profit)". Collecting a receivable is an asset swap; net assets do not change. "an asset swap, not profit" is closer.
+  - **CM2-S3.** Two brief lines drop qualifiers the body carries:
+    - Brief L1137 and L1159 call the spoken Rs 250-300 Cr "this year's capex" without the "if 'first year' means FY27" qualifier (body L332, Q56, C13).
+    - L1134 tags the receivable line [FILED, derived; analyst figure], where the receivable itself is [MGMT, ASR; analyst figure].
+- Carried STYLE: A5-S1 (0.01 drift), A5-S5 (A2 ledger wording), A5-S6 (Q8 L517 still reads "about -2 (even spread)").
+
+### CR3. Gates on the revised file
+- Brief gate: PASS.
+  - Narrative L1124-L1141 is 18 lines (limit 10-20).
+  - Sector L1144-L1151, business model L1154-L1161 and competition L1164-L1169 are present.
+  - The forward map (L1172-L1185) has a make-or-break reading plus 10 catalyst rows in date order, each with a bull and a bear fork.
+- Coverage: PASS, unchanged. results 643 / 643, presentation 991 / 991, concall 589 / 589. orphan_rows: none. missing_from_ledger: none.
+- Earlier sections: the results and presentation figures are unchanged. The loop edited only concall-linked wording and added the labelled unrealised-FX row.
+
+### CR4. Final verdict
+**COMPLETE with style notes.**
+- All five concall-pass findings, CM-M1 to CM-M5, are closed. Every finding from the earlier passes stays closed: A5-F1 to F5, A5-M1, A5-M2 and A5-C1.
+- No FACTUAL, MISSING or CONTRADICTION finding is open.
+- STYLE notes are logged only: CM2-S1 to S3 (new), plus A5-S1, A5-S5 and A5-S6 (carried).
+- The review may proceed to the Notion save gate. The save still needs the operator's approval of the printed payload, and Decision Status is never written.
+
+```yaml
+stage: A5-adversary
+company: "PITTIENG"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+re_audit: true
+audit_pass: "concall merge pass, correction loop 1 (final for this pass)"
+docs_audited: [results, presentation, concall]
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+  concall_counts: {turns: 158, questions: 47, numbers: 176, forward: 60, entities: 50, dates: 37, qualifiers: 61, ids: 589, askers: 13, timestamp_lines: 727}
+arithmetic_mismatches: []
+surviving_bear_counters: []  # CM-M1 (incentive counter-reading), CM-M2 (receivable as asset conversion), CM-M3 (FX base-year condition) grafted into A4 and re-checked
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "CM2-S1: brief L1127 'Rs 14 to 34 Cr a year of other income is missing' should read 'of recurring other income'; the line is ~Rs 34 Cr lower under every reading"
+    - "CM2-S2: forward map L1180 'a balance-sheet gain, not profit'; receivable collection is an asset swap, net assets unchanged"
+    - "CM2-S3: brief L1137/L1159 drop the 'if first year means FY27' qualifier; L1134 tags the receivable [FILED] though it is [MGMT, ASR; analyst figure]"
+    - "A5-S1 (partial): 0.01 drift remains on 158.19, -98.64, 663.85/652.60"
+    - "A5-S5 (A2): ledger L5 '13 line items' wording"
+    - "A5-S6: Q8 L517 Reading B even-spread change rounded to 'about -2' (full range +0.2 to -2.2)"
+closed_findings: [A5-F1, A5-F2, A5-F3, A5-F4, A5-F5, A5-M1, A5-M2, A5-C1, CM-M1, CM-M2, CM-M3, CM-M4, CM-M5, A5-S2, A5-S3, A5-S4, CM-S1, CM-S2, CM-S3, CM-S4, CM-S5, CM-S6]
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "CM2-S1 recurring vs line wording in brief L1127"
+  - "CM2-S2 'balance-sheet gain' wording at L1180"
+  - "CM2-S3 brief qualifier and tier tags at L1134, L1137, L1159"
+  - "A5-S1, A5-S5, A5-S6 carried"
+analyst_note: "Concall pass re-audit, its one loop. All five MISSING findings are closed and re-check against the A1 fulltexts. The incentive now carries both readings everywhere, and an FY28 restart no longer claims to confirm Reading B. The Rs 70 Cr receivable is an asset conversion, not a positive. 'Almost flat ex-FX' keeps its base-year condition, with results:L299 cited. 'Closer to 23' is quoted as heard. Filed H1 capex is tested against the spoken FY27 envelope and asked in the new Q56. Every new number ties, coverage is unchanged at 643 / 991 / 589 IDs, and the brief gate passes. Three new wording notes are cosmetic and logged only. Across all passes A5 raised 13 non-STYLE findings and all 13 are closed. The review may go to the Notion save gate; operator approval of the payload is still required."
 ```

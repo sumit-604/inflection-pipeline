@@ -27,3 +27,12 @@
 - A4 loop 2: A5-C1 fixed (both other-income readings stated everywhere) + STYLE S3, S4. 67,480 tok.
 - A5 re-audit loop 2 (iteration 3): COMPLETE with style notes. 8/8 non-STYLE findings closed; STYLE S1, S5, S6 logged. 58,942 tok.
 - Notion payload updated to the final wording; still NOT WRITTEN (no write in this session; operator approval of the payload needed).
+- 2026-10-23 16:5x: concall leg started. No transcript on BSE/NSE. Recording: YouTube XoAOF3cf9J4 (Concall Central, 'Pitti Engineering Q2 FY27 Earnings Call | 23 Oct 2026', 50:44). ASR queued behind the Ador session's faster-whisper job (RAM).
+- Concall ASR done (11 chunks, restarted once after the app restart; mechanical re-run). Transcript: inputs/Pitti_Q2FY27_Concall_Transcript_ASR.txt (734 lines), marked machine-transcribed. COVERAGE GAP: the upload starts mid-Q&A; opening remarks and early Q&A absent. Class: CONCALL (speaker-turn structure, moderator lines; no speaker labels from ASR).
+- A1 concall: gate PASS, 11/11 five-minute blocks, 158 turns (labels INFERRED), 47 questions, 589 rows. ASR_UNCERTAIN numbers flagged, not corrected.
+- A2 concall: gate PASS. Turns 158/158, questions 47/47, numbers 176/176, forward 60/60; orphans 0 of 589.
+- A3 concall: gate PASS. PASS 0, FINDING 5, N.A. 12; 28 findings (11 forward, 14 ambiguous). Q1-Q32: 1 answered, 7 partial, 1 evaded, 23 not asked.
+- A4 concall merge: resumed the A4 agent (same review file) with Role 5 protocol frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md added.
+- A4 concall merge: 208,899 tok, 983 s. Verdict unchanged PROCEED WITH FLAGS; Q-for-M 55 rows.
+- A5 concall merge audit: INCOMPLETE, MISSING 5 (CM-M1..M5), STYLE 6 new. All to A4. Correction loop 1 of this pass (pre-approved, standing approval 2026-10-24).
+- A4 concall loop: 128,580 tok. A5 concall re-audit: COMPLETE with style notes (13 of 13 non-STYLE findings closed across all passes). 127,691 tok.

@@ -4,7 +4,8 @@ quarter: "Q2 FY27"
 model: "claude-opus-5-5"
 status: complete
 re_audit: true
-iteration: 3
+audit_pass: "concall merge pass, correction loop 1 (final for this pass)"
+docs_audited: [results, presentation, concall]
 verdict: COMPLETE
 plain_language_brief:
   narrative: present
@@ -15,21 +16,26 @@ plain_language_brief:
 coverage:
   orphan_rows: []
   missing_from_ledger: []
+  concall_counts: {turns: 158, questions: 47, numbers: 176, forward: 60, entities: 50, dates: 37, qualifiers: 61, ids: 589, askers: 13, timestamp_lines: 727}
 arithmetic_mismatches: []
-surviving_bear_counters: []  # iteration-1 counters (A5-M1 other income, A5-F5 castings) grafted and re-checked; A5-C1 two-reading fix re-checked
+surviving_bear_counters: []  # CM-M1 (incentive counter-reading), CM-M2 (receivable as asset conversion), CM-M3 (FX base-year condition) grafted into A4 and re-checked
 findings_by_type:
   factual: []
   missing: []
   contradiction: []
   style:
+    - "CM2-S1: brief L1127 'Rs 14 to 34 Cr a year of other income is missing' should read 'of recurring other income'; the line is ~Rs 34 Cr lower under every reading"
+    - "CM2-S2: forward map L1180 'a balance-sheet gain, not profit'; receivable collection is an asset swap, net assets unchanged"
+    - "CM2-S3: brief L1137/L1159 drop the 'if first year means FY27' qualifier; L1134 tags the receivable [FILED] though it is [MGMT, ASR; analyst figure]"
     - "A5-S1 (partial): 0.01 drift remains on 158.19, -98.64, 663.85/652.60"
-    - "A5-S5 (A2): ledger L5 '13 line items' wording; 3 of 35 zero-standing tags sit on the vesting schedule"
-    - "A5-S6 (new): Q8 L495 rounds Reading B's even-spread change to 'about -2'; the full range elsewhere is +0.2 to -2.2 (wording from A5's own iteration-2 replacement text)"
-closed_findings: [A5-F1, A5-F2, A5-F3, A5-F4, A5-F5, A5-M1, A5-M2, A5-C1, A5-S2, A5-S3, A5-S4]
+    - "A5-S5 (A2): ledger L5 '13 line items' wording"
+    - "A5-S6: Q8 L517 Reading B even-spread change rounded to 'about -2' (full range +0.2 to -2.2)"
+closed_findings: [A5-F1, A5-F2, A5-F3, A5-F4, A5-F5, A5-M1, A5-M2, A5-C1, CM-M1, CM-M2, CM-M3, CM-M4, CM-M5, A5-S2, A5-S3, A5-S4, CM-S1, CM-S2, CM-S3, CM-S4, CM-S5, CM-S6]
 loop_back_to: ""
 gap: ""
 style_notes:
-  - "A5-S1 partial rounding drift (0.01)"
-  - "A5-S5 A2 zero-standing description"
-  - "A5-S6 Q8 Reading B range rounded to 'about -2'"
-analyst_note: "Iteration 3, loop 2, the last permitted. A5-C1 is closed. Other income now carries two labelled readings everywhere it appears, and every figure re-derives from the A1 fulltexts. Reading A (Q2 FY26 item one-off): Rs 3.6-5.3 Cr a quarter lost, Q2 recurring pre-tax change +2.5 to +4.2. Reading B (item recurs yearly): about Rs 34 Cr a year lost, change +0.2 to -2.2, or -11.4 if seasonal. The Q8 answer and Q2 FY25 other income separate them; Q2 FY25 is outside this corpus and correctly marked ND (K17). Grep confirms no residual pairing of one reading's level with the other's gain. STYLE S3 and S4 are applied. No new non-STYLE error was found in the changed passages. Remaining notes are cosmetic: 0.01 rounding drift, A2 ledger wording and a rounded range in Q8 that came from A5's own replacement text. Across three passes A5 raised 8 non-STYLE findings and all 8 closed. The brief gate and coverage passed at every pass."
+  - "CM2-S1 recurring vs line wording in brief L1127"
+  - "CM2-S2 'balance-sheet gain' wording at L1180"
+  - "CM2-S3 brief qualifier and tier tags at L1134, L1137, L1159"
+  - "A5-S1, A5-S5, A5-S6 carried"
+analyst_note: "Concall pass re-audit, its one loop. All five MISSING findings are closed and re-check against the A1 fulltexts. The incentive now carries both readings everywhere, and an FY28 restart no longer claims to confirm Reading B. The Rs 70 Cr receivable is an asset conversion, not a positive. 'Almost flat ex-FX' keeps its base-year condition, with results:L299 cited. 'Closer to 23' is quoted as heard. Filed H1 capex is tested against the spoken FY27 envelope and asked in the new Q56. Every new number ties, coverage is unchanged at 643 / 991 / 589 IDs, and the brief gate passes. Three new wording notes are cosmetic and logged only. Across all passes A5 raised 13 non-STYLE findings and all 13 are closed. The review may go to the Notion save gate; operator approval of the payload is still required."

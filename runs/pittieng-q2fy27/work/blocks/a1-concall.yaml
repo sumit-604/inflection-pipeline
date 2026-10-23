@@ -1,0 +1,30 @@
+stage: A1-extractor
+company: "PITTIENG"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 11            # coverage unit = 5-minute blocks b0..b10 (00:00-50:30); source is ASR text, no pages
+formfeed_count: 0
+line_count: 769           # fulltext file lines; source file 734 lines
+unit_convention: "Crores"
+conversion_factor_to_cr: "Crores -> x1"
+text_layer_present: true  # plain text input; pdffonts not applicable
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100    # 11 of 11 blocks present
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/pittieng-q2fy27/extracted/pittieng-concall-q2fy27-fulltext.md"
+structured_path: "runs/pittieng-q2fy27/extracted/pittieng-concall-q2fy27-structured.md"
+structured_counts:
+  number: 176
+  entity: 50
+  forward: 60
+  date: 37
+  qualifier: 61
+  turn: 158               # extra tables: TURN 158, QUESTION 47
+  question: 47
+structured_id_range: "R001-R589"
+gate_a1: pass
+gap_note: ""              # source coverage gap (opening remarks missing) recorded in fulltext header, not an extraction gap

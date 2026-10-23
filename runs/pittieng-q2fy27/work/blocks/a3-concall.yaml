@@ -1,0 +1,91 @@
+stage: A3-forensics
+company: "PITTIENG"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/pittieng-q2fy27/work/forensics_concall_pittieng_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3C-01", check: "F6", line: "L132-L136", classification: "FORWARD-SIGNAL", implication: "Payables named as capex-cycle funding; filed payables 243.27 to 474.79 Cr (results:L273-L274); if LC-backed, net debt ~770 Cr not 538.68 Cr"}
+  - {id: "A3C-02", check: "F14", line: "L742-L748", classification: "AMBIGUOUS", implication: "Spoken H1 capex cash ~140 Cr vs filed 256.83 Cr (results:L310); FCF read differs by ~117 Cr"}
+  - {id: "A3C-03", check: "F6", line: "L61; L726; L751", classification: "AMBIGUOUS", implication: "17,000 MT castings guide re-based three times; sales basis needs 5,473 MT/qtr in H2 vs Q2 3,086 (presentation:L195); untestable until production data"}
+  - {id: "A3C-04", check: "F16", line: "L752; L558-L561; L423; L706-L710", classification: "FORWARD-SIGNAL", implication: "EBITDA/t dropped, new line added, castings utilisation to be re-cut, production numbers promised next call; tracker row 2 comparability breaks"}
+  - {id: "A3C-05", check: "F14", line: "L543; L712", classification: "AMBIGUOUS", implication: "3,198 = 24,600 x 52% / 4 [derived] vs 3,086 sold; utilisation does not reproduce on sales tonnage"}
+  - {id: "A3C-06", check: "F14", line: "L39; L42; L674-L675", classification: "AMBIGUOUS", implication: "Rs 4.61 Cr FX loss in other expenses not in deck or filing (deck FX gain 1.8 in finance cost, presentation:L255); ~80 bps of Q2 margin; recurrence unconfirmed"}
+  - {id: "A3C-07", check: "F6", line: "L454-L455", classification: "AMBIGUOUS", implication: "Rs 370 Cr EBITDA 'simply extrapolate' fails arithmetic: Q2x4 = 355.6 reported / 365.2 adjusted; clears only ex-FX"}
+  - {id: "A3C-08", check: "F6", line: "L316; L47; L50-L51; L440", classification: "FORWARD-SIGNAL", implication: "17%+ called sustainable at Q2 prices vs 15.8% printed; dated levers Jan-2027 and Q4 FY27; Q4 is the test"}
+  - {id: "A3C-09", check: "F6", line: "L254-L256; L235; L68-L70", classification: "FORWARD-SIGNAL", implication: "Maharashtra incentive nil in FY27, ~Rs 40 Cr/yr from FY28; explains other income collapse (results:L188) [INFERENCE]; non-operating FY28 step"}
+  - {id: "A3C-10", check: "F14", line: "L66; L238; L244", classification: "AMBIGUOUS", implication: "Rs 400 Cr is both incentive cap and eligible investment; 7-year sanction needs 57.1 Cr/yr vs 35-40 supportable; ~120 Cr may lapse [INFERENCE]"}
+  - {id: "A3C-11", check: "F6", line: "L679-L683; L685-L686", classification: "FORWARD-SIGNAL", implication: "~Rs 70 Cr incentive receivable in process, undated; ~13% net-debt cut if paid; SGST search undiscussed"}
+  - {id: "A3C-12", check: "F14", line: "L159-L163; L167-L168; L302; L499-L500", classification: "AMBIGUOUS", implication: "Funding flips between internal accruals and mix with debt; H1 pre-WC cash ~158 Cr vs capex 256.83 Cr; payables filled the gap"}
+  - {id: "A3C-13", check: "F6", line: "L153-L156; L356; L361-L362; L483-L484; L490-L493", classification: "FORWARD-SIGNAL", implication: "Bangalore capex 400 Cr FY28-29 became 450 Cr to FY31; committed 250-260 Cr L&B ~90% spent by ~Dec-2027; 125+325 vs 125+125 split unexplained"}
+  - {id: "A3C-14", check: "F6", line: "L734; L738; L404; L407-L408", classification: "FORWARD-SIGNAL", implication: "FY27 revenue 2,350-2,400 Cr at Q3 pricing (price-led); FY28 2,500 Cr memory guide implies +4-6% only; FY28 not restated"}
+  - {id: "A3C-15", check: "F14", line: "L515-L516; L705", classification: "AMBIGUOUS", implication: "82,000 MT doubled on 40,889 basis but named against 21,671 basis; zero slack on one basis with Q3 dip flagged"}
+  - {id: "A3C-16", check: "F14", line: "L416; L629-L630; L423", classification: "NEUTRAL-FACT", implication: "Analyst EBITDA/t 10% decline does not reproduce on restated data (~40.5k to ~41.0k/t) [derived]; do not carry to tracker"}
+  - {id: "A3C-17", check: "F6", line: "L656-L659", classification: "AMBIGUOUS", implication: "Traction+railway Q2 ~156 Cr (+2% YoY), H1 ~299 Cr (-6%) [derived]; export railway unsplit; tracker row 3 unreadable"}
+  - {id: "A3C-18", check: "F6", line: "L460; L471", classification: "CONFIRMATORY-NEGATIVE", implication: "Management guides export share stable to down, contradicting deck 'Increasing share of exports' (presentation:L515)"}
+  - {id: "A3C-19", check: "F6", line: "L372-L374", classification: "FORWARD-SIGNAL", implication: "FG overhang to liquidate in Q3; filed inventory build equal in Q1 and Q2 (-38.10, -38.13 Cr, results:L193); Q3 release is the test"}
+  - {id: "A3C-20", check: "F6", line: "L374-L377", classification: "AMBIGUOUS", implication: "Scrap rise = side-split yield from high value-added mix plus production; part of mix gain may leak to scrap"}
+  - {id: "A3C-21", check: "F6", line: "L205-L207; L307; L263", classification: "FORWARD-SIGNAL", implication: "Bangalore to 5-6 leased sites before own site; lease liabilities 113.92 Cr will rise; no state incentive"}
+  - {id: "A3C-22", check: "F6", line: "L596; L591; L601", classification: "FORWARD-SIGNAL", implication: "172,000 hours = 84.6% machining use [derived] ties deck 85%; ~3,500 MT/qtr machined ceiling to FY30 constrains sales-basis castings target [INFERENCE]"}
+  - {id: "A3C-23", check: "F7", line: "L392; L395-L396; L695-L697; L225; L293; L348", classification: "AMBIGUOUS", implication: "Data-centre, copper-winding and capex-commitment statements hedged both ways; Caterpillar DC housing start not named"}
+  - {id: "A3C-24", check: "F7", line: "L406; L519; L357-L358; L287", classification: "FORWARD-SIGNAL", implication: "Q3 FY27 softness pre-announced; FY27 EBITDA and lamination guides have no Q4 slack"}
+  - {id: "A3C-25", check: "F14", line: "L287-L289; L323", classification: "AMBIGUOUS", implication: "FY31 Rs 3,800 Cr = 850 MC + ~2,000 lamination leaves ~950 Cr unallocated"}
+  - {id: "A3C-26", check: "F14", line: "L127-L128; L413; L423; L60-L61; L344; L482", classification: "NEUTRAL-FACT", implication: "Minor ASR and basis conflicts logged in the register; call figures need a filed anchor"}
+  - {id: "A3C-27", check: "F17", line: "L30; L686; L763", classification: "AMBIGUOUS", implication: "20 checklist items silent in the recorded portion (net debt, LC, SGST search, tax, goodwill, export railway, FY28 numbers); coverage gap; 1 quarter"}
+  - {id: "A3C-28", check: "F17", line: "L488; L536-L540; L569", classification: "AMBIGUOUS", implication: "Tracker row 1 filed 538.68 > 491 with no management number; row 2 falsifier fires on sales basis, management offers production-equivalent 4,900 MT"}
+forward_signals: ["A3C-01", "A3C-04", "A3C-08", "A3C-09", "A3C-11", "A3C-13", "A3C-14", "A3C-19", "A3C-21", "A3C-22", "A3C-24"]
+ambiguous: ["A3C-02", "A3C-03", "A3C-05", "A3C-06", "A3C-07", "A3C-10", "A3C-12", "A3C-15", "A3C-17", "A3C-20", "A3C-23", "A3C-25", "A3C-27", "A3C-28"]
+commitments:
+  - {commitment: "Fuel and power cost pass-through (annual reset)", implied_date: "from Jan-2027", ref: "L47, L51", status_word: "initiated"}
+  - {commitment: "Fuel/power margin recovery", implied_date: "Q4 FY27", ref: "L50-L51", status_word: "initiated"}
+  - {commitment: "Steel inflation passed through quarterly", implied_date: "ongoing", ref: "L51-L53", status_word: "underway"}
+  - {commitment: "Employee-cost absorption, margin gain", implied_date: "from Q4 FY27", ref: "L437-L440, L675-L677", status_word: "initiated"}
+  - {commitment: "Sustainable blended margin 17%+ at Q2 prices; 18% potential", implied_date: "ongoing / FY31", ref: "L316, L330-L331", status_word: "stated"}
+  - {commitment: "Maharashtra incentive nil FY27; ~Rs 40 Cr/yr from FY28", implied_date: "FY28", ref: "L248-L249, L254-L256", status_word: "deferred"}
+  - {commitment: "Seek 9-year incentive recovery period", implied_date: "not dated", ref: "L71-L72, L246-L247", status_word: "in process"}
+  - {commitment: "Maharashtra receivable (~Rs 70 Cr, analyst figure) disbursement", implied_date: "not dated", ref: "L683", status_word: "in process"}
+  - {commitment: "Trade payables level sustained through capex cycle", implied_date: "4 years", ref: "L132-L136", status_word: "underway"}
+  - {commitment: "Rs 450 Cr capex ~150 Cr FY28, rest FY29-FY31", implied_date: "FY28-FY31", ref: "L153-L156", status_word: "board approved"}
+  - {commitment: "Rs 740 Cr programme complete", implied_date: "FY31", ref: "L285, L493", status_word: "underway"}
+  - {commitment: "Committed Rs 250-260 Cr land and building >90% spent in 18 months from 1-Jul", implied_date: "~Dec-2027 [INFERENCE]", ref: "L348, L361-L362, L496", status_word: "underway"}
+  - {commitment: "First-year capex Rs 250-300 Cr, then 100/125/150", implied_date: "FY27 onward", ref: "L355-L357", status_word: "stated"}
+  - {commitment: "Funding internal accruals; debt if demand faster", implied_date: "FY27-FY31", ref: "L159-L168, L499-L502", status_word: "stated"}
+  - {commitment: "Bangalore 5th and 6th lease sites then one owned site", implied_date: "before own site", ref: "L205-L207, L308", status_word: "stated"}
+  - {commitment: "Aurangabad remains largest lamination facility", implied_date: "post-capex", ref: "L189-L191", status_word: "stated"}
+  - {commitment: "Copper winding via outsourcing first", implied_date: "not dated", ref: "L225-L230", status_word: "exploring"}
+  - {commitment: "FY27 laminations 82,000 MT held", implied_date: "FY27", ref: "L404, L515-L523", status_word: "reaffirmed"}
+  - {commitment: "FY27 castings 17,000 MT (castings produced basis)", implied_date: "FY27", ref: "L61, L726", status_word: "reaffirmed (re-based)"}
+  - {commitment: "Q3 lamination dip; Q4 similar to or above Q2", implied_date: "Q3-Q4 FY27", ref: "L406, L517-L520", status_word: "guided"}
+  - {commitment: "Strong FY28 volume growth; modular adds from Q4", implied_date: "FY28", ref: "L407-L408", status_word: "guided"}
+  - {commitment: "FY27 EBITDA ~Rs 370 Cr on track", implied_date: "FY27", ref: "L455", status_word: "reaffirmed"}
+  - {commitment: "FY27 revenue Rs 2,350-2,400 Cr at Q3 pricing", implied_date: "FY27", ref: "L734-L739", status_word: "guided"}
+  - {commitment: "Finished-goods overhang liquidated", implied_date: "Q3 FY27", ref: "L373-L374", status_word: "promised"}
+  - {commitment: "Production numbers and cleaned-up utilisation incl. foundry", implied_date: "Q3 FY27 call", ref: "L752-L757", status_word: "promised"}
+  - {commitment: "Q1 FX figure via IR (SGA)", implied_date: "post-call", ref: "L40-L41", status_word: "promised"}
+  - {commitment: "FY31 revenue potential ~Rs 3,800 Cr at full utilisation", implied_date: "FY31", ref: "L287-L288", status_word: "conditional"}
+  - {commitment: "Exports grow; share stable to slightly down", implied_date: "3-4 years", ref: "L460-L461", status_word: "guided"}
+  - {commitment: "Top 5-7 customer groups remain major source", implied_date: "ongoing", ref: "L382-L383", status_word: "stated"}
+  - {commitment: "Closing focus: working capital, ongoing capex, machine components", implied_date: "FY27", ref: "L763", status_word: "stated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "ASR transcript, opening remarks missing; silences are coverage-qualified, so none is classed confirmatory-negative yet. The call matters for three reasons. First, management named supplier credit as the funding source for the four-year capex cycle (A3C-01). With H1 pre-WC cash about Rs 158 Cr against Rs 257 Cr filed capex (A3C-12), the LC-acceptance question (Q1) now decides whether net debt is Rs 539 Cr or about Rs 770 Cr. Second, the castings guide was re-based to a production measure with no published series just as tracker row 2 fires on sales tonnage. Machining at 85% caps machined output (A3C-22), so the bear reading is a quiet walk-back, not definitions. Third, other income: the Maharashtra incentive is nil in FY27 and returns at about Rs 40 Cr in FY28. That is a non-operating EPS step Role 1 must keep on one basis. Spoken capex (Rs 140 Cr) and the Rs 4.61 Cr FX loss in other expenses do not appear in the filing; both need IR confirmation. Q1-Q32: 1 answered, 7 partial, 1 evaded, 23 unasked."

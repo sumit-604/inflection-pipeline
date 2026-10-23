@@ -1,0 +1,71 @@
+stage: A3-forensics
+company: "PITTIENG"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/pittieng-q2fy27/work/forensics_results_pittieng_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: FINDING
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "202", classification: "NEUTRAL-FACT", implication: "Extraordinary items line is an Ind AS 1 template relic; nothing can land there"}
+  - {id: "A3-02", check: "F1", line: "200", classification: "AMBIGUOUS", implication: "Exceptional nil through merger quarter; scheme costs not shown; SGST search (8-Oct-2026) is the H2 candidate"}
+  - {id: "A3-03", check: "F1", line: "192, 216", classification: "NEUTRAL-FACT", implication: "Traded goods and cash-flow hedge accounting both started in H2 FY26; hedge reserve recycles to P&L"}
+  - {id: "A3-04", check: "F2", line: "358-368", classification: "AMBIGUOUS", implication: "Ex-subsidiary PAT share of old-PEL PAT 12.7% Q2 FY26 to 41.6% Q1 FY27 (+28.9 pp); split no longer disclosed after merger"}
+  - {id: "A3-05", check: "F4", line: "185, 364", classification: "AMBIGUOUS", implication: "Restated comparatives (17.2% FY26 PAT, 29.4% Q1 FY27 PAT) have unstated assurance; YoY base rests on them"}
+  - {id: "A3-06", check: "F5", line: "155-170", classification: "NEUTRAL-FACT", implication: "New EoM on amalgamation, conclusion unmodified; prior-quarter verbatim diff not possible, recheck scope in Q3"}
+  - {id: "A3-07", check: "F6", line: "51, 447", classification: "FORWARD-SIGNAL", implication: "Rs 450 Cr capex to FY2030-31, 49% of net worth, debt/accrual split not given, on top of Rs 257 Cr H1 capex"}
+  - {id: "A3-08", check: "F6", line: "424-425", classification: "AMBIGUOUS", implication: "Machining expansion to 10,80,000 hrs by Q1 2029-30; possible one-year slip vs Q1 FY29 in memory"}
+  - {id: "A3-09", check: "F6", line: "348", classification: "NEUTRAL-FACT", implication: "Amalgamation milestone completed, effective 23-Sep-2026"}
+  - {id: "A3-10", check: "F8", line: "206", classification: "NEUTRAL-FACT", implication: "Earlier-years tax credit recurs each Q2 (88.05, 106.75); exclude from run-rate"}
+  - {id: "A3-11", check: "F8", line: "205-208", classification: "FORWARD-SIGNAL", implication: "H1 ETR 22.20% vs 25.17% (297 bps shield); Q2 underlying 27.07%; H2 ETR step-up risk vs 25% guide"}
+  - {id: "A3-12", check: "F9", line: "212, 218", classification: "AMBIGUOUS", implication: "Actuarial loss 154.37 in Q2 after gains; OCI swing exceeds FY26 total; verify assumptions at AR"}
+  - {id: "A3-13", check: "F10", line: "385-386, 492-493", classification: "AMBIGUOUS", implication: "Anti-dilutive claim vs in-the-money options at 23.03% discount; trust may issue new shares; PBO conditions undisclosed"}
+  - {id: "A3-14", check: "F10", line: "488-490", classification: "AMBIGUOUS", implication: "Market 29.9% above exercise price called broadly comparable; grant-1 market price NOT FOUND"}
+  - {id: "A3-15", check: "F11", line: "233-241, 375", classification: "AMBIGUOUS", implication: "No goodwill line in restated BS vs ~Rs 130 Cr in memory; restated assets Rs 54.4 Cr below reported; equity recon NOT FOUND"}
+  - {id: "A3-16", check: "F12", line: "244, 274, 304", classification: "AMBIGUOUS", implication: "Payables +23,151.68 fund whole WC release; inventory up 8,378.91; computed net debt Rs 538.7 Cr vs Rs 491 Cr tracker"}
+  - {id: "A3-17", check: "F12", line: "395, 399", classification: "AMBIGUOUS", implication: "Outside-India assets -54.8% YoY while export revenue +14.2%; factoring or regrouping?"}
+  - {id: "A3-18", check: "F12", line: "195, 234, 241, 310", classification: "FORWARD-SIGNAL", implication: "CWIP +141%, capital advances +252%; finance cost -27.8% QoQ suggests interest capitalisation; D&A and interest step up on commissioning"}
+  - {id: "A3-19", check: "F13", line: "66, 584", classification: "AMBIGUOUS", implication: "New Deputy CEO layer, no term stated; succession or bandwidth for capex build"}
+  - {id: "A3-20", check: "F13", line: "161, 640-641", classification: "AMBIGUOUS", implication: "Name match Chaitra Sundaresh / Bagadia Chaitra [INFERENCE]; ask for any link to former owners"}
+  - {id: "A3-21", check: "F14", line: "385, 353", classification: "NEUTRAL-FACT", implication: "Note 5 says Company and its subsidiaries; Note 4 says no subsidiaries"}
+  - {id: "A3-22", check: "F14", line: "185, 364, 374", classification: "NEUTRAL-FACT", implication: "FY26 labelled Audited and Un-Audited for the same period"}
+  - {id: "A3-23", check: "F14", line: "392", classification: "NEUTRAL-FACT", implication: "Segment column labelled Half-Year Ended 31.03.2026 holds full-year values"}
+  - {id: "A3-24", check: "F14", line: "558-562, 302", classification: "AMBIGUOUS", implication: "Grant-1 date 13-Mar-2026 conflicts with SBP expense 547.59 in H1 FY26; likely 2025"}
+  - {id: "A3-25", check: "F14", line: "318, 296, 298", classification: "AMBIGUOUS", implication: "Lease principal payment printed as inflow and foots so; CFO or WC line may be overstated by 1,156.30"}
+  - {id: "A3-26", check: "F14", line: "424-425, 432-439", classification: "AMBIGUOUS", implication: "Capacity header calls 10,80,000 an addition; ties only as level; Rs 450 Cr adds 2,34,000 hrs and 52,000 MT"}
+  - {id: "A3-27", check: "F14", line: "191-198, 398", classification: "NEUTRAL-FACT", implication: "Expense casting gap 0.20 (Q2, H1) and 0.02 segment-asset gap; immaterial, possible transcription artefact"}
+  - {id: "A3-28", check: "F15", line: "351-353", classification: "NEUTRAL-FACT", implication: "PIPL and DFPL dissolved; consolidation ends; tracker basis to standalone; foundry visibility lost"}
+forward_signals: ["A3-07", "A3-11", "A3-18"]
+ambiguous: ["A3-02", "A3-04", "A3-05", "A3-08", "A3-12", "A3-13", "A3-14", "A3-15", "A3-16", "A3-17", "A3-19", "A3-20", "A3-24", "A3-25", "A3-26"]
+commitments:
+  - {commitment: "Interim dividend Rs 2/- per share, record date 2-Nov-2026", implied_date: "on or before 21-Nov-2026", ref: "lines 42-49", status_word: "initiated"}
+  - {commitment: "Capex Rs 450 Cr incl. Karnataka lamination consolidation", implied_date: "phased to FY 2030-31", ref: "lines 51-53, 441-445", status_word: "initiated"}
+  - {commitment: "Post-proposed capacity 1,60,000 MT sheet metal, 13,14,000 machine hours", implied_date: "FY 2030-31", ref: "lines 436-439", status_word: "initiated"}
+  - {commitment: "Machining expansion to 10,80,000 machine hours", implied_date: "Q1 2029-30", ref: "lines 424-425", status_word: "underway"}
+  - {commitment: "Capex financing from internal accruals and debt, no split", implied_date: "with capex", ref: "line 447", status_word: "initiated"}
+  - {commitment: "Amalgamation of PIPL and DFPL into PEL", implied_date: "effective 23-Sep-2026", ref: "lines 345-353", status_word: "completed"}
+  - {commitment: "ESOP Grant 2, 5,77,500 options at Rs 736.72, PBO 25% at Year 2", implied_date: "first vest about Oct-2027; schedule to about Oct-2034", ref: "lines 55-57, 515-556", status_word: "initiated"}
+  - {commitment: "Trust route: secondary purchase or fresh issue to Trust", implied_date: "undated", ref: "lines 509-512", status_word: "initiated"}
+  - {commitment: "Agarwala to Deputy CEO; Sundaresh to COO M&G", implied_date: "22-Oct-2026", ref: "lines 59-69", status_word: "completed"}
+  - {commitment: "Patil promoted to Deputy COO, joins SMP", implied_date: "22-Oct-2026", ref: "lines 71-74", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Restated standalone equals the former consolidated perimeter: Q1 FY27 restated revenue Rs 529.1 Cr matches Notion's Rs 529 Cr. The load-bearing forensic fact is cash. H1 CFO Rs 323.0 Cr rests on trade payables up Rs 231.5 Cr while inventory rose Rs 83.8 Cr. Computed net debt (borrowings less cash, other bank balances, current investments) is Rs 538.7 Cr against the Rs 491 Cr tracker line, and Rs 552.1 Cr at Mar-26 on the same basis. If the payables are LC acceptances (pending operator ruling), debt-like net debt is higher. Q2 PBT rose Rs 9.0 Cr QoQ while finance cost fell Rs 6.3 Cr as CWIP more than doubled; capitalised interest may explain most of the rise. Q2 ETR 25.1% hides a 27.1% rate before the earlier-years credit. After the merger, the former subsidiaries' profit (41.6% of old-PEL PAT in Q1 FY27) cannot be separated. Outside India revenue Rs 154.3 Cr breaks the Rs 135-139 Cr plateau, but it is total exports, not railway only. Castings volume and SGST status: NOT FOUND in this filing. No prior-quarter fulltext was passed, so F5/F15 rest on Note 4 only."

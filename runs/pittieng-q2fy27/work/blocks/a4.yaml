@@ -1,0 +1,99 @@
+stage: A4-analyst
+company: "PITTIENG"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+fixes:
+  - {id: "A5-F1", type: FACTUAL, fix: "Margin slip attributed to gross margin (-58 of -89 bps, ~65%); staff cost +26 bps second", where: "Step 2 diag 2; Brief part 1"}
+  - {id: "A5-F2", type: FACTUAL, fix: "-98.64 relabelled FCF before all WC change; added FCF ex payables rise -165.33 (BS-delta proxy)", where: "Step 5 table; P2-a; Brief part 1"}
+  - {id: "A5-F3", type: FACTUAL, fix: "Goodwill lift corrected to ROE +16.0%, ROCE ~+8.8% (+8.2% with leases); 13.8% is the equity cut", where: "Point 3 item 2; P1-a"}
+  - {id: "A5-F4", type: FACTUAL, fix: "Q16 reworded: sign fix keeping the cash tie raises CFO or cuts investing outflow by Rs 11.56 Cr; cannot overstate CFO", where: "Q16"}
+  - {id: "A5-F5", type: FACTUAL, fix: "24,600 MT castings is pre-programme capacity; +46% step to 36,000 MT ahead (~35.5% at Q2 output); N10 added", where: "Step 3; Step 5 Q3; T2; 5.5B; 6D; 8A-W; 8C; Q10; N10; Brief"}
+  - {id: "A5-M1", type: MISSING, fix: "OI counter-reading: FY24-FY26 Rs 38.8-48.5 Cr/yr, baseline Rs 5.7-7.4 Cr/qtr; OI bridge row split spike -15.63 / baseline -3.59; recurring pre-tax gain ~+2.5 to +4.2; Q8 bear made main reading", where: "Step 2 diag 6; Step 4; E-a; Q8; Brief"}
+  - {id: "A5-M2", type: MISSING, fix: "Deposits caveat: other bank Rs 42.65 Cr, H1 placement Rs 15.28 Cr under financing (results:L324); lien-marked net debt Rs 581.33 Cr vs Rs 579.38 Cr (+1.95); new Q32", where: "Step 5 table and Q4; T1 caveat (e); 6A; 6B; P2-b; Q32; K7; Brief"}
+docs_merged: [results, presentation]
+ledger_reconciliation:
+  notes: 7
+  turns: 0
+  slides: 32
+  all_reviewed: true
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3-18, A3-19, A3-20, A3-21, A3-22, A3-23, A3-24, A3-25, A3-26, A3-27, A3-28, A3P-01, A3P-02, A3P-03, A3P-04, A3P-05, A3P-06, A3P-07, A3P-08, A3P-09, A3P-10, A3P-11, A3P-12, A3P-13, A3P-14, A3P-15, A3P-16, A3P-17, A3P-18, A3P-19, A3P-20, A3P-21, A3P-22]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "WATCHLIST (neutral placeholder; Mental Model drafted, not signed; no Role 1)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q1 FY26", gap_pct_of_restated: 23.2, gap_pct_of_old_pel: 30.2, ref: "results:L360,L367 derived"}
+  - {period: "Q2 FY26", gap_pct_of_restated: 11.3, gap_pct_of_old_pel: 12.7, ref: "results:L360"}
+  - {period: "H1 FY26", gap_pct_of_restated: 15.6, gap_pct_of_old_pel: 18.5, ref: "results:L367"}
+  - {period: "FY26", gap_pct_of_restated: 17.2, gap_pct_of_old_pel: 20.8, ref: "results:L367"}
+  - {period: "Q1 FY27", gap_pct_of_restated: 29.4, gap_pct_of_old_pel: 41.6, ref: "results:L360"}
+  - {period: "Q2 FY27", gap_pct_of_restated: "ND", gap_pct_of_old_pel: "ND", ref: "results:L353 no subsidiaries"}
+questions_for_management:
+  - {q: "What rupee amount of the Rs 474.8 Cr trade payables is LC acceptances or buyer's credit?", from_finding_id: "A3-16; A3P-19"}
+  - {q: "What castings and machined tonnage do you expect for Q3 FY27?", from_finding_id: "A3P-04"}
+  - {q: "Was Q1 FY27 castings tonnage restated from 3,191 MT to 2,968 MT (yes/no)?", from_finding_id: "A3P-22"}
+  - {q: "What amount of the Rs 136.1 Cr goodwill was adjusted against reserves, and which reserve?", from_finding_id: "A3-15; A3P-06"}
+  - {q: "On which equity base were FY26 ROE 12.5%, ROA 5.7% and D/E 0.7 computed?", from_finding_id: "A3P-07"}
+  - {q: "What peak standalone net debt, and in which year, during the Rs 740 Cr programme?", from_finding_id: "A3-07; A3P-02"}
+  - {q: "How much of the Rs 290 Cr programme was spent by 30-Sep-2026?", from_finding_id: "A3P-02"}
+  - {q: "What was the source and amount by item of other income (Q2 FY26 Rs 21.3 Cr; FY24-FY26 Rs 38.8-48.5 Cr a year)?", from_finding_id: "A3P-15; A5-M1"}
+  - {q: "How much borrowing cost was capitalised in H1 FY27 against CWIP of Rs 120.3 Cr?", from_finding_id: "A3-18; A3P-14"}
+  - {q: "Is castings 36,000 MT now due by FY31, and what was the earlier date?", from_finding_id: "A3-08; A3P-03"}
+  - {q: "Is 10,80,000 machining hours a level or an addition, and what does the Rs 450 Cr add in hours and MT?", from_finding_id: "A3-26"}
+  - {q: "What was export railway revenue in Q2 FY27 within outside-India revenue of Rs 154.3 Cr?", from_finding_id: "A3P-18; A3P-21"}
+  - {q: "Were export receivables factored or discounted at 30-Sep-2026, and for how much?", from_finding_id: "A3-17"}
+  - {q: "What effective tax rate do you expect for H2 FY27?", from_finding_id: "A3-11"}
+  - {q: "Is the 68.7% rise in scrap tonnage from yield loss, traded scrap, or a definition change?", from_finding_id: "A3P-20"}
+  - {q: "Is the Rs 5.78 Cr lease principal an outflow, and which line (CFO or investing) carries the offsetting Rs 11.56 Cr?", from_finding_id: "A3-25"}
+  - {q: "Will you disclose castings and Karnataka lamination results separately after the merger (yes/no)?", from_finding_id: "A3-04"}
+  - {q: "Which auditor reviewed the PIPL and DFPL figures in the restated comparatives?", from_finding_id: "A3-05"}
+  - {q: "Is Shri Chaitra Sundaresh a former shareholder of Bagadia Chaitra, with any earn-out outstanding (yes/no)?", from_finding_id: "A3-20; A3P-08"}
+  - {q: "Confirm the ESOP grant-1 date: 13-Mar-2026 or 13-Mar-2025?", from_finding_id: "A3-24"}
+  - {q: "How many options are outstanding, and will grant 2 use trust purchases or new shares?", from_finding_id: "A3-13"}
+  - {q: "What was the market price at the grant-1 date?", from_finding_id: "A3-14"}
+  - {q: "Is the ESOP add-back to Adjusted PAT gross or net of the DTA?", from_finding_id: "A3P-11"}
+  - {q: "Will trend charts show reported PAT beside adjusted PAT (yes/no)?", from_finding_id: "A3P-16"}
+  - {q: "Has the 8-Oct-2026 SGST search led to any demand or deposit, and how much?", from_finding_id: "A3-02"}
+  - {q: "Where are amalgamation scheme costs booked, and how much were they?", from_finding_id: "A3-02"}
+  - {q: "Is the Deputy CEO a designated successor (yes/no), and what is the term?", from_finding_id: "A3-19"}
+  - {q: "When did Shri Y B Sahgal last hold an executive role at the company?", from_finding_id: "A3P-09"}
+  - {q: "Did actuarial assumptions change in Q2 on the merger (yes/no)?", from_finding_id: "A3-12"}
+  - {q: "What is FY23 gross margin on the FY24 cost classification?", from_finding_id: "A3P-17"}
+  - {q: "What share of the 3,086 MT castings and machined sold in Q2 was cast in-house?", from_finding_id: "A3P-04"}
+  - {q: "Of the Rs 42.65 Cr other bank balances, how much is margin money or lien-marked against LCs or borrowings?", from_finding_id: "A3-16; A5-M2"}
+monitorables:
+  - {item: "Q2 FY27 earnings call; ask Q1 with Q32, Q2, Q4", implied_date: "2026-10-23 14:00 IST", source_ref: "presentation:L33-L34"}
+  - {item: "Tracker next check; T1/T2/T3 outcomes via approval gate", implied_date: "2026-10-24", source_ref: "notion-context"}
+  - {item: "Interim dividend record date", implied_date: "2026-11-02", source_ref: "results:L44"}
+  - {item: "Interim dividend payment, about Rs 7.4-7.5 Cr", implied_date: "on or before 2026-11-21", source_ref: "results:L47"}
+  - {item: "SGST search outcome", implied_date: "undated; check at Q3 filing", source_ref: "A3-02; notion-context"}
+  - {item: "Q3 FY27 results: castings tonnage (bull >=4,600 MT, bear <=3,086 MT), export railway split, other income run-rate, Caterpillar housings", implied_date: "by 2027-02-14 [INFERENCE Reg 33]", source_ref: "Step 8C; presentation:L195"}
+  - {item: "FY27 audited results: net debt vs Rs 491 Cr, lien status of deposits, payable days, inventory vs Rs 300 Cr", implied_date: "by 2027-05-30 [INFERENCE Reg 33]", source_ref: "Step 5; T1; results:L324"}
+  - {item: "FY27 Annual Report: goodwill reserve entry, related parties, ESOP note, actuarial assumptions, other income note, restricted bank balances", implied_date: "about 2027-07 to 2027-08 [INFERENCE]", source_ref: "A3-12; A3-15; A3P-06; A5-M1; A5-M2"}
+  - {item: "Q1 FY28 results: castings run-rate, Rs 450 Cr phasing, ETR", implied_date: "by 2027-08-14 [INFERENCE Reg 33]", source_ref: "results:L51-L53"}
+  - {item: "Rs 450 Cr capex and Karnataka lamination consolidation", implied_date: "phased to FY2030-31", source_ref: "results:L51-L53, L441"}
+  - {item: "Machining to 10,80,000 hours", implied_date: "Q1 2029-30", source_ref: "results:L424-L425"}
+  - {item: "Capacity to 1,60,000 MT sheet metal, 36,000 MT castings, 13,14,000 hours", implied_date: "by FY31", source_ref: "presentation:L125-L136"}
+  - {item: "Land acquisition Hyderabad and Bengaluru; interim leased capacity", implied_date: "undated", source_ref: "presentation:L139-L143"}
+  - {item: "ESOP grant 2 first vesting (PBO 25%)", implied_date: "about 2028-10", source_ref: "results:L538-L540"}
+flags:
+  - "Net-debt tracker falsifier met: Rs 538.68 Cr computed vs Rs 491 Cr; H1 WC release funded by payables +Rs 231.52 Cr; Rs 581.33 Cr and rising if other bank balances are lien-marked"
+  - "Castings tracker falsifier met: 3,086 MT vs ~4,600 MT (67.1%); 52% utilisation on pre-programme capacity; +46% castings step still ahead"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION; FCF before WC Rs -98.64 Cr, FCF ex payables rise ~Rs -165.33 Cr H1"
+  - "Goodwill Rs 136.1 Cr removed in restatement; FY26 ratios on goodwill-inclusive base; do not credit mechanical ROE (+16.0%) / ROCE (~+8.8%) lift"
+  - "Other income baseline Rs 38.8-48.5 Cr/yr (FY24-FY26) absent in FY27; source NOT FOUND; recurring pre-tax gain ~+2.5 to +4.2"
+  - "Restated comparatives (17.2% of FY26 PAT, 29.4% of Q1 FY27 PAT) carry unstated assurance; EoM on Note 4"
+  - "Former-subsidiary profit no longer separable from Q2 FY27"
+  - "Rs 450 Cr new capex (Rs 740 Cr total) with no debt/accrual split"
+  - "Export railway split not disclosed; T3 indeterminate; pending operator ruling"
+  - "Disclosure drafting cluster incl. grant-1 date contradiction and lease principal sign"
+  - "Governance inferences: COO M&G name match to Bagadia Chaitra; independent director former executive role; board at 50% floor"
+  - "SGST search: filing silent"
+  - "Role 5 deferred: concall leg after 23-Oct-2026 call"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar-relevant facts flagged"
+  - "Tracker has one external downstream signal; Role 5.5 reopening suggested"
+plain_language_brief_included: true
+analyst_note: "Loop 1 applied seven A5 fixes. Operations grew: revenue +21.1%, core PBT +32.6%. The -15.5% PAT print is mostly the Q2 FY26 other-income spike, but a Rs 38.8-48.5 Cr a year other-income baseline is also gone, so the recurring pre-tax gain is about +2.5 to +4.2 Cr. Cash did not improve: net debt Rs 538.7 Cr is above the Rs 491 Cr line, Rs 581.3 Cr and rising if deposits are lien-marked; FCF ex the payables rise is about Rs -165 Cr. Castings sold 3,086 MT at 52% of pre-programme capacity, with a +46% castings step still ahead. Cross-document calls stand: finance-cost fall is mostly FX; grant 1 read as March 2025; goodwill removal lifts ROE +16.0% and ROCE about +8.8% mechanically; Q1 castings 2,968 MT. Deck and filing agree on every primary line. Verdict PROCEED WITH FLAGS: cash INDETERMINATE-WITH-DIRECTION caps it at PROCEED WITH CAVEATS or below, and two tracker falsifiers are met."
+review_path: "runs/pittieng-q2fy27/work/review_pittieng_q2fy27.md"

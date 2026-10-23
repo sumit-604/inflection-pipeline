@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "PITTIENG"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/pittieng-q2fy27/work/ledger_presentation_pittieng_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 18
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 67
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 32
+  slide_numbers: 743
+flags_raised: [ZERO_STANDING, LAYOUT_SCRAMBLED, CHART_ASSIGNMENT_BY_POSITION, PIE_ORDER_BY_LEGEND_UNVERIFIED, TITLE_MISMATCH, RESTATED]
+ids_in_structured: 991
+ids_referenced: 991
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Presentation IDs restart at R001 and are separate from the results ledger. Slide 2 carries two period labels: R839 says Q1FY27, R840 says Q2 & H1FY27 (likely text-layer overlay, A3 to confirm). All 18 ZERO_STANDING rows sit on slides 27-28 (ESOP cost FY24/FY23; investment property, goodwill, intangible CWIP, investments, equity-instrument lines): template signals. Scrambled-layout slides: 7, 9, 10, 15, 22, 23, 25, 27, 28, 29. Position-assigned chart slides: 6, 8, 30, 31. Pie slide 16 order unverified (32 value rows). DROPPED_SLIDE and ENTITY_CHANGE not assessable: no prior deck supplied. Footers not captured by A1."

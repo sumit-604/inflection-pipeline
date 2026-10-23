@@ -1,0 +1,25 @@
+# RUN LOG — PITTIENG Q2 FY27 (/run-quarterly), 2026-10-23
+
+- Checkout guard: git fetch origin main OK; diff over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md empty. PASS.
+- Protocols present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md, Document_Review_Protocol_v1_1.md.
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm (poppler 25.07), tesseract at C:\Program Files\Tesseract-OCR\ (not on PATH). PASS.
+- Sources (BSE AttachLive, downloaded 2026-10-23 ~12:25 IST; copies in C:\ConcallPipeline\Daily Concall Intelligence\Q2 FY27 Results\24 Pitti Engineering\):
+  - inputs/Pitti_Q2FY27_Results_Reg33_BoardOutcome_22Oct2026.pdf (BSE bee9e0bc-5bf9-4893-a651-01c71600551a.pdf, 15 pp, letter dated 22-Oct-2026). Class: RESULTS (Reg 33 marker p1, limited review report p3). Superset of the 8-page Board Outcome filing 9e6f8f12 (its pp3-8 = this file's pp10-15).
+  - inputs/Pitti_Q2FY27_Investor_Presentation_22Oct2026.pdf (BSE 7122b8e7-f5b6-4e2c-bfdd-b3ce9da902bc.pdf, 32 pp, cover letter dated 22-Oct-2026). Class: PRESENTATION (cover letter + slide structure).
+  - Not in --docs (saved to the company folder only): press release (4 pp), capex Rs 450 Cr Reg 30 (2 pp), SMP re-designation (4 pp), ESOP grant 2 (3 pp), dividend letter (1 p), concall intimation 16-Oct (2 pp). The capex, SMP, ESOP and dividend items are also inside the Board Outcome in the results file.
+- Concall: scheduled 23-Oct-2026 2:00 PM IST. Run started ~12:30 IST, before the call. No recording, no transcript. Concall leg NOT RUN; follow-up.
+- Notion: page fetched live (read only). Context written to work/notion-context.md. No Notion write (operator instruction for this session).
+- Results p3 (auditor report) text layer shows doubled-glyph artefacts ("IIndependent"); flagged to A1.
+- A1 results: gate PASS, 15/15 pages, 643 rows, fulltext 696 lines. Pages 5-9 are scanned images under a garbled text layer; A1 transcribed the P&L, balance sheet, cash flow, notes and segment table BY EYE from rendered page images (tesseract table output noisy). Page 3 OCR. Units Rs lakhs x0.01. Standalone only (merger effective 23-Sep-2026, appointed 01-Apr-2026). FLAG: by-eye transcription of the core financial pages is a residual extraction risk; A5 checks internal arithmetic.
+- A2 results: gate PASS. Count test notes 7/7, line items 126/126, zero-standing 35/35, agenda 6/6, auditor paras 5/5, entities 42/42; orphans 0 of 643. Cost check: A2 75,208 tok < A1 120,404 tok. PASS.
+- A3 results: gate PASS. F1-F17 all statused (PASS 2, FINDING 13, N.A. 2); 28 findings (3 forward, 15 ambiguous, 10 neutral).
+- A1 presentation: gate PASS, 32/32 pages, text-only, 991 rows (R001-R991), fulltext 908 lines. Layout-scrambled tables pp7,9,10,27,28,29 mapped via -raw order; chart values by position pp6,8,16,30,31 flagged. Row IDs restart at R001 per document; downstream cites as results:R### / presentation:R###.
+- A2 presentation: gate PASS. Slides 32/32; numbers 743, entities 67, forward 24, dates 81, footnotes 76 match; orphans 0 of 991.
+- A3 presentation: gate PASS. PASS 2, FINDING 8, N.A. 7; 22 findings (2 forward, 14 ambiguous). Deck P&L/BS/CF ties to the filing.
+- A4 protocol scope: FULL QUARTER with results filing, no concall. Passed Role 4 (Quarterly_Results_Review_Protocol_v1_4.md) only. Role 5 needs a concall; it is deferred to the concall leg after the 23-Oct call. Presentation management claims feed Role 4.
+- A4: review written; protocol verdict PROCEED WITH FLAGS; 31 Q-for-M rows.
+- A5 iteration 1: INCOMPLETE. FACTUAL 5, MISSING 2, CONTRADICTION 0, STYLE 5. All fixes routed to A4. Correction loop iteration 1 of 1 started.
+- A4 loop iteration 1: 7 fixes applied (A4 loop tokens ~69,921).
+- A5 re-audit (iteration 2): INCOMPLETE. All 7 iteration-1 findings closed. One NEW open item: CONTRADICTION A5-C1 (two definitions of the other-income 'baseline' introduced by the M1 fix; wording only; replacement text in audit section R2). STYLE S1 (partial), S3-S5 logged.
+- LOOP CAP reached (1 of 1). Orchestrator does NOT run a second iteration. Operator is away and the session brief says not to stop and ask; A5-C1 goes to the operator as an open item. Notion save gate (A5 COMPLETE) not met; payload saved for review only.
+- Close: session-cost.md and notion-payload.md written. No Notion write. Commit on branch claude/quarterly-pittieng-q2fy27-3fc1e6, not pushed.

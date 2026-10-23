@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "PITTIENG"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/pittieng-q2fy27/work/ledger_results_pittieng_q2fy27.md"
+counts:
+  notes: 7
+  line_items: 126
+  zero_standing: 35
+  agenda_items: 6
+  auditor_paras: 5
+  entities: 42
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, RESTATED, FOOTNOTE_UNRESOLVED, ARITH_CHECK]
+ids_in_structured: 643
+ids_referenced: 643
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Standalone filing, no consolidation list; ENTITY_CHANGE rests on Note 4 and the EoM (PIPL and DFPL dissolved, effective 23-Sep-2026), no prior ledger was supplied. ZERO_STANDING: 35 value rows across 13 table lines (exceptional, extraordinary, change in FV of investment, CWIP-intangible, stock-in-trade, hedge, ESOP trust proceeds) plus 3 Nil ESOP vesting cells. ARITH_CHECK for A3: Annexure 1 capacity table post-capacity figures (R556, R558) do not equal existing plus on-going addition (R559-R562), and R560 is NA. Unresolved reads: auditor report day (R062), UDIN (R064), R502 column label, R577 scrambled text. Board meeting ran 40 minutes for six items including Rs 450 cr capex."

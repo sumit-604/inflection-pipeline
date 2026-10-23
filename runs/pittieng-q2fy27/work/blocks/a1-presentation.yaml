@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "PITTIENG"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 32
+formfeed_count: 32
+line_count: 908
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/pittieng-q2fy27/extracted/pittieng-presentation-q2fy27-fulltext.md"
+structured_path: "runs/pittieng-q2fy27/extracted/pittieng-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 743
+  entity: 67
+  forward: 24
+  date: 81
+  qualifier: 76
+structured_id_range: "R001-R991"
+gate_a1: pass
+gap_note: ""

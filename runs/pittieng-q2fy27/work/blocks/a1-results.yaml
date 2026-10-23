@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "PITTIENG"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 15
+formfeed_count: 15
+line_count: 696
+unit_convention: "Lakhs (Rs in lakhs, pp5-9); capex on pp1,10 stated in Rs crores"
+conversion_factor_to_cr: "Lakhs -> x0.01; Crores -> x1"
+text_layer_present: true
+extraction_mode: text-only  # pp1,2,4,10-15 pdftotext -layout; OCR fallback on pp3,5-9 (garbled/doubled text layers)
+render_candidates: []
+rendered_pages: ["p3 doubled-glyph text layer (OCR text used)", "p5 P&L garbled text layer", "p6 balance sheet garbled", "p7 cash flow garbled", "p8 notes and reconciliation garbled", "p9 reconciliation, segment table garbled (pp5-9 numbers transcribed from page image because tesseract table output was noisy)"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (quarter and half-year ended 30-Sep-2026); STANDALONE, prior periods restated for amalgamation"
+fulltext_path: "runs/pittieng-q2fy27/extracted/pittieng-results-q2fy27-fulltext.md"
+structured_path: "runs/pittieng-q2fy27/extracted/pittieng-results-q2fy27-structured.md"
+structured_counts:
+  number: 501
+  entity: 42
+  forward: 20
+  date: 35
+  qualifier: 45
+structured_id_range: "R001-R643"
+gate_a1: pass
+gap_note: ""

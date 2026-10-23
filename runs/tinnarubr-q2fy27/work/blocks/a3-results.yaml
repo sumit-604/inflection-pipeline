@@ -1,0 +1,57 @@
+stage: A3-forensics
+company: "TINNARUBR"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/tinnarubr-q2fy27/work/forensics_results_tinnarubr_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: FINDING
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: PASS
+  F12: PASS
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "394, 553, 1001", classification: "AMBIGUOUS", implication: "New non-current loan 95.27 from nil; survives consolidation, so borrower is outside the subsidiary set; counterparty and related-party status unknown"}
+  - {id: "A3-02", check: "F1", line: "266-267", classification: "NEUTRAL-FACT", implication: "Interim OCI never marked; FY26 FVOCI loss 220.51 (10.9% of 2,014.46); FY27 year-end mark on 2,016.46 unbooked"}
+  - {id: "A3-04", check: "F2", line: "263, 884", classification: "FORWARD-SIGNAL", implication: "CO-SA PAT gap -4.63% to +6.09% of SA PAT YoY (+10.72 pp); overseas subs swung from (44.65) to +82.22; all unreviewed"}
+  - {id: "A3-05", check: "F2", line: "249, 853", classification: "AMBIGUOUS", implication: "Intra-group trade flipped: FY26 parent bought from subs, FY27 parent sells to subs (about 421 eliminated in Q2); sub profit jump may be transfer-price driven"}
+  - {id: "A3-06", check: "F2", line: "549, 1155, 1162", classification: "AMBIGUOUS", implication: "H1FY26 CO cash flow carries about 2,416 of capex in operating other assets; CO CFO YoY swing distorted; use SA 2,068.30 to 6,822.38"}
+  - {id: "A3-07", check: "F4", line: "1365-1376", classification: "AMBIGUOUS", implication: "100% of subs plus JV unreviewed; Q2 gross 118.33 = 6.94% of CO PAT, up from 3.39% QoQ; sub PAT 22.56 to 93.35; materiality per management"}
+  - {id: "A3-08", check: "F14", line: "1389", classification: "AMBIGUOUS", implication: "Consolidated review report page 3 of 3 missing from filing; content unknown"}
+  - {id: "A3-09", check: "F5", line: "645, 653-654", classification: "FORWARD-SIGNAL", implication: "Curative petition dismissed in Q2FY27, last judicial remedy closed; Panipat relocation now operative; demand 373.27 = 23.2% of Q2 SA PAT, provision status NOT FOUND"}
+  - {id: "A3-10", check: "F7", line: "655-658, 739", classification: "AMBIGUOUS", implication: "Relocation under evaluation yet no material operational impact claimed; auditor narrows to financial impact only"}
+  - {id: "A3-11", check: "F6", line: "636-639, 1215", classification: "FORWARD-SIGNAL", implication: "Chile SpA capital infusion under process; scope adds plastic and battery waste recycling; amount and date NOT FOUND"}
+  - {id: "A3-12", check: "F8", line: "261, 867", classification: "NEUTRAL-FACT", implication: "Earlier-year tax 13.16 in H1FY26/FY26; nil in FY27"}
+  - {id: "A3-13", check: "F8", line: "260, 418", classification: "AMBIGUOUS", implication: "Q2 deferred tax 4.3x Q1, SA ETR 27.97%; DTL build from Q2 capitalisation; D&A step-up expected from Q3"}
+  - {id: "A3-14", check: "F10", line: "276, 893", classification: "AMBIGUOUS", implication: "SA vs CO EPS imply different share counts for Q2FY26 (176.0 vs 171.3 lakh) and H1FY26; FY26 and FY27 agree"}
+  - {id: "A3-15", check: "F14", line: "862, 1148, 1370-1371, 879", classification: "AMBIGUOUS", implication: "Associate line nets the loss-making JV; implied associate profit 40.62 Q2, 105.24 H1; auditor JV OCI loss vs nil OCI line"}
+  - {id: "A3-16", check: "F14", line: "554, 1167", classification: "AMBIGUOUS", implication: "Same H1FY26 181.47 labelled subsidiary investment in SA and associate/JV investment in CO"}
+  - {id: "A3-17", check: "F14", line: "632, 1251, 151, 299, 663, 276", classification: "NEUTRAL-FACT", implication: "Segment wording differs SA vs CO; title typos; place mismatch; cumulative filing-care data point"}
+  - {id: "A3-18", check: "F15", line: "635, 1335-1341", classification: "AMBIGUOUS", implication: "Chile SpA named as wholly owned subsidiary but absent from consolidated entity list; incorporation date NOT FOUND; prior list untestable"}
+forward_signals: ["A3-04", "A3-09", "A3-11"]
+ambiguous: ["A3-01", "A3-05", "A3-06", "A3-07", "A3-08", "A3-10", "A3-13", "A3-14", "A3-15", "A3-16", "A3-18"]
+commitments:
+  - {commitment: "Capital infusion into Tinna Rubber Chile SpA", implied_date: "none stated", ref: "SA Note 4 lines 638-639; CO Note 4 line 1215", status_word: "underway"}
+  - {commitment: "Relocation of Panipat plant", implied_date: "none stated", ref: "SA Note 5 line 655; CO line 1233", status_word: "initiated"}
+  - {commitment: "Receipt of sanctioned compensation", implied_date: "none stated; not yet claimed", ref: "SA Note 5 lines 650, 655-656; CO lines 1229-1234", status_word: "not started"}
+  - {commitment: "Representation for land release dated 15 May 2025", implied_date: "open 17 months, no outcome stated", ref: "SA Note 5 lines 647-649; CO lines 1226-1228", status_word: "initiated"}
+  - {commitment: "Curative petition, Supreme Court", implied_date: "dismissed during Q2FY27", ref: "SA Note 5 lines 653-654; CO lines 1231-1232", status_word: "completed (adverse)"}
+  - {commitment: "HSIIDC allotment demand Rs 373.27 lakhs", implied_date: "none stated", ref: "SA Note 5 line 645; CO line 1223", status_word: "status NOT FOUND"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Pre-thesis read, first run. Every QoQ text diff (EoM, entity list, Other Matter) is untestable, not clean. Three items matter. First, the Panipat land route closed this quarter. The curative petition was dismissed, so relocation is the operative path. Note 5 still claims no material impact on operations and gives no plant share, cost, timeline, or provision status for the Rs 373.27 lakh demand. Lean bear until management sizes it. Second, the consolidated premium over standalone is new and unreviewed. The PAT gap moved from -4.63% to +6.09% of standalone PAT YoY, 100% of subsidiary numbers are management-certified, and page 3 of the review report is missing. Subsidiary PAT quadrupled QoQ while intra-group trade changed direction, so part of the gain may be transfer pricing, not third-party demand. Third, the H1FY26 consolidated cash flow parks about Rs 2,416 lakh of capex in operating other assets. Use standalone CFO for the YoY read. The Mbodla JV loses money inside a line labelled associate only. Chile SpA widens scope to battery and plastic waste and is not yet consolidated."
+token_estimate: "about 165k tokens (about 150k input incl. full structured file and fulltext, about 15k output)"

@@ -1,0 +1,58 @@
+stage: A3-forensics
+company: "TINNARUBR"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/tinnarubr-q2fy27/work/forensics_presentation_tinnarubr_q2fy27.md"
+ledger_reconciled_pct: 100        # 138 rows read / 138 rows in ledger
+checklist:
+  F1: N.A.
+  F2: FINDING
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: FINDING
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F16", line: "72, 74, 76, 126", classification: "FORWARD-SIGNAL", implication: "Derived Q1 FY27 EBITDA 34 Cr / PAT 21 Cr vs Q2 29 / 17 on flat revenue (156 vs 157); EBITDA margin about 21.8% to 18.5%. YoY-only framing hides the QoQ fall; 'record H1' leans on Q1."}
+  - {id: "A3-02", check: "F16", line: "72-74, 86", classification: "AMBIGUOUS", implication: "Implied Q1 FY27 YoY rev +19% / EBITDA +63% / PAT +75% vs Q2 +31/+37/+45: operating leverage reversed. FY26 Q2 margin was not seasonally lower than Q1, so lean structural until filing shows otherwise. Uses positional H1 %."}
+  - {id: "A3-03", check: "F16", line: "89, 93-94, 98, 106, 116", classification: "AMBIGUOUS", implication: "Net D/E 'improved', CARE 'upgraded', PCMB capacity 'expanded', solar savings, segment growth all lack baseline or period."}
+  - {id: "A3-04", check: "F2", line: "74, 76, 82-83, 118", classification: "AMBIGUOUS", implication: "Subsidiaries plus eliminations add under about 2 Cr H1 EBITDA/PAT despite Oman at 90% util and 11.5% margin; Oman H1 revenue at most about 22 Cr if it alone fills the gap, else other subs or eliminations absorb it."}
+  - {id: "A3-05", check: "F6", line: "101-103", classification: "FORWARD-SIGNAL", implication: "Hard-dated MRP 3,500 MTPA commissioning by Q3 FY27 (derived base 16,500 MTPA); next-quarter delivery test. World's-largest claim unsourced."}
+  - {id: "A3-06", check: "F11", line: "92, 94, 108, 109", classification: "FORWARD-SIGNAL", implication: "Up to Rs 350 Cr capex stack (55 Cr left on Rs 100 Cr plan plus up to 250 Cr Andhra) vs implied net worth at most about Rs 347 Cr; funding unstated; net-debt basis undefined; possible dilution watch."}
+  - {id: "A3-07", check: "F7", line: "109, 112, 129, 141", classification: "AMBIGUOUS", implication: "No hedge-lexicon hits, no safe harbour; the largest items carry soft verbs ('up to', 'envisaged'), policy tailwind rests on 'proposed' mandates."}
+  - {id: "A3-08", check: "F6", line: "86, 133-135", classification: "AMBIGUOUS", implication: "Profit CAGR over 33% vs revenue over 25% needs margin expansion, yet EBITDA floor 18% equals Q2 print; profit metric, base year, end year undefined; ROCE over 30% through capex."}
+  - {id: "A3-09", check: "F14", line: "109, 135, 140-141", classification: "AMBIGUOUS", implication: "8 to 10 locations vs three named new sites (Andhra, Saudi, Chile) plus South Africa outside the 8."}
+  - {id: "A3-10", check: "F14", line: "35, 67, 92, 94, 98", classification: "NEUTRAL-FACT", implication: "Debt 121 to 111 is 8.3%, stated 9% only at rounding edges; H1 capex internally funded; minor typography."}
+  - {id: "A3-11", check: "F15", line: "121-122, 140-141", classification: "FORWARD-SIGNAL", implication: "New WOS Tinna Rubber Chile SpA: no date, capital or consolidation status; South Africa entity form undisclosed."}
+  - {id: "A3-12", check: "F16", line: "105-106, 127", classification: "FORWARD-SIGNAL", implication: "PCMB 8 to 27 Cr adds about 30% of H1 revenue growth; margin and segment mapping undisclosed; 'high-value' mix claim sits against Q2 margin fall."}
+  - {id: "A3-13", check: "F16", line: "70-74", classification: "NEUTRAL-FACT", implication: "H1 revenue 25% and H1 PAT 60% are positional only; verify against results filing before quoting."}
+forward_signals: ["A3-01", "A3-05", "A3-06", "A3-11", "A3-12"]
+ambiguous: ["A3-02", "A3-03", "A3-04", "A3-07", "A3-08", "A3-09"]
+commitments:
+  - {commitment: "3,500 MTPA MRP expansion commissioned", implied_date: "by 2026-12-31 (Q3 FY27)", ref: "line 101, R096", status_word: "underway"}
+  - {commitment: "MRP capacity to 20,000 MTPA", implied_date: "on commissioning", ref: "line 102, R097", status_word: "underway"}
+  - {commitment: "Capex Rs 100 Cr over FY27-FY28, Rs 45 Cr done H1", implied_date: "by 2028-03-31", ref: "line 108, R098", status_word: "underway"}
+  - {commitment: "Andhra 40-acre integrated recycling facility, up to Rs 250 Cr", implied_date: "next three years, about 2029-10", ref: "line 109, R099", status_word: "planned"}
+  - {commitment: "Vision 2029: Rs 1,000 Cr revenue, rev CAGR >25%, profit CAGR >33%, EBITDA margin >18%, ROCE >30%", implied_date: "2029 (FY undefined)", ref: "lines 133-135, R103-R106", status_word: "planned"}
+  - {commitment: "Locations 8 to 10", implied_date: "2029", ref: "line 135, R107", status_word: "planned"}
+  - {commitment: "Expansions in Saudi Arabia and Chile", implied_date: "undated", ref: "line 141, R108", status_word: "planned"}
+  - {commitment: "Tinna Rubber Chile SpA WOS established", implied_date: "not stated", ref: "line 121, R085", status_word: "completed"}
+  - {commitment: "PCMB capacity expanded to 18,000 TPA", implied_date: "not stated", ref: "line 106, R045", status_word: "completed"}
+  - {commitment: "Renewable capacity 1.23 MW to 4.48 MW", implied_date: "by H1 FY27", ref: "line 116, R052", status_word: "completed"}
+  - {commitment: "CARE upgrade to BBB Stable / A3+", implied_date: "not stated", ref: "line 98, R038", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+token_use_estimate: "about 45k total (about 22k input read incl. prompt and three artifacts, about 23k reasoning and output)"
+analyst_note: "The release reports YoY figures only. Subtracting Q2 from H1 shows Q2 EBITDA fell about 15% QoQ and margin fell about 330 bps on flat revenue. Q1 carried the 'record H1'. Management set its Vision 2029 EBITDA floor at 18%, exactly the Q2 print, while promising profit growth faster than revenue. That pairing is the central question for A4: is 18.5% the new run-rate, and what lifts profit faster than revenue through up to Rs 350 Cr of capex? The capex is large against an implied net worth of at most Rs 347 Cr, and its funding is unstated. MRP commissioning by Q3 FY27 is the one hard-dated item; it gives the next-quarter delivery test. The subsidiary gap (under Rs 2 Cr) sits oddly against Oman's 90% utilisation. Every derived number uses rounded Rs Cr. Two H1 YoY percentages are positional only. A4 must confirm both against the results filing before any number is quoted. A1 cite drift (R019, R039, R091, R102, R125) is non-material."

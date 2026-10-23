@@ -1,0 +1,36 @@
+stage: A1-extractor
+company: "TINNARUBR"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 13
+formfeed_count: 13
+line_count: 1429
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01"
+text_layer_present: true
+extraction_mode: text-only+ocr-repair
+render_candidates: []
+rendered_pages: [2, 3, 4, 8, 9, 10]   # corrupt embedded OCR, re-OCR'd tesseract 5.4 300dpi psm 6 and page images read for cell values
+ocr_repaired_pages: [2, 3, 4, 8, 9, 10]
+ocr_supplement_pages: [1, 5, 11, 13]  # OCR block added as digit cross-check; 6, 7, 12 checked, no difference
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/tinnarubr-q2fy27/extracted/tinnarubr-results-q2fy27-fulltext.md"
+structured_path: "runs/tinnarubr-q2fy27/extracted/tinnarubr-results-q2fy27-structured.md"
+structured_counts:
+  number: 745
+  entity: 57
+  forward: 10
+  date: 45
+  qualifier: 70
+structured_id_range: "R001-R927"
+statement_cells: 692
+ocr_conflict: 227
+arith_fail: 0
+unreadable: 0
+zero_standing_cells: 81
+token_estimate: 190000
+gate_a1: pass
+gap_note: ""

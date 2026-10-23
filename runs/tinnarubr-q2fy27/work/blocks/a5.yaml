@@ -1,0 +1,57 @@
+stage: A5-adversary
+company: "TINNARUBR"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "YoY growth is real and Q2 beats the Vision 2029 over-25% pace (RV L225, L602)", counter: "SA H1 FY27 revenue grew 23.04% (30,041.74 / 24,416.12), below the 25% pace; CO H1 25.21% sits at the floor; Q2 rides a soft Q2 FY26 base (-8.21% QoQ); Q2 FY27 is only 3.48% SA / 5.80% CO above the H2 FY26 quarterly average", source_line: "R015, R016 (RF L243); R350, R351 (RF L848); PR R058 (PF L134)", type: MISSING}
+  - {claim: "Net debt fell about Rs 10 Cr while capex was spent, funded by CFO (RV L349, L608)", counter: "The WC release paid for the whole fall: SA pre-debt cash Rs 9.32 Cr vs WC release Rs 18.64 Cr, so without it the half needed about Rs 9.32 Cr of new debt (CO Rs 5.09 Cr); the release is a Sep vs Mar comparison", source_line: "R294, R310, R326, R324, R320, R322, R314, R316, R318, R250, R274 (RF L535-L567); CO R681, R697, R713, R711, R707, R709, R633, R663", type: MISSING}
+  - {claim: "Model drift to manufacturing: lower trading share lines up with the gross margin gain (A4-06 RV L567; RV L620, L627)", counter: "The H1 gain of 415 bps comes from the Q1 FY26 outlier (55.22%); Q2 YoY material cost fell 55 bps while trading share fell 533 bps; H2 FY26 paired 7.91% trading with 53.09% material cost; own material consumed rose 38.38% to 43.01% of Q2 revenue; no filed link", source_line: "R030, R032, R036, R038, R042, R044, R012, R014 (RF L243-L250); 1D RV L172, L176", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1 (A4): RV L432 Step 6D PCMB cell 'group margin fell in Q2 on higher PCMB share' has no support (no Q2 PCMB split; PR R042-R043 give H1 only) and conflicts with A4's own Step 3C attribution (RV L261)"
+  missing:
+    - "F2 (A4): graft Claim 2 counter, debt fall funded wholly by the Rs 18.64 Cr WC release; ex-WC SA deficit Rs 9.32 Cr, CO Rs 5.09 Cr (RV L349, L608, L589, L730)"
+    - "F3 (A4): graft Claim 1 counter, SA H1 revenue +23.04% below the 25% pace, soft Q2 FY26 base (RV L225, L602)"
+    - "F4 (A4): graft Claim 3 counter, H1 material cost gain is a Q1 FY26 base effect; no trading-to-margin link in the filed series (RV L567, L620, L627)"
+    - "F5 (A4): Panipat land split absent: 34K8M total, 20K12M released and in possession, 13K16M (about 40%) under acquisition (R339-R340, R727-R728; RF L641-L644); add to 0D Note 5 row and Q2/S2; reword RV L609 'must plan a move'"
+    - "F6 (A4): Rs 2.71 Cr H1 FY27 investment in subsidiaries (R302; carrying value 13.32 to 16.03 Cr, R185-R186) not stated; recipient NOT FOUND while Chile infusion is 'under process' (R805) and Chile is outside the consolidated list (R797-R801); add fact and question S19"
+  contradiction: []
+  style:
+    - "S1 rounding-edge residuals (-8.25 vs -8.255, -13.13 vs -13.135, -20.15 vs -20.144, CCC 55.7 vs 55.61)"
+    - "S2 relabel 'raw material cost' as material and traded-goods cost"
+    - "S3 ND used for derivable figures (SA ICR H1 FY26 6.80x; CO 1D splits)"
+    - "S4 release 9% debt fall matches (121-111)/111; add as likely drafting basis"
+    - "S5 CO Q2 FY26 weighted shares 171.3 below H1 171.5 sharpens R-A3-14"
+    - "S6 five release claim units lack an A1 type slot; 'record H1' headline untested"
+    - "S7 name the source of the 1.30x Pillar 2 band (RV L346)"
+    - "S8 excess provisions written back Rs 0.47 Cr non-cash gain (R266)"
+    - "S9 the 'drag' side of drag-to-contributor rests on a mixed CO-SA gap"
+    - "S10 three undated forward-map rows, honestly labelled"
+loop_back_to: "A4"
+gap: "F1 FACTUAL: RV L432 PCMB cause unsupported by any document and in conflict with RV L261. F2-F4 MISSING: graft three surviving bear counters (debt fall funded wholly by the Rs 18.64 Cr WC release; SA H1 revenue +23.04% below the 25% pace; H1 material cost gain is a Q1 FY26 base effect). F5 MISSING: Panipat land split 20K12M of 34K8M released (R339-R340, R727-R728). F6 MISSING: Rs 2.71 Cr H1 FY27 investment in subsidiaries (R302) vs Chile infusion 'under process'. Graft text for each is in the audit, section 4."
+style_notes:
+  - "S1 rounding-edge residuals (-8.25 vs -8.255, -13.13 vs -13.135, -20.15 vs -20.144, CCC 55.7 vs 55.61)"
+  - "S2 relabel 'raw material cost' as material and traded-goods cost"
+  - "S3 ND used for derivable figures (SA ICR H1 FY26 6.80x; CO 1D splits)"
+  - "S4 release 9% debt fall matches (121-111)/111; add as likely drafting basis"
+  - "S5 CO Q2 FY26 weighted shares 171.3 below H1 171.5 sharpens R-A3-14"
+  - "S6 five release claim units lack an A1 type slot; 'record H1' headline untested"
+  - "S7 name the source of the 1.30x Pillar 2 band (RV L346)"
+  - "S8 excess provisions written back Rs 0.47 Cr non-cash gain (R266)"
+  - "S9 the 'drag' side of drag-to-contributor rests on a mixed CO-SA gap"
+  - "S10 three undated forward-map rows, honestly labelled"
+analyst_note: "Coverage and arithmetic are clean. Fresh counts match A2 on every category (results 927 IDs, release 138), and every derived metric in A4 recomputes within rounding; four residuals of 0.01 pp or 0.1 day are logged as style. The review fails on substance, not numbers. Three positive claims lose force on A4's own filed rows. The Rs 10 Cr debt fall is entirely the Rs 18.64 Cr working capital release: excluding it, the half consumed Rs 9.32 Cr standalone. The H1 gross margin gain is a Q1 FY26 base effect, and the quarter series shows no link from trading share to margin. Standalone H1 revenue grew 23.04%, below the 25% pace A4 says Q2 beats. One cell (Step 6D PCMB) states a cause no document supports. Two filed facts are absent: about 60% of the Panipat land was released, which frames partial versus full relocation, and Rs 2.71 Cr already went into subsidiaries while the Chile infusion is 'under process'. No purchase of an earning business exists, so the price to PAT probe does not apply. All six fixes are A4 text edits from rows already in the ledger; A2 and A3 need not re-run."
+audit_path: "runs/tinnarubr-q2fy27/work/audit_tinnarubr_q2fy27.md"
+token_estimate: "about 290k total (about 250k input incl. the full review, both fulltexts, both structured files and both ledgers, with context re-reads; about 40k reasoning and output)"

@@ -1,0 +1,46 @@
+stage: A5-adversary
+company: "TINNARUBR"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+prior_findings_closure:
+  - {id: F1, type: FACTUAL, status: CLOSED, where: "RV L435, L638"}
+  - {id: F2, type: MISSING, status: CLOSED, where: "RV L322, L327, L337, L351, L449, L575, L585, L597, L618, L663, L744"}
+  - {id: F3, type: MISSING, status: CLOSED, where: "RV L193, L209, L225, L438, L450, L590, L611"}
+  - {id: F4, type: MISSING, status: CLOSED, where: "RV L572, L630, L637"}
+  - {id: F5, type: MISSING, status: CLOSED, where: "RV L74, L76, L454, L522, L548, L574, L597, L619, L620, L648, L660, L740"}
+  - {id: F6, type: MISSING, status: CLOSED, where: "RV L73, L328, L352, L454, L521, L552, L573, L597, L640, L661, L751"}
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "RS1 RV L611 causal clause: the weak Q2 FY26 base inflates the Q2 rate, it does not lower H1 growth; reword"
+    - "RS2 RV L328 new row: SA prior 1.81 Cr (R303) and CO 'n/a (eliminated)' omit that CO shows the same 181.47 lakh as associate/JV (R690); point to S12 / R-A3-16"
+    - "RS3 RV L327 new row: H1 FY26 cells marked ND are derivable, SA (39.87) Cr, CO (39.80) Cr"
+    - "RS4 RV L755 A4 analyst note 'not a trading-mix effect' is stronger than the body's 'does not support a link'; align"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "RS1 RV L611 causal clause: the weak Q2 FY26 base inflates the Q2 rate, it does not lower H1 growth; reword"
+  - "RS2 RV L328 new row: SA prior 1.81 Cr (R303) and CO 'n/a (eliminated)' omit that CO shows the same 181.47 lakh as associate/JV (R690); point to S12 / R-A3-16"
+  - "RS3 RV L327 new row: H1 FY26 cells marked ND are derivable, SA (39.87) Cr, CO (39.80) Cr"
+  - "RS4 RV L755 A4 analyst note 'not a trading-mix effect' is stronger than the body's 'does not support a link'; align"
+  - "Carried open from first audit, logged only: S1 to S10 (see audit_tinnarubr_q2fy27.md)"
+analyst_note: "All six first-audit findings are closed against the A1 rows. The PCMB cause is gone. The debt fall is now tied to the Rs 18.64 Cr working capital release, with the ex-WC shortfall of Rs 9.32 Cr standalone stated and footed. The 23.04% standalone H1 pace and the Q1 FY26 base effect on material cost sit in the tables, the brief and the verdict card. The Panipat land split and the Rs 2.71 Cr subsidiary investment appear as A4-08 and A4-07, with questions S20 and S19. Every new number recomputes. The revision adds no factual, missing or contradiction finding. Four new items are wording or cell precision only and are logged as style; the most useful is RS2, because the new subsidiary-investment row places the H1 FY26 Rs 1.81 Cr under the SA label without the label conflict that S12 already raises. The review may proceed; no COMPANIES MASTER page exists, so the save is an operator decision."
+audit_path: "runs/tinnarubr-q2fy27/work/audit_tinnarubr_q2fy27_reaudit.md"
+first_audit_path: "runs/tinnarubr-q2fy27/work/audit_tinnarubr_q2fy27.md"
+token_estimate: "re-audit about 75k (about 55k input: the full revised review plus row re-checks; about 20k reasoning and output); cumulative A5 across both passes about 365k"

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "TINNARUBR"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 3
+formfeed_count: 3
+line_count: 144
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (H1 FY27)"
+fulltext_path: "runs/tinnarubr-q2fy27/extracted/tinnarubr-presentation-q2fy27-fulltext.md"
+structured_path: "runs/tinnarubr-q2fy27/extracted/tinnarubr-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 66
+  entity: 29
+  forward: 14
+  date: 18
+  qualifier: 11
+structured_id_range: "R001-R138"
+gate_a1: pass
+gap_note: ""

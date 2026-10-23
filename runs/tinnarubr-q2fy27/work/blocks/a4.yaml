@@ -1,0 +1,90 @@
+stage: A4-analyst
+company: "TINNARUBR"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+fixes_applied: [F1, F2, F3, F4, F5, F6]
+docs_merged: [results, presentation]
+ledger_reconciliation:
+  notes: 10
+  turns: 0
+  slides: 3
+  all_reviewed: true
+  a3_findings_incorporated: ["R-A3-01", "R-A3-02", "R-A3-04", "R-A3-05", "R-A3-06", "R-A3-07", "R-A3-08", "R-A3-09", "R-A3-10", "R-A3-11", "R-A3-12", "R-A3-13", "R-A3-14", "R-A3-15", "R-A3-16", "R-A3-17", "R-A3-18", "P-A3-01", "P-A3-02", "P-A3-03", "P-A3-04", "P-A3-05", "P-A3-06", "P-A3-07", "P-A3-08", "P-A3-09", "P-A3-10", "P-A3-11", "P-A3-12", "P-A3-13"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE (no Notion COMPANIES MASTER page, search 23-Oct-2026; no companies/TINNARUBR.md; pre-thesis read)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2FY26", gap_pct_of_sa_pat: -4.63}
+  - {period: "Q1FY27", gap_pct_of_sa_pat: 2.26}
+  - {period: "Q2FY27", gap_pct_of_sa_pat: 6.09}
+  - {period: "H1FY26", gap_pct_of_sa_pat: 0.80}
+  - {period: "H1FY27", gap_pct_of_sa_pat: 3.96}
+  - {period: "FY26", gap_pct_of_sa_pat: -0.73}
+questions_for_management:
+  - {q: "Of the Rs 2.54 Cr QoQ rise in Q2 standalone employee cost, how many Rs Cr are one-time?", from_finding_id: "P-A3-01, P-A3-02"}
+  - {q: "What % of FY26 standalone revenue came from the Panipat plant?", from_finding_id: "R-A3-09, R-A3-10"}
+  - {q: "What share of the up-to-Rs 250 Cr Andhra facility is equity or warrants funded, and is it board-approved?", from_finding_id: "P-A3-06, P-A3-07"}
+  - {q: "What were parent sales to the Oman and Saudi subsidiaries in Q2, in Rs Cr?", from_finding_id: "R-A3-04, R-A3-05, P-A3-04"}
+  - {q: "Is the 3,500 MTPA MRP line in trial production, and what was H1 utilisation of existing MRP capacity?", from_finding_id: "P-A3-05"}
+  - {q: "Vision 2029: FY29 or FY30 end year, and is the >33% profitability CAGR PAT or EBITDA?", from_finding_id: "P-A3-08"}
+  - {q: "What was PCMB EBITDA margin in H1 FY27?", from_finding_id: "P-A3-12"}
+  - {q: "What does page 3 of the consolidated limited review report contain?", from_finding_id: "R-A3-08"}
+  - {q: "Is the Rs 3.73 Cr HSIIDC demand paid, provided or contingent at 30-Sep-2026?", from_finding_id: "R-A3-09"}
+  - {q: "What is the Panipat relocation capex, and is it inside the Rs 100 Cr FY27-FY28 plan?", from_finding_id: "R-A3-10"}
+  - {q: "What is the sanctioned land compensation amount, and when will it be claimed?", from_finding_id: "R-A3-09"}
+  - {q: "Will the Oman and Saudi subsidiaries be reviewed or audited before FY27 annual results?", from_finding_id: "R-A3-07"}
+  - {q: "Chile SpA incorporation date and Rs Cr capital to be infused?", from_finding_id: "R-A3-11, R-A3-18, P-A3-11"}
+  - {q: "Does the Chile battery and plastic waste scope mean a battery-recycling line is planned (yes/no)?", from_finding_id: "R-A3-11"}
+  - {q: "Who received the Rs 0.95 Cr non-current loan, and is it a related party?", from_finding_id: "R-A3-01"}
+  - {q: "Why does H1 FY26 consolidated cash flow carry about Rs 24.16 Cr of capex in operating other assets?", from_finding_id: "R-A3-06"}
+  - {q: "Which assets were capitalised in Q2, and what is the Q3 depreciation charge?", from_finding_id: "R-A3-13"}
+  - {q: "Why do Q2 FY26 EPS imply 176.0 lakh shares SA but 171.3 lakh CO?", from_finding_id: "R-A3-14"}
+  - {q: "Separate Q2 shares of profit for the T.P. Buildtech associate and the Mbodla JV?", from_finding_id: "R-A3-15"}
+  - {q: "Was the H1 FY26 Rs 1.81 Cr outflow a subsidiary or an associate/JV investment?", from_finding_id: "R-A3-16"}
+  - {q: "Prior CARE rating and upgrade date?", from_finding_id: "P-A3-03"}
+  - {q: "PCMB capacity before 18,000 TPA, and the period of the Rs 2.37 Cr solar savings?", from_finding_id: "P-A3-03"}
+  - {q: "H1 FY27 revenue in Rs Cr for Infrastructure, Industrial, Consumer and Steel?", from_finding_id: "P-A3-03, A4-05"}
+  - {q: "Are the modified bitumen mandate and EPR tyre rules notified, and is Andhra land allotted?", from_finding_id: "P-A3-07"}
+  - {q: "List the 8 current and 10 target locations; is South Africa a plant, trading arm or the Mbodla JV?", from_finding_id: "P-A3-09"}
+  - {q: "On what basis did debt fall 9% when filed CO borrowings fell 7.6%?", from_finding_id: "A4-01"}
+  - {q: "Which subsidiary received the Rs 2.71 Cr H1 FY27 investment, and did any of it go to Chile SpA?", from_finding_id: "A4-07, R-A3-18"}
+  - {q: "Does the Panipat relocation cover the whole plant or only the 13 kanals 16 marlas not released?", from_finding_id: "A4-08, R-A3-09, R-A3-10"}
+monitorables:
+  - {item: "Q2 FY27 earnings call; run Role 5", implied_date: "2026-10-26", source_ref: "BSE intimation 19-Oct-2026"}
+  - {item: "MRP +3,500 MTPA commissioned, capacity to 20,000 MTPA", implied_date: "by 2026-12-31", source_ref: "PR R096-R097, line 101-102"}
+  - {item: "Q3 FY27 results: SA op EBITDA margin (bull >=20.37%, bear <=18.00%), employee cost vs 17.67 Cr, D&A, Note 5, CO-SA gap", implied_date: "by 2027-02-14 (Reg 33 outer date)", source_ref: "Step 8C; R048, R060; R-A3-13"}
+  - {item: "Panipat relocation decision (whole plant or only the 13 kanals 16 marlas not released)", implied_date: "none stated", source_ref: "R806, R811, R339-R340"}
+  - {item: "HSIIDC demand Rs 3.73 Cr status", implied_date: "none stated", source_ref: "R341, R729"}
+  - {item: "Claim of sanctioned land compensation", implied_date: "none stated", source_ref: "R886, R918"}
+  - {item: "Outcome of 15-May-2025 representation to Haryana Industries", implied_date: "open; none stated", source_ref: "R833, R851"}
+  - {item: "Chile SpA capital infusion and consolidation; recipient of Rs 2.71 Cr H1 FY27 subsidiary investment", implied_date: "none stated", source_ref: "R805, R810, R302, R185-R186"}
+  - {item: "Capex Rs 100 Cr FY27-FY28 (Rs 45 Cr done)", implied_date: "by 2028-03-31", source_ref: "PR R046-R047, R098"}
+  - {item: "Andhra facility up to Rs 250 Cr: approval, land, funding", implied_date: "about 2029-10", source_ref: "PR R099, R134"}
+  - {item: "FY27 audited results: CFO/PAT, WC reversal test, subsidiary audit, FVOCI mark, contingent liabilities", implied_date: "by 2027-05-30 (Reg 33 outer date)", source_ref: "R189, R250, R274, R-A3-02, R-A3-07"}
+  - {item: "Q1 FY28 results vs Q1 FY27 SA margin 21.97%", implied_date: "by 2027-08-14 (Reg 33 outer date)", source_ref: "R013; Step 1C"}
+  - {item: "FY27 annual report and AGM: related-party loan, segment and plant data, CARE rationale", implied_date: "by 2027-09-30 (Companies Act s.96)", source_ref: "R-A3-01; A4-05"}
+  - {item: "Vision 2029 targets", implied_date: "2029 (FY undefined)", source_ref: "PR R103-R107"}
+  - {item: "Saudi Arabia and Chile expansions", implied_date: "undated", source_ref: "PR R108"}
+flags:
+  - "PRE-THESIS: no Notion page, no companies/TINNARUBR.md, no Spear line; run /step1 before /run-pipeline"
+  - "AUDITOR EoM: Panipat land; curative petition dismissed in Q2 FY27; relocation open; 13 kanals 16 marlas of 34 kanals 8 marlas (about 40% by area) not released, plant footprint by parcel NOT FOUND; Rs 3.73 Cr demand status NOT FOUND; Panipat output share NOT FOUND"
+  - "UNREVIEWED: 100% of subsidiaries (2) and the JV management-certified; Q2 exposure 6.94% of CO PAT, up from 3.39%"
+  - "REVIEW REPORT: consolidated page 3 of 3 missing from filing"
+  - "MARGIN: Q2 QoQ op EBITDA margin SA -321 bps (21.97% to 18.76%), CO -290 bps on flat revenue"
+  - "CASH: INDETERMINATE-WITH-DIRECTION; H1 SA CFO/PAT 1.89x leans on WC release vs seasonal base; the WC release paid for the whole debt fall (ex-WC shortfall SA Rs 9.32 Cr, CO Rs 5.09 Cr); missing 30-Sep-2025 BS, FY25/FY26 CFO, CARE WC rationale"
+  - "ABSORPTION: D&A +50.83% YoY vs revenue +27.99% (SA)"
+  - "CAPEX: up to about Rs 305 Cr remaining vs CO equity Rs 332.85 Cr; funding unstated"
+  - "RELEASE: '9%' debt decline not reproducible; filed CO borrowings -7.63%"
+  - "RELEASE: four segment growth rates vs single reportable segment; segment revenue NOT FOUND"
+  - "FILING CARE: R-A3-08, R-A3-14, R-A3-15, R-A3-16, R-A3-17"
+  - "SIGNALS: tracker rows not supplied; zero signals; reopen Role 5.5"
+  - "SUBSIDIARY INVESTMENT: Rs 2.71 Cr into subsidiaries in H1 FY27 (R302), recipient NOT FOUND; Chile infusion under process, Chile not consolidated"
+  - "DEFERRED: Role 4 Steps 6.5 and 7 to /fttcp and Role 1 (OR-30)"
+  - "ROLE 5 NOT RUN: call 26-Oct-2026 3:00 PM IST"
+plain_language_brief_included: true
+analyst_note: "Pre-thesis baseline, not a thesis check. The YoY quarter is real at the core (SA core PBT +29.17%, CO +39.01%; other income immaterial), but rides a soft Q2 FY26 base: SA H1 revenue grew 23.04%, below the 25% Vision pace. The QoQ quarter is the story: margin fell 290 to 321 bps on flat revenue, from staff and other expenses, not raw material. Q3 SA employee cost separates a timing step from a new base. The H1 material-cost gain is a Q1 FY26 base effect, not a trading-mix effect. The filing reproduces the release's H1 percentages, 0.32x net D/E and 9.91x ICR, but not its 9% debt decline (7.63% filed). The WC release paid for the whole debt fall; ex-WC the half was Rs 9.32 Cr short, so cash stays INDETERMINATE-WITH-DIRECTION. Use standalone as the clean read. Panipat is the open risk: about 40% of the land was never released and the plant parcel is not named. Verdict PROCEED WITH FLAGS sits below the CAVEATS cap."
+review_path: "runs/tinnarubr-q2fy27/work/review_tinnarubr_q2fy27.md"
+token_estimate: "about 370k total across the run (initial review about 290k; correction loop about 80k incl. A5 section 4 read and one full-file rewrite)"

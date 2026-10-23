@@ -3,15 +3,18 @@ company: "PITTIENG"
 quarter: "Q2 FY27"
 model: "claude-opus-5-5"
 status: complete
-loop_iteration: 1
+loop_iteration: 2
 fixes:
-  - {id: "A5-F1", type: FACTUAL, fix: "Margin slip attributed to gross margin (-58 of -89 bps, ~65%); staff cost +26 bps second", where: "Step 2 diag 2; Brief part 1"}
-  - {id: "A5-F2", type: FACTUAL, fix: "-98.64 relabelled FCF before all WC change; added FCF ex payables rise -165.33 (BS-delta proxy)", where: "Step 5 table; P2-a; Brief part 1"}
-  - {id: "A5-F3", type: FACTUAL, fix: "Goodwill lift corrected to ROE +16.0%, ROCE ~+8.8% (+8.2% with leases); 13.8% is the equity cut", where: "Point 3 item 2; P1-a"}
-  - {id: "A5-F4", type: FACTUAL, fix: "Q16 reworded: sign fix keeping the cash tie raises CFO or cuts investing outflow by Rs 11.56 Cr; cannot overstate CFO", where: "Q16"}
-  - {id: "A5-F5", type: FACTUAL, fix: "24,600 MT castings is pre-programme capacity; +46% step to 36,000 MT ahead (~35.5% at Q2 output); N10 added", where: "Step 3; Step 5 Q3; T2; 5.5B; 6D; 8A-W; 8C; Q10; N10; Brief"}
-  - {id: "A5-M1", type: MISSING, fix: "OI counter-reading: FY24-FY26 Rs 38.8-48.5 Cr/yr, baseline Rs 5.7-7.4 Cr/qtr; OI bridge row split spike -15.63 / baseline -3.59; recurring pre-tax gain ~+2.5 to +4.2; Q8 bear made main reading", where: "Step 2 diag 6; Step 4; E-a; Q8; Brief"}
-  - {id: "A5-M2", type: MISSING, fix: "Deposits caveat: other bank Rs 42.65 Cr, H1 placement Rs 15.28 Cr under financing (results:L324); lien-marked net debt Rs 581.33 Cr vs Rs 579.38 Cr (+1.95); new Q32", where: "Step 5 table and Q4; T1 caveat (e); 6A; 6B; P2-b; Q32; K7; Brief"}
+  - {id: "A5-F1", loop: 1, type: FACTUAL, fix: "Margin slip attributed to gross margin (-58 of -89 bps, ~65%); staff cost +26 bps second", where: "Step 2 diag 2; Brief part 1"}
+  - {id: "A5-F2", loop: 1, type: FACTUAL, fix: "-98.64 relabelled FCF before all WC change; added FCF ex payables rise -165.33 (BS-delta proxy)", where: "Step 5 table; P2-a; Brief part 1"}
+  - {id: "A5-F3", loop: 1, type: FACTUAL, fix: "Goodwill lift corrected to ROE +16.0%, ROCE ~+8.8% (+8.2% with leases); 13.8% is the equity cut", where: "Point 3 item 2; P1-a"}
+  - {id: "A5-F4", loop: 1, type: FACTUAL, fix: "Q16 reworded: sign fix keeping the cash tie raises CFO or cuts investing outflow by Rs 11.56 Cr; cannot overstate CFO", where: "Q16"}
+  - {id: "A5-F5", loop: 1, type: FACTUAL, fix: "24,600 MT castings is pre-programme capacity; +46% step to 36,000 MT ahead (~35.5% at Q2 output); N10 added", where: "Step 3; Step 5 Q3; T2; 5.5B; 6D; 8A-W; 8C; Q10; N10; Brief"}
+  - {id: "A5-M1", loop: 1, type: MISSING, fix: "OI counter-reading added; wording superseded by A5-C1", where: "Step 2 diag 6; Step 4; E-a; Q8; Brief"}
+  - {id: "A5-M2", loop: 1, type: MISSING, fix: "Deposits caveat: other bank Rs 42.65 Cr, H1 placement Rs 15.28 Cr under financing (results:L324); lien-marked net debt Rs 581.33 Cr vs Rs 579.38 Cr (+1.95); new Q32", where: "Step 5 table and Q4; T1 caveat (e); 6A; 6B; P2-b; Q32; K7; Brief"}
+  - {id: "A5-C1", loop: 2, type: CONTRADICTION, fix: "Two labelled other-income readings everywhere. A (Q2 FY26 item one-off): lost Rs 3.6-5.3 Cr/qtr (~Rs 14-21 Cr/yr), Q2 recurring pre-tax +2.5 to +4.2, pairs -15.63/-3.59 and -13.92/-5.30. B (item recurs yearly): ~Rs 34 Cr/yr lost, Q2 recurring pre-tax ~+0.2 to -2.2 (even spread) or -11.4 (seasonal to Q2). Separated by Q8 answer and Q2 FY25 other income (ND; K17). No B-level/A-gain pairing remains", where: "Step 2 table, diag 6; Step 4 table, Q1-Q2; E-a; 8A-W; Q8; K17; Key Notes; Flag 5; Brief parts 1, 3; YAML flag, analyst_note"}
+  - {id: "A5-S3", loop: 2, type: STYLE, fix: "Body verdict line added", where: "Step 8"}
+  - {id: "A5-S4", loop: 2, type: STYLE, fix: "Flag 8 referent: 81% of net worth is Rs 740 Cr total", where: "Flags item 8"}
 docs_merged: [results, presentation]
 ledger_reconciliation:
   notes: 7
@@ -38,7 +41,7 @@ questions_for_management:
   - {q: "On which equity base were FY26 ROE 12.5%, ROA 5.7% and D/E 0.7 computed?", from_finding_id: "A3P-07"}
   - {q: "What peak standalone net debt, and in which year, during the Rs 740 Cr programme?", from_finding_id: "A3-07; A3P-02"}
   - {q: "How much of the Rs 290 Cr programme was spent by 30-Sep-2026?", from_finding_id: "A3P-02"}
-  - {q: "What was the source and amount by item of other income (Q2 FY26 Rs 21.3 Cr; FY24-FY26 Rs 38.8-48.5 Cr a year)?", from_finding_id: "A3P-15; A5-M1"}
+  - {q: "What was the source and amount by item of other income (Q2 FY26 Rs 21.3 Cr; FY24-FY26 Rs 38.8-48.5 Cr a year)? The answer separates Reading A (one-off) from Reading B (recurring)", from_finding_id: "A3P-15; A5-M1; A5-C1"}
   - {q: "How much borrowing cost was capitalised in H1 FY27 against CWIP of Rs 120.3 Cr?", from_finding_id: "A3-18; A3P-14"}
   - {q: "Is castings 36,000 MT now due by FY31, and what was the earlier date?", from_finding_id: "A3-08; A3P-03"}
   - {q: "Is 10,80,000 machining hours a level or an addition, and what does the Rs 450 Cr add in hours and MT?", from_finding_id: "A3-26"}
@@ -73,6 +76,7 @@ monitorables:
   - {item: "FY27 audited results: net debt vs Rs 491 Cr, lien status of deposits, payable days, inventory vs Rs 300 Cr", implied_date: "by 2027-05-30 [INFERENCE Reg 33]", source_ref: "Step 5; T1; results:L324"}
   - {item: "FY27 Annual Report: goodwill reserve entry, related parties, ESOP note, actuarial assumptions, other income note, restricted bank balances", implied_date: "about 2027-07 to 2027-08 [INFERENCE]", source_ref: "A3-12; A3-15; A3P-06; A5-M1; A5-M2"}
   - {item: "Q1 FY28 results: castings run-rate, Rs 450 Cr phasing, ETR", implied_date: "by 2027-08-14 [INFERENCE Reg 33]", source_ref: "results:L51-L53"}
+  - {item: "Q2 FY25 other income (Q2 FY25 results filing, outside this run's corpus): separates other-income Readings A and B", implied_date: "undated; next run that loads it", source_ref: "Step 2 diag 6; A5-C1"}
   - {item: "Rs 450 Cr capex and Karnataka lamination consolidation", implied_date: "phased to FY2030-31", source_ref: "results:L51-L53, L441"}
   - {item: "Machining to 10,80,000 hours", implied_date: "Q1 2029-30", source_ref: "results:L424-L425"}
   - {item: "Capacity to 1,60,000 MT sheet metal, 36,000 MT castings, 13,14,000 hours", implied_date: "by FY31", source_ref: "presentation:L125-L136"}
@@ -83,10 +87,10 @@ flags:
   - "Castings tracker falsifier met: 3,086 MT vs ~4,600 MT (67.1%); 52% utilisation on pre-programme capacity; +46% castings step still ahead"
   - "Cash conversion INDETERMINATE-WITH-DIRECTION; FCF before WC Rs -98.64 Cr, FCF ex payables rise ~Rs -165.33 Cr H1"
   - "Goodwill Rs 136.1 Cr removed in restatement; FY26 ratios on goodwill-inclusive base; do not credit mechanical ROE (+16.0%) / ROCE (~+8.8%) lift"
-  - "Other income baseline Rs 38.8-48.5 Cr/yr (FY24-FY26) absent in FY27; source NOT FOUND; recurring pre-tax gain ~+2.5 to +4.2"
+  - "Other income Rs 40.11 Cr FY26 vs Rs 5.90 Cr FY27 run-rate; source NOT FOUND. Reading A (Q2 FY26 item one-off): ~Rs 14-21 Cr/yr recurring lost, Q2 recurring pre-tax +2.5 to +4.2. Reading B (item recurs yearly): ~Rs 34 Cr/yr lost, Q2 recurring pre-tax ~+0.2 to -2.2 (even spread) or -11.4 (seasonal). Separated by Q8 answer and Q2 FY25 other income"
   - "Restated comparatives (17.2% of FY26 PAT, 29.4% of Q1 FY27 PAT) carry unstated assurance; EoM on Note 4"
   - "Former-subsidiary profit no longer separable from Q2 FY27"
-  - "Rs 450 Cr new capex (Rs 740 Cr total) with no debt/accrual split"
+  - "Rs 450 Cr new capex with no debt/accrual split; Rs 740 Cr total programme is 81% of net worth"
   - "Export railway split not disclosed; T3 indeterminate; pending operator ruling"
   - "Disclosure drafting cluster incl. grant-1 date contradiction and lease principal sign"
   - "Governance inferences: COO M&G name match to Bagadia Chaitra; independent director former executive role; board at 50% floor"
@@ -95,5 +99,5 @@ flags:
   - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar-relevant facts flagged"
   - "Tracker has one external downstream signal; Role 5.5 reopening suggested"
 plain_language_brief_included: true
-analyst_note: "Loop 1 applied seven A5 fixes. Operations grew: revenue +21.1%, core PBT +32.6%. The -15.5% PAT print is mostly the Q2 FY26 other-income spike, but a Rs 38.8-48.5 Cr a year other-income baseline is also gone, so the recurring pre-tax gain is about +2.5 to +4.2 Cr. Cash did not improve: net debt Rs 538.7 Cr is above the Rs 491 Cr line, Rs 581.3 Cr and rising if deposits are lien-marked; FCF ex the payables rise is about Rs -165 Cr. Castings sold 3,086 MT at 52% of pre-programme capacity, with a +46% castings step still ahead. Cross-document calls stand: finance-cost fall is mostly FX; grant 1 read as March 2025; goodwill removal lifts ROE +16.0% and ROCE about +8.8% mechanically; Q1 castings 2,968 MT. Deck and filing agree on every primary line. Verdict PROCEED WITH FLAGS: cash INDETERMINATE-WITH-DIRECTION caps it at PROCEED WITH CAVEATS or below, and two tracker falsifiers are met."
+analyst_note: "Loop 2 split other income into two labelled readings (A5-C1). Operations grew: revenue +21.1%, core PBT +32.6%, operating rows about +7.8 Cr pre-tax. Most of the -15.5% PAT print is the Q2 FY26 other-income item (Rs 21.3 Cr, source NOT FOUND). Reading A (one-off): about Rs 14-21 Cr a year of recurring other income is lost, and the Q2 recurring pre-tax change is +2.5 to +4.2. Reading B (recurs yearly): about Rs 34 Cr a year is lost, and the change is about +0.2 to -2.2, or -11.4 if seasonal to Q2. The Q8 answer and Q2 FY25 other income separate them. Cash did not improve: net debt Rs 538.7 Cr is above the Rs 491 Cr line (Rs 581.3 Cr and rising if deposits are lien-marked); FCF ex the payables rise is about Rs -165 Cr. Castings ran at 52% of pre-programme capacity with a +46% step ahead. Goodwill removal lifts ROE +16.0% and ROCE about +8.8% mechanically. Verdict PROCEED WITH FLAGS."
 review_path: "runs/pittieng-q2fy27/work/review_pittieng_q2fy27.md"

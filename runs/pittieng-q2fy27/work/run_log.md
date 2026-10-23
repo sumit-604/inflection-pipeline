@@ -23,3 +23,7 @@
 - A5 re-audit (iteration 2): INCOMPLETE. All 7 iteration-1 findings closed. One NEW open item: CONTRADICTION A5-C1 (two definitions of the other-income 'baseline' introduced by the M1 fix; wording only; replacement text in audit section R2). STYLE S1 (partial), S3-S5 logged.
 - LOOP CAP reached (1 of 1). Orchestrator does NOT run a second iteration. Operator is away and the session brief says not to stop and ask; A5-C1 goes to the operator as an open item. Notion save gate (A5 COMPLETE) not met; payload saved for review only.
 - Close: session-cost.md and notion-payload.md written. No Notion write. Commit on branch claude/quarterly-pittieng-q2fy27-3fc1e6, not pushed.
+- 2026-10-24: OPERATOR APPROVAL for a second correction loop (loop cap, orchestrator Point 9). Operator wrote on 2026-10-24: "complete them fully" (relayed by the parent session local_75d06544). Iteration 2 targets A5-C1 only. No third iteration.
+- A4 loop 2: A5-C1 fixed (both other-income readings stated everywhere) + STYLE S3, S4. 67,480 tok.
+- A5 re-audit loop 2 (iteration 3): COMPLETE with style notes. 8/8 non-STYLE findings closed; STYLE S1, S5, S6 logged. 58,942 tok.
+- Notion payload updated to the final wording; still NOT WRITTEN (no write in this session; operator approval of the payload needed).

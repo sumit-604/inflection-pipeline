@@ -1,9 +1,8 @@
 # NOTION PAYLOAD — PITTIENG Q2 FY27 (NOT WRITTEN)
 
-Status: printed only. The session brief says no Notion write. The save gate (A5 COMPLETE) is also NOT met:
-A5 closed at INCOMPLETE after the one permitted loop, with one open CONTRADICTION (A5-C1, wording of the
-other-income "baseline"; replacement text in work/audit_pittieng_q2fy27.md section R2). Decision Status is
-never written.
+Status: printed only; NOT WRITTEN (session brief: no Notion write). The A5 gate is now MET: verdict COMPLETE
+with style notes after correction loop 2 (operator-approved 2026-10-24). The write still needs the operator's
+explicit approval of this printed payload. Decision Status is never written.
 
 ## Target page
 COMPANIES MASTER / Pitti Engineering
@@ -15,14 +14,14 @@ https://app.notion.com/p/3d5bb2b9d3ab8111a17aef5d537101a9
 - Decision Status: NOT WRITTEN (stays WATCHLIST)
 
 Key Notes line:
-23-Oct-2026 /run-quarterly Q2 FY27 (results + deck, pre-call): revenue Rs 578.4 Cr (+21.1%), core PBT ex OI +32.6%, PAT Rs 33.9 Cr (-15.5%) on Q2 FY26 OI spike Rs 21.3 Cr plus a lost OI baseline (FY24-26 Rs 38.8-48.5 Cr/yr, source NOT FOUND). Net debt Rs 538.7 Cr computed vs Rs 491 Cr = falsifier met (H1 WC release all from payables +Rs 231.5 Cr; Rs 581.3 Cr if Rs 42.65 Cr bank deposits are lien-marked). Castings 3,086 MT vs ~4,600 = falsifier met (52% util on pre-programme 24,600 MT; Q1 implied 2,968 vs 3,191 on file). Export railway ND; total exports Rs 154.3 Cr = T3 indeterminate. Goodwill Rs 136.1 Cr removed in restatement (mechanical ROE +16%, ROCE ~+8.8%, not quality). Rs 450 Cr new capex (Rs 740 Cr programme to FY31). Protocol verdict PROCEED WITH FLAGS; A5 INCOMPLETE (1 open wording contradiction). Role 5 pending (call 23-Oct 14:00). Decision Status unchanged (operator-only).
+23-Oct-2026 /run-quarterly Q2 FY27 (results + deck, pre-call): revenue Rs 578.4 Cr (+21.1%), core PBT ex OI +32.6%, PAT Rs 33.9 Cr (-15.5%) on lower other income (Q2 FY26 Rs 21.3 Cr vs Rs 2.1 Cr). Two OI readings, unresolved: A (Q2 FY26 item one-off) loses ~Rs 14-21 Cr/yr, recurring pre-tax +2.5 to +4.2 in Q2; B (item recurs yearly) loses ~Rs 34 Cr/yr, recurring +0.2 to -2.2 (-11.4 if Q2-seasonal); OI source NOT FOUND. Net debt Rs 538.7 Cr computed vs Rs 491 Cr = falsifier met (H1 WC release all from payables +Rs 231.5 Cr; Rs 581.3 Cr if Rs 42.65 Cr bank deposits are lien-marked). Castings 3,086 MT vs ~4,600 = falsifier met (52% util on pre-programme 24,600 MT; Q1 implied 2,968 vs 3,191 on file). Export railway ND; total exports Rs 154.3 Cr = T3 indeterminate. Goodwill Rs 136.1 Cr removed in restatement (mechanical ROE +16%, ROCE ~+8.8%, not quality). Rs 450 Cr new capex (Rs 740 Cr programme to FY31). Protocol verdict PROCEED WITH FLAGS; A5 COMPLETE with style notes (2 loops). Role 5 pending (call 23-Oct 14:00). Decision Status unchanged (operator-only).
 
 ## 2. insert_content, position: end (split across sequential inserts)
 Heading: "## Q2 FY27 quarterly review (/run-quarterly, 23-Oct-2026): results + presentation, pre-call"
 Body, in order, full tables, pipes in cells escaped as \|:
 1. runs/pittieng-q2fy27/work/review_pittieng_q2fy27.md (full merged review, including the PLAIN-LANGUAGE BRIEF)
 2. A3 forensics tables: work/forensics_results_pittieng_q2fy27.md and work/forensics_presentation_pittieng_q2fy27.md (F1-F17 status tables and findings)
-3. A5 audit verdict: work/audit_pittieng_q2fy27.md, ITERATION 2 RE-AUDIT section (verdict INCOMPLETE, A5-C1 open, STYLE S1 partial, S3-S5)
+3. A5 audit verdict: work/audit_pittieng_q2fy27.md, ITERATION 3 RE-AUDIT (loop 2) section (verdict COMPLETE with style notes; 8 of 8 non-STYLE findings closed; STYLE S1, S5, S6 logged)
 4. Line: "Repo: runs/pittieng-q2fy27/ (commit hash in the run report)."
 
 ## 3. DOWNSTREAM SIGNAL TRACKER rows (update_properties; NOT WRITTEN)

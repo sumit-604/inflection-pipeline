@@ -5,7 +5,7 @@ Instruction file: prompts/quarterly-a5-adversary.md
 Inputs read: work/review_pittieng_q2fy27.md (A4); extracted/pittieng-results-q2fy27-fulltext.md and -structured.md; extracted/pittieng-presentation-q2fy27-fulltext.md and -structured.md; work/ledger_results_pittieng_q2fy27.md; work/ledger_presentation_pittieng_q2fy27.md.
 Not read: source PDFs, anything under inputs/, A3 forensic notes, orchestrator commentary.
 Cite convention: review:L### = line in the A4 review. results:L### and presentation:L### = A1 fulltext lines. R### = A1 structured row IDs (they restart per document). All Rs figures are crores unless marked lakh.
-Note: sections 0-6 below are the iteration-1 audit, kept as written; review:L### there refer to the pre-revision review. The ITERATION 2 RE-AUDIT section at the end holds the final verdict and the governing YAML block.
+Note: sections 0-6 below are the iteration-1 audit, kept as written; review:L### there refer to the pre-revision review. The ITERATION 2 and ITERATION 3 re-audit sections follow. The ITERATION 3 RE-AUDIT section at the end holds the final verdict and the governing YAML block.
 
 ---
 
@@ -184,7 +184,7 @@ Coverage (PASS) and the brief gate (PASS) need no re-run of A2 or A3. A3 may mir
 ---
 
 ```yaml
-# ITERATION 1 BLOCK (superseded by the ITERATION 2 block at the end of this file)
+# ITERATION 1 BLOCK (superseded by the ITERATION 3 block at the end of this file)
 stage: A5-adversary
 company: "PITTIENG"
 quarter: "Q2 FY27"
@@ -260,7 +260,7 @@ analyst_note: "Brief gate and coverage pass: counts match A2 on both documents, 
 
 Trigger: coordinator re-audit, correction loop iteration 1 of 1. A4 revised work/review_pittieng_q2fy27.md in place (revision line review:L4; CORRECTION LOG review:L581-L592).
 Scope: (a) re-check each FACTUAL and MISSING finding against the A1 fulltexts; (b) scan every changed passage for new errors; (c) re-run the brief gate and the coverage check on the revised file.
-Line numbers in this section (review:L###) refer to the REVISED review.
+Line numbers in this section (review:L###) refer to the iteration-1 REVISED review (before the loop-2 edits).
 Passages scanned: L4, L7; Point 3 L113; Step 2 L202-L216; Step 3 L232-L239; Step 4 L254-L268; Step 5 L288-L318; 5.5A-B L348-L361; 6A-6D L383-L421; Steps 6.5/7 L436-L442; Step 8 L462-L470; Q8-Q10, Q16, Q32 L490-L514; top-3 and channel L516-L521; M5 note L542; K1, K6-K8 L550-L557; Key Notes and tracker payload L575-L576; correction log L581-L592; N10 L609; Flags L615-L622; Brief L634-L689; YAML L699-L791.
 
 ### R1. Iteration-1 findings re-checked against the extract
@@ -304,6 +304,7 @@ No other new error was found. I recomputed every new number in the changed passa
 - This was loop 1 of 1. The orchestrator decides whether A5-C1 goes to Halt 1 as an open item, or takes the replacement text with operator approval.
 
 ```yaml
+# ITERATION 2 BLOCK (superseded by the ITERATION 3 block at the end of this file)
 stage: A5-adversary
 company: "PITTIENG"
 quarter: "Q2 FY27"
@@ -346,4 +347,92 @@ style_notes:
   - "A5-S4 Flag 8 referent"
   - "A5-S5 A2 zero-standing description"
 analyst_note: "Iteration 2. All seven iteration-1 findings are fixed and re-check clean against the A1 fulltexts: margin cause, FCF labels, goodwill lift, lease-sign direction, castings pre-programme capacity, the other-income graft and the deposits caveat. Coverage and the brief gate still pass. The other-income graft introduced one contradiction. The bridge treats the Q2 FY26 item as one-off and finds a lost baseline of Rs 3.6-5.3 Cr a quarter, giving a recurring pre-tax gain of +2.5 to +4.2. Q8, E-a, Flag 5 and the analyst note instead call the full Rs 38.8-48.5 Cr a year a baseline and quote a Rs 34 Cr a year loss, while keeping the +2.5 to +4.2 gain. Those do not compute together: on the annual-level reading the Q2 recurring change is about 0 to -2, or -11.4 if the item is seasonal to Q2. The fix is wording, not new evidence: name both readings and the observation that separates them (the Q8 answer and Q2 FY25 other income). This was loop 1 of 1, so the orchestrator decides whether C1 goes to Halt 1 or takes the exact replacement text in the audit."
+```
+
+---
+
+## ITERATION 3 RE-AUDIT (loop 2) (2026-10-24)
+
+Trigger: coordinator re-audit, correction loop iteration 2 (operator-approved 2026-10-24; the last permitted). A4 revised work/review_pittieng_q2fy27.md in place for A5-C1 and applied STYLE A5-S3 and A5-S4 (revision line review:L4; CORRECTION LOG review:L587-L601, A5-C1 row L597).
+Scope: (a) check A5-C1 against the A1 fulltexts; (b) scan every changed passage for new errors; (c) re-run the brief gate and coverage on the revised file.
+Line numbers in this section (review:L###) refer to the loop-2 REVISED review.
+Passages scanned: L4; Step 2 table L202 and diagnostic 6 L216-L219; Step 4 table L257-L259, check L265, mandatory Q1-Q2 L270-L271; E-a L444; Step 8 verdict line L458 and 8A-W L467; Q8 L495; K17 L571; Key Notes L581; correction log L587-L601; Flags L622-L636 (Flag 5 L628, Flag 8 L631); Brief L643-L698 (L646, L675, L691); YAML L708-L804 (fixes L717-L719, Q8 L746, K17 L781, flag L792, analyst_note L804).
+Residual-wording check: grep "baseline" in the revised review hits only the correction-log row L595, which describes the old wording. grep "+2.5 to +4.2" hits only lines that label it Reading A (L217, L270, L495, L628, L792, L804, and the logs L597, L717).
+
+### S1. A5-C1 re-checked against the extract
+
+| Location | Revised text (summary) | Re-check against A1 fulltext | Result |
+|---|---|---|---|
+| Diag 6 L216 | FY27 run-rate (0.85 + 2.10) x 2 = Rs 5.90 Cr vs FY26 Rs 40.11 Cr: line change about Rs 34.2 Cr | results:L188: 2.95 x 2 = 5.90; 40.11 - 5.90 = 34.21 | ties |
+| Reading A L217 | level Rs 5.69-7.40 Cr a quarter; pairs -15.63/-3.59 and -13.92/-5.30; lost Rs 3.6-5.3 Cr a quarter, about Rs 14-21 Cr a year; Q2 recurring change +2.5 to +4.2 | 21.32 - 5.69 = 15.63; 5.69 - 2.10 = 3.59; 21.32 - 7.40 = 13.92; 7.40 - 2.10 = 5.30; each pair sums to 19.22; 3.59 x 4 = 14.4, 5.30 x 4 = 21.2; 7.78 - 5.30 = 2.48, 7.78 - 3.59 = 4.19 (results:L188; Q1 FY26 = H1 28.73 - Q2 21.32; H2 = (40.11 - 28.73) / 2) | ties; the minor pairing defect from iteration 2 is fixed |
+| Reading B L218 | lost about Rs 34 Cr a year; Q2 change +0.2 to -2.2 (even spread, Rs 9.70-12.13 a quarter, Q2 lost Rs 7.60-10.03) or -11.4 (seasonal) | 38.8 / 4 = 9.70; 48.5 / 4 = 12.13 (presentation:L741-L742; R410, R411); 9.70 - 2.10 = 7.60; 12.13 - 2.10 = 10.03; 7.78 - 7.60 = +0.18; 7.78 - 10.03 = -2.25; 7.78 - 19.22 = -11.44 | ties |
+| Separating observations L219, K17 L571, L781 | Q8 answer and Q2 FY25 other income (ND here); neither reading preferred | Q2 FY25 is not in either document: confirmed (results columns L185 start at Q2 FY26; deck history is annual only, L739) | correct ND handling |
+| Bridge L257-L259, check L265 | Reading A split rows labelled; total row carries Reading B split | as above; -15.63 / 40.09 = -39.0%; -3.59 / 40.09 = -9.0% | ties |
+| Mandatory Q1 L270 | operating rows +7.8 under both readings; A: +2.5 to +4.2, spike -15.6 to -13.9; B: +0.2 to -2.2 or -11.4, recurring base flat to down | as above | consistent |
+| Mandatory Q2 L271 | A: Rs 14-21 Cr a year recurring gone, rest of the Rs 34 Cr line change one-off; B: about Rs 34 Cr a year gone | as above | consistent |
+| E-a L444; 8A-W L467; Key Notes L581; Flag 5 L628; YAML flag L792; analyst note L804 | both readings named, each with its own loss and change; no Reading B level paired with Reading A gain | as above | consistent |
+| Q8 L495 | A: Rs 14-21 Cr a year, +2.5 to +4.2; B: Rs 34 Cr a year, "about -2 (even spread) to -11.4" | even-spread range is +0.2 to -2.2; Q8 rounds it to "about -2" (this wording came from my own iteration-2 replacement text) | STYLE only, new note A5-S6 |
+| Brief L646, L675; forward map L691 | two readings stated in plain words with Rs 14-21 Cr and Rs 34 Cr a year | as above | consistent |
+
+A5-C1: **CLOSED.**
+
+### S2. STYLE items applied in loop 2
+- A5-S3: CLOSED. Step 8 L458 now carries the body verdict line: "Protocol verdict: PROCEED WITH FLAGS". This matches the YAML L727.
+- A5-S4: CLOSED. Flag 8 L631 now ties the 81% to the Rs 740 Cr programme: 740 / 911.7 = 81.2% (presentation:L278; R268).
+
+### S3. New-error scan
+- No new FACTUAL, MISSING or CONTRADICTION finding.
+- Every new number ties to the extract, as shown in the S1 table.
+- The other changed passages agree with each other and with Step 2 diagnostic 6: Step 2 table L202, 8A-W L467, K17 and the YAML question L746.
+- New STYLE note A5-S6. Q8 (L495) writes Reading B's even-spread change as "about -2". Diagnostic 6, mandatory Q1 and Flag 5 give the full range, +0.2 to -2.2. This is cosmetic, it changes no conclusion, and it repeats my own iteration-2 replacement text.
+
+### S4. Gates on the revised file
+- Brief gate: PASS. Narrative L643-L659 is 17 lines (limit 10-20). Sector L661-L666, business model L668-L676, competition L678-L684 and forward map L686-L698 are all present. The forward map has 8 dated rows, each with a bull and a bear fork.
+- Coverage: PASS, unchanged. Loop 2 added no new row IDs. K17 points outside the corpus and is marked ND. orphan_rows: none. missing_from_ledger: none.
+
+### S5. Final verdict
+**COMPLETE with style notes.**
+- Every FACTUAL, MISSING and CONTRADICTION finding is closed. That is 5 FACTUAL (A5-F1 to F5), 2 MISSING (A5-M1, M2) and 1 CONTRADICTION (A5-C1).
+- STYLE notes still open, logged only and never re-run:
+  - A5-S1 (partial): 0.01 drift on 158.19, -98.64 and 663.85/652.60.
+  - A5-S5: wording in the A2 ledger.
+  - A5-S6: the Q8 rounding.
+- The review may proceed to the Notion save gate. The save still needs the operator's approval of the printed payload.
+
+```yaml
+stage: A5-adversary
+company: "PITTIENG"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+re_audit: true
+iteration: 3
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []  # iteration-1 counters (A5-M1 other income, A5-F5 castings) grafted and re-checked; A5-C1 two-reading fix re-checked
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "A5-S1 (partial): 0.01 drift remains on 158.19, -98.64, 663.85/652.60"
+    - "A5-S5 (A2): ledger L5 '13 line items' wording; 3 of 35 zero-standing tags sit on the vesting schedule"
+    - "A5-S6 (new): Q8 L495 rounds Reading B's even-spread change to 'about -2'; the full range elsewhere is +0.2 to -2.2 (wording from A5's own iteration-2 replacement text)"
+closed_findings: [A5-F1, A5-F2, A5-F3, A5-F4, A5-F5, A5-M1, A5-M2, A5-C1, A5-S2, A5-S3, A5-S4]
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "A5-S1 partial rounding drift (0.01)"
+  - "A5-S5 A2 zero-standing description"
+  - "A5-S6 Q8 Reading B range rounded to 'about -2'"
+analyst_note: "Iteration 3, loop 2, the last permitted. A5-C1 is closed. Other income now carries two labelled readings everywhere it appears, and every figure re-derives from the A1 fulltexts. Reading A (Q2 FY26 item one-off): Rs 3.6-5.3 Cr a quarter lost, Q2 recurring pre-tax change +2.5 to +4.2. Reading B (item recurs yearly): about Rs 34 Cr a year lost, change +0.2 to -2.2, or -11.4 if seasonal. The Q8 answer and Q2 FY25 other income separate them; Q2 FY25 is outside this corpus and correctly marked ND (K17). Grep confirms no residual pairing of one reading's level with the other's gain. STYLE S3 and S4 are applied. No new non-STYLE error was found in the changed passages. Remaining notes are cosmetic: 0.01 rounding drift, A2 ledger wording and a rounded range in Q8 that came from A5's own replacement text. Across three passes A5 raised 8 non-STYLE findings and all 8 closed. The brief gate and coverage passed at every pass."
 ```

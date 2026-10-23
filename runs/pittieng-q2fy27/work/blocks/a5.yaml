@@ -4,8 +4,8 @@ quarter: "Q2 FY27"
 model: "claude-opus-5-5"
 status: complete
 re_audit: true
-iteration: 2
-verdict: INCOMPLETE
+iteration: 3
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -15,28 +15,21 @@ plain_language_brief:
 coverage:
   orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - metric: "Recurring pre-tax change paired with the 'Rs 38.8-48.5 Cr a year baseline' (Flag 5 L619; YAML flag L779; analyst note L791)"
-    a4_value: "baseline Rs 38.8-48.5 Cr a year gone, so recurring pre-tax gain +2.5 to +4.2"
-    recomputed: "+2.5 to +4.2 holds only on the FY26 ex-spike baseline (Rs 5.69-7.40 a quarter). On a Rs 38.8-48.5 Cr a year level the Q2 change is +0.2 to -2.2; if the Q2 FY26 item recurs each Q2 it is -11.4"
-    source_line: "presentation:L741-L742 (R409-R411); results:L188"
-surviving_bear_counters: []  # both iteration-1 counters (A5-M1 other income, A5-F5 castings) grafted into A4 and re-checked
+arithmetic_mismatches: []
+surviving_bear_counters: []  # iteration-1 counters (A5-M1 other income, A5-F5 castings) grafted and re-checked; A5-C1 two-reading fix re-checked
 findings_by_type:
   factual: []
   missing: []
-  contradiction:
-    - "A5-C1 (A4, new in iteration 2): 'baseline' used for two quantities. Bridge/diag 6/mandatory Q1 (L216, L254-L255, L267) use the FY26 ex-spike baseline (Rs 3.6-5.3 Cr a quarter, gain +2.5 to +4.2); E-a L441, Q8 L490, Flag 5 L619, YAML L779 and analyst note L791 call the full Rs 38.8-48.5 Cr a year baseline and a Rs 34 Cr a year loss, yet keep the +2.5 to +4.2 gain. On that level the Q2 recurring change is +0.2 to -2.2 (or -11.4 if the item is seasonal to Q2)"
+  contradiction: []
   style:
     - "A5-S1 (partial): 0.01 drift remains on 158.19, -98.64, 663.85/652.60"
-    - "A5-S3: protocol verdict only in Step 9 Key Notes, YAML and analyst note; no body verdict line"
-    - "A5-S4: Flag 8 L622 '81% of net worth' refers to Rs 740 Cr, not Rs 450 Cr"
     - "A5-S5 (A2): ledger L5 '13 line items' wording; 3 of 35 zero-standing tags sit on the vesting schedule"
-closed_findings: [A5-F1, A5-F2, A5-F3, A5-F4, A5-F5, A5-M1, A5-M2, A5-S2]
-loop_back_to: "A4"
-gap: "A5-C1: at L216, L268, L441, L490, L619, L779, L791 replace the single 'baseline' wording with two labelled readings separated by the Q8 answer and Q2 FY25 other income. Reading A (Q2 FY26 item one-off): lost baseline Rs 3.6-5.3 Cr a quarter, about Rs 14-21 Cr a year; Q2 recurring pre-tax change +2.5 to +4.2. Reading B (item recurs yearly; FY24-FY26 totals Rs 38.8-48.5 Cr): lost recurring other income about Rs 34 Cr a year; Q2 recurring pre-tax change about -2 (even spread) to -11.4 (seasonal to Q2). Also pair spike -13.92 with the Rs 7.40 Cr baseline at L216. Loop 1 of 1 used: orchestrator routes to Halt 1 or applies this text with operator approval"
+    - "A5-S6 (new): Q8 L495 rounds Reading B's even-spread change to 'about -2'; the full range elsewhere is +0.2 to -2.2 (wording from A5's own iteration-2 replacement text)"
+closed_findings: [A5-F1, A5-F2, A5-F3, A5-F4, A5-F5, A5-M1, A5-M2, A5-C1, A5-S2, A5-S3, A5-S4]
+loop_back_to: ""
+gap: ""
 style_notes:
-  - "A5-S1 partial rounding drift"
-  - "A5-S3 no body verdict line"
-  - "A5-S4 Flag 8 referent"
+  - "A5-S1 partial rounding drift (0.01)"
   - "A5-S5 A2 zero-standing description"
-analyst_note: "Iteration 2. All seven iteration-1 findings are fixed and re-check clean against the A1 fulltexts: margin cause, FCF labels, goodwill lift, lease-sign direction, castings pre-programme capacity, the other-income graft and the deposits caveat. Coverage and the brief gate still pass. The other-income graft introduced one contradiction. The bridge treats the Q2 FY26 item as one-off and finds a lost baseline of Rs 3.6-5.3 Cr a quarter, giving a recurring pre-tax gain of +2.5 to +4.2. Q8, E-a, Flag 5 and the analyst note instead call the full Rs 38.8-48.5 Cr a year a baseline and quote a Rs 34 Cr a year loss, while keeping the +2.5 to +4.2 gain. Those do not compute together: on the annual-level reading the Q2 recurring change is about 0 to -2, or -11.4 if the item is seasonal to Q2. The fix is wording, not new evidence: name both readings and the observation that separates them (the Q8 answer and Q2 FY25 other income). This was loop 1 of 1, so the orchestrator decides whether C1 goes to Halt 1 or takes the exact replacement text in the audit."
+  - "A5-S6 Q8 Reading B range rounded to 'about -2'"
+analyst_note: "Iteration 3, loop 2, the last permitted. A5-C1 is closed. Other income now carries two labelled readings everywhere it appears, and every figure re-derives from the A1 fulltexts. Reading A (Q2 FY26 item one-off): Rs 3.6-5.3 Cr a quarter lost, Q2 recurring pre-tax change +2.5 to +4.2. Reading B (item recurs yearly): about Rs 34 Cr a year lost, change +0.2 to -2.2, or -11.4 if seasonal. The Q8 answer and Q2 FY25 other income separate them; Q2 FY25 is outside this corpus and correctly marked ND (K17). Grep confirms no residual pairing of one reading's level with the other's gain. STYLE S3 and S4 are applied. No new non-STYLE error was found in the changed passages. Remaining notes are cosmetic: 0.01 rounding drift, A2 ledger wording and a rounded range in Q8 that came from A5's own replacement text. Across three passes A5 raised 8 non-STYLE findings and all 8 closed. The brief gate and coverage passed at every pass."

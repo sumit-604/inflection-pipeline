@@ -1,16 +1,17 @@
 # A2 ENUMERATION LEDGER: Tejas Networks (TEJASNET), Q2 FY27, Results filing
 Source: A1 structured extraction (R001-R851). Prior ledger: Q1 FY27 (diffs in section 9). Claim text lives at the row ID in the structured file; not re-copied here.
 
-ids_in_structured: 851 | ids_referenced_in_ledger: 851 | orphan_ids: [] | match: yes
+ids_in_structured: 851 | ids_referenced_in_ledger: 864 (851 structured + 13 MISSING_FROM_STRUCTURED R852-R864) | orphan_ids: [] | match: yes
 
 ```
 === A2 COUNT TEST ===
 category: notes             grep_count: 12   sweep_count: 12   match: yes   (+2 footnotes R842,R834 and 7 xref/marker rows; see section 1)
-category: line_items        grep_count: 238  sweep_count: 238  match: yes   (grep = distinct page+line among NUMBER R001-R694; sweep = label-run groups)
-category: zero_standing     grep_count: 37   sweep_count: 37   match: yes   (rows; 18 line items)
+category: line_items        grep_count: 242  sweep_count: 242  match: yes   (238 structured + R852-R855; grep = distinct page+line, sweep = label-run groups)
+category: zero_standing     grep_count: 40   sweep_count: 40   match: yes   (rows; 37 structured + R852, R853, R855)
 category: agenda_items      grep_count: 1    sweep_count: 1    match: yes   (results only; board times R698-R699)
-category: auditor_paras     grep_count: 11   sweep_count: 11   match: yes   (section 5)
+category: auditor_paras     grep_count: 19   sweep_count: 19   match: yes   (11 structured + R856-R863; R864 is an identifier block, counted separately; section 5 and 10)
 category: entities          grep_count: 4    sweep_count: 4    match: yes   (holding + 3 subs; 29 ENTITY rows)
+fulltext_vs_structured: fulltext sweep found 864 units vs 851 structured rows; 13 MISSING_FROM_STRUCTURED rows named: R852 R853 R854 R855 R856 R857 R858 R859 R860 R861 R862 R863 R864 (fulltext lines 159, 170, 338, 715, 488-494, 76-84, 86-91, 105-109, 423-435, 437-442, 444-455, 480, 463-475)
 category: signature_blocks  grep_count: 5    sweep_count: 5    match: yes
 gate_a2: pass
 === END COUNT TEST ===
@@ -414,5 +415,5 @@ R861 | 437-442 | auditor para (cons p7) | MISSING_FROM_STRUCTURED | cons para 2:
 R862 | 444-455 | auditor para (cons p7) | MISSING_FROM_STRUCTURED | cons para 3: review standard SRE 2410 (R850/R851 abbreviate)
 R863 | 480 | auditor para (cons p8) | MISSING_FROM_STRUCTURED | cons para 4 intro: entity list lead-in (entities at R760-R763)
 R864 | 463-475 | identifier block (p7) | MISSING_FROM_STRUCTURED | PW address, head office, LLP conversion 25-Jul-2014 text (R782, R727-R728 partial)
-Not enumerated (boilerplate, no content): page markers, CIN/telephone/registered-office repeats, column header lines (138-139, 284-285, 529-530, 671-672, 784-786), stamp/signature OCR noise. Auditor paras now 11 structured + 9 missing-row = 20 distinct units (std 1-4 and cons 1-6 plus identifiers).
+Not enumerated (boilerplate, no content): page markers, CIN/telephone/registered-office repeats, column header lines (138-139, 284-285, 529-530, 671-672, 784-786), stamp/signature OCR noise. Auditor paras restated: 19 auditor-paragraph rows (11 structured + R856-R863) plus 1 identifier block (R864); R864 is not an auditor paragraph.
 Updated tally: line_items 238 + 4 = 242; zero_standing rows 37 + 3 = 40; missing_from_structured 13. Gate A2: pass (structured orphan_ids empty; all fulltext units now ledgered).

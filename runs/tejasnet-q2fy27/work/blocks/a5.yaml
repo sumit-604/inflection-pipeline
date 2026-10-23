@@ -2,8 +2,9 @@ stage: A5-adversary
 company: "TEJASNET"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
+loop: 2
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -12,52 +13,34 @@ plain_language_brief:
   forward_map: present
 coverage:
   orphan_rows: []
-  missing_from_ledger:
-    - "results RL159 std P&L current tax line (dash/OCR noise), no structured row"
-    - "results RL170 std P&L OCI income tax on reclassifiable items (dash), no structured row"
-    - "results RL338 std cash flow Other finance cost, OCR '10.99)'; (0.99) H1 FY27 / (0.89) H1 FY26 by identity to RL339"
-    - "results RL715 cons cash flow Repayment of borrowings non-current (161.22); identity RL712-726 confirms (material)"
-    - "results RL488-494 cons review report para 5 unmodified conclusion, no QUALIFIER row"
-    - "concall CL516-517 hedge 'That's all I can say'"
-    - "concall CL590-591 hedge 'That's about all I can say. I cannot comment on the revenue numbers'"
-    - "concall CL524-526 forward 'significant amount is going to come in' (collections)"
-arithmetic_mismatches:
-  - {metric: "Receivable days Mar-26 (and CCC Mar-26)", a4_value: "1,078.8 days on 3,260.78 (CCC 2,011.6)", recomputed: "1,077.5 days on 3,256.78 if RL604 4.33 is OCR for 0.33 (CCC 2,010.3); subtotal RL609 fails by 4.00, std RL223 by 1.00", source_line: "RL597-609, RL614, RL218-223; rv L248, L252"}
-surviving_bear_counters:
-  - {claim: "BSNL add-on trigger FIRED; Gate 1 met; thesis-broken NOT FIRED (rv L344, L355, L813)", counter: "Deck states LoI only (PL69, PL93, PL187); POs spoken only and partial (CL97-98, CL346-350); BSNL value in book refused (CL355); implied Q2 inflow ~1,192 includes non-BSNL wins; A4 text calls the ruling both 'stands' (rv L344) and 'open' (rv L349, L911)", source_line: "PL187; CL346-358; rv L344, L349, L911", type: CONTRADICTION}
-  - {claim: "Net-debt thesis-broken NOT FIRED, headroom 115.61 (rv L343, L403)", counter: "Breach needs 1.08x the Q2 rise of 107.39; Q3 at Q2 pace 4,491.78, at H1 pace 4,811.25; H1 FCF (354.56)/qtr = 3.07x headroom; Q2 pace helped by a 190 fall in net-of-advance receivables", source_line: "PL166, PL169; RL613-635; RL700-703; CL522-523", type: MISSING}
-  - {claim: "Trigger 2 BharatNet and Trigger 5 DCI ON TRACK (rv L356, L359)", counter: "BharatNet rests on an unvalued SI LOI for 3 states; DCI on one C-graded unquantified sentence while A4's own rule discounts commentary 30-50% at 55.0% credibility", source_line: "CL157-159; CL458-476; rv L645, L849", type: MISSING}
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+prior_findings_status:
+  M1: "RESOLVED (units rowed rl L404-L417; count test rl L4-L14)"
+  M1b: "RESOLVED (rl L4 864 IDs; L9 242; L10 40; L12 19 rows with R864 separate; L14 fulltext-vs-structured line; L418 restatement)"
+  M2: "RESOLVED loop 1 (rv L263-L264, L283, L416, L796, L930)"
+  M3: "RESOLVED loop 1 (rv L359, L420, L854, L962, L1041)"
+  M4: "RESOLVED loop 1 (rv L372, L375, L831, L834, L1051)"
+  C1: "RESOLVED loop 1 (rv L346, L360, L365, L371, L409, L416, L830, L855, L933, L936, L1044)"
+  C2: "RESOLVED loop 1 (rv L896-L903, L952, L1055)"
+  F1: "RESOLVED loop 1 (rv L959)"
+  F2: "RESOLVED loop 1 (rv L262, L267)"
+  F3: "RESOLVED loop 1 (rv L211, L448, L1018, L1054)"
 findings_by_type:
-  factual:
-    - "F1 (A4): rv L934 'TCS dominates the book' unsupported; extract says 'a substantial portion' (CL357), share undisclosed (CL355)"
-    - "F2 (A4): Mar-26 receivable days use OCR-suspect non-current receivable 4.33 (RL604; RL609 subtotal fails by 4.00); label OCR, show 1,077.5-1,078.8"
-    - "F3 (A4): forex refuted as cause of +62.99 QoQ other-expense rise; deck EBIT (199)/(194) vs derived (198.12)/(194.71) caps net forex under ~1.4 Cr/qtr (PL119, PL132); fix rv L197, Q21 rv L431, flag rv L1026"
-  missing:
-    - "M1 (A2): 8 fresh-pass units lack structured and ledger rows (RL159, RL170, RL338, RL715, RL488-494, CL516-517, CL524-526, CL590-591)"
-    - "M2 (A4): Q1 FY27 comparators omitted (PL163 NWC 4,478; PL166 net-of-advance receivables 2,232); QoQ -243 / -190 confirms the QoQ collections claim (CL128-132); fix rv L249, L399, L779, L905, L938"
-    - "M3 (A4): net-debt run-rate counter (Q3 4,491.78 at Q2 pace, 4,811.25 at H1 pace) absent; graft rv L343, L403, L937"
-    - "M4 (A4): DCI and BharatNet ON TRACK lack evidence tier; DCI to UNVERIFIED, BharatNet to ON TRACK at LOI stage, unvalued"
-  contradiction:
-    - "C1 (A4): BSNL ruling 'stands' (rv L344) vs 'open' (rv L349, L911) while trigger 1 labelled FIRED (rv L355, L813); one status everywhere"
-    - "C2 (A4): break-even 685/1,130 and 'fixed costs ~262' use the Q2 base A4 calls distorted by 46.50 of estimate releases (rv L199, L203); on Q1 rates 806/1,252; fix rv L879, L927"
+  factual: []
+  missing: []
+  contradiction: []
   style:
-    - "S1: rv L905 'customer advances' tagged FILED; filed label is 'other liabilities' (RL697); retag label INFERENCE (PL164-166)"
-    - "S2: rv L235 25.17% credit rate unsourced; Q2 rate 25.26% gives (241.7)"
-    - "S3: rv L79 5.15 cited to RL534 which reads '5.5'; label derived by identity"
-    - "S4: forward map rv L947-949 three undated catalysts, honestly labelled; note only"
-    - "S5: rv L932 competitor names tagged SECONDARY without a source; retag INFERENCE or name source"
-    - "S6: A4 YAML ledger_reconciliation.notes: 851 counts rows, not notes"
-    - "S7: rv L248 receivable-days improvement partly a denominator effect (trough FY26 vs annualised H1); say so"
-    - "S8: rv L644 Q06 graded B; TCS data-centre POC half (CL427-428) answered only implicitly (CL442)"
-loop_back_to: "A2"
-gap: "A2: add ledger rows (and route structured rows to A1) for RL159, RL170, RL338, RL715 (161.22 non-current repayment), RL488-494, CL516-517, CL524-526, CL590-591; add a fulltext-vs-structured count to the count test. Then A4 (after A3 reviews the new rows): C1 one BSNL trigger/ruling status across rv L344/L349/L355/L813/L911; C2 restate break-even on Q1 estimate rates (~806 EBITDA, ~1,252 PBT) and drop 'fixed costs' label for the ECL credit; M2 add Q1 FY27 comparators PL163/PL166 and split the 7A collections verdict QoQ vs H1, revisit Gate 5; M3 graft net-debt run-rate (Q3 4,491.78 / 4,811.25); M4 DCI to UNVERIFIED, BharatNet to LOI-stage unvalued; F1 replace 'dominates' with 'substantial portion (CL357)'; F2 label RL604 OCR-suspect, show 1,077.5-1,078.8 days; F3 remove forex as the other-expense explanation (PL132 vs derived EBIT) and reframe Q21."
+    - "S4: forward map undated catalysts honestly labelled (rv L972-L974); note only"
+    - "S9: rv L898, L952 call accrual items (ECL, warranty) 'cash operating costs'; use 'operating costs before D&A and interest'"
+    - "S10: rv L420 'only a cash inflow beyond the Q2 receivable release' overstates; about 182 or more (a repeat of Q2's 190) keeps Q3 under 4,500; rv L359 is correct"
+    - "S11: results ledger L20 reconciliation prose still cites 238 (structured-only); add the +4 fulltext-only rows R852-R855 note"
+loop_back_to: ""
+gap: ""
 style_notes:
-  - "S1 provenance retag rv L905"
-  - "S2 unsourced 25.17% rate rv L235"
-  - "S3 identity label rv L79"
   - "S4 undated forward-map items honestly labelled"
-  - "S5 SECONDARY tag without source rv L932"
-  - "S6 YAML key notes: 851"
-  - "S7 receivable-days denominator effect rv L248"
-  - "S8 Q06 half-answer rv L644"
-analyst_note: "Loop goes to A2 because it is the earliest failing agent. The A2 fix is ledger-only and adds one material row, RL715 (161.22 non-current repayment). A3 then needs to review only the new rows. All eight A4 items fit in one A4 pass, and none moves the PROCEED WITH FLAGS verdict. Two findings cut against A4's bear lean, under the same-bar rule. First, the deck's own Q1 comparator shows net-of-advance receivables fell 190 in Q2, so management's QoQ collections claim holds, while A4's H1 reading also holds. Second, the deck EBIT bridge rules out forex as the cause of the 63 Cr other-expense rise, so the rise has no stated cause and may recur. The net-debt run-rate counter matters most. One more quarter at Q2's 107 Cr pace would use 107 of the 116 Cr headroom, and even that pace was helped by a 190 Cr receivable release. On the DROPPED count A5 concurs with A4 (count 1), but the Q1 evidence sits in the digest, outside A5's inputs."
+  - "S9 accrual items labelled cash operating costs rv L898, L952"
+  - "S10 'beyond the Q2 release' overstates the needed Q3 cash release rv L420"
+  - "S11 results ledger L20 prose cites structured-only 238"
+analyst_note: "Final loop. The results ledger header now matches its body and A4: 864 IDs, 242 line items, 40 zero-standing rows, and 19 auditor-paragraph rows with R864 kept separate. The count test also carries the fulltext-vs-structured line that M1 asked for, so the same A1 drop would now show at the A2 gate. Every finding raised across the three passes is closed; only four STYLE notes remain, none of which changes a number or a conclusion. COMPLETE clears the A5 gate only; it does not replace the operator's approval of the printed Notion payload, and A4's PROCEED WITH FLAGS verdict, with its two open operator items (net-debt definition; reconfirming the 27-Aug BSNL ruling on PO evidence), stands as written."

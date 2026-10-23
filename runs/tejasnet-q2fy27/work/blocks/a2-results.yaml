@@ -1,5 +1,5 @@
 stage: A2-enumerator
-loop: 1
+loop: 2
 company: "TEJASNET"
 quarter: "q2fy27"
 doctype: "results"
@@ -11,7 +11,7 @@ counts:
   line_items: 242
   zero_standing: 40
   agenda_items: 1
-  auditor_paras: 20
+  auditor_paras: 19
   entities: 4
   turns: 0
   questions: 0
@@ -20,7 +20,7 @@ counts:
   slide_numbers: 0
 flags_raised: [ZERO_STANDING, COLS_PARTIAL, OCR_MISREAD_PAIR, RESTATED, FOOTNOTE_UNRESOLVED, UNREVIEWED_SUBS, MISSING_FROM_STRUCTURED]
 ids_in_structured: 851
-ids_referenced: 851
+ids_referenced: 864
 orphan_ids: []
 missing_from_structured: [R852_ft159, R853_ft170, R854_ft338, R855_ft715, R856_ft488-494, R857_ft76-84, R858_ft86-91, R859_ft105-109, R860_ft423-435, R861_ft437-442, R862_ft444-455, R863_ft480, R864_ft463-475]
 gate_a2: pass

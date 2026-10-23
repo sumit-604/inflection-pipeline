@@ -4,7 +4,7 @@ Agent: A5 adversary | model: claude-opus-5-5 | run date 2026-10-23
 Review under audit: runs/tejasnet-q2fy27/work/review_tejasnet_q2fy27.md (A4, 1,035 lines; "rv L###" = review line)
 Inputs read: A1 fulltexts (results, concall, presentation), A1 structured (R001-R851 / R001-R324 / R001-R210), A2 ledgers (3), A4 review. Source PDFs, inputs/ and A3 notes not opened.
 Anchor key: RL / CL / PL = results / concall / presentation fulltext line; R### = A1 structured row ID.
-Write log: sections written in order after a network drop (coordinator message, ~18:47 IST). Audits 0-1 first, then 2, then 3, verdict, style notes, YAML. File complete. Block copy: runs/tejasnet-q2fy27/work/blocks/a5.yaml.
+Write log: sections written in order after a network drop (coordinator message, ~18:47 IST). Audits 0-1 first, then 2, then 3, verdict, style notes, YAML. File complete. Block copy: runs/tejasnet-q2fy27/work/blocks/a5.yaml. Loop 1 and loop 2 re-audits appended at the end; the loop 2 YAML block (last in this file) is the current and final one.
 
 ---
 
@@ -272,13 +272,14 @@ VERDICT: INCOMPLETE.
 - Finding types: MISSING 4, CONTRADICTION 2, FACTUAL 3, STYLE 8.
 - Gates: deliverable-completeness PASS; orphan rows none; arithmetic one low-severity FACTUAL (F2); three surviving bear counters to graft (C1, M3, M4).
 
----
+YAML block for the original audit (loop 0; superseded by the loop 2 block at the end of this file):
 
 ```yaml
 stage: A5-adversary
 company: "TEJASNET"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
+loop: 0
 status: complete
 verdict: INCOMPLETE
 plain_language_brief:
@@ -289,53 +290,245 @@ plain_language_brief:
   forward_map: present
 coverage:
   orphan_rows: []
-  missing_from_ledger:
-    - "results RL159 std P&L current tax line (dash/OCR noise), no structured row"
-    - "results RL170 std P&L OCI income tax on reclassifiable items (dash), no structured row"
-    - "results RL338 std cash flow Other finance cost, OCR '10.99)'; (0.99) H1 FY27 / (0.89) H1 FY26 by identity to RL339"
-    - "results RL715 cons cash flow Repayment of borrowings non-current (161.22); identity RL712-726 confirms (material)"
-    - "results RL488-494 cons review report para 5 unmodified conclusion, no QUALIFIER row"
-    - "concall CL516-517 hedge 'That's all I can say'"
-    - "concall CL590-591 hedge 'That's about all I can say. I cannot comment on the revenue numbers'"
-    - "concall CL524-526 forward 'significant amount is going to come in' (collections)"
+  missing_from_ledger: ["results RL159", "results RL170", "results RL338", "results RL715 (161.22, material)", "results RL488-494", "concall CL516-517", "concall CL590-591", "concall CL524-526"]
 arithmetic_mismatches:
-  - {metric: "Receivable days Mar-26 (and CCC Mar-26)", a4_value: "1,078.8 days on 3,260.78 (CCC 2,011.6)", recomputed: "1,077.5 days on 3,256.78 if RL604 4.33 is OCR for 0.33 (CCC 2,010.3); subtotal RL609 fails by 4.00, std RL223 by 1.00", source_line: "RL597-609, RL614, RL218-223; rv L248, L252"}
+  - {metric: "Receivable days Mar-26 (and CCC Mar-26)", a4_value: "1,078.8 days on 3,260.78 (CCC 2,011.6)", recomputed: "1,077.5 days on 3,256.78 if RL604 4.33 is OCR for 0.33 (CCC 2,010.3)", source_line: "RL597-609, RL614, RL218-223"}
 surviving_bear_counters:
-  - {claim: "BSNL add-on trigger FIRED; Gate 1 met; thesis-broken NOT FIRED (rv L344, L355, L813)", counter: "Deck states LoI only (PL69, PL93, PL187); POs spoken only and partial (CL97-98, CL346-350); BSNL value in book refused (CL355); implied Q2 inflow ~1,192 includes non-BSNL wins; A4 text calls the ruling both 'stands' (rv L344) and 'open' (rv L349, L911)", source_line: "PL187; CL346-358; rv L344, L349, L911", type: CONTRADICTION}
-  - {claim: "Net-debt thesis-broken NOT FIRED, headroom 115.61 (rv L343, L403)", counter: "Breach needs 1.08x the Q2 rise of 107.39; Q3 at Q2 pace 4,491.78, at H1 pace 4,811.25; H1 FCF (354.56)/qtr = 3.07x headroom; Q2 pace helped by a 190 fall in net-of-advance receivables", source_line: "PL166, PL169; RL613-635; RL700-703; CL522-523", type: MISSING}
-  - {claim: "Trigger 2 BharatNet and Trigger 5 DCI ON TRACK (rv L356, L359)", counter: "BharatNet rests on an unvalued SI LOI for 3 states; DCI on one C-graded unquantified sentence while A4's own rule discounts commentary 30-50% at 55.0% credibility", source_line: "CL157-159; CL458-476; rv L645, L849", type: MISSING}
+  - {claim: "BSNL trigger FIRED / ruling", counter: "deck LoI only; ruling both 'stands' and 'open' in A4", source_line: "PL187; rv L344, L349, L911", type: CONTRADICTION}
+  - {claim: "Net debt NOT FIRED, headroom 115.61", counter: "Q3 at Q2 pace 4,491.78, at H1 pace 4,811.25", source_line: "PL166, PL169; RL700-703", type: MISSING}
+  - {claim: "BharatNet and DCI ON TRACK", counter: "unvalued LOI; one C-graded sentence", source_line: "CL157-159; CL458-476", type: MISSING}
 findings_by_type:
-  factual:
-    - "F1 (A4): rv L934 'TCS dominates the book' unsupported; extract says 'a substantial portion' (CL357), share undisclosed (CL355)"
-    - "F2 (A4): Mar-26 receivable days use OCR-suspect non-current receivable 4.33 (RL604; RL609 subtotal fails by 4.00); label OCR, show 1,077.5-1,078.8"
-    - "F3 (A4): forex refuted as cause of +62.99 QoQ other-expense rise; deck EBIT (199)/(194) vs derived (198.12)/(194.71) caps net forex under ~1.4 Cr/qtr (PL119, PL132); fix rv L197, Q21 rv L431, flag rv L1026"
-  missing:
-    - "M1 (A2): 8 fresh-pass units lack structured and ledger rows (RL159, RL170, RL338, RL715, RL488-494, CL516-517, CL524-526, CL590-591)"
-    - "M2 (A4): Q1 FY27 comparators omitted (PL163 NWC 4,478; PL166 net-of-advance receivables 2,232); QoQ -243 / -190 confirms the QoQ collections claim (CL128-132); fix rv L249, L399, L779, L905, L938"
-    - "M3 (A4): net-debt run-rate counter (Q3 4,491.78 at Q2 pace, 4,811.25 at H1 pace) absent; graft rv L343, L403, L937"
-    - "M4 (A4): DCI and BharatNet ON TRACK lack evidence tier; DCI to UNVERIFIED, BharatNet to ON TRACK at LOI stage, unvalued"
-  contradiction:
-    - "C1 (A4): BSNL ruling 'stands' (rv L344) vs 'open' (rv L349, L911) while trigger 1 labelled FIRED (rv L355, L813); one status everywhere"
-    - "C2 (A4): break-even 685/1,130 and 'fixed costs ~262' use the Q2 base A4 calls distorted by 46.50 of estimate releases (rv L199, L203); on Q1 rates 806/1,252; fix rv L879, L927"
-  style:
-    - "S1: rv L905 'customer advances' tagged FILED; filed label is 'other liabilities' (RL697); retag label INFERENCE (PL164-166)"
-    - "S2: rv L235 25.17% credit rate unsourced; Q2 rate 25.26% gives (241.7)"
-    - "S3: rv L79 5.15 cited to RL534 which reads '5.5'; label derived by identity"
-    - "S4: forward map rv L947-949 three undated catalysts, honestly labelled; note only"
-    - "S5: rv L932 competitor names tagged SECONDARY without a source; retag INFERENCE or name source"
-    - "S6: A4 YAML ledger_reconciliation.notes: 851 counts rows, not notes"
-    - "S7: rv L248 receivable-days improvement partly a denominator effect (trough FY26 vs annualised H1); say so"
-    - "S8: rv L644 Q06 graded B; TCS data-centre POC half (CL427-428) answered only implicitly (CL442)"
+  factual: ["F1 (A4) dominates the book", "F2 (A4) OCR-suspect receivable days", "F3 (A4) forex refuted"]
+  missing: ["M1 (A2) 8 units unledgered", "M2 (A4) Q1 comparators", "M3 (A4) net-debt run-rate", "M4 (A4) trigger evidence tier"]
+  contradiction: ["C1 (A4) BSNL ruling status", "C2 (A4) break-even base"]
+  style: ["S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8"]
 loop_back_to: "A2"
-gap: "A2: add ledger rows (and route structured rows to A1) for RL159, RL170, RL338, RL715 (161.22 non-current repayment), RL488-494, CL516-517, CL524-526, CL590-591; add a fulltext-vs-structured count to the count test. Then A4 (after A3 reviews the new rows): C1 one BSNL trigger/ruling status across rv L344/L349/L355/L813/L911; C2 restate break-even on Q1 estimate rates (~806 EBITDA, ~1,252 PBT) and drop 'fixed costs' label for the ECL credit; M2 add Q1 FY27 comparators PL163/PL166 and split the 7A collections verdict QoQ vs H1, revisit Gate 5; M3 graft net-debt run-rate (Q3 4,491.78 / 4,811.25); M4 DCI to UNVERIFIED, BharatNet to LOI-stage unvalued; F1 replace 'dominates' with 'substantial portion (CL357)'; F2 label RL604 OCR-suspect, show 1,077.5-1,078.8 days; F3 remove forex as the other-expense explanation (PL132 vs derived EBIT) and reframe Q21."
+gap: "See loop 0 findings table; superseded by loop 1."
+style_notes: ["S1-S8 as listed above"]
+analyst_note: "Loop 0 record. Superseded by the loop 1 block below."
+```
+
+---
+
+## RE-AUDIT (LOOP 1)
+
+Run: 2026-10-23, coordinator loop 1 message. Updated inputs re-read: A4 review (now 1,063 lines; loop-1 change log rv L10-L21, fixes tagged "[loop1-ID]"), results ledger (new section 10, L400-L418), concall ledger (count test L6-L15, new section 10, L394-L398). A1 fulltexts, A1 structured files and the presentation ledger are unchanged. A3 forensics were updated but are not an A5 input and were not opened. inputs/ not opened. "rv L###" in this section means the loop-1 review.
+
+### R0. Deliverable-completeness (re-run)
+PASS. The summary narrative is 15 lines (rv L924-L938); sector (rv L940), business model (rv L948), competition (rv L955) and forward map (rv L961-L974, every catalyst with a Bull and a Bear fork) are present and non-empty.
+
+### R1. Coverage (re-run)
+
+| Category | Ledger now | A5 fresh count | Orphan rows | Status |
+|---|---|---|---|---|
+| Results line items | 242 (results ledger L418: 238 + R852-R855) | 242 | none | PASS (body) |
+| Results zero-standing | 40 (L418) | 37 + R852, R853, R855 | none | PASS (body) |
+| Results auditor paragraphs | 11 QUALIFIER rows + R856-R863 (8 paragraph rows) + R864 identifier block (L407-L416) | 12 paragraphs, all now rowed | none | PASS (body) |
+| Results IDs | 864 (R001-R851 + R852-R864) | 864 | none | PASS (body) |
+| Concall forward phrases | 65 (concall ledger L6; R327 at L398) | 65 | none | PASS |
+| Concall hedges | 39 (L7; R325, R326 at L396-L397) | 39 | none | PASS |
+| Concall IDs | 327 (L14) | 327 | none | PASS |
+| Presentation (all categories) | unchanged | unchanged | none | PASS |
+
+Orphan test: A4 rv L27 gives the explicit all-reviewed mark for 864 / 327 / 210 rows, and rv L28-L29 maps the new rows (R855 to A3-13 and the debt bridge at rv L276; R857 and R860 to A3-04; R325 and R326 to the 6C count at rv L774; R327 to the collections register at rv L1021). No orphan rows.
+
+Residual: the results ledger's own COUNT TEST block was not refreshed. Results ledger L4 still reads "ids_in_structured: 851 | ids_referenced_in_ledger: 851"; L9 "line_items grep_count: 238 ... match: yes"; L10 "zero_standing 37"; L12 "auditor_paras 11". There is still no fulltext-vs-structured count line, which M1 asked for. The same file's body says 242 / 40 / 864 (L418), and A4 reconciles to 864 (rv L27, L32). The concall ledger did refresh its count test (L6-L7, L14-L15). L417 also counts R864, an identifier block, as an auditor-paragraph unit ("9 missing-row = 20"); there are 8 paragraph rows plus 1 identifier block. This residual is carried as M1b.
+
+### R2. Arithmetic (re-run on loop-1 numbers)
+
+| Metric | A4 loop-1 value | Recomputed | Source line | Status |
+|---|---|---|---|---|
+| Receivable days Mar-26 range; change | 1,077.5 to 1,078.8; -589.7 to -591.0 (rv L262) | 3,256.78 or 3,260.78 / 1,103.28 x 365; 487.8 - each | RL604, RL609, RL614 | PASS |
+| CCC Mar-26 range; change | 2,010.3 to 2,011.6; about -850 (rv L267) | 1,077.5 / 1,078.8 + 1,160.3 - 227.5 | | PASS |
+| Net-of-advance receivables | H1 +137 (+7.2%); QoQ -190 (-8.5%) (rv L263) | 137 / 1,905; -190 / 2,232 | PL166 | PASS |
+| NWC | H1 +97; QoQ -243; 4,234.92 (rv L264) | 4,235 - 4,138; 4,235 - 4,478 | PL163; RL611-643 | PASS |
+| Net debt split | Q1 +746.33, Q2 +107.39 (rv L270) | 4,277 - 3,530.67; 4,384.39 - 4,277 | PL169 | PASS |
+| Debt bridge | 694.50; 610.57; 73.63; 641.08 ties with RL715 (rv L276) | 855.72 - 161.22; 1,162.40 - 551.83; 7,083.40 - 7,009.77; RL712-726 | RL714-726, RL629 | PASS |
+| Run-rate PAT | (241.7) at 25.26% (rv L249) | 323.38 x 0.7474 | | PASS |
+| Net-debt run-rate | 1.08x; 4,491.78 / 8.22; 426.86; 4,811.25 / 311.25; (354.56), 3.07x; about 297 (rv L359) | 115.61 / 107.39 = 1.077; 853.72 / 2; 709.11 / 2; 354.56 / 115.61 = 3.07; 107.39 + 190 | PL166, PL169, RL700-703 | PASS |
+| Specificity | 13 / 65 = 0.20; 11 / 63 = 0.17 (rv L771) | 0.200; 0.175 | R186-R249, R327 | PASS |
+| Break-even, both bases | 684.6 / 1,129.9; 806.3 / 1,251.6; 99% / 209% above Q2 revenue; warranty one-fifth of Q1 (rv L900-L903) | 261.73 and 308.23 / 0.3823; +170.24; 806.3 / 405.68 = 1.988; 1,251.6 / 405.68 = 3.085; 7.24 / 35.11 = 0.21 | RL542-546, RL802 | PASS |
+
+No arithmetic mismatch above rounding.
+
+### R3. Adversarial read (re-run on the loop-1 review)
+- Most positive claims now: (1) the QoQ collections claim is "CONFIRMED" (rv L796); (2) net debt NOT FIRED, with an offset that the Q3 cash is earned initial-order dues (rv L359, CL524-526); (3) BSNL "FIRED on LoI under the 27-Aug ruling" (rv L371).
+- Counter to (1): the confirmation rests only on MGMT deck figures (PL163-166). No 30-Jun balance sheet is filed in this pack. Management credits the fall partly to "nonrecourse discounting" (CL131-132), which is financing, not collection. Does not survive: A4 already labels the source MGMT, marks the collection-vs-discounting split UNVERIFIABLE (rv L796), gives both readings (rv L283) and makes Gate 5 require the discounted amount (rv L416).
+- Counter to (2): those initial-order dues were promised "by the quarter end" last quarter (CL334) and slipped, and the amount is refused (CL340). Does not survive: A4 scores the slip DELAYED (rv L588) and asks for the amount in question Q2 (rv L429).
+- Counter to (3): the deck shows an LoI only (PL187). Does not survive: every cell now carries "PO value undisclosed; operator to reconfirm" (rv L346, L360, L371, L409, L416, L830, L855, L933, L1044).
+- Acquisition probe: still not triggered (no acquisition, purchase or stake buy; NEC is a licence, CL585).
+- Surviving bear counters: none.
+
+### R4. Status of each earlier finding
+
+| ID | Type | Status | Evidence (loop-1 line cites) |
+|---|---|---|---|
+| M1 | MISSING (A2) | RESOLVED for the units; residual carried as M1b | Results ledger L400-L416 (R852-R864, incl. RL715 as R855 "MATERIAL"); concall ledger L394-L398 (R325-R327) and refreshed count test L6-L7, L14-L15. Residual: the results count-test block (L4, L9, L10, L12) is stale and has no fulltext count line |
+| M2 | MISSING (A4) | RESOLVED | rv L263-L264 (both periods), L283 (two readings), L416 (Gate 5 restated), L796 (7A split verdict), L895, L930, L1046 |
+| M3 | MISSING (A4) | RESOLVED | rv L359, L420, L854, L907, L962, L1023, L1041 |
+| M4 | MISSING (A4) | RESOLVED | rv L372, L375 (DCI UNVERIFIED), L831, L834, L447, L1051 |
+| C1 | CONTRADICTION (A4) | RESOLVED | One wording in rv L346, L360, L365, L371, L409, L416, L715, L830, L855, L862, L933, L936, L1044; the "ruling stands" vs "open" conflict is gone (rv L365: reconfirm, not open) |
+| C2 | CONTRADICTION (A4) | RESOLVED | rv L896-L903 (two-base table, 685 / 1,130 called the flattered floor), L952, L1055 |
+| F1 | FACTUAL (A4) | RESOLVED | rv L959 ("a substantial portion", CL357; share not disclosed, CL355) |
+| F2 | FACTUAL (A4) | RESOLVED | rv L262 (range with OCR cite RL604 / RL609), L267 |
+| F3 | FACTUAL (A4) | RESOLVED | rv L211, L448, L1018, L1054 |
+| S1 | STYLE | RESOLVED | rv L929, L283 ("[INFERENCE on the label]") |
+| S2 | STYLE | RESOLVED | rv L249 |
+| S3 | STYLE | RESOLVED | rv L93 |
+| S4 | STYLE | No change needed (note only) | rv L972-L974 |
+| S5 | STYLE | RESOLVED | rv L957 |
+| S6 | STYLE | RESOLVED (comment added; key name kept) | rv L987 |
+| S7 | STYLE | RESOLVED | rv L262 |
+| S8 | STYLE | RESOLVED | rv L661 |
+
+### R5. New and residual findings (loop 1)
+
+| ID | Type | Loop | Finding | Anchor |
+|---|---|---|---|---|
+| M1b | MISSING | A2 | The results ledger COUNT TEST block was not refreshed and has no fulltext-vs-structured line. L4 reads 851 / 851; L9 reads line_items 238 "match: yes"; L10 zero_standing 37; L12 auditor_paras 11. The same file's body (L418) and A4 (rv L27, L32) use 242 / 40 / 864. L417 also counts identifier block R864 as an auditor paragraph. Fix is header-only: L4 864; line_items 242 with a fulltext count line; zero_standing 40; auditor_paras 19 rows covering 12 paragraphs (+1 identifier block). No A3 or A4 re-run is needed, because A4 already reconciles to 864 rows | results ledger L4, L9-L12, L417-L418 |
+| S9 | STYLE | none | rv L898 and L952 call employee + other expenses + ECL "cash operating costs". The ECL allowance and the warranty provision are accruals, not cash. Use "operating costs before D&A and interest". No number changes | rv L898, L952 |
+| S10 | STYLE | none | rv L420 says "Only a cash inflow beyond the Q2 receivable release keeps Q3 under the line". At the Q2 pace, which already includes the 190 release, Q3 lands at 4,491.78, under the line. The release needed is about 182 or more (297.39 - 115.61), roughly a repeat of Q2's 190, not more than it. This rests on an [INFERENCE] figure and does not change the conclusion; rv L359 states it correctly | rv L359, L420 |
+
+### R6. Verdict (loop 1)
+
+VERDICT: INCOMPLETE.
+- The single non-STYLE item is M1b (MISSING, loop back to A2): refresh the results ledger count-test block (L4, L9, L10, L12) to the body's own figures and add the fulltext count line M1 asked for.
+- The fix is header-only. A4's review needs no change: all eight A4 findings and seven of eight STYLE notes are resolved, S4 needed none, and there is no surviving bear counter. Once the header is refreshed the audit clears without re-running A3 or A4.
+- Finding types this loop: MISSING 1 (M1b), FACTUAL 0, CONTRADICTION 0, STYLE 2 (S9, S10).
+
+Loop 1 YAML block (superseded by the loop 2 block at the end of this file):
+
+```yaml
+stage: A5-adversary
+company: "TEJASNET"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+loop: 1
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: ["M1b (A2): results ledger count-test block stale (L4 851/851, L9 238, L10 37, L12 11; no fulltext count line) vs body L418 242/40 and 864 IDs"]
+  contradiction: []
+  style: ["S9 rv L898, L952 accrual items labelled cash operating costs", "S10 rv L420 'beyond the Q2 release' overstates"]
+loop_back_to: "A2"
+gap: "A2 results ledger header refresh (L4, L9, L10, L12) plus a fulltext-vs-structured count line."
+style_notes: ["S9", "S10"]
+analyst_note: "Loop 1 record. Superseded by the loop 2 block below."
+```
+
+---
+
+## RE-AUDIT (LOOP 2)
+
+Run: 2026-10-23, coordinator loop 2 message (last permitted loop). Changed input: the results A2 ledger only (runs/tejasnet-q2fy27/work/ledger_results_tejasnet_q2fy27.md). The A2 block file is not an A5 input and was not opened. No other input changed: A1 fulltexts and structured files, the concall and presentation ledgers, and the A4 review stay as audited in loop 1. inputs/ and A3 notes not opened. "rl L###" below means a results-ledger line.
+
+### L2-0. Deliverable-completeness
+Unchanged since loop 1 (the A4 review did not change): PASS. All five brief parts are present and non-empty (rv L923-L974).
+
+### L2-1. Coverage (re-confirmed against the updated results ledger)
+
+| Category | Updated ledger | A5 fresh count | Orphan rows | Status |
+|---|---|---|---|---|
+| ID accountability | rl L4: "ids_in_structured: 851 \| ids_referenced_in_ledger: 864 (851 structured + 13 MISSING_FROM_STRUCTURED R852-R864) \| orphan_ids: []" | 864 | none | PASS |
+| Numbered notes | rl L8: 12 | 12 | none | PASS |
+| Line items | rl L9: 242 (238 structured + R852-R855) | 242 | none | PASS |
+| Zero-standing rows | rl L10: 40 (37 structured + R852, R853, R855) | 40 | none | PASS |
+| Agenda items | rl L11: 1 | 1 | none | PASS |
+| Auditor paragraphs | rl L12: 19 rows (11 structured + R856-R863); R864 counted separately as an identifier block | 19 rows covering 12 paragraphs, plus 1 identifier block | none | PASS |
+| Consolidation entities | rl L13: 4 | 4 | none | PASS |
+| Fulltext-vs-structured line | rl L14: "fulltext sweep found 864 units vs 851 structured rows; 13 MISSING_FROM_STRUCTURED rows named" with fulltext lines 159, 170, 338, 715, 488-494, 76-84, 86-91, 105-109, 423-435, 437-442, 444-455, 480, 463-475 | matches A5's loop-0 fresh pass and the loop-1 section 10 rows (rl L404-L417) | none | PASS |
+| Signature blocks | rl L15: 5 | 5 | none | PASS |
+| Section 10 restatement | rl L418: "19 auditor-paragraph rows (11 structured + R856-R863) plus 1 identifier block (R864); R864 is not an auditor paragraph"; rl L419 tally 242 / 40 / 13 | consistent with rl L4-L14 | none | PASS |
+| Concall ledger | unchanged since loop 1: 65 forward, 39 hedges, 327 rows | 65 / 39 / 327 | none | PASS |
+| Presentation ledger | unchanged | 98 numbers, 48 forward, 13 pages, 210 rows | none | PASS |
+
+Orphan test: A4 rv L27 and L32 reconcile to 864 / 327 / 210 rows, which now match the ledger header (rl L4). No orphan rows. No fresh-pass unit is missing from any ledger.
+
+### L2-2. Arithmetic
+No A4 number changed in loop 2, so the loop-1 result stands: no mismatch above rounding.
+
+### L2-3. Adversarial read
+No A4 text changed in loop 2, so the loop-1 result stands: no surviving bear counter. The acquisition probe is still not triggered.
+
+### L2-4. Status of the open finding
+
+| ID | Type | Status | Evidence |
+|---|---|---|---|
+| M1b | MISSING (A2) | RESOLVED | rl L4 (864 IDs), L9 (242), L10 (40), L12 (19 rows, R864 separate), L14 (fulltext-vs-structured line naming all 13 rows), L418 (R864 restated as not an auditor paragraph) |
+| M1 | MISSING (A2) | RESOLVED in full | Units rowed in loop 1 (rl L404-L417); count test now carries them (rl L4-L14) |
+| M2, M3, M4, C1, C2, F1, F2, F3 | A4 | RESOLVED (loop 1, unchanged) | See R4 above |
+| S9, S10 | STYLE | Logged, open, no re-run | rv L898, L952; rv L420 |
+
+### L2-5. New finding (loop 2)
+
+| ID | Type | Loop | Finding | Anchor |
+|---|---|---|---|---|
+| S11 | STYLE | none | The reconciliation paragraph at rl L20 still reads "line_items counted by page+line key (238) and by consecutive label-run (238)". That is true of the structured file alone, and rl L9 explains the 238 + 4 split, so no number is wrong. Suggest adding "plus 4 fulltext-only rows R852-R855, see count test" | rl L9, L20 |
+
+### L2-6. Final verdict (loop 2)
+
+FINAL VERDICT: COMPLETE.
+- No open FACTUAL, MISSING or CONTRADICTION finding remains. All ten non-STYLE findings raised across the audit (M1, M1b, M2, M3, M4, C1, C2, F1, F2, F3) are resolved.
+- STYLE notes logged for the record, no re-run: S4 (note only), S9, S10, S11.
+- The run may proceed to the Notion save gate. The A4 protocol verdict stays PROCEED WITH FLAGS, and the operator approval of the printed payload is still required.
+
+```yaml
+stage: A5-adversary
+company: "TEJASNET"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+loop: 2
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+prior_findings_status:
+  M1: "RESOLVED (units rowed rl L404-L417; count test rl L4-L14)"
+  M1b: "RESOLVED (rl L4 864 IDs; L9 242; L10 40; L12 19 rows with R864 separate; L14 fulltext-vs-structured line; L418 restatement)"
+  M2: "RESOLVED loop 1 (rv L263-L264, L283, L416, L796, L930)"
+  M3: "RESOLVED loop 1 (rv L359, L420, L854, L962, L1041)"
+  M4: "RESOLVED loop 1 (rv L372, L375, L831, L834, L1051)"
+  C1: "RESOLVED loop 1 (rv L346, L360, L365, L371, L409, L416, L830, L855, L933, L936, L1044)"
+  C2: "RESOLVED loop 1 (rv L896-L903, L952, L1055)"
+  F1: "RESOLVED loop 1 (rv L959)"
+  F2: "RESOLVED loop 1 (rv L262, L267)"
+  F3: "RESOLVED loop 1 (rv L211, L448, L1018, L1054)"
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S4: forward map undated catalysts honestly labelled (rv L972-L974); note only"
+    - "S9: rv L898, L952 call accrual items (ECL, warranty) 'cash operating costs'; use 'operating costs before D&A and interest'"
+    - "S10: rv L420 'only a cash inflow beyond the Q2 receivable release' overstates; about 182 or more (a repeat of Q2's 190) keeps Q3 under 4,500; rv L359 is correct"
+    - "S11: results ledger L20 reconciliation prose still cites 238 (structured-only); add the +4 fulltext-only rows R852-R855 note"
+loop_back_to: ""
+gap: ""
 style_notes:
-  - "S1 provenance retag rv L905"
-  - "S2 unsourced 25.17% rate rv L235"
-  - "S3 identity label rv L79"
   - "S4 undated forward-map items honestly labelled"
-  - "S5 SECONDARY tag without source rv L932"
-  - "S6 YAML key notes: 851"
-  - "S7 receivable-days denominator effect rv L248"
-  - "S8 Q06 half-answer rv L644"
-analyst_note: "Loop goes to A2 because it is the earliest failing agent. The A2 fix is ledger-only and adds one material row, RL715 (161.22 non-current repayment). A3 then needs to review only the new rows. All eight A4 items fit in one A4 pass, and none moves the PROCEED WITH FLAGS verdict. Two findings cut against A4's bear lean, under the same-bar rule. First, the deck's own Q1 comparator shows net-of-advance receivables fell 190 in Q2, so management's QoQ collections claim holds, while A4's H1 reading also holds. Second, the deck EBIT bridge rules out forex as the cause of the 63 Cr other-expense rise, so the rise has no stated cause and may recur. The net-debt run-rate counter matters most. One more quarter at Q2's 107 Cr pace would use 107 of the 116 Cr headroom, and even that pace was helped by a 190 Cr receivable release. On the DROPPED count A5 concurs with A4 (count 1), but the Q1 evidence sits in the digest, outside A5's inputs."
+  - "S9 accrual items labelled cash operating costs rv L898, L952"
+  - "S10 'beyond the Q2 release' overstates the needed Q3 cash release rv L420"
+  - "S11 results ledger L20 prose cites structured-only 238"
+analyst_note: "Final loop. The results ledger header now matches its body and A4: 864 IDs, 242 line items, 40 zero-standing rows, and 19 auditor-paragraph rows with R864 kept separate. The count test also carries the fulltext-vs-structured line that M1 asked for, so the same A1 drop would now show at the A2 gate. Every finding raised across the three passes is closed; only four STYLE notes remain, none of which changes a number or a conclusion. COMPLETE clears the A5 gate only; it does not replace the operator's approval of the printed Notion payload, and A4's PROCEED WITH FLAGS verdict, with its two open operator items (net-debt definition; reconfirming the 27-Aug BSNL ruling on PO evidence), stands as written."
 ```

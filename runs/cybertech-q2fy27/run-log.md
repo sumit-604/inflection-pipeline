@@ -13,3 +13,4 @@
 - 2026-10-24 Operator standing approval relayed by parent session: if A5 INCOMPLETE after loop 1, one second loop is approved ("complete them fully").
 - 2026-10-23 A4 run 1 died twice (stream watchdog stall, then app restart); no review written. Mechanical re-run of A4, not counted (operator relay 2026-10-24: 'pl resume the task').
 - 2026-10-23 A5 run died on network drop (API ENOTFOUND ~18:47). Mechanical re-run of A5, not counted.
+- A5 run 1: INCOMPLETE. Looping findings F1, F2, F3 (FACTUAL), C1 (CONTRADICTION), M1, M2 (MISSING), all routed to A4. Coverage PASS; A2/A3 not re-run. Loop 1 started (resume A4 with the A5 audit).

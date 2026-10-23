@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "PAISALO"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 10
+formfeed_count: 10
+line_count: 1237
+unit_convention: "Lakhs (statements); note 5 issuance table in Rs. Crores"
+conversion_factor_to_cr: "Lakhs x0.01; Crores x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\quarterly-paisalo-q2fy27-095262\runs\paisalo-q2fy27\extracted\paisalo-results-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\quarterly-paisalo-q2fy27-095262\runs\paisalo-q2fy27\extracted\paisalo-results-q2fy27-structured.md"
+structured_counts:
+  number: 1140
+  entity: 92
+  forward: 0
+  date: 78
+  qualifier: 62
+structured_id_range: "R001-R1372"
+gate_a1: pass
+gap_note: "Addendum A1-R1 appended (fulltext lines 787-1237; pdftotext -raw for pages 2-7, pdfplumber word coordinates for page 8 ratio table). 554 rows were flagged LAYOUT_SCRAMBLED; all 1028 statement-line NUMBER rows on pages 2-8 were re-mapped by value (multiset matched exactly), including 474 rows the layout mode had mislabelled without a flag. Resolved 1028, left scrambled 0, new rows 0. Original lines 1-786 unchanged. Page 8 ratios per coordinates: Net profit margin 31.93/31.55, NIM 6.43/6.46, GNPA 0.66/0.65, NNPA 0.46/0.45 (standalone/consolidated); the earlier layout reading was shifted one row. Identical-value rows are paired to addendum positions by order only."

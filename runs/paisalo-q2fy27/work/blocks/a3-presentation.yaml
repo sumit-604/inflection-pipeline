@@ -1,0 +1,77 @@
+stage: A3-forensics
+company: "PAISALO"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\quarterly-paisalo-q2fy27-095262\\runs\\paisalo-q2fy27\\work\\forensics_paisalo_q2fy27_presentation.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: N.A.
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FN01", check: "F1", line: "L967 p29 (R639-R641)", classification: "NEUTRAL-FACT", implication: "Net DTA 85 gone; filed net DTL 170.6 builds; Q2 deferred charge 48.9; no DTA shield, no ETR step-up risk"}
+  - {id: "FN02", check: "F6", line: "L147-148 p7 (R974)", classification: "FORWARD-SIGNAL", implication: "Consumer app go-live Q3FY27, date held vs 15-May trigger [NOTION]; Q3 deck must show it live"}
+  - {id: "FN03", check: "F6", line: "L141-143 p7; L339-340 p14 (R977, R259)", classification: "NEUTRAL-FACT", implication: "NCD Tranche I completed at Rs 294.9 Cr of 300 Cr; about Rs 605 Cr shelf left for further tranches"}
+  - {id: "FN04", check: "F7", line: "L595 p25; L398 p17; L943 p28", classification: "CONFIRMATORY-NEGATIVE", implication: "Co-lending reframed as optionality; non-interest income 1.2% to 0.6% of assets YoY; AUM less loan assets at most 2.1% of AUM and shrinking; trigger (b) unsupported"}
+  - {id: "FN05", check: "F10", line: "L781, L788 p34; L937 p27", classification: "FORWARD-SIGNAL", implication: "Fully diluted 42.90% vs basic 46.50% implies about 76.8 Mn potential shares (+8.4%); filing shows basic = diluted EPS; checklist 20 risk"}
+  - {id: "FN06", check: "F10", line: "L153-155 p7; L1163 p15", classification: "AMBIGUOUS", implication: "Promoter +45.4 Mn shares = 4.99% of FY26 base, at SAST 5% creeping limit; FY27 buying headroom near nil"}
+  - {id: "FN07", check: "F12", line: "L482 p21; L463-464 p20", classification: "AMBIGUOUS", implication: "Q2FY27 Micro/MSME split withheld while yield fell 100 bps; Mid-Corporate product line; timing vs mix shift"}
+  - {id: "FN08", check: "F12", line: "L965, L969 p29", classification: "AMBIGUOUS", implication: "Other non-financial assets 147 to 551 and investments +747 QoQ, nature undisclosed; repossessed assets would understate credit cost"}
+  - {id: "FN09", check: "F14", line: "L936 p27 (RF L1035, RF L834)", classification: "NEUTRAL-FACT", implication: "Deck P&L/BS tie to consolidated Reg 33, asset-quality ratios to standalone; basis never labelled; S-vs-C PAT gap 0.9%"}
+  - {id: "FN10", check: "F14", line: "L930 p27; L946-947 p28", classification: "AMBIGUOUS", implication: "p27 NII = net total income 1,476; interest-only NII 1,356 (+23% YoY); C/I 41.0% vs 44.6% by denominator"}
+  - {id: "FN11", check: "F14", line: "L951-953 p28; L931-933 p27", classification: "AMBIGUOUS", implication: "p28 Q2 column moves about Rs 60-80 Mn from opex/PPOP to credit cost vs P&L; implied C/I 36.4%; write-off may sit in other expenses"}
+  - {id: "FN12", check: "F14", line: "L129-131 p6; L1053 p9", classification: "AMBIGUOUS", implication: "Deck NIM 5.7% equals spread; filed NIM 6.46%; neither green on checklist 6 bands"}
+  - {id: "FN13", check: "F14", line: "L216/L1072 p9; L1226 p24", classification: "NEUTRAL-FACT", implication: "Borrowings/D-E axis mislabelled one quarter; p9 Q4FY26 2.61 contradicts p24 FY26 2.43; borrowings +13% in one quarter"}
+  - {id: "FN14", check: "F14", line: "L1000-1001 p30; L1117-1129 p13", classification: "AMBIGUOUS", implication: "GNPA/NNPA history FY22-FY25 printed two ways (FY22 1.52% vs 1.38%); best-in-class history not fixed"}
+  - {id: "FN15", check: "F14", line: "L391 p17; L506-509, L533 p22; L559-566 p23", classification: "AMBIGUOUS", implication: "AI KPIs conflict (500k vs 350k daily; 300K daily vs per quarter; 25 vs 22 bots); AI operating-leverage trigger rests on them"}
+  - {id: "FN16", check: "F14", line: "L209 p9; L977 p29 (RF L1220)", classification: "AMBIGUOUS", implication: "Three net-worth figures; deck NW vs BS equity changes sign; deck D/E 2.89 vs filed 2.83"}
+  - {id: "FN17", check: "F14", line: "L960 p29; L147-149 p7; L335-338 p14; L845-847 p38; L446 p19", classification: "NEUTRAL-FACT", implication: "Drafting slips (non-existent date, 420 QoQ called yearly, 900 Cr shelf called issuance, 87% women share unlabelled, unresolved '#'); governance data point"}
+  - {id: "FN18", check: "F14", line: "L1255-1256 p33; L1012 p40", classification: "AMBIGUOUS", implication: "p33 series equals cashless-collection series; R758-R767 not to be used as delinquency data until confirmed"}
+  - {id: "FN19", check: "F14", line: "L240-242 p11; L353 p14", classification: "AMBIGUOUS", implication: "AA/Stable/A1+ headline names no agency; AA from Infomerics/Brickwork; trigger (f) needs named agency and instrument"}
+  - {id: "FN20", check: "F16", line: "L146-147 p7; L163 p8", classification: "CONFIRMATORY-NEGATIVE", implication: "'Record disbursements' false on own chart: Q2 15,673 is 9.5% below Q1 17,309"}
+  - {id: "FN21", check: "F16", line: "L147-149 p7; L1045-1053 p9", classification: "FORWARD-SIGNAL", implication: "Yield -100 bps, spread 6.6% to 5.7%, RoA 3.3%; normalisation guided from H2FY27; Q3 yield is the test"}
+  - {id: "FN22", check: "F16", line: "L141-145 p7; L548-551 p23; L931 p27", classification: "CONFIRMATORY-NEGATIVE", implication: "Operating-leverage claim vs opex +33% YoY / +29% QoQ; C/I 41.0% vs 32.3% Q1; above 35% on every deck basis, trigger (d)"}
+  - {id: "FN23", check: "F16", line: "L932-933 p27; L142-144 p7", classification: "FORWARD-SIGNAL", implication: "PAT +7% QoQ only from provision swing 157 to (2); PPOP -11% QoQ; Q3 PAT at risk if credit cost normalises"}
+  - {id: "FN24", check: "F16", line: "L148-151 p7; L1059-1071 p9; L586-589 p24", classification: "FORWARD-SIGNAL", implication: "CRAR -7.5 pp in 4 quarters; ROE guided via leverage while RoA falls; equity need inside 12 months at Q2 pace"}
+  - {id: "FN25", check: "F16", line: "L295 p13; L1104-1107, L1125-1127", classification: "AMBIGUOUS", implication: "FY19-FY21 credit cost 3.1-3.8% vs GNPA under 0.7%; stress absorbed by write-offs; trigger (a) may not fire in a downturn"}
+  - {id: "FN26", check: "F16", line: "L1023 p8; L1017 p40; L121 p6", classification: "AMBIGUOUS", implication: "Customer franchise 20 Mn = Lives impacted; about 118k loans implied; conversion to credit undisclosed"}
+  - {id: "FN27", check: "F16", line: "L323 p14; L1155-1157", classification: "NEUTRAL-FACT", implication: "Bank/FI share 69% to 72% to 73% under a diversification title; NCDs not yet moving the mix"}
+  - {id: "FN28", check: "F16", line: "L123-125 p6", classification: "AMBIGUOUS", implication: "[NOTION] liquidity coverage 2.22X vs thesis-logged 8.3x; definition change or 73% fall"}
+  - {id: "FN29", check: "F16", line: "L407-412 p18", classification: "AMBIGUOUS", implication: "[NOTION] top-5 states 87.7% vs 91.9% FY26; confirm unchanged state list and basis before crediting checklist 14"}
+  - {id: "FN30", check: "F16", line: "L860 p39; L1014-1016 p40", classification: "AMBIGUOUS", implication: "QoQ framing off Q1 trough; EVs financed -28% QoQ, SMBs below Q3/Q4FY26; new-product trigger weaker"}
+forward_signals: ["FN02", "FN05", "FN21", "FN23", "FN24"]
+ambiguous: ["FN06", "FN07", "FN08", "FN10", "FN11", "FN12", "FN14", "FN15", "FN16", "FN18", "FN19", "FN25", "FN26", "FN28", "FN29", "FN30"]
+commitments:
+  - {commitment: "Consumer-facing app goes live", implied_date: "Q3FY27", ref: "p7 L147-148; R974", status_word: "scheduled"}
+  - {commitment: "Yields normalise as full interest impact comes through", implied_date: "from H2FY27", ref: "p7 L146-149; R973", status_word: "guided"}
+  - {commitment: "Recent capital raise to optimise leverage and support ROE expansion", implied_date: "undated (H2FY27 implied)", ref: "p7 L148-151; R975", status_word: "completed (raise); effect expected"}
+  - {commitment: "Public NCD Tranche I up to Rs 300 Cr under Rs 900 Cr shelf", implied_date: "Aug-26", ref: "p7 L141-145; p14 L339-340; R977, R259", status_word: "completed"}
+  - {commitment: "Asset quality sub-2% through credit cycles", implied_date: "ongoing", ref: "p13 L293; R980", status_word: "standing target"}
+  - {commitment: "Continued reduction in cost of borrowing", implied_date: "ongoing", ref: "p17 L388-390; R981", status_word: "underway"}
+  - {commitment: "Sustainable cost-to-income improvement from decoupling scale from headcount", implied_date: "undated", ref: "p23 L548-551; R989", status_word: "claimed (contradicted Q2)"}
+  - {commitment: "New categories agri, industrial, alternative-fuel equipment", implied_date: "undated (Q3FY27-end per Q1 call [NOTION])", ref: "p17 L396-397; R983", status_word: "underway"}
+  - {commitment: "Expand in existing states and new contiguous markets", implied_date: "undated", ref: "p11 L232-236; p18 L403; R978", status_word: "underway"}
+  - {commitment: "Co-lending 80:20 as optionality for future RoA/RoE", implied_date: "undated", ref: "p17 L397-399; p25 L595-614; R984, R991", status_word: "none (reframed as optionality)"}
+  - {commitment: "AI early-warning and AI-optimised collections", implied_date: "undated", ref: "p22 L513-520; R988", status_word: "in place (claimed)"}
+  - {commitment: "Water stewardship measures", implied_date: "undated", ref: "p41 L900-903; R994", status_word: "initiated"}
+  - {commitment: "ESG Steering Committee with board-level oversight", implied_date: "done", ref: "p41 L911-914; R970", status_word: "completed"}
+  - {commitment: "Outstanding GDRs converted", implied_date: "Q2FY26", ref: "p15 L374; R1045", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three items matter most. (1) FN11: the p28 Q2FY27 column moves about Rs 60-80 Mn from opex/PPOP into credit cost compared with the p27 P&L, and the Q1 and Q2FY26 columns tie. Reading A: drafting error. Reading B: part of Q2 other expenses is credit loss booked outside impairment, so the Rs (2) Mn write-back understates credit cost. The separating observation is the Q2 other-expenses break-up or the write-off note. (2) The Q2 cost-to-income breach of 35% holds on every deck basis (36.4% to 44.6%). PAT +7% QoQ rests only on the provision swing, and PPOP fell 11%. (3) On the deck's own numbers co-lending is immaterial: AUM exceeds loan assets by at most 2.1%, non-interest income halved, and the slide now says optionality. Capital is the forward constraint. CRAR fell 7.5 pp in four quarters, and management guides ROE expansion through leverage while RoA falls. FN25: past stress went through write-offs, not GNPA."

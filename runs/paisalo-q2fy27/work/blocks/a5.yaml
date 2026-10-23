@@ -1,0 +1,33 @@
+stage: A5-adversary
+company: "PAISALO"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+iteration: 1
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S1: Step 4B 369% (rev l.282) mixes pre-tax swing over post-tax PAT change; post-tax like-for-like 275%; not applied"
+    - "S3: list zero-content turns R015, R019, R025, R026, R029, R037, R038, R040 and slides S1-S3, S17, S32, S35, S36, S38, S41, S42 by ID as reviewed, no finding; not applied"
+    - "S5: optional: deck p41 attrition 16.58% and 378 new hires (DK L.893-897) bear on the AI headcount claim; not applied"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S1: show post-tax 275% beside the pre-tax/post-tax 369% at rev l.282"
+  - "S3: enumerate zero-content units by ID as reviewed, no finding"
+  - "S5: optional p41 attrition/new-hire enrichment for the AI headcount claim"
+analyst_note: "Iteration 1 closes all four loop items. F1 now reads 29 of 44 = 65.9% (rev l.643). F2 now reads 2.4-3.8% with FY21 at 2.4% (rev l.332, l.473). M1 adds a labelled PROXY block (rev l.334-340): absolute GNPA Rs441.4 Mn to Rs479.5 Mn (+8.6%), lagged ratio 0.88%, H1 disbursement 45.4% of AUM, two readings and a separating observation. It is cross-referenced through Step 7, 7A, 8D, 8F, Section C, monitorable 7 and brief l.1043. M2 adds tax rows and a qualifier (rev l.323-329, l.976): Rs35.38 Cr current tax unpaid, tax-normalised 0.67x SA and 0.68x CON against 0.68x in H1 FY26; the class holds on FY26 full year. I recomputed every touched number from RF and DK lines and checked every quote against the CC lines. The drop check finds all 44 claims, 39 questions, 12 Q&A rows, 18 cross-reference rows, 21 monitorables, 11 catalysts and 19 original flags intact, plus 2 added flags. S2 and S4 were applied. S1, S3 and S5 remain STYLE only. The protocol verdict PROCEED WITH FLAGS and the AVOID flag are unchanged."

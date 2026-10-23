@@ -1,0 +1,58 @@
+stage: A3-forensics
+company: "PAISALO"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\quarterly-paisalo-q2fy27-095262\\runs\\paisalo-q2fy27\\work\\forensics_paisalo_q2fy27_results.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: PASS
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "fulltext l.804, l.1009", classification: "NEUTRAL-FACT", implication: "Derecognition gain nil in all periods; first line where co-lending/assignment gains would show"}
+  - {id: "A3-02", check: "F1", line: "l.1227, l.816", classification: "AMBIGUOUS", implication: "Bad-debt ratio 0.00 vs H1 impairment Rs 15.25 Cr; ask H1 write-offs and ratio denominator"}
+  - {id: "A3-03", check: "F1", line: "l.882, l.903, l.598", classification: "AMBIGUOUS", implication: "Nil derivatives while USD FCCBs exist; ask FCCB outstanding, FX hedge, option accounting"}
+  - {id: "A3-04", check: "F1", line: "l.980, l.1195", classification: "AMBIGUOUS", implication: "FY26 security-receipts flow Rs 24.43 Cr SA; ask ARC sales and SRs held"}
+  - {id: "A3-05", check: "F3", line: "l.1013 vs l.808, l.1027 vs l.822", classification: "AMBIGUOUS", implication: "Nupur revenue -39% YoY, other expenses 11.5x, implied C/I 12%->73%; run-off or re-tool"}
+  - {id: "A3-06", check: "F3", line: "l.1099/886, l.1093/880, l.1125/912, l.1101/888, l.1190/975, l.1173/958", classification: "AMBIGUOUS", implication: "Inferred Rs 49.02 Cr parent advance to Nupur; Nupur book -21%, cash Rs 42.95 Cr; ask purpose and Nupur Rs 55.70 Cr debt maturity"}
+  - {id: "A3-07", check: "F4", line: "l.816, l.1021, l.699", classification: "FORWARD-SIGNAL", implication: "Q2 PAT growth rests on ECL write-back (~18.4% of PAT); PPOP -11.3% QoQ; Q3 credit-cost normalisation cuts PAT"}
+  - {id: "A3-08", check: "F4", line: "l.765", classification: "AMBIGUOUS", implication: "Review basis of Nupur not stated; exposure bounded at 0.89% of CON PAT"}
+  - {id: "A3-09", check: "F8", line: "l.828, l.829, l.1034, l.919, l.964", classification: "AMBIGUOUS", implication: "Round Q1 deferred tax (100.00)/(99.00) trued up to 488.70 charge in Q2; ETR stable"}
+  - {id: "A3-10", check: "F9", line: "l.842, l.836, l.820", classification: "AMBIGUOUS", implication: "OCI nil incl audited FY26; verify gratuity remeasurement at AR"}
+  - {id: "A3-11", check: "F10", line: "l.845, l.848-849, l.1062-1063, l.598", classification: "AMBIGUOUS", implication: "Basic = diluted EPS with FCCBs outstanding (Notion-sourced); A4 cross-check"}
+  - {id: "A3-12", check: "F12", line: "l.886, l.887, l.911, l.912, l.1214", classification: "FORWARD-SIGNAL", implication: "D/E 2.41x->2.83x in H1; Rs 225.6 Cr into undisclosed non-loan assets; 3.5x cap within ~3 qtrs without equity"}
+  - {id: "A3-13", check: "F12", line: "l.579-585, l.588, l.592, l.596", classification: "FORWARD-SIGNAL", implication: "Q2 NCD coupon 10.26% (unsecured 12.00%) vs book CoB 9.98%; spread pressure as debt rolls"}
+  - {id: "A3-14", check: "F12", line: "l.603-605", classification: "AMBIGUOUS", implication: "Asset cover 1.10x after Rs 294.92 Cr new secured NCDs; ask covenant floor and headroom"}
+  - {id: "A3-15", check: "F12", line: "l.961, l.950, l.899, l.821, l.627", classification: "FORWARD-SIGNAL", implication: "Rs 24.59 Cr H1 expenses deferred; D&A +152% YoY; expensed SA H1 C/I ~41.9% vs 35.6% (upper bound)"}
+  - {id: "A3-16", check: "F13", line: "l.42, l.54, l.179, l.653, l.67", classification: "AMBIGUOUS", implication: "MD signed 10:09-10:10, board ended 10:25, 'inter alia'; ask what else the board transacted"}
+  - {id: "A3-17", check: "F14", line: "l.1166, l.1021, l.1167, l.1180", classification: "NEUTRAL-FACT", implication: "CON CF impairment uses SA figure; 24.16 sits in CSR line"}
+  - {id: "A3-18", check: "F14", line: "l.1233", classification: "AMBIGUOUS", implication: "Reg 52 'net profit margin' 31.93% is PBT margin; PAT margin 23.90%"}
+  - {id: "A3-19", check: "F14", line: "l.1235", classification: "AMBIGUOUS", implication: "NIM 6.43% basis undefined, not reproducible; below 6.5% checklist green band"}
+  - {id: "A3-20", check: "F14", line: "l.717, l.784, l.709, l.778", classification: "NEUTRAL-FACT", implication: "UDINs and firm no. unreadable; operator/Claude web to verify on ICAI from source image"}
+  - {id: "A3-21", check: "F14", line: "l.981, l.975, l.977, l.963", classification: "NEUTRAL-FACT", implication: "SA CF built from balance-sheet deltas; FCCB conversion shown as cash; use note 5 for gross raises"}
+  - {id: "A3-22", check: "F14", line: "l.803, l.814, l.601", classification: "AMBIGUOUS", implication: "Q2FY26 two-sided fair-value entry and unquantified regrouping; YoY base not like-for-like"}
+  - {id: "A3-23", check: "F14", line: "l.248, l.497, l.850-852, l.1070, l.655", classification: "NEUTRAL-FACT", implication: "Cosmetic drafting tally"}
+  - {id: "A3-24", check: "F14", line: "l.1130 vs l.917, l.1132 vs l.919", classification: "NEUTRAL-FACT", implication: "Subsidiary tax asset netted against parent liability in CON"}
+  - {id: "A3-25", check: "F14", line: "l.1190, l.1173, l.1183", classification: "NEUTRAL-FACT", implication: "CON CF not eliminated for intra-group advance; CFO and CFF each overstated ~Rs 49.02 Cr"}
+forward_signals: ["A3-07", "A3-12", "A3-13", "A3-15"]
+ambiguous: ["A3-02", "A3-03", "A3-04", "A3-05", "A3-06", "A3-08", "A3-09", "A3-10", "A3-11", "A3-14", "A3-16", "A3-18", "A3-19", "A3-22"]
+commitments: []
+gate_a3: pass
+blank_checks: []
+analyst_note: "Q2 PAT growth comes from an ECL estimate, not operations. Impairment moved from a Rs 15.63 Cr charge to a Rs 0.38 Cr write-back. PPOP fell 11.3% QoQ, and only a limited review covers it (A3-07). Opex is understated by capitalisation: Rs 24.59 Cr went into other non-financial assets in H1 against Rs 6.68 Cr written off. The Reg 52 net worth deducts 'Deferred Expenses', so the company itself treats the pool as non-capital (A3-15). Expensed, SA H1 cost-to-income is about 41.9%, not 35.6% (upper bound). The consolidated cash flow is the plain sum of parent and Nupur. A Rs 49.02 Cr parent advance to Nupur sits gross in both operating and financing lines (A3-06, A3-25), while Nupur shrinks its book and holds Rs 42.95 Cr cash. Three of nine drafting errors sit in the consolidation layer. Reg 52 'net profit margin' is a PBT margin. NIM 6.43% does not reproduce and sits below the 6.5% green band that Notion's ruling text calls green. The Reg 60(2) fine is out of document, so A3 records no finding."

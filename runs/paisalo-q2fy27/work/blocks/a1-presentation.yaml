@@ -1,0 +1,30 @@
+```yaml
+stage: A1-extractor
+company: "PAISALO"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 42
+formfeed_count: 42
+line_count: 1270
+unit_convention: "Rs Mn (deck prints Rs Mn / Rs Cr for NCD sizes / Lakhs for ticket size)"
+conversion_factor_to_cr: "Mn x0.1; Lakhs x0.01; Cr x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\quarterly-paisalo-q2fy27-095262\runs\paisalo-q2fy27\extracted\paisalo-presentation-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\quarterly-paisalo-q2fy27-095262\runs\paisalo-q2fy27\extracted\paisalo-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 909
+  entity: 62
+  forward: 23
+  date: 35
+  qualifier: 30
+structured_id_range: "R001-R1059"
+gate_a1: pass
+gap_note: ""
+```

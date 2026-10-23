@@ -1,0 +1,38 @@
+# Run log: PAISALO Q2 FY27 (/run-quarterly)
+
+- 2026-10-23 07:20 Checkout guard: git fetch origin main OK; diff over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md empty. PASS.
+- Protocol files present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md, Document_Review_Protocol_v1_1.md.
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract at C:\Program Files\Tesseract-OCR\ (not on PATH, not needed).
+- Fetch: BSE AnnSubCategoryGetData for scrip 532900, 15-Sep to 23-Oct-2026. Downloaded from BSE AttachLive:
+  - a853cf3d-...pdf: Reg 33 results, 10 pages, cover letter dated 22-Oct-2026 (byte-identical to fec5b003 "Board Meeting Outcome").
+  - 1ccf0873-...pdf: investor presentation, 42 pages, cover letter dated 22.10.2026.
+  - 698a5bb9-...pdf: press release, 6 pages, cover dated 22-Oct-2026.
+  - 308155c1-...pdf: board outcome on BSE fine under Reg 60(2) LODR, waiver applied (case 283222), amount not disclosed.
+  - 39b986e2-...pdf: concall intimation 16-Oct-2026 (call 22-Oct-2026 16:00 IST, host Elara).
+  - 66c907bd-...pdf: concall outcome 22-Oct-2026, audio at https://www.paisalo.in/Content/Audio/2026-27_q2.mp4.
+  Stored in C:\ConcallPipeline\Daily Concall Intelligence\Q2 FY27 Results\25 Paisalo Digital\.
+- Transcript: none filed. Audio downloaded (11.1 MB mp4, audio 2,229 s). Machine restart killed first venv; a fresh Python 3.15 venv could not build PyAV (app control blocks Cython DLL). Used shared C:\Users\SUMIT SHARMA\whisper-models\fw-venv with av stubbed (sibling note), model small.en int8 (the multilingual "small" is only partly cached; small.en avoids a download), 4 x 600 s chunks, cpu_threads=4.
+- Document class: results (Reg 33 markers, p1 cover letter); presentation (slide structure, cover letter); press release (not passed to A1; it is a Reg 30 PR, its figures overlap the deck; kept in inputs for reference); concall (ASR text, speaker-turn structure best effort).
+- Notion: COMPANIES MASTER page 361bb2b9-d3ab-814a-93d0-c0ccc9a75b26 fetched live (192,641 chars). Fields copied verbatim to work/notion_thesis_paisalo.md by a copy-only subagent. Decision Status WATCHLIST; AVOID recommendation pending ratification; no Mental Model block, no Spear line. Page already holds a claude.ai filing review of Q2 FY27 dated 23-Oct-2026 (no concall).
+- No companies/PAISALO.md on record.
+- A1 results: GATE A1 pass, 10/10 pages. First pass flagged 554 LAYOUT_SCRAMBLED rows on pp 2-8. Orchestrator asked A1 to resolve mechanically; A1 appended addendum A1-R1 (fulltext lines 787-1237; pdftotext -raw pp 2-7, pdfplumber word coordinates p8). 1028 statement rows re-mapped, 474 of them mislabelled without a flag in the first pass. 0 left scrambled.
+- A2 results: GATE A2 pass (12 count tests, 1372/1372 IDs, 0 orphans, 8 missing-from-structured rows added).
+- COST CHECK A2 > A1 (A2 122,525 tok vs A1 109,595 tok). Diagnosed before A3 completed: A2 reports it read only the structured file plus fulltext grep for the count test; no file under inputs/ read. Cause: 1,372-row structured file read in full. Not source re-ingestion. Run continues; figure logged in session-cost.md.
+- A1 presentation: GATE A1 pass 42/42 pages; RESOLVED APPENDIX lines 922-1270 (raw pp27-30,40; word-coords chart pages). 125,244 tok.
+- A2 presentation: GATE A2 pass, 1059/1059 IDs, 0 orphans; 42,054 tok (below A1). COST CHECK pass.
+- A3 presentation: GATE A3 pass, 17/17 statused, 30 findings (5 FORWARD-SIGNAL, 16 AMBIGUOUS).
+- A3 results: GATE A3 pass, 17/17 statused, 25 findings (4 FORWARD-SIGNAL, 14 AMBIGUOUS). 289,267 tok.
+- Restart 2 (operator note via parent session): ASR process had already completed all 4 chunks (673 segments); no re-run needed. Deck A3 had completed before the break.
+- ASR transcript saved: C:\ConcallPipeline\...\25 Paisalo Digital\Paisalo_Q2FY27_Concall_Transcript_ASR.txt (681 lines incl. 8-line header, marked MACHINE-TRANSCRIBED); copy in inputs/.
+- A1 helper files (scripts, pickles, temp text) moved out of work/ to the session scratchpad; none referenced by any extract or block.
+- A1 concall: GATE A1 pass, 681/681 lines; text input so text-layer gate N.A.; 4 logical pages (10-min blocks); R001-R288, 40 turns, 12 questions, 5 analysts. 84,005 tok.
+- A2 concall: GATE A2 pass, 288/288 IDs, 0 orphans; 57,206 tok (below A1). COST CHECK pass.
+- A3 concall: GATE A3 pass, 17/17 statused, 18 findings (6 FORWARD-SIGNAL, 7 AMBIGUOUS). 168,032 tok. F14 used as concall adaptation (spoken vs same-quarter filing); ASR-explainable gaps kept out of findings.
+- A3 presentation tokens: 253,340. A1 concall 84,005.
+- A4 launched once, merged, with Role 4 v1.4 + Role 5 v1.1 and the Notion copy.
+- A4: complete, PROCEED WITH FLAGS, 423,471 tok. Pre-committed gate fired on filed Q2 (proposed AVOID, operator-only).
+- Restart 3: A5 died with no output; resumed from its transcript (mechanical re-run, not counted).
+- A5 audit 1: INCOMPLETE (F1, F2 FACTUAL; M1, M2 MISSING; loop to A4 only). 235,940 tok.
+- Correction loop iteration 1: A4 fixed F1, F2, M1, M2 (+ S2, S4), verdict unchanged (88,511 tok). A5 re-audit: COMPLETE (60,251 tok). Style S1, S3, S5 logged, not looped.
+- Notion: NOT written. Payload saved to notion-payload.md and printed for operator approval.
+- session-cost.md written.

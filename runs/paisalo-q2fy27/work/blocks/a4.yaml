@@ -1,0 +1,109 @@
+stage: A4-analyst
+company: "PAISALO"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, concall, presentation]
+ledger_reconciliation:
+  notes: 9
+  turns: 40
+  slides: 42
+  all_reviewed: true
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3-18, A3-19, A3-20, A3-21, A3-22, A3-23, A3-24, A3-25, FN01, FN02, FN03, FN04, FN05, FN06, FN07, FN08, FN09, FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN20, FN21, FN22, FN23, FN24, FN25, FN26, FN27, FN28, FN29, FN30, C01, C02, C03, C04, C05, C06, C07, C08, C09, C10, C11, C12, C13, C14, C15, C16, C17, C18]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "growth-induced"
+decision_status_verified: "WATCHLIST (AVOID recommendation pending operator ratification; Position Size None)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", pct: 0.90}
+  - {period: "Q1 FY27", pct: 0.74}
+  - {period: "Q2 FY26", pct: 1.45}
+  - {period: "H1 FY27", pct: 0.82}
+  - {period: "H1 FY26", pct: 1.28}
+  - {period: "FY26", pct: 1.07}
+questions_for_management:
+  - {q: "Split Q2 CON other expenses Rs35.64 Cr: BC/sourcing, tech/AI, legal/collection, write-offs or settlement losses", from_finding_id: "FN11, FN10, FN22, C02, A3-05"}
+  - {q: "What filed CON cost-to-income will Q3 FY27 show, above or below 35%?", from_finding_id: "C01, A3-15"}
+  - {q: "What are the Rs24.59 Cr H1 deferred expenses, amortisation period, any repossessed assets?", from_finding_id: "A3-15, FN08"}
+  - {q: "What released the Q2 impairment write-back; H1 write-offs Rs Cr; stage-3 PCR?", from_finding_id: "A3-07, FN23, A3-02, C07"}
+  - {q: "Deck p28 credit cost 0.4% vs P&L write-back: which is right, where is the Rs6-8 Cr?", from_finding_id: "FN11"}
+  - {q: "Write-offs by year FY19 to H1 FY27 (credit cost 2.4-3.8% FY19-FY21); which GNPA history is audited?", from_finding_id: "FN25, FN14"}
+  - {q: "Share of AUM with Oct-Nov agri instalments in drought districts; October CE on that cohort", from_finding_id: "C07"}
+  - {q: "Yield bridge in bps (timing vs mix vs pricing); September exit yield; why 'record' disbursement", from_finding_id: "FN21, C05, FN07, FN20"}
+  - {q: "Q2 FY27 Micro vs MSME/SME AUM split; Mid-Corporate share", from_finding_id: "FN07"}
+  - {q: "Which NIM is the ~6% guide; Reg 52 NIM formula and denominator", from_finding_id: "C03, C04, A3-19, FN12"}
+  - {q: "Share of borrowings repricing in 12 months and marginal cost", from_finding_id: "A3-13, C04"}
+  - {q: "What are the Rs175.46 Cr investments and when do they move into loans?", from_finding_id: "C06, A3-12, FN08"}
+  - {q: "At what D/E or CRAR will you raise equity; is the 3.5x cap in force? (D/E 2.41x SA / 2.43x CON at 31-Mar to 2.83x)", from_finding_id: "A3-12, FN24, C12, FN16"}
+  - {q: "FCCBs remaining after 1-Oct; why basic = diluted EPS; FX hedge", from_finding_id: "A3-11, FN05, A3-03, C13"}
+  - {q: "Further promoter purchases in FY27 vs SAST 5% creeping limit", from_finding_id: "FN06"}
+  - {q: "Off-book co-lending AUM by partner, Q2 co-lending fees, SBI compliance date", from_finding_id: "FN04, C09, A3-01"}
+  - {q: "Consumer app live by 31-Dec-2026, yes or no; Q4 disbursement share target", from_finding_id: "FN02, C08"}
+  - {q: "Name the 3 new products; launch by 31-Dec-2026?", from_finding_id: "C15"}
+  - {q: "Does the 3-year doubling include PAT; implied AUM CAGR", from_finding_id: "C14"}
+  - {q: "Bridge ROA 3.3% to 4-4.5% by year", from_finding_id: "C10"}
+  - {q: "Q2 AI/tech spend Rs Cr; H2 hiring plan", from_finding_id: "C02, C11, FN15"}
+  - {q: "Reconcile AI KPIs (500k vs 350k calls; 300K daily vs quarterly; 25 vs 22 bots)", from_finding_id: "FN15, C11"}
+  - {q: "Nupur advance amount/terms/purpose; run-off, merger or sale; Rs55.70 Cr debt maturity", from_finding_id: "A3-05, A3-06"}
+  - {q: "Who reviewed Nupur H1 results; why no CF elimination of the advance", from_finding_id: "A3-08, A3-25"}
+  - {q: "FY26 security receipts Rs24.43 Cr: ARC sales; SRs held at 30-Sep", from_finding_id: "A3-04"}
+  - {q: "Asset cover 1.10x: covenant floor and unencumbered headroom Rs Cr", from_finding_id: "A3-14, FN03"}
+  - {q: "Composition of Q2 deferred tax charge after round Q1 credit", from_finding_id: "A3-09"}
+  - {q: "Where is gratuity remeasurement booked (OCI nil)?", from_finding_id: "A3-10"}
+  - {q: "Other board business 'inter alia' on 22-Oct; BSE Reg 60(2) fine amount and waiver status", from_finding_id: "A3-16, C13"}
+  - {q: "Correct Reg 52 'net profit margin' (PBT-based)", from_finding_id: "A3-18"}
+  - {q: "What was regrouped in Q2 FY26 and by how much (note 7)", from_finding_id: "A3-22"}
+  - {q: "What does deck net worth deduct vs BS equity and Reg 52 net worth", from_finding_id: "FN16"}
+  - {q: "Is the p33 88-91% series cashless share or a stage split?", from_finding_id: "FN18"}
+  - {q: "Which agency rates bank lines, NCDs, CP; any review since July", from_finding_id: "FN19"}
+  - {q: "Active credit borrowers within the 20 Mn franchise; BC cross-sell share of disbursement", from_finding_id: "FN26"}
+  - {q: "Liquidity coverage 2.22x definition and Q1 value", from_finding_id: "FN28"}
+  - {q: "Top-5 state list and basis unchanged since FY26?", from_finding_id: "FN29"}
+  - {q: "EV financing -28% QoQ: deliberate or demand?", from_finding_id: "FN30"}
+  - {q: "DMD term forward-dating to May-2027 and NRC terms", from_finding_id: "C18"}
+monitorables:
+  - {item: "Kharif outcome; agri instalment collections (Maharashtra 20.1% of AUM)", implied_date: "end-Oct to early-Nov 2026", source_ref: "CC l.212-213 ASR; C07"}
+  - {item: "CP maturity Rs38.40 Cr", implied_date: "2026-12-30", source_ref: "RF l.586-587; A3 s6"}
+  - {item: "Consumer app live", implied_date: "by 2026-12-31 / early Jan-2027", source_ref: "DK L.147-148; CC l.580-586; FN02, C08"}
+  - {item: "3 new products launch (Q1 dated promise)", implied_date: "by 2026-12-31", source_ref: "Notion s9; C15"}
+  - {item: "Hiring resumes; headcount normalises", implied_date: "Q3-Q4 FY27", source_ref: "CC l.390-391; C02"}
+  - {item: "Q3 shareholding pattern and pledge", implied_date: "by 2027-01-21 (INFERENCE, LODR 21-day)", source_ref: "checklist 15-16"}
+  - {item: "Q3 FY27 results: filed CON C/I (trigger d), impairment, absolute GNPA in Rs, yield, carry, CRAR", implied_date: "by 2027-02-14 (INFERENCE, Reg 33 45-day)", source_ref: "Step 8C; C01, C05, C06, FN21, FN23, FN24; Step 5L proxy"}
+  - {item: "CP maturity Rs4.82 Cr", implied_date: "2027-02-22", source_ref: "RF l.590-591"}
+  - {item: "CP maturity Rs14.37 Cr (plus Rs75 Cr CP 19-25 Mar per Notion)", implied_date: "2027-03-23", source_ref: "RF l.594-595; Notion s1"}
+  - {item: "FY27 close: NIM ~6%, CoF ~10.5%", implied_date: "2027-03-31", source_ref: "CC l.370, l.377-379; C03, C04"}
+  - {item: "Fee share >5% by Q4 FY27 (checklist 12); Q4 FY27 results", implied_date: "by 2027-05-30 (INFERENCE, Reg 33 60-day)", source_ref: "Notion s4"}
+  - {item: "Q1 FY28 results: app metrics, op-leverage alignment", implied_date: "by 2027-08-14 (INFERENCE)", source_ref: "CC l.487-489, l.582-583"}
+  - {item: "Remaining FCCB conversion (50.8-76.8 Mn potential shares)", implied_date: "undated", source_ref: "FN05; A3-11"}
+  - {item: "Further NCD tranches (~Rs605 Cr shelf left)", implied_date: "undated", source_ref: "FN03"}
+  - {item: "Equity raise (CRAR path)", implied_date: "inside 12 months (INFERENCE)", source_ref: "FN24"}
+  - {item: "SBI co-lending go-ahead", implied_date: "undated", source_ref: "CC l.403-407; C09"}
+  - {item: "BSE Reg 60(2) fine waiver (case 283222)", implied_date: "undated", source_ref: "BSE filing 22-Oct-2026, not in the A1 corpus"}
+  - {item: "Nupur Finvest run-off/merger/sale; Rs55.70 Cr debt", implied_date: "undated", source_ref: "A3-05, A3-06"}
+  - {item: "FY27 AR: OCI/gratuity, write-offs, SRs", implied_date: "~Aug-Sep 2027 (INFERENCE)", source_ref: "A3-10, A3-04"}
+  - {item: "Operator rulings: trigger (d) basis, AVOID ratification, NIM basis, lender-quality, SAST 5%", implied_date: "before Q3 FY27 results", source_ref: "Notion s3"}
+flags:
+  - "PRE-COMMITTED GATE FIRED on Q2 filed numbers: C/I 40.95% >35% and fees Rs10.12 Cr <Rs12 Cr; rule says DEPRECATE to AVOID; proposed Decision Status AVOID (operator-only)"
+  - "Thesis-broken (d) strike one on filed basis (Q1 32.32%, Q2 40.95%); Q3 FY27 >35% fires it; spoken-basis ruling pending"
+  - "Q2 PAT growth not operating: core PPOP ex-treasury +4.2% YoY, -12.1% QoQ; provision write-back = 64% of YoY PAT gain; PPOP below H2 FY26 run-rate"
+  - "Opex flattered by capitalised deferred expenses (Rs24.59 Cr H1 additions); SA H1 C/I up to ~41.9% if expensed (upper bound)"
+  - "Deck p28 Q2 credit cost/PPOP does not tie to P&L; credit loss may sit in other expenses"
+  - "Asset-quality bear counter (PROXY, AUM as denominator): absolute GNPA Rs441.4 Mn to Rs479.5 Mn (+8.6% YoY); lagged ratio 0.88% vs 0.81%; H1 disbursement 45.4% of AUM (unseasoned book); FY19-FY21 credit cost 2.4-3.8% with GNPA <0.7%"
+  - "Cash tax timing: H1 CFO ex-loan growth 0.95x PAT includes ~Rs35.38 Cr unpaid current tax; tax-normalised 0.67x SA / 0.68x CON = H1 FY26 0.68x; growth-induced class rests on FY26 full year (0.95x) and holds"
+  - "Early warning #1 RED (fees < Rs15 Cr); #5 AMBER (opex +34.8% YoY CON, 0.2 pp under 35%)"
+  - "Leverage: D/E 2.41x (SA; CON 2.43x) at 31-Mar to 2.83x at 30-Sep; CRAR 35.8% to 30.7% in two quarters; equity need inside 12 months"
+  - "CoF guided to 10.5% = early-warning #4 line; Q2 NCDs 10.26% weighted, unsecured 12.00%"
+  - "NIM basis: Reg 52 6.43% is below the 6.5% green band; corrects the 23-Oct Notion 'green' reading"
+  - "Co-lending stalled 2nd quarter; fees -39.6% YoY; trigger WEAKENED"
+  - "Consolidation layer: Rs49 Cr intra-group advance not eliminated in CON CF; Nupur review basis not stated; Nupur shrinking"
+  - "Concall is machine ASR with unresolved Q&A speakers; narrative contradicts filing (record disbursements; operating leverage)"
+  - "Basic = diluted EPS with FCCBs outstanding; fully diluted promoter 42.90% implies ~76.8 Mn potential shares"
+  - "Promoter +4.99% of FY26 base at SAST 5% creeping limit (ruling open)"
+  - "BSE Reg 60(2) fine, waiver applied (case 283222), amount not disclosed (BSE filing 22-Oct-2026, not in the A1 corpus)"
+  - "Credibility ratio 90% PROVISIONAL: 1 of 4 concalls, n=5 funding commitments; six operating commitments due Q3"
+  - "Q1 questions: 0 of 11 answered specifically on the Q2 call; 5 topics unanswered 2 quarters; check Q4 FY26 topics for a third"
+  - "Steps 6.5/7 and Role 5 8D deferred to /fttcp and Role 1 (OR-30); pillar facts flagged"
+  - "Price Rs79.3 (Notion 23-Oct) is 2.14x the Rs37 entry max; no entry action"
+plain_language_brief_included: true
+analyst_note: "Core PPOP ex-treasury grew 4.2% YoY (Rs81.86 Cr to Rs85.33 Cr CON) while AUM grew 33%. The provision swing explains 64% of the YoY PAT gain. Deck PPOP of 979 then 872 Rs Mn sits below the H2 FY26 average of 992.5. Opex is flattered by capitalised deferred expenses (A3-15). The pre-committed gate fails on both legs on filed Q2 numbers, so AVOID is flagged; trigger (d) is at strike one. GNPA 0.66% sits on an unseasoned book: absolute GNPA proxy rose 8.6% YoY and the lagged ratio is 0.88%; Q3/Q4 cohort delinquency separates the readings. H1 cash cover of 0.95x includes Rs35.38 Cr unpaid current tax; tax-normalised 0.67x matches H1 FY26, so the growth-induced class holds on FY26 full-year data. Credibility 90% rests on one concall and five funding commitments. Concall is ASR with unresolved speakers. Steps 6.5/7 and 8D deferred under OR-30. Verdict unchanged after A5 loop."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\quarterly-paisalo-q2fy27-095262\\runs\\paisalo-q2fy27\\work\\review_paisalo_q2fy27.md"

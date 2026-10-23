@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "PAISALO"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\quarterly-paisalo-q2fy27-095262\runs\paisalo-q2fy27\work\ledger_concall_paisalo_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 2
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 33
+  turns: 40
+  questions: 12
+  mgmt_numbers: 118
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, MGMT_ABSENCE, REPEAT_QUESTION, RESTATED, ASR_MISHEARD, SPEAKER_UNRESOLVED, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 288
+ids_referenced: 288
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Source is ASR, not a filed transcript; all 118 management numbers carry ASR risk and must be checked against filed results. Q&A management answers are speaker UNRESOLVED, so who committed to guidance (NIM about 6%, cost of funds 10.5%, app live Q3) cannot be tied to a named officer. No CMD or promoter is named among speakers (MGMT_ABSENCE, ASR attribution only). Repeat themes: yields/NIM (R041,R042,R045), efficiency (R043,R046,R047), cost of funds (R049,R052). Two ZERO_STANDING rows (R148, R150) are Q1 FY27 AI bot baselines of zero. R286 ROE/ROA history is unresolved. No prior ledger, so no ENTITY_CHANGE test."

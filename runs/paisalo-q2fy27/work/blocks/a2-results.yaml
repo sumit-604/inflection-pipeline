@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "PAISALO"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\quarterly-paisalo-q2fy27-095262\runs\paisalo-q2fy27\work\ledger_results_paisalo_q2fy27.md"
+counts:
+  notes: 9
+  line_items: 283
+  zero_standing: 102
+  agenda_items: 2
+  auditor_paras: 10
+  entities: 92
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, MISSING_FROM_STRUCTURED, FOOTNOTE_UNRESOLVED, SIGNATURE_BEFORE_MEETING_END, SUBSIDIARY_BASIS_NOT_STATED, RESTATED, RESTATED_COMPARATIVES, SPELLING_VARIANT, CITATION]
+ids_in_structured: 1372
+ids_referenced: 1372
+orphan_ids: []
+missing_from_structured: ["ratio b DSCR Not applicable (fulltext l.1215)", "ratio c ISCR Not applicable (l.1216)", "ratio d redeemable pref shares Nil, ZERO_STANDING (l.1217)", "ratio f DRR value Not applicable (l.1219)", "ratio o debtors turnover Not applicable (l.1230)", "ratio p inventory turnover Not applicable (l.1231)", "ratio q operating margin Not applicable (l.1232)", "ratio s sector-specific header (l.1234)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Count tests match on every category. A1 gave no rows for ratio-table cells holding Nil or Not applicable; A2 added 8 rows from fulltext lines 1215-1234 (ratio d, redeemable preference shares, is a Nil standing line). zero_standing 102 = 100 line items A1 flagged (402 dash rows) plus ratio l (0.00 bad debts, A2-raised) and ratio d. Seven MD-signed statement stamps (10:09:01 to 10:10:02) precede the 10:25 board conclusion; the CS letter is stamped 10:30:07, after it. Both review reports are limited reviews with unmodified conclusions, no EoM, no Other Matters, no going concern text; the consolidated report does not say how Nupur Finvest results were reviewed. Both UDINs are garbled in the text layer. One stray asterisk on page 5 (R1333) has no footnote text. No prior ledger exists, so ENTITY_CHANGE could not be assessed. No director profiles, no forward statements, no dividend or AGM items in this filing."

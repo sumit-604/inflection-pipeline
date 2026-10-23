@@ -1,0 +1,70 @@
+stage: A3-forensics
+company: "AYE"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/aye-q2fy27/work/forensics_presentation_aye_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: N.A.
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3P-01", check: "F1", line: "818, 297, 299, 796-806, 855; prior L712", classification: "AMBIGUOUS", implication: "No new branches in H1FY27 or since FY26; existing-branch headroom 4,408 cr at 21 cr ceiling covers under half of the +8,300 to +10,300 cr the 28-33% 3-year CAGR needs; either the ceiling rises or branch opex returns"}
+  - {id: "A3P-02", check: "F6", line: "865, 555, 414-420, 721, 751; prior L336-341, L477, L619", classification: "AMBIGUOUS", implication: "Mortgage-share and tenor promises repeated; mortgage share 23.3% to 23.2%, AI/ML underwriting 32% flat, primary ML channel 180 branches for 3 quarters"}
+  - {id: "A3P-03", check: "F6", line: "757-758; prior L654", classification: "NEUTRAL-FACT", implication: "Upsell team 126/100 to 154/133 staff/branches; no outcome metric"}
+  - {id: "A3P-04", check: "F7", line: "114-115, 121-122, 633, 640; prior L093", classification: "AMBIGUOUS", implication: "New drought framing names MH, KA, MP; those states sit inside Rest States; exposure NOT FOUND (R266); pre-emptive cover for H2 asset quality"}
+  - {id: "A3P-05", check: "F12", line: "662-665, 670, 679, 881; prior L564-567, L580", classification: "AMBIGUOUS", implication: "Same-basis ECL cover 4.17% to 3.85%, Stage 2 58.07% to 47.44%; ECL stock about -12 cr on +3.7% loans; holding June cover costs about 17 cr post-tax, about 20% of Q2 PAT; implied write-offs and other about 94 cr; slippage not disclosed"}
+  - {id: "A3P-06", check: "F12", line: "577, 640, 995; prior L497, L546", classification: "FORWARD-SIGNAL", implication: "Bucket 1 CE 54.5% to 52.8%; UP Sep 47.6% lowest of nine months shown, Rajasthan Q2 avg 55.6% vs 59.9%; feeds PAR 30 and Stage 3 in Q3; leading indicator for GNPA trigger"}
+  - {id: "A3P-07", check: "F12", line: "876, 883, 135, 923", classification: "FORWARD-SIGNAL", implication: "Fee and other income +11 QoQ equals DA gain 10.12 (results A3-13); DA about 62% of PAT QoQ rise; fee -14% YoY; record PAT depends on DA recurrence and no cover rebuild"}
+  - {id: "A3P-08", check: "F12", line: "503-516, 531, 917-921, 878; prior L423-436", classification: "AMBIGUOUS", implication: "CoB pair down vs Q1 but finance cost on ATA +28 bps, finance cost +10.7% vs AUM +3.7%, NIM on ATA -35 bps; negative carry or pre-funding"}
+  - {id: "A3P-09", check: "F13", line: "459, 470-494, 50, 61, 1006; prior L033, L045, L378, L389-391", classification: "AMBIGUOUS", implication: "CTO replaced, CCO added, Year-1 tenures 1 to 3, cover signer CFO to CS; deck still names Gaurav Seth CFO; KMP churn now CFO and CTO"}
+  - {id: "A3P-10", check: "F14", line: "745-746, 261, 347, 798-801; prior L642-643", classification: "AMBIGUOUS", implication: "Primary 180 + BAU 444 = 624 vs 571 branches; Q1 180 + 391 = 571; error or overlapping channel definition"}
+  - {id: "A3P-11", check: "F14", line: "874-877, 920, 248; prior L763-766", classification: "NEUTRAL-FACT", implication: "P&L growth columns print against wrong rows; interest income +29.1% and fee -14% YoY not printed; -053 bps typo; orphan # footnote"}
+  - {id: "A3P-12", check: "F15", line: "941-953, 276; prior L819-827", classification: "FORWARD-SIGNAL", implication: "Alpha Wave India (7.8% at Jun) leaves the more-than-5% list; largest category 67.0% to 62.1%; PE supply overhang; lock-up date NOT FOUND"}
+  - {id: "A3P-13", check: "F16", line: "120, 150, 824; prior L099, L715", classification: "FORWARD-SIGNAL", implication: "Commentary switches disbursement framing from YoY (+22% Q1) to QoQ (+15%); YoY is +10%; AUM YoY 28.0% to 26.03%; slower AUM growth ahead"}
+  - {id: "A3P-14", check: "F16", line: "822-837, 142; prior L713-728", classification: "AMBIGUOUS", implication: "Guidance repeated verbatim, not refined; H1 NIM 112 bps above band implies H2 NIM about 12.6-13.6%; opex above, RoTA below band; 25% AUM floor needs H2 +15.9% with no new branches"}
+  - {id: "A3P-15", check: "F16", line: "665, 670, 679, 681; prior L567, L580, L582", classification: "AMBIGUOUS", implication: "Excluding-management-overlay footnote dropped; 30-Jun restated to 58.07/63.84/4.17%; implied Jun overlay about 11 cr; ex-overlay add-gate test cannot run"}
+  - {id: "A3P-16", check: "F16", line: "777, 783-784; prior L673, L679-680", classification: "AMBIGUOUS", implication: "Tele-caller productivity and foreclosure moved to H1 basis; implied Q2 productivity about 1.37 cr (-22% QoQ), foreclosure about 5.83%; repeat share 52.6 to 51.4%"}
+  - {id: "A3P-17", check: "F16", line: "796-816; prior L691-710", classification: "AMBIGUOUS", implication: "Growth-contribution window and vintage buckets redefined; DA-purchased category and footnote dropped; purchased AUM location not determinable"}
+  - {id: "A3P-18", check: "F16", line: "571, 920-926, 175, 186; prior L104, L157, L804-810", classification: "NEUTRAL-FACT", implication: "Q1FY27 ratios restated (credit cost 4.01 to 4.03%, RoE 11.68 to 11.60%) with no Q1 reclassification note"}
+  - {id: "A3P-19", check: "F16", line: "426, 420; prior L347", classification: "NEUTRAL-FACT", implication: "Deck now calls hypothecation loans (76.8% of AUM) unsecured, partly secured on business assets; LGD relevance"}
+  - {id: "A3P-20", check: "F17", line: "Section 5; 130, 577, 679, 783, 822-829", classification: "CONFIRMATORY-NEGATIVE", implication: "Two decks silent on gross slippage, write-offs, covenant count, DA income, co-lending, product-wise Stage 3; add-gate (i) bear reading applies"}
+forward_signals: ["A3P-06", "A3P-07", "A3P-12", "A3P-13"]
+ambiguous: ["A3P-01", "A3P-02", "A3P-04", "A3P-05", "A3P-08", "A3P-09", "A3P-10", "A3P-14", "A3P-15", "A3P-16", "A3P-17"]
+commitments:
+  - {commitment: "FY27 AUM growth 25.0-30.0% YoY", implied_date: "2027-03-31", ref: "line 824 (R637)", status_word: "underway"}
+  - {commitment: "FY27 NIM 14.25-14.75%", implied_date: "2027-03-31", ref: "line 825 (R638)", status_word: "underway"}
+  - {commitment: "FY27 opex 8.25-8.75%", implied_date: "2027-03-31", ref: "line 827 (R639)", status_word: "underway"}
+  - {commitment: "FY27 credit cost 3.5-4.0%", implied_date: "2027-03-31", ref: "line 828 (R640); line 131 (R045)", status_word: "underway"}
+  - {commitment: "FY27 return on total assets 4.0-4.5%", implied_date: "2027-03-31", ref: "line 829 (R641)", status_word: "underway"}
+  - {commitment: "Delivering on FY27 guidance", implied_date: "2027-03-31", ref: "line 142 (R069)", status_word: "underway"}
+  - {commitment: "H2 focus on productivity and asset quality", implied_date: "H2 FY27", ref: "line 141 (R068)", status_word: "initiated"}
+  - {commitment: "3-year normalized credit cost 3.25-3.75%", implied_date: "about FY30", ref: "line 845 (R659)", status_word: "initiated"}
+  - {commitment: "3-year RoA 4.0-4.5% and RoE 17.0-20%", implied_date: "about FY30", ref: "lines 849-851 (R660)", status_word: "initiated"}
+  - {commitment: "3-year AUM CAGR 28-33%", implied_date: "about FY30", ref: "line 855 (R661)", status_word: "initiated"}
+  - {commitment: "3-year opex 7.0-7.5%", implied_date: "about FY30", ref: "line 860 (R662)", status_word: "initiated"}
+  - {commitment: "Increase mortgage loan share; deepen AI/ML underwriting", implied_date: "not dated", ref: "line 865 (R663)", status_word: "initiated"}
+  - {commitment: "Increase average tenor of assets", implied_date: "not dated", ref: "line 555 (R380); prior L477", status_word: "initiated"}
+  - {commitment: "Upsell ML loans to HL repeat customers (154 staff, 133 branches)", implied_date: "not dated", ref: "lines 757-758 (R586); prior L654", status_word: "underway"}
+  - {commitment: "OER falls as ML AUM per branch grows", implied_date: "not dated", ref: "line 759 (R585)", status_word: "initiated"}
+  - {commitment: "Existing branches add Rs 4,000+ cr AUM", implied_date: "medium term", ref: "lines 799-801 (R631)", status_word: "initiated"}
+  - {commitment: "HUL CSR donation INR 50 lakh for Oct-2026 to Mar-2027", implied_date: "2027-03-31", ref: "line 977 (R885, R887)", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck fills part of the filing gap. PCR 62.42% and Bucket 1 CE 52.8% are disclosed. Gross slippage, write-offs, covenant count and DA income are not, for two decks running. Central point: on the deck's own 30-Jun basis, ECL cover fell from 4.17% to 3.85%. The ECL stock fell about Rs 12 cr while loans grew 3.7%. Holding June cover would have cost about Rs 17 cr post-tax, about 20% of Q2 PAT. The Rs 10.12 cr DA gain plus this release more than explains the Rs 12 cr QoQ PAT rise behind the 'highest ever' claim. The deck also dropped its 'excluding management overlay' footnote, so the add-gate ex-overlay test cannot run. Bucket 1 CE is the leading signal: UP printed 47.6% in September, its lowest of nine months. Guidance was repeated, not refined, while H1 NIM ran 112 bps above the band. Alpha Wave left the more-than-5% list. Pipeline errors: A1 swapped the R076/R077 labels (1,219 is Q1FY27), and A1 omitted line 667 (83, 308, 6,865) and line 807 (0)."

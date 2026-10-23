@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "AYE"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 8                 # 10-minute audio segments; text file, 846 source lines, 100% line coverage proven by diff
+formfeed_count: 0
+line_count: 846
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true      # N/A, plain-text ASR transcript
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/aye-q2fy27/extracted/aye-concall-q2fy27-fulltext.md"
+structured_path: "runs/aye-q2fy27/extracted/aye-concall-q2fy27-structured.md"
+structured_counts:
+  number: 191
+  entity: 48
+  forward: 56
+  date: 26
+  qualifier: 25
+structured_id_range: "R001-R346"
+gate_a1: pass
+gap_note: ""

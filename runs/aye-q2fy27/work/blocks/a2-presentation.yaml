@@ -1,0 +1,23 @@
+stage: A2-enumerator
+company: "AYE"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/aye-q2fy27/work/ledger_presentation_aye_q2fy27.md"
+counts:
+  slides: 44
+  slide_numbers: 744
+  zero_standing: 5
+  entities: 55
+  footnotes_qualifiers: 56
+  forward_statements: 25
+  dates: 33
+flags_raised: [ZERO_STANDING, SCRAMBLED_ATTRIBUTION, MISSING_FROM_STRUCTURED]
+ids_in_structured: 913
+ids_referenced: 913
+orphan_ids: []
+missing_from_structured: [M01 line 667 p28 (83 | 308 | 6,865 Stage 2, Stage 3, total at 30-Jun-2026), M02 line 807 p34 (value 0, 10+ year vintage potential capacity)]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Correction loop 1: two units missing from A1 (fulltext lines 667, 807) added; A1 labels R076/R077 swapped (1,219 is Q1FY27, 1,275 is Q2FY26), logged not edited. Grep and sweep counts match A1 header (NUMBER 744, ENTITY 48+7 summary, FORWARD 25, DATE 33, QUALIFIER 56). Five ZERO_STANDING rows (R188-R190 states added FY24-26, R627 new branches H1FY27, R831 dash cells p40). About 81 rows carry scrambled chart or table attribution (pages 14, 19, 21, 26-28, 40 and others); A3 must not infer period or state mapping for them. Six divider slides (5, 11, 20, 23, 30, 37) hold no rows. DROPPED_SLIDE and ENTITY_CHANGE not assessable: no prior ledger. Sweep was scripted over the structured file only; no independent text sweep of the source, per input discipline."

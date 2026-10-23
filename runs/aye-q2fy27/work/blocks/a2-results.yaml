@@ -1,0 +1,26 @@
+stage: A2-enumerator
+company: "AYE"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/aye-q2fy27/work/ledger_results_aye_q2fy27.md"
+counts:
+  notes: 12
+  notes_unnumbered: 4
+  line_items: 328
+  zero_standing: 30
+  agenda_items: 2
+  auditor_paras: 19
+  entities: 43
+  annexure_numbers: 155
+  annexure_footnotes: 7
+  ratios: 12
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, CELL_BLANK_IN_TEXT, OCR_GARBLED, FOOTNOTE_UNRESOLVED, SHORT_MEETING, OTHER_AGENDA_UNSPECIFIED, COVENANT_BREACH_FLAG, UNREVIEWED_COMPONENT, RESTATED, MISSING_FROM_STRUCTURED]
+ids_in_structured: 755
+ids_referenced: 755
+orphan_ids: []
+missing_from_structured: [M01 line 69, M02 line 267, M03 line 183, M04 line 465, M05 line 746, M06 line 980, M07 line 1438]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "A1 lacks seven digital signature timestamps (fulltext lines 69, 183, 267, 465, 746, 980, 1438); looped back as MISSING_FROM_STRUCTURED. M06 (line 980, auditor security-cover report, 11:09:12) precedes the 11:15 board start and the 11:21 approval; correction loop 1 fixed the earlier claim that none did. Board meeting ran 6 minutes to approval (11:15 to 11:21); letter says other agenda items continue, unspecified. Auditor change (S S Kothari Mehta to MSKA) flagged ENTITY_CHANGE from in-document evidence only; no prior ledger. Security cover report is qualified on ISIN INE501X07588 covenant (PAR90+write-offs/GLP breach, waiver received): R739, R740, R749, R617, R411. Rs 455 cr borrowings lack security under lender time limit (R616, R744). Trust unreviewed by auditor (R696). 30 ZERO_STANDING rows, mostly nil cells in OTR/IPO tables."

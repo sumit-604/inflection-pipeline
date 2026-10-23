@@ -1,0 +1,105 @@
+stage: A4-analyst
+company: "AYE"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, concall, presentation]
+ledger_reconciliation:
+  notes: 12
+  turns: 26
+  slides: 44
+  all_reviewed: true
+  a3_findings_incorporated: ["A3-01","A3-02","A3-03","A3-04","A3-05","A3-06","A3-07","A3-08","A3-09","A3-10","A3-11","A3-12","A3-13","A3-14","A3-15","A3-16","A3-17","A3-18","A3-19","A3-20","A3-21","A3-22","A3-23","A3-24","A3-25","A3-26","A3-27","A3P-01","A3P-02","A3P-03","A3P-04","A3P-05","A3P-06","A3P-07","A3P-08","A3P-09","A3P-10","A3P-11","A3P-12","A3P-13","A3P-14","A3P-15","A3P-16","A3P-17","A3P-18","A3P-19","A3P-20","A3C-01","A3C-02","A3C-03","A3C-04","A3C-05","A3C-06","A3C-07","A3C-08","A3C-09","A3C-10","A3C-11","A3C-12","A3C-13","A3C-14","A3C-15","A3C-16","A3C-17","A3C-18","A3C-19","A3C-20"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "HELD (4% at Rs132; Entry Max Rs148, MoS Rs118; CMP on page Rs162 13-Oct-2026, stale)"
+position_branch: "8A"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap: "N.A. - no consolidated results filed; Trust inside statement 0.14% of PAT (0.12/86.72)"}
+  - {period: "H1 FY27", gap: "N.A. - no consolidated results filed; Trust inside statement 0.29% of PAT (0.47/161.22)"}
+  - {period: "Q1 FY27", gap: "N.A. - no consolidated results filed; Trust share ND"}
+questions_for_management:
+  - {q: "Gross slippage into Stage 3 in Q1 and Q2 FY27 (Rs cr); filing implies Q2 write-offs+settlements ~95 vs ~69 in Q1", from_finding_id: "A3-11, A3P-05, A3P-20, A3C-18, A4-03"}
+  - {q: "Overlay balance at 30-Jun and 30-Sep; how much of the Rs13 cr ECL fall (287 to 274) went through Q2 P&L", from_finding_id: "A3C-01, A3P-15, A3P-05"}
+  - {q: "INE501X07588 (PAR90+WO)/GLP covenant threshold and actual; which delinquency rose this FY", from_finding_id: "A3-03"}
+  - {q: "Bank-lender unwaived covenant count at 30-Sep; any deed needing 1.10x cover (computed 1.091x)", from_finding_id: "A3-15, A3-03"}
+  - {q: "Q2 ROA ex the Rs10.12 cr DA gain; is DA a planned H2 lever", from_finding_id: "A3-13, A3P-07, A3C-02"}
+  - {q: "FY27 credit cost ~3.5% needs H2 ~3.05% and Q2 charge was flat in rupees; what Q3 credit cost (Rs and ratio) does the plan assume", from_finding_id: "A3C-08, A4-02"}
+  - {q: "Share of Sep Bucket 1 accounts rolling to 30+ DPD in Oct", from_finding_id: "A3P-06, A3C-03"}
+  - {q: "Mortgage PAR X, Stage 3 and foreclosure rate for the last four quarters", from_finding_id: "A3C-04"}
+  - {q: "FY27 mortgage share assumed and Q2 ML disbursement", from_finding_id: "A3P-02"}
+  - {q: "MH/KA/MP AUM share, Bucket 1 CE and PAR X at 30-Sep", from_finding_id: "A3P-04, A3C-07"}
+  - {q: "Cattle AUM in drought districts and guarantee cover there", from_finding_id: "A3C-07, A3C-19"}
+  - {q: "Will FY27 bands be formally narrowed as committed at Q1", from_finding_id: "A3P-14"}
+  - {q: "Does the NIM band imply H2 NIM ~12.6-13.6%, and how is RoTA 4.0-4.5% then reached", from_finding_id: "A3C-10, A3P-14"}
+  - {q: "October 2026 disbursement", from_finding_id: "A3P-13, A3C-14"}
+  - {q: "Q3 repeat-loan disbursement growth YoY", from_finding_id: "A3C-14, A3P-13"}
+  - {q: "Are splits counted in 571 branches; how many new branches operating by 31-Dec-2026", from_finding_id: "A3C-11, A3P-10, A3C-09"}
+  - {q: "New branches assumed for the 28-33% 3-yr CAGR given ~Rs4,408 cr existing headroom", from_finding_id: "A3P-01"}
+  - {q: "Deployment date for Rs1,341.66 cr liquidity; finance cost on ATA +28 bps vs CoB -15 bps", from_finding_id: "A3-14, A3P-08, A3C-05, A4-02"}
+  - {q: "Use and timing of undeployed Rs70 cr of INE501X07745", from_finding_id: "A3-07"}
+  - {q: "Expiry of lender time limits for Rs455 cr borrowings without security", from_finding_id: "A3-06"}
+  - {q: "Was the Q1 auditor's Excel-based charge allocation point fixed", from_finding_id: "A3-05"}
+  - {q: "Co-lending Rs53.31 cr book: product, share, ECL held vs 19.9% NPL", from_finding_id: "A3-12"}
+  - {q: "Is Gaurav Seth CFO/KMP at 22-Oct-2026; why CS signed all Q2 filings", from_finding_id: "A3-16, A3C-15, A3P-09"}
+  - {q: "Was the CTO change a replacement, and why", from_finding_id: "A3P-09, A3C-15"}
+  - {q: "Was SSKM to MSKA only the RBI-mandated rotation", from_finding_id: "A3-24"}
+  - {q: "Why was the security-cover report signed 11:09:12, before the 11:15 board start", from_finding_id: "A3-18"}
+  - {q: "Other agenda items after the 6-minute approval; Reg 30 outcome", from_finding_id: "A3-08, A3-17"}
+  - {q: "Hedge accounting designation date, hedged items, MTM now in OCI", from_finding_id: "A3-01"}
+  - {q: "Arcil SR carrying value and provision held", from_finding_id: "A3-02"}
+  - {q: "Which actuarial assumption caused the H1 Rs5.36 cr loss", from_finding_id: "A3-09"}
+  - {q: "EPS denominator; Trust-held treasury shares", from_finding_id: "A3-10"}
+  - {q: "Rs22.63 cr unutilised offer expenses: revision and return to proceeds", from_finding_id: "A3-19"}
+  - {q: "Share of borrowers with 2+ unsecured lenders; Bucket 1 and PAR X for MFI-overlap vs rest and for new-to-Aye vs repeat cohorts", from_finding_id: "A3C-06, A5 ADV-2"}
+  - {q: "Insurance-commission income FY26 and H1 FY27 (Rs cr, bps of ATA)", from_finding_id: "A3C-13, A3P-07"}
+  - {q: "Q2-only tele-caller productivity and foreclosure rate", from_finding_id: "A3P-16"}
+  - {q: "Any portfolio purchased in H1; where purchased DA AUM is reported", from_finding_id: "A3P-17"}
+  - {q: "Alpha Wave India exit and other pre-IPO holders' sale plans", from_finding_id: "A3P-12"}
+  - {q: "Eight quarterly GNPA prints; why provisional 4.30%/6.88%/7,604 became 4.20%/6.94%/7,597", from_finding_id: "A3C-16, A4-01, A4-04"}
+  - {q: "PAR 30 at 12 months on book, AI-ML vs cluster underwriting", from_finding_id: "A3C-19"}
+  - {q: "Gold loans: board approval date, pilot branch count, capex", from_finding_id: "A3C-12"}
+monitorables:
+  - {item: "Official Q2 transcript (overlay amount, 50 bp scenario)", implied_date: "~end-Oct 2026 (inferred)", source_ref: "A3C-20"}
+  - {item: "Reg 30 outcome of other board agenda items", implied_date: "ND", source_ref: "R:R613; A3-08"}
+  - {item: "H1 FY27 RPT disclosure with XBRL", implied_date: "NOT FOUND", source_ref: "R:R614"}
+  - {item: "INE501X07588 redemption (breached ISIN), Rs55.22 cr", implied_date: "2026-11-17", source_ref: "R:R664"}
+  - {item: "Bucket 1 CE recovery post Nov / Dec", implied_date: "2026-12", source_ref: "C:L498-499, C:L574"}
+  - {item: "30+ new branches operational", implied_date: "2026-12-31", source_ref: "C:R246"}
+  - {item: "Deploy Rs70 cr NCD balance INE501X07745", implied_date: "Q3 FY27", source_ref: "R:R563-R564; A3-07"}
+  - {item: "INE501X07653 maturity", implied_date: "2026-12-31", source_ref: "R:R672"}
+  - {item: "Security creation for Rs455 cr borrowings", implied_date: "NOT FOUND", source_ref: "R:R616; A3-06"}
+  - {item: "Repeat-loan disbursement catch-up", implied_date: "Q3 FY27", source_ref: "C:R244"}
+  - {item: "Q3 FY27 business update (Bucket 1 CE, PAR X, disbursement)", implied_date: "early Jan 2027", source_ref: "[N L344]; [S]"}
+  - {item: "Q3 FY27 results: credit cost at constant ECL cover (single cleanest metric)", implied_date: "~late Jan 2027 (inferred)", source_ref: "Step 8C"}
+  - {item: "One year since listing; UA gate", implied_date: "~2027-02-16", source_ref: "R:R638; [N L229]"}
+  - {item: "FY27 guidance close (AUM 25-30%, credit cost ~3.5%, opex ~8.5%, RoTA 4.0-4.5%)", implied_date: "2027-03-31", source_ref: "P:R637-R641; C:R144, C:R147"}
+  - {item: "PAR X below 6.5% by FY end", implied_date: "2027-03-31", source_ref: "C:R160"}
+  - {item: "Gold-loan pilot branches", implied_date: "2027-03-31", source_ref: "C:R284"}
+  - {item: "NCD maturities INE501X07661 / INE501X07646", implied_date: "2027-03-20 / 2027-03-31", source_ref: "R:R674; R:R670"}
+  - {item: "FY27 audited results; PAT >= Rs270 cr trigger; FY28 guidance", implied_date: "~Apr-May 2027 (inferred)", source_ref: "[N L46]"}
+  - {item: "Microlap scale-up", implied_date: "Q4 FY27 or Q1 FY28", source_ref: "C:R287"}
+  - {item: "FY28 credit cost 10-25 bps better; opex ~8%", implied_date: "FY28", source_ref: "C:R148, C:R146"}
+  - {item: "Insurance-commission regulation implementation", implied_date: "NOT FOUND", source_ref: "C:L528"}
+  - {item: "No fresh equity / no dilution", implied_date: "~FY29", source_ref: "C:R106"}
+  - {item: "3-yr vision: AUM CAGR 28-33%, RoA 4-4.5%, RoE 17-20%", implied_date: "~FY29-FY30", source_ref: "P:R659-R662"}
+  - {item: "AGM 1-Sep scrutinizer report and dissent %", implied_date: "overdue", source_ref: "[N L4]"}
+  - {item: "Offer-expense balance Rs22.63 cr", implied_date: "NOT FOUND", source_ref: "R:R618; A3-19"}
+flags:
+  - "FLAG-ADDGATE: gross slippage undisclosed third consecutive event (pre-committed bear reading); FY27 guidance not refined; add-gate fails (1 of 4 legs passes)"
+  - "FLAG-EARNINGS-QUALITY: DA gain 10.12 + ECL stock fall 13.0 exceed QoQ PBT rise 18.65; H1 impairment = write-offs + settlements - 0.55"
+  - "FLAG-COVENANT: auditor-qualified security-cover certificate; (PAR90+WO)/GLP breach on INE501X07588, 2nd quarter, waived; reason cites higher delinquencies; bank count ND"
+  - "FLAG-LEADING-INDICATORS: Bucket 1 CE 59.8 -> 54.5 -> 52.8%; UP Sep 47.6%; mortgage PAR X +1pp; disbursement +10% YoY"
+  - "FLAG-KMP: CFO absent from all filing signatures and untitled on call; CTO replaced"
+  - "FLAG-PROCESS: 6-minute approval; security-cover report signed before board start"
+  - "FLAG-DATA: ASR transcript; provisional vs final GNPA 4.30 vs 4.20; Notion GNPA history inconsistent with deck (A4-04)"
+  - "FLAG-CASH: INDETERMINATE-WITH-DIRECTION"
+  - "FLAG-SUPPLY: Alpha Wave India left >5% list"
+  - "FLAG-SIGNAL-COUNT: tracker has 2 signals (<3); 4 Case B candidates proposed as payload"
+  - "FLAG-PRICE-STALE: CMP Rs162 (13-Oct-2026) pre-results"
+  - "FLAG-CREDIBILITY-FRAGILE: protocol ratio 70% (B) on 5 items; 60% if opex scored PARTIAL (denominator-assisted, A5 ADV-3); range A to D by scoring convention; archetype flips to OVERPROMISER under strict scorings"
+  - "FLAG-BASE-EFFECT (A5 ADV-1): YoY core PBT +576.8% runs off the FY26 stress trough; ~Rs14 cr/qtr post-IPO funding-mix carry unwinds on re-levering to 4-4.5x; recurring pool ~73.2 ex ECL draw"
+  - "FLAG-BORROWER-MIX (A5 ADV-2): incremental lending tilts to first-time borrowers (new +23% YoY, repeat -16%); repeat loans perform better on credit cost per management"
+plain_language_brief_included: true
+analyst_note: "Correction loop 1 applied (A5 ADV-1..3); verdict, protocol grade and position unchanged. Headline Q2 is strong and no trigger fired, so HOLD 4% stands and the add-gate fails. The review leans bear on quality. H1 impairment 163.31 equals write-offs 155.56 plus settlements 8.30 minus a 0.55 ECL change, exactly. The deck ECL stock fell 287 to 274 in Q2 while gross loans rose 254, so Q2 write-offs ran near 95 vs 69 in Q1 [inference]. The DA gain plus that ECL fall exceed the whole QoQ PBT rise. Slippage stayed undisclosed a third time, the Notion bear reading; an implied proxy is near 4.6% of average AUM. Bull counter: NII +40%, H1 realised losses +10% YoY on a 27% larger book, CoB down. But YoY core PBT +577% runs off the FY26 trough, and ~Rs14 cr/qtr is post-IPO funding mix that re-levering unwinds. Incremental lending tilts to first-time borrowers. The 70% credibility ratio rests on five items and swings A to D on scoring; opex delivery is denominator-assisted. Notion's GNPA history conflicts with the deck's Sep-25 4.84%. The concall is ASR."
+review_path: "runs/aye-q2fy27/work/review_aye_q2fy27.md"

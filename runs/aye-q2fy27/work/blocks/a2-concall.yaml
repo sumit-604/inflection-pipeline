@@ -1,0 +1,24 @@
+stage: A2-enumerator
+company: "AYE"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/aye-q2fy27/work/ledger_concall_aye_q2fy27.md"
+counts:
+  participants: 16
+  turns: 26
+  questions: 10
+  mgmt_numbers: 191
+  forward_hedge: 81
+  entities: 48
+  dates: 26
+  zero_standing: 0
+flags_raised: [ASR_UNCERTAIN, ANALYST_UNIDENTIFIED, MULTI_SPEAKER_MERGED, RESTATED, MISSING_FROM_STRUCTURED]
+ids_in_structured: 346
+ids_referenced: 346
+orphan_ids: []
+missing_from_structured: ["line 396 monthly disclosure lag 15-20 days (Q3)", "line 500 99.2 collection efficiency over last four months", "line 656 1% mortgage PAR X movement, branches identified", "line 721 analyst borrowing cost 10 or 2 / 25 bp (garbled)", "line 745 foreclosure FY26 vs 1H FY27 (analyst)", "line 762 branch count flat FY26 and 1H FY27 (analyst)", "line 72 FY27 started on good note (low)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Machine transcript: speakers are not separated, so turns are best effort (26 turns: 10 Q&A pairs plus 6 framing turns); opening remarks T3 merge several presenters. 11 moderator tags equal 10 questions plus one mid-question ASR artefact at fulltext line 525. Q2 analyst is unidentified (moderator line truncated). Seven fulltext lines carry figures that A1 lacks, mostly analyst-side question content; M2 (99.2 over last four months) and M3 (1% mortgage PAR X) are management-side and the more material. No ZERO_STANDING items and no prior ledger, so no diffs. REPEAT_QUESTION not raised; topic overlaps listed for A3."

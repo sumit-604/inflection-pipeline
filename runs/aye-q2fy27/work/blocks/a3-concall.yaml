@@ -1,0 +1,77 @@
+stage: A3-forensics
+company: "AYE"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/aye-q2fy27/work/forensics_concall_aye_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3C-01", check: "F12", line: "391-393, 401-409, 413", classification: "AMBIGUOUS", implication: "Overlay now 'included' for transparency; June overlay about 11-12 cr; Sep ECL 274 about equals June ex-overlay 275 and Stage 2 cover back to ex-overlay level, so overlay looks spent; if released, ex-release Q2 credit cost about 4.3% [INFERENCE]; spoken 45 cr does not tie, ASR gap; same-basis cover fall not asked"}
+  - {id: "A3C-02", check: "F12", line: "62-63, 189-192, 196", classification: "AMBIGUOUS", implication: "PAT and ROA 4.0% credited to credit cost and opex; DA gain 10.12 cr (about 62% of QoQ PAT rise) never mentioned; ex-DA ROA about 3.65% [INFERENCE], below band"}
+  - {id: "A3C-03", check: "F12", line: "152-153, 491-500, 503-514, 568-575", classification: "FORWARD-SIGNAL", implication: "Bucket 1 CE dipped 3-4 months in UP and other states; 'not identified any particular reason'; three causes offered; recovery slipped Nov to Dec within the call; leads PAR 30 and Stage 3 in Q3"}
+  - {id: "A3C-04", check: "F12", line: "629-633, 652-663, 744-756", classification: "FORWARD-SIGNAL", implication: "Mortgage PAR X +1 pp QoQ to about 6%; MP and Gujarat; microlap tightened, scale-up Q4 or Q1; mortgage foreclosures rising with competition, so adverse-selection risk [INFERENCE]"}
+  - {id: "A3C-05", check: "F12", line: "163-176, 435-446, 539-543", classification: "AMBIGUOUS", implication: "Call claims falling CoB and 25 bp upside; deck finance cost on ATA +28 bps; 1,200 cr borrowed vs about 273 cr AUM growth; pre-funding or negative carry not reconciled"}
+  - {id: "A3C-06", check: "F12", line: "455-467", classification: "AMBIGUOUS", implication: "MFI overlap 8-9% borrower, 32% household; 50-60% may hold small 25-30k loans (ASR garbled); first data for over-lending checklist item 8"}
+  - {id: "A3C-07", check: "F12", line: "80-87, 313-318, 620-628", classification: "AMBIGUOUS", implication: "Drought states about 18% of AUM (ASR); management cites stable non-OD CE while deck Rest States Bucket 1 CE fell 57.5 to 55.7; cattle 25-28% of book"}
+  - {id: "A3C-08", check: "F6", line: "146-150, 295-299, 532-537", classification: "FORWARD-SIGNAL", implication: "Credit cost verbally tightened to about 3.5% FY average, exit lower; H1 3.95% means H2 about 3.05-3.1% [INFERENCE], about 75 bps below Q2; Q3 must print about 3.1-3.3%"}
+  - {id: "A3C-09", check: "F6", line: "206-211, 526-531, 556", classification: "AMBIGUOUS", implication: "FY opex about 8.5% needs H2 about 8.2% while 30+ branches, about 80 with splits, 5-7% staff and gold pilots land in H2; ROA 'untouched' rests on it"}
+  - {id: "A3C-10", check: "F6", line: "183-189, 215-216, 719-734", classification: "AMBIGUOUS", implication: "NIM band 14.25-14.75 held vs H1 15.9%; rate effect only 3 bps ROA; mix (NL/ML book, repeat) cited; implies H2 NIM about 12.6-13.6% or stale band; repeat is both AUM lever and yield drag"}
+  - {id: "A3C-11", check: "F6", line: "111-113, 762-777, 799-801", classification: "AMBIGUOUS", implication: "0 branches opened or split in H1; new counts 30+/35/35-40/40 and totals 80-90/80 inconsistent; FY26 '45 splits' vs flat 571 count; 25% AUM floor needs H2 +15.9%"}
+  - {id: "A3C-12", check: "F6", line: "227-231, 262, 586-613", classification: "FORWARD-SIGNAL", implication: "Gold loans move between 'evaluating', 'if we decide' and pilot branches with new infrastructure this FY; no capex, book target or approval disclosed"}
+  - {id: "A3C-13", check: "F7", line: "217-220, 522-556, 693-704", classification: "AMBIGUOUS", implication: "Insurance-commission hit never sized; 'assuming it is implemented'; same 85-100 bp levers named against insurance and against insurance plus rates; one-mechanism-twice risk; fee income ex-DA already down 14% YoY [INFERENCE]"}
+  - {id: "A3C-14", check: "F7", line: "100-104, 254-266, 429-430", classification: "AMBIGUOUS", implication: "AUM top end hedged ('wouldn't like to commit'); repeat disbursement -16% YoY; analyst October 550-600 cr figure not confirmed"}
+  - {id: "A3C-15", check: "F13", line: "44-45, 399", classification: "AMBIGUOUS", implication: "Gaurav Seth introduced without title, answers ECL; CFO absent from Q2 filings; CTO change not mentioned; KMP AMBER unresolved"}
+  - {id: "A3C-16", check: "F14", line: "59-61, 131-133, 291", classification: "AMBIGUOUS", implication: "'Seven consecutive quarters' used for credit cost and GNPA; -70 bps YoY implies Sep-25 GNPA 4.90%, inconsistent with Notion series peak 4.77%; verify filed history"}
+  - {id: "A3C-17", check: "F14", line: "199, 278-281, 359-365, 406-408", classification: "NEUTRAL-FACT", implication: "Internal contradictions (two quarters vs two years; 4.2 vs about 4 files; ECL stage explanation; branch counts); H1 PAT 162 spoken vs 161.22 filed; data-quality point"}
+  - {id: "A3C-18", check: "F17", line: "none (silence across 27-864)", classification: "CONFIRMATORY-NEGATIVE", implication: "Silent on gross slippage, write-offs, NCD covenant breach, bank unwaived covenant count, DA gain, PCR, Alpha Wave exit, AGM; slippage now undisclosed in results, deck and call; add-gate (i) bear reading applies"}
+  - {id: "A3C-19", check: "F17", line: "429-446, 469-483, 846-849", classification: "AMBIGUOUS", implication: "AI-ML delinquency answered without numbers; October disbursement not confirmed; credit-life question has no answer in text"}
+  - {id: "A3C-20", check: "F17", line: "189, 411-425, 729-734, 846-849", classification: "NEUTRAL-FACT", implication: "ASR gaps in overlay amount (32 s), 50 bp rate scenario (42 s), credit-life answer; those numbers unusable; request official transcript"}
+forward_signals: ["A3C-03", "A3C-04", "A3C-08", "A3C-12"]
+ambiguous: ["A3C-01", "A3C-02", "A3C-05", "A3C-06", "A3C-07", "A3C-09", "A3C-10", "A3C-11", "A3C-13", "A3C-14", "A3C-15", "A3C-16", "A3C-19"]
+commitments:
+  - {commitment: "FY27 AUM growth 25-30%, not committing to 30%", implied_date: "2027-03-31", ref: "L95, L202-203, L264-265 (R243, R263)", status_word: "underway"}
+  - {commitment: "FY27 credit cost about 3.5% average, exit lower (band 3.5-4.0%)", implied_date: "2027-03-31", ref: "L146-150, L295-297, L534-535 (R250, R266, R276)", status_word: "underway"}
+  - {commitment: "FY28 credit cost 10-25 bps better", implied_date: "FY28", ref: "L536-537, L700-701 (R276, R289)", status_word: "initiated"}
+  - {commitment: "FY27 opex about 8.5%; opex and ROA into bands in H2", implied_date: "2027-03-31", ref: "L208-211, L526-527 (R254, R275)", status_word: "underway"}
+  - {commitment: "FY28 opex about 8% or better", implied_date: "FY28", ref: "L530-531 (R275)", status_word: "initiated"}
+  - {commitment: "FY27 NIM band 14.25-14.75% held", implied_date: "2027-03-31", ref: "L183-189, L719-728 (R253, R290)", status_word: "underway"}
+  - {commitment: "FY27 ROA 4.0-4.5% on total assets; untouched by insurance change", implied_date: "2027-03-31", ref: "L204, L556 (R093, R279)", status_word: "underway"}
+  - {commitment: "PAR X below 7% by H1, below 6.5% by FY27 end", implied_date: "2027-03-31", ref: "L138-139, L642-643 (R249, R285)", status_word: "underway"}
+  - {commitment: "Non-OD CE 99.2-99.3%, improving over last four months", implied_date: "2027-03-31", ref: "L644, L500 (R286, M2)", status_word: "underway"}
+  - {commitment: "Bucket 1 CE recovery post November, possibly December", implied_date: "2026-12-31", ref: "L498-499, L572-575 (R280)", status_word: "initiated"}
+  - {commitment: "Repeat-loan disbursement catch-up in Q3", implied_date: "2026-12-31", ref: "L103-104, L257 (R244, R261)", status_word: "initiated"}
+  - {commitment: "30+ new branches operational in Q3", implied_date: "2026-12-31", ref: "L112-113 (R246, R315)", status_word: "initiated"}
+  - {commitment: "About 35-40 new plus 30-40 split branches a year; close to 80 in FY27", implied_date: "2027-03-31", ref: "L768-777, L799-801 (R292, R293, R295)", status_word: "initiated"}
+  - {commitment: "Employee growth 12-15%; 5-7% more staff in H2, mostly Q3", implied_date: "2027-03-31", ref: "L331-332, L353-356, L377-378 (R268, R269, R271)", status_word: "underway"}
+  - {commitment: "Productivity 5 loans per officer per month", implied_date: "2027-03-31", ref: "L357-362 (R115, R270)", status_word: "underway"}
+  - {commitment: "No fresh equity or dilution for about two financial years", implied_date: "about FY29", ref: "L161-162, L278-281 (R251, R265)", status_word: "underway"}
+  - {commitment: "Leverage 4-4.5x; ROE high teens to low 20s gradually", implied_date: "not dated", ref: "L271-275 (R264)", status_word: "initiated"}
+  - {commitment: "Gold loans and secured basket; pilot branches this FY with new infrastructure", implied_date: "2027-03-31", ref: "L227-231, L262, L591-610 (R258, R259, R281-R284)", status_word: "initiated"}
+  - {commitment: "Microlap disbursement scale-up after tightening", implied_date: "Q4 FY27 or Q1 FY28", ref: "L659-663 (R287)", status_word: "initiated"}
+  - {commitment: "Absorb insurance-commission change without repricing", implied_date: "FY28", ref: "L217-220, L528, L548-551 (R255, R256, R278)", status_word: "initiated"}
+  - {commitment: "Funding-cost benefit flows progressively; 25 bp interest upside next year", implied_date: "FY27-FY28", ref: "L175-176, L538-543 (R252, R277)", status_word: "underway"}
+  - {commitment: "Hold cattle share at 25-28%", implied_date: "ongoing", ref: "L313-315 (R267)", status_word: "underway"}
+  - {commitment: "Three-year vision: AUM CAGR 28-33%, ROA 4-4.5%", implied_date: "about FY29", ref: "L223-226 (R257)", status_word: "initiated"}
+  - {commitment: "Rate sensitivity 3 bps ROA FY27, 6 bps FY28 (50 bp case ASR-lost)", implied_date: "FY27-FY28", ref: "L729-734 (R171-R175, R291)", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The ECL answer carries the most weight. The analyst's 39 to 48 and 194 to 197 match the deck's restated 30-Jun table, so the June overlay was about 11-12 cr. Sep ECL 274 cr is about the June ex-overlay 275 cr, and Stage 2 cover 47.44% sits back at the June ex-overlay 47.11%. Reading 1: overlay folded into stage cover as mix improved. Reading 2: overlay released in Q2; with the 10.12 cr DA gain (never mentioned) that exceeds the whole about 12 cr QoQ PAT rise. The overlay balance at 30-Sep separates them; ASR lost the amount at L413. Management then tightened FY27 credit cost to about 3.5% average with a lower exit. That needs H2 near 3.05-3.1% against Q2 3.82%, while Bucket 1 CE dips with no identified cause (L496) and mortgage PAR X rose about 1 pp with rising foreclosures. That set is the Q3 test. Guidance bands were repeated with verbal points inside them. Slippage, write-offs, covenants, DA, PCR, Alpha Wave and the CFO seat went unasked. Three load-bearing answers fall in ASR gaps; use the official transcript when filed. R149 is a funding cost, not a lending rate."

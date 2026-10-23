@@ -1,0 +1,64 @@
+stage: A5-adversary
+company: "GRWRHITECH"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches:
+  - {metric: "C Reported EBITDA Q2 FY27 (rounding scale)", a4_value: "188.99 (RV l.130, l.223)", recomputed: "189.00 = 173.06 + 13.05 + 2.89; margin 27.17%, +26.0%, +297 bps unchanged", source_line: "FT l.523, l.525, l.532"}
+surviving_bear_counters:
+  - {claim: "FCF 168.27 strong; net cash 920.21; no borrowings; finance cost is lease interest only (RV l.199, l.273, l.286, l.303, l.312)", counter: "H1 C finance cost 5.34 on lease liabilities 15.66 -> 12.61 implies 75.6% a year if all lease interest; SA 3.08 implies 56.6%; subsidiaries 2.26 on 3.51 -> 3.01 implies 138.7%, up 42% YoY; no borrowings line; composition ND; receivables discounting is one reading [INFERENCE]", source_line: "FT l.184, l.271, l.277, l.523, l.634, l.640, l.720-721", type: FACTUAL}
+  - {claim: "Cash conversion leans growth-induced; consolidated days stable (RV l.305-308, l.337)", counter: "Receivable days 9.83 for a 75% exporter coexist with non-lease finance cost and no borrowings; if receivables are discounted, stable days reflect financing, not collection; finance-cost composition and discounting status absent from the missing-evidence list and the questions", source_line: "FT l.509, l.523, l.612, l.634, l.640, l.1199", type: MISSING}
+findings_by_type:
+  factual:
+    - "F4 (A4): 'Finance cost is lease interest only' (RV l.286; also l.199, l.273) unsupported and contradicted: H1 C finance cost 5.34 on leases 15.66 -> 12.61 implies 75.6% a year; SA 3.08 on 12.15 -> 9.60 implies 56.6%; subsidiaries 2.26 implies 138.7%, up 42% YoY (FT l.184, l.271, l.277, l.523, l.634, l.640)"
+    - "F5 (A4): C Reported EBITDA Q2 FY27 188.99 should be 189.00 (173.06 + 13.05 + 2.89; FT l.523, l.525, l.532) at RV l.130, l.223; rounding scale, no ratio moves"
+  missing:
+    - "M4 (A4): cash-classification missing-evidence list (RV l.337) and Step 8.5 lack finance-cost composition and receivables discounting (Q17); receivable days 9.83 for a 75% exporter (FT l.1199) sit beside non-lease finance cost with no borrowings"
+  contradiction: []
+  style:
+    - "S1: SA ex-OI QoQ -572 bps vs -571 unrounded (RV l.514, l.682)"
+    - "S2: 'matching' deck ROCE 23%/32% vs recomputed 23.82%/32.93% (RV l.378)"
+    - "S3: 25.31 'near' 18.60 is 36% higher (RV l.184)"
+    - "S5: A2 agenda rows cite R1297/R1347, which are entity rows (ST l.1309, l.1359)"
+    - "S6: forward-map MPCB catalyst undated (RV l.600, l.535)"
+    - "S7: A4 coverage uses category-level reviewed mark; list uncited rows by ID next time (RV l.16-19)"
+    - "S8: p24 forward restatements (FT l.970, l.973-974) lack FORWARD rows; duplicates of R1399-R1401"
+    - "S9: A2 zero_standing 11 is stale (6 genuine); correction already in A4 (RV l.18)"
+    - "S10: two-year margin climb 'about 300 bps' (RV l.524, l.561, l.693) omits the incl-other-income basis; ex-OI at least +17 bps, exact ND"
+    - "S11: ND OI remainder 12.85 (RV l.228) may hold sundry write-back 0.04 and PPE sale profit 0.15 (FT l.678, l.683)"
+    - "S12: net cash rise 162.28 includes 21.28 non-cash MF gain (FT l.611-612, l.716); still above 820 without it (RV l.312)"
+    - "S13: reading A CFO/PAT 0.83x sits above the cited 0.65-0.80 band (RV l.301, l.336)"
+    - "S14: Other-assets drain recurred in H1 FY26 (31.20 C / 30.33 SA, FT l.697, l.321); add to gap (c) (RV l.337)"
+    - "S15: Step 7 ROCE row (RV l.433) can add TTM ROCE 19.68% closing CE / 20.55% average CE"
+    - "S16: 1-G test (RV l.184) states a strain on (a) only; add that old-price stock can carry into Q2 cost of sales and that (b) implies subsidiaries' Q2 operating revenue about flat QoQ (262.86 vs 260.04, +1.1%) vs (a) 285.70 vs 263.75; no change to 'no lean'"
+    - "S17: 'world's largest single-site SCF capacity' (RV l.593); deck says both 'World's largest' (FT l.1160-1161) and 'One of World's largest' (FT l.1328-1330)"
+loop_back_to: "A4"
+gap: "F4 (FACTUAL): remove 'finance cost is lease interest only' at RV l.286, l.199, l.273. State composition ND; no borrowings; H1 C finance cost 5.34 on leases 15.66 -> 12.61 implies 75.6% a year if all lease interest [5.34 x 2 / 14.14]; SA 3.08 on 12.15 -> 9.60 implies 56.6%; subsidiaries carry 2.26 (H1 FY26 1.59; Q2 1.32 vs 0.83); readings: bank/LC/bill-discounting charges, tax or deposit interest; receivables discounting would flatter days and CFO [INFERENCE]. F5 (FACTUAL): Reported EBITDA Q2 FY27 188.99 -> 189.00 at RV l.130, l.223. M4 (MISSING): add 'finance-cost composition and any receivables discounting or factoring (Q17)' to the RV l.337 missing-evidence list, and add Q17 (what makes up finance cost; does any group company discount or factor receivables, yes/no, amount at 30-Sep-2026) to Step 8.5 and the YAML questions. Classification and protocol verdict unchanged."
+style_notes:
+  - "S1: SA ex-OI QoQ -572 bps vs -571 unrounded (RV l.514, l.682)"
+  - "S2: 'matching' deck ROCE 23%/32% vs recomputed 23.82%/32.93% (RV l.378)"
+  - "S3: 25.31 'near' 18.60 is 36% higher (RV l.184)"
+  - "S5: A2 agenda rows cite R1297/R1347, which are entity rows (ST l.1309, l.1359)"
+  - "S6: forward-map MPCB catalyst undated (RV l.600, l.535)"
+  - "S7: A4 coverage uses category-level reviewed mark; list uncited rows by ID next time"
+  - "S8: p24 forward restatements lack FORWARD rows; duplicates of R1399-R1401"
+  - "S9: A2 zero_standing 11 is stale (6 genuine); correction already in A4"
+  - "S10: two-year margin climb 'about 300 bps' omits the incl-other-income basis; ex-OI at least +17 bps"
+  - "S11: ND OI remainder 12.85 may hold sundry write-back 0.04 and PPE sale profit 0.15"
+  - "S12: net cash rise includes 21.28 non-cash MF gain; still above 820 without it"
+  - "S13: reading A CFO/PAT 0.83x sits above the cited 0.65-0.80 band"
+  - "S14: Other-assets drain recurred in H1 FY26; add to gap (c)"
+  - "S15: Step 7 ROCE row can add TTM ROCE 19.68% / 20.55%"
+  - "S16: 1-G test strain stated on (a) only; add the (b) implication and the old-price-stock point"
+  - "S17: deck states both 'World's largest' and 'One of World's largest' single-location SCF capacity"
+analyst_note: "Loop-2 re-audit. F3 is resolved in all five places: the review draws no lean between the transfer-markup and intra-subsidiary-dividend readings, and the new 1-G test ties. All six loop-0 fixes still hold. Coverage holds, and every SA and C table was re-mapped from the fulltext and ties. One new substantive finding, F4: the review calls finance cost lease interest only. The group has no borrowings and leases of 12.61-15.66, yet paid 5.34 of finance cost in H1, a 75.6% implied rate; the subsidiaries alone pay 2.26, up 42% YoY. The source is not disclosed. One reading is receivables discounting, which would fit receivable days of 9.83 for a 75% exporter, so M4 asks for it in the cash-classification evidence list and as Q17. F5 (188.99 vs 189.00) is tagged FACTUAL because no rounding path gives 188.99, but it moves no ratio and rides the same loop. The fix is wording, one question and one evidence item; the protocol verdict and the classification do not change. Sixteen STYLE notes are logged."

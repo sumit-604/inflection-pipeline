@@ -1,7 +1,7 @@
 # Session cost: GRWRHITECH Q2 FY27 /run-quarterly
 
 ticker | date | doctype | pages | a1_extracted_text_tok | total_run_tok | loop_iterations
-GRWRHITECH | 2026-10-23 | results (+ embedded presentation pp20-43) | 43 | ~28,000 (A1 estimate) | >= 1,129,155 (A4 first run NOT FOUND) | 1
+GRWRHITECH | 2026-10-23 | results (+ embedded presentation pp20-43) | 43 | ~28,000 (A1 estimate) | >= 1,129,155 (A4 run 1, A4 loop 2 and A5 loop 2 NOT FOUND) | 2
 
 | agent | model | total_tok | wall | run# |
 |---|---|---|---|---|
@@ -12,6 +12,12 @@ GRWRHITECH | 2026-10-23 | results (+ embedded presentation pp20-43) | 43 | ~28,0
 | A5 adversary | claude-opus-5-5 | 273,929 | 17m 55s | 1 |
 | LOOP 1: A4 correction | claude-opus-5-5 | 158,804 | 8m 54s | loop 1 |
 | LOOP 1: A5 re-audit | claude-opus-5-5 | 237,219 | 14m 16s | loop 1 |
+
+| LOOP 2: A4 correction (F3) | claude-opus-5-5 | NOT FOUND (restart; completion record lost, output on disk) | NOT FOUND | loop 2 |
+| LOOP 2: A5 re-audit, attempt 1 (stalled, mechanical) | claude-opus-5-5 | NOT FOUND | >600s stall | loop 2 |
+| LOOP 2: A5 re-audit, attempt 2 | claude-opus-5-5 | NOT FOUND at write time | NOT FOUND | loop 2 |
+
+Loop 2 approval: operator wrote "complete them fully" (2026-10-24), relayed by the coordinating session.
 
 Base run (known rows): 733,232. Loop 1: 396,023.
 

@@ -1,22 +1,35 @@
 # A4 MERGED QUARTERLY REVIEW: Tejas Networks Limited (TEJASNET), Q2 FY27 (quarter ended 30-Sep-2026)
 
-Agent: A4 analyst | model: claude-opus-5-5 | run date 2026-10-23 | run type: FULL QUARTER (results + concall + presentation)
+Agent: A4 analyst | model: claude-opus-5-5 | run date 2026-10-23 | run type: FULL QUARTER (results + concall + presentation) | correction loop 1
 Protocols loaded: Quarterly Results Review Protocol v1.4 (Role 4), Quarterly Concall Analysis Protocol v1.1 (Role 5). Master, FTTCP, Section 1B not loaded.
 Framing: THESIS CHECK against the live Notion page (fetched 2026-10-23 02:05 UTC). Decision Status verified: WATCHLIST, not held. Position Size blank. Entry zone on file Rs 247-309, MoS Rs 234 (Notion digest s.2). CMP property Rs 424.
-Inputs read: A1 structured (results R001-R851, concall R001-R324, presentation R001-R210), A1 fulltexts, A2 ledgers (3), A3 forensics (3), Notion digest s.1-8. Source PDFs and inputs/ not opened. Digest s.9 and the newest three Key Notes not used for findings.
+Inputs read: A1 structured (results R001-R851, concall R001-R324, presentation R001-R210), A1 fulltexts, A2 ledgers (3, incl. loop-1 section 10 rows), A3 forensics (3, incl. loop-1 addenda), A5 audit (loop 1), Notion digest s.1-8. Source PDFs and inputs/ not opened. Digest s.9 and the newest three Key Notes not used for findings.
 
-Anchor key: "RL###" = results fulltext line; "CL###" = concall fulltext line; "PL###" = presentation fulltext line; "dig. N" = Notion digest section. Units: Rs crore unless stated (filing states "Rs in crore", RL136, RL527; factor x1). OCR values that fail arithmetic are shown as filed and the identity value is labelled "derived by identity" with both lines cited (per A3 results s.0).
+Anchor key: "RL###" = results fulltext line; "CL###" = concall fulltext line; "PL###" = presentation fulltext line; "dig. N" = Notion digest section. Units: Rs crore unless stated (filing states "Rs in crore", RL136, RL527; factor x1). OCR values that fail arithmetic are shown as filed and the identity value is labelled "derived by identity" with both lines cited (per A3 results s.0). Loop-1 fixes carry a "[loop1-ID]" tag at the changed text.
+
+## LOOP 1 CHANGE LOG (A5 audit runs/tejasnet-q2fy27/work/audit_tejasnet_q2fy27.md)
+- M2 Q1 FY27 comparators (PL163, PL166) added; 7A collections verdict and Gate 5 reassessed: Step 5 rows L263-L264; Step 5 answer L283; Gate 5 L416; 7A L796; Section C L895; brief L929-L930.
+- M3 net-debt bear counter (Q2 pace 4,491.78; H1 pace 4,811.25; 190 receivable release): 6C L359; 8C L420; forward map L962.
+- M4 DCI to UNVERIFIED (CL476); BharatNet LOI-without-value counter (CL157-159): 6D L372, L375; Role 5 8A L831, L834.
+- C1 one BSNL ruling wording everywhere (FIRED on LoI under the 27-Aug ruling; operator to reconfirm on PO evidence): 6B L346; 6C L360, L365; 6D L371; 8A-W L409; 8B L416; brief L933, L936.
+- C2 break-even on both cost bases (Q2 base 685 / 1,130; Q1-rate base 806 / 1,252): Section C L896; brief L952.
+- F1 "dominates the book" replaced with CL357 wording: brief L959.
+- F2 Mar-26 receivable days as a range with OCR-suspect cite (RL604, RL609): Step 5 L262.
+- F3 forex removed as the cause of the +62.99 other-expense rise (PL119, PL132): Step 3 L211; Q21 L448; flags L1054.
+- Ledger loop 1 absorbed (results R852-R864, concall R325-R327, A3 addenda, O16): preamble L27; Step 5 debt bridge L276; 6C defensive count L774; monitorables L1021, L1024.
+- Style (trivial): S1 brief retag L929; S2 run-rate rate L249; S3 identity label L93; S5 retag INFERENCE L957; S7 denominator note L262; S8 Q06 half-answer L661.
+- Verdict and checklist statuses: unchanged (PROCEED WITH FLAGS; #2 AMBER, #4 RED, #6 AMBER, #7 AMBER, #8 UNKNOWN, #9 RED, #10 AMBER). Changed statuses: growth trigger 5 DCI ON TRACK to UNVERIFIED; trigger 2 BharatNet qualified as LOI stage; Gate 5 restated.
 
 ---
 
 ## LEDGER RECONCILIATION PREAMBLE
 
-Ledger contains 851 notes/line-item rows (results), 52 turns (concall), 13 slides (presentation). All 851 / 52 / 13 reviewed (results 851 of 851 IDs, concall 324 of 324 IDs, presentation 210 of 210 IDs; A2 orphan_ids empty in all three; A2 gate pass; A3 ledger_reconciled_pct 100 in all three). No unreviewed row. Findings incorporated:
-- Results (prefix res:): A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16; OCR items O1-O15.
-- Concall (prefix call:): A3-F6-01 to A3-F6-07, A3-F7-01 to A3-F7-03, A3-F14-01, A3-F14-02, A3-F16-01 to A3-F16-06, A3-F17-01 to A3-F17-04.
+[loop1-LEDGER] Ledger contains 864 notes/line-item rows (results), 52 turns (concall), 13 slides (presentation). All 864 / 52 / 13 reviewed (results 864 of 864 IDs: R001-R851 structured plus R852-R864 MISSING_FROM_STRUCTURED; concall 327 of 327 rows: R001-R324 plus R325-R327; presentation 210 of 210 IDs; A2 orphan_ids empty in all three; A2 gate pass; A3 ledger_reconciled_pct 100 in all three after loop 1). No unreviewed row. Findings incorporated:
+- Results (prefix res:): A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16; OCR items O1-O16. Loop-1 addendum: R852-R864 read; R855 (RL715, repayment of non-current borrowings 161.22) folded into A3-13; R857 and R860 (review paragraph 1 scope) folded into A3-04; O16 (cons RL720-721 H1 FY26 lease principal/interest read (5.4)/(5.68), ties at (5.41)/(6.68)) is an integrity note that touches no A4 number. No status change.
+- Concall (prefix call:): A3-F6-01 to A3-F6-07, A3-F7-01 to A3-F7-03, A3-F14-01, A3-F14-02, A3-F16-01 to A3-F16-06, A3-F17-01 to A3-F17-04. Loop-1 addendum: R325 (CL516-517) and R326 (CL590-591) added as cites to A3-F7-01 and A3-F6-04; R327 (CL524-526) added to A3-F6-02 and as commitment register row 21. No new finding.
 - Presentation (prefix pres:): A3-01 to A3-18.
 
-Results ledger detail: 12 numbered notes + 2 footnotes + 7 cross-reference markers; 238 line items; 37 zero-standing rows; 1 agenda item; 11 auditor paragraphs; 4 consolidation entities; 5 signature blocks. Concall: 9 participants, 52 turns, 15 questions, 53 management numbers, 64 forward phrases, 37 hedges. Presentation: 13 pages (p1 cover letter, pp2-13 slides), 98 numbers, 48 forward statements.
+Results ledger detail: 12 numbered notes + 2 footnotes + 7 cross-reference markers; 242 line items (238 + R852-R855); 37 zero-standing rows plus loop-1 dash rows; 1 agenda item; 11 auditor paragraph rows plus 8 added (R856-R863) and an identifier block (R864); 4 consolidation entities; 5 signature blocks. Concall: 9 participants, 52 turns, 15 questions, 53 management numbers, 65 forward phrases, 39 hedges. Presentation: 13 pages (p1 cover letter, pp2-13 slides), 98 numbers, 48 forward statements.
 
 ---
 
@@ -31,6 +44,7 @@ Results ledger detail: 12 numbered notes + 2 footnotes + 7 cross-reference marke
 - Bear/Base/Bull: FY29E only (dig. 6a). FY27 and FY28 projections: ND 'not passed'.
 - Decision Status WATCHLIST; Position Size blank; not held (dig. 2). Promoter Verdict TRUSTWORTHY; Management Grade B on snapshot (dig. 2), Grade C provisional from Q1 concall (dig. 8e).
 - Devil's Advocate: WEAKENED BUT ALIVE; pre-mortem 12k sites / Rs 980 Cr scope cut (dig. 4d).
+- 27-Aug operator framework ruling on the BSNL gate: "SUBSTANTIALLY CLEARED in spirit" via the LOI (dig. 2).
 - Prior Questions for Management: 9 (dig. 8a) + 10 residual (dig. 8d). Prior promise log: dig. 8b.
 - Spear line: none on record (companies/TEJASNET.md does not exist). Mental Model Declaration: ND (dig. "Not present").
 
@@ -55,10 +69,10 @@ Paid-up equity Rs 181.01 Cr at 31-Mar-26 (RL623) to 181.25 at 30-Jun-26 (RL563 Q
 
 Other matters read from the filing that work like notes:
 - ECL allowance swung from a charge of 8.08 (Q1) to a write-back of (10.55) (RL545). Not explained in any note (res:A3-12).
-- Current tax nil in every FY27 column (RL550); tax line is all deferred credit. DTA 365.24 to 503.75 (RL607) (res:A3-05).
+- Current tax nil in every FY27 column (RL550; std RL159, R852); tax line is all deferred credit. DTA 365.24 to 503.75 (RL607) (res:A3-05).
 - No exceptional item line in either statement.
 
-Auditor opinion check: Limited review (SRE 2410), unmodified conclusion, standalone (RL104-109) and consolidated (RL488-494). Other Matter paragraph: 3 subsidiaries not reviewed by their auditors, total assets 21.59, revenue 3.52 (Q2), NPAT 0.80, "not material", conclusion not modified (RL496-507). No Emphasis of Matter. No going-concern paragraph. Status: CLEAN (unmodified) with routine Other Matter. No AMBER flag from the opinion.
+Auditor opinion check: Limited review (SRE 2410), unmodified conclusion, standalone (RL104-109, R859) and consolidated (RL488-494, R856). Other Matter paragraph: 3 subsidiaries not reviewed by their auditors, total assets 21.59, revenue 3.52 (Q2), NPAT 0.80, "not material", conclusion not modified (RL496-507). Paragraph 1 scope widened only by the half-year format (res:A3-04, R857, R860). No Emphasis of Matter. No going-concern paragraph. Status: CLEAN (unmodified) with routine Other Matter. A limited review gives moderate assurance only (RL96-102). No AMBER flag from the opinion.
 
 ### 0E. Business type
 Standard operating business (telecom equipment OEM). Steps 1 and 5 apply. Lender variant not used.
@@ -76,7 +90,7 @@ FY27 full-year column is ND (year not complete). H1 columns added for the Reg 33
 | Line item | Q2 FY26 | Q1 FY27 | Q2 FY27 | FY26 | FY27 | H1 FY26 | H1 FY27 |
 |---|---|---|---|---|---|---|---|
 | Revenue from operations | 261.82 (RL535) | 402.16 (RL535) | 405.68 (derived by identity RL533 + RL534 nil; RL537 413.45 - RL536 7.77; RL535 OCR reads 205.68, O2) | 1,103.28 (RL535) | ND | 463.20 (RL535) | 807.84 (RL535) |
-| of which other operating revenue | 5.15 (RL534) | 0.34 (RL534) | nil (RL534) | 5.81 (RL534) | ND | 5.15 (RL534) | 0.34 (RL534) |
+| of which other operating revenue | 5.15 [loop1-S3] (derived by identity RL535 - RL533; RL534 reads "5.5") | 0.34 (RL534) | nil (RL534) | 5.81 (RL534) | ND | 5.15 (RL534) | 0.34 (RL534) |
 | Other income | 6.01 (RL536) | 8.97 (RL536) | 7.77 (derived by identity RL537 - RL533; RL536 reads "777") | 33.38 (RL536) | ND | 15.56 (RL536) | 16.74 (RL536) |
 | Total income | 267.83 (RL537) | 411.13 (RL537) | 413.45 (RL537) | 1,136.66 (RL537) | ND | 479.36 (RL537) | 824.58 (RL537) |
 | Cost of materials consumed | 246.25 (RL539) | 132.09 (RL539) | 237.81 (RL539) | 820.51 (RL539) | ND | 369.38 (RL539) | 369.90 (RL539) |
@@ -194,7 +208,7 @@ Q3 FY26 and Q4 FY26 single-quarter figures are not in this filing (ND); H2 FY26 
 
 QoQ detail (Q1 FY27 to Q2 FY27): revenue +3.52 (+0.88%); op EBITDA worse by 6.28; core PBT worse by 4.87; PAT worse by 4.70 (202.24 to 206.94); gross margin +2.18 pp; employee cost flat (105.24 to 105.14); other expenses +35.12 (132.02 to 167.14).
 
-A4 observation (not an A3 finding): other expenses EXCLUDING warranty rose from 96.91 (132.02 - 35.11) in Q1 to 159.90 (167.14 - 7.24) in Q2, +62.99 (+65.0%). The filing gives no reason. The deck EBIT definition includes "Net forex loss" (PL139), which may sit in other expenses [INFERENCE]. This rise absorbed the warranty release. Question Q21.
+[loop1-F3] A4 observation (not an A3 finding): other expenses EXCLUDING warranty rose from 96.91 (132.02 - 35.11) in Q1 to 159.90 (167.14 - 7.24) in Q2, +62.99 (+65.0%). The filing gives no reason. Forex is ruled out: the deck's EBIT includes "Net forex loss" (PL119, PL139) and shows (199) for Q2 and (194) for Q1 (PL132), against filing-derived operating EBIT of (198.12) and (194.71). Net forex inside operating costs is therefore under about 1.4 a quarter, and it moved toward a gain. The rise has no stated cause and may recur. It absorbed the warranty release. Question Q21.
 
 Estimate-adjusted Q2: at Q1 warranty and ECL levels, Q2 op EBITDA would be (106.64) - 27.87 - 18.63 = (153.14), margin -37.75% (derived; res:A3-12).
 
@@ -232,7 +246,7 @@ Mandatory answers:
 - If other income reverts to the Q2 FY26 level, PAT changes by about 1.3 after tax; immaterial.
 - D&A and finance cost: D&A is not at steady state; capitalisation of about 411 into amortising intangibles in H1 (res:A3-10, cash-basis inference) sets up a rise from Q3 FY27. Finance cost runs at 86.53 a quarter, 346.12 annualised vs FY26 302.83 (+14.3%); gross borrowings rose 799.88 in H1 (RL629 + RL635).
 - Tax: all tax is a deferred credit (current tax nil, RL550). Each Rs 100 of loss books about Rs 25 of DTA. DTA 503.75 = 19.93% of consolidated equity 2,527.60; DTA plus intangibles under development 897.75 = 1,401.50 = 55.45% of equity (res:A3-05). PAT is inflated by the credit; pre-tax loss is the honest figure.
-- Run-rate: Q2 PBT at Q1 estimate rates = (276.88) - 46.50 = (323.38); after a 25.17% credit, PAT about (242.0) (derived).
+- [loop1-S2] Run-rate: Q2 PBT at Q1 estimate rates = (276.88) - 46.50 = (323.38); after the Q2 consolidated credit rate of 25.26% (Step 1-D), PAT about (241.7) (derived).
 
 ---
 
@@ -245,30 +259,32 @@ Mandatory answers:
 | Capex (PPE + intangibles incl. under development) | 546.92 (116.19 + 430.73, RL702-703) | 397.18 (38.59 + 358.59, RL702-703) | -149.74 | Intangibles carry 90% of capex |
 | FCF (CFO - capex) | (1,057.24) | (709.11) | +348.13 | Deep negative |
 | Working capital change (sum RL690-697) | (128.72) | (102.64) | +26.08 | Receivables +1,099.64 offset by other liabilities (1,266.27) |
-| Receivable days (current + non-current trade receivables; annualised H1 revenue for Sep-26, FY26 revenue for Mar-26) | Mar-26 1,078.8 (3,260.78 / 1,103.28 x 365; RL604, RL614) | Sep-26 487.8 (2,159.34 / 1,615.68 x 365) | -591.0 | Gross basis improves; net-of-advance basis rose (next row) |
-| Receivables net of customer advances (MGMT, deck) | Mar-26 1,905 (PL166) | Sep-26 2,042 (PL166) | +137 | Adverse: net receivables ROSE |
+| [loop1-F2] Receivable days (current + non-current trade receivables; annualised H1 revenue for Sep-26, FY26 revenue for Mar-26) | Mar-26 1,077.5 to 1,078.8: on 3,260.78 as read (RL604 4.33 + RL614 3,256.45) = 1,078.8; on 3,256.78 = 1,077.5 if RL604 "4.33" is OCR for 0.33 (cons subtotal RL609 fails by 4.00; std RL218/RL223 fails by 1.00) | Sep-26 487.8 (2,159.34 / 1,615.68 x 365) | -589.7 to -591.0 | [loop1-S7] Gross basis improves, but part of the fall is a denominator effect (trough FY26 revenue vs annualised H1); net-of-advance basis next rows |
+| [loop1-M2] Receivables net of customer advances (MGMT, deck PL166) | Mar-26 1,905; Q1 FY27 (30-Jun) 2,232 | Sep-26 2,042 | H1 +137 (+7.2%); QoQ -190 (-8.5%) | Mixed: rose over the half; fell in Q2 against Q1 |
+| [loop1-M2] Net working capital (deck definition, PL155-156, PL163) | Mar-26 4,138; Q1 FY27 4,478 | Sep-26 4,235 (A5 recomputes 4,234.92 from RL611-643) | H1 +97; QoQ -243 | Mixed: QoQ release; H1 build |
 | Inventory days (on materials cost: CoM + purchases + inventory change) | Mar-26 1,160.3 (2,438.19 / 766.98 x 365; RL611) | Sep-26 831.8 (2,314.40 / 1,015.54 x 365) | -328.5 | Still extreme |
 | Payable days (on materials cost) | Mar-26 227.5 (477.95; RL638-639) | Sep-26 158.9 (442.22) | -68.6 | Payables shrinking; supplier finance replaced by bank debt |
-| Cash conversion cycle | Mar-26 2,011.6 | Sep-26 1,160.7 | -850.9 | Gross basis only; see advance unwind |
+| Cash conversion cycle | Mar-26 2,010.3 to 2,011.6 (follows the receivable-days range) | Sep-26 1,160.7 | about -850 | Gross basis only; see advance unwind |
 | PPE | 418.57 (RL597) | 377.72 (RL597) | -40.85 | |
 | CWIP | ND (no CWIP line; intangibles under development 950.43, RL601) | ND (IAUD 897.75, RL601) | IAUD -52.68 | Other intangibles +302.05 (RL600) |
-| Net debt / (net cash), ex-lease | Mar-26 3,530.67 (4,035.47 gross less 504.80 cash, current investments, other bank balances; RL629, RL635, RL613, RL615, RL616) | Sep-26 4,384.39 (4,835.35 less 450.96) | +853.72 in H1; +107.39 vs Q1 4,277 (PL169) | RED (#4) |
+| Net debt / (net cash), ex-lease | Mar-26 3,530.67 (4,035.47 gross less 504.80 cash, current investments, other bank balances; RL629, RL635, RL613, RL615, RL616); Q1 FY27 4,277 (PL169) | Sep-26 4,384.39 (4,835.35 less 450.96) | +853.72 in H1 (Q1 +746.33, Q2 +107.39) | RED (#4) |
 | Net debt incl. lease liabilities | Mar-26 3,672.28 (lease 141.61) | Sep-26 4,518.90 (lease 134.51, RL630, RL636) | +846.62 | Above Rs 4,500 Cr on this definition (FLAG) |
 | Promoter pledge | ND in filing (Notion snapshot: zero pledge, dig. 2) | ND in filing | ND | |
 
 Supplementary balance-sheet reads:
 - Gross borrowings 4,035.47 (Mar-26) to 4,835.35 (Sep-26), +799.88; Q1 gross 4,866 derived from the deck (4,277 + 589, pres:A3-07), so Q2 gross fell 30.65 QoQ while net rose 107.39: cash fell from 589 (PL168) to 450.96. Non-current borrowings 551.83 to 1,162.40 (RL629). Supplier-finance proceeds 600.96 (H1 FY26) to 160.74 (RL718); interest on current borrowings 75.68 to 125.92 (RL723) (res:A3-13).
+- [loop1-LEDGER] Debt bridge with the loop-1 row: non-current proceeds 855.72 (RL714) less repayment 161.22 (RL715, R855) = net 694.50, against a non-current balance rise of 610.57 (RL629); current borrowings net 73.63 (RL716-717); the consolidated financing subtotal 641.08 (RL726) ties only with RL715 included (res:A3-13 addendum).
 - Other current liabilities 1,421.24 to 154.98 (RL642); cash-flow movement (1,266.27) (RL697). The standalone line RL310 shows 1,266.32 without brackets, an OCR sign misread (res:A3 O10); arithmetic places it as a decrease.
 - Equity 2,930.87 to 2,527.60 (RL625). Book value per share: 2,527.60 / 18.141 Cr = Rs 139.33 on issued shares; Rs 141.93 on the EPS-implied 17.809 Cr count (res:A3-08). Mar-26 Rs 161.92.
 - No dividend paid in H1 FY27 vs 44.15 in H1 FY26 (RL713; res:A3-02).
 
 Mandatory answers:
 - Pillar 2 band: CFO/PAT is not computable on a loss. Cumulative cash burn continues (H1 FCF (709.11)). Nothing supports a band above the 0.65x on file (dig. 6c). Pillar recompute deferred to /fttcp and Role 1 (OR-30).
-- Structural or growth-induced WC: the receivable fall of 1,099.64 did not reach cash because other current liabilities (largely customer advances, per the deck's "Net of Cust Advance" basis, PL164-166) unwound by 1,266.27 in the same half. Management names "nonrecourse bill discounting" and "customer advance settlements" as drivers (CL130-132; PL170-172). Net-of-advance receivables ROSE 137. Two readings: (1) non-cash set-off of advances against billed receivables; (2) cash collected and paid out. The separating observation is the composition of the 1,421.24 Mar-26 balance and the H1 settlement mode (res:A3-09). Rating-agency commentary: not passed (ND). Stop-growing test: inventory at 831.8 days and net receivables of 2,042 on a 1,616 annualised revenue base would stay high if growth stopped [INFERENCE]. Lean: structural.
+- [loop1-M2] Structural or growth-induced WC: two periods give two answers. Over the half, the filed receivable fall of 1,099.64 did not reach cash: other current liabilities (largely customer advances, per the deck's "Net of Cust Advance" basis, PL164-166 [INFERENCE on the label]) unwound by 1,266.27, net-of-advance receivables ROSE 137 (1,905 to 2,042), NWC rose 97, and CFO stayed (311.93). Within Q2, the deck's own Q1 comparators show net-of-advance receivables FELL 190 (2,232 to 2,042) and NWC fell 243 (4,478 to 4,235) (PL163-166). Management attributes the Q2 fall to "collections and nonrecourse discounting" plus "customer advance settlements" (CL130-132; PL170-172), and gives no split. Readings: (1) Q2 saw real collections that partly reversed a Q1 build; (2) the Q2 fall is mostly discounting, which is financing, not collection. The separating observation is the discounted amount in Q2 and the composition of the 1,421.24 Mar-26 balance (res:A3-09). Rating-agency commentary: not passed (ND). Stop-growing test: inventory at 831.8 days and net receivables of 2,042 on a 1,616 annualised revenue base would stay high if growth stopped [INFERENCE]. Lean: structural, with one quarter of QoQ improvement on record.
 - CWIP/IAUD capitalisation: other intangibles +302.05 while IAUD fell 52.68 after 358.59 of H1 spend; about 411 moved into amortising intangibles [INFERENCE, res:A3-10]. The rupee amount capitalised is not stated (ND).
 - Net debt vs projection: Notion FY29E net debt path Bear 3,200 / Base 2,500 / Bull 1,500 (dig. 6a); no FY27 path (ND 'not passed'). Net debt moved away from all three end-points.
 
-CASH CONVERSION CLASSIFICATION: INDETERMINATE-WITH-DIRECTION (direction: structural / adverse). Missing evidence: (a) composition and settlement mode of the 1,421.24 other current liabilities; (b) non-recourse discounting amount and cost in H1; (c) gross receivables and customer advances by customer (BSNL/TCS vs others). Per house rule this caps the verdict at PROCEED WITH CAVEATS or below.
+CASH CONVERSION CLASSIFICATION: INDETERMINATE-WITH-DIRECTION (direction: structural / adverse over H1; QoQ net receivables improved 190). Missing evidence: (a) composition and settlement mode of the 1,421.24 other current liabilities; (b) non-recourse discounting amount and cost in Q2 and H1; (c) gross receivables and customer advances by customer (BSNL/TCS vs others). Per house rule this caps the verdict at PROCEED WITH CAVEATS or below.
 
 Checkpoint: cash table and answers complete.
 
@@ -327,7 +343,7 @@ Probability re-weighting rule: the Q1 FY27 position decision pre-registered "If 
 | 4 | Net debt | Declining below Rs 3,000 Cr | Rising above Rs 4,000 Cr | 4,384.39 ex-lease, rising (+107.39 QoQ) | RED (second quarter) |
 | 5 | ND (not on page) | ND | ND | ND | UNKNOWN (not passed) |
 | 6 | International revenue mix | Crossing 15% | Stuck below 10% | 12% of Q2 revenue ex-other op revenue (PL88, MGMT; filing single segment RL775); closing order book 4% international (PL91) | AMBER, direction toward RED |
-| 7 | BSNL PO confirmation | Confirmed by Sep 2026 with scope/value | Scope materially reduced from Rs 1,526 Cr / 18.7k sites, or references stop | TCS LoI 18,685 sites (PL187); POs received in part and inside the 30-Sep book (CL97-98, CL346-350); LOI value "INR1,500 crores" spoken (CL349); BSNL PO value in book withheld (CL355) | AMBER (scope confirmed; value spoken only and round; PO partial; counterparty TCS). Not RED: scope not reduced (18,685 vs 18.7k; ~1,500 vs 1,526, -1.7%) |
+| 7 | BSNL PO confirmation | Confirmed by Sep 2026 with scope/value | Scope materially reduced from Rs 1,526 Cr / 18.7k sites, or references stop | [loop1-C1] Filed deck: LoI only, "Received LoI from TCS for 18,685 add-on sites" (PL187; PL69); POs spoken and partial (CL97-98, CL346-350); LOI value "INR1,500 crores" spoken (CL349); BSNL value in the book withheld (CL355) | AMBER. Award FIRED on LoI under the 27-Aug operator ruling (dig. 2); PO value undisclosed; operator to reconfirm on PO evidence. Not RED: scope not reduced (18,685 vs 18.7k; ~1,500 vs 1,526, -1.7%) |
 | 8 | PLI income | Consistent quarterly recognition | Claims rejected or delayed | Other operating revenue nil Q2 (RL534), 0.34 Q1; PLI not named anywhere | UNKNOWN (not disclosed; direction adverse) |
 | 9 | Book value / share | > Rs 155 through end-Q2 | < Rs 140 any quarter, or QIP < Rs 400 | Rs 139.33 on issued 18.141 Cr shares (RL625/RL623); Rs 141.93 on EPS-implied count | RED (conservative, issued-share basis; res:A3-08 ambiguity named) |
 | 10 | Finance cost | Flat or lower vs Q1 | > Rs 100 Cr (AMBER 90-100) | 86.53 vs 85.07 (RL543), +1.46 (+1.7%) | AMBER (conservative: it rose, so not "flat or lower"; below the Rs 90 Cr band) |
@@ -340,23 +356,23 @@ Pre-registered escalation (dig. 8c): "A second consecutive silence on DTA or QIP
 | Thesis-broken condition | Threshold | Current reading | FIRED? |
 |---|---|---|---|
 | FY27 revenue floor | < Rs 2,000 Cr | H1 807.84 (RL535); needs 596.08/qtr in Q3-Q4 (+46.9% vs Q2) | NOT FIRED (full-year test, resolves at FY27 results). Approaching |
-| Net debt breach | > Rs 4,500 Cr | 4,384.39 ex-lease (the Notion definition: Mar-26 3,531 = 3,530.67 ex-lease, res:A3 s.4); headroom 115.61 (223 at Q1) | NOT FIRED on the definition on file. FLAG: incl. lease liabilities 4,518.90 exceeds 4,500; the operator should confirm the binding definition |
-| BSNL PO not confirmed by Sep 2026 | not confirmed by 30-Sep-2026 | TCS LoI + part POs inside the 30-Sep order book (CL97-98, CL346-350); shipments started (CL136-137) | NOT FIRED on MGMT evidence. Human ruling stands (27-Aug framework: "SUBSTANTIALLY CLEARED in spirit", dig. 2). Flag: PO value not disclosed |
+| Net debt breach | > Rs 4,500 Cr | 4,384.39 ex-lease (the Notion definition: Mar-26 3,531 = 3,530.67 ex-lease, res:A3 s.4); headroom 115.61 (223 at Q1). [loop1-M3] Run-rate counter: a breach needs only 1.08x the Q2 rise. Q3 at the Q2 pace (+107.39) = 4,491.78, headroom 8.22. Q3 at the H1 pace (853.72 / 2 = 426.86 a quarter) = 4,811.25, a breach by 311.25. H1 FCF averaged (354.56) a quarter (RL700-703), 3.07x the headroom. The Q2 pace already includes the 190 fall in net-of-advance receivables (PL166); without it the Q2 rise would be about 297 [INFERENCE]. Inventory converts to receivables before cash (CL522-523), and capex and operating costs still draw on debt (CL140-141). Offset: the Q3 cash management expects is earned initial-order dues (CL524-526, R327) | NOT FIRED on the definition on file. On the H1 pace, a Q3 breach is the base case unless BSNL cash arrives in Q3. FLAG: incl. lease liabilities 4,518.90 exceeds 4,500; the operator should confirm the binding definition |
+| BSNL PO not confirmed by Sep 2026 | not confirmed by 30-Sep-2026 | [loop1-C1] Filed deck shows an LoI only (PL187); POs spoken and partial, inside the 30-Sep order book (CL97-98, CL346-350); shipments started (CL136-137); value undisclosed (CL355) | NOT FIRED under the 27-Aug operator ruling ("SUBSTANTIALLY CLEARED in spirit", dig. 2). Operator to reconfirm the ruling on PO evidence |
 | QIP below Rs 400 | any QIP announcement < Rs 400 | No QIP or enabling resolution; sole agenda item results (RL30-34) | NOT FIRED. CMP Rs 424 is 6.0% above the line |
 
 Key Risks warning signals (dig. 4c): "management stops mentioning BSNL" = no; "another CXO departure within 12 months" = none disclosed; the filed transcript titles Arnob Roy "Managing Director and Chairman" (CL55-56) vs "MD and CEO" (CL83; RL811) (call:A3-F14-01), verify; "FY28 Other Operating Revenue < Rs 100 Cr" = future test, H1 FY27 0.34 (RL534).
 
-No condition has FIRED. No immediate-exit or AVOID action. Two human rulings are open: the net-debt definition, and whether the LoI plus partial POs count as "confirmed".
+No condition has FIRED. No immediate-exit or AVOID action. Two operator items are open: confirm the binding net-debt definition, and reconfirm the 27-Aug BSNL ruling on PO evidence.
 
 ### 6D. Growth trigger status (dig. 7a)
 
 | Trigger | Original confidence | Confirming evidence | Killing evidence | Updated status |
 |---|---|---|---|---|
-| 1. BSNL 4G add-on PO (Rs 1,526 Cr, 18.7k sites) | High | TCS LoI 18,685 sites (PL187); POs in part (CL346-350); shipments started (CL136-137); "most" remaining POs by end-Q3 (CL349-350) | Revenue +3.52 QoQ only; PO value in book withheld (CL355); counterparty TCS (pres:A3-08) | FIRED (award); revenue conversion not yet visible |
-| 2. BharatNet Phase III routers | High | New SI LOI for IP/MPLS routers, middle mile, 3 states (CL157-159; PL185-187) | No value disclosed | ON TRACK |
+| 1. BSNL 4G add-on PO (Rs 1,526 Cr, 18.7k sites) | High | TCS LoI 18,685 sites (PL187); POs in part, spoken (CL346-350); shipments started (CL136-137); "most" remaining POs by end-Q3 (CL349-350) | Deck says LoI only; revenue +3.52 QoQ only; PO value in book withheld (CL355); counterparty TCS (pres:A3-08) | [loop1-C1] FIRED on LoI under the 27-Aug operator ruling; PO value undisclosed; operator to reconfirm on PO evidence; revenue conversion not yet visible |
+| 2. BharatNet Phase III routers | High | New SI LOI for IP/MPLS routers, middle mile, 3 states (CL157-159; PL185-187) | [loop1-M4] Counter: an LOI from "a new SI partner", not a PO, with no value (CL157-159) | ON TRACK at LOI stage, unvalued |
 | 3. Vodafone Idea backhaul | Medium | Vi raised only as a wireless POC, names withheld (CL407-419) | Backhaul silent for 2 consecutive calls (call:A3 s.5 item 10) | WEAKENED |
 | 4. International wireless (NEC, South Asia, Americas) | Medium | South America RAN and 5G core shipped (CL103-105, CL145-146); NEC radio supply started (CL585-590) | International 12% of revenue vs "evenly split" in Q1 (call:A3-F16-05); international book 4% (PL91) | WEAKENED |
-| 5. Data Center Interconnect | Medium | "winning several business in this area" (CL476) | No count or value (call:A3-F7-02) | ON TRACK (unquantified, low confidence) |
+| 5. Data Center Interconnect | Medium | "winning several business in this area" (CL476) | [loop1-M4] No count or value after an explicit request for "range or a quantum" (CL458-460); the answer is C-graded (Q07); commentary is discounted 30-50% at 55.0% credibility | UNVERIFIED (no count or value; C-graded answer, CL476) |
 
 Checkpoint: 6A-6D complete.
 
@@ -373,8 +389,8 @@ Deferred to /fttcp and Role 1 (OR-30). Facts that move a pillar input:
 | Pillar / input | Fact this quarter (anchor) | Direction |
 |---|---|---|
 | ROCE base (FTTCP verdict is sole authority) | TTM operating ROCE -12.31% (derived, Step 6A); EBITDA-positive date dropped (CL317-318) | Adverse |
-| Cash multiplier (0.65x on file) | H1 CFO (311.93), FCF (709.11) (RL700-703); receivables fall offset by advance unwind (RL697); non-recourse discounting (CL130-132) | Supports 0.65x; no upgrade evidence |
-| Growth Visibility Premium (+4x; +5x discussed) | BSNL add-on awarded (PL187); order book 2,315 (PL85); international weakening (PL88, PL91) | Mixed |
+| Cash multiplier (0.65x on file) | H1 CFO (311.93), FCF (709.11) (RL700-703); receivables fall offset by advance unwind (RL697); non-recourse discounting (CL130-132); QoQ net receivables -190 (PL166) | Supports 0.65x; no upgrade evidence |
+| Growth Visibility Premium (+4x; +5x discussed) | BSNL add-on on LoI (PL187); order book 2,315 (PL85); international weakening (PL88, PL91); DCI unverified | Mixed |
 | Strategic / Sentiment premium (+6x on file, dig. 6c) | No new evidence; Role 1 to confirm the +6x line has Section 1B authority | Flag for Role 1 |
 | UA multiplier | ND 'not passed' | n/a |
 | Sector cap (30x) | No reclassification | Hold |
@@ -390,17 +406,18 @@ Deferred to /fttcp and Role 1 (OR-30). Facts that move a pillar input:
 - Below Bear on 2+ key metrics? Yes against every FY29E bear end-point (margin, PAT, EPS, net debt) and below the FY27 floor run-rate; and the Q1 pre-registered re-weight condition is met.
 - Action under 8A-W: revise projections down, recompute entry zone and MoS price (deferred to Role 1), and push the master decision gate one quarter out.
 - New gate: Q3 FY27 results (quarter ending 31-Dec-2026; release implied about mid-Jan-2027 [INFERENCE from the 16-day Q2 release lag]). Gate conditions: (a) net debt ex-lease below the Q2 level of 4,384.39 and below Rs 4,500 Cr, with gross debt and cash disclosed; (b) BSNL milestone collections visible in CFO or in net-of-advance receivables; (c) at least one quarter at or above Rs 500 Cr revenue; (d) a named EBITDA-positive quarter; (e) BV/share stable and no QIP below Rs 400.
+- [loop1-C1] BSNL status used here: FIRED on LoI under the 27-Aug operator ruling; PO value undisclosed; operator to reconfirm on PO evidence.
 - Entry zone Rs 247-309 and MoS Rs 234 on file pre-date two quarters below the bear end-points. This review does not confirm them. Recompute in Role 1.
 - Proposed Decision Status: WATCHLIST (unchanged). The operator sets it. No pre-committed BUY gate threshold was met.
 - Section 9 note (one line, per task): my gate moves to the Q3 print, the same timing the prior out-of-pipeline read named; my concall credibility ratio is 55.0%, against 56.3% on the page.
 
 ### 8B. Add-back / gate refinement
 - Original entry gates (dig. 2, Q1 concall verdict): BSNL PO awarded + net debt < Rs 4,500 Cr + a Rs 500 Cr revenue quarter + a credibly re-dated EBITDA milestone.
-- Revised gates: Gate 1 met in substance (LoI + partial POs; human ruling; value still to be disclosed). Gate 2 TIGHTENED: net debt ex-lease must DECLINE QoQ from 4,384.39 and the lease-inclusive figure must also sit below 4,500. Gate 3 unchanged. Gate 4 unchanged; it failed for a second quarter. NEW Gate 5: net-of-advance trade receivables fall QoQ from 2,042 (PL166) with the discounted amount disclosed, so collections are proven as cash.
+- Revised gates: [loop1-C1] Gate 1 met under the 27-Aug operator ruling on the LoI; operator to reconfirm on PO evidence (PO value undisclosed). Gate 2 TIGHTENED: net debt ex-lease must DECLINE QoQ from 4,384.39 and the lease-inclusive figure must also sit below 4,500. Gate 3 unchanged. Gate 4 unchanged; it failed for a second quarter. [loop1-M2] NEW Gate 5: net-of-advance trade receivables keep falling QoQ from 2,042 (PL166) in Q3 AND the non-recourse discounted amount is disclosed, so collections are proven as cash. Q2 met the level test against Q1 (2,232 to 2,042, -190) but not the disclosure test.
 - Trim ladder: n/a (not held).
 
 ### 8C. Single cleanest metric for Q3 FY27
-Net debt ex-lease at 31-Dec-2026 (gross borrowings less cash, liquid investments and other bank balances). Bull threshold: at or below Rs 4,000 Cr (exits the #4 RED band; BSNL cash arrived). Bear threshold: above Rs 4,500 Cr (thesis-broken trigger fires).
+Net debt ex-lease at 31-Dec-2026 (gross borrowings less cash, liquid investments and other bank balances). Bull threshold: at or below Rs 4,000 Cr (exits the #4 RED band; BSNL cash arrived). Bear threshold: above Rs 4,500 Cr (thesis-broken trigger fires). [loop1-M3] Reference paths: the Q2 pace gives 4,491.78; the H1 pace gives 4,811.25. Only a cash inflow beyond the Q2 receivable release keeps Q3 under the line.
 
 ---
 
@@ -409,10 +426,10 @@ Net debt ex-lease at 31-Dec-2026 (gross borrowings less cash, liquid investments
 | # | Cat | Question | Why it matters | Bull answer | Bear answer | From finding(s) |
 |---|---|---|---|---|---|---|
 | Q1 | F/D | Net debt ex-lease was Rs 4,384 Cr at 30-Sep (gross 4,835 less cash and liquid funds 451). What is the planned peak before BSNL cash arrives, and what gross debt, cash and net debt do you target at 31-Dec-2026? | Rs 116 Cr headroom to the Rs 4,500 Cr break; gross debt dropped from the deck | Peak named below 4,500; Q3 net debt below 4,000 | No peak; peak above 4,500 | call:A3-F6-03, call:A3-F16-02, call:A3-F7-01, pres:A3-07, pres:A3-11, pres:A3-04 |
-| Q2 | E/D | What rupee amount of BSNL milestone collections do you expect by 31-Dec-2026, and what was due from BSNL/TCS at 30-Sep? | The Q2 collection promise slipped one quarter, amount withheld (CL338-341) | Amount stated; collected in Q3 | Refusal again; slips to Q4 | call:A3-F6-02, call:A3-F7-01 |
+| Q2 | E/D | What rupee amount of BSNL milestone collections (the earned initial-order dues) do you expect by 31-Dec-2026, and what was due from BSNL/TCS at 30-Sep? | The Q2 collection promise slipped one quarter, amount withheld (CL338-341, CL524-526) | Amount stated; collected in Q3 | Refusal again; slips to Q4 | call:A3-F6-02, call:A3-F7-01 |
 | Q3 | E | What rupee value of BSNL add-on POs sits inside the Rs 2,315 Cr order book, on what PO dates, and is your counterparty TCS on back-to-back payment terms with BSNL? Was the add-on ever 26,000 sites? | Implied Q2 inflow about Rs 1,192 Cr sits below the Rs 1,526 Cr add-on value | Value near 1,500 with PO dates before 30-Sep; back-to-back terms | Value well below 1,526; TCS terms extend receivables | pres:A3-02, pres:A3-08, pres:A3-12, call:A3-F16-04, call:A3-F6-06 |
 | Q4 | D | Other current liabilities fell from Rs 1,421 Cr to Rs 155 Cr in H1 while receivables fell Rs 1,100 Cr. What made up the Mar-26 balance, and how much was settled by set-off against receivables rather than cash? | Decides whether the receivable fall was cash | Mostly cash collected; advances re-used on new orders | Mostly set-off; no cash | res:A3-09 |
-| Q5 | D | How much did you discount on a non-recourse basis in H1 FY27, what was outstanding at 30-Jun and 30-Sep, and at what cost? | Discounting flatters NWC and DSO | Small, disclosed, low cost | Large and rising | call:A3-F16-06, pres:A3-15 |
+| Q5 | D | How much did you discount on a non-recourse basis in Q2 and H1 FY27, what was outstanding at 30-Jun and 30-Sep, and at what cost? | Splits the Rs 190 Cr Q2 fall in net receivables into collection and financing | Small, disclosed, low cost | Large and rising | call:A3-F16-06, pres:A3-15 |
 | Q6 | C | Which quarter will first show positive EBITDA? Is the AGM-26 Q4 FY27 target withdrawn? | Gate 4; the date was moved and then dropped | Named quarter in FY28 | "Upcoming years" again | call:A3-F6-01, pres:A3-03 |
 | Q7 | C | Q2 warranty provision fell to Rs 7.24 Cr from Rs 35.11 Cr and ECL moved from an Rs 8.08 Cr charge to an Rs 10.55 Cr write-back. Were these fault-rate or ECL-model changes, or collections? | Rs 46.5 Cr of support to Q2 PBT | Collections and real fault-rate data | Model re-estimate | res:A3-11, res:A3-12, call:A3-F17-03 |
 | Q8 | A | The Rs 145 Cr Q2 FY26 loss came from manufacturing the first 100,000-site order. What control stops a repeat on the 18,685-site expansion, and did Q2 FY27 CoM carry any obsolescence charge or reversal? | Recurrence risk on the same lines | Named control; zero charge | No control named | call:A3-F6-05, res:A3-14 |
@@ -427,11 +444,11 @@ Net debt ex-lease at 31-Dec-2026 (gross borrowings less cash, liquid investments
 | Q17 | G | The filed transcript lists Arnob Roy as "Managing Director and Chairman". Has the Chairman role changed? | Possible Reg 30 board event | Drafting error | Undisclosed board change | call:A3-F14-01 |
 | Q18 | C | Confirm the Rs 145 Cr charge sat above EBITDA in Q2 FY26, so the YoY EBITDA gain ex-charge is about Rs 42 Cr, not Rs 185 Cr. | YoY framing | Confirmed, with QoQ bridge | No answer | call:A3-F16-03 |
 | Q19 | E | When is the GoI OTN/WDM tender (declared L1) awarded and at what value? The call said orders were received; the deck says L1. Which is right? How many POCs and Tier-1 custom-radio engagements reach decision by Q4 FY27? | Pipeline vs book | Awarded with value | Still L1; no dates | pres:A3-05, call:A3-F17-04 |
-| Q20 | B | How many DCI orders, and what value, on the new DCI product in the last 6 months? | Trigger 5 | Count and value | "Several" again | call:A3-F7-02 |
-| Q21 | C | Other expenses excluding warranty rose from Rs 96.9 Cr to Rs 159.9 Cr QoQ. What drove the Rs 63 Cr rise (forex, freight, services)? What was gross finance cost including forex? | Absorbed the warranty release | Forex one-off | Recurring cost step | pres:A3-17 (A4 observation Step 3) |
+| Q20 | B | How many DCI orders, and what value, on the new DCI product in the last 6 months? | Trigger 5 is UNVERIFIED | Count and value | "Several" again | call:A3-F7-02 |
+| Q21 | C | [loop1-F3] Other expenses excluding warranty rose from Rs 96.9 Cr to Rs 159.9 Cr QoQ. Net forex is under about Rs 1.4 Cr a quarter on the deck's own EBIT bridge, so forex does not explain it. What drove the Rs 63 Cr rise, and does it recur? What was gross finance cost including forex? | Absorbed the warranty release | A named one-off item, with amount, that does not recur | A recurring cost step, or no answer | pres:A3-17 (A4 observation Step 3) |
 | Q22 | B | When does BSNL AMC revenue start, and what is its value over the 8-year term? Why did ex-charge gross margin fall from 52.5% to 38.2% YoY? | Higher-margin profit lever; mix | Start dated; margin mix explained | Silent | call:A3-F17-03 (A4 observation Step 2) |
 
-Coverage check: results FWD A3-05, A3-10; AMB A3-01, A3-03, A3-06, A3-08, A3-09, A3-11, A3-12, A3-14 (10/10). Concall FWD F6-01, F6-02, F6-03, F6-05, F7-01, F16-05, F17-01; AMB F6-04, F6-06, F7-02, F14-01, F16-02, F16-03, F16-04, F16-06, F17-03, F17-04 (17/17). Presentation FWD A3-04, A3-06, A3-07, A3-13, A3-18; AMB A3-01, A3-02, A3-03, A3-05, A3-08, A3-11, A3-12, A3-15, A3-17 (14/14). All 41 mapped.
+Coverage check: results FWD A3-05, A3-10; AMB A3-01, A3-03, A3-06, A3-08, A3-09, A3-11, A3-12, A3-14 (10/10). Concall FWD F6-01, F6-02, F6-03, F6-05, F7-01, F16-05, F17-01; AMB F6-04, F6-06, F7-02, F14-01, F16-02, F16-03, F16-04, F16-06, F17-03, F17-04 (17/17). Presentation FWD A3-04, A3-06, A3-07, A3-13, A3-18; AMB A3-01, A3-02, A3-03, A3-05, A3-08, A3-11, A3-12, A3-15, A3-17 (14/14). All 41 mapped. Loop-1 rows add cites only; no new finding needs a question.
 
 Top 3 by thesis-changing potential:
 - Q1 (net debt peak): a peak named below Rs 4,500 Cr with Q3 net debt under Rs 4,000 Cr raises the bull probability.
@@ -494,7 +511,7 @@ Standard operating business. Step 2 standard set applies.
 | 11 | Revenue +55% YoY; H1 INR808 Cr vs INR464 Cr, +74% | Backward | YES | CL109-113 |
 | 12 | EBITDA -INR108 Cr vs -INR293 Cr YoY | Backward | YES | CL115-116 |
 | 13 | QoQ revenue INR402 to INR406 Cr; EBITDA -99 to -108 | Backward | YES | CL124-126 |
-| 14 | NWC lower at INR4,235 Cr on collections, nonrecourse discounting, advance settlements | Backward | YES (total; split NO) | CL128-132 |
+| 14 | NWC lower at INR4,235 Cr vs Q1 on collections, nonrecourse discounting, advance settlements | Backward | YES (total; split NO) | CL128-132 |
 | 15 | Inventory INR2,358 to INR2,314 Cr | Backward | YES | CL134 |
 | 16 | Significant portion of inventory used on BSNL order in coming quarters | Forward Soft | NO | CL135-137 |
 | 17 | Net debt INR4,277 to INR4,384 Cr; capex and operational costs | Backward | YES | CL139-141 |
@@ -546,7 +563,7 @@ Diagnostics:
 | Capex envelope | "as per the plan", no number (CL140-141) | ND | ND | New (unquantified) | LOW |
 | Utilisation target | ND | ND | ND | n/a | n/a |
 | Strategic order execution | BSNL "within the required time lines", timelines undisclosed (CL290-291; PL313) | ND | ND | New | LOW |
-| Working capital / CCC | Receivables to "substantially reduce" this quarter (CL340-341); inventory to "earlier levels" over next few quarters (CL516-518) | Receivables "cleared during the quarter" (call:A3-F6-02) | ND | Lowered (slipped one quarter) | LOW |
+| Working capital / CCC | Receivables to "substantially reduce" this quarter (CL340-341); earned initial-order dues "significant amount is going to come in" (CL524-526); inventory to "earlier levels" over next few quarters (CL516-518) | Receivables "cleared during the quarter" (call:A3-F6-02) | ND | Lowered (slipped one quarter) | LOW |
 | Net debt trajectory | "significant reduction" with the order, undated, "I cannot give exact numbers" (CL514, CL528-530) | Deleveraging contingent on the add-on (dig. 8b) | ND | Maintained (conditional, unquantified) | LOW |
 | Export / segment | "increasing international engagements" (CL302) | "hope to change that profile" (call:A3 s.4) | ND | Maintained (directional) | LOW |
 | New product / contract milestones | D2M: supply radio heads to RFP winners once issued (CL546-551); railways expand on trial results (CL465-466); NEC radio development partner (CL598-600) | D2M tender unclear (call:A3-F7-03) | ND | Maintained (undated) | LOW |
@@ -557,7 +574,7 @@ Diagnostics:
 - Dropped without acknowledgment: the EBITDA window. Management did not mention the change. Credibility flag.
 - Internal consistency: "significant" debt reduction plus continued capex "as per plan" plus operating-cost funding (CL140-141) do not reconcile without a cash number. Inventory converts to receivables first (CL522-523), so debt can peak before it falls.
 - Vs projections: Notion FY29E base needs Rs 6,500 Cr revenue and 14% margin (dig. 6a); nothing guided supports or refutes it. Guidance is below what the base case needs for proof.
-- Refused: BSNL collection amount (CL340), order-book split (CL355), inventory and debt quantum (CL514), NEC revenue (CL584, CL590).
+- Refused: BSNL collection amount (CL340), order-book split (CL355), inventory and debt quantum (CL514, CL516-517), NEC revenue (CL584, CL590-591).
 
 ---
 
@@ -567,8 +584,8 @@ Diagnostics:
 
 | Commitment from Q1 FY27 concall | This quarter's actual | Status | Points |
 |---|---|---|---|
-| BSNL add-on award "probably in this quarter" (call:A3 s.4, prior l.34) | TCS LoI 18,685 sites + part POs (CL145, CL346-349; PL187) | DELIVERED | 1.0 |
-| BSNL receivables "cleared during the quarter" (prior l.46) | Re-dated: "this is the quarter when we will see a significant amount" (CL338-341) | DELAYED (first) | 0.25 |
+| BSNL add-on award "probably in this quarter" (call:A3 s.4, prior l.34) | TCS LoI 18,685 sites + part POs (CL145, CL346-349; PL187) | DELIVERED (on LoI, per the 27-Aug ruling) | 1.0 |
+| BSNL receivables "cleared during the quarter" (prior l.46) | Re-dated: "this is the quarter when we will see a significant amount" (CL338-341); the dues are earned initial-order milestones (CL524-526, R327) | DELAYED (first) | 0.25 |
 | Positive EBITDA in "12 to 18 months" (prior l.78; dig. 8b) | Window removed: "upcoming years" (CL317-318), no acknowledgment | DROPPED | 0 + governance flag |
 | Inventory to "go away" with the add-on (prior l.74) | Inventory 2,358 to 2,314, -44 (CL134; PL167) | PARTIALLY DELIVERED | 0.5 |
 | Employee cost flat (prior l.128) | 105.24 to 105.14 (RL542) | DELIVERED | 1.0 |
@@ -589,10 +606,10 @@ Score: 9 commitments, 4 UNCLEAR, denominator 5, points 2.75. Ratio 55.0%.
 | Q2 FY27 call, 16-Oct-2026 (scores Q1 commitments) | 9 | 2 | 1 | 0 | 1 | 1 | 4 | 2.75 |
 
 Credibility ratio (available record): 2.75 / (9 - 4) = 55.0%. Grade C. Role 1 track record input: MIXED. Trailing 4 concalls cannot be completed: Q1 point detail and earlier calls are ND.
-DROPPED count in the available window: 1. Automatic downgrade does not fire. FLAG: if the Q1 entry "SOFTENED / later by ~2-4 qtrs, unacknowledged" for the AGM-26 Q4 FY27 date (dig. 8b) is rescored DROPPED, the count is 2 and the rule moves the grade C to D. A4 scores that Q1 move as a re-date (a new window was given), so it stays at 1. A5 and the operator decide.
+DROPPED count in the available window: 1. Automatic downgrade does not fire. A5 concurs (count 1). FLAG: if the Q1 entry "SOFTENED / later by ~2-4 qtrs, unacknowledged" for the AGM-26 Q4 FY27 date (dig. 8b) is rescored DROPPED, the count is 2 and the rule moves the grade C to D. A4 scores that Q1 move as a re-date (a new window was given). The operator holds the final call.
 
 ### 3C. Pattern
-- Binary operational items get delivered (award, shipments, flat employee cost).
+- Binary operational items get delivered (award on LoI, shipments, flat employee cost).
 - Cash items slip by one quarter (BSNL collections) and arrive without amounts.
 - Profit dates move out and then vanish (Q4 FY27, then 12-18 months, then none).
 - Trend: Grade C at Q1 (provisional) and Grade C now. Flat at a low level.
@@ -617,7 +634,7 @@ DROPPED count in the available window: 1. Automatic downgrade does not fire. FLA
 | 8a-9 COO SMP designation and continuity | NOT ADDRESSED | COO listed, zero turns (CL61) | Carry |
 | 8d-1 EBITDA-positive Q4 FY27 withdrawn? | NOT ADDRESSED | Undated | Repeat (Q6) |
 | 8d-2 QIP intent; net-debt peak if add-on slips | NOT ADDRESSED | Silent on QIP | Repeat (Q11) |
-| 8d-3 Net-receivable days, ex-BSNL DSO | PARTIALLY ANSWERED | Deck net receivables 2,042 (PL166); no DSO | Repeat (Q4, Q5) |
+| 8d-3 Net-receivable days, ex-BSNL DSO | PARTIALLY ANSWERED | Deck net receivables 2,232 Q1 / 2,042 Q2 (PL166); no DSO | Repeat (Q4, Q5) |
 | 8d-4 BSNL AMC value and start | NOT ADDRESSED | Silent | Repeat (Q22) |
 | 8d-5 26,000 vs 18,700 sites; order value | PARTIALLY ANSWERED | 18,685 sites (CL145), INR1,500 Cr (CL349); no reconciliation | Repeat (Q3) |
 | 8d-6 International backlog behind ~50% revenue vs 7% book | PARTIALLY ANSWERED | Book 4% international (CL97) | Answered adversely (Q14) |
@@ -641,16 +658,16 @@ Tally (19): answered specifically 0; partially 6; evaded 1; not addressed 12. DT
 | Q03 (T13) | Tushar Khurana | How much of the book came from outside BSNL? | Customer/Order | D | "I don't think I can share the exact details" (CL355-358) |
 | Q04 (T15) | Tushar Khurana | Why no wireless win in India beyond BSNL? | Strategic | B | Operators finished 4G/5G build; wait for next phase; emerging markets via partners (CL366-405) |
 | Q05 (T17) | Tushar Khurana | Vi POC trials; path to a Vi wireless order? | Customer/Order | C | Names withheld; trials qualify for next phase (CL412-419) |
-| Q06 (T19) | Tushar Khurana | DCI stack; GPU vendor onboarding; TCS data-centre POC | Strategic | B | Partner with rack builders and SIs, not GPU vendors (CL431-445) |
+| Q06 (T19) | Tushar Khurana | DCI stack; GPU vendor onboarding; TCS data-centre POC | Strategic | B [loop1-S8] (half-answer: the TCS data-centre POC part, CL427-428, got only an implicit reply, "working with the system integrators", CL442) | Partner with rack builders and SIs, not GPU vendors (CL431-445) |
 | Q07 (T24) | Keyurkumar Vadaliya, Niveshaay | Railways trial; AI DCI orders in 6-8 months, range or quantum | Operational / Forward Guidance | B (rail) / C (DCI) | Rail trial PO and deployment (CL462-466); DCI "winning several business", no number (CL469-476) |
 | Q08 (T27) | Keyurkumar Vadaliya | Nature of the INR145 Cr loss in COGS; recurring? | Financial | B | "previous year, not the current quarter" (CL485) |
 | Q09 (T30) | Keyurkumar Vadaliya | Clarify timing | Clarification | A | "It's September 2025. There is no provisioning of that sort in the current quarter." (CL494) |
 | Q10 (T32) | Keyurkumar Vadaliya | Non-recurring in future? | Forward Guidance | A | "Correct." Tied to the first 100,000-site order (CL498-499) |
 | Q11 (T38) | Keyurkumar Vadaliya | BSNL PO effect on inventory and debt in 6-9 months, quantum | Forward Guidance | D | "I cannot give exact numbers ... That's all I can say" (CL514-518) |
-| Q12 (T40) | Keyurkumar Vadaliya | Gross debt reduction | Financial | D | "significant reduction", no number (CL522-530) |
+| Q12 (T40) | Keyurkumar Vadaliya | Gross debt reduction | Financial | D | "significant reduction", no number; earned initial-order dues "significant amount is going to come in" (CL522-530) |
 | Q13 (T43) | Tushar Khurana | D2M RFP opportunity | Macro / Strategic | B | Radio heads to SI winners once RFP issued (CL538-551) |
 | Q14 (T45) | Tushar Khurana | Size of international POC telcos | Customer/Order | C | Second or third operators, greenfield 5G; no sizes (CL557-574) |
-| Q15 (T47) | Tushar Khurana | NEC exclusivity, USD500m business, lead generation | Strategic | D | "I cannot comment on the NEC's revenue number" (CL584, CL590); radio development partner (CL598-600) |
+| Q15 (T47) | Tushar Khurana | NEC exclusivity, USD500m business, lead generation | Strategic | D | "I cannot comment on the NEC's revenue number" (CL584, CL590-591); radio development partner (CL598-600) |
 
 Grade count: A 2; B 6; C 3 (plus the DCI half of Q07); D 4; E 0.
 
@@ -666,9 +683,9 @@ Grade count: A 2; B 6; C 3 (plus the DCI half of Q07); D 4; E 0.
 Exchange 1: BSNL collections (Q01)
 - Question: "how much dues we have recovered from the BSNL ... how much are still due ... And by when ... in the last call, I think you had mentioned that we should be getting the payments by the quarter end." (CL325-334)
 - Response: "We have met the milestone delivery requirements. And this is the quarter when we will see a significant amount of collections coming from BSNL ... I cannot specify the exact number, but it is going to substantially reduce our receivables." (CL337-341)
-- Said: milestones met; collections in Q3.
+- Said: milestones met; collections in Q3. Later in the call: the dues are earned initial-order milestones (CL524-526).
 - Not said: amount recovered in Q2, amount outstanding, why the Q2 promise slipped.
-- Thesis: the deleveraging case and the net-debt tripwire both hang on this cash. The promise is re-dated with no number.
+- Thesis: the deleveraging case and the net-debt tripwire both hang on this cash. The receivable is earned, so a Q3 miss is a collection failure, not a timing effect (call:A3-F6-02 addendum).
 - Follow-up: rupee amount due from BSNL/TCS at 30-Sep and expected by 31-Dec (Q2).
 
 Exchange 2: Inventory and gross debt quantum (Q11-Q12)
@@ -676,14 +693,14 @@ Exchange 2: Inventory and gross debt quantum (Q11-Q12)
 - Response: "I cannot give exact numbers ... over the next few quarters, we certainly should see a significant reduction of this inventory ... the inventory is going to get collected -- converted into collectibles ... from a debt point of view, we're going to see a significant reduction" (CL514-530)
 - Said: direction only; inventory converts to receivables first.
 - Not said: any number, any date, the peak.
-- Thesis: the sequence (inventory to receivables to cash) means net debt can rise further before it falls, with Rs 115.61 Cr of headroom.
+- Thesis: the sequence (inventory to receivables to cash) means net debt can rise further before it falls, with Rs 115.61 Cr of headroom (6C run-rate counter).
 - Follow-up: Q1, Q9.
 
 Exchange 3: Order-book composition (Q02-Q03)
 - Question: "does it also include this BSNL order for INR1,500 crores we got from TCS" (CL343-344); "can we just know what amount has come from outside BSNL?" (CL352-353)
 - Response: "A part of it ... all of INR1,500 crores is not there in the order book yet ... most of it, we expect to come by the end of this quarter" (CL346-350); "I don't think I can share the exact details ... a substantial portion of it and the rest of it has come from non-BSNL customers" (CL355-358)
 - Said: book is PO-only; BSNL is a "substantial portion".
-- Not said: the BSNL rupee value in the 2,315; implied inflow about 1,192 (pres:A3-12) sits below the 1,526 on record.
+- Not said: the BSNL rupee value in the 2,315; implied inflow about 1,192 (pres:A3-12) includes non-BSNL wins, so the BSNL value in the book sits below 1,192.
 - Thesis: decides whether the add-on is partly booked or smaller than recorded (checklist #7).
 - Follow-up: Q3.
 
@@ -695,12 +712,12 @@ Exchange 3: Order-book composition (Q02-Q03)
 
 | Disclosure | Type | Material? | Thesis impact |
 |---|---|---|---|
-| TCS LoI for 18,685 BSNL add-on sites, ~INR1,500 Cr; POs partly received; shipments started (CL145, CL346-350; PL187) | New contract win | YES | Trigger 1 FIRED; counterparty TCS |
+| TCS LoI for 18,685 BSNL add-on sites, ~INR1,500 Cr; POs partly received (spoken); shipments started (CL145, CL346-350; PL187) | New contract win | YES | Trigger 1 FIRED on LoI under the 27-Aug ruling; counterparty TCS |
 | Order book INR2,315 Cr, 96% India (CL94-97; PL85, PL90) | Customer/order | YES | Visibility up; concentration up |
 | First revenue mix disclosure: international 12% (CL96; PL88) | Negative surprise | YES | Trigger 4 and #6 weaken |
 | Non-recourse bill discounting as a NWC driver (CL130-132; PL170-172) | Negative surprise | YES | Cash conversion read stays INDETERMINATE |
 | Debt funds "operational costs" (CL140-141) | Negative surprise | YES | Cash burn continues |
-| BharatNet: new SI LOI, IP/MPLS routers, 3 states (CL157-159) | New contract win | YES (no value) | Trigger 2 on track |
+| BharatNet: new SI LOI, IP/MPLS routers, 3 states (CL157-159) | New contract win | YES (no value) | Trigger 2 on track at LOI stage |
 | GoI strategic OTN: "won" (CL159-161) vs "Declared L1" (PL190) | New contract win (conflicting) | YES | Unverified; Q19 |
 | GPON POs from ISPs (CL163-165) | New contract win | NO (no value) | Wireline base |
 | Tier 1 pan-African operator, 400G (CL165-168) | New geography | NO (no value) | International pipeline |
@@ -730,7 +747,7 @@ Exchange 3: Order-book composition (Q02-Q03)
 | Vodafone Idea backhaul | Thesis trigger 3 | AMBER-RED (second consecutive) |
 | Europe 5G customer; Tier 1 joint R&D project | Q1 headlines | AMBER (prior call covered) |
 | Employee cost guidance | Q1 "flat" | Neutral (delivered) |
-| Gross margin YoY fall ex-charge (52.5% to 38.2%) | Mix and pricing | AMBER |
+| Gross margin YoY fall ex-charge (52.5% to 38.2%) and the +63 other-expense step | Mix, pricing and cost | AMBER |
 | Peer development (other vendors in BSNL/private telcos) | Competitive response | UNVERIFIABLE this run (no peer input) |
 
 ---
@@ -751,10 +768,10 @@ Exchange 3: Order-book composition (Q02-Q03)
 | AMC | "start in the next few quarters" (prior l.100) | silent | DROPPED |
 
 ### 6B. Specificity score
-Basis: the 64 A2 forward rows (R186-R249). Rows carrying a number, a date or a binary: R187, R188, R193, R195, R200, R201, R204, R205, R221, R222, R223, R233, R234 = 13. Unquantified: 51. Specificity ratio 13 / 64 = 0.20 (0.18 excluding the two external market forecasts R193, R195). Below 0.3: heavy hedge language. Q1 provisional ratio 0.38 (dig. 8e). Direction: down.
+Basis: the 65 A2 forward rows (R186-R249 plus loop-1 R327). Rows carrying a number, a date or a binary: R187, R188, R193, R195, R200, R201, R204, R205, R221, R222, R223, R233, R234 = 13. R327 is unquantified ("whatever comes in"). Unquantified: 52. Specificity ratio 13 / 65 = 0.20 (11 / 63 = 0.17 excluding the two external market forecasts R193, R195). Below 0.3: heavy hedge language. Q1 provisional ratio 0.38 (dig. 8e). Direction: down.
 
 ### 6C. Defensive language count
-"I cannot specify the exact number" (CL340); "I don't think I can share the exact details" (CL355); "without taking specific names" (CL412); "I cannot give exact numbers" (CL514); "That's all I can say" (CL516); "I cannot comment on the NEC's revenue number" (CL584); "That's about all I can say. I cannot comment on the revenue numbers" (CL590-591). Count 7 (Q1: 4 hard refusals, dig. 8e). Above 5: hedge-heavy call. "we expect" 4 times (CL135, CL350, CL466, CL539).
+[loop1-LEDGER] "I cannot specify the exact number" (CL340); "I don't think I can share the exact details" (CL355); "without taking specific names" (CL412); "I cannot give exact numbers" (CL514); "That's all I can say" (CL516-517, R325); "I cannot comment on the NEC's revenue number" (CL584); "That's about all I can say. I cannot comment on the revenue numbers" (CL590-591, R326). Count 7 by phrase, the protocol's counting unit; 5 answer turns carry them, and the 4 hard quantum refusals by turn (T10, T14, T39, T48) match A3-F7-01. Q1: 4 hard refusals (dig. 8e). Above 5 phrases: hedge-heavy call. "we expect" 4 times (CL135, CL350, CL466, CL539).
 
 ### 6D. Confidence indicators
 - Named customer win with size: TCS/BSNL 18,685 sites, ~INR1,500 Cr (CL145, CL349).
@@ -776,7 +793,7 @@ Specificity 0.20 (<= 0.5) x credibility 55.0% (< 60%) = EVASIVE. Q1 provisional:
 | Revenue INR406 Cr, +55% YoY (CL109-110) | 405.68 vs 261.82, +54.95% (RL533-535) | CONFIRMED |
 | EBITDA -INR108 Cr (CL116) | Op EBITDA (106.64) derived; deck includes net forex (PL139) | CONFIRMED (definition) |
 | PAT -INR207 Cr (CL117) | (206.94) (RL553) | CONFIRMED |
-| NWC lower "on account of increased collections" (CL129-132) | Receivables -1,099.64 (RL691) but other liabilities -1,266.27 (RL697); CFO (311.93) (RL700); net-of-advance receivables +137 (PL166) | PARTIALLY CONFIRMED; technically true, materially misleading |
+| [loop1-M2] NWC "compared to Q1 FY27 is lower" "on account of increased collections" and nonrecourse discounting (CL128-132) | QoQ (deck): NWC 4,478 to 4,235 (-243, PL163); net-of-advance receivables 2,232 to 2,042 (-190, PL166). Discounting share undisclosed. H1 context (filing): receivables -1,099.64 (RL691) offset by other liabilities -1,266.27 (RL697); net-of-advance receivables +137 vs Mar-26; CFO (311.93) (RL700) | CONFIRMED for the QoQ claim (MGMT deck numbers); the collection vs discounting split is UNVERIFIABLE; over H1 the filing shows no cash release |
 | Inventory INR2,314 Cr (CL134) | 2,314.40 (RL611) | CONFIRMED |
 | Net debt INR4,384 Cr (CL139-140) | 4,384.39 ex-lease derived (RL613-616, RL629, RL635) | CONFIRMED |
 | Debt rose for capex and operating costs (CL140-141) | H1 capex 397.18 (RL702-703); CFO (311.93) | CONFIRMED |
@@ -810,11 +827,11 @@ UNVERIFIABLE this run: peer concalls were not passed to A4.
 
 | Trigger | Status pre-concall | Concall evidence | Status post-concall |
 |---|---|---|---|
-| 1. BSNL add-on | Pending (LoI 27-Aug, dig. 2) | LoI 18,685 sites, part POs, shipments (CL145, CL346-350) | FIRED |
-| 2. BharatNet III | High | New SI LOI, 3 states (CL157-159) | ON TRACK |
+| 1. BSNL add-on | Pending (LoI 27-Aug, dig. 2) | LoI 18,685 sites; part POs spoken; shipments (CL145, CL346-350); deck says LoI only (PL187) | FIRED on LoI under the 27-Aug operator ruling; PO value undisclosed; operator to reconfirm on PO evidence |
+| 2. BharatNet III | High | New SI LOI, 3 states, no value (CL157-159) | [loop1-M4] ON TRACK at LOI stage, unvalued |
 | 3. VIL backhaul | Medium | Silent; Vi only as wireless POC (CL407-419) | WEAKENED |
 | 4. International wireless | Medium | South America delivery; NEC supply; 12% revenue, 4% book | WEAKENED |
-| 5. DCI | Medium | "winning several business" (CL476), no number | ON TRACK (unquantified) |
+| 5. DCI | Medium | "winning several business" (CL476), no number after a direct request (CL458-460) | [loop1-M4] UNVERIFIED (no count or value; C-graded answer) |
 | NEW: GoI strategic OTN | n/a | "won" vs L1 conflict (CL159-161; PL190) | NEW (unverified) |
 | NEW: Tier 1 custom 5G radio | n/a | Discussions only (CL151-155) | NEW (pipeline) |
 
@@ -823,7 +840,7 @@ UNVERIFIABLE this run: peer concalls were not passed to A4.
 | # | Watchlist item | This concall reading | Status |
 |---|---|---|---|
 | 6 | International revenue mix | 12% revenue; 4% order book (CL96-97) | AMBER, toward RED |
-| 7 | BSNL PO confirmation | LoI + part POs; ~INR1,500 Cr spoken (CL346-350) | AMBER |
+| 7 | BSNL PO confirmation | LoI + part POs spoken; ~INR1,500 Cr spoken (CL346-350) | AMBER |
 | 4 | Net debt | INR4,384 Cr, up; reduction unquantified (CL139-140, CL514) | RED |
 | 8 | PLI | Silent | UNKNOWN |
 | 9 | BV / QIP | Silent | RED (filing) |
@@ -834,15 +851,15 @@ UNVERIFIABLE this run: peer concalls were not passed to A4.
 | Thesis-broken condition | Threshold | Concall-relevant evidence | FIRED? |
 |---|---|---|---|
 | FY27 revenue floor | < Rs 2,000 Cr | No revenue guidance; "momentum ... in the next few quarters" (CL611-612) | NOT FIRED; no evidence of a 596/qtr H2 |
-| Net debt breach | > Rs 4,500 Cr | Debt still rising; reduction undated; inventory converts to receivables first (CL522-523) | NOT FIRED; closer |
-| BSNL PO by Sep 2026 | not confirmed | LoI and part POs in the book (CL346-350) | NOT FIRED (human ruling) |
+| Net debt breach | > Rs 4,500 Cr | Debt still rising; reduction undated; inventory converts to receivables first (CL522-523) | NOT FIRED; closer (Q2 pace gives 4,491.78 at Q3, H1 pace 4,811.25) |
+| BSNL PO by Sep 2026 | not confirmed | LoI and part POs spoken (CL346-350); deck LoI only (PL187) | NOT FIRED under the 27-Aug operator ruling; operator to reconfirm on PO evidence |
 | QIP below Rs 400 | announcement | Silent | NOT FIRED |
 
 ### 8D. Four-pillar inputs, concall adjustments
 Deferred to /fttcp and Role 1 (OR-30). Pillar-relevant concall facts:
 - ROCE trajectory: no ROCE or EBITDA date; "upcoming years" (CL317-318). Feeds the FTTCP ROCE forward verdict.
 - CFO/PAT framing: WC reduction attributed to collections and non-recourse discounting (CL130-132); collections re-dated (CL338-341). Pillar 2: no evidence to move off 0.65x.
-- EM / Pillar 3: BSNL award (CL145); 748 patents, 266 5G-A/6G (CL182-183); TSDSI council (CL186-187); ISAC demo (CL246-249).
+- EM / Pillar 3: BSNL award on LoI (CL145); 748 patents, 266 5G-A/6G (CL182-183); TSDSI council (CL186-187); ISAC demo (CL246-249).
 - Strategic premium: Tata endorsement logo (CL175-179); single-credit rule untouched.
 
 ### 8E. Position decision (concall overrides; non-held branch)
@@ -851,7 +868,7 @@ Deferred to /fttcp and Role 1 (OR-30). Pillar-relevant concall facts:
 - Undisclosed material risk: the debt now funds operating costs and international revenue fell; for a non-held name the trim rule does not apply. Flag only.
 - Undisclosed material positive: BSNL award was disclosed by LoI before the call; hold pending verification of PO value.
 - Evasion across 3+ quarters: not yet; DTA and QIP are at two.
-- Narrative contradicts filing (QoQ "steadily improving"; "collections"): trust the filing; credibility issue noted; Q3 watchlist tightened.
+- Narrative contradicts filing ("steadily improving" on a worse QoQ print): trust the filing; credibility issue noted; Q3 watchlist tightened. The QoQ collections claim is confirmed on the deck's numbers (7A).
 - Result: WATCHLIST unchanged (proposed); entry-zone recompute deferred to Role 1.
 
 ### 8F. Updated questions for next quarter
@@ -861,7 +878,7 @@ Deferred to /fttcp and Role 1 (OR-30). Pillar-relevant concall facts:
 | 1 | Net debt peak and Q3 close (Q1) | Tripwire | Gross debt, cash, net debt numbers spoken |
 | 2 | BSNL collection amount (Q2) | Deleveraging | Rupee amount collected in Q3 |
 | 3 | BSNL PO value in the book (Q3) | Checklist #7 | Value vs 1,526 |
-| 4 | Advances set-off vs cash (Q4) | Cash conversion | Net-of-advance receivables trend |
+| 4 | Advances set-off vs cash (Q4) | Cash conversion | Net-of-advance receivables trend from 2,042 |
 | 5 | Discounting amount and cost (Q5) | Cash quality | A number |
 | 6 | EBITDA-positive quarter (Q6) | Gate 4 | Named quarter |
 | 7 | DTA and QIP (Q10, Q11) | Third silence would be an evasion pattern | Any mention |
@@ -874,13 +891,20 @@ Deferred to /fttcp and Role 1 (OR-30). Pillar-relevant concall facts:
 # SECTION C: COMBINED VERDICT
 
 - Filing-derived signals: revenue +54.95% YoY but flat QoQ (+0.88%); the whole YoY PBT gain (196.11) is explained by non-recurring and estimate items (208.76); QoQ op EBITDA worse; H1 CFO (311.93) and FCF (709.11); receivables fall offset by an advance unwind (1,266.27); net debt ex-lease 4,384.39 (headroom 115.61), 4,518.90 with leases; BV/share Rs 139.33; DTA + IAUD = 55.45% of equity.
-- Concall-derived signals: BSNL add-on awarded via TCS LoI with part POs; every cash quantum refused (7 defensive phrases); EBITDA date dropped; collections re-dated to Q3; international 12% of revenue; credibility 55.0% Grade C; archetype EVASIVE; QIP and DTA silent for a second call.
-- Reconciliation: the call says "collections" and "steadily improving"; the filing shows no cash release and a worse QoQ loss. The filing wins.
-- Break-even arithmetic (derived, Q2 cost base held constant): op EBITDA zero needs gross profit to cover employee 105.14 + other expenses 167.14 + ECL (10.55) = 261.73; at the Q2 gross margin of 38.23%, that is revenue of about 684.6 per quarter, 69% above Q2. PBT break-even adds D&A 91.48 + finance 86.53 - OI 7.77 = 170.24, so about 1,130 per quarter. Both figures assume no change in margin or cost [INFERENCE].
-- Net thesis impact: WEAKENED. The order arrived; the cash, margin and balance-sheet legs moved the wrong way.
-- Protocol verdict: PROCEED WITH FLAGS. Cash conversion INDETERMINATE-WITH-DIRECTION caps the verdict at PROCEED WITH CAVEATS; the open trigger rulings, the RED items (#4, #9, DTA, QIP) and the fired re-weighting take it to FLAGS. No mechanical failure; not REWORK.
+- Concall-derived signals: BSNL add-on on a TCS LoI with part POs spoken; every cash quantum refused (7 defensive phrases); EBITDA date dropped; collections re-dated to Q3; international 12% of revenue; credibility 55.0% Grade C; archetype EVASIVE; QIP and DTA silent for a second call.
+- [loop1-M2] Reconciliation: QoQ, the deck confirms the collections claim (net-of-advance receivables -190, NWC -243), but the discounting share is undisclosed. Over H1, the filing shows no cash release (CFO (311.93); net-of-advance receivables +137). "Steadily improving" is contradicted by the QoQ print. The filing wins.
+- [loop1-C2] Break-even arithmetic (derived; margin held at the Q2 gross margin of 38.23%):
+
+| Cost base | Cash operating costs before D&A and interest | Op EBITDA break-even revenue / qtr | PBT break-even revenue / qtr (adds D&A 91.48 + finance 86.53 - OI 7.77 = 170.24) |
+|---|---|---|---|
+| Q2 as reported (employee 105.14 + other expenses 167.14 + ECL (10.55)) | 261.73 | 684.6 (flattered floor) | 1,129.9 (flattered floor) |
+| Q2 at Q1 estimate rates (warranty 35.11, ECL 8.08: +46.50) | 308.23 | 806.3 | 1,251.6 |
+
+  The Q2 base includes a credit (the ECL write-back) and a warranty charge one-fifth of Q1's, so 685 / 1,130 is the flattered floor. The Q1-rate base gives 806 / 1,252, which is 99% / 209% above Q2 revenue. Both assume no change in margin or cost [INFERENCE].
+- Net thesis impact: WEAKENED. The order arrived on a LoI; the cash, margin and balance-sheet legs moved the wrong way, with one quarter of QoQ receivable improvement.
+- Protocol verdict: PROCEED WITH FLAGS. Cash conversion INDETERMINATE-WITH-DIRECTION caps the verdict at PROCEED WITH CAVEATS; the open operator items, the RED items (#4, #9, DTA, QIP) and the fired re-weighting take it to FLAGS. No mechanical failure; not REWORK.
 - Position decision: 8A-W. WATCHLIST, not held, proposed unchanged (operator sets). Entry zone Rs 247-309 / MoS Rs 234 not confirmed; Role 1 recompute with the re-weighting. Gate moved to the Q3 FY27 print.
-- Watchpoints for next quarter: net debt ex-lease at 31-Dec-2026 (single cleanest metric); BSNL collection amount; BSNL PO value in the book; net-of-advance receivables; named EBITDA quarter; D&A step-up; DTA/QIP mention.
+- Watchpoints for next quarter: net debt ex-lease at 31-Dec-2026 (single cleanest metric; Q2 pace 4,491.78, H1 pace 4,811.25); BSNL collection amount; BSNL PO value in the book; net-of-advance receivables from 2,042 with discounting disclosed; named EBITDA quarter; D&A step-up; DTA/QIP mention.
 
 Concall verdict block:
 - Management credibility (this quarter): Grade C
@@ -902,13 +926,14 @@ It lost Rs 206.9 Cr after tax and Rs 276.9 Cr before tax [FILED].
 The yearly gain looks large, but three items explain all of it [INFERENCE]. Last year carried a Rs 145.4 Cr manufacturing charge [FILED]. This quarter booked Rs 37.2 Cr less warranty cost and a Rs 26.1 Cr credit-loss swing [FILED].
 Without those items, the operations did not improve [INFERENCE]. Against Q1, the loss grew slightly [FILED].
 Cash still leaves the business. Operations used Rs 311.9 Cr in the half, and Rs 709.1 Cr went out after capex [FILED].
-Receivables fell Rs 1,099.6 Cr, but customer advances fell Rs 1,266.3 Cr in the same half [FILED]. So little new cash came in [INFERENCE].
+[loop1-S1] Receivables fell Rs 1,099.6 Cr in the half, but other liabilities fell Rs 1,266.3 Cr [FILED amount; "customer advances" label INFERENCE, PL164-166].
+[loop1-M2] Net of advances, receivables rose Rs 137 Cr over the half but fell Rs 190 Cr in Q2 alone [MGMT, PL166]. Q2 shows some collection; the half shows none in cash [INFERENCE].
 Net debt rose to Rs 4,384 Cr [FILED, derived; MGMT agrees]. That is Rs 116 Cr below the Rs 4,500 Cr line that breaks the thesis [prior Notion line].
 Book value per share fell to about Rs 139, under the Rs 140 red line [FILED, derived; prior Notion line].
-The BSNL add-on order arrived as a TCS letter of intent for 18,685 sites, about Rs 1,500 Cr [MGMT]. Part of the purchase orders sit in the Rs 2,315 Cr order book [MGMT].
+The BSNL add-on came as a TCS letter of intent for 18,685 sites, about Rs 1,500 Cr [MGMT]. The filed deck says letter of intent only; management says part of the purchase orders are in the Rs 2,315 Cr book [MGMT].
 Management gave no amounts for collections, debt cuts or inventory release. It also dropped the date for positive EBITDA [MGMT].
 International revenue fell to 12% of sales [MGMT].
-No thesis-broken condition fired. Two need an operator ruling: the net-debt definition, and whether the letter of intent counts as the order.
+No thesis-broken condition fired. The operator must confirm the net-debt definition and reconfirm the 27-Aug BSNL ruling on purchase-order evidence.
 The pre-committed re-weighting fires. Role 1 must shift weights toward the poor case and recompute the entry zone.
 The name stays on WATCHLIST, not held. The next test is net debt at 31-Dec-2026.
 
@@ -924,18 +949,18 @@ The name stays on WATCHLIST, not held. The next test is net debt at 31-Dec-2026.
 - Tejas designs telecom gear, owns the IP, and uses contract manufacturers [FILED: the Rs 145.43 Cr loss came from "contract manufacturing process losses", RL378]. It earns on project shipments to operators and system integrators [MGMT, CL101-102].
 - R&D is capitalised heavily: Rs 358.6 Cr spent on intangibles in H1 [FILED, RL703]; Rs 897.8 Cr under development and Rs 688.1 Cr already capitalised [FILED, RL600-601].
 - It builds inventory ahead of orders (Rs 2,314 Cr) and funds it with short-term bank debt (Rs 3,673 Cr current borrowings) [FILED, RL611, RL635].
-- Unit economics this quarter: gross margin 38.2% [FILED, derived]; fixed costs near Rs 262 Cr a quarter before D&A and interest [FILED, derived]. Break-even EBITDA needs about Rs 685 Cr a quarter at today's margin [INFERENCE].
-- Model drift: debt now funds operating costs [MGMT, CL140-141]; non-recourse discounting helps collections [MGMT, CL130-132]; the ex-charge gross margin fell from 52.5% to 38.2% YoY [FILED, derived]; tax credits, not cash, cushion the reported loss [FILED, RL550-552].
+- [loop1-C2] Unit economics this quarter: gross margin 38.2% [FILED, derived]. Cash operating costs before D&A and interest were Rs 261.7 Cr in Q2, flattered by a credit-loss write-back and a low warranty charge; at Q1 rates they were Rs 308.2 Cr [FILED, derived]. Break-even EBITDA needs about Rs 685-806 Cr a quarter at today's margin; Rs 685 Cr is the flattered floor [INFERENCE].
+- Model drift: debt now funds operating costs [MGMT, CL140-141]; non-recourse discounting helps collections [MGMT, CL130-132]; the ex-charge gross margin fell from 52.5% to 38.2% YoY [FILED, derived]; other costs rose Rs 63 Cr QoQ with no stated cause [FILED, derived]; tax credits, not cash, cushion the reported loss [FILED, RL550-552].
 
 ## 4. COMPETITION INTELLIGENCE
 - Where Tejas wins: indigenous status for BSNL [prior Notion]; BharatNet router share [MGMT, CL157; prior Notion 7 of 12 packages]; optical, IP and FTTx to Indian private operators [MGMT, CL101-102, CL163-165].
-- Where it is weaker: wireless in Indian private telcos, which built with incumbent vendors. Named incumbents in RAN are Nokia, Ericsson and Samsung; in optical, Ciena and Nokia; domestic peers include HFCL and ITI [SECONDARY / INFERENCE, not from this quarter's filings; peer data not passed].
+- [loop1-S5] Where it is weaker: wireless in Indian private telcos, which built with incumbent vendors. Named incumbents in RAN are Nokia, Ericsson and Samsung; in optical, Ciena and Nokia; domestic peers include HFCL and ITI [INFERENCE, general knowledge, not verified this run; peer data not passed].
 - Abroad it is a small new vendor working through partners NEC and Rakuten [MGMT, CL394-396], aimed at second or third operators [MGMT, CL557-559].
-- Risk to watch: one PSU customer through one contractor (TCS) dominates the book [MGMT, PL187, PL90], while international revenue fell to 12% [MGMT, PL88]. No peer concall was read this run, so the competitive read is UNVERIFIABLE.
+- [loop1-F1] Risk to watch: BSNL, reached through one contractor (TCS, PL187), is "a substantial portion" of the order book (CL357); its share is not disclosed (CL355) [MGMT]. India is 96% of the book [MGMT, PL90], while international revenue fell to 12% [MGMT, PL88]. No peer concall was read this run, so the competitive read is UNVERIFIABLE.
 
 ## 5. FORWARD MAP (next ~10-11 months)
-Make-or-break reading: net debt ex-lease at 31-Dec-2026, reported with Q3 FY27 results about mid-Jan-2027 [INFERENCE on date]. Bull: at or below Rs 4,000 Cr. Bear: above Rs 4,500 Cr.
-- By 31-Dec-2026, BSNL milestone collections [MGMT, CL338-341]. Bull: an amount is stated and net-of-advance receivables fall below Rs 2,042 Cr. Bear: the promise slips to Q4 with no amount.
+[loop1-M3] Make-or-break reading: net debt ex-lease at 31-Dec-2026, reported with Q3 FY27 results about mid-Jan-2027 [INFERENCE on date]. Bull: at or below Rs 4,000 Cr. Bear: above Rs 4,500 Cr. At the Q2 pace Q3 lands at Rs 4,491.78 Cr; at the H1 pace, Rs 4,811.25 Cr.
+- By 31-Dec-2026, BSNL milestone collections on earned initial-order dues [MGMT, CL338-341, CL524-526]. Bull: an amount is stated and net-of-advance receivables fall again below Rs 2,042 Cr with discounting disclosed. Bear: the promise slips to Q4 with no amount.
 - By 31-Dec-2026, most remaining BSNL POs enter the book [MGMT, CL349-350]. Bull: the BSNL value near Rs 1,500 Cr is disclosed. Bear: POs trickle and the book stays near Rs 2,315 Cr.
 - About mid-Jan-2027, Q3 FY27 results. Bull: revenue at or above the Rs 500 Cr gate. Bear: revenue near the Rs 400 Cr plateau, far from the Rs 596 Cr H2 pace.
 - About mid-Jan-2027, Q3 FY27 results. Bull: D&A rises modestly from Rs 91.48 Cr. Bear: a large step-up from the Rs 302 Cr of new intangibles.
@@ -956,13 +981,14 @@ company: "TEJASNET"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
 status: complete
+loop: 1
 docs_merged: [results, concall, presentation]
 ledger_reconciliation:
-  notes: 851
-  turns: 52
-  slides: 13
+  notes: 864          # results ledger rows (R001-R864); 12 numbered notes inside
+  turns: 52           # concall turns; concall ledger rows 327 (R001-R327)
+  slides: 13          # presentation pages; 210 rows
   all_reviewed: true
-  a3_findings_incorporated: ["res:A3-01", "res:A3-02", "res:A3-03", "res:A3-04", "res:A3-05", "res:A3-06", "res:A3-07", "res:A3-08", "res:A3-09", "res:A3-10", "res:A3-11", "res:A3-12", "res:A3-13", "res:A3-14", "res:A3-15", "res:A3-16", "call:A3-F6-01", "call:A3-F6-02", "call:A3-F6-03", "call:A3-F6-04", "call:A3-F6-05", "call:A3-F6-06", "call:A3-F6-07", "call:A3-F7-01", "call:A3-F7-02", "call:A3-F7-03", "call:A3-F14-01", "call:A3-F14-02", "call:A3-F16-01", "call:A3-F16-02", "call:A3-F16-03", "call:A3-F16-04", "call:A3-F16-05", "call:A3-F16-06", "call:A3-F17-01", "call:A3-F17-02", "call:A3-F17-03", "call:A3-F17-04", "pres:A3-01", "pres:A3-02", "pres:A3-03", "pres:A3-04", "pres:A3-05", "pres:A3-06", "pres:A3-07", "pres:A3-08", "pres:A3-09", "pres:A3-10", "pres:A3-11", "pres:A3-12", "pres:A3-13", "pres:A3-14", "pres:A3-15", "pres:A3-16", "pres:A3-17", "pres:A3-18"]
+  a3_findings_incorporated: ["res:A3-01", "res:A3-02", "res:A3-03", "res:A3-04", "res:A3-05", "res:A3-06", "res:A3-07", "res:A3-08", "res:A3-09", "res:A3-10", "res:A3-11", "res:A3-12", "res:A3-13", "res:A3-14", "res:A3-15", "res:A3-16", "res:O1-O16", "res:loop1 R852-R864", "call:A3-F6-01", "call:A3-F6-02", "call:A3-F6-03", "call:A3-F6-04", "call:A3-F6-05", "call:A3-F6-06", "call:A3-F6-07", "call:A3-F7-01", "call:A3-F7-02", "call:A3-F7-03", "call:A3-F14-01", "call:A3-F14-02", "call:A3-F16-01", "call:A3-F16-02", "call:A3-F16-03", "call:A3-F16-04", "call:A3-F16-05", "call:A3-F16-06", "call:A3-F17-01", "call:A3-F17-02", "call:A3-F17-03", "call:A3-F17-04", "call:loop1 R325-R327", "pres:A3-01", "pres:A3-02", "pres:A3-03", "pres:A3-04", "pres:A3-05", "pres:A3-06", "pres:A3-07", "pres:A3-08", "pres:A3-09", "pres:A3-10", "pres:A3-11", "pres:A3-12", "pres:A3-13", "pres:A3-14", "pres:A3-15", "pres:A3-16", "pres:A3-17", "pres:A3-18"]
 protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE-WITH-DIRECTION"
 decision_status_verified: "WATCHLIST (not held; Position Size blank; Notion fetched 2026-10-23 02:05 UTC)"
@@ -970,10 +996,10 @@ position_branch: "8A-W"
 sc_gap_pat_pct: [{period: "Q2 FY27", pct: 0.40}, {period: "Q1 FY27", pct: 0.00}, {period: "Q2 FY26", pct: 0.01}, {period: "H1 FY27", pct: 0.20}, {period: "H1 FY26", pct: 0.02}, {period: "FY26", pct: 0.82}]
 questions_for_management:
   - {q: "Planned net-debt peak before BSNL cash, and gross debt, cash and net debt targeted at 31-Dec-2026 (net debt ex-lease 4,384 at 30-Sep)?", from_finding_id: "call:A3-F6-03; call:A3-F16-02; call:A3-F7-01; pres:A3-07; pres:A3-11; pres:A3-04"}
-  - {q: "Rupee BSNL milestone collections expected by 31-Dec-2026 and amount due from BSNL/TCS at 30-Sep?", from_finding_id: "call:A3-F6-02; call:A3-F7-01"}
+  - {q: "Rupee BSNL milestone collections (earned initial-order dues) expected by 31-Dec-2026 and amount due from BSNL/TCS at 30-Sep?", from_finding_id: "call:A3-F6-02; call:A3-F7-01"}
   - {q: "Rupee value and PO dates of BSNL add-on POs inside the 2,315 Cr book; TCS back-to-back terms; was it ever 26,000 sites?", from_finding_id: "pres:A3-02; pres:A3-08; pres:A3-12; call:A3-F16-04; call:A3-F6-06"}
   - {q: "Composition of the 1,421 Cr Mar-26 other current liabilities and how much of the H1 fall was set-off vs cash?", from_finding_id: "res:A3-09"}
-  - {q: "Non-recourse discounting in H1, outstanding at 30-Jun and 30-Sep, and cost?", from_finding_id: "call:A3-F16-06; pres:A3-15"}
+  - {q: "Non-recourse discounting in Q2 and H1, outstanding at 30-Jun and 30-Sep, and cost (splits the 190 Cr Q2 net-receivable fall)?", from_finding_id: "call:A3-F16-06; pres:A3-15"}
   - {q: "Named first EBITDA-positive quarter; is the AGM-26 Q4 FY27 target withdrawn?", from_finding_id: "call:A3-F6-01; pres:A3-03"}
   - {q: "Warranty 35.11 to 7.24 and ECL 8.08 charge to 10.55 write-back: fault-rate/model change or collections?", from_finding_id: "res:A3-11; res:A3-12; call:A3-F17-03"}
   - {q: "Control preventing a repeat of the Rs 145 Cr manufacturing loss on the 18,685-site order; any Q2 obsolescence charge or reversal?", from_finding_id: "call:A3-F6-05; res:A3-14"}
@@ -989,12 +1015,13 @@ questions_for_management:
   - {q: "Confirm the 145 Cr charge sat above EBITDA in Q2 FY26 (YoY gain ex-charge about 42 Cr)?", from_finding_id: "call:A3-F16-03"}
   - {q: "GoI OTN award date and value (call says won, deck says L1); POC and Tier-1 radio decision dates?", from_finding_id: "pres:A3-05; call:A3-F17-04"}
   - {q: "Count and value of DCI orders on the new product in the last 6 months?", from_finding_id: "call:A3-F7-02"}
-  - {q: "Driver of the 63 Cr QoQ rise in other expenses ex-warranty; gross finance cost incl. forex?", from_finding_id: "pres:A3-17"}
+  - {q: "Driver of the 63 Cr QoQ rise in other expenses ex-warranty (not forex: under ~1.4 Cr/qtr on the deck EBIT bridge); does it recur; gross finance cost incl. forex?", from_finding_id: "pres:A3-17"}
   - {q: "BSNL AMC start quarter and 8-year value; why ex-charge gross margin fell 52.5% to 38.2% YoY?", from_finding_id: "call:A3-F17-03"}
 monitorables:
-  - {item: "BSNL milestone collections, amount", implied_date: "2026-12-31", source_ref: "call T10 CL338-341; call:A3 register #1-2"}
+  - {item: "BSNL milestone collections (earned initial-order dues), amount", implied_date: "2026-12-31", source_ref: "call T10 CL338-341; T41 CL524-526 (R327); call:A3 register #1-2, #21"}
   - {item: "Most remaining BSNL POs into order book", implied_date: "2026-12-31", source_ref: "call T12 CL349-350; register #3"}
-  - {item: "Net debt ex-lease at Q3 close vs 4,000 / 4,500 (single cleanest metric)", implied_date: "2026-12-31 (reported ~mid-Jan-2027, inferred)", source_ref: "RL613-636; PL169; Step 8C"}
+  - {item: "Net debt ex-lease at Q3 close vs 4,000 / 4,500 (single cleanest metric; Q2 pace 4,491.78, H1 pace 4,811.25)", implied_date: "2026-12-31 (reported ~mid-Jan-2027, inferred)", source_ref: "RL613-636; PL169; Step 6C, 8C"}
+  - {item: "Net-of-advance receivables from 2,042 with discounting disclosed (Gate 5)", implied_date: "Q3 FY27", source_ref: "PL166; CL130-132"}
   - {item: "Q3 FY27 results: revenue vs 500 gate and 596/qtr H2 pace", implied_date: "~mid-Jan-2027 (inferred)", source_ref: "Step 3; dig. 2"}
   - {item: "Q3 call: named EBITDA-positive quarter; DTA and QIP mention", implied_date: "end of next quarter (CL616-617)", source_ref: "call:A3-F6-01; call:A3-F17-01"}
   - {item: "Amortisation step-up from 302 Cr capitalised intangibles", implied_date: "Q3 FY27", source_ref: "res:A3-10; RL600-601"}
@@ -1011,24 +1038,26 @@ monitorables:
   - {item: "Railway 700 MHz expansion on trial results", implied_date: "conditional", source_ref: "CL465-466"}
   - {item: "Q1 FY28 results", implied_date: "~Jul-2027 (inferred)", source_ref: "Forward map"}
 flags:
-  - "Net debt ex-lease 4,384.39 Cr, headroom 115.61 Cr to the 4,500 break; lease-inclusive 4,518.90 exceeds 4,500: operator to confirm the binding definition"
+  - "Net debt ex-lease 4,384.39 Cr, headroom 115.61 Cr to the 4,500 break; Q3 at Q2 pace 4,491.78, at H1 pace 4,811.25 (breach); Q2 pace already includes a 190 Cr net-receivable release; lease-inclusive 4,518.90 exceeds 4,500: operator to confirm the binding definition"
   - "BV/share Rs 139.33 on issued shares, below the Rs 140 red line (#9 RED); Rs 141.93 on EPS-implied count"
   - "Probability re-weighting FIRES (Q1 pre-registered condition met: Q2 annualises 1,622.72 and net debt rose); Role 1 to shift weights toward Poor"
-  - "BSNL PO trigger: TCS LoI + partial POs in 30-Sep book; NOT FIRED on MGMT evidence; value undisclosed; human ruling"
+  - "BSNL: FIRED on LoI under the 27-Aug operator ruling; deck says LoI only (PL187); POs spoken and partial; PO value undisclosed; operator to reconfirm on PO evidence; thesis-broken trigger NOT FIRED on that ruling"
   - "YoY PBT gain 196.11 fully explained by base charge 145.43 + warranty 37.20 + ECL 26.13 = 208.76; recurring contribution (12.65)"
-  - "Cash conversion INDETERMINATE-WITH-DIRECTION: receivables -1,099.64 offset by other liabilities -1,266.27; H1 CFO (311.93), FCF (709.11); net-of-advance receivables +137"
-  - "EBITDA-positive date DROPPED; credibility 55.0% Grade C (Mixed); archetype EVASIVE; specificity 0.20; 7 defensive phrases"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION: H1 receivables -1,099.64 offset by other liabilities -1,266.27, net-of-advance receivables +137, CFO (311.93), FCF (709.11); QoQ net-of-advance receivables -190 and NWC -243 confirm the QoQ collections claim, discounting share undisclosed"
+  - "EBITDA-positive date DROPPED; credibility 55.0% Grade C (Mixed); archetype EVASIVE; specificity 0.20; 7 defensive phrases (4 hard refusals by turn)"
   - "Second consecutive concall silence on DTA and QIP: pre-registered RED escalation applied"
-  - "DROPPED-count sensitivity: if Q1 AGM-date softening is rescored DROPPED, two-DROPPED rule moves Grade C to D (A5/operator)"
+  - "DROPPED-count sensitivity: if Q1 AGM-date softening is rescored DROPPED, two-DROPPED rule moves Grade C to D (operator; A5 concurs count 1)"
   - "International 12% of revenue, 4% of book: #6 AMBER toward RED; trigger 4 WEAKENED"
+  - "Growth trigger 5 DCI UNVERIFIED (no count or value, C-graded); trigger 2 BharatNet ON TRACK at LOI stage, unvalued"
   - "Filed transcript titles Arnob Roy 'Managing Director and Chairman' vs MD and CEO elsewhere: Reg 30 check"
   - "Call says GoI OTN order won and received; deck says declared L1: management documents conflict"
-  - "Other expenses ex-warranty +62.99 QoQ unexplained; ex-charge gross margin -14.31 pp YoY"
+  - "Other expenses ex-warranty +62.99 QoQ unexplained; forex ruled out by the deck EBIT bridge (<1.4 Cr/qtr); may recur; ex-charge gross margin -14.31 pp YoY"
+  - "Break-even revenue/qtr: 685 (EBITDA) / 1,130 (PBT) on the flattered Q2 base; 806 / 1,252 at Q1 estimate rates"
   - "Entry zone Rs 247-309 / MoS Rs 234 not confirmed; recompute in Role 1"
   - "Tracker rows not supplied: 0 signals (<3); 5 new dependency payload rows proposed, none written"
   - "Role 4 Steps 6.5 and 7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30); pillar facts flagged"
   - "Peer concalls and channel checks UNVERIFIABLE this run"
 plain_language_brief_included: true
-analyst_note: "Verdict is FLAGS, not CAVEATS, because three RED reads (#4 net debt, #9 BV/share, the DTA/QIP silence escalation) and the fired re-weighting sit beside two open human rulings. The ex-lease net-debt definition is binding only because the Notion Mar-26 base (3,531) ties to it; with leases the line is already crossed. The YoY improvement is arithmetic, not operations: base charge plus two estimate releases exceed the PBT gain. Other expenses ex-warranty rose 63 Cr QoQ and absorbed the warranty release; no A3 finding covers it, so Q21 is A4-originated. Credibility counts the Q1 EBITDA window removal as DROPPED but the earlier AGM-date change as a re-date; rescoring it would trigger the C-to-D rule. Break-even revenue (~685 Cr EBITDA, ~1,130 Cr PBT per quarter) assumes the Q2 cost base and margin hold. Entry zone and pillar recompute belong to Role 1."
+analyst_note: "Loop 1 changes no verdict or checklist status. FLAGS stands on three RED reads (#4, #9, DTA/QIP silence escalation), the fired re-weighting and two open operator items (net-debt definition; reconfirming the 27-Aug BSNL ruling on PO evidence, since the filed deck says LoI only). Two loop-1 corrections cut against the bear lean and are kept: QoQ the deck confirms a 190 Cr net-receivable fall, so management's QoQ collections claim holds, while H1 still shows no cash; and forex cannot explain the 63 Cr other-expense rise, which therefore has no cause and may recur. The net-debt run-rate is the sharpest risk: one more Q2-pace quarter uses 107 of 116 Cr headroom, and that pace already includes the 190 Cr release. Break-even is now shown on both cost bases; 685 / 1,130 is the flattered floor. DCI moves to UNVERIFIED. Ledger rows R852-R864 and R325-R327 add cites only; RL715 completes the debt bridge."
 review_path: "runs/tejasnet-q2fy27/work/review_tejasnet_q2fy27.md"
 ```

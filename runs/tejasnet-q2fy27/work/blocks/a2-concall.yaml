@@ -1,4 +1,5 @@
 stage: A2-enumerator
+loop: 1
 company: "TEJASNET"
 quarter: "q2fy27"
 doctype: "concall"
@@ -10,16 +11,16 @@ counts:
   turns: 52
   questions: 15
   mgmt_numbers: 53
-  forward_phrases: 64
-  hedge_qualifiers: 37
+  forward_phrases: 65
+  hedge_qualifiers: 39
   dates: 38
   entities_nonturn: 72
   zero_standing: 0
 flags_raised: [MGMT_ABSENCE, TITLE_DISCREPANCY, REPEAT_QUESTION, RESTATED, ENTITY_CHANGE, NON_DISCLOSURE, AUDIBILITY_CHECK, NEGATIVE_COMMITMENT, EXTERNAL_FORECAST]
 ids_in_structured: 324
-ids_referenced: 324
+ids_referenced: 327
 orphan_ids: []
-missing_from_structured: []
+missing_from_structured: [R325 fulltext 516-517 hedge, R326 fulltext 590-591 hedge, R327 fulltext 524-526 collections forward]
 gate_a2: pass
 mismatch_note: ""
 analyst_note: "Only 2 analysts (Peace Wealth, Niveshaay) asked 15 questions in 52 turns, vs 8 analysts, 37 questions, 109 turns in Q1 (ASR vs edited transcript, so not like-for-like). Order book is Rs2,315cr in mgmt speech (R006) but analysts quote Rs2,300cr and BSNL Rs1,500cr via TCS; mgmt declined the non-BSNL split (R304), asked twice (T11, T13). Rs145cr contract-manufacturing loss asked three times (T27, T30, T32); mgmt says non-recurring. Net debt vs debt vs gross debt labels shift (R032, R033, R299). Sanjay Malik and COO Preetham Uthaiah listed but silent. MD title differs p2 vs p3."

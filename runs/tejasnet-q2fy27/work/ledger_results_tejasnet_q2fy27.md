@@ -396,3 +396,23 @@ Other QUALIFIER rows (stamps, unit labels, status): R802-R809,R813-R815,R821-R82
 - Notes: Q1 FY27 had 6 std + 7 cons numbered notes; Q2 has 5 + 7. Q1 inventory-obsolescence reversal note (Rs 3.10 cr) and balancing-figure note are absent in Q2; Q2 carries the Q2 FY26 Rs 145.43 cr CoM charge note (R818/R843). Silence signal for A3, not interpreted.
 - Warranty provision Rs 7.24 cr Q2 vs 35.11 Q1 vs 44.44 Q2 FY26 (R707-R709, R730-R732).
 - No FORWARD rows, no Going Concern, no EoM. Board meeting 2h15m (Q1 3h10m). No ENTITY_CHANGE.
+
+## 10. MISSING_FROM_STRUCTURED (correction loop 1; found in A1 fulltext, no structured row; fulltext line cited)
+ROW | fulltext line | category | A2 flags | unit
+---|---|---|---|---
+R852 | 159 | line item (std P&L p3) | MISSING_FROM_STRUCTURED, ZERO_STANDING | "(1) Current tax expense/(benefit)" standalone: all period cells dash/OCR noise (label row)
+R853 | 170 | line item (std P&L p3) | MISSING_FROM_STRUCTURED, ZERO_STANDING | "Income tax relating to above" under cash flow hedges, standalone: all cells dash
+R854 | 338 | line item (std cash flow p5) | MISSING_FROM_STRUCTURED, COLS_PARTIAL | "Other finance cost" (OCR "Ather finance cast"), values read "10.99) {NR": two columns, OCR-garbled, not corrected
+R855 | 715 | line item (cons cash flow p11) | MISSING_FROM_STRUCTURED, ZERO_STANDING (comparative dash) | "Repayment of borrowings - non- current" (161.22) H1 FY27, comparative dash. MATERIAL: cash repayment of term debt
+R856 | 488-494 | auditor para (cons p8) | MISSING_FROM_STRUCTURED | Cons review para 5: unmodified conclusion, no material misstatement
+Further units found by fulltext count test (same flag, no structured row):
+R857 | 76-84 | auditor para (std p2) | MISSING_FROM_STRUCTURED | std review para 1: scope of statements reviewed
+R858 | 86-91 | auditor para (std p2) | MISSING_FROM_STRUCTURED | std para 2: management responsibility
+R859 | 105-109 | auditor para (std p2) | MISSING_FROM_STRUCTURED | std para 4: conclusion text (R823 abbreviates it)
+R860 | 423-435 | auditor para (cons p7) | MISSING_FROM_STRUCTURED | cons para 1: scope
+R861 | 437-442 | auditor para (cons p7) | MISSING_FROM_STRUCTURED | cons para 2: management responsibility
+R862 | 444-455 | auditor para (cons p7) | MISSING_FROM_STRUCTURED | cons para 3: review standard SRE 2410 (R850/R851 abbreviate)
+R863 | 480 | auditor para (cons p8) | MISSING_FROM_STRUCTURED | cons para 4 intro: entity list lead-in (entities at R760-R763)
+R864 | 463-475 | identifier block (p7) | MISSING_FROM_STRUCTURED | PW address, head office, LLP conversion 25-Jul-2014 text (R782, R727-R728 partial)
+Not enumerated (boilerplate, no content): page markers, CIN/telephone/registered-office repeats, column header lines (138-139, 284-285, 529-530, 671-672, 784-786), stamp/signature OCR noise. Auditor paras now 11 structured + 9 missing-row = 20 distinct units (std 1-4 and cons 1-6 plus identifiers).
+Updated tally: line_items 238 + 4 = 242; zero_standing rows 37 + 3 = 40; missing_from_structured 13. Gate A2: pass (structured orphan_ids empty; all fulltext units now ledgered).

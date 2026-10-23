@@ -1,4 +1,5 @@
 stage: A2-enumerator
+loop: 1
 company: "TEJASNET"
 quarter: "q2fy27"
 doctype: "results"
@@ -7,21 +8,21 @@ status: complete
 ledger_path: "runs/tejasnet-q2fy27/work/ledger_results_tejasnet_q2fy27.md"
 counts:
   notes: 12
-  line_items: 238
-  zero_standing: 37
+  line_items: 242
+  zero_standing: 40
   agenda_items: 1
-  auditor_paras: 11
+  auditor_paras: 20
   entities: 4
   turns: 0
   questions: 0
   mgmt_numbers: 0
   slides: 0
   slide_numbers: 0
-flags_raised: [ZERO_STANDING, COLS_PARTIAL, OCR_MISREAD_PAIR, RESTATED, FOOTNOTE_UNRESOLVED, UNREVIEWED_SUBS]
+flags_raised: [ZERO_STANDING, COLS_PARTIAL, OCR_MISREAD_PAIR, RESTATED, FOOTNOTE_UNRESOLVED, UNREVIEWED_SUBS, MISSING_FROM_STRUCTURED]
 ids_in_structured: 851
 ids_referenced: 851
 orphan_ids: []
-missing_from_structured: []
+missing_from_structured: [R852_ft159, R853_ft170, R854_ft338, R855_ft715, R856_ft488-494, R857_ft76-84, R858_ft86-91, R859_ft105-109, R860_ft423-435, R861_ft437-442, R862_ft444-455, R863_ft480, R864_ft463-475]
 gate_a2: pass
 mismatch_note: ""
-analyst_note: "Three OCR misread pairs carried uncorrected (R187/R221, R327/R339, R428/R434); A3 must cross-check subtotals. 18 COLS_PARTIAL rows (R109-R113, R132-R134, R441-R449, R594). No ENTITY_CHANGE vs Q1 (holding plus 3 subs). Q1 notes on inventory-obsolescence reversal and balancing figures are absent in Q2, replaced by the Q2 FY26 Rs 145.43 cr CoM charge note; warranty provision fell to Rs 7.24 cr from 35.11. Three subsidiaries unreviewed by their auditors. Board meeting 2h15m vs 3h10m in Q1. No forward statements in document."
+analyst_note: "Loop 1: five A5-named units added (fulltext lines 159, 170, 338, 715, 488-494). Fulltext count test found eight more: standalone review paras 1, 2, 4 and consolidated paras 1-4 and the PW address block, none with structured rows. R855 (cons non-current borrowings repayment 161.22, comparative dash) is the only material financial unit. Three OCR misread pairs carried uncorrected (R187/R221, R327/R339, R428/R434). No ENTITY_CHANGE. Q1 notes on inventory reversal and balancing figures absent. Warranty 7.24 cr vs 35.11. Standalone line 338 OCR garbled."

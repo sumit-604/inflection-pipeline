@@ -4,8 +4,9 @@ quarter: "q2fy27"
 doctype: "concall"
 model: "claude-opus-5-5"
 status: complete
+loop: 1
 forensics_path: "runs/tejasnet-q2fy27/work/forensics_concall_tejasnet_q2fy27.md"
-ledger_reconciled_pct: 100
+ledger_reconciled_pct: 100        # 327 of 327 rows (324 + R325-R327, loop 1)
 checklist:
   F1: N.A.
   F2: N.A.
@@ -26,13 +27,13 @@ checklist:
   F17: FINDING
 findings:
   - {id: "A3-F6-01", check: "F6", line: "l.297-298; l.317-318; prior l.78", classification: "FORWARD-SIGNAL", implication: "EBITDA-positive target undated ('upcoming years') vs Q1 '12 to 18 months'; second consecutive softening"}
-  - {id: "A3-F6-02", check: "F6", line: "l.334; l.338-341; prior l.46", classification: "FORWARD-SIGNAL", implication: "BSNL collections re-dated from Q2 to Q3 FY27, amount withheld; Q3 is the test"}
+  - {id: "A3-F6-02", check: "F6", line: "l.334; l.338-341; l.524-526; prior l.46", classification: "FORWARD-SIGNAL", implication: "BSNL collections re-dated from Q2 to Q3 FY27, amount withheld; dues are earned initial-order milestones (R327); Q3 is the test"}
   - {id: "A3-F6-03", check: "F6", line: "l.139-141; l.315-316; l.514; l.528-530", classification: "FORWARD-SIGNAL", implication: "Debt +Rs107 Cr to Rs4,384 Cr, funds capex and operating costs; Rs116 Cr to Rs4,500 Cr break if net; reduction undated and unquantified"}
   - {id: "A3-F6-04", check: "F6", line: "l.134-137; l.515-518", classification: "AMBIGUOUS", implication: "Inventory down only Rs44 Cr as BSNL deliveries began; target level and date absent"}
   - {id: "A3-F6-05", check: "F6", line: "l.478-481; l.485; l.494; l.498-499", classification: "FORWARD-SIGNAL", implication: "Rs145 Cr provision called non-recurring but caused by BSNL volume manufacturing, which recurs on the 18,685-site expansion"}
   - {id: "A3-F6-06", check: "F6", line: "l.98; l.145; l.349; prior l.34, l.196", classification: "AMBIGUOUS", implication: "18,685 sites vs Q1 '26,000 sites' unreconciled; matches Notion Rs1,526 Cr/18.7k baseline"}
   - {id: "A3-F6-07", check: "F6", line: "l.95; l.346-350", classification: "NEUTRAL-FACT", implication: "Most remaining BSNL POs by 31-Dec-2026; partial PO value in 30-Sep order book is the only by-deadline evidence"}
-  - {id: "A3-F7-01", check: "F7", line: "l.340; l.355; l.514; l.584", classification: "FORWARD-SIGNAL", implication: "Four refusals on collections, order-book split, inventory/debt reduction, NEC revenue; deleveraging rests on assertion"}
+  - {id: "A3-F7-01", check: "F7", line: "l.340; l.355; l.514; l.516-517; l.584; l.590-591", classification: "FORWARD-SIGNAL", implication: "Four refusals by turn (six phrases) on collections, order-book split, inventory/debt reduction, NEC revenue; deleveraging rests on assertion"}
   - {id: "A3-F7-02", check: "F7", line: "l.458-460; l.476; prior l.220", classification: "AMBIGUOUS", implication: "AI DCI orders unquantified; Q1 deployment timeline for new DCI product not updated"}
   - {id: "A3-F7-03", check: "F7", line: "l.464-466; l.535; l.546; l.549-551", classification: "NEUTRAL-FACT", implication: "D2M RFP not issued (2nd quarter), railways trial-only; optionality undated"}
   - {id: "A3-F14-01", check: "F14", line: "l.55-56; l.83", classification: "AMBIGUOUS", implication: "Filed page titles Arnob Roy 'Managing Director and Chairman' vs 'MD and CEO'; verify board change or drafting error"}
@@ -67,6 +68,7 @@ commitments:
   - {commitment: "Railway 700 MHz expansion on trial results", implied_date: "conditional", ref: "T25 l.465-466", status_word: "initiated"}
   - {commitment: "D2M radio heads to RFP winners", implied_date: "once RFP issued", ref: "T44 l.538-551", status_word: "initiated"}
   - {commitment: "Revenue momentum from BSNL", implied_date: "next few quarters", ref: "T51 l.611-612", status_word: "underway"}
+  - {commitment: "Collect initial-order milestone dues ('significant amount is going to come in')", implied_date: "undated in T41; Q3 FY27 per T10", ref: "T41 l.524-526 (R327)", status_word: "due"}
 gate_a3: pass
 blank_checks: []
-analyst_note: "Rs4,384 Cr reads as net debt because its comparison base, Rs4,277 Cr, was Q1 net borrowings (prior l.32). On that read it sits Rs116 Cr under the Rs4,500 Cr break, rose Rs107 Cr QoQ, and now funds operating costs. Management asserted every deleveraging lever (BSNL collections, inventory unwind, debt cut) and refused to quantify any of them. The BSNL collection date slipped one quarter. Q3 FY27 therefore tests three dated items together: BSNL cash, remaining POs, and the debt turn. The Rs185 Cr YoY EBITDA gain sits on a Q2 FY26 base that carried the Rs145 Cr provision. Ex-provision the gain is about Rs40 Cr, and QoQ EBITDA worsened. The provision's named cause recurs on the expansion order. International revenue fell from about half to 12% with no explanation. The Q2 PAT loss of Rs207 Cr exceeds the Rs185 Cr line in digest 5e for book value below Rs140; A4 must confirm this with comprehensive loss from the filing. QIP and DTA are second-consecutive silences, and digest 8c pre-registers that as RED escalation."
+analyst_note: "Rs4,384 Cr reads as net debt because its comparison base, Rs4,277 Cr, was Q1 net borrowings (prior l.32). On that read it sits Rs116 Cr under the Rs4,500 Cr break, rose Rs107 Cr QoQ, and now funds operating costs. Management asserted every deleveraging lever (BSNL collections, inventory unwind, debt cut) and refused to quantify any of them. The BSNL collection date slipped one quarter; loop 1 row R327 shows the expected cash is initial-order dues already earned. Q3 FY27 therefore tests three dated items together: BSNL cash, remaining POs, and the debt turn. The Rs185 Cr YoY EBITDA gain sits on a Q2 FY26 base that carried the Rs145 Cr provision. Ex-provision the gain is about Rs40 Cr, and QoQ EBITDA worsened. The provision's named cause recurs on the expansion order. International revenue fell from about half to 12% with no explanation. The Q2 PAT loss of Rs207 Cr exceeds the digest 5e line for book value below Rs140; A4 must confirm with comprehensive loss. QIP and DTA are second-consecutive silences, which digest 8c pre-registers as RED escalation."

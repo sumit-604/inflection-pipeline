@@ -3,15 +3,16 @@ category: participants   grep_count: 9    sweep_count: 9    match: yes   (5 mgmt
 category: turns          grep_count: 52   sweep_count: 52   match: yes   (grep -c "SPEAKER TURN" in structured = 52; A1 header = 52)
 category: questions      grep_count: 15   sweep_count: 15   match: yes   (18 analyst turns: 15 questions, 1 muffled fragment T34, 2 audibility checks T22/T36; see Note Q)
 category: mgmt_numbers   grep_count: 53   sweep_count: 53   match: yes   (61 NUMBER rows minus R001 cover scrip code minus 7 analyst-voiced R050,R051,R053,R054,R057,R058,R060)
-category: forward_phrases grep_count: 64  sweep_count: 64   match: yes   (R186-R249)
-category: hedge_qualifiers grep_count: 37 sweep_count: 37   match: yes   (R288-R324)
+category: forward_phrases grep_count: 65  sweep_count: 65   match: yes   (R186-R249 plus R327; fulltext re-sweep adds R327)
+category: hedge_qualifiers grep_count: 39 sweep_count: 39   match: yes   (R288-R324 plus R325, R326; fulltext re-sweep)
 category: dates          grep_count: 38   sweep_count: 38   match: yes   (R250-R287)
 category: entities_nonturn grep_count: 72 sweep_count: 72   match: yes   (R062-R133)
 category: zero_standing  grep_count: 0    sweep_count: 0    match: yes   (no nil/dash standing items in a transcript)
 gate_a2: pass
 === END COUNT TEST ===
 
-ids_in_structured: 324 | ids_referenced_in_ledger: 324 | orphan_ids: [] | match: yes
+ids_in_structured: 324 | ids_referenced_in_ledger: 327 (324 structured + 3 MISSING_FROM_STRUCTURED) | orphan_ids: [] | match: yes
+LOOP 1 (A5 correction): fulltext re-sweep for forward and hedge lexicon added R325-R327; no further units found (lines 74 and 327 are operator boilerplate and analyst speech).
 
 Note Q: speaker labels sit in a left column and "?" is inconsistent; questions are identified by function per analyst turn. Analyst turns = 9,11,13,15,17,19,22,24,27,30,32,34,36,38,40,43,45,47 (18). T22 and T36 are audibility checks. T34 is a muffled restart of the question completed in T38 (counted once, in T38). Moderator turns 01,08,21,23,35,37,42,50,52 are procedural.
 Note N: line-to-turn mapping uses the nearest preceding turn start line. Cover-letter rows (lines before 69) carry turn 00. A1 turn rows give each turn's FIRST line only.
@@ -389,3 +390,9 @@ None. MISSING_FROM_STRUCTURED: none found.
 
 === ID ACCOUNTABILITY ===
 R001-R061 (section 4 plus analyst-voiced list plus cover), R062-R185 (sections 1,2,8), R186-R249 (5), R250-R287 (7), R288-R324 (6). ids_in_structured: 324 | ids_referenced_in_ledger: 324 | orphan_ids: [] | match: yes
+
+=== 10. MISSING_FROM_STRUCTURED (loop 1, fulltext line numbers; claim text held here only) ===
+ROW_ID | category | fulltext line | turn | flags | text
+R325 | hedge qualifier | 516-517 | T39 Arnob Roy | MISSING_FROM_STRUCTURED, HEDGE | "we certainly should see a significant reduction of this inventory. That's all I can say, right?" (hedge plus limit on disclosure; adjacent R235, R315)
+R326 | hedge qualifier | 590-591 | T48 Kumar N. Sivarajan | MISSING_FROM_STRUCTURED, NON_DISCLOSURE | "That's about all I can say. I cannot comment on the revenue numbers." (NEC supply; adjacent R243, R244, R320)
+R327 | forward phrase | 524-526 | T41 Arnob Roy | MISSING_FROM_STRUCTURED, FORWARD | "with the collection of the past from the initial order ... milestones ... are due ... significant amount is going to come in" (collections inflow, unquantified, no date; adjacent R236, R237)

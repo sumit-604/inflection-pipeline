@@ -1,10 +1,10 @@
 # A3 FORENSIC NOTES: Tejas Networks (TEJASNET), Q2 FY27, doctype RESULTS
-Inputs read: A1 structured R001-R851 (all), A1 fulltext lines 1-826 (all), A2 ledger (all sections), prior-quarter fulltext Q1 FY27 (all 486 lines), Notion digest sections 4 and 5 only. Source PDF and inputs/ not opened.
+Inputs read: A1 structured R001-R851 (all), A1 fulltext lines 1-826 (all), A2 ledger (all sections incl. section 10, loop 1), prior-quarter fulltext Q1 FY27 (all 486 lines), Notion digest sections 4 and 5 only. Source PDF and inputs/ not opened.
 Units: Rs crore unless stated. "L###" = line in the Q2 fulltext. "P-L###" = line in the Q1 FY27 prior extract.
 
 ## 0. Ledger reconciliation and OCR integrity
 
-Ledger rows read at cited lines: 851 of 851 IDs (100%). Every A2 section (notes, 238 line items, 37 zero rows, agenda, 11 auditor paras, entities, signatures, dates/misc) was checked against the structured file and the fulltext line.
+Ledger rows read at cited lines: 851 of 851 IDs (100%) in the first pass; 864 of 864 after correction loop 1 (see ADDENDUM). Every A2 section (notes, 238 line items, 37 zero rows, agenda, 11 auditor paras, entities, signatures, dates/misc) was checked against the structured file and the fulltext line.
 
 A2 open item resolved: R830 FOOTNOTE_UNRESOLVED. Cons CoM "Refer note- 5" (L539) points to cons note 5, which is the Rs 145.43 Cr CoM charge note (L799). Cons other expenses "Refer note- 6" (L546) points to the warranty note (L802). Cross-references reconcile; no finding.
 
@@ -14,7 +14,7 @@ COLS_PARTIAL (18 rows) resolved by identity, not by estimate:
 - R132-R134 (L174): reserves line; 2,750.70 is the FY26 audited column only.
 - R594 (L686): 0.01 is the H1 FY26 column; H1 FY27 cell reads "é" (nil, consistent with R243 L299).
 
-A1 coverage gaps (lines with financial data but no R-ID; not ledger rows, reported for the record):
+A1 coverage gaps found in the first pass (lines with financial data but no R-ID). A2 has since ledgered all three as R852-R854 (loop 1):
 - L159 std "(1) Current tax expense/(benefit) : ; 2 é" (nil cells; cons L550 shows nil for the same periods).
 - L170 std "Income tax relating to above" on cash flow hedges (nil cells).
 - L338 std "Ather finance cast 10.99) {NR" = Other finance cost. Std financing subtotal L339 641.14 requires (0.99) for H1 FY27.
@@ -38,6 +38,7 @@ OCR subtotal failures (values NOT corrected; both lines cited):
 | O13 | L171 std TCI H1 FY27 | (422.15) | Q1 (208.91) + Q2 (203.24) | = (412.15) | NEW |
 | O14 | L570 cons diluted EPS Q1 FY27 | (41.37) | L569 basic (11.37); P-L398 (11.37) | (11.37) | NEW, trivial |
 | O15 | L563 cons share capital Q2 FY27 | 181,42 | cons BS L623 181.41; std L172 181.41 | 181.41 | NEW, trivial |
+| O16 | L721 cons lease interest H1 FY26; L720 principal H1 FY26 | (5.68); (5.4) | cons financing subtotal L726 631.60; components sum to 632.61 as read; std L334 (6.68), L333 (5.41) | ties at (6.68) / (5.41) | NEW in loop 1 (found while closing R854/R855) |
 
 Downstream rule: A4 uses the arithmetic column only where it labels the number "derived by identity from L### and L###"; the filed OCR value stays on record as read.
 
@@ -48,8 +49,8 @@ Downstream rule: A4 uses the arithmetic column only where it labels the number "
 | A3-01 | F1 | R007, R333 (ZERO_STANDING) | L143, L534 | "(b) Other operating revenue : 0.34 5.15" | AMBIGUOUS | Line is nil in Q2 FY27 vs 0.34 Q1 and 5.15 Q2 FY26. The filing does not name PLI anywhere; if PLI incentive is booked here, no PLI was recognised in Q2. A4 question: where is PLI income booked, and was any claim rejected, deferred or unrecognised in Q2? |
 | A3-02 | F1 | R291, R641 (ZERO_STANDING) | L326, L713 | "Dividend paid : (44.15)" | NEUTRAL-FACT | No dividend paid in H1 FY27 against 44.15 in H1 FY26, after the FY26 loss of 916.43 (L162). Cash conservation; no forward action needed. |
 | A3-03 | F4 | R713-R718, R826 | L499 | "total revenue of Rs. 3.52 crores and Rs. 4.38 crores, total net profit after tax of Rs. 0.80 crores" | AMBIGUOUS | Unreviewed subsidiaries: revenue 0.86 (P-L327) to 3.52 QoQ (4.1x); NPAT 0.00 to 0.80. Share of consolidated PAT 0.39%, revenue 0.87%, assets 0.26% (below 10% bar). S-vs-C revenue gap is only 0.77, so about 2.75 of the 3.52 appears intra-group [inference]. YoY comparator NOT FOUND. A4 question: what drove the jump, and how much is billed to the parent? |
-| A3-04 | F5 | R826-R828, R711-R720 | L496-L505 vs P-L325-P-L331 | "whose financial results reflect total assets of Rs. 21.59 crores and net assets of Rs. 10.90 crores" | NEUTRAL-FACT | Other Matter scope expanded: total assets, net assets and net cash flows (0.89) added; "net loss ... Rs. 0.00" became "net profit ... Rs. 0.80". Same 3 entities, same "not material" representation, conclusion unmodified. Expansion matches the half-year format (balance sheet and cash flow now presented). Report title changed from "Independent Auditors' Review Report on the Statement of Unaudited Standalone Financial Results" (P-L56) to "Review Report" (L60). No Going Concern or EoM either quarter. |
-| A3-05 | F8 | R165-R166, R516-R517, R091-R096, R417-R420 | L221, L607, L550-L551 | "Deferred tax assets (net) 503.75 365.24" | FORWARD-SIGNAL | DTA rose 138.51 in H1 (+37.9%), exactly the H1 deferred credit; current tax nil every period. DTA is 19.9% of consolidated equity 2,527.60 (L625); DTA plus intangibles under development (L601 897.75) = 1,401.50 = 55.4% of equity (44.9% at Mar-26). Both are year-end audit judgements (recoverability, impairment). A loss-making year 3 tests DTA recoverability at the FY27 audit; any derecognition hits book value directly. |
+| A3-04 | F5 | R826-R828, R711-R720; loop 1: R857, R860 | L496-L505 vs P-L325-P-L331; L76-L84 vs P-L73-P-L79; L423-L435 vs P-L260-P-L269 | "whose financial results reflect total assets of Rs. 21.59 crores and net assets of Rs. 10.90 crores" | NEUTRAL-FACT | Other Matter scope expanded: total assets, net assets and net cash flows (0.89) added; "net loss ... Rs. 0.00" became "net profit ... Rs. 0.80". Same 3 entities, same "not material" representation, conclusion unmodified. Review para 1 (std and cons) now also covers the year-to-date results, the Statement of Assets and Liabilities and the half-year Cash Flows (see ADDENDUM). All expansions match the half-year format, and note 1 (L370-L373) lists the same statements. Report titles changed from "Independent Auditors' Review Report on the Statement of Unaudited Standalone/Consolidated Financial Results" (P-L56, P-L243) to "Review Report" (L60, L407). No Going Concern or EoM either quarter. |
+| A3-05 | F8 | R165-R166, R516-R517, R091-R096, R417-R420, R852 | L221, L607, L550-L551, L159 | "Deferred tax assets (net) 503.75 365.24" | FORWARD-SIGNAL | DTA rose 138.51 in H1 (+37.9%), exactly the H1 deferred credit; current tax nil every period. DTA is 19.9% of consolidated equity 2,527.60 (L625); DTA plus intangibles under development (L601 897.75) = 1,401.50 = 55.4% of equity (44.9% at Mar-26). Both are year-end audit judgements (recoverability, impairment). A loss-making year 3 tests DTA recoverability at the FY27 audit; any derecognition hits book value directly. |
 | A3-06 | F8 | R085-R102, R411-R434 | L157, L160 (H1 FY26 col); L548, L551 (Q2 FY27 col); P-L169, P-L172 | "(2) Deferred tax expense/{benefit) (69.94) (68.57)" | AMBIGUOUS | Deferred-tax credit rate: H1 FY26 34.96% (269.33 / 770.41), Q2 FY26 35.06% (165.86 by identity, see O4), Q4 FY26 24.12% (69.46 / 287.92, prior extract), Q1 FY27 25.32%, Q2 FY27 25.18%. Step of about 978 bps at Q4 FY26. Reading 1: move to the s.115BAA 25.17% rate. Reading 2: partial non-recognition of DTA on new losses. Separating observation: a regime switch would need a remeasurement charge on the opening DTA (about 100 on 365.24 [inference]); Q4 FY26 shows a credit of 69.46 against 72.47 at 25.17%, so no charge of that size is visible. Each Rs 100 of loss now books 25.17 of DTA, not 34.94. Tax adjustments for earlier years: no line in either statement (NOT FOUND). |
 | A3-07 | F9 | R109, R441-R445 | L556, L562 | "en the post-employment benefit obligation nee 1.05 2.23 283 279 159" | NEUTRAL-FACT | Remeasurement gain Q2 FY27 = 1.78 (derived by TCI identity, cell OCR-unread) exceeds full FY26 1.59. H1 FY26 2.79 also exceeded FY26, so H2 FY26 reversed 1.20: a seasonal discount-rate pattern [inference]. Rs amounts immaterial. Verify actuarial assumptions at the FY27 Annual Report. |
 | A3-08 | F10 | R126-R146, R474-R497, R540 | L172, L178-L179, L569-L570, L623 | "(1) Basic (11.62) ... (2) Diluted (11.62)" | AMBIGUOUS | Basic = diluted in all periods (loss year, instruments anti-dilutive): spread zero. Paid-up 181.25 to 181.41 in Q2 (+1.6 lakh shares), traced to RSU/ESOP exercise (L325 proceeds 0.84 H1). EPS-implied weighted shares 17.809 Cr (206.94 / 11.62) vs issued 18.141 Cr (181.41 / Rs 10): gap 0.33 Cr shares (1.8%), consistent with shares held by an employee trust [inference]. Spread will open when profit turns positive. A4 question: trust-held share count and the RSU/ESOP overhang. |
@@ -57,7 +58,7 @@ Downstream rule: A4 uses the arithmetic column only where it labels the number "
 | A3-10 | F12 | R153-R156, R504-R507, R273-R274, R623, R061-R066 | L214, L215, L316, L153 | "Other intangible assets 688.10 386.05" | FORWARD-SIGNAL | Other intangibles +302.05 (+78%) while intangibles under development fell 52.68 with H1 spend of 358.59: roughly 411 moved from development into amortising intangibles [inference, cash basis]. D&A is still falling (100.98 Q2 FY26, 94.35 Q1, 91.48 Q2). Expect amortisation to step up from Q3 FY27. A4 question: amount capitalised, products, useful life. |
 | A3-11 | F12 | R707-R709, R730-R732, R213-R214, R259 | L381, L255, L308 | "provision for warranty expenses amounting to Rs. 7.24 crore (Rs. 35.11 crore for the quarter ended June 30, 2026" | AMBIGUOUS | Warranty charge fell 79% QoQ on flat revenue: 1.8% of revenue vs 8.7% Q1, 17.0% Q2 FY26, 11.8% Q4 FY26 (39.30, P-L222). Current provisions 158.44 to 139.29. Same basis wording as Q1 ("potential fault rates, repair requirements and anticipated warranty claims"). Reading 1: fault-rate re-estimate. Reading 2: product mix or expiry of warranty periods on earlier shipments. Worth about 27.87 of Q2 PBT at the Q1 rate. |
 | A3-12 | F12 | R067-R072, R393-R398, R227 | L154, L545 | "(g) Allowance for expected credit loss (10.55) 8.08 15.58" | AMBIGUOUS | ECL swung from an 8.08 charge (Q1) to a 10.55 write-back (Q2). With A3-11, estimate releases total about 46.50 vs Q1 rates; Q2 PBT loss (277.71) vs Q1 (270.81) would be about (324) at Q1 rates [inference]. A4 question: which receivables drove the write-back, and is it a collection or a model change? |
-| A3-13 | F12 | R195-R196, R203-R204, R546-R547, R554-R555, R293-R314, R643-R662 | L243, L249, L327-L332, L336 | "(i) Borrowings 1,162.40 551.83" | CONFIRMATORY-NEGATIVE | Gross borrowings 4,035.47 to 4,835.35 (+799.88). Non-current borrowings 2.1x. Supplier finance proceeds 600.96 to 160.74 (H1 YoY): payables finance replaced by bank debt. Interest on current borrowings 125.92 vs 75.68 H1 FY26 (+66%). Net debt (gross borrowings less cash, current investments and other bank balances, ex-lease) 4,384.39 vs 3,530.67 at Mar-26; 4,518.90 including lease liabilities 134.51. |
+| A3-13 | F12 | R195-R196, R203-R204, R546-R547, R554-R555, R293-R314, R643-R662; loop 1: R855 | L243, L249, L327-L332, L336, L714-L715 | "(i) Borrowings 1,162.40 551.83" | CONFIRMATORY-NEGATIVE | Gross borrowings 4,035.47 to 4,835.35 (+799.88). Non-current borrowings 2.1x: proceeds 855.72 less repayment (161.22) (std L328, cons L715) = 694.50 net cash, against a balance rise of 610.57. The 83.93 difference is consistent with a move to current maturities [inference]. Supplier finance proceeds 600.96 to 160.74 (H1 YoY): payables finance replaced by bank debt. Interest on current borrowings 125.92 vs 75.68 H1 FY26 (+66%). Net debt (gross borrowings less cash, current investments and other bank balances, ex-lease) 4,384.39 vs 3,530.67 at Mar-26; 4,518.90 including lease liabilities 134.51. |
 | A3-14 | F14 | R818, R843 (note 3 / cons note 5) | L378, L799 vs P-L218, P-L460 | "For the quarter ended September 30, 2025, cost of materials consumed includes a charge of Rs. 145.43 crore" | AMBIGUOUS | Q1 note 3 disclosed the current-quarter inventory obsolescence movement (reversal 3.10, P-L218). Q2 note 3 discloses only the comparative-quarter charge; the current-quarter movement is silent. CoM rose 132.08 to 237.84 on flat revenue, offset by the inventory-change swing (109.05 to (13.70)). A4 question: did Q2 FY27 CoM include any obsolescence charge or reversal? |
 | A3-15 | F14 | R677, R692 vs R013, R106 | L790 vs L144; L794 vs L162 | "Revenue from operations 404.31 401.95" | NEUTRAL-FACT | Note 4 summary vs standalone P&L: revenue 404.31 vs 404.91; H1 PAT 410.01 vs 410.03. Arithmetic supports 404.91 and 410.01. OCR or filing typo: cannot separate without the source (A1 domain). |
 | A3-16 | F14 | R761, R764 | L484, L763 vs P-L312 | "a) Tejas Communication Pte. Limited, Singapore" | NEUTRAL-FACT | Q1 auditor list read "Tejas Communications Pte. Limited" (P-L312); Q2 auditor list and both notes read "Communication". "Saankhya Labs Inc" (L486) vs "Inc." (L767). Name variants only; no entity change (F15 PASS). |
@@ -66,14 +67,14 @@ Downstream rule: A4 uses the arithmetic column only where it labels the number "
 
 | Check | Status | Basis |
 |---|---|---|
-| F1 Zero-value standing items | FINDING | 18 zero line items reviewed (table below). Material: other operating revenue nil (A3-01), dividend nil (A3-02). Rest are template lines (disposals, deposit withdrawals, ROU additions, OCI tax, interim reserves). |
+| F1 Zero-value standing items | FINDING | 18 zero line items reviewed (table below), plus 3 added in loop 1 (R852, R853, R855). Material: other operating revenue nil (A3-01), dividend nil (A3-02). Rest are template lines (disposals, deposit withdrawals, ROU additions, OCI tax, interim reserves, current tax). |
 | F2 Standalone vs consolidated | PASS | PAT gap as % of standalone PAT: Q2 FY27 0.40%, Q1 0.00%, Q2 FY26 0.01%, H1 FY27 0.20%, FY26 0.82%. Largest move under 1 pp, below the 5 pp bar. Decomposition below. |
 | F3 Shell-entity detection | PASS | No shells: consolidated employee cost exceeds standalone by 4.30 (Q2, L151 vs L542). D&A identical in all six columns (L153 vs L544), so subsidiaries hold no material depreciable assets. Cons other expenses below standalone by 4.40 (L155 vs L546) and std trade payables exceed cons by 11.07 (L253 vs L639): intra-group recharges eliminated. Captive cost-centre pattern. No Going Concern EoM to reconcile. Subsidiary net assets 10.90 (L498) vs parent investment 10.87 (L217): no impairment indicator. |
 | F4 Unaudited contribution | FINDING | 0.39% of consolidated PAT, below 10%. QoQ jump recorded as A3-03; YoY comparator NOT FOUND. |
-| F5 Going concern / EoM scope | FINDING | No GC or EoM either quarter. Other Matter scope and wording changed (A3-04), driven by the half-year format. Verbatim diff: P-L325-P-L331 vs L496-L505. |
+| F5 Going concern / EoM scope | FINDING | No GC or EoM either quarter. Other Matter and review para 1 scope and wording changed (A3-04), driven by the half-year format. Verbatim diffs: P-L325-P-L331 vs L496-L505; ADDENDUM table for paras 1-5. |
 | F6 Forward-commitment phrases | PASS | Lexicon sweep over L1-L826: zero hits. Matches A1 FORWARD count 0. Commitment register empty. |
 | F7 Hedge phrases | PASS | Lexicon sweep: zero hits. Warranty note basis wording unchanged from Q1 (L382 vs P-L222); no new hedge added. |
-| F8 Tax forensics | FINDING | Credit rate ~25.2% vs statutory 25.17% in FY27; ~35% in H1 FY26 (A3-06). Persistent deferred credits, zero current tax, DTA build (A3-05). Shield: 2,518 bps of pre-tax loss in Q2 FY27. |
+| F8 Tax forensics | FINDING | Credit rate ~25.2% vs statutory 25.17% in FY27; ~35% in H1 FY26 (A3-06). Persistent deferred credits, zero current tax (cons L550, std L159/R852), DTA build (A3-05). Shield: 2,518 bps of pre-tax loss in Q2 FY27. |
 | F9 OCI forensics | FINDING | Q2 actuarial gain 1.78 (derived) > FY26 full-year 1.59 (A3-07). Cash-flow hedge OCI Q1 (7.72), Q2 2.75, under FY26 11.81. |
 | F10 Share count and dilution | FINDING | Spread zero; issued vs EPS-implied weighted count gap 0.33 Cr shares (A3-08). |
 | F11 Reserves and net worth | PASS | Std 181.41 + 2,346.16 = 2,527.57; cons 181.41 + 2,346.19 = 2,527.60; Mar-26 both tie. Roll-forward: 2,930.87 + TCI (411.28) + share-based payments 4.50 + RSU proceeds 0.84 = 2,524.93 vs 2,527.60. Residual 2.67 (0.1%), below 5%. Candidates: trust share movements, hedge-reserve recycling, RSU reserve transfers. |
@@ -91,11 +92,11 @@ Downstream rule: A4 uses the arithmetic column only where it labels the number "
 | Other operating revenue (Q2 FY27) | L143, L534 | Incentives, scrap, export benefits, PLI | A3-01 |
 | Income tax on OCI items | L167, L170, L557, L561 | Tax on remeasurement / hedge OCI | Nil all periods: no DTA booked through OCI; DTA build is P&L-only |
 | Interim reserves cells | L174, L565 | Reserves shown for audited year only | Template |
-| Current tax (cons) | L550 | Current tax charge | Nil FY27; see F8 |
+| Current tax (std and cons) | L159, L550 | Current tax charge | Nil FY27; see F8 |
 | Profit/proceeds on PPE disposal | L299, L317, L686, L704 | Asset sales | No disposals H1 FY27 |
 | Withdrawals of bank deposits | L319, L706 | Deposit maturity | None H1 FY27 |
 | Dividend paid | L326, L713 | Distribution | A3-02 |
-| Repayment of NC borrowings (H1 FY26 col) | L328 | Term-debt repayment | Now (161.22) in H1 FY27 |
+| Repayment of NC borrowings (H1 FY26 col) | L328, L715 | Term-debt repayment | Now (161.22) in H1 FY27; see A3-13 |
 | ROU additions (non-cash) | L345, L732 | New leases | None H1 FY27 |
 
 ### F2 decomposition (S = standalone, C = consolidated)
@@ -133,6 +134,51 @@ Q2 FY27 gap components: subsidiary revenue 3.52 (L499) less eliminations about 2
 | Cash-loss track | H1 FY27 cons CFO (311.93) (L700); FCF after capex and intangibles (709.11) [L700, L702, L703] | |
 | Warranty provision | 7.24 (L802) | A3-11 |
 
+## ADDENDUM (loop 1): A2 ledger section 10, rows R852-R864 (MISSING_FROM_STRUCTURED)
+
+All 13 rows were read at their fulltext lines. Ledger now 864 of 864 IDs reconciled (100%).
+
+### Per-row status
+
+| Row | Line | Verbatim (short) | Status | Note |
+|---|---|---|---|---|
+| R852 | L159 | "(1) Current tax expense/(benefit) : ; 2 é" | reviewed, no new finding | Nil cells, same as cons L550 (Q2/Q1/Q2 FY26/H1 FY27 dash). Supports F8 and A3-05 "zero current tax". |
+| R853 | L170 | "Income tax relating to above . . * - . *" | reviewed, no new finding | Nil tax on hedge OCI; same pattern as cons L561. F1 template line. |
+| R854 | L338 | "Ather finance cast 10.99) {NR" | reviewed, no new finding | By identity: H1 FY27 = (0.99) (L339 641.14 less other L325-L337 lines); H1 FY26 = (0.89) (L339 631.74 less other lines). Cons L725 reads (1.05) / (1.03). The std vs cons gap (0.06 / 0.14) is small and consistent with subsidiary bank charges [inference]. Values not corrected. |
+| R855 | L715 | "Repayment of borrowings - non- current (161.22) ." | reviewed, folded into A3-13 (CONFIRMATORY-NEGATIVE) | Cons figure equals std L328 (161.22); comparative dash = no NC repayment in H1 FY26. Closes the cons financing subtotal: L726 641.08 ties with this row included. Net NC cash 694.50 vs balance rise 610.57 (L629). While closing the H1 FY26 column, O16 (cons L720-L721) was found. |
+| R856 | L488-L494 | "nothing has come to our attention that causes us to believe that the accompanying Consolidated Statement has not been prepared in all material respects" | reviewed, no finding | Verbatim identical to Q1 para 5 (P-L316-P-L323). Unmodified. |
+| R857 | L76-L84 | "for the quarter ended September 30, 2026 and the year to date results for the period April 01, 2026 to September 30, 2026, the 'Unaudited Standalone Statement of Assets and Liabilities'" | FINDING, folded into A3-04 (NEUTRAL-FACT) | Scope expanded vs Q1 para 1 (P-L73-P-L79). Diff below. |
+| R858 | L86-L91 | "This Standalone Statement, which is the responsibility of the Company's Management and approved by the Board of Directors" | reviewed, no finding | Identical to P-L81-P-L86 (apostrophe glyph only). |
+| R859 | L104-L109 | "Based on our review conducted as above, nothing has come to our attention" | reviewed, no finding | Identical to P-L101-P-L107. Unmodified conclusion. |
+| R860 | L423-L435 | "for the quarter ended September 30, 2026 and the year to date results for the period April 01, 2026 to September 30, 2026, the 'Unaudited Consolidated Statement of Assets and Liabilities'" | FINDING, folded into A3-04 (NEUTRAL-FACT) | Scope expanded vs Q1 cons para 1 (P-L260-P-L269). Diff below. |
+| R861 | L437-L442 | "This Consolidated Statement, which is the responsibility of the Holding Company's Management" | reviewed, no finding | Identical to P-L271-P-L276. |
+| R862 | L444-L455 (and L456-L458) | "We conducted our review of the Consolidated Statement in accordance with the Standard on Review Engagements ('SRE') 2410" | reviewed, no finding | Identical to P-L278-P-L288; the SEBI Regulation 33(8) sentence L456-L458 is identical to P-L290-P-L292. |
+| R863 | L480 | "4. The Consolidated Statement includes the results of the following entities:" | reviewed, no new finding | Identical lead-in to P-L308. Entity name variant on L484 already logged as A3-16. |
+| R864 | L463-L475 | "its ICAI registration number is 012754N/N500016 (ICAI registration ... number before conversion was 012754)" | reviewed, no finding | Identical to P-L297-P-L303 except "012754)" vs "012754N)" (P-L303; Q2 std L124 also reads "012754N)"). OCR drop of "N"; not a drafting change. |
+
+### Verbatim diff of the review paragraphs (Q2 vs Q1)
+
+| Para | Q2 line | Q1 line | Diff |
+|---|---|---|---|
+| Std title | L60 "Review Report" | P-L56-P-L57 "Independent Auditors' Review Report on the Statement of Unaudited Standalone Financial Results" | Title shortened (A3-04) |
+| Std 1 scope | L76-L84 | P-L73-P-L79 | Q1: "for the quarter ended June 30, 2026, which are included in the accompanying 'Statement of Unaudited Standalone Financial Results' for the quarter ended June 30, 2026 (the "Standalone Statement")". Q2 adds: "and the year to date results for the period April 01, 2026 to September 30, 2026, the 'Unaudited Standalone Statement of Assets and Liabilities' as on that date and the 'Unaudited Standalone Statement of Cash Flows' for the half-year ended on that date" and "(together the "Standalone Statement")". |
+| Std 2 responsibility | L86-L91 | P-L81-P-L86 | none |
+| Std 3 SRE 2410 | L93-L102 | P-L88-P-L99 | none |
+| Std 4 conclusion | L104-L109 | P-L101-P-L107 | none |
+| Cons title | L407 "Review Report" | P-L243-P-L244 "Independent Auditors' Review Report on the Statement of Unaudited Consolidated Financial Results" | Title shortened (A3-04) |
+| Cons 1 scope | L423-L435 | P-L260-P-L269 | Q1: "for the quarter ended June 30, 2026 which are included in the accompanying 'Statement of Unaudited Consolidated Financial Results for the quarter ended June 30, 2026' (the "Consolidated Statement")". Q2 adds the year-to-date results, the 'Unaudited Consolidated Statement of Assets and Liabilities' and the half-year 'Unaudited Consolidated Statement of Cash Flows', and "(together the "Consolidated Statement")". |
+| Cons 2 responsibility | L437-L442 | P-L271-P-L276 | none |
+| Cons 3 SRE 2410 + 33(8) | L444-L458 | P-L278-P-L292 | none |
+| Cons 4 entities | L480-L486 | P-L308-P-L314 | "Communications" (Q1) to "Communication" (Q2), see A3-16 |
+| Cons 5 conclusion | L488-L494 | P-L316-P-L323 | none |
+| Cons 6 Other Matter | L496-L507 | P-L325-P-L333 | "The unaudited consolidated" became "The consolidated unaudited"; balance-sheet and cash-flow amounts added; loss 0.00 became profit 0.80 (A3-04) |
+
+Reading: every change is the H1 format adding the balance sheet and cash flow to the review scope. Assurance level (moderate, SRE 2410), conclusions (unmodified), the Other Matter "not material" representation, the partner (Prasanna Padar Mahabala, M.No. 206477) and the firm are all unchanged. No modification, emphasis or new matter.
+
+### Status re-check F1-F17
+
+No status changes. F1 stays FINDING (R852, R853, R855 add template zero cells only). F5 stays FINDING (A3-04 widened, class unchanged). F8 stays FINDING (R852 confirms nil current tax). F12 stays FINDING (A3-13 gets the L715 cite). F11 stays PASS (R854 does not touch equity). All other checks are unchanged. Finding count stays 16: FORWARD-SIGNAL 2, AMBIGUOUS 8, CONFIRMATORY-NEGATIVE 1, NEUTRAL-FACT 5. New OCR item O16 (cons L720-L721, H1 FY26 column) is an integrity note, not a finding.
+
 ```yaml
 stage: A3-forensics
 company: "TEJASNET"
@@ -140,8 +186,9 @@ quarter: "q2fy27"
 doctype: "results"
 model: "claude-opus-5-5"
 status: complete
+loop: 1
 forensics_path: "runs/tejasnet-q2fy27/work/forensics_results_tejasnet_q2fy27.md"
-ledger_reconciled_pct: 100
+ledger_reconciled_pct: 100        # 864 of 864 IDs (R001-R864) after loop 1
 checklist:
   F1: FINDING
   F2: PASS
@@ -164,8 +211,8 @@ findings:
   - {id: "A3-01", check: "F1", line: "L143, L534", classification: "AMBIGUOUS", implication: "Other operating revenue nil Q2 (0.34 Q1, 5.15 Q2 FY26); if PLI sits here, no PLI recognised in Q2; ask where PLI is booked and claim status"}
   - {id: "A3-02", check: "F1", line: "L326, L713", classification: "NEUTRAL-FACT", implication: "No dividend paid H1 FY27 vs 44.15 H1 FY26 after FY26 loss"}
   - {id: "A3-03", check: "F4", line: "L499 (vs prior P-L327)", classification: "AMBIGUOUS", implication: "Unreviewed subsidiary revenue 0.86 to 3.52 QoQ, NPAT 0.00 to 0.80; 0.39% of PAT; about 2.75 appears intra-group; ask driver and parent billing"}
-  - {id: "A3-04", check: "F5", line: "L496-L505 (vs P-L325-P-L331)", classification: "NEUTRAL-FACT", implication: "Other Matter scope expanded to assets, net assets, cash flows (half-year format); same 3 entities; no GC or EoM; report title shortened"}
-  - {id: "A3-05", check: "F8", line: "L221, L607, L550-L551", classification: "FORWARD-SIGNAL", implication: "DTA 365.24 to 503.75, P&L credits only, zero current tax; DTA 19.9% of equity, DTA plus IAUD 55.4%; FY27 audit recoverability test can cut book value"}
+  - {id: "A3-04", check: "F5", line: "L496-L505 (vs P-L325-P-L331); L76-L84 (vs P-L73-P-L79); L423-L435 (vs P-L260-P-L269); L60, L407", classification: "NEUTRAL-FACT", implication: "Other Matter and review para 1 scope expanded to balance sheet and cash flows (half-year format); same 3 entities; conclusions unmodified; no GC or EoM; report titles shortened"}
+  - {id: "A3-05", check: "F8", line: "L221, L607, L550-L551, L159", classification: "FORWARD-SIGNAL", implication: "DTA 365.24 to 503.75, P&L credits only, zero current tax; DTA 19.9% of equity, DTA plus IAUD 55.4%; FY27 audit recoverability test can cut book value"}
   - {id: "A3-06", check: "F8", line: "L157, L160, L548, L551; P-L169, P-L172", classification: "AMBIGUOUS", implication: "Deferred credit rate ~35% (H1 FY26) to ~25.2% (FY27), step at Q4 FY26 with no visible remeasurement charge; regime switch vs partial non-recognition; ask"}
   - {id: "A3-07", check: "F9", line: "L556, L562", classification: "NEUTRAL-FACT", implication: "Q2 actuarial gain 1.78 (derived by TCI identity) exceeds FY26 full-year 1.59; immaterial; verify assumptions at FY27 AR"}
   - {id: "A3-08", check: "F10", line: "L172, L569-L570, L623, L325", classification: "AMBIGUOUS", implication: "Basic = diluted (loss); issued 18.141 Cr vs EPS-implied 17.809 Cr shares, gap 0.33 Cr; ask trust-held shares and RSU/ESOP overhang; decides BV/share side of 140"}
@@ -173,7 +220,7 @@ findings:
   - {id: "A3-10", check: "F12", line: "L214, L215, L316, L153", classification: "FORWARD-SIGNAL", implication: "Other intangibles +302.05, IAUD -52.68 on 358.59 spend; about 411 capitalised into amortising base; D&A step-up from Q3 FY27 while D&A still falling"}
   - {id: "A3-11", check: "F12", line: "L381, L255, L308", classification: "AMBIGUOUS", implication: "Warranty provision 35.11 to 7.24 on flat revenue (1.8% vs 8.7% of revenue); about 27.87 PBT support; fault-rate re-estimate vs mix or warranty expiry; ask"}
   - {id: "A3-12", check: "F12", line: "L154, L545", classification: "AMBIGUOUS", implication: "ECL 8.08 charge to 10.55 write-back; with warranty, about 46.50 of estimate release; Q2 loss near (324) at Q1 rates; ask collection vs model change"}
-  - {id: "A3-13", check: "F12", line: "L243, L249, L327-L332, L336", classification: "CONFIRMATORY-NEGATIVE", implication: "Gross borrowings +799.88 to 4,835.35; supplier finance replaced by bank debt; net debt 4,384.39 ex-lease, 4,518.90 incl. lease"}
+  - {id: "A3-13", check: "F12", line: "L243, L249, L327-L332, L336, L714-L715", classification: "CONFIRMATORY-NEGATIVE", implication: "Gross borrowings +799.88 to 4,835.35; NC proceeds 855.72 less repayment 161.22 (L715); supplier finance replaced by bank debt; net debt 4,384.39 ex-lease, 4,518.90 incl. lease"}
   - {id: "A3-14", check: "F14", line: "L378, L799 (vs P-L218, P-L460)", classification: "AMBIGUOUS", implication: "Current-quarter inventory obsolescence movement no longer disclosed; note now comparative-only; ask Q2 obsolescence charge or reversal"}
   - {id: "A3-15", check: "F14", line: "L790 vs L144; L794 vs L162", classification: "NEUTRAL-FACT", implication: "Note 4 summary vs P&L: 404.31 vs 404.91, 410.01 vs 410.03; arithmetic supports 404.91 and 410.01; OCR vs typo unresolved"}
   - {id: "A3-16", check: "F14", line: "L484, L763 (vs P-L312); L486 vs L767", classification: "NEUTRAL-FACT", implication: "Subsidiary name variants Communication/Communications and Inc/Inc.; no entity change"}
@@ -182,5 +229,6 @@ ambiguous: ["A3-01", "A3-03", "A3-06", "A3-08", "A3-09", "A3-11", "A3-12", "A3-1
 commitments: []
 gate_a3: pass
 blank_checks: []
-analyst_note: "Q2 loss looks flat QoQ (277.71 vs 270.81), but two estimate releases hold it there. Warranty fell 35.11 to 7.24; ECL went from an 8.08 charge to a 10.55 write-back. At Q1 rates the loss is about 46.5 larger. The 1,110 receivables fall did not reach cash: other current liabilities fell 1,266 in the same half and CFO stayed (311.93). That fits a set-off of advances; the filing is silent. Intangibles rose 302 while IAUD fell 53, so amortisation should rise from Q3. DTA plus IAUD equal 55% of equity, both year-end judgements. BV/share is 139.33 on issued shares, 141.93 on the EPS-implied count; trust-held shares decide which side of 140. Net debt on the Notion Mar-26 definition is 4,384; with leases 4,519. OCR: the other-liabilities sign misread is on standalone L310, not the consolidated line A1 named; std tax L160-L161 misread Q2 FY26 and H1 FY27 by 100. Results doctype has no forward or hedge language (F6, F7 zero hits)."
+loop1_rows: {read: 13, new_findings: 0, folded: ["R855 -> A3-13", "R857 -> A3-04", "R860 -> A3-04"], status_changes: none, new_ocr_items: ["O16 cons L720-L721 H1 FY26"]}
+analyst_note: "Q2 loss looks flat QoQ (277.71 vs 270.81), but two estimate releases hold it there. Warranty fell 35.11 to 7.24; ECL went from an 8.08 charge to a 10.55 write-back. At Q1 rates the loss is about 46.5 larger. The 1,110 receivables fall did not reach cash: other current liabilities fell 1,266 in the same half and CFO stayed (311.93). That fits a set-off of advances; the filing is silent. Intangibles rose 302 while IAUD fell 53, so amortisation should rise from Q3. DTA plus IAUD equal 55% of equity, both year-end judgements. BV/share is 139.33 on issued shares, 141.93 on the EPS-implied count; trust-held shares decide which side of 140. Net debt on the Notion Mar-26 definition is 4,384; with leases 4,519. OCR: the other-liabilities sign misread is on standalone L310, not the consolidated line A1 named; std tax L160-L161 misread Q2 FY26 and H1 FY27 by 100. Loop 1: review paragraphs changed only by the half-year scope; no status change."
 ```

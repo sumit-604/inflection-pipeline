@@ -1,30 +1,31 @@
 # A3 FORENSIC NOTES: TEJASNET Q2 FY27, doctype CONCALL (filed transcript, call 16-Oct-2026, filed 22-Oct-2026)
 
-Agent: A3 forensic notes | model: claude-opus-5-5 | run date 2026-10-23
-Inputs read: A1 structured (R001-R324), A1 fulltext (624 lines), A2 ledger, Q1 FY27 concall extract (ASR, prior), Notion digest sections 4, 5, 8 only. No source PDF opened, nothing under inputs/ opened, digest section 9 and Key Notes not read.
+Agent: A3 forensic notes | model: claude-opus-5-5 | run date 2026-10-23 | correction loop 1 applied (see section 7)
+Inputs read: A1 structured (R001-R324), A1 fulltext (624 lines), A2 ledger (R001-R327 after loop 1), Q1 FY27 concall extract (ASR, prior), Notion digest sections 4, 5, 8 only. No source PDF opened, nothing under inputs/ opened, digest section 9 and Key Notes not read.
 
 Line references: "l.N" = A1 fulltext line of the Q2 transcript. "prior l.N" = line of the Q1 FY27 extract file. "dig. N" = Notion digest section.
 Transcript qualifier: Q2 text is "edited for clarity and readability and does not purport to be a verbatim record" (l.622). Q1 text is machine ASR with garbles. Quotes below are verbatim from the A1 files, not from the call audio.
 
 ## 0. LEDGER RECONCILIATION
 
-- Rows in ledger: 324 (R001-R324; orphan_ids none). Rows read at their cited line in the fulltext: 324. Reconciled: 100%.
-- Ledger count test re-checked: 52 turns, 15 questions, 53 management numbers, 64 forward phrases, 37 qualifiers, 38 dates, 72 non-turn entities, 0 ZERO_STANDING. All agree with the structured file.
+- Rows in ledger: 324 at first pass (R001-R324; orphan_ids none). Rows read at their cited line in the fulltext: 324. Reconciled: 100%.
+- Loop 1: A2 added R325-R327 (MISSING_FROM_STRUCTURED). All 3 read at their fulltext lines. Ledger now 327 rows, 327 read, reconciled 100% (section 7).
+- Ledger count test re-checked: 52 turns, 15 questions, 53 management numbers, 64 forward phrases (65 after loop 1), 37 qualifiers (39 after loop 1), 38 dates, 72 non-turn entities, 0 ZERO_STANDING. All agree with the structured file plus the loop 1 rows.
 - Line offsets found (immaterial, no row lost): R285 "Navratri" cited l.606 (turn start), text sits at l.607. R040 "2030" spans l.204-205. R286 "end of next quarter" spans l.616-617.
-- A2 flags carried and used: LABEL net debt (R032/R033, R292/R299), UNQUANTIFIED_INVENTORY_DEBT_PATH (R189, R212, R219, R235-R237), NON_DISCLOSURE (R301, R304, R315, R320), NEGATIVE_COMMITMENT (R233, R234), TITLE_DISCREPANCY (R068), MGMT_ABSENCE (R071, R072), FOOTNOTE_UNRESOLVED (R317), MISMATCH (R006 vs analyst R050/R054).
+- A2 flags carried and used: LABEL net debt (R032/R033, R292/R299), UNQUANTIFIED_INVENTORY_DEBT_PATH (R189, R212, R219, R235-R237), NON_DISCLOSURE (R301, R304, R315, R320, R326), NEGATIVE_COMMITMENT (R233, R234), TITLE_DISCREPANCY (R068), MGMT_ABSENCE (R071, R072), FOOTNOTE_UNRESOLVED (R317), MISMATCH (R006 vs analyst R050/R054).
 
 ## 1. FINDINGS TABLE
 
 | id | check | ledger row ref | line | short verbatim quote | classification | forward implication |
 |---|---|---|---|---|---|---|
 | A3-F6-01 | F6 | R214, R220, R272, R274 | l.297-298; l.317-318; prior l.78 | "achieving quarterly positive EBITDA performance" / "visible path to profitability in the upcoming years" vs Q1 "12 to 18 months is a reasonable time to expect" | FORWARD-SIGNAL | EBITDA-positive target lost its date. Chain: AGM-26 Q4 FY27 -> Q1 "12 to 18 months" -> Q2 undated "upcoming years". Second consecutive softening, unacknowledged. Gate 4 (re-dated named quarter) not met. |
-| A3-F6-02 | F6 | R221, R222, R275, R276, R301 | l.334; l.338-341; prior l.46 | "this is the quarter when we will see a significant amount of collections coming from BSNL" | FORWARD-SIGNAL | Q1 promised BSNL receivables "cleared during the quarter" (prior l.46). Analyst flagged the miss (l.334). Promise re-dated one quarter to Q3 FY27, amount withheld (l.340). Q3 is the test; a second slip breaks the deleveraging narrative. |
+| A3-F6-02 | F6 | R221, R222, R275, R276, R301 (+R327, loop 1) | l.334; l.338-341; l.524-526; prior l.46 | "this is the quarter when we will see a significant amount of collections coming from BSNL" | FORWARD-SIGNAL | Q1 promised BSNL receivables "cleared during the quarter" (prior l.46). Analyst flagged the miss (l.334). Promise re-dated one quarter to Q3 FY27, amount withheld (l.340). Q3 is the test; a second slip breaks the deleveraging narrative. |
 | A3-F6-03 | F6 | R032, R033, R190, R219, R235, R236, R237, R294, R315 | l.139-141; l.315-316; l.514; l.528-530 | "debt has increased to INR4,384 crores ... on account of continued investments in terms of capex ... and also in terms of funding operational costs" | FORWARD-SIGNAL | Debt +Rs107 Cr QoQ (4,277 -> 4,384). If net (see F16-02), Rs116 Cr headroom to the Rs4,500 Cr break; RED band (>Rs4,000 Cr). Debt now funds operating costs (cash burn continues). Reduction is promised only "with the order", undated and unquantified ("I cannot give exact numbers", l.514). Inventory converts to receivables first (l.523), so debt can peak before it falls. |
-| A3-F6-04 | F6 | R030, R031, R189, R212, R264, R283, R300 | l.134-137; l.515-518 | "compared to INR2,358 crores, we are at around INR2,314 crores" | AMBIGUOUS | Inventory fell only Rs44 Cr in the quarter BSNL deliveries started (Q1 fell Rs80 Cr, prior l.32). Target "earlier levels ... in line with the kind of quarterly business" (l.517-518) has no date or number. Question: inventory consumed per Rs of BSNL revenue, and the quarter inventory reaches the target level. |
+| A3-F6-04 | F6 | R030, R031, R189, R212, R264, R283, R300 (+R325, loop 1) | l.134-137; l.515-518 | "compared to INR2,358 crores, we are at around INR2,314 crores" | AMBIGUOUS | Inventory fell only Rs44 Cr in the quarter BSNL deliveries started (Q1 fell Rs80 Cr, prior l.32). Target "earlier levels ... in line with the kind of quarterly business" (l.517-518) has no date or number. Question: inventory consumed per Rs of BSNL revenue, and the quarter inventory reaches the target level. |
 | A3-F6-05 | F6 | R057, R059, R124, R125, R233, R234, R281, R313, R314, R316 | l.478-481; l.485; l.494; l.498-499 | "It's September 2025. There is no provisioning of that sort in the current quarter." / "This was connected to the major amount of manufacturing that we did for the first 100,000 site order." | FORWARD-SIGNAL | Management commits to non-recurrence, but names the cause as volume manufacturing for the first BSNL order. The 18,685-site expansion repeats that manufacturing on "the same lines" economics (prior l.92). Recurrence risk on the expansion order is open. Question: what failed in the contract-manufacturing process and what control prevents a repeat. |
 | A3-F6-06 | F6 | R012, R034, R052, R082 | l.98; l.145; l.349; prior l.34, l.196 | "receiving the LOI for 18,685 sites" vs Q1 "the uh BSNL 4G that additional 26,000 sites" | AMBIGUOUS | Scope matches the Notion baseline (Rs1,526 Cr / 18.7k sites, dig. 5b), so item #7 RED does not fire. But Q1 management twice said 26,000 sites; Q2 says 18,685 with no reconciliation. Q1 text is ASR, so a garble is possible. Question: was the add-on ever 26,000 sites, and is a further tranche expected. |
 | A3-F6-07 | F6 | R223, R277, R302, R006 | l.95; l.346-350 | "all of INR1,500 crores is not there in the order book yet, but they will come -- most of it, we expect to come by the end of this quarter" | NEUTRAL-FACT | Dated commitment: most remaining BSNL POs by 31-Dec-2026. Part of the PO value sits in the 30-Sep order book (l.95, l.346), which is the transcript's only evidence that a PO landed by the Sep-2026 thesis-break deadline. The LOI date itself is not stated ("recently won", l.290). |
-| A3-F7-01 | F7 | R301, R304, R315, R320, R312 | l.340; l.355; l.514; l.584 | "I cannot specify the exact number" / "I don't think I can share the exact details" / "I cannot give exact numbers" / "I cannot comment on the NEC's revenue number" | FORWARD-SIGNAL | Four refusals, each on a cash or backlog quantum: BSNL collections, order-book split, inventory and debt reduction, NEC revenue. Q1 had four refusals too (dig. 8e: AMC size, NEC TAM, wireless/wireline split, site counts). The deleveraging case rests on assertion only. R317 (l.528-529) cites a "financial outlook" in the presentation that the transcript does not carry in numbers. |
+| A3-F7-01 | F7 | R301, R304, R315, R320, R312 (+R325, R326, loop 1) | l.340; l.355; l.514; l.584 (+l.516-517; l.590-591) | "I cannot specify the exact number" / "I don't think I can share the exact details" / "I cannot give exact numbers" / "I cannot comment on the NEC's revenue number" | FORWARD-SIGNAL | Four refusals, each on a cash or backlog quantum: BSNL collections, order-book split, inventory and debt reduction, NEC revenue. Q1 had four refusals too (dig. 8e: AMC size, NEC TAM, wireless/wireline split, site counts). The deleveraging case rests on assertion only. R317 (l.528-529) cites a "financial outlook" in the presentation that the transcript does not carry in numbers. |
 | A3-F7-02 | F7 | R058, R232, R279, R312, R123 | l.458-460; l.476; prior l.220 | "we are indeed winning several business in this area" | AMBIGUOUS | Analyst asked for a range or quantum of AI DCI orders over 6 to 8 months; none given. Q1 said the new DCI product would see "customer deployment ... towards the end of the financial year or early financial year" (prior l.220). Q2 does not say if trials converted. Question: count and value of DCI orders on the new product. |
 | A3-F7-03 | F7 | R230, R231, R238, R239, R240, R310, R311, R319 | l.464-466; l.535; l.546; l.549-551 | "We are well-positioned if this network were to happen" / "It will potentially be used for Kavach" | NEUTRAL-FACT | D2M RFP still not issued (Q1: "no clarity on when exactly the tender happens", prior l.166). Second quarter undated. Railways: trial-section PO only, expansion conditional on trial results. Both stay optionality with no date. |
 | A3-F14-01 | F14 | R068, R075 | l.55-56; l.83 | "MR. ARNOB ROY - MANAGING DIRECTOR AND CHAIRMAN" vs "Arnob Roy, Managing Director and Chief Executive Officer" | AMBIGUOUS | The filed participant page gives a Chairman title. The host intro and Q1 (prior l.28, "managing director and CEO") do not. Either a board-level redesignation (a Reg 30 event to verify) or a drafting error in a filed document. Question: has the Chairman role changed. |
@@ -40,7 +41,7 @@ Transcript qualifier: Q2 text is "edited for clarity and readability and does no
 | A3-F17-03 | F17 | none (absent topics) | prior l.88; prior l.100; prior l.128; prior l.150; absent l.69-624 | Q1: "the warranty costs are expected to normalize" / "It's going to start in the next few quarters" (AMC) | AMBIGUOUS | Three Q1 commitments got no follow-up: BSNL AMC start, value and 8-year term (count 1); warranty normalisation (count 1); flat employee cost (count 1). AMC was Q1's higher-margin path-to-profit lever (prior l.150). Question: AMC start quarter and value; last two quarters' warranty charge. |
 | A3-F17-04 | F17 | R085, R192 | l.151-155; prior l.30; prior l.34 | "we are engaged with discussions with several Tier 1 mobile network operators for custom 5G radio development" | AMBIGUOUS | Q1 headline items got no Q2 status: the Europe 5G radio customer (the Q1 international revenue driver, count 1) and the "selected by a global tier one telco for a joint R&D project" (count 1). Q2 replaces them with Tier 1 "discussions". This links to F16-05. Question: did Europe shipments stop; is the joint R&D project live. |
 
-Finding count: 22. FORWARD-SIGNAL 7 | AMBIGUOUS 10 | CONFIRMATORY-NEGATIVE 2 | NEUTRAL-FACT 3.
+Finding count: 22 (unchanged after loop 1). FORWARD-SIGNAL 7 | AMBIGUOUS 10 | CONFIRMATORY-NEGATIVE 2 | NEUTRAL-FACT 3.
 
 ## 2. CHECKLIST SCORECARD
 
@@ -51,8 +52,8 @@ Finding count: 22. FORWARD-SIGNAL 7 | AMBIGUOUS 10 | CONFIRMATORY-NEGATIVE 2 | N
 | F3 Shell-entity detection | N.A. | No cost-line tables on a concall. |
 | F4 Unaudited contribution ratio | N.A. | No auditor Other Matters in a transcript. |
 | F5 Going concern / EoM scope | N.A. | No auditor report in a transcript. |
-| F6 Forward-commitment mining | FINDING | 64 forward rows read. 7 findings: EBITDA date dropped, BSNL collections re-dated, debt up and unquantified, slow inventory unwind, provision-recurrence risk, site-count gap, dated PO commitment. |
-| F7 Hedge mining | FINDING | 37 qualifier rows read. 3 findings: four quantum refusals, DCI unquantified, D2M/rail conditional. "supposed to" market forecasts (l.204, l.209) repeat Q1 (prior l.34); boilerplate, no finding. |
+| F6 Forward-commitment mining | FINDING | 65 forward rows read (64 + R327). 7 findings: EBITDA date dropped, BSNL collections re-dated, debt up and unquantified, slow inventory unwind, provision-recurrence risk, site-count gap, dated PO commitment. |
+| F7 Hedge mining | FINDING | 39 qualifier rows read (37 + R325, R326). 3 findings: four quantum refusals, DCI unquantified, D2M/rail conditional. "supposed to" market forecasts (l.204, l.209) repeat Q1 (prior l.34); boilerplate, no finding. |
 | F8 Tax forensics | N.A. | No PBT, tax or ETR on the call. The PAT-EBITDA gap is carried under F17-02 for the results-filing A3. |
 | F9 OCI forensics | N.A. | No OCI on a concall. |
 | F10 Share count and dilution | N.A. | No share count or EPS on the call. Equity-raise silence carried under F17-01. |
@@ -88,13 +89,14 @@ Finding count: 22. FORWARD-SIGNAL 7 | AMBIGUOUS 10 | CONFIRMATORY-NEGATIVE 2 | N
 | 18 | Product roadmap: compact baseband (5 bands), radio 700 MHz-4.9 GHz, IP/MPLS higher rates, 200G access, terabit backbone, TOP rollout | undated | T06 l.232-266 (R200-R206) | underway |
 | 19 | Revenue momentum from BSNL | "next few quarters" | T51 l.611-612 (R247, R287) | underway |
 | 20 | Next call | end of next quarter | T51 l.616-617 (R286) | scheduled |
+| 21 | Collection of initial-order (first 100,000-site) milestone dues: "significant amount is going to come in" (loop 1) | undated in T41; dated Q3 FY27 by row 1 | T41 l.524-526 (R327) | due (milestones completed, cash not received) |
 
 ## 4. PROMISE VS DELIVERY (Q1 FY27 call -> Q2 FY27 call)
 
 | Q1 commitment | Q1 ref | Q2 evidence | read |
 |---|---|---|---|
 | BSNL add-on award "probably in this quarter" | prior l.34 | LOI 18,685 sites, POs partly in order book (l.145, l.346-349) | DELIVERED; scope differs from Q1's 26,000 sites (F6-06) |
-| BSNL receivables "cleared during the quarter" | prior l.46 | "this is the quarter" re-dated to Q3 (l.338-339) | SLIPPED one quarter (F6-02) |
+| BSNL receivables "cleared during the quarter" | prior l.46 | "this is the quarter" re-dated to Q3 (l.338-339); initial-order milestones "are due" (l.524-525) | SLIPPED one quarter (F6-02) |
 | Positive EBITDA "12 to 18 months" | prior l.78 | undated (l.298, l.317-318) | SOFTENED (F6-01) |
 | Inventory to "go away" with the add-on | prior l.74 | -Rs44 Cr (l.134) | UNDERWAY, slow (F6-04) |
 | International "hope to change that profile" (7% of order book) | prior l.114 | 4% of order book, 12% of revenue (l.96-97) | REVERSED (F16-05) |
@@ -137,12 +139,30 @@ Partially addressed (spoken, not resolved):
 
 Addressed (Q1 silence broken or item answered): revenue #2 (Rs406 Cr, l.92), net debt #4 (Rs4,384 Cr, l.140), BSNL PO #7 (LOI 18,685 sites / Rs1,500 Cr, l.145, l.349), BharatNet (new SI LOI, middle mile in 3 states, l.157-159; count resets to 0), D2M (l.538-551), NEC (l.584-600), Rs145 Cr provision (l.485-499).
 
-Silence count: 13 items silent (6 at 2 consecutive quarters, 7 at 1), plus 4 partial.
+Silence count: 13 items silent (6 at 2 consecutive quarters, 7 at 1), plus 4 partial. Unchanged after loop 1.
 
 ## 6. FLAGS FOR A4 (FORWARD-SIGNAL and AMBIGUOUS, convert to management questions)
 
 FORWARD-SIGNAL: A3-F6-01, A3-F6-02, A3-F6-03, A3-F6-05, A3-F7-01, A3-F16-05, A3-F17-01.
 AMBIGUOUS: A3-F6-04, A3-F6-06, A3-F7-02, A3-F14-01, A3-F16-02, A3-F16-03, A3-F16-04, A3-F16-06, A3-F17-03, A3-F17-04.
+
+## 7. ADDENDUM (loop 1)
+
+Trigger: A2 added R325-R327 (MISSING_FROM_STRUCTURED) after an A5 correction. Each row was read at its fulltext line. All three sit inside answers that the first pass had already read in full (T39 l.514-518, T41 l.522-530, T48 l.584-591). No row opens a new topic.
+
+| row | type | line / turn | verbatim quote | status | effect |
+|---|---|---|---|---|---|
+| R325 | hedge | l.516-517, T39 (Arnob Roy) | "we certainly should see a significant reduction of this inventory. That's all I can say, right?" | reviewed, no new finding; added as a supporting cite to A3-F7-01 (FORWARD-SIGNAL) and A3-F6-04 (AMBIGUOUS) | Second disclosure limit in the same answer that opens "I cannot give exact numbers" (l.514). Confirms the inventory path is asserted, not quantified. |
+| R326 | hedge / NON_DISCLOSURE | l.590-591, T48 (Kumar N. Sivarajan) | "That's about all I can say. I cannot comment on the revenue numbers." | reviewed, no new finding; added as a supporting cite to A3-F7-01 (FORWARD-SIGNAL) | Repeats the NEC refusal of l.584 in the same answer. NEC supply ramp (commitment 13) stays unquantified. |
+| R327 | forward phrase | l.524-526, T41 (Arnob Roy) | "with the collection of the past from the initial order, as I said, we've completed some of the important milestones and those are due, which whatever comes in, significant amount is going to come in." | reviewed, no new finding; added as a supporting cite to A3-F6-02 (FORWARD-SIGNAL); new commitment register row 21 | Says the cash expected in Q3 is initial-order (first 100,000-site) dues already earned, not expansion revenue. "whatever comes in" hedges the amount. The receivable is earned and overdue, which sharpens the F6-02 test: a Q3 miss is a collection failure, not a timing effect. |
+
+Status changes after loop 1:
+- F1-F17: no status changes. F6, F7, F14, F16 and F17 stay FINDING. The other 12 stay N.A.
+- Findings: still 22, with no new IDs and no reclassification. Class counts unchanged (7 / 10 / 2 / 3).
+- Refusal count (A3-F7-01): still 4 distinct refusals by answer turn (T10, T14, T39, T48). By verbatim phrase it rises from 4 to 6 (R325 adds a phrase in T39, R326 adds one in T48). A4 should count by turn.
+- Silence count: unchanged at 13 silent plus 4 partial. R325-R327 address no item in the section 5 table.
+- Commitment register: 20 to 21 rows (R327, row 21).
+- Ledger reconciliation: 327 of 327 rows read, 100%.
 
 ```yaml
 stage: A3-forensics
@@ -151,8 +171,9 @@ quarter: "q2fy27"
 doctype: "concall"
 model: "claude-opus-5-5"
 status: complete
+loop: 1
 forensics_path: "runs/tejasnet-q2fy27/work/forensics_concall_tejasnet_q2fy27.md"
-ledger_reconciled_pct: 100
+ledger_reconciled_pct: 100        # 327 of 327 rows (324 + R325-R327, loop 1)
 checklist:
   F1: N.A.
   F2: N.A.
@@ -173,13 +194,13 @@ checklist:
   F17: FINDING
 findings:
   - {id: "A3-F6-01", check: "F6", line: "l.297-298; l.317-318; prior l.78", classification: "FORWARD-SIGNAL", implication: "EBITDA-positive target undated ('upcoming years') vs Q1 '12 to 18 months'; second consecutive softening"}
-  - {id: "A3-F6-02", check: "F6", line: "l.334; l.338-341; prior l.46", classification: "FORWARD-SIGNAL", implication: "BSNL collections re-dated from Q2 to Q3 FY27, amount withheld; Q3 is the test"}
+  - {id: "A3-F6-02", check: "F6", line: "l.334; l.338-341; l.524-526; prior l.46", classification: "FORWARD-SIGNAL", implication: "BSNL collections re-dated from Q2 to Q3 FY27, amount withheld; dues are earned initial-order milestones (R327); Q3 is the test"}
   - {id: "A3-F6-03", check: "F6", line: "l.139-141; l.315-316; l.514; l.528-530", classification: "FORWARD-SIGNAL", implication: "Debt +Rs107 Cr to Rs4,384 Cr, funds capex and operating costs; Rs116 Cr to Rs4,500 Cr break if net; reduction undated and unquantified"}
   - {id: "A3-F6-04", check: "F6", line: "l.134-137; l.515-518", classification: "AMBIGUOUS", implication: "Inventory down only Rs44 Cr as BSNL deliveries began; target level and date absent"}
   - {id: "A3-F6-05", check: "F6", line: "l.478-481; l.485; l.494; l.498-499", classification: "FORWARD-SIGNAL", implication: "Rs145 Cr provision called non-recurring but caused by BSNL volume manufacturing, which recurs on the 18,685-site expansion"}
   - {id: "A3-F6-06", check: "F6", line: "l.98; l.145; l.349; prior l.34, l.196", classification: "AMBIGUOUS", implication: "18,685 sites vs Q1 '26,000 sites' unreconciled; matches Notion Rs1,526 Cr/18.7k baseline"}
   - {id: "A3-F6-07", check: "F6", line: "l.95; l.346-350", classification: "NEUTRAL-FACT", implication: "Most remaining BSNL POs by 31-Dec-2026; partial PO value in 30-Sep order book is the only by-deadline evidence"}
-  - {id: "A3-F7-01", check: "F7", line: "l.340; l.355; l.514; l.584", classification: "FORWARD-SIGNAL", implication: "Four refusals on collections, order-book split, inventory/debt reduction, NEC revenue; deleveraging rests on assertion"}
+  - {id: "A3-F7-01", check: "F7", line: "l.340; l.355; l.514; l.516-517; l.584; l.590-591", classification: "FORWARD-SIGNAL", implication: "Four refusals by turn (six phrases) on collections, order-book split, inventory/debt reduction, NEC revenue; deleveraging rests on assertion"}
   - {id: "A3-F7-02", check: "F7", line: "l.458-460; l.476; prior l.220", classification: "AMBIGUOUS", implication: "AI DCI orders unquantified; Q1 deployment timeline for new DCI product not updated"}
   - {id: "A3-F7-03", check: "F7", line: "l.464-466; l.535; l.546; l.549-551", classification: "NEUTRAL-FACT", implication: "D2M RFP not issued (2nd quarter), railways trial-only; optionality undated"}
   - {id: "A3-F14-01", check: "F14", line: "l.55-56; l.83", classification: "AMBIGUOUS", implication: "Filed page titles Arnob Roy 'Managing Director and Chairman' vs 'MD and CEO'; verify board change or drafting error"}
@@ -214,7 +235,8 @@ commitments:
   - {commitment: "Railway 700 MHz expansion on trial results", implied_date: "conditional", ref: "T25 l.465-466", status_word: "initiated"}
   - {commitment: "D2M radio heads to RFP winners", implied_date: "once RFP issued", ref: "T44 l.538-551", status_word: "initiated"}
   - {commitment: "Revenue momentum from BSNL", implied_date: "next few quarters", ref: "T51 l.611-612", status_word: "underway"}
+  - {commitment: "Collect initial-order milestone dues ('significant amount is going to come in')", implied_date: "undated in T41; Q3 FY27 per T10", ref: "T41 l.524-526 (R327)", status_word: "due"}
 gate_a3: pass
 blank_checks: []
-analyst_note: "Rs4,384 Cr reads as net debt because its comparison base, Rs4,277 Cr, was Q1 net borrowings (prior l.32). On that read it sits Rs116 Cr under the Rs4,500 Cr break, rose Rs107 Cr QoQ, and now funds operating costs. Management asserted every deleveraging lever (BSNL collections, inventory unwind, debt cut) and refused to quantify any of them. The BSNL collection date slipped one quarter. Q3 FY27 therefore tests three dated items together: BSNL cash, remaining POs, and the debt turn. The Rs185 Cr YoY EBITDA gain sits on a Q2 FY26 base that carried the Rs145 Cr provision. Ex-provision the gain is about Rs40 Cr, and QoQ EBITDA worsened. The provision's named cause recurs on the expansion order. International revenue fell from about half to 12% with no explanation. The Q2 PAT loss of Rs207 Cr exceeds the Rs185 Cr line in digest 5e for book value below Rs140; A4 must confirm this with comprehensive loss from the filing. QIP and DTA are second-consecutive silences, and digest 8c pre-registers that as RED escalation."
+analyst_note: "Rs4,384 Cr reads as net debt because its comparison base, Rs4,277 Cr, was Q1 net borrowings (prior l.32). On that read it sits Rs116 Cr under the Rs4,500 Cr break, rose Rs107 Cr QoQ, and now funds operating costs. Management asserted every deleveraging lever (BSNL collections, inventory unwind, debt cut) and refused to quantify any of them. The BSNL collection date slipped one quarter; loop 1 row R327 shows the expected cash is initial-order dues already earned. Q3 FY27 therefore tests three dated items together: BSNL cash, remaining POs, and the debt turn. The Rs185 Cr YoY EBITDA gain sits on a Q2 FY26 base that carried the Rs145 Cr provision. Ex-provision the gain is about Rs40 Cr, and QoQ EBITDA worsened. The provision's named cause recurs on the expansion order. International revenue fell from about half to 12% with no explanation. The Q2 PAT loss of Rs207 Cr exceeds the digest 5e line for book value below Rs140; A4 must confirm with comprehensive loss. QIP and DTA are second-consecutive silences, which digest 8c pre-registers as RED escalation."
 ```

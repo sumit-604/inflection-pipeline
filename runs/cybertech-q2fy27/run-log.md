@@ -12,3 +12,4 @@
 - Session restart occurred after A3 completed; A3 files verified on disk before proceeding.
 - 2026-10-24 Operator standing approval relayed by parent session: if A5 INCOMPLETE after loop 1, one second loop is approved ("complete them fully").
 - 2026-10-23 A4 run 1 died twice (stream watchdog stall, then app restart); no review written. Mechanical re-run of A4, not counted (operator relay 2026-10-24: 'pl resume the task').
+- 2026-10-23 A5 run died on network drop (API ENOTFOUND ~18:47). Mechanical re-run of A5, not counted.

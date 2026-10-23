@@ -4,18 +4,35 @@ Company: Cybertech Systems and Software Limited (BSE 532173 / NSE CYBERTECH; L29
 Filing: Reg 33 board outcome, 22-Oct-2026 (L23, L33-L40). Un-audited standalone and consolidated results with limited review report.
 Protocol: Role 4, Quarterly Results Review Protocol v1.4. Role 5: N.A. No concall was held and no presentation exists for this quarter.
 Framing: PRE-THESIS READ. No Notion page in COMPANIES MASTER, no companies/CYBERTECH.md, no spear on record. Decision Status: NONE ON RECORD. Every thesis field is ND 'not passed'.
-Inputs read: A1 structured (R001-R739), A1 fulltext (L1-L443), A2 ledger, A3 forensics. No source PDF and nothing under inputs/ was opened.
-Anchor convention: (Lnnn) = A1 fulltext line; (Rnnn) = A1 structured row; "c:" = A4 arithmetic on the anchored filed figures; [INFERENCE] = a reading of filed figures, not a filed fact. Units: filing in Rs Lakhs (L98, L138, L198, L283, L320, L379); converted to Rs Crores at x0.01 (100 Lakhs = 1 Crore) in all tables unless a cell says "lakh".
+Inputs read: A1 structured (R001-R739), A1 fulltext (L1-L443), A2 ledger, A3 forensics, A5 audit (loop 1). No source PDF and nothing under inputs/ was opened.
+Anchor convention: (Lnnn) = A1 fulltext line; (Rnnn) = A1 structured row; "c:" = A4 arithmetic on the anchored filed figures; [INFERENCE] = a reading of filed figures, not a filed fact. Units: filing in Rs Lakhs (L98, L138, L198, L283, L320, L379); converted to Rs Crores at x0.01 (100 Lakhs = 1 Crore) in all tables unless a cell says "lakh". "Subsidiaries" or "perimeter" = consolidated less standalone (three WOS, net of intercompany eliminations).
+
+---
+
+## LOOP 1 CHANGES (A5 audit, runs/cybertech-q2fy27/work/audit_cybertech_q2fy27.md)
+
+A4 checked each A5 finding against the fulltext before accepting it. All six are accepted. No finding is disputed.
+
+| A5 ID | Verified against | Change made | Where |
+|---|---|---|---|
+| F1 | L431 (Note 2 consolidation); c: Op EBITDA QoQ +236.98 = perimeter +266.59 less parent 29.61 lakh (L101-L110, L287-L296) | Transfer pricing is re-scoped to WHERE profit sits (S-C gap, tax, cash location, the parent's own base). It cannot change consolidated EBITDA, because intercompany items eliminate. The rival reading for the group step is now "one quarter or currency-assisted". The separator is the Q3 FY27 consolidated Op EBITDA margin (at or above 11.04% vs at or below 8.36%). Note: a transfer-price change can move consolidated PAT a little through tax-rate differences. The subsidiary ETR (25.24%, A3) is close to the parent's (24.59%), so that effect is negligible. | Step 2C, Step 3, Step 4A, Step 8C, QfM 1, brief, forward map, analyst note |
+| F2 | L434-L435 | Note 5 wording is restated. The filing gives no amount, no direction and no wage-base statement. "Expects a further charge" is removed. It now reads "possible further EBE effect; amount and direction ND". | Step 0D, QfM 12, monitorable 6, brief sector part, flags |
+| F3 | L204, L206, L210-L212, L214, L221, L115 | The 0.84x pre-WC ratio mixed bases: the numerator excludes 7.30 Cr of treasury and non-cash income that PAT includes. Like-for-like, the ratio is 1.20x-1.23x for H1 FY27 vs 1.05x-1.15x for H1 FY26, so it is above 1.0x and rising. The Pillar 2 fact passed to /fttcp is corrected. INDETERMINATE-WITH-DIRECTION stands on H2 reversal risk. | Step 5A, 5C, 6B, 7, forward map, flags, analyst note |
+| C1 | Step 3 bar (L100) | The Q1 FY28 forks are rebuilt. Bull: revenue at or above 73.30 Cr. Bear: back toward the FY26 average of 58-60 Cr. Q1 FY28 is relabelled the fifth quarter after the step. | Monitorable 10, forward map |
+| M1 | L101-L110, L121, L287-L296 | The strongest bear counter to "core PBT nearly doubled" is grafted in: one quarter old, all of the QoQ gain outside the parent, a currency swing in Q2, and H1 OI still 53.47% of PBT. | Step 2C item 3, Step 3, brief, analyst note |
+| M2 | L124, L127, L147, L154, L156, L157, L178, L235 | A buyback purchase-economics test is added: 18.0x FY26 EPS, net cash 30.9% of price, about 35x trailing core EPS ex-cash, about 18x the Q2 run-rate. The "+2.6 pp" EPS gain is a share-count effect only. | Step 0C, Step 2A |
+
+Style notes applied: S3 (cash wording), S4 ("most of"), S5 ("Other income"), S6 (95.1% is a level, not a trend; it was 96.9% at Mar-26), S7 ("averaged"), S8 (the rupee reading is INFERENCE), S9 (Q6 and Q9 sharpened), S10 (exact Rs 4.00 tie), S11 (the standalone H1 FY26 buyback cell is nil, not ND). S1, S2 and S12 concern A1/A2 capture and need no A4 change. The protocol verdict (PROCEED WITH FLAGS) and the cash class (INDETERMINATE-WITH-DIRECTION) are unchanged.
 
 ---
 
 ## LEDGER RECONCILIATION PREAMBLE
 
 Ledger contains 7 notes / 0 turns / 0 slides. All 7 reviewed.
-The ledger also carries 191 line items, 42 embedded numbers, 45 zero-standing cells, 1 agenda item, 7 auditor paragraphs, 46 entities, 3 forward statements, 51 dates, 46 qualifiers and 10 signature blocks. A2 reports 739 of 739 structured IDs referenced, zero orphans, gate_a2 pass. A4 read every structured row against the fulltext line it cites. No row is unreviewed.
+The ledger also carries 191 line items, 42 embedded numbers, 45 zero-standing cells, 1 agenda item, 7 auditor paragraphs, 46 entities, 3 forward statements, 51 dates, 46 qualifiers and 10 signature blocks. A2 reports 739 of 739 structured IDs referenced, zero orphans, gate_a2 pass. A4 read every structured row against the fulltext line it cites. No row is unreviewed. Uncited balance-sheet rows (consolidated R138-R139, R146-R147, R150-R153, R156-R157, R162-R171, R182-R183, R186-R187, R202-R209; standalone R409-R416, R419-R426, R429-R446, R449-R480) and identifier rows in R552-R693: reviewed, no finding. Both balance sheets foot on both dates (A5 Audit 1).
 Findings incorporated: A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3-18, A3-19, A3-20.
-A1 defect carried: R123 and R396 hold FY26 year-end Other equity (18,116.94 and 11,793.41 lakh); the orchestrator corrected the column label to "Year Ended 31-03-2026". A4 reads them as FY26 year-end, which matches L167 and L348.
-A1 note carried: the standalone buyback row L415 / R539 has one cell only. A4 treats the prior-year cell as ND (the consolidated row L235 shows "-" for H1 FY26).
+A1 defect carried: R123 and R396 hold FY26 year-end Other equity (18,116.94 and 11,793.41 lakh). The orchestrator corrected the column label to "Year Ended 31-03-2026". A4 reads them as FY26 year-end, which matches L167 and L348.
+A1 note carried: the standalone buyback row L415 / R539 has one cell only. The H1 FY26 standalone financing total ties without it (L418: -402.20 - 42.72 - 13.11 = -458.03), so the prior-year cell is nil, matching the consolidated "-" at L235.
 
 ---
 
@@ -41,7 +58,7 @@ Consequence: the review cannot run a thesis check. It reads the filing on its ow
 
 ### 0B. Unit convention
 
-All financial statements print "(Rs. In Lakhs)" (L98, L138, L198, L283, L320, L379; R702, R708, R710, R719, R724, R726). Conversion: Rs Lakhs x 0.01 = Rs Crores. Page 1 cover letter and the review reports carry no unit (A1 header L7).
+All financial statements print "(Rs. In Lakhs)" (L98, L138, L198, L283, L320, L379; R702, R708, R710, R719, R724, R726). Conversion: Rs Lakhs x 0.01 = Rs Crores. The page 1 cover letter and the review reports carry no unit (A1 header L7).
 
 ### 0C. Share-count changes
 
@@ -51,32 +68,38 @@ All financial statements print "(Rs. In Lakhs)" (L98, L138, L198, L283, L320, L3
 | ESOP allotment | Q2 FY27 | Note 3 (L432); proceeds 47.60 incl. premium (L234, L414) | 1,00,000 allotted (R579) | +10.00 |
 | Closing count | 30-Sep-2026 | Paid-up 3,038.06 (L124, L166) | 3,03,80,600 (c: 3,038.06 lakh / Rs 10) | n/a |
 
-No split, no bonus. Reported EPS is on weighted shares, so share-adjusted EPS equals reported EPS for every period. The buyback lowers the count by 2.73% from Q2 FY26 (c: 8,50,000 / 3,11,30,600) and the ESOP adds 0.33% (c: 1,00,000 / 3,02,80,600). Buyback price, method and dates: ND (no note; A3-10). Implied average cost about Rs 176.24 a share including costs (A3-10, c: 1,498.00 lakh / 8,50,000).
+No split, no bonus. Reported EPS is on weighted shares, so share-adjusted EPS equals reported EPS for every period. The buyback lowers the count by 2.73% from Q2 FY26 (c: 8,50,000 / 3,11,30,600). The ESOP adds 0.33% (c: 1,00,000 / 3,02,80,600). Buyback price, method and dates: ND (no note; A3-10). Implied average cost about Rs 176.24 a share including costs (A3-10, c: 1,498.00 lakh / 8,50,000).
+
+Buyback economics (purchase-economics test; c on filed lines):
+- Price vs reported earnings: Rs 176.24 / FY26 basic EPS Rs 9.77 (L127) = 18.0x trailing.
+- Cash inside the price: group net cash at 31-Mar-2026 was 16,959.49 lakh (Step 5A; L147, L154, L156, L157, L178), or Rs 54.48 a share on 3,11,30,600 shares. That is 30.9% of the price.
+- Price ex-cash vs core earnings: (Rs 176.24 - Rs 54.48) = Rs 121.76. FY26 core EPS ex-OI was Rs 3.49 (c: 1,434.16 x (1 - 24.35%) / 3,11,30,600), so the ex-cash price was about 35x trailing core earnings. On the Q2 FY27 core run-rate (c: 681.20 x 4 x (1 - 24.83%) / 3,03,80,600 = Rs 6.74; arithmetic only, not an A21 base) it was about 18x.
+- Reading: on trailing core earnings the buyback was not cheap. It looks fair only if the Q2 core run-rate holds. The EPS gain over PAT (Step 2A) is a share-count effect, not a value effect. The filing cannot show the price was fair: CMP, the buyback route and peer multiples are ND.
 
 ### 0D. Notes extraction (all six notes, R732-R739)
 
 | Note # | Subject | What it says (1 sentence) | Rs Cr impact | Period affected | Comparability impact |
 |---|---|---|---|---|---|
 | 1 | Approval | Audit Committee reviewed and Board approved the results on 22-Oct-2026 (L430). | nil | Q2 FY27 | none |
-| 2 | Consolidation | Accounts of CyberTech Inc. USA with its subsidiary CyberTech Canada Inc. and Spatialitics LLC are consolidated under Ind AS 110 (L431). | nil | all | Perimeter baseline: three WOS. Note 2 shows Canada as a step-down of the USA entity; the auditor lists three WOS flat (L73-L76). Both can be true (A3-18). |
+| 2 | Consolidation | Accounts of CyberTech Inc. USA with its subsidiary CyberTech Canada Inc. and Spatialitics LLC are consolidated under Ind AS 110 (L431). | nil | all | Perimeter baseline: three WOS. Note 2 shows Canada as a step-down of the USA entity; the auditor lists three WOS flat (L73-L76). Both can be true (A3-18). Intercompany items eliminate on consolidation. |
 | 3 | ESOP | 1,00,000 shares allotted on ESOP exercise in Q2; the note then states capital as "Rs. 10,00,000 comprising of 1,00,000 equity shares" (L432). | +0.10 capital; proceeds 0.48 (L234) | Q2 FY27 | EPS dilution 0.33% (c). The stated capital figure is wrong against paid-up 30.38 Cr (L124): drafting error (A3-15). |
 | 4 | Segment | Single reportable segment, Information Technology Services, under Ind AS 108 (L433). | nil | all | No segment, geography or customer split exists in this filing. The group balance sheet is the segment. |
-| 5 | Labour Codes | Four Labour Codes notified 21-Nov-2025; compensation restructured from 1-Apr-2026; "incremental impact" presented in Employee Benefits Expense for the year ended 31-Mar-2026 (L434). | ND (amount not disclosed) | FY26 (inside H2 FY26 by date of notification [INFERENCE]); FY27 run-rate ND | FY26 EBE 134.93 Cr (L105) carries an unquantified charge or step-up; Q2 FY26 EBE does not. Q2 FY27 vs Q2 FY26 EBE growth mixes volume and the restructure. Materiality wording unresolved (A3-19). |
-| 5 (para 2) | Labour Codes, open | Company monitors final Central/State rules and "would provide appropriate accounting effect" as needed (L435). | ND | future, undated | Open, unquantified future EBE charge (A3-07). |
+| 5 | Labour Codes | Four Labour Codes notified 21-Nov-2025, consolidating 29 labour laws; compensation restructured from 1-Apr-2026; "incremental impact" presented in Employee Benefits Expense for the year ended 31-Mar-2026 (L434). | ND (amount not disclosed) | FY26 (inside H2 FY26 by date of notification [INFERENCE]); FY27 run-rate ND | FY26 EBE 134.93 Cr (L105) carries an unquantified item. Q2 FY26 EBE does not. Q2 FY27 vs Q2 FY26 EBE growth mixes volume and the restructure. Materiality wording unresolved (A3-19). |
+| 5 (para 2) | Labour Codes, open | Company monitors final Central/State rules and "would provide appropriate accounting effect on the basis of such developments as needed" (L435). | ND | future, undated | Possible further EBE effect; amount and direction ND (A3-07). |
 | 6 | Regrouping | Prior figures regrouped/re-classified wherever required (L436). | ND | prior periods | Regrouped items are not itemised. Any prior-period line may differ from its first-published value. ND. |
 
 Items with no note (material, carried as flags):
 - Buyback, Q1 FY27: (14.98) Cr cash (L235); capital -0.85 Cr (L124). No size, price or method disclosed (A3-10).
-- Investment in a wholly owned subsidiary: (41.13) Cr in the standalone cash flow (L405); subsidiary not named (R624, R731). Absent from the consolidated cash flow, as it should be on consolidation (A3-01).
-- Other equity roll-forward gap: an unexplained debit of 12.15 Cr, standalone and consolidated (A3-11; forensics Section 5).
+- Investment in a wholly owned subsidiary: (41.13) Cr in the standalone cash flow (L405); subsidiary not named (R624, R731). It is absent from the consolidated cash flow, as it should be on consolidation (A3-01).
+- Other equity roll-forward gap: an unexplained debit of 12.15 Cr, standalone and consolidated (A3-11; forensics Section 5). The standalone gap of 1,215.22 lakh equals Rs 4.00 x 3,03,80,600 closing shares exactly (c).
 
 Note-by-note answers:
 - Changes a YoY or QoQ reading: Note 5 (EBE base in FY26 and H2 FY26); Note 6 (prior figures regrouped, items ND).
 - Requires normalisation: Note 5 would, but the amount is ND, so no normalisation is possible. A4 does not estimate it.
-- Recurring vs one-off: Note 5 does not say whether the FY26 impact is a one-time past-service charge or a recurring wage-base step-up.
+- Recurring vs one-off: Note 5 does not say whether the FY26 impact is a one-time charge or a recurring step-up.
 - Changes a thesis assumption: no thesis exists. For a future thesis, Note 5 bears on the margin bridge and Note 2 on where earnings sit.
 
-Auditor opinion: Lodha & Co LLP (L60, L80), partner R P Baradiya (L84). Limited review, unmodified conclusion on both consolidated (L78) and standalone (L264). No Emphasis of Matter, no Other Matter, no Going Concern paragraph (A2 section 5; A3 F5). All three WOS reviewed by the statutory auditor (L73), so 0% of PAT is unreviewed (A3 F4). Status: CLEAN (unmodified, no EoM). Signature timing: review reports signed 20:04:40 and 20:05:15, inside the 19:20-20:30 meeting window (L46, L83, L269); A3 F13 reads this as the ordinary approve-then-sign order.
+Auditor opinion: Lodha & Co LLP (L60, L80), partner R P Baradiya (L84). Limited review, unmodified conclusion on both consolidated (L78) and standalone (L264). No Emphasis of Matter, no Other Matter, no Going Concern paragraph (A2 section 5; A3 F5). All three WOS were reviewed by the statutory auditor (L73), so 0% of PAT is unreviewed (A3 F4). Status: CLEAN (unmodified, no EoM). Signature timing: the review reports were signed at 20:04:40 and 20:05:15, inside the 19:20-20:30 meeting window (L46, L83, L269). A3 F13 reads this as the ordinary approve-then-sign order.
 
 ### 0E. Business type
 
@@ -177,7 +200,8 @@ Subsidiary perimeter = consolidated less standalone (net of intercompany elimina
 | FY26 | 76.77 | 32.4% | 2.84 | 3.7% | 7.34 | 7.06 | 30.2% |
 
 Anchors: c: L100 less L286, L101 less L287, L115 less L301, and the Op EBITDA rows of 1A less 1B. Values tie to forensics Section 3 (lakh: sub PAT 327.29 / 353.42 / 217.73 / 553.67 / 680.71 / 706.04).
-Reading: the gap widened 27.0 pp YoY (33.6% to 60.6%) and 1.1 pp QoQ. Sub revenue grew 54.3% YoY (c: 2,920.29 / 1,892.26 lakh); standalone revenue grew 10.6% (c: L286). The US perimeter supplied 70.8% of consolidated YoY revenue growth (c: 1,028.03 of 1,451.07 lakh). The filing gives no entity-level split, no intercompany revenue and no USD revenue. Constant-currency growth is ND. The Q2 FCTR gain of 2.18 Cr (L121) shows the rupee weakened in the quarter, so some sub growth may be currency [INFERENCE].
+Reading: the gap widened 27.0 pp YoY (33.6% to 60.6%) and 1.1 pp QoQ. Sub revenue grew 54.3% YoY (c: 2,920.29 / 1,892.26 lakh); standalone revenue grew 10.6% (c: L286). The perimeter supplied 70.8% of consolidated YoY revenue growth (c: 1,028.03 of 1,451.07 lakh) and 81.2% of YoY Op EBITDA growth (c: 281.56 of 346.95 lakh). The filing gives no entity-level split, no intercompany revenue and no USD revenue. Constant-currency growth is ND. The Q2 FCTR gain of 2.18 Cr (L121, filed) suggests the rupee weakened in the quarter, so some sub growth may be currency [INFERENCE].
+Transfer pricing scope: intercompany revenue and cost eliminate on consolidation (Note 2, L431). A change in transfer prices moves EBITDA between the parent and the perimeter one for one. It changes this S-C gap, the tax split, where cash sits and the parent's own base. It does not change consolidated EBITDA.
 
 ---
 
@@ -194,10 +218,10 @@ Reading: the gap widened 27.0 pp YoY (33.6% to 60.6%) and 1.1 pp QoQ. Sub revenu
 | Finance Costs | 0.23 (L106) | 0.46 (L106) | +104.3% (c: 23.73 / 22.75) | Up with nil debt; unexplained (A3-13) |
 | EBIT (operating) = Op EBITDA - D | 3.68 (c: 368.41) | 7.28 (c: 727.68) | +97.5% (c: 359.27 / 368.41) | Strong |
 | Other Income | 7.95 (L101) | 4.73 (L101) | -40.5% (c: -321.45 / 794.68) | Sharp fall |
-| Core Operating PBT (PBT - OI) | 3.46 (c) | 6.81 (c) | +97.1% (c: 335.54 / 345.66) | Strong; the cleanest test passed |
+| Core Operating PBT (PBT - OI) | 3.46 (c) | 6.81 (c) | +97.1% (c: 335.54 / 345.66) | Strong on one quarter; see the bear reading in 2C item 3 |
 | Reported PBT | 11.40 (L110) | 11.54 (L110) | +1.2% (c: 14.09 / 1,140.34) | Flat |
 | PAT | 8.66 (L115) | 8.68 (L115) | +0.3% (c: 2.19 / 865.54) | Flat |
-| EPS (share-adjusted) | 2.78 (L127) | 2.86 (L127) | +2.9% (c) | Flat; buyback adds 2.6 pp over PAT |
+| EPS (share-adjusted) | 2.78 (L127) | 2.86 (L127) | +2.9% (c) | Flat; the 2.6 pp over PAT is a share-count effect only (Step 0C) |
 
 ### 2B. Standalone
 
@@ -218,11 +242,14 @@ Reading: the gap widened 27.0 pp YoY (33.6% to 60.6%) and 1.1 pp QoQ. Sub revenu
 ### 2C. Six mandatory diagnostics
 
 1. Did revenue grow YoY? Yes. Consolidated +24.7% YoY (Q2 FY27 73.30 Cr vs Q2 FY26 58.79 Cr, L100). Standalone +10.6%. Company guidance: ND (no concall, no guidance in the filing). Base case: ND 'not passed'.
-2. Did operating EBITDA margin expand YoY? Yes on consolidated. Q2 FY27 margin of 11.04% vs Q2 FY26 margin of 7.86% = +318 bps. All three cost lines fell as a share of revenue (c, L104/L105/L108 over L100): employee cost 56.01% to 53.92% (-209 bps), outsourced cost 24.82% to 24.09% (-73 bps), other expenses 11.31% to 10.95% (-36 bps). Standalone margin rose only 48 bps (10.46% to 10.94%). Sequentially the consolidated margin rose 268 bps (8.36% Q1 to 11.04% Q2), while standalone fell 69 bps (11.63% to 10.94%). The margin gain sits in the subsidiaries (sub margin 2.4% Q2 FY26, 2.5% Q1 FY27, 11.2% Q2 FY27; Step 1C).
-3. Did core operating PBT grow YoY? Yes. Consolidated core PBT +97.1% (3.46 Cr to 6.81 Cr). Reported PBT +1.2% and PAT +0.3%. The gap runs opposite to the protocol's warning: core growth is real and the headline understates it. Standalone core PBT +13.0% while standalone PAT fell 16.6%.
+2. Did operating EBITDA margin expand YoY? Yes on consolidated. Q2 FY27 margin of 11.04% vs Q2 FY26 margin of 7.86% = +318 bps. All three cost lines fell as a share of revenue (c, L104/L105/L108 over L100): employee cost 56.01% to 53.92% (-209 bps), outsourced cost 24.82% to 24.09% (-73 bps), other expenses 11.31% to 10.95% (-36 bps). Standalone margin rose only 48 bps (10.46% to 10.94%). Sequentially the consolidated margin rose 268 bps (8.36% Q1 to 11.04% Q2), while standalone fell 69 bps (11.63% to 10.94%). Most of the margin gain sits in the subsidiaries: they supplied 81.2% of the YoY Op EBITDA gain and all of the QoQ gain (Step 1C).
+3. Did core operating PBT grow YoY? Yes. Consolidated core PBT +97.1% (3.46 Cr to 6.81 Cr). Reported PBT +1.2% and PAT +0.3%. Standalone core PBT +13.0% while standalone PAT fell 16.6%.
+   Bear reading (A5 M1, verified): the core-PBT doubling is one quarter, and all of the QoQ gain sits outside the parent. Consolidated Op EBITDA rose Rs 2.37 Cr QoQ (c: 571.89 to 808.87 lakh). The subsidiaries added Rs 2.67 Cr (c: 60.02 to 326.61) and the parent lost Rs 0.30 Cr (c: 511.87 to 482.26). Parent core PBT fell 6.9% QoQ (c: 404.46 to 376.52). In the two prior reported quarters (Q2 FY26, Q1 FY27) the subsidiaries' margin was 2.4% and 2.5%. Q2 also carried a currency swing: FCTR -Rs 0.25 Cr in Q1 and +Rs 2.18 Cr in Q2 (L121) [INFERENCE: a weaker rupee lifts the INR margin on USD revenue delivered at INR cost]. Constant-currency margin is ND. On the H1 basis, Other Income is still 53.47% of PBT. The Q3 FY27 consolidated Op EBITDA margin separates a lasting step (at or above 11.04%) from a one-quarter step (at or below 8.36%).
+   What the step is not: transfer pricing cannot explain it. Intercompany items eliminate on consolidation (L431), so the group gain is the same under any transfer price. Transfer pricing bears only on where the profit sits (Step 1C).
+   Inorganic reading tested and rejected: neither consolidated investing section has an acquisition line (L223-L231), there is no goodwill line, intangibles are nil (L145), and the perimeter is the same three WOS (L73-L76, L431).
 4. What drove the gap between core PBT growth and reported PAT growth? Consolidated, in lakh (c, Step 4): core PBT +335.54; Other Income -321.45; the ETR rise from 24.10% to 24.83% cost 8.50; tax on the PBT change cost 3.40. Exceptional items: none (no template line exists; A3-02). Net PAT change +2.19.
 5. Are D&A and finance costs scaling faster than revenue? D&A no (-13.2% YoY vs revenue +24.7%). Finance cost yes (+104.3%), but at 0.46 Cr it is 0.6% of revenue (c: 46.48 / 7,329.57). Borrowings are nil at 30-Sep-2026 (L178) and lease liabilities fell (A3-13). The filing does not explain the finance cost. No capex absorption gap exists: H1 capex was 0.44 Cr (L224).
-6. Is Other Income concentration changing? Yes. Other Income / PBT fell from 69.69% (Q2 FY26) and 64.89% (Q1 FY27) to 40.99% (Q2 FY27). H1 detail (L206, L211, L212): interest and dividend income 7.06 Cr H1 FY27 vs 6.93 Cr H1 FY26 (stable); fair-value gain on mutual funds and T-bills 0.19 Cr vs 2.65 Cr (down 2.46 Cr); MF sale profit 0.03 Cr vs 0.08 Cr. Residual Other Income, not itemised: 5.64 Cr H1 FY27 vs 5.34 Cr H1 FY26 (c: L101 less L206, L211, L212); source ND. The H1 drop is mostly fair-value gains. The Q1-to-Q2 drop sits in the subsidiaries (sub OI 4.35 Cr to 1.33 Cr; A3-05). Quarterly split of the components: ND.
+6. Is Other Income concentration changing? Yes. Other Income / PBT fell from 69.69% (Q2 FY26) and 64.89% (Q1 FY27) to 40.99% (Q2 FY27). H1 detail (L206, L211, L212): interest and dividend income 7.06 Cr H1 FY27 vs 6.93 Cr H1 FY26 (stable); fair-value gain on mutual funds and T-bills 0.19 Cr vs 2.65 Cr (down 2.46 Cr); MF sale profit 0.03 Cr vs 0.08 Cr. Residual Other Income, not itemised: 5.64 Cr H1 FY27 vs 5.34 Cr H1 FY26 (c: L101 less L206, L211, L212); source ND. The H1 drop is mostly fair-value gains. The perimeter booked no fair-value gain in H1 FY27 (L212 = L391 = 18.69 lakh), against 1.55 Cr in H1 FY26 (c: 264.50 less 109.27). The Q1-to-Q2 drop sits in the subsidiaries (sub OI 4.35 Cr to 1.33 Cr; A3-05). Quarterly split of the components: ND.
 
 ---
 
@@ -236,15 +263,16 @@ The filing gives three quarters directly. Q1 FY26 is derived (H1 FY26 less Q2 FY
 | Q2 FY26 | 58.79 (L100) | 7.86% | 3.46 | H1 FY26 FV gain 2.65 Cr in OI (L212), quarter split ND | +1.0% vs Q1 FY26 |
 | H2 FY26 (Q3+Q4 block, derived) | 120.17 (avg 60.09 a quarter) | 7.65% (c: 919.12 / 12,017.32) | 7.10 (avg 3.55 a quarter) | Note 5 Labour Code EBE impact inside FY26, amount ND; OCI remeasurement +0.67 Cr (A3-09, not P&L) | avg +2.2% vs Q2 FY26 |
 | Q1 FY27 | 68.45 (L100) | 8.36% | 4.43 | sub OI 4.35 Cr (A3-05), cause ND | +13.9% vs H2 FY26 avg |
-| Q2 FY27 | 73.30 (L100) | 11.04% | 6.81 | none flagged | +7.1% vs Q1 FY27 |
+| Q2 FY27 | 73.30 (L100) | 11.04% | 6.81 | none flagged; FCTR swing (L121) | +7.1% vs Q1 FY27 |
 
 Individual Q3 FY26 and Q4 FY26 values: ND (not in this filing).
 
 Diagnostics:
-- Trajectory: STEPPING UP. Revenue ran flat at 58-60 Cr a quarter through FY26, then stepped to 68.45 Cr in Q1 FY27 and 73.30 Cr in Q2 FY27. Core PBT ran 3.46-3.78 Cr a quarter through FY26 and rose to 4.43 Cr, then 6.81 Cr.
-- One-off distortion: H2 FY26 carries the unquantified Note 5 Labour Code charge in EBE, which may depress its 7.65% margin. Q1 FY27 Other Income carries an unexplained 4.35 Cr in the subsidiaries. Q2 FY27 has no flagged one-off.
+- Trajectory: STEPPING UP on revenue. FY26 revenue averaged 58-60 Cr a quarter (Q1 58.19, Q2 58.79, H2 average 60.09). It then stepped to 68.45 Cr in Q1 FY27 and 73.30 Cr in Q2 FY27. Core PBT averaged 3.46-3.78 Cr a quarter in FY26 (H2 average 3.55), rose to 4.43 Cr, then 6.81 Cr. The revenue step is two quarters old. The margin step is one quarter old.
+- Bear reading of the step (M1): all of the Q2 QoQ Op EBITDA gain came from the subsidiaries (+2.67 Cr) while the parent fell (-0.30 Cr), and Q2 carried a currency swing (FCTR -0.25 Cr Q1 to +2.18 Cr Q2, L121). Currency is a weak explanation for Q1: Q1 revenue was 13.9% above the H2 FY26 average while FCTR was negative [INFERENCE: rupee stronger in Q1]. So the revenue step looks real on the extract. The margin step is unproven until Q3.
+- One-off distortion: H2 FY26 carries the unquantified Note 5 Labour Code item in EBE, which may depress its 7.65% margin. Q1 FY27 Other Income carries an unexplained 4.35 Cr in the subsidiaries. Q2 FY27 has no flagged one-off.
 - Latest quarter vs H1 average: Q2 FY27 revenue of 73.30 Cr exceeds the H1 FY27 average of 70.87 Cr a quarter (c: 141.74 / 2). The Q2 margin of 11.04% exceeds the H1 margin of 9.74%. No capex commissioning thesis applies (H1 capex 0.44 Cr, L224), so the H1-vs-Q4 plant test is N.A.
-- Implied Q3 FY27 base to keep the trajectory: revenue at or above 73.30 Cr and operating EBITDA margin at or above 11.04%, so core PBT at or above 6.81 Cr. This is the bar, not a forecast.
+- Implied Q3 FY27 base to keep the trajectory: revenue at or above 73.30 Cr and operating EBITDA margin at or above 11.04%, so core PBT at or above 6.81 Cr. This is the bar, not a forecast. A margin at or below 8.36% (the Q1 FY27 level) marks the step as one quarter.
 
 Standalone trajectory: revenue 39.86 (Q2 FY26), 44.02 (Q1 FY27), 44.09 (Q2 FY27) Cr, so +0.2% QoQ (L286). Margin 10.46%, 11.63%, 10.94%. The parent is flat sequentially. All Q2 sequential growth came from the subsidiaries (sub revenue +19.6% QoQ, c: 2,920.29 / 2,442.45).
 
@@ -257,7 +285,7 @@ Standalone trajectory: revenue 39.86 (Q2 FY26), 44.02 (Q1 FY27), 44.09 (Q2 FY27)
 | Component | YoY change (lakh) | % of Q2 FY26 PAT (865.54) | Recurring? | Method (c) |
 |---|---|---|---|---|
 | Revenue contribution to EBITDA (at prior margin) | +114.02 (1.14) | +13.17% | Recurring | 1,451.07 x 7.858% |
-| Margin change contribution | +232.93 (2.33) | +26.91% | Recurring only if sub margin holds (A3-04) | 7,329.57 x 3.178 pp |
+| Margin change contribution | +232.93 (2.33) | +26.91% | Recurring only if the Q2 step lasts (one-quarter / currency risk, 2C item 3) | 7,329.57 x 3.178 pp |
 | D&A change | +12.32 (0.12) | +1.42% | Recurring | 93.51 - 81.19 |
 | Finance cost change | -23.73 (-0.24) | -2.74% | Unknown source (A3-13) | 22.75 - 46.48 |
 | Other Income change | -321.45 (-3.21) | -37.14% | NON-RECURRING (treasury / FV) | 473.23 - 794.68 |
@@ -286,7 +314,7 @@ Check: 44.24 + 21.15 + 4.04 - 26.06 - 178.46 + 32.34 - 4.62 = -107.37.
 
 ### 4C. Mandatory questions
 
-- Recurring vs non-recurring share of the PAT change: consolidated core operations added 335.54 lakh pre-tax (revenue, margin, D&A, finance cost). Non-recurring Other Income took away 321.45 lakh. The 2.19 lakh net PAT change hides a 97% rise in core PBT. As a share of prior PAT, core lines added +38.76% and Other Income took -37.14%.
+- Recurring vs non-recurring share of the PAT change: consolidated core operations added 335.54 lakh pre-tax (revenue, margin, D&A, finance cost). Non-recurring Other Income took away 321.45 lakh. The 2.19 lakh net PAT change hides a 97% rise in core PBT. As a share of prior PAT, core lines added +38.76% and Other Income took -37.14%. The margin part (+26.91%) rests on one quarter (2C item 3).
 - If Other Income returns to the prior-year level: Q2 FY27 PBT would be 14.76 Cr (c: 681.20 + 794.68 lakh) and PAT 11.09 Cr at the Q2 FY27 ETR of 24.83% (c: 1,475.88 x 0.7517). With Other Income at zero, PAT would be 5.12 Cr (c: 681.20 x 0.7517). On that basis the core engine earned 5.12 Cr in Q2 FY27 vs 2.62 Cr in Q2 FY26 (c: 345.66 x (1 - 24.10%)).
 - D&A and finance costs at steady state? D&A is falling (0.94 Cr to 0.81 Cr) on minimal capex, so it is near a floor. Finance cost of 0.46 Cr with nil borrowings has no stated source; steady state ND.
 - Tax adjustments inflating or deflating PAT: earlier-year adjustments are small, 0.07 Cr in Q1 FY27 and nil to rounding (-0.18 lakh) in Q2 FY27 (L114), all in the subsidiaries (A3-08). Deferred tax is a charge in FY27 (0.40 Cr in Q2, L113), building DTL to 3.26 Cr (L174). No DTA shield and no deferred-tax credit flatters FY27 PAT. Q2 FY26 carried a deferred-tax credit of 0.12 Cr (L113), which flattered the base quarter slightly.
@@ -303,11 +331,11 @@ Flows compare H1 FY27 with H1 FY26 (L199-L242, L380-L421). Balances compare 30-S
 |---|---|---|---|---|
 | CFO | 16.44 (H1 FY26, L222) | 28.26 (H1 FY27, L222) | +72.0% (c: 1,182.77 / 1,643.55) | Strong headline |
 | CFO/PAT ratio | 0.98x (c: 1,643.55 / 1,682.88) | 1.56x (c: 2,826.32 / 1,815.45) | +0.58x | Flattered by WC release (A3-14) |
-| CFO pre-WC, after tax / PAT (supplementary) | 0.64x (c: (1,497.18 - 417.29) / 1,682.88) | 0.84x (c: (1,942.58 - 422.00) / 1,815.45) | +0.20x | Underlying conversion below 1.0x; PAT includes 12.92 Cr OI |
+| CFO pre-WC, after tax / PAT, like-for-like (supplementary) | 1.05x-1.15x (c: (1,079.89 + 692.82) / 1,682.88 = 1.05x; 1,079.89 / (1,682.88 - 977.74 x 0.7569) = 1.15x) | 1.20x-1.23x (c: 1,520.58 / (1,815.45 - 729.95 x 0.7514) = 1.20x; (1,520.58 + 705.77) / 1,815.45 = 1.23x) | up | Above 1.0x on both matched bases, and improving YoY. The unmatched ratio (pre-WC op profit less taxes paid over PAT: 0.84x vs 0.64x) is not used: its numerator excludes 7.30 Cr of treasury and non-cash income (L204, L206, L210-L212) that PAT includes. |
 | Capex (PPE incl. CWIP and advances) | 2.56 (L224) | 0.44 (L224) | -83.0% | Asset-light |
 | FCF (CFO - Capex) | 13.87 (c) | 27.83 (c) | +100.6% (c: 1,395.45 / 1,387.32) | Strong headline |
 | Working capital change (release +) | +5.64 (L219) | +13.06 (L219) | +7.42 | Release = 94.6% of H1 Op EBITDA (c: 1,305.74 / 1,380.76) |
-| Receivable days | 53.4 (31-Mar-2026; c: 3,472.50 / 23,715.23 x 365) | 44.5 (30-Sep-2026; c: 3,447.70 / 14,174.30 x 183) | -8.9 days | Improved; unbilled revenue split ND |
+| Receivable days | 53.4 (31-Mar-2026; c: L155 3,472.50 / 23,715.23 x 365) | 44.5 (30-Sep-2026; c: L155 3,447.70 / 14,174.30 x 183) | -8.9 days | Improved; unbilled revenue split ND |
 | Inventory days | ND (no inventory line) | ND | ND | N.A. for IT services |
 | Payable days (basis: outsourced + other expenses) | 105.1 (c: 2,403.63 / 8,348.00 x 365) | 102.6 (c: 2,862.37 / 5,107.61 x 183) | -2.5 days | High; basis is an A4 choice, cost of purchases ND |
 | Cash Conversion Cycle | -51.6 (c) | -58.0 (c) | -6.4 days | Negative on this basis; read with caution |
@@ -316,9 +344,11 @@ Flows compare H1 FY27 with H1 FY26 (L199-L242, L380-L421). Balances compare 30-S
 | Net Debt / (Net Cash) | (169.59) (c: L156+L157+L154+L147-L178, Mar-26) | (167.92) (c: same lines, Sep-26) | -1.67 | Net cash, near flat after a 14.98 Cr buyback |
 | Promoter Pledge | ND (not in filing) | ND | ND | ND |
 
-Net cash composition, 30-Sep-2026 (lakh): cash 1,854.94 (L156) + other bank balances 538.30 (L157) + current investments 14,399.20 (L154) + non-current investments nil (L147) less borrowings nil (L178) = 16,792.44. At 31-Mar-2026: 2,101.47 + 3,771.62 + 10,762.47 + 701.16 less 377.23 = 16,959.49. Excluded: non-current other financial assets 2,238.04 (L149), up 1,747.46 from 490.58, which may hold long-dated deposits (A3-12 [INFERENCE]); with them, net cash is 190.30 Cr vs 174.50 Cr. Lease liabilities of 4.02 Cr (L172 + L179) are not deducted. Net cash is 57.7% of total assets (c: 16,792.44 / 29,115.58, L163) and 81.6% of equity (c: / 20,572.73, L168).
+Matched-basis detail: "Operating profit before working capital changes" (L214) removes unrealised FX gain 2.55 (L204), interest and dividend income 705.77 (L206), ECL reversal 0.05 (L210), MF sale profit 2.89 (L211) and FV gain 18.69 (L212), total 729.95 lakh in H1 FY27. The H1 FY26 total is 977.74 lakh (L204, L206, L209, L211, L212). Interest received goes to investing (L230). Basis (a) adds interest and dividend income back to the numerator. Basis (b) strips the after-tax removed income from PAT at the period ETR (24.86% / 24.31%).
 
-Pending outflow: the 12.15 Cr unexplained Other equity debit (A3-11) sits in other financial liabilities (current), which rose 13.60 Cr consolidated (L183: 124.47 to 1,484.90 lakh). If it is a declared, unpaid dividend, about 12.15 Cr of cash leaves in Q3 FY27 [INFERENCE]. The filing does not confirm a dividend.
+Net cash composition, 30-Sep-2026 (lakh): cash 1,854.94 (L156) + other bank balances 538.30 (L157) + current investments 14,399.20 (L154) + non-current investments nil (L147) less borrowings nil (L178) = 16,792.44. At 31-Mar-2026: 2,101.47 + 3,771.62 + 10,762.47 + 701.16 less 377.23 = 16,959.49. Excluded: non-current other financial assets 2,238.04 (L149), up 1,747.46 from 490.58, which may hold long-dated deposits (A3-12 [INFERENCE]). With them, net cash is 190.30 Cr vs 174.50 Cr. Lease liabilities of 4.02 Cr (L172 + L179) are not deducted. Net cash is 57.7% of total assets (c: 16,792.44 / 29,115.58, L163) and 81.6% of equity (c: / 20,572.73, L168).
+
+Pending outflow: the 12.15 Cr unexplained Other equity debit (A3-11) sits in other financial liabilities (current), which rose 13.60 Cr consolidated (L183: 124.47 to 1,484.90 lakh). The standalone gap equals Rs 4.00 x 3,03,80,600 closing shares exactly (c). If it is a declared, unpaid dividend, about 12.15 Cr of cash leaves in Q3 FY27 [INFERENCE]. The filing does not confirm a dividend.
 
 ### 5B. Standalone
 
@@ -329,23 +359,23 @@ Pending outflow: the 12.15 Cr unexplained Other equity debit (A3-11) sits in oth
 | Capex | 2.45 (L403) | 0.22 (L403) | -91.2% | minimal |
 | FCF | 30.20 (c) | 41.25 (c) | +36.6% | flattered |
 | Working capital change (release +) | +22.55 (L398) | +29.36 (L398) | +6.81 | receivables release 20.27 Cr (L395) |
-| Receivable days | 69.1 (Mar-26; c: 3,035.28 / 16,038.73 x 365) | 21.0 (Sep-26; c: 1,010.43 / 8,811.56 x 183) | -48.1 days | parent receivables cleared |
+| Receivable days | 69.1 (Mar-26; c: L337 3,035.28 / 16,038.73 x 365) | 21.0 (Sep-26; c: L337 1,010.43 / 8,811.56 x 183) | -48.1 days | parent receivables cleared |
 | Investment in WOS (cash out) | nil (L405) | (41.13) (L405) | new | subsidiary not named (A3-01) |
-| Net cash (cash + bank + current investments - borrowings) | 53.14 (c: 1,585.66 + 3,771.62 + 333.96 - 377.23) | 25.76 (c: 1,330.59 + 538.30 + 706.92) | -27.38 | cash moved to the subsidiaries |
+| Net cash (cash + bank + current investments - borrowings) | 53.14 (c: L338 1,585.66 + L339 3,771.62 + L336 333.96 - L359 377.23) | 25.76 (c: 1,330.59 + 538.30 + 706.92) | -27.38 | cash moved to the subsidiaries |
 | Promoter Pledge | ND | ND | ND | ND |
 
-Parent non-current investments rose to 64.49 Cr (L329) from 30.37 Cr. A3-01 ties this exactly: 3,036.69 less 701.16 moved to current plus 4,113.13 = 6,448.66 lakh. The subsidiaries bought 32.64 Cr of investments in H1 (c: L226 3,293.77 less L406 30.00). Subsidiary-held current investments rose from 104.29 Cr to 136.92 Cr (c: L154 less L336). 95.1% of group current investments now sit in the subsidiaries (A3-01).
+Parent non-current investments rose to 64.49 Cr (L329) from 30.37 Cr. A3-01 ties this exactly: 3,036.69 less 701.16 moved to current plus 4,113.13 = 6,448.66 lakh. The subsidiaries bought 32.64 Cr of investments in H1 (c: L226 3,293.77 less L406 30.00). Subsidiary-held current investments rose from 104.29 Cr to 136.92 Cr (c: L154 less L336), while parent net cash fell from 53.14 Cr to 25.76 Cr. The subsidiaries held 95.1% of group current investments at 30-Sep-2026 and 96.9% at 31-Mar-2026 (c: 10,428.51 / 10,762.47). The share is a level, not a trend; the absolute rise carries the point.
 
-Two-year pattern [INFERENCE]: parent receivables also fell 18.67 Cr in H1 FY26 (L395) while consolidated receivables fell only 2.02 Cr (L216). The parent builds receivables at March and collects them in H1 in both years. That pattern fits intercompany billing timing better than a one-off round-trip with the 41.13 Cr injection. Intercompany balances are ND, so the reading stays open (A3-06).
+Two-year pattern [INFERENCE]: parent receivables also fell 18.67 Cr in H1 FY26 (L395) while consolidated receivables fell only 2.02 Cr (L216), with no injection that year (R522 nil). The parent builds receivables at March and collects them in H1 in both years. A second intercompany balance existed at March: parent other financial assets (current) exceeded the consolidated figure by 4.70 Cr (c: L341 1,769.30 less L159 1,299.22). The perimeter held 104.29 Cr of current investments at March, so it did not need parent cash to settle dues. This pattern fits intercompany billing timing better than a one-off round-trip with the 41.13 Cr injection. Intercompany balances are ND, so the reading stays open (A3-06).
 
 ### 5C. Mandatory questions
 
-- Is CFO/PAT meeting the Pillar 2 cash band? No band is on record (ND 'not passed'). Facts for /fttcp: headline H1 CFO/PAT 1.56x; pre-WC after-tax 0.84x; prior H1 0.98x headline. Full-year FY26 CFO: ND (not in this filing). Band selection is deferred to /fttcp and Role 1 (OR-30).
-- Is the WC movement structural or growth-induced? Neither label fits as asked: WC released while revenue grew 24.7%. The release came from liabilities, not assets: non-MSE trade payables +5.38 Cr (L182), MSE payables -0.80 Cr (L181), other current liabilities +3.37 Cr (L184), provisions +1.02 Cr (L185). A payables stretch or customer advances can reverse in H2 (A3-14). Rating agency commentary: ND (not supplied). Stop-growing test: receivable days of 44.5 would stay moderate; payable days of 102.6 are the item that may not hold.
+- Is CFO/PAT meeting the Pillar 2 cash band? No band is on record (ND 'not passed'). Facts for /fttcp: headline H1 CFO/PAT 1.56x (0.98x H1 FY26); like-for-like pre-WC after-tax 1.20x-1.23x (1.05x-1.15x H1 FY26). Full-year FY26 CFO: ND (not in this filing). Band selection is deferred to /fttcp and Role 1 (OR-30).
+- Is the WC movement structural or growth-induced? Neither label fits as asked: WC released while revenue grew 24.7%. Liabilities supplied 85.2% of the release (c: L218 1,112.60 / L219 1,305.74) and assets 14.8% (L216, L217). Line detail: non-MSE trade payables +5.38 Cr (L182), MSE payables -0.80 Cr (L181), other current liabilities +3.37 Cr (L184), provisions +1.02 Cr (L185). Of the 25.94 Cr of other current liabilities, 22.04 Cr sits in the subsidiaries (c: L184 less L365); the parent's balance fell 1.62 Cr while the subsidiaries' rose 4.99 Cr. A payables stretch or customer advances can reverse in H2 (A3-14). Rating agency commentary: ND (not supplied). Stop-growing test: receivable days of 44.5 would stay moderate; payable days of 102.6 are the item that may not hold.
 - Did CWIP capitalise? No CWIP line exists and H1 capex was 0.44 Cr. N.A.
 - Did net debt move within the projected range? No projection exists. The group stayed net cash at 167.92 Cr and repaid 3.77 Cr of short-term borrowings (L233).
 
-Cash conversion classification: INDETERMINATE-WITH-DIRECTION. Direction: favourable headline (1.56x), with H2 reversal risk on liabilities. Missing evidence that would resolve it: (1) the H2 FY27 cash flow (FY27 annual results), (2) the split of other current liabilities into customer advances and other items, (3) unbilled revenue and contract balances, (4) confirmation of the 12.15 Cr item (A3-11). Per house rule this caps the verdict at PROCEED WITH CAVEATS or below.
+Cash conversion classification: INDETERMINATE-WITH-DIRECTION. Direction: favourable. The headline is 1.56x and the matched pre-WC reading is above 1.0x and rising. The H1 headline still rests on a 13.06 Cr liability-led release that can reverse in H2. Missing evidence that would resolve it: (1) the H2 FY27 cash flow (FY27 annual results), (2) the split of other current liabilities into customer advances and other items, (3) unbilled revenue and contract balances, (4) confirmation of the 12.15 Cr item (A3-11). Per house rule this caps the verdict at PROCEED WITH CAVEATS or below.
 
 ---
 
@@ -361,15 +391,15 @@ Flag: zero signals for CYBERTECH, below the floor of three. No initial workup an
 
 ### 5.5B. Reconciliation
 
-Target reported: STRONG on core operations (core PBT +97.1% YoY), FLAT on headline PAT (+0.3%). Signals: ND. Interpretation: ND. No four-outcome cell can be chosen without signal readings.
+Target reported: STRONG on core operations for one quarter (core PBT +97.1% YoY), FLAT on headline PAT (+0.3%). Signals: ND. Interpretation: ND. No four-outcome cell can be chosen without signal readings.
 
 ### 5.5C. New signals
 
-No new signal written to the tracker. No tracker rows exist for this company, and the write gate needs operator approval. One candidate dependency, emitted as a payload row only:
+No new signal is written to the tracker. No tracker rows exist for this company, and the write gate needs operator approval. One candidate dependency, emitted as a payload row only:
 
 | Candidate signal | Type | Cadence | Why this filing surfaces it | Case |
 |---|---|---|---|---|
-| USD/INR exchange rate | Macro / currency | Monthly | Subsidiaries are 39.8% of Q2 consolidated revenue (Step 1C); FCTR gain 2.18 Cr in Q2 (L121); USD revenue and constant-currency growth ND | B (create new), for the operator write gate |
+| USD/INR exchange rate | Macro / currency | Monthly | Subsidiaries are 39.8% of Q2 consolidated revenue (Step 1C); FCTR swung from -0.25 Cr in Q1 to +2.18 Cr in Q2 (L121); the margin step may be currency-assisted (2C item 3); USD revenue and constant-currency growth ND | B (create new), for the operator write gate |
 
 The filing names no customer, end market or partner, so no demand-side signal can be named from filed evidence. That gap is itself a Role 5.5 input.
 
@@ -400,7 +430,7 @@ Probability re-weighting rule: N.A. No projections exist, so no below-bear count
 |---|---|---|---|---|---|
 | ND | ND 'not passed' (no checklist) | ND | ND | ND | UNKNOWN |
 
-Seed items a future checklist could carry (proposals from this filing, not thresholds on record): consolidated core PBT ex-OI (6.81 Cr Q2 FY27); subsidiary EBITDA margin (11.2%); S-C PAT gap (60.6%); H1 CFO/PAT (1.56x headline, 0.84x pre-WC); subsidiary-held current investments (136.92 Cr). Thresholds are for the operator to set.
+Seed items a future checklist could carry (proposals from this filing, not thresholds on record): consolidated core PBT ex-OI (6.81 Cr Q2 FY27); consolidated Op EBITDA margin (11.04%); subsidiary EBITDA margin (11.2%); S-C PAT gap (60.6%); H1 CFO/PAT (1.56x headline, 1.20x-1.23x matched pre-WC); subsidiary-held current investments (136.92 Cr). Thresholds are for the operator to set.
 
 ### 6C. Thesis-broken trigger check
 
@@ -416,7 +446,7 @@ No condition can fire. No exit recommendation arises. The IMMEDIATE EXIT overlay
 |---|---|---|---|---|
 | ND 'not passed' (no triggers on record) | ND | ND | ND | ND |
 
-Pre-thesis growth observations (filed, for a future Role 2): consolidated revenue +24.7% YoY; subsidiary revenue +54.3% YoY; consolidated operating margin +318 bps YoY. These are observations, not triggers.
+Pre-thesis growth observations (filed, for a future Role 2): consolidated revenue +24.7% YoY; subsidiary revenue +54.3% YoY; consolidated operating margin +318 bps YoY, on one quarter. These are observations, not triggers.
 
 ---
 
@@ -425,9 +455,9 @@ Pre-thesis growth observations (filed, for a future Role 2): consolidated revenu
 Deferred to /fttcp and Role 1 (operator ruling OR-30). No A21 base is computed here, and no expectation ledger exists for CYBERTECH (ND 'not passed').
 
 Pillar-relevant facts flagged for the A21 base refresh (6.5A inputs):
-- Latest quarter core PBT ex-OI: 6.81 Cr (Q2 FY27, c); prior readings 3.78 (Q1 FY26), 3.46 (Q2 FY26), 3.55 (H2 FY26 quarterly average), 4.43 Cr (Q1 FY27).
+- Latest quarter core PBT ex-OI: 6.81 Cr (Q2 FY27, c); prior readings 3.78 (Q1 FY26), 3.46 (Q2 FY26), 3.55 (H2 FY26 quarterly average), 4.43 Cr (Q1 FY27). The Q2 level is one quarter old and may be currency-assisted (2C item 3); a single-quarter annualisation would rest on it.
 - Other Income per quarter: 7.95, 8.19, 4.73 Cr (L101). Volatile. Fair-value gains fell from 2.65 Cr to 0.19 Cr on an H1 basis (L212).
-- One-offs to state: subsidiary Other Income of 4.35 Cr in Q1 FY27 (A3-05); Note 5 Labour Code charge inside FY26 EBE (amount ND).
+- One-offs to state: subsidiary Other Income of 4.35 Cr in Q1 FY27 (A3-05); Note 5 Labour Code item inside FY26 EBE (amount ND).
 - Seasonality marker: parent receivables build at March and release in H1 in both FY26 and FY27 (L395). Revenue shows no visible seasonality in the quarters given.
 - Treasury base: current investments 143.99 Cr (L154), 95.1% held by subsidiaries; a possible 12.15 Cr Q3 outflow (A3-11) shrinks the base that earns Other Income.
 
@@ -442,8 +472,8 @@ Deferred to /fttcp and Role 1 (operator ruling OR-30). No pillar values exist on
 | Pillar / Input | Original Assumption | Current Reading (filed facts flagged) | Action |
 |---|---|---|---|
 | ROCE base | ND 'not passed' | Equity 205.73 Cr (L168); net cash 167.92 Cr (c); lease liabilities 4.02 Cr; investment property 16.96 Cr (L144); H1 FY27 core PBT 11.24 Cr (c); H1 finance cost 0.88 Cr (L106). Cash is 81.6% of equity, so ROCE on reported capital and ROCE ex-cash will differ sharply. Not a CONVERTER (IT services), so Amendment 17 does not bind. | Deferred to the /fttcp ROCE forward verdict |
-| Cash Multiplier | ND 'not passed' | H1 CFO/PAT 1.56x headline, 0.84x pre-WC after tax, 0.98x H1 FY26 (Step 5A). Classification INDETERMINATE-WITH-DIRECTION. | Deferred; band choice needs the H2 reading |
-| Growth Visibility Premium | ND 'not passed' | Revenue +24.7% YoY consolidated, +54.3% subsidiaries; no order book, no guidance, no concall. EM score ND. | Deferred |
+| Cash Multiplier | ND 'not passed' | H1 CFO/PAT 1.56x headline (0.98x H1 FY26); like-for-like pre-WC after tax 1.20x-1.23x (1.05x-1.15x H1 FY26) (Step 5A). Classification INDETERMINATE-WITH-DIRECTION on H2 reversal risk. | Deferred; band choice needs the H2 reading |
+| Growth Visibility Premium | ND 'not passed' | Revenue +24.7% YoY consolidated, +54.3% subsidiaries; margin step one quarter old; no order book, no guidance, no concall. EM score ND. | Deferred |
 | Strategic Premium | ND 'not passed' | No moat, IP or contract evidence in the filing; intangibles nil (L145). "ROCE recovery credited via": ND. | Deferred |
 | UA Multiplier | ND 'not passed' | Institutional ownership ND in this filing; the three qualifiers are ND. Low institutional ownership is not a risk (house rule). | Deferred |
 | Sector Cap | ND 'not passed' | Single segment, Information Technology Services (L433). No reclassification. | Deferred |
@@ -472,15 +502,16 @@ Decision Status verified (Step 0A): NONE ON RECORD. The name is not held and is 
 ### 8C. Single cleanest metric for next quarter
 
 Metric: consolidated core operating PBT (PBT less Other Income), Q3 FY27.
-Why: Other Income moves 3-4 Cr between quarters and masks the engine. The open question is whether the Q2 subsidiary margin step (2.5% to 11.2%) is real operating leverage or a one-quarter shift (A3-04). Core PBT carries that answer in one number.
+Why: Other Income moves 3-4 Cr between quarters and masks the engine. The open question is whether the Q2 group margin step is a lasting step or a one-quarter or currency-assisted step (2C item 3). Core PBT carries that answer in one number, and it already nets out the Other Income noise. It cannot test transfer pricing, which moves profit between entities and leaves consolidated figures unchanged. QfM 1 and the FY27 Annual Report carry that test.
 - Bull threshold: Q3 FY27 core PBT at or above 6.81 Cr (holds the Q2 FY27 level).
 - Bear threshold: Q3 FY27 core PBT at or below 4.43 Cr (back to the Q1 FY27 level).
+- Cross-check on the same filing: consolidated Op EBITDA margin at or above 11.04% (lasting) vs at or below 8.36% (one quarter).
 - Between the two: unresolved; carry to Q4.
 
 ### Protocol verdict
 
 PROCEED WITH FLAGS.
-Basis: the filing is complete and the limited review is unmodified, so the numbers are usable. Cash conversion is INDETERMINATE-WITH-DIRECTION, which caps the verdict at PROCEED WITH CAVEATS. Two material capital movements have no note: 41.13 Cr into an unnamed subsidiary (27.6% of opening standalone net worth, c: 4,113.13 / 14,906.47) and a 12.15 Cr unexplained Other equity debit (A3-11). Together with the undisclosed buyback terms (A3-10) and four document-control errors (A3-15, A3-16, A3-17, A3-20), these move the verdict to FLAGS. It is not INSUFFICIENT EVIDENCE: the filing supports a full Role 4 read. This is a pre-thesis read, so no thesis status is assigned.
+Basis: the filing is complete and the limited review is unmodified, so the numbers are usable. Cash conversion is INDETERMINATE-WITH-DIRECTION, which caps the verdict at PROCEED WITH CAVEATS. Two material capital movements have no note. One is 41.13 Cr into an unnamed subsidiary (27.6% of opening standalone net worth, c: 4,113.13 / 14,906.47). The other is a 12.15 Cr unexplained Other equity debit (A3-11). That debit ties exactly to Rs 4.00 a share, which firms the dividend reading but does not confirm it. Together with the undisclosed buyback terms (A3-10) and four document-control errors (A3-15, A3-16, A3-17, A3-20), these move the verdict to FLAGS. It is not INSUFFICIENT EVIDENCE: the filing supports a full Role 4 read. This is a pre-thesis read, so no thesis status is assigned.
 
 ---
 
@@ -490,27 +521,29 @@ Prior-quarter question tracking: ND 'not passed' (first quarterly run; no prior 
 
 | # | Cat | Question | Why It Matters | Bull Answer | Bear Answer | From finding |
 |---|---|---|---|---|---|---|
-| 1 | C | Q2 FY27 subsidiary EBITDA was Rs 3.27 Cr against Rs 0.60 Cr in Q1 FY27, while standalone EBITDA fell from Rs 5.12 Cr to Rs 4.82 Cr. Did the transfer-pricing terms between the parent and the US subsidiaries change in FY27? Yes or no. | Decides whether the +318 bps group margin gain is real leverage or a move of margin between entities. | No change; the gain came from external US revenue and utilisation. | Yes, or no answer: the gain is partly an internal shift. | A3-04 |
-| 2 | A | Subsidiary revenue was Rs 29.20 Cr in Q2 FY27 vs Rs 18.92 Cr in Q2 FY26 (+54.3%). What was the US subsidiaries' revenue in US dollars in each of those two quarters? | Separates volume from currency; the FCTR gain was Rs 2.18 Cr in Q2 (L121). | USD growth close to the rupee growth. | USD growth far below 54.3%; the rupee did much of the work. | A3-03 |
-| 3 | D | Standalone Other equity is Rs 12.15 Cr below what H1 profit, the buyback and the ESOP explain (10,337.53 lakh filed vs 11,552.75 lakh expected). Is this a final FY26 dividend of Rs 4.00 a share, declared and unpaid at 30-Sep-2026? Yes or no, with the payment date. | A 12.15 Cr item equal to 9.1% of standalone net worth has no note. | Yes; dividend paid in October 2026. | No; an undisclosed reserve charge, or no answer. | A3-11 |
+| 1 | C | Q2 FY27 subsidiary EBITDA was Rs 3.27 Cr against Rs 0.60 Cr in Q1 FY27, while standalone EBITDA fell from Rs 5.12 Cr to Rs 4.82 Cr. Did the transfer-pricing terms between the parent and the subsidiaries change in FY27? Yes or no. | Decides where profit sits between the parent and the subsidiaries, which drives the S-C gap, tax and cash location. It cannot explain the group gain, which is the same under any transfer price. | No change; the subsidiaries' profit share reflects their external work. | Yes: intercompany pricing moved profit to the subsidiaries; the parent's own base is weaker than reported. | A3-04 |
+| 2 | A | Subsidiary revenue was Rs 29.20 Cr in Q2 FY27 vs Rs 18.92 Cr in Q2 FY26 (+54.3%). What was the US subsidiaries' revenue in US dollars in each of those two quarters? | Separates volume from currency. FCTR swung from -Rs 0.25 Cr in Q1 to +Rs 2.18 Cr in Q2 (L121), and the group margin step may be currency-assisted. | USD growth close to the rupee growth. | USD growth far below 54.3%; the rupee did much of the work. | A3-03 |
+| 3 | D | Standalone Other equity is Rs 12.15 Cr below what H1 profit, the buyback and the ESOP explain (10,337.53 lakh filed vs 11,552.75 lakh expected), equal to Rs 4.00 a share on 3,03,80,600 shares. Is this a final FY26 dividend of Rs 4.00 a share, declared and unpaid at 30-Sep-2026? Yes or no, with the payment date. | A 12.15 Cr item equal to 9.1% of standalone net worth has no note. | Yes; dividend paid in October 2026. | No; an undisclosed reserve charge, or no answer. | A3-11 |
 | 4 | F | The parent invested Rs 41.13 Cr in a wholly owned subsidiary in H1 FY27 (L405). Which subsidiary received it? | 27.6% of opening standalone net worth moved offshore with no note. | Named entity with a stated operating purpose. | Vague answer; entity not named. | A3-01 |
 | 5 | B | Is the company negotiating an acquisition to be funded from the subsidiaries' Rs 136.92 Cr of current investments? Yes or no, with the targeted closing quarter. | Separates the war-chest reading from treasury parking (A3-01). | Yes, with a target quarter. | No plan; cash sits offshore in T-bills. | A3-01 |
-| 6 | D | H1 working capital released Rs 13.06 Cr, 94.6% of H1 operating EBITDA, led by non-MSE payables (+Rs 5.38 Cr) and other current liabilities (+Rs 3.37 Cr). How much of the Rs 25.94 Cr of other current liabilities at 30-Sep-2026 is customer advances? | Decides whether H1 CFO/PAT of 1.56x holds in H2. | Most is customer advances on running contracts. | Most is vendor stretch that reverses in H2. | A3-14 |
+| 6 | D | H1 working capital released Rs 13.06 Cr, 94.6% of H1 operating EBITDA. Rs 22.04 Cr of the Rs 25.94 Cr of other current liabilities at 30-Sep-2026 sits in the subsidiaries, up Rs 4.99 Cr in H1. How much of that Rs 22.04 Cr is customer advances? | Decides whether the H1 CFO/PAT of 1.56x holds in H2. | Most is customer advances on running contracts. | Most is vendor stretch that reverses in H2. | A3-14 |
 | 7 | D | Standalone receivables fell Rs 20.25 Cr (66.7%) in H1 while consolidated receivables stayed near Rs 34.48 Cr. What were the parent's receivables from its subsidiaries at 31-Mar-2026 and at 30-Sep-2026? | Tests intercompany settlement vs billing moved to the subsidiary. | Most of the fall is intercompany settlement, as in H1 FY26. | Billing moved to the subsidiary; the parent base is shrinking. | A3-06 |
 | 8 | E | How many customers each contributed more than 10% of Q2 FY27 consolidated revenue of Rs 73.30 Cr? | The filing has no customer data; subsidiaries now carry 39.8% of revenue. | None, or one with a long contract. | Two or more, concentrated in the US perimeter. | A3-03 |
-| 9 | D | Subsidiary other income fell from Rs 4.35 Cr in Q1 FY27 to Rs 1.33 Cr in Q2 FY27 while subsidiary investments rose. Did the subsidiaries move their T-bill holdings from fair value to amortised cost in FY27? Yes or no. | The fair-value gain line fell from Rs 2.65 Cr to Rs 0.19 Cr on an H1 basis (L212). | No; Q1 had a named one-off. | Yes, or unexplained; Other Income quality is unclear. | A3-05 |
+| 9 | D | Subsidiary other income fell from Rs 4.35 Cr in Q1 FY27 to Rs 1.33 Cr in Q2 FY27. The subsidiaries booked no fair-value gain in H1 FY27 (L212 = L391), against Rs 1.55 Cr in H1 FY26. Did the subsidiaries move their T-bill holdings from fair value to amortised cost in FY27? Yes or no. | Subsidiary H1 other income (5.68 Cr) is almost all interest and dividend income (5.65 Cr, c: L206 less L387), so the Q1-Q2 swing is not even accrual. | No; Q1 had a named one-off. | Yes, or unexplained; Other Income quality is unclear. | A3-05 |
 | 10 | D | Other bank balances fell Rs 32.33 Cr and non-current other financial assets rose Rs 17.47 Cr in H1. How much of the company's deposits is under lien, escrow or margin at 30-Sep-2026? | Tests whether net cash of Rs 167.92 Cr is free cash. | Nil; the move is a maturity reclass. | A material lien (guarantees or buyback escrow). | A3-12 |
-| 11 | C | Note 5 places the Labour Code impact in FY26 Employee Benefits Expense but gives no amount. What amount was charged in FY26? | FY26 EBE of Rs 134.93 Cr carries an unquantified item; the YoY EBE base is unclear. | Small, one-time past-service charge. | Large, recurring wage-base step-up. | A3-19 |
-| 12 | B | When final Central and State Labour Code rules are notified, what further charge do you expect, and in which quarter will you book it? | Open, undated future EBE charge (Note 5 para 2, L435). | Quantified and immaterial. | Unquantified; open margin risk. | A3-07 |
+| 11 | C | Note 5 places the Labour Code impact in FY26 Employee Benefits Expense but gives no amount. What amount was charged in FY26? | FY26 EBE of Rs 134.93 Cr carries an unquantified item; the YoY EBE base is unclear. | Small, one-time charge. | Large, recurring step-up. | A3-19 |
+| 12 | B | Note 5 says the company would provide an accounting effect when final Central and State rules arrive. What effect do you estimate, in rupees and direction, and in which quarter would you book it? | Note 5 para 2 (L435) leaves a possible further EBE effect with no amount, direction or date. | Quantified and immaterial. | Unquantified; open margin risk. | A3-07 |
 | 13 | D | Finance cost was Rs 0.46 Cr in Q2 FY27 vs Rs 0.23 Cr in Q2 FY26, with nil borrowings at 30-Sep-2026. What is its largest component? | Cost doubled with no debt and falling leases. | Lease interest and bank charges; falls in H2. | Interest on tax demands or delayed payments. | A3-13 |
 | 14 | C | FY26 interim periods booked remeasurement losses of Rs 0.17 Cr a quarter, the year closed at a Rs 0.33 Cr gain, and FY27 books nil in both quarters. Which actuarial assumption changed at 31-Mar-2026? | Sign flip and a change in interim practice (L118). | Discount-rate change; routine. | Wage-definition change under the Labour Codes kept out of P&L. | A3-09 |
-| 15 | F | Did the promoter group tender shares in the Q1 FY27 buyback of 8,50,000 shares for Rs 14.98 Cr (L235)? Yes or no. | The buyback has no note: size, price and route are undisclosed. | No; minority holders got the exit. | Yes; the buyback served the promoter group. | A3-10 |
+| 15 | F | Did the promoter group tender shares in the Q1 FY27 buyback of 8,50,000 shares for Rs 14.98 Cr (L235)? Yes or no. | The buyback has no note, and its ex-cash price was about 35x trailing core EPS (Step 0C). | No; minority holders got the exit. | Yes; the buyback served the promoter group. | A3-10 |
 | 16 | G | Note 3 states capital as Rs 10,00,000 against paid-up Rs 30.38 Cr, the cash flow prints 31-09-2025, and an OCI caption is wrong. Will the company file a corrected Note 3 with the exchanges? Yes or no. | Document control on a board-approved filing (A3-15 to A3-17, A3-20). | Yes, filed promptly. | No answer or no correction. | A3-15 |
 
 Top 3 by likelihood of thesis-changing information:
-- Q1 (transfer pricing). A "no change" answer with Q2 USD data raises the chance that the margin step is real and lasting.
+- Q2 (USD revenue). It tests the currency leg of the bear reading. USD growth near the rupee growth raises the chance that the Q2 step is real and lasting.
 - Q3 (12.15 Cr Other equity debit). A "no" answer confirms an undisclosed charge against equity and a bear governance read.
 - Q4 (which subsidiary got 41.13 Cr). An evasive answer tests transparency on the largest capital move of the half.
+
+Q1 (transfer pricing) stays high on the list. It decides where profit sits, and so the parent's own base, but it cannot change the group result.
 
 Channel recommendation: IR email. No concall was held this quarter and the filing schedules none. Send all 16 questions verbatim to cssl.investors@cybertech.com (L21). Carry unanswered items to the FY27 AGM Q&A. Record the answer status of each question at the Q3 FY27 review.
 
@@ -522,16 +555,16 @@ Seeded from the A3 commitment register (F6) and the Board Outcome forward items 
 
 | # | Item | Implied date | Source ref |
 |---|---|---|---|
-| 1 | Q3 FY27 results: consolidated core PBT ex-OI vs 6.81 Cr (bull) / 4.43 Cr (bear) | on or before 14-Feb-2027 (Reg 33, 45 days after 31-Dec-2026) | Step 8C |
-| 2 | Subsidiary EBITDA margin holds near 11.2% | 14-Feb-2027 | A3-04, Step 1C |
+| 1 | Q3 FY27 results: consolidated core PBT ex-OI vs 6.81 Cr (bull) / 4.43 Cr (bear); cross-check Op EBITDA margin 11.04% / 8.36% | on or before 14-Feb-2027 (Reg 33, 45 days after 31-Dec-2026) | Step 8C |
+| 2 | Subsidiary EBITDA margin holds near 11.2% (where profit sits; S-C gap) | 14-Feb-2027 | A3-04, Step 1C |
 | 3 | Settlement of the 12.15 Cr item in other financial liabilities (possible dividend) | Q3 FY27; confirmed in the FY27 cash flow by 30-May-2027 (Reg 33, 60 days after 31-Mar-2027) | A3-11 |
 | 4 | Use of the 41.13 Cr subsidiary injection; any acquisition disclosure | event-driven (Reg 30 filing); balance check at FY27 results by 30-May-2027 | A3-01 |
 | 5 | H2 working-capital reversal test (payables, other current liabilities) | FY27 results by 30-May-2027 | A3-14 |
-| 6 | Final Central/State Labour Code rules and any further EBE charge | undated (on rule finalisation) | Note 5 para 2, L435; A3-07; F6 register |
-| 7 | FY27 Annual Report: actuarial assumptions, related-party (intercompany) transactions, subsidiary accounts, buyback details | before the FY27 AGM; AGM by 30-Sep-2027 (Companies Act s.96) | A3-09, A3-04, A3-10 |
+| 6 | Final Central/State Labour Code rules and any further EBE effect (amount and direction ND) | undated (on rule finalisation) | Note 5 para 2, L435; A3-07; F6 register |
+| 7 | FY27 Annual Report: actuarial assumptions, related-party (intercompany) transactions and pricing, subsidiary accounts, buyback details | before the FY27 AGM; AGM by 30-Sep-2027 (Companies Act s.96) | A3-09, A3-04, A3-10 |
 | 8 | Corrected Note 3 or better document control in the next filing | 14-Feb-2027 | A3-15 to A3-17, A3-20 |
 | 9 | Whether the company hosts a results concall | after Q3 FY27 results, Feb-2027 | no concall this quarter (Role 5 N.A.) |
-| 10 | Q1 FY28 results: fourth reading of the stepped-up run-rate | on or before 14-Aug-2027 (Reg 33) | Step 3 |
+| 10 | Q1 FY28 results: fifth quarter after the revenue step; bull revenue at or above 73.30 Cr, bear back toward 58-60 Cr | on or before 14-Aug-2027 (Reg 33) | Step 3 |
 | 11 | ESOP allotment of 1,00,000 shares | completed Q2 FY27; no further monitoring | Note 3, L432; F6 register |
 
 ---
@@ -542,14 +575,15 @@ Seeded from the A3 commitment register (F6) and the Board Outcome forward items 
 
 Cybertech grew revenue 24.7% YoY in Q2 FY27, to Rs 73.30 Cr. [FILED, this quarter]
 Profit after tax was flat at Rs 8.68 Cr, up 0.3%. [FILED]
-The flat profit hides a better business. Profit before tax without other income nearly doubled, from Rs 3.46 Cr to Rs 6.81 Cr. [FILED, computed]
-Treasury income fell Rs 3.21 Cr and absorbed the gain. [FILED]
+Profit before tax without other income nearly doubled, from Rs 3.46 Cr to Rs 6.81 Cr. [FILED, computed]
+Other income fell Rs 3.21 Cr and absorbed the gain. [FILED]
 The operating margin rose from 7.86% to 11.04%. [FILED, computed]
-The growth and the margin gain both sit in the US subsidiaries. The Indian parent was flat quarter on quarter. [FILED, computed]
-The subsidiaries now earn 60.6% as much profit as the parent, against 33.6% a year ago. [FILED, computed]
-The filing does not show whether that margin is real US leverage or a change in internal pricing. [INFERENCE]
-Cash flow looks strong at 1.56 times profit for the half year. Most of it came from higher payables and liabilities, which can reverse. [FILED, computed]
-Two large items have no explanation in the notes. The parent put Rs 41.13 Cr into an unnamed subsidiary. Equity also carries a Rs 12.15 Cr debit with no note. An unpaid dividend is the likely reading, but the filing does not confirm it. [FILED; INFERENCE on the dividend]
+Most of the growth and the margin gain sit in the subsidiaries. The Indian parent was flat quarter on quarter. [FILED, computed]
+The bear reading is strong. The margin step is one quarter old. In the two prior reported quarters the subsidiaries earned 2.4% and 2.5%. A rupee swing may have helped Q2. [FILED; INFERENCE on currency]
+Internal pricing between the parent and the subsidiaries decides where profit sits. It cannot create the group gain. [INFERENCE]
+Cash flow was 1.56 times profit for the half year. The working-capital release explains the cash above profit, and it can reverse. [FILED, computed]
+On a matched basis, cash before working capital was 1.20 to 1.23 times profit, up from 1.05 to 1.15 a year ago. [FILED, computed]
+Two large items have no note. The parent put Rs 41.13 Cr into an unnamed subsidiary. Equity carries a Rs 12.15 Cr debit, exactly Rs 4.00 a share. An unpaid dividend is the likely reading, but the filing does not confirm it. [FILED; INFERENCE on the dividend]
 The auditor's limited review is clean. [FILED]
 No thesis, decision status or valuation exists for this name. This is a pre-thesis read. The verdict is PROCEED WITH FLAGS.
 The next test is Q3 FY27 core profit before tax, due by 14-Feb-2027.
@@ -557,8 +591,9 @@ The next test is Q3 FY27 core profit before tax, due by 14-Feb-2027.
 ### 2. SECTOR INTELLIGENCE
 
 - FILED: the company reports one segment, Information Technology Services (L433). It gives no geography, vertical or customer split.
-- FILED: the four Labour Codes, notified 21-Nov-2025, changed the wage base for Indian employers. Cybertech restructured pay from 1-Apr-2026 and expects a further charge when final rules arrive (Note 5). This is a sector-wide cost for Indian IT employers.
-- FILED: the rupee weakened in Q2, shown by an FCTR gain of Rs 2.18 Cr (L121). A weaker rupee lifts rupee revenue for a business with 39.8% of revenue in US subsidiaries.
+- FILED: the four Labour Codes, notified 21-Nov-2025, consolidate 29 labour laws (L434). Cybertech restructured compensation from 1-Apr-2026 and booked the incremental impact in FY26 Employee Benefits Expense, amount ND (L434). It will book any further effect when final rules arrive; amount and direction ND (L435).
+- INFERENCE: the Labour Codes are a cost item for every Indian IT employer.
+- FILED: FCTR was -Rs 0.25 Cr in Q1 and +Rs 2.18 Cr in Q2 (L121). INFERENCE: the rupee weakened in Q2. A weaker rupee lifts rupee revenue and margin for a business with 39.8% of revenue in subsidiaries.
 - SECONDARY (analyst background, not verified in this run; PENDING LIVE VERIFICATION): Cybertech is known for geospatial (GIS) and enterprise IT services, with US public-sector and utility clients. If true, US state and local IT budgets drive demand.
 - Not disclosed in the filing: end-market mix, government vs private split, order book, deal wins.
 - No Notion sector context was passed. None of the above comes from prior Notion or peer work.
@@ -567,9 +602,9 @@ The next test is Q3 FY27 core profit before tax, due by 14-Feb-2027.
 
 - FILED, computed: this is a people business. Employee cost was 53.92% of Q2 revenue; outsourced services 24.09%; other expenses 10.95%.
 - FILED: it is asset-light. H1 capex was Rs 0.44 Cr and PPE Rs 11.13 Cr.
-- FILED, computed: it holds a large treasury. Net cash was Rs 167.92 Cr, 81.6% of equity. Other income was 40.99% of Q2 PBT, down from 69.69% a year ago.
-- FILED, computed: model drift. The earnings centre is moving from the Indian parent to the US subsidiaries. Subsidiary revenue rose 54.3% YoY; parent revenue rose 10.6%. Treasury is also moving offshore: 95.1% of group current investments now sit in the subsidiaries.
-- INFERENCE: if the US margin holds, the group shifts from a treasury-supported earner to an operating earner. If it does not, Q2 was a one-quarter shift.
+- FILED, computed: it holds a large treasury. Net cash was Rs 167.92 Cr, 81.6% of equity. Other income was 40.99% of Q2 PBT, down from 69.69% a year ago. On H1 it was still 53.47%.
+- FILED, computed: model drift. The earnings centre is moving from the Indian parent to the subsidiaries. Subsidiary revenue rose 54.3% YoY; parent revenue rose 10.6%. Subsidiary-held current investments rose from Rs 104.29 Cr to Rs 136.92 Cr, while parent net cash fell from Rs 53.14 Cr to Rs 25.76 Cr.
+- INFERENCE: if the Q2 margin holds, the group shifts from a treasury-supported earner to an operating earner. If it does not, Q2 was a one-quarter or currency-assisted step.
 - Not disclosed: headcount, utilisation, billing rates, USD revenue, customer concentration, intercompany revenue, attrition.
 
 ### 4. COMPETITION INTELLIGENCE
@@ -578,7 +613,7 @@ The next test is Q3 FY27 core profit before tax, due by 14-Feb-2027.
 - SECONDARY (analyst background, not verified; PENDING LIVE VERIFICATION): named peers in Indian geospatial services include Genesys International, Ceinsys Tech and the geospatial unit of Cyient. In the US, the peer set is the GIS consulting partner network around the major GIS software vendors.
 - FILED: Cybertech is small, with FY26 consolidated revenue of Rs 237.15 Cr. Scale is a structural weakness against larger Indian IT firms with GIS practices [INFERENCE].
 - FILED: intangible assets are nil (L145). The filing shows no capitalised product IP, so any edge is in delivery and domain skill, not owned software [INFERENCE].
-- Competitive risk to watch [INFERENCE]: the US subsidiaries now drive most of the profit growth. Loss of one large US contract would hit fast. Customer concentration is not disclosed (Question 8).
+- Competitive risk to watch [INFERENCE]: the subsidiaries now drive most of the profit growth. Loss of one large US contract would hit fast. Customer concentration is not disclosed (Question 8).
 
 ### 5. FORWARD MAP (next 10-11 months)
 
@@ -588,13 +623,15 @@ Make-or-break reading: Q3 FY27 consolidated core PBT ex-OI, due by 14-Feb-2027. 
 |---|---|---|---|
 | Q3 FY27 (Oct-Dec 2026) | 12.15 Cr item in other financial liabilities | Paid as a dividend; equity gap explained | Not a dividend; undisclosed reserve charge |
 | Event-driven | Use of the 41.13 Cr subsidiary injection | Named acquisition or US capacity build | Idle offshore treasury, no disclosure |
-| by 14-Feb-2027 | Q3 FY27 results | Core PBT holds at or above 6.81 Cr; sub margin near 11.2% | Core PBT back to 4.43 Cr or below; Q2 was a shift |
+| by 14-Feb-2027 | Q3 FY27 results | Core PBT at or above 6.81 Cr; Op EBITDA margin at or above 11.04% | Core PBT at or below 4.43 Cr; margin at or below 8.36%; Q2 was a one-quarter step |
 | by 14-Feb-2027 | Next filing quality | Note 3 corrected; clean document | Same errors repeat |
 | Feb-2027 | Concall decision | Company hosts a call and answers the IR email | No call; IR questions unanswered |
-| Undated | Final Labour Code rules | Charge quantified and small | Large unquantified EBE charge |
-| by 30-May-2027 | FY27 results (H2 cash flow) | CFO/PAT stays near 1.0x or above after liabilities settle | WC reverses; pre-WC 0.84x becomes the true reading |
-| by 30-Sep-2027 (AGM) | FY27 Annual Report | Intercompany pricing and subsidiary accounts confirm real US margin | A transfer-pricing change explains the Q2 margin step |
-| by 14-Aug-2027 | Q1 FY28 results | Fourth quarter above the FY26 run-rate of 58-60 Cr | Run-rate stalls near Q1 FY27's 68.45 Cr |
+| Undated | Final Labour Code rules | Effect quantified and small | Large unquantified EBE effect |
+| by 30-May-2027 | FY27 results (H2 cash flow) | CFO/PAT stays near 1.0x or above after liabilities settle | WC release reverses; H2 FY27 CFO/PAT below 1.0x |
+| by 30-Sep-2027 (AGM) | FY27 Annual Report | Intercompany pricing unchanged; the subsidiaries' profit share reflects external work | Intercompany pricing moved profit to the subsidiaries; the parent's own base is weaker than reported |
+| by 14-Aug-2027 | Q1 FY28 results (fifth quarter after the step) | Revenue at or above 73.30 Cr (Q2 FY27 level) | Revenue back toward the FY26 average of 58-60 Cr |
+
+Between the Q1 FY28 forks: unresolved.
 
 ---
 
@@ -623,49 +660,51 @@ sc_gap_pat_pct:
   - {period: "H1 FY26", pct: 49.0}
   - {period: "FY26", pct: 30.2}
 questions_for_management:
-  - {q: "Did parent-to-US-subsidiary transfer-pricing terms change in FY27 (sub EBITDA Rs 0.60 Cr Q1 to Rs 3.27 Cr Q2 while standalone fell)?", from_finding_id: "A3-04"}
-  - {q: "What was US subsidiary revenue in USD in Q2 FY27 and Q2 FY26 (rupee sub revenue +54.3%)?", from_finding_id: "A3-03"}
-  - {q: "Is the Rs 12.15 Cr Other equity debit a declared, unpaid FY26 dividend of Rs 4.00 a share, and when is it paid?", from_finding_id: "A3-11"}
+  - {q: "Did parent-to-subsidiary transfer-pricing terms change in FY27 (sub EBITDA Rs 0.60 Cr Q1 to Rs 3.27 Cr Q2 while standalone fell)? Decides where profit sits, not the group gain.", from_finding_id: "A3-04"}
+  - {q: "What was US subsidiary revenue in USD in Q2 FY27 and Q2 FY26 (rupee sub revenue +54.3%; FCTR -0.25 Cr Q1 to +2.18 Cr Q2)?", from_finding_id: "A3-03"}
+  - {q: "Is the Rs 12.15 Cr Other equity debit (exactly Rs 4.00 x 3,03,80,600 shares) a declared, unpaid FY26 dividend, and when is it paid?", from_finding_id: "A3-11"}
   - {q: "Which subsidiary received the Rs 41.13 Cr parent investment (L405)?", from_finding_id: "A3-01"}
   - {q: "Is an acquisition under negotiation to be funded from the subsidiaries' Rs 136.92 Cr current investments; target closing quarter?", from_finding_id: "A3-01"}
-  - {q: "How much of Rs 25.94 Cr other current liabilities is customer advances (H1 WC release Rs 13.06 Cr)?", from_finding_id: "A3-14"}
+  - {q: "How much of the subsidiaries' Rs 22.04 Cr other current liabilities is customer advances (H1 WC release Rs 13.06 Cr)?", from_finding_id: "A3-14"}
   - {q: "What were parent receivables from subsidiaries at 31-Mar-2026 and 30-Sep-2026 (SA receivables -Rs 20.25 Cr)?", from_finding_id: "A3-06"}
   - {q: "How many customers each exceeded 10% of Q2 FY27 consolidated revenue of Rs 73.30 Cr?", from_finding_id: "A3-03"}
-  - {q: "Did the subsidiaries move T-bill holdings from fair value to amortised cost in FY27 (sub OI Rs 4.35 Cr to Rs 1.33 Cr)?", from_finding_id: "A3-05"}
+  - {q: "Did the subsidiaries move T-bill holdings from fair value to amortised cost in FY27 (no sub FV gain in H1 FY27 vs Rs 1.55 Cr H1 FY26; sub OI Rs 4.35 Cr to Rs 1.33 Cr)?", from_finding_id: "A3-05"}
   - {q: "How much of deposits is under lien, escrow or margin at 30-Sep-2026 (bank balances -Rs 32.33 Cr)?", from_finding_id: "A3-12"}
   - {q: "What Labour Code amount was charged in FY26 Employee Benefits Expense (Note 5)?", from_finding_id: "A3-19"}
-  - {q: "What further Labour Code charge is expected on final rules, and in which quarter?", from_finding_id: "A3-07"}
+  - {q: "What further Labour Code accounting effect do you estimate on final rules, in rupees and direction, and in which quarter?", from_finding_id: "A3-07"}
   - {q: "What is the largest component of Q2 FY27 finance cost of Rs 0.46 Cr with nil borrowings?", from_finding_id: "A3-13"}
   - {q: "Which actuarial assumption changed at 31-Mar-2026 (interim losses, year-end gain, FY27 nil)?", from_finding_id: "A3-09"}
   - {q: "Did the promoter group tender shares in the Q1 FY27 buyback of 8,50,000 shares for Rs 14.98 Cr?", from_finding_id: "A3-10"}
   - {q: "Will the company file a corrected Note 3 (capital stated as Rs 10,00,000 vs paid-up Rs 30.38 Cr)?", from_finding_id: "A3-15"}
 monitorables:
-  - {item: "Q3 FY27 consolidated core PBT ex-OI vs 6.81 Cr bull / 4.43 Cr bear", implied_date: "2027-02-14", source_ref: "Step 8C; Reg 33 timeline"}
-  - {item: "Subsidiary EBITDA margin holds near 11.2%", implied_date: "2027-02-14", source_ref: "A3-04"}
+  - {item: "Q3 FY27 consolidated core PBT ex-OI vs 6.81 Cr bull / 4.43 Cr bear; cross-check Op EBITDA margin 11.04% / 8.36%", implied_date: "2027-02-14", source_ref: "Step 8C; Reg 33 timeline"}
+  - {item: "Subsidiary EBITDA margin holds near 11.2% (where profit sits)", implied_date: "2027-02-14", source_ref: "A3-04"}
   - {item: "Settlement of the 12.15 Cr other financial liability (possible dividend)", implied_date: "Q3 FY27; confirm by 2027-05-30", source_ref: "A3-11"}
   - {item: "Use of the 41.13 Cr subsidiary injection; acquisition disclosure", implied_date: "event-driven; balance check by 2027-05-30", source_ref: "A3-01, L405"}
-  - {item: "H2 working-capital reversal test", implied_date: "2027-05-30", source_ref: "A3-14, L218"}
-  - {item: "Final Labour Code rules and further EBE charge", implied_date: "undated", source_ref: "Note 5 para 2, L435; A3-07"}
-  - {item: "FY27 Annual Report: actuarial assumptions, intercompany RPTs, subsidiary accounts, buyback details", implied_date: "before AGM, by 2027-09-30", source_ref: "A3-09, A3-04, A3-10"}
+  - {item: "H2 working-capital reversal test; bear if H2 FY27 CFO/PAT below 1.0x", implied_date: "2027-05-30", source_ref: "A3-14, L218"}
+  - {item: "Final Labour Code rules and any further EBE effect (amount and direction ND)", implied_date: "undated", source_ref: "Note 5 para 2, L435; A3-07"}
+  - {item: "FY27 Annual Report: actuarial assumptions, intercompany RPTs and pricing, subsidiary accounts, buyback details", implied_date: "before AGM, by 2027-09-30", source_ref: "A3-09, A3-04, A3-10"}
   - {item: "Corrected Note 3 / document control in next filing", implied_date: "2027-02-14", source_ref: "A3-15 to A3-17, A3-20"}
   - {item: "Whether a results concall is hosted", implied_date: "2027-02", source_ref: "no concall this quarter"}
-  - {item: "Q1 FY28 results, fourth reading of stepped-up run-rate", implied_date: "2027-08-14", source_ref: "Step 3; Reg 33 timeline"}
+  - {item: "Q1 FY28 results, fifth quarter after the step: bull revenue >= 73.30 Cr, bear back toward 58-60 Cr", implied_date: "2027-08-14", source_ref: "Step 3; Reg 33 timeline"}
 flags:
   - "PRE-THESIS READ: no Notion page, no Decision Status, no spear, no companies/CYBERTECH.md; spear gate binds before any pipeline run"
-  - "Rs 41.13 Cr parent investment into an unnamed wholly owned subsidiary, purpose undisclosed; 95.1% of group current investments now in subsidiaries (A3-01)"
-  - "Rs 12.15 Cr unexplained Other equity debit, 9.1% of standalone net worth; leading reading unpaid Rs 4.00 dividend, unconfirmed (A3-11)"
-  - "Earnings migrating to US subsidiaries: S-C PAT gap 60.6% vs 33.6% YoY; sub EBITDA margin 2.5% to 11.2% QoQ; no entity, intercompany or USD breakout (A3-03, A3-04)"
-  - "Cash conversion INDETERMINATE-WITH-DIRECTION: H1 CFO/PAT 1.56x headline, 0.84x pre-WC; WC release 94.6% of H1 Op EBITDA (A3-14)"
-  - "Headline PAT +0.3% YoY masks core PBT ex-OI +97.1% YoY; Other Income -40.5% YoY"
-  - "Q1 FY27 buyback (Rs 14.98 Cr, 8,50,000 shares) not described in any note (A3-10)"
-  - "Labour Codes: unquantified FY26 EBE charge and open undated future charge (A3-07, A3-19)"
+  - "Rs 41.13 Cr parent investment into an unnamed wholly owned subsidiary, purpose undisclosed; subsidiary-held current investments 104.29 Cr to 136.92 Cr while parent net cash fell 53.14 Cr to 25.76 Cr (A3-01)"
+  - "Rs 12.15 Cr unexplained Other equity debit, 9.1% of standalone net worth; equals Rs 4.00 x 3,03,80,600 shares exactly; leading reading unpaid dividend, unconfirmed (A3-11)"
+  - "Core PBT ex-OI +97.1% YoY is one quarter old: all QoQ Op EBITDA gain outside the parent (subs +2.67 Cr, parent -0.30 Cr); sub margin 2.4%/2.5% in prior quarters; FCTR swing -0.25 to +2.18 Cr; separator Q3 Op EBITDA margin >=11.04% vs <=8.36% (M1)"
+  - "Earnings location migrating to subsidiaries: S-C PAT gap 60.6% vs 33.6% YoY; transfer pricing decides where profit sits, not the group result; no entity, intercompany or USD breakout (A3-03, A3-04)"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION: H1 CFO/PAT 1.56x headline; like-for-like pre-WC 1.20x-1.23x (1.05x-1.15x H1 FY26); WC release 94.6% of H1 Op EBITDA, H2 reversal risk (A3-14)"
+  - "Q1 FY27 buyback (Rs 14.98 Cr, 8,50,000 shares, ~Rs 176.24 a share) not described in any note; 18.0x FY26 EPS, ~35x trailing core EPS ex-cash; EPS gain is share count only (A3-10, M2)"
+  - "Labour Codes: unquantified FY26 EBE item; possible further effect on final rules, amount and direction ND (A3-07, A3-19)"
   - "Document control: Note 3 capital misstatement, invalid date 31-09-2025, OCI caption error, rounding and telephone mismatches (A3-15, A3-16, A3-17, A3-20)"
   - "Finance cost doubled YoY with nil borrowings, source unexplained (A3-13)"
   - "Downstream Signal Tracker: zero signals, below floor of three; USD/INR candidate emitted as payload only"
   - "Role 4 Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar-relevant facts flagged in Steps 6.5 and 7"
   - "Role 5 N.A.: no concall held, no presentation"
   - "Sector and competition context is unverified analyst background, labelled SECONDARY, PENDING LIVE VERIFICATION"
+  - "Loop 1: A5 findings F1, F2, F3, C1, M1, M2 accepted and fixed; verdict and cash class unchanged"
 plain_language_brief_included: true
-analyst_note: "Pre-thesis read; no Notion page and no Decision Status. The engine improved while the headline stalled. Consolidated core PBT ex-OI rose from 3.46 Cr to 6.81 Cr YoY (+97%), but PAT rose 0.3% because Other Income fell 3.21 Cr. The whole margin step sits in the subsidiaries (sub EBITDA margin 2.5% in Q1 to 11.2% in Q2); the parent is flat. Two readings: real US operating leverage, or a transfer-pricing shift. Q3 core PBT separates them (bull at or above 6.81 Cr, bear at or below 4.43 Cr). H1 CFO/PAT of 1.56x rests on a 13.06 Cr liability-led WC release; pre-WC it is 0.84x, so cash is INDETERMINATE-WITH-DIRECTION. The verdict is FLAGS, not CAVEATS, because 41.13 Cr went to an unnamed subsidiary and a 12.15 Cr equity debit has no note. Parent receivables built at March and cleared in H1 in both FY26 and FY27. That favours intercompany timing over a one-off round-trip for A3-06. Steps 6.5 and 7 are deferred (OR-30). Sector and peer context is unverified background."
+analyst_note: "Pre-thesis read; no Notion page and no Decision Status. Core PBT ex-OI rose from 3.46 Cr to 6.81 Cr YoY, but PAT rose 0.3% because Other Income fell 3.21 Cr. The bear reading is strong. The margin step is one quarter old. All of the QoQ gain sits in the subsidiaries (margin 2.5% to 11.2%) while the parent fell, and FCTR swung positive in Q2, so currency may have helped. Transfer pricing cannot explain the group gain, because intercompany items eliminate; it decides only where profit sits. Q3 separates lasting from one-quarter: core PBT at or above 6.81 Cr vs at or below 4.43 Cr, or Op EBITDA margin at or above 11.04% vs at or below 8.36%. Cash: headline H1 CFO/PAT 1.56x rests on a liability-led release; the matched pre-WC ratio is 1.20x-1.23x, up from 1.05x-1.15x. The class stays INDETERMINATE-WITH-DIRECTION on H2 reversal risk. The verdict is FLAGS: 41.13 Cr went to an unnamed subsidiary, and a 12.15 Cr equity debit (exactly Rs 4.00 a share) has no note. Buyback ex-cash about 35x trailing core EPS. Steps 6.5 and 7 deferred (OR-30)."
 review_path: "runs/cybertech-q2fy27/work/review_cybertech_q2fy27.md"
+loop: 1
 ```

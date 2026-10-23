@@ -1,0 +1,65 @@
+stage: A3-forensics
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/supremepwr-h1fy27/work/forensics_presentation_supremepwr_h1fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: PASS
+  F2: FINDING
+  F3: FINDING
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: N.A.
+  F10: FINDING
+  F11: PASS
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: PASS
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FP-01", check: "F2", line: "l.724; l.837; l.736; l.849-850", classification: "AMBIGUOUS", implication: "CON-SA revenue gap +6.28/+3.92/-8.44 Cr FY24-26 (+8.17 H1FY27); 62.4pp swing of SA PAT; SA-above-CON was FY26-only; derived Danya PAT 3.00/3.30/2.35 falling to 11% of CON PAT"}
+  - {id: "FP-02", check: "F3", line: "l.727; l.840; l.728; l.841; l.513-518", classification: "AMBIGUOUS", implication: "CON raw material below SA all 3 years (-1.47/-2.34/-13.68); Danya payroll 0.52/0.20/0.22 Cr vs 'execution backbone' claim; labour-light conduit or job-work unit"}
+  - {id: "FP-03", check: "F6", line: "l.232-233; l.181-185; l.563-565; l.178", classification: "FORWARD-SIGNAL", implication: "EBITDA margin 20.54/19.44/18.28% FY24-26, 18.94 to 17.42% H1; margin-expansion pillar has no stated mechanism; operating leverage not visible"}
+  - {id: "FP-04", check: "F7", line: "l.182-184; l.575", classification: "AMBIGUOUS", implication: "25-30% of 565.80 Cr (141-170 Cr) fixed price; margins fell despite PVC; H1 inflow all private/EPC"}
+  - {id: "FP-05", check: "F7", line: "l.615; l.659-662; l.225; l.458", classification: "FORWARD-SIGNAL", implication: "200 MVA/220 kV claim on 8 slides is subject to undated tests and approvals; 500-550 Cr potential rests on them"}
+  - {id: "FP-06", check: "F14", line: "l.208; l.217; l.458; l.614", classification: "AMBIGUOUS", implication: "Two orders 27.10 Cr (13.0% of H1 inflow) read 330 kV, above the stated 220 kV ceiling; 75.9% of H1 inflow is 20 MVA units"}
+  - {id: "FP-07", check: "F6", line: "l.189; l.202-205; l.226; l.520-523", classification: "AMBIGUOUS", implication: "Order book post-period (21-Oct), consolidated, GST and Danya 83.04 Cr basis unstated; implied opening ~491.87 Cr [INFERENCE]; double-count risk"}
+  - {id: "FP-08", check: "F6", line: "l.207-217; l.790-793", classification: "FORWARD-SIGNAL", implication: "Hyderabad 67.7% of H1 inflow; four unnamed Hyderabad company orders 48.6%; no TN/Kerala or utility orders; top-10 65-80% of SA revenue"}
+  - {id: "FP-09", check: "F16", line: "l.884; l.851; l.666-672", classification: "FORWARD-SIGNAL", implication: "No 30-Sep-2026 balance sheet or H1 cash flow; slide 32 is unlabelled FY26; omitted half has CFO -5.74 Cr and cash 0.25 Cr"}
+  - {id: "FP-10", check: "F16", line: "l.968-972; l.909; l.896; l.898; l.963", classification: "FORWARD-SIGNAL", implication: "Deck shows receivable turnover only; payables days 103 to 168 and inventory days 77 to 125 hold net WC flat; OCL +14.56 Cr unexplained"}
+  - {id: "FP-11", check: "F6", line: "l.957-961; l.669; l.903; l.445-447; l.469", classification: "FORWARD-SIGNAL", implication: "ROCE 27.6/25.7/18.76%; FY26 incremental ROCE 5.2%; FAT 4.60 to 1.52; 500-550 Cr needs 4.2-4.6x FAT, undated; Kannur utilisation not stated"}
+  - {id: "FP-12", check: "F10", line: "l.1046; l.979-983; l.886; l.974", classification: "FORWARD-SIGNAL", implication: "Warrants (Rs 15.81 Cr due 27-Feb-2027, +4.99%) absent; diluted mcap 619.9 Cr; EPS basis mixed; reserves and BV include 5.27 Cr warrant money"}
+  - {id: "FP-13", check: "F16", line: "l.194-195; l.190-191; l.446", classification: "FORWARD-SIGNAL", implication: "No FY27 figure in the filed deck; guide not testable from this document; Kannur ramp qualitative only"}
+  - {id: "FP-14", check: "F16", line: "l.512; l.544-547; l.576", classification: "AMBIGUOUS", implication: "Danya shown as execution backbone; partnership form and MD/WTD 10% holding omitted; Danya PAT falling"}
+  - {id: "FP-15", check: "F16", line: "l.1010; l.1040-1043; l.1051", classification: "AMBIGUOUS", implication: "Oct-2026 deck shows Mar-2026 shareholding; 57/43 assignment unresolved"}
+  - {id: "FP-16", check: "F16", line: "l.93; l.131; l.178", classification: "NEUTRAL-FACT", implication: "Margin footer with no margins printed; H1FY26 comparators omitted; printed EBITDA margin includes other income (ex-OI 17.26%)"}
+  - {id: "FP-17", check: "F14", line: "l.850; l.271-273; l.160; l.905; l.912; l.182", classification: "NEUTRAL-FACT", implication: "TCI label on AS reporter, FY26 net profit 20.44 vs 20.68, total income labelled revenue, raw material vs stock-in-trade label, Ind AS BS labels, Q3 FY26 sidebar"}
+  - {id: "FP-18", check: "F14", line: "l.457; l.444; l.277-285; l.309; l.265; l.443-450; l.318-336", classification: "NEUTRAL-FACT", implication: "50 vs 25 MVA earlier rating, founder date conflict, unit counts 26,860 vs 22,000+, capacity at top of range, no CFO on KMP slide; template-built deck"}
+  - {id: "FP-19", check: "F2", line: "l.346-347; l.797-805; l.563-564; l.766-775", classification: "AMBIGUOUS", implication: "Government share 40.14% H1FY27 vs 26-35% FY24-26 against private-mix strategy; no H1 product mix; product chart resolves FY26 only"}
+  - {id: "FP-20", check: "F2", line: "l.790-796; l.745-752; l.265; l.573; l.207-217", classification: "AMBIGUOUS", implication: "Top-10 share of SA revenue FY24-26 is 79.68/65.55/67.86% (reading A, lean bear) or 20.32/34.45/32.14% (reading B); series unresolved; four Hyderabad company orders 101.70 Cr = 48.6% of H1 inflow and 18.0% of 565.80 Cr book execute H2FY27-FY28, so concentration likely holds or rises"}
+  - {id: "FP-21", check: "F2", line: "l.797-805; l.748-755; l.343-355; l.563-564; l.988-990; l.207-217", classification: "AMBIGUOUS", implication: "Government share FY24-26 is 34.93/26.35/31.73% (reading A: +8.4pp to 40.14% H1FY27, against private-mix strategy) or 65.07/73.65/68.27% (reading B: -28.1pp shift to private); SA vs CON basis break; zero utility orders in H1 inflow moves forward mix private under both"}
+forward_signals: ["FP-03", "FP-05", "FP-08", "FP-09", "FP-10", "FP-11", "FP-12", "FP-13"]
+ambiguous: ["FP-01", "FP-02", "FP-04", "FP-06", "FP-07", "FP-14", "FP-15", "FP-19", "FP-20", "FP-21"]
+commitments:
+  - {commitment: "Kannur ramp-up, production and utilisation scaling up as planned", implied_date: "undated; no utilisation figure", ref: "slide 5 l.190-193", status_word: "underway"}
+  - {commitment: "FY27 delivery in line with targets for the year (no figure in deck)", implied_date: "31-Mar-2027", ref: "slide 5 l.194-195", status_word: "underway"}
+  - {commitment: "Execute 11 H1 orders worth 209.24 Cr, 7-17 month timelines", implied_date: "Nov-2026 to Feb-2028 (A3-derived)", ref: "slide 6 l.202-217", status_word: "initiated"}
+  - {commitment: "565.80 Cr consolidated order book, revenue visibility for coming quarters", implied_date: "undated; latest Feb-2028 for H1 orders", ref: "slide 5 l.189; slides 7, 9 l.226, l.265-267", status_word: "underway"}
+  - {commitment: "Danya in-hand order book 83.04 Cr", implied_date: "undated", ref: "slide 24 l.520-523", status_word: "underway"}
+  - {commitment: "Kannur commercial operations", implied_date: "Feb-2026", ref: "slide 19 l.446; slide 10 l.278", status_word: "completed"}
+  - {commitment: "Revenue potential at full capacity 500-550 Cr", implied_date: "undated; utilisation and price basis not stated", ref: "slide 20 l.469", status_word: "initiated"}
+  - {commitment: "Margin expansion via product mix and operating leverage", implied_date: "undated", ref: "slide 7 l.232-233; slide 26 l.563", status_word: "initiated"}
+  - {commitment: "Higher-rating access after completing tests and approvals", implied_date: "undated", ref: "slide 30 l.615; slide 31 l.660-662", status_word: "initiated"}
+  - {commitment: "Entry into Maharashtra market", implied_date: "H1 FY27", ref: "slide 5 l.188; slide 6 l.202", status_word: "completed"}
+  - {commitment: "Explore export markets, evaluating international opportunities", implied_date: "undated, long-term", ref: "slide 26 l.566-568", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck sells a mix shift that its own numbers do not yet show. EBITDA margin fell in every period shown (20.54% FY24 to 17.42% H1 FY27), FY26 incremental ROCE was 5.2%, and 75.9% of H1 inflow is 20 MVA units the old plant can make. The 200 MVA / 220 kV claim on eight slides is qualified only on slides 30-31 ('Factory capacity alone does not establish eligibility'), and two H1 orders read 330 kV, above the stated ceiling. Working capital held flat only because payables days went from 103 to 168; the deck shows the improving receivables ratio and omits the half-year balance sheet and cash flow, where CFO was negative and cash near zero. Danya: consolidated raw material sits below standalone in all three years and Danya payroll is about Rs 0.2 Cr a year, so the 'execution backbone' reads as a labour-light conduit [INFERENCE] with promoters holding the other 10%. Reading 1: approvals land, Kannur fills with large units, payables normalise from operating cash. Reading 2: growth stays in 20 MVA units, margins keep slipping, and the warrant call funds the gap. Separating observation: H2 FY27 EBITDA margin and large-unit revenue share."

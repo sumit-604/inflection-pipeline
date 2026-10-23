@@ -1,0 +1,22 @@
+stage: A2-enumerator
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/supremepwr-h1fy27/work/ledger_concall_supremepwr_h1fy27.md"
+counts:
+  turns: 99
+  questions: 41
+  mgmt_numbers: 95
+  forward: 80
+  zero_standing: 1
+  entities: 43
+flags_raised: [ZERO_STANDING, REPEAT_QUESTION, ASR_RAW, ASR_QUALITY, ASR_GAP, RESTATED, NOT_DISCLOSED]
+ids_in_structured: 344
+ids_referenced: 344
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "ASR transcript: turns are inferred from moderator cues. 41 analyst turns across 10 analysts; Q5 (Mohammed Amir) lost to audio failure, no question captured. 5 mixed exchange turns (T19, T33, T70, T73, T85) hold questions and answers together, so the question count of 41 is a floor. Management numbers (95) exclude 25 analyst-stated rows and 3 meta rows. R324-R326 added in loop 1 and R327-R344 (18 FORWARD, mostly RESTATED repeats) in loop 2; R324/R325 are the only stated reason for the 353 vs 200-250 gap. H1 revenue is spoken as 135, 134 and 135.57 across R003/R023/R056/R066/R106. Order book 565 is restated in 5 rows. Margin 9-12% is repeated across 4 analyst questions. R105 is the only zero-standing row: zero data-centre orders."

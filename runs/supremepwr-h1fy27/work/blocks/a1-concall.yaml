@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 10   # 5-minute timestamp blocks (plus page 0 = 6-line source preamble); no PDF
+formfeed_count: 0
+line_count: 567
+unit_convention: "Crores"
+conversion_factor_to_cr: "Crores x1; Lakhs x0.01"
+text_layer_present: false   # N.A., plain-text ASR transcript, pdffonts gate not applicable
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "H1 FY27"
+fulltext_path: "runs/supremepwr-h1fy27/extracted/supremepwr-concall-h1fy27-fulltext.md"
+structured_path: "runs/supremepwr-h1fy27/extracted/supremepwr-concall-h1fy27-structured.md"
+structured_counts:
+  number: 123
+  entity: 43
+  forward: 80
+  date: 25
+  qualifier: 73
+structured_id_range: "R001-R344"
+gate_a1: pass
+gap_note: ""

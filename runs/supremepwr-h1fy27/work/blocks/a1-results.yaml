@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 15
+formfeed_count: 13   # raw pdftotext; pages 14-15 image-only emit no form feed; 15 pages confirmed per page
+line_count: 1265
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01"
+text_layer_present: true   # pages 1-13 OCR-derived layer with misreads; pages 14-15 image-only
+extraction_mode: text-only
+render_candidates: ["p14 zero chars (auditor Utilization of Funds Certificate image, data-bearing)", "p15 zero chars (certificate continuation image, data-bearing)"]
+rendered_pages: ["p14, p15 250dpi tesseract (data-bearing, no text layer)", "p4, p5, p7, p10, p11, p13 300dpi visually verified financial tables (garbled text layer), verified transcription appended", "p6, p12 300dpi OCR clean re-read of notes"]
+page_coverage_pct: 100
+detected_quarter: "H1 FY27 (half year ended 30-Sep-2026)"
+fulltext_path: "runs/supremepwr-h1fy27/extracted/supremepwr-results-h1fy27-fulltext.md"
+structured_path: "runs/supremepwr-h1fy27/extracted/supremepwr-results-h1fy27-structured.md"
+structured_counts:
+  number: 482
+  entity: 28
+  forward: 9
+  date: 33
+  qualifier: 57
+structured_id_range: "R001-R609"
+gate_a1: pass
+gap_note: ""

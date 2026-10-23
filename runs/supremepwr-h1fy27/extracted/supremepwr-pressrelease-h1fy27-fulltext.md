@@ -1,0 +1,188 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: SupremePower_H1FY27_PressRelease.pdf
+doctype: pressrelease (presentation-class rules)
+page_count_pdfinfo: 4
+formfeed_count: 4
+line_count: 188
+unit_convention: Crores (to be confirmed in text; see structured file)
+conversion_factor_to_cr: x1
+text_layer_present: yes
+extraction_mode: text-only
+render_candidates: none (no zero-character pages)
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: H1 FY27
+extraction_date: 2026-10-23
+=== END HEADER ===
+[page 1]
+Date: 21.10.2026
+
+To,
+National Stock Exchange of India Ltd.
+Exchange Plaza, 5th Floor,
+Plot No. C /1, G Block,
+Bandra - Kurla Complex,
+Bandra (E), Mumbai - 400 051, Maharashtra, India.
+
+(Script Symbol: SUPREMEPWR)
+
+Subject: Press Release - Un-Audited Financial Results of the Company for the Half Year
+ended 30th September, 2026
+
+Dear Sir / Madam,
+
+Pursuant to Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements)
+Regulations 2015, enclosed herewith the copy of the Press Release with regard to the Un-
+Audited Financial Results of the Company for the Half Year ended 30th September, 2026.
+
+Kindly acknowledge and take the same on records.
+
+Thanking you,
+
+Yours faithfully,
+
+For Supreme Power Equipment Limited
+
+Priyanka  Digitally signed by
+Bansal    Priyanka Bansal
+          Date: 2026.10.21
+          20:48:24 +05'30'
+
+Priyanka Bansal
+Company Secretary and Compliance Officer
+[page 2]
+ Supreme Power Equipment Delivers Power-Packed H1 FY27: Total Income
+   Surges 79.91% YoY to 135.57 Cr; Net Profit Jumps 45.09% to 13.65 Cr
+
+Chennai, 21st October, 2026 - Supreme Power Equipment Limited (NSE - SUPREMEPWR), one of the leading
+players in the power and distribution transformer manufacturing industry, announced its Unaudited Financial
+Results for H1 FY27.
+
+Key Consolidated Financial Highlights
+
+          Particulars ( Cr)           H1 FY27  H1 FY26    YOY
+Total Income                           135.57    75.36  79.91%
+EBITDA                                  23.62    14.27  65.46%
+Net Profit                              13.65     9.41  45.09%
+EPS (In )                                         3.76  45.21%
+                                         5.46
+
+Current order book stands at over 565.80Cr as on 21st October, 2026, providing strong execution visibility and
+supporting future revenue growth momentum.
+
+Commenting on the performance, Mr. Vee Rajmohan, Chairman and Managing Director of Supreme
+Power Equipment Limited said, "We are pleased with our performance in H1 FY27, with Total Income
+growing 79.91% YoY to 135.57 Cr and Net Profit increasing 45.09% YoY to 13.65 Cr. The strong growth
+reflects healthy execution of our order book and continued demand across our key markets. EBITDA margin
+stood at 17.42%, while Net Profit margin was 10.07% during the period.
+
+Margins witnessed some pressure during H1 FY27, primarily due to the inflationary environment and higher
+input costs, particularly across key raw materials. However, around 70-75% of our order book is covered by
+price variation clauses, which provides protection against significant movements in raw material prices and
+helps us manage cost volatility over the execution period. We remain focused on procurement efficiency, better
+product mix and operating leverage as volumes scale up.
+
+Our order inflow remained healthy during the first half. We secured 11 orders with a cumulative value of
+209.24 Cr, with execution timelines ranging from 7 to 17 months. We also expanded our geographic presence
+into Maharashtra, further broadening our customer and market base. Our current order book stands at
+565.80Cr, providing healthy revenue visibility for the coming quarters.
+
+The ramp-up of our newly inaugurated Kannur facility is progressing well, with production and capacity
+utilisation scaling up as planned. The additional capacity is expected to support execution of our growing order
+book and enable us to participate in larger and higher-capacity transformer opportunities.
+
+Overall, business momentum remains encouraging, and we continue to progress in line with our targets for
+the year. Our focus remains on timely order execution, improving capacity utilisation, maintaining a healthy
+order pipeline and strengthening our presence across existing as well as newer markets."
+
+Operational Highlights H1 FY27
+
+ Secured 11 Orders During the Period
+[page 3]
+ Cumulative Order Value of 209.24 Cr
+ Orders to be Executed Over 7-17 Months
+ Expanded Geographic Presence into Maharashtra
+
+Order from Maharashtra  Secured a 13.50 Cr order from an EPC company in Maharashtra
+ Order from Hyderabad       for 20 MVA Power Transformers, to be executed within 7
+ Order from Hyderabad                                       months.
+ Order from Hyderabad
+ Order from Hyderabad    Received a 13.50 Cr order from a Hyderabad-based company
+ Order from Karnataka        for a 112.5 MVA, 330 kV Transformer, with an 11-month
+ Order from Karnataka                                execution timeline.
+ Order from Karnataka
+ Order from New Delhi    Awarded a 39.90 Cr order by an EPC company in Hyderabad
+ Order from Karnataka    for 20 MVA Power Transformers, scheduled for execution over
+ Order from Hyderabad
+                                                       13-17 months.
+
+                        Bagged a 51.30 Cr order from a Hyderabad-based company for
+                         20 MVA Power Transformers, with delivery planned within 13
+
+                                                            months.
+
+                         Secured a 23.30 Cr order from a company in Hyderabad for a
+                            160 MVA, 220 kV Transformer, to be completed within 13
+                                                            months.
+
+                             Received a 28.50 Cr order from a Karnataka-based EPC
+                          company for 20 MVA Power Transformers, with an 8-month
+
+                                                      execution period.
+
+                          Bagged a 5.70 Cr order from a company in Karnataka for 20
+                          MVA Power Transformers, scheduled for execution within 12
+
+                                                            months.
+
+                        Added another 5.70 Cr order from a Karnataka-based company
+                          for 20 MVA Power Transformers, with a 12-month execution
+                                                           timeline.
+
+                        Secured a 5.60 Cr order from a New Delhi-based EPC company
+                         for 20 MVA, 66/11 kV Power Transformers, executable within
+
+                                                          11 months.
+
+                         Received a 8.64 Cr order from an EPC company in Karnataka
+                           for 20 MVA Power Transformers, with completion targeted
+                                                     within 11 months.
+
+                         Received a 13.60 Cr order from a Hyderabad-based company
+                             for a 112.5 MVA, 330 kV Transformer, with an 11-month
+                                                     execution timeline.
+
+About Supreme Power Equipment Limited
+
+Supreme Power Equipment Limited (Supreme, SPEL), originally founded as a partnership firm in 1994 under the
+name "Supreme Power Equipment" and later incorporated as company under the name "Supreme Power
+Equipment Private Limited" in 2005, is a Tamil Nadu-based company specializing in the manufacturing of power
+and distribution transformers. With 3 decades of industry experience, the company has emerged as a prominent
+supplier to local electric utilities. Supreme's foray into the windmill segment showcases its expertise in crafting
+transformers designed to withstand switching challenges and voltage fluctuations.
+[page 4]
+Renowned for quality and reliability, the company has a strong track record, having manufactured, and supplied
+over 22,028 units. Supreme Power Equipment Limited continues to be a key player in the transformer industry,
+emphasizing innovation and precision in design.
+
+The Company made its debut in the primary market with an IPO & listed on NSE Emerge in Dec 23.
+
+In FY26, the company recorded a consolidated Revenue of  181.64 Cr, an EBITDA of  33.29 Cr, and Net Profit of
+ 20.44 Cr.
+
+Disclaimer
+Certain statements in this document that are not historical facts are forward looking statements. Such forward-
+looking statements are subject to certain risks and uncertainties like government actions, local, political or
+economic developments, technological risks, and many other factors that could cause actual results to differ
+materially from those contemplated by the relevant forward-looking statements. The Company will not be in any
+way responsible for any action taken based on such statements and undertakes no obligation to publicly update
+these forward-looking statements to reflect subsequent events or circumstances.
+
+For Further Information Please Contact
+
+                                        Kirin Advisors Private Limited
+                                        Sunil Mudgal - Director
+                                        sunil@kirinadvisors.com
+                                        +91 98692 75849
+                                        www.kirinadvisors.com
+

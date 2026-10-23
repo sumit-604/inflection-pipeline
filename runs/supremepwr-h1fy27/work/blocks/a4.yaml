@@ -1,0 +1,95 @@
+stage: A4-analyst
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+model: "claude-opus-5-5"
+status: complete
+correction_loop: 2
+docs_merged: [results, concall, presentation, pressrelease]
+ledger_reconciliation:
+  notes: 24
+  turns: 99
+  slides: 45
+  all_reviewed: true
+  a3_findings_incorporated: [FN-01, FN-02, FN-03, FN-04, FN-05, FN-06, FN-07, FN-08, FN-09, FN-10, FN-11, FN-12, FN-13, FN-14, FN-15, FN-16, FN-17, FN-18, FP-01, FP-02, FP-03, FP-04, FP-05, FP-06, FP-07, FP-08, FP-09, FP-10, FP-11, FP-12, FP-13, FP-14, FP-15, FP-16, FP-17, FP-18, FP-19, FP-20, FP-21, PR-01, PR-02, PR-03, PR-04, PR-05, PR-06, PR-07, FC-01, FC-02, FC-03, FC-04, FC-05, FC-06, FC-07, FC-08, FC-09, FC-10, FC-11, FC-12, FC-13, FC-14, FC-15, FC-16, FC-17, FC-18, FC-19, FC-20, FC-21, FC-22, FC-23]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "none (no Notion page; PRE-THESIS READ; Halt 1 NOT SIGNED; Mental Model NOT SIGNED)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "H1 FY26", attributable_gap_pct: 0.00, pre_minority_gap_pct: 1.00}
+  - {period: "H2 FY26", attributable_gap_pct: 0.00, pre_minority_gap_pct: 1.28}
+  - {period: "H1 FY27", attributable_gap_pct: 0.00, pre_minority_gap_pct: 0.89}
+  - {period: "FY26", attributable_gap_pct: 0.00, pre_minority_gap_pct: 1.15}
+questions_for_management:
+  - {q: "Danya FY26 and H1 FY27 gross revenue, sales to and purchases from SPEL, transfer-price basis; any unrealised profit eliminated on Danya's 17.02 Cr inventory?", from_finding_id: "FN-03, FN-04, FP-01, FP-02, PR-05, FC-20"}
+  - {q: "Consolidated note 4: reviewed by statutory auditors or certified by management? Will a corrected filing be made?", from_finding_id: "FN-15, FN-07"}
+  - {q: "Danya receivables 1.63 to 10.31 Cr: who are the customers, what ageing, any interest or remuneration to partners on capital?", from_finding_id: "FN-05, FC-15"}
+  - {q: "Why keep a ~35%-taxed partnership with MD and WTD at 10%? Danya headcount, recharge agreement; was ~0.43 Cr reclassified between employee cost and other expenses across H1/H2 FY26?", from_finding_id: "FN-12, FP-02, FP-14, FN-06"}
+  - {q: "Restate FY27 guide on a filed basis (revenue or total income, consolidated, 300-350 Cr); what changed in method since the FY26 and Q1 misses?", from_finding_id: "FC-01, FC-22, PR-02, FP-13, PR-07"}
+  - {q: "How much of 565.80 Cr is scheduled for dispatch by 31-Mar-2027, and what limits H2 to 200-250 Cr vs 353 Cr requested?", from_finding_id: "FC-02, PR-03"}
+  - {q: "Order book at 31-Mar-2026 and 30-Sep-2026 on one basis (ex-GST, unexecuted), Danya 83.04 Cr and intra-group split out", from_finding_id: "FP-07, PR-04"}
+  - {q: "L1 and bid pipeline value and MVA mix behind the 600-800 Cr year-end book", from_finding_id: "FC-03"}
+  - {q: "FY27 CFO target; inventory and receivables at 31-Mar-2027; why the H1 deck omits the 30-Sep-2026 balance sheet and cash flow", from_finding_id: "FC-13, FC-14, FP-09"}
+  - {q: "MSE dues past 45 days; is the unconfirmed-balances note new and how much is unconfirmed; what sits in other current liabilities?", from_finding_id: "FN-13, FP-10, FN-10"}
+  - {q: "Warrant exercise intent and allottee split for 15.81 Cr due 27-Feb-2027; funding plan for the next expansion", from_finding_id: "FN-08, FP-12, FC-21, FC-18"}
+  - {q: "Location of unused 0.07 Cr warrant money; split of the 15.81 Cr balance by object", from_finding_id: "FN-09"}
+  - {q: "Was the PAT-margin floor cut from 10% to 9%, and why? H2 FY27 EBITDA margin guide vs 17.26% operating", from_finding_id: "FC-06, FP-03, PR-01, FP-16"}
+  - {q: "Deck says margin expansion via mix; CMD says uplift absorbed by overheads and margin will sustain. Which is the plan?", from_finding_id: "FC-07, FP-03"}
+  - {q: "Written PVC coverage is 'around 70-75%' (deck, release) vs 70/80/70-80% on the call, and 'whatever the price escalates it will be covered; the margin will not affect much' (CC-R327): which coverage is right, what value of the book has no PVC, when does it execute, what lag and cap terms?", from_finding_id: "FP-04, FC-08"}
+  - {q: "Proven rating: deck says up to 25 MVA (three slides) vs 'Earlier: Up to 50 MVA' (Kannur slide); call says 50/100 MVA type tests under process and PGCIL papers pending because the plant is new. Which ratings are certified, dates for tests and PGCIL filing, any book order waiting on a test?", from_finding_id: "FP-05, FC-11, FC-19"}
+  - {q: "Are the two 112.5 MVA orders really 330 kV, and within tested capability?", from_finding_id: "FP-06, FC-12"}
+  - {q: "'We do not find any problem in getting bushings' (CC-R341) vs 'negotiating with China supplier' (CC-R223): are bushings for the 2-3 orders at 220 kV under PO with dates?", from_finding_id: "FC-17"}
+  - {q: "Kannur 20-30%: average or exit? Is 40-50% by March an exit rate? Send H1 MVA output by plant as promised", from_finding_id: "FC-10, FC-09, FP-11"}
+  - {q: "Which revenue ceiling is current (500-550 deck, 550-600 call, 600 in two years)? Capacity in MVA by plant and revenue per MVA", from_finding_id: "FC-05, FC-04, FP-11"}
+  - {q: "Distinct customers behind the 11 H1 orders; largest customer's share of 565.80 Cr", from_finding_id: "FP-08, PR-06"}
+  - {q: "Restate government share FY24-FY26 on the H1 FY27 consolidated basis (chart reads 34.93/26.35/31.73% or 65.07/73.65/68.27%); government share of the 565.80 Cr book; H2 mix", from_finding_id: "FP-19, FP-21, FC-16"}
+  - {q: "Traded vs manufactured share of revenue; why material cost is labelled Purchases of Stock in Trade", from_finding_id: "FN-17"}
+  - {q: "Finance-cost breakdown for H1 2.92 Cr; why FY26 cash interest 1.47 Cr vs P&L 3.03 Cr", from_finding_id: "FN-18"}
+  - {q: "Was ~2.12 Cr non-cash Danya share inside audited FY26 SA CFO of 27.73 Cr?", from_finding_id: "FN-01"}
+  - {q: "Promoter holding and pledge at 30-Sep-2026; change since 31-Mar-2026", from_finding_id: "FP-15"}
+  - {q: "Customers order 'one year before or eight months nine months before the project': of the 353 Cr wanted before March 2027, how much has a written customer reschedule, and how much carries fixed dates with LD clauses?", from_finding_id: "FC-02 (CC-R324, CC-R325)"}
+  - {q: "State top-1 and top-10 customer share for FY24, FY25, FY26 and H1 FY27 (chart reads 79.68/65.55/67.86% or 20.32/34.45/32.14%); distinct customers behind the four Hyderabad company orders (101.70 Cr)", from_finding_id: "FP-20"}
+monitorables:
+  - {item: "Warrant exercise 15.81 Cr balance; +4.99% shares", implied_date: "27-Feb-2027", source_ref: "RES-R156-R163 l.435-443; FN-08"}
+  - {item: "Kannur utilisation at least 40-50%", implied_date: "before 31-Mar-2027", source_ref: "CC-R103 l.463 (ASR)"}
+  - {item: "FY27 revenue 300-350 Cr (H2 need 164.69-214.69)", implied_date: "31-Mar-2027; reported ~30-May-2027", source_ref: "CC-R022 l.150 (ASR); FC-01"}
+  - {item: "H2 FY27 execution 200-250 Cr vs 353 Cr customer requirement; written reschedules", implied_date: "31-Mar-2027", source_ref: "CC-R051-R055 l.270-275; CC-R324-R325 l.287 (ASR)"}
+  - {item: "H2 FY27 CON CFO positive (single cleanest metric; bull >=31.64 Cr, bear <5.74 Cr)", implied_date: "31-Mar-2027; reported ~30-May-2027", source_ref: "CC-R196 l.313 (ASR); RES-R437"}
+  - {item: "Inventory toward 60-70 Cr from CON 87.46 Cr", implied_date: "31-Dec-2026 (next filed reading 31-Mar-2027)", source_ref: "CC-R070, R336 l.307-309 (ASR); RES-R392"}
+  - {item: "Year-end order book 600-800 Cr", implied_date: "31-Mar-2027", source_ref: "CC-R019 l.144-145 (ASR)"}
+  - {item: "PAT margin 9-12% FY27", implied_date: "31-Mar-2027", source_ref: "CC-R029-R030 (ASR)"}
+  - {item: "Confirmation of payables, loans, other liabilities; any true-up", implied_date: "FY27 audit 31-Mar-2027", source_ref: "RES-R569 l.445; RES-R594 l.1023"}
+  - {item: "MSE dues within 45 days at year end", implied_date: "31-Mar-2027", source_ref: "RES-R372 l.896; FN-13"}
+  - {item: "Note 4 assurance alternative resolved / corrigendum", implied_date: "next filing (date not given by management)", source_ref: "RES-R593 l.1019; FN-15"}
+  - {item: "H1 MVA volume data to be shared", implied_date: "date not given by management", source_ref: "CC-R225 l.357 (ASR)"}
+  - {item: "Bushings for 2-3 orders at 220 kV received on time", implied_date: "date not given by management", source_ref: "CC-R222-R223, R340-R341 l.492-505 (ASR)"}
+  - {item: "Type-test certificates 50 MVA (TANGEDCO) and 100 MVA", implied_date: "date not given by management", source_ref: "CC-R218-R220, R342-R343 l.524-540 (ASR)"}
+  - {item: "PGCIL approval", implied_date: "~Oct-2027 (A3-derived)", source_ref: "CC-R215, R342 l.519-524 (ASR)"}
+  - {item: "Execution of 11 H1 orders, 209.24 Cr, 7-17 months", implied_date: "Nov-2026 to Feb-2028 (A3-derived)", source_ref: "PRS-R128-R138 l.103-153"}
+  - {item: "Government share ~30% of book maintained", implied_date: "FY27", source_ref: "CC-R082, R338 l.407-412 (ASR)"}
+  - {item: "Next expansion planning, size and funding", implied_date: "during FY28", source_ref: "CC-R207-R209 l.428-436 (ASR)"}
+  - {item: "FY28 revenue up to 550 Cr; Kannur ~80%", implied_date: "31-Mar-2028", source_ref: "CC-R060 l.284; CC-R073 l.353 (ASR)"}
+  - {item: "600 Cr in next two years", implied_date: "FY28-FY29", source_ref: "CC-R059 l.283 (ASR)"}
+  - {item: "Use of warrant balance by object; unused 0.07 Cr location", implied_date: "by 27-Feb-2027", source_ref: "RES-R466-R467 l.1204; FN-09"}
+  - {item: "Top-1 / top-10 customer share and restated government share disclosed", implied_date: "date not given by management (next deck or annual report)", source_ref: "FP-20, FP-21; PPT-R271-R282"}
+  - {item: "Obtain Q3 FY26 deck baseline and a company-filed transcript", implied_date: "next run", source_ref: "FP header l.182; CC-R251"}
+flags:
+  - "PRE-THESIS READ: no Notion page; Decision Status none; Halt 1 and Mental Model NOT SIGNED"
+  - "GOVERNANCE: CON note 4 unresolved '[reviewed by the Statutory Auditors / certified by the management]'; Danya unaudited; CON LRR relies on management statement (FN-15, FN-07)"
+  - "RELATED PARTY: Danya partnership, MD 7.5% and WTD 2.5% partners; not named on call or in release (FP-14, PR-05, FC-20)"
+  - "INTRA-GROUP: CON-SA revenue gap (5.47) to +8.17 Cr = 22.7% of YoY and 38.6% of HoH CON revenue growth; parent HoH +16.2%; attributable PAT identical; no unrealised-profit elimination visible; Danya receivables 6.3x (FN-03, FN-04, FN-05)"
+  - "CASH: CON CFO (5.74) Cr H1; cash 0.25 Cr; net debt 40.23 to 57.20 Cr (+42.2%); matched-half CCC 79.9 to 89.8 days (+9.9); INDETERMINATE-WITH-DIRECTION caps verdict below PROCEED"
+  - "GUIDANCE CREDIBILITY: FY27 raised orally to 300-350 Cr on ASR call only after FY26 and Q1 misses (Spear memory; indicative 0 of 2, not of record); H2 gap blamed on 8-12 month order lead time, no filed support"
+  - "MARGIN: CON op EBITDA margin falls on every basis (FY24-FY26 20.45/19.00/18.07%; halves 18.77/17.58/17.26%); PAT-margin floor 9%; 'margin will not affect much' (CC-R327) contradicted by filing; deck margin-expansion claim contradicted by CMD"
+  - "CAPABILITY GATE: proven rating unclear (deck 25 MVA on three slides vs 50 MVA on Kannur slide); 50/100 MVA type tests pending and mandatory in tender BQRs (CC-R343); PGCIL ~Oct-2027, papers pending as plant is new (CC-R342); two orders labelled 330 kV above 220 kV ceiling"
+  - "KANNUR: revenue commissioning test INDETERMINATE (was PASS); no attributable filed evidence of fill"
+  - "FUNDING: warrant balance 15.81 Cr due 27-Feb-2027; next expansion 'much bigger' with no funding plan"
+  - "CONCENTRATION: Hyderabad buyers 67.7% of H1 inflow; no utility buyer among 11 H1 orders; top-10 67.86% of FY26 SA revenue on lean chart reading (FP-20, unresolved); government share reading split (FP-21)"
+  - "ASR: every concall number unverified; request company-filed transcript"
+  - "DISCLOSURE: H1 deck omits 30-Sep-2026 balance sheet and cash flow; shareholding stale at Mar-2026"
+  - "TRACKER: 0 downstream signals supplied; Role 5.5 to open before /fttcp; six Case-B payload rows proposed, none written"
+  - "ARCHETYPE: provisional EVASIVE (specificity 35/79 = 0.443; ex-restated 25/56 = 0.446; both >0.05 below 0.5); loop-1 INDETERMINATE withdrawn; credibility input is memory, not of record"
+  - "DEFERRED: Role 4 Steps 6.5 and 7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30); pillar facts flagged in Step 7 table"
+plain_language_brief_included: true
+analyst_note: "The half proves order intake, not quality. Revenue +79.9% and core PBT +44.7% are non-treasury (OI 1.4% of PBT), but 22.7% of the YoY and 38.6% of the HoH CON revenue rise is the CON-minus-SA swing through Danya's consolidation, and the parent that holds Kannur grew 16.2% HoH. Margin falls on every basis despite the CMD's 'margin will not affect much', CFO is negative, net debt is up 42%, and the matched-half cash cycle lengthened 9.9 days. SA PAT equals CON attributable PAT to the lakh because the parent books 90% of Danya profit as other income; the note 4 placeholder leaves Danya's assurance level unknown. Reading 1: Danya is a genuine execution channel, working capital is growth-induced, H2 CFO turns positive. Reading 2: group sales and receivables route through a promoter-partnered firm, the inventory build is structural, and the warrant call and debt fund the gap. Separating observation: H2 FY27 CON CFO plus a Danya intra-group schedule. The 300-350 Cr guide sits on an ASR transcript only. Correction loops 1 and 2 do not move the verdict."
+review_path: "runs/supremepwr-h1fy27/work/review_supremepwr_h1fy27.md"

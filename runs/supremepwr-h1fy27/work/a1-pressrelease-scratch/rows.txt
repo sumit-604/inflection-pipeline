@@ -1,0 +1,166 @@
+NUMBER|1|18|21.10.2026|letter date (also DATE)
+NUMBER|2|55|79.91%|headline Total Income YoY growth, H1 FY27
+NUMBER|2|55|135.57 Cr|headline Total Income, H1 FY27
+NUMBER|2|55|45.09%|headline Net Profit growth, H1 FY27
+NUMBER|2|55|13.65 Cr|headline Net Profit, H1 FY27
+NUMBER|2|64|135.57|Total Income H1 FY27 consolidated, Cr
+NUMBER|2|64|75.36|Total Income H1 FY26 consolidated, Cr
+NUMBER|2|64|79.91%|Total Income YoY
+NUMBER|2|65|23.62|EBITDA H1 FY27 consolidated, Cr
+NUMBER|2|65|14.27|EBITDA H1 FY26 consolidated, Cr
+NUMBER|2|65|65.46%|EBITDA YoY
+NUMBER|2|66|13.65|Net Profit H1 FY27 consolidated, Cr
+NUMBER|2|66|9.41|Net Profit H1 FY26 consolidated, Cr
+NUMBER|2|66|45.09%|Net Profit YoY
+NUMBER|2|68|5.46|EPS H1 FY27 (value printed on line below its row)
+NUMBER|2|67|3.76|EPS H1 FY26
+NUMBER|2|67|45.21%|EPS YoY
+NUMBER|2|70|565.80 Cr ("over")|current order book as on 21 Oct 2026
+NUMBER|2|75|79.91%|CMD quote, Total Income YoY H1 FY27
+NUMBER|2|75|135.57 Cr|CMD quote, Total Income H1 FY27
+NUMBER|2|75|45.09%|CMD quote, Net Profit YoY H1 FY27
+NUMBER|2|75|13.65 Cr|CMD quote, Net Profit H1 FY27
+NUMBER|2|77|17.42%|EBITDA margin H1 FY27 (CMD quote)
+NUMBER|2|77|10.07%|Net Profit margin H1 FY27 (CMD quote)
+NUMBER|2|80|around 70-75%|share of order book under price variation clauses
+NUMBER|2|85|11|orders secured in first half
+NUMBER|2|86|209.24 Cr|cumulative value of 11 orders
+NUMBER|2|86|7 to 17 months|execution timeline range of orders
+NUMBER|2|88|565.80Cr|current order book (CMD quote)
+NUMBER|2|100|11|orders secured during the period (highlights)
+NUMBER|2|101|209.24 Cr|cumulative order value (highlights)
+NUMBER|3|102|7-17 Months|order execution range (highlights)
+NUMBER|3|106|13.50 Cr|order 1 value, Maharashtra EPC
+NUMBER|3|107|20 MVA|order 1 rating, power transformers
+NUMBER|3|107|7 months|order 1 execution period
+NUMBER|3|110|13.50 Cr|order 2 value, Hyderabad company
+NUMBER|3|111|112.5 MVA|order 2 rating
+NUMBER|3|111|330 kV|order 2 voltage class
+NUMBER|3|111|11-month|order 2 execution timeline
+NUMBER|3|114|39.90 Cr|order 3 value, Hyderabad EPC
+NUMBER|3|115|20 MVA|order 3 rating
+NUMBER|3|117|13-17 months|order 3 execution timeline
+NUMBER|3|119|51.30 Cr|order 4 value, Hyderabad company
+NUMBER|3|120|20 MVA|order 4 rating
+NUMBER|3|120|13 months|order 4 delivery period
+NUMBER|3|124|23.30 Cr|order 5 value, Hyderabad company
+NUMBER|3|124|160 MVA|order 5 rating
+NUMBER|3|124|220 kV|order 5 voltage class
+NUMBER|3|125|13 months|order 5 completion period
+NUMBER|3|128|28.50 Cr|order 6 value, Karnataka EPC
+NUMBER|3|129|20 MVA|order 6 rating
+NUMBER|3|129|8-month|order 6 execution period
+NUMBER|3|133|5.70 Cr|order 7 value, Karnataka company
+NUMBER|3|133|20 MVA|order 7 rating
+NUMBER|3|134|12 months|order 7 execution period
+NUMBER|3|138|5.70 Cr|order 8 value, Karnataka company
+NUMBER|3|139|20 MVA|order 8 rating
+NUMBER|3|139|12-month|order 8 execution timeline
+NUMBER|3|142|5.60 Cr|order 9 value, New Delhi EPC
+NUMBER|3|143|20 MVA|order 9 rating
+NUMBER|3|143|66/11 kV|order 9 voltage class
+NUMBER|3|145|11 months|order 9 execution period
+NUMBER|3|147|8.64 Cr|order 10 value, Karnataka EPC
+NUMBER|3|148|20 MVA|order 10 rating
+NUMBER|3|149|11 months|order 10 completion target
+NUMBER|3|151|13.60 Cr|order 11 value, Hyderabad company
+NUMBER|3|152|112.5 MVA|order 11 rating
+NUMBER|3|152|330 kV|order 11 voltage class
+NUMBER|3|152|11-month|order 11 execution timeline
+NUMBER|3|157|1994|founding year as partnership firm (also DATE)
+NUMBER|3|158|2005|incorporation year as Private Limited (also DATE)
+NUMBER|3|160|3 decades|industry experience
+NUMBER|4|165|22,028 units|transformers manufactured and supplied ("over")
+NUMBER|4|168|Dec 23|IPO and NSE Emerge listing (also DATE)
+NUMBER|4|170|181.64 Cr|FY26 consolidated Revenue
+NUMBER|4|170|33.29 Cr|FY26 consolidated EBITDA
+NUMBER|4|171|20.44 Cr|FY26 consolidated Net Profit
+NUMBER|1|25|400 051|postal pin, NSE address (see address summary)
+ENTITY|1|18|Supreme Power Equipment Limited (SPEL, Supreme)|company, filer
+ENTITY|1|21|National Stock Exchange of India Ltd. (NSE)|addressee exchange
+ENTITY|1|27|SUPREMEPWR|NSE script symbol
+ENTITY|1|34|SEBI LODR Regulations 2015, Regulation 30|regulation cited
+ENTITY|1|51|Priyanka Bansal|Company Secretary and Compliance Officer
+ENTITY|2|57|Chennai|press release dateline
+ENTITY|2|57|NSE - SUPREMEPWR|listing venue
+ENTITY|2|73|Mr. Vee Rajmohan|Chairman and Managing Director
+ENTITY|2|87|Maharashtra|new geography entered
+ENTITY|2|90|Kannur facility|newly inaugurated facility
+ENTITY|3|106|Maharashtra EPC company (unnamed)|order 1 customer
+ENTITY|3|110|Hyderabad-based company (unnamed)|order 2 customer
+ENTITY|3|114|Hyderabad EPC company (unnamed)|order 3 customer
+ENTITY|3|119|Hyderabad-based company (unnamed)|order 4 customer
+ENTITY|3|124|Hyderabad company (unnamed)|order 5 customer
+ENTITY|3|128|Karnataka-based EPC company (unnamed)|order 6 customer
+ENTITY|3|133|Karnataka company (unnamed)|order 7 customer
+ENTITY|3|138|Karnataka-based company (unnamed)|order 8 customer
+ENTITY|3|142|New Delhi-based EPC company (unnamed)|order 9 customer
+ENTITY|3|147|Karnataka EPC company (unnamed)|order 10 customer
+ENTITY|3|151|Hyderabad-based company (unnamed)|order 11 customer
+ENTITY|3|106|Left-column labels "Order from Maharashtra / Hyderabad x4 / Karnataka x4 / New Delhi" (lines 106-116)|graphic labels, 11 items
+ENTITY|3|157|Supreme Power Equipment (partnership firm)|original form 1994
+ENTITY|3|158|Supreme Power Equipment Private Limited|2005 incorporated name
+ENTITY|3|159|Tamil Nadu|home state
+ENTITY|3|161|windmill segment|foray product segment
+ENTITY|3|161|local electric utilities|stated supplier base
+ENTITY|4|168|NSE Emerge|listing platform
+ENTITY|4|183|Kirin Advisors Private Limited|investor relations contact
+ENTITY|4|184|Sunil Mudgal - Director|Kirin Advisors contact
+ENTITY-SUMMARY|1|21|NSE address block: Exchange Plaza, 5th Floor, Plot C/1, G Block, BKC, Bandra (E), Mumbai 400 051|address block
+ENTITY-SUMMARY|4|185|contact block: sunil@kirinadvisors.com, +91 98692 75849, www.kirinadvisors.com|contact details
+ENTITY-SUMMARY|4|174|forward-looking disclaimer (risks: government actions, political/economic developments, technological risks; no obligation to update)|decorative safe-harbour
+ENTITY-SUMMARY|1|46|digital signature block, Priyanka Bansal, 2026.10.21 20:48:24 +05:30|signature stamp
+FORWARD|2|70|Order book "providing strong execution visibility and supporting future revenue growth momentum"|order book claim
+FORWARD|2|76|"strong growth reflects healthy execution of our order book and continued demand across our key markets"|management claim
+FORWARD|2|79|"Margins witnessed some pressure ... due to the inflationary environment and higher input costs, particularly across key raw materials"|margin claim [CLAIM, historical]
+FORWARD|2|80|"around 70-75% of our order book is covered by price variation clauses ... protection against significant movements in raw material prices"|PVC protection claim
+FORWARD|2|82|"helps us manage cost volatility over the execution period"|PVC mechanism claim
+FORWARD|2|82|"focused on procurement efficiency, better product mix and operating leverage as volumes scale up"|margin levers
+FORWARD|2|85|"Our order inflow remained healthy during the first half"|order inflow claim [CLAIM]
+FORWARD|2|86|"expanded our geographic presence into Maharashtra, further broadening our customer and market base"|geography claim
+FORWARD|2|88|"healthy revenue visibility for the coming quarters"|order book visibility
+FORWARD|2|90|"ramp-up of newly inaugurated Kannur facility is progressing well, production and capacity utilisation scaling up as planned"|Kannur ramp-up
+FORWARD|2|91|"additional capacity is expected to support execution of our growing order book"|capacity expected benefit
+FORWARD|2|92|"enable us to participate in larger and higher-capacity transformer opportunities"|capacity expected benefit
+FORWARD|2|94|"business momentum remains encouraging, and we continue to progress in line with our targets for the year"|targets, none quantified
+FORWARD|2|95|"focus remains on timely order execution, improving capacity utilisation, maintaining a healthy order pipeline and strengthening our presence across existing as well as newer markets"|focus areas
+FORWARD|3|103|"Orders to be Executed Over 7-17 Months"|execution window of H1 orders
+FORWARD|3|107|Order 1 "to be executed within 7 months"|delivery commitment
+FORWARD|3|111|Order 2 "11-month execution timeline"|delivery commitment
+FORWARD|3|115|Order 3 "scheduled for execution over 13-17 months"|delivery commitment
+FORWARD|3|120|Order 4 "delivery planned within 13 months"|delivery commitment
+FORWARD|3|125|Order 5 "to be completed within 13 months"|delivery commitment
+FORWARD|3|129|Order 6 "8-month execution period"|delivery commitment
+FORWARD|3|134|Order 7 "scheduled for execution within 12 months"|delivery commitment
+FORWARD|3|139|Order 8 "12-month execution timeline"|delivery commitment
+FORWARD|3|143|Order 9 "executable within 11 months"|delivery commitment
+FORWARD|3|148|Order 10 "completion targeted within 11 months"|delivery commitment
+FORWARD|3|152|Order 11 "11-month execution timeline"|delivery commitment
+FORWARD|4|165|"continues to be a key player in the transformer industry, emphasizing innovation and precision in design"|positioning claim [CLAIM]
+FORWARD|4|174|"forward looking statements ... actual results may differ materially"|disclaimer, see summary row
+DATE|1|18|21.10.2026|letter date
+DATE|1|29|Half Year ended 30th September, 2026|reporting period end
+DATE|1|34|SEBI LODR Regulations 2015|regulation year
+DATE|1|48|2026.10.21 20:48:24 +05:30|digital signature timestamp
+DATE|2|57|21st October, 2026|press release date
+DATE|2|58|H1 FY27|current period
+DATE|2|63|H1 FY26|comparison period
+DATE|2|70|as on 21st October, 2026|order book date
+DATE|3|157|1994|founded as partnership firm
+DATE|3|158|2005|incorporated as Private Limited
+DATE|4|168|Dec 23|IPO and NSE Emerge listing
+DATE|4|170|FY26|full-year comparison
+DATE|2|86|7 to 17 months|order execution durations
+QUALIFIER|1|29|"Un-Audited Financial Results" for Half Year ended 30 Sept 2026|results unaudited
+QUALIFIER|2|58|"Unaudited Financial Results for H1 FY27"|results unaudited
+QUALIFIER|2|61|"Key Consolidated Financial Highlights"|figures consolidated
+QUALIFIER|2|63|Table header "Particulars ( Cr)": rupee glyph missing in text layer|unit symbol lost; Cr stated
+QUALIFIER|2|67|"EPS (In )": rupee glyph missing in text layer|EPS unit symbol lost
+QUALIFIER|2|70|"over 565.80Cr as on 21st October, 2026"|order book floor and date; definition not given
+QUALIFIER|2|80|"around 70-75% of our order book is covered by price variation clauses"|approximate coverage
+QUALIFIER|2|86|"cumulative value of 209.24 Cr" for 11 orders|cumulative; timelines 7 to 17 months
+QUALIFIER|3|106|Order text blocks sit beside "Order from X" labels; label order differs from text order|layout only, pairing not given
+QUALIFIER|4|165|"over 22,028 units"|lower-bound count
+QUALIFIER|4|170|"consolidated Revenue of [glyph missing] 181.64 Cr" (FY26): termed Revenue, not Total Income|metric label differs from table
+QUALIFIER|4|171|rupee glyph missing before 33.29 and 20.44 values|unit symbol lost
+QUALIFIER|all|-|No asterisk, dagger or Note: line found anywhere in the document|negative finding

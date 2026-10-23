@@ -1,0 +1,172 @@
+# A1 STRUCTURED EXTRACTION: SUPREMEPWR pressrelease H1 FY27
+source: SupremePower_H1FY27_PressRelease.pdf | fulltext: extracted/supremepwr-pressrelease-h1fy27-fulltext.md (line numbers refer to that file, header included)
+ID range: R001-R166
+Counts: NUMBER 78 | ENTITY 30 + ENTITY-SUMMARY 4 | FORWARD 28 | DATE 13 | QUALIFIER 13
+Notes: units Cr (Rs Crore), factor x1, EPS in Rs. Rupee glyph absent from text layer. Row format: ID | page | line | TYPE | value | context. FORWARD table also holds management CLAIM rows tagged [CLAIM]. Page 3 order list is one layout block; each order is split into value, rating, voltage, period rows. Document has no asterisks or Note: lines (R166 records that).
+
+R001 | page 1 | line 18 | NUMBER | 21.10.2026 | letter date (also DATE)
+R002 | page 2 | line 55 | NUMBER | 79.91% | headline Total Income YoY growth, H1 FY27
+R003 | page 2 | line 55 | NUMBER | 135.57 Cr | headline Total Income, H1 FY27
+R004 | page 2 | line 55 | NUMBER | 45.09% | headline Net Profit growth, H1 FY27
+R005 | page 2 | line 55 | NUMBER | 13.65 Cr | headline Net Profit, H1 FY27
+R006 | page 2 | line 64 | NUMBER | 135.57 | Total Income H1 FY27 consolidated, Cr
+R007 | page 2 | line 64 | NUMBER | 75.36 | Total Income H1 FY26 consolidated, Cr
+R008 | page 2 | line 64 | NUMBER | 79.91% | Total Income YoY
+R009 | page 2 | line 65 | NUMBER | 23.62 | EBITDA H1 FY27 consolidated, Cr
+R010 | page 2 | line 65 | NUMBER | 14.27 | EBITDA H1 FY26 consolidated, Cr
+R011 | page 2 | line 65 | NUMBER | 65.46% | EBITDA YoY
+R012 | page 2 | line 66 | NUMBER | 13.65 | Net Profit H1 FY27 consolidated, Cr
+R013 | page 2 | line 66 | NUMBER | 9.41 | Net Profit H1 FY26 consolidated, Cr
+R014 | page 2 | line 66 | NUMBER | 45.09% | Net Profit YoY
+R015 | page 2 | line 68 | NUMBER | 5.46 | EPS H1 FY27 (value printed on line below its row)
+R016 | page 2 | line 67 | NUMBER | 3.76 | EPS H1 FY26
+R017 | page 2 | line 67 | NUMBER | 45.21% | EPS YoY
+R018 | page 2 | line 70 | NUMBER | 565.80 Cr ("over") | current order book as on 21 Oct 2026
+R019 | page 2 | line 75 | NUMBER | 79.91% | CMD quote, Total Income YoY H1 FY27
+R020 | page 2 | line 75 | NUMBER | 135.57 Cr | CMD quote, Total Income H1 FY27
+R021 | page 2 | line 75 | NUMBER | 45.09% | CMD quote, Net Profit YoY H1 FY27
+R022 | page 2 | line 75 | NUMBER | 13.65 Cr | CMD quote, Net Profit H1 FY27
+R023 | page 2 | line 77 | NUMBER | 17.42% | EBITDA margin H1 FY27 (CMD quote)
+R024 | page 2 | line 77 | NUMBER | 10.07% | Net Profit margin H1 FY27 (CMD quote)
+R025 | page 2 | line 80 | NUMBER | around 70-75% | share of order book under price variation clauses
+R026 | page 2 | line 85 | NUMBER | 11 | orders secured in first half
+R027 | page 2 | line 86 | NUMBER | 209.24 Cr | cumulative value of 11 orders
+R028 | page 2 | line 86 | NUMBER | 7 to 17 months | execution timeline range of orders
+R029 | page 2 | line 88 | NUMBER | 565.80Cr | current order book (CMD quote)
+R030 | page 2 | line 100 | NUMBER | 11 | orders secured during the period (highlights)
+R031 | page 2 | line 101 | NUMBER | 209.24 Cr | cumulative order value (highlights)
+R032 | page 3 | line 102 | NUMBER | 7-17 Months | order execution range (highlights)
+R033 | page 3 | line 106 | NUMBER | 13.50 Cr | order 1 value, Maharashtra EPC
+R034 | page 3 | line 107 | NUMBER | 20 MVA | order 1 rating, power transformers
+R035 | page 3 | line 107 | NUMBER | 7 months | order 1 execution period
+R036 | page 3 | line 110 | NUMBER | 13.50 Cr | order 2 value, Hyderabad company
+R037 | page 3 | line 111 | NUMBER | 112.5 MVA | order 2 rating
+R038 | page 3 | line 111 | NUMBER | 330 kV | order 2 voltage class
+R039 | page 3 | line 111 | NUMBER | 11-month | order 2 execution timeline
+R040 | page 3 | line 114 | NUMBER | 39.90 Cr | order 3 value, Hyderabad EPC
+R041 | page 3 | line 115 | NUMBER | 20 MVA | order 3 rating
+R042 | page 3 | line 117 | NUMBER | 13-17 months | order 3 execution timeline
+R043 | page 3 | line 119 | NUMBER | 51.30 Cr | order 4 value, Hyderabad company
+R044 | page 3 | line 120 | NUMBER | 20 MVA | order 4 rating
+R045 | page 3 | line 120 | NUMBER | 13 months | order 4 delivery period
+R046 | page 3 | line 124 | NUMBER | 23.30 Cr | order 5 value, Hyderabad company
+R047 | page 3 | line 124 | NUMBER | 160 MVA | order 5 rating
+R048 | page 3 | line 124 | NUMBER | 220 kV | order 5 voltage class
+R049 | page 3 | line 125 | NUMBER | 13 months | order 5 completion period
+R050 | page 3 | line 128 | NUMBER | 28.50 Cr | order 6 value, Karnataka EPC
+R051 | page 3 | line 129 | NUMBER | 20 MVA | order 6 rating
+R052 | page 3 | line 129 | NUMBER | 8-month | order 6 execution period
+R053 | page 3 | line 133 | NUMBER | 5.70 Cr | order 7 value, Karnataka company
+R054 | page 3 | line 133 | NUMBER | 20 MVA | order 7 rating
+R055 | page 3 | line 134 | NUMBER | 12 months | order 7 execution period
+R056 | page 3 | line 138 | NUMBER | 5.70 Cr | order 8 value, Karnataka company
+R057 | page 3 | line 139 | NUMBER | 20 MVA | order 8 rating
+R058 | page 3 | line 139 | NUMBER | 12-month | order 8 execution timeline
+R059 | page 3 | line 142 | NUMBER | 5.60 Cr | order 9 value, New Delhi EPC
+R060 | page 3 | line 143 | NUMBER | 20 MVA | order 9 rating
+R061 | page 3 | line 143 | NUMBER | 66/11 kV | order 9 voltage class
+R062 | page 3 | line 145 | NUMBER | 11 months | order 9 execution period
+R063 | page 3 | line 147 | NUMBER | 8.64 Cr | order 10 value, Karnataka EPC
+R064 | page 3 | line 148 | NUMBER | 20 MVA | order 10 rating
+R065 | page 3 | line 149 | NUMBER | 11 months | order 10 completion target
+R066 | page 3 | line 151 | NUMBER | 13.60 Cr | order 11 value, Hyderabad company
+R067 | page 3 | line 152 | NUMBER | 112.5 MVA | order 11 rating
+R068 | page 3 | line 152 | NUMBER | 330 kV | order 11 voltage class
+R069 | page 3 | line 152 | NUMBER | 11-month | order 11 execution timeline
+R070 | page 3 | line 157 | NUMBER | 1994 | founding year as partnership firm (also DATE)
+R071 | page 3 | line 158 | NUMBER | 2005 | incorporation year as Private Limited (also DATE)
+R072 | page 3 | line 160 | NUMBER | 3 decades | industry experience
+R073 | page 4 | line 165 | NUMBER | 22,028 units | transformers manufactured and supplied ("over")
+R074 | page 4 | line 168 | NUMBER | Dec 23 | IPO and NSE Emerge listing (also DATE)
+R075 | page 4 | line 170 | NUMBER | 181.64 Cr | FY26 consolidated Revenue
+R076 | page 4 | line 170 | NUMBER | 33.29 Cr | FY26 consolidated EBITDA
+R077 | page 4 | line 171 | NUMBER | 20.44 Cr | FY26 consolidated Net Profit
+R078 | page 1 | line 25 | NUMBER | 400 051 | postal pin, NSE address (see address summary)
+R079 | page 1 | line 18 | ENTITY | Supreme Power Equipment Limited (SPEL, Supreme) | company, filer
+R080 | page 1 | line 21 | ENTITY | National Stock Exchange of India Ltd. (NSE) | addressee exchange
+R081 | page 1 | line 27 | ENTITY | SUPREMEPWR | NSE script symbol
+R082 | page 1 | line 34 | ENTITY | SEBI LODR Regulations 2015, Regulation 30 | regulation cited
+R083 | page 1 | line 51 | ENTITY | Priyanka Bansal | Company Secretary and Compliance Officer
+R084 | page 2 | line 57 | ENTITY | Chennai | press release dateline
+R085 | page 2 | line 57 | ENTITY | NSE - SUPREMEPWR | listing venue
+R086 | page 2 | line 73 | ENTITY | Mr. Vee Rajmohan | Chairman and Managing Director
+R087 | page 2 | line 87 | ENTITY | Maharashtra | new geography entered
+R088 | page 2 | line 90 | ENTITY | Kannur facility | newly inaugurated facility
+R089 | page 3 | line 106 | ENTITY | Maharashtra EPC company (unnamed) | order 1 customer
+R090 | page 3 | line 110 | ENTITY | Hyderabad-based company (unnamed) | order 2 customer
+R091 | page 3 | line 114 | ENTITY | Hyderabad EPC company (unnamed) | order 3 customer
+R092 | page 3 | line 119 | ENTITY | Hyderabad-based company (unnamed) | order 4 customer
+R093 | page 3 | line 124 | ENTITY | Hyderabad company (unnamed) | order 5 customer
+R094 | page 3 | line 128 | ENTITY | Karnataka-based EPC company (unnamed) | order 6 customer
+R095 | page 3 | line 133 | ENTITY | Karnataka company (unnamed) | order 7 customer
+R096 | page 3 | line 138 | ENTITY | Karnataka-based company (unnamed) | order 8 customer
+R097 | page 3 | line 142 | ENTITY | New Delhi-based EPC company (unnamed) | order 9 customer
+R098 | page 3 | line 147 | ENTITY | Karnataka EPC company (unnamed) | order 10 customer
+R099 | page 3 | line 151 | ENTITY | Hyderabad-based company (unnamed) | order 11 customer
+R100 | page 3 | line 106 | ENTITY | Left-column labels "Order from Maharashtra / Hyderabad x4 / Karnataka x4 / New Delhi" (lines 106-116) | graphic labels, 11 items
+R101 | page 3 | line 157 | ENTITY | Supreme Power Equipment (partnership firm) | original form 1994
+R102 | page 3 | line 158 | ENTITY | Supreme Power Equipment Private Limited | 2005 incorporated name
+R103 | page 3 | line 159 | ENTITY | Tamil Nadu | home state
+R104 | page 3 | line 161 | ENTITY | windmill segment | foray product segment
+R105 | page 3 | line 161 | ENTITY | local electric utilities | stated supplier base
+R106 | page 4 | line 168 | ENTITY | NSE Emerge | listing platform
+R107 | page 4 | line 183 | ENTITY | Kirin Advisors Private Limited | investor relations contact
+R108 | page 4 | line 184 | ENTITY | Sunil Mudgal - Director | Kirin Advisors contact
+R109 | page 1 | line 21 | ENTITY-SUMMARY | NSE address block: Exchange Plaza, 5th Floor, Plot C/1, G Block, BKC, Bandra (E), Mumbai 400 051 | address block
+R110 | page 4 | line 185 | ENTITY-SUMMARY | contact block: sunil@kirinadvisors.com, +91 98692 75849, www.kirinadvisors.com | contact details
+R111 | page 4 | line 174 | ENTITY-SUMMARY | forward-looking disclaimer (risks: government actions, political/economic developments, technological risks; no obligation to update) | decorative safe-harbour
+R112 | page 1 | line 46 | ENTITY-SUMMARY | digital signature block, Priyanka Bansal, 2026.10.21 20:48:24 +05:30 | signature stamp
+R113 | page 2 | line 70 | FORWARD | Order book "providing strong execution visibility and supporting future revenue growth momentum" | order book claim
+R114 | page 2 | line 76 | FORWARD | "strong growth reflects healthy execution of our order book and continued demand across our key markets" | management claim
+R115 | page 2 | line 79 | FORWARD | "Margins witnessed some pressure ... due to the inflationary environment and higher input costs, particularly across key raw materials" | margin claim [CLAIM, historical]
+R116 | page 2 | line 80 | FORWARD | "around 70-75% of our order book is covered by price variation clauses ... protection against significant movements in raw material prices" | PVC protection claim
+R117 | page 2 | line 82 | FORWARD | "helps us manage cost volatility over the execution period" | PVC mechanism claim
+R118 | page 2 | line 82 | FORWARD | "focused on procurement efficiency, better product mix and operating leverage as volumes scale up" | margin levers
+R119 | page 2 | line 85 | FORWARD | "Our order inflow remained healthy during the first half" | order inflow claim [CLAIM]
+R120 | page 2 | line 86 | FORWARD | "expanded our geographic presence into Maharashtra, further broadening our customer and market base" | geography claim
+R121 | page 2 | line 88 | FORWARD | "healthy revenue visibility for the coming quarters" | order book visibility
+R122 | page 2 | line 90 | FORWARD | "ramp-up of newly inaugurated Kannur facility is progressing well, production and capacity utilisation scaling up as planned" | Kannur ramp-up
+R123 | page 2 | line 91 | FORWARD | "additional capacity is expected to support execution of our growing order book" | capacity expected benefit
+R124 | page 2 | line 92 | FORWARD | "enable us to participate in larger and higher-capacity transformer opportunities" | capacity expected benefit
+R125 | page 2 | line 94 | FORWARD | "business momentum remains encouraging, and we continue to progress in line with our targets for the year" | targets, none quantified
+R126 | page 2 | line 95 | FORWARD | "focus remains on timely order execution, improving capacity utilisation, maintaining a healthy order pipeline and strengthening our presence across existing as well as newer markets" | focus areas
+R127 | page 3 | line 103 | FORWARD | "Orders to be Executed Over 7-17 Months" | execution window of H1 orders
+R128 | page 3 | line 107 | FORWARD | Order 1 "to be executed within 7 months" | delivery commitment
+R129 | page 3 | line 111 | FORWARD | Order 2 "11-month execution timeline" | delivery commitment
+R130 | page 3 | line 115 | FORWARD | Order 3 "scheduled for execution over 13-17 months" | delivery commitment
+R131 | page 3 | line 120 | FORWARD | Order 4 "delivery planned within 13 months" | delivery commitment
+R132 | page 3 | line 125 | FORWARD | Order 5 "to be completed within 13 months" | delivery commitment
+R133 | page 3 | line 129 | FORWARD | Order 6 "8-month execution period" | delivery commitment
+R134 | page 3 | line 134 | FORWARD | Order 7 "scheduled for execution within 12 months" | delivery commitment
+R135 | page 3 | line 139 | FORWARD | Order 8 "12-month execution timeline" | delivery commitment
+R136 | page 3 | line 143 | FORWARD | Order 9 "executable within 11 months" | delivery commitment
+R137 | page 3 | line 148 | FORWARD | Order 10 "completion targeted within 11 months" | delivery commitment
+R138 | page 3 | line 152 | FORWARD | Order 11 "11-month execution timeline" | delivery commitment
+R139 | page 4 | line 165 | FORWARD | "continues to be a key player in the transformer industry, emphasizing innovation and precision in design" | positioning claim [CLAIM]
+R140 | page 4 | line 174 | FORWARD | "forward looking statements ... actual results may differ materially" | disclaimer, see summary row
+R141 | page 1 | line 18 | DATE | 21.10.2026 | letter date
+R142 | page 1 | line 29 | DATE | Half Year ended 30th September, 2026 | reporting period end
+R143 | page 1 | line 34 | DATE | SEBI LODR Regulations 2015 | regulation year
+R144 | page 1 | line 48 | DATE | 2026.10.21 20:48:24 +05:30 | digital signature timestamp
+R145 | page 2 | line 57 | DATE | 21st October, 2026 | press release date
+R146 | page 2 | line 58 | DATE | H1 FY27 | current period
+R147 | page 2 | line 63 | DATE | H1 FY26 | comparison period
+R148 | page 2 | line 70 | DATE | as on 21st October, 2026 | order book date
+R149 | page 3 | line 157 | DATE | 1994 | founded as partnership firm
+R150 | page 3 | line 158 | DATE | 2005 | incorporated as Private Limited
+R151 | page 4 | line 168 | DATE | Dec 23 | IPO and NSE Emerge listing
+R152 | page 4 | line 170 | DATE | FY26 | full-year comparison
+R153 | page 2 | line 86 | DATE | 7 to 17 months | order execution durations
+R154 | page 1 | line 29 | QUALIFIER | "Un-Audited Financial Results" for Half Year ended 30 Sept 2026 | results unaudited
+R155 | page 2 | line 58 | QUALIFIER | "Unaudited Financial Results for H1 FY27" | results unaudited
+R156 | page 2 | line 61 | QUALIFIER | "Key Consolidated Financial Highlights" | figures consolidated
+R157 | page 2 | line 63 | QUALIFIER | Table header "Particulars ( Cr)": rupee glyph missing in text layer | unit symbol lost; Cr stated
+R158 | page 2 | line 67 | QUALIFIER | "EPS (In )": rupee glyph missing in text layer | EPS unit symbol lost
+R159 | page 2 | line 70 | QUALIFIER | "over 565.80Cr as on 21st October, 2026" | order book floor and date; definition not given
+R160 | page 2 | line 80 | QUALIFIER | "around 70-75% of our order book is covered by price variation clauses" | approximate coverage
+R161 | page 2 | line 86 | QUALIFIER | "cumulative value of 209.24 Cr" for 11 orders | cumulative; timelines 7 to 17 months
+R162 | page 3 | line 106 | QUALIFIER | Order text blocks sit beside "Order from X" labels; label order differs from text order | layout only, pairing not given
+R163 | page 4 | line 165 | QUALIFIER | "over 22,028 units" | lower-bound count
+R164 | page 4 | line 170 | QUALIFIER | "consolidated Revenue of [glyph missing] 181.64 Cr" (FY26): termed Revenue, not Total Income | metric label differs from table
+R165 | page 4 | line 171 | QUALIFIER | rupee glyph missing before 33.29 and 20.44 values | unit symbol lost
+R166 | page all | line - | QUALIFIER | No asterisk, dagger or Note: line found anywhere in the document | negative finding

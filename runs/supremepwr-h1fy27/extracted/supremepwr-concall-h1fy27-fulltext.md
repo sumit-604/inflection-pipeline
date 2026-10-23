@@ -1,0 +1,567 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: SupremePower_H1FY27_Concall_Transcript_ASR.txt
+doctype: concall
+source_status: MACHINE-TRANSCRIBED (ASR), not company-filed (faster-whisper small int8; no speaker labels; names, numbers and terms may be misheard)
+page_count_pdfinfo: N.A. (plain-text source; 10 five-minute timestamp blocks used as pages, plus page 0 = 6-line source preamble)
+formfeed_count: 0 (N.A.)
+line_count: 567
+unit_convention: Crores (spoken "crores"; also "lakhs per MVA")
+conversion_factor_to_cr: Crores -> x1; Lakhs -> x0.01 (extracted text not converted)
+text_layer_present: N.A. (text source, pdffonts gate not applicable)
+extraction_mode: text-only (verbatim copy, no OCR, no rendering)
+render_candidates: none
+rendered_pages: none
+page_coverage: 100% (534 source lines, 528 timestamped lines, blocks 1-10 all present, every source line carried verbatim)
+speaker_labels: none in source; turns in the structured file are ASR-INFERRED
+detected_quarter: H1 FY27 (call held 22-Oct-2026 10:30 IST; period spoken as raw "H1-F527")
+extraction_date: 2026-10-23
+line_numbering: line numbers = line numbers of this file (header included); [page N] marker lines sit on their own lines
+=== END HEADER ===
+
+
+
+[page 0] source preamble, source lines 1-6
+MACHINE-TRANSCRIBED (ASR). NOT A COMPANY-FILED TRANSCRIPT.
+Supreme Power Equipment Limited (NSE SME: SUPREMEPWR) - H1 FY27 Earnings Conference Call, held Thursday 22-Oct-2026, 10:30 AM IST.
+Source audio: https://www.supremepower.in/IPO_pdf/H1%20FY27%20Concall%20Audio%20Recording.mp3 (link filed with NSE 22-Oct-2026, SPEL_22102026133026). Duration 2,960 s.
+Engine: faster-whisper small, int8, CPU, language en, beam 1, no VAD, 10 chunks of 300 s. Transcribed 23-Oct-2026.
+No speaker labels. Timestamps [mm:ss] from call start. Names, numbers and technical terms may be misheard; verify any number against filed documents.
+----
+[page 1] audio block [00:00]-[04:59]
+[00:00] Ladies and gentlemen, good day and welcome to the Supreme Power Equipment Limited H1-F527
+[00:08] Results Conference Call.
+[00:10] As a reminder, all participants' lines will be in the Listen Only mode and there will
+[00:14] be an opportunity for you to ask questions after the presentation concludes.
+[00:19] Should you need assistance during the conference call, please signal an operator by pressing
+[00:24] star then zero on your touchtone phone.
+[00:27] Please note this call is being recorded.
+[00:30] I would now like to hand the conference over to Mr. Bhatatharya from Kiran Advisors.
+[00:35] Thank you and over to you sir.
+[00:38] Thank you.
+[00:39] Good morning everyone.
+[00:40] On behalf of Kiran Advisors, I welcome you all to the conference call of Supreme Power
+[00:45] Equipment Limited.
+[00:46] From the management team, we have Mr. V Rajamon, Chairman and Managing Director
+[00:51] of the company.
+[00:52] With that, now hand over the call to Mr. V Rajamon for the opening remarks.
+[00:56] Over to you sir.
+[00:57] Thank you.
+[00:58] Good morning everyone.
+[01:01] On behalf of Supreme Power Equipment Limited, I welcome you all to our H1-F527
+[01:08] Earning Conference Call.
+[01:11] Thank you for joining us and for your continued interest in the company.
+[01:15] I hope you have had an opportunity to review our financial results and
+[01:22] investor presentation.
+[01:25] I will briefly take you through our performance for the first half of the year, key operational
+[01:33] developments and our priorities going forward, following which we will be happy to take your
+[01:41] questions.
+[01:44] Supreme Power Equipment has over three decades of experience in transformer manufacturing
+[01:49] with capabilities across power and distribution transformers, catering to utilities, renewable
+[01:55] energy, industrial and infrastructure customers.
+[01:58] Over the years, we have continued to strengthen our engineering capability, manufacturing
+[02:08] infrastructure and customer relationship while expanding into higher capacity transformer
+[02:15] segments.
+[02:17] According to our financial performance, H1-F527 was a strong period for the company.
+[02:26] Total income stood at 135.57 crores, registering growth of 79.91% year to year.
+[02:40] The EBITDA increased by 65.46% year to year to 23.62 crores with an EBITDA margin of 17.42%
+[02:53] profit after tax grew by 45.09% year to year to 13.65 crores translating into a
+[03:06] pack margin of 10.07% earning per share for the period stood at 5.46%.
+[03:18] We particularly pleased with the strong order momentum witnessed during the first
+[03:25] half of the year during H1-F527, we secured 11 orders aggregating 209.24 crores
+[03:35] with execution timeline ranging between 7 and 17 months.
+[03:42] This healthy order inflow reflects the continued confidence of our customer in
+[03:51] our technical capability and product quality and execution track record.
+[03:57] Another encouraging development during the period was the expansion of our
+[04:03] geographical presence into Magarastra. This marks an important step in broadening
+[04:10] our marketing reach beyond our traditionally strong presence in South
+[04:15] India and provides us with the opportunity to build the relationship
+[04:20] with a wider customer base. Our current order book stands at over 565.80 crores
+[04:32] providing strong execution visibility for the coming periods. The combination of
+[04:39] healthy opening order book and robust of fresh order winning during H1 gives us
+[04:48] confidence in the growth, in the growth tragedy of the business as we move into
+[page 2] audio block [05:00]-[09:59]
+[05:00] The second half of the financial year importantly around 70 to 70 percent of order book is covered
+[05:09] under price variation classes which provides a degree of protection against the volatility
+[05:16] in key raw material prices during the period.
+[05:21] We have seen pressure from higher prices of key inputs particularly CRO steel and ransom
+[05:31] oil.
+[05:33] These movements can impact margin especially where there is a timing difference between
+[05:41] increase in input cost and the corresponding adjustment under price variation class.
+[05:50] We continue to manage this through disciplined procurement, appropriate commercial terms and
+[05:58] a continued focus on protecting profitability.
+[06:02] Operationally the ramp up of our condor manufacturing facility is progressing well.
+[06:10] The expanded manufacturing infrastructure strengthen our ability to execute a larger
+[06:17] order book cater to higher capacity transformer requirements and participate in a broader set
+[06:25] of opportunities.
+[06:26] We are encouraged by the demand environment across the transformer industry supported
+[06:35] by continued investments in transmission and distribution infrastructure, renewable energy
+[06:44] integration and industrial expansion.
+[06:51] With our strengthened manufacturing capacity, growing order book and improving market presence
+[06:57] we believe we are well positioned to capture these opportunities.
+[07:04] As we move into second half of FY 27, our priorities remain clear.
+[07:12] IMEA's exhibition of existing order book continued focus on securing quality orders, scaling up
+[07:20] utilization of convert facility, managing raw material and working capital efficiently and
+[07:28] maintaining healthy profitability.
+[07:31] Overall we are pleased with the progressing progress made during the first half of the
+[07:39] year.
+[07:40] The strong financial performance, healthy order winning and expansion into new market reinforce
+[07:48] our confidence in the direction of the business.
+[07:53] Before concluding I would like to thank our employees for their continued effort, our
+[08:00] customers, our business partners for their trust and our shareholders for their continued
+[08:08] support.
+[08:09] Once again, thank you once again for joining us today.
+[08:15] With that I would like to open the floor for questions.
+[08:19] Thank you sir.
+[08:20] We will now begin the question and answer session.
+[08:28] Anyone who wishes to ask a question may press star and one on your touchstone
+[08:32] telephone.
+[08:34] If you wish to remove yourself from the question queue you may press star and two.
+[08:40] Participants are requested to limit their questions to two per participant.
+[08:43] Ladies and gentlemen we will wait for a moment while the question queue assembles.
+[09:03] The first question comes from the line of Carbeth Coel with Serini Alpha.
+[09:11] Please go ahead.
+[09:13] Hello, hi I am Arvind.
+[09:15] Yes, very much audible sir, good morning, welcome.
+[09:18] Good morning sir and congrats for a good set of numbers.
+[09:21] I have two questions.
+[09:23] As you mentioned demand environment is pretty good right?
+[09:28] I won't take to understand from you regarding the pipeline and it's
+[09:33] converging into H2F by 27.
+[09:36] So what amount of orders we are expecting in H2F by 27 and what will be our closing order
+[09:43] book by this year end?
+[09:45] And also looking at first half number our execution has been pretty good.
+[09:51] So considering that now are you confident enough to cross the end of the year to this
+[09:57] financial year?
+[09:59] Yes.
+[page 3] audio block [10:00]-[14:59]
+[10:00] Actually now the demand environment is very good and the sector is also very good since
+[10:10] the union government and the state government showing much interest in expanding the transmission
+[10:17] network.
+[10:18] The demand is very high.
+[10:24] The thing one.
+[10:27] The order book which we on the in the pipeline is very huge and we are we are securing order
+[10:36] based on the quality of the order and the terms.
+[10:42] With that I think we believe the end of year we may maintain between the order book may
+[10:50] maintain between 600 to 800 close and I think I think I have answered your questions.
+[11:02] No, actually one more thing last quarter you mentioned about to 35 CR for this financial
+[11:11] year but looking at H1 execution which is pretty good for us now are you confident enough
+[11:17] to do anywhere between 350 to 350 years?
+[11:23] Yes, yes, yes, this year we believe we trust we should
+[11:29] have a revenue between 300 to 350 crores.
+[11:37] Already we have done 135 on console 135 we have done so I think balance 200 or 250 to
+[11:49] 20 maybe can can achieve easily.
+[11:53] God and secondly on the margin front you highlighted a bit in the opening commentary
+[12:01] about the input cost pressure right?
+[12:04] Yes, despite your efforts towards the optimal utilization and better management or whatever
+[12:14] it is.
+[12:15] I just wanted to understand from you how are you seeing the margin profile for the
+[12:22] full year at the 27th?
+[12:24] Because what I am understanding is our product mix is getting changed now right?
+[12:29] We are moving towards higher capacity to our former which provides the better realization.
+[12:36] So one product mix is getting changed and another thing is the input cost pressure.
+[12:41] So why did you are having 75% of the contracts in PVC right?
+[12:47] So considering both the things what do you think in the terms of the margins?
+[12:53] How it should shape up in second half and for full year at the 27th?
+[13:00] We are as per our order book which we are holding in hand the expected margin and it
+[13:12] is almost 80% is covered with PVC and now the order book is around 565 crores out of which
+[13:23] we have to 200 to 250 is expected to execute the this year.
+[13:32] And based on the order book the margin can maintain between the pack margin can maintain
+[13:41] between 9 to 12%.
+[13:46] So because major portion of the order book is covered with the price variation class and
+[13:54] we have secured order.
+[13:55] So based on that the order the margin is expected margin can be achieved.
+[14:02] Okay sir why we are speaking about?
+[14:06] Sorry to interrupt.
+[14:07] It is a follow up to the response the management.
+[14:12] Why we are speaking about this 9% thing?
+[14:15] Is it the effect of the input cost pressure is more severe than the improvement that we
+[14:24] expected from the product mix change?
+[14:27] No that is see in the month of January we are not expected any more and we did not
+[14:35] expect any price rise.
+[14:39] So from there we started taking orders with price variation class.
+[14:44] So and we cannot be more precise on the margin.
+[14:53] So we are giving a guide guideline on the range between 9 to 12%.
+[page 4] audio block [15:00]-[19:59]
+[15:00] So we cannot be more precise on that it can be only on the range.
+[15:08] Got it.
+[15:09] I hear this range is used to be 10 to 12, that is why I asked this question.
+[15:14] Okay, anyways I got my answer.
+[15:16] Thank you very much sir.
+[15:17] Thank you sir.
+[15:18] Thank you very much.
+[15:19] The next question comes from the line of Tisha with the fire capital.
+[15:22] Hello.
+[15:23] Hello.
+[15:24] Welcome madam.
+[15:25] Hi my audibles, thank you so much for this opportunity.
+[15:29] Couple of questions.
+[15:30] Firstly, on this margin you clarified that because of the raw material cost inflation has
+[15:37] gone up because of that we have the impact.
+[15:42] But given the, are we facing any procurement issues for our key raw materials or transformer
+[15:49] or do we already have contract in place and what sort of risk do you see to execution if
+[15:58] any you see?
+[16:00] Majorly our order book is 70 to 80 percent of order book is fully covered with price variation
+[16:15] class.
+[16:16] So that is a good one.
+[16:18] So whatever the price escalates it will be covered.
+[16:24] The margin will not affect much and we are in this business for more than three decades
+[16:36] and we have very long relationship with our vendors and based on that we are, the procurement
+[16:47] is not much difficult to us.
+[16:51] So this, so the order, so the execution you do not see any risk in terms of any raw material
+[16:58] delays or anything.
+[17:00] Yes, but there is a demand now we are expecting some demand going to that is for CRGO we
+[17:10] are expecting some price rise which we have already we have addressed.
+[17:20] Okay, thank you.
+[17:22] This Tamil Nadu, this new plot firstly on our go the capacity Tamil Nadu what will be our
+[17:28] peak utilization that we can achieve there and what will be the peak revenue from Tamil
+[17:32] Nadu and versus the Canoe Plac?
+[17:36] I could not get your question perfectly.
+[17:40] Can you?
+[17:41] Yeah.
+[17:42] Yeah.
+[17:43] Am I audible?
+[17:44] Yeah, yeah, audible.
+[17:45] Yeah, so our Tamil Nadu plans I think operating at around 70, 80% utilize it right.
+[17:50] So what do maximum utilize?
+[17:53] Both the plans are in Tamil Nadu only.
+[17:57] Yeah, so the first plant when you existing the old plant that is operating at 70, 80% right.
+[18:04] Yes.
+[18:05] So what is the maximum utilization level we can achieve there and what sort of peak
+[18:10] revenue do we see from that plant?
+[18:14] That is you are asking about the unit one that is the one unit one.
+[18:18] Yeah, yeah, yeah.
+[18:19] Yeah, yeah, there we can do up to 70 to 80 gross.
+[18:26] Okay, that's okay.
+[18:28] Okay, okay.
+[18:29] And so for this new plant if you commercializing there what's the utilization of it?
+[18:35] Are we thinking for this?
+[18:38] That is from the new plant we are expecting to under 250 gross.
+[18:45] And the max that of the both the plants combined it is around 550 to 600 gross will be the top
+[18:56] that is the peak revenue.
+[18:59] And just to relate to the two of you and which we can like the in the next year will it be
+[19:05] the final unit?
+[19:06] Yes, yes, yes, it is expected in next year.
+[19:11] Right.
+[19:12] So for this new plant we are going into sort of MBA or Transformers.
+[19:16] So what sort of margin differential do you see versus the lower KV class?
+[19:23] Actually for power transformers the margin is slightly higher than the distribution
+[19:31] turns on but at the same time it is absorbed by the overheads.
+[19:39] So it needs skilled manpower.
+[19:44] So we have to deploy experienced people.
+[19:48] So this half or one percent margin is absorbed by the so this margin will
+[19:57] maintain on the till first time.
+[page 5] audio block [20:00]-[24:59]
+[20:00] This current order book and the order book.
+[20:04] Sorry to interrupt, Tisha ma'am I would request you to please come back in the queue for further questions.
+[20:09] Just follow up to the previous question.
+[20:12] Yeah, yeah, yeah, please.
+[20:13] So for this current order book that we have and the pipeline also we are building for how much is this for the higher KV class transporters?
+[20:20] Yes, yes that product means you are asking.
+[20:25] Out of this 500 out of this 565 crores distribution is around 16% 16 to 17% that is 95, 95 less than 95 crores and power transformer is around 440 crores that is comes around 78% 70 to 75 to 78%
+[20:51] and inverted duty transom is around 30 crores that comes 5% of the total order book. This is the product mix.
+[21:02] And for the pipeline the order that we are building for any order of mix there?
+[21:07] That we cannot assure we have quoted so many tenders so many customers that on receiving the purchase order only we will be able to conclude that.
+[21:20] That is it so far my side. Thank you so much and all the best.
+[21:25] Thank you very much. Thank you very much ma'am.
+[21:29] The next question comes from the line of Mukesh Majwani with WC securities these go ahead.
+[21:37] Hello sir good morning and congratulations for good set of numbers.
+[21:41] Thank you very much.
+[21:43] I have just one question that our order book is around 565 crores. So what would be the execution timeline of this entire order book?
+[21:56] Actually as per customer requirement before end of this March 2027 353 to be executed and after March is 212.
+[22:14] Okay so this is customer requirement and we are giving a guideline between 200 to 225 further that is in Q2 sorry H2.
+[22:29] H2 okay so in H2 itself more than 300 crores of orders to be executed.
+[22:39] Yes as per customer requirement. Yeah as per customer requirement.
+[22:44] And we are just possible for us to execute.
+[22:49] Yeah we are aiming for 200 to 250 here after that is in H2.
+[22:54] Yeah so already we are done 134.
+[22:59] Yeah it is possible.
+[23:02] Okay thank you and all the best. Thank you thank you.
+[23:16] The next question comes from the line of Paras Chedha with purple one vertex ventures these go ahead.
+[23:23] Good morning sir and thank you for this opportunity congratulations on a fairly strong set of results.
+[23:29] It was just two queries you know just for set of verification you said there is a good chance we could hit our peak utilization of pi to 600 crores potentially in F528.
+[23:44] Is that correct sir?
+[23:46] Yes yes we are expecting actually in the earlier calls in next two years we will achieve the
+[23:58] 600 crores there now things are moving in good direction and I think next year we can go up to 550 crores.
+[24:13] Understood sir and in terms of customer requirement being 353 crores and our target guidance being 250 crores so that mismatch of 100 crores I mean how are we looking at it?
+[24:24] I think whether we potentially can even meet that or I mean how is it?
+[24:29] Actually customer they are placed out of one year before or eight months nine months before the project may the timeline of the project may extend for the customer.
+[24:40] So we have duly considered that and on a conservative way we have taken this figure.
+[24:49] Customer requirement is 553 this year that is before March and we are I think we can execute up to another two under course.
+[page 6] audio block [25:00]-[29:59]
+[25:00] This is 135 H1 right.
+[25:05] So just you know one thing you know since we first off of this year we saw a lot of this
+[25:11] disruption even input price etc.
+[25:14] And now that we have got 90% price variation clause in most of our orders including you
+[25:18] know going forward you would be building factoring you know lot of these into consideration
+[25:23] and now that the scale goes up is there any possibility of their operating leverage in
+[25:28] terms of margin expansion for next year let's say it's not this year.
+[25:32] Actually our marketing people they are choosing the order especially based on
+[25:45] the margin. So this margin I think this we believe this margin will
+[25:56] Okay okay.
+[25:59] Just one more thing in terms of working capital we saw you know this inventories
+[26:04] and trade listable sort of sharply for first off when do you expect this to
+[26:09] normalize and you know turn cash flow positive in terms of you know cash flow
+[26:12] from operation. Yes yes because this we are expecting this year revenue top line
+[26:20] of 350 crores right and for that for that we need to keep inventory at least two
+[26:30] to two and a half months inventory we need to hold right. So on that basis see this
+[26:37] inventory will maintain that is 60 70 crores of inventory will maintain and
+[26:43] with that we need to increase the revenue so rather reducing the inventory here
+[26:51] we need to increase the revenue so I think this will get normalized in next quarter
+[26:57] but in the inventory we have to maintain that understood so working capital and
+[27:03] you know specially trade listable and the revenue so cash flow from operation
+[27:07] may turn positive in second up or we will take some time yes yes yeah it will it
+[27:14] should get positive in next quarter next half this second off in the second up
+[27:22] understood and this is last where you mind in terms of demand outlook with PM there
+[27:26] etc you know and now of course you know lot of transformer capacities also coming
+[27:31] up and has come up so how do you see you know in terms of the length of the
+[27:35] I can you know this transformer and then you know in terms of demand it's a training
+[27:40] you know going forward as per market information next 8 to 10 years there is
+[27:48] there will be a good demand for this power sector right and but we have the
+[27:55] capacity that come up and coming up and our capacities when compared to the
+[28:02] overall capacity expansion our capacities too low so I think this this should
+[28:08] be our this is not impact our business right and and as we speak any plans for
+[28:15] capacity expansion or effect in the next year we have to think and plan about
+[28:22] that think and plan about that I think that's what it's that one off thank you so much
+[28:30] yes the next question comes from the line of Mohammed
+[28:35] Amir with ICO quantum solutions please go ahead
+[28:47] sorry sir we are unable to hear you could you please use your hand set
+[28:52] yeah please go ahead
+[28:59] yeah
+[29:00] yeah
+[29:01] question was for the good minds had to 20 plus
+[29:04] of the transformers all the companies have it's a big factor for it can be a
+[29:09] transfer of exchange into 20 k his cement there was such a way to you are not
+[29:14] not audible sir.
+[29:16] No, not audible sir.
+[29:19] No sir, could you please come in a better network area?
+[29:25] Yes, yes.
+[29:27] No, audible sir.
+[29:32] No sir, the voice is breaking off in between.
+[29:37] No.
+[29:39] No sir, I would request you to please join back the queue.
+[29:58] Thank you.
+[page 7] audio block [30:00]-[34:59]
+[30:00] The next question comes to the line of cost to Sahab with Walford PMS please go ahead.
+[30:06] Hi sir, thank you for the opportunity.
+[30:10] So just, am I audible?
+[30:14] Yes sir, yes sir.
+[30:16] Welcome sir.
+[30:17] Yes, a couple of questions.
+[30:19] So how is our ramp up and the new facility going on and how much utilization are we
+[30:24] planning in the next year in the new facility?
+[30:28] Yeah, this year we are expecting 50% of 40 to 50% before this March and next year
+[30:38] almost 80% I think we should utilize.
+[30:45] Okay and sir in terms of H1 what was the you know MVA that was delivered if you could
+[30:53] help me with the number how much volumes have we delivered?
+[30:58] Yes that I think one second.
+[31:03] The data I will I will reveal you that I don't have now.
+[31:12] Sir, sir, sir.
+[31:14] Okay sir.
+[31:15] You can mail it to us.
+[31:17] Thank you for the opportunity and all the best for the future.
+[31:21] Thank you.
+[31:22] Thank you.
+[31:23] Thank you.
+[31:24] The next question comes from the line of Mahesh Atal with area investment
+[31:31] advisors please go ahead.
+[31:34] Congratulations on good numbers sir.
+[31:37] Sir, sir just wanted to know the demand scenario and out of this 135 number
+[31:45] that we have reported how much of it is from the power and how much of it
+[31:49] is from the distribution segment?
+[31:52] Almost like 60% will be from the power terms somewhere and balance from
+[32:05] distribution and inverter data terms.
+[32:08] So when you say that the power commands are higher margin and we have reported
+[32:12] that the power margin of somewhere around 17% or present.
+[32:15] So is it fair to assume that as our power turnover increases maybe I think what
+[32:22] you have communicated is that the next turnover will have major power
+[32:27] share rather than having a distribution share.
+[32:29] So is it fair to assume that there could be a slight increase in the margin
+[32:34] going on it because you are moving more to the proper trajectory?
+[32:39] Yeah, your question is perfect but here on manufacturing of power terms
+[32:46] from us the overheads also increases.
+[32:52] So this 1% to 100% increase in margin will absorb by the overheads.
+[32:58] So we believe this margin will sustain.
+[33:02] All right.
+[33:03] I am saying how much of the business is from the government side and how
+[33:08] much is from the private side?
+[33:11] Is it 350 goes that we are going to do in this year?
+[33:16] Yeah, on that actually yeah, this on 565 almost 27, 27, 28% is from
+[33:27] government and balanced 72, 73% from non-government.
+[33:34] So same will be for the current year also?
+[33:37] Yes, this is for the overall order book and the same ratio I think
+[33:45] it should be in the same ratio only for this year.
+[33:52] And sir what is the receivable cycle with the government and with the private?
+[33:59] Private, some customers we are getting advance most of the customers we get 10 to 30%
+[34:07] advance and below before dispatch we used to get 90% and balanced 5 to 10% will be
+[34:16] after commissioning.
+[34:18] And for some customers we used to give for repeat customers we used to give
+[34:25] for credit for 45 days to 60 days.
+[34:29] From the government we get payments in 60 to 90 days.
+[34:36] Okay, so would it be the management's call that you still want to continue with the
+[34:44] government or you are not finding enough orders on the private side?
+[34:47] No, we need to continue with the government because there only we will get
+[34:52] we can build our credentials.
+[34:56] Now we have post tender for 50 years.
+[page 8] audio block [35:00]-[39:59]
+[35:00] sorry we got order from Tanger Co for 50 MVA and now we have posted 10 to power 160 MVA.
+[35:09] So these type of credentials we can build from the government.
+[35:13] So based on that on the supply history we will be able to rule the private market.
+[35:22] So the government we need to have some portion with the government business B to J.
+[35:29] Very enough sir.
+[35:31] This will all the budget.
+[35:33] Yeah this will maintain this will maintain this 30 percent will maintain 30 to 30 percent
+[35:38] will maintain.
+[35:39] Sure sir all the budget thank you.
+[35:42] Thank you sir thank you.
+[35:46] The next question comes from the line of Sunil Kateshia with the new investments please go ahead.
+[35:53] Good morning and congratulations for the good set of numbers.
+[35:59] Welcome.
+[36:01] Yeah sir you have mentioned saying that the expansion which we have done currently which has the 5154 capacity
+[36:12] and which we get utilized by next year by 2028 and accordingly we are growing by 70 to 80 percent annually
+[36:23] and you already mentioned thing that for the next eight years we can see such demand.
+[36:29] So what is our plan on a long term basis like over by 2030 or 2032 that what are we aiming now are we going to expand
+[36:41] similarly or do we have a capacity to expand based on the cash flows or considering the we are still not good at cash flow point of view
+[36:52] as far as credit terms are concerned.
+[36:55] Correct correct.
+[36:57] The next year you are asking about the expansion correct.
+[37:04] Correct correct.
+[37:06] Yeah that we have to plan next year okay.
+[37:10] Okay and what size of expansion we are thinking again.
+[37:16] Other these things we have not that plan the planning will be done only in the next year.
+[37:23] Okay.
+[37:25] So can you expect.
+[37:28] Yeah.
+[37:30] The capacity we have in the Kanpur capacity we have spent almost 100 to 120 goes.
+[37:38] Okay.
+[37:39] But the next expansion it will be much bigger.
+[37:42] Okay.
+[37:43] It will be much bigger.
+[37:44] Okay can you expect continue at least 50 to 60 percent growth every year for next 4 to 5 years.
+[37:54] No no next 2 to 3 years next 2 years I think this will be put into life.
+[38:05] Okay.
+[38:06] And how what are the plans to improve our cash flow.
+[38:15] Yeah that we are working on it.
+[38:19] That is the receivable.
+[38:24] Receivable cycle.
+[38:26] Okay.
+[38:27] Okay that is all from my thank you so much.
+[38:31] Okay sir.
+[38:32] Thank you.
+[38:34] The next question comes from the line of Charles Malu with Genuity Capital please go ahead.
+[38:42] Hello.
+[38:43] Hello.
+[38:44] Hello.
+[38:45] Just one quick question.
+[38:48] What was the current.
+[38:50] Sir we can't hear you clearly can you speak a bit louder please.
+[38:55] I'm audible now.
+[38:57] Could you please use your handset sir.
+[39:03] Hello am I audible.
+[39:07] Yes better sir thank you.
+[39:09] Yeah so just wanted to ask like what was the current utilization like as of H1 F5 27.
+[39:19] It's around 20 to 30 percent.
+[39:24] This year I think we believe we should achieve at least 40 to 50 percent utilization this year.
+[39:37] And sir any positive news from like data center that I think we were talking earlier.
+[39:43] Actually data centers is a very interesting topic.
+[39:49] Their requirement is very huge and their requirement is for larger power transformers that is more
+[39:57] than 160 of me 200 of me like that.
+[page 9] audio block [40:00]-[44:59]
+[40:00] So, we need to build our credentials to approach data centers and as of now also we are approaching
+[40:08] data centers and as of today we are not received any order from data center.
+[40:16] So, we need to build the credentials and we need to do type test for prototype test
+[40:25] for the higher MVA transformer larger power transformers with the extra high voltage.
+[40:32] And this is the last thing what was the everyday realization this quarter and in actual?
+[40:45] What is the realization?
+[40:47] That is realization total revenue is 135 crores per H1 and realization per MVA that again that
+[41:08] depends upon the product mix the distribution transformer will be around 20 lakhs per MVA
+[41:20] power transform will be around 10 lakhs.
+[41:23] Thank you.
+[41:26] The next question comes from the line of Harin and Darasi and individual investor please go
+[41:39] ahead.
+[41:40] Thank you for your time.
+[41:43] So, and thanks for the good research which we have posted.
+[41:47] My only query is since you have told that power transformers is more margin but it has
+[41:53] a longer lead time also and one of the major component which goes into it is the bushings.
+[41:59] So just wanted to check with you you have dependency for these bushings on China like
+[42:05] all the typical OEMs who are facing issues with their deliveries or you are dependent
+[42:10] only on Indian suppliers for these bushings.
+[42:13] I just want to make sure that whatever power transformers orders we have the deliveries
+[42:18] are not impacted because of the bushings because lead time of these bushings from
+[42:22] China is also 3 months.
+[42:25] Yes absolutely right.
+[42:27] They actually demand for bushings this particular other that is above 230 kV voltage only the
+[42:36] demand is there but if it is less than that voltage we are getting the supply is not interrupted.
+[42:46] As you said the demand the supply time timeline is very high for the bushings which the voltage
+[42:54] class is above 220 kV and majorly our order books are less than that that is mostly our
+[43:04] order book covered with 110 kV class and less for this year.
+[43:11] So we do not find any problem in getting bushings.
+[43:14] Can you also think about it?
+[43:17] Yeah can you?
+[43:18] Go ahead please sir sorry.
+[43:20] For we have 2-3 orders for that is for 2-3 orders for MO2-220 kV.
+[43:33] So for that we have a booked bushings and we will receive one time.
+[43:40] Okay and all these forcing we are doing from India or we are dependent on China like
+[43:45] like Seaman said.
+[43:47] China yes we are we are we are placed we are we are we are negotiating with China supplier
+[43:56] for this 2-3 orders and mostly we are getting it within India.
+[44:02] Okay that is why these inventories which you are showing in your stock is good to have
+[44:08] unless you are because based on the lead time if you have given if you are paying for the
+[44:14] inventory cost and but you are giving a lesser lead time to the customers you will
+[44:18] end up getting a more margin at that point of time.
+[44:21] So whatever items which are which has a longer lead time it is good to have inventories
+[44:28] in current kind of scenario and as you said a government customers are also important
+[44:34] do you have any plans to get into PG CIL because that is the one government approval
+[44:39] which help which will help you to enter into all the private sector in India.
+[44:43] Yes yes absolutely what you said is right and this this PG CIL approval is on the process.
+[44:51] So we need to this all documentation documents it is getting ready and
+[44:59] the
+[page 10] audio block [45:00]-[49:59]
+[45:00] So this year within a year we should we should we believe we should get the Pgcl approval
+[45:09] for this should be the top priority because if you get into this Pgcl approval then you
+[45:16] do not have to go to the local private players you are automatically approved everywhere
+[45:19] because this is something which everybody asked for.
+[45:22] Correct correct absolutely right we are approaching them.
+[45:27] Since our plant is new some documentation has to be prepared and type test
+[45:35] certificates all to be to be acquired. So with the base document with these are the
+[45:42] base documents to be submitted. This type test certificate for 100 MA 50 MA these
+[45:48] these all are under process. So now this 50 MA for Tanjiko is getting ready.
+[45:55] Yeah now the kind of the now the kind of requirement which government has they are
+[46:01] given. I would request you to please come back and thank you for the
+[46:06] last last last follow follow yeah yeah yeah yeah yeah yeah. So what do you think is so government has also given
+[46:12] flexibility to all the manufacturers nowadays since the type test is also
+[46:16] taking time so you submit your short circuit calculations they are
+[46:19] approving the supplier so you can try to get into this and you can with the
+[46:25] short circuit calculation that will help you to get these approvals on time.
+[46:29] Most of the government tenders are calling for the type test and this may be
+[46:37] for a specific approval as you said most of the government tenders on the
+[46:45] BQR that is big qualification requirement itself there are few points on
+[46:51] big qualification requirement and that this type of certificate submission is mandatory.
+[46:57] So in maybe in some cases they may give a special approval like that but we
+[47:03] do not come across such approvals. Yeah okay okay and the project which
+[47:12] you are quoting right now is with September LME right so just wanted to
+[47:16] check if you are quoting if you are getting advanced and you have quoted
+[47:20] with September LME in October and you are getting the payments as per LME clause
+[47:26] when you are supplying after seven months from where this profit pressure is
+[47:29] coming into.
+[47:33] Actually the the spray variation class will be calculated one month before
+[47:40] that is if we are now we are in October previous month yes so based on that only
+[47:48] we will be quoting and concluding the orders. From there the price value from
+[47:57] there the price variation calculation will take care. Yeah yeah and from where
+[48:02] this margin pressure is coming then if everything is protected you have quoted
+[48:06] as per LME you got the advance you got the payment on the date of dispatch as
+[48:10] per LME from this profit pressure is coming from there in that case because
+[48:13] input cost will not go up because you have covered everything as part of your quote.
+[48:19] Yes that is the reason we are able to maintain this 9 to 12% margin
+[48:27] otherwise it will go down. Okay that is very good reason sir thank you.
+[48:33] Thank you sir thank you very much.
+[48:40] Thank you. Ladies and gentlemen that was the last question for today.
+[48:46] I now have the conference over to Pushta Parthacharya for closing comments.
+[48:52] Thank you Arun for joining the conference call of Super Impower Equipment Limited.
+[48:57] If you have any further queries you can write us at researchadvertecureanadvisors.com.
+[49:03] Once again thank you Arun for joining the conference.
+[49:07] Thank you very much.
+[49:11] Thank you.
+[49:11] On behalf of Kiran Advises that concludes this conference.
+[49:15] Thank you for joining us and you will now disconnect your lines.
+[49:18] Thank you.
+[49:19] Thank you.

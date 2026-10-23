@@ -1,0 +1,33 @@
+stage: A5-adversary
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches:
+  - {metric: "Role 5 Step 6B ex-restated specificity ratio", a4_value: "25/56 = 0.446 (23 restated rows, 10 quantified)", recomputed: "28/60 = 0.467 on A4's stated restatement rule: R331, R334, R339, R340 are first statements (cited originals R178/R179, R186, R213, R222 come later on the call; R076, R104, R110-R112 are NUMBER rows), so 19 restated rows, 7 quantified; 0.44-0.48 across the judgement calls (R333, R336, R343, R179)", source_line: "review l.803, l.811, l.815; CC l.165-172, l.248-251, l.466-469, l.493-502"}
+surviving_bear_counters: []
+findings_by_type:
+  factual:
+    - "F3 [A4] Ex-restated specificity cross-check misapplies A4's own restatement rule (four rows tagged as repeats of later or NUMBER rows); corrected 28/60 = 0.467 sits inside the 0.05 band, so the 6E claim 'both sit more than 0.05 below the 0.5 line' (review l.832, l.914, l.948, l.1126) fails; all-rows 35/79 = 0.443 is correct; EVASIVE holds only if the all-rows ratio governs, which A4 must state, else INDETERMINATE"
+  missing: []
+  contradiction: []
+  style:
+    - "S12-S14 open (A1/A2 artefacts: R326 turn label, R186 line cite, ledger turn map)"
+    - "S19 Ledger RESTATED tags for R327-R344 differ from A4's restated list (e.g. R330, R327); enumeration flag, cosmetic"
+    - "S20 A1 rowed some present-tense outlook statements as FORWARD (R328, R329, R340, R341, R343) but not the parallel CC l.92-98; not a miss under the forward definition; adding them gives 35/82 = 0.427, label unchanged"
+    - "S21 Step 7A l.841 cites R327 at l.203-207; R327 is l.206-207"
+loop_back_to: "A4"
+gap: "A4 (text-only; no loop remains, so this is an open item for the operator): in Role 5 Step 6B (review l.811, l.815-816) take R331, R334, R339 and R340 off the restated list, show the ex-restated ratio as (35-7)/(79-19) = 28/60 = 0.467, and note it sits inside the 0.05 band. In 6E (l.832), Step 9 (l.914), flag 14 (l.948) and the YAML flag (l.1126), replace 'both sit more than 0.05 below the 0.5 line' with 'the all-rows ratio (0.443) governs the label, as in loop 1; the ex-restated cross-check (0.467) sits inside the band, so the provisional EVASIVE label is fragile', or label INDETERMINATE. No other change; protocol verdict, cash cap and other flags unaffected."
+style_notes:
+  - "S19-S21 new in loop 2; S12-S14 still open; S15-S18 applied. Logged only, no re-run"
+analyst_note: "Loop 2 final re-audit. M7 is cleared: CC-R327 carries the T17 margin claim at l.206-207, the ledger holds 344/344 with forward 80, and the review cites R327 wherever it tests margin protection. Coverage of the changed sections is clean; no forward unit lacks a row. The per-row quantified classification follows A4's stated rule, and the all-rows ratio is right: 35/79 = 0.443. The ex-restated cross-check is not. A4's own restatement rule needs an earlier forward row carrying the claim. Four rows break that test: R331, R334, R339 and R340 are each tagged as repeats of rows that come later on the call or of NUMBER rows. Correcting only those four gives 28/60 = 0.467, inside the 0.05 band, so the 6E claim that both ratios sit more than 0.05 below 0.5 fails. The EVASIVE label then rests on the all-rows ratio alone. The fix is text-only: correct the list, show 0.467, and state that the all-rows ratio governs, or label INDETERMINATE. The archetype is provisional and not of record; the protocol verdict, the cash cap and every other flag stand. No loop remains, so this is an open item for the operator."

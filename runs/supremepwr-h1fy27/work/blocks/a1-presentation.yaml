@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 41
+formfeed_count: 41
+line_count: 1080
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: ["page 2: zero characters, title slide photo; skipped: no data"]
+rendered_pages: ["page 2 at 50 dpi for inspection only, no OCR, no data (title picture)"]
+page_coverage_pct: 100
+detected_quarter: "H1 FY27 (half year ended 30-Sep-2026)"
+fulltext_path: "runs/supremepwr-h1fy27/extracted/supremepwr-presentation-h1fy27-fulltext.md"
+structured_path: "runs/supremepwr-h1fy27/extracted/supremepwr-presentation-h1fy27-structured.md"
+structured_counts:
+  number: 457
+  entity: 94
+  forward: 58
+  date: 35
+  qualifier: 103
+structured_id_range: "R001-R747"
+gate_a1: pass
+gap_note: ""

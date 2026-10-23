@@ -1,0 +1,16 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: SupremePower_H1FY27_PressRelease.pdf
+doctype: pressrelease (presentation-class rules)
+page_count_pdfinfo: 4
+formfeed_count: 4
+line_count: LC
+unit_convention: Crores (to be confirmed in text; see structured file)
+conversion_factor_to_cr: x1
+text_layer_present: yes
+extraction_mode: text-only
+render_candidates: none (no zero-character pages)
+rendered_pages: none
+page_coverage: 100%
+detected_quarter: H1 FY27
+extraction_date: 2026-10-23
+=== END HEADER ===

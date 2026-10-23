@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/supremepwr-h1fy27/work/ledger_results_supremepwr_h1fy27.md"
+counts:
+  notes: 24
+  line_items: 168
+  zero_standing: 44
+  agenda_items: 2
+  auditor_paras: 9
+  entities: 28
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, RESTATED, FOOTNOTE_UNRESOLVED, OCR_VARIANT, ROW_SKEW, COLUMN_SHORT, CONSOLIDATION_LIST, RELATED_PARTY]
+ids_in_structured: 609
+ids_referenced: 609
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "ZERO_STANDING: 44 dash rows over 23 lines (exceptional, extraordinary, earlier-year tax, cash flow dividend and interest lines) plus the Nil certificate remark R605. R593/R581: consolidated note 4 leaves bracketed 'reviewed by auditors / certified by management' unresolved while the consolidated LRR relies on unaudited subsidiary results. R562: standalone paid-up capital row had no value in A1's image; A1 may check. Auditor FRN reads three ways (R006, R245, R479) and three UDINs differ; OCR variance, not a conclusion. Board letter shows only two agenda items; no EoM or Going Concern paragraph in the structured file. Cross-statement ties (SA vs CON capital, reserves, cash) are listed for A3 only. No prior ledger, so ENTITY_CHANGE untested."

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/supremepwr-h1fy27/work/ledger_presentation_supremepwr_h1fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 10
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 94
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 41
+  slide_numbers: 457
+flags_raised: [ZERO_STANDING, RESTATED, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 747
+ids_referenced: 747
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Forward 58, dates 35, qualifiers 103 also enumerated. Page 2 is image-only (NO_TEXT_LAYER, R614). DROPPED_SLIDE and ENTITY_CHANGE not testable: no prior ledger. Footnote-unresolved: slide 32 period/basis (R716), balance sheet has no 30-Sep-2026 column (R729), Danya order book 83.04 Cr relation to 565.80 Cr not stated (R692). Zero rows are all in consolidated balance sheet (p37) plus R101 nil-rejection vision target."

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+page_count: 4
+formfeed_count: 4
+line_count: 188
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "H1 FY27"
+fulltext_path: "runs/supremepwr-h1fy27/extracted/supremepwr-pressrelease-h1fy27-fulltext.md"
+structured_path: "runs/supremepwr-h1fy27/extracted/supremepwr-pressrelease-h1fy27-structured.md"
+structured_counts:
+  number: 78
+  entity: 34
+  forward: 28
+  date: 13
+  qualifier: 13
+structured_id_range: "R001-R166"
+gate_a1: pass
+gap_note: ""

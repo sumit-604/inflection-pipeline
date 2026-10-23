@@ -1,0 +1,147 @@
+# A3 FORENSIC NOTES: SUPREMEPWR results H1 FY27 (half year ended 30-Sep-2026)
+
+Doctype: results | Model: claude-opus-5-5 | Date: 2026-10-23
+Inputs read: runs/supremepwr-h1fy27/extracted/supremepwr-results-h1fy27-structured.md (R001-R609, all rows), runs/supremepwr-h1fy27/extracted/supremepwr-results-h1fy27-fulltext.md (lines 1-1265, all lines; numbers taken from the [OCR page N] verified blocks), runs/supremepwr-h1fy27/work/ledger_results_supremepwr_h1fy27.md (A2 ledger, 609 IDs).
+Prior-quarter extract: none. This is the first quarterly run. A verbatim diff of the auditor paragraphs, notes or entity list against a prior period is NOT POSSIBLE. F5 and F15 are marked on that basis.
+Monitoring checklist: no Notion page (PRE-THESIS READ). The four Spear load-bearing facts from companies/SUPREMEPWR.md stand in for it. They are cross-referenced in Section 5.
+Units: Rs Lakhs as filed (x0.01 = Rs Cr). "SA" = standalone, "CON" = consolidated. "Danya" = Danya Electric Company, the sole subsidiary (a partnership firm). Any figure marked "derived" is A3 arithmetic on filed numbers. Any figure marked [INFERENCE] is a reasoned reading, not a filed fact.
+
+## 1. LEDGER RECONCILIATION
+
+- The ledger accounts for 609 IDs and the structured file holds 609. Orphans: 0. I read every structured row R001-R609 and every fulltext line it cites. Reconciled: 609 / 609 = 100%.
+- Status of the A2 flags after reading:
+  - R593 / R581 FOOTNOTE_UNRESOLVED: confirmed verbatim at l.1019, "[reviewed by the Statutory Auditors / certified by the management]". The raw layer shows the same text at l.958. This is a filing artefact, not an OCR artefact. See FN-15 and FN-07.
+  - R562 blank paid-up capital: confirmed at l.234, "(Paid up Equity Share Capital row: no value shown in the image.)". The raw CON layer at l.756 shows "Paid up Equity Share Capital 24991.135|". That reads as a share count in a capital row. See FN-16.
+  - R006 / R245 / R479 FRN variance: the three reads are "0136235" (l.137), "013623S" (l.682) and "0136238" (l.1254). The ICAI format (six digits plus a region letter) matches l.682. The other two are probably OCR misreads of "S". The partner, membership number (238452) and peer review number (020690) are the same in all three. See FN-16.
+  - R212-R219 ROW_SKEW: the SA investing block ties either way. H1 FY27 sums to (855.85)+18.80-274.59 = (1,111.64), which matches l.573. FY26 sums to 20.43+1.60-5,746.46+9.23 = (5,715.20), against (5,715.19) at l.573. The CON capex lines l.1155 (867.85 / 5,748.04) agree in scale. Row placement changes between periods. The totals do not.
+  - R305-R307 COLUMN_SHORT: confirmed at l.783. The H1 FY27 cell is blank, not "-". Immaterial.
+- Ties checked (all pass):
+  - SA balance sheet: 28,802.45 both sides (l.346 and l.361).
+  - CON balance sheet: 30,574.82 (l.900 and l.914). The rebuilt sum is 30,574.83.
+  - SA reserves roll: 10,159.80 - 8,794.70 = 1,365.10, against PAT 1,365.09 (l.227). No dividend was paid.
+  - SA DTL: +77.17 = deferred tax at l.225. CON DTL: +77.28 = l.787.
+  - SA provisions (ST + LT): +350.76 = current tax 345.40 + gratuity 5.37.
+  - Cash at the end of both cash flows ties to the balance sheets (21.91 and 24.81).
+  - Minority roll: 406.76 + 12.19 - 20.00 = 398.95 (l.887, l.790, l.1164).
+  - SA non-current investments: +384.32 = cash 274.59 (l.572) + share of profit 109.73 (l.549).
+
+## 2. FINDINGS TABLE
+
+id | check | ledger row ref | line | short verbatim quote | classification | forward implication
+---|---|---|---|---|---|---
+FN-01 | F1 | R176-R177 (ZERO_STANDING partial), R014-R017, R253-R256 | l.549; l.205; l.767 | "Share of profit and loss from partnership firm or AOP or LLP  (109.73)  -" | AMBIGUOUS | H1 FY27 strips the non-cash Danya share out of SA operating cash flow. The audited FY26 column shows "-". Yet the FY26 SA PAT must contain about 211.5 of Danya share (derived: CON minority 23.50 / 10% x 90%). The SA OI of 233.51 against CON OI of 46.12 confirms this. FY26 SA CFO of 2,773.36 may therefore carry up to about 211.5 (7.6%) of non-cash partnership income. The line stays on the template, so the FY27 annual cash flow will show which treatment is right.
+FN-02 | F2 | R086-R089 vs R332-R335; R014 vs R253 | l.227; l.792; l.549 | "XIII Net Profit transferred to Reserves & Surplus (XI-XII) 1,365.10 1,103.18 940.87 2,044.06" | NEUTRAL-FACT | SA PAT equals CON attributable PAT in all four periods (1,365.09/1,365.10; 1,103.18; 940.87; 2,044.06). The SA books 90% of Danya's profit as other income. In H1 FY27 that is 109.73 of the 130.19 SA OI (84%), 6.1% of SA PBT and 8.0% of SA PAT. Consolidation adds only the 10% minority (12.19). Total-PAT gap: 1.00% / 1.28% / 0.89% of SA PAT (H1 FY26 / H2 FY26 / H1 FY27). That is stable, under 5pp. Any SA-basis valuation already includes Danya.
+FN-03 | F2 | R010-R013 vs R249-R252 | l.204; l.766 | "I Revenue From Operations 13,530.91 10,644.60 7,519.44 18,164.04" | AMBIGUOUS | The CON-minus-SA revenue gap flips sign. It was -546.66 (-6.8%) in H1 FY26, -297.03 (-2.7%) in H2 FY26 and -843.69 (-4.4%) in FY26. In H1 FY27 it is +817.12 (+6.4%). The YoY swing of 1,363.78 equals 99.9% of SA PAT and 22.7% of the CON revenue increase. CON growth is +79.9% YoY. SA growth is +57.6%. Spear fact 2 ("standalone revenue reported above consolidated") no longer holds this half. Inter-company sales are NOT DISCLOSED.
+FN-04 | F2 | R592, R265-R268 vs R026-R029, R332-R335 | l.1014; l.771; l.209 | "unrealised profit in closing stock, if any, have been eliminated in full" | AMBIGUOUS | The FY26 CON revenue was below SA revenue. That proves the parent sold Danya more than Danya sold outside the group, by at least 843.69 (derived). Danya's stock rose 752.75 in FY26 (3,055.54 - 2,302.79). Yet CON attributable PAT equals SA PAT to the rupee lakh in every period. So no unrealised profit was eliminated on intra-group stock. There are two readings: inter-company sales are at cost, or the elimination was not made. Danya now holds 1,701.50 of inventory (derived, 19.5% of CON). The separating observation is the parent-to-Danya transfer price and value.
+FN-05 | F2 | R142-R143, R220, R362-R363, R364-R365 vs R116-R117, R394-R395 vs R148-R149, R455 | l.572; l.1164; l.889; l.334; l.911; l.358 | "Net Additional / (Withdrawn) by Other Partners in Subsidiary Firm (20.00)" | AMBIGUOUS | The Danya balance sheet changed sharply in six months (derived from CON minus SA). Receivables went from 163.42 to 1,031.24 (6.3x). Payables went from 265.96 to 898.56. Term borrowings went from 317.80 to 21.35 (repaid 296.45). Over the same half the parent borrowed +510.87 in long-term debt and put 274.59 of fresh capital into Danya. It also left its full 109.73 profit share in the firm. The other partners (the MD at 7.5%) withdrew 20.00, which is more than their 12.19 share. The minority holds 19.5% of partners' capital (398.95 / 2,051.00) for a 10% profit share. Funding is moving from the promoter-partnered firm onto the listed parent.
+FN-06 | F3 | R034-R037 vs R273-R276; R046-R049 vs R285-R288 | l.211; l.773; l.214; l.776 | "Employee Benefits Expenses 420.19 236.24 218.05 454.29" | AMBIGUOUS | Danya is not a shell. It has distinct cost lines, 372.29 of PPE (derived) and its own working capital. But two derived subsidiary costs are negative: H2 FY26 employee cost is -43.59 (CON 236.24 < SA 279.83) and H1 FY26 other expenses are -43.41 (CON 237.37 < SA 280.78). The near-equal amounts point to a reclassification of about 43.5 between employee cost and other expenses across the halves. The SA employee-cost YoY of +169% (152.01 to 409.27) is distorted by this. The CON YoY is +92.7%. No going concern EoM exists to reconcile.
+FN-07 | F4 | R581, R582, R593, R556-R559 | l.660; l.665; l.1019 | "is based solely on such unaudited interim financial results and other unaudited financial information" | AMBIGUOUS | Unaudited Danya PAT is 121.92 (derived). That is 8.85% of CON PAT and 8.04% of SA PAT through the share of profit. The trend is 9.9% in H1 FY26 and 12.6% in H2 FY26, so H1 FY27 is below the 10% line with no YoY jump. Four aggravating points. (a) The LRR gives no Rs amount for the subsidiary, so this ratio is A3-derived. (b) The conclusion relies on "the statement provided by the management related to Parent & Subsidiary" (l.665). (c) The SA LRR (l.85-144) is silent, yet SA PBT includes 109.73 from Danya. (d) Danya holds 16.5% of CON receivables and 19.5% of CON inventory. Note 4 does not say whether any external review took place.
+FN-08 | F6 | R156-R163, R511-R513, R517-R519, R098-R105 | l.439; l.441; l.1246 | "Conversion can occur in one oF more tranches within 18 months from the date of allotment" | FORWARD-SIGNAL | The 12,47,000 warrants carry a balance of Rs 126.75 each, which is 1,580.57 (Rs 15.81 Cr). It is due by 27-Feb-2027 (derived: 27-Aug-2025 + 18 months). Full exercise adds 4.99% to the 2,49,91,135 shares. CON cash is 24.81 and CON FCF for the half is -1,441.61, so this call is the next equity funding event. The split between promoter and non-promoter allottees is NOT DISCLOSED. Non-exercise forfeits the 526.86 paid.
+FN-09 | F6 | R466-R470, R516, R603-R606 | l.1204 | "To augment the fund requirement for establishment and development of Factory premises, Working Capital Requirements and General Corporate Purposes" | AMBIGUOUS | 520.31 of 526.86 (98.8%) is used and 6.55 is unused. Where the unused balance sits is NOT STATED. The three purposes are bundled as one object with no split, so a "no deviation" conclusion (l.1222) cannot fail by construction. The same bundle presumably covers the 1,580.57 still to come.
+FN-10 | F7 | R569, R594, R514, R515 | l.445; l.1022 | "are subjected to confirmation and reconciliation and consequent adjustments, if any, will be accounted for in the year of confirmation" | AMBIGUOUS | The hedge covers SA trade payables of 7,560.72 (26% of the SA balance sheet), loans and advances, and other current liabilities. Those include inter-company balances with Danya. Whether the note is new or standing cannot be tested (no prior extract). Any FY27 year-end true-up lands in the year of confirmation, not in this half.
+FN-11 | F8 | R320-R323 | l.788 | "(3) Tax Adjustments for Earlier Years - 0.37 - 0.37" | NEUTRAL-FACT | A non-zero earlier-year tax line (0.37 in H2 FY26, CON only) means it sits at Danya. It is immaterial. It is flagged because the check rule requires it.
+FN-12 | F8 | R074-R081, R312-R319, R070-R073, R308-R311 | l.224-225; l.786-787 | "(1) Current Tax 411.44 329.27 337.01 666.28" | AMBIGUOUS | SA ETR is 23.64% (H1 FY27), 24.68%, 23.33% and 24.07%, all below the 25.17% statutory rate. Remove the Danya share and H1 FY27 is 25.18%. The gap is the share of firm profit, which is exempt for the partner [INFERENCE: s.10(2A)]. Danya pays 66.15 on PBT of 188.07 (derived), an ETR of 35.2%. That matches the firm rate of 34.944%. The leakage from the firm structure is about 18 per half, about 1.3% of group PAT. Deferred tax is a DTL build (77.17 = 432 bps of SA PBT), not DTA credits, so there is no ETR step-up risk. Why keep a higher-taxed partnership with the MD as partner?
+FN-13 | F8 | R124-R125, R372-R373, R022 | l.341; l.896; l.208 | "(A) Total outstanding dues of Micro Enterprises and Small Enterprises 3,103.72 2,879.29" | AMBIGUOUS | SA MSE dues equal about 47 days of total H1 purchases (3,103.72 / (12,064.96/183)). CON MSE dues equal about 59 days (4,083.10 / CON purchases). MSE dues unpaid past 45 days are disallowed for tax [INFERENCE: s.43B(h)]. If MSE purchases are only part of the total, the true day count is higher. If any amount is past due at 31-Mar-2027, there is a disallowance risk.
+FN-14 | F10 | R098-R105, R344-R351, R110-R111, R571 | l.231-232; l.449 | "Diluted no of Shares (Weighted Average) 2,50,67,330 2,50,67,330 2,49,91,135 2,50,67,330" | NEUTRAL-FACT | Paid-up capital is 2,499.11 at both dates and the basic count is unchanged, so there was no corporate action. The basic-diluted spread is 0.01 (5.46/5.45, 4.41/4.40) and not widening. But the diluted count is identical in H2 FY26, FY26 and H1 FY27. H1 FY26 shows no dilution although the warrants were allotted on 27-Aug-2025. Both facts conflict with note 6 ("considering the number of days in each period"). Diluted EPS carries only +76,195 incremental shares (treasury method), not the 12,47,000 full-exercise count.
+FN-15 | F14 | R593 (UNRESOLVED_PLACEHOLDER), R581 | l.1019; l.958 | "have been [reviewed by the Statutory Auditors / certified by the management]" | AMBIGUOUS | An unedited template choice was left in a board-approved, auditor-reviewed filing. The LRR (l.658-662) calls the subsidiary results unaudited and relied on "solely". If the truth is "certified by the management", Danya's numbers had no external assurance at all. That covers 8.85% of PAT, 1,031.24 of receivables and 1,701.50 of inventory. This is a governance data point. Ask which alternative is true, and whether a corrigendum will be filed.
+FN-16 | F14 | R562, R006/R245/R479, R575, R586, R168-R169/R409-R410, R499 | l.234; l.137; l.682; l.1254; l.541; l.783; l.610; l.660; l.545; l.1139 | "its subsidiaries (the Parent Company and its subsidiaries together referred to as \"the Group\")" | NEUTRAL-FACT | Small drafting defects that add up. (a) The CON LRR uses "subsidiaries" and "these subsidiaries", although note 3 says "only subsidiary". (b) The SA P&L paid-up capital row is blank (l.234). (c) The FRN is read three ways; verify 013623S on the ICAI register. (d) A flow statement carries "As at" headers (l.541). (e) The CON extraordinary-items cell for H1 FY27 is blank (l.783). (f) Gratuity is handled differently in the two statements: SA FY26 shows "-" at l.545 and runs it through Provisions (16.92 at l.557), while CON FY26 shows 17.53 at l.1139. Each is immaterial. Together they suggest the statement was prepared from a template and not fully reviewed.
+FN-17 | F14 | R022-R025, R261-R264 | l.208; l.770 | "Purchases of Stock in Trade 12,064.96 10,047.21 7,163.52 17,210.72" | AMBIGUOUS | A transformer manufacturer reports all material cost as "Purchases of Stock in Trade". There is no "Cost of materials consumed" line in either statement. Two readings: a template mislabel, or a large traded-goods share. The traded share matters for the quality-ladder rung (manufacturer vs trader margin). Ask for the split of manufactured vs traded revenue.
+FN-18 | F14 | R038-R041, R170-R171, R224-R225, R277-R280, R411-R412, R447-R448 | l.212; l.546; l.575; l.774; l.1140; l.1160 | "Interest Expense 246.06 128.24" | AMBIGUOUS | Cash-flow interest is well below P&L finance costs. SA FY26: 128.24 vs 241.58, a gap of 113.34 (47%). CON FY26: 147.06 vs 302.64, a gap of 155.58 (51%). H1 FY27 SA: 246.06 vs 280.11. The non-interest part of finance costs either stays in operating cash flow or is misclassified. Either way, FY26 interest cover and cash interest cannot be read off the cash flow. Ask for the finance-cost breakdown (interest, LC/BG charges, processing fees, any interest on partners' capital at Danya).
+
+## 3. CHECKLIST SCORECARD
+
+Check | Status | Basis
+---|---|---
+F1 | FINDING | 23 ZERO_STANDING line items reviewed. Exceptional, extraordinary, earlier-year tax (SA), dividends, forex and extraordinary cash lines are AS/Schedule III template lines with no live transaction class. The warrant-proceeds line (l.578, l.1163) anticipates the 1,580.57 call (FN-08). The partnership-share line differs between periods (FN-01).
+F2 | FINDING | Revenue gap flips sign (FN-03). No unrealised-profit elimination visible (FN-04). Danya balance-sheet and funding shift (FN-05). PAT gap stable at about 1% (FN-02).
+F3 | FINDING | Danya operates (distinct costs, PPE, working capital); it is not a shell. Two negative derived subsidiary cost lines (FN-06). No going concern EoM.
+F4 | FINDING | Unaudited Danya PAT is 121.92 = 8.85% of CON PAT (below 10%, no YoY jump). Flagged for the unquantified LRR, the management-statement reliance, the silent SA LRR and the placeholder (FN-07).
+F5 | PASS | No EoM, Other Matter or going concern paragraph in either LRR (l.85-144, l.608-690). Prior-period verbatim diff NOT POSSIBLE (no prior extract). Baseline set this run.
+F6 | FINDING | Lexicon hits: "will be payable" (l.439, l.1242), "will be accounted for" (l.446, l.1023), "Conversion can occur ... within 18 months" (l.441, l.1246), object of issue (l.1204), "commenced" (l.51, meeting time only). Register in Section 4 (FN-08, FN-09).
+F7 | FINDING | "subjected to confirmation and reconciliation" (l.445, l.1022) (FN-10). "may not reconcile" (l.450) is EPS arithmetic only. No "evaluating / exploring / in discussions / no assurance / endeavour" hits.
+F8 | FINDING | Earlier-year tax 0.37 (FN-11). ETR and partnership structure (FN-12). MSE 43B(h) exposure (FN-13). Deferred tax is a DTL build, with no DTA shield.
+F9 | N.A. | Indian GAAP (AS; Ind AS exempt per note 2, l.432-434). There is no OCI statement, and actuarial items go through P&L. Gratuity provision is 5.37 SA / 5.84 CON in H1 FY27.
+F10 | FINDING | No change in share count. Basic-diluted spread 0.01 and not widening. The diluted count does not follow note 6 day-weighting (FN-14). Paid-up row blank (FN-16).
+F11 | PASS | SA net worth = 2,499.11 + 10,159.80 = 12,658.91 (13,185.77 with warrant money 526.86). CON adds minority 398.95. Reserves roll ties to PAT within 0.01. CON reserves equal SA reserves (no goodwill or capital reserve). No third-party net worth figure in context, so no gap above 5%.
+F12 | N.A. | Single segment. Note 5 (l.447-448) and CON note 7 (l.1030-1031): "segment disclosure is not applicable". There are no segment assets or liabilities. The CWIP capex proxy is given in Section 5, fact 4.
+F13 | PASS | The board outcome (l.39-49) has two items: H1 results with LRR, and the Reg 32 deviation statement. No AR, AGM notice, record date, dividend, director appointment, fund-raising enabling resolution or auditor change.
+F14 | FINDING | Note 4 placeholder (FN-15). Template and drafting defects (FN-16). Cost-line label (FN-17). Finance cost vs cash interest (FN-18).
+F15 | PASS | The consolidation list is one entity: Danya Electric Company, partnership firm, 90% profit share (l.654, l.1008-1010). This matches Spear fact 2. A prior-period diff is not testable. Baseline set this run.
+F16 | N.A. | Results filing, not a presentation.
+F17 | N.A. | Results filing, not a concall. The Spear-fact cross-reference is in Section 5 instead.
+
+## 4. COMMITMENT REGISTER (from F6)
+
+commitment | implied date | note / line ref | status word
+---|---|---|---
+Balance 75% on 12,47,000 warrants (Rs 126.75 each = Rs 1,580.57 L) payable on exercise. Conversion in one or more tranches within 18 months of allotment. | 27-Feb-2027 (A3-derived: 27-Aug-2025 + 18 months) | SA note 3 l.439-444; certificate note 1 l.1242-1250 | initiated (25% received; no conversion yet, basic count unchanged at l.231)
+Use of warrant proceeds for factory premises, working capital and general corporate purposes | Not dated. 520.31 of 526.86 used by 30-Sep-2026 | Certificate l.1204, l.1222 | underway (98.8%)
+Adjustments from confirmation and reconciliation of trade payables, loans and advances and other current liabilities, booked in the year of confirmation | Not dated. Earliest is the FY27 audit (31-Mar-2027) | SA note 4 l.445-446; CON note 5 l.1022-1024 | initiated
+
+## 5. SPEAR LOAD-BEARING FACTS: CROSS-REFERENCE (stand-in for the monitoring checklist)
+
+1. Guidance vs delivery. The filing carries no guidance. H1 FY27 CON revenue is 13,530.91 (Rs 135.31 Cr, l.766). Hitting the FY27 guide of Rs 275-300 Cr needs H2 revenue of Rs 139.69-164.69 Cr. H2 FY26 CON revenue was Rs 106.45 Cr, so that is +31% to +55% YoY. If the Q1 actual of 48.23 is on the CON basis, implied Q2 is Rs 87.08 Cr [INFERENCE; the Q1 basis is not in this filing]. Of the +79.9% CON YoY revenue growth, 22.7% is the S-vs-C elimination swing (FN-03).
+2. Danya Electric. Legal form confirmed as "a partnership firm" (l.1008) with a 90% profit share. The other partners are Mr Vee Rajmohan, the MD, at 7.5% and Mr K.V. Pradeep Kumar at 2.5% (l.1009-1010). Inter-company sales: NOT DISCLOSED. "Standalone revenue above consolidated" held in FY26 but reversed in H1 FY27 (FN-03). Minority interest is 398.95 (l.887). Danya's unaudited status and the note 4 placeholder are covered in FN-07 and FN-15. The funding shift is in FN-05.
+3. Cash conversion. CON CFO is (573.76) (l.1153) against PAT of 1,377.29. SA CFO is (522.96) (l.566). CON capex is (867.85) and CON FCF is -1,441.61 (derived). CON borrowings went from 4,997.30 (Spear "49.98" ties) to 5,744.56 (l.889 + l.893). CON inventory went from 6,209.72 to 8,745.50. CON payables went from 6,220.03 to 8,459.28. CON cash fell from 974.55 to 24.81 (l.912). Net debt went from 4,022.75 to 5,719.75 (+42%, derived). The FY26 CON CFO of 2,590.47 ties to Spear "25.90". The SA FY26 CFO may be inflated by the partnership share (FN-01).
+4. Operating leverage. CON H1 FY27 YoY: revenue +79.9%, PAT +44.9%. The drivers are D&A (5.2x, from 39.60 to 204.10, l.775), finance costs (2.9x, from 100.80 to 291.79, l.774) and employee cost (+92.7% CON, +169% SA; the SA figure is distorted per FN-06). CON gross margin (derived, after other direct expenses) fell from 24.8% to 22.8%. CON EBITDA margin (derived) fell from 18.77% to 17.26%. CWIP stands at 3,190.70 (l.906), up 392.72 in the half, so further D&A will come on commissioning. Capex rebuild: PPE net +226.99, plus D&A 199.30, plus CWIP +392.72, plus intangibles under development +37.41, gives about 856, against cash capex of 855.85. Kannur utilisation: NOT DISCLOSED.
+
+## 6. QUESTIONS FLAGGED FOR A4 (from FORWARD-SIGNAL and AMBIGUOUS findings)
+
+FN-01, FN-03, FN-04, FN-05, FN-06, FN-07, FN-08, FN-09, FN-10, FN-12, FN-13, FN-15, FN-17, FN-18. A4 converts each into a management question. The separating observations are: Danya gross revenue, inter-company sales and transfer price, Danya receivable ageing, interest or remuneration paid to partners on capital, which note 4 alternative is true, the promoter vs non-promoter warrant split and exercise intent, and the finance-cost breakdown.
+
+```yaml
+stage: A3-forensics
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/supremepwr-h1fy27/work/forensics_supremepwr_h1fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: PASS
+  F12: N.A.
+  F13: PASS
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "FN-01", check: "F1", line: "l.549; l.205; l.767", classification: "AMBIGUOUS", implication: "FY26 audited SA cash flow shows no partnership-share deduction though SA PAT holds ~211.5 L Danya share; FY26 SA CFO may carry up to ~7.6% non-cash income"}
+  - {id: "FN-02", check: "F2", line: "l.227; l.792; l.549", classification: "NEUTRAL-FACT", implication: "SA PAT = CON attributable PAT in all 4 periods; SA books 90% Danya share (109.73 L = 84% of SA OI, 8.0% of SA PAT); PAT gap stable ~1%"}
+  - {id: "FN-03", check: "F2", line: "l.204; l.766", classification: "AMBIGUOUS", implication: "CON-SA revenue gap flips from -546.66 (H1FY26) to +817.12 (H1FY27); swing = 99.9% of SA PAT and 22.7% of CON revenue growth; inter-company sales not disclosed"}
+  - {id: "FN-04", check: "F2", line: "l.1014; l.771; l.209", classification: "AMBIGUOUS", implication: "FY26 parent sold Danya >=843.69 L more than Danya sold outside, yet attributable PAT = SA PAT exactly; no unrealised profit eliminated on 1,701.50 L Danya stock unless transfers are at cost"}
+  - {id: "FN-05", check: "F2", line: "l.572; l.1164; l.889; l.911", classification: "AMBIGUOUS", implication: "Danya receivables 6.3x (163.42 to 1,031.24), term debt repaid 296.45 while parent borrowed and injected 274.59; MD-side partners withdrew 20.00 > 12.19 share; funding shifts to listed parent"}
+  - {id: "FN-06", check: "F3", line: "l.211; l.773; l.214; l.776", classification: "AMBIGUOUS", implication: "Danya operating, not a shell; derived subsidiary employee cost H2FY26 -43.59 and other expenses H1FY26 -43.41 imply cross-half reclassification; SA employee YoY +169% distorted"}
+  - {id: "FN-07", check: "F4", line: "l.660; l.665; l.1019", classification: "AMBIGUOUS", implication: "Unaudited Danya PAT 121.92 L = 8.85% CON PAT (9.9% H1FY26, 12.6% H2FY26); LRR unquantified, relies on management statement; SA LRR silent on 109.73 L share in SA PBT"}
+  - {id: "FN-08", check: "F6", line: "l.439; l.441; l.1246", classification: "FORWARD-SIGNAL", implication: "Warrant balance Rs 1,580.57 L due by 27-Feb-2027; +4.99% shares; next funding event with CON cash 24.81 L and H1 FCF -1,441.61 L"}
+  - {id: "FN-09", check: "F6", line: "l.1204; l.1222", classification: "AMBIGUOUS", implication: "98.8% of 526.86 L used; single bundled object (factory+WC+GCP) makes 'no deviation' unfalsifiable; 6.55 L location not stated"}
+  - {id: "FN-10", check: "F7", line: "l.445; l.1022", classification: "AMBIGUOUS", implication: "Payables 7,560.72 L, loans and advances, OCL unconfirmed; true-up deferred to year of confirmation; new vs standing not testable"}
+  - {id: "FN-11", check: "F8", line: "l.788", classification: "NEUTRAL-FACT", implication: "Earlier-year tax 0.37 L in H2FY26, at Danya; immaterial"}
+  - {id: "FN-12", check: "F8", line: "l.224-225; l.786-787", classification: "AMBIGUOUS", implication: "SA ETR 23.64% sub-statutory only from exempt firm share (ex-share 25.18%); Danya ETR 35.2% leaks ~18 L/half; DTL build not DTA, no step-up risk"}
+  - {id: "FN-13", check: "F8", line: "l.341; l.896; l.208", classification: "AMBIGUOUS", implication: "SA MSE dues ~47 days of total purchases (CON ~59); s.43B(h) disallowance risk if any MSE dues exceed 45 days at year end [INFERENCE]"}
+  - {id: "FN-14", check: "F10", line: "l.231-232; l.449", classification: "NEUTRAL-FACT", implication: "No share-count change; spread 0.01 not widening; diluted count identical across periods, conflicts with note 6 day-weighting; full exercise 12,47,000 not in diluted EPS"}
+  - {id: "FN-15", check: "F14", line: "l.1019; l.958", classification: "AMBIGUOUS", implication: "Unresolved '[reviewed by the Statutory Auditors / certified by the management]' in filed note 4; if management-certified, Danya numbers carry zero external assurance"}
+  - {id: "FN-16", check: "F14", line: "l.234; l.137; l.682; l.1254; l.541; l.783; l.610; l.660; l.545; l.1139", classification: "NEUTRAL-FACT", implication: "Template plural 'subsidiaries', blank paid-up row, FRN read 3 ways (verify 013623S), 'As at' flow headers, blank cell, gratuity classified differently SA vs CON; cumulative governance data point"}
+  - {id: "FN-17", check: "F14", line: "l.208; l.770", classification: "AMBIGUOUS", implication: "Manufacturer books all material as 'Purchases of Stock in Trade' with no materials-consumed line; mislabel vs traded share bears on ladder rung"}
+  - {id: "FN-18", check: "F14", line: "l.212; l.546; l.774; l.1140", classification: "AMBIGUOUS", implication: "Cash-flow interest 47-51% below FY26 P&L finance costs (SA 128.24 vs 241.58; CON 147.06 vs 302.64); cash interest and cover unreadable"}
+forward_signals: ["FN-08"]
+ambiguous: ["FN-01", "FN-03", "FN-04", "FN-05", "FN-06", "FN-07", "FN-09", "FN-10", "FN-12", "FN-13", "FN-15", "FN-17", "FN-18"]
+commitments:
+  - {commitment: "Warrant balance Rs 126.75 x 12,47,000 = Rs 1,580.57 L payable on exercise; conversion within 18 months of allotment", implied_date: "27-Feb-2027 (A3-derived)", ref: "SA note 3 l.439-444; certificate l.1242-1250", status_word: "initiated"}
+  - {commitment: "Use of warrant proceeds for factory premises, working capital, general corporate purposes", implied_date: "undated; 520.31 of 526.86 L used by 30-Sep-2026", ref: "certificate l.1204, l.1222", status_word: "underway"}
+  - {commitment: "Confirmation and reconciliation of payables, loans and advances, OCL; adjustments in year of confirmation", implied_date: "undated; earliest FY27 audit 31-Mar-2027", ref: "SA note 4 l.445-446; CON note 5 l.1022-1024", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Core read: the standalone already books 90% of Danya's profit as other income (l.549), so consolidated attributable PAT equals standalone PAT in all four periods. Two consequences. First, the standalone LRR is silent on a 109.73 L PBT input that rests on Danya numbers that are unaudited and, per the note 4 placeholder, perhaps only management-certified. Second, the exact equality means no unrealised profit was eliminated on intra-group stock, although FY26 eliminations prove the parent sold Danya more than Danya sold outside. In H1 FY27 the flows reversed: Danya receivables rose 6.3x, the parent injected 274.59 L, Danya repaid 296.45 L of term debt, and the MD-side partners withdrew 20 L. Reading 1: Danya is becoming a real external channel. Reading 2: group revenue and receivables are being routed through an unreviewed, promoter-partnered firm. Separating observation: Danya gross revenue, inter-company sales and receivable ageing, none disclosed. Liquidity is thin: CON cash 24.81 L, CFO negative. The Rs 15.81 Cr warrant call due by 27-Feb-2027 is the next funding source, and promoter exercise behaviour is the observable that matters."
+```

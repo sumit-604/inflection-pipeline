@@ -1,0 +1,46 @@
+stage: A3-forensics
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "pressrelease"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/supremepwr-h1fy27/work/forensics_pressrelease_supremepwr_h1fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: PASS
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "PR-01", check: "F16", line: "l.64-66; l.77; l.170-171", classification: "FORWARD-SIGNAL", implication: "H1FY26 margins omitted; derived EBITDA margin 18.94 -> 17.90 (H2FY26) -> 17.42%, NP 12.49 -> 10.38 -> 10.07%; HoH income +27.6% vs NP +23.8%; headline rests on YoY base"}
+  - {id: "PR-02", check: "F6", line: "l.94-95", classification: "FORWARD-SIGNAL", implication: "FY27 'in line with our targets' with no number; Spear says earlier release carried 275-300 (not verified here); H2 needs 139.69-164.69 Cr after FY26 and Q1 misses"}
+  - {id: "PR-03", check: "F6", line: "l.103; l.106-153", classification: "AMBIGUOUS", implication: "H1 inflow 94.74 Cr at <=12 months vs 114.50 Cr at >=13 months (all Hyderabad); award dates undisclosed; long orders likely bill in FY28 if dispatch at term end, so FY27 H2 rests on opening book"}
+  - {id: "PR-04", check: "F16", line: "l.70; l.88", classification: "AMBIGUOUS", implication: "Order book 'over 565.80Cr' drops deck's Consolidated label and Danya 83.04 line; post-period date; GST/executed/Danya basis unstated (FP-07)"}
+  - {id: "PR-05", check: "F16", line: "l.61; l.157-162; l.170", classification: "AMBIGUOUS", implication: "Consolidated numbers with Danya (90% partnership firm, MD 7.5%) never named; related-party structure invisible to release reader (FP-14)"}
+  - {id: "PR-06", check: "F16", line: "l.106-153; l.159-161", classification: "AMBIGUOUS", implication: "'prominent supplier to local electric utilities' vs zero utility, zero Tamil Nadu/Kerala buyers in 11 H1 orders; Hyderabad 67.7% of inflow (FP-08, FP-19)"}
+  - {id: "PR-07", check: "F14", line: "l.67-68; l.70 vs l.88; l.64 vs l.170; l.90", classification: "NEUTRAL-FACT", implication: "H1 on Total Income vs FY26 on Revenue (guidance base ambiguous); order book 'over' vs exact; EPS layout offset; Kannur inauguration undated"}
+forward_signals: ["PR-01", "PR-02"]
+ambiguous: ["PR-03", "PR-04", "PR-05", "PR-06"]
+commitments:
+  - {commitment: "FY27 progress 'in line with our targets for the year', unquantified", implied_date: "31-Mar-2027", ref: "l.94", status_word: "underway"}
+  - {commitment: "Kannur ramp, utilisation 'scaling up as planned'; plan not stated", implied_date: "undated", ref: "l.90-91", status_word: "underway"}
+  - {commitment: "Added capacity to support order book and larger-rating opportunities", implied_date: "undated", ref: "l.91-92", status_word: "initiated"}
+  - {commitment: "Margin levers: procurement, product mix, operating leverage", implied_date: "undated", ref: "l.82-83", status_word: "initiated"}
+  - {commitment: "565.80 Cr book gives revenue visibility for coming quarters", implied_date: "coming quarters", ref: "l.88", status_word: "underway"}
+  - {commitment: "11 H1 orders, 209.24 Cr, execution 7-17 months (per-order register in report Section 4)", implied_date: "award + 7 to 17 months; award dates NOT DISCLOSED; latest Feb-2028", ref: "l.103; l.106-153", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The release restates the deck; most issues are already FP or FN findings and are cited. Two new derived points matter. First, the half trend (PR-01): FY26 minus H1 FY26 gives an H2 FY26 EBITDA margin of about 17.9%, so margins fell for a third straight half. The 45% YoY profit headline hides a sequential pattern where profit still lags income. Second, the inflow tenor (PR-03): 114.50 Cr of the 209.24 Cr H1 inflow carries 13 months or more, so it likely bills in FY28. That puts the H2 FY27 need of 139.69-164.69 Cr mostly on the opening book, whose size and basis are not stated (PR-04, FP-07). Read together with the unquantified 'in line with targets' claim (PR-02) and the FY26 and Q1 misses, the conservative reading is guidance risk for FY27. R162 is resolved: labels and order texts pair in sequence. R159 stays open."

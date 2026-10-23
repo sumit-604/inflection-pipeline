@@ -1,0 +1,80 @@
+stage: A3-forensics
+company: "SUPREMEPWR"
+quarter: "h1fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/supremepwr-h1fy27/work/forensics_concall_supremepwr_h1fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: PASS
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "FC-01", check: "F6", line: "l.149-150; l.305; l.387-388; l.146", classification: "FORWARD-SIGNAL", implication: "FY27 guide raised orally to 300-350 Cr (Aug call 250-300; release/deck 275-300) with no number in filed deck/release; drifts to 350; H2 need 164.69-214.69 Cr = +55% to +102% on H2 FY26, 82-107 Cr/qtr vs implied Q2 87; H2 guide 200-250 implies 335-385, not 300; FY26 and Q1 misses unmentioned"}
+  - {id: "FC-02", check: "F6", line: "l.270; l.271; l.275; l.167; l.287-289", classification: "AMBIGUOUS", implication: "Customers require 353 Cr before Mar-2027 (212 after); guide 200-225/200-250 leaves 103-153 Cr out; CMD cites customer timelines; reading 2 is a capacity/type-test/WC limit; 565 base includes Danya 83.04 Cr"}
+  - {id: "FC-03", check: "F6", line: "l.144-145; l.263", classification: "FORWARD-SIGNAL", implication: "Year-end book 600-800 Cr needs H2 inflow 234-484 Cr = 1.1x-2.3x H1 inflow 209.24; pipeline mix 'cannot assure'"}
+  - {id: "FC-04", check: "F6", line: "l.283-284; l.440", classification: "FORWARD-SIGNAL", implication: "New FY28 guide up to 550 Cr (+57% to +83% on FY27 guide); 600 Cr in two years carried from earlier calls; equals deck full-capacity top 500-550 while Kannur guided only ~80% in FY28"}
+  - {id: "FC-05", check: "F6", line: "l.233; l.238-240; l.243", classification: "AMBIGUOUS", implication: "Unit one 70-80 + new plant 250 = 320-330 Cr, not the stated 550-600 combined peak; three ceilings in circulation (550-600 call, 500-550 deck, 600 in two years); 'final unit next year' undefined"}
+  - {id: "FC-06", check: "F6", line: "l.169; l.182-187; l.554", classification: "FORWARD-SIGNAL", implication: "PAT margin guide 9-12%; analyst recalls 10-12%, CMD does not dispute; floor down 100 bps with no stated cause; H1 10.07% after three halves of decline (12.49/10.38/10.07, PR-01)"}
+  - {id: "FC-07", check: "F6", line: "l.247-252; l.380-383; l.298-299", classification: "FORWARD-SIGNAL", implication: "CMD twice says power-transformer margin uplift is absorbed by overheads, margin to sustain; contradicts deck/release margin-expansion via mix and operating leverage (FP-03); operating-leverage answer lost in ASR gap"}
+  - {id: "FC-08", check: "F7", line: "l.83; l.166; l.179-181; l.203; l.294; l.546-555", classification: "AMBIGUOUS", implication: "PVC coverage stated 70/80/70-80/'90' (deck 25-30% fixed); PVC orders began January, so ~113-170 Cr pre-January book likely fixed price; margin-pressure source never named"}
+  - {id: "FC-09", check: "F17", line: "l.354-357; l.371; l.475-477", classification: "AMBIGUOUS", implication: "H1 MVA not disclosed, promised later; power realises ~10 L/MVA vs distribution ~20 L/MVA, so mix shift halves revenue per MVA; implied H1 ~1,080 MVA [INFERENCE]; Kannur utilisation untestable"}
+  - {id: "FC-10", check: "F6", line: "l.92; l.352-353; l.461-463", classification: "FORWARD-SIGNAL", implication: "Kannur 20-30% at H1 vs Q1 20-25% (+0-5 pp); guide 40-50% before Mar-2027 (+~20 pp in <6 months), ~80% FY28; old plant at 70-80% so growth rests on Kannur"}
+  - {id: "FC-11", check: "F6", line: "l.406; l.466-472; l.515-527; l.535-540", classification: "FORWARD-SIGNAL", implication: "PGCIL approval 'on the process', target ~Oct-2027; type tests at 50/100 MVA under process; BQR makes type test mandatory, no shortcut seen; deck 200 MVA/220 kV claim has no type test yet; Tangedco 50 MVA order may hinge on pending test"}
+  - {id: "FC-12", check: "F6", line: "l.492-497; l.501", classification: "AMBIGUOUS", implication: "CMD puts FY27 book mostly at or below 110 kV with 2-3 orders at 220 kV; deck lists two H1 orders 27.10 Cr at 330 kV (FP-06), never mentioned on call"}
+  - {id: "FC-13", check: "F6", line: "l.311-313", classification: "FORWARD-SIGNAL", implication: "CFO to turn positive in H2 FY27 from H1 CON CFO -5.74 Cr, FCF -14.42 Cr, cash 0.25 Cr; FY27 CFO sign is the test"}
+  - {id: "FC-14", check: "F6", line: "l.304-310", classification: "AMBIGUOUS", implication: "Inventory to be held at 60-70 Cr (2-2.5 months of 350 Cr) vs filed CON 87.46 Cr; SA ex-Danya ~70.44 Cr derived; plan is to grow into inventory, normalise 'next quarter'"}
+  - {id: "FC-15", check: "F7", line: "l.394-399; l.301-302; l.442-445", classification: "AMBIGUOUS", implication: "Stated terms (10-30% advance, 90% before dispatch; govt 60-90 days) imply low receivables, yet receivables rose sharply and Danya receivables 6.3x (FN-05); answer pivots to inventory"}
+  - {id: "FC-16", check: "F6", line: "l.388-392; l.402-403; l.412-413", classification: "AMBIGUOUS", implication: "Call: government 27-28% of book, ~30% maintained this year; deck: government 40.14% of H1 revenue (FP-19); H2 revenue may shift toward private [INFERENCE]"}
+  - {id: "FC-17", check: "F7", line: "l.501-502; l.505-506", classification: "AMBIGUOUS", implication: "Bushings for 2-3 orders at 220 kV called 'booked' then 'negotiating with China supplier'; lead-time risk on higher-voltage deliveries"}
+  - {id: "FC-18", check: "F6", line: "l.322-324; l.428-438; l.442-445", classification: "FORWARD-SIGNAL", implication: "Next expansion 'much bigger' than Kannur (raw 100-120 Cr spent vs filed ~66 Cr FY26+H1 capex); planning next year; no funding source named despite cash-flow question; external funding beyond 15.81 Cr warrants likely"}
+  - {id: "FC-19", check: "F1", line: "l.464; l.469-472", classification: "FORWARD-SIGNAL", implication: "Zero data-centre orders after an earlier-call narrative; segment now gated on credentials and an unstarted prototype type test for >160-200 MVA EHV; outside FY27-FY28 guides"}
+  - {id: "FC-20", check: "F17", line: "l.260-261", classification: "AMBIGUOUS", implication: "Danya not mentioned once; book split by product, not entity, though it includes Danya 83.04 Cr; inter-company, injection, withdrawal, note 4 placeholder all silent; 1 testable quarter"}
+  - {id: "FC-21", check: "F17", line: "l.422-424; l.442-445", classification: "AMBIGUOUS", implication: "Warrants 15.81 Cr due 27-Feb-2027, borrowings 49.98->57.45 Cr, net debt +42%, cash 0.25 Cr, payables days 103->168 all unmentioned; deteriorating metrics, 1 testable quarter; becomes CONFIRMATORY-NEGATIVE if silence repeats"}
+  - {id: "FC-22", check: "F17", line: "l.283; l.288", classification: "AMBIGUOUS", implication: "CMD calls new guide 'conservative' and cites earlier-call 600 Cr promise, but never mentions the FY26 miss (181.64 vs 225->190) or the Q1 miss (48.23 vs 50-60)"}
+  - {id: "FC-23", check: "F17", line: "l.44", classification: "NEUTRAL-FACT", implication: "CMD sole management speaker, no CFO; WC, cash-flow and margin answers given as ranges only"}
+forward_signals: ["FC-01", "FC-03", "FC-04", "FC-06", "FC-07", "FC-10", "FC-11", "FC-13", "FC-18", "FC-19"]
+ambiguous: ["FC-02", "FC-05", "FC-08", "FC-09", "FC-12", "FC-14", "FC-15", "FC-16", "FC-17", "FC-20", "FC-21", "FC-22"]
+commitments:
+  - {commitment: "FY27 revenue 300-350 Cr (raised from 250-300; drifts to 350)", implied_date: "31-Mar-2027", ref: "T09 l.149-150; T42 l.305", status_word: "initiated"}
+  - {commitment: "H2 FY27 execution 200-225 / 200-250 Cr vs customer requirement 353 Cr", implied_date: "31-Mar-2027", ref: "T33 l.271, l.275; T32 l.270", status_word: "initiated"}
+  - {commitment: "Year-end order book 600-800 Cr", implied_date: "31-Mar-2027", ref: "T07 l.144-145", status_word: "initiated"}
+  - {commitment: "Order book 565 Cr: 353 before Mar-2027, 212 after", implied_date: "Mar-2027 / after", ref: "T32 l.270", status_word: "underway"}
+  - {commitment: "PAT margin 9-12% (earlier 10-12% per analyst)", implied_date: "FY27", ref: "T11 l.169; T13 l.183; T95 l.554", status_word: "underway"}
+  - {commitment: "Margin to sustain; power uplift absorbed by overheads", implied_date: "FY27-FY28", ref: "T23 l.251; T61 l.382-383", status_word: "underway"}
+  - {commitment: "Kannur utilisation at least 40-50%", implied_date: "before 31-Mar-2027", ref: "T53 l.352; T76 l.463", status_word: "underway"}
+  - {commitment: "Kannur utilisation ~80%", implied_date: "FY28", ref: "T53 l.353", status_word: "initiated"}
+  - {commitment: "FY28 revenue up to 550 Cr", implied_date: "31-Mar-2028", ref: "T36 l.284", status_word: "initiated"}
+  - {commitment: "600 Cr within two years (carried from earlier calls)", implied_date: "FY28-FY29", ref: "T36 l.283-284", status_word: "initiated"}
+  - {commitment: "Both-plants peak revenue 550-600 Cr; final unit next year", implied_date: "undated; FY28", ref: "T19 l.239; T21 l.243", status_word: "initiated"}
+  - {commitment: "Inventory held at 60-70 Cr; WC normalises", implied_date: "31-Dec-2026", ref: "T42 l.307-309", status_word: "initiated"}
+  - {commitment: "CFO positive", implied_date: "H2 FY27 (31-Mar-2027)", ref: "T44 l.313", status_word: "initiated"}
+  - {commitment: "Receivable cycle improvement", implied_date: "undated", ref: "T73 l.443-445", status_word: "initiated"}
+  - {commitment: "Next expansion, much bigger than Kannur, planned next year", implied_date: "planning FY28", ref: "T48 l.323; T73 l.428-438", status_word: "initiated"}
+  - {commitment: "Government share ~30% maintained", implied_date: "FY27", ref: "T65 l.392; T70 l.412", status_word: "underway"}
+  - {commitment: "PGCIL approval", implied_date: "~Oct-2027 (A3-derived)", ref: "T87 l.515-516; T89 l.519", status_word: "underway"}
+  - {commitment: "Type test certificates 100/50 MVA; 50 MVA for Tangedco getting ready", implied_date: "undated", ref: "T89 l.524-527", status_word: "underway"}
+  - {commitment: "Prototype type test for higher-MVA EHV (data centres)", implied_date: "undated", ref: "T78 l.471-472", status_word: "initiated"}
+  - {commitment: "Bushings for 2-3 orders at 220 kV booked / negotiating with China", implied_date: "undated", ref: "T85 l.501-505", status_word: "underway"}
+  - {commitment: "H1 MVA volume data to be shared", implied_date: "undated", ref: "T55 l.357", status_word: "initiated"}
+  - {commitment: "CRGO price rise addressed", implied_date: "done", ref: "T17 l.212-213", status_word: "completed"}
+  - {commitment: "Entry into Maharashtra", implied_date: "H1 FY27", ref: "T03 l.74-75", status_word: "completed"}
+  - {commitment: "H2 priorities: execute book, quality orders, scale Kannur, manage RM and WC, profitability", implied_date: "H2 FY27", ref: "T03 l.101-104", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The CMD raised the FY27 guide orally to 300-350 Cr (l.150). The filed deck and release carry no number, and FY26 and Q1 both missed. The call's own figures do not tie: an H2 guide of 200-250 implies 335-385, and the CMD drifted to 350 (l.305). The 300 floor needs about 165 Cr in H2, roughly the implied Q2 run-rate held (87 Cr [INFERENCE]). 350 needs about 107 Cr a quarter. Customers want 353 Cr before March, but management guides 200-250 and cites customer timelines. Reading 1: conservatism, with the slippage on the customer side. Reading 2: a capacity, type-test or working-capital limit, with Kannur at 20-30% and cash at 0.25 Cr. The PAT-margin floor is now 9% (the analyst recalled 10%). The CMD says mix gains are absorbed by overheads, against the deck's margin-expansion pillar. Danya, warrants, debt and payables went unmentioned, while a much bigger expansion is planned for next year. Separating observation: Q3 FY27 revenue of 82 Cr or more, with positive operating cash flow and inventory moving toward 60-70 Cr. All call numbers are ASR; verify against an official transcript."

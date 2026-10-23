@@ -1,0 +1,31 @@
+stage: A2-enumerator
+company: "CYBERTECH"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/cybertech-q2fy27/work/ledger_results_cybertech_q2fy27.md"
+counts:
+  notes: 7
+  line_items: 191
+  zero_standing: 45
+  agenda_items: 1
+  auditor_paras: 7
+  entities: 46
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+  embedded_numbers: 42
+  forward: 3
+  dates: 51
+  qualifiers: 46
+flags_raised: [ZERO_STANDING, SIGNATURE_BEFORE_MEETING_CLOSE, AGENDA_NOT_LISTED, ENTITY_WORDING_DIFF, ENTITY_UNNAMED, RESTATED, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 739
+ids_referenced: 739
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "45 dash cells across 27 line items. Largest: standalone Investment in a wholly owned subsidiary (4,113.13) H1 FY27 vs nil prior year (R521/R522), no subsidiary named and absent from consolidated; buyback (1,498.00) H1 FY27 vs nil (R270/R271, R539); standalone buyback row has a single cell. All nine auditor signature timestamps (20:04 to 20:23) precede the stated board close 20:30. Letter says inter-alia but lists one agenda item. Note 2 calls Canada a subsidiary of the USA entity; auditor list calls it wholly owned. Cash-flow prior-year header prints 31-09-2025. No prior ledger, so no ENTITY_CHANGE diff."

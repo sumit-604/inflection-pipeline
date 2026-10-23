@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "CYBERTECH"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 10
+formfeed_count: 10
+line_count: 443
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01"
+text_layer_present: true   # fonts present but only page 1 has text; pages 2-10 are zero-character images
+extraction_mode: text-only  # page 1 text-only; pages 2-10 rendered under the zero-character data-bearing rule
+render_candidates: [2, 3, 4, 5, 6, 7, 8, 9, 10]   # all zero-character, all data-bearing (financial statements, LRRs, notes)
+rendered_pages: [2, 3, 4, 5, 6, 7, 8, 9, 10]   # pdftoppm 200dpi + tesseract psm 6; tesseract garbled ruled tables so all pages were read visually from the image and transcribed
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\quarterly-cybertech-q2fy27-920b89\runs\cybertech-q2fy27\extracted\cybertech-results-q2fy27-fulltext.md"
+structured_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\quarterly-cybertech-q2fy27-920b89\runs\cybertech-q2fy27\extracted\cybertech-results-q2fy27-structured.md"
+structured_counts:
+  number: 593
+  entity: 46
+  forward: 3
+  date: 51
+  qualifier: 46
+structured_id_range: "R001-R739"
+gate_a1: pass
+gap_note: ""

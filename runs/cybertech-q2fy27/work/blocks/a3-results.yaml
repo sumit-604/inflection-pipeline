@@ -1,0 +1,56 @@
+stage: A3-forensics
+company: "CYBERTECH"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/cybertech-q2fy27/work/forensics_results_cybertech_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "L405", classification: "FORWARD-SIGNAL", implication: "Parent injected 4,113.13 into an unnamed WOS; subs bought 3,263.77 of investments (computed); 95.1% of group current investments now offshore; purpose undisclosed (acquisition vs parking)"}
+  - {id: "A3-02", check: "F1", line: "L178", classification: "NEUTRAL-FACT", implication: "Borrowings nil at 30-Sep-2026 (377.23 repaid); no exceptional/discontinued template lines"}
+  - {id: "A3-03", check: "F2", line: "L115, L301", classification: "FORWARD-SIGNAL", implication: "Sub PAT 60.6% of SA PAT vs 33.6% YoY (+27.0 pp); sub revenue +54.3% YoY vs SA +10.6%; earnings centre migrating to US perimeter"}
+  - {id: "A3-04", check: "F2", line: "L105, L291", classification: "AMBIGUOUS", implication: "Sub EBITDA 60.02 to 326.61 QoQ while SA EBITDA fell; real leverage vs transfer-pricing shift"}
+  - {id: "A3-05", check: "F2", line: "L101, L212, L391", classification: "AMBIGUOUS", implication: "Consol other income -42.2% QoQ; sub other income 435.07 to 133.12 despite larger book; sub FV gain line 155.23 to nil"}
+  - {id: "A3-06", check: "F2", line: "L337, L395", classification: "AMBIGUOUS", implication: "SA receivables -66.7% while consol flat; SA OCF 4,146.63 > consol 2,826.32; intercompany round-trip or billing shift"}
+  - {id: "A3-07", check: "F6", line: "L435", classification: "FORWARD-SIGNAL", implication: "Undated, unquantified future EBE charge on final Labour Code rules"}
+  - {id: "A3-08", check: "F8", line: "L114", classification: "NEUTRAL-FACT", implication: "Earlier-year tax adj 7.23 H1 in subs; ETR 24.83% vs 25.17%; sub deferred-tax charges build DTL, no DTA shield"}
+  - {id: "A3-09", check: "F9", line: "L118, L304", classification: "AMBIGUOUS", implication: "H2 FY26 remeasurement +66.92 vs FY26 net 33.30 (sign flip); FY27 interim remeasurement nil; verify assumptions at AR"}
+  - {id: "A3-10", check: "F10", line: "L124, L235", classification: "NEUTRAL-FACT", implication: "Capital -85.00 Q1 (buyback 1,498.00, undisclosed in notes), +10.00 Q2 (ESOP); basic-diluted spread 0.00-0.02, narrowing"}
+  - {id: "A3-11", check: "F11", line: "L348, L364", classification: "AMBIGUOUS", implication: "Other equity roll-forward leaves 1,215.22 debit (= Rs 4.00 x 3,03,80,600 shares, computed) outside OCF; candidate unpaid FY26 dividend, Q3 cash outflow"}
+  - {id: "A3-12", check: "F12", line: "L157, L149", classification: "AMBIGUOUS", implication: "Bank balances -3,233.32 vs net FD run-off 993.63; 2,239.69 likely reclassified to non-current; 492.23 untraced; lien/escrow?"}
+  - {id: "A3-13", check: "F12", line: "L106", classification: "AMBIGUOUS", implication: "Finance cost 2.0x YoY with borrowings nil and leases falling; source unexplained"}
+  - {id: "A3-14", check: "F12", line: "L218", classification: "AMBIGUOUS", implication: "WC release 1,305.74 = 94.6% of H1 EBITDA; OCF/PAT 1.56x on payables and other liabilities; H2 reversal risk"}
+  - {id: "A3-15", check: "F14", line: "L432", classification: "NEUTRAL-FACT", implication: "Note 3 states capital as Rs 10,00,000 vs paid-up 3,038.06 lakh"}
+  - {id: "A3-16", check: "F14", line: "L199", classification: "NEUTRAL-FACT", implication: "Invalid date 31-09-2025 in consolidated cash-flow header"}
+  - {id: "A3-17", check: "F14", line: "L122", classification: "NEUTRAL-FACT", implication: "OCI reclassified-block caption reads 'will not be reclassified'"}
+  - {id: "A3-18", check: "F14", line: "L431 vs L73", classification: "NEUTRAL-FACT", implication: "Note 2 shows Canada as step-down of USA entity; auditor lists three WOS flat"}
+  - {id: "A3-19", check: "F14", line: "L434", classification: "AMBIGUOUS", implication: "Note 5 materiality unstated, amount unquantified, FY26 wording carried into Q2 FY27"}
+  - {id: "A3-20", check: "F14", line: "L201 vs L110; L384 vs L293; L388 vs L292; L20 vs L96", classification: "NEUTRAL-FACT", implication: "0.01 rounding mismatches and telephone mismatch; cumulative document-control data point"}
+forward_signals: ["A3-01", "A3-03", "A3-07"]
+ambiguous: ["A3-04", "A3-05", "A3-06", "A3-09", "A3-11", "A3-12", "A3-13", "A3-14", "A3-19"]
+commitments:
+  - {commitment: "Restructure employee compensation per four Labour Codes; impact presented in FY26 EBE", implied_date: "2026-04-01 effective", ref: "Note 5, L434", status_word: "completed"}
+  - {commitment: "Provide accounting effect on finalisation of Central/State Labour Code rules", implied_date: "undated", ref: "Note 5 para 2, L435", status_word: "initiated"}
+  - {commitment: "ESOP allotment of 1,00,000 shares", implied_date: "quarter ended 2026-09-30", ref: "Note 3, L432", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Operating engine improved while headline PAT stalled. Consolidated EBITDA 808.87 vs 461.92 YoY (+75%), but other income fell 42% QoQ, so PAT rose only 0.3% YoY. Growth sits in the US subsidiaries: sub revenue +54% YoY, sub EBITDA 60.02 to 326.61 QoQ. Real leverage vs transfer pricing is the first question (A3-04). Treasury is moving offshore. The parent put 4,113.13 into an unnamed WOS and the subs bought 3,263.77 of investments (exact tie, computed). Acquisition and parking readings separate on what the sub does with that cash in Q3. Other equity leaves a 1,215.22 debit that equals Rs 4.00 on 3,03,80,600 shares and sits outside OCF. A declared, unpaid FY26 dividend is the leading candidate; this filing does not confirm it. Parent OCF is flattered by a 2,025 receivable fall that consolidated receivables do not show, so use consolidated OCF. A1 defect: R123/R396 label FY26 year-end other equity as Q2 FY26 (fulltext L125/L308 put it in the FY26 column)."

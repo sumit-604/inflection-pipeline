@@ -93,6 +93,66 @@ No initiated-to-underway-to-completed transitions can be tested against Q1, beca
 | 7 | Governance-hygiene drafting errors | FOUND: FN13, FN14, FN19, FN20, FN21, FN22. Prior quarter also showed "Formally known as" (prior line 52) and a body dated "10th August 2026" against a letter dated 11-Aug (prior lines 25, 99) | see FN rows |
 | 8 | KMP churn (CFO/CS) | CFO appointed, predecessor not named (FN16). CS unchanged: Daksh Mewada signs in both quarters | lines 52-54, 108-110; prior 58-59 |
 
+## ADDENDUM: LOOP 1 (A5 orphan rows)
+
+Trigger: correction loop iteration 1. A5 adversary gap (MISSING), owner A3. Scope: a forensic read of ledger rows that the first pass reconciled but did not interpret. This is an addendum. F1-F17 were not re-run. No prior finding, scorecard status or commitment changes. Inputs: the same A1 structured file, A1 fulltext and A2 ledger. Nothing under inputs/ and no source PDF was opened.
+
+### A. Rows read verbatim at their cited lines
+
+| ledger row | structured IDs | line | verbatim value (Sep-26 / Mar-26, or H1 FY27 / H1 FY26) |
+|---|---|---|---|
+| L030 | R190-R191 | 374 | "(d) Investments  1,189.90  985.12" (S) |
+| L134 | R505-R506 | 678 | "(d) Investments  0.50  0.50" (C) |
+| L080 | R291-R292 | 442 | "Investment in Equity Shares of Subsidiaries  (204.78)  -" (S CF) |
+| L158 | R553-R554 | 708 | "Trade Payables ... other than Micro Enterprises and Small Enterprises  11,686.62  12,075.60" (C) |
+| L054 (support) | R238-R239 | 404 | same label, "10,544.75  11,926.60" (S) |
+| L039 (support) | R208-R209 | 384 | "iv Other Financial Assets  45,214.27  12,399.99" (S) |
+| L143 (support) | R523-R524 | 688 | "iv Other Financial Assets  43,864.36  10,631.23" (C) |
+| L073 (support) | R277-R278 | 434 | "Increase in Trade Payable  1,649.87  1,587.96" (S CF) |
+| L176 (support) | R580 | 737 | "Increase in Trade Payable  2,223.89" (C CF) |
+| L082 | R295-R296 | 444 | "Deposits (Placed)/Matured with Others  5,918.44  (960.00)" (S CF) |
+| L184 (support) | R588 | 746 | "Deposits Matured with Others  5,918.44" (C CF) |
+| L055 | R240-R241 | 405 | "iv Other Financial Liabilities  9,758.29  6,794.95" (S) |
+| L056 | R242-R243 | 406 | "(b) Other Current Liabilities  7,428.62  5,003.12" (S) |
+| L159, L160 (support) | R555-R558 | 709-710 | "9,758.29  6,794.94" / "7,428.62  5,003.13" (C) |
+| L074 | R279-R280 | 435 | "Increase in Financial Liabilities and Other Liabilities  3,227.61  1,364.02" (S CF) |
+| L075 | R281-R282 | 436 | "Increase in Current Liabilities and Provisions  2,392.10  11.96" (S CF) |
+
+A2's flag "Investments R190 vs R505" (ledger line 24) is the L030/L134 pair above.
+
+### B. A5 figures re-derived (none taken on trust)
+
+| A5 figure | re-derived | arithmetic | lines | result |
+|---|---|---|---|---|
+| 11.89 Cr investments eliminated | 1,189.40 L | 1,189.90 - 0.50 | 374, 678 | VERIFIED WITH REFINEMENT. S carries 1,189.90. C keeps 0.50, so 1,189.40 drops out on consolidation. |
+| 2.05 Cr H1 infusion | 204.78 L | 985.12 + 204.78 = 1,189.90 | 442, 374 | VERIFIED. Ties to the paisa. |
+| 13.50 Cr S-over-C current OFA | 1,349.91 L | 45,214.27 - 43,864.36 | 384, 688 | VERIFIED. Mar-26 gap was 1,768.76 (12,399.99 - 10,631.23). |
+| 11.42 Cr subsidiary payables | 1,141.87 L | 11,686.62 - 10,544.75 | 708, 404 | VERIFIED. Mar-26 gap was 149.00 (12,075.60 - 11,926.60). MSME payables are identical S and C at both dates (403, 707). |
+| 59.18 Cr deposits matured from Others | 5,918.44 L | as filed | 444, 746 | VERIFIED. |
+| 171.87 Cr OFL + OCL | 17,186.91 L | 9,758.29 + 7,428.62 | 405-406 | VERIFIED. Above S trade payables 15,848.41 (5,303.66 + 10,544.75). |
+
+### C. New findings
+
+| id | check | ledger row ref | line | short verbatim quote | classification | forward implication |
+|---|---|---|---|---|---|---|
+| FN26 | F2 | L030 (R190-R191), L134 (R505-R506), L080 (R291-R292) | 374, 678, 442, 486-487 | "(d) Investments  1,189.90  985.12" / "Investment in Equity Shares of Subsidiaries  (204.78)" | FORWARD-SIGNAL | The parent investment line rolls exactly: 985.12 + 204.78 = 1,189.90 [derived]. C keeps 0.50, so 1,189.40 is eliminated on consolidation. The parent put 204.78 of new equity into the subsidiaries in H1. In the same half the subsidiaries booked Nil revenue (572) and the Erisha contract ended (482). S note 5 says "no provision or adjustment has been recognised in the accompanying Standalone Financial Results" (486-487). Contract termination plus legal proceedings is an Ind AS 36 impairment indicator for this investment. The split of 1,189.90 between the two subsidiaries and any JV capital is NOT DISCLOSED. A4 questions: which subsidiary received the 204.78, and was it paid before or after the September termination? Has the parent tested the investment for impairment? |
+| FN27 | F2 | L039 (R208-R209), L143 (R523-R524) | 384, 688; bridge 376, 388, 572, 680, 692 | "iv Other Financial Assets  45,214.27  12,399.99" / "43,864.36  10,631.23" | FORWARD-SIGNAL | S exceeds C on current other financial assets by 1,349.91 (Sep-26) and 1,768.76 (Mar-26). This is an intra-group receivable from the subsidiaries, eliminated on consolidation [INFERENCE]. Evidence: the consolidated asset bridge closes to the paisa only with it. S total assets 95,680.05 (388) + subsidiary total assets 4,075.53 (572) + consolidation DTA 10.32 (244.63 at 680 less 234.31 at 376) - investment 1,189.40 - this 1,349.91 = 97,226.59, exactly C total assets (692) [derived]. Second check: its H1 fall of 418.85 equals the C cash-flow trade-payable shortfall (FN28). Reading (b), a JV current account or a consolidation reclass, cannot close the bridge, because the subsidiary's 4,075.53 already accounts for every other S-to-C asset delta (FN06). Nothing is provided against it (486-487). A4 question: what is the 1,349.91 (advance, mobilisation funding, cost recharge), and what is its recoverability now that the contract has ended? |
+| FN28 | F3 | L158 (R553-R554) vs L054 (R238-R239); L176 (R580) vs L073 (R277-R278) | 708, 404, 737, 434, 573, 576 | "11,686.62  12,075.60" vs "10,544.75  11,926.60" / "Increase in Trade Payable  2,223.89" | AMBIGUOUS | The subsidiaries' third-party trade payables rose from 149.00 to 1,141.87 (+992.87) [derived]. In the same half they had Nil revenue, a net loss of 482.78 (573) and net cash flow of (0.12) (576). The payables rise is twice the whole H1 loss. Cash-flow tie: C CF trade payable 2,223.89 (737) = S 1,649.87 (434) + subsidiary gross payable change 574.02 [derived: (1,141.87 + 1,349.91) - (149.00 + 1,768.76)]. The C balance-sheet change is 2,642.74, so the CF omits the 418.85 drop in the intra-group balance. Two readings. (a) Non-cash: 418.85 that the subsidiary owed the parent was re-labelled or assigned to a third-party creditor. (b) Cash: the subsidiary repaid the parent 418.85. Reading (b) needs 214.07 of cash beyond the parent's 204.78 infusion, with Nil revenue, rising receivables and flat cash, and no source is visible [derived]. Lean bear: (a) [INFERENCE]. Separating observation: the subsidiary's H1 cash flow, or the parent's related-party balance schedule. A4 questions: who are the subsidiary's creditors, and does the parent guarantee them? Guarantee: NOT FOUND in this filing. |
+| FN29 | OBS (outside F1-F17) | L030, L134, L039, L143, L158, L054 + D08 (R339-R347) | 374, 384, 388, 393, 410, 572, 678, 688, 692, 714 | "total assets of Rs. 4,075.53 Lakhs as at September 30, 2026" | FORWARD-SIGNAL | Bounded parent-level Erisha exposure: funded 2,539.31 L (25.39 Cr), range 2,510.69 to 2,539.31; contingent ceiling 3,760.70 L (37.61 Cr). Arithmetic in section D. Funded exposure = 12.50% of S net worth 20,313.57 (393) and 0.86x H1 S PAT 2,963.91. The ceiling = 18.51% of S net worth and 1.27x H1 S PAT. None of it is provided for. A full write-down would land in the standalone P&L in one quarter, the same quarter as any group charge (FN08). |
+| FN30 | OBS (outside F1-F17) | L082 (R295-R296), L184 (R588); L034 (R192-R193) | 444, 746, 375, 427, 329 | "Deposits (Placed)/Matured with Others  5,918.44  (960.00)" | AMBIGUOUS | 5,918.44 of deposits came back in H1 from counterparties the filing calls only "Others". H1 FY26 placed 960.00 with the same class. Without this inflow, H1 S investing cash flow is (6,787.19), not (868.75) [derived]. It is 2.0x H1 S PAT. Yield bound: total H1 interest income is 58.39 (427; other income 58.39 at 329). Even if all of it came from these deposits, the yield is at most 0.99% for the half [derived: 58.39 / 5,918.44]. So the deposits were mostly non-interest-bearing: security deposits, earnest money or advances, not treasury inter-corporate deposits [INFERENCE]. Non-current other financial assets fell from 16,043.59 to 1,071.11 (375), so the deposits likely sat there. Counterparty, related-party status and the remaining balance: NOT FOUND (no RPT note, coverage map item 3). The C label drops "(Placed)" (746): minor drafting, checklist item 7. A4 questions: who are the "Others", are any related parties, and what deposits remain outstanding? |
+| FN31 | OBS (outside F1-F17) | L055 (R240-R241), L056 (R242-R243), L074 (R279-R280), L075 (R281-R282); L159-L160 (R555-R558) | 405-406, 435-436, 709-710, 403-404 | "iv Other Financial Liabilities  9,758.29  6,794.95" / "(b) Other Current Liabilities  7,428.62  5,003.12" | AMBIGUOUS | Other financial liabilities plus other current liabilities = 17,186.91, above trade payables of 15,848.41 [derived]. They rose 5,388.84 in H1 (OFL +2,963.34, OCL +2,425.50). The stock equals about 60 days of annualised H1 revenue 51,868.22 (328) [derived]. S equals C on both lines (709-710), so all of it sits at the parent. The CF lines (435-436) add 5,619.71 to H1 operating cash. Without them, H1 S CFO would be (30,056.48) [derived]. The CF figure exceeds the balance-sheet change in OFL, OCL and provisions (5,423.67) by 196.04 [derived]; note 7 regrouping (493) is a candidate reconciling item. Composition: NOT DISCLOSED. Two readings: (a) customer mobilisation advances and retention owed to sub-contractors, which unwind as work executes; (b) accrued interest, capital creditors and unpaid statutory dues, which act as funding. Separating observation: the OFL and OCL note schedules in the FY27 half-year or annual accounts. A4 question: give the breakdown of the 17,186.91, and say how much is customer advances. |
+
+### D. Bounded parent-level exposure (arithmetic, Rs Lakhs, Sep-26)
+
+1. Consolidation bridge. S total assets 95,680.05 (388) + subsidiary total assets 4,075.53 (572) + consolidation DTA 10.32 (244.63 at 680 - 234.31 at 376) - investment eliminated 1,189.40 (1,189.90 at 374 - 0.50 at 678) - intra-group receivable eliminated 1,349.91 (45,214.27 at 384 - 43,864.36 at 688) = 97,226.59 = C total assets (692). Liabilities: C 76,587.87 (714) - S 75,366.48 (410) = 1,221.39 of subsidiary external liabilities (trade payables 1,141.87, current tax 63.35, non-current borrowings 9.81, current provisions 6.37, current borrowings (0.01)). Equity: C 20,638.72 - S 20,313.57 = 325.15. Check: 1,221.39 + 325.15 = 1,546.54 = 97,226.59 - 95,680.05.
+2. Subsidiary balance sheet [derived]. Assets 4,075.53 = external liabilities 1,221.39 + due to parent 1,349.91 + equity 1,504.23 (parent investment up to 1,189.40, reserves at least 314.83).
+3. Floor (on the parent balance sheet): the investment, 1,160.78 to 1,189.40. Up to 28.62 of cumulative JV equity losses (21.88 FY26 at 641 + 6.74 H1 at 578) may sit inside the 1,189.40 if JV capital is in the S investment line. The split is NOT DISCLOSED.
+4. Funded exposure: floor + intra-group receivable 1,349.91 = 2,510.69 to 2,539.31. Point figure 2,539.31 = 12.50% of S net worth 20,313.57, 0.86x H1 S PAT 2,963.91, 67.5% of H1 S PBT 3,759.73 (423).
+5. Contingent ceiling: funded 2,539.31 + subsidiary external liabilities 1,221.39 = 3,760.70, if the parent guarantees or must fund the subsidiary's creditors. Guarantee: NOT FOUND. 3,760.70 = 18.51% of S net worth and 1.27x H1 S PAT.
+6. Movement in H1: Mar-26 funded exposure 984.62 + 1,768.76 = 2,753.38. Sep-26 = 2,539.31. Change (214.07) = +204.78 infusion - 418.85 intra-group drop. Per FN28 the drop is more likely a re-label than cash [INFERENCE].
+7. Do not add this to FN06. The group view (4,051.91 of subsidiary receivables and other current assets) and the parent view (2,539.31 funded, 3,760.70 ceiling) measure the same entity through two lenses. 3,760.70 + subsidiary reserves 314.83 = 4,075.53.
+8. Provision booked: none (S note 5, 486-487; C note 8, 792-793).
+
 ```yaml
 stage: A3-forensics
 company: "GHVINFRA"
@@ -146,8 +206,14 @@ findings:
   - {id: "FN23", check: "F15", line: "543-548, 770-771, 426", classification: "AMBIGUOUS", implication: "Entity baseline set (2 subs, 2 JVs); CF Partnership Firm not identified; ask RKS/TCIPL counterparties"}
   - {id: "FN24", check: "OBS", line: "437-439, 381, 384, 375", classification: "FORWARD-SIGNAL", implication: "H1 CFO -24,436.77 vs PAT 2,963.91; current other financial assets +32,814.28; receivables + OFA ~253 days"}
   - {id: "FN25", check: "OBS", line: "452-453, 396, 402, 441", classification: "AMBIGUOUS", implication: "Borrowing CF lines equal BS deltas; refinance vs reclass; debt 19,161.45 -> 41,176.57; capex 4,370.88"}
-forward_signals: ["FN02", "FN04", "FN06", "FN07", "FN08", "FN10", "FN11", "FN16", "FN17", "FN24"]
-ambiguous: ["FN01", "FN03", "FN05", "FN13", "FN14", "FN15", "FN19", "FN21", "FN22", "FN23", "FN25"]
+  - {id: "FN26", check: "F2", line: "374, 678, 442, 486-487", classification: "FORWARD-SIGNAL", implication: "Loop 1. Parent investment 985.12 + H1 infusion 204.78 = 1,189.90 (ties); C keeps 0.50, so 1,189.40 eliminated; no standalone impairment though the contract ended and sub revenue is Nil (Ind AS 36 indicator); ask which sub got the 204.78 and whether before or after the Sep termination"}
+  - {id: "FN27", check: "F2", line: "384, 688, 388, 376, 680, 572, 692", classification: "FORWARD-SIGNAL", implication: "Loop 1. S-over-C current OFA 1,349.91 (Mar-26 1,768.76) is an intra-group receivable from the subs [INFERENCE]: C assets = S 95,680.05 + sub 4,075.53 + consolidation DTA 10.32 - 1,189.40 - 1,349.91 = 97,226.59, exact to l692; unprovided in standalone"}
+  - {id: "FN28", check: "F3", line: "708, 404, 737, 434, 573, 576", classification: "AMBIGUOUS", implication: "Loop 1. Sub third-party trade payables 149.00 -> 1,141.87 (+992.87) on Nil revenue, H1 loss 482.78, net cash (0.12); C CF 2,223.89 = S 1,649.87 + sub gross delta 574.02, so the 418.85 intra-group drop looks non-cash (re-label or assignment) [INFERENCE]; ask parent guarantee and creditor identity"}
+  - {id: "FN29", check: "OBS", line: "374, 384, 388, 393, 410, 572, 678, 688, 692, 714", classification: "FORWARD-SIGNAL", implication: "Loop 1. Bounded parent Erisha exposure: funded 2,539.31 L (range 2,510.69 to 2,539.31) = 12.50% of S net worth 20,313.57, 0.86x H1 S PAT; contingent ceiling 3,760.70 L (+ sub external liabilities 1,221.39; guarantee NOT FOUND) = 18.51%; nothing provided (l486-487)"}
+  - {id: "FN30", check: "OBS", line: "444, 746, 375, 427, 329", classification: "AMBIGUOUS", implication: "Loop 1. 5,918.44 matured from unnamed Others (H1 FY26 placed 960.00); investing ex-inflow (6,787.19); H1 interest 58.39 caps yield at 0.99% for the half, so mostly non-interest-bearing (security deposits, EMD, advances), not treasury ICDs [derived]; counterparty and RPT status NOT FOUND"}
+  - {id: "FN31", check: "OBS", line: "405-406, 435-436, 709-710, 403-404", classification: "AMBIGUOUS", implication: "Loop 1. OFL 9,758.29 + OCL 7,428.62 = 17,186.91 > trade payables 15,848.41; +5,388.84 in H1, ~60 days of annualised revenue; all parent-level (S = C); funded 5,619.71 of H1 CFO; CF vs BS gap 196.04; composition NOT DISCLOSED (advances, retention vs accrued interest, statutory dues)"}
+forward_signals: ["FN02", "FN04", "FN06", "FN07", "FN08", "FN10", "FN11", "FN16", "FN17", "FN24", "FN26", "FN27", "FN29"]
+ambiguous: ["FN01", "FN03", "FN05", "FN13", "FN14", "FN15", "FN19", "FN21", "FN22", "FN23", "FN25", "FN28", "FN30", "FN31"]
 commitments:
   - {commitment: "Convert balance 21,83,333 warrants", implied_date: "NOT FOUND", ref: "S note 3 l475; C note 6 l782", status_word: "initiated"}
   - {commitment: "Erisha: monitor and reassess at each reporting date", implied_date: "each reporting date; next 2026-12-31", ref: "S note 5 l488; C note 8 l792", status_word: "underway"}
@@ -160,5 +226,23 @@ commitments:
   - {commitment: "Results uploaded to company website", implied_date: "2026-10-22", ref: "Board item 1 l49-50", status_word: "underway"}
 gate_a3: pass
 blank_checks: []
+correction_loop: 1
+loop1_addendum:
+  trigger: "A5 adversary gap (MISSING): forensic read of orphan ledger rows; owner A3"
+  rows_read: ["L030", "L134", "L080", "L158", "L082", "L055", "L056", "L074", "L075", "L039", "L143", "L054", "L073", "L176", "L184", "L159", "L160"]
+  a5_figures_verified: "6 of 6 re-derived at fulltext lines. Refinement: investments eliminated are 1,189.40 L (S 1,189.90 l374 less C 0.50 l678), not 1,189.90"
+  new_findings: ["FN26", "FN27", "FN28", "FN29", "FN30", "FN31"]
+  checklist_status_change: "none (F2, F3 already FINDING; FN29-FN31 are OBS)"
+  parent_erisha_exposure_lakhs:
+    floor_investment: "1,160.78 to 1,189.40 (1,189.90 l374 - 0.50 l678 = 1,189.40; up to 28.62 of cumulative JV losses may sit inside it, split NOT DISCLOSED)"
+    funded_point: 2539.31
+    funded_range: "2,510.69 to 2,539.31 (floor + intra-group receivable 1,349.91 = 45,214.27 l384 - 43,864.36 l688)"
+    contingent_ceiling: 3760.70
+    contingent_basis: "funded 2,539.31 + sub external liabilities 1,221.39 (C 76,587.87 l714 - S 75,366.48 l410); parent guarantee NOT FOUND"
+    pct_s_net_worth: "funded 12.50%, ceiling 18.51% (S net worth 20,313.57 l393)"
+    x_h1_s_pat: "funded 0.86x, ceiling 1.27x (H1 S PAT 2,963.91)"
+    bridge_check: "S assets 95,680.05 + sub assets 4,075.53 + DTA 10.32 - 1,189.40 - 1,349.91 = 97,226.59 = C assets l692"
+    movement_h1: "Mar-26 2,753.38 -> Sep-26 2,539.31 = (214.07) = +204.78 infusion - 418.85 intra-group"
+    provision_booked: "none (S note 5 l486-487)"
 analyst_note: "The filing turns on GHV Infra FZ-LLC. Its Sep-26 assets of 4,075.53 L reconcile exactly to the S-to-C balance-sheet deltas (receivables 1,080.34, other current assets 2,971.57, PPE 22.80, cash 0.82). They sit on an EPC contract the notes call concluded after delays, now in legal proceedings. No provision is booked, and neither the auditor nor any component auditor reviewed the numbers. The exposure is 1.6x H1 consolidated PAT, yet management calls it not material. FY26 consolidated PAT beat standalone by 676 L on 994 L of sub revenue booked with no materials or sub-contracting cost, and that uplift has reversed. Second, the Q1 media-release margin rested on a 1,351.01 L WIP deferral that Q2 reversed, so read H1. Third, cash: H1 CFO was -24,437 L against PAT of 2,964 L, funded by current borrowings rising to 37,790 L. The new CFO's QIP/IPO profile and 21,83,333 pending warrants point to a raise. Drafting: the 16,16,667 warrant count conflicts with the arithmetic (16,66,667), and H1 EPS does not reconcile with the quarterly weighting. Pages 10 and 16 are raw OCR, so re-check the warrant figure on the page image."
 ```

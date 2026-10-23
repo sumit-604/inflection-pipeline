@@ -2,75 +2,7 @@ stage: A5-adversary
 company: "GHVINFRA"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
-status: complete
-verdict: INCOMPLETE
-plain_language_brief:
-  narrative: present
-  sector: present
-  business_model: present
-  competition: present
-  forward_map: present
-coverage:
-  orphan_rows:
-    - "L030 (R190-R191, l374) S Investments 985.12 to 1,189.90 L; A2 key flag 'Investments R190 vs R505' never addressed"
-    - "L134 (R505-R506, l678) C Investments 0.50 L; 11.89 Cr eliminated on consolidation"
-    - "L080 (R291-R292, l442) Investment in Equity Shares of Subsidiaries 204.78 L in H1 FY27"
-    - "L158 (R553-R554, l708) C other trade payables 11.42 Cr above S (l404); 40.52 Cr exposure is gross"
-    - "L082 (R295-R296, l444) Deposits matured with Others +5,918.44 L H1 FY27; counterparty unnamed"
-    - "L055 (R240-R241, l405) S Other Financial Liabilities 6,794.95 to 9,758.29 L"
-    - "L056 (R242-R243, l406) S Other Current Liabilities 5,003.12 to 7,428.62 L"
-    - "L074 (R279-R280, l435) CF increase in financial and other liabilities 3,227.61 L"
-    - "L075 (R281-R282, l436) CF increase in current liabilities and provisions 2,392.10 L"
-  missing_from_ledger: []
-arithmetic_mismatches:
-  - metric: "Q6 unreviewed subsidiaries' H1 loss as % of H1 C PAT"
-    a4_value: "19.78%"
-    recomputed: "19.51% (482.78 / 2,474.39 L); 19.78% only with the unreviewed JV loss 6.74 L added"
-    source_line: "fulltext l573, l578, l642; review l579, l754"
-  - metric: "FY26 subsidiary direct cost (brief, business model)"
-    a4_value: "no direct cost"
-    recomputed: "0.69 Cr (construction 1,101.69 - 1,031.74 = 69.95 L, less WIP 0.47 L) = 7.0% of 9.94 Cr revenue"
-    source_line: "fulltext l333, l335, l625, l627; review l700"
-surviving_bear_counters:
-  - claim: "Revenue growth strong and stepping up (+63.30% Q2 YoY, +96.30% H1)"
-    counter: "H1 receivables +151.30 Cr and financial/other assets +220.60 Cr = 371.90 Cr, 71.7% of H1 revenue and 146% of the YoY revenue increase; already carried in Step 5 and the brief"
-    source_line: "fulltext l328, l429, l432; review l238, l305, l707"
-    type: STYLE
-  - claim: "Standalone core PBT +37.88%: 'the headline is real at the core level'"
-    counter: "Standalone results carry unprovided Erisha exposure (note 5, l486-487): 11.89 Cr investments eliminated on consolidation (2.05 Cr added in H1 into Nil-revenue, loss-making subsidiaries) plus 13.50 Cr S-over-C current OFA = up to 25.39 Cr, 68.6% of H1 S core PBT; A4 writes 'parent exposure ND'"
-    source_line: "fulltext l374, l384, l442, l486-487, l572-573, l678, l688; review l75, l245, l273"
-    type: MISSING
-  - claim: "Promoter capital in; warrant conversion as a bull funding event (about 65.50 Cr, debt falls)"
-    counter: "Conversion at Rs 80.00 a share (6,666.67 L / 83,33,335) = ~13.65x FY26 S EPS, ~11.5x TTM S EPS, 3.17x BVPS, 33.5% of A4's CMP Rs 239; pending 1,09,16,665 shares on the same terms ~87.33 Cr vs ~260.91 Cr at CMP; 65.50 Cr = 17.3% of current borrowings"
-    source_line: "fulltext l356, l393, l402, l448, l472-475; review l97, l585, l722"
-    type: MISSING
-findings_by_type:
-  factual:
-    - "F1 (A4): Q6 attributes 19.78% of H1 C PAT to the subsidiaries' loss; actual 19.51% (review l579, l754; l573, l642)"
-    - "F2 (A4): brief says FY26 subsidiary revenue had no direct cost; actual 0.69 Cr construction cost net of WIP (review l700; l333, l625)"
-  missing:
-    - "M1 (A3 then A4): orphan rows L030/L134/L080/L158; parent Erisha exposure bounded at up to 25.39 Cr, not ND; group 40.52 Cr is gross of 11.42 Cr subsidiary payables"
-    - "M2 (A3 then A4): orphan row L082; 59.18 Cr deposits matured from unnamed Others, unread, no management question"
-    - "M3 (A3 then A4): orphan rows L055/L056/L074/L075; 171.87 Cr non-trade operating liabilities absent from Step 5 and the separating-evidence list"
-    - "M4 (A4): summary l677 drops 'up to' on 40.52 Cr and tiers the Erisha linkage as FILED instead of INFERENCE"
-    - "M5 (A4): promoter conversion economics (Rs 80 a share, 13.65x FY26 EPS, 33.5% of CMP) absent from 0C, Q12 and the forward-map warrant row"
-  contradiction: []
-  style:
-    - "S1: review l119 cites l70 for 'Formerly Sindu Valley'; correct anchors l101, l257, l320"
-    - "S2: forward map rows out of date order (14-Aug-2027 after 22-Aug-2027)"
-    - "S3: monitorable M3 'completed' should read 'ended early' (l482-483)"
-    - "S4: stray 'EQUITY AND LIABILITIES' heading at l640 inside the C P&L not captured as a label anomaly"
-    - "S5: rounding-level differences only (-5.47 vs -5.465%, 128.40 vs 128.39%, 540 vs 539 bps, 134.75 vs 134.74, 79.64 vs 79.62)"
-    - "S6: Step 2 'Strong growth' cell and Competition 'Where GHV wins' could carry the cash qualifier in-cell"
-    - "S7: C CF finance cost add-back 2,527.52 L (l729) vs C P&L 2,529.38 L (l629); 1.86 L drafting item"
-loop_back_to: "A3"
-gap: "A3: forensic read of orphan ledger rows L030, L134, L080, L158 (parent-level Erisha exposure: 11.89 Cr investments eliminated on consolidation, 2.05 Cr H1 infusion, 13.50 Cr S-over-C current OFA, 11.42 Cr subsidiary payables), L082 (59.18 Cr deposits matured from unnamed Others) and L055, L056, L074, L075 (171.87 Cr non-trade operating liabilities) [MISSING]. Then A4: replace 'parent exposure ND' (review l75) with the bounded figure and gross/net group exposure; restore 'up to' and the INFERENCE tag at review l677 [MISSING]; graft promoter conversion economics into 0C, Q12 and review l722 [MISSING]; correct Q6 19.78% to 19.51% for subsidiaries alone (review l579, l754) [FACTUAL]; correct review l700 'no direct cost' to 0.69 Cr construction cost [FACTUAL]."
-style_notes:
-  - "S1: fix anchor l70 to l101/l320 for 'Formerly Sindu Valley' (review l119)"
-  - "S2: reorder forward-map rows by date"
-  - "S3: 'completed' to 'ended early' at monitorable M3"
-  - "S4: log l640 stray heading in the drafting-hygiene record"
-  - "S5: rounding-level differences, no action"
-  - "S6: optional in-cell cash qualifier on the Step 2 revenue verdict"
-  - "S7: add the C CF finance cost add-back mismatch (1.86 L) to the drafting list"
-analyst_note: "Arithmetic is clean. About 200 derived figures recompute within rounding. Two factual slips: Q6 gives the subsidiaries 19.78% of H1 C PAT (19.51% actual), and the brief says FY26 subsidiary revenue had no direct cost (0.69 Cr actual). The real gap is coverage. A5 accepts A4's blanket 'all 253 rows reviewed' only for boilerplate and immaterial rows. A2 flagged 'Investments R190 vs R505', and nobody read it. The parent carries 11.89 Cr of investments eliminated on consolidation (2.05 Cr added in H1 into revenue-less, loss-making subsidiaries) plus 13.50 Cr of S-over-C current financial assets. That bounds a standalone Erisha exposure at up to 25.39 Cr, where A4 writes 'ND'. The 59.18 Cr deposit maturity from unnamed 'Others' and 171.87 Cr of non-trade liabilities are also unread. Symmetric point: the 40.52 Cr group figure is gross of 11.42 Cr of subsidiary payables. The promoter converted at Rs 80 a share, a third of the CMP A4 quotes. That makes the warrant bull fork a value-transfer question. None of this moves the AVOID record."
+status: in_progress
+iteration: 3
+verdict: ""
+analyst_note: "Iteration 3 audit in progress. This placeholder is overwritten at the end of the run."

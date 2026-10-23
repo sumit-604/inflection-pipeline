@@ -50,8 +50,14 @@ findings:
   - {id: "FN23", check: "F15", line: "543-548, 770-771, 426", classification: "AMBIGUOUS", implication: "Entity baseline set (2 subs, 2 JVs); CF Partnership Firm not identified; ask RKS/TCIPL counterparties"}
   - {id: "FN24", check: "OBS", line: "437-439, 381, 384, 375", classification: "FORWARD-SIGNAL", implication: "H1 CFO -24,436.77 vs PAT 2,963.91; current other financial assets +32,814.28; receivables + OFA ~253 days"}
   - {id: "FN25", check: "OBS", line: "452-453, 396, 402, 441", classification: "AMBIGUOUS", implication: "Borrowing CF lines equal BS deltas; refinance vs reclass; debt 19,161.45 -> 41,176.57; capex 4,370.88"}
-forward_signals: ["FN02", "FN04", "FN06", "FN07", "FN08", "FN10", "FN11", "FN16", "FN17", "FN24"]
-ambiguous: ["FN01", "FN03", "FN05", "FN13", "FN14", "FN15", "FN19", "FN21", "FN22", "FN23", "FN25"]
+  - {id: "FN26", check: "F2", line: "374, 678, 442, 486-487", classification: "FORWARD-SIGNAL", implication: "Loop 1. Parent investment 985.12 + H1 infusion 204.78 = 1,189.90 (ties); C keeps 0.50, so 1,189.40 eliminated; no standalone impairment though the contract ended and sub revenue is Nil (Ind AS 36 indicator); ask which sub got the 204.78 and whether before or after the Sep termination"}
+  - {id: "FN27", check: "F2", line: "384, 688, 388, 376, 680, 572, 692", classification: "FORWARD-SIGNAL", implication: "Loop 1. S-over-C current OFA 1,349.91 (Mar-26 1,768.76) is an intra-group receivable from the subs [INFERENCE]: C assets = S 95,680.05 + sub 4,075.53 + consolidation DTA 10.32 - 1,189.40 - 1,349.91 = 97,226.59, exact to l692; unprovided in standalone"}
+  - {id: "FN28", check: "F3", line: "708, 404, 737, 434, 573, 576", classification: "AMBIGUOUS", implication: "Loop 1. Sub third-party trade payables 149.00 -> 1,141.87 (+992.87) on Nil revenue, H1 loss 482.78, net cash (0.12); C CF 2,223.89 = S 1,649.87 + sub gross delta 574.02, so the 418.85 intra-group drop looks non-cash (re-label or assignment) [INFERENCE]; ask parent guarantee and creditor identity"}
+  - {id: "FN29", check: "OBS", line: "374, 384, 388, 393, 410, 572, 678, 688, 692, 714", classification: "FORWARD-SIGNAL", implication: "Loop 1. Bounded parent Erisha exposure: funded 2,539.31 L (range 2,510.69 to 2,539.31) = 12.50% of S net worth 20,313.57, 0.86x H1 S PAT; contingent ceiling 3,760.70 L (+ sub external liabilities 1,221.39; guarantee NOT FOUND) = 18.51%; nothing provided (l486-487)"}
+  - {id: "FN30", check: "OBS", line: "444, 746, 375, 427, 329", classification: "AMBIGUOUS", implication: "Loop 1. 5,918.44 matured from unnamed Others (H1 FY26 placed 960.00); investing ex-inflow (6,787.19); H1 interest 58.39 caps yield at 0.99% for the half, so mostly non-interest-bearing (security deposits, EMD, advances), not treasury ICDs [derived]; counterparty and RPT status NOT FOUND"}
+  - {id: "FN31", check: "OBS", line: "405-406, 435-436, 709-710, 403-404", classification: "AMBIGUOUS", implication: "Loop 1. OFL 9,758.29 + OCL 7,428.62 = 17,186.91 > trade payables 15,848.41; +5,388.84 in H1, ~60 days of annualised revenue; all parent-level (S = C); funded 5,619.71 of H1 CFO; CF vs BS gap 196.04; composition NOT DISCLOSED (advances, retention vs accrued interest, statutory dues)"}
+forward_signals: ["FN02", "FN04", "FN06", "FN07", "FN08", "FN10", "FN11", "FN16", "FN17", "FN24", "FN26", "FN27", "FN29"]
+ambiguous: ["FN01", "FN03", "FN05", "FN13", "FN14", "FN15", "FN19", "FN21", "FN22", "FN23", "FN25", "FN28", "FN30", "FN31"]
 commitments:
   - {commitment: "Convert balance 21,83,333 warrants", implied_date: "NOT FOUND", ref: "S note 3 l475; C note 6 l782", status_word: "initiated"}
   - {commitment: "Erisha: monitor and reassess at each reporting date", implied_date: "each reporting date; next 2026-12-31", ref: "S note 5 l488; C note 8 l792", status_word: "underway"}
@@ -64,4 +70,22 @@ commitments:
   - {commitment: "Results uploaded to company website", implied_date: "2026-10-22", ref: "Board item 1 l49-50", status_word: "underway"}
 gate_a3: pass
 blank_checks: []
+correction_loop: 1
+loop1_addendum:
+  trigger: "A5 adversary gap (MISSING): forensic read of orphan ledger rows; owner A3"
+  rows_read: ["L030", "L134", "L080", "L158", "L082", "L055", "L056", "L074", "L075", "L039", "L143", "L054", "L073", "L176", "L184", "L159", "L160"]
+  a5_figures_verified: "6 of 6 re-derived at fulltext lines. Refinement: investments eliminated are 1,189.40 L (S 1,189.90 l374 less C 0.50 l678), not 1,189.90"
+  new_findings: ["FN26", "FN27", "FN28", "FN29", "FN30", "FN31"]
+  checklist_status_change: "none (F2, F3 already FINDING; FN29-FN31 are OBS)"
+  parent_erisha_exposure_lakhs:
+    floor_investment: "1,160.78 to 1,189.40 (1,189.90 l374 - 0.50 l678 = 1,189.40; up to 28.62 of cumulative JV losses may sit inside it, split NOT DISCLOSED)"
+    funded_point: 2539.31
+    funded_range: "2,510.69 to 2,539.31 (floor + intra-group receivable 1,349.91 = 45,214.27 l384 - 43,864.36 l688)"
+    contingent_ceiling: 3760.70
+    contingent_basis: "funded 2,539.31 + sub external liabilities 1,221.39 (C 76,587.87 l714 - S 75,366.48 l410); parent guarantee NOT FOUND"
+    pct_s_net_worth: "funded 12.50%, ceiling 18.51% (S net worth 20,313.57 l393)"
+    x_h1_s_pat: "funded 0.86x, ceiling 1.27x (H1 S PAT 2,963.91)"
+    bridge_check: "S assets 95,680.05 + sub assets 4,075.53 + DTA 10.32 - 1,189.40 - 1,349.91 = 97,226.59 = C assets l692"
+    movement_h1: "Mar-26 2,753.38 -> Sep-26 2,539.31 = (214.07) = +204.78 infusion - 418.85 intra-group"
+    provision_booked: "none (S note 5 l486-487)"
 analyst_note: "The filing turns on GHV Infra FZ-LLC. Its Sep-26 assets of 4,075.53 L reconcile exactly to the S-to-C balance-sheet deltas (receivables 1,080.34, other current assets 2,971.57, PPE 22.80, cash 0.82). They sit on an EPC contract the notes call concluded after delays, now in legal proceedings. No provision is booked, and neither the auditor nor any component auditor reviewed the numbers. The exposure is 1.6x H1 consolidated PAT, yet management calls it not material. FY26 consolidated PAT beat standalone by 676 L on 994 L of sub revenue booked with no materials or sub-contracting cost, and that uplift has reversed. Second, the Q1 media-release margin rested on a 1,351.01 L WIP deferral that Q2 reversed, so read H1. Third, cash: H1 CFO was -24,437 L against PAT of 2,964 L, funded by current borrowings rising to 37,790 L. The new CFO's QIP/IPO profile and 21,83,333 pending warrants point to a raise. Drafting: the 16,16,667 warrant count conflicts with the arithmetic (16,66,667), and H1 EPS does not reconcile with the quarterly weighting. Pages 10 and 16 are raw OCR, so re-check the warrant figure on the page image."

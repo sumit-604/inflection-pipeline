@@ -17,3 +17,8 @@
 - A4: review 804 lines + block written 08:20; hand-back received; its task notification later read 'stopped' after the machine restart, files complete, no re-run. A4 tokens: NOT FOUND (usage record lost). Cleanup: removed A1 scratch work/raw.txt and empty work/ocr_tmp.
 - A5 (base): INCOMPLETE. 4 MISSING + 2 FACTUAL + 7 STYLE. Gap owners A3 then A4. Audit 12:39, block 12:40; task notification read 'stopped' after restart, files complete. A5 tokens: NOT FOUND (usage record lost).
 - LOOP iteration 1 of 1 started: A3 addendum on orphan rows L030 L134 L080 L158 L082 L055 L056 L074 L075.
+- LOOP 1: A3 addendum FN26-FN31 (153,129 tok); A4 fixes M1 M4 M5 F1 F2 + Q29-Q34 (178,897 tok); review 804 -> 864 lines, 17 sections kept. A5 re-audit launched.
+- A5 re-audit (iteration 2) died in machine restart before writing; mechanical re-run, not counted.
+- A5 re-audit (iteration 2) of record: original task finished 16:39 (225,053 tok), INCOMPLETE: F-A F-B F-C (FACTUAL) + M-A M-B (MISSING), owner A4. Duplicate mechanical re-run stopped before it overwrote anything.
+- LOOP 2 APPROVAL: operator standing approval for this batch dated 2026-10-24 ('complete them fully'), relayed by the coordinating session local_75d06544 (not typed in this session). One second iteration only, then stop. LOOP 2 started: A4 fixes, then A5 iteration 3.
+- A5 iteration 3: first attempt stalled (stream watchdog, 600s), second lost to app restart; only placeholders on disk. Mechanical re-run, not counted.

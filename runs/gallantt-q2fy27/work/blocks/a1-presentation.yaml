@@ -1,0 +1,31 @@
+stage: A1-extractor
+company: "GALLANTT"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 38
+formfeed_count: 38
+line_count: 781
+unit_convention: "Crores"
+conversion_factor_to_cr: "Crores -> x1 (lakh crore -> x100000)"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: ["page 28 (3 chars, ESG divider): skipped, no data"]
+rendered_pages: ["6 (orchestrator check, deltas)", "12 (premium-grade chart check: no chart values present)", "16, 18, 19, 22, 23 (interleaved table columns)", "24 (bridge labels)", "17 (capacity table Nil cell, asterisk check)"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/gallantt-q2fy27/extracted/gallantt-presentation-q2fy27-fulltext.md"
+structured_path: "runs/gallantt-q2fy27/extracted/gallantt-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 597
+  entity: 66
+  forward: 26
+  date: 37
+  qualifier: 34
+  cell: 366
+  mapping: 358
+  correction: 5
+structured_id_range: "R001-R1491"
+gate_a1: pass
+gap_note: ""

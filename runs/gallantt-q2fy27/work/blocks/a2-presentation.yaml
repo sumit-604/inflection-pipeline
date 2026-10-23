@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "GALLANTT"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/quarterly-gallantt-call-q2fy27-7b3ed0/runs/gallantt-q2fy27/work/ledger_presentation_gallantt_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 28
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 66
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 38
+  slide_numbers: 598
+flags_raised: [ZERO_STANDING, FOOTNOTE_UNRESOLVED, LABEL_CONFLICT, RENDERED_MAPPED, RESTATED_RENDERED, NO_ROWS]
+ids_in_structured: 1491
+ids_referenced: 1491
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Loop 1 (A5 M2): R1490 (p17 Mines existing capacity Nil, ZERO_STANDING) was earlier MISSING_FROM_STRUCTURED, now closed by A1; R1491 confirms p17 asterisk has no footnote. Range R001-R1491. Extended to R001-R1489 (760 + 366 CELL + 358 MAPS-TO + 5 CORRECTION), no orphans. Corrections change readings: R031/R032 are Production deltas and R028/R029 Sales deltas (not realisation; R030 has none); R096 is brand awareness, not premium share; R505 Fixed Cost, R506 Others; R502 splits into Volume nil (new ZERO_STANDING) and Power & Fuel 20; R754 asterisk is on Q2 FY26 net profit 87 (R1082), resolved; p18 Kutch QoQ prints without %. 18 rendered zero cells plus R502 Volume; 27 flagged rows counting old-row overlaps. Still open: R018 30% vs p21 (23)%, FY26 label R030/R729, p17 asterisk R750/R681 unresolved. Nine slides have no rows. DROPPED_SLIDE and ENTITY_CHANGE not assessable."

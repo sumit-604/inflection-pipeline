@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "GALLANTT"
+quarter: "q2fy27"
+doctype: "results (resultsrev, REVISED board outcome 21-Oct-2026)"
+model: claude-sonnet-5-5
+status: complete
+page_count: 15
+formfeed_count: 15
+line_count: 1259
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01 (EPS in Rs, not converted)"
+text_layer_present: true    # GlyphLessFont hidden OCR layer over scans; garbled on statement pages
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["2,3,4,5 standalone statements transcribed (170 dpi); 6 read; 7,8,9,10 consolidated cells diffed vs original: identical"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/gallantt-q2fy27/extracted/gallantt-resultsrev-q2fy27-fulltext.md"
+structured_path: "runs/gallantt-q2fy27/extracted/gallantt-resultsrev-q2fy27-structured.md"
+structured_counts:
+  number: 605
+  entity: 45
+  forward: 1
+  date: 38
+  qualifier: 55
+structured_id_range: "R001-R744"
+gate_a1: pass
+gap_note: ""
+diff_vs_original: "p1 differs (subject line date now OCTOBER 19, 2026; signature timestamp 2026.10.21 15:51:24); pp2-6 standalone (new); pp7-15 no differences"

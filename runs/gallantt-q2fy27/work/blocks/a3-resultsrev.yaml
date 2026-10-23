@@ -1,0 +1,53 @@
+stage: A3-forensics
+company: "GALLANTT"
+quarter: "q2fy27"
+doctype: "resultsrev"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/gallantt-q2fy27/work/forensics_resultsrev_gallantt_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3R-01", check: "F1", line: "L344; L348; L447; L449", classification: "AMBIGUOUS", implication: "Four FY26-nil lines live in H1 sit in the parent; FY26 standalone comparatives not restated; reclass vs FY26 understatement (carries A3-02)"}
+  - {id: "A3R-02", check: "F2", line: "L208; L1175-1177; L192; L1159", classification: "AMBIGUOUS", implication: "S-vs-C gap 1.94% to 0.00% (<5pp); audited FY26 C has no associate result, conflicting with H1FY26 comparative +169.37"}
+  - {id: "A3R-03", check: "F3", line: "L316-330 vs L1185-1199; L465 vs L1242; L1114", classification: "AMBIGUOUS", implication: "Suryalaxmi not dormant: H1 asset buy 535.08 (PPE, CWIP, 419.37 advance) funded by parent loan 92.36 to 603.32; nil revenue; likely land [INFERENCE]"}
+  - {id: "A3R-04", check: "F3", line: "L330 vs L1199; L470 vs L1247; L446 vs L1223", classification: "AMBIGUOUS", implication: "22.01 intra-group receivable eliminated but C interest received +22.01 and interest income unchanged; possible uneliminated capitalised intra-group interest [INFERENCE], 0.09% of H1 PBT"}
+  - {id: "A3R-05", check: "F6", line: "L56-61; L557-559; L523", classification: "AMBIGUOUS", implication: "Standalone exchange filing met 2 days late; newspaper extract unevidenced; dividend unpaid at 30-Sep; no project milestone despite parent CWIP +71.4%"}
+  - {id: "A3R-06", check: "F8", line: "L205-207; L340; L331", classification: "FORWARD-SIGNAL", implication: "S tax = C tax; FY26 634 bps deferred credit sits in parent; H1 ETR 25.73% (Q2 27.25%); do not carry FY26 ETR forward"}
+  - {id: "A3R-07", check: "F9", line: "L209-211", classification: "NEUTRAL-FACT", implication: "S OCI = C OCI; quarterly swing exceeds FY26 full year in size; immaterial; verify assumptions at AR"}
+  - {id: "A3R-08", check: "F10", line: "L213-214; L1183; L1177", classification: "AMBIGUOUS", implication: "No dilution; C EPS equals S EPS in every column so C comparative EPS ignores associate (3.62 vs 3.69; 10.82 vs 10.89); not corrected in revision"}
+  - {id: "A3R-09", check: "F11", line: "L335-337; L346; L557; L523", classification: "AMBIGUOUS", implication: "Parent other-equity roll-forward break 1,405.65 (Rs 0.58/share) identical to C; 4,825.62 dividend liability not visible; FY26 outflow 940.46 = Rs 0.39/share; waiver candidate [INFERENCE]"}
+  - {id: "A3R-10", check: "F12", line: "L317; L324; L327; L329; L464; L465; L468", classification: "FORWARD-SIGNAL", implication: "Parent carries 98.1% of capex, 99.9% of CWIP rise, inventory +21.4%, cash 108.56, CFO/PAT 49.3%; S loans include 603.32 intra-group; third-party book 26,578.46"}
+  - {id: "A3R-11", check: "F13", line: "L557-559; L39; L45", classification: "FORWARD-SIGNAL", implication: "No new board item; parent dividend cash call 4,825.62 due ~30-Oct-2026 vs cash 108.56; test in Q3 cash flow"}
+  - {id: "A3R-12", check: "F14", line: "L38; L75; L26; L215; structured L760-761", classification: "AMBIGUOUS", implication: "Revision fixed file assembly (pp2-6 duplicated consolidated) and last year's subject date; standalone reached BSE ~41h56m after meeting close; letter states no revision or reason; fourth hygiene item this quarter"}
+  - {id: "A3R-13", check: "F14", line: "L160-162; L448; L522; L986; L975; L1054", classification: "NEUTRAL-FACT", implication: "Item 13 skipped in standalone P&L too; interest paid equals interest expense to the paisa (plug); misspelling and pincode mismatch remain"}
+  - {id: "A3R-14", check: "F15", line: "L320 vs L1189; L467 vs L1244; L465 vs L1242; L526 vs L1255; L1094", classification: "AMBIGUOUS", implication: "Perimeter unchanged now; S-vs-C deltas place Suryalaxmi entry and associate exit both in FY26 [INFERENCE]; associate is not Suryalaxmi"}
+  - {id: "A3R-15", check: "F12", line: "RR L450, L466 (S); RR L1227, L1243 (C); R:L1126, R:L1142; context L467-469, L521, L1244-1246, R:L1143-1144", classification: "AMBIGUOUS", implication: "Loop 1 (A5 M3). Parent sold PPE in FY26 for 11,030.50 at a 24.36 loss (0.22%, at book; 6.2% of PPE). Same year: loan book built from nil to 29,742.32, investments exited 1,312.07, associate gone. Proceeds plus borrowings = 94.3% of the loan book [INFERENCE, size only]. Asset, buyer, related-party status, date and use of proceeds not disclosed. No mention in deck or call. No H1 repeat."}
+forward_signals: ["A3R-06", "A3R-10", "A3R-11"]
+ambiguous: ["A3R-01", "A3R-02", "A3R-03", "A3R-04", "A3R-05", "A3R-08", "A3R-09", "A3R-12", "A3R-14", "A3R-15"]
+commitments:
+  - {commitment: "Publish results extract in Business Standard and Hindi daily (Reg 47)", implied_date: "~2026-10-21", ref: "Cover letter L56-58", status_word: "initiated"}
+  - {commitment: "Full standalone and consolidated results on BSE/NSE websites", implied_date: "2026-10-19 (met 2026-10-21 16:56)", ref: "Cover letter L58-61", status_word: "completed"}
+  - {commitment: "Pay FY26 final dividend Rs 2/share (4,825.62 lakhs computed)", implied_date: "~2026-10-30 (s.127)", ref: "Note 5 L557-559; CF L523", status_word: "underway"}
+  - {commitment: "Capital project in parent CWIP 59,812.56", implied_date: "NOT FOUND", ref: "BS L317; CF L465", status_word: "underway"}
+  - {commitment: "Subsidiary asset build (Suryalaxmi, 627.35 assets)", implied_date: "NOT FOUND", ref: "L1114; L316-330 vs L1185-1199", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The revision adds the standalone set and leaves every consolidated cell unchanged. It fixes a file-assembly error: original pp2-6 duplicated the consolidated pages. It also fixes last year's subject-line date. The standalone set reached BSE about 42h after the meeting, and the letter gives no reason. It is clerical, not a restatement, but it is the fourth hygiene item this quarter. The S-vs-C gap is near zero. First, Suryalaxmi is not dormant. It bought 535 lakhs of assets in H1 on a 603 lakh parent loan. It appears to have joined the group in FY26 [INFERENCE]. Second, the audited FY26 consolidated carries no associate result and no associate carrying value, so the 169.37 in the H1FY26 comparative does not reconcile. Consolidated EPS equals standalone EPS in every column. A 22.01 intra-group item may be capitalised interest that consolidation did not eliminate [INFERENCE]. The other-equity break and the missing dividend liability sit in the parent. Loop 1 adds A3R-15: an undisclosed FY26 parent PPE sale of 11,030.50 at book. Closed: A3-03. Changed: seven. Open: nine. A4 must not quote A1's stale R697 context or fulltext L1258."

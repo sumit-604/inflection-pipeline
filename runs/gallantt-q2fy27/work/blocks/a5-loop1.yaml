@@ -1,0 +1,46 @@
+stage: A5-adversary
+company: "GALLANTT"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - claim: "Q2 volume loss is a one-off from the two Gorakhpur shutdowns; the call explains the volume loss (rev L258, L879, L960, L1102; flag 4)"
+    counter: "Kutch had no named Q2 shutdown (C:l158 'two shutdowns at Gorakhpur'; Gujarat shutdown is Q4, C:l397) yet fell QoQ: power -25.6%, DRI -18.0%, billets -18.9%, TMT output -18.8%, TMT sales -11.9%; Kutch TMT output fell faster than shut Gorakhpur's (-17.3%). Kutch = ~30-37% of the group QoQ volume fall (8/27 KT TMT sales, 17/52 KT billets, 13/35 KT TMT output) [computed]. Also down YoY (TMT sales -9.2%, billets -14.1%); management's only Kutch reason is the lean monsoon (C:l363-364), which cannot explain a YoY fall."
+    source_line: "P:R803-R806, R833-R835, R848-R851, R858-R859, R863-R865, R923-R926; C:l158, l363-364, l397"
+    type: MISSING
+  - claim: "Capacity step is the main new positive; integration protects the spread; first full quarter lifts volume at a steady margin (rev L961, L1149, L1164)"
+    counter: "Gorakhpur adds capacity at every stage except sponge iron (C:l133-135; cc-R156). It already uses 0.91-0.97 t own DRI per billet tonne (FY26 577.6 made, 110.4 sold, 514.3 billets; Q1 FY27 148, 10, 142). At 178-188 KT billets a quarter it needs ~162-183 KT DRI vs ~144-148 KT made [computed; INFERENCE: constant charge mix; DRI capacity NOT FOUND]. Gap filled by diverting merchant DRI (32 KT at Gorakhpur in Q2, a revenue prop) or buying metallics whose prices 'rose sharply' (C:l129-130): incremental tonnes are less integrated than the base."
+    source_line: "C:l129-130, l133-135; P:R828-R829, R843-R844, R888-R889, R951, R960, R987"
+    type: MISSING
+findings_by_type:
+  factual: []
+  missing:
+    - "M10 (A4, MEDIUM): graft the Kutch volume counter to the 'one-off Gorakhpur shutdowns' reading into Step 2 bear and separating observation (Kutch TMT sales vs 67 KT, P:R924), Step 3 distortions L284, 7A L879, Section C L960, flag 4/5, brief L1102, Q9"
+    - "M11 (A4, LOW): graft the Gorakhpur sponge-iron exclusion (C:l133-135) and DRI-gap counter into 6D Gorakhpur killing evidence, competition bear L1150, Q1 FY28 bear fork L1164, Q33"
+    - "M12 (A3 then A4, LOW): deck errors missing from A4's six-error list: (a) EBITDA '45.7% QoQ' (P:R015, R086, R373, R479, R1101) ties only to Q1 EBITDA incl. other income 203.40 (-45.66%), not the deck's own 185 (P:R1092; -40.3%); (b) p23 margin bars FY25 17.0% / FY26 18.0% (P:R1106-R1107) vs own cells 710/4,293 = 16.5% and 776/4,419 = 17.6%; add to deck-error list, Q10, flag 19, monitorable 24"
+  contradiction:
+    - "C1 (A3 then A4, MEDIUM): call Kutch rolling-mill utilisation 66% to 68% (C:l142-143; cc-R026/R027) vs deck Kutch TMT output 69 to 56 KT, -18.8% QoQ (P:R863-R865) and TMT sales 67 to 59 KT (P:R923-R925); 66% x 56/69 = 53.6% [computed]; A4 carries '+2 pp delivered' (rev L546), 'MAINTAINED' (L844), '66% to 68%' (L443, L633, L696) against its DECK > ASR order (rev L8)"
+  style:
+    - "S9: rev L647 claim 33 carries Q2 FY26 '12.91%' without A2 ASR_SUSPECT (cc-R046); 135/1,012.75 = 13.33%; deck (368) bps implies 13.32%"
+    - "S10: Kutch solar tracker Rs 39.58 Cr spent of Rs 50.00 Cr, Rs 10.42 Cr balance (P:R785-R787) supports Sidhpur 'in commissioning phase' (C:l302); C:l302 says 22 MW vs 18 MW (cc-R104 ASR_SUSPECT)"
+    - "S11: rev L745 Q3a graded B; the import-effect half (C:l285-286) got demand data only (C:l287-291)"
+    - "S12: A1 concall context notes cite source lines (file line minus 17), e.g. cc-R046 'line 175' = C:l192, cc-R084 'line 281' = C:l298; recurrence of prior S7"
+loop_back_to: "A3"
+gap: "A3: (C1) missed that the call's Kutch rolling-mill utilisation 66% to 68% (C:l142-143) conflicts with deck Kutch TMT output 69 to 56 KT, -18.8% QoQ (P:R863-R865) and sales 67 to 59 KT (P:R923-R925); A4 carries '+2 pp delivered' (rev L546, L696, L844). (M12) deck EBITDA '45.7% QoQ' (P:R015, R086, R373, R479, R1101) ties only to Q1 EBITDA incl. other income 203.40, not the deck's own 185 (-40.3%); p23 margins FY25 17.0% / FY26 18.0% (P:R1106-R1107) vs 16.5% / 17.6% from its own cells. A4: graft C1 and M12, plus (M10) the Kutch volume counter to the 'one-off Gorakhpur shutdowns' reading (P:R803-R865, R923-R926; C:l158, l363-364) and (M11) the Gorakhpur sponge-iron exclusion and DRI gap (C:l129-135; P:R828-R829, R888-R889, R951, R960, R987). Prior M1-M9 all CLOSED; arithmetic clean; verdict and cash class unaffected."
+style_notes:
+  - "S9: mark the Q2 FY26 12.91% cell ASR_SUSPECT (rev L647)"
+  - "S10: optional Kutch solar tracker evidence for Sidhpur (P:R785-R787); note the 22 vs 18 MW ASR gap"
+  - "S11: consider grade C for Q3a, or note the deflected import question"
+  - "S12: fix the A1 concall context-note line convention (offset 17)"
+analyst_note: "Re-audit after loop 1. All nine prior MISSING items (M1-M9) are CLOSED: the resultsrev ledger holds R744, the p17 'Nil' cell is R1490, and A4 carries the PPE sale, the R018 deck error and the absorption, promoter, mines, net-debt and Sidhpur grafts. The brief passes. Coverage re-counts clean at 449, 744, 1,491 and 263 IDs, and every derived metric in A4's tables re-foots. The new gaps come from the deck's plant split. Kutch had no named Q2 shutdown, yet its TMT output fell 19% QoQ and its TMT sales 12%. Kutch carries about a third of the group's QoQ volume fall. That contradicts the call's Kutch mill claim of 66% to 68%, which A4 carries as '+2 pp delivered'. It also weakens A4's line that the call explains the volume loss. Two smaller grafts follow. Gorakhpur adds no sponge iron, so the new tonnes are less integrated. The deck's '45.7% QoQ' EBITDA fall and its FY25-FY26 margin bars do not tie to its own cells. Verdict, cash class and arithmetic are unaffected. A4 called loop 1 final, so the orchestrator decides whether to loop or carry these as open items."

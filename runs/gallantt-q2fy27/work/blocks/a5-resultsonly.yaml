@@ -1,0 +1,45 @@
+stage: A5-adversary
+company: "GALLANTT"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Revenue Rs 1,145.89 Cr, +13.15% YoY (A4 L152, L166, brief L506-L507)", counter: "Traded purchases rose Rs 93.76 Cr YoY, 70.4% of the Rs 133.14 Cr revenue rise. Revenue less traded purchases Rs 1,047.03 Cr: +3.9% YoY vs Rs 1,007.65 Cr, -7.9% QoQ vs Rs 1,136.88 Cr [INFERENCE: traded goods resold in-quarter near cost]. Q2 FY26 base 10.2% below derived Q1 FY26; H1 FY27 YoY +7.06%; TTM vs FY26 +3.42%.", source_line: "L1057, L1061 (R072-R077, R096-R098)", type: MISSING}
+  - {claim: "Low leverage: gross D/E 0.17x; net cash Rs 99.92 Cr if loans recoverable (A4 L263-L264, L281)", counter: "FY26 loan outflow (29,649.96) equals the whole 31-Mar-2026 loan balance, so the book was built in FY26, the year the group borrowed Rs 170.02 Cr and sold PPE for Rs 110.30 Cr; H1 FY27 recovered only Rs 30.71 Cr. Other current financial assets of Rs 326.09 Cr (+Rs 19.14 Cr in H1; holds accrued interest by tie) are absent from A4's liquidity table and interest attribution. Undisclosed loans plus other current financial assets = Rs 591.87 Cr = 17.0% of equity; cash Rs 1.12 Cr vs current borrowings Rs 505.69 Cr.", source_line: "L1097, L1098, L1105, L1111, L1122, L1132, L1142, L1144, L1146, L1149 (R258-R261, R330, R350, R353, R354)", type: MISSING}
+  - {claim: "FY26 CFO/PAT 1.24x as healthy baseline and green bar (A4 L242, L392, L563)", counter: "FY26 CFO Rs 602.26 Cr includes a Rs 118.59 Cr inflow from a decrease in current financial assets; without it FY26 CFO = Rs 483.68 Cr, CFO/PAT 1.00x, CFO/Op EBITDA 67.5%.", source_line: "L1132, L1140, L1076 (R330, R346, R191)", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1 (A4): A4 L193, brief L526 [FILED, computed] and Step 6.5 L354 claim Q2 is the weakest quarter / seasonal low in both years. Unsupported: Q3 and Q4 FY26 are not split (H2 average 14.84% allows one H2 quarter below 12.99%) and FY27 has two quarters. Filed evidence shows only Q2 FY26 12.99% < Q1 FY26 21.89% and < H2 FY26 avg 14.84%; Q2 FY27 9.57% < Q1 FY27 16.16%."
+  missing:
+    - "M1 (A4): Step 2 revenue row, diagnostic 1 and summary line 2 lack the qualifier that traded purchases (+Rs 93.76 Cr YoY, L1061) equal 70.4% of the Rs 133.14 Cr revenue rise (L1057); ex-traded proxy +3.9% YoY, -7.9% QoQ; weak Q2 FY26 base; H1 YoY +7.06%."
+    - "M2 (A4): Step 5, Q1, brief L539 and flags 8-9 omit that the Rs 296.50 Cr loan book was originated in FY26 (L1144 FY26 = L1097 31-Mar balance) alongside Rs 170.02 Cr borrowing (L1149) and a Rs 110.30 Cr PPE sale (L1142), and omit Rs 326.09 Cr other current financial assets (L1098); brief L539 tags the interest-income attribution FILED when it is inference."
+    - "M3 (A4): Step 5 CFO/PAT row, 8B row 3 and forward-map L563 use FY26 1.24x without noting the Rs 118.59 Cr current-financial-asset release in FY26 CFO (L1132); ex-release 1.00x."
+  contradiction: []
+  style:
+    - "S1: QoQ op margin -659 bps from rounded inputs; unrounded -658 bps (A4 L154, L167)."
+    - "S2: Bridge text current GM 20.9988%; unrounded 20.99895%; bridge rows correct (A4 L205)."
+    - "S3: Q1 FY26 GM 31.54%; unrounded 31.5450% (A4 L183)."
+    - "S4: A4 L60 says four lines went live; Q12 (L425) names three; add fair value gain on investment Rs 0.65 Cr (L1123, R311)."
+    - "S5: Symmetry: CFO/PAT with interest received (L1146) added back is 0.65x H1 FY27 and 1.33x FY26; show as a second view, classification unchanged."
+    - "S6: A2 analyst note says 6 nil-subsidiary zero-standing cells; ledger tags 4 (R434, R435, R438, R439); total 27 is correct."
+loop_back_to: "A4"
+gap: "A4 to graft three surviving bear counters and fix one factual claim: M1 revenue-growth traded-goods qualifier (Step 2, summary line 2); M2 FY26 loan origination from nil plus Rs 326.09 Cr other current financial assets (L1098) and the re-tagged interest attribution (Step 5, Q1, brief L539, flags 8-9); M3 FY26 CFO/PAT 1.00x ex Rs 118.59 Cr L1132 release (Step 5, 8B row 3, forward map L563); F1 replace the 'Q2 weakest of its year / seasonal low' claim at L193, L526, L354 with what the filing shows."
+style_notes:
+  - "S1: QoQ op margin -659 bps vs unrounded -658 bps."
+  - "S2: current GM 20.9988% vs unrounded 20.99895%."
+  - "S3: Q1 FY26 GM 31.54% vs unrounded 31.5450%."
+  - "S4: name the fourth newly live line (fair value gain Rs 0.65 Cr, L1123) in Q12."
+  - "S5: show interest-adjusted CFO/PAT (0.65x H1 FY27; 1.33x FY26) as a second view."
+  - "S6: A2 analyst note miscounts nil-subsidiary cells (6 vs 4); total 27 correct."
+analyst_note: "All 449 rows reconcile and my fresh counts match A2 in every category. Every A4 derived figure recomputes within rounding from L1057-L1155, so the loop is for content, not arithmetic. A4's blanket 'read all 449' meets formal coverage, but six uncited rows hold facts that change the reading. R354 shows the FY26 loan outflow equals the whole 31-Mar-2026 book. R350 shows a Rs 110.30 Cr FY26 asset sale. R330 shows a Rs 118.59 Cr release inside FY26 CFO. R260/R261 show a Rs 326.09 Cr undisclosed pool, larger than the loans. A4 can graft all of this without an A3 re-run, because the cells are already in its inputs. I did not read A3, so whether A3 saw these rows is unchecked. F1 is the only FACTUAL finding. The seasonality line reads as filed fact but rests on Q3/Q4 FY26, which the filing does not split. The filing has no acquisition, so the acquisition probe is N/A. The PROCEED WITH FLAGS verdict stands. The grafts sharpen flags 8-9 and lower the 8B green bar."

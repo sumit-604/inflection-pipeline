@@ -1,0 +1,67 @@
+stage: A5-adversary
+company: "GALLANTT"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows:
+    - "results R349/R350 = resultsrev R307/R308 (R:L1142, RR:L466): FY26 PPE sale proceeds Rs 110.30 Cr, A2-noted at led-rr L347-348, absent from A4"
+    - "presentation R018 (P:p6 l123 'EBITDA per tonne 7% YoY. 30% QoQ'): A2 CONFLICT vs p21 '(23)%' left open (led-pres L62, L210, L255), absent from A4"
+  missing_from_ledger:
+    - "resultsrev R744 (st-rr L757, A1 CORRECTION to R697): structured now R001-R744 and QUALIFIER 55 (st-rr L4-5); ledger still 743 and QUALIFIER 54 (led-rr L3, L14)"
+    - "presentation P:p17 l369 'Nil' (Mines, existing capacity): 8-cell table, structured holds 7 (R152-R158); no MISSING_FROM_STRUCTURED entry (led-pres L215-216)"
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - claim: "Capacity +23.7% from ~10-Nov-2026 is the main new positive (rev L946, L1088, L435, L552, L1140)"
+    counter: "The step lands at Gorakhpur (C:l87-88), a 6 lakh MTPA plant (P:p17 l356), so +39% there [INFERENCE]. 85-90% (C:l349-352) implies ~178-188 KT billets a quarter vs a 142 KT Q1 peak (P:R844). Home demand ~+7% (C:l288); share already >25% (C:l146-147); own TMT sales +1.5% Gorakhpur and +1.6% total in FY26 (P:R1005-R1006, R1011-R1013); Kutch mill 66% to 68% after a focus quarter (C:l142-143, l363-364); post-enhancement cell has an unresolved asterisk (P:p17 l371, R750). A4 bear forks cover timing only, not absorption or price."
+    source_line: "C:l87-88, l146-147, l288, l349-352; P:p17 l356, l371; P:R844, R1005-R1006, R1011-R1013"
+    type: MISSING
+  - claim: "Promoters bought about 0.9 pp in a falling quarter; the one clear bull datum (rev L1066, L1089, L1012, L368, L476, L794)"
+    counter: "The extract shows a percentage change in an unaudited deck table that sums to 100.09% (P:p37 l755-758) under an 'indicative and provisional' disclaimer (P:p3 l93), not a purchase. Share count unchanged (P:R588-R589); mechanism (open market, off-market transfer, reclassification) undisclosed. If a purchase, 0.86-0.95 pp = 20.75-22.92 lakh shares = ~Rs 112-158 Cr at Rs 537.90-690.65 [computed], in a half when company cash fell to Rs 1.12 Cr (R:L1095) and Rs 265.78 Cr sat in loans to unnamed borrowers (R:L1097)."
+    source_line: "P:p37 l755-762; P:p3 l93; P:R582-R594; R:L1095, L1097"
+    type: MISSING
+  - claim: "Iron ore mines add ~Rs 2,000/t EBITDA (deck P:p13 l290; A4 rev L437, L520, L920 records it without a multiple)"
+    counter: "Acquisition probe: Rs 249 Cr mine plan (P:R767; H2 Rs 240 Cr, C:l311) vs claimed ~Rs 153-246 Cr a year (Rs 2,000/t on 765.8 KT sales or 12.29 lakh MT capacity, P:R1011, R157) = 1.0-1.6x, a ~1-1.6 year payback [computed]. Benefit is a management estimate with shifting scope (C:l165-167 vs l276-277), dated FY28 (C:l157) vs FY30 (P:p9 l194), full only a year or two post FY28 (C:l278-281); Rs 1,809 Cr of the programme is unitemised (P:R776, R791); cash leaves in H2 FY27 while clearances are underway (C:l157, l311)."
+    source_line: "P:p13 l290-291; P:R767-R769, R776, R791, R1011, R157; P:p9 l194; C:l157, l165-167, l276-281, l311"
+    type: MISSING
+findings_by_type:
+  factual: []
+  missing:
+    - "M1 (A2, LOW): resultsrev ledger stale; R744 not enumerated; header/count test 743 and QUALIFIER 54 vs structured R001-R744 and QUALIFIER 55 (st-rr L4-5, L757; led-rr L3, L14)"
+    - "M2 (A2, LOW): P:p17 l369 'Nil' existing-mines cell missing from structured; A2 recorded no MISSING_FROM_STRUCTURED (st-pres L160-166; led-pres L215-216)"
+    - "M3 (A3 then A4, HIGH): FY26 PPE disposal Rs 110.30 Cr, loss Rs 0.24 Cr (R:L1126, L1142; RR:L450, L466) absent from A4; same year as Rs 296.50 Cr loan book from nil (R:L1144) and Rs 13.13 Cr investment exit (R:L1143); need asset, buyer, related-party status, use of proceeds"
+    - "M4 (A3 then A4, LOW): open A2 CONFLICT R018, p6 EBITDA/t '30% QoQ' vs p21 '(23)%', computed -23.2% (P:p6 l123, P:p21 l457, P:R1097-R1098; led-pres L255); not in A4 deck-error lists (rev L1007, L981)"
+    - "M5 (A4, MEDIUM): graft the Claim 1 capacity-absorption counter"
+    - "M6 (A4, MEDIUM): graft the Claim 2 promoter counter; replace 'bought'/'buying' with 'holding rose, mechanism undisclosed'; add the Rs 112-158 Cr scale to Q33"
+    - "M7 (A4, MEDIUM): graft the mines acquisition multiple 1.0-1.6x and its bear qualifiers into 6D, Q15, 8D"
+    - "M8 (A4, LOW): deck Net debt/EBITDA 0.64x uses half-year EBITDA (190.58 / ~296-298); 0.30x on TTM operating EBITDA 632.84; add to flag 17 and monitorable 24 (P:p6 l132-137; C:l192)"
+    - "M9 (A4, LOW): deck p17 solar existing 7 MW and post 85 MW (= 7 + 18 + 60) imply Sidhpur 18 MW is not yet existing [INFERENCE]; add to the Sidhpur conflict (P:p17 l367-370; rev L686, L522)"
+  contradiction: []
+  style:
+    - "S1: rev L584 '16 of 24 management Q&A turns'; Q&A management turns are 21 on A2's table; 24 includes T05-T07"
+    - "S2: rev L187, L529 'Rs 6.26 Cr covers 99.7%' mixes bases (6.25 = 99.7%; 6.26 incl. equity = 99.8%); rounding level"
+    - "S3: rev L752 two congratulating analysts; a third at C:l373"
+    - "S4: rev L662, L736 H2 split 240 + 170 = 410 vs 400 on the ASR text (C:l310-311); tracker supports A4's reading"
+    - "S5: rev L438, L611 coal block Aug-2026 vs 'just allotted last month' (C:l376)"
+    - "S6: rev L375 'not by CFO of Rs 90.82 Cr'; CFO funded 32.6%; say 'beyond CFO'"
+    - "S7: ledger/A1 note-column anchors off (led-cc L81, L116; st-cc L30, L128); A4 cites correct lines"
+    - "S8: concall rhetorical counts 'two decades' (C:l113), 'four pillars' (C:l123) not extracted while 'three anchors' (R011) was; no figure carried"
+loop_back_to: "A2"
+gap: "A2: (M1) resultsrev ledger lacks R744 and carries a stale 743/QUALIFIER 54 count test; (M2) P:p17 l369 'Nil' existing-mines cell missing from structured, not recorded as MISSING_FROM_STRUCTURED. A3: (M3) no forensic on the FY26 PPE disposal Rs 110.30 Cr (R:L1142, RR:L466); (M4) open CONFLICT R018 p6 '30% QoQ' vs p21 '(23)%' unresolved. A4: graft surviving bear counters M5 (Gorakhpur absorption), M6 (promoter rise not evidenced as a purchase, Rs 112-158 Cr), M7 (mines 1.0-1.6x capex-to-claimed-EBITDA), plus M8 (deck net debt/EBITDA on half-year EBITDA) and M9 (p17 solar 7/85 MW on Sidhpur). All MISSING; arithmetic clean."
+style_notes:
+  - "S1: relabel '16 of 24' as management turns, or say 16 of 21 Q&A turns"
+  - "S2: pick one basis for the subsidiary funding share (99.7% or 99.8%)"
+  - "S3: third congratulating analyst at C:l373"
+  - "S4: note the Rs 10 Cr ASR gap in the H2 capex split"
+  - "S5: note the coal block award-date conflict inside the call"
+  - "S6: 'beyond CFO' in place of 'not by CFO'"
+  - "S7: fix ledger and A1 note-column line anchors"
+  - "S8: align the A1 convention for rhetorical counts"
+analyst_note: "Arithmetic is clean: every derived metric in A4's tables re-foots from filed lakhs and deck cells within rounding, and the five-part brief passes the gate. The verdict rests on coverage and on surviving bear counters, all MISSING. Two coverage gaps are mechanical: the resultsrev ledger predates A1's R744 correction row, and A1 dropped the p17 'Nil' existing-mines cell. The one material miss is the FY26 sale of PPE for Rs 110.30 Cr (R:L1142). It is unexplained and absent from A4, in the year the Rs 296.50 Cr loan book appeared and the associate vanished. Adversarially, the capacity bull ignores absorption: Gorakhpur grows about 39% on the call's own plant split, in a market growing about 7%, after own TMT sales grew 1.6% in FY26. The promoter 'buying' is a percentage change in a deck table, not an evidenced purchase, and would be worth Rs 112-158 Cr if it was one. The mines claim implies a 1-1.6 year payback that nothing in the extract costs. The price-recovery bull holds up only because A4 already carries the coal counter. Re-runs can stay narrow: A2 on two ledgers, A3 on two rows, A4 on grafts."

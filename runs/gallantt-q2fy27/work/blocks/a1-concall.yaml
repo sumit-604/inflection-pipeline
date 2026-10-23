@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "GALLANTT"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 1   # text file; 419 of 419 timestamped segments carried
+formfeed_count: 0
+line_count: 444
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 / H1 FY27"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/quarterly-gallantt-call-q2fy27-7b3ed0/runs/gallantt-q2fy27/extracted/gallantt-concall-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/quarterly-gallantt-call-q2fy27-7b3ed0/runs/gallantt-q2fy27/extracted/gallantt-concall-q2fy27-structured.md"
+structured_counts:
+  number: 127
+  entity: 44
+  forward: 45
+  date: 28
+  qualifier: 19
+structured_id_range: "R001-R263"
+gate_a1: pass
+gap_note: ""

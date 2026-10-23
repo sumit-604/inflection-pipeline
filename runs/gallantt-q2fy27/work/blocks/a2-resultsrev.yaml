@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "GALLANTT"
+quarter: "q2fy27"
+doctype: "resultsrev"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/gallantt-q2fy27/work/ledger_resultsrev_gallantt_q2fy27.md"
+counts:
+  notes: 15
+  line_items: 190
+  zero_standing: 46
+  agenda_items: 1
+  auditor_paras: 52
+  entities: 1
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, NEW_STANDALONE, CARRIED_UNCHANGED, DATE_FIXED_VS_ORIGINAL, TIMESTAMP_CHANGED_VS_ORIGINAL, SUPERSEDED_ID, STANDALONE_STATEMENT_ABSENT_RESOLVED, AUDITOR_CHANGE, UDIN_DIFFERS, STANDALONE_CONSOL_DIFF, DIVIDEND_PAID_NIL_POST_AGM]
+ids_in_structured: 744
+ids_referenced: 744
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Revised 21-Oct filing: new content is page 1 (subject date fixed to 19-Oct-2026, signature 21-Oct 15:51) and standalone pp2-6 (R027-R358: 94 distinct lines, 284 cells, 19 ZERO_STANDING, 7 notes). R359-R743 carried unchanged (original id + 294). Original flags STANDALONE_STATEMENT_ABSENT and DATE_INCONSISTENCY are resolved. Standalone H1FY27 cash flow shows dividend paid nil although Rs 2/share was approved at the 30-Sep-2026 AGM (R350,R355,R328), so payment falls after period end; A3 should test against Q3. Standalone FY26 PAT 48,427.31 vs consolidated 48,426.70 (0.61 lakh gap), no associate line in standalone. Counts: line_items 94 new + 96 carried; cells 284 + 296."

@@ -1,0 +1,73 @@
+stage: A3-forensics
+company: "GALLANTT"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/quarterly-gallantt-call-q2fy27-7b3ed0/runs/gallantt-q2fy27/work/forensics_presentation_gallantt_q2fy27.md"
+ledger_reconciled_pct: 100   # 1491 of 1491 IDs (rendered cell map addendum plus R1490-R1491)
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3P-01", check: "F14", line: "p6 l123; p21 l457; p23 l511; R018, R1096-R1098, R1485", classification: "NEUTRAL-FACT", implication: "DECK ERROR (closes A2 CONFLICT R018): p6 prints EBITDA/t '30% QoQ' (down arrow); the deck's own captions give -23.2% (8,010.40 to 6,148.56), as p21 prints; 30% is the inverted base. Carry -23%."}
+  - {id: "A3P-03", check: "F16", line: "p23 l499, l505, l511; p21 l451; R1091-R1095, R1103-R1107", classification: "AMBIGUOUS", implication: "EBITDA basis varies: FY26 776 includes other income, Q1 185 excludes it, the -45.7% QoQ implies an incl-OI base, Q2 FY26 135 ties to neither; FY26 8,785/t overstated by about Rs 675/t; FY margin bars 17.0/18.0 vs 16.5/17.6 on the deck's own EBITDA."}
+  - {id: "A3P-04", check: "F16", line: "p24 l539; p6 l121, l127; R853-R856, R1487", classification: "AMBIGUOUS", implication: "EBITDA/t and the bridge divide all revenue, trading included, by billet production tonnes (180/231/204 KT); the +13,964/t NSR bar is not realisation."}
+  - {id: "A3P-05", check: "F17", line: "p18 l405, l402, l391, l401, l399; R928-R932, R898-R902, R913-R914", classification: "CONFIRMATORY-NEGATIVE", implication: "Answers review Q4 bear: TMT sales 164 vs 192 KT QoQ (-14.6%), vs 176 KT YoY (-6.8%); revenue held up on DRI (46 vs 34 KT YoY), pellet and traded sales; billet sales fell 27 to 20 KT."}
+  - {id: "A3P-06", check: "F6", line: "p10 l206-208; p11 l231-233", classification: "AMBIGUOUS", implication: "'No incremental debt' conflicts with filed borrowings +Rs 44.28 Cr in H1 and cash at Rs 1.12 Cr; Rs 2,347 Cr balance to FY30 implies external funding at the H1 CFO pace."}
+  - {id: "A3P-07", check: "F6", line: "p16 l336, l351, l332-338; R764-R797", classification: "FORWARD-SIGNAL", implication: "Tracker itemises Rs 1,191 Cr (39.7%) of the Rs 3,000 Cr plan; the split % are of 1,191; Rs 1,809 Cr has no component or date."}
+  - {id: "A3P-08", check: "F6", line: "p9 l195; p17 l360-362; p16 l331; R770-R772", classification: "FORWARD-SIGNAL", implication: "60 MW Prayagraj solar due Q4 FY27 with Rs 3.74 Cr of 175.00 spent (2.1%); slip risk; watch the Q3 tracker. Sidhpur is a cost benchmark only, not a delivery benchmark."}
+  - {id: "A3P-09", check: "F6", line: "p9 l196; p17 l371-372; R764-R766, R779-R781, R1491", classification: "AMBIGUOUS", implication: "12.29 lakh MT debottleneck 'About to start' Q3 FY27 with budget 96.6%/53.8% spent; partly answers the CWIP question; COD unclear; asterisk has no footnote (render-confirmed)."}
+  - {id: "A3P-10", check: "F6", line: "p16 l334, l349; p17 l370-372; p3 l83; R773-R775, R788-R790", classification: "AMBIGUOUS", implication: "Thermal spent 155.35 vs plan 151.00 (overrun 2.9%); +31 MW to 160 MW has no date in the commitment table."}
+  - {id: "A3P-11", check: "F6", line: "p9 l194; p13 l290; p17 l371; R767-R769, R1490", classification: "FORWARD-SIGNAL", implication: "Mines operational FY30 (existing 'Nil') with 3.3% of the RM budget spent; Rs 2,000/t target is a management estimate; 70,00,000 MT post-enhancement mining exceeds own need."}
+  - {id: "A3P-12", check: "F11", line: "p10 l215-216; p6 l134-137; R1115-R1126", classification: "NEUTRAL-FACT", implication: "D/E 0.289 = total liabilities/equity (borrowings basis 0.170); ROCE 7.09% and ND/EBITDA 0.64x are six-month figures; the p23 ROCE chart is EBITDA-based (FY26 23% vs 18.0% on the p10 method); A17, do not feed forward."}
+  - {id: "A3P-13", check: "F16", line: "p23 l515-519; R1110-R1114", classification: "NEUTRAL-FACT", implication: "Deck WC = total current assets less current liabilities (Q2 FY27 1274, FY26 1327), including bank, loans and other financial assets; trade WC is 679 Cr; A17 rupee WC, do not feed forward."}
+  - {id: "A3P-14", check: "F16", line: "p6 l125-127; R1485", classification: "AMBIGUOUS", implication: "Only realisation is labelled FY26 on a Q2 FY27 slide, carries no delta, and ties to no FY26 basis; Q2 FY27 realisation NOT FOUND."}
+  - {id: "A3P-15", check: "F16", line: "p17 l369-372 (R1490); p6 l137; p9 l193; p13 l281; concall l152", classification: "AMBIGUOUS", implication: "Render settles p17: existing solar 7 MW, post-enhancement 85 MW = 7+18+60, so Sidhpur is outside existing capacity; the call says it 'is completed and set to resume operations by November 26'; the deck's 'Commissioned Jul 2026'/'Delivered' is contradicted; ask first generation date, stoppage cause, Q2 output, PPE/D&A treatment; '(per Q1 FY2 deck)' remains a drafting error."}
+  - {id: "A3P-16", check: "F16", line: "p9 l197-199", classification: "AMBIGUOUS", implication: "+1000 bps to a 9.64% margin implies a Q3 FY23 base near -0.4%; likely a stale carry-over."}
+  - {id: "A3P-17", check: "F14", line: "p18 l383; R798-R812", classification: "NEUTRAL-FACT", implication: "Power total printed 45/54 vs sums 90/109; the true QoQ is -22.4%, not -61%; 'MWH' unit implausible."}
+  - {id: "A3P-18", check: "F14", line: "p21 l457", classification: "NEUTRAL-FACT", implication: "PAT margin YoY and QoQ bps are swapped: YoY is (333), QoQ is (551)."}
+  - {id: "A3P-19", check: "F14", line: "p37 l756-758", classification: "NEUTRAL-FACT", implication: "30-Sep shareholding sums to 100.09%; the promoter increase is 0.86 or 0.95 pp."}
+  - {id: "A3P-20", check: "F10", line: "p37 l756, l760, l761", classification: "FORWARD-SIGNAL", implication: "No dilution; promoter stake +0.86-0.95 pp (about 21-23 lakh shares, Rs 112-158 Cr) bought as the price fell 22.1%; acquirer, funding and pledge undisclosed."}
+  - {id: "A3P-21", check: "F14", line: "p18 l385; p13 l284; p19 l418; R813-R817, R942", classification: "AMBIGUOUS", implication: "Q2 pellet output 228 KT = 115% of 198 KT quarterly nameplate; capacity understated or Q1 shutdown catch-up."}
+  - {id: "A3P-22", check: "F1", line: "p18 l385, l399; p19 l418; p16 l341; R782-R784, R818-R822, R878-R884, R945-R947, R981-R983, R502, R1490", classification: "NEUTRAL-FACT", implication: "Kutch pellet and raw-material nils are structural (no plant, no RM build planned); existing mines 'Nil'; Gorakhpur pellet sales restarted from nil; bridge Volume bar nil while billet output fell 12% YoY, so deleverage sits in Fixed Cost -670 and Others -444."}
+  - {id: "A3P-23", check: "F7", line: "p3 l93, l83; p13 l290", classification: "NEUTRAL-FACT", implication: "Disclaimer marks all deck figures 'indicative and provisional'; deck-only numbers rank below filed figures; no prior deck to diff."}
+  - {id: "A3P-24", check: "F16", line: "p12 l274-276, l256-258; R761-R763, R1486", classification: "AMBIGUOUS", implication: "Premium-grade share is an icon with no values (render confirmed); ~35% is brand awareness, 2-3% is the premium vs unbranded peers; mix-shift claim unquantified."}
+  - {id: "A3P-25", check: "F16", line: "p34 l707, l713-715; p35 l743", classification: "NEUTRAL-FACT", implication: "Stale policy items (200-day safeguard from Apr-25, FY26 budget); safeguard status PENDING LIVE VERIFICATION."}
+  - {id: "A3P-26", check: "F17", line: "p22 l460, l492; p37 l755-762; p15 l307-314", classification: "AMBIGUOUS", implication: "Deck answers 1 of 17 review questions, partly answers 3, is silent on 13 (all governance and balance-sheet items); silence count 1; carry to the call."}
+  - {id: "A3P-27", check: "F14", line: "p22 l479; R1075, R1076, R1488", classification: "NEUTRAL-FACT", implication: "DECK ERROR: Q1 FY27 tax printed 411 vs filed Rs 41.15 Cr; the printed -45% QoQ matches 41."}
+deck_errors: ["A3P-01", "A3P-15", "A3P-17", "A3P-18", "A3P-19", "A3P-27"]
+withdrawn: ["A3P-02"]          # 2026-10-23: render R1485 shows down arrows on every p6/p23 delta
+amended: ["A3P-01", "A3P-03", "A3P-12", "A3P-15", "A3P-22", "A3P-24"]
+added: ["A3P-27"]
+forward_signals: ["A3P-07", "A3P-08", "A3P-11", "A3P-20"]
+ambiguous: ["A3P-03", "A3P-04", "A3P-06", "A3P-09", "A3P-10", "A3P-14", "A3P-15", "A3P-16", "A3P-21", "A3P-24", "A3P-26"]
+commitments:
+  - {commitment: "Capacity to ~12.3 lakh MT (12,29,000 MT debottlenecking)", implied_date: "Q3 FY27", ref: "p9 l196; p17 l371-372", status_word: "About to start"}
+  - {commitment: "Solar 60 MW Prayagraj", implied_date: "Q4 FY27", ref: "p9 l195; p17 l360-362; p16 l331", status_word: "In progress"}
+  - {commitment: "Iron ore mines operational", implied_date: "FY30", ref: "p9 l194", status_word: "In progress"}
+  - {commitment: "Rs ~2,000/t EBITDA gain from mines-to-mill linkage", implied_date: "FY30", ref: "p10 l212-214; p13 l290", status_word: "targeted (management estimate)"}
+  - {commitment: "Total capex Rs 3,000 Cr", implied_date: "FY2029-30", ref: "p11 l231-233; p6 l137-141", status_word: "initiated (Rs 652.54 Cr spent)"}
+  - {commitment: "Self-funded growth, no incremental debt", implied_date: "ongoing", ref: "p10 l204-208", status_word: "claimed (conflicts with filed borrowings)"}
+  - {commitment: "Post-enhancement power 160 MW, mines 70,00,000 MT", implied_date: "NOT FOUND", ref: "p17 l371-372; R1491", status_word: "not stated"}
+  - {commitment: "Solar 18 MW Sidhpur", implied_date: "deck Jul 2026; call restart by November 26 (ASR_SUSPECT)", ref: "p6 l137; p9 l193; p17 l369-372 (R1490); concall l152", status_word: "disputed (deck 'Commissioned'/'Delivered'; p17 and call: not yet operating)"}
+  - {commitment: "Iron ore mines preferred bidder", implied_date: "2024-25", ref: "p9 l192", status_word: "completed"}
+  - {commitment: "Rs 3.50 crore annual cost savings", implied_date: "not stated", ref: "p11 l244", status_word: "not stated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck's value is the volume data the filing lacked. TMT sales fell 14.6% QoQ and 6.8% YoY while revenue held flat QoQ and rose 13% YoY. Own steel did not carry revenue; DRI, pellet and traded sales did (A3P-05, render-confirmed). This confirms the review's bear reading of the traded-goods surge. The deck's own metrics hide it. EBITDA/t and the NSR bridge divide all revenue, trading included, by billet production tonnes (A3P-04). EBITDA mixes bases, and FY26 carries other income plus inflated margin bars (A3P-03). The p6/p10 ratios are six-month or non-standard (A3P-12); none feeds Section 1B. 'Self-funded, no incremental debt' conflicts with filed H1 borrowings (A3P-06). The tracker covers Rs 1,191 Cr of Rs 3,000 Cr, and the Q4 FY27 solar is 2.1% spent (A3P-07, A3P-08). Sidhpur is counted outside existing capacity on p17, and the call puts its restart in November, despite 'Commissioned Jul 2026' (A3P-15). Promoter buying of about 0.9 pp in a falling quarter is the one bull datum (A3P-20). Six deck errors are listed for A4."

@@ -15,3 +15,4 @@
 - 2026-10-23 A5 run died on network drop (API ENOTFOUND ~18:47). Mechanical re-run of A5, not counted.
 - A5 run 1: INCOMPLETE. Looping findings F1, F2, F3 (FACTUAL), C1 (CONTRADICTION), M1, M2 (MISSING), all routed to A4. Coverage PASS; A2/A3 not re-run. Loop 1 started (resume A4 with the A5 audit).
 - Loop 1: A4 accepted F1, F2, F3, C1, M1, M2 (none disputed); review rewritten; verdict PROCEED WITH FLAGS unchanged. A5 re-audit next.
+- A5 loop 1 re-audit: COMPLETE. 5 STYLE notes logged, no re-run. Second loop not needed.

@@ -3,7 +3,7 @@ company: "CYBERTECH"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -13,47 +13,24 @@ plain_language_brief:
 coverage:
   orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - {metric: "H1 CFO pre-WC after tax / PAT read as 'underlying conversion below 1.0x' and 'the true reading' (A4 L306, L343, L445, L595, L658, L669)", a4_value: "0.84x H1 FY27, 0.64x H1 FY26 (ratio arithmetic correct); conclusion 'below 1.0x'", recomputed: "like-for-like 1.20x vs 1.15x (PAT less after-tax removed income 729.95 / 977.74 lakh) or 1.23x vs 1.05x (interest and dividend income 705.77 / 692.82 lakh added back); above 1.0x on both bases", source_line: "L214, L221, L204, L206, L209, L210, L211, L212, L115"}
-surviving_bear_counters:
-  - {claim: "Core PBT ex-OI +97.1% YoY; the flat profit hides a better business (A4 L197, L222, L289, L545)", counter: "One quarter, with all of the QoQ gain outside the parent: consolidated Op EBITDA +236.98 lakh QoQ = perimeter +266.59 and parent -29.61; perimeter margin 2.4% and 2.5% in the two prior reported quarters; FCTR swung from -24.96 to +217.88 lakh in Q2; H1 OI still 53.47% of PBT. The valid rival reading is a one-quarter or currency-assisted step, not transfer pricing; separator is Q3 FY27 consolidated Op EBITDA margin (>=11.04% vs <=8.36%).", source_line: "L101, L106, L107, L110, L121, L287, L292, L293, L296", type: MISSING}
-  - {claim: "Buyback adds 2.6 pp to EPS over PAT (A4 L200); terms ND (A4 L54)", counter: "Purchase-economics probe: about Rs 176.24 a share = 18.0x FY26 basic EPS Rs 9.77; net cash Rs 54.48 a share = 30.9% of the price; ex-cash about 35x FY26 core EPS ex-OI Rs 3.49 and about 18x the Q2 FY27 core run-rate Rs 6.74. The EPS gain is share count only; the price was full on trailing core earnings.", source_line: "L124, L127, L235, L415, L110, L101, L112-L114, L147, L154, L156, L157, L178", type: MISSING}
+arithmetic_mismatches: []
+surviving_bear_counters: []
 findings_by_type:
-  factual:
-    - "F1 (A4 L493, L511, L550, L596, L669): transfer pricing named as the rival reading of the group margin step, with Q3 core PBT as separator. Intercompany items eliminate on consolidation (L431), so the group gain (+236.98 lakh QoQ, +346.95 lakh YoY Op EBITDA) is the same under any transfer price, and consolidated core PBT cannot separate the two readings."
-    - "F2 (A4 L560, L65): sector bullet labelled FILED says the company 'expects a further charge' and the Codes 'changed the wage base'. Note 5 (L434-L435) says only that it 'would provide appropriate accounting effect ... as needed'; no amount, no direction, no wage-base statement."
-    - "F3 (A4 L306, L343, L445, L595, L658, L669): pre-WC 0.84x called 'underlying conversion below 1.0x' and 'the true reading', and passed to /fttcp as the Pillar 2 fact. The numerator excludes 729.95 lakh of income (L204, L206, L210-L212) that PAT includes; like-for-like 1.20x-1.23x H1 FY27 vs 1.05x-1.15x H1 FY26."
-  missing:
-    - "M1: the surviving bear counter to the core-PBT claim (one quarter, all QoQ gain outside the parent, currency swing) is absent; graft into Step 2C item 3, Step 3 diagnostics, the brief and the analyst note."
-    - "M2: the buyback purchase-economics multiple (18.0x reported EPS; about 35x core EPS ex-cash) is absent while the review states the buyback's EPS accretion; graft into Step 0C."
-  contradiction:
-    - "C1 (A4 L597, L247, L534, L652): Q1 FY28 forks overlap (bull 'above 58-60 Cr', bear 'stalls near 68.45 Cr'; a 60-70 Cr print satisfies both), and the bull fork sits below the Step 3 bar of revenue >= 73.30 Cr. Q1 FY28 is called the 'fourth' reading; it is the fifth quarter after the step."
+  factual: []
+  missing: []
+  contradiction: []
   style:
-    - "S1 coverage: 33 boilerplate units uncaptured (18 embedded numbers, 9 entities, 1 date, 5 formula captions); A1 should capture L96/L282 telephone and fax (A3-20 evidence)"
-    - "S2 A4 L15 blanket 'no row unreviewed' instead of row-range 'reviewed, no finding' markers"
-    - "S3 brief L551 'Most of it came from higher payables' (liabilities = 39% of CFO; they explain the excess over PAT); L344 'not assets' (assets 14.8% of release)"
-    - "S4 brief L548 'growth and margin gain both sit in the US subsidiaries' (70.8% of YoY revenue growth, 81.2% of YoY Op EBITDA growth)"
-    - "S5 brief L546 'Treasury income' should read 'Other income' (5.64 Cr a half not itemised)"
-    - "S6 '95.1% now sit in the subsidiaries' used as a trend; share was 96.9% at 31-Mar-2026"
-    - "S7 A4 L244 'flat at 58-60 Cr ... through FY26': Q3/Q4 FY26 ND; say 'averaged'"
-    - "S8 A4 L561 rupee reading labelled FILED, L180 labels it INFERENCE"
-    - "S9 optional: perimeter FV gain H1 FY27 = 0 (L212 = L391); perimeter OI = interest and dividend income; 22.04 Cr of 25.94 Cr OCL in subsidiaries"
-    - "S10 12.15 Cr gap = Rs 4.00 x 3,03,80,600 shares exactly; state the tie"
-    - "S11 standalone H1 FY26 buyback cell is nil (L418 ties without it), not ND"
-    - "S12 A1 rows R121, R122, R394, R395 for blank cells against A1's own rule; no value lost"
-loop_back_to: "A4"
-gap: "A4: (F1, M1) re-scope transfer pricing to where profit sits, since it cannot move the consolidated margin; name the one-quarter or currency reading for the group step with Q3 consolidated Op EBITDA margin as separator (A4 L493, L511, L550, L596, L669) and graft the Claim 1 counter. (F2) rewrite the Labour Code sector bullet L560 and L65 to Note 5's wording. (F3) restate pre-WC conversion like-for-like (1.20x-1.23x vs 1.05x-1.15x) at L306, L343, L445, L658, analyst note; L595 bear fork to 'H2 FY27 CFO/PAT below 1.0x'. (C1) rebuild Q1 FY28 forks (bull >= 73.30 Cr, bear back toward 58-60 Cr) and change 'fourth' to 'fifth' at L534, L597, L652. (M2) graft the buyback multiple into Step 0C."
+    - "L1-S1 (carried) 33 boilerplate units uncaptured by A1/A2 (18 embedded numbers, 9 entities, 1 date, 5 formula captions); capture L96/L282 telephone and fax next run (A3-20 evidence)"
+    - "L1-S2 (carried) A1 rows R121, R122, R394, R395 for blank cells against A1's own rule; no value lost"
+    - "L1-S3 A4 L25 changelog says S2 needed no A4 change; A4 closed S2 at L32"
+    - "L1-S4 brief A4 L582 'The bear reading is strong' is an unanchored judgement; Step 3 L272 finds the revenue step real; suggest 'The revenue step looks real. The margin step is one quarter old, and Q3 decides it.'"
+    - "L1-S5 Pillar 2 fact 1.20x-1.23x (A4 L334, L373, L475) follows Ind AS 7 conventions; strict basis (finance cost 87.79, lease 46.36, tax timing 83.35 charged) gives 1.03x-1.11x vs 0.93x H1 FY26; still above 1.0x and improving; name the convention for /fttcp"
+loop_back_to: ""
+gap: ""
 style_notes:
-  - "S1 coverage boilerplate (33 units; capture L96/L282 next run)"
-  - "S2 blanket review mark vs row-range markers"
-  - "S3 brief cash wording L551; L344 'not assets'"
-  - "S4 'both sit in the US subsidiaries' should be 'most of'"
-  - "S5 'Treasury income' should be 'Other income'"
-  - "S6 95.1% share cited as a trend; was 96.9% at Mar-26"
-  - "S7 FY26 'flat' is an average; Q3/Q4 ND"
-  - "S8 rupee reading tier mismatch FILED vs INFERENCE"
-  - "S9 optional sharpening of Q9 and Q6"
-  - "S10 state the exact Rs 4.00 dividend tie"
-  - "S11 standalone H1 FY26 buyback cell is nil"
-  - "S12 A1 blank-cell rows"
-analyst_note: "A4's arithmetic is clean: every cell, bridge and ratio recomputes to the filed lines, and all six statements foot. The failures are readings. (1) Transfer pricing is named as the rival to real leverage for the group margin step, with Q3 core PBT as the separator. Intercompany items eliminate on consolidation, so the group gain is the same under any transfer price and consolidated core PBT cannot separate the two. The live rival is a one-quarter or currency-assisted step. (2) The 0.84x 'underlying conversion' divides cash without 7.3 Cr of treasury income by PAT with it; like-for-like it is 1.20-1.23x, so the Pillar 2 fact passed to /fttcp is understated. Cash stays INDETERMINATE-WITH-DIRECTION on H2 reversal risk. (3) Note 5 does not say a further charge is expected. (4) The Q1 FY28 forks overlap. Buyback probe: 18.0x trailing EPS, about 35x trailing core EPS ex-cash. The 12.15 Cr equity gap equals Rs 4.00 x 3,03,80,600 shares to the paisa, which firms the dividend reading. Coverage holds; 33 uncaptured units are boilerplate (STYLE). All fixes sit in A4; no A2 or A3 loop."
+  - "L1-S1 coverage boilerplate (33 units; capture L96/L282 next run)"
+  - "L1-S2 A1 blank-cell rows"
+  - "L1-S3 A4 L25 changelog mislabels S2"
+  - "L1-S4 brief L582 'bear reading is strong' unanchored"
+  - "L1-S5 name the Ind AS 7 convention on the 1.20x-1.23x Pillar 2 fact; strict basis 1.03x-1.11x"
+analyst_note: "Iteration 1. All six loop 0 findings are closed, and every new number recomputes to the filed lines. Transfer pricing is now scoped to where profit sits, not the group gain. The perimeter ETR of 25.24% against the parent's 24.59% confirms that the tax-split effect is negligible. The new positive claim, matched pre-WC conversion above 1.0x and improving, survived a strict test. Charging finance cost paid, lease payments and the 0.83 Cr tax-payment lag still gives 1.03x-1.11x for H1 FY27 against 0.93x for H1 FY26. /fttcp should see that convention next to the Pillar 2 number. The brief's 'The bear reading is strong' is the one place the symmetric bar slips; it is STYLE. Coverage is unchanged and passes."

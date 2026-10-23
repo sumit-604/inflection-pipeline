@@ -1,0 +1,29 @@
+```yaml
+stage: A2-enumerator
+company: "TEJASNET"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/tejasnet-q2fy27/work/ledger_presentation_tejasnet_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 3
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 29
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 13
+  slide_numbers: 98
+flags_raised: [ZERO_STANDING, DROPPED_SLIDE, FOOTNOTE_UNRESOLVED, CHART_DATA_NOT_EXTRACTED, RESTATED]
+ids_in_structured: 210
+ids_referenced: 210
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Q1 baseline was a press release, so DROPPED_SLIDE is basis-limited: the safe-harbour disclaimer, About Tejas profile and MD/CFO quotes in Q1 are absent from the Q2 deck (R210). Order book 2,315 Cr (R010) has no inclusion basis (FOOTNOTE_UNRESOLVED R209). Page 9 chart data is image-only, so Omdia series values are unavailable downstream. Three Other Operating Revenue cells are nil (R024,R026,R028) after 5 Cr in the Q2/H1 FY26 comparators. Net debt (R074) has no stated definition. Q1 comparators (402, 271, 202, 1,529, 4,277, 589) match the prior ledger."
+```

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "TEJASNET"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 12
+formfeed_count: 12
+line_count: 826
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only  # page 1 text; pages 2-12 image-only, rendered under the zero-char exception
+render_candidates: ["p2-p12: zero extractable characters, data-bearing statements"]
+rendered_pages: ["p2-p12 at 200 dpi + tesseract psm 6; financial statements/notes baked into images"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/tejasnet-q2fy27/extracted/tejasnet-results-q2fy27-fulltext.md"
+structured_path: "runs/tejasnet-q2fy27/extracted/tejasnet-results-q2fy27-structured.md"
+structured_counts:
+  number: 745
+  entity: 29
+  forward: 0
+  date: 27
+  qualifier: 50
+structured_id_range: "R001-R851"
+gate_a1: pass
+gap_note: ""

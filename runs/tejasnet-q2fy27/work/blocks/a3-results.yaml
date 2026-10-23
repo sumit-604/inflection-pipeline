@@ -1,0 +1,49 @@
+stage: A3-forensics
+company: "TEJASNET"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/tejasnet-q2fy27/work/forensics_results_tejasnet_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: PASS
+  F3: PASS
+  F4: FINDING
+  F5: FINDING
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "L143, L534", classification: "AMBIGUOUS", implication: "Other operating revenue nil Q2 (0.34 Q1, 5.15 Q2 FY26); if PLI sits here, no PLI recognised in Q2; ask where PLI is booked and claim status"}
+  - {id: "A3-02", check: "F1", line: "L326, L713", classification: "NEUTRAL-FACT", implication: "No dividend paid H1 FY27 vs 44.15 H1 FY26 after FY26 loss"}
+  - {id: "A3-03", check: "F4", line: "L499 (vs prior P-L327)", classification: "AMBIGUOUS", implication: "Unreviewed subsidiary revenue 0.86 to 3.52 QoQ, NPAT 0.00 to 0.80; 0.39% of PAT; about 2.75 appears intra-group; ask driver and parent billing"}
+  - {id: "A3-04", check: "F5", line: "L496-L505 (vs P-L325-P-L331)", classification: "NEUTRAL-FACT", implication: "Other Matter scope expanded to assets, net assets, cash flows (half-year format); same 3 entities; no GC or EoM; report title shortened"}
+  - {id: "A3-05", check: "F8", line: "L221, L607, L550-L551", classification: "FORWARD-SIGNAL", implication: "DTA 365.24 to 503.75, P&L credits only, zero current tax; DTA 19.9% of equity, DTA plus IAUD 55.4%; FY27 audit recoverability test can cut book value"}
+  - {id: "A3-06", check: "F8", line: "L157, L160, L548, L551; P-L169, P-L172", classification: "AMBIGUOUS", implication: "Deferred credit rate ~35% (H1 FY26) to ~25.2% (FY27), step at Q4 FY26 with no visible remeasurement charge; regime switch vs partial non-recognition; ask"}
+  - {id: "A3-07", check: "F9", line: "L556, L562", classification: "NEUTRAL-FACT", implication: "Q2 actuarial gain 1.78 (derived by TCI identity) exceeds FY26 full-year 1.59; immaterial; verify assumptions at FY27 AR"}
+  - {id: "A3-08", check: "F10", line: "L172, L569-L570, L623, L325", classification: "AMBIGUOUS", implication: "Basic = diluted (loss); issued 18.141 Cr vs EPS-implied 17.809 Cr shares, gap 0.33 Cr; ask trust-held shares and RSU/ESOP overhang; decides BV/share side of 140"}
+  - {id: "A3-09", check: "F12", line: "L228, L256, L304, L310, L697, L700", classification: "AMBIGUOUS", implication: "Receivables fell 1,110.51 but other current liabilities fell 1,266.32; CFO still (311.93); set-off of advances vs cash outflow; ask composition of 1,420.72 and settlement mode"}
+  - {id: "A3-10", check: "F12", line: "L214, L215, L316, L153", classification: "FORWARD-SIGNAL", implication: "Other intangibles +302.05, IAUD -52.68 on 358.59 spend; about 411 capitalised into amortising base; D&A step-up from Q3 FY27 while D&A still falling"}
+  - {id: "A3-11", check: "F12", line: "L381, L255, L308", classification: "AMBIGUOUS", implication: "Warranty provision 35.11 to 7.24 on flat revenue (1.8% vs 8.7% of revenue); about 27.87 PBT support; fault-rate re-estimate vs mix or warranty expiry; ask"}
+  - {id: "A3-12", check: "F12", line: "L154, L545", classification: "AMBIGUOUS", implication: "ECL 8.08 charge to 10.55 write-back; with warranty, about 46.50 of estimate release; Q2 loss near (324) at Q1 rates; ask collection vs model change"}
+  - {id: "A3-13", check: "F12", line: "L243, L249, L327-L332, L336", classification: "CONFIRMATORY-NEGATIVE", implication: "Gross borrowings +799.88 to 4,835.35; supplier finance replaced by bank debt; net debt 4,384.39 ex-lease, 4,518.90 incl. lease"}
+  - {id: "A3-14", check: "F14", line: "L378, L799 (vs P-L218, P-L460)", classification: "AMBIGUOUS", implication: "Current-quarter inventory obsolescence movement no longer disclosed; note now comparative-only; ask Q2 obsolescence charge or reversal"}
+  - {id: "A3-15", check: "F14", line: "L790 vs L144; L794 vs L162", classification: "NEUTRAL-FACT", implication: "Note 4 summary vs P&L: 404.31 vs 404.91, 410.01 vs 410.03; arithmetic supports 404.91 and 410.01; OCR vs typo unresolved"}
+  - {id: "A3-16", check: "F14", line: "L484, L763 (vs P-L312); L486 vs L767", classification: "NEUTRAL-FACT", implication: "Subsidiary name variants Communication/Communications and Inc/Inc.; no entity change"}
+forward_signals: ["A3-05", "A3-10"]
+ambiguous: ["A3-01", "A3-03", "A3-06", "A3-08", "A3-09", "A3-11", "A3-12", "A3-14"]
+commitments: []
+gate_a3: pass
+blank_checks: []
+analyst_note: "Q2 loss looks flat QoQ (277.71 vs 270.81), but two estimate releases hold it there. Warranty fell 35.11 to 7.24; ECL went from an 8.08 charge to a 10.55 write-back. At Q1 rates the loss is about 46.5 larger. The 1,110 receivables fall did not reach cash: other current liabilities fell 1,266 in the same half and CFO stayed (311.93). That fits a set-off of advances; the filing is silent. Intangibles rose 302 while IAUD fell 53, so amortisation should rise from Q3. DTA plus IAUD equal 55% of equity, both year-end judgements. BV/share is 139.33 on issued shares, 141.93 on the EPS-implied count; trust-held shares decide which side of 140. Net debt on the Notion Mar-26 definition is 4,384; with leases 4,519. OCR: the other-liabilities sign misread is on standalone L310, not the consolidated line A1 named; std tax L160-L161 misread Q2 FY26 and H1 FY27 by 100. Results doctype has no forward or hedge language (F6, F7 zero hits)."

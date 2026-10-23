@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "TEJASNET"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/tejasnet-q2fy27/work/ledger_results_tejasnet_q2fy27.md"
+counts:
+  notes: 12
+  line_items: 238
+  zero_standing: 37
+  agenda_items: 1
+  auditor_paras: 11
+  entities: 4
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, COLS_PARTIAL, OCR_MISREAD_PAIR, RESTATED, FOOTNOTE_UNRESOLVED, UNREVIEWED_SUBS]
+ids_in_structured: 851
+ids_referenced: 851
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Three OCR misread pairs carried uncorrected (R187/R221, R327/R339, R428/R434); A3 must cross-check subtotals. 18 COLS_PARTIAL rows (R109-R113, R132-R134, R441-R449, R594). No ENTITY_CHANGE vs Q1 (holding plus 3 subs). Q1 notes on inventory-obsolescence reversal and balancing figures are absent in Q2, replaced by the Q2 FY26 Rs 145.43 cr CoM charge note; warranty provision fell to Rs 7.24 cr from 35.11. Three subsidiaries unreviewed by their auditors. Board meeting 2h15m vs 3h10m in Q1. No forward statements in document."

@@ -1,0 +1,23 @@
+# Run log: INDOSOLAR Q2 FY27 (/run-quarterly)
+
+- 2026-10-23. Checkout guard: git fetch origin main OK; diff over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md empty. PASS.
+- Ticker: INDOSOLAR (BSE 533257; NSE symbol WAAREEINDO; Indosolar Limited, subsidiary of Waaree Energies).
+- Protocol files present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md, Document_Review_Protocol_v1_1.md, Master_Project_Prompt_v3_6.md.
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm present on PATH; tesseract at C:\Program Files\Tesseract-OCR\tesseract.exe (not on PATH).
+- Sources: BSE AnnSubCategoryGetData (scrip 533257, 01-Sep to 23-Oct-2026) and NSE corporate-announcements (WAAREEINDO). Same set on both.
+  - Results (Reg 33 board outcome + results + limited review), BSE f4ef14eb-36d2-4a1f-b2d6-a30272903514.pdf, 21-Oct-2026 19:33, 6 pages. First page: "Outcome of the Board Meeting held on October 21, 2026". BSE files the Board Outcome entry (73eb47e8...) with the same MD5 (eceb201c...); one copy used.
+  - Press release, BSE 34896fd7-afa6-4c6b-85a9-27824d054a09.pdf, 21-Oct-2026 20:45, 3 pages. First page dated October 21, 2026.
+- Concall: none. No analyst/investor meet intimation filed on BSE or NSE between 01-Sep and 23-Oct-2026; company site investor menu has no concall or presentation section. Role 5 does not run; no recording exists to transcribe.
+- Investor presentation: none filed.
+- Context documents saved to the operator folder but not run: board meeting intimation 15-Oct-2026; scheme of amalgamation with Waaree Energies, Reg 30, 23-Sep-2026.
+- Document class detection: results PDF -> results (Reg 33 markers, "Statement of Unaudited Financial Results"); press release -> presentation doctype (press-release handling as in TINNARUBR Q2 FY27 run).
+- Results text layer: fonts embedded but the text reads as an OCR layer over a scan; statement columns misalign in pdftotext -layout output. A1 told to verify alignment.
+- Company memory: companies/INDOSOLAR.md absent. Notion search "Indosolar": no page. No spear on record. A4 frames output as PRE-THESIS READ.
+- Run mode: chains run one after another (6 GB RAM, other reviews running).
+- 2026-10-24: Parent session relayed operator standing approval for this batch (operator wrote "complete them fully"): if A5 stays INCOMPLETE after the first correction loop, one second loop is allowed (orchestrator Point 9), then stop. Recorded here; used only if needed.
+- 2026-10-24: App restart killed A5 run 1 before it wrote anything. A1-A4 files kept. A5 re-run fresh (mechanical re-run, not counted against any cap). Operator relayed: "pl resume the task".
+- A5 verdict INCOMPLETE (FACTUAL F1; MISSING M1, M2; STYLE S1-S10). Loop 1 to A4 (fresh A4 agent; original A4 context lost in the restart).
+- Network drop about 18:47 IST killed the A5 re-audit before it wrote anything. Re-run as mechanical re-run.
+- Loop 1: fresh A4 fixed F1, M1, M2 (and S1-S5, S9). A5 re-audit (fresh, after the network drop) verdict COMPLETE. New STYLE notes S11-S15 logged, no re-run. Second loop not needed.
+- Live price for the operator brief: BSE StockReachGraph, 23-Oct-2026 16:01, Rs 198.60 (BSE header as on 22-Oct-2026 15:30: Rs 199.70).
+- Notion: no write (task instruction and no page exists). Payload saved to notion-payload.md.

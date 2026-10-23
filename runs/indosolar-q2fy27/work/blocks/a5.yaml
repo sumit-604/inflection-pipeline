@@ -1,0 +1,55 @@
+stage: A5-adversary
+company: "INDOSOLAR"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "results L287 www.sgco.co.in (auditor website): no ENTITY row in A1 structured; STYLE, non-material, no loop"
+    - "presentation PR L109-110 CEO industry-transformation sentence: no FORWARD row in A1 structured; carried in A4 L499; STYLE, non-material, no loop"
+arithmetic_mismatches:
+  - {metric: "Mix share of Q2 YoY gross-margin fall (A4 L181, L466, L488, L595, L607)", a4_value: "nil: 'Mix shift does not explain the YoY fall'", recomputed: "mix -9.42 pp of -22.92 pp (41%), goods spread -13.51 pp (59%); Rs Cr: tolling GP -28.55, goods volume -5.73, goods spread -21.02, total -55.30", source_line: "results L78, L79, L83, L84"}
+surviving_bear_counters:
+  - {claim: "No debt, 85.42 Cr net cash; 'where it wins'; ratio must credit the net cash (A4 L516, L490, L403, L527)", counter: "Cash 85.42 Cr sits against 89.94 Cr unexplained other current liabilities, up 81.99 Cr in H1 while net cash rose 79.66 Cr; both A4 readings make the line an obligation; net about -4.52 Cr; if a parent advance it cancels on amalgamation and is not minority value", source_line: "results L133, L134, L159, L190", type: MISSING}
+  - {claim: "Amalgamation framed as strategic milestone with synergies (PR L117-119); acquisition-economics probe", counter: "Consideration NOT FOUND so price/PAT not computable; earnings base spans 12.3x (FY26 quarterly avg PAT 61.65 Cr vs Q2 FY27 5.02 Cr; 8.7x at statutory tax); scheme approved 23-Sep-2026 inside the trough quarter by a board inside the transferee's group (waaree.com addresses, group letterhead); a ratio weighted to recent earnings moves value from minorities", source_line: "results L97, L222, L56, L71; PR L72, PR L125, PR L145", type: MISSING}
+  - {claim: "Filing complete, ties out, unmodified review (A4 L462, L68)", counter: "Statements foot, but cash-flow receivables and payables miss balance-sheet movements by 34.94 and 37.25 Cr with no note; review is moderate assurance and silent on Note 4; facts already in A4 L68, L243, flag 4; wording fix only", source_line: "results L132, L155-156, L186-187, L261-265", type: STYLE}
+findings_by_type:
+  factual:
+    - "F1: A4 L181/L466/L488/L595/L607 claim mix shift does not explain the YoY fall; recomputed mix explains 9.42 of 22.92 pp gross-margin fall (41%), goods spread 13.51 pp (59%); tolling GP loss 28.55 Cr exceeds goods-spread loss 21.02 Cr (L78-79, L83-84). Loop A4."
+  missing:
+    - "M1: net-cash qualifier absent at A4 L516, L490, L403, L527; 85.42 Cr cash (L133-134) vs 89.94 Cr unexplained other current liabilities (L159), up 81.99 Cr; net about -4.52 Cr. Loop A4."
+    - "M2: acquisition-economics probe absent; consideration NOT FOUND (price/PAT not computable); 12.3x earnings-base spread and 23-Sep-2026 approval inside the trough quarter by transferee-group board not stated; extend Flag 1, valuation-unit row (A4 L367), Q1 (A4 L403). Loop A4."
+  contradiction: []
+  style:
+    - "S1: rounding slips vs unrounded-lakh rule: A4 L153 -55.99 (-56.00); L173 +127.60% (+127.59%); L178 111.98 (111.97); L178 53.16% (53.17%)"
+    - "S2: A4 L462 'ties out' overstates; two cash-flow lines do not reconcile to the balance sheet (flag 4)"
+    - "S3: A4 L487 '70.89%' is the whole-company Q1 margin, not a tolling margin"
+    - "S4: A4 L490 gross-flow framing of H1 cash; net CFO is 64.09 Cr pre-WC profit plus 16.02 Cr WC release"
+    - "S5: A4 L26 calls R360, R381-R383 'unnumbered'; they are numbered structured IDs"
+    - "S6: A1 enumeration gaps www.sgco.co.in (L287) and PR L109-110 CEO sentence; non-material"
+    - "S7: A2 count-test labels: auditor_paras includes R381-R382; signatures omits audit partner block L274-282; agenda_items 0 vs one outcome item L40-44; no row missing"
+    - "S8: A4 L500, L511, L518 memory-sourced background (SECONDARY, PENDING LIVE VERIFICATION); keep out of Notion payload"
+    - "S9: A4 L200 rate-effect label sign; ETR rose 1.00 pp; -0.07 Cr effect correct"
+    - "S10: forward map M3, M4, M5 dated NOT FOUND; re-date after scheme filing extraction"
+loop_back_to: "A4"
+gap: "A4: (F1 FACTUAL) correct 'mix shift does not explain the YoY fall' at L181, L466, L488, L595, L607 to about three-fifths goods spread (13.51 pp) and two-fifths mix (9.42 pp) of the 22.92 pp gross-margin fall; (M1 MISSING) qualify the 85.42 Cr net cash at L516, L490, L403, L527 against 89.94 Cr unexplained other current liabilities (L159), net about -4.52 Cr; (M2 MISSING) add the acquisition-economics probe to Flag 1, the valuation-unit row and Q1: consideration NOT FOUND, 12.3x earnings-base spread (FY26 quarterly avg 61.65 Cr vs Q2 FY27 5.02 Cr), scheme approved 23-Sep-2026 inside the trough quarter by a board inside the transferee's group."
+style_notes:
+  - "S1 rounding slips at A4 L153, L173, L178 (two)"
+  - "S2 reword A4 L462 'ties out'"
+  - "S3 reword A4 L487 tolling margin"
+  - "S4 reword A4 L490 cash attribution"
+  - "S5 reword A4 L26 'unnumbered'"
+  - "S6 A1 unenumerated units L287, PR L109-110"
+  - "S7 A2 count-test category labels"
+  - "S8 memory-sourced background claims stay out of Notion until verified"
+  - "S9 A4 L200 rate-effect label sign"
+  - "S10 re-date forward-map NOT FOUND rows after scheme extraction"
+analyst_note: "Arithmetic re-derives clean from the lakh values. Only four last-digit rounding slips exist (STYLE). Three findings send the review back to A4. (1) FACTUAL: A4 says the mix shift does not explain the YoY fall. On A4's own convention (all materials to goods, which the tolling-heavy Q1 at 10.34% materials supports), mix explains 9.42 of the 22.92 pp gross-margin fall and goods spread 13.51 pp. In rupees, lost tolling gross profit (28.55 Cr) exceeds the goods-spread loss (21.02 Cr). 'Mainly spread' holds; 'not a mix artifact' fails. (2) MISSING: the 85.42 Cr net cash sits against 89.94 Cr of unexplained other current liabilities. That line rose 81.99 Cr while net cash rose 79.66 Cr; net of it, about -4.52 Cr. (3) MISSING: the scheme multiple is not computable (consideration NOT FOUND). A4 omits that the earnings base swings 12.3x (FY26 quarterly average vs Q2 FY27) and that a board inside the transferee's group approved the scheme in the trough quarter. Independent tie: the cash-flow other-liabilities line equals the change in current plus non-current other liabilities plus the 2.14 Cr deferred-grant drawdown, to the lakh."

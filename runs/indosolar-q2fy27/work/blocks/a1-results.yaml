@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "INDOSOLAR"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 6
+formfeed_count: 6
+line_count: 289
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01"
+text_layer_present: true    # OCR layer over a scan; pages 2-4 tables misaligned
+extraction_mode: text-only  # plus logged page-image repair of pages 2, 3, 4
+render_candidates: []
+rendered_pages: ["2 (300dpi, P&L repair)", "3 (300dpi, balance sheet repair)", "4 (300dpi, cash flow repair)", "1 (200dpi crop, symbol/ISIN verify)"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\quarterly-indosolar-q2fy27-2614ff\\runs\\indosolar-q2fy27\\extracted\\indosolar-results-q2fy27-fulltext.md"
+structured_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\quarterly-indosolar-q2fy27-2614ff\\runs\\indosolar-q2fy27\\extracted\\indosolar-results-q2fy27-structured.md"
+structured_counts:
+  number: 307
+  entity: 27
+  forward: 4
+  date: 20
+  qualifier: 25
+structured_id_range: "R001-R383"
+gate_a1: pass
+gap_note: ""

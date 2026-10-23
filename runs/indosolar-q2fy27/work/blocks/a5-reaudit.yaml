@@ -1,0 +1,43 @@
+stage: A5-adversary
+company: "INDOSOLAR"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "results L287 www.sgco.co.in (auditor website): no ENTITY row in A1 structured; STYLE carried from audit 1 (S6), non-material, no loop"
+    - "presentation PR L109-110 CEO industry-transformation sentence: no FORWARD row in A1 structured; carried in A4 L522; STYLE carried from audit 1 (S6), no loop"
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S11: A4 L262 vs L264-265 number the two OCL readings in opposite orders (customer/parent vs parent/third party); content same; align order"
+    - "S12: A4 L192-196 decomposition table column 'Rs Cr of gross profit' totals -35.67, which is the margin effect only; whole GP fall is -55.30 (A4 L198); relabel"
+    - "S13: A4 L509 brief split three-fifths/two-fifths tagged [FILED, derived] without the all-materials-to-goods convention (A4 L188); add the convention"
+    - "S14: A4 L263/L511 net about -4.52 Cr treats all 89.94 Cr OCL as a cash claim; part may be statutory dues or deferred grant (L190 tie); conclusion holds"
+    - "S15: A4 L432 Q9 'confirms the non-cash reading' overstates a reconstruction tie; use 'fits'"
+    - "S6 (carried): A1 enumeration gaps L287, PR L109-110; non-material"
+    - "S7 (carried): A2 count-test category labels; no row missing"
+    - "S8 (carried): memory-sourced background A4 L523, L534, L541 stays out of Notion until live-verified"
+    - "S10 (carried): forward map M3-M5 NOT FOUND until scheme filing extracted"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S11 align OCL reading order at A4 L262 and L264-265"
+  - "S12 relabel A4 L192 table column as margin effect only"
+  - "S13 add materials-to-goods convention to brief A4 L509"
+  - "S14 optional: '-4.52 Cr if the whole line is a cash claim' at A4 L263, L511"
+  - "S15 A4 L432 'confirms' to 'fits'"
+  - "S6, S7, S8, S10 carried from audit 1, unchanged"
+analyst_note: "Bounded re-audit after loop 1. F1, M1 and M2 are closed. F1: the new decomposition re-derives from the lakh values (L78, L79, L83, L84). Mix is -9.4159 pp, spread -13.5085 pp, and the fall -22.9244 pp. In rupees, tolling -28.55, goods volume -5.73 and spread -21.02 sum to -55.30. The bridge pieces reconcile: revenue effect -19.63 plus mix -14.65 equals tolling plus volume, -34.28. A grep finds the old wording only where it is quoted as wrong. M1: the 85.42 Cr cash, 89.94 Cr OCL and -4.52 Cr net tie to L133, L134 and L159. The 86.99 Cr L190 tie holds to the lakh. M2: 12.3x and 8.7x re-derive (6,164.98 or 4,382.88 against 501.85 lakh), and all four cites hold. Consideration is still NOT FOUND, so the multiple stays NOT COMPUTABLE; the scheme filing (M1) is the open evidence item. The revision added only STYLE items (S11-S15). Verdict COMPLETE; save may proceed."

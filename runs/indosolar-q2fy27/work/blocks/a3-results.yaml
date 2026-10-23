@@ -1,0 +1,52 @@
+stage: A3-forensics
+company: "INDOSOLAR"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\quarterly-indosolar-q2fy27-2614ff\\runs\\indosolar-q2fy27\\work\\forensics_results_indosolar_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "176, 197, 80", classification: "AMBIGUOUS", implication: "New deferred govt grant; 669.16 non-cash amortisation = 12.35% of H1 PBT; received 455.54; nature, balance, clawback on merger undisclosed"}
+  - {id: "A3-02", check: "F1", line: "201, 202, 203, 87", classification: "AMBIGUOUS", implication: "Financing nil, debt-free; prior-year cash interest 1,865.46 = 18.5x P&L 100.90 (legacy accrual settled?); no lease payments in H1"}
+  - {id: "A3-03", check: "F1", line: "92, 222", classification: "FORWARD-SIGNAL", implication: "Exceptional nil all columns while scheme in progress; scheme costs to land in Q3/Q4 FY27"}
+  - {id: "A3-04", check: "F1", line: "120, 195", classification: "NEUTRAL-FACT", implication: "CWIP opens 120.56, capex 487.19 in an entity slated for dissolution"}
+  - {id: "A3-05", check: "F6", line: "222-224", classification: "FORWARD-SIGNAL", implication: "Draft scheme into Waaree Energies; no appointed date, swap ratio, approvals or timeline; holder value runs through undisclosed ratio"}
+  - {id: "A3-06", check: "F8", line: "95, 126, 192", classification: "FORWARD-SIGNAL", implication: "DTA 1,231.45 fully consumed to net DTL (22.81); no current tax line; cash tax at ~25.17% from Q3 FY27"}
+  - {id: "A3-07", check: "F8", line: "95, 97, 105", classification: "NEUTRAL-FACT", implication: "FY26 ETR -5.26%, shield 3,043 bps / 7,128.39; FY26 EPS 59.27 = 42.14 at statutory tax; YoY PAT bases distorted"}
+  - {id: "A3-08", check: "F9", line: "99", classification: "NEUTRAL-FACT", implication: "Q2 OCI (3.67) = 5.9x FY26 (0.62); immaterial; verify actuarial assumptions at AR"}
+  - {id: "A3-09", check: "F12", line: "130, 159, 136, 84, 83", classification: "AMBIGUOUS", implication: "Inventory 10.5x, other current liabilities 11.3x, other current assets 41.8x; advance-funded Q3 deliveries vs pre-merger parent build; Q3 goods revenue separates"}
+  - {id: "A3-10", check: "F12", line: "132, 186, 155-156, 187, 193", classification: "AMBIGUOUS", implication: "Receivable fall misses CF by 3,494.18, payable rise by 3,725.18; undisclosed non-cash set-off likely; H1 OCF rests on one-off receivable release"}
+  - {id: "A3-11", check: "F12", line: "78-84, 91", classification: "AMBIGUOUS", implication: "PBT ex-OI 3.3% of revenue vs 30.2% YoY; goods materials ratio 82.6% vs 68.9%; cost spike vs group transfer pricing"}
+  - {id: "A3-12", check: "F14", line: "101, 105-106", classification: "NEUTRAL-FACT", implication: "EPS in Q2 and 6M columns matches TCI not PAT (1.20 vs 1.21; 10.00 vs 10.01); Ind AS 33 drafting slip"}
+  - {id: "A3-13", check: "F14", line: "78, 79, 83, 227", classification: "AMBIGUOUS", implication: "Goods/services swing not a restatement in this filing (6M = Q1+Q2); fits job-work to own-procurement switch; Note 6 generic; Q1 as first reported unverified"}
+  - {id: "A3-14", check: "F14", line: "126, 191, 47, 62, 71, 235, 274, 30", classification: "NEUTRAL-FACT", implication: "Presentation and naming inconsistencies; cumulative light drafting control"}
+  - {id: "A3-15", check: "F14", line: "283", classification: "NEUTRAL-FACT", implication: "UDIN unreadable in extract; verify on ICAI portal"}
+  - {id: "A3-16", check: "F15", line: "223, 30, 21, 56, 71, 231, 225", classification: "FORWARD-SIGNAL", implication: "Entity becomes Transferor to parent; monitoring horizon ends at effectiveness; exposure converts to Waaree Energies"}
+forward_signals: ["A3-03", "A3-05", "A3-06", "A3-16"]
+ambiguous: ["A3-01", "A3-02", "A3-09", "A3-10", "A3-11", "A3-13"]
+commitments:
+  - {commitment: "Amalgamate Indosolar into Waaree Energies (Sections 230-232); Indosolar dissolved without winding up on effectiveness", implied_date: "Not stated; board approval 2026-09-23; effectiveness, appointed date, swap ratio NOT FOUND", ref: "Note 4, lines 222-224", status_word: "initiated"}
+  - {commitment: "Publish results in newspaper under SEBI LODR Reg 47", implied_date: "Not stated; after 2026-10-21 board meeting", ref: "Outcome letter, line 42", status_word: "initiated"}
+  - {commitment: "Make results available on company website", implied_date: "Not stated", ref: "Outcome letter, lines 46-47", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Note 4 (line 222) puts a board-approved draft scheme to merge Indosolar into Waaree Energies. The filing gives no appointed date, swap ratio or timeline, so holder value runs through an undisclosed ratio. Q2 economics broke: PBT excluding other income was 3.3% of revenue against 30.2% a year ago. In the same quarter inventory rose 10.5x and other current liabilities 11.3x. Reading one: advance-funded stock for Q3 deliveries. Reading two: thin-margin goods moved to the group before the merger. Q3 goods revenue and the drawdown of other current liabilities separate them. H1 OCF of 7,956.70 rests on a 15,841.73 receivable release that does not repeat. The recognised DTA is gone (1,231.45 to -22.81), so cash tax starts. FY26 PAT 24,659.91 carried a 7,128.39 book shield against statutory tax (EPS 42.14 at 25.17%, not 59.27). Receivable and payable movements miss the cash flow by about 3,494 and 3,725, consistent with an undisclosed set-off. The goods/services swing is not a restatement inside this filing (6M equals Q1 plus Q2). Q1 as first reported is unverified. EPS in two columns matches TCI, not PAT."

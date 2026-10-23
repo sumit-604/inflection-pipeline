@@ -1,0 +1,47 @@
+stage: A3-forensics
+company: "INDOSOLAR"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\quarterly-indosolar-q2fy27-2614ff\\runs\\indosolar-q2fy27\\work\\forensics_presentation_indosolar_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F6", line: "117", classification: "FORWARD-SIGNAL", implication: "Amalgamation undated, no swap ratio; filed Note 4 says Indosolar dissolves on effectiveness (board approved draft scheme 23-Sep-2026). Listed equity has a terminal event; value turns on an undisclosed swap ratio."}
+  - {id: "A3-02", check: "F6", line: "104-105", classification: "FORWARD-SIGNAL", implication: "Tolling-to-owned shift unquantified; filed statement shows services Rs 54.39 Cr Q1 -> Rs 2.82 Cr Q2, goods Rs 13.97 Cr -> Rs 152.77 Cr, inventory Rs 21.08 Cr -> Rs 221.97 Cr. Margin % baseline and working-capital need reset."}
+  - {id: "A3-03", check: "F16", line: "100-101", classification: "AMBIGUOUS", implication: "Produced 148 MW, sold 98 MW; Q2 inventory build Rs 105.92 Cr. Order-backed stock vs sell-through weakness; NRV risk if module prices fall."}
+  - {id: "A3-04", check: "F16", line: "104, 133", classification: "AMBIGUOUS", implication: "No company utilisation given; derived 45.5% (148 MW vs 325 MW quarterly at 1.3 GW, nameplate basis unstated). Under-absorption drives H2 operating leverage."}
+  - {id: "A3-05", check: "F16", line: "125", classification: "FORWARD-SIGNAL", implication: "No QoQ column; Q1 FY27 PAT Rs 36.62 Cr -> Q2 Rs 5.02 Cr (-86.3%); derived Q1 EBITDA margin 70.9% (tolling). H1 28.26% overstates run rate; Q2 9.52% is the owned-model exit margin."}
+  - {id: "A3-06", check: "F16", line: "97-98, 101", classification: "AMBIGUOUS", implication: "Derived EBITDA per MW sold Rs 28.4 lakh -> Rs 15.1 lakh (-47%) while revenue per MW rose Rs 0.81 Cr -> Rs 1.59 Cr. Owned model should raise EBITDA/MW; spread compression vs first-quarter transition costs."}
+  - {id: "A3-07", check: "F16", line: "79", classification: "NEUTRAL-FACT", implication: "Operating EBITDA undefined but reconstructs exactly as PBT + finance + D&A - other income; excludes H1 government grant Rs 6.69 Cr. Track for definition drift."}
+  - {id: "A3-08", check: "F14", line: "127", classification: "NEUTRAL-FACT", implication: "PAT margin on total income, EBITDA margin on revenue, undisclosed; revenue-basis PAT margin 3.23% / 18.59% for Q2 / H1 FY27. Understates; drafting inconsistency only."}
+  - {id: "A3-09", check: "F17", line: "111-112", classification: "AMBIGUOUS", implication: "CEO standalone long-term-growth language vs scheduled dissolution; release silent on swap ratio, mix, utilisation, inventory, QoQ. One quarter of silence (first run)."}
+forward_signals: ["A3-01", "A3-02", "A3-05"]
+ambiguous: ["A3-03", "A3-04", "A3-06", "A3-09"]
+commitments:
+  - {commitment: "Amalgamation of Indosolar into Waaree Energies; Indosolar dissolves on effectiveness", implied_date: "NOT FOUND (draft scheme board-approved 23-Sep-2026)", ref: "line 117, R065; results R374/R351/R337", status_word: "initiated"}
+  - {commitment: "Transition of a major share of volumes from tolling to owned manufacturing", implied_date: "NOT FOUND", ref: "lines 104-105, R061", status_word: "underway"}
+  - {commitment: "Strengthen manufacturing capabilities, improve operational efficiencies", implied_date: "NOT FOUND", ref: "lines 111-112, R063", status_word: "none (intent)"}
+  - {commitment: "Build a more efficient, future-ready manufacturing platform", implied_date: "NOT FOUND", ref: "lines 114-115, R064", status_word: "none (intent)"}
+  - {commitment: "Operational synergies from integration with Waaree", implied_date: "NOT FOUND", ref: "lines 118-119, R066", status_word: "none (expectation)"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Every release figure ties to the filed standalone statement to the lakh. Operating EBITDA = PBT + finance + D&A - other income. PAT margin uses total income, not revenue, and understates. The material point is not a number. The release calls the amalgamation a milestone and the CEO speaks of long-term growth, but filed Note 4 says Indosolar dissolves when the scheme takes effect. The listed equity's value then turns on a swap ratio neither document gives. Second, the Q2 fall is not only a tolling-to-owned revenue gross-up. Derived EBITDA per MW sold fell 47% (Rs 28.4 lakh to Rs 15.1 lakh) while revenue per MW doubled; owned manufacturing should raise EBITDA per MW. Third, 50 MW produced but unsold and a Rs 105.92 Cr Q2 inventory build put H2 revenue and NRV risk on module prices. Derived 45.5% utilisation assumes 1.3 GW is annual nameplate. F17 was run per the task message though it is concall-specific; one quarter of silence in a one-way release is weak evidence. A1 anchor defects at R048 and R050 change no value."

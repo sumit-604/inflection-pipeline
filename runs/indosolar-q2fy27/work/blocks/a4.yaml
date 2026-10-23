@@ -1,0 +1,79 @@
+stage: A4-analyst
+company: "INDOSOLAR"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+changes:
+  - "F1 FACTUAL fixed: YoY gross-margin fall 22.92 pp decomposed as goods spread -13.51 pp (59%, about three-fifths) and tolling mix -9.42 pp (41%, about two-fifths); Rs Cr tolling GP -28.55, goods volume -5.73, goods spread -21.02 (total -55.30); re-derived from results L78, L79, L83, L84. Changed at Step 3 note (new decomposition table), Step 4 margin row, Flag 2, Q3, Q12, summary narrative, YAML flag, analyst_note"
+  - "M1 MISSING added: 85.42 Cr net cash (L133-134) qualified against 89.94 Cr unexplained other current liabilities (L159), up 81.99 Cr in H1 while net cash rose 79.66 Cr; net about -4.52 Cr; reading one parent advance that cancels on amalgamation, reading two third-party obligation; separating observation counterparty (Q6, M1) and Q3 FY27 drawdown (M6). Aligned at Step 5 net-cash rows and net-debt answer, new net-cash qualifier bullet, 6A, Pillar 1 row, Q1, Q6, 8A-W flag 4, Flag 4, summary narrative, competition, forward map M1"
+  - "M2 MISSING added: acquisition-economics probe; consideration NOT FOUND so price/PAT NOT COMPUTABLE; earnings base spans 12.3x (FY26 quarterly avg PAT 61.65 Cr vs Q2 FY27 5.02 Cr; 8.7x at statutory tax); scheme approved 23-Sep-2026 inside trough quarter; administration inside transferee group (L56, L71, PR L145, PR L72). Added to Flag 1, valuation-unit row, Q1 (earnings year, methods, market-price weight), top-3, 8A-W flag 2, monitorable M1, forward map M1, summary narrative"
+  - "A5 1D tie added: cash-flow other liabilities 86.99 Cr = OCL change 81.99 + other non-current liabilities change 2.86 + deferred-grant drawdown 2.14 (L190, L159, L149, L176, L197); cited in Step 5 qualifier and Q9"
+  - "S1 rounding: core PBT change -56.00; revenue QoQ +127.59% (two places); H1 average revenue 111.97; Op EBITDA shortfall 53.17%"
+  - "S2 verdict basis reworded (statements foot and tie to release; two cash-flow lines do not reconcile, flag 4); S3 Q1 70.89% stated as whole-company tolling-heavy quarter margin; S4 cash attribution reworded; S5 'footnote-type rows'; S9 rate-effect label sign (1.00 pp ETR rise)"
+  - "No change to protocol_verdict, cash_conversion, position_branch, ledger reconciliation or A3 coverage"
+docs_merged: [results, presentation]
+ledger_reconciliation:
+  notes: 6
+  turns: 0
+  slides: 3
+  all_reviewed: true
+  a3_findings_incorporated: ["R-A3-01", "R-A3-02", "R-A3-03", "R-A3-04", "R-A3-05", "R-A3-06", "R-A3-07", "R-A3-08", "R-A3-09", "R-A3-10", "R-A3-11", "R-A3-12", "R-A3-13", "R-A3-14", "R-A3-15", "R-A3-16", "P-A3-01", "P-A3-02", "P-A3-03", "P-A3-04", "P-A3-05", "P-A3-06", "P-A3-07", "P-A3-08", "P-A3-09"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE: no Notion page, no companies/INDOSOLAR.md, no spear; ND 'not passed'; framed as PRE-THESIS READ"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap: "N.A.: consolidated not prepared, no subsidiary/associate/JV (Note 5, L225)"}
+  - {period: "Q1 FY27", gap: "N.A.: Note 5"}
+  - {period: "Q2 FY26", gap: "N.A.: Note 5"}
+  - {period: "H1 FY27", gap: "N.A.: Note 5"}
+  - {period: "H1 FY26", gap: "N.A.: Note 5"}
+  - {period: "FY26", gap: "N.A.: Note 5"}
+questions_for_management:
+  - {q: "Swap ratio, valuers, appointed date under the 23-Sep-2026 draft scheme; which earnings year and which methods the valuers weighted and what weight went to market price; treatment of 85.42 Cr cash vs 89.94 Cr other current liabilities (check the Reg 30 filing first)", from_finding_id: "R-A3-05, P-A3-01"}
+  - {q: "Dates for exchange observation letters, NCLT meetings, effective date; is a public-shareholder majority vote required", from_finding_id: "R-A3-16, R-A3-05"}
+  - {q: "Share of Q2 goods sales 152.77 Cr sold to Waaree group and pricing basis", from_finding_id: "R-A3-11"}
+  - {q: "Owned vs tolled MW of 98 MW sold and EBITDA per MW on each", from_finding_id: "P-A3-06, P-A3-02"}
+  - {q: "Order backing and carrying value per MW of 221.97 Cr inventory and 50 MW unsold; any NRV write-down", from_finding_id: "P-A3-03, R-A3-09"}
+  - {q: "Composition and counterparty of other current liabilities 89.94 Cr and other current assets 74.23 Cr (decides whether any of the 85.42 Cr cash is free)", from_finding_id: "R-A3-09"}
+  - {q: "Receivable-payable set-off of about 34.94 Cr in H1: yes/no, with whom, how much", from_finding_id: "R-A3-10"}
+  - {q: "Remaining unrecognised losses after DTA 12.31 Cr exhausted; expected H2 FY27 cash tax rate", from_finding_id: "R-A3-06"}
+  - {q: "Grant scheme name, remaining deferred balance, amortisation period, clawback on amalgamation", from_finding_id: "R-A3-01"}
+  - {q: "Principal, counterparty and rate behind 2.51 Cr interest income vs 0.08 Cr received", from_finding_id: "A4 (extends R-A3-01)"}
+  - {q: "Legacy debt or accrued interest settled or waived by parent; who paid H1 FY27 lease rentals", from_finding_id: "R-A3-02"}
+  - {q: "What Sale of Services is, buyer, why 54.39 Cr to 2.82 Cr, whether Q1 as first reported matches", from_finding_id: "R-A3-13, P-A3-02"}
+  - {q: "Q2 utilisation; is 1.3 GW annual nameplate; Q2 FY26 capacity", from_finding_id: "P-A3-04"}
+  - {q: "Estimated scheme cost, booking line, any scheme cost in Q2 other expenses 5.64 Cr", from_finding_id: "R-A3-03"}
+  - {q: "Standalone plan beyond effective date given long-term growth language; project behind 1.21 Cr CWIP", from_finding_id: "P-A3-09, R-A3-04"}
+  - {q: "Commit to QoQ column and MW disclosure until effectiveness; Q1 FY27 MW tolled", from_finding_id: "P-A3-05"}
+monitorables:
+  - {item: "Extract 23-Sep-2026 Reg 30 scheme filing (swap ratio, appointed date, valuers; earnings year, methods and weights used, market-price weight; treatment of cash and 89.94 Cr other current liabilities)", implied_date: "immediate, before /fttcp", source_ref: "Note 4 L222-224; run-log context"}
+  - {item: "Verify review-report UDIN, partner M.No. 131146, ICAI portal", implied_date: "immediate", source_ref: "R-A3-15; L282-283"}
+  - {item: "Exchange observation letters and SEBI comments on scheme", implied_date: "NOT FOUND", source_ref: "Note 4; R-A3-05"}
+  - {item: "NCLT-convened shareholder and creditor meetings", implied_date: "NOT FOUND", source_ref: "Note 4; R-A3-16"}
+  - {item: "Scheme effective date; Indosolar dissolves", implied_date: "NOT FOUND", source_ref: "Note 4 L224 (R337)"}
+  - {item: "Q3 FY27 results: Op EBITDA per MW sold (bull >=28.40 lakh, bear <=15.12 lakh), inventory vs 221.97 Cr, other current liabilities vs 89.94 Cr, current tax, exceptional line", implied_date: "by 2027-02-14 (LODR Reg 33 deadline)", source_ref: "Step 8C; R-A3-03, R-A3-06, R-A3-09, P-A3-03, P-A3-06"}
+  - {item: "Q3 FY27 release keeps MW produced/sold and adds QoQ column", implied_date: "by 2027-02-14", source_ref: "P-A3-05; PR L100-101"}
+  - {item: "FY27 audited results and H2 FY27 cash flow", implied_date: "by 2027-05-30 (LODR deadline), if entity still files", source_ref: "Step 5 missing evidence"}
+  - {item: "FY27 Annual Report: related-party sales, grant note, set-off, actuarial assumptions", implied_date: "if before effectiveness; AGM by 2027-09-30", source_ref: "R-A3-01, R-A3-08, R-A3-10"}
+  - {item: "Q1 FY28 results", implied_date: "by 2027-08-14 (LODR deadline), if entity still files", source_ref: "trajectory"}
+  - {item: "Reg 47 newspaper publication and website availability", implied_date: "not stated; after 2026-10-21", source_ref: "L42, L46-47 (R335, R336)"}
+  - {item: "Owned share of MW disclosed (tolling-to-owned transition)", implied_date: "NOT FOUND", source_ref: "PR L104-105"}
+  - {item: "Grant balance, amortisation, clawback on amalgamation", implied_date: "FY27 AR or scheme documents", source_ref: "R-A3-01"}
+flags:
+  - "TERMINAL EVENT AND ACQUISITION ECONOMICS: Note 4 draft scheme dissolves Indosolar into Waaree Energies; swap ratio, appointed date, timeline NOT FOUND; consideration NOT FOUND so price/PAT NOT COMPUTABLE; earnings base spans 12.3x (FY26 quarterly avg PAT 61.65 Cr vs Q2 FY27 5.02 Cr; 8.7x at statutory tax); scheme approved 23-Sep-2026 inside trough quarter by a board whose administration sits in the transferee group (L56, L71, PR L145, PR L72); extract 23-Sep-2026 Reg 30 filing before any valuation"
+  - "Margin collapse: Op EBITDA margin 9.52% vs 34.92% YoY (-2,540 bps); core PBT 3.30% vs 30.18% of revenue; gross margin 18.89% vs 41.81% (-22.92 pp): goods spread (31.15% to 17.39%) about three-fifths (13.51 pp), lost tolling mix about two-fifths (9.42 pp); Rs Cr tolling GP -28.55, goods spread -21.02, goods volume -5.73"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION: H1 CFO/PAT 1.91x rests on 158.42 Cr receivable release and 86.99 Cr liability inflow; inventory 221.97 Cr (10.5x)"
+  - "Undisclosed movements: ~34.94 Cr receivable-payable set-off; other current liabilities 89.94 Cr and other current assets 74.23 Cr unexplained; ~80.25 Cr stock outside P&L inventory line [INFERENCE]; 85.42 Cr net cash net of the 89.94 Cr line about -4.52 Cr, free cash unproven"
+  - "Related-party transfer-pricing reading of Q2 margin open; no related-party disclosure in quarterly filing"
+  - "Other Income 23.55% of Q2 PBT; grant 6.69 Cr non-cash; interest income 2.51 Cr vs 0.08 Cr received, source undisclosed"
+  - "DTA exhausted (12.31 Cr to -0.23 Cr); cash tax from Q3 FY27 [INFERENCE]; FY26 EPS 59.27 vs 42.14 at statutory tax"
+  - "Pre-thesis: no Notion page, Decision Status, spear or companies file; spear gate not satisfied for /run-pipeline or /fttcp"
+  - "Downstream tracker 0 signals (<3); three Case B candidates proposed, not written"
+  - "Role 5 not run: no concall held or intimated"
+  - "Role 4 Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged; converter archetype caution on spot ROCE (A17) [INFERENCE]"
+  - "Light drafting control: EPS on TCI basis (R-A3-12), undisclosed PAT-margin denominator (P-A3-08), naming slips (R-A3-14); UDIN unverified (R-A3-15)"
+plain_language_brief_included: true
+analyst_note: "Loop 1 fixes one factual error and adds two probes. The 22.92 pp YoY gross-margin fall splits about three-fifths goods spread (13.51 pp) and two-fifths lost tolling mix (9.42 pp). In rupees, lost tolling gross profit (28.55 Cr) is the largest single item, so 'not a mix artifact' was wrong. Spread is still the larger share, so input cost versus group transfer pricing stays open; Q3 EBITDA per MW sold separates them. The 85.42 Cr cash is not proven free: 89.94 Cr of unexplained other current liabilities sit against it (net about -4.52 Cr), whether the line is a parent advance or a third-party obligation. The scheme multiple is not computable: consideration NOT FOUND, and the earnings base spans 12.3x between the FY26 quarterly average and Q2 FY27. A board whose administration sits in Waaree's group approved the scheme inside the trough quarter, so the valuers' base year and method weights decide minority value. The 1.91x H1 CFO/PAT should not be banded. Verdict PROCEED WITH FLAGS stands; extract the scheme filing before any valuation."
+review_path: "C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline\\.claude\\worktrees\\quarterly-indosolar-q2fy27-2614ff\\runs\\indosolar-q2fy27\\work\\review_indosolar_q2fy27.md"

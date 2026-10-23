@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "INDOSOLAR"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:\Users\SUMIT SHARMA\repos\inflection-pipeline\.claude\worktrees\quarterly-indosolar-q2fy27-2614ff\runs\indosolar-q2fy27\work\ledger_presentation_indosolar_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 19
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 3
+  slide_numbers: 41
+flags_raised: [RESTATED, FOOTNOTE_UNRESOLVED, ENTITY_CHANGE]
+ids_in_structured: 84
+ids_referenced: 84
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Three-page press release, no prior ledger, so no DROPPED_SLIDE diff. 41 numbers: 12 table-derived restatements of headline/bullet figures (RESTATED). Operating EBITDA is undefined in the document (R081). Module sold (98 MW) is below produced (148 MW) in Q2FY27; no utilisation figure against 1.3 GW. No numeric guidance, no board meeting times, no auditor report. Amalgamation with Waaree Energies carries no date or terms (R065); ENTITY_CHANGE is a candidate flag only, not a confirmed change. R070 is a regulation year, not a true date."

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/fairchemor-q2fy27/work/ledger_results_fairchemor_q2fy27.md"
+counts:
+  notes: 9
+  line_items: 353
+  zero_standing: 19
+  agenda_items: 2
+  auditor_paras: 3
+  entities: 36
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, FOOTNOTE_UNRESOLVED, RESTATED, RELATED_PARTY, SIGNATURE_BEFORE_MEETING_END]
+ids_in_structured: 484
+ids_referenced: 484
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Auditor (15:59:19) and CMD (15:41:45) signature stamps precede the 16.15 Board conclusion; CS stamp 16:24:05 follows it. The 45-minute Board meeting carried two items: results, and a Rs 12.01 Cr land RPT with the CMD and relatives (6,182 sq m, adjoining plant). Exceptional Item is nil in all FY27 periods; the FY26 Rs 88.27 L is the Labour Code charge. Unlabelled subtotals (R192/R193, R226/R227) and a stray CF label (R467) sit near held-for-sale lines, which are non-zero at both dates (R194/R195, R228/R229). Lease lines are nil at FY26 end but present at 30-Sep-2026. No prior ledger, so ENTITY_CHANGE was not tested; Note 4 states no subsidiaries."

@@ -1,0 +1,28 @@
+stage: A2-enumerator
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+loop_iteration: 1
+ledger_path: "runs/fairchemor-q2fy27/work/ledger_presentation_fairchemor_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 240
+  zero_standing: 14
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 60
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 24
+  slide_numbers: 321
+flags_raised: [CLAIM_TO_TEST, DUPLICATE_WORDING, ZERO_STANDING, RESTATED, LAYOUT_OFFSET, LAYOUT_ORDER, LAYOUT_NOTE, ORDER_INFERRED, CHART_POSITION_INFERRED, CHART_UNASSIGNED, LAYOUT_GARBLED]
+ids_in_structured: 512
+ids_referenced: 512
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Loop 1: R458-R512 registered (48 qualifier claims, 7 forward policy bullets); 20 forward and 87 qualifier rows now. CLAIM_TO_TEST rows: R466 lowest cost globally, R474 short payment cycles, R490 market entire quantity (Q2 revenue -5.2% QoQ), R494, R500, R501 not overleverage (net debt/equity 0.20, 0.32, 0.24), R505 low cash flow volatility (CFO -168, 416, 240). No MISSING_FROM_STRUCTURED after bullet sweep. Earlier: A2 added ZERO_STANDING to R180, R182, R183 (Intangible Assets FY26; Intangible Assets Under Development FY26 and H1 FY27, value 0), which A1 left unflagged; total 14. Dash rows on p19 financial-assets and non-current-liability headers (R184,R185,R224-R226) and net change in cash (R271-R273) are layout dashes; A3 should not treat them as nil disclosures without reading the A1 context. 54 rows carry RESTATED (p15/p16/p17/p18/p22 repeat the same metric and value). Return-ratio chart values R300-R307 stay unassigned between ROCE and ROE and periods; the ledger does not resolve them. No prior ledger, so DROPPED_SLIDE not assessable."

@@ -1,0 +1,47 @@
+stage: A5-adversary
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Supply-bound reading of the Q2 -5.2% QoQ dip softens the demand concern; inventory evidence fits Reading 2 better (rev L178-L179, L460, L475)", counter: "Filed QoQ production input rose (materials consumed +4.4%, power and fuel +6.2%), so feedstock did not visibly cap Q2; the dip equals the taper of the FG/WIP drawdown (15.98 to 2.88 Cr; 13.10 Cr less stock sold vs revenue -9.22 Cr), so Q1 was flattered by stock liquidation and Q2 is the cleaner run-rate; 'no stock build' does not discriminate because deck R479 says production can expand and contract as required. Values not tonnes; tonnage separator still settles it", source_line: "res R030 R031 L234; R055 R056 L238; R038 R037 L235; R012 R013 L225-L227; deck R479 L257-L258", type: MISSING}
+findings_by_type:
+  factual: []
+  missing:
+    - {id: N1, route: A4, gap: "Add Reading 3 (stock timing, filed) to Step 3 and qualify the 'fits Reading 2 better' tilt; carry one sentence into the brief (rev L475), the verdict basis (rev L460) and the Q2 flag line (rev L589). No number or verdict change", source_line: "res R030 R031 R055 R056 R037 R038; deck R479 L257-L258"}
+  contradiction: []
+  style:
+    - "S8 Step 5 counterfactual 'about 7.31 Cr' = exact sum of named items; full counterfactual 7.18 Cr (rev L228)"
+    - "S9 'lowest cost producer' called 'contradicted' (rev L338); extract supports 'unsupported' (Rule J symmetric bar)"
+    - "S10 FY26 CFO/PAT 6.7x on pre-exceptional PAT; 7.5x on reported (rev L244)"
+    - "S11 Reading 1 receivables leg vs Step 5 flat-to-lower days (rev L177 vs L230, L243)"
+    - "S12 Brief 'with borrowed money' vs Flag 4 'likely debt-funded' (rev L478 vs L450)"
+    - "S13 'A3-P20' typo (rev L212)"
+    - "S14 A1 column bleed in deck R460, R467; R466 merges two phrases (A4 compensates, rev L10)"
+    - "S15 A2 deck ledger L19 stale 'MISSING_FROM_STRUCTURED: none'"
+    - "S16 Residual deck p4 L85-L93 'Pan India' sourcing claim uncaptured; theme duplicated by R471 R472 R487"
+loop_back_to: "A4"
+gap: "MISSING (A4), N1: Step 3 lacks the filed stock-timing reading of the Q2 dip. Q2 materials consumed +4.4% and power and fuel +6.2% QoQ (res R030 R031 R055 R056); FG/WIP drawdown 15.98 to 2.88 Cr explains the revenue fall (res R038 R037); deck R479 makes 'no stock build' non-discriminating. Qualify the Reading 2 tilt and carry one sentence each into the brief (rev L475), verdict basis (rev L460) and Q2 flag line (rev L589). Loop cap reached: open item for the operator."
+style_notes:
+  - "S8 7.31 vs 7.18 Cr counterfactual wording (rev L228)"
+  - "S9 'contradicted' to 'unsupported' (rev L338)"
+  - "S10 CFO/PAT PAT basis (rev L244)"
+  - "S11 Reading 1 receivables leg (rev L177)"
+  - "S12 buyback funding hedge (rev L478)"
+  - "S13 A3P-20 typo (rev L212)"
+  - "S14 A1 column bleed R460 R467 R466"
+  - "S15 A2 ledger L19 stale note"
+  - "S16 residual p4 Pan India claim"
+analyst_note: "Loop 1 closed every iteration 0 finding. A1 added 55 deck rows, A2 ledgered all 512 with no orphans, and A4 applied all four grafts and all seven style fixes. Every new figure recomputes. One new MISSING finding remains, and it comes from A4's own loop change. A4 turned the Q2 dip into demand-side vs supply-bound readings and tilted to supply-bound. That tilt now sits in the verdict basis. The filed P&L points elsewhere. Q2 materials consumed rose 4.4% and power and fuel rose 6.2% QoQ, so production input did not fall. The revenue dip equals the taper of Q1's stock liquidation, from a 15.98 Cr drawdown to 2.88 Cr. R479 'expand and contract production' means a lack of stock build proves nothing. This is values, not tonnes, so tonnage still decides. The fix is one Step 3 paragraph and three sentences, with no number or verdict change. My iteration 0 U6 note prompted the supply-bound reading, and this finding corrects its weight. The loop cap is reached, so N1 goes to the operator as an open item."

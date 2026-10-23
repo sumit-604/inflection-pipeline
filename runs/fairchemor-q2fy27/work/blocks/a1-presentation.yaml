@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 24
+formfeed_count: 24
+line_count: 676
+unit_convention: "Millions (Rs Mn)"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/fairchemor-q2fy27/extracted/fairchemor-presentation-q2fy27-fulltext.md"
+structured_path: "runs/fairchemor-q2fy27/extracted/fairchemor-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 321
+  entity: 60
+  forward: 20
+  date: 24
+  qualifier: 87
+structured_id_range: "R001-R512"
+gate_a1: pass
+gap_note: ""
+loop_iteration: 1   # correction loop 1: appended R458-R512 (55 rows: 48 QUALIFIER, 7 FORWARD) for slide 4/6/7/8/10/11/13 management-claim and policy bullets

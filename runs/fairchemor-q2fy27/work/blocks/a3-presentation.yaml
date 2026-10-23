@@ -1,0 +1,72 @@
+stage: A3-forensics
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+forensics_path: "runs/fairchemor-q2fy27/work/forensics_fairchemor_q2fy27_presentation.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: FINDING
+  F10: PASS
+  F11: PASS
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "A3P-01", check: "F1", line: "deck 492-494 (p18) '-       -     7      0'", classification: "NEUTRAL-FACT", implication: "Labour Code exceptional line kept at 0 in H1 FY27; filing calls FY26 charge nonrecurring; watch for true-up when final rules notify"}
+  - {id: "A3P-02", check: "F6", line: "deck 95-98 (p4) 'throughput capacity / expansion completed / with minimal capex'; 511 'CWIP 117 184 83'", classification: "FORWARD-SIGNAL", implication: "Capacity expansion completed; utilisation is now the volume swing; no capacity or utilisation figure disclosed"}
+  - {id: "A3P-03", check: "F6", line: "deck 562-566 (p21) 'initially by 25% and eventually at 50% of the sales'; results line 479 Note 3", classification: "FORWARD-SIGNAL", implication: "Export target 25%-50% of sales vs filed 'almost all revenue from domestic sales'; basis and dates unstated"}
+  - {id: "A3P-04", check: "F6", line: "deck 410-412 (p15) 'in turn our capacity utilization during the year'", classification: "FORWARD-SIGNAL", implication: "FY27-dated utilisation commitment with no baseline; untestable unless management gives a number"}
+  - {id: "A3P-05", check: "F7", line: "deck 408-409 (p15) 'macros are uncertain due to middle east crisis'; 305 (p10) 'by evaluating market demand-supply scenario'", classification: "AMBIGUOUS", implication: "Hedged outlook; no expansion capex committed; FTA may cut import-parity margin as well as help exports"}
+  - {id: "A3P-06", check: "F9", line: "deck 493 (p18) '(1) (1) 4 -2'; results line 257 Q1 FY27 '(51.28)' vs FY26 '49.86'", classification: "NEUTRAL-FACT", implication: "Single-quarter actuarial swing exceeds full prior year; about Rs 0.5 Cr; verify discount rate at FY27 AR"}
+  - {id: "A3P-07", check: "F14", line: "deck 381-383 'audited by one of the Big 4 for the last 9 years'; 29, 582, 349, 673, 658, 399-401", classification: "NEUTRAL-FACT", implication: "Cumulative drafting looseness: auditor named KPMG vs filed B S R and Co, tenure predates 2019 CIN, typos, misspelt IR email, telecom boilerplate, H1 figure under Q2 heading"}
+  - {id: "A3P-08", check: "F16", line: "results line 68 'purchase of 2 separate pieces of land (adjoining to the plant ...) from the Chairman & Managing Director ... and his relatives'; deck 305", classification: "FORWARD-SIGNAL", implication: "Deck omits same-day Rs 12.01 Cr promoter RPT land buy adjoining plant (2.7x H1 capex); likely next expansion site; RPT governance question"}
+  - {id: "A3P-09", check: "F16", line: "deck 525/524 (p19) 'Other current assets'; results line 324 '395.67' AHFS, line 372 '101.00' LHFS", classification: "AMBIGUOUS", implication: "Held-for-sale group (39.6 Mn asset, 10.1 Mn liability) invisible in deck; pending disposal, future cash and gain/loss line"}
+  - {id: "A3P-10", check: "F16", line: "deck 600 (p22) '128'; 521-524 receivables '861 681' to '1002'; results line 418 '2,230.80', line 421 '(3,200.20)'", classification: "FORWARD-SIGNAL", implication: "CCC 76-82-99-128 days; receivables +47% while Q2 revenue -5.2% QoQ; H1 OCF 240 leans on 223 Mn inventory release; H2 OCF has no inventory cushion"}
+  - {id: "A3P-11", check: "F16", line: "deck 402-403 (p15) 'higher price realization primarily due to higher raw material cost and higher import finished product cost'; 405-406 'due to lower imports'", classification: "AMBIGUOUS", implication: "Price-led growth, no volume disclosed; 674 bps EBITDA gain = ~275 bps gross margin + ~401 bps fixed-cost leverage; import-parity artifact vs structural mix; separator = MT volume and spread per tonne"}
+  - {id: "A3P-12", check: "F16", line: "deck 303-304 (p10) 'primarily through internal accruals' / 'buy-back of INR 340 Mn'; 538-540 (p20) FY25 '(168) (255) 423'; 636 '675.0'", classification: "AMBIGUOUS", implication: "Capital-efficiency framing vs debt-funded FY25 capex and ~200 Mn debt-funded FY26 payouts; buy-back at Rs 800 vs CMP 675; net D/E 0.20 to 0.32"}
+  - {id: "A3P-13", check: "F16", line: "deck 592 (p22) '62     19.62%'; 500 (p18) EPS '4.28'; 427-437 (p16)", classification: "NEUTRAL-FACT", implication: "FY26 'PAT' chart is pre-exceptional (filed 55.4); deck Total Expenses excludes D&A and finance; rounding plugs (finance cost 11 vs 11.8, YoY 83.3% vs 93.7%); no QoQ column hides -5.2% QoQ revenue"}
+  - {id: "A3P-14", check: "F16", line: "deck 206-208 (p7) 'secure and low-cost / raw material supply' vs 411-412 (p15) 'likely to improve the availability of raw / material'", classification: "AMBIGUOUS", implication: "Moat claim of secure supply vs admitted availability constraint and RM-cost-driven pricing; by-product share caps supply; separator = contracted vs spot share and RM tonnage vs capacity"}
+  - {id: "A3P-15", check: "F16", line: "deck 209-213 (p7) 'the lowest cost / producer / globally'; 216-217 'comparable to global peers'; 477 (p18) '10.78%  7.96%  4.70%  10.32%'", classification: "AMBIGUOUS", implication: "Lowest-global-cost claim vs import-sensitive margin swing (10.78% to 4.70% to 10.32%); no peer data; separator = conversion cost per tonne vs peers and spread vs import-landed price"}
+  - {id: "A3P-16", check: "F16", line: "deck 233-235 (p7) 'on short payment cycles'; 522 (p19) payables '83     110   113'", classification: "NEUTRAL-FACT", implication: "Claim confirmed: payables ~8 days of H1 COGS; no supplier credit, so price-led WC growth lands on cash-credit borrowings"}
+  - {id: "A3P-17", check: "F16", line: "deck 295 (p10) 'Position to market entire quantity of Prime Products it produces'; 521-522 (p19) inventories", classification: "NEUTRAL-FACT", implication: "Consistent: inventory 922 to 699, FG/WIP drawn down both quarters; volume supply-bound not demand-bound; receivables caveat sits in A3P-10"}
+  - {id: "A3P-18", check: "F16", line: "deck 323 (p11) 'Low volatility in the cash flow generation' vs 538 (p20) '(168)   416      240'", classification: "AMBIGUOUS", implication: "Policy contradicted by own CFO swing (CFO/PAT -0.8x, 6.7x, 1.2x) and rising CCC; H2 CFO without inventory release is the test"}
+  - {id: "A3P-19", check: "F16", line: "deck 313/315 (p11) 'Always be adequately capitalized' / 'Not overleverage the balance sheet'; 521 (p19) borrowings '630    837   686'", classification: "NEUTRAL-FACT", implication: "Leverage policy holds on level (net D/E peak 0.32, H1 interest cover 11.8x); FY26 stress at 3.9x debt/EBITDA with equity cut by buy-back"}
+  - {id: "A3P-20", check: "F16", line: "deck 483 (p18) 'Finance Cost  42  37  37  30'; 457 (p17) H1 FY26 '16'", classification: "AMBIGUOUS", implication: "H1 finance cost +87.5% YoY while borrowings fell 837 to 686; implied cost ~7.9% vs ~5.0% FY26 (inference); cause undisclosed (rate reset, receivable discounting, tax interest)"}
+  - {id: "A3P-21", check: "F14", line: "deck 103-104 (p4) 'of soft oils processed' vs 137-139 (p5) 'Hard Oil ... (0.25% by-product)'; 209-213, 284, 294, 299, 320, 230", classification: "NEUTRAL-FACT", implication: "Claim drafting: DOD source inconsistent p4 vs p5; 'One of the Lowest' vs 'the lowest'; duplicate p7/p10 wording; unquantified leadership claim; 'continued growth' vs FY24-FY26 decline; 'Transparent communications' vs RPT omission"}
+forward_signals: ["A3P-02", "A3P-03", "A3P-04", "A3P-08", "A3P-10"]
+ambiguous: ["A3P-05", "A3P-09", "A3P-11", "A3P-12", "A3P-14", "A3P-15", "A3P-18", "A3P-20"]
+commitments:
+  - {commitment: "Raw-material throughput capacity expansion with minimal capex", implied_date: "completed by 30-Sep-2026", ref: "deck p4 lines 95-98 (LAYOUT_GARBLED)", status_word: "completed"}
+  - {commitment: "Add one new raw material (Oleo Chemicals only) for value-added / niche chemical", implied_date: "undated", ref: "deck p4 lines 96-100; p21 lines 570-574", status_word: "initiated"}
+  - {commitment: "Higher capacity utilisation in FY27 from raw-material availability after crude soya duty cut", implied_date: "FY27 (by 31-Mar-2027)", ref: "deck p15 lines 410-412", status_word: "expected"}
+  - {commitment: "Exports initially by 25% and eventually 50% of sales", implied_date: "undated", ref: "deck p21 lines 558-566", status_word: "aim"}
+  - {commitment: "Enter new global markets; raise export share in all prime products", implied_date: "undated", ref: "deck p6 lines 157-158, 180-181", status_word: "underway"}
+  - {commitment: "Product upgradation: low-titre linoleic acid (oil drilling), distilled dimer, fatty oil for heating", implied_date: "undated", ref: "deck p21 lines 549, 558-570", status_word: "underway"}
+  - {commitment: "New products: bypass fat from PFAD; isostearic acid in cosmetics", implied_date: "undated", ref: "deck p21 lines 558-566", status_word: "underway"}
+  - {commitment: "Energy savings via energy audit (unquantified)", implied_date: "achieved", ref: "deck p21 lines 558-564", status_word: "completed"}
+  - {commitment: "Substitute imported catalyst with domestic catalyst", implied_date: "undated", ref: "deck p21 lines 568-570", status_word: "underway"}
+  - {commitment: "Scrubber system for air emissions", implied_date: "near future (undated)", ref: "deck p11 lines 319-321", status_word: "proposed"}
+  - {commitment: "Buy-back INR 340 Mn", implied_date: "Jan-26", ref: "deck p10 line 304; results R444/R445", status_word: "completed"}
+  - {commitment: "US tariff and EU/UK FTA support export strategy (external enabler)", implied_date: "undated", ref: "deck p4 lines 97-101", status_word: "expected"}
+  - {commitment: "Always be adequately capitalized; not overleverage the balance sheet", implied_date: "standing", ref: "deck p11 lines 313, 315 (R500, R501)", status_word: "policy"}
+  - {commitment: "Secure sources of sustainable raw material supply", implied_date: "standing", ref: "deck p11 lines 316-318 (R502)", status_word: "policy"}
+  - {commitment: "Invest in backward and forward integration", implied_date: "undated", ref: "deck p11 line 319 (R503)", status_word: "policy"}
+  - {commitment: "Transparent communications with all the stakeholders", implied_date: "standing", ref: "deck p11 line 320 (R504)", status_word: "policy"}
+  - {commitment: "Low volatility in the cash flow generation", implied_date: "standing", ref: "deck p11 line 323 (R505)", status_word: "policy"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Core read: H1 growth is price-led in management's own words (line 402). The deck has no volume, capacity or utilisation figure, so the 674 bps EBITDA gain cannot be split into spread and volume. Filed cost lines put about 275 bps in gross margin and about 401 bps in fixed-cost leverage on price-inflated revenue. That leverage reverses if import parity falls through the FTA or the duty cut. Second thread: working capital. CCC is 128 days. Receivables rose 47% since March while Q2 revenue fell 5% QoQ. H1 OCF of 240 Mn leans on a 223 Mn inventory release. Third: the deck omits the same-day promoter land purchase (Rs 12.01 Cr, adjoining the plant) while it calls capacity expansion 'evaluating'. A1 caveat: p19 ORDER_INFERRED rows mix line items across periods; A4 should use filing labels. R300-R307 stay unassigned. Deck and filing reconcile within rounding. Loop 1: the deck's own CFO, raw-material and margin lines contradict three claims (low cash-flow volatility, secure supply, lowest global cost)."

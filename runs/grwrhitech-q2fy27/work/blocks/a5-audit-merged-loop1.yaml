@@ -1,0 +1,40 @@
+stage: A5-adversary
+company: "GRWRHITECH"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches:
+  - {metric: "8C guide check: guide-path Q3 FY27 margin incl OI before the refund, 16 inside the guide (FY26 / FY25 seasonality)", a4_value: "21.0-24.1% labelled 'before any refund strip'; implied 18.2-21.3% after a full 2.79-pt strip; 'a bear-zone print fits the guide only if the 16 sits inside the guide and Q3 repeats the deep FY26 dip' (rev l.486)", recomputed: "19.6-22.7% (H2 before refund 23.76% less 4.16 / 1.03 pt Q3 gap); 21.0-24.1% if the 16 is outside the guide; H2 holds only 1.37 pts of refund (16/1,171.39), so the A4 route over-strips 1.42 pts; a bear print <=18.95% sits below both bands", source_line: "l.1010, l.1021-1024, l.1118-1121; L0390; rev l.268, l.486"}
+surviving_bear_counters:
+  - {claim: "WC leans growth-induced; derived split partly verifies the deliberate raw-material build (rev l.343, l.349, l.906)", counter: "Same answer says export-level inventories at Europe/US rose ~20 days (L0308-L0312); group FG/WIP/SIT fell 20.40 in Q2 and rose only 26.45 in H1, stock outside parent ~-17.9 (l.518, l.179), vs ~55-121 for 20 days of Q2 export sales; so not an own-book FY27 build: either FY26 own stock at subsidiaries (~+47.0 outside parent, 73.00-25.98) now unwinding, or customer channel fill with Q2 pull-forward [INFERENCE]; separating fact = date of the rise (Q19), Q3 export revenue YoY", source_line: "L0308-L0312; L0115; l.179; l.516-518", type: MISSING}
+findings_by_type:
+  factual:
+    - "NF1 (A4): 8C guide check (rev l.486) applies the refund-free Q3 seasonal gap to the refund-inclusive 25.12% H2 margin, then strips the full 2.79-pt Q3 refund; H2 holds only 1.37 pts, so it over-strips 1.42 pts. Before the refund the guide-path Q3 is 19.6-22.7% (16 inside, from rev l.268's 23.76%) or 21.0-24.1% (16 outside). A bear print <=18.95% sits below both, so the guide midpoint is at risk (Q4 near 28.4% or 31.0% needed on Q3 rev 573, above every chart Q4 20.1/22.2/26.2%, l.1021). The sentence 'a bear-zone print fits the guide only if the 16 sits inside the guide and Q3 repeats the deep FY26 dip' is wrong. Fix the bullet, the bear meaning (rev l.483), YAML fix text (rev l.1174). Origin: prior merged A5 audit F1 bullet 3"
+  missing:
+    - "NM1 (A4): graft AR3. Export-level stock up ~20 days (L0308-L0312) is not an own-book FY27 build: group FG/WIP/SIT -20.40 Q2, +26.45 H1, outside parent ~-17.9 (l.518, l.179) vs ~55-121 for 20 days of Q2 exports (L0115). Readings: FY26 own stock at subsidiaries (~+47.0 outside parent, 73.00-25.98) now unwinding, or customer channel fill [INFERENCE]. Add to Q19 (rev l.513), 6B row 11 (rev l.408), 5A row (rev l.814), Flag 18 (rev l.1065)"
+  contradiction: []
+  style:
+    - "S1-S9 (prior merged audit): still unapplied; carried as logged"
+    - "NS1: 'consistent with the prior 10-15% discount record' (rev l.818, l.1146): 80-85% is a 15-20% discount, on architectural film vs a PPF-peer record; say 'no narrower than, on a different product line'"
+    - "NS2: 8C bull is incl OI and 59% of H1 OI is MF gain (l.687); state that a bull print needs the ex-OI companion (rev l.485) to confirm"
+    - "NS3: Step 5 inventory row 'before FX translation and elimination effects' (rev l.315) vs note 'sit inside these differences' (rev l.343); align"
+    - "NS4: 6A ROCE cell shows only H1-annualised 24.31%; add seasonally neutral TTM 19.68% (19.30% after the 11 strip) vs 19% base"
+loop_back_to: "A4"
+gap: "NF1 (FACTUAL): rebuild the 8C guide check (rev l.486) on the before-refund H2 margin: guide-path Q3 before refund 19.6-22.7% (16 inside, 23.76% H2) or 21.0-24.1% (16 outside); a bear print <=18.95% sits below both, so it puts the 27% midpoint at risk (Q4 ~28-31% needed) rather than 'fitting the guide'; align the bear meaning (rev l.483) and YAML fix text. NM1 (MISSING): add the export-stock timing test (group FG/WIP/SIT -20.40 Q2, +26.45 H1, outside parent ~-17.9 vs ~55-121 for 20 days of exports; FY26 ~+47.0 outside parent) with both readings to Q19, 6B row 11, 5A row, Flag 18"
+style_notes:
+  - "S1-S9 carried (prior merged audit), unapplied"
+  - "NS1 pricing 'consistent with' -> 'no narrower than, different product line'"
+  - "NS2 bull print needs the ex-OI companion (MF gains 59% of H1 OI)"
+  - "NS3 align FX/elimination caveat wording in Step 5"
+  - "NS4 show TTM ROCE 19.68% (19.30% after strip) in the 6A cell"
+analyst_note: "All seven prior non-STYLE findings are fixed, and every dependent cell I traced is aligned. Both ledgers tie and the load-bearing arithmetic ties. Two new items loop to A4. First, the 8C guide check, added this loop, mixes refund bases. It applies the refund-free Q3 seasonal gap to the 25.12% H2 margin. It then strips the whole 2.79-point Q3 refund, but that H2 margin holds only 1.37 points of it. On the review's own 23.76% H2 margin before the refund, a guide-path Q3 before the refund is 19.6-22.7% if the 16 sits inside the guide. It is 21.0-24.1% if the 16 sits outside. A bear print at 18.95% or less therefore sits below the guide path either way, and the 27% midpoint would need a Q4 above any on the chart. The error started in my prior audit's F1 derivation, and A4 carried it forward. Second, the inventory split that supports the raw-material build also tests the export-stock claim. Group finished stock fell 20.40 in Q2. So the 20-day rise is FY26 own stock or customer channel fill."

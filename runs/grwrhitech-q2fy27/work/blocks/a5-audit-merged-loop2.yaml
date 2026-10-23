@@ -1,0 +1,35 @@
+stage: A5-adversary
+company: "GRWRHITECH"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual:
+    - "NF2 (A4): spoken H1 'EBITDA margin expanding by 464 basis points to 26.30%' (L0049) is read as a number conflict, 'likely ASR' (rev l.903, l.921, l.996, l.1039; also l.24, l.600, l.630). The filing carries it as the H1 PBT margin: release 'PBT Margin %' H1 FY27 26.3% vs H1 FY26 21.7%, 464 bps (l.780; R839, R841); deck H1 PBT 21.7% to 26.3% (l.994; R931, R932); 349.52/1,328.61 = 26.31% vs 230.72/1,064.68 = 21.67% [DERIVED]. Number and bps match the filing; only the label is wrong. Restate the 7A verdict as CONFIRMED (PBT margin, mislabelled EBITDA) and align the six other cells. Origin A3 FN01; missed by both prior merged audits; text only, no number or verdict change"
+  missing: []
+  contradiction: []
+  style:
+    - "S1-S9 (merged audit) and NS1-NS4 (merged loop 1): still unapplied; carried as logged"
+    - "NS5: NM1 wording 'an FY27 own-book build is excluded' / 'did not land on group books in FY27' (rev l.344, l.409, l.514, l.1292) is categorical; the quantified test holds at the stated 20 days, but at the 15-day low end (L0310-L0311) on material cost (~41.1) the parent's Q1 FG/WIP build of 43.55, held in Q2 (l.179), could hold transit stock; the analyst framed the rise as 'over the last few years' (L0292-L0294); suggest 'excluded at 20 days and at the subsidiaries'"
+    - "NS6: competition 'Margin gap' vs Uflex 11.25% / Cosmo 9.94% (rev l.1146): management's own IPD margin is 10-12% (L0792), at peer level; the gap is CPD mix, not a book-wide cost edge; optional cross-reference"
+    - "NS7: header records loop-2 approval as 2026-10-24 (rev l.14), after this audit date 2026-10-23; confirm (time zone or typo)"
+loop_back_to: "A4"
+gap: "NF2 (FACTUAL): the spoken H1 'EBITDA margin ... 464 bps to 26.30%' (L0049) is the filed H1 PBT margin (release l.780: 26.3% vs 21.7%, 464 bps, R839/R841; deck l.994, R931/R932), not a number conflict or ASR mishear. Restate 7A (rev l.903) as CONFIRMED (PBT margin, mislabelled EBITDA). Align preamble (4) rev l.24, Step 1 #12 rev l.600, Step 1 contradiction (a) rev l.630, 7A Read rev l.921, 8E rev l.996, Section C rev l.1039. Text only; no number or verdict changes"
+style_notes:
+  - "S1-S9, NS1-NS4 carried, unapplied"
+  - "NS5 NM1 'excluded' wording: say 'excluded at 20 days and at the subsidiaries'; 15-day low end (~41.1) fits the parent's Q1 FG/WIP +43.55"
+  - "NS6 IPD 10-12% (L0792) sits at peer level; competition margin gap is a mix effect"
+  - "NS7 header approval date 2026-10-24 vs audit date 2026-10-23"
+analyst_note: "Both loop-1 findings are fixed. The rebuilt guide check ties: a bear Q3 print sits below the 19.6-24.1% guide path, and the midpoint then needs a Q4 above every chart Q4 on either revenue split. The export-stock timing test is grafted in all four cells. The seven earlier merged fixes still hold. Coverage and arithmetic are clean. One new item loops to A4, and it is old. The review treats the spoken '464 bps to 26.30%' as the call's one backward-number conflict, 'likely ASR'. That figure is the filed H1 PBT margin, printed in the release (l.780) and the deck (l.994). So every backward number on the call matches the filing, and the ASR heard it right. Only the label slipped, on a call with no finance officer. The fix is text in seven cells, with no number or verdict change. It came from A3 FN01, and both prior merged audits missed it. The loop-2 header calls that loop final, so the operator decides whether to spend a loop or carry NF2 as an open item."

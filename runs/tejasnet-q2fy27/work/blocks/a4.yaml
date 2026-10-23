@@ -1,0 +1,80 @@
+stage: A4-analyst
+company: "TEJASNET"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, concall, presentation]
+ledger_reconciliation:
+  notes: 851
+  turns: 52
+  slides: 13
+  all_reviewed: true
+  a3_findings_incorporated: ["res:A3-01", "res:A3-02", "res:A3-03", "res:A3-04", "res:A3-05", "res:A3-06", "res:A3-07", "res:A3-08", "res:A3-09", "res:A3-10", "res:A3-11", "res:A3-12", "res:A3-13", "res:A3-14", "res:A3-15", "res:A3-16", "call:A3-F6-01", "call:A3-F6-02", "call:A3-F6-03", "call:A3-F6-04", "call:A3-F6-05", "call:A3-F6-06", "call:A3-F6-07", "call:A3-F7-01", "call:A3-F7-02", "call:A3-F7-03", "call:A3-F14-01", "call:A3-F14-02", "call:A3-F16-01", "call:A3-F16-02", "call:A3-F16-03", "call:A3-F16-04", "call:A3-F16-05", "call:A3-F16-06", "call:A3-F17-01", "call:A3-F17-02", "call:A3-F17-03", "call:A3-F17-04", "pres:A3-01", "pres:A3-02", "pres:A3-03", "pres:A3-04", "pres:A3-05", "pres:A3-06", "pres:A3-07", "pres:A3-08", "pres:A3-09", "pres:A3-10", "pres:A3-11", "pres:A3-12", "pres:A3-13", "pres:A3-14", "pres:A3-15", "pres:A3-16", "pres:A3-17", "pres:A3-18"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "WATCHLIST (not held; Position Size blank; Notion fetched 2026-10-23 02:05 UTC)"
+position_branch: "8A-W"
+sc_gap_pat_pct: [{period: "Q2 FY27", pct: 0.40}, {period: "Q1 FY27", pct: 0.00}, {period: "Q2 FY26", pct: 0.01}, {period: "H1 FY27", pct: 0.20}, {period: "H1 FY26", pct: 0.02}, {period: "FY26", pct: 0.82}]
+questions_for_management:
+  - {q: "Planned net-debt peak before BSNL cash, and gross debt, cash and net debt targeted at 31-Dec-2026 (net debt ex-lease 4,384 at 30-Sep)?", from_finding_id: "call:A3-F6-03; call:A3-F16-02; call:A3-F7-01; pres:A3-07; pres:A3-11; pres:A3-04"}
+  - {q: "Rupee BSNL milestone collections expected by 31-Dec-2026 and amount due from BSNL/TCS at 30-Sep?", from_finding_id: "call:A3-F6-02; call:A3-F7-01"}
+  - {q: "Rupee value and PO dates of BSNL add-on POs inside the 2,315 Cr book; TCS back-to-back terms; was it ever 26,000 sites?", from_finding_id: "pres:A3-02; pres:A3-08; pres:A3-12; call:A3-F16-04; call:A3-F6-06"}
+  - {q: "Composition of the 1,421 Cr Mar-26 other current liabilities and how much of the H1 fall was set-off vs cash?", from_finding_id: "res:A3-09"}
+  - {q: "Non-recourse discounting in H1, outstanding at 30-Jun and 30-Sep, and cost?", from_finding_id: "call:A3-F16-06; pres:A3-15"}
+  - {q: "Named first EBITDA-positive quarter; is the AGM-26 Q4 FY27 target withdrawn?", from_finding_id: "call:A3-F6-01; pres:A3-03"}
+  - {q: "Warranty 35.11 to 7.24 and ECL 8.08 charge to 10.55 write-back: fault-rate/model change or collections?", from_finding_id: "res:A3-11; res:A3-12; call:A3-F17-03"}
+  - {q: "Control preventing a repeat of the Rs 145 Cr manufacturing loss on the 18,685-site order; any Q2 obsolescence charge or reversal?", from_finding_id: "call:A3-F6-05; res:A3-14"}
+  - {q: "BSNL-dedicated share of the 2,314 Cr inventory and target level by 31-Mar-2027?", from_finding_id: "call:A3-F6-04; pres:A3-04"}
+  - {q: "Profit horizon supporting the 504 Cr DTA; was the 35% to 25.2% credit-rate step a s.115BAA switch or partial non-recognition?", from_finding_id: "res:A3-05; res:A3-06; pres:A3-06; call:A3-F17-01"}
+  - {q: "Any FY27 equity raise planned, and price floor?", from_finding_id: "call:A3-F17-01; pres:A3-18"}
+  - {q: "Shares held by the employee trust and RSU/ESOP overhang?", from_finding_id: "res:A3-08; pres:A3-18"}
+  - {q: "H1 capitalisation into intangibles, products, useful life, and Q3 amortisation?", from_finding_id: "res:A3-10; pres:A3-17"}
+  - {q: "Why international fell to 12% of revenue and 4% of book; did Europe 5G stop; Q2 international inflow; is the Tier-1 joint R&D project live?", from_finding_id: "call:A3-F16-05; pres:A3-13; call:A3-F17-04"}
+  - {q: "Where is PLI booked; PLI filed, accrued and received in H1 FY27?", from_finding_id: "res:A3-01; pres:A3-01"}
+  - {q: "How much of the unreviewed subsidiaries' 3.52 Cr Q2 revenue was billed to the parent?", from_finding_id: "res:A3-03"}
+  - {q: "Has the Chairman role changed (transcript lists MD and Chairman)?", from_finding_id: "call:A3-F14-01"}
+  - {q: "Confirm the 145 Cr charge sat above EBITDA in Q2 FY26 (YoY gain ex-charge about 42 Cr)?", from_finding_id: "call:A3-F16-03"}
+  - {q: "GoI OTN award date and value (call says won, deck says L1); POC and Tier-1 radio decision dates?", from_finding_id: "pres:A3-05; call:A3-F17-04"}
+  - {q: "Count and value of DCI orders on the new product in the last 6 months?", from_finding_id: "call:A3-F7-02"}
+  - {q: "Driver of the 63 Cr QoQ rise in other expenses ex-warranty; gross finance cost incl. forex?", from_finding_id: "pres:A3-17"}
+  - {q: "BSNL AMC start quarter and 8-year value; why ex-charge gross margin fell 52.5% to 38.2% YoY?", from_finding_id: "call:A3-F17-03"}
+monitorables:
+  - {item: "BSNL milestone collections, amount", implied_date: "2026-12-31", source_ref: "call T10 CL338-341; call:A3 register #1-2"}
+  - {item: "Most remaining BSNL POs into order book", implied_date: "2026-12-31", source_ref: "call T12 CL349-350; register #3"}
+  - {item: "Net debt ex-lease at Q3 close vs 4,000 / 4,500 (single cleanest metric)", implied_date: "2026-12-31 (reported ~mid-Jan-2027, inferred)", source_ref: "RL613-636; PL169; Step 8C"}
+  - {item: "Q3 FY27 results: revenue vs 500 gate and 596/qtr H2 pace", implied_date: "~mid-Jan-2027 (inferred)", source_ref: "Step 3; dig. 2"}
+  - {item: "Q3 call: named EBITDA-positive quarter; DTA and QIP mention", implied_date: "end of next quarter (CL616-617)", source_ref: "call:A3-F6-01; call:A3-F17-01"}
+  - {item: "Amortisation step-up from 302 Cr capitalised intangibles", implied_date: "Q3 FY27", source_ref: "res:A3-10; RL600-601"}
+  - {item: "Inventory to earlier levels", implied_date: "next few quarters (undated)", source_ref: "CL515-518; register #5"}
+  - {item: "Gross debt reduction with BSNL execution", implied_date: "undated", source_ref: "CL315-316; PL337"}
+  - {item: "BSNL 4G expansion delivery within timelines", implied_date: "not stated", source_ref: "CL290-291; PL313"}
+  - {item: "FY27 revenue vs Rs 2,000 Cr floor", implied_date: "FY27 results ~Apr-May-2027 (inferred)", source_ref: "dig. 3; RL535"}
+  - {item: "DTA 503.75 and IAUD 897.75 audit tests", implied_date: "FY27 audit ~May-2027 (inferred)", source_ref: "res:A3-05; RL601, RL607"}
+  - {item: "BV/share vs Rs 140; any QIP below Rs 400", implied_date: "each quarter / any board outcome", source_ref: "RL623-625; dig. 4g; F13 no forward items (RL30-34)"}
+  - {item: "International mix vs 10%/15%", implied_date: "each quarter", source_ref: "PL88, PL91"}
+  - {item: "PLI / other operating revenue recognition", implied_date: "each quarter; FY28 warning <100 Cr", source_ref: "RL534; dig. 4c"}
+  - {item: "GoI OTN/WDM award (declared L1)", implied_date: "undated", source_ref: "PL190-193"}
+  - {item: "D2M RFP issue", implied_date: "undated", source_ref: "CL534-551"}
+  - {item: "Railway 700 MHz expansion on trial results", implied_date: "conditional", source_ref: "CL465-466"}
+  - {item: "Q1 FY28 results", implied_date: "~Jul-2027 (inferred)", source_ref: "Forward map"}
+flags:
+  - "Net debt ex-lease 4,384.39 Cr, headroom 115.61 Cr to the 4,500 break; lease-inclusive 4,518.90 exceeds 4,500: operator to confirm the binding definition"
+  - "BV/share Rs 139.33 on issued shares, below the Rs 140 red line (#9 RED); Rs 141.93 on EPS-implied count"
+  - "Probability re-weighting FIRES (Q1 pre-registered condition met: Q2 annualises 1,622.72 and net debt rose); Role 1 to shift weights toward Poor"
+  - "BSNL PO trigger: TCS LoI + partial POs in 30-Sep book; NOT FIRED on MGMT evidence; value undisclosed; human ruling"
+  - "YoY PBT gain 196.11 fully explained by base charge 145.43 + warranty 37.20 + ECL 26.13 = 208.76; recurring contribution (12.65)"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION: receivables -1,099.64 offset by other liabilities -1,266.27; H1 CFO (311.93), FCF (709.11); net-of-advance receivables +137"
+  - "EBITDA-positive date DROPPED; credibility 55.0% Grade C (Mixed); archetype EVASIVE; specificity 0.20; 7 defensive phrases"
+  - "Second consecutive concall silence on DTA and QIP: pre-registered RED escalation applied"
+  - "DROPPED-count sensitivity: if Q1 AGM-date softening is rescored DROPPED, two-DROPPED rule moves Grade C to D (A5/operator)"
+  - "International 12% of revenue, 4% of book: #6 AMBER toward RED; trigger 4 WEAKENED"
+  - "Filed transcript titles Arnob Roy 'Managing Director and Chairman' vs MD and CEO elsewhere: Reg 30 check"
+  - "Call says GoI OTN order won and received; deck says declared L1: management documents conflict"
+  - "Other expenses ex-warranty +62.99 QoQ unexplained; ex-charge gross margin -14.31 pp YoY"
+  - "Entry zone Rs 247-309 / MoS Rs 234 not confirmed; recompute in Role 1"
+  - "Tracker rows not supplied: 0 signals (<3); 5 new dependency payload rows proposed, none written"
+  - "Role 4 Steps 6.5 and 7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30); pillar facts flagged"
+  - "Peer concalls and channel checks UNVERIFIABLE this run"
+plain_language_brief_included: true
+analyst_note: "Verdict is FLAGS, not CAVEATS, because three RED reads (#4 net debt, #9 BV/share, the DTA/QIP silence escalation) and the fired re-weighting sit beside two open human rulings. The ex-lease net-debt definition is binding only because the Notion Mar-26 base (3,531) ties to it; with leases the line is already crossed. The YoY improvement is arithmetic, not operations: base charge plus two estimate releases exceed the PBT gain. Other expenses ex-warranty rose 63 Cr QoQ and absorbed the warranty release; no A3 finding covers it, so Q21 is A4-originated. Credibility counts the Q1 EBITDA window removal as DROPPED but the earlier AGM-date change as a re-date; rescoring it would trigger the C-to-D rule. Break-even revenue (~685 Cr EBITDA, ~1,130 Cr PBT per quarter) assumes the Q2 cost base and margin hold. Entry zone and pillar recompute belong to Role 1."
+review_path: "runs/tejasnet-q2fy27/work/review_tejasnet_q2fy27.md"

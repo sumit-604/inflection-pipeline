@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "GRWRHITECH"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 7
+formfeed_count: 0
+line_count: 842
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-file
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/grwrhitech-q2fy27/extracted/grwrhitech-concall-q2fy27-fulltext.md"
+structured_path: "runs/grwrhitech-q2fy27/extracted/grwrhitech-concall-q2fy27-structured.md"
+structured_counts:
+  number: 222
+  entity: 53
+  forward: 67
+  date: 30
+  qualifier: 47
+structured_id_range: "R001-R419"
+speaker_turns: 97
+gate_a1: pass
+gap_note: ""

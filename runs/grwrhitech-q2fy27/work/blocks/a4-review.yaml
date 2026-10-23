@@ -3,26 +3,43 @@ company: "GRWRHITECH"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
 status: complete
-loop_iteration: 2
+merge: results+concall
+loop_iteration: 3
+merged_loop_iteration: 1
 fixes:
-  - {id: C1, change: "22.70 other non-current asset rise: filed operating classification kept as basis (CFO/PAT 0.75x C / 0.36x SA, capex 27.07); capital-advances reading A stated (capex 49.77 C / 49.76 SA, CFO/PAT 0.83x / 0.44x); separating observation FY27 AR note or Q16; TPU bull reading and 6D confirming evidence qualified"}
-  - {id: M1, change: "Tariff base sized: Q2 FY26 8.3% below Q2 FY25 621; two-year Q2 +12.0% (5.8% a year), H1 +21.2% (10.1% a year) vs 16% base; margin +297 bps Q2 / +311 bps H1 over two years; FY25 chart quarters added to Step 3"}
-  - {id: M2, change: "PAT-level consolidation deduction added to 1-G: Q2 50.88, Q1 3.71, H1 54.59; 26.55 to 26.68 beyond the 27.91-28.04 intra-group dividend; profit-release reading withdrawn; reading (b) needs an undisclosed intra-subsidiary dividend of about 26.6; Q5 extended"}
-  - {id: M3, change: "225.19 / 35.5% stated as an upper bound for parent-to-subsidiary sales in 1-G, 6B item 2, Q1 and the brief"}
-  - {id: F1, change: "ESG slide quoted exactly: 'Zero Liquid Discharge initiatives' and '100% water recycling through advanced treatment processes' (l.1369-1372)"}
-  - {id: F2, change: "H1 C other income remainder 12.98, of which dividend 0.13, ND 12.85"}
-  - {id: F3, change: "Loop 2: lean to the transfer-markup reading removed in 1-G, Flag 14, brief (business-model part), YAML flag and analyst_note; two readings stated with no lean, each needing one undisclosed figure; H1 upstream-dividend precedent added (SA 28.04 H1 FY27 / 28.26 H1 FY26 vs C 0.13 / 0.20, l.307-308, l.337-339, l.681); 1-G derived test added: under (a) subsidiaries' own operating EBITDA at least 48.15 in Q2 (16.8% of 286.63) vs at least 9.55 in Q1 (3.6% of 267.47) and at least 57.70 in H1 (10.4% of 554.10); under (b) 25.31 (8.8%) and 31.15 (5.6%); Q5 stays the separating observation; no existing number changed"}
-docs_merged: [results, presentation]
+  - {id: F1, change: "Step 8C rebuilt Q3-to-Q3: metric = Q3 FY27 C EBITDA margin incl OI before the tariff refund vs Q3 FY26 18.95% (87/459, l.1010, l.1021, l.1024); bull >= 22.7% (18.95% + H1 refund-stripped YoY gain +376 bps; 21.1% on Q2's +219 bps), bear <= 18.95% (no YoY gain); old H2-average 22.3%/19.5% lines and the wrong 'no YoY gain' sentence removed; refund strip now on filed Q3 revenue (2.79 pts on 573 as illustration); guide check 21.0-24.1% incl OI added; Q3-below-own-half seasonality added to Step 3; aligned 5.5C, 8A-W separator, 8B (ii), Step 9 Key Notes, Role 5 8E, Section C watchpoints, M6, new Flag 20, brief summary, forward map make-or-break and Q3 row, YAML monitorable, analyst_note"}
+  - {id: F2, change: "Brief Competition 'parity or better on many products' replaced: typical 80-85% of the US/European leader for architectural film, 85-90% in some cases, 10-20% premium only on certain products, excludes Chinese/Korean imports (L0478, L0498-L0508); consistent with the prior discount record; qualifier also added at Step 7 and 8D Strategic Premium rows, 5A pricing row, 7B pricing row, Section C, brief business-model pricing line"}
+  - {id: M1, change: "Q3 FY26 ex-OI ceiling for tripwire 3: (87 - OI)/459 at most 18.95%, below 18% unless Q3 FY26 OI <= 4.38, vs filed quarterly OI 13.38-19.72 and H2 FY26 OI 37.60 (Q4 would need >= 33.22); most likely below 18% once [INFERENCE]; even split 14.86% illustration; not fired as Q4 FY26 >= 20.0%; added to Step 3 table and diagnostics, 6C row 3, Role 5 8C row 3, Flag 20"}
+  - {id: M2, change: "Refund-stripped two-year margin gain grafted: H1 +228 bps (369.72/1,328.61 = 27.83% vs 25.55%; rupee EBITDA +32.0%), Q2 about +139 bps if all 11 in Q2 (178.00/695.53 = 25.59% vs 24.2%; rupee EBITDA +18.7% not +26.0%); still incl OI; in Step 2 answer 1, Flag 13, YAML flag"}
+  - {id: M3, change: "Derived inventory split: C build 71.74 (l.609) less FG/WIP/SIT 26.45 (l.518) = about 45.29 (63%) raw material, stores and packing; SA 89.99 less 44.37 = 45.62; FG outside parent down about 17.92, ties within FX to 100.26 -> 82.01; added to Step 5 C and SA inventory rows, new Step 5 inventory note, Step 5 growth answer, missing-evidence list (now RM vs stores/spares vs pre-TPU split), 7A row (no longer 'composition unverifiable')"}
+  - {id: M4, change: "Top three on the filed AR Note 31 34% (Notion record) shown beside the call's 30%: about 57-68% vs 50-60%; period of each figure ND; in Q1 row, Exchange 2 implication, Flag 8, YAML flag"}
+  - {id: C1, change: "5.5C MPCB signal no longer names 'Waluj plant': plant ND, Waluj is the registered office only (l.60, l.153); Q8 bear answer aligned"}
+  - {id: STYLE, change: "A5 merged-audit S1-S9 logged only, not applied"}
+prior_fixes_loop3:
+  - {id: F4, change: "'Finance cost is lease interest only' removed at Step 2 (C and SA finance rows), Step 4 bridge row and Step 4 answer; replaced with composition ND, no borrowings, 75.6% implied C rate (5.34 x 2 / 14.14), SA 56.6%, subsidiaries 2.26 on 3.01-3.51 of leases (H1 FY26 1.59; Q2 1.32 vs 0.83); readings bank/LC/bill-discounting, tax or deposit interest; discounting would flatter days and CFO [INFERENCE]; Q17"}
+  - {id: F5, change: "Q2 FY27 reported EBITDA 188.99 -> 189.00 in 1-C derived table and Step 2 answer 1; margin 27.17%, +26.0%, +297 bps unchanged"}
+  - {id: M4, change: "Cash-classification missing-evidence list now names finance-cost composition and receivables discounting or factoring (Q17) and other current liabilities composition; gap (d) added (9.83 receivable days for a 75-80% exporter; customer-advance vs discounting readings); Q17 added to Step 8.5 and YAML"}
+  - {id: STYLE, change: "S1 -571 bps; S2 'close to'; S3 '36.1% above'; S6 MPCB dated; S10 incl-OI basis; S11 12.85 note; S12 net cash ex-MF gain 898.93; S13 'above the band'; S14 H1 FY26 drain; S15 TTM ROCE 19.68%/20.55%; S16 balancing sentence; S17 both deck forms"}
+docs_merged: [results, concall, presentation]
 ledger_reconciliation:
   notes: 7
-  turns: 0
+  turns: 97
   slides: 24
   all_reviewed: true
-  a3_findings_incorporated: [F1a, F1b, F2a, F2b, F2c, F3, F4a, F4b, F6a, F6b, F7, F8, F11, F12, F13a, F13b, F14, F15]
+  a3_findings_incorporated: [F1a, F1b, F2a, F2b, F2c, F3, F4a, F4b, F6a, F6b, F7, F8, F11, F12, F13a, F13b, F14, F15, FN01, FN02, FN03, FN04, FN05, FN06, FN07, FN08, FN09, FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18]
 protocol_verdict: "PROCEED WITH FLAGS"
+role4_verdict: "PROCEED WITH FLAGS"
+role5_verdict: "PROCEED WITH FLAGS"
+concall_verdict:
+  credibility_ratio: "ND (prior log not passed; log starts this call)"
+  management_grade: "ND by ratio; Notion session grade A- carried"
+  archetype: "NOT CLASSIFIABLE; provisional between COMMITTED & CREDIBLE and MEASURED & CREDIBLE (specificity 0.52; 0.46 de-duplicated)"
+  net_impact: "WEAKENED (mild)"
+  source_caveat: "ASR machine transcript; no company transcript at run time; every concall number tagged [ASR]"
 cash_conversion: "INDETERMINATE-WITH-DIRECTION"
 decision_status_verified: "WATCHLIST"
 position_branch: "8A-W"
+thesis_broken_fired: []
 sc_gap_pat_pct:
   - {period: "Q2 FY26", gap_pct: -14.35}
   - {period: "Q1 FY27", gap_pct: 4.80}
@@ -31,57 +48,78 @@ sc_gap_pat_pct:
   - {period: "H1 FY27", gap_pct: -1.64}
   - {period: "FY26", gap_pct: 1.05}
 questions_for_management:
-  - {q: "Is the 34% Note 31 customer a GHFL group company (yes/no)? If no, its share of H1 FY27 consolidated revenue?", from_finding_id: "F2b"}
-  - {q: "What H2 FY27 EBITDA margin excluding other income does the 27% +/-2% (incl OI) guidance assume?", from_finding_id: "F6a"}
-  - {q: "Is the TPU line commissioned (yes/no)? If no, start date, and how much of Rs 118 Cr is spent or contracted?", from_finding_id: "F6b"}
-  - {q: "Is ~Rs 170 Cr capex (slide 29) the FY27 figure or medium-term? What is FY27 capex?", from_finding_id: "F6b"}
-  - {q: "Did parent-to-subsidiary transfer prices change in Q2 (yes/no)? Unrealised-profit elimination in Q1 and Q2? Did either operating subsidiary receive an intra-subsidiary dividend in H1 (yes/no, amount), given the 26.55-26.68 PAT-level deduction beyond the intra-group dividend?", from_finding_id: "F2a"}
-  - {q: "Subsidiary PAT 40.55 Q2 vs derived 10.06 Q1: what drove the jump (dividend from step-down, margin, or transfer price)?", from_finding_id: "F4b"}
-  - {q: "What part of standalone receivables (262.59) is owed by subsidiaries, and by what date will it be collected?", from_finding_id: "F2c"}
-  - {q: "Which firms review the two operating subsidiaries (31.3% of Q2 PAT), and will group auditors extend procedures?", from_finding_id: "F4a"}
-  - {q: "Which MPCB consent conditions were breached, at which plant, and is any consent suspension notice pending (yes/no)?", from_finding_id: "F13a"}
-  - {q: "Which line of other equity holds the Rs 764 Cr revaluation reserve stripped from deck ROCE?", from_finding_id: "F11"}
-  - {q: "US and Middle East share of H1 FY27 revenue, and the US tariff rate today?", from_finding_id: "F7"}
-  - {q: "Does the board review CPD and IPD margins separately; will divisional EBITDA be disclosed from Q3?", from_finding_id: "F12"}
-  - {q: "Which subsidiary had nil revenue and a 0.38 H1 loss; did the 0.52 H1 investment go into it, and for what purpose?", from_finding_id: "F3"}
-  - {q: "Was any group entity formed or recapitalised in FY27?", from_finding_id: "F15"}
-  - {q: "What asset sits in Held for Sale at about 0.59?", from_finding_id: "F1b"}
-  - {q: "When and why did the joint auditor change from Kirtane & Pandit LLP to J. H. Mehta & Co.?", from_finding_id: "A4-1"}
-  - {q: "When will a permanent CFO be named (Interim CFO since 6-Aug-2026 per feed)?", from_finding_id: "A4-2"}
-  - {q: "What do other non-current assets (50.67, +22.70 in H1, carried in operating Other assets) hold; is any part capital advances for TPU/SCF (yes/no, amount)?", from_finding_id: "A4-3"}
+  - {q: "Is the 34% Note 31 customer outside the GHFL group (yes/no)? Its share and the top-three share of H1 FY27 consolidated revenue?", from_finding_id: "F2b; FN04", call_status: "PARTIALLY ANSWERED"}
+  - {q: "What H2 FY27 EBITDA margin excluding other income does the 27% +/-2% (incl OI) guide assume? Does the FY28 28-28.5% include other income (yes/no)?", from_finding_id: "F6a; FN02", call_status: "NOT ADDRESSED"}
+  - {q: "Is the TPU line commissioned (yes/no)? If no, start date, and how much of Rs 118 Cr is spent or contracted?", from_finding_id: "F6b; FN06", call_status: "PARTIALLY ANSWERED"}
+  - {q: "Is ~Rs 170 Cr capex (slide 29) FY27 or medium-term? FY27 capex? Will the board consider capex beyond SCF/TPU before FY27 results (yes/no)?", from_finding_id: "F6b; FN10", call_status: "NOT ADDRESSED"}
+  - {q: "Did parent-to-subsidiary transfer prices change in Q2 (yes/no)? Unrealised-profit elimination in Q1 and Q2? Any intra-subsidiary dividend in H1 (yes/no, amount)?", from_finding_id: "F2a", call_status: "NOT ADDRESSED"}
+  - {q: "Subsidiary PAT 40.55 Q2 vs derived 10.06 Q1: what drove the jump (dividend, margin, transfer price, tariff refund)?", from_finding_id: "F4b", call_status: "NOT ADDRESSED"}
+  - {q: "What part of standalone receivables (262.59) is owed by subsidiaries, and by what date will it be collected?", from_finding_id: "F2c", call_status: "NOT ADDRESSED"}
+  - {q: "Which firms review the two operating subsidiaries (31.3% of Q2 PAT), and will group auditors extend procedures?", from_finding_id: "F4a", call_status: "NOT ADDRESSED"}
+  - {q: "MPCB: which plant; any consent suspension notice or other MPCB direction open (yes/no); boiler age?", from_finding_id: "F13a; FN13", call_status: "PARTIALLY ANSWERED"}
+  - {q: "Which line of other equity holds the Rs 764 Cr revaluation reserve stripped from deck ROCE?", from_finding_id: "F11", call_status: "NOT ADDRESSED"}
+  - {q: "US and Middle East share of H1 FY27 revenue, and the US tariff rate today?", from_finding_id: "F7", call_status: "PARTIALLY ANSWERED"}
+  - {q: "Does the board review CPD and IPD margins separately; will divisional EBITDA be disclosed from Q3?", from_finding_id: "F12", call_status: "PARTIALLY ANSWERED"}
+  - {q: "Which subsidiary had nil revenue and a 0.38 H1 loss; did the 0.52 H1 investment go into it, and for what purpose?", from_finding_id: "F3", call_status: "NOT ADDRESSED"}
+  - {q: "Was any group entity formed or recapitalised in FY27?", from_finding_id: "F15", call_status: "NOT ADDRESSED"}
+  - {q: "What asset sits in Held for Sale at about 0.59?", from_finding_id: "F1b", call_status: "NOT ADDRESSED"}
+  - {q: "When and why did the joint auditor change from Kirtane & Pandit LLP to J. H. Mehta & Co.?", from_finding_id: "A4-1", call_status: "NOT ADDRESSED"}
+  - {q: "When will a permanent CFO be named? Will the CFO and a promoter-director join the Q3 call (yes/no)?", from_finding_id: "A4-2; FN14", call_status: "NOT ADDRESSED"}
+  - {q: "What do other non-current assets (50.67, +22.70 in H1, in operating Other assets) hold; any capital advances for TPU/SCF (yes/no, amount)?", from_finding_id: "A4-3", call_status: "NOT ADDRESSED"}
+  - {q: "Finance cost 5.34 in H1 with no borrowings and 12.61-15.66 of leases: what makes it up? Does any group company discount or factor receivables (yes/no, amount outstanding 30-Sep-2026)?", from_finding_id: "A4-4", call_status: "NOT ADDRESSED"}
+  - {q: "Tariff refund: how much of the 11 Cr fell in Q1 vs Q2, on which P&L line; is the 16 Cr Q3 refund inside the 27% +/-2% guide (yes/no)?", from_finding_id: "FN03", call_status: "NEW"}
+  - {q: "Export-level inventories up ~20 days: own transit stock or Europe/US customer stock; customer days-of-stock change 30-Jun to 30-Sep?", from_finding_id: "FN05", call_status: "NEW"}
+  - {q: "Is the Lubrizol resin understanding a minimum-purchase/take-or-pay commitment (yes/no); quantity and term?", from_finding_id: "FN07", call_status: "NEW"}
+  - {q: "TPU +150-200 bps: what PPF margin gain in points does it assume; what share of PPF cost is imported TPU film today?", from_finding_id: "FN08", call_status: "NEW"}
+  - {q: "Does the 3,500 Cr peak include existing SCF headroom at 75% (yes/no); SCF full in Q1 or Q2 FY28?", from_finding_id: "FN09", call_status: "NEW"}
+  - {q: "Was 200 Cr home-solution revenue by FY28 said on the Q1 FY27 call (yes/no); GHS studios at 30-Sep-2026: 14 or 40?", from_finding_id: "FN12", call_status: "NEW"}
+  - {q: "Split of the 37 Cr Q2 cost headwind between raw material and logistics; 4% of material cost 315.14 is ~12.6, what explains the rest?", from_finding_id: "FN15", call_status: "NEW"}
+  - {q: "Are the stated product margins (SCF 40-45/30-35, PPF 20-25, IPD 10-12) EBITDA or contribution margins?", from_finding_id: "FN18", call_status: "NEW"}
 monitorables:
-  - {item: "Q2 FY27 earnings call; transcript for Role 5", implied_date: "2026-10-23", source_ref: "Notion Key Notes 20-Oct (FILED 19-Oct)"}
-  - {item: "MPCB consent matter remediation or notice", implied_date: "next Reg 30 / Q3 call", source_ref: "Reg 30 22-Oct-2026 (orchestrator)"}
-  - {item: "TPU line commissioned (Rs 118 Cr, 360 LSF)", implied_date: "by 2026-12-31", source_ref: "l.825, l.893, l.1210-1214"}
-  - {item: "GHS +12 studios (14 to 26)", implied_date: "by 2026-12-31", source_ref: "l.854"}
-  - {item: "Q3 FY27 ex-OI EBITDA margin vs 22.3% bull / 19.5% bear", implied_date: "by 2027-02-14", source_ref: "Step 8C"}
-  - {item: "FY27 guidance: revenue 2,500+, EBITDA 27% +/-2% incl OI; FY27 CFO/PAT", implied_date: "by 2027-05-30", source_ref: "l.760-761, l.1106-1121"}
-  - {item: "FY27 capex ~170 Cr (FY27E or medium-term)", implied_date: "by 2027-05-30", source_ref: "l.1128"}
-  - {item: "SCF line Rs 191/192 Cr, ~1,200 LSF commercial production", implied_date: "2027-04 to 2027-09 (H1 FY28)", source_ref: "l.826-828, l.1211-1215"}
-  - {item: "TPU margin uplift +150-200 bps", implied_date: "post-commissioning (FY28)", source_ref: "l.1065, l.1119"}
-  - {item: "Lubrizol MoU to definitive agreement", implied_date: "undated", source_ref: "l.830-833"}
+  - {item: "Company-filed transcript of 23-Oct call; re-check all [ASR] numbers", implied_date: "by about 2026-10-30 (LODR 5 working days)", source_ref: "L0004"}
+  - {item: "MPCB consent matter remediation or notice; plant named", implied_date: "next Reg 30, by 2027-02-14 (Q3 call)", source_ref: "Reg 30 22-Oct-2026; L0767-L0771"}
+  - {item: "TPU line commissioned (Rs 118 Cr, 360 LSF)", implied_date: "by 2026-12-31", source_ref: "l.825, l.893; L0063, L0604-L0605"}
+  - {item: "GHS +12 studios (14 to 26)", implied_date: "by 2026-12-31", source_ref: "l.854; L0075"}
+  - {item: "Final US tariff refund ~30 Cr, 16 Cr to books, last one", implied_date: "Q3 FY27 (by 2026-12-31)", source_ref: "L0389-L0392"}
+  - {item: "Q3 FY27 C EBITDA margin incl OI before tariff refund vs Q3 FY26 18.95%: bull >= 22.7% / bear <= 18.95%; ex-OI beside it vs 18% tripwire (Q3 FY26 ex-OI at most 18.95%)", implied_date: "by 2027-02-14", source_ref: "Step 8C; l.1010, l.1021, l.1024"}
+  - {item: "Q3 FY27 call: CFO/promoter presence; answer status Q1-Q25", implied_date: "about 2027-02", source_ref: "FN14; Step 8F"}
+  - {item: "PPF utilisation to ~90%", implied_date: "about 2027-04", source_ref: "L0372-L0373"}
+  - {item: "FY27 results: revenue 2,500+, EBITDA 27% +/-2% incl OI; FY27 CFO/PAT; FY28 guide filed (verbal 3,000+, 28-28.5%)", implied_date: "by 2027-05-30", source_ref: "l.760-761, l.1106-1121; L0085, L0624, L0646"}
+  - {item: "FY27 capex ~170 Cr; board capex approval beyond SCF/TPU; payout policy", implied_date: "by 2027-05-30", source_ref: "l.1128; L0190-L0198, L0675-L0676"}
+  - {item: "SCF line Rs 191/192 Cr, ~1,200 LSF commercial production", implied_date: "about 2027-06; H1 FY28", source_ref: "l.826-828; L0250, L0687"}
+  - {item: "Existing SCF line full utilisation", implied_date: "Q1 or Q2 FY28 (conflicting)", source_ref: "L0376, L0685"}
+  - {item: "TPU merchant sales 75-100 Cr at ~35% margin", implied_date: "FY28", source_ref: "L0578-L0608, L0829"}
+  - {item: "TPU margin uplift +150-200 bps", implied_date: "post-commissioning (FY28)", source_ref: "l.1065, l.1119; L0813"}
+  - {item: "Lubrizol MoU to definitive agreement; resin terms", implied_date: "undated", source_ref: "l.830-833; L0820-L0821"}
+  - {item: "ADD 'necessary steps' (trigger DEAD this cycle)", implied_date: "undated", source_ref: "L0411-L0414"}
+  - {item: "D2C revenue 50 Cr FY28 then 100/200; GHS 50 studios", implied_date: "FY28; Dec-2027 or 9-12 months", source_ref: "L0076, L0709-L0714"}
   - {item: "GAS/PPF distributors 250+ to 300", implied_date: "undated", source_ref: "l.1307-1310"}
-  - {item: "GHS 50 studios", implied_date: "Dec-2027 or FY27E (displaced)", source_ref: "l.855, l.1120"}
-  - {item: "FY27 AR: 34% customer note, revaluation reserve, auditor tenure, segment", implied_date: "about 2027-08", source_ref: "Notion 24-Sep"}
-  - {item: "ADD notification", implied_date: "FY27", source_ref: "Notion growth trigger 5"}
+  - {item: "FY27 AR: 34% customer note, revaluation reserve, auditor tenure, segment, other assets and liabilities composition", implied_date: "about 2027-08", source_ref: "Notion 24-Sep"}
+  - {item: "Medium-term: ~20% CAGR (deck) vs 25-30% (call), EBITDA 27%+ plus TPU, ROCE >25%, architectural 1,000 Cr", implied_date: "FY28-31", source_ref: "l.1111-1128; L0246, L0469"}
   - {item: "Promoter background re-run", implied_date: "before any position", source_ref: "Notion Section 7"}
   - {item: "Operator rulings: entry-zone basis; price-zone table vs WATCHLIST", implied_date: "now", source_ref: "Notion 24-Sep, 04-Oct"}
 flags:
-  - "MPCB Rs 0.25 Cr BG forfeiture (Reg 30 22-Oct) absent from results/notes/deck; ESG slide lists 'Zero Liquid Discharge initiatives' and '100% water recycling' (l.1369-1372) (F13a)"
-  - "Guidance EBITDA includes other income; midpoint implies H2 margin 25.12% vs Q2 27.17% (F6a)"
-  - "Q2 ex-OI margin 24.37%, -280 bps QoQ; SA ex-OI 22.73%, -572 bps QoQ"
+  - "MPCB Rs 0.25 Cr BG forfeiture absent from results/deck; call: old boiler run in trials against MPCB order, 'plants are pretty old' [ASR] (F13a, FN13)"
+  - "Guidance EBITDA incl OI; midpoint implies H2 25.12%; if 16 Cr Q3 refund is inside, underlying H2 ex-OI ~20.9% (F6a, FN02)"
+  - "Margin quality: up to 11 Cr US tariff refund inside H1 COGS (split ND); Q2 ex-OI 22.78% before it if all in Q2; 16 Cr more in Q3; not in filing [ASR] (FN03)"
+  - "Q2 ex-OI margin 24.37%, -280 bps QoQ; SA ex-OI 22.73%, -571 bps QoQ"
   - "31.3% of Q2 consolidated PAT reviewed by other auditors only (F4a)"
   - "ROCE basis conflict: deck strips Rs 764 Cr reval reserve not shown in line 9 (F11); tripwire uses unadjusted"
-  - "TPU not commissioned at 22-Oct; CWIP 37.24 vs 118 budget (F6b)"
-  - "34% customer identity open; A3 subsidiary hypothesis conflicts with Notion 'consolidated Note 31' label"
-  - "Cash INDETERMINATE-WITH-DIRECTION: C CFO/PAT 0.75x, SA 0.36x filed; 0.83x / 0.44x if the 22.70 other non-current asset rise is capital advances (composition ND)"
+  - "TPU not commissioned; CWIP 37.24 vs 118; 'yet to start commissioning' on 23-Oct [ASR] (F6b, FN06)"
+  - "Customer concentration: top customer automotive, US EV-linked, unnamed; others half to a third its size; top three ~50-60% at the call's 30% and ~57-68% at the filed AR Note 31 34% [DERIVED; periods ND]; volumes refused (FN04)"
+  - "Cash INDETERMINATE-WITH-DIRECTION: C CFO/PAT 0.75x, SA 0.36x filed (0.83x/0.44x reading A); finance cost not lease alone, composition ND; discounting unaddressed (Q16, Q17)"
   - "Joint auditor firm differs from FY25 AR record (A4-1)"
-  - "Record conflict: price-zone AVOID >5,000 vs WATCHLIST; entry-zone ruling pending"
-  - "No tracker rows linked; reopen Role 5.5"
-  - "Role 5 NOT RUN: call 23-Oct-2026 11:30 IST, no transcript"
-  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged"
-  - "Two-year revenue pace below 16% base: Q2 +12.0% on Q2 FY25 (5.8% a year), H1 +21.2% (10.1% a year); YoY growth on a tariff-hit base; two-year margin climb about +300 bps holds"
-  - "Consolidation took 54.59 out of H1 PAT (Q2 50.88), 26.55-26.68 beyond the intra-group dividend; composition ND; filing does not separate transfer-price change from intra-subsidiary dividend, no lean (F2a, Q5)"
+  - "Record conflict: price-zone AVOID >5,000 vs WATCHLIST; entry-zone ruling pending; CMP 7,037.90"
+  - "No tracker rows linked; reopen Role 5.5 (7 Case B proposals)"
+  - "Two-year revenue pace below 16% base (Q2 5.8% a year, H1 10.1% a year); two-year margin climb ~+300 bps on chart basis incl OI, but +228 bps H1 and ~+139 bps Q2 after the 11 Cr refund strip (Q2 rupee EBITDA +18.7% not +26.0%); ex-OI ND"
+  - "Consolidation took 54.59 out of H1 PAT, 26.55-26.68 beyond intra-group dividend; no lean (F2a, Q5); refund at US sub does not explain it"
+  - "ADD not imposed by Finance Ministry; growth trigger 5 DEAD this cycle [ASR] (FN11)"
+  - "Call governance: only Director Sales & Marketing spoke; no promoter/MD/CFO; 12 of 17 questions not addressed; ASR source only (FN14)"
+  - "FY28 verbal guide 3,000+ revenue and 28-28.5% margin [ASR]: 840-855 EBITDA vs Notion FY28 base 685; no credit until filed (FN08)"
+  - "Export-level inventories up ~20 days at Europe/US: possible pull-forward, Q3 destock risk [ASR] (FN05)"
+  - "Role 4 Steps 6.5 and 7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30); pillar facts flagged"
+  - "Tripwire 3 headroom: Q3 FY26 ex-OI at most 18.95%, most likely below 18% (unless Q3 FY26 OI <= 4.38 vs 13.38-19.72 filed); not fired as Q4 FY26 >= 20.0%; Q3 FY27 is a live test (8C: incl OI before refund vs 18.95%, bull 22.7% / bear 18.95%)"
 plain_language_brief_included: true
-analyst_note: "Three readings changed in the A5 loop. First, the 22.70 rise in other non-current assets has no filed composition, and the cash flow carries it inside operating Other assets (C 35.80 and SA 27.47 tie exactly). The review keeps the filed classification: CFO/PAT 0.75x C / 0.36x SA, capex 27.07. If it is capital advances, the figures are 0.83x / 0.44x and capex 49.77; Q16 or the FY27 AR separates them. Second, the profit-release reading is withdrawn: consolidation took 54.59 out of H1 PAT, about 26.6 beyond the intra-group dividend. The filing does not separate a transfer-price change from an undisclosed intra-subsidiary dividend, and no lean is drawn; Q5 separates them. Third, YoY growth sits on a tariff-hit base: two-year Q2 revenue +12.0% (5.8% a year), H1 +21.2% (10.1% a year), below the 16% base; the two-year margin climb of about 300 bps holds. A3's subsidiary hypothesis for the 34% customer works only if the disclosure is standalone; Notion records consolidated Note 31. Rule B evidence stays split: reported 27.17% favours run-rate; ex-OI 24.37%, EPS 55.71 and the guidance midpoint (H2 25.12%) favour guidance."
+analyst_note: "The call changes the quality of the H1 margin, not the filed numbers. Management says 11 Cr of US tariff refunds sit in profit to date, through cost of goods at a subsidiary, with 16 Cr more in Q3. Stripped, the two-year margin gain is +228 bps for H1 and about +139 bps for Q2, not about +300. The Q3 test now runs Q3 to Q3, because Q3 is the seasonal low: margin incl OI before the refund against Q3 FY26 18.95%; bull 22.7% (the H1 refund-stripped YoY gain carried), bear 18.95% (no gain). Q3 FY26 ex-OI was at most 18.95% and most likely under the 18% tripwire line, so Q3 FY27 is a live test. The 26.6 PAT-level consolidation deduction stays unexplained, no lean. TPU had not started commissioning and the duty was not imposed. The top three customers run about 50-60% on the call's 30% and about 57-68% on the filed 34%. Pricing is typically 80-85% of the leader, not parity. Only the sales director spoke. Every concall number is ASR."
 review_path: "runs/grwrhitech-q2fy27/work/review_grwrhitech_q2fy27.md"
+block_path: "runs/grwrhitech-q2fy27/work/blocks/a4-review.yaml"

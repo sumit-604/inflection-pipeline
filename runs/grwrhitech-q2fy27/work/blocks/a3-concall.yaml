@@ -1,0 +1,71 @@
+stage: A3-forensics
+company: "GRWRHITECH"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/grwrhitech-q2fy27/work/forensics_concall_grwrhitech_q2fy27.md"
+ledger_reconciled_pct: 100        # 419 of 419 structured rows + MFS01 (L0520) read at fulltext line
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "FN01", check: "F14", line: "L0047-L0049", classification: "NEUTRAL-FACT", implication: "H1 margin stated 26.30% conflicts with 381/1329 = 28.7% derived (YoY +464 bps also gives 28.7%); use 28.7% [derived, ASR] pending filed transcript"}
+  - {id: "FN02", check: "F6", line: "L0085; L0645; L0655", classification: "FORWARD-SIGNAL", implication: "Revenue floor 2500 not raised on H1 1329; 27% midpoint implies H2 margin ~25.1% vs H1 28.7% (derived); Q2 PAT 129 < derived Q1 133; other-income basis of guidance not stated"}
+  - {id: "FN03", check: "F7", line: "L0386-L0392; L0539-L0545", classification: "AMBIGUOUS", implication: "27 Cr one-time US tariff refund to books via COGS at US subsidiary (11 to date, 16 in Q3, last one); flatters Q2/Q3 margin; accounting description self-contradictory; candidate driver of subsidiary PAT jump"}
+  - {id: "FN04", check: "F7", line: "L0259-L0266; L0273-L0278", classification: "FORWARD-SIGNAL", implication: "Top customer ~30% (analyst figure, uncorrected; Notion 34%) plus a couple at half and one at one-third; automotive, US EV-linked, unnamed; concentration broader than one name"}
+  - {id: "FN05", check: "F7", line: "L0299-L0322; L0054", classification: "AMBIGUOUS", implication: "Europe/US customer inventory up ~20 days; possible Q2 export pull-forward and Q3 destock; WC 29 days held via customer advances; receivable discounting unaddressed"}
+  - {id: "FN06", check: "F6", line: "L0063; L0604-L0605; L0829", classification: "FORWARD-SIGNAL", implication: "TPU 'on track for Q3 FY27' but 'yet to start commissioning' on 23-Oct (inside Q3); no FY27 TPU revenue; FY28 margin bridge hinges on this date"}
+  - {id: "FN07", check: "F7", line: "L0820-L0821; L0831", classification: "AMBIGUOUS", implication: "Lubrizol resin purchase 'understanding' of undisclosed quantity, possible offtake obligation; TPU vertical called 'first trial'"}
+  - {id: "FN08", check: "F6", line: "L0813; L0644-L0646", classification: "FORWARD-SIGNAL", implication: "FY28 margin '28 28.5 for sure' beside 'can't comment'; 150-200 bps consolidated from PPF (24% of revenue, 20-25% margin) needs ~6-8 pp PPF margin gain (derived)"}
+  - {id: "FN09", check: "F6", line: "L0221-L0254; L0369-L0376; L0684-L0695", classification: "AMBIGUOUS", implication: "3500 = run-rate 2784 + new line 450-500 + PPF 250; omits ~470 Cr existing SCF headroom at 75% (derived); SCF full timing Q1 vs Q2 FY28 conflicts; Q1 FY28 may be capacity-capped"}
+  - {id: "FN10", check: "F6", line: "L0190-L0198; L0255-L0256; L0675-L0676", classification: "FORWARD-SIGNAL", implication: "Growth past 3500 needs board-unapproved capex; dividend deflected to capex with 933 Cr cash; ~170 Cr capex figure unreconciled (call cites 191 Cr SCF)"}
+  - {id: "FN11", check: "F6", line: "L0409-L0414", classification: "CONFIRMATORY-NEGATIVE", implication: "ADD approved by Commerce, not imposed by Finance Ministry; 'necessary steps' undated; PPF share gains must come without ADD"}
+  - {id: "FN12", check: "F6", line: "L0698; L0705-L0714; L0076", classification: "AMBIGUOUS", implication: "D2C 200 Cr by FY28 (analyst recall) restated as 50 Cr FY28 then 100/200; studios 40 vs 14; 50-studio date Dec 2027 vs 9-12 months; diff vs Q1 transcript"}
+  - {id: "FN13", check: "F7", line: "L0767-L0771", classification: "AMBIGUOUS", implication: "MPCB lapse admitted ('run despite told not to run'), analyst-prompted, absent from prepared remarks; 'plants are pretty old'; penalty vs BG-forfeiture framing"}
+  - {id: "FN14", check: "F17", line: "L0026; L0835", classification: "AMBIGUOUS", implication: "Only Director Sales & Marketing spoke; all finance/governance items unanswered (other income, finance cost, receivable discounting, subsidiary TP, CFO vacancy, joint auditor); volume split declined"}
+  - {id: "FN15", check: "F7", line: "L0328-L0341; L0757; L0775", classification: "AMBIGUOUS", implication: "37 Cr cost headwind split (RM +4% vs 28 Cr derived) does not reconcile; 40-50 Cr/quarter revenue is crude-linked price; pass-through 'with difficulty'"}
+  - {id: "FN16", check: "F14", line: "L0628-L0629; L0662-L0663", classification: "NEUTRAL-FACT", implication: "'28 to 31' is FY28-FY31 window, not a margin band; medium-term guide 27%+ plus 150-200 bps TPU; no expansion beyond TPU"}
+  - {id: "FN17", check: "F14", line: "L0156-L0158; L0237; L0836", classification: "NEUTRAL-FACT", implication: "Architectural 30% is of SCF not company (~426 Cr derived matches 400); geography sums 98%; bases drift in spoken figures"}
+  - {id: "FN18", check: "F7", line: "L0742-L0744; L0792; L0798-L0801", classification: "AMBIGUOUS", implication: "Product margins (SCF 40-45/30-35, PPF 20-25, IPD 10-12) on undefined 'beta margin' basis; D2C +10-15% pp vs relative unclear"}
+forward_signals: ["FN02", "FN04", "FN06", "FN08", "FN10"]
+ambiguous: ["FN03", "FN05", "FN07", "FN09", "FN12", "FN13", "FN14", "FN15", "FN18"]
+commitments:
+  - {commitment: "TPU line commissioning", implied_date: "Q3 FY27 (by 31-Dec-2026)", ref: "L0063; L0604-L0605", status_word: "underway"}
+  - {commitment: "TPU external sales 75-100 Cr at ~35% margin", implied_date: "FY28", ref: "L0578-L0608; L0829", status_word: "initiated"}
+  - {commitment: "TPU captive +150-200 bps consolidated margin", implied_date: "FY28", ref: "L0813", status_word: "initiated"}
+  - {commitment: "Lubrizol MoU resin purchase understanding", implied_date: "undated", ref: "L0820-L0821", status_word: "initiated"}
+  - {commitment: "SCF 191 Cr expansion, ~1200 lakh sq ft, commercial production", implied_date: "H1 FY28 (~June 2027)", ref: "L0065-L0066; L0250; L0687", status_word: "underway"}
+  - {commitment: "Peak revenue 3500 Cr at full utilisation (new line 450-500, PPF +250)", implied_date: "undated", ref: "L0221-L0254; L0693-L0695", status_word: "initiated"}
+  - {commitment: "FY27 revenue > 2500 Cr", implied_date: "FY27", ref: "L0085", status_word: "reaffirmed"}
+  - {commitment: "FY27 EBITDA margin 27% +/- 2% (from 25 +/- 2)", implied_date: "FY27", ref: "L0085; L0645", status_word: "upgraded"}
+  - {commitment: "FY28 revenue 3000 plus", implied_date: "FY28", ref: "L0624", status_word: "initiated"}
+  - {commitment: "FY28 margin 28-28.5% 'for sure'", implied_date: "FY28", ref: "L0644-L0646", status_word: "initiated"}
+  - {commitment: "Medium-term margin 27%+ plus 150-200 bps TPU", implied_date: "FY28-FY31", ref: "L0662-L0668", status_word: "restated"}
+  - {commitment: "PPF utilisation to ~90%", implied_date: "~Apr 2027", ref: "L0372-L0373", status_word: "underway"}
+  - {commitment: "SCF full utilisation", implied_date: "Q1 or Q2 FY28 (conflicting)", ref: "L0376; L0685", status_word: "underway"}
+  - {commitment: "Final tariff refund ~30 Cr (16 to books)", implied_date: "Q3 FY27", ref: "L0389-L0392", status_word: "initiated"}
+  - {commitment: "ADD 'necessary steps'", implied_date: "undated", ref: "L0412-L0414", status_word: "stalled"}
+  - {commitment: "Studios +12 in Q3; 50 studios", implied_date: "Q3 FY27; Dec 2027 or 9-12 months", ref: "L0075-L0076; L0709", status_word: "underway"}
+  - {commitment: "D2C revenue 50 Cr then 100 then 200", implied_date: "FY28 for 50 Cr", ref: "L0712-L0714", status_word: "restated"}
+  - {commitment: "Architectural to 1000 Cr, 50% of window film, 35-40% growth; segments >= 20%", implied_date: "undated", ref: "L0246; L0180; L0838", status_word: "initiated"}
+  - {commitment: "Further capex in 3 years subject to board; dividend request to management", implied_date: "within 3 years", ref: "L0190-L0198; L0675-L0676", status_word: "initiated"}
+  - {commitment: "Q1 ~30% margin sustainable; Q3 seasonally low, Q4 back", implied_date: "ongoing", ref: "L0045; L0655", status_word: "restated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three numbers frame H2. (1) H1 EBITDA margin is 28.7% on the stated 381/1329. The spoken 26.30% is an ASR or basis conflict, so A4 should not anchor on it. (2) A 27% FY27 midpoint and an unraised 2500 floor imply an H2 margin near 25%. Q3 also carries a 16 Cr one-time tariff refund through COGS. Underlying H2 may sit below 25%, and Q2's 27.2% may include up to 11 Cr of the same refund. (3) Whether guided EBITDA includes other income is unanswered on the call. With 933 Cr cash this decides how close operating margin runs to thesis-broken 3. The FY28 28-28.5% 'for sure' depends on a TPU line that had not started commissioning inside its own deadline quarter. It also needs a 6-8 pp PPF margin gain. Concentration runs wider than one customer. No volume data, so thesis-broken 2 cannot be monitored from calls. All finance and governance items went unanswered because only the sales director spoke. Silence count 1; repeat at Q3 = CONFIRMATORY-NEGATIVE. All figures are ASR. A4 should confirm FN01, FN03 and FN09 against the filed transcript when it posts."

@@ -1,0 +1,53 @@
+stage: A5-adversary
+company: "GRWRHITECH"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Two-year margin climb survives the base test: +297 bps Q2, +311 bps H1, Flag 13 ~+300 bps (rev l.230, l.1052)", counter: "11 Cr refund 'in our book' to date sits in H1 by the review's own reading; stripped, H1 two-year climb is +228 bps (369.72/1,328.61 = 27.83% vs 25.55%) and Q2 about +139 bps if all 11 fell in Q2 (178.00/695.53 = 25.59% vs 24.2%); Q2 rupee EBITDA +18.7% not +26.0%; still incl OI", source_line: "L0386-L0388; l.523-532; l.1010; l.1022", type: MISSING}
+  - {claim: "Pricing power for the Strategic Premium: 85-120% of global players; brief 'parity or better on many products' (rev l.450, l.977, l.1137)", counter: "Stated current level is 80-85% of the leader for architectural film; 85-90% in some cases; premium only on certain products; excludes Chinese/Korean imports that dominate the economy tier; PPF lowest margin 20-25% with no duty imposed", source_line: "L0478; L0498-L0508; L0502; l.1347-1353; L0410-L0412; L0744", type: FACTUAL}
+findings_by_type:
+  factual:
+    - "F1 (A4): Step 8C Q3 thresholds misread. 19.5% ex-OI ex-refund is a YoY gain of at least 55 bps vs Q3 FY26 18.9% incl OI (87/459, l.1010, l.1021, l.1024), not 'no YoY margin gain' (rev l.478). Both lines are H2 averages applied to Q3; Q3 ran about 103 bps (FY25) and 410-416 bps (FY26) below its half, so a guide-consistent Q3 is about 18.2-21.3% ex-OI (15.4-18.5% if the 16 refund is inside the guide) and can print in the 'bear' zone; 22.3% marks a beat, not the midpoint (rev l.477). Rebuild like-for-like and align 5.5C, 8E, Section C, M6, Step 9 payloads, brief l.1112/l.1141/l.1147, YAML, analyst_note"
+    - "F2 (A4): Brief rev l.1137 'parity or better on many products' unsupported; call states 80-85% of the global leader (L0498-L0501), 85-90% in some cases (L0505), premium only for certain products (L0506-L0508), architectural context (L0478), excludes China/Korea imports (L0502); contradicts the review's own Step 4A #15 (rev l.730)"
+  missing:
+    - "M1 (A4): Tripwire 3 lacks the Q3 FY26 ex-OI bound: (87 - Q3 OI)/459 is at most 18.95% and below 18% whenever Q3 OI > 4.4, against filed quarterly OI 13.38-19.72 (l.510-511) and H2 FY26 OI 37.60; add to 6C row 3, 8C row 3, Step 3 (symmetric with the Q4 FY26 floor, rev l.256)"
+    - "M2 (A4): Graft AR1: two-year margin climb after the refund strip is +228 bps H1 and about +139 bps Q2; Q2 rupee EBITDA +18.7% over two years; into Step 2 answer 1, Flag 13, YAML flags"
+    - "M3 (A4): Inventory composition partly derivable, review says unverifiable (rev l.898, l.345): C build 71.74 (l.609) less FG/WIP/SIT build 26.45 (l.518) = about 45.29 non-FG; SA 89.99 (l.247) less 44.37 (l.179) = 45.62; partly verifies the raw-material build claim (L0299-L0308)"
+    - "M4 (A4): Top-three concentration shown only on the ASR 30% (rev l.487, l.777, l.1047); on the filed AR Note 31 34% it is about 57-68%; the review's own rule says filed wins (rev l.7)"
+  contradiction:
+    - "C1 (A4): 5.5C signal 'MPCB consent-to-operate status, Waluj plant' (rev l.366) vs plant ND in Q8, 6B row 9, Flag 1, M2 (rev l.494, l.402, l.1040, l.1066); extract names Waluj only as the registered office (l.60, l.153)"
+  style:
+    - "S1: rev l.619 'the deck carries the same, l.855' -> l.855 is the release; deck p29 GHS cell column is ambiguous (R1409, R1782)"
+    - "S2: anchor l.1111 for deck ~20% FY28-31 CAGR should be l.1115 (R1407)"
+    - "S3: rev l.553 'she signed the results, l.369' -> l.369 has the title only; name from l.886"
+    - "S4: 'US subsidiary' tagged [ASR] (rev l.89, l.1099); call says 'our subsidiary ... laws there' (L0539-L0540); tag [INFERENCE]"
+    - "S5: 1-G reading (b) 8.8% uses 286.63; on reading (b)'s own 262.86 operating revenue it is 9.6%"
+    - "S6: finance rate 75.6% shown as 5.34 x 2 / 14.14 (= 75.5%); show 14.135"
+    - "S7: Q&A end 1:08:10 (L0841) vs L0840 at 1:07:53; 57.95 min, 84.5%"
+    - "S8: CMD named from Notion; the release names him (l.882, FILED)"
+    - "S9: list content-light slides reviewed with no finding (pp20, 21, 23, 28, 30, 34, 36, 39, 41)"
+loop_back_to: "A4"
+gap: "F1 rebuild Step 8C Q3 thresholds like-for-like for seasonality and fix both meaning sentences (19.5% is a YoY gain vs Q3 FY26 18.9% incl OI, l.1021/l.1024; a guide-consistent Q3 can print below it), aligning 5.5C, 8E, Section C, M6, Step 9 payloads, brief l.1112/l.1141/l.1147, YAML, analyst_note; F2 correct brief pricing to the stated 80-85% (L0498-L0508); M1 add Q3 FY26 ex-OI bound (at most 18.95%, below 18% unless Q3 OI < 4.4) to tripwire 3; M2 graft refund-stripped two-year margin climb (+228 bps H1, about +139 bps Q2); M3 add inventory split (about 45.3 of 71.74 build outside FG/WIP); M4 show top-three on filed 34% (about 57-68%); C1 drop or source 'Waluj plant' in 5.5C"
+style_notes:
+  - "S1 deck vs release anchor l.855 (rev l.619)"
+  - "S2 anchor l.1111 -> l.1115"
+  - "S3 name source l.886, not l.369"
+  - "S4 'US subsidiary' is [INFERENCE], not [ASR]"
+  - "S5 reading (b) margin denominator 262.86 gives 9.6%"
+  - "S6 show unrounded 14.135 for the 75.6% rate"
+  - "S7 Q&A end time L0840 1:07:53"
+  - "S8 CMD name is FILED at l.882"
+  - "S9 list no-finding slides explicitly"
+analyst_note: "Coverage and arithmetic are clean: my fresh counts match both A2 ledgers and every derived metric I recomputed ties within rounding. The loop is about interpretation. The Q3 test in Step 8C, which the brief calls make-or-break, compares a Q3 print with half-year averages. Q3 is the seasonal low: on the deck chart it ran about 103 bps (FY25) and 416 bps (FY26) below its own half. A Q3 on management's guide path can therefore land at or under the 19.5% bear line. The stated meaning, no YoY gain, is wrong, because Q3 FY26 was 18.9% even with other income. The chart method A4 used for the Q4 FY26 floor also caps Q3 FY26 ex-OI at 18.95%. That is below the 18% tripwire unless Q3 other income was under 4.4, against at least 13.38 in every filed quarter. The refund strip cuts the two-year margin climb from about 300 bps to 139-228 bps. The brief overstates pricing: the call says 80-85% of the leader, with a premium only on certain products. The above-base call survives the seasonality test. The FY25 H1 share of EBITDA implies FY27 EBITDA near 673, close to the 675 guide midpoint."

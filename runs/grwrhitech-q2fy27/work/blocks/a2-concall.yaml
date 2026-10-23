@@ -1,0 +1,25 @@
+stage: A2-enumerator
+company: "GRWRHITECH"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/grwrhitech-q2fy27/work/ledger_concall_grwrhitech_q2fy27.md"
+counts:
+  participants: 11
+  turns: 97
+  questions: 39
+  mgmt_numbers: 222
+  forward_phrases: 67
+  hedge_qualifiers: 47
+  entities: 53
+  dates: 30
+  zero_standing: 0
+flags_raised: [MGMT_ABSENCE, REPEAT_QUESTION, RESTATED, FOOTNOTE_UNRESOLVED, ANCHOR_DRIFT, MISSING_FROM_STRUCTURED]
+ids_in_structured: 419
+ids_referenced: 419
+orphan_ids: []
+missing_from_structured: ["MFS01 fulltext L520: management single-product example 'this is 85%' (price vs global player); R258 covers 85-120% range only"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "A1 row line anchors drift 1-3 lines against fulltext prefixes (e.g. 3500 crore R146 line 221 vs fulltext 0224), so row-to-turn mapping is approximate; read by value. Only management speaker is Deepak Joshi; no CMD or CFO named. All numbers are ASR. Studio count conflict (R083/R088 =14, R327 =40) and '114' garble stay FOOTNOTE_UNRESOLVED. 3500 crore recurs as capacity at full utilisation, not a sales forecast (R163)."

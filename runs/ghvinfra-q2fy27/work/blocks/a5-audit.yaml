@@ -2,7 +2,57 @@ stage: A5-adversary
 company: "GHVINFRA"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
-status: in_progress
+status: complete
 iteration: 3
-verdict: ""
-analyst_note: "Iteration 3 audit in progress. This placeholder is overwritten at the end of the run."
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+  basis: "iteration-2 fresh count carried forward (inputs byte-identical per orchestrator); spot checks this run: 821 structured IDs, 253 ledger rows, 843 fulltext lines, anchors l353/l448/l678/l714 unchanged"
+iteration2_gaps_closed: [F-A, F-B, F-C, M-A, M-B, ST1, ST2, ST3, ST4, ST5]
+arithmetic_mismatches:
+  - metric: "Paid-up capital 'did not move' in H1 FY26 (support for warrant allotment inference)"
+    a4_value: "Paid-up capital did not move in that window (l353), so the 38.50 Cr was not a share issue (review l72; YAML l787)"
+    recomputed: "not derivable: l353 (R163-R168) prints closing capital at 30-Sep-2025, 31-Mar-2026, 30-Jun-2026, 30-Sep-2026 only; no 31-Mar-2025 opening; FY26 bonus (l358) undated within FY26"
+    source_line: "fulltext l353, l358; structured l171-176"
+surviving_bear_counters:
+  - claim: "Warrant allotment in H1 FY26 supported by flat paid-up capital (l353)"
+    counter: "l353 has no opening H1 FY26 value and cannot show capital was flat; the inference survives on the exact 25% match (3,850.00 L = 25% x 38,50,000 x Rs 400, l448) and Q2 FY26 diluted EPS 1.52 below basic 1.56 (l356-357)"
+    source_line: "fulltext l353, l356-358, l448, l475; review l72, l787"
+    type: FACTUAL
+  - claim: "Pending warrants convert or lapse by 31-Mar-2027 at the latest"
+    counter: "outer bound is correct; on the same premise the window is 1-Oct-2026 to 31-Mar-2027; weak diluted-EPS lead leans to Jan-Mar 2027"
+    source_line: "fulltext l356-357, l448, l475; review l73, l658, l766, l841"
+    type: STYLE
+  - claim: "About 21.83 Cr forfeited to the company on lapse"
+    counter: "not new cash; received in H1 FY26 (l448); lapse forgoes 65.50 Cr still due; bear fork already says the funding gap stays"
+    source_line: "fulltext l448, l475; review l73, l658, l697, l766"
+    type: STYLE
+  - claim: "37.61 Cr bounds booked balances only"
+    counter: "S-minus-C method sees only balances with and through the subsidiaries; direct parent Erisha balances, if any, are invisible to it; none identifiable in the extract; Q4 and Q32 ask"
+    source_line: "fulltext l374, l384, l410, l482, l678, l688, l714; review l414, l610, l638"
+    type: STYLE
+findings_by_type:
+  factual:
+    - "F-D (A4 text site; A5-originated in iter-2 3C): review l72 'Paid-up capital did not move in that window (l353), so the 38.50 Cr was not a share issue' and YAML l787 'paid-up capital flat (l353)'; l353 prints closing capital only, no 31-Mar-2025 opening; replace with the l356-357 diluted-EPS corroboration (exact text in audit register)"
+  missing: []
+  contradiction: []
+  style:
+    - "ST-A: header l15 'at least 90.54 Cr' vs conditional body l406; align"
+    - "ST-B: warrant deadline window 1-Oct-2026 to 31-Mar-2027 on the same premise; diluted EPS leans Jan-Mar 2027 (l356-357)"
+    - "ST-C: forfeiture is not new cash; add 'already received in H1 FY26, l448'"
+    - "ST-D: l414 'booked balances only' -> 'booked balances with and through the subsidiaries only'"
+loop_back_to: "A4"
+gap: "A4 (iteration cap reached, audit of record; route as operator open item): F-D [FACTUAL] at review l72 replace 'Paid-up capital did not move in that window (l353), so the 38.50 Cr was not a share issue.' with 'Line 353 prints closing capital only (no 31-Mar-2025 opening), so it cannot show whether capital moved in H1 FY26. Corroboration: Q2 FY26 diluted EPS Rs 1.52 sits below basic Rs 1.56 (l356-357), so a dilutive instrument was outstanding in Jul-Sep 2025; the warrants are the only one the filing names (l475) [INFERENCE].'; anchor cell to 'l448, l356-357, l475'; YAML l787 'paid-up capital flat (l353)' to 'Q2 FY26 diluted EPS below basic (l356-357)'. No number, verdict, cash classification or AVOID framing moves."
+style_notes:
+  - "ST-A: align header l15 reclassification wording to the conditional body l406"
+  - "ST-B: date the warrant row as a window, 1-Oct-2026 to 31-Mar-2027 [INFERENCE], diluted EPS leaning Jan-Mar 2027"
+  - "ST-C: forfeiture of 21.83 Cr brings no new cash (received H1 FY26, l448)"
+  - "ST-D: scope 'booked balances' to balances with and through the subsidiaries"
+analyst_note: "Loop 2 closed all five iteration-2 items and all five style notes at every named site. Every loop-2 figure recomputes from the fulltext, and the consolidation bridge ties to the paisa. The coverage count is carried forward. The inputs are unchanged, and the spot checks hold. One FACTUAL item remains, and it started in my iteration-2 text. That text said paid-up capital did not move. A4 carried it into 0C as support for the warrant allotment inference. Line 353 prints closing capital only. It has no 31-Mar-2025 opening, so it cannot show H1 FY26 was flat. The inference survives on two other facts. The 38.50 Cr is exactly 25% of 38.5 lakh warrants at Rs 400. Q2 FY26 diluted EPS sits below basic. The fix is a one-sentence swap. It moves no number, verdict, cash classification or AVOID framing. One weak lead is not grafted. The H1 FY26 diluted spread is about a third of the Q2 FY26 spread, which leans to a Q2 FY26 allotment and a Jan-Mar 2027 deadline. EPS rounding limits that lead. This is the audit of record. The operator decides whether to apply the swap before the Notion save."

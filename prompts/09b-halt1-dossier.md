@@ -172,9 +172,12 @@ stages.
 Built from the B09 SECTION 6 downstream candidates plus the whole evidence
 base.
 
-a. VERTICALS FRAMED: for each dominant variable from Section 2, write one
-   vertical. State what the corpus establishes (with block cites), what it
-   cannot establish, and the 2-3 questions that decide it.
+a. INTERNAL VERTICALS FRAMED (frameworks/Verticals_Guardrail.md, OR-34):
+   for each dominant variable from Section 2, write one Internal Vertical.
+   State what the corpus establishes (with block cites), what it cannot
+   establish, and the 2-3 questions that decide it. These feed the /fttcp
+   gate, never the tracker. Downstream Verticals (one per revenue stream,
+   outside sources only) run later in claude.ai.
 b. CANDIDATE SIGNAL TABLE: expand each B09 candidate with a draft
    falsifier, a draft cadence (Monthly / Quarterly / Event-Driven), and
    the likely source per Downstream_Source_Discovery_Protocol_v1_0. These

@@ -139,3 +139,11 @@ Ruled by Keerti Kaushik, 2026-10-04, after the KWICK Phase 1 run (branch run/kwi
 | Ruling | Text | Applied in |
 |---|---|---|
 | OR-32 | Verifier A checks 100% of verdict-card inputs, Section 1B pillar inputs and Gate 0 inputs (the mandatory tier). Everything else stays a materiality sample with coverage stated honestly. B12a reports `mandatory_checked` against `mandatory_total`, beside `numbers_checked` and `material_universe`. | prompts/12-verifiers-pipeline.md (VERIFIER A rule 2, output statement, B12a YAML); CLAUDE.md OPERATOR RULINGS |
+
+## Ruling 2026-10-20: verticals guardrail, internal and downstream (OR-34)
+
+Ruled by Keerti Kaushik, 2026-10-20, after the Kross verticals (branch run/kross-2026-09-27). Phase 2 has two kinds of vertical. Both were called "downstream", so on Kross they got mixed up. This ruling names them separately and sets the order. It supersedes the 19-Oct-2026 Downstream Analysis Guardrail (OR-33, PR #215), which was never merged to main. Applied on branch framework/verticals-guardrail-2026-10-20.
+
+| Ruling | Text | Applied in |
+|---|---|---|
+| OR-34 | Internal Verticals: one per dominant variable, minimum four, from the company's own evidence; each ends with a verdict, open questions and the /fttcp gate ruling it feeds; never written to the tracker. They run first. Downstream Verticals: one per material revenue stream (10% or more of revenue, or thesis-dependent); stream list first; each opens with the Demand Chain Map, verifies only from sources outside the company, ends with at least one signal row, and flags shared dependencies as one row. They run second. A drift test at the start and end of each Downstream Vertical moves company-evidence work to the Internal Verticals. | frameworks/Verticals_Guardrail.md (new); frameworks/Downstream_Source_Discovery_Protocol_v1_0.md (PART 1 pointer); claude-web/PROJECT_INSTRUCTIONS.md (Part 4.3 Phase 2 d-i and d-ii, Phase 4); CLAUDE.md (NEVER, OPERATOR RULINGS, STRUCTURE); prompts/09b-halt1-dossier.md (Section 4a) |

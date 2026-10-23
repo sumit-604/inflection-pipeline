@@ -5,7 +5,7 @@ ticker | date | doctype | pages | a1_extracted_text_tok | total_run_tok | loop_i
 AYE | 2026-10-23 | results | 24 | NOT FOUND (fulltext 123,299 chars; tokenizer count not run) | see run total | 1
 AYE | 2026-10-23 | presentation | 44 | NOT FOUND (fulltext 76,614 chars) | see run total | 1
 AYE | 2026-10-23 | concall (ASR text, 846 lines, 8 audio segments) | 8 | NOT FOUND (fulltext 65,423 chars) | see run total | 1
-Run total (all subagents, base + loop): 2,318,946 tok. Base run 2,071,623 tok; correction loop 247,323 tok (1 iteration).
+Run total (all subagents): 2,450,548 tok. Base run 2,071,623 tok; loop 1 247,323 tok; loop 2 131,602 tok (2 iterations).
 
 ## Per-agent ledger (subagent totals as reported by the harness)
 agent | doc | model | total_tok | wall | run#
@@ -38,3 +38,9 @@ A5 | re-audit (cumulative 493,081 minus base 384,604) | claude-opus-5-5 | 108,47
 
 ## Prompt-cache figures
 fresh tokens: NOT FOUND | re-read tokens: NOT FOUND | re-read multiple: NOT FOUND (the harness did not expose a cache split for this run)
+
+## Correction loop 2 (operator approval 2026-10-24: "complete them fully")
+agent | doc | model | total_tok | wall | run#
+A4 | loop2 preamble fix + style (cumulative 760,881 minus 669,629) | claude-opus-5-5 | 91,252 | 2,350s (as reported) | loop2
+A5 | loop2 re-audit (first attempt killed by app restart; mechanical re-run) (cumulative 533,431 minus 493,081) | claude-opus-5-5 | 40,350 | 236s | loop2
+Final A5 verdict: COMPLETE with style notes. loop_iterations: 2.

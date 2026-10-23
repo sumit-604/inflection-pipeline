@@ -416,3 +416,91 @@ style_notes:
   - "R1-S4: reword REV L991 so only both scoring choices together reach the 50% discount zone"
 analyst_note: "Re-audit after loop 1 of 1. All seven loop-0 findings are closed. A2 added M01-M02 (presentation L667, L807) and M06-M07 (results L980, L1438) and corrected the signature-timing line; the blocks match. A4 grafted ADV-1 to ADV-3 with correct anchors and arithmetic. It aligned every dependent line (3B now A to D, 6B tally 4 GREEN / 3 split, two new flags) and applied all five style notes. I recomputed every new figure: zero mismatches. One defect remains, and the loop itself created it. A4's preamble (REV L33-34) still counts the pre-loop ledgers (755 + 5; 913), so results M07, the CS signature at 11:39:14, is an orphan row. In substance it is immaterial: it falls after the 11:21 approval, and A3-16 already carries the CS-signing pattern. The fix is two table rows plus one reviewed-no-finding line. It moves no figure, flag, verdict or position. The rules make an orphan row and a count contradiction non-STYLE, so the verdict is INCOMPLETE. If the one-loop cap binds, the operator decides whether to apply the edit or carry it to Halt 1 as an open item."
 ```
+
+---
+
+## RE-AUDIT AFTER LOOP 2
+
+Re-audit date 2026-10-24. Correction loop 2, operator-approved 2026-10-24. Final iteration; no third loop.
+Re-read: the rewritten A4 review and the current A2 ledgers. The A2 ledgers did not change in loop 2: R1-S2 and R1-S3 were logged only.
+Line references below point to the loop-2 files.
+
+### L2-1. Closure of loop-1 findings
+
+| ID | Type | Loop-1 gap | Evidence after loop 2 | Status |
+|---|---|---|---|---|
+| R1-1 | CONTRADICTION | The preamble counted 755 + M01-M05 and 913 | REV L35: "R001-R755 (755 rows) + M01-M07 signature lines \| all 755 + 7 \| 0". REV L36: "R001-R913 (913 rows) + M01-M02 (P:L667, P:L807) \| all 913 + 2 \| 0". The ledgers agree: 7 M rows in results (LED-R L25-31) and 2 in presentation (LED-P L1003-1004). Concall REV L37 reads "+ M1-M7 \| all 346 + 7", and LED-C holds 7 M rows | CLOSED |
+| R1-2 | MISSING | Orphan row M07 | REV L43: "M07 (R:L1438, CS cover-letter signature 21-10-2026 11:39:14): reviewed, no finding; after the 11:21 approval; CS-signing pattern carried in A3-16." REV L42 marks M06 reviewed via A3-18. REV L45 accounts for presentation M01 and M02 | CLOSED. Orphan rows: 0 |
+| R1-S1 | STYLE | Change log incomplete | REV L7 now lists the watchlist 8 status change and the 6B tally change (5 GREEN / 2 split to 4 GREEN / 3 split) | APPLIED |
+| R1-S4 | STYLE | 8E wording | REV L999: "Either single scoring choice (opex PARTIAL, or narrowing DROPPED) reaches the 60% boundary; only both together reach 50%, the discount zone" | APPLIED |
+| R1-S2, R1-S3 | STYLE (A2) | Ledger wording | Logged only, as the coordinator ruled. Carried below | LOGGED |
+
+### L2-2. Fresh spot check of the loop-2 rewrite
+
+- **Scope.** Loop 2 changed only the header and preamble: REV L7, L9 and L35-45. REV L9 says "No figure changed".
+- **Figures.** I checked 14 load-bearing figures and verdict lines by grep. All are unchanged, each 8 lines lower than in loop 1, which matches the header and preamble additions:
+  - core PBT +576.8% (REV L192); funding-mix 14.2 (L207); recurring ~73.2 (L208, L257); 116% (L255, L299);
+  - 163.86 identity (L287); 19.7% of Q2 PAT (L291); slippage proxy 4.6% (L296);
+  - 6B tally 4 GREEN (L414); H2 post-tax RoA 3.08% (L716); opex 10.05% to 9.91% (L733);
+  - 3B 60.0% / 60.0% / 50.0% (L756-758); position HOLD 4% (L1006); protocol verdict PROCEED WITH FLAGS (L1032).
+- **Arithmetic.** Mismatches above rounding: 0.
+- **Coverage.** Orphans 0. Missing from ledger 0. The preamble counts match all three ledgers.
+- **Brief.** Unchanged and complete. All five parts are present.
+
+### L2-3. Findings after loop 2
+
+No FACTUAL, MISSING or CONTRADICTION finding.
+
+STYLE (logged, no loop):
+- **R2-S1 (A4).** The REV L24 source caution still says "results A2 ledger line 28 is wrong". A2 corrected that statement in loop 1 (now LED-R L32), and LED-R L28 is now M04. The caution is true as history and the facts it states are right (11:09:12 before 11:15). Add "(corrected by A2 in loop 1)". I missed this in the loop-1 re-audit.
+- **R2-S2 (A4).** REV L45 says M01 and M02 "are used in Steps 1L, 4C and 5L". M01 (P:L667) is. M02 (P:L807) feeds the 4,408 headroom in 6D T3 and Q17, not those steps.
+- **R1-S2 and R1-S3 (A2, carried).** The LED-P L1007 relabel rationale calls +10% a QoQ marker; it is YoY (P:R079). LED-P L1004 calls the P:L807 "0" an axis base; it is the 10+ year cohort capacity.
+
+### L2-4. Verdict after loop 2
+
+**VERDICT: COMPLETE (with style notes).** No loop. Notion save may proceed.
+- All loop-0 and loop-1 findings are closed.
+- Three bear counters are grafted and intact.
+- Arithmetic mismatches: 0. Orphan rows: 0.
+- Protocol verdict PROCEED WITH FLAGS and position HOLD 4% stand.
+- Four style notes are recorded for the record: R2-S1, R2-S2, R1-S2 and R1-S3.
+
+```yaml
+stage: A5-adversary
+company: "AYE"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "YoY core PBT +576.8% is real and larger than reported; YoY PAT rise 116% recurring", counter: "Trough base; ~Rs14 cr/qtr post-IPO funding mix unwound by re-levering to 4-4.5x; ~13 Q2 ECL draw inside recurring", source_line: "P:R387; P:R797; P:R798; P:L509; P:R852; P:R853; C:L272-274; P:R653", type: "MISSING", status: "grafted loop 1; intact loop 2 (REV L192, L205-209, L257, L299)"}
+  - {claim: "Asset quality GREEN; over-lending tripwire GREEN", counter: "Falling repeat share means incremental lending tilts to first-time borrowers (new +23% YoY, repeat -16%); repeat loans perform better on credit cost", source_line: "C:L98-102; C:L259-260; P:R433; C:L459; P:R592; P:R593", type: "MISSING", status: "grafted loop 1; intact loop 2 (REV L341, L410)"}
+  - {claim: "Credibility 70% Grade B; opex DELIVERED early", counter: "Opex delivery denominator-assisted (-14 bps on avg AUM vs -32 bps on ATA); 60% if scored PARTIAL", source_line: "R:R132-R146; P:L920; P:R646; P:R073; P:R074", type: "MISSING", status: "grafted loop 1; intact loop 2 (REV L733, L752-759)"}
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "R2-S1 (A4): REV L24 source caution still says 'results A2 ledger line 28 is wrong'; A2 corrected it in loop 1 (now LED-R L32; L28 is M04). Add '(corrected by A2 in loop 1)'"
+    - "R2-S2 (A4): REV L45 says M01 and M02 are used in Steps 1L, 4C and 5L; M02 (P:L807) feeds the 4,408 headroom (6D T3, Q17), not those steps"
+    - "R1-S2 (A2, carried): LED-P L1007 relabel rationale calls +10% a QoQ marker; it is YoY (P:R079)"
+    - "R1-S3 (A2, carried): LED-P L1004 calls the P:L807 '0' an axis base; it is the 10+ yr cohort capacity, 4th addend of 4,408"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "R2-S1: mark the REV L24 ledger-line-28 caution as corrected by A2 in loop 1"
+  - "R2-S2: REV L45 should tie M02 to the 4,408 headroom (6D T3, Q17), not Steps 1L/4C/5L"
+  - "R1-S2: correct the R076 relabel rationale in LED-P L1007 (+10% is YoY)"
+  - "R1-S3: describe P:L807 '0' as the 10+ yr cohort potential capacity in LED-P L1004"
+analyst_note: "Re-audit after loop 2, the final iteration. R1-1 is closed. The preamble now reads 755 + M01-M07 and 913 + M01-M02 (REV L35-36), which matches the ledgers: 7 results M rows, 2 presentation M rows, and 7 concall M rows against REV L37. R1-2 is closed. M07 is marked reviewed, no finding (REV L43), and M06 is marked reviewed via A3-18 (REV L42). R1-S1 (REV L7) and R1-S4 (REV L999) are applied. I spot-checked 14 load-bearing figures and verdict lines. All are unchanged, each 8 lines lower than in loop 1, which matches the header and preamble additions. The brief, verdict PROCEED WITH FLAGS and HOLD 4% are intact. Two new STYLE notes remain, both cosmetic. The REV L24 caution still calls ledger line 28 wrong after A2 fixed it; I missed that in loop 1. REV L45 ties M02 to the wrong steps. Neither changes a number, fact or conclusion. Verdict COMPLETE with style notes; Notion save may proceed."
+```

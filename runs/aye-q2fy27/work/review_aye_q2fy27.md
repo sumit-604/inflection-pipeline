@@ -4,7 +4,9 @@ Quarter: Q2 FY27 (quarter ended 30-Sep-2026). Run type: FULL QUARTER (results fi
 Protocols applied: Role 4 Quarterly Results Review v1.4 (lender variant, Steps 1L/5L) and Role 5 Quarterly Concall Analysis v1.1 (lender variant, Step 2L). Master, FTTCP and Section 1B not loaded. Role 4 Steps 6.5 and 7 and Role 5 Step 8D are DEFERRED to /fttcp and Role 1 (operator ruling OR-30). Pillar-relevant facts are flagged in place.
 Model: claude-opus-5-5. Run date 2026-10-23.
 
-**Correction loop 1 applied (A5 ADV-1..3).** Grafted: ADV-1 (Step 2 Core PBT row and 4A), ADV-2 (5L lender question 4, watchlist item 8, Q33), ADV-3 (3A opex row, 3B sensitivity and every dependent credibility line). A5 style notes ST-1 to ST-5 applied as well. No figure changed except the restated credibility sensitivity (range now A to D) and the ST-5 rounding (H2 post-tax RoA 3.07% → 3.08%). Protocol verdict, protocol-output grade (70%, B) and position are unchanged.
+**Correction loop 1 applied (A5 ADV-1..3).** Grafted: ADV-1 (Step 2 Core PBT row and 4A), ADV-2 (5L lender question 4, watchlist item 8, Q33), ADV-3 (3A opex row, 3B sensitivity and every dependent credibility line). A5 style notes ST-1 to ST-5 applied as well. Changes to figures and statuses: the restated credibility sensitivity (range now A to D); the ST-5 rounding (H2 post-tax RoA 3.07% → 3.08%); watchlist item 8 status (GREEN → GREEN on the trigger / AMBER on the second reading); and the resulting 6B tally (5 GREEN / 2 split → 4 GREEN / 3 split). Protocol verdict, protocol-output grade (70%, B) and position are unchanged.
+
+**Correction loop 2 applied (A5 R1-1, R1-2, R1-S1, R1-S4)** (operator approved 2026-10-24). Preamble ledger counts updated to the corrected A2 ledgers (results M01-M07; presentation M01-M02). M06 and M07 marked reviewed. Loop-1 change log completed (R1-S1). 8E sensitivity wording corrected (R1-S4). No figure changed.
 
 Anchor key (every number carries one):
 - `R:R###` / `R:L###` = results structured row / results fulltext line (aye-results-q2fy27-*.md)
@@ -30,11 +32,17 @@ Ledger contains 12 notes / 26 turns / 44 slides. All 12 notes, 26 turns and 44 s
 
 | Ledger | Unit counted | Count | Structured IDs behind it | Reviewed | Orphans |
 |---|---|---|---|---|---|
-| Results (ledger_results) | numbered notes (plus 4 unnumbered notes R704, R708, R715, R737) | 12 (+4) | R001-R755 (755 rows) + M01-M05 signature lines | all 755 + 5 | 0 |
-| Presentation (ledger_presentation) | slides (38 with rows + 6 dividers) | 44 | R001-R913 (913 rows) | all 913 | 0 |
+| Results (ledger_results) | numbered notes (plus 4 unnumbered notes R704, R708, R715, R737) | 12 (+4) | R001-R755 (755 rows) + M01-M07 signature lines | all 755 + 7 | 0 |
+| Presentation (ledger_presentation) | slides (38 with rows + 6 dividers) | 44 | R001-R913 (913 rows) + M01-M02 (P:L667, P:L807) | all 913 + 2 | 0 |
 | Concall (ledger_concall) | speaker turns T1-T26 (10 Q&A pairs + 6 framing turns); 10 questions | 26 | R001-R346 (346 rows) + M1-M7 | all 346 + 7 | 0 |
 
 No ledger row is unreviewed. A4 adds four findings of its own (A4-01 to A4-04, Section C).
+
+Results signature rows added by A2 in the loop (R1-2):
+- M06 (R:L980, auditor security-cover report signature 21-10-2026 11:09:12): reviewed via A3-18; precedes the 11:15 board start and the 11:21 approval.
+- M07 (R:L1438, CS cover-letter signature 21-10-2026 11:39:14): reviewed, no finding; after the 11:21 approval; CS-signing pattern carried in A3-16.
+
+Presentation rows M01 (P:L667: 83 / 308 / 6,865, 30-Jun Stage 2, Stage 3 and total gross loans) and M02 (P:L807: 0, 10+ year cohort potential capacity) were read directly at the fulltext and are used in Steps 1L, 4C and 5L.
 
 Slides reviewed with no finding and no row-level cite in this review (ST-4): slide 1 (cover letter), 2 (title), 4 (index), 9 and 10 (H1 restatements of cited Q2 rows), 16 (customer profile), 29 (collection tiers), 39 (scrambled balance-sheet summary; the filed balance sheet is used instead), 41 (shareholding; cited only through A3P-12), 42 (CSR), 43 (glossary). The six divider slides (5, 11, 20, 23, 30, 37) carry no rows.
 
@@ -988,7 +996,7 @@ Concall facts flagged for the pillars:
 
 | Override | Test | Result |
 |---|---|---|
-| Credibility ratio below 60% → discount commentary 30-50% | 70% (protocol output); 60% with opex PARTIAL or narrowing DROPPED; 50% with both | Not triggered on the protocol output; one scoring choice reaches the 60% boundary and two reach the discount zone |
+| Credibility ratio below 60% → discount commentary 30-50% | 70% (protocol output); 60% with opex PARTIAL or narrowing DROPPED; 50% with both | Not triggered on the protocol output. Either single scoring choice (opex PARTIAL, or narrowing DROPPED) reaches the 60% boundary; only both together reach 50%, the discount zone |
 | Two or more DROPPEDs → automatic grade downgrade | 1 DROPPED | Not triggered |
 | Concall reveals undisclosed material risk → trim 25% (held names) | Mortgage PAR X +1 pp, drought exposure ~18%, Bucket 1 dip with no cause. All were disclosed in answers to questions, sized below the company average (mortgage PAR X ~6% vs book 6.94%), and none moves a trigger | A4 judgement: NOT MET. Flagged for the operator, since the conservative reading of this clause is close |
 | Concall reveals undisclosed material positive → hold pending verification | None material | n/a |
@@ -1254,6 +1262,6 @@ flags:
   - "FLAG-BASE-EFFECT (A5 ADV-1): YoY core PBT +576.8% runs off the FY26 stress trough; ~Rs14 cr/qtr post-IPO funding-mix carry unwinds on re-levering to 4-4.5x; recurring pool ~73.2 ex ECL draw"
   - "FLAG-BORROWER-MIX (A5 ADV-2): incremental lending tilts to first-time borrowers (new +23% YoY, repeat -16%); repeat loans perform better on credit cost per management"
 plain_language_brief_included: true
-analyst_note: "Correction loop 1 applied (A5 ADV-1..3); verdict, protocol grade and position unchanged. Headline Q2 is strong and no trigger fired, so HOLD 4% stands and the add-gate fails. The review leans bear on quality. H1 impairment 163.31 equals write-offs 155.56 plus settlements 8.30 minus a 0.55 ECL change, exactly. The deck ECL stock fell 287 to 274 in Q2 while gross loans rose 254, so Q2 write-offs ran near 95 vs 69 in Q1 [inference]. The DA gain plus that ECL fall exceed the whole QoQ PBT rise. Slippage stayed undisclosed a third time, the Notion bear reading; an implied proxy is near 4.6% of average AUM. Bull counter: NII +40%, H1 realised losses +10% YoY on a 27% larger book, CoB down. But YoY core PBT +577% runs off the FY26 trough, and ~Rs14 cr/qtr is post-IPO funding mix that re-levering unwinds. Incremental lending tilts to first-time borrowers. The 70% credibility ratio rests on five items and swings A to D on scoring; opex delivery is denominator-assisted. Notion's GNPA history conflicts with the deck's Sep-25 4.84%. The concall is ASR."
+analyst_note: "Correction loops 1-2 applied (A5 ADV-1..3; R1-1, R1-2, R1-S1, R1-S4); verdict, protocol grade and position unchanged. Headline Q2 is strong and no trigger fired, so HOLD 4% stands and the add-gate fails. The review leans bear on quality. H1 impairment 163.31 equals write-offs 155.56 plus settlements 8.30 minus a 0.55 ECL change, exactly. The deck ECL stock fell 287 to 274 in Q2 while gross loans rose 254, so Q2 write-offs ran near 95 vs 69 in Q1 [inference]. The DA gain plus that ECL fall exceed the whole QoQ PBT rise. Slippage stayed undisclosed a third time, the Notion bear reading; an implied proxy is near 4.6% of average AUM. Bull counter: NII +40%, H1 realised losses +10% YoY on a 27% larger book, CoB down. But YoY core PBT +577% runs off the FY26 trough, and ~Rs14 cr/qtr is post-IPO funding mix that re-levering unwinds. Incremental lending tilts to first-time borrowers. The 70% credibility ratio rests on five items and swings A to D on scoring; opex delivery is denominator-assisted. Notion's GNPA history conflicts with the deck's Sep-25 4.84%. The concall is ASR."
 review_path: "runs/aye-q2fy27/work/review_aye_q2fy27.md"
 ```

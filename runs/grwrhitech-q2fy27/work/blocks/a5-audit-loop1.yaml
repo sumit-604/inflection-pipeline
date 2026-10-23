@@ -1,0 +1,55 @@
+stage: A5-adversary
+company: "GRWRHITECH"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual:
+    - "F3 (A4): review says the evidence leans to reading (a), a higher transfer markup (RV l.183, l.524, l.588, l.692, l.694). Unsupported: the beyond-dividend deduction (Q2 22.84-22.97, H1 26.55-26.68) is a residual that any mix of unrealised profit and intra-subsidiary dividend satisfies (FT l.202, l.307, l.443-444, l.457, l.541, l.681); the group pays the parent an H1 dividend every year (28.04 / 28.26, FT l.307-308), a precedent for (b); (a) needs subsidiaries' own Q2 operating EBITDA >= 48.15 (>= 16.8% of 286.63) vs >= 9.55 (3.6%) in Q1 while their purchase markup rises; (b) gives 25.31 (8.8%)"
+  missing: []
+  contradiction: []
+  style:
+    - "S1: SA ex-OI QoQ -572 bps vs -571 unrounded (RV l.513, l.680)"
+    - "S2: 'matching' deck ROCE 23%/32% vs recomputed 23.82%/32.93% (RV l.377)"
+    - "S3: 25.31 'near' 18.60 is 36% higher (RV l.183)"
+    - "S5: A2 agenda rows cite R1297/R1347, which are SEBI and exchange-code entity rows (ST l.1309, l.1359)"
+    - "S6: forward-map MPCB catalyst undated (RV l.599)"
+    - "S7: A4 coverage uses category-level reviewed mark; list uncited rows by ID next time (RV l.15-18)"
+    - "S8: p24 forward restatements (FT l.970, l.973-974) lack FORWARD rows; verbatim duplicates of R1399-R1401"
+    - "S9: A2 zero_standing 11 is stale (6 genuine); correction already in A4 (RV l.17)"
+    - "S10: two-year margin climb 'about 300 bps' in brief and Flag 13 (RV l.523, l.560, l.691) omits the incl-other-income basis stated at l.222; ex-OI climb at least +17 bps, exact ND"
+    - "S11: ND OI remainder 12.85 (RV l.227) may hold sundry balances written back 0.04 and PPE sale profit 0.15 (FT l.678, l.683); P&L line not stated"
+    - "S12: net cash rise 162.28 includes 21.28 non-cash MF gain (711.75 - 618.19 - 72.28; FT l.611-612, l.716); still above 820 without it (RV l.311)"
+    - "S13: reading A CFO/PAT 0.83x sits above the cited 0.65-0.80 band (RV l.300, l.335)"
+    - "S14: Other-assets drain recurred in H1 FY26 (31.20 C / 30.33 SA, FT l.697, l.321) with revenue down 2.9% on H1 FY25; add to gap (c) (RV l.336)"
+    - "S15: Step 7 ROCE row (RV l.432) can add TTM ROCE 19.68% closing CE / 20.55% average CE (TTM EBIT 574.41) beside H1-annualised 24.31%"
+loop_back_to: "A4"
+gap: "F3 (FACTUAL): remove the unsupported lean to reading (a) at RV l.183, l.524, l.588, l.692, l.694. State that the filing does not separate (a) higher transfer markup from (b) intra-subsidiary dividend; each needs one undisclosed figure. In 1-G add the test: under (a) the subsidiaries' own Q2 operating EBITDA is at least 25.31 + 22.84 = 48.15 (16.8% of 286.63), up from at least 9.55 (3.6% of 267.47) in Q1, while their purchase markup rises; under (b) it is 25.31 (8.8%). Note the H1 upstream-dividend precedent (SA dividend income 28.04 H1 FY27, 28.26 H1 FY26 vs C 0.13 / 0.20; FT l.307-308, l.681). Keep Q5 as the separating observation. No number changes."
+style_notes:
+  - "S1: SA ex-OI QoQ -572 bps vs -571 unrounded (RV l.513, l.680)"
+  - "S2: 'matching' deck ROCE 23%/32% vs recomputed 23.82%/32.93% (RV l.377)"
+  - "S3: 25.31 'near' 18.60 is 36% higher (RV l.183)"
+  - "S5: A2 agenda rows cite R1297/R1347, which are SEBI and exchange-code entity rows (ST l.1309, l.1359)"
+  - "S6: forward-map MPCB catalyst undated (RV l.599)"
+  - "S7: A4 coverage uses category-level reviewed mark; list uncited rows by ID next time (RV l.15-18)"
+  - "S8: p24 forward restatements (FT l.970, l.973-974) lack FORWARD rows; verbatim duplicates of R1399-R1401"
+  - "S9: A2 zero_standing 11 is stale (6 genuine); correction already in A4 (RV l.17)"
+  - "S10: two-year margin climb 'about 300 bps' in brief and Flag 13 omits the incl-other-income basis; ex-OI at least +17 bps, exact ND"
+  - "S11: ND OI remainder 12.85 may hold sundry balances written back 0.04 and PPE sale profit 0.15 (FT l.678, l.683)"
+  - "S12: net cash rise includes 21.28 non-cash MF gain; still above 820 without it"
+  - "S13: reading A CFO/PAT 0.83x sits above the cited 0.65-0.80 band"
+  - "S14: Other-assets drain recurred in H1 FY26 (31.20 C / 30.33 SA) with revenue down 2.9%; add to gap (c)"
+  - "S15: Step 7 ROCE row can add TTM ROCE 19.68% / 20.55% beside H1-annualised 24.31%"
+analyst_note: "Re-audit after loop 1. All six prior non-STYLE findings are resolved: C1 (filed classification kept as basis, reading A stated with capex 49.77 and CFO/PAT 0.83x / 0.44x, Q16 separates), M1 (two-year figures in Step 2, Step 3, 6B, brief and Flag 13; chart re-pairing re-derived), M2 (PAT bridge added, release reading withdrawn, Q5 extended), M3 (upper bound stated in four places), F1 (slide quoted exactly), F2 (12.98, ND 12.85). Coverage holds and every recomputed figure ties. One new FACTUAL finding, F3. The review now says the evidence leans to the transfer-markup reading. That lean came from the loop-0 A5 audit, and this audit withdraws it. The beyond-dividend deduction is a residual that any mix of unrealised profit and intra-subsidiary dividend satisfies. The group's yearly H1 upstream dividend gives the dividend reading a filed precedent. The markup reading needs the subsidiaries' own Q2 operating EBITDA at 16.8% or more of their revenue in the quarter their purchase markup rose. The fix is wording in five places plus one derived test; no number changes. Fourteen STYLE notes are logged (S4 resolved)."

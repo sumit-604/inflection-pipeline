@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "GRWRHITECH"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/grwrhitech-q2fy27/work/ledger_results_grwrhitech_q2fy27.md"
+counts:
+  notes: 7
+  line_items: 205
+  zero_standing: 11
+  agenda_items: 3
+  auditor_paras: 13
+  entities: 4
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 24
+  slide_numbers: 580
+flags_raised: [ZERO_STANDING, RESTATED, GUIDANCE_CHANGE, FOOTNOTE_UNRESOLVED, MGMT_FURNISHED_ENTITY, OTHER_AUDITOR_RELIANCE, UNIDENTIFIED_ENTITY_ASSIGNMENT, SPARSE_SLIDE, NO_TIMESTAMP, MISSING_FROM_STRUCTURED]
+ids_in_structured: 1782
+ids_referenced: 1782
+orphan_ids: []
+missing_from_structured: [CIN line 77 p2, CIN line 495 p12, CIN line 1478 p43, signature date line 751 p15]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Zero-standing rows (11) are blank or dash in the displaced text layer, mainly consolidated NCI attributions, OCI reclassified lines, held-for-sale, and cash flow lines for sale of investments and doubtful advances. A1 could not pair columns on pp5-7, 12-14, so confirm values visually. Consolidation: LRR lists 3 subsidiaries, Note 3 calls Global Hi-Tech Films Inc a step-down; one subsidiary (nil revenue, assets Rs 0.18 Cr) is management-furnished and unnamed. FORWARD: FY27 EBITDA guidance raised 200 bps to 27% +/-2% (prior 23-27%, R1401); SCF line capex shows Rs 191 Cr (R1394) vs Rs 192 Cr (R1425). Board end time and UDINs illegible. Three CIN lines plus one signature-date line are MISSING_FROM_STRUCTURED, low materiality. No prior ledger: ENTITY_CHANGE and DROPPED_SLIDE not assessable."

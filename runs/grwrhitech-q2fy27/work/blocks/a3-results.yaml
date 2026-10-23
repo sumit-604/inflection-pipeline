@@ -1,0 +1,68 @@
+stage: A3-forensics
+company: "GRWRHITECH"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/grwrhitech-q2fy27/work/forensics_grwrhitech_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: PASS
+  F11: FINDING
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "F1a", check: "F1", line: "547, 687, 728", classification: "NEUTRAL-FACT", implication: "3 of 11 A2 ZERO_STANDING rows carry values by arithmetic (OCI reclassifiable, MF gain 23.22, FX on cash 1.54); MF gains are 59% of H1 consolidated other income"}
+  - {id: "F1b", check: "F1", line: "261, 624", classification: "AMBIGUOUS", implication: "9 values fill 9 current-asset rows; Held for Sale likely about 0.59 Cr; an asset set aside for disposal; confirm on page image"}
+  - {id: "F2a", check: "F2", line: "170-171, 202, 509-510, 541, 307", classification: "AMBIGUOUS", implication: "C-SA PAT gap swung 12.3 pp QoQ (+4.80% to -7.46%); 28 Cr intra-group dividend each Q2; subs+elim ex-OI EBITDA +25.30 Q2 vs +5.84 Q1; SA ex-OI margin 28.4% to 22.7%; profit moved parent to subs"}
+  - {id: "F2b", check: "F2", line: "443, 509, 170", classification: "AMBIGUOUS", implication: "Derived intra-group sales 225.19 Cr Q2 = 35.5% of SA revenue (H1 36.4%); the Notion 34% customer may be the group's own subsidiary"}
+  - {id: "F2c", check: "F2", line: "446, 250, 612, 614, 330-333, 709", classification: "AMBIGUOUS", implication: "Parent intra-group receivables >=191 Cr, up >=49.82 in H1; subs hold about 155.64 Cr cash (+72.91 H1); SA CFO/PAT 35.5% vs 79.3% H1 FY26; consolidated 74.5%"}
+  - {id: "F3", check: "F3", line: "455-459, 335, 690", classification: "AMBIGUOUS", implication: "One unnamed nil-revenue management-furnished subsidiary (assets 0.18, H1 loss 0.38); new 0.52 Cr parent investment in a subsidiary; other two subs are non-manufacturing distributors"}
+  - {id: "F4a", check: "F4", line: "441-452, 462", classification: "AMBIGUOUS", implication: "40.55 Cr = 31.3% of Q2 (19.3% H1) consolidated PAT and 41% of revenue reviewed by other auditors only; above the 10% threshold"}
+  - {id: "F4b", check: "F4", line: "443-444", classification: "AMBIGUOUS", implication: "Derived Q1 sub PAT 10.06 (7.6%) to Q2 40.55 (31.3%); sub net margin 3.8% to 14.1% on +7.2% revenue"}
+  - {id: "F6a", check: "F6", line: "760, 889, 1106, 1121", classification: "FORWARD-SIGNAL", implication: "Guidance EBITDA includes other income; midpoint 27% on 2,500 Cr implies H2 margin about 25.1% vs Q2 27.2%; revenue target needs only +11.0% H2 YoY growth; guided step-down"}
+  - {id: "F6b", check: "F6", line: "825, 893, 1057, 1210-1214, 711, 598, 1128", classification: "FORWARD-SIGNAL", implication: "TPU still 'on track' for Q3 FY27, not commissioned as of 22-Oct; H1 capex 27.07 vs TPU 118 and SCF 191 Cr; about 170 Cr capex column ambiguous"}
+  - {id: "F7", check: "F7", line: "797, 792-793, 1137, 1201", classification: "AMBIGUOUS", implication: "Middle East slowdown, US tariff (FY26 organic growth 0.5%) and macro hedge on FY27+ targets; consistent with the implied H2 step-down"}
+  - {id: "F8", check: "F8", line: "193, 200, 307, 532, 539", classification: "NEUTRAL-FACT", implication: "SA Q2 ETR 20.76% vs 25.17% explained by the 28.04 Cr sub dividend (ex-dividend tax 37.37 vs 36.64); consolidated ETR 24.2-25.2%; deferred tax always a charge"}
+  - {id: "F11", check: "F11", line: "217, 265, 574, 628, 1137, 1470", classification: "AMBIGUOUS", implication: "Reserves excl revaluation equal full other equity despite 764 Cr reval reserve (28.8% of NW); unadjusted ROCE FY26 17.0% vs deck 23%; tripwire 1 basis must be fixed"}
+  - {id: "F12", check: "F12", line: "363, 741, 1148-1160", classification: "AMBIGUOUS", implication: "One segment filed vs CPD 73% / IPD 27% in deck; VAP climb not verifiable from segment data"}
+  - {id: "F13a", check: "F13", line: "40-43, 357-367, 735-749, 1369-1370", classification: "AMBIGUOUS", implication: "Filing silent on MPCB BG forfeiture received 21-Oct [EXTERNAL caller input]; ESG slide claims ZLD; consent-to-operate risk at Waluj"}
+  - {id: "F13b", check: "F13", line: "51", classification: "NEUTRAL-FACT", implication: "Board meeting 30 minutes or less; results the only agenda item; no AR, AGM, dividend or director item"}
+  - {id: "F14", check: "F14", line: "813, 826, 1213, 1166, 465, 426, 745, 1114, 855", classification: "NEUTRAL-FACT", implication: "933 Cr labelled cash and cash equivalents (Ind AS C&CE 191.62); 191 vs 192 Cr; stale GAS text; entity-name variants; >20% growth vs 2,500 Cr target"}
+  - {id: "F15", check: "F15", line: "424-427, 744-746, 335", classification: "AMBIGUOUS", implication: "No prior list to diff; new 0.52 Cr subsidiary investment (H1 FY26 nil) and unnamed nil-revenue entity suggest a perimeter change"}
+forward_signals: ["F6a", "F6b"]
+ambiguous: ["F1b", "F2a", "F2b", "F2c", "F3", "F4a", "F4b", "F7", "F11", "F12", "F13a", "F15"]
+commitments:
+  - {commitment: "FY27 EBITDA margin 27% +/-2% incl other income (raised 200 bps)", implied_date: "FY27", ref: "line 760, 1106, 1121", status_word: "raised"}
+  - {commitment: "FY27 revenue Rs 2,500+ Cr", implied_date: "FY27", ref: "line 761, 1108", status_word: "reaffirmed"}
+  - {commitment: "FY27E organic sales growth >20%", implied_date: "FY27", ref: "line 1114", status_word: "stated"}
+  - {commitment: "TPU line Rs 118 Cr, 360 LSF p.a.", implied_date: "Q3 FY27", ref: "line 825, 893, 1057, 1210-1214", status_word: "underway"}
+  - {commitment: "TPU adds 150-200 bps consolidated EBITDA margin", implied_date: "post-commissioning", ref: "line 1065, 1119", status_word: "stated"}
+  - {commitment: "Lubrizol MoU for TPU films in India", implied_date: "undated", ref: "line 830, 1053", status_word: "initiated"}
+  - {commitment: "SCF line Rs 191 Cr (192 Cr p33), about 1,200 LSF", implied_date: "H1 FY28", ref: "line 826-828, 1211-1215", status_word: "initiated"}
+  - {commitment: "Further capacity additions", implied_date: "undated", ref: "line 894, 974", status_word: "underway"}
+  - {commitment: "GHS +12 studios in Q3 (Delhi NCR, Mumbai)", implied_date: "Q3 FY27", ref: "line 854", status_word: "initiated"}
+  - {commitment: "GHS 50 studios", implied_date: "Dec-2027 (line 855) or FY27E (line 1120, displaced)", ref: "line 855, 1120", status_word: "targeting"}
+  - {commitment: "GAS/PPF distributors 250+ to 300", implied_date: "undated", ref: "line 1307-1310", status_word: "target"}
+  - {commitment: "FY28-31 about 20% revenue CAGR, EBITDA >27%, ROCE >25%", implied_date: "FY28-31", ref: "line 1111-1128", status_word: "commitment"}
+  - {commitment: "Capex about 170 Cr", implied_date: "FY27E or medium term (displaced)", ref: "line 1128", status_word: "stated"}
+  - {commitment: "Export share 70%+, VAP 85%+", implied_date: "FY27+", ref: "line 1199", status_word: "stated"}
+  - {commitment: "PPF capacity doubled to 60 mn sq ft", implied_date: "Q2 FY26", ref: "line 1206-1210", status_word: "completed"}
+  - {commitment: "PDLC facility launched", implied_date: "Q2 FY27", ref: "line 837", status_word: "completed"}
+  - {commitment: "GAS network 14 (11 USA, 3 ME); GHS 9 to 14", implied_date: "Q2 FY27", ref: "line 847-852", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Profit and cash moved between parent and subsidiaries in Q2, and the headline hides it. Subsidiaries earned 40.55 Cr (31% of group PAT, reviewed by other auditors) against a derived 10.06 Cr in Q1. Standalone ex-OI margin fell from 28.4% to 22.7%. Subsidiaries added 72.91 Cr cash while the parent's intra-group receivables rose by at least 50 Cr. Standalone CFO/PAT fell to 35.5%. Derived intra-group sales are 35.5% of standalone revenue, close to the Notion 34% customer. That customer may be the group's own distribution arm: a lead question, not a conclusion. Guidance EBITDA includes other income, and at its midpoint it implies an H2 margin near 25.1%, below Q2's 27.2%. Deck ROCE excludes a 764 Cr revaluation reserve. Derived unadjusted FY26 ROCE is 17.0%, 2 points above tripwire 1. A2 marked 3 of 11 ZERO_STANDING rows as zero, but arithmetic shows they carry values. The pp6/13 row IDs are displaced, so all values here were re-mapped by subtotal tie-outs."

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "GRWRHITECH"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 43
+formfeed_count: 43
+line_count: 1491
+unit_convention: "Crores"
+conversion_factor_to_cr: "Crores -> x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: ["page 23 (zero chars): section divider, viewed at 50 dpi, skipped: no data", "pages 30, 36, 39 (2 chars each): divider page numbers, no render", "pages 20, 21: cover and contents, no render"]
+rendered_pages: ["page 23 at 50 dpi png for the zero-character check only, no OCR, no data"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/grwrhitech-q2fy27/extracted/grwrhitech-results-q2fy27-fulltext.md"
+structured_path: "runs/grwrhitech-q2fy27/extracted/grwrhitech-results-q2fy27-structured.md"
+structured_counts:
+  number: 1292
+  entity: 98
+  forward: 37
+  date: 292
+  qualifier: 63
+structured_id_range: "R001-R1782"
+gate_a1: pass
+gap_note: ""

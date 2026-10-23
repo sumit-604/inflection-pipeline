@@ -1,0 +1,54 @@
+stage: A5-adversary
+company: "GRWRHITECH"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches:
+  - {metric: "H1 FY27 consolidated other income remainder after MF gain and interest", a4_value: "12.97, ND by type (RV l.224)", recomputed: "12.98 (39.25 - 23.22 - 3.05); ND 12.85 after dividend income 0.13", source_line: "FT l.510, l.675, l.681, l.687"}
+surviving_bear_counters:
+  - {claim: "Revenue +22.09% YoY, H1 +24.79%, above Bull on H1 pro-rata, item 3 GREEN (RV l.191, l.362, l.377)", counter: "Tariff-hit base: Q2 FY26 was 8.3% below Q2 FY25 621; two-year Q2 revenue +12.0% (5.8% a year), H1 +21.2% (10.1% a year), below the 16% base CAGR; margin climb (+300 bps over two years) survives", source_line: "FT l.1010, l.1015-1017, l.1021-1022, l.1116; RV l.219, l.238", type: MISSING}
+  - {claim: "FCF strong, net cash above base, WC growth-induced, capital advances +22.70 carry the TPU gap (RV l.298-306, l.329-331, l.466)", counter: "The 22.70 sits inside operating Other assets (C 13.10 + 22.70 = 35.80; SA 4.77 + 22.70 = 27.47): either capex is 49.77 and CFO/PAT without advances is 0.83x C / 0.44x SA, or the advances label and TPU bull reading lack support; 21.28 of the net-cash rise is MF fair-value gain", source_line: "FT l.244, l.258, l.321, l.606, l.611-612, l.619-620, l.697, l.716; RV l.298, l.305, l.316", type: CONTRADICTION}
+  - {claim: "Subsidiaries-plus-eliminations flat over H1; neutral reading releases eliminated profit into Q2 (RV l.180)", counter: "PAT-level consolidation deductions Q2 50.88, Q1 3.71, H1 54.59; about 26.6 beyond the 28.04 intra-group dividend; sign opposite to a release; fits a higher transfer markup unless an undisclosed intra-subsidiary dividend exists", source_line: "FT l.202, l.307, l.444, l.457, l.541, l.681; RV l.180", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1 (A4): 'ESG slide claims ZLD' (RV l.81, l.471, l.503); slide says 'Zero Liquid Discharge initiatives' and '100% water recycling' (FT l.1369-1372)"
+    - "F2 (A4): H1 C OI remainder 12.97 should be 12.98; dividend 0.13 (FT l.681) is a known type, ND 12.85 (RV l.224)"
+  missing:
+    - "M1 (A4): two-year base effect unsized: Q2 +12.0% (5.8% a year), H1 +21.2% (10.1% a year) vs 16% base (RV l.219, l.377, l.548)"
+    - "M2 (A4): PAT-level consolidation deductions (Q2 50.88, Q1 3.71, H1 54.59; about 26.6 beyond dividend) absent; reading (b) release unsupported (RV l.180, l.468, l.575)"
+    - "M3 (A4): 225.19 / 35.5% stated as parent's intra-group sales without upper-bound qualifier (RV l.376, l.464, l.572)"
+  contradiction:
+    - "C1 (A4): 22.70 other non-current asset rise labelled capital advances (RV l.305) and counted in operating Other assets 35.80 / 27.47 (RV l.298, l.316; FT l.697, l.321)"
+  style:
+    - "S1: SA ex-OI QoQ -572 bps vs -571 unrounded (RV l.505)"
+    - "S2: 'matching' deck ROCE 23%/32% vs recomputed 23.82%/32.93% (RV l.370)"
+    - "S3: 25.31 'near' 18.60 is 36% higher (RV l.180)"
+    - "S4: brief 'subsidiaries' share' should read subsidiaries plus eliminations (RV l.575)"
+    - "S5: A2 agenda rows cite R1297/R1347, which are SEBI and exchange-code entities (ST l.1309, l.1359)"
+    - "S6: forward-map MPCB catalyst undated (RV l.586)"
+    - "S7: A4 coverage uses category-level reviewed mark; list uncited rows by ID next time (RV l.14-17)"
+    - "S8: p24 forward restatements (FT l.970, l.973-974) lack FORWARD rows; verbatim duplicates of R1399-R1401"
+    - "S9: A2 zero_standing 11 is stale (6 genuine); correction already in A4 (RV l.16)"
+loop_back_to: "A4"
+gap: "C1: resolve the 22.70 other non-current assets: capital advances inside operating Other assets (C 35.80, SA 27.47) -> restate H1 capex 49.77 and CFO/PAT without advances 0.83x C / 0.44x SA, or drop the advances label and TPU bull reading. M1: size the tariff-base effect (Q2 two-year +12.0%, 5.8% a year; H1 +21.2%, 10.1% a year vs 16% base) in Step 2 ans 1, Step 3, 6B item 3, brief. M2: add PAT-level consolidation deductions (Q2 50.88, Q1 3.71, H1 54.59; about 26.6 beyond the 28.04 dividend) to 1-G reading (b), Q5, brief. M3: mark 225.19 / 35.5% as an upper bound for parent-to-subsidiary sales. F1: quote 'Zero Liquid Discharge initiatives' (FT l.1369). F2: OI remainder 12.98, ND 12.85 after 0.13 dividend."
+style_notes:
+  - "S1: SA ex-OI QoQ -572 bps vs -571 unrounded (RV l.505)"
+  - "S2: 'matching' deck ROCE 23%/32% vs recomputed 23.82%/32.93% (RV l.370)"
+  - "S3: 25.31 'near' 18.60 is 36% higher (RV l.180)"
+  - "S4: brief 'subsidiaries' share' should read subsidiaries plus eliminations (RV l.575)"
+  - "S5: A2 agenda rows cite R1297/R1347, which are SEBI and exchange-code entities (ST l.1309, l.1359)"
+  - "S6: forward-map MPCB catalyst undated (RV l.586)"
+  - "S7: A4 coverage uses category-level reviewed mark; list uncited rows by ID next time (RV l.14-17)"
+  - "S8: p24 forward restatements (FT l.970, l.973-974) lack FORWARD rows; verbatim duplicates of R1399-R1401"
+  - "S9: A2 zero_standing 11 is stale (6 genuine); correction already in A4 (RV l.16)"
+analyst_note: "All non-STYLE findings route to A4; no A2 or A3 loop. Coverage holds: counts match, all 1,782 IDs are referenced, and every P&L, BS and CF subtotal ties. The A2 zero-standing flag is stale on 5 rows, but A4 already carries the A3 correction, so it is logged STYLE. C1 is the most material: the 22.70 rise in other non-current assets ties exactly into the operating Other assets line in both statements. That either lifts conversion (0.83x group without advances, above the 0.65-0.80 band A4 cites) or removes the evidence for the TPU-advance reading. It touches Pillar 2 and the TPU tripwire, so it must be resolved before save. M2 shows net deductions at PAT level where A4's neutral reading assumes a release. Transfer pricing stays a question, but the evidence leans to the bear reading. M1 qualifies revenue only: the two-year margin climb of about 300 bps survives. The FY25 chart re-pairing checks against filed FY25 revenue of 2,109 and the EBITDA labels. Notion values and the MPCB Reg 30 fact are outside A5 inputs and were not audited."

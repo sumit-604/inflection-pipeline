@@ -3,13 +3,13 @@ company: "CYBERTECH"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
 status: complete
-docs_merged: [results]
+docs_merged: [results, pressrelease, presentation]
 ledger_reconciliation:
-  notes: 7
+  notes: 8
   turns: 0
-  slides: 0
+  slides: 20
   all_reviewed: true
-  a3_findings_incorporated: ["A3-01", "A3-02", "A3-03", "A3-04", "A3-05", "A3-06", "A3-07", "A3-08", "A3-09", "A3-10", "A3-11", "A3-12", "A3-13", "A3-14", "A3-15", "A3-16", "A3-17", "A3-18", "A3-19", "A3-20"]
+  a3_findings_incorporated: ["A3-01", "A3-02", "A3-03", "A3-04", "A3-05", "A3-06", "A3-07", "A3-08", "A3-09", "A3-10", "A3-11", "A3-12", "A3-13", "A3-14", "A3-15", "A3-16", "A3-17", "A3-18", "A3-19", "A3-20", "FN-01", "FN-03", "FN-04", "FN-05", "FN-06", "FN-07", "FN-08", "FN-09", "FN-10", "A3P-01", "A3P-02", "A3P-03", "A3P-04", "A3P-05", "A3P-06", "A3P-07", "A3P-08", "A3P-09", "A3P-10", "A3P-11", "A3P-12"]
 protocol_verdict: "PROCEED WITH FLAGS"
 cash_conversion: "INDETERMINATE-WITH-DIRECTION"
 decision_status_verified: "NONE ON RECORD (no Notion page in COMPANIES MASTER, searched live 2026-10-23; pre-thesis read)"
@@ -22,50 +22,70 @@ sc_gap_pat_pct:
   - {period: "H1 FY26", pct: 49.0}
   - {period: "FY26", pct: 30.2}
 questions_for_management:
-  - {q: "Did parent-to-subsidiary transfer-pricing terms change in FY27 (sub EBITDA Rs 0.60 Cr Q1 to Rs 3.27 Cr Q2 while standalone fell)? Decides where profit sits, not the group gain.", from_finding_id: "A3-04"}
+  - {q: "What was the top client's share of operating revenue in each of Q2 FY26, Q1 FY27 and Q2 FY27 (deck shows 55%, basis unstated, D L254)?", from_finding_id: "A3P-11"}
+  - {q: "Is the top client a technology vendor whose platform CyberTech also partners on, such as Esri? Yes or no.", from_finding_id: "FN-07"}
+  - {q: "On what date does the top client's current master agreement or main statement of work expire?", from_finding_id: "A3P-11"}
+  - {q: "Did Q2 FY27 costs include any reversal, credit or deferral above Rs 0.5 Cr (op EBITDA margin 8.4% to 11.0% QoQ; other expenses -1.3% QoQ vs revenue +7.1%)?", from_finding_id: "A3P-10, FN-03"}
   - {q: "What was US subsidiary revenue in USD in Q2 FY27 and Q2 FY26 (rupee sub revenue +54.3%; FCTR -0.25 Cr Q1 to +2.18 Cr Q2)?", from_finding_id: "A3-03"}
+  - {q: "What share of Q2 FY27 State and Local Government revenue (about Rs 11.0 Cr vs Rs 7.5 Cr in Q1) comes from contracts with more than 12 months left?", from_finding_id: "A3P-06"}
+  - {q: "Did top-client revenue fall QoQ in Q2 FY27 (Technology implied revenue +1.1% QoQ vs release 'strong momentum')? Yes or no.", from_finding_id: "A3P-12"}
+  - {q: "Did parent-to-subsidiary transfer-pricing terms change in FY27 (sub EBITDA Rs 0.60 Cr Q1 to Rs 3.27 Cr Q2 while standalone fell)? Decides where profit sits, not the group gain.", from_finding_id: "A3-04"}
   - {q: "Is the Rs 12.15 Cr Other equity debit (exactly Rs 4.00 x 3,03,80,600 shares) a declared, unpaid FY26 dividend, and when is it paid?", from_finding_id: "A3-11"}
   - {q: "Which subsidiary received the Rs 41.13 Cr parent investment (L405)?", from_finding_id: "A3-01"}
   - {q: "Is an acquisition under negotiation to be funded from the subsidiaries' Rs 136.92 Cr current investments; target closing quarter?", from_finding_id: "A3-01"}
+  - {q: "Does the board have a written capital-allocation policy with a stated payout or cash-retention target (release pledges discipline but omits the Rs 14.98 Cr buyback and Rs 41.13 Cr subsidiary investment)?", from_finding_id: "FN-10"}
   - {q: "How much of the subsidiaries' Rs 22.04 Cr other current liabilities is customer advances (H1 WC release Rs 13.06 Cr)?", from_finding_id: "A3-14"}
   - {q: "What were parent receivables from subsidiaries at 31-Mar-2026 and 30-Sep-2026 (SA receivables -Rs 20.25 Cr)?", from_finding_id: "A3-06"}
-  - {q: "How many customers each exceeded 10% of Q2 FY27 consolidated revenue of Rs 73.30 Cr?", from_finding_id: "A3-03"}
+  - {q: "Of Q2 FY27 other income of Rs 4.73 Cr, how much was interest and dividend income?", from_finding_id: "FN-04"}
   - {q: "Did the subsidiaries move T-bill holdings from fair value to amortised cost in FY27 (no sub FV gain in H1 FY27 vs Rs 1.55 Cr H1 FY26; sub OI Rs 4.35 Cr to Rs 1.33 Cr)?", from_finding_id: "A3-05"}
   - {q: "How much of deposits is under lien, escrow or margin at 30-Sep-2026 (bank balances -Rs 32.33 Cr)?", from_finding_id: "A3-12"}
   - {q: "What Labour Code amount was charged in FY26 Employee Benefits Expense (Note 5)?", from_finding_id: "A3-19"}
   - {q: "What further Labour Code accounting effect do you estimate on final rules, in rupees and direction, and in which quarter?", from_finding_id: "A3-07"}
+  - {q: "Which temporary difference is the largest part of the DTL (deferred 14.7% of H1 FY27 tax vs 1.3%; net DTL Rs 2.36 Cr to Rs 3.26 Cr; current-tax rate 20.9% vs book 24.8%)?", from_finding_id: "A3P-03"}
   - {q: "What is the largest component of Q2 FY27 finance cost of Rs 0.46 Cr with nil borrowings?", from_finding_id: "A3-13"}
-  - {q: "Which actuarial assumption changed at 31-Mar-2026 (interim losses, year-end gain, FY27 nil)?", from_finding_id: "A3-09"}
+  - {q: "Did the company stop interim actuarial valuations in FY27 (FY26 interim losses, year-end gain, FY27 nil); is a Q4 OCI catch-up coming?", from_finding_id: "A3-09, A3P-01"}
+  - {q: "Which Esri tier is current, Platinum (PR L75) or Gold (PR L133), and from what date?", from_finding_id: "FN-06"}
   - {q: "Did the promoter group tender shares in the Q1 FY27 buyback of 8,50,000 shares for Rs 14.98 Cr?", from_finding_id: "A3-10"}
-  - {q: "Will the company file a corrected Note 3 (capital stated as Rs 10,00,000 vs paid-up Rs 30.38 Cr)?", from_finding_id: "A3-15"}
+  - {q: "Did management present the deck to investors or analysts in October 2026 (footer: 'used during an oral presentation', D L344); will a record be filed?", from_finding_id: "D R325"}
+  - {q: "Will the company file a corrected Note 3 (capital Rs 10,00,000 vs paid-up Rs 30.38 Cr) and a corrected deck Q2 FY26 FCTR ((0.29) Cr vs filing +2.90 Cr)?", from_finding_id: "A3-15, A3P-04"}
 monitorables:
   - {item: "Q3 FY27 consolidated core PBT ex-OI vs 6.81 Cr bull / 4.43 Cr bear; cross-check Op EBITDA margin 11.04% / 8.36%", implied_date: "2027-02-14", source_ref: "Step 8C; Reg 33 timeline"}
   - {item: "Subsidiary EBITDA margin holds near 11.2% (where profit sits)", implied_date: "2027-02-14", source_ref: "A3-04"}
+  - {item: "Q3 deck: top-client share with basis; Technology implied revenue vs 49.84 Cr; State/Local Government vs 10.99 Cr bull / 7.53 Cr bear", implied_date: "2027-02-14 (if a deck is filed)", source_ref: "A3P-06, A3P-11, A3P-12; D L247, D L254"}
+  - {item: "Q3 deck: headcount vs 529, new clients vs 12, active clients vs 96", implied_date: "2027-02-14 (if a deck is filed)", source_ref: "D L252-L258"}
   - {item: "Settlement of the 12.15 Cr other financial liability (possible dividend)", implied_date: "Q3 FY27; confirm by 2027-05-30", source_ref: "A3-11"}
   - {item: "Use of the 41.13 Cr subsidiary injection; acquisition disclosure", implied_date: "event-driven; balance check by 2027-05-30", source_ref: "A3-01, L405"}
   - {item: "H2 working-capital reversal test; bear if H2 FY27 CFO/PAT below 1.0x", implied_date: "2027-05-30", source_ref: "A3-14, L218"}
   - {item: "Final Labour Code rules and any further EBE effect (amount and direction ND)", implied_date: "undated", source_ref: "Note 5 para 2, L435; A3-07"}
-  - {item: "FY27 Annual Report: actuarial assumptions, intercompany RPTs and pricing, subsidiary accounts, buyback details", implied_date: "before AGM, by 2027-09-30", source_ref: "A3-09, A3-04, A3-10"}
-  - {item: "Corrected Note 3 / document control in next filing", implied_date: "2027-02-14", source_ref: "A3-15 to A3-17, A3-20"}
-  - {item: "Whether a results concall is hosted", implied_date: "2027-02", source_ref: "no concall this quarter"}
+  - {item: "Q4 FY27 OCI remeasurement lump if interim valuations stopped", implied_date: "2027-05-30", source_ref: "A3P-01, A3-09"}
+  - {item: "Cash-tax rate vs book ETR; DTL reversal", implied_date: "2027-05-30", source_ref: "A3P-03"}
+  - {item: "FY27 Annual Report: actuarial assumptions, intercompany RPTs and pricing, subsidiary accounts, buyback details, company history 1990 vs 1995", implied_date: "before AGM, by 2027-09-30", source_ref: "A3-09, A3-04, A3-10, A3P-08"}
+  - {item: "Corrected Note 3 and deck tie-out (Q2 FY26 FCTR) in next filing set", implied_date: "2027-02-14", source_ref: "A3-15 to A3-17, A3-20, A3P-04"}
+  - {item: "Esri partner tier confirmed (Platinum vs Gold)", implied_date: "event-driven; next release", source_ref: "FN-06"}
+  - {item: "Release commitments (build selectively; capital discipline; GeoAI; SAP Migration Factory), none dated", implied_date: "none stated; check each release", source_ref: "A3 PR F6 register, PR L72-L86"}
+  - {item: "Whether a results concall is hosted", implied_date: "2027-02", source_ref: "no concall this quarter; D L344"}
   - {item: "Q1 FY28 results, fifth quarter after the step: bull revenue >= 73.30 Cr, bear back toward 58-60 Cr", implied_date: "2027-08-14", source_ref: "Step 3; Reg 33 timeline"}
+  - {item: "ESOP allotment of 1,00,000 shares; completed, no further monitoring", implied_date: "completed Q2 FY27", source_ref: "Note 3, L432"}
 flags:
   - "PRE-THESIS READ: no Notion page, no Decision Status, no spear, no companies/CYBERTECH.md; spear gate binds before any pipeline run"
+  - "Client concentration: top client 55%, top 3 68% of revenue, period basis unstated, identity and contract term NOT FOUND; 99% US; release risk list omits both (D L246, L254-L255; PR L143-L145; A3P-11, FN-07)"
   - "Rs 41.13 Cr parent investment into an unnamed wholly owned subsidiary, purpose undisclosed; subsidiary-held current investments 104.29 Cr to 136.92 Cr while parent net cash fell 53.14 Cr to 25.76 Cr (A3-01)"
-  - "Rs 12.15 Cr unexplained Other equity debit, 9.1% of standalone net worth; equals Rs 4.00 x 3,03,80,600 shares exactly; leading reading unpaid dividend, unconfirmed (A3-11)"
-  - "Core PBT ex-OI +97.1% YoY is one quarter old: all QoQ Op EBITDA gain outside the parent (subs +2.67 Cr, parent -0.30 Cr); sub margin 2.4%/2.5% in prior quarters; FCTR swing -0.25 to +2.18 Cr; separator Q3 Op EBITDA margin >=11.04% vs <=8.36% (M1)"
+  - "Rs 12.15 Cr unexplained Other equity debit, 9.1% of standalone net worth; equals Rs 4.00 x 3,03,80,600 shares exactly; leading reading unpaid dividend, unconfirmed; release and deck silent (A3-11)"
+  - "Core PBT ex-OI +97.1% YoY is one quarter old: all QoQ Op EBITDA gain outside the parent; sub margin 2.4%/2.5% before; FCTR swing -0.25 to +2.18 Cr; State/Local Government ~72% of QoQ revenue increment while Technology +1.1% QoQ; separator Q3 Op EBITDA margin >=11.04% vs <=8.36% (M1, A3P-06, A3P-12)"
+  - "Company EBITDA (release and deck) includes other income on a total-income base: headline margin -240 bps hides an operating margin +318 bps (FN-01, FN-03, A3P-10)"
   - "Earnings location migrating to subsidiaries: S-C PAT gap 60.6% vs 33.6% YoY; transfer pricing decides where profit sits, not the group result; no entity, intercompany or USD breakout (A3-03, A3-04)"
   - "Cash conversion INDETERMINATE-WITH-DIRECTION: H1 CFO/PAT 1.56x headline; like-for-like pre-WC 1.20x-1.23x (1.05x-1.15x H1 FY26); WC release 94.6% of H1 Op EBITDA, H2 reversal risk (A3-14)"
-  - "Q1 FY27 buyback (Rs 14.98 Cr, 8,50,000 shares, ~Rs 176.24 a share) not described in any note; 18.0x FY26 EPS, ~35x trailing core EPS ex-cash; EPS gain is share count only (A3-10, M2)"
+  - "Q1 FY27 buyback (Rs 14.98 Cr, 8,50,000 shares, ~Rs 176.24 a share) not described in any note, the release or the deck; 18.0x FY26 EPS, ~35x trailing core EPS ex-cash; EPS gain is share count only (A3-10, A3P-05, M2)"
+  - "No quantified FY27 or FY28 guidance in the release (PR L64-L87, FN-10) or the deck (D L35-L41, R009); capital-discipline pledge omits all three H1 capital moves"
+  - "Cash tax below book: current-tax rate 20.9% H1 FY27 vs 24.0% H1 FY26; DTL 2.36 to 3.26 Cr (A3P-03)"
   - "Labour Codes: unquantified FY26 EBE item; possible further effect on final rules, amount and direction ND (A3-07, A3-19)"
-  - "Document control: Note 3 capital misstatement, invalid date 31-09-2025, OCI caption error, rounding and telephone mismatches (A3-15, A3-16, A3-17, A3-20)"
+  - "Document control across all three documents: Note 3 capital misstatement, invalid date 31-09-2025, OCI caption error, rounding and telephone mismatches (A3-15, A3-16, A3-17, A3-20); deck Q2 FY26 FCTR (2.9) mn vs filing +29.0 mn (A3P-04, image-confirmed company error); Esri Platinum vs Gold (FN-06); 1990 vs 1995 founding (A3P-08); stale deck template, AWS omitted (A3P-09); legacy labels (A3P-07)"
   - "Finance cost doubled YoY with nil borrowings, source unexplained (A3-13)"
-  - "Downstream Signal Tracker: zero signals, below floor of three; USD/INR candidate emitted as payload only"
+  - "Downstream Signal Tracker: zero signals, below floor of three; candidates USD/INR, US state/local government IT spend, Esri partner ecosystem emitted as payload only; top-client signal not writable until named"
   - "Role 4 Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar-relevant facts flagged in Steps 6.5 and 7"
-  - "Role 5 N.A.: no concall held, no presentation"
-  - "Sector and competition context is unverified analyst background, labelled SECONDARY, PENDING LIVE VERIFICATION"
-  - "Loop 1: A5 findings F1, F2, F3, C1, M1, M2 accepted and fixed; verdict and cash class unchanged"
+  - "Role 5 N.A.: no concall held; press release and earnings presentation (filed 23-Oct-2026 17:18 IST) merged into Role 4 and the management-claims test (15 claims; numbers tie, framing leans favourable)"
+  - "Peer context SECONDARY, PENDING LIVE VERIFICATION; sector and business-model facts now FILED from the deck and release"
+  - "Merged re-run: base results-only review and its loop-1 corrections (F1, F2, F3, C1, M1, M2) carried; base claims that no release or deck existed corrected (M-01 to M-09)"
 plain_language_brief_included: true
-analyst_note: "Pre-thesis read; no Notion page and no Decision Status. Core PBT ex-OI rose from 3.46 Cr to 6.81 Cr YoY, but PAT rose 0.3% because Other Income fell 3.21 Cr. The bear reading is strong. The margin step is one quarter old. All of the QoQ gain sits in the subsidiaries (margin 2.5% to 11.2%) while the parent fell, and FCTR swung positive in Q2, so currency may have helped. Transfer pricing cannot explain the group gain, because intercompany items eliminate; it decides only where profit sits. Q3 separates lasting from one-quarter: core PBT at or above 6.81 Cr vs at or below 4.43 Cr, or Op EBITDA margin at or above 11.04% vs at or below 8.36%. Cash: headline H1 CFO/PAT 1.56x rests on a liability-led release; the matched pre-WC ratio is 1.20x-1.23x, up from 1.05x-1.15x. The class stays INDETERMINATE-WITH-DIRECTION on H2 reversal risk. The verdict is FLAGS: 41.13 Cr went to an unnamed subsidiary, and a 12.15 Cr equity debit (exactly Rs 4.00 a share) has no note. Buyback ex-cash about 35x trailing core EPS. Steps 6.5 and 7 deferred (OR-30)."
+analyst_note: "Pre-thesis merged read of results, release and deck; no Decision Status. Core PBT ex-OI rose from 3.46 to 6.81 Cr YoY while PAT rose 0.3%, because Other Income fell 3.21 Cr. The company's EBITDA includes OI, so its 240 bps headline fall hides a 318 bps operating rise. The bear reading is strong. The margin step is one quarter old, all QoQ gain sits in the subsidiaries, FCTR swung positive, and government work supplied about 72% of the QoQ revenue gain while Technology grew 1.1%. Q3 separates lasting from one-quarter: core PBT at or above 6.81 Cr vs at or below 4.43 Cr. The deck's biggest new fact is concentration: top client 55%, top 3 68%, basis unstated, 99% US; the release's risk list omits it. Cash stays INDETERMINATE-WITH-DIRECTION (1.56x headline, 1.20x-1.23x matched, H2 reversal risk). FLAGS rest on 41.13 Cr to an unnamed subsidiary, a 12.15 Cr equity debit equal to Rs 4.00 a share, and concentration. Release and deck numbers tie to the filing except the deck's Q2 FY26 FCTR. Neither gives FY27 or FY28 guidance; both omit the buyback. Steps 6.5 and 7 deferred (OR-30)."
 review_path: "runs/cybertech-q2fy27/work/review_cybertech_q2fy27.md"
-loop: 1

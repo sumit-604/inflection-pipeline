@@ -21,3 +21,13 @@
 - A5 (iteration 1 re-audit): INCOMPLETE. M1-M4 closed. 1 new MISSING (N1, route A4): Reading 3 of the Q2 -5.2% QoQ revenue dip (stock-timing: FG/WIP drawdown fell 15.98 -> 2.88 Cr while materials consumed +4.4% and power +6.2% QoQ), which qualifies A4's supply-bound tilt. No number or verdict change. 9 STYLE (S8-S16), logged.
 - LOOP CAP REACHED. The rule is to stop and ask the operator before a second iteration. The operator is away and the session brief says not to stop and ask. No second iteration was run. N1 stands as an OPEN ITEM for the operator (decision: approve a second A4 pass, or accept the review as is). The A4 review is final as committed; A5 audit section "ITERATION 1 RE-AUDIT" carries N1 verbatim.
 - Notion: no write (session instruction and no A5 COMPLETE). Payload saved to notion-payload.md.
+
+## Concall addendum pass (session local_9677c018, worktree quarterly-fairchem-q2fy27-bcfbf0)
+- 2026-10-23 23:24 IST. Prior run commit 1e175fc1 cherry-picked as 713f017b. Checkout guard PASS (fetch ok, diff empty).
+- Concall source: BSE 23-Oct-2026 17:41 audio-link filing (attachment de56f682-b434-4c97-89c3-4b6eda1af5c0.pdf) -> fairchem.in/investor-relations/Investor-Presentation/Concall-Fairchem-Organics-Ltd-23-10-2026.mp3 (36:57, 8 kHz mono). No transcript PDF filed.
+- ASR: faster-whisper small.en int8 (shared fw-venv, av stub), 8 x 5-min chunks, 23:37-23:47 IST. Saved as inputs/Fairchem_Q2FY27_Concall_Transcript_ASR.txt (machine-transcribed, speakers unlabelled). Document class: concall (moderator / Q&A structure).
+- A1 concall: gate pass, 8/8 chunks, 330 source lines, R001-R182, 101 inferred turns. 75,261 tok, 349 s.
+- A2 concall: gate pass, 182/182, 0 orphans. 49,740 tok, 88 s. Cost check A2 < A1 PASS.
+- A3 concall: gate pass, F1-F17 statused, 19 findings (5 FS, 10 AMB, 4 NF). 142,982 tok, 402 s.
+- A4 (merged, concall pass): PROCEED WITH FLAGS, PRE-THESIS READ. 9 notes / 101 turns / 24 slides. 52 A3 findings incorporated. 315,945 tok, 995 s. Pre-concall review kept as review_fairchemor_q2fy27_preconcall.md.
+- A5 (concall pass, iteration 0): INCOMPLETE at 00:43 IST. FACTUAL 1, MISSING 4, CONTRADICTION 2, STYLE 7. Route A3 (orphans res R294, R374/R481) then A4. Session dropped before the hand-back was logged; audit on disk is complete.

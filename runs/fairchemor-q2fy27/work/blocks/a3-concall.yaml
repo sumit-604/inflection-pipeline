@@ -1,0 +1,71 @@
+stage: A3-forensics
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/fairchemor-q2fy27/work/forensics_fairchemor_q2fy27_concall.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: FINDING
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3C-01", check: "F6", line: "L166-168 'Sir, only in third quarter.'; L173 'we are observing and modifying that plant'; L187", classification: "FORWARD-SIGNAL", implication: "New product slipped Q2 to Q3 FY27; plant built but under modification; unnamed; size answer lost in gaps; Q3 is a dated test"}
+  - {id: "A3C-02", check: "F6", line: "L162-164 'Yes, yes, we are online.'; L63; L70", classification: "AMBIGUOUS", implication: "5%-per-quarter production claim vs derived sold volume 13,500 t to 12,300 t (-8.9% QoQ) and filed revenue -5.2% QoQ; ask Q1/Q2 processed and sold tonnage"}
+  - {id: "A3C-03", check: "F6", line: "L138 'the realisation was 135 rupees'", classification: "NEUTRAL-FACT", implication: "Ties to filed revenue / 12,300 t = Rs 135.7/kg; Q1 Rs 130.5/kg; Q2 price-led (+4% realisation, -9% volume)"}
+  - {id: "A3C-04", check: "F14", line: "L59 'Krita for the quarter was 7%'; L62 '1,200 tons'; L69 '21.2 crores'", classification: "NEUTRAL-FACT", implication: "Spoken H1 figure 21.2 Cr vs filed H1 PAT 20.18 Cr; 7% and 1,200 t unmappable; A4 uses filed figures; replace with company transcript if filed"}
+  - {id: "A3C-05", check: "F14", line: "L128 'We cannot say that.'; L130 '365%'; L328 'Low storage, 85%, 90%.'", classification: "AMBIGUOUS", implication: "Refusal then two conflicting utilisation figures; no capacity baseline anywhere; FY27 utilisation commitment untestable; ask installed MT and Q2 utilisation"}
+  - {id: "A3C-06", check: "F6", line: "L284 'I would love to see 15-18%.'; L292 'maintain this margin'; L296-298; L123-124", classification: "FORWARD-SIGNAL", implication: "Undated 15-18% aspiration vs filed Q2 EBITDA margin 10.51% (+449 to +749 bps); firm statement is only 'maintain', conditional on last six months repeating; no bridge"}
+  - {id: "A3C-07", check: "F7", line: "L79-80 'lower imports of dimer acid'; L141 'Dumping has gone down.'; L145 'Not from China to India.'", classification: "AMBIGUOUS", implication: "Margin driver is lower Chinese imports with no stated cause; structural vs cyclical; separator = dimer acid import volume and landed price by quarter"}
+  - {id: "A3C-08", check: "F14", line: "L77-78 'lower raw material cost'; deck line 402-403 'higher raw material cost'", classification: "AMBIGUOUS", implication: "Call and same-day deck give opposite input-cost direction; possible ASR swap; take deck reading; ask RM cost and spread per tonne"}
+  - {id: "A3C-09", check: "F6", line: "L118-120 'we do carry some inventory of raw material ... market prices have started softening'", classification: "FORWARD-SIGNAL", implication: "Softening inputs against stock bought higher; Q3 FY27 inventory-cost squeeze risk if finished prices follow import parity down"}
+  - {id: "A3C-10", check: "F7", line: "L102 'potential 8% margin hit'; L104-116", classification: "AMBIGUOUS", implication: "Earlier-warned 8% margin hit from duty change neither confirmed nor sized; answer pivoted to availability; ask net effect"}
+  - {id: "A3C-11", check: "F7", line: "L304 'high risk that it kind of moves back'; L305; L308; L318-319", classification: "AMBIGUOUS", implication: "Volume and input-cost case rest on import duty staying low; management view only; duty history figures conflict (5-7%, 16.5%, 27%); ask utilisation and margin at 16.5%"}
+  - {id: "A3C-12", check: "F13", line: "L205 'it's already been getting used in our operations as well as our worker colony'; L330-331", classification: "AMBIGUOUS", implication: "Rs 12.01 Cr promoter land is already in use, weakening the expansion reading (results A3-08); ask prior rent to promoter, link to new H1 lease, valuer, why buy now"}
+  - {id: "A3C-13", check: "F6", line: "L213-215 '90 to 100 days for domestic sales ... For export sales it will elevate further'", classification: "FORWARD-SIGNAL", implication: "Mgmt ~100 days matches A3 rebuild ~94 days; deck 128 unreproduced; export push lengthens cycle onto cash-credit (payables ~8 days)"}
+  - {id: "A3C-14", check: "F6", line: "L84-86; L165 'Things are not moving as expected.'; L228-229; L341 'has not reached its full potential'", classification: "FORWARD-SIGNAL", implication: "Opening export optimism vs Q&A: US stalled on freight, EU cosmetic isostearic demand down, approvals done so gate is demand; no H2 export lift vs deck 25%/50% target"}
+  - {id: "A3C-15", check: "F7", line: "L128; L287 'we don't share our raw material combination'; L349; L115", classification: "AMBIGUOUS", implication: "Withheld utilisation target, RM mix, cost-saving size, market share and product name; with no deck volumes, margin cannot be split into spread and volume"}
+  - {id: "A3C-16", check: "F17", line: "L177 'No, no, it's a different product.'; L182 'this FAD bypass, so this product has commercialised?'; L183", classification: "AMBIGUOUS", implication: "Deck-listed bypass fat status asked and not answered; Q3 product is a different one; ask commercial status"}
+  - {id: "A3C-17", check: "F17", line: "whole transcript L31-356 (no hit for held for sale, lease, tax, finance cost, borrowing, buyback)", classification: "AMBIGUOUS", implication: "12 filed or deck items unaddressed and 3 partly addressed, 1 quarter of silence; held-for-sale, lease, tax provision, finance cost, buyback funding, land valuation go to A4"}
+  - {id: "A3C-18", check: "F17", line: "L184-198 (gaps R169-R173); L266-272 'That is second thing.'", classification: "NEUTRAL-FACT", implication: "18 gaps about 494 s = 22% of recording; 164 s in the new-product/utilisation window; first H2 priority not transcribed; re-run on company transcript"}
+  - {id: "A3C-19", check: "F14", line: "L51 'Mr. Naush Zarivala ... Mr. Bhavishta'; L73 'Thank you Gaurish.'", classification: "NEUTRAL-FACT", implication: "ASR name variants for MD, CFO, IR firm and company; take names from the filing only"}
+forward_signals: ["A3C-01", "A3C-06", "A3C-09", "A3C-13", "A3C-14"]
+ambiguous: ["A3C-02", "A3C-05", "A3C-07", "A3C-08", "A3C-10", "A3C-11", "A3C-12", "A3C-15", "A3C-16", "A3C-17"]
+commitments:
+  - {commitment: "Duty cut 16.5% to 11% expected to improve raw material availability", implied_date: "FY27", ref: "T004 L87-88; T007 L104-106", status_word: "expected"}
+  - {commitment: "Raw material prices to fall; already softening", implied_date: "Q3 FY27", ref: "T007 L108; T011 L118-120", status_word: "underway"}
+  - {commitment: "Raise capacity utilisation further (no baseline, target refused)", implied_date: "FY27", ref: "T004 L92; T013 L125; T017 L130", status_word: "expected"}
+  - {commitment: "Maintain if conditions stay as last six months, into next year", implied_date: "rest of FY27 and FY28", ref: "T012-T013 L121-124", status_word: "conditional"}
+  - {commitment: "Raise production 5% every quarter and raise exports ('we are online')", implied_date: "every quarter", ref: "T030-T031 L162-164", status_word: "claimed underway (derived Q2 volume -8.9% QoQ)"}
+  - {commitment: "US exports groundwork done, stalled on freight", implied_date: "undated", ref: "T031 L164-165", status_word: "stalled"}
+  - {commitment: "New product launch; plant built, under modification", implied_date: "Q3 FY27 (slipped from Q2)", ref: "T032-T035 L166-174", status_word: "slipped"}
+  - {commitment: "New product first-in-company-class, import substitution plus export, ramp takes own time", implied_date: "undated", ref: "T039 L181; T043-T045 L186-190", status_word: "claim"}
+  - {commitment: "Isostearic acid export approvals over or at advanced stage", implied_date: "H2 FY27", ref: "T067 L267-272", status_word: "near-completed"}
+  - {commitment: "Isostearic acid cosmetic demand to recover long term; scale once stable", implied_date: "undated", ref: "T054 L228-231; T095 L342-343", status_word: "stalled"}
+  - {commitment: "Linoleic value-added products premium 5-10% over import price", implied_date: "undated", ref: "T057 L238-239", status_word: "expected"}
+  - {commitment: "H2 FY27 priorities: first not transcribed, exports second, new product third", implied_date: "H2 FY27", ref: "T067 L267-274", status_word: "stated (incomplete)"}
+  - {commitment: "Maintain current margin, try to improve; aspiration 15-18%", implied_date: "undated", ref: "T071 L283-284; T076 L292-293; T079 L298", status_word: "aspiration"}
+  - {commitment: "Try to achieve 5-10% growth every quarter", implied_date: "from Q3 FY27 (implied)", ref: "T080-T081 L299-300", status_word: "target"}
+  - {commitment: "Working capital 90-100 days domestic, higher for exports, ~100 days now", implied_date: "standing", ref: "T052 L213-215", status_word: "stated"}
+  - {commitment: "No import duty increase expected", implied_date: "near future", ref: "T085 L318-319", status_word: "view"}
+  - {commitment: "Capacity capex only after new product proves out", implied_date: "conditional on new product", ref: "T088 L323-326; T092 L330-331", status_word: "conditional"}
+  - {commitment: "Land purchase (Rs 12 Cr) of land already in use", implied_date: "current period", ref: "T048-T049 L201-205", status_word: "initiated"}
+  - {commitment: "Monitor trade, raw material and import competition", implied_date: "Q3-Q4 FY27", ref: "T004 L92-94", status_word: "stated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "ASR-tier call; spoken headline figures tie to the filing except the H1 '21.2 crores' (filed PAT 20.18 Cr). The call's main value is three cross-document corrections. First, Q2 was price-led: management's own tonnage gives sold volume down 8.9% QoQ while realisation rose about 4%, and that contradicts the 'we are online' claim of 5% production growth per quarter. Second, the Rs 12.01 Cr promoter land is already in use for operations and a worker colony. That weakens the expansion reading in the results and deck forensics and points to a governance question: prior rent to the promoter and the price basis. Third, the export story stalls in Q&A (US freight, EU cosmetic demand) despite the opening optimism and the deck's 25%/50% target. Margin durability rests on two outside variables: low Chinese dimer acid imports, with no stated cause, and a low crude-oil duty. The 15-18% figure is an aspiration; the only firm statement is 'maintain', and it is conditional. 22% of recording time sits in gaps, concentrated on the new-product and utilisation exchange. Re-run on a company transcript if one is filed."

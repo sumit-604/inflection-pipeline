@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 8
+formfeed_count: 0
+line_count: 356
+unit_convention: "Crores (as spoken)"
+conversion_factor_to_cr: "x1 (million x0.1, lakh x0.01 if spoken; none spoken)"
+text_layer_present: "N/A (plain text)"
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/fairchemor-q2fy27/extracted/fairchemor-concall-q2fy27-fulltext.md"
+structured_path: "runs/fairchemor-q2fy27/extracted/fairchemor-concall-q2fy27-structured.md"
+structured_counts:
+  number: 45
+  entity: 48
+  forward: 30
+  date: 18
+  qualifier: 41
+structured_id_range: "R001-R182"
+speaker_turns_inferred: 101
+gate_a1: pass
+gap_note: ""

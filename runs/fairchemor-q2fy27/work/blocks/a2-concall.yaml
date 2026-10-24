@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/fairchemor-q2fy27/work/ledger_concall_fairchemor_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 48
+  turns: 101
+  questions: 45
+  mgmt_numbers: 45
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ASR_DOUBT, REPEAT_QUESTION, HEDGE_CONDITIONAL, TIMING_CONFLICT, TIMESTAMP_GAP, NON_DISCLOSURE, NAME_VARIANT, ARITH_CHECK, RESTATED]
+ids_in_structured: 182
+ids_referenced: 182
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "All 45 NUMBER rows are ASR-tier; 5 were stated by analysts, not management (R023, R027, R028, R036, R039), and 6 are header metadata. Impossible or inconsistent values (R025 365% utilisation, R012/R013 processed 1,200 vs sold 12,300 tons) are flagged for A3, not corrected. New-product launch timing conflicts (R106/R107 third quarter vs R136 analyst second quarter). 18 timestamp gaps may hide untranscribed speech. No management absence; MD and CFO present."

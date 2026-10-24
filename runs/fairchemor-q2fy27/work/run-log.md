@@ -31,3 +31,5 @@
 - A3 concall: gate pass, F1-F17 statused, 19 findings (5 FS, 10 AMB, 4 NF). 142,982 tok, 402 s.
 - A4 (merged, concall pass): PROCEED WITH FLAGS, PRE-THESIS READ. 9 notes / 101 turns / 24 slides. 52 A3 findings incorporated. 315,945 tok, 995 s. Pre-concall review kept as review_fairchemor_q2fy27_preconcall.md.
 - A5 (concall pass, iteration 0): INCOMPLETE at 00:43 IST. FACTUAL 1, MISSING 4, CONTRADICTION 2, STYLE 7. Route A3 (orphans res R294, R374/R481) then A4. Session dropped before the hand-back was logged; audit on disk is complete.
+- Correction loop iteration 1 (concall pass) opened 24-Oct 06:28 IST. A3 results addendum: A3-13 (R294 borrowing path vs buyback), A3-14 (R374/R481 CMD 6.07% interest), both AMBIGUOUS. 80,209 tok, 266 s.
+- A4 loop 1: all seven A5 fixes (M1-M4, C1, C2, F1) and S1-S7 applied; verdict unchanged PROCEED WITH FLAGS; QfM 29 rows. Finished 06:44 IST; session dropped before the hand-back was logged (token count NOT FOUND).

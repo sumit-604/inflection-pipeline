@@ -16,3 +16,7 @@
 - A5 run 1: INCOMPLETE. Looping findings F1, F2, F3 (FACTUAL), C1 (CONTRADICTION), M1, M2 (MISSING), all routed to A4. Coverage PASS; A2/A3 not re-run. Loop 1 started (resume A4 with the A5 audit).
 - Loop 1: A4 accepted F1, F2, F3, C1, M1, M2 (none disputed); review rewritten; verdict PROCEED WITH FLAGS unchanged. A5 re-audit next.
 - A5 loop 1 re-audit: COMPLETE. 5 STYLE notes logged, no re-run. Second loop not needed.
+- 2026-10-24 ADDENDUM: BSE filing 23-Oct-2026 17:18 IST "Investor Presentation" (f19d71c8...pdf, 20 pages) was filed after the 16:00 fetch. It combines cover letter + press release (pp1-4, letter dated October 23, 2026) and Earnings Presentation Q2FY27 dated 22nd October 2026 (pp5-20). Split with pdfseparate/pdfunite into inputs/Cybertech_Q2FY27_Press_Release_23Oct2026.pdf (4 pp) and inputs/Cybertech_Q2FY27_Earnings_Presentation_22Oct2026.pdf (16 pp). Combined original kept in the operator folder.
+- Doctype: press release run as presentation-class (doctype "presentation" per orchestrator class set), file tag "pressrelease" to keep names distinct. Deck runs as "presentation".
+- Parent session relayed operator instruction (2026-10-24): add both documents, A1-A3 each, re-run A4 merged and A5; one second loop allowed.
+- Press release chain: A1 pass (4/4 pp); orchestrator render of p3 found text-layer YoY column offset; A1 corrected rows, added R141; A2 pass 141/141; A3 pass, FN-02 retired as artifact, FN-01 neutral. Orchestrator corrected A1 fulltext header L11-12 to record the p3 render.

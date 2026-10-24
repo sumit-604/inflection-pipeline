@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "CYBERTECH"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/cybertech-q2fy27/work/ledger_pressrelease_cybertech_q2fy27.md"
+counts:
+  notes: 1
+  line_items: 14
+  zero_standing: 5
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 23
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 4
+  slide_numbers: 79
+flags_raised: [ZERO_STANDING, DATE_MISMATCH, PARTNER_TIER_CONFLICT, NO_QUANT_GUIDANCE, UNQUANTIFIED_CLAIM, UNAUDITED_SOURCE, RESTATED]
+ids_in_structured: 141
+ids_referenced: 141
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Press release run as presentation class; 4 pages, no board letter, auditor report, consolidation list or call turns, so those counts are 0. Revised after A1 render correction (R141): YoY % now sits on profit rows; the five margin-row YoY cells (R030, R039, R048, R061, R067) are blank and carry ZERO_STANDING. COLUMN_ANOMALY retracted as an extraction artifact. Margins fell (EBITDA 18.8 to 16.4 in Q2). Cover letter date 23 Oct vs dateline 22 Oct. Esri tier Platinum (p2) vs Gold (p4). All forward statements are qualitative; no quantified guidance. Results are unaudited."

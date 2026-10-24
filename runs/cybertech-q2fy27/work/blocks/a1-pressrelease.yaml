@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "CYBERTECH"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 4
+formfeed_count: 4
+line_count: 150
+unit_convention: "Millions (INR million)"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["3: confirm YoY column offset in text layer"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/cybertech-q2fy27/extracted/cybertech-pressrelease-q2fy27-fulltext.md"
+structured_path: "runs/cybertech-q2fy27/extracted/cybertech-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 79
+  entity: 23
+  forward: 13
+  date: 13
+  qualifier: 13
+structured_id_range: "R001-R141"
+gate_a1: pass
+gap_note: ""

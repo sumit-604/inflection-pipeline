@@ -23,3 +23,4 @@
 - Deck chain: A1 pass 16/16 (slides 12, 13, 15 rendered; slide 15 text layer row-shifted, image block governs); orchestrator checked slide 14 (top client 55%) and slide 15 FCTR Q2FY26 '(2.9)' against images: both as printed, so A3P-04 is a company deck error, not extraction. A2 pass 326/326. A3 pass. Results-only review and audit kept as *_resultsonly.md. A4 merged run next (fresh).
 - A4 merged (3 docs): 894 lines, verdict PROCEED WITH FLAGS, no quantified FY27/FY28 guidance in PR or deck. A5 merged audit next (fresh).
 - A5 merged run 1: INCOMPLETE. C-1 (CONTRADICTION, parent net cash excludes 701.16 lakh non-current treasury), F-1 (FACTUAL, 55% client billing inference ignores intercompany netting), M-1 (MISSING, FCTR cannot rule out Q1 currency; H2 FY26 FCTR +5.54 Cr). All to A4. Coverage PASS. Merged loop 1 started.
+- Merged loop 1: A4 accepted C-1, F-1, M-1; verdict unchanged. A5 re-audit next.

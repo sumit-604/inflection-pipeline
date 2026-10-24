@@ -3,7 +3,7 @@ company: "FAIRCHEMOR"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
 status: complete
-loop_iteration: 1
+loop_iteration: 2
 docs_merged: [results, concall, presentation]
 ledger_reconciliation:
   notes: 9
@@ -40,7 +40,7 @@ questions_for_management:
   - {q: "Share of H1 FY27 acid oil and DOD intake (MT) under supply contracts of one year or longer?", from_finding_id: "A3P-14"}
   - {q: "If the EU/UK FTA lowers duty on imported fatty/dimer acids, do you expect domestic realization per MT to fall, and by how much?", from_finding_id: "A3P-05"}
   - {q: "Top-five customer share of H1 FY27 revenue; any contractual raw-material pass-through formula?", from_finding_id: "protocol Category E (context A3P-11)"}
-  - {q: "Confirm 30-Sep-2025 borrowings (derived ~Rs 54.4 Cr = deck FY25 630 Mn less H1 FY26 net repayment 862.76 L); of the ~Rs 29.4 Cr H2 FY26 rise (~86% of the Rs 34 Cr buyback), how much funded the buyback vs working capital; how will the Rs 12.01 Cr land be paid?", from_finding_id: "A3-13; A3-05; A3P-12; A3C-17"}
+  - {q: "Confirm the filed 30-Sep-2025 borrowings (derived ~Rs 54.4 Cr = deck FY25 630 Mn less H1 FY26 net repayment 862.76 L); filed totals show new liabilities funded the buyback (H2 FY26 liabilities +33.60 Cr, assets +2.59 Cr); what were buyback expenses outside the Rs 34 Cr cap, and how will the Rs 12.01 Cr land be paid?", from_finding_id: "A3-13; A3-05; A3P-12; A3C-17"}
   - {q: "What asset is held for sale (Rs 395.67 L), who is the buyer (related party?), expected closing date?", from_finding_id: "A3-10; A3P-09; A3C-17"}
   - {q: "What does the Rs 73.46 L provision against NC tax assets cover, which assessment years, how much of Rs 291.71 L remains at risk?", from_finding_id: "A3-03; A3C-17"}
   - {q: "Expected H2 FY27 operating cash flow without any further inventory release?", from_finding_id: "A3P-18; A3C-17"}
@@ -50,12 +50,12 @@ questions_for_management:
   - {q: "Where is the current lease liability presented, given current financial liabilities skip item (iii)?", from_finding_id: "A3-11"}
   - {q: "Which metric is 'Try to achieve 5-10% growth every quarter' (revenue, volume or margin), from which quarter, and the implied Q3 FY27 number?", from_finding_id: "A3C-02"}
   - {q: "Will the company file a verbatim transcript of the 23-Oct-2026 call on BSE?", from_finding_id: "A3C-17; A3C-18"}
-  - {q: "Annexure B gives the counterparty stake as 6.07% (CMD look-through): names and stakes of the selling relatives, and the selling group's total stake?", from_finding_id: "A3-14; A3-07"}
+  - {q: "Land sellers are the CMD and his relatives; stake disclosed 6.07% (CMD look-through): how is the Rs 12.01 Cr split among sellers, what are the relatives' names and stakes, and the selling group's total stake?", from_finding_id: "A3-14; A3-07"}
 monitorables:
   - {item: "Company-filed transcript of 23-Oct-2026 call; re-run A1-A3 on T042-T046 and T066-T067", implied_date: "company date NOT DISCLOSED; check BSE by Q3 FY27 results (by 14-Feb-2027, inference)", source_ref: "A3C-18; Q28"}
   - {item: "Land RPT agreement execution and registration ('current period')", implied_date: "NOT DISCLOSED; test at Q3 FY27 results (by 14-Feb-2027)", source_ref: "res R412 L68; R373 L588; call T049 L205 (C18); A3-02"}
   - {item: "Land RPT cash outflow Rs 12.01 Cr + stamp duty; funding; net debt after it (~80.7 Cr borrowings if on bank lines)", implied_date: "H2 FY27 cash flow (by 30-May-2027)", source_ref: "res R414 L588; A3-07; A3-13"}
-  - {item: "Land prior-use terms (rent/licence to promoter) vs ~0.95 Cr/yr carrying-cost break-even; link to H1 lease; relatives' stakes and selling-group total (CMD 6.07%)", implied_date: "FY27 AR RPT note (by 30-Sep-2027)", source_ref: "A3C-12; A3-01; A3-14; res R374 R481 L593"}
+  - {item: "Land prior-use terms (rent/licence to promoter) vs ~0.95 Cr/yr carrying-cost break-even; link to H1 lease; price split among sellers, relatives' stakes and selling-group total (CMD look-through 6.07%)", implied_date: "FY27 AR RPT note (by 30-Sep-2027)", source_ref: "A3C-12; A3-01; A3-14; res R374 R481 L593"}
   - {item: "Held-for-sale disposal (assets 3.96 Cr, liabilities 1.01 Cr)", implied_date: "~31-Mar-2027 (Ind AS 105, inference)", source_ref: "res R194 L324; R228 L372; A3-10"}
   - {item: "Higher capacity utilisation in FY27 (no baseline, target refused)", implied_date: "31-Mar-2027", source_ref: "deck R388 L408-412; call R097 L92, R104 L130 (C3)"}
   - {item: "Capacity and utilisation figures for completed expansion", implied_date: "Q3 FY27 deck or call", source_ref: "deck R382 R419 L95-98; call R156 L128"}
@@ -83,10 +83,10 @@ monitorables:
   - {item: "Finance cost run-rate vs borrowings; implied rate vs ~7.9% (H1 FY27) and ~5.5% (H1 FY26)", implied_date: "by 14-Feb-2027", source_ref: "res R049 R050; A3P-20; A3-13"}
   - {item: "Pipeline notes for next A1/A2: deck p4 'Pan India' claim, column bleed R460 R466 R467, stale A2 ledger L19, concall 13 s gap at L266-267; A5 S6: 'crude oil prices' entity L157, auditor para 1 L159, T024/T026 speaker splits, T075 relabel", implied_date: "Q3 FY27 run", source_ref: "A5 iter-1 S14-S16; A5 audit S6; A3C section 0"}
 flags:
-  - "Promoter land RPT Rs 12.01 Cr from CMD and relatives, already in company use (call L205); no valuation or prior-use terms; counterparty stake 6.07% (CMD look-through; relatives NOT FOUND), so other holders bear ~94%; carrying cost ~0.95 Cr/yr at 7.9%, value-neutral only if prior rent >= that, rent NOT FOUND; omitted from deck (A3-07, A3-14, A3P-08, A3C-12)"
+  - "Promoter land RPT Rs 12.01 Cr from CMD and relatives, already in company use (call L205); no valuation or prior-use terms; selling group receives the full price, split among sellers and CMD's own share NOT FOUND; disclosed stake 6.07% (CMD look-through; relatives NOT FOUND), so at that group stake other holders bear ~94% and the group nets ~Rs 0.94 per Rs 1 overpaid; carrying cost ~0.95 Cr/yr at 7.9%, value-neutral only if prior rent >= that, rent NOT FOUND; omitted from deck (A3-07, A3-14, A3P-08, A3C-12)"
   - "Price-led earnings; Q2 sold tonnage -8.9% QoQ with price/kg +4.0% (ASR); YoY volume ND; margin back to ~FY24 peak on lower imports with no stated cause; H1 cost-lag gain and Q3 RM-stock squeeze risk (A3P-11, A3C-02, A3C-03, A3C-07, A3C-09)"
   - "Cash conversion INDETERMINATE-WITH-DIRECTION: CFO/PAT 1.19x rests on 22.31 Cr inventory release; ex-release 0.09x and FCF -2.78 Cr; derived 94d CCC is an inventory trough (ex-inventory +2.5d); deck CCC 76-82-99-128 rising (A3P-10, A3P-18, A3C-13)"
-  - "Capital allocation chain: borrowings 63.0 (Mar-25) -> ~54.4 (Sep-25, derived) -> 83.78 Cr (Mar-26); H2 FY26 rise ~29.4 Cr = ~86% of the Rs 34 Cr buyback (AMBIGUOUS: base order-inferred, WC build not excluded); buyback at 47.4x FY25 / 186.9x FY26 EPS, 18.5% above CMP; dividend cut 75% to 10%; H1 deleveraging inventory-funded; land would undo 78% of H1 net-debt fall (A3-05, A3-13, A3P-12, A3P-19)"
+  - "Capital allocation chain: FY26 buyback debt-funded. Borrowings 63.0 (Mar-25) -> ~54.4 (Sep-25, derived) -> 83.78 Cr (Mar-26); H2 FY26 rise ~29.4 Cr = ~86% of the Rs 34 Cr buyback; filed totals settle direction (H2 FY26 liabilities +33.60 Cr, assets +2.59 Cr, equity -31.00 Cr; H2 CFO +10.94 Cr); order-inferred deck row limits precision only; 1.14 Cr equity-roll gap fits buyback expenses (inference); buyback at 47.4x FY25 / 186.9x FY26 EPS, 18.5% above CMP; dividend cut 75% to 10%; H1 deleveraging inventory-funded; land would undo 78% of H1 net-debt fall (A3-05, A3-13, A3P-12, A3P-19)"
   - "Unnoted held-for-sale group and new lease; not raised on call (A3-10, A3-01, A3-11, A3C-17)"
   - "CMD and auditor signatures precede Board meeting close (A3-09)"
   - "Earlier-year tax asset write-down; H1 finance cost +86.9% YoY: average debt ~+30%, implied rate ~5.5% to ~7.9% (+2.4 pp), cause undisclosed (A3-03, A3P-20, A3-13)"
@@ -99,5 +99,5 @@ flags:
   - "Tracker rows not supplied; Role 5.5 never run (0 signals vs 3 floor); peer concalls not passed (7B UNVERIFIABLE)"
   - "No spear on record: /step1 required before any pipeline run"
 plain_language_brief_included: true
-analyst_note: "Loop 1 applies all seven A5 fixes; verdict unchanged at PROCEED WITH FLAGS. A3-13: 30-Sep-2025 borrowings derive to about 54.4 Cr, so H2 FY26 borrowings rose about 29.4 Cr, about 86% of the 34 Cr buyback; deck p20 CFF corroborates within about 1.2 Cr. The base row is order-inferred and the CF line is net, so it stays AMBIGUOUS between buyback debt and an H2 working-capital build (Q19). The like-for-like H1 FY26 rate is about 5.5%, so the finance-cost anomaly is about 2.4 pp; average debt also rose about 30%. A3-14: the CMD's disclosed stake is 6.07%, relatives NOT FOUND; at 7.9% the land carries about 0.95 Cr a year, so the deal is neutral only if prior rent was at least that (Q3, Q29). C1: Reading 3 removes sold volume as a test of output, so 'online' is UNVERIFIABLE; the EVASIVE lean rests on four refusals and the product slip. The 94-day CCC is an inventory trough. A possible cheaper Chinese feedstock (L147-149, speaker unclear) is grafted as a bear counter. Hedge count 12; 40 substantive questions."
+analyst_note: "Loop 2 applies A5 C3 and F2; verdict unchanged at PROCEED WITH FLAGS. C3: one segment, so segment totals are balance-sheet totals and they tie at both filed dates. In H2 FY26 liabilities rose 33.60 Cr, assets 2.59 Cr and equity fell 31.00 Cr, and H2 CFO was +10.94 Cr. New liabilities funded the buyback, so the H2 working-capital reading and the Q19 bull answer are removed. The derived 54.4 Cr, 29.4 Cr and 86% keep a precision caveat from order-inferred deck R237 only. The 1.2 Cr CFF residual is not lease (nil at 31-Mar-2026); a 1.14 Cr equity-roll gap fits buyback expenses outside the 34 Cr cap [INFERENCE]. F2: land sellers are the CMD and relatives; the selling group receives the price; the split and the CMD's own share are NOT FOUND; the ~Rs 0.94 per Rs 1 overpayment applies to the group at a 6.07% stake. Earlier loop fixes stand: hedge count 12, 40 substantive questions, 'online' UNVERIFIABLE, 94-day CCC an inventory trough, cheaper Chinese feedstock as a bear counter."
 review_path: "runs/fairchemor-q2fy27/work/review_fairchemor_q2fy27.md"

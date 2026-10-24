@@ -33,3 +33,8 @@
 - A5 (concall pass, iteration 0): INCOMPLETE at 00:43 IST. FACTUAL 1, MISSING 4, CONTRADICTION 2, STYLE 7. Route A3 (orphans res R294, R374/R481) then A4. Session dropped before the hand-back was logged; audit on disk is complete.
 - Correction loop iteration 1 (concall pass) opened 24-Oct 06:28 IST. A3 results addendum: A3-13 (R294 borrowing path vs buyback), A3-14 (R374/R481 CMD 6.07% interest), both AMBIGUOUS. 80,209 tok, 266 s.
 - A4 loop 1: all seven A5 fixes (M1-M4, C1, C2, F1) and S1-S7 applied; verdict unchanged PROCEED WITH FLAGS; QfM 29 rows. Finished 06:44 IST; session dropped before the hand-back was logged (token count NOT FOUND).
+- A5 iteration 1 re-audit (resumed-context fresh agent, 08:09-08:26 IST): INCOMPLETE. M1-M4, C1, C2, F1 closed. New C3 (buyback funding: filed segment totals show H2 FY26 liabilities funded the buyback) and F2 (land price goes to the selling group, CMD share NOT FOUND), both route A4. STYLE S8-S9. 273,452 tok, 989 s.
+- Correction loop iteration 2: run under the operator's 2026-10-24 standing approval, relayed by the parent session local_75d06544. A4 resumed: C3, F2, S8, S9 applied; verdict unchanged.
+- A5 iteration 2 (resumed, scoped to the C3/F2 edits): COMPLETE. One STYLE note (S10). Verdict PROCEED WITH FLAGS stands.
+- Operator brief written by the orchestrator from the review (no agent run): operator_brief_fairchemor_q2fy27.md. CMP Rs 744.10, BSE close 23-Oct-2026.
+- Notion: not written (session instruction). Payload in notion-payload.md.

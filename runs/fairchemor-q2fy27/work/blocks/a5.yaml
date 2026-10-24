@@ -3,7 +3,8 @@ company: "FAIRCHEMOR"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
 status: complete
-verdict: INCOMPLETE
+loop_iteration: 2
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -11,44 +12,20 @@ plain_language_brief:
   competition: present
   forward_map: present
 coverage:
-  orphan_rows:
-    - "res R294 (L447): H1 FY26 net repayment of current borrowings (862.76) L; uncited; with deck R237 it derives the 30-Sep-2025 borrowings that the review lists as missing (rev L1028, Q9, Q19)"
-    - "res R374 with qualifier R481 (L593): land counterparty CMD interest 6.07%; '6.07' appears nowhere in the review"
+  orphan_rows: []
   missing_from_ledger:
-    - "Logged, no A2 loop (content already in review; S6 / C2): concall entity 'crude oil prices' (call L157); results auditor para 1 (res L159); question at call L291 inside MOD turn T075"
-arithmetic_mismatches:
-  - {metric: "Role 5 Step 6C hedge count", a4_value: "'we expect' row 4 (L88, L130, L186, L318); total 11 (9 excl. T046)", recomputed: "'we expect' row 5 (adds MGMT 'we can expect', call L238, T057); total 12 (10 excl. T046)", source_line: "call L238; rev L752-755, L893, L1011, L1203, L1210"}
-surviving_bear_counters:
-  - {claim: "Operating gain real; spread per kg widened in Q2; margin swing does not disprove the lowest-cost claim (rev L1020, L210, L381)", counter: "Call T026 L146-149 (speaker unclear, beside 21 s gap R168, ASR): Chinese producers' raw material is cheaper because China grows its own edible oil while India imports. The import-parity ceiling is set by a rival with cheaper feedstock; lower dumping has no stated cause (L141); freight cause rejected (L145). Absent from 4A row 10 (rev L601), Step 7 (rev L381) and Competition (rev L1088-1093)", source_line: "call L146-149, L141, L144-145", type: MISSING}
-  - {claim: "Management's ~100 days supports the derived 94-day CCC over the deck's 128 (rev L272, L282, L795)", counter: "94.0 days rests on inventory days at a three-date low (48.4) after the non-repeatable 22.31 Cr release; receivable-minus-payable days lengthened 43.1 to 45.6 (+2.5); deck CCC series 76, 82, 99, 128 lengthens every period; exports 'will elevate further' (call L214). The 94 is a trough, not a run-rate", source_line: "res R178-R181 L312-314, R215-R218 L362-364; deck R296-R299 L600-603; call L213-215", type: MISSING}
-  - {claim: "Land RPT (acquisition probe): Rs 12.01 Cr for land adjoining the plant, already in company use (rev L80, L1001)", counter: "Price / target PAT not applicable (land; no new earnings; already used, call L205; no expansion plan, L330). Carrying cost at the H1 implied 7.9% = ~0.95 Cr/yr pre-tax, ~0.71 Cr after tax = ~1.8% of H1-annualised PAT 40.36 Cr; value-neutral only if prior rent >= ~0.95 Cr/yr (terms NOT FOUND). CMD interest 6.07%: he gets 100% of the price and bears ~6% of the cost; ~94% of any overpayment falls on other holders. No valuer; arm's length self-asserted", source_line: "res R373 L588, R374 R481 L593, R182 L315, R483 L621; call L205, L330", type: MISSING}
+    - "Logged, no A2 loop (carried from iterations 0-1; content already in review; recorded at rev M31): concall entity 'crude oil prices' (call L157); results auditor para 1 (res L159); question at call L291 inside MOD turn T075"
+arithmetic_mismatches: []
+surviving_bear_counters: []
 findings_by_type:
-  factual:
-    - "F1 (A4): hedge count 11 -> 12 (10 excl. T046); 'we expect' row omits MGMT 'we can expect' (call L238) while counting 'we don't expect' (L186, L318); conclusion unchanged"
-  missing:
-    - "M1 (A3 then A4): orphan res R294 L447. 30-Sep-2025 borrowings ~54.4 Cr [deck R237 63.0 less 8.63]; H2 FY26 net borrowing ~+29.4 Cr = ~86% of the 34.00 Cr buyback; like-for-like H1 FY26 implied rate ~5.5% vs A4's FY26 5.0% comparator (rev L171, L937). Amend Flag 4, brief L1075, Q9/Q19, missing-evidence list L1028"
-    - "M2 (A3 then A4): orphan res R374/R481 L593 (CMD 6.07% interest) plus the probe's carrying-cost break-even; graft into Step 0D Board item 2 (rev L80), Exchange 3 (L666), Q3/Q4 (L917-918), Flag 1 (L1001)"
-    - "M3 (A4): call L146-149 China cheaper-feedstock counter, speaker caveat; graft into 4A row 10 (rev L601), Step 7 strategic premium (L381), 8D (L861), Competition (L1088-1093)"
-    - "M4 (A4): CCC qualifier: derived 94 days is an inventory trough; ex-inventory legs +2.5 days; deck series 76-82-99-128 rising; amend rev L272, L282, L564, L682, L795, L1003"
-  contradiction:
-    - "C1 (A4): 'online' (call L162-164) scored CONTRADICTED/failed by sold volume at rev L537, L603, L650, L771, L790, L802, L870, L894, L1011, L1203, while A4's Reading 3 (L218-220) attributes the sold-volume fall to stock timing and the cost-lag qualifier (L234) leaves the drawdown tonnage unbounded. Restate as UNVERIFIABLE on production; keep the export half (L164-165); re-base the EVASIVE lean on refusals and the product slip"
-    - "C2 (A4): T075 (call L290-291) is MOD in A2 and absent from the 45-question table; A4 treats it as question row 31 (rev L622) but says 39 substantive (L455) against 40 rows (L633). State 45 + T075 = 40 substantive; A2 relabel is a pipeline note"
+  factual: []
+  missing: []
+  contradiction: []
   style:
-    - "S1: ID-level coverage format; 61 concall, ~260 results, ~360 deck rows covered only by line, turn or section anchors"
-    - "S2: brief forward-map item M1 (transcript) undated (rev L1099)"
-    - "S3: Q2 FY26 '(trough)' (rev L187) and 'the trough' (L174) is the margin trough only; H2 FY26 average quarter revenue 108.53 Cr was lower"
-    - "S4: 'most of the 494 s of gaps' (rev L454) should be 'all'"
-    - "S5: brief L1064 inference untagged; L1052 'in September' should be 'in the September quarter'"
-    - "S6: pipeline notes for next A1/A2: 'crude oil' entity (call L157); auditor para 1 (res L159); possible unsplit speaker changes in T024 (L144) and T026 (L148-149); T075 relabel"
-    - "S7: deck dividend chart R319-R321 (75%, 75%, 10%) uncited; cut from Rs 7.5 to Rs 1.0 per share sits beside the buyback in Flag 4"
-loop_back_to: "A3"
-gap: "A3: review two orphan results rows only: res R294 (L447, H1 FY26 net borrowing repayment 862.76 L) and res R374 with qualifier R481 (L593, CMD interest 6.07%). A4 then: (1) M1 derive 30-Sep-2025 borrowings ~54.4 Cr (deck R237 63.0 Cr less res R294 8.63 Cr) and the H2 FY26 rise ~29.4 Cr vs the 34.00 Cr buyback; amend Flag 4, brief L1075, Q9/Q19, missing-evidence list L1028, and the A3P-20 comparator (H1 FY26 ~5.5%, not FY26 5.0%); (2) M2 graft the land-RPT probe: 6.07% counterparty interest, ~0.95 Cr/yr carrying cost at 7.9%, rent break-even, terms NOT FOUND; (3) M3 graft call L146-149 into 4A row 10, Step 7, 8D and Competition, with the speaker caveat; (4) M4 qualify the 94-day CCC as an inventory trough (ex-inventory +2.5 days; deck 76-82-99-128); (5) C1 restate 'online' as UNVERIFIABLE on production at rev L537, L603, L650, L771, L790, L802, L870, L894, L1011, L1203 and re-base the EVASIVE lean; (6) F1 hedge count 12 (10 excl. T046) at rev L752-755, L893, L1011, L1203, L1210; (7) C2 question count 45 + T075 = 40 substantive (rev L455)."
+    - "S10: rev L436 (Key Notes) 'seller stake 6.07%' and L916 (Section C) 'seller's disclosed stake 6.07%' follow Annexure B item 4's own label (res L593); for alignment with F2 read 'disclosed counterparty stake 6.07% (CMD look-through)'"
+loop_back_to: ""
+gap: ""
 style_notes:
-  - "S1 coverage citation format: add ID-range 'reviewed, no finding' lines per ledger section"
-  - "S2 date the transcript item in the brief forward map"
-  - "S3 Q2 FY26 is the margin trough, not the revenue trough"
-  - "S4 all 18 gaps fall inside the Q&A"
-  - "S5 tag brief L1064 as INFERENCE; 'September quarter' at L1052"
-  - "S6 next-run A1/A2 notes: crude oil entity L157, auditor para 1 L159, T024/T026 splits, T075 relabel"
-  - "S7 dividend cut 75% to 10% (deck R319-R321) as Flag 4 context"
-analyst_note: "Every derived metric in Steps 1 to 5 recomputes to rounding, including the PAT bridge, the per-kg table and the revenue bridge. The only number fix is the hedge count. The audit fails on completeness. Two results rows were never used. R294 answers the review's own open question on 30-Sep-2025 borrowings; with it, H2 FY26 net borrowing matches about 86% of the buyback. R374 gives the land seller's 6.07% stake, the core of the related-party economics. The adversarial read adds one bear point A4 missed: Chinese feedstock may be cheaper (call L146-149, speaker unclear). It adds one qualifier: the 94-day cycle is an inventory trough. The same bar runs the other way. A4's own stock-timing reading means sold volume cannot test the 'online' production claim, so 'contradicted' overstates it. By my read none of this moves PROCEED WITH FLAGS. Each item changes a stated fact or conclusion, so none is STYLE. The A3 loop covers two rows only; the A4 fix list is in the gap field."
+  - "S10 rev L436, L916: 'disclosed counterparty stake 6.07% (CMD look-through)' in place of 'seller stake 6.07%'"
+  - "S8 and S9 applied (rev L1099 'every period'; L1101 'FILED, derived; deck p23'); iteration 0 S1-S7 applied"
+analyst_note: "Scoped iteration 2 re-audit of the C3, F2, S8 and S9 edits and the text they touched. C3 is closed. Step 5, Q9, Q19, Flag 4, Section C, the Key Notes line, the missing-evidence list, brief part 3 and the YAML now state the buyback as debt-funded on the filed totals. The new figures recompute: 30-Sep-2025 assets 388.39 Cr, liabilities 94.34 Cr, equity 294.04 Cr; H2 CFO +10.94 Cr; equity-roll gap 1.14 Cr. The deck R237 caveat now limits precision only. F2 is closed. Exchange 3, Section C, Q29, Flag 1 and the YAML give the price and the ~Rs 0.94 per Rs 1 to the selling group, with the split and the CMD's own share NOT FOUND. One correction to my own iteration 1 fix text: I proposed a Q19 bull answer of a filed balance 'well below 54.4 Cr'. A4 wrote 'well above', which is right, because a higher base means a smaller H2 rise. One STYLE label remains (S10). PROCEED WITH FLAGS stands."

@@ -184,6 +184,8 @@ Selection. These are the three most positive claims in the review. Each counter 
 
 ---
 
+> Iteration 0 block, kept for the record. It is superseded by the later blocks in this file; the ITERATION 2 block at the end of this file (and runs/fairchemor-q2fy27/work/blocks/a5.yaml) is current.
+
 ```yaml
 stage: A5-adversary
 company: "FAIRCHEMOR"
@@ -239,4 +241,299 @@ style_notes:
   - "S6 next-run A1/A2 notes: crude oil entity L157, auditor para 1 L159, T024/T026 splits, T075 relabel"
   - "S7 dividend cut 75% to 10% (deck R319-R321) as Flag 4 context"
 analyst_note: "Every derived metric in Steps 1 to 5 recomputes to rounding, including the PAT bridge, the per-kg table and the revenue bridge. The only number fix is the hedge count. The audit fails on completeness. Two results rows were never used. R294 answers the review's own open question on 30-Sep-2025 borrowings; with it, H2 FY26 net borrowing matches about 86% of the buyback. R374 gives the land seller's 6.07% stake, the core of the related-party economics. The adversarial read adds one bear point A4 missed: Chinese feedstock may be cheaper (call L146-149, speaker unclear). It adds one qualifier: the 94-day cycle is an inventory trough. The same bar runs the other way. A4's own stock-timing reading means sold volume cannot test the 'online' production claim, so 'contradicted' overstates it. By my read none of this moves PROCEED WITH FLAGS. Each item changes a stated fact or conclusion, so none is STYLE. The A3 loop covers two rows only; the A4 fix list is in the gap field."
+```
+
+---
+---
+
+# ITERATION 1 RE-AUDIT
+
+Agent: A5 adversary | model claude-opus-5-5 | run date 2026-10-24 | loop_iteration 1
+Review under audit: runs/fairchemor-q2fy27/work/review_fairchemor_q2fy27.md, 1,234 lines after the A4 loop 1 edits. In this section "rev L###" refers to that version. Line numbers in the iteration 0 section above refer to the pre-edit review.
+Inputs read: the same three A1 fulltexts, three A1 structured files and three A2 ledgers, plus the edited A4 review. Not read: the source PDFs, anything under inputs/, any A3 output (including the A3 addendum that A4 cites as A3-13 and A3-14).
+Method: (1) re-run the gate, the coverage counts and the arithmetic on the edited review; (2) check each iteration 0 fix where A4 says it applied it; (3) a fresh adversarial pass over the edited text, including every number the loop added.
+
+## R0. DELIVERABLE-COMPLETENESS AUDIT (hard gate)
+
+DELIVERABLE-COMPLETENESS AUDIT: narrative PRESENT | sector PRESENT | business model PRESENT | competition PRESENT | forward map PRESENT. Gate: PASS.
+
+| Part | Location | Content check | Status |
+|---|---|---|---|
+| 1 Summary narrative | rev L1064-1078 | 14 lines of text (heading L1064, text L1065-1078; inside 10-20). Adds the 6.07% stake, the prior-rent gap and "the figures do not show whether output grew" | PRESENT |
+| 2 Sector intelligence | rev L1080-1086 | INFERENCE tag now on L1082 (S5 applied) | PRESENT |
+| 3 Business-model intelligence | rev L1088-1094 | Adds the 94-day trough qualifier (L1091), the buyback-borrowing link and the dividend cut (L1093) | PRESENT |
+| 4 Competition intelligence | rev L1096-1114 | Adds the Chinese-feedstock weakness with the speaker caveat (L1108) | PRESENT |
+| 5 Forward map | rev L1116-1125 | Make-or-break reading plus 8 items, each with a bull and a bear fork; all dated (transcript item now dated, L1118; S2 applied) | PRESENT |
+
+## R1. COVERAGE AUDIT
+
+### R1A. Fresh enumeration vs A2 ledger (re-run)
+
+| Document | Category | A2 count | My fresh count | Orphan rows | Status |
+|---|---|---|---|---|---|
+| Results | All structured rows (grep "^R### \|") | 484 | 484, unchanged; ledger L5 "ids_in_structured: 484 / ids_referenced_in_ledger: 484 / orphan_ids: []"; gate_a2 pass (L16, L123) | none | PASS |
+| Results | Notes / footnotes / line items / zero-standing / agenda / entities / signatures / remaining numbers | 9 / 8 / 353 / 19 / 2 / 36 / 3 / 13 | same as iteration 0 | none (R294 and R374 R481 now cited, R1B) | PASS |
+| Results | Auditor paras | 3 | 4 (res L159 identification paragraph) | none | logged, M31 (rev L1012) |
+| Presentation | All structured rows | 512 | 512, unchanged; ledger L16 512 / 512, orphan_ids []; gate_a2 pass | none | PASS |
+| Presentation | Slides | 24 | 24 | none | PASS |
+| Concall | Structured rows / turns | 182 / 101 | 182 / 101, unchanged; ledger L16-17 182 / 182, T001-T101 all referenced; gate_a2 pass | none | PASS |
+| Concall | Questions | 45 | 46 (L291 inside MOD turn T075) | none | PASS: the review now states 45 + T075 = 40 (rev L468); A2 relabel logged at M31 |
+| Concall | Entities | 48 | 49 ("crude oil prices", call L157) | none | logged, M31 |
+| Concall | Hedge-word census (Step 6C input) | n/a | 12 MGMT instances, 10 excluding T046 (see R2 row 12) | none | PASS |
+
+The three extra fresh-pass units are the same as in iteration 0. Their content is in the review, and all three are now recorded as pipeline notes at rev M31 (L1012). No A2 loop.
+
+### R1B. Ledger rows vs A4 review
+
+| Ledger | Rows | Cited by ID, or covered by an explicit "reviewed, no finding" line | Material orphans | Status |
+|---|---|---|---|---|
+| Results | 484 | R294 now cited at rev L273, L300, L1022 (and by value in Q19, L949). R374 R481 now cited at rev L93, L680, L985, L1019 (R374 also L358, L715). Explicit range lines added: balance sheet R163-R235 and cash flow R236-R307 (rev L49); segment, entity, date and qualifier rows (L49); unlabelled subtotals R462 R464 R467 (L48). R294 sits in the ledger's cash-flow range R236-R307 (ledger L45); R374 R481 at ledger L58 and L85 | none | PASS |
+| Concall | 182 + T001-T101 | Header and meta rows, non-substantive question turns, moderator and IR turns (rev L50); the 61 anchor-only rows from iteration 0 are now listed by ID (rev L51) | none | PASS |
+| Presentation | 512 | Slide-level and range lines for p8, p9, p17, p18-p23 and the data-free slides (rev L46-47) | none | PASS |
+
+Coverage verdict: PASS. The iteration 0 orphans are closed, and S1 is applied.
+
+## R2. ARITHMETIC AUDIT (loop 1 numbers, plus a spot check of the carried tables)
+
+Lakh basis from structured rows, then x0.01 to Rs Cr.
+
+| # | Metric | A4 value | Recomputed | Source line | Status |
+|---|---|---|---|---|---|
+| 1 | 30-Sep-2025 borrowings | ~54.4 Cr (rev L273, L300, L1022) | 6,300 - 862.76 = 5,437.24 L | deck R237 L521 (ORDER_INFERRED); res R294 L447 | PASS |
+| 2 | H2 FY26 borrowing rise; share of buyback | ~29.4 Cr; ~86% | 8,378.23 - 5,437.24 = 2,940.99 L; 2,940.99 / 3,400 = 86.5% | res R214 L360; res L521-525 | PASS |
+| 3 | Average borrowings H1 FY26 / H1 FY27; change | ~58.7 / ~76.2 Cr; +30% | 5,868.62 / 7,621.78 L; x1.2987 | deck R237; res R213 R214 | PASS |
+| 4 | Implied annualised rate H1 FY26 / H1 FY27; gap | ~5.5% / ~7.9%; ~2.4 pp | 322.96 / 5,868.62 = 5.503%; 603.68 / 7,621.78 = 7.921%; 2.42 pp | res L237-238 (161.48, 301.84) | PASS |
+| 5 | Finance-cost rise split | x1.30 debt, x1.44 rate; +86.9% | 1.2987 x 1.4394 = 1.8693; 301.84 / 161.48 = 1.8692 | res R051 R054 | PASS |
+| 6 | H2 FY26 CFF check | ~(7.9) vs ~(6.7); ~1.2 Cr unreconciled | (2,790) - (2,000.81) = (789.19) L; 2,940.99 - 3,400 - 208.18 = (667.19) L; gap 122.0 L | deck R269 L540; res R302 L454; res L237 (FY26 FC 369.66) | PASS on the numbers. The "lease" attribution fails; see C3 |
+| 7 | Land: CMD look-through share of cost / other holders | ~0.73 / ~11.28 Cr (93.93%) | 1,201 x 6.07% = 72.90 L; 1,128.10 L | res R373 L588, R374 L593 | PASS on the numbers. Attribution of the receipts fails; see F2 |
+| 8 | Land carrying cost | ~0.95 Cr pre-tax; ~0.71 Cr after tax; ~1.8% of H1-annualised PAT; ~Rs 0.56 a share | 1,201 x 7.921% = 95.13 L; x 0.7483 = 71.19 L; 71.19 / 4,036.28 = 1.76%; 71.19 L / 125.96 L shares = Rs 0.565 | as above; res R117 | PASS |
+| 9 | Borrowings if the land is paid from bank lines | ~80.7 Cr | 6,865.32 + 1,201 = 8,066.32 L | res R213 L360 | PASS |
+| 10 | CCC ex-inventory legs | 43.1 to 45.6 (+2.5 days) | 54.10 - 10.99 = 43.11; 53.44 - 7.80 = 45.64; +2.53 | res R180 R181 L314, R215-R218 L362-364 | PASS |
+| 11 | Deck CCC series | 76, 82, 99, 128 (FY24 to H1 FY27) | deck R296-R299 L600-603 (CHART_POSITION_INFERRED) | | PASS |
+| 12 | Hedge count | 12 (10 excl. T046) | Fresh grep of the call fulltext. "is expected" L88, L130; "we don't expect" L186, L318; "we can expect" L238: 5. "we believe" L89, L305, L192 (T046): 3. "hope" L342, L197 (T046): 2. Refusal forms L128, L287: 2. Total 12; 10 excluding T046. Excluded: analyst uses (L110, L112, L127, L175, L265, L280) and "not moving as expected" (L165, a stated miss, not a hedge) | call fulltext | PASS (F1 closed) |
+| 13 | Question count and grade tally | 45 - 6 + 1 = 40; A6 B17 C10 D1 E3 ND3; C-E 14/37 = 37.8% | reproduced row by row (rev L605-644) | rev L468, L646 | PASS (C2 closed) |
+| 14 | Dividend per share | Rs 7.5 to Rs 1.0 | 976.57 / 130.21 = 7.50; 125.31 / 125.96 = 0.995 | res R297 R296 L450; deck R319-R321 | PASS (tag, S9) |
+| 15 | Carried Step 1-5 tables | unchanged | re-read rev L116-154, L165-177, L242-259, L275-289 against the iteration 0 recomputation | | PASS |
+
+My own derivations for C3 below [DERIVED]:
+- 30-Sep-2025 equity = 38,838.51 - 9,434.16 = 29,404.35 L (294.04 Cr) (res R355 L507, R359 L510). Cross-check: deck FY25 equity 3,020 Rs Mn (deck L513) + H1 FY26 total comprehensive income 177.86 L (res L261) - FY25 dividend 976.57 L (res R297 L450) = 29,401.29 L. That ties within deck rounding.
+- Segment totals equal balance-sheet totals at both filed dates: 39,843.09 / 11,660.41 L at 30-Sep-2026 and 39,097.93 / 12,793.90 L at 31-Mar-2026 (res L374-376 vs L507, L510).
+- H2 FY26: assets +259.42 L; liabilities +3,359.74 L; equity -3,100.32 L.
+- H2 FY26 CFO = 4,160 - 3,065.82 = 1,094.18 L; CFI = (1,370) - (1,064.61) = (305.39) L; CFF = (789.19) L; sum (0.40) L, against a filed H2 cash change of +0.13 L (1.22 to 1.35 L, res L458-460). Deck rounding.
+- H2 FY26 operating EBITDA = 2,073.42 - 941.05 = 1,132.37 L (1,220.64 L before the 88.27 L Labour Code charge).
+- H1 FY26 uses of CFO: 862.76 + 976.57 + 161.48 + 1,064.61 = 3,065.42 L against CFO 3,065.82 L (cash +0.40 L, res L456).
+- H2 FY26 equity roll: 29,404.35 + 413.50 (H2 TCI = 591.36 - 177.86, res L260-261) - 3,400.00 = 26,417.85 L against filed 26,304.03 L (1,259.59 + 25,044.44; res R205). Unexplained: 113.82 L.
+- H2 FY26 CFF with that 113.82 L: 2,940.99 - 3,400.00 - 208.18 - 113.82 = (781.01) L against (789.19) L. The gap is 8.2 L, inside deck rounding.
+
+## R3. VERIFICATION OF THE ITERATION 0 FIX LIST
+
+| ID | Fix asked | Where A4 applied it (rev L, edited review) | Check | Status |
+|---|---|---|---|---|
+| F1 | Hedge count 12 (10 excl. T046) | L768, L770, L772, L909, L1029, L1224 | reproduced by fresh grep (R2 row 12) | CLOSED |
+| M1 | R294; 30-Sep-2025 borrowings; H2 rise; H1 FY26 rate comparator | L184, L273, L300, L581, L719-720, L908, L949, L953, L1011, L1022, L1025, L1046, L1093 | all numbers reproduce (R2 rows 1-6) | CLOSED on the numbers. The funding framing is reopened as C3 |
+| M2 | R374 R481; carrying cost; rent break-even | L93, L99, L358, L428, L680, L715, L933, L959, L985, L1019, L1076 | numbers reproduce (R2 rows 7-9) | CLOSED on the numbers. The receipts attribution is F2 |
+| M3 | Graft call L146-149 with the speaker caveat | L323, L394, L614, L650, L703, L825, L877, L909, L935, L945, L1027, L1038, L1108 | quote matches call L146-149 verbatim; the speaker caveat travels with it each time | CLOSED |
+| M4 | Qualify the 94-day CCC as an inventory trough | L285, L295, L392, L577, L696, L810, L875, L940, L999, L1021, L1091 | matches R2 rows 10-11 | CLOSED |
+| C1 | "Online" UNVERIFIABLE on production; re-base the EVASIVE lean | L232, L533, L550, L563, L616, L663, L786, L805, L817, L886, L910, L1029, L1224 | grep "online": no residual "contradicted" or "fails" on the production claim; the export half kept (L165) | CLOSED |
+| C2 | 45 + T075 = 40 substantive | L468, L635 | 40 rows; tally reproduces | CLOSED |
+| S1-S7 | Style notes | S1 L45-51; S2 L1118; S3 L187, L200; S4 L467; S5 L1065, L1070, L1082; S6 L1012; S7 L1022 | applied | CLOSED |
+
+## R4. ADVERSARIAL READ (iteration 1)
+
+Re-test of the three iteration 0 claims after the grafts.
+- **Claim 1** (operating gain real; spread per kg widened). The M3 counter now sits in Step 7, 4A row 10, 8D, Competition and the Protocol verdict sentence itself (rev L1038). Incorporated. No further graft.
+- **Claim 2** (Reading 3 leads; Q2 is the clean base). Unchanged and incorporated. C1 now applies the same bar on the bull side. No graft.
+- **Claim 3** (receivables growth-induced; "around 100 days" supports 94). Qualified at all 11 sites. "Growth-induced" now refers only to the receivables leg (rev L295), which the flat receivable days support. Incorporated.
+
+Fresh pass on the edited text. The most positive framing the loop left in place is the benign reading of the buyback-year borrowing rise. Step 5 says "Two readings stay open (A3-13, AMBIGUOUS): 'buyback debt-funded' or 'H2 working-capital build'" (rev L300). Flag 4 says "an H2 working-capital build is not excluded" (L1022). The YAML flag says "WC build not excluded" (L1218). The Q19 bull answer reads "rise mostly H2 working capital; buyback funded from FY26 CFO" (L949).
+- Strongest bear counter, from the same extracts. Filed totals close this reading. In H2 FY26, total liabilities rose 33.60 Cr, total assets rose 2.59 Cr and equity fell 31.00 Cr (res R355 R356 L507, R359 R362 L510). The liability rise funded the equity fall, which is the buyback. An asset-side working-capital build cannot absorb 29.4 Cr of new borrowing when total assets grew 2.59 Cr. H2 FY26 CFO was +10.94 Cr (deck R263 L538 less res R279 L431), near H2 operating EBITDA of 11.32 Cr. So any stock build, including the 13.33 Cr FG/WIP build, sat inside positive operating cash. "Buyback funded from FY26 CFO" fails the half split: the H1 FY26 CFO of 30.66 Cr was spent inside H1 (repayment 8.63, dividend 9.77, interest 1.61, investing 10.65 Cr).
+- Survives? **Yes.** The review itself cites the 33.60 Cr and 2.59 Cr figures in Q19's "why it matters" column (rev L949). Logged as **C3 (CONTRADICTION, A4)**. OR-26 binds the conservative reading of filed evidence, and that reading is the debt-funded one.
+
+Mandatory acquisition-economics probe, re-test.
+- Land RPT. The review now states that price over target PAT does not apply, the carrying cost (about 0.95 Cr a year before tax at 7.9%), the rent break-even, the 6.07% look-through stake and the NOT FOUND items (rev L680). The probe is present and the bear reading is grafted. One attribution fails. "At that stake the CMD receives the price" and "the CMD gains about Rs 0.94 net" per Rs 1 of overpayment (rev L680, L959, L1019) go past the extract. The sellers are "Shri Nahoosh Jariwala and his relatives" (res L582-584). The split of the 12.01 Cr between them is not disclosed. This wording came from my iteration 0 probe ("He receives 100% of the price"), so the error is A5's, carried by A4. Logged as **F2 (FACTUAL, A4)**.
+- Buyback. 47.4x FY25 EPS, 186.9x FY26 EPS and 25.0x H1-annualised EPS are stated (rev L1022). C3 settles the funding question that sits beside them.
+
+## R5. FINDINGS (iteration 1)
+
+**C3. Buyback funding: the review holds open a reading that its own cited filed totals rule out.** (CONTRADICTION, route A4)
+- Text under audit: rev L300 (Step 5, "Two readings stay open ... 'H2 working-capital build' (the 30-Sep-2025 balance sheet is not filed ...)"), L1022 (Flag 4, "an H2 working-capital build is not excluded"), L1218 (YAML flag, "WC build not excluded"), L1231 (analyst note, "stays AMBIGUOUS"), L949 and YAML L1172 (Q19 bull answer, "rise mostly H2 working capital; buyback funded from FY26 CFO"). Also rev L273, "Balance sheet at 30-Sep-2025: not in the filing (ND)".
+- The same Q19 row cites the evidence against it: "Segment liabilities rose 33.60 Cr in H2 FY26 while assets rose 2.59 Cr (res R359 R362 L510)".
+- The company has one segment, so segment totals are balance-sheet totals. They match at both filed balance-sheet dates (res L374-376 vs L507, L510). The 30-Sep-2025 totals give equity of 294.04 Cr, which ties to the deck FY25 equity rolled forward (R2 derivations). Line items at 30-Sep-2025 are not filed. The totals are.
+- H2 FY26 identity: assets +2.59 Cr = liabilities +33.60 Cr + equity (31.00) Cr. The liabilities funded the buyback.
+- H2 FY26 CFO +10.94 Cr [DERIVED: deck R263 41.6 Cr less res R279 30.66 Cr] against H2 operating EBITDA of 11.32 Cr (12.21 Cr pre-exceptional) [DERIVED]. The H2 working-capital absorption was small next to the 29.4 Cr borrowing rise.
+- H1 FY26 CFO was spent in H1 (R2 derivations). H2 CFO less H2 investing leaves about 7.9 Cr against the 34.00 Cr buyback.
+- The "about 1.2 Cr unreconciled (lease and other lines, deck rounding)" at rev L300 cannot be lease, because the right-of-use asset and lease liability were nil at 31-Mar-2026 (res L293, L348). The H2 FY26 equity roll leaves 1.14 Cr unexplained (294.04 + 4.14 - 34.00 = 264.18 vs filed 263.04 Cr). Note 6 says the 34 Cr cap excludes "any expenses or transaction costs" (res L524-525). [INFERENCE] Buyback costs of about 1.1 Cr fit both gaps. With them, the H2 CFF reconciles within about 0.1 Cr.
+- What stays uncertain: the 54.4 Cr, 29.4 Cr and 86% figures rest on the ORDER_INFERRED deck R237. That caveat limits precision only. It does not reopen the direction, because the filed 33.60 Cr total-liability rise does not depend on R237.
+- Fix (A4): restate the reading at the sites above as supported by the filed totals. Drop the Q19 bull answer, or replace it with one the extract allows (for example, a filed borrowings figure well below 54.4 Cr). Keep the R237 caveat as a precision caveat. Correct "not in the filing" to "line items not filed; totals filed in the segment note". Replace "lease and other lines" with the equity-roll gap, tagged INFERENCE. The brief (rev L1093, "looks bank-funded") may stay or harden. The verdict does not move.
+
+**F2. Land RPT: the receipts are attributed to the CMD alone.** (FACTUAL, route A4)
+- Text under audit: rev L680 ("At that stake the CMD receives the price ... the CMD gains about Rs 0.94 net"), L959 (Q29, "per Rs 1 of overpayment the CMD gains about Rs 0.94 net"), L1019 (Flag 1, the same). Also rev L911, "the seller bears about 6% of the cost".
+- Extract: the parties are "Shri Nahoosh Jariwala and his relatives" (res L582-584). The 6.07% is the stake "considering entities holding shares in which he is interested" (res L593). No split of the 12.01 Cr across the sellers is given.
+- Fix (A4): the selling group receives 100% of the price. At a 6.07% group stake it nets about Rs 0.94 per Rs 1 of overpayment, and less if the relatives hold more shares. The CMD's own share of the receipts and the relatives' stakes are NOT FOUND. Rev L93 and the brief L1076 already state the cost side correctly and need no change.
+- Origin: my iteration 0 probe wording. Recorded here so the record shows the error and its source.
+
+**Style (logged, no loop).**
+- **S8.** Brief L1091 says the deck cycle chart "rises every year, from 76 to 128 days". The 128 is H1 FY27 (deck R299). Read "every period".
+- **S9.** Brief L1093 tags "cut from Rs 7.5 to Rs 1.0 per share" as FILED. The per-share figures are derived from filed cash (res R297 R296) and share counts, and the 75% / 10% is the deck p23 chart. Tag "FILED, derived; deck p23".
+
+| ID | Type | Finding | Lines | Route |
+|---|---|---|---|---|
+| C3 | CONTRADICTION | "H2 working-capital build" held open, and used as the Q19 bull answer, against filed totals the review itself cites (liabilities +33.60 Cr, assets +2.59 Cr) and H2 CFO +10.94 Cr; "30-Sep-2025 balance sheet not filed" misses the filed totals; "lease" cannot explain the 1.2 Cr gap | res R355 R356 L507, R359 R362 L510, L374-376, L293, L348, L524-525; deck R263 L538; res R279 L431; rev L273, L300, L949, L1022, L1172, L1218, L1231 | A4 |
+| F2 | FACTUAL | "The CMD receives the price" and "the CMD gains about Rs 0.94 net" are not supported; the sellers are the CMD and relatives, split not disclosed | res L582-584, L593; rev L680, L911, L959, L1019 | A4 |
+| S8 | STYLE | "every year" should be "every period" | rev L1091; deck R299 | none |
+| S9 | STYLE | per-share dividend tag | rev L1093; res R296 R297; deck R319-R321 | none |
+
+## VERDICT (iteration 1)
+
+**INCOMPLETE.**
+- Failing agent: **A4** only. C3 (CONTRADICTION) and F2 (FACTUAL).
+- loop_back_to: **A4**. Both fixes are local wording edits to the review. No A1, A2 or A3 work is needed, and no new row is involved.
+- All seven iteration 0 findings are closed. There is no arithmetic mismatch in any derived metric, including every number the loop added. Coverage passes, and the plain-language brief gate passes.
+- By my read, neither finding moves PROCEED WITH FLAGS. C3 hardens the buyback-funding flag; F2 corrects who receives the land price.
+
+## STYLE NOTES (iteration 1, logged, no loop)
+
+- S8: brief L1091, "every period", not "every year" (128 days is H1 FY27).
+- S9: brief L1093, tag the per-share dividend as FILED, derived; deck p23.
+- Iteration 0 style notes S1-S7: all applied.
+
+> Iteration 1 block, kept for the record. It is superseded by the ITERATION 2 block at the end of this file (and runs/fairchemor-q2fy27/work/blocks/a5.yaml).
+
+```yaml
+stage: A5-adversary
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "Logged, no A2 loop (carried from iteration 0; content already in review; recorded at rev M31 L1012): concall entity 'crude oil prices' (call L157); results auditor para 1 (res L159); question at call L291 inside MOD turn T075"
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Buyback-year borrowing rise: 'two readings stay open', buyback debt-funded or H2 working-capital build; Q19 bull answer 'rise mostly H2 working capital; buyback funded from FY26 CFO' (rev L300, L949, L1022, L1218, L1231)", counter: "Filed segment totals equal balance-sheet totals (res L374-376 vs L507-510). H2 FY26: total liabilities +33.60 Cr (9,434.16 to 12,793.90 L), total assets +2.59 Cr (38,838.51 to 39,097.93 L), equity -31.00 Cr. Liabilities funded the equity fall (buyback), not asset growth. H2 FY26 CFO +10.94 Cr (deck R263 41.6 Cr less res R279 30.66 Cr) against H2 op EBITDA 11.32 Cr (12.21 Cr pre-exceptional), so any stock build sat inside operating cash. H1 FY26 CFO 30.66 Cr was spent in H1 (repayment 8.63 + dividend 9.77 + interest 1.61 + investing 10.65), so FY26 CFO did not fund the buyback", source_line: "res R355 R356 L507, R359 R362 L510, L374-376; deck R263 L538; res R279 L431, R292 L444, R294 L447, R297 L450, R300 L453", type: CONTRADICTION}
+findings_by_type:
+  factual:
+    - "F2 (A4): 'the CMD receives the price' and 'the CMD gains about Rs 0.94 net per Rs 1 of overpayment' (rev L680, L959, L1019; also 'the seller bears about 6% of the cost' L911) are not supported. The sellers are 'Shri Nahoosh Jariwala and his relatives' (res L582-584) and the split of the 12.01 Cr between them is not disclosed. Restate: the selling group receives 100% of the price; at a 6.07% stake it nets about Rs 0.94 per Rs 1 of overpayment, less if the relatives hold more; the CMD's own share of the receipts and the relatives' stakes are NOT FOUND. The wording came from the A5 iteration 0 probe"
+  missing: []
+  contradiction:
+    - "C3 (A4): the review holds 'H2 working-capital build' open as a reading for the H2 FY26 borrowing rise (rev L300, L1022, L1218, L1231) and offers it as the Q19 bull answer (L949; YAML L1172), while Q19 itself cites the filed totals that rule it out (liabilities +33.60 Cr vs assets +2.59 Cr, res R359 R362 L510). H2 FY26 CFO +10.94 Cr (deck R263 less res R279) sits near H2 op EBITDA 11.32 Cr. 'The 30-Sep-2025 balance sheet is not filed' (L273, L300) misses that its totals are filed in the segment note. The '1.2 Cr unreconciled (lease and other lines)' (L300) cannot be lease: ROU asset and lease liability were nil at 31-Mar-2026 (res L293, L348)"
+  style:
+    - "S8: brief L1091 'rises every year, from 76 to 128 days' should read 'every period'; the 128 is H1 FY27 (deck R299)"
+    - "S9: brief L1093 dividend 'Rs 7.5 to Rs 1.0 per share (FILED)' is derived from filed cash (res R297 R296) and share counts plus the deck p23 chart; tag 'FILED, derived; deck p23'"
+loop_back_to: "A4"
+gap: "A4 only; two wording fixes; no new rows, no A2 or A3 work. (1) C3: restate the H2 FY26 buyback funding at rev L300 (Step 5), L1022 (Flag 4), L1218 (YAML flag), L1231 (analyst note) and Q19 (L949; YAML L1172). The filed totals support the debt-funded reading: H2 FY26 liabilities +33.60 Cr, assets +2.59 Cr, equity -31.00 Cr (res R355 R356 L507, R359 R362 L510); H2 CFO +10.94 Cr [deck R263 less res R279] against H2 op EBITDA 11.32 Cr; H1 FY26 CFO was spent in H1. Drop 'rise mostly H2 working capital; buyback funded from FY26 CFO' as the Q19 bull answer. Keep the ORDER_INFERRED caveat (deck R237) for the precision of 54.4 / 29.4 / 86% only, not the direction. Correct 'the 30-Sep-2025 balance sheet is not filed' (L273, L300): line items are not filed; totals are, in the segment note. Replace 'lease and other lines' for the 1.2 Cr gap: the H2 FY26 equity roll leaves 1.14 Cr unexplained (294.04 + 4.14 - 34.00 = 264.18 vs 263.04 Cr), consistent with buyback expenses outside the 34 Cr cap (Note 6, res L524-525) [INFERENCE]; with it, H2 CFF reconciles within about 0.1 Cr. (2) F2: at rev L680, L959 and L1019 (and L911), attribute the price and the ~Rs 0.94 per Rs 1 net gain to the selling group (CMD and relatives, res L582-584); state the CMD's own share of the receipts and the relatives' stakes as NOT FOUND."
+style_notes:
+  - "S8 brief L1091: 'every period', not 'every year' (128 days is H1 FY27)"
+  - "S9 brief L1093: tag the per-share dividend as FILED, derived; deck p23"
+  - "Iteration 0 style notes S1-S7: all applied (rev L45-51, L1118, L187, L200, L467, L1065, L1070, L1082, L1012, L1022)"
+analyst_note: "Iteration 1 re-audit. All seven iteration 0 fixes landed. Both orphan rows are now cited, the hedge count is 12, the question count is 40, and 'online' reads UNVERIFIABLE everywhere. The M3 and M4 grafts match the extract, and every new number recomputes. Two A4 wording items remain. C3: the review keeps an 'H2 working-capital build' reading open for the buyback-year borrowing rise and offers it as the Q19 bull answer. The filed segment note gives balance-sheet totals at 30-Sep-2025. In H2 FY26, liabilities rose 33.60 Cr, assets rose 2.59 Cr and equity fell 31.00 Cr. H2 CFO was +10.94 Cr, near H2 operating EBITDA. Operating cash absorbed any stock build; liabilities funded the buyback. The review cites the same 33.60 and 2.59 in Q19. The order-inferred deck row now limits only the precision of the 86%, not its direction. F2: my iteration 0 probe said the CMD receives the whole price. The sellers are the CMD and his relatives, and the split is not disclosed, so the Rs 0.94 net gain per rupee belongs to the selling group. Neither item moves PROCEED WITH FLAGS."
+```
+
+---
+---
+
+# ITERATION 2 RE-AUDIT (scoped)
+
+Agent: A5 adversary | model claude-opus-5-5 | run date 2026-10-24 | loop_iteration 2
+Scope (coordinator instruction): only the A4 edits for C3, F2, S8 and S9, and any text they touched. This is not a full re-audit. The iteration 1 results stand for everything outside that scope.
+Review under audit: runs/fairchemor-q2fy27/work/review_fairchemor_q2fy27.md, 1,241 lines after the A4 loop 2 edits. In this section "rev L###" refers to that version.
+Inputs read: the edited review (loop-2 notes at rev L30-33, then every edited site), plus the results fulltext and structured rows already anchored in iteration 1. Not read: source PDFs, inputs/, any A3 output.
+Method: grep for every phrase C3 and F2 targeted, then read each hit in full. Recompute every new figure. Check each touched passage for new contradictions.
+
+## Q0. Deliverable gate
+
+Only brief part 3 was edited (rev L1099, L1101). It still carries real content. The other four parts were not touched. Gate: PASS (narrative, sector, business model, competition and forward map present).
+
+## Q1. Edit verification
+
+| ID | Site (rev L) | Text now | Check | Status |
+|---|---|---|---|---|
+| C3 | L278 (Step 5 preamble) | "line items are not filed; totals are filed in the segment note"; 30-Sep-2025 assets 388.39 Cr, liabilities 94.34 Cr, equity 294.04 Cr | ties to res R355 38,838.51 L and R359 9,434.16 L; 29,404.35 L equity | PASS |
+| C3 | L305-308 (Step 5 cash history) | "Filed totals settle the direction"; "The buyback was debt-funded"; residual "is not lease"; 1.14 Cr equity-roll gap [INFERENCE]; R237 caveat "limits precision only" | matches iteration 1 derivations; the AMBIGUOUS two-reading text is gone | PASS |
+| C3 | L589 (3E Q9) | "Funding direction settled by filed totals (debt-funded)" | consistent with Step 5 | PASS |
+| C3 | L436 (Step 9 Key Notes) | "FY26 buyback debt-funded (... filed totals confirm direction)" | consistent | PASS (S10 label) |
+| C3 | L916 (Section C) | "a debt-funded buyback ... filed totals confirm the direction" | consistent | PASS (S10 label) |
+| C3 | L957 (Q19) | Asks to confirm the filed borrowings and the buyback expenses. New bull answer: "A filed 30-Sep-2025 borrowings figure well above 54.4 Cr (a smaller H2 rise, so a smaller debt share)" | Direction is correct: a higher base means a smaller H2 rise (H2 rise = 83.78 Cr less the base). My iteration 1 fix text said "well below"; that was my error, and A4's version is the right one. The filed 33.60 Cr liability rise still makes the buyback liability-funded in either case; the bull answer only narrows the borrowing share, which the extract allows | PASS |
+| C3 | L1030 (Flag 4) | "FY26 buyback (Rs 34 Cr) was debt-funded"; filed totals; H2 CFO +10.94 Cr; equity-roll gap [INFERENCE]; R237 limits precision only | consistent | PASS |
+| C3 | L1049 (Protocol verdict), L1054 (missing evidence) | "harden the buyback-funding flag (debt-funded)"; "a filed 30-Sep-2025 borrowings line ... the 30-Sep-2025 totals are filed; the buyback expenses" | consistent | PASS |
+| C3 | L1101 (brief part 3) | "about 86% of the buyback was bank-funded. The filed totals show new liabilities paid for it (INFERENCE from FILED totals and deck figures, A3-13)" | consistent; tagged | PASS |
+| C3 | L1180, L1226, L1239 (YAML Q19, flag, analyst note) | debt-funded; filed totals; precision caveat; equity-roll gap | consistent | PASS |
+| C3 | residual grep | "working-capital build" appears only in the rebuttal (L306) and the loop note (L31); "not excluded", "buyback funded from", "lease and other lines": no hits. "AMBIGUOUS" appears only in the coverage list at L971, which maps A3-13 as an A3 classification to Q19 and Q23. That is a mapping of A3's label, not a reading the review holds | none | PASS |
+| F2 | L688 (Exchange 3 probe) | "The selling group receives 100% of the price. The split ... is NOT FOUND, so the CMD's own share of the receipts is NOT FOUND"; "At a 6.07% group stake ... the group nets about Rs 0.94 per Rs 1 ... A larger combined stake lowers both" | matches res L582-584, L593; 1 - 0.0607 = 0.9393 | PASS |
+| F2 | L689, L967 (Q29), L1190 (YAML Q29) | asks for the split, relatives' stakes and group total; group bears ~0.73 Cr, nets ~Rs 0.94 | consistent; 72.90 L / 1,128.10 L reproduce | PASS |
+| F2 | L919 (Section C) | "at a 6.07% combined stake the selling group would bear about 6% of the cost" | consistent | PASS |
+| F2 | L993 (M4), L1027 (Flag 1), L1055 (missing evidence), L1223 (YAML flag) | selling group; split and CMD share NOT FOUND | consistent | PASS |
+| F2 | L98 (Step 0D) | unchanged: "the CMD bears about 0.73 Cr of the outflow and other holders about 11.28 Cr" | cost side, correct as stated | PASS |
+| F2 | residual grep | "CMD receives", "CMD gains": no hits | none | PASS |
+| S8 | L1099 (brief part 3) | "rises every period, from 76 to 128 days" | applied | CLOSED |
+| S9 | L1101 (brief part 3) | "(FILED, derived; deck p23)" | applied | CLOSED |
+
+## Q2. Arithmetic on new or moved figures
+
+| Metric | A4 value | Recomputed | Source line | Status |
+|---|---|---|---|---|
+| 30-Sep-2025 assets / liabilities / equity | 388.39 / 94.34 / 294.04 Cr | 38,838.51 / 9,434.16 / 29,404.35 L | res R355 L507, R359 L510 | PASS |
+| H2 FY26 change: liabilities / assets / equity | +33.60 / +2.59 / (31.00) Cr | +3,359.74 / +259.42 / (3,100.32) L | res R355 R356 L507, R359 R362 L510 | PASS |
+| H2 FY26 CFO; H2 op EBITDA | +10.94; 11.32 Cr | 4,160 - 3,065.82 = 1,094.18 L; 2,073.42 - 941.05 = 1,132.37 L | deck R263 L538; res R279 L431 | PASS |
+| H2 FY26 equity-roll gap | 1.14 Cr (294.04 + 4.14 - 34.00 = 264.18 vs 263.04) | 29,404.35 + 413.50 - 3,400.00 = 26,417.85 vs 26,304.03 L: 113.82 L | res L260-261, R205 | PASS |
+| Land, selling group at 6.07% | ~0.73 / ~11.28 Cr; ~Rs 0.94 per Rs 1 | 72.90 / 1,128.10 L; 0.9393 | res R373 L588, R374 L593 | PASS |
+
+## Q3. Findings (iteration 2)
+
+- FACTUAL: none. MISSING: none. CONTRADICTION: none.
+- **S10 (STYLE, no loop).** Rev L436 (Key Notes, "seller stake 6.07%") and L916 (Section C, "seller's disclosed stake 6.07%") keep a short label. It follows Annexure B item 4's own framing (the shareholding "in the entity with whom the agreement is executed", res L593), so it is not wrong. For alignment with F2, read "disclosed counterparty stake 6.07% (CMD look-through)".
+- Record note on A5's own error: my iteration 1 C3 fix text proposed a Q19 bull answer of a filed balance "well below 54.4 Cr". That direction was reversed. A4 wrote "well above", which is correct. No action is needed.
+
+## VERDICT (iteration 2)
+
+**COMPLETE.**
+- C3 and F2 are closed at every site, and S8 and S9 are applied. The touched text introduces no new contradiction, and every new figure recomputes.
+- loop_back_to: none. The only open item is STYLE note S10.
+- PROCEED WITH FLAGS stands. The buyback-funding flag now reads debt-funded on the filed totals.
+
+## STYLE NOTES (iteration 2, logged, no loop)
+
+- S10: rev L436 and L916, "seller stake 6.07%" may read "disclosed counterparty stake 6.07% (CMD look-through)".
+- S8 and S9 applied (rev L1099, L1101). Iteration 0 S1-S7 applied (iteration 1 R3).
+
+```yaml
+stage: A5-adversary
+company: "FAIRCHEMOR"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 2
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "Logged, no A2 loop (carried from iterations 0-1; content already in review; recorded at rev M31): concall entity 'crude oil prices' (call L157); results auditor para 1 (res L159); question at call L291 inside MOD turn T075"
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S10: rev L436 (Key Notes) 'seller stake 6.07%' and L916 (Section C) 'seller's disclosed stake 6.07%' follow Annexure B item 4's own label (res L593); for alignment with F2 read 'disclosed counterparty stake 6.07% (CMD look-through)'"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S10 rev L436, L916: 'disclosed counterparty stake 6.07% (CMD look-through)' in place of 'seller stake 6.07%'"
+  - "S8 and S9 applied (rev L1099 'every period'; L1101 'FILED, derived; deck p23'); iteration 0 S1-S7 applied"
+analyst_note: "Scoped iteration 2 re-audit of the C3, F2, S8 and S9 edits and the text they touched. C3 is closed. Step 5, Q9, Q19, Flag 4, Section C, the Key Notes line, the missing-evidence list, brief part 3 and the YAML now state the buyback as debt-funded on the filed totals. The new figures recompute: 30-Sep-2025 assets 388.39 Cr, liabilities 94.34 Cr, equity 294.04 Cr; H2 CFO +10.94 Cr; equity-roll gap 1.14 Cr. The deck R237 caveat now limits precision only. F2 is closed. Exchange 3, Section C, Q29, Flag 1 and the YAML give the price and the ~Rs 0.94 per Rs 1 to the selling group, with the split and the CMD's own share NOT FOUND. One correction to my own iteration 1 fix text: I proposed a Q19 bull answer of a filed balance 'well below 54.4 Cr'. A4 wrote 'well above', which is right, because a higher base means a smaller H2 rise. One STYLE label remains (S10). PROCEED WITH FLAGS stands."
 ```

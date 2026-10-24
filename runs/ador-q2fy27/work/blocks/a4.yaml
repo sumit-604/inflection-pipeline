@@ -1,0 +1,97 @@
+stage: A4-analyst
+company: "ADOR"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+revision: "correction loops 1 and 2 (A5 F01-F16, S01-S09; L1-F01, L1-S01 to L1-S06)"
+docs_merged: [results, concall, presentation]
+ledger_reconciliation:
+  notes: 22
+  turns: 148
+  slides: 29
+  ids_reviewed: {results: 926, presentation: 471, concall: 293}
+  qa_questions: 47
+  all_reviewed: true
+  a3_findings_incorporated: ["R-A3-01", "R-A3-02", "R-A3-03", "R-A3-04", "R-A3-05", "R-A3-06", "R-A3-07", "R-A3-08", "R-A3-09", "R-A3-10", "R-A3-11", "R-A3-12", "R-A3-13", "R-A3-14", "FN-01", "FN-02", "FN-03", "FN-04", "FN-05", "FN-06", "FN-07", "FN-08", "FN-09", "FN-10", "FN-11", "FN-12", "FN-13", "FN-14", "FN-15", "FN-16", "FN-17", "FN-18", "FN-19", "FN-20", "C-A3-01", "C-A3-02", "C-A3-03", "C-A3-04", "C-A3-05", "C-A3-06", "C-A3-07", "C-A3-08", "C-A3-09", "C-A3-10", "C-A3-11", "C-A3-12", "C-A3-13", "C-A3-14", "C-A3-15", "C-A3-16", "C-A3-17", "C-A3-18", "C-A3-19", "C-A3-20", "C-A3-21"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "none on record (no Notion page, no companies/ADOR.md, no spear; orchestrator live search 23-Oct-2026); PRE-THESIS READ"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap_pct: "+0.97%", s_pat_cr: 26.68, c_pat_cr: 26.94}
+  - {period: "Q1 FY27", gap_pct: "+0.91%", s_pat_cr: 27.35, c_pat_cr: 27.60}
+  - {period: "Q2 FY26", gap_pct: "-2.38%", s_pat_cr: 25.62, c_pat_cr: 25.01}
+  - {period: "H1 FY27", gap_pct: "+0.94%", s_pat_cr: 54.03, c_pat_cr: 54.54}
+  - {period: "H1 FY26", gap_pct: "-4.96%", s_pat_cr: 22.16, c_pat_cr: 21.06}
+  - {period: "FY26", gap_pct: "-0.99%", s_pat_cr: 82.80, c_pat_cr: 81.98}
+questions_for_management:
+  - {q: "H1 FY27 consolidated CFO was Rs (8.45) Cr vs PAT Rs 54.54 Cr. Will FY27 operating cash flow exceed FY27 PAT: yes or no?", from_finding_id: "R-A3-11, FN-18, C-A3-07"}
+  - {q: "Non-MSME creditors fell from Rs 174.49 Cr to Rs 111.19 Cr. Did any major steel supplier shorten credit terms or move to advance payment in H1: yes or no?", from_finding_id: "C-A3-07, R-A3-11"}
+  - {q: "What exact instrument is the Rs 27.71 Cr current borrowing (working capital loan, buyer's credit, devolved LC), held while cash, bank and current investments were Rs 119.53 Cr?", from_finding_id: "C-A3-09, R-A3-11, FN-18"}
+  - {q: "Will the Rs 13.05 Cr special dividend due by 20-Nov-2026 need further borrowing: yes or no?", from_finding_id: "FN-18"}
+  - {q: "Do you expect Q3 FY27 consolidated gross margin at or above 36%: yes or no?", from_finding_id: "C-A3-04, C-A3-01, FN-10, FN-16"}
+  - {q: "Is your price-increase policy set to recover rupee cost or to hold gross margin percent: which one?", from_finding_id: "C-A3-05, FN-10"}
+  - {q: "You put 15-20% of the 440 bps gross margin fall on the growth strategy. In which product line or channel did you cut price for growth?", from_finding_id: "C-A3-06"}
+  - {q: "By which financial year do you target 12-13% EBITDA margin excluding other income?", from_finding_id: "C-A3-02, FN-16"}
+  - {q: "What is the order book, or order-backed inventory, at 30-Sep-2026 as a range?", from_finding_id: "C-A3-08"}
+  - {q: "What is the percent complete of the Flares & Process Equipment turnkey project, and what is the revised completion date?", from_finding_id: "R-A3-06, FN-05, R-A3-01, FN-01"}
+  - {q: "Has the customer levied liquidated damages, and what is the contractual LD cap in rupees vs the Rs 14.99 Cr provision?", from_finding_id: "R-A3-08, FN-05, R-A3-01, FN-01"}
+  - {q: "Apart from the one legacy turnkey project, is the flares business exited: yes or no?", from_finding_id: "C-A3-15"}
+  - {q: "Excluding the Rs 14.47 Cr net one-off gains in H2 FY26, do you expect H2 FY27 EBITDA (ex other income) to exceed H2 FY26: yes or no?", from_finding_id: "FN-07, FN-17"}
+  - {q: "What was M&R (ex Ador Fontech) revenue in H1 FY27 and H1 FY26?", from_finding_id: "C-A3-13"}
+  - {q: "What was consumables tonnage growth in Q2 FY27 YoY?", from_finding_id: "C-A3-12"}
+  - {q: "Is Rs 2,000 Cr revenue by FY29 a stated company target: yes or no?", from_finding_id: "C-A3-11"}
+  - {q: "At what utilisation of the 90,000 MT consumables capacity did H1 FY27 run?", from_finding_id: "C-A3-11, FN-19"}
+  - {q: "State FY27 and FY28 capex separately: is FY27 Rs 30-35 Cr or Rs 60-70 Cr?", from_finding_id: "C-A3-10, FN-19"}
+  - {q: "CWIP rose from Rs 3.16 Cr to Rs 10.29 Cr. Which asset is it and when will it commission?", from_finding_id: "FN-19"}
+  - {q: "Which asset is classified as held for sale inside other current assets of Rs 44.85 Cr, at what carrying value and expected sale date?", from_finding_id: "FN-20"}
+  - {q: "What share of H1 FY27 revenue and of 30-Sep-2026 receivables is from Middle East customers?", from_finding_id: "C-A3-14, FN-08"}
+  - {q: "Which European markets are you in, and what was European revenue in H1 FY27?", from_finding_id: "FN-09, C-A3-14"}
+  - {q: "Is an automation acquisition under term sheet or due diligence today: yes or no?", from_finding_id: "FN-06, C-A3-16"}
+  - {q: "What share of FY26 and H1 FY27 revenue came from direct sales to the top 50-100 customers?", from_finding_id: "C-A3-17"}
+  - {q: "What is the plan for 3DFT: continue, sell, or wind down?", from_finding_id: "R-A3-05, R-A3-02"}
+  - {q: "Which consolidation adjustments make up the Rs 1.15 Cr by which consolidated H1 PAT exceeds standalone plus the 3DFT loss?", from_finding_id: "R-A3-04"}
+  - {q: "How much of the standalone DTA of Rs 18.87 Cr relates to provisions on the 3DFT investment and ICD?", from_finding_id: "R-A3-09"}
+  - {q: "What drove the FY26 consolidated ETR of 28.71% vs 25.17% statutory, and what FY27 ETR do you expect?", from_finding_id: "FN-11, R-A3-09"}
+  - {q: "What incremental annual employee cost do you expect on final Labour Code rules, beyond the Rs 2.75 Cr booked in FY26?", from_finding_id: "R-A3-07"}
+  - {q: "How many ESOP options are outstanding at 30-Sep-2026, at what exercise price, and what is the FY27 ESOP charge?", from_finding_id: "R-A3-10, FN-12"}
+  - {q: "After the Rs 14.12 Cr recovery, is any provided Kuwait receivable still outstanding? Amount?", from_finding_id: "FN-02"}
+  - {q: "On the Q1 FY27 call, what did management say it was 'still hoping' for, and has it happened?", from_finding_id: "C-A3-18"}
+  - {q: "Will you correct the H1 FY26 consolidated cash flow comparative (interest income Rs 4.98 Cr vs Rs 4.18 Cr standalone; transposed FD lines)?", from_finding_id: "R-A3-14"}
+  - {q: "Does H1 FY27 employee cost carry the full-year incentive accrual: yes or no?", from_finding_id: "C-A3-01"}
+monitorables:
+  - {item: "Official concall transcript filed; re-check ASR numbers and the on-track lines", implied_date: "about 30-Oct-2026 [SECONDARY: LODR five-working-day rule]", source_ref: "cc R013; C-A3-11, C-A3-20"}
+  - {item: "Special interim dividend record date", implied_date: "30-Oct-2026", source_ref: "res R017"}
+  - {item: "Special interim dividend paid, Rs 13.05 Cr; treasury or debt funded", implied_date: "on or before 20-Nov-2026", source_ref: "res R018-R019"}
+  - {item: "Q3 FY27 results: gross margin vs Step 8C bands (>=36.0 bull; 35.4 to <36.0 back at FY25; 34.2 to <35.4 beyond reversion; <34.2 bear); opex ratio vs 24.5%; Op EBITDA margin vs 11.22%; flares note 4/5 wording", implied_date: "by 14-Feb-2027 [SECONDARY: Reg 33]", source_ref: "Step 8C; cc R171-R173; C-A3-01; C-A3-15"}
+  - {item: "Q3 FY27 concall: answers to Q1-Q12 and Q34; capex split; prior-call item", implied_date: "Feb-2027 (date ND)", source_ref: "Step 8.5"}
+  - {item: "Momentum through rest of FY27", implied_date: "31-Mar-2027", source_ref: "deck R396 (FN-07)"}
+  - {item: "FY27 capex vs Rs 30-35 Cr and the 60-70 FY27-28 figure", implied_date: "31-Mar-2027", source_ref: "cc R265-R268"}
+  - {item: "Inventory evens out; payables not a trend", implied_date: "31-Mar-2027 balance sheet", source_ref: "cc R150, R153"}
+  - {item: "FY27 audited: CFO vs PAT, payable days vs Mar-25 and Mar-26, net cash, borrowings, H2 opex ratio", implied_date: "by 30-May-2027 [SECONDARY: Reg 33]", source_ref: "res R809, R738; deck R192; Step 5"}
+  - {item: "Turnkey project completion or LD settlement", implied_date: "undated (June 2025 target lapsed)", source_ref: "res R410-R419, R871-R880; C-A3-15"}
+  - {item: "Labour Code final rules and any further charge", implied_date: "undated (on notification)", source_ref: "res R409, R870"}
+  - {item: "3DFT wind-down, sale or further impairment", implied_date: "undated", source_ref: "res R452-R461, R303"}
+  - {item: "Asset held for sale identity and disposal", implied_date: "undated", source_ref: "deck R468"}
+  - {item: "Automation acquisition", implied_date: "undated", source_ref: "deck R403; cc R225"}
+  - {item: "Third European market entry", implied_date: "undated", source_ref: "cc R285"}
+  - {item: "Q1 FY28 results", implied_date: "by 14-Aug-2027 [SECONDARY: Reg 33]", source_ref: "Step 8C"}
+  - {item: "12-13% EBITDA target and Rs 2,000 Cr FY29 aspiration", implied_date: "undated / FY29", source_ref: "cc R084, R155-R161"}
+flags:
+  - "CASH: H1 FY27 consolidated CFO Rs (8.45) Cr vs PAT Rs 54.54 Cr (CFO/PAT -0.15x; 18-month 0.79x); payable days 99.77 (Mar-26) to 65.90 vs 62.70 Mar-25; CCC 73.60 vs 52.71 Mar-26 and 63.71 Mar-25; INDETERMINATE-WITH-DIRECTION caps verdict"
+  - "DEBT AND DIVIDEND: current borrowings Rs 0.27 Cr to Rs 27.71 Cr; Rs 27.00 Cr drawn while Rs 40.03 Cr dividend paid and Rs 119.53 Cr liquid held; Rs 13.05 Cr special dividend due by 20-Nov-2026"
+  - "MARGIN: consolidated gross margin four declines from 38.92% (Q1 FY26) to 34.17%, below FY25 35.4%; Op EBITDA margin 10.94% (-142 bps YoY); call cited only H1 11.2%"
+  - "TARGET: 12-13% EBITDA is an expansion over FY26 11.58%; opex ratio already 24.04% H1, so gross margin is the binding lever; timing risk rests mainly on incentive accrual (cc R253); opex reversion to ~26% would need 38-39% GM (C-A3-01)"
+  - "UNRECONCILED: borrowing explained as LCs/BGs vs fund-based Rs 27.71 Cr line in filing"
+  - "GROWTH CONTEXT: FY26 revenue +1.54%; MD says part of 22.6% is price; H1 ex-onerous +30% sits in Q1; Q2 PAT +7.72%"
+  - "FLARES AMBIGUOUS (C-A3-15): exited 'erstwhile' division with one provided legacy project vs open overdue contract; separator: onerous/LD line and note 4/5 at completion"
+  - "BASE EFFECTS: H1 PAT +159% rests on Rs 27.92 Cr H1 FY26 onerous charge; H2 FY26 base carries +Rs 14.47 Cr net one-off gains"
+  - "DISCLOSURE: order book and steel share withheld; 12 hedge or defensive instances; specificity 0.31 (strict 0.26)"
+  - "EVIDENCE TIER: concall is ASR machine transcript, speakers inferred, no company transcript filed as of 23-Oct-2026 16:45"
+  - "UNNAMED ASSETS: CWIP Rs 3.16 Cr to Rs 10.29 Cr with no named asset; asset held for sale inside other current assets Rs 44.85 Cr"
+  - "DRAFTING: eight filing drafting items (R-A3-13), deck CWIP/ROU transposition (FN-13), consolidated H1 FY26 CF comparative conflict (R-A3-14)"
+  - "PRE-THESIS: no Notion page, no companies/ADOR.md, no spear; SPEAR GATE requires /step1 before /run-pipeline"
+  - "DEFERRED (OR-30): Role 4 Steps 6.5 and 7 and Role 5 Step 8D to /fttcp and Role 1; pillar-relevant facts flagged in Steps 6.5, 7, 8D"
+plain_language_brief_included: true
+analyst_note: "Pre-thesis read; Step 6 and the 2x2 archetype are ND. Revenue grew 22.6% in rupees, but FY26 grew 1.5% and the MD says part is price. The H1 ex-onerous +30% sits in Q1; Q2 profit grew 7.7%. Gross margin fell four times from a Q1 FY26 high and is now below FY25's 35.4%; Q3 against non-overlapping bands (36.0 / 35.4 / 34.2) decides reversion versus slide. The 12-13% EBITDA target is an expansion over FY26, and the 24-25% cost ratio it needs was already reached in H1, so gross margin is the binding lever unless the incentive accrual lags. Cash: CFO turned negative, payables fell 34 days from March 2026, and fund-based debt appeared beside Rs 119.53 Cr of treasury while a dividend was paid. March 2026 was a stretched year-end (payable and receivable days near 63 at March 2025), so three readings remain: supplier squeeze, early-pay choice, or unwind; 18-month CFO/PAT is 0.79x. FY27 audited cash flow separates them. The LC/BG explanation does not match the filing. Flares is ambiguous, not contradicted. All call numbers are ASR-tier."
+review_path: "runs/ador-q2fy27/work/review_ador_q2fy27.md"

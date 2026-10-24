@@ -1,0 +1,75 @@
+stage: A3-forensics
+company: "ADOR"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/ador-q2fy27/work/forensics_ador_q2fy27_concall.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F6", line: "105; 97-98", classification: "FORWARD-SIGNAL", implication: "GM target top equals FY26 37.8%; 12-13% EBITDA needs opex 24-25% of revenue, already 24.0% H1 / 23.2% Q2 vs 26.3% FY25-FY26; GM is the binding lever; separator: H2 FY27 opex ratio at or below 24.5%"}
+  - {id: "A3-02", check: "F6", line: "97-98; 423-424", classification: "FORWARD-SIGNAL", implication: "Undated 12-13% EBITDA target vs Q2 10.9%, H1 11.2%, FY26 11.58%; track quarterly"}
+  - {id: "A3-03", check: "F17", line: "52", classification: "CONFIRMATORY-NEGATIVE", implication: "Call cites H1 margin +30 bps; Q2 margin 10.9% (-140 bps YoY, deck R023/R024) never stated"}
+  - {id: "A3-04", check: "F7", line: "338; 374; 90", classification: "FORWARD-SIGNAL", implication: "Q3 GM recovery is effort not commitment; steel 'not softening'; lean bear on Q3 GM, the binding lever"}
+  - {id: "A3-05", check: "F6", line: "389-390; 396; 499-501", classification: "AMBIGUOUS", implication: "'All passed through' yet GM -223 bps QoQ; rupee pass-through vs GM% preservation unresolved"}
+  - {id: "A3-06", check: "F6", line: "85-86; 134; 139; 207", classification: "FORWARD-SIGNAL", implication: "15-20% of GM dip (about 65-90 bps) is chosen growth cost; persists while 'aggressive' into H2"}
+  - {id: "A3-07", check: "F17", line: "268-269; 277; 286; 292", classification: "AMBIGUOUS", implication: "Payables -Rs 48.2 Cr (-24.9%), H1 OCF -Rs 8.5 Cr; mgmt says 'stabilized', 'not a trend'"}
+  - {id: "A3-08", check: "F17", line: "271-272; 621", classification: "AMBIGUOUS", implication: "Order book is 75-80% of inventory build yet declined as confidential; inventory claim untestable"}
+  - {id: "A3-09", check: "F17", line: "606; 611; 328-329", classification: "AMBIGUOUS", implication: "Rs 27.71 Cr fund-based borrowing explained as LCs/BGs while holding Rs 119.48 Cr cash, bank and investments"}
+  - {id: "A3-10", check: "F6", line: "321-324; 615; 616-618", classification: "AMBIGUOUS", implication: "Capex guidance contradicts itself: FY27 is 30-35 Cr and also a 60-70 Cr step-up year"}
+  - {id: "A3-11", check: "F6", line: "305; 308; 309; 312", classification: "AMBIGUOUS", implication: "Rs 2,000 Cr by FY29 needs 20.6% CAGR; ASR 'very far off track' vs 'fairly on track'; capacity unanswered"}
+  - {id: "A3-12", check: "F6", line: "173-175; 114; 343; 347; 349", classification: "AMBIGUOUS", implication: "Volume growth unrecoverable; growth plan mix-led (60-70% mix); track realisation per tonne"}
+  - {id: "A3-13", check: "F6", line: "249; 572-573; 583", classification: "FORWARD-SIGNAL", implication: "Higher-margin M&R line guided 8-12% vs company 20%+; mix drag on GM, the binding lever for 12-13% EBITDA"}
+  - {id: "A3-14", check: "F17", line: "55; 127; 645", classification: "FORWARD-SIGNAL", implication: "Middle East about 12-17% of revenue; deck says monitor closely (R404); call silent on risk"}
+  - {id: "A3-15", check: "F17", line: "148; 150-151; 154-157; 352", classification: "AMBIGUOUS", implication: "(a) erstwhile division exited (filing R412/R873), one legacy project, Rs 24.82 Cr provided FY26, H1 FY27 nil; vs (b) open contract 15+ months late, provision may fall short; separator: onerous/LD line (filing line 451) at completion; filings favour (a)"}
+  - {id: "A3-16", check: "F7", line: "235; 529-531", classification: "AMBIGUOUS", implication: "M&A language drifts from 'nothing is going to happen' to 'it's going on'; possible live automation deal"}
+  - {id: "A3-17", check: "F6", line: "541-542; 585; 631; 639", classification: "AMBIGUOUS", implication: "Multi-year key-account strategy, 12-24 months of senior hiring (R293), no KPI; analyst sees no movement"}
+  - {id: "A3-18", check: "F17", line: "167-168", classification: "AMBIGUOUS", implication: "Analyst test of a prior-call promise cut off; promise unknown; A4 to ask"}
+  - {id: "A3-19", check: "F14", line: "46", classification: "NEUTRAL-FACT", implication: "Call says 'interim'; filing R438 says special interim for 75th anniversary; do not annualise"}
+  - {id: "A3-20", check: "F17", line: "624-626", classification: "NEUTRAL-FACT", implication: "33 s ASR gap after order-book answer; re-check if official transcript filed"}
+  - {id: "A3-21", check: "F17", line: "78-82; 330-332; 365-366; 477-482", classification: "NEUTRAL-FACT", implication: "REPEAT confirmed: GM asked by 4 of 10 analysts, steel by 4; R139, R105, R166 rejected"}
+forward_signals: ["A3-01", "A3-02", "A3-04", "A3-06", "A3-13", "A3-14"]
+ambiguous: ["A3-05", "A3-07", "A3-08", "A3-09", "A3-10", "A3-11", "A3-12", "A3-15", "A3-16", "A3-17", "A3-18"]
+commitments:
+  - {commitment: "Continue calibrated price increases in a measured manner", implied_date: "ongoing H2 FY27", ref: "line 51 / R047", status_word: "underway"}
+  - {commitment: "EBITDA margin to 12-13% then push upwards", implied_date: "undated; 3-4 year plan (line 88)", ref: "lines 97-98, 423-424 / R084, R199", status_word: "initiated"}
+  - {commitment: "Gross margin to at least 36 to 37-38%", implied_date: "undated", ref: "line 105 / R088", status_word: "initiated"}
+  - {commitment: "Q2 GM dip not the norm; recovery worked on in Q3", implied_date: "Q3 FY27", ref: "lines 335-338 / R171, R173", status_word: "underway"}
+  - {commitment: "Double-digit sustainable growth; remain aggressive into H2", implied_date: "H2 FY27", ref: "lines 114, 119, 205-207 / R093, R096, R128", status_word: "underway"}
+  - {commitment: "Inventory will even out", implied_date: "FY27 year-end (implied)", ref: "line 277 / R150", status_word: "underway"}
+  - {commitment: "Payables stabilized, not a trend", implied_date: "coming months", ref: "lines 286, 292 / R152, R153", status_word: "completed"}
+  - {commitment: "Rs 2,000 Cr revenue aspiration fairly on track", implied_date: "FY29 (ASR 'a 529')", ref: "lines 305-316 / R155-R161", status_word: "underway"}
+  - {commitment: "Normal capex Rs 35-40 Cr/yr; Rs 60-70 Cr for 1-2 years", implied_date: "next 2-3 years", ref: "lines 318-324 / R162-R165", status_word: "initiated"}
+  - {commitment: "FY27 capex about Rs 30-35 Cr", implied_date: "FY27", ref: "line 615 / R265, R266", status_word: "underway"}
+  - {commitment: "Capex Rs 60-70 Cr in FY27-FY28 then reduce", implied_date: "FY27-FY28", ref: "lines 616-619 / R267-R269", status_word: "initiated"}
+  - {commitment: "No major debt or equity dilution for capex", implied_date: "capex period", ref: "lines 328-329 / R167, R168", status_word: "initiated"}
+  - {commitment: "New consumables line per earlier capex plan", implied_date: "undated", ref: "lines 65-66 / R065, R066", status_word: "underway"}
+  - {commitment: "Grow exports; Europe; third European market; FTA markets", implied_date: "undated", ref: "lines 56, 141, 643, 646 / R056, R104, R285, R287", status_word: "underway"}
+  - {commitment: "Direct engagement with top 50-100 customers", implied_date: "undated", ref: "lines 548-550 / R232", status_word: "underway"}
+  - {commitment: "M&R (ex Fontech) growth 8-12%", implied_date: "undated", ref: "line 583 / R247", status_word: "initiated"}
+  - {commitment: "Explore automation acquisitions, no commitment", implied_date: "undated", ref: "lines 235-239, 529-531 / R138, R225", status_word: "initiated"}
+  - {commitment: "Shipbuilding as incremental growth", implied_date: "undated", ref: "line 624 / R273", status_word: "initiated"}
+  - {commitment: "Automation margins to reach equipment/consumables level", implied_date: "undated", ref: "line 255 / R143", status_word: "initiated"}
+  - {commitment: "Flares legacy turnkey project completion (division exited, 'erstwhile'; call: 'pretty much done')", implied_date: "June 2025 target missed; no new date", ref: "line 148 / R106; filing R412, R873", status_word: "underway"}
+  - {commitment: "Weldors/automation impact takes longer than a quarter or two", implied_date: "undated", ref: "lines 230-231 / R292, R135", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Gross margin is the call's centre. Four of ten analysts pressed it, and no Q3 number came back. It is also the binding lever for the 12-13% EBITDA target. Operating costs already fell to 24.0% of revenue in H1 FY27 and 23.2% in Q2, from 26.3% in FY25 and FY26. That is the ratio the target needs. So the target mainly needs GM back at 36-38%, and three things work against that: steel is not softening, part of the dip is a chosen growth cost kept into H2, and the higher-margin M&R line grows at half the company rate. If the cost ratio reverts toward 26%, the target needs GM above the FY26 peak. The working-capital answers are the weakest part of the call. Payables fell Rs 48 Cr, H1 operating cash flow was negative, and Rs 27.7 Cr of fund-based debt appeared beside about Rs 119 Cr of liquidity. Flares is most likely an exited division with one provided legacy project. The test is whether a further charge appears at completion. All call numbers are ASR-tier."

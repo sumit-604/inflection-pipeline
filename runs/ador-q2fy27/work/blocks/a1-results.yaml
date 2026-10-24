@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "ADOR"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 12
+formfeed_count: 12
+line_count: 678
+unit_convention: "Lakhs (INR in lakhs)"
+conversion_factor_to_cr: "x0.01"
+text_layer_present: false   # pdffonts: only non-embedded Type1 fonts; scan with unreliable OCR layer
+extraction_mode: scan-ocr
+render_candidates: []
+rendered_pages: ["1-12: whole document rendered (scan, weak OCR layer); numbers verified on image crops for pp 3,4,5,6,9,10,11,12 and by column arithmetic"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (quarter and half year ended 30-Sep-2026)"
+fulltext_path: "runs/ador-q2fy27/extracted/ador-results-q2fy27-fulltext.md"
+structured_path: "runs/ador-q2fy27/extracted/ador-results-q2fy27-structured.md"
+structured_counts:
+  number: 786
+  entity: 26
+  forward: 8
+  date: 43
+  qualifier: 63
+structured_id_range: "R001-R926"
+gate_a1: pass
+gap_note: ""

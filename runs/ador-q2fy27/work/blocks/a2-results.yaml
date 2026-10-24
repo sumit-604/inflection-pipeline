@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "ADOR"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/ador-q2fy27/work/ledger_results_ador_q2fy27.md"
+counts:
+  notes: 22
+  line_items: 243
+  zero_standing: 34
+  agenda_items: 3
+  auditor_paras: 12
+  entities: 26
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, UNREVIEWED_ENTITY, FORWARD_LAPSED_TARGET, RESTATED, OCR_CONFLICT, FY26_COLUMN_ONLY, A1_OCR, MISSING_FROM_STRUCTURED]
+ids_in_structured: 926
+ids_referenced: 926
+orphan_ids: []
+missing_from_structured: ["M01 page 1 line 24 NSE symbol ADOR"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "zero_standing counts 34 line items (91 dash cells). Consolidated NCI lines are all dash though 3DFT is wholly owned. 3DFT was not reviewed by BSR (other auditor, Other Matter para): assets 299, H1 revenue 137, H1 loss (64) lakhs. Turnkey target June 2025 has lapsed yet the commitment language persists in notes 4/5. Dividend R893 OCR reads 27.50 and R895 reads 210 against Rs 7.50 on page 1 and R434 (75% of FV 10). R744 corrected by A1 to 11,119. Exceptional-items tables fill only the FY26 column (standalone total 831 = 556+275, R916). No EoM or Going Concern. No prior ledger, so ENTITY_CHANGE untested."

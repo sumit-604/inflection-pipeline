@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "ADOR"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 29
+formfeed_count: 29
+line_count: 833
+unit_convention: "Crores (Rs Crs as printed)"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []       # no zero-char pages; pages 4 and 25 are divider slides with a heading only
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/ador-q2fy27/extracted/ador-presentation-q2fy27-fulltext.md"
+structured_path: "runs/ador-q2fy27/extracted/ador-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 316
+  entity: 79
+  forward: 24
+  date: 34
+  qualifier: 18
+structured_id_range: "R001-R471"
+gate_a1: pass
+gap_note: ""

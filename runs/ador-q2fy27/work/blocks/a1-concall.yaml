@@ -1,0 +1,33 @@
+stage: A1-extractor
+company: "ADOR"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 9              # 5-minute chunks (coverage unit); not a PDF
+formfeed_count: 0
+line_count: 663
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true   # plain text input, N/A
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100     # 635 of 635 source lines, 9 of 9 chunks; 33s ASR gap [39:57]-[40:30] logged
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/ador-q2fy27/extracted/ador-concall-q2fy27-fulltext.md"
+structured_path: "runs/ador-q2fy27/extracted/ador-concall-q2fy27-structured.md"
+structured_counts:
+  number: 61
+  entity: 34
+  forward: 35
+  date: 13
+  qualifier: 7
+  claim: 96
+  question: 47
+structured_id_range: "R001-R293"
+asr_unclear_rows: 66
+speaker_turns: 148
+analyst_questioners: 10
+gate_a1: pass
+gap_note: ""

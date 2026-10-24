@@ -1,0 +1,62 @@
+stage: A3-forensics
+company: "ADOR"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/ador-q2fy27/work/forensics_ador_q2fy27_presentation.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: PASS
+  F12: N.A.
+  F13: PASS
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FN-01", check: "F1", line: "796, 824", classification: "FORWARD-SIGNAL", implication: "Onerous/LD line live while project open; next entry is charge or write-back; FY26 charge already cut 27.92 to 24.82"}
+  - {id: "FN-02", check: "F1", line: "797, 831-832", classification: "AMBIGUOUS", implication: "Residual provided Kuwait receivable NOT FOUND; further recovery gain or write-off possible"}
+  - {id: "FN-03", check: "F1", line: "804", classification: "NEUTRAL-FACT", implication: "Exceptional losses FY25 -11.4, FY26 -2.8; nature in filing note 4"}
+  - {id: "FN-04", check: "F1", line: "555, 556, 568, 569, 572", classification: "NEUTRAL-FACT", implication: "Template zero lines; NC borrowings 0.0 as debt moved to current"}
+  - {id: "FN-05", check: "F6", line: "815-816, 818-819, 824", classification: "FORWARD-SIGNAL", implication: "Flares project 15+ months past June 2025 target; Rs 15.0 Cr potential LDs = 27.5% of H1 PAT; cash LD or write-back at close"}
+  - {id: "FN-06", check: "F6", line: "115-116", classification: "FORWARD-SIGNAL", implication: "Undated automation M&A intent with negative H1 OCF and new 27.7 Cr debt"}
+  - {id: "FN-07", check: "F6", line: "118", classification: "FORWARD-SIGNAL", implication: "FY27 momentum claim testable by 31-Mar-2027; H2 FY26 base carries +14.47 Cr net one-off gains"}
+  - {id: "FN-08", check: "F7", line: "105-107", classification: "AMBIGUOUS", implication: "Hedge on primary export market (Middle East); export share NOT FOUND"}
+  - {id: "FN-09", check: "F7", line: "107", classification: "AMBIGUOUS", implication: "Europe exploration undated; growth vs Middle East de-risking"}
+  - {id: "FN-10", check: "F7", line: "101-103", classification: "FORWARD-SIGNAL", implication: "Calibrated (partial) pass-through after -440 bps Q2 gross margin; H2 margin hinges on lag"}
+  - {id: "FN-11", check: "F8", line: "805, 807", classification: "AMBIGUOUS", implication: "ETR 25.6/28.7/30.6% vs 25.17%; reversion to FY26 rate costs ~2.3 Cr on H1-equivalent PAT"}
+  - {id: "FN-12", check: "F10", line: "133, 551", classification: "NEUTRAL-FACT", implication: "Paid-up flat; filing diluted spread appears from H2 FY26 (15.48/15.43 Q2); A4 ESOP cross-check"}
+  - {id: "FN-13", check: "F14", line: "552-553", classification: "NEUTRAL-FACT", implication: "Sep-26 CWIP/ROU transposed vs filing (CWIP 10.29, ROU 12.56); use filing values"}
+  - {id: "FN-14", check: "F14", line: "582, 592", classification: "NEUTRAL-FACT", implication: "Net Decrease label on increases; first CF column is H1 FY27 per filing R809"}
+  - {id: "FN-15", check: "F14", line: "391-393, 787, 98, 102", classification: "NEUTRAL-FACT", implication: "Stale 2011-12 award, unlabelled audit status, upward rounding; drafting-care data point"}
+  - {id: "FN-16", check: "F16", line: "102, 129, 134-136", classification: "FORWARD-SIGNAL", implication: "H1 'held steady' masks Q2 EBITDA margin 10.9% (-140 bps YoY, -60 bps QoQ); exit-rate squeeze"}
+  - {id: "FN-17", check: "F16", line: "153, 156", classification: "FORWARD-SIGNAL", implication: "+159% H1 PAT is base effect of 27.92 Cr onerous charge; underlying ~+30% [INFERENCE]; H2 base flattered"}
+  - {id: "FN-18", check: "F16", line: "562, 564, 567, 586-589", classification: "AMBIGUOUS", implication: "OCF -8.5 vs PAT 54.5; payables -48.2, inventory +25.2; dividend 40.03 partly debt-funded; deck silent"}
+  - {id: "FN-19", check: "F16", line: "552", classification: "AMBIGUOUS", implication: "CWIP 3.2 to 10.3 in H1 with no capex plan or capacity addition on deck"}
+  - {id: "FN-20", check: "F16", line: "573-574", classification: "AMBIGUOUS", implication: "Other current assets +18.0 incl. held-for-sale asset; asset, value, timing NOT FOUND"}
+forward_signals: ["FN-01", "FN-05", "FN-06", "FN-07", "FN-10", "FN-16", "FN-17"]
+ambiguous: ["FN-02", "FN-08", "FN-09", "FN-11", "FN-18", "FN-19", "FN-20"]
+commitments:
+  - {commitment: "Flares & Process Equipment turnkey project completion", implied_date: "June 2025 (missed)", ref: "slide 25 line 815-816, 824", status_word: "underway"}
+  - {commitment: "Interim dividend Rs 7.50/share", implied_date: "record 30-Oct-2026; pay by 20-Nov-2026", ref: "slide 4 line 117; filing R017-R018", status_word: "completed"}
+  - {commitment: "Carry momentum through rest of FY27", implied_date: "31-Mar-2027", ref: "slide 4 line 118", status_word: "initiated"}
+  - {commitment: "Evaluate acquisitions in automation", implied_date: "undated", ref: "slide 4 line 115-116", status_word: "initiated"}
+  - {commitment: "Expand distributor network; explore Europe", implied_date: "undated", ref: "slide 4 line 107", status_word: "initiated"}
+  - {commitment: "Calibrated pricing actions vs input inflation", implied_date: "H2 FY27", ref: "slide 4 line 102-103", status_word: "underway"}
+  - {commitment: "Scale tech-led equipment, WelDoS, robotics", implied_date: "undated", ref: "slide 4 line 108-116", status_word: "underway"}
+  - {commitment: "Axbot 101 cobot launch", implied_date: "done", ref: "slide 17 line 363", status_word: "completed"}
+  - {commitment: "Ador Fontech M&R Division merger", implied_date: "2024", ref: "slide 8 line 696-698", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Headline numbers tie to the consolidated filing, except a Sep-26 CWIP/ROU transposition (FN-13). The deck's growth story rests on two framing choices. First, H1 PAT +159% is a base effect: H1 FY26 absorbed a 27.92 Cr onerous charge, while H1 EBITDA growth (+26%) is stated on a pre-onerous base. Underlying PAT growth is about +30%. Second, 'H1 margin held steady' hides a Q2 exit rate of 10.9%, down 60 bps QoQ and 140 bps YoY, as steel inflation outran 'calibrated' pricing. The cash side is the sharper signal. H1 OCF was -8.5 against PAT 54.5. Non-MSME payables fell 36%. The 40 Cr dividend was partly funded by 27 Cr of new short-term debt. The deck says nothing on it. H2 FY26 carried +14.5 Cr of net one-off gains, so H2 FY27 YoY profit optics start adverse. The open Flares project (15 Cr potential LDs, 15+ months late) is the swing item in either direction. Cross-deck F16 diffs are not testable on a first run."

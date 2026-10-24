@@ -1,0 +1,29 @@
+stage: A5-adversary
+company: "ADOR"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L2-S01: Step 8C Bear band 'below 34.2%: worse than Q2 FY27' (review l.477); Q2 unrounded is 34.17%, so a reading equal to Q2 lands in Bear; use 34.17% or 'at or below Q2's 34.2% rounded'"
+    - "L2-S02: results ledger l.24 cites R901-R926 for standalone note 3 dashes; standalone range is R901-R915 (R917-R926 are consolidated note 4)"
+    - "Carried A1/A2 housekeeping, no A4 dependency: L1-S03 'blank' wording at res l.170; L1-S04 fulltext header page list at res l.12; M01 Company Symbol row (res l.24)"
+loop_back_to: ""
+gap: ""
+style_notes: ["L2-S01 Bear band boundary: use 34.17% or 'at or below Q2's rounded 34.2%' (review l.477)", "L2-S02 ledger l.24 range should read R901-R915", "Carried A1 housekeeping: res l.170 'blank' wording, res l.12 header page 6, M01 Company Symbol row"]
+analyst_note: "Loop 2 closed both loop-1 findings. The Step 8C bands no longer overlap, and every consumer of them (monitorable 4, forward map, YAML monitorable) points to the same four bands. The consolidated note 4 dash cells are rowed (R917-R926), and the zero-standing count now ties at 91 cells over 34 lines. No new derived number was introduced, so the loop-0 and loop-1 arithmetic stands. Across the three loops the review gained the FY25 baseline, the March 2025 working-capital days, the Q1 concentration of H1 growth, the corrected margin-target framing and a two-reading flare item. A4's protocol verdict and cash classification are unchanged. The remaining notes are cosmetic or upstream housekeeping and do not loop."

@@ -1,0 +1,45 @@
+stage: A3-forensics
+company: "CYBERTECH"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/cybertech-q2fy27/work/forensics_presentation_cybertech_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "A3P-01", check: "F1", line: "L327-L328 (RES L118)", classification: "AMBIGUOUS", implication: "Remeasurement nil Q1/Q2FY27 after (1.7) mn Q2FY26; interim actuarial valuation may have stopped, Q4 OCI lump risk"}
+  - {id: "A3P-02", check: "F8", line: "L323 (RES L114)", classification: "NEUTRAL-FACT", implication: "Earlier-year tax 0.7 mn Q1FY27, 0.6% of PBT, immaterial"}
+  - {id: "A3P-03", check: "F8", line: "L321-L322 (RES L174)", classification: "AMBIGUOUS", implication: "Current-tax rate 20.9% H1FY27 vs 24.0% H1FY26; DTL build 235.72->326.47 lakh; cash tax step-up on reversal"}
+  - {id: "A3P-04", check: "F9", line: "L330, L332 vs RES L121, L123", classification: "NEUTRAL-FACT", implication: "Deck Q2FY26 FCTR (2.9) vs filing +29.0 mn; deck TCI 114.3 does not foot to own lines; filing governs"}
+  - {id: "A3P-05", check: "F10", line: "L333, L336-L337 (RES L234, L235, L432)", classification: "NEUTRAL-FACT", implication: "Paid-up 311.3->302.8->303.8 = buyback 1,498.00 lakh (8.5 lakh shares) + 1 lakh ESOP shares; EPS +2.9% YoY vs PAT +0.3% is buyback accretion; deck silent"}
+  - {id: "A3P-06", check: "F12", line: "L247", classification: "FORWARD-SIGNAL", implication: "State/Local Govt implied rev 75.3->110.0 mn QoQ (~72% of increment); Technology +1.1% QoQ; growth engine moved to public sector"}
+  - {id: "A3P-07", check: "F14", line: "L311, L313, L329-L331 (RES L102, L104, L122)", classification: "NEUTRAL-FACT", implication: "Caption contradicts heading; legacy cost and total-revenue labels differ from filing"}
+  - {id: "A3P-08", check: "F14", line: "L147 (PR L129, RES L96)", classification: "NEUTRAL-FACT", implication: "Deck founding 1990 vs PR 1995 and CIN 1995"}
+  - {id: "A3P-09", check: "F14", line: "L81-L82, L343, L41 (PR L75, L83-L84)", classification: "NEUTRAL-FACT", implication: "Partner list omits AWS named in PR; copyright 2020; India-centric safe harbor on 99% US revenue"}
+  - {id: "A3P-10", check: "F16", line: "L181, L223, L309-L319 (RES L212)", classification: "FORWARD-SIGNAL", implication: "Reported EBITDA includes other income; core EBITDA ex-OI 46.2->57.2->80.9 mn (7.9%->8.4%->11.0%); OI share of PBT 69.7%->41.0%"}
+  - {id: "A3P-11", check: "F16", line: "L254, L255, L261", classification: "AMBIGUOUS", implication: "Top client 55% / top-3 68% / 136 projects with no period basis; concentration trend unassessable"}
+  - {id: "A3P-12", check: "F16", line: "L247 vs PR L116-L118", classification: "AMBIGUOUS", implication: "PR 'strong momentum' for Technology vs deck share 73->68% and +1.1% QoQ implied revenue"}
+forward_signals: ["A3P-06", "A3P-10"]
+ambiguous: ["A3P-01", "A3P-03", "A3P-11", "A3P-12"]
+commitments: []
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck's headline weakness (EBITDA -7.8% QoQ, PBT -8.5%) is an other-income effect. Mutual-fund fair-value gains collapsed (RES L212). Core operating EBITDA rose 41% QoQ to 11.0% of operating revenue. The quality question is whether that core step-up recurs. Read it with A3P-06: government work supplied about 72% of the QoQ increment, and such work tends to be lumpy. Technology, which likely holds the 55% client, was flat. EPS growth includes buyback accretion (A3P-05). No checklist item covers two pointers for A4 and the results-filing A3. (1) Finance costs doubled YoY (L315) while borrowings went to nil (RES L178). (2) Equity roll-forward: 21,230.00 + TCI 2,008.37 + ESOP 47.60 - buyback 1,498.00 = 21,787.97 lakh vs 20,572.73 reported (RES L168). The 1,215 lakh gap has no deck explanation. One candidate is a declared but unpaid dividend in current other financial liabilities (124.47 to 1,484.90 lakh, RES L183)."

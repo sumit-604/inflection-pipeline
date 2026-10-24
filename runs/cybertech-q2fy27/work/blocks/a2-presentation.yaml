@@ -1,0 +1,24 @@
+stage: A2-enumerator
+company: "CYBERTECH"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/cybertech-q2fy27/work/ledger_presentation_cybertech_q2fy27.md"
+counts:
+  slides: 16
+  slide_numbers: 205
+  line_items: 22
+  zero_standing: 13
+  footnotes: 18
+  entities: 78
+  dates: 24
+  forward: 1
+flags_raised: [ZERO_STANDING, ZERO_STANDING-NEAR, RESTATED, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 326
+ids_referenced: 326
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "All header counts match grep and sweep. ZERO_STANDING 13 matches A1; R256 prints (0.0) on the tax-adjustment line, a rounded zero, tagged ZERO_STANDING-NEAR and left out of the 13. Line L331 (income tax on reclassifiable OCI items) is nil in all five periods; its label duplicates L328 as printed. R164 and R165 (top-client share, project count) state no period: FOOTNOTE_UNRESOLVED. Slide 12 margins tie to total revenue (R100), not operating revenue. Slide 15 is anchored to the image-verified block. No prior ledger, so DROPPED_SLIDE and ENTITY_CHANGE could not be assessed. No MISSING_FROM_STRUCTURED rows."

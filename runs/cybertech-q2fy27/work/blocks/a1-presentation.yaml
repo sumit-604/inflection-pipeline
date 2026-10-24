@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "CYBERTECH"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 16
+formfeed_count: 16
+line_count: 348
+unit_convention: "Millions (INR Million)"
+conversion_factor_to_cr: "x0.1 (EPS in Rs, not converted)"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []   # no zero-character pages; pages 1, 3, 4, 10 low-text dividers, skipped: no data
+rendered_pages: [12 (chart label alignment check), 13 (stacked-bar series mapping), 15 (P&L table; text layer row-shifted, image governs, verified block appended)]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/cybertech-q2fy27/extracted/cybertech-presentation-q2fy27-fulltext.md"
+structured_path: "runs/cybertech-q2fy27/extracted/cybertech-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 205
+  entity: 78   # 73 individual + 5 ENTITY-SUMMARY
+  forward: 1
+  date: 24
+  qualifier: 18
+structured_id_range: "R001-R326"
+gate_a1: pass
+gap_note: ""

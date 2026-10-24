@@ -3,7 +3,7 @@ company: "CYBERTECH"
 quarter: "q2fy27"
 model: "claude-opus-5-5"
 status: complete
-verdict: INCOMPLETE
+verdict: COMPLETE
 plain_language_brief:
   narrative: present
   sector: present
@@ -13,34 +13,22 @@ plain_language_brief:
 coverage:
   orphan_rows: []
   missing_from_ledger: []
-arithmetic_mismatches:
-  - {metric: "Parent (standalone) net cash 31-Mar-2026 and H1 fall", a4_value: "53.14 Cr; fall 27.38 Cr (review L469, L472, flag L873)", recomputed: "60.15 Cr; fall 34.39 Cr on the review's own 5A basis (includes 701.16 lakh non-current treasury investment inside L329); perimeter net cash 109.44 to 142.17 Cr", source_line: "results L338+L339+L336+L329(701.16 portion)-L359; roll-forward L336 333.96+701.16+30.00(L406)-376.89(L407-L390)+18.69(L391)=706.92"}
+arithmetic_mismatches: []
 surviving_bear_counters:
-  - {claim: "Revenue step looks real; currency a weak explanation for Q1 (review L377, L737, L753)", counter: "H2 FY26 FCTR +553.66 lakh (FY26 866.80 less H1 FY26 313.14) and Sep-25 to Sep-26 FCTR +746.58 lakh show the rupee weakened across both comparison bases; Q1 closing-rate FCTR cannot exclude an average-rate lift; constant currency ND", source_line: "results L121; D L246", type: "MISSING"}
-  - {claim: "Core PBT ex-OI nearly doubled; Op EBITDA margin +318 bps (review L323, L732)", counter: "QoQ incremental Op EBITDA margin 48.9% (236.98/484.84 lakh); delivery cost +4.7% vs revenue +7.1%; all gain outside the parent; already incorporated at review L349, L377, L737", source_line: "results L100-L110, L121", type: "STYLE"}
-  - {claim: "Buyback purchase economics (review L111-L115)", counter: "Rs 176.24 a share; 18.0x FY26 EPS; ex-cash 34.9x FY26 core, 27.7x Q1 FY27 run-rate, 18.1x Q2 run-rate; already incorporated; add Q1 multiple", source_line: "results L124, L127, L235, L101, L110", type: "STYLE"}
+  - {claim: "Core PBT ex-OI nearly doubled; Op EBITDA margin +318 bps (review L336, L752)", counter: "one quarter old; 48.9% QoQ incremental margin; gain outside the parent; FCTR +5.54 Cr H2 FY26, +7.47 Cr Sep-25 to Sep-26; already incorporated at L362, L391, L757-L758", source_line: "results L100-L110, L121", type: "STYLE"}
+  - {claim: "Number integrity is high (review L558)", counter: "deck industry shares sum to 101% in Q1 and Q2 FY27 and deck Q2 FY26 TCI does not foot; both already in the review (L108, L267); not named in the L558 document-control list", source_line: "D L247, D L330, D L332", type: "STYLE"}
 findings_by_type:
-  factual:
-    - "F-1: review L286 and L763 say the parent must bill part of the 55% client directly because 40.31 Cr exceeds the perimeter's 29.20 Cr; the perimeter is net of parent intercompany revenue (review L8, L236), so subsidiary external billing = 29.20 Cr + intercompany (ND); restate as two readings"
-  missing:
-    - "M-1: H2 FY26 FCTR +5.54 Cr and cumulative +7.47 Cr (L121) currency counter to 'revenue step looks real' absent; graft into Step 3 L377, 2C item 3 L349, brief L737, sector L753"
-  contradiction:
-    - "C-1: Step 5A net cash includes non-current investments (L147); Step 5B omits the parent's 701.16 lakh non-current treasury investment (L329); parent March net cash 60.15 Cr not 53.14 Cr, H1 fall 34.39 Cr not 27.38 Cr (review L469, L472, L873)"
-  style: ["S-1", "S-2", "S-3", "S-4", "S-5", "S-6", "S-7", "S-8", "S-9", "S-10", "S-11", "S-12", "S-13"]
-loop_back_to: "A4"
-gap: "F-1 FACTUAL: correct top-client billing inference (review L286, L763). C-1 CONTRADICTION: align parent net-cash basis (review L469, L472, L873: 60.15 Cr March, fall 34.39 Cr). M-1 MISSING: graft H2 FY26 FCTR currency counter into Step 3 L377, 2C L349, brief L737, sector L753."
+  factual: []
+  missing: []
+  contradiction: []
+  style: ["S-1", "S-2", "S-3", "S-14", "S-15", "S-16"]
+loop_back_to: ""
+gap: ""
 style_notes:
-  - "S-1 admin identifiers without rows (L62, L96, L252, L282; PR L26, L30); no effect"
-  - "S-2 L33 subject-line date has no own row (restates R673)"
-  - "S-3 blank-value rows R121, R122, R394, R395 contradict A1 header convention"
-  - "S-4 list uncited ledger line groups as 'reviewed, no finding'"
-  - "S-5 deck repeats OCI caption error D L331 / R284; name beside A3-17"
-  - "S-6 SA delivery cost 35.14 Cr +8.8% (not 35.15, +8.9%); OI QoQ fall 3.45 Cr (not 3.46)"
-  - "S-7 Government share of QoQ increment 71.5% unrounded, band ~57-86%; deck shares sum to 101.0% in Q1 and Q2 FY27"
-  - "S-8 'cash tax' is the current-tax charge; taxes paid 17.5% of H1 PBT (L221)"
-  - "S-9 'approve-then-sign' order is an inference; approval time not filed"
-  - "S-10 add 48.9% QoQ incremental margin to claim-1 bear reading"
-  - "S-11 add standalone liability tie 1,217.83 vs 1,215.22 lakh (dividend reading, CFO integrity)"
-  - "S-12 add ~27.7x Q1 run-rate ex-cash buyback multiple"
-  - "S-13 give event-driven forward-map rows a check date"
-analyst_note: "Audits 0 and 1 pass: all five brief parts present; fresh counts match all three ledgers (739, 141, 326 IDs; 8 notes, 20 slides). Coverage of uncited subtotal and zero-standing line groups rests on A4's explicit blanket attestation; each was tested and none holds a finding, so no orphan is declared. Arithmetic recomputes within rounding everywhere except the standalone net-cash basis (C-1). The roll-forward 333.96 + 701.16 + 30.00 - 376.89 + 18.69 = 706.92 lakh proves the parent held the 701.16 treasury investment at March. F-1 is a logic error in the brief, not arithmetic: the perimeter figure is net of intercompany. M-1: A4 tests currency with a closing-rate FCTR while revenue is translated at average rates; H2 FY26 FCTR (+5.54 Cr) was never derived. A tested bear that failed: the 12.15 Cr liability was kept out of CFO (standalone tie within 2.61 lakh), so CFO/PAT 1.56x stands and the dividend reading firms. None of the three loop findings changes the PROCEED WITH FLAGS verdict."
+  - "S-1 (carried) admin identifiers without rows (L62, L96, L252, L282; PR L26, L30); A1/A2 capture, no A4 change"
+  - "S-2 (carried) L33 subject-line date has no own row (restates R673)"
+  - "S-3 (carried) blank-value rows R121, R122, R394, R395 contradict A1 header convention"
+  - "S-14 'kept out of CFO' tagged [INFERENCE] at review L471 but untagged at L500, L669, L897, L915"
+  - "S-15 S-7 partly applied: band 57-86% in Step 1D L283, brief L756 still 'about 72%' without band"
+  - "S-16 name the deck's 101% industry-share sum (L267) in the document-control list L558 and flag L907"
+analyst_note: "Iteration 1 re-audit of the A4 loop-1 rewrite. C-1 closed: parent net cash restated on the 5A basis (60.15 Cr March, 25.76 Cr September, fall 34.39 Cr); the roll-forward and perimeter figures recompute exactly, and the new 91.0% current-plus-non-current share is right (10,428.51 / 11,463.63). F-1 closed: two readings on who bills the 55% client, consistent with perimeter revenue being net of intercompany; QfM 27 added. M-1 closed: H2 FY26 FCTR +553.66 lakh and +746.58 lakh over the year carried through Step 3, 2C, 1C, the brief, the sector line, QfM 5 and the flags, with the closing-rate caveat. Leftover-text grep found only change-log references. All new figures (48.9%, 71.5% with band, 17.5% taxes paid, 27.7x buyback, liability tie) recompute. Three STYLE notes only: the CFO-exclusion inference is untagged in four places, the brief's 72% lacks its band, and the 101% share sum is missing from the document-control list. Inputs unchanged since loop 0, so loop-0 coverage counts stand."

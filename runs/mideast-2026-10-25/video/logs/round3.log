@@ -1,0 +1,24 @@
+sfx events: 64
+[long] frames 5857, text elements 92
+1 text outside frame:        0
+2 text overlaps:             0
+3 text held too briefly:     0
+6 runtime/render errors:     0 []
+
+render errors: 0 []
+dead air hits: 0
+compliance hits: 0
+[long] contrast: 4228 text runs sampled (every 10th frame), worst 5th-percentile ratio 4.72, runs below 4.5: 0
+sfx events: 14
+[short] frames 1098, text elements 20
+1 text outside frame:        0
+2 text overlaps:             0
+3 text held too briefly:     0
+6 runtime/render errors:     0 []
+
+render errors: 0 []
+dead air hits: 0
+compliance hits: 0
+[short] contrast: 937 text runs sampled (every 5th frame), worst 5th-percentile ratio 4.72, runs below 4.5: 0
+| 3 | fixed scene-boundary frame bug (first frame of a scene showed the previous scene; edges now whole frames + boundary check in counter 6); caption timing: forward solver, pages no longer cross cuts unless the hold rule forces it | LONG outside=0 overlap=0 caption_hold=0 deadair=0 compliance=0 errors=0 | SHORT outside=0 overlap=0 caption_hold=0 deadair=0 compliance=0 errors=0 | contrast fails long/short 0/0 |
+round took 521s

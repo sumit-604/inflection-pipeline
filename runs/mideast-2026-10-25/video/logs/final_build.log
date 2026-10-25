@@ -1,0 +1,101 @@
+assets ready in /work/repo/runs/mideast-2026-10-25/video/assets
+31 countries, 18075 bytes; map units 1044.1 x 960.0
+65 sentence WAVs, 181.7s of speech in total
+11 sentence WAVs, 33.3s of speech in total
+long: total 195.23s = 5857 frames (3:15.23); 25 caption pages
+  scene  1    0.00-  10.67 voice    0.20-  10.44
+  scene  2   10.67-  28.17 voice   10.87-  27.93
+  scene  3   28.17-  49.63 voice   28.37-  49.43
+  scene  4   49.63-  68.33 voice   49.83-  68.13
+  scene  5   68.33-  82.13 voice   68.53-  81.90
+  scene  6   82.13-  97.70 voice   82.33-  97.47
+  scene  7   97.70- 117.03 voice   97.90- 116.80
+  scene  8  117.03- 133.33 voice  117.23- 133.10
+  scene  9  133.33- 153.07 voice  133.53- 152.85
+  scene 10  153.07- 172.17 voice  153.27- 171.95
+  scene 11  172.17- 185.87 voice  172.37- 185.66
+  scene 12  185.87- 195.23 voice  186.07- 195.02
+  caption shift vs speech: min -0.70s max 0.85s; pages shorter than the hold rule: 0
+short: total 36.60s = 1098 frames (0:36.60); 9 caption pages
+  scene  1    0.00-   4.63 voice    0.20-   4.43
+  scene  2    4.63-  12.00 voice    4.83-  11.79
+  scene  3   12.00-  17.87 voice   12.20-  17.64
+  scene  4   17.87-  26.97 voice   18.07-  26.75
+  scene  5   26.97-  33.33 voice   27.17-  33.12
+  scene  6   33.33-  36.60 voice   33.53-  36.38
+  caption shift vs speech: min -0.16s max 0.45s; pages shorter than the hold rule: 0
+wrote captions.txt 53 lines
+wrote captions_short.txt 15 lines
+sfx events: 64
+[long] frames 5857, text elements 92
+1 text outside frame:        0
+2 text overlaps:             0
+3 text held too briefly:     0
+6 runtime/render errors:     0 []
+sfx events: 14
+[short] frames 1098, text elements 20
+1 text outside frame:        0
+2 text overlaps:             0
+3 text held too briefly:     0
+6 runtime/render errors:     0 []
+long: 64 sound effects; narration peak 0.92; wrote out/audio_long.wav (195.23s)
+short: 14 sound effects; narration peak 0.98; wrote out/audio_short.wav (36.60s)
+long: raw I=-17.27 TP=-0.70 -> normalised (-14.0, -1.5, 1.4) (I, TP, LRA) -> audio_long_norm.wav
+short: raw I=-17.31 TP=-0.15 -> normalised (-14.0, -1.5, 1.6) (I, TP, LRA) -> audio_short_norm.wav
+245/5857
+490/5857
+735/5857
+980/5857
+1225/5857
+1470/5857
+1715/5857
+1960/5857
+2205/5857
+2450/5857
+2695/5857
+2940/5857
+3185/5857
+3430/5857
+3675/5857
+3920/5857
+4165/5857
+4410/5857
+4655/5857
+4900/5857
+5145/5857
+5390/5857
+5635/5857
+5857/5857
+render errors: 0 []
+46/1098
+92/1098
+138/1098
+184/1098
+230/1098
+276/1098
+322/1098
+368/1098
+414/1098
+460/1098
+506/1098
+552/1098
+598/1098
+644/1098
+690/1098
+736/1098
+782/1098
+828/1098
+874/1098
+920/1098
+966/1098
+1012/1098
+1052/1098
+1098/1098
+render errors: 0 []
+wrote out/final/mideast-thumbnail.png 81273 bytes; errors: []
+dead air hits: 0
+dead air hits: 0
+compliance hits: 0
+compliance hits: 0
+I=-14.0 LUFS  TP=-1.4 dBFS  LRA=1.5 LU
+I=-14.0 LUFS  TP=-1.5 dBFS  LRA=1.6 LU

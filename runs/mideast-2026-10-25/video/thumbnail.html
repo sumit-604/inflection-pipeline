@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>thumbnail</title>
+<style>
+@font-face { font-family: 'Archivo'; font-weight: 800; src: url(assets/fonts/Archivo-800.ttf) format('truetype'); font-display: block; }
+@font-face { font-family: 'Archivo'; font-weight: 900; src: url(assets/fonts/Archivo-900.ttf) format('truetype'); font-display: block; }
+html, body { margin: 0; background: #16202A; overflow: hidden; } svg { display: block; } text { text-rendering: geometricPrecision; }
+</style>
+<script src="map_data.js"></script>
+</head><body>
+<svg id="root" xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<script>
+"use strict";
+const NS = "http://www.w3.org/2000/svg", root = document.getElementById("root");
+const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); (p || root).appendChild(e); return e; };
+const LL = (lon, lat) => [(lon - MAPDATA.lon0) * MAPDATA.cx * MAPDATA.k, (MAPDATA.lat1 - lat) * MAPDATA.k];
+document.fonts.ready.then(() => Promise.all(["900 40px Archivo", "800 40px Archivo"].map(f => document.fonts.load(f)))).then(() => {
+  el("rect", { x: 0, y: 0, width: 1280, height: 720, fill: "#16202A" });
+  const defs = el("defs", {}), land = el("g", { id: "land" }, defs);
+  MAPDATA.countries.forEach(c => el("path", { d: c.d, "vector-effect": "non-scaling-stroke", "stroke-linejoin": "round" }, land));
+  // the one map asset, zoomed on the Strait of Hormuz, drawn as an orange outline
+  const s = 4.2, [hx, hy] = LL(56.3, 26.6), mx = 860 - s * hx, my = 470 - s * hy;
+  const g = el("g", { transform: `translate(${mx},${my}) scale(${s})`, opacity: 0.75 });
+  el("use", { href: "#land", fill: "none", stroke: "#F08A4B", "stroke-width": 3 }, g);
+  const H = [860, 470];
+  [0, 1].forEach(i => el("circle", { cx: H[0], cy: H[1], r: 26 + i * 26, fill: "none", stroke: "#F08A4B", "stroke-width": 4, opacity: 0.8 - i * 0.4 }));
+  el("circle", { cx: H[0], cy: H[1], r: 14, fill: "#F08A4B" });
+  const t = (str, x, y, size, fill) => { const e = el("text", { x, y, "font-family": "'Archivo', sans-serif", "font-weight": 900, "font-size": size, fill, "letter-spacing": -1 }); e.textContent = str; return e; };
+  t("IRAN WAR", 64, 290, 200, "#F08A4B"); t("WHAT COMES NEXT?", 64, 430, 100, "#F4EFE6");
+  el("rect", { x: 960, y: 36, width: 264, height: 84, rx: 18, fill: "#F08A4B" }); const b = t("$117 OIL", 1092, 96, 50, "#16202A"); b.setAttribute("text-anchor", "middle");
+  window.READY = true;
+});
+</script></body></html>

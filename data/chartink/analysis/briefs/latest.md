@@ -1,17 +1,17 @@
 ---
 title: "Market Breadth Brief"
-subtitle: "Friday, 2026-10-23 trade date · written 2026-10-23 · for Sumit Sharma"
+subtitle: "Friday, 2026-10-23 trade date · written 2026-10-26 · for Sumit Sharma"
 ---
 
 # Market read, 23 October 2026
 
-The facts sheet carries Friday 23 October and shows 34 of 34 Chartink files present. The previous brief described Wednesday 21 October. No brief was written for Thursday, so this one covers two sessions. The full figures sit in the data appendix, `2026-10-23-appendix.html`.
+Same trade date as the previous brief: 2026-10-23. No session has traded since Friday, and the newest Chartink folder is still 2026-10-23. The facts sheet shows 34 of 34 files present. The numbers are the same as Friday's, so the read below is Friday's read, checked again against the same sheet. Where the text says "the last brief", it means the brief for 21 October. The full figures sit in the data appendix, `2026-10-23-appendix.html`.
 
 Claude Code has no web access. This brief checks no news and gives no reason for any move. It describes what the market did. It is not advice to buy or sell anything. The operator decides.
 
 ## The picture in one paragraph
 
-The break on Wednesday did not hold as a single bad day. It became a slide. On Friday 360 stocks fell four and a half percent or more, and only 25 rose that much. That is the second day this heavy in three sessions. Only 579 stocks now trade above their 200 day line, about one in four. The count has not been this low since 9 April. 453 stocks made new yearly lows, the most since the March bottom. Turnover was the heaviest since early September, so holders are being pushed out, not drifting away. The Nifty fell less than half a percent, because IT and a few large names still hold it up. The small company indices fell about three percent. Every test the last brief set for a worse market fired except one, and every test for a better market failed. The breadth downtrend is now confirmed, and it holds until a broad day of buying says otherwise.
+The break on Wednesday did not hold as a single bad day. It became a slide. On Friday 360 stocks fell four and a half percent or more, and only 25 rose that much. That is the second day this heavy in three sessions. Only 579 stocks now trade above their 200 day line, about one in four. The count has not been this low since 9 April. 453 stocks made new yearly lows, the most since the March bottom. Turnover was the heaviest since early September, so holders are being pushed out, not drifting away. The Nifty fell less than half a percent, because IT and a few large names still hold it up. The small company indices fell about three percent. Every test the 21 October brief set for a worse market fired except one, and every test for a better market failed. The breadth downtrend is now confirmed, and it holds until a broad day of buying says otherwise.
 
 ## Where the market stands
 
@@ -23,7 +23,7 @@ Autumn has been a staircase down. The count fell through August into a shock on 
 
 The pattern of the last week matters as much as the level. Wednesday brought 383 hard fallers. Thursday was calmer, with 127, and it looked like a pause. Friday brought 360 again. A shock followed by a quiet day and then a second shock is how a slide looks, not a washout. The last time two days this heavy came so close together was the last week of March. Back then a thrust followed within days. No thrust day has come since 12 June.
 
-Inside Friday's session, sellers owned the day again. About two stocks in three traded at least four percent below their prior close at some point. About four in ten of those finished near their low. About one stock in eleven traded four percent above its prior close. Only one in four of those kept the gain. That is better than Wednesday's one in seven, and still poor. Only about one stock in twelve had a quiet day inside a three percent range. Almost everything moved, and most of it moved down.
+Inside Friday's session, sellers owned the day again. About two stocks in three traded at least four percent below their prior close at some point. About four in ten of those finished near their low. About one stock in eleven traded four percent above its prior close. Only one in four of those kept the gain. That is better than Wednesday's one in seven, and still poor. Almost everything moved, and most of it moved down.
 
 Volume confirms the damage. Turnover reached about 611 crore, against about 431 crore on the same day a year ago. That is the heaviest day since 7 September. The share of stocks on heavy volume, against those on light volume, tripled from Thursday. It now sits near the top of its own history. The market has now had three days with 300 or more hard fallers since 8 October.
 

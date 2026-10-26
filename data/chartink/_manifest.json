@@ -489,21 +489,6 @@
     {
       "dashboard": "market-breadth-analysis",
       "dashboard_id": "148889",
-      "widget_id": 2938362,
-      "name": "Modified Relative Strength",
-      "file": "market-breadth-analysis/modified-relative-strength-2938362.csv",
-      "kind": "stock",
-      "result_type": "table",
-      "columns": [
-        "sector",
-        "market cap",
-        "1 week %",
-        "vol > yr avg"
-      ]
-    },
-    {
-      "dashboard": "market-breadth-analysis",
-      "dashboard_id": "148889",
       "widget_id": 2938369,
       "name": "Return 1Week",
       "file": "market-breadth-analysis/return-1week-2938369.csv",

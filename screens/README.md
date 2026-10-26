@@ -464,3 +464,58 @@ before this repair, from page-image recovery or other filings; the now
 readable files are there for `/step1` to confirm against. Three stay broken
 because the exchange serves them short: DELAPLEX FY26 annual report,
 JAYNECOIND Q2 FY27 press release, ONWARDTEC Q1 FY27 deck.
+
+## Sixth run, 2026-10-26
+
+Two operator picks, screened one after the other in one session: Antelopus
+Selan Energy (NSE ANTELOPUS, formerly SELAN; BSE 530075) and Kolte-Patil
+Developers (NSE KOLTEPATIL; BSE 532924). Identities confirmed on screener.in;
+`/company/SELAN/` now returns 404.
+
+**Verdicts.** WATCH on both. No PROCEED.
+- **ANTELOPUS: WATCH, posture EARNINGS-ONLY.** Volumes rose 50% year on year to
+  1,656 boepd in Q2 FY27, October ran at 1,950, and H1 FY27 profit was
+  Rs 111.61 crore against Rs 23.03 crore. Forward PE about 18.8x on an H1
+  run-rate (Tier B, consistent with the Tier A EBITDA guide). Two things carry
+  that profit: crude on a West Asia premium, and a ten-year amortisation
+  extension booked from 1-Oct-2025 for licences that end in 2029-2030. The
+  auditor put an emphasis of matter on it; India Ratings treats the extension
+  as an upside trigger, not a given.
+- **KOLTEPATIL: WATCH, posture PRICED NARRATIVE (TRAP).** Blackstone holds 40%
+  with joint control (the open offer at Rs 329 drew 614 shares). Pre-sales
+  fell from Rs 2,822 crore in FY24 to Rs 2,605 crore in FY26; the record
+  Q2 FY27 is one launch (Rs 616 crore of Rs 1,019 crore). Four straight
+  quarters with no earnings call. GST demands of about Rs 226 crore filed
+  Apr-Jun 2026. Forward view Tier D: completed-contract accounting makes any
+  run-rate meaningless and no guide exists, so the forward PE is blank.
+
+**Sources.** As in the fourth and fifth runs: screener collector under
+`py -3.14`, NSE corporate-announcements API for filings, screener-linked
+CARE PDFs and CRISIL HTML rationales, and the BSE `AttachLive/` path for one
+BSE-only reply. The India Ratings rationale for Antelopus came enclosed in its
+exchange intimation, so no browser render was needed. No Bull AI or Trendlyne
+call was made.
+
+**Integrity check, the fix from 2026-10-18, applied.** Every PDF was opened
+with PyMuPDF after download, every page's text extracted, page markers matched
+to page count, and every file checked for `%%EOF` in its last 2 KB. Downloads
+used `curl -C -` with retry. **No file stayed broken** in either corpus. No
+file name in this set carries a byte count to check against.
+
+**Corpus gaps.**
+- ANTELOPUS: no concall transcript exists anywhere (NSE, screener.in, company
+  site); the Q2 FY27 call took place after results on 26-Oct-2026. The
+  private-equity owner behind Blackbuck Energy Investments is unnamed in the
+  annual report. The independent reserve report is not filed.
+- KOLTEPATIL: no transcript after Q1 FY26 because no call was held for Q2 FY26
+  to Q1 FY27. Q2 FY27 financial results not yet filed (operational update
+  only). No project-level margin disclosure. No FY27 profit guidance.
+
+**Session note.** An earlier, interrupted session of this same scheduled task
+had collected most of the ANTELOPUS corpus about ten minutes before this run
+started. Those files were checked under the integrity rule above and reused,
+not re-downloaded. NSE served the Kolte-Patil filings slowly (about one file a
+minute late in the run).
+
+**Known limits.** Cards ran 3,211 words (ANTELOPUS, tables included) and 2,981
+words (KOLTEPATIL) against the brief's 1,900 to 2,600. Flagged, not trimmed.

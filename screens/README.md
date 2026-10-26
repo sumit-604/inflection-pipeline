@@ -519,3 +519,50 @@ minute late in the run).
 
 **Known limits.** Cards ran 3,211 words (ANTELOPUS, tables included) and 2,981
 words (KOLTEPATIL) against the brief's 1,900 to 2,600. Flagged, not trimmed.
+
+## Seventh run, 2026-10-27
+
+Two operator picks, screened in parallel by two agents in one session:
+Accent Microcell (NSE SME ACCENTMIC, no BSE code) and Achyut Healthcare (BSE
+543499, scrip ID ACHYUT, no NSE listing; BSE Main Board since 02-Jan-2026).
+
+**Verdicts.** WATCH on ACCENTMIC, PASS on ACHYUT. No PROCEED.
+- **ACCENTMIC: WATCH, posture PRICED NARRATIVE (TRAP).** H1 FY27 revenue
+  Rs 174.83 crore and PAT Rs 31.12 crore; EBITDA margin 25.11% against 19.02%.
+  Trailing PE about 27.9x. Forward PE about 25.5x on an H1 run-rate (Tier B).
+  The margin step-up coincides with a 92% fall in bought-in stock while both
+  plants already ran full; Unit III has missed three start dates; a Rs 17 crore
+  inter-corporate deposit has no named counterparty; promoter holding fell from
+  55.47% to 51.40% with no sale filing found. CARE A- (upgraded) against CRISIL
+  BB- Issuer Not Cooperating.
+- **ACHYUT: PASS, posture PRICED NARRATIVE (TRAP).** A merger stub: the board
+  approved its merger into Zenith Healthcare (BSE 530665) on 14-Jul-2026 at
+  119 Zenith shares for 50 Achyut. No valuation report is filed. The plant date
+  moved from January 2025 to January 2026 and was reprinted after it passed;
+  CWIP is Rs 31.62 crore. Pure trading today; H1 FY27 revenue fell 15%.
+  Forward PE about 457x.
+
+**Sources.** Screener collector under `py -3.14` for annual reports; the NSE
+SME announcements API for ACCENTMIC; the BSE announcements API for ACHYUT,
+called from the in-app browser because scripted calls returned Access Denied,
+with PDFs from `AttachLive/` or `AttachHis/`; CARE and CRISIL rationales for
+ACCENTMIC; the 2022 SME prospectus for ACHYUT. No Bull AI or Trendlyne call.
+
+**Integrity check.** All 44 ACCENTMIC and 225 ACHYUT PDFs open, page markers
+match page counts, every file ends with `%%EOF`. ACCENTMIC's annual-report
+byte counts match their file names. No broken file.
+
+**Orchestrator spot check.** Five figures per card were checked against the
+cited page text. All ten matched.
+
+**Corpus gaps.**
+- ACCENTMIC: no H1 FY27 call held by 27-Oct-2026; the Dec-2023 IPO prospectus
+  NOT FOUND on screener.in, the NSE IPO APIs or the Emerge archive; no
+  product revenue split; wind-turbine order value not disclosed.
+- ACHYUT: no credit rating ("Not Applicable" in the AR); no transcripts or
+  decks exist; the merger valuation report, fairness opinion, BSE observation
+  letter and NCLT status are not filed; Zenith's accounts not held; the
+  commission payee (Rs 63.94 lakh in FY26) is not named.
+
+**Known limits.** Cards ran 2,999 words (ACCENTMIC, by wc) and 2,652 words
+(ACHYUT) against the brief's 1,900 to 2,600. Flagged, not trimmed.

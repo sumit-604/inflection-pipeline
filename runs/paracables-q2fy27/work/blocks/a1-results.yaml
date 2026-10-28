@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "PARACABLES"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 13
+formfeed_count: 13
+line_count: 713
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: false   # hidden third-party OCR layer judged unreliable; treated as none
+extraction_mode: scan-ocr
+render_candidates: []
+rendered_pages: [1,2,3,4,5,6,7,8,9,10,11,12,13]   # 300 dpi, tesseract psm 6; text layer untrusted
+ocr_corrections: 39
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/extracted/paracables-results-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/extracted/paracables-results-q2fy27-structured.md"
+structured_counts:
+  number: 882
+  entity: 29
+  forward: 3
+  date: 28
+  qualifier: 51
+structured_id_range: "R001-R993"
+gate_a1: pass
+gap_note: ""

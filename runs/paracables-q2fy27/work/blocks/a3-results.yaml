@@ -1,0 +1,55 @@
+stage: A3-forensics
+company: "PARACABLES"
+quarter: "Q2 FY27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/work/forensics_results_paracables_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: PASS
+  F3: FINDING
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "182, 478, 470, 225, 706", classification: "NEUTRAL-FACT", implication: "Valens/Pipes exit never used discontinued-ops lines; parent carries subsidiaries at nil; next exceptional likely a small shell strike-off item"}
+  - {id: "A3-02", check: "F3", line: "407-413", classification: "NEUTRAL-FACT", implication: "Paramount Holdings Ltd and AEI Power Cables Ltd are NIL shells; no going-concern EoM; S-vs-C gap now zero by construction"}
+  - {id: "A3-03", check: "F6", line: "343-347; 640-644", classification: "FORWARD-SIGNAL", implication: "72L promoter warrants, Rs 22.68 Cr balance due on conversion (my arithmetic); no date filed; ICDR window ends about Dec-2027 [INFERENCE]"}
+  - {id: "A3-04", check: "F6", line: "354-357; 650-653", classification: "FORWARD-SIGNAL", implication: "Rs 73.39 Cr utilised with objects unnamed; at least Rs 32 Cr non-capex (my arithmetic), likely working capital; Narmadapuram then needs debt; Rs 26.66 Cr undeployed"}
+  - {id: "A3-05", check: "F8", line: "177, 304, 267", classification: "AMBIGUOUS", implication: "Net tax paid 4.67 vs current tax 16.26 (29%); 16.26-4.67=11.59 exactly, so opening 7.35 left without cash; possible repeat of FY26 CARO advance-tax delays"}
+  - {id: "A3-06", check: "F10", line: "201-202, 497-498", classification: "AMBIGUOUS", implication: "Basic equals diluted in every period despite in-the-money Rs 42 warrants; treatment undisclosed; dilution about 0.7-0.9% (my arithmetic)"}
+  - {id: "A3-07", check: "F11", line: "707, 712, 197, 339", classification: "AMBIGUOUS", implication: "Implied 30.06 equity 893.89 is about Rs 96 Cr above the no-issue level (my arithmetic), so issue cash was likely in by Q1 while note 4a says receipt in Q2; 30.09 tie-out passes"}
+  - {id: "A3-08", check: "F12", line: "709, 262, 250", classification: "AMBIGUOUS", implication: "Segment liabilities -25.90 QoQ, assets flat; non-MSME payables -29.7% in H1; new non-current debt 1.85 to 20.68; supplier-credit squeeze vs paid-for-discount"}
+  - {id: "A3-09", check: "F12", line: "228, 307-308, 221", classification: "FORWARD-SIGNAL", implication: "Other non-current assets +29.78, likely capital advances; with CWIP 3.59 about Rs 33 Cr visible vs Rs ~300 Cr Phase 1 (memory); track advances to CWIP"}
+  - {id: "A3-10", check: "F12", line: "231, 166, 298", classification: "AMBIGUOUS", implication: "Inventory +44.55 in H1, of which FG/WIP build 42.76, vs revenue +5.9% QoQ; H2 dispatch pipeline or US export stock held on tariff pause (memory)"}
+  - {id: "A3-11", check: "F12", line: "684, 686, 664, 362", classification: "NEUTRAL-FACT", implication: "Pipes segment was Valens (net Pipes revenue equals the CO-SA gap); group now single-segment; annexure likely dropped next quarter (F16 watch)"}
+  - {id: "A3-12", check: "F14", line: "612 vs 317", classification: "NEUTRAL-FACT", implication: "Consolidated CF labels Rs 97.67 Cr as warrant conversion; none converted; standalone label correct; governance data point"}
+  - {id: "A3-13", check: "F14", line: "333-334 vs 130-131", classification: "NEUTRAL-FACT", implication: "Notes say auditors expressed an unmodified opinion; review report says no audit opinion is expressed; overstated assurance wording (raw OCR)"}
+  - {id: "A3-14", check: "F14", line: "145, 442", classification: "NEUTRAL-FACT", implication: "Both UDINs unresolved, consolidated one printed as DIN; possibly OCR noise; verify on ICAI portal"}
+  - {id: "A3-15", check: "F15", line: "406-408", classification: "AMBIGUOUS", implication: "2 subsidiaries listed vs 3 in FY26 AR memory (06196375 Cables Ltd UK, in administration, absent); exit date, accounting and residual exposure unknown"}
+forward_signals: ["A3-03", "A3-04", "A3-09"]
+ambiguous: ["A3-05", "A3-06", "A3-07", "A3-08", "A3-10", "A3-15"]
+commitments:
+  - {commitment: "Upload results to company website", implied_date: "2026-10-26", ref: "Board letter l.82-83 (R908)", status_word: "underway"}
+  - {commitment: "Preferential issue 2,19,97,664 shares at Rs 42 to non-promoters, Rs 92.39 Cr", implied_date: "2026-07-01", ref: "SA note 4a l.337-342; CO 5a l.634-639", status_word: "completed"}
+  - {commitment: "72,00,000 promoter warrants at Rs 42, 25% paid; Rs 22.68 Cr balance on conversion (my arithmetic)", implied_date: "not filed; ICDR window about 2027-12-31 [INFERENCE]", ref: "SA note 4b l.343-347; CO 5b l.640-644", status_word: "initiated"}
+  - {commitment: "Use of proceeds Rs 73.39 Cr utilised, no deviation, objects unnamed", implied_date: "Q2 FY27", ref: "SA note 4c l.354-357; CO 5c l.650-653", status_word: "completed"}
+  - {commitment: "Unutilised Rs 26.66 Cr parked in mutual fund and utilisation account", implied_date: "not stated", ref: "SA note 4c l.355-356; CO 5c l.651-652", status_word: "underway"}
+  - {commitment: "ESOP allotment 31,995 shares", implied_date: "2026-07-14", ref: "SA note 5 l.358-361; CO 6 l.654-657", status_word: "completed"}
+  - {commitment: "Valens Technologies divestment", implied_date: "2025-11-06", ref: "CO note 7 l.658-663", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Consolidated equals standalone in FY27 because both subsidiaries are NIL shells, so the S-vs-C metric is now zero by construction. The forensic weight sits in the balance sheet. (1) Q1 segment totals imply the Rs 97.67 Cr was already in equity by 30-Jun, against note 4a's Q2 receipt wording. The Q1 EPS digits fit the same reading, so ask for the receipt date and the 30-Jun classification. (2) Rs 73.39 Cr utilised exceeds H1 capex by at least Rs 32 Cr while payables fell Rs 54 Cr and new term debt appeared. Proceeds likely funded working capital, so Narmadapuram leans on debt. Capital advances of +Rs 29.8 Cr are the first visible spend. (3) Net cash tax of Rs 4.67 Cr against Rs 16.26 Cr current tax, with the arithmetic exact to 11.59, echoes the FY26 CARO advance-tax delays. This is a liquidity tell, not an ETR issue. (4) A Rs 42.76 Cr finished-goods build next to the paused US orders (broker memory) drove negative CFO with payables. No prior-quarter auditor text was available, so F5 and F15 rest on Notion memory."

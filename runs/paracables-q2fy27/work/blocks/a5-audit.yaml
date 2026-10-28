@@ -1,0 +1,44 @@
+stage: A5-adversary
+company: "PARACABLES"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop0_closure:
+  M1: "PARTIAL: R523-R525 referenced at row level and header 525 (LED-PPT l.5, l.471-473); slide index not refreshed (see C1)"
+  X1: "CLOSED: 32 substantive turns in ledger (LED-CC l.10, l.123-136) and review (REV l.29, l.525, l.659)"
+  X2: "CLOSED: commitment 5 rescored PARTIAL with basis and 33-75% sensitivity (REV l.617-629), carried to grade, archetype, payload and flags"
+  M2: "CLOSED: ROCE pre-build counter grafted (REV l.363, l.365, l.414, l.428, l.492, l.1050)"
+  M3: "CLOSED: stake-buy and warrant economics grafted (REV l.78, l.378, l.474, l.895, l.989, l.1080)"
+  F1: "CLOSED: data-centre inconsistency withdrawn (REV l.576, l.953, l.477)"
+  M4: "CLOSED: RES-A3-01, CC-A3-12, PPT-A3-11, PR-A3-06 cited in body (REV l.12, l.14, l.99, l.576, l.919, l.931, l.942, l.944, l.956)"
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction:
+    - "C1 (A2; residual of M1): deck ledger section 1 slide index disagrees with its section 2 rows. Slide 25 range ends R525, but R525 is a page 30 row; it should end R522 (LED-PPT l.49, l.473). Slide 28 shows 97 rows; structured page 28 has 99 with R523, R524 (l.52). Slide 30 shows 44 rows; structured page 30 has 45 with R525 (l.54). Row-level coverage holds; A3 and A4 unaffected."
+  style:
+    - "S1 (A2): results ledger header 989 stale vs R001-R993 (open)"
+    - "S2 (A2): concall topic labels wrong for T62 and T79 (open)"
+    - "S3-S12 (A4): open and unchanged from loop 0"
+    - "S13 (A4, new): two untagged inferences in 0D note answer 2 (REV l.99)"
+loop_back_to: "A2"
+gap: "C1 only (CONTRADICTION, A2): in the deck ledger section 1, set slide 25 range end to R522, slide 28 count to 99 and slide 30 count to 45 (LED-PPT l.49, l.52, l.54). Three cells; row-level coverage of 525 IDs holds; A3 and A4 need no change. Loop cap reached (iteration 1 of 1): route to the operator as an open item."
+style_notes:
+  - "S1: add an R990-R993 = M001-M004 cross-reference and refresh the results ledger header"
+  - "S2: fix the concall ledger topic labels for T62 (new-entrant competition) and T79 (US exports)"
+  - "S3-S12: carried open from loop 0; see the STYLE NOTES section of the audit"
+  - "S13: tag the subsidiaries-at-nil and next-exceptional-item statements in 0D note answer 2 (REV l.99) as [INFERENCE]"
+analyst_note: "Loop 1 closed six of seven items in full. X1: the concall ledger and the review now read 32 substantive turns. X2: commitment 5 is rescored PARTIAL with its basis, the MISSED reading and the separating observation. The ratio is 66.7%, Grade B, with the 33-75% sensitivity carried to every dependent section. No Grade C or OVERPROMISER text remains outside the sensitivity lines. M2 and M3: both counters are grafted, and their arithmetic ties. F1 is withdrawn. M4: all four A3 IDs are cited. M1 is closed at row level: R523-R525 are referenced and the header reads 525. But the slide index was not refreshed, and the slide 25 range end now points at a slide 30 row. That residual is a three-cell bookkeeping fix. It changes no coverage result and nothing in the review. It does change numbers in the ledger, so the rules do not let me call it STYLE. The loop cap is reached, so it goes to the operator as the only open item."

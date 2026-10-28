@@ -1,0 +1,82 @@
+stage: A4-analyst
+company: "WEWORK"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, concall, deck, letter, press]
+ledger_reconciliation:
+  notes: 21
+  turns: 56
+  slides: 76
+  all_reviewed: true
+  a3_findings_incorporated: ["R-F1-a", "R-F1-b", "R-F1-c", "R-F1-d", "R-F2-a", "R-F4-a", "R-F4-b", "R-F6-a", "R-F6-b", "R-F7-a", "R-F8-a", "R-F8-b", "R-F9-a", "R-F10-a", "R-F11-a", "R-F12-a", "R-F13-a", "R-F14-a", "R-F14-b", "D-A3-01", "D-A3-02", "D-A3-03", "D-A3-04", "D-A3-05", "D-A3-06", "D-A3-07", "D-A3-08", "D-A3-09", "D-A3-10", "D-A3-11", "D-A3-12", "D-A3-13", "D-A3-14", "D-A3-15", "D-A3-16", "D-A3-17", "D-A3-18", "D-A3-19", "D-A3-20", "D-A3-21", "D-A3-22", "D-A3-23", "L-F1-a", "L-F6-a", "L-F6-b", "L-F7-a", "L-F8-a", "L-F11-a", "L-F12-a", "L-F14-a", "L-F14-b", "L-F16-a", "L-F16-b", "L-F16-c", "L-F16-d", "L-F16-e", "L-F16-f", "L-F16-g", "L-F16-h", "L-F16-i", "L-F17-a", "P-A3-01", "P-A3-02", "P-A3-03", "P-A3-04", "P-A3-05", "P-A3-06", "P-A3-07", "P-A3-08", "P-A3-09", "P-A3-10", "P-A3-11", "C-A3-01", "C-A3-02", "C-A3-03", "C-A3-04", "C-A3-05", "C-A3-06", "C-A3-07", "C-A3-08", "C-A3-09", "C-A3-10", "C-A3-11", "C-A3-12", "C-A3-13", "C-A3-14", "C-A3-15", "C-A3-16", "C-A3-17", "C-A3-18", "C-A3-19", "C-A3-20", "C-A3-21", "C-A3-22", "C-A3-23", "C-A3-24", "C-A3-25"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE ON RECORD (no Notion page, no companies/WEWORK.md, no spear on record): PRE-THESIS READ"
+position_branch: "8A-W"
+sc_gap_pat_pct: ["Q2FY27 +5.1%", "Q1FY27 +11.4%", "Q2FY26 -13.3%", "H1FY27 +10.2%", "H1FY26 -7.2%", "FY26 +3.7%"]
+questions_for_management:
+  - {q: "Q1 Bridge deck net cash 23.1 Cr (cash 413.3 Cr) to filed cash+bank+current investments 390.4 Cr; name finance-lease debt excluded", from_finding_id: "D-A3-06, L-F16-d, P-A3-05, C-A3-13, C-A3-14, P-A3-11"}
+  - {q: "Q2 FCFF 16.0 Cr rebuilds on deck p28 formula (CFO 1,026.2 - rent (A) 576.6 - brokerage 69.8 - capex 363.8); why does the 11.4 Cr finance-lease payout sit outside FCFO, and what is the 8.6 Cr of ROU payments above brokerage; full basis (4.0) Cr", from_finding_id: "D-A3-12, L-F16-e, P-A3-03"}
+  - {q: "Q3 Split the 146.6 Cr H1 inflow from other and other financial liabilities; member deposit balance Sep-26 vs Mar-26", from_finding_id: "R-F12-a, L-F12-a, C-A3-10, P-A3-04"}
+  - {q: "Q4 Departing ~7-year customer: revenue share, desks, exit quarter; is the campus an Embassy Group development", from_finding_id: "C-A3-04, C-A3-05"}
+  - {q: "Q5 Mar-26 and Jun-26 portfolio and mature occupancy on the same basis as 83.7%; H1 cohort occupancy (145.3k is at 30-Sep per press, deck and concall)", from_finding_id: "D-A3-18, D-A3-19, L-F16-a, L-F16-b, P-A3-02, C-A3-21"}
+  - {q: "Q6 Average H1 renewal price change vs contracted escalation; share of contract value expiring H2 FY27 and FY28", from_finding_id: "C-A3-06, D-A3-19"}
+  - {q: "Q7 Quantify Q3 rent-free reversal, wage/tariff hits in Rs Cr, and basis of FY28 20-23% EBITDA range", from_finding_id: "C-A3-07, C-A3-08, C-A3-09, D-A3-13, P-A3-07, L-F6-b, C-A3-25"}
+  - {q: "Q8 Opening schedule of ~47k desks (9k signed, 38k LOI) by quarter; LOI conversion history; Mar-27 point estimate", from_finding_id: "D-A3-16, D-A3-15, L-F6-a, L-F7-a, P-A3-08, C-A3-01, C-A3-23, P-A3-11"}
+  - {q: "Q9 FY27/FY28 capex vs ~500/~600 Cr; per-desk capex by format; largest deal capex; solar commissioning and saving", from_finding_id: "C-A3-02, C-A3-03, D-A3-17, C-A3-20, R-F13-a, P-A3-11"}
+  - {q: "Q10 Which centres exited in H1 (lease-termination gain 5.24 Cr, PPE gain 2.83 Cr); why in other income not exceptional", from_finding_id: "R-F1-a, R-F1-b, D-A3-01, D-A3-03, D-A3-04, C-A3-15"}
+  - {q: "Q11 DTA 307.7 Cr (90% of equity): loss pool, deferred tax start date, cash tax timing, refund of 105.3 Cr tax assets", from_finding_id: "R-F8-a, R-F8-b, R-F11-a, D-A3-10, L-F8-a"}
+  - {q: "Q12 Publish Ind AS EBITDA after lease cash; define net of ESOP costs, opex adjustment composition, IGAAP-only 34.1 Cr exceptional, and the Ind AS-only revenue adjustment (3.7 Cr below billed Q2 FY26 to 1.3 Cr above Q2 FY27; ~94% of the YoY recurring core)", from_finding_id: "D-A3-05, P-A3-01, L-F16-h, L-F1-a, C-A3-12, C-A3-22, L-F17-a, D-A3-23, P-A3-11"}
+  - {q: "Q13 ROCE 34.5% components in Rs Cr at Sep-26 and Jun-26 and numerator period", from_finding_id: "L-F11-a, P-A3-06"}
+  - {q: "Q14 Define locked-in 3,843/1,421 Cr basis and 2.7x/3.0x multiples", from_finding_id: "L-F16-c, D-A3-14, D-A3-15"}
+  - {q: "Q15 Define centre-level EBITDA denominator (implied 753.5 Cr) and 55.7% breakeven basis", from_finding_id: "D-A3-20, L-F16-i"}
+  - {q: "Q16 Basis of revenue chart bars (FY26 2,490 = Ind AS total income) and core revenue amount behind GCC 40.8%", from_finding_id: "L-F16-f, P-A3-09"}
+  - {q: "Q17 VAS run-rate ex large customisation; amortisation start date; VAS+Digital EBITDA margin", from_finding_id: "D-A3-02, R-F1-d, C-A3-11, L-F16-g"}
+  - {q: "Q18 Pledged promoter shares (number, %), cover and top-up trigger; why Q1 ~50 lakh release not done", from_finding_id: "C-A3-16, C-A3-17"}
+  - {q: "Q19 NCLT capital reduction filing date, hearing status, expected sanction; post-sanction payout policy", from_finding_id: "R-F6-b, C-A3-18"}
+  - {q: "Q20 Adjacent businesses: which, how much capital FY27-FY28, which entity", from_finding_id: "C-A3-19"}
+  - {q: "Q21 EIP 2018 options outstanding, weighted exercise price, vesting schedule", from_finding_id: "R-F10-a, D-A3-11"}
+  - {q: "Q22 Labour Code provision re-estimate vs final rules; range of second charge", from_finding_id: "R-F6-a, R-F7-a"}
+  - {q: "Q23 MyHQ Anarock share 0.09 to 0.87 Cr QoQ: driver, stake, intra-group flows", from_finding_id: "R-F2-a, R-F4-b"}
+  - {q: "Q24 Confirm consolidated review partner name and both UDINs (membership 222345 under two names)", from_finding_id: "R-F14-a"}
+  - {q: "Q25 Purpose of escrow-only SA cash 4.06 Cr; MF purchases 117.4 Cr while net borrowing +56.1 Cr", from_finding_id: "R-F1-c, D-A3-09"}
+  - {q: "Q26 Undiscounted lease commitments by maturity incl. signed-not-commenced; landlord vs member lock-in", from_finding_id: "L-F16-c, L-F6-a, P-A3-11"}
+monitorables:
+  - {item: "Q3 FY27 results/call: occupancy (cleanest metric; bull >=85.0%, bear <=82.5%), Q3 margin after rent-free expiry, H2 capex, cash rent (A) per operational sq ft, sign of Ind AS-only revenue adjustment", implied_date: "by 2027-02-14", source_ref: "Step 8C; concall L723-730; C-A3-08; deck L795, L310; letter L662"}
+  - {item: "Largest-ever deal announcement", implied_date: "by Q3 FY27 call", source_ref: "concall L370-371, L928-930; C-A3-03"}
+  - {item: "Operational desks >=149.8k incl. Oct 4.5k", implied_date: "Q3 FY27 results", source_ref: "deck L319; P-A3 register"}
+  - {item: "~2 msf unsigned supply finalised (LOI deposits)", implied_date: "by 2027-03-31", source_ref: "concall L820-822; C-A3-23"}
+  - {item: "Mar-27 desks 150-155k", implied_date: "2027-03-31; read by 2027-05-30", source_ref: "deck L433; D-A3-16; C-A3-01"}
+  - {item: "FY27 capex ~500 Cr, H2 below H1", implied_date: "by 2027-05-30", source_ref: "concall L927-930; C-A3-02"}
+  - {item: "Year-end DTA reassessment / tax charge", implied_date: "by 2027-05-30", source_ref: "R-F8-a; D-A3-10"}
+  - {item: "FY27 Annual Report and AGM: related parties, lease maturity, DTA, ESOP pool, brand licence", implied_date: "AGM by 2027-09-30", source_ref: "R-F9-a; R-F10-a; C-A3-05"}
+  - {item: "Q1 FY28 results: FY28 margin 20-23%, customer exit timing", implied_date: "by 2027-08-14", source_ref: "concall L778-779, L862-863; C-A3-07; C-A3-04"}
+  - {item: "Large ~7-year customer exit to own campus", implied_date: "FY28, month uncertain", source_ref: "concall L862-871; C-A3-04"}
+  - {item: "Promoter pledge reduction (Q1 ~50 lakh shares)", implied_date: "each call; 3-year debt horizon", source_ref: "concall L897-916; C-A3-16; C-A3-17"}
+  - {item: "NCLT capital reduction sanction", implied_date: "NOT FOUND", source_ref: "results L355-358; R-F6-b"}
+  - {item: "Labour Code final rules and second provision", implied_date: "NOT FOUND (on notification)", source_ref: "results L331-333; R-F6-a"}
+  - {item: "10 MWp captive solar 34.25 Cr commissioning", implied_date: "NOT FOUND (final approval 2026-10-26)", source_ref: "results L60-65; R-F13-a"}
+  - {item: "H1 FY27 cohort crosses mature occupancy", implied_date: "FY28", source_ref: "concall L342-344"}
+  - {item: "FCFO/EBITDA within 1.2-1.5x; deposit float", implied_date: "each half; H2 FY27 by 2027-05-30", source_ref: "concall L665-679; C-A3-10"}
+  - {item: "FY28 capex ~600 Cr+, below cash generated", implied_date: "FY28", source_ref: "concall L933-935"}
+  - {item: "ESOP dilution pace (paid-up capital)", implied_date: "each quarter", source_ref: "results L184; R-F10-a"}
+flags:
+  - "PRE-THESIS READ: no Notion page, no companies/WEWORK.md, no spear on record; Decision Status none; projections, triggers, thesis-broken conditions ND 'not passed'"
+  - "Concall is an ASR machine transcript: every concall number MGMT tier, unverified; filed documents win on conflict"
+  - "Headline KPIs do not rebuild from filings: net cash 23.1 Cr vs filed ~0.2 Cr; ROCE 34.5% components ND; order-book 3,843/1,421 Cr basis ND. FCFF +16.0 Cr rebuilds on the deck p28 formula but excludes 20.0 Cr of lease cash (finance-lease payout 11.4 + ROU payments above brokerage 8.6); full basis (4.0) Cr"
+  - "Ind AS earnings quality: H1 PBT 16.51 Cr < OI+FI 35.51 Cr; core PBT ex OI/FI Q2 0.98 Cr, H1 (19.96) Cr; OI = MF, FVTPL, lease-termination, PPE-sale gains; undefined Ind AS-only revenue adjustment swung +5.0 Cr YoY (~94% of the recurring core); on billed revenue core PBT (0.32) vs (0.63) Cr"
+  - "IGAAP-eq headline PAT 65.8 Cr untaxed (49.2 Cr at 25.17%); DTA 307.7 Cr = 90% of CA equity; no interim deferred tax"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION, direction deteriorating ex-float: lease-adjusted FCF (3.99) Cr H1 vs (73.52) improves only through WC swing +136.6 Cr; ex-WC (63.44) to (130.53) Cr; 146.6 Cr liability inflow of undisclosed nature; growth-linked deposit float"
+  - "Large ~7-year customer exits to own campus in FY28; absent from prepared remarks; campus possibly Embassy (promoter group) per ASR"
+  - "Promoter pledge: Q1 indication of ~50 lakh share release not delivered; block sale option; release tied to market cap"
+  - "Occupancy -320 bps from Mar-26 record over two quarters; growth centres flat 64.9% to 64.8%"
+  - "Renewal escalation below contracted; flat renewals accepted; core revenue per member -0.7% YoY: volume-only growth"
+  - "Mar-27 guide widened to 150-155k with floor met 5-Oct; 81% of 47k pipeline is LOI"
+  - "Lease liabilities 5,233.1 Cr = 15.3x equity; signed-not-commenced leases outside the liability"
+  - "ESOP dilution 2.58% in H1 FY27"
+  - "Auditor membership 222345 under two partner names; both UDINs illegible (likely OCR)"
+  - "Steps 6.5, 7 and 8D deferred to /fttcp and Role 1 (OR-30); credibility ratio ND (prior log not passed); tracker rows not supplied"
+plain_language_brief_included: true
+analyst_note: "Verdict stays PROCEED WITH FLAGS after loop 1. Volume is real on both bases (revenue +33.6% FILED; desks, members MGMT). Profit and cash improvement are not yet proven. Core Ind AS PBT turning positive rests on a 5.0 Cr swing in an undefined Ind AS-only revenue adjustment (letter L662), about 94% of the recurring core; on billed revenue core PBT is (0.32) vs (0.63) Cr. The FCF gain is entirely WC float; ex-float lease-adjusted FCF fell from (63.44) to (130.53) Cr, so the cash direction is deteriorating ex-float. The cash-rent margin gain (+183 bps) is partly landlord rent-free timing that ends in Q3 (concall L723-730, ASR); cash rent rose 21.4% vs operational area 27.1%. FCFF 16.0 Cr rebuilds on the deck p28 formula but leaves out 20.0 Cr of lease cash; full basis (3.99) Cr. Net cash, ROCE and order-book cover still do not rebuild. Capacity 145.3k is at 30-Sep. Q3 FY27 separates the readings: occupancy, cash rent per sq ft, the revenue-adjustment sign. Slides = deck 40 + letter 31 + press 5 pages. No source PDF or inputs/ file opened."
+review_path: "runs/wework-q2fy27/work/review_wework_q2fy27.md"

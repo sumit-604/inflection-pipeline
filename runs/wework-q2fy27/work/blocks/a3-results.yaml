@@ -1,0 +1,56 @@
+stage: A3-forensics
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/wework-q2fy27/work/forensics_results_wework_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "F1-a", check: "F1", line: "159, 260-265", classification: "FORWARD-SIGNAL", implication: "Six gain lines (nil in H1FY26) sum 184.39 vs H1 SA PBT 148.54 and other income 184.53; H1 PBT ex other income (35.99); Q2 ex other income 83.41. Profit turn leans on treasury and lease gains."}
+  - {id: "F1-b", check: "F1", line: "262, 265, 281", classification: "AMBIGUOUS", implication: "Lease termination gain 52.37 and PPE disposal gain 28.32 imply centre exits or lease re-cuts; desks and centres exited NOT FOUND."}
+  - {id: "F1-c", check: "F1", line: "284, 288-289, 301-302", classification: "AMBIGUOUS", implication: "SA cash all in escrow (40.60), zero in current accounts; MF purchases 1,173.71 funded alongside net borrowing +560.80; inferred negative carry ~3.7 points."}
+  - {id: "F1-d", check: "F1", line: "163", classification: "AMBIGUOUS", implication: "Sub-contracting cost lumpy (nil Q1, 27.57 Q2, 183.26 in H2FY26); project-type services stream hidden in single-segment revenue."}
+  - {id: "F2-a", check: "F2", line: "177, 500, 508", classification: "AMBIGUOUS", implication: "C-S PAT gap swung -13.3% to +5.1% of SA PAT YoY (18.4 pp); associate +11.43 of the 19.80 swing; group PAT carries a lumpy associate line."}
+  - {id: "F4-a", check: "F4", line: "447, 451", classification: "NEUTRAL-FACT", implication: "Other-auditor PAT share H1 18.65 = 11.4% of consolidated PAT (Q2 5.9%); thin PAT magnifies; ~0.4% of revenue and assets."}
+  - {id: "F4-b", check: "F4", line: "451, 500", classification: "AMBIGUOUS", implication: "MyHQ Anarock share (2.74) Q2FY26 -> 0.94 Q1 -> 8.69 Q2; 9x QoQ, reviewed only by its own auditor."}
+  - {id: "F6-a", check: "F6", line: "171, 331-333, 680-681", classification: "FORWARD-SIGNAL", implication: "Second Labour Code charge likely when final rules are notified; exceptional line primed; date NOT FOUND."}
+  - {id: "F6-b", check: "F6", line: "355-358, 700-702", classification: "AMBIGUOUS", implication: "NCLT set-off of 20,501.60 accumulated losses pending; filing and sanction dates NOT FOUND; sanction gates dividend capacity."}
+  - {id: "F7-a", check: "F7", line: "328-330, 679", classification: "AMBIGUOUS", implication: "Labour Code provision is an estimate on draft rules; final rules can move it either way; no range given."}
+  - {id: "F8-a", check: "F8", line: "174-176, 207", classification: "FORWARD-SIGNAL", implication: "SA ETR 0% all interim periods; DTA flat 3,077.49; FY26 PAT 30.7% from year-end DTA credit 221.71; Q2 shield 48.92 (2,517 bps); Q4 DTA event and eventual ETR step-up."}
+  - {id: "F8-b", check: "F8", line: "208, 277", classification: "AMBIGUOUS", implication: "Tax paid 389.97 with zero charge; refundable tax asset 1,047.64 (30% of SA net worth); cash tied to refund timing."}
+  - {id: "F9-a", check: "F9", line: "180-181", classification: "NEUTRAL-FACT", implication: "Q1FY27 actuarial loss 6.69 exceeds FY26 full-year 5.81; immaterial; verify discount rate at FY27 AR."}
+  - {id: "F10-a", check: "F10", line: "186-187, 290, 342, 345-347", classification: "FORWARD-SIGNAL", implication: "ESOP exercise diluted 2.58% in H1 (3.49 Mn shares at ~Rs 49 avg vs IPO Rs 648); paid-up +3.6% YoY; A4 to check remaining pool."}
+  - {id: "F11-a", check: "F11", line: "207, 222-224, 228, 236", classification: "AMBIGUOUS", implication: "Net worth ties, but DTA = 88.8% of SA net worth (100.8% in March); lease liabilities 15.1x net worth; DTA reversal erases most book equity."}
+  - {id: "F12-a", check: "F12", line: "229, 231, 241, 274-275", classification: "AMBIGUOUS", implication: "Single segment; other NC financial liabilities +61.8% and other NC liabilities +177% in H1; 1,465.36 = 14.3% of H1 OCF; nature NOT DISCLOSED."}
+  - {id: "F13-a", check: "F13", line: "60-65", classification: "FORWARD-SIGNAL", implication: "Final approval of 10 MWp captive solar, Rs 342.5 Mn; no commissioning date, funding or saving stated; only non-results agenda item."}
+  - {id: "F14-a", check: "F14", line: "138, 140, 142, 469, 471, 473", classification: "AMBIGUOUS", implication: "Membership 222345 under two partner names; both UDINs illegible; likely OCR; verify on ICAI UDIN portal and A1 page images."}
+  - {id: "F14-b", check: "F14", line: "65, 101, 155, 288, 343, 355, 638, 676, 690", classification: "NEUTRAL-FACT", implication: "Crore vs Million units, ESOP plan named two ways, borrowing label variance, unnumbered CA Note 5, undated 'During the year'; cumulative governance data point."}
+forward_signals: ["F1-a", "F6-a", "F8-a", "F10-a", "F13-a"]
+ambiguous: ["F1-b", "F1-c", "F1-d", "F2-a", "F4-b", "F6-b", "F7-a", "F8-b", "F11-a", "F12-a", "F14-a"]
+commitments:
+  - {commitment: "Evaluate and account for Labour Code rule impact when rules are notified", implied_date: "on notification; NOT FOUND", ref: "SA Note 5 L331-333; CA Note 5 L680-681", status_word: "pending"}
+  - {commitment: "NCLT capital reduction: set off accumulated losses 20,501.60 Mn against Securities Premium", implied_date: "on NCLT sanction; NOT FOUND", ref: "SA Note 10 L355-358; CA Note 10 L700-702", status_word: "initiated"}
+  - {commitment: "10 MWp captive solar plant, Karnataka, est. 34.25 crore (Rs 342.5 Mn)", implied_date: "NOT FOUND", ref: "Board letter item 2 L60-65", status_word: "initiated (in-principle 2026-09-03 -> final approval 2026-10-26)"}
+  - {commitment: "IPO offer for sale 46,296,296 shares, Rs 29,996.43 Mn; listed 2025-10-10", implied_date: "2025-10-10", ref: "SA Note 6 L335-340; CA Note 6 L683-687", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Pre-thesis baseline. No prior quarter, so F5, F15, status transitions and the F4 trend are baselines, not passes on change. Three points matter. First, earnings quality: H1 standalone PBT 148.54 sits below other income 184.53. Six cash-flow gain lines that were nil a year ago sum to 184.39, so H1 operating PBT is about (36) derived; Q2 alone is positive ex other income (83.41). Second, thin equity: DTA 3,077.49 is 88.8% of standalone net worth against 52,331 of lease liabilities. No tax is booked in interim periods, and FY26 PAT took a 221.71 DTA credit at year-end, so a Q4 DTA event is likely either way. Third, OCF growth is partly funded by other liabilities (+1,465 in H1, nature undisclosed). Supporting the climb: cash rent fell to 40.7% of revenue from 44.8%, and post-rent, post-capex cash is near breakeven (-56) vs (-742) a year ago. The IGAAP-equivalent headline is not in this filing; A4 must reconcile it from the deck. The partner-name mismatch on membership 222345 is likely OCR but needs UDIN verification."

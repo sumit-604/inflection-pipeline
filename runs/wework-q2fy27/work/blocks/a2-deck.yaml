@@ -1,0 +1,30 @@
+stage: A2-enumerator
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/wework-q2fy27/work/ledger_deck_wework_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 60
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 54
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 40
+  slide_numbers: 1168
+  footnotes_qualifiers: 59
+  forward_statements: 6
+  dates: 105
+flags_raised: [ZERO_STANDING, FOOTNOTE_UNRESOLVED, RESTATED, ANCHOR_INTERLEAVED, EXTERNAL_SOURCE, RELATED_PARTY_CANDIDATE]
+ids_in_structured: 1392
+ids_referenced: 1392
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Fulltext token sweep gave 1331 digit tokens vs 1168 NUMBER rows. Every per-slide gap is footers, section numbers, dates, axis ticks, footnote markers, identifiers or headline roundings (p26 title 51%/149% round 50.6%/149.5%). Pages 31/32 run below structured because 45 dash cells carry no digit. Nothing missing from A1. 60 ZERO_STANDING rows, none unflagged: nil Exceptional item on every basis and period, nil ROU depreciation (IGAAP), nil associate share adjustment, nil finance-lease interest adjustment. R1355 (p13 revenue/rent multiples 2.7x | 3.0x) is undefined on the slide: FOOTNOTE_UNRESOLVED. Pages 31, 32, 37-39 line anchors are approximate (A1 used -raw). No prior deck, so DROPPED_SLIDE and ENTITY_CHANGE could not be tested."

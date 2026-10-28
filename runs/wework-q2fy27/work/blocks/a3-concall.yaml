@@ -1,0 +1,79 @@
+stage: A3-forensics
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/wework-q2fy27/work/forensics_concall_wework_q2fy27.md"
+ledger_reconciled_pct: 100        # 470 / 470
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F6", line: "L688-689; L701; L714-715", classification: "FORWARD-SIGNAL", implication: "March-27 guide moved from a 155k point to a 150-155k range; floor met 5-Oct, so the range allows near-zero H2 net adds"}
+  - {id: "A3-02", check: "F6", line: "L209; L211; L372; L927; L930", classification: "AMBIGUOUS", implication: "FY27 ~500 cr less H1 363.8 cr leaves ~136 cr for H2, below Q2 alone (175.8 cr), while the largest-ever deal needs significant capex; overshoot or FY28 slip"}
+  - {id: "A3-03", check: "F6", line: "L370-371; L929", classification: "AMBIGUOUS", implication: "signed largest-ever deal undisclosed (size, counterparty, capex); signing date self-corrected; Q3 catalyst and disclosure-timing question"}
+  - {id: "A3-04", check: "F6", line: "L862-863; L865-868; L870-871; L153-154", classification: "FORWARD-SIGNAL", implication: "large 7-year customer exits to own campus in FY28; known for years but omitted from prepared remarks; share unquantified"}
+  - {id: "A3-05", check: "F6", line: "L866; L96", classification: "AMBIGUOUS", implication: "exiting customer's campus may be an Embassy (promoter-group) development; related-party conflict question; ASR garbled"}
+  - {id: "A3-06", check: "F6", line: "L546-548; L560; L629-632; L851; L855", classification: "FORWARD-SIGNAL", implication: "renewal escalation below contracted escalation, flat renewals accepted, paid-off capex passed back; ~5-8% contract base lost a year (derived from analyst premise)"}
+  - {id: "A3-07", check: "F6", line: "L744; L778-779; L188; L192", classification: "AMBIGUOUS", implication: "FY28 EBITDA range 20-23% has its floor below Q2 21.2%; range permits compression; basis unstated"}
+  - {id: "A3-08", check: "F7", line: "L723-725; L728-730; L735-736", classification: "FORWARD-SIGNAL", implication: "full rentals and rent-free expiry hit Q3; H2 expansion hedged; Q4 YoY margin gain not committed"}
+  - {id: "A3-09", check: "F6", line: "L748-750; L755-756", classification: "AMBIGUOUS", implication: "23% ex-hit margin adds back a permanent wage step-up plus an unquantified backdated tariff; not a run-rate; Labour Code not named"}
+  - {id: "A3-10", check: "F6", line: "L207; L665-670; L677-679", classification: "FORWARD-SIGNAL", implication: "Q2 FCFO/EBITDA 1.46x at the band top is working-capital float tied to seat growth; normalises toward 1.2x when growth slows"}
+  - {id: "A3-11", check: "F6", line: "L413-416; L419; L424-425; L668-669", classification: "AMBIGUOUS", implication: "customization 18 cr Q2 vs ~12 cr Q1, high flow-through, amortisation policy change undated; part of QoQ EBITDA rise"}
+  - {id: "A3-12", check: "F17", line: "L34; L130; L217; L219-221", classification: "AMBIGUOUS", implication: "filed Ind AS PAT 20.5 cr is 31% of the 65.8 cr IGAAP-eq headline; ROCE and guidance basis unstated; tie to filing before use"}
+  - {id: "A3-13", check: "F17", line: "L213; L156; L219-220", classification: "AMBIGUOUS", implication: "net cash 23.1 cr excludes Ind AS 116 lease liabilities, never quantified; lease-inclusive leverage untested"}
+  - {id: "A3-14", check: "F6", line: "L211; L213-214", classification: "AMBIGUOUS", implication: "333.6 cr net-debt swing vs 16 cr H1 FCFF surplus; source of the remainder unexplained (equity, ESOP, deposits?)"}
+  - {id: "A3-15", check: "F17", line: "L136; L181; L127-129", classification: "AMBIGUOUS", implication: "H1 revenue exceeds revenue from operations by ~12.9 cr (~10.8% of H1 PAT), probably other income inside the headline and margins; not discussed"}
+  - {id: "A3-16", check: "F6", line: "L897; L904; L909-911; L916", classification: "CONFIRMATORY-NEGATIVE", implication: "Q1 indication of 50 lakh pledged-share release not delivered; answer self-contradicts (no hurry vs as soon as possible)"}
+  - {id: "A3-17", check: "F6", line: "L901-903; L906-908", classification: "FORWARD-SIGNAL", implication: "pledge release tied to market cap (margin-call risk on a fall); promoter block sale an option, excluded only at current prices"}
+  - {id: "A3-18", check: "F6", line: "L378-384", classification: "AMBIGUOUS", implication: "dividend/buyback enabling route (probable NCLT capital reduction) not named, no date; status embarked since Q1"}
+  - {id: "A3-19", check: "F6", line: "L387; L399-400", classification: "FORWARD-SIGNAL", implication: "unquantified capital moves to adjacent businesses; capital-allocation drift risk"}
+  - {id: "A3-20", check: "F6", line: "L366-367; L923-925", classification: "FORWARD-SIGNAL", implication: "3x revenue/rent on managed office is bought with higher capex per sq ft; revenue/rent overstates the return gain"}
+  - {id: "A3-21", check: "F7", line: "L331-333; L337-338; L125", classification: "AMBIGUOUS", implication: "management's own counts imply growth-centre occupancy fell 66.7% to 64.0% QoQ against a 'moved up' narrative; portfolio -114 bps QoQ"}
+  - {id: "A3-22", check: "F17", line: "L34; L221", classification: "AMBIGUOUS", implication: "DTA, ESOP dilution, lease termination gains, ETR, other income and Labour Code provision all deferred to slides; silent on the call"}
+  - {id: "A3-23", check: "F6", line: "L150; L804; L808-809; L820-821; L842-843", classification: "AMBIGUOUS", implication: "FY28 supply 'under negotiation' vs 'no rush'; the 13 is LOI not lease; LOI conversion triggers landlord deposit outflows"}
+  - {id: "A3-24", check: "F6", line: "L122-123", classification: "NEUTRAL-FACT", implication: "Q1-set 22k FY27 desk-addition mark met by October per management (ASR-uncertain); verify on the deck"}
+  - {id: "A3-25", check: "F7", line: "L772; L904; L806; L725; L891; L863", classification: "AMBIGUOUS", implication: "hedge lexicon clusters on margin path, pledge, unsigned supply and exit timing; the uncommitted items become A4 targets"}
+forward_signals: ["A3-01", "A3-04", "A3-06", "A3-08", "A3-10", "A3-17", "A3-19", "A3-20"]
+ambiguous: ["A3-02", "A3-03", "A3-05", "A3-07", "A3-09", "A3-11", "A3-12", "A3-13", "A3-14", "A3-15", "A3-18", "A3-21", "A3-22", "A3-23", "A3-25"]
+commitments:
+  - {commitment: "Reach 150-155k desks (earlier 155k point)", implied_date: "Mar-2027", ref: "T02 L149; T29 L701-715", status_word: "underway"}
+  - {commitment: "Reach 190-200k seats", implied_date: "undated", ref: "T02 L149-150", status_word: "initiated"}
+  - {commitment: "FY27 desk-addition 22,000 mark set in Q1", implied_date: "FY27", ref: "T02 L122-123", status_word: "completed"}
+  - {commitment: "Supply for FY28/FY29 under negotiation", implied_date: "FY28-FY29", ref: "T02 L150", status_word: "underway"}
+  - {commitment: "Asset identification for next 12 months done", implied_date: "next 12 months", ref: "T07 L256-259", status_word: "completed"}
+  - {commitment: "Announce signed largest-ever deal", implied_date: "Q3 FY27", ref: "T11 L370-371; T51 L928-929", status_word: "completed"}
+  - {commitment: "FY28 desk rollout larger than FY27", implied_date: "FY28", ref: "T11 L356-362; T36 L837-841", status_word: "initiated"}
+  - {commitment: "FY27 capex ~500 cr, H2 below H1", implied_date: "FY27", ref: "T51 L927-930", status_word: "underway"}
+  - {commitment: "FY28 capex ~600 cr or more, below cash generated", implied_date: "FY28", ref: "T51 L933-935", status_word: "initiated"}
+  - {commitment: "Finalise ~2 msf unsigned supply", implied_date: "by Q4 FY27", ref: "T36 L820-822", status_word: "initiated"}
+  - {commitment: "Enable dividends/buybacks (probable NCLT capital reduction)", implied_date: "undated", ref: "T11 L378-384", status_word: "underway"}
+  - {commitment: "Invest capital in adjacent businesses", implied_date: "undated", ref: "T11 L387-400", status_word: "initiated"}
+  - {commitment: "FY28 EBITDA margin 20-23% (indicative)", implied_date: "FY28", ref: "T34 L778-779", status_word: "initiated"}
+  - {commitment: "H2 FY27 margin expansion, larger in Q4", implied_date: "Q3-Q4 FY27", ref: "T29 L725-731", status_word: "initiated"}
+  - {commitment: "PAT margin 7-10% to continue", implied_date: "ongoing", ref: "T41 L882-883", status_word: "underway"}
+  - {commitment: "FCFO/EBITDA 1.2-1.5x", implied_date: "ongoing", ref: "T24 L665, L673", status_word: "underway"}
+  - {commitment: "Backfill to offset large-customer exit", implied_date: "FY28", ref: "T39 L869-870", status_word: "underway"}
+  - {commitment: "H1 cohort to cross mature-centre occupancy", implied_date: "next year", ref: "T09 L342-344", status_word: "initiated"}
+  - {commitment: "Pledge reduction (Q1: ~50 lakh shares shortly)", implied_date: "3-year debt horizon", ref: "T43-T46 L897-916", status_word: "initiated"}
+  - {commitment: "Interest cost reduction to continue", implied_date: "ongoing", ref: "T41 L888-891", status_word: "underway"}
+  - {commitment: "Customization at a normalised, amortised run-rate", implied_date: "ongoing", ref: "T15 L413-425", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The headline figures follow a management IGAAP-equivalent basis. Filed Ind AS PAT was 20.5 cr against the 65.8 cr headline (L130, L217). Margin, PAT and ROCE guides carry no stated basis. A4 should tie each spoken figure to the filed results first (A3-12, A3-13, A3-15). Three forward risks carry the most weight. First, renewal pricing runs below contracted escalation, and the number went unanswered across three asks. Second, a seven-year customer exits to a build-to-suit campus that may belong to the promoter's Embassy group (ASR garbled, L866). That exit was absent from the prepared remarks. Third, FY27 capex of ~500 cr cannot fit H1's 363.8 cr plus the largest-ever deal, so capex overshoots or the deal's spend slips to FY28. The desk guide moved to a range whose floor was met on 5-Oct. The Q1 pledge release was not delivered. The ASR conflicts (145.3k vs 45k, A- vs A plus, 67% escalations) are transcription defects, not misstatements. A1 anchors drift +1 line on 12 rows; quotes were read at the true line. Prior-quarter diffs are untestable."

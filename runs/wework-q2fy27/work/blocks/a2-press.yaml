@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "press"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/wework-q2fy27/work/ledger_press_wework_q2fy27.md"
+counts:
+  notes: 1
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 20
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 5
+  slide_numbers: 136
+flags_raised: [RESTATED, LINE_ANCHOR_OFF, FOOTNOTE_UNRESOLVED, UNAUDITED, NOTE_BASIS]
+ids_in_structured: 197
+ids_referenced: 197
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Press release, no tables, so no line items or ZERO_STANDING. Fulltext numeric sweep per page reconciles to structured NUMBER rows (4/70/44/18/0 = 136); every leftover token maps to a DATE, ENTITY or QUALIFIER row. Five A1 line anchors are off by one (R005, R074, R088, R116, R118); values are correct, but A3/A4 should cite page, not line, for these. Absences worth A3 attention: no capex amount despite the H1 fully-funded-by-operating-cash claim (R194), rating agency unnamed (R145), core revenue and FCFO/FCFF formulas undefined (R188, R196), IGAAP-equivalent basis excludes IndAS 116 straight-lining with reconciliation held in the investor presentation (R184, R185). 'Largest half-year of openings' (R190) has no comparator."

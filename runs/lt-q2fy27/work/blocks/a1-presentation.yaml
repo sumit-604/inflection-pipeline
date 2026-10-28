@@ -1,0 +1,37 @@
+stage: A1-extractor
+company: "LT"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 36
+formfeed_count: 36
+line_count: 977
+unit_convention: "Mixed: Rs billion (slides 5-22, 27-30, 33) and Rs crore (slides 23, 24, 31, 32, 34-36)"
+conversion_factor_to_cr: "Rs billion -> x100; Rs crore -> x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []       # no zero-character pages
+rendered_pages: []          # no OCR; pages 5-36 table/chart slides viewed at 100dpi for column-order check only, transcribed in fulltext appendix lines 951-977
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 / H1 FY27"
+fulltext_path: "runs/lt-q2fy27/extracted/lt-presentation-q2fy27-fulltext.md"
+structured_path: "runs/lt-q2fy27/extracted/lt-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 1352
+  entity: 35
+  forward: 16
+  date: 18
+  qualifier: 77
+structured_id_range: "R001-R1498"
+gate_a1: pass
+gap_note: ""
+corrections:
+  date: 2026-10-28
+  log: "fulltext header line 16 (CORRECTION_LOG)"
+  domestic_international_swap: "pages 17,18 confirmed by 150dpi render; R244-R251 and R264-R271 labels swapped; appendix lines 959-960 swapped; page 16 and 19 verified unchanged"
+  R1352_line: "265 -> 266"
+  R1387: "HI-TECH wording removed from row (render-only)"
+  page1_rows_absolute: "R1348 R1349 R1350 R1353 R1354 R1355 R1356 R1357 R1359 R1384 R1398 R1404 R1405 R1406"
+  added_rows: "R1491-R1498 slide 12 segment index labels"
+  skipped: "tel/fax digits, 1111 artefact"

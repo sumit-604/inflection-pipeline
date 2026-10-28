@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "LT"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 7
+formfeed_count: 7
+line_count: 849
+unit_convention: "Mixed as heard: crore, billion, trillion, lakh crore, USD million, percent"
+conversion_factor_to_cr: "crore x1; billion x100; trillion x100000; lakh crore x100000; USD not converted"
+text_layer_present: "n.a. (plain text ASR)"
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/lt-q2fy27/extracted/lt-concall-q2fy27-fulltext.md"
+structured_path: "runs/lt-q2fy27/extracted/lt-concall-q2fy27-structured.md"
+structured_counts:
+  number: 206
+  entity: 72
+  forward: 74
+  date: 29
+  qualifier: 90
+structured_id_range: "R001-R492"
+gate_a1: pass
+gap_note: ""

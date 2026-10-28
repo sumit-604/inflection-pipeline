@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "LT"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 3
+formfeed_count: 3
+line_count: 132
+unit_convention: "Crores (order band Rs Cr; USD 32 billion company size)"
+conversion_factor_to_cr: "Crores -> x1"
+text_layer_present: true
+extraction_mode: text-only  # plus one logged render/OCR correction on page 3
+render_candidates: []
+rendered_pages: ["page 3: rendered 150dpi + tesseract, text-layer order classification table scrambled, transcribed from render, marked [OCR page 3]"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (release dated 2026-10-27)"
+fulltext_path: "runs/lt-q2fy27/extracted/lt-orderpr-q2fy27-fulltext.md"
+structured_path: "runs/lt-q2fy27/extracted/lt-orderpr-q2fy27-structured.md"
+structured_counts:
+  number: 20
+  entity: 26
+  forward: 6
+  date: 6
+  qualifier: 11
+structured_id_range: "R001-R069"
+gate_a1: pass
+gap_note: ""

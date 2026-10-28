@@ -1,0 +1,76 @@
+stage: A3-forensics
+company: "LT"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/lt-q2fy27/work/forensics_presentation_lt_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: N.A.
+  F11: FINDING
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "P-01", check: "F1", line: "970, 974, 966", classification: "FORWARD-SIGNAL", implication: "DP nil revenue/order book in Q2 yet 15119 cr funds employed at 2.8%; Hyderabad Metro disposal gain/loss and DP segment exit ahead"}
+  - {id: "P-02", check: "F1", line: "966, 969, 970, 971, 974, 976", classification: "NEUTRAL-FACT", implication: "27 nil cells are template structure (wholly-owned NCI, no FS order book, EG absent FY22); no transaction anticipated"}
+  - {id: "P-03", check: "F6", line: "268-269, 220-221", classification: "FORWARD-SIGNAL", implication: "Hyderabad Metro held for sale, no date or consideration; next perimeter event with proceeds and P&L gain/loss"}
+  - {id: "P-04", check: "F6", line: "174", classification: "FORWARD-SIGNAL", implication: "~Rs 10 trillion pipeline (1.17x order book) for undefined near term; only forward quantity in deck"}
+  - {id: "P-05", check: "F6", line: "415, 523", classification: "FORWARD-SIGNAL", implication: "Energy-Green inflow -45% and Realty -12% called deferrals; H2 FY27 inflow separates timing slip from loss"}
+  - {id: "P-06", check: "F6", line: "416, 387", classification: "FORWARD-SIGNAL", implication: "Large Solar/Offshore Wind and CarbonLite jobs early stage; H2 margin depends on crossing recognition thresholds"}
+  - {id: "P-07", check: "F7", line: "922, 946, 579", classification: "AMBIGUOUS", implication: "FY22-25 segment history only indicative and both 'published' and 'regrouped'; five-year margin trends not like-for-like"}
+  - {id: "P-08", check: "F7", line: "448", classification: "NEUTRAL-FACT", implication: "Defence-scope cover next to PES export orders (7.5 to 31.8 bn); exclusion-list scrutiny as defence exports grow"}
+  - {id: "P-09", check: "F8", line: "222", classification: "AMBIGUOUS", implication: "Derived Q2 ETR 22.6% vs Q1 28.0% and statutory 25.17%; adds ~1.9-4.1 bn to Q2 PAT; H2 run-rate unknown"}
+  - {id: "P-10", check: "F11", line: "967", classification: "AMBIGUOUS", implication: "Net D/E 0.33 does not reproduce from deck parts (0.29, 13% gap); 'Others' source line is non-FS debt, up 119 to 130 bn"}
+  - {id: "P-11", check: "F12", line: "965, 969, 133", classification: "FORWARD-SIGNAL", implication: "PP&M RoFE 57.3% and NWC 1.7% rest on Q2 WC release 82.9 bn (137% of ex-FS op profit), likely ME mega-order advances; unwinds with execution"}
+  - {id: "P-12", check: "F12", line: "969, 197", classification: "CONFIRMATORY-NEGATIVE", implication: "Ex-FS operating profit -2.4% YoY Q2 on +16% revenue; group EBITDA +1% only via FS"}
+  - {id: "P-13", check: "F12", line: "970, 199, 475", classification: "AMBIGUOUS", implication: "Segment EBITDA exceeds P&L EBITDA by 1655 cr (872 cr YoY); includes other income incl SWC gain or excludes rising corporate cost; PP&M 7.0% not clean"}
+  - {id: "P-14", check: "F12", line: "766, 811, 971", classification: "NEUTRAL-FACT", implication: "PP&M PAT is pre parent tax/finance (Corporate carries 1940 cr H1); listed subs 39% of H1 PAT, rest 61%"}
+  - {id: "P-15", check: "F12", line: "966", classification: "FORWARD-SIGNAL", implication: "Corporate (27%) and DP (9%) of funds employed earn 5.4% and 2.8%; monetisation and cash deployment are the ROE levers"}
+  - {id: "P-16", check: "F12", line: "362, 958, 976", classification: "AMBIGUOUS", implication: "I&U H1 margin 5.4% below every FY22-26 year; revenue flat while order book +16%; threshold catch-up vs WET overrun"}
+  - {id: "P-17", check: "F12", line: "972, 387", classification: "AMBIGUOUS", implication: "EC margin fall from CarbonLite 19.0 to 5.8% and MRU 34.0 to 16.5%; PY base had variation claims; Hydrocarbon +80 bps"}
+  - {id: "P-18", check: "F12", line: "955, 956, 957", classification: "FORWARD-SIGNAL", implication: "ME = 51% Q2 inflow, 40% order book, 36% revenue; Gulf hydrocarbon client concentration, no risk detail"}
+  - {id: "P-19", check: "F14", line: "373-381, 402-411, 959-960, 185", classification: "AMBIGUOUS", implication: "EC/EG domestic-international split likely swapped (only swap reproduces 58/56/55/54% intl share); A1 re-render PDF p17-18; rows R244-R251, R264-R271 quarantined"}
+  - {id: "P-20", check: "F14", line: "202-203, 501", classification: "AMBIGUOUS", implication: "SG&A +31% H1 blamed on higher FS credit cost while FS slide claims improving asset quality; credit cost bps not given"}
+  - {id: "P-21", check: "F14", line: "972, 959", classification: "NEUTRAL-FACT", implication: "EC Q2 margin change -70 bps on p33 vs -80 bps on p17 (true -75 bps); rounding drift"}
+  - {id: "P-22", check: "F14", line: "968, 969", classification: "AMBIGUOUS", implication: "H1 FY26 and H1 FY27 Interest & Dividend paid both (66.1), fixed-asset capex both (24.3); possible template carry-forward in H1 FY26 cells"}
+  - {id: "P-23", check: "F14", line: "970, 971", classification: "NEUTRAL-FACT", implication: "Corporate depreciation credit 35 cr Q2 / 67 cr H1 via eliminations; low materiality"}
+  - {id: "P-24", check: "F15", line: "220-222, 268, 967, 969", classification: "AMBIGUOUS", implication: "Hyderabad Metro 'non-consolidation' vs 'Held for Sale' conflict; non-FS debt rose 11 bn in H1 despite 'decrease in Standalone debt'"}
+  - {id: "P-25", check: "F15", line: "267, 233, 389, 967", classification: "NEUTRAL-FACT", implication: "Nabha out, Hyderabad Metro HFS, SWC sold, MRU reclassified; DP/TPS/M&P/EC YoY not like-for-like to Q1 FY28"}
+  - {id: "P-26", check: "F16", line: "97, 99-110, 199", classification: "AMBIGUOUS", implication: "Headline slide omits EBITDA margin (-130 bps YoY), the one headline P&L metric that fell; 'Volatility' undefined"}
+  - {id: "P-27", check: "F16", line: "237-238", classification: "FORWARD-SIGNAL", implication: "PBT +13.0 bn: other income 72%, finance cost 22%, EBITDA 2%; PP&M attribution not supported; Q3 loses SWC gain"}
+  - {id: "P-28", check: "F16", line: "606, 584-604", classification: "AMBIGUOUS", implication: "Footnote references headwinds the slide does not show; headwinds panel possibly removed"}
+  - {id: "P-29", check: "F17", line: "96-948, 174", classification: "AMBIGUOUS", implication: "No FY27 guidance on inflow/revenue/margin, no book-to-bill (derived 1.88x Q2, 2.83 yrs); 1 quarter silence (first run)"}
+forward_signals: ["P-01", "P-03", "P-04", "P-05", "P-06", "P-11", "P-15", "P-18", "P-27"]
+ambiguous: ["P-07", "P-09", "P-10", "P-13", "P-16", "P-17", "P-19", "P-20", "P-22", "P-24", "P-26", "P-28", "P-29"]
+commitments:
+  - {commitment: "Hyderabad Metro disposal (held for sale)", implied_date: "NOT FOUND", ref: "p12 line 268-269; p10 line 220-221", status_word: "underway"}
+  - {commitment: "Nabha Power divestment", implied_date: "2026-06-25", ref: "p12 line 267", status_word: "completed"}
+  - {commitment: "SWC business in LTTS divested, one-time gain booked", implied_date: "Q2 FY27", ref: "p10 line 231-233; p20 line 475-477", status_word: "completed"}
+  - {commitment: "MRU reclassified M&P to Energy-Conventional, PY restated", implied_date: "Q2 FY27", ref: "p17 line 389", status_word: "completed"}
+  - {commitment: "~Rs 10 trillion addressable prospects pipeline for the near term", implied_date: "near term, undefined", ref: "p8 line 174", status_word: "initiated"}
+  - {commitment: "Deferred Solar orders to be booked later", implied_date: "NOT FOUND", ref: "p18 line 415", status_word: "initiated"}
+  - {commitment: "Deferred Realty launches", implied_date: "NOT FOUND", ref: "p22 line 523", status_word: "initiated"}
+  - {commitment: "Large Solar and Offshore Wind projects commenced", implied_date: "Q2 FY27 start; completion NOT FOUND", ref: "p18 line 416", status_word: "underway"}
+  - {commitment: "CarbonLite early-stage jobs to reach margin recognition", implied_date: "NOT FOUND", ref: "p17 line 387", status_word: "initiated"}
+  - {commitment: "I&U jobs below margin recognition threshold to cross it", implied_date: "NOT FOUND", ref: "p16 line 362", status_word: "underway"}
+  - {commitment: "PMCH set to become India's largest hospital by beds", implied_date: "NOT FOUND", ref: "p7 line 147", status_word: "underway"}
+  - {commitment: "Presentation uploaded to investor website (Reg 30)", implied_date: "2026-10-27", ref: "p1 line 44", status_word: "completed"}
+  - {commitment: "Strategic focus areas: Electronics, Semiconductor Design, Data Centers, Green Hydrogen", implied_date: "NOT FOUND", ref: "p25 line 597-601", status_word: "initiated"}
+  - {commitment: "Strategic Portfolio Realignment / Value Monetisation / Prudent Capital Allocation", implied_date: "NOT FOUND", ref: "p25 lines 587-589, 603", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The quarter's strength is orders and cash, not operating profit. Ex-FS operating profit fell 2.4% YoY on 16% revenue growth. PBT growth came 72% from other income (incl an unquantified one-time SWC gain) and 22% from lower finance cost tied to the Hyderabad Metro perimeter change. The record 1.7% NWC and 57.3% PP&M RoFE most likely rest on customer advances from Middle East mega orders (ME = 51% of Q2 inflow, 40% of order book). Advances unwind as jobs execute, so Q3-Q4 NWC is the observation that separates a structural gain from timing. Segment EBITDA is not on the P&L basis: its gap to reported EBITDA nearly doubled YoY, so PP&M 7.0% is not a clean core margin until management states what is allocated. P-19 is probably an A1 transcription swap: the EC/EG domestic-international split reproduces the deck's own 58% international revenue share only when swapped. Re-render PDF pages 17-18 before any downstream use. No FY27 guidance appears anywhere in the deck; check the concall before scoring that as silence."

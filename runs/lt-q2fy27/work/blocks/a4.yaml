@@ -1,0 +1,105 @@
+stage: A4-analyst
+company: "LT"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, concall, presentation, order_press_release_dhaka_metro_A1_only]
+ledger_reconciliation:
+  notes: 41
+  turns: 45
+  slides: 36
+  all_reviewed: true
+  a3_findings_incorporated: [R-01, R-02, R-03, R-04, R-05, R-06, R-07, R-08, R-09, R-10, R-11, R-12, R-13, R-14, R-15, R-16, R-17, R-18, R-19, R-20, R-21, R-22, R-23, R-24, R-25, R-26, R-27, R-28, R-29, R-30, R-31, R-32, R-33, P-01, P-02, P-03, P-04, P-05, P-06, P-07, P-08, P-09, P-10, P-11, P-12, P-13, P-14, P-15, P-16, P-17, P-18, P-19, P-20, P-21, P-22, P-23, P-24, P-25, P-26, P-27, P-28, P-29, C-01, C-02, C-03, C-04, C-05, C-06, C-07, C-08, C-09, C-10, C-11, C-12, C-13, C-14, C-15, C-16, C-17, C-18, C-19, C-20, C-21, C-22, C-23, C-24, C-25, C-26]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE: no Notion page, no companies/LT.md, no Spear line (PRE-THESIS READ; Decision Status ND 'not passed')"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - "Q2FY27: +54.4% of standalone PAT (5,202.10 vs 3,370.12; gap 1,831.98)"
+  - "Q1FY27: -7.5% (4,122.85 vs 4,455.26; gap -332.41)"
+  - "Q2FY26: n/m (standalone loss -3,591.17 after exceptional -5,413.00; gap 7,517.26; 115.5% on derived pre-exc S PAT 1,821.83)"
+  - "H1FY27: +19.2% (9,324.95 vs 7,825.38; gap 1,499.57)"
+  - "H1FY26: n/m (standalone -105.87; gap 7,649.15)"
+  - "FY26: +155.8% (16,083.99 vs 6,287.13; gap 9,796.86)"
+questions_for_management:
+  - {q: "Other income allocated into segment EBITDA in Q2 FY27 and Q2 FY26 by segment (segment 8,495 vs P&L 6,845); is the 7.8% PPM target on that basis?", from_finding_id: "R-19, P-13, C-21, C-20, C-04"}
+  - {q: "Split Q2 other income (+922 cr YoY): SWC one-time gain, treasury on advance cash, FV gains, dividends; Q2 PAT growth ex SWC gain?", from_finding_id: "R-05, P-27, C-06, C-22, R-02"}
+  - {q: "Customer advances at 30-Sep-26 vs 31-Mar-26; share of Q2 ex-FS WC release (Rs 82.9 bn) from Q2 mobilisation advances; expected NWC % at 31-Mar-27?", from_finding_id: "P-11, C-05, R-21"}
+  - {q: "FY27 inflow guide 10-12% group or PPM basis? Group basis implies H2 inflow -0.8% to +3.0% YoY; is flat H2 the plan?", from_finding_id: "C-01, P-29, R-33"}
+  - {q: "Why is H2 revenue a steep ask (needs +8.8% to +12.5%)? Quantify ME logistics revenue at risk and renewables revenue deferred to FY28.", from_finding_id: "C-03, C-14"}
+  - {q: "Share of hydrocarbon book and CarbonLite jobs below margin recognition threshold at 30-Sep-26, and quarter of crossing?", from_finding_id: "C-08, P-06, P-17"}
+  - {q: "Value of yard modules still to transit Hormuz and dependent billing milestones; reconcile 'yards not affected' with 'has to cross Hormuz'.", from_finding_id: "C-15, C-16"}
+  - {q: "Client count in ME order book (40% of book), largest single order, advance and retention terms?", from_finding_id: "P-18, R-14"}
+  - {q: "Logistics and insurance cost incurred to date vs amount agreed in writing for reimbursement; any recovery booked yet?", from_finding_id: "C-17"}
+  - {q: "I&U: share of revenue below threshold, WET overrun provisions, claims filed; is 'moving northward' QoQ or YoY?", from_finding_id: "P-16, C-18, C-19, R-20"}
+  - {q: "Standalone E-Conv EBIT 5.88% vs 8.71%: Q2 FY26 variation claim amount (MRU comparatives restated, PF L389); when do Q2 CarbonLite Ultra Mega jobs reach recognition?", from_finding_id: "R-07, P-17"}
+  - {q: "Standalone operating margin 5.49% vs 6.61% with EBITDA +3.1% on revenue +24.1%: which segments?", from_finding_id: "R-08"}
+  - {q: "Rs 10.3 trn H2 pipeline: win rate, ME share, horizon; E-Conv prospects fell to 2.07 from 3.35 trn while solar is 1.47 trn.", from_finding_id: "C-02, P-04"}
+  - {q: "Value and expected quarter of deferred solar orders, deferred I&U orders and delayed Realty launches?", from_finding_id: "P-05, R-14, R-23"}
+  - {q: "LTMRHL: reason for slip to 31-Dec-26, consideration, conditions, gain or loss vs carrying value; HFS-consolidated or deconsolidated after 30-Apr; LTMRHL finance cost Q2 FY26; split of the 289.87 finance-cost fall between LTMRHL and lower standalone debt (standalone -70.93)?", from_finding_id: "R-11, C-07, P-03, P-24, R-26, R-06, P-01, R-24"}
+  - {q: "Nature of standalone exceptional 5,413 cr (Q2 FY26) and consolidated 1,722 cr (FY26); expected H2 exceptional items from LTMRHL, Realty slump sale, Vyoma; NCLT timeline?", from_finding_id: "R-01, R-13"}
+  - {q: "Source of Q2 deferred tax credit 337 cr and expected H2 ETR?", from_finding_id: "R-16, P-09"}
+  - {q: "AI capex: total for 100 MW, debt and entity, together.ai tenor and take-or-pay share, segment home; Vyoma outside investor; Sovcloud partner?", from_finding_id: "C-09, R-28, R-12, C-12"}
+  - {q: "Split of ~Rs 1 lakh crore surplus between L31 investments, dividend and buyback; return threshold; DP 15,119 cr at 2.8%, Corporate 43,158 cr at 5.4%.", from_finding_id: "C-12, P-15, P-01, R-24"}
+  - {q: "International Green Scapes acquisition (13-Apr-2026): business, price (CF 805.30 cr incl contingent), segment; which NCI stake was bought for 698.99 cr?", from_finding_id: "R-29, R-02"}
+  - {q: "Which of the 41 unreviewed subsidiaries earn H1 PAT 541.98 cr on revenue 391.94 cr, and from what?", from_finding_id: "R-10"}
+  - {q: "Counterparties behind standalone ECL +55% (788.56 vs 508.32) with nil write-offs?", from_finding_id: "R-03"}
+  - {q: "Q2 non-reclassifiable OCI loss 172.63 cr (above FY26): plan assets or FVOCI equity?", from_finding_id: "R-18"}
+  - {q: "FS credit cost bps Q2 FY27 vs Q2 FY26; FS provisions vs LTM/LTTS forex in H1 SG&A +31%?", from_finding_id: "P-20"}
+  - {q: "Definition of net debt/equity 0.33 (does not reproduce at 0.29)?", from_finding_id: "P-10"}
+  - {q: "Audited restated segment history on new definitions; PPM comparatives restated for Realty carve-out; guides on post-carve-out basis?", from_finding_id: "P-07, C-23"}
+  - {q: "Why does the headline slide omit EBITDA margin; what is 'Volatility'; why does slide 25 footnote cite headwinds not shown?", from_finding_id: "P-26, P-28"}
+  - {q: "Driver of M&P net segment capital +52.7% in H1 vs revenue +23.7%?", from_finding_id: "R-22"}
+  - {q: "Realty unsold inventory and launch calendar given assets +14.6%, liabilities +24.7%, Q2 revenue -43%?", from_finding_id: "R-23"}
+  - {q: "AMCA bid submitted by October-end? Defence conversion date; 'end of this year' = CY26 or FY27?", from_finding_id: "C-10"}
+  - {q: "PDO USD 6-7 bn: 3-4 or 4-5 years; planned win share among four contractors?", from_finding_id: "C-11"}
+  - {q: "FS revenue and PAT, TPS margin ex SWC gain, NCI split by subsidiary for Q2?", from_finding_id: "C-25"}
+  - {q: "Dhaka Metro CP09/CP10: is the Major band (Rs 5,000-10,000 cr) gross package value or L&T share; L&T share vs Sumitomo; booked in Q3 FY27 inflow?", from_finding_id: "ORDER-PR (A1 only, no A3 ID)"}
+  - {q: "Confirmation only: deck p17-18 E-Conv/E-Green intl revenue split ties to press release 76%/94% after A1 relabel.", from_finding_id: "P-19"}
+  - {q: "Confirmation only: equal H1 FY26/H1 FY27 Interest & Dividend paid (66.1 bn) and fixed-asset investment (24.3 bn) are coincidence; filed CF ties.", from_finding_id: "P-22"}
+monitorables:
+  - {item: "AMCA bid submission", implied_date: "2026-10-31", source_ref: "CC L641-L649 (C-10)"}
+  - {item: "Dhaka Metro CP09/CP10 order in Q3 FY27 inflow (Major band Rs 5,000-10,000 cr; band basis gross vs L&T share ND; L&T share of CP09 ND)", implied_date: "Q3 FY27", source_ref: "OP R001, R054, R061, R066"}
+  - {item: "Vyoma.AI business transfer and LTNS stake transfer", implied_date: "Q3 FY27 (by 2026-12-31)", source_ref: "RF L967-L970 (R-12)"}
+  - {item: "EV traction motor commercial production", implied_date: "Q3 FY27", source_ref: "CC L105-L106 (C-13)"}
+  - {item: "LTMRHL divestment completion (revised once)", implied_date: "2026-12-31", source_ref: "RF L517, L965; CC L111-L112 (R-11, C-07)"}
+  - {item: "Q3 FY27 operating EBITDA margin YoY change (single cleanest metric; bull >= -30 bps, bear <= -100 bps)", implied_date: "Q3 FY27 results (date ND)", source_ref: "RF L380-L381; Step 8C"}
+  - {item: "Q3 FY27 NWC %, other current liabilities (advance burn) and ex-FS CFO before working capital", implied_date: "Q3 FY27 results", source_ref: "PF L133, L969; RF L588; CC L493-L494 (C-05, P-11)"}
+  - {item: "AI factory commissioning (10,000+ B300 GPUs, Chennai)", implied_date: "2027-01", source_ref: "CC L81-L86 (C-13)"}
+  - {item: "Solar order inflow recovery outside India", implied_date: "H2 FY27", source_ref: "CC L357-L366 (C-14)"}
+  - {item: "Semiconductor revenue traction", implied_date: "by Q4 FY27", source_ref: "CC L534-L535 (C-13)"}
+  - {item: "Defence order conversion", implied_date: "end of 'this year' (CY26 or FY27 unclear)", source_ref: "CC L444-L447 (C-10)"}
+  - {item: "Hydrocarbon jobs cross margin recognition threshold", implied_date: "Q4 FY27 and beyond", source_ref: "CC L428-L430 (C-08)"}
+  - {item: "FY27 order inflow growth 10-12%", implied_date: "2027-03-31", source_ref: "CC L319-L320 (C-01)"}
+  - {item: "FY27 revenue growth 10-12%", implied_date: "2027-03-31", source_ref: "CC L329-L330 (C-03)"}
+  - {item: "FY27 PPM EBITDA margin 7.8%", implied_date: "2027-03-31", source_ref: "CC L331-L332 (C-04)"}
+  - {item: "FY27 group NWC below 10%", implied_date: "2027-03-31", source_ref: "CC L336-L338 (C-05)"}
+  - {item: "Remaining Oman-yard consignments through Hormuz", implied_date: "not dated", source_ref: "CC L703-L707 (C-15)"}
+  - {item: "Logistics and insurance cost reimbursement", implied_date: "not dated", source_ref: "CC L476-L481 (C-17)"}
+  - {item: "Infra WET claims conversion", implied_date: "not dated", source_ref: "CC L738-L743 (C-18)"}
+  - {item: "Offshore wind execution ramp", implied_date: "following quarters", source_ref: "CC L404; RF L242"}
+  - {item: "Realty slump sale NCLT approval", implied_date: "ND", source_ref: "RF L959-L963 (R-13)"}
+  - {item: "AI capacity 100 MW+", implied_date: "1.5-2 years from 2026-10-27", source_ref: "CC L511-L524 (C-09)"}
+  - {item: "PDO framework awards (USD 6-7 bn opportunity)", implied_date: "3-4 or 4-5 years", source_ref: "CC L614-L622 (C-11)"}
+  - {item: "Liquidation of five entities", implied_date: "ND", source_ref: "RF L1663 (R-31)"}
+flags:
+  - "PRE-THESIS READ: no Notion page, no companies/LT.md, no Spear line; Spear gate blocks /run-pipeline until /step1"
+  - "Concall is ASR (faster-whisper small.en), untagged speakers; all concall figures ASR_UNVERIFIED management tier; no load-bearing heard-vs-filed conflict found"
+  - "Q2 owners PAT +32.5% is not core: operating EBITDA +0.6%, margin -132 bps; other income 70.7% and finance-cost fall 22.2% of the PBT gain (at most 16.8% non-standalone incl Hyderabad Metro perimeter; 5.4% lower standalone finance cost, reversible); OI-reverted PAT growth +11.4%"
+  - "One-time items in Q2: deferred tax credit 337.06 (ETR 22.6% vs 27.0% current-only); H1 disposal gain 332.93 incl SWC (quarter split ND)"
+  - "Segment and PPM EBITDA include allocated other income (CC L789-L792); segment EBITDA exceeds P&L EBITDA by 1,650 (876 LY); 7.8% PPM target on that basis"
+  - "Management narrative contradicts filing on PAT driver ('primarily' activity) and on 'maintaining' margin; filing wins"
+  - "NWC 1.7% advance-assisted (OCL +15,078.60); moderation guided; ex-FS CFO before WC -3.6% H1 (-7.5% Q2); WC release plus disposals built ~77% of ex-FS net-cash rise; trade receivable fall offset by OCA +9,551.28; cash conversion INDETERMINATE-WITH-DIRECTION (caps verdict at PROCEED WITH CAVEATS)"
+  - "Middle East: 51% of Q2 inflow, 40% of book, 36% of revenue; Oman yard output must transit Hormuz; logistics cost recovery hoped, not agreed"
+  - "Order growth concentrated: ex-Energy-Conventional inflow -10.6% YoY; 70.5% of YoY book rise in E-Conv and E-Green; international book +41.5% vs domestic +15.0%; FY27 inflow guide implies H2 -0.8% to +3.0% (group)"
+  - "LTMRHL divestment slipped to 31-Dec-2026; D/E 1.12 incl HFS debt; deck 'non-consolidation' vs filing 'Held for Sale'"
+  - "Standalone operating margin 5.49% vs 6.61%; standalone E-Conv EBIT 5.88% vs 8.71%"
+  - "57.2% of Q2 consolidated PAT outside principal auditor review (structural; component PAT before consolidation adjustments); 41 unreviewed subsidiaries post PAT above revenue"
+  - "AI capex about USD 750 m plus 70 MW more with new debt; segment home and funding not filed"
+  - "Role 4 Steps 6.5/7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30); pillar facts flagged"
+  - "Dhaka Metro order (27-Oct-2026) is Q3 FY27 inflow; value only as Major band; band basis (gross vs L&T share) ND; A1 only"
+  - "No Notion write; Decision Status never written; tracker rows not supplied (zero signals; Role 5.5 open)"
+  - "Correction loop 1 (2026-10-29): A5 F1-F7 fixed, S1-S8 applied; verdict, cash classification and Section E numbers unchanged"
+plain_language_brief_included: true
+analyst_note: "Numbers on the call match the filing; the story does not. Operating EBITDA rose 0.6% on 16% revenue growth. PAT growth rests on other income, lower finance cost (Hyderabad Metro perimeter at most 16.8% of the PBT gain; standalone debt 5.4%, reversible) and a tax credit. Management confirmed that segment EBITDA carries allocated other income, so PPM 7.0% and the 7.8% target are not clean; the filed operating margin (8.69%, -132 bps) is the metric to track. Cash is weaker than it looks: ex-FS cash before working capital fell 3.6% in H1, and advances plus disposal proceeds built about 77% of the net-cash rise. Cash conversion stays INDETERMINATE-WITH-DIRECTION because the advance balance is not disclosed. Indicative FY27E owners PAT is 20,009 cr (Reading A, 26.1x at Rs 3,801) or 21,210 cr (Reading B, 24.7x); FY28E 21,748 / 24,257 cr (24.0x / 21.6x). Reading A is the more evidenced path. Correction loop 1 fixed A5 F1-F7 without changing the verdict, the cash class or any Section E number."
+review_path: "runs/lt-q2fy27/work/review_lt_q2fy27.md"

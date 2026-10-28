@@ -49,7 +49,11 @@ Batches: 1 = NETWEB, AEQUS, PARACABLES, SONACOMS. 2 = WEWORK, INDIAMART, SYNGENE
 | AEQUS | runs/aequs-q2fy27 | 2,050,757 | 1 | COMPLETE; PROCEED WITH FLAGS; falsification line fired, operator to rule | 28fb68fe |
 | PARACABLES | runs/paracables-q2fy27 | 2,361,285 | 1 | INCOMPLETE on one ledger-index item (C1, no number moved); PROCEED WITH FLAGS | 210c281e |
 | SONACOMS | runs/sonacoms-q2fy27 | 3,550,129 | 1 | COMPLETE; PROCEED WITH FLAGS | c0295da5 |
-| (batch 2 pending) | | | | | |
+| WEWORK | runs/wework-q2fy27 | 3,148,233 | 1 | COMPLETE; PROCEED WITH FLAGS; headline numbers on IGAAP-equivalent basis, reconciled to Ind AS 116 | 2d470b12 |
+| INDIAMART | runs/indiamart-q2fy27 | 3,779,541 | 1 | COMPLETE; PROCEED WITH FLAGS; enquiry exit rule (#6) fired as written | f2ada840 |
+| SYNGENE | runs/syngene-q2fy27 | 1,736,667 | 1 | COMPLETE; PROCEED WITH FLAGS; T3 fired, T4 fired on strict reading; no call transcript | 65ba58de |
+| RAYMONDREL | runs/raymondrel-q2fy27 | 3,122,093 | 1 | COMPLETE; PROCEED WITH FLAGS; two operator rulings open (margin-stop basis, net-debt test) | 2dc7890c |
+| (batch 3 pending) | | | | | |
 
 ## Problems log (coordinator)
 
@@ -59,3 +63,4 @@ Batches: 1 = NETWEB, AEQUS, PARACABLES, SONACOMS. 2 = WEWORK, INDIAMART, SYNGENE
 - 11:53: transcription queue empty. ASR transcripts held for Netweb, Aequs, Paramount, Sona, WeWork, Indiamart, Raymond, Knack, Dynamic Cables, LT, Unimech (11 names). Syngene and Route recordings not posted; Sky Gold and Neochem calls are in the future; Puretrop has no call.
 - 11:24-11:30: batch 1 sessions committed. Their completion notes reached the coordinator at 13:43, two hours later; batch 2 started at 13:50. The gap is coordinator wake latency, not review time (each review ran about 1 h 45 min).
 - 13:55: Syngene investor page lists no Q2 FY27 recording yet (latest is January 2026). The Syngene session runs on filed documents and checks once before A4.
+- 15:55-16:02: batch 2 sessions committed; notes reached the coordinator at 16:04 (no gap this time). Batch 3 (UNIMECH, LT, SKYGOLD, KNACK) started at 16:06. Batch 2 merged into the run branch.

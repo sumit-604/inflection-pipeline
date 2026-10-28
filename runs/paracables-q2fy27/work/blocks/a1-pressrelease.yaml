@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "PARACABLES"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 3
+formfeed_count: 3
+line_count: 127
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true   # untrusted hidden OCR layer (GlyphLessFont), discarded
+extraction_mode: scan-ocr
+render_candidates: []
+rendered_pages: [1, 2, 3]  # hidden text layer garbled, untrusted
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/paracables-q2fy27/extracted/paracables-pressrelease-q2fy27-fulltext.md"
+structured_path: "runs/paracables-q2fy27/extracted/paracables-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 103
+  entity: 20
+  forward: 7
+  date: 15
+  qualifier: 12
+structured_id_range: "R001-R157"
+gate_a1: pass
+gap_note: ""
+corrections_logged: 7

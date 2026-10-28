@@ -1,0 +1,63 @@
+stage: A3-forensics
+company: "PARACABLES"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/work/forensics_presentation_paracables_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F1", line: "s30 L448/L450; s23 L353,L356; s15 L211", classification: "FORWARD-SIGNAL", implication: "CWIP nil FY26, Rs 4 Cr H1 FY27 vs Rs 300 Cr plant; at most ~Rs 31 Cr build visible; >=Rs 269 Cr spend plus funding must land before Q1 FY28 or date slips"}
+  - {id: "A3-02", check: "F6", line: "s23 L353,L356,L358,L361; s32 L476", classification: "FORWARD-SIGNAL", implication: "Q1 FY28 partial commissioning reaffirmed; civil commenced, critical P&M placed, hiring underway; tracker milestone"}
+  - {id: "A3-03", check: "F6", line: "s15 L216-219", classification: "FORWARD-SIGNAL", implication: "Narmadapuram Rs 500 Cr FY28 / Rs 1,200 Cr FY29 = 4.0x turnover on Rs 300 Cr; FY28 target rests on partial commissioning"}
+  - {id: "A3-04", check: "F6", line: "s32 L481; s15 L211-212", classification: "FORWARD-SIGNAL", implication: "Rs 5,000 Cr in 5 yrs = 21.2% CAGR; plants near-full, no capacity bridge named; foreshadows further capex and funding"}
+  - {id: "A3-05", check: "F7", line: "s2 L27,L35", classification: "NEUTRAL-FACT", implication: "deck figures self-described provisional; anchor to filed results; project-overrun risk listed"}
+  - {id: "A3-06", check: "F10", line: "s28 L428; s30 L447; s36 L550", classification: "NEUTRAL-FACT", implication: "share base ~+8.7% YoY; EPS +68.2% vs PAT +82.8%; paid-up 61->65; EPS growth trails PAT until warrants settle"}
+  - {id: "A3-07", check: "F10", line: "s27 L406-407; s28 L428", classification: "AMBIGUOUS", implication: "single EPS labelled diluted on s27, unlabelled on s28; basic not shown; warrant spread unknown"}
+  - {id: "A3-08", check: "F11", line: "s30 L447-449; s27 L406-408", classification: "NEUTRAL-FACT", implication: "net worth ties; Rs 98.1 Cr (10.7%) roll-forward gap = unnamed equity raise; slide 27 +22.8% includes raised capital"}
+  - {id: "A3-09", check: "F14", line: "s6 L85; s9 L156", classification: "NEUTRAL-FACT", implication: "revenue CAGR 35.4% (incl OI) vs 34.7% (sales); two definitions in one deck"}
+  - {id: "A3-10", check: "F14", line: "s17 L258-260; s16 L233-236; s18 L275", classification: "AMBIGUOUS", implication: "US (Exports) row = total exports 550/483; mislabel or 100% US tariff exposure despite 35+ geographies"}
+  - {id: "A3-11", check: "F14", line: "s29 L435; s25 L382; s28 L420", classification: "NEUTRAL-FACT", implication: "Operating Margin* without footnote; basis unlabelled; minor QoQ drift; cumulative drafting data point"}
+  - {id: "A3-12", check: "F16", line: "s18 L271,L274,L285; s17 L258; s19 L293-294", classification: "AMBIGUOUS", implication: "export recovery framed off H2 FY26 trough; H1 exports -17.9% YoY; Q2 US -8.5%; export order share 16%->14%"}
+  - {id: "A3-13", check: "F16", line: "s6 L85; s9 L149; s29 L437", classification: "NEUTRAL-FACT", implication: "headline EBITDA CAGR 48.5% incl OI; operating EBITDA CAGR 34.0%; FY26 OI ~44% of EBITDA"}
+  - {id: "A3-14", check: "F16", line: "s27 L410-412; s28 L425; s30 L450,L453", classification: "FORWARD-SIGNAL", implication: "D/E framed vs FY22; borrowings +13.8% after equity; finance cost ~2x YoY, ~24% of period-end debt annualised; off-BS financing likely; 24% of PBT"}
+  - {id: "A3-15", check: "F16", line: "s27 L410-412; s30 L454", classification: "AMBIGUOUS", implication: "WC days 108 vs H1 FY26 109; Notion memory FY26 101 / Q1 96 implies sequential rise; payables -27%"}
+  - {id: "A3-16", check: "F16", line: "s15 L214-215", classification: "AMBIGUOUS", implication: "EHV up to 220 kV vs Notion AR memory <=132kV; scope up, Rs 300 Cr budget unchanged"}
+  - {id: "A3-17", check: "F16", line: "s21 L315; s19 L287-296", classification: "AMBIGUOUS", implication: "HTLS Rs 200+ Cr undated, inclusion in Rs 731 Cr unstated; order-book definition absent; tender tenor vs 3-4 month cap"}
+  - {id: "A3-18", check: "F17", line: "deck-wide s25-s30; Notion L493-498,L612-622,L644-651,L737", classification: "CONFIRMATORY-NEGATIVE", implication: "13 of 19 checklist items unaddressed incl CFO (filed H1 CFO negative per memory), pref issue, warrants, other-expenses driver"}
+  - {id: "A3-19", check: "F10", line: "s36 L546-551", classification: "AMBIGUOUS", implication: "shareholding labels unpaired; promoter likely 45.87% post-dilution; FPI+DII 6.02% if small slices; verify from filed SHP"}
+forward_signals: ["A3-01", "A3-02", "A3-03", "A3-04", "A3-14"]
+ambiguous: ["A3-07", "A3-10", "A3-12", "A3-15", "A3-16", "A3-17", "A3-19"]
+commitments:
+  - {commitment: "Narmadapuram partial commissioning", implied_date: "Q1 FY28", ref: "s15 L212; s23 L361; s32 L476", status_word: "underway"}
+  - {commitment: "Narmadapuram foundation and civil works", implied_date: "per indicated schedule", ref: "s23 L353", status_word: "underway"}
+  - {commitment: "Orders for most critical plant and machinery", implied_date: "by 30-Sep-2026", ref: "s23 L356", status_word: "completed"}
+  - {commitment: "Plant hiring phased to commissioning", implied_date: "to Q1 FY28", ref: "s23 L358", status_word: "underway"}
+  - {commitment: "Narmadapuram targeted turnover Rs 500 Cr", implied_date: "FY28", ref: "s15 L216-218", status_word: "initiated"}
+  - {commitment: "Narmadapuram targeted turnover Rs 1,200 Cr", implied_date: "FY29", ref: "s15 L216-219", status_word: "initiated"}
+  - {commitment: "HTLS capacity augmentation at Narmadapuram", implied_date: "FY28", ref: "s21 L325", status_word: "initiated"}
+  - {commitment: "Revenue Rs 5,000 Cr", implied_date: "within five years (~FY31)", ref: "s32 L481", status_word: "initiated"}
+  - {commitment: "Move toward pre-tariff margins", implied_date: "FY27 roadmap", ref: "s32 L467-471", status_word: "initiated"}
+  - {commitment: "HTLS tenders under bid and finalisation", implied_date: "undated", ref: "s21 L317", status_word: "underway"}
+  - {commitment: "Data-centre approvals with other developers", implied_date: "undated", ref: "s22 L336-339", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck's most forward-looking silence is the balance sheet under Narmadapuram. CWIP is nil at FY26 and Rs 4 Cr at 30-Sep-26 against a Rs 300 Cr plant guided to partial commissioning in Q1 FY28. At least Rs 269 Cr of spend, and its funding, must land within three quarters or the date slips. The H1 equity raise (about Rs 98 Cr, never named in the deck) did not lower debt. Borrowings rose Rs 16 Cr, and finance cost doubled YoY to an annualised 24% of period-end debt, which points to financing outside the debt lines. Export 'recovery' is half-on-half off the tariff trough: YoY exports fell 17.9% and the export share of the order book slipped to 14%. Headline CAGRs include other income. Pipeline defects: A1 line cites on slides 28 and 30 run one line early. R371's cited line has no value dash (the dashes are at L450 and L453). Tokens 20.4% (L425) and 85.3% (L426) were not captured. Column order and YoY tokens suggest A1 swapped depreciation and finance cost for Q2 FY26 and H1 FY26. None of this was used as evidence. A4/A5 confirm against the filed results."

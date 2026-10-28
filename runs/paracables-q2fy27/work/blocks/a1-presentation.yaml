@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "PARACABLES"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 37
+formfeed_count: 37
+line_count: 563
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/paracables-q2fy27/extracted/paracables-presentation-q2fy27-fulltext.md"
+structured_path: "runs/paracables-q2fy27/extracted/paracables-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 407
+  entity: 32
+  forward: 25
+  date: 37
+  qualifier: 24
+structured_id_range: "R001-R525"
+gate_a1: pass
+gap_note: ""

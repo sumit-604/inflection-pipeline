@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "PARACABLES"
+quarter: "Q2 FY27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 6            # plain text; page = 600-second audio chunk
+formfeed_count: 0
+line_count: 627
+unit_convention: "Crores (as spoken)"
+conversion_factor_to_cr: "x1 (as spoken)"
+text_layer_present: "n.a. (plain text)"
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100    # 593 timestamped lines [00:00:00]-[00:59:20] plus preamble, all carried; source 595 lines
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/extracted/paracables-concall-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/extracted/paracables-concall-q2fy27-structured.md"
+structured_counts:
+  number: 122
+  entity: 76
+  forward: 100
+  date: 35
+  qualifier: 44
+structured_id_range: "R001-R377"
+turn_count_inferred: 88
+gate_a1: pass
+gap_note: ""

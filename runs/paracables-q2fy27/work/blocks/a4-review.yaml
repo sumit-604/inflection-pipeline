@@ -1,0 +1,85 @@
+stage: A4-analyst
+company: "PARACABLES"
+quarter: "Q2 FY27"
+model: "claude-opus-5-5"
+status: complete
+loop_iteration: 1
+docs_merged: [results, concall, presentation, pressrelease]
+ledger_reconciliation:
+  notes: 20
+  turns: 88
+  slides: 40   # 37 deck slides + 3 press-release pages
+  all_reviewed: true
+  a3_findings_incorporated: [RES-A3-01, RES-A3-02, RES-A3-03, RES-A3-04, RES-A3-05, RES-A3-06, RES-A3-07, RES-A3-08, RES-A3-09, RES-A3-10, RES-A3-11, RES-A3-12, RES-A3-13, RES-A3-14, RES-A3-15, CC-A3-01, CC-A3-02, CC-A3-03, CC-A3-04, CC-A3-05, CC-A3-06, CC-A3-07, CC-A3-08, CC-A3-09, CC-A3-10, CC-A3-11, CC-A3-12, CC-A3-13, CC-A3-14, CC-A3-15, CC-A3-16, CC-A3-17, CC-A3-18, CC-A3-19, PPT-A3-01, PPT-A3-02, PPT-A3-03, PPT-A3-04, PPT-A3-05, PPT-A3-06, PPT-A3-07, PPT-A3-08, PPT-A3-09, PPT-A3-10, PPT-A3-11, PPT-A3-12, PPT-A3-13, PPT-A3-14, PPT-A3-15, PPT-A3-16, PPT-A3-17, PPT-A3-18, PPT-A3-19, PR-A3-01, PR-A3-02, PR-A3-03, PR-A3-04, PR-A3-05, PR-A3-06, PR-A3-07, PR-A3-08, PR-A3-09, PR-A3-10, PR-A3-11, PR-A3-12]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "WATCHLIST / AVOID"
+position_branch: "8A-W"
+sc_gap_pat_pct: ["Q2 FY27: 0.00%", "Q1 FY27: 0.00%", "Q2 FY26: -0.08%", "H1 FY27: 0.00%", "H1 FY26: -1.58%", "FY26: -0.81%"]
+questions_for_management:
+  - {q: "Rs Cr split of the Rs 73.39 Cr proceeds utilised in Q2 between Narmadapuram capex/advances and supplier payments", from_finding_id: "RES-A3-04, CC-A3-02, PR-A3-08"}
+  - {q: "Cumulative Narmadapuram spend at 30-Sep-2026 (CWIP + capital advances) and H2 FY27 spend schedule", from_finding_id: "RES-A3-09, CC-A3-05, PPT-A3-01, PPT-A3-02, PR-A3-02"}
+  - {q: "Long-term loan amount sanctioned for Narmadapuram and draw date; maximum D/E during build", from_finding_id: "CC-A3-03, RES-A3-08"}
+  - {q: "Rs Cr size and P&L line of the net tariff clawback due in Q3 FY27", from_finding_id: "CC-A3-01"}
+  - {q: "Q2-alone operating CFO, and yes/no commitment to positive FY27 operating CFO", from_finding_id: "CC-A3-16, PPT-A3-18, PR-A3-12"}
+  - {q: "Bill discounting and LC charges inside Q2 finance cost of Rs 7.89 Cr; bills discounted outstanding at 30-Sep-2026", from_finding_id: "PPT-A3-14, CC-A3-19, RES-A3-08"}
+  - {q: "Was the 15-Sep-2026 advance-tax instalment paid in full and on time", from_finding_id: "RES-A3-05"}
+  - {q: "Receipt date of the Rs 92.39 Cr and Rs 7.56 Cr issue money and its 30-Jun-2026 classification", from_finding_id: "RES-A3-07"}
+  - {q: "Target payable days, and did metal suppliers move to advance or LC terms in H1", from_finding_id: "RES-A3-08, CC-A3-02"}
+  - {q: "Share of the Rs 42.76 Cr FG/WIP build that is US export stock; has US production restarted", from_finding_id: "RES-A3-10, CC-A3-14"}
+  - {q: "Is ~8% operating margin a Q4 FY27 exit ex-clawback, and does FY25 level mean 7.8%", from_finding_id: "CC-A3-13, PR-A3-01"}
+  - {q: "Rs Cr cost lines explaining other expenses at 15.87% of revenue vs 18.83% in FY26", from_finding_id: "CC-A3-17"}
+  - {q: "FY27 revenue guidance 18% or 20%, and FY27 volume growth in MT", from_finding_id: "CC-A3-04, CC-A3-18"}
+  - {q: "US export order book at 30-Sep-2026 and October US dispatches in Rs Cr", from_finding_id: "CC-A3-08, PPT-A3-12, PR-A3-04"}
+  - {q: "US share and power-cable share of Q2 exports of Rs 158.1 Cr", from_finding_id: "PPT-A3-10, PR-A3-10"}
+  - {q: "Working-capital days at 30-Sep-2026: 100 or 108, and receivable days on the same definition", from_finding_id: "CC-A3-09, PPT-A3-15"}
+  - {q: "Expected 220 kV revenue share at Narmadapuram in FY29 and plant EBITDA margin vs the 9-10% guided in May", from_finding_id: "CC-A3-06, PPT-A3-03, PPT-A3-16"}
+  - {q: "Rs Cr capex and funding for the second ~30,000 MT of capacity by FY30", from_finding_id: "CC-A3-10, PPT-A3-04"}
+  - {q: "Is the Rs 200+ Cr HTLS book inside the Rs 731 Cr order book, and what share is EPC/installation", from_finding_id: "CC-A3-07, PPT-A3-17"}
+  - {q: "Order-book basis (unexecuted, net of GST) and Q1 Rs 615 Cr on the same basis", from_finding_id: "PR-A3-03"}
+  - {q: "Why diluted EPS equals basic with in-the-money warrants; warrant shares in the diluted base", from_finding_id: "RES-A3-06, PPT-A3-07, PR-A3-05"}
+  - {q: "When will promoters convert the 72 lakh warrants (Rs 22.68 Cr balance), and will they convert if the price falls toward Rs 42", from_finding_id: "RES-A3-03"}
+  - {q: "Collection by 30-Sep-2026 of the Rs 75.7 Cr overdue <6m receivables and ECL held", from_finding_id: "CC-A3-19"}
+  - {q: "Is 06196375 Cables Ltd (UK) still a subsidiary; any residual guarantee or receivable", from_finding_id: "RES-A3-15"}
+  - {q: "Q2 data-centre orders or revenue in Rs Cr and number of approving developers", from_finding_id: "CC-A3-11"}
+  - {q: "Promoter and combined FII+DII holding at 30-Sep-2026", from_finding_id: "PPT-A3-19"}
+  - {q: "Will the press release carry consolidated comparators next quarter", from_finding_id: "PR-A3-11"}
+monitorables:
+  - {item: "US tariff framework change and US production status", implied_date: "Nov-2026 to Jan-2027 (undated)", source_ref: "CC l.89-90; Notion l.753"}
+  - {item: "Q3 FY27 operating margin ex-clawback; clawback size and line", implied_date: "~Feb-2027", source_ref: "CC l.444-446"}
+  - {item: "Narmadapuram long-term debt sanction and draw", implied_date: "by 31-Mar-2027", source_ref: "CC l.606-611"}
+  - {item: "Advance-tax instalments paid on time", implied_date: "15-Dec-2026, 15-Mar-2027", source_ref: "RES R315, R082"}
+  - {item: "Deployment of unutilised Rs 26.66 Cr proceeds", implied_date: "by May-2027", source_ref: "RES R845"}
+  - {item: "Q4 FY27 operating margin at FY25 level (~7.83%)", implied_date: "May-2027", source_ref: "CC l.138-143"}
+  - {item: "FY27 revenue growth 15-18%/20%", implied_date: "May-2027", source_ref: "CC l.195, l.425"}
+  - {item: "FY27 US exports ~Rs 700 Cr / 25-30% of revenue", implied_date: "May-2027", source_ref: "CC l.149, l.595"}
+  - {item: "FY27 full-year operating CFO", implied_date: "May-2027", source_ref: "RES R317; Notion l.812"}
+  - {item: "Narmadapuram CWIP + capital advances at 31-Mar-2027", implied_date: "May-2027", source_ref: "RES R201, R213"}
+  - {item: "Receivable days <=64 on a second filed half-year", implied_date: "May-2027", source_ref: "tracker row 1"}
+  - {item: "Narmadapuram partial commissioning", implied_date: "Apr-Jun 2027 (Q1 FY28)", source_ref: "PPT R155 l.361; CC l.166"}
+  - {item: "Promoter warrant conversion, Rs 22.68 Cr balance (in the money at 30-Sep; non-conversion is the signal)", implied_date: "~Jul-2027 soft trigger; ~31-Dec-2027 ICDR", source_ref: "RES R839, R909; tracker row 2; PPT l.548-550"}
+  - {item: "Q1 FY28 results: first Narmadapuram revenue", implied_date: "~Aug-2027", source_ref: "CC l.167; PPT R050"}
+  - {item: "FY27 AR: bills discounted, ageing, ECL, subsidiary list, CARO", implied_date: "~Aug-Sep 2027", source_ref: "Notion l.705; RES-A3-15"}
+  - {item: "Narmadapuram approvals: LV 3-6 months, 132 kV ~12 months after start", implied_date: "~Q2-Q3 FY28; ~Q1 FY29", source_ref: "CC l.412-413"}
+  - {item: "HTLS Rs 200+ Cr execution and tender wins", implied_date: "undated", source_ref: "CC l.265; PPT R152, R448"}
+  - {item: "Segment annexure dropped or restated (Pipes nil)", implied_date: "Q3 FY27 filing", source_ref: "RES-A3-11"}
+flags:
+  - "H1 FY27 operating CFO (31.89), second negative H1; tracker CFO leg and soft Trigger B met on a literal reading; operator ruling pending"
+  - "Use of proceeds: Rs 73.39 Cr utilised, objects unnamed; call says idle equity money paid suppliers; 'no deviation' to test against EGM objects"
+  - "Narmadapuram build ~Rs 33 Cr of Rs 300 Cr visible; LT debt not tied up; Q1 FY28 date unproven; 71 s ASR gap in status passage"
+  - "Entire YoY margin gain (+596 bps) is other-expense reversal with no stated reason; gross margin -147 bps YoY"
+  - "Q3 FY27 carries a one-off net tariff clawback; strip before any run-rate or EPS re-run"
+  - "Finance cost ~24% of period-end gross debt annualised; off-balance-sheet financing (bill discounting) likely"
+  - "Cash tax: net paid 4.67 vs current tax 16.26 (29%); FY26 CARO advance-tax delays on file"
+  - "Credibility ratio 66.7% (2.0/3) Grade B provisional, matches B on file; 33-75% on rescoring of commitments 1 and 5 (US commitment 5 rescored PARTIAL in loop 1); archetype COMMITTED & CREDIBLE (provisional) vs MEASURED & CREDIBLE on file (specificity shift)"
+  - "DROPPED candidates: FY27 volume >=10% and Narmadapuram 9-10% EBITDA margin not restated"
+  - "D/E ceiling heard as '0.6 or 0.78' vs 'below 0.3' on file (ASR; verify against company transcript)"
+  - "Downstream Signal Tracker: 2 rows, both company filing-events, zero external signals; below 3-signal floor (OR-17 at /fttcp)"
+  - "Valuation inputs on file stale: normalised EPS 1.28 vs run-rate 2.63-2.90 diluted; ROCE ~13.7% annualised vs 5.7% on file, but pre-build (~10.1% with the remaining ~Rs 266.6 Cr of Phase 1 in CE); recompute deferred (OR-30)"
+  - "Promoter warrants ~Rs 14.4 a share in the money at the deck's 30-Sep market cap (Rs 1,845 Cr); conversion is arbitrage, non-conversion is the informative outcome; issue at 21.3x FY26 EPS, 1.49x post-issue book; land consideration NOT FOUND"
+  - "Contradictions: call WC 100 days vs deck 108; deck 'US (Exports)' equals total exports; CO cash-flow label 'warrant conversion' wrong"
+  - "Concall is machine ASR, management-tier, unverified; revenue misheard 550.4 vs filed 560.40"
+  - "companies/PARACABLES.md does not exist"
+plain_language_brief_included: true
+analyst_note: "Two readings of this print. Bull: the tariff damage has gone; margin is back to 7.3% from 1.3% with no other-income help; receivable days fell from 79 to ~66; the cash outflow came from a chosen payables paydown funded by equity, so it reverses. Bear: the whole margin gain is an unexplained other-expense reversal while gross margin fell; operating cash was negative for a second half-year; issue money read as plant funding paid suppliers; the plant shows ~Rs 33 Cr of Rs 300 Cr with loans not arranged. The observation that separates them is FY27 full-year operating CFO (May-2027), with CWIP plus advances at 31-Mar-2027. Loop 1: US commitment 5 rescored PARTIAL (exports up QoQ, far short of a strong pull), so credibility is 66.7%, Grade B, provisional on n = 3 and 33-75% on rescoring; the US-only export split settles it. ROCE 13.7% is a pre-build reading (~10.1% with the plant capital). Warrant conversion at Rs 42 vs ~Rs 56 is arbitrage; non-conversion is the signal. The data-centre inconsistency was withdrawn. No status change proposed."
+review_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/work/review_paracables_q2fy27.md"

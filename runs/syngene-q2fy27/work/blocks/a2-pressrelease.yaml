@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "SYNGENE"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/syngene-q2fy27/work/ledger_pressrelease_syngene_q2fy27.md"
+counts:
+  notes: 13
+  line_items: 139
+  zero_standing: 12
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 34
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, MARKER_MERGED, RESTATED, HEADER_AS_FILED, UNIT_MM, LEADERSHIP_CHANGE, FOOTNOTE_UNRESOLVED, MISSING_FROM_STRUCTURED]
+ids_in_structured: 879
+ids_referenced: 879
+orphan_ids: []
+missing_from_structured: ["L32 postal code 400 001 (BSE addressee)", "L32 postal code 400 051 (NSE addressee)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Counts: 139 table lines, 13 numbered notes, 15 unnumbered footnotes, 58 narrative numbers, 34 entities, 18 forward, 44 dates, 22 other qualifiers (all 879 IDs placed). Fulltext numeric sweep surfaced 145 candidate table lines; the 6 extra are sub-headings or note stubs, not data. ZERO_STANDING 12: the Exceptional item line is dash in 7 of 14 quarters on p9 and nil in FY26 H1 / Q2 FY26 on p7/p8; the line is a standing template item and carries termination-benefit costs in FY27. Non-current Provisions is nil at 30 Sep 2026 (180 at 31 Mar 2026). Page 7 and 8 headers read FY26/FY27 as filed though values are H1 and Q2 (flag HEADER_AS_FILED, R849/R855). Merged footnote markers on R010 and R025 (381, 391) are logged, not resolved. Page 9 note 9 has no label marker."

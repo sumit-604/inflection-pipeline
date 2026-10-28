@@ -1,0 +1,51 @@
+stage: A5-adversary
+company: "SYNGENE"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop0_items_resolved: [F1, F2, F3, M1, M2, M3, M4, C1, C2]
+drift_outside_patches: none
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L1-S1: Q33 forks leave 24-25 Oct unassigned; any timeliness test runs from the 27-Oct-2026 20:06:13 filing stamp (disc l.85, R011)"
+    - "L1-S2: Q32 forks test disclosure only; 'revenue line' undefined under one segment (res l.495)"
+    - "L1-S3: 'upper bound' at l.173, l.606, l.701 is ambiguous; the 66.1 adjustment is the upper bound, so 18.08% is the floor of the H1 ex-FX margin"
+    - "L1-S4: 96.5 net derivative liability at l.173 anchored to A3-10 only; add res l.145, l.158, l.172, l.184"
+    - "L1-S5: Notion Key Notes prefix (l.520) and Brief l.534 not aligned with M2/M3 qualifiers; numbers correct; qualifiers sit in body and YAML flags l.701, l.704"
+    - "L1-S6: correction-log header (l.598) points to the audit path this re-audit overwrites; loop-0 audit is audit_syngene_q2fy27.loop0.md"
+    - "L1-S7: log line l.612 says no trigger moved; C1 moved the 6D CDMO share growth-trigger status from ON TRACK to UNKNOWN"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "L1-S1 (new): restate Q33 forks against the filing timestamp"
+  - "L1-S2 (new): Q32 forks to name research or CDMO revenue"
+  - "L1-S3 (new): call 18.08% the floor, the 66.1 adjustment the upper bound"
+  - "L1-S4 (new): anchor 96.5 to res l.145, l.158, l.172, l.184"
+  - "L1-S5 (new): add ex-FX and cash qualifiers to the Notion Key Notes line at the approval gate"
+  - "L1-S6 (new): repoint the correction-log header to audit_syngene_q2fy27.loop0.md"
+  - "L1-S7 (new): name the C1 6D status change in the log verdict line"
+  - "S1 (carried, open): add FY26 Q1-to-Q2 step (+4.1%) to the seasonality sentence"
+  - "S2 (carried, open): reorder Forward Map rows by date"
+  - "S3 (carried, open): retag Brief l.536 as [FILED, computed]"
+  - "S4 (carried, open): cite PR L153-154 for discovery heads leaving (l.393)"
+  - "S5 (carried, open): define 'flat H2' in T5 (l.358)"
+  - "S6 (carried, open): optional note that the '6 pp' headline is 5.4 pp"
+  - "S7 (carried, open): A1 disclosure anchor drift on boilerplate rows"
+  - "S8 (carried, logged): deck l.369 bullet has no structured row; no ledger gap"
+analyst_note: "All nine loop-0 items are fixed and anchored to the right A1 lines. The drift test was a full line-by-line read plus two grep baskets. Line count rose by exactly the 28 added lines. Basket A rose by 13, all traced to patches. Basket B, which no patch touches, was unchanged at 193. So nothing moved outside the nine items. Q32-Q34 cite correct rows. What remains is style. The one item worth the operator's eye is L1-S5. The Notion Key Notes line still shows ex-FX 25.1% and the base-path beat without the qualifiers the body now carries. Fix it at the approval gate, not by another loop. The 'upper bound' wording in L1-S3 started in my own loop-0 graft text."

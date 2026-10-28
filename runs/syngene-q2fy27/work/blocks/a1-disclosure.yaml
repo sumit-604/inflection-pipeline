@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SYNGENE"
+quarter: "q2fy27"
+doctype: "disclosure"
+model: claude-sonnet-5-5
+status: complete
+page_count: 4
+formfeed_count: 4
+line_count: 154
+unit_convention: "none stated (no financial figures)"
+conversion_factor_to_cr: "n/a"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["2: layout check only, signature page", "3: Annexure A table alignment check; images deleted"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/syngene-q2fy27/extracted/syngene-disclosure-q2fy27-fulltext.md"
+structured_path: "runs/syngene-q2fy27/extracted/syngene-disclosure-q2fy27-structured.md"
+structured_counts:
+  number: 12
+  entity: 21
+  forward: 5
+  date: 21
+  qualifier: 12
+structured_id_range: "R001-R071"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,58 @@
+stage: A3-forensics
+company: "SYNGENE"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/syngene-q2fy27/work/forensics_syngene_q2fy27_presentation.md"
+ledger_reconciled_pct: 100        # 350/350 R rows + M01-M09 read at cited lines
+checklist:
+  F1: PASS
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3P-01", check: "F6", line: "121", classification: "FORWARD-SIGNAL", implication: "Bayview DS manufacturing 'next year' after India PD 'this year'; revenue start likely after Mar-2027; tests T4; year convention unstated"}
+  - {id: "A3P-02", check: "F6", line: "119,125", classification: "AMBIGUOUS", implication: "Bayview customer unnamed and scale unstated; Unit 3 deal is clinical; R1 not fired on deck text"}
+  - {id: "A3P-03", check: "F6", line: "138-139", classification: "AMBIGUOUS", implication: "Manpower cut completed, other initiatives underway; benefit unquantified and undated; termination cost Rs 41 Cr net FY26+H1FY27"}
+  - {id: "A3P-04", check: "F7", line: "369", classification: "AMBIGUOUS", implication: "'demanding operating environment' hedge on people slide next to completed cut; retention risk to research delivery"}
+  - {id: "A3P-05", check: "F8", line: "670-671", classification: "AMBIGUOUS", implication: "Q1 tax credit 7 > loss 6; Q2 ETR 29.6% vs 25.17%; H1 ETR 18.8%; composition of Q1 credit undisclosed"}
+  - {id: "A3P-06", check: "F10", line: "774-787", classification: "NEUTRAL-FACT", implication: "Free float 47.4% implies promoter ~52.6% (1.6pp over T7 51%); mcap 14,382 far above R3 level; no EPS for dilution spread"}
+  - {id: "A3P-07", check: "F11", line: "624-630,743", classification: "AMBIGUOUS", implication: "Net cash -408 in H1, other net assets +453, NFA -25; cash went to non-cash net assets; H1 CFO NOT FOUND; T3 direction adverse"}
+  - {id: "A3P-08", check: "F14", line: "665,669,670,733,737,738", classification: "AMBIGUOUS", implication: "EBITDA - D&F != PBT; unlabelled gap 9/10/13 per quarter, 48 FY26, 53 FY25; below-EBITDA charge not printed"}
+  - {id: "A3P-09", check: "F14", line: "652,784,222/506,801/803", classification: "NEUTRAL-FACT", implication: "Drafting defects: 'end of the year' on H1 net cash, '30st', 92% vs 95% renewables, two IR emails, basis label missing"}
+  - {id: "A3P-10", check: "F16", line: "133-135,664,732", classification: "FORWARD-SIGNAL", implication: "Adjusted margin (147+61)/833 = 25.0% sits on T5 line, reported 18%; forex loss 12->50->61, H1 111 = 1.8x FY26; recurring hedge-book drag"}
+  - {id: "A3P-11", check: "F16", line: "714", classification: "AMBIGUOUS", implication: "FY26 'PAT before exceptional' 380 also excludes Rs 38 Cr gratuity not stated as exceptional; filed-basis PAT may be 342"}
+  - {id: "A3P-12", check: "F16", line: "222,357,375,138,661", classification: "AMBIGUOUS", implication: "Mar-26 headcount 8,373 kept after cut completed; current headcount NOT FOUND; staff cost flat QoQ on +13% revenue"}
+  - {id: "A3P-13", check: "F17", line: "145,222", classification: "FORWARD-SIGNAL", implication: "No FY27 guidance in deck; single-digit decline needs H2 > Rs 1,796 Cr (~898/qtr, +7.8% vs Q2); T2 third-cut risk"}
+  - {id: "A3P-14", check: "F17", line: "145,270-299,660", classification: "AMBIGUOUS", implication: "No research vs D&M split; R2/T1/CDMO share untestable; material/revenue 23.9% vs 26.2% YoY [INFERENCE] lower manufacturing share"}
+  - {id: "A3P-15", check: "F17", line: "187,252", classification: "AMBIGUOUS", implication: "Zoetis kept as present credential; no Librela order, impairment or compensation update"}
+  - {id: "A3P-16", check: "F17", line: "669,625,743,201", classification: "FORWARD-SIGNAL", implication: "D&F flat, NFA -25; no capitalisation step-up yet vs CWIP 1,046; depreciation step-up ahead; utilisation and CWIP NOT FOUND"}
+  - {id: "A3P-17", check: "F17", line: "345", classification: "AMBIGUOUS", implication: "Silent on >10% customer identity, RP receivables, Rs 277 mn write-off, SSSL/OCRPS, CFO exit"}
+forward_signals: ["A3P-01", "A3P-10", "A3P-13", "A3P-16"]
+ambiguous: ["A3P-02", "A3P-03", "A3P-04", "A3P-05", "A3P-07", "A3P-08", "A3P-11", "A3P-12", "A3P-14", "A3P-15", "A3P-17"]
+commitments:
+  - {commitment: "Bayview process development in India for first manufacturing customer", implied_date: "this year (CY2026 or FY27, unstated)", ref: "line 121", status_word: "initiated"}
+  - {commitment: "Bayview drug-substance manufacturing for that customer", implied_date: "next year (CY2027 or FY28, unstated)", ref: "line 121", status_word: "initiated"}
+  - {commitment: "First Bayview manufacturing agreement signed (unnamed large pharma)", implied_date: "Q2 FY27", ref: "line 119", status_word: "completed"}
+  - {commitment: "Unit 3 clinical materials supply agreement", implied_date: "undated", ref: "line 125", status_word: "initiated"}
+  - {commitment: "Clinical Translational Sciences laboratory commissioned", implied_date: "Q2 FY27", ref: "line 130", status_word: "completed"}
+  - {commitment: "Manpower-related optimisation", implied_date: "by Q2 FY27", ref: "line 138", status_word: "completed"}
+  - {commitment: "Other cost initiatives, benefits over coming quarters", implied_date: "undated, H2 FY27 onward", ref: "line 139", status_word: "underway"}
+  - {commitment: "1-3-5-year digital roadmap with AI adoption", implied_date: "undated", ref: "line 470", status_word: "none (aspiration)"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "No prior deck was supplied, so F16 dropped-slide diffs and F17 silence counts are floors (>=1). Three items carry the most weight. First, A3P-08: the deck table never foots from EBITDA to PBT. About Rs 50 Cr a year of charge is unprinted, so the results-filing A3 must name the line. Second, A3P-10 with A3P-13: the 'mid-20s' adjusted margin is exactly 25.0%, the T5 line, while the reported margin is 18%. Forex hedge losses are recurring (H1 Rs 111 Cr vs FY26 Rs 61 Cr). With no guidance restated, H2 needs about Rs 898 Cr a quarter to hold 'single-digit decline'. Third, A3P-07: net cash fell Rs 408 Cr in H1 while fixed assets fell. The cash went into non-cash net assets, so T3 leans adverse until the filed cash flow statement shows CFO. A3P-01 'next year' plus A3P-16 flat depreciation say Bayview earns and depreciates after Mar-2027. Read T4 against whatever 'operational' means in the tripwire. Implied promoter holding is about 52.6%, not 53%."

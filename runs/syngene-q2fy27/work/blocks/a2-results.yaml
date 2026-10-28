@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "SYNGENE"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/syngene-q2fy27/work/ledger_results_syngene_q2fy27.md"
+counts:
+  notes: 9
+  line_items: 227
+  zero_standing: 15
+  agenda_items: 1
+  auditor_paras: 12
+  entities: 5
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, NAME_INCONSISTENT, AUDITOR_CHANGE, COLUMN_UNRESOLVED, FOOTNOTE_UNRESOLVED, FORWARD, EXCEPTIONAL, MGMT_VIEW]
+ids_in_structured: 828
+ids_referenced: 828
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Counts reconcile: 227 line items (667 cells), 9 notes, 15 ZERO_STANDING (only standalone P&L unlabelled row l.290 is nil in all periods; the rest are partial-period dashes). Raised flags: SMSL is in liquidation from 15-Jun-2026 and note 8 names it differently from note 2 and the auditor list; no prior ledger so no entity diff. Auditor is new (S.R. Batliboi); comparatives and FY26 rest on a predecessor. Termination benefits are exceptional in three consecutive periods (note 7). USA site pre-operative costs capitalised on management view (note 5). Board letter says inter-alia but lists one item. Auditor reports signed 18:32-18:33, after 18:30 meeting end; Chairperson signed 18:24."

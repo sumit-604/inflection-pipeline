@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SYNGENE"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 32
+formfeed_count: 32
+line_count: 805
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: ["p2 31 chars cover: skipped no data", "p5 17 chars divider: skipped", "p7 29 chars divider: skipped", "p14 17 chars divider: skipped", "p26 11 chars divider: skipped", "p29 32 chars divider: skipped"]
+rendered_pages: ["p6, p11, p27, p28, p31 at 150dpi for column/axis-order verification only (orchestrator note); images deleted"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/syngene-q2fy27/extracted/syngene-presentation-q2fy27-fulltext.md"
+structured_path: "runs/syngene-q2fy27/extracted/syngene-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 249
+  entity: 51
+  forward: 7
+  date: 20
+  qualifier: 23
+structured_id_range: "R001-R350"
+gate_a1: pass
+gap_note: ""

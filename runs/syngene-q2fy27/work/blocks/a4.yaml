@@ -1,0 +1,97 @@
+stage: A4-analyst
+company: "SYNGENE"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+docs_merged: [results, presentation, pressrelease, disclosure]
+ledger_reconciliation:
+  notes: 22
+  turns: 0
+  slides: 32
+  all_reviewed: true
+  a3_findings_incorporated: [A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3P-01, A3P-02, A3P-03, A3P-04, A3P-05, A3P-06, A3P-07, A3P-08, A3P-09, A3P-10, A3P-11, A3P-12, A3P-13, A3P-14, A3P-15, A3P-16, A3P-17, A3R-01, A3R-02, A3R-03, A3R-04, A3R-05, A3R-06, A3R-07, A3R-08, A3R-09, A3R-10, A3R-11, A3R-12, A3R-13, A3R-14, A3R-15, A3R-16, A3R-17, A3R-18, A3R-19, A3R-20, A3R-21, A3R-22, A3R-23, A3R-24, A3R-25, A3R-26]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "BLANK (Halt 1 SHALLOW WATCH 28-Sep-2026; no Stage 11, no entry zone; thesis check only)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - "Q2FY27: -33.9% (cons 32.2 vs stand 48.7 Rs Cr; res l.95, l.286)"
+  - "Q1FY27: n.m. (cons -9.0 vs stand -2.1; standalone loss)"
+  - "Q2FY26: +1.4% (cons 67.1 vs stand 66.2)"
+  - "H1FY27: -50.2% (cons 23.2 vs stand 46.6)"
+  - "H1FY26: +9.7% (cons 153.8 vs stand 140.2)"
+  - "FY26: +3.9% (cons 316.7 vs stand 304.9)"
+questions_for_management:
+  - {q: "Q2 FY27 research services revenue in Rs Cr, and research ex-BMS?", from_finding_id: "A3P-14, A3R-22, A3R-20"}
+  - {q: "Is FY27 'single-digit decline' guidance reaffirmed (yes/no)?", from_finding_id: "A3P-13, A3R-23"}
+  - {q: "Is the first Bayview agreement commercial-scale or clinical/PD, and its contract value?", from_finding_id: "A3P-02, A3R-25"}
+  - {q: "Month of first Bayview DS batch; will Bayview CWIP move to PPE by 31-Mar-2027?", from_finding_id: "A3P-01, A3R-03, A3P-16, A3R-10"}
+  - {q: "Share of Rs 124.6 Cr pre-op incurred after Jan-2026 validation; FY28 depreciation and running cost into P&L?", from_finding_id: "A3-06, A3R-04, A3R-10, A3P-16"}
+  - {q: "Share of the Rs 313.4 Cr fall in other current liabilities that is customer advances; contract-liability balance at 30-Sep-2026?", from_finding_id: "A3-13, A3R-09, A3P-07"}
+  - {q: "Hedge book notional and average strike outstanding; expected H2 FY27 FX loss?", from_finding_id: "A3-10, A3P-10, A3R-19"}
+  - {q: "Expected FY27 reported operating EBITDA margin (25% needs H2 >= 32.9%)?", from_finding_id: "A3R-24"}
+  - {q: "CFO last working day: PR says 'at least until' Q3 results, Reg 30 says 'mutually agreed'; successor?", from_finding_id: "A3R-11, disclosure R036-R038/R053"}
+  - {q: "Any client transfer, pause or end after Heads of Chemistry and Biology redesignated (yes/no)?", from_finding_id: "A3R-12, A3P-04"}
+  - {q: "Headcount and scientist count at 30-Sep-2026?", from_finding_id: "A3P-12"}
+  - {q: "Quarterly run-rate saving (Rs Cr) from completed manpower optimisation, and start quarter?", from_finding_id: "A3P-03, A3R-05"}
+  - {q: "Total termination programme cost; any Q3 FY27 termination charge?", from_finding_id: "A3-01, A3R-01"}
+  - {q: "Syngene USA Inc. H1 FY27 loss before tax in Rs Cr?", from_finding_id: "A3-04"}
+  - {q: "Funding route and limit for the US build until Bayview earns (ST borrowings 9.4 to 67.2 Rs Cr)?", from_finding_id: "A3-12"}
+  - {q: "DTA recognised on subsidiary losses at 30-Sep-2026 in Rs Cr?", from_finding_id: "A3-09"}
+  - {q: "Driver of Q2 ETR 31.5% vs H1 16.5%; any tax benefit expiring FY27-FY28?", from_finding_id: "A3-08, A3P-05, A3R-07"}
+  - {q: "Rs Cr of Q2 other income (28.0) from tax-refund interest vs ICD interest?", from_finding_id: "A3R-21"}
+  - {q: "ICD counterparties; any group or related party; collection of Rs 19.7 Cr accrued interest?", from_finding_id: "A3-14"}
+  - {q: "Investee of the new Rs 2.5 Cr equity investment; any director link?", from_finding_id: "A3-03"}
+  - {q: "Rs 49.2 Cr fall in provisions: gratuity funding, payout or reclassification?", from_finding_id: "A3-02, A3R-02"}
+  - {q: "Further Labour Code gratuity/leave charge expected in FY27, and range?", from_finding_id: "A3-07, A3R-06"}
+  - {q: "SBP fell 21.6 to 0.4 Rs Cr: LTIP 2023 performance-condition reversal (yes/no)?", from_finding_id: "A3-11"}
+  - {q: "Which subsidiary holds ~Rs 97 Cr non-US-site CWIP; SMSL liquidation completion date?", from_finding_id: "A3-16"}
+  - {q: "Auditor change a rotation at 29-Jul-2026 AGM? Name the predecessor.", from_finding_id: "A3-05"}
+  - {q: "Zoetis revenue H1 FY27; any residual order, impairment or compensation booked?", from_finding_id: "A3P-15, A3R-26"}
+  - {q: "Identity and share of the two >10% customers?", from_finding_id: "A3P-17, A3R-25"}
+  - {q: "Unit 3 licensed vs installed litres, and utilisation?", from_finding_id: "A3R-25"}
+  - {q: "Counterparty of the Rs 27.7 Cr Q2 FY26 receivable write-off?", from_finding_id: "A3P-17, A3R-26"}
+  - {q: "Correct deck 'Depreciation and Finance Cost' line (equals D&A only) and FY26 exceptional footnote wording?", from_finding_id: "A3P-08, A3P-11"}
+  - {q: "Reason for Head Strategy & Corporate Development resignation (30-Oct-2026); successor?", from_finding_id: "disclosure R034, R042, R070-R071"}
+  - {q: "Capex in the new CTS laboratory, Bengaluru, and its revenue line?", from_finding_id: "loop1-F3; PR R749, deck R022"}
+  - {q: "Date of receipt of the 23-Oct-2026 Tandon resignation letter (Reg 30 filed 27-Oct-2026)?", from_finding_id: "loop1-M1; disclosure R043, R054, R039, R069"}
+  - {q: "Why do fact-sheet FY26 quarterly PATs sum to Rs 314.8 Cr vs audited Rs 316.7 Cr?", from_finding_id: "loop1-C2; PR L409 vs res l.95"}
+monitorables:
+  - {item: "Q2 call audio / transcript (R2, T1, T2 answers)", implied_date: "2026-10-29 / ~2026-11-06", source_ref: "PR L206-212"}
+  - {item: "Head Strategy & Corporate Development exit effective", implied_date: "2026-10-30", source_ref: "disc l.51-53 R042"}
+  - {item: "Zoetis Q3 results (Librela US, Lenivia)", implied_date: "2026-11-05", source_ref: "Notion §9"}
+  - {item: "Head of Chemistry leaves", implied_date: "2026-11-30", source_ref: "PR L153-154"}
+  - {item: "OMB BIOSECURE list", implied_date: "2026-12-18", source_ref: "Notion §9"}
+  - {item: "Head of Biology leaves", implied_date: "2026-12-31", source_ref: "PR L153-154"}
+  - {item: "Dec-2026 shareholding pattern (T7)", implied_date: "~2027-01-21", source_ref: "Notion §9 (cadence inference)"}
+  - {item: "Q3 FY27 results/call: R2 leg 2 (>=614), T1, termination charge, staff-cost saving; CFO minimum tenure ends", implied_date: "2027-01 (date NOT FOUND)", source_ref: "Notion §9; PR L192, L202"}
+  - {item: "Bayview process development begins in India", implied_date: "by 2027-03-31", source_ref: "PR L159-160"}
+  - {item: "R1 deadline; Bayview CWIP Rs 487.6 Cr capitalisation (T4 separator)", implied_date: "2027-03-31", source_ref: "Notion §9; res l.476-477"}
+  - {item: "Q4 FY27 audited results: full-year CFO (T3), FY27 margin (T5), guidance floor Rs 3,364.8 Cr", implied_date: "~late Apr-2027", source_ref: "res l.568"}
+  - {item: "Bayview drug-substance manufacturing begins", implied_date: "FY28 from 2027-04-01", source_ref: "PR L160; deck l.121"}
+  - {item: "FY27 Annual Report: Note 26 (T6), major customers, auditor KAM on Bayview CWIP, BBRC headcount (T8)", implied_date: "~2027-06", source_ref: "Notion §9"}
+  - {item: "Bicara FORTIFI-HN01 interim; MSA to 31-Oct-2027", implied_date: "mid-2027", source_ref: "Notion §9"}
+  - {item: "2027 AGM votes (T9); Q1 FY28 results", implied_date: "~late Jul-2027", source_ref: "Notion V5; res l.568"}
+  - {item: "SMSL liquidation completion", implied_date: "undated", source_ref: "res l.493-494"}
+  - {item: "Labour Code rules; possible further gratuity remeasurement", implied_date: "undated", source_ref: "res l.484-485; PR L432-433"}
+flags:
+  - "Filed documents only; no concall transcript (call 28-Oct-2026; transcript ~6-Nov-2026). Role 5 not run."
+  - "T3 FIRED: H1 FY27 CFO -Rs 143.2 Cr vs 70% of op EBITDA Rs 166.7 Cr (res l.226). Seasonal caveat: H1 FY26 CFO also negative (-45.1)."
+  - "T4 FIRED on conservative reading, CONTESTED: Bayview DS manufacturing 'next financial year' = FY28 (PR L160). Separator: transcript, and Bayview CWIP to PPE by 31-Mar-2027."
+  - "T5 FY27 leg near-certain to fail: H2 needs >= 32.9% op margin vs best-ever H2 32.0%; tripwire needs FY28 too, so NOT FIRED."
+  - "R2, T1, T2 UNTESTABLE from filings: single segment (res l.495), no guidance restated; at Q1 research level (Rs 574 Cr) T1 would fire."
+  - "Governance: CFO exit (PR says 'at least until' Q3 results; Reg 30 says 'mutually agreed'); Head Strategy resigns 30-Oct-2026 (absent from PR; letter dated 23-Oct-2026 vs Reg 30 filed 27-Oct-2026, receipt date NOT FOUND, no breach asserted); Heads of Chemistry and Biology redesignated SMP to non-SMP while PR says they leave Nov/Dec."
+  - "Earnings quality: Bayview pre-op Rs 66.1 Cr capitalised in H1 > H1 PBT Rs 27.8 Cr; expensed, H1 ex-FX margin falls 22.29% to ~18.08% (upper bound); H1 other income Rs 53.3 Cr > H1 PBT pre-exc Rs 48.0 Cr; termination exceptional 4 quarters running."
+  - "FX hedge loss recurring: Q2 Rs 61.4 Cr, H1 Rs 111.5 Cr = 1.83x FY26; Q2 alone uses 45% of Notion's Q2-Q4 allowance."
+  - "Subsidiary PAT gap -33.9% (Q2) / -50.2% (H1) of standalone, swing >5pp; US build funded by ST debt (9.4 to 67.2 Rs Cr)."
+  - "Other current liabilities -Rs 313.4 Cr (-40%); advances vs other payables unresolved; cash conversion INDETERMINATE-WITH-DIRECTION; revenue beat not confirmed by cash."
+  - "Bayview asset acquisition ~Rs 329.2 Cr, no earnings multiple; CWIP 298.1 to 487.6 (+63.6%) in 18 months; no revenue until FY28."
+  - "Filed conflict: fact-sheet trailing-4Q PAT 184.2 (PR L409) vs results basis 186.1 (res l.95); fact-sheet FY26 quarters sum 314.8 vs audited 316.7."
+  - "New statutory auditor's first review; unmodified, no EoM; predecessor unnamed."
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged in review."
+  - "Tracker rows not supplied (Step 5.5A ND); two new Case B signal payloads proposed, not written."
+  - "Q2 FY26 base normalised for Rs 27.7 Cr receivable write-off (PR Note 11): YoY margin fall -725 bps vs -421 bps reported."
+plain_language_brief_included: true
+analyst_note: "Revenue (Rs 832.7 Cr) beat the base path. Everything beneath it weakened. Core PBT fell 63%. H1 other income exceeded H1 pre-exceptional PBT. Capitalised Bayview pre-op (Rs 66.1 Cr) exceeded H1 PBT. The FX hedge loss is recurring. T3 fires literally, but H1 FY26 CFO was also negative, so the binding cash test is full-year FY27 at Q4. Verdict is PROCEED WITH FLAGS, not CAVEATS, because two tripwires log as fired and four Executive Committee changes landed in one filing, with tenure language that differs between the PR and the Reg 30. T4 is ruled FIRED only on conservative bias. If management says the facility is ready and capitalised by Mar-2027, reading A holds and T4 should be re-marked NOT FIRED. A3P-08 and A3P-11 are resolved as deck labelling, not hidden charges. The thesis's deciding variable (research revenue) is absent from every filing. Read the transcript first."
+review_path: "runs/syngene-q2fy27/work/review_syngene_q2fy27.md"

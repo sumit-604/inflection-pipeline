@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "SYNGENE"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/syngene-q2fy27/work/ledger_presentation_syngene_q2fy27.md"
+counts:
+  notes: 23
+  line_items: 45
+  zero_standing: 1
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 51
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 32
+  slide_numbers: 249
+flags_raised: [ZERO_STANDING, RESTATED, AS_PRINTED_DUP, BASIS_DIFF_NOTE, HEADLINE_QUALIFIED, FORWARD_TIMELINE, MISSING_FROM_STRUCTURED, NM_AS_PRINTED, ZERO_VALUE_CELL, CONTACT_DIFF]
+ids_in_structured: 350
+ids_referenced: 350
+orphan_ids: []
+missing_from_structured: [M01, M02, M03, M04, M05, M06, M07, M08, M09]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Independent fulltext sweep found 796 numeric tokens; 759 sit in a same-page structured row. 37 do not: 28 are footer or divider page numbers (M09) and the rest are real but minor gaps M01-M08: ISO 45001:2018 and 50001:2018 on p22, ISO/IEC 17025 on p23 (R157 omits it), phone, pincodes, award fine print, and an IR email on p32 that differs from R343. Nothing financial is missing. A3 should read R077 (92% renewable, p10) against R146 (95%, p22): both claim 31-Mar-26, basis differs. H1FY26 PAT before and after exceptional both print 154 (R039/R044, render-verified as printed). No prior ledger, so DROPPED_SLIDE not assessable."

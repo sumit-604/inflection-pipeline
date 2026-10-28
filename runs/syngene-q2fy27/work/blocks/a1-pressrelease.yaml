@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SYNGENE"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+page_count: 9
+formfeed_count: 9
+line_count: 452
+unit_convention: "Crores (pages 2-4); Rs. Millions (fact sheet pages 6-9)"
+conversion_factor_to_cr: "Crores x1; Millions x0.1"
+text_layer_present: true
+extraction_mode: text-only  # pages 1-5 -layout; pages 6-9 -raw after render check
+render_candidates: []       # page 5 sparse (221 chars), cover title only, skipped: no data
+rendered_pages: ["p2 and p7 rendered at 150 dpi for check only, OCR confirmed -raw order; images deleted"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/syngene-q2fy27/extracted/syngene-pressrelease-q2fy27-fulltext.md"
+structured_path: "runs/syngene-q2fy27/extracted/syngene-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 733
+  entity: 34
+  forward: 18
+  date: 44
+  qualifier: 50
+structured_id_range: "R001-R879"
+gate_a1: pass
+gap_note: ""

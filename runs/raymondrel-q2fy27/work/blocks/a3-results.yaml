@@ -1,0 +1,65 @@
+stage: A3-forensics
+company: "RAYMONDREL"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/raymondrel-q2fy27/work/forensics_results_raymondrel_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "L285-286; L212; L225", classification: "AMBIGUOUS", implication: "Loans-to-subs caption became ICD (12,760); standalone loans Rs 1,191.6 Cr, top of checklist item 6 green band; red >Rs 1,500 Cr in about 2.5 halves at H1 pace"}
+  - {id: "A3-02", check: "F1", line: "L282; L211; L510", classification: "AMBIGUOUS", implication: "Rs 2 lakh investment eliminated on consolidation fits a new group SPV; possible new JDA vehicle (item 5, I-5)"}
+  - {id: "A3-03", check: "F1", line: "L289-291; L238; L243; L541; L584; L715", classification: "FORWARD-SIGNAL", implication: "New short-term borrowing, term debt moved to subs; group current borrowings Rs 452 Cr exceed Rs 308 Cr liquidity buffer; refinancing within 12 months"}
+  - {id: "A3-04", check: "F2", line: "L167; L185; L466; L484; L397-398; L411-412", classification: "AMBIGUOUS", implication: "C-S PAT gap swung +24.7 pp YoY, +76.8 pp QoQ; subsidiaries (Q1 loss 1,255, Q2 profit 1,109) now drive the consolidated print; standalone revenue share 37.4% vs 56.2% YoY"}
+  - {id: "A3-05", check: "F2", line: "L660-662; L167; L687", classification: "AMBIGUOUS", implication: "PR credits growth to Address by GS while standalone revenue fell 29% YoY; entity and Ind AS 115 method for Tower B OC revenue unknown; possible one-off OC trigger"}
+  - {id: "A3-06", check: "F4", line: "L394-398; L409-412", classification: "AMBIGUOUS", implication: "All 7 subs outside joint review; 5 subs = 20.9% of Q2 PAT, 44.9% revenue, 48.9% assets; subs = 63.0% revenue and 72.7% gross assets; baseline for trend"}
+  - {id: "A3-07", check: "F4", line: "L397-398", classification: "NEUTRAL-FACT", implication: "OCR_UNCERTAIN (81 O) resolves to (810): H1 sub PAT (146) vs C-S gap (144), residual +2"}
+  - {id: "A3-08", check: "F6", line: "L723-724; L665-666; L479; L475; L476", classification: "FORWARD-SIGNAL", implication: "H1 EBITDA margin 14.3%; FY27 17-19% needs H2 19.0-22.5% at FY26 income vs FY26 H2 18.2%; PAT 9-10% needs H2 11.9-13.6% vs H1 5.1%"}
+  - {id: "A3-09", check: "F6", line: "L702-704", classification: "FORWARD-SIGNAL", implication: "Mahim 1 and 2 window now next two quarters / current FY, which includes Q4 FY27, the checklist item 4 red zone"}
+  - {id: "A3-10", check: "F6", line: "L724", classification: "FORWARD-SIGNAL", implication: "PAT margin 9-10% guided; I-6 says current state is refusal; possible partial I-6 green (PAT only, no OCF) or stale Notion state"}
+  - {id: "A3-11", check: "F7", line: "L663-665", classification: "AMBIGUOUS", implication: "Margin-fluctuation hedge pre-empts a back-ended year; read with A3-08"}
+  - {id: "A3-12", check: "F8", line: "L182-184; L481-483; L214-215; L512-513; L276; L573", classification: "AMBIGUOUS", implication: "ETR about 18.5% vs 25.17%, shield about 670 bps (Rs 5.6 Cr H1) undisclosed; deferred tax flipped credit to charge; taxes paid exceed provision; durability and step-up risk unknown"}
+  - {id: "A3-13", check: "F10", line: "L194; L197-198; L496-497; L232-234; L529-531; L269", classification: "AMBIGUOUS", implication: "Capital flat, basic = diluted despite ESOP charge; equity roll closes on PAT, dividend, SBP only, so no warrant money in H1 FY27; cross-check Notion Rs 102 Cr warrant upfront"}
+  - {id: "A3-14", check: "F11", line: "L644-657; L712-715", classification: "NEUTRAL-FACT", implication: "PR reconciles: EBITDA = PBT + finance costs + D&A (incl. other income); net debt 916 computed vs 912; D/E 0.8x is gross 0.752 rounded; net D/E 0.56x"}
+  - {id: "A3-15", check: "F11", line: "L717-719; L475", classification: "AMBIGUOUS", implication: "Rs 17 Cr authority interest for FSI and approvals sits below EBITDA; as project cost, Q2 margin about 13.0%, below 14% stop; bears on pending margin-stop ruling"}
+  - {id: "A3-16", check: "F12", line: "L535; L541; L519-522; L646", classification: "FORWARD-SIGNAL", implication: "Net debt Rs 658 Cr to Rs 916 Cr in H1, about Rs 129 Cr per quarter vs tracker Rs 90 Cr; risk #2 first signals (>Rs 900 Cr, D/E >0.75x) on; Rs 1,000 Cr line crossed in Q3 FY27 at this pace"}
+  - {id: "A3-17", check: "F12", line: "L545; L712", classification: "AMBIGUOUS", implication: "Rs 1,908 Cr other financial liabilities outside net debt, definition unstated; composition needed for pending Rs 210 Cr AIF ruling"}
+  - {id: "A3-18", check: "F12", line: "L517; L546; L570; L574; L471; L638-640", classification: "FORWARD-SIGNAL", implication: "Inventory +16.8% funded by customer-advance line +47.2%; consolidated CFO -Rs 147 Cr H1, better than model; I-2 still red-side (collections Rs 1,233 Cr < land and development cost Rs 1,674.7 Cr)"}
+  - {id: "A3-19", check: "F12", line: "L174; L273; L473; L570", classification: "AMBIGUOUS", implication: "About Rs 69.5 Cr non-WIP inventory moved into development at the holding in H1 FY27; possible new Thane phase (Jekegram launch tracker)"}
+  - {id: "A3-20", check: "F12", line: "L227; L272; L277; L524; L285", classification: "AMBIGUOUS", implication: "Standalone CFO +Rs 142 Cr comes from a Rs 217 Cr other-current-asset release not mirrored at group; possibly intra-group, so not collections"}
+  - {id: "A3-21", check: "F14", line: "L327; L620; L76-77; L768", classification: "AMBIGUOUS", implication: "No demerger or comparability note; FY26 comparatives perimeter unstated; former name Raymond Lifestyle Limited only on cover letter; PR contact at Raymond Limited"}
+  - {id: "A3-22", check: "F14", line: "L312; L605; L316-317; L609-610; L656", classification: "NEUTRAL-FACT", implication: "Minor drafting slips; review wording consistent with auditor letters"}
+  - {id: "A3-23", check: "F15", line: "L447; L444-450", classification: "AMBIGUOUS", implication: "Rename Chembur Realty to Ten X Realty North, date unstated; 7-sub baseline; possible new SPV (A3-02) not in Annexure 1"}
+forward_signals: ["A3-03", "A3-08", "A3-09", "A3-10", "A3-16", "A3-18"]
+ambiguous: ["A3-01", "A3-02", "A3-04", "A3-05", "A3-06", "A3-11", "A3-12", "A3-13", "A3-15", "A3-17", "A3-19", "A3-20", "A3-21", "A3-23"]
+commitments:
+  - {commitment: "FY27 EBITDA margin 17-19%", implied_date: "2027-03-31", ref: "PR L665-666, L724", status_word: "underway"}
+  - {commitment: "FY27 pre-sales growth ~20%, ROCE ~20%, PAT margin 9-10%", implied_date: "2027-03-31", ref: "PR L723-724", status_word: "underway"}
+  - {commitment: "Margins expected to normalize progressively", implied_date: "H2 FY27", ref: "PR L664-665", status_word: "underway"}
+  - {commitment: "Mahim 1 (1,800 Cr) and Mahim 2 (2,300 Cr) JDA launches", implied_date: "Q3-Q4 FY27, by 2027-03-31", ref: "PR L702-709", status_word: "initiated"}
+  - {commitment: "Operational growth will be accelerated by MMR launch pipeline >4,100 Cr GDV", implied_date: "H2 FY27", ref: "PR L666-668, L733", status_word: "initiated"}
+  - {commitment: "Fully funded for next year of construction spends (Rs 308 Cr buffer)", implied_date: "about 2027-09", ref: "PR L715", status_word: "underway"}
+  - {commitment: "Debt/equity ceiling 1.0x", implied_date: "standing", ref: "PR L646, L714", status_word: "underway"}
+  - {commitment: "OC received Address by GS Season 1 Tower B, 270 units (RERA date Mar-28)", implied_date: "Q2 FY27", ref: "PR L687-689, L732", status_word: "completed"}
+  - {commitment: "Final dividend Rs 2/share FY26 paid", implied_date: "2026-07-14", ref: "Note 4 L324-325, L617-618", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The headline beat (EBITDA +14%, margin 15.2%) rests on two things. First, Q2 subsidiary revenue jumped 63% QoQ while standalone revenue fell 29% YoY, so the print depends on lumpy recognition inside JDA SPVs that sit wholly outside joint-auditor review. Second, Rs 17 Cr of interest to authorities for FSI is excluded from EBITDA; counted as cost, the Q2 margin is about 13.0%, under the 14% stop. This matters most for the pending margin-stop ruling. Net debt rose about Rs 129 Cr per quarter, faster than the tracker's Rs 90 Cr. Gross D/E 0.752x and net debt above Rs 900 Cr now meet the risk #2 first signals. Holding-level lending to subsidiaries continues under a new ICD caption, so loans-to-subs reads Rs 1,192 Cr, not a pause. Standalone CFO is positive only through a Rs 217 Cr other-current-asset release that the group does not mirror. Treat it as unproven collections. Guidance needs an H2 EBITDA margin of 19-22.5% against last year's 18.2% H2. The Mahim window now reaches Q4 FY27. The (810) OCR value is confirmed by reconciliation."

@@ -1,0 +1,89 @@
+stage: A3-forensics
+company: "RAYMONDREL"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/raymondrel-q2fy27/work/forensics_presentation_raymondrel_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: N.A.
+  F11: FINDING
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "l318 s18 R224", classification: "FORWARD-SIGNAL", implication: "Zero Q2 launches; H2 pre-sales hinge on Mahim-2 Q3 and Mahim-1 Q4 FY27"}
+  - {id: "A3-02", check: "F1", line: "l607 s35 R664/R672", classification: "FORWARD-SIGNAL", implication: "Invictus Tower B bookings 5->2->0, Q2 value 0; Thane luxury velocity stalled"}
+  - {id: "A3-03", check: "F1", line: "l700/l703 s41 R774/R782", classification: "AMBIGUOUS", implication: "BKC net cancellation Q1 (-1 unit, -Rs 6 Cr); Q2 rebound includes 11 retail units"}
+  - {id: "A3-04", check: "F1", line: "s5/s8/s23/s29-s43 (41 rows)", classification: "NEUTRAL-FACT", implication: "Remaining zero rows are pre-launch, unlaunched-cohort, sold-out or rounding"}
+  - {id: "A3-05", check: "F6", line: "l172-173 s9; l347-359 s21", classification: "FORWARD-SIGNAL", implication: "H1 EBITDA 14.3%/PAT 5.1% vs guide 17-19%/9-10%; H2 needs ~19.7%/12.9% for low end"}
+  - {id: "A3-06", check: "F6", line: "l170 s9 R964", classification: "AMBIGUOUS", implication: "~20% FY27 pre-sales guide implies H2 ~Rs 2,026 Cr vs H2 FY26 Rs 2,263 Cr (-10%)"}
+  - {id: "A3-07", check: "F6", line: "l461 s26 R969", classification: "FORWARD-SIGNAL", implication: "Mahim-1 at Q4 FY27 touches checklist #4 red line; prior date needed"}
+  - {id: "A3-08", check: "F6", line: "l464 s26 R972", classification: "FORWARD-SIGNAL", implication: "Thane parcel launch Q2 FY28, not FY27 as tracker expects; monetisation deferred"}
+  - {id: "A3-09", check: "F6", line: "l504,l553-554,l621 vs l687-690,l704,l720-721,l734", classification: "CONFIRMATORY-NEGATIVE", implication: "I-1 red: only Thane delivering OCs; all MMR JDAs early-stage"}
+  - {id: "A3-10", check: "F6", line: "l171-173 s9 R965/R967", classification: "AMBIGUOUS", implication: "PAT margin and ROCE now guided; Notion I-6 says refusal; OCF still unguided"}
+  - {id: "A3-11", check: "F7", line: "l124 s5 R962", classification: "FORWARD-SIGNAL", implication: "Pre-emptive % margin hedge; EBITDA/revenue FY23 25.6% to H1 FY27 14.3% as JDA share 9% to 52%"}
+  - {id: "A3-12", check: "F7", line: "l744 s44 R1080", classification: "AMBIGUOUS", implication: "Pre-demerger comparatives regrouped; basis of FY20-FY26 history NOT FOUND"}
+  - {id: "A3-13", check: "F7", line: "l164-166 s8 R963/R1044", classification: "AMBIGUOUS", implication: "Rs 14,375 Cr surplus excludes S&M 5-6%, overhead, interest, tax"}
+  - {id: "A3-14", check: "F8", line: "l355-358 s21 R301-R304", classification: "AMBIGUOUS", implication: "ETR 13-19.7% vs 25.17% statutory every period; step-up risk; deferred tax NOT FOUND"}
+  - {id: "A3-15", check: "F11", line: "l180 s10; l405-406 s23 R133/R367", classification: "FORWARD-SIGNAL", implication: "Derived net debt Rs 912 Cr (+256 H1); first signal >900 lit; Rs 1,122 Cr if AIF 210 counted"}
+  - {id: "A3-16", check: "F11", line: "l401,l404 s23; l366 s21", classification: "AMBIGUOUS", implication: "Debt +206 vs bank loan +155; cash finance 26 vs bank interest 55; interest may accrue into debt"}
+  - {id: "A3-17", check: "F11", line: "l377 s22 R325/R326", classification: "AMBIGUOUS", implication: "Equity +55 vs PAT 66; warrant money not visible; NCI inclusion unstated"}
+  - {id: "A3-18", check: "F12", line: "l392-397 s23; l372-379 s22", classification: "FORWARD-SIGNAL", implication: "Pre-launch cohort -185 (approvals 178); current assets +821 in H1; I-2/I-4 adverse"}
+  - {id: "A3-19", check: "F14", line: "l218 s13 R172", classification: "AMBIGUOUS", implication: "'Board Independence 100%' vs 5 of 8 directors independent; governance claim drafting"}
+  - {id: "A3-20", check: "F14", line: "l68 s3 vs l178 s10", classification: "AMBIGUOUS", implication: "GDV 52,000 labelled FY26 vs FY26 42,000; ~Rs 10,000 Cr H1 addition bears on I-5"}
+  - {id: "A3-21", check: "F14", line: "l92 s4 vs l443 s25", classification: "AMBIGUOUS", implication: "Revenue recognised 9,500 vs 10,078; gap equals BKC 577"}
+  - {id: "A3-22", check: "F14", line: "l346,l371,l385,l630-637,l423-424", classification: "AMBIGUOUS", implication: "12 unresolved markers; Park Street collections absent, totals tie only if zero"}
+  - {id: "A3-23", check: "F14", line: "l29 cover; l742 s44", classification: "NEUTRAL-FACT", implication: "Deck P&L/BS basis unlabelled and unreviewed; reconcile to filed results"}
+  - {id: "A3-24", check: "F16", line: "l427 s25; l702 s41 R454/R453", classification: "AMBIGUOUS", implication: "BKC revenue 577 > bookings 521, collections 64, shore piling; non-sale revenue in EBITDA"}
+  - {id: "A3-25", check: "F16", line: "l707 s41 R789; l428 s25 R1019", classification: "AMBIGUOUS", implication: "BKC Rs 175 Cr revenue in Q2FY26 before Q3 FY26 launch with zero bookings; inflates YoY base"}
+  - {id: "A3-26", check: "F16", line: "l429 s25; l733-734 s43", classification: "AMBIGUOUS", implication: "Sion revenue 242 > bookings 229, collections 36, shore piling"}
+  - {id: "A3-27", check: "F16", line: "l143 s7; l426-430 s25", classification: "FORWARD-SIGNAL", implication: "JDA revenue 2,549 vs JDA collections 857; Q2 JDA revenue 328 vs collections 165; I-2 red"}
+  - {id: "A3-28", check: "F11", line: "l364-367 s21 R315-R318", classification: "FORWARD-SIGNAL", implication: "Govt-authority interest +125% H1; deferred premium liability outside Rs 1,220 Cr debt"}
+  - {id: "A3-29", check: "F16", line: "l415-430 s25; l453-459 s26", classification: "AMBIGUOUS", implication: "Launched Sr.7 (likely EWS) and pipeline Sr.4 dropped; pipeline project removed?"}
+  - {id: "A3-30", check: "F16", line: "l511-520 s29; l430 s25", classification: "AMBIGUOUS", implication: "% sold on launched units, footnote missing; Wadala 61% vs 23% by area"}
+  - {id: "A3-31", check: "F16", line: "l149 s7; l444 s25", classification: "AMBIGUOUS", implication: "GST-inclusive collections netted against bookings; collection growth may be flattered"}
+  - {id: "A3-32", check: "F16", line: "l426,l430 s25; l460-463 s26", classification: "AMBIGUOUS", implication: "Pre-sales at 100% of JDAs (Wadala 62%, Parel 55%); overstates economic share"}
+  - {id: "A3-33", check: "F16", line: "l311-322 s18 vs l358-359 s21", classification: "CONFIRMATORY-NEGATIVE", implication: "Highlights omit PAT -12% Q2 / -14% H1; interest drove the decline"}
+  - {id: "A3-34", check: "F16", line: "l318-319 s18 vs l708 s41", classification: "AMBIGUOUS", implication: "'Entirely Address by GS' unsupported: Address projects 53% of Q2 revenue; BKC retail launched"}
+  - {id: "A3-35", check: "F16", line: "l347-352 s21 R259-R262", classification: "AMBIGUOUS", implication: "EBITDA includes other income; ex-OI Q1 11.4%, Q2 14.3% fires a 15% stop; input to pending ruling"}
+forward_signals: ["A3-01", "A3-02", "A3-05", "A3-07", "A3-08", "A3-11", "A3-15", "A3-18", "A3-27", "A3-28"]
+ambiguous: ["A3-03", "A3-06", "A3-10", "A3-12", "A3-13", "A3-14", "A3-16", "A3-17", "A3-19", "A3-20", "A3-21", "A3-22", "A3-24", "A3-25", "A3-26", "A3-29", "A3-30", "A3-31", "A3-32", "A3-34", "A3-35"]
+commitments:
+  - {commitment: "Mahim-2 launch, Rs 2,300 Cr", implied_date: "Q3 FY27", ref: "s26 l460 R968", status_word: "initiated"}
+  - {commitment: "Mahim-1 launch, Rs 1,800 Cr", implied_date: "Q4 FY27", ref: "s26 l461 R969", status_word: "initiated"}
+  - {commitment: "Kandivali launch, Rs 3,000 Cr", implied_date: "Q2 FY28", ref: "s26 l462 R970", status_word: "initiated"}
+  - {commitment: "Parel launch, Rs 8,500 Cr", implied_date: "Q2 FY28", ref: "s26 l463 R971", status_word: "initiated"}
+  - {commitment: "Thane Owned Land Parcel launch, Rs 8,500 Cr", implied_date: "Q2 FY28", ref: "s26 l464 R972", status_word: "initiated"}
+  - {commitment: "FY27 guide: pre-sales ~20%, ROCE ~20%, EBITDA 17-19%, PAT 9-10%", implied_date: "Mar-2027", ref: "s9 l169-173 R964-R967", status_word: "initiated"}
+  - {commitment: "Rs 14,375 Cr net surplus project cash flow", implied_date: "through FY36", ref: "s8 l164 R963", status_word: "initiated"}
+  - {commitment: "Realisations improve with Mahim/Parel; EBITDA per sq ft shall improve", implied_date: "Q3 FY27-Q2 FY28", ref: "s5 l123-124 R961/R962", status_word: "initiated"}
+  - {commitment: "TenX Habitat OC all towers", implied_date: "done (RERA Q4 FY27)", ref: "s28 l504 R974", status_word: "completed"}
+  - {commitment: "Address S1 Towers A, B OC", implied_date: "done (RERA Q4 FY28)", ref: "s31 l553-554 R977", status_word: "completed"}
+  - {commitment: "Park Avenue 1A OC; 1B finishing", implied_date: "Q4 FY29", ref: "s36 l621-622 R982", status_word: "underway"}
+  - {commitment: "TenX Era Towers A-C finishing", implied_date: "Q4 FY29", ref: "s30 l537-539 R976", status_word: "underway"}
+  - {commitment: "Address S2 Towers C/D/E slab work", implied_date: "Q4 FY29", ref: "s32 l567-569 R978", status_word: "underway"}
+  - {commitment: "Invictus Tower A 28th slab", implied_date: "Q4 FY29", ref: "s34 l601 R980", status_word: "underway"}
+  - {commitment: "Address S3 Tower F, Invictus Tower B foundation", implied_date: "Q2 FY32", ref: "s33 l579; s35 l613", status_word: "underway"}
+  - {commitment: "TenX District 9 excavation/PCC", implied_date: "Q1 FY33", ref: "s29 l519-521 R975", status_word: "underway"}
+  - {commitment: "Park Street excavation", implied_date: "Q1 FY33", ref: "s37 l632 R983", status_word: "underway"}
+  - {commitment: "Bandra JDA Towers A-D slab work", implied_date: "Q1 FY31", ref: "s40 l686-690 R984", status_word: "underway"}
+  - {commitment: "BKC JDA shore piling", implied_date: "Q2 FY32", ref: "s41 l703-704 R985", status_word: "underway"}
+  - {commitment: "Wadala JDA excavation/sub-structure", implied_date: "Q4 FY31", ref: "s42 l720-721 R986", status_word: "underway"}
+  - {commitment: "Sion JDA shore piling", implied_date: "Q2 FY31", ref: "s43 l734 R987", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Top item: JDA revenue runs ahead of cash, and at BKC and Sion ahead of bookings (577 vs 521; 242 vs 229). BKC booked Rs 175 Cr revenue in Q2FY26, a quarter before its Q3 FY26 launch, with zero bookings. Page 5 revenue recognised (9,500) equals page 26 (10,078) minus BKC 577 within Rs 1 Cr, which suggests BKC revenue is not unit-sale revenue [INFERENCE]; landowner-share barter revenue is a candidate. If so, EBITDA carries non-cash revenue and the JDA revenue-to-collection gap (2,549 vs 857) is structural. Second: deck EBITDA includes other income. Ex-other-income Q1 11.4%, Q2 14.3%, so a 15% operating stop fires while the deck-basis stop does not; feed this to the pending margin ruling. Third: derived net debt 912 (1,220 less closing balance 308; same method gives the 656 baseline). Debt rose 206 on a 155 bank inflow, and cash finance cost 26 sits against 55 bank interest; interest may roll into debt. Government-authority interest (+125% H1) points to an off-debt premium liability. Thane parcel launch is Q2 FY28, not FY27."

@@ -1,0 +1,618 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: RaymondRealty_Q2FY27_Concall_Transcript_ASR.txt
+doctype: concall
+page_count_pdfinfo: N/A (plain-text ASR transcript, not a PDF; logical page 1)
+formfeed_count: 0
+line_count: 600 source lines (fulltext file = 18 prefix lines (header + [page 1]) + 600 source lines = 618)
+unit_convention: Crores (spoken "crores"/"cr"; per-sq-ft/lakh mentions are area, not currency)
+conversion_factor_to_cr: Crores -> x1
+text_layer_present: N/A (text file; pdffonts gate not applicable)
+extraction_mode: text-only (verbatim copy)
+render_candidates: none
+rendered_pages: none
+page_coverage: 100% line coverage (source lines 1-600 all present verbatim; fulltext line = source line + 18; source line 1 is fulltext line 19). Verified by diff.
+detected_quarter: Q2 FY27 (call of 28-Oct-2026 11:30 IST, hosted by Antique)
+extraction_date: 2026-10-28
+speaker_note: speakers unlabelled; turns inferred in structured file; ASR names misheard, kept verbatim
+=== END HEADER ===
+[page 1]
+MACHINE TRANSCRIPT (ASR). Source audio: RaymondRealty_Q2FY27_Concall.mp3 (3607s). Tool: faster-whisper small.en, int8, beam 2, 600-second chunks, VAD on. Produced 2026-10-28 10:59 IST by Claude Code. Speaker names are not identified; numbers may be misheard. Treat every figure as management-tier and unverified; prefer the filed documents where they conflict.
+
+[00:00:01] Ladies and gentlemen, good day and welcome to the Raymond Realty Limited Q2 FY27 earnings
+[00:00:08] conference call. As a reminder, all participant lines will be in the listen-only mode and there
+[00:00:14] will be an opportunity for you to ask questions after the presentation concludes. Should you
+[00:00:19] need assistance during the conference call, please signal an operator by pressing star
+[00:00:24] then 0 on your touch-tone phone. Please note that this conference is being recorded. I now
+[00:00:30] We now have a conference over to Mr. Akil Rajendani from Antique's talk, Working Limited.
+[00:00:36] Thank you and over to you sir.
+[00:00:38] Thank you.
+[00:00:39] On behalf of Antique Limited, I would like to welcome all the participants to the Q2
+[00:00:45] and H1F-127 conference hall of Raymond Reit Limited.
+[00:00:49] Today we have with us from the senior management of Raymond Reit Limited, Mr. Rakesh Tewari,
+[00:00:57] CFO. Mr. Harmon Fani, MD and CEO. Mr. Anko Jindal, CFO. Mr. Salih Baha, Group Head of
+[00:01:06] Inversation. Mr. Ami Sabraval, Head of Inversation. Without taking any further time, I would like
+[00:01:14] to hand over the call to Mr. Harmon Fani. Over to you, Harmon.
+[00:01:20] Thank you. Good morning, everyone. And thank you for joining us today to discuss our financial
+[00:01:28] and operational performance for the second quarter of financial year 2027.
+[00:01:33] So, guided by our go beyond efforts, we have successfully carried out the scaled execution
+[00:01:40] and with strategic clarity from last year.
+[00:01:44] We have walked into the first half of FY27.
+[00:01:50] Our performance this quarter reflects strong operational momentum, validating our execution
+[00:01:56] capabilities and deep trust home buyers place in our brand.
+[00:02:01] I would now fill updates for the quarter Q2 in detail.
+[00:02:09] We achieved a landmark milestone this quarter by nearly doubling our quarterly pre-sales
+[00:02:15] without any new launches, driven entirely by robust sales velocity and steady price realizations
+[00:02:24] within our existing portfolio.
+[00:02:30] income for Q2FI27 grew at a steady 7% year-on-year to 757 crores. And through an optimized product
+[00:02:41] mix and discipline cost management, our EBITDA also rose from 14% and 15 crores with margins
+[00:02:52] now at 15% as compared to 14% in the corresponding quarter. Actually fluctuate by project space
+[00:03:04] due to upfront marketing and construction set of costs.
+[00:03:08] They are expected to normalize progressively
+[00:03:11] as more of our projects go in mid-stage
+[00:03:15] as this year progresses and moves into next year also.
+[00:03:20] So we are firmly on track to meet our
+[00:03:22] Pullier FY27 Beta Margin Guidance of 17 to 19%.
+[00:03:29] Start seeing further improvements in the balance here.
+[00:03:33] A booking value contribution mix for the period reflects a well-balanced portfolio with projects
+[00:03:41] outside of our legacy Thana land contributing 57% and Thana which is our own land which
+[00:03:48] started the business contributing 43% and this ratio will keep getting skewed which are
+[00:03:57] outside because most of the growth will come from outside of Thana.
+[00:04:04] We also witnessed a 67% surge in customer collection to 682 crores.
+[00:04:12] This highlights our intense focus on cash flow efficiency and operational leisure.
+[00:04:18] For the first half of the year, our cumulative collection 1,233 crores and booking values
+[00:04:27] increased by 111% year on year to 1,602 crores.
+[00:04:36] In a standout operational achievement, one of the features of that was receiving the
+[00:04:43] occupation certificate for address by GS1 Tower B in Thane, which comprises 270 units and
+[00:04:51] almost 300 of lakh square feet.
+[00:04:55] And this also has been delivered ahead of RERA completion timeline as there has been our tradition
+[00:05:00] for all our projects we have delivered well before the timeline committed to the market
+[00:05:06] and customers.
+[00:05:07] So, as a result delivering ahead of schedule stands as a testament to our strong
+[00:05:13] execution capability and operational effort.
+[00:05:17] Our total portfolio now stands at an impressive GDP of approximately 52,000
+[00:05:23] cross which includes what we have added in H1 of approximately 8,500 cross and
+[00:05:31] per rinse of this year itself we have added 8,500 cross to reach this level of
+[00:05:37] So, this reflects a diversified and high growth asset base across MMR and it as of now represents
+[00:05:50] a prudent mix of owned land and asset light JDA projects.
+[00:05:56] If you look at the Thanaland parcel which is a 100 acre parcel that remains the launch pad
+[00:06:03] on which this business started and it carries a 25,000 crore revenue potential.
+[00:06:10] Out of this, approximately 65 acres is currently under development which represents about 6.7
+[00:06:17] million square feet of rare carpet area and a revenue potential of 16,500 crores.
+[00:06:25] Out of this 16,500 crores, 9,770 crores has already been sold over the years and collections
+[00:06:33] have reached 7977 crores till date from the initiation of the business.
+[00:06:41] Now driven by our strategic pivot towards asset light model, if we look at the JDA, JDA is
+[00:06:48] now account for approximately 52 percent of our total GDP portfolio which represents the
+[00:06:56] revenue potential of 27000 crores at current prices.
+[00:07:01] Within the JDA, if we look at all the projects, four projects which are the Bandra project,
+[00:07:10] the BKC project, Vadala and Sion have already been launched and they are progressing rapidly.
+[00:07:17] And they have already generated for us over the last two and a half, three years that we have launched this JDA-based model.
+[00:07:26] They have already generated a sales value of 3432 crores and a collection of 857 crores
+[00:07:35] till date and this will keep on growing.
+[00:07:40] If you look at our booking value contribution mix for the period that also reflects and
+[00:07:47] follows a very similar pattern of the GDP where non-Thane JDA's have contributed 57%
+[00:07:56] percent of the pre-sale value and Thana has contributed 43 percent of the sale value.
+[00:08:03] So while there is a mix if you see 25000 crores versus 27000 crores in terms of GDP, but the
+[00:08:16] sale contribution of JDA is higher as compared to the Thana land because they are distributed
+[00:08:22] across various micro markets and the potential to grow over there is much higher.
+[00:08:27] Now, let us if you look at our balance sheet, we maintained a highly disciplined approach
+[00:08:33] to capital allocation, we close the quarter with a net debt of 912 crores and a gross
+[00:08:40] debt of 1200 odd crores with a healthy debt to equity ratio of 0.8 X. If you look at
+[00:08:47] the net debt to equity ratio which it will be closer to 0.5. So, which remains comfortably
+[00:08:55] well below R1 is to 1 ceiling and gives us ample headroom for growth going forward.
+[00:09:02] Now, backed by 300 crores liquidity buffer and a stable cost of debt at 9.6 percent,
+[00:09:13] We are comfortably funded for our construction requirements over the current year.
+[00:09:20] Additionally, total interest cost for Q2FI27 is 44 crores, which include interest on bank
+[00:09:29] borrowings of 27 crores and 17, 17 crores of interest to government authorities for various
+[00:09:38] approval payments which are which get paid over a period of time particularly
+[00:09:44] agencies like DMC, TMC and MARA where the approval cost get paid over a period of
+[00:09:51] time and on the balance the government charges a nominal interest without any
+[00:09:57] documentation. Regarding our
+[00:10:00] Cash flows, if you look at, we have also shared a detailed breakdown of our first half FY27
+[00:10:07] cash flows on as a part of our investor deck. You can refer to slide number 23 of our investor
+[00:10:17] presentation. You will see that our existing mature projects continue to deliver strong
+[00:10:23] operating cash flows, which is being reinvested into recently launched and new yet to be launched
+[00:10:28] The reason we have broken it up is because it gives you a better insight and it will
+[00:10:37] help you understand in greater detail how the cash flow cycle for various projects move
+[00:10:42] as they move from early stage to mid stage and then late stage.
+[00:10:47] And as is typical for any new JDA project, it remains cash flow negative for the first
+[00:10:55] two years due to upfront investment and then becomes cash flow positive from third year
+[00:11:02] or middle of third year onward and then so it goes on towards positivity after that.
+[00:11:10] So, all our projects have very healthy IRR and strong underlying cash flows, there therefore
+[00:11:17] as these projects mature we shall see the cash flows improving once we reach a steady state
+[00:11:24] in terms of 8 to 10 projects outside of Tana which will be under execution start showing
+[00:11:31] out cash and Tana is already net cash positive you can see.
+[00:11:38] So between these two I think within I mean my estimate is that within the period of
+[00:11:43] two years we will reach that steady state and you will start seeing much more stability
+[00:11:51] much more stability even on quarter numbers because the hyper growth phase will start to stabilize in the next two years
+[00:12:03] just now in the last six years and we are continuing in that hyper growth phase which requires a lot of capital
+[00:12:11] and we have done this growth profitably. It's always a challenge to display a profitable growth
+[00:12:20] but happy to share with you that your company has managed to grow in a profitable manner
+[00:12:26] and yet maintain the financial discipline of not exceeding 1 is to 1 debt equity.
+[00:12:32] One more thing I think which I have heard echoes of which I want to address just now is that a lot of people have asked me
+[00:12:45] that your interest charge has gone up and the debt level has gone up, which is a fact
+[00:12:52] But if you compare it with last year, the last year the debt level was extremely low
+[00:12:58] because a lot of new project had not launched and only mature for very early stage one or
+[00:13:04] two projects were there in the annual.
+[00:13:07] But last year towards the end of Q4, we launched a lot of new projects and as a result of that
+[00:13:17] all these projects are in early stage and they require capital to begin with.
+[00:13:22] And because of that the debt level has gone up. And if you look at a steady state debt level 1 is to 1 debt equity is a very healthy norm.
+[00:13:31] Of course, our endeavour is to stay well within that and this debt level will also stabilize.
+[00:13:37] So, if debt level stabilizes let us say at this 1200, 1400 crore level then next year's
+[00:13:43] comparison will not give you this kind of a delta which you see because last year the average debt was
+[00:13:51] average debt was about 300, 400 crores in that zone and this year the average debt is higher
+[00:13:58] but it is still at a very healthy level. As mentioned in a earlier conference call
+[00:14:07] Endeavour has always been to attract institutional capital with a focus to enhance
+[00:14:13] scalability. We are also very happy to share that Raymond Realty's subsidiary
+[00:14:21] company has raised 210 crores from AIF which is promoted by ICICI with Prudential AMC Limited.
+[00:14:30] This is part of our ongoing process of addressing the cap table at the same time
+[00:14:36] since I alluded to all the interest cost. Apart from that the promoter himself has
+[00:14:42] committed about 400 crores of equity that he is infusing and the first branch of that
+[00:14:48] of that is going to be received shortly as per the schedule and balance will be as the
+[00:14:55] has been approved by the shareholders in their in the EGM and with this strategic collaboration
+[00:15:03] with ICICI our subsidiary will get 210 crores as part of the peak investment which would
+[00:15:14] represent almost 60 percent of the peak investment that that project particular project needs.
+[00:15:21] So, this is this joint equity investment will directly fund a high value redevelopment project
+[00:15:28] in one of the Mumbai's very premium micro markets.
+[00:15:33] And this transaction actually validates our very disciplined asset light expansion strategy
+[00:15:39] where we continue to spread our risk as the project moves on and accelerates and we keep
+[00:15:48] de-risking ourselves and share the risk with other market participants.
+[00:15:51] It allows us to accelerate project timelines, it allows us to grow even faster than we have
+[00:15:57] grown in the past and also the most important part is it keeps our capital efficiency at
+[00:16:04] an optimum level which is what the endeavor is.
+[00:16:08] So, by leveraging this institutional capital we can scale across premium micro markets
+[00:16:13] without over leveraging our balance sheet ensuring strong project delivery and enhanced returns
+[00:16:18] that is the conclusion of working on the cap table.
+[00:16:22] Now, looking ahead if you see we are accelerating our growth trajectory over the next two quarters.
+[00:16:28] So, H2 will see two launches from us both of these launches are going to be in Mahil.
+[00:16:35] combined GDE of these projects is about 4100 crores approximately now so with a clear strategy
+[00:16:46] and the land parcel that we have in Hane and a GDE pipeline which is already signed up
+[00:16:57] plus there are more GDEs which are in the pipeline which we will be signing going forward
+[00:17:03] Along with that our operational intensity of committing to timely delivery and everywhere
+[00:17:09] so far we have maintained before time delivery and going forward also all our projects are
+[00:17:16] currently on time or ahead of schedule.
+[00:17:20] We see no significant challenge in maintaining that track record going forward as well.
+[00:17:26] So, as a result of that we remain firmly on track to achieve our portfolio guidance of
+[00:17:33] 20 percent minimum pre-sales growth, return on capital employed of 20 percent and our
+[00:17:41] beta margins for the year will range between 17 to 19 percent and the pet margin will be
+[00:17:48] 9 to 10 percent.
+[00:17:49] This has been a earlier guidance we are maintaining that guidance and as of now everything is
+[00:17:56] is on track to deliver this performance
+[00:17:59] that we have promised you.
+[00:18:01] So with that, thank you once again
+[00:18:04] for your continued confidence in Raymond Realty.
+[00:18:07] And I would now like to open the floor for questions.
+[00:18:15] Thank you, sir.
+[00:18:17] We will now begin the question and answer session.
+[00:18:20] Anyone who wishes to ask a question,
+[00:18:22] may press star and one on their touchstone telephone.
+[00:18:26] If you wish to withdraw yourself from the question queue,
+[00:18:29] were pressed star and two. Participants are requested to use handset while asking a question.
+[00:18:36] Ladies and gentlemen, we will wait for a moment for the question queue assembles.
+[00:18:40] The first question comes in the line of Ritul Shah with Anubhoti Advisors, LLP. Please go ahead.
+[00:18:50] Yeah, good morning and thank you for the opportunity. So my question was with respect to
+[00:18:55] the investment that we have received from ICIC EMC. So what is the amount of stake that the fund
+[00:19:04] would be received in the 10x subsidiary for this 210 CR? So they have infused through OCPRS as far
+[00:19:16] as the economic interest is concerned the deal is structured in a way where we are the execution
+[00:19:23] partner and we will be charging a fee to them for executing the project which is about 5%
+[00:19:32] of the total turnover of the project we will charge as fee and they are contributing 60%
+[00:19:40] of the capital which is required up to 210 crores of rupees and we are contributing 40%
+[00:19:46] of the capital.
+[00:19:47] So, the balance profit which is left will be distributed in that 60-40 ratio.
+[00:19:52] So we will be contributing 40% but we will be getting profit on that 40% plus
+[00:20:00] 5% or top line. So that's the deal. Okay, I've got an answer. As you mentioned that we
+[00:20:09] are comfortably placed at, you know, debt equity level, then we have already received the fund
+[00:20:16] for the 10X subsidiary from ICICI. Then why we have, you know, announced the preferential
+[00:20:23] issue to the promoter. And if I recall before two or three, concall, we said that we are
+[00:20:28] not looking for any fundraise. So, is there any major land parcel that we are eyeing or
+[00:20:36] you know what is the major reason for diluting our equity currently?
+[00:20:41] So, a promoter has infused equity of approximately 410 crores. See our ambition is to grow even
+[00:20:56] faster and better than what we have and we are doing it with a lot of discipline and
+[00:21:00] the right kind of assets.
+[00:21:03] So naturally capital is needed and as you are aware you know with real estate companies anyway
+[00:21:10] market is showing concern on debt levels and interest cost and also we don't want the
+[00:21:16] debt to go out of control.
+[00:21:18] So naturally the other option is to raise equity.
+[00:21:21] As far as ICICI is concerned that was always part of our plan and it was baked into our
+[00:21:29] annual operating plan for the current year that we will be getting money from some private
+[00:21:36] equity player and that will remain a strategy going forward also if we get the right opportunity
+[00:21:42] we would continue to do this because it helps us in two, three ways.
+[00:21:47] One is of course we share our risk with other market participants, second is we get access
+[00:21:53] to capital so we can grow rapidly and third is my margin profile also improves because
+[00:21:59] I am charging a fee which was never part of my revenue stream.
+[00:22:03] So all three benefits we get so we will continue to do that.
+[00:22:08] So as a result of that this has happened.
+[00:22:14] Okay sir thank you so much.
+[00:22:21] Thank you.
+[00:22:24] The next question comes from the line of Avantika Jhaver with Mani Tree LLP. Please go ahead.
+[00:22:30] Hi, I noticed in this slide's presentation on the guidance, there hasn't been a guidance
+[00:22:38] on revenue mentioned of 20% unlike last time where the revenue guidance was also pulled out
+[00:22:44] of 20%. I wanted to check if you are still on track on that.
+[00:22:48] This year we have not given a guidance on revenue growth but if the revenue growth is lower and the beta growth is 20%
+[00:23:02] you should be happy because my margin is expanding. I am not saying that it will be lower
+[00:23:08] but we haven't given a guidance on revenue so far because the reason for that is simple
+[00:23:15] As our operation becomes more complex and with so many projects and we follow percentage
+[00:23:21] completion there are many moving parts in calculation of turnover.
+[00:23:26] So we didn't want to give a guidance where we were not 100% sure that we will be in a
+[00:23:34] position to meet that guidance.
+[00:23:37] But rest assured as far as BITTA is concerned we will deliver at 20% and even on presale
+[00:23:44] also we will deliver at 20% growth.
+[00:23:47] Understood.
+[00:23:48] I think that's clear.
+[00:23:49] Thank you for the response.
+[00:23:50] I was just to clarify, I was wrestling to the August 19
+[00:23:54] presentation, slide 9, where you called out a revenue
+[00:23:57] guidance also, besides the pre-sale one of 20%.
+[00:24:04] But thank you for your response.
+[00:24:06] So you can assume it will be within the similar range.
+[00:24:09] It's not going to be significantly different.
+[00:24:12] Good.
+[00:24:19] Thank you.
+[00:24:21] The next question comes from the line of touch
+[00:24:24] with the test for auto research, please go ahead.
+[00:24:26] Mr. Zabs, your line has been unmuted.
+[00:24:43] Please go ahead with your question.
+[00:24:45] Hi.
+[00:24:46] Hi.
+[00:24:46] I'm an audible, sir.
+[00:24:50] Yes, you are audible.
+[00:24:50] Yes, you are audible.
+[00:24:53] I just have one question.
+[00:24:54] Are interest expenses have already reached 91 crores this
+[00:24:58] fast?
+[00:24:59] Do we still maintain the pullier interest cost
+[00:25:02] gap of 100 to 120 crores, or will cost be elevated
+[00:25:06] in the second half?
+[00:25:06] What is the number from?
+[00:25:15] but our only a number will be in line with whatever is in H1 you can safely assume that
+[00:25:21] it will be following the same run rate. Thank you. The next question comes on the
+[00:25:37] line of Rishabh Kothari with Ashishar investment please go ahead.
+[00:25:42] Hi sir, sir given the current microeconomic uncertainty and the possibility of a let's say
+[00:25:49] 50 to 75 basis point rise in the interest rates over the next year. How do you see this
+[00:25:56] impacting the home buyer demand particularly when it comes to MMR market? Do you believe
+[00:26:02] that the underlying demand remains strong enough to withstand higher borrowing cost over to
+[00:26:07] you sir? Yeah, so naturally borrowing costs definitely impact the high ticket purchases.
+[00:26:17] But the point is when is that tipping point and inflection point going to reach when it
+[00:26:23] starts pinching household budgets.
+[00:26:26] At 2550 basis point I don't see that will have any major impact where people will change
+[00:26:34] their decision because their EMI is going to be impacted.
+[00:26:39] And the reason I say this is and I am only referring to our portfolio I am not talking
+[00:26:44] about market in general and other players and what which segment they are present in.
+[00:26:50] Because the card segment is very clearly mid market and above, we are not present at the
+[00:26:57] bottom of the pyramid or even lower value apartments which is most sensitive to these
+[00:27:03] interest rate changes where even a you know 75 basis point interest rate change will
+[00:27:08] will immediately reverse the decision or change the decision.
+[00:27:12] Our lowest value apartment in Thana is not less than 1.5 crore and that's the lowest value.
+[00:27:20] Bulk of our inventory is in the category of about 3.5 crores and onwards going all the way up to 20 crores
+[00:27:28] if we look at all the MMR inventory that we've got.
+[00:27:32] In that segment my belief is that unless interest rates really run away there is not going to be any serious impact.
+[00:27:42] The only issue with interest rates is that generally if the economy starts to slow down because of that.
+[00:27:50] But usually that's with a lag and you see early signs of that. As of now there doesn't seem to be any major impact.
+[00:27:58] I guess India also doesn't have a choice looking at the interest rates in US and the way our
+[00:28:05] currency has behaved so far that they have to harden interest rates a little bit.
+[00:28:12] But I think it's already priced in people's decision.
+[00:28:15] It's already priced in, okay, sure. And so my next question is in terms of valuation.
+[00:28:23] So, we listed at a valuation of around 6,500 crores.
+[00:28:29] But despite delivering the growth in both top line and bottom line, our market valuation
+[00:28:34] is still nearly 50% below the listing levels.
+[00:28:37] How does the management view that significant disconnect between the company's operating
+[00:28:43] performance, let's say, and its stock price?
+[00:28:46] How concerning is this for the management and what steps are being taken to improve the institutional
+[00:28:52] of participation, given the decline in DIN, FII holdings since the listings are over
+[00:28:59] to you.
+[00:29:00] Yeah, so naturally, like you said, the performance has been good if we compare ourselves to our
+[00:29:08] peers also in terms of growth, in terms of return on capital employed, our numbers really
+[00:29:15] stand out.
+[00:29:16] But yeah, market is giving us a message that we have to work even harder and deliver better
+[00:29:21] and deliver better numbers. So, we are committed to that and we are working out strategies to
+[00:29:27] see like for instance, this ICICI deal we have done is in line with that which will improve
+[00:29:33] our margins and our growth also further. At the same time like you mentioned that the
+[00:29:40] efforts in to reach out and communicate with the market. See it is a three-prong strategy
+[00:29:48] that we have come out with. One is of course the communication part which we have to do.
+[00:29:53] Second is we need to increase the coverage of the stock since you rightly mentioned that
+[00:29:59] we listed.
+[00:30:01] And suddenly we were not in any of the indexes, so a lot of passive sold our stock and we became a small cap, so a lot of mutual fund radar we were not on.
+[00:30:15] So naturally the strategy now is to look at all the market participants who focus on smaller cap companies so that the cap table for us changes and there is more institutional participation.
+[00:30:30] These things do take time and we are already making efforts, significant efforts actually in this.
+[00:30:38] And you will see this year itself that our coverage with a lot of institutional brokers and research firms, the coverage will increase.
+[00:30:49] So far there was only one entity which was covering us and we are expecting by the end of this year at least four people will be putting on this.
+[00:30:59] putting out report on us and covering us. So there is more information available even if people have interest they didn't have any place to go to other than talking to management
+[00:31:09] and not everybody has the time to do that. So that's one effort then Amit who is on the call with me just now Amit Savarwal he has joined us as head of investor relations
+[00:31:22] and he has started his outreach with all the mutual funds who focus on smaller caps
+[00:31:28] and also other institutional participants in the market
+[00:31:32] so that there is a constant connect and communication about the good work that we are doing.
+[00:31:37] Now these are the two things we can do and third is of course through PR activities
+[00:31:44] whatever work we do should get publicized with public at large
+[00:31:48] that you would have noticed that we are doing as much as we can everything any
+[00:31:53] significant event which happens we communicate to the market so I guess it's
+[00:31:59] just an equation of time maybe a couple of quarters more of these efforts will
+[00:32:04] start showing results going forward so that's okay that's what we are doing okay
+[00:32:10] got it okay thank you sir thank you thank you the next question comes from
+[00:32:19] the line of Tenantche Mishra with central program please go ahead.
+[00:32:26] Yeah, this 14800 unsold part what proportion is it to be launched in this I mean we have
+[00:32:44] 14800 of unsold inventory and that also we have to certain part we have to launch right
+[00:32:54] So, what do you add?
+[00:32:55] So, Tanjay basically that changes from project to project and therefore, as a footnote also
+[00:33:00] we have mentioned that in the annexure we have given project by project break up.
+[00:33:04] Basically how many units have been launched for example, in Vadala the total inventory
+[00:33:08] is for example, 1500 units, but only currently 670 units have been launched which is like
+[00:33:14] almost kind of 45 percent of the inventory has been launched in that particular project.
+[00:33:19] So, the GDP of the project overall is 5000 Karoo, but within that only 45 percent has
+[00:33:24] been opened up right now and within that we have already sold around 60 percent kind of
+[00:33:30] around 370 units plus.
+[00:33:31] So, that way we have given every project by project breakup in the nxer if you check.
+[00:33:38] Yeah that is there.
+[00:33:39] So, I just wanted the concentrated seizure I mean if you have it is ready.
+[00:33:43] So, which I will I can I can share that with you.
+[00:33:48] We will communicate separately with you, we don't have it readily available just now with
+[00:33:56] us.
+[00:33:57] Okay and secondly this 14300 project level cash flow we are talking about, likewise what
+[00:34:03] will be the net operating cash flow, if you can give some estimate over next 4-5 years.
+[00:34:09] Sure, so with the current portfolio, so this has been prepared keeping in mind the current
+[00:34:14] portfolio which is 52000 crore of the GDP as it gets executed.
+[00:34:18] So, in that this is the project level cash flow of around 14000 375 crore within that
+[00:34:24] if you see we have mentioned that there is there would be selling and marketing expenses
+[00:34:28] to the tune of around 5 to 6 percent and there is a corporate overhead which is currently
+[00:34:32] at around 5 percent, but as we grow in size maybe it might reduce, but even if I take
+[00:34:37] the 5 percent as this figure then you can reduce the 10 percent from that.
+[00:34:41] So, it is around 10,000 crore kind of pre-tax cash flow that will be getting generated from
+[00:34:47] this current portfolio.
+[00:34:48] For 10 percent of the GDP value, GDP value of 50,000 crore we can get.
+[00:34:54] 50,000 because only the unsold and un-launched inventory 38,800 cut 10 percent which is like
+[00:35:00] 3,800 crore we will have to reduce.
+[00:35:03] So, 10,000 crore net operating cash flow we can assume over next 4-5 years.
+[00:35:08] as we execute these projects correct.
+[00:35:12] Okay that is.
+[00:35:14] It would be pretty tight.
+[00:35:16] And this Mahim again we have Mahim 1 and 2 we are launching close to 4000 so that will
+[00:35:24] be also launched phase wise right not entire.
+[00:35:29] Yes so we are launching currently in Q3 one project and in Q4 one project.
+[00:35:39] That is all for my question. Thank you.
+[00:35:42] Thank you.
+[00:35:44] The next question comes from the line of H.E.T.A. Lhuna with foreign investments. Please go ahead.
+[00:35:50] Pranak sir, thank you for the opportunity.
+[00:35:54] My first question is with respect to ICICI green that we do.
+[00:35:59] So can you expect to receive the entire sum by H2?
+[00:36:03] Obviously will come in tranches.
+[00:36:14] The first part of that money is expected in the next 30 days and the balance should come towards the end of this year.
+[00:36:25] So by end of this year, by March, we would have received the entire sum.
+[00:36:29] I brought it. And also it is for 10X realty best.
+[00:36:35] This is my understanding that it is for the Mahim project that we are planning to launch or any other project also.
+[00:36:42] So, currently this investment is against the Mayim project and at the time of launch, how
+[00:36:52] much inventory are we planning to open for sale?
+[00:36:57] We haven't taken that call yet, so closer to launch we will decide on that based on market
+[00:37:02] conditions and feedback from the participants.
+[00:37:05] Okay, also the sustainment sales was very good in the last two quarters, so can we explain
+[00:37:13] the same trajectory to continue in coming quarters as well. Actually it will be better
+[00:37:20] than age one because the festive season is now beginning and typically the sales are
+[00:37:26] better that's been our experience over the last few years. Also by doing this being with
+[00:37:35] Ipro is this IRR accretive to us and will you consider to do similar deals for other
+[00:37:44] upcoming project as well? Yeah, it is definitely IRR-ecreative and quite beneficial for us and
+[00:37:53] we will certainly, for the right project, we will certainly consider this going forward. It's part
+[00:37:58] of our strategy. Okay, thank you so much. Thank you. The next question comes from the line of
+[00:38:11] Janam Shah. We are the query securities. Please go ahead. Yeah, hi, 4.1. Yes, you are. Yeah,
+[00:38:21] So this would be kind of a long term question. So if we see our company, we started with
+[00:38:26] the Thanai land over the period of time, we added huge ADA projects across the member region.
+[00:38:32] And now we are doing almost few things in terms of our overall GDP as well as in terms
+[00:38:36] of pre-sales between Thanai and non-Thanai. And we are now expected to grow at around
+[00:38:40] 20% for this particular year. If we see, let's say, next fire trajectory for the company,
+[00:38:46] how do we see the pre-sales CAGR growth that we can achieve? And this would be in conjunction
+[00:38:51] with what kind of midi activities we wanted to do every year we used to make sure that
+[00:38:55] our growth happens along with that how the capital will be managed to make sure that
+[00:38:59] that growth happens without any deterioration in the overall financial events and numbers
+[00:39:03] and so we can just guide us how we think our complete event for our next event for
+[00:39:08] five years kind of a medium time perspective.
+[00:39:10] Sure, sure your question is actually very well timed we have just finished our activity
+[00:39:18] long range planning because the earlier long range plan that we had will be finishing by the end of this year.
+[00:39:25] So, for the next 5 year we have just finalized that looking at all the facts and figures and everything.
+[00:39:32] So, you can expect approximately 20% CAGR as far as pre-sale is concerned over the next 5 years.
+[00:39:40] And in terms of capital, as of now we don't see any significant requirement for capital.
+[00:39:50] May be in the range of 5-600 crores of equity going forward we may need.
+[00:40:00] Apart from what we have already raised and that is a decision which the board and the shareholders will take at an appropriate time.
+[00:40:09] And we will obviously inform you at that point in time. But in terms of growth, we see good growth going forward.
+[00:40:18] Given our strategy, there is a lot of interest that we have. As far as business development in GDP is concerned,
+[00:40:26] going forward if we add about 8 to 10,000 crores worth of GDP every year it should give us this kind of a target easily given that we already have a strong base which has been established in the last few years.
+[00:40:42] One more question on this, how we would be targeting events and land acquisition?
+[00:40:48] Will it be like let's say adding up something like 500 to 1500 kind of operations,
+[00:40:53] whether city kind of a land and then you can just churning it out as early as possible in 4 years?
+[00:40:57] Or will you buying out a large land person and that project can go on events for 10 years,
+[00:41:02] kind of a thing with phases and all those things?
+[00:41:05] So any specific thing that we would be doing in this particular thing or we are open for everything as of now?
+[00:41:10] I mean we are obviously in business so we are open for any good opportunity provided it meets my financial criteria
+[00:41:20] and the promises that I have made to all the stakeholders
+[00:41:23] Having said that as of today buying land and sitting on it is not my strategy
+[00:41:30] So, even if let's say I was I had I decided to buy a land and it was very attractive it
+[00:41:38] will be in the market as quickly as possible if at all I was to do that but our strategy
+[00:41:45] is to do JDS.
+[00:41:46] Got it.
+[00:41:49] So, this is the start last question from my side, you guys a good guidance that we are
+[00:41:55] giving in terms of pre-sales how do we generally assume this like the market growth would you
+[00:42:00] you can say 20% will be maintaining the market share or like market growth whatever will be
+[00:42:05] the market growth are positioning would be such that we will be doing this 20% kind of
+[00:42:09] a CAGR number how do you see overall market versus our market share in a particular market
+[00:42:13] or it is a broader MMR share.
+[00:42:16] So see the way we look at it is our margin of participation in the market you know market
+[00:42:26] market share is so abysmally low today. I mean Bombay shares 2.5 lakh grows of real estate every year
+[00:42:35] and that's the ballpark number. Probably it will be higher. And what are we doing? We are very very small as percentage of that.
+[00:42:46] So, I don't think market growing in all really is in hypothesis. If I was coke I had 50% market share then I have to worry about that.
+[00:42:55] Today I can grow just by entering a new micro market or starting a new project or starting a new product line also.
+[00:43:04] For instance, Thana when we started out, we had started out with a sale of 4500 crores in a year and we are currently doing between 1500 to 2000 range every year it's different.
+[00:43:18] So, let us say Tana will stabilize at 1500-1600 crores per annum, I do not see any significant
+[00:43:24] growth coming beyond this number from Tana, but all the other projects that we have got
+[00:43:31] some of them are early stage and then we are launching new projects, we are entering new
+[00:43:36] micro markets.
+[00:43:37] So, a lot of growth will come from there and as a result of that managing and maintaining
+[00:43:44] that growth is not such a big challenge. The bigger challenge actually is executing all
+[00:43:52] those projects for which we are fully geared up and our traffic card shows that we can
+[00:43:57] manage that. So growth will come. I mean that's not a matter of concern to us because there
+[00:44:05] are so many micro markets and new products that we have yet not touched.
+[00:44:09] Got it, got it and any other market we would be trying in may be India, South-Southern
+[00:44:17] India, anything in the near term or we will be focusing more on the member only as of
+[00:44:22] now.
+[00:44:23] If as of now our focus remains that but like I said we are opportunistic, if something comes
+[00:44:29] which meets my financial criteria and I am confident of executing it, we will definitely
+[00:44:35] consider it but our key criteria is going to be it should meet my financial metric
+[00:44:40] and I should have the execution capability of doing a project like that. We will not take speculative
+[00:44:47] birds. Got it, got it. The other thing from my side, thank you so much for the other question.
+[00:44:51] Thank you. The next question comes from the line of Bhavat Modi with Arun Rati. Please go ahead.
+[00:45:02] Hi sir, thank you for the opportunity. So my first question is with respect to the net
+[00:45:09] levels right now we stand it down 1200 crore you know gross debt so going
+[00:45:14] forward you know should we see this as the you know peak debt level you know
+[00:45:18] and now it should you know come down right or should we still see you know
+[00:45:22] some pinch up in the debt and whatever the promoter contribution is done right
+[00:45:26] so would it be utilized towards the you know this debt repayment or you know
+[00:45:30] would be towards the projects yeah sorry carry on you no no this was our first
+[00:45:40] Should I answer that first?
+[00:45:43] Yeah, you can answer, then I will follow up with my other patients.
+[00:45:48] So, see as far as debt is concerned, I mean it's a strategy of how you are going to manage your capital table.
+[00:45:58] Now, like we have stated that we will remain within 1 is to 1 and at the end of the day it makes eminent sense to have some kind of debt on your balance sheet
+[00:46:10] because debt is available to me at under 10% and all my projects give me an IRR of 20-25%
+[00:46:18] around 25%. So, it makes evidence sense and equity anyway is available at a higher rate
+[00:46:26] and nobody likes dilution unless it is really necessary. So, having said that debt, to answer
+[00:46:34] To answer your question specifically, we are at 1200, it will not come down at least for
+[00:46:40] the next one or two years for sure, because we are continuing to grow and we are adding
+[00:46:46] new projects and we want to grow and we don't want to raise any kind of significant equity
+[00:46:53] going forward.
+[00:46:54] Like I said, our requirement as per the LRP is in the range of maybe 4 to 600 crores.
+[00:47:03] and not more than that. So debt is avenue we will definitely resort to and it will remain
+[00:47:13] around this range I think I don't see any challenge in maintaining that kind of range
+[00:47:22] and it will still be within one is to one. Got it and also to follow up with the related
+[00:47:29] question you know with respect to the you know the fund the fund infusion you
+[00:47:34] know done by the ICICI right so first thing you know our 140 crore have you
+[00:47:39] already infused and second thing you know from the debt perspective you know if
+[00:47:43] the instrument is OCPRS right so I believe from the you know bookkeeping
+[00:47:47] perspective there will be some portion which will come in as a debt and some
+[00:47:51] would be you know recordized equity so optically that will also you know in
+[00:47:56] in a way you know inch up about debt right, am I am I writing my understanding?
+[00:48:00] No, it will not reflect as debt.
+[00:48:03] Ok.
+[00:48:04] Because it is it is dependent on the terms that you have agreed and our terms are that
+[00:48:10] this is equity that we have got from ICICI and only for ease of movement of cash flow
+[00:48:19] they have structured it as OCPRX and there is no reason for it to be classified as debt
+[00:48:26] all of that will see understood so second thing is with respect to our
+[00:48:31] pre-sales guidance you know so we have you know guided 20% growth so that will
+[00:48:36] be you know turn out between 3,500 to 3,600 crore and we have already done you
+[00:48:40] know 1600 crore of you know like the pre-sales already in H1 so we are still
+[00:48:47] spending with 2,000 crore right and if even if I expect you know my in
+[00:48:51] conversion to be the 25% so can we you know safely assume that we are assuming
+[00:48:56] you know thousand crore of p sales from our existing portfolio it will be much
+[00:49:01] more than that okay okay and so what will be the like the you know in this quarter
+[00:49:07] we saw you know out of your 900 crore 700 crore you know came from your you
+[00:49:13] know the address you know by JS product right so can we assume Mahim you know
+[00:49:19] product to be more of a you know address type of a team rather than the
+[00:49:23] inventors product so have we decided on the you know the product category
+[00:49:29] yeah so one mind will be in vectors and the other mind will be address okay and
+[00:49:38] so just last question you know with respect to the you know the overall you
+[00:49:41] know we have been you know tracking the sector and seeing you know bit of you
+[00:49:45] can see a flatishness in terms of a you know luxury and ultra-luxury you know
+[00:49:49] projects. And even in our case, you know, when I see, you know, the inventors, you
+[00:49:55] know, in Thane, there was almost like, you know, the tower, there was almost like, you
+[00:49:59] know, no seal.
+[00:50:00] Thana, you treat Thana as a lab where we test our various products. So, in with us, it actually
+[00:50:27] is a product for Bombay market and not really for Fana Fana per se because of for the obvious
+[00:50:33] reasons you know the intricate size and what have you so the kind of clientele that we have after
+[00:50:40] having tested it in Tane and seeing success in Taware if you see we have introduced very limited
+[00:50:47] inventory of in victors in Tane it's not it's not as though we've saturated the market
+[00:50:52] So, it's not any, I mean, don't go by percentages, they are misleading, but we haven't introduced any significant quantities in Bhana market.
+[00:51:06] As far as Bandra is concerned, the Bandra in Victor's did exceedingly well, way beyond our imagination it has done.
+[00:51:14] Now, we don't have upper floors available to us in BKC just now because of the aviation approval which is pending
+[00:51:23] which is expected shortly it should happen in the next few weeks. Once that comes then you will see sales because
+[00:51:32] currently our choice is also limited as far as consumer is concerned because of the typical nature of the product
+[00:51:41] those guys actually don't mind paying more money but they want a certain type of apartment
+[00:51:49] and those apartments are today not available because of the approval
+[00:51:54] I have to get rarer registration of those once I have the approval
+[00:51:57] and then those you will see sales pick up in Victor's BKC also
+[00:52:03] we already have a strong pipeline for higher floors where people are just waiting for my approval to come
+[00:52:10] Okay, so such as last question you know so from this you know thing you know from this
+[00:52:16] experience can we see you know going future you know if any you know project that comes
+[00:52:20] in you know so the lower flows would be you know the address product and the higher flows
+[00:52:25] you know we can you know we can have a mix of you know in victors. So, can we see that
+[00:52:29] mix you know going forward in our product or it would be like you know totally you know
+[00:52:33] at a particular tower you know allocated as you know address or in victors how or can
+[00:52:40] see the mix combination it will it will it's unlikely that we will mix address
+[00:52:49] and emitters in the same tower it's highly unlikely got it yeah that's it from my
+[00:52:55] chat so thanks thank you the next question comes from the line of Deepak
+[00:53:05] Poda where it's a fire capital please go ahead yeah multiple sir yes thank you
+[00:53:13] very much for this opportunity. So just wanted to clarify, I mean this year we are looking
+[00:53:19] at a beta growth of about 20 percent, is that the right understanding? I think you mentioned
+[00:53:23] somewhere to the previous participants. That's right. So I was just doing back up the envelope
+[00:53:29] calculation so ideally because we are expecting some margin expansion also from 17 to 19 percent
+[00:53:35] and earlier I think last year it was 16 and a half percent including your other income.
+[00:53:40] also ideally in spite of a better margin expansion we are expecting 20 percent
+[00:53:46] EBITDA growth so ideally the revenue growth will be low double digit or high
+[00:53:51] single digit rate I mean if I have to calculate backward yeah is my
+[00:53:57] understanding correct you've got the same calculator as me my friend but but
+[00:54:07] But to be serious on this, see this is a question which one of the other participants also asked.
+[00:54:14] So we haven't given a guidance as far as the top line is concerned but it's not very different
+[00:54:20] from a twenty percent growth.
+[00:54:22] I don't have an exact number to guide you with but it will be in that range.
+[00:54:33] I got it.
+[00:54:34] That would be it from my side, thank you so much.
+[00:54:41] Thank you.
+[00:54:42] Next question comes from the line of Ihas Paramesh,
+[00:54:46] with Clattarian Management, please go ahead.
+[00:54:52] Hi, am I audible?
+[00:54:54] Yes, sir.
+[00:54:55] Yeah, hi, Mr. Sani, thank you so much for the opportunity.
+[00:54:59] Again, congratulations on both the fundraise
+[00:55:02] as well as a great set of numbers.
+[00:55:05] I just had a quick question on the cost side of things.
+[00:55:10] What I've been observing is that,
+[00:55:13] with a lot of these EPC contractors,
+[00:55:16] as well as what I'm seeing in the market as well,
+[00:55:20] is that construction costs, especially labor,
+[00:55:25] has increased after the April elections.
+[00:55:29] And with crude oil where it is, you know,
+[00:55:32] I think construction costs and raw material costs
+[00:55:35] have gone up across the board.
+[00:55:38] So one, the question really is like,
+[00:55:41] Surely these costs should moderate apart from labor, I guess,
+[00:55:45] which will remain elevated at this price.
+[00:55:49] How are we placed on that?
+[00:55:51] Do we have fixed contracts with these EPC contractors
+[00:55:55] and builders that were able to maintain our costs?
+[00:55:59] Or do we have the flexibility of passing on the price
+[00:56:05] and fees or the cost and fees to the end customer?
+[00:56:08] So that's the first question.
+[00:56:09] The second question is on the OCPRS raised from ICICI.
+[00:56:14] Is there a preference dividend, or is it a 0% dividend?
+[00:56:20] Is it cumulative?
+[00:56:22] That was the second question.
+[00:56:24] What is the, you know, if there's any dividend attached
+[00:56:28] to that preference shares?
+[00:56:30] Thank you.
+[00:56:33] Yeah, I'll answer your second question first.
+[00:56:36] As far as the OCPRS is concerned, the coupon is virtually zero because like I mentioned
+[00:56:44] it is actually an equity investment that they have done.
+[00:56:47] It is only for structuring point of view it is OCPRS.
+[00:56:50] So, there will be no dividend payout, it is effectively zero, so that is one.
+[00:56:59] The other is as far as costs are concerned, naturally it is a matter of concern for the
+[00:57:04] entire industry today and not just our industry, it is the metro concern for the entire economy,
+[00:57:13] for the entire world but the projects which are under execution as of now where contracts
+[00:57:20] have already been given, these are all fixed price contracts, there is no provision of
+[00:57:27] increases that anybody can ask for even if they ask for it, it's not going to be easy.
+[00:57:35] We had a similar situation when the war broke out also and certainly there was panic and
+[00:57:39] now of course things have settled down quite a bit and there was no relenting from most
+[00:57:46] of the industry participants on contracts which were already awarded.
+[00:57:52] But despite that all our projects have a healthy level of contingency that we provide because
+[00:57:59] it's a project activity to be executed over a four, five year period.
+[00:58:04] So, it is prudent to have some contingency available within your budget to absorb any
+[00:58:11] kind of fluctuations in cost because there are always reasons and every time it is a
+[00:58:16] different reason, but there is fluctuation sometimes the seasonality itself plays out
+[00:58:21] you know cement steel and labor is something which will anyway keep on changing.
+[00:58:26] As of now, yes it is a matter of concern, but on the ongoing projects there is no image
+[00:58:35] that we have today. The projects which will get launched in future will definitely have that impact
+[00:58:43] but we are factoring that in our planning and the way we are pricing them so part of it will get passed on to the customer
+[00:58:52] and part of it we will absorb in our contingencies and that's how we will maintain our margins going forward also
+[00:59:00] Of course, all this is subject to this not being prolonged into years and years of inflationary
+[00:59:08] pressures.
+[00:59:09] But if it is temporary, I think there is enough resilience in the numbers to absorb that.
+[00:59:16] Thank you so much.
+[00:59:17] Thank you.
+[00:59:23] Ladies and gentlemen, that was the last question for today.
+[00:59:27] I now have the conference to go to the management for closing comments.
+[00:59:32] Thank you everyone for taking time out and attending our Q2 and H1 FY27 call call.
+[00:59:39] Please feel free to connect with us for any further queries or any further details.
+[00:59:44] And we'll be happy to share all the answers as well as all the data which is required.
+[00:59:50] Thank you. Thank you everyone.
+[00:59:56] Thank you sir. On behalf of Antique's talk program, let me take a break.
+[01:00:00] That concludes this conference. Thank you for joining us and you will now disconnect your minds. Thank you.

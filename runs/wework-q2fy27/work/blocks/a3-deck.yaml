@@ -1,0 +1,63 @@
+stage: A3-forensics
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/wework-q2fy27/work/forensics_deck_wework_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F1", line: "L720, L766, L771, L946/L949 (p31, p32, p39)", classification: "AMBIGUOUS", implication: "Exceptional line nil since H1 FY25; H1 FY27 lease-termination gain 5.2 Cr and PPE-sale profit 2.8 Cr booked in other income, no centre exit disclosed; ask which centres and why not exceptional"}
+  - {id: "A3-02", check: "F1", line: "L891-892 (p38), L536 (p22)", classification: "AMBIGUOUS", implication: "Sub-contracting cost reappears (2.8 Cr) as VAS jumps 38.4% QoQ to 79.6 Cr; part may be one-off customisation revenue; do not use as VAS run-rate"}
+  - {id: "A3-03", check: "F16", line: "L327, L367, L705, L709 (p13, p15, p31)", classification: "AMBIGUOUS", implication: "Headline Total Revenue and IGAAP EBITDA include Finance and Other Income; ex-other-income EBITDA QoQ +25.9% vs headline +17.8% (Q1 had 10.7 Cr other income); treasury swings move headline EBITDA"}
+  - {id: "A3-04", check: "F16", line: "L749, L887-888, L943-949 (p32, p38, p39)", classification: "CONFIRMATORY-NEGATIVE", implication: "Ind AS H1 finance plus other income 35.5 Cr vs PBT 16.4 Cr; other income 18.46 Cr is almost all MF, FVTPL, PPE-sale and lease-termination gains; audited profit has no operating surplus yet"}
+  - {id: "A3-05", check: "F16", line: "L722-725, L766-775 (p31, p32); L849, L854, L862 (p37)", classification: "AMBIGUOUS", implication: "IGAAP adjustment is 69% of Q2 PAT and 86% of H1 PAT, growing 36% YoY with the lease book; Q1 Ind AS loss vs IGAAP profit; valuation must name its earnings basis"}
+  - {id: "A3-06", check: "F11", line: "L359, L677-678 (p14, p29); L856-868 (p37)", classification: "AMBIGUOUS", implication: "Deck cash 413.3 Cr not reproducible from p37 (best rebuild 390.4 to 394.9 Cr); the 18.4-22.9 Cr gap is about the whole 23.1 Cr net cash; finance leases left out of gross debt; borrowings up 57.4 Cr in H1 while MF book up 127.6 Cr"}
+  - {id: "A3-07", check: "F11", line: "L846-862 (p37)", classification: "NEUTRAL-FACT", implication: "Lease liabilities 5,233.1 Cr = 15.3x equity and 8.0x annualised IGAAP EBITDA; DTA 307.7 Cr = 90% of equity 342.1 Cr; equity ex-DTA 34.4 Cr"}
+  - {id: "A3-08", check: "F11", line: "L846-851 (p37)", classification: "NEUTRAL-FACT", implication: "Other equity bridge (PAT + SBP + ESOP premium) ties within -0.40 Cr; net worth 342.07 Cr ties; no unexplained reserve move"}
+  - {id: "A3-09", check: "F11", line: "L354, L680, L715 (p14, p29, p31)", classification: "NEUTRAL-FACT", implication: "Stated 8.5% cost of borrowing vs 11.6% implied by IGAAP 'Borrowings & Others' finance cost; 'Others' undefined; rating agency unnamed"}
+  - {id: "A3-10", check: "F8", line: "L730, L773 (p31, p32); L918-921 (p38); L963 (p39); L858-859 (p37)", classification: "FORWARD-SIGNAL", implication: "Headline PAT untaxed; at 25.17% Q2 PAT 49.2 Cr and H1 89.1 Cr (shield ~2,509 bps); DTA 307.7 Cr unwinds as Ind AS charge later; 39.3 Cr cash tax parked in refund claims"}
+  - {id: "A3-11", check: "F10", line: "L846, L952, L339, L377 (p37, p39, p13, p15)", classification: "FORWARD-SIGNAL", implication: "Paid-up +2.58% in H1 from ESOP exercise (about 5% a year); ESOP cost +42% QoQ; no EPS or share count in deck; per-share growth runs below PAT growth"}
+  - {id: "A3-12", check: "F16", line: "L656, L662, L796, L939, L951, L962 (p28, p33, p39)", classification: "AMBIGUOUS", implication: "Self-funding claim holds by 16.0 Cr; 4.6 Cr after the 11.4 Cr finance-lease payout; negative if 8.6 Cr of ROU-addition payments is not brokerage; 126.5 Cr working-capital release is 33% of FCFO"}
+  - {id: "A3-13", check: "F16", line: "L710, L795 (p31, p33)", classification: "FORWARD-SIGNAL", implication: "[INFERENCE] IGAAP rent exceeds cash rent by 29.9 Cr in Q2 and 65.3 Cr in H1, gap widening; cash rent will catch up; FCFO/EBITDA 1.5x is not steady state; rent-to-revenue 42.8% accrual / 38.9% cash, improving"}
+  - {id: "A3-14", check: "F16", line: "L332-334 (p13)", classification: "AMBIGUOUS", implication: "'2.7x | 3.0x' revenue/rent multiples undefined and not reproducible from deck figures (2.57x / 2.21x / 2.34x); ask for definitions"}
+  - {id: "A3-15", check: "F16", line: "L468, L472-482 (p20)", classification: "FORWARD-SIGNAL", implication: "Locked-in revenue/rent ratio fell 2.9 to 2.7 QoQ; rent +23.4% vs contract value +14.3% QoQ; title holds only YoY; spread on locked-in book narrowing"}
+  - {id: "A3-16", check: "F6", line: "L418, L422-424, L429-437 (p18); L319 (p12)", classification: "FORWARD-SIGNAL", implication: "H2 FY27 adds only 4.7-9.7k desks vs 18.4k in H1; FY27 exit capacity growth +18-22%; 81% of the 47k 'committed' desks are LOIs with no date; FY28/FY29 supply 'under negotiation'"}
+  - {id: "A3-17", check: "F6", line: "L134 (p4)", classification: "FORWARD-SIGNAL", implication: "'Bulk of capex cycle live' vs 47k desks committed and no capex guidance; H1 about Rs 2.0 lakh capex per desk added [INFERENCE]; ask FY27/FY28 capex, per-desk capex by format, funding"}
+  - {id: "A3-18", check: "F12", line: "L305, L319, L397, L409 (p12, p17)", classification: "AMBIGUOUS", implication: "If 145.3k includes the ~4.5k October desks, Q2 add was 7.2k not 11.7k and occupancy is 86.4% (growth centres ~79%); ask the measurement date of capacity"}
+  - {id: "A3-19", check: "F12", line: "L303, L314-316 (p12); L498-513 (p21); L394-408 (p17)", classification: "AMBIGUOUS", implication: "Members +7.3% vs capacity +8.8% QoQ; occupancy -114 bps by mix; core revenue per member flat at ~Rs 18.0k/month (-0.7% YoY, computed); growth is all volume; mix shifting to new cities"}
+  - {id: "A3-20", check: "F12", line: "L573-583 (p24); L136 (p4)", classification: "AMBIGUOUS", implication: "Centre-level margin denominator undefined (implied 753.5 Cr); centre-to-company EBITDA gap +41% YoY (or +27.5% if other income excluded); operating-leverage claim untestable without definitions"}
+  - {id: "A3-21", check: "F7", line: "L258, L288, L102 (p9, p10, p3)", classification: "NEUTRAL-FACT", implication: "34% revenue share is modelled ('Our estimate'); reproduces only as WeWork core revenue vs peers at an assumed 2.35x; not evidence of pricing power"}
+  - {id: "A3-22", check: "F14", line: "L124 (p4); L721 (p31); L396-401 (p17); L908 (p38)", classification: "NEUTRAL-FACT", implication: "Total Revenue labelled 'Revenue'; p31 Q1 PBT (4.2) vs statement (4.04) from rounding; Noida YoY missing; associate, NCI subsidiary and rating agency unnamed"}
+  - {id: "A3-23", check: "F17", line: "L858, L946/L949, L952, L887, L854/L862; L1-982 no hit for NCLT, reduction, Labour, dilut", classification: "AMBIGUOUS", implication: "Silent on DTA, NCLT capital reduction, Labour Code, lease-termination gains, ESOP dilution and other-income share; numbers only on lease liabilities and rent-to-revenue; silence count 1 quarter"}
+forward_signals: ["A3-10", "A3-11", "A3-13", "A3-15", "A3-16", "A3-17"]
+ambiguous: ["A3-01", "A3-02", "A3-03", "A3-05", "A3-06", "A3-12", "A3-14", "A3-18", "A3-19", "A3-20", "A3-23"]
+commitments:
+  - {commitment: "~4,500 desks opened", implied_date: "first week Oct 2026", ref: "p12 L319; p17 L409 (R759)", status_word: "completed"}
+  - {commitment: "Locked-in supply 10.0-10.3 MSF / 150k-155k desks", implied_date: "2027-03-31", ref: "p18 L429-433 (R872, R873)", status_word: "underway"}
+  - {commitment: "13.0 MSF / 190k-195k total desks incl LOI", implied_date: "beyond Mar-2027, undated", ref: "p18 L429-433 (R874, R875)", status_word: "initiated"}
+  - {commitment: "~47k incremental desks committed (9k+ lease signed, 38k+ LOI)", implied_date: "undated", ref: "p18 L418-424 (R866, R863, R864)", status_word: "initiated"}
+  - {commitment: "Further supply for FY28 and FY29 under negotiation", implied_date: "FY28-FY29", ref: "p18 L437 (R1228)", status_word: "initiated"}
+  - {commitment: "Bulk of this capex cycle is now live", implied_date: "as at Q2 FY27", ref: "p4 L134 (R1223)", status_word: "completed"}
+  - {commitment: "On track to unlock operating leverage", implied_date: "undated", ref: "p4 L136 (R1224)", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck's strength is volume: members +32.5% YoY, mature occupancy 87.7%. Its headline numbers are built on choices that flatter. (1) Basis: 86% of H1 PAT is the IGAAP adjustment, and IGAAP PAT carries zero tax; at 25.17% H1 PAT is 89.1 Cr, not 119.0. (2) Audited Ind AS profit is wholly treasury, disposal and lease-exit gains. (3) Net cash 23.1 Cr does not rebuild from the deck's own balance sheet: an 18-23 Cr gap, with finance leases excluded. Treat it as about net zero. (4) FCFO benefits from about 30 Cr a quarter of rent-free cash and a 126.5 Cr H1 working-capital release, so the self-funding claim is knife-edge. Forward: H2 capacity adds slow to 4.7-9.7k desks, 81% of the committed pipeline is LOI, and the locked-in revenue/rent spread narrowed QoQ. Core revenue per member is flat, so growth is volume-only. The A4 questions with the most weight are A3-06, A3-12, A3-16 and A3-18. All prior-quarter diffs are untestable (first review)."

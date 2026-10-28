@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 7                # 10-minute time blocks; source is plain-text ASR transcript, not a PDF
+formfeed_count: 0
+line_count: 957              # fulltext incl. 20-line header; body 930 source lines + 7 block markers
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true     # plain text, no render needed
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/wework-q2fy27/extracted/wework-concall-q2fy27-fulltext.md"
+structured_path: "runs/wework-q2fy27/extracted/wework-concall-q2fy27-structured.md"
+structured_counts:
+  number: 233
+  entity: 39
+  forward: 60
+  date: 36
+  qualifier: 46              # plus 56 QA turn rows (R415-R470)
+structured_id_range: "R001-R470"
+gate_a1: pass
+gap_note: ""

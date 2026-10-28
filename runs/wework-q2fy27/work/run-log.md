@@ -1,0 +1,25 @@
+# Run log: WEWORK Q2 FY27 (/run-quarterly, 28-Oct-2026)
+
+- Checkout guard: git fetch origin main OK; diff over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md empty. PASS.
+- Protocols present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md. Document_Review_Protocol_v1_1.md present (not used: full quarter).
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract 5.4.0 at C:\Program Files\Tesseract-OCR\tesseract.exe.
+- Class detection (content, page 1-2): Results.pdf = results (Board Outcome, Reg 33 statements); Investor_Presentation.pdf = presentation (slides); Shareholders_Letter.pdf = presentation-class company narrative (batch instruction 3); Press_Release.pdf = presentation-class (media release); Concall ASR txt = concall (Moderator turn, "Ladies and gentlemen").
+- File tags (doctype collision across three presentation-class files): results, deck, letter, press, concall.
+- Text layer: all four PDFs have fonts. Results.pdf statement page 3: pdftotext -layout puts values in wrong rows (hidden OCR layer misaligned, e.g. 7,653.04 on the Income header line). A1 told to verify every statement page against pdftoppm renders and transcribe from the image where the layer is scrambled.
+- Units: results in Rs Million (factor 0.1 to Rs Crore).
+- Company memory: companies/WEWORK.md absent. Notion: COMPANIES MASTER search ("WeWork India", "WEWORK Wework India Management") finds no WeWork page. A peer page exists: "Role 2: Investment Thesis - IndiQube Spaces Ltd" (2026-05-26) that benchmarks against WeWork. Frame: PRE-THESIS READ, no spear on record.
+- Notion writes: none (batch instruction 6).
+- A1 gates: results 12/12 (pages 3-5, 9-11, 12 note-11 table image-transcribed; 66 tie-outs pass); concall 7/7 time blocks (930 source lines); deck 40/40; letter 31/31 (statements p22-24, p28-30 image-verified in appendix); press 5/5. All PASS.
+- A2 gates: results 1112/1112; concall 470/470; deck 1392/1392 (fulltext token sweep second method, nothing missing); letter 1570/1570, MFS-1 logged (p31 Note 8 consolidated paid-up capital not split into rows; same values at R965/R966/R1177-R1182; low materiality; not an orphan, gate passes). A2 cost below A1 on every document.
+- A3 gates: results 17/17 statuses, 19 findings line-cited; concall 17/17, 25 findings line-cited. PASS.
+- A2 press: gate PASS 197/197. COST CHECK: A2 62,661 tok > A1 61,721 tok (+940, +1.5%). Diagnosed: A2 reports reading only the structured file and the fulltext (the fulltext sweep was the orchestrator-mandated second count method); no inputs/ path was in its task message; its transcript file was empty (0 bytes) so a tool-call audit was not possible. On a 5-page release the fixed prompt-file overhead dominates both agents. Logged as overhead, not source re-ingestion; run token figure not marked compromised. Proceeded to A3.
+- A2 press flagged 5 A1 line anchors off by one (R005, R074, R088, R116, R118); cite page for those.
+- Press A3 launched while letter A3 and deck A3 ran (three at once, over the two-agent cap). Stopped within a minute by the orchestrator; to be restarted when a slot frees. Its partial tokens are not reported by the harness (killed run).
+- A3 gates: letter 17/17 (19 findings), deck 17/17 (23), press 17/17 (11; adds anchor slips R168, R197). PASS. Transcript re-check before A4: ASR file present since run start, used. A4 launched with Role 4 v1.4 + Role 5 v1.1, PRE-THESIS READ, tracker rows not supplied.
+- A5 loop 0: verdict INCOMPLETE. Audits 0-2 (brief gate, coverage, arithmetic) clean. Loop items: F1 FACTUAL (FCFF rebuilds on deck p28 formula; 20.0 Cr definitional gap), C1 CONTRADICTION (145.3k is at 30-Sep per three sources), C2 CONTRADICTION ("few new ROU" vs derived ~347.5 Cr net ROU additions), M1-M3 MISSING (three surviving bear counters). 10 STYLE notes logged. loop_back_to A4. A2/A3 not re-run.
+- A5 independence note (self-disclosed): one grep across work/ printed one line each from forensics_letter, forensics_deck and run-log.md; A5 states it used none of them. Logged; not a breach of its task message (which carried only A4 review, A1 extracts, A2 ledgers).
+- Loop 1 started: A4 re-run with A5 gap; loop-0 review and audit kept as *_loop0.md.
+- Loop 1: A4 fixed F1, C1, C2, M1-M3 and S1-S10; verdict unchanged PROCEED WITH FLAGS; cash direction label now 'deteriorating ex-float'. A5 re-audit launched with loop-0 review and audit for the drift check.
+- Agent scratch folders work/tmp_* moved out of the run folder to the session scratchpad before commit (not committed).
+- A5 re-audit (loop 1): verdict COMPLETE. Six loop-0 items closed; drift check pass (32 change-log rows, no unlisted change); 3 STYLE notes (N1-N3) logged, no loop. A5 disclosed one grep restricted to ledger_*_wework_q2fy27.md.
+- Correction loops: 1. Close-out: session-cost.md, operator-brief.md, notion-payload.md (not sent; no Notion write). Notion data-source schema fetched read-only to name payload properties.

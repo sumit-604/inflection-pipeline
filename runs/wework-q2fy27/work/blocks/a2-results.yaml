@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/wework-q2fy27/work/ledger_results_wework_q2fy27.md"
+counts:
+  notes: 21
+  line_items: 232
+  zero_standing: 52
+  agenda_items: 2
+  auditor_paras: 10
+  entities: 67
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, RESTATED, FOOTNOTE_UNRESOLVED, UNIT_CRORE_AS_PRINTED_NOT_MILLION, RELIANCE_ON_OTHER_AUDITORS, MEMBERSHIP_NO_NAME_MISMATCH, NOTE_NUMBER_NOT_IN_TEXT_LAYER, NO_PRIOR_LIST]
+ids_in_structured: 1112
+ids_referenced: 1112
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "zero_standing counts 52 nil cells in 25 line items (not 52 items). Board letter has only 2 agenda items (results; 10 MWp solar at 34.25 crore, printed in crore while statements are Rs Million): no dividend, AGM, director or auditor item. Partner membership 222345 appears under two different partner names (Nikunj Jay SA, partial name CA): verify. Both UDINs illegible. Labour Code provision 42.94 Mn SA vs 43.26 Mn CA. CA Note 5 has no printed number in the text layer (grep 20 vs 21, reconciled at R1092). No prior ledger, so entity/slide diffs untestable."

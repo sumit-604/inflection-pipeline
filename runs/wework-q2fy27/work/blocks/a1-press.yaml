@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 5
+formfeed_count: 5
+line_count: 235
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/wework-q2fy27/extracted/wework-press-q2fy27-fulltext.md"
+structured_path: "runs/wework-q2fy27/extracted/wework-press-q2fy27-structured.md"
+structured_counts:
+  number: 136
+  entity: 20
+  forward: 12
+  date: 15
+  qualifier: 14
+structured_id_range: "R001-R197"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,59 @@
+stage: A3-forensics
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/wework-q2fy27/work/forensics_letter_wework_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: PASS
+  F3: PASS
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: PASS
+  F11: FINDING
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: PASS
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "L-F1-a", check: "F1", line: "753, 763, 692", classification: "AMBIGUOUS", implication: "IGAAP-only exceptional charge 34.1 Cr in H1 FY25 with no Ind AS counterpart; nature undisclosed; headline basis can strip items outside the audit trail."}
+  - {id: "L-F6-a", check: "F6", line: "195-196", classification: "FORWARD-SIGNAL", implication: "~47k desk pipeline (signed leases + LOIs) undated, unsplit, unpriced; not yet in 5,233.1 Cr lease liability; track openings vs 47k each quarter."}
+  - {id: "L-F6-b", check: "F6", line: "148-153", classification: "AMBIGUOUS", implication: "'On track to unlock operating leverage' has no date or metric; not trackable as stated."}
+  - {id: "L-F7-a", check: "F7", line: "195, 206-207, 92-115", classification: "AMBIGUOUS", implication: "Hedges only in disclaimer; narrative uses 'secured' and 'locked in' for non-binding LOIs and an undefined order book; LOI share NOT FOUND."}
+  - {id: "L-F8-a", check: "F8", line: "696, 757, 145", classification: "FORWARD-SIGNAL", implication: "Headline PAT untaxed in all periods; ~16.6 Cr Q2 tax at 25.17% [derived]; 235.0 Cr Ind AS DTA credit booked H1 FY25; tax normalisation date never stated."}
+  - {id: "L-F11-a", check: "F11", line: "181, 227-231, 676, 1805-1816", classification: "AMBIGUOUS", implication: "ROCE 34.5% implies capital employed 906.7 Cr vs filed equity+borrowings 732.3 Cr [derived]; formula undisclosed; +590 bps QoQ untestable."}
+  - {id: "L-F12-a", check: "F12", line: "220-225, 1847-1848", classification: "FORWARD-SIGNAL", implication: "FCFO > EBITDA only via 146.6 Cr H1 inflow from other and other financial liabilities (nature undisclosed); ex these FCFO ~233.2 Cr < EBITDA 301.2 [derived]; reverses if growth slows."}
+  - {id: "L-F14-a", check: "F14", line: "218, 684-698, 745-759 vs 1757-1765", classification: "NEUTRAL-FACT", implication: "Reconciliation 'Reported IndAS' column off filed CA by 0.1-0.2 Cr (Q2 PAT 20.5 vs 20.4; Q1 (4.2) vs (4.1); H1 16.3 vs 16.4); IGAAP figures inherit it."}
+  - {id: "L-F14-b", check: "F14", line: "1152, 1581-1582, 881, 883, 1279, 1281", classification: "NEUTRAL-FACT", implication: "Letter annex reproduces results drafting slips unchanged (468,896 vs 4,68,896; plan name two ways; one membership no. under two partner OCR names)."}
+  - {id: "L-F16-a", check: "F16", line: "194-195", classification: "AMBIGUOUS", implication: "In-period H1 additions 18.4k = 83.6% of 22k target [derived]; 'past the 22k' only with ~4.5k post-period October desks; target window unstated."}
+  - {id: "L-F16-b", check: "F16", line: "172, 175, 202, 599, 1631", classification: "FORWARD-SIGNAL", implication: "Occupancy down 320 bps from March record 86.9% over two quarters [derived]; letter explains only last 114 bps; chart 84%->77% (Mar23-Mar25) unaddressed."}
+  - {id: "L-F16-c", check: "F16", line: "206-207, 783, 1811, 1817", classification: "FORWARD-SIGNAL", implication: "3,843/1,421 Cr basis undefined; 1,421 Cr ~1.19 yrs of cash rent; lease liabilities 5,233.1 Cr exceed locked-in revenue [derived]; 2.7x cover is near-window only, hides duration mismatch."}
+  - {id: "L-F16-d", check: "F16", line: "224-225, 220, 1797-1800, 1810, 1816, 1860-1861", classification: "AMBIGUOUS", implication: "Net cash 23.1 Cr vs derived 0.2 Cr (gap ~22.9); H1 change ~14 Cr not 333; gross borrowings +17.3% in H1; leases excluded and unmentioned."}
+  - {id: "L-F16-e", check: "F16", line: "220-223, 1851-1854, 1865-1866", classification: "AMBIGUOUS", implication: "FCFO/FCFF formula absent; derived FCFF (4.0) Cr vs letter +16.0; 78.4 Cr ROU-addition payments visible in neither FCFO nor capex; resolve before Role 1."}
+  - {id: "L-F16-f", check: "F16", line: "405-416, 1631, 1745, 1748", classification: "AMBIGUOUS", implication: "Revenue chart basis unstated; FY26 bar 2,490 equals CA Ind AS total income (incl. 50.2 Cr finance+other income), not revenue from ops 2,440.2; '3.9x' rests on undefined series."}
+  - {id: "L-F16-g", check: "F16", line: "204-206, 395, 432", classification: "AMBIGUOUS", implication: "VAS + Digital 14.2% of Q2 revenue [derived] vs 14.6% printed for 2022-24; 'margin-accretive' with no margin given."}
+  - {id: "L-F16-h", check: "F16", line: "662-668, 729, 783, 810-811", classification: "AMBIGUOUS", implication: "IGAAP opex adjustment composition undisclosed (residual 0.8-15.2 Cr after cash rent and brokerage); revenue adj flips sign; brokerage +63.5% YoY; positive: basis strips 16.4 of 18.6 Cr other income."}
+  - {id: "L-F16-i", check: "F16", line: "213-214, 201, 183, 231-232", classification: "AMBIGUOUS", implication: "Centre-level margin implies 753.5 Cr base (neither 768.7 nor 766.5); breakeven, CoB undefined; rating agency for A- to A+ unnamed."}
+  - {id: "L-F17-a", check: "F17", line: "172-262; 1136-1168, 1669, 1811-1817, 1847-1848", classification: "AMBIGUOUS", implication: "11 of 16 watch/results items silent in narrative (lease liability balance, rent-to-revenue, DTA/tax, ESOP dilution, NCLT, lease gains, Labour Code, other-liability build, solar, associate, escrow cash); occupancy partial; 1 quarter, baseline."}
+forward_signals: ["L-F6-a", "L-F8-a", "L-F12-a", "L-F16-b", "L-F16-c"]
+ambiguous: ["L-F1-a", "L-F6-b", "L-F7-a", "L-F11-a", "L-F16-a", "L-F16-d", "L-F16-e", "L-F16-f", "L-F16-g", "L-F16-h", "L-F16-i", "L-F17-a"]
+commitments:
+  - {commitment: "~47k desks secured via signed leases and LOIs (32% beyond 145.3k capacity)", implied_date: "NOT FOUND", ref: "p5 L195-196", status_word: "secured (LOI share NOT FOUND)"}
+  - {commitment: "~4.5k desks opened first week of October 2026", implied_date: "2026-10 (post-period)", ref: "p5 L194", status_word: "completed (claimed; verify Q3)"}
+  - {commitment: "22k desk-addition target set in Q1", implied_date: "window NOT FOUND", ref: "p5 L195", status_word: "claimed met only with post-period openings"}
+  - {commitment: "Unlock operating leverage and more profitable growth", implied_date: "NOT FOUND", ref: "p4 L151-153", status_word: "on track (no metric)"}
+  - {commitment: "Evaluate and account for Labour Code rules when notified", implied_date: "on notification; NOT FOUND", ref: "SA Note 5 L1141-1143; CA Note 5 L1572-1573", status_word: "pending"}
+  - {commitment: "NCLT capital reduction: set off Rs 20,501.60 Mn accumulated losses against Securities Premium", implied_date: "on NCLT sanction; NOT FOUND", ref: "SA Note 10 L1165-1168; CA Note 10 L1592-1594", status_word: "initiated"}
+  - {commitment: "IPO OFS 46,296,296 shares, Rs 29,996.43 Mn; listed NSE/BSE", implied_date: "2025-10-10", ref: "SA Note 6 L1145-1150; CA Note 6 L1575-1579", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The pages 17-18 bridge reconciles the headline basis, but four KPIs that carry the narrative do not reproduce from the statements in the same letter: net cash 23.1 Cr (derived 0.2 Cr), FCFF 16.0 Cr (derived (4.0) Cr; 78.4 Cr ROU-addition payments sit in neither FCFO nor capex), ROCE 34.5% (capital employed undefined), and the 3,843/1,421 Cr order-book cover (basis undefined). The 2.7x cover is a near-window ratio: 1,421 Cr is about 1.2 years of current cash rent, while Ind AS lease liabilities are 5,233 Cr. FCFO above EBITDA rests on 146.6 Cr of H1 liability inflows of undisclosed nature. Occupancy fell 320 bps from the March record over two quarters, and the letter explains only the last 114 bps. The 22k desk target was reached only by counting October openings. Headline PAT carries zero tax. In the company's favour, the IGAAP basis strips 16.4 of 18.6 Cr finance and other income, so the headline does not lean on the treasury and lease gains the results A3 flagged. Every prior-quarter diff is a baseline."

@@ -566,3 +566,153 @@ cited page text. All ten matched.
 
 **Known limits.** Cards ran 2,999 words (ACCENTMIC, by wc) and 2,652 words
 (ACHYUT) against the brief's 1,900 to 2,600. Flagged, not trimmed.
+
+## Eighth run, 2026-10-29
+
+Eight operator picks, screened in parallel by eight agents in one session:
+Piramal Pharma (PPLPHARMA), Poojaa Precision Engg (BSE SME 544844, scrip ID
+PPEL, listed 04-Aug-2026), Zenith Health Care (BSE 530665 only), Sudarshan
+Colorants India (SUDARCOLOR, formerly Heubach Colorants India, formerly
+Clariant Chemicals India), Shree Pushkar Chemicals & Fertilisers (SHREEPUSHK),
+Jyoti Structures (JYOTISTRUC), ESAF Small Finance Bank (ESAFSFB), and Tips
+Music (TIPSMUSIC), which was screened on 2026-10-18 and was rewritten in full
+with a "what changed" section, the Q2 FY27 transcript now held. The operator
+wrote "Pooja Precision" and "Sudarshan Colorants"; both resolved on
+screener.in search.
+
+**Verdicts.** PROCEED to `/step1` on SUDARCOLOR. WATCH on ESAFSFB, SHREEPUSHK,
+POOJAAPREC and TIPSMUSIC. PASS on JYOTISTRUC, ZENITHHE and PPLPHARMA. The
+run-wide forward table is `screens/forward-view-2026-10-29.md`.
+
+**Two step 13 additions, at the operator's request of 2026-10-29.** Every card
+carries, inside step 13 under "Operator additions, 2026-10-29": an FY28
+expected PAT and FY28 forward PE on the same tier rules (usually one notch
+weaker than FY27), and a confidence band on each year, defined as the
+probability that actual PAT lands within 15% of the estimate (HIGH about 70%
+or better, MEDIUM about 50%, LOW under 40%), with the one observation that
+would move the band. The framework text is unchanged; promoting the additions
+needs an operator ruling and a framework PR of its own.
+
+**The screen result, read honestly.** The operator asked for names cheap on
+forward earnings with high probability. None is both. The three cheapest
+(ESAFSFB 6.6x, SUDARCOLOR 11.1x, JYOTISTRUC 15.8x) are all LOW confidence,
+each on one period annualised over a structural event. The two HIGH-confidence
+names (POOJAAPREC, TIPSMUSIC) sit at about 38x. SHREEPUSHK at 16.5x is the
+MEDIUM-confidence middle.
+
+**Sources.** Screener collector under `py -3.14` for annual reports,
+transcripts, the latest deck and Financials.xlsx. **Both NSE and BSE refused
+scripted announcement calls this time** (Access Denied on the NSE
+corporate-announcements API that worked on 18-Oct and 26-Oct). All filings for
+all eight names came from the BSE announcements API called from a bseindia.com
+page in the in-app browser, in windows of 12 months or less, with PDFs from
+`AttachLive/` falling back to `AttachHis/`. Ratings via `fetch_ratings.py`
+(CARE and Brickwork PDFs; ICRA and CRISIL HTML). The Poojaa red herring
+prospectus (22-Jul-2026, 374 pages) came from the lead manager's site after a
+web search, with BSE listing notice 20260803-8 confirming the SME segment.
+Market cap and shareholding from screener.in, saved as
+`market-data-2026-10-29.md` per name. No Bull AI or Trendlyne call.
+
+**Integrity check.** All 541 PDFs across the eight corpora open with PyMuPDF,
+page markers match page counts, every file ends with `%%EOF`, every downloaded
+filing's byte size matches the exchange ledger's declared size, and a
+zero-page check passes. Md5 duplicate sets are recorded per corpus in
+`dup-sets-2026-10-29.json`. Filings of the same date and byte size as one
+already downloaded were not downloaded again and are marked so in the ledger.
+
+**Orchestrator spot check.** Five figures per card, plus two more on each of
+the two cards revised mid-run, were checked against the cited page: 44 of 44
+matched, eleven of them read from the page image where the text layer is a
+scan or garbled.
+
+### Findings worth carrying out of the cards
+
+- **SUDARCOLOR.** H1 FY27 PAT doubled to Rs 44.49 crore in the first half
+  under Sudarshan Chemical's control, at 11.1x forward, with operating cash
+  flow of minus Rs 24.11 crore and related parties on both sides of the trade
+  (24.5% of FY26 sales, 32% of purchases; related-party pricing is the
+  auditor's key audit matter). Five board exits or role changes plus the CFO in
+  15 months. A Rs 3.87 crore GST order was disclosed four months late and BSE
+  queried the delay. The parent holds a filed right to restructure after
+  October 2027. The only PROCEED, and a conditional one.
+- **ESAFSFB.** A Rs 625 crore technical write-off intimated 1-Oct-2026 is not
+  yet in a filed result. Gearing 18.18x and tangible net worth below the
+  pre-stress level per CARE, with all three downgrade triggers within one
+  point. Gold is 42% of the book; Kerala is 71% of deposits. The forward PAT
+  is the credit-cost call and nothing else.
+- **JYOTISTRUC.** Rs 159.39 crore a year of NCD accretion charged to reserves,
+  not the P&L; nil current tax; legacy receivables of Rs 2,223 crore, 76% of
+  assets, under an auditor emphasis of matter; FY26 operating cash flow minus
+  Rs 269 crore; four tribunal rulings since Aug-2024 and still no non-fund bank
+  limits. Rs 2,288 crore of orders won in October 2026. CEO, chairman and CFO
+  all changed between May and October 2026.
+- **PPLPHARMA.** H1 FY27 tax of Rs 138.53 crore on profit before tax of
+  Rs 74.18 crore while eleven other-audited overseas subsidiaries lost
+  Rs 245.59 crore. Carlyle's 17.95% is fully pledged. Executive pay rose 74%
+  in a loss year. Net debt to PBILDT 4.28x against CARE's 3.5x trigger.
+- **POOJAAPREC.** 3.35x the IPO price in twelve weeks. Customer 1 is 31.75% of
+  sales. Promoter-group foundries supply about Rs 35 crore a year of alloy
+  under Rs 50 crore annual limits each. The AR states FY26 ROCE as 36% on one
+  page and 26.38% on another.
+- **SHREEPUSHK.** The FY27 revenue guide moved from Rs 1,500 crore to
+  Rs 1,250-1,300 crore to Rs 1,350-1,400 crore in nine months; the FY26 PAT
+  guide was missed by 11%. The subsidiary merger was withdrawn at NCLT on
+  21-Sep-2026. The CMD's son replaced the only non-promoter non-executive.
+- **ZENITHHE.** Director pay is 24x profit before tax, with a 100% increment
+  clause passed in 2026. Rs 1.63 crore of loans to unnamed borrowers equal 22%
+  of net worth. A Rs 100 crore related-party window with Achyut was passed by
+  5.8% of public shares. After the merger today's holders keep 8.55%.
+- **TIPSMUSIC.** The growth is volume at a flat 5-paise rate; the yield thesis
+  the card was built on has not fired. Receivables rose 41% against revenue up
+  28%. The CEO seat has been vacant since April 2026. The YouTube Shorts deal is
+  four months late.
+
+### Corpus defects recorded
+
+- **Pagination bug in the browser-side BSE fetch.** For names fetched in two
+  12-month windows, the second window stopped after its first page of 50 rows,
+  because the page loop compared the cumulative row count against the second
+  window's total. Two analysts found the hole (SUDARCOLOR and JYOTISTRUC, no
+  filings from mid-Oct-2025 to Mar-2026). Both windows were refetched, 32
+  filings added (Q2 and Q3 FY26 results among them), both cards and manifests
+  revised; neither verdict changed. ZENITHHE and POOJAAPREC were checked and
+  were complete.
+- **A resumed BSE download produced a full-size file with an empty page tree**
+  (SUDARCOLOR, 20250716_47755654): the first downloader was killed mid-file and
+  the second resumed it with `curl -C -` against a path that re-served the file
+  from byte zero. The orchestrator's integrity pass accepted it (0 markers = 0
+  pages). Fixed by deleting and refetching without resume; the file is now
+  byte-identical to its duplicate. **Fix for the next run:** never resume a BSE
+  download, and treat a zero-page PDF as broken.
+- **Scanned result pages that carry a signature text block** (JYOTISTRUC) have
+  more than 40 characters of native text, so the per-page OCR threshold skips
+  them and the `.txt` holds only the signature. Analysts read the page image.
+  The threshold should become "fewer than 40 characters, or fewer than 200
+  characters on a page whose image is mostly ink".
+- Garbled native text layers with no `[OCR]` marker, as in earlier runs:
+  SUDARCOLOR Q2 FY27 p.3 (44.49 read as ^449), SHREEPUSHK result statements,
+  ZENITHHE FY26 results p.7, an IDC recommendation scan. Figures read from the
+  page image in every case and so marked in the manifests.
+- BSE files the same PDF under several categories with different attachment
+  names. One copy per date and byte size was downloaded; the rest are marked
+  "same date and byte size as" in the ledger. Md5 confirmed the ones checked.
+- The orchestrator's task messages carried wrong framing that the analysts
+  corrected from the filings: POOJAAPREC is a BSE SME half-yearly reporter,
+  not a main-board quarterly one; the JYOTISTRUC and SUDARCOLOR "every quarter
+  held" claims were untrue until the pagination fix.
+
+### Known limits of this run
+
+- Cards ran 2,596 to 4,348 words against the brief's 1,900 to 2,600
+  (PPLPHARMA and POOJAAPREC inside the band; JYOTISTRUC 4,348 and ESAFSFB
+  3,658 the longest, both carrying long citation keys and tables). Flagged,
+  not trimmed.
+- Q2 FY27 results were not yet filed for ESAFSFB, SHREEPUSHK and JYOTISTRUC,
+  so their two-quarter proof tests run on Q4 FY26 and Q1 FY27. PPLPHARMA's Q2
+  FY27 call transcript (28-Oct-2026) is not yet filed.
+- No transcript or deck exists for ZENITHHE, SUDARCOLOR or JYOTISTRUC.
+- Credit views: none for ZENITHHE, SHREEPUSHK (one-page ICRA intimation only)
+  and JYOTISTRUC; SUDARCOLOR's four CARE files are Clariant-era 2017-2019;
+  PPLPHARMA's ICRA captures are site shells with no rationale.
+- PPLPHARMA is a Rs 30,994 crore large cap, outside the small/micro-cap
+  mandate; screened because the operator named it.

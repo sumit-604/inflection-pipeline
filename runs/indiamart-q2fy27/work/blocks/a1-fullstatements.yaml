@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "results (supplementary full financial statements, targeted notes)"
+model: claude-sonnet-5-5
+status: complete
+page_count: 62
+formfeed_count: 62
+line_count: 4383
+unit_convention: "Millions (INR million)"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []   # verification renders only (not extraction): 17,18,19,20,24,25,27,28,29,30,31,46,47,48,49,53,56,57,59,60
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/indiamart-q2fy27/extracted/indiamart-fullstatements-q2fy27-fulltext.md"
+structured_path: "runs/indiamart-q2fy27/extracted/indiamart-fullstatements-q2fy27-structured.md"
+structured_counts:
+  number: 2272
+  entity: 358
+  forward: 5
+  date: 94
+  qualifier: 436
+structured_id_range: "R001-R3165"
+gate_a1: pass
+gap_note: ""

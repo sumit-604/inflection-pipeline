@@ -1,0 +1,73 @@
+stage: A3-forensics
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "results-supplementary-fullstatements"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+loop_source: "A5 M2 (MISSING, routed to A3): standalone note 7 (i), (ii), (v)"
+forensics_path: "runs/indiamart-q2fy27/work/forensics_fullstatements_indiamart_q2fy27.md"
+ledger_reconciled_pct: null       # no A2 ledger for this supplementary file (orchestrator); structured row IDs and fulltext lines cited directly
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "FS1-01", check: "F2", line: "L1719-1721/L3750-3751 (R020-R023,R064-R067)", classification: "AMBIGUOUS", implication: "Treasury FV, interest and sale income in one line; realised vs MTM and dividends not split; F2-03 sharpened (MQ-1)"}
+  - {id: "FS1-02", check: "F2", line: "L1722/L3752 (R026,R070)", classification: "RESOLVED", implication: "MonotaRO FV loss 71.49 consol / 200.00 SA booked in Q1 other income; Q1 consol-SA gap 185.81 = 128.51 basis diff + 53.05 sub treasury + 4.25 other; F1-02 and F2-03 one-off resolved"}
+  - {id: "FS1-03", check: "F2", line: "L1310-1346 (R666,R698,R702,R742,R750,R758,R790,R794,R810)", classification: "FORWARD-SIGNAL", implication: "Equity factor index funds 3,316.79 to 4,680.65 (15.6% of 30,087 book); arbitrage 2,995 to 891; other income carries equity beta [INFERENCE] (MQ-2)"}
+  - {id: "FS2-01", check: "F12", line: "L1174-1175/L1180-1181 (R2005,R2009,R405)", classification: "FORWARD-SIGNAL", implication: "822.35 = Fleetx CCPS 649.88 (22.25% to 25.80%) + Agillos secondary 172.47, all Q2; F12-01 recipients resolved (MQ-3)"}
+  - {id: "FS2-02", check: "F15", line: "L1183-1184/L1255-1261/L3339-3345 (R1026,R1030,R1523,R1526)", classification: "AMBIGUOUS", implication: "MonotaRO not sold; FVTPL at 586.33 (49.7% of cost); cause of lost influence undisclosed; F1-02 resolved, F15-02 narrowed (MQ-4)"}
+  - {id: "FS2-03", check: "F1", line: "L1963/L4009-4011 (R1024-R1027)", classification: "AMBIGUOUS", implication: "Level 3 investees (4,029.05) not re-marked in H1 FY26 or H1 FY27; marks only at Q4 [INFERENCE]; F1-01 sharpened to single-name (MQ-5)"}
+  - {id: "FS2-04", check: "F2", line: "L1109-1167/L2312 (R174,R246,R286,R304,R327,R359,R403)", classification: "FORWARD-SIGNAL", implication: "H1 associate loss 281.44: Simply Vyapar 102.48 + Fleetx 93.03 = 69.5%; F2-01 sharpened (MQ-6)"}
+  - {id: "FS3-01", check: "F6", line: "L3269-3270/L4130-4131 (R1091,R2115,R2187)", classification: "FORWARD-SIGNAL", implication: "IndiaMart Finance equity 120.50 in Q2; purpose short-term working-capital finance for business users; registration undated; F6-01/F15-01 sharpened (MQ-7)"}
+  - {id: "FS3-02", check: "F3", line: "L3267-3275/L4126-4131 (R2107,R2113,R1364)", classification: "NEUTRAL-FACT", implication: "370.47 into Tradezeal 190.00, IndiaMart Finance 120.50, Livekeeping 59.97; SA-vs-group gap 198.00 = 370.47 - 172.47; F3-02 sharpened"}
+  - {id: "FS3-03", check: "F4", line: "L203-213/L2102-2107 (R001-R005)", classification: "AMBIGUOUS", implication: "Five other-auditor subsidiaries not named; [INFERENCE] all except Busy; Q1 loss driver not in notes; F3-01 unchanged (MQ-8)"}
+  - {id: "FS3-04", check: "F14", line: "L2206/L2219 (R2001,R2021)", classification: "NEUTRAL-FACT", implication: "KMP loan 1.50 given and repaid in Q2; no parent loans to subsidiaries or associates"}
+  - {id: "FS4-01", check: "F3", line: "L1497-1500 (R2243-R2250)", classification: "AMBIGUOUS", implication: "Other NC assets 27.69 to 175.41 driven by subsidiary prepaid 0.16 to 139.43; nature undisclosed; IndiaMart Finance parking inference refuted for this line (MQ-9)"}
+  - {id: "FS5-01", check: "F14", line: "L218-219/L221-222 (R006-R010)", classification: "RESOLVED", implication: "Full-statement report states all eight associates unaudited; F14-03 resolved"}
+  - {id: "FS5-02", check: "F4", line: "L215-229 (R006,R007,R009,R2760)", classification: "AMBIGUOUS", implication: "Unaudited associates 16.9% of Q2 PAT, 11.4% of H1; auditor 'not material' now covers all eight; F4-01 and F7-01 sharpened (MQ-10)"}
+  - {id: "FS5-03", check: "F14", line: "L209/L1722/L3752/L2210/L2212", classification: "NEUTRAL-FACT", implication: "Six drafting slips (missing word, gain/loss label, wrong cross-ref 7(iv), Fleetex, Agillos counterparty, para (a) metric swap)"}
+  - {id: "FS5-04", check: "F5", line: "L231-233/L2379-2381 (R2761,R2774)", classification: "NEUTRAL-FACT", implication: "No EoM or MU; SA report has no Other Matters; F5 PASS unchanged"}
+  - {id: "FSX-01", check: "F2", line: "L3811-3815 (fulltext only)", classification: "RESOLVED", implication: "Q2 FY26 SA other expenses carried 160.00 impairment; F2-02 inference supported"}
+  - {id: "FSX-02", check: "F6", line: "L2285-2288 (fulltext only)", classification: "FORWARD-SIGNAL", implication: "Busy AY2017-18 tax demand 242.99: stay rejected Sep-2026, recovery notice, writ filed; possible Q3 cash out; no accrual (MQ-11)"}
+  - {id: "FSX-03", check: "F13", line: "L2123-2124 (fulltext only)", classification: "NEUTRAL-FACT", implication: "Non-executive director exit 29-Jun-2026 (alignment inferred); A4 cross-check vs NOTION MEMORY"}
+  - {id: "FSX-04", check: "F14", line: "L243-244/L2331-2347 (R2765)", classification: "AMBIGUOUS", implication: "All full-statement signatures 12:33-13:35 before 15:00 meeting close; F14-01 sharpened (carry F14-01 question)"}
+  - {id: "L1-01", check: "F3", line: "L3267/L3192/L3194/L4129 (R1121-R1127,R1132,R2111,R2113,R2973)", classification: "FORWARD-SIGNAL", implication: "Livekeeping 0.001% OCD 1,172 x INR 51,167 = 59.97 in Q1, same price as the earlier 90.00 tranche, into a 100% subsidiary carrying a 52.61 SA impairment; recurring parent funding likely [INFERENCE]; terms not filed (MQ-12)"}
+  - {id: "L1-02", check: "F3", line: "L3268/L3172/L4127 (R1059-R1064,R2107,R2109,R2962)", classification: "AMBIGUOUS", implication: "Tradezeal 0.001% OCD 76,00,000 x INR 25 = 190.00 in Q2; use and conversion/redemption terms undisclosed (MQ-13)"}
+  - {id: "L1-03", check: "F3", line: "L3274-3275/L3170/L3303 (R1049-R1053,R1390-R1395,R2964,R2965)", classification: "NEUTRAL-FACT", implication: "Tradezeal OCCRPS 78,70,000 converted 1:1 to equity at 128.06 (16.27/share implied); non-cash; FVTPL redeemable to at-cost equity; no FV gain/loss on conversion"}
+  - {id: "L1-04", check: "F3", line: "results L979; L4043-4046/L3229/L2212-2213/L1180 (R667,R597,R2107-R2119,R1364,R2009)", classification: "AMBIGUOUS", implication: "SA outflow 1,020.35 = Fleetx 649.88 + Tradezeal 190.00 + IndiaMart Finance 120.50 + Livekeeping 59.97; SA strategic book +828.06 = 1,020.35 + 7.71 deemed - 200.00 MonotaRO, exact; Agillos not an SA associate; listed company did not pay (settled); paying subsidiary unnamed, Tradezeal [INFERENCE] (MQ-14)"}
+  - {id: "L1-05", check: "F2", line: "deck L663-665; L1180-1181 (R166,R167,R1554,R2009)", classification: "AMBIGUOUS", implication: "Deck Agillos Rs 43 Cr = 260.00 + 172.47 advance; 172.47 for 3.7% implies about 4,661 for 100%, about 4.2x the earlier blended cost [INFERENCE]; price and sellers undisclosed (MQ-15)"}
+  - {id: "L1-06", check: "F14", line: "L1180-1181; deck L663 (R1554)", classification: "NEUTRAL-FACT", implication: "Agillos transfer date: deck 7 October 2026 vs audited note 5 October 2026"}
+  - {id: "L1-07", check: "F1", line: "L3194/L1014-1020/L1024 (R1132,R1134,R1368,R1369,R2113)", classification: "AMBIGUOUS", implication: "Livekeeping: 52.61 SA impairment carried unchanged, no new charge in H1; goodwill 420.38 unimpaired, no indicator disclosed; #11 status depends on definition; full write-off (Rs 42 Cr) stays below #9 Rs 100 Cr line (MQ-16)"}
+  - {id: "L1-08", check: "pipeline", line: "notion_monitoring_checklist.md L18-38, L46", classification: "FINDING", implication: "Thesis-broken #11 text cited by A5 is absent from the A3 checklist input; file uses #11 for associate-cohort monitor item; A4/orchestrator to verify against Notion snapshot"}
+forward_signals: ["FS1-03", "FS2-01", "FS2-04", "FS3-01", "FSX-02", "L1-01"]
+ambiguous: ["FS1-01", "FS2-02", "FS2-03", "FS3-03", "FS4-01", "FS5-02", "FSX-04", "L1-02", "L1-04", "L1-05", "L1-07"]
+commitments:
+  - {commitment: "IndiaMart Finance capitalised for short-term working-capital finance to business users", implied_date: "equity 120.50 Q2 FY27; registration and lending undated", ref: "SA note 7(iii) L3269-3270", status_word: "completed"}
+  - {commitment: "Agillos shares transferred to Group; stake 26.94% fully diluted", implied_date: "2026-10-05", ref: "Cons note 7(iii) L1180-1181", status_word: "completed"}
+  - {commitment: "IB MonotaRO stake reclassified to FVTPL at 586.33", implied_date: "2026-05-29", ref: "Cons note 7(iv) L1183-1184", status_word: "completed"}
+  - {commitment: "Busy AY2017-18 tax demand writ petition, Delhi High Court", implied_date: "undated (filed after Sep-2026 stay rejection)", ref: "Cons note 31 L2285-2288", status_word: "underway"}
+  - {commitment: "IIL GST TRAN-1 demand appeal before GSTAT", implied_date: "undated (after 2026-04-02 dismissal)", ref: "Cons note 31 L2290-2294", status_word: "underway"}
+  - {commitment: "Livekeeping 0.001% OCD tranche 1,172 x INR 51,167 = 59.97", implied_date: "Q1 FY27", ref: "SA note 7(i) L3267; RPT L4129", status_word: "completed"}
+  - {commitment: "Tradezeal 0.001% OCD 76,00,000 x INR 25 = 190.00", implied_date: "Q2 FY27", ref: "SA note 7(ii) L3268; RPT L4127", status_word: "completed"}
+  - {commitment: "Tradezeal OCCRPS 78,70,000 converted 1:1 to equity (128.06)", implied_date: "H1 FY27, date not stated", ref: "SA note 7(v) L3274-3275", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+loop_1_counts: {FINDING: 1, FORWARD-SIGNAL: 1, AMBIGUOUS: 4, NEUTRAL-FACT: 2, total: 8, questions: "MQ-12 to MQ-16"}
+analyst_note: "Three points change A4's read. (1) Treasury now carries equity beta. Equity factor index funds rose from 3,317 to 4,681 (15.6% of the 30,087 book) while arbitrage funds fell from 2,995 to 891. The Q2 treasury loss of 110.71 fits that [INFERENCE]. The note still puts realised, MTM and coupon in one line, so checklist #9 cannot separate them. (2) The 822 deployment is two Q2 payments: Fleetx 649.88 (stake 22.25% to 25.80%) and a 172.47 secondary purchase of Agillos shares, paid by a subsidiary. Simply Vyapar and Fleetx carry 69.5% of H1 associate losses, so the larger Fleetx stake adds drag. (3) MonotaRO was not sold. The stake was re-measured to 586.33 (49.7% of cost), and the 71.49/200 loss sits in Q1 other income. Level 3 investees (4,029) are not re-marked at interims, so negative marks can surface only at Q4. The full-statement report says all eight associates are unaudited (F14-03 resolved) but calls them not material at 16.9% of Q2 PAT. IndiaMart Finance holds 120.50 of equity, has a stated working-capital-finance purpose, and has no registration date. Incidental: a 242.99 Busy tax demand moved to recovery in September 2026."
+loop_1_note: "Loop 1 settles that the listed company did not pay Agillos: Agillos is not a standalone associate, and the standalone strategic book moves exactly by cash 1,020.35 + deemed 7.71 - MonotaRO 200.00. The paying subsidiary is unnamed (Tradezeal inferred). Livekeeping got 59.97 in Q1 at an unchanged price while carrying a 52.61 standalone impairment; goodwill 420.38 is unimpaired. Whether thesis-broken #11 has fired turns on its wording, which is absent from the A3 checklist input (L1-08). A full Livekeeping goodwill write-off cannot reach the #9 Rs 100 Cr line."

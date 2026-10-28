@@ -1,0 +1,24 @@
+# Run log, INDIAMART q2fy27 (orchestrator: qr-indiamart session, Opus 5.5)
+
+- 2026-10-28: sparse checkout `tools/sparse_session.sh runs/indiamart-q2fy27`. Batch instructions read (`runs/_batch-q2fy27-1028.md`).
+- Checkout guard: `git fetch origin main` succeeded; diff over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md empty. PASS.
+- Protocol files present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md.
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract at C:\Program Files\Tesseract-OCR\tesseract.exe.
+- Document class detection (from content):
+  - Indiamart_Q2FY27_Results.pdf: "Outcome of the Board Meeting", audited results, auditor reports -> results.
+  - Indiamart_Q2FY27_Investor_Presentation.pdf: Reg 30 cover letter, slide structure -> presentation.
+  - Indiamart_Q2FY27_Press_Release.pdf: Reg 30 press release, prose with KPI figures -> no press-release class in the orchestrator; classed presentation (management narrative document), file stem `pressrelease` to avoid a name clash.
+  - Indiamart_Q2FY27_Concall_Transcript_ASR.txt: timestamped speaker turns, "ladies and gentlemen" opening -> concall (ASR).
+  - Indiamart_Q2FY27_Results_Full_Statements.pdf: reference copy; the 18-page filing holds segment note (line ~434) and both cash-flow annexures, so no A1-A5 chain on it.
+- Per-page character test: text layer on every page of all three PDFs. No scan.
+- Company memory: companies/INDIAMART.md absent.
+- Notion: page 345bb2b9d3ab80fda1dbcd98e3968666 fetched live (read-only) 2026-10-28. Decision Status HELD; Position Small 2%; entry Rs 1,439; MoS Rs 1,151; Key Notes last entry 21-Oct-2026. Saved to work/notion_snapshot_2026-10-28.md; thesis sections cut to work/notion_thesis_context.md. Framing: THESIS CHECK (live thesis exists).
+- Prior quarter run folder (runs/indiamart-q1fy27) is not in the repo on this branch; prior-ledger and prior-extract inputs: not available.
+- Concurrency: at most two subagents at once (6 GB machine, three sibling sessions).
+- A1 concall first pass built the structured file from a hand-picked row list (agent's own caveat). Orchestrator sent it back under Gate A1 (nothing dropped rule). Resume added R265-R614 by mechanical regex sweep; exhaustive_sweep: true. Mechanical re-run, not a correction loop.
+- Full statements (62p): A3 results named five NOT IN FILING notes (other income split, investments/Ind AS 112, subsidiaries/related party, other non-current assets, full auditor reports). Per the session brief, targeted A1 on those notes only (fulltext 62/62; rows R001-R3165 on pages 2-5, 17-20, 24, 27, 29-31, 33-35, 46-49, 53, 56-60). No A2 on this supplementary file (brief: no full chain); A3 addendum answers the five items. Rows of this file are exempt from the orphan-ID gate; logged here.
+- A3 presentation notes that A2 deck ledger did not tag 8 zero-value rows A1 had tagged (R480-R481, R617-R622). Coverage unaffected (rows referenced); logged, no A2 re-run.
+- A5 loop 0: INCOMPLETE (FACTUAL 3, MISSING 3, CONTRADICTION 1, STYLE 8). Correction loop 1 starts: A2 deck ledger (zero rows), A3 fullstatements standalone note 7 addendum, then A4 re-merge, then A5 re-audit.
+- Loop 1: orchestrator's notion_monitoring_checklist.md first cut omitted thesis-broken #11 text (snapshot line 951). Added in loop 1. A4 had it via notion_thesis_context.md (snapshot 903-962).
+- Close-out: session-cost.md written; token ledger folded into it.
+- Close-out: A1 intermediates (page renders, scratch scripts, temp text) moved out of the repo to the session scratchpad (a1_intermediates); not committed.

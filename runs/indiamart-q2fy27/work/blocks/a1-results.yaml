@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 18
+formfeed_count: 18
+line_count: 995
+unit_convention: "Millions"
+conversion_factor_to_cr: "Millions -> x0.1 (divide by 10)"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["7, 8, 9, 11, 15, 16, 18 (110dpi) and 4 (70dpi): verification of row/column order only; pdftotext scrambles row alignment on statement pages; no OCR"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/indiamart-q2fy27/extracted/indiamart-results-q2fy27-fulltext.md"
+structured_path: "runs/indiamart-q2fy27/extracted/indiamart-results-q2fy27-structured.md"
+structured_counts:
+  number: 724
+  entity: 35
+  forward: 8
+  date: 32
+  qualifier: 50
+structured_id_range: "R001-R849"
+gate_a1: pass
+gap_note: ""

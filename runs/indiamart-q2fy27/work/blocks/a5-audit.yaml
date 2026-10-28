@@ -1,0 +1,33 @@
+stage: A5-adversary
+company: "INDIAMART"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S9 review L556, L963: Agillos is loss-making (H1 share of loss 20.12 mn, FS R304/R305); say price/PAT not meaningful, about -27x annualised loss, not 'earnings NOT FOUND' / 'not computable' (corrects A5 loop-0 wording)"
+    - "S10 review L11 vs L416: change log says all thesis-broken results unchanged; row #11 gained an AMBIGUOUS wording qualifier (headline NOT FIRED, scrutiny tier)"
+    - "Carried from loop 0, not applied: S2 (L962), S3 (L333, L519), S4 (L356), S6 (L493), S7 (L396); S1, S5, S8 not re-checked"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S9 Agillos loss basis label (review L556, L963)"
+  - "S10 change log understates #11 change (review L11, L416)"
+  - "Loop-0 S1-S8 carried, no re-run"
+analyst_note: "All seven loop-0 items are resolved, and each fix re-derives from A1 rows. The deck ledger now counts 8 ZERO_STANDING rows. The standalone outflow of 1,020 mn reconciles to Fleetx, Tradezeal, IndiaMart Finance and Livekeeping, with Livekeeping's 59.97 mn in Q1 (FS R2111/R2113). Busy +40% is CONFIRMED from DECK R058. The brief separates the Rs 15 Cr consolidated build from the Rs 5 Cr standalone build. The B3E tally matches the table. The ARPU survivorship reading and the Fleetx and Agillos purchase economics are grafted. The drift check is clean: verdict card, Step 1 tables, thesis-broken table and question table match loop 0 outside the patched points. The only gap is that change log L11 understates the row #11 qualifier. One correction to my own loop-0 audit: Agillos earnings are not absent. FS R304/R305 give an H1 share of loss of 20.12 mn, so Agillos loses about Rs 17 Cr a year at 100% [derived], and its Rs 466 Cr implied value is about -27x that loss. The review already cites 20.12 mn; only its labels are loose (S9). Remaining items are STYLE and do not loop."

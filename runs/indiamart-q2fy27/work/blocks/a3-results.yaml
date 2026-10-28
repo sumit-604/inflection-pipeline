@@ -1,0 +1,62 @@
+stage: A3-forensics
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/indiamart-q2fy27/work/forensics_results_indiamart_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: PASS
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "F1-01", check: "F1", line: "L953/L956/L574 (R625,R631,R632,R547)", classification: "FORWARD-SIGNAL", implication: "Investee write-down moved from SA impairment 160 (H1 FY26) to new FV loss 200 SA / 71 consol (H1 FY27); second H1 of negative marks"}
+  - {id: "F1-02", check: "F1", line: "L307/L953/L574 (R740,R625,R547)", classification: "AMBIGUOUS", implication: "MonotaRO exit has no disposal/LoSI line or cash inflow; 129 SA-vs-consol FV-loss gap is the candidate home [INFERENCE]"}
+  - {id: "F1-03", check: "F1", line: "L599/L600/L978/L611 (R585,R587,R665,R603)", classification: "NEUTRAL-FACT", implication: "ICD placements stopped; acquisition deferred consideration settled"}
+  - {id: "F1-04", check: "F1", line: "L471 (R249)", classification: "NEUTRAL-FACT", implication: "First quarterly inter-segment revenue (3); immaterial"}
+  - {id: "F2-01", check: "F2", line: "L354/L363/L797/L241 (R055,R085,R194,R698)", classification: "FORWARD-SIGNAL", implication: "S-vs-C PAT gap -14.6% (Q1 -2.2%, Q2FY26 -1.0%); 153 of 155 is associates; seven-associate loss +20% QoQ"}
+  - {id: "F2-02", check: "F2", line: "L787/L956 (R160,R632)", classification: "AMBIGUOUS", implication: "Q2 FY26 SA other expenses likely carry 160 impairment [INFERENCE]; SA margin YoY +3.8pp adjusted, not +8.3pp"}
+  - {id: "F2-03", check: "F2", line: "L342/L779/L572 (R007,R128,R545)", classification: "AMBIGUOUS", implication: "Other income 1,067 to (76) QoQ; checklist #9 drop wording met; rolling 4Q 2,006 in band; realised vs MTM not in filing"}
+  - {id: "F2-04", check: "F2", line: "L346/L783/L577 (R019,R140,R553)", classification: "AMBIGUOUS", implication: "Employee cost flat YoY on +9.6% revenue; SBP -32%; consol EBITDA margin 37.1% vs 33.2% is cost-led"}
+  - {id: "F3-01", check: "F3", line: "L226-233 (R691-R697)", classification: "AMBIGUOUS", implication: "Five other-auditor subs: 2,160.49 assets, 31.76 Q2 revenue, implied Q1 loss 64.75; near non-operating"}
+  - {id: "F3-02", check: "F3", line: "L402/L410/L604/L979 (R401,R411,R593,R667)", classification: "AMBIGUOUS", implication: "Subsidiary-level build: other NC assets +138, deposits +106, about 198 net SA investment into subs [INFERENCE]; IndiaMart Finance capitalisation undisclosed"}
+  - {id: "F3-03", check: "F3", line: "L394/L349/L786 (R387,R031,R152)", classification: "FORWARD-SIGNAL", implication: "Acquired intangibles 115 left at about 34/qtr; consol D&A step-down in about 3-4 quarters; mechanical, not operating"}
+  - {id: "F4-01", check: "F4", line: "L229/L241-242/L363 (R694,R698,R085)", classification: "AMBIGUOUS", implication: "166.56 = 18.3% of Q2 consol PAT not audited by B S R (H1 14.3%); above 10%"}
+  - {id: "F4-02", check: "F4", line: "L242/L245 (R699,R700)", classification: "AMBIGUOUS", implication: "Unaudited share jumped 12.2% (Q1) to 18.3% (Q2); about two-thirds denominator effect; YoY not computable"}
+  - {id: "F6-01", check: "F6", line: "L299-301 (R737,R778)", classification: "FORWARD-SIGNAL", implication: "IndiaMart Finance Ltd approved (Q1) to incorporated 04-Aug-2026; capitalisation and regulatory path undated"}
+  - {id: "F6-02", check: "F6", line: "L538/L909 (R760-R763)", classification: "FORWARD-SIGNAL", implication: "Undated, unquantified Labour Code employee-cost charge on remaining-state notification"}
+  - {id: "F7-01", check: "F7", line: "L538/L909/L260 (R761,R763,R839)", classification: "AMBIGUOUS", implication: "Carried 'if any' hedge, second quarter; auditor 'not material' covers only the 17.69 stub"}
+  - {id: "F12-01", check: "F12", line: "L497/L606 (R351,R597)", classification: "FORWARD-SIGNAL", implication: "Unallocable = strategic book; 7,629+822-299-71=8,081; deployment 822 vs 471 (+75%) into loss-making cohort"}
+  - {id: "F12-02", check: "F12", line: "L502/L613 (R363,R605)", classification: "AMBIGUOUS", implication: "Web liabilities -14.5% QoQ; lean read dividend settlement 3,607, not WC unwind"}
+  - {id: "F12-03", check: "F12", line: "L467/L483/L503 (R237,R291,R369)", classification: "FORWARD-SIGNAL", implication: "Busy line revenue growth +49% to +30% YoY; result positive 32 (8.0%); liabilities +37.8% YoY"}
+  - {id: "F12-04", check: "F12", line: "L588/L968 (R569,R570,R649,R650)", classification: "FORWARD-SIGNAL", implication: "Deferred revenue build H1 637 vs 728; collections proxy consol +8.5% vs revenue +10.5%, SA +7.7% vs +8.3%; Web growth drifting to high single digits"}
+  - {id: "F14-01", check: "F14", line: "L549/L918/L39 (R723,R724,R706)", classification: "AMBIGUOUS", implication: "MD signed results about 2h25m before meeting close; second consecutive quarter"}
+  - {id: "F14-02", check: "F14", line: "L326/L380 (R712,R713,R847)", classification: "NEUTRAL-FACT", implication: "CIN prefix L vs U across pages; template error"}
+  - {id: "F14-03", check: "F14", line: "L241-246/L257-258 (R698-R702,R838)", classification: "AMBIGUOUS", implication: "Audit status of seven associates not stated; conservative read: all associate info unaudited"}
+  - {id: "F14-04", check: "F14", line: "L489/L353/L507 (R812,R805,R809)", classification: "NEUTRAL-FACT", implication: "Segment label anticipates exceptional items absent from P&L; typos and label mismatches"}
+  - {id: "F15-01", check: "F15", line: "L299 (R737)", classification: "FORWARD-SIGNAL", implication: "Entity list 13 to 14: IndiaMart Finance Ltd adds a regulated lending perimeter"}
+  - {id: "F15-02", check: "F15", line: "L307 (R740)", classification: "AMBIGUOUS", implication: "MonotaRO relationship change carried a second quarter with no disclosed outcome"}
+forward_signals: ["F1-01", "F2-01", "F3-03", "F6-01", "F6-02", "F12-01", "F12-03", "F12-04", "F15-01"]
+ambiguous: ["F1-02", "F2-02", "F2-03", "F2-04", "F3-01", "F3-02", "F4-01", "F4-02", "F7-01", "F12-02", "F14-01", "F14-03", "F15-02"]
+commitments:
+  - {commitment: "Recognise remaining-state Labour Code effect when rules notified", implied_date: "undated (on notification; 4 States notified)", ref: "Consol N5 L538 / SA N6 L909", status_word: "initiated"}
+  - {commitment: "IndiaMart Finance Limited subsidiary set up (Q1 approval)", implied_date: "incorporated 2026-08-04; capitalisation undated", ref: "Annexure I L299-301", status_word: "completed"}
+  - {commitment: "IB MonotaRO ceases as associate", implied_date: "2026-05-29", ref: "Annexure I L307; auditor para b L244-246", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Q2 PAT (908, -47% QoQ) is a treasury event: consol other income swung 1,067 to (76) while consol EBITDA rose 22.7% YoY to 1,592 (37.1%), and the expansion is cost-led (flat employee cost). Three points A4 must not lose. (1) The S-vs-C gap widening to -14.6% is associate drag (153 of 155). The Q2 FY26 base was flattered by a standalone-only ~160 impairment [INFERENCE], which also inflates the reported standalone YoY margin jump (+8.3pp reported, about +3.8pp adjusted). (2) Capital keeps flowing to loss-making investees: 822 in H1 vs 471, and the unallocable segment ties to the rupee (7,629+822-299-71=8,081). Seven-associate losses rose 20% QoQ, and marks are negative for a second H1. (3) Deferred-revenue build slowed (637 vs 728). The collections proxy grows below revenue (consol +8.5% vs +10.5%, SA +7.7% vs +8.3%), so Web growth is drifting to high single digits. MonotaRO's exit still has no disclosed outcome; the 200 vs 71 FV-loss gap is the candidate home. The unaudited share of 18.3% of PAT is mostly a denominator effect, but paragraph (b) drafting may put all associate info outside audit."

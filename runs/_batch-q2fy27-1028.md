@@ -45,10 +45,17 @@ Batches: 1 = NETWEB, AEQUS, PARACABLES, SONACOMS. 2 = WEWORK, INDIAMART, SYNGENE
 
 | Name | Run folder | total_run_tok | Loops | A5 verdict | Commit |
 |---|---|---|---|---|---|
-| (pending) | | | | | |
+| NETWEB | runs/netweb-q2fy27 | 2,394,858 | 1 | COMPLETE; PROCEED WITH FLAGS; cash conversion INDETERMINATE (adverse) | 86dec775 |
+| AEQUS | runs/aequs-q2fy27 | 2,050,757 | 1 | COMPLETE; PROCEED WITH FLAGS; falsification line fired, operator to rule | 28fb68fe |
+| PARACABLES | runs/paracables-q2fy27 | 2,361,285 | 1 | INCOMPLETE on one ledger-index item (C1, no number moved); PROCEED WITH FLAGS | 210c281e |
+| SONACOMS | runs/sonacoms-q2fy27 | 3,550,129 | 1 | COMPLETE; PROCEED WITH FLAGS | c0295da5 |
+| (batch 2 pending) | | | | | |
 
 ## Problems log (coordinator)
 
 - 08:44-08:58: faster-whisper medium.en could not finish a 10-minute chunk in 20 minutes on 756 MB free RAM (same as the 19-Oct lesson). Two stale runner shells kept re-spawning jobs after their python child was killed; killed by process tree. Now one small.en runner, beam 2, 8 threads: about 9-10 minutes per 10-minute chunk, so about one hour per call.
 - NSE archive refused the Neochem results PDF (bot check); the filing text was read through the Bull AI connector and rebuilt into a text-layer PDF, labelled as such.
 - Paramount's recording link in the filing text had a hyphen dropped by text extraction; the PDF link annotation gave the correct URL. Sona's audio link likewise.
+- 11:53: transcription queue empty. ASR transcripts held for Netweb, Aequs, Paramount, Sona, WeWork, Indiamart, Raymond, Knack, Dynamic Cables, LT, Unimech (11 names). Syngene and Route recordings not posted; Sky Gold and Neochem calls are in the future; Puretrop has no call.
+- 11:24-11:30: batch 1 sessions committed. Their completion notes reached the coordinator at 13:43, two hours later; batch 2 started at 13:50. The gap is coordinator wake latency, not review time (each review ran about 1 h 45 min).
+- 13:55: Syngene investor page lists no Q2 FY27 recording yet (latest is January 2026). The Syngene session runs on filed documents and checks once before A4.

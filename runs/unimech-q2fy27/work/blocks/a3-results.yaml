@@ -1,0 +1,64 @@
+stage: A3-forensics
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-unimech-q2fy27-1b1895/runs/unimech-q2fy27/work/forensics_results_unimech_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "R-A3-01", check: "F1", line: "l.515, l.660, l.294, l.516, l.556, l.531", classification: "AMBIGUOUS", implication: "Goodwill 32,199.15 = 40.3% of CO equity; PPA status unstated; parent CCD 14,800 = Rs 148 Cr = CARE figure (inference); possible holdback pair in other financial assets/liabilities"}
+  - {id: "R-A3-02", check: "F1", line: "l.193, l.199, l.314, l.679, l.545, l.551", classification: "FORWARD-SIGNAL", implication: "First parent debt 1,202.03; new subsidiary WC debt 3,885.26; group debt +43.6%; 529.61 CF-vs-BS gap unexplained"}
+  - {id: "R-A3-03", check: "F1", line: "l.630", classification: "NEUTRAL-FACT", implication: "New rework/warranty provision line (1.42) with acquired business"}
+  - {id: "R-A3-04", check: "F2", line: "l.240, l.594, l.592, l.593", classification: "NEUTRAL-FACT", implication: "S-vs-C PAT gap 163.9% to 272.7% of SA PAT YoY (Q2); H1 135.1% to 456.0%; driven by Hobel consolidation"}
+  - {id: "R-A3-05", check: "F2", line: "l.221, l.573", classification: "AMBIGUOUS", implication: "Non-parent revenue +2.9% QoQ despite an extra Hobel month; ex-Hobel subsidiary revenue likely fell or moved to parent (SA 3.7x QoQ)"}
+  - {id: "R-A3-06", check: "F2", line: "l.222, l.574, l.268, l.632, l.233", classification: "AMBIGUOUS", implication: "Intra-group interest at least 878.76 = 65% of SA H1 PBT; SA ex-OI PBT Q2 +335.53 but H1 (342.76)"}
+  - {id: "R-A3-07", check: "F3", line: "l.469-473", classification: "NEUTRAL-FACT", implication: "One unnamed Nil-everything subsidiary, likely dormant US entity (inference); no going concern"}
+  - {id: "R-A3-08", check: "F4", line: "l.444-451, l.593", classification: "FORWARD-SIGNAL", implication: "Associate loss Q2 75.35 = 7.1x YoY; H1 89.15 = 2.2x full FY26; other-auditor share 2.37% of PAT"}
+  - {id: "R-A3-09", check: "F6", line: "l.47-50, l.53-55, l.342, l.718", classification: "FORWARD-SIGNAL", implication: "Hobel moves from Innomech (debt, US exposure) to parent; price, settlement and date undisclosed; Reg 30 detail deferred"}
+  - {id: "R-A3-10", check: "F6", line: "l.341, l.717, l.327", classification: "AMBIGUOUS", implication: "Saudi ODI 3,935.72 completed 1-Oct, late vs Aug promise; funding source unnamed; parent current-account cash 3,903.80 staged at 30-Sep"}
+  - {id: "R-A3-11", check: "F8", line: "l.237, l.589", classification: "AMBIGUOUS", implication: "Prior-period tax credit 121.70 lifts Q2 CO PAT 3.8%; nature unstated"}
+  - {id: "R-A3-12", check: "F8", line: "l.588-591, l.169, l.660", classification: "FORWARD-SIGNAL", implication: "Current-tax ETR 29.9% H1 vs 25.8% reported (409 bps shields); Hobel firm likely taxed near 34.94% (inference); ETR step-up risk"}
+  - {id: "R-A3-13", check: "F9", line: "l.243-244, l.597-598", classification: "NEUTRAL-FACT", implication: "SA Q2 actuarial loss exceeds full FY26 OCI; OCI tax line identical SA/CO; verify assumptions at FY27 AR"}
+  - {id: "R-A3-14", check: "F12", line: "l.336, l.712", classification: "AMBIGUOUS", implication: "Single segment despite bellows and new end-markets; keeps Hobel EBITDA trigger (c) untestable a third quarter"}
+  - {id: "R-A3-15", check: "F12", line: "l.656, l.513, l.522, l.170", classification: "FORWARD-SIGNAL", implication: "H1 capex 3,630.10 about equals all FY26 capex; CWIP and advances up (parent advances +1,733.27); capacity build under way"}
+  - {id: "R-A3-16", check: "F13", line: "l.61-65, l.736-737, l.748-757", classification: "FORWARD-SIGNAL", implication: "Toolings head moved into Innomech the same day Hobel moves out; possible business transfer between entities (inference)"}
+  - {id: "R-A3-17", check: "F13", line: "l.71", classification: "NEUTRAL-FACT", implication: "7-hour meeting; no AR/AGM/dividend/QIP item; QIP not launched as of 27-Oct"}
+  - {id: "R-A3-18", check: "F14", line: "l.688, l.529", classification: "AMBIGUOUS", implication: "Opening-cash gap 1,074.82 unexplained; likely acquired cash outside investing; net Hobel cash paid may be about 41,404.78"}
+  - {id: "R-A3-19", check: "F14", line: "l.164, l.339-340, l.187, l.716", classification: "NEUTRAL-FACT", implication: "Equity-method label on a cost figure; duplicate SA note; no SA ESOP note; close-quality data point"}
+  - {id: "R-A3-20", check: "F14", line: "l.299-300", classification: "NEUTRAL-FACT", implication: "SA CF comparative signs inverted on bond/MF lines; render-transcribed page, confirm at source"}
+  - {id: "R-A3-21", check: "F14", line: "l.540, l.604, l.539, l.605-607", classification: "NEUTRAL-FACT", implication: "NCI 0.31 loss appears not carried to NCI line (inference, immaterial); numbering and label typos"}
+  - {id: "R-A3-22", check: "F15", line: "l.420, l.707, l.540, l.678, l.659", classification: "AMBIGUOUS", implication: "Uniflux labelled Subsidiary not WOS; NCI and outside share issue appear; 'erstwhile shareholders' purchase unexplained"}
+  - {id: "R-A3-23", check: "F15", line: "l.339, l.715, l.298", classification: "AMBIGUOUS", implication: "Dheya 29.99% to 27.24%; parent secondary only, no primary; related-party seller unknown"}
+  - {id: "R-A3-24", check: "F15", line: "l.341, l.717", classification: "FORWARD-SIGNAL", implication: "Kanoo Saudi enters Q3 list at 51% with 49% NCI; pre-revenue until about Apr-2027"}
+  - {id: "R-A3-25", check: "F15", line: "l.434, l.711", classification: "AMBIGUOUS", implication: "Consolidation from 27-Apr-2026 vs deck 01-May-2026 (memo); affects Q1 Hobel base"}
+forward_signals: ["R-A3-02", "R-A3-08", "R-A3-09", "R-A3-12", "R-A3-15", "R-A3-16", "R-A3-24"]
+ambiguous: ["R-A3-01", "R-A3-05", "R-A3-06", "R-A3-10", "R-A3-11", "R-A3-14", "R-A3-18", "R-A3-22", "R-A3-23", "R-A3-25"]
+commitments:
+  - {commitment: "Parent buys 60,80,000 Hobel Bellows Pvt shares from Innomech; Hobel becomes direct WOS", implied_date: "on completion (not stated)", ref: "l.47-50; SA note 8 l.342; CO note 9 l.718", status_word: "initiated"}
+  - {commitment: "Reg 30 additional information on Hobel transfer", implied_date: "post completion", ref: "l.53-55", status_word: "initiated"}
+  - {commitment: "ODI INR 3,935.72 lakhs for 51% of Kanoo Unimech Saudi", implied_date: "2026-10-01", ref: "SA note 7 l.341; CO note 8 l.717", status_word: "completed"}
+  - {commitment: "Naidu promoted to GM and transferred to Innomech", implied_date: "2026-11-01", ref: "l.61-65; l.736-759", status_word: "initiated"}
+  - {commitment: "Dheya 850-share secondary buy; stake 27.24% after outside raise", implied_date: "Q2 FY27", ref: "SA notes 5-6 l.339-340; CO note 6 l.715", status_word: "completed"}
+  - {commitment: "ESOP allotment 45,114 shares", implied_date: "Q2 FY27", ref: "CO note 7 l.716", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three things matter for A4. First, H1 CFO/PAT is 0.896x (l.654/l.594), a hair under the 0.90x Pillar 2 upgrade bar on file; the 1,074.82 opening-cash gap does not touch CFO. Second, the 27-Oct board re-plumbs the group: Hobel moves up out of Innomech while the parent's toolings head moves down into it, and non-parent revenue rose only 2.9% QoQ despite an extra Hobel month while parent revenue rose 3.7x. Read together, revenue may be moving between entities; the organic ex-Hobel test needs an entity split, not the consolidated line. Third, tax: the current-tax ETR is about 30% and Hobel sits in a partnership firm, so the 25.8% H1 reported rate looks shielded; model a step-up. The parent CCD of Rs 148 Cr likely explains the CARE figure from Q1. Prior-quarter diffs rest on the Notion memo, not a verbatim extract."

@@ -1,0 +1,21 @@
+# run log — UNIMECH Q2 FY27 (/run-quarterly, session qr-unimech, Opus 5.5 orchestrator)
+
+- Checkout guard: git fetch origin main OK; diff over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md empty. PASS.
+- Protocols present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md, Document_Review_Protocol_v1_1.md, Master_Project_Prompt_v3_6.md.
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract at C:\Program Files\Tesseract-OCR\tesseract.exe (full path).
+- Document class (from page-1 content):
+  - Unimech_Q2FY27_Results.pdf -> results (Reg 30 outcome of board meeting + Reg 33 results)
+  - Unimech_Q2FY27_Investor_Presentation.pdf -> presentation (slide structure after cover letter)
+  - Unimech_Q2FY27_Press_Release.pdf -> pressrelease (press release on results; full A1-A3 chain per coordinator)
+  - Unimech_Q2FY27_Monitoring_Agency_Report.pdf -> monitoring (supporting; A1 only)
+  - Unimech_Q2FY27_IPO_Deviation_Statement.pdf -> deviation (supporting; A1 only)
+  - Unimech_Honeywell_LTA_Intimation.pdf -> lta (supporting; A1 only)
+  - Unimech_Q2FY27_Concall_Transcript_ASR.txt -> concall (speaker-turn structure, "Ladies and gentlemen"; ASR, management tier, unverified)
+- Company memory: companies/UNIMECH.md absent. No Spear line on file.
+- Notion: live page exists (Decision Status WATCHLIST / BUY ON DIPS; Entry Price Max 213; last Key Notes 26-Oct-2026). Thesis check, not a pre-thesis read. Snapshot saved; monitoring checklist extract at work/monitoring_checklist_unimech.md.
+- Prior-quarter run folder: none in this checkout (no runs/unimech-* folder on the run branch).
+- Concurrency: max two subagents at once (6 GB machine, three sibling sessions).
+- 2026-10-29 03:02 PAUSE from coordinator received during A5. A5 returned INCOMPLETE. work/PAUSED.md written. No further agent started. Waiting for RESUME.
+- 2026-10-29 03:56 RESUME from coordinator. One subagent at a time from here.
+- 2026-10-29 04:13 Loop 1: A2 fix, A3 addendum, A4 patch (34 ops) applied mechanically by scratchpad apply_patch.py; diff at work/review_loop1_diff.txt.
+- 2026-10-29 04:25 Close-out: session-cost.md, operator-brief.md, notion-payload.md written; tmp_* folders moved out of the run folder before commit; work/review_loop1_diff.txt force-added (gitignore *.txt).

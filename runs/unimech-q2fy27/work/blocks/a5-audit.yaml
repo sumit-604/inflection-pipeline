@@ -1,0 +1,57 @@
+stage: A5-adversary
+company: "UNIMECH"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows:
+    - "presentation R222 (deck l.369, 'Joint Investment in JV: ~USD 30 Mn'): uncited; contradicts A4 flag 14 / QB20 / 6D 5b"
+    - "concall R244 + R065 (call l.352-356): 65% utilisation includes NPI/proto/qualification capacity; qualifier absent from A4 6B item 4"
+  missing_from_ledger:
+    - "concall question at T57 (Gaurav, firm unidentified, call l.792-794): serial-production count and run-rate of the 250 qualified parts; ledger 24 vs fresh 25"
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Earnings quality better: OI share of PBT 47.7% to 15.5%, treasury now small (review l.195, l.938)", counter: "H1 interest income only Rs 3.69 Cr (Rs 15.64 Cr H1 FY26); OI now rests on MTM Rs 1.96 Cr, investment-sale gains Rs 2.47 Cr, lease-modification gain Rs 0.94 Cr, unrealised FX Rs 1.41 Cr; composition is filed, not ND", source_line: "res l.628, l.632, l.634, l.635, l.638; call l.319-321", type: MISSING}
+  - {claim: "Operating promises delivered; Honeywell engine LTA DELIVERED 1.0 (review l.621, l.644)", counter: "Filed LTA is a no-minimum framework effective 1-Apr-2026 to 1-Nov-2036, intimated 26-Oct-2026 (208 days later) and called 'advanced stage' on 04-Aug; execution date undisclosed", source_line: "lta l.18, l.44-46", type: MISSING}
+  - {claim: "Hobel consolidation trigger ON TRACK; Rs 450 Cr capability-led all-cash acquisition (review l.364; deck l.309)", counter: "Price/PAT NOT FOUND; EV/EBITDA about 5.6-7.0x on MGMT/prior inputs for a >50% margin, ~90% export asset; cheapness consistent with ~93% two-group concentration and a data-centre genset demand peak; goodwill+intangibles Rs 369.34 Cr = 82% of price; Rs 25.00 Cr of headline not in H1 cash", source_line: "deck l.309, l.335-346, l.195; res l.515-516, l.556, l.650, l.659-660; call l.211-214, l.315, l.527-529", type: MISSING}
+  - {claim: "Saudi JV funding gap Rs 46-96 Cr vs SAR 60M planned equity (review l.989)", counter: "Filed deck states ~USD 30 Mn joint investment = Rs 289.4 Cr at Rs 96.46/USD, above Rs 200-250 Cr capex; the bear is Unimech's remaining 51% commitment of Rs 39.4-108.2 Cr against Sep-26 net cash Rs 65.45 Cr (about Rs 26.1 Cr post-ODI)", source_line: "deck l.369, l.373, l.396; call l.574-575; res l.341", type: CONTRADICTION}
+findings_by_type:
+  factual: []
+  missing:
+    - "M1 [A2]: concall question ledger lacks T57 Gaurav question (call l.792-794); 24 vs 25; A4 0C (review l.523) must then read 25"
+    - "M2 [A3 R244/R065 -> A4]: utilisation qualifier dropped (call l.351-356); watchlist 4 AMBER untested on serial-production basis (~45-50% if 15-20% is qualification capacity, INFERENCE)"
+    - "M3 [A4]: OI composition called ND (review l.80, l.195, l.384, l.462) though H1 CF gives it (res l.628-638); lease-modification and FX gains are one-offs"
+    - "M4 [A4]: acquisition-economics probe absent for Hobel; state price/PAT NOT FOUND, EV/EBITDA ~5.6-7.0x, peak-year and concentration reading, Rs 450 Cr vs Rs 425.00 Cr cash; graft into 6D trigger 1 and flag 4"
+    - "M5 [A4]: Honeywell LTA effective 1-Apr-2026 to 1-Nov-2036 (lta l.44) not stated; add to 3A DELIVERED row and 6C(d) candidate leg"
+  contradiction:
+    - "C1 [A3 R222 -> A4]: flag 14 / QB20 / 6D 5b Saudi funding gap on unanchored SAR 60M vs filed deck l.369 ~USD 30 Mn joint investment (Rs 289.4 Cr); restate as remaining Unimech commitment Rs 39.4-108.2 Cr vs net cash Rs 65.45 Cr"
+  style:
+    - "S1 ETR Q2 27.57% vs 27.56% on lakh precision (rounding)"
+    - "S2 SC-gap H1 FY27 uses owners' PAT (456.0%) vs PAT l.594 (455.9%)"
+    - "S3 brief provenance: inferences labelled FILED (review l.1005, l.1049, l.1056)"
+    - "S4 brief drops equity-raise hedge 'expect to consider ... subject to market conditions' (call l.366-369)"
+    - "S5 preamble omits press-release M01-M05"
+    - "S6 call start 11:00 IST vs ASR produced 11:55 IST for a 58:37 recording"
+    - "S7 CCC basis may differ from management WC-days basis; label watchlist 5"
+    - "S8 Dheya CDR 'December 26th' may mean Dec-2026"
+    - "S9 quantify CFO caution: Rs 8.93 Cr inventory release (res l.641), Rs 6.78 Cr provisions build (res l.649)"
+loop_back_to: "A2"
+gap: "A2: add T57 Gaurav question (call l.792-794) to concall question ledger, count 24 -> 25. A3: review presentation R222 (deck l.369) and concall R244/R065 (call l.352-356). A4: C1 reconcile Saudi funding-gap flag 14 / QB20 / 6D 5b with deck l.369 ~USD 30 Mn and state Unimech's remaining 51% commitment Rs 39.4-108.2 Cr vs net cash Rs 65.45 Cr; M2 carry utilisation qualifier into 6B item 4 and concall watchlist; M3 replace OI 'composition ND' with H1 CF items (res l.628-638) and list lease-modification and FX gains as one-offs; M4 state Hobel price/PAT NOT FOUND and EV/EBITDA ~5.6-7.0x, graft peak-year/concentration bear reading, order cover and Rs 450 vs Rs 425.00 Cr reconciliation into 6D trigger 1 and flag 4; M5 state Honeywell LTA effective 1-Apr-2026 (lta l.44) in 3A and 6C(d); correct 0C '24 question turns' to 25."
+style_notes:
+  - "S1 ETR rounding 27.57 vs 27.56"
+  - "S2 SC-gap PAT basis mixed in H1 FY27"
+  - "S3 relabel three brief inferences from FILED to INFERENCE"
+  - "S4 keep equity-raise hedge in brief"
+  - "S5 acknowledge press-release M01-M05"
+  - "S6 call start-time inconsistency (~4 min)"
+  - "S7 label CCC vs management WC-days basis"
+  - "S8 Dheya CDR date reading ambiguous"
+  - "S9 quantify CFO inventory release and provisions build"
+analyst_note: "Arithmetic is clean. I recomputed every derived-metric group from lakh lines and found no mismatch beyond rounding. The brief gate passes. The failures are coverage and adversarial. A2 missed one analyst question inside T57. A4 already reviews it as Q22a, so A2's fix is one row and A4's 0C count goes from 24 to 25. A4's Saudi funding-gap flag uses an unanchored SAR 60M equity figure. It never cites the filed deck's ~USD 30 Mn joint investment, which is Rs 289 Cr at A4's own filed FX, above the capex. The real bear runs the other way: Unimech's remaining 51% commitment is Rs 39-108 Cr against Rs 65 Cr net cash. The 65% utilisation includes qualification capacity. Other income now rests on market gains and one-offs, because H1 interest fell to Rs 3.69 Cr. Hobel price/PAT is NOT FOUND, and EV/EBITDA of about 5.6-7.0x for a >50% margin asset raises the peak-year question that A4 never asks. The Honeywell LTA runs from 1-Apr-2026, 208 days before the intimation. All of it fits one remediation cycle."

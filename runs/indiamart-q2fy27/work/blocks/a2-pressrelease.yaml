@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/indiamart-q2fy27/work/ledger_pressrelease_indiamart_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 11
+  zero_standing: 3
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 14
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 5
+  slide_numbers: 97
+flags_raised: [ZERO_STANDING, RESTATED, FOOTNOTE_UNRESOLVED, RENDER_VERIFIED]
+ids_in_structured: 140
+ids_referenced: 140
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Press release routed as presentation; 1 page = 1 slide. Table cells on p4 (58) were reconciled to a per-page fulltext numeric sweep. Consolidated Paying Suppliers is dash in all three columns (R127-R129), kept as ZERO_STANDING. Composition sentences (R034, R039) use 'primarily' and their parts sum below the stated totals (440 vs 443 collections; 2,018 vs 2,029 deferred; 426 vs 429 revenue): arithmetic gaps only, no interpretation. R018 is a stray graphic numeral. Standalone paying suppliers fell 2% YoY (R125) while R050 credits realization for growth."

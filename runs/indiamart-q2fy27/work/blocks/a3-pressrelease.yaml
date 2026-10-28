@@ -1,0 +1,54 @@
+stage: A3-forensics
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/indiamart-q2fy27/work/forensics_pressrelease_indiamart_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: PASS
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "F1-01", check: "F1", line: "L151-L153, render L16 (R127-R129)", classification: "NEUTRAL-FACT", implication: "Consolidated paying-supplier cell is a dash; no group customer count; Busy licence volume absent from release"}
+  - {id: "F2-01", check: "F2", line: "L141/L90/L106-107 (R092-R097,R041,R058)", classification: "FORWARD-SIGNAL", implication: "Consol-SA PAT gap -15 (-14.2%) vs ~-2.6% QoQ and ~-1% YoY; sits below EBITDA (associates 15.3 Cr); release splits revenue/collections/deferred into SA+Busy but not PAT"}
+  - {id: "F6-01", check: "F6", line: "L117-118 (R065)", classification: "AMBIGUOUS", implication: "CEO claims deeper engagement while active buyers -7%, enquiries -14%, enquiries delivered -12% YoY; trust-filter vs demand-loss readings"}
+  - {id: "F7-01", check: "F7", line: "L119-120 (R067)", classification: "AMBIGUOUS", implication: "'explore new monetisation avenues' is the only text near IndiaMart Finance Ltd (incorporated 04-Aug-2026), which the release never names"}
+  - {id: "F12-01", check: "F12", line: "L80/L83-84/L88 (R028,R033,R038)", classification: "FORWARD-SIGNAL", implication: "Busy collections 46 vs 59 in Q1 (-22% QoQ), ~13 of the 20 Cr consol QoQ collections fall; no YoY or margin; filed billing +20% at checklist #7 red line, margin 12% vs ~18%"}
+  - {id: "F14-01", check: "F14", line: "L137-L143 (R090,R091,R098,R099)", classification: "AMBIGUOUS", implication: "EBITDA margin on revenue, NP margin on total income; negative OI lifts printed NP margin ~0.5-0.7pp (28%/22% vs 27%/21%); ask Q1 basis"}
+  - {id: "F14-02", check: "F14", line: "L74 vs L90/L147 (R023,R042,R109)", classification: "NEUTRAL-FACT", implication: "Headline labels 135 'Cash generated from Operations' (Ind AS pre-tax subtotal); figure ties to net CFO"}
+  - {id: "F14-03", check: "F14", line: "L83/L87 (R034,R039)", classification: "NEUTRAL-FACT", implication: "'primarily' residuals resolved: revenue 3 = deck Others; deferred 11 = subsidiary deferred 166 less Busy 155; collections 3 same perimeter [INFERENCE]"}
+  - {id: "F16-01", check: "F16", line: "L111-112 (R059-R062,R125)", classification: "FORWARD-SIGNAL", implication: "YoY printed only for storefronts (+4%); enquiries (-14%) level only; suppliers -2% table only; active buyers omitted; thesis-broken #6 values both quarters above 5%"}
+  - {id: "F16-02", check: "F16", line: "L73/L137/L141 (R021,R022,R085,R093)", classification: "AMBIGUOUS", implication: "Headline picks SA EBITDA (40% vs consol 37%), second release running; SA EBITDA +36% and PAT +27% on base with likely 16 Cr impairment; like-for-like ~19% and ~6.5% [INFERENCE]"}
+  - {id: "F16-03", check: "F16", line: "L90/L106-107/L133/L141 (R041,R058,R072-R077,R092-R097)", classification: "FORWARD-SIGNAL", implication: "PAT level-only, -47%/-40% QoQ in table only; OI derived (8)/(9) vs 107/88 in Q1, never named; checklist #9 drop wording met; second release running"}
+  - {id: "F16-04", check: "F16", line: "L112/L151-L153 (R062,R124-R126)", classification: "FORWARD-SIGNAL", implication: "Paying suppliers (0%) QoQ rounds away deck net -615 (fourth sequential fall); YoY worsened flat to (2%); checklist #1 red met; 8B supplier leg met"}
+  - {id: "F16-05", check: "F16", line: "L86-87/L103-104/L149 (R035-R036,R053-R054,R114,R117)", classification: "FORWARD-SIGNAL", implication: "Deferred revenue framed on YoY 16%/14% while QoQ 1%/0% (SA +5 Cr, smallest build); forward revenue growth drifting to high single digits"}
+  - {id: "F17-01", check: "F17", line: "L99-100 (R050)", classification: "AMBIGUOUS", implication: "Realization named as driver; no ARPU printed for second release; filed ARPU +10%, top 10% +12%, suppliers -2%; growth is all price/mix"}
+  - {id: "F17-02", check: "F17", line: "L80/L90 (R029,R041,R095)", classification: "AMBIGUOUS", implication: "Silent on associate losses (#11), Fleetx (#12), IndiaMart Finance capitalisation and MonotaRO exit; consol framed as SA+Busy only"}
+forward_signals: ["F2-01", "F12-01", "F16-01", "F16-03", "F16-04", "F16-05"]
+ambiguous: ["F6-01", "F7-01", "F14-01", "F16-02", "F17-01", "F17-02"]
+commitments:
+  - {commitment: "Earnings webinar for investors and analysts", implied_date: "2026-10-27 17:00 IST", ref: "p5 L160 (R131,R132)", status_word: "scheduled"}
+  - {commitment: "Call recording on IR website", implied_date: "undated, after call", ref: "p5 L168-170 (R135)", status_word: "pending"}
+  - {commitment: "Strengthen platform trustworthiness", implied_date: "undated", ref: "p3 L116-118 (R064,R065)", status_word: "underway"}
+  - {commitment: "AI central to user experience", implied_date: "undated", ref: "p3 L118-119 (R066)", status_word: "underway"}
+  - {commitment: "Explore new monetisation avenues", implied_date: "undated", ref: "p3 L119-120 (R067)", status_word: "initiated"}
+  - {commitment: "Create long-term value for stakeholders", implied_date: "undated", ref: "p3 L120-121 (R068)", status_word: "none"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Every release number ties to the filed results and deck within rounding; zero numeric mismatches. The release misleads by selection, not by error. It prints YoY where the number grew (storefronts +4%, deferred revenue +16%, SA EBITDA +36%) and levels where it fell (enquiries 27M, -14% filed; PAT 91, -47% QoQ; paying suppliers 217K, -615 net rounded to (0%)). Active buyers and ARPU are absent. The headline uses standalone EBITDA, the higher-margin basis, for a second release running, and its +36% YoY likely rides a 16 Cr impairment in the base (inference). Consolidated PAT is the only line not split into Standalone + Busy, and it is the line where associate losses (15 Cr) bite. Other income turned negative ((8) derived) and is never named. A4 should note the thesis-broken #6 values: enquiries fell more than 5% YoY in both Q1 and Q2 on either Q1 base. The CEO's 'deeper engagement' claim needs its separating test: enquiries per buyer and the bank-verification %."

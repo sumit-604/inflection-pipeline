@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/indiamart-q2fy27/work/ledger_results_indiamart_q2fy27.md"
+counts:
+  notes: 16
+  line_items: 220
+  zero_standing: 26
+  agenda_items: 1
+  auditor_paras: 10
+  entities: 14
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, SIGNATURE_BEFORE_MEETING_END, CIN_PREFIX_MISMATCH, UNAUDITED_ASSOCIATE_INFO, NEGATIVE_OTHER_INCOME_Q2, RESTATED, FOOTNOTE]
+ids_in_structured: 849
+ids_referenced: 849
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "26 ZERO_STANDING values (A1 header text implies 27 only because the header line names the flag). MD digital signatures (12:35, 12:34) precede the stated 15:00 meeting close; CS signed 15:06. IndiaMart Finance is a new subsidiary (inc. 04-Aug-2026) and IB MonotaRO ceased as associate 29-May-2026; no prior ledger, so ENTITY_CHANGE is unverified against a prior list. The structured file lists six subsidiaries but the auditor cites five audited by other auditors: A3 should check which one is not. Q2 other income is negative (R007). R397 dash maps to a fulltext line printed beside non-current tax assets; row alignment on page 8 depends on A1's page render. Fulltext dash tokens could not be reconciled to the zero count because pdftotext scrambles pages 7-18; the zero count rests on A1's render mapping. CIN prefix differs (L vs U) across pages."

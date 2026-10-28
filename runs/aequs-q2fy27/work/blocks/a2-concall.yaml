@@ -1,0 +1,21 @@
+stage: A2-enumerator
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/aequs-q2fy27/work/ledger_concall_aequs_q2fy27.md"
+counts:
+  turns: 84
+  questions: 29
+  mgmt_numbers: 134
+  zero_standing: 0
+  entities: 42
+flags_raised: [REPEAT_QUESTION, FOOTNOTE_UNRESOLVED, ENTITY_CHANGE, MGMT_ABSENCE_none]
+ids_in_structured: 386
+ids_referenced: 386
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "ids_in_structured counts 302 R rows plus 84 T turn rows. Questions are not separate A1 rows, derived from T rows (29 question turns; 8 analyst thanks turns excluded). 155 NUMBER rows split 134 management, 17 analyst-spoken, 4 operator procedural; only the 134 feed the arithmetic check. Source gap at lines 284-285 (R296, turn T07 truncated) is unrecoverable and sits inside the FY28 fund raise exchange. Five ASR-garbled numbers (R292-R295, R296) are unresolved. Q4 consumer break-even date (R198, R252, R256) is recalibrated with no new date given (R209). Turn-to-line mapping at shared boundary lines uses the first matching turn."

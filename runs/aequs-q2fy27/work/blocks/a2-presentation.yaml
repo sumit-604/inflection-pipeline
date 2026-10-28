@@ -1,0 +1,24 @@
+stage: A2-enumerator
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/aequs-q2fy27/work/ledger_presentation_aequs_q2fy27.md"
+counts:
+  line_items: 210
+  zero_standing: 2
+  entities: 37
+  slides: 33
+  slide_numbers: 451
+  forward: 25
+  dates: 20
+  footnotes: 33
+flags_raised: [ZERO_STANDING, ASSIGNMENT_FLAG, LAYOUT_INTERLEAVED, NO_DATA_ROWS]
+ids_in_structured: 566
+ids_referenced: 566
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "No prior ledger, so DROPPED_SLIDE and ENTITY_CHANGE were not tested. Slides 4, 6, 20, 26 are TOC/dividers with no data rows. Two ZERO_STANDING rows (R349, R352) are share-issue cash flow lines. 26 rows carry A1 ASSIGNMENT flags (slides 8, 13, 14, 22, 28, 30); downstream should confirm period assignment before use. Slide 15 chart and layout-interleaved slides 7,11,12,14,15,16,17,19 anchor to the raw supplement."

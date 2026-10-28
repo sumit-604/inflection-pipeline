@@ -1,11 +1,11 @@
 ---
 title: "Market Breadth Brief"
-subtitle: "Monday, 2026-10-26 trade date · written 2026-10-27 · for Sumit Sharma"
+subtitle: "Monday, 2026-10-26 trade date · written 2026-10-28 · for Sumit Sharma"
 ---
 
 # Market read, 26 October 2026
 
-Same trade date as the previous brief: 2026-10-26. This run started at about 00:50 on Tuesday 27 October, before Tuesday's 21:00 download. The facts sheet still holds Monday's session, so this brief reads the same day again. It replaces the earlier Monday brief and corrects one figure: the August peak in the long count was 1,357, not 1,367. The files came from the two public Chartink dashboards. 33 of 34 table files are present. The Modified Relative Strength screen is missing, so it is absent from the leader sections and the screen counts. The full figures sit in the data appendix, `2026-10-26-appendix.html`.
+Same trade date as the previous brief: 2026-10-26. This run started at about 05:50 on Wednesday 28 October. No download folder exists for Tuesday 27 October, so the facts sheet still holds Monday's session. The market may have been shut, or the Tuesday download may have failed. This brief cannot tell which. It reads Monday again, and its figures match the previous brief. The files came from the two public Chartink dashboards. 33 of 34 table files are present. The Modified Relative Strength screen is missing, so it is absent from the leader sections and the screen counts. The full figures sit in the data appendix, `2026-10-26-appendix.html`.
 
 Claude Code has no web access. This brief checks no news and gives no reason for any move. It describes what the market did. It is not advice to buy or sell anything. The operator decides.
 

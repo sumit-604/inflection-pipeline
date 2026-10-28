@@ -1,0 +1,30 @@
+stage: A2-enumerator
+company: "KNACK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/knack-q2fy27/work/ledger_deck_knack_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 15
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 69
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 36
+  slide_numbers: 589
+  dates: 57
+  forward_statements: 23
+  footnotes_qualifiers: 60
+flags_raised: [ZERO_STANDING, RESTATED, FOOTNOTE_UNRESOLVED, FORWARD_COMMIT, IMAGE_PAGE, DIVIDER_NO_ROWS, MISSING_FROM_STRUCTURED]
+ids_in_structured: 798
+ids_referenced: 798
+orphan_ids: []
+missing_from_structured: [M01 p1 L22 "5th Floor" NSE address, M02 p1 L24 400051, M03 p1 L25 "25th Floor" BSE address, M04 p1 L26 400001, M05 p1 L45 "+05'30'" signature offset, M06 p13 L704 "14%" unlabelled OCR token]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Independent fulltext digit sweep (1025 tokens vs 848 row-value tokens) left 136 unmatched tokens. About 38 are slide-number footers or title fractions, about 92 are chart axis tick labels on p28-p30, 5 are cover-letter address or signature numerals, 1 is p13 OCR '14%' with no label (M06, the only one that may carry meaning; A1 should check the p13 render). Pages 30-35 have a scrambled text layer so row values come from renders and do not map one to one to fulltext tokens. 15 ZERO_STANDING rows: Exceptional Item Labour Codes nil in all 5 interim columns (Rs 10.77 Mn in FY26, R745), equity-method investments nil, DTA/DTL/provisions dashes, cash-flow dashes (R540,R543,R550,R555,R557), and R103 zero JV revenue offset. 16 rows RESTATED across tile/text duplicates. ENTITY_CHANGE and DROPPED_SLIDE not assessable: no prior deck."

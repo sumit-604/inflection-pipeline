@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "KNACK"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/knack-q2fy27/work/ledger_results_knack_q2fy27.md"
+counts:
+  notes: 21
+  line_items: 198
+  zero_standing: 41
+  agenda_items: 3
+  auditor_paras: 12
+  entities: 2
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, MISSING_FROM_STRUCTURED, RESTATED, OTHER_AUDITOR_RELIANCE, UNREVIEWED_COMPARATIVE, SOURCE_AS_PRINTED, OCR_UNCERTAIN]
+ids_in_structured: 921
+ids_referenced: 921
+orphan_ids: []
+missing_from_structured: ["M1: Board agenda item 3 'Consideration and approval of other businesses as per agenda circulated' (page 2, line 79)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Only miss: agenda item 3 (other businesses) lacks a structured row; ledger row M1 carries it, A1 should add it. Notes count is 21 = 18 numbered (SA 1-9, CON 1-9) + 3 footnotes. Two Rs-million comparatives are unreviewed (Q2FY26, H1FY26), so every YoY figure rests on unreviewed numbers. Subsidiary and JV were reviewed by an unnamed other auditor. The JV equity-method investment is nil on the consolidated balance sheet at 30-Sep-2026 (34.55 at March 2026) and shows 45.59 standalone; this is a ZERO_STANDING row (R496) A3 should read with the JV loss lines. Annexure C shows 6 zero cells (no deviation). Borisana capex used 7.04 of 3,200.00. No prior ledger, so ENTITY_CHANGE could not be tested. Press release EBITDA margin includes other income (R902). Signature timestamps (19:40) follow the 17:30 meeting close, no flag."

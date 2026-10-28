@@ -1,0 +1,40 @@
+stage: A5-adversary
+company: "KNACK"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - {id: "S-05", target: "A4", gap: "Unmarked loop edits at rev L94, L262, L918 and the A4 YAML block; each backed by A5-02/A5-03/A5-06; no number or verdict moved; mark [LOOP1]"}
+    - {id: "S-06", target: "A4", gap: "rev L949 'at least 3.57 Cr per quarter' holds only at the Q2 composition; Q1 FY27 total OI 2.31 Cr (res L527); H1 non-interest OI 5.88 Cr (res L527, L631)"}
+    - {id: "S-07", target: "A2", gap: "led-cc L64 T11-Q2 cue 'very small portion recovered' quotes the Mexico-passage phrase; HEDGED stands on cc L478-480; align with rev L638; repeat pointers at led-cc L47, L56 run backwards"}
+    - {id: "S-01", target: "A4", gap: "Partial: rev L235 SA period-end EPS YoY +3.43% (unrounded +3.55%) still open; three other items fixed"}
+    - {id: "S-02", target: "A4", gap: "rev L391, L806 'utilisation % declined' ambiguous; write 'not stated'"}
+    - {id: "S-03", target: "A4", gap: "rev L924 derived H2/H1 ratio tagged FILED; tag INFERENCE"}
+    - {id: "S-04", target: "A4", gap: "rev L121 anchor L538/L541; use L538"}
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S-05 unmarked loop edits rev L94, L262, L918, A4 YAML; no number or verdict moved"
+  - "S-06 rev L949 3.57 Cr floor holds at Q2 composition only"
+  - "S-07 led-cc L64 T11-Q2 cue still quotes the Mexico phrase; led-cc L47, L56 repeat pointers backwards"
+  - "S-01 partial rev L235 +3.43% (unrounded +3.55%)"
+  - "S-02 rev L391, L806 'declined' ambiguous"
+  - "S-03 rev L924 derived ratio tagged FILED"
+  - "S-04 rev L121 anchor L538/L541"
+analyst_note: "Loop 1 closes A5-01 to A5-08: 8 of 8. Drift test: the loop-0 file matches what I audited, and a full line-by-line read found no number, table cell or verdict changed without a loop item behind it. All twelve forward-table figures, every Step 1-5 table cell and PROCEED WITH FLAGS are unchanged. The three declared errata match my loop-0 recomputation. New loop-1 figures (3.57 Cr, Rs 5.45/kg, 40.48 + 15.03, 1.82 Cr, grade count 28) all recompute. One judgement call: the patched ledger still codes T11-Q2 with the Mexico-passage phrase (led-cc L64). I tagged it STYLE, not CONTRADICTION. The response type HEDGED is correct on cc L478-480, the review attributes the phrase correctly, and no number, review fact or verdict depends on the cue. Remaining items are STYLE only and are not re-run."

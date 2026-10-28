@@ -1,0 +1,93 @@
+stage: A4-analyst
+company: "KNACK"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, concall, presentation]
+ledger_reconciliation:
+  notes: 21
+  turns: 16
+  slides: 36
+  all_reviewed: true
+  a3_findings_incorporated: ["R-A3-01","R-A3-02","R-A3-03","R-A3-04","R-A3-05","R-A3-06","R-A3-07","R-A3-08","R-A3-09","R-A3-10","R-A3-11","R-A3-12","R-A3-13","R-A3-14","R-A3-15","R-A3-16","R-A3-17","R-A3-18","R-A3-19","R-A3-20","R-A3-21","R-A3-22","D-A3-01","D-A3-02","D-A3-03","D-A3-04","D-A3-05","D-A3-06","D-A3-07","D-A3-08","D-A3-09","D-A3-10","D-A3-11","D-A3-12","D-A3-13","D-A3-14","D-A3-15","D-A3-16","C-A3-01","C-A3-02","C-A3-03","C-A3-04","C-A3-05","C-A3-06","C-A3-07","C-A3-08","C-A3-09","C-A3-10","C-A3-11","C-A3-12","C-A3-13","C-A3-14","C-A3-15","C-A3-16","C-A3-17"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE (no Notion page; not held; not on a written watchlist; PRE-THESIS READ)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2FY26", gap_pct_of_sa_pat: 1.18}
+  - {period: "Q1FY27", gap_pct_of_sa_pat: -3.10}
+  - {period: "Q2FY27", gap_pct_of_sa_pat: -3.19}
+  - {period: "H1FY26", gap_pct_of_sa_pat: 2.69}
+  - {period: "H1FY27", gap_pct_of_sa_pat: -3.14}
+  - {period: "FY26", gap_pct_of_sa_pat: 3.69}
+questions_for_management:
+  - {q: "Q3 FY27 gross margin implied by agreed price revisions at Q2 average polymer; share of Q2 cost increase repriced by 30-Sep-2026", from_finding_id: ["R-A3-09","R-A3-13","D-A3-02","C-A3-01","C-A3-09","C-A3-10"]}
+  - {q: "Is the Rs 54/kg EBITDA target incl other income (Q1 54.09, Q2 44.23); state the ex-OI target (Q1 51.98, Q2 35.60); Q2 interest at most Rs 5.45/kg", from_finding_id: ["C-A3-02","C-A3-03","R-A3-17","D-A3-01"]}
+  - {q: "Where was the excess 2.61 Cr JV loss booked; is the 1.82 Cr CON-below-SA other non-current assets gap a JV long-term interest or an eliminated subsidiary advance; who received 12.45 Cr (SA) / 13.83 Cr (CON) net loans; total JV funding beyond USD 0.5m", from_finding_id: ["R-A3-01","R-A3-04","D-A3-04","R-A3-16"]}
+  - {q: "JV monthly tonnes Jul-Sep 2026 and dated breakeven; what explains the PAT-margin fall beyond the ~0.8 pp JV share", from_finding_id: ["R-A3-10","D-A3-03","C-A3-08","R-A3-03","R-A3-07"]}
+  - {q: "Borisana spend schedule to Oct-2027, total cost, funding mix; is Borisana the 30-32k MTPA new facility", from_finding_id: ["R-A3-11","D-A3-08","D-A3-09","C-A3-05","C-A3-15"]}
+  - {q: "Installed capacity by unit incl Units 4-5 and rented plant; Q2 production tonnes; traded volume in sales (50,000+ vs 42,000)", from_finding_id: ["C-A3-04","D-A3-09","C-A3-05"]}
+  - {q: "FY26 and H1 FY27 revenue from the ~Rs 150 Cr/yr (approximate) contract customer; incremental share; value or volume floor; is it Cargill", from_finding_id: ["D-A3-12","C-A3-07"]}
+  - {q: "Of the 55.73 Cr receivables outflow, trade receivables 40.48 Cr and other current assets ~15.03 Cr: cause of the latter; receivable days export vs domestic and target; definition of the deck's 75-day working capital", from_finding_id: ["D-A3-16","C-A3-12","C-A3-15"]}
+  - {q: "Split Q2 other income 9.70 Cr (filed H1 interest only 6.13 Cr); P&L line of H1 unrealised FX loss 2.86 Cr; expected interest income as FDs draw", from_finding_id: ["R-A3-11","D-A3-01","R-A3-17"]}
+  - {q: "Will releases show EBITDA ex-OI on revenue; give Q1 FY27 RoCE/RoE on deck definition", from_finding_id: ["R-A3-17","D-A3-01","D-A3-10"]}
+  - {q: "Export share for FY26, H1 FY26, H1 FY27", from_finding_id: ["D-A3-11","C-A3-15"]}
+  - {q: "Realisation per kg Q2 FY27, Q1 FY27, Q2 FY26 and price-vs-volume split of growth", from_finding_id: ["C-A3-06","C-A3-15"]}
+  - {q: "Pinch-bottom tonnes per quarter; India machine count; does the 5 include the Mexico machine", from_finding_id: ["C-A3-11","D-A3-15"]}
+  - {q: "Use of 29.47 Cr GCP spent in the first post-listing quarter", from_finding_id: ["R-A3-12"]}
+  - {q: "Why retain 191.06 Cr borrowings beside 332.78 Cr cash and FDs; borrowing cost vs FD yield", from_finding_id: ["D-A3-08"]}
+  - {q: "Name the other auditors of the subsidiary and JV; were CON H1 figures and cash flow in review scope", from_finding_id: ["R-A3-06","R-A3-07","R-A3-20"]}
+  - {q: "Impairment test of standalone JV cost 4.56 Cr vs cumulative group losses 7.00 Cr", from_finding_id: ["R-A3-18"]}
+  - {q: "Is Bessher Holding related to Sacos Y Empaques; is Sacos still a customer; its FY26 revenue share", from_finding_id: ["R-A3-22"]}
+  - {q: "Confirm ~4.6 Cr DT credited to equity on IPO costs; reconcile issue expense 25.30 / 25.90 / 20.71 Cr; company vs selling-shareholder split", from_finding_id: ["R-A3-14","R-A3-19","D-A3-06","C-A3-13"]}
+  - {q: "Role of Knack Packaging SA (RF) and transfer-pricing basis (~7.2 Cr eliminated in Q2)", from_finding_id: ["R-A3-05","D-A3-05"]}
+  - {q: "What 'other businesses' did the Board approve under agenda item 3 on 27-Oct-2026", from_finding_id: ["R-A3-16"]}
+  - {q: "Was any prior-period figure restated ('Restated' titles; SA H1 FY26 net worth printed as Q1 FY27 value)", from_finding_id: ["D-A3-13","D-A3-10"]}
+  - {q: "Name, exit date and reason of the IPO-era Company Secretary", from_finding_id: ["D-A3-14"]}
+  - {q: "Quantify the FY27 target said to be 'on track' (revenue, volume or EBITDA)", from_finding_id: ["C-A3-17"]}
+  - {q: "Size and timing of further Labour Code charges", from_finding_id: ["R-A3-02"]}
+  - {q: "Any ESOP or dilutive instrument planned for FY27", from_finding_id: ["R-A3-15","D-A3-07"]}
+  - {q: "Quantify Q2 freight inside other expenses (46.51 vs 38.32 Cr)", from_finding_id: ["C-A3-16"]}
+monitorables:
+  - {item: "Pass-through in realisation: Q3 FY27 gross margin (bull >=40%, bear <=36%)", implied_date: "by 14-Feb-2027", source_ref: "press L835-839; cc L66-67; deck p26 L353-354"}
+  - {item: "Price-revision benefits over next few quarters", implied_date: "Q3-Q4 FY27, by 30-May-2027", source_ref: "press L856-860"}
+  - {item: "EBITDA Rs 54/kg (incl-OI basis)", implied_date: "Q4 FY27, by 30-May-2027", source_ref: "cc L570"}
+  - {item: "Mexico JV near breakeven ~120 MT/month", implied_date: "Q3 FY27, by 14-Feb-2027", source_ref: "cc L454-465"}
+  - {item: "Mexico JV breakeven target (not very committed)", implied_date: "Q4 FY27, by 30-May-2027", source_ref: "cc L456"}
+  - {item: "Rented plant adds capacity", implied_date: "Nov-Dec 2026", source_ref: "cc L494-496"}
+  - {item: "5,040 MT August addition ramps; Q3 better quantity", implied_date: "Q3 FY27", source_ref: "cc L142-145"}
+  - {item: "Q3 more pinch-bottom sales (rice season)", implied_date: "Q3 FY27", source_ref: "cc L199-203"}
+  - {item: "New facility to 69-72k MT and two pinch machines", implied_date: "Oct-2027", source_ref: "deck p19 L250-251; cc L236-237, L499"}
+  - {item: "Borisana IPO capex spend (Note 9, CARE report)", implied_date: "by 14-Feb-2027 and each quarter", source_ref: "results L404; Annex C L957-971"}
+  - {item: "GCP 1.68 Cr and issue-expense 2.95 Cr balances deployed", implied_date: "undated", source_ref: "results L405-406"}
+  - {item: "ROE/ROCE recover as IPO funds deploy", implied_date: "Q3-Q4 FY27", source_ref: "deck p30 L457-458; cc L119-121"}
+  - {item: "Further Labour Codes accounting effects", implied_date: "undated", source_ref: "results L355-357, L698-700"}
+  - {item: "JV carrying value, loans to JV, CON-vs-SA other non-current assets gap, SA impairment test", implied_date: "FY27 results, by 30-May-2027", source_ref: "results L577, L234, L237, L580, L651"}
+  - {item: "Q3 ETR reverts toward 25%", implied_date: "Q3 FY27", source_ref: "results L546"}
+  - {item: "Full IPO dilution in EPS", implied_date: "Q3 FY27 onward", source_ref: "results L554"}
+  - {item: "Unreviewed comparatives continue", implied_date: "Q3-Q4 FY27", source_ref: "results L127-129, L434-436"}
+  - {item: "Contract renewal cliff", implied_date: "Dec-2028", source_ref: "deck p16 L220"}
+  - {item: "FY27 CFO/PAT second cash reading", implied_date: "by 30-May-2027", source_ref: "results L645"}
+  - {item: "FY27 annual target (unquantified)", implied_date: "FY27 results", source_ref: "cc L575-577"}
+  - {item: "Board agenda item 3 disclosure", implied_date: "next board outcome", source_ref: "results L79"}
+  - {item: "First annual report as listed company", implied_date: "AGM by 30-Sep-2027", source_ref: "statutory timeline"}
+  - {item: "Other income decay as FDs fund Borisana", implied_date: "each quarter from Q3 FY27", source_ref: "results L527, L650"}
+flags:
+  - "Operating EBITDA margin ex-OI 13.59% (-807 bps QoQ, -297 bps YoY); press 16.35% includes OI and divides by total income"
+  - "PAT growth +21.24% about 71% from other income and a one-time deferred-tax credit; filed H1 interest only 6.13 Cr vs Q2 OI 9.70 Cr, so at least 3.57 Cr of Q2 OI is non-interest; core PAT +4.4% YoY, -41.4% QoQ"
+  - "Per-share Q2 PAT on full post-IPO count Rs 2.04 vs Rs 2.06 YoY"
+  - "Mexico JV equity-method carrying value nil; 2.61 Cr loss booked beyond it; CON other non-current assets 1.82 Cr below SA (nil gap at Mar-26): JV long-term interest or eliminated subsidiary advance; net loans given 12.45 Cr SA / 13.83 Cr CON with counterparty undisclosed"
+  - "H1 CFO/PAT 0.40x vs 0.94x; cash conversion INDETERMINATE-WITH-DIRECTION; ~15.03 Cr of the 55.73 Cr receivables outflow is other current assets, cause unstated"
+  - "Borisana IPO capex 0.22% used vs Oct-2027 target; 93.8% of net proceeds in cash and bank; debt 191 Cr retained"
+  - "Unreviewed Q2 FY26/H1 FY26 comparatives; 16.7% of CON PAT (gross) on unnamed other auditors"
+  - "Concall claims contradicted by filing: '99% covered' pass-through and 'progressively deployed' IPO funds"
+  - "Single contract ~18% of FY26 revenue, approximate value (minimum is ASR only), ends Dec-2028"
+  - "Concall is ASR machine transcript: management tier, unverified; 13 conflicts logged, filed numbers win"
+  - "A3 corrections logged: Q1 revenue 262.46 Cr (not ~275), contract end Dec-2028 (not FY30), capacity 50,000+ MTPA (deck)"
+  - "Forward base and Reading 1 for FY28 PAT include Q1 FY27 inventory-build effect; upward bias of unknown size"
+  - "No Spear line on record: /run-pipeline gate not satisfied"
+  - "Steps 6.5, 7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30); converter (A17) classification candidate"
+plain_language_brief_included: true
+analyst_note: "Loop 1 applied: text and attribution fixes only; no verdict, verdict-card or forward figure moved. Pre-thesis read: no Notion page or prior log, so Steps 3 and 6A-6D and Role 5 credibility are ND. Q2 growth is price-led: ASR volume +13% YoY, derived realisation +34.6%. Operating EBITDA ex-other income fell 807 bps QoQ to 13.59%. Other income (29% of PBT; filed H1 interest only 6.13 Cr) and a deferred-tax credit carry PAT. The two EBITDA/kg baselines management accepted (36 and 45) reconcile on filed numbers: 35.60 ex-OI and 44.23 incl-OI, so the Rs 54/kg target is incl-OI. 'Very small portion' belongs to the Mexico JV passage; India partial recovery rests on cc L478-480 and L547-559. A3 corrections: Q1 revenue 262.46 Cr filed; contract ends Dec-2028 and its value is approximate; deck capacity 50,000+ MTPA reconciles 90% utilisation. JV funding beyond equity, with a 1.82 Cr CON-below-SA other non-current assets gap, is the governance item most likely to grow. Indicative FY27E PAT 112 Cr (104-131); FY28E 122 Cr (82-167)."
+review_path: "runs/knack-q2fy27/work/review_knack_q2fy27.md"

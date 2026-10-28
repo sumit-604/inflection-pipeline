@@ -1,0 +1,68 @@
+stage: A3-forensics
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/work/forensics_results_sonacoms_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "F1-01", check: "F1", line: "l.158, l.482, l.309-311, l.642-644", classification: "FORWARD-SIGNAL", implication: "Exceptional line nil in FY27; DENSO slump-sale and 49% sale gain lands here in SA; DENSO deal costs not booked as exceptional"}
+  - {id: "F1-02", check: "F1", line: "l.315, l.319, l.651-652", classification: "AMBIGUOUS", implication: "Note 5 says both 'Joint Ventures' and 'this subsidiary'; control kept = consolidated equity transaction, no P&L gain; joint control = deconsolidation plus remeasurement gain; no held-for-sale line"}
+  - {id: "F1-03", check: "F1", line: "l.161, l.166, l.237, l.243, l.266, l.279, l.485, l.490, l.570, l.597, l.610", classification: "NEUTRAL-FACT", implication: "Remaining 15 zero-standing lines are template or one-off; C nil purchase of NC investments vs SA 330.51 routed to F2-03"}
+  - {id: "F2-01", check: "F2", line: "l.164, l.488, l.148, l.320", classification: "NEUTRAL-FACT", implication: "SA-C PAT gap +18.90% to -12.97% (-31.9 pp QoQ) is the Q1 Rs 594.63m WOS dividend unwinding; ex-dividend move about -1.9 pp; consolidated is the honest basis"}
+  - {id: "F2-02", check: "F2", line: "l.146-156, l.470-480", classification: "FORWARD-SIGNAL", implication: "Gap widened 10.4 pp YoY; subsidiary op EBITDA 125.60 to 390.60 (15.4% to 24.6% margin), now 11.3% of group; 49% leaks to NCI if moved into a 51% vehicle"}
+  - {id: "F2-03", check: "F2", line: "l.265 vs l.597, l.213 vs l.546, l.278 vs l.609, l.320", classification: "AMBIGUOUS", implication: "WOS paid parent 594.63m, parent injected 330.51m, subsidiary ST debt 152.54 to 771.25; dividend partly debt-funded at group level; entities unnamed"}
+  - {id: "F2-04", check: "F2", line: "l.497, l.538, l.451", classification: "FORWARD-SIGNAL", implication: "NCI-implied Novelic-group loss about -9.1m Q2 vs -42.5m Q1 vs -50.1m Q2 FY26; narrowing bears on tripwire 3; one quarter only"}
+  - {id: "F2-05", check: "F2", line: "l.147, l.471, l.247, l.579", classification: "AMBIGUOUS", implication: "P&L forex gain 197.48 C H1 sits beside an unrealised forex loss add-back 116.68; realised forex likely larger than P&L line; input to pending forex-treatment ruling; C Q2 margin 22.51% ex-fx / 23.20% incl"}
+  - {id: "F2-06", check: "F2", line: "l.284 vs l.615, l.153 vs l.477", classification: "AMBIGUOUS", implication: "Consolidated interest paid below standalone in both H1s; possible intra-group loan from a subsidiary to the parent"}
+  - {id: "F3-01", check: "F3", line: "l.215, l.548, l.310, l.643", classification: "FORWARD-SIGNAL", implication: "Identical SA/C MSME payables; Indian subsidiaries incl eDrive carry no MSME dues and thin payroll; divergence after close will confirm the slump sale"}
+  - {id: "F3-02", check: "F3", line: "l.388-394, l.400, l.453-457", classification: "AMBIGUOUS", implication: "Five unnamed foreign subs: assets 2,007.38, H1 loss 24.20; count matches the five foreign Novelic entities (inference); relevant to Novelic carrying value"}
+  - {id: "F6-01", check: "F6", line: "l.318, l.651, l.448", classification: "FORWARD-SIGNAL", implication: "No DENSO status transition 96 days after signing; eDrive still WOS; like-for-like H1 holds; close date unstated"}
+  - {id: "F6-02", check: "F6", line: "l.319, l.652", classification: "AMBIGUOUS", implication: "Royalty to each partner from its majority JV; rate, base, term undisclosed; net margin effect unknown"}
+  - {id: "F7-01", check: "F7", line: "l.318, l.651", classification: "AMBIGUOUS", implication: "'subject to fulfilment of customary conditions' carried from Q1, conditions unlisted; gain timing and quantum undefined; no new revenue or concentration hedge"}
+  - {id: "F8-01", check: "F8", line: "l.159, l.163", classification: "NEUTRAL-FACT", implication: "SA ETR Q1 20.14% to Q2 25.01%; Q1 dividend shield unwound; C ETR 24.66% to 25.91% near statutory"}
+  - {id: "F8-02", check: "F8", line: "l.162, l.486, l.211, l.544", classification: "NEUTRAL-FACT", implication: "Persistent deferred tax charges, no DTA shield; cash tax below book via DTL build; slower capex means cash tax converges up"}
+  - {id: "F8-03", check: "F8", line: "l.161, l.485", classification: "NEUTRAL-FACT", implication: "Prior-year tax 9.13 SA / 8.26 C in FY26 only; immaterial"}
+  - {id: "F10-01", check: "F10", line: "l.171, l.173-174, l.504-505", classification: "NEUTRAL-FACT", implication: "First basic-diluted EPS spread (0.01); Q2 capital +2,093,587 shares (+0.34%) from ESOP exercises"}
+  - {id: "F10-02", check: "F10", line: "l.314, l.647", classification: "NEUTRAL-FACT", implication: "1,70,747 performance shares to MD at face value; about Rs 13.4 Cr at Rs 782; not in Notion share log"}
+  - {id: "F12-01", check: "F12", line: "l.190 vs l.521, l.187 vs l.518", classification: "FORWARD-SIGNAL", implication: "Subsidiaries hold 2,996.60 capitalised development (+5.1% H1) and CWIP 776.26 (+57%); build in a loss-making layer is first in line for impairment"}
+  - {id: "F12-02", check: "F12", line: "l.213, l.215-216, l.546, l.197, l.200-201", classification: "AMBIGUOUS", implication: "ST borrowings +75.7% SA / +97.2% C and payables +58.8% while treasury rose; arbitrage or supplier-funded WC; CFO/PAT 1.48x vs 0.78x ex-payables"}
+  - {id: "F12-03", check: "F12", line: "l.244, l.576, l.240, l.573", classification: "FORWARD-SIGNAL", implication: "Warranty provision C 124.91 vs 21.81 (subsidiaries 48.60 vs -8.36); slow-moving inventory 80.18 vs 12.03; recurrence decides the margin floor"}
+  - {id: "F14-01", check: "F14", line: "l.128, l.418, l.49, l.90-91, l.303", classification: "AMBIGUOUS", implication: "Review reports cite board approval but were signed about 33 min before the 14:00 start; second quarter running, lead widened from about 4 min"}
+  - {id: "F14-02", check: "F14", line: "l.437", classification: "NEUTRAL-FACT", implication: "Holding company spelt 'Precisions' in Annexure 1; cumulative QC point"}
+  - {id: "F14-03", check: "F14", line: "l.311", classification: "NEUTRAL-FACT", implication: "SA Note 3 H1 FY26 total blank vs 108.42 elsewhere; drafting omission (visual transcription caveat)"}
+  - {id: "F14-04", check: "F14", line: "l.443, l.446", classification: "NEUTRAL-FACT", implication: "Two near-identical 'Comestel ... Mexicana' entity names; confirm distinct entities against AR"}
+  - {id: "F15-01", check: "F15", line: "l.458, l.460", classification: "NEUTRAL-FACT", implication: "Novelic India new vs Q2 FY26 perimeter, already in Q1 list per Notion memory; 17 entities both quarters; verbatim diff not run"}
+  - {id: "F15-02", check: "F15", line: "l.448, l.318, l.651", classification: "FORWARD-SIGNAL", implication: "eDrive WOS-to-51% relationship change pending on DENSO close; next entity list confirms vehicle and accounting"}
+forward_signals: ["F1-01", "F2-02", "F2-04", "F3-01", "F6-01", "F12-01", "F12-03", "F15-02"]
+ambiguous: ["F1-02", "F2-03", "F2-05", "F2-06", "F3-02", "F6-02", "F7-01", "F12-02", "F14-01"]
+commitments:
+  - {commitment: "Form two JVs with DENSO (EV and hybrid powertrain)", implied_date: "not stated", ref: "SA Note 5 l.315; C Note 5 l.648", status_word: "signed 22-Jul-2026, unchanged vs Q1"}
+  - {commitment: "Slump sale of EV motors and controllers business into 100% subsidiary at FMV per independent valuer", implied_date: "not stated, conditional", ref: "l.318; l.651", status_word: "pending (subject to customary conditions)"}
+  - {commitment: "DENSO buys 49% of that subsidiary at EV Rs 17,500m", implied_date: "not stated", ref: "l.319; l.652", status_word: "pending"}
+  - {commitment: "Royalty to each JV partner from its majority-owned JV", implied_date: "post-formation", ref: "l.319; l.652", status_word: "agreed, terms undisclosed"}
+  - {commitment: "ESOP Plan 2023: 1,00,000 options at Rs 596.35", implied_date: "granted 16-Jun-2026", ref: "l.313; l.646", status_word: "completed (grant)"}
+  - {commitment: "PSP 2025: 1,70,747 shares to MD at face value", implied_date: "NRC approved 05-May-2026", ref: "l.314; l.647", status_word: "approved"}
+  - {commitment: "WOS dividend Rs 594.63m to parent", implied_date: "received 19-Jun-2026", ref: "SA Note 6 l.320", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Consolidated stays the honest basis. Q1's +18.9% standalone premium was the Rs 594.63m WOS dividend. Ex-dividend, the gap sits near -11% to -13% in both quarters. The real change is YoY: subsidiary op EBITDA tripled (125.6m to 390.6m) and is now 11.3% of group. That matters for DENSO. Note 5 calls the vehicle both 'Joint Ventures' and 'this subsidiary'. If Sona keeps control at 51%, the consolidated 49% sale is an equity transaction and never reaches the exceptional line; only standalone books a gain. Under joint control the group deconsolidates and remeasures the retained 51% through P&L. Neither balance sheet has a held-for-sale line. Subsidiary short-term debt rose from 152.5m to 771.3m in the half in which one WOS paid the parent 594.63m and the parent put 330.51m back in. Gate inputs: margin 22.5% ex-forex / 23.2% incl forex. CFO/PAT 1.48x, or 0.78x ex-payables. The 116.68m unrealised forex loss add-back suggests realised forex exceeds the P&L line, relevant to the pending forex ruling. F5 and F15 verbatim diffs did not run; Q1 facts are Notion memory."

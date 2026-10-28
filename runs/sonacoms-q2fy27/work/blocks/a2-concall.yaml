@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/work/ledger_concall_sonacoms_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 86
+  turns: 53
+  questions: 18
+  mgmt_numbers: 110
+  slides: 0
+  slide_numbers: 0
+flags_raised: [RESTATED, ASR, UNIT_AMBIGUOUS, ASR_TRUNCATED_FIGURE, HEDGE, REPEAT_QUESTION, CUSTOMER_NAME_RISK, MISSING_FROM_STRUCTURED, NOT_MGMT_SPOKEN]
+ids_in_structured: 336
+ids_referenced: 336
+orphan_ids: []
+missing_from_structured: [M01 L092 second highest order book, M02 L101 three new products in three years, M03 L144 EBITDA vs revenue at CEO joining, M04 L149 IPO annual revenue vs quarterly now, M05 L243 suspension motors equal railway brake H1, M06 L558 3W traction pretty small, M07 L577 all three large EV diff customers picked up, M08 L136 US EV deliveries unchanged, M09 L217 order additions not one large order]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Turns are 53 inferred (source has no speaker labels); 9 are moderator-anchored rows R200-R208. 18 asks, 6 questioner groups; Ramod Kumar shows up to 4 asks (ambiguous speaker at L801), over the two-question rule R308. Robotics asked 5 ways (Q05,Q12,Q13,Q14,Q18) and margin twice (Q09,Q17). mgmt_numbers 110 excludes 12 analyst or moderator numbers. A3 should reconcile against the press release: R021 10 billion EV H1 vs R060 2,042 cr BEV vs R023/R061 48% (differing bases); R054 PAT 23 cr is ASR-truncated; R052 2.3% margin delta possible ASR merge; order wins and order book as spoken in billion (R031,R032,R108). R160 names an end customer despite the call rule. No ZERO_STANDING or ENTITY_CHANGE (no prior ledger). Analyst firms NOT FOUND."

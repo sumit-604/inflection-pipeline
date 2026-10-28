@@ -1,0 +1,64 @@
+stage: A3-forensics
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/aequs-q2fy27/work/forensics_results_aequs_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: PASS
+  F5: FINDING
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "L395", classification: "AMBIGUOUS", implication: "Discontinued ops live (1.96) in Q2, unnamed; likely ATHPL exit; further exit cost or FCTR recycling unknown"}
+  - {id: "A3-02", check: "F1", line: "L389", classification: "FORWARD-SIGNAL", implication: "Exceptional/impairment lines nil in FY27; consumer assets 12,477.95 vs Q2 segment loss (916.68) put an FY27 audit impairment on this line"}
+  - {id: "A3-03", check: "F1", line: "L180", classification: "AMBIGUOUS", implication: "Parent loan impairment 173.41 in H1 FY26 netted to nil in FY26; live again at 1.15 against 2,096.02 related-party loans"}
+  - {id: "A3-04", check: "F1", line: "L404", classification: "NEUTRAL-FACT", implication: "NCI-bearing subsidiary dormant with negative net assets (9.39); unnamed"}
+  - {id: "A3-05", check: "F1", line: "L536", classification: "NEUTRAL-FACT", implication: "350.00 NCD redeemed and refinanced by 2,327.57 term debt; no equity inflow in H1"}
+  - {id: "A3-06", check: "F1", line: "L510", classification: "AMBIGUOUS", implication: "Lease derecognition gain 13.09; ROU down 319.06; facility exit or modification, segment unknown"}
+  - {id: "A3-07", check: "F2", line: "L398", classification: "FORWARD-SIGNAL", implication: "Subsidiaries plus eliminations (559.94) in Q2 vs (228.57) YoY; group losses outside the parent more than doubled"}
+  - {id: "A3-08", check: "F2", line: "L500", classification: "FORWARD-SIGNAL", implication: "124.12 of H1 non-cash gains (inventory provision reversal 83.74) = 27.0% of H1 EBITDA 459.54; core EBITDA weaker than printed"}
+  - {id: "A3-09", check: "F2", line: "L185", classification: "CONFIRMATORY-NEGATIVE", implication: "Parent H1 PBT 66.80 rests on 192.21 intra-group non-cash income; parent CFO (267.84)"}
+  - {id: "A3-10", check: "F2", line: "L149", classification: "AMBIGUOUS", implication: "Parent other NC financial liabilities +190.27 alongside group NC debt +1,807.21; likely new parent guarantees of subsidiary debt"}
+  - {id: "A3-11", check: "F2", line: "L579", classification: "FORWARD-SIGNAL", implication: "Consumer JV loss (39.69) vs (20.42) YoY while 93.00 cash went into JVs/associate; Cookware receivable status open"}
+  - {id: "A3-12", check: "F6", line: "L272", classification: "FORWARD-SIGNAL", implication: "Rs 6,500 Mn promoter warrants at Rs 231.55, convert by 31-Dec-2027; 46.7% of consolidated net worth; equity cure for net debt +3,144.10"}
+  - {id: "A3-13", check: "F6", line: "L265", classification: "FORWARD-SIGNAL", implication: "Amalgamation moved from approved to rejected (RD order 12-Oct-2026); no new route or date"}
+  - {id: "A3-14", check: "F7", line: "L268", classification: "AMBIGUOUS", implication: "Undated 'evaluating' hedge; no-impact claim limited to business operations, silent on tax"}
+  - {id: "A3-15", check: "F8", line: "L393", classification: "FORWARD-SIGNAL", implication: "Group ETR -30.7% in H1; current tax 246.03 on loss (806.56); tax drag about 450.7 vs statutory persists while the amalgamation is blocked"}
+  - {id: "A3-16", check: "F8", line: "L102", classification: "FORWARD-SIGNAL", implication: "Parent H1 ETR 12.3% vs 25.17%; 1,285 bps shield, 543 bps from recurring deferred credits; source undisclosed (SEZ?); step-up risk"}
+  - {id: "A3-17", check: "F10", line: "L420", classification: "NEUTRAL-FACT", implication: "Paid-up flat at 670.67 Mn shares; warrants add 4.19%; implied weighted shares about 656 Mn, consistent with about 2% ESOP-trust treasury shares"}
+  - {id: "A3-18", check: "F12", line: "L567", classification: "FORWARD-SIGNAL", implication: "Consumer segment result Rs (40.14) cr breaches the Rs 36.1 cr falsification threshold on the EBITDA half; utilisation not in the filing; consumer net assets falling about 600 per quarter, liability-funded"}
+  - {id: "A3-19", check: "F12", line: "L590", classification: "FORWARD-SIGNAL", implication: "Capex accretion in aerospace (+1,217.47 assets); consumer capex below D&A; net debt 469.26 to 3,613.36; H1 CFO (808.31) vs capex (1,648.33)"}
+  - {id: "A3-20", check: "F12", line: "L597", classification: "AMBIGUOUS", implication: "Aerospace liabilities down 25% YoY; debt repayment or WC unwind not separable"}
+  - {id: "A3-21", check: "F12", line: "L475", classification: "AMBIGUOUS", implication: "Current contract liabilities down 61%; advance-backed order intake may be slowing"}
+  - {id: "A3-22", check: "F5", line: "L753", classification: "AMBIGUOUS", implication: "Unnamed subsidiary under another auditor, report furnished by management; prior-quarter scope diff impossible"}
+  - {id: "A3-23", check: "F13", line: "L40", classification: "AMBIGUOUS", implication: "Results-only 45-minute board; no CFO/KMP item and no CFO signature; no amalgamation-route decision"}
+  - {id: "A3-24", check: "F14", line: "L680", classification: "NEUTRAL-FACT", implication: "Eight cumulative drafting slips (missing note 9, spellings, URL, dissolved vs liquidated); governance data point"}
+  - {id: "A3-25", check: "F15", line: "L644", classification: "AMBIGUOUS", implication: "ATHPL (consumer, under AEPPL) dissolved 17-Sep-2026; probable link to the discontinued-ops line"}
+  - {id: "A3-26", check: "F15", line: "L633", classification: "AMBIGUOUS", implication: "Aequs Toys renamed Aequs Manufacturing; possible change of purpose for the toy vehicle"}
+forward_signals: ["A3-02", "A3-07", "A3-08", "A3-11", "A3-12", "A3-13", "A3-15", "A3-16", "A3-18", "A3-19"]
+ambiguous: ["A3-01", "A3-03", "A3-06", "A3-10", "A3-14", "A3-20", "A3-21", "A3-22", "A3-23", "A3-25", "A3-26"]
+commitments:
+  - {commitment: "Preferential issue of up to 28,071,690 warrants to Melligeri Private Family Foundation, Rs 6,500 Mn, subject to regulatory approvals", implied_date: "allotment after EGM 22-Oct-2026; approvals pending", ref: "S note 8 L272-L274; C note 10 L665-L667", status_word: "initiated"}
+  - {commitment: "Warrant conversion into equity shares", implied_date: "on or before 2027-12-31", ref: "S note 8 L275; C note 10 L667", status_word: "initiated"}
+  - {commitment: "Amalgamation of ASMIPL, AEPPL, AFCPPL with parent", implied_date: "none; route under evaluation", ref: "S note 7 L263-L268; C note 8 L660-L663", status_word: "rejected (RD 2026-10-12); evaluating"}
+  - {commitment: "Dissolution of Aequs Toys Hong Kong Private Limited", implied_date: "2026-09-17", ref: "C note 5 L644; Annexure I L837-L841", status_word: "completed"}
+  - {commitment: "Rename Aequs Toys Private Limited to Aequs Manufacturing Private Limited", implied_date: "not given", ref: "C note 5 L633; Annexure I L809-L813", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three threads matter. First, losses sit outside the parent and are widening: subsidiaries plus eliminations were Rs (559.9) Mn in Q2 vs (228.6) Mn a year earlier. Parent profit is intra-group, non-cash interest and guarantee income (192.2 vs 66.8 Mn H1 PBT), and parent CFO is negative. Second, the amalgamation rejection bites through tax, not operations. The group booked Rs 246 Mn of current tax in H1 on an Rs 807 Mn loss, and the note's no-impact wording covers business operations only. Third, the consumer segment result of Rs (40.1) cr meets the Rs 36.1 cr falsification threshold on the EBITDA half. Utilisation is not in this filing, so A4 must source it before calling the line. EBITDA quality: Rs 124 Mn of H1 non-cash gains, led by an 83.7 Mn inventory-provision reversal, equal 27% of H1 EBITDA. Net debt rose Rs 3,144 Mn in six months; the Rs 6,500 Mn promoter warrant is the visible equity cure. Only A3-08 touches the non-tying consolidated 6M FY26 column (its 92.21 comparative)."

@@ -1,0 +1,115 @@
+stage: A4-analyst
+company: "AEQUS"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+correction_loop: 1
+docs_merged: [results, concall, presentation, pressrelease]
+ledger_reconciliation:
+  notes: 21
+  turns: 84
+  slides: 38
+  all_reviewed: true
+  a3_findings_incorporated: ["R-A3-01..R-A3-26", "P-A3-01..P-A3-24", "PR-A3-01..PR-A3-18", "C-A3-01..C-A3-24"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NOT SET (operator-only); Mental Model v2 DRAFT UNSIGNED; Phase 1 REWORK; not held"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2FY26", gap_rs_cr: -20.76, pct_of_standalone_pat: "-12358%"}
+  - {period: "Q1FY27", gap_rs_cr: -57.29, pct_of_standalone_pat: "-1409%"}
+  - {period: "Q2FY27", gap_rs_cr: -54.18, pct_of_standalone_pat: "-3025%"}
+  - {period: "H1FY26", gap_rs_cr: -20.99, pct_of_standalone_pat: "-523%"}
+  - {period: "H1FY27", gap_rs_cr: -111.48, pct_of_standalone_pat: "-1903%"}
+  - {period: "FY26", gap_rs_cr: -163.05, pct_of_standalone_pat: "-327%"}
+questions_for_management:
+  - {q: "New consumer EBITDA breakeven quarter after Q2 loss Rs 401 Mn at 17% utilisation", from_finding_id: "C-A3-01, P-A3-03, P-A3-05, PR-A3-03, PR-A3-04, C-A3-17"}
+  - {q: "Consumer quarterly revenue (Rs Mn) for segment EBITDA breakeven at today's cost base", from_finding_id: "C-A3-03, C-A3-04, C-A3-17, R-A3-18"}
+  - {q: "Split of Rs 157 Mn QoQ consumer revenue fall: toys vs consumer electronics", from_finding_id: "P-A3-10, P-A3-16, PR-A3-02, C-A3-24, R-A3-18"}
+  - {q: "Sign of 900 bps YoY consumer utilisation change; same basis for 17% and 22%", from_finding_id: "P-A3-20, R-A3-18"}
+  - {q: "Impairment test on consumer assets Rs 12,478 Mn at 30-Sep-2026 and headroom", from_finding_id: "R-A3-02"}
+  - {q: "H1 FY27 loss of AEPPL and AFCPPL", from_finding_id: "R-A3-07"}
+  - {q: "Old toy customer at zero by Q4; new customer share of Q3 toy revenue", from_finding_id: "C-A3-16"}
+  - {q: "CE customer moving parts to additive manufacturing before FY29, yes/no", from_finding_id: "C-A3-20"}
+  - {q: "Forex share of Q2 other income Rs 106 Mn", from_finding_id: "P-A3-15, C-A3-05, PR-A3-05"}
+  - {q: "Aerospace segment EBITDA margin ex other income Q1 and Q2 FY27", from_finding_id: "P-A3-12, C-A3-07, PR-A3-05, PR-A3-10, R-A3-19"}
+  - {q: "Does rising titanium content lower aerospace margin % in FY27, yes/no", from_finding_id: "C-A3-08"}
+  - {q: "Content of Q2 segment elimination Rs 104.2 Mn", from_finding_id: "C-A3-06, PR-A3-10, P-A3-13"}
+  - {q: "P&L lines holding H1 non-cash gains Rs 124 Mn and H2 recurrence", from_finding_id: "R-A3-08"}
+  - {q: "Facility and segment of lease derecognised for Rs 13.1 Mn gain", from_finding_id: "R-A3-06"}
+  - {q: "Expected FY27 tax charge while amalgamation pending", from_finding_id: "R-A3-15, P-A3-06, C-A3-12"}
+  - {q: "Refile S.233 or NCLT S.232, and by which date", from_finding_id: "R-A3-13, R-A3-14, C-A3-14, R-A3-23"}
+  - {q: "Source and expiry of parent low current tax", from_finding_id: "R-A3-16"}
+  - {q: "Date of Rs 3,250 Mn warrant upfront; any funding from 360 One Prime facility", from_finding_id: "R-A3-12, P-A3-04, P-A3-07, PR-A3-07, P-A3-01, P-A3-09"}
+  - {q: "Use of unallocated Rs 161 Cr of warrant money", from_finding_id: "C-A3-11, PR-A3-08"}
+  - {q: "Sanction, lender and drawdown of over Rs 800 Cr term loans", from_finding_id: "C-A3-10, R-A3-19, P-A3-09"}
+  - {q: "Hosur Phase 1 capex envelope FY28 and FY29", from_finding_id: "C-A3-09, C-A3-18, P-A3-02, PR-A3-12, PR-A3-15"}
+  - {q: "FY28 external equity raise planned, yes/no", from_finding_id: "C-A3-10"}
+  - {q: "Parent guarantees for subsidiary borrowings outstanding and covered subsidiaries", from_finding_id: "R-A3-10"}
+  - {q: "Subsidiary behind Rs 173.4 Mn H1 FY26 loan impairment; recoverability of Rs 2,096 Mn loans", from_finding_id: "R-A3-03"}
+  - {q: "JV receiving Rs 93.0 Mn in H1; Cookware Rs 30.05 Cr receivable collected?", from_finding_id: "R-A3-11"}
+  - {q: "JV behind JV profit share fall Rs 29.0 Mn to 18.1 Mn QoQ", from_finding_id: "C-A3-15, PR-A3-09, R-A3-11"}
+  - {q: "Order book USD 1,096 Mn includes post-quarter Safran agreements, yes/no; value", from_finding_id: "P-A3-22, PR-A3-13, C-A3-18"}
+  - {q: "Fiscal year of Safran A320 wheels serial delivery start", from_finding_id: "C-A3-18"}
+  - {q: "Driver and segment of 61% fall in current contract liabilities", from_finding_id: "R-A3-21"}
+  - {q: "Debt repayment share of aerospace segment liability fall YoY", from_finding_id: "R-A3-20"}
+  - {q: "Segment split of Rs 1,157 Mn H1 inventory rise; inventory days at 31-Mar-2027", from_finding_id: "C-A3-21, P-A3-17, C-A3-22, R-A3-19"}
+  - {q: "Name of subsidiary under other auditor, the auditor, and whether new", from_finding_id: "R-A3-22"}
+  - {q: "CFO appointment date and Reg 30 KMP filing", from_finding_id: "R-A3-23, PR-A3-14"}
+  - {q: "Discontinued operation identity (Rs 1.96 Mn) and further exit cost", from_finding_id: "R-A3-01, R-A3-25"}
+  - {q: "Purpose and date of Aequs Toys to Aequs Manufacturing rename", from_finding_id: "R-A3-26"}
+  - {q: "FY26 CE pre-operative cost capitalised; Hosur treatment", from_finding_id: "P-A3-19"}
+  - {q: "Confirm parts-added definition and 4% as portfolio growth", from_finding_id: "P-A3-18"}
+  - {q: "Press release margin labels '(>100) bps' and unsigned consumer QoQ", from_finding_id: "PR-A3-11, P-A3-16"}
+  - {q: "Quarterly EBITDA and fiscal year for group PAT breakeven", from_finding_id: "PR-A3-06, C-A3-01"}
+  - {q: "Future press releases to carry utilisation, segment capex, half-year cash flow", from_finding_id: "PR-A3-16, C-A3-22"}
+  - {q: "GoK MoU Rs 28,560 Mn: signing date and investment period", from_finding_id: "P-A3-23"}
+  - {q: "Aequs Limited's own share of the GoK MoU and its funding beyond the Rs 6,500 Mn warrants", from_finding_id: "P-A3-23"}
+  - {q: "Top 5 customer groups (63% of H1 FY27): aerospace vs consumer split and largest group share", from_finding_id: "P-A3-24"}
+  - {q: "Top 5 customer group share in H1 FY26 and FY26", from_finding_id: "P-A3-24"}
+monitorables:
+  - {item: "Q3 FY27 consumer segment revenue vs Rs 73.4 Cr / Rs 57.7 Cr; utilisation vs 22% Q1 record (NOTION/ASR); named breakeven quarter", implied_date: "2027-01/02", source_ref: "R-L564; P-L184; N-L107"}
+  - {item: "Warrant allotment and Rs 325 Cr upfront receipt", implied_date: "2026-11/12 (approvals pending)", source_ref: "R-L273-274; C-FT269"}
+  - {item: "Warrant conversion; balance Rs 325 Cr optional while CMP below Rs 231.55 ('proposed to be converted')", implied_date: "2027-12-31", source_ref: "R-L274-275; R-L666-667"}
+  - {item: "Amalgamation route decision (S.233 refile or NCLT S.232)", implied_date: "undated; Notion deadline Q3 FY27", source_ref: "R-L268; N-L695"}
+  - {item: "Toy customer transition complete", implied_date: "Q4 FY27", source_ref: "C-FT494-504"}
+  - {item: "IPO lock-in expiry incl. pledged promoter shares", implied_date: "about 2026-12", source_ref: "N-L171; N-L177"}
+  - {item: "Hosur Investment Phase 1 start", implied_date: "Q4 FY27", source_ref: "P-L240-246 (errata)"}
+  - {item: "GoK MoU Rs 28,560 Mn: date, period, investing entity, funding", implied_date: "undated", source_ref: "P-L560-564 (P-A3-23)"}
+  - {item: "Top-5 customer group share 63%: segment split and trend", implied_date: "Q3 FY27 deck, 2027-01/02", source_ref: "P-L775-778 (P-A3-24)"}
+  - {item: "FY27 capex outturn about Rs 320 Cr vs Rs 660 Cr", implied_date: "about 2027-05", source_ref: "C-FT365-368"}
+  - {item: "FY27 audit, CARO, DTA recognition, consumer impairment", implied_date: "about 2027-05", source_ref: "N-L112-113; R-L591"}
+  - {item: "Inventory about 120 days", implied_date: "about Q1 FY28", source_ref: "C-FT541-543"}
+  - {item: "Term loans over Rs 800 Cr drawdown", implied_date: "undated", source_ref: "C-FT767"}
+  - {item: "FY28 external capital raise", implied_date: "FY28", source_ref: "C-FT334-335"}
+  - {item: "Hosur commercial production; Safran new scope", implied_date: "FY29", source_ref: "P-L240-246; C-FT458"}
+  - {item: "CFO Reg 30 KMP filing", implied_date: "immediate", source_ref: "PR-L158; MC-L12"}
+flags:
+  - "FALSIFICATION LINE FIRED on both legs: consumer segment EBITDA Rs (40.14) Cr vs 36.1 (R-L567, FILED); utilisation 17% vs 23% (P-L184, MGMT-FILED, basis incl subs and JVs P-L208); Q1 22% is NOTION/ASR only"
+  - "8A-W mechanical output on a fired condition is 'reclassify to AVOID'; flagged only, no Decision Status recommended; operator decides"
+  - "Consumer EBITDA breakeven Q4 FY27 withdrawn, no new date (P-L265; C-FT179); consumer revenue -21.4% QoQ (R-L564)"
+  - "Operating EBITDA ex OI fell 6.2% QoQ to Rs 13.86 Cr; reported +14% is forex other income"
+  - "H1 EBITDA includes Rs 12.41 Cr non-cash gains (27%) incl. inventory-provision reversal Rs 8.37 Cr (R-L500)"
+  - "Cash INDETERMINATE-WITH-DIRECTION: H1 CFO Rs (80.83) Cr, FCF (245.66), net debt ex leases 46.93 to 361.34 Cr"
+  - "Group tax on a loss: H1 tax Rs 24.77 Cr on PBT (80.66); also Q2 FY26 and FY26, before the 23-Apr-2026 scheme (R-L390, R-L393, R-L263); post-quarter rejection 12-Oct-2026 blocks one offset route (R-L265)"
+  - "Monitorable 2 not clean: aero margin 22.29% reported, 19.27% on page's harsh method; true ex-OI ND"
+  - "Losses outside parent: subsidiaries plus eliminations Rs (55.99) Cr Q2 vs (22.86) YoY"
+  - "Indicative FY28E PAT about Rs (178) Cr vs Notion base 42 and bear (83): FY28 base chain broken"
+  - "Warrants out of the money at CMP 212 vs 231.55; only Rs 325 Cr due on allotment; balance optional ('proposed to be converted', R-L274-275); upfront not received; pledge tripwire limbs 2-3 UNTESTABLE"
+  - "GoK MoU Rs 28,560 Mn (P-L560-562): undated, entity and funding NOT FOUND; 2.05x Sep-26 equity"
+  - "Top 5 customer groups 63% of H1 FY27 revenue (P-L775-777); no segment split or trend"
+  - "Two candidate DROPPED commitments (consumer revenue guide; H1 FY28 group PAT breakeven) pending prior-log check"
+  - "Concall ASR-UNVERIFIED; 74 s source gap; credibility ratio and archetype ND (prior log not passed)"
+  - "Tracker rows not supplied; Step 5.5 reconciliation not possible; seven new-signal payload candidates"
+  - "A2 TIE_FAILs in consolidated H1 FY26 column (R441, R843) affect comparatives only"
+loop1_changes:
+  - {fix: "F1", change: "Brief tax-causation sentence replaced with dated filed facts; sweep of 0D, Step 4, 6B, 6D, 7A, Section C, forward map, FY28E tax basis, flags"}
+  - {fix: "M1", change: "P-A3-23 GoK MoU Rs 28,560 Mn added to funding vs capex, 4C, 5B, Step 7, 8D, 5.5C, monitorables, brief, QfM 41-42"}
+  - {fix: "M2", change: "P-A3-24 top-5 customer groups 63% added to competition brief, 6D, Step 7, 8D, 5B, 5.5C, monitorables, QfM 43-44"}
+  - {fix: "M3", change: "Warrant bear counter (Rs 325 Cr on allotment; filed 'proposed to be converted'; balance optional below Rs 231.55) added to Reading A, 6C-bis, conversion catalyst, forward map, 0C/0D, Step 2, 7A"}
+  - {fix: "C1", change: "22% Q1 utilisation re-tiered NOTION-PRIOR/ASR; 17% stays MGMT-FILED (P-L184)"}
+  - {fix: "S1", change: "FY28E elims+unallocated (54.8) shown as (54.9); total 157.9 unchanged"}
+loop1_impact: "No verdict, falsification-line status or FY27E/FY28E total moved"
+plain_language_brief_included: true
+analyst_note: "Loop 1 changed no verdict, no falsification status and no FY27E/FY28E total. The quarter splits cleanly. Aerospace delivered: revenue +44% YoY, order book +9%, parts back to 238. Consumer failed the draft model's own test on both legs: a statutory segment line and the filed 17% deck tile. The 22% Q1 comparison is Notion/ASR only and is not needed for the threshold. Hidden weaknesses: operating EBITDA ex other income fell QoQ; 27% of H1 EBITDA is non-cash gains; CFO negative; net debt up Rs 314 Cr. Tax on a loss predates the merger scheme; the post-quarter rejection only keeps one offset route shut. Funding reads weaker after loop 1: only Rs 325 Cr of the warrants is committed on allotment, and an undated Rs 2,856 Cr GoK MoU has no named source. Concentration: five customer groups give 63% of revenue. FY28E credits no consumer ramp; at the Q2 D&A run-rate it is about (149). Neither figure is a valuation."
+review_path: "runs/aequs-q2fy27/work/review_aequs_q2fy27.md"

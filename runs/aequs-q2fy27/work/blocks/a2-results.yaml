@@ -1,0 +1,29 @@
+```yaml
+stage: A2-enumerator
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/aequs-q2fy27/work/ledger_results_aequs_q2fy27.md"
+counts:
+  notes: 21
+  line_items: 311
+  zero_standing: 90
+  agenda_items: 1
+  auditor_paras: 12
+  entities: 22
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, TIE_FAIL, NOTE_NUMBERING_GAP, NOTE_RENUMBERED, RESTATED, STANDALONE_ONLY, COMPARATIVES_UNREVIEWED, OTHER_AUDITOR_UNNAMED, MGMT_FURNISHED_REPORT, SPELLING_VARIANT]
+ids_in_structured: 1438
+ids_referenced: 1438
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Image-transcribed statements were checked arithmetically: 344 of 346 tie-outs pass. Two non-ties both sit in the consolidated 6M 30-Sep-2025 column. (1) Total expenses R441 4,814.39 vs component sum 4,812.39 (gap 2.00; a component among R411, R417, R423, R429, R435 is probably mistranscribed). (2) Cash from operations R843 541.96 vs components 539.70 (gap 2.26); R777 (impairment add-back) reads nil but should likely be 2.26, equal to P&L R429. Downstream stages should not lean on the 6M Sep-2025 consolidated expense and operating cash lines until A1 re-checks these renders. The line-item label sweep gives 304 vs 311 line anchors because A1 truncates labels; line anchors govern. Consolidated note 9 is absent from the printed numbering. No prior ledger exists, so ENTITY_CHANGE (ATHPL dissolved 17-Sep-2026, AMPL renamed) rests on in-document wording only. One subsidiary is reviewed by an unnamed other auditor with the report furnished by Parent management."
+```

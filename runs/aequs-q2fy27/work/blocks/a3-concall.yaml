@@ -1,0 +1,79 @@
+stage: A3-forensics
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/aequs-q2fy27/work/forensics_concall_aequs_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: FINDING
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F6", line: "S55/FT78; S156/FT179", classification: "FORWARD-SIGNAL", implication: "Q4 FY27 consumer EBITDA break-even withdrawn, no new date; H1 FY28 group PAT break-even now undated"}
+  - {id: "A3-02", check: "F17", line: "S184/FT207; S393/FT416", classification: "CONFIRMATORY-NEGATIVE", implication: "Falsification line appears met: consumer loss Rs 40.1 cr vs 36.1 cr bar; utilisation 17% is analyst-spoken, needs filed confirmation"}
+  - {id: "A3-03", check: "F7", line: "S321/FT344; S383/FT406", classification: "AMBIGUOUS", implication: "40-50% utilisation target and 50% break-even reiterated while break-even date withdrawn; path from 17% unexplained"}
+  - {id: "A3-04", check: "F6", line: "S385-386/FT408-409", classification: "AMBIGUOUS", implication: "Consumer PAT positive FY30 (ASR 'fat'); garbled year-end target conflicts with FT179"}
+  - {id: "A3-05", check: "F7", line: "S199-200/FT222-223", classification: "FORWARD-SIGNAL", implication: "EBITDA ex other income fell about 148m to 139m QoQ; the 14% rise is forex other income"}
+  - {id: "A3-06", check: "F12", line: "S177/FT200; S184/FT207; S193/FT216", classification: "AMBIGUOUS", implication: "Segments sum 382m vs reported 245m; about 137m unallocated, unexplained and widening"}
+  - {id: "A3-07", check: "F12", line: "S177-178/FT200-201; S367/FT390", classification: "AMBIGUOUS", implication: "Aero margin about 22% vs derived 25.9% a year ago; if Q2 OI sits in aero, ex-OI margin 19.3% below the 20% bar (inference)"}
+  - {id: "A3-08", check: "F14", line: "S368-369/FT391-392; S689/FT712", classification: "AMBIGUOUS", implication: "Conflicting mgmt answers on titanium content diluting aero margin"}
+  - {id: "A3-09", check: "F6", line: "S342/FT365; S345/FT368; S349/FT372", classification: "FORWARD-SIGNAL", implication: "FY27 capex tracks about 320 cr vs 660 cr guidance; consumer capex halted pending utilisation"}
+  - {id: "A3-10", check: "F6", line: "S239/FT262; S311/FT334-335; S744/FT767", classification: "FORWARD-SIGNAL", implication: "650 cr warrants plus over 800 cr term loans plus possible FY28 raise exceed FY27 capex; ND/E 0.2 to 0.5; unguided post-FY27 Hosur spend"}
+  - {id: "A3-11", check: "F7", line: "S738/FT761; S742/FT765", classification: "AMBIGUOUS", implication: "About 161 cr of the 650 cr warrant money has no named use"}
+  - {id: "A3-12", check: "F8", line: "S222-224/FT245-247; S258-262/FT281-285", classification: "FORWARD-SIGNAL", implication: "Tax up 135m on aero current tax while group loses; leakage persists until amalgamation clears, called immaterial by mgmt"}
+  - {id: "A3-13", check: "F13", line: "S93/FT116; S37/FT60", classification: "NEUTRAL-FACT", implication: "New CFO Reena Joseph confirmed verbally; KMP filing still to verify"}
+  - {id: "A3-14", check: "F13", line: "S258-260/FT281-283", classification: "AMBIGUOUS", implication: "Amalgamation route and appointed date undecided after fast-track rejection"}
+  - {id: "A3-15", check: "F2", line: "S207-210/FT230-233", classification: "AMBIGUOUS", implication: "Implied JV EBITDA 92m to 86m QoQ on higher revenue, margin 26.6% to 22.1%, vs 'stable margins' claim (derived, ASR)"}
+  - {id: "A3-16", check: "F6", line: "S472-481/FT495-504; S723-724/FT746-747", classification: "FORWARD-SIGNAL", implication: "Toy customer swap completes Q3-Q4 on a fixed cost base; Q3 consumer loss risk; single-customer concentration"}
+  - {id: "A3-17", check: "F7", line: "S286/FT309; S352/FT375; S497/FT520; S565/FT588", classification: "FORWARD-SIGNAL", implication: "Four deferrals; break-even revenue not evaluated; consumer guidance reset likely next quarter"}
+  - {id: "A3-18", check: "F6", line: "S126-127/FT149-150; S428-435/FT451-458", classification: "AMBIGUOUS", implication: "Hosur Q4 FY27 start, FY29 commercial; Safran scope FY29 vs spear FY28 deliveries; order-book inclusion unclear"}
+  - {id: "A3-19", check: "F14", line: "S233/FT256; S237/FT260; S720/FT743; S733/FT756", classification: "NEUTRAL-FACT", implication: "Numeric inconsistencies (receivable days about 68 by arithmetic, 151 vs 157, 5x vs 4-6x); call is not a clean numeric source"}
+  - {id: "A3-20", check: "F7", line: "S589-594/FT612-617; S602/FT625", classification: "AMBIGUOUS", implication: "Customer shift to additive asserted by analyst, denied without evidence; obsolescence risk on CE capacity open"}
+  - {id: "A3-21", check: "F6", line: "S231/FT254; S516-520/FT539-543", classification: "FORWARD-SIGNAL", implication: "Inventory 155 to about 120 days by about Q1 FY28; testable, hedged by growth stock needs"}
+  - {id: "A3-22", check: "F17", line: "S236-237/FT259-260", classification: "AMBIGUOUS", implication: "No OCF figure; capex debt-funded; FLAG-CASH stays INDETERMINATE"}
+  - {id: "A3-23", check: "F17", line: "S284-285/FT307-308", classification: "NEUTRAL-FACT", implication: "74 s source gap removes part of revised FY27 guidance answer; do not read silence into it"}
+  - {id: "A3-24", check: "F7", line: "S181-182/FT204-205; S721-722/FT744", classification: "AMBIGUOUS", implication: "Consumer framed as scaling on YoY while QoQ revenue fell about 21% and margin moved about -49% to -70%"}
+forward_signals: ["A3-01", "A3-05", "A3-09", "A3-10", "A3-12", "A3-16", "A3-17", "A3-21"]
+ambiguous: ["A3-03", "A3-04", "A3-06", "A3-07", "A3-08", "A3-11", "A3-14", "A3-15", "A3-18", "A3-20", "A3-22", "A3-24"]
+commitments:
+  - {commitment: "Consumer EBITDA break-even", implied_date: "was Q4 FY27; none now", ref: "S55/FT78; S156/FT179", status_word: "withdrawn"}
+  - {commitment: "Consumer utilisation 40-50% / around 50%", implied_date: "FY27 year end", ref: "S321/FT344; S323/FT346", status_word: "reiterated"}
+  - {commitment: "Consumer PAT positive (ASR 'fat')", implied_date: "FY30", ref: "S386/FT409", status_word: "reiterated"}
+  - {commitment: "Consumer scenarios and year-end landing", implied_date: "undated", ref: "S286/FT309; S352/FT375; S565/FT588", status_word: "deferred"}
+  - {commitment: "Consumer break-even revenue level follow-up", implied_date: "undated", ref: "S497/FT520", status_word: "deferred"}
+  - {commitment: "FY27 capex much lower than 660 cr; H2 about equal to H1 160 cr", implied_date: "FY27", ref: "S342-345/FT365-368", status_word: "revised down"}
+  - {commitment: "No consumer capital unless utilisation rises", implied_date: "ongoing", ref: "S349/FT372", status_word: "initiated"}
+  - {commitment: "Aerospace FY27 guidance on target", implied_date: "FY27", ref: "S88/FT111; S355/FT378", status_word: "reiterated"}
+  - {commitment: "4-6x growth by 2031", implied_date: "FY31", ref: "S305/FT328; S733/FT756", status_word: "reiterated"}
+  - {commitment: "FY28 external capital raise possible", implied_date: "FY28", ref: "S311/FT334-335", status_word: "open"}
+  - {commitment: "Promoter warrants 650 cr, 325 cr upfront, balance by end-Dec next year", implied_date: "Dec-2027", ref: "S242-249/FT265-272", status_word: "initiated"}
+  - {commitment: "Warrant use 289 capex / 100 WC / 100 JV / balance GCP", implied_date: "12-18 months", ref: "S738-742/FT761-765", status_word: "initiated"}
+  - {commitment: "Over 800 cr term loans for capex", implied_date: "undated", ref: "S744/FT767", status_word: "proposed"}
+  - {commitment: "Hosur groundbreaking", implied_date: "done", ref: "S77/FT100", status_word: "completed"}
+  - {commitment: "Hosur phase 1 start", implied_date: "Q4 FY27 (ASR)", ref: "S126/FT149", status_word: "underway"}
+  - {commitment: "Hosur commercial production", implied_date: "FY29 (ASR)", ref: "S127/FT150", status_word: "initiated"}
+  - {commitment: "Safran-related capabilities commercialise", implied_date: "FY29", ref: "S435/FT458", status_word: "initiated"}
+  - {commitment: "Replicate Belagavi with JV partners at Hosur", implied_date: "undated", ref: "S449/FT472-474", status_word: "initiated"}
+  - {commitment: "New long-term aerospace agreement", implied_date: "Oct-2026", ref: "S71/FT94", status_word: "completed"}
+  - {commitment: "Toy customer transition, new customer almost completely by Q4", implied_date: "Q3-Q4 FY27", ref: "S472-481/FT495-504", status_word: "underway"}
+  - {commitment: "Inventory normalise to about 120 days", implied_date: "about Q1 FY28", ref: "S518-520/FT541-543", status_word: "initiated"}
+  - {commitment: "Amalgamation of 3 WOS, next steps", implied_date: "undated", ref: "S258-260/FT281-283", status_word: "stalled"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three items carry the quarter. First, the falsification line appears met: Q2 consumer loss Rs 40.1 cr (S184) against the 36.1 cr bar, with utilisation 17% (S393). The 17% is analyst-spoken and management gave no Q2 figure, so confirm it in the filed deck before the operator treats the line as fired. Second, the 14% QoQ EBITDA rise is forex other income. Ex-OI EBITDA fell from about 148m to 139m (A3 arithmetic, S199-201). Segments sum to 382m against 245m reported, so about 137m sits unexplained. Third, funding outruns stated capex. FY27 capex is cut to about 320 cr, yet 650 cr warrants, over 800 cr term loans and a possible FY28 raise are lined up. That points to unguided post-FY27 Hosur spend. Tax leakage (135m current tax on aero profit while the group loses) lasts until the amalgamation clears, and no route is named. All numbers are ASR and management-tier. Derived Q1 figures are H1 minus Q2. Receivable days '268' reconciles to about 68 by arithmetic (inference, not a fill). Silence counts are 1+ because no prior transcript was supplied."

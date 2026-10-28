@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 16
+formfeed_count: 7
+line_count: 870
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only  # pages 1,6,7,13-16; nine image-only pages (2-5, 8-12) OCR'd and visually transcribed
+render_candidates: [2, 3, 4, 5, 8, 9, 10, 11, 12]
+rendered_pages: [2, 3, 4, 5, 8, 9, 10, 11, 12]  # zero-char image pages holding financial statements and notes; OCR garbled tables so pages 2,3,4,8,9,10,11 transcribed visually
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/aequs-q2fy27/extracted/aequs-results-q2fy27-fulltext.md"
+structured_path: "runs/aequs-q2fy27/extracted/aequs-results-q2fy27-structured.md"
+structured_counts:
+  number: 1236
+  entity: 81
+  forward: 9
+  date: 49
+  qualifier: 63
+structured_id_range: "R001-R1438"
+gate_a1: pass
+gap_note: ""

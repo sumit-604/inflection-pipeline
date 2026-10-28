@@ -1,0 +1,61 @@
+stage: A3-forensics
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/aequs-q2fy27/work/forensics_pressrelease_aequs_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: FINDING
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: N.A.
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F17", line: "118-119", classification: "CONFIRMATORY-NEGATIVE", implication: "Falsification leg 1 fired: Q2 consumer EBITDA loss Rs 40.1 cr vs Rs 36.1 cr threshold; leg 2 (utilisation <=23%) not disclosed"}
+  - {id: "A3-02", check: "F16", line: "114, 118, 169", classification: "FORWARD-SIGNAL", implication: "Consumer revenue fell 21% QoQ (733 to 577 Mn, derived); release shows YoY only; consumer EBITDA margin -49% to -70%"}
+  - {id: "A3-03", check: "F16", line: "179-181", classification: "FORWARD-SIGNAL", implication: "Consumer breakeven path 'recalibrating', undated; Q4 FY27 breakeven and 40-50% utilisation target not restated"}
+  - {id: "A3-04", check: "F7", line: "154-155, 178", classification: "FORWARD-SIGNAL", implication: "'timing-related shift' framing; causes include supply chain constraints that can recur"}
+  - {id: "A3-05", check: "F16", line: "109-111, 175", classification: "FORWARD-SIGNAL", implication: "Aero margin 22.3% vs about 25.9% Q2 FY26 (derived, -340 to -380 bps) and 22.7% Q1; undisclosed; trending toward 20% floor"}
+  - {id: "A3-06", check: "F16", line: "126", classification: "FORWARD-SIGNAL", implication: "Below-EBITDA net charge 359/649/747/767 Mn (Q1 FY26 to Q2 FY27, derived); PAT breakeven needs about 3.1x Q2 EBITDA"}
+  - {id: "A3-07", check: "F10", line: "144-145", classification: "FORWARD-SIGNAL", implication: "Rs 6,500 Mn warrants: count, price, upfront tranche NOT FOUND; dilution pending; check promoter funding vs pledge tripwire"}
+  - {id: "A3-08", check: "F6", line: "145-147, 185", classification: "FORWARD-SIGNAL", implication: "Warrant uses differ in-document: working capital and strategic JV investments (146-147) vs expansion incl Hosur (185)"}
+  - {id: "A3-09", check: "F2", line: "104-107", classification: "AMBIGUOUS", implication: "JV EBITDA share about 17% to 35% of reported EBITDA YoY; JV basis softens -45% to -36%; JV margin -450 bps QoQ; JV names NOT FOUND"}
+  - {id: "A3-10", check: "F12", line: "85, 110, 118-119", classification: "AMBIGUOUS", implication: "Unallocated EBITDA -137 Mn Q2, -155 Mn Q1 (derived); segment EBITDA basis vs other income unstated"}
+  - {id: "A3-11", check: "F16", line: "87, 92", classification: "AMBIGUOUS", implication: "'(>100) bps' labels a -974 bps EBITDA margin fall; QoQ '100 bps' vs +55 bps computed; PAT margin (12)% vs -12.76% computed"}
+  - {id: "A3-12", check: "F6", line: "142, 185", classification: "AMBIGUOUS", implication: "Hosur 'upcoming' with no commissioning date or budget"}
+  - {id: "A3-13", check: "F14", line: "139, 186, 170", classification: "AMBIGUOUS", implication: "Safran agreements shown as Q2 highlight but dated after quarter-end; order book inclusion and definition unstated"}
+  - {id: "A3-14", check: "F13", line: "158", classification: "AMBIGUOUS", implication: "CFO appointment with no effective date or board reference; KMP filing still needed"}
+  - {id: "A3-15", check: "F16", line: "184", classification: "AMBIGUOUS", implication: "H1 capex Rs 159.7 cr = 24% of Rs 660 cr plan; no segment split; phase-down vs back-loading"}
+  - {id: "A3-16", check: "F17", line: "17-245 (whole document)", classification: "AMBIGUOUS", implication: "11 checklist items silent for 1 quarter: utilisation, cash flow, DTA, amalgamation, holding, cookware JV, pledge, capex split, Hosur date, Safran value, balance sheet"}
+  - {id: "A3-17", check: "F14", line: "135-136, 199", classification: "NEUTRAL-FACT", implication: "SKUs vs qualified parts terminology; 238 new parts up from 86 in Q1"}
+  - {id: "A3-18", check: "F16", line: "131, 170", classification: "NEUTRAL-FACT", implication: "Order book USD 1,096 Mn = +9.2% on spear USD 1,004 Mn, consistent with stated 9% QoQ"}
+forward_signals: ["A3-02", "A3-03", "A3-04", "A3-05", "A3-06", "A3-07", "A3-08"]
+ambiguous: ["A3-09", "A3-10", "A3-11", "A3-12", "A3-13", "A3-14", "A3-15", "A3-16"]
+commitments:
+  - {commitment: "Consumer EBITDA breakeven path", implied_date: "none (prior Q4 FY27 not restated)", ref: "line 179-180, R151", status_word: "recalibrating"}
+  - {commitment: "Consumer remaining milestones to sustained production volumes", implied_date: "none", ref: "line 155-156, R139", status_word: "underway"}
+  - {commitment: "Improve consumer utilisation", implied_date: "near-term, undated", ref: "line 180-181, R152", status_word: "underway"}
+  - {commitment: "Rs 6,500 Mn warrant proceeds to capacity expansion, JV investments, working capital", implied_date: "none", ref: "line 144-147, 184-185, R133, R155", status_word: "initiated"}
+  - {commitment: "Hosur manufacturing ecosystem", implied_date: "none", ref: "line 142, 185, R130", status_word: "initiated"}
+  - {commitment: "Safran long-term supply agreements, six entities", implied_date: "signed after 30-Sep-2026", ref: "line 139-142, 186, R129, R156", status_word: "completed"}
+  - {commitment: "Safran A320 wheels serial-production contract above 15 years", implied_date: "deliveries FY28 (spear, not restated)", ref: "line 131-133, R121, R122", status_word: "completed"}
+  - {commitment: "Aerospace scope broadening", implied_date: "none", ref: "line 111-112, R097", status_word: "underway"}
+  - {commitment: "Disciplined execution and stronger returns", implied_date: "none", ref: "line 187-188, R158", status_word: "intent only"}
+  - {commitment: "CFO appointment Reenah Joseph", implied_date: "effective date NOT FOUND", ref: "line 158, R140", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Consumer is the swing factor. Falsification leg 1 fired: Q2 consumer EBITDA loss Rs 40.1 cr vs the Rs 36.1 cr threshold (line 118). Leg 2, utilisation at or below 23%, is absent. Consumer revenue fell 21% QoQ (733 to 577 Mn, derived) while company capacity rose, so utilisation likely fell further [INFERENCE]. The release offsets this with YoY-only framing, a JV-inclusive EBITDA (-36% vs reported -45%), a 'timing-related shift' hedge and an undated breakeven recalibration. Aerospace holds the spear margin floor at 22.3% but compressed about 360 bps YoY, undisclosed. Below-EBITDA charges run about 767 Mn a quarter, so PAT breakeven needs about 3.1x current EBITDA. The Rs 650 cr warrant names working capital and new JV investments in one place and only Hosur in another; A4 should ask for the split, the terms and the promoter funding source (pledge tripwire link). Prior-year bases come from stated growth rates; ranges are in the report. A1 line anchors drift 1-2 lines on 11 rows; all values match."

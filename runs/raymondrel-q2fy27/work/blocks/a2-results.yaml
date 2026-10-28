@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "RAYMONDREL"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/raymondrel-q2fy27/work/ledger_results_raymondrel_q2fy27.md"
+counts:
+  notes: 13
+  line_items: 184
+  zero_standing: 48
+  agenda_items: 3
+  auditor_paras: 11
+  entities: 8
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, RESTATED, OCR_UNCERTAIN, OCR_UNREADABLE, MISSING_FROM_STRUCTURED, NO_TIMESTAMP, FWD, PR]
+ids_in_structured: 874
+ids_referenced: 874
+orphan_ids: []
+missing_from_structured: ["M1 consolidated UDIN Walker Chandiok (fulltext L435)", "M2 consolidated UDIN Chaturvedi & Shah (fulltext L435)", "M3 consolidated firm reg nos (L427)", "M4 Place Mumbai x4 signature blocks (L147, L150, L437)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "zero_standing 48 is cells; they sit on 23 line items. Standalone CF shows current-period zero where the comparative carried values: Gain on sale of investments, Investment in preference shares of subsidiaries, Loans given to subsidiaries, Proceeds from term loans. The OCI lines are zero in 5 of 6 columns; the FY26 column carries a value. Entity: Ten X Realty North Limited was formerly Chembur Realty Limited (rename, date not stated); the company itself was formerly Raymond Lifestyle Limited. Review reports are unmodified limited reviews, no EoM or going concern paragraph. The consolidated report says 5 plus 2 subsidiaries were not reviewed by the group auditors, and Annexure 1 names 7. The para-5 loss digit is OCR-uncertain (R831). Signatures are ink, no timestamps. Press release Rs Cr figures (income 757, PBT 66) have statement counterparts in Rs Lakhs; A3 should reconcile. EBITDA has no statement row. The UDINs on the consolidated report are not in the structured file; loop to A1 if needed. No prior ledger, so ENTITY_CHANGE rests on in-document evidence only."

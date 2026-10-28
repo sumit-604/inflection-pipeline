@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "RAYMONDREL"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 15
+formfeed_count: 15
+line_count: 773
+unit_convention: "Lakhs (statements); Crores (press release)"
+conversion_factor_to_cr: "Lakhs x0.01; press release Crores x1"
+text_layer_present: true
+extraction_mode: text-only  # plus image-verified transcription of statement pages 3,4,5,9,10,11 and PR table p13
+render_candidates: []
+rendered_pages: ["3 (150dpi, OCR-layer columns scrambled)", "4 (same)", "5 (same)", "9 (same)", "10 (same)", "11 (same)", "13 (110dpi, PR table re-read)"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/raymondrel-q2fy27/extracted/raymondrel-results-q2fy27-fulltext.md"
+structured_path: "runs/raymondrel-q2fy27/extracted/raymondrel-results-q2fy27-structured.md"
+structured_counts:
+  number: 698
+  entity: 50
+  forward: 12
+  date: 39
+  qualifier: 75
+structured_id_range: "R001-R874"
+gate_a1: pass
+gap_note: ""

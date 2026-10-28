@@ -1,0 +1,25 @@
+stage: A2-enumerator
+company: "RAYMONDREL"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/raymondrel-q2fy27/work/ledger_concall_raymondrel_q2fy27.md"
+counts:
+  turns: 16
+  questions: 10
+  mgmt_numbers: 145
+  dates: 20
+  qualifiers: 40
+  forward_commitments: 59
+  participants: 19
+  entities_nonturn: 40
+flags_raised: [REPEAT_QUESTION, RESTATED, ASR_SUSPECT, ANALYST_STATED, INFERRED_BOUNDARY, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 320
+ids_referenced: 320
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Numeric-token grep over fulltext found 24 digit lines not directly cited by anchor; all map to existing rows (line anchors drift 1-8 lines on about 17 rows, e.g. R052, R054, R064, R067, R130). No missing numbers. Numbers are from an ASR transcript; analyst-stated figures (R075, R082, R086, R094, R129, R131-R137) are not management claims. Conflicts for A3/A4: ICICI 140 cr (R129, analyst) vs 210 cr (R055, R066); promoter equity ~400 cr (R056) vs ~410 cr (R069); revenue guidance absent (R185) while R074/R228 say similar range. Turn and question topics are derived from A1 rows and inferred boundaries; speaker identity unverified. Several mgmt numbers sit on drifting anchors, so turn assignment by line is approximate."
+correction_loop: "1 of 1 (A5 C2): line and turn columns in ledger sections 4-8 were blank or zero from an awk split bug; rebuilt from A1 anchors, FT line shown with DRIFT mark where the value sits on another fulltext line (10 marked, 0 unresolved). Turn assigned by FT line against R305-R320 starts. IDs unchanged: 320/320, 0 orphans, gate_a2 pass."

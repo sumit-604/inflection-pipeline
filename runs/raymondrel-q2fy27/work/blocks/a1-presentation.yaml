@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "RAYMONDREL"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 46
+formfeed_count: 46   # raw pdftotext count; fulltext replaces formfeeds with [page N] markers (46 present)
+line_count: 761
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1 (areas mn sq ft; values not converted)"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []   # no zero-char pages; sparse pages 13,18,21,25,46 skipped: no data
+rendered_pages: []      # verification renders (column-period checks) only, no OCR: p4-p6,8,9,11,12,20,22-24,26-44
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/raymondrel-q2fy27/extracted/raymondrel-presentation-q2fy27-fulltext.md"
+structured_path: "runs/raymondrel-q2fy27/extracted/raymondrel-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 860
+  entity: 98
+  forward: 29
+  date: 49
+  qualifier: 46
+structured_id_range: "R001-R1082"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,32 @@
+stage: A5-adversary
+company: "RAYMONDREL"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S6 (A2 results ledger, open from loop 0): count test says auditor_paras 11 vs 13 rows in section 5 (label only)"
+    - "S7 (A2 concall ledger): opening rows labelled 'T3-4 R307'; lines CC L43-L177 sit wholly in T3 (R307); label only"
+    - "S8 (A4 review REV L883): Section C Demand row cites 'R758-R829' as a range; operative rows are R441, R467, R758, R760, R783, R806, R829"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S6 results ledger auditor_paras label"
+  - "S7 concall ledger T3-4 label for opening rows"
+  - "S8 Section C demand row range cite"
+analyst_note: "Loop 1 closed all ten looping items. F1-F4: deck line R363 is relabelled and Q5 re-posed; FY27E PAT B now reads 264-309 with the H2 inputs stated and the PE row re-derived; FY26 ROCE reads 23.4% on the H1 basis; the hedge count reads 16. M1-M4: the authority-adjusted YoY (+8.3%, +10 bps), the GST qualifier on collections, the demand qualifiers (about +81% at economic interest, guide-implied H2 about -10.5%, BD about Rs 4,675 Cr if Parel) and the ICICI economics (RRL a party, equity-priced capital, multiple not computable) now sit in the steps, the combined verdict, the brief and the flags. C1: the deck p5 vs p26 JDA revenue gap of Rs 619 Cr is surfaced and leads Q1. C2: A2 rebuilt the concall ledger line and turn columns from A1 anchors; my spot checks tie. A full re-read found no drift: every unpatched number matches its loop-0 recompute, and the verdict lines are unchanged. The three surviving bear counters from loop 0 are now grafted. Three style notes remain; none loops."

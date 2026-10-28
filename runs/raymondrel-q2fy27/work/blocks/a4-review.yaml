@@ -1,0 +1,88 @@
+stage: A4-analyst
+company: "RAYMONDREL"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, concall, presentation, corpaction]
+ledger_reconciliation:
+  notes: 13
+  turns: 16
+  slides: 46
+  all_reviewed: true
+  a3_findings_incorporated: [RES-A3-01, RES-A3-02, RES-A3-03, RES-A3-04, RES-A3-05, RES-A3-06, RES-A3-07, RES-A3-08, RES-A3-09, RES-A3-10, RES-A3-11, RES-A3-12, RES-A3-13, RES-A3-14, RES-A3-15, RES-A3-16, RES-A3-17, RES-A3-18, RES-A3-19, RES-A3-20, RES-A3-21, RES-A3-22, RES-A3-23, PRE-A3-01, PRE-A3-02, PRE-A3-03, PRE-A3-04, PRE-A3-05, PRE-A3-06, PRE-A3-07, PRE-A3-08, PRE-A3-09, PRE-A3-10, PRE-A3-11, PRE-A3-12, PRE-A3-13, PRE-A3-14, PRE-A3-15, PRE-A3-16, PRE-A3-17, PRE-A3-18, PRE-A3-19, PRE-A3-20, PRE-A3-21, PRE-A3-22, PRE-A3-23, PRE-A3-24, PRE-A3-25, PRE-A3-26, PRE-A3-27, PRE-A3-28, PRE-A3-29, PRE-A3-30, PRE-A3-31, PRE-A3-32, PRE-A3-33, PRE-A3-34, PRE-A3-35, FND-01, FND-02, FND-03, FND-04, FND-05, FND-06, FND-07, FND-08, FND-09, FND-10, FND-11, FND-12, FND-13, FND-14, FND-15, FND-16, FND-17, FND-18, FND-19, FND-20, FND-21, FND-22, FND-23]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "WATCHLIST / AVOID"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap_pct: 27.7}
+  - {period: "Q1 FY27", gap_pct: -49.1}
+  - {period: "Q2 FY26", gap_pct: 3.0}
+  - {period: "H1 FY27", gap_pct: -2.1}
+  - {period: "H1 FY26", gap_pct: -10.1}
+  - {period: "FY26", gap_pct: 15.9}
+questions_for_management:
+  - {q: "Reconcile deck p5 JDA revenue recognised Rs 1,930 Cr with project rows Rs 2,549 Cr (gap Rs 619 Cr); quantify non-unit-sale JDA revenue (BKC 577 vs bookings 521; Sion 242 vs 229; BKC Rs 175 Cr pre-launch in Q2 FY26); state the Ind AS 115 method and collections ex-GST", from_finding_id: "PRE-A3-24, PRE-A3-25, PRE-A3-26, PRE-A3-27, PRE-A3-21, RES-A3-05, FND-03"}
+  - {q: "Give TXRWL OCPRS terms: conversion, redemption/put/support on RRL (a party to the agreement), coupon, post-issue shareholding, tranches, project, RRL Rs 140 Cr share status", from_finding_id: "FND-12, FND-13, FND-14, RES-A3-17"}
+  - {q: "Give the Q3/Q4 EBITDA margin path to 17-19% from H1 14.3%; state whether the guide includes other income and excludes Rs 17 Cr authority interest", from_finding_id: "RES-A3-08, RES-A3-11, RES-A3-15, PRE-A3-05, PRE-A3-11, PRE-A3-35, PRE-A3-28, FND-01, FND-02"}
+  - {q: "Define net debt; disclose authority-dues principal and its line; break down Rs 1,908 Cr other financial liabilities; give blended cost of all borrowings", from_finding_id: "RES-A3-16, RES-A3-17, PRE-A3-15, PRE-A3-28, FND-07, FND-08"}
+  - {q: "Refinancing plan for Rs 452 Cr current borrowings vs Rs 308 Cr buffer; where does Rs 85.75 Cr interest paid sit in the deck cash format, and how does the Rs 155 Cr bank-loan line reconcile to Rs 200.58 Cr net borrowing; FY27 finance cost in Rs Cr", from_finding_id: "RES-A3-03, PRE-A3-16, FND-06, FND-10, FND-21"}
+  - {q: "Give the FY27 revenue growth number dropped from the deck; reconcile EBITDA +20%, margin 17-19% and pre-sales +20%", from_finding_id: "FND-03, FND-23, PRE-A3-06"}
+  - {q: "Give RERA dates for Mahim-2 (Q3) and Mahim-1 (Q4); why Mahim-1 moved from Q3; is launch contingent on the ICICI tranche", from_finding_id: "RES-A3-09, PRE-A3-07, PRE-A3-01, FND-15"}
+  - {q: "Date of receipt of the Rs 102 Cr warrant upfront vs 'has infused 410 crores'; timing of the Rs 247 Cr Jekegram object given Thane parcel launch Q2 FY28", from_finding_id: "RES-A3-13, PRE-A3-17, FND-11, PRE-A3-08, RES-A3-19"}
+  - {q: "Date of BKC aviation approval and booking value awaiting upper-floor RERA; explain Q1 BKC net cancellation", from_finding_id: "FND-16, PRE-A3-03"}
+  - {q: "Plan for Invictus Tower B Thane after bookings fell 5, 2, 0", from_finding_id: "PRE-A3-02"}
+  - {q: "Was PAT margin 9-10% guided before Q2, on what base; basis and first positive year of the Rs 10,000 Cr OCF figure", from_finding_id: "RES-A3-10, PRE-A3-10, FND-04, FND-05, PRE-A3-13"}
+  - {q: "Which entity booked Tower B OC revenue; why subsidiary revenue +63% QoQ while standalone -29% YoY; subsidiaries outside joint review", from_finding_id: "RES-A3-04, RES-A3-06, RES-A3-05"}
+  - {q: "Counterparty of the Rs 127.60 Cr ICD and nature of the Rs 217 Cr fall in standalone other current assets", from_finding_id: "RES-A3-01, RES-A3-20"}
+  - {q: "Purpose of the Rs 2 lakh group investment; date of Chembur to Ten X Realty North rename; JDAs behind GDV 42,000 to 52,000 and the addition at economic interest", from_finding_id: "RES-A3-02, RES-A3-23, PRE-A3-20, FND-17"}
+  - {q: "Source and durability of the 18.5% ETR vs 25.17%; why taxes paid exceed current tax", from_finding_id: "RES-A3-12, PRE-A3-14"}
+  - {q: "Basis of Q2 FY26/H1 FY26 comparatives and the FY20-FY26 track record (carve-out, audited or not)", from_finding_id: "RES-A3-21, PRE-A3-12"}
+  - {q: "Timing and form of the Rs 400-600 Cr LRP equity vs the prior no-fundraise stance", from_finding_id: "FND-11, FND-10"}
+  - {q: "Report pre-sales at economic interest; state GST treatment of bookings; define launched units sold", from_finding_id: "PRE-A3-32, PRE-A3-31, PRE-A3-30"}
+  - {q: "Supply missing footnotes, Park Street collections, and identify pipeline Sr. 4 and launched Sr. 7", from_finding_id: "PRE-A3-22, PRE-A3-29"}
+  - {q: "Restate 'Board Independence : 100% i.e. All the Board Committees are chaired by Independent Director' when 5 of 8 directors are independent", from_finding_id: "PRE-A3-19"}
+  - {q: "Quantify revenue by brand vs the claim that growth came 'entirely' from Address by GS", from_finding_id: "PRE-A3-34, RES-A3-05"}
+  - {q: "Contingency % in Mahim budgets and underwriting margin for H2 launches under cost inflation", from_finding_id: "FND-20"}
+  - {q: "Projects behind the Rs 185 Cr pre-launch outflow (Rs 178 Cr approvals)", from_finding_id: "PRE-A3-18, RES-A3-18"}
+  - {q: "Target FY27 collections-to-pre-sales ratio after 77% in H1 vs 103% a year ago, with or without GST", from_finding_id: "RES-A3-18, FND-23"}
+  - {q: "Share of Rs 1,220 Cr debt that is floating, and cost of the AIF money", from_finding_id: "FND-21"}
+monitorables:
+  - {item: "ICICI AIF first tranche into TXRWL", implied_date: "2026-11-27", source_ref: "CC L376; C-12"}
+  - {item: "Securities-issue intimation with instrument terms", implied_date: "2026-11", source_ref: "CA L174-180; R047"}
+  - {item: "Warrant allotment and Rs 102 Cr upfront", implied_date: "Q3 FY27 (2026-11)", source_ref: "NOT L8; CC L149-150"}
+  - {item: "BKC aviation approval then upper-floor RERA", implied_date: "2026-11 to 2026-12", source_ref: "CC L517-522; C-16"}
+  - {item: "Mahim-2 launch and RERA registration", implied_date: "2026-12-31", source_ref: "PRE l460; CC L368"}
+  - {item: "Q3 FY27 results: margin both bases, net debt per ruling, NCI line", implied_date: "2027-02-14", source_ref: "Reg 33; Step 8C"}
+  - {item: "Mahim-1 launch", implied_date: "2027-03-31", source_ref: "PRE l461"}
+  - {item: "ICICI full Rs 210 Cr received", implied_date: "2027-03-31", source_ref: "CC L377"}
+  - {item: "Research coverage at least 4 firms", implied_date: "2026-12-31 to 2027-03-31", source_ref: "CC L316-317"}
+  - {item: "FY27 guide test: pre-sales +20%, ROCE 20%, EBITDA 17-19%, PAT 9-10%", implied_date: "2027-03-31", source_ref: "RES L723-724"}
+  - {item: "Kandivali, Parel, Thane owned-parcel launches", implied_date: "Q2 FY28 (2027-09-30)", source_ref: "PRE l462-464"}
+  - {item: "Fully funded for next year of construction (Rs 308 Cr buffer)", implied_date: "2027-09", source_ref: "RES L715"}
+  - {item: "Gross debt holds Rs 1,200-1,400 Cr; no fall for 1-2 years", implied_date: "FY28-FY29", source_ref: "CC L140, L471-472"}
+  - {item: "Warrant balance Rs ~307 Cr", implied_date: "2028-04", source_ref: "NOT L8"}
+  - {item: "Steady state 8-10 projects outside Thane", implied_date: "FY29", source_ref: "CC L121-126"}
+  - {item: "LRP equity Rs 400-600 Cr decision", implied_date: "FY28-FY32", source_ref: "CC L409-410, L475"}
+  - {item: "Operator rulings: margin stop and net-debt basis", implied_date: "before Q3 FY27 print", source_ref: "checklist L60-64"}
+flags:
+  - "Margin stop basis-dependent: operating (ex-OI) Q1 11.61% / Q2 14.20% fires a 15% stop; press-release basis 13.11% / 15.21% does not; authority-interest-adjusted fires 14%; 18% fires on all bases. Ruling pending; if fired, 8A-W proposes AVOID (operator sets)."
+  - "Operations claim qualified: op EBITDA +15.0% / +94 bps YoY shrinks to +8.3% / +10 bps with authority interest (10 to 17) treated as approval cost."
+  - "Risk #2 first signals lit: net debt Rs 916 Cr (> 900) and gross D/E 0.752 (> 0.75); H1 pace +Rs 129 Cr/qtr crosses Rs 1,000 Cr in Q3 before inflows [INFERENCE]."
+  - "Net-debt ruling moot at Q2 (no warrant or AIF money by 30-Sep); binds from Q3; R4 framing gives Rs 1,126 Cr."
+  - "Consolidated PAT -11.8% YoY Q2 and -13.3% H1 on finance cost +70%; FY27 PAT Reading B Rs 264-309 Cr straddles the Notion bear Rs 300 Cr (seasonality end below it)."
+  - "Revenue guide DROPPED: removed from deck and denied on call; guidance trio internally inconsistent."
+  - "JDA revenue quality: deck p5 states JDA revenue recognised Rs 1,930 Cr vs Rs 2,549 Cr on project rows (Rs 619 Cr gap, all in JDAs); BKC and Sion revenue exceed bookings; JDA collections Rs 857 Cr include GST and possession charges; BKC Rs 175 Cr pre-launch revenue in Q2 FY26 base."
+  - "Demand qualified: Q2 pre-sales +98% gross but about +81% at economic interest; unchanged guide implies H2 pre-sales about -10.5% YoY; H1 BD ~Rs 8,500 Cr gross is ~Rs 4,675 Cr at economic interest if Parel [INFERENCE]."
+  - "Concall 'promoter has infused ~410 Cr' and 'subsidiary has raised 210 Cr' contradicted by filings (no money in H1; no securities issued at 26-Oct)."
+  - "ICICI AIF terms NOT DISCLOSED in filing (instrument, coupon, put, TXRWL shareholding, tranches); RRL is a party; money is equity-priced (60% residual profit, project IRR 20-25% vs 9.6% debt); price / TXRWL PAT not computable; NCI ahead."
+  - "Mahim-1 now Q4 FY27 (checklist #4 red window); Thane owned-parcel launch Q2 FY28 vs warrant objects."
+  - "All 7 subsidiaries (63.0% Q2 revenue, 72.7% gross assets) outside joint review; standalone revenue -28.5% YoY."
+  - "Credibility provisional 50% (Grade C) on 1 of 4 quarters; archetype OVERPROMISER provisional and borderline; workup grade A not replaced."
+  - "Promoter absent from call; capital stance reversed (Rs 400-600 Cr more equity under LRP)."
+  - "CMP Rs 548 is Rs 2 below the Rs 550 MoS; inside post-DA Rs 500-550 and diluted ~Rs 523-581 bands; Promoter CONCERN caps; no BUY gate met."
+  - "Stale Notion fields: net D/E 0.13x (filed 0.565x); I-6 state; 10X Mahalakshmi vs TXRWL as deal vehicle."
+  - "Tracker rows not supplied (titles only); fewer than three external signals."
+plain_language_brief_included: true
+analyst_note: "Q2 splits along a basis line. Operating EBITDA rose 15% and margin 94 bps, but with authority interest counted as approval cost the gains are +8.3% and +10 bps; finance cost +70% took the rest, so PAT fell 11.8%. The margin stop depends on basis more than threshold: at 15%, the press-release basis clears by 21 bps and the operating basis fails. The net-debt ruling cannot change Q2 because no warrant or AIF money arrived by 30-Sep; OCPRS terms decide R2 versus R3/R4 from Q3. ICICI money is equity-priced: it lowers net debt only if classified as equity, and it does not cheapen capital. The biggest open risk is JDA revenue quality: deck p5 states JDA revenue recognised of Rs 1,930 Cr while the project slides sum to Rs 2,549 Cr; the Rs 619 Cr gap may be non-sale revenue. Demand is strong gross but about +81% at economic interest, and the unchanged guide implies H2 pre-sales about 10.5% lower. Credibility C and OVERPROMISER are provisional and turn on one scoring call. Loop 1 also corrected FY26 ROCE, the FY27E PAT B range (264-309) and the hedge count."
+review_path: "runs/raymondrel-q2fy27/work/review_raymondrel_q2fy27.md"

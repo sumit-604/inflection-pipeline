@@ -1,0 +1,81 @@
+stage: A3-forensics
+company: "RAYMONDREL"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/raymondrel-q2fy27/work/forensics_concall_raymondrel_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: FINDING
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "FND-01", check: "F6", line: "L50-54; L176", classification: "FORWARD-SIGNAL", implication: "17-19% FY27 margin guide back-ended; H1 ~14%, H2 needs ~20-24% if H2 income = H1; normalisation window widened into FY28"}
+  - {id: "FND-02", check: "F17", line: "L47-48", classification: "AMBIGUOUS", implication: "Q2 margin 15% sits on the <15% two-quarter stop boundary; EBITDA rupee figure garbled; score only on Reg 33; margin-stop ruling pending"}
+  - {id: "FND-03", check: "F16", line: "L227-230; L242-244; L543-547", classification: "FORWARD-SIGNAL", implication: "Revenue guide (min 20% in Q1 notes, Aug-19 deck slide 9) withdrawn; verbal 'that range', no number; sub-20% revenue is the conservative case"}
+  - {id: "FND-04", check: "F6", line: "L176-178", classification: "AMBIGUOUS", implication: "PAT margin 9-10% called 'earlier guidance' though Q1 notes record a PAT refusal; I-6 may be turning; confirm against deck/filing"}
+  - {id: "FND-05", check: "F6", line: "L351-365", classification: "AMBIGUOUS", implication: "First portfolio OCF figure, Rs ~10,000 Cr pre-tax over 4-5 yrs; basis (pre-tax, interest, GDV 52k vs 50k) unclear; 'pretty tight'"}
+  - {id: "FND-06", check: "F6", line: "L104-105; L260-267", classification: "AMBIGUOUS", implication: "Interest H2 = H1 run rate implies ~Rs 180 Cr all-in FY27 vs prior Rs 100-120 Cr guide, which was not restated; possibly bank-only"}
+  - {id: "FND-07", check: "F11", line: "L98-100", classification: "AMBIGUOUS", implication: "Implied net worth ~Rs 1,500 Cr (gross 0.8x) vs ~Rs 1,824 Cr (net ~0.5x), ~22% gap; second quarter D/E fails to tie"}
+  - {id: "FND-08", check: "F11", line: "L102; L105-109", classification: "AMBIGUOUS", implication: "Government-dues interest Rs 17 Cr/qtr (~Rs 68 Cr/yr vs ~45 FY26) outside the 9.6% cost of debt and likely outside gross debt"}
+  - {id: "FND-09", check: "F17", line: "L98-99", classification: "CONFIRMATORY-NEGATIVE", implication: "Risk #2 first signals both lit (net debt 912 >900; gross D/E 0.8x >0.75x); +88 Cr QoQ; Rs 1,000 Cr red line not fired"}
+  - {id: "FND-10", check: "F6", line: "L140; L211-214; L471-472", classification: "FORWARD-SIGNAL", implication: "Equity raised because debt cannot rise further; gross debt holds Rs 1,200-1,400 Cr for 1-2 yrs; I-3 red-leaning"}
+  - {id: "FND-11", check: "F10", line: "L149-151; L205-208; L408-410; L473-476", classification: "FORWARD-SIGNAL", implication: "Dilution: ~Rs 410 Cr promoter issue (received vs committed unclear) plus new Rs 400-600 Cr LRP equity; prior no-fundraise stance reversed"}
+  - {id: "FND-12", check: "F15", line: "L145-146; L193-202; L219-221", classification: "FORWARD-SIGNAL", implication: "10X subsidiary gains AIF OCPRS holder at 60% capital; NCI line coming; 5% fee eliminates on consolidation; margin-uplift claim is economic, not consolidated"}
+  - {id: "FND-13", check: "F7", line: "L486-490; L584-587", classification: "AMBIGUOUS", implication: "OCPRS equity treatment is management's assertion; 'virtually zero' coupon; Ind AS 32 terms decide; ties to the pending AIF-money ruling"}
+  - {id: "FND-14", check: "F6", line: "L146; L152; L376-377; L480", classification: "AMBIGUOUS", implication: "ICICI money not received at call date ('raised' = committed); tranche Q3, rest by Mar-2027 lowers net debt via financing; 140 likely RR's 40% share (derived)"}
+  - {id: "FND-15", check: "F6", line: "L166-167; L366-368; L380-382", classification: "FORWARD-SIGNAL", implication: "Mahim Q3 + Q4 launches unchanged; Q3 is current quarter with no RERA date or inventory call; launch tied to ICICI tranche"}
+  - {id: "FND-16", check: "F6", line: "L516-524", classification: "FORWARD-SIGNAL", implication: "BKC upper floors need aviation approval ('next few weeks') then RERA; H2 Invictus pre-sales contingent"}
+  - {id: "FND-17", check: "F6", line: "L72-74; L168-169; L412-413", classification: "FORWARD-SIGNAL", implication: "No apparent new JDA in Q2; LRP adds Rs 8-10k Cr GDV every year, which is the I-5 red case that resets the cash clock"}
+  - {id: "FND-18", check: "F6", line: "L64-66; L88-89; L117-119; L124-126", classification: "CONFIRMATORY-NEGATIVE", implication: "Only Thane delivering (I-1 red); JDAs collected 25% of bookings; most JDAs cash-negative into FY28 (I-7 red)"}
+  - {id: "FND-19", check: "F6", line: "L438-440", classification: "CONFIRMATORY-NEGATIVE", implication: "Thane ex-growth at Rs 1,500-1,600 Cr/yr (bottom of current band); all growth and risk shift to JDAs"}
+  - {id: "FND-20", check: "F7", line: "L590-592; L602-608", classification: "FORWARD-SIGNAL", implication: "Fixed-price contracts cover ongoing projects only; H2 Mahim and LRP launches carry cost inflation; margin hedge"}
+  - {id: "FND-21", check: "F7", line: "L276-278; L287; L290-291", classification: "FORWARD-SIGNAL", implication: "Management expects rate hardening on a debt base that will not fall; checklist #8 (>10.5% red) at risk; demand view scoped to own portfolio"}
+  - {id: "FND-22", check: "F17", line: "L110-112 (CFO to slide 23); silence table Section 4", classification: "CONFIRMATORY-NEGATIVE", implication: "Monitors #6, #7, #9, #10 silent 2 consecutive quarters; 7 of 13 Q1 questions unaddressed"}
+  - {id: "FND-23", check: "F6", line: "L43-45; L385-387; L492-500", classification: "FORWARD-SIGNAL", implication: "20% pre-sales needs ~Rs 1,900-2,000 Cr H2 vs Rs 1,602 Cr H1; ~78% of Q2 from one product line (analyst-stated); H2 depends on Mahim and BKC"}
+forward_signals: ["FND-01", "FND-03", "FND-10", "FND-11", "FND-12", "FND-15", "FND-16", "FND-17", "FND-20", "FND-21", "FND-23"]
+ambiguous: ["FND-02", "FND-04", "FND-05", "FND-06", "FND-07", "FND-08", "FND-13", "FND-14"]
+commitments:
+  - {commitment: "FY27 EBITDA margin 17-19%", implied_date: "FY27", ref: "L53-54, L176 / R207, R223", status_word: "underway"}
+  - {commitment: "Margin normalisation as projects reach mid-stage", implied_date: "FY27 into FY28", ref: "L50-52 / R206", status_word: "underway"}
+  - {commitment: "Pre-sales growth >=20%", implied_date: "FY27", ref: "L174-175, L237-238 / R221, R227", status_word: "underway"}
+  - {commitment: "EBITDA growth 20%", implied_date: "FY27", ref: "L237, L536-537 / R226", status_word: "initiated"}
+  - {commitment: "ROCE 20%", implied_date: "FY27", ref: "L175 / R222", status_word: "underway"}
+  - {commitment: "PAT margin 9-10%", implied_date: "FY27", ref: "L176-178 / R224", status_word: "initiated"}
+  - {commitment: "Revenue growth near 20%, no number", implied_date: "FY27", ref: "L246, L545-547 / R228, R260", status_word: "softened"}
+  - {commitment: "Interest H2 at H1 run rate", implied_date: "H2 FY27", ref: "L266-267 / R229", status_word: "initiated"}
+  - {commitment: "Gross debt stabilises Rs 1,200-1,400 Cr within 1:1", implied_date: "FY27-FY28", ref: "L139-140, L476-478 / R213, R214, R254", status_word: "underway"}
+  - {commitment: "Debt does not fall for 1-2 years", implied_date: "to ~FY28-FY29", ref: "L471-472 / R252", status_word: "initiated"}
+  - {commitment: "Promoter equity ~Rs 400-410 Cr, first tranche shortly", implied_date: "Q3 FY27; balance ~Apr-2028", ref: "L149-151, L208 / R215", status_word: "underway"}
+  - {commitment: "ICICI AIF Rs 210 Cr, first tranche 30 days, full by March", implied_date: "~Nov-2026; Mar-2027", ref: "L376-377 / R240, R241", status_word: "initiated"}
+  - {commitment: "Further equity Rs 400-600 Cr under LRP", implied_date: "FY28-FY32", ref: "L409-410, L475 / R246, R253", status_word: "initiated"}
+  - {commitment: "Mahim launches Q3 and Q4, GDV ~Rs 4,100 Cr", implied_date: "Q3 FY27; Q4 FY27", ref: "L166-167, L368 / R218, R239", status_word: "underway"}
+  - {commitment: "Mahim launch inventory decided near launch", implied_date: "at launch", ref: "L382 / R242", status_word: "initiated"}
+  - {commitment: "BKC aviation approval then RERA for upper floors", implied_date: "next few weeks (~Nov-Dec 2026)", ref: "L517-518, L522 / R257, R258", status_word: "underway"}
+  - {commitment: "Add Rs 8,000-10,000 Cr GDV every year; more JDAs to sign", implied_date: "annual, 5 years", ref: "L169, L413 / R219, R247", status_word: "underway"}
+  - {commitment: "5-year LRP ~20% pre-sales CAGR", implied_date: "FY28-FY32", ref: "L404-407 / R245", status_word: "initiated"}
+  - {commitment: "Steady state 8-10 projects outside Thane", implied_date: "~FY29 (MD estimate)", ref: "L121-126 / R211, R212", status_word: "initiated"}
+  - {commitment: "Rs ~10,000 Cr pre-tax operating cash flow from current portfolio", implied_date: "next 4-5 years", ref: "L357-362 / R237, R238", status_word: "initiated"}
+  - {commitment: "Thane sales stabilise Rs 1,500-1,600 Cr/yr", implied_date: "ongoing", ref: "L439-440 / R249", status_word: "initiated"}
+  - {commitment: "Research coverage 1 -> at least 4 firms", implied_date: "end of this year", ref: "L316-317 / R233", status_word: "underway"}
+  - {commitment: "Project-wise launch break-up to analyst", implied_date: "unspecified", ref: "L346 / R236", status_word: "initiated"}
+  - {commitment: "Future-launch cost impact part passed on, part absorbed; margins maintained", implied_date: "H2 FY27 onward", ref: "L603-605 / R262, R263", status_word: "initiated"}
+  - {commitment: "Thane OC Address by GS Tower B ahead of RERA timeline", implied_date: "Q2 FY27", ref: "L64-67 / R015", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Lean-bear read of an ASR transcript; every number is management tier. Three threads matter for A4. (1) Capital: debt will not fall for 1-2 years (L471-472). Equity is raised because the market worries about debt (L211-214). The new LRP adds Rs 400-600 Cr more equity (L409, L475) on top of ~Rs 410 Cr promoter money and Rs 210 Cr ICICI money. The 1:1 ceiling binds in practice, and Q3 net debt will fall for financing reasons, not operating ones. (2) Guidance: the revenue guide was dropped from the deck (L227-229, L242-244) and replaced by 'that range' with no number. The 17-19% margin guide needs an H2 near 20-24% from an H1 near 14%. PAT 9-10% is called 'earlier guidance' though Q1 notes record a refusal. (3) The Q2 margin of 15% sits on the <15% stop boundary and the EBITDA rupee figure is garbled (L47). The stop cannot be scored until Reg 33 lands and the margin-stop ruling is made. The 140 vs 210 ICICI conflict likely resolves as RR's 40% share (arithmetic, unconfirmed). The 10X NCI means consolidated EBITDA will overstate RR's economic share of Mahim."

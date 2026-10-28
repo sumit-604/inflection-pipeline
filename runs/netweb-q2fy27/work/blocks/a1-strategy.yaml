@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "presentation (strategy)"
+model: claude-sonnet-5-5
+status: complete
+page_count: 28
+formfeed_count: 28
+line_count: 765
+unit_convention: "Crores (deck mostly INR Mn and INR Bn; stated per figure)"
+conversion_factor_to_cr: "Mn -> x0.1, Bn -> x100, Crores -> x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (H1 FY27 metrics)"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/extracted/netweb-strategy-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/extracted/netweb-strategy-q2fy27-structured.md"
+structured_counts:
+  number: 181
+  entity: 50
+  forward: 31
+  date: 28
+  qualifier: 46
+structured_id_range: "R001-R336"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,65 @@
+stage: A3-forensics
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "presentation (strategy)"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/forensics_strategy_netweb_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "F6-a", check: "F6", line: "l663-664 slide 22", classification: "FORWARD-SIGNAL", implication: "Quantum and physical AI R&D opened with no spend, date or revenue path; R&D cost step-up risk"}
+  - {id: "F6-b", check: "F6", line: "l686, l689, l692, l699-700 slide 23", classification: "FORWARD-SIGNAL", implication: "Order book 26,290 Mn = ~7.4 months of H1 run-rate; L1 6,525 Mn unconverted; no conversion rate or dates"}
+  - {id: "F6-c", check: "F6", line: "l709 slide 23", classification: "NEUTRAL-FACT", implication: "No dated company commitment in the deck; nothing new for the promise tracker"}
+  - {id: "F10-a", check: "F10", line: "l140, l748-749, l764, l179-182", classification: "FORWARD-SIGNAL", implication: "ROE 31.4% on blended pre/post-QIP equity; ~21% on Sep-26 equity alone [A3 arithmetic]; returns compress unless PAT scales"}
+  - {id: "F11-a", check: "F11", line: "l630, l634, l736, l179-180", classification: "AMBIGUOUS", implication: "Net cash ~1,253 Mn (Mar-26) to ~100-210 Mn (Sep-26) despite 12,000 Mn raise [A3 arithmetic]; WC or borrowings vs proceeds held outside Free Cash"}
+  - {id: "F11-b", check: "F11", line: "l626, l628, l630, l632, l640", classification: "AMBIGUOUS", implication: "FY24/FY25 ROCE and ROE order fails column and implied-equity checks; chart may show an FY25 return dip"}
+  - {id: "F12-a", check: "F12", line: "l250, l261, l263, l265, l268", classification: "AMBIGUOUS", implication: "Candidate: software/services 568 Mn = 2.65% of H1 vs 1,232 Mn FY26; below Notion #5 red line if confirmed"}
+  - {id: "F14-a", check: "F14", line: "l146, l428, l442", classification: "AMBIGUOUS", implication: "128 R&D staff / 18 patents dated 30-Sep on p5 vs 30-Jun on p16; flat headcount or stale p5"}
+  - {id: "F14-b", check: "F14", line: "l143, l488, l19, l378", classification: "NEUTRAL-FACT", implication: "1999 (CIN) vs 1996 founding; '26 Years' fits neither; unrefreshed text"}
+  - {id: "F14-c", check: "F14", line: "l744-745, l756, l764", classification: "NEUTRAL-FACT", implication: "Notes say 'quarter' but use 183 days and H1 x2; ratios are H1-based"}
+  - {id: "F14-d", check: "F14", line: "l251, l256, l265, l574", classification: "AMBIGUOUS", implication: "p9 offering values fall 57 Mn short of p21 operating income across periods, located in FY25 (11,432 vs 11,490) [A3 arithmetic]"}
+  - {id: "F14-e", check: "F14", line: "l73, l558, l642-643", classification: "NEUTRAL-FACT", implication: "Basis (consolidated/standalone) unstated; revenue labels differ; dual note numbering"}
+  - {id: "F14-f", check: "F14", line: "l318, l320, l324", classification: "NEUTRAL-FACT", implication: "1Lattice DC-capacity CAGRs do not tie to printed GW values; A1 R089 label corrected"}
+  - {id: "F14-g", check: "F14", line: "l131, l146, l248, l328, l343, l356", classification: "NEUTRAL-FACT", implication: "Hidden 'To be' fragment on slides 5, 9, 12, 13, including the p5 as-of date"}
+  - {id: "F16-a", check: "F16", line: "l732, l740-762 slide 28", classification: "AMBIGUOUS", implication: "WC days, NCA, NFA, GFA turnover defined but never shown, in the quarter of the inventory build"}
+  - {id: "F16-b", check: "F16", line: "l456, l459-465, l469-473, l479", classification: "AMBIGUOUS", implication: "Concentration reframed as pool churn ('limited customer concentration') beside unmapped 50.3-94.4% values; footnote garbled"}
+  - {id: "F16-c", check: "F16", line: "l458, l475", classification: "FORWARD-SIGNAL", implication: "New customers 171/147/131/49 (sum 498) declining; ~98 annualised in H1 [A3 arithmetic]"}
+  - {id: "F16-d", check: "F16", line: "l687-691, l704-707, l711", classification: "AMBIGUOUS", implication: "Order book GST basis unstated; pipeline open-ended; NIC order inclusion unknown"}
+  - {id: "F17-a", check: "F17", line: "slide 28 notes 11-13; l179-182", classification: "AMBIGUOUS", implication: "Silent on CFO/PAT, WC days, inventory, QIP use, finance cost; 1 quarter (deck)"}
+  - {id: "F17-b", check: "F17", line: "l171-177, l667, l73", classification: "AMBIGUOUS", implication: "NIC Blackwell order no value or schedule; no Rubin; new 'chip-agnostic' line; Taiwan WOS absent; 1 quarter"}
+forward_signals: ["F6-a", "F6-b", "F10-a", "F16-c"]
+ambiguous: ["F11-a", "F11-b", "F12-a", "F14-a", "F14-d", "F16-a", "F16-b", "F16-d", "F17-a", "F17-b"]
+commitments:
+  - {commitment: "Quantum simulator/emulator R&D; NQM engagement", implied_date: "none stated", ref: "l663-679 R258", status_word: "initiated"}
+  - {commitment: "Physical AI R&D, defence priority", implied_date: "none stated", ref: "l663-675 R256 R257", status_word: "intent"}
+  - {commitment: "Convert L1 6,525 Mn to POs", implied_date: "none stated", ref: "l689 l695-700 R177 R261", status_word: "pending"}
+  - {commitment: "Execute order book 26,290 Mn", implied_date: "none stated", ref: "l692 l704-707 R178 R317", status_word: "pending"}
+  - {commitment: "NIC on-prem AI cloud, Blackwell, IndiaAI Mission", implied_date: "not stated in deck", ref: "l171-177 R234", status_word: "received"}
+  - {commitment: "Foundational LLM infra, over 5,000 GPUs", implied_date: "not stated (order 2025)", ref: "l157-160 R235", status_word: "received"}
+  - {commitment: "CERT-IN sovereign compute facility", implied_date: "2026", ref: "l164-167 R233", status_word: "completed"}
+  - {commitment: "Capital raise 12,000 Mn", implied_date: "2026", ref: "l179-182 R232", status_word: "completed"}
+  - {commitment: "Tier-II/DC-park push with edge HCI, 22 offices", implied_date: "none stated", ref: "l672-673 R252", status_word: "intent"}
+  - {commitment: "Tyrone Skylus indigenous private cloud", implied_date: "none stated", ref: "l662-666 R251", status_word: "intent"}
+  - {commitment: "Chip-agnostic design; sovereign AI appliances", implied_date: "none stated", ref: "l667-674 R254 R255", status_word: "intent"}
+  - {commitment: "NSM 2.0 alignment; exascale liquid cooling", implied_date: "CY28 (policy target)", ref: "l661-669 l347-349 R249 R250 R246", status_word: "intent"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Strategy deck, no statements, so most balance-sheet checks are N.A. The weight sits in the deck's own ratios. First, net cash fell to about 100-210 Mn at Sep-26 from about 1,253 Mn at Mar-26, despite a 12,000 Mn raise (F11-a). That fits Notion memory of negative H1 CFO and the inventory build. The question is whether unspent proceeds sit outside 'Free Cash' or borrowings rose. Second, the ROE headline averages pre- and post-QIP equity. On Sep-26 equity alone, ROE is about 21% (F10-a). Third, the FY24/FY25 ROCE and ROE order from A1 fails the column and equity cross-checks (F11-b). Fourth, the deck defines WC days but shows none (F16-a). It reframes concentration as pool churn (F16-b). New-customer onboarding falls every year (F16-c). Candidate software share is 2.65% (F12-a). Mappings flagged AMBIGUOUS are not resolved. The arithmetic tie-outs are candidates for A4 to put to management, not readings. F17 was run on the deck at the orchestrator's direction, so the silence counts are one quarter only."

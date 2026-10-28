@@ -1,0 +1,34 @@
+stage: A5-adversary
+company: "NETWEB"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "N1: Summary fields state the FX link as 'likely' without the [INFERENCE] tag (Section C A4 L753, flag L975, A4 analyst_note); amounts differ (5.22 vs 5.64). Body tags it correctly (L133, L171). Suggest 'consistent with FX netting [INFERENCE]'."
+    - "N2: A4 L835 HPC share 7.4% tagged [FILED, calc]; definitional match of 1Lattice HPC market and Netweb HPC systems is an inference. Add INFERENCE tag and anchor PRS L651-L653."
+    - "N3: REVISION LOG L790 cites line 118 for the M4 memo row; the row is at L117."
+    - "S5 (carried from loop 0, not adopted): specificity 13/44 = 0.30 if four qualitative rows are excluded; archetype unchanged."
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "N1 tag the 'likely FX' wording in Section C, flag L975 and analyst_note as [INFERENCE]; say 'consistent with'"
+  - "N2 add INFERENCE tag and PRS L651-L653 anchor to the 7.4% HPC share at A4 L835"
+  - "N3 revision log M4 line list: memo row is L117, not L118"
+  - "S5 specificity numerator includes four qualitative rows; 13/44 = 0.30; archetype unchanged"
+analyst_note: "Loop 1 re-audit. All eight loop-0 items (F1, F2, M1-M6) close against the extracts, and every changed number recomputes. A4 adopted five of the seven loop-0 style notes (S1-S4, S7). S5 stays logged; S6 was a process note outside A4. The revision adds only bear-side qualifiers. It keeps PROCEED WITH FLAGS and INDETERMINATE-WITH-DIRECTION and states the reasons. M5 closes on provenance: the 66.98% input now carries a Notion memory anchor. A5 did not open that file because it sits outside the A5 input set. Three new style notes: the summary fields call the Rs 5.22 Cr regroup 'likely' FX without an [INFERENCE] tag, though the body tags it; the 7.4% HPC share needs an inference tag for the definitional match; and one revision-log line number is off by one. None changes a number, a filed fact or the verdict. Verdict COMPLETE; the review may proceed to save."

@@ -1,0 +1,93 @@
+stage: A4-analyst
+company: "NETWEB"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+revision: "loop 1 (A5 INCOMPLETE: F1, F2, M1-M6, S1-S4, S7)"
+docs_merged: [results, concall, presentation, strategy_presentation, press_release]
+ledger_reconciliation:
+  notes: 5
+  turns: 20
+  slides: 53
+  all_reviewed: true
+  a3_findings_incorporated: [RES-A3-01, RES-A3-02, RES-A3-03, RES-A3-05, RES-A3-06, RES-A3-07, RES-A3-08, RES-A3-09, RES-A3-10, RES-A3-12, RES-A3-13, RES-A3-14, RES-A3-15, RES-A3-16, RES-A3-17, PRS-A3-01, PRS-A3-02, PRS-A3-03, PRS-A3-04, PRS-A3-05, PRS-A3-06, PRS-A3-07, PRS-A3-08, PRS-A3-09, PRS-A3-10, PRS-A3-11, PRS-A3-12, PRS-A3-13, PRS-A3-14, PRS-A3-15, PRS-A3-16, PRS-A3-17, PRS-A3-18, PRS-A3-19, STR-F6-a, STR-F6-b, STR-F6-c, STR-F10-a, STR-F11-a, STR-F11-b, STR-F12-a, STR-F14-a, STR-F14-b, STR-F14-c, STR-F14-d, STR-F14-e, STR-F14-f, STR-F14-g, STR-F16-a, STR-F16-b, STR-F16-c, STR-F16-d, STR-F17-a, STR-F17-b, PR-FN01, PR-FN02, PR-FN03, PR-FN04, PR-FN05, PR-FN06, PR-FN07, PR-FN08, PR-FN09, PR-FN10, PR-FN11, PR-FN12, CC-A3-01, CC-A3-02, CC-A3-03, CC-A3-04, CC-A3-05, CC-A3-06, CC-A3-07, CC-A3-08, CC-A3-09, CC-A3-10, CC-A3-11, CC-A3-12, CC-A3-13, CC-A3-14, CC-A3-15, CC-A3-16, CC-A3-17, CC-A3-18, CC-A3-19, CC-A3-20, CC-A3-21, CC-A3-22]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "HELD (Small 2% @ Rs 3,350, MOMENTUM bucket, Chandelier Exit governs; Notion properties, page last edited 26-Oct-2026)"
+position_branch: "8A"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", value: ND, reason: "standalone-only filing; no subsidiary; Taiwan WOS not incorporated"}
+  - {period: "Q1 FY27", value: ND, reason: "standalone-only filing"}
+  - {period: "Q2 FY26", value: ND, reason: "standalone-only filing"}
+  - {period: "H1 FY27", value: ND, reason: "standalone-only filing"}
+  - {period: "H1 FY26", value: ND, reason: "standalone-only filing"}
+  - {period: "FY26", value: ND, reason: "standalone-only filing"}
+questions_for_management:
+  - {q: "Map Rs 1,930.69 Cr inventory (Rs 610.09 Cr Q2 FG/WIP build) to confirmed POs and delivery quarters; date inventory falls below Rs 1,000 Cr", from_finding_id: [RES-A3-07, CC-A3-06, PRS-A3-10, STR-F16-a]}
+  - {q: "H1 CFO -Rs 639.15 Cr: expected H2 CFO; will FY27 CFO exceed 0.5x FY27 PAT; why no CFO figure on the call", from_finding_id: [CC-A3-11, CC-A3-20, PRS-A3-19, STR-F17-a, PR-FN07]}
+  - {q: "Rs 4,000 Cr FY27 target implies H2 ~Rs 1,857 Cr; is it a floor; share of Rs 2,629.0 Cr book billing in H2; why cycle moved 16-20 to 10-16 weeks", from_finding_id: [CC-A3-02, CC-A3-03, PRS-A3-02, STR-F6-b, PR-FN08, PR-FN01]}
+  - {q: "Instruments behind Rs 23.80 Cr Q2 finance cost on Rs 321.31 Cr debt: peak debt, LC/acceptance, discounting with/without recourse, supplier credit; lien deposits backing LCs/BGs", from_finding_id: [RES-A3-08, PRS-A3-09, PR-FN12]}
+  - {q: "Nature and quarter of the Rs 5.22 Cr item netted in H1 Other income and Other expenses; is it the Rs 5.64 Cr H1 unrealised FX gain (RES R238/L259); is H1 margin 15.07% or 14.83%; basis for Q3", from_finding_id: [RES-A3-13, PRS-A3-15, PR-FN04, CC-A3-17]}
+  - {q: "Q2 strategic/Blackwell revenue, balance vs Rs 1,734 Cr H2 FY27 milestone, NIC order value and schedule", from_finding_id: [CC-A3-21, STR-F17-b]}
+  - {q: "Top-1 customer share, top-10 ex-strategic, p13 segment shares, H1 new customers 49 vs 449", from_finding_id: [PRS-A3-16, STR-F16-b, STR-F16-c, CC-A3-13, PRS-A3-18]}
+  - {q: "Contract liabilities at 31-Mar and 30-Sep and new advances in H1, given other current liabilities -Rs 165.78 Cr", from_finding_id: [RES-A3-09]}
+  - {q: "Customers behind Rs 5.33 Cr H1 doubtful-debt provision and write-off; one account; ECL model change", from_finding_id: [RES-A3-10]}
+  - {q: "Reg 32 statement and monitoring agency report; location of Rs 425.58 Cr unutilised; monitoring-account residual equal to dividend; issue-expense gap; GCP Rs 199.50 Cr use", from_finding_id: [RES-A3-14, RES-A3-15, PRS-A3-01, PRS-A3-03, PRS-A3-08, STR-F11-a, CC-A3-01]}
+  - {q: "Net-debt bridge Mar to Sep on gross and company basis; sign of (136 Mn)", from_finding_id: [PRS-A3-07, PR-FN07, STR-F11-a]}
+  - {q: "H2 Op EBITDA margin floor after the 'not to be quoted for the entire year' hedge; gross margin with memory +200%", from_finding_id: [CC-A3-05]}
+  - {q: "Was the growth floor lowered from 35% (Q4 FY26) to 30%", from_finding_id: [CC-A3-04]}
+  - {q: "Q2 order inflow, L1 ageing and PO dates, conversion tenure, like-for-like pipeline split", from_finding_id: [CC-A3-09, PR-FN09, CC-A3-12]}
+  - {q: "Order book GST basis, delivered-unbilled treatment, NIC order inclusion", from_finding_id: [STR-F16-d, PRS-A3-18]}
+  - {q: "NVIDIA OEM terms and Rubin inclusion; Rubin in book; GPU vendor mix; meaning of chip-agnostic", from_finding_id: [CC-A3-07, PR-FN11, STR-F17-b]}
+  - {q: "Taiwan WOS capital, headcount, opex, incorporation date, ODI, funding source, first consolidated quarter", from_finding_id: [RES-A3-01, RES-A3-12, RES-A3-16, CC-A3-19]}
+  - {q: "Skylus and Velox H1 revenue; confirm Rs 56.8 Cr software/services/spares line", from_finding_id: [PRS-A3-17, STR-F12-a, CC-A3-22]}
+  - {q: "AI share 62.3% to 58.4% QoQ; why H1 basis in release; drivers of non-AI +77.9%; Rs 57.2 Cr residual", from_finding_id: [PR-FN03, PR-FN10]}
+  - {q: "Rupee impact and effective date of FIFO to weighted-average inventory change", from_finding_id: [PRS-A3-05]}
+  - {q: "Revenue base under Sep-26 days and GFAT; publish period-end days", from_finding_id: [PRS-A3-12, PRS-A3-10, STR-F16-a]}
+  - {q: "ROE/ROCE on closing equity; confirm FY24/FY25 ROCE and ROE", from_finding_id: [PRS-A3-11, STR-F10-a, STR-F11-b]}
+  - {q: "Allotment behind +0.57 Mn share capital Sep-25 to Mar-26 vs Notion May-26 ESOP date; new ESOP scheme size; Q3 dilution", from_finding_id: [RES-A3-06, CC-A3-16, PR-FN02]}
+  - {q: "Physical AI and quantum R&D spend and capitalisation; R&D headcount at 30-Sep (128 dated Jun and Sep)", from_finding_id: [PRS-A3-04, STR-F6-a, CC-A3-12, STR-F14-a]}
+  - {q: "First NSM 2.0 order quarter in management's words; outlay behind 'more than half'", from_finding_id: [CC-A3-08]}
+  - {q: "Share of pipeline that is CSP-routed IndiaAI demand; neocloud exposure in book and receivables", from_finding_id: [CC-A3-10]}
+  - {q: "Name competitors in lost bids", from_finding_id: [CC-A3-14]}
+  - {q: "Reconcile FY25 offering revenue Rs 1,143.2 Cr with operating income Rs 1,149.0 Cr", from_finding_id: [STR-F14-d]}
+  - {q: "Label deck and release figures standalone or consolidated", from_finding_id: [PR-FN05]}
+  - {q: "Why CFO, strategic-order progress and software share went unaddressed on consecutive calls", from_finding_id: [CC-A3-20, CC-A3-21, CC-A3-22]}
+monitorables:
+  - {item: "Operator rulings 1-5 (does H1 fire thesis-broken #1)", implied_date: "immediate", source_ref: "Notion 25-Oct/26-Oct"}
+  - {item: "Official concall transcript; re-test ASR numbers and inventory answer", implied_date: "~2026-11-02", source_ref: "Notion 26-Oct"}
+  - {item: "Chandelier level", implied_date: "daily", source_ref: "Notion Position Context"}
+  - {item: "QIP Reg 32 / monitoring agency report; Rs 425.58 Cr unutilised; GCP Rs 199.50 Cr", implied_date: "next filing window (ND)", source_ref: "RES Note 3 L314-315; PRS R285-R291"}
+  - {item: "Rubin offered to customers", implied_date: "2027-01 (year implied)", source_ref: "CC L306-307"}
+  - {item: "ESOP 4,935 options vest", implied_date: "by 2027-01-18", source_ref: "RES Note 4 L316-317"}
+  - {item: "Q3 FY27 results: FG/WIP change, revenue vs Rs 928.5 Cr/qtr, finance cost", implied_date: "by 2027-02-14 (Reg 33)", source_ref: "RES R025; CC L458"}
+  - {item: "NSM 2.0 first orders", implied_date: "early 2027 (analyst date, assent)", source_ref: "CC L346-348"}
+  - {item: "Promoter lock-in end; sales watch", implied_date: "2027-02 (Notion memory)", source_ref: "Notion Q1 thesis-broken table"}
+  - {item: "Taiwan WOS incorporation; first Investments line; first consolidated filing", implied_date: "undated", source_ref: "RES R368-R376, R162-R163"}
+  - {item: "Order book Rs 2,629.0 Cr execution; L1 Rs 652.5 Cr conversion", implied_date: "Q3-Q4 FY27", source_ref: "PRS R259-R260; CC L547"}
+  - {item: "FY27 revenue Rs 4,000 Cr target", implied_date: "2027-03-31", source_ref: "CC L458"}
+  - {item: "Inventory < Rs 1,000 Cr and FY27 CFO >= ~Rs 250 Cr", implied_date: "2027-03-31; FY27 results by 2027-05-30", source_ref: "Notion 25-Oct; RES R172"}
+  - {item: "CCC within 90-110 days", implied_date: "2027-03-31", source_ref: "CC L374, L381"}
+  - {item: "Quantum simulator R&D status", implied_date: "undated", source_ref: "PRS R340; STR R258"}
+  - {item: "New ESOP schemes", implied_date: "undated", source_ref: "CC L691-692"}
+  - {item: "Q1 FY28 results: growth vs 30-40% band", implied_date: "by 2027-08-14 (Reg 33)", source_ref: "CC L491-500"}
+flags:
+  - "Thesis-broken #1 BREACHED on the H1 reading: CFO/PAT -2.88x (RES R274/R106); firing is operator ruling (1), open; if H1 counts, 8A says EXIT regardless of Chandelier"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION (adverse, firmer after loop 1): inventory is the main drag; customer leg also absorbed Rs 286.20 Cr; credit charges 14.9x; structural vs growth-induced unresolved until 31-Mar-2027 inventory and FY27 CFO"
+  - "All-in margin fell: Op EBITDA less finance cost 14.66% to 13.11% (-155 bps); core PBT margin 13.53% to 12.83% (-70 bps); finance cost 1.80% of revenue"
+  - "EPS above Notion FY27 Bull only if H2 PAT margin holds >= ~8.5% on the Rs 4,000 Cr path (H1 10.36%); cushion ~9%, not ~19%"
+  - "Inventory Rs 804.84 to 1,930.69 Cr (+139.9%); Q2 FG/WIP build Rs 610.09 Cr; inventory-days guide (~110) missed at 117 company / 164.9 period-end"
+  - "Finance cost Rs 23.80 Cr in Q2 vs Rs 12.95 Cr all FY26; ~32% annualised on average reported debt; funding outside Net Debt likely"
+  - "QIP Rs 1,200 Cr (4.40% dilution) funded the WC build inside the issue quarter; company net cash fell Rs 124.4 to 13.6 Cr; checklist #11 RED"
+  - "Checklist #5 RED (software 2.65%), #6 RED (top-10 85.2%), #1 RED; Medium sizing OFF"
+  - "Filed H1 column non-additive by Rs 5.22 Cr (OI and other expenses), likely the Rs 5.64 Cr unrealised FX gain; H1 margin 15.07% filed vs 14.83% additive; quarter margin bound 64 bps Q1 / 39 bps Q2"
+  - "Concall: no CFO figure for 2nd call; 'no pressure' contradicts filing; 'top notch' debtors vs 14.9x credit charges; FY27 Rs 4,000 Cr target implies H2 29.8% below Q2; margin hedge; growth floor 35% to 30% unacknowledged"
+  - "Q10/Q11 (physical AI spend, pipeline split) evaded two calls running; a third triggers the downgrade rule"
+  - "Promoter no-sale test (#5 NO, #7 GREEN) rests on Notion-memory Mar-26 66.98% plus filed 64.16%"
+  - "Concall is a MACHINE TRANSCRIPT; call date 24-Oct vs 26-Oct unresolved (after 16:46:54 IST 24-Oct at earliest)"
+  - "Taiwan WOS approved: consolidated reporting and F2-F4 go live from incorporation quarter"
+  - "Tracker rows not supplied; fewer than 3 signals; reopen Role 5.5"
+  - "Steps 6.5, 7 and Role 5 8D deferred to /fttcp and Role 1 (OR-30); cash multiplier and ROCE inputs flagged"
+plain_language_brief_included: true
+analyst_note: "Loop 1 narrowed the positive claims without changing the verdict. Earnings are real in absolute terms (core PBT +313% YoY), but the margin held only before funding cost: after finance cost it fell 155 bps, and core PBT margin fell 70 bps. EPS clears Notion Bull only if H2 PAT margin stays above about 8.5% on the Rs 4,000 Cr path. Cash failed (H1 CFO -2.88x PAT). Inventory is the main drag, but the customer leg also absorbed Rs 286.20 Cr and credit charges rose 14.9x. I kept INDETERMINATE-WITH-DIRECTION because receivable days improved on both methods and the deciding evidence (31-Mar-2027 inventory, FY27 CFO) is unfiled; the adverse direction is firmer. The QIP bridge closes from the deck (767 + 403 + 30 = 1,200). The Rs 5.22 Cr H1 regroup likely reflects the Rs 5.64 Cr unrealised FX gain. The promoter no-sale test rests on Notion-memory 66.98%. The decisive input remains the operator's ruling on whether H1 fires thesis-broken #1."
+review_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/review_netweb_q2fy27.md"

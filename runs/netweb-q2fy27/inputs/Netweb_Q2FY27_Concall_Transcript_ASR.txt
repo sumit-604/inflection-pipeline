@@ -1,0 +1,754 @@
+MACHINE TRANSCRIPT (ASR). Source audio: Netweb_Q2FY27_Concall.mp3 (3454s). Tool: faster-whisper small.en, int8, beam 2, 600-second chunks, VAD on. Produced 2026-10-28 09:12 IST by Claude Code. Speaker names are not identified; numbers may be misheard. Treat every figure as management-tier and unverified; prefer the filed documents where they conflict.
+
+[00:00:00] Ladies and gentlemen, good day and welcome to Netweb Technologies Q2 FY27 earnings conference
+[00:00:07] call hosted by ICIC security audience. As a reminder, all participant lines will be in the
+[00:00:13] listen only mode and there will be an opportunity for you to ask questions after the presentation
+[00:00:18] concludes. Should you need assistance in the conference call, please signal an operator by
+[00:00:23] passing star then 0 on touchstone 4. Please note that this conference is being recorded.
+[00:00:28] I now hand the contents over to Miss Sima and I from ICICA Securities.
+[00:00:33] Thank you and over to you Miss Naik.
+[00:00:36] Thank you. Good afternoon everyone.
+[00:00:39] On behalf of ICICA Securities, I welcome every 20 next year's technology due to SI27-24.
+[00:00:45] We have announced that the same CME management team of Microsoft Technology,
+[00:00:50] led by CME Mr. Sander Lota, full-time director Mr. Laveen Lota,
+[00:00:55] CFO, Mr. Ankit Kumar Singal.
+[00:00:57] He's Sales and Marketing Officer, Mr. Redeye Vikram.
+[00:01:01] He's
+[00:01:02] Mr. Mukul Karya
+[00:01:03] and Head of Yorta's Advisors,
+[00:01:05] the IR Advisor to Network Technology, Mr. Sanjay Sanketi.
+[00:01:09] So without further ado,
+[00:01:10] I'd like to hand over the floor to Mr. Sanjay.
+[00:01:13] Over to you, sir.
+[00:01:16] Sir, thank you, Sima.
+[00:01:18] Good afternoon to all the participants.
+[00:01:21] Before I hand over the call to Mr. Sanjay and Lodha
+[00:01:24] for their opening remarks,
+[00:01:26] I would like to draw your attention to the safe harbor statement in the earning presentation.
+[00:01:31] I request each one of you to go through the disclaimer in that presentation before the
+[00:01:36] meeting starts, so that you are aware of the same.
+[00:01:40] Thank you and over to you Mr. Loda.
+[00:01:44] Thank you Seema and Sanjeev.
+[00:01:46] Good afternoon and a warm welcome to all of you to let we are pleased to report Peninsula
+[00:01:57] 27 has been another record-breaking quarter for network technologies.
+[00:02:00] with our highest ever quarterly revenue from operations and profit after tax.
+[00:02:05] Both revenue and profit grew 4 times year on year.
+[00:02:08] H1 financially at 27% reached 222 crores surpassing our full year financially at 26% of 206 crores in just 6 months.
+[00:02:20] In Q2 financially at 27% revenue from operations grew at a rate of 335.7% year on year to 1323 crore
+[00:02:29] operating avatar increased by 334% year-on-year to 197 crores with a margin of 14.9%, 348.8%
+[00:02:44] year-on-year to 137 crores translating into a margin of 10.2%.
+[00:02:49] For ability to sustain margins while scaling rapidly reflects strong execution and operation
+[00:02:56] is the key amid rising demand for high-performance computing and AI infrastructure.
+[00:03:02] AI systems remain our primary growth driver, contributing 773 crores or 58.4% of revenue
+[00:03:11] from operations.
+[00:03:12] By registering a growth of 1068%, 68.1% year-on-year, HPC and private cloud also delivered robust
+[00:03:21] performance, contributing 248 crore and 245 crore respectively.
+[00:03:27] Highlighting the strength of our diversified growth portfolio, as on September 30th, 2026,
+[00:03:34] our recovery order books stood at 2,629 crore, with an additional L1 position of 653 crore,
+[00:03:42] providing strong revenue visibility for the coming waters.
+[00:03:46] The quarter also marked a significant milestone in our journey, where we successfully raised
+[00:03:51] Rs. 1200 crores through our first capital raise since listing in July 2023.
+[00:03:57] We are grateful to our investors for their over-building response and continued confidence
+[00:04:02] in our business, growth strategy, and long-term potential.
+[00:04:05] Moving to the industry landscape, we continue to witness an unprecedented surge in global
+[00:04:13] demand for AI compute, which India emerging as a significant growth market.
+[00:04:19] The India AI mission represents a major structural tailwind for the domestic AI ecosystem with
+[00:04:25] the potential to accelerate development of indigenous AI capabilities, expand access to
+[00:04:31] advanced computing infrastructure, and strengthen India's AI sovereign AI capabilities.
+[00:04:37] Government bodies, public institutions, and large enterprises increasingly view computing
+[00:04:43] infrastructure as strategic infrastructure, prioritizing secure, high-performance systems
+[00:04:48] that enable critical data and workloads to remain within the country while optimizing
+[00:04:54] in the AI token economics.
+[00:04:58] The cost of its effective token generation
+[00:05:00] requires more than access to advanced compute.
+[00:05:03] It also demands strong engineering,
+[00:05:06] system design and solutioning capabilities.
+[00:05:08] Netzwareware invested in developing these capabilities
+[00:05:11] over the years, positioning us to address
+[00:05:14] the evolving requirement of this market.
+[00:05:21] As CSVs, data center operators,
+[00:05:23] enterprises are expanding their GPU intensive infrastructure
+[00:05:27] to meet the growing computational demand
+[00:05:29] for AI training, inference, and other AI-driven applications.
+[00:05:34] India is emerging as an important destination
+[00:05:36] for these expansion plans,
+[00:05:37] creating additional opportunities
+[00:05:39] across high-end computing ecosystem.
+[00:05:42] These developments together,
+[00:05:44] with growing need for indigenous computing capabilities
+[00:05:46] and end-to-end technology stacks,
+[00:05:48] are reinforcing the importance
+[00:05:50] of sovereign computing infrastructure
+[00:05:52] with our integrated design and engineering capabilities,
+[00:05:55] in-house manufacturing,
+[00:05:57] an end-to-end solution deployment expertise,
+[00:05:59] NetWeb is well-positioned to address these requirements.
+[00:06:06] So computing and private cloud
+[00:06:07] have also delivered excellent results.
+[00:06:09] Further validating our national supercomputing mission 2.0
+[00:06:16] places greater emphasis on designing
+[00:06:18] and building computing infrastructure in India
+[00:06:21] and HPC adoption across enterprise,
+[00:06:23] indigenous design and manufacturing,
+[00:06:25] along with bespoke solutioning
+[00:06:27] are becoming increasingly important differentiators
+[00:06:30] in the high-end computing landscape.
+[00:06:34] We believe these structural drivers
+[00:06:36] will support a sustained growth cycle
+[00:06:38] and high-end computing space.
+[00:06:40] Our active pipeline of approximately 11,152 crores
+[00:06:44] represent the total value of business opportunity
+[00:06:47] currently under pursuit
+[00:06:49] and serve as an indicator of demand visibility.
+[00:06:52] It is important to distinguish this pipeline
+[00:06:54] from our total addressable market, that is a TAMP,
+[00:06:57] which is significantly larger
+[00:06:59] and represents broader market opportunity
+[00:07:01] available to them.
+[00:07:03] Together these forces reinforces our confidence
+[00:07:06] in growth opportunities ahead.
+[00:07:10] In our core business, we continue to explore
+[00:07:12] emerging opportunities in physical AI
+[00:07:14] and quantum computing,
+[00:07:15] leveraging our technological expertise
+[00:07:17] and established capabilities.
+[00:07:19] As communicated earlier,
+[00:07:21] we are advancing initiatives in both these areas.
+[00:07:24] In physical AI, we are developing capabilities
+[00:07:27] across technologies that leveraging our AI systems,
+[00:07:29] digital means in-house software support, training,
+[00:07:32] simulation requirements.
+[00:07:33] In quantum computing, we have promised R&D
+[00:07:36] on quantum simulators and emulators
+[00:07:38] and are engaging with institutions,
+[00:07:41] hubs and startups across ecosystem.
+[00:07:43] Further strengthening our focus on technology development,
+[00:07:47] our board has also approved the establishment
+[00:07:49] of a wholly owned subsidiary of Netweb in Taiwan
+[00:07:53] for advancing our R&D efforts.
+[00:07:56] This is an important step towards deepening R&D
+[00:07:58] in IT hardware and strengthening our technological capabilities as India's leading technology
+[00:08:04] OEM.
+[00:08:05] We believe this initiative will further support our pursuit in innovation and our ambition
+[00:08:10] to design and manufacture advanced computing solutions in India.
+[00:08:14] Leading Indian OEM in the high-end computing solutions, we continue to invest steadily
+[00:08:21] in innovation and chip-agnostic design, satisfactory velocity, for alignment with making India
+[00:08:25] vision, a stronger balance sheet with a recent capital raise, and a robust order book positioners
+[00:08:31] for high-end computing, lasting value for stakeholders. Thank you through the financial
+[00:08:45] performance in great detail. Ladies and gentlemen, and thank you for joining our earnings call.
+[00:08:57] Before we open the floor for Q&A session, I would like to provide a brief overview of
+[00:09:01] our financial performance for the quarter and the first half of FY27. I trust you have had
+[00:09:08] the opportunity to review our earnings presentation and press release. Let me begin with our quarterly
+[00:09:15] performance. Revenue from operations for Q2-FI 27 stood at rupees 1,323 crore registering a
+[00:09:24] year-on-year growth of 335.7 percent and a quarter and quarter growth of 61.4 percent.
+[00:09:33] Operating EBITDA for the quarter stood at Rs 197 crore increasing 334% year on year and 63.7% quarter on quarter
+[00:09:46] The Operating EBITDA margin stood at 14.9% reflecting our ability to sustain property after tax for Q2F by 27 stood at 0.9%
+[00:10:00] Rs. 137 crore, growing 334.8% year-on-year and 60.2% quarter-on-quarter. The pat margin
+[00:10:11] for the quarter stood at 10.2%. Moving to our first half performance, revenue from operation
+[00:10:20] for H1-Fi27 reached Rs.2143 crore, representing year-on-year growth of 254.2%.
+[00:10:31] Operating IBDAS stood at Rs.323 crore, growing 257.7% year-on-year with a margin of 15.1%.
+[00:10:42] increased 258.5% year-on-year to Rs. 222 crore, with a margin of 10.3%.
+[00:10:53] Our first half performance reflects strong business momentum supported by robust demand
+[00:10:58] across our core segments and discipline execution.
+[00:11:02] Notably, our H1-Fi27 pad has already surpassed our full-year FI27 pad, underscoring the
+[00:11:11] scale of our growth. Turning to our balance sheet, we achieved a zero net debt position
+[00:11:17] during the quarter with net cash position of Rs. 14 crore as of September 2026. In addition,
+[00:11:25] the company had approximately Rs. 403 crore unutilised from the QIP proceeds. This improved
+[00:11:33] financial position supported by our recent capital raise provided us with greater financial
+[00:11:40] flexibility to fund our growth plan. Our cash conversion cycle stood at 94 days with receivable
+[00:11:47] days improving to 62 days while inventory days stood at 117 days. The relatively higher inventory
+[00:11:56] levels are intentional and reflect our preparation for executing the order book of approximately
+[00:12:02] 26,629 crore as of September 26.
+[00:12:09] The strong global demand for high performance computing
+[00:12:12] and the strategic performance importance
+[00:12:15] of these deployments, proactive supply chain planning
+[00:12:18] and availability of critical component are essential
+[00:12:21] to ensure timely execution of customer orders.
+[00:12:25] Our return on equity and return on capital employed
+[00:12:29] stood at 31.4% and 38.6% respectively.
+[00:12:34] These ratios reflect the impact of QIP proceeds on our capital base.
+[00:12:39] Coming to the utilization of QIP proceeds, we had utilized Rs. 767 crore of the proceeds
+[00:12:48] as of September 2026.
+[00:12:51] We remain grateful to our investors for their overwhelming response to the QIP
+[00:12:56] and their continued confidence in the network's growth strategy and long-term potential.
+[00:13:02] To conclude, our growth priorities remain firmly on track, supported by a healthy order book,
+[00:13:08] a strong pipeline of business opportunities and sustained demand for high-end computing solutions.
+[00:13:15] We remain focused on scaling our business, executing customer order efficiently,
+[00:13:20] and maintaining operating discipline and profitability.
+[00:13:24] With that, I would like to conclude my remarks and invite the moderator to open the floor for Q&A.
+[00:13:30] With this, I now hand over the call to Seema.
+[00:13:34] Thank you.
+[00:13:37] You can now open the floor for questions.
+[00:13:39] Thank you.
+[00:13:40] We will now begin the question and answer session.
+[00:13:42] Anyone who wishes to ask a question may press star and mark.
+[00:13:45] That's no telephone.
+[00:13:47] If you wish to remove yourself from the question queue, you may press star and two.
+[00:13:50] Participants are requested to use hand threats while asking a question.
+[00:13:54] Ladies and gentlemen, we will wait for a moment while the question queue assembles.
+[00:14:03] The first question comes from the line of Mohit Bansal with eternal access capital please
+[00:14:07] go ahead. Mr. Bansal please go ahead. Mr. Bansal please unmute yourself and go ahead.
+[00:14:22] Since there is no reply from the line of Mr. Bansal we will move to the next that is
+[00:14:26] Sia Garvit Goen, that is Shrenik Mehta from Indo-Alts please go ahead.
+[00:14:32] Hi I just wanted to ask the basic question about how fast is overall method growing outside its
+[00:14:47] top five customers. So we see a lot of growth in the top five but not very clear
+[00:14:53] about how you're seeing the growth outside of the top five customers.
+[00:15:00] I will let Ankit answer it because I think the President, I think the presentation mentions that very clearly.
+[00:15:04] So if you see we had been adding our new customers, we added 449 new customers in
+[00:15:14] this H1 and if you put three and a half year as a period we have added close to like 500
+[00:15:22] new customers to the order book and this is a very important metric that we always report
+[00:15:28] in our presentation because it accounts for like eight to nine percent new customer being
+[00:15:34] added to our revenue book.
+[00:15:37] So having said that, the company has been consistently working on and growing on the
+[00:15:44] customers beyond top 10 and top 5 and even these top 10 and top 5 customers is not as
+[00:15:50] these are not the static customer, there is a pool of 25-30 customer which keeps on changing.
+[00:15:56] So having said that, you will see that we are consciously working on the customers and
+[00:16:03] the repressivation.
+[00:16:04] Just to add on to what Ankit said.
+[00:16:07] So while you are seeing one particular static top 5, top 10,
+[00:16:12] but in every quarter, every year, those change.
+[00:16:16] So it is not that the business in the medium term
+[00:16:19] is concentrated to do these 5, 10 customers.
+[00:16:22] They are new customers who come into those top five.
+[00:16:24] So that's churn which happens.
+[00:16:26] So 25 to 30 customers probably have churned
+[00:16:30] over the last two, three years
+[00:16:32] to take the top five, top 10 place.
+[00:16:35] Hence, while in statistics, it looks like a very heavy concentration activity is not.
+[00:16:43] Okay, all right, thank you.
+[00:16:50] Mr. Matha, are you done with the questions?
+[00:16:53] Yes.
+[00:16:54] Thank you.
+[00:16:56] A reminder to all the participants,
+[00:16:58] please restrict yourself to two questions.
+[00:17:01] Next question comes from the line of Jatin from Bank of America.
+[00:17:04] Please go ahead.
+[00:17:06] Hi, congratulations team, a great set of numbers.
+[00:17:10] The two questions that I have is,
+[00:17:12] The first one is around if you can detail a little bit more
+[00:17:15] about your plans in the Taiwan Subsidy.
+[00:17:19] What do you intend to do there?
+[00:17:20] Are you planning some sort of a partnership
+[00:17:23] with some local company over there?
+[00:17:25] Some additional color would be really helpful.
+[00:17:28] And then the second one that I had
+[00:17:29] is what is the progress on the next set of servers
+[00:17:34] that is VeriRubin?
+[00:17:37] Does our order book already have VeriRubins in it,
+[00:17:40] or does it form part of the next orders
+[00:17:44] that we'll start receiving.
+[00:17:45] Thank you.
+[00:17:47] Thank you, thanks for your question actually.
+[00:17:49] So on the Taiwan Subsuitary I'd like to state that,
+[00:17:52] that basically, Netweb has decided to set up
+[00:17:55] its 100% fully owned subsidiary.
+[00:17:58] There is no partnership,
+[00:17:59] but there is no basically with somebody actually.
+[00:18:02] This is primarily completely owned by Netweb only,
+[00:18:04] and this is primarily only for R&D purposes actually,
+[00:18:08] because basically we have, you know,
+[00:18:10] basically since we are a company
+[00:18:11] which is growing at a faster rate,
+[00:18:13] and new products are always there in pipeline
+[00:18:15] and with India and basically all other solution providers
+[00:18:19] introducing products at a very fast rate.
+[00:18:22] So basically we need design engineers and all that.
+[00:18:25] So getting resources sometimes in India
+[00:18:27] becomes a challenge actually on the hardware side of it.
+[00:18:29] So that's the reason the primary purpose
+[00:18:31] is to have more, to hire more manpower
+[00:18:34] so that basically they can be available locally in Taiwan
+[00:18:37] And since those kind of people are easily available
+[00:18:40] in Taiwan, so basically, so that those resources
+[00:18:43] can be used for R&D capabilities,
+[00:18:45] this will only enable and help us
+[00:18:47] so as to speed up our R&D capabilities.
+[00:18:50] This is the only purpose of that subsidiary in Taiwan.
+[00:18:53] This next question I will ask here the answer.
+[00:18:56] So hi, thanks for the question for,
+[00:18:58] what is our plan for Bela Rupin?
+[00:18:59] So just to share with you that our plan is,
+[00:19:02] you know, very much in time that we'll be launching
+[00:19:05] And in fact, the process of designing, writing schematics,
+[00:19:12] and creating these geographers and all,
+[00:19:14] that all has already started,
+[00:19:16] and as a result of it, very soon,
+[00:19:19] we'll be having first Verarubin system
+[00:19:22] set up in the country very soon at our facility.
+[00:19:25] So these plans are very much intact,
+[00:19:27] and as you have seen that in the past also,
+[00:19:29] we have always kept our product launches
+[00:19:32] matching with worldwide timelines.
+[00:19:33] So same is the process that we are following
+[00:19:36] in case of Verarubin as well.
+[00:19:39] So this will be, I mean, commercial for, so we will be planning to basically start offering
+[00:19:45] this product to be sold to the customers by January.
+[00:19:48] So we'll see if we can pull in the timelines.
+[00:19:50] Thank you so much.
+[00:19:54] This is really helpful and the Taiwan hiring bid that you plan to do is definitely encouraging.
+[00:20:00] If I can flip one more, the inventory that you have currently, the 1900 crores width,
+[00:20:07] fair to assume that we will execute that within Q3 Q4.
+[00:20:12] Yeah, yeah, so this inventory actually is to the order book only and yeah, they will be churning
+[00:20:21] from this inventory definitely.
+[00:20:22] Perfect, sure.
+[00:20:25] Thank you so much, all the best.
+[00:20:32] Thank you.
+[00:20:33] comes from the line of Vinay Menon with Monash Capital, please comment.
+[00:20:38] Hi sir, and congratulations on great show numbers. Couple of questions from my side,
+[00:20:43] gross margins you know have declined and I agree that there are you know component prices are up
+[00:20:49] and that is adding pressure but what base can we look for you know in the next few quarters and
+[00:20:54] where could we see a steady state in terms of gross margins?
+[00:20:57] So I think gross margin is very difficult to monitor on a quarter on quarter basis.
+[00:21:03] I think it would be good for us to look at a fully as basis and I think we will do, we
+[00:21:10] guide on EBITDA so we are still well in line on EBITDA.
+[00:21:14] So Vinay I would also like to add here, so it is important to see the EBITDA framework
+[00:21:22] which is being followed, so when we enter into a very large scale deal, so the profile
+[00:21:28] is in a different with the small deal. So cross margin becomes a game of different deal makes which
+[00:21:34] cannot be judged on quarter and quarter basis. But the EBITDA framework is well maintained when
+[00:21:40] there is a large deals coming in with whatever gross margin there is obviously the overhead
+[00:21:47] cost structure do not grow in that proportion. So there is obviously an leverage which comes
+[00:21:53] when we do large deals and that's why the company has showcased operating
+[00:21:58] a bit of margins to remain around 14%
+[00:22:00] One more question, we've seen Neoclouds like Yota, E2E announcing Kpex, F527
+[00:22:09] and even beyond and we also saw an RFP from CDAC for some about 10,000 GPUs
+[00:22:15] are these part of our current pipeline or do we see any additional pipeline
+[00:22:22] an order book coming from these kinds of deals where we could pay a major role.
+[00:22:27] So thank you for pointing it out but basically all the names which you mentioned all are customers
+[00:22:33] and they are very much in the order books in the funnel everywhere but basically we don't
+[00:22:37] specifically state the numbers of the orders or the quantities of particular customers because
+[00:22:42] basically I hope you'll understand the reason for that but still you can see the order book is
+[00:22:47] still after execution of such a robust revenue this quarter still the order book has also
+[00:22:53] increased it was 2500 crores last class quarter it is 2600 crores if you add the basically
+[00:22:58] the L1 it would be around 31-3200 crores actually large order book.
+[00:23:06] One last small question sir in terms of NSM 2.0 when can we start expecting some orders
+[00:23:12] from it early 27th?
+[00:23:13] Yeah you are right.
+[00:23:14] Thank you and all the best to you. Thank you. Next question comes on the line of
+[00:23:28] safe shake with a city pillar please go ahead. Hi, thank you for the opportunity and a great
+[00:23:37] set of members congratulations on that. So, I would like to ask about the Taiwanese subsidy
+[00:23:42] that you are setting up. Will this kind of enable us to kind of put a company on the
+[00:23:48] that as it of the Taiwanese audience will be able to launch out new products at the
+[00:23:54] same price as it of YVN or Ticotron etcetera. Second question I would like to follow up on
+[00:24:01] the working capital cycle, but first if we can answer this question.
+[00:24:05] And what is the second question? The working capital, next working capital. So,
+[00:24:13] how is the working capital expected to shape up in the forthcoming year?
+[00:24:16] Basically, first I will answer the first question.
+[00:24:23] I hope you will appreciate that, that basically company has been very clearly a make in India
+[00:24:28] company and we want to focus on manufacturing in India itself because the company is a 25
+[00:24:33] year old company and from the very beginning, since inception, the idea has been to design,
+[00:24:38] develop and manufacture in India.
+[00:24:40] So that was the idea actually, and plus basically there are two major differences between the
+[00:24:45] ODM's and network is primarily one is that, that we are India focused, the second
+[00:24:49] is that we are not box pushers. Most of the audience which you mentioned they primarily
+[00:24:53] manufacture boxes and they just sell the boxes actually. So basically we don't intend to become
+[00:24:59] an ODM kind of basically the name which you mentioned because they are a different kind
+[00:25:03] of companies, we are a different kind of company. We primarily say Taiwan subsidiary will be only
+[00:25:08] used for R&D service, R&D purposes that is only to speed up the R&D efforts from our side
+[00:25:16] And you know that most of these technology providers, they also have their basically the main R&D centers in Taiwan.
+[00:25:22] So being nearer to them also helps actually.
+[00:25:25] So these are the reasons why we have this, but primarily the idea is only R&D at this point of time.
+[00:25:30] In regards to the networking scale, 40 September was 94.
+[00:25:43] And what we anticipate that our cash conversion cycle will operate between 90 to 110 days.
+[00:25:51] considering how the quarter growth goes in. So 90 to 110 is the range where our working capital cycle will operate.
+[00:26:00] Sir, I think last year we kind of operated at some 14 days' method of capital. So is that a one-off thing?
+[00:26:14] And every year it is expected to operate in the same 70 to 80 or 90 days' range?
+[00:26:20] Yes, if we talk about last year, it was 84 days,
+[00:26:26] the cash conversion cycle, it has gone up because in this year we had been doing the efforts on the
+[00:26:35] inventory days considering the large order book we have in hand.
+[00:26:39] So even going forward, we will operate in this range only.
+[00:26:53] Thank you. Next question comes on the line of Sandeep Bisha, the Equal Security Security Service.
+[00:26:58] Yeah, thanks for the opportunity and congratulations for a strong quarter.
+[00:27:05] Just the gaining passion from the Chinese memory chip maker like CXMP or YMPC.
+[00:27:14] If this scales up, are we ready in terms of making a schematic changes in our design of the server to incorporate this kind of a new partnership?
+[00:27:25] Currently, the architecture changes are not very swiftly moving towards the technology
+[00:27:35] that you are referring to, so that is going to take some time and definitely this is also
+[00:27:41] important to share with you that in case if there is some architecture change which happens
+[00:27:45] very shortly or very far, then we will also be able to adapt to it and there will be other
+[00:27:51] comparable or competing players who will also be able to offer the platform.
+[00:27:55] So I think for now, we are having a good roadmap available, which will serve at least for two
+[00:28:01] to three years in terms of introducing the new product line that we will get into the
+[00:28:05] current one.
+[00:28:06] So that way we are confident of the product line that we are carrying.
+[00:28:11] Okay, thanks.
+[00:28:12] And just a related question to optimize the token cost world over some of the Fortune
+[00:28:19] 500 clients are preferring multi-model architecture where they are using frontier models, small
+[00:28:26] language model, open source model. So does that also changes our server design in terms of
+[00:28:35] incorporating various model options and does those kind of a server demand is increasing even in India?
+[00:28:44] So one thing which is very important which you must have also noticed by now which we have
+[00:28:48] always been highlighting that we have always been focusing on all the layers of our solution and
+[00:28:53] And you know, when we design the solution,
+[00:28:55] we focus on providing compute, interconnect storage,
+[00:28:58] and the layer above that, which includes our cloud stack also.
+[00:29:02] And by virtue of that, only we have been able
+[00:29:04] to achieve better token economics for our end customers.
+[00:29:07] So it is not basically demanding the architectural change
+[00:29:11] in the server architecture,
+[00:29:13] but rather it is demanding a better design solution,
+[00:29:15] which includes optimized design
+[00:29:17] and going by the reference architecture of NVIDIA chips.
+[00:29:20] So that's how we achieve better token economics,
+[00:29:22] and we have been helping our customers
+[00:29:24] based on that only.
+[00:29:25] So I think we have been able to justify
+[00:29:29] whatever token maps we have to give to our end customers.
+[00:29:32] We have been able to justify that
+[00:29:33] based on that only adoption of our platforms
+[00:29:36] are happening across multiple customer segments.
+[00:29:40] Okay, okay, thanks.
+[00:29:42] And just last question, in the AI-led order intake,
+[00:29:47] is it the traction is also coming
+[00:29:49] from the private organization within India,
+[00:29:52] or is it largely skewed towards government?
+[00:29:56] And what is the typical average size of?
+[00:30:00] AI lights server demand or order.
+[00:30:30] And basically, it's no more primarily AI is a bomb at play.
+[00:30:34] There could be the private demand is also,
+[00:30:36] enterprise demand is also very heavy.
+[00:30:39] Thanks, all the best.
+[00:30:45] Thank you.
+[00:30:46] Next question comes from the line of Patek Singh
+[00:30:48] with IIFL Capital, please go ahead.
+[00:30:53] Hi, thanks for the opportunity
+[00:30:55] and governance of the certain members.
+[00:30:58] My first question is about who had so,
+[00:31:00] also who's been looking at it?
+[00:31:02] Even had the bulk of the strategy
+[00:31:04] for the last 50 billion,
+[00:31:05] none of the behind us.
+[00:31:07] maybe three billion is less. I understand that we should not be looking at the business
+[00:31:11] number, kind of like the perspective. Yeah, your voice is not clear. We are not able to,
+[00:31:16] we are not able to understand. Can you speak clearly?
+[00:31:19] You speak a little louder. We cannot hear you.
+[00:31:22] Is it, yeah, is it better now? Yes, yes, please go ahead.
+[00:31:27] Yeah, so I was asking how do we look at 2H, now that the bulk of the strategic order of
+[00:31:33] around the middle billion is behind us.
+[00:31:35] I understand that we should not be looking at it
+[00:31:38] from a quarter to quarter perspective,
+[00:31:40] but just so we can get a sense.
+[00:31:42] 2x revenue would likely be higher than 1x as it has been in the past,
+[00:31:46] or we can see a change of thinking.
+[00:31:50] So basically, the thing is that I will keep my...
+[00:31:54] Basically, I can only tell you if you see the order book,
+[00:31:57] that will itself give you an indication how that 2x will look, actually.
+[00:32:00] actually. So basically I'll leave that calculation on your end but I can only
+[00:32:04] assure you one thing that we are targeting to achieve 4,000 crores of
+[00:32:07] revenues is this particular financial.
+[00:32:13] I understand.
+[00:32:14] Can we get a sense as to which segments are driving the order book?
+[00:32:17] So increase, is it largely AI or it's broadly across all segments?
+[00:32:23] I think you are not audible.
+[00:32:25] Okay, sorry, I'll join the queue.
+[00:32:29] Thank you. Next question comes from the line of C.A. Garveer Kowal,
+[00:32:36] with Sireen, Alfa, please go ahead.
+[00:32:40] Hi, I'm Oriba, good evening and congrats
+[00:32:45] for a good set of numbers.
+[00:32:47] I wanted to understand on the growth perspective
+[00:32:51] in ABBA 28 and onward,
+[00:32:54] I understand that your pipeline is 11,000 CR plus,
+[00:32:59] but in order to grow at the higher base,
+[00:33:01] the kind of execution people have delivered in ABBA 27,
+[00:33:04] it's actually mind-going, right?
+[00:33:06] So on that day to continue a growth of 30-35% in 28 and onwards,
+[00:33:12] we need to close a significant portion of the pipeline
+[00:33:15] into confirmed order book by April 27.
+[00:33:20] So can you put your view on that, like where
+[00:33:24] we are in terms of closing this pipeline into confirmed order?
+[00:33:28] If you can put some probable number, what kind of order book
+[00:33:32] it will look like at the end of financial year 27.
+[00:33:37] So Garveer, I think you are following the company
+[00:33:40] for the last five days, I think so.
+[00:33:42] You might have seen basically whatever we have committed,
+[00:33:45] we have delivered.
+[00:33:46] Okay, if you see the base which was basically 400 crores
+[00:33:51] while we did the IPO, okay, and basically today,
+[00:33:55] what I am suggesting that you'll be doing
+[00:33:57] around 4,000 crores.
+[00:33:59] So basically that's 10 times actually.
+[00:34:01] And we have always constantly kept our growth numbers
+[00:34:04] around 30 to 40% CAGR kind of growth
+[00:34:06] which are promised year on year.
+[00:34:08] And seeing the current AI demand
+[00:34:10] and the kind of technology innovation
+[00:34:11] which we are trying to do,
+[00:34:12] the kind of unique proposition which network brings
+[00:34:15] from the table for the, in the Indian AI ecosystem,
+[00:34:18] definitely we are very confident to maintaining that growth
+[00:34:21] for at least three to, next two to three years actually.
+[00:34:24] And the, you see the pipeline has been also very robust.
+[00:34:27] It has been clearly growing at a constant pace
+[00:34:30] But basically if you tell me that in a minute it will change something or basically the
+[00:34:35] conversion ratio will change, these things doesn't happen this way.
+[00:34:39] It basically happens only gradually.
+[00:34:41] We have a conversion ratio of around 60% of the pipeline which basically and the pipeline
+[00:34:46] keeps on adding every day.
+[00:34:48] So that gives us the confidence that basically we'll keep on growing at the same rate of
+[00:34:52] 30 to 40%.
+[00:34:53] Also just to add here, just let me Sanjeev, let me add here, so if you look at last quarter's
+[00:35:00] order book after was about 24-2500 and after billing about 1300 plus crores we are actually
+[00:35:10] above the last quarter's order and the second thing is that we cannot have a confirmed order
+[00:35:15] for the whole of next year right away right the conversion happened gradually but the strike
+[00:35:20] rate is 60% and we are sitting on the pipeline of more than 10,000 crores I think it's mathematically
+[00:35:26] you can yourself, kind of, you know, do a model for yourself.
+[00:35:31] Understood, sir.
+[00:35:32] And secondly, I wanted to know your view.
+[00:35:37] You might have addressed it in the opening remarks,
+[00:35:39] to an extent.
+[00:35:40] But I wanted to understand, from the perspective of AI
+[00:35:45] K-tex that is happening in the global market,
+[00:35:50] if I look at the rising cost of capital,
+[00:35:56] the capital that was available to these players maybe six months or 10 months ago,
+[00:36:02] the cost of that capital has increased significantly now. So, are you people
+[00:36:08] hearing any kind of hindrances or any kind of reduction in the paychecks by these hyper
+[00:36:16] scalars as well due to rising cost of capital? I just wanted your view on that.
+[00:36:20] The problem is different that basically as if the demand increases, definitely the pricing and the cost of capital, the memory prices have gone up by 200% or maybe even more than that.
+[00:36:35] But do you think that has impacted the demand, that has not impacted the demand?
+[00:36:39] And plus please keep in mind my complete business is not dependent upon the overseas kind of a demand which is coming to India.
+[00:36:45] basically we have a very very balanced kind of a demand we have from various areas but
+[00:36:50] personal my personal view is that the definitely cost of capital and all those things basically
+[00:36:54] can really will go up because the demand will go up but that will not deter the demand.
+[00:37:02] What about it sir?
+[00:37:03] Thank you sir I know all about for the picture thanks.
+[00:37:04] Next question comes from the line of Nishita.
+[00:37:05] I remind of you all participants please restrict yourself to two questions.
+[00:37:11] Yeah am I audible?
+[00:37:12] Yeah hi.
+[00:37:13] Yeah, am I audible? Yeah, so like we have a very good order pipeline of around 10,000
+[00:37:30] kawaiina conversion ratio is also of around 60 cents. So you saying that we can achieve
+[00:37:37] a 34 percent Kegers is that conservative because from where I see and from how much we can
+[00:37:43] come first our pipeline he can easily achieve like around 50 to 70 60 percent
+[00:37:49] growth you can't hear you anymore hello hello hello have you completed your
+[00:38:01] question yeah am I audible yeah so I just wanted to understand if we are being
+[00:38:09] conservative when it will grow 30-40%. I cannot give a guidance on a guidance. My guidance
+[00:38:19] stands where it is. Okay okay and my next question is I just wanted to understand the
+[00:38:25] execution timeline of a current order book. It depends it is 10 to 16 weeks. I'm sorry
+[00:38:35] 10 to 16 weeks. If we have not of the current order book that's the standard with any
+[00:38:44] order that basically given timeline we have. Okay, okay. Thank you. Thank you.
+[00:38:58] Let's question come from the line of. From graduation on our report portal, my question
+[00:39:09] is on the order pipeline. If you could give a break up of the pipeline between India AI
+[00:39:14] sovereign AI and organic, that would be helpful. And what is your outlook two years down the
+[00:39:20] line? Thank you for your question actually, but unfortunately we don't share the break
+[00:39:27] of the order book actually, but basically I can tell you it's a very healthy mix, the
+[00:39:35] enterprise is also very very active these days, and basically the demand is from the government
+[00:39:40] and enterprise both are mixed together, and if you ask me in today's order pipeline I can
+[00:39:44] only tell you that maybe enterprise would be more than the government at this point of
+[00:39:48] time, but basically this keeps on changing quarter on quarter actually, and it's that
+[00:39:54] I will not be able to mention to you but other thing basically as regards the growth is concerned
+[00:40:00] We indicated you the number which we are targeting this year and we are also, we are planned to
+[00:40:05] grow by 30%, 30, 40% CAGR continuously for next few years now.
+[00:40:09] So we are very confident about that.
+[00:40:14] And what percentage of NSM 2.0 outlay are you targeting?
+[00:40:18] Actually NSM 2.0 is basically, we are definitely targeting a good percentage actually more
+[00:40:27] than half of it we should be targeting actually but it will not come as in one
+[00:40:32] go because basically that's a five-year program so that will come as
+[00:40:36] slowly as it comes but we will be very well positioned because a lot of
+[00:40:39] Indianization and local manufacturing and all these things have been given
+[00:40:44] with it under that program so as soon it rolls over I think that will be that we
+[00:40:48] will reap all benefits of that. Got it. Thanks for taking my question. Thank you.
+[00:40:59] Next question comes on the line of Tivesh Mehta with Inlesco India mutual fund please
+[00:41:05] go ahead.
+[00:41:08] So, thanks for taking my question, what I wanted to understand is actually two things, what
+[00:41:14] is in my understanding I think beyond the working capital of 110 days 90 to 110 days
+[00:41:22] which we need a lot of orders will also require us to block a certain amount of cash in terms
+[00:41:28] of fulfilling that order right.
+[00:41:30] So, any color as to how that would have impacted our cache flows in the recent time, I think
+[00:41:38] that is the first question that that is the first question and the second part is take
+[00:41:45] for an example hypothetically a feedback which is the tender put around creating a GPU cluster
+[00:41:51] of around 10,000 CPUs via some vendor.
+[00:41:53] So, in your understanding such large orders, how fast do they get executed?
+[00:42:00] Do they get executed 10,000 CPUs in one single slot or do they go to a single vendor and
+[00:42:07] then that vendor buys from you?
+[00:42:09] In your understanding, it's typically if there's an open tender of something of similar concept
+[00:42:14] as how would the timeline flow down, any color on that, those are the two questions.
+[00:42:24] So as far as the first question is concerned, regarding the blockage of any cash flows,
+[00:42:31] we haven't seen any substitution because if you see there is a significant improvement
+[00:42:36] in the receivable days in this quarter.
+[00:42:39] So all our debtors that is being reported are all very healthy and top notch and there
+[00:42:46] is no such case of any bag that are being elongated beyond one to ten day cycle.
+[00:42:53] So there is no, as such on these cash flows,
+[00:42:58] whereas inventory is concerned,
+[00:43:00] it is a bit intentional that we are preparing
+[00:43:02] for the upcoming orders.
+[00:43:05] The order book is significantly large,
+[00:43:08] if you see it's of 2,600 crore.
+[00:43:10] So the investment is going basis,
+[00:43:14] the supply chain demand and the kind of lead time
+[00:43:19] which has gone up.
+[00:43:20] So in order to secure the execution of these orders,
+[00:43:23] we have done so. So, there is no any pressure on that, in terms of.
+[00:43:30] Thanks sir, but when I look at our presentation, we give a specific disclosure called free cash
+[00:43:37] in the balance sheet in the presentation. And when I look at the same number which is in
+[00:43:43] our actual BSC filing balance sheet, both numbers are different, so how is this trying
+[00:43:49] to go to triangulate because I think one of that number says around 350 karo's other number
+[00:43:53] is slightly higher so my understanding was a certain amount is probably sitting as a guarantee
+[00:43:59] or a lien to pull some sort of.
+[00:44:02] So there is a calculation behind this thing which might not be apparently appearing on
+[00:44:07] the balance sheet phase so there are two components one is the free cash that we have.
+[00:44:11] So there are some and deposits which do not primarily appear in the cash but they sit
+[00:44:19] in every bank deposits which are of slightly longer days. So it appears in a classification
+[00:44:28] of bank balance and other than cash and cash equivalent. Yeah, this is just a classification.
+[00:44:33] This is a large part of the difference is because of the money which was raised in the QIP and
+[00:44:38] it is sitting in the, that is also raised in the QIP. So that is 400 crores and the rest
+[00:44:45] is on certain bank guarantees and deposits. So it's a mix of both. But large part of it
+[00:44:52] is because of the money which was raised in the QLP and not yet utilized. So that cannot
+[00:44:57] be considered as cash.
+[00:44:59] Yes sir, thanks for that and that's the last CDAC question.
+[00:45:03] What CDAC has rolled out is an opportunity which is for request for impanalment and under
+[00:45:11] this RFP they are going to impanal CSPs who are going to ultimately offer them the
+[00:45:16] count of GPS that they are targeting to have. When this is definitely not going to stop
+[00:45:20] at 10,000 they are going to demand more because this is the kind of requirement that, because
+[00:45:26] this is on behalf of NDIAI by the way, this is not basically on CDAC's own behalf, that
+[00:45:31] is one. So yes, this is an opportunity which will give us the space to basically create
+[00:45:36] more opportunities for ourselves also, because we are already in touch with those ESPs and
+[00:45:41] many of them are already served by us. So in fact there are certain new players which
+[00:45:46] you know who will also be participating
+[00:45:47] and we are in touch with them.
+[00:45:49] So that way we are pretty much on top of it
+[00:45:52] and this is definitely going to result into
+[00:45:54] you know more pipeline addition for us.
+[00:45:58] Okay, just clarification on this part.
+[00:46:01] So in your understanding is it the case
+[00:46:03] that the existing capacity for India AI mission
+[00:46:06] which was sitting with those two students
+[00:46:08] lastly in our utilize.
+[00:46:10] And do you think that CDAC will roll out
+[00:46:14] 10,000 clusters in a single sort and then in three or 10,000 also going to be severed.
+[00:46:20] You are a bit confused actually, basically what basically there are two parts to it. One is that
+[00:46:26] the earlier in the RFT which was there, so you see that is doing the RFT in behalf of India AI.
+[00:46:32] Okay, this is not CDAC personal requirement, this is India AI requirement and the earlier RFT which
+[00:46:37] they had done when people had offered GPUs actually, those were in utilized but currently
+[00:46:42] what is happening is that the rates, the international rates of the GQs per hour has gone up. Hence
+[00:46:48] basically the India is not able to get the GQs at the older rates. So hence they are
+[00:46:53] trying to come out with a fresh directive which they have just rolled out which people
+[00:46:57] will be building and definitely it will be prevailing as per the market rate. So as
+[00:47:02] soon as they offer the GQs they are getting allocated. So various CSPs will definitely
+[00:47:07] have installations and they can place orders. They have an option of placing orders on
+[00:47:11] us and as the orders are placed we will be delivering. So this is how this will work
+[00:47:15] actually. This is not CDAC trying to deploy these many clusters.
+[00:47:20] Okay thanks a lot. Thank you. Thank you. Next question comes on the line of
+[00:47:28] Mansimar Singh Sethi at Sethi Capital. Please go ahead. I am audible. Okay so in the
+[00:47:38] presentation I have noticed that HDA and IDFC first bank are listed for the
+[00:47:43] first time are customers. I just wanted to know that since you mentioned in the opening
+[00:47:48] remark that the data sovereignty and data localization, especially in the Indian banking
+[00:47:52] system and financial service is key. So could be the banking and be a PSI segment emerge
+[00:47:58] as a significant growth driver for network over the coming years?
+[00:48:01] Very good observation, sir. Thank you so much.
+[00:48:04] Hello.
+[00:48:08] Very good observation, sir. Your observation is absolutely correct.
+[00:48:11] Okay, thank you sir. So, my second question with respect to that is, recently you know
+[00:48:18] Nvidia has launched supercomputers in a computer in the sense they are replacing the traditional
+[00:48:26] PCs and laptops. So, I just wanted to know how does network view this emerging opportunity
+[00:48:32] and are you evaluating or planning to expand into this segment?
+[00:48:35] So basically Netpap is a very very very focused company into the data center enterprise workspace.
+[00:48:42] We normally don't get into client devices and selling boxes.
+[00:48:45] So I don't think the areas which you are mentioning is not very clear to me what exactly you are mentioning.
+[00:48:50] But basically we don't intend to get into laptop space and the client space at all.
+[00:48:59] All the very best for you and the people.
+[00:49:02] Thank you.
+[00:49:03] Thank you.
+[00:49:07] Next question comes on the line of Abhinay Menon with Monak Kebutu please go ahead.
+[00:49:12] Hi sir, thank you for the option. One follow-up. You know, employee costs have come up on a Q1 Q basis.
+[00:49:19] And if I look at last five, six quarters, this number is increasing. Is it because we are adding talent or is it maybe if you can give a break up of ESOP costs also in that, that would be helpful.
+[00:49:32] So, whenever there are two, three factors behind this increase in the employee benefit expenses.
+[00:49:38] First is this quarter is basically quarter where increments has been coming in as a cost
+[00:49:45] of areas.
+[00:49:46] Secondly, there is always a variable phase which comes in line with the growth that we
+[00:49:53] do for the quarter.
+[00:49:54] So, it's bid variable because there is a provisioning of incentives and all which goes in.
+[00:50:00] And third, lastly, yes, there is increase in the headcount.
+[00:50:03] If you see, we have grown by 120 plus employee strength
+[00:50:09] as compared to last year's quarter headcount.
+[00:50:14] So yes, there is, these are three factors.
+[00:50:17] Whereas, as far as ESOP cost is concerned,
+[00:50:21] for this quarter and sequentially the Arswell quarter,
+[00:50:24] there was not significant ESOP cost
+[00:50:26] because the trance which we had given at the time of before the IPO they got vested fully
+[00:50:36] last year itself so there is no much ESOP cost whenever the new ESOP schemes are being
+[00:50:42] distributed then it will have an impact in this area.
+[00:50:45] Okay, thank you and all the best thank you.
+[00:50:53] Thank you.
+[00:50:54] Next question comes on the line of Pradip Nagori, an individual investor please go ahead.
+[00:51:00] Yeah, thank you, thank you for this opportunity.
+[00:51:03] First, congratulations Sanjayji and the entire team for super numbers.
+[00:51:09] Most of my questions are answered, but I would still like to ask one particular question,
+[00:51:13] which is from a future perspective.
+[00:51:15] On your presentation, you mentioned that the new opportunity that we are trying to tap is physically AI and quantum.
+[00:51:22] Could you give us some more details in terms of what exactly we are doing in this space
+[00:51:26] and how large this opportunity can be for network in the next couple of years?
+[00:51:31] So these are the new areas that you know.
+[00:51:34] These are the areas which are developing very well and we are spending it to R&D.
+[00:51:38] Actually at this point of time we are not willing to disclose more about exactly what we are trying to do
+[00:51:43] because as you can very well understand still we have our own reasons actually wherein we have not some brief information which I have already shared.
+[00:51:58] But from a timeline perspective, how do we see in terms of that opportunity getting monetized,
+[00:52:06] meaning like what, next one year, two year, three year, how far your estimate is in terms
+[00:52:11] of monetizing that opportunity?
+[00:52:13] So I think this is just presently in the initial development stage and I believe as and when
+[00:52:22] we believe that we are ready to be ready to envision the exact numbers, we'll get back
+[00:52:28] to it. I don't think we want to speculate on how much we can do at this point in time.
+[00:52:34] Okay, so just last question. You know, within short period of time, like, you know, if you
+[00:52:39] look at YUI numbers for both H1 and Q and the quarter numbers, H1 numbers are growing
+[00:52:47] by about two and a half times and Q on Q, I mean YOI quarter numbers are going by about
+[00:52:52] 3.3 times. But it seems that there is no operating leverage that is taking in because the FATT
+[00:52:59] numbers or the operating margin numbers more or less remain in percentage terms exactly
+[00:53:05] the same. So I mean I would assume that when you know such growth is coming in short span
+[00:53:11] of time, there would be some operating leverage that would be coming in.
+[00:53:14] Sir, you will appreciate that with the scale of growth which we have seen, obviously the
+[00:53:20] size of the business has also increased, the whole structure of the customer profile exchange.
+[00:53:29] So for us to be able to maintain EBITDA is something which we are really focusing on.
+[00:53:35] I think we've already always, we have always very clearly mentioned that we will maintain
+[00:53:45] our IBITDA and PAT and I think we continue to do that.
+[00:53:48] Ankit, you'd like to add something?
+[00:53:50] So, yeah, so if you see the revenue and PAT both have grown four times if we compare with
+[00:53:55] the YOI numbers.
+[00:53:58] So having said that with this scale, maintaining the IBITDA margins, what we have said that
+[00:54:04] 13-14% we have slightly crossed that in this H1 but not to be quoted for the entire year but yes
+[00:54:11] the EBITDA framework while maintaining this large scale is what we have been appreciated
+[00:54:19] off. And also you appreciate that we are a technology heavy company and we have to keep
+[00:54:22] reinvesting in R&D and we monetize all the R&D costs so for us to be able to keep developing
+[00:54:28] new products coming out in the market to continue to remain relevant I think this is a very
+[00:54:33] is peace stop and none of our competitors are even close to what we are. So, I think
+[00:54:38] we are happy to be with this as long as we keep getting the lion's share of the business.
+[00:54:43] Great. Thank you so much. If I could just push one more question.
+[00:54:46] I mean, would you say any other competition for us in India in the space that you are?
+[00:54:54] That is a, we have no idea about that.
+[00:55:00] Okay. Thank you so much.
+[00:55:01] Thank you. Next question comes on the line of Basant Bansal with the NBG investment, please go ahead.
+[00:55:13] Yeah, good afternoon, sir. From the results, from your opening remarks and from the question
+[00:55:21] answer, it looks that everything is good. So what are the concerns and challenges that makes you
+[00:55:28] worried more particularly given the fact that the AI sector itself has lot of concerns?
+[00:55:36] Basically, as regards, there are two, you have to see the glass is half full or half empty actually.
+[00:55:48] To us it looks basically, in my view, AI sector doesn't have much challenges.
+[00:55:53] Definitely any sector which grows at such a fast rate, definitely more eyebrows are there,
+[00:55:58] people will think about it. I personally feel AI has all the complete,
+[00:56:02] three areas we work into. One is the supercomputing. Supercomputing is an area which
+[00:56:07] which we are working for 25 plus years.
+[00:56:09] And basically, cloud, I mean,
+[00:56:11] we are working for 10 plus years.
+[00:56:14] AI, we are working for 15 plus years.
+[00:56:16] So we have seen the entire, basically entire
+[00:56:20] journey of the complete technology development.
+[00:56:22] So we are very robust and we completely feel
+[00:56:25] that the industry seems very robust to us.
+[00:56:27] And we feel that this will keep on growing.
+[00:56:29] And these small concerns will keep on coming
+[00:56:31] and up and down.
+[00:56:32] There are more of investor related concerns.
+[00:56:34] I personally don't feel there are any fundamental
+[00:56:37] issues with the AI demand or something.
+[00:56:39] The way the AI adoption is happening,
+[00:56:41] the use cases are increasing day by day,
+[00:56:44] it's increasing, it's entering into normal persons
+[00:56:47] like actually, so I personally feel
+[00:56:50] that this is only a booster,
+[00:56:53] I don't feel that there is anything negative about AI.
+[00:56:56] This has just started,
+[00:56:59] basically even the image of the story,
+[00:57:01] this has just started,
+[00:57:02] so you know the way token consumption is going up,
+[00:57:05] so you will see that there is a lot of
+[00:57:07] for AI as a technology to grow in coming years so I think there is nothing that you know
+[00:57:13] first of all concerns have started coming up or situation started coming up nothing of
+[00:57:18] that sort.
+[00:57:21] Thank you sir it is very helpful.
+[00:57:27] Thank you.
+[00:57:28] On behalf of IJCA security is limited the concludes this conference thank you for joining us you
+[00:57:32] may now disconnect your lines.

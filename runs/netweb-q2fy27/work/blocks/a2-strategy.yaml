@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "presentation (strategy)"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/ledger_strategy_netweb_q2fy27.md"
+counts:
+  notes: 46
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 50
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 28
+  slide_numbers: 181
+flags_raised: [AMBIGUOUS_MAPPING, LAYOUT_ORDER_MAPPING, RESTATED, DATE_MISMATCH, FOUNDING_YEAR_CONFLICT, UNRECONCILED_PAIR, FOOTNOTE_UNRESOLVED, FOOTNOTE_TRUNCATED, GARBLED, PIPELINE_METRIC, CUSTOMER_QUALITY_METRIC]
+ids_in_structured: 336
+ids_referenced: 336
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Counts reconcile (336 IDs: 181 NUMBER, 50 ENTITY, 31 FORWARD, 28 DATE, 46 QUALIFIER). No zero-standing items; deck has no financial statement tables. Pages 4, 7, 10, 25-27 carry no structured rows (index, text-only product page, dividers, photo). Cross-slide conflicts: R-pair 128 R&D staff and 18 patents dated 30 Sep'26 on p5 (R014/R016) but 30 Jun'26 on p16 (R097/R098); founded 1999 (R022) vs 1996 stated on p19 (R123); 03 vs 17 times top-500 (R020/R021) unclear. 12 repeat/concentration values on p18 (R103-R114), HPS and software series and three p9 mix shares unmapped; p18 footnote unresolved (R306/R307); p21 note 4 truncated (R312). DROPPED_SLIDE not assessable without prior ledger."

@@ -1,0 +1,71 @@
+stage: A3-forensics
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/forensics_concall_netweb_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: N.A.
+  F12: N.A.
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F1", line: "176-178; 614-618", classification: "AMBIGUOUS", implication: "Zero net debt is a QIP outcome; unclear if Rs 403 Cr unused QIP sits inside Rs 14 Cr net cash (if so, about -389 Cr ex-QIP); Rs 30 Cr of the 1,200 Cr QIP not bridged"}
+  - {id: "A3-02", check: "F6", line: "458-459; 489; 170", classification: "FORWARD-SIGNAL", implication: "FY27 target Rs 4,000 Cr implies H2 about Rs 1,857 Cr, about Rs 929 Cr a quarter, 30% below Q2 Rs 1,323 Cr; 2H vs 1H answer declined"}
+  - {id: "A3-03", check: "F6", line: "68; 547-549", classification: "AMBIGUOUS", implication: "Rs 2,629 Cr book at 10-16 weeks exceeds implied H2; either target is a floor or part of book is long-dated; cycle guide moved from 16-20 weeks (Q1, Notion memory) without explanation"}
+  - {id: "A3-04", check: "F6", line: "491-493; 562; 545-546", classification: "FORWARD-SIGNAL", implication: "Growth band floor lowered from 35% (Q4 FY26, Notion memory) to 30%, presented as unchanged"}
+  - {id: "A3-05", check: "F7", line: "728-729; 324-334; 527", classification: "FORWARD-SIGNAL", implication: "New hedge: H1 15.1% margin not to be quoted for full year; gross margin decline unrefuted; memory +200%; H2 margin step-down signalled"}
+  - {id: "A3-06", check: "F6", line: "314-315; 594-595; 181-183; 312", classification: "AMBIGUOUS", implication: "Inventory said to serve both the existing book and upcoming orders; about 72% of book; 117 days above ~110 guide; procurement-ahead-of-orders risk at high memory prices"}
+  - {id: "A3-07", check: "F6", line: "296-299; 306-308; 259-261", classification: "AMBIGUOUS", implication: "Rubin offered to customers by January (2027 implied), underway; book inclusion of Rubin and NVIDIA OEM terms not answered"}
+  - {id: "A3-08", check: "F6", line: "346-348; 565-568", classification: "AMBIGUOUS", implication: "NSM 2.0 first-order date is analyst-supplied with management assent; 'early 27' ambiguous; >half of outlay target with no outlay figure"}
+  - {id: "A3-09", check: "F6", line: "67-69; 343-345; 510-512; 120", classification: "FORWARD-SIGNAL", implication: "Book plus L1 Rs 3,282 Cr vs Rs 3,354.9 Cr Q1 (Notion memory), down about 73 Cr; L1 down about 195 Cr; implied inflow about 1,445 Cr, book-to-bill about 1.09; pipeline up about 7%"}
+  - {id: "A3-10", check: "F6", line: "631-632; 649-651; 339-340", classification: "AMBIGUOUS", implication: "India AI RFP reaches Netweb only via CSPs; checklist #9 direct sovereign order may never fire as written; CSP/neocloud concentration angle"}
+  - {id: "A3-11", check: "F7", line: "587-592; 602", classification: "AMBIGUOUS", implication: "'no pressure' on cash flows with no CFO figure; conflicts with filed H1 CFO of -Rs 639.1 Cr per Notion memory"}
+  - {id: "A3-12", check: "F7", line: "340-342; 553-554; 705-712; 457", classification: "AMBIGUOUS", implication: "Repeat refusals on order-book split and physical AI / quantum spend, second consecutive call; AI order-mix answer lost to ASR gap"}
+  - {id: "A3-13", check: "F7", line: "218; 236-239; 219-223", classification: "AMBIGUOUS", implication: "Concentration reframed as churn with 'probably'; no figure on call; deck top 10 85.2% (Notion memory); operator rules on repeat-evasion test"}
+  - {id: "A3-14", check: "F7", line: "389-390; 734; 738", classification: "AMBIGUOUS", implication: "Competition statements disagree ('not even close' vs 'no idea'); moat claim unverified"}
+  - {id: "A3-15", check: "F7", line: "189-191", classification: "NEUTRAL-FACT", implication: "ROCE 38.6% vs 48.2% Q1 call (Notion memory), QIP equity cited; pillar fact flagged per OR-30"}
+  - {id: "A3-16", check: "F10", line: "690-692; 674-675; 70-71", classification: "FORWARD-SIGNAL", implication: "Pre-IPO ESOPs fully vested; new schemes expected to add ESOP cost and dilution; QIP closed"}
+  - {id: "A3-17", check: "F14", line: "164-166; 171", classification: "AMBIGUOUS", implication: "Q1 implied EBITDA about 120.3 + Q2 197 = about 317.3 vs stated H1 323; H1 margin 15.1% above both quarters; revenue and PAT tie; ASR, definition, or Q1 restatement"}
+  - {id: "A3-18", check: "F14", line: "63-66", classification: "NEUTRAL-FACT", implication: "Segments sum Rs 1,266 Cr vs Rs 1,323 Cr revenue; Rs 57 Cr (4.3%) unallocated on the call"}
+  - {id: "A3-19", check: "F15", line: "147-149; 265-288; 366-369", classification: "FORWARD-SIGNAL", implication: "New wholly owned Taiwan R&D subsidiary; no capital, headcount, budget or date; overseas opex against 13-14% band; ODM denied"}
+  - {id: "A3-20", check: "F17", line: "587-602", classification: "CONFIRMATORY-NEGATIVE", implication: "No CFO figure for second consecutive call while filed H1 CFO is negative per Notion memory; thesis-broken #1 exposure"}
+  - {id: "A3-21", check: "F17", line: "447-448; 455-459", classification: "AMBIGUOUS", implication: "Strategic-order Rs 1,734 Cr H2 milestone unaddressed for second call; analyst premise 'bulk behind us' not contested"}
+  - {id: "A3-22", check: "F17", line: "403-404", classification: "CONFIRMATORY-NEGATIVE", implication: "Software share silent for third consecutive disclosure; 2.65% per Notion memory is below the 4% red line"}
+forward_signals: ["A3-02", "A3-04", "A3-05", "A3-09", "A3-16", "A3-19"]
+ambiguous: ["A3-01", "A3-03", "A3-06", "A3-07", "A3-08", "A3-10", "A3-11", "A3-12", "A3-13", "A3-14", "A3-17", "A3-21"]
+commitments:
+  - {commitment: "FY27 revenue targeting Rs 4,000 Cr", implied_date: "2027-03-31", ref: "lines 458-459, 489", status_word: "initiated"}
+  - {commitment: "Growth 30-40% CAGR next two to three years", implied_date: "FY28-FY30", ref: "lines 491-500, 562", status_word: "maintained (floor down from 35%)"}
+  - {commitment: "Operating EBITDA margin around 14% / 13-14%; H1 level not for full year", implied_date: "FY27", ref: "lines 333-334, 728-729", status_word: "maintained"}
+  - {commitment: "CCC 90-110 days going forward", implied_date: "FY27 onward", ref: "lines 374-375, 381", status_word: "maintained"}
+  - {commitment: "Order execution 10-16 weeks", implied_date: "per order", ref: "lines 547-549", status_word: "changed (Q1 16-20 weeks)"}
+  - {commitment: "Pipeline conversion around 60%", implied_date: "gradual", ref: "lines 506, 513-514", status_word: "maintained"}
+  - {commitment: "Vera Rubin offered to customers by January; first system set up very soon", implied_date: "2027-01 (year implied)", ref: "lines 296-299, 306-308", status_word: "underway"}
+  - {commitment: "Taiwan wholly owned R&D subsidiary with local hiring", implied_date: "not stated", ref: "lines 147-149, 265-288", status_word: "initiated"}
+  - {commitment: "No ODM model; no laptop or client devices", implied_date: "standing", ref: "lines 366-367, 669", status_word: "standing"}
+  - {commitment: "NSM 2.0 first orders early 27 (analyst date, assent); target more than half of outlay", implied_date: "early 2027 or FY27 (ambiguous)", ref: "lines 346-348, 565-570", status_word: "initiated"}
+  - {commitment: "India AI / CDAC RFP adds pipeline via CSPs", implied_date: "not stated", ref: "lines 631-632, 649-650", status_word: "initiated"}
+  - {commitment: "Inventory to churn into order book", implied_date: "Q3-Q4 FY27 (analyst-framed)", ref: "lines 312-315", status_word: "underway"}
+  - {commitment: "New ESOP schemes will add cost", implied_date: "not stated", ref: "lines 691-692", status_word: "initiated"}
+  - {commitment: "Physical AI and quantum numbers when ready", implied_date: "not stated", ref: "lines 704, 710-712", status_word: "underway"}
+  - {commitment: "Product roadmap covers two to three years", implied_date: "FY27-FY29", ref: "lines 391-392", status_word: "standing"}
+  - {commitment: "QIP Rs 767 Cr utilised, Rs 403 Cr unutilised", implied_date: "balance date not stated", ref: "lines 178, 192-193", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The call's centre of gravity is H2. The new Rs 4,000 Cr FY27 target implies H2 about Rs 1,857 Cr, 30% below the Q2 run-rate. Management pre-warned that the 15.1% H1 margin will not hold for the year. Book plus L1 fell QoQ while the book alone rose. Read together, these say Q2 was a peak quarter driven by the strategic order, not a new base. The tension A4 must press: a Rs 2,629 Cr book at 10-16 weeks should bill more than the implied H2. Either the target is a floor or the book is long-dated. Cash is the second axis. Zero net debt came from the QIP. No CFO figure was given for the second call running, and 'no pressure' conflicts with the filed negative H1 CFO in Notion memory. Inventory was described two ways (existing book vs upcoming orders) at memory prices up about 200%. All figures are ASR; the H1 EBITDA tie-out failure (A3-17) may be a transcript artefact and needs the filed numbers. Order book readings 2,629 / 26,629 / 2,600 are recorded, not resolved (register K1)."

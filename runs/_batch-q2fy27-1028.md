@@ -55,7 +55,8 @@ Batches: 1 = NETWEB, AEQUS, PARACABLES, SONACOMS. 2 = WEWORK, INDIAMART, SYNGENE
 | RAYMONDREL | runs/raymondrel-q2fy27 | 3,122,093 | 1 | COMPLETE; PROCEED WITH FLAGS; two operator rulings open (margin-stop basis, net-debt test) | 2dc7890c |
 | KNACK | runs/knack-q2fy27 | 3,093,413 | 1 | COMPLETE; PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION | 9d878a4d |
 | LT | runs/lt-q2fy27 | see session-cost.md | 1 | INCOMPLETE on one text item (N1, no number moved); PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION | 166b5474 |
-| (batch 3 rest and batch 4 pending) | | | | | |
+| UNIMECH | runs/unimech-q2fy27 | see session-cost.md | 1 | COMPLETE; PROCEED WITH FLAGS; no trigger fired | aeec7b5c |
+| (SKYGOLD and batch 4 pending) | | | | | |
 
 ## Problems log (coordinator)
 

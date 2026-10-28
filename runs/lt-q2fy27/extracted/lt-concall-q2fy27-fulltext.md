@@ -1,0 +1,849 @@
+=== A1 EXTRACTION HEADER ===
+source_filename: LT_Q2FY27_Concall_Transcript_ASR.txt
+doctype: concall
+page_count_pdfinfo: n.a. (plain text ASR; page unit = 600-second timestamp block, 7 blocks)
+formfeed_count: n.a. (plain text; 7 [page N] markers inserted at 600s ASR chunk boundaries)
+line_count: 849 (fulltext file incl. header and page markers); source transcript 823 lines
+unit_convention: Mixed as heard: crore, billion, trillion, lakh crore, million (US dollars), percent, basis points
+conversion_factor_to_cr: crore x1; billion (rupees) x100; trillion (rupees) x100000; lakh crore x100000; USD figures not converted (currency, no factor); percent/months/MW as stated. Extracted text is NOT converted.
+text_layer_present: n.a. (plain text ASR)
+extraction_mode: text-only (verbatim copy of plain text; no OCR, no render)
+render_candidates: none
+rendered_pages: none
+page_coverage: 100% (823 of 823 source lines present, in order; all [hh:mm:ss] timestamps kept; 7 timestamp-block pages)
+detected_quarter: Q2 FY27 (Q2 and H1 FY27, quarter ended 30 September 2026)
+extraction_date: 2026-10-28
+line_mapping: fulltext line = 19 + position of line within body; source line 1 is the ASR provenance banner; [page N] marker lines are added by A1 and are not source lines
+=== END HEADER ===
+
+
+[page 1] (timestamp block 00:00:00 to 00:09:59)
+MACHINE TRANSCRIPT (ASR). Source audio: LT_Q2FY27_Concall.mp3 (4031s). Tool: faster-whisper small.en, int8, beam 2, 600-second chunks, VAD on. Produced 2026-10-28 11:41 IST by Claude Code. Speaker names are not identified; numbers may be misheard. Treat every figure as management-tier and unverified; prefer the filed documents where they conflict.
+
+[00:00:00] Ladies and gentlemen, good day and welcome to the Larsen and Toubro limited Q2 and H1 FY27
+[00:00:07] earnings conference call. As a reminder all participant lines will be in the listening
+[00:00:12] mode and there will be an opportunity for you to ask questions after the presentation concludes.
+[00:00:18] Should you need assistance during the conference call, please signal an operator by pressing
+[00:00:22] star and then 0 on your touchtone phone. Please note that this conference is being recorded.
+[00:00:28] I now hand the conference over to Mr. P. Ramakrishnan from Larsen & Toubro.
+[00:00:33] Thank you and over to you Mr. P. Ramakrishnan.
+[00:00:36] Yeah, so thank you Sagar.
+[00:00:39] Good evening ladies and gentlemen.
+[00:00:41] A warm welcome to all of you to the Q2FI27 earnings call of Larsen & Toubro.
+[00:00:48] The earnings presentation was uploaded onto the soft section almost an hour back.
+[00:00:52] I hope you had a chance to have a quick look at the numbers.
+[00:00:58] As per past practice, I will first walk you through the important highlights for Q2FI
+[00:01:03] 27 in the next 20 to 25 minutes, most which we will be taking the Q&A.
+[00:01:11] Kindly note that when the Q&A session starts, I will also have with me our Deputy Managing
+[00:01:16] Director and President, Mr. Subram Sharma.
+[00:01:20] Before I begin the overview, the disclaimer from our end, the presentation which we have
+[00:01:24] quoted in the stock exchange and the website way back, including the discussions we may
+[00:01:30] have on the call today, may contain certain forward-looking statements concerning L&T's
+[00:01:35] business prospects and profitability, which are subject to several risks and uncertainties
+[00:01:40] and actual results could materially differ from those in such forward-looking statements.
+[00:01:46] I would request you to go through the detailed disclaimer
+[00:01:49] which is available in slide two
+[00:01:51] of our earnings presentation that we have uploaded.
+[00:01:55] India's economy has remained resilient
+[00:01:58] despite a difficult global backdrop
+[00:02:00] supported by domestic demand and investment activity.
+[00:02:04] Policy measures remain focused
+[00:02:06] on maintaining macroeconomic stability.
+[00:02:09] However, the outlook continues to be influenced
+[00:02:12] by the trajectory of external developments
+[00:02:15] which are likely to remain important factors shaping growth outcomes.
+[00:02:20] The recent re-escalation of the conflict in West Asia and the resulting volatility in
+[00:02:25] oil prices have contributed to increased uncertainty in the global economic environment.
+[00:02:31] More broadly, volatility in energy markets, logistics and trade disruptions, rising input
+[00:02:37] and financing costs and the continued uncertainties surrounding a resolution to the West Asia
+[00:02:42] of conflict remain relevant considerations
+[00:02:45] for the operating environment.
+[00:02:49] Having covered the macroeconomic landscape,
+[00:02:52] let me now turn on a few developments
+[00:02:54] and achievements for L&T.
+[00:02:57] First is on hydrocarbons.
+[00:02:59] The L&T hydrocarbon business has been selected
+[00:03:02] as one of the four contractors
+[00:03:05] under a six year EPC framework agreement
+[00:03:08] with petroleum development of Umar.
+[00:03:11] The agreement positions the company to participate
+[00:03:14] in major EPC opportunities
+[00:03:16] under PDO's Capital Investment Program.
+[00:03:20] The framework further strengthens our presence
+[00:03:22] in Oman's hydrocarbon sector
+[00:03:24] and provides a platform to pursue
+[00:03:27] future project opportunities.
+[00:03:30] The next one is on data centers.
+[00:03:33] The data center business of the company
+[00:03:35] is being reorganized under Vyoma AI Limited,
+[00:03:39] While this subsidiary will house the co-location business, the AI compute operations are being
+[00:03:49] developed through its Holyon subsidiary LNTN Compute Private Limited.
+[00:03:55] The LNTN Compute is establishing an AI factory at its Chennai campus with a planned capacity
+[00:04:01] of over 10,000 NVIDIA B300 GPUs.
+[00:04:06] It has entered into a long-term deployment agreement
+[00:04:08] with together.ai for a significant portion
+[00:04:12] of the GPU capacity.
+[00:04:14] The commissioning is targeted in January 27th.
+[00:04:18] I move on to semiconductor business.
+[00:04:21] This business is housed in a wholly owned subsidiary
+[00:04:24] called L&T Semiconductor Technologies.
+[00:04:27] This subsidiary continues to strengthen
+[00:04:29] its semiconductor platform through product innovation
+[00:04:33] and strategic partnerships.
+[00:04:35] The company unveiled 40 semiconductor products and platforms across power, compute, connectivity,
+[00:04:42] and analog technologies, including its first 1200V silicon carbide MOSFET platform.
+[00:04:52] The silicon carbide expands the company's presence in the high efficiency power semiconductors
+[00:04:59] serving applications such as electric mobility, renewable energy, industrial systems and data
+[00:05:06] centers. During the period, the company partnered with Azure Moto Technologies to advance SIC
+[00:05:13] and power semiconductor solutions and with Tata Electronics to support indigenous manufacturing
+[00:05:19] of semiconductor products for domestic and global markets. I move on to the electronics business.
+[00:05:26] The electronic products and systems business continued to expand its capabilities across
+[00:05:31] power electronics, industrial automation and mobility. During the period, the business secured
+[00:05:37] an initial best order and commenced capacity expansion at the Kanchi Purim facility to support
+[00:05:45] the assembly and integration of battery energy storage system solutions. The business also
+[00:05:51] progressed product development and commercialization initiatives in industrial automation. In mobility
+[00:05:58] it achieved production readiness for EV traction motors with commercial production scheduled to
+[00:06:04] commence in Q3 FI27 while continuing to advance opportunities in ADAS and e-powertrain systems
+[00:06:12] with leading automotive OEMs. I move on to development project segment.
+[00:06:18] As previously communicated, the company signed a share project agreement in Q1 of the current
+[00:06:24] financial year with Hyderabad Metro Rail Limited, a wholly owned enterprise of the government
+[00:06:29] of Telangana for the divestment of its entire stake in L&T Metro Rail Hyderabad Limited.
+[00:06:36] The expected completion date for this transaction has been revised from September 30th to December
+[00:06:43] 31st, 2026.
+[00:06:44] I now move on to the group performance for the quarter ended 30th September 2026.
+[00:06:53] We recorded our highest ever quarterly order inflow at rupees 1.48 trillion registering
+[00:07:00] a growth of 28 percent y on y led by receipt of ultra mega and mega orders across offshore
+[00:07:07] onshore hydrocarbons and carbon light businesses within the energy conventional segment.
+[00:07:14] Within the project's product and manufacturing, that is PPM portfolio, the order inflows reached
+[00:07:21] a record high of Rs. 1.26 trillion, registering a robust 32% Y on Y growth.
+[00:07:29] The growth was broad based across both domestic and international markets, with order inflows
+[00:07:35] rising 49% and 24% respectively. International orders accounted for 62% of the portfolio mix
+[00:07:44] compared with 66% in the corresponding quarter of the previous year.
+[00:07:50] Turning on to the prospects pipeline, the prospects pipeline for the PPM core business
+[00:07:58] for the balanced six months of the current financial year remains healthy at approximately
+[00:08:04] rupees 10.3 trillion which is the almost at the same level like last year. The broad composition
+[00:08:12] of this overall prospects pipeline is as follows infrastructure utilities has a share of rupees
+[00:08:20] 5.84 trillion as compared to rupees 5.81 trillion last year. Energy conventional the order prospects
+[00:08:30] is for 2.07 trillion vis-a-vis rupees 3.35 trillion last year. Energy green the order prospects is
+[00:08:40] rupees 2.04 trillion as compared to 0.93 trillion last year. Manufacturing and products the order
+[00:08:49] prospects is rupees 0.33 trillion vis-a-vis rupees 0.29 trillion last year. Moving on to the order book,
+[00:08:58] the total order book including the reality segment stood at rupees 8.54 trillion as on September 26
+[00:09:07] and was up 28 percent vis-a-vis September 25. In terms of portfolio compensation, 42 percent of our
+[00:09:16] total order book is from infrastructure utilities, 34 percent from energy conventional, 17 percent
+[00:09:24] from energy green, 5 percent is from manufacturing and products and 2 percent from reality.
+[00:09:32] In terms of the geographic mix 46 percent of this order book is domestic while 54 percent is
+[00:09:39] international reflecting the increasing share of international orders secured over the past year.
+[00:09:45] The average execution of this order book is 33 months.
+[00:09:51] The total domestic PPM order book stood at Rs 3.72 trillion.
+[00:09:57] The share of private sector orders increased by Rs 1.7 trillion.
+[page 2] (timestamp block 00:10:00 to 00:19:59)
+[00:10:00] The order book was published to 39% from 30% as of September 25, driven by order wins across
+[00:10:06] the carbon light solutions, residential, commercial buildings, factories, and the metals and minerals
+[00:10:13] business, along with select awards in heavy civil infrastructure, transmission lines,
+[00:10:19] and airports.
+[00:10:20] Within the public sector portfolio, the combined share of central and state government orders
+[00:10:26] declined to 30% of the domestic order book comprising 11% from the central government
+[00:10:31] and 19% from the state government as compared with 38% a year ago.
+[00:10:38] The PSU exposure remains largely stable at 31.
+[00:10:43] Of the international order book of Rs. 4.62 trillion, the Middle East accounts for 73% of
+[00:10:50] the portfolio underpinned by our long-standing presence in the region.
+[00:10:54] Europe contributes to 13% reflecting the growth in our offshore wind business over the past few quarters.
+[00:11:01] The balance 14% is distributed across other international markets including Central Asia, Asian and the South regions providing further geographic diversification.
+[00:11:13] With respect to the additional details on the order book, 7% of the total order book is funded via bilateral and multilateral agencies.
+[00:11:22] In addition, as of September 2026, slow moving orders constituted around 1% of the overall
+[00:11:30] order book.
+[00:11:31] During the quarter, orders were deleted for less than rupees 10 crore.
+[00:11:37] Turning to revenues supported by strong execution progress across energy related projects that
+[00:11:44] comprises both conventional and solar and healthy growth in the financial services segment,
+[00:11:50] The group revenues rose to 787 billion, registering a robust 16% growth.
+[00:11:57] In Russia revenue contributed to 58% of the total revenues during the quarter.
+[00:12:03] The revenues from the PPM portfolio stood at Rs. 584 billion, reporting a robust growth
+[00:12:10] of 20% Y on Y.
+[00:12:12] The performance were driven by strong execution across the energy portfolio supported by the
+[00:12:17] progression of recently secured ultra mega projects and the continued conversion of the expanded order
+[00:12:24] book into revenues despite continuing logistics and supply chain challenges during the quarter.
+[00:12:31] Moving on to EBITDA margin, our group level EBITDA margin excluding other income for Q2FI 27
+[00:12:38] is 8.7% as compared to 10% in Q2 of the previous year. The EBITDA margin was primarily impacted
+[00:12:47] due to lower margin across the group's portfolio and change in the revenue mix. When I mean revenue
+[00:12:54] mix, I am referring to a higher share of the PPM portfolio in the overall revenue stackup.
+[00:12:59] Our PPM manufacturing business AVIDTA margin for Q2FI 27 was at 7% and declined by 30 basis points
+[00:13:09] compared to the corresponding quarter of the previous year. The decline in PPM margin is
+[00:13:14] primarily due to cost pressures in the wet projects that is water and effluent treatment
+[00:13:19] increased supply chain costs and higher proportion of projects yet to reach the margin recognition
+[00:13:27] threshold. Our group PAT for Q2FI 27 stood at rupees 52 billion registering a strong growth
+[00:13:36] of 33 percent Y on Y. The growth was primarily driven by a significant pickup in activity
+[00:13:43] levels across the products and the manufacturing portfolio coupled with higher treasury income
+[00:13:50] supported by the release of funds through improved working capital management within the PPM portfolio.
+[00:13:56] The detailed insights on the group's performance, the P&L composition, and key drivers of variances
+[00:14:03] across the business segments and functional heads are provided in the earnings presentation.
+[00:14:09] You may refer to the same for the details.
+[00:14:11] Moving on to working capital, our focus on working capital efficiency and the changing
+[00:14:18] underlying nature of the order book has continued to yield positive results during the quarter.
+[00:14:24] The NWC percentage improved to a record low of 1.7% as on September 26 as compared to
+[00:14:34] 4.1% as of March 26.
+[00:14:38] The improvement of NWC percentage was supported by a reduction in the gross working capital
+[00:14:45] percentage from 51.7% as on March 26 to 48% as on September 26 along with customer advances
+[00:14:55] received against the recently secured large orders.
+[00:15:00] Our group level collections excluding financial services for Q2FI 27 stood at Rs. 740 billion
+[00:15:09] as compared to Rs. 600 billion in Q2 of the previous year.
+[00:15:14] The cash flow from operations excluding financial services increased to Rs. 128 billion during
+[00:15:21] the quarter as compared to Rs. 48 billion in the quarter of the previous year.
+[00:15:27] group cash flows excluding the financial services business has been provided in the annexures
+[00:15:33] alongside reported cash flows to enhance the clarity on the cash flow movements.
+[00:15:38] Finally, the trailing 12-month ROE for Q2FI27 stood at 16.7 vis-a-vis 17.2 in Q2 of the
+[00:15:48] previous year.
+[00:15:49] As this metric has been calculated on a trailing 12-month basis, it continues to reflect the
+[00:15:56] impact of the one-time labor code provision which was recognized in the Q3 of the previous year.
+[00:16:03] Very briefly, I will now comment on the performance of each business segment
+[00:16:09] before we give our final comments on the outlook. We start with the infrastructure and utility
+[00:16:16] segment. Following a robust Q1 order inflows for this segment stood at rupees 355 billion
+[00:16:23] during the quarter declining by 13 percent y on y. The major orders were secured in the
+[00:16:29] airports and power transmission distribution business in India and UAE along with the orders
+[00:16:35] in ferrous metal plants, data centers and central and state government funded public buildings.
+[00:16:42] Private sector orders contributed to contribute meaningfully at 59 percent of the domestic
+[00:16:49] ordering flows same as previous year reflecting the continued strength in private funded capex.
+[00:16:57] The segment order book stood at rupees 3.61 trillion as of September 26 providing strong
+[00:17:04] revenue visibility with an average execution cycle approximating to 29 months.
+[00:17:10] As I mentioned earlier the infrastructure and utilities prospects pipeline for the remaining
+[00:17:16] six months is approximately rupees 5.84 trillion. The pipeline comprises of domestic prospects of
+[00:17:23] rupees 4.59 trillion and international prospects of rupees 1.25 trillion. The sub segment break up
+[00:17:31] of the total order prospects is as the transportation infra 24 percent, heavy civil infra 19 percent,
+[00:17:40] buildings and factories around 18 percent, power transmission distribution 17 percent,
+[00:17:47] metals and minerals at 14 percent and water and effluent treatment at 9 percent. Revenues
+[00:17:54] for the quarter grew by 6 percent year on year driven by a pickup in execution momentum across
+[00:18:01] domestic private sector projects supported by strong activities in the residential commercial
+[00:18:07] factories, transportation infra and the minerals and metals business.
+[00:18:12] The International Business witnessed steady execution in select core civil infrastructure
+[00:18:17] projects as the business continued its selective expansion in this space while the Middle East
+[00:18:23] focus power transmission distribution business saw a marginal moderation in the activity level.
+[00:18:30] The Evita margin for the infrastructure and utility segment was at 5.7% in Q2 of the
+[00:18:36] current year as compared with 6.2% in Q2 of the previous year. The margin for this segment
+[00:18:44] has been impacted by continuing cost pressures in the water and influent treatment portfolio
+[00:18:49] and a higher proportion of jobs yet to cross the margin recognition threshold.
+[00:18:55] Moving on to the energy conventional segment which comprises the hydrocarbon carbon light
+[00:18:59] solutions and the modification, revamp and upgrade of the process plants business.
+[00:19:06] The segment witnessed robust order inflows of rupees 784 billion during the quarter more
+[00:19:12] than doubling y on y basis.
+[00:19:15] The hydrocarbon business witnessed strong traction in the Middle East as well as India particularly
+[00:19:20] in the offshore business while the carbon light solutions business secured a mega order from
+[00:19:26] NTPC for the main plant package of the 2 into 800 megawatt Lara stage 3 thermal power project.
+[00:19:34] The order book of the energy conventional segment stood at rupees 2.87 trillion as on September 26
+[00:19:41] with the hydrocarbon order book at rupees 2.13 trillion and carbon right solutions at rupees 0.71
+[00:19:49] The energy conventional segment continues to say see a healthy opportunity pipeline
+[00:19:56] led predominantly by the hydrocarbon opportunities.
+[page 3] (timestamp block 00:20:00 to 00:29:59)
+[00:20:00] Across international markets, while carbon light solutions prospects remain largely domestic
+[00:20:05] in nature. The order prospects pipeline for the remaining six months of FY27 stands at
+[00:20:11] approximately rupees 2.07 trillion, comprising hydrocarbon prospects of rupees 1.67 trillion
+[00:20:21] and carbon light solution prospects of rupees 0.40 trillion.
+[00:20:26] The Q2FI 27 revenues for the segment stood at Rs. 173 billion registering a strong growth
+[00:20:34] of 29% Y on Y basis.
+[00:20:36] The growth was driven by sustained execution momentum in offsite activities in the hydrocarbon
+[00:20:42] business and increasing execution intensity in the carbon light portfolio with BTG orders
+[00:20:49] secured in recent quarters now translating into higher revenue recognition.
+[00:20:55] The hydrocarbon margins improved from 6.7 percent to 7.5 percent during the quarter.
+[00:21:01] The carbon right solutions and MRU margins over declined from the elevated levels seen
+[00:21:06] in the corresponding quarter of the previous year which had the benefit of favorable customer
+[00:21:11] price variation claims.
+[00:21:14] Segment margins were further impacted by certain large carbon light solution projects remaining
+[00:21:19] below margin recognition thresholds.
+[00:21:21] Consequently, the overall segment margin stood at 7.4% down 80 basis points, y on y basis.
+[00:21:29] Moving on to the next segment, which is Energy Green.
+[00:21:32] The segment comprises a relatively mature solar business with a strong presence across GCC
+[00:21:38] markets complemented by growth platforms in the onshore wind and the developed market
+[00:21:43] focused offshore wind business.
+[00:21:46] The order inflows in this segment stood at Rs. 66 billion during the quarter, declining
+[00:21:52] 45% Y on Y, primarily due to deferrals of certain solar projects in the Middle East.
+[00:21:58] The order book in this segment was Rs. 1436 billion, comprising of solar projects of Rs.
+[00:22:06] 703 billion, onshore wind projects of Rs. 168 billion and offshore wind projects of Rs. 565
+[00:22:15] billion.
+[00:22:16] pipeline for this segment is rupees 2.04 trillion comprising of solar EPC prospects of rupees 1.47
+[00:22:24] trillion, onshore wind prospects of rupees 0.19 trillion and offshore wind prospects which is
+[00:22:31] primarily in europe of rupees 0.38 trillion. The segment revenue for Q2FI27 stood at rupees 115
+[00:22:41] billion registering a strong growth of 43% Y on Y aided by commencement of large value
+[00:22:48] projects in solar and ramp up of offshore wind projects. With the first set of offshore wind
+[00:22:54] orders having been secured late last year, the segment is now transitioning from order booking
+[00:23:01] to execution driving higher revenue recognition as the project activity gains momentum. The margin
+[00:23:08] for the segment was largely stable for the quarter.
+[00:23:12] Moving on to the manufacturing and product segment business, the segment order inflows
+[00:23:17] during the quarter was aided by receipt of export orders in the precision engineering
+[00:23:22] and systems business.
+[00:23:24] The order book of the segment is Rs. 429 billion as of September 26 with the precision engineering
+[00:23:31] order book at rupees 218 billion heavy engineering segment order book at rupees 81 billion electronic
+[00:23:39] product and systems order book which currently includes the defense related electronics as well
+[00:23:45] at rupees 65 billion and the construction equipment and industrial product and design
+[00:23:50] and development order book at rupees 65 billion. Our order prospects pipeline for the remaining
+[00:23:57] six months in the segment is around rupees 325 billion comprising of rupees 284 billion of
+[00:24:03] precision engineering and electronic prospects and the remaining rupees 40 billion is from the heavy
+[00:24:10] engineering business. The segment revenue at rupees 45 billion registered a growth of 34%
+[00:24:18] Y on Y and is reflective of the strong execution momentum in the precision engineering and the
+[00:24:24] the electronic product systems businesses.
+[00:24:28] The margin improvement in the segment is primarily reflective
+[00:24:31] of execution cost savings and improved job mix.
+[00:24:35] Moving on to the next segment,
+[00:24:37] technology platforms and services,
+[00:24:39] which comprises the two listed entities,
+[00:24:43] LTM and LTTS, as well as the new businesses
+[00:24:46] of digital platforms, data centers,
+[00:24:49] semiconductor design, and as well as a small portion
+[00:24:53] of the Divested Smart World and Communications portfolio.
+[00:24:57] The segment revenues stood at rupees 148 billion
+[00:25:00] for Q2FI27, registering a growth of 11% Y on Y,
+[00:25:06] led by growth in both LTM and LTTS.
+[00:25:09] The salary hike and adverse forex variation LTM impacted
+[00:25:15] segment margin partly offset by a one-time gain
+[00:25:18] on the smart world communications divestment by LTTS.
+[00:25:24] I will not dwell too much on this segment
+[00:25:27] as both the companies in the segment are listed entities
+[00:25:31] and the detailed fact sheets are available
+[00:25:33] in the public domain.
+[00:25:35] Now we move on to L&T Finance Limited.
+[00:25:38] Here again the detailed results are available
+[00:25:40] in the public domain.
+[00:25:42] But very briefly the Q2 has witnessed robust growth
+[00:25:45] retail disbursements and improved collection efficiency as well as asset quality. The return
+[00:25:51] on asset remained healthy at 2.6% for Q2FI27. Moving to the reality segment which is now being
+[00:25:59] reported as a separate segment following the segregation from the erstwhile projects and
+[00:26:04] manufacturing portfolio. The order in close for Q2FI27 which mainly represents L&T's share of pre-sales
+[00:26:12] stood at rupees 13 billion. The segment order book representing unrecognized revenue stood at
+[00:26:19] rupees 184 billion as of September 2026. Revenue and margin are primarily reflective
+[00:26:26] of the lower handovers of reality units and the sales mix, residential units sorry.
+[00:26:32] Supported by the strength of our order book, healthy prospects pipeline and continued focus
+[00:26:38] on execution. Let me now turn to the guidance that we have provided for the current financial
+[00:26:44] year. I start with order inflows. The group order inflows recorded a robust 22 percent
+[00:26:50] why on my growth in H1 of the current year with growth across domestic and international
+[00:26:54] markets notwithstanding bid performance particularly in the Middle East solar business. The prospects
+[00:27:00] pipeline for the remaining six months remains healthy at rupees 10 trillion with a marginal
+[00:27:06] bias towards domestic opportunities providing confidence in sustaining order-in-flow momentum
+[00:27:11] for the next six months of the current financial year.
+[00:27:15] Given the strength of the opportunity pipeline across the key sectors, we are confident of
+[00:27:20] achieving our order-in-flow guidance of 10% to 12% for FI27.
+[00:27:26] Coming on to revenues, the domestic execution continues to gain traction across the residential
+[00:27:31] commercial, precision engineering, and the carbon light solutions business.
+[00:27:35] In the Middle East, despite the ongoing logistic disruptions, the project execution continues
+[00:27:40] to progress well.
+[00:27:41] Working closely with our clients, our teams continue to implement alternative logistic
+[00:27:46] arrangements and execution plans to mitigate the impact of these challenges.
+[00:27:51] In addition, the offshore wind business, which is now in its full year of execution, is also
+[00:27:55] expected to meaningfully contribute to the growth relative to F-526.
+[00:28:02] During the overall operating environment, we are confident of achieving our F527 revenue
+[00:28:06] growth guidance of the 10 to 12 percent ban.
+[00:28:10] Moving on to the margin for the PPM portfolio, in line with our revenue growth guidance,
+[00:28:16] we are reasonably confident of meeting our EBITDA margin target of 7.8 percent for F527.
+[00:28:24] Closing with working capital, the collections remain on track across the key markets including
+[00:28:29] international markets. As mentioned earlier, the group networking capital stood at a record
+[00:28:34] low of 1.7 percent as of September 2026 supported by significant working capital improvements
+[00:28:41] in the energy green and hydrocarbon segment. Based on the current trajectory and improved
+[00:28:47] volume of execution, we now expect the group networking capital to close below our earlier
+[00:28:53] guidance of 10% for the year. So, with this I have given a overall synopsis of the performance
+[00:29:01] for the quarter and the way we look the next six months we can now get into question answer.
+[00:29:06] Thank you. Thank you very much. We can now begin with the question and answer session.
+[00:29:14] Anyone who wishes to ask question may press star and then 1 on their touchtone phone.
+[00:29:20] If you wish to remove yourself from the question queue, you may press star and then 2.
+[00:29:26] Participants are requested to use handsets while asking a question.
+[00:29:31] Ladies and gentlemen, we will wait for a moment while the question queue assembles.
+[00:29:38] Your first question comes from the line of Aditya Vartiya with Investech.
+[00:29:42] Please go ahead.
+[00:29:43] Hi, good evening, sir.
+[00:29:46] I just wanted to understand a bit more on the solar business.
+[00:29:50] We are seeing definite project awards, but at the same time we are seeing very strong
+[00:29:55] execution in international green projects.
+[page 4] (timestamp block 00:30:00 to 00:39:59)
+[00:30:00] So what is really happening over there and do you anticipate these projects to get bunched
+[00:30:05] up and maybe ordering to be picking up in second half of the fiscal?
+[00:30:09] Mr. Sharma is there, he will answer this question.
+[00:30:13] So the solar business, I think we have a very strong presence in the Middle East and of course
+[00:30:20] also with in the domestic and the there are some delay in the in the first two
+[00:30:30] quarters in terms of award but now we see that we have bid for many jobs and and
+[00:30:37] the billing activities are picked up quite a bit so we hope to pick up momentum in
+[00:30:43] the quarter two and and sorry quarter three and quarter four in second half and of course
+[00:30:51] also under that division we all have offshore wind business and there we had a very good run we picked
+[00:30:59] up additional contracts under the framework and and that yeah that that that that project I mean
+[00:31:10] that project business is now doing well so that's where we stand. So Aditya just to add just to
+[00:31:18] what go Mr. Sharma just no spoke the first half of for solar was a little subdued in so far ordering
+[00:31:25] is concerned and as I talked about the order prospects of the various segments know the
+[00:31:30] prospects continue to remain strong so it hopefully I think the ordering momentum for this segment
+[00:31:36] from outside of India will regain traction in the second half.
+[00:31:40] Sure, but in terms of execution, we have not seen any major slow down.
+[00:31:47] And given that there were a lot of logistic challenges with some of these solar projects
+[00:31:51] also, we have not even seen any impact on margin season.
+[00:31:56] So let me put it like this.
+[00:31:57] Yes, there has been to the extent, wherever we have been able to supply into the site,
+[00:32:02] we have tried to do that despite all the logistic challenges.
+[00:32:07] So, so far we have done well.
+[00:32:09] Now it needs to be seen depending on the situation
+[00:32:12] how we see the next six months or so.
+[00:32:17] Sure.
+[00:32:18] So my second question was on margins
+[00:32:20] in the carbon light business
+[00:32:22] and the way the carbon light business gets recorded.
+[00:32:25] Now, given that a part of the business
+[00:32:28] is being done through MHIJVs
+[00:32:31] and earlier we used to split certain orders
+[00:32:33] getting largely, as in margins in certain orders
+[00:32:36] getting largely recorded in MHIJVs
+[00:32:38] and only a small part getting recorded in the main console books. How is it being carried on right
+[00:32:46] now? Is it fair to assume that bulk of the margins from here on would be seeing a line-by-line
+[00:32:53] consolidation as opposed to a single line image IJWIG consolidation? So, the projects have been secured
+[00:33:01] by the Larsen and Dugro entity only, okay, and this in turn has been subcontracted. Some portions
+[00:33:08] of it to the to the JV companies. So the EPC margins will continue to reside in the parent
+[00:33:16] carbon light segment. Understood, understood and but but higher margins are likely to be
+[00:33:25] equipment related margins are likely to be recorded in in the JVs.
+[00:33:32] I would say it would be a combination in both but EPC margins since BTT has an opportunity in EPC
+[00:33:39] So, the EPC margins will be taken at the segment level, there will be some portion of margins
+[00:33:44] because of efficiency and puller scale capacity utilization, the JV company is also is expected
+[00:33:50] to be profitable on this particular order.
+[00:33:54] Perfect sir, that's helpful, thank you.
+[00:33:59] Thank you.
+[00:34:00] Your next question comes from the line of Mohith Pandey with city, please go ahead.
+[00:34:05] Yeah, good evening sir, the first question is on the energy green segment.
+[00:34:12] could give some color on whether the growth was driven more by the offshore wind ramp up or by
+[00:34:18] the Middle Eastern solar in regards to execution and also how the supply change here in the Middle
+[00:34:25] Eastern solar differs from that for the infrastructure segment where growth has been slower.
+[00:34:33] So the segment revenues for the quarter which I talked about is driven more by solar offshore
+[00:34:40] wind is just now started. So offshore wind will pick up execution in the following quarters.
+[00:34:49] Understood sir. And on the second part, how does the logistics supply chain
+[00:34:56] differ any particular with the VTE, Middle Eastern infrastructure project?
+[00:35:03] Yeah, so this is Sharma here. Logistics is more relevant for renewable business in the middle
+[00:35:10] based and to some extent for power transmission, less for hydrocarbon and at this point in
+[00:35:18] time the infrastructure projects are in very early stage, so they do not have that much
+[00:35:23] of impact of the logistics.
+[00:35:25] On the renewable side, yes I mean I think the it is taking little longer for us to get the
+[00:35:31] materials and there is an extra cost.
+[00:35:34] So, we are in discussion with customers, some cases we are delaying the material dispatch
+[00:35:39] In some cases, we are incurring the cost and agreeing to get that reimbursed from the
+[00:35:44] customer.
+[00:35:45] So a combination of that is happening.
+[00:35:47] With some delays here, I think we expect some deferment of revenue on the renewable business.
+[00:35:54] But we'll try to make it up with other projects in the domestic market in other countries.
+[00:36:02] If not, there could be some shortfall on that particular business.
+[00:36:07] answer on hydrocarbon book, what questions of the order book would be still in the relatively
+[00:36:14] early stage of education, meaning getting excess income over India facility, would it be 70
+[00:36:19] 80 or percent?
+[00:36:20] I think yeah we picked up quite a few large orders in hydrocarbon between onshore and
+[00:36:25] offshore in the last two three quarters, I would say maybe I have not done the match
+[00:36:31] but.
+[00:36:32] But a major part of the order 60 percent 60 percent all will be on the menu.
+[00:36:35] 50% could be under the new one.
+[00:36:40] It will start, I mean, achieve that threshold maybe
+[00:36:45] in the next, in the Q4 part of it.
+[00:36:48] Yeah, Q4 and beyond.
+[00:36:51] Understood, sir.
+[00:36:52] And the last question is on precision engineering.
+[00:36:54] So our presentation mentions we want some export orders
+[00:36:58] possible to give some color around these
+[00:37:00] and this year there has been large PSE approval.
+[00:37:05] So, any key projects you want to highlight will be in free for yeah.
+[00:37:12] This is a order from Vietnam.
+[00:37:15] Understood sir.
+[00:37:16] And with regards to the DAC approvals that we have seen this year, any any key projects
+[00:37:26] that we might be in free for yeah.
+[00:37:30] On different.
+[00:37:31] New orders.
+[00:37:32] Yes.
+[00:37:33] There is a possibility the prospect pipeline look more reassuring and hopefully some order
+[00:37:39] info conversion should be happening in the segment.
+[00:37:41] Got it.
+[00:37:42] Possibly in the most likely by the end of this year.
+[00:37:45] Thank you so much and we show all the best.
+[00:37:50] Thank you.
+[00:37:51] Thank you.
+[00:37:52] The next question comes from the line of Puneet Gulati with Asia's PC.
+[00:37:57] Please go ahead.
+[00:38:01] Yeah, thank you so much and great performance I must say on all terms.
+[00:38:06] order inflows side if you can you know help us understand how are you managing the risk there,
+[00:38:14] what is the strategy on order execution timeline and cost, some color would be very useful.
+[00:38:23] Will you take it? Yeah, go ahead start. So okay, so let me put it like this, I think in the first
+[00:38:30] six months what we have seen and especially on the international side, a majority of the
+[00:38:35] order in flows outside of offshore wind has been largely led in the hydrocarbon segment
+[00:38:39] ok.
+[00:38:40] We have seen some project deformation so far as solar is concerned, but as far as hydrocarbons
+[00:38:46] is concerned especially in the Middle East, we have seen the bidding activity to be quite
+[00:38:51] robust and we have also benefited from many of these orders that we have secured ok.
+[00:38:58] intensity continue to be there it is it is quite strong and but the fact is a major part
+[00:39:07] of international orders is coming from the hydrocarbon segment primarily.
+[00:39:12] Despite the the fluid situation in Middle East this segment continues to witness bidding and
+[00:39:20] as far as not only bidding I would also like to emphasize here and Mr. Sharma can allude
+[00:39:25] to the fact that execution momentum also has not been, until now has not been disturbed.
+[00:39:31] So that momentum continues to be reasonably strong.
+[00:39:34] And also solar will have a pickup in the momentum in the order inflow and the.
+[00:39:39] Correct, again also.
+[00:39:40] Solar will pickup order inflow moment, as I mentioned, respond to earlier question that
+[00:39:45] is the second half story.
+[00:39:46] Okay, but in terms of cost, etc., you are not seeing any escalation when you are bidding
+[00:39:53] for the project.
+[00:39:54] How are you?
+[00:39:55] I think there is a fast escalation on the logistics and insurance as we have been saying.
+[page 5] (timestamp block 00:40:00 to 00:49:59)
+[00:40:00] We are very hopeful that a good part of it will get compensated by the customer. We have had
+[00:40:07] good discussions with them. There is a good traction. Now there could be a bit of a timing
+[00:40:11] issue that when we recognize the cost and when we get compensated that we will have to see
+[00:40:17] how it develops.
+[00:40:18] I know the working capital is extremely good at 1.7%. How should one think about this? You
+[00:40:27] guided for less than 10 percent. But good about what we should think. It is great, it
+[00:40:34] should think great about it. This is something we are breaking the record every quarter. I
+[00:40:40] hope that we break the record again. So, Puneet I think so the as far as the PPM
+[00:40:46] portfolio is concerned it has it has been a favorable negative 4 percent ok as of September.
+[00:40:53] But at a group level I did talk about that we are going to be below the guidance of 10
+[00:40:58] percent.
+[00:40:59] Now, the one of the important points which I also talked about when I gave the working
+[00:41:03] capital closing remarks on the guidance part given that that be the volume of operations
+[00:41:08] and the target revenue that we are talking about is quite a tall ask or steep ask for
+[00:41:13] the next 6 months.
+[00:41:14] So, obviously, we do believe that this could have some amount of toning down or you know
+[00:41:21] moderating the overall working capital trend.
+[00:41:24] So it's quite possible that we may be better
+[00:41:26] than what we are given,
+[00:41:27] but we are going to be below 10.
+[00:41:29] We started the year with 10,
+[00:41:30] now we'll be below 10 for the full year.
+[00:41:35] Understood, and just lastly on your commitment
+[00:41:38] of CAPEX on the AI side,
+[00:41:40] you talked about buying 10,000 Nvidia chips, etc.
+[00:41:44] Is there a plan of how much you want to commit
+[00:41:46] on data center AI for next one year, two year,
+[00:41:49] and also on the semiconductor side?
+[00:41:52] So as it stands now, as far as the 10,000 GPUs are concerned,
+[00:41:57] this is close to maybe around 750 million US dollars
+[00:42:00] of investment.
+[00:42:03] And this is getting invested in our current data center
+[00:42:08] of 30 megawatts near Chennai.
+[00:42:11] We plan to put up another 50 megawatt of AI data center
+[00:42:16] adjoining the 30 megawatt in Sri Perimudu, that is Chennai.
+[00:42:21] And looks like over the next two years, we may be putting up data center capacity using
+[00:42:27] AI as a AI factory of 30 plus 50 plus another 30.
+[00:42:31] So 100 megawatts plus is what we are looking for in the next one and a half to two years.
+[00:42:40] Including the chip cost.
+[00:42:41] Yeah.
+[00:42:42] Yeah, yeah, correct, correct.
+[00:42:43] So as I said these 100 megawatts I am referring to a AI data center, out of it 30 megawatts
+[00:42:49] is already set up, the structure is set up, we may have to only invest in the AI chip.
+[00:42:55] Now, by the balance 70 odd megawatts, it is a combination of taking a new debt investing
+[00:43:00] and a new data center, which is a civil part of it, along with the related investment in
+[00:43:05] the, the then prevailing GPU series whatever is prevalent then, but in the near term,
+[00:43:12] one and half to two years, so another total will be 100 megawatts of AI capacity.
+[00:43:18] So, for 30 megawatt you spend 750 for just the chips for another 70 we should think of
+[00:43:23] at least 1.8 billion dollars from the approach to that.
+[00:43:26] And depending on the chip value Puneet, so it is not right to mention that, but the another
+[00:43:31] 70 megawatt will also have the construction cost of those data centers.
+[00:43:38] And semiconductor side?
+[00:43:39] As far as the semiconductor side is concerned, I think given that when I spoke about the
+[00:43:47] various products that they have developed semiconductor should be getting into business
+[00:43:51] now in terms of started selling the designs along with the chips in the very near future.
+[00:43:58] Until now the investment of happening more on creation of the intellectual property across
+[00:44:03] the various domains that they are focusing on and the next one or two quarters this
+[00:44:07] business also we will see revenue traction.
+[00:44:10] Under so much thank you so much.
+[00:44:15] Thank you.
+[00:44:16] Thank you.
+[00:44:17] Thank you.
+[00:44:19] The next question comes from the line of so let's get sure
+[00:44:21] with access capital, please go ahead.
+[00:44:25] Good evening, phenomenally strong execution
+[00:44:28] and working capital performance.
+[00:44:31] Here on your comment that you mentioned PPM
+[00:44:33] networking capital to say that minus 4%
+[00:44:36] as of September quarter,
+[00:44:38] how should we look at the domestic PPM
+[00:44:42] working capital situation here,
+[00:44:44] which traditionally used to be about 15% plus right on networking capital to sale.
+[00:44:50] So, when you mentioned talked about collections, I mean still this is 46% of your order book
+[00:44:56] and significant percentage of your revenue, it is something changing there dramatically
+[00:45:02] as well.
+[00:45:03] Okay, so when I was speaking on infrastructure utilities and the carbon light business, no,
+[00:45:10] These were largely domestic orders and in for such utilities we are seeing a higher share
+[00:45:17] of private sector orders.
+[00:45:19] As far as carbon light is concerned some of the recent orders have come from the private
+[00:45:24] sector.
+[00:45:25] So, the earlier 15 percent of domestic working capital is actually moving more favorably
+[00:45:31] to it is not below 10 it is around 12 to 30 percent, but definitely because of a composition
+[00:45:38] of private sector investment or private sector orders and run up into the residential, commercial
+[00:45:45] buildings, factories and all these kind of prospects converting to higher share of orders.
+[00:45:50] The domestic working capital intensity is also going favorably.
+[00:45:54] So if I have to take minus 4 percent as the overall PPM portfolio, the international portfolio
+[00:46:01] obviously will be almost more than minus 4 to compensate for the 10 to 12 percent of
+[00:46:08] the working capital intensity. So, it should be around say minus 8 or 9.
+[00:46:13] So, minus 8 or 9 means there are a lot of like advances or what is that they are paying you
+[00:46:20] before you do the work. Yeah and more important that is why when I talked about when I also
+[00:46:26] spoke about that just not the networking capital is not the only measure because the gross
+[00:46:33] working capital also has improved favorably from 52% to 48% September over March. So that
+[00:46:42] also is equally important because otherwise one can always think about since we have been
+[00:46:46] securing good amount of orders over the last six months, orders is usually backed up by
+[00:46:51] an advance from the client that obviously is there but the fact is the billing milestones
+[00:46:56] have been quite frequent and the payments also coming on time.
+[00:46:59] So, you know, when we read the new slow, you know, you know, the form of this shirt, bubble
+[00:47:07] mandev has its problems, logistic supply chain issues, I mean, the procuring solar modules
+[00:47:13] it seems it is not proving that much challenging for you as the question is going fine, hydrocarbon
+[00:47:19] is the entire supply chain sort of localized, you have local fabrication facility.
+[00:47:24] So, I mean what is the impact, maybe least revenue is around 13 percent year on year in
+[00:47:29] this environment.
+[00:47:30] So, could you give us slightly more detailed explanation as to what really the challenges
+[00:47:35] are if you have already formed alternate supply chain and your margins are also not impacted.
+[00:47:40] Yeah go ahead.
+[00:47:43] Oh, ok.
+[00:47:44] So, I will take the first part Sumit, see the revenue upturn and I did mention during
+[00:47:50] the July call also, a major part of the execution that is happening for the international projects
+[00:47:57] are actually happening in offsite locations, which means we are doing the work in the fabrication
+[00:48:02] yard.
+[00:48:03] The fabrication yards be it in Patukali in Chennai or in Sohar in Oman, that has helped
+[00:48:09] us to ensure that the revenue clip does not move down.
+[00:48:13] Now given the logistic constraints and given also moving consignments from other parts
+[00:48:18] of the globe into Middle East is a challenge. So, the revenue uptick despite as we spoke
+[00:48:24] about the Q2 PPM revenue growth has been 20 percent, but we are still maintaining the
+[00:48:29] revenue guidance of 10 to 12 percent for the full year. That is primarily because we have
+[00:48:34] to also take into account the supply chain disruptions in terms of logistics that is going
+[00:48:40] to impact some of the actual equipment or this fabricated moving to site in the Middle
+[00:48:48] least geography. Okay, good. So Mr. do you have any further questions? So basically then
+[00:49:03] the margin impact is also not there because the customers are paying the extra logistics
+[00:49:08] cost that you are incurring and hydrocarbon margins are improved by 80 basis points year
+[00:49:15] on year in Q2. So is the stage of execution also advancing on the margin that we were waiting
+[00:49:22] Yeah, more or less your understanding is correct.
+[00:49:27] Only thing to make last year, I am sure you are aware that we had some challenges one of
+[00:49:33] the projects in hydrocarbon that has got tapered off ok.
+[00:49:36] So, that is obviously, the there is a moving the margins are also moving up, thank you.
+[00:49:48] Thank you.
+[00:49:49] The next question comes from the line of Rahul Bajare with Macquarie Gappetum, please go
+[00:49:53] ahead.
+[00:49:56] Yeah, hi, good evening, sir.
+[00:49:58] Now, regarding the six-year-old...
+[page 6] (timestamp block 00:50:00 to 00:59:59)
+[00:50:00] Can you throw some light on the quantum and the mix of opportunity. The reason I am asking
+[00:50:08] this is because for the last 5 years, the budgets of Oman have been flattish in the range of
+[00:50:13] 30-32 billion dollars. Given that there are 4 players who are selected, is it fair to expect
+[00:50:20] that margin will be better than the overall hydrocarbon business?
+[00:50:25] Okay, so this framework agreement with PDO covers for a period of 6 years and we believe
+[00:50:30] that the order prospects that we may be targeting basis what PDO will be spending is in the
+[00:50:36] range of 6 to 7 billion US dollars over the next 4 or 5 years, okay.
+[00:50:43] And such of these projects they have secured apart from us, apart from us there are 3 other
+[00:50:48] companies, one is Egyptian EPC company, one is Chinese and other is a Korean, okay.
+[00:50:53] We do believe that it gives us a passport to bid for those jobs, but again the competitive
+[00:51:00] intensity being there, it depends on how well we are placed.
+[00:51:04] But at least it gives us the right to bid for opportunities, which I said 6 to 7 billion
+[00:51:09] over the next 3 to 4 years, for hydrocarbons from Umar.
+[00:51:13] You will not bid if they do not get differentiated margin.
+[00:51:18] Sir, and the second question is on the reality business.
+[00:51:25] Can you talk about your portfolio, the land bank, and how do you intend to ramp up over
+[00:51:29] the next three to four years, you know?
+[00:51:31] I think in the Randall report, it mentions 71 million square feet of potential development
+[00:51:37] portfolio.
+[00:51:38] Is there any change to this particular?
+[00:51:40] There is no change from the last time what we have communicated Rahul, it is based on
+[00:51:49] what we indicated during the May call when we talked about the plan for this business
+[00:51:54] as part of our Lakshya L31 strategy, those numbers remain unchanged, we are still targeting
+[00:52:01] that kind of a portfolio and we continue to look at good opportunities for buying real
+[00:52:07] estate and then getting into a combination of residential and commercial developments.
+[00:52:12] So the plan is on, there is no change in terms of development or investment.
+[00:52:19] Okay, so my last question is on the defense, now we've seen pretty good traction on your
+[00:52:25] precision engineering, both on the revenue and order intake, I want to know where is AMCA
+[00:52:32] project in terms of bidding, what has happened and is there any particular project that you
+[00:52:37] all are looking forward to, you know given that we've seen a very strong traction in
+[00:52:41] the DAC approvals from the government in the last two years.
+[00:52:46] So, I will take that in sequence, the AMSA project is coming up for bid by the month end.
+[00:52:51] Okay.
+[00:52:52] And in so far opportunities are concerned, we see a October end.
+[00:52:57] October end?
+[00:52:58] This October end.
+[00:52:59] Okay.
+[00:53:00] This October end.
+[00:53:01] Okay.
+[00:53:02] End of this week that is coming up for bidding.
+[00:53:04] As far as the opportunities from MOD or different DJI is concerned, for us I think we will probably
+[00:53:12] get a, we will see a larger share of the marine opportunities as compared to land and as a land
+[00:53:18] is concerned as you are aware that L&T has been working on different land-based platforms. Some
+[00:53:25] of these platforms we will see depending on the localization content that we demonstrate to the
+[00:53:30] customer. Many of these orders, large orders are expected in the pipeline but too early to
+[00:53:37] comment on the timelines. So, to put it, AMPA is for month and bid, opportunities for defense for
+[00:53:45] Larson and TuPro seems to be quite robust than ever it was before, largely led by on the marine side
+[00:53:53] and land-based armored systems. So, my last question is, you did talk about revenue uptake in the
+[00:54:01] the hydrocarbon because of this disturbance or logistical arrangement or out of inventory
+[00:54:07] in the solar business. Is the intra related or power renewable related execution been slight
+[00:54:14] impacted? I think we answered that question. So we have three main businesses in the middle
+[00:54:22] is one is hydrocarbon, second is power transmission distribution and third is the renewable solar.
+[00:54:27] In that the least impact is on hydrocarbon because like PR mentioned earlier either the
+[00:54:35] projects are so advanced that we have almost everything secured already locally or already
+[00:54:41] available in the sites or it is getting done in yards which are not affected by this logistic.
+[00:54:48] The second one is called transmission and distribution there is some impact but we are managing that
+[00:54:52] and we don't expect much impact to come through
+[00:54:55] on that business also in the second half.
+[00:54:58] The one where we have a significant impact
+[00:55:00] is the renewable business because like you said,
+[00:55:03] renewable solar modules and everything
+[00:55:05] has to come from China.
+[00:55:06] There we are calibrating it
+[00:55:09] in consultation with customer.
+[00:55:13] And there's a possibility that some of these materials
+[00:55:16] may be delayed because the cost is very high,
+[00:55:20] customer is not arguing that it is delayed.
+[00:55:22] And because of that, there could be some difference in that area.
+[00:55:26] Thank you very much, sir.
+[00:55:33] Thank you.
+[00:55:35] Ladies and gentlemen, in order to ensure
+[00:55:36] that the management is able to address questions
+[00:55:39] from all the participants in the conference,
+[00:55:41] we request you to limit to one question per participant
+[00:55:44] and rejoin the queue for any further follow-up questions.
+[00:55:47] Thank you.
+[00:55:49] We have our next question coming from the line
+[00:55:51] of Atul Devari with JP Mughal.
+[00:55:52] Please go ahead.
+[00:55:54] Yes, sir.
+[00:55:55] Just one question.
+[00:55:57] what is the degree of dependence on the state of Hormuz,
+[00:56:01] for the hydrocarbon business,
+[00:56:03] especially to transport large pet farms, et cetera.
+[00:56:07] And obviously that remains contested right now.
+[00:56:10] And if it remains contested, then is there an alternative
+[00:56:12] or how will you negotiate that situation?
+[00:56:16] So yeah, I mean, I think some of this work
+[00:56:19] which you have done in our yards in Oman and other places,
+[00:56:23] it has to cross the state of Hormuz.
+[00:56:27] It is not that the state of hormones, nothing is moving, I mean even oil barrels are moving
+[00:56:32] through the state of hormones, 70% of the pre-war barrels are still moving through the state
+[00:56:39] of hormones, though it is not publicly declared.
+[00:56:43] So we were successful in moving one large consignment and now we are exploring possibility to move
+[00:56:51] the balance.
+[00:56:52] I think we are quite hopeful.
+[00:56:55] It should happen.
+[00:56:56] Maybe there will be some delay,
+[00:56:57] but we're still optimistic that we'll be able
+[00:56:59] to move through the state of commerce.
+[00:57:03] Okay, good point.
+[00:57:04] Thank you.
+[00:57:07] Thank you.
+[00:57:08] The next question comes from the line of Hamid Anwani
+[00:57:10] with PL Capital.
+[00:57:12] Please go ahead.
+[00:57:14] All right, thank you, sir.
+[00:57:15] So my question pertains to the intra margin,
+[00:57:18] which are impacted by FFT bids,
+[00:57:21] and you did highlight it.
+[00:57:23] because of the water-refluent business.
+[00:57:27] Wanted to understand, is there more impact expected
+[00:57:30] and if we normalize that,
+[00:57:32] how the infra margins are shaping up
+[00:57:35] and basis the current order book, which you have,
+[00:57:39] what is the kind of sense we should make
+[00:57:42] for infra margins in medium to long term
+[00:57:45] because the other business is somehow stabilized
+[00:57:48] or picking up, but infra still remains concerned
+[00:57:52] the margin front. Okay, so I will take that Amit. The infra margins actually have been
+[00:57:59] moving northward in terms of our as I said in response to a previous question the share
+[00:58:05] of private sector ordering is going up especially in minerals and metals and the buildings and
+[00:58:09] factory segments okay. The L1 basis would be in transportation India and heavy civil.
+[00:58:17] The infra margins has been what they are is primarily because of the wet that is the water
+[00:58:24] and effluent treatment business that we are executing.
+[00:58:28] And if for whatever it is if I were to just take out the water and effluent treatment from
+[00:58:34] this portfolio, the margins would have been better by almost 40 to 50 business points ok.
+[00:58:41] And this is what has impacted to be the softness in the entire infrastructure and utility segment.
+[00:58:47] And now we have to of course, we are ensuring that because that is a very important point
+[00:58:53] is we should also get paid and given the some of the projects are getting funding now funding
+[00:59:00] has started resuming, but time overruns and cost overruns given that is a long dated projects
+[00:59:06] our ability to convert into actionable claims from the customers will take time.
+[00:59:11] Until then, this segment will have some amount of, I would say, execution pressure and margin
+[00:59:18] pressure.
+[00:59:19] And it is this, which is actually bringing down.
+[00:59:22] And I did tell you the amount of margins that we are losing because of the segment, in this
+[00:59:30] segment, the difficulty in the execution.
+[00:59:32] Sir, quickly, if I can squeeze in on the developmental asset where you have highlighted green ammonia,
+[00:59:40] data centers, and other assets.
+[00:59:43] So I was just thinking, a basis of strategy in the past four or five years where we highlighted
+[00:59:49] that we want to only do EPC and the other developmental assets have kind of given troubles.
+[00:59:56] And what is the rationale to get into the development of the EPC?
+[page 7] (timestamp block 01:00:00 to 01:09:59)
+[01:00:00] So, what is the strategy to get into this development assets in green ammonia, data centers and other areas?
+[01:00:14] Okay, so omit one clarification, the data center investment is coming under our PPS segment, okay.
+[01:00:20] So, it is not under development project segment, that is one.
+[01:00:25] Secondly, when we talked about the development project segments earlier, it used to be in
+[01:00:30] assets like Hydel and NABAPower, Hyderabad Metro and so on and so forth.
+[01:00:35] We had IDPL and all, ok.
+[01:00:37] Now, where we are now looking to invest in green hydrogen green ammonia, do not expect
+[01:00:42] LNT to do sizable investments in the absence of a take-off pay arrangement.
+[01:00:46] Market risk is not there.
+[01:00:48] So, what happens when we are when we are invested in Hyderabad, but road investment
+[01:00:52] amount was quite high, the exposure was quite high, but we did not have visibility of the
+[01:00:56] revenue stream. So, consequently the return stream is also not visible. Here againwe will
+[01:01:02] be investingonly and you know the quantum of investment because we already communicated
+[01:01:07] that in may when we covered the L 31 group print. So, the the the important thing is
+[01:01:14] here the returns are assured under long term pay or pay. So, obviously, this is not going
+[01:01:19] to be dilutive of the L&T ROE that we had last year, where the last year L&T ROE had
+[01:01:28] the negative aspect of the development projects portfolio of the previous, that is the Hyderabad
+[01:01:34] mentor and above power, those kind of return dilutive kind of investments may not be there.
+[01:01:42] Thank you sir.
+[01:01:43] Thank you so much.
+[01:01:46] Thank you.
+[01:01:47] Your next question comes from the line of Aditya Maungia,
+[01:01:49] with Court of Securities, please go ahead.
+[01:01:54] Yeah, thank you for the opportunity.
+[01:01:57] I'll go ahead in the question.
+[01:02:00] Somewhere there's a divergence between the goodness
+[01:02:04] of growth in a better at a core level, which
+[01:02:06] is solid at 15-15% by and the growth that is voted in the
+[01:02:12] overall the better of the company.
+[01:02:14] Now I do understand the reality and so on and so forth.
+[01:02:17] but there is a very large difference and it's happened to the second time.
+[01:02:22] On the flip side other income is moving in a direction that magnifies the effect.
+[01:02:27] Could you give us a little bit more sense of how to think through the side version that's
+[01:02:31] happening right now?
+[01:02:32] Yeah.
+[01:02:33] So, Aditya let me put it like this.
+[01:02:37] If you see the earnings fact sheet now we also after EBITDA we have the other income.
+[01:02:42] Some part of the other income is getting allocated to the segments while we declare
+[01:02:46] the PPM margin because what of those are specifically relating to the segments are getting loaded
+[01:02:53] in the PPM EBITDA. What you see in the financial EBITDA is going
+[01:02:56] by functional or major classification ok, but some part of other income specifically
+[01:03:02] attributed to segments get loaded to those segments, why we give the segment EBITDA or
+[01:03:08] the PPM EBITDA or whatever we are talking about infrastructure utilities and all. And
+[01:03:12] And what you see in the P&L is the debita at the nature level number 1.
+[01:03:17] Number 2 is in far as the nature level debita has dropped from 10 to 8.7 is also question
+[01:03:23] of some of the timing mismatches cost that we have incurred at the corporate segment
+[01:03:28] level itself.
+[01:03:29] So, that is also related partly attributed to the drop in a debita from 10 to 8.7.
+[01:03:36] So, if I have to keep it very simple 10 to 8.7 you can take around 80 basis points is
+[01:03:43] arising because of the segment related margin compression, but getting compensated to other
+[01:03:48] income and the balance 40 to 50 basis points coming at the timing mismatch of cost that
+[01:03:55] we have booked in corporate.
+[01:03:56] Just to supplement I think you have to also see it in the context of what is happening
+[01:04:01] in the external world right.
+[01:04:03] We are operating under extremely difficult and challenging environment.
+[01:04:06] You cannot take the evidence margin at that stage and try to extrapolate.
+[01:04:10] I think it should be appreciated that despite this extremely challenging environment,
+[01:04:15] we are maintaining the evidence margin. That is A.
+[01:04:18] And basically that you don't have to too much scrutinize the growth,
+[01:04:21] divergence in the growth versus evidence margin, growth versus revenue growth.
+[01:04:25] Because any revenue growth is always positive because that gives an opportunity to do few
+[01:04:29] So, I think we have to see it in a very different light.
+[01:04:35] Understood that part.
+[01:04:36] This is the second part over here and this is on cash flows which have been fairly strong
+[01:04:41] as in just the core is generating more than 10,000 crores in the first half.
+[01:04:45] Since this is higher than your expectation that you had said otherwise, how to think through
+[01:04:50] this being used by LNT does it mean that they start allocating this more at the working
+[01:04:55] capital and start giving the whole business faster or does one have to think through whatever
+[01:05:02] quantum of kpix has been classified in newer businesses start to see a meaningful failure.
+[01:05:08] Yeah, so some part of the of course at a group level if you see our overall balance sheet
+[01:05:13] at a group level our cash and cash equivalents along with temporary surplus all putters is
+[01:05:18] almost touching a one lakh crore ok.
+[01:05:20] Of course, it includes day-to-day cash balance also, but we are sitting on, I would say a
+[01:05:28] really good amount of surplus that will be partially used for our Lakshya 31 plan of
+[01:05:34] investments either into combination of data centers, into green energy, our share of equity.
+[01:05:41] All these businesses will have their due levels of leverage.
+[01:05:44] It's not that the entire thing will get invested at a gross level, but only one thing
+[01:05:48] I would like to add Aditya is I think we have taken a lot of effort to improve the working
+[01:05:54] capital discipline for the core business and we do not want to let loose that.
+[01:06:00] So, we will do execution in line with the progress in the customer level itself which
+[01:06:06] means timely payments by customers within the terms of the contract will also enable
+[01:06:12] us to ensure execution happens.
+[01:06:15] We do not want to get into that path of again you know trying to show revenue without you
+[01:06:23] know at the same time compromising on cash.
+[01:06:25] Understood.
+[01:06:29] I will get back into the queue and thank you for your sponsor.
+[01:06:35] Thank you.
+[01:06:36] Ladies and gentlemen, we will take that as the last question for today.
+[01:06:40] I now hand the conference back to Mr. P Ramakrishnan for closing comments.
+[01:06:44] Also, thank you ladies and gentlemen for a patient hearing, it was a pleasure to interact
+[01:06:52] with all of you.
+[01:06:53] Good luck and good night and wishing you all the very best.
+[01:06:58] Thank you.
+[01:07:00] Thank you.
+[01:07:02] On behalf of Lassen and Toubro Limited that concludes this conference.
+[01:07:06] Thank you everyone for joining us and you may now disconnect your hands.
+[01:07:10] Thank you.

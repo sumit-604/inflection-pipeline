@@ -1,0 +1,24 @@
+stage: A2-enumerator
+company: "LT"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/lt-q2fy27/work/ledger_concall_lt_q2fy27.md"
+counts:
+  turns: 45
+  questions: 21
+  mgmt_numbers: 206
+  zero_standing: 0
+  entities: 72
+  forward_commitments: 74
+  qualifiers: 90
+  dates: 29
+flags_raised: [REPEAT_QUESTION, MGMT_ABSENCE, MISSING_FROM_STRUCTURED]
+ids_in_structured: 492
+ids_referenced: 492
+orphan_ids: []
+missing_from_structured: ["L430 Q4 and beyond", "L484 break the record again", "L571 last six months", "L608 six-year-old fragment", "L707 will be some delay"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "MFS count is 5, below the 15 loop threshold. Mechanical sweep: 270 body lines carry digit, number-word or forward tokens; 261 sit within one line of a structured row; the 9 others yield 5 real units. Turns are approximate: ASR has no speaker tags, so boundaries come from the 21 QUESTION rows (8 analysts, 3 REPEAT_QUESTION clusters: working capital, DAC/precision engineering, Middle East logistics/Hormuz). No Chairman/CMD is named; only P. Ramakrishnan and Subram Sharma (Dy MD) appear. No zero/nil rows."

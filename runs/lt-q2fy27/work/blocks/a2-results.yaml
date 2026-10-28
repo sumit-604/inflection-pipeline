@@ -1,0 +1,34 @@
+```yaml
+stage: A2-enumerator
+company: "LT"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/lt-q2fy27/work/ledger_results_lt_q2fy27.md"
+counts:
+  notes: 41
+  line_items: 400
+  zero_standing: 42
+  agenda_items: 5
+  auditor_paras: 16
+  entities: 177
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+  annexure1_items: 58
+  other_entity_rows: 63
+  forward_rows: 16
+  signature_blocks: 6
+  press_release_numbers: 95
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, LIQUIDATION, RESTATED, BASIS_DIFFERENCE, MISSING_FROM_STRUCTURED, SIGNATURE_TIMESTAMP, MGMT_FURNISHED_UNREVIEWED, OTHER_AUDITOR_RELIED, UDIN_OCR_GARBLED, HEADING_ONLY, NO_OWN_ROW]
+ids_in_structured: 2511
+ids_referenced: 2511
+orphan_ids: []
+missing_from_structured: ["MFS-1 board letter digital signature timestamp 2026.10.27 17:04:53 (fulltext line 92)", "MFS-2 Annexure III digital signature timestamp 2026.10.27 17:01:26 (fulltext lines 1959-1963)", "MFS-3 consolidated Annexure A parent entity Larsen & Toubro Limited (fulltext line 1428)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Board letter carries one resolution only (results); no dividend, AR, director, auditor or capital item, and 14:00 to 16:45 is a 2h45m sitting. 42 ZERO_STANDING cells: Exceptional items are nil in consol (all periods) and standalone current periods while standalone Q2 FY26 shows an exceptional loss, and CF acquisition, disposal and divestment lines are nil: M&A template lines to read against LTMRHL, Vyoma.AI and Realty transfers. 10 of the 42 are 0.00 bad-debt ratio cells A1 did not flag. Press release PAT 5,202 equals owners-attributable (R394); statement net profit incl NCI is 5,949.15 (R388). Standalone notes (ii) and (iv) have no consolidated twin. LTMRHL is still a listed subsidiary (R1996), held for sale, completion now 31-Dec-2026. 6 ENTITY_CHANGE rows from filed symbols (4 added incl Vyoma.AI; Nabha Power divested); no prior list, so no diff. Auditor: unmodified, no EOM or going concern text; 41 subsidiaries and 23 joint operations are management-furnished. UDIN garbled in A1. 3 MFS rows loop to A1: two signature timestamps and the consolidated parent entity."
+```

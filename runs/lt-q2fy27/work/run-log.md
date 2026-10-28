@@ -1,0 +1,27 @@
+# Run log: LT q2fy27 (/run-quarterly, session qr-lt-q2fy27)
+
+- 28-Oct: checkout guard passed (fetch ok, diff empty over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md).
+- Protocols present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md, Document_Review_Protocol_v1_1.md, Master_Project_Prompt_v3_6.md.
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract at C:/Program Files/Tesseract-OCR/tesseract.exe.
+- Class detection: LT_Q2FY27_Results.pdf -> results (Board Outcome letter, Reg 30/33 markers, p1). LT_Q2FY27_Analyst_Presentation.pdf -> presentation (Reg 30 cover "Analyst Presentation", slide pages). LT_Dhaka_Metro_Order_Press_Release.pdf -> order-win press release, A1 only per coordinator. Transcript -> concall (Moderator opening, speaker turns), ASR.
+- Company memory: companies/LT.md absent. Notion COMPANIES MASTER: no Larsen & Toubro page found (two searches, read only). Spear: none on record. A4 frames a PRE-THESIS READ.
+- Tracker rows: not supplied.
+- A1 presentation: GATE A1 pass, 36/36 pages, R001-R1490; scrambled -layout table slides transcribed from renders (appendix lines 951-977). 138,711 tok.
+- A2 presentation: GATE A2 pass, 1490/1490 IDs, no orphans; cost 85,283 < A1 138,711. MISSING_FROM_STRUCTURED M1-M3 are slide index labels, a layout artefact and tel/fax digits: no data value, logged, not looped to A1.
+- A1 results: GATE A1 pass, 33/33 pages, R001-R2511; hidden OCR layer; -raw for p9, 11-33; p14 consolidated cash flow transcribed from render; OCR slips corrected (fulltext VERIFY_LOG). Page 12 standalone-items table not footed by A1: A3 asked to foot it.
+- A3 presentation: GATE A3 pass, F1-F17 all marked, 29 findings P-01..P-29, 1490/1490 rows read. P-19 flags a likely A1 domestic/international label swap on pages 17-18 (R244-R251, R264-R271): sent back to A1 presentation for a render check (pre-A4 fix, not an A5 loop). Also R1387, R1352 and page-1 line anchors.
+- A1 presentation fix (resume): swap confirmed from 150 dpi render, labels fixed on R244-R251, R264-R271; R1387, R1352, page-1 anchors fixed; R1491-R1498 added (slide 12 index labels). A2 presentation asked to add R1491-R1498 to the ledger.
+- A2 presentation update (resume): 1498/1498 referenced, zero orphans, M1 resolved, M2/M3 no-data.
+- A2 results: GATE A2 pass, 2511/2511 IDs, zero orphans. MFS-1..3 (two signature timestamps, consolidated parent entity row) carried as ledger rows with fulltext lines; no data value, not looped to A1.
+- Cost check A2 results 174,669 < A1 results 250,729: pass.
+- A1 concall: GATE A1 pass, 823/823 source lines, 7 chunk pages, R001-R492. Rows hand-authored (no scripted sweep, against the batch lesson); A2 told to run a mechanical sweep as the second method; MFS > 15 loops to A1.
+- A2 concall: GATE A2 pass, 492/492 IDs, zero orphans; mechanical sweep found 5 MFS (below 15), no A1 loop.
+- A3 concall: GATE A3 pass, 17/17 marked (F6, F7, F15, F16, F17 FINDING; rest N.A.), 26 findings C-01..C-26, 497 units read. A1 tagging notes (R291/R292, R394 analyst statements; R460 PPS vs PPM) carried to A4, not looped.
+- A1 orderpr: GATE A1 pass, 3/3 pages, R001-R069; no value stated, 'Major' band Rs 5,000-10,000 Cr; page 3 class table from render. A1 only per coordinator; A4 reads rows directly.
+- A3 results: GATE A3 pass, 17/17 marked (12 FINDING incl F17 on operator watch list, 4-5 PASS, F16 N.A.), 33 findings R-01..R-33, 2511/2511 + 3 MFS read. Page 12 table foots (24/24). Pre-A4 transcript check: ASR present since run start (11:41), already run as concall.
+- A4: review written, PROCEED WITH FLAGS, cash conversion INDETERMINATE-WITH-DIRECTION, 41 notes / 45 turns / 36 slides all reviewed, 88 A3 findings incorporated, 35 QfM rows, 24 monitorables. A5 launched with review + A1 + A2 paths only.
+- A5 loop 0: INCOMPLETE, loop to A4 (F1, F3 CONTRADICTION; F2, F4-F6 MISSING; F7 FACTUAL; S1-S8 STYLE). PAUSED on coordinator message before the loop; see work/PAUSED.md.
+- 29-Oct: RESUME received from coordinator. Loop 1 started: A4 resumed with A5 gap F1-F7 (STYLE optional). One subagent at a time.
+- Loop 1 A4: F1-F7 fixed, S1-S8 applied; verdict and cash class unchanged; no FY27E/FY28E number changed. A5 resumed for one re-audit.
+- Loop 1 A5 re-audit: F1-F7 closed, S1-S8 applied, no drift; new FACTUAL N1 (review L876 Step 7A cell says standalone debt not lower at Sep-26; filed ratios RF L1051/L1058/L1222 show lower YoY and QoQ, higher only vs Mar-26). N1 moves no verdict-card number: per batch rule 4 no second loop. A5 recorded INCOMPLETE, 1 text item (N1) after 1 loop; N2, N3 STYLE logged. N1 carried as an open item in the brief and payload.
+- Close-out: session-cost.md, operator-brief.md, notion-payload.md written. A1 temp folders (scratch scripts, OCR text) moved to the session scratchpad, not committed.

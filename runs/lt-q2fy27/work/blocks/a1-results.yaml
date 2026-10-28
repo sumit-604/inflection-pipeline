@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "LT"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 33
+formfeed_count: 33          # raw pdftotext output; replaced by 33 [page N] markers in fulltext
+line_count: 1963
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true    # hidden OCR layer (Paper Capture); statement columns partly scrambled
+extraction_mode: text-only  # pdftotext -layout p1-8,10; -raw p9,11-33; page 14 cash flow reconstructed from render
+render_candidates: []       # no zero-character pages
+rendered_pages: ["visual check only, no OCR: pages 11, 14, 19 viewed; page 14 table transcribed from render (text layer detached values from labels); other statement pages arithmetic-footed and OCR slips corrected, all listed in fulltext header VERIFY_LOG"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (quarter and half-year ended 30-Sep-2026)"
+fulltext_path: "runs/lt-q2fy27/extracted/lt-results-q2fy27-fulltext.md"
+structured_path: "runs/lt-q2fy27/extracted/lt-results-q2fy27-structured.md"
+structured_counts:
+  number: 1884
+  entity: 239
+  forward: 16
+  date: 231
+  qualifier: 141
+structured_id_range: "R001-R2511"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,76 @@
+stage: A3-forensics
+company: "LT"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/lt-q2fy27/work/forensics_results_lt_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: FINDING
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "R-01", check: "F1", line: "487, 936", classification: "FORWARD-SIGNAL", implication: "Exceptional line nil in FY27 while LTMRHL sale, Realty slump sale and Vyoma.AI transfer are pending; prior-year standalone exceptional (5413.00 Q2 FY26; 7121.73 FY26) unexplained in filing; H2 exceptional items likely"}
+  - {id: "R-02", check: "F1", line: "720, 745, 746, 757, 877", classification: "AMBIGUOUS", implication: "Disposal gain 332.93 (H1) and undertaking consideration 493.00 bypass exceptional items; filing never names LTTS SWC, no quarter split; 332.93 may also hold Nabha gain (DP segment revenue per note IV); NCI stake buy 698.99 unnamed"}
+  - {id: "R-03", check: "F1", line: "632, 1056, 1114, 718", classification: "AMBIGUOUS", implication: "Bad-debt ratio 0.00 counts write-offs only; standalone ECL up 55% (788.56 vs 508.32), consolidated up 26%; allowances can precede write-offs"}
+  - {id: "R-04", check: "F2", line: "496, 615, 918, 1143", classification: "NEUTRAL-FACT", implication: "S-vs-C PAT gap swung from -7.5% to +54.4% of standalone PAT (61.9 pp) on intra-group dividend timing (H1 3474.71); standalone PAT not a core proxy"}
+  - {id: "R-05", check: "F2", line: "380, 384, 469, 483, 484", classification: "FORWARD-SIGNAL", implication: "Q2 PBT +1304.95: other income +921.98 (71%), finance cost -289.87, D&A -54.86, EBITDA +38.24; EBITDA margin 8.7% vs 10.0%; 33% PAT growth not repeatable on core"}
+  - {id: "R-06", check: "F2", line: "483, 932, 320, 646", classification: "AMBIGUOUS", implication: "Finance costs -38% while borrowings +14545 and D/E 1.02 (1.12 incl HFS); subsidiary finance cost 67.64 vs 286.58; likely LTMRHL exit after 30-Apr per SPA, a perimeter effect not deleveraging"}
+  - {id: "R-07", check: "F2", line: "1191, 1200, 224", classification: "FORWARD-SIGNAL", implication: "Standalone E-Conv EBIT margin 5.88% vs 8.71% (-283 bps), H1 result -14.4% on revenue +44%; CarbonLite dilution sits in parent; subsidiaries improved to 8.05%"}
+  - {id: "R-08", check: "F2", line: "1060, 918", classification: "FORWARD-SIGNAL", implication: "Standalone operating margin 5.49% vs 6.61%; standalone EBITDA +3.1% on revenue +24.1%; other income 62% of standalone PBT"}
+  - {id: "R-09", check: "F4", line: "1332-1335, 1345-1354", classification: "NEUTRAL-FACT", implication: "57.2% of Q2 and 68.5% of H1 consolidated PAT outside MSKA review (listed subs own auditors); 100% of JV/associate share; prior trend NOT FOUND"}
+  - {id: "R-10", check: "F4", line: "1363-1368, 1387", classification: "AMBIGUOUS", implication: "41 unreviewed subsidiaries post PAT above revenue (H1 541.98 on 391.94), 5.8% of owners PAT, called not material; source of non-revenue profit unknown"}
+  - {id: "R-11", check: "F6", line: "517, 965", classification: "FORWARD-SIGNAL", implication: "LTMRHL completion revised to 31-Dec-2026; slippage; HFS debt keeps D/E at 1.12 until close"}
+  - {id: "R-12", check: "F6", line: "967-970, 1008", classification: "FORWARD-SIGNAL", implication: "Data-centre/cloud business and LTNS moving to Vyoma.AI by Q3 FY27; standalone HFS 2778.35 vs 1599.11; precursor to possible external raise"}
+  - {id: "R-13", check: "F6", line: "959-963", classification: "FORWARD-SIGNAL", implication: "Realty slump sale to LTRPL pending NCLT 10 months after Board approval; standalone gain/loss and segment change on completion"}
+  - {id: "R-14", check: "F7", line: "190, 234, 305, 349, 387-395", classification: "FORWARD-SIGNAL", implication: "Three deferral/delay hedges plus Middle East risk; ex-E-Conv order inflow -10.6% YoY; inflow concentration in one segment and region"}
+  - {id: "R-15", check: "F7", line: "884, 1259", classification: "NEUTRAL-FACT", implication: "Lumpiness hedge covers all standalone segments vs some consolidated segments; newness untestable without prior quarter"}
+  - {id: "R-16", check: "F8", line: "491, 492", classification: "FORWARD-SIGNAL", implication: "Deferred credit 337.06; Q2 ETR 22.6% vs 28.0% Q1 and 25.17% statutory; 441 bps shield; deferred swing = 32% of owners PAT increase; ETR step-up risk in H2"}
+  - {id: "R-17", check: "F8", line: "942, 1105", classification: "NEUTRAL-FACT", implication: "Standalone ETR 15.7% Q2 explained by intra-group dividends; ex-dividend ETR 23.9%; no earlier-years tax line"}
+  - {id: "R-18", check: "F9", line: "499, 501, 945, 340", classification: "AMBIGUOUS", implication: "Q2 non-reclassifiable OCI loss (172.63) exceeds FY26 (115.88); loss despite rate rise points to plan assets or FVOCI equity; verify assumptions at AR"}
+  - {id: "R-19", check: "F12", line: "380, 387-393, 815-818", classification: "AMBIGUOUS", implication: "Presentation A3 confirmed: segment EBITDA exceeds group EBITDA by about 1576 (727 a year ago); residual OI minus unallocable net = 1594.16 vs 819.04; segment results +13.1% vs EBITDA +0.6%; corporate cost step-up vs OI moved into segments"}
+  - {id: "R-20", check: "F12", line: "387, 401, 795, 807, 823, 836", classification: "FORWARD-SIGNAL", implication: "I&U orders -13%, Q2 EBIT +0.7% on revenue +6.0%, H1 EBIT -3.7%, net capital +12.1% in H1 vs revenue +1.9%"}
+  - {id: "R-21", check: "F12", line: "824, 825, 837, 838, 588, 727", classification: "AMBIGUOUS", implication: "Energy segments advance-funded: E-Green net (1920.87), E-Conv net (4316.38); CFO flattered now, WC reversal risk as advances burn"}
+  - {id: "R-22", check: "F12", line: "826, 839, 1217, 982, 404", classification: "FORWARD-SIGNAL", implication: "M&P net capital +52.7% in H1 vs revenue +23.7%; standalone CWIP down so WC build; H1 margin 15.3% vs 15.8%"}
+  - {id: "R-23", check: "F12", line: "829, 842, 532, 533, 305", classification: "FORWARD-SIGNAL", implication: "Realty assets +14.6%, liabilities +24.7% with revenue -43% and delayed launches; inventory build ahead of launches"}
+  - {id: "R-24", check: "F12", line: "394, 802, 830, 843, 560, 592, 325", classification: "FORWARD-SIGNAL", implication: "DP nil revenue with assets 17142.81 (mostly LTMRHL HFS block); post-close DP is pre-revenue green energy build; trend asset accretion"}
+  - {id: "R-25", check: "F14", line: "1354", classification: "NEUTRAL-FACT", implication: "Auditor letter date drafting slip in consolidated para 7; governance data point"}
+  - {id: "R-26", check: "F14", line: "320-321, 516-518, 964-966", classification: "AMBIGUOUS", implication: "Metro 30-Apr economic cut-off stated only in press release; notes silent on its accounting though it drives DP nil revenue and finance cost fall"}
+  - {id: "R-27", check: "F14", line: "391, 392, 395", classification: "NEUTRAL-FACT", implication: "Order inflow includes FS (= revenue) and TPS (about = revenue): 13.6% of Q2 inflow is not backlog; use E&C-only book-to-bill"}
+  - {id: "R-28", check: "F15", line: "1579-1581, 1588, 1665-1667", classification: "FORWARD-SIGNAL", implication: "Data-centre cluster forming: Vyoma.AI, LTN Compute, LTA Data Centres, associate Sovcloud (partner NOT FOUND)"}
+  - {id: "R-29", check: "F15", line: "1578, 1664, 748", classification: "AMBIGUOUS", implication: "International Green Scapes acquired 13-Apr-2026 with no note; CF acquisition of subsidiaries 805.30 incl contingent; price and purpose NOT FOUND"}
+  - {id: "R-30", check: "F15", line: "1501, 1668, 746", classification: "NEUTRAL-FACT", implication: "Nabha Power divested 25-Jun-2026; likely most of 3830.99 consideration; gain in DP segment revenue, not exceptional"}
+  - {id: "R-31", check: "F15", line: "1435, 1444, 1583-1585, 1663", classification: "NEUTRAL-FACT", implication: "Five entities in liquidation incl two Qatar entities; cleanup"}
+  - {id: "R-32", check: "F15", line: "1448, 1450-1452, 1459-1462, 1575", classification: "NEUTRAL-FACT", implication: "LTIMindtree renamed LTM; L&T Sapura Shipping renamed L&T Offshore Marine (partner relationship status NOT FOUND)"}
+  - {id: "R-33", check: "F17", line: "129, 152, 159, 330-355, 349", classification: "AMBIGUOUS", implication: "Watch-list silence: no Middle East split, no FY27 guidance, no NWC % of sales; 1 quarter; take to concall"}
+forward_signals: ["R-01", "R-05", "R-07", "R-08", "R-11", "R-12", "R-13", "R-14", "R-16", "R-20", "R-22", "R-23", "R-24", "R-28"]
+ambiguous: ["R-02", "R-03", "R-06", "R-10", "R-18", "R-19", "R-21", "R-26", "R-29", "R-33"]
+commitments:
+  - {commitment: "Complete LTMRHL divestment to HMRL", implied_date: "2026-12-31 (revised)", ref: "consol note (ii) line 517; standalone note (iii) line 965", status_word: "underway"}
+  - {commitment: "Transfer data-centre and cloud business and LTNS stake to Vyoma.AI", implied_date: "Q3 FY27", ref: "standalone note (iv) lines 967-970", status_word: "initiated"}
+  - {commitment: "Realty Undertaking slump sale to LTRPL", implied_date: "NOT FOUND (NCLT pending)", ref: "standalone note (ii) lines 959-963", status_word: "initiated"}
+  - {commitment: "Hyderabad Metro results included till 30-Apr-2026 per SPA", implied_date: "2026-04-30", ref: "press release line 320", status_word: "completed"}
+  - {commitment: "Nabha Power divestment", implied_date: "2026-06-25", ref: "press release lines 319-320; Annexure A line 1668", status_word: "completed"}
+  - {commitment: "Offshore Wind execution", implied_date: "Q2 FY27", ref: "press release line 242", status_word: "commenced"}
+  - {commitment: "Green Energy business build in Development Projects", implied_date: "NOT FOUND", ref: "press release line 325", status_word: "underway"}
+  - {commitment: "Lakshya 2031 re-segmentation", implied_date: "2026-04-01", ref: "consol segment note (II) line 852; standalone line 1236", status_word: "completed"}
+  - {commitment: "Liquidation of five entities", implied_date: "NOT FOUND", ref: "Annexure A legend line 1663", status_word: "underway"}
+  - {commitment: "NCD proceeds use restriction, Rs 500 crore", implied_date: "continuing", ref: "Annexure III lines 1892, 1939, 1946", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Headline PAT +33% is not core earnings. Consolidated EBITDA rose 0.6%. Other income is 71% of the PBT gain, lower finance cost 22%, and a Rs 337 cr deferred tax credit cut Q2 ETR to 22.6%. The finance-cost fall likely reflects Hyderabad Metro leaving the P&L after 30-Apr under the SPA; only the press release says so. Segment results grew 13% while group EBITDA was flat. The gap is an unallocated residual (other income minus unallocable net) that doubled to Rs 1,594 cr. This confirms the presentation A3. The filing cannot show whether corporate cost rose or other income moved into segments; that split is the key question. The H1 disposal gain (Rs 333 cr, CF line 720) bypasses exceptional items. The filing never names LTTS SWC and gives no quarter. All order-inflow growth is Energy-Conventional; excluding it, inflow fell 10.6%, with three deferral phrases. Standalone E-Conv EBIT margin fell 283 bps. Energy segments run on customer advances, so later WC reversal is a risk. F17 was applied to the operator watch list; the results-doctype default is N.A. Page 12 footing passed."

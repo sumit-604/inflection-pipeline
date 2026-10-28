@@ -53,7 +53,9 @@ Batches: 1 = NETWEB, AEQUS, PARACABLES, SONACOMS. 2 = WEWORK, INDIAMART, SYNGENE
 | INDIAMART | runs/indiamart-q2fy27 | 3,779,541 | 1 | COMPLETE; PROCEED WITH FLAGS; enquiry exit rule (#6) fired as written | f2ada840 |
 | SYNGENE | runs/syngene-q2fy27 | 1,736,667 | 1 | COMPLETE; PROCEED WITH FLAGS; T3 fired, T4 fired on strict reading; no call transcript | 65ba58de |
 | RAYMONDREL | runs/raymondrel-q2fy27 | 3,122,093 | 1 | COMPLETE; PROCEED WITH FLAGS; two operator rulings open (margin-stop basis, net-debt test) | 2dc7890c |
-| (batch 3 pending) | | | | | |
+| KNACK | runs/knack-q2fy27 | 3,093,413 | 1 | COMPLETE; PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION | 9d878a4d |
+| LT | runs/lt-q2fy27 | see session-cost.md | 1 | INCOMPLETE on one text item (N1, no number moved); PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION | 166b5474 |
+| (batch 3 rest and batch 4 pending) | | | | | |
 
 ## Problems log (coordinator)
 
@@ -66,4 +68,4 @@ Batches: 1 = NETWEB, AEQUS, PARACABLES, SONACOMS. 2 = WEWORK, INDIAMART, SYNGENE
 - 15:55-16:02: batch 2 sessions committed; notes reached the coordinator at 16:04 (no gap this time). Batch 3 (UNIMECH, LT, SKYGOLD, KNACK) started at 16:06. Batch 2 merged into the run branch.
 - PAUSE (operator, after batch 3 reached A5 on all four names): batch 3 sessions told to finish the running agent, write work/PAUSED.md and stop; nothing committed on their branches yet. Batch 4 not started. Eight finished briefs assembled in `_Operator_Briefs_Q2FY27_2026-10-28.md` in the Q2 FY27 Results folder. Resume: message each batch-3 session RESUME, then start batch 4 (DYCL, 530077, NEOCHEM, ROUTE). The machine clock flipped zones during batch 3 (reads 02:46 after 16:08), so batch 3 and 4 commit timestamps are not comparable.
 - RESUME (operator, going out 3-4 hours, "don't stop"): batch 3 sessions resumed at one subagent each (the operator's shallow-analysis session shares the machine). Batch 4 started with the two light names, 530077 and NEOCHEM (results only, one agent each); DYCL and ROUTE start as batch-3 sessions commit. Route's earnings-call page lists the 28-Oct call with no recording yet: Route runs on filed documents. Syngene recording still not posted.
-
+- KNACK and LT committed and merged; DYCL and ROUTE started (batch 4 now all four running: 530077, NEOCHEM, DYCL, ROUTE). UNIMECH and SKYGOLD still closing out.

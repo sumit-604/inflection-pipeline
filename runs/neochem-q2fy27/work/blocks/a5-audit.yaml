@@ -1,0 +1,128 @@
+stage: A5-adversary
+company: "NEOCHEM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE   # initial audit verdict; loop_1.verdict governs after correction loop 1
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows:
+    - "R005-R006 (ledger line 46): share warrants nil both dates, fulltext line 139; not cited or dispositioned in A4"
+    - "R041-R044 (ledger line 47): asset-side DTL and Long Term loans and advances nil both dates, fulltext lines 163-164; not cited or dispositioned in A4"
+    - "R236-R237 (ledger line 85): board meeting 05:20 PM to 06:30 PM, fulltext line 38; A2 materiality flag; not cited or dispositioned in A4"
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - claim: "Core PBT +68.7%; PAT understates core growth; growth came from the business itself (review lines 162, 423, 478, 589)"
+    counter: "17.4% of the 410.67 Lakh core PBT gain is a 71.44 Lakh interest saving from the FY26 equity-funded debt paydown, the same issue that held EPS to +1.3%; operating EBIT grew 42.6% (review line 151), in line with PAT +43.1% and below revenue +50.4%; borrowings since rose 85.9%"
+    source_line: "results fulltext lines 143, 149, 193, 214, 277, 279, 281"
+    type: CONTRADICTION
+  - claim: "Employee cost +3.5% on revenue +50.4%: operating leverage held the margin up (review lines 161, 492)"
+    counter: "Sequentially the leverage is absent: Other Expenses +29.5% HoH (323.30 to 418.73) vs revenue +6.3%; opex/revenue +47.5 bps; op EBITDA margin +10.6 bps on +58.1 bps gross margin; CFO and CCO cost from 27-Oct-2026 not yet in H1"
+    source_line: "results fulltext lines 44, 47, 184, 188-195"
+    type: MISSING
+  - claim: "Revenue +50.4% YoY, strong growth; growth is real in the P&L (review lines 146, 160, 478, 589)"
+    counter: "FY26 receivables rose 2,344.66 Lakhs (65.5% of the FY26 WC outflow, 21.2% of FY26 revenue, 1.95x FY26 PAT) with bad debts 0.00 and no provision; H1 FY27 HoH growth 6.3% while total assets rose 27.1%; annualised revenue/total assets 1.11x to 0.93x"
+    source_line: "results fulltext lines 156, 174, 184, 212, 251, 257-265"
+    type: MISSING
+findings_by_type:
+  factual:
+    - "F6: 'CFO since 2018' (review lines 452, 574) not supported; fulltext lines 84-86 say associated with the company since 2018; start of CFO tenure NOT DISCLOSED. Loop A4."
+  missing:
+    - "F1: orphan ledger rows R005-R006, R041-R044, R236-R237 not cited or marked reviewed, no finding in A4. Loop A3."
+    - "F3: Claim 2 counter (sequential opex +47.5 bps; Other Expenses +29.5% HoH; senior hires after period end) absent from review. Loop A4."
+    - "F4: Claim 3 counter (FY26 receivables +2,344.66 Lakhs = 1.95x FY26 PAT, no provision; total assets +27.1% vs revenue +6.3% HoH) absent from review. Loop A4."
+    - "F5: review report qualifier 'or other applicable accounting standards, as the case may be' (fulltext line 108) dropped; review lines 65, 403, 460, 554, 582 call it a framework conflict. Loop A4."
+  contradiction:
+    - "F2: review line 478 'Profit from operations alone rose faster, by 68.7%' and line 162 'PAT growth understates core growth' contradict review line 151 operating EBIT +42.6%. Loop A4."
+  style:
+    - "S1: blank-valued Schedule III labels (fulltext lines 141, 145, 200, 207) not enumerated; each ties to nil"
+    - "S2: ledger lists R176 in both CF non-zero and ZERO_STANDING rows; R177 listed twice"
+    - "S3: op EBITDA margin YoY -129 bps from rounded margins; unrounded -128.3 bps"
+    - "S4: four forward-map catalysts undated; add first observable checkpoint"
+    - "S5: A1 line-ref drift on I001, I003, I005, I009, R239, R247, R335; no value affected"
+    - "S6: Annexure A sub-cell fragments only in fulltext; ledger Annexure row lists R284 (not in Annexure A)"
+    - "S7: BS signatory 'Swapnil B. Makati' (line 175) vs 'Swapnil R Makati' (lines 216, 240, 291); verify with NSE original"
+    - "S8: investment exit at book (625.00 - 115.93 = 509.07, zero profit); interest 27.34 about 9.6% annualised on average holding [INFERENCE]; link Q13 and Q14"
+    - "S9: 'from a larger player' (review line 500) sits outside the INFERENCE tag"
+    - "S10: F-14 inference uses H1 FY26 EPS 4.52; latest half gives 22.9x; neither gives 23.3; filed 12.4x stands"
+    - "S11: auditor paras 8 units (A5) vs 7 (A2); definitional"
+    - "S12: intimation Zoom platform and atlascapital.in domain not entity rows; immaterial"
+loop_back_to: "A3"   # initial audit; loop_1.loop_back_to governs after correction loop 1
+gap: "A3: disposition three orphan ledger rows absent from A4: R005-R006 (share warrants nil, fulltext line 139), R041-R044 (asset-side DTL and LT loans and advances nil, lines 163-164), R236-R237 (board meeting 05:20-06:30 PM, line 38). Same loop, A4 then grafts: F2 CONTRADICTION, align review lines 162, 423, 478, 589 with line 151 (operating EBIT +42.6%; 71.44 of the 410.67 Lakh core PBT gain is FY26 equity-funded interest saving, now reversing); F3 MISSING, add sequential opex test (Other Expenses +29.5% HoH, line 195; margin +10.6 bps on +58.1 bps gross margin; CFO and CCO cost from 27-Oct-2026); F4 MISSING, add FY26 receivables build 2,344.66 Lakhs (line 259) = 65.5% of FY26 WC outflow, 1.95x FY26 PAT, no provision (line 251); F5 MISSING, restore 'or other applicable accounting standards, as the case may be' (line 108) at review lines 65, 403, 460; F6 FACTUAL, replace 'CFO since 2018' at review lines 452, 574 with 'with the company since 2018 (line 84); CFO tenure start not disclosed'. Exact graft text is in the audit file."
+style_notes:
+  - "S1 blank Schedule III labels nil by tie-out; A2 may add BLANK_AS_FILED row"
+  - "S2 ledger R176/R177 double listing"
+  - "S3 -129 vs -128.3 bps rounding"
+  - "S4 undated catalysts could carry first checkpoint"
+  - "S5 A1 line-ref drift, values unaffected"
+  - "S6 Annexure fragments fulltext-only; R284 misfiled in Annexure row"
+  - "S7 signatory initial B vs R; verify against NSE original"
+  - "S8 investment exit at book and implied yield; link Q13 and Q14"
+  - "S9 Indofil size claim outside INFERENCE tag"
+  - "S10 F-14 PE inference weak; filed 12.4x stands"
+  - "S11 auditor paragraph unit definition"
+  - "S12 intimation minor entities"
+analyst_note: "Arithmetic is clean. I recomputed every derived metric in A4 from the fulltext and found no mismatch above rounding; capex ties to 0.01 Lakhs once CWIP and intangibles are added. The failures are coverage and framing. Three ledger rows carry no citation or disposition in A4: share warrants nil, long-term loans and advances nil, and the board meeting times. The rule sends orphans to A3; the fix is three disposition lines. The larger issue is A4's lead positive claim. 'Profit from operations alone rose 68.7%' contradicts A4's own EBIT line of +42.6%. 17.4% of the core PBT gain is interest saved by the FY26 equity issue, the same issue that held EPS to +1.3%, and borrowings have since risen 85.9%. Against the previous half, operating leverage is absent: other expenses rose 29.5% while sales rose 6.3%. FY26 receivables rose 2,344.66 Lakhs, about twice FY26 PAT, and A4 never states it. The Ind AS 'conflict' drops the report's 'or other applicable accounting standards' hedge. None of this moves PROCEED WITH FLAGS. It changes what the operator reads first. Blank Schedule III lines are STYLE because every subtotal ties to nil."
+loop_1:
+  date: "2026-10-29"
+  status: complete
+  verdict: COMPLETE
+  review_audited: "runs/neochem-q2fy27/work/review_neochem_q2fy27.md (patched, 632 lines; change log lines 520-537)"
+  plain_language_brief: "all five parts present; narrative about 275 words, about 18 rendered lines"
+  findings_status:
+    - id: F1
+      type: MISSING
+      status: resolved
+      review_lines: "22-25; carried at 390 (Q3), 400 (Q13), yaml 561, 571"
+      check: "fulltext lines 38, 137, 139, 144, 162-165, 171, 214-215 hold; every ledger row now cited or dispositioned"
+    - id: F2
+      type: CONTRADICTION
+      status: resolved
+      review_lines: "165, 426, 481, yaml 614"
+      check: "fulltext line 193 gives 71.44 = 17.4% of 410.67; brief and Diag 3 now agree with operating EBIT +42.6% (review line 154)"
+    - id: F3
+      type: MISSING
+      status: resolved
+      review_lines: "164, 337, 495, yaml 611"
+      check: "fulltext line 195 gives +29.5% HoH; opex ratio +47.5 bps; hires at lines 44, 47; fraud-home sentence tagged INFERENCE"
+    - id: F4
+      type: MISSING
+      status: resolved
+      review_lines: "252, 481, 497, yaml 612"
+      check: "fulltext lines 156, 251, 259 hold; derived items carry caveats"
+    - id: F5
+      type: MISSING
+      status: resolved
+      review_lines: "68, 406, 463, yaml 577, 605"
+      check: "fulltext lines 106-108, 123, 287 quoted; drafting count six everywhere; no residual 'seven' outside change log"
+    - id: F6
+      type: FACTUAL
+      status: resolved
+      review_lines: "455, yaml 597"
+      check: "fulltext line 84 quoted; CFO tenure start NOT DISCLOSED; no residual 'CFO since 2018'"
+  arithmetic_mismatches: []
+  drift_check: "clean. Only logged lines changed, plus one unlogged but correct YAML Q3 edit (review line 561). No extraction or derived number moved. Protocol verdict, cash conversion and branch unchanged."
+  new_findings_by_type:
+    factual: []
+    missing: []
+    contradiction: []
+    style:
+      - "S13: change log Fix 7 (review line 532) omits the YAML Q3 edit at line 561; edit correct (fulltext line 164)"
+      - "S14: derived ratios at review lines 481 ('about a sixth') and 497 ('about twice') tagged FILED; 'FILED, derived' fits the brief convention (A5's own graft wording)"
+      - "S15: 'loan can sit only in' list (review lines 24, 400) omits other current assets 616.57 (fulltext line 172); A5's own F1 wording"
+      - "S16: A4 withdrew A3-20 item (a) at A4; align the A3 record at the next A3 pass (not verified; A3 not an A5 input)"
+  loop_back_to: ""
+  gap: ""
+  style_notes:
+    - "S13 change log omits YAML Q3 edit"
+    - "S14 two derived ratios tagged FILED"
+    - "S15 loan-home list omits other current assets"
+    - "S16 A3 record may still carry A3-20(a)"
+    - "S1-S12 not actioned; stay logged"
+  analyst_note: "All six findings are fixed at the review lines I named. Each fix checks against the unchanged fulltext. A4 changed only the lines it logged, plus one correct but unlogged edit to YAML Q3. No number in Steps 1 to 8 moved. The Key Notes line now leads with operating EBIT +42.6% and keeps core PBT +68.7% with its interest share stated. The drafting count is six. What remains is style: two derived ratios carry a FILED tag, and my own F1 wording on where a loan can sit leaves out other current assets. Verdict COMPLETE. The protocol verdict PROCEED WITH FLAGS is unchanged."

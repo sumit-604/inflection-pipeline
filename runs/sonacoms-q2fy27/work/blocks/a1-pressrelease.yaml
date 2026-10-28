@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+page_count: 4
+formfeed_count: 4
+line_count: 196
+unit_convention: "Crores (narrative also Rs billion)"
+conversion_factor_to_cr: "Crores x1; Rs billion x100"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/extracted/sonacoms-pressrelease-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/extracted/sonacoms-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 52
+  entity: 33
+  forward: 8
+  date: 20
+  qualifier: 14
+structured_id_range: "R001-R127"
+gate_a1: pass
+gap_note: ""

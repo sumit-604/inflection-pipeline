@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 36
+formfeed_count: 36
+line_count: 848
+unit_convention: "Millions (Rs mn; some slides Rs bn)"
+conversion_factor_to_cr: "Millions x0.1; Rs bn x100"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "/c/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/extracted/sonacoms-presentation-q2fy27-fulltext.md"
+structured_path: "/c/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/extracted/sonacoms-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 201
+  entity: 40
+  forward: 12
+  date: 22
+  qualifier: 42
+structured_id_range: "R001-R317"
+gate_a1: pass
+gap_note: ""

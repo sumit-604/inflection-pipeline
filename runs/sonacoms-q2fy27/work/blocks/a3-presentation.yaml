@@ -1,0 +1,71 @@
+stage: A3-forensics
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/work/forensics_presentation_sonacoms_q2fy27.md"
+ledger_reconciled_pct: 100        # loop 1: 332 / 332 (317 R + 15 M)
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "P-A3-F6-01", check: "F6", line: "L201-209 s11", classification: "FORWARD-SIGNAL", implication: "Traction-motor extra volumes Rs 12,500 mn SOP H2 FY27; nearest delivery test Q3/Q4 FY27"}
+  - {id: "P-A3-F6-02", check: "F6", line: "L205, L238 s11/s13", classification: "FORWARD-SIGNAL", implication: "Rs 18.7 bn of Rs 31.2 bn itemised Q2 wins (60%) start production FY28-FY29; revenue lag 2-3 years"}
+  - {id: "P-A3-F6-03", check: "F6", line: "L366-372 vs L205", classification: "AMBIGUOUS", implication: "'Commercialized in Q2FY27' means order won; rear radar SOP H2 FY28, LSD H1 FY29; C3 scoring needs definition"}
+  - {id: "P-A3-F6-04", check: "F6", line: "L257, L267, L305", classification: "FORWARD-SIGNAL", implication: "Railway book Rs 9 bn ~0.8 yr of FY26 run-rate [MEMORY]; non-auto share 31% to 29%; tripwire 8"}
+  - {id: "P-A3-F6-05", check: "F6", line: "L753, L792, L798, L826", classification: "NEUTRAL-FACT", implication: "Development products undated; hub wheel motor no longer under development"}
+  - {id: "P-A3-F7-01", check: "F7", line: "L263-266 s14", classification: "AMBIGUOUS", implication: "Order-book delay discount and EOL haircut size undisclosed, second quarter"}
+  - {id: "P-A3-F10-01", check: "F10", line: "L453-458 s22", classification: "NEUTRAL-FACT", implication: "ESOP cash ~Rs 1,076 mn H1; no share count or EPS in deck; A4 cross-check dilution"}
+  - {id: "P-A3-F14-01", check: "F14", line: "L150-152 vs L485-488 vs L603", classification: "AMBIGUOUS", implication: "Same ROCE 16.4%/ROE 13.9% under two definitions; ROE adds back Rs 301 mn; un-normalised ROCE vs 18% NOT FOUND"}
+  - {id: "P-A3-F14-02", check: "F14", line: "L220-221 vs L234", classification: "NEUTRAL-FACT", implication: "Non-electric heading Rs 6.6 bn vs tiles Rs 6.9 bn"}
+  - {id: "P-A3-F14-03", check: "F14", line: "L388-397, L415-429, L406", classification: "AMBIGUOUS", implication: "Headline PAT vs margin PAT basis differ; stated margin declines (~0.5%, ~1.5%) understate arithmetic (0.7-0.8 pp, 1.6 pp)"}
+  - {id: "P-A3-F14-04", check: "F14", line: "L140-152; L35", classification: "NEUTRAL-FACT", implication: "p7 footnote markers scrambled, RoE4 orphan; no consolidated label on any deck slide"}
+  - {id: "P-A3-F16-01", check: "F16", line: "L404, L438 vs L119-134", classification: "AMBIGUOUS", implication: "Forex-in-revenue qualifier absent on highlight slides; gate bear line cleared by 4 bps incl forex, fails ex-forex (22.5% [MEMORY])"}
+  - {id: "P-A3-F16-02", check: "F16", line: "L257-258", classification: "CONFIRMATORY-NEGATIVE", implication: "EV share of order book 61%, third easing (~70 to 64 to 61); tripwire 9"}
+  - {id: "P-A3-F16-03", check: "F16", line: "L248-252, L201-203, L234, L257", classification: "AMBIGUOUS", implication: "Rs 4.8 bn adds unitemised; robotics book up ~Rs 5 bn with no itemised win; 25 bn consumed = 1.6x revenue, may hold re-estimates"}
+  - {id: "P-A3-F16-04", check: "F16", line: "L190-203, L297", classification: "FORWARD-SIGNAL", implication: "Rs 16.3 bn (45% of adds) from Indian 2W/3W OEM(s); E2W/E3W share 10% to 14%; booking entity vs eDrive/DENSO undisclosed"}
+  - {id: "P-A3-F16-05", check: "F16", line: "L700, L703, L718", classification: "CONFIRMATORY-NEGATIVE", implication: "CY25 global share dipped in diff gears (8.8 to 8.7) and starters (4.4 to 4.2); India claim on Feb-2021 data"}
+  - {id: "P-A3-F16-06", check: "F16", line: "L467, L484, L398-400", classification: "CONFIRMATORY-NEGATIVE", implication: "VA/employee cost 5.8 to 4.9 to 4.7 falls despite claimed operating leverage; structural material-margin drag"}
+  - {id: "P-A3-F16-07", check: "F16", line: "L589-605 vs L512-513 (M07, M08), L142", classification: "NEUTRAL-FACT", implication: "Values slide frames 26% 5-yr margin vs 23.1% run-rate; adjacent-slide averages differ 0.9 pp"}
+  - {id: "P-A3-F16-08", check: "F16", line: "L448, L475-477", classification: "FORWARD-SIGNAL", implication: "H1 capex Rs 1,479 mn (~5.2% of ann. revenue) vs seven SOPs to H1 FY29; capex step-up or capacity off-book"}
+  - {id: "P-A3-F16-09", check: "F16", line: "L172-185, L257-260", classification: "AMBIGUOUS", implication: "~4 programs entered production unnamed; no robotics SOP shown (C2); 49 vs 54 program-count gap (positional labels)"}
+  - {id: "P-A3-F17-01", check: "F17", line: "L123, L142, L398-400", classification: "CONFIRMATORY-NEGATIVE", implication: "Margin 23.0% fails bull 24.5%; flat QoQ; C1 pass-through missed, input prices named"}
+  - {id: "P-A3-F17-02", check: "F17", line: "L442-460, L479", classification: "AMBIGUOUS", implication: "CFO/PAT 1.47x passes; 32% of cash build is new borrowing Rs 2,236 mn; payables-led WC [MEMORY]"}
+  - {id: "P-A3-F17-03", check: "F17", line: "L1-848 (zero hits); L125, L167", classification: "AMBIGUOUS", implication: "Deck silent on DENSO/eDrive carve-out; BEV and 2W-motor figures shown as wholly owned"}
+  - {id: "P-A3-F17-04", check: "F17", line: "L150, L485, L257, L305, L280-298", classification: "CONFIRMATORY-NEGATIVE", implication: "Second quarter silent on Novelic impairment, railway P&L, concentration %, forex quantum, gross-to-net, guarantees"}
+  - {id: "P-A3-F17-05", check: "F17", line: "L311, L257-259; L156 (M15)", classification: "AMBIGUOUS", implication: "C2 robotics SOP not evidenced; robotics revenue 1% vs Rs 13 bn book; AMR drive unit shown at CES but under development"}
+forward_signals: ["P-A3-F6-01", "P-A3-F6-02", "P-A3-F6-04", "P-A3-F16-04", "P-A3-F16-08"]
+ambiguous: ["P-A3-F6-03", "P-A3-F7-01", "P-A3-F14-01", "P-A3-F14-03", "P-A3-F16-01", "P-A3-F16-03", "P-A3-F16-09", "P-A3-F17-02", "P-A3-F17-03", "P-A3-F17-05"]
+commitments:
+  - {commitment: "Traction motors extra volumes, 2 E2W/E3W programs, Rs 12,500 mn", implied_date: "H2 FY27", ref: "s11 L203-209", status_word: "initiated"}
+  - {commitment: "Integrated motor controller E2W, Rs 3,800 mn", implied_date: "H1 FY28", ref: "s11 L201-207", status_word: "initiated"}
+  - {commitment: "Differential gears ICE PV/OHV, Rs 2,000 mn", implied_date: "H1 FY28", ref: "s13 L234-240", status_word: "initiated"}
+  - {commitment: "Rear radar sensor 2W, new customer, Rs 1,000 mn", implied_date: "H2 FY28", ref: "s11 L201-207; s18 L366-372", status_word: "initiated"}
+  - {commitment: "Differential assembly ICE PV, Rs 1,600 mn", implied_date: "H2 FY28", ref: "s13 L234-240", status_word: "initiated"}
+  - {commitment: "Helical LSD EV PV, global EV OEM, Rs 7,000 mn", implied_date: "H1 FY29", ref: "s11 L201-207", status_word: "initiated"}
+  - {commitment: "Starter motors ICE PV, NA OEM, Rs 3,300 mn", implied_date: "H1 FY29", ref: "s13 L234-240", status_word: "initiated"}
+  - {commitment: "Railway order book Rs 9 bn executed", implied_date: "within 12 months (~Sep 2027)", ref: "s14 L257, L267", status_word: "underway"}
+  - {commitment: "Net order book Rs 251 bn realised", implied_date: "next 10 years", ref: "s14 L244, L263", status_word: "underway"}
+  - {commitment: "31 EPIC programs not yet in production reach SOP", implied_date: "undated", ref: "s10 L174", status_word: "initiated"}
+  - {commitment: "Development products (PV/CV traction motor, park gear controller, AMR drive unit, robot gearbox, eVTOL, frameless motors)", implied_date: "undated", ref: "s33-35 L753, L792, L826", status_word: "underway"}
+  - {commitment: "Hub wheel motor E2W (Q1 deck SOP H2 FY26)", implied_date: "H2 FY26", ref: "s35 L798 [MEMORY]", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+loop1_note: "A5 M1 correction: M01-M15 read at their lines; 332/332 rows reconciled. No finding changed; M07/M08 support F16-07, M15 supports F17-05, M03 supports F14-01. Disagree with A2 on M01: 22% belongs to product pies, the 51% on L291 is H1 geography (10+14+25+51=100; 10+14+25+22=71). Bar years by position only, except FY26 44,752 (ties to 5.6x on L244) and FY21 15,663 (ties to 24.1% and 23% CAGRs); FY23-FY25 position-only."
+analyst_note: "Two readings of the deck. Bull: revenue up 35%, BEV 51%, cash bridge ties exactly, CFO/PAT 1.47x, ROCE 15.4 to 16.4%. Bear: the margin gate depends on the forex ruling (23.0% incl forex, about 22.5% ex). The C1 miss is self-declared (input prices). VA/employee cost keeps falling, which points to a structural drag, not lagged pass-through. A third of the H1 cash build is new debt. Order-book quality is the sleeper issue: 25 bn consumed is 1.6x revenue, Rs 4.8 bn of adds are unitemised, robotics jumped with no itemised win, and the EV share eased again. 45% of adds sit in 2W motors, the business DENSO is buying 49% of, and the deck never names DENSO. The 'commercialized' legend should not count as C3 delivery, since radar SOP is H2 FY28. Pipeline note: A1 left unrowed L291 '22%' and the p26 FY22-FY26 revenue series, 25.1% margin and 24.1% CAGR. A2's R051 query is a misread (20+20+31 = 71). R104 is a page number."

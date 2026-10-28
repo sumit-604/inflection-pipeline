@@ -1,0 +1,83 @@
+stage: A3-forensics
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/work/forensics_concall_sonacoms_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3-F6-01", check: "F6", line: "L053-L057", classification: "CONFIRMATORY-NEGATIVE", implication: "Mgmt concedes Q1 promise C1 (margin recovery from Q2) missed; cause moved from input cost to product mix, which pass-through does not fix"}
+  - {id: "A3-F6-02", check: "F6", line: "L610-L611, L618, L630-L634", classification: "FORWARD-SIGNAL", implication: "23-25% range kept but CFO ballpark is about 23% with 10-20 bps tolerance, which sits on the <23.0% bear line; five-year margin exercise undisclosed"}
+  - {id: "A3-F6-03", check: "F6", line: "L435-L445, L449-L453", classification: "FORWARD-SIGNAL", implication: "DENSO JV1 close end-Dec 2026 (may slip to Jan); JV2 H1 CY27; like-for-like breaks, NCI or equity accounting and a gain arrive at JV1 close"}
+  - {id: "A3-F6-04", check: "F6", line: "L660-L664, L697-L700", classification: "FORWARD-SIGNAL", implication: "Own capital-deployment trigger cash/EBITDA 1.5x; gross cash already about 1.49x annualised H1 EBITDA (ASR figures, my arithmetic); DENSO cash pushes it over; M&A or return decision likely within 12 months; JV2 capex to be funded"}
+  - {id: "A3-F6-05", check: "F6", line: "L554-L562, L565-L566", classification: "FORWARD-SIGNAL", implication: "Dated new motor-product launch in Q3 FY27; 3W traction pretty small so far, ramp undated"}
+  - {id: "A3-F6-06", check: "F6", line: "L748-L754, L761-L767", classification: "FORWARD-SIGNAL", implication: "Robotics R&D continues inside the margin range and is a named margin drag; next milestone is a Feb 2027 expo demo, not an SOP or revenue date"}
+  - {id: "A3-F7-01", check: "F7", line: "L069-L072", classification: "FORWARD-SIGNAL", implication: "Pre-emptive cover on near-term % margin and pivot of yardstick to absolute EBITDA"}
+  - {id: "A3-F7-02", check: "F7", line: "L858-L868, L875-L878", classification: "FORWARD-SIGNAL", implication: "Full pass-through still dilutes % margin; % recovery now needs falling material prices"}
+  - {id: "A3-F7-03", check: "F7", line: "L401, L417-L418, L427-L430", classification: "AMBIGUOUS", implication: "Suspension motors (about 7% of revenue) rest on one customer and one model; trajectory not predictable per mgmt"}
+  - {id: "A3-F7-04", check: "F7", line: "L772, L776-L778", classification: "FORWARD-SIGNAL", implication: "Robotics date retreat versus Q1 dated SOPs; five robotics asks, no date given, accountability cited as the reason"}
+  - {id: "A3-F7-05", check: "F7", line: "L064-L067", classification: "AMBIGUOUS", implication: "Freight (ASR reading) nearly doubled QoQ; pass-through answer covers material only"}
+  - {id: "A3-F8-01", check: "F8", line: "L649, L660-L661", classification: "FORWARD-SIGNAL", implication: "DENSO proceeds taxable; one-off tax and gain in JV1 close quarter; analyst 900 Cr by year end neither confirmed nor contested"}
+  - {id: "A3-F10-01", check: "F10", line: "L358", classification: "NEUTRAL-FACT", implication: "ESOP exercise inflow about 108 Cr in H1; A4 cross-checks share base"}
+  - {id: "A3-F14-01", check: "F14", line: "L163-L166, L328-L329, L276", classification: "AMBIGUOUS", implication: "Spoken H1 BEV figures irreconcilable (2,042 Cr would be 71% of total revenue vs 48% of auto sales); take BEV rupees from filed deck only"}
+  - {id: "A3-F14-02", check: "F14", line: "L131-L132, L311-L312, L775", classification: "AMBIGUOUS", implication: "Same 51% cited as share of auto product sales, auto revenue and total revenue; overstates whole-company EV share (about 36% of total on 70:30)"}
+  - {id: "A3-F14-03", check: "F14", line: "L219-L222, L745", classification: "AMBIGUOUS", implication: "Order book stated as 251 billion and $250 billion; robotics 4% (Q1 3%) about Rs 10 bn on rupee basis; conversion schedule absent"}
+  - {id: "A3-F14-04", check: "F14", line: "L011-L014, L402-L403", classification: "NEUTRAL-FACT", implication: "CEO names an end customer against the call rule; confirms single-customer China base of suspension motors"}
+  - {id: "A3-F17-01", check: "F17", line: "L313-L315, L331-L333", classification: "CONFIRMATORY-NEGATIVE", implication: "YoY margin compression widened to about 2.3 pt in Q2 from about 0.7 pt in Q1; bull gate missed, bear depends on unstated basis"}
+  - {id: "A3-F17-02", check: "F17", line: "L098-L105, L744-L747", classification: "AMBIGUOUS", implication: "Promise C2 first robotics SOP never scored despite five robotics asks; lean bear, not delivered until shown"}
+  - {id: "A3-F17-03", check: "F17", line: "L219-L220", classification: "AMBIGUOUS", implication: "EV share of order book (third easing) unstated; only positive EV framing; repeat at Q3 makes it confirmatory-negative"}
+  - {id: "A3-F17-04", check: "F17", line: "L350-L353, L357, L644", classification: "AMBIGUOUS", implication: "CFO/PAT passes on spoken figures but payables build behind it is unmentioned and 224 Cr new borrowing unexplained; 9M unwind risk"}
+  - {id: "A3-F17-05", check: "F17", line: "L152-L153, L367-L368", classification: "AMBIGUOUS", implication: "ROCE number and path to >18% unstated for a second call"}
+  - {id: "A3-F17-06", check: "F17", line: "L652-L653, L757", classification: "AMBIGUOUS", implication: "Novelic named, impairment and carrying value unaddressed for a second call (tripwire 3)"}
+  - {id: "A3-F17-07", check: "F17", line: "L313-L314", classification: "CONFIRMATORY-NEGATIVE", implication: "Forex gain and margin basis unstated for a second call while the gate outcome turns on it"}
+  - {id: "A3-F17-08", check: "F17", line: "L435-L445, L660-L661", classification: "AMBIGUOUS", implication: "DENSO financial terms and post-close accounting unstated for a second call; only close dates and taxability given"}
+  - {id: "A3-F17-09", check: "F17", line: "L809-L811, L824-L825", classification: "AMBIGUOUS", implication: "Railway revenue and PAT unstated for a second call; growth conditional on on-time launches"}
+  - {id: "A3-F17-10", check: "F17", line: "L113-L118", classification: "AMBIGUOUS", implication: "Deming Prize celebrated; rising warranty and slow-moving inventory provisions (about 70 bps of H1 margin per Notion log) unmentioned"}
+  - {id: "A3-F17-11", check: "F17", line: "L219-L220, L230-L233", classification: "CONFIRMATORY-NEGATIVE", implication: "Order-book consumption and gross-to-net bridge unaddressed for a second call while consumption ratio worsened; India revenue % also unstated"}
+forward_signals: ["A3-F6-02", "A3-F6-03", "A3-F6-04", "A3-F6-05", "A3-F6-06", "A3-F7-01", "A3-F7-02", "A3-F7-04", "A3-F8-01"]
+ambiguous: ["A3-F7-03", "A3-F7-05", "A3-F14-01", "A3-F14-02", "A3-F14-03", "A3-F17-02", "A3-F17-03", "A3-F17-04", "A3-F17-05", "A3-F17-06", "A3-F17-08", "A3-F17-09", "A3-F17-10"]
+commitments:
+  - {commitment: "DENSO JV1 carve-out close", implied_date: "end-Dec 2026, may slip to Jan 2027", ref: "T10 L439-L440", status_word: "underway"}
+  - {commitment: "DENSO JV2 formed and closed", implied_date: "H1 CY2027", ref: "T11 L443-L445", status_word: "initiated"}
+  - {commitment: "Sona blocks capital for JV2 capex", implied_date: "FY27-FY28", ref: "T34 L662-L663", status_word: "initiated"}
+  - {commitment: "DENSO proceeds taxable; substantial year-end cash", implied_date: "FY27 year end", ref: "T34 L660-L664", status_word: "underway"}
+  - {commitment: "M&A on four filters; no rush while cash/EBITDA <= 1.5", implied_date: "trigger-based", ref: "T34 L670-L700", status_word: "initiated"}
+  - {commitment: "EBITDA margin range 23-25% held; ballpark about 23%", implied_date: "FY27 / medium term", ref: "T29-T30 L610-L638", status_word: "reaffirmed"}
+  - {commitment: "Launch another motor product", implied_date: "Q3 FY27", ref: "T22-T24 L555, L561-L562", status_word: "underway"}
+  - {commitment: "3W traction share kicks in as programs ramp", implied_date: "undated", ref: "T24 L565-L566", status_word: "initiated"}
+  - {commitment: "Suspension motor book spans more customers", implied_date: "undated", ref: "T08 L417-L421", status_word: "initiated"}
+  - {commitment: "Robotics demo at Bharat Expo", implied_date: "Feb 2027", ref: "T37 L764-L767", status_word: "initiated"}
+  - {commitment: "Robotics capex 62 Cr covers the area", implied_date: "FY27", ref: "T37 L762-L763", status_word: "underway"}
+  - {commitment: "Robotics R&D continues inside margin range", implied_date: "ongoing", ref: "T37 L748-L761", status_word: "underway"}
+  - {commitment: "AMRs deployed on own factory floors", implied_date: "now", ref: "T39 L792-L797", status_word: "underway"}
+  - {commitment: "Robotics inflection timing", implied_date: "none given", ref: "T39 L772-L781", status_word: "withdrawn"}
+  - {commitment: "Return ratios keep improving", implied_date: "undated", ref: "T03 L152-L153; T05 L367-L368", status_word: "underway"}
+  - {commitment: "10x in 10 years; 25% CAGR medium term", implied_date: "about FY36", ref: "T03 L045-L049; T43 L830-L838", status_word: "reaffirmed"}
+  - {commitment: "Railway NPI ramp (air springs, HVAC, electric panels); 5-year pipeline", implied_date: "3-5 years", ref: "T41 L812-L822", status_word: "underway"}
+  - {commitment: "Europe: more business as OEMs seek China alternative", implied_date: "undated", ref: "T17 L498-L501", status_word: "underway"}
+  - {commitment: "Humanoids on own production lines", implied_date: "evaluating", ref: "T50 L886-L898", status_word: "initiated"}
+  - {commitment: "Q1 C1 margin recovery from Q2", implied_date: "Q2 FY27", ref: "T03 L053-L057", status_word: "missed"}
+  - {commitment: "Q1 C2 first robotics SOP", implied_date: "Q2 FY27", ref: "not addressed", status_word: "unscored"}
+  - {commitment: "Q1 C3 radar commercialisation", implied_date: "Q1 FY27, delivered Q2", ref: "T03 L098-L105, L186-L192; T04 L297-L301", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "ASR transcript: every number is management-tier and may be misheard. The spoken set ties internally except R054 (PAT 23 Cr, a dropped digit; about 223 Cr by the 14.4% margin) and R060 (2,042 Cr BEV H1 cannot be 48% of auto sales); neither is resolved here, filed documents govern. The call's centre of gravity: management conceded C1 and moved the margin cause to mix, the CFO anchored the working margin at the 23% floor with a 10-20 bps tolerance that sits on the bear line, and pass-through was redefined as rupee-restoring, not percent-restoring. So the bull gate cannot fire on pass-through alone. DENSO now has dates (JV1 Dec/Jan, JV2 H1 CY27); terms, gain line and post-close accounting are still withheld, so expect a non-comparable Q3 or Q4. Management's own cash/EBITDA 1.5x trigger is about to be crossed once DENSO cash lands, which makes a capital deployment decision a 12-month item. Robotics: five asks, no SOP status, explicit date retreat. Silence counts reach 2 on forex basis, ROCE number, Novelic, railway quantum, DENSO terms and order-book bridge. Prior-quarter comparisons rely on Notion memory, not a prior extract."

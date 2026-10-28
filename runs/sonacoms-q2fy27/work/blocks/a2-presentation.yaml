@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/work/ledger_presentation_sonacoms_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 43
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 36
+  slide_numbers: 213
+flags_raised: [LABEL_UNMAPPED, FOOTNOTE_UNRESOLVED, RESTATED, NO_ROWS, MISSING_FROM_STRUCTURED]
+ids_in_structured: 317
+ids_referenced: 317
+orphan_ids: []
+missing_from_structured: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11, M12, M13, M14, M15]
+gate_a2: pass
+mismatch_note: "Rev 1 count test was circular (A5 M1). Rev 2 second method is an independent fulltext token sweep. 15 units missing from A1 structured (L291 22%; p26 Phase 4 events, 12 plants, 34 products, 57,136 ann., 25.1% margin, 24.1% CAGR, bars 44,752 35,545 31,866 26,756 21,306 28,568; captions p8, p19). Loop back to A1 for rows."
+analyst_note: "Ledger rev 2. Slide 26 Phase 4 panel and right-hand revenue bars were wholly absent from A1: Phase 4 shows 12 plants and 34 products, FY22-H1FY27 annualised EBITDA margin 25.1% and revenue CAGR 24.1%, annualised H1 revenue 57,136. Bar labels are unmapped (no year text); do not assign years. 22% on slide 16 belongs to the H1 FY27 geography pie. Slides 8, 9, 12, 15, 17, 19, 25 otherwise no-row dividers. 20 earlier LABEL_UNMAPPED rows stand. R051 (71) vs bracket R052 sum 75 needs A3 check. ROCE/ROE definitions differ across p7, p23, p28. Slide footer numbers and p33-p36 callout markers excluded as non-disclosure."

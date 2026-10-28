@@ -1,0 +1,58 @@
+stage: A3-forensics
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/work/forensics_pressrelease_sonacoms_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-PR-F6-01", check: "F6", line: "L132-135", classification: "FORWARD-SIGNAL", implication: "Rs 12.5bn traction-motor upsize (34.7% of Q2 adds) SOP H2 FY27; nearest scorable SOP; sits in EV-motors carve-out perimeter"}
+  - {id: "A3-PR-F6-02", check: "F6", line: "L126,L130,L135,L141,L145,L151", classification: "FORWARD-SIGNAL", implication: "Six 'expected' SOPs; 44% of itemised Rs 29.2bn starts H2 FY28 or later; feeds Role 5 tracker and FTTCP catalyst timeline"}
+  - {id: "A3-PR-F6-03", check: "F6", line: "L99", classification: "AMBIGUOUS", implication: "10X ambition undated and baseless; Q1 FY35 horizon dropped (Notion memory, unverified)"}
+  - {id: "A3-PR-F14-01", check: "F14", line: "L69,L71", classification: "AMBIGUOUS", implication: "Revenue Rs 1,547 Cr appears to include net forex; 23.0% margin sits on the gate bear line; basis ruling pending"}
+  - {id: "A3-PR-F14-02", check: "F14", line: "L32-33,L69-83", classification: "NEUTRAL-FACT", implication: "Headline set unlabelled S/C for second release running; PAT matches consolidated owners"}
+  - {id: "A3-PR-F14-03", check: "F14", line: "L74-76,L60,L124-151", classification: "AMBIGUOUS", implication: "7 programs claimed, 6 itemised; Rs 6.8bn (18.9%) of Rs 36bn additions unitemised; largest win is an upsize"}
+  - {id: "A3-PR-F14-04", check: "F14", line: "L83", classification: "AMBIGUOUS", implication: "Asterisk on net order book has no footnote; 'net' undefined; haircut method still undisclosed"}
+  - {id: "A3-PR-F14-05", check: "F14", line: "L116-118,L149-151,L126", classification: "AMBIGUOUS", implication: "'Commercialised' radar and LSD vs order SOPs H2 FY28/H1 FY29; C3 scoring depends on the definition"}
+  - {id: "A3-PR-F14-06", check: "F14", line: "L59,L70", classification: "NEUTRAL-FACT", implication: "BEV 51% is of automotive revenue; L70 drops the base; share of total revenue unstated"}
+  - {id: "A3-PR-F16-01", check: "F16", line: "L83", classification: "FORWARD-SIGNAL", implication: "EV order share restated as EV plus Robotics 65%; EV-only 61% (deck, Notion memory), third easing, tripwire 9"}
+  - {id: "A3-PR-F16-02", check: "F16", line: "L71,L80-82,L58", classification: "CONFIRMATORY-NEGATIVE", implication: "H1 EBITDA YoY omitted; Q2 implies ~220 bps YoY margin compression unstated; tripwire 6; second release silent"}
+  - {id: "A3-PR-F16-03", check: "F16", line: "L97-98", classification: "AMBIGUOUS", implication: "FCFO 1.5x FY26 claim unquantified; H1 CFO carried by +Rs 278.8 Cr payables (Notion memory)"}
+  - {id: "A3-PR-F16-04", check: "F16", line: "L108", classification: "FORWARD-SIGNAL", implication: "DENSO dropped from release while unclosed; 45.3% of Q2 adds are EV 2W motors/controllers in carve-out perimeter"}
+  - {id: "A3-PR-F17-01", check: "F17", line: "L87", classification: "CONFIRMATORY-NEGATIVE", implication: "C1 margin recovery unaddressed; 'almost a perfect quarter' against a flat 23.0% margin"}
+  - {id: "A3-PR-F17-02", check: "F17", line: "L116-118", classification: "AMBIGUOUS", implication: "C2 first robotics SOP not evidenced; no robotics product among Q2 commercialisations"}
+  - {id: "A3-PR-F17-03", check: "F17", line: "L87-99", classification: "CONFIRMATORY-NEGATIVE", implication: "Silent on ST borrowings doubling, ROCE <18%, Novelic (2 releases), EV-only share"}
+  - {id: "A3-PR-F17-04", check: "F17", line: "L110-114", classification: "AMBIGUOUS", implication: "Deming headline vs warranty Rs 12.5 Cr (from 2.2) and obsolescence Rs 8.0 Cr (from 1.2) provisions, silent"}
+forward_signals: ["A3-PR-F6-01", "A3-PR-F6-02", "A3-PR-F16-01", "A3-PR-F16-04"]
+ambiguous: ["A3-PR-F6-03", "A3-PR-F14-01", "A3-PR-F14-03", "A3-PR-F14-04", "A3-PR-F14-05", "A3-PR-F16-03", "A3-PR-F17-02", "A3-PR-F17-04"]
+commitments:
+  - {commitment: "Additional traction motor volumes, Indian 2W OEM, Rs 12.5bn", implied_date: "H2 FY27", ref: "L132-135", status_word: "initiated"}
+  - {commitment: "Integrated motor controllers EV 2W, Rs 3.8bn", implied_date: "H1 FY28", ref: "L128-130", status_word: "initiated"}
+  - {commitment: "ICE PV differential assemblies, Rs 1.6bn", implied_date: "H2 FY28", ref: "L137-141", status_word: "initiated"}
+  - {commitment: "2W rear radar sensors, new customer, Rs 1.0bn", implied_date: "H2 FY28", ref: "L149-151", status_word: "initiated"}
+  - {commitment: "Helical LSD, global EV OEM, Rs 7.0bn", implied_date: "H1 FY29", ref: "L124-126", status_word: "initiated"}
+  - {commitment: "Starter motors, North American OEM, Rs 3.3bn", implied_date: "H1 FY29", ref: "L143-145", status_word: "initiated"}
+  - {commitment: "10X ambition under Sona Comstar 2.0", implied_date: "undated (FY35 in Q1 release, Notion memory)", ref: "L99", status_word: "initiated"}
+  - {commitment: "Three new products commercialised (helical LSD, railway air springs, 2W rear radar)", implied_date: "Q2 FY27", ref: "L116-118", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The release is a marketing wrapper. Its forensic value lies in what it reframes or leaves out, and three items bear on the binding Q2 gate. (1) Release revenue Rs 1,547 Cr appears to include net forex (Notion: rev ops Rs 1,535.8 Cr plus forex Rs 10.6 Cr). The 23.0% margin therefore uses the deck basis, the basis the operator has not yet ruled on. Ex-forex, the margin fails the bear line. (2) The EV order-book share is restated as 'EV and Robotics & Physical AI' at 65%. That reads as up from Q1's 64%, while EV-only fell to 61% (deck, per Notion). This is a numerator change on tripwire 9. (3) H1 EBITDA is the only headline without a YoY figure. Q2 implies about 220 bps YoY margin compression, unstated for a second release. DENSO was framed as upside in Q1 and is now absent, yet 45% of Q2 additions sit in the EV 2W motor perimeter being carved out. All cross-document numbers come from the Notion page (operator memory). A4 must anchor them to the filing or deck. A1 line cites on entity rows R053-R085 are block placeholders; all content was found verbatim."

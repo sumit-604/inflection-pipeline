@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 26
+formfeed_count: 26
+line_count: 781
+unit_convention: "Millions (Rs. Mn) on financial slides; order book slide in Rs. Cr"
+conversion_factor_to_cr: "Rs Mn x0.1; Rs Cr x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []       # no zero-character pages; sparse pages 2,4,9,17,23 are cover/dividers, skipped: no data
+rendered_pages: [6, 7, 8, 20, 24, 25]   # verification renders only (scrambled chart/table column order, icon text); transcriptions appended; p10,11,18 viewed
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/unimech-q2fy27/extracted/unimech-presentation-q2fy27-fulltext.md"
+structured_path: "runs/unimech-q2fy27/extracted/unimech-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 509
+  entity: 74
+  forward: 41
+  date: 27
+  qualifier: 19
+structured_id_range: "R001-R670"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,109 @@
+stage: A4-analyst
+company: "UNIMECH"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+loop: 1
+loop1_patch_path: "runs/unimech-q2fy27/work/review_loop1_patch_unimech_q2fy27.json"
+status: complete
+docs_merged: [results, concall, presentation, pressrelease, monitoring_agency_report, deviation_statement, lta_reg30]
+ledger_reconciliation:
+  notes: 17
+  turns: 65
+  slides: 29   # 26 deck slides + 3 press-release pages
+  all_reviewed: true
+  a3_findings_incorporated: [R-A3-01, R-A3-02, R-A3-03, R-A3-04, R-A3-05, R-A3-06, R-A3-07, R-A3-08, R-A3-09, R-A3-10, R-A3-11, R-A3-12, R-A3-13, R-A3-14, R-A3-15, R-A3-16, R-A3-17, R-A3-18, R-A3-19, R-A3-20, R-A3-21, R-A3-22, R-A3-23, R-A3-24, R-A3-25, D-A3-01, D-A3-02, D-A3-03, D-A3-04, D-A3-05, D-A3-06, D-A3-07, D-A3-08, D-A3-09, D-A3-10, D-A3-11, D-A3-12, D-A3-13, D-A3-14, D-A3-15, D-A3-16, D-A3-17, D-A3-18, D-A3-19, D-A3-20, D-A3-21, D-A3-22, D-A3-23, D-A3-24, D-A3-25, D-A3-26, D-A3-27, D-A3-28, P-A3-01, P-A3-02, P-A3-03, P-A3-04, P-A3-05, P-A3-06, P-A3-07, P-A3-08, P-A3-09, P-A3-10, C-A3-01, C-A3-02, C-A3-03, C-A3-04, C-A3-05, C-A3-06, C-A3-07, C-A3-08, C-A3-09, C-A3-10, C-A3-11, C-A3-12, C-A3-13, C-A3-14, C-A3-15, C-A3-16, C-A3-17, C-A3-18, C-A3-19, C-A3-20, C-A3-21, C-A3-22, C-A3-23, C-A3-24, C-A3-25, C-A3-26]
+loop1_closed: [C1, M1, M2, M3, M4, M5]   # A5 audit items; STYLE S1-S9 logged only
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "growth-induced"
+decision_status_verified: "WATCHLIST / BUY ON DIPS"
+position_branch: "8A-W"
+sc_gap_pat_pct: ["Q2 FY26 163.9%", "Q1 FY27 1165.7%", "Q2 FY27 272.7%", "H1 FY26 135.1%", "H1 FY27 456.0%", "FY26 184.8%"]  # (CO-SA)/SA PAT; SA share of CO PAT: Q2 FY27 26.8%, H1 FY27 18.0%
+questions_for_management:
+  - {q: "On the confirmed-PO definition, what were Q2 order inflows, and what share of the Rs 266 Cr is Hobel?", from_finding_id: "D-A3-03, D-A3-05, C-A3-01, C-A3-03, P-A3-01"}
+  - {q: "Itemise the Rs 589 Cr LTA/award pool by contract in Rs Cr with the FX rate; is any Advanced Negotiations item counted?", from_finding_id: "D-A3-04, C-A3-02, P-A3-02"}
+  - {q: "What value does Honeywell carry inside the Rs 589 Cr, and when is the first PO or FAI?", from_finding_id: "D-A3-27, C-A3-22"}
+  - {q: "Was the USD 43M French Tier-1 award filed under Reg 30, and on what date was it received?", from_finding_id: "D-A3-07"}
+  - {q: "What was Hobel's revenue in Q1 and Q2 FY27, and is 30% of H1 correct?", from_finding_id: "C-A3-04, R-A3-05, D-A3-24, P-A3-03"}
+  - {q: "Which consolidation date does the PPA use: 27-Apr (filing) or 1-May (deck)?", from_finding_id: "R-A3-25"}
+  - {q: "Was Hobel's H1 FY27 EBITDA margin above 40% (yes/no)?", from_finding_id: "C-A3-09, R-A3-14, D-A3-24"}
+  - {q: "Is the Hobel PPA final or provisional, what is the holdback liability, and what Hobel cash flows support Rs 321.99 Cr goodwill?", from_finding_id: "R-A3-01, D-A3-01, D-A3-11"}
+  - {q: "What is the Rs 10.75 Cr opening-cash gap, and what net cash was paid for Hobel?", from_finding_id: "R-A3-18"}
+  - {q: "Why add Rs 38.85 Cr WC debt and a Rs 13.27 Cr parent term loan while holding Rs 180.85 Cr investments; what is the Rs 5.30 Cr CF-vs-BS borrowing gap?", from_finding_id: "R-A3-02, C-A3-11, D-A3-26"}
+  - {q: "H1 CF names interest Rs 3.69 Cr, MTM Rs 1.96 Cr, sale gains Rs 2.47 Cr, FX Rs 1.41 Cr, lease gain Rs 0.94 Cr; split Q2 OI of Rs 6.98 Cr on the same heads and name the Rs 3.71 Cr H1 residual.", from_finding_id: "D-A3-12, C-A3-16"}
+  - {q: "What rate does the parent charge on Rs 123.94 Cr of subsidiary loans and the Rs 148 Cr CCD?", from_finding_id: "R-A3-06"}
+  - {q: "Is Hobel Bellows Co taxed as a firm, and what H2 FY27 and FY28 ETR should we use?", from_finding_id: "R-A3-12, D-A3-09"}
+  - {q: "What was the Rs 1.22 Cr prior-period tax credit?", from_finding_id: "R-A3-11"}
+  - {q: "Price, settlement mode and completion date of the Hobel share transfer to the parent; lender consent on Innomech guarantees?", from_finding_id: "R-A3-09"}
+  - {q: "Will any toolings business, contract or customer move from the parent to Innomech?", from_finding_id: "R-A3-16, C-A3-20"}
+  - {q: "What do the Rs 18.11 Cr parent capital advances buy, at which plant, and when is the Rs 500 Cr gross block reached?", from_finding_id: "R-A3-15, D-A3-08"}
+  - {q: "What is the denominator of the 65% utilisation, and what is the unexplained 1.2 lakh sq ft?", from_finding_id: "D-A3-21"}
+  - {q: "What is the special-process cell capex, and is NADCAP a dated Mar-2027 commitment?", from_finding_id: "P-A3-07, D-A3-22"}
+  - {q: "Is the ~USD 30 Mn joint investment all equity at 51:49; amount and date of Unimech's next tranche; how is about Rs 108.2 Cr funded against Rs 65.45 Cr net cash; any parent guarantee on JV debt?", from_finding_id: "R-A3-10, R-A3-24, C-A3-12, D-A3-18, P-A3-08, D-A3-28"}
+  - {q: "Which oil and gas customers will the Saudi plant serve, given zero proven O&G FAIs?", from_finding_id: "D-A3-02"}
+  - {q: "Who sold the 850 Dheya shares, at what valuation, and why no primary subscription?", from_finding_id: "R-A3-23, C-A3-13"}
+  - {q: "What is Dheya's FY27 loss outlook, and what does Unimech earn from Dheya before FY28?", from_finding_id: "R-A3-08, D-A3-19, C-A3-14"}
+  - {q: "How many of the 250 qualified parts are in serial production, and what was their Q2 revenue?", from_finding_id: "C-A3-18, D-A3-06, P-A3-06"}
+  - {q: "What was H1 semiconductor revenue in Rs Cr, and what is the H2 figure?", from_finding_id: "P-A3-05"}
+  - {q: "How much of the about Rs 87 Cr nuclear order was executed in H1?", from_finding_id: "C-A3-19"}
+  - {q: "What were top-1 and top-5 customer shares of H1 revenue, and the US revenue share?", from_finding_id: "C-A3-21, D-A3-25, D-A3-17"}
+  - {q: "Which capital base gives the about 20% ROCE; will you publish one ROCE definition?", from_finding_id: "C-A3-05, D-A3-15, D-A3-14"}
+  - {q: "Restate the FY27 EBITDA margin guide as a number, and the FY28 floor at a 50:50 mix.", from_finding_id: "C-A3-06, D-A3-20"}
+  - {q: "In which year do you target Rs 1,000 Cr revenue, and what share is organic?", from_finding_id: "C-A3-07"}
+  - {q: "Size, instrument and timing of the early CY2027 equity raise; split between MPS, capacity and M&A?", from_finding_id: "C-A3-17"}
+  - {q: "Is CRISIL still Issuer Not Cooperating (yes/no), and when will you engage?", from_finding_id: "C-A3-08, D-A3-23, P-A3-10"}
+  - {q: "WTD Preetham S V's 29-Sep pledge: loan size, purpose, and will any promoter pledge more?", from_finding_id: "C-A3-10, P-A3-10"}
+  - {q: "Who holds the Uniflux minority, and which subsidiary was bought from erstwhile shareholders for Rs 0.20 Cr?", from_finding_id: "R-A3-22"}
+  - {q: "Is the Hobel Vizag AS9100 target Mar-2027 or Sep-2027?", from_finding_id: "C-A3-15"}
+  - {q: "When will the official transcript be filed, and what was said in the three ASR gaps?", from_finding_id: "C-A3-23"}
+  - {q: "Why does the CARE report total row print Rs 153.30 Cr when object rows sum to Rs 247.80 Cr, and what did Object 5 tranche 2 (Rs 24.52 Cr) fund?", from_finding_id: "supporting: MA R183, R233-R235"}
+  - {q: "On what date was the Honeywell LTA signed?", from_finding_id: "supporting: lta R019, R021"}
+  - {q: "What share of capacity runs NPI, prototype and qualification work (15-20%?), of available or used capacity; what is serial-production utilisation; was Q1's ~58% on the same basis?", from_finding_id: "C-A3-26"}
+  - {q: "What were Hobel's FY26 PAT and EBITDA behind the Rs 450 Cr price; what share of FY27 Hobel orders is data-centre genset demand; is about Rs 25 Cr of consideration deferred, and on what terms?", from_finding_id: "A5 M4 (acquisition-economics probe); links QB8"}
+monitorables:
+  - {item: "Naidu transfer to Innomech effective", implied_date: "2026-11-01", source_ref: "res l.61-65; R-A3-16"}
+  - {item: "Official transcript filed (ASR gaps, Hobel 30% figure)", implied_date: "~2026-11-04 (INFERENCE)", source_ref: "C-A3-23"}
+  - {item: "Hobel share transfer to parent completes; Reg 30 detail", implied_date: "not stated (post completion)", source_ref: "res l.47-55; R-A3-09"}
+  - {item: "Saudi JV second-tranche tracker check; then Q3 FY27 filing: second ODI amount and date, JV borrowings, NCI, parent guarantee (D-A3-28 Readings A/B)", implied_date: "2026-11-15; ~2027-02", source_ref: "Notion l.1212; R-A3-24; D-A3-28; deck l.369, l.396"}
+  - {item: "Special-process cell submission complete", implied_date: "2026-12", source_ref: "call l.105-107"}
+  - {item: "20 more semiconductor parts qualified", implied_date: "2026-12-31", source_ref: "call l.186-187"}
+  - {item: "Dheya critical design review", implied_date: "before 2026-12-26", source_ref: "call l.262-263"}
+  - {item: "Dec-2026 shareholding pattern: pledge released or increased", implied_date: "~2027-01-15", source_ref: "Notion l.1149"}
+  - {item: "Equity fund raise incl. MPS", implied_date: "early CY2027", source_ref: "call l.366-371; C-A3-17"}
+  - {item: "Q3 FY27 results/call: confirmed-PO book (bull >= Rs 300 Cr, bear < Rs 266 Cr), Saudi start-up cost, Honeywell number", implied_date: "~2027-02", source_ref: "Step 8C; Notion l.1282"}
+  - {item: "Dheya final design approval", implied_date: "~2027-02", source_ref: "call l.265"}
+  - {item: "NADCAP certification", implied_date: "2027-03-31", source_ref: "deck l.121; call l.107"}
+  - {item: "596 qualified parts", implied_date: "2027-03-31", source_ref: "deck l.169"}
+  - {item: "FY27 consolidated revenue >= Rs 400 Cr (trigger a)", implied_date: "2027-03-31", source_ref: "Notion l.226"}
+  - {item: "H2 EBITDA margin at H1 level", implied_date: "2027-03-31", source_ref: "call l.689-691"}
+  - {item: "WC days 150-160", implied_date: "2027-03-31", source_ref: "call l.348-350"}
+  - {item: "Gross block about Rs 500 Cr incl JV", implied_date: "2027-03-31", source_ref: "call l.602-603"}
+  - {item: "Semiconductor H2 step-up", implied_date: "2027-03-31", source_ref: "deck l.96-97"}
+  - {item: "Saudi commercial production", implied_date: "2027-03/04", source_ref: "call l.229"}
+  - {item: "Q4 FY27 results: FY27 CFO/PAT", implied_date: "~2027-05", source_ref: "Step 5"}
+  - {item: "FY27 AR: Hobel subsidiary financials (trigger c alternate source)", implied_date: "~2027-08", source_ref: "C-A3-09"}
+  - {item: "Hobel Vizag AS9100", implied_date: "2027-09 (ASR 'Ceph27')", source_ref: "call l.222-223; C-A3-15"}
+  - {item: "Dheya revenue", implied_date: "FY28 or FY29", source_ref: "call l.721-723"}
+  - {item: "MPS compliance deadline", implied_date: "~2028-02", source_ref: "Notion l.859"}
+flags:
+  - "Confirmed-PO book down two quarters: Rs 280.3 Cr to Rs 266 Cr (-5.1%); headline Rs 855 Cr incl Rs 589 Cr LTA/award; 8x/715% on mixed bases (like-for-like firm +153%)"
+  - "Pillar 2 upgrade test NOT MET: H1 CFO/PAT 0.896x vs >0.90x; parent CFO Rs (22.99) Cr"
+  - "Net cash Rs 479.71 Cr to Rs 65.45 Cr; borrowings +43.6% to Rs 160.98 Cr; first parent debt; new WC debt"
+  - "Hobel margin refused as standing policy; trigger (c) untestable on calls; goodwill Rs 321.99 Cr = 40.3% of equity; Rs 450 Cr price, price/PAT NOT FOUND, EV/EBITDA about 5.6-7.0x (MGMT/prior inputs); capability bargain vs peak-year genset demand with ~93% two-group concentration; goodwill+intangibles Rs 369.34 Cr = 82% of price; about Rs 25 Cr likely deferred (H1 cash Rs 425.00 Cr)"
+  - "CRISIL silent 6th call / >=3rd deck; trigger (d) persistence leg confirmed; candidate second legs (pledge, Dheya, CARE report defects, deferred Hobel restructuring disclosure); cumulative-count ruling pending"
+  - "Organic growth ambiguous: ASR Hobel 30% of H1 implies organic about -12% QoQ; non-parent revenue +2.9% QoQ vs parent 3.7x"
+  - "ROCE conflict: call about 20% vs deck 14.9% (filing governs; ex-treasury basis about 19.5%)"
+  - "Equity raise pulled forward to early CY2027, size unstated"
+  - "FY27 margin guide implicitly raised to about 38%; FY28+ compression signalled; gross margin 75.55% to 70.43%"
+  - "Current-tax ETR 29.91% vs reported 25.82%; H2 step-up likely"
+  - "CARE MA report total-row defect (153.30 vs 247.80); Deviation None vs company Yes; ICDR 7(3) 41.0% vs 35%; IPO 100% used; Saudi ODI not IPO-funded"
+  - "Group restructuring: Hobel to parent, toolings head to Innomech; Reg 30 detail deferred"
+  - "Credibility 46.9% (Grade C, Mixed; 34.1% D if FY26 misses counted); archetype EVASIVE on OVERPROMISER boundary; Promoter Verdict downgrade candidate (Hobel margin evasion)"
+  - "Saudi JV (restated loop 1, D-A3-28): filed ~USD 30 Mn joint investment (deck l.369, about Rs 289.4 Cr) covers Rs 200-250 Cr capex; Unimech remaining 51% about Rs 108.2 Cr (Rs 62.6-88.1 Cr if debt included) vs Sep-26 net cash Rs 65.45 Cr (Rs 26.09 Cr post-ODI); SAR 60M figure withdrawn"
+  - "No pre-committed trigger fired; CMP Rs 1,638 = 7.7x Rs 213 entry; Decision Status unchanged (operator only); entry-figure ruling still pending"
+  - "Steps 6.5/7 and Role 5 8D deferred to /fttcp and Role 1 (OR-30); A21 base diverges >25% from Notion FY26E"
+  - "ASR transcript: call numbers unverified; three audio gaps"
+  - "Tracker rows not supplied; fewer than three signals; reopen Role 5.5"
+  - "Utilisation ~65% includes NPI/prototype/qualification capacity (call l.351-356, ASR); serial basis about 45-55% (INFERENCE); <60% red line untestable on a serial basis; watchlist 4 AMBER, flagged (C-A3-26)"
+plain_language_brief_included: true
+analyst_note: "Operations beat every thesis line: core PBT +250.8% YoY, margin 39.84%. OI fell to 15.5% of PBT, but what is left is lower quality. H1 interest is Rs 3.69 Cr; market gains and one-offs carry the rest. The bear content is in disclosure and capital. The firm book shrank while the headline tripled on non-binding LTA and award value. The cash upgrade missed by 0.004x. Treasury is gone after Hobel, debt is rising, and dilution is pulled into early CY2027. Hobel cost Rs 450 Cr, about 5.6-7.0x EBITDA on non-filed inputs. The bear reading is a peak-year price on data-centre gensets with 93% concentration. Loop 1 withdrew the unanchored SAR 60M Saudi figure. The filed USD 30 Mn joint investment covers JV capex. Unimech's remaining 51% share, about Rs 108 Cr, exceeds its Rs 65 Cr net cash. The 65% utilisation includes qualification capacity, so the red line is untestable on a serial basis. The Honeywell LTA runs from 1-Apr-2026, 208 days before its intimation. The ASR 'Hobel 30% of H1' still decides the organic read. Credibility is C on one scored call."
+review_path: "runs/unimech-q2fy27/work/review_unimech_q2fy27.md"

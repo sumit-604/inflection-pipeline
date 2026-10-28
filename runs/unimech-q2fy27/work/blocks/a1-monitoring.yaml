@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "monitoring"
+model: claude-sonnet-5-5
+status: complete
+page_count: 13
+formfeed_count: 13
+line_count: 627
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1 (one Million figure: x0.1)"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["pp4-11 rendered at 90dpi for visual verification of scrambled tables only; no OCR merged"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/unimech-q2fy27/extracted/unimech-monitoring-q2fy27-fulltext.md"
+structured_path: "runs/unimech-q2fy27/extracted/unimech-monitoring-q2fy27-structured.md"
+structured_counts:
+  number: 121
+  entity: 38
+  forward: 4
+  date: 44
+  qualifier: 54
+structured_id_range: "R001-R261"
+gate_a1: pass
+gap_note: ""

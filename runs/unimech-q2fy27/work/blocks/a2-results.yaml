@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-unimech-q2fy27-1b1895/runs/unimech-q2fy27/work/ledger_results_unimech_q2fy27.md"
+counts:
+  notes: 17
+  line_items: 250
+  zero_standing: 49
+  agenda_items: 3
+  auditor_paras: 11
+  entities: 65
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, RESTATED, RECON_GAP, MGMT_FURNISHED_UNAUDITED, OTHER_AUDITOR_RELIANCE, SUBSEQUENT_EVENT, SOURCE_TYPO, SOURCE_NUMBERING_DEFECT, SOURCE_LABEL_DEFECT]
+ids_in_structured: 953
+ids_referenced: 953
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Tie-outs: 244 of 245 pass (balance sheets, P&L all six columns, Q1+Q2=H1, cash flows, CF to BS). One filing-level gap, not a render error: consolidated CF opening cash 4,790.22 vs Mar-26 BS cash 3,715.40 (diff 1,074.82); both match fulltext. Likely cash of entities consolidated w.e.f. April 27, 2026; filing silent. Consolidation list 6 entities, entities 3-5 (Uniflux, Hobel Bellows Pvt, Hobel Bellows Co) new from April 27, 2026 (ENTITY_CHANGE; no prior ledger). One unnamed subsidiary is management-furnished with all-Nil figures (R354-R361). Kanoo Unimech Saudi (51% ODI Oct 1, 2026) post-quarter, not yet in the list. SA notes 5 and 6 duplicate. Meeting ran 1pm to 8pm."

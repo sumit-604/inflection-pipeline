@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "KNACK"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 0              # plain-text ASR transcript; coverage unit = input line, 557 of 557
+formfeed_count: 0
+line_count: 557
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true   # native plain text, pdffonts gate not applicable
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 and H1 FY27"
+fulltext_path: "runs/knack-q2fy27/extracted/knack-concall-q2fy27-fulltext.md"
+structured_path: "runs/knack-q2fy27/extracted/knack-concall-q2fy27-structured.md"
+structured_counts:
+  number: 472
+  entity: 49
+  forward: 172
+  date: 216
+  qualifier: 25
+structured_id_range: "R001-R934"
+gate_a1: pass
+gap_note: ""

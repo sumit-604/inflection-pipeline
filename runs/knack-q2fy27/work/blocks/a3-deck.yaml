@@ -1,0 +1,62 @@
+stage: A3-forensics
+company: "KNACK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-knack-q2fy27-0febb1/runs/knack-q2fy27/work/forensics_deck_knack_q2fy27.md"
+ledger_reconciled_pct: 100        # 798 R rows + 6 M rows read at cited lines; M06 logged UNRESOLVED
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: PASS
+  F12: N.A.
+  F13: FINDING
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "D-A3-01", check: "F16", line: "L352, L364, L474 (p26-p31)", classification: "FORWARD-SIGNAL", implication: "EBITDA includes Other Income and is divided by Total Income; operating EBITDA 400.61 = 13.59% of revenue from ops vs 21.66% Q1 and 16.57% Q2 FY26; operating EBITDA fell 29.5% QoQ"}
+  - {id: "D-A3-02", check: "F7", line: "L353-354, L479-481", classification: "FORWARD-SIGNAL", implication: "pass-through hedged 'subject market stabilization'; gross margin 34.64% vs 42.07% Q1 (Q1 helped by 316.12 FG/WIP build); Q3 test is GM back above 40%"}
+  - {id: "D-A3-03", check: "F16", line: "L355-356, L490", classification: "FORWARD-SIGNAL", implication: "ex-JV PAT margin 9.08% vs 10.43% YoY; JV explains ~77 of 212 bps, so breakeven does not restore margin; JV share 10.9% of H1 PAT, not 'slightly'"}
+  - {id: "D-A3-04", check: "F1", line: "L515, L356, L598, L600, L205", classification: "AMBIGUOUS", implication: "JV equity-method investment 34.55 to nil; H1 loss 60.60 exceeds carrying value by 26.05; no equity infusion but net loans 138.29 given with no matching loan asset; JV 'zero revenue' despite April 2026 commissioning"}
+  - {id: "D-A3-05", check: "F2", line: "L363-366", classification: "AMBIGUOUS", implication: "C-minus-S PAT gap swung from +2.69% (H1 FY26) to -3.14% (H1 FY27), -5.83 pp; JV -60.60, subsidiary plus eliminations +42.59 (3.4x YoY) at ~53% EBITDA on a 108.19 revenue gap; SA subsidiary role and transfer pricing open"}
+  - {id: "D-A3-06", check: "F8", line: "L493-494, L517, L553, L613", classification: "AMBIGUOUS", implication: "Q2 ETR on pre-JV PBT 22.54% vs 25.17%; first deferred-tax credit (6.09, 171 bps); net DT swing 50.05 vs P&L 3.89, ~46 outside P&L, matches equity residual 45.96; candidate: issue-expense tax credited to equity"}
+  - {id: "D-A3-07", check: "F10", line: "L544, L498, L350-351", classification: "FORWARD-SIGNAL", implication: "share capital +22.4%; Q2 weighted 120.87 Mn vs period-end 122.37 Mn shares; Q2 PAT on period-end shares = EPS 2.04 < 2.06 YoY; EPS trails PAT by ~22 pp for four quarters"}
+  - {id: "D-A3-08", check: "F6", line: "L453-463, L527-528, L596-614", classification: "FORWARD-SIGNAL", implication: "3,327.83 cash and bank balances = 93.8% of 3,546.97 net IPO proceeds; capex fell to 274.99 from 454.68; debt 1,910.55 retained, short-term borrowing +81.00 vs 'zero leverage dependency'; RoCE recovery claim vs facility only by Oct 2027"}
+  - {id: "D-A3-09", check: "F6", line: "L101, L388-389, L248-251, OCR L744, L710", classification: "FORWARD-SIGNAL", implication: "'full capacity' at 50,000+ MTPA; Units 4/5 established Apr/Jul 2026 but net PPE only +176.87; next step Oct 2027; volume capped ~4 quarters; utilisation % NOT FOUND; M06 14% unresolved"}
+  - {id: "D-A3-10", check: "F16", line: "L461, L370, L400, L376-430", classification: "AMBIGUOUS", implication: "Q1 FY26/Q1 FY27 chart series hidden on pp28-30 (Q1 FY27 EBITDA margin 22.35%); Q1 template legend and footers left in; charts hide the 600 bps sequential fall; six hidden RoCE/RoE values"}
+  - {id: "D-A3-11", check: "F16", line: "L102, L84, L379-380", classification: "AMBIGUOUS", implication: "'Export Contribution (FY26)' tile label present with no value in an 'export led' deck that credits growth to export volumes; export share NOT FOUND"}
+  - {id: "D-A3-12", check: "F16", line: "L219, L240-241, L251, L99-100", classification: "FORWARD-SIGNAL", implication: "single contract ~1,500 Mn/yr = 18.2% of FY26 revenue from ops (~Rs 25/bag) vs 'no material dependency'; Cargill named on p19 only; renewal cliff Dec 2028"}
+  - {id: "D-A3-13", check: "F14", line: "L470, L508, L539, L369, L377-378, L345, L462, L613, L147", classification: "AMBIGUOUS", implication: "12 drafting defects incl. 'Restated' titles on unaudited interims, standalone H1 FY26 NW 3361.21 copied from Q1 FY27, 52.52% paired with total-income values, JV named three ways; ask whether any prior period was restated"}
+  - {id: "D-A3-14", check: "F13", line: "L328, L333, L46-47", classification: "AMBIGUOUS", implication: "Company Secretary and Compliance Officer joined 9-Aug-2026, weeks after the listing quarter; IPO-era CS exit unexplained"}
+  - {id: "D-A3-15", check: "F14", line: "L184-186, L206-207", classification: "AMBIGUOUS", implication: "'Total installed: 5 machines' may include the Mexico JV pinch-bottom machine; India count may be 4; this bears on the price/mix lever"}
+  - {id: "D-A3-16", check: "F17", line: "L593, L588-590, L347, L523-532", classification: "FORWARD-SIGNAL", implication: "H1 CFO 220.59 vs 389.44 (-43%) while PAT +34.5%; CFO/EBITDA 20.2% vs 50.6%; receivables +29.3% vs revenue +25.5% HoH; '75 Days' WC tile not reproducible (83 days on rows); components undisclosed"}
+forward_signals: ["D-A3-01", "D-A3-02", "D-A3-03", "D-A3-07", "D-A3-08", "D-A3-09", "D-A3-12", "D-A3-16"]
+ambiguous: ["D-A3-04", "D-A3-05", "D-A3-06", "D-A3-10", "D-A3-11", "D-A3-13", "D-A3-14", "D-A3-15"]
+commitments:
+  - {commitment: "Pass input-cost increases to customers; realisations reflect", implied_date: "from Q3 FY27, subject to market stabilisation", ref: "p26 L353-354", status_word: "underway"}
+  - {commitment: "Deploy Rs 380 Cr IPO proceeds into capacity and growth", implied_date: "not dated", ref: "p30 L453-457", status_word: "underway"}
+  - {commitment: "RoCE and RoE recover and improve", implied_date: "coming quarters", ref: "p30 L457-458", status_word: "initiated"}
+  - {commitment: "New facility increasing effective capacity", implied_date: "by October 2027", ref: "p19 L250-251", status_word: "initiated"}
+  - {commitment: "Expand manufacturing capacity", implied_date: "by FY28", ref: "p19 L248-249", status_word: "initiated"}
+  - {commitment: "Solar installations at proposed facility", implied_date: "with new facility", ref: "p19 L261-262", status_word: "initiated"}
+  - {commitment: "Mexico JV plant commissioned, 1 pinch-bottom machine", implied_date: "April 2026", ref: "p15 L203-207", status_word: "completed"}
+  - {commitment: "JV breakeven restores PAT margin", implied_date: "not dated", ref: "p26 L355-356", status_word: "initiated"}
+  - {commitment: "~60 Mn bags, ~1,500 Mn/yr order and 3-year contract renewal", implied_date: "to December 2028", ref: "p16 L213-220", status_word: "completed"}
+  - {commitment: "India Units 4 and 5 established", implied_date: "April 2026 / July 2026", ref: "p13 OCR L744, L710", status_word: "completed"}
+  - {commitment: "4th and 5th pinch-bottom machines arrived, 5 installed", implied_date: "2026", ref: "p11 L184-186", status_word: "completed"}
+  - {commitment: "New categories and geographies; leverage Cargill partnership", implied_date: "not dated", ref: "p19 L249-262", status_word: "initiated"}
+  - {commitment: "Listing on NSE and BSE mainboard", implied_date: "2026", ref: "p7 L139-141", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck's headline numbers flatter the quarter in three stacked ways. First, EBITDA includes Other Income, which rose from 23 to 97 as IPO cash went into fixed deposits. Second, margins divide by Total Income. Third, the charts hide the Q1 FY27 columns that show the sequential fall. Strip all three and operating EBITDA fell 29.5% QoQ while revenue rose 12.3%. Gross margin fell 743 bps. Management blames polymer and freight, and the pass-through is hedged. Q3 gross margin is the separating observation: input-cost lag versus loss of pricing power. The JV story does not hold either. Breakeven explains only ~77 of 212 bps of PAT-margin loss. The equity-method investment is already at nil, and 138 of loans went out with no visible loan asset. That is the item most likely to grow. IPO cash sits idle, capacity is full until Oct 2027, and EPS carries 22% dilution, so FY27 per-share growth depends on price and mix alone. M06 '14%' was not used; A1 must label it from the render."

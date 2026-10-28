@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "KNACK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 36
+formfeed_count: 36
+line_count: 847
+unit_convention: "Millions (Rs in Million)"
+conversion_factor_to_cr: "Millions -> x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: ["p4 section divider", "p8 section divider", "p20 zero-char divider", "p24 divider", "p25 divider"]
+rendered_pages: ["p4, p20 viewed: dividers, skipped", "p6, p7, p11, p26-p35: mapping checks (150dpi), no OCR", "p8, p24, p25: PNG only, divider", "p5, p13, p14: 200dpi + tesseract OCR appended as [OCR page N] at fulltext lines 641-847", "p12, p18: skipped: no data"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/knack-q2fy27/extracted/knack-deck-q2fy27-fulltext.md"
+structured_path: "runs/knack-q2fy27/extracted/knack-deck-q2fy27-structured.md"
+structured_counts:
+  number: 589
+  entity: 69
+  forward: 23
+  date: 57
+  qualifier: 60
+structured_id_range: "R001-R798"
+gate_a1: pass
+gap_note: ""

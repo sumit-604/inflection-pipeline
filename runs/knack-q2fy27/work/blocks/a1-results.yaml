@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "KNACK"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 21
+formfeed_count: 21
+line_count: 1030
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only   # hidden OCR layer; render corrections logged
+render_candidates: []
+rendered_pages: ["5 render-corrected","6 render-corrected","7 render-corrected","12 render-corrected","13 render-corrected","14 render-corrected","9 table render-corrected","16 table render-corrected (tesseract)","18 table render-corrected (tesseract)","8 verified no change","15 verified no change","20 rendered not inspected","21 rendered not inspected"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/knack-q2fy27/extracted/knack-results-q2fy27-fulltext.md"
+structured_path: "runs/knack-q2fy27/extracted/knack-results-q2fy27-structured.md"
+structured_counts:
+  number: 730
+  entity: 59
+  forward: 10
+  date: 48
+  qualifier: 74
+structured_id_range: "R001-R921"
+gate_a1: pass
+gap_note: ""

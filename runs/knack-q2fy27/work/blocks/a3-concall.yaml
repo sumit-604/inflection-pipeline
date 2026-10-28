@@ -1,0 +1,67 @@
+stage: A3-forensics
+company: "KNACK"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/knack-q2fy27/work/forensics_concall_knack_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "C-A3-01", check: "F6", line: "66-67, 94, 110-111, 588", classification: "FORWARD-SIGNAL", implication: "Q3 FY27 margin recovery is the dated test, conditioned on market stabilisation; CFO lag of 1-2 quarters and polymer at peak Rs 160 allow slippage to Q4."}
+  - {id: "C-A3-02", check: "F6", line: "570; 172-174; 562-565", classification: "AMBIGUOUS", implication: "Rs 54/kg EBITDA target in two quarters has an unstable baseline: mgmt assented to Q2 of 36 and of 45; derived 44.2. Definition needed before tracking."}
+  - {id: "C-A3-03", check: "F14", line: "107-108, 113, 124", classification: "AMBIGUOUS", implication: "Q2 margins tie to ~Rs 304 cr base, not Rs 294 cr revenue; EBITDA may include ~Rs 10 cr other income, so operating margin could be ~13.5% not 16.35%."}
+  - {id: "C-A3-04", check: "F14", line: "138-139, 232, 189, 376", classification: "AMBIGUOUS", implication: "11,252 MT/qtr annualises to 107% of stated 42,000 MT; utilisation denominator unknown; headroom math has no basis."}
+  - {id: "C-A3-05", check: "F6", line: "142, 494-499, 229-237, 376, 589-590", classification: "FORWARD-SIGNAL", implication: "Tonnage capped until Oct-2027 expansion; interim growth only from Aug 5,040 MT, rented plant and pinch-bottom mix."}
+  - {id: "C-A3-06", check: "F17", line: "102, 363, 365-367", classification: "FORWARD-SIGNAL", implication: "Revenue +52.5% YoY on volume +13%: ~34% realisation, mostly polymer pass-through that reverses when polymer falls."}
+  - {id: "C-A3-07", check: "F6", line: "88-89, 398, 402-412", classification: "AMBIGUOUS", implication: "Rs 150 cr/yr 3-year contract is a renewal of an existing customer; incremental revenue not disclosed; implies ~13% single-customer concentration."}
+  - {id: "C-A3-08", check: "F6", line: "114-115, 125-127, 454-456, 462-465", classification: "FORWARD-SIGNAL", implication: "Mexico JV drag ~10.5% of Q2 PAT; break-even Q3 'almost', Q4 'not very committed'; log Q4 FY27 as test; F4 scope check at results filing."}
+  - {id: "C-A3-09", check: "F7", line: "157, 386, 395, 551-553, 558-559", classification: "FORWARD-SIGNAL", implication: "'99 percent covered' contradicts 7% GM hit; mgmt illustration implies 60-88% of hikes realised; percent margin unlikely to fully restore."}
+  - {id: "C-A3-10", check: "F7", line: "476-487", classification: "AMBIGUOUS", implication: "India margin-recovery question answered with Mexico content; asked three times, never quantified."}
+  - {id: "C-A3-11", check: "F7", line: "186, 190-191, 209-210, 214-215, 241", classification: "AMBIGUOUS", implication: "Pinch-bottom utilisation declined and capacity framed two ways; the named margin lever cannot be tracked without tonnes."}
+  - {id: "C-A3-12", check: "F17", line: "425-441", classification: "FORWARD-SIGNAL", implication: "H1 OCF 39 to 22 cr on receivables +55 cr and inventory +26.9 cr; mgmt cause (export cycle) is structural; no days, no normalisation date."}
+  - {id: "C-A3-13", check: "F8", line: "442-449", classification: "AMBIGUOUS", implication: "ETR 25% matches statutory; the OCF tax hit is unexplained by the IPO-expense deferred-tax answer; need cash tax vs P&L tax."}
+  - {id: "C-A3-14", check: "F17", line: "54-55, 117-118, 127-128", classification: "NEUTRAL-FACT", implication: "ASR gaps cut the CFO balance-sheet section and H1 EBITDA; silence may be a transcript artefact; use filed transcript before scoring silence."}
+  - {id: "C-A3-15", check: "F17", line: "78, 82, 119-121, 436-439, 589", classification: "AMBIGUOUS", implication: "Six watch items unquantified (realisation/kg, export %, capex, WC days, concentration, IPO use); silence count 1; each an A4 question."}
+  - {id: "C-A3-16", check: "F17", line: "55, 112, 122", classification: "NEUTRAL-FACT", implication: "All framing YoY; derived Q2 PAT -18% QoQ (30.53 to 25.02 cr) on revenue +7% QoQ, not discussed."}
+  - {id: "C-A3-17", check: "F6", line: "575-577", classification: "AMBIGUOUS", implication: "Annual target invoked as 'on the track' but never quantified; cannot enter the promise tracker."}
+forward_signals: ["C-A3-01", "C-A3-05", "C-A3-06", "C-A3-08", "C-A3-09", "C-A3-12"]
+ambiguous: ["C-A3-02", "C-A3-03", "C-A3-04", "C-A3-07", "C-A3-10", "C-A3-11", "C-A3-13", "C-A3-15", "C-A3-17"]
+commitments:
+  - {commitment: "Pass-through reflects in realisation from Q3 FY27, subject to market stabilisation", implied_date: "Q3 FY27", ref: "T02 L64-67 R662", status_word: "initiated"}
+  - {commitment: "Restore EBITDA margin as pricing flows through", implied_date: "from Q3 FY27", ref: "T02 L94 R663; T03 L110 R666; T14 L588 R688", status_word: "initiated"}
+  - {commitment: "EBITDA/kg back to Rs 54 (baseline disputed)", implied_date: "Q4 FY27", ref: "T12 L570 R685", status_word: "stated"}
+  - {commitment: "Yearly target on track (unquantified)", implied_date: "FY27", ref: "T12 L575-577 R686", status_word: "stated"}
+  - {commitment: "Raise value-added (pinch-bottom) share to lift margin", implied_date: "undated", ref: "T02 L95 R664", status_word: "stated"}
+  - {commitment: "Q3 better quantity on 5,040 MT added in August", implied_date: "Q3 FY27", ref: "T05 L142-145 R669", status_word: "underway"}
+  - {commitment: "Q3 more pinch-bottom sales, rice season", implied_date: "Q3 FY27", ref: "T06 L199-203 R671 R672", status_word: "underway"}
+  - {commitment: "Q3-Q4 volume growth on contracted orders incl. renewed contract", implied_date: "H2 FY27", ref: "T14 L586 R687", status_word: "stated"}
+  - {commitment: "Rented plant adds capacity", implied_date: "Nov-Dec 2026", ref: "T11 L494-496 R683", status_word: "underway"}
+  - {commitment: "Expansion to 69-72k MT; October deadline", implied_date: "Oct-2027", ref: "T06 L229-234 R673; T11 L499 R684", status_word: "underway"}
+  - {commitment: "Two new pinch machines into production", implied_date: "Oct-2027", ref: "T06 L236-237 R674", status_word: "stated"}
+  - {commitment: "Pinch-bottom 25-30k MT of 72k", implied_date: "FY28 [ASR_DOUBT]", ref: "T06 L241 R675", status_word: "stated"}
+  - {commitment: "New Gujarat plant timely completion and utilisation", implied_date: "through 2027", ref: "T14 L589-590 R689", status_word: "stated"}
+  - {commitment: "Mexico JV break-even: Q3 near, Q4 not very committed", implied_date: "Q3-Q4 FY27", ref: "T10 L454-465 R680 R681 R931", status_word: "underway"}
+  - {commitment: "JV break-even reverses consolidated PAT margin drag", implied_date: "on break-even", ref: "T03 L126-127 R668", status_word: "stated"}
+  - {commitment: "ROE/ROCE improve as IPO funds deployed", implied_date: "coming quarters", ref: "T03 L119-121 R667", status_word: "underway"}
+  - {commitment: "Rs 150 cr/yr minimum 3-year international contract", implied_date: "signed 2-Oct-2026, 3 years", ref: "T02 L88-89; T09 L402-412 R033 R310", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "First review: no prior call, so no promise-vs-delivery diff, and every silence count is 1. All numbers are ASR tier. The call's dated test is Q3 FY27 margin recovery (lines 66, 94, 110, 588). Management's own words undercut it: a 1-2 quarter lag (110), 'not 100%' (559), hikes of 3-4% realised against 5% asked (551), and polymer 'on peak' at Rs 160 (539). Two baselines must be settled before A4 logs targets. First, the Q2 margins tie to a ~Rs 304 cr base, not Rs 294 cr revenue, so EBITDA may carry ~Rs 10 cr other income. That reading also reconciles the 36 vs 45 Rs/kg EBITDA figures management assented to. The Rs 54/kg target needs the definition. Second, 11,252 MT annualises to 107% of the stated 42,000 MT, so the 90-91% utilisation base is unknown. Revenue growth is mostly price (+52.5% on +13% volume), and tonnes stay capped until Oct 2027. The Mexico JV drag is ~10.5% of Q2 PAT; check auditor scope at the results filing (F4). A2's T10-Q3 is a deflection, not a number. Transcript gaps (lines 54, 117, 127) may hide balance-sheet remarks."

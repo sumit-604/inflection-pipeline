@@ -1,0 +1,32 @@
+# Run log: KNACK Q2 FY27 (/run-quarterly, 28-Oct-2026)
+
+- Checkout guard: `git fetch origin main` OK; diff over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md empty. PASS.
+- Protocol files present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md (Document_Review and Master also present; not passed to A4).
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract 5.4.0 at C:\Program Files\Tesseract-OCR\tesseract.exe.
+- Class detection: Results.pdf p1 = Board Outcome under Reg 30/33, Annexure A results -> `results`. Investor_Presentation.pdf = slide structure, sparse text per page -> `presentation` (doctype tag `deck`). ASR txt = Moderator opening, speaker turns -> `concall`. Press_Release.pdf = press release.
+- Press release de-dup: `diff -w -B` of the press release pdftotext against results pp. 17-19 shows only the "Annexure-B" header and the signature timestamp differ. No separate A1-A3 chain for the press release; results A1 covers pp. 17-19. Saves about 0.2M tokens (WEWORK batch lesson 3).
+- Text layer: all three PDFs carry fonts. Results.pdf is an Acrobat scan with an OCR text layer (garbled header lines on pp. 3, 9, 12, 16); A1 told to check statement pages against renders. Deck pp. 4, 8, 20, 24, 25 have under 20 characters (likely image or divider slides).
+- Company memory: no companies/KNACK.md. Notion: searched "Knack Packaging" and "KNACK 544814"; no COMPANIES MASTER page. No Spear line. A4 frames a PRE-THESIS READ. Peer page on record: HCP Plastene Bulkpack (526717, Notion 39fbb2b9d3ab815db7bfea258eb31581), not passed.
+- Units: results in Rs millions (header "Rs. in millions"); A1 converts to Rs Crore.
+- A1 deck run 1: GATE A1 pass, 36/36 pages, R001-R754. 155,681 tok, 392 s.
+- Orchestrator gate check on deck title-only pages (render at 50 dpi, view only): p5, p13, p14 carry data baked into images (p5 PLWPP history and pack sizes; p13 plant units 1-5 with start dates incl. Unit 4 Apr-2026 and Unit 5 Jul-2026, South Africa and Mexico entities; p14 warehouse 92,065.47 sq ft, 77,000+ cylinders). p12 and p18 are dividers. A1 deck re-invoked for p5, p13, p14 OCR rows (mechanical miss, not counted as a verifier re-run).
+- A1 results run 1: GATE A1 pass, 21/21 pages, R001-R921, tie-outs 158/158; renders pp5-7, 12-14 whole page, table regions p9, p16, p18. 157,101 tok, 490 s.
+- A1 deck run 2 (resume, p5/p13/p14 OCR): R755-R798 added (44 rows), now R001-R798; OCR text appended at fulltext lines 641-847. 171,614 tok, 58 s.
+- A1 concall run 1: GATE A1 pass, 557/557 lines, 15 turns + T00, R001-R934, sweep 828 hits + 106 manual = 934, 326 ASR_DOUBT. 79,784 tok, 206 s.
+- A2 deck run 1: GATE A2 pass, 798/798 rows, 0 orphans; fulltext sweep 136 unrowed tokens (footers, axis ticks), M01-M05 added, M06 unlabelled OCR 14% p13 line 704 left for A3. 78,575 tok (below A1 155,681), 256 s.
+- A2 results run 1: GATE A2 pass, 921/921, 0 orphans; M1 = agenda item 3 (p2 line 79) missing from structured, carried in ledger, A1 not re-run (boilerplate). 116,462 tok (below A1 157,101), 445 s.
+- A2 concall run 1: GATE A2 pass, 934/934, 0 orphans, 0 line-0 rows; 26 questions (11 REPEAT_QUESTION, 12 answered with a number, 1 declined T06-Q3 pinch-bottom utilisation). 68,763 tok (below A1 79,784), 136 s.
+- A3 results run 1: GATE A3 pass; F1-F17 all statused (F16, F17 N.A.); 22 findings (9 FORWARD-SIGNAL, 11 AMBIGUOUS), every finding line-cited. 184,187 tok, 509 s.
+- A3 deck run 1: GATE A3 pass; F1-F17 all statused (F3, F4, F5, F12, F15 N.A.). 177,186 tok, 472 s.
+- M06 (deck OCR "14%" at fulltext line 704): sits between OCR noise lines ("nine", "=") on the p13 map slide; the 50 dpi view of p13 shows no labelled 14% figure. Logged as OCR noise, not data; no A1 re-run. A3 deck did not use it.
+- Transcript check before A4: ASR transcript present from the start (run on it as concall).
+- A3 concall run 1: GATE A3 pass; F6, F7, F8, F14, F17 FINDING, 12 N.A.; 17 findings (6 FORWARD-SIGNAL, 9 AMBIGUOUS). Notes A2 ledger T10-Q3 tagged answered-with-number but management deflected (A4 to use A3 reading).
+- A3 concall: 156,501 tok, 408 s. A4 launched 02:18 local.
+- A4 run 1: PROCEED WITH FLAGS; cash INDETERMINATE-WITH-DIRECTION; 21 notes / 16 turns / 36 slides all reviewed; 55 A3 findings incorporated; 27 questions; A4 self-reported 3 rounding errata (left for A5, not passed to it). 370,692 tok, 1,106 s. A5 launched 02:36 local.
+- A5 run 1 (loop 0): INCOMPLETE; FACTUAL 2, MISSING 5, CONTRADICTION 1, STYLE 4. PAUSED by coordinator at 02:58 local; work/PAUSED.md written.
+- A5 run 1 tokens: 377,539 tok, 1,276 s.
+- RESUME received from coordinator; loop 1 starts 2026-10-29 03:57 local; one subagent at a time.
+- Loop 1 A2 concall (resume): A5-07, A5-08 fixed; 28 questions; 934/934, 0 orphans. 74,094 tok, 40 s. A4 loop 1 (resume) launched.
+- Loop 1 A4 (resume): A5-01..06 + A2 alignment + 3 errata applied; no verdict-card, verdict or forward figure moved. 447,021 tok, 497 s. A5 loop 1 re-audit (resume) launched.
+- Loop 1 A5 re-audit (resume): COMPLETE; A5-01..A5-08 closed; no drift; STYLE 7 logged (S-01 partial, S-02..S-07), not looped.
+- Close-out: session-cost.md, operator-brief.md, notion-payload.md written; scratch (renders, scripts) moved to session scratchpad. Commit next.

@@ -1,0 +1,28 @@
+stage: A2-enumerator
+company: "ROUTE"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/route-q2fy27/work/ledger_results_route_q2fy27.md"
+counts:
+  notes: 23
+  line_items: 256
+  zero_standing: 42
+  agenda_items: 5
+  auditor_paras: 14
+  entities: 77
+  signature_blocks: 12
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [MISSING_FROM_STRUCTURED, ZERO_STANDING, ENTITY_CHANGE, RESTATED, NEW_ITEM_VS_Q1, FOOTNOTE_UNRESOLVED, MEETING_TIME, AUDITOR_CHANGE, RELIANCE_OTHER_AUDITORS, UNREVIEWED_ENTITIES, SIG_AFTER_MEETING]
+ids_in_structured: 1129
+ids_referenced: 1129
+orphan_ids: []
+missing_from_structured: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "A5 M-1 correction: 12 digital signature blocks, not 6; 6 MD blocks (p8,9,10,14,15,16) and 11 timestamps lack structured rows (M01-M11, loop back to A1). Line_items 256 = 244 statement lines + 12 table rows (IPO x2, FX, subsidiary dividend); R1128-R1129 merged into existing hedge rows. zero_standing is 42 cells across 32 line rows. Consolidation list is unchanged by name versus Q1 (33 vs 33), but Annexure 1 Sr.33 name is blank in the text layer (R965), so a rename cannot be excluded. The auditor changed to MSKA; the predecessor is unnamed in the filing and is Walker Chandiok per the Q1 ledger. Board meeting ran 95 min against 120 min in Q1. New agenda items are the IPO variation rescission and the MOA object-clause expansion. Pages 7-11 and 14-16 are scrambled; ledger rows reference ID ranges, so A3 should read values from the structured file by ID."

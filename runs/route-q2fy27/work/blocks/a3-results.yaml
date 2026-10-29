@@ -1,0 +1,66 @@
+stage: A3-forensics
+company: "ROUTE"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/route-q2fy27/work/forensics_route_q2fy27_results.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: PASS
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: PASS
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "F1-01", check: "F1", line: "L344, L659, L713-714, L729", classification: "FORWARD-SIGNAL", implication: "Exceptional line nil but retained for FY26 vendor-advance write-offs; other current assets +160.73 (+79%) in H1, ~142.21 outside parent; new provision on other receivables 4.90 and ECL 4.97; H1 CFO/PAT 0.22x. Same asset class as FY26 write-offs."}
+  - {id: "F1-02", check: "F1", line: "L339, L678, L715-718", classification: "NEUTRAL-FACT", implication: "Debt-free both dates; finance cost +81% QoQ from leases, other borrowing cost and new amortised-cost interest (deferred consideration)."}
+  - {id: "F1-03", check: "F1", line: "L723, L80-82", classification: "NEUTRAL-FACT", implication: "ESOP charge nil H1 FY27; 2,860 options lapsed (Q1 23,250); no dilution pipeline visible."}
+  - {id: "F2-01", check: "F2", line: "L333-341, L962-970", classification: "FORWARD-SIGNAL", implication: "Filing-derived consol EBITDA 115.02 / 9.75% (Q1 9.16%); QoQ gain all from standalone (5.57 to 30.81); ex-parent EBITDA -15.70, margin 10.48% to 9.12%; ex-parent gross margin drifting 20.68/20.37/19.99%."}
+  - {id: "F2-02", check: "F2", line: "L199, L230-231, L350, L365, L977", classification: "AMBIGUOUS", implication: "C-S PAT gap 324.2% to 149.2% of standalone PAT; 24 component subs PAT 24.19 to 65.43 while overseas segment result fell; consolidation residual +28.18 to -15.80; NCI 5.94 to 2.98."}
+  - {id: "F2-03", check: "F2", line: "L1050, L1122, L1125-1127", classification: "FORWARD-SIGNAL", implication: "Standalone receivables +149.89 (+62%) in H1; standalone DSO 139 days vs 114 FY26; standalone CFO (126.69). Parent margin recovery not converting to cash."}
+  - {id: "F2-04", check: "F2", line: "L1041, L1053, L1109, L1134-1136", classification: "AMBIGUOUS", implication: "Intercompany loans: current -62.00, non-current +27.93 vs net repaid 38.30; tenor extension; interest on sub loans 17.29 to 10.15 H1 YoY."}
+  - {id: "F3-01", check: "F3", line: "L227-240", classification: "AMBIGUOUS", implication: "7 management-certified near-dormant subs hold Rs 45.28 Cr assets on H1 revenue 1.87; identify entities and asset composition. No group shell; no going-concern EoM."}
+  - {id: "F4-01", check: "F4", line: "L196-209", classification: "NEUTRAL-FACT", implication: "Component-auditor subs = 79.3% of consol PAT, 47.9% revenue, 49.8% assets (pre-consolidation); truly unreviewed 0.25% PAT, 1.2% assets."}
+  - {id: "F4-02", check: "F4", line: "L196-204; Q1 L183-186", classification: "AMBIGUOUS", implication: "Component PAT share 35.3% to 79.3% QoQ (YoY NOT FOUND); first MSKA review; disclosure widened to assets and cash flows; component revenue -14.4% QoQ while PAT 2.7x."}
+  - {id: "F6-01", check: "F6", line: "L84-95, L831; Q1 L447", classification: "AMBIGUOUS", implication: "7 May 2026 IPO variation rescinded; Rs 65 Cr re-committed to Mumbai office, no date, unutilised since IPO; Q1 filing silent on the variation; cash earmark."}
+  - {id: "F6-02", check: "F6", line: "L849-851, L738, L643", classification: "FORWARD-SIGNAL", implication: "Heltar completed 29 Jul 2026; up to 33.66 (23.88 paid; 9.78 due ~29 Jan 2028, 'up to' implies contingent); Q1 filing silent despite 13 Jul BTA; goodwill +28.17 H1."}
+  - {id: "F8-01", check: "F8", line: "L348, L648, L675, L975", classification: "FORWARD-SIGNAL", implication: "Deferred tax credit every period; shield 321 bps Q2, 518 bps Q1, 554 bps FY26; ETR step-up risk when credits stop."}
+  - {id: "F8-02", check: "F8", line: "L345-349, L972-976", classification: "AMBIGUOUS", implication: "Consol ETR 25.06% to 18.21% (-685 bps) despite mix shift to India; ex-parent implied ETR 26.44% to 12.33%; ~6.91 of the +14.00 QoQ PAT is tax."}
+  - {id: "F9-01", check: "F9", line: "L357-358, L1275-1276", classification: "NEUTRAL-FACT", implication: "Actuarial passes; new cash-flow hedge reserve (nil FY26) swung (3.80) to 3.83; verify hedge designation and notional at FY27 AR."}
+  - {id: "F12-01", check: "F12", line: "L523, L528", classification: "FORWARD-SIGNAL", implication: "Overseas segment result 85.67 to 64.40 (-24.8% QoQ, -20.6% YoY); overseas margin 6.12% vs 8.06%; consol result held up only by India."}
+  - {id: "F12-02", check: "F12", line: "L545-546", classification: "AMBIGUOUS", implication: "Overseas liabilities -114.76 QoQ, -499.76 YoY; no borrowings either date; inter-segment elimination -393.38 YoY; payables unwind vs intra-group settlement."}
+  - {id: "F12-03", check: "F12", line: "L522, L527, L539, L544", classification: "AMBIGUOUS", implication: "India revenue +33.9% YoY but result -15.7% YoY; India margin 8.97% vs 14.25%; liabilities +10.5% QoQ. Low-margin volume vs repricing; Q3 India margin separates."}
+  - {id: "F13-01", check: "F13", line: "L97-103, L1233-1259", classification: "FORWARD-SIGNAL", implication: "MOA objects expand to AI, GenAI, ML, digital identity, cloud; shareholder vote notice incoming (date NOT FOUND); legal room to absorb other (possibly parent-group) businesses; filing silent on RPT, delisting, open offer."}
+  - {id: "F13-02", check: "F13", line: "L114, L862, L1223; Q1 L483", classification: "AMBIGUOUS", implication: "Statements signed in Brussels (Q1 Mumbai); board 9:00-10:35 PM IST, 95 min; signing sequence clean; parent-integration data point."}
+  - {id: "F13-03", check: "F13", line: "L50-67, L858, L1144", classification: "NEUTRAL-FACT", implication: "Second interim Rs 4, record 02 Nov 2026, pay by 26 Nov 2026; FY27 interim Rs 8/share so far; ~25.20 outflow in Q3."}
+  - {id: "F14-01", check: "F14", line: "L298-315; Q1 L249-284", classification: "NEUTRAL-FACT", implication: "Annexure 1 numbering misprint (Sr.18 two names, Ghana unnumbered, Sr.33 blank); all 33 Q1 names map one-to-one; resolves A2 FOOTNOTE_UNRESOLVED R965."}
+  - {id: "F14-02", check: "F14", line: "L1207", classification: "NEUTRAL-FACT", implication: "Dividend table column for Q1 FY27 headed 30.06.2025."}
+  - {id: "F14-03", check: "F14", line: "L213, L248, L251, L927; Q1 L194, L215", classification: "NEUTRAL-FACT", implication: "Predecessor called 'another auditor' and 'predecessor auditor', unnamed; reliance and standard wording changed vs Q1; no audit/review mismatch."}
+  - {id: "F14-04", check: "F14", line: "L198, L516, L1030, L858", classification: "NEUTRAL-FACT", implication: "Missing unit, '(Unudited)', 'LIABILITES', 'recommended a interim dividend' vs letter 'Second Interim'; cumulative drafting-quality point in new auditor's first quarter."}
+forward_signals: ["F1-01", "F2-01", "F2-03", "F6-02", "F8-01", "F12-01", "F13-01"]
+ambiguous: ["F2-02", "F2-04", "F3-01", "F4-02", "F6-01", "F8-02", "F12-02", "F12-03", "F13-02"]
+commitments:
+  - {commitment: "Second interim dividend Rs 4/share", implied_date: "record 2026-11-02; pay by 2026-11-26", ref: "L50-67", status_word: "initiated"}
+  - {commitment: "TDS documents and shareholder communication", implied_date: "2026-11-02", ref: "L73-76", status_word: "initiated"}
+  - {commitment: "Results extract newspaper publication (Reg 47)", implied_date: "statutory, post 2026-10-27", ref: "L45-47", status_word: "initiated"}
+  - {commitment: "Rs 65 Cr unutilised IPO proceeds to Mumbai office purchase; 7 May 2026 variation rescinded", implied_date: "NOT FOUND", ref: "L84-95, L831-834", status_word: "rescinded, re-committed (utilisation nil)"}
+  - {commitment: "MOA alteration: objects 2-5 (AI, GenAI, ML, digital identity, cloud, CPaaS), subject to shareholder approval", implied_date: "NOT FOUND (postal ballot / EGM)", ref: "L97-103, L1233-1273", status_word: "initiated"}
+  - {commitment: "Heltar acquisition; Rs 9.78 Cr deferred payable at 18 months", implied_date: "completed 2026-07-29; deferred ~2028-01-29", ref: "L849-851", status_word: "completed (deferred leg pending)"}
+  - {commitment: "QIP Rs 867.50 Cr being utilised per placement document; unutilised in FDs", implied_date: "NOT FOUND", ref: "L835-837", status_word: "underway (unchanged vs Q1)"}
+  - {commitment: "Insider trading window opens", implied_date: "2026-10-30", ref: "L109-112", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The filing gives no Adjusted EBITDA. Filing-derived reported EBITDA is 9.75% (Q1 9.16%), Rs 2.95 Cr short of 10%. Trigger 1 therefore turns on the presentation's add-backs. A4 must source and itemise them, and check whether the new H1 provisions (ECL 4.97, other receivables 4.90) are added back. The QoQ EBITDA gain is all from the parent; the rest of the group lost Rs 15.70 Cr and 136 bps, and the overseas result fell 25%. About half of the Q2 PAT gain is tax: ETR fell 685 bps although profit mix moved toward higher-tax India. Cash conversion is the sharpest signal. H1 CFO/PAT is 0.22x, driven by a Rs 160.73 Cr rise in other current assets, mostly outside the parent. That is the asset class behind the FY26 Rs 135.87 Cr write-offs. Annexure 1 Sr.33 is a numbering misprint; all 33 Q1 names match. The filing is silent on Proximus related-party flows, client concentration, promoter holding, delisting and open offer. The MOA expansion into digital identity and AI, and the Brussels signing place, are the only parent-integration signs."

@@ -24,3 +24,5 @@
 - Loop 1 A4 (resumed): F1-F6 accepted and patched; verdict unchanged; Key Notes headline now leads with operating EBIT +42.6%; drafting count 7 to 6. Counter 239,194 cumulative, loop share 76,830, 7 tool uses, 401 s.
 - Loop 1 A5 (resumed): re-audit COMPLETE, F1-F6 resolved, drift clean, 4 new STYLE notes (S13-S16). Counter 312,856 cumulative, loop share 81,887, 9 tool uses, 357 s. Correction loops: 1.
 - Close-out: session-cost.md, operator-brief.md, notion-payload.md written. Nothing written to Notion. Transcript folder still empty at close-out.
+- 2026-10-29 15:24 IST: concall_audio/ still empty. The operator pasted the call transcript into the session. Saved verbatim as inputs/Neochem_H1FY27_Concall_Transcript_operator_paste.txt (MGMT, unverified). No A1-A5 pass on it; Role 5 open.
+- Operator instruction "Update the brief": operator-brief.md revision 2 adds the call. FY27E base moves 142.2 -> 155.0 Cr revenue, 15.8 -> 17.2 Cr PAT; FY28E base 160.7 -> 190.7 Cr, 17.5 -> 20.8 Cr. Revision 1 base kept as the lower reading. Review, audit and notion-payload unchanged (they rest on filed documents only).

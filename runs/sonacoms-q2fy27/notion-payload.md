@@ -1,4 +1,4 @@
-# NOTION PAYLOAD — SONACOMS Q2 FY27 (NOT WRITTEN; awaits operator approval)
+# NOTION PAYLOAD — SONACOMS Q2 FY27 (WRITTEN 2026-10-29 on operator approval; see work/run_log.md. Tracker rows in section 3 NOT written)
 
 Batch instruction 28-Oct-2026: no Notion write in this run. This file is the payload for the operator to approve and for claude.ai to execute. Decision Status is never written.
 

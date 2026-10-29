@@ -1,0 +1,31 @@
+stage: A1-extractor
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 1
+formfeed_count: 0
+line_count: 418
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: false   # plain-text ASR transcript, not a PDF
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100      # line coverage 418 of 418
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/dycl-q2fy27/extracted/dycl-concall-q2fy27-fulltext.md"
+structured_path: "runs/dycl-q2fy27/extracted/dycl-concall-q2fy27-structured.md"
+structured_counts:
+  number: 58
+  entity: 54
+  forward: 30
+  date: 17
+  qualifier: 15
+  question: 33
+structured_id_range: "R001-R207"
+turn_count: 115
+asr_doubt_rows: 56
+gate_a1: pass
+gap_note: ""

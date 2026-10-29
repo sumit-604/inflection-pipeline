@@ -1,0 +1,28 @@
+stage: A2-enumerator
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/dycl-q2fy27/work/ledger_concall_dycl_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 54
+  turns: 115
+  questions: 33
+  mgmt_numbers: 28
+  slides: 0
+  slide_numbers: 0
+flags_raised: [REPEAT_QUESTION, MISSING_FROM_STRUCTURED, SPEAKER_UNRESOLVED, ASR_DOUBT, ENTITY_MISHEARD, RESTATED, NO_GUIDANCE]
+ids_in_structured: 207
+ids_referenced: 207
+missing_from_structured_count: 10
+orphan_ids: []
+missing_from_structured: [M01 L055 healthy order pipeline, M02 L141 unlimited latent demand, M03 L344 20-30/40 years new entrants, M04 L266 product mix not very different, M05 L099 tariff fear, M06 L030-L032 continued build demand/discipline, M07 L033-L034 resilience, M08 L044-L047 market reach, M09 L050-L051 commodity/geopolitics, M10 L052-L054 prudent working capital]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Q&A split of 33 questions: 7 answered with a number, 10 answered without, 15 deflected, 1 lost to ASR (R185 capex, T36). Deflections cluster on volume vs price, EBITDA per ton, US orders, product mix, order book, FY27/FY28 growth: the exact items a bear check needs. Management never confirmed analyst figures 18% EBITDA, 6% volume, 30% H1. Management Q&A turns carry no speaker name, so MD vs CFO is unresolved. Only 28 of 58 number rows are management-spoken; 25 are analyst premises. Repeat clusters: volume/price (R179,R186,R194), margin (R187,R191,R193), exports (R177,R182,R202), product mix (R190,R192), capex (R185,R203)."

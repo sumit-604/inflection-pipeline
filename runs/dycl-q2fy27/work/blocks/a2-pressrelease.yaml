@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/dycl-q2fy27/work/ledger_pressrelease_dycl_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 18
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 17
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [RESTATED, MISSING_FROM_STRUCTURED]
+ids_in_structured: 151
+ids_referenced: 151
+orphan_ids: []
+missing_from_structured: [M1 line 127 strong growth momentum govt and private, M2 line 108 business environment improved, M3 lines 108-110 disciplined execution trusted partner]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Three qualitative MD/highlight statements lack A1 rows; loop back to A1 if forward statements must be complete. No zero or dash rows exist. Tile figures restate table values (RESTATED). Order book (R075) has no inclusion definition (R148). Net Debt includes off-balance LC creditors per R150/R097. No prior ledger, so no ENTITY_CHANGE or dropped-disclosure diff."

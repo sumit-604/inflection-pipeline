@@ -1,0 +1,30 @@
+stage: A1-extractor
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 5
+formfeed_count: 5
+line_count: 519
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01"
+text_layer_present: true
+extraction_mode: text-only  # raw hidden-OCR layer kept; financial pages render-corrected
+render_candidates: []
+rendered_pages: ["2: auditor signature block/UDIN, garbled text", "3: balance sheet, scrambled columns", "4: P&L and notes, scrambled decimals/columns", "5: cash flow, scrambled columns"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/dycl-q2fy27/extracted/dycl-results-q2fy27-fulltext.md"
+structured_path: "runs/dycl-q2fy27/extracted/dycl-results-q2fy27-structured.md"
+structured_counts:
+  number: 394
+  entity: 36
+  forward: 2
+  date: 23
+  qualifier: 27
+structured_id_range: "R001-R482"
+gate_a1: pass
+gap_note: ""
+filing_scope: "standalone only; no consolidated results in filing"
+render_corrections: "pages 2-5 text layer garbled; all statement values (balance sheet, P&L, cash flow) and UDIN render-corrected; tie-outs pass (cash flow subtotal diffs <=0.06 as printed)"

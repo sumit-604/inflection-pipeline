@@ -1,0 +1,61 @@
+stage: A3-forensics
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/dycl-q2fy27/work/forensics_concall_dycl_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F6", line: "L036-L039; L089-L090 (ASR_DOUBT context); L083 unanswered", classification: "FORWARD-SIGNAL", implication: "New plant installed; contribution dated H2 FY27; installed capacity not given; Q3/Q4 FY27 prints are the test with no tonnage path to track"}
+  - {id: "A3-02", check: "F6", line: "L139; L200 (analyst); L203; L317; L372", classification: "FORWARD-SIGNAL", implication: "Growth framed as value; analyst 6% volume and price-led growth not disputed; metal now dipping so pass-through deflates H2 value growth; 20% guide not raised, FY27/FY28 refused"}
+  - {id: "A3-03", check: "F7", line: "L122 vs L208-L209 vs L270-L271", classification: "AMBIGUOUS", implication: "10-11% margin shifts from guidance going forward to typical range to no exact guidance; Role 5 cannot score it until status is fixed"}
+  - {id: "A3-04", check: "F7", line: "L181; L254-L257; L266", classification: "AMBIGUOUS", implication: "Q2 margin decline blamed on fixed-price commodity hit, then commodity denied, then mix blamed, then mix not very different; cause unexplained; 10-20% fixed-price exposure both ways"}
+  - {id: "A3-05", check: "F7", line: "L115-L116 (analyst); L117-L121", classification: "AMBIGUOUS", implication: "Other expenses and gross profit swap by terms of trade; gross margin not comparable QoQ; other-expense drop not called sustainable"}
+  - {id: "A3-06", check: "F6", line: "L161-L166; L071-L072 (ASR_DOUBT context)", classification: "AMBIGUOUS", implication: "Finance cost from WC borrowing plus vendor-finance facility; vendor finance may sit in payables and understate debt; 15% metric unresolved"}
+  - {id: "A3-07", check: "F6", line: "L157-L161; L362-L364; L191-L194 (ASR, not used)", classification: "FORWARD-SIGNAL", implication: "H1 cost rise not from new plant implies plant capitalised from H2, so depreciation steps up of unknown size; capex amount and funding undisclosed beyond no specific debt"}
+  - {id: "A3-08", check: "F7", line: "L048-L049; L099; L149-L150; L219; L353", classification: "FORWARD-SIGNAL", implication: "Exports conditional on macros, tariff risk named, near-term hard to predict agreed, US orders and export split refused; near-term exports soft, US tariff exposure unsized"}
+  - {id: "A3-09", check: "F17", line: "L055; L282; L312-L313 (analyst); L316", classification: "AMBIGUOUS", implication: "No order book or inflow number while capacity rises; prior-quarter intake slowdown cited by analyst; booking improved with no figure"}
+  - {id: "A3-10", check: "F17", line: "L382-L383 (analyst); L385-L390; L317", classification: "AMBIGUOUS", implication: "Inventory up in H1 cash flow; no days, OCF, receivable or payable figure; high-cost September stock with metal dipping risks H2 inventory loss"}
+  - {id: "A3-11", check: "F6", line: "L398-L401; L403-L405; L407", classification: "AMBIGUOUS", implication: "Solar and data-centre cables unproven: no orders, data-centre pre type testing, undated; underway is next quarter's baseline"}
+  - {id: "A3-12", check: "F7", line: "L343; L347-L349", classification: "AMBIGUOUS", implication: "New large entrant said to hit house wire, not DYCL B2B, while nobody can be certain; untested if entrant moves into power cables or utility tenders"}
+  - {id: "A3-13", check: "F17", line: "L324-L326; L329-L331", classification: "NEUTRAL-FACT", implication: "Top-10 share 40-45%, repeat share above 80% yearly; utility/EPC split not given; baseline"}
+  - {id: "A3-14", check: "F17", line: "L191-L194; L235-L236; L416", classification: "NEUTRAL-FACT", implication: "15 of 33 deflected, 1 lost to ASR, 7 cut-offs, CFO capex turn garbled; numbers must come from filed H1 results"}
+  - {id: "A3-15", check: "F17", line: "L001-L418 (absent)", classification: "NEUTRAL-FACT", implication: "Promoter holding, pledge and utility/EPC mix never raised; route to shareholding pattern filing; one quarter silence"}
+forward_signals: ["A3-01", "A3-02", "A3-07", "A3-08"]
+ambiguous: ["A3-03", "A3-04", "A3-05", "A3-06", "A3-09", "A3-10", "A3-11", "A3-12"]
+commitments:
+  - {commitment: "New facility starts contributing (plant and machinery installed)", implied_date: "H2 FY27", ref: "T03 L036-L039", status_word: "underway"}
+  - {commitment: "New facility initial revenue potential 240-250 crore (ASR_DOUBT)", implied_date: "undated, initially", ref: "T12 L089-L090", status_word: "initiated"}
+  - {commitment: "Overall value growth around 20%", implied_date: "FY27 and long term", ref: "T39-T41 L201-L203", status_word: "underway"}
+  - {commitment: "Operating margin 10-11%", implied_date: "going forward", ref: "T23 L122; T43 L208-L209", status_word: "underway"}
+  - {commitment: "Finance cost 15% maintained incl. new facility (ASR_DOUBT, base unknown)", implied_date: "ongoing", ref: "T06 L071-L072", status_word: "underway"}
+  - {commitment: "Exports gain momentum as global macros normalise", implied_date: "conditional, undated", ref: "T03 L048-L049", status_word: "initiated"}
+  - {commitment: "Order booking improves as commodity prices dip", implied_date: "near term, undated", ref: "T81 L316-L318", status_word: "underway"}
+  - {commitment: "Order book reaching the optimum over a period (ASR_DOUBT)", implied_date: "undated", ref: "T72 L283", status_word: "initiated"}
+  - {commitment: "Capex ongoing, brownfield, no specific debt", implied_date: "next 18-24 months (analyst frame)", ref: "T96 L363-L364; T31 L162", status_word: "initiated"}
+  - {commitment: "Electron-beam solar cable results soon", implied_date: "soon, undated", ref: "T107 L398-L401", status_word: "initiated"}
+  - {commitment: "Data-centre cable product readiness then type testing", implied_date: "undated, market-dependent", ref: "T107 L403-L405; T109 L407", status_word: "underway"}
+  - {commitment: "Email reply on order-size / open-order question", implied_date: "post-call", ref: "T53 L236", status_word: "initiated"}
+  - {commitment: "FY28 visibility after FY27 close", implied_date: "after Mar-2027", ref: "T101 L377-L378", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Machine transcript with no speaker names; every number is management or analyst tier and unverified, and no finding rests on an ASR_DOUBT row alone. The call is thin: 15 of 33 questions deflected and the CFO capex turn lost, so capex, depreciation, finance cost, inventory and OCF must come from the filed H1 results. The core forensic point is the margin story. Management gave three causes for the Q2 margin decline that cancel out (fixed-price commodity hit at L181, commodity denied at L254, mix blamed at L256, mix not different at L266). The second point is value framing. Management steers to value growth and will not split volume from price. The analyst's 6% volume and price-led revenue were not disputed, and metal is now falling. Pass-through then cuts H2 revenue unless the new plant adds volume, and the plant has no stated capacity. Depreciation should step up from H2 because H1 costs were said to be unrelated to the plant. Vendor finance inside the working-capital cycle may understate debt. Order book, OCF and pledge are silent for one quarter; prior quarters NOT FOUND."

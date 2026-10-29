@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "governance"
+model: claude-sonnet-5-5
+status: complete
+page_count: 6
+formfeed_count: 6
+line_count: 216
+unit_convention: "Rupees (absolute)"
+conversion_factor_to_cr: "divide by 10,000,000"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "quarter ended June 30, 2026 (filing 27-Oct-2026)"
+fulltext_path: "runs/dycl-q2fy27/extracted/dycl-governance-q2fy27-fulltext.md"
+structured_path: "runs/dycl-q2fy27/extracted/dycl-governance-q2fy27-structured.md"
+structured_counts:
+  number: 34
+  entity: 36
+  forward: 12
+  date: 18
+  qualifier: 16
+structured_id_range: "R001-R116"
+gate_a1: pass
+gap_note: ""

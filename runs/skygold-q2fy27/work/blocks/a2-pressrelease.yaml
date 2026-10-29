@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "SKYGOLD"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/skygold-q2fy27/work/ledger_pressrelease_skygold_q2fy27.md"
+counts:
+  notes: 1
+  line_items: 11
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 22
+  turns: 0
+  questions: 0
+  mgmt_numbers: 6
+  slides: 0
+  slide_numbers: 0
+flags_raised: [RESTATED, FOOTNOTE_UNRESOLVED, ENTITY_CHANGE]
+ids_in_structured: 180
+ids_referenced: 180
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "CFO bullet (R156-R159, R169) prints the comparison CFO (100.9) crore under the same H1 FY27 label as the current period; period unresolved in the release. Purvi Gems acquisition (R160-R161, R172-R174) closed 7 Oct 2026 for Rs 9 crore, new entity. Operational PBT/PAT exceed reported by non-operational income. No zero-standing rows; no forward guidance beyond the prior 20% CFO/EBITDA reference."

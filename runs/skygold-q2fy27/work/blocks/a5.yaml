@@ -1,0 +1,50 @@
+stage: A5-adversary
+company: "SKYGOLD"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+loop1_resolved:
+  - "A5-F1 RESOLVED: Step 5-S SA WC change H1 FY26 (210.09), delta +20.47 (review L401; rL1135, rL1148)"
+  - "A5-F2 RESOLVED: trailing PE 33.6x on owners' trailing-4Q PAT 395.89; incl.-NCI 32.8x labelled alternative (review L598; rL1200)"
+  - "A5-M1 RESOLVED: ledger M005-M017 present; M005-M010 match A5 units; M011-M017 verified at fulltext and absent from structured"
+  - "A5-M2 RESOLVED: acquisition-economics graft in Step 1-G, Flag 3, CE-5, Brief part 3, Q9, Q20; multiples re-derived; Purvi NOT COMPUTABLE"
+  - "A5-M3 RESOLVED: perimeter qualifier in Step 2-C, Diag 3, Step 3, Step 4, Verdict, Brief part 1, Q21; NCI-implied 3.03 Cr re-derived"
+  - "A5-M4 RESOLVED: Flag 4, Flag 7, register row and Brief corrected to the deck p19 framing (dL433, dL453-456)"
+  - "S2, S4 APPLIED"
+drift: "none in substance; all changes sit at change-logged points; verdict-card numbers, protocol verdict and cash_conversion unchanged"
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S1 (open): Flag 5 'Rs 46.4 Cr asset lines cleared' = 46.46; name the lines"
+    - "S3 (open): Step 0C 'share count flat' holds at period end only; Q2 FY26 weighted shares ~15.30 Cr"
+    - "S5 (open): Step 5-C 'all of the fall is payables'; on A4's basis inventory days also fell 4.1"
+    - "S6 (open): 'Q2 FY27 is its first review' is an inference; tag [INFERENCE]"
+    - "S7 (open): EGM cut-off '11-Nov on three of four mentions' undercounts"
+    - "S8 (new): Q20 and Q21 not routed; review L720, L751, L768 and YAML L979 still read Q1-Q19 / Q9-Q19 / Q5-Q19"
+    - "S9 (new, A2 ledger): M017 paraphrase 'investment' vs fulltext 'technical mastery' (dL615); M005 row range omits R471"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S1: name the two asset lines behind 46.4 (44.04 investments; 2.42 investment property; sum 46.46)"
+  - "S3: note weighted-average share effect on Q2 FY26 EPS"
+  - "S5: state the basis for 'all of the fall is payables'"
+  - "S6: tag 'first review by MSKA' as [INFERENCE]"
+  - "S7: EGM cut-off count understates 11-Nov mentions"
+  - "S8: extend question ranges to Q21 at review L720, L751, L768, L979 and route Q20-Q21 in writing"
+  - "S9: correct M017 paraphrase and M005 row range in the presentation ledger"
+analyst_note: "Loop 1 closes every loop-0 finding. I re-derived each patched number from the fulltext rather than the change log, and all tie within rounding. The section-by-section diff against the pre-loop text shows changes only at change-logged points. Verdict-card numbers, PROCEED WITH FLAGS and the cash-conversion call are unchanged. The ledger grew to 17 M-units. A2's second sweep found seven more beyond A5's six, and each checks out at its fulltext line. One omission is acceptable: the graft drops A5's FY26 equity-bridge support for the non-cash-consideration inference, but Q20 still asks the question. Fix S8 before the call: Q20 and Q21 exist but the routing lines still stop at Q19, and Q20 is the acquisition-consideration question."

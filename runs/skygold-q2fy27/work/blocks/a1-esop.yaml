@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SKYGOLD"
+quarter: "q2fy27"
+doctype: "esop"
+model: claude-sonnet-5-5
+status: complete
+page_count: 4
+formfeed_count: 4
+line_count: 142
+unit_convention: "Rupees absolute"
+conversion_factor_to_cr: "n/a"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["p3 and p4 at 150 dpi, table column check only, no OCR merged"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/skygold-q2fy27/extracted/skygold-esop-q2fy27-fulltext.md"
+structured_path: "runs/skygold-q2fy27/extracted/skygold-esop-q2fy27-structured.md"
+structured_counts:
+  number: 17
+  entity: 14
+  forward: 3
+  date: 7
+  qualifier: 17
+structured_id_range: "R001-R058"
+gate_a1: pass
+gap_note: ""

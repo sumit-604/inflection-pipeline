@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SKYGOLD"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 16
+formfeed_count: 16
+line_count: 1345
+unit_convention: "Lakhs (statements); Rs crores (Board letter, Annexure A)"
+conversion_factor_to_cr: "Lakhs x0.01"
+text_layer_present: true
+extraction_mode: text-only  # pages 6-9,13-16 carry scrambled OCR text layer; values read from 150-dpi renders
+render_candidates: []
+rendered_pages: [6, 7, 8, 9, 11, 12, 13, 14, 15, 16]  # scrambled statement columns; p11 date OCR error; p12 cross-check
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (quarter and half year ended 30-Sep-2026)"
+fulltext_path: "runs/skygold-q2fy27/extracted/skygold-results-q2fy27-fulltext.md"
+structured_path: "runs/skygold-q2fy27/extracted/skygold-results-q2fy27-structured.md"
+structured_counts:
+  number: 816
+  entity: 39
+  forward: 15
+  date: 34
+  qualifier: 59
+structured_id_range: "R001-R963"
+gate_a1: pass
+gap_note: ""

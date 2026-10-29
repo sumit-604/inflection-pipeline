@@ -1,6 +1,8 @@
-# NOTION PAYLOAD — AEQUS Q2 FY27 quarterly review (NOT WRITTEN; awaiting operator approval)
+# NOTION PAYLOAD — AEQUS Q2 FY27 quarterly review (WRITTEN 29-Oct-2026 on operator approval)
 
-Batch standing instruction 6: no Notion write in this run. Nothing below has been sent. Decision Status is never written by this payload.
+Status: written to the page below on 29-Oct-2026 after the operator approved it in this session. Key Notes prepended (section 1) and 15 content inserts appended (section 2). Section 3 tracker candidates were NOT written. Decision Status was not written. Record: work/run-log.md, last line.
+
+Original note: batch standing instruction 6 held the write until the operator approved it. Decision Status is never written by this payload.
 
 ## Target
 

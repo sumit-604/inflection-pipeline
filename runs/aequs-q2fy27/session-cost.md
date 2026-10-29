@@ -46,7 +46,7 @@ Errata and loop rows are deltas: each agent was resumed, and the figure is its c
 - Cost check: A2 results (133,902) came in 3.5% above A1 results (129,364). Diagnosed in work/run-log.md: no source re-ingestion; the excess is the orchestrator-added tie-out task (346 arithmetic checks). Every other A2 sits below its A1.
 - A1 results was the costliest A1: nine image-only statement pages, OCR failed on the tables, and the agent transcribed them from renders.
 - A4 is 20% of the run on its own (415,534 base + 80,689 loop).
-- No Notion write; the payload is in notion-payload.md.
+- Notion write done inline on 29-Oct-2026 after operator approval (1 property update, 15 inserts; no subagent, no token row). Payload record in notion-payload.md.
 
 ## Orchestrator session
 

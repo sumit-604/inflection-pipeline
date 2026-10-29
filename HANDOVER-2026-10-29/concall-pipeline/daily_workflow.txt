@@ -1,0 +1,174 @@
+============================================================
+DAILY CONCALL INTELLIGENCE WORKFLOW
+============================================================
+Total time: 20-30 minutes per run
+Best time: Morning (before 9 AM IST) and/or Evening (after 7 PM IST)
+============================================================
+
+
+PART A: DOWNLOAD TRANSCRIPTS (5-10 minutes)
+-------------------------------------------
+
+Step 1: Open PowerShell
+   - Press the Windows key
+   - Type: PowerShell
+   - Press Enter
+
+Step 2: Navigate to project folder
+   - Type: cd C:\ConcallPipeline
+   - Press Enter
+   - Your prompt should now show: PS C:\ConcallPipeline>
+
+Step 3: Run the download script
+   - Type: python download_today.py
+   - Press Enter
+   - A browser window will open automatically and start working
+
+Step 4: Watch the output
+   The script will:
+     - Log in to Screener (automatic)
+     - Apply the Transcript filter
+     - Find today's transcripts
+     - Download each PDF with a 3-second polite delay
+   Wait until you see "Run summary" at the end.
+   Note the "Downloaded" count - that's how many fresh transcripts you got.
+
+Step 5: Close the browser
+   - Press Enter in PowerShell when it says "Press Enter to close browser"
+
+Step 6: Verify the downloads
+   - Open File Explorer
+   - Go to: C:\ConcallPipeline\downloads\
+   - You should see a folder named with today's date (e.g., 2026-05-08)
+   - Inside should be one PDF per company
+
+
+PART B: ANALYSIS WITH NOTEBOOKLM (10-15 minutes)
+------------------------------------------------
+
+Step 7: Open NotebookLM
+   - Go to: https://notebooklm.google.com
+   - Sign in with your Google account if needed
+
+Step 8: Create today's notebook
+   - Click "+ New notebook"
+   - Rename it: "Concalls YYYY-MM-DD" (use today's actual date)
+
+Step 9: Upload today's PDFs
+   - Click "Add sources" (or the + button)
+   - Choose "PDF" or "Upload"
+   - Navigate to: C:\ConcallPipeline\downloads\YYYY-MM-DD\
+   - Select all PDFs in the folder (Ctrl+A)
+   - Click Open
+   - Wait 1-2 minutes for NotebookLM to process them
+
+Step 10: Paste the intelligence prompt
+   - Open: daily_concall_intelligence_prompt.md
+     (this is the file we created earlier)
+   - Copy the entire prompt section (between the ``` marks)
+   - Go back to NotebookLM
+   - Paste into the chat box at the bottom
+   - Press Enter or click send
+
+Step 11: Wait for the response
+   - Takes 1-3 minutes depending on number of PDFs
+   - Output appears in the chat
+
+
+PART C: REVIEW AND ARCHIVE (5 minutes)
+--------------------------------------
+
+Step 12: Review the four sentiment lists
+   - Companies where ANALYSTS were APPRECIATIVE
+   - Companies where ANALYSTS were SKEPTICAL or UNHAPPY
+   - Companies where MANAGEMENT was OPTIMISTIC about future
+   - Companies where MANAGEMENT was CAUTIOUS about future
+
+Step 13: Identify deep-dive candidates
+   - Names in BOTH "Optimistic mgmt + Appreciative analysts" 
+     are the strongest GENUINE bull signals for further research
+   - Names in "Optimistic mgmt + Skeptical analysts" need 
+     investigation - potential BULL TRAPS where mgmt may be overpromising
+   - Names in "Cautious mgmt + Appreciative analysts" can be 
+     SANDBAGGING setups for positive surprise
+
+Step 14: Save key findings
+   - Create a new note in Notion (or a daily journal)
+   - Title: "Concall Intel YYYY-MM-DD"
+   - Paste the full NotebookLM output
+   - Highlight 1-3 names you want to research further
+   - Note any cross-industry convergent themes (Section J)
+
+Step 15: Done
+   You are caught up on today's market intelligence.
+
+
+============================================================
+WHEN TO RUN
+============================================================
+
+Off-season (most of the year):
+   - Once per day, morning is sufficient
+
+Earnings season:
+   - Late July (Q1 FY27 results)
+   - Late October (Q2 FY27 results)  
+   - Late January (Q3 FY27 results)
+   - Late April / early May (Q4 FY27 results)
+   During these windows, run TWICE: morning + evening
+
+
+============================================================
+TROUBLESHOOTING
+============================================================
+
+PROBLEM: Browser opens but login fails
+   - Your saved session has expired
+   - Just re-run the script - it logs in fresh from .env
+
+PROBLEM: "Found 0 rows" or no downloads
+   - Some days have no concalls (off-season)
+   - Check manually at: https://www.screener.in/concalls/
+   - If the page does show transcripts but script finds 0, 
+     Screener may have changed their HTML - need to update selectors
+
+PROBLEM: NotebookLM upload fails
+   - Check the file is under 200MB (very rare problem)
+   - Try uploading in batches of 10-15 instead of all at once
+
+PROBLEM: NotebookLM output looks generic or paraphrased
+   - Spot-check 2-3 verbatim quotes against the actual PDFs
+   - If quotes are wrong, the prompt needs stricter language - 
+     re-add "if you cannot quote verbatim, write [paraphrase]"
+
+PROBLEM: Same transcripts re-downloading
+   - Should not happen - dedup is automatic via filename check
+   - If it does, check the downloads folder has the right date subfolder
+
+
+============================================================
+IMPORTANT FILE LOCATIONS
+============================================================
+
+Project folder:           C:\ConcallPipeline
+Downloaded PDFs:          C:\ConcallPipeline\downloads\YYYY-MM-DD\
+Daily download script:    C:\ConcallPipeline\download_today.py
+Credentials file:         C:\ConcallPipeline\.env
+Intelligence prompt file: daily_concall_intelligence_prompt.md
+
+
+============================================================
+QUICK REFERENCE - ALL COMMANDS IN ORDER
+============================================================
+
+cd C:\ConcallPipeline
+python download_today.py
+[wait, press Enter when done]
+[then: open https://notebooklm.google.com manually]
+[upload PDFs from downloads\YYYY-MM-DD\]
+[paste prompt from daily_concall_intelligence_prompt.md]
+
+
+============================================================
+END OF DAILY WORKFLOW
+============================================================

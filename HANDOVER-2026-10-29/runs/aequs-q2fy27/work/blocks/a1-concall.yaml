@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 1   # N.A. text transcript; 757 source lines, logical page 1
+formfeed_count: 0
+line_count: 757
+unit_convention: "Rs million (spoken), Rs crore (Q&A), USD billion order book"
+conversion_factor_to_cr: "Rs million x0.1; Rs crore x1"
+text_layer_present: false   # N.A. plain text input
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (H1 FY27)"
+fulltext_path: "runs/aequs-q2fy27/extracted/aequs-concall-q2fy27-fulltext.md"
+structured_path: "runs/aequs-q2fy27/extracted/aequs-concall-q2fy27-structured.md"
+structured_counts:
+  number: 155
+  entity: 42
+  forward: 51
+  date: 25
+  qualifier: 29
+structured_id_range: "R001-R302"
+speaker_turns: 84
+gate_a1: pass
+gap_note: "source ASR gap at lines 284-285 (00:19:48 to 00:21:02) logged, not repaired"

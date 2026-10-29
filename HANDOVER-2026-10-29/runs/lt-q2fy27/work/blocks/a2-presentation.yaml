@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "LT"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/lt-q2fy27/work/ledger_presentation_lt_q2fy27.md"
+counts:
+  notes: 77
+  line_items: 0
+  zero_standing: 39
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 35
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 36
+  slide_numbers: 1352
+flags_raised: [ZERO_STANDING, RESTATED, FOOTNOTE, MGMT_REMARK, RECLASSIFICATION, INDICATIVE_HISTORY, PORTFOLIO_STATUS, DEFENCE_DISCLAIMER, LABEL_SWAP, SEGMENT_INDEX_LABEL]
+ids_in_structured: 1498
+ids_referenced: 1498
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Raw fulltext token sweep gave 1456 vs 1352 NUMBER rows; value-multiset diff per page shows the excess is printed slide-number footers (one per slide), page-1 address digits and slide-12 segment index labels. No financial value is missing from structured. Notes count here is the 77 footnote/qualifier rows (deck has no numbered notes). Revised after A1 correction: R1491-R1498 close M1, M2 and M3 closed as no-data, Domestic/International labels swapped on R244-R251 and R264-R271 (values unchanged), page-1 anchors now absolute. No prior ledger, so DROPPED_SLIDE and ENTITY_CHANGE could not be tested. 39 ZERO_STANDING rows cluster on slides 31-32 (NCI, JV/associate nil for Realty/DP/Corporate/FS), 34 (FS and DP nil order book), 30, 24 and 36 (Energy-Green FY22 nil)."

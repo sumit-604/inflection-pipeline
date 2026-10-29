@@ -1,0 +1,562 @@
+#!/usr/bin/env python3
+"""
+collect_to_repo.py v3  —  companies.txt -> screener.in -> GitHub. Done.
+========================================================================
+Works exactly like collect_batch.py: reads companies.txt from this
+folder (the block Claude gives you, pasted into notepad, saved). Then:
+
+    py collect_to_repo.py
+
+That's the whole interface. No flags, no prompts.
+- CMP, market cap, company name: scraped from the screener page itself.
+- Sector cap row: picked automatically by a keyword map (printed in the
+  summary so you can see what it chose; edit manifest.yaml if wrong).
+- Results/rating PDFs: not on screener. Push happens without them; add
+  them later directly on GitHub (drag into runs/<folder>/inputs/results/
+  and /rating/) or drop them in the local run folder and run
+  `py collect_to_repo.py --push-again`.
+
+companies.txt format (same as always):
+    APEXECO:https://www.screener.in/company/APEXECO/
+    PEER:APEXECO:https://www.screener.in/company/CEWATER/consolidated/
+    PEER:APEXECO:https://www.screener.in/company/FELIX/consolidated/
+
+Options (rarely needed):
+    --dry-run       stage + classify, don't push
+    --push-again    re-stage/commit the latest run folder (after adding
+                    manual PDFs locally) and push
+SETUP: same folder as screener_collect.py. pip install pypdf openpyxl
+"""
+
+import argparse, csv, datetime, re, shutil, subprocess, sys
+from pathlib import Path
+
+# Windows: when stdout is redirected (pipe/file) Python falls back to the
+# locale codec (cp1252) which can't encode ₹ and other non-latin-1 chars,
+# crashing on the summary print. Force UTF-8 so redirected runs don't die.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
+SCRIPT_DIR = Path(__file__).parent
+COLLECTOR  = SCRIPT_DIR / "screener_collect.py"
+COMPANIES  = SCRIPT_DIR / "companies.txt"
+REPO_ROOT  = Path(r"C:\Users\SUMIT SHARMA\repos\inflection-pipeline")
+
+# sector cap row picked by first keyword hit on screener's page text /
+# company name; edit freely. Fallback prints a reminder.
+SECTOR_MAP = [
+    (["pharma", "drug", "api", "laborator", "lifescience", "healthcare",
+      "formulation"], "Pharma / CDMO"),
+    (["hospital", "diagnostic", "dialysis"], "Hospitals / dialysis / healthcare services"),
+    (["chemical", "organics", "specialit", "specialty", "agrochem"], "Specialty chemicals"),
+    (["cable", "wire", "conductor", "transformer", "switchgear", "electrical",
+      "heat exchanger", "industrial"], "Cables / Industrial products"),
+    (["software", "technolog", "infotech", "it services", "digital", "data analytics"],
+     "Platform / SaaS / IT services"),
+    (["bank", "finance", "nbfc", "credit", "capital", "microfinance"],
+     "Banks / NBFCs / MFIs"),
+    (["infra", "construction", "engineering procurement", "epc", "projects"],
+     "EPC / Civil construction"),
+    (["logistic", "cargo", "shipping", "freight"], "Logistics (asset-light)"),
+    (["hotel", "resort", "hospitality"], "Hotels"),
+    (["textile", "apparel", "garment", "fashion"], "Branded apparel / FMCG"),
+    (["food", "agro", "dairy", "edible", "sugar", "rice"], "Agri processing"),
+    (["cement", "tiles", "ceramic", "pipes", "sanitary"], "Building materials"),
+    (["packag", "container", "laminates"], "Packaging"),
+    (["real estate", "realty", "developer", "properties"], "Real estate"),
+    (["defence", "defense", "aerospace"], "Defence / strategic"),
+    (["telecom", "network equipment"], "Telecom equipment"),
+    (["recycl", "metal", "steel", "alloy", "casting", "forging"],
+     "Recycling / Manufacturing"),
+]
+
+# ---------------- pdf classification ----------------
+def pdf_text_head(p, pages=3):
+    try:
+        from pypdf import PdfReader
+        r = PdfReader(str(p))
+        return " ".join((pg.extract_text() or "") for pg in r.pages[:pages]).lower()
+    except Exception:
+        return ""
+
+def pdf_pages(p):
+    try:
+        from pypdf import PdfReader
+        return len(PdfReader(str(p)).pages)
+    except Exception:
+        return 0
+
+MARKS = {
+    "concalls": ["earnings conference call", "earnings call transcript",
+                 "conference call transcript", "concall", "moderator:"],
+    "rating":   ["crisil", "icra", "care ratings", "careedge", "india ratings",
+                 "brickwork", "acuite", "rating rationale", "rating action",
+                 "instruments rated", "credit rating"],
+    "results":  ["unaudited financial results", "audited financial results",
+                 "statement of financial results", "regulation 33",
+                 "statement of standalone", "statement of consolidated",
+                 "limited review report"],
+    "presentation": ["investor presentation", "earnings presentation",
+                     "corporate presentation"],
+    # Reg 30 material events are the documented-ACTION record the
+    # intent-and-action cross-check runs on (stages 5, 7 and 8). They used to
+    # land in other/, which the input contract preserves and never consumes.
+    "announcements": ["intimation under", "disclosure under regulation 30",
+                      "intimation under regulation 30", "regulation 30 of sebi",
+                      "outcome of board meeting", "allotment of equity",
+                      "receipt of order", "letter of intent"],
+    "other":    ["press release", "media release"],
+}
+AR_MARKS = ["annual report", "board's report", "boards' report",
+            "directors' report", "notice of annual general meeting",
+            "corporate governance report"]
+
+def classify(p):
+    n = p.name.lower()
+    if "concall" in n or "transcript" in n: return "concalls"
+    if "annual_report" in n or n == "ar.pdf": return "annual-report"
+    if "presentation" in n: return "presentation"
+    head, pages = pdf_text_head(p), pdf_pages(p)
+    for kind, marks in MARKS.items():
+        if any(m in head for m in marks): return kind
+    if any(m in head for m in AR_MARKS) or pages >= 80: return "annual-report"
+    if pages and pages <= 15: return "results"
+    return "_unclassified"
+
+def xlsx_to_csvs(x, dest, prefix):
+    """Write one CSV per sheet. Returns (sheets_written, empty_sheet_names).
+
+    Screener's export holds raw values on Data Sheet and FORMULAS on Profit &
+    Loss, Balance Sheet, Cash Flow and Quarters. When the workbook carries no
+    cached formula results, data_only reads every one of those cells as None
+    and the four CSVs are written empty. That shipped silently on eleven runs:
+    the file existed, the numbers did not, and the gap surfaced several stages
+    later as "screener CSV empty". An empty sheet is now deleted rather than
+    written, and its name is returned so the manifest and stage 0 both see it.
+    """
+    from openpyxl import load_workbook
+    written, empty = 0, []
+    wb = load_workbook(str(x), data_only=True, read_only=True)
+    try:
+        for ws in wb.worksheets:
+            safe = re.sub(r"[^A-Za-z0-9._-]+", "_", ws.title).strip("_") or "sheet"
+            out, rows, nums = dest / f"{prefix}-{safe}.csv", 0, 0
+            with open(out, "w", newline="", encoding="utf-8") as f:
+                w = csv.writer(f)
+                for row in ws.iter_rows(values_only=True):
+                    if any(c is not None for c in row):
+                        w.writerow(["" if c is None else c for c in row])
+                        rows += 1
+                        nums += sum(1 for c in row if isinstance(c, (int, float)))
+            # Row labels survive an unevaluated workbook; the numbers do not.
+            # So a row count proves nothing and the test is on numeric cells.
+            # This is the exact shape of the shipped defect: "Sales", "Expenses",
+            # "Net Profit" present, every figure beside them blank.
+            if rows >= 2 and nums >= 3:
+                written += 1
+            else:
+                out.unlink(missing_ok=True)
+                empty.append(f"{prefix}:{ws.title}")
+    finally:
+        wb.close()   # Windows: unclosed handles make files undeletable
+    return written, empty
+
+def sanitize(s): return re.sub(r"[^A-Za-z0-9._-]+", "-", s).strip("-")
+
+# ---------------- BSE announcements (Reg 30 material events) ----------------
+# Screener carries no exchange filings, so announcements/ was empty on every
+# run. The documented-ACTION record that stages 5, 7 and 8 cross-check intent
+# against comes from BSE directly.
+BSE_ANN = "https://api.bseindia.com/BseIndiaAPI/api/AnnSubCategoryGetData/w"
+BSE_ATTACH = "https://www.bseindia.com/xml-data/corpfiling/AttachLive/"
+BSE_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    # The endpoint 403s without both of these.
+    "Origin":  "https://www.bseindia.com",
+    "Referer": "https://www.bseindia.com/",
+    "Accept":  "application/json, text/plain, */*",
+}
+
+def fetch_bse_announcements(scrip, dest, months=12, max_files=25):
+    """Download the last `months` of Reg 30 filings for one BSE scrip.
+
+    Returns (files_written, warning_text). Never raises: an unreachable
+    exchange must not stop a collection.
+
+    Two traps this function exists to close:
+    - A FUTURE strToDate returns an empty list, not an error. A sweep on
+      07-Sep-2026 asked for strToDate=20260908 and read back zero rows for
+      six companies in a row, which looked like "none of them file
+      anything". Both dates are clamped to today.
+    - An empty result is SUSPECT, never a fact. A live listing files
+      something inside twelve months. Zero rows is returned as a warning for
+      the manifest, not as a clean zero.
+    """
+    import requests
+    today = datetime.date.today()                      # clamp: never a future date
+    frm   = today - datetime.timedelta(days=int(months * 30.44))
+    rows, page = [], 1
+    try:
+        while page <= 6:                               # 50 rows a page, hard stop
+            r = requests.get(BSE_ANN, timeout=30, headers=BSE_HEADERS, params={
+                "pageno": page, "strCat": "-1", "strType": "C",
+                "strPrevDate": frm.strftime("%Y%m%d"),
+                "strToDate":   today.strftime("%Y%m%d"),
+                "strScrip": scrip, "strSearch": "P", "subcategory": "-1"})
+            batch = (r.json() or {}).get("Table") or []
+            rows += batch
+            if len(batch) < 50:
+                break
+            page += 1
+    except Exception as e:
+        return 0, (f"BSE announcements fetch FAILED ({str(e)[:60]}); "
+                   f"announcements/ left empty, fill it by hand")
+    if not rows:
+        return 0, (f"BSE returned ZERO announcements for scrip {scrip} over "
+                   f"{months} months. Treat this as SUSPECT, not as 'the "
+                   f"company files nothing': check the scrip code and the date "
+                   f"window by hand before accepting an empty announcements/.")
+    n = 0
+    for row in rows[:max_files]:
+        att = (row.get("ATTACHMENTNAME") or "").strip()
+        if not att:
+            continue
+        try:
+            body = requests.get(BSE_ATTACH + att, timeout=60,
+                                headers=BSE_HEADERS).content
+        except Exception:
+            continue
+        if not body.startswith(b"%PDF"):
+            continue
+        day = (row.get("News_submission_dt") or "")[:10].replace("-", "")
+        (dest / sanitize(f"{day}-{att}")).write_bytes(body)
+        n += 1
+    if not n:
+        return 0, (f"{len(rows)} BSE announcement rows found for scrip {scrip} "
+                   f"but no attachment downloaded; announcements/ is empty")
+    return n, ""
+
+# ---------------- companies.txt ----------------
+def parse_companies():
+    if not COMPANIES.exists():
+        sys.exit("companies.txt not found next to this script.")
+    main_ticker, main_url, peers = None, None, []
+    for line in COMPANIES.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"): continue
+        if line.upper().startswith("PEER:"):
+            parts = line.split(":", 2)
+            if len(parts) == 3: peers.append(parts[2].strip())
+        else:
+            if ":" in line and not line.lower().startswith("http"):
+                t, u = line.split(":", 1)
+                main_ticker, main_url = t.strip().upper(), u.strip()
+            else:
+                main_url = line
+                m = re.search(r"/company/([^/]+)/", line)
+                main_ticker = m.group(1).upper() if m else "COMPANY"
+    if not main_url: sys.exit("No main company line found in companies.txt.")
+    return main_ticker, main_url, peers
+
+# ---------------- scrape name / cmp / mcap from screener page ----------------
+def scrape_company_facts(url):
+    """Return (name, cmp, mcap_cr, page_text, bse_scrip) from screener."""
+    import requests
+    name, cmp_v, mcap, bse = None, 0.0, 0.0, ""
+    try:
+        html = requests.get(url, timeout=30, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}).text
+        m = re.search(r"<h1[^>]*>\s*([^<\n]{3,80})", html)
+        if m: name = re.sub(r"\s+", " ", m.group(1)).strip()
+        flat = re.sub(r"<[^>]+>", " ", html)
+        flat = re.sub(r"\s+", " ", flat)
+        m = re.search(r"Current Price\s*₹?\s*([\d,]+(?:\.\d+)?)", flat)
+        if m: cmp_v = float(m.group(1).replace(",", ""))
+        m = re.search(r"Market Cap\s*₹?\s*([\d,]+(?:\.\d+)?)\s*Cr", flat)
+        if m: mcap = float(m.group(1).replace(",", ""))
+        # Screener links the BSE quote page, whose last path part is the
+        # 6-digit scrip code the BSE announcements API keys on.
+        m = re.search(r"bseindia\.com/[^\"'\s]*?/(\d{6})/?", html)
+        if m: bse = m.group(1)
+        return name, cmp_v, mcap, flat.lower(), bse
+    except Exception as e:
+        print(f"  ⚠ could not scrape screener page ({str(e)[:60]}); "
+              f"manifest gets zeros, fix by editing manifest.yaml")
+        return name, cmp_v, mcap, "", bse
+
+def pick_sector(name, page_text):
+    """Best keyword guess at the Section 1B cap row, or "" when nothing hits.
+
+    This is a GUESS and it is written to the manifest as one. A keyword map
+    cannot read the Section 1B cap table, and the wrong row was carried into
+    roughly twenty runs because the guess was written into the field the
+    pipeline consumes. The old no-hit fallback returned a real row name
+    ("Recycling / Manufacturing"), so a total miss was indistinguishable from
+    a confident match. It now returns nothing and stage 0 resolves the row.
+    """
+    hay = ((name or "") + " " + page_text[:4000]).lower()
+    for keys, row in SECTOR_MAP:
+        if any(k in hay for k in keys): return row
+    return ""
+
+# ---------------- git ----------------
+def git(*args):
+    r = subprocess.run(["git", *args], cwd=REPO_ROOT,
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        sys.exit(f"git {' '.join(args)} failed:\n{r.stderr}")
+
+def git_try(*args):
+    """Best-effort git command; never aborts the script."""
+    subprocess.run(["git", *args], cwd=REPO_ROOT,
+                   capture_output=True, text=True)
+
+# File types a run folder may carry. A Downloads sweep once pushed game
+# files, an Android app package and its signing key into run inputs
+# (LESSONS 2026-10-04). Operator documents: PDF, DOCX, TXT transcripts, XLSX,
+# and .md operator-ferried notes (operator ruling 2026-10-04).
+# The collector's own outputs (.csv from xlsx_to_csvs, .gitkeep keepers) pass.
+ALLOWED_SUFFIXES = {".pdf", ".docx", ".txt", ".xlsx", ".md"}
+COLLECTOR_OUTPUTS = {".csv", ".gitkeep"}
+
+def refuse_disallowed():
+    """Unstage every staged runs/ file whose type is not allowed; log each."""
+    r = subprocess.run(["git", "diff", "--cached", "--name-only",
+                        "--diff-filter=AM", "-z", "--", "runs/"],
+                       cwd=REPO_ROOT, capture_output=True, text=True)
+    refused = []
+    for path in filter(None, r.stdout.split("\0")):
+        name = Path(path).name.lower()
+        suffix = ".gitkeep" if name == ".gitkeep" else Path(name).suffix
+        if suffix in ALLOWED_SUFFIXES or suffix in COLLECTOR_OUTPUTS:
+            continue
+        git("reset", "-q", "--", path)
+        refused.append(path)
+        print(f"  REFUSED (file type {suffix or 'none'} not allowed): {path}")
+    if refused:
+        print(f"  {len(refused)} file(s) refused and left unstaged. Allowed: "
+              f"{', '.join(sorted(ALLOWED_SUFFIXES))}.")
+    return refused
+
+def push_run(run, ticker, today):
+    git_try("rebase", "--abort")          # clear any stuck rebase
+    git("add", "-A")                      # stage EVERYTHING incl .gitignore
+    refuse_disallowed()                   # then drop non-allowlisted types
+    git_try("commit", "-m", f"run inputs: {ticker} {today}")  # ok if empty
+    git("pull", "--rebase", "origin", "main")
+    git("push", "origin", "main")
+    print(f"\n✅ Pushed. At claude.ai/code paste:\n\n   /run-pipeline {ticker}\n")
+    print("Results/rating PDFs missing? Add them any time: drag into")
+    print(f"runs/{run.name}/inputs/results/ (or /rating/) on github.com,")
+    print("or drop locally into the run folder and: py collect_to_repo.py --push-again")
+
+# ---------------- main ----------------
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--push-again", action="store_true")
+    a = ap.parse_args()
+
+    if a.push_again:
+        runs = sorted((REPO_ROOT / "runs").iterdir(), key=lambda d: d.name)
+        runs = [d for d in runs if d.is_dir() and not d.name.startswith("_")]
+        if not runs: sys.exit("No run folders found.")
+        run = runs[-1]
+        t = run.name.split("-")[0].upper()
+        print(f"Re-pushing latest run folder: {run.name}")
+        push_run(run, t, datetime.date.today().isoformat())
+        return
+
+    ticker, url, peer_urls = parse_companies()
+    print(f"Main:  {ticker}  {url}")
+    for u in peer_urls: print(f"Peer:  {u}")
+
+    print("\nFetching company facts from screener page...")
+    warnings = []
+    name, cmp_v, mcap, page_text, bse_code = scrape_company_facts(url)
+    # A /consolidated/ URL on a company that files no consolidated statements
+    # returns a page with no price, no market cap and no Financials export.
+    # The run then carries cmp 0.0 and no main-company CSVs, and the cause is
+    # invisible from the run folder. Fall back to the standalone page once.
+    if (cmp_v == 0.0 or mcap == 0.0) and "/consolidated/" in url:
+        alt = url.replace("/consolidated/", "/")
+        print(f"  ⚠ no price on the consolidated page; retrying standalone: {alt}")
+        a_name, a_cmp, a_mcap, a_text, a_bse = scrape_company_facts(alt)
+        if a_cmp > 0.0:
+            url, name, cmp_v, mcap, page_text, bse_code = (
+                alt, a_name, a_cmp, a_mcap, a_text, a_bse)
+            warnings.append("consolidated page had no price, standalone page "
+                            "used: this company files no consolidated "
+                            "statements. Every stage reads standalone.")
+    if cmp_v == 0.0:
+        warnings.append("cmp is 0.0: the screener page returned no price, so "
+                        "the URL variant is probably wrong. Fix manifest.yaml "
+                        "before the run. A manifest cmp of 0 breaks every "
+                        "valuation stage downstream.")
+    name = name or ticker.title()
+    sector = pick_sector(name, page_text)
+    print(f"  name:   {name}\n  cmp:    ₹{cmp_v}\n  mcap:   ₹{mcap} Cr"
+          f"\n  sector: {sector or '(no keyword hit)'}  (a guess, not the manifest value)")
+
+    gi = REPO_ROOT / ".gitignore"
+    gi_text = gi.read_text(encoding="utf-8") if gi.exists() else ""
+    if "_download/" not in gi_text:
+        gi.write_text(gi_text.rstrip() + "\n_download/\n", encoding="utf-8")
+
+    today = datetime.date.today().isoformat()
+    run   = REPO_ROOT / "runs" / f"{ticker.lower()}-{today}"
+    stage = run / "_download"
+    stage.mkdir(parents=True, exist_ok=True)
+
+    print(f"\nDownloading main company -> {stage}")
+    subprocess.run([sys.executable, str(COLLECTOR), url,
+                    "--output-dir", str(stage), "--no-drive"], cwd=SCRIPT_DIR)
+    peer_dirs = {}
+    for u in peer_urls:
+        m = re.search(r"/company/([^/]+)/", u)
+        pt = (m.group(1).upper() if m else "PEER")
+        pd = stage / "peers" / pt
+        pd.mkdir(parents=True, exist_ok=True)
+        peer_dirs[pt] = pd
+        print(f"\nDownloading peer {pt} -> {pd}")
+        subprocess.run([sys.executable, str(COLLECTOR), u,
+                        "--output-dir", str(pd), "--no-drive"], cwd=SCRIPT_DIR)
+
+    # classify
+    print("\nClassifying...")
+    # Every folder in the orchestrator input contract is created, even when
+    # nothing lands in it. prospectus, announcements, shareholding and
+    # research were never created at all, so six runs recorded them as
+    # collector failures when the collector had simply never looked.
+    kinds = ["prospectus", "annual-report", "results", "rating", "concalls",
+             "peer-concalls", "announcements", "shareholding", "research",
+             "screening", "presentation", "other", "_unclassified"]
+    inp  = run / "inputs"
+    dirs = {k: inp / k for k in kinds}
+    for d in dirs.values(): d.mkdir(parents=True, exist_ok=True)
+    # git does not track an empty directory, so an absent folder and an empty
+    # folder look identical to stage 0. Plant a keeper in each.
+    for k, d in dirs.items():
+        if not k.startswith("_"): (d / ".gitkeep").touch()
+    counts = {k: 0 for k in kinds}
+    seen, ar_cand, empty_sheets = set(), [], []
+
+    def place(pdf, kind, prefix=""):
+        key = (kind, pdf.stat().st_size, pdf_pages(pdf))
+        if key in seen: return
+        seen.add(key)
+        shutil.copy2(pdf, dirs[kind] /
+                     ((prefix + "-" if prefix else "") + sanitize(pdf.name)))
+        counts[kind] += 1
+        print(f"    {pdf.name} -> {kind}/")
+
+    for f in sorted(stage.iterdir()):
+        if f.is_file():
+            if f.suffix.lower() == ".pdf":
+                k = classify(f)
+                ar_cand.append(f) if k == "annual-report" else place(f, k)
+            elif f.suffix.lower() in {".xlsx", ".xlsm", ".xls"}:
+                n_csv, n_empty = xlsx_to_csvs(f, dirs["screening"], "screener")
+                counts["screening"] += n_csv
+                empty_sheets += n_empty
+    if ar_cand:
+        # keep the two most recent years (year taken from the filename), using
+        # page count only as a tie-break / fallback when no year is present.
+        # "most pages" alone silently dropped a newer, image-heavy AR (FY26,
+        # 120pp) in favour of an older, longer one (FY25, 242pp).
+        def ar_rank(p):
+            m = re.search(r"(20\d\d)", p.name)
+            return (int(m.group(1)) if m else 0, pdf_pages(p))
+        for ar in sorted(ar_cand, key=ar_rank, reverse=True)[:2]:
+            place(ar, "annual-report")
+    for pt, pd in peer_dirs.items():
+        for f in sorted(pd.iterdir()):
+            if not f.is_file(): continue
+            if f.suffix.lower() == ".pdf" and classify(f) == "concalls":
+                place(f, "peer-concalls", pt)
+            elif f.suffix.lower() in {".xlsx", ".xlsm", ".xls"}:
+                n_csv, n_empty = xlsx_to_csvs(f, dirs["screening"], pt)
+                counts["screening"] += n_csv
+                empty_sheets += n_empty
+
+    # Reg 30 filings: screener has none, BSE does.
+    if bse_code:
+        print(f"\nFetching BSE announcements (scrip {bse_code})...")
+        n_ann, ann_warn = fetch_bse_announcements(bse_code, dirs["announcements"])
+        counts["announcements"] += n_ann
+        print(f"  {n_ann} filing(s) -> announcements/")
+        if ann_warn: warnings.append(ann_warn)
+    else:
+        warnings.append("BSE scrip code not found on the screener page, so "
+                        "announcements/ is empty. This is a collector gap, "
+                        "not evidence that the company files nothing.")
+    if counts["shareholding"] == 0:
+        warnings.append("shareholding/ is empty: no source is automated yet. "
+                        "Push the latest quarterly shareholding pattern by "
+                        "hand; it closes the FII+DII UA qualifier and the "
+                        "promoter pledge trend.")
+    if empty_sheets:
+        warnings.append("screener export sheets came out EMPTY (formulas with "
+                        "no cached values), so no CSV was written for them: "
+                        + ", ".join(empty_sheets) + ". Open Financials.xlsx "
+                        "once in Excel or LibreOffice, save it, then run "
+                        "--push-again.")
+
+    concalls_available = counts["concalls"] >= 3
+    if counts["annual-report"] == 0:
+        warnings.append("no AR found on screener: AR stages will be skipped")
+    if counts["results"] == 0:
+        warnings.append("no results PDFs yet (screener has none): add later on "
+                        "github or locally + --push-again")
+    if counts["rating"] == 0:
+        warnings.append("no rating PDF yet: add later the same way")
+    if 0 < counts["concalls"] < 3:
+        warnings.append(f"only {counts['concalls']} concalls -> no-concall mode")
+        concalls_available = False
+    for k in ("other", "_unclassified"):
+        if counts[k] == 0: shutil.rmtree(dirs[k], ignore_errors=True)
+
+    # Stage 0 reads these. A defect the collector already knows about must
+    # not have to be rediscovered mid-run.
+    warn_yaml = ("collector_warnings:\n" +
+                 "\n".join('  - "' + w.replace('"', "'") + '"' for w in warnings)
+                 ) if warnings else "collector_warnings: []"
+    (run / "manifest.yaml").write_text(
+f"""company: {name}
+ticker: {ticker}
+cmp: {cmp_v}
+market_cap_cr: {mcap}
+run_date: {today}
+run_type: full
+concalls_available: {str(concalls_available).lower()}
+sector_cap_row: ""      # stage 0 fills this from the Section 1B cap table
+sector_cap_row_guess: "{sector}"   # keyword guess only, never consumed
+{warn_yaml}
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+""", encoding="utf-8")
+
+    print("\n================ SUMMARY ================")
+    for k, v in counts.items():
+        if v: print(f"  {k:15s} {v}")
+    print(f"  concalls_available: {concalls_available}")
+    print(f"  sector guess:       {sector or '(no keyword hit)'}  "
+          f"-> manifest sector_cap_row is EMPTY on purpose; stage 0 resolves "
+          f"it against the Section 1B cap table")
+    for w in warnings: print(f"  ⚠ {w}")
+    print(f"  run folder: {run}")
+    print("=========================================")
+
+    shutil.rmtree(stage, ignore_errors=True)
+    if stage.exists():
+        print(f"  ⚠ staging not fully deleted ({stage}); harmless, it is "
+              f"gitignored, but you may remove it manually later")
+    if a.dry_run:
+        print("\n--dry-run: staged locally, nothing pushed."); return
+    print("\nPushing to GitHub automatically...")
+    push_run(run, ticker, today)
+
+if __name__ == "__main__":
+    main()

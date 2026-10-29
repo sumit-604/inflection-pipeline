@@ -1,0 +1,49 @@
+stage: A3-forensics
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "presentation (press release), label pressrelease"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/forensics_pressrelease_netweb_q2fy27.md"
+ledger_reconciled_pct: 100        # 174 of 174 (R001-R170 + M001-M004)
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: N.A.
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: N.A.
+findings:
+  - {id: "FN01", check: "F6", line: "127-128, 154-155", classification: "AMBIGUOUS", implication: "Zero lexicon hits; all forward language undated ('for the coming quarters'). Ask the execution schedule of the 26,290 Mn book and the L1 6,525 Mn conversion date."}
+  - {id: "FN02", check: "F10", line: "100, 104", classification: "FORWARD-SIGNAL", implication: "Implied diluted shares 56.94 to 58.07 Mn QoQ (+1.98%); EPS +324.2% vs PAT +334.8% YoY. Raise only part-quarter in Q2, so Q3 EPS again grows slower than PAT."}
+  - {id: "FN03", check: "F12", line: "125-126, 85", classification: "AMBIGUOUS", implication: "Derived Q1 AI 5,105 Mn (62.3%) to Q2 7,731 Mn (58.4%); non-AI +77.9% QoQ; 572 Mn (4.3%) unsplit residual; no segment assets/liabilities."}
+  - {id: "FN04", check: "F14", line: "92, 96, 98", classification: "AMBIGUOUS", implication: "H1 not equal to Q1+Q2: Total Income -52, Op EBITDA +52; revenue and PAT tie. Printed H1 margin 15.1% exceeds both quarters; additive basis 14.83% = -10 bps YoY, not +14 bps."}
+  - {id: "FN05", check: "F14", line: "35, 67", classification: "AMBIGUOUS", implication: "Standalone vs consolidated basis never stated; no limited-review mention. Confirm basis against the results filing."}
+  - {id: "FN06", check: "F14", line: "96-104, 108-109", classification: "NEUTRAL-FACT", implication: "Footnote marker 2 (PAT margin definition) attached to Op EBITDA, Op EBITDA Mg, PAT and EPS. Cumulative drafting-care point with FN04 and the unsigned Net Debt bracket."}
+  - {id: "FN07", check: "F16", line: "80, 130, 160", classification: "FORWARD-SIGNAL", implication: "Net debt within 136 Mn of zero after a 12,000 Mn raise (1.1%), under either bracket sign. Raise absorbed; 'strengthened balance sheet' rests on this one number; no CFO, gross debt or WC printed. H2 WC needs operating cash or new debt."}
+  - {id: "FN08", check: "F16", line: "83, 127-128", classification: "FORWARD-SIGNAL", implication: "Order book = 1.99 quarters of Q2 revenue; flat Q2 run-rate in H2 needs 100.7% of the closing book. Growth above it needs L1 conversion and in-half inflow. No inflow, book-to-bill or definition printed."}
+  - {id: "FN09", check: "F16", line: "154-155", classification: "AMBIGUOUS", implication: "Pipeline 1,11,518 Mn = 4.24x order book, 5.1x FY26 revenue; undefined stage, horizon, probability; 'potential' hedge. Ask definition and historic conversion rate."}
+  - {id: "FN10", check: "F16", line: "85-86, 125", classification: "AMBIGUOUS", implication: "Highlight uses the H1 basis to say AI share 'increased to 59.9%'; on the Q2 basis it fell QoQ to 58.4%. Basis choice shows a rise."}
+  - {id: "FN11", check: "F16", line: "159", classification: "AMBIGUOUS", implication: "'chip-agnostic design philosophy'; no GPU vendor named. Diversification or cover for single-vendor allocation. Links to Notion thesis-broken #4 (memory). Ask vendor mix and next-generation allocation."}
+  - {id: "FN12", check: "F16", line: "92-100, 108", classification: "AMBIGUOUS", implication: "PBT, tax, D&A, finance cost not printed. Derived D&A+finance+tax 150 / 437 / 734 Mn (Q2 FY26 / Q1 / Q2), 32.3% / 33.9% / 34.9% of EBITDA+OI; +68% QoQ vs EBITDA +63.7%. Ask the split."}
+forward_signals: ["FN02", "FN07", "FN08"]
+ambiguous: ["FN01", "FN03", "FN04", "FN05", "FN09", "FN10", "FN11", "FN12"]
+commitments:
+  - {commitment: "Execute order book 26,290 Mn ('strong revenue visibility for the coming quarters')", implied_date: "undated; coming quarters (Q3-Q4 FY27)", ref: "lines 127-128 (R098, R124)", status_word: "underway"}
+  - {commitment: "Convert additional L1 position 6,525 Mn", implied_date: "undated", ref: "line 127 (R099, R165)", status_word: "initiated"}
+  - {commitment: "Convert active pipeline 1,11,518 Mn", implied_date: "undated", ref: "lines 154-155 (R101, R126)", status_word: "initiated"}
+  - {commitment: "Capital raise 12,000 Mn, first since July 2023 listing; use of proceeds not stated", implied_date: "Q2 FY27 (done)", ref: "line 130 (R100, R167)", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Two derived numbers matter most. First, H1 is not the sum of Q1 and Q2 on Total Income (21,591 vs 21,643) or Op EBITDA (3,230 vs 3,178), while revenue and PAT tie. A 52 Mn item sits in other income on one basis and in operating profit on the other. On the additive basis the H1 margin is 14.83%, a 10 bps YoY fall, not the printed 14 bps rise. The printed H1 margin of 15.1% sits above both quarters. Second, net debt sits within 136 Mn of zero after a 12,000 Mn raise. The raise funded working capital or repaid debt and left no cash cushion, yet line 160 calls this a strengthened balance sheet. The closing order book covers about two quarters at the Q2 run-rate, so H2 growth above Q2 needs L1 conversion and inflow inside the half. Diluted shares rose about 2% QoQ on a part-quarter raise, and Q3 carries the full count. All derivations use printed figures only. Cross-quarter diffs (F5, F15, F16 cross-deck) were not possible because no prior NETWEB run exists."

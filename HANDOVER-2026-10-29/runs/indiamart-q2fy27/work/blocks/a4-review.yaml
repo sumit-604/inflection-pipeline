@@ -1,0 +1,112 @@
+stage: A4-analyst
+company: "INDIAMART"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+docs_merged: [results, fullstatements, presentation, pressrelease, concall]
+ledger_reconciliation:
+  notes: 11
+  turns: 17
+  slides: 74
+  all_reviewed: true
+  a3_findings_incorporated: [RES-F1-01, RES-F1-02, RES-F1-03, RES-F1-04, RES-F2-01, RES-F2-02, RES-F2-03, RES-F2-04, RES-F3-01, RES-F3-02, RES-F3-03, RES-F4-01, RES-F4-02, RES-F6-01, RES-F6-02, RES-F7-01, RES-F12-01, RES-F12-02, RES-F12-03, RES-F12-04, RES-F14-01, RES-F14-02, RES-F14-03, RES-F14-04, RES-F15-01, RES-F15-02, FS-FS1-01, FS-FS1-02, FS-FS1-03, FS-FS2-01, FS-FS2-02, FS-FS2-03, FS-FS2-04, FS-FS3-01, FS-FS3-02, FS-FS3-03, FS-FS3-04, FS-FS4-01, FS-FS5-01, FS-FS5-02, FS-FS5-03, FS-FS5-04, FS-FSX-01, FS-FSX-02, FS-FSX-03, FS-FSX-04, FS-L1-01, FS-L1-02, FS-L1-03, FS-L1-04, FS-L1-05, FS-L1-06, FS-L1-07, FS-L1-08, DECK-F1-01, DECK-F1-02, DECK-F2-01, DECK-F2-02, DECK-F6-01, DECK-F6-02, DECK-F6-03, DECK-F6-04, DECK-F10-01, DECK-F10-02, DECK-F12-01, DECK-F12-02, DECK-F12-03, DECK-F14-01, DECK-F14-02, DECK-F15-01, DECK-F15-02, DECK-F15-03, DECK-F16-01, DECK-F16-02, DECK-F16-03, DECK-F16-04, DECK-F16-05, DECK-F16-06, DECK-F16-07, DECK-F17-01, DECK-F17-02, DECK-F17-03, PR-F1-01, PR-F2-01, PR-F6-01, PR-F7-01, PR-F12-01, PR-F14-01, PR-F14-02, PR-F14-03, PR-F16-01, PR-F16-02, PR-F16-03, PR-F16-04, PR-F16-05, PR-F17-01, PR-F17-02, CC-01, CC-02, CC-03, CC-04, CC-05, CC-06, CC-07, CC-08, CC-09, CC-10, CC-11, CC-12, CC-13, CC-14, CC-15, CC-16, CC-17, CC-18, CC-19, CC-20, CC-21, CC-22, CC-23]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "structural"
+decision_status_verified: "HELD (Small 2%, cost Rs 2,015, entry max Rs 1,439, MoS Rs 1,151; Notion property snapshot L8, fetched 2026-10-28)"
+position_branch: "8A"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap_pct: -14.6}
+  - {period: "Q1 FY27", gap_pct: -2.2}
+  - {period: "Q2 FY26", gap_pct: -1.0}
+  - {period: "Q2 FY26 like-for-like (SA ex 16.0 Cr impairment)", gap_pct: -16.9}
+  - {period: "H1 FY27", gap_pct: -6.9}
+  - {period: "H1 FY26", gap_pct: -5.3}
+  - {period: "FY26", gap_pct: -9.6}
+questions_for_management:
+  - {q: "Split the 14% YoY enquiry decline by cause (login gating, data withheld from search/LLMs, Google AI Overview, OTP filter, other) with the start date of each gating step", from_finding_id: "CC-05, CC-06, PR-F16-01, PR-F6-01"}
+  - {q: "Which Q1 FY26 enquiry base is correct (28 Mn implied by this deck vs 31 Mn in the Q1 deck) and which quarters were restated", from_finding_id: "DECK-F16-03"}
+  - {q: "Give unrounded LTM active buyers for Q1 and Q2 FY27 to one decimal", from_finding_id: "DECK-F16-06, PR-F16-04"}
+  - {q: "At what silver retention level and in which quarter does sales reinvestment start, and what SA margin does the FY28 plan assume", from_finding_id: "CC-01, RES-F2-04, DECK-F2-02"}
+  - {q: "Give absolute 12-month silver retention for each of the last four quarters", from_finding_id: "CC-23"}
+  - {q: "Give gold/platinum account count, net adds and churn for FY26 and H1 FY27", from_finding_id: "CC-03"}
+  - {q: "Is 8-10% revenue growth on 5-10% ARPU the FY27-FY28 band; split top-10% ARPU +12% and total ARPU +10% into list price, tier mix and churn survivorship, and give same-account price growth", from_finding_id: "CC-04, PR-F17-01"}
+  - {q: "What H2 FY27 deferred-revenue build do you expect after the Rs 5 Cr SA QoQ build", from_finding_id: "RES-F12-04, DECK-F12-02, PR-F16-05, CC-20"}
+  - {q: "Which next-quarter recognition rate applies: deck ~20% or realised 18.6%", from_finding_id: "DECK-F6-01"}
+  - {q: "Split H1 treasury income Rs 97.6 Cr and Q2 loss Rs 11.1 Cr into realised, unrealised MTM, coupon and distributions", from_finding_id: "RES-F2-03, FS-FS1-01, CC-08, DECK-F16-02, PR-F16-03"}
+  - {q: "What equity cap does treasury policy set given factor funds rose to Rs 468 Cr (15.6%), and how much of the Q2 loss came from them", from_finding_id: "FS-FS1-03"}
+  - {q: "IndiaMart Finance: RBI NBFC application and date, capital plan to FY28, FLDG yes/no and cap, own book vs partner lenders", from_finding_id: "RES-F6-01, RES-F15-01, RES-F3-02, FS-FS3-01, CC-12, DECK-F15-01, PR-F7-01, PR-F17-02"}
+  - {q: "Path to break-even for Simply Vyapar and Fleetx (69.5% of H1 associate losses) and any further funding", from_finding_id: "RES-F2-01, FS-FS2-04, DECK-F2-01, DECK-F17-03, PR-F2-01"}
+  - {q: "Fleetx Rs 65 Cr primary or secondary and further tranches; Agillos: listed company did not pay, so which subsidiary paid and holds the Agillos/Truckhall/Edgewise/Adansa stakes; sellers, price per share and basis, related party, total consideration; bridge deck table Rs 1,442 Cr to Rs 1,556 Cr", from_finding_id: "FS-FS2-01, RES-F12-01, DECK-F6-04, DECK-F15-03, FS-L1-04, FS-L1-05"}
+  - {q: "Why did MonotaRO stop being an associate without a sale; inputs to the Rs 58.6 Cr fair value; exit plan", from_finding_id: "RES-F1-02, RES-F15-02, FS-FS2-02, DECK-F15-02"}
+  - {q: "Are Level 3 investees re-measured only at year-end; FY26 Level 3 gains and losses", from_finding_id: "FS-FS2-03, RES-F1-01"}
+  - {q: "What materiality base makes unaudited associates at 16.9% of Q2 PAT 'not material'; will associates get a review from FY27", from_finding_id: "RES-F4-01, RES-F4-02, RES-F14-03, RES-F7-01, FS-FS5-02"}
+  - {q: "Name the five other-auditor subsidiaries and their auditors; cause of the Rs 6.5 Cr Q1 loss", from_finding_id: "RES-F3-01, FS-FS3-03"}
+  - {q: "What is the Rs 13.9 Cr non-current prepaid in subsidiaries; where is IndiaMart Finance capital held", from_finding_id: "FS-FS4-01, RES-F3-02"}
+  - {q: "Busy revamp cost in Q2, completion date and H2 FY27 Busy margin (12% vs 17% FY26)", from_finding_id: "DECK-F12-01, DECK-F16-04, CC-11, PR-F12-01, RES-F12-03"}
+  - {q: "Busy Q1 billing growth 14% (call) vs ~9% (deck); what billing methodology changed", from_finding_id: "CC-09"}
+  - {q: "Do you still hold the 15-20% Busy licence-growth guide given new licences 11K vs 12K", from_finding_id: "DECK-F6-02"}
+  - {q: "FY27 SBP run-rate and size of the next ESOP pool at FY27 end", from_finding_id: "CC-14, DECK-F10-02, RES-F2-04"}
+  - {q: "Quantify the remaining-state Labour Code charge and timing", from_finding_id: "RES-F6-02, RES-F7-01"}
+  - {q: "Any payment or attachment under the Rs 24.3 Cr Busy recovery notice; Delhi HC interim relief", from_finding_id: "FS-FSX-02"}
+  - {q: "Trust assurance: claims paid, aggregate cap, insurance, provision, verified-bank-account share vs 50% ladder", from_finding_id: "CC-17, PR-F6-01"}
+  - {q: "Paid share of enquiries a year ago vs now; Q2 ad spend in rupees; trigger to double it", from_finding_id: "CC-07"}
+  - {q: "Which quarterly metric will show buyers still transact on IndiaMART despite AI tools", from_finding_id: "CC-15"}
+  - {q: "Size and date of verified/paid buyer pilots; any AI data-licensing talks", from_finding_id: "CC-16, CC-18"}
+  - {q: "FY27 dividend policy and the date the board considers the buyback proposal", from_finding_id: "CC-13, RES-F12-01"}
+  - {q: "Why were results and statements signed 12:33-13:35 before the 15:00 board close for a second quarter", from_finding_id: "RES-F14-01, FS-FSX-04"}
+  - {q: "Confirm promoter pledge 0% at 30-Sep-2026", from_finding_id: "DECK-F17-01"}
+  - {q: "Confirm the Rs 16 Cr impairment in Q2 FY26 SA other expenses and restate SA EBITDA growth like-for-like", from_finding_id: "RES-F2-02, DECK-F16-01, PR-F16-02"}
+  - {q: "Which NP margin basis did the Q1 release use (revenue vs total income)", from_finding_id: "PR-F14-01"}
+  - {q: "Will the release print paying-supplier net change instead of (0%) QoQ", from_finding_id: "PR-F16-04"}
+  - {q: "Amortisation schedule of the Rs 11.5 Cr acquired intangibles; confirm no capitalisation of software or AI spend", from_finding_id: "RES-F3-03"}
+  - {q: "Confirm the 14.5% QoQ fall in Web segment liabilities is the dividend settlement", from_finding_id: "RES-F12-02"}
+  - {q: "Where is the 'Note No. 31' cited for the functional P&L basis published", from_finding_id: "DECK-F14-01"}
+  - {q: "Livekeeping got Rs 6.0 Cr more in 0.001% OCDs at the unchanged INR 51,167 price while carrying a Rs 5.3 Cr SA impairment: OCD terms, funding need through FY28, break-even date", from_finding_id: "FS-L1-01"}
+  - {q: "What did Tradezeal do with the Rs 19 Cr OCD money received in Q2; OCD conversion and redemption terms", from_finding_id: "FS-L1-02"}
+  - {q: "Livekeeping: SA investment impaired by Rs 5.3 Cr while Rs 42 Cr goodwill is unimpaired; goodwill test headroom, key assumptions, and when the Rs 5.3 Cr was booked", from_finding_id: "FS-L1-07"}
+monitorables:
+  - {item: "Operator rulings: #6 reading/liveness, add-vs-exit precedence, AR trim tier, operating EPS base", implied_date: "now", source_ref: "notion_thesis_context L565-572"}
+  - {item: "Q3 FY27 SA paying-supplier net adds (cleanest metric); enquiries vs Q3 FY26 base 28 Mn; unrounded active buyers", implied_date: "Q3 FY27 results, late Jan-Feb 2027 (implied)", source_ref: "DECK R1401, R307-R310, R191"}
+  - {item: "Other income MTM reversal claim", implied_date: "Q3-Q4 FY27", source_ref: "CC R166 L105-106"}
+  - {item: "Busy billing growth 20-30% from Q3", implied_date: "Q3 FY27", source_ref: "CC R181 L417-418"}
+  - {item: "Busy technology revamp completion", implied_date: "H2 FY27, undated", source_ref: "CC R167 L73-74"}
+  - {item: "IndiaMart Finance registration, first lending, capital calls; quarterly pilot updates", implied_date: "undated; quarterly", source_ref: "FS R1091 L3269-3270; CC R189 L547-549"}
+  - {item: "Labour Code remaining-state notification and charge", implied_date: "undated", source_ref: "RES R760-R765 L538, L909"}
+  - {item: "Busy AY2017-18 writ (Delhi HC) and IIL GST appeal (GSTAT)", implied_date: "undated; possible Q3 FY27 cash out", source_ref: "FS FSX-02 L2285-2294"}
+  - {item: "Agillos share transfer, stake 26.94%, consideration", implied_date: "2026-10-05/07 (Q3 FY27)", source_ref: "FS L1180-1181; DECK R1551, R1554"}
+  - {item: "Next ESOP pool board decision", implied_date: "FY27 year end", source_ref: "CC R188 L496"}
+  - {item: "Buyback proposal to board at next annual meeting", implied_date: "undated", source_ref: "CC R203 L792-793"}
+  - {item: "Level 3 investee and Fleetx re-marks (#12)", implied_date: "Q4 FY27", source_ref: "FS FS2-03 L1963"}
+  - {item: "Associate cohort FY27 loss vs Rs 65 Cr red line (#11)", implied_date: "FY27", source_ref: "RES R058; NM L1460"}
+  - {item: "Acquired-intangible roll-off (mechanical D&A tailwind)", implied_date: "Q4 FY27-Q1 FY28", source_ref: "RES R387/R388"}
+  - {item: "Gold/platinum count published yearly", implied_date: "FY27 results", source_ref: "CC R199/R200 L711-725"}
+  - {item: "FY27 Annual Report: KAM, Rule 11(g) (#10), goodwill KAM (#11)", implied_date: "about Jun 2027", source_ref: "NM Key Notes"}
+  - {item: "Bank-account verification >50% (C2)", implied_date: "about Q1 FY28", source_ref: "NM C2"}
+  - {item: "Q2 FY27 shareholding pattern: pledge 0% confirmation", implied_date: "already due; not in run corpus", source_ref: "NM 4H #8"}
+  - {item: "Answer status of the 41 management questions; second credibility scoring", implied_date: "Q3 FY27 review", source_ref: "review Step 8.5, Step B3"}
+flags:
+  - "Thesis-broken #6 FIRED AS WRITTEN: enquiries Q2 -14% YoY (DECK R1406 L1680); Q1 -11% printed / -16% Q1 series / -7% this deck's series, all >5%; EXIT tier on page; operator ruling on reading and liveness pending; Decision Status unchanged HELD"
+  - "#4 strike one UNCONFIRMED: active buyers printed 40 Mn (DECK R191) on the <40M line; 8B supplier leg met (4th sequential fall, R307-R310), buyer leg unresolved"
+  - "Add-vs-exit precedence ruling pending; add rule not live at CMP Rs 1,573 (> Rs 1,439)"
+  - "AR TRIM-to-1.5% tier unexecuted; condition met again (net adds -615)"
+  - "Operating EPS base conflict Rs 53 vs ~Rs 61.5 unresolved (Role 1)"
+  - "SA margin 40.2% elevated by sales under-investment; mgmt guides 33% (CC R182-R183); like-for-like YoY gain +3.8pp not +8.3pp (FSX-01)"
+  - "Treasury carries equity beta: factor funds Rs 468 Cr (15.6%); OI -7.6 Cr; no realised/MTM split second quarter; checklist #9 red wording met"
+  - "S-vs-C PAT gap -14.6% (associates 15.3 Cr, +20% QoQ); unaudited associates 16.9% of Q2 PAT called not material"
+  - "Q2 capital to loss-making investees 82.2 Cr (Fleetx 65.0, Agillos 17.2 secondary); H1 deployment +75% YoY. Fleetx flat-price follow-on, implied ~Rs 1,344 Cr on ~Rs 72-84 Cr annualised loss (P/PAT n.m.); Agillos implied ~Rs 466 Cr, ~2.5-4.2x own entry, earnings NOT FOUND, paid by an unnamed subsidiary (not the listed company); Livekeeping 6.0 Cr OCDs into an SA-impaired investment; Tradezeal 19.0 Cr OCDs, use undisclosed"
+  - "IndiaMart Finance capitalised 12.05 Cr for B2B working-capital finance; FLDG/NBFC/cap unanswered; Q1 'not own balance sheet' stance not restated"
+  - "Deferred-revenue build slowing (SA +5 Cr QoQ); collections < revenue growth; mgmt band 8-10%"
+  - "Busy margin 12% vs 17%; new licences 11K vs 12K; C8 MISSED; checklist #7 RED"
+  - "Credibility ratio 41.7% (Grade C, provisional, 1 concall); archetype shift to EVASIVE; discount commentary 30-50%; consider management grade downgrade"
+  - "Results and statements signed before 15:00 board close, second quarter, now incl. auditor"
+  - "Busy AY2017-18 tax demand 24.3 Cr in recovery; possible Q3 cash outflow"
+  - "New Rs 5 lakh buyer-protection obligation; no cap or provision disclosed"
+  - "Promoter pledge undisclosed second quarter; #7 not testable"
+  - "Enquiry Q1 FY26 base restated without note (28 vs 31)"
+  - "Concall source is an ASR machine transcript; all call numbers MGMT tier, unverified"
+  - "Tracker rows not supplied; zero signals for a held name; reopen Role 5.5"
+  - "Role 4 Steps 6.5/7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30)"
+plain_language_brief_included: true
+analyst_note: "The quarter splits cleanly. Operations: consolidated core PBT ex-OI +26.4%, op margin 37.1%, rolling CFO/PAT 1.43x. But the margin gain is cost-led and management ties it to sales under-investment with a 33% guide, so it is not run-rate. Volume: enquiries -14%, active buyers at 40M, suppliers down a fourth straight quarter, and management throttles gross adds until silver churn improves. Condition #6 fires on every base reading (Q2 -14%; Q1 -11%, -16% or -7%). The only open question is the operator's liveness ruling, not the arithmetic. Management's login-gating explanation is new and undated, so I did not let it soften the test. Credibility scored with protocol categories (UNCLEAR excluded) gives 41.7%. A3's on-track count gives 0.56. Both map to Grade C. #4 is not called strike one because the print equals the threshold, not below it; the conservative reading is flagged. The SA headline +36% EBITDA leans on a filed 16 Cr impairment in the base; like-for-like +19.4%."
+review_path: "runs/indiamart-q2fy27/work/review_indiamart_q2fy27.md"

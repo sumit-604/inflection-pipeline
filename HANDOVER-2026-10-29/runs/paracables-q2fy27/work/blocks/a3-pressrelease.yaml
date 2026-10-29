@@ -1,0 +1,53 @@
+stage: A3-forensics
+company: "PARACABLES"
+quarter: "Q2 FY27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/work/forensics_pressrelease_paracables_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F6", line: "82 'restoring operating profitability'; 92", classification: "FORWARD-SIGNAL", implication: "CEO concedes 7.3% op margin is not 'restored'; target level and date unstated"}
+  - {id: "A3-02", check: "F6", line: "83-84 'Investments in specialized manufacturing capabilities will enable'; 114", classification: "FORWARD-SIGNAL", implication: "Undated unquantified capex; profile lists two plants; Narmadapuram not named or dated"}
+  - {id: "A3-03", check: "F6", line: "101 'Order book stood at approximately Rs 731 crore'", classification: "AMBIGUOUS", implication: "1.30x Q2 revenue, about 4 months; basis unstated; +18.9% QoQ vs memory Rs 615 Cr only if same basis"}
+  - {id: "A3-04", check: "F7", line: "82-83 'expanding our international presence prudently'; 75", classification: "AMBIGUOUS", implication: "Qualifier on exports (28.2%, Rs 158.1 Cr) plus unnamed 'changing market conditions'; possible export slowdown"}
+  - {id: "A3-05", check: "F10", line: "97 'EPS (Rs) 0.74 0.64 15.6%'; 95", classification: "FORWARD-SIGNAL", implication: "Implied weighted shares about +6% QoQ, +8% YoY; basic/diluted unlabelled; period-end count and warrants dilute Q3 further"}
+  - {id: "A3-06", check: "F14", line: "38 'Standalone and Consolidated'; 87 '(STANDALONE)'", classification: "NEUTRAL-FACT", implication: "Consolidated not carried; S-vs-C not computable from release"}
+  - {id: "A3-07", check: "F14", line: "94 'EBITDA Margin (incl. OI) 7.9%'; 92; 96 '4%'", classification: "NEUTRAL-FACT", implication: "EBITDA/PAT margins on Total Income, op margin on revenue, undisclosed; YoY EBITDA delta about 200 bps on revenue vs 220 printed"}
+  - {id: "A3-08", check: "F16", line: "90 'Total Income 564.2 532.5 6.0% 447.5'; 89, 91, 93", classification: "FORWARD-SIGNAL", implication: "Derived OI 3.8 vs 19.9 YoY (78% to 8.5% of EBITDA); PAT now operating; no treasury income from equity raise, cash likely in WC"}
+  - {id: "A3-09", check: "F16", line: "69 '616.5% YoY'; 91 '5.7'", classification: "NEUTRAL-FACT", implication: "Headline tile rides a Rs 5.7 Cr base; PAT +82.8% is the cleaner growth figure"}
+  - {id: "A3-10", check: "F16", line: "105 'Export Sales 28.2%'", classification: "AMBIGUOUS", implication: "Mix chart mixes geography with product; export product content and value-added share untrackable"}
+  - {id: "A3-11", check: "F14", line: "89 '427.6 31.1%'; 92 '1.3%'", classification: "AMBIGUOUS", implication: "Memory from filing shows +30.9% and 1.45%; comparator op profit about 6.2 vs 5.7; reconcile to filed results"}
+  - {id: "A3-12", check: "F17", line: "76-77 'financial discipline'; 85 'disciplined capital allocation'", classification: "AMBIGUOUS", implication: "Silent on receivables, CFO, proceeds, warrants, other expenses, Narmadapuram; 9 of 13 checklist items unaddressed"}
+forward_signals: ["A3-01", "A3-02", "A3-05", "A3-08"]
+ambiguous: ["A3-03", "A3-04", "A3-10", "A3-11", "A3-12"]
+commitments:
+  - {commitment: "Restore operating profitability", implied_date: "none stated", ref: "line 82 R127", status_word: "underway (implied)"}
+  - {commitment: "Strengthen the core business", implied_date: "none stated", ref: "line 82 R127", status_word: "not stated"}
+  - {commitment: "Expand international presence prudently", implied_date: "none stated", ref: "lines 82-83 R127", status_word: "underway (implied)"}
+  - {commitment: "Enhance product mix", implied_date: "none stated", ref: "line 83 R127", status_word: "not stated"}
+  - {commitment: "Investments in specialized manufacturing capabilities for higher-value segments", implied_date: "none stated", ref: "lines 83-85 R128", status_word: "not stated"}
+  - {commitment: "Disciplined capital allocation and prudent risk management", implied_date: "none stated", ref: "line 85 R129", status_word: "ongoing"}
+  - {commitment: "Order book Rs 731 Cr gives near-term visibility", implied_date: "about 4 months (1.30x Q2 revenue)", ref: "line 101 R089 R130", status_word: "n/a"}
+  - {commitment: "Sustainable growth, financial discipline, operational resilience", implied_date: "none stated", ref: "lines 76-77 R124", status_word: "ongoing"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Press release, standalone only. Two signals matter. First, earnings quality flipped. Other income, derived as Total Income less Revenue (ties exactly to EBITDA less Operating Profit), fell from 19.9 to 3.8 Cr YoY. In Q2 FY26 it was 78% of EBITDA; now 8.5%. The 616.5% tile is base effect; the 82.8% PAT growth is the cleaner number. No treasury income shows despite the mid-2026 equity raise, so the cash likely went into working capital or debt; A4 tests this against the filing's cash flow. Second, dilution: EPS lags PAT by about 7 points QoQ. Implied weighted shares rose about 6% QoQ, and the period-end count plus unconverted warrants mean Q3 EPS dilutes further at flat PAT. The CEO's phrase 'restoring operating profitability' concedes 7.3% is not the target; ask the number and date. The release is silent on every cash item on the Notion checklist while claiming financial discipline. Memory shows Q2 FY26 op margin 1.45% vs 1.3% printed; reconcile to the filing. CORRECTED_FROM_IMAGE margin and mix rows are arithmetically consistent; A3 did not see the image."

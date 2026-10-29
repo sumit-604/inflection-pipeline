@@ -1,0 +1,35 @@
+stage: A5-adversary
+company: "WEWORK"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Core Ind AS profit recovering QoQ; recovery holds on billed revenue, (17.45) to (0.32) (rev L277)", counter: "About 6 Cr of the QoQ gain is a customisation-revenue step (18 Cr Q2 vs ~12 Cr Q1, 'one or two large ones'), with 2.76 Cr sub-contracting cost reappearing; net ~3.2 Cr of the 17.13 Cr billed-basis gain. Claim stands (~11-14 Cr ex customisation); lumpiness already at Step 6.5 and Q17; logged, no graft", source_line: "concall L414-419, L424-427; results L491; rev L448, L514", type: STYLE}
+  - {claim: "Operating spread improves on a cash-rent basis, rent-adjusted margin 24.2%, +183 bps YoY (rev L245, L969)", counter: "The rent-adjusted margin sits on Ind AS revenue and Op EBITDA, so it carries the 5.0 Cr revenue-adjustment swing; on billed revenue it moves 22.90% to 24.11%, +121 bps. Direction holds; the rent-free timing counter is already grafted; logged, no graft", source_line: "letter L662; deck L794, L797; results L486-499", type: STYLE}
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "N1: rent-adjusted margin +183 bps (rev L245, L969, L1227) includes the 5.0 Cr Ind AS-only revenue-adjustment swing; billed basis +121 bps (24.11% vs 22.90%); direction unchanged"
+    - "N2: Step 3 QoQ recovery (rev L277) could cross-reference the ~6 Cr QoQ customisation step (concall L414-415) and the 2.76 Cr sub-contracting cost (results L491), already carried at rev L448 and Q17"
+    - "N3: brief L1048 tags Q2 cash rent 298.2 Cr 'from filed cash flow'; the filing is H1 only (results L643-644); the Q2 figure is the deck p33 split (deck L795)"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "N1 add billed-basis rent-adjusted margin change (+121 bps) beside +183 bps"
+  - "N2 cross-reference customisation step at Step 3 QoQ recovery"
+  - "N3 retag Q2 cash rent 298.2 Cr as deck p33 split (ties to filed H1)"
+  - "Loop-0 S1-S10 all closed in loop 1"
+analyst_note: "Re-audit, loop 1 of 1. All six loop-0 items are closed against the fulltext. FCFF now rebuilds on the deck p28 formula with a 20.0 Cr exclusion. Capacity sits at 30-Sep. Net ROU additions are about 347.5 Cr. The three counters M1-M3 are grafted where the claims are made. All ten loop-0 style notes are closed. The drift check found no unlisted change: all 32 change-log rows sit at their stated locations, and every other table and paragraph matches loop 0. Every new number recomputes from raw lines within rounding. Coverage counts are unchanged and match all five ledgers. The three most positive claims left (volume, QoQ core recovery, cash-rent spread) are already hedged where they are made. Two refinements are logged as STYLE only. The +183 bps rent-adjusted margin carries the same 5.0 Cr revenue-adjustment swing and is +121 bps on billed revenue, so the direction holds. About 3.2 Cr net of the QoQ core recovery is customisation, which Step 6.5 and Q17 already flag. Neither changes a number, a conclusion or the PROCEED WITH FLAGS verdict. No acquisition is described, so the probe did not trigger."

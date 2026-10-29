@@ -1,0 +1,15 @@
+Captured 2026-10-29 on the old machine (Windows 11 Home, 6 GB RAM, no GPU)
+python (py launcher default): Python 3.15.0
+ -V:3.15[-64] *   Python 3.15.0
+ -V:3.14[-64]     Python 3.14.4
+tesseract: tesseract v5.4.0.20240606  path: C:\Program Files\Tesseract-OCR\tesseract.exe (NOT on PATH)
+ffmpeg: ffmpeg version 9.0.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+pdftotext (msys ucrt64, xpdf): pdftotext version 4.06 [www.xpdfreader.com]
+poppler (winget): pdfinfo version 25.07.0  path: /c/Users/SUMIT SHARMA/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe/poppler-25.07.0/Library/bin
+git: git version 2.56.0.windows.1
+gh: gh version 2.100.0 (2026-09-03)
+node: not installed
+faster-whisper models cached under %USERPROFILE%\.cache\huggingface\hub:
+models--Systran--faster-whisper-medium.en
+models--Systran--faster-whisper-small.en
+models--mobiuslabsgmbh--faster-whisper-large-v3-turbo

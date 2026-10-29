@@ -1,0 +1,98 @@
+stage: A4-analyst
+company: "SONACOMS"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, concall, presentation, pressrelease]
+ledger_reconciliation:
+  notes: 13
+  turns: 53
+  slides: 36
+  all_reviewed: true
+  a3_findings_incorporated: ["RES:F1-01", "RES:F1-02", "RES:F1-03", "RES:F2-01", "RES:F2-02", "RES:F2-03", "RES:F2-04", "RES:F2-05", "RES:F2-06", "RES:F3-01", "RES:F3-02", "RES:F6-01", "RES:F6-02", "RES:F7-01", "RES:F8-01", "RES:F8-02", "RES:F8-03", "RES:F10-01", "RES:F10-02", "RES:F12-01", "RES:F12-02", "RES:F12-03", "RES:F14-01", "RES:F14-02", "RES:F14-03", "RES:F14-04", "RES:F15-01", "RES:F15-02", "P-A3-F6-01", "P-A3-F6-02", "P-A3-F6-03", "P-A3-F6-04", "P-A3-F6-05", "P-A3-F7-01", "P-A3-F10-01", "P-A3-F14-01", "P-A3-F14-02", "P-A3-F14-03", "P-A3-F14-04", "P-A3-F16-01", "P-A3-F16-02", "P-A3-F16-03", "P-A3-F16-04", "P-A3-F16-05", "P-A3-F16-06", "P-A3-F16-07", "P-A3-F16-08", "P-A3-F16-09", "P-A3-F17-01", "P-A3-F17-02", "P-A3-F17-03", "P-A3-F17-04", "P-A3-F17-05", "A3-PR-F6-01", "A3-PR-F6-02", "A3-PR-F6-03", "A3-PR-F14-01", "A3-PR-F14-02", "A3-PR-F14-03", "A3-PR-F14-04", "A3-PR-F14-05", "A3-PR-F14-06", "A3-PR-F16-01", "A3-PR-F16-02", "A3-PR-F16-03", "A3-PR-F16-04", "A3-PR-F17-01", "A3-PR-F17-02", "A3-PR-F17-03", "A3-PR-F17-04", "A3-F6-01", "A3-F6-02", "A3-F6-03", "A3-F6-04", "A3-F6-05", "A3-F6-06", "A3-F7-01", "A3-F7-02", "A3-F7-03", "A3-F7-04", "A3-F7-05", "A3-F8-01", "A3-F10-01", "A3-F14-01", "A3-F14-02", "A3-F14-03", "A3-F14-04", "A3-F17-01", "A3-F17-02", "A3-F17-03", "A3-F17-04", "A3-F17-05", "A3-F17-06", "A3-F17-07", "A3-F17-08", "A3-F17-09", "A3-F17-10", "A3-F17-11"]
+  deck_missing_from_structured_cited: ["M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", "M13", "M14", "M15"]
+  deck_rows_reviewed: 332
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "WATCHLIST"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY26", sa_pat_cr: 166.25, c_pat_cr: 170.47, gap_pct: -2.54}
+  - {period: "Q1 FY27", sa_pat_cr: 220.11, c_pat_cr: 178.51, gap_pct: 18.90, note: "ex-dividend about -11.1"}
+  - {period: "Q2 FY27", sa_pat_cr: 197.38, c_pat_cr: 222.99, gap_pct: -12.97}
+  - {period: "H1 FY26", sa_pat_cr: 286.38, c_pat_cr: 292.17, gap_pct: -2.02}
+  - {period: "H1 FY27", sa_pat_cr: 417.48, c_pat_cr: 401.50, gap_pct: 3.83, note: "ex-dividend about -12.1"}
+  - {period: "FY26", sa_pat_cr: 646.42, c_pat_cr: 629.19, gap_pct: 2.66}
+questions_for_management:
+  - {q: "After JV1 closes, is the EV-motors vehicle consolidated at 51% with 49% NCI or equity-accounted; name the entity (Note 5 says both 'Joint Ventures' and 'this subsidiary')", from_finding_id: "RES:F1-02, RES:F15-02, RES:F6-01, A3-F6-03, A3-F17-08, P-A3-F17-03, A3-PR-F16-04"}
+  - {q: "State the carve-out's FY26 and H1 FY27 revenue, EBITDA and PAT behind the EV Rs 1,750 Cr; does DENSO buy from Sona or subscribe new shares; expected gain, its line, tax on proceeds and net cash; confirm or correct Rs 900 Cr (above the EV-implied Rs 857.5 Cr before tax); where are Q2 deal costs booked", from_finding_id: "RES:F1-01, RES:F7-01, A3-F8-01, A5 M2"}
+  - {q: "Royalty rate, base and term each partner receives from its majority JV", from_finding_id: "RES:F6-02"}
+  - {q: "Share of Q2 rev ops and of the Rs 16.3 bn 2W motor/controller additions inside the DENSO perimeter; which subsidiary made the Rs 39.06 Cr ex-forex op EBITDA of the subsidiary layer", from_finding_id: "RES:F2-02, RES:F3-01, P-A3-F16-04, P-A3-F6-01, A3-PR-F6-01"}
+  - {q: "State Q2 EBITDA and margin ex-forex (forex Rs 10.58 Cr in revenue); realised forex in H1 and Q2 given the H1 Rs 11.67 Cr unrealised loss add-back against a Rs 19.75 Cr H1 P&L gain", from_finding_id: "RES:F2-05, P-A3-F16-01, A3-PR-F14-01, A3-F17-07"}
+  - {q: "What does the five-year margin exercise show for FY28; what commodity path returns 24%+; robotics R&D bps cost; why deck understates margin declines", from_finding_id: "A3-F6-02, A3-F7-01, A3-F7-02, A3-F6-06, P-A3-F14-03"}
+  - {q: "Is freight (nearly doubled QoQ) passed through; how much of the +20.9% QoQ other-expense rise is freight", from_finding_id: "A3-F7-05"}
+  - {q: "Warranty provision Rs 12.49 Cr vs 2.18 and slow-moving inventory Rs 8.02 Cr vs 1.20: which products and entities; recurring", from_finding_id: "RES:F12-03, A3-PR-F17-04, A3-F17-10"}
+  - {q: "Why did ST borrowings double to Rs 461.97 Cr while treasury rose; tenor and rate; 9M CFO/PAT ex-payables; MSME dues within 45 days; FY26 FCFO in rupees", from_finding_id: "RES:F12-02, P-A3-F17-02, A3-F17-04, A3-PR-F16-03"}
+  - {q: "Name the dividend-paying WOS, the Rs 33.05 Cr investee and the borrowing subsidiary; is there an intra-group loan to the parent", from_finding_id: "RES:F2-03, RES:F2-06"}
+  - {q: "Name the five foreign subsidiaries; Novelic carrying value and impairment test; which entity holds Rs 299.66 Cr capitalised development", from_finding_id: "RES:F3-02, RES:F12-01, RES:F2-04, A3-F17-06"}
+  - {q: "Un-normalised ROCE and ROE; which ROCE footnote is correct; dated path to >18%", from_finding_id: "P-A3-F14-01, A3-F17-05"}
+  - {q: "Gross order book; define consumption (Rs 25 bn vs Rs 15.5 bn revenue); itemise unitemised adds; robotics book rise; 6.6 vs 6.9 bn; asterisk footnote", from_finding_id: "P-A3-F7-01, P-A3-F16-03, A3-PR-F14-03, A3-PR-F14-04, A3-F14-03"}
+  - {q: "Why report 'EV and Robotics' 65% instead of EV-only 61%; EV-only trend", from_finding_id: "A3-PR-F16-01, A3-F17-03"}
+  - {q: "Are the seven SOP dates firm; FY27-FY28 capex envelope; capital blocked for JV2", from_finding_id: "P-A3-F6-02, A3-PR-F6-02, P-A3-F16-08"}
+  - {q: "Which four programs entered production in Q2; did any robotics SOP occur (C2); new dates", from_finding_id: "P-A3-F16-09, P-A3-F17-05, A3-PR-F17-02, A3-F17-02, A3-F7-04"}
+  - {q: "Define 'commercialised' for LSD, air springs, rear radar: customer, Q2 revenue, SOP; is the 2W rear radar the promised ADAS short-range radar (C3)", from_finding_id: "P-A3-F6-03, A3-PR-F14-05"}
+  - {q: "H1 BEV revenue in Rs Cr and share of total revenue; reconcile spoken 2,042 Cr and 51% on three bases", from_finding_id: "A3-F14-01, A3-F14-02"}
+  - {q: "Railway H1 revenue and PAT; fresh PO intake needed beyond the 12-month Rs 9 bn book", from_finding_id: "P-A3-F6-04, A3-F17-09"}
+  - {q: "Suspension motors (about 7% of revenue): share from one customer and model; date of a second customer", from_finding_id: "A3-F7-03"}
+  - {q: "Is the 1.5x cash/EBITDA threshold gross or net, trailing or forward; action when crossed", from_finding_id: "A3-F6-04"}
+  - {q: "Which motor product launches in Q3 FY27; 3W share of traction-motor revenue", from_finding_id: "A3-F6-05"}
+  - {q: "10X ambition: metric, base year, end year", from_finding_id: "A3-PR-F6-03"}
+  - {q: "Review reports signed 13:26/13:27 before the 14:00 board, second quarter running: what did the auditor sign against", from_finding_id: "RES:F14-01"}
+monitorables:
+  - {item: "Q3 motor product launch", implied_date: "Oct-Dec 2026 (Q3 FY27)", source_ref: "call L561-562 [ASR]; A3 K07"}
+  - {item: "Traction-motor extra volumes SOP, Rs 12,500 mn", implied_date: "H2 FY27 (Oct-2026 to Mar-2027)", source_ref: "deck L201-209; PR L132-135"}
+  - {item: "DENSO JV1 close (carve-out); eDrive leaves WOS list; NCI or equity line; carve-out EBITDA/PAT; cash to Sona capped at Rs 857.5 Cr pre-tax", implied_date: "end-Dec 2026, may slip to Jan 2027", source_ref: "call L439-440 [ASR]; res L318-319, L448"}
+  - {item: "Q3 FY27 results: consolidated op margin incl/ex forex; payables days", implied_date: "about late Jan 2027", source_ref: "Step 8C; Notion 26-Oct separating observation"}
+  - {item: "Bharat Expo robotics demonstration", implied_date: "Feb 2027", source_ref: "call L764-767 [ASR]"}
+  - {item: "DENSO JV2 formed and closed", implied_date: "H1 CY2027 (Jan-Jun 2027)", source_ref: "call L443-445 [ASR]"}
+  - {item: "Cash/EBITDA crosses 1.5x; capital allocation decision", implied_date: "by FY27 year end (Mar 2027)", source_ref: "call L698-700 [ASR]"}
+  - {item: "Q4 FY27 results; full-year CFO/PAT ex-payables", implied_date: "about May 2027", source_ref: "Step 5"}
+  - {item: "IMC E2W SOP Rs 3,800 mn; differential gears Rs 2,000 mn SOP", implied_date: "H1 FY28 (Apr-Sep 2027)", source_ref: "deck L201-207, L234-240"}
+  - {item: "FY27 annual report: Novelic KAM, corporate guarantees, entity list", implied_date: "about Jun-Jul 2027", source_ref: "RES:F3-02; tripwires 3 and 5"}
+  - {item: "Railway order book Rs 9 bn executed; refill (growth trigger #1 AMBER / UNVERIFIED)", implied_date: "within 12 months (about Sep 2027)", source_ref: "deck L257, L267"}
+  - {item: "Q1 FY28 results; third-call silence test (forex basis, ROCE, Novelic, railway P&L)", implied_date: "about late Jul 2027", source_ref: "Role 5 Step 3E"}
+  - {item: "Rear radar 2W SOP Rs 1,000 mn; ICE diff assembly Rs 1,600 mn", implied_date: "H2 FY28 (Oct-2027 to Mar-2028)", source_ref: "deck L205, L238; PR L141, L151"}
+  - {item: "Helical LSD Rs 7,000 mn; starter motors Rs 3,300 mn SOP", implied_date: "H1 FY29 (Apr-Sep 2028)", source_ref: "deck L205, L238; PR L126, L145"}
+  - {item: "Auditor signing time vs board start at each results day", implied_date: "each results day", source_ref: "res L128, L418, L49"}
+flags:
+  - "Margin gate basis ruling pending: 23.20% incl forex vs 22.51% ex-forex; ex-forex below bear line second quarter"
+  - "Cash leg ruling pending: CFO/PAT 1.48x printed vs 0.78x ex-payables (1.00x a year ago); cash INDETERMINATE-WITH-DIRECTION"
+  - "C1 MISSED (conceded), C2 DROPPED on silence, C3 DELAYED; provisional credibility 8.3% grade D, archetype EVASIVE on one scored quarter; page shows Mgmt grade A"
+  - "Auditor review reports signed about 33 min before the board met, second quarter running"
+  - "DENSO JV1 close end-Dec/Jan [ASR]; Note 5 leaves consolidation route open; eDrive economics undisclosed"
+  - "DENSO 49% at EV Rs 1,750 Cr = Rs 857.5 Cr pre-tax, about 2.2x proxy sales (1.8x ASR run-rate) vs about 10.1x for Sona; carve-out EBITDA/PAT NOT FOUND; fair price vs value transfer unseparated"
+  - "Parent standalone op margin -343 bps YoY; group margin held via subsidiary layer (op EBITDA 3.6x incl eliminations)"
+  - "Short-term borrowings doubled 234.25 to 461.97 Cr while treasury rose"
+  - "EV share of order book 61%, third easing (tripwire 9); release reframed as 65% EV plus Robotics"
+  - "Order-book consumption 1.6x revenue; Rs 4.8 bn adds unitemised"
+  - "Warranty provision 5.7x and slow-moving inventory provision 6.7x YoY"
+  - "ROCE 16.4% normalised under two definitions; un-normalised ND"
+  - "Two-call silences: forex basis, ROCE number, Novelic, railway P&L, DENSO terms, order-book bridge"
+  - "Railway growth trigger #1 and tripwire 8 both AMBER / UNVERIFIED"
+  - "Tracker rows not supplied; fewer than three signals; reopen Role 5.5"
+  - "Notion holds no FY27/FY28 projections; growth-trigger #3 label conflict on page"
+  - "Concall is machine ASR: concall-only numbers unverified; filed documents govern"
+  - "Promoter-group representative not on call; operator to confirm yellow flag"
+  - "No thesis-broken trigger fired; Decision Status WATCHLIST unchanged (operator-only)"
+  - "Role 4 Steps 6.5/7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30)"
+plain_language_brief_included: true
+analyst_note: "Consolidated is the basis. Q2 revenue +34.9% YoY is real, but the parent's own op EBITDA rose only 13.3% on +30.3% revenue (margin 26.26% to 22.83%); the group margin held at 23.20% because the subsidiary layer's op EBITDA rose 3.6x (incl. eliminations). The cash leg passes as printed (1.48x) but is 0.78x ex-payables against 1.00x a year ago. The margin gate turns on the pending forex ruling. Promise scoring rests on one quarter and three items, so grade D and EVASIVE are provisional. DENSO pays EV Rs 1,750 Cr for 49% (Rs 857.5 Cr pre-tax): about 2.2x proxy sales against about 10x for Sona, priced before the Q2 surge; carve-out earnings are NOT FOUND, so fair price and value transfer cannot be separated. Loop 1: FY28E-B now uses the labelled deck 23% CAGR because the FY21 bar is positional only; the FY26 bar ties to filed revenue incl. forex. Railway is AMBER / UNVERIFIED throughout. Concall numbers are ASR and lose to filings."
+review_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/work/review_sonacoms_q2fy27.md"
+loop1_changes:
+  - "M1: preamble deck ledger 317 + M01-M15 = 332 rows reviewed; M-IDs cited at use (M01, M04, M05, M08, M09); deck L516 44,752 tied to filed FY26 rev ops + forex (44,751.48 mn, res L470-471); FY28E-B re-derived on labelled 23% 5-year CAGR (R242, deck L583-587): 6,979.12 / 993.52 / EPS 15.92 / 55.2x (was 7,001.81 / 996.75 / 15.97 / 55.0x)"
+  - "M2: DENSO 49% stake-sale economics subsection added after Step 6.5/7; EV Rs 1,750 Cr, 49% = Rs 857.5 Cr pre-tax, taxable [ASR]; carve-out EBITDA/PAT NOT FOUND; EV/proxy sales 2.19x (1.81x ASR run-rate) vs Sona 10.1x; two readings and separating observation; bull-fork cash capped at Rs 857.5 Cr pre-tax; primary vs secondary route flagged; grafted into 0D, 6D, 6.5/7 table, 8B, Q2, 5A, 4C, 8D, 8E, Section C, flags, brief parts 1, 3, 5"
+  - "F1: brief part 2 BEV +129% cause re-tagged [ASR, call L135-140]; concentration counter added (call L077-080; deck L196-203; PR L128-135; call L241, L417); 7A row added"
+  - "F2: brief part 4 corrected: CY25 first joint dip; starter share also fell CY21 4.6% to CY22 4.1% (deck L703)"
+  - "C1: railway aligned to AMBER / UNVERIFIED in 6B tripwire 8, 6D trigger #1, Role 5 8A and 8B, Section C, brief; single railway evidence set R in Step 6B"
+  - "Style S1-S9, S11, S12 applied; S10 skipped (A2 ledger housekeeping, not an A4 file)"
+  - "Verdict unchanged: PROCEED WITH FLAGS"

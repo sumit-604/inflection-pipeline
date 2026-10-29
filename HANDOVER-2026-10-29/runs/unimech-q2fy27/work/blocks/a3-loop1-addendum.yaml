@@ -1,0 +1,24 @@
+stage: A3-forensics
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "presentation+concall (loop 1 addendum)"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+forensics_path: "runs/unimech-q2fy27/work/forensics_loop1_addendum_unimech_q2fy27.md"
+ledger_reconciled_pct: 100        # loop scope: deck R222-R226, R253, R664; call R011, R022, R064, R065, R085, R143, R184, R244, R245; res l.341, l.717, CO BS lines
+checklist:                        # loop delta; all other checks unchanged in base files (both gate_a3 pass)
+  presentation_F6: FINDING        # adds D-A3-28
+  concall_F17: FINDING            # adds C-A3-26
+findings:
+  - {id: "D-A3-28", check: "F6", line: "deck 369; 396; 130-132; res 341; 717; call 97-98; 574-575", classification: "FORWARD-SIGNAL", implication: "Filed '~USD 30 Mn' joint investment = Rs 289.4 Cr at Rs 96.46/USD (my arithmetic), above Rs 200-250 Cr call capex; Unimech 51% leaves ~Rs 108.2 Cr to fund after the Rs 39.36 Cr first tranche (Rs 62.6-88.1 Cr if only 51% of capex), vs Sep-26 net cash Rs 65.45 Cr (Rs 26.09 Cr after ODI); equity/debt split and tranche date unstated; supersedes SAR 60M funding-gap leg of C-A3-12"}
+  - {id: "C-A3-26", check: "F17", line: "call 351-356; deck 563-564; 576; checklist 118", classification: "AMBIGUOUS", implication: "~65% utilisation includes NPI/prototype/qualification capacity ('about 50% to 20%', ASR-garbled); serial-production utilisation ~45-50% (of available) or ~52-55% (of used) [INFERENCE], under the <60% red line; red line untestable on serial basis from filed evidence; item 4 AMBER with flag; Q1 58% basis unknown"}
+forward_signals: ["D-A3-28"]
+ambiguous: ["C-A3-26"]
+commitments:
+  - {commitment: "Kanoo-Unimech JV joint investment ~USD 30 Mn at 51:49; further tranches", implied_date: "undated; readiness Mar/Apr-2027", ref: "deck l.369, l.396; res l.341", status_word: "initiated"}
+  - {commitment: "Saudi JV capex Rs 200-250 Cr outlay", implied_date: "undated", ref: "call l.574-575", status_word: "initiated"}
+  - {commitment: "Equity fund raise early CY2027, subject to requirement and market conditions", implied_date: "early CY2027", ref: "call l.366-369", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "FX: Rs 25.724/SAR is implied by the filed ODI (res l.341 / deck l.396). The USD rate uses the 3.75 SAR/USD peg, which is EXTERNAL and in no extract; the deck's own '~USD 4mn' pairing implies about Rs 98.4/USD, within rounding. D-A3-28 moves the Saudi funding question from the JV to the parent. The JV's filed joint investment covers the call capex. Unimech's own remaining 51% share does not fit inside its Sep-26 net cash on Reading A. The A4 flag on SAR 60M has no filed anchor and should be restated. C-A3-26: the deck states 65% with no qualifier and the call qualifies it with a garbled band. Every plausible repair puts serial load at or under 60%. Carry checklist item 4 as AMBER with a flag; do not call it tested. Ask for the basis of the Q1 58% figure before reading the QoQ rise as serial demand."

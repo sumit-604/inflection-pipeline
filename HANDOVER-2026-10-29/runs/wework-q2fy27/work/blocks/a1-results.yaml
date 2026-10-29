@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 12
+formfeed_count: 12
+line_count: 721
+unit_convention: "Millions (Rs in Million; 34.25 crore on page 1 printed in crore)"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["3 standalone P&L: misaligned hidden OCR layer", "4 standalone balance sheet: same", "5 standalone cash flow: same", "9 consolidated P&L: same", "10 consolidated balance sheet: same", "11 consolidated cash flow: same", "12 note 11 standalone table only: same"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/wework-q2fy27/extracted/wework-results-q2fy27-fulltext.md"
+structured_path: "runs/wework-q2fy27/extracted/wework-results-q2fy27-structured.md"
+structured_counts:
+  number: 793
+  entity: 67
+  forward: 9
+  date: 69
+  qualifier: 174
+structured_id_range: "R001-R1112"
+gate_a1: pass
+gap_note: ""

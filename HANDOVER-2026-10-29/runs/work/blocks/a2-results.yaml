@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "530077"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/530077-q2fy27/work/ledger_results_530077_q2fy27.md"
+counts:
+  notes: 5
+  line_items: 339
+  zero_standing: 54
+  agenda_items: 1
+  auditor_paras: 7
+  entities: 31
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, RESTATED, FOOTNOTE_UNRESOLVED, ENTITY_CHANGE_NAME]
+ids_in_structured: 446
+ids_referenced: 446
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Standalone only, no consolidation list, so entities are 31 A1 ENTITY rows, not subsidiaries. Zero-standing rows (54) cluster in ROU assets, intangibles, loans, lease liabilities, purchase of stock-in-trade, exceptional items, discontinued ops, and some EPS and cash-flow lines. Note 3 is absent as printed (R441). Not in the filing: EoM/Going Concern paragraphs, director profiles, dividend, AGM, segment table. Rename Freshtrop to Puretrop flagged at R366; no prior ledger to diff. loop 1: M4 signature time annotated."

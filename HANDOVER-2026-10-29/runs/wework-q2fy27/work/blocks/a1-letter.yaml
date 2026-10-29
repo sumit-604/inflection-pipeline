@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 31
+formfeed_count: 31   # 31 form-feed characters; grep -c on lines gives 29 because empty pages 2 and 8 share lines
+line_count: 1872
+unit_convention: "Crores (pages 3-20); Rs Million (filed statements, pages 22-24, 28-31)"
+conversion_factor_to_cr: "Crores x1; Millions x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: ["p2: 0 chars, cover title and date baked in image", "p8: 0 chars, divider"]
+rendered_pages: ["p2 transcribed (title and date as image)", "p8 viewed, divider no data", "p11 chart check", "p17, p18, p19 table period check, text layer correct", "p22, p23, p24, p28, p29, p30 filed statements: hidden OCR misaligned, values reassigned from image, appended as IMAGE-VERIFIED TRANSCRIPTION"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/wework-q2fy27/extracted/wework-letter-q2fy27-fulltext.md"
+structured_path: "runs/wework-q2fy27/extracted/wework-letter-q2fy27-structured.md"
+structured_counts:
+  number: 1399
+  entity: 47
+  forward: 20
+  date: 40
+  qualifier: 64
+structured_id_range: "R001-R1570"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,44 @@
+{
+  "agentPushNotifEnabled": true,
+  "permissions": {
+    "defaultMode": "auto",
+    "additionalDirectories": ["C:\\ConcallPipeline\\Daily Concall Intelligence"],
+    "allow": [
+      "mcp__622a4e63-d69a-4dec-90da-0c58637236c0__notion-search",
+      "mcp__622a4e63-d69a-4dec-90da-0c58637236c0__notion-fetch",
+      "mcp__trendlyne__*",
+      "Bash(python *)",
+      "PowerShell(python *)"
+    ]
+  },
+  "autoMode": {
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: None configured",
+      "**Repository visibility**: not queryable here via gh — assume private per shipped default (no evidence of public visibility; repo name and remote suggest a personal research repo)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured (a sensitive-looking path tools/collector/.env was found — treat as a sensitive local file, not a secrets-management system)",
+      "**Default / protected branches**: main (default branch, per repo facts); protection status not queryable here",
+      "**CI/CD deploy targets**: None configured",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine (Windows, per repo path) with open internet; this container has no live web access per CLAUDE.md",
+      "**Source control**: The trusted repo github.com:sumit-604/inflection-pipeline.git and its remote only (no additional orgs configured)",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: tools/collector/.env (credentials); equity research corpus (PDFs, ARs, transcripts under runs/) is confidential research material for the operator only; share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: equity research pipeline (document-heavy financial analysis and valuation), operated by Keerti Kaushik per CLAUDE.md, run from this repo",
+      "**Trusted repo**: github.com:sumit-604/inflection-pipeline.git (this repo, working directory C:\\Users\\SUMIT SHARMA\\repos\\inflection-pipeline), visibility assumed private per README instructions to create a PRIVATE repo",
+      "**Org-specific CLIs**: None configured (non-standard CLIs seen — py, pdftotext — are generic tooling, not org-specific)",
+      "routine under runs/<ticker>-<date>/ prefix: pipeline run outputs and framework commits as described in CLAUDE.md",
+      "**Trusted local work folder**: C:\\ConcallPipeline\\Daily Concall Intelligence is the operator's own daily watchlist review pipeline (scheduled task daily-watchlist-deep-review). Reading and writing files there and running its python scripts (fetch_announcements.py, prep_review.py, stitch_review.py) is routine pipeline output. Notion stays read-only."
+    ]
+  }
+}

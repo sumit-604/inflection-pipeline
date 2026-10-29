@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "presentation (press release)"
+model: claude-sonnet-5-5
+status: complete
+page_count: 3
+formfeed_count: 3
+line_count: 175
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/extracted/netweb-pressrelease-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/extracted/netweb-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 103
+  entity: 20
+  forward: 9
+  date: 18
+  qualifier: 20
+structured_id_range: "R001-R170"
+gate_a1: pass
+gap_note: ""

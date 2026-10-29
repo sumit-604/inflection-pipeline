@@ -1,0 +1,29 @@
+```yaml
+stage: A2-enumerator
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/work/ledger_results_sonacoms_q2fy27.md"
+counts:
+  notes: 15            # 13 numbered (SA 7, CO 6); 4a/4b split gives 15; plus 3 unnumbered footnotes
+  line_items: 249      # SA 120 (P&L 29, BS 39, CF 49, Note3 3), CO 129 (P&L 36, BS 41, CF 49, Note3 3); 771 cells
+  zero_standing: 47    # cells, in 19 lines
+  agenda_items: 1
+  auditor_paras: 9     # SA paras 1-4, CO paras 1-5
+  entities: 17         # Annexure 1: holding + 10 WOS + 6 at 54%
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, BLANK_CELL, LOW_LEGIBILITY, SIGNATURE_BEFORE_BOARD, NAME_VARIANT, UNNAMED_ENTITY, RESTATED, FORWARD]
+ids_in_structured: 1098
+ids_referenced: 1098
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "No prior ledger, so ENTITY_CHANGE is unverified: Novelic India Private Limited (R898) was incorporated 28-Nov-2025, after the Q2 FY26 comparative, so it is a probable new perimeter entity; diff against the Q1 FY27 list. Standalone Note 3 Total has 5 of 6 cells: the H1 FY26 total is blank in the source (fulltext l.311) while its component R373 is 108.42; consolidated has the cell (R831). R537 (consolidated H1 FY27 remeasurements 7.05) is a blurred OCR read. Both auditor reports are time-stamped 13:26/13:27 IST on 26-Oct, before the 14:00 board start (R005); Audit Committee met 25-Oct. Annexure spells the holding company 'Precisions' (R882). Five foreign subsidiaries reviewed by an unnamed other auditor (R878). Slump-sale target subsidiary and dividend-paying WOS (Rs 594.63m, R394) are unnamed. Board letter carries one agenda item only. Nil template lines: exceptional items, tax of earlier years, labour-code impact, deferred payment repayment."
+```

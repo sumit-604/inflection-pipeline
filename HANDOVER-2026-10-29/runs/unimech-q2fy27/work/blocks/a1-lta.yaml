@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "lta"
+model: claude-sonnet-5-5
+status: complete
+page_count: 1
+formfeed_count: 1
+line_count: 66
+unit_convention: "none stated (no financial figures)"
+conversion_factor_to_cr: "n/a"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/unimech-q2fy27/extracted/unimech-lta-q2fy27-fulltext.md"
+structured_path: "runs/unimech-q2fy27/extracted/unimech-lta-q2fy27-structured.md"
+structured_counts:
+  number: 3
+  entity: 10
+  forward: 4
+  date: 6
+  qualifier: 8
+structured_id_range: "R001-R031"
+gate_a1: pass
+gap_note: ""

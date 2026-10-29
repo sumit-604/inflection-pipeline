@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SYNGENE"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 11
+formfeed_count: 11
+line_count: 639
+unit_convention: "Millions"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["page 3 at 150dpi, spot check only, image deleted"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/syngene-q2fy27/extracted/syngene-results-q2fy27-fulltext.md"
+structured_path: "runs/syngene-q2fy27/extracted/syngene-results-q2fy27-structured.md"
+structured_counts:
+  number: 696
+  entity: 30
+  forward: 6
+  date: 48
+  qualifier: 48
+structured_id_range: "R001-R828"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,67 @@
+stage: A3-forensics
+company: "SKYGOLD"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/skygold-q2fy27/work/forensics_results_skygold_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: FINDING
+  F5: FINDING
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "R-A3-01", check: "F1", line: "1184; 1340; 1341", classification: "AMBIGUOUS", implication: "First use of exceptional line: Rs 735.49 lakh deep-fake fraud loss at Starmangalsutra (4.24% of Q2 pre-exceptional cons PBT); balance recovery open; treasury-control failure."}
+  - {id: "R-A3-02", check: "F1", line: "1267; 1290; 1306; 1308", classification: "AMBIGUOUS", implication: "H1FY26 subsidiary acquired and another derecognised, both unnamed; lines repopulate in Q3 for Purvi with consideration NOT FOUND."}
+  - {id: "R-A3-03", check: "F2", line: "1071; 1190; 1056; 1172", classification: "FORWARD-SIGNAL", implication: "Cons-SA PAT gap 22.2% -> 73.1% -> 51.5% of SA PAT; implied subsidiary EBITDA margin 6.0% -> 11.7%; all margin expansion sits in subsidiaries."}
+  - {id: "R-A3-04", check: "F4", line: "667-670", classification: "AMBIGUOUS", implication: "21.3% of cons PAT (20.8% revenue, 12.4% assets) rests on other auditors for two unnamed subsidiaries; YoY trend NOT FOUND."}
+  - {id: "R-A3-05", check: "F5", line: "1324; 680-683", classification: "AMBIGUOUS", implication: "Statutory auditor changed after FY26; predecessor unnamed; Q1FY27 reviewer unstated; no EoM or going concern."}
+  - {id: "R-A3-06", check: "F6", line: "46-55; 174-180", classification: "FORWARD-SIGNAL", implication: "Rs 1,800 Cr QIP = 1.27x cons equity; no use of proceeds; member vote 18-Nov-2026."}
+  - {id: "R-A3-07", check: "F6", line: "556; 1342", classification: "FORWARD-SIGNAL", implication: "Purvi Gems 100% acquired 07-Oct-2026; consideration and financials NOT FOUND; Q3 inorganic contribution and goodwill."}
+  - {id: "R-A3-08", check: "F8", line: "1185; 1189; 1070", classification: "FORWARD-SIGNAL", implication: "Cons ETR 22.1% vs 25.17%; implied subsidiary ETR ~15-16% vs ~25-26% in FY26; ~304 bps shield (~914.5 lakhs H1); durability and transfer-pricing risk."}
+  - {id: "R-A3-09", check: "F8", line: "1069; 1188", classification: "NEUTRAL-FACT", implication: "FY26 earlier-year tax adjustment 29.45 SA / 50.57 cons; nil in interims; year-end pattern."}
+  - {id: "R-A3-10", check: "F8", line: "1067; 1093; 1120; 1149", classification: "AMBIGUOUS", implication: "SA current tax 4,970 accrued vs 1,830.85 paid; tax liability 257 -> 3,598; DTA up 110.72 against net deferred charges; ~201.5 lakh DTA movement unexplained."}
+  - {id: "R-A3-11", check: "F9", line: "1195; 1072; 1191; 1307", classification: "NEUTRAL-FACT", implication: "FCTR line new in FY27 (functional-currency or new foreign op); actuarial OCI is FY26/4 per quarter; verify at AR."}
+  - {id: "R-A3-12", check: "F10", line: "1080; 1209; 1211-1212; 1129", classification: "FORWARD-SIGNAL", implication: "Paid-up flat in FY27, basic-diluted spread 0.01 stable, ESOP cost 2.9x; material dilution is the pending QIP."}
+  - {id: "R-A3-13", check: "F10", line: "1161; 1298", classification: "AMBIGUOUS", implication: "FY26 warrant money 1,577.39 lakhs received; paid-up up only 1.00 lakh since; warrant status NOT FOUND, possible extra dilution layer."}
+  - {id: "R-A3-14", check: "F11", line: "1238; 1241; 1246; 1299; 1301; 1206", classification: "AMBIGUOUS", implication: "Cons other equity short 1,731.87 vs roll-forward; matches 1,731.97 non-cash borrowing increase; ~Rs 17.3 Cr equity-to-debt reclass unexplained."}
+  - {id: "R-A3-15", check: "F12", line: "1314; 1320", classification: "FORWARD-SIGNAL", implication: "Outside-India revenue +183.9% YoY to 18.2% of cons on Rs 2.5 Cr foreign assets; H1 already 112.5% of FY26; links to sub margin and ETR."}
+  - {id: "R-A3-16", check: "F12", line: "1104; 1235", classification: "AMBIGUOUS", implication: "Rs 110.14 Cr held for sale static since Mar-26 in parent; nature and sale timing NOT FOUND; Ind AS 105 window."}
+  - {id: "R-A3-17", check: "F12", line: "1115-1116; 1136; 1150; 1271; 1285", classification: "AMBIGUOUS", implication: "Trade payables 3.8x SA (non-MSME 9.8x); H1 CFO positive only via payables (ex-payables SA -20,665); possible unfixed gold; Q3 unwind risk."}
+  - {id: "R-A3-18", check: "F12", line: "1099; 1101; 1109; 1113; 1155-1156; 1162", classification: "AMBIGUOUS", implication: "Borrowings funded ~14,743 net FD placement now in other financial assets; SA net debt +57.5% or -5.8% depending on OFA lien status."}
+  - {id: "R-A3-19", check: "F13", line: "67-70; 77-80; 82", classification: "FORWARD-SIGNAL", implication: "EGM 18-Nov-2026 'inter-alia' agenda beyond QIP not listed; ESOP grant NOT FOUND in filing; no AR, dividend or director event."}
+  - {id: "R-A3-20", check: "F14", line: "960", classification: "NEUTRAL-FACT", implication: "Consolidated CF footer reads 'standalone'; template carry-over."}
+  - {id: "R-A3-21", check: "F14", line: "46-48; 122-126", classification: "AMBIGUOUS", implication: "Letter says equity shares; Annexure allows convertibles including warrants; dilution path scope unclear."}
+  - {id: "R-A3-22", check: "F14", line: "1176; 1177; 1343", classification: "AMBIGUOUS", implication: "Cons Q2 purchases of stock-in-trade negative (4,358.97) from H1 regroup without Q1 regroup; Q2 cost lines not standalone-readable."}
+  - {id: "R-A3-23", check: "F14", line: "1326; 691; 689; 283; 699", classification: "NEUTRAL-FACT", implication: "Auditor FRN and firm-name variance between reports; handwritten UDINs need ICAI verification."}
+  - {id: "R-A3-24", check: "F14", line: "1062; 1132; 1164; 1265", classification: "AMBIGUOUS", implication: "P&L finance cost exceeds CF finance cost by 166.06 SA / 208.39 cons; implied ~11% cost of debt; GML cost split NOT FOUND."}
+  - {id: "R-A3-25", check: "F15", line: "1336; 644-646; 1239", classification: "AMBIGUOUS", implication: "Shri Rishab partnership to Pvt Ltd 22-Aug-2026 with NCI retained; coincides with Rs 17.3 Cr equity-to-debt move; tax rate change."}
+  - {id: "R-A3-26", check: "F15", line: "100-101; 204; 1342", classification: "FORWARD-SIGNAL", implication: "Rename to add 'Diamonds' plus Purvi 'Gems' acquisition point to studded-jewellery mix shift from Q3."}
+forward_signals: ["R-A3-03", "R-A3-06", "R-A3-07", "R-A3-08", "R-A3-12", "R-A3-15", "R-A3-19", "R-A3-26"]
+ambiguous: ["R-A3-01", "R-A3-02", "R-A3-04", "R-A3-05", "R-A3-10", "R-A3-13", "R-A3-14", "R-A3-16", "R-A3-17", "R-A3-18", "R-A3-21", "R-A3-22", "R-A3-24", "R-A3-25"]
+commitments:
+  - {commitment: "Raise up to Rs 1,800 Cr by equity QIP in one or more tranches, subject to member and regulatory approvals", implied_date: "member vote 2026-11-18; allotment window about 12 months after special resolution [INFERENCE]", ref: "Board letter item 1, lines 46-57; Annexure A lines 120-180", status_word: "initiated"}
+  - {commitment: "QIP Committee to decide terms and conditions of the fund raise", implied_date: "open", ref: "line 59-60", status_word: "initiated"}
+  - {commitment: "EGM by VC/OAVM for shareholder approval inter-alia on the fund raise", implied_date: "2026-11-18 11:00", ref: "items 3-4, lines 67-75", status_word: "initiated"}
+  - {commitment: "E-voting cut-off date", implied_date: "2026-11-11", ref: "lines 77-80", status_word: "initiated"}
+  - {commitment: "Scrutinizer appointed for EGM e-voting", implied_date: "2026-11-18", ref: "item 5, line 82", status_word: "completed"}
+  - {commitment: "Acquisition of 100% of Purvi Gems & Jewellery (India) Pvt Ltd", implied_date: "2026-10-07", ref: "SA note 4 line 556; cons note 7 line 1342", status_word: "completed"}
+  - {commitment: "Shri Rishab Gold conversion from partnership firm to Pvt Ltd", implied_date: "2026-08-22", ref: "cons note 4 line 1336", status_word: "completed"}
+  - {commitment: "Recovery of fraud balance Rs 735.49 lakhs via Cyber Police complaint", implied_date: "not stated", ref: "cons note 6 line 1341", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three threads matter more than headline growth. (1) The consolidated step-up: Q2 cons PAT grew 93% YoY vs SA 56%. The subsidiary layer now carries an implied 11.7% EBITDA margin and about 15% ETR, against 6.0% and about 25% a year ago. 62.5% of the Q2 PAT gap rests on two unnamed subsidiaries reviewed only by other auditors. Outside-India revenue nearly tripled on Rs 2.5 Cr of foreign assets. Benign reading: a higher-margin UAE or export channel. Bear reading: intra-group pricing or profit location. Subsidiary-wise P&L with eliminations separates them. (2) Cash: H1 CFO turned positive only through a 3.8x jump in trade payables, mostly non-MSME. Borrowings funded about Rs 147 Cr of net deposit placements now in other financial assets. SA net debt is -6% or +57% depending on whether those deposits are free or lien-marked. (3) Capital: a Rs 1,800 Cr QIP (1.27x cons net worth) with no stated use, a post-quarter acquisition with no consideration disclosed, unclear FY26 warrant status, and a Rs 17.3 Cr unexplained equity-to-debt move in consolidation near the Shri Rishab conversion. No transcript exists; every FS and AMB item goes to A4 for the 31-Oct call."

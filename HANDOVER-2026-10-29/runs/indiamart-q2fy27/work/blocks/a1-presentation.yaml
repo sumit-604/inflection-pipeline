@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 69
+formfeed_count: 69
+line_count: 1687
+unit_convention: "Crores (operational slides labelled Thousand/Millions per metric)"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []   # no zero-char pages; low-char pages p5,p10,p33,p36,p42,p48,p54,p59,p62,p69 are dividers, skipped
+rendered_pages: [6,8,9,14,16,24,30,31,32,34,35,37,40,41,43,45,46,47,50,51,52,60,63,64,65,66,67,68]  # KPI/quarter-assignment render checks only, no OCR
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/indiamart-q2fy27/extracted/indiamart-presentation-q2fy27-fulltext.md"
+structured_path: "runs/indiamart-q2fy27/extracted/indiamart-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 1406
+  entity: 86
+  forward: 11
+  date: 26
+  qualifier: 91
+structured_id_range: "R001-R1620"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/wework-q2fy27/work/ledger_letter_wework_q2fy27.md"
+counts:
+  notes: 19
+  line_items: 694
+  zero_standing: 121
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 47
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 31
+  slide_numbers: 1399
+flags_raised: [ZERO_STANDING, RESTATED, IMAGE_PAGE, APPENDIX_ANCHORED, CHART_LABELS, MGMT_FURNISHED, UDIN_UNREADABLE, FOOTNOTE_UNRESOLVED, SIGNATURE_TIME_NOT_FOUND, MISSING_FROM_STRUCTURED]
+ids_in_structured: 1570
+ids_referenced: 1570
+orphan_ids: []
+missing_from_structured: ["MFS-1: page 31 Note 8 consolidated paid-up capital figures (fulltext lines 1584-1585) not split into NUMBER rows; values identical to R965/R966/R1177-R1182; low materiality"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Method 2 (fulltext numeric tokens per page vs NUMBER rows) differs by +254 overall; every page diff is explained: dates, addresses, statutory refs, ordinals, axis ticks (A1 rightly excludes), and dash cells (121 ZERO_STANDING rows, which show as negative diffs on pages 17, 18, 22-24, 28-30). A value-level check found no metric absent from A1 except MFS-1. Entities: 4 consolidation entities (holding, 2 subsidiaries, 1 associate); ENTITY_CHANGE and DROPPED_SLIDE not assessable, no prior ledger. Filed notes begin at Note 3 (Notes 1-2 not in any text layer). UDIN and partner name are OCR-unreadable. Board and signing dates are both 26 Oct 2026, no time of day available."

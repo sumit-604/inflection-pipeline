@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 33
+formfeed_count: 33
+line_count: 1216
+unit_convention: "Millions (Rs Mn)"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: [19 spot-check render only, not used as source; layout interleave on pages 7,11,12,14,15,16,17,19 repaired with pdftotext -raw supplement]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/aequs-q2fy27/extracted/aequs-presentation-q2fy27-fulltext.md"
+structured_path: "runs/aequs-q2fy27/extracted/aequs-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 451
+  entity: 37
+  forward: 25
+  date: 20
+  qualifier: 33
+structured_id_range: "R001-R566"
+gate_a1: pass
+gap_note: ""
+errata_count: 3

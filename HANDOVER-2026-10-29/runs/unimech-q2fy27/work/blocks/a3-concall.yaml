@@ -1,0 +1,83 @@
+stage: A3-forensics
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/unimech-q2fy27/work/forensics_concall_unimech_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "C-A3-01", check: "F16", line: "57-59; 281-282", classification: "AMBIGUOUS", implication: "+715% YoY compares total book incl LTA (855) with prior-year firm-only book (105, deck R048); like-for-like firm growth +153% (deck R050)"}
+  - {id: "C-A3-02", check: "F7", line: "283-287; 468-475", classification: "FORWARD-SIGNAL", implication: "Rs 589 Cr (68.9%) of Rs 855 Cr is LTA/award/indication over 5-10 yrs; firm book Rs 266 Cr; 'completely addresses' short-cycle claim overstated"}
+  - {id: "C-A3-03", check: "F16", line: "57-58; 839", classification: "FORWARD-SIGNAL", implication: "firm book down two quarters: 314 -> 280.3 -> 266 Cr (deck R042); call never states it; definition comparability unconfirmed"}
+  - {id: "C-A3-04", check: "F12", line: "312-318; 411-412", classification: "FORWARD-SIGNAL", implication: "Hobel 30% of H1, non-Hobel PCA ~3%; implied Q2 organic ex-Hobel ~-11% QoQ (ASR, my arithmetic); tests prove-it condition 1"}
+  - {id: "C-A3-05", check: "F14", line: "339-340", classification: "AMBIGUOUS", implication: "call ROCE ~20% vs filed H1 FY27 14.9% (deck R349); Q1 promise of 20-21% not delivered on filed basis"}
+  - {id: "C-A3-06", check: "F6", line: "330; 532; 689-697; 825-829", classification: "FORWARD-SIGNAL", implication: "FY27 margin guide implicitly raised to ~38% from 34-35%; FY28+ steps down on PCA mix 50:50 plus 1-2% R&D; gross margin 67.2% vs 75.5% FY26"}
+  - {id: "C-A3-07", check: "F16", line: "599-601; 697; 824", classification: "AMBIGUOUS", implication: "new two-year no-guidance stance; undated Rs 1,000 Cr aspiration (~2.2x H1 annualised); no numeric FY27 revenue guide, 2nd call"}
+  - {id: "C-A3-08", check: "F17", line: "absent 22-847; hook 360-371", classification: "CONFIRMATORY-NEGATIVE", implication: "CRISIL unaddressed 6th consecutive call; trigger (d) persistence leg stays confirmed"}
+  - {id: "C-A3-09", check: "F7", line: "527-533", classification: "FORWARD-SIGNAL", implication: "consolidated-only margin reporting now an 'internal policy'; trigger (c) Hobel EBITDA untestable on calls, 3rd consecutive"}
+  - {id: "C-A3-10", check: "F17", line: "absent 22-847; panel 36", classification: "AMBIGUOUS", implication: "WTD Preetham S V 29-Sep pledge (0.37%) not addressed though he was on the panel"}
+  - {id: "C-A3-11", check: "F17", line: "341-344; 360-364", classification: "AMBIGUOUS", implication: "no CFO/debt on call; filed H1 CFO/PAT 0.896x (below 0.90x upgrade line); borrowings 112.09 -> 160.98 Cr (+43.6%) vs 'disciplined balance sheet'"}
+  - {id: "C-A3-12", check: "F6", line: "97-98; 227-229; 574-575", classification: "FORWARD-SIGNAL", implication: "Saudi USD 10M Aug promise delivered as USD 4M on 01-Oct; 'fully capitalizes' vs pending tranche 2; Rs 200-250 Cr outlay exceeds ~Rs 154 Cr planned equity, funding unstated"}
+  - {id: "C-A3-13", check: "F6", line: "235; 238-241", classification: "AMBIGUOUS", implication: "Dheya diluted 35.07% -> 27.24% with no evident participation (promise was participation, modest dilution); loss share 5.5x QoQ; related party; framed as validation"}
+  - {id: "C-A3-14", check: "F6", line: "243-246; 721-723", classification: "AMBIGUOUS", implication: "Dheya 'serial production initiated' vs revenue FY28/FY29 and 'mostly testing'"}
+  - {id: "C-A3-15", check: "F6", line: "222-223", classification: "AMBIGUOUS", implication: "Hobel AS9100 'Ceph27' likely Sep-2027 vs Q1 baseline Q4 FY27: possible ~6-month slip (ASR garble)"}
+  - {id: "C-A3-16", check: "F6", line: "319-321", classification: "AMBIGUOUS", implication: "other income promised to halve; stayed Rs 6.98 Cr (~21% of pre-associate PBT), reframed 'steady'; borrowing while holding treasury"}
+  - {id: "C-A3-17", check: "F7", line: "358-371; 580-592; 769-790", classification: "FORWARD-SIGNAL", implication: "equity raise early CY2027 for capacity beyond Rs 1,000 Cr plus unnamed inorganic and MPS; size unstated; capacity messages conflict"}
+  - {id: "C-A3-18", check: "F7", line: "792-800", classification: "FORWARD-SIGNAL", implication: "serial-production count and run-rate for the 250 parts not given; deck calls them FAIs; FY27 'qualification year', scale FY28"}
+  - {id: "C-A3-19", check: "F17", line: "726-733", classification: "AMBIGUOUS", implication: "no execution update on ~Rs 87 Cr nuclear order (~50% H2 promised); only undated new bids"}
+  - {id: "C-A3-20", check: "F17", line: "430-433; absent elsewhere", classification: "AMBIGUOUS", implication: "27-Oct Hobel restructuring (results R002/R883), Naidu transfer (R769), 07-Sep SMP exits not addressed"}
+  - {id: "C-A3-21", check: "F17", line: "116; 510-511; 806-809", classification: "AMBIGUOUS", implication: "concentration claimed reduced with no number; one semi customer; 90% export book; US tariff silent with Honeywell US in Innomech"}
+  - {id: "C-A3-22", check: "F7", line: "462-465; 521-522", classification: "AMBIGUOUS", implication: "Honeywell value inside Rs 589 Cr but not stated; NDA; residual not computable (FX, FACC doubling basis)"}
+  - {id: "C-A3-23", check: "F14", line: "373-374; 430-431; 440-441", classification: "AMBIGUOUS", implication: "ASR gaps (15s, 23s, 17s) at outlook, organisation and 589 passages; get official transcript before scoring those silences"}
+  - {id: "C-A3-24", check: "F6", line: "348-350", classification: "NEUTRAL-FACT", implication: "WC target 160+ -> 150-160 days by Mar-2027; current WC days inaudible"}
+  - {id: "C-A3-25", check: "F6", line: "43; 155-166; 301; 352; 602-606", classification: "NEUTRAL-FACT", implication: "Q1 promises delivered: Q2 stronger, utilisation 65%, gross block ~2x, FACC in execution, engine LTA signed"}
+forward_signals: ["C-A3-02", "C-A3-03", "C-A3-04", "C-A3-06", "C-A3-09", "C-A3-12", "C-A3-17", "C-A3-18"]
+ambiguous: ["C-A3-01", "C-A3-05", "C-A3-07", "C-A3-10", "C-A3-11", "C-A3-13", "C-A3-14", "C-A3-15", "C-A3-16", "C-A3-19", "C-A3-20", "C-A3-21", "C-A3-22", "C-A3-23"]
+commitments:
+  - {commitment: "special process cells submission complete", implied_date: "Dec-2026", ref: "T03 l.105-107", status_word: "underway"}
+  - {commitment: "NADCAP certification", implied_date: "Mar-2027", ref: "T03 l.107", status_word: "initiated"}
+  - {commitment: "semiconductor revenue step-up", implied_date: "H2 FY27", ref: "T03 l.81-83", status_word: "expected"}
+  - {commitment: "qualify 320+ aerospace parts", implied_date: "FY27", ref: "T04 l.168-169", status_word: "underway"}
+  - {commitment: "20 more semiconductor parts", implied_date: "Dec-2026", ref: "T04 l.186-187", status_word: "targeted"}
+  - {commitment: "590+ qualified parts", implied_date: "Mar-2027", ref: "T04 l.273-277", status_word: "targeted"}
+  - {commitment: "FACC LTA execution; tenure may double", implied_date: "live; doubling undated", ref: "T04 l.155-160", status_word: "underway"}
+  - {commitment: "French Tier-1 USD 43M award qualification", implied_date: "undated", ref: "T04 l.162-164", status_word: "underway"}
+  - {commitment: "Honeywell 10-yr LTA", implied_date: "effective 1-Apr-2026", ref: "T04 l.164-166", status_word: "completed"}
+  - {commitment: "Hobel new clients", implied_date: "undated", ref: "T04 l.216-217", status_word: "underway"}
+  - {commitment: "Hobel AS9100", implied_date: "Ceph27 (likely Sep-2027)", ref: "T04 l.222-223", status_word: "underway"}
+  - {commitment: "Saudi JV manufacturing readiness", implied_date: "Mar/Apr-2027", ref: "T04 l.227-229", status_word: "underway"}
+  - {commitment: "Saudi JV capex Rs 200-250 Cr", implied_date: "undated", ref: "T31 l.574-575", status_word: "initiated"}
+  - {commitment: "Dheya critical design review", implied_date: "Dec-2026", ref: "T04 l.262-263", status_word: "underway"}
+  - {commitment: "Dheya final design approval", implied_date: "FEP-27 (likely Feb-2027)", ref: "T04 l.265", status_word: "targeted"}
+  - {commitment: "Dheya four variants available", implied_date: "Mar-2027", ref: "T04 l.248-250", status_word: "underway"}
+  - {commitment: "Dheya revenue", implied_date: "FY28 or FY29", ref: "T47-T48 l.721-723", status_word: "expected"}
+  - {commitment: "recurring PCA revenue compounding", implied_date: "FY28", ref: "T58 l.798-800", status_word: "expected"}
+  - {commitment: "H2 FY27 margins at H1 level (~38%)", implied_date: "FY27", ref: "T43 l.689-691", status_word: "committed"}
+  - {commitment: "WC days 150-160", implied_date: "Mar-2027", ref: "T05 l.348-350", status_word: "expected"}
+  - {commitment: "equity fund raise incl MPS", implied_date: "early CY2027", ref: "T05 l.365-371", status_word: "evaluating"}
+  - {commitment: "gross block ~Rs 500 Cr incl JV", implied_date: "Mar-2027", ref: "T33 l.602-606", status_word: "underway"}
+  - {commitment: "capacity for Rs 1,000 Cr mostly complete", implied_date: "FY27", ref: "T56 l.769-772", status_word: "underway"}
+  - {commitment: "Rs 1,000 Cr revenue aspiration, Hobel ~20%", implied_date: "undated", ref: "T33 l.600-601; T54 l.765", status_word: "aspiration"}
+  - {commitment: "nuclear bids on 4 reactors via VGS", implied_date: "undated", ref: "T50 l.727-733", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The headline Rs 855 Cr order book is the call's main frame, and it is the weakest number. Firm POs are Rs 266 Cr, down from Rs 280.3 Cr in June and Rs 314 Cr in March. The +715% growth claim compares the total book with last year's firm-only book; A2's 71% mishearing guess is wrong. A second weak point: if Hobel is 30% of H1 (ASR), organic ex-Hobel revenue fell about 11% QoQ. That is the Notion prove-it condition (1). Third: the call's 20% ROCE conflicts with the deck's 14.9%. Filed H1 CFO/PAT is 0.896x, just under the 0.90x upgrade line, and the call says nothing on cash or the 44% rise in borrowings. The margin read is bullish for FY27 (~38%) but signals a FY28+ step down. CRISIL is silent for a 6th call, and segment margins are now refused as policy. Get the official transcript before scoring outlook silence: ASR lost 15 s at the CFO outlook passage."

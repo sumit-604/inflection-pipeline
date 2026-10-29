@@ -1,0 +1,29 @@
+# Run log: NEOCHEM H1 FY27 (/run-quarterly, batch q2fy27-1028, batch 4)
+
+- Session start 2026-10-29. Worktree branch claude/qr-neochem-q2fy27-76041a, cut from run/quarterly-q2fy27-2026-10-28.
+- Sparse checkout: tools/sparse_session.sh runs/neochem-q2fy27 (tree 93 MB).
+- Checkout guard: git fetch origin main OK; diff over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md empty. PASS.
+- Protocol files present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md, Document_Review_Protocol_v1_1.md, Master_Project_Prompt_v3_6.md.
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract at C:\Program Files\Tesseract-OCR\tesseract.exe.
+- Document class detection:
+  - Neochem_H1FY27_Results_Board_Outcome_REBUILT_from_BullAI.pdf -> `results` (Reg 30/33 Board Outcome, "Unaudited Standalone Financial Results ... Half Year ended 30th September, 2026"). Connector-rebuilt copy, not the NSE original; page 1 carries the rebuild note.
+  - Neochem_Concall_Intimation_29Oct.pdf -> `intimation` (Reg 30 call notice, no speaker turns, no statements). A1 only per coordinator instruction; date carried into A4.
+- Period: H1 FY27 (half year ended 30-Sep-2026). SME platform, half-yearly reporting, standalone only. Folder tag q2fy27 kept for the batch.
+- Company memory: companies/NEOCHEM.md absent. Notion: search "Neochem Bio Solutions" and "NEOCHEM" returned no COMPANIES MASTER page. No spear on record. A4 frames output as PRE-THESIS READ.
+- Transcript: concall_audio/ empty at start; call is 29-Oct 14:00 IST. Re-check once before A4.
+- A1 results: complete, gate PASS (10/10 pages, R001-R363). subagent_tokens 55,532, 12 tool uses, 116 s.
+- A1 intimation: complete, gate PASS (2/2 pages, I001-I033). subagent_tokens 36,305, 5 tool uses, 41 s. A1 only by instruction.
+- A2 results: complete, gate PASS (363/363 IDs, zero orphans, count test matched). subagent_tokens 78,656, 15 tool uses, 164 s.
+- COST CHECK: A2 (78,656) above A1 (55,532). Diagnosed before A3. A2's task message carried no inputs/ path. Its reported reads are the structured file (43,408 bytes) and the fulltext fallback (20,216 bytes). The structured file is 2.1x the fulltext, so the enumeration source is larger than the document text. Precedent: AEQUS q2fy27 A2 results 133,902 vs A1 129,364. Verdict: no source re-ingestion; the gap is fixed agent overhead plus a structured file larger than the source. The agent transcript file was empty (0 bytes), so the tool trace could not be read. Proceeding to A3.
+- A3 results: complete, gate PASS (F1-F17 all statused, blank_checks []). 20 findings A3-01..A3-20 (7 FORWARD-SIGNAL, 11 AMBIGUOUS). subagent_tokens 115,213, 7 tool uses, 458 s.
+- Transcript re-check before A4 (2026-10-29): concall_audio/ still empty. The call is 29-Oct 14:00 IST. A4 runs on filed documents only; Role 5 not run.
+- A4 merged review: complete. PROCEED WITH FLAGS, PRE-THESIS READ, branch 8A-W. 21 questions, 11 monitorables. subagent_tokens 162,364, 11 tool uses, 503 s.
+- A5 audit loop 0: INCOMPLETE. 1 FACTUAL (F6), 4 MISSING (F1 to A3; F3, F4, F5 to A4), 1 CONTRADICTION (F2), 12 STYLE (logged, no loop). Arithmetic PASS, brief gate PASS. A4 verdict unchanged. subagent_tokens 230,969, 23 tool uses, 1,097 s.
+- Correction loop 1 opened: A3 (resumed) dispositions F1 orphan rows; A4 (resumed) grafts F1-F6; A5 (resumed) re-audits once.
+- Loop 1 A3 (resumed): 3 dispositions added (R005-R006 no finding; R041-R044 carried to A3-20(b) and A3-02; R236-R237 no finding). Counter 134,613 cumulative, loop share 19,400, 3 tool uses, 131 s.
+- Loop 1 A4 (resumed): F1-F6 accepted and patched; verdict unchanged; Key Notes headline now leads with operating EBIT +42.6%; drafting count 7 to 6. Counter 239,194 cumulative, loop share 76,830, 7 tool uses, 401 s.
+- Loop 1 A5 (resumed): re-audit COMPLETE, F1-F6 resolved, drift clean, 4 new STYLE notes (S13-S16). Counter 312,856 cumulative, loop share 81,887, 9 tool uses, 357 s. Correction loops: 1.
+- Close-out: session-cost.md, operator-brief.md, notion-payload.md written. Nothing written to Notion. Transcript folder still empty at close-out.
+- 2026-10-29 15:24 IST: concall_audio/ still empty. The operator pasted the call transcript into the session. Saved verbatim as inputs/Neochem_H1FY27_Concall_Transcript_operator_paste.txt (MGMT, unverified). No A1-A5 pass on it; Role 5 open.
+- Operator instruction "Update the brief": operator-brief.md revision 2 adds the call. FY27E base moves 142.2 -> 155.0 Cr revenue, 15.8 -> 17.2 Cr PAT; FY28E base 160.7 -> 190.7 Cr, 17.5 -> 20.8 Cr. Revision 1 base kept as the lower reading. Review, audit and notion-payload unchanged (they rest on filed documents only).
+- 2026-10-29 Notion save (coordinator relayed operator approval "We can save all the reviews in Notion."): live search of the workspace ("Neochem") and of COMPANIES MASTER (collection://345bb2b9-d3ab-8032-9b46-000ba16ab827, "Neochem Bio") found no NEOCHEM page. Per the coordinator instruction, no page was created. Nothing written to Notion; 0 inserts, 0 properties. Payload stays in notion-payload.md for the operator to decide on page creation.

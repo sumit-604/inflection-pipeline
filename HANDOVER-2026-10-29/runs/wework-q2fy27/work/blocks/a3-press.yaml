@@ -1,0 +1,49 @@
+stage: A3-forensics
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "presentation (press)"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/wework-q2fy27/work/forensics_press_wework_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F16", line: "191-194", classification: "AMBIGUOUS", implication: "All figures IGAAP-equivalent, Ind AS 116 excluded; no Ind AS number, lease liability or rent in release; 'net of ESOP costs' reads two ways; bridge only in deck"}
+  - {id: "A3-02", check: "F16", line: "105; 74-75; 129; 90", classification: "FORWARD-SIGNAL", implication: "Portfolio occupancy given with no comparator; members/desks proxy fell ~84.9% to 83.8% QoQ; Q2 absorption 71% (8.3k/11.7k) vs 97% LTM framing; +4.5k Oct desks need +3.7k members to hold 83.7%; Q3 dilution base case"}
+  - {id: "A3-03", check: "F16", line: "146; 148-149", classification: "FORWARD-SIGNAL", implication: "H1 capex self-funding rests on Q2: derived Q1 FCFF -46.1 Cr, H1 FCFF ~+15.8 Cr (4% cushion on 379.8 FCFO); capex amount NOT FOUND; H2 self-funding at risk as openings accelerate"}
+  - {id: "A3-04", check: "F16", line: "92-93", classification: "AMBIGUOUS", implication: "FCFO 1.5x EBITDA (74.8 Cr excess) vs ~1.03x in Q1; formula undefined; deposit/working-capital timing gain that reverses vs durable; ask for Q2 FCFO bridge"}
+  - {id: "A3-05", check: "F16", line: "150-151", classification: "AMBIGUOUS", implication: "333.6 Cr net debt swing; H1 FCFF explains ~5%; source, Mar-26 net debt, gross debt and cash NOT FOUND; net cash excludes lease liabilities"}
+  - {id: "A3-06", check: "F16", line: "94", classification: "AMBIGUOUS", implication: "ROCE +590 bps QoQ during record capex; formula, numerator period and treatment of ROU assets/cash undefined"}
+  - {id: "A3-07", check: "F16", line: "75; 84-86; 81", classification: "FORWARD-SIGNAL", implication: "H1 PAT +149.5% and +279 bps margin ride a weak Q1 FY26 base (derived PAT 8.4 Cr, margin ~15.0%); YoY margin expansion slowed ~+480 bps (Q1) to +92 bps (Q2); H2 YoY margin gains likely small"}
+  - {id: "A3-08", check: "F6", line: "103-104; 132-133", classification: "AMBIGUOUS", implication: "Committed 13.0 mn sq ft includes non-binding LOIs; derived pipeline 3.2 mn sq ft (~47k desks, +33%), undated, LOI share NOT FOUND"}
+  - {id: "A3-09", check: "F14", line: "98", classification: "AMBIGUOUS", implication: "GCC 40.8% of undefined 'core revenue'; concentration on total revenue not stateable"}
+  - {id: "A3-10", check: "F14", line: "43; 95; 198; 92, 175; 74", classification: "NEUTRAL-FACT", implication: "S/C basis of release figures unstated; rating agency unnamed; leadership claim unsourced; FCFO QoQ 67.5% vs 67.1-67.4% implied by H1-Q2 (~0.2 Cr); record claim with no comparator"}
+  - {id: "A3-11", check: "F17", line: "191-193; 146; 150", classification: "AMBIGUOUS", implication: "Silent on rent-to-revenue, lease liabilities, gross debt/cash, capex amount, pipeline dates; 1 quarter (first review); pull from deck forensics before routing to management"}
+forward_signals: ["A3-02", "A3-03", "A3-07"]
+ambiguous: ["A3-01", "A3-04", "A3-05", "A3-06", "A3-08", "A3-09", "A3-11"]
+commitments:
+  - {commitment: "4.5k further desks operational", implied_date: "first week Oct 2026", ref: "lines 90, 130-131", status_word: "completed"}
+  - {commitment: "Committed footprint 13.0 mn sq ft incl signed leases and LOIs (pipeline ~3.2 mn sq ft)", implied_date: "undated", ref: "lines 103-104, 132-133, 185", status_word: "initiated"}
+  - {commitment: "Accelerating investments for long-term growth", implied_date: "undated", ref: "lines 112-113", status_word: "underway"}
+  - {commitment: "H1 capex fully funded by operating cash flows", implied_date: "H1 FY27; H2 untested", ref: "line 146", status_word: "completed"}
+  - {commitment: "Largest half-year of capacity openings", implied_date: "H1 FY27", ref: "line 125", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Five-page release; statement checks N.A. Value sits in wording versus arithmetic. The release attaches QoQ comparators to almost every metric except portfolio occupancy, the one that fell (members/desks proxy matches stated 83.7% within 0.1 pp and implies about -110 bps QoQ). The headline picks YoY member versus capacity growth because QoQ ran the other way (desks +8.8%, members +7.3%). The capex self-funding claim and FCFF turning positive both depend on a single quarter of FCFO at 1.46x EBITDA, after a Q1 with derived FCFF of -46.1 Cr. That makes Q3 the test: 4.5k October desks plus a 3.2 mn sq ft LOI-inclusive pipeline press occupancy and cash at once. Derived capex assumes FCFF = FCFO minus capex; formula unstated, so capex stays NOT FOUND. H1 growth rates ride a weak Q1 FY26 base; use Q2 YoY. Pipeline note: A1 anchors R168 and R197 point to page 4 lines 201/207; true location page 5 lines 226 and 232-234. A2 did not flag these; values unaffected."

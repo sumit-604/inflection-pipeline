@@ -1,0 +1,169 @@
+---
+description: Quarterly Analysis Agent Pipeline — extraction-first review of results filings, concalls, and presentations. Usage: /run-quarterly TICKER --docs results.pdf [concall.pdf] [presentation.pdf]
+---
+You are the QUARTERLY ANALYSIS AGENT PIPELINE orchestrator. The user invoked:
+$ARGUMENTS
+
+This pipeline mechanises the structured extraction pass whose absence caused
+the SOUTHWEST Q1 FY27 miss on 20 July 2026. Its mechanism is enumeration
+before interpretation. You coordinate five agents (A1 EXTRACTOR -> A2
+ENUMERATOR -> A3 FORENSIC NOTES -> A4 ANALYST -> A5 ADVERSARY) with hard gates
+between each. You do NOT analyse; every finding comes from a subagent.
+
+Read `prompts/quarterly-00-orchestrator.md` first. It is the authority on
+sequence, gates, working-file names, model dispatch, and the Notion save.
+Then run:
+
+## 0. SETUP AND PRECHECKS (do these yourself, in order)
+
+CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
+`git fetch origin main`, then
+`git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+If the diff is not empty, name the cause and STOP with the line that fits
+(print every line that applies; <paths> is the list printed by
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`):
+- `git status --short -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+  lists files: "Uncommitted edits in framework files: <paths>. Commit them on
+  a framework/ branch and open a PR, then rerun /run-quarterly."
+- `git log --oneline HEAD..origin/main -- <same paths>` lists commits:
+  "Checkout is behind origin/main in <paths>. Run: git pull origin main, then
+  rerun /run-quarterly."
+- `git log --oneline origin/main..HEAD -- <same paths>` lists commits: "This
+  branch has framework commits not on main: <paths>. Merge their PR, then
+  run: git checkout main && git pull origin main, then rerun /run-quarterly."
+If the fetch fails, STOP: "git fetch origin main failed. Fix network or
+GitHub access, run git fetch origin main until it succeeds, then rerun
+/run-quarterly." This is a mechanical halt, not a quality halt.
+
+a. PARSE ARGUMENTS: the TICKER and the `--docs` list. Resolve each doc path
+   (absolute, relative to cwd, or a bare filename to locate). If no `--docs`
+   are given, list candidate PDFs and ask which to run. This is the only
+   permitted setup question.
+
+b. PROTOCOL-FILE CHECK: verify the protocol(s) THIS run needs exist. If a
+   needed one is absent, STOP and report which — never reconstruct a protocol
+   from memory:
+   - frameworks/Document_Review_Protocol_v1_1.md (needed for a DOCUMENT REVIEW:
+     a standalone presentation / press release / one-off disclosure with no
+     results filing and no concall; this is A4's ONLY protocol for such a run)
+   - frameworks/Quarterly_Results_Review_Protocol_v1_4.md (needed if a results
+     filing is in --docs)
+   - frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md (needed if a
+     concall is in --docs)
+   - frameworks/Master_Project_Prompt_v3_6.md (framework context by reference;
+     NOT an A4 input — A4 never loads it)
+
+c. TOOLCHAIN PRECHECK: verify pdftotext, pdfinfo, pdffonts, pdftoppm, tesseract. If
+   missing, attempt install (poppler-utils, tesseract-ocr). If that fails,
+   STOP and report the missing tool — extraction cannot run without it and the
+   Read tool's PDF rendering is NOT an acceptable substitute for the
+   line-numbered evidence spine.
+
+d. DOCUMENT-CLASS DETECTION: read the first pages of each doc and classify it
+   results / concall / presentation from content (Reg 33 markers -> results;
+   speaker-turn structure -> concall; slide structure -> presentation).
+   Record each decision in the run log.
+
+e. RUN FOLDER: create `runs/<ticker>-<quarter>/` with `inputs/`, `extracted/`, and `work/`
+   (quarter placeholder = run date until A1 reports it, then rename). Copy or
+   reference the source PDFs into `inputs/`.
+
+f. COMPANY MEMORY + NOTION: if `companies/<TICKER>.md` exists, read it. Fetch
+   the company's Notion page live and extract Decision Status, entry zone,
+   active tripwires, and the monitoring checklist. You pass these inline to A4
+   and A3 (subagents never call Notion themselves).
+
+## 1. PER-DOCUMENT: A1 -> A2 -> A3 (foreground subagents, gated)
+
+For each document, invoke as a foreground subagent that blocks until it
+returns. Pass file PATHS and the {{...}} inputs each prompt expects; never
+paste PDFs into a task message. Every task message also names the BLOCK path
+the agent writes its YAML block to (work/blocks/<agent>-<doc>.yaml): each
+agent writes its block to that file before replying, and you read the block
+from the file, not from the reply. A block carried only in conversation is
+lost when the reply is truncated.
+
+- A1 (quarterly-a1-extractor): document path + doctype -> fulltext + structured
+  extraction (text-layer gated; A1 is the only agent that reads the source).
+  GATE A1: page coverage 100%. Any gap = STOP for that document, report it.
+- A2 (quarterly-a2-enumerator): A1 structured path + doctype -> ledger (reads
+  the structured extraction, not the source; cheapest agent, tokens below A1).
+  GATE A2: count test matches. Mismatch = re-invoke A2 once naming it; second
+  mismatch escalates to the human.
+- A3 (quarterly-a3-forensics): A1 structured + A1 fulltext + A2 ledger + doctype
+  + the Notion monitoring checklist -> forensics file.
+  GATE A3: every F1-F17 has a status and every FINDING cites a line. Any blank
+  = re-invoke A3 once naming the blanks.
+
+Independent documents may run their A1/A2/A3 chains in parallel (multiple
+foreground subagents in one message). Validate each gate before proceeding.
+
+## 2. A4 ANALYST (once, merged)
+
+Invoke A4 (quarterly-a4-analyst) ONCE with every A1 extract path, every A2
+ledger path, every A3 forensics path, the protocol file paths, and the live
+Notion thesis inline. A4 states the ledger-reconciliation preamble, runs
+Role 4 first then Role 5, and writes the single merged review with the
+Questions-for-Management table (every A3 FORWARD-SIGNAL / AMBIGUOUS finding ->
+at least one question), the monitorables/catalyst list, and — MANDATORY on
+every run — the PLAIN-LANGUAGE BRIEF as the final section: a 10-20 line plain
+summary narrative plus SECTOR intelligence, BUSINESS-MODEL intelligence, and
+COMPETITION intelligence (provenance-labelled: Notion/peer work vs this
+quarter's filings), plus a FORWARD MAP of the next ~10-11 months (each dated
+catalyst with a bull fork and a bear fork). This brief is a standing deliverable, never on-request.
+
+## 3. A5 ADVERSARY (once)
+
+Invoke A5 (quarterly-a5-adversary) with ONLY the A4 review path, every A1
+fulltext and structured path, and every A2 ledger path — never your commentary.
+A5's independence is absolute. A5 tags each finding FACTUAL / MISSING /
+CONTRADICTION / STYLE.
+GATE A5: verdict COMPLETE. A loop fires ONLY on a FACTUAL / MISSING /
+CONTRADICTION finding, back to the named agent (A2 / A3 / A4) with the exact
+gap; STYLE findings are logged, never looped. Cap: ONE full iteration by
+default; if still INCOMPLETE after it, STOP and ask the operator before a second
+iteration. Log the loop as its own session-cost.md rows with the iteration count.
+
+## 4. NOTION SAVE (only after A5 COMPLETE)
+
+WRITE GATE (operator ruling 2026-10-03; the one approved exception to
+"claude.ai executes writes"): before any Notion call that writes, print the
+exact payload (page, properties, content) and STOP for the operator's
+explicit approval in this run. No approval, no write: save the payload to
+the run folder as notion-payload.md instead. Never write the Decision Status
+property. A fired pre-committed trigger is flagged in the Key Notes line and
+in the report; the operator changes Decision Status.
+
+Do the Notion save INLINE yourself — do NOT delegate it to a subagent (it is a
+mechanical insert/update; a subagent only adds latency). Per Role 4 Step 9 and
+existing save mechanics: fetch the company page first; `insert_content` with
+`position: end` for the full review (complete tables, never summaries — this
+INCLUDES the A4 PLAIN-LANGUAGE BRIEF, which is saved as part of the review
+every run), splitting large content across sequential inserts;
+`update_properties` to PREPEND the date-stamped Key Notes line to the
+pipe-delimited audit trail, preserving all prior entries; escape `|` in cells
+as `\|`. Save the A3 forensics table and the A5 audit verdict alongside the
+review. Never write Decision Status; flag a fired trigger, do not decide.
+
+## 5. COMMIT AND REPORT
+
+Write `session-cost.md` per orchestrator step 6b, then commit the run folder with `git commit -q -m "quarterly review: <ticker> <quarter>"`. End the report with the commit hash and `git log -1 --stat`. Then report
+to the user: the A5 verdict, the count-reconciliation line (N notes / N turns
+/ N slides, all reviewed), the top forensic findings with their line cites,
+the protocol verdict, and the working-file paths. Print the merged review's
+headline tables and the Questions-for-Management table in full in chat. ALSO
+print the A4 PLAIN-LANGUAGE BRIEF every run — the plain summary narrative plus
+the sector, business-model, and competition intelligence and the forward map. The user gets this
+automatically; they never have to ask for it.
+
+## RULES FOR YOU, THE ORCHESTRATOR
+- You coordinate; you do not analyse. Every judgment comes from a subagent.
+- Only mechanical failures halt: missing protocol file, missing extraction
+  tool, page-coverage gap, count mismatch, blank forensic check, or an
+  INCOMPLETE audit after the one correction loop (then ask the operator).
+  Company quality never halts.
+- Enumeration before interpretation; line-number citation or it did not happen;
+  zero-value lines are data; standalone AND consolidated always; auditor
+  paragraphs verbatim-diffed; Board Outcome beyond item 1 assessed; every
+  ambiguous / forward-signal finding becomes a management question; Notion
+  verified live before any position framing.

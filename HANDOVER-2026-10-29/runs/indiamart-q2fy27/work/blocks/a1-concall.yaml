@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 0              # plain text, no pages; line coverage 808/808
+formfeed_count: 0
+line_count: 808
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1 (lakh x0.01)"
+text_layer_present: false  # n/a, plain text
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/indiamart-q2fy27/extracted/indiamart-concall-q2fy27-fulltext.md"
+structured_path: "runs/indiamart-q2fy27/extracted/indiamart-concall-q2fy27-structured.md"
+structured_counts:
+  number: 256
+  entity: 72
+  forward: 126
+  date: 123
+  qualifier: 37
+structured_id_range: "R001-R614"
+gate_a1: pass
+gap_note: ""
+exhaustive_sweep: true

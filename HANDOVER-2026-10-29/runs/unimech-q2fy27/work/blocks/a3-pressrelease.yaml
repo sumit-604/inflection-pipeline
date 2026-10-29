@@ -1,0 +1,48 @@
+stage: A3-forensics
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/unimech-q2fy27/work/forensics_pressrelease_unimech_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: PASS
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "P-A3-01", check: "F16", line: "55", classification: "AMBIGUOUS", implication: "8-times order book divides total book (Rs 266 Cr confirmed POs + ~Rs 589 Cr LTA/award, deck R656) by prior-year confirmed-PO-only Rs 105 Cr (deck R048); like-for-like confirmed POs +153% (2.5x); if Q1 Rs 280.3 Cr was confirmed POs, confirmed book fell ~5% QoQ"}
+  - {id: "P-A3-02", check: "F16", line: "92-94", classification: "AMBIGUOUS", implication: "LTA/award pool unnamed and unsized in release; same pool is ~Rs 589 Cr of book; Honeywell LTA is a 'may issue' framework with no value, so part of the book may carry no committed volume"}
+  - {id: "P-A3-03", check: "F16", line: "74-81", classification: "AMBIGUOUS", implication: "Hobel never named; 98% YoY and ~96% of FY26 include an acquisition step-up (consolidated w.e.f. 01-May-2026); 40% margin credited to leverage though Hobel runs >50%; Q2 40% and H1 38% sit above the 34-35% FY27 guide, so either the guide is stale or H2 compresses"}
+  - {id: "P-A3-04", check: "F16", line: "78", classification: "NEUTRAL-FACT", implication: "40% = EBITDA ex other income / revenue from operations = 39.8%; reconciles to results R511+R487+R493-R451; no definition change"}
+  - {id: "P-A3-05", check: "F6", line: "94-96", classification: "FORWARD-SIGNAL", implication: "Semiconductor H2 FY27 'sharp step-up' has no number and an unnamed customer; '20-month pipeline' is ambiguous; needs an H1 base and H2 figure to score"}
+  - {id: "P-A3-06", check: "F6", line: "96-97", classification: "FORWARD-SIGNAL", implication: "Serial production 'over coming quarters' has no date, programme or revenue; not scoreable until management names programmes and a first serial quarter"}
+  - {id: "P-A3-07", check: "F6", line: "99", classification: "FORWARD-SIGNAL", implication: "Special-process cell 'underway' with no capex or date in release; deck R591 dates NADCAP by FY27-end; promise-ledger item"}
+  - {id: "P-A3-08", check: "F6", line: "99-101", classification: "AMBIGUOUS", implication: "Saudi JV framed as present capacity; filed production target late Mar/early Apr 2027 and second tranche undated; 49% NCI omitted"}
+  - {id: "P-A3-09", check: "F14", line: "106", classification: "NEUTRAL-FACT", implication: "'Total Revenue' = filing 'Total income' incl. other income 69.8 Mn; 81% vs 98% YoY gap is other income -29%; use revenue from operations downstream"}
+  - {id: "P-A3-10", check: "F17", line: "49-147 (absence); checklist 115-121", classification: "AMBIGUOUS", implication: "Release silent on CRISIL, Hobel margin, CFO/PAT, WC, utilisation, organic split, Honeywell value, Saudi tranche, pledge, QIP, FY27 margin guide; route to 28-Oct call questions"}
+forward_signals: ["P-A3-05", "P-A3-06", "P-A3-07"]
+ambiguous: ["P-A3-01", "P-A3-02", "P-A3-03", "P-A3-08", "P-A3-10"]
+commitments:
+  - {commitment: "Semiconductor revenue sharp step-up after H1 commercial revenues", implied_date: "H2 FY27 (Oct-2026 to Mar-2027)", ref: "lines 94-96 (R094, R111)", status_word: "initiated"}
+  - {commitment: "Serial production scaling into compounding multi-year revenue runway", implied_date: "coming quarters (not dateable)", ref: "lines 96-97 (R096, R112)", status_word: "underway"}
+  - {commitment: "Automated special-process cell installation", implied_date: "none in release; deck R591 NADCAP by FY27-end", ref: "line 99 (R097)", status_word: "underway"}
+  - {commitment: "Middle East expansion via Saudi Arabia JV", implied_date: "none in release; filed production late Mar/early Apr 2027", ref: "lines 99-100 (R098)", status_word: "underway"}
+  - {commitment: "Transition from tooling to recurring flying-part manufacturing via LTAs/award programs", implied_date: "none", ref: "lines 92-94 (R093)", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Every release number ties to the filing (EBITDA = PBT + finance + D&A - other income = 490.1 Mn; PAT incl. associate loss, NCI immaterial). The value is in the framing. The 8-times order book divides a total that is 69% LTA/award letters by last year's confirmed-PO-only base; like-for-like confirmed POs grew 2.5x, and if Q1 Rs 280.3 Cr was confirmed POs they fell QoQ. The book is now mostly framework value, the kind Honeywell's 'may issue' LTA represents, so book-to-revenue conversion is the forward test. The release credits growth and the 40% margin to demand and leverage without naming Hobel, which drives the YoY base effect and part of the mix. Q2 40% and H1 38% sit above the 34-35% FY27 guide, so either the guide is stale or H2 compresses. Triggers (a) and (b) are not fired on filed numbers. F17 applied to a press release because the checklist was injected; silence here weighs less than on a call."

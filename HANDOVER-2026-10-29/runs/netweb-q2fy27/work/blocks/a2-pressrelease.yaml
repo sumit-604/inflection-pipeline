@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/ledger_pressrelease_netweb_q2fy27.md"
+counts:
+  notes: 3
+  line_items: 63
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 20
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 3
+  slide_numbers: 103
+flags_raised: [RESTATED, LAYOUT_SHIFT, MISSING_FROM_STRUCTURED]
+ids_in_structured: 170
+ids_referenced: 170
+orphan_ids: []
+missing_from_structured: ["M001 line 160 strengthened balance sheet after raise", "M002 line 159 chip-agnostic design", "M003 line 63 headline H1 profit exceeds FY26", "M004 line 116 record quarter highest-ever claim"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "No ZERO_STANDING rows: the table has no nil cells, and no PBT, tax, finance cost or depreciation lines are printed. Four qualitative claims were absent from A1 (M001-M004); they are narrative, not numeric, so loop-back to A1 is optional. AI Systems share differs by basis: 59.9% is H1 (R018), 58.4% is Q2 (R094). Net Debt (136 Mn) bracket sign is undefined in the doc (R170). Board meeting times are not in this document."

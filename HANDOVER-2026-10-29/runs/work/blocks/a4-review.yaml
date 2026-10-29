@@ -1,0 +1,77 @@
+stage: A4-analyst
+company: "530077"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+correction_loop: "1 applied: A5 F1-F4, M1-M3"
+docs_merged: [results]
+ledger_reconciliation:
+  notes: 5
+  turns: 0
+  slides: 0
+  all_reviewed: true
+  a3_findings_incorporated: ["A3-01", "A3-02", "A3-03", "A3-04", "A3-05", "A3-06", "A3-07", "A3-08", "A3-09", "A3-10", "A3-11", "A3-12", "A3-13", "A3-14", "A3-15", "A3-16", "A3-17", "A3-18", "A3-19"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "ND (no Notion COMPANIES MASTER page; pre-thesis read)"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2 FY27", gap: "ND", reason: "standalone only; no consolidated statements filed"}
+  - {period: "Q1 FY27", gap: "ND", reason: "standalone only"}
+  - {period: "Q2 FY26", gap: "ND", reason: "standalone only"}
+  - {period: "H1 FY27", gap: "ND", reason: "standalone only"}
+  - {period: "H1 FY26", gap: "ND", reason: "standalone only"}
+  - {period: "FY26", gap: "ND", reason: "standalone only"}
+questions_for_management:
+  - {q: "Break down the Rs 3.72 Cr YoY rise in Q2 other expenses (8.10 vs 4.38 Cr, L231); how much will not recur in Q3?", from_finding_id: "A3-11"}
+  - {q: "Inventory Rs 52.91 Cr at 30-Sep (L159): tonnage, share under signed contracts, price vs carrying cost per kg?", from_finding_id: "A3-12"}
+  - {q: "Name the FY26 discontinued business (PBT 23.38 Cr, L240); operating profit or disposal gain; buyer related party; consideration outstanding?", from_finding_id: "A3-01"}
+  - {q: "What lowers ETR to 7.1% Q2 / 11.8% H1 vs 25.17% (L237), in Rs Cr, and what FY27 rate is expected?", from_finding_id: "A3-04"}
+  - {q: "ST borrowings Rs 12.00 Cr (L182) with Rs 39.05 Cr investments: facility type, rate, expected 31-Mar-2027 level?", from_finding_id: "A3-09"}
+  - {q: "Of H1 other income Rs 2.87 Cr (L222), Rs 1.70 Cr ties to treasury; what is the other Rs 1.18 Cr, and expected treasury income on the smaller book?", from_finding_id: "A3-11"}
+  - {q: "Tax account: 8.64 + 101.00 - 53.02 = 56.62 Lakhs owed vs (6.62) asset and nil liability (L157, L188, L316); where is the 50.00 Lakh difference?", from_finding_id: "A3-05"}
+  - {q: "Buy-back: price per share, total consideration, extinguishment date, and the 40.10 Lakh gap between CF equity outflows 2,257.85 and equity reduction 2,217.75 (L329-L331)?", from_finding_id: "A3-10"}
+  - {q: "Extinguishment date; do Q1/H1 EPS 6.65/10.11 (L254) use the Ind AS 33 weighted average?", from_finding_id: "A3-08"}
+  - {q: "Are the Rs 5.52 Cr deposits run down inside CFO (L164, L311) over three months, and will they be classed as investing?", from_finding_id: "A3-16"}
+  - {q: "Amount and scheme of export incentives inside H1 revenue Rs 54.43 Cr (L262)?", from_finding_id: "A3-17"}
+  - {q: "Single reportable segment? H1 FY27 revenue split export/domestic and by product line?", from_finding_id: "A3-15"}
+  - {q: "Reason for the Freshtrop to Puretrop rename (L60); any change in business, brand or promoter holding?", from_finding_id: "A3-19"}
+  - {q: "Reg 23(9) RPT disclosure for H1 FY27 filed? Total RPT purchases, sales, payments in Rs Cr?", from_finding_id: "A3-14"}
+  - {q: "Will the Q3 FY27 notes disclose the rename, discontinued op, buy-back and other-expense spike (silent at L260-L263)?", from_finding_id: "A3-14"}
+  - {q: "Nature of reclassifiable OCI (12.00)/+12.06 Lakhs (L247); hedge book in USD and tenor at 30-Sep-2026?", from_finding_id: "A3-06"}
+  - {q: "Provisions nil (L187) but remeasurement OCI exists (L245): where is the gratuity obligation, and is it funded?", from_finding_id: "A3-02"}
+  - {q: "FX loss 22.51 Lakhs on FCY cash (L335) with nil EEFC balance (L348): where is the FX cash held?", from_finding_id: "A3-03"}
+  - {q: "Buy-back at ~Rs 200 = ~22x FY26 continuing EPS 9.11 and 1.16x book, funded by net investment sales 23.51 Cr and ST debt 11.77 Cr (L322, L323, L327): what return on forgone treasury did the board assume, and what net FY27 EPS effect?", from_finding_id: "A3-10"}
+monitorables:
+  - {item: "Q3 FY27 core PBT ex-OI YoY vs Q3 FY26 column (Step 8C single cleanest metric)", implied_date: "2027-02-14", source_ref: "A3-11, L233, L222"}
+  - {item: "Q3 FY27 other expenses % revenue vs Q3 FY26 comparative ratio (bull at or below; bear >=5 pp above; context H2 FY26 avg 12.4%)", implied_date: "2027-02-14", source_ref: "A3-11, L231, L221"}
+  - {item: "Q3 FY27 effective tax rate vs 25.17%", implied_date: "2027-02-14", source_ref: "A3-04, L237"}
+  - {item: "Q3 FY27 notes silence re-count (rename, discontinued op, buy-back, RPT)", implied_date: "2027-02-14", source_ref: "A3-14, L260-L263"}
+  - {item: "Reg 23(9) RPT disclosure H1 FY27 on BSE", implied_date: "2026-10-27", source_ref: "operator watch list; A3 section 6"}
+  - {item: "Shareholding pattern Sep-2026: promoter holding post buy-back, pledge", implied_date: "2026-10-21", source_ref: "Step 5 pledge ND"}
+  - {item: "Buy-back BSE filings: offer price (inferred Rs 200), extinguishment date", implied_date: "2026-06-30 (completed)", source_ref: "A3-07, A3-08, A3-10, L329"}
+  - {item: "FY26 Annual Report: discontinued-op note, buyer, segment, gratuity, subsidiaries, RPT", implied_date: "already published (date ND)", source_ref: "A3-01, A3-02, A3-15"}
+  - {item: "FY27 audited: 31-Mar-2027 inventory vs 20.23 Cr, borrowings vs 1.09 Cr, FY27 CFO, tax roll", implied_date: "2027-05-30", source_ref: "A3-05, A3-09, A3-12, L159, L182, L317"}
+  - {item: "H2 FY27 material margin vs H2 FY26 33.0% (derived)", implied_date: "2027-05-30", source_ref: "A3-12, L225, L227"}
+  - {item: "Q1 FY28 seasonal stock build vs Q1 FY27 33.36 Cr", implied_date: "2027-08-14", source_ref: "A3-12, L227"}
+  - {item: "FY27 AR / AGM: hedge policy, actuarial basis, export-incentive amount", implied_date: "2027-09-30", source_ref: "A3-02, A3-06, A3-17"}
+  - {item: "Filing care: drafting defects repeat or clear (incl. CF 'year ended' title L289, TCI label on OCI subtotal L249)", implied_date: "2027-02-14", source_ref: "A3-18"}
+flags:
+  - "Q2 core PBT ex-OI -57.2% YoY (159.21 vs 371.86 Lakhs, L233/L222); continuing PAT -10.2% flattered by 7.1% ETR (L237)"
+  - "Other expenses +84.8% YoY to 30.7% of revenue, no note (L231)"
+  - "Cash conversion INDETERMINATE-WITH-DIRECTION (adverse): H1 CFO (991.50), (1,543.62) ex deposit fall 552.12 (L164), vs PAT 694.64 Lakhs (L317, L239)"
+  - "Inventory 5,291.18 Lakhs +161.5% vs Mar; H1 build +14.6% on flat revenue; H1 margin gain +962 bps unproven (L159, L227)"
+  - "FY26 total EPS 31.73 is 71.3% discontinued; base is continuing EPS 9.11 (L258, L254)"
+  - "Net cash 6,576.65 -> 2,770.32 Lakhs; ST borrowings 1,199.55 (L182); treasury income base shrinking"
+  - "Buy-back at inferred Rs 200 = 22.0x FY26 continuing EPS, 1.16x book, at CONTEXT 52-week high; treasury- and debt-funded; ~EPS-neutral net (-1.2% to +1.5%), not +16.0% gross"
+  - "Tax-account roll gap ~50.00 Lakhs confirmed in source (L157, L188, L316)"
+  - "Equity roll gap 40.10 Lakhs (L331)"
+  - "Notes silent on rename, discontinued op, buy-back, RPT; Note 3 missing (L260-L263); drafting errors L289 (CF 'year ended' for 6M) and L249 (OCI subtotal labelled TCI); auditor GREEN = no modification only"
+  - "Capex below depreciation (0.39x H1, 0.16x FY26; L319, L230); net PPE -162.08 Lakhs in H1 (L148); FCF flattered"
+  - "PRE-THESIS: no Notion page, no Spear line, no companies/530077.md"
+  - "Standalone only; S-vs-C gap ND; subsidiaries not confirmed absent"
+  - "Downstream tracker: 0 signals (floor 3)"
+  - "Role 4 Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged"
+plain_language_brief_included: true
+analyst_note: "The quarter and the half disagree. H1 continuing PAT doubled only because Q1 FY26 had a core loss of 1.04 Cr (derived). Q2 alone shows core PBT -57.2%. Q1 FY27 material consumed was flat YoY (L225), yet material cost charged to Q1 P&L fell 21.1% on flat revenue while the stock build rose 13.4%. Under the nature-of-expense format the inventory-change line absorbs conversion cost, so the margin is not clean until the March 2027 unwind. Correction loop 1 added the buy-back economics: at an inferred Rs 200 the buy-back was 22x continuing EPS and 1.16x book, and about EPS-neutral net of forgone treasury income. The Q3 other-expense test now anchors to the Q3 FY26 column, because H2 FY26 ran 12.4%. The verdict stays PROCEED WITH FLAGS and cash stays INDETERMINATE-WITH-DIRECTION. Nineteen questions exceed the protocol's 5-8 because every A3 forward-signal and ambiguous finding needs one."
+review_path: "runs/530077-q2fy27/work/review_530077_q2fy27.md"

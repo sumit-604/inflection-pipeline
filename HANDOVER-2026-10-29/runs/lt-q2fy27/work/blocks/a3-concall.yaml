@@ -1,0 +1,85 @@
+stage: A3-forensics
+company: "LT"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/lt-q2fy27/work/forensics_concall_lt_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: FINDING
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "C-01", check: "F6", line: "L313, L319-L320", classification: "FORWARD-SIGNAL", implication: "Inflow guide 10-12% held after H1 +22%; if group-level, H2 inflow growth must run below the band. Guide basis unstated."}
+  - {id: "C-02", check: "F6", line: "L126-L128, L260", classification: "FORWARD-SIGNAL", implication: "Pipeline flat only by mix: energy conventional prospects -38% YoY (3.35 to 2.07 trn); energy green doubled, 72% solar, the line being deferred."}
+  - {id: "C-03", check: "F6", line: "L490-L492, L592-L595", classification: "AMBIGUOUS", implication: "Revenue guide 10-12% kept despite Q2 PPM +20% because of ME logistics; H2 called a steep ask. Seasonality or expected H2 slowdown?"}
+  - {id: "C-04", check: "F6", line: "L169, L331-L332", classification: "FORWARD-SIGNAL", implication: "Q2 PPM margin 7% vs FY27 target 7.8%; only guide held at 'reasonably confident'; H2 must exceed target."}
+  - {id: "C-05", check: "F6", line: "L182-L186, L336-L338, L486, L493-L494", classification: "FORWARD-SIGNAL", implication: "NWC guide revised below 10%; 1.7% record partly advance-funded; management already guides H2 moderation. Float peak, not run-rate."}
+  - {id: "C-06", check: "F6", line: "L173-L176", classification: "FORWARD-SIGNAL", implication: "PAT +33% partly from treasury income on WC float; shrinks as advances unwind. Amount unstated."}
+  - {id: "C-07", check: "F6", line: "L108-L112", classification: "FORWARD-SIGNAL", implication: "Hyderabad Metro divestment slipped 30 Sep to 31 Dec 2026, no reason given; deconsolidation and ROE lift move out with it."}
+  - {id: "C-08", check: "F6", line: "L172-L173, L221-L222, L248-L249, L426-L430", classification: "FORWARD-SIGNAL", implication: "Jobs below margin recognition threshold in PPM, infra, carbon lite; hydrocarbon crossing 'maybe' Q4 and beyond; a slip moves margin into FY28."}
+  - {id: "C-09", check: "F6", line: "L506-L508, L515, L521, L525-L528, L754", classification: "AMBIGUOUS", implication: "AI capex USD 750m plus 70 MW more in 1.5-2 yrs with new debt; USD 1.8bn not confirmed; segment home PPM vs TPS unclear."}
+  - {id: "C-10", check: "F6", line: "L444-L447, L641-L649, L654-L655", classification: "AMBIGUOUS", implication: "Defence conversion heavily hedged, 'this year' undefined, timelines 'too early'; treat defence inflow as unscheduled."}
+  - {id: "C-11", check: "F6", line: "L614-L622", classification: "AMBIGUOUS", implication: "PDO USD 6-7bn horizon stated as 4-5 yrs and 3-4 yrs; one of four contractors; right to bid, not share."}
+  - {id: "C-12", check: "F6", line: "L759-L770, L823-L829", classification: "AMBIGUOUS", implication: "About 1 lakh crore cash partly to L31 investments; ROE-safe claim rests on take-or-pay; pace and subsidiary leverage unquantified."}
+  - {id: "C-13", check: "F6", line: "L86, L102, L105-L106, L534-L535", classification: "NEUTRAL-FACT", implication: "Dated milestones for tracker: AI factory Jan 2027, EV motors Q3 FY27, semis revenue in 1-2 quarters."}
+  - {id: "C-14", check: "F7", line: "L255-L256, L365-L366, L417-L419, L668-L677", classification: "FORWARD-SIGNAL", implication: "ME solar: inflow -45%, significant impact, revenue deferment, possible shortfall; H2 recovery rests on hope. Green H2 revenue and inflow risk."}
+  - {id: "C-15", check: "F7", line: "L697-L709", classification: "FORWARD-SIGNAL", implication: "Oman-yard hydrocarbon output must cross Hormuz; balance consignments still being explored; delay hits milestones, billing and threshold timing."}
+  - {id: "C-16", check: "F7", line: "L662-L664, L697-L699", classification: "AMBIGUOUS", implication: "Contradiction: yards 'not affected' vs yard output 'has to cross' Hormuz. Which projects and what value is stuck?"}
+  - {id: "C-17", check: "F7", line: "L412-L416, L476-L481, L596-L600", classification: "AMBIGUOUS", implication: "Logistics and insurance costs incurred now; reimbursement hoped, not agreed; management endorsed 'no margin impact'. Claim and margin risk."}
+  - {id: "C-18", check: "F7", line: "L199-L200, L213, L218-L222, L738-L743", classification: "FORWARD-SIGNAL", implication: "Infra (42% of book): inflow -13%, revenue +6%, margin 5.7 vs 6.2; WET claims will take time; management guides continued margin pressure."}
+  - {id: "C-19", check: "F7", line: "L729-L730, L219-L220", classification: "AMBIGUOUS", implication: "'Infra margins moving northward' contradicts the reported YoY decline; basis (sequential or ex-WET) unstated."}
+  - {id: "C-20", check: "F16", line: "L165-L166, L808-L812", classification: "AMBIGUOUS", implication: "Group EBITDA 10% to 8.7% described as 'maintaining' margin; analysts told not to scrutinise divergence. Framing data point."}
+  - {id: "C-21", check: "F16", line: "L789-L804", classification: "FORWARD-SIGNAL", implication: "Segment/PPM EBITDA includes allocated other income; about 80 bps of compression filled by it; 40-50 bps corporate timing reversal undated. PPM margin partly other-income built."}
+  - {id: "C-22", check: "F16", line: "L293-L295", classification: "FORWARD-SIGNAL", implication: "Tech segment margin cushioned by one-time LTTS Smart World divestment gain, amount unstated; cushion drops next quarter."}
+  - {id: "C-23", check: "F16", line: "L130, L305-L307", classification: "AMBIGUOUS", implication: "Realty carved out of PPM; are PPM comparatives restated and are FY27 guides on the new basis?"}
+  - {id: "C-24", check: "F15", line: "L77-L80, L88-L89, L108-L110, L288-L289, L294-L295", classification: "NEUTRAL-FACT", implication: "Entity changes stated: Vyoma AI Ltd, LNTN Compute Pvt Ltd, L&T Metro Rail Hyderabad exit pending, LTTS SWC divestment, L&T Semiconductor Technologies; verify in filed list."}
+  - {id: "C-25", check: "F17", line: "L296-L302, L778-L786", classification: "AMBIGUOUS", implication: "Group vs core split partial: tech and L&T Finance waved to public domain; no core PAT or minority split. Silence 1 quarter."}
+  - {id: "C-26", check: "F17", line: "L120-L121, L130-L136, L148-L149", classification: "NEUTRAL-FACT", implication: "Book-to-bill and ME share of inflow not stated; derived Q2 inflow/revenue 1.88x group, 2.16x PPM; A4 computes TTM from filings."}
+forward_signals: ["C-01", "C-02", "C-04", "C-05", "C-06", "C-07", "C-08", "C-14", "C-15", "C-18", "C-21", "C-22"]
+ambiguous: ["C-03", "C-09", "C-10", "C-11", "C-12", "C-16", "C-17", "C-19", "C-20", "C-23", "C-25"]
+commitments:
+  - {commitment: "AI factory (LNTN Compute, 10,000+ B300 GPUs, Chennai) commissioning", implied_date: "Jan 2027", ref: "L81-L86", status_word: "underway"}
+  - {commitment: "Data center business reorganised under Vyoma AI Ltd", implied_date: "not dated", ref: "L77-L80", status_word: "underway"}
+  - {commitment: "EV traction motors commercial production", implied_date: "Q3 FY27", ref: "L105-L106", status_word: "initiated"}
+  - {commitment: "BESS capacity expansion at Kanchipuram", implied_date: "not dated", ref: "L102-L103", status_word: "underway"}
+  - {commitment: "Hyderabad Metro divestment completion", implied_date: "31 Dec 2026 (revised from 30 Sep 2026)", ref: "L108-L112", status_word: "underway, slipped"}
+  - {commitment: "FY27 order inflow growth 10-12%", implied_date: "FY27", ref: "L319-L320", status_word: "reaffirmed"}
+  - {commitment: "FY27 revenue growth 10-12%", implied_date: "FY27", ref: "L329-L330, L592-L593", status_word: "reaffirmed"}
+  - {commitment: "FY27 PPM EBITDA margin 7.8%", implied_date: "FY27", ref: "L331-L332", status_word: "reaffirmed (reasonably confident)"}
+  - {commitment: "FY27 group NWC below 10%", implied_date: "FY27", ref: "L336-L338, L487-L499", status_word: "revised (improved)"}
+  - {commitment: "Solar ordering recovery outside India", implied_date: "H2 FY27", ref: "L357-L366, L469-L472", status_word: "expected"}
+  - {commitment: "Offshore wind execution pick-up", implied_date: "following quarters / FY27", ref: "L327-L328, L404", status_word: "underway"}
+  - {commitment: "Hydrocarbon jobs cross margin recognition threshold", implied_date: "Q4 FY27 and beyond", ref: "L428-L430", status_word: "expected"}
+  - {commitment: "MHI JV profitable on carbon lite order", implied_date: "not dated", ref: "L392-L395", status_word: "expected"}
+  - {commitment: "Defence order conversion", implied_date: "end of this year (CY26 or FY27 unclear)", ref: "L444-L447", status_word: "expected"}
+  - {commitment: "AMCA bid submission", implied_date: "Oct-end 2026", ref: "L641-L649", status_word: "imminent"}
+  - {commitment: "AI data center capacity 100 MW+", implied_date: "1.5-2 years", ref: "L511-L524", status_word: "planned"}
+  - {commitment: "Semiconductor revenue traction", implied_date: "next 1-2 quarters", ref: "L530-L535", status_word: "expected"}
+  - {commitment: "Logistics and insurance cost compensation from customers", implied_date: "not dated", ref: "L476-L481", status_word: "in discussion"}
+  - {commitment: "Remaining Oman-yard consignments through Hormuz", implied_date: "not dated", ref: "L697-L709", status_word: "exploring"}
+  - {commitment: "PDO Oman USD 6-7bn opportunity", implied_date: "4-5 yrs or 3-4 yrs", ref: "L614-L622", status_word: "framework signed"}
+  - {commitment: "ME T&D: not much impact in H2", implied_date: "H2 FY27", ref: "L665-L667", status_word: "expected"}
+  - {commitment: "Infra claims conversion; margin pressure until then", implied_date: "not dated", ref: "L738-L743", status_word: "pending"}
+  - {commitment: "Green hydrogen/ammonia only with take-or-pay; not ROE dilutive", implied_date: "not dated", ref: "L759-L770", status_word: "policy stated"}
+  - {commitment: "Realty Lakshya L31 plan unchanged", implied_date: "L31 horizon", ref: "L630-L635", status_word: "unchanged"}
+  - {commitment: "Cash surplus partly to L31 investments with subsidiary leverage", implied_date: "not dated", ref: "L822-L829", status_word: "policy stated"}
+  - {commitment: "Execution paced to customer payments (WC discipline)", implied_date: "ongoing", ref: "L830-L836", status_word: "policy stated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The forward tell is mix, not level. The pipeline is flat at Rs 10.3 trn only because energy green doubled (72% solar EPC) while energy conventional, the Q2 inflow engine, fell 38%. Growth now sits in the line management says Middle East logistics is deferring. Guidance was held, not raised, after H1 inflow +22% and Q2 PPM revenue +20%. If the guide is group-level, H2 inflow growth must fall below 10-12%, and management calls H2 revenue a steep ask. The 1.7% NWC record is advance-funded with moderation already guided, and Q2 PAT growth leans on treasury income from that float. Margin optics are cushioned twice: segment EBITDA carries allocated other income (about 80 bps), and tech margin carries a one-time LTTS gain. The best A4 questions are two internal contradictions: hydrocarbon 'least impact' vs the Hormuz crossing, and infra 'moving northward' vs 5.7% vs 6.2%. ASR attribution: R291/R292 and R394 read as analyst assertions. R460 'PPS' is likely Technology Platforms and Services, not PPM (L284-L287). Every figure is heard, unverified."

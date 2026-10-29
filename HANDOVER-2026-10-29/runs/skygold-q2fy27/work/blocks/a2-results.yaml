@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "SKYGOLD"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/skygold-q2fy27/work/ledger_results_skygold_q2fy27.md"
+counts:
+  notes: 15
+  line_items: 245
+  zero_standing: 33
+  agenda_items: 7
+  auditor_paras: 12
+  entities: 6
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, RESTATED, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 963
+ids_referenced: 963
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Line items counted 245 labels (780 cells) against 245 render-read data rows in the fulltext. zero_standing 33 is line items (53 nil cells); 5 more nil Annexure A items (R911-R915) are flagged but not in that count. Template signals worth reading: the consolidated cash flow carries acquisition of subsidiary, gain on disposal of subsidiary, repayment of loan and share capital proceeds lines, all nil this half, while Purvi Gems closed Oct 7 after quarter end. Consolidated exceptional item row (fraud, Rs 735.49 lakhs) is nil in four of six columns. Entities: 6 in consolidation list; Shri Rishab Gold converted to Pvt Ltd Aug 22 2026; two subsidiaries were reviewed by other auditors and are unnamed; predecessor auditor unnamed. Letter signature 12:55:29 follows meeting end 12:43, no flag. Cons CF footer reads 'standalone' (R949). Board letter has no AR, dividend, director or auditor items."

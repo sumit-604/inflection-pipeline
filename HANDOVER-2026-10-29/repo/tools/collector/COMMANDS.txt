@@ -1,0 +1,88 @@
+═══════════════════════════════════════════════════════
+  SCREENER COLLECTOR — COMMAND CHEAT SHEET
+  Save this file. Open it whenever you forget.
+═══════════════════════════════════════════════════════
+
+
+STEP 1 — RUN THIS FIRST (every time you open Command Prompt)
+──────────────────────────────────────────────────────────────
+cd "C:\Users\SUMIT SHARMA\OneDrive\Desktop\screener_collector"
+──────────────────────────────────────────────────────────────
+STEP 2A — DOWNLOAD ONE COMPANY
+──────────────────────────────────────────────────────────────
+
+py screener_collect.py https://www.screener.in/company/WELCORP/
+
+  Other companies — just change the name at the end:
+
+  py screener_collect.py https://www.screener.in/company/KRN/
+  py screener_collect.py https://www.screener.in/company/VENUSPIPES/      
+  py screener_collect.py https://www.screener.in/company/SJLOGISTICS/
+  py screener_collect.py https://www.screener.in/company/AEROFLEX/
+  py screener_collect.py https://www.screener.in/company/CAPACITE/
+  py screener_collect.py https://www.screener.in/company/MONARCHSURVEYS/
+  py screener_collect.py https://www.screener.in/company/SAMHI/
+  py screener_collect.py https://www.screener.in/company/E2ENETWORKS/`
+  py screener_collect.py https://www.screener.in/company/OSWAL/
+  py screener_collect.py https://www.screener.in/company/CFF/
+  py screener_collect.py https://www.screener.in/company/CREATIVEGFX/ 
+  py screener_collect.py https://www.screener.in/company/POSITRON/
+  py screener_collect.py https://www.screener.in/company/AVPINFRA/
+  py screener_collect.py https://www.screener.in/company/TEJASNET/
+  py screener_collect.py https://www.screener.in/company/SRM/
+
+
+──────────────────────────────────────────────────────────────
+STEP 2B — DOWNLOAD ALL COMPANIES AT ONCE
+──────────────────────────────────────────────────────────────
+
+py collect_batch.py
+
+  (Edit companies.txt first to add/remove companies)
+
+
+═══════════════════════════════════════════════════════
+  HOW TO FIND A COMPANY'S SCREENER.IN URL
+═══════════════════════════════════════════════════════
+
+  1. Go to screener.in in your browser
+  2. Search for the company name
+  3. Click on it
+  4. Look at the browser address bar — it shows:
+     https://www.screener.in/company/COMPANYNAME/
+  5. Copy that URL and use it in the command above
+
+
+═══════════════════════════════════════════════════════
+  WHERE FILES ARE SAVED
+═══════════════════════════════════════════════════════
+
+  G:\My Drive\stock analysis\stock analysis-_output [Company Name]\
+  
+  Example for iValue:
+  G:\My Drive\stock analysis\stock analysis-_output Ivalue Infosolutions Ltd\
+
+
+═══════════════════════════════════════════════════════
+  IF SOMETHING GOES WRONG
+═══════════════════════════════════════════════════════
+
+  Problem: "The system cannot find the path"
+  Fix: Make sure you ran STEP 1 first
+
+  Problem: "py is not recognized"
+  Fix: Close Command Prompt and open a fresh one
+
+  Problem: Login fails
+  Fix: Check your .env file — make sure password is correctvc  )P n0\\
+
+
+  Problem: Files not downloading
+  Fix: Tell Claude what error you see — it will fix the script
+
+═══════════════════════════════════════════════════════
+
+py convert_sheets.py to Google Sheet 
+
+
+py check_readiness.py

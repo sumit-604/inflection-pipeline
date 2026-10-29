@@ -1,0 +1,46 @@
+# Run log, NETWEB q2fy27 (/run-quarterly, batch 2026-10-28)
+
+- 10:00 IST. Sparse checkout extended to runs/netweb-q2fy27. Branch claude/qr-netweb-q2fy27-a60c5c.
+- Checkout guard: git fetch origin main OK; framework diff vs origin/main empty. PASS.
+- Protocol files present: Quarterly_Results_Review_Protocol_v1_4.md, Quarterly_Concall_Analysis_Protocol_v1_1.md (Document_Review and Master present, not passed to A4).
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract at C:\Program Files\Tesseract-OCR\tesseract.exe (full path).
+- Document classes (orchestrator decision, from content and batch record):
+  - Netweb_Q2FY27_Results.pdf -> results (7 pages, copier scan; OCR fallback).
+  - Netweb_Q2FY27_Investor_Presentation.pdf -> presentation (22 slides, earnings deck).
+  - Netweb_Q2FY27_Strategy_Presentation.pdf -> presentation, label "strategy" (28 slides).
+  - Netweb_Q2FY27_Press_Release.pdf -> presentation, label "pressrelease" (3 pages).
+  - Netweb_Q2FY27_Concall_Transcript_ASR.txt -> concall (machine transcript, speaker-turn structure from moderator lines).
+- Company memory: companies/NETWEB.md absent. Not created.
+- Notion: COMPANIES MASTER page read live (last edited 2026-10-26 17:13 UTC). Decision Status HELD. Excerpts saved to work/notion_context_2026-10-26.md and work/notion_checklist_2026-10-26.md. No Notion write (batch instruction 6).
+- Notion already holds a claude.ai Q2 FY27 results review dated 25-Oct-2026. This run is independent.
+- Call date conflict: coordinator brief says 24-Oct; Notion Key Notes say 26-Oct 15:30 IST call, audio filed 26-Oct. Logged in SOURCES.md.
+- Prior-quarter run folder for NETWEB: none in runs/. A2 prior ledger and A3 prior extract = not available.
+- 10:08 IST. A1 x5 launched in parallel.
+- A1 pressrelease: complete, 3/3 pages, gate PASS. 52,094 tok, 207 s, 13 tool uses. LAYOUT_SHIFT rows in P&L paired via -raw.
+- A1 concall: complete, 754/754 input lines (6 audio-chunk pages), gate PASS. 80,772 tok, 217 s. ASR defects logged as QUALIFIER rows (order book 26,629 vs 2,629; PAT growth 348.8% vs 334.8%; garbled 00:30-00:31 and 00:37).
+- A2 pressrelease and A2 concall launched.
+- A1 strategy: complete, 28/28 pages, gate PASS. 76,557 tok, 259 s. AMBIGUOUS_MAPPING chart rows on p9, p18, p21. A2 strategy launched.
+- A1 presentation: complete, 22/22 pages, gate PASS. 84,436 tok, 315 s. p13 pie % have no text layer (ND); p21 QIP mapping from layout order. A2 presentation launched.
+- A2 pressrelease: complete, 170/170 IDs, 0 orphans, gate PASS. 48,636 tok (< A1 52,094), 109 s. 4 MISSING_FROM_STRUCTURED narrative rows M001-M004 kept in ledger; no A1 loop (narrative only). A3 pressrelease launched.
+- A2 concall: complete, 261/261 IDs, 0 orphans, gate PASS. 47,816 tok (< A1 80,772), 120 s. A3 concall launched.
+- A1 results: complete, 7/7 pages, gate PASS. 82,345 tok, 354 s, 26 tool uses. Text layer present but garbled scanner OCR; treated as scan: 300 dpi + Tesseract psm6 all pages; pp3-6 checked against images, statement tables rebuilt; corrections logged (H1 current tax 776.16 not 716.16; other bank balances 7,911.11). pp1, 2, 7 OCR only; orchestrator looked at p2 (auditor report, clean prose). Standalone results only (auditor addresses "the Company").
+- A2 results launched.
+- A2 strategy: complete, 336/336 IDs, 0 orphans, gate PASS. 58,766 tok (< A1 76,557), 206 s. p18 concentration and p9 mix chart values stay AMBIGUOUS_MAPPING; not re-rendered (text-layer rule; earnings deck carries the concentration figures). A3 strategy launched.
+- A2 presentation: complete, 423/423 IDs, 0 orphans, gate PASS. 65,526 tok (< A1 84,436), 240 s. A3 presentation launched.
+- A2 results: complete, 428/428 IDs, 0 orphans, gate PASS. 83,217 tok, 238 s. COST CHECK: A2 (83,217) > A1 (82,345) by 1%. Diagnosed: A2 reports it read only extracted/ files, no inputs/ access; A1 was script-assisted (OCR tables rebuilt by script), so its token count is low for a 428-row file. Not source re-ingestion. Proceeded.
+- A1 results follow-up (mechanical, not a loop): resumed to read page 1 image for board conclusion time (R428 ILLEGIBLE) and CS name, and add Annexure II row 3 (A2 MISSING_FROM_STRUCTURED) as R429. A3 results waits for it.
+- A3 pressrelease: complete, 174/174 rows, F1-F17 all statused, gate PASS. 83,115 tok, 300 s. 12 findings (3 FORWARD-SIGNAL, 8 AMBIGUOUS, 1 NEUTRAL).
+- A1 results follow-up: done. 12,333 tok incremental (agent total 94,678), 48 s. Conclusion time 2:40 PM (handwritten); CS Lohit Chhabra; R429 added. Orchestrator appended a mechanical ID-reconciliation addendum to the results ledger (R428, R351, R429 = MISSING-1). A3 results launched.
+- A3 concall: complete, 261/261 rows, F1-F17 all statused, gate PASS. 140,070 tok, 486 s. 22 findings (6 FORWARD-SIGNAL, 12 AMBIGUOUS). A3 reports A2 line-cite defects on R152, R153, R157-R159, R193 (claims unaffected; correct lines in forensics report).
+- A3 strategy: complete, 336/336 rows, F1-F17 all statused, gate PASS. 139,407 tok, 531 s. 20 findings (4 FORWARD-SIGNAL, 10 AMBIGUOUS). AMBIGUOUS chart mappings left unresolved.
+- A3 results: complete, 123,161 tok, 392 s. 429/429 rows, F1-F17 all statused (9 FINDING, 4 PASS, 4 N.A.), gate PASS. 15 findings (5 FORWARD-SIGNAL, 6 AMBIGUOUS). Statements tie (BS casts, CF closes, other equity rolls to 0.00). F5 prior-quarter auditor diff could not run (no prior extract). A1 line drift R330-R332 (L313), R345 (L374); values correct.
+- A3 presentation: complete, 156,319 tok, 591 s. 423/423 rows, F1-F17 all statused (8 FINDING, 1 PASS, 8 N.A.), gate PASS. 19 findings (8 FORWARD-SIGNAL, 8 AMBIGUOUS). Mapping query M1: HPS vs data-centre-server series possibly swapped by A1 (immaterial; not overridden).
+- 15/15 gate blocks present and pass. Transcript check before A4 (batch instruction 2): ASR transcript was present from run start and is in the run. A4 launched.
+- A4: complete, 460,057 tok, 1,269 s, 29 tool uses. Verdict PROCEED WITH FLAGS; cash INDETERMINATE-WITH-DIRECTION; Decision Status HELD verified; branch 8A; 30 questions, 17 monitorables, 88 A3 findings incorporated. A5 launched (inputs: review, 5 fulltexts, 5 structured, 5 ledgers only).
+- A5: complete, 363,220 tok, 1,237 s, 41 tool uses. Verdict INCOMPLETE, loop_back_to A4. FACTUAL 2 (regroup bound 64 bps Q1; recurring dPAT share 91.5%), MISSING 6 (three bear counters, FX gain, promoter 66.98% anchor, strategy-deck sector data), STYLE 7 (logged). Audit 0 brief PASS; coverage PASS; no orphans.
+- LOOP 1 (the one permitted loop): A4 resumed with the exact gaps; then A5 re-audit once.
+- LOOP 1 A4: complete, agent running total 609,482 tok (increment 149,425), 931 s, 16 tool uses. F1, F2, M1-M6 fixed; S1-S4, S7 applied; S5, S6 not applied. Verdict PROCEED WITH FLAGS and cash class unchanged. Review rewritten in full (Edit tool unavailable to A4), changes tagged [REV1-<id>]. A5 resumed for its one re-audit.
+- LOOP 1 A5 re-audit: verdict COMPLETE. 0 FACTUAL/MISSING/CONTRADICTION; style N1-N3 + S5 logged, no loop.
+- 11:30 IST. Close-out: session-cost.md, operator-brief.md, notion-payload.md written. Committed inputs/, extracted/, work/*.md, work/blocks/, close-out files. Not committed: work/ocr_results/*.png (derived page images, regenerable with pdftoppm 300 dpi), work/a1/ and work/*.py, work/*.txt (agent scratch).
+- 2026-10-29. Notion save requested by the batch coordinator, quoting the operator: "We can save all the reviews in Notion." Page re-fetched first: https://app.notion.com/p/353bb2b9d3ab81148b87c619f5507cb6, unchanged since 2026-10-26 17:13 UTC. Content prepared as 11 sequential inserts (review in 6 parts, A3 forensics tables in 4 parts, A5 loop-1 verdict plus operator brief in 1). First insert_content call DENIED by the Claude Code auto-mode permission classifier: "Permission for this action was denied by the Claude Code auto mode classifier. Reason: [External System Writes]." Nothing was written to Notion: 0 inserts, 0 properties (Key Notes and Analysis Date untouched; Decision Status never in scope). No workaround attempted. notion-payload.md stays the record of the pending write.
+- 2026-10-29. Notion save DONE after the operator allowed notion-update-page in this session ("I allowed it, retry"; operator approval relayed by the coordinator: "We can save all the reviews in Notion."). Page https://app.notion.com/p/353bb2b9d3ab81148b87c619f5507cb6 (COMPANIES MASTER, "Netweb Technologies India Ltd"). 11 insert_content calls at position end, all succeeded: (1-6) header line plus the full merged review work/review_netweb_q2fy27.md after loop 1 (Sections A, B, C, monitorables, REVISION LOG, PLAIN-LANGUAGE BRIEF; closing YAML block omitted), (7-10) A3 findings table and F1-F17 scorecard for results, presentation, strategy, press release and concall, (11) A5 loop-1 verdict with its YAML block plus operator-brief.md. update_properties: Key Notes (28-Oct line prepended with " \| ", prior trail kept byte-for-byte, verified by re-fetch) and Analysis Date 2026-10-28. Decision Status not written (still HELD). Current Market Price not written (payload marked it optional). Text escapes: "~" written as "\~", tag-like "<" as "\<", per the Notion markdown spec.

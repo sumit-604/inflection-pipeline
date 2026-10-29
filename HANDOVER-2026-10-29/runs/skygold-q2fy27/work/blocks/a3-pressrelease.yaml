@@ -1,0 +1,45 @@
+stage: A3-forensics
+company: "SKYGOLD"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/skygold-q2fy27/work/forensics_pressrelease_skygold_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: PASS
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "P-A3-01", check: "F8", line: "86, 90", classification: "AMBIGUOUS", implication: "ETR 22.0% Q2 FY27 vs 23.8% Q2 FY26, H1 22.1% vs 24.7%, all below 25.17%; ~9.2 Cr H1 shield; ~7 ppt of 111.9% H1 PAT growth is tax; ETR step-up risk, source NOT FOUND"}
+  - {id: "P-A3-02", check: "F16", line: "94, 102", classification: "AMBIGUOUS", implication: "Operational PBT 173.4 > reported 166.0 only in Q2 FY27 despite 'less non operational income' definition; implies ~7.4 Cr non-op loss in other income; possible one-sided gold hedge / metal-loan MTM exclusion"}
+  - {id: "P-A3-03", check: "F14", line: "98, 94", classification: "AMBIGUOUS", implication: "Op PAT add-back 9.16 exceeds Op PBT add-back 7.4; implied op ETR 20.1% vs reported 22.0%; tax bridge needed"}
+  - {id: "P-A3-04", check: "F14", line: "98", classification: "NEUTRAL-FACT", implication: "H1 Op PAT printed 234.5 vs Q1+Q2 243.46; margin 5.5% and YoY 120.2% fit 243.5; transposition"}
+  - {id: "P-A3-05", check: "F14", line: "100", classification: "NEUTRAL-FACT", implication: "Op PAT % QoQ printed 20 bps vs ~58 bps computed; copied from PAT margin row"}
+  - {id: "P-A3-06", check: "F14", line: "127-128", classification: "AMBIGUOUS", implication: "CFO comparison (100.9) labelled H1 FY27, same as current; if H1 FY26, swing ~237.6 Cr; no CF statement, WC or debt in release to verify"}
+  - {id: "P-A3-07", check: "F6", line: "128", classification: "FORWARD-SIGNAL", implication: "CFO/EBITDA 39% vs earlier 20% guidance; horizon NOT FOUND; no new guidance for H2 or FY27"}
+  - {id: "P-A3-08", check: "F13", line: "130-132", classification: "FORWARD-SIGNAL", implication: "Board approved completion of 100% Purvi Gems acquisition for 9 Cr cash on 7-Oct-2026; with rename (line 50) and studded positioning (line 137) signals diamond / studded build; Purvi financials NOT FOUND"}
+  - {id: "P-A3-09", check: "F15", line: "130", classification: "NEUTRAL-FACT", implication: "New 100% subsidiary enters Q3 FY27 consolidation perimeter"}
+  - {id: "P-A3-10", check: "F17", line: "80, 84, 127", classification: "AMBIGUOUS", implication: "Silent on 7 of 8 watch items, partial on WC via CFO; no volume / gold-price split behind +61% revenue and +121 bps margin; silent on QIP up to 1,800 Cr approved same day"}
+forward_signals: ["P-A3-07", "P-A3-08"]
+ambiguous: ["P-A3-01", "P-A3-02", "P-A3-03", "P-A3-06", "P-A3-10"]
+commitments:
+  - {commitment: "Acquire 100% of Purvi Gems & Jewellery (India) Pvt Ltd for Rs 9 Cr cash", implied_date: "2026-10-07", ref: "line 130-132 (R167, R172-R174)", status_word: "completed"}
+  - {commitment: "CFO/EBITDA guidance 20% (H1 FY27 delivered 39%)", implied_date: "NOT FOUND", ref: "line 128 (R159, R171)", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three items carry the read. (1) Operational rows exceed reported only in Q2 FY27 (PBT +7.4, PAT +9.16), though the note defines them as reported less non-operational income. A non-operational loss sat in other income this quarter. If it is a gold hedge or metal-loan mark-to-market while gold inventory gains stay in EBITDA, the classification is one-sided. A PAT add-back larger than the PBT add-back has no clean tax explanation. (2) ETR sits about 300 bps under 25.17% and fell YoY; about 7 ppt of the 111.9% headline PAT growth is tax, not operations. (3) H1 EBITDA margin rose 132 bps while revenue rose 68%. With no volume or gold-price split, making-charge gains cannot be separated from inventory gains on a rising gold price. The CFO turn (136.7 vs a mislabelled (100.9)) is the bull data point. Yet a QIP of up to Rs 1,800 Cr, about 7.7x H1 PAT, was approved the same day and the release omits it. Ask why a 39% CFO/EBITDA business needs that equity. H1 Operational PAT 234.5 is almost certainly 243.5."

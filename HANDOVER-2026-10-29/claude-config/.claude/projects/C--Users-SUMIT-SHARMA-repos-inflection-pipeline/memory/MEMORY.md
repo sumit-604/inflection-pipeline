@@ -1,0 +1,8 @@
+- [Market read must be plain narrative](feedback-market-read-narrative.md) — story form, few numbers, 30+ points; operator hand-downloads Chartink CSVs
+- [Chartink breadth pipeline](project-chartink-breadth-pipeline.md) — "the 34 CSVs" = table tiles; two schedulers 21:00/21:30; API quirks; nothing committed yet
+- [Trade share job](reference-trade-share-job.md) — Gmail contract notes to Discord; lives in repos\trade_share; UTF-8 fix 30-Sep
+- [Hold the documents](feedback-hold-the-documents.md) — operator expects filings downloaded, not snippet-searched; label cloud MCP reads as such
+- [Approximate, don't recompute](feedback-approximate-not-recompute.md) — after rulings give rough estimates, no agent reruns; 25% is a guide
+- [Scheduler wake failures](project-scheduler-wake-failures.md) — timezone flips to UTC-4, stop-on-battery kills catch-ups; re-run order after travel
+- [Quarterly batch capacity](project-quarterly-batch-capacity.md) — 3-4 parallel sessions max on this 6 GB machine; ~2.3M tokens per name; stalls and late filings
+- [Shallow card FY28 and confidence additions](feedback-shallow-card-fy28-confidence.md) — operator ruling pending; BSE browser route, no curl resume

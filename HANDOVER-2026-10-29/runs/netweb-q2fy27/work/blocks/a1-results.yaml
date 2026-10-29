@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 7
+formfeed_count: 7
+line_count: 383
+unit_convention: "Millions (INR million)"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true   # garbled non-embedded OCR layer, unusable; treated as scan
+extraction_mode: scan-ocr
+render_candidates: []
+rendered_pages: ["1-7: copier scan, embedded text layer garbled; pdftoppm 300dpi + Tesseract psm6; pages 3,4,5 tables rebuilt from images"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/extracted/netweb-results-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/extracted/netweb-results-q2fy27-structured.md"
+structured_counts:
+  number: 345
+  entity: 23
+  forward: 10
+  date: 24
+  qualifier: 27
+structured_id_range: "R001-R429"
+gate_a1: pass
+gap_note: ""

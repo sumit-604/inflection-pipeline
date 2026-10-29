@@ -1,0 +1,80 @@
+stage: A4-analyst
+company: "SKYGOLD"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+loop_1_fixed: ["A5-F1 (Step 5-S SA WC change H1 FY26 (210.09), delta +20.47)", "A5-F2 (trailing PE 33.6x on owners' T4Q PAT 395.89; incl-NCI 32.8x labelled alternative)", "A5-M2 (acquisition-economics probe: Step 1-G, Flag 3, CE-5, Brief part 3, Q9, new Q20)", "A5-M3 (perimeter qualifier: Step 2, Diag 3, Step 3, Step 4, Verdict, Brief part 1, new Q21)", "A5-M4 (deck p19 retires internal funding: Flag 4, Flag 7, register, Brief)", "Ledger M005-M017 read and dispositioned", "STYLE S2 (Flag 7), S4 (register)"]
+docs_merged: [results, presentation, pressrelease, egm-notice (supporting, A1 rows only), esop-intimation (supporting, A1 rows only)]
+ledger_reconciliation:
+  notes: 15
+  turns: 0
+  slides: 41
+  all_reviewed: true
+  a3_findings_incorporated: ["R-A3-01","R-A3-02","R-A3-03","R-A3-04","R-A3-05","R-A3-06","R-A3-07","R-A3-08","R-A3-09","R-A3-10","R-A3-11","R-A3-12","R-A3-13","R-A3-14","R-A3-15","R-A3-16","R-A3-17","R-A3-18","R-A3-19","R-A3-20","R-A3-21","R-A3-22","R-A3-23","R-A3-24","R-A3-25","R-A3-26","D-A3-01","D-A3-02","D-A3-03","D-A3-04","D-A3-05","D-A3-06","D-A3-07","D-A3-08","D-A3-09","D-A3-10","D-A3-11","D-A3-12","D-A3-13","D-A3-14","D-A3-15","D-A3-16","D-A3-17","D-A3-18","D-A3-19","D-A3-20","D-A3-21","D-A3-22","D-A3-23","D-A3-24","D-A3-25","D-A3-26","D-A3-27","D-A3-28","D-A3-29","D-A3-30","P-A3-01","P-A3-02","P-A3-03","P-A3-04","P-A3-05","P-A3-06","P-A3-07","P-A3-08","P-A3-09","P-A3-10"]
+  deck_missing_units_reviewed: 17
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "none on record (no Notion page, no companies/SKYGOLD.md, no Spear line); framed as PRE-THESIS READ"
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2FY26", gap_pct_of_sa_pat: 22.18}
+  - {period: "Q1FY27", gap_pct_of_sa_pat: 73.14}
+  - {period: "Q2FY27", gap_pct_of_sa_pat: 51.52}
+  - {period: "H1FY26", gap_pct_of_sa_pat: 26.50}
+  - {period: "H1FY27", gap_pct_of_sa_pat: 60.49}
+  - {period: "FY26", gap_pct_of_sa_pat: 32.45}
+questions_for_management:
+  - {q: "Share and tenor of gold-on-credit or unfixed-price gold in Sep-26 trade payables (437.47 Cr; non-MSME 255.16 Cr); balance at 31-Oct", from_finding_id: "R-A3-17, D-A3-24, D-A3-09, D-A3-06, P-A3-06"}
+  - {q: "Subsidiary-wise revenue, EBITDA, PAT Q2FY27 and Q2FY26 after eliminations; name the two other-auditor subsidiaries; entity booking 434.89 Cr outside-India revenue", from_finding_id: "R-A3-03, R-A3-04, R-A3-15, D-A3-04"}
+  - {q: "Rs 1,800 Cr raise: amount per object, first tranche instrument (equity vs convertibles/warrants), why internal cash no longer suffices at 39% CFO/EBITDA", from_finding_id: "R-A3-06, R-A3-19, R-A3-21, R-A3-12, D-A3-07, D-A3-12, P-A3-10"}
+  - {q: "Kg processed Q2FY27, Q1FY27, Q2FY26; advance-gold share of kg; split of +61.0% revenue into price, volume, mix", from_finding_id: "D-A3-20, D-A3-30, D-A3-27, D-A3-29, P-A3-10"}
+  - {q: "Lien or margin-money share of 382.32 Cr other current financial assets; management net debt at 30-Sep-2026", from_finding_id: "R-A3-18, D-A3-26, D-A3-25"}
+  - {q: "Entity carrying sub-statutory tax (cons ETR 22.09%, subsidiary 15.31%); FY27 ETR; advance-tax status given 66.36 accrued vs 25.87 paid", from_finding_id: "R-A3-08, R-A3-10, D-A3-10, D-A3-11, P-A3-01"}
+  - {q: "Predecessor auditor name and exit reason, MSKA appointment date, Q1 reviewer; what was regrouped (purchases -43.59); what the 44.04 Cr investments were", from_finding_id: "R-A3-05, D-A3-28, R-A3-22, D-A3-16, D-A3-02"}
+  - {q: "Fraud 7.35 Cr: controls changed, insurance, tax deductibility; why PR Op PAT 138.56 vs deck 134.9 and why OI not removed from 'Operational' metric", from_finding_id: "R-A3-01, D-A3-01, D-A3-15, D-A3-21, P-A3-02, P-A3-03"}
+  - {q: "Purvi Gems FY26 revenue, PAT, net worth, goodwill on Rs 9 Cr; target studded share vs ~2.3%; identity of selling shareholders and related-party status (multiple NOT COMPUTABLE)", from_finding_id: "R-A3-07, R-A3-26, D-A3-03, D-A3-27, P-A3-08, A5-M2"}
+  - {q: "Land held for sale 110.14 Cr: new date, price vs book, buyer related-party status", from_finding_id: "R-A3-16, D-A3-05"}
+  - {q: "Entry behind 17.32 Cr equity-to-debt move; Shri Rishab partners' capital or NCI put", from_finding_id: "R-A3-14, R-A3-25, D-A3-18"}
+  - {q: "Name and buyer of the subsidiary derecognised in H1FY26", from_finding_id: "R-A3-02, D-A3-18"}
+  - {q: "Finance cost split (GML, rupee WC, lease, fees); P&L 50.85 vs paid 48.76; GML balance Sep-26", from_finding_id: "R-A3-24, D-A3-06"}
+  - {q: "FY26 warrants: count, price, converted, outstanding; driver of capital 146.7 to 154.9 Cr", from_finding_id: "R-A3-13, R-A3-12, D-A3-12"}
+  - {q: "FY27/FY28 guidance with periods; which original target stands (3,000 vs 5,000 Cr); basis and period of PAT and CFO/EBITDA guidance", from_finding_id: "D-A3-19, D-A3-22, D-A3-23, D-A3-21, P-A3-07"}
+  - {q: "ROCE formula behind 36% FY26; is current borrowing of 799.8 Cr excluded", from_finding_id: "D-A3-13"}
+  - {q: "FY27 payout under dividend-only promoter pay; any promoter-relative ESOP grantee", from_finding_id: "D-A3-08"}
+  - {q: "Top-1 and top-5 customer share; Middle East chain share of exports; export credit terms", from_finding_id: "R-A3-15, D-A3-29"}
+  - {q: "EGM cut-off date 11-Nov vs 18-Nov in cover letter: which governs; corrigendum", from_finding_id: "A4-EGM-CUTOFF"}
+  - {q: "Consideration, form and sellers for Speed Bangle and the 51% of Shri Rishab; source of FY26 goodwill +208.2 Cr; share of subsidiary job-work revenue billed to group entities; Shri Rishab H1 FY27 PAT vs 18.8 Cr FY26", from_finding_id: "A5-M2, D-A3-04, D-A3-18"}
+  - {q: "Inorganic share of Q2 FY27 revenue and PAT (Shri Rishab not in base; Speed Bangle full quarter); organic YoY growth", from_finding_id: "A5-M3"}
+monitorables:
+  - {item: "Earnings call; Q1-Q19 answers", implied_date: "2026-10-31 11:00", source_ref: "task message"}
+  - {item: "EGM e-voting cut-off (conflicting 18-Nov line)", implied_date: "2026-11-11", source_ref: "rR862 L78; eR027 L47; eR110 L53"}
+  - {item: "Remote e-voting window", implied_date: "2026-11-15 to 2026-11-17", source_ref: "eR057 L524"}
+  - {item: "EGM Item 1 special resolution, raise up to Rs 1,800 Cr", implied_date: "2026-11-18 11:00", source_ref: "rR860 L67; eR001"}
+  - {item: "Scrutinizer report and voting results", implied_date: "within 2 working days of 2026-11-18", source_ref: "eR055-R056 L493-498"}
+  - {item: "QIP launch window and allotment deadline", implied_date: "after 2026-11-18; within 365 days of resolution", source_ref: "eR006; eR017 L152-154"}
+  - {item: "Purvi Gems first consolidation", implied_date: "Q3 FY27 results", source_ref: "rR959 L1342"}
+  - {item: "Q3 FY27 results: implied subsidiary Op EBITDA margin ex-Purvi (bull >=10.58%, bear <=6.01%)", implied_date: "by 2027-02-14 [INFERENCE Reg 33]", source_ref: "Step 8C"}
+  - {item: "Advance-tax catch-up on H2 cash flow", implied_date: "2026-12-15 and 2027-03-15 [INFERENCE]", source_ref: "R-A3-10; D-A3-11"}
+  - {item: "Land held for sale 110.14 Cr: completion or Ind AS 105 reassessment", implied_date: "no date; FY27 year end 2027-03-31 [INFERENCE]", source_ref: "dR582 L502; rR601"}
+  - {item: "Fraud balance recovery 7.35 Cr", implied_date: "not stated", source_ref: "rR870 L1341"}
+  - {item: "Mar-27 BS: payables unwind, FY27 CFO ex-payables, OFA lien status", implied_date: "Q4 FY27 results by 2027-05-30 [INFERENCE]", source_ref: "R-A3-17; D-A3-24"}
+  - {item: "FY27 dividend under promoter dividend-only pay", implied_date: "Q4 FY27 Board [INFERENCE]", source_ref: "dR458 L327"}
+  - {item: "Monitoring-agency reports on QIP proceeds", implied_date: "quarterly after allotment", source_ref: "eR022 L192-194"}
+  - {item: "ESOP 2024 earliest vesting, 3,480 options", implied_date: "2027-10-27 earliest", source_ref: "sR015 L101"}
+  - {item: "Earlier-year tax true-up line", implied_date: "Q4 FY27", source_ref: "R-A3-09"}
+  - {item: "FCTR functional-currency check", implied_date: "FY27 Annual Report", source_ref: "R-A3-11"}
+flags:
+  - "CFO payables-funded: H1 cons CFO +136.66 Cr vs trade payables +345.28 Cr; ex-payables CFO -208.62 Cr; cash tax lag ~40 Cr"
+  - "Net debt 874.33 Cr strict (+42.8%) vs 492.01 Cr if 382.32 Cr OFA is free; parent borrowed to place deposits"
+  - "All margin expansion in subsidiaries: implied sub margin 11.65% vs 6.01%, sub ETR 15.31%; PAT gap 51.52% of SA PAT; 21.25% of cons PAT on other auditors (unnamed subs); deck p20 job-work acquisitions a named source (Speed Bangle 39.5% FY26 PAT margin; Shri Rishab NCI-implied run-rate 12.68 vs 18.8 Cr); FY26 goodwill +208.2 Cr with consideration undisclosed; Purvi multiple NOT COMPUTABLE"
+  - "QIP up to Rs 1,800 Cr = 1.27x cons equity, ~13.55% more shares at CMP (indicative); no amount per object; convertibles/warrants allowed; release silent; deck p19 itself retires the internal-funding stance and pre-frames the raise without naming it"
+  - "First quarter under unexplained auditor change: 7.35 Cr deep-fake fraud loss, 17.32 Cr unexplained equity-to-debt move, regroup with negative purchases, 46.4 Cr asset lines cleared"
+  - "Watch items silent: volume (kg), price-vs-volume split, customer concentration, GML at Sep-26"
+  - "Disclosure quality: PR Op PAT errors (Q2 138.56 vs deck 134.9; H1 printed 234.5 vs own Q1+Q2 sum 243.46 and deck 239.8); mislabelled CFO comparator; deck CFO chart basis mismatch; EGM cut-off conflict; ROCE net of current debt (36% vs 22.3%); deck p19 raise rationale rests on advance-gold cash generation while H1 CFO is payables-funded"
+  - "Tax: cons ETR 22.09% vs 25.17% statutory; durability and transfer-pricing open"
+  - "Pre-thesis: no Notion page, no Spear line, no tracker rows; /step1 required before any pipeline run"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged incl. Amendment 17 converter question"
+plain_language_brief_included: true
+analyst_note: "Growth is real at core PBT (cons +89.7% YoY) but its location and funding are the open questions. The parent's margin fell 15 bps; the subsidiary layer took margin from 6.01% to 11.65% at a 15% tax rate, partly on other auditors' reviews. Cash turned positive only because suppliers funded Rs 345 Cr of working capital, and deposits of Rs 382 Cr may or may not be free. A Rs 1,800 Cr raise one day before the deck still frames cash as improving is the sharpest tension. Several A3 items close on the filed record: D-A3-01 (fraud), D-A3-02 (investments sold at Q1 fair value via OCI), D-A3-03 (Purvi post-quarter), P-A3-06 (CFO label), R-A3-19 (single EGM item); the deck's Op PAT 134.9 is right and the release's 138.56 is wrong. Verdict sits at FLAGS, not CAVEATS, because of the governance cluster in the new auditor's first quarter. The single most useful call answer is the nature and tenor of the non-MSME payables."
+review_path: "runs/skygold-q2fy27/work/review_skygold_q2fy27.md"

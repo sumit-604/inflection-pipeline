@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 16
+formfeed_count: 16
+line_count: 660
+unit_convention: "Millions (Rs million)"
+conversion_factor_to_cr: "x0.1"
+text_layer_present: true
+extraction_mode: text-only  # pages 1,2,3,9,10,11; pages 4-8 and 12-16 are image-only, rendered and visually transcribed
+render_candidates: [4, 5, 6, 7, 8, 12, 13, 14, 15, 16]
+rendered_pages: [4, 5, 6, 7, 8, 12, 13, 14, 15, 16]  # zero-char pages holding statements and notes baked into images
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/extracted/sonacoms-results-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/extracted/sonacoms-results-q2fy27-structured.md"
+structured_counts:
+  number: 841
+  entity: 76
+  forward: 12
+  date: 74
+  qualifier: 95
+structured_id_range: "R001-R1098"
+gate_a1: pass
+gap_note: ""

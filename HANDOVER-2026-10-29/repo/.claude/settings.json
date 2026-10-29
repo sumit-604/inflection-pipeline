@@ -1,0 +1,17 @@
+{
+  "env": {
+    "CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL": "1h"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

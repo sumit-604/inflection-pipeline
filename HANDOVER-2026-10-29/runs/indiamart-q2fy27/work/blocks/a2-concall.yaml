@@ -1,0 +1,23 @@
+stage: A2-enumerator
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/indiamart-q2fy27/work/ledger_concall_indiamart_q2fy27.md"
+counts:
+  turns: 17
+  questions: 9
+  mgmt_numbers: 254
+  participants: 25
+  forward_phrases: 126
+  date_markers: 123
+  qualifiers: 37
+flags_raised: [REPEAT_QUESTION, SIDE_UNVERIFIED, TOKEN_LEVEL, NAME_VARIANT, EXAMPLE_ENTITY, CLOSED_BUSINESS, NEW_INITIATIVE, SUBSIDIARY_AS_HEARD, RESTATED, HEADER]
+ids_in_structured: 614
+ids_referenced: 614
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "ASR transcript, no speaker tags. 17 turns follow A1 SPEAKER_CHANGE rows R149-R165; answers sit inside the segment of the question that precedes them, so turn count is not question+answer pairs. Numbers inside question segments (T06-T15) are flagged SIDE_UNVERIFIED because an analyst may have spoken them; A3/A4 must not treat them as management guidance without the fulltext line. Q8 repeats asker of Q6 (Ashwin R, chat); Q9 shares the Banyan family with Q1. R265-R614 are token-level rows grouped by line into their turn. One fulltext digit line (179) is rowed by word tokens only."

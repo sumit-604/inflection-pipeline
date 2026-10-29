@@ -1,0 +1,378 @@
+---
+description: PHASE 3 (finalize) of the Inflection Alpha pipeline. Usage: /finalize runs/<ticker>-<date>
+---
+You are the pipeline orchestrator, running PHASE 3 (finalize). The user
+has given you a run folder:
+$ARGUMENTS
+
+## Resolving the run folder and session setup (do this first)
+
+CHECKOUT GUARD (operator ruling 2026-10-04; runs before anything else). Run
+`git fetch origin main`, then
+`git diff --quiet origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`.
+If the diff is not empty, name the cause and STOP with the line that fits
+(print every line that applies; <paths> is the list printed by
+`git diff --name-only origin/main -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`):
+- `git status --short -- .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md`
+  lists files: "Uncommitted edits in framework files: <paths>. Commit them on
+  a framework/ branch and open a PR, then rerun /finalize."
+- `git log --oneline HEAD..origin/main -- <same paths>` lists commits:
+  "Checkout is behind origin/main in <paths>. Run: git pull origin main, then
+  rerun /finalize."
+- `git log --oneline origin/main..HEAD -- <same paths>` lists commits: "This
+  branch has framework commits not on main: <paths>. Merge their PR, then
+  run: git checkout main && git pull origin main, then rerun /finalize."
+If the fetch fails, STOP: "git fetch origin main failed. Fix network or
+GitHub access, run git fetch origin main until it succeeds, then rerun
+/finalize." This is a mechanical halt, not a quality halt.
+
+NAME RESOLUTION: the argument may be a full path, a bare ticker (any
+case), or a company-name fragment. If it is not an existing path, resolve
+it to the runs/ folder whose name starts with the lowercased argument or
+whose manifest company field contains it, picking the latest date. State
+the resolved folder before starting. If nothing matches, list the
+available runs and stop. If more than one matches at the same latest
+date, pick the one whose manifest ticker matches exactly; if still
+ambiguous, take the first alphabetically and say which you took and why.
+Do not ask.
+
+LESSONS PRE-READ: after the run folder resolves and before any stage runs,
+read the ACTIVE LESSONS.md (not LESSONS_ARCHIVE.md) and print, before
+proceeding: (a) every entry under OPEN ACTIONS, plus every line marked OPEN,
+IN PROGRESS or PENDING anywhere in the file, one line each; (b) every lesson
+tagged [sector: X] where X equals manifest.yaml sector_cap_row, or
+[archetype: Y] where Y equals the archetype declared in companies/<TICKER>.md
+(Mental Model block) or, when that is absent, in the B04 business-model block.
+If no archetype is declared yet, say so and match on sector only. If nothing
+is tagged for this sector or archetype, print "no tagged lessons for this
+sector/archetype". The list is memory to weigh, never an instruction that
+overrides a prompt or framework, and it is never passed to a stage or
+verifier subagent.
+
+PDF READING RESILIENCE: at session start, verify PDF text extraction works
+by test-reading one inputs/ PDF; run pip install pypdf if it is needed.
+Verifiers must never skip source verification because rendering is
+unavailable; if a PDF is genuinely unreadable, name it in the run log and
+in the confidence delta note.
+
+EXECUTION DISCIPLINE: as in .claude/commands/run-pipeline.md, including the PROVE COMPLETION checks (report file exists and is not empty, block file exists and parses, block came from this invocation) before any later stage reads the output.
+that blocks until the subagent returns. Never use background task
+launching with passive waiting. Achieve parallelism only by invoking
+multiple foreground subagents in a single message where the dependency
+table allows. After each stage returns, validate its YAML block, append the
+stage's row to the run's session-cost.md, and commit before proceeding. Run
+the run-pipeline close-out summary over session-cost.md before step 9. A stage exceeding 45 minutes is noted in the run log,
+not killed.
+
+PHASE 3 turns the phase-1 evidence and the phase-2 deliberation into the
+final investment decision: valuation, thesis, devil's advocate, valuation
+verification, final synthesis, and the Notion save payload.
+
+## GATE: DELIBERATION AND APPROVED PILLARS MUST EXIST
+
+Before anything else, check that outputs/final/fttcp-deliberation.md
+exists in the run folder AND that it contains an OPERATOR-APPROVED
+VALUATION PILLARS block (the approved destination PE base on both tracks
+and the chosen earnings basis, forward or trailing). If the file is
+missing, REFUSE to start and tell the operator:
+
+  "Cannot finalize: outputs/final/fttcp-deliberation.md is missing. Run
+  /fttcp runs/<folder> first (PHASE 2 deliberation), then re-run
+  /finalize."
+
+If the file exists but the OPERATOR-APPROVED VALUATION PILLARS block is
+missing (or the earnings basis is unset), REFUSE and tell the operator:
+
+  "Cannot finalize: the operator has not approved the valuation P/E base.
+  Re-open /fttcp runs/<folder>, complete the VALUATION PILLAR APPROVAL
+  gate (approve the exit PE base and choose forward vs trailing), then
+  re-run /finalize."
+
+Running the valuation on an unapproved P/E base wastes the whole exercise;
+this gate is as hard as the deliberation gate. Do not run any stage until
+both are present. Once they are, proceed AUTONOMOUSLY through every step
+below in one run, no stops.
+
+Read prompts/00-orchestrator.md now (PHASES section and the rule that
+FTTCP deliberation conclusions supersede pipeline determinations in
+phase 3), then:
+
+BLOCK PATHS AND UNITS (every invocation below). Each stage writes its own
+YAML block to a file before it replies, so every task message names the block
+path outputs/blocks/<stage>.yaml alongside the report path, and carries the
+units line: "All figures in Rs Cr unless the source says otherwise; the
+source unit is on the face of the document, not in the filename." "Collect
+Bnn" below means READ outputs/blocks/<stage>.yaml, the file the stage wrote,
+and compare it with the block in the reply; the file governs. Write the file
+from the reply only if the stage failed to write it.
+
+1. STAGE 10 — INPUT ASSEMBLY. Invoke stage-10-assembly with the B01..B09
+   blocks and the results PDFs AS BEFORE, and ADDITIONALLY the
+   deliberation record outputs/final/fttcp-deliberation.md. The
+   deliberation record is AUTHORITATIVE and supersedes the pipeline's own
+   earlier determinations wherever they conflict. In the task message,
+   direct the stage that these deliberation outputs are authoritative
+   inputs:
+     - the FTTCP ROCE forward verdict (the sole authority for Pillar 1
+       ROCE selection),
+     - the cash-conversion structural / growth-induced determination as
+       the operator confirmed or overrode it,
+     - the OPERATOR-APPROVED VALUATION PILLARS block: the approved
+       destination (exit) PE base on both tracks and the chosen earnings
+       basis (forward or trailing). These are authoritative; carry them
+       onto B10 so stage 11 uses the approved base and applies the
+       multiple on the approved basis. When the run is multi-entity, the
+       deliberation carries one approved base per entity; carry each onto
+       B10 against its entity.
+     - the entity count declared in the handover dossier
+       (inputs/research/web-handover-dossier.md) Section 1, carried onto
+       B10 as entity_count, with any allocation the operator ruled to be
+       carried as an ESTIMATE tagged [ESTIMATE, X1]. This drives stage 11's
+       entity-count gate: more than one entity means value per entity, no
+       consolidated pass.
+     - every recorded operator override, including any recorded with the
+       default-track sensitivity from the FTTCP gate cards.
+   Where any of these conflict with a value the pipeline assembled
+   earlier, the deliberation value wins and the assembly must anchor it to
+   the deliberation record. Collect B10 into outputs/blocks/.
+
+2. STAGE 11 — VALUATION. Invoke stage-11-valuation exactly per the
+   existing wrapper. Its frontmatter preloads the section-1b skill (the
+   resolved Section 1B v3.3-v3.10 and FTTCP v2.3 rulebook), so do NOT pass
+   the Section 1B or FTTCP framework files. Pass
+   frameworks/Master_Project_Prompt_v3_6.md (resolves
+   {{MASTER_PROJECT_PROMPT_V36_ROLE1_SECTIONS}}) as its stable prefix plus
+   B10. If .claude/skills/section-1b/SKILL.md or the Master Prompt file is
+   missing, STOP and tell the user which to add. The FTTCP ROCE
+   forward verdict and structural/growth determination it consumes are
+   the deliberation-confirmed ones carried on B10. ENTITY-COUNT GATE: when
+   B10.entity_count is greater than one, stage 11 values PER ENTITY on each
+   entity's operator-approved base and REFUSES a single consolidated pass;
+   collect one B11 block per entity (B11-<entity>) plus the consolidated
+   reconciliation line, and carry all of them into the downstream stages.
+   Otherwise collect B11.
+
+3. STAGE 14 — ROLE 2 INVESTMENT THESIS. Invoke stage-14-thesis (model
+   opus, thin wrapper reading its Role 2 section from
+   frameworks/Master_Project_Prompt_v3_6.md, pipeline mode, source
+   anchors). Pass B01..B11, the Role 1 valuation report, and the
+   deliberation record. Its output ends with the B14-thesis YAML block
+   (verdict, entry range, position size with any documented override,
+   thesis-broken conditions, monitoring checklist). Collect B14.
+
+4. STAGE 15 — ROLE 3 DEVIL'S ADVOCATE. Invoke stage-15-devil (model opus,
+   thin wrapper reading its Role 3 section from
+   frameworks/Master_Project_Prompt_v3_6.md, pipeline mode, source
+   anchors). Pass Role 2's output (B14 report) PLUS all blocks. Its output
+   ends with the B15-devil YAML block (per-dimension survives / weakened /
+   destroyed, overall, top counters). Collect B15.
+   RULE H LOOP (operator ruling OR-15, 2026-10-04): if stage 15 returns the
+   Rule H steelman gate table instead of a devil's advocate, re-invoke stage
+   14 once with the named gaps, then stage 15 again. On a second miss, mark
+   Role 3 VOID in B15, flag it in the verdict, and continue.
+
+5. VERIFIER C — VALUATION ADHERENCE (phase 3 half). Invoke
+   verifier-c-framework with B10, B11, frameworks/Master_Project_Prompt_v3_6.md (Master v3.7) and the section-1b skill chunks cited in B11, for its
+   deferred valuation-adherence audit, EXTENDED to also check Role 2's
+   (B14) decision rules and position-sizing logic against the Master
+   prompt. Give it only the artifact paths its section names, never other
+   verifiers' output, never your commentary. Merge its valuation findings
+   into B12c (its Gate 0 + EM findings were recorded in phase 1) and
+   recompute the framework-adherence confidence component, then update
+   outputs/blocks/confidence.yaml to the full four-component delta.
+
+6. FINAL SYNTHESIS. Invoke stage-13-synthesis with everything (all blocks
+   B01..B15, both halves of B12c, the full confidence delta, the
+   deliberation record, and the stage reports), instructing it in the
+   task message to run in PHASE 3 FINALIZE mode and produce all four
+   deliverables, each written to outputs/final/ at its FILE dividers.
+
+   The synthesis output and the Notion payload MUST both open with the
+   BUSINESS UNDERSTANDING NARRATIVE section below, before the verdict card
+   (identical spec, kept in sync with prompts/13-synthesis-pipeline.md):
+
+<!-- BEGIN BUSINESS-UNDERSTANDING-NARRATIVE-SPEC v1 (identical copy in prompts/13-synthesis-pipeline.md and .claude/commands/finalize.md; keep the two in sync) -->
+## BUSINESS UNDERSTANDING NARRATIVE (mandatory; appears FIRST, before the verdict card)
+
+The final synthesis and the Notion payload MUST open with this section, placed before the
+verdict card in both. It is the understanding narrative (what is this business, why does it
+exist), distinct from the verdict narrative (what is it worth, should I buy).
+
+Write 12-18 sentences of flowing prose per NARRATIVE WRITING STYLE v1 (short sentences,
+active voice, no em-dashes, no AI-tell vocabulary, no bullets in this section). Source
+strictly from B03/B04/B06/B07/B09 (including the B09 SECTION 6 downstream candidates) - no new
+claims. The narrative MUST answer, in order:
+
+1. WHAT THE PRODUCTS ARE AND WHY THEY MATTER - what each material product or service
+   physically is and does, and why the customer cannot easily do without it. Per revenue
+   stream above ~10% of sales.
+2. WHO THE CUSTOMERS ARE - named classes or named companies, their buying behaviour
+   (qualification cycles, switching costs, concentration).
+3. WHY THERE IS DEMAND - the present demand driver, tied to the downstream candidates from
+   B09 SECTION 6 by name.
+4. WHY DEMAND SHOULD GROW - the forward drivers, each tied to an externally verifiable signal
+   where one exists.
+5. WHERE THE COMPETITIVE ADVANTAGE SITS - per business line, stating WHICH line has a moat and
+   which does not, referencing the B07 scan results (including Categories 21/22 where scored).
+   A line with no moat is said plainly.
+
+Rules: every claim traces to a stage block; downstream candidates are referenced by name so
+the narrative and the tracker rows share vocabulary; no valuation numbers, no verdict
+language, no price talk inside this section - understanding only. If a question cannot be
+answered from the blocks, write "the run did not establish this" rather than filling the gap.
+<!-- END BUSINESS-UNDERSTANDING-NARRATIVE-SPEC v1 -->
+
+     - business-narrative.md: OPENS with the BUSINESS UNDERSTANDING NARRATIVE
+       section above (before the headline), then the final narrative, now
+       including the valuation conclusion (both destination PE tracks, entry
+       zone, decision) and the thesis/devil's-advocate outcome.
+     - fttcp-recommendation.md: the full investment recommendation per the
+       synthesis prompt's Deliverable 2 rules — the five-verdict gate line,
+       the valuation decision (BUY / WATCHLIST / AVOID, entry range, MoS
+       price, both destination PE tracks, Hurdle verdict), all active flag
+       blocks, the full confidence delta, monitorables, and the
+       falsification line.
+     - verifier-summary.md: all verifier findings including the phase-3
+       valuation-adherence audit, sorted by severity with location anchors.
+     - verifier-disagreement-log.md: one row per point where a downstream
+       step conflicted with a Verifier A source-fidelity finding (or "none").
+       The source-fidelity gate is non-overridable: no figure Verifier A
+       flagged may reach any deliverable or the Notion payload as if valid.
+     - fttcp-handoff.md: the ARCHIVE DOSSIER. The machine-anchored record
+       carrying every block reference, the deliberation-confirmed inputs
+       and overrides, the Role 1 / Role 2 / Role 3 outputs, and the full
+       source anchors. Block references (B04 etc.) are permitted and
+       expected here; this is the audit trail, not a reading document.
+
+7. NOTION PAYLOAD. Write outputs/final/notion-payload.md containing the
+   full save content structured per the claude.ai notion-save conventions (Notion_Save_Instructions, held in the claude.ai project, not in this repo):
+   page title, THEN the BUSINESS UNDERSTANDING NARRATIVE (the same section
+   defined in step 6, positioned before the verdict card so the operator
+   reads the understanding first), then run summary, verdict, the PRICE
+   DECOMPOSITION (T1 confirmed / T2 high-probability / T3 speculative /
+   residual, each in ₹/share and % of CMP, from B11.price_decomposition),
+   the FAST-GROWTH flag and the Amendment 25 position-size ladder state
+   (starter / add / trim) where it applies (from B14), entry zones,
+   thesis-broken triggers, monitoring checklist, and links (Drive folder,
+   run folder). Mark the file explicitly at the top:
+
+   "Execute via the claude.ai project; never overwrite Decision Status."
+
+   The notion-payload gains a second block after the COMPANIES MASTER
+   payload:
+
+   ## DOWNSTREAM SIGNAL TRACKER PAYLOAD (candidates for Role 5.5 verification)
+   Target database: DOWNSTREAM SIGNAL TRACKER, data_source_id
+   926b65ce-ddd2-4d8b-8eae-05e66b6f6c9f (write happens at Role 5.5 in
+   claude.ai after source verification, NOT from this pipeline)
+   One row per candidate: signal name | entity type | demand link |
+   likely source | cadence | shared flag | falsifying observation if
+   already stateable
+   Then the AR first-disclosure rows (B03.ar_new_downstream_entities via
+   B10), one per entity: name | entity type | where in AR — the Step
+   10.5B feed for the AR annual cross-check at Role 5.5.
+
+   The notion-payload also carries the EXPECTATION LEDGER block (Section 1B
+   v3.9 Appendix A), copied from outputs/expectation-ledger.md:
+
+   ## EXPECTATION LEDGER (Amendments 22-24)
+   One row per credited catalyst plus the mandatory downside row: catalyst |
+   ₹ Cr PAT increment | probability | evidence basis | confirming metric +
+   threshold | confirm-by | tier (T2/T3) | status. Then the decomposition
+   summary line: T1 / T2 / T3 / residual as % of CMP, the fast-growth flag,
+   and the Amendment 25 size state (starter / add / trim). The ledger saves to
+   Notion with every Role 1 / Role 4 / Role 6 output; an expectation not on
+   the ledger may not be credited in the price.
+
+   This file is a payload, not an action. Do not write to Notion from this
+   session; the pipeline never writes to the tracker, Role 5.5 does after
+   verification. The operator executes the save in the project. When the operator
+   executes the save, the rows in outputs/final/verifier-disagreement-log.md
+   are appended to the "Verifier Disagreement Log" Notion page (skip if the
+   log says "none"); this is separate from the company page save and never
+   touches Decision Status.
+
+8. COMPANY MEMORY. Write or update companies/<TICKER>.md (create the
+   companies/ folder and the file if absent; see companies/_template.md for
+   the schema). Carry the existing file's content forward and update it from
+   this run: the one-line thesis (from B14 / synthesis), the Decision Status
+   and entry zone as of this run with the run date, every operator ruling
+   with its date (from outputs/final/fttcp-deliberation.md, appended and
+   never deleted), the active tripwires (thesis-broken triggers and
+   falsification metrics), the optionality register summary (from
+   B07.optionality_register), and a link to this run folder added to the
+   run-folder list. This is the durable per-company memory layer;
+   /run-pipeline stage 0 and /fttcp read it on the next run. It is memory,
+   never a source: it records what prior runs concluded, it does not anchor
+   new figures.
+
+8b. PROVENANCE STAMP. Write outputs/final/provenance.yaml recording the exact
+   rulebook state this run was priced under, so a later review can open the
+   same rules. Fill it from the repo:
+     run: <ticker>-<date>
+     produced_at: <run date>
+     framework_git_commit: <output of `git rev-parse HEAD`>
+     framework_tag: <output of `git describe --tags --always`>
+     framework_versions: "Master v3.7 / Section 1B v3.3+v3.5.1+v3.6+v3.7+v3.8+v3.9+v3.10 / FTTCP v2.3"
+   This is a plain record, not a decision. It gets committed with the rest.
+
+8c. LESSONS CLOSE-OUT. Before the commit, record what this run taught.
+   Append one dated entry to LESSONS_ARCHIVE.md (the MEMORY rule's home for
+   run history) in exactly this format:
+
+     ## <YYYY-MM-DD> — <TICKER> /finalize (runs/<ticker>-<date>)
+     | # | What went wrong or was corrected | Stage | File or rule | Status |
+     |---|---|---|---|---|
+     | 1 | <one line, plain words> | <stage number and name> | <file path, or rule and amendment> | CLOSED / OPEN |
+
+   One row per item: a verifier CRITICAL or MAJOR, a REWORK loop, a retry,
+   an operator override, a Verifier C check 15 chunk-vs-source divergence,
+   or a prompt or framework defect found. If nothing went wrong, write one
+   row: | 1 | clean run | all | none | CLOSED |. For every OPEN row, also
+   append one line under OPEN ACTIONS in LESSONS.md, in the form
+   "- OPEN (<YYYY-MM-DD>, <TICKER>, <stage>): <what> [<file or rule>]; see
+   LESSONS_ARCHIVE.md <YYYY-MM-DD> <TICKER>." Never add CLOSED rows to
+   LESSONS.md: the active file is budget-capped (CLAUDE.md MEMORY).
+
+9. COMMIT all outputs, the updated companies/<TICKER>.md and the LESSONS
+   files touched in step 8c with message
+   "phase 3 (finalize): <ticker> <date>" and report to the user: the
+   recommendation verdict line, the valuation decision, entry range, flags
+   active, the full confidence delta overall, the devil's-advocate overall
+   verdict, and the paths to the four final deliverables plus
+   outputs/final/notion-payload.md.
+
+   FINALIZE GATE (team workflow v2 — hash by default). Close the report section with
+   the commit hash and the output of `git log -1 --stat`, so Claude web
+   verifies against the repo and the operator never has to ask. A finalize
+   report that omits the hash or the `--stat` is INCOMPLETE. If this run made
+   more than one commit (per-stage commits under EXECUTION DISCIPLINE), report
+   the hash of each, newest last, with the final `git log -1 --stat`. Any
+   ferry block in the report is self-contained: file paths, hashes, and exact
+   text inline, never "the paths above".
+
+   PRINT FINALS IN CHAT: after writing the final files and committing,
+   always print the primary human-readable documents in full in the chat,
+   in this order: the thesis verdict card (from B14), then the devil's
+   advocate final table (from B15). The verdict card must carry a ZONE
+   REACHABILITY line: the entry zone top versus the 52-week low and versus
+   the lowest tested price since listing, both as percentages, computed
+   from the screening CSVs where price history exists (state "price history
+   unavailable" otherwise). If the zone top sits >20% below the lowest
+   tested price since listing, print: "MARKET-UNLIKELY ZONE — reaches entry
+   only via thesis-relevant shock or broad de-rating; classify DEEP WATCH
+   not actionable WATCHLIST, or route to the trading book." If a Tier B
+   hurdle would move the zone to within 15% of tested prices, print the
+   Tier B zone alongside as "Tier B alternative: ₹___". End with exactly:
+
+   "Files committed. Ask me anything about this analysis — I have the sources."
+
+Rules for you, the orchestrator session:
+- You coordinate; you do not analyse. Every judgment comes from a subagent.
+- Deliberation conclusions supersede earlier pipeline determinations
+  wherever they conflict; this is the phase-3 authority rule.
+- Never let any exit PE enter from outside the Section 1B layer set (v3.3
+  Amendments + v3.5.1 + v3.6 + v3.7 + v3.8 + v3.9 + v3.10; later layers govern the items they name).
+- Never paste full PDFs into subagent task messages; pass file PATHS.
+- Verifier independence is absolute.
+- Nothing halts on company quality; only mechanical failures halt.

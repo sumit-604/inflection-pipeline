@@ -1,0 +1,64 @@
+stage: A3-forensics
+company: "KNACK"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/knack-q2fy27/work/forensics_results_knack_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: FINDING
+  F4: FINDING
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: PASS
+  F10: FINDING
+  F11: PASS
+  F12: PASS
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "R-A3-01", check: "F1", line: "577, 542", classification: "FORWARD-SIGNAL", implication: "CON JV equity-method investment nil (34.55 at Mar); H1 JV loss 60.60 means 26.05 booked beyond carrying value; group funding JV beyond USD 0.5M; future JV losses hit PAT in full and need cash"}
+  - {id: "R-A3-02", check: "F1", line: "200, 540, 355-357", classification: "FORWARD-SIGNAL", implication: "Labour Codes exceptional line retained; further past-service-cost charge possible when rules finalise; undated, low materiality"}
+  - {id: "R-A3-03", check: "F2", line: "206, 548, 542", classification: "FORWARD-SIGNAL", implication: "CON-SA PAT gap +2.69% (H1FY26) to -3.14% (H1FY27) of SA PAT, 5.83pp swing; Q2 = sub +15.58, elim +2.33, JV -26.15"}
+  - {id: "R-A3-04", check: "F2", line: "307, 651, 244, 237, 580", classification: "AMBIGUOUS", implication: "CON loans given exceed SA by 13.80; CON other NCA 18.21 below SA; SA Loans fell 56.52 to 16.94 despite 124.49 lent; counterparty undisclosed, possible JV funding"}
+  - {id: "R-A3-05", check: "F3", line: "191, 530, 531, 490-491", classification: "AMBIGUOUS", implication: "Subsidiary is non-manufacturing trading arm (identical COMC); PAT margin 12.7% vs parent 8.9%; transfer-pricing question"}
+  - {id: "R-A3-06", check: "F4", line: "489-503", classification: "AMBIGUOUS", implication: "Unreviewed sub PAT 15.58 + JV (26.15) = 41.73 gross, 16.7% of CON PAT; other auditors unnamed"}
+  - {id: "R-A3-07", check: "F4", line: "498, 542", classification: "FORWARD-SIGNAL", implication: "Unreviewed JV share up 14.7x YoY (1.78 to 26.15); fastest-growing drag rests on unnamed auditor"}
+  - {id: "R-A3-08", check: "F4", line: "127-129, 434-436, 381-383", classification: "NEUTRAL-FACT", implication: "Q2FY26/H1FY26 comparatives unreviewed; all YoY growth rests on unreviewed base; caveat persists through Q4FY27"}
+  - {id: "R-A3-09", check: "F6", line: "835-839, 856-860", classification: "FORWARD-SIGNAL", implication: "Pass-through dated 'from Q3 FY27' and 'next few quarters', status 'underway' vs 'implemented' in same release; test vs CON gross margin 34.64% Q2 (42.07% Q1, 41.15% Q2FY26)"}
+  - {id: "R-A3-10", check: "F6", line: "841-847", classification: "AMBIGUOUS", implication: "'PAT margin recovers fully' at JV breakeven unsupported: ex-JV Q2 PAT margin 9.08% vs 10.43%; JV explains ~77bp of 212bp decline; Q2 JV loss 10.5% of PAT called 'slightly'"}
+  - {id: "R-A3-11", check: "F6", line: "404, 957-971, 188, 306", classification: "FORWARD-SIGNAL", implication: "Borisana 7.04 of 3,200 used, undated; other income 28.7% of SA Q2 PBT from parked IPO cash; core SA PBT ex-OI +12.5% YoY, -40.1% QoQ; OI decays as capex draws"}
+  - {id: "R-A3-12", check: "F6", line: "405, 315, 307", classification: "AMBIGUOUS", implication: "GCP 294.69 of 311.49 spent in first quarter while ST borrowings rose 81.01 and 124.49 lent; use undescribed"}
+  - {id: "R-A3-13", check: "F7", line: "839, 859-860", classification: "FORWARD-SIGNAL", implication: "'subject market stabilization' and 'likely ... next few quarters' pre-excuse a Q3 pass-through miss"}
+  - {id: "R-A3-14", check: "F8", line: "204-205, 236, 258, 546", classification: "AMBIGUOUS", implication: "SA DT credit (5.80) in Q2, ETR 22.38% (-279bp vs 25.17%); DT BS swing 50.30 vs 3.34 P&L, residual ~45.94 via equity on IPO costs; no prior-year tax line"}
+  - {id: "R-A3-15", check: "F10", line: "211, 214, 554, 557, 377", classification: "FORWARD-SIGNAL", implication: "Shares +22.37% via IPO; basic=diluted; full-count Q2 CON EPS 2.04 vs 2.06 Q2FY26 (about -1%) despite PAT +21.24%"}
+  - {id: "R-A3-16", check: "F13", line: "79", classification: "AMBIGUOUS", implication: "Agenda item 3 'other businesses' undisclosed (A2 M1); ask what was approved, incl any JV funding"}
+  - {id: "R-A3-17", check: "F14", line: "819, 821, 823", classification: "AMBIGUOUS", implication: "Margins printed on Total Income, footnote says Revenue from Ops (16.88% on own definition); ex-OI EBITDA margin 13.59% Q2 vs 21.66% Q1 vs 16.57% Q2FY26"}
+  - {id: "R-A3-18", check: "F14", line: "234, 305, 542", classification: "FORWARD-SIGNAL", implication: "SA labels JV 'equity method', carried unchanged at 45.59; cumulative group JV loss 70.01 above 43.96 cost; standalone impairment risk up to 45.59 (17.6% of Q2 SA PAT)"}
+  - {id: "R-A3-19", check: "F14", line: "314, 406, 252", classification: "AMBIGUOUS", implication: "Issue expense 253.03 (CF 'net of tax') vs 259.03 (Note 9) vs 207.09 equity residual; label inconsistent"}
+  - {id: "R-A3-20", check: "F14", line: "125, 432, 492", classification: "AMBIGUOUS", implication: "CON review report names quarter only; CON H1 and cash flow scope unstated"}
+  - {id: "R-A3-21", check: "F14", line: "305, 649, 632", classification: "NEUTRAL-FACT", implication: "H1FY26 JV investment outflow SA 43.96 vs CON 42.18; 1.78 gap equals H1FY26 JV loss share; rounding-level"}
+  - {id: "R-A3-22", check: "F15", line: "365-373, 461-462, 689-690", classification: "AMBIGUOUS", implication: "No prior extract, baseline 1 sub + 1 JV; JV co-venturer moved from key strategic customer to Bessher Holding 30-Dec-2025; link undisclosed"}
+forward_signals: ["R-A3-01", "R-A3-02", "R-A3-03", "R-A3-07", "R-A3-09", "R-A3-11", "R-A3-13", "R-A3-15", "R-A3-18"]
+ambiguous: ["R-A3-04", "R-A3-05", "R-A3-06", "R-A3-10", "R-A3-12", "R-A3-14", "R-A3-16", "R-A3-17", "R-A3-19", "R-A3-20", "R-A3-22"]
+commitments:
+  - {commitment: "Further Labour Code accounting effects as rules finalise", implied_date: "undated", ref: "SA Note 3 L355-357; CON Note 3 L698-700", status_word: "initiated"}
+  - {commitment: "Price revisions reflect in realisations, subject to market stabilisation", implied_date: "Q3FY27 onwards", ref: "PR L835-839", status_word: "underway"}
+  - {commitment: "Benefits of implemented price revisions materialise", implied_date: "next few quarters", ref: "PR L856-860", status_word: "completed (implementation); conflicts with L835-839"}
+  - {commitment: "JV drag reverses, PAT margin recovers fully at JV breakeven", implied_date: "undated", ref: "PR L845-847", status_word: "not started"}
+  - {commitment: "Borisana IPO capex 3,192.96 used progressively", implied_date: "undated", ref: "Note 9 L404; Annex C L957-971", status_word: "commenced"}
+  - {commitment: "Deploy GCP balance 16.80 and issue-expense balance 29.48", implied_date: "undated", ref: "Note 9 L405-406", status_word: "underway"}
+  - {commitment: "Investments in capacity, growth, innovation, sustainability", implied_date: "undated", ref: "PR L867-870", status_word: "intent"}
+  - {commitment: "IPO completed and listed", implied_date: "2026-07-08", ref: "Note 7 L375-379", status_word: "completed"}
+  - {commitment: "JV capital commitment USD 0.5M", implied_date: "2025-08-06", ref: "Note 6 L369", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Q2 headline growth hides a margin break. CON gross margin fell to 34.64% from 42.07% in Q1 and 41.15% a year ago. EBITDA excluding other income was 13.59% of revenue against 21.66% in Q1. Other income, mostly interest on parked IPO cash, is 28.7% of SA PBT and decays as Borisana capex (0.22% used) draws the FDs. The Mexico JV is the second thread. Its equity-method carrying value hit nil, the group booked 26.05 of loss beyond it, and CON loans given exceed SA by 13.80. So the group funds a zero-revenue JV whose strategic-customer partner exited in Dec-2025. The standalone 45.59 cost is unimpaired against 70.01 cumulative losses. Per share, Q2 CON PAT on the full post-IPO count is about flat YoY. The press release dates pass-through two ways. Its 'recovers fully' claim fails arithmetic: the JV explains about 77bp of the 212bp PAT-margin drop. All YoY bases are unreviewed. F17 is N.A. by doctype; 6 of 9 coordinator watch items are not disclosed in this filing."

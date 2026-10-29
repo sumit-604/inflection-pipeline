@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/ledger_results_netweb_q2fy27.md"
+counts:
+  notes: 5
+  line_items: 107
+  zero_standing: 18
+  agenda_items: 2
+  auditor_paras: 5
+  entities: 22
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, FORWARD, FOOTNOTE_UNRESOLVED, ILLEGIBLE, RESTATED, SINGLE_COLUMN, MISSING_FROM_STRUCTURED]
+ids_in_structured: 428
+ids_referenced: 428
+orphan_ids: []
+missing_from_structured: ["Annexure II row 3 'Industry to which entity belongs: Same industry in which we operate' (fulltext L356)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "ZERO_STANDING counts 18 cells across 8 line items; Exceptional items (R067-R072) and non-current Investments (R162-R163) are zero in every period. Five cash-flow lines are dash in one half only (loss on discard PPE, profit on sale PPE, proceeds from sale PPE, IPO expense recovery, share issue proceeds). Board outcome has only two agenda items (results, Taiwan WOS); no dividend, AGM, director or auditor items. Meeting conclusion time and Company Secretary name are illegible, so the signed-before-conclusion test cannot run. Auditor report is an unmodified limited review: no EoM, Other Matter or Going Concern paragraph; ICAI registration reading uncertain. Standalone filing, so no consolidation list to diff; Taiwan WOS is the only ENTITY_CHANGE. Note 3 QIP parking balances (FD 3,500m, monitoring 587.88m, escrow 177.00m) total 4,264.88m against 11,755.76m net proceeds; deployment of the rest is not stated in the filing. Other equity (R139) has a single column."

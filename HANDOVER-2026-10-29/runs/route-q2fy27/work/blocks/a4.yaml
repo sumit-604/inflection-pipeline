@@ -1,0 +1,81 @@
+stage: A4-analyst
+company: "ROUTE"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, presentation, pressrelease]
+ledger_reconciliation:
+  notes: 23
+  turns: 0
+  slides: 26
+  all_reviewed: true
+  a3_findings_incorporated: [F1-01, F1-02, F1-03, F2-01, F2-02, F2-03, F2-04, F3-01, F4-01, F4-02, F6-01, F6-02, F8-01, F8-02, F9-01, F12-01, F12-02, F12-03, F13-01, F13-02, F13-03, F14-01, F14-02, F14-03, F14-04, A3-01, A3-02, A3-03, A3-04, A3-05, A3-06, A3-07, A3-08, A3-09, A3-10, A3-11, A3-12, A3-13, A3-14, A3-15, A3-16, A3-17, A3-18, A3-19, A3-20, A3-21, A3-22, A3-23, A3-24, A3-25, A3-26, FN01, FN02, FN03, FN04, FN05, FN06, FN07, FN08, FN09, FN10, FN11, FN12, FN13, FN14, FN15]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "HELD (4%, avg cost Rs 509; Notion fetched 2026-10-29, page as of 2026-09-03)"
+position_branch: "8A"
+sc_gap_pat_pct:
+  - {period: "Q2 FY26", gap_pct: -157.2, note: "n.m., exceptional in subs"}
+  - {period: "Q1 FY27", gap_pct: 324.2}
+  - {period: "Q2 FY27", gap_pct: 149.2}
+  - {period: "H1 FY26", gap_pct: -36.9, note: "n.m., exceptional in subs"}
+  - {period: "H1 FY27", gap_pct: 206.6}
+  - {period: "FY26", gap_pct: 90.6}
+questions_for_management:
+  - {q: "Total Masivian breach remediation cost to date and to come; any Q3 FY27 add-back? (Adj 10.0% clears only with Rs 6.90 Cr add-back)", from_finding_id: "A3-18, A3-17, FN12, F2-01"}
+  - {q: "Rs 116.83 Cr vendor advance: vendor type, tenor, security, amount consumed by 31 Oct 2026, link to Q1 Rs 4.90 Cr allowance or FY26 Rs 135.87 Cr write-offs; make-up of the other Rs 44.50 Cr of the Rs 161.33 Cr other-asset rise", from_finding_id: "F1-01, A3-02, A3-04, A3-19"}
+  - {q: "Overseas segment result -24.8% QoQ: cause; did the Q1 large account recover (yes/no)?", from_finding_id: "F12-01, A3-25, FN14, F2-01"}
+  - {q: "H1 FY27 INR revenue from Proximus/Telesign/BICS-introduced customers; share of Europe-HQ revenue fall from group accounts", from_finding_id: "A3-26, A3-20, A3-21"}
+  - {q: "ETR 18.21% (ex-parent 12.33%), deferred credit Rs 3.24 Cr: driver and H2 FY27/FY28 ETR", from_finding_id: "F8-01, F8-02, FN04, A3-06, A3-10"}
+  - {q: "Standalone receivables +Rs 149.89 Cr (+62%), DSO ~139 days: top-3 India and group-entity billing share; collection date", from_finding_id: "F2-03, F12-03, A3-13"}
+  - {q: "MOA objects expansion and Brussels signing: any acquisition or transfer from the Proximus group within 12 months (yes/no); vote date", from_finding_id: "F13-01, F13-02"}
+  - {q: "Heltar revenue since 29 Jul 2026; clients added; founders retained; is the Rs 9.78 Cr deferred leg an earn-out; Heltar FY26 revenue and PAT to test the up-to Rs 33.66 Cr price", from_finding_id: "F6-02, A3-22, FN03, FN08"}
+  - {q: "Why rescind the 7 May 2026 IPO variation; completion date for the Rs 65 Cr Mumbai office", from_finding_id: "F6-01"}
+  - {q: "24 component subs PAT Rs 24.19 to 65.43 Cr, residual -15.80, NCI halved: intra-group dividend? which sub carries the minority", from_finding_id: "F2-02, F4-02, A3-07, FN05"}
+  - {q: "Current loans to subs -Rs 62.00 Cr (94.70 to 32.70), non-current +Rs 27.93 Cr (186.60 to 214.53); H1 new loans Rs 34.35 Cr, repaid Rs 72.65 Cr: which subs hold the Rs 247.23 Cr, was any current loan renewed into a longer tenor rather than repaid, Route Mobile UK schedule", from_finding_id: "F2-04"}
+  - {q: "Name the 7 management-certified subs and the make-up of their Rs 45.28 Cr assets", from_finding_id: "F3-01"}
+  - {q: "Overseas liabilities -Rs 114.76 Cr QoQ, DPO 64 to 50: supplier paydown or intra-group settlement", from_finding_id: "F12-02, A3-19"}
+  - {q: "Why LTM EBITDA basis switched and 'Net Cash' became 'Cash'; Q2 net cash, gross debt, composition of Rs 1,355.6 Cr", from_finding_id: "A3-15, A3-16"}
+  - {q: "Employee cost +17% QoQ on flat 786 headcount; nil ESOP charge; any new ESOP scheme to be added back", from_finding_id: "A3-01"}
+  - {q: "GM +150 bps QoQ: routing vs mix split in bps; Q3 FY27 GM band", from_finding_id: "A3-23, FN02"}
+  - {q: "Truecaller BM revenue Q2 FY27; above Rs 15 Cr/qtr (yes/no)", from_finding_id: "A3-24, FN13"}
+  - {q: "State the FY27 revenue and EBITDA guidance numbers behind 'in line with our guidance'", from_finding_id: "FN09"}
+  - {q: "Any residual from FY26 Rs 135.87 Cr exceptional items open in H2 FY27", from_finding_id: "FN01"}
+  - {q: "Did the former Masiv CEO's exit relate to the breach; date", from_finding_id: "A3-09"}
+  - {q: "FY27 total dividend payout target; any buyback under consideration", from_finding_id: "A3-08"}
+  - {q: "Is an H2 FY27 cost or restructuring programme planned; would it go through the exceptional line", from_finding_id: "FN11"}
+  - {q: "Board closed 22:35 IST; review reports signed 23:15/23:18; outcome letter 23:49:25 (74 min): exchange receipt time of the results; was the 30-minute Reg 30 window met (yes/no)", from_finding_id: "FN06, F13-02"}
+monitorables:
+  - {item: "Insider trading window opens", implied_date: "2026-10-30", source_ref: "results R997 L112"}
+  - {item: "Second interim dividend record date and TDS documents", implied_date: "2026-11-02", source_ref: "results R1016 R992 L55 L74"}
+  - {item: "Second interim dividend paid Rs 4/share (~Rs 25.20 Cr)", implied_date: "by 2026-11-26", source_ref: "results R990 L65; F13-03"}
+  - {item: "Q2 FY27 concall transcript/recording: run Role 5; test Proximus KPI on the call", implied_date: "ND (when posted)", source_ref: "Role 5 not run"}
+  - {item: "MOA alteration shareholder vote", implied_date: "NOT FOUND", source_ref: "results R996 L101; F13-01"}
+  - {item: "Q3 FY27 reported EBITDA margin (single cleanest metric), Masivian add-back, India margin, ETR, Truecaller and Heltar KPIs", implied_date: "by 2027-02-14", source_ref: "Step 8C; F12-03; F8-02; A3-24; FN03"}
+  - {item: "Vendor advance Rs 116.83 Cr consumed in H2 FY27", implied_date: "FY27 results, by 2027-05-30", source_ref: "deck dR312 L834; A3-04"}
+  - {item: "Standalone receivable build Rs 391.25 Cr collects", implied_date: "FY27 results, by 2027-05-30", source_ref: "results R752; F2-03"}
+  - {item: "Rs 65 Cr IPO proceeds spent on Mumbai office", implied_date: "NOT FOUND", source_ref: "results R995 L93; F6-01"}
+  - {item: "QIP Rs 867.50 Cr utilisation", implied_date: "NOT FOUND", source_ref: "results R999 L835"}
+  - {item: "Heltar deferred consideration Rs 9.78 Cr", implied_date: "~2028-01-29", source_ref: "results R587 L851; A3-05"}
+  - {item: "Salesforce AgentExchange revenue (item 16)", implied_date: "by Q4 FY27", source_ref: "deck dR065-dR066"}
+  - {item: "FY27 AR: hedge designation, Proximus RPT, Customer A share, goodwill test incl. Heltar", implied_date: "~2027-07 to 2027-08", source_ref: "F9-01; Notion Key Notes"}
+  - {item: "Strategic Premium recompute +1.25x to +1.0x and pillar refresh", implied_date: "next /fttcp run", source_ref: "Step 7"}
+  - {item: "Operator rulings: condition 1 basis, Rs 450/Rs 420 floors, early-warning conflict, Truecaller counter, RDE trim", implied_date: "now", source_ref: "Steps 6C, 8"}
+flags:
+  - "F-1 Thesis-broken condition 1 basis-dependent: Adjusted 10.04% NOT FIRED (headroom Rs 0.45 Cr, rests on Rs 6.90 Cr Masivian add-back; management's Adjusted PAT keeps the Masivian and capital-advance costs in, so 'one-time' applies at EBITDA only); reported 9.75% after 9.16% FIRED (pre-committed exit 50%). Notion names Adjusted where it names a basis; thesis line and exit criteria name none. OPERATOR RULING."
+  - "F-2 CMP Rs 435 below Rs 450 hard floor (Position Size); 52-week low Rs 407 below Rs 420 'exit 50% regardless' floor, breach date ND; CMP below AR MoS Rs 463."
+  - "F-3 Notion conflict: early-warning 'EBITDA <10% any quarter -> EXIT 50%' vs two-quarter rule; not applied at Q1."
+  - "F-4 Strategic Premium expiry met on filed evidence (no Proximus revenue KPI); +1.25x to +1.0x deferred to /fttcp; concall content unknown."
+  - "F-5 Cash INDETERMINATE-WITH-DIRECTION: H1 CFO/PAT 0.22x; of the Rs 161.33 Cr other-asset rise, Rs 116.83 Cr is a vendor prepayment (same asset class as FY26 Rs 135.87 Cr write-offs) and Rs 44.50 Cr is unexplained; separately parent receivables +Rs 149.89 Cr and standalone CFO -Rs 126.69 Cr."
+  - "F-6 Cap-5% gate FAILED (GM 22.38% < 23%); add-back conditions met but blocked; RDE 4%->3% trim re-put."
+  - "F-7 PAT quality: 49% of QoQ PAT gain from lower ETR; normalised PAT -17.75% YoY; core PBT -19.86% YoY."
+  - "F-8 Overseas result -24.8% QoQ; parent alone delivered the QoQ EBITDA and gross-profit gains (standalone GP +33.24 vs consol +23.51; outside parent GM -39 bps; inter-segment revenue +26.46); revenue ex-new-products -0.54% QoQ."
+  - "F-9 Governance: first MSKA review; component-audited subs 79.3% of consol PAT; MOA expansion into digital identity/AI; Brussels signing; outcome letter signed 74 min after board close, dissemination time ND, 30-min Reg 30 window untested; 0 of 12 prior questions answered on filed basis."
+  - "F-10 Truecaller item 13 RED on Notion counter (AMBER on strict quarter count)."
+  - "F-11 Role 5 NOT RUN: no Q2 concall transcript."
+  - "F-12 Notion properties stale (Entry 628 / MoS 502 vs 579 / 463); no FY27 bear margin, PAT or EPS on file."
+  - "F-13 Condition 5: FY26 Rs 107.96 Cr write-off above the Rs 100 Cr leg; record treats as closed; Q1 6C omitted condition 5."
+  - "F-14 Heltar purchase economics NOT COMPUTABLE: up to Rs 33.66 Cr, no filed target revenue, PAT, ROCE, debt or cash; deck drops the note's 'up to'."
+plain_language_brief_included: true
+analyst_note: "Correction loop 1 applied; verdict and cash class unchanged. The decisive Q2 test did not resolve cleanly. Adjusted EBITDA margin is 10.04%, Rs 0.45 Cr above the line, only because Rs 6.90 Cr of Masivian data-breach fees is added back a second quarter. Management's own Adjusted PAT keeps that cost in, so the one-time label holds only at EBITDA. Reported margin is 9.75% after 9.16%. Notion names Adjusted where it names a basis, but the thesis line and exit row do not, so A4 shows both and does not rule. CMP Rs 435 sits below the Rs 450 hard floor; the 52-week low Rs 407 sits below the Rs 420 exit floor, breach timing ND. Cash: H1 CFO/PAT 0.22x; Rs 116.83 Cr of the Rs 161.33 Cr other-asset rise is a supplier prepayment of the kind written off in FY26, and Rs 44.50 Cr is unexplained. The gross-margin recovery sits in the parent; outside it, margin fell. Ex-cash ROCE is 20.71% on EBIT ex-OI. The Reg 30 30-minute window is untested. No concall transcript exists."
+review_path: "runs/route-q2fy27/work/review_route_q2fy27.md"

@@ -1,0 +1,71 @@
+stage: A3-forensics
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/indiamart-q2fy27/work/forensics_presentation_indiamart_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: FINDING
+  F3: PASS
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: N.A.
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "F1-01", check: "F1", line: "L895/L882 (R617-R622,R1573)", classification: "NEUTRAL-FACT", implication: "Share-issuance line (ESOP+QIP) zero since FY21; non-zero = capital event"}
+  - {id: "F1-02", check: "F1", line: "L844/L795 (R479-R481,R1563)", classification: "NEUTRAL-FACT", implication: "Goodwill 454 unchanged since FY23; no impairment; exceptional items folded into Others"}
+  - {id: "F2-01", check: "F2", line: "L809/L1010/L801/L1000/L808/L1009 (R411,R813,R336,R718,R403,R805)", classification: "FORWARD-SIGNAL", implication: "Consol-SA PAT gap -14.2% vs -2.3% QoQ and ~-1% YoY; Q1 subsidiary OI gain gone; steady ~20 Cr Others drag is mostly associate losses, never shown as a line"}
+  - {id: "F2-02", check: "F2", line: "L1651/L1002/L1004/L718/L1159/L1162/L1164 (R1382,R738,R757,R280)", classification: "AMBIGUOUS", implication: "SA EBITDA +41 Cr YoY is cost-led (headcount -6%, manpower -1%, S&M -3%); bridge ~16 base one-off [INFERENCE] + ~6 SBP + ~19 operating"}
+  - {id: "F6-01", check: "F6", line: "L1083/L1091/L1125 (R1500,R965,R989)", classification: "AMBIGUOUS", implication: "'~20%' next-quarter recognition vs realised 18.6% (Q2) / 18.7% (Q1); overstates ~25 Cr a quarter"}
+  - {id: "F6-02", check: "F6", line: "L1188-1190/L1241/L1309/L1313 (R1501-R1503,R1152,R1170,R1204)", classification: "FORWARD-SIGNAL", implication: "Busy 'increase new licences' and 'accelerate revenue' contradicted: new licences 11K vs 12K YoY; revenue +27% vs ~+47% Q1"}
+  - {id: "F6-03", check: "F6", line: "L526/L710/L711/L715 (R1493,R192,R203,R247)", classification: "CONFIRMATORY-NEGATIVE", implication: "'Keep expanding buyer & supplier network' vs buyers -7%, enquiries -14%, suppliers -2% YoY"}
+  - {id: "F6-04", check: "F6", line: "L615/L663/L665 (R142,R167,R1551,R1554)", classification: "AMBIGUOUS", implication: "Aerchain 3.7% transfer concluded 7-Oct-2026 (23.2% to 26.9%); consideration undisclosed; Q3 outflow"}
+  - {id: "F10-01", check: "F10", line: "L811/L796/L1461/L895 (R430,R1564,R1292,R622)", classification: "NEUTRAL-FACT", implication: "Single bonus-adjusted EPS line; 91/6.0143 cr = 15.1 ties; share count flat YoY"}
+  - {id: "F10-02", check: "F10", line: "L1005/L1007/L994 (R767,R768,R786,R787,R1584)", classification: "AMBIGUOUS", implication: "Share-based payment 5 Cr vs ~11 Q2 FY26 lifts SA EBITDA ~6 Cr YoY; reverses on next grant cycle"}
+  - {id: "F12-01", check: "F12", line: "L1309-L1321/L1268/L213-219 (R1169,R1204,R1220,R1165,R1167)", classification: "FORWARD-SIGNAL", implication: "Busy costs +38% vs revenue +27%; EBITDA ~-20% YoY derived, margin ~18% to 12%; billing +20% Q2, ~+14% H1, -22% QoQ"}
+  - {id: "F12-02", check: "F12", line: "L1091/L1092/L1590/L925/L812 (R965,R966,R971,R1343,R441,R442)", classification: "FORWARD-SIGNAL", implication: "SA deferred revenue +5 Cr QoQ, smallest build shown; collections growth trails revenue; revenue growth drifting to high single digits"}
+  - {id: "F12-03", check: "F12", line: "L951/L955/L943 (R688,R705,R1579)", classification: "NEUTRAL-FACT", implication: "Other subsidiaries ~3 Cr revenue/qtr; Livekeeping (103 Cr) has no separate numbers; EBITDA loss narrowing"}
+  - {id: "F14-01", check: "F14", line: "L1154 (R1598)", classification: "AMBIGUOUS", implication: "Functional P&L basis cites 'Note No. 31' that is not in the 6-note filed standalone results; basis unverifiable"}
+  - {id: "F14-02", check: "F14", line: "L93/L358-359/L211/L1321/L389/L444 (R1415,R1537,R1538,R057,R103,R106)", classification: "NEUTRAL-FACT", implication: "Cumulative drafting slips; immaterial alone"}
+  - {id: "F15-01", check: "F15", line: "L627-631/L545 (R1440,R1441,R1498)", classification: "FORWARD-SIGNAL", implication: "IndiaMart Finance Ltd (incorporated 04-Aug-2026 per results) absent from deck subsidiary list and narrative; lending perimeter and capital undisclosed"}
+  - {id: "F15-02", check: "F15", line: "L665/L605 (R154,R155,R140)", classification: "AMBIGUOUS", implication: "MonotaRO associate exit 29-May-2026 invisible; deck has no associate/FVTPL label; second quarter unresolved"}
+  - {id: "F15-03", check: "F15", line: "L665/L1046/L1037 (R148-R176,R886,R1588)", classification: "AMBIGUOUS", implication: "p32 table at cost 1,442 vs SA strategic investments 1,556; 114 Cr (7.3%) unbridged"}
+  - {id: "F16-01", check: "F16", line: "L183/L1007/L1652/L1651/L1166/L1003 (R033,R787,R1387,R1072,R748)", classification: "AMBIGUOUS", implication: "Headline SA EBITDA +36% on a base with a likely 16 Cr impairment [INFERENCE]; like-for-like ~+19%; YoY cells blank on Other Expenses and G&A"}
+  - {id: "F16-02", check: "F16", line: "L801/L1000/L891/L898/L793 (R336,R718,R594,R643)", classification: "FORWARD-SIGNAL", implication: "OI 107 to (8); H1-only table hides Q2 MTM ~-52 Cr (with NOTION MEMORY Q1 96); PAT exposed to yields on ~3,234 Cr treasury"}
+  - {id: "F16-03", check: "F16", line: "L1678/L1679/L1680/L1673/L711 (R1399-R1406,R1620,R203)", classification: "AMBIGUOUS", implication: "Q2 (14%) consistent within rounding; Q1 FY26 base is 28 (this deck) vs 31 / ~29 (Q1 deck, NOTION MEMORY); unexplained restatement"}
+  - {id: "F16-04", check: "F16", line: "L217-219/L1314-L1320 (R059-R061,R1212,R1234,R1258)", classification: "AMBIGUOUS", implication: "Busy EBITDA/NP/CFO printed without YoY where they fell; second consecutive quarter"}
+  - {id: "F16-05", check: "F16", line: "L194/L200/L206 (R041,R045,R051)", classification: "NEUTRAL-FACT", implication: "Declines unsigned in text layer; direction graphic only; second consecutive quarter"}
+  - {id: "F16-06", check: "F16", line: "L192/L710 (R044,R191)", classification: "AMBIGUOUS", implication: "Active buyers printed 40 Mn in whole millions, exactly at the 40M trigger line; deck cannot resolve below-40M"}
+  - {id: "F16-07", check: "F16", line: "L358/L354/L1373/L1398/L1414 (R1510,R100,R1526-R1528)", classification: "NEUTRAL-FACT", implication: "Geography, sales team, ESG and people data dated 31-Mar-2026, two quarters stale"}
+  - {id: "F17-01", check: "F17", line: "L1469/L1473 (R1293,R1611)", classification: "AMBIGUOUS", implication: "Promoter ~49% shown; pledge silent for a second consecutive deck"}
+  - {id: "F17-02", check: "F17", line: "L526/L710-712/L754 (R1493,R192,R203,R214,R310)", classification: "CONFIRMATORY-NEGATIVE", implication: "Demand KPIs deteriorate a further quarter; no cause, target or date; second consecutive deck without demand guidance"}
+  - {id: "F17-03", check: "F17", line: "L795/L665 (R1563,R152,R153)", classification: "AMBIGUOUS", implication: "Associate cohort P&L and Fleetx mark silent; associate loss folded into Others although it drives the S-vs-C gap"}
+forward_signals: ["F2-01", "F6-02", "F12-01", "F12-02", "F15-01", "F16-02"]
+ambiguous: ["F2-02", "F6-01", "F6-04", "F10-02", "F14-01", "F15-02", "F15-03", "F16-01", "F16-03", "F16-04", "F16-06", "F17-01", "F17-03"]
+commitments:
+  - {commitment: "~20% of deferred revenue recognised within next 3 months", implied_date: "Q3 FY27", ref: "p45 L1083 (R1500)", status_word: "none"}
+  - {commitment: "Busy: increase new licences sold", implied_date: "undated", ref: "p49 L1190 (R1503)", status_word: "none"}
+  - {commitment: "Busy: accelerate revenue growth", implied_date: "undated", ref: "p49 L1189 (R1502)", status_word: "none"}
+  - {commitment: "Busy: invest in team and awareness", implied_date: "undated", ref: "p49 L1188 (R1501)", status_word: "none"}
+  - {commitment: "Keep expanding buyer and supplier network", implied_date: "undated", ref: "p27 L526 (R1493)", status_word: "none"}
+  - {commitment: "Focus on large and medium enterprises", implied_date: "undated", ref: "p27 L532 (R1494)", status_word: "none"}
+  - {commitment: "Improve engagement: commerce enablement, fintech and accounting, business enablement SaaS", implied_date: "undated", ref: "p27 L523-527 (R1495-R1497)", status_word: "none"}
+  - {commitment: "Commerce stage: credit facilitation, logistics/tracking", implied_date: "undated", ref: "p28 L545-547 (R1498)", status_word: "none"}
+  - {commitment: "Aerchain (Agillos E-Commerce) 3.7% share transfer", implied_date: "2026-10-07", ref: "p31 L615, p32 L663 (R1551,R1554)", status_word: "completed"}
+  - {commitment: "FY26 dividend payable settlement (Q1 monitorable, NOTION MEMORY)", implied_date: "Q2 FY27", ref: "p38 L853 (R551), p39 L897 (R636)", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The deck's quarter splits into cost-led standalone margin and shrinking demand volume. The headline +36% SA EBITDA leans on a base that likely carries a 16 Cr impairment (results A3, inference), on a smaller share-based payment charge, and on 6% fewer staff. Like-for-like growth is near 19%. Consolidated PAT growth of 10% absorbed a treasury reversal: Q2 MTM about -52 Cr, using the Q1 MTM figure from Notion memory. The H1-only table hides this. Associate losses now set the S-vs-C gap, and the deck never shows them as a line. Two cross-deck problems need answers: the enquiries Q1 FY26 base (28 here vs 31 in Q1 deck memory) and active buyers printed exactly at 40 Mn. A2 missed 8 ZERO_STANDING tags that A1 set (R480-R481, R617-R622); coverage is unaffected. A4 owns the 8B and #6 rulings; values are listed in the report."

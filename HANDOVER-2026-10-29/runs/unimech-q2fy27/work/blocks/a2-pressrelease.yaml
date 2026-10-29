@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-unimech-q2fy27-1b1895/runs/unimech-q2fy27/work/ledger_pressrelease_unimech_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 22
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 3
+  slide_numbers: 68
+flags_raised: [RESTATED, FOOTNOTE_UNRESOLVED, MGMT_ABSENCE]
+ids_in_structured: 123
+ids_referenced: 123
+orphan_ids: []
+missing_from_structured: [M01 trivial website variant, M02 page footers, M03 phone/email grouped under R089, M04 qualitative claims high-margin order mix and operating leverage (lines 80-81), M05 capability list (lines 116-117)]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "No prior ledger, so no DROPPED_SLIDE or ENTITY_CHANGE test. Table (32 values, R015-R046) matches the render-verified fulltext lines 105-110. Forward claims R094, R096, R097, R098 carry no number or date. Customers and OEMs are unnamed. Metric definitions (Total Revenue, EBITDA, order book base, 40% margin basis, FY26 base for ~96%) are absent, so the 40% margin and 8-times claims cannot be checked from this document."

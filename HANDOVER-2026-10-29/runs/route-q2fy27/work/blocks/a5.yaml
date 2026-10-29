@@ -1,0 +1,70 @@
+stage: A5-adversary
+company: "ROUTE"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "results signature block p8 MD L625-629 ts 22:47:07 (not in ledger; no structured timestamp row)"
+    - "results signature block p9 MD L696-698 ts illegible in text layer (not in ledger)"
+    - "results signature block p10 MD L756-761 ts 22:4s:o4 OCR (not in ledger; no row)"
+    - "results signature block p14 MD L1017-1022 ts 22:45:01 (not in ledger; no row)"
+    - "results signature block p15 MD L1085-1090 ts 22:4s:1s OCR (not in ledger; no row)"
+    - "results signature block p16 MD L1155-1161 ts 22:45:30 (not in ledger; no row)"
+    - "results timestamps with no structured row although the block is in the ledger: MSKA L263 23:15:18, MSKA L938 23:18:16, MD p7 L513 22:46:43, MD p11 L873 22:48:33, MD p17 L1221 22:44:22"
+arithmetic_mismatches:
+  - {metric: "ROCE ex-cash H1 FY27 annualised", a4_value: "23.50%", recomputed: "20.71% (EBIT ex-OI 172.95 x2 / (3,010.04 - 1,340.08))", source_line: "results L559, L769, L656-657, L668, L672, L679"}
+  - {metric: "Q3 FY26 Op EBITDA derived", a4_value: "153.41; 13.86%", recomputed: "at most 146.40; at most 13.22% (H2 by subtraction carries +7.01 FX artifact)", source_line: "results L477, L471, L1277"}
+  - {metric: "Q3 FY26 core PBT ex-OI derived", a4_value: "129.33", recomputed: "at most 122.32", source_line: "results L479, L471, L1277"}
+  - {metric: "Q2 FY27 Op EBITDA margin gap to Q3 FY26", a4_value: "about 410 bps", recomputed: "at most 347 bps", source_line: "review L307; results L1277"}
+  - {metric: "Q2 FY27 finance cost composition", a4_value: "2.46 = lease interest + 0.14 unwind; QoQ +1.10 recurring lease/unwind", recomputed: "H1 FC 3.82 itemised only 2.84 (lease 2.01, other 0.69, unwind 0.14); QoQ driver ND", source_line: "results L339, L436, L773-776"}
+  - {metric: "H1 FY27 other-asset outflow attribution", a4_value: "161.33 = 116.83 vendor advance + 149.89 standalone receivable build", recomputed: "116.83 + 44.50 unexplained; standalone build is in trade receivables; group TR outflow 45.69", source_line: "results L785-786, L655, L1050; deck L830"}
+surviving_bear_counters:
+  - {claim: "Condition 1 NOT FIRED on Adjusted basis (Adj EBITDA 10.04%)", counter: "Management Adjusted PAT adds back neither Masivian fees nor the capital-advance allowance (Adj PAT = reported 825.5 Q2, 685.5 Q1), so the one-time label applies at EBITDA only", source_line: "deck L743-753", type: "MISSING"}
+  - {claim: "GM recovered +150 bps QoQ to 22.38%; recovery CONFIRMED", counter: "Gain is parent-only: standalone GP +33.24 vs consolidated +23.51; consolidated-minus-standalone GP -9.73 and GM -39 bps; inter-segment revenue +26.46; overseas segment result -21.27", source_line: "results L333, L337, L962, L966, L522-528", type: "MISSING"}
+  - {claim: "Heltar acquisition delivered; M&A pace GREEN (mandatory acquisition probe)", counter: "Price up to Rs 33.66 Cr / target PAT NOT DISCLOSED = multiple NOT COMPUTABLE; no target revenue, ROCE, debt, cash or tenure filed; deck drops the note's 'up to'", source_line: "results L849-851, L643; deck L183-199", type: "MISSING"}
+findings_by_type:
+  factual:
+    - "F-1 (A4) Step 5 attributes the 161.33 other-asset outflow to the vendor advance plus the 149.89 standalone receivable build; the build is a trade-receivables item and group TR absorbed only 45.69 (results L785-786, L1050)"
+    - "F-2 (A4) Ex-cash ROCE 23.50% keeps treasury income in the numerator; 20.71% on EBIT ex-OI (results L559, L769)"
+    - "F-3 (A4) Finance cost 2.46 described as lease interest plus 0.14 unwind; H1 lease interest is 2.01 total and 0.98 of H1 FC 3.82 is unitemised; QoQ +1.10 driver ND (results L436, L773-776)"
+    - "F-4 (A4) FN06 'Sequence clean' unsupported: outcome letter signed 23:49:25, 74 min after 22:35 board close; review reports signed 23:15/23:18 after board approval; 30-min Reg 30 window untested; dissemination time ND (results L114, L126, L263, L938)"
+    - "F-5 (A4) 'Largest clients are thinning' unsupported: >$15mn 5 to 5, >$10mn 8 to 9, >$1mn 73 to 80; fall is the $5-10mn band 13 to 10 (deck L595-602)"
+    - "F-6 (A4) ESOP 1.14 labelled Q1 FY26; it is the H1 FY26 column (results L781)"
+    - "F-7 (A4) Q11 premise 'Rs 62 Cr moved from current to non-current' unsupported: current loans -62.00, non-current +27.93, loans given 34.35, repaid 72.65 (results L1041, L1053, L1134-1135)"
+  missing:
+    - "M-1 (A2) Signature blocks 6 vs fresh 12; 11 signature timestamps absent from structured file and ledger; MISSING_FROM_STRUCTURED wrongly none"
+    - "M-2 (A4) Condition-1 bear counter: Adjusted PAT carries no Masivian or capital-advance add-back (deck L750-753)"
+    - "M-3 (A4) GM recovery is parent-only at GP level; inter-segment revenue +26.46 (results L524, L962, L966)"
+    - "M-4 (A4) Heltar purchase economics NOT COMPUTABLE (no target financials); deck drops 'up to' (deck L190 vs results L851)"
+  contradiction:
+    - "C-1 (A4) Q3 FY26 derived by subtraction across periods with different FX line placement, after A4 states EBITDA does not add across periods; Q3 at most 13.22% / 146.40 and core PBT at most 122.32, gap at most 347 bps (results L477, L1277; review L81, L301, L307)"
+  style:
+    - "S-1 R834 cited for the 149.89 build; R834 is the 151.63 CF line; use R752-R753"
+    - "S-2 'other sales were flat' needs a period (YoY +2.5%, QoQ -0.5%)"
+    - "S-3 'parent's unpaid bills' reads as payables; say money customers owe the parent"
+    - "S-4 input-discipline line omits the market-data source for CMP Rs 435 and 52-week low Rs 407"
+    - "S-5 Adj margin YoY -186 bps on rounded inputs; -187 bps unrounded"
+    - "S-6 state the item 5 break-even: Heltar above Rs 20.41 Cr in Q2 breaks GREEN"
+    - "S-7 receivable-gap residual is 0.38; FX translation with positive FCTR would raise balances; drop the clause"
+    - "S-8 blanket ledger reconciliation accepted; a per-document range list would speed the next audit"
+loop_back_to: "A2"
+gap: "A2 MISSING: signature_blocks 6 vs fresh 12 and 11 signature timestamps (results L263, L938, L513, L629, L698, L761, L873, L1022, L1090, L1161, L1221) absent from structured file and ledger. Same cycle A4: FACTUAL F-1 Step 5 cash attribution, F-2 ex-cash ROCE 23.50% vs 20.71%, F-3 finance-cost attribution, F-4 Reg 30 'sequence clean' vs 74-min gap, F-5 client-cohort asymmetry, F-6 ESOP period label, F-7 Q11 loan premise; CONTRADICTION C-1 Q3 FY26 derived across FX bases (13.86% vs at most 13.22%); MISSING grafts M-2 Adj PAT inconsistency, M-3 parent-only GM recovery, M-4 Heltar multiple not computable."
+style_notes:
+  - "S-1 R834 cite for 149.89; use R752-R753"
+  - "S-2 'other sales were flat' needs a period"
+  - "S-3 'unpaid bills' ambiguous"
+  - "S-4 add the market-data source to the input-discipline line"
+  - "S-5 Adj margin YoY -186 vs -187 bps, rounding"
+  - "S-6 state item 5 break-even Rs 20.41 Cr"
+  - "S-7 drop the FX-translation clause on the 0.38 residual"
+  - "S-8 per-document reviewed-range list would help"
+analyst_note: "INCOMPLETE on one A2 coverage miss plus eleven A4 items. None changes PROCEED WITH FLAGS, the cash classification, or the F-1 basis framing. The A2 fix is mechanical. The ledger counts 6 signature blocks against 12 in the fulltext, and 11 timestamps have no structured row, yet A2 wrote none missing while quoting one of them. The orchestrator can batch it with the A4 fixes in one cycle; A3 needs no change beyond FN06. Substantive A4 items: (1) FN06 'sequence clean' ignores a 74-minute gap from board close to the outcome-letter signature. (2) Q3 FY26 is derived by subtracting periods that place FX in different lines, which A4 itself warns against, so the Q3 margin is at most 13.22%. (3) Ex-cash ROCE keeps treasury income in the numerator: 20.71%, not 23.50%. This is pillar-relevant. (4) Step 5 blames consolidated cash on a parent receivable build that sits in a different line. Strongest surviving bear: management's Adjusted PAT keeps the Masivian fees it adds back at EBITDA. The Heltar multiple is not computable because no target financials are filed. All other derived cells tie."

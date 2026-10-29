@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "NEOCHEM"
+quarter: "q2fy27 (H1 FY27)"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 10
+formfeed_count: 10
+line_count: 292
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "Lakhs -> x0.01"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["page 8: operator-requested spot check only, 5 values matched text layer"]
+page_coverage_pct: 100
+detected_quarter: "H1 FY27 (half year ended 30-Sep-2026)"
+fulltext_path: "runs/neochem-q2fy27/extracted/neochem-results-q2fy27-fulltext.md"
+structured_path: "runs/neochem-q2fy27/extracted/neochem-results-q2fy27-structured.md"
+structured_counts:
+  number: 273
+  entity: 29
+  forward: 4
+  date: 23
+  qualifier: 34
+structured_id_range: "R001-R363"
+gate_a1: pass
+gap_note: ""

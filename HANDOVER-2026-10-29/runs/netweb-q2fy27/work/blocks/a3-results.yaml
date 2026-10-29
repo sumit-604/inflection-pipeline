@@ -1,0 +1,54 @@
+stage: A3-forensics
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/forensics_results_netweb_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "L205", classification: "FORWARD-SIGNAL", implication: "Non-current investments nil at both dates; Taiwan WOS cash subscription populates it first and marks the consolidation start"}
+  - {id: "A3-02", check: "F1", line: "L172", classification: "NEUTRAL-FACT", implication: "Exceptional items nil in all six periods; the slot a future inventory write-down would use"}
+  - {id: "A3-03", check: "F8", line: "L176", classification: "NEUTRAL-FACT", implication: "Earlier-year tax adjustment (0.68) in FY26 only, 2 bps of FY26 PBT; nil in FY27 periods"}
+  - {id: "A3-05", check: "F9", line: "L182", classification: "NEUTRAL-FACT", implication: "Q2 actuarial gain 2.96 exceeds FY26 full year 0.52; immaterial; verify assumptions at FY27 AR"}
+  - {id: "A3-06", check: "F10", line: "L186", classification: "AMBIGUOUS", implication: "Share capital +0.57 between Sep-25 and Mar-26 untraced in this filing; conflicts with Notion May-26 ESOP allotment date; basic-diluted spread zero"}
+  - {id: "A3-07", check: "F12", line: "L211, L165, L271", classification: "FORWARD-SIGNAL", implication: "Inventory +139.9% to 19,306.91; Q2 FG/WIP build 6,100.89 = 46.1% of Q2 revenue; H2 revenue rests on delivering it"}
+  - {id: "A3-08", check: "F12", line: "L167, L234, L238", classification: "FORWARD-SIGNAL", implication: "Finance cost +106.5% QoQ to 238.00 vs closing debt +18.3%; annualised 29.6% of closing debt implies funding not visible at period end"}
+  - {id: "A3-09", check: "F12", line: "L240, L272", classification: "AMBIGUOUS", implication: "Other current liabilities -37.6% (1,657.82); advances consumed vs not replaced"}
+  - {id: "A3-10", check: "F12", line: "L261, L262", classification: "AMBIGUOUS", implication: "Doubtful-debt provision plus write-off 53.31 vs 3.57 (14.9x) on receivables +17.1%; lean bear, name the customers"}
+  - {id: "A3-12", check: "F13", line: "L54-55, L371, L356", classification: "FORWARD-SIGNAL", implication: "Taiwan WOS approved with cost, date and purpose undetermined; overseas capital commitment"}
+  - {id: "A3-13", check: "F14", line: "L161, L169", classification: "AMBIGUOUS", implication: "Q1+Q2 other income and other expenses each exceed H1 by 52.21; PBT adds; quarterly margin read uncertain"}
+  - {id: "A3-14", check: "F14", line: "L292, L293, L314-315", classification: "AMBIGUOUS", implication: "Monitoring-account outflow 935.70 minus disclosed QIP balances 764.88 = 170.82 = dividends paid exactly; possible routing or double count"}
+  - {id: "A3-15", check: "F6", line: "L314-315, L295, L278", classification: "AMBIGUOUS", implication: "Only 4,264.88 of 11,755.76 net QIP proceeds located; 7,490.88 (63.7%) use not stated; no objects or Reg 32 statement in the filing"}
+  - {id: "A3-16", check: "F15", line: "L350, L352-354, L374", classification: "FORWARD-SIGNAL", implication: "First subsidiary proposed; consolidated reporting from incorporation quarter; F2-F4 go live"}
+  - {id: "A3-17", check: "F14", line: "L63, L146, L332", classification: "NEUTRAL-FACT", implication: "Handwritten conclusion time 2:40 PM; same-day sign-offs without time stamps; intra-day order untestable"}
+forward_signals: ["A3-01", "A3-07", "A3-08", "A3-12", "A3-16"]
+ambiguous: ["A3-06", "A3-09", "A3-10", "A3-13", "A3-14", "A3-15"]
+commitments:
+  - {commitment: "Incorporate wholly owned subsidiary in Taiwan", implied_date: "undated (To be incorporated)", ref: "Board outcome item 2 L54-55; Annexure II L349", status_word: "not yet initiated"}
+  - {commitment: "Subscribe Taiwan WOS capital in cash, cost TBD, 100% holding", implied_date: "undated", ref: "Annexure II L367, L371, L374", status_word: "not yet initiated"}
+  - {commitment: "Competent-authority approval for Taiwan incorporation, if required", implied_date: "undated", ref: "Annexure II L363-364", status_word: "not yet initiated"}
+  - {commitment: "Vest 4,935 ESOPs granted 18-Jan-2025 over 1-2 years", implied_date: "18-Jan-2026 to 18-Jan-2027", ref: "Note 4 L316-317", status_word: "underway"}
+  - {commitment: "QIP INR 12,000.00m raised and allotted", implied_date: "2026-08-20", ref: "Note 3 L309-313", status_word: "completed"}
+  - {commitment: "Deploy QIP proceeds; 4,264.88 parked at 30-Sep-2026", implied_date: "undated", ref: "Note 3 L314-315", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The statements tie internally. The BS casts, the CF closes to BS cash, borrowings and other bank balances, and other equity rolls forward to 0.00 (7,119.10 + TCI 2,222.87 + net premium 11,750.75 + ESOP 0.62 - dividend 170.82 = 20,922.52). The forward risk is in working capital, not accounting. QIP cash, supplier credit (non-MSME payables +4,584.68) and costlier funding paid for an 11,258.47 inventory build; H1 CFO was (6,391.48). Finance cost doubled QoQ while closing debt rose 18%. Some funding is not visible at the balance-sheet date, and that cost persists until the stock ships. Two presentation items need management answers: the 52.21 H1 netting in other income and other expenses, and the 935.70 monitoring-account outflow whose residual over disclosed QIP balances equals dividends paid to the paisa (this may be coincidence). The Taiwan WOS makes NETWEB a consolidated filer from incorporation, and F2-F4 go live then. The prior-quarter auditor verbatim diff did not run (no prior extract). A1 line cites drift for R330-R332 (true L313) and R345 (true L374); the values are correct."

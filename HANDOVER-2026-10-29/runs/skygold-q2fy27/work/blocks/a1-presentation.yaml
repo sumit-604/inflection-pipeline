@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SKYGOLD"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 41
+formfeed_count: 41
+line_count: 851
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: [2, 5, 14, 22, 24, 33, 34, 35]   # sparse, none zero-char; all skipped no data
+rendered_pages: []          # no OCR; 150-dpi PNG reads on pages 7-12, 21, 23, 36-40 for column verification only
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/skygold-q2fy27/extracted/skygold-presentation-q2fy27-fulltext.md"
+structured_path: "runs/skygold-q2fy27/extracted/skygold-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 760
+  entity: 53
+  forward: 30
+  date: 35
+  qualifier: 37
+structured_id_range: "R001-R915"
+gate_a1: pass
+gap_note: ""

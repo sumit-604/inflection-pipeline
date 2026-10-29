@@ -1,0 +1,8 @@
+{
+ "mcpServers": {
+  "trendlyne": {
+   "type": "http",
+   "url": "https://mcp.trendlyne.com/mcp/?token=<REDACTED: Trendlyne MCP token, in ~/.claude.json on the old machine>"
+  }
+ }
+}

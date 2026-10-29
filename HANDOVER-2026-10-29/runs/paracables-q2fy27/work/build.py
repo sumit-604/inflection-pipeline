@@ -1,0 +1,158 @@
+import pickle
+W = "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/"
+O = W + "work/ocr_results/"
+# (line startswith key) -> replacement line (None = delete noise line)
+R = {
+3: [("|] Revenue from op", "I   | Revenue from operations 560.40 529.40 427.57 1,089.80 878.44 1,912.16"),
+("It | Other income", "II  | Other income 3.80 3.09 19.95 6.89 37.95 51.77"),
+("Il | Total Income", "III | Total Income (I+II) 564.20 532.49 447.52 1,096.69 916.39 1,963.93"),
+("(e) Depreciation", "(e) Depreciation and amortization expense 4.43 4.43 3.83 8.86 7.36 15.16"),
+("(b) Changes in inv", "(b) Changes in inventories of finished goods, (13.97) (28.79) (2.23) (42.76) 0.44 12.60"),
+("VI | Exceptional", "VI | Exceptional items - - - - - -"),
+("(Il) Deferred Tax", "(II) Deferred Tax (1.20) (0.07) 0.35 (1.27) 0.38 0.55"),
+("|", None),
+("iX | Profit for", "IX | Profit for the period from continuing operations (VII - 24.24 19.70 13.26 43.94 32.26 60.24"),
+("A. (I) Items that will not", "A. (I) Items that will not be reclassified to profit or loss - 0.06 0.07 (0.02) 0.13 (0.03) 0.27"),
+("(Il) Income tax relating to items that will not", "(II) Income tax relating to items that will not be (0.01) (0.02) 0.01 (0.03) 0.01 (0.07)"),
+("B. (I) terns", "B. (I) Items that will be reclassified to profit or loss - - - - - -"),
+("(II) Income tax relating to items that will be .", "(II) Income tax relating to items that will be - - - - - -"),
+("| Total other comprehensive", "Total other comprehensive income /(Loss) (XIV) 0.05 0.05 (0.01) 0.10 (0.02) 0.20"),
+("Discontinued operations :- H", "Discontinued operations :-"),
+("X | Profit from discontinued", "X | Profit from discontinued operations - - - - - -"),
+("Xl | Tax expense", "XI | Tax expense of discontinued operations - - - - - -"),
+("Xll | Profit from", "XII | Profit from discontinued operations (after tax) - - - - - -"),
+("(1) Basic = = z=", "(1) Basic - - - - - -"),
+("(2) Diluted ~", "(2) Diluted - - - - - -"),
+("XX | Earnings per equity share in Rs. RBM", "XX | Earnings per equity share in Rs. (for discontinuing"),
+("& euntlaulny", "& continuing operations): (not annualised for the"),
+("quarters) eS", "quarters)"),
+("(1) Basic % [eo]", "(1) Basic 0.74 0.64 0.44 1.38 1.06 1.97"),
+("(2) Diluted Re", "(2) Diluted 0.74 0.64 0.44 1.38 1.06 1.97"),
+("Fhe cy", None), ("Sed Acc", None)],
+4: [("Total Non-Current Assets", "Total Non-Current Assets 346.02 317.05"),
+("Total Current Assets 902", "Total Current Assets 902.57 811.60\nTotal Assets 1,248.59 1,128.65"),
+("f /Equity", "Equity"), ("| (a) Equity Share", "(a) Equity Share Capital 65.45 61.04"),
+("(b) Other Equity", "(b) Other Equity 854.56 717.03"),
+("Total Equity", "Total Equity 920.01 778.07"),
+("Total Non-Current Liabilities", "Total Non-Current Liabilities 32.31 14.81"),
+("(i) Borrowings 111", "(i) Borrowings 111.28 113.92"),
+("(ii) Lease Liabililies", "(ii) Lease Liabilities 1.05 0.99"),
+("| (iii) Trade Payables", "(iii) Trade Payables"),
+("- Total outstanding dues of Micro", "- Total outstanding dues of Micro Enterprises 11.80 10.67"),
+("and Small Enterprises is", "  and Small Enterprises"),
+("-Total outstanding dues of creditors", "-Total outstanding dues of creditors other than 130.69 185.94"),
+(": Micro Enterprises", "  Micro Enterprises and Small Enterprises"),
+("(iv) Other Current Financial", "(iv) Other Current Financial Liabilities 7.42 7.57"),
+("(d)Current Tax", "(d) Current Tax Liability (Net) 11.59 7.35"),
+("Total Current Liabilities", "Total Current Liabilities 296.27 335.77\nTotal Equity and Liabilities 1,248.59 1,128.65"),
+("reg poco", None)],
+5: [("Operating Profit before", "Operating Profit before working capital changes 77.23 53.52"),
+("|(Decrease) / Increase in Trade", "(Decrease) / Increase in Trade Payables (54.16) (9.96)"),
+("Cash generated from operation", "Cash generated from operation (27.22) (58.40)"),
+("Exceptional items", "Exceptional items - -"),
+("~ [Income Tax", "Income Tax Paid/ Refund/ Provisions (Net) (4.67) (1.62)"),
+("NET CASH FROM OPERATING", "NET CASH FROM OPERATING ACTIVITIES (A) (31.89) (60.02)"),
+("Purchase of Investments", "Purchase of Investments (Mutual Fund) (35.00) (1.00)"),
+("NET CASH FROM INVESTING", "NET CASH FROM INVESTING ACTIVITIES (B) (61.99) (22.51)"),
+("NET CASH FROM FINANCING", "NET CASH FROM FINANCING ACTIVITIES (C) 99.45 63.02"),
+("NET INCREASE/(DECREASE) IN CASH", "NET INCREASE/(DECREASE) IN CASH & CASH EQUIVALENTS 5.57 (19.51)"),
+("CASH AND CASH EQUIVALENTS AT BEGINNING", "CASH AND CASH EQUIVALENTS AT BEGINNING OF THE YEAR 4.76 23.29"),
+("CASH AND CASH EQUIVALENT. AE", "CASH AND CASH EQUIVALENTS AT END OF THE PERIOD 10.33 3.78"),
+("Note: %", "Note:"),
+("1. Cash Flow", "1. Cash Flow Statement has been prepared under indirect method as set out in IND AS-7 (Statement of Cash Flows)"),
+("2. Figures", "2. Figures in brackets represent outflow of cash."), (". ach 0", None), ("=", None)],
+6: [("Un-utilzed Amount", "Un-utilized Amount * 26.66")],
+9: [("\\|_ | Other income", "II  | Other income 3.80 3.09 19.64 6.89 37.35 51.10"),
+("| | Revenue from operations", "I   | Revenue from operations 560.40 529.40 428.00 1,089.80 879.12 1,913.35"),
+("Ill | Total Income", "III | Total Income (I+II) 564.20 532.49 447.64 1,096.69 916.47 1,964.45"),
+("Vil | Profit after", "VII | Profit after exceptional items but before tax (V+VI) 32.39 26.54 17.80 58.93 42.99 80.82"),
+("VI | Exceptional", "VI | Exceptional items - - - - - 0.03"),
+("IX | Profit for", "IX | Profit for the period from continuing operations (VII - 24.24 19.70 13.25 43.94 31.75 59.75"),
+("Alll | Profit", "XIII | Profit for the period (IX + XII) 24.24 19.70 13.25 43.94 31.75 59.75"),
+("X | Profit from discontinued", "X | Profit from discontinued operations - - - - - -"),
+("XI | Tax expense", "XI | Tax expense of discontinued operations - - - - - -"),
+("Xll | Profit from", "XII | Profit from discontinued operations (after tax) - - - - - -"),
+("B. (I) Items that will be reclassified", "B. (I) Items that will be reclassified to profit or loss - - - - - -"),
+("(li} Income tax", "(II) Income tax relating to items that will be - - - - - -"),
+("XV | Total Comp", "XV | Total Comprehensive Income ( Comprising Profit and 24.29 19.75 13.24 44.04 31.73 59.95"),
+("(2) Diluleu", "(2) Diluted 0.74 0.64 0.43 1.38 1.04 1.96"),
+("(1) Basic % #", "(1) Basic - - - - - -"),
+("(2) Diluted - - -", "(2) Diluted - - - - - -"),
+("| | (2) Diluted <QG", "(2) Diluted 0.74 0.64 0.43 1.38 1.04 1.96"),
+("g ve) hg", None), ("%( DELHI", None), ("ay ==", None), ("% S A", None), ("iy AS", None), ("bel Asm", None)],
+10: [("Total Non-Current Assets", "Total Non-Current Assets 346.02 317.05"),
+("Total Current Assets", "Total Current Assets 902.57 811.60\nTotal Assets 1,248.59 1,128.65"),
+("(b) Other Equity", "(b) Other Equity 854.56 717.03"),
+("Total Equity |", "Total Equity 920.01 778.07"),
+("Total Non-Current Liabilities", "Total Non-Current Liabilities 32.31 14.81"),
+("(ii) Lease Liabilities 1.05", "(ii) Lease Liabilities 1.05 0.99"),
+("- Total outstanding dues of Micro", "- Total outstanding dues of Micro Enterprises and 11.80 10.67"),
+("Small Enterprises (cy", "  Small Enterprises"),
+("-Total outstanding dues of creditors", "-Total outstanding dues of creditors other than 130.69 185.94"),
+("fend ae", "  Micro Enterprises and Small Enterprises"),
+("iv) Other Current", "(iv) Other Current Financial Liabilities 7.42 7.57"),
+("(c) Provisions 0.59", "(c) Provisions 0.59 0.55"),
+("1(d) Current Tax", "(d) Current Tax Liability (Net) 11.59 7.35"),
+("Total Current Liabilities", "Total Current Liabilities 296.27 335.77\nTotal Equity and Liabilities 1,248.59 1,128.65"),
+("Freq acco", None)],
+11: [("Operating Profit before", "Operating Profit before working capital changes 77.23 53.71"),
+("Exceptional items", "Exceptional items - -"),
+("!(Decrease)", "(Decrease) / Increase in Other Liabilities & Provisions 6.19 0.95"),
+("Income Tax Paid", "Income Tax Paid/ Refund/ Provisions (Net) (4.67) (2.40)"),
+("NET CASH FROM OPERATING", "NET CASH FROM OPERATING ACTIVITIES (A) (31.89) (57.96)"),
+("Purchase of Investments", "Purchase of Investments (Mutual Fund) (35.00) (1.00)"),
+("NET CASH FROM INVESTING", "NET CASH FROM INVESTING ACTIVITIES (B) (61.99) (22.94)"),
+("NET CASH FROM FINANCING", "NET CASH FROM FINANCING ACTIVITIES (C) 99.45 61.41"),
+("CASH AND CASH EQUIVALENTS AT BEGINNING", "CASH AND CASH EQUIVALENTS AT BEGINNING OF THE YEAR 4.76 23.37"),
+("CASH AND CASH EQUIVALENTS AT/END", "CASH AND CASH EQUIVALENTS AT END OF THE PERIOD 10.33 3.88"),
+("Note: ", "Note:"),
+("1. Consolidated Cash", "1. Consolidated Cash Flow Statement has been prepared under indirect method as set out in IND AS-7 (Statement"),
+("of Cash Flows) e)", "of Cash Flows)"), ("2. Figures", "2. Figures in brackets represent outflow of cash."),
+("(Rs. in Crores", "(Rs. in Crores )"), ("/ For the Half Year", "For the Half Year For the Half Year"),
+("September, 2026 September, 2025", "Ended 30th Ended 30th September, 2026 September, 2025"),
+("Cash generated from operation", "Cash generated from operation (27.22) (55.56)")],
+12: [("[Un-utiized", "Un-utilized Amount * 26.66")],
+13: [("=", None),
+("Particulars |_", "Particulars 30.09.2026 30.06.2026 30.09.2025 30.09.2026 30.09.2025 31.03.2026 (Quarter ended x3 | Half Year Ended x2 | Year Ended; Unaudited x5, Audited)"),
+("Rs. in Grores)", "(Rs. in Crores)"),
+("Wire and Cables 560.40", "Wire and Cables 560.40 529.40 427.57 1,089.80 878.44 1,912.17"),
+("Pipes - - 3.69", "Pipes - - 3.69 - 4.21 6.41"),
+("Less Inter-segment", "Less Inter-segment Revenue - - 3.26 - 3.53 5.23"),
+("Pipes - = 0.29", "Pipes - - 0.29 - 0.06 0.14"),
+("Unallocated (income)", "Unallocated (income) / expenses (net) (3.80) (3.09) (19.64) (6.89) (37.35) (51.10)"),
+("Add : Exceptional", "Add : Exceptional items - income /(Expenses ) - - - - - 0.03"),
+("Tax expenses", "Tax expenses 8.15 6.84 4.55 14.99 11.24 21.07"),
+("Profit (loss) After tax", "Profit /(loss) After tax 24.24 19.70 13.25 43.94 31.75 59.75"),
+("Pipes - = 12.83", "Pipes - - 12.83 - 12.83 -"),
+("Unallacated", "Unallocated - - - - - -"),
+("Total Segment Assets", "Total Segment Assets 1,248.59 1,248.37 1,007.86 1,248.59 1,007.86 1,128.65"),
+("Wire and Cables 328.58", "Wire and Cables 328.58 354.48 243.93 328.58 243.93 350.58"),
+("Pipes - - 1.81", "Pipes - - 1.81 - 1.81 -"),
+("| Unallocated = -", "Unallocated - - 12.65 - 12.65 -"),
+("Total Segment Liabilities", "Total Segment Liabilities 328.58 354.48 258.39 328.58 258.39 350.58"),
+("= ", None), ("©( DELHI", None), ("os cy", None), ("Seqment", "Segment Liabilities")],
+}
+out = []
+for p in range(1, 14):
+    L = open(O + "o-%02d.txt" % p, encoding="utf-8").read().split("\n")
+    res = []
+    for ln in L:
+        if not ln.strip():
+            continue
+        rep = ln
+        drop = False
+        for k, v in R.get(p, []):
+            if ln.strip().startswith(k.strip()) and (len(k.strip()) > 1 or ln.strip() == k.strip()):
+                if v is None:
+                    drop = True
+                else:
+                    rep = v
+                break
+        if not drop:
+            res.append(rep)
+    out.append((p, res))
+pickle.dump(out, open(W + "work/pages.pkl", "wb"))
+for p, r in out:
+    if p in (3, 4, 5, 9, 10, 11, 13):
+        print("=== ", p)
+        print("\n".join(r))

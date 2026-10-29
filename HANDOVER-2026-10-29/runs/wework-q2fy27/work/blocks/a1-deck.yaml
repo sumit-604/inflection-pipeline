@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "WEWORK"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 40
+formfeed_count: 40
+line_count: 982
+unit_convention: "Crores (slides 4-36); Millions (slides 37-39)"
+conversion_factor_to_cr: "Crores x1; Millions x0.1 (pp. 37-39 only)"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []   # no zero-char pages; low-char pages p2,5,7,11,16,30,35,36,40 skipped, no data
+rendered_pages: ["p8","p19","p24","p26","p27 (period-axis/label confirmation only, no OCR, images deleted)"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (quarter and half year ended 30-Sep-2026)"
+fulltext_path: "runs/wework-q2fy27/extracted/wework-deck-q2fy27-fulltext.md"
+structured_path: "runs/wework-q2fy27/extracted/wework-deck-q2fy27-structured.md"
+structured_counts:
+  number: 1168
+  entity: 54
+  forward: 6
+  date: 105
+  qualifier: 59
+structured_id_range: "R001-R1392"
+gate_a1: pass
+gap_note: ""

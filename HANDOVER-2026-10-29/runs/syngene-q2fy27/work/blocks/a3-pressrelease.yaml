@@ -1,0 +1,71 @@
+stage: A3-forensics
+company: "SYNGENE"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/syngene-q2fy27/work/forensics_syngene_q2fy27_pressrelease.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3R-01", check: "F1", line: "L408; L414-416; L190-191", classification: "FORWARD-SIGNAL", implication: "Exceptional line non-zero 4 straight quarters (579/72/100/55 Mn net); 'manpower optimisation completed' means any Q3 FY27 termination charge contradicts it; headline PAT is pre-exceptional"}
+  - {id: "A3R-02", check: "F1", line: "L279; L289", classification: "AMBIGUOUS", implication: "Non-current provisions 180 -> nil, current 1,144 -> 832 despite 706 Mn labour-code gratuity charge; funding, reclass or payout?"}
+  - {id: "A3R-03", check: "F6", line: "L159-161", classification: "FORWARD-SIGNAL", implication: "Bayview drug substance manufacturing 'expected to begin in the next financial year' = FY28, past T4 Mar-2027 line; FY27 Bayview revenue from this contract nil"}
+  - {id: "A3R-04", check: "F6", line: "L442-445", classification: "AMBIGUOUS", implication: "Note 9 still future tense on 50,000L with Mar-2025 CWIP 2,981 Mn; no current Bayview CWIP or capitalisation date"}
+  - {id: "A3R-05", check: "F6", line: "L190-192; L392", classification: "FORWARD-SIGNAL", implication: "Optimisation 'completed' but staff cost 2,801 vs 2,814 Mn QoQ (33.6% of revenue vs 26.5-28.3% FY24); Q3 staff cost is the test"}
+  - {id: "A3R-06", check: "F7", line: "L432-433", classification: "AMBIGUOUS", implication: "Labour-code note reserves a third gratuity remeasurement, undated and unsized (R784)"}
+  - {id: "A3R-07", check: "F8", line: "L405-406; L252", classification: "AMBIGUOUS", implication: "Q2 ETR 29.8% vs 25.17%; Q1 tax credit 67 Mn > pre-tax loss 57 Mn; DTA down 77 Mn; possible unshielded subsidiary losses"}
+  - {id: "A3R-08", check: "F10", line: "L270", classification: "NEUTRAL-FACT", implication: "Paid-up capital +8 Mn, no corporate action named, no EPS disclosed; A4 ESOP cross-check"}
+  - {id: "A3R-09", check: "F12", line: "L291; L249; L259-262; L284", classification: "AMBIGUOUS", implication: "Other current liabilities -3,134 Mn (-40%), net treasury lines -3,127 Mn, borrowings 94 -> 672 Mn; CFO NOT FOUND so T3 untestable; lean bear"}
+  - {id: "A3R-10", check: "F12", line: "L242-243", classification: "FORWARD-SIGNAL", implication: "CWIP +1,002 Mn to 11,406 Mn (17.1% of assets) while PPE -979 Mn; FY28 depreciation step-up when Bayview capitalises"}
+  - {id: "A3R-11", check: "F13", line: "L200-202", classification: "FORWARD-SIGNAL", implication: "CFO exits after Q3 results; FY27 audited accounts under unnamed successor in a guidance-cut, margin-reset year"}
+  - {id: "A3R-12", check: "F13", line: "L149-154", classification: "AMBIGUOUS", implication: "Heads of Chemistry and Biology leave end Nov/Dec while research revenue is R2/T1; consolidation vs talent loss"}
+  - {id: "A3R-13", check: "F14", line: "L89; L109", classification: "NEUTRAL-FACT", implication: "MARKER_MERGED: 381 = Rs 38 Cr, 391 = Rs 39 Cr; never use 381/391"}
+  - {id: "A3R-14", check: "F14", line: "L296; L336", classification: "NEUTRAL-FACT", implication: "p7 labelled FY26/FY27 but holds H1 values"}
+  - {id: "A3R-15", check: "F14", line: "L339; L379", classification: "NEUTRAL-FACT", implication: "Q2 FY26 op EBITDA 1,995 (p8) vs 1,996 (p9) in same document"}
+  - {id: "A3R-16", check: "F14", line: "L91; L304; L344", classification: "NEUTRAL-FACT", implication: "PAT margin on reported revenue incl. other income (4.4%), not revenue from operations (4.5%); mixed basis"}
+  - {id: "A3R-17", check: "F14", line: "L413; L430", classification: "NEUTRAL-FACT", implication: "Carried notes not redrafted ('current quarter' = Q4 FY26; unit misplaced in Note 13)"}
+  - {id: "A3R-18", check: "F16", line: "L42; L87; L380", classification: "NEUTRAL-FACT", implication: "Title '6 percentage points' is rounding; filed change 540 bps QoQ; YoY -420 bps not in title"}
+  - {id: "A3R-19", check: "F16", line: "L134-136; L398; L287", classification: "FORWARD-SIGNAL", implication: "Mid-20s = full FX add-back (25.1%); FX loss grew 5 of last 6 quarters to 7.4% of revenue; net current derivative liability 1,017 Mn implies the 'adjustment' recurs over next 12 months"}
+  - {id: "A3R-20", check: "F16", line: "L42; L378", classification: "AMBIGUOUS", implication: "13% QoQ matches seasonal Q1->Q2 (12.6%, 12.8% FY24/FY25) off the lowest quarter in 14; YoY -8.6%"}
+  - {id: "A3R-21", check: "F16", line: "L348; L363; L308; L323", classification: "AMBIGUOUS", implication: "Other income 52% of Q2 PBT and 111% of H1 PBT, up 82% YoY while treasury fell; composition NOT FOUND"}
+  - {id: "A3R-22", check: "F17", line: "L125; L130", classification: "AMBIGUOUS", implication: "No research vs CDMO split; R2, T1 and CDMO>22% untestable from this document"}
+  - {id: "A3R-23", check: "F17", line: "L134-135; L378", classification: "FORWARD-SIGNAL", implication: "No FY27 guidance; single-digit-decline floor needs H2 > 17,961 Mn (YoY better than -8.1%) vs Q2 -8.6%; T2 live"}
+  - {id: "A3R-24", check: "F17", line: "L299; L380", classification: "FORWARD-SIGNAL", implication: "FY27 op margin 25% needs H2 >= 32.9-33.6% vs best-ever H2 32.0%; FY27 leg of T5 near-certain to fail on filed numbers"}
+  - {id: "A3R-25", check: "F17", line: "L156-157; L164-166; L438-439", classification: "AMBIGUOUS", implication: "Bayview customer unnamed, scale unstated; Unit 3 clinical only; no utilisation or litres; R1 not fired; top-2 customers silent"}
+  - {id: "A3R-26", check: "F17", line: "L135; L434-435", classification: "AMBIGUOUS", implication: "Zoetis named as YoY drag without amount or impairment; Rs 277 Mn write-off counterparty still unnamed"}
+forward_signals: ["A3R-01", "A3R-03", "A3R-05", "A3R-10", "A3R-11", "A3R-19", "A3R-23", "A3R-24"]
+ambiguous: ["A3R-02", "A3R-04", "A3R-06", "A3R-07", "A3R-09", "A3R-12", "A3R-20", "A3R-21", "A3R-22", "A3R-25", "A3R-26"]
+commitments:
+  - {commitment: "Bayview process development begins in India", implied_date: "by 2027-03-31", ref: "L159-160 R774", status_word: "initiated"}
+  - {commitment: "Bayview drug substance manufacturing begins", implied_date: "FY28 (2027-04-01 to 2028-03-31)", ref: "L160 R775", status_word: "initiated"}
+  - {commitment: "Manpower cost optimisation", implied_date: "Q2 FY27", ref: "L190-191", status_word: "completed"}
+  - {commitment: "Non-manpower cost initiatives continue; benefits over coming quarters", implied_date: "undated (test Q3/Q4 FY27)", ref: "L191-192 R778 R779", status_word: "underway"}
+  - {commitment: "CFO stays at least until Q3 FY27 results", implied_date: "Q3 FY27 results (date NOT FOUND)", ref: "L202 R780", status_word: "initiated"}
+  - {commitment: "Heads of Chemistry and Biology exit", implied_date: "2026-11-30 / 2026-12-31", ref: "L153-154 R773", status_word: "initiated"}
+  - {commitment: "CSO assumes Discovery Services", implied_date: "2026-10-01", ref: "L149-150", status_word: "completed"}
+  - {commitment: "Bayview lifts single-use bioreactor capacity to 50,000L", implied_date: "undated (future tense since Q4 FY25)", ref: "L442-443 R785", status_word: "initiated"}
+  - {commitment: "Labour code compliance steps and accounting effect", implied_date: "contingent on rules", ref: "L432-433 R784", status_word: "underway"}
+  - {commitment: "CTS laboratory commissioned", implied_date: "Q2 FY27", ref: "L175", status_word: "completed"}
+  - {commitment: "Unit 3 clinical-supplies agreement signed", implied_date: "Q2 FY27", ref: "L164-165", status_word: "completed"}
+  - {commitment: "Call 2026-10-28 09:00 IST; transcript within seven working days", implied_date: "2026-10-28 / ~2026-11-06", ref: "L206-212", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The release sells a QoQ recovery. The filed numbers tell a weaker story. The 13% QoQ matches the seasonal Q1-Q2 pattern. The 6 pp is 540 bps after rounding. The mid-20s margin adds back an FX loss that the balance sheet says will recur: net current derivative liability is 1,017 Mn. Other income exceeds H1 PBT. Three arithmetic tests matter most for A4. First, T5 FY27 needs an H2 margin above any H2 in 14 quarters. Second, the guidance floor needs H2 YoY better than Q2's -8.6%. Third, Bayview manufacturing in FY28 sits past the T4 line. A4 rules on T4; A3 does not. The balance sheet shows other current liabilities -40% and the treasury down 3,127 Mn with borrowings up. CFO is NOT FOUND, so the T3 question goes to the call. The CFO and both discovery heads leave in one release, while research revenue, the R2/T1 metric, goes undisclosed. Use 38/39 Cr, never 381/391."

@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "AEQUS"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/aequs-q2fy27/work/ledger_pressrelease_aequs_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 24
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 5
+  slide_numbers: 112
+flags_raised: [RESTATED, ENTITY_CHANGE, COMPARABILITY, FORWARD_NO_DATE, MGMT_CHANGE, FOOTNOTE_RESOLVED, SIGNATURE_TS]
+ids_in_structured: 171
+ids_referenced: 171
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Press release, 5 PDF pages treated as slides; no prior ledger so no DROPPED_SLIDE/ENTITY_CHANGE diff. ENTITY_CHANGE on R015 is the legal name change only. Heavy restatement of headline numbers (revenue 4,091, 45%, 50%, 8,046, 6,500 warrants, 4.93m hrs). Forward items carry no dates: Consumer EBITDA breakeven path is 'recalibrated' (R151) and Hosur is 'upcoming' (R130, R155). Comparability note (R070, R113) qualifies every YoY EBITDA and PAT cell. No board times, auditor content, balance sheet or guidance numbers exist in this document. CFO appointment (R140) is new."

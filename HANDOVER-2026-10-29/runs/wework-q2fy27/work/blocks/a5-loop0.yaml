@@ -1,0 +1,55 @@
+stage: A5-adversary
+company: "WEWORK"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "Core Ind AS profit recovering; Q2 core PBT ex OI/FI turned positive at 0.98 Cr; recurring core +5.30 Cr of the +14.03 Cr PAT change (rev L208, L270, L296)", counter: "5.0 Cr of the YoY Ind AS revenue rise is a swing in an undefined Ind AS-only revenue adjustment (3.7 Cr below billed IGAAP-EQ revenue in Q2 FY26, 1.3 Cr above in Q2 FY27). On billed revenue, growth is 32.5%, core PBT ex OI/FI is (0.32) vs (0.63) Cr, and the recurring core is about +0.3 Cr; 94% of the recurring core is the swing", source_line: "letter L662, L723; deck L704-706, L537; press L191-192; results L486-499", type: MISSING}
+  - {claim: "Lease-adjusted FCF after capex and ROU additions near breakeven and improving, (73.52) to (3.99) Cr; cash-conversion direction improving (rev L356, L940, L1004-1005)", counter: "The WC swing of (10.08) to +126.54 Cr, which A4 itself calls growth-linked float, accounts for the whole improvement. Ex-WC the measure moved from (63.44) to (130.53) Cr; lease-adjusted CFO before WC fell from 96.4% to 91.6% of rent-adjusted operating EBITDA", source_line: "results L615, L625-631, L643-644; concall L665-679", type: MISSING}
+  - {claim: "Operating spread improving on a cash-rent basis: cash rent 42.5% to 38.9% of revenue, real operating leverage on a cash basis (rev L242, L953, L1037-1038)", counter: "Management says landlord rent-free periods expire in Q3 and rentals then hit the P&L in full force; cash rent rose 21.4% YoY while operational area rose 27.1%, so Q2 cash rent per sq ft is partly timing. The qualifier sits in Step 3, 6B and Q7 but not where the claim is made", source_line: "concall L723-730; deck L310, L795; deck L404-408 (bull mix reading)", type: MISSING}
+findings_by_type:
+  factual:
+    - "F1: FCFF classed as not rebuilding and its formula as missing (rev L356 item 2, L484, L948, L1001-1002, L1148). Deck L660-667 gives the formula: CFO 1,026.2 - rent (A) 576.6 - brokerage 69.8 = FCFO 379.8; - capex 363.8 = FCFF 16.0. The gap to full-basis (3.99) is finance-lease payout 11.4 (deck L796) + ROU payments above brokerage 8.57 = 19.97. Reclassify as a definitional exclusion; narrow Q2"
+  missing:
+    - "M1: surviving counter 1, Ind AS-only revenue adjustment swing of 5.0 Cr YoY (letter L662) not in the review; it is about 94% of the recurring core +5.30 Cr"
+    - "M2: surviving counter 2, ex-WC lease-adjusted FCF after capex and ROU (63.44) to (130.53) Cr not in the review; the cash-conversion direction label must reflect it"
+    - "M3: surviving counter 3, rent-free timing qualifier (concall L723-730) and cash rent +21.4% vs area +27.1% (deck L795, L310) absent from brief section 3, Section C and analyst_note"
+  contradiction:
+    - "C1: capacity measurement-date ambiguity (flags L1154; Q5 bear answer L487) vs press L88-90, deck L429-435 (126.9k + 18.4k = 145.3k at Sep-26) and concall L701-706, and A4's own 145.3k + 4.5k = 149.8k (rev L473, M3)"
+    - "C2: Step 5-C 'few new ROU in H1' (rev L326) vs Step 3 front-loading explanation (rev L270); derived net ROU additions about 347.5 Cr (results L542; letter L735 H1 ROU depreciation 438.3) and net new lease liabilities about 291.5 Cr (results L575, L583, L643)"
+  style:
+    - "S1: last-digit rounding: SA FY26 (OI+FI)/PBT 99.4 vs 99.3%; CA margin -231 vs -230 bps; SA -244 vs -243 bps; rent-adjusted +184 vs +183 bps; bridge label -2.31 pp vs -2.30 pp used"
+    - "S2: brief L999-1000 'core pretax profit about Rs 1.0 Cr' also strips the 0.87 Cr associate (20.45 - 18.60 = 1.85)"
+    - "S3: brief L988 says every figure comes from this quarter's documents, but L1010 CMP and PE come from screener.in; tag SECONDARY"
+    - "S4: L-F1-a missing from the finding-to-question mapping table (mapped in Q12); table shows 16 letter rows vs 17 stated"
+    - "S5: preamble does not name A2 letter MFS-1 (content covered at 0C/0D)"
+    - "S6: Section B claim 4 equates ~10 msf with 26% of space; deck L247-250 shows 7.5 MSF branded = 26%"
+    - "S7: 4A #12 'analyst 2.9x left uncorrected'; deck L472 (Jun-26 2.9x) and L488 (2.9x incremental) make it defensible"
+    - "S8: Q6 could cite the call's contracted escalation (concall L315, ASR 67%, R176 possible mishearing)"
+    - "S9: forward-map row 'Undated' should read NOT FOUND"
+    - "S10: A4 YAML docs_merged lists 3 doctypes for 5 documents"
+loop_back_to: "A4"
+gap: "A4 re-run: (F1 FACTUAL) reclassify FCFF as rebuilding on the deck p28 formula (L660-667), with a 20.0 Cr definitional exclusion (finance-lease payout 11.4, deck L796, plus ROU payments above brokerage 8.6); fix rev L356 item 2, Q2, L948, L1001-1002, L1148. (C1 CONTRADICTION) drop the capacity measurement-date ambiguity from flags L1154 and the Q5 bear answer; press L88-90, deck L429-435 and concall L701-706 place 145.3k at 30-Sep. (C2 CONTRADICTION) replace 'few new ROU in H1' (rev L326) with derived net ROU additions about 347.5 Cr. (M1-M3 MISSING) graft the three surviving bear counters into Steps 2-5, Section C, brief sections 1 and 3, and analyst_note."
+style_notes:
+  - "S1 rounding last digits (99.3%, -230 bps, -243 bps, +183 bps, -2.30 pp label)"
+  - "S2 brief core-PBT sentence omits the associate strip"
+  - "S3 tag CMP/PE line SECONDARY (screener.in)"
+  - "S4 add L-F1-a to the mapping table"
+  - "S5 name letter MFS-1 in the preamble"
+  - "S6 claim 4 space basis 7.5 MSF branded"
+  - "S7 analyst 2.9x is defensible"
+  - "S8 cite contracted escalation (ASR 67%) in Q6"
+  - "S9 Undated to NOT FOUND"
+  - "S10 docs_merged lists five documents"
+analyst_note: "Coverage and arithmetic are clean. My fresh counts match A2 on every unit, structured row totals match all five ledgers, and every derived metric recomputes within rounding. The failure is interpretive. Three of A4's most positive readings each rest on one undisclosed or temporary item. Core Ind AS profit turning positive rests on a 5.0 Cr swing in an undefined Ind AS-only revenue adjustment (letter L662). FCF improving rests on a 126.5 Cr working-capital float that A4 itself calls growth-linked; ex-float the measure fell from (63.4) to (130.5) Cr. Cash-rent leverage rests partly on landlord rent-free periods that management says end in Q3. These grafts likely leave PROCEED WITH FLAGS unchanged. They change what the quarter proved: volume yes, operating profit and cash improvement not yet. One finding cuts the other way. The company FCFF of 16.0 Cr rebuilds from filed lines on the deck p28 formula. The 20.0 Cr gap to A4's (4.0) Cr comes from leaving out finance-lease payouts and ROU payments; it is not an unreconciled KPI. No acquisition is described, so the acquisition probe did not trigger."

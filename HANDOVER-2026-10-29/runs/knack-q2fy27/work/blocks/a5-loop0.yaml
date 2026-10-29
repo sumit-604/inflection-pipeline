@@ -1,0 +1,47 @@
+stage: A5-adversary
+company: "KNACK"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "concall T05 question: YoY volume baseline 'same number last quarter last year ... Q2 as per 26?' (cc L164-165), answer 9,927 MT (cc L166)"
+    - "concall T11 question: 3 vs 5 pinch-bottom machines, should Q3 margin beat last year's Q3 (cc L501-511), answer 'perfectly okay' (cc L511-518)"
+arithmetic_mismatches: []
+surviving_bear_counters:
+  - {claim: "~Rs 150 Cr/yr contract is a HIGH-confidence minimum confirmed by deck (rev L562, L743, L836)", counter: "Deck files '~1,500 Mn Approximate order value per annum' and 'new order and renewal'; 'minimum' is ASR only; prepared remarks say 'about'; existing customer; deck also claims 'no material dependency' against an ~18.2% contract", source_line: "deck L215, L219, L240-241; cc L88-89, L398, L406-412", type: "MISSING"}
+  - {claim: "WC build is growth/price-induced; 55 Cr receivables outflow CONFIRMED as export cycle (rev L312, L691, L768)", counter: "CF line is trade AND other receivables 55.73 Cr; trade receivables rose 40.48 Cr; other current assets rose 15.03 Cr (+53.5%) with no stated cause, 68% of H1 CFO", source_line: "res L584, L588-589, L641; cc L437-440", type: "MISSING"}
+  - {claim: "Forward table base FY28E PAT 122.3 Cr on Rs 43.67/kg; Reading 1 166.8 Cr on Rs 51.98/kg (rev L948)", counter: "Both draw on Q1 FY27, which carried a 31.61 Cr FG/WIP build credit that A4's Step 3 says flatters the by-nature margin; caveat absent from the table; size NOT FOUND", source_line: "res L532; rev L258, L429", type: "MISSING"}
+findings_by_type:
+  factual:
+    - {id: "A5-02", target: "A4", gap: "Q2 OI 9.70 Cr labelled treasury throughout; filed H1 interest income 6.13 Cr (res L631) caps Q2 interest at Rs 5.45/kg, not Rs 8.6/kg; at least 3.57 Cr of Q2 OI is non-interest (rev L209, L395, L440, L575, L663, L911)"}
+    - {id: "A5-08", target: "A2", gap: "Question ledger codes T09-Q2 as 3%/9,927 (reply is 13%, cc L363; 9,927 is T05 cc L166) and T10-Q3 as NUMBER 69-72k (reply is Mexico capacity, cc L462) (led-cc L55, L61)"}
+  missing:
+    - {id: "A5-03", target: "A4", gap: "Contract 'approximate' (deck L219) vs ASR 'minimum' (cc L406-412); HIGH confidence for a floor is unsupported (rev L562, L743)"}
+    - {id: "A5-04", target: "A4", gap: "About 15.03 Cr of the 55.73 Cr receivables outflow is other current assets (res L589, L641), not export cycle; 7A CONFIRMED overstates (rev L691, L768, L312)"}
+    - {id: "A5-05", target: "A4", gap: "Forward table base and Reading 1 inherit Q1 FY27 inventory-build effect (res L532; rev L258); qualifier absent (rev L948)"}
+    - {id: "A5-06", target: "A4", gap: "CON other non-current assets 1.82 Cr below SA at 30-Sep-2026, nil gap at 31-Mar-2026 (res L237, L580); not used in JV funding Question 3 (rev L441) or flag (rev L1033)"}
+    - {id: "A5-07", target: "A2", gap: "Concall question ledger lacks cc L164-166 (T05) and cc L501-511 (T11); fresh count 28 vs 26; A4 4A lacks the T05 row (rev L639)"}
+  contradiction:
+    - {id: "A5-01", target: "A4", gap: "'Very small portion' (cc L486-487, Mexico JV context per cc L481-485, L492 and A4's own rev L631) used as India margin evidence at rev L384, L690, L798, L867, L946"}
+  style:
+    - {id: "S-01", gap: "Rounded-input derivations: rev L231 +3.43% (unrounded +3.55%), rev L283 -14.9% (-14.7%), rev L763 -651 bps (-652), rev L85 414.15 (414.14)"}
+    - {id: "S-02", gap: "rev L385 'Utilisation % declined' reads as a fall; management declined to state it (cc L214-215), gave 60-70% (cc L189-191)"}
+    - {id: "S-03", gap: "rev L917 'FY26 H2 revenue 16.9% above H1' tagged FILED; it is derived, tag INFERENCE"}
+    - {id: "S-04", gap: "rev L119 anchor 'L538/L541'; values are L538 only"}
+loop_back_to: "A4"
+gap: "A4: (1) A5-01 CONTRADICTION: re-attribute 'very small portion' cc L486-487 to the Mexico JV at rev L384, L690, L798, L867, L946; rest India partial recovery on cc L478-480 and L547-559. (2) A5-02 FACTUAL: relabel Q2 OI as other income; interest at most Rs 5.45/kg (res L631), not Rs 8.6/kg. (3) A5-03 MISSING: contract is '~1,500 Mn approximate' (deck L219); 'minimum' is ASR only; confidence HIGH for term, LOW for floor. (4) A5-04 MISSING: 55.73 Cr outflow = 40.48 Cr trade receivables + about 15.03 Cr other current assets (res L584, L589, L641); 7A to PARTIALLY CONFIRMED; add to Q8. (5) A5-05 MISSING: caveat that forward base and Reading 1 inherit the Q1 31.61 Cr build credit (res L532). (6) A5-06 MISSING: add CON vs SA other non-current assets gap 1.82 Cr (res L237, L580) with two readings to Q3 and the JV flag. A2 ledger patch in the same cycle, no A3 re-run: (7) A5-07 MISSING: add questions cc L164-166 (T05) and cc L501-511 (T11); A4 adds the T05 row to 4A. (8) A5-08 FACTUAL: recode T09-Q2 to 13% (cc L363) and T10-Q3 to DEFLECTED (cc L462)."
+style_notes:
+  - "S-01 rounded-input derivations (rev L231, L283, L763, L85); use unrounded inputs"
+  - "S-02 rev L385 'declined' ambiguous; write 'not stated'"
+  - "S-03 rev L917 derived H2/H1 ratio tagged FILED; tag INFERENCE"
+  - "S-04 rev L119 anchor L538/L541; use L538"
+analyst_note: "Routing: loop_back_to is A4 because six of eight loop findings change A4 text. The two A2 items are ledger-only (two unlisted questions, two mis-coded replies), and A4 already carries their content except one 4A row, so patch the concall question ledger in the same remediation cycle without an A3 re-run. Arithmetic: every derived metric was recomputed from raw lines and ties within rounding. Seasonality was tested and dropped: FY26 op EBITDA margin also fell Q1 to Q2 (20.28% to 16.57%), but FY26 gross margin was flat (41.35% to 41.15%), so the FY27 QoQ fall is gross-margin led and A4's gross-margin gate stands. Symmetry: A5-01 and A5-02 make A4 more bearish than the extract supports. The fix is evidence attribution; the 15.5% H2 margin base can stand on cc L478-480 and L547-559. Acquisition probe: JV stake Rs 4.40 Cr for 50%, earnings negative, multiple not meaningful; cumulative loss share 7.00 Cr = 1.59x consideration. That bear reading is already in A4."

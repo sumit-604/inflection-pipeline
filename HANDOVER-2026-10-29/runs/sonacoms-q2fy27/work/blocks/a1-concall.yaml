@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "SONACOMS"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+page_count: 921            # source lines (txt input, not PDF); segments L3-L921, [00:00:00] to [01:03:36]
+formfeed_count: 0
+line_count: 921
+unit_convention: "spoken numbers as spoken (crore / billion as ASR rendered)"
+conversion_factor_to_cr: "none applies"
+text_layer_present: true   # plain text file, n/a
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/extracted/sonacoms-concall-q2fy27-fulltext.md"
+structured_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-sonacoms-q2fy27-c7173c/runs/sonacoms-q2fy27/extracted/sonacoms-concall-q2fy27-structured.md"
+structured_counts:
+  number: 122
+  entity: 86
+  forward: 62
+  date: 33
+  qualifier: 33
+structured_id_range: "R001-R336"
+gate_a1: pass
+gap_note: ""

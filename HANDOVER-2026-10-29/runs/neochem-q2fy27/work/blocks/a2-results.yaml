@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "NEOCHEM"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/neochem-q2fy27/work/ledger_results_neochem_q2fy27.md"
+counts:
+  notes: 12
+  line_items: 99
+  zero_standing: 42
+  agenda_items: 4
+  auditor_paras: 7
+  entities: 29
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, FOOTNOTE_UNRESOLVED, AS_FILED, RESTATED, SOURCE_CONNECTOR_COPY, MISSING_FROM_STRUCTURED]
+ids_in_structured: 363
+ids_referenced: 363
+orphan_ids: []
+missing_from_structured: [M1 Annexure A relationship disclosure (fulltext 88-90), M2 Nair education (line 83), M3 results and cash flow signature blocks (lines 216, 291)]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Source is a connector-rebuilt copy of the NSE filing; carried, not acted on. 42 rows are ZERO_STANDING (A1 flags, all matched). Nil in H1FY27 but nonzero in H2FY26/FY26: exceptional items, short provision for prior year, direct taxes paid, equity issue proceeds, loss on sale of PPE. Note 9 (July 2026 cyber fraud) gives no rupee amount in A1 rows, so FOOTNOTE_UNRESOLVED; A3 should read it. Limited review only, no EoM or going concern paragraph. Standalone filing, no subsidiary list, ENTITY_CHANGE not assessable (no prior ledger). Board met 70 minutes and changed the CFO at the results meeting. Three small A1 gaps (M1-M3) need no re-extraction for ledger purposes."

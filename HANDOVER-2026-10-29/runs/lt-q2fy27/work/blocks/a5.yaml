@@ -1,0 +1,31 @@
+stage: A5-adversary
+company: "LT"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []   # loop-0 counters 1-3 grafted at review L469/L1063, L357-L358/L380/L1126, L366/L407; none open
+findings_by_type:
+  factual:
+    - "N1 review L876 (Step 7A finance-cost row, added by the F2 patch): says the standalone saving is 'not a lower balance at Sep-26' and that 'decrease in Standalone debt' is 'not visible'; filed standalone D/E 0.26 (Sep-25) to 0.23 (Jun-26) to 0.19 (Sep-26) (RF L1051) and debt to total assets 0.10 to 0.08 to 0.07 (RF L1058) with Sep-25 total assets 183,090.62 (RF L1222) imply Sep-25 borrowings of at least about 17,390 vs 14,783.81 at Sep-26 (RF L1018, L1026-L1027); debt is lower YoY and QoQ and higher only vs Mar-26 (11,773.33)"
+  missing: []
+  contradiction: []
+  style:
+    - "N2 review L969 Section C 'cash story rests on advances and disposal proceeds rather than operating cash' overstates; ex-FS pre-WC CFO was 92.7 bn in H1 (PF L969); say the rise in cash rests mostly on advances and disposals"
+    - "N3 review L380 'incl Nabha and SWC proceeds' names entities the CF lines do not name (RF L745-L746); tag INFERENCE"
+loop_back_to: "A4"
+gap: "N1 (FACTUAL): rewrite the Step 7A finance-cost cell at review L876; standalone borrowings are lower YoY and QoQ per filed ratios (RF L1051, L1058, L1222) and up 3,010.48 only vs Mar-26, so both deck causes are visible; align the bare 'reversible' hedges at L325, L337, L496, L1107, L1123, L1269, L1285. Text only; no Section E number, verdict or classification changes. F1-F7 closed; S1-S8 applied; Audit 0, coverage and arithmetic pass."
+style_notes:
+  - "N2 reword Section C cash line (L969)"
+  - "N3 tag Nabha/SWC naming as INFERENCE (L380)"
+analyst_note: "Loop 1 re-audit. All seven loop-0 findings are closed and all eight style notes are applied. The brief passes. Headline tables, every Section E number, the 35-row question table and the 11-fork forward map are unchanged outside the patched rows. One new FACTUAL error came in with the F2 patch. The Step 7A finance-cost cell says the standalone saving is not a lower balance and that the deck's 'decrease in Standalone debt' is not visible. The filed standalone ratios show the opposite: D/E fell from 0.26 to 0.19 and debt to total assets from 0.10 to 0.07 year on year. That puts Sep-25 borrowings at about 17,390 or more against 14,783.81 at Sep-26. Debt rose only against Mar-26. My loop-0 F2 text compared only with Mar-26, and the review's 'reversible' hedges rest on it, so the fix should add the year-on-year context. The fix is one cell plus wording. The verdict, the cash class and every Section E number stand. Loop 1 was the only permitted iteration, so the orchestrator decides how to carry N1."

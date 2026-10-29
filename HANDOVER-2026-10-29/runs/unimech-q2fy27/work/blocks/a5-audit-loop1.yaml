@@ -1,0 +1,40 @@
+stage: A5-adversary
+company: "UNIMECH"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+loop: 1
+verdict: COMPLETE
+loop0_items: {C1: CLOSED, M1: CLOSED, M2: CLOSED, M3: CLOSED, M4: CLOSED, M5: CLOSED}
+drift_check: PASS
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "L1-S1 Saudi 'includes debt' reading Rs 62.6-88.1 Cr has no stated basis (= 51% x Rs 200-250 Cr capex - Rs 39.36 Cr ODI; call l.575, res l.341); label INFERENCE, not a floor (Notion second SAR 30M tranche at review l.854 implies ~Rs 39.4 Cr)"
+    - "L1-S2 QB20 l.471, 5A l.756, analyst_note l.1239 compare all-equity Rs 108.2 Cr with pre-ODI net cash Rs 65.45 Cr; like-for-like comparator is post-ODI Rs 26.09 Cr, which every reading exceeds"
+    - "L1-S3 'checklist l.351' in 6B item 4 (review l.342) names no file"
+    - "L1-S4 'D-A3-28 Readings A and B' (review l.955, l.1197) undefined in the review; l.621 uses 'Reading A' for a different Saudi question"
+    - "L1-S5 headline utilisation mentions l.574, l.671, l.857 carry no pointer to flag 19 (correct as headline)"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "L1-S1 state basis of Rs 62.6-88.1 Cr Saudi debt reading; not a floor"
+  - "L1-S2 compare remaining Saudi commitment with post-ODI net cash Rs 26.09 Cr"
+  - "L1-S3 name the file behind 'checklist l.351'"
+  - "L1-S4 define or relabel D-A3-28 Readings A/B"
+  - "L1-S5 optional flag 19 pointer on headline utilisation rows"
+  - "Loop-0 S1-S9 remain logged, unpatched, no loop"
+analyst_note: "All six loop-0 items close. A2 added Q25 at T57. The count reads 25 in the ledger, the preamble and 0C. A4 grafted the filed H1 other-income heads, the Hobel acquisition-economics probe, the Honeywell effective date and the utilisation qualifier. It restated the Saudi flag on deck l.369. Every new number recomputes from lakh lines or filed deck and call lines. The diff has 27 hunks, and each maps to a logged patch, P01-P34. No table broke, and the verdict card is unchanged. Two disclosed status-text additions keep their colours: trigger 1 stays ON TRACK with a price-quality qualifier, and watchlist 4 stays AMBER, now flagged. The main style note is the Rs 62.6-88.1 Cr Saudi debt reading. It is 51% of the Rs 200-250 Cr capex less the ODI. The review does not state that basis, and the figure is not a floor. Every reading of the parent's remaining commitment exceeds the Rs 26.09 Cr post-ODI net cash, so flag 14 holds."

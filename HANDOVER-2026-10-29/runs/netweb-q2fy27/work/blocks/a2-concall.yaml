@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "concall"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/ledger_concall_netweb_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 1
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 48
+  turns: 20
+  questions: 15
+  mgmt_numbers: 90
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, REPEAT_QUESTION, RESTATED, ASR_CONFLICT, ASR_GARBLE, ENTITY_CHANGE, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 261
+ids_referenced: 261
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Turns: only 20 TURN rows exist (host and analyst boundaries); management answers sit inside the questioner block, so T-numbers locate answers by block, not by separate speaker turn. Management-number count 90 excludes 21 rows tagged analyst-origin by A2 judgement from A1 descriptions (e.g. R058, R060, R066, R074, R087-R091). Order book conflict: R018/R099/R062 say 2,629/2,600 crore, R048 says 26,629 (R257 flags ASR error). R066 '14 days' is likely 84 (R068). R029 and R015 are garbled. R133 asked but unanswered. No prior ledger, so ENTITY_CHANGE on Taiwan subsidiary R131 is a new-entity mention only."

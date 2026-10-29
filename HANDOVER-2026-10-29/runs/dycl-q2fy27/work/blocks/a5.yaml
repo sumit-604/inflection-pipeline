@@ -1,0 +1,55 @@
+stage: A5-adversary
+company: "DYCL"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual:
+    - "N-01 A4: Z-group trigger stated as certain for any Reg 31 delay to Jul-2027 (REV L106, L876 M18, L983, L1054, L1062); GOV L173-L174 does not define 'year'; Sep-2026 quarter filing (due 21-Oct-2026) is in the same financial and calendar year as the Jun-2026 lapse (due 21-Jul-2026); origin A5 loop-0 F-06(b) wording"
+  missing: []
+  contradiction: []
+  style:
+    - "S-01 (carried) peer-work quotes REV L936, L957 outside A5 inputs, unverified, provenance tag present"
+    - "S-02 (carried) REV L958 tags analyst turn CC L186 as MGMT-ASR"
+    - "S-03 (carried) REV L237 'Capital advances' label for RES L207 without [INFERENCE]"
+    - "S-04 (carried) REV L178 OI fall attributed to MF redemption without [INFERENCE]; interest income RES L461"
+    - "S-05 (carried) Note 5 RES L363 conforms comparatives; REV L70 caveat and Q13 could say so"
+    - "S-06 (carried) REV L609 counts CC L202 analyst misreading as pushback"
+    - "S-07 (carried) forward map REV L974 trading-window row identical forks; two catalysts undated"
+    - "S-08 (carried) A1 concall R037-R038 anchor line 267; text on CC L268"
+    - "S-09 REV L853 'equals the bear line': 362.54 vs 363.19; use 'about'"
+    - "S-10 REV L849, L922 'four-fifths': +21.7% gives 21.7 of 29.0 points (75%); four-fifths needs the cross term, 23.0 of 29.0 (79%)"
+    - "S-11 REV L248 'strong H2 / weaker H1' untagged; filed H1 FY27 flows exceed H2 FY26 (712.29 vs 654.23 revenue; 583.89 vs 529.67 COGS)"
+    - "S-12 change log omits REV0 L339, L398, L867 (now REV L345, L407, L901); no number involved"
+    - "S-13 loop history in body text REV L231, L247; move to change log"
+    - "S-14 C16 REV L556 registers a historical claim as a commitment 'underway'; REV L480 'scripted line' untagged"
+loop_back_to: "A4"
+gap: "A4 only (N-01, FACTUAL, wording): at REV L106, L876 (M18), L983, L1054, L1062 keep the widened monitor on every Reg 31 filing to Jul-2027 but replace the trigger claim with: 'GOV L173-L174 does not define year. A delay on the Sep-2026 quarter filing would be a second lapse in the same financial and calendar year as the Jun-2026 lapse. Whether a delay on the Dec-2026, Mar-2027 or Jun-2027 quarter filing makes a second consecutive year is ND. Any further delay is a second Reg 31 lapse and a possible Z-group trigger.' Optional: extend Q25 to ask how BSE counts a year under this clause. No number, verdict, cash class or branch moves; A2 and A3 not re-run."
+style_notes:
+  - "S-01 (carried) peer-work quotes REV L936, L957 unverified by A5"
+  - "S-02 (carried) REV L958 retag CC L186 analyst tier"
+  - "S-03 (carried) REV L237 tag [INFERENCE] on capital advances"
+  - "S-04 (carried) REV L178 tag [INFERENCE] on OI fall cause"
+  - "S-05 (carried) REV L70 / Q13 Note 5 conforming wording"
+  - "S-06 (carried) REV L609 CC L202 not pushback"
+  - "S-07 (carried) REV L974 trading-window row identical forks"
+  - "S-08 (carried) A1 R037-R038 anchor L267 vs CC L268"
+  - "S-09 REV L853 'equals' to 'about'"
+  - "S-10 REV L849, L922 show 23.0 of 29.0 points or say about three-quarters"
+  - "S-11 REV L248 tag seasonality sentence [INFERENCE]; growth outweighs seasonality in filed denominators"
+  - "S-12 change log omits REV0 L339, L398, L867"
+  - "S-13 move loop history out of REV L231, L247"
+  - "S-14 C16 is a historical claim, not a commitment; tag REV L480 inference"
+analyst_note: "Re-audit, correction loop 1. All seven loop-0 findings close. Every changed number recomputes from RES L201-L514: FY27 +20% = Rs 1,437.38 Cr; H2 needs Rs 725.09 Cr (+10.8%), Rs 362.54 Cr a quarter; matched-window cash cycle +5.2 (TTM) / +8.9 (6M) days; MF redemption Rs 28.35 Cr; -235 bps; +21.7% per unit. No verdict-card number moved outside the change log. The verdict, cash class and branch are unchanged. One new FACTUAL finding, N-01, and A5 owns its origin. My loop-0 F-06(b) said 'the first test is the Sep-2026 pattern'. That was wrong. GOV L173-L174 does not define 'year', and the Sep-2026 quarter filing falls in the same financial and calendar year as the Jun-2026 lapse. A4 applied my wording and now states that any Reg 31 delay to Jul-2027 'triggers' the Z-group rule (REV L106, L876, L983, L1054, L1062). The fix is wording only, in five places: keep the widened monitor and state the year definition as ND. No number or verdict moves. If the quarterly loop cap is spent, N-01 is self-contained enough to carry as an open item."

@@ -1,0 +1,68 @@
+stage: A3-forensics
+company: "ROUTE"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/route-q2fy27/work/forensics_route_q2fy27_presentation.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: N.A.
+  F12: N.A.
+  F13: FINDING
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F1", line: "740, 761-765 (s19)", classification: "AMBIGUOUS", implication: "ESOP add-back nil in all FY27 periods; no visible retention instrument while 60 leave per quarter"}
+  - {id: "A3-02", check: "F1", line: "743, 834, 846 (s19-20)", classification: "FORWARD-SIGNAL", implication: "one-time capital-advance allowance slot kept while 1,168.3 mn vendor advance outstanding; any impairment would be added back"}
+  - {id: "A3-03", check: "F1", line: "739, 741, 751, 660 (s17, s19)", classification: "NEUTRAL-FACT", implication: "reported EBITDA not additive across periods (H1 FY26 gap 177.6 = Q2 FY26 forex gain); use Adjusted for sums"}
+  - {id: "A3-04", check: "F6", line: "834 (s20)", classification: "FORWARD-SIGNAL", implication: "vendor advance should unwind in H2 FY27; balance not unwinding = supplier-term change"}
+  - {id: "A3-05", check: "F6", line: "133, 190-199 (s7, s9)", classification: "NEUTRAL-FACT", implication: "Heltar 33.7 cr completed; 9.8 cr deferred due about 29 Jan 2028"}
+  - {id: "A3-06", check: "F8", line: "837, 799, 842 (s19-20)", classification: "AMBIGUOUS", implication: "H1 ETR 21.5% vs 25.17%, about 71 mn shield; verify on results filing"}
+  - {id: "A3-07", check: "F10", line: "91 (s4); prior 115, 489", classification: "AMBIGUOUS", implication: "EPS-implied share base 68.96 mn Q1 vs 66.95 mn H1; Q2 EPS +27.1% vs PAT +20.4%"}
+  - {id: "A3-08", check: "F13", line: "92 (s4); prior 120", classification: "AMBIGUOUS", implication: "Rs 4 interim dividend line identical to Q1; second interim or carry-over unclear; no record date"}
+  - {id: "A3-09", check: "F13", line: "137-138 (s7)", classification: "AMBIGUOUS", implication: "new Masiv CEO in the quarter breach fees rose 5x; no reason given"}
+  - {id: "A3-10", check: "F14", line: "627 (s17); prior 445", classification: "AMBIGUOUS", implication: "'PAT in-line with EBITDA' false; below-EBITDA lines improved about 199 mn YoY, bridge needed"}
+  - {id: "A3-11", check: "F14", line: "706-707 (s18)", classification: "NEUTRAL-FACT", implication: "H1 EBITDA and PAT declines printed unsigned beside growth labels"}
+  - {id: "A3-12", check: "F14", line: "138, 744, 190, 197", classification: "NEUTRAL-FACT", implication: "Masiv vs Masivian naming; crore on slide 9, mn elsewhere"}
+  - {id: "A3-13", check: "F14", line: "839, 868-869 (s20-21)", classification: "AMBIGUOUS", implication: "receivables balance +375 vs cash-flow +456.9; about 82 mn non-cash reduction (write-off or provision?)"}
+  - {id: "A3-14", check: "F15", line: "133, 194, 486 (s7, s9, s22)", classification: "NEUTRAL-FACT", implication: "Heltar via slump sale into Route Connect; no new entity; Call2Connect exclusion unexplained"}
+  - {id: "A3-15", check: "F16", line: "87 (s4); prior 99, 472, 481", classification: "AMBIGUOUS", implication: "LTM EBITDA moved from adjusted (Q1) to reported (Q2) basis; like-for-like adjusted -2.9% vs printed -1.8%"}
+  - {id: "A3-16", check: "F16", line: "89 (s4); prior 109", classification: "AMBIGUOUS", implication: "'Net Cash' relabelled 'Cash'; net cash and debt needed for watch #10"}
+  - {id: "A3-17", check: "F16", line: "744 (s19); prior 480, 413", classification: "FORWARD-SIGNAL", implication: "'security incident' became 'data breach'; fees 13.6 to 69.0; regulatory and claim costs may follow"}
+  - {id: "A3-18", check: "F16", line: "744-746 (s19)", classification: "AMBIGUOUS", implication: "Adj EBITDA margin 10.04%, headroom 4.5 mn vs 69.0 add-back; ex-add-back 9.45%, reported 9.75%"}
+  - {id: "A3-19", check: "F16", line: "827-833, 865, 867 (s20-21)", classification: "FORWARD-SIGNAL", implication: "reported CFO/EBITDA 15%, CFO/PAT 0.22x; new Adjusted CFO; DPO 64 to 50"}
+  - {id: "A3-20", check: "F16", line: "510, 556-559, 588 (s12-13); prior 294, 370", classification: "FORWARD-SIGNAL", implication: "mix moved to H1 basis; Q2 Europe-HQ revenue down 178-642 mn QoQ even at rounding extremes"}
+  - {id: "A3-21", check: "F16", line: "149 (s7); prior 188-193, 204-222, 464", classification: "AMBIGUOUS", implication: "CCGA award re-credited from Route's Konera to Proximus Global; RCS slide and non-core footnote dropped"}
+  - {id: "A3-22", check: "F16", line: "94, 217, 900-901; prior 105", classification: "AMBIGUOUS", implication: "+300 clients and +339 mn new-products revenue in Heltar quarter; no organic split; tech headcount fell"}
+  - {id: "A3-23", check: "F16", line: "311 (s16); prior 411-413", classification: "AMBIGUOUS", implication: "GP margin credited to routing; could reverse; Q1 drivers not updated"}
+  - {id: "A3-24", check: "F17", line: "deck-wide absence; prior 188", classification: "FORWARD-SIGNAL", implication: "Truecaller silent 2 of 3 quarters; Q3 silence meets red condition"}
+  - {id: "A3-25", check: "F17", line: "598, 600, 614 (s13); prior 349, 355, 411-412", classification: "AMBIGUOUS", implication: ">$5mn cohort 21 to 19, top-5 share 33 to 30%; Q1 large-account recovery not updated"}
+  - {id: "A3-26", check: "F17", line: "171, 190 (s8-9)", classification: "AMBIGUOUS", implication: "no number for Proximus revenue, channel mix, Heltar revenue, promoter, delisting, ROCE: 2 quarters silent"}
+forward_signals: ["A3-02", "A3-04", "A3-17", "A3-19", "A3-20", "A3-24"]
+ambiguous: ["A3-01", "A3-06", "A3-07", "A3-08", "A3-09", "A3-10", "A3-13", "A3-15", "A3-16", "A3-18", "A3-21", "A3-22", "A3-23", "A3-25", "A3-26"]
+commitments:
+  - {commitment: "Heltar business acquisition", implied_date: "2026-07-29", ref: "lines 133, 190, 192 (s7, s9)", status_word: "completed"}
+  - {commitment: "Heltar deferred consideration 9.8 cr", implied_date: "about 2028-01-29", ref: "line 199 (s9)", status_word: "initiated"}
+  - {commitment: "Heltar core team to be expanded", implied_date: "undated", ref: "line 193 (s9)", status_word: "initiated"}
+  - {commitment: "Heltar roadmap Voice AI, analytics, customer data layer", implied_date: "undated", ref: "line 169 (s8)", status_word: "initiated"}
+  - {commitment: "Vendor advance 1,168.3 mn services availed in subsequent period", implied_date: "H2 FY27", ref: "line 834 (s20)", status_word: "initiated"}
+  - {commitment: "Interim dividend Rs 4/share", implied_date: "not stated", ref: "line 92 (s4); prior 120", status_word: "initiated"}
+  - {commitment: "Salesforce AgentExchange app launch", implied_date: "2026-08", ref: "lines 145-146 (s7)", status_word: "completed"}
+  - {commitment: "Masiv CEO appointment", implied_date: "Q2 FY27", ref: "line 137 (s7)", status_word: "completed"}
+  - {commitment: "Q1 carry: large-account traffic recovery expected", implied_date: "not dated", ref: "prior 411-412; no Q2 update", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Three items carry the quarter. (1) The thesis-broken margin test. Adjusted EBITDA margin computes to 10.04%, 4.5 mn above 10%. The Masivian add-back (69.0 mn, 5x Q1, relabelled 'data breach') is 15x that headroom. Reported margin is 9.75%. Like-for-like with the Q1 reading (9.5% adjusted), the test reads not fired. On a reported basis, both quarters sit below 10%. A3 does not rule; A4/A5 must state which basis the pre-committed condition uses. (2) Cash. The first cash-flow slide shows reported CFO/EBITDA 15% and CFO/PAT 0.22x. Management adds an 'Adjusted CFO' that adds back a 1,168.3 mn vendor prepayment, while days payable fell 64 to 50 and Q1 already wrote down a capital advance. The separating observation is whether that advance unwinds in H2. (3) Headline framing drift. Slide 4 LTM EBITDA moved from adjusted to reported basis (arithmetic exact), and 'Net Cash' became 'Cash'. The mix slides moved to an H1 basis, which hides a Q2 drop in Europe-HQ revenue that holds at rounding extremes; Proximus is Europe-HQ. Pipeline note: the A1 header says Crores, but the slides are in mn."

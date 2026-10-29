@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "NETWEB"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-netweb-q2fy27-a60c5c/runs/netweb-q2fy27/work/ledger_presentation_netweb_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 1
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 23
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 22
+  slide_numbers: 297
+flags_raised: [ZERO_STANDING, RESTATED, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 423
+ids_referenced: 423
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "No prior ledger, so DROPPED_SLIDE and ENTITY_CHANGE untestable. Only ZERO_STANDING row is R290 (QIP general corporate purposes utilised 0.00 of 1,995.02 Mn); with R329 about 35% of the 12,000 Mn raise is unspent. Working capital rows R276 and R282 show inventory days 53 to 117 and CCC 73 to 94; Sep26 days use a 183-day annualised basis (R416), so comparison to Mar columns needs A3 care. Top-5 concentration R250-R252 rises to 76.5%. R388 note line garbled; R393 pie shares absent. R040/R041 look inconsistent (17 times vs 03 supercomputers), kept as A1 wrote them. QIP table mapping checked against fulltext 513-522; arithmetic closes. Other category counts (forward 22, dates 20, qualifiers 61) are in the ledger count test."

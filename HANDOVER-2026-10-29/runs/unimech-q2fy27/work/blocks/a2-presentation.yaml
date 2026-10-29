@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-unimech-q2fy27-1b1895/runs/unimech-q2fy27/work/ledger_presentation_unimech_q2fy27.md"
+counts:
+  notes: 19
+  line_items: 81
+  zero_standing: 14
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 74
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 26
+  slide_numbers: 509
+flags_raised: [ZERO_STANDING, NA_STANDING, ENTITY_CHANGE, RESTATED, MISSING_FROM_STRUCTURED]
+ids_in_structured: 670
+ids_referenced: 670
+orphan_ids: []
+missing_from_structured: ["M1 p7 line 163 Sep-26 axis label", "M2 p20 line 560 3-axis to 5-axis CNC capability"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Deck count test run against the fulltext, not the structured rows: render transcriptions on pages 6,7,8,20,24,25 compared as a multiset with structured values; all matched except two minor labels. Notes count 19 = qualifier rows. Zero standing: Oil and Gas FAI proved nil, FY24 associate 0.0, Goodwill nil FY24-FY26 then 3,219.9 in H1 FY27 (Hobel), NC deferred tax liability nil, plus NA cells in associate growth and Others FAI pipeline. Hobel consolidation wef 1 May 2026 makes Q1/H1 FY27 vs prior non-comparable (ENTITY_CHANGE). Order book 855 Cr includes 589 Cr LTA/award letters; the 153% growth chart is confirmed POs only. DROPPED_SLIDE not assessable, no prior ledger."

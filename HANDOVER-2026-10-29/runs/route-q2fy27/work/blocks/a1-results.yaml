@@ -1,0 +1,29 @@
+stage: A1-extractor
+company: "ROUTE"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 18
+formfeed_count: 18
+line_count: 1279
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["p7 hedge rows", "p11 note 5 FX table", "p14 standalone OCI row"]  # 170dpi crops read from image to resolve OCR-illegible cells; images deleted
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+fulltext_path: "runs/route-q2fy27/extracted/route-results-q2fy27-fulltext.md"
+structured_path: "runs/route-q2fy27/extracted/route-results-q2fy27-structured.md"
+structured_counts:
+  number: 913
+  entity: 77
+  forward: 23
+  date: 48
+  qualifier: 68
+structured_id_range: "R001-R1129"
+gate_a1: pass
+gap_note: ""
+# layout scramble: pdftotext -raw used on pages 7,8,9,10,11,14,15,16; statement values mapped by row order and cross-footed

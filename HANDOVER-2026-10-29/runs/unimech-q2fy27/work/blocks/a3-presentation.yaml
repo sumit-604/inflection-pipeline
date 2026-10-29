@@ -1,0 +1,76 @@
+stage: A3-forensics
+company: "UNIMECH"
+quarter: "q2fy27"
+doctype: "presentation"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-unimech-q2fy27-1b1895/runs/unimech-q2fy27/work/forensics_presentation_unimech_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: FINDING
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: FINDING
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "D-A3-01", check: "F1", line: "752-753", classification: "FORWARD-SIGNAL", implication: "Goodwill nil to Rs 322.0 Cr (29.8% of assets, 40.3% of equity); FY27-end impairment test rests on undisclosed Hobel EBITDA; goodwill+intangibles Rs 369 Cr rules out Rs 148 Cr price reading"}
+  - {id: "D-A3-02", check: "F1", line: "197", classification: "AMBIGUOUS", implication: "Zero proven Oil & Gas FAIs (4 in pipeline) while the Saudi JV targets oil & gas"}
+  - {id: "D-A3-03", check: "F16", line: "153-155; 192; 89-90", classification: "AMBIGUOUS", implication: "Headline book ~Rs 855 Cr is 69% LTA/award letters; confirmed POs Rs 266 Cr vs Q1 Rs 280.3 Cr = -5.1% QoQ, book-to-bill ~0.88; 153% YoY includes Hobel"}
+  - {id: "D-A3-04", check: "F7", line: "175-176; 178; 188", classification: "AMBIGUOUS", implication: "Rs 589 Cr pool exceeds the two valued instruments unless Rs ~116.6/USD; residual is Honeywell (no value) or items under 'Advanced Negotiations'"}
+  - {id: "D-A3-05", check: "F16", line: "195", classification: "AMBIGUOUS", implication: "Hobel 7% of PCA order mix (~Rs 54 Cr on 855 base) vs Rs 100.1 Cr at Q1; Hobel book roughly halved or redefined"}
+  - {id: "D-A3-06", check: "F6", line: "124-127; 169; 521", classification: "FORWARD-SIGNAL", implication: "596 parts by FY27-end needs ~58 FAIs/month vs ~14/month history (~4.2x); first numeric FAI target; score at Q4 FY27"}
+  - {id: "D-A3-07", check: "F6", line: "116; 186-188", classification: "AMBIGUOUS", implication: "Unnamed ~USD 43M Tier-1 award letter new to the record; check Reg 30 disclosure and date (trigger d relevance); award is not a PO"}
+  - {id: "D-A3-08", check: "F6", line: "101-102; 119-121; 749-751", classification: "AMBIGUOUS", implication: "PPE+ROU+CWIP +Rs 15.2 Cr in H1 incl. Hobel; gross block ~2x by FY27-end promise is back-ended; capex and IPO utilisation NOT FOUND"}
+  - {id: "D-A3-09", check: "F8", line: "241; 682; 737; 756", classification: "FORWARD-SIGNAL", implication: "ETR Q2 27.6% vs 25.17% statutory, FY26 20.8% shield gone; DTA up, DTL nil despite Rs 47 Cr intangibles; FY24=FY25 tax 183.7 to verify"}
+  - {id: "D-A3-10", check: "F10", line: "731", classification: "NEUTRAL-FACT", implication: "Paid-up capital +0.2 Mn with no stated action; no EPS in deck; QIP, CCD, ESOP dilution vectors open"}
+  - {id: "D-A3-11", check: "F11", line: "731-733; 742; 744; 516", classification: "AMBIGUOUS", implication: "Equity ties; no NCI line despite '~100% stake' and Q1 NCI; Hobel CCD and 10% holdback location unclear"}
+  - {id: "D-A3-12", check: "F11", line: "734; 739; 761; 763-764; 236", classification: "FORWARD-SIGNAL", implication: "Net cash Rs 479.7 Cr to Rs 65.5 Cr; Q2 other income not halved as guided and implies ~12% yield on period-end liquidity; composition and treasury fade question"}
+  - {id: "D-A3-13", check: "F11", line: "760; 762; 741", classification: "NEUTRAL-FACT", implication: "Receivable days ~97 vs ~98 FY26; net trade WC ~107 days, inside green line and better than 160+ guide"}
+  - {id: "D-A3-14", check: "F14", line: "685; 672", classification: "AMBIGUOUS", implication: "FY24-FY26 Materials % (21.0/21.8/24.5) does not reconcile to rupee line (33.8/30.6/30.3); like-for-like gross margin move is +250 bps not +830 bps"}
+  - {id: "D-A3-15", check: "F14", line: "691-692", classification: "AMBIGUOUS", implication: "ROCE/ROE basis unstated; H1 FY27 and FY24 tie, FY25-FY26 do not; FY26 9.6% to H1 14.9% trend mixes bases"}
+  - {id: "D-A3-16", check: "F14", line: "90; 584; 486; 511; 465; 132; 531", classification: "NEUTRAL-FACT", implication: "Title, founding-year, spelling and tranche-size inconsistencies; post-period events in Q2 scoreboard unlabelled"}
+  - {id: "D-A3-17", check: "F15", line: "115; 182; 142", classification: "AMBIGUOUS", implication: "Innomech (Honeywell LTA signatory, FY26 borrower) and Uniflux not named; US tariff exposure invisible in deck"}
+  - {id: "D-A3-18", check: "F15", line: "309; 373-374; 396", classification: "FORWARD-SIGNAL", implication: "Kanoo JV is a 51% subsidiary from 01-Oct; Q3 consolidates a pre-revenue greenfield with start-up costs and 49% NCI"}
+  - {id: "D-A3-19", check: "F15", line: "242; 683", classification: "FORWARD-SIGNAL", implication: "Related-party associate (Dheya) loss -7.5 Mn Q2 vs -1.4 Q1; H1 exceeds FY26 full year; NA cells hide the step"}
+  - {id: "D-A3-20", check: "F16", line: "247", classification: "AMBIGUOUS", implication: "No guidance in deck; H1 EBITDA 38.3% vs 34-35% FY guide implies H2 ~30-32% or a sandbag"}
+  - {id: "D-A3-21", check: "F16", line: "576; 556; 532; 337", classification: "AMBIGUOUS", implication: "Footprint and facility count include the pre-commissioning Saudi site; ~1.2 lakh sq ft unexplained; utilisation ~65% amber, denominator unstated"}
+  - {id: "D-A3-22", check: "F7", line: "121; 457; 97", classification: "AMBIGUOUS", implication: "NADCAP dated FY27-end on one slide, 'progressively pursue' on another; semis step-up only 'anticipated'"}
+  - {id: "D-A3-23", check: "F17", line: "135-139", classification: "CONFIRMATORY-NEGATIVE", implication: "CRISIL non-cooperation absent for >=3rd consecutive deck; CARE/D&B substituted; trigger (d) persistence leg stays confirmed"}
+  - {id: "D-A3-24", check: "F17", line: "142; 228", classification: "AMBIGUOUS", implication: "No Hobel revenue/EBITDA or organic split, 2nd consecutive deck; trigger (c) untestable again"}
+  - {id: "D-A3-25", check: "F17", line: "488-490", classification: "AMBIGUOUS", implication: "Customer concentration absent; only customer count 41"}
+  - {id: "D-A3-26", check: "F17", line: "433-434", classification: "AMBIGUOUS", implication: "'robust cash conversion' claimed with no cash flow; H1 CFO/PAT upgrade test cannot run from deck"}
+  - {id: "D-A3-27", check: "F17", line: "115; 182", classification: "AMBIGUOUS", implication: "Honeywell LTA carries no value, PO or FAI date in deck; Notion separating observation not met in deck leg"}
+forward_signals: ["D-A3-01", "D-A3-06", "D-A3-09", "D-A3-12", "D-A3-18", "D-A3-19"]
+ambiguous: ["D-A3-02", "D-A3-03", "D-A3-04", "D-A3-05", "D-A3-07", "D-A3-08", "D-A3-11", "D-A3-14", "D-A3-15", "D-A3-17", "D-A3-20", "D-A3-21", "D-A3-22", "D-A3-24", "D-A3-25", "D-A3-26", "D-A3-27"]
+commitments:
+  - {commitment: "Semiconductor revenue sharp step-up anticipated in H2", implied_date: "H2 FY27 (by 2027-03-31)", ref: "p5 l.96-97", status_word: "initiated"}
+  - {commitment: "Serial production scaling over coming quarters", implied_date: "undated", ref: "p5 l.98-99", status_word: "initiated"}
+  - {commitment: "Automated special-process cell installation", implied_date: "undated (tied to NADCAP FY27-end)", ref: "p5 l.102; p6 l.119; p16 l.456", status_word: "underway"}
+  - {commitment: "NADCAP certification", implied_date: "FY27-end (2027-03-31)", ref: "p6 l.121; p16 l.457", status_word: "initiated"}
+  - {commitment: "346 more FAIs qualified, 596 parts total", implied_date: "end FY27", ref: "p6 l.124-127; p7 l.169", status_word: "underway"}
+  - {commitment: "Kanoo-Unimech JV first equity tranche SAR 30 Mn (Unimech SAR 15.3 Mn)", implied_date: "done (~2026-10-01 per Notion)", ref: "p6 l.130-132; p14 l.396; p19 l.529-532", status_word: "completed"}
+  - {commitment: "Establish Saudi manufacturing facility, Dammam", implied_date: "undated in deck (Notion: Mar/Apr-2027)", ref: "p6 l.132-133; p16 l.452-454", status_word: "initiated"}
+  - {commitment: "Honeywell Aerospace 10-year LTA", implied_date: "signed; value undisclosed", ref: "p6 l.115; p7 l.182", status_word: "completed"}
+  - {commitment: "~USD 43M award letter, unnamed aerospace Tier-1", implied_date: "received; execution undated", ref: "p6 l.116; p7 l.186-188", status_word: "completed"}
+  - {commitment: "FACC LTA USD 7.5M", implied_date: "signed", ref: "p7 l.178", status_word: "completed"}
+  - {commitment: "Strategic LTAs in pipeline with aerospace and semiconductor Tier-1s/OEMs", implied_date: "undated", ref: "p19 l.527-528", status_word: "initiated"}
+  - {commitment: "Items under Advanced Negotiations", implied_date: "undated", ref: "p7 l.175", status_word: "initiated"}
+  - {commitment: "Hobel products cross-sold to other customers", implied_date: "undated", ref: "p16 l.465-466", status_word: "underway"}
+  - {commitment: "Portfolio expansion: micro gas turbines, GSE, air cargo handling, industrial products", implied_date: "undated", ref: "p16 l.452-457", status_word: "initiated"}
+  - {commitment: "Inorganic growth via JVs and acquisitions", implied_date: "undated", ref: "p16 l.452, l.458; p19 l.507", status_word: "initiated"}
+  - {commitment: "Earnings presentation to analysts/investors", implied_date: "2026-10-28 call (Notion)", ref: "p1 l.32", status_word: "scheduled"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The headline order book triples to ~Rs 855 Cr only by adding ~Rs 589 Cr of LTA and award letters. The like-for-like confirmed-PO book fell ~5% QoQ (Rs 280.3 Cr to Rs 266 Cr). Forward visibility now rests on non-binding instruments: Honeywell has no value, and the slide carries an 'Advanced Negotiations' label. That is the first question for A4. Second, the balance sheet shows the Hobel cost: goodwill Rs 322 Cr (30% of assets), net cash down Rs 414 Cr to Rs 65.5 Cr, short-term debt up, ETR above statutory. Treasury income cannot keep carrying PAT. Q2 other income did not halve as guided, and its implied yield looks too high, so its composition matters. Third, the deck's historical ratio rows are unreliable: FY24-FY26 Materials % and FY25-FY26 ROE do not reconcile to the deck's own rupee lines. Use computed ratios. The operating print is strong (EBITDA 39.8%, materials 30.6%, receivable days flat ~97). The margin question stays open both ways: H1 38.3% vs a 34-35% FY guide means a sandbag or H2 compression. CRISIL silence continues; the deck substitutes CARE and D&B."

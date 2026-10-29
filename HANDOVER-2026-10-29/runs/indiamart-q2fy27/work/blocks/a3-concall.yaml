@@ -1,0 +1,79 @@
+stage: A3-forensics
+company: "INDIAMART"
+quarter: "q2fy27"
+doctype: "concall"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/indiamart-q2fy27/work/forensics_concall_indiamart_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: FINDING
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "CC-01", check: "F6", line: "L426-427, L431-433 (R182,R183,R249)", classification: "FORWARD-SIGNAL", implication: "SA margin 40% is elevated by sales under-investment; comfort level 33%; reinvestment undated"}
+  - {id: "CC-02", check: "F6", line: "L385-389, L666-668 (R177,R178,R051,R261)", classification: "CONFIRMATORY-NEGATIVE", implication: "Gross adds throttled until silver churn improves; churn guidance withdrawn; net-adds timing ducked 2nd call"}
+  - {id: "CC-03", check: "F6", line: "L37-39 vs L606-609, L713-714 (R293,R539,R077,R078)", classification: "FORWARD-SIGNAL", implication: "Gold/platinum 'stagnant' contradicts 'good upsell'; silver churn starves the upgrade funnel; growth rests on top-account ARPU"}
+  - {id: "CC-04", check: "F6", line: "L592-596, L402-406 (R068,R069,R192,R180)", classification: "FORWARD-SIGNAL", implication: "Implicit revenue growth band 8-10% on flat volume; 2-3 year balanced-growth claim has no dated volume mechanism"}
+  - {id: "CC-05", check: "F6", line: "L145-146, L156, L164-165, L224-225 (R039,R040,R043,R170)", classification: "FORWARD-SIGNAL", implication: "Management accepts 10-20% enquiry loss, no recovery date; thesis-broken #6 persists on its own framing"}
+  - {id: "CC-06", check: "F7", line: "L147-153 (R262,R340)", classification: "AMBIGUOUS", implication: "Login-gating cause is new vs Q1 call; possible post-hoc reframing of external loss as choice"}
+  - {id: "CC-07", check: "F6", line: "L734-737, L635-637, L782-783 (R083-R086,R070,R071,R202)", classification: "FORWARD-SIGNAL", implication: "~11% of enquiries bought, 20-40% cannibalisation; organic ~24 Mn [INFERENCE]; ad spend 8-9 Cr/qtr may double"}
+  - {id: "CC-08", check: "F6", line: "L102-106 (R166,R242,R243)", classification: "FORWARD-SIGNAL", implication: "OI (8) Cr called notional, 'will reverse'; depends on yields; realised vs MTM split withheld 2nd quarter"}
+  - {id: "CC-09", check: "F6", line: "L406-418 (R181,R055,R056,R246)", classification: "FORWARD-SIGNAL", implication: "Dated test: Busy billing 20-30% from Q3 FY27; floor equals checklist #7 red; Q1 '14%' matches H1 not Q1"}
+  - {id: "CC-10", check: "F17", line: "L63-71 (R014-R022)", classification: "CONFIRMATORY-NEGATIVE", implication: "Busy remarks omit EBITDA 12% vs 17% and new licences -8% YoY; C8 missed; margin silent 2nd call"}
+  - {id: "CC-11", check: "F6", line: "L72-74 (R167)", classification: "FORWARD-SIGNAL", implication: "Busy tech revamp in 'last leg'; completion should slow Busy cost growth (+38%) from H2 FY27"}
+  - {id: "CC-12", check: "F6", line: "L679-703 (R142,R143,R196,R197,R198)", classification: "AMBIGUOUS", implication: "FLDG/NBFC question unanswered; Q1 'not own balance sheet' not restated; capital deferred to scale-up"}
+  - {id: "CC-13", check: "F6", line: "L788-793 (R203,R223)", classification: "AMBIGUOUS", implication: "Buyback 'not my cup of tea'; undated board referral; capital tilts to rising-loss investments"}
+  - {id: "CC-14", check: "F10", line: "L479-505 (R186,R187,R188,R063-R065,R222)", classification: "FORWARD-SIGNAL", implication: "SBP ~5 Cr/qtr baseline FY27; next pool decided FY27 end, ~FY28; ~6 Cr/qtr margin tailwind reverses"}
+  - {id: "CC-15", check: "F7", line: "L327-341, L382-383, L455-459 (R173,R174,R176,R184,R185)", classification: "FORWARD-SIGNAL", implication: "AI disintermediation conceded; floor 'not heavily in the red'; C14 AI-value horizon pushed to 2-4 years"}
+  - {id: "CC-16", check: "F7", line: "L569-572, L655-662 (R190,R191,R560)", classification: "AMBIGUOUS", implication: "Same-call walk-back on paid buyer program; C10 softened to experiments"}
+  - {id: "CC-17", check: "F6", line: "L642-646 (R140,R072,R260)", classification: "AMBIGUOUS", implication: "New Rs 5 lakh buyer-protection obligation; no cap, claims or provision disclosed; no verification %"}
+  - {id: "CC-18", check: "F6", line: "L226-230 (R171)", classification: "FORWARD-SIGNAL", implication: "Open to licensing redacted non-PII data for AI training; optionality only"}
+  - {id: "CC-19", check: "F17", line: "L107 (R034)", classification: "CONFIRMATORY-NEGATIVE", implication: "Consol PAT only; associate losses +20% QoQ and -14.6% S-vs-C gap silent 2nd call; monitors #11/#12 silent"}
+  - {id: "CC-20", check: "F17", line: "L28-29, L95-96 (R007,R008)", classification: "AMBIGUOUS", implication: "Deferred revenue +16% YoY only; SA QoQ build +5 Cr smallest of four quarters, unmentioned"}
+  - {id: "CC-21", check: "F6", line: "L359-376 (R175)", classification: "NEUTRAL-FACT", implication: "C15 Busy-IndiaMART back-end integration initiated; no product or date"}
+  - {id: "CC-22", check: "F6", line: "L469-476 (R250,R251)", classification: "NEUTRAL-FACT", implication: "Nothing capitalised, ties to filed intangibles; future capitalisation is a tripwire; 'IEL digital' to verify"}
+  - {id: "CC-23", check: "F7", line: "L650-652 (R073)", classification: "AMBIGUOUS", implication: "Silver 12-month retention '10% lower' is relative only; single-cause claim unproven"}
+forward_signals: ["CC-01", "CC-03", "CC-04", "CC-05", "CC-07", "CC-08", "CC-09", "CC-11", "CC-14", "CC-15", "CC-18"]
+ambiguous: ["CC-06", "CC-12", "CC-13", "CC-16", "CC-17", "CC-20", "CC-23"]
+commitments:
+  - {commitment: "Q2 OI MTM loss will reverse", implied_date: "Q3-Q4 FY27", ref: "T04 L105-106 (R166)", status_word: "none"}
+  - {commitment: "Busy technology-base revamp", implied_date: "near term, undated", ref: "T03 L73-74 (R167)", status_word: "underway (last leg)"}
+  - {commitment: "Busy Magic new UI", implied_date: "done", ref: "T03 L72 (R104)", status_word: "completed"}
+  - {commitment: "Busy expand sales and distribution channels", implied_date: "undated", ref: "T03 L79-80 (R168)", status_word: "none"}
+  - {commitment: "Busy billing growth 20-30%", implied_date: "Q3 FY27 onwards", ref: "T09 L417-418 (R181)", status_word: "none"}
+  - {commitment: "IndiaMART long-term EBITDA margin ~33%", implied_date: "long term", ref: "T09 L426-427 (R182)", status_word: "none"}
+  - {commitment: "Invest in sales side heavily", implied_date: "undated, conditional", ref: "T09 L433 (R183)", status_word: "none"}
+  - {commitment: "Restart gross additions after silver churn improves", implied_date: "undated, conditional", ref: "T08 L385-389 (R177,R178)", status_word: "none"}
+  - {commitment: "Balanced value and volume growth", implied_date: "next 2-3 years", ref: "T09 L405-406 (R180)", status_word: "none"}
+  - {commitment: "Revenue growth 8-10% on ARPU 5-10%, no further price stretch", implied_date: "current", ref: "T12 L592-596 (R068,R069,R192)", status_word: "none"}
+  - {commitment: "Advertising onto other mediums", implied_date: "undated", ref: "T07 L173 (R169)", status_word: "none"}
+  - {commitment: "Double paid-traffic investment", implied_date: "undated, conditional", ref: "T15 L782-783 (R202)", status_word: "none"}
+  - {commitment: "ESOP expense at current baseline", implied_date: "FY27", ref: "T10 L486 (R186)", status_word: "none"}
+  - {commitment: "Board decides next ESOP pool", implied_date: "end FY27", ref: "T10 L496 (R188)", status_word: "none"}
+  - {commitment: "Credit facilitation pilots, quarterly updates", implied_date: "quarterly", ref: "T10 L547-549 (R189); T14 L693-694", status_word: "underway (pilots)"}
+  - {commitment: "Disclose before any large capital commitment", implied_date: "before commitment", ref: "T14 L701-703 (R198)", status_word: "none"}
+  - {commitment: "Verified and paid verified business buyer program", implied_date: "undated", ref: "T11 L570-572 (R190,R191)", status_word: "underway (pilots; walked back L657)"}
+  - {commitment: "Buyer PAN/GST verification", implied_date: "undated", ref: "T11 L567-568", status_word: "initiated"}
+  - {commitment: "Trust assurance buyer protection up to Rs 5 lakh", implied_date: "live", ref: "T13 L643-644 (R140)", status_word: "completed (launched)"}
+  - {commitment: "Gold/platinum count yearly; report material change", implied_date: "annual", ref: "T15 L711-712, L724-725 (R199,R200)", status_word: "none"}
+  - {commitment: "Buyback proposal to the board", implied_date: "next annual meeting, undated", ref: "T15 L792-793 (R203)", status_word: "none"}
+  - {commitment: "Busy/Livekeeping back-end integration with IndiaMART", implied_date: "undated", ref: "T08 L359-376 (R175)", status_word: "initiated"}
+  - {commitment: "Open to revenue from redacted AI-training data", implied_date: "undated", ref: "T07 L228-230 (R171)", status_word: "none"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Central admission couples margin and volume. SA margin 40% is elevated 'because we are not investing heavily on the sales side' (L431-432); comfort level is 33% (L426); gross adds stay throttled until silver churn improves (L385), churn guidance withdrawn (L666). One gives: volume restarts and margin falls toward 33%, or margin holds and volume stays flat. Neither supports the YoY margin gain as run-rate. Gold/platinum 'stagnant' (L607-609) means churn now starves the upgrade funnel, leaving top-account price as the only engine (8-10% revenue, L594). Enquiry loss is recast as partly deliberate login gating, a cause absent from the Q1 call; treat as unproven. About 11% of enquiries are bought with 20-40% cannibalisation, so organic demand is weaker than the -14% print [INFERENCE, ASR]. IndiaMart Finance: Q1 'not own balance sheet' not restated; FLDG/NBFC unanswered. Promise log C1-C15: 5 on track, 3 softened, 1 missed, 6 not addressed (ratio 0.56). Prepared-remarks numbers tie to filings except CFO 135 Cr (H1 only filed) and Busy deferred +40% (call-only). All numbers ASR-heard."

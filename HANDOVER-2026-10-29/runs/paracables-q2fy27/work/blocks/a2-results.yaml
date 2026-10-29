@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "PARACABLES"
+quarter: "Q2 FY27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/work/ledger_results_paracables_q2fy27.md"
+counts:
+  notes: 20
+  line_items: 237
+  zero_standing: 150
+  agenda_items: 2
+  auditor_paras: 11
+  entities: 29
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 0
+  slide_numbers: 0
+flags_raised: [ZERO_STANDING, ENTITY_CHANGE, FOOTNOTE_UNRESOLVED, MISSING_FROM_STRUCTURED, RESTATED, FORWARD, SEGMENT_NIL_FY27]
+ids_in_structured: 989
+ids_referenced: 989
+orphan_ids: []
+missing_from_structured: ["M001-M004: consolidated cash flow p11 lines 604 (Sale of PPE 1.74 / nil) and 612 (equity proceeds on warrant conversion 97.67 / nil)"]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Notes grep gave 19 vs sweep 20: consolidated note 1 (line 625) is OCR'd as '~ 4'; re-swept, resolved at 9 consolidated notes. Fulltext line sweep found 2 consolidated cash-flow rows A1 omitted (M001-M004); the nil cells M002/M004 are OCR '=' read as nil, confirm vs page 11 image. Verification status: pages 3,4,5,9,10,11,13 image-checked; page 1, 2, 7, 8 and note text on 6, 12 are raw OCR. UDINs (R830/R941 standalone, R861 consolidated, printed as DIN) are unresolved. Board outcome letter has only items a) and b); no AR, dividend, director or enabling items. Consolidated note 7 (Valens divested 6 Nov 2025) makes every YoY consolidated comparison non-like-for-like; Pipes segment is nil in FY27 columns. Q2/Q1/H1 FY27 standalone and consolidated columns are equal in the structured file. No prior ledger, so no entity or slide diff."

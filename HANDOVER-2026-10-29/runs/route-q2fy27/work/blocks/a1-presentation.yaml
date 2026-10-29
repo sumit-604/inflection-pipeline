@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "ROUTE"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 23
+formfeed_count: 23
+line_count: 909
+unit_convention: "Crores (slides use Rs mn mostly; Heltar deal in crore)"
+conversion_factor_to_cr: "Crores x1; Millions x0.1"
+text_layer_present: true
+extraction_mode: text-only  # plus appended per-page re-extraction blocks (pdftotext -raw + render check) for pages 12,13,17-22
+render_candidates: [2 cover, 6 divider, 11 divider, 15 divider, 23 closing; all skipped no data]
+rendered_pages: [12, 13, 17, 18, 19, 20, 21, 22]  # 100dpi renders for column-order resolution, deleted; no OCR
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27 / H1 FY27"
+fulltext_path: "runs/route-q2fy27/extracted/route-presentation-q2fy27-fulltext.md"
+structured_path: "runs/route-q2fy27/extracted/route-presentation-q2fy27-structured.md"
+structured_counts:
+  number: 252
+  entity: 32
+  forward: 19
+  date: 32
+  qualifier: 33
+structured_id_range: "R001-R368"
+gate_a1: pass
+gap_note: ""

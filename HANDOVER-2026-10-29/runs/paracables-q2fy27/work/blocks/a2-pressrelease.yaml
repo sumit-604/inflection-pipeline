@@ -1,0 +1,27 @@
+stage: A2-enumerator
+company: "PARACABLES"
+quarter: "Q2 FY27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "C:/Users/SUMIT SHARMA/repos/inflection-pipeline/.claude/worktrees/qr-paracables-q2fy27-a220cd/runs/paracables-q2fy27/work/ledger_pressrelease_paracables_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 13
+  zero_standing: 0
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 20
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 3
+  slide_numbers: 103
+flags_raised: [RESTATED, CORRECTED_FROM_IMAGE, OCR_UNVERIFIED, FOOTNOTE_UNRESOLVED]
+ids_in_structured: 157
+ids_referenced: 157
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Press release only, standalone snapshot (R148); consolidated figures not in this doc. No zero standing rows. 24 rows carry CORRECTED_FROM_IMAGE (margins R041-R048, R057-R064, order book/export/mix R089-R090, R092-R097); A3 should verify these against the image. Order book R089/R155 basis (executed vs unexecuted) unstated. Operating profit YoY 616.5% rests on a 5.7 Cr base. No prior ledger, so ENTITY_CHANGE and DROPPED_SLIDE not assessable."

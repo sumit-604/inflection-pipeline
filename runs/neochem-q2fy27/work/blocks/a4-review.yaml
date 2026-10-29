@@ -1,0 +1,90 @@
+stage: A4-analyst
+company: "NEOCHEM"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, intimation]   # intimation = Reg 30 call notice; no concall, no presentation
+ledger_reconciliation:
+  notes: 12
+  turns: 0
+  slides: 0
+  all_reviewed: true
+  a3_findings_incorporated: ["A3-01", "A3-02", "A3-03", "A3-04", "A3-05", "A3-06", "A3-07", "A3-08", "A3-09", "A3-10", "A3-11", "A3-12", "A3-13", "A3-14", "A3-15", "A3-16", "A3-17", "A3-18", "A3-19", "A3-20"]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "none (no Notion page, no companies/NEOCHEM.md; PRE-THESIS READ)"
+position_branch: "8A-W"
+sc_gap_pat_pct: ["H1FY27: ND (standalone-only filer)", "H2FY26: ND (standalone-only filer)", "H1FY26: ND (standalone-only filer)", "FY26: ND (standalone-only filer)"]
+questions_for_management:
+  - {q: "Gross July 2026 cyber fraud loss, amount recovered by 30-Sep-2026, and balance remaining (Rs Lakhs)?", from_finding_id: "A3-06"}
+  - {q: "Was any fraud loss charged to H1 FY27 P&L, and in which line (Other Expenses +35.7% to 418.73)?", from_finding_id: "A3-01"}
+  - {q: "Split of ST loans and advances 1,019.20 (from 217.02; LT loans line nil): capital, supplier, advance tax, fraud receivable, related-party loans?", from_finding_id: "A3-02"}
+  - {q: "Is the 27-Oct CFO change, a day after the call notice named Solanki CFO, linked to the fraud or a control finding? Yes or no.", from_finding_id: "A3-16"}
+  - {q: "Were June and September 2026 advance tax instalments paid (taxes paid 0.00 vs provision 263.15), and where booked?", from_finding_id: "A3-09"}
+  - {q: "H1 capex 1,445.46: project, total cost, added capacity, commissioning date?", from_finding_id: "A3-07"}
+  - {q: "Refinance 1,057.00 ST borrowing used for capex with term debt or new equity, and by when?", from_finding_id: "A3-07"}
+  - {q: "Use of FY26 issue proceeds 4,706.54 against offer objects, and any deviation?", from_finding_id: "A3-18"}
+  - {q: "Gross margin 35.82% to 30.70% YoY: bps from price, mix, input cost?", from_finding_id: "A3-15"}
+  - {q: "Inventory +38.1% to 4,040.97 vs revenue +6.3% HoH: raw material for new capacity vs stock older than 180 days?", from_finding_id: "A3-14"}
+  - {q: "Receivables 4,813.49 (~128 days): amount overdue beyond 180 days, and why no bad-debt provision?", from_finding_id: "A3-03"}
+  - {q: "FY26 other income 269.91: source of the 256.74 not explained by interest and investment profit, and does it recur?", from_finding_id: "A3-05"}
+  - {q: "H1 interest income 27.34 with nil FDs and nil LT loans: which asset earns it (ST advances 1,019.20, NC investment 509.07, other NC assets 499.22), and is the counterparty related?", from_finding_id: "A3-04"}
+  - {q: "Investee of the 509.07 non-current investment; subsidiary, associate or related party?", from_finding_id: "A3-19"}
+  - {q: "Cause of the 31.61 prior-year short provision and the 30.40% H2 FY26 ETR?", from_finding_id: "A3-08"}
+  - {q: "MSME dues 1,162.79: amount older than 45 days at 30-Sep-2026; expected s.43B(h) disallowance for FY27?", from_finding_id: "A3-10"}
+  - {q: "How was H2 FY26 EPS 4.74 computed (H1+H2 9.26 vs FY 8.71)? Face value and share count at 30-Sep-2026?", from_finding_id: "A3-12"}
+  - {q: "Target end markets for the new CCO; is the new capacity for textile chemicals; planned FY28 revenue from it?", from_finding_id: "A3-17"}
+  - {q: "Note 2 and CF Note 1 cite Indian GAAP and AS 3; review report uses generic Ind AS-or-other wording: confirm the framework; will the 'Audited' label on the balancing H2 FY26 column be corrected?", from_finding_id: "A3-20"}
+  - {q: "Terms, tenure and remuneration of new CFO and CCO; scope of Solanki's new role?", from_finding_id: "A3-16"}
+  - {q: "Share of H1 FY27 revenue from the top five customers?", from_finding_id: "A3-03"}
+monitorables:
+  - {item: "H1 FY27 earnings call (finance speaker in doubt after CFO change)", implied_date: "2026-10-29 14:00 IST", source_ref: "I021, I025; A4-OBS-1"}
+  - {item: "Presentation, audio, transcript hosted on neochem.in; run Role 5 on transcript", implied_date: "not stated", source_ref: "I023"}
+  - {item: "Cyber fraud balance recovery with legal authorities", implied_date: "not stated", source_ref: "Note 9 lines 238-239; R303; A3-06"}
+  - {item: "New CFO and CCO in post; Solanki re-designated; terms not stated", implied_date: "2026-10-27 onward", source_ref: "lines 42-56, 73-74; A3-16, A3-17"}
+  - {item: "Capex project commissioning (CWIP 275.58 Lakhs), project unnamed", implied_date: "not stated", source_ref: "lines 161, 273; A3-07"}
+  - {item: "Refinancing of ST borrowings 2,766.55 Lakhs or fund-raise", implied_date: "not stated", source_ref: "lines 149, 279; A3-07, A3-18"}
+  - {item: "Advance tax instalments 3 and 4 (statutory calendar, not in filing)", implied_date: "2026-12-15 and 2027-03-15", source_ref: "A3-09 [INFERENCE]"}
+  - {item: "s.43B(h) MSME payment test on MSME dues 1,162.79 Lakhs", implied_date: "2027-03-31", source_ref: "line 151; A3-10 [INFERENCE]"}
+  - {item: "FY27 audited results: FY27 CFO (cleanest metric), inventory days, fraud write-off, D&A and interest step-up, ETR, deferred tax sign; CFO negative streak", implied_date: "by 2027-05-30", source_ref: "Step 8C; A3-11, A3-13 [INFERENCE: Reg 33]"}
+  - {item: "FY27 annual report and AGM: RPT note, auditor fraud reporting, issue-proceeds use", implied_date: "by 2027-09-30", source_ref: "A3-06, A3-18, A3-19 [INFERENCE: s.96]"}
+  - {item: "Promoter pledge and holding changes", implied_date: "ND", source_ref: "batch brief, not Notion"}
+flags:
+  - "SOURCE: connector-rebuilt copy; all numbers PENDING VERIFICATION against NSE original (lines 19-24)"
+  - "NO CALL CONTENT: filed documents only; call 29-Oct-2026 14:00 IST not heard"
+  - "PRE-THESIS READ: no Notion page, no Decision Status, no projections; spear or /step1 needed before any workup"
+  - "Cyber fraud July 2026 unquantified; no exceptional charge (Note 9; A3-01, A3-06)"
+  - "CFO (with the company since 2018, line 84; CFO tenure start NOT DISCLOSED) replaced at results meeting, one day after call notice named him CFO (A3-16, A4-OBS-1)"
+  - "CFO negative two periods; 18-month PAT 19.87 Cr vs CFO -17.99 Cr; cash conversion INDETERMINATE-WITH-DIRECTION"
+  - "Direct taxes paid nil vs 2.63 Cr H1 provision (A3-09)"
+  - "ST loans and advances +8.02 Cr (4.7x) with no note (A3-02)"
+  - "Capex 14.45 Cr, no project note, 67% funded outside term debt (A3-07)"
+  - "Gross margin -511 bps YoY; op EBITDA margin -129 bps YoY (A3-15)"
+  - "PAT +43.1% YoY but EPS +1.3%; H2 FY26 EPS inconsistent (A3-12)"
+  - "FY26 other income 2.57 Cr unexplained; H2 FY26 exceptional 0.62 Cr without note (A3-05, A3-01)"
+  - "Six drafting inconsistencies (A3-20 items b to g); Ind AS vs Indian GAAP item withdrawn, review wording covers AS filers (lines 106-108, 123)"
+  - "Related-party silence: investee, interest counterparty, advances counterparties (A3-04, A3-19)"
+  - "Snapshot trailing PE 23.3 does not reconcile: filed trailing PAT 14.39 Cr vs mcap 179 Cr = 12.4x; Role 1 must recompute"
+  - "Tracker: zero downstream signals; Role 5.5 never run"
+  - "Amendment 17 converter classification open; Pillar 2 cash readings below 0.65x band"
+  - "Steps 6.5 and 7 deferred to /fttcp and Role 1 (OR-30); pillar facts flagged P1-P7, P-A21-1 to 3"
+  - "Sequential operating leverage absent: Other Expenses +29.5% HoH vs revenue +6.3%; op EBITDA margin +10.6 bps on +58.1 bps gross margin (A5 F3)"
+  - "FY26 receivables +23.45 Cr = 65.5% of FY26 WC outflow and 1.95x FY26 PAT, bad debts 0.00, no provision (A5 F4)"
+plain_language_brief_included: true
+analyst_note: "Operating EBIT rose 42.6% YoY, in line with PAT (+43.1%). Core PBT ex-other-income rose 68.7%, but 17.4% of that gain is interest saved by the FY26 equity-funded debt paydown, and borrowings are up 85.9% since. Sequential operating leverage is absent: other expenses rose 29.5% HoH on sales +6.3%. The weak points are cash and disclosure. H1 CFO of -1.05 Cr rests on a 21-day payables stretch and nil tax paid; had the 2.63 Cr provision been paid, CFO would be about -3.68 Cr. FY26 receivables rose 23.45 Cr, 1.95x FY26 PAT, with no provision. The fraud, the 8.02 Cr unexplained rise in ST advances, the nil tax payment and the CFO change fall in one half; ask Q1, Q3 and Q5 together. A4-OBS-1: the 26-Oct call notice named Solanki CFO a day before his replacement. Role 1 must use per-share growth (+1.3%). The screener PE of 23.3 does not reconcile; filed trailing PE is about 12.4x. Verdict FLAGS, not CAVEATS, because governance items stack on an INDETERMINATE cash reading."
+review_path: "runs/neochem-q2fy27/work/review_neochem_q2fy27.md"
+loop_1:
+  trigger: "A5 verdict INCOMPLETE (runs/neochem-q2fy27/work/audit_neochem_q2fy27.md)"
+  fixes:
+    - {id: "F1", type: MISSING, decision: accepted, lines: "22-25 (preamble)"}
+    - {id: "F2", type: CONTRADICTION, decision: accepted, lines: "165, 426, 481, yaml analyst_note"}
+    - {id: "F3", type: MISSING, decision: accepted, lines: "164, 337, 495, yaml flags"}
+    - {id: "F4", type: MISSING, decision: accepted, lines: "252, 481, 497, yaml flags"}
+    - {id: "F5", type: MISSING, decision: accepted, lines: "68, 406, 463, yaml Q19 and flag"}
+    - {id: "F6", type: FACTUAL, decision: accepted, lines: "455, yaml flag"}
+    - {id: "F1-carry", type: carry-through, decision: added, lines: "390 (Q3), 400 (Q13), yaml Q13"}
+  rejected: []
+  verdict_moved: false
+  verdict_card_items_moved: ["Key Notes lead growth figure: core PBT +68.7% replaced by operating EBIT +42.6% (core PBT kept with interest share)", "F-12 drafting inconsistency count 7 to 6"]
+  extraction_numbers_moved: false
+  style_notes_actioned: []

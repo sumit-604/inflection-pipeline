@@ -1,0 +1,62 @@
+stage: A3-forensics
+company: "NEOCHEM"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/neochem-q2fy27/work/forensics_neochem_q2fy27.md"
+ledger_reconciled_pct: 100
+source_status: "connector-rebuilt copy of NSE filing (fulltext lines 19-24); all numbers pending verification against exchange original"
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: PASS
+  F8: FINDING
+  F9: N.A.
+  F10: FINDING
+  F11: PASS
+  F12: FINDING
+  F13: FINDING
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "198", classification: "AMBIGUOUS", implication: "Exceptional line nil in the half holding the July 2026 cyber fraud; H2FY26 61.89 exceptional has no note; possible later write-off"}
+  - {id: "A3-02", check: "F1", line: "164, 171, 262", classification: "AMBIGUOUS", implication: "ST loans and advances 217.02 to 1,019.20 (+802.18, 60.8% of H1 WC outflow), no note; LT line nil; possible capital advances, fraud receivable, advance tax or related-party loans"}
+  - {id: "A3-03", check: "F1", line: "251, 169", classification: "AMBIGUOUS", implication: "Bad debt 0.00 and no provision against receivables 4,813.49 (~128 days); ask ageing"}
+  - {id: "A3-04", check: "F1", line: "254, 289-290", classification: "AMBIGUOUS", implication: "Interest income 27.34 in H1 vs 13.04 FY26 with nil FDs and bank 0.46; cash on hand 18.03; which asset earns interest, related counterparty?"}
+  - {id: "A3-05", check: "F1", line: "253, 185", classification: "AMBIGUOUS", implication: "FY26 other income 269.91, of which 256.74 has no source shown (subsidy nil); H1FY27 falls to 37.12; operating PBT +68.7% YoY vs reported +42.7%"}
+  - {id: "A3-06", check: "F6", line: "238-239", classification: "FORWARD-SIGNAL", implication: "Cyber fraud recovery underway, undated, no amounts or balance-sheet location; charge risk if recovery fails"}
+  - {id: "A3-07", check: "F6", line: "273, 161, 279", classification: "FORWARD-SIGNAL", implication: "H1 capex 1,445.46 (4.9x FY26) with no project, capacity or date note; 67% funded outside term debt; depreciation, interest and refinancing step-up"}
+  - {id: "A3-08", check: "F8", line: "204", classification: "AMBIGUOUS", implication: "Prior-year short provision 31.61; H2FY26 ETR 33.60% (30.40% ex true-up) vs 25.17%; H2 step-up pattern may repeat"}
+  - {id: "A3-09", check: "F8", line: "266, 203, 154", classification: "FORWARD-SIGNAL", implication: "Direct taxes paid 0.00 vs H1 provision 263.15; ST provisions +263.16; advance tax unpaid (cash outflow and interest ahead) or misbooked"}
+  - {id: "A3-10", check: "F8", line: "151", classification: "FORWARD-SIGNAL", implication: "MSME dues 1,162.79 (65.7% of payables), payable days 46.4 to 67.8; s.43B(h) disallowance risk raises ETR [INFERENCE]"}
+  - {id: "A3-11", check: "F8", line: "206, 144", classification: "NEUTRAL-FACT", implication: "Deferred tax credit 2.25 (21.5 bps shield) and DTL falls despite +1,101.36 net PPE; year-end deferred charge may flip to debit"}
+  - {id: "A3-12", check: "F10", line: "214-215", classification: "AMBIGUOUS", implication: "H2FY26 EPS 4.74 implies FY weighting (138.03 lakh); H1+H2 9.26 vs FY 8.71; per-share growth +1.3% YoY vs PAT +43.1% after FY26 dilution"}
+  - {id: "A3-13", check: "F12", line: "267, 256", classification: "CONFIRMATORY-NEGATIVE", implication: "CFO negative two periods running; 18-month PAT 1,987.35 vs CFO -1,799.03; asset build funded by liabilities"}
+  - {id: "A3-14", check: "F12", line: "168, 258, 189", classification: "AMBIGUOUS", implication: "Inventory +38.1% in six months vs revenue +6.3% HoH; ~1,040 raw material build; days 117.5 to 154.8; stock bought ahead vs slow-moving"}
+  - {id: "A3-15", check: "F12", line: "188-189, 184", classification: "AMBIGUOUS", implication: "Gross margin 35.82% to 30.70% YoY (-511 bps) on +50.4% revenue; EBITDA margin held ~17.5% on employee-cost leverage"}
+  - {id: "A3-16", check: "F13", line: "42-44, 53-56, 75-76", classification: "FORWARD-SIGNAL", implication: "CFO since 2018 replaced at the results meeting, same half as the fraud and negative CFO; new CFO profile stresses internal controls and working capital; no terms stated"}
+  - {id: "A3-17", check: "F13", line: "45-47, 80-81", classification: "FORWARD-SIGNAL", implication: "CCO from Indofil textile chemicals; commercial push into new applications, possibly what the new capacity serves"}
+  - {id: "A3-18", check: "F13", line: "281, 259, 277, 279", classification: "FORWARD-SIGNAL", implication: "No issue-proceeds utilisation statement; FY26 equity 4,706.54 absorbed by receivables, debt paydown, investments; H1 re-borrowing +1,528.78"}
+  - {id: "A3-19", check: "F14", line: "270-271, 162, 255", classification: "AMBIGUOUS", implication: "FY26 investment purchase 625.00 shown as negative proceeds; 115.93 sold at book; investee undisclosed; consolidation basis open if related"}
+  - {id: "A3-20", check: "F14", line: "106-107, 224-226, 163, 175, 182, 272", classification: "AMBIGUOUS", implication: "Seven drafting inconsistencies (Ind AS vs AS, asset-side DTL label, sign misposting, MD initial, footer name, balancing column labelled audited, 5.84 coincidence); finance-function quality signal alongside CFO change"}
+forward_signals: ["A3-06", "A3-07", "A3-09", "A3-10", "A3-16", "A3-17", "A3-18"]
+ambiguous: ["A3-01", "A3-02", "A3-03", "A3-04", "A3-05", "A3-08", "A3-12", "A3-14", "A3-15", "A3-19", "A3-20"]
+commitments:
+  - {commitment: "Recover balance of July 2026 cyber fraud loss with legal authorities; substantial amount recovered", implied_date: "not stated", ref: "Note 9, lines 238-239", status_word: "underway"}
+  - {commitment: "CFO Harshit Shah and CCO Vikram Nair appointed", implied_date: "w.e.f. 27-Oct-2026, term not stated", ref: "Items 2-3, lines 42-47; Annexure A 73-74", status_word: "completed"}
+  - {commitment: "Solanki re-designated to senior management, continues in employment", implied_date: "w.e.f. 27-Oct-2026", ref: "Item 4, lines 53-56", status_word: "completed"}
+  - {commitment: "Intimation to be posted on www.neochem.in", implied_date: "27-Oct-2026", ref: "line 59", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+loop_1:                           # correction loop 1, A5 finding F1 (MISSING)
+  - {rows: "R005-R006", line: "139", disposition: "reviewed, no finding", basis: "Share warrants nil both dates; template line; basic = diluted EPS all periods (214-215); share capital unchanged 1,712.08 (137)"}
+  - {rows: "R041-R044", line: "163-164", disposition: "finding", detail: "R041-R042: F14, AMBIGUOUS, line 163, in A3-20 item (b) (asset-side DTL label; real net DTL 52.81/55.06 on liability side, line 144). R043-R044: F1, AMBIGUOUS, line 164, in A3-02 (LT loans and advances nil while ST rose 217.02 to 1,019.20, line 171)"}
+  - {rows: "R236-R237", line: "38", disposition: "reviewed, no finding", basis: "70-minute meeting (05:20-06:30 PM) covered results and three KMP/SMP changes; NSE stamp 18:53:20 (R273, line 20) is 23 minutes after close; governance context carried in A3-16 (F13)"}
+analyst_note: "Source is a connector-rebuilt copy (lines 19-24); every number pends a check against the NSE original. The filing ties arithmetically, so the issues are disclosure, not addition. Three threads meet in one half. A July 2026 cyber fraud has no rupee amount and no exceptional charge (line 198 nil). ST loans and advances rose 802.18 with no note; that is the likeliest home for an unrecovered fraud balance or advance tax. The CFO was replaced at the results meeting, and the new CFO's profile stresses internal controls and working capital. A4 should ask these as one sequence, fraud amount first. Second thread: growth uses cash. CFO is negative two periods running, the FY26 issue money is spent, and H1 capex of 1,445.46 rode mostly on short-term debt with no project note. Nil tax paid against a 263.15 provision is either an unpaid liability or a misclassification. Gross margin fell 511 bps YoY; EBITDA margin held near 17.5% on operating leverage. First run: F5 and entity baselines set, no diffs possible."

@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "NEOCHEM"
+quarter: "H1 FY27"
+doctype: "intimation"
+model: claude-sonnet-5-5
+status: complete
+page_count: 2
+formfeed_count: 2
+line_count: 102
+unit_convention: "not applicable"
+conversion_factor_to_cr: "not applicable"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: []
+page_coverage_pct: 100
+detected_quarter: "H1 FY27"
+fulltext_path: "runs/neochem-q2fy27/extracted/neochem-intimation-q2fy27-fulltext.md"
+structured_path: "runs/neochem-q2fy27/extracted/neochem-intimation-q2fy27-structured.md"
+structured_counts:
+  number: 8
+  entity: 12
+  forward: 3
+  date: 7
+  qualifier: 3
+structured_id_range: "I001-I033"
+gate_a1: pass
+gap_note: ""

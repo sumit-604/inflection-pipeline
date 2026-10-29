@@ -23,3 +23,4 @@
 - Agent scratch folders work/tmp_* moved out of the run folder to the session scratchpad before commit (not committed).
 - A5 re-audit (loop 1): verdict COMPLETE. Six loop-0 items closed; drift check pass (32 change-log rows, no unlisted change); 3 STYLE notes (N1-N3) logged, no loop. A5 disclosed one grep restricted to ledger_*_wework_q2fy27.md.
 - Correction loops: 1. Close-out: session-cost.md, operator-brief.md, notion-payload.md (not sent; no Notion write). Notion data-source schema fetched read-only to name payload properties.
+- 2026-10-29 Notion save (coordinator relayed operator approval "We can save all the reviews in Notion."; instruction: create no page if none exists): COMPANIES MASTER search "WeWork" (collection://345bb2b9-d3ab-8032-9b46-000ba16ab827) found no WeWork page; only 4 IndiQube Spaces pages that mention WeWork. No page created, nothing inserted, no properties updated. notion-payload.md (create-row payload) stays pending for the operator.

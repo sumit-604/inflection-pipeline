@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "530077"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+page_count: 6
+formfeed_count: 6
+line_count: 356
+unit_convention: "Lakhs"
+conversion_factor_to_cr: "x0.01"
+text_layer_present: true   # pages 1-2 only; pages 3-6 image-only
+extraction_mode: text-only for p1-2; visual transcription for p3-6 (no text layer on those pages)
+render_candidates: [3, 4, 5, 6]   # zero-char pages, all data-bearing statements
+rendered_pages: [3, 4, 5, 6 (statements, visual transcription), 2 (OCR-layer check only)]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/530077-q2fy27/extracted/530077-results-q2fy27-fulltext.md"
+structured_path: "runs/530077-q2fy27/extracted/530077-results-q2fy27-structured.md"
+structured_counts:
+  number: 359
+  entity: 31
+  forward: 1
+  date: 26
+  qualifier: 29
+structured_id_range: "R001-R446"
+gate_a1: pass
+gap_note: ""

@@ -1,0 +1,36 @@
+stage: A5-adversary
+company: "530077"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: COMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger: []
+arithmetic_mismatches: []
+surviving_bear_counters: []
+findings_by_type:
+  factual: []
+  missing: []
+  contradiction: []
+  style:
+    - "S9 rev1 L266 'D&A will drift down' is an unlabelled forward inference; tag [INFERENCE], say 'may' (H1 D&A -2.8% YoY, L230)"
+    - "S10 rev1 L63 'treasury that produced 38.5% of TTM PBT': 38.5% is TTM other income (rev1 L406); only 59.0% of H1 OI ties to treasury lines (rev1 L307); wording originated in A5 loop-0 Claim 2"
+    - "S11 ledger R367/R395 'OCR-garbled': p1 is a text layer (fulltext header L14); L69 garble is a signature-appearance layout artefact"
+    - "S12 rev1 L576 'after the lost interest': forgone treasury income is realised gains, FX and interest (L298, L303, L306)"
+    - "S1-S8 carried from loop 0 unchanged (rev1 L157, L302, L180, L267, L610; ledger count labels; optional 81.6% split)"
+loop_back_to: ""
+gap: ""
+style_notes:
+  - "S9 label rev1 L266 D&A forecast as [INFERENCE]"
+  - "S10 rev1 L63 say 'other income, mostly treasury-linked' for the 38.5% (A5 loop-0 wording)"
+  - "S11 ledger R367/R395 'OCR-garbled' should read 'layout-garbled'"
+  - "S12 rev1 L576 'lost interest' is a plain-language simplification of forgone treasury income"
+  - "S1-S8 carried from loop 0"
+analyst_note: "Loop 1 closes all eight loop-0 findings. F1-F4: each fix re-derives from the fulltext. The bridge sum is -27.09 and ties to L239. CFO ex deposits is -1,543.62 from L164. The other-expense range is 12.4% / 16.3-21.0% / 30.7%. Capex is 0.39x and 0.16x D&A. M1: every 0C-1 number re-derives (22.0x, 21.9x, 6.3x, 1.16x, break-even 5.93%, net EPS 9.00 to 9.25 vs 9.11), and the gross caveat now reaches Step 1, 6.5, 7, the flags, Q19 and the brief. M2: qualifier (a)-(e) is present, and the watchlist splits opinion GREEN from statement quality AMBER. M3: the Q3 ratio leg anchors to the Q3 FY26 column with a 5 pp bear band. M4: ledger R367/R395 carry 13:08:29 IST. Coverage is unchanged at 446 of 446. The revision added no FACTUAL, MISSING or CONTRADICTION defect. Four new STYLE notes are logged. One of them (S10) corrects loose wording that A5 itself supplied in loop 0: the 38.5% of TTM PBT is other income, not treasury alone. A4's verdict stays PROCEED WITH FLAGS, and cash stays INDETERMINATE-WITH-DIRECTION."

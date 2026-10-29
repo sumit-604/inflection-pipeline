@@ -39,7 +39,7 @@ Done during packaging (2026-10-29):
 | `claude/qr-route-q2fy27-fb3514` (ROUTE, paused; its untracked `runs/route-q2fy27/` committed now) | bc9c448b | yes |
 | the other 15 `claude/qr-<ticker>-q2fy27-<hash>` branches | see `yesterday_list.csv` | yes |
 | `run/quarterly-q2fy27-2026-10-17`, `run/quarterly-q2fy27-2026-10-19`, and the 32 `claude/quarterly-<name>-q2fy27-<hash>` branches of the 17-24-Oct batches | various | pushed in the same session (verify with `git ls-remote --heads origin 'claude/quarterly-*'`) |
-| `handover/2026-10-29` (this folder, minus `.env` files) | printed in the session report | yes |
+| `handover/2026-10-29` (this folder, minus `.env` files) | 3d4c4ec0 (first commit; this hash line added in the commit that follows it) | yes |
 
 `companies/*.md`: no uncommitted change; no quarterly run of 27-29 Oct wrote one (none of the 16 names has a `companies/<TICKER>.md` except AEQUS and SYNGENE, which were not touched). `REVIEW.md` is not in the repo at all: it lives in `C:\ConcallPipeline\Daily Concall Intelligence\announcements\<window>\REVIEW.md` (not a git repo) and is copied under `review/`.
 

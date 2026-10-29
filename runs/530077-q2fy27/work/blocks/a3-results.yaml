@@ -1,0 +1,55 @@
+stage: A3-forensics
+company: "530077"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/530077-q2fy27/work/forensics_530077_q2fy27.md"
+ledger_reconciled_pct: 100        # 446 / 446
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: PASS
+  F5: PASS
+  F6: PASS
+  F7: PASS
+  F8: FINDING
+  F9: FINDING
+  F10: FINDING
+  F11: FINDING
+  F12: FINDING
+  F13: PASS
+  F14: FINDING
+  F15: FINDING
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F1", line: "L240, L295, L307", classification: "AMBIGUOUS", implication: "FY26 PAT 2,529.02 is 71% discontinued (1,802.69); continuing base 726.33 / EPS 9.11. No note names the business; FY26 CFO 2,407.65 carries discontinued PBT 2,337.51 with no disposal adjustment."}
+  - {id: "A3-02", check: "F1", line: "L187, L245", classification: "AMBIGUOUS", implication: "Provisions nil both dates while DB remeasurement OCI exists; gratuity obligation location unknown. Verify at AR."}
+  - {id: "A3-03", check: "F1", line: "L302, L335, L348", classification: "AMBIGUOUS", implication: "FX loss (22.51) on FCY cash equivalents while EEFC balance nil both dates; FX-on-cash line looks like a plug."}
+  - {id: "A3-04", check: "F8", line: "L237, L238", classification: "FORWARD-SIGNAL", implication: "ETR 7.1% Q2 / 11.8% H1 vs 25.17%; shield 105.15 Lakhs H1 = 15.1% of H1 PAT. H2 step-up risk; no note explains the rate."}
+  - {id: "A3-05", check: "F8", line: "L157, L188, L316", classification: "AMBIGUOUS", implication: "Tax account gap about 50.00: 8.64 + 101.00 - 53.02 = 56.62 owed vs (6.62) printed on asset side; (6.62) equals FY26 OCI tax at L246. A1 to re-check L157."}
+  - {id: "A3-06", check: "F9", line: "L245, L247", classification: "AMBIGUOUS", implication: "Reclassifiable OCI (12.00) Q2 / +12.06 Q1, each 2.9x full FY26 (4.11), nature undisclosed; remeasurement 6.57 identical Q1 and Q2 = FY26/4 (estimate, not valuation)."}
+  - {id: "A3-07", check: "F10", line: "L171, L251, L329", classification: "NEUTRAL-FACT", implication: "Buy-back extinguished 11.00 lakh shares (13.80%) in Q1 FY27; mechanical EPS uplift 16.0%; no note. Basic = diluted, spread 0."}
+  - {id: "A3-08", check: "F10", line: "L254", classification: "AMBIGUOUS", implication: "Q1 and H1 EPS divide by closing 68.699 lakh shares; if extinguished after 1-Apr, Ind AS 33 weighted EPS is lower than printed."}
+  - {id: "A3-09", check: "F10", line: "L161, L164, L182, L229, L327", classification: "FORWARD-SIGNAL", implication: "Net cash 6,576.65 -> 2,770.32; ST borrowings 22.70 -> 1,199.55 while 3,905.31 investments held; finance cost Q2 +79% QoQ. Treasury and other-income base shrink."}
+  - {id: "A3-10", check: "F11", line: "L171, L172, L331", classification: "AMBIGUOUS", implication: "Equity roll gap 40.10: non-TCI reduction 2,217.75 vs CF equity outflows 2,257.85. [INFERENCE] consistent with buy-back at Rs 200; price not in filing."}
+  - {id: "A3-11", check: "F17", line: "L221, L222, L231, L233", classification: "FORWARD-SIGNAL", implication: "Q2 revenue -1.8% YoY; other expenses +84.8% YoY to 30.7% of revenue; EBITDA margin 12.3% vs 20.0%; PBT ex other income -57.2%; other income 37.9% of PBT; low ETR masks the fall."}
+  - {id: "A3-12", check: "F17", line: "L159, L225, L227, L317", classification: "FORWARD-SIGNAL", implication: "H1 gross margin +960 bps alongside 14.6% larger inventory build on flat revenue; inventory 5,291.18 = 43% of FY26 revenue; H1 CFO -991.50. H2 sell-through decides whether the margin is real."}
+  - {id: "A3-13", check: "F17", line: "L162, L309", classification: "NEUTRAL-FACT", implication: "Receivables 630.28 -> 234.92, days 18.9 -> 7.9; no collection stress; bad debts nil."}
+  - {id: "A3-14", check: "F17", line: "L260-L263, L60", classification: "AMBIGUOUS", implication: "Notes silent on rename, FY26 discontinued op, buy-back, RPT and other-expense spike; silence count 1."}
+  - {id: "A3-15", check: "F12", line: "L260-L263", classification: "AMBIGUOUS", implication: "No segment table or single-segment statement after an FY26 discontinued operation; business mix unverifiable."}
+  - {id: "A3-16", check: "F14", line: "L164, L311", classification: "AMBIGUOUS", implication: "Deposit run-down 552.12 sits in operating cash; H1 CFO ex this line -1,543.62, not -991.50."}
+  - {id: "A3-17", check: "F14", line: "L262", classification: "AMBIGUOUS", implication: "Export incentives inside revenue, amount not disclosed; revenue quality depends on scheme rates."}
+  - {id: "A3-18", check: "F14", line: "L263, L289, L249, L238, L178, L204, L81, L215", classification: "NEUTRAL-FACT", implication: "Drafting cluster: Note 3 missing, half-year CF titled year, OCI subtotal mislabelled as TCI, typos, old freshtrop domain, gmail auditor contact. Cumulative governance data point."}
+  - {id: "A3-19", check: "F15", line: "L60, L89, L139", classification: "AMBIGUOUS", implication: "Rename Freshtrop -> Puretrop, CIN unchanged, no note. [INFERENCE] rename + discontinued op + 13.8% buy-back read as a business reshape."}
+forward_signals: ["A3-04", "A3-09", "A3-11", "A3-12"]
+ambiguous: ["A3-01", "A3-02", "A3-03", "A3-05", "A3-06", "A3-08", "A3-10", "A3-14", "A3-15", "A3-16", "A3-17", "A3-19"]
+commitments:
+  - {commitment: "Results placed on www.puretrop.com", implied_date: "2026-10-27", ref: "R391 L52", status_word: "procedural"}
+  - {commitment: "Buy-back of 11.00 lakh shares", implied_date: "by 2026-06-30", ref: "R333 L329 (no note)", status_word: "completed"}
+  - {commitment: "Name change to Puretrop Fruits Limited", implied_date: "on or before 2026-10-27", ref: "R366 L60 (no note)", status_word: "completed"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Read the quarter as weaker than the headline. Q2 continuing PAT is down only 10.2% YoY because the effective tax rate fell to 7.1%. Pre-tax profit excluding other income is down 57.2%, driven by an 84.8% jump in other expenses that no note explains. The H1 gross margin gain of 960 bps coincides with a larger inventory build on flat revenue. Treat it as unproven until H2 sell-through. The balance sheet has changed shape: a 13.8% buy-back plus the stock build moved the company from 6,576.65 to 2,770.32 Lakhs net cash and onto short-term debt. That shrinks the treasury income, which supplied about 37% of pre-tax profit. FY26 total EPS 31.73 is 71% discontinued and must not be used as a base. Two roll gaps (equity 40.10, tax about 50.00) need answers. A1 should re-check L157, which is visually transcribed. F17 was run against the operator watch list by task instruction, not the results-doctype default N.A."

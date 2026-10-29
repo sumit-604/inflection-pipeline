@@ -1,0 +1,56 @@
+stage: A5-adversary
+company: "530077"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "L69 digital-signature time 13:08:29 +05'30' (garbled in the text layer, quoted verbatim in audit M4); no structured row; ledger R367/R395 annotate 'time not shown' (M4, A2, annotation-only)"
+arithmetic_mismatches:
+  - {metric: "Step 2 diagnostic 4 continuing PAT bridge sum (rev L147)", a4_value: "Sum -27.09 of listed items (-212.65, +95.47, +1.95, -1.38, +90.09)", recomputed: "-26.52; D&A +1.95 and finance -1.38 double-counted inside core PBT; from Op EBITDA -213.22 the list gives -27.09", source_line: "L222, L229, L230, L233, L237-L239"}
+  - {metric: "H1 FY27 CFO ex deposit run-down (rev L253)", a4_value: "(15.44) Cr via -991.50 - 546.49 + 2.37", recomputed: "shown formula = -1,535.62 (15.36 Cr); correct -991.50 - 552.12 (L164 574.34 to 22.22) = -1,543.62 (15.44 Cr)", source_line: "L317, L311, L164, L165, L166"}
+surviving_bear_counters:
+  - {claim: "Buy-back mechanical EPS uplift 16.0%, pro forma EPS, TTM EPS 15.94, net cash Rs 40/share debt-light (rev L43, L100, L377, L544, L566)", counter: "Implied Rs 200 price = ~22.0x FY26 continuing EPS 9.11, ~21.9x on the bought slice's PAT, 1.16x March BVPS 172.97, at the CONTEXT 52-week high, for a ~9-10% pre-tax ROCE business; funded by net treasury liquidation 2,351.25 and followed by 1,176.85 new ST debt; net of forgone treasury income (break-even 5.93% pre-tax vs ~5.4-6.4% H1 annualised yield) the EPS effect is ~-1.2% to +1.5%, not +16.0%; 6.3x on headline EPS 31.73 is the trap (71.3% discontinued)", source_line: "L171, L172, L250, L254, L256, L258, L298, L303, L306, L161, L164, L182, L322, L323, L327, L329-L331", type: MISSING}
+  - {claim: "Auditor remarks GREEN, not AMBER on opinion grounds (rev L65, L355)", counter: "Unmodified conclusion (L118-L125) sits on a 50.00 tax-roll gap, 40.10 equity-roll gap, FX loss on nil FCY cash, missing Note 3, and two unrecorded labelling errors: CF titled year ended 30-Sep for six months (L289) and TCI label on the OCI subtotal (L249); GREEN means no modification, not clean statements", source_line: "L118-L125, L157, L188, L249, L250, L262-L263, L289, L291, L316, L329-L331, L335, L348", type: MISSING}
+  - {claim: "H1 material margin +962 bps, PAT +113.1% (rev L159-L165, L351)", counter: "81.6% of the H1 material-margin gain (413.07 of 506.51) is the larger L227 inventory credit; L225 consumption fell only 133.97; already carried in substance at rev L119, L275, L351, L515, L540-L541", source_line: "L221, L225, L227", type: STYLE}
+findings_by_type:
+  factual:
+    - "F1 [A4] rev L147 diagnostic 4: listed items sum -26.52, stated Sum -27.09; D&A and finance double-counted inside core PBT"
+    - "F2 [A4] rev L253 CFO ex deposit: formula -991.50 - 546.49 + 2.37 = -1,535.62 (15.36 Cr), cell states (15.44); correct -991.50 - 552.12 (L164) = -1,543.62; rev L279 mislabels the 546.49 line as deposits; FY26 28.52 assumes whole L311 line is deposits (split ND)"
+    - "F3 [A4] rev L559 brief: 'other expenses 15-19% in normal quarters' unsupported; derived Q1 FY26 21.0% (586.55/2,794.46), H2 FY26 12.4% (834.57/6,704.33), Q1 FY27 19.5% (L231, L221)"
+    - "F4 [A4] rev L255, L559: capex 'maintenance-level' unsupported; capex 0.39x D&A in H1 (102.89/263.88) and 0.16x in FY26 (86.80/533.24); net PPE -162.08 in H1 (L319, L230, L148)"
+  missing:
+    - "M1 [A4] mandatory buy-back economics absent: 16.0% uplift (rev L43, L100, L141, L377) is gross of forgone treasury income; graft ~22.0x FY26 continuing EPS, 1.16x book, 52-week-high price, ~EPS-neutral net"
+    - "M2 [A4] watchlist #6 auditor GREEN (rev L355) lacks review-quality qualifier; L249 and L289 drafting errors unrecorded in A3-18 / flag 9 / M13"
+    - "M3 [A4] Q3 other-expense thresholds (rev L416-L417, L495, L578) calibrated on H1 quarters only; H2 FY26 ran 12.4% (derived); anchor to the Q3 FY26 comparative column"
+    - "M4 [A2] L69 signature time 13:08:29 +05'30' has no row; ledger R367/R395 say 'time not shown'; annotation-only patch, no A3/A4 dependency"
+  contradiction: []
+  style:
+    - "S1 rev L130 Op EBITDA YoY -39.6% vs -39.650% unrounded (rounds -39.7%)"
+    - "S2 A2 count labels: auditor_paras 7 counts qualifier rows (4 body paragraphs + title); signature_blocks 11 counts rows across 5 blocks"
+    - "S3 letterhead duplicates not separately rowed (L89, L139, L212, L202-L203, L276-L279, L133, L192, L266); content in R362/R365/R366/R378/R387/R390"
+    - "S4 rev L275, L326 'procurement' labels L225 consumption; H1 FY27 RM/stores stock +33.22 (L310 less L227)"
+    - "S5 rev L151-L153 'two cost lines ... net -213.22': the two lines net -226.49; -213.22 is the EBITDA total"
+    - "S6 Claim 1 sharpening: 81.6% of H1 material-margin gain is the larger L227 credit"
+    - "S7 rev L240 tax-roll gap 50.00 ex OCI tax, 53.33 if H1 OCI tax (L246, L248) is current; DTL roll 349.98 vs L179 350.00"
+    - "S8 rev L577 forward-map FY26 AR row is the only undated row (ND)"
+loop_back_to: "A4"
+gap: "A4: fix F1 (rev L147 bridge sum), F2 (rev L253 CFO ex-deposit formula, rev L279 label), F3 (rev L559 other-expense range), F4 (rev L255/L559 capex label); graft M1 (buy-back at ~22.0x FY26 continuing EPS, 1.16x book, ~EPS-neutral net of forgone treasury income) at Step 0C, 6.5, 7 and brief L561; graft M2 (qualify auditor GREEN; record L249/L289 drafting errors); graft M3 (re-anchor Q3 other-expense thresholds to the Q3 FY26 column, H2 FY26 12.4%). A2 side-patch M4: correct R367/R395 annotation to 'signed 13:08:29 +05'30' (L69)'; annotation-only, no A3/A4 re-run needed for it."
+style_notes:
+  - "S1 Op EBITDA YoY last-digit rounding (rev L130)"
+  - "S2 A2 count labels count rows, not paragraphs/blocks"
+  - "S3 letterhead duplicates not rowed; no numbers"
+  - "S4 'procurement' vs consumption label (rev L275, L326)"
+  - "S5 'two cost lines' net wording (rev L151-L153)"
+  - "S6 optional 81.6% inventory-credit split for the H1 margin claim"
+  - "S7 tax-roll gap range 50.00-53.33 by OCI tax placement"
+  - "S8 one undated forward-map row (rev L577)"
+analyst_note: "A4's tables are clean. Every Step 1 cell, derived metric, both PAT bridges, the cash table and the pillar flags re-derive within rounding. The two arithmetic fails sit in narrative formulas whose stated results are right. Coverage is complete: 446 of 446 IDs, and fresh counts match A2 in every category. The one missing unit, the L69 signature time, is an annotation patch with no A3 or A4 effect, so the loop goes to A4, not the full chain. The substantive gap is the buy-back. A4 shows a 16.0% mechanical EPS uplift but never prices the purchase. At the inferred Rs 200 it is 22x FY26 continuing EPS and 1.16x book, at the 52-week high. It was paid from a treasury that produced 38.5% of TTM PBT. Net of forgone treasury income it is about EPS-neutral. On headline FY26 EPS it looks like 6.3x; that reading is the trap, because 71.3% of that EPS is discontinued. The receivables GREEN passed its bear test: the fall ties to cash exactly. The H1 margin bear is already carried."

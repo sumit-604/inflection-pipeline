@@ -1,0 +1,9 @@
+rows_checked: 42
+rows_matched: 36
+rows_corrected:
+  - {id: R616, old: "2018 incl. 81,000 sq ft facility", new: "2018 listing + Rs500 Cr turnover only"}
+  - {id: R617, old: "2023 incl. QIP 270 Cr, bonus 9:1", new: "2023 incl. 81,000 sq ft facility; QIP/bonus removed"}
+  - {id: R618, old: "2024 acquisitions only", new: "2024 adds QIP Rs270 Cr, bonus 9:1"}
+  - {id: R621, old: "no period", new: "2023"}
+  - {id: R623, old: "no period", new: "2024"}
+  - {id: R625, old: "no period", new: "2024"}

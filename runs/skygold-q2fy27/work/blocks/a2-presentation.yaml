@@ -1,0 +1,28 @@
+stage: A2-enumerator
+company: "SKYGOLD"
+quarter: "q2fy27"
+doctype: "presentation"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/skygold-q2fy27/work/ledger_presentation_skygold_q2fy27.md"
+counts:
+  notes: 0
+  line_items: 0
+  zero_standing: 41
+  agenda_items: 0
+  auditor_paras: 0
+  entities: 53
+  turns: 0
+  questions: 0
+  mgmt_numbers: 0
+  slides: 41
+  slide_numbers: 760
+flags_raised: [ZERO_STANDING, RESTATED, NOT_FORWARD, MISSING_FROM_STRUCTURED]
+ids_in_structured: 915
+ids_referenced: 915
+orphan_ids: []
+loop: 1
+missing_from_structured: [M005 p16 l368-369, M006 p17 l384, M007 p17 l393-394, M008 p17 l396-397, M009 p19 l433-435, M010 p19 l446-447 and l455-456, M011 p13 l296-297, M012 p13 l305-306, M013 p16 l347, M014 p16 l351-353, M015 p18 l413, M016 p18 l418-419, M017 p28 l615-618, M001 BSE address pin 400001 p1 line 22, M002 NSE address pin 400051 p1 line 24, M003 p8 CFO chart y-axis ticks lines 160-175, M004 p17 line 396 "dominance in 22kt" mix claim]
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Loop 1: A5 found six text-claim units A1 and A2 both missed (M005-M010, slides 16, 17, 19). A second sweep, checking each fulltext sentence for a semantic structured row, added M011-M017. The first sweep was numeric-token only, so it could not see prose claims. Most material: M010 (asset-light model, positive OCF and healthy ROIC claims with no number) and M014 (design moat). M004 also stands (22kt dominance). Prior ledger absent, DROPPED_SLIDE untested. Slides 20, 26, 30 prose judged covered by grouped summary rows."

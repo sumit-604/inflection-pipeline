@@ -1,0 +1,30 @@
+# Run log: SKYGOLD Q2 FY27 (/run-quarterly, batch 3 of _batch-q2fy27-1028)
+
+- 2026-10-28: sparse checkout `runs/skygold-q2fy27`. Checkout guard: fetch OK, diff empty over .claude/ prompts/ frameworks/ CLAUDE.md LESSONS.md.
+- Protocols present: Quarterly_Results_Review_Protocol_v1_4.md (results filing in run). No concall in run, so Role 5 protocol not passed.
+- Toolchain: pdftotext, pdfinfo, pdffonts, pdftoppm on PATH; tesseract at C:\Program Files\Tesseract-OCR\tesseract.exe.
+- Document classes (orchestrator, from content): Results.pdf = results (Reg 30 Board outcome + Reg 33 unaudited results, p1 markers); Investor_Presentation.pdf = presentation (41 slides, sparse pages); Press_Release.pdf = pressrelease (3p); EGM_Notice.pdf = egm (supporting, A1 only); ESOP_Grant_Intimation.pdf = esop (supporting, A1 only).
+- Per-page text test: every page of every file has a text layer; deck p2, 5, 14, 22, 24, 33-35 under 50 chars (A1 logs render candidates).
+- Company memory: companies/SKYGOLD.md absent. Notion COMPANIES MASTER: no Sky Gold page (two searches). Framing: PRE-THESIS READ, no spear on record. Peer mentions on the RBZ Jewellers page saved read-only at work/notion_peer_mentions_RBZ_2026-10-28.md.
+- Call transcript: none (call Saturday 31-Oct-2026 11:00, after this run). Filed documents only.
+- A1 presentation: GATE pass, 41/41 pages, R001-R915; renders read p7-12,21,23,36-40; p17 and p27 not render-checked; p23 footnote unresolved.
+- A1 results: GATE pass, 16/16 pages, R001-R963, lakhs x0.01; p6-9 and p13-16 scrambled OCR layer, read from renders (RENDER-READ section); p11 date text layer 'September 20' vs render 'September 30'; UDINs handwritten, flagged.
+- A2 presentation: GATE pass, 915/915 IDs, 0 orphans, 4 MISSING_FROM_STRUCTURED (p17 l396 '22kt dominance' material). Cost 46k < A1 136k.
+- A2 results: GATE pass, 963/963 IDs, 0 orphans, 0 MISSING_FROM_STRUCTURED; 15 notes, 7 agenda items, 12 auditor paras, 8 Annexure A items, 33 ZERO_STANDING. Cost 85k < A1 133k.
+- A3 presentation: GATE pass, F1-F17 all marked, 30 findings (11 FS, 17 AMB, 2 NF); D-A3-18/20/23/27 rest on p17/p27 columns not render-checked.
+- A1 pressrelease: GATE pass, 3/3 pages, R001-R180, crore x1; p2 render confirms columns. Orchestrator anchor check: all NUMBER rows resolve within +/-1 line (0 misses).
+- A2 pressrelease: GATE pass, 180/180, 0 orphans, 0 MISSING; flags FOOTNOTE_UNRESOLVED (CFO comparison label), ENTITY_CHANGE (Purvi Gems).
+- A2 pressrelease cost 41k < A1 52k.
+- A3 results: GATE pass, 963/963 reconciled; F3,F7 PASS; F16,F17 N.A.; 13 FINDING; 26 findings (8 FS, 14 AMB, 4 NF).
+- A3 pressrelease: GATE pass, 180/180; F1,F7 PASS; F2-F5,F9-F12 N.A.; F6,F8,F13-F17 FINDING; 10 findings (2 FS, 5 AMB, 3 NF).
+- A1 egm: GATE pass, 21/21, R001-R141; item 1 SR raise up to Rs 1,800 Cr (QIP among modes, floor Reg 176(1), up to 5% discount); cut-off date conflict 18-Nov (cover) vs 11-Nov (body), captured as written.
+- Orchestrator: narrow A1 addendum launched to render-check deck p17 and p27 (D-A3-18/20/23/27 rest on them).
+- A1 addendum: p17 rows R473-R500 all match render (D-A3-20/23/27 bases confirmed). p27 timeline: R616-R618 period shifts corrected, R621/R623/R625 period labels added. D-A3-18 cites R619/R626/R628, none of the corrected rows. Count note: addendum text says 53 checked, YAML says 42 (36 matched, 6 corrected); not reconciled, no number moved.
+- A1 esop: GATE pass, 4/4, R001-R058; SKY GOLD - ESOP 2024, 3,480 options, exercise Rs 10, 1:1 FV Rs 10, vesting min 1 year; grantee count, pool size not stated.
+- Pre-A4 transcript check 2026-10-29 02:06: concall_audio empty; filed documents only.
+- A4: verdict PROCEED WITH FLAGS (pre-thesis read); cash conversion INDETERMINATE-WITH-DIRECTION (bear); preamble 15 notes / 0 turns / 41 slides; 66 A3 findings incorporated; 19 QfM rows. A4 self-reported erratum: SA H1 FY26 WC change (210.09) not (209.84), not load-bearing (not passed to A5).
+- A5 loop 0: INCOMPLETE. FACTUAL 2 (F1 SA WC H1 FY26; F2 PE basis), MISSING 4 (M1 A2 six deck text units; M2 acquisition economics; M3 perimeter qualifier; M4 deck p19 raise framing), CONTRADICTION 0, STYLE 7. None moves a verdict-card number. Loop 1 fires (default one loop): A2 then A4 then A5 re-audit, by resume.
+- Loop 1 A2: added M005-M010 (A5-M1) plus M011-M017 from a second sweep; gate_a2 pass. A4 resumed for F1, F2, M2, M3, M4 and the new M-rows. Loop-0 review copy kept in session scratchpad for the drift check.
+- PAUSE received from coordinator after A4 loop-1 return; no further agent started. work/PAUSED.md written.
+- RESUME received from coordinator (29-Oct). One subagent at a time from here.
+- A5 loop-1 re-audit: COMPLETE; F1-F2, M1-M4 RESOLVED; no drift; new STYLE S8 (Q20/Q21 routing) and S9 (A2 paraphrase), logged, no loop. Loops: 1. Close-out: session-cost.md, operator-brief.md, notion-payload.md written; A1 intermediates moved to session scratchpad; nothing written to Notion.

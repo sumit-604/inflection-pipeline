@@ -1,0 +1,50 @@
+stage: A3-forensics
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/dycl-q2fy27/work/forensics_pressrelease_dycl_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: N.A.
+  F10: PASS
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: FINDING
+  F15: N.A.
+  F16: FINDING
+  F17: FINDING
+findings:
+  - {id: "A3-01", check: "F6", line: "106-107, 135", classification: "FORWARD-SIGNAL", implication: "New plant to contribute from H2FY27; P&M installed, not commissioned; no capacity, capex or date given; Q2 depreciation +21% QoQ suggests partial capitalisation; H2 depreciation, finance cost and start-up cost step up"}
+  - {id: "A3-02", check: "F6", line: "105", classification: "FORWARD-SIGNAL", implication: "Unquantified growth commitment; test H2FY27 revenue YoY vs H2FY26 654.2 (derived FY26 minus H1FY26)"}
+  - {id: "A3-03", check: "F7", line: "110, 108", classification: "AMBIGUOUS", implication: "Export momentum conditional on global macros, undated; exports ~56 Cr = 7.9% of H1 revenue; crude mention points to polymer cost pressure"}
+  - {id: "A3-04", check: "F14", line: "24, 33, 88", classification: "NEUTRAL-FACT", implication: "Standalone/consolidated basis and review status unstated; postal-code typo; confirm basis from results filing before tracker use"}
+  - {id: "A3-05", check: "F16", line: "67, 74, 81, 116, 122, 108", classification: "AMBIGUOUS", implication: "Headline and H1-first tiles lead while Q2 OPM 10.0% is the lowest shown (-90 bps QoQ, -100 bps YoY), PAT -11.6% QoQ; cause unexplained: metal pass-through vs price/input pressure vs start-up cost; volume or per-km EBITDA separates"}
+  - {id: "A3-06", check: "F16", line: "115-120", classification: "NEUTRAL-FACT", implication: "Operating Profit undefined; arithmetic shows EBITDA excluding other income in all six periods"}
+  - {id: "A3-07", check: "F16", line: "133", classification: "AMBIGUOUS", implication: "Order book ~829 Cr undefined (GST, L1, price-variation), no inflow or prior; cover 0.61x TTM revenue (~7.3 months)"}
+  - {id: "A3-08", check: "F16", line: "147-155", classification: "NEUTRAL-FACT", implication: "Net Debt includes off-BS LC creditors; on-BS moved from net cash 18.4 (Mar) to net debt 4.1 (Sep); track both"}
+  - {id: "A3-09", check: "F16", line: "117, 145, 147, 149", classification: "AMBIGUOUS", implication: "Finance cost +45% QoQ while period-end on-BS debt halved and average period-end debt flat; annualised 31% of average on-BS debt; likely LC/discounting charges, intra-quarter peaks or interest no longer capitalised"}
+  - {id: "A3-10", check: "F16", line: "145, 149, 153", classification: "AMBIGUOUS", implication: "WC loans -32.1 QoQ funded mostly by cash drawdown 13.8 and LC creditors +13.1; real WC release vs quarter-end repayment; check average utilisation and Q3 period-end"}
+  - {id: "A3-11", check: "F17", line: "122, 118, 153-155", classification: "AMBIGUOUS", implication: "H1 uses ~77 Cr (cash earnings 53.4 + net debt rise 23.6) not itemised; term loans 2.3 so plant funded from accruals and cash; no OCF or capex disclosed"}
+  - {id: "A3-12", check: "F17", line: "127, 129, 131, 160-161", classification: "AMBIGUOUS", implication: "Silent on volume vs metal price, per-unit EBITDA, inventory/payable days, OCF, plant capex and capacity, utilities/EPC split, promoter pledge; silence count 1 (floor)"}
+  - {id: "A3-13", check: "F16", line: "129", classification: "NEUTRAL-FACT", implication: "Receivable days ~59 defined on trailing six-month gross sales; fair like-for-like basis; only WC day count given; no prior"}
+forward_signals: ["A3-01", "A3-02"]
+ambiguous: ["A3-03", "A3-05", "A3-07", "A3-09", "A3-10", "A3-11", "A3-12"]
+commitments:
+  - {commitment: "New manufacturing plant goes on stream and contributes revenue", implied_date: "H2FY27 (Oct 2026 - Mar 2027)", ref: "line 106-107", status_word: "underway"}
+  - {commitment: "Plant and Machinery installed at new facility", implied_date: "by 2026-10-27", ref: "line 135", status_word: "completed"}
+  - {commitment: "Growth momentum continues, domestic and export", implied_date: "FY27, undated", ref: "line 105", status_word: "initiated"}
+  - {commitment: "Export market gains momentum as global macros normalise", implied_date: "undated, conditional", ref: "line 110", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Press release, one unlabelled basis, so statement checks F1-F5, F9, F11-F13, F15 are N.A. The forensic content sits in KPI framing and the borrowing table. Three facts belong together: Q2 margin is the lowest of six periods shown, Q2 finance cost jumped 45% while period-end on-balance-sheet debt halved, and H1 absorbed about Rs 77 Cr of unitemised cash with term debt near zero. Read together, the period-end debt table likely flatters the funding position: working capital loans were repaid from cash and moved into LC credit at quarter end, while the finance-cost line shows intra-quarter usage or rising LC charges. The new plant is self-funded so far, and its H2 ramp adds working capital need on a thinner cash buffer (33.2). Margin cause is open: metal pass-through would leave per-unit EBITDA intact; polymer cost or start-up cost would not. Volume disclosure separates the readings. F17 applied to the release as management's chosen narrative; silence counts are floors because no prior quarter is in the pipeline. R076/R077 line cite is 140; values print at 141."

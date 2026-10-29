@@ -1,0 +1,22 @@
+stage: A2-enumerator
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "results"
+model: claude-sonnet-5-5
+status: complete
+ledger_path: "runs/dycl-q2fy27/work/ledger_results_dycl_q2fy27.md"
+counts:
+  notes: 12
+  line_items: 124
+  zero_standing: 62
+  agenda_items: 1
+  auditor_paras: 4
+  entities: 36
+flags_raised: [ZERO_STANDING, RESTATED]
+ids_in_structured: 482
+ids_referenced: 482
+orphan_ids: []
+missing_from_structured: []
+gate_a2: pass
+mismatch_note: ""
+analyst_note: "Standalone only; no consolidation list, so ENTITY_CHANGE not assessable and no prior ledger exists. Single agenda item (results). 35-minute board meeting. Review report unmodified, no EoM/Other Matter/Going Concern. 62 ZERO_STANDING cells over 23 line items; notable: Purchase of stock in trade, Exceptional items, OCI(b), Proceeds from Preferential allotment (Note 6: proceeds fully utilised)."

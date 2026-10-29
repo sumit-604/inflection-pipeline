@@ -1,0 +1,28 @@
+stage: A1-extractor
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "pressrelease"
+model: claude-sonnet-5-5
+status: complete
+page_count: 3
+formfeed_count: 3
+line_count: 173
+unit_convention: "Crores"
+conversion_factor_to_cr: "x1"
+text_layer_present: true
+extraction_mode: text-only
+render_candidates: []
+rendered_pages: ["2: verification render; text-layer table rows offset by one row and FY26 column scattered; render-corrected block appended at fulltext lines 112-124"]
+page_coverage_pct: 100
+detected_quarter: "Q2 FY27"
+fulltext_path: "runs/dycl-q2fy27/extracted/dycl-pressrelease-q2fy27-fulltext.md"
+structured_path: "runs/dycl-q2fy27/extracted/dycl-pressrelease-q2fy27-structured.md"
+structured_counts:
+  number: 107
+  entity: 17
+  forward: 5
+  date: 11
+  qualifier: 11
+structured_id_range: "R001-R151"
+gate_a1: pass
+gap_note: ""

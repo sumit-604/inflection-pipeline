@@ -1,0 +1,51 @@
+stage: A3-forensics
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "concall + pressrelease (correction loop 1, new rows only)"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/dycl-q2fy27/work/forensics_loop1_addendum_dycl_q2fy27.md"
+loop: 1
+rows_reviewed:
+  - {row: "concall M06", line: "L030-L032", status: "FINDING CC-A3-17"}
+  - {row: "concall M07", line: "L033-L034", status: "PASS (read, no finding)"}
+  - {row: "concall M08", line: "L044-L047", status: "FINDING CC-A3-18"}
+  - {row: "concall M09", line: "L050-L051", status: "FINDING CC-A3-19"}
+  - {row: "concall M10 (MATERIAL)", line: "L052-L054", status: "FINDING CC-A3-16"}
+  - {row: "pressrelease M3", line: "108-110", status: "FINDING PR-A3-14"}
+ledger_reconciled_pct: 100        # 6 of 6 new rows read verbatim
+checklist:                        # loop-1 scope; base-file statuses stand
+  F1: N.A.
+  F2: N.A.
+  F3: N.A.
+  F4: N.A.
+  F5: N.A.
+  F6: FINDING
+  F7: FINDING
+  F8: N.A.
+  F9: N.A.
+  F10: N.A.
+  F11: N.A.
+  F12: N.A.
+  F13: N.A.
+  F14: N.A.
+  F15: N.A.
+  F16: N.A.
+  F17: FINDING
+findings:
+  - {id: "CC-A3-16", check: "F17", line: "concall L052-L054; results 209, 211, 231-232, 334, 480, 484, 492, 495; concall L385-L389", classification: "FORWARD-SIGNAL", implication: "'Prudent working capital management' contradicted on inventory and OCF: inventory +40.9% (+7,064.70 L), 14.7x the H1 FY26 build (479.12) under the same stated seasonality; OCF 666.37 vs 2,018.63 (-67%); WC took 70.3% of pre-WC operating profit. Receivables -4.7% support the claim. Pre-stock for H2 plant vs slow offtake at high metal cost; Q3 and FY27 inventory and OCF separate them. Management question flagged."}
+  - {id: "CC-A3-17", check: "F17", line: "concall L032, L054; pressrelease 116", classification: "NEUTRAL-FACT", implication: "Operational efficiency/excellence claim beside Q2 OPM 10.0% (lowest of 10.9% Q1, 11.0% Q2 FY26); folds into base CC A3-04 and PR A3-05; no second margin debit; ASR garble at L030"}
+  - {id: "CC-A3-18", check: "F6", line: "concall L044-L047; pressrelease 114, 131", classification: "NEUTRAL-FACT", implication: "Undated market-reach intent; export baseline ~56 Cr = 7.9% of H1 revenue 712.3 Cr; forward question already in base CC A3-08"}
+  - {id: "CC-A3-19", check: "F7", line: "concall L050-L051; pressrelease 108", classification: "NEUTRAL-FACT", implication: "Call says commodity/geopolitics 'continue to influence'; release says environment 'has improved despite' crude volatility; commodity risk to H2 already open in base CC A3-04 and A3-10"}
+  - {id: "PR-A3-14", check: "F17", line: "pressrelease 108-110; 129; results 209, 495", classification: "NEUTRAL-FACT", implication: "Scripted 'disciplined execution' line mirrored at concall L044/L052; release cites receivable days ~59 and omits the inventory build and OCF fall (base PR A3-12); WC test routes to CC-A3-16 question"}
+forward_signals: ["CC-A3-16"]
+ambiguous: []
+management_questions:
+  - {from: "CC-A3-16 (PR-A3-14 routes here)", question: "H1 inventory rose Rs 70.6 Cr (40.9%) vs Rs 4.8 Cr in H1 FY26 under the same H2 seasonality; OCF fell to Rs 6.7 Cr from Rs 20.2 Cr. Split the build into metal price, new-plant pre-stock and FG awaiting dispatch. Target inventory days and OCF at 31-Mar-2027? With MF buffer at Rs 0.9 Cr, how are H2 WC and capex funded?"}
+commitments:
+  - {commitment: "Expand market reach and customer relationships, domestic and international", implied_date: "undated", ref: "concall T03 L044-L047", status_word: "initiated"}
+  - {commitment: "Disciplined execution, prudent working capital management, operational excellence", implied_date: "ongoing; test 31-Mar-2027 balance sheet", ref: "concall T03 L052-L054", status_word: "underway"}
+  - {commitment: "Disciplined approach towards execution, expanding market reach (historical 'always')", implied_date: "not dated", ref: "pressrelease lines 108-110", status_word: "underway"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "Only M10 carries new forensic weight. The working-capital claim is half true: receivables fell while revenue grew 31%, so collection discipline is real. Inventory is the problem. Management's own reason, H2-heavy seasonality (L386-L387), was present in H1 FY26 too, when the build was 479.12 lakhs against 7,064.70 now. Seasonality cannot carry a build 14.7 times larger. What remains is metal price (L389, unquantified), pre-stock for the new plant, or slow offtake. The bear reading matters because metal is now dipping (base A3-10): high-cost stock then meets lower realisations in H2. The funding side is in results A3-11 and is not counted again. M06, M08, M09 and PR M3 are scripted lines repeated across the call and the release; each folds into an existing base finding. They add no new question, so no improvement or debit is counted twice. All concall quotes are ASR, management tier, unverified; every number used here comes from the filed H1 results."

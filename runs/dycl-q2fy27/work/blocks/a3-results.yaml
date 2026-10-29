@@ -1,0 +1,52 @@
+stage: A3-forensics
+company: "DYCL"
+quarter: "q2fy27"
+doctype: "results"
+model: "claude-opus-5-5"
+status: complete
+forensics_path: "runs/dycl-q2fy27/work/forensics_results_dycl_q2fy27.md"
+ledger_reconciled_pct: 100
+checklist:
+  F1: FINDING
+  F2: N.A.
+  F3: N.A.
+  F4: PASS
+  F5: PASS
+  F6: FINDING
+  F7: FINDING
+  F8: PASS
+  F9: FINDING
+  F10: FINDING
+  F11: PASS
+  F12: PASS
+  F13: PASS
+  F14: FINDING
+  F15: N.A.
+  F16: N.A.
+  F17: N.A.
+findings:
+  - {id: "A3-01", check: "F1", line: "349-351; 471", classification: "AMBIGUOUS", implication: "OCI(b) nil in all 6 periods: no designated cash-flow hedge despite Cu/Al exposure; first-time forex gain 56.70 in H1. Metal and FX moves hit P&L directly. Ask hedge policy and source of FX exposure."}
+  - {id: "A3-02", check: "F1", line: "333; 341; 462; 463; 469; 505", classification: "NEUTRAL-FACT", implication: "Exceptional, stock-in-trade, guarantee-commission, security-deposit and preferential-allotment template lines nil; pure manufacturer; check any guarantee given at AR."}
+  - {id: "A3-03", check: "F6", line: "364; 207; 216", classification: "AMBIGUOUS", implication: "Rs 9,658.79 L preferential proceeds 'fully utilized ... including advances'; part may sit as advances (other NC assets +58.5%, other CA +43.8%). Ask advance balance and counterparties."}
+  - {id: "A3-04", check: "F6", line: "366; 226", classification: "FORWARD-SIGNAL", implication: "Labour Code accounting effect left open pending final Rules; NC provisions +14.7% in H1; a possible past-service charge lands in a future quarter."}
+  - {id: "A3-05", check: "F7", line: "366", classification: "AMBIGUOUS", implication: "Nil-impact conclusion hedged 'to the best information available' and '(if any)'. Ask the wage-definition basis of the assessment."}
+  - {id: "A3-06", check: "F9", line: "346; 470", classification: "NEUTRAL-FACT", implication: "Q1 (41.58) and Q2 +18.33 actuarial swings each exceed FY26 total (12.12); immaterial (0.83% of PAT); verify discount-rate assumptions at the FY27 AR."}
+  - {id: "A3-07", check: "F10", line: "356-357; 365", classification: "NEUTRAL-FACT", implication: "Basic/diluted spread first appears in Q2 (4.57/4.56); ESOP 183,405 options at Rs 324 now dilutive; max 0.38% dilution; 8.3% of grants lapsed."}
+  - {id: "A3-08", check: "F14", line: "362; 328", classification: "NEUTRAL-FACT", implication: "Note 4 calls the published Q1 figures 'unpublished'; boilerplate. Q2 is a balancing figure, so any H1 regrouping lands wholly in Q2."}
+  - {id: "A3-09", check: "F14", line: "477; 478; 492; 510; 511", classification: "NEUTRAL-FACT", implication: "Four CF casting gaps under 0.1 L (finance cost 696.90 vs 696.97 paid); immaterial; suggests a hand-compiled statement."}
+  - {id: "A3-10", check: "OBS-watch4", line: "209; 334; 480; 495", classification: "FORWARD-SIGNAL", implication: "Inventory +40.9% in H1 (FG/WIP build 4,974.34 = 148% of FY26) vs Q2 rev +4.0% QoQ; inventory days 76.1 vs 65.4; OCF/EBITDA 9.0% vs 34.9%. Pre-build vs slow offtake; H2 revenue and Q4 unwind separate the two."}
+  - {id: "A3-11", check: "OBS-watch5", line: "210; 503; 464; 496; 330", classification: "FORWARD-SIGNAL", implication: "MF 3,062.04 to 92.85 funded capex 1,952.11 and WC; FCF (1,235.61); net cash ~1,844 L to net debt ~409 L; other income -43%. Next build needs debt. Ask about the 134.80 MF add-back."}
+  - {id: "A3-12", check: "OBS-watch5", line: "336; 222; 229; 213", classification: "AMBIGUOUS", implication: "Finance cost +48.5% QoQ while period-end debt fell 4,038.99 to 3,731.43; annualised cost 45.5% of closing debt. Intra-quarter debt or LC/discount charges exceed what the BS shows. Ask for the split."}
+  - {id: "A3-13", check: "OBS-watch1-3", line: "332; 334; 338; 362; 363", classification: "AMBIGUOUS", implication: "Materials 83.29% of rev (+269 bps QoQ); other exp fell to 3.09%; combined +120 bps QoQ; EBITDA margin 10.01% vs 10.88%/10.95%. Regrouping into Q2 balancing figure vs thinner pass-through spread. Ask volume and reclassification."}
+  - {id: "A3-14", check: "OBS-watch5", line: "337; 201; 202; 207; 496", classification: "FORWARD-SIGNAL", implication: "D&A +21.5% QoQ = capitalisation; CWIP still 3,420.54; capital advances +58.5%. New capacity is on stream; ask asset, date, capacity, and CWIP timeline."}
+  - {id: "A3-15", check: "OBS-watch1-2-6-7", line: "361; 36-38", classification: "NEUTRAL-FACT", implication: "Volume, order book, customer mix, capacity, promoter holding/pledge NOT FOUND in filing; A4 sources from concall/deck/shareholding."}
+forward_signals: ["A3-04", "A3-10", "A3-11", "A3-14"]
+ambiguous: ["A3-01", "A3-03", "A3-05", "A3-12", "A3-13"]
+commitments:
+  - {commitment: "Preferential issue proceeds Rs 9,658.79 L fully utilised per objects, including advances", implied_date: "as at 2026-09-30", ref: "Note 6, line 364 (R471)", status_word: "completed"}
+  - {commitment: "Provide Labour Code accounting effect (if any) on finalisation of Central/State Rules", implied_date: "on Rules finalisation (undated)", ref: "Note 8, line 366 (R432)", status_word: "underway"}
+  - {commitment: "DCL-ESOP 2024: 183,405 options at Rs 324 expensed under Ind AS 102", implied_date: "vesting NOT DISCLOSED", ref: "Note 7, line 365 (R472)", status_word: "underway"}
+  - {commitment: "Trading window closed for designated persons", implied_date: "48h after dissemination (~2026-10-29)", ref: "lines 40-44 (R431)", status_word: "initiated"}
+gate_a3: pass
+blank_checks: []
+analyst_note: "The quarter's forward signal is in working capital, not the notes. Inventory rose 40.9% in six months (line 209) while Q2 revenue grew 4.0% QoQ; the H1 FG/WIP build of 4,974.34 (line 334) already exceeds all of FY26. Two readings: order-backed pre-build for H2 dispatch, or slower offtake. H2 revenue against an inventory unwind by Q4 separates them. Liquidating about Rs 29.7 Cr of mutual funds (lines 210, 503) paid for the build and the capex, so the balance sheet moved from about Rs 18 Cr net cash to about Rs 4 Cr net debt; the next build needs borrowing. Finance cost rose 48.5% QoQ while period-end debt fell (line 336 vs 222/229). The implied rate is too high for bank debt alone, so intra-quarter borrowing or LC/discounting charges exceed what the balance sheet shows. Materials plus other expenses rose 120 bps QoQ; the 147 bps fall in other expenses (line 338) may be a regrouping landing wholly in the Q2 balancing figure (Notes 4, 5). The notes themselves are clean: no EoM, ETR about 25.4%, equity ties to 0.02."

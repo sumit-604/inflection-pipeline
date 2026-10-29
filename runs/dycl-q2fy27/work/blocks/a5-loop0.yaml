@@ -1,0 +1,83 @@
+stage: A5-adversary
+company: "DYCL"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+verdict: INCOMPLETE
+plain_language_brief:
+  narrative: present
+  sector: present
+  business_model: present
+  competition: present
+  forward_map: present
+coverage:
+  orphan_rows: []
+  missing_from_ledger:
+    - "CC L030-L032 (T03 opening claim 1, 'continued to build our industry demand, discipline and execution'); A4 cites REV L457; absent from structured and ledger"
+    - "CC L033-L034 (T03 claim 2, 'performance reflects the resilience of our business'); A4 cites REV L458"
+    - "CC L044-L047 (T03 claim 6, expanding market reach and customer relationships); A4 cites REV L462"
+    - "CC L050-L051 (T03 claim 8, commodity price volatility and geopolitics); A4 cites REV L464"
+    - "CC L052-L054 (T03 claim 9, 'prudent working capital management'); MATERIAL, carries A4 CONTRADICTED finding REV L473, L644, L715, L831"
+    - "PR L109-L110 (MD quote, 'We have always followed disciplined approach towards execution'); absent from structured, ledger and review"
+arithmetic_mismatches:
+  - metric: "FY27 value growth vs 20% guide (M4, forward map, YAML monitorable)"
+    a4_value: "H2 FY27 at least 20% above H2 FY26 654.23 Cr (= 785.07 Cr, implies FY27 +25.0%)"
+    recomputed: "FY27 +20% = 1,437.38 Cr; H2 need 725.09 Cr = +10.8%; 362.54 Cr a quarter (equals A4 bear line 363.19)"
+    source_line: "RES L329; REV L846, L945, L1002, L362, L496, L1029"
+  - metric: "Cash conversion cycle 31-Mar-2026 to 30-Sep-2026"
+    a4_value: "92.8 to 93.8 days, +1.0, Flat net (12-month Mar window vs 6-month Sep window)"
+    recomputed: "TTM both dates 92.8 to 98.0 (+5.2); trailing 6 months both dates 84.9 to 93.8 (+8.9); inventory days +14.4 / +16.6; receivable days -14.4 / -10.0"
+    source_line: "RES L209, L211, L231-L232, L329, L332, L334; REV L229-L232, L242"
+  - metric: "Mutual funds sold in H1 FY27 (brief)"
+    a4_value: "29.69 Cr sold (REV L879)"
+    recomputed: "proceeds 28.35 Cr (RES L503); balance fall 29.69 Cr (RES L210) includes 1.35 Cr FV item (RES L464)"
+    source_line: "RES L210, L464, L503; REV L244"
+  - metric: "Other expenses / revenue change YoY"
+    a4_value: "-233 bps (REV L722)"
+    recomputed: "-234.5 bps (5.4306% to 3.0852%); displayed parts give -234"
+    source_line: "RES L329, L338"
+surviving_bear_counters:
+  - claim: "Growth is real at the top line (REV L833, L886)"
+    counter: "Only volume figure is the analyst's undisputed 6%; at 6% volume about 22 of the 29.0 points is price and mix [INFERENCE], reversing on pass-through as metal dips; summary and Section C carry no volume qualifier"
+    source_line: "CC L123, L139, L198-L200, L255, L274, L317; RES L332-L334"
+    type: MISSING
+  - claim: "Receivable days -17.4 GREEN; cash conversion cycle Flat net (REV L229, L232, L1029)"
+    counter: "Mixed day-count windows; matched windows give receivables -10.0 to -14.4 days, inventory +14.4 to +16.6 days, CCC +5.2 to +8.9 days"
+    source_line: "RES L209, L211, L231-L232, L329, L332, L334; PR L129"
+    type: FACTUAL
+  - claim: "20% guide CONFIRMED (ahead) for H1; Rs 392.5 Cr bull line is management's own 20% guide (REV L362, L721, L1029)"
+    counter: "H1 +31.0% front-loads FY27; FY27 at 20% needs only +10.8% H2 (362.54 Cr a quarter), which is A4's bear line; management still refused an FY27 number (CC L372)"
+    source_line: "RES L329; CC L201, L203, L372"
+    type: FACTUAL
+findings_by_type:
+  factual:
+    - "F-01 A4: FY27 20% test set at H2 +20% (= FY27 +25.0%); correct FY27 pace is H2 725.09 Cr (+10.8%), 362.54 Cr a quarter; REV L362, L496, L846, L945, L1002, L1029"
+    - "F-02 A4: day counts mix 12-month and 6-month windows; matched windows CCC +5.2 (TTM) to +8.9 (6M) days, not +1.0 Flat; REV L229-L232, L242"
+    - "F-04 A4: other expenses -233 bps vs recomputed -234.5 bps; REV L722"
+  missing:
+    - "F-05 A2: six enumerable units absent from structured and ledger: CC L030-L032, L033-L034, L044-L047, L050-L051, L052-L054 (material), PR L109-L110"
+    - "F-06 A4: GOV L173-L174 Z-group clause reads on the current instance; prior-year Reg 31 record ND, so 'not a pattern' unverified; trigger not limited to June-2027; REV L104, L832, L860, L947, L1016, L1024"
+    - "F-07 A4: surviving ADV-1 counter, analyst 6% volume qualifier absent from summary (REV L871-L887) and Section C Net impact (REV L833)"
+  contradiction:
+    - "F-03 A4: brief 'sold Rs 29.69 Cr of mutual funds' (REV L879) vs own sources table 28.35 Cr redemption (REV L244; RES L503)"
+  style:
+    - "S-01 peer-work quotes REV L900, L921 outside A5 inputs, unverified, provenance tag present"
+    - "S-02 REV L922 tags analyst turn CC L186 as MGMT-ASR"
+    - "S-03 REV L235 labels other non-current assets as capital advances without [INFERENCE]"
+    - "S-04 REV L176 attributes OI fall to MF redemption without [INFERENCE]; interest income RES L461 is the larger filed driver"
+    - "S-05 Note 5 RES L363 conforms comparatives to current classification; caveat at REV L69 and Q13 premise could say so"
+    - "S-06 REV L595 counts CC L202 analyst misreading as pushback"
+    - "S-07 forward map trading-window row REV L938 has no real fork; two catalysts undated"
+    - "S-08 A1 anchor drift: concall R037-R038 cite line 267, text on CC L268"
+loop_back_to: "A2"
+gap: "A2: add six sweep rows (CC L030-L032, L033-L034, L044-L047, L050-L051, L052-L054; PR L109-L110). A3: review the six new rows only. A4: (1) F-01 state FY27 20% arithmetic (H2 725.09 Cr, +10.8%, 362.54 Cr a quarter) beside Step 8C and the watchpoint, relabel M4, forward map and YAML monitorable, fix REV L496; (2) F-02 restate Step 5 day counts on matched windows, CCC +5.2 (TTM) / +8.9 (6M) days; (3) F-03 brief MF proceeds 28.35 Cr, balance fall 29.69 Cr; (4) F-04 -233 to -235 bps; (5) F-06 prior-year Reg 31 record ND, widen Z-group monitor to every Reg 31 filing to Jul-2027; (6) F-07 graft 6% volume qualifier into summary and Section C Net impact; (7) cite PR L109-L110. No verdict-card number and no protocol verdict changes."
+style_notes:
+  - "S-01 peer-work quotes REV L900, L921 outside A5 inputs, unverified, provenance tag present"
+  - "S-02 REV L922 tags analyst turn CC L186 as MGMT-ASR; retag analyst tier"
+  - "S-03 REV L235 'Capital advances' label for RES L207 other non-current assets; tag [INFERENCE]"
+  - "S-04 REV L176 OI fall attributed to MF redemption; tag [INFERENCE]; interest income RES L461 fell 2.08 to 0.96 Cr"
+  - "S-05 Note 5 RES L363 conforms comparatives; REV L69 caveat and Q13 premise could say so"
+  - "S-06 REV L595 CC L202 is an analyst misreading corrected at CC L203, not pushback"
+  - "S-07 forward map REV L938 trading-window row has identical forks; drop or fork it"
+  - "S-08 A1 concall R037-R038 anchor line 267; text on CC L268"
+analyst_note: "INCOMPLETE on seven non-STYLE findings. None moves a verdict-card number or the PROCEED WITH FLAGS verdict. On A4's stated bases the arithmetic is clean: every P&L, bridge, cash-flow and day-count figure recomputes from RES L201-L514 within rounding, except one bps figure. The material issues are basis and framing. First, day counts mix a 12-month March window with a 6-month September window; matched windows show the cash cycle 5 to 9 days worse, not flat. Second, H1 +31% front-loads FY27: a 20% year needs only +10.8% in H2, about Rs 362.5 Cr a quarter, which is A4's bear line, so the 'FY27 vs 20%' monitor really tests +25%. Third, 'growth is real' carries no volume qualifier where it is claimed; the only volume figure is the analyst's undisputed 6%. A2 must add five MD opening claims and one press-release claim that A4's own Step 1 inventory found; CC L053 among them carries A4's working-capital contradiction. The Z-group clause reads on the current lapse; prior-year record ND. Loop A2, then A3 on new rows only, then A4."

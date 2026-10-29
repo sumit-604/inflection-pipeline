@@ -1,0 +1,79 @@
+stage: A4-analyst
+company: "DYCL"
+quarter: "q2fy27"
+model: "claude-opus-5-5"
+status: complete
+docs_merged: [results, pressrelease, concall, governance]
+ledger_reconciliation:
+  notes: 12
+  turns: 115
+  slides: 0
+  all_reviewed: true
+  a3_findings_incorporated: [RES-A3-01, RES-A3-02, RES-A3-03, RES-A3-04, RES-A3-05, RES-A3-06, RES-A3-07, RES-A3-08, RES-A3-09, RES-A3-10, RES-A3-11, RES-A3-12, RES-A3-13, RES-A3-14, RES-A3-15, PR-A3-01, PR-A3-02, PR-A3-03, PR-A3-04, PR-A3-05, PR-A3-06, PR-A3-07, PR-A3-08, PR-A3-09, PR-A3-10, PR-A3-11, PR-A3-12, PR-A3-13, CC-A3-01, CC-A3-02, CC-A3-03, CC-A3-04, CC-A3-05, CC-A3-06, CC-A3-07, CC-A3-08, CC-A3-09, CC-A3-10, CC-A3-11, CC-A3-12, CC-A3-13, CC-A3-14, CC-A3-15]
+protocol_verdict: "PROCEED WITH FLAGS"
+cash_conversion: "INDETERMINATE-WITH-DIRECTION"
+decision_status_verified: "NONE on record (orchestrator Notion search 29-Oct-2026: no COMPANIES MASTER page; no companies/DYCL.md; no Spear line). Framed as PRE-THESIS READ."
+position_branch: "8A-W"
+sc_gap_pat_pct:
+  - {period: "Q2FY27", gap: "N.A. standalone-only filing; no consolidated statement (RES L84, R465)"}
+  - {period: "Q1FY27", gap: "N.A. standalone-only"}
+  - {period: "Q2FY26", gap: "N.A. standalone-only"}
+  - {period: "H1FY27", gap: "N.A. standalone-only"}
+  - {period: "FY26", gap: "N.A. standalone-only"}
+questions_for_management:
+  - {q: "Of the 94 bps YoY Op EBITDA margin fall (10.95% to 10.01%), how many bps came from fixed-price contracts absorbing metal moves?", from_finding_id: "CC-A3-04; PR-A3-05; RES-A3-13"}
+  - {q: "What was Q2 FY27 volume growth YoY in km or tonnes?", from_finding_id: "CC-A3-02; RES-A3-13; PR-A3-05; PR-A3-12"}
+  - {q: "Of Rs 243.43 Cr inventory at 30-Sep-2026, what Rs Cr is finished goods held against orders with Q3 dispatch dates?", from_finding_id: "RES-A3-10; CC-A3-10; PR-A3-11"}
+  - {q: "What was average fund-based working-capital utilisation in Q2 FY27, in Rs Cr?", from_finding_id: "RES-A3-12; PR-A3-09; PR-A3-10; CC-A3-06"}
+  - {q: "In which balance-sheet line do the Rs 77.7 Cr LC creditors sit at 30-Sep-2026?", from_finding_id: "CC-A3-06; PR-A3-10; RES-A3-12"}
+  - {q: "What is the new plant's installed capacity in km or tonnes per year?", from_finding_id: "CC-A3-01; PR-A3-01; RES-A3-14"}
+  - {q: "How much of the ~Rs 17.86 Cr H1 PPE addition relates to the new plant, and on what date was it capitalised?", from_finding_id: "CC-A3-07; RES-A3-14; PR-A3-01"}
+  - {q: "How much capex remains to be spent on the new plant after 30-Sep-2026, in Rs Cr?", from_finding_id: "RES-A3-14; CC-A3-07; PR-A3-11; RES-A3-11"}
+  - {q: "What was the order book at 30-Jun-2026 on the same definition as ~Rs 829 Cr at 30-Sep-2026?", from_finding_id: "PR-A3-07; CC-A3-09"}
+  - {q: "What share of the Rs 829 Cr order book carries metal price-variation clauses?", from_finding_id: "PR-A3-07; CC-A3-04"}
+  - {q: "Is 10-11% operating EBITDA margin a commitment for FY27, yes or no?", from_finding_id: "CC-A3-03"}
+  - {q: "Does management expect FY27 revenue growth of at least 20%, yes or no?", from_finding_id: "PR-A3-02; CC-A3-02"}
+  - {q: "Was any cost line moved from other expenses into materials in H1 FY27 under Note 5, and what Rs amount?", from_finding_id: "RES-A3-13; CC-A3-05"}
+  - {q: "Will FY27 operating cash flow exceed FY27 PAT, yes or no?", from_finding_id: "PR-A3-11; PR-A3-12; RES-A3-10; RES-A3-11"}
+  - {q: "Is the Rs 1.35 Cr MF add-back in the H1 cash flow a fair-value loss in P&L or a reversal of earlier gains on redemption?", from_finding_id: "RES-A3-11"}
+  - {q: "Does the company hedge copper and aluminium on LME or back-to-back, yes or no?", from_finding_id: "RES-A3-01"}
+  - {q: "Of the Rs 96.59 Cr preferential proceeds used 'including advances', what Rs Cr still sits as advances at 30-Sep-2026?", from_finding_id: "RES-A3-03"}
+  - {q: "What gratuity past-service charge in Rs Cr arises if final Labour Code Rules count allowances as wages?", from_finding_id: "RES-A3-04; RES-A3-05"}
+  - {q: "What share of H1 export sales of ~Rs 56 Cr went to the US?", from_finding_id: "PR-A3-03; CC-A3-08"}
+  - {q: "What share of H1 FY27 revenue came from government discoms, and what share from private EPC contractors?", from_finding_id: "PR-A3-12"}
+  - {q: "Has the company received a purchase order for electron-beam solar cable, yes or no?", from_finding_id: "CC-A3-11"}
+  - {q: "Has the company lost any utility or EPC tender to a new large entrant in FY27, yes or no?", from_finding_id: "CC-A3-12"}
+  - {q: "On what date did the company pay the Rs 2,360 BSE fine?", from_finding_id: "GOV-01 (governance item, no A3 chain)"}
+monitorables:
+  - {item: "Q3 FY27 revenue vs bull >= Rs 392.5 Cr / bear <= Rs 363.19 Cr; D&A step; margin vs 10%", implied_date: "by 2027-02-14 (Reg 33)", source_ref: "PR L106-107; CC L038-L039; RES-A3-14"}
+  - {item: "New plant first revenue", implied_date: "H2 FY27 (2026-10 to 2027-03)", source_ref: "PR L107 (PR-A3-01); CC C01"}
+  - {item: "Inventory unwind from Rs 243.43 Cr and FY27 CFO vs PAT", implied_date: "by 2027-05-30 (Q4 FY27 results)", source_ref: "RES L209, L495 (RES-A3-10)"}
+  - {item: "FY27 value growth vs 20% guide (H2 FY27 vs H2 FY26 Rs 654.23 Cr)", implied_date: "by 2027-05-30", source_ref: "CC L201-L203 (C03); PR-A3-02"}
+  - {item: "Order book on same definition as ~Rs 829 Cr", implied_date: "next press release, by 2027-02-14", source_ref: "PR L133 (PR-A3-07)"}
+  - {item: "Op margin vs 10-11% range", implied_date: "each quarterly print", source_ref: "CC L122, L208 (C04)"}
+  - {item: "Labour Code accounting effect", implied_date: "on final Central/State Rules (undated)", source_ref: "RES L366 (RES-A3-04)"}
+  - {item: "ESOP vesting and dilution (max 0.38%)", implied_date: "vesting schedule ND", source_ref: "RES L365"}
+  - {item: "Trading window reopens", implied_date: "~2026-10-29", source_ref: "RES L40-44"}
+  - {item: "Email reply on order-size / open-order question", implied_date: "post-call, undated", source_ref: "CC L236 (C12)"}
+  - {item: "Solar e-beam cable first order", implied_date: "'soon', undated", source_ref: "CC L401 (C10)"}
+  - {item: "Data-centre cable type testing", implied_date: "undated, market-dependent", source_ref: "CC L403-L407 (C11)"}
+  - {item: "Export run-rate vs ~Rs 56 Cr H1", implied_date: "conditional; check by 2027-05-30", source_ref: "PR L110, L131; CC C06"}
+  - {item: "Order booking improves as metal dips", implied_date: "near term; Q3 FY27 call", source_ref: "CC L316-L318 (C07)"}
+  - {item: "FY28 visibility", implied_date: "Q4 FY27 call, ~2027-05", source_ref: "CC L377-L378 (C13)"}
+  - {item: "BSE fine payment proof", implied_date: "was due 2026-08-29; verify", source_ref: "GOV L168"}
+  - {item: "30-Sep-2026 shareholding pattern on time; promoter holding and pledge", implied_date: "due 2026-10-21; verify", source_ref: "GOV L88-89; watch item 7"}
+  - {item: "Reg 31 timeliness June-2027 quarter (second year triggers Z group)", implied_date: "due 2027-07-21", source_ref: "GOV L173-174"}
+  - {item: "Remaining new-plant capex and funding", implied_date: "by 2027-05-30 (FY27 balance sheet)", source_ref: "RES L202, L207; CC C09"}
+flags:
+  - "CASH: H1 CFO/PAT 0.14x (6.66/47.11 Cr, RES L495, L345) vs 0.53x H1 FY26; inventory build Rs 70.65 Cr vs Rs 4.79 Cr prior H1 (RES L480); INDETERMINATE-WITH-DIRECTION (adverse)"
+  - "MARGIN: Q2 Op EBITDA margin 10.01%, lowest of six periods, -94 bps YoY; gross margin -404 bps YoY; volume ND; three conflicting causes on the call (CC L181, L254-L256, L266)"
+  - "FUNDING: MF 30.62 to 0.93 Cr; on-BS net cash 18.44 Cr to net debt 4.09 Cr; finance cost +48.5% QoQ while period-end debt fell; LC creditors 77.7 Cr off the debt line (PR L149)"
+  - "CONCALL: ASR machine transcript, management tier, unverified, speakers unresolved; 24 of 32 graded answers C/D/E; 16 defensive phrases; narrative contradicts filing on working capital and depreciation"
+  - "NEW PLANT: P&M installed, capacity and capex ND; D&A +21.5% QoQ vs 'nothing to do with the new facility' (CC L161)"
+  - "GOVERNANCE MINOR: BSE Reg 31 fine Rs 2,360, one-day late Jun-2026 shareholding pattern (GOV L36-38); payment proof ND; repeat in Jun-2027 quarter triggers Z-group rule"
+  - "PRE-THESIS: no Notion page, no Decision Status, no Spear line; Role 4 Steps 6.5/7 and Role 5 Step 8D deferred to /fttcp and Role 1 (OR-30), which need /step1 first (spear gate)"
+  - "ARCHETYPE: commodity converter (A17) vs build-to-spec/order-book classification open for /fttcp; 80-90% metal pass-through (CC L255)"
+  - "SCOPE: standalone-only filing; consolidated N.A.; tracker rows not supplied (0 signals); peer concalls UNVERIFIABLE this run"
+plain_language_brief_included: true
+analyst_note: "Filed numbers govern; the concall adds little that is verifiable. The cleanest cash test is not day counts, which shift with H2 seasonality, but the prior-year H1 comparative: inventory built Rs 4.79 Cr in H1 FY26 against Rs 70.65 Cr in H1 FY27 (RES L480). That undercuts the seasonal explanation (CC L387) without resolving pre-build vs slow offtake. Q3 revenue separates them because Q3 has no balance sheet. Bull threshold 392.5 Cr is management's own 20% guide on the H2 FY26 quarterly average; bear is no step over Q2. Receivable days 70.3 on net revenue reconcile to the company's ~59 on gross sales at an 18% GST gross-up, so the company KPI looks fair. PR figures match the standalone filing, so the release is standalone. Verdict is FLAGS not CAVEATS because cash, margin and funding all moved adversely in the same half and the call contradicted the filing on two items. Governance fine weighted low: immaterial amount, specific cause, remedial instruction recorded."
+review_path: "runs/dycl-q2fy27/work/review_dycl_q2fy27.md"

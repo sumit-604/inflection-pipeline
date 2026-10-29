@@ -30,3 +30,4 @@
 - Loop 1 A4 (resume): A5-01..06 + A2 alignment + 3 errata applied; no verdict-card, verdict or forward figure moved. 447,021 tok, 497 s. A5 loop 1 re-audit (resume) launched.
 - Loop 1 A5 re-audit (resume): COMPLETE; A5-01..A5-08 closed; no drift; STYLE 7 logged (S-01 partial, S-02..S-07), not looped.
 - Close-out: session-cost.md, operator-brief.md, notion-payload.md written; scratch (renders, scripts) moved to session scratchpad. Commit next.
+- Notion save 2026-10-29 16:30 local: coordinator relayed operator approval ("We can save all the reviews in Notion.") with the rule 'if no page exists, create none and report it'. Re-searched "Knack Packaging" (workspace) and "KNACK" (COMPANIES MASTER data source collection://345bb2b9-d3ab-8032-9b46-000ba16ab827): no Knack page. NO WRITE: no page created, 0 inserts, 0 properties updated, Decision Status untouched. notion-payload.md stays pending; creating the row needs a separate operator decision.

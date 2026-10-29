@@ -1112,3 +1112,24 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-10-28/29 · quarterly batch q2fy27-1028 (16 names, coordinator Fable 5.1, company sessions Opus 5.5)
+- Record: runs/_batch-q2fy27-1028.md (ledger, problems log). 15 of 16 names
+  closed and merged on run/quarterly-q2fy27-2026-10-28; ROUTE left by
+  operator ruling 29-Oct, parked on claude/qr-route-q2fy27-fb3514.
+- Transcription: faster-whisper medium.en stalled again on this RAM (as on
+  19-Oct); small.en, beam 2, 8 threads did 11 calls in about 3 hours. Kill
+  the runner shell, not only the python child, or jobs respawn.
+- Wake latency: batch-1 completion notes reached the coordinator two hours
+  after the commits; DYCL and ROUTE sessions did not wake when A5/A4
+  returned and needed a nudge. Stall check = newest file under work/
+  against sibling progress, not wall clock (machine clock flipped zones
+  mid-run).
+- Sources: NSE archive refused a direct PDF fetch (bot check); Neochem
+  filing rebuilt from the Bull AI connector text and labelled. Paramount and
+  Sona recording URLs came from PDF link annotations, not extracted text.
+- Operator pause mid-batch worked: sessions told to finish the running agent
+  and write work/PAUSED.md resumed cleanly on RESUME.
+- OPEN: ROUTE close-out; Syngene and Route recordings never posted during
+  the run (reviews ran on filed documents); Neochem numbers pending the
+  exchange original.

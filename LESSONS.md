@@ -47,6 +47,9 @@ record as of the run that produced it.
 - Trim command output; never corpus documents.
 
 ## OPEN ACTIONS
+- OPEN (2026-10-29, batch q2fy27-1028): ROUTE close-out on branch
+  claude/qr-route-q2fy27-fb3514; Syngene and Route call transcripts; Neochem
+  numbers vs exchange original. See LESSONS_ARCHIVE.md 2026-10-28/29.
 - OPEN (2026-10-10, CAPILLARY, finalize): chunk 15 A20.5 clause, chunk 06/08 text,
   stage 13 payload spec, stage 14 size enum, O1 operating-ROCE standing rule,
   AVOID vs WATCHLIST rule conflict [section-1b, prompts]; see LESSONS_ARCHIVE.md

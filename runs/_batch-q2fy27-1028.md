@@ -41,7 +41,7 @@ Batches: 1 = NETWEB, AEQUS, PARACABLES, SONACOMS. 2 = WEWORK, INDIAMART, SYNGENE
 8. Stuck rule: stop after three unchanged repeats or five turns with nothing new; report what you tried; mark the run blocked.
 9. Prose to the operator in STE (one idea per sentence, 20 words or fewer, active voice, no dashes as punctuation).
 
-## Token ledger (filled by the coordinator from each run's session-cost.md)
+## Token ledger (filled by the coordinator from each run's session-cost.md; total_run_tok is the subagent sum the run reported, orchestrator tokens excluded)
 
 | Name | Run folder | total_run_tok | Loops | A5 verdict | Commit |
 |---|---|---|---|---|---|
@@ -53,10 +53,14 @@ Batches: 1 = NETWEB, AEQUS, PARACABLES, SONACOMS. 2 = WEWORK, INDIAMART, SYNGENE
 | INDIAMART | runs/indiamart-q2fy27 | 3,779,541 | 1 | COMPLETE; PROCEED WITH FLAGS; enquiry exit rule (#6) fired as written | f2ada840 |
 | SYNGENE | runs/syngene-q2fy27 | 1,736,667 | 1 | COMPLETE; PROCEED WITH FLAGS; T3 fired, T4 fired on strict reading; no call transcript | 65ba58de |
 | RAYMONDREL | runs/raymondrel-q2fy27 | 3,122,093 | 1 | COMPLETE; PROCEED WITH FLAGS; two operator rulings open (margin-stop basis, net-debt test) | 2dc7890c |
+| UNIMECH | runs/unimech-q2fy27 | 2,909,985 | 1 | COMPLETE; PROCEED WITH FLAGS; no trigger fired | aeec7b5c |
+| LT | runs/lt-q2fy27 | 2,254,285 base + loop (see session-cost.md) | 1 | INCOMPLETE on one text item (N1, no number moved); PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION | 166b5474 |
+| SKYGOLD | runs/skygold-q2fy27 | 2,305,779 | 1 | COMPLETE; PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION (bear); no call (31-Oct) | 26e9a493 |
 | KNACK | runs/knack-q2fy27 | 3,093,413 | 1 | COMPLETE; PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION | 9d878a4d |
-| LT | runs/lt-q2fy27 | see session-cost.md | 1 | INCOMPLETE on one text item (N1, no number moved); PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION | 166b5474 |
-| UNIMECH | runs/unimech-q2fy27 | see session-cost.md | 1 | COMPLETE; PROCEED WITH FLAGS; no trigger fired | aeec7b5c |
-| (SKYGOLD and batch 4 pending) | | | | | |
+| DYCL | runs/dycl-q2fy27 | 1,579,875 (A5 loop 0 not recorded) | 1 | INCOMPLETE on one wording item (N-01, no number moved); PROCEED WITH FLAGS; cash conversion INDETERMINATE-WITH-DIRECTION (adverse) | cef66606 |
+| 530077 | runs/530077-q2fy27 | 827,168 | 1 | COMPLETE; PROCEED WITH FLAGS; cash conversion indeterminate, leaning bad; results only | 8a387599 |
+| NEOCHEM | runs/neochem-q2fy27 | see session-cost.md | 1 | COMPLETE; PROCEED WITH FLAGS; numbers from connector-rebuilt filing, pending NSE original; H1 FY27, no call | 44c575f8 |
+| ROUTE | runs/route-q2fy27 (branch claude/qr-route-q2fy27-fb3514, not merged) | not closed | 1 (in progress) | left by operator ruling 29-Oct ("leave route"): A5 loop 0 returned, A2/A4 patches running when stopped; no commit | none |
 
 ## Problems log (coordinator)
 
@@ -70,3 +74,5 @@ Batches: 1 = NETWEB, AEQUS, PARACABLES, SONACOMS. 2 = WEWORK, INDIAMART, SYNGENE
 - PAUSE (operator, after batch 3 reached A5 on all four names): batch 3 sessions told to finish the running agent, write work/PAUSED.md and stop; nothing committed on their branches yet. Batch 4 not started. Eight finished briefs assembled in `_Operator_Briefs_Q2FY27_2026-10-28.md` in the Q2 FY27 Results folder. Resume: message each batch-3 session RESUME, then start batch 4 (DYCL, 530077, NEOCHEM, ROUTE). The machine clock flipped zones during batch 3 (reads 02:46 after 16:08), so batch 3 and 4 commit timestamps are not comparable.
 - RESUME (operator, going out 3-4 hours, "don't stop"): batch 3 sessions resumed at one subagent each (the operator's shallow-analysis session shares the machine). Batch 4 started with the two light names, 530077 and NEOCHEM (results only, one agent each); DYCL and ROUTE start as batch-3 sessions commit. Route's earnings-call page lists the 28-Oct call with no recording yet: Route runs on filed documents. Syngene recording still not posted.
 - KNACK and LT committed and merged; DYCL and ROUTE started (batch 4 now all four running: 530077, NEOCHEM, DYCL, ROUTE). UNIMECH and SKYGOLD still closing out.
+- 29-Oct close: operator ruled "leave route". Fifteen names merged into run/quarterly-q2fy27-2026-10-28; ROUTE parked on its branch with work files in place (resume with a RESUME message to the qr-route session, then merge). Briefs file rebuilt with 15 names. DYCL and ROUTE sessions each failed to wake when a subagent (A5, A4) returned; a coordinator nudge after about two hours restarted them. Same wake-latency class as the batch-1 notes gap.
+

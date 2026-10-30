@@ -1,154 +1,178 @@
 # SINGERIND: Singer India Ltd
 
-Shallow Analysis Framework v1.0. Screened 2026-10-18 by Claude Code.
-NSE SINGERIND | BSE 505729 | ISIN INE638A01035 (AR26, p.76).
-Corpus: `screens/corpus/SINGERIND/` (ledger in `MANIFEST.md`). Page numbers are PDF pages.
-AR26 = `screener/Annual_Report_2026.pdf`; AR25 = `screener/Annual_Report_2025.pdf`; Deck = `screener/Investor_Presentation_1.pdf` (Q1 FY27); FY26 results = `filings/..27052026223905..`; Q1 FY27 results = `filings/..12082026173049..`.
-**Verdict: WATCH.** Sewing revenue is growing fast, but FY26 profit rests on a fixed price government order planned to finish by September 2026, 40% of PBT is other income, and the brand is licensed on terms nobody will disclose.
+Shallow Analysis Framework v1.0. Screened 2026-10-30 by Claude Code. Rewrites the card of 2026-10-18.
+NSE SINGERIND | BSE 505729 | ISIN INE638A01035 (AR26, p.76). Quarterly reporter.
+Corpus: `screens/corpus/SINGERIND/`, ledger in `MANIFEST.md`. Every number cites a file and a PDF page. The corpus holds the `.txt` of each document; page numbers follow its `===== PAGE n =====` markers, which match the PDF pages.
+Short names: AR26 = screener/Annual_Report_2026; AR25 = screener/Annual_Report_2025; Deck = screener/Investor_Presentation_1 (Q1 FY27 deck); CC-Nov25, CC-Feb26, CC-Jun26, CC-Aug26 = screener/Concall_<Mon>_<Year>_Transcript (calls of 13-Nov-2025, 13-Feb-2026, 29-May-2026, 13-Aug-2026); FY26 res = filings/SINGERINDIA_27052026223905_20260527221726578; Q1 res = filings/SINGERINDIA_12082026173049_Outcome; PB = filings/SINGERINDIA_27072026131005_Intimation (postal ballot result); R31 = filings/team_bbodade_23042026183346_SINGERIND; CR-Oct26 = credit-ratings/07-CRISIL (29-Oct-2026); CR-Feb26 = 01-CRISIL; CR-Jan26 = 02-CRISIL; CR-Nov24 = 03-CRISIL; CR-Aug23 = 04-CRISIL; CR-Aug22 = 06-CRISIL; MD = market-data-2026-10-30.md (screener.in service record, fetched 30-Oct-2026, not a filed document).
+
+**Verdict: WATCH.** CRISIL upgraded the company to BBB/Stable on 29-Oct-2026 on a better margin, but the margin is still 2.5%. The government order now runs into Q3 FY27. Over 90% of revenue is traded under a licensed brand on undisclosed terms. At 32.5x trailing profit, the price already pays for a manufacturing climb that has not printed.
+
+---
+
+## What changed since 18-Oct-2026
+
+- **New: CRISIL upgrade, 29-Oct-2026.** Long term to BBB/Stable from BBB-/Stable; short term to A3+ from A3, on Rs 45 crore of bank lines (CR-Oct26). The reason: "sustained improvement" in operating margin, 2.8% in FY26 against 1.5% in FY25 (CR-Oct26).
+- **New: the government order slipped.** CRISIL cites "execution of outstanding government orders worth Rs 67 crore by Q3-FY27" (CR-Oct26). On 13-Aug-2026 the MD aimed to finish the Rs 202 crore order by the end of Q2 (CC-Aug26, p.4). [INFERENCE] If the Rs 67 crore is all PMY, one third of the order is still to ship. The first quarter without PMY moves from Q3 to Q4 FY27.
+- **New: CRISIL's triggers moved.** Upgrade now needs operating margin of 4.0% to 4.5%; downgrade below 2.3% (CR-Oct26). Q1 FY27 printed 2.49% (CR-Oct26).
+- **No new result or Reg 30 filing.** The bseindia.com form shows no Singer filing after 24-Sep-2026. Q2 FY27 is not yet filed.
+- **Market:** Rs 589 crore at Rs 94.7 (MD), up 5.0% from Rs 561 crore. MD was read from screener's consolidated page, whose results stop at FY2020. Its P/E 73.5, book value 12.0, ROCE 18.2% and ROE 13.0% are stale consolidated figures. This card uses MD for price and market cap only. Trailing PE on filed numbers is 32.5x (step 11).
+- **Added:** step 13 operator additions (FY28 and confidence bands).
+- **Corrected:** (1) The Rs 202 crore figure sits on CC-Nov25 p.5 and CC-Aug26 p.4, not CC-Feb26 p.6; CC-Feb26 p.6 carries the L1 win and 70% share. (2) The Reg 31(4) letter date of 06-Apr-2026 cannot be re-checked: the PDF is not on this machine and the OCR text carries no date. This card cites the filing date, 23-Apr-2026. (3) The FY26 EBITDA of Rs 22.23 crore is before the exceptional item (AR26, p.47); the deck's Rs 21.5 crore is after it (Deck, p.15). The table now says so. (4) Q4 FY26 gross margin was "not stated"; it computes to 25.7% from FY26 res p.5. (5) The 60% PMY delivery mark of 29-May-2026 includes April and May FY27 shipments, so it does not all sit in FY26 revenue. (6) The PMY deadline is inconsistent across calls: "June 2027" (CC-Nov25, p.12), six months after March 2026 (CC-Feb26, p.5), now Q3 FY27 (CR-Oct26). Every other carried number matched its page.
+- Verdict, archetype, rung and posture unchanged.
 
 ---
 
 ## Business Understanding Narrative
 
-**What does it do, and how does it make money?** Singer India sells sewing machines and small home appliances under brands it does not own. The Singer and Merritt marks belong to SVP Worldwide, through Singer Sourcing LLC (01-CRISIL, Feb-2026). FY26 revenue was Rs 557.33 crore: sewing Rs 452.55 crore, appliances Rs 104.78 crore (FY26 results, p.7). It is mainly a trader. "More than 90% of revenue generated by the Company comes from the trading activities" (AR26, p.53). One plant at Jammu assembles straight stitch machines. The money is a thin spread on bought machines, after a trademark fee of Rs 10.67 crore (AR26, p.140).
+**What does it do, and how does it make money?** Singer India sells sewing machines and small home appliances under brands it does not own. Singer Sourcing LLC, a subsidiary of SVP Worldwide, owns the Singer and Merritt marks (CR-Feb26). FY26 revenue was Rs 557.33 crore: sewing Rs 452.55 crore, appliances Rs 104.78 crore (FY26 res, p.7). "More than 90% of revenue generated by the Company comes from the trading activities" (AR26, p.53). One plant at Jammu assembles machines. The money is a thin spread on bought machines, after a trademark fee of Rs 10.67 crore (AR26, p.140).
 
-**What is changing?** Three things. First, a Rs 202 crore government order under PM Vishwakarma (PMY), won as L1 with a 70% share (Concall Feb-2026, p.6; Concall Aug-2026, p.4). Second, local manufacture of zigzag machines. On 12 November 2025 the licence was amended to let Singer India make zigzag machines in India (FY26 results, p.9). It paid SVP Rs 11.6 crore for that right (Concall Jun-2026, p.10). A leased factory at Bhiwadi starts pilot production in H2 FY27 (Concall Aug-2026, p.4). Third, a regulatory wall. From 12 August 2026 the BIS concurrency window closed and import NOCs stopped (Concall Aug-2026, p.4).
+**What is changing?** Three things. First, a Rs 202 crore order under PM Vishwakarma (PMY) (CC-Nov25, p.5), won as L1 with 70% of the first 4 lakh machines (CC-Feb26, p.6). Second, local manufacture of zigzag machines. A licence amendment of 12-Nov-2025 gave the right to make them in India (FY26 res, p.9). Singer paid SVP Rs 11.6 crore for it (CC-Jun26, p.10). A leased factory at Bhiwadi starts pilot production in H2 FY27 (CC-Aug26, p.4). Third, a regulatory wall: from 12-Aug-2026 import NOCs under the old BIS standard stopped (CC-Aug26, p.4).
 
-**Why now?** FY26 PAT rose 73% to Rs 12.76 crore on revenue up 29% (AR26, p.47). Q1 FY27 PAT was Rs 3.00 crore against a loss of Rs 2.36 crore a year earlier (Q1 FY27 results, p.4).
+**Why now?** FY26 PAT rose 73% to Rs 12.76 crore on revenue up 29% (AR26, p.47). Q1 FY27 PAT was Rs 3.00 crore against a loss of Rs 2.36 crore a year earlier (Q1 res, p.4). CRISIL upgraded the rating on 29-Oct-2026 (CR-Oct26).
 
-**What must be true?** Sewing revenue must hold after the PMY order ends. Made in India zigzag machines must carry a better gross margin than imports. The licence must be long and stable enough to justify the factory.
+**What must be true?** Sewing revenue must hold after PMY ends. Made-in-India zigzag machines must earn a better gross margin than imports. The licence must last long enough to pay back the factory.
 
-**What breaks it?** The PMY cliff. The order is fixed price, and management will absorb input cost rises (Concall Jun-2026, p.6). It was due to finish by the end of Q2 FY27 (Concall Aug-2026, p.4). A second tranche has no date. Without it, the FY26 base is too high.
+**What breaks it?** The PMY cliff. The order is fixed price and Singer absorbs input cost rises (CC-Jun26, p.6). The second 4 lakh tranche has no date (CC-Jun26, p.10). Without it, the FY26 base is too high.
 
 ---
 
 ## 1. Corpus ledger
 
-Held: two ARs, four transcripts, the Q1 FY27 deck, FY26 and Q1 FY27 results, six CRISIL documents, other filings. No `results/` folder exists. Missing: Q2 and Q3 FY26 result filings, any deck before Q1 FY27, the licence agreement, the FY23 preferential allottee list. Two transcripts are duplicated in `filings/`. Full ledger in `MANIFEST.md`. The gaps weaken steps 4 and 6 most.
+Held: FY25 and FY26 annual reports, four transcripts, the Q1 FY27 deck, FY26 and Q1 FY27 results, seven CRISIL documents, governance filings. No `results/` folder. Missing: Q2 and Q3 FY26 result filings; the Q4 FY26 deck (fetched to the work folder on 30-Oct-2026, not copied into the corpus); filings from 21-Aug to 24-Sep-2026; the licence agreements; the FY23 preferential allottee list. The gaps weaken steps 4 and 6 most. Full ledger in `MANIFEST.md`.
 
 ## 2. Business model and archetype
 
-Two segments. Sewing machines and accessories: 81% of FY26 revenue, segment result Rs 52.41 crore, 11.6% margin. Domestic appliances: 19% of revenue, segment loss Rs 10.53 crore (FY26 results, p.7). Sewing mix for FY26: zigzag about 20%, classic black machines about 55%, industrial and accessories about 28% (Concall Jun-2026, p.9). Appliances are fully outsourced: "we outsource all the products" (Concall Feb-2026, p.7). Zigzag machines are imported from Singer Sourcing LLC, with 30% paid in advance (Concall Aug-2026, p.6). The licensor is also a supplier.
+Two segments. Sewing machines and accessories: 81% of FY26 revenue, segment result Rs 52.41 crore, 11.6% margin. Domestic appliances: 19%, segment loss Rs 10.53 crore (FY26 res, p.7). FY26 sewing mix: zigzag about 20%, classic black about 55%, industrial and accessories about 28% (CC-Jun26, p.9). Appliances are outsourced: "we outsource all the products" (CC-Feb26, p.7). Zigzag machines come from Singer Sourcing LLC, 30% paid in advance (CC-Aug26, p.6). The licensor is also a supplier.
 
 The engine is brand plus reach: 6,500+ dealers and distributors, 10,000+ retailers, 450+ service centres (Deck, p.4).
 
-**Archetype: licence business (brand licensee distributor), with an order book slice for PMY.** Brand/franchise consumer is NOT assigned. The brand is licensed, not owned. Tenure and royalty terms are confidential (Concall Nov-2025, p.5). The MD said the licence is "in spirit, in perpetuity" but renewable "on conditions" (Concall Nov-2025, p.5 and p.11). One indirect marker of length: the manufacturing right is amortised "over a tenure of more than 24 years" (Concall Jun-2026, p.10). [INFERENCE] The licensor accepts a horizon near 24 years for zigzag manufacture. That is not proof of the trademark term. Exports go only through the licensor (FY26 results, p.9).
+**Archetype: licence business (brand licensee distributor), with an order-book slice for PMY.** Brand/franchise consumer is not assigned, because the brand is licensed. Tenure and royalty are confidential (CC-Nov25, p.5). The MD calls the licence "in spirit, in perpetuity" but renewable "on conditions" (CC-Nov25, p.5 and p.11). The manufacturing right is amortised "over a tenure of more than 24 years" (CC-Jun26, p.10). [INFERENCE] The licensor accepts a horizon near 24 years for zigzag manufacture. That is not proof of the trademark term. Exports go only through the licensor (FY26 res, p.9).
 
 ## 3. Competitive advantages
 
-Forming, not present. The brand has recall and the service network is wide. Pricing power is weak: the gross margin fell from 28.5% in FY25 to 26.8% in FY26 (Deck, p.15). The forming advantage is regulatory. The MD says "we are the only Company who are manufacturing these machines as per new standards in India" (Concall Aug-2026, p.4). If true, BIS closes the door on rival zigzag imports. Singer itself bought import stock before the deadline, with Rs 14.3 crore of advances (Concall Aug-2026, p.6). The licence fee caps any brand rent: Rs 10.67 crore, 1.9% of revenue (AR26, p.140).
+Forming, not present. The brand has recall and the service network is wide. Pricing power is weak: gross margin fell from 28.5% in FY25 to 26.8% in FY26 (Deck, p.15). The forming edge is regulatory. The MD: "we are the only Company who are manufacturing these machines as per new standards in India" (CC-Aug26, p.4). If true, BIS closes the door on rival zigzag imports. Singer itself stocked imports before the deadline, with Rs 14.3 crore of advances (CC-Aug26, p.6). The licence fee caps any brand rent: Rs 10.67 crore, 1.9% of revenue (AR26, p.140). CRISIL still calls the model asset-light, through "outsourced contract manufacturing" (CR-Oct26).
 
 ## 4. The promoters
 
-Retail Holdings (India) B.V., Netherlands, holds 1,89,67,940 shares, 30.49% (AR26, p.78). No encumbrance in FY26 (Reg 31(4) filing, 06-Apr-2026). The AR calls it "the erstwhile holding company", an entity with significant influence since 16 August 2022 (AR26, p.155). RHBV sold 22.34% in the open market in August 2022 (01-CRISIL). Two private UK investors bought RHBV from Retail Holdings Asia in two steps, December 2020 and December 2021 (06-CRISIL, Aug-2022). CRISIL gives no parent support credit (06-CRISIL).
+Retail Holdings (India) B.V., Netherlands (RHBV), holds 1,89,67,940 shares, 30.49% (AR26, p.78). It declared no encumbrance in FY26 (R31, filed 23-Apr-2026). The AR calls RHBV "the erstwhile holding company", with significant influence from 16-Aug-2022 (AR26, p.155). RHBV sold 22.34% in the open market in August 2022 (CR-Feb26). Two private UK investors bought RHBV in December 2020 and December 2021 (CR-Aug22). CRISIL gives no parent support (CR-Aug22).
 
-**Who controls it now.** No change of promoter is filed in this corpus. Asked about market talk that RHBV wants to exit, the MD said "I cannot either confirm or deny anything" (Concall Jun-2026, p.6). The Reg 31(4) declaration for the promoter is signed by Rakesh Khanna, the company's own MD, as RHBV's authorised signatory (filing team_bbodade, p.1, read visually).
+**Who controls it now.** No change of promoter is filed. Asked about RHBV exit talk, the MD said "I cannot either confirm or deny anything" (CC-Jun26, p.6). The Reg 31(4) declaration for RHBV is signed by Rakesh Khanna, the company's own MD, as authorised signatory (R31, p.1, OCR text, read visually on 18-Oct-2026).
 
-**Investor entry.** Two preferential issues. FY23: 74,77,364 shares at Rs 76, Rs 56.83 crore, to non promoters, on 4 February 2023 (AR25, p.73). Allottee names NOT FOUND (AR25 p.73, AR26 p.131). FY26: 5,63,578 shares at Rs 79.59, Rs 4.49 crore, to VSM on 29 December 2025 (AR26, p.48 and p.80). VSM is wholly owned by SVP, the brand owner: "This is the first time that they are interested in investing" (Concall Nov-2025, p.8 to p.9). SVP now holds 0.91% as "Foreign Companies" (AR26, p.78).
+**Investor entry.** FY23: 74,77,364 shares at Rs 76, Rs 56.83 crore, to non-promoters on 4-Feb-2023 (AR25, p.73). Allottee names NOT FOUND (AR25 p.73, AR26 p.131). FY26: 5,63,578 shares at Rs 79.59, Rs 4.49 crore, to VSM on 29-Dec-2025 (AR26, p.48 and p.80). VSM belongs to SVP, the brand owner: "This is the first time that they are interested in investing" (CC-Nov25, p.9). SVP now holds 0.91% as "Foreign Companies" (AR26, p.78).
 
-**Skin in the game.** Directors and relatives hold 0.74%, exactly the 4,62,500 ESOP shares allotted in October 2024 (AR26, p.48 and p.78). The MD holds 0.65% (AR26, p.57). Related party note shows KMP pay only. No promoter transactions (AR26, p.156).
+**Skin in the game.** Directors and relatives hold 0.74%, exactly the 4,62,500 ESOP shares allotted in October 2024 (AR26, p.48 and p.78). The MD holds 0.65% (AR26, p.57). The related-party note shows KMP items only (AR26, p.156).
 
 ## 5. Financial trajectory
 
 | Rs crore | FY24 | FY25 | FY26 | Q1 FY26 | Q4 FY26 | Q1 FY27 |
 |---|---|---|---|---|---|---|
 | Revenue | 425.4 | 431.67 | 557.33 | 92.10 | 166.32 | 144.55 |
-| Gross margin % | 25.0 | 28.5 | 26.8 | 28.4 | n/s | 27.5 |
-| EBITDA incl. other income | 9.1 | 12.64 | 22.23 | (2.40) | 9.33 | 5.52 |
+| Gross margin % | 25.0 | 28.5 | 26.8 | 28.4 | 25.7 | 27.5 |
+| EBITDA incl. other income, before exceptional | 9.1 | 12.64 | 22.23 | (2.40) | 9.33 | 5.52 |
 | Other income | n/u | 6.99 | 7.02 | 1.34 | 2.23 | 1.92 |
-| Operating EBITDA, % | n/u | 1.3% | 2.7% | loss | 4.3% | 2.5% |
+| Operating EBITDA % | n/u | 1.3 | 2.7 | loss | 4.3 | 2.5 |
 | PBT | 6.1 | 10.04 | 17.33 | (3.24) | 8.04 | 4.04 |
 | PAT | 4.5 | 7.39 | 12.76 | (2.36) | 5.90 | 3.00 |
-| Sewing segment margin | n/u | 10.7% | 11.6% | 7.1% | 12.7% | 11.1% |
+| Sewing segment margin % | n/u | 10.7 | 11.6 | 7.1 | 12.7 | 11.1 |
 | Appliances segment result | n/u | (1.65) | (10.53) | (2.36) | (2.59) | (3.10) |
 
-Sources: Deck p.14 to p.15; AR26 p.47; FY26 results p.5 and p.7; Q1 FY27 results p.4 to p.5. Company EBITDA includes other income; operating EBITDA here subtracts it. n/s = not stated, n/u = not used.
+Sources: Deck pp.14-15; AR26 p.47; FY26 res pp.5, 7; Q1 res pp.4-5. Operating EBITDA subtracts other income. Q4 FY26 EBITDA includes a Rs 0.18 crore exceptional credit. n/u = not used.
 
-ROCE: 4.44% FY24, 6.45% FY25, 9.73% FY26 (Deck, p.16). No borrowings. Cash Rs 83 crore at March 2026 (Deck, p.16), about Rs 58 crore at June 2026 after a Rs 32 crore inventory and advance build (Concall Aug-2026, p.6). FY26 operating cash flow was Rs 37.02 crore against minus Rs 24.91 crore in FY25 (FY26 results, p.8).
+ROCE 4.44% FY24, 6.45% FY25, 9.73% FY26 (Deck, p.16); CRISIL puts FY26 near 11% (CR-Oct26). No borrowings. Cash Rs 83 crore at March 2026 (Deck, p.16); CRISIL counts about Rs 90 crore with a Rs 7 crore long deposit (CR-Oct26; CC-Jun26, p.10). Cash fell to about Rs 58 crore by June after a Rs 32 crore stock and advance build (CC-Aug26, p.6). FY26 operating cash flow was Rs 37.02 crore against minus Rs 24.91 crore in FY25 (FY26 res, p.8).
 
-Two readings. Reading one: a volume and mix climb, with the trade channel up 15% in FY26 and 25% in Q1 (Concall Jun-2026, p.3; Concall Aug-2026, p.3). Reading two: PMY volume on a fixed cost base. PMY deliveries passed 60% of Rs 202 crore by 29 May 2026 (Concall Jun-2026, p.7). [INFERENCE] That is at least Rs 121 crore, close to the Rs 133 crore rise in sewing revenue in FY26. **The observation that separates them: Q3 FY27 sewing revenue, the first quarter without PMY.**
+Two readings. One: share gains, with trade up 15% in FY26 and 25% in Q1 FY27 (CC-Jun26, p.3; CC-Aug26, p.3). Two: PMY volume on a fixed cost base. Sewing revenue rose Rs 133 crore in FY26 (FY26 res, p.7). PMY passed 60% of Rs 202 crore by 29-May-2026 (CC-Jun26, p.7). [INFERENCE] PMY explains a large but unknown part of the rise. **The observation that separates them is Q4 FY27 sewing revenue, now the first quarter without PMY.**
 
-**Classification: earnings led by volume, with a one time order inside.** Gross margin per cent fell. Operating leverage did the work. Other income was 40% of FY26 PBT and 48% of Q1 FY27 PBT.
+**Classification: volume-led earnings with a one-time order inside.** Gross margin per cent fell; operating leverage did the work. Other income was 40% of FY26 PBT and 48% of Q1 FY27 PBT.
 
 ## 6. The transition and the quality ladder
 
-FROM R1, commodity price taker economics: 1.3% operating margin and 6.45% ROCE in FY25. CLAIMED TO R3: a spec'd domestic maker of zigzag and industrial machines behind a BIS wall. The MD's words: "A team that has been capable of producing the Zigzag Machines, which many people thought cannot be Made in India" (Concall Aug-2026, p.8). Mechanism: localise components over a three year, three level plan, assembly first, then in house critical parts, then industrial machines (Concall Aug-2026, p.7). Capex "can go as high as Rs. 90 crores" over three years (Concall Jun-2026, p.8).
+FROM R1, commodity price-taker economics: 1.3% operating margin and 6.45% ROCE in FY25. CLAIMED TO R3: a spec'd domestic maker of zigzag and industrial machines behind a BIS wall. The MD: "A team that has been capable of producing the Zigzag Machines, which many people thought cannot be Made in India" (CC-Aug26, p.8). Mechanism: three levels over three years, assembly first, then in-house components, then industrial machines (CC-Aug26, p.7). Capex "can go as high as Rs. 90 crores" (CC-Jun26, p.8).
 
-R1 to R3 is a two rung leap. The ladder base rate is one rung per two to three years. Flag. R2 is the honest near target. No made in India gross margin is disclosed yet.
+R1 to R3 is a two-rung leap against a base rate of one rung per two to three years. Flag. R2 is the honest near target. No made-in-India gross margin is disclosed.
 
 ## 7. Growth-trigger register
 
 | Trigger | Date | Source | Status |
 |---|---|---|---|
-| PMY order Rs 202 crore, 4 lakh of 8 lakh machines | Supply to Sep-2026 | Concall Feb-2026 p.6; Concall Aug-2026 p.4 | Underway, more than 60% delivered |
-| PMY second 4 lakh tranche | No date | Concall Feb-2026 p.6; Concall Jun-2026 p.10 | Stated |
-| Zigzag manufacturing right from SVP, Rs 11.6 crore | 12-Nov-2025 | FY26 results p.9; Concall Jun-2026 p.10 | Delivered |
-| Zigzag assembly at Jammu, BIS licence revised | Nov-2025 | FY26 results p.9; Concall Jun-2026 p.4 | Delivered |
-| BIS concurrency ends, no import NOCs | 12-Aug-2026 | Concall Aug-2026 p.4 | Delivered |
-| Bhiwadi factory, 10,000+ machines a month | Pilot H2 FY27 | Concall Aug-2026 p.4 and p.8 | Underway |
-| VSM (SVP) equity, Rs 4.49 crore | 29-Dec-2025 | AR26 p.80 | Delivered |
-| Appliances EBIT breakeven | "next year" | Concall Aug-2026 p.5 | Stated |
-| Double digit sales growth | FY27 | Concall Feb-2026 p.7 | Stated, no number |
+| PMY order Rs 202 crore, 4 lakh of 8 lakh machines | Now to Q3 FY27, Rs 67 crore left | CC-Nov25 p.5; CC-Feb26 p.6; CR-Oct26 | Underway, slipped |
+| PMY 25% volume clause, about Rs 50 crore | No date | CC-Aug26 pp.4-5 (analyst figure; MD: "Both are possible") | Stated |
+| PMY second 4 lakh tranche | No date | CC-Feb26 p.6; CC-Jun26 p.10 | Stated |
+| Zigzag manufacturing right, Rs 11.6 crore | 12-Nov-2025 | FY26 res p.9; CC-Jun26 p.10 | Delivered |
+| Jammu BIS licence revised, zigzag assembly | Nov-2025 | FY26 res p.9; CC-Jun26 p.4 | Delivered |
+| BIS concurrency ends, no import NOCs | 12-Aug-2026 | CC-Aug26 p.4 | Delivered |
+| Bhiwadi factory, 10,000+ machines a month | Pilot H2 FY27 | CC-Aug26 pp.4, 8 | Underway |
+| SVP may buy Indian-made machines for its supply chain | No date | CC-Aug26 p.7 | Stated |
+| Appliances EBIT breakeven | "next year" | CC-Aug26 p.5 | Stated |
+| Double-digit sales growth | FY27 | CC-Feb26 p.7 | Stated, no number |
+| CRISIL operating margin 3% to 4% | FY27 | CR-Oct26 | Agency expectation |
 
 ## 8. Proof check
 
-Partial. The sewing segment result rose from Rs 4.74 crore to Rs 12.74 crore in Q1 FY27 on revenue up 73% (Q1 FY27 results, p.5). Non PMY lines grew: e-commerce 55%, trade 25% (Deck, p.9). That is real.
+Partial, on Q4 FY26 and Q1 FY27; Q2 FY27 is not filed. The sewing segment result rose from Rs 4.74 crore to Rs 12.74 crore in Q1 FY27 on revenue up 73% (Q1 res, p.5). Non-PMY lines grew: e-commerce over 55%, trade over 25% (Deck, p.9). That is real.
 
-The proof the transition needs is absent. No quarter yet shows made in India zigzag margins. Q1 FY27 gross margin per cent was below Q1 FY26 (Deck, p.14). Appliances lost more on higher revenue. The proof point to name is the first Bhiwadi quarter's gross margin.
+The proof the transition needs is absent. No quarter shows a made-in-India zigzag margin. Q1 FY27 gross margin was below Q1 FY26 (Deck, p.14). Operating margin fell from 4.16% in Q4 FY26 to 2.49% (CR-Oct26). Appliances lost more on higher revenue. The proof point is the first Bhiwadi quarter's gross margin.
 
 ## 9. Flags from the documents
 
-- **PMY cliff.** Fixed price, ends Q2 FY27, second tranche undated. FY26 is not a clean base.
-- **Other income.** Rs 7.02 crore, 40% of FY26 PBT; interest income alone Rs 5.42 crore (AR26, p.154). Cash fell to about Rs 58 crore by June, so this shrinks.
+- **PMY cliff.** Fixed price, now into Q3 FY27, second tranche undated. FY26 is not a clean base.
+- **Other income.** Rs 7.02 crore, 40% of FY26 PBT; interest income Rs 5.42 crore (AR26, p.154). Cash fell to about Rs 58 crore by June, so this shrinks.
 - **Licence economics.** Fee Rs 10.67 crore, 70% the size of FY26 operating EBITDA. Terms confidential.
-- **MD pay.** Rs 5.23 crore in FY26, up from Rs 4.35 crore (AR26, p.57; AR25, p.48). That is 41% of FY26 PAT. Ratio to median pay 65:1 (AR26, p.56). Promoter votes carried his pay resolution 100% (postal ballot, 27-Jul-2026, p.3).
-- **Promoter overhang.** Exit talk neither confirmed nor denied (Concall Jun-2026, p.6).
-- **Appliances.** Segment loss widened sixfold in FY26.
-- **Governance.** BSE penalties for board and NRC composition and a late RPT filing (AR26, p.80). Audit trail not enabled for some purchase and revenue fields; backup location unverifiable (AR26, p.97 to p.98). CFO changed on 1 April 2026 (AR26, p.49).
-- **Resolved.** FY25 emphasis of matter on the BIS licence (AR25, p.87). The writ was withdrawn on 22 January 2026 (FY26 results, p.9).
-- **Disclosure.** The deck's "Institutions 20.16%" (Deck, p.4) conflicts with the AR (AR26, p.78).
+- **MD pay.** Rs 5.23 crore in FY26, up from Rs 4.35 crore (AR26, p.57; AR25, p.48). That is 41% of FY26 PAT. Ratio to median pay 65:1 (AR26, p.56). The promoter's 1,89,67,940 votes carried the pay resolution (PB, p.3).
+- **Promoter overhang.** Exit talk neither confirmed nor denied (CC-Jun26, p.6).
+- **Appliances.** Segment loss rose sixfold in FY26.
+- **Governance.** BSE penalties for board and NRC composition and a late RPT filing (AR26, p.80). Audit trail not enabled for some purchase and revenue fields; backup location unverified (AR26, pp.97-98). CFO changed on 1-Apr-2026 (AR26, p.49).
+- **Disclosure.** Deck "Institutions 20.16%" (Deck, p.4) conflicts with AR26 p.78. AR26 p.47 gives FY26 sewing revenue as Rs 450.29 crore; the segment note gives Rs 452.55 crore (FY26 res, p.7).
+- **Resolved.** FY25 emphasis of matter on the BIS licence (AR25, p.87). The writ was withdrawn on 22-Jan-2026 (FY26 res, p.9).
 
 ## 10. Independent check: the credit rating
 
-CRISIL BBB-/Stable/A3 on Rs 45 crore of bank lines, reaffirmed 6 February 2026 (01-CRISIL). The path: BBB/Stable (Aug-2022), BBB/Negative (Aug-2023), downgrade to BBB- (Nov-2024) on "continued weakening of the business risk profile" (03-CRISIL, 04-CRISIL, 06-CRISIL). CRISIL called sewing "limited value-addition" with margins "rangebound at 6.4-7.2%" (03-CRISIL). On 23 January 2026 CRISIL was "awaiting adequate information" and named information availability risk (02-CRISIL, p.1). The upgrade trigger is operating margin above 2% on a consistent basis (02-CRISIL, p.1). [INFERENCE] FY26 operating margin of 2.7% meets it for one year. CRISIL describes "assembly and trading" (01-CRISIL). It does not yet credit a manufacturing transition.
+CRISIL BBB/Stable/A3+ on Rs 45 crore of bank lines, upgraded 29-Oct-2026 (CR-Oct26). The path: BBB/Stable (CR-Aug22), BBB/Negative (CR-Aug23), downgrade to BBB- on "continued weakening of the business risk profile" (CR-Nov24), reaffirmed (CR-Feb26), now back to BBB. In January 2026 CRISIL was "awaiting adequate information" (CR-Jan26, p.1). The old upgrade trigger, margin "over 2% on a consistent basis" (CR-Jan26, p.1), was met.
+
+CRISIL expects FY27 operating margin of 3% to 4%, net cash accrual of Rs 20 to 22 crore a year, and net worth of Rs 180 to 190 crore by March 2027 from Rs 166.1 crore (CR-Oct26). It flags a 156-day gross current asset cycle and low margins from competition (CR-Oct26). It still describes "assembly and trading" (CR-Oct26). The rating credits the margin recovery, not a manufacturing transition. Today's filings say nothing newer.
 
 ## 11. Posture: the Transition Decision Matrix
 
 - **Proof gate: NOT FIRED.** Manufacturing is at pilot and assembly stage. Over 90% of revenue is traded. The FY26 margin gain came with PMY volume, not mix.
-- **Ugliness: ARTIFACT-OF-CLIMB, provisional and contested.** The inventory build, Bhiwadi set up and the fan investment are costs of the climb. The rival reading: appliance losses and the licence fee are permanent. The observation that separates them is appliances reaching EBIT breakeven in FY28 as promised.
-- **Recognition gap: CLOSED.** Market cap Rs 561 crore and trailing PE 30.0 (screener.in service record, 2026-10-18, not a filed document). FY26 PAT gives 44x. The price already pays for a climb that has not printed.
+- **Ugliness: ARTIFACT-OF-CLIMB, provisional and contested.** The stock build, Bhiwadi set-up and fan investment are costs of the climb. The rival reading: appliance losses and the licence fee are permanent. Appliances reaching EBIT breakeven in FY28, as promised, separates them.
+- **Recognition gap: CLOSED.** Market cap Rs 589 crore (MD). Filed TTM PAT, Q2 FY26 to Q1 FY27, is Rs 18.12 crore: trailing PE 32.5x. On FY26 PAT it is 46.2x. Both sit above the R3 neighbourhood of about 19x.
 
 **Posture: PRICED NARRATIVE (TRAP).** If appliance losses prove STRUCTURAL, the cell moves to AVOID.
 
 ## 12. Verdict card
 
-**WATCH.** Hard watch, no `/step1` yet. The sewing business is gaining share and the BIS deadline may build a real wall. But the price already assumes the factory works.
+**WATCH.** Hard watch, no `/step1` yet. Sewing is gaining share, the BIS deadline may build a wall, and the rating moved up. The price already assumes the factory works.
 
 **Load-bearing facts to verify first**
-1. The trademark licence tenure, renewal conditions and royalty rate. This decides the archetype.
-2. Q3 FY27 sewing revenue and margin without PMY, and any date for the second tranche.
-3. Gross margin on Bhiwadi and Jammu made zigzag machines against imports from Singer Sourcing LLC.
-4. RHBV's intentions and any open offer or stake sale.
+1. Licence tenure, renewal conditions and royalty rate. This decides the archetype.
+2. Q2 FY27 results (due by mid-November): sewing revenue, margin, and the PMY balance left.
+3. Gross margin on Bhiwadi and Jammu zigzag machines against imports from Singer Sourcing LLC.
+4. RHBV's intentions and any stake sale or open offer.
 
 **What would change the view**
-- Ex PMY sewing revenue holding near the Q4 FY26 run rate moves this to PROCEED.
-- A disclosed long licence term plus a made in India gross margin above 28.5% makes R2 credible.
-- A promoter change to SVP or a strategic buyer is a separate event to re-screen at once.
-- A second PMY tranche at fixed price does not by itself change the view.
+- Q4 FY27 sewing revenue near the Q1 FY27 level of Rs 115 crore without PMY moves this to PROCEED.
+- A disclosed long licence term plus a made-in-India gross margin above 28.5% makes R2 credible.
+- A promoter change to SVP or a strategic buyer is a separate event; re-screen at once.
+- Operating margin below CRISIL's 2.3% downgrade line in Q2 or Q3 FY27 moves this toward PASS.
 
 No Role 1 valuation was run and no target price is set. This verdict decides only whether the name earns a full `/step1`. It is not a position.
 
 ## 13. Forward view
 
-Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with steps 5, 8, 9 and 11, never instead of them.
+Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with steps 5, 8, 9 and 11.
 
-| | |
-|---|---|
-| Market capitalisation (screener.in service record, 18-Oct-2026, not a filed document) | Rs 561 crore |
-| Last reported full year profit after tax | Rs 12.76 crore (AR26, p.47) |
-| FY27 expected profit after tax | Rs 12.0 to 18.1 crore |
-| Growth | minus 6% to plus 42% |
-| **Forward price to earnings** | **31.0x to 46.8x** |
-| Basis tier | B. No profit guidance exists; management gave only "double digit" sales growth (Concall Feb-2026, p.7). Low end: Q1 FY27 PAT of Rs 3.00 crore times four. High end: the last four reported quarters, Q2 FY26 to Q1 FY27, Rs 18.12 crore. Q2 FY26 is derived as FY26 less Q1, Q3 and Q4 from filed numbers. |
+**Basis tier: B, run-rate.** No profit guidance exists. Management gave only "double digit" sales growth (CC-Feb26, p.7).
 
-**Both ends carry PMY, and PMY ends.** Management warned the quarterly mix is seasonal and should be read annually (Concall Jun-2026, p.10). Other income was 40% of FY26 PBT. Neither end screens cheap.
+- **FY+1 (FY27) bottom line: Rs 18.12 crore.** Q1 FY27 actual Rs 3.00 crore (Q1 res, p.4) plus Q2 to Q4 FY26 delivered, Rs 15.12 crore. Q2 FY26 is derived: FY26 PAT less Q1, Q3 and Q4 (FY26 res, p.5; Q1 res, p.4). Tax is in it.
+- **Growth: +42.0%** against FY26 PAT of Rs 12.76 crore (FY26 res, p.5).
+- **Forward PE: about 32.5x.** Rs 589 crore (MD) over Rs 18.12 crore.
+- **The low reading.** Q1 FY27 times four gives Rs 12.0 crore, growth minus 6.0%, forward PE 49.1x. Management warned that quarterly mix is seasonal (CC-Jun26, p.10).
+- **CRISIL cross-check.** [INFERENCE] Its 3% to 4% margin on 10% revenue growth, with other income and depreciation netting out and tax at FY26's 26.4%, gives Rs 13.5 to 18.0 crore. The central number sits at the top of that range.
+- Both readings carry PMY, and PMY ends. Neither screens cheap.
+
+### Operator additions, 2026-10-29
+
+**FY28 expected PAT and forward PE. Tier C, trend.** No FY28 guidance exists. Revenue grew at a 5.3% CAGR from FY22 Rs 453.0 crore to FY26 Rs 557.3 crore (Deck, p.15), with share gains in trade as the stated mechanism (CC-Jun26, p.8). Applied to FY27E at a flat margin: **Rs 19.1 crore**, growth +5.3%, forward PE about **30.9x** (Rs 589 crore over Rs 19.08 crore). One notch weaker than FY27: it assumes the PMY profit is replaced, which no filing supports.
+
+**Confidence.**
+- **FY27: LOW**, under 40%. One reason: the two readings, Rs 12.0 and Rs 18.1 crore, sit 34% apart, and the PMY tail and its fixed price decide where H2 lands. The observation that would move it to MEDIUM: Q2 FY27 PAT above Rs 4.5 crore with operating margin above 3%.
+- **FY28: LOW**, under 30%. One reason: FY28 is the first full year without PMY unless the second tranche comes, and no date exists (CC-Jun26, p.10). The observation that would move it: a dated second PMY order, or Q4 FY27 sewing revenue above Rs 115 crore without PMY.

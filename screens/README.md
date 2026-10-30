@@ -716,3 +716,122 @@ scan or garbled.
   PPLPHARMA's ICRA captures are site shells with no rationale.
 - PPLPHARMA is a Rs 30,994 crore large cap, outside the small/micro-cap
   mandate; screened because the operator named it.
+
+## Ninth run, 2026-10-30
+
+Nine operator picks, screened in parallel by nine agents in one session on the
+operator's Windows desktop: GRE Renew Enertech (BSE SME 544682, GRERENEW), Sampark
+India Logistics (BSE SME 544810, scrip ID SILL, card SAMPARK), Credent Connect N
+Care (NSE Emerge, CREDENT), DCM Shriram Industries (DCMSRIND), Sakuma Exports
+(SAKUMA), TCPL Packaging (TCPLPACK), Optiemus Infracom (OPTIEMUS), Prasol Chemicals
+(PRASOLCHEM, listed 16-Sep-2026) and Singer India (SINGERIND), which was screened
+on 2026-10-18 and was rewritten in full with a "what changed" section.
+
+A non-compliant screen of the same nine was produced on 29-Oct-2026 in a session
+that never read this framework. It is not in the repo and nothing in this run
+draws on it.
+
+**Verdicts.** No PROCEED. WATCH on SAMPARK, CREDENT, TCPLPACK, PRASOLCHEM and
+SINGERIND. PASS on GRERENEW, DCMSRIND, SAKUMA and OPTIEMUS. Forward table:
+`screens/forward-view-2026-10-30.md`.
+
+**Sources.**
+- screener.in public company pages (no login) for annual reports, transcripts,
+  decks and rating links. **The collector could not run.** Its Playwright browser
+  failed to launch inside the Claude desktop app, sandboxed or not ("spawn
+  UNKNOWN"; the app's terminal sees a redirected AppData without the Chromium
+  build). So no Financials.xlsx exists for any name this run; cards build the
+  trajectory from filed results. Run `screener_collect.py --no-drive` from an
+  ordinary PowerShell window to add them.
+- BSE announcements: listed through the bseindia.com announcements form in the
+  in-app browser (12 months; windows of six months or less, because the form's
+  "Next" page control does not advance) and downloaded from `AttachHis/`, falling
+  back to `AttachLive/`. Lists with titles are held per name as
+  `work/bse/<TICKER>.txt` in the session folder and summarised in each manifest.
+  Scripted calls to the exchange APIs were not attempted after the session's
+  safety check refused the first one as bot-check circumvention.
+- **NSE refused everything**: HTTP 403 to plain downloads and Access Denied to the
+  in-app browser. CREDENT, an NSE-only name, was built from the company's own
+  investor page (annual report, final prospectus, H1 FY27 results, a share
+  purchase agreement). It has no announcement list, no shareholding pattern and
+  no transcript.
+- Ratings via `fetch_ratings.py`; ICRA rationale PDFs via
+  `ShowRationalReportFilePdfViewer/<Id>` because the ICRA pages are 5.6 KB shells.
+- Prospectuses: Sampark RHP (22-Jun-2026, Rathi group site), Prasol prospectus
+  (company site), Credent prospectus (company site), GRE's September 2024 draft
+  only (bseindia.com; the 2025 draft and final prospectus sit on bsesme.com,
+  which timed out).
+- Market cap and shareholding from screener.in, saved as
+  `market-data-2026-10-30.md` per name, a service record.
+- Text: PyMuPDF; Tesseract OCR on pages under 40 characters, tagged `[OCR]`.
+  No Bull AI or Trendlyne call.
+
+**Integrity check.** All 238 new PDFs across eight corpora open with PyMuPDF,
+have pages, end with `%%EOF`, and carry one page marker per page in their `.txt`.
+No download was resumed. Md5 duplicate sets are in `dup-sets-2026-10-30.json`
+per corpus; every download is in `fetch-ledger-2026-10-30.jsonl`.
+
+**Orchestrator spot check.** Two to five figures per card checked against the
+cited page text: 27 of 27 matched. Figures the analysts read from page images
+(garbled results tables) were not re-checked against the image.
+
+### Findings worth carrying out of the cards
+
+- **DCMSRIND** is now one sugar mill with a distillery and co-generation. The
+  scheme effective 17-Dec-2025 sent chemicals to DCM Shriram Fine Chemicals and
+  rayon to DCM Shriram International. GST provisions of Rs 371.11 crore exceed
+  net worth of Rs 364.78 crore, offset only by an unnamed buyer's indemnity.
+  Q1 FY27 PAT fell 85%. CARE moved the rating from A+ to A-.
+- **SAKUMA.** A 65 crore-share preferential issue at Rs 1.66, about 35% of book,
+  for "working capital" while Rs 108 crore sits in mutual funds; the promoter
+  falls from 46.29% to 32.72%. Other income is 98.5% of Q1 FY27 profit before
+  tax. A Rs 106 crore "Warehouse" asset in the subsidiaries is not depreciated.
+- **OPTIEMUS.** Rs 116.94 crore of related-party cash, including a Rs 42 crore
+  property advance to a promoter-family member. FY26 operating cash flow was
+  negative. Preferential-issue money was moved from subsidiary capex to parent
+  working capital.
+- **GRERENEW.** The auditor resigned the same day the audit committee refused a
+  higher fee on a Rs 5 lakh audit; the CFO followed 13 days later. Rs 6.96 crore
+  of loans to a KMP relative who runs a Tennessee gas-station business.
+- **SAMPARK.** Receivables at 173 days; the RHP says the business is not seasonal
+  and the deck says H2 is seasonally stronger. CFO left 27 days after listing.
+- **CREDENT.** Promoters sold a company to the listed entity, lent the money
+  back, and converted it at Rs 30.90 a share before an IPO at Rs 189.
+- **TCPLPACK.** Q1 FY27 PAT growth of 79% rests largely on a base quarter with a
+  Rs 10.63 crore forex loss. A Rs 125 crore battery-separator project has no
+  named technology partner.
+- **PRASOLCHEM.** Four deaths in three incidents since 2020, three Factories Act
+  complaints naming the MD, and an MIDC notice to vacate a Mahad plot.
+- **SINGERIND.** CRISIL upgraded to BBB/Stable on 29-Oct-2026 with a 2.3%
+  operating-margin downgrade line; Q1 FY27 printed 2.49%.
+
+### Corpus defects recorded
+
+- **Garbled native text layers with no `[OCR]` tag** on results tables for
+  DCMSRIND, OPTIEMUS, TCPLPACK, PRASOLCHEM, SAKUMA, GRERENEW and CREDENT. Every
+  such figure was read from the page image and is so marked in the card. The
+  OCR threshold should also trigger on pages whose text is mostly non-numeric
+  noise around a table.
+- **screener.in consolidated pages are stale** for companies that report
+  standalone only (SINGERIND results stop at FY2020; DCMSRIND's P/E reflects the
+  pre-scheme entity; PRASOLCHEM's P/E uses FY25). Use market cap and price only.
+- Byte-identical duplicates filed under different BSE categories (OPTIEMUS MoA
+  amendment = Q2 FY26 results; TCPLPACK management-change filings = results
+  bundles; PRASOL board outcome = Q1 results).
+- `screens/corpus/SINGERIND/credit-ratings/manifest.json` does not list the new
+  `07-CRISIL` file.
+- The screener quarter links for the SME names and PRASOLCHEM returned HTML,
+  not PDFs; those `results/` folders are empty or partial.
+
+### Known limits of this run
+
+- Cards ran 2,787 to 3,412 words against the brief's 1,900 to 2,600. Flagged,
+  not trimmed.
+- Q2 FY27 / H1 FY27 results were not yet filed for eight of nine names; CREDENT
+  filed H1 FY27 on 28-Oct-2026.
+- No Financials.xlsx anywhere (collector could not launch).
+- CREDENT has no exchange filing list; GRERENEW's prospectus is a stale 2024
+  draft.
+- Half-yearly reporters, two-half proof test: GRERENEW, SAMPARK, CREDENT.
+- Promoter pledge NOT FOUND on most names: shareholding-pattern filings were
+  dropped as housekeeping from the BSE lists and NSE was unreachable.

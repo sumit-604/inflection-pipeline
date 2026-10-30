@@ -72,3 +72,101 @@ Status key: READ = read in full; READ (pages) = named sections read in full; SKI
 - Deck p.10 segment results (sewing Rs 13.14 cr, appliances Rs (2.91) cr for Q1 FY27) differ from filed results p.5 (Rs 12.74 cr and Rs (3.10) cr).
 - AR26 p.80 states the VSM issue price as "Rs. 76 per share inclusive of premium at the value of Rs. 79.59"; the issue price was Rs 79.59 (AR26 p.48). Drafting error in the AR.
 - AR26 p.10-11 charts: text layer scrambles chart labels; values were read against p.47 and the deck.
+
+---
+
+## 2026-10-30 update (card rewritten in full, `screens/cards/SINGERIND.md`)
+
+Ledger appended 2026-10-30. The 18-Oct-2026 ledger above stands unchanged. Status key for this section:
+FULL = read in full; PART = named pages read, rest navigated by keyword; SKIM = checked for substance.
+
+### How it was built (this pass)
+
+- **credit-ratings/07-CRISIL.html / .txt**: `tools/collector/fetch_ratings.py` over the screener.in page link
+  "Rating update 1d from crisil", URL
+  `https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SingerIndiaLimited_October 29_ 2026_RR_406754.html`,
+  status 200, 140,365 bytes (fetch record at `work/singer_rating/manifest.json`, where the file is named
+  01-CRISIL; renumbered 07 on copy). `credit-ratings/manifest.json` in this folder still lists only the six
+  earlier documents.
+- **market-data-2026-10-30.md**: screener.in company page, a service record, fetched 2026-10-30 about
+  09:00 IST. Price Rs 94.7, market cap Rs 589 crore, shareholding Sep-2025 to Sep-2026.
+- **filings/**: no new download. BSE announcements listed through the bseindia.com form in the in-app
+  browser showed no Singer filing after 24-Sep-2026. `work/bse/` holds no SINGERIND list. Q2 FY27 is
+  not filed.
+- **Fresh PDFs, not copied into the corpus** (operator instruction): the two annual reports, four
+  transcripts and two decks, re-fetched 2026-10-30 09:44 from the screener.in page links (BSE
+  `AnnPdfOpen.aspx` and `xml-data/corpfiling/AttachHis/` URLs) to `work/singer_new/screener/`, ledger
+  `work/singer_new/fetch-ledger-2026-10-30.jsonl`. Their PDFs were not needed for a page image.
+- **Financials.xlsx**: no new export this run. The 18-Oct-2026 copy stays and was not used for numbers.
+
+### Integrity (from `work/singer_new/fetch-ledger-2026-10-30.jsonl`)
+
+All 8 files status OK, bytes equal to declared size. Pages: AR26 178 (3 OCR), AR25 161 (1 OCR),
+Concall Aug-2026 8, Jun-2026 13, Feb-2026 10, Nov-2025 12 (0 OCR each), Investor_Presentation_Aug_2026 17
+(1 OCR), Investor_Presentation_Jun_2026 21 (1 OCR). The `.txt` of each fresh AR and transcript matches
+the corpus `.txt` line for line, except the OCR marker format. `Investor_Presentation_Aug_2026` matches
+`screener/Investor_Presentation_1` except OCR noise on its back-cover p.17. The corpus copies are the
+same documents. The filings PDFs are not on this machine; the card reads their `.txt`.
+
+### Substantive files read this pass
+
+| Path | Type | Date | Status | Pages read |
+|---|---|---|---|---|
+| credit-ratings/07-CRISIL.html / .txt | Rating rationale, upgrade to BBB/Stable/A3+ | 29-Oct-2026 | FULL | html, no pages |
+| market-data-2026-10-30.md | screener.in service record | 30-Oct-2026 | FULL | n/a. Price and market cap used only |
+| filings/..27052026223905.. (FY26 res) | FY26 audited results | 27-May-2026 | PART | 5-9 re-checked |
+| filings/..12082026173049_Outcome (Q1 res) | Q1 FY27 results | 12-Aug-2026 | PART | 4-5 re-checked |
+| screener/Annual_Report_2026 | Annual report FY26 | FY26 | PART | 47-49, 53, 56-57, 67, 74, 76, 78, 80, 97-98, 130-132, 140, 154-156, 160 re-checked |
+| screener/Annual_Report_2025 | Annual report FY25 | FY25 | PART | 47-48, 73, 87 re-checked |
+| screener/Concall_Aug_2026_Transcript | Q1 FY27 call, 13-Aug-2026 | 20-Aug-2026 | FULL | 1-8 |
+| screener/Concall_Jun_2026_Transcript | Q4 FY26 call, 29-May-2026 | 03-Jun-2026 | FULL | 3-13 |
+| screener/Concall_Feb_2026_Transcript | Q3 FY26 call, 13-Feb-2026 | 20-Feb-2026 | PART | 4-8 by keyword |
+| screener/Concall_Nov_2025_Transcript | Q2 FY26 call, 13-Nov-2025 | Nov-2025 | PART | 3, 5-6, 8-12 by keyword |
+| screener/Investor_Presentation_1 | Q1 FY27 deck | Aug-2026 | FULL | 1-16 |
+| credit-ratings/01, 02, 03, 04, 06-CRISIL | Earlier rationales | 2022-2026 | PART | triggers, ownership, margin lines; 02 p.1 |
+| filings/..27072026131005_Intimation (PB) | Postal ballot result | 27-Jul-2026 | PART | 3 |
+| filings/team_bbodade_23042026183346_SINGERIND (R31) | Reg 31(4) declaration | filed 23-Apr-2026 | FULL | 1 (OCR text only; PDF not on this machine) |
+| filings/..27052026234247_Intimation_rpt | Reg 23(9) H2 FY26 | 27-May-2026 | SKIM | 1-2 |
+
+Housekeeping, not re-read: 05-CRISIL, `credit-ratings/manifest.json`, the AGM voting result, the
+25-Jun-2026 board outcome, the 09-Apr-2026 CRISIL letter, the two duplicate transcripts in `filings/`,
+Financials.xlsx and Financials.txt, market-data-2026-10-18.md.
+
+### Corrections to the 18-Oct-2026 card, found on re-check
+
+1. Rs 202 crore order: cited CC-Feb26 p.6; the figure sits on CC-Nov25 p.5 and CC-Aug26 p.4. CC-Feb26 p.6
+   carries the L1 win, 70% share and 8 lakh / 4 lakh split.
+2. R31 letter date 06-Apr-2026: cannot be re-checked; the PDF is absent and the OCR text has no date.
+   The card now cites the filing date.
+3. FY26 EBITDA Rs 22.23 crore is before the exceptional item (AR26 p.47); the deck's Rs 21.5 crore is
+   after it (Deck p.15). Label corrected.
+4. Q4 FY26 gross margin "not stated": computes to 25.7% from FY26 res p.5.
+5. The 60% PMY delivery mark of 29-May-2026 includes FY27 shipments; the inference against the FY26
+   sewing rise was qualified.
+6. "Q3 FY27, the first quarter without PMY" becomes Q4 FY27, on CRISIL's Rs 67 crore by Q3 FY27.
+All other carried numbers matched their cited pages.
+
+### Defects found this pass
+
+- **market-data-2026-10-30.md was taken from screener's consolidated page** (`/company/SINGERIND/consolidated/`).
+  Its results stop at FY2020 (checked in `work/scr/SINGERIND.html`). P/E 73.5, book value Rs 12.0,
+  ROCE 18.2% and ROE 13.0% are stale consolidated figures and contradict the 18-Oct standalone record
+  (P/E 30.0, book value Rs 28.6). Price and market cap are unaffected. **Fix for the next run:** fetch the
+  standalone page for names with no live subsidiary.
+- AR26 p.47 states FY26 sewing revenue as Rs 450.29 crore; the segment note states Rs 452.55 crore
+  (FY26 res p.7). Document inconsistency, carried to the card's flags.
+- PMY deadline stated three ways: "June 2027" (CC-Nov25 p.12), six months after March 2026 (CC-Feb26 p.5),
+  now Q3 FY27 (07-CRISIL).
+- `credit-ratings/manifest.json` was not updated for 07-CRISIL.
+
+### Coverage gaps (this pass)
+
+- **Q4 FY26 deck** (Investor_Presentation_Jun_2026, 21 pages): fetched to `work/singer_new/screener/`,
+  not in the corpus by instruction, not used. Source: screener.in page, BSE AttachHis.
+- **Filings from 21-Aug-2026 to 24-Sep-2026**: the corpus ends at 20-Aug-2026; the bseindia.com form
+  shows a last Singer filing on or before 24-Sep-2026 that is not held. Source: BSE announcements.
+- **Q2 FY27 results**: not yet filed (due by mid-November 2026).
+- **Breakdown of CRISIL's Rs 67 crore** of outstanding government orders: NOT FOUND in 07-CRISIL or any
+  filing. Source would be the Q2 FY27 call.
+- Gaps listed on 18-Oct-2026 stand: Q2 and Q3 FY26 results, licence agreements, FY23 allottee list,
+  Reg 32 statements, the 12-Nov-2025 licence intimation, MGT-7.

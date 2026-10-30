@@ -173,6 +173,6 @@ Operator ruling 2026-09-21. A screening metric, not a valuation. Read it with st
 
 **FY28 expected PAT and forward PE. Tier C, trend.** No FY28 guidance exists. Revenue grew at a 5.3% CAGR from FY22 Rs 453.0 crore to FY26 Rs 557.3 crore (Deck, p.15), with share gains in trade as the stated mechanism (CC-Jun26, p.8). Applied to FY27E at a flat margin: **Rs 19.1 crore**, growth +5.3%, forward PE about **30.9x** (Rs 589 crore over Rs 19.08 crore). One notch weaker than FY27: it assumes the PMY profit is replaced, which no filing supports.
 
-**Confidence.**
-- **FY27: LOW**, under 40%. One reason: the two readings, Rs 12.0 and Rs 18.1 crore, sit 34% apart, and the PMY tail and its fixed price decide where H2 lands. The observation that would move it to MEDIUM: Q2 FY27 PAT above Rs 4.5 crore with operating margin above 3%.
-- **FY28: LOW**, under 30%. One reason: FY28 is the first full year without PMY unless the second tranche comes, and no date exists (CC-Jun26, p.10). The observation that would move it: a dated second PMY order, or Q4 FY27 sewing revenue above Rs 115 crore without PMY.
+**Confidence, as a probability.** The probability that actual PAT for the year lands within 15% of the estimate above. Operator request of 2026-10-30: a percentage, not a band.
+- **FY27: 30%.** One reason: the two readings, Rs 12.0 and Rs 18.1 crore, sit 34% apart, and the PMY tail and its fixed price decide where H2 lands. The observation that would move it to about 50%: Q2 FY27 PAT above Rs 4.5 crore with operating margin above 3%.
+- **FY28: 20%.** One reason: FY28 is the first full year without PMY unless the second tranche comes, and no date exists (CC-Jun26, p.10). The observation that would move it: a dated second PMY order, or Q4 FY27 sewing revenue above Rs 115 crore without PMY.

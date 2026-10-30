@@ -163,6 +163,6 @@ The business is real: 18.6% revenue CAGR over two years, three years of margin g
 
 **FY28 expected PAT and forward PE. Tier C, trend.** No FY28 guide exists. The delivered revenue CAGR FY24 to FY26 is 18.6% (Prosp, p.208). Mechanism: Phase 1 adds 60,000 tonnes over two years (Deck, p.22). The 5-year aspiration of Rs 2,800-3,000 crore implies 18.7% a year from FY26 (derived: Deck, p.22). At a constant FY27E margin [INFERENCE]: **Rs 188.9 crore**, growth +18.6%, forward PE about **25.4x** (Rs 4,806 crore over Rs 188.9 crore). Higher depreciation from the capex is not in it.
 
-**Confidence.**
-- **FY27: MEDIUM**, about 50%. One reason: the guide equals the Q1 underlying run-rate, about Rs 42 crore of PAT a quarter, but acetone sets the spread. The observation that would move it to HIGH is Q2 FY27 underlying EBITDA at or above Rs 60 crore.
-- **FY28: LOW**, under 40%. One reason: the number needs Phase 1 lines to run on time while the spread stays at FY27 levels. The observation that would move it is the lubricant debottleneck and antibacterial line producing revenue in Q4 FY27 (Call, pp.12, 15).
+**Confidence, as a probability.** The probability that actual PAT for the year lands within 15% of the estimate above. Operator request of 2026-10-30: a percentage, not a band.
+- **FY27: 50%.** One reason: the guide equals the Q1 underlying run-rate, about Rs 42 crore of PAT a quarter, but acetone sets the spread. The observation that would move it to about 70% is Q2 FY27 underlying EBITDA at or above Rs 60 crore.
+- **FY28: 35%.** One reason: the number needs Phase 1 lines to run on time while the spread stays at FY27 levels. The observation that would move it is the lubricant debottleneck and antibacterial line producing revenue in Q4 FY27 (Call, pp.12, 15).

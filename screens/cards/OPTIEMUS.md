@@ -168,6 +168,6 @@ The growth is real for one quarter and one customer. The margin, the cash and th
 
 **FY28 expected PAT and forward PE. Tier C.** Management guides "30%+" revenue growth for FY28 (Deck-Aug, pp.4, 13). Rs 3,600 crore times 1.30 is Rs 4,680 crore. At the 2.40% Q1 margin: **Rs 112.3 crore**, growth +30%, forward PE about **65x** (Rs 7,276 crore over Rs 112.3 crore). One notch weaker than FY27: a guided band on a guided base, with a one-quarter margin carried two years. The guide excludes cover glass and brands (Deck-Aug, p.13).
 
-**Confidence.**
-- **FY27: LOW**, under 40%. One reason: the base is one quarter, about 57% from one customer that started billing in March 2026 (Deck-Aug, p.7). The observation that would move it to MEDIUM: Q2 FY27 revenue at or above Rs 850 crore with PAT at or above Rs 21 crore.
-- **FY28: LOW**, under 30%. One reason: the guide moved twice in three months and ICRA's base case is a third of it (Deck-May, p.3; Deck-Aug, p.4; ICRA-26, p.2). The observation that would move it: a filed BIGTech customer contract with first revenue in H2 FY27.
+**Confidence, as a probability.** The probability that actual PAT for the year lands within 15% of the estimate above. Operator request of 2026-10-30: a percentage, not a band.
+- **FY27: 25%.** One reason: the base is one quarter, about 57% from one customer that started billing in March 2026 (Deck-Aug, p.7). The observation that would move it to about 50%: Q2 FY27 revenue at or above Rs 850 crore with PAT at or above Rs 21 crore.
+- **FY28: 15%.** One reason: the guide moved twice in three months and ICRA's base case is a third of it (Deck-May, p.3; Deck-Aug, p.4; ICRA-26, p.2). The observation that would move it: a filed BIGTech customer contract with first revenue in H2 FY27.

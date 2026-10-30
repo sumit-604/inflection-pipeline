@@ -178,6 +178,6 @@ A Rs 161 crore logistics forwarder trades at 15.3x trailing and about 12x a tren
 
 **FY28 expected PAT and forward PE. Tier C, trend.** No FY28 guidance exists. The same 26.0% rate applied to FY27E gives **Rs 16.72 crore**, growth +26.0%, forward PE about **9.6x** (Rs 161 crore over Rs 16.72 crore). One notch weaker than FY27, because it compounds one audited year's growth twice. The FY23 to FY26 revenue CAGR is only 5.9% (derived: RHP, p.142; FY26 res, p.6), so the trend rests on margin, not volume.
 
-**Confidence.**
-- **FY27: LOW**, about 35%. One reason: the base year's growth came from one half, and the prior first half fell 10.3% (step 8). The observation that would move the band to MEDIUM is H1 FY27 PAT above Rs 5.0 crore with positive half-year operating cash flow.
-- **FY28: LOW**, under 30%. One reason: it compounds a margin trend with no pricing power behind it (step 3) on a balance sheet that converts little profit to cash. The observation that would move it is two consecutive halves of debtor days falling toward the RHP's 160-day target.
+**Confidence, as a probability.** The probability that actual PAT for the year lands within 15% of the estimate above. Operator request of 2026-10-30: a percentage, not a band.
+- **FY27: 35%.** One reason: the base year's growth came from one half, and the prior first half fell 10.3% (step 8). The observation that would move the probability to about 50% is H1 FY27 PAT above Rs 5.0 crore with positive half-year operating cash flow.
+- **FY28: 25%.** One reason: it compounds a margin trend with no pricing power behind it (step 3) on a balance sheet that converts little profit to cash. The observation that would move it is two consecutive halves of debtor days falling toward the RHP's 160-day target.

@@ -165,6 +165,6 @@ The growth is real in the base business and the order book is large. The price a
 
 **FY28 expected PAT and forward PE. Tier C, trend.** No FY28 guidance exists. The FY24 to FY26 PAT CAGR of 17.1% (Deck, p.29; FY26 res, p.15), with the order book as mechanism (AR26, p.3), applied to FY27E gives **Rs 20.25 crore**, growth +17.1%, forward PE about **15.7x** (Rs 317 crore over Rs 20.25 crore). One notch weaker than FY27: a trend set on Rs 9.9 crore of profit carried onto a different order mix.
 
-**Confidence.**
-- **FY27: LOW**, under 40%. One reason: one Rs 175 crore order, 1.4 times FY26 revenue, has no filed execution date, so PAT can land far from Rs 17.29 crore either way. The observation that would move it to MEDIUM is H1 FY27 PAT above Rs 6 crore with the Solarium share of revenue stated.
-- **FY28: LOW**, under 30%. One reason: it compounds a run-rate on a business whose auditor, CFO and related-party structure all changed in 2026. The observation that would move it is a clean FY27 audit by Manubhai & Shah with the related-party loans settled.
+**Confidence, as a probability.** The probability that actual PAT for the year lands within 15% of the estimate above. Operator request of 2026-10-30: a percentage, not a band.
+- **FY27: 30%.** One reason: one Rs 175 crore order, 1.4 times FY26 revenue, has no filed execution date, so PAT can land far from Rs 17.29 crore either way. The observation that would move it to about 50% is H1 FY27 PAT above Rs 6 crore with the Solarium share of revenue stated.
+- **FY28: 20%.** One reason: it compounds a run-rate on a business whose auditor, CFO and related-party structure all changed in 2026. The observation that would move it is a clean FY27 audit by Manubhai & Shah with the related-party loans settled.

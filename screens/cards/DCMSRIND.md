@@ -167,6 +167,6 @@ The listed entity is now the smallest profit pool of the old group, at a multipl
 
 **FY28 expected PAT and forward PE. Tier C, trend.** No FY28 guidance exists. Delivered revenue growth was 7.4% in FY26 (FY26 res, p.7), with distillery output up 7% as the mechanism (AR26, p.31). Applied to FY27E at a constant margin: **Rs 34.9 crore**, growth +7.4%, forward PE about **15.8x** (Rs 550 crore over Rs 34.9 crore). One notch weaker than FY27, because the trend rests on one year and the profit trend is a cycle.
 
-**Confidence.**
-- **FY27: LOW**, under 40%. One reason: restated sugar profit ran Rs 1.76 crore, Rs 30.18 crore and Rs 41.61 crore in three years (CARE-26, p.4; FY26 res, p.7). A 15% band cannot hold that swing. The observation that would move the band to MEDIUM is Q3 FY27 PAT within 15% of Q3 FY26's Rs 11.54 crore, with the Q1 cost rise explained.
-- **FY28: LOW**, under 30%. One reason: it depends on two state prices not yet set, the 2027-28 SAP and the ethanol price (AR26, p.77). The observation that would move it is a filed distillery capacity plan with a capex number.
+**Confidence, as a probability.** The probability that actual PAT for the year lands within 15% of the estimate above. Operator request of 2026-10-30: a percentage, not a band.
+- **FY27: 25%.** One reason: restated sugar profit ran Rs 1.76 crore, Rs 30.18 crore and Rs 41.61 crore in three years (CARE-26, p.4; FY26 res, p.7). A 15% band cannot hold that swing. The observation that would move the probability to about 50% is Q3 FY27 PAT within 15% of Q3 FY26's Rs 11.54 crore, with the Q1 cost rise explained.
+- **FY28: 20%.** One reason: it depends on two state prices not yet set, the 2027-28 SAP and the ethanol price (AR26, p.77). The observation that would move it is a filed distillery capacity plan with a capex number.

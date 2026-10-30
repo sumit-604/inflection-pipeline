@@ -159,6 +159,6 @@ No climb exists to underwrite. The profit is treasury income, the core spread is
 
 **FY28 expected PAT and forward PE. Tier D, NOT FOUND.** No FY28 guidance exists. The only delivered multi-year trend is down: PAT Rs 40.0 crore, Rs 14.79 crore, Rs 9.51 crore over FY24 to FY26 (ICRA-25, p.4; FY26 res, p.3). The issue changes the share count and the treasury base before FY28. Forward PE left blank.
 
-**Confidence.**
-- **FY27: LOW**, under 40%. One reason: the base quarter is other income, not trading profit, and the year leans on Q4. The observation that would move it to MEDIUM is Q2 FY27 EBITDA positive before other income, with H1 PAT above Rs 5.6 crore.
-- **FY28: LOW**, no estimate. The band attaches to the absence of a basis. The observation that would move it is a filed export quota for the 2026-27 sugar season, or a dated diversification target with a rupee figure.
+**Confidence, as a probability.** The probability that actual PAT for the year lands within 15% of the estimate above. Operator request of 2026-10-30: a percentage, not a band.
+- **FY27: 25%.** One reason: the base quarter is other income, not trading profit, and the year leans on Q4. The observation that would move it to about 50% is Q2 FY27 EBITDA positive before other income, with H1 PAT above Rs 5.6 crore.
+- **FY28: no probability.** There is no estimate for actual PAT to fall within 15% of. The observation that would move it is a filed export quota for the 2026-27 sugar season, or a dated diversification target with a rupee figure.

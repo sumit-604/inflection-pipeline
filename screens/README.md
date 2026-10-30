@@ -735,6 +735,13 @@ draws on it.
 SINGERIND. PASS on GRERENEW, DCMSRIND, SAKUMA and OPTIEMUS. Forward table:
 `screens/forward-view-2026-10-30.md`.
 
+**Confidence as a percentage, at the operator's request of 2026-10-30.** The
+step 13 additions state confidence as a probability that actual PAT lands within
+15% of the estimate, as a number (for example 35%), not as HIGH / MEDIUM / LOW.
+Each card's number follows its own stated reason and names the observation that
+would move it. The framework text is unchanged; promoting this, together with
+the 2026-10-29 additions, needs an operator ruling and a framework PR.
+
 **Sources.**
 - screener.in public company pages (no login) for annual reports, transcripts,
   decks and rating links. **The collector could not run.** Its Playwright browser

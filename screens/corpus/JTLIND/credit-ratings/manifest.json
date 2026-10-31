@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 16 Oct 2023 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202310121027_JTL_Industries_Limited.pdf",
+    "file": "01-CARE.pdf",
+    "status": 200,
+    "bytes": 151932
+  },
+  {
+    "index": 2,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 6 Sep 2023 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202309120923_JTL_Industries_Limited.pdf",
+    "file": "02-CARE.pdf",
+    "status": 200,
+    "bytes": 162089
+  },
+  {
+    "index": 3,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 30 Aug 2023 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202308120824_JTL_Industries_Limited.pdf",
+    "file": "03-CARE.pdf",
+    "status": 200,
+    "bytes": 119753
+  },
+  {
+    "index": 4,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 19 Sep 2022 from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/pr-JTL-Infra-19sep22.pdf",
+    "file": "04-Infomerics.pdf",
+    "status": 200,
+    "bytes": 160312
+  },
+  {
+    "index": 5,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 5 Sep 2022 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/05092022072132_JTL_Infra_Limited.pdf",
+    "file": "05-CARE.pdf",
+    "status": 200,
+    "bytes": 130365
+  },
+  {
+    "index": 6,
+    "agency": "other",
+    "kind": "html+txt",
+    "link_text": "Rating update 13 Dec 2021 from brickwork",
+    "url": "http://bcrisp.in///BLRHTML/HTMLDocument/ViewRatingRationaleWD?id=42691",
+    "file": "06-other.html",
+    "status": 200,
+    "bytes": 41921
+  }
+]

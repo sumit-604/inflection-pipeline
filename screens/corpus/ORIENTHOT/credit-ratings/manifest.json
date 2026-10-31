@@ -1,0 +1,59 @@
+[
+  {
+    "index": 1,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 2 Sep from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202609120958_Oriental_Hotels_Limited.pdf",
+    "file": "01-CARE.pdf",
+    "status": 200,
+    "bytes": 235738
+  },
+  {
+    "index": 2,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 2 Sep from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=145423",
+    "file": "02-ICRA.html",
+    "status": 200,
+    "bytes": 172699
+  },
+  {
+    "index": 3,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 3 Mar from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=141385",
+    "file": "03-ICRA.html",
+    "status": 200,
+    "bytes": 172623
+  },
+  {
+    "index": 4,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 1 Dec 2025 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202512131257_Oriental_Hotels_Limited.pdf",
+    "file": "04-CARE.pdf",
+    "status": 200,
+    "bytes": 212656
+  },
+  {
+    "index": 5,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 9 Sep 2025 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=137499",
+    "file": "05-ICRA.html",
+    "status": 200,
+    "bytes": 172625
+  },
+  {
+    "index": 6,
+    "agency": "CARE",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202409120903_Oriental_Hotels_Limited.pdf",
+    "link_text": "Rating update 25 Sep 2024 from care",
+    "error": "('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))"
+  }
+]

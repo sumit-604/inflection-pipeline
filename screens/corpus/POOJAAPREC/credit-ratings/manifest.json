@@ -1,0 +1,22 @@
+[
+  {
+    "index": 1,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 10 Aug from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/PoojaaPrecisionEnggLimited_August 10_ 2026_RR_402184.html",
+    "file": "01-CRISIL.html",
+    "status": 200,
+    "bytes": 73151
+  },
+  {
+    "index": 2,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 27 Jul from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/PoojaaPrecisionEnggLimited_July 27_ 2026_RR_400219.html",
+    "file": "02-CRISIL.html",
+    "status": 200,
+    "bytes": 152145
+  }
+]

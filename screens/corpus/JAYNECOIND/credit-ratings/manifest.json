@@ -1,0 +1,56 @@
+[
+  {
+    "index": 1,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/81373",
+    "link_text": "Rating update 5 Feb from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 2,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/78724",
+    "link_text": "Rating update 21 Aug 2025 from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 3,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/70226",
+    "link_text": "Rating update 24 May 2024 from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 4,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 24 Jan 2024 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202401130118_Jayaswal_Neco_Industries_Limited.pdf",
+    "file": "04-CARE.pdf",
+    "status": 200,
+    "bytes": 140880
+  },
+  {
+    "index": 5,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 2 Jan 2024 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202401150120_Jayaswal_Neco_Industries_Limited.pdf",
+    "file": "05-CARE.pdf",
+    "status": 200,
+    "bytes": 166853
+  },
+  {
+    "index": 6,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 26 Dec 2022 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/26122022064949_Jayaswal_Neco_Industries_Limited.pdf",
+    "file": "06-CARE.pdf",
+    "status": 200,
+    "bytes": 149397
+  }
+]

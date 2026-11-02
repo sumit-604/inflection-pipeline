@@ -148,3 +148,9 @@ Bottom decile of history:
 
 
 <!-- market-read -->
+
+## Market read
+
+The market swung hard both ways across two sessions. On Friday 285 stocks fell four and a half percent or more, and only 47 rose that hard. On Monday 242 rose that hard and 61 fell. The short trend count dropped from 614 to 491 on Friday, then jumped to 712 on Monday. That is the best reading since the October repair. The long count held well above the 23 October low and closed at 678, about three stocks in ten. The Nifty rose about 1.7 percent, led by oil and gas, metals and infrastructure. Reliance alone rose more than eleven percent. The money tells the same story it told last week. Friday's selling carried about 609 crore of turnover. Monday's buying carried about 494. The heavy selling days of 23 and 30 October each carried more money than any buying day since mid October. The large names hold their long trends far better than the broad market. The bounce survived its first real test, but buyers have still not shown up in size.
+
+Full brief: briefs/2026-11-02.html

@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 6 Jun 2023 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=120308",
+    "file": "01-ICRA.html",
+    "status": 200,
+    "bytes": 171691
+  },
+  {
+    "index": 2,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 25 Jan 2023 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=117555",
+    "file": "02-ICRA.html",
+    "status": 200,
+    "bytes": 171718
+  },
+  {
+    "index": 3,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 5 May 2022 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=111589",
+    "file": "03-ICRA.html",
+    "status": 200,
+    "bytes": 171720
+  },
+  {
+    "index": 4,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 30 Mar 2021 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=102335",
+    "file": "04-ICRA.html",
+    "status": 200,
+    "bytes": 171751
+  },
+  {
+    "index": 5,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 11 Mar 2020 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=93076",
+    "file": "05-ICRA.html",
+    "status": 200,
+    "bytes": 171689
+  },
+  {
+    "index": 6,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 28 Dec 2018 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=76204",
+    "file": "06-ICRA.html",
+    "status": 200,
+    "bytes": 171749
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 3 Jul from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SimmondsMarshallLimited_July 03_ 2026_RR_399052.html",
+    "file": "01-CRISIL.html",
+    "status": 200,
+    "bytes": 141248
+  },
+  {
+    "index": 2,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 2 Mar from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202603120304_Simmonds_Marshall_Limited.pdf",
+    "file": "02-CARE.pdf",
+    "status": 200,
+    "bytes": 210339
+  },
+  {
+    "index": 3,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 5 Sep 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SimmondsMarshallLimited_September 05_ 2025_RR_376692.html",
+    "file": "03-CRISIL.html",
+    "status": 200,
+    "bytes": 94484
+  },
+  {
+    "index": 4,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 30 Aug 2024 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SimmondsMarshallLimited_August 30_ 2024_RR_351080.html",
+    "file": "04-CRISIL.html",
+    "status": 200,
+    "bytes": 97280
+  },
+  {
+    "index": 5,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 20 Jun 2023 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SimmondsMarshallLimited_June 20, 2023_RR_321115.html",
+    "file": "05-CRISIL.html",
+    "status": 200,
+    "bytes": 106420
+  },
+  {
+    "index": 6,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 4 Jul 2022 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SimmondsMarshallLimited_July 04, 2022_RR_277525.html",
+    "file": "06-CRISIL.html",
+    "status": 200,
+    "bytes": 116058
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 8 Jul from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202607120722_Rajapalayam_Mills_Limited.pdf",
+    "file": "01-CARE.pdf",
+    "status": 200,
+    "bytes": 232541
+  },
+  {
+    "index": 2,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 8 Dec 2025 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202512141214_Rajapalayam_Mills_Limited.pdf",
+    "file": "02-CARE.pdf",
+    "status": 200,
+    "bytes": 211917
+  },
+  {
+    "index": 3,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 21 Aug 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/RajapalayamMillsLimited_August 21_ 2025_RR_376260.html",
+    "file": "03-CRISIL.html",
+    "status": 200,
+    "bytes": 131004
+  },
+  {
+    "index": 4,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 27 May 2025 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202505120527_Rajapalayam_Mills_Limited.pdf",
+    "file": "04-CARE.pdf",
+    "status": 200,
+    "bytes": 174160
+  },
+  {
+    "index": 5,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 16 Apr 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/RajapalayamMillsLimited_April 16_ 2025_RR_367110.html",
+    "file": "05-CRISIL.html",
+    "status": 200,
+    "bytes": 141830
+  },
+  {
+    "index": 6,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 1 Oct 2024 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/RajapalayamMillsLimited_October 01_ 2024_RR_350222.html",
+    "file": "06-CRISIL.html",
+    "status": 200,
+    "bytes": 175078
+  }
+]

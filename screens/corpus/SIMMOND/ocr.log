@@ -1,0 +1,14 @@
+Q1FY27_Jun2026.pdf: 11pp | corrupt 11 | cached 0 | todo 11 | 200dpi | budget 480s
+  page 1 ocr failed: FileNotFoundError
+  page 3 ocr failed: FileNotFoundError
+  page 4 ocr failed: FileNotFoundError
+  page 2 ocr failed: FileNotFoundError
+  page 5 ocr failed: FileNotFoundError
+  page 6 ocr failed: FileNotFoundError
+  page 8 ocr failed: FileNotFoundError
+  page 7 ocr failed: FileNotFoundError
+  page 10 ocr failed: FileNotFoundError
+  page 9 ocr failed: FileNotFoundError
+  page 11 ocr failed: FileNotFoundError
+  span 1-11 (11pp) | cached 0/11 | 9s
+wrote Q1FY27_Jun2026.txt: ok=0 still_corrupt=11 clean=0

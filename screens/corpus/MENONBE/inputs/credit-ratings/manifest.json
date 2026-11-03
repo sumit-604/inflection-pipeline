@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 23 Apr from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/MenonBearingsLimited_April 23_ 2026_RR_385495.html",
+    "file": "01-CRISIL.html",
+    "status": 200,
+    "bytes": 143841
+  },
+  {
+    "index": 2,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 23 Jan 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/MenonBearingsLimited_January 23_ 2025_RR_356300.html",
+    "file": "02-CRISIL.html",
+    "status": 200,
+    "bytes": 101300
+  },
+  {
+    "index": 3,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 26 Oct 2023 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/MenonBearingsLimited_October 26, 2023_RR_324602.html",
+    "file": "03-CRISIL.html",
+    "status": 200,
+    "bytes": 94252
+  },
+  {
+    "index": 4,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 2 Aug 2022 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/MenonBearingsLimited_August 02, 2022_RR_292330.html",
+    "file": "04-CRISIL.html",
+    "status": 200,
+    "bytes": 89090
+  },
+  {
+    "index": 5,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 24 May 2021 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/MenonBearingsLimited_May 24, 2021_RR_260398.html",
+    "file": "05-CRISIL.html",
+    "status": 200,
+    "bytes": 71045
+  },
+  {
+    "index": 6,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 24 Feb 2020 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/Menon_Bearings_Limited_February_24_2020_RR.html",
+    "file": "06-CRISIL.html",
+    "status": 200,
+    "bytes": 58058
+  }
+]

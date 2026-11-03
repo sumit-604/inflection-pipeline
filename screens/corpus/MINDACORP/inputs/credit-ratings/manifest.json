@@ -1,0 +1,56 @@
+[
+  {
+    "index": 1,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/84772",
+    "link_text": "Rating update 7 Aug from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 2,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 9 Jun from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/MindaCorporationLimited_June 09_ 2026_RR_398006.html",
+    "file": "02-CRISIL.html",
+    "status": 200,
+    "bytes": 74265
+  },
+  {
+    "index": 3,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 24 Apr from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/MindaCorporationLimited_April 24_ 2026_RR_394268.html",
+    "file": "03-CRISIL.html",
+    "status": 200,
+    "bytes": 163797
+  },
+  {
+    "index": 4,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/78195",
+    "link_text": "Rating update 8 Aug 2025 from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 5,
+    "agency": "IndiaRatings",
+    "url": "https://www.indiaratings.co.in/pressrelease/76307",
+    "link_text": "Rating update 23 Apr 2025 from fitch",
+    "kind": "shell",
+    "status": 200
+  },
+  {
+    "index": 6,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 24 Jan 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/MindaCorporationLimited_January 24_ 2025_RR_361358.html",
+    "file": "06-CRISIL.html",
+    "status": 200,
+    "bytes": 115771
+  }
+]

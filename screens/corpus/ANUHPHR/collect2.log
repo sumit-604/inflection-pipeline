@@ -1,0 +1,41 @@
+
+============================================================
+  SCREENER.IN COLLECTOR  (peer mode)
+============================================================
+  https://www.screener.in/company/ANUHPHR/
+
+  Downloading Excel (Financials.xlsx) -> ..\..\screens\corpus\ANUHPHR\inputs\_raw ...
+  OK  Financials.xlsx  (32 KB)  -> ..\..\screens\corpus\ANUHPHR\inputs\_raw\Financials.xlsx
+
+  Company: 
+  Peer output folder: ..\..\screens\corpus\ANUHPHR\inputs\_raw
+
+  Downloading Annual Reports -> _raw (up to 2) ...
+  OK  Annual Report Annual_Report_2026  (23617 KB)
+  OK  Annual Report Annual_Report_2025  (16900 KB)
+
+  Downloading Concall Transcripts -> _raw (up to 4) ...
+  OK  Concall_May_2022_Transcript  (94 KB)
+  OK  Concall_Feb_2022_Transcript  (155 KB)
+  OK  Concall_Nov_2021_Transcript  (127 KB)
+  OK  Concall_Aug_2021_Transcript  (83 KB)
+
+  Downloading Investor Presentation -> _raw ...
+  OK  Presentation 1  (3276 KB)
+
+============================================================
+  DOWNLOAD COMPLETE
+
+  _raw/  (8 files)
+    Annual_Report_2025.pdf  (16900 KB)
+    Annual_Report_2026.pdf  (23617 KB)
+    Concall_Aug_2021_Transcript.pdf  (83 KB)
+    Concall_Feb_2022_Transcript.pdf  (155 KB)
+    Concall_May_2022_Transcript.pdf  (94 KB)
+    Concall_Nov_2021_Transcript.pdf  (127 KB)
+    Financials.xlsx  (32 KB)
+    Investor_Presentation_1.pdf  (3276 KB)
+============================================================
+
+  All done.
+

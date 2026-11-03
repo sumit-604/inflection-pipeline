@@ -281,3 +281,53 @@ Each agent starts in a fresh context, so one company's documents never inflate
 another's cost. Corpus files from these runs sit under
 `corpus/<TICKER>/inputs/<category>/` (the layout `tools/extract_pdfs.py`
 expects); earlier corpora keep their top-level category folders.
+
+## Run, 2026-11-04
+
+First `/shallow` run: 19 names, 3 complete and 16 partial corpora, none blocked.
+Verdicts: PROCEED 0, WATCH 16, PASS 3 (SCAGRO, CKKRETAIL, AVANCE). The run table
+is `forward-view-2026-11-04.md`. Cheapest real candidate: SHREEPUSHK at about
+16.9x on +52% to +80% (tier A), still a WATCH.
+
+Corpus gaps that recurred:
+
+- No concall transcripts, or none newer than 2022-23, for most small caps.
+- No credit rating text: screener lists no link, or the ICRA/India Ratings pages
+  are JS shells (ANUHPHR, TASTYBITE) and need a browser render.
+- NSE-only names (CREDENT, CKKRETAIL, GRCL) have no BSE route; NSE document
+  links return 403 to curl and requests. The agent rightly did not circumvent it.
+- Scanned result PDFs unreadable (SIMMOND Q1, AVANCE Q2) and image-only result
+  tables (TASTYBITE); card agents used the deck or screener export instead.
+- No shareholding pattern, so promoter pledge is NOT FOUND on most cards.
+
+Reader and collector defects found:
+
+1. **Headed Chromium cannot launch in an agent shell** (`spawn UNKNOWN`). Fixed
+   in `b1d56940` with `SCREENER_HEADLESS=1`. Agent definitions load at session
+   start, so this session's agents ran the old definition for the first three
+   companies until the env var was put in each dispatch prompt.
+2. **`Financials.xlsx` is binary** and card agents cannot read it; the first
+   GRCL card was written blind. Text dumps (`Financials.txt`) were generated
+   for all corpora. Only the Data Sheet tab carries values; the other tabs are
+   formula shells with no cached values. Sheet markers in the dumps vary
+   (`## name` vs `===== SHEET name =====`).
+3. **Collector prints a blank `Company:`** on every run (first `<h1>` is nested).
+4. **`/consolidated/` has no Excel export for some names** (ANUHPHR); rerun on
+   `/company/<TICKER>/`. TASTYBITE's export button was not found at all.
+5. **`extract_pdfs.py` writes `[page n]` markers**, not the `===== PAGE n =====`
+   markers the README and manifests state, and does not rewrite collector
+   `.txt` files. It also floods output with fontTools warnings.
+6. **`ocr_repair.py` fails** with FileNotFoundError (OCR binary or rasteriser
+   missing), needs `PYTHONUTF8=1`, and takes two arguments.
+7. **BSE access.** Plain curl gets Akamai Access Denied; python requests with
+   Origin, Referer and User-Agent works. `AttachLive` works with `curl -e
+   <referer>` (not `-H Referer:`); older files need `AttachHis`. The
+   `AnnSubCategoryGetData` API rejects ranges over 12 months and `strCat=Result`
+   can return 0 rows.
+8. **Wrong or mislabelled documents:** TCPLPACK `03-ICRA.txt` never mentions
+   TCPL; PRASOLCHEM `Concall_Nov_2026` is the Q1 call of 29-Sep; ZELIO's
+   annual report text is mostly font glyph IDs, though the manifest calls it
+   clean; MINDACORP's presentation 1 duplicates the Q2 deck.
+9. **Bull AI board labels wrong:** ZELIO and PURPLEWAVE are BSE SME (per their
+   own filings), not main board as the Bull AI record has it.
+10. Card length: nearly every card ran over the 1,900-word target and said so.

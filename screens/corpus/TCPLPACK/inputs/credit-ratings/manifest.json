@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 21 May from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/TCPLPackagingLimited_May 21_ 2026_RR_394995.html",
+    "file": "01-CRISIL.html",
+    "status": 200,
+    "bytes": 167877
+  },
+  {
+    "index": 2,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 11 Sep 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/TCPLPackagingLimited_September 11_ 2025_RR_376808.html",
+    "file": "02-CRISIL.html",
+    "status": 200,
+    "bytes": 132239
+  },
+  {
+    "index": 3,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 27 Aug 2025 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=137263",
+    "file": "03-ICRA.html",
+    "status": 200,
+    "bytes": 171673
+  },
+  {
+    "index": 4,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 10 Jul 2025 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/TCPLPackagingLimited_July 10_ 2025_RR_373825.html",
+    "file": "04-CRISIL.html",
+    "status": 200,
+    "bytes": 80344
+  },
+  {
+    "index": 5,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 1 Aug 2024 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/TCPLPackagingLimited_August 01_ 2024_RR_349871.html",
+    "file": "05-CRISIL.html",
+    "status": 200,
+    "bytes": 132538
+  },
+  {
+    "index": 6,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 9 Jul 2024 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/TCPLPackagingLimited_July 09_ 2024_RR_348149.html",
+    "file": "06-CRISIL.html",
+    "status": 200,
+    "bytes": 37100
+  }
+]

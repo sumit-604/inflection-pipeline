@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 5 Mar from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/PR_Wanbury05March26.pdf",
+    "file": "01-Infomerics.pdf",
+    "status": 200,
+    "bytes": 284345
+  },
+  {
+    "index": 2,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 3 Dec 2025 from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/Pr-Wanbury-3Dec25.pdf",
+    "file": "02-Infomerics.pdf",
+    "status": 200,
+    "bytes": 219402
+  },
+  {
+    "index": 3,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 1 Oct 2024 from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/pr-Wanbury-1oct24.pdf",
+    "file": "03-Infomerics.pdf",
+    "status": 200,
+    "bytes": 159069
+  },
+  {
+    "index": 4,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 1 Sep 2022 from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/pr-Wanbury-Limited-1sep22.pdf",
+    "file": "04-Infomerics.pdf",
+    "status": 200,
+    "bytes": 180868
+  }
+]

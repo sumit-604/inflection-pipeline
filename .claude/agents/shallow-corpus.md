@@ -22,7 +22,7 @@ screener.in URL if known.
    code and ISIN in the manifest. If the name is ambiguous (two listed companies
    match), stop and report it; do not guess.
 2. Collect from screener.in, with the operator's login from tools/collector/.env:
-   `cd tools/collector && PYTHONUTF8=1 python screener_collect.py <url> --no-drive --output-dir ../../screens/corpus/<TICKER>/inputs/_raw > ../../screens/corpus/<TICKER>/collect.log 2>&1`
+   `cd tools/collector && SCREENER_HEADLESS=1 PYTHONUTF8=1 python screener_collect.py <url> --no-drive --output-dir ../../screens/corpus/<TICKER>/inputs/_raw > ../../screens/corpus/<TICKER>/collect.log 2>&1`
    Read only the tail of the log. Then move each file into
    `screens/corpus/<TICKER>/inputs/<category>/`, categories: annual-report,
    results, concalls, presentations, credit-ratings, filings, screening

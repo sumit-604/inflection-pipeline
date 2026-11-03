@@ -84,7 +84,10 @@ def download_excel_via_browser(email, password, url, dest_folder):
     """Login, go to company page, click Export to Excel, save to dest_folder."""
     print(f"\n  Downloading Excel (Financials.xlsx) -> {dest_folder} ...")
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False, slow_mo=200)
+        # SCREENER_HEADLESS=1 for agent shells, where a headed launch fails
+        # with "spawn UNKNOWN"; the operator's manual runs keep the window.
+        headless = os.getenv("SCREENER_HEADLESS") == "1"
+        browser = p.chromium.launch(headless=headless, slow_mo=0 if headless else 200)
         context = browser.new_context(
             accept_downloads=True,
             viewport={"width": 1280, "height": 900}

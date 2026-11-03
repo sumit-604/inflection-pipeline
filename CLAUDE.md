@@ -90,6 +90,10 @@ target, 3-5 year holds.
   10 assembly, verifier D, quarterly A2; effort high (set in the file):
   verifier A; effort low: quarterly A1; default (high): stages 2, 3, 5,
   7, 8, 9
+- Shallow funnel (/shallow, operator ruling 2026-11-04): shallow-corpus on
+  claude-sonnet-5-5 effort low (collect, classify, extract, manifest; reads
+  no document past page 1); shallow-card on claude-opus-5-5 effort high
+  (the card). Start the /shallow orchestrating session on Sonnet 5.5.
 - claude-haiku-5-5 (Haiku 5.5), effort medium: stage-00-intake-check
   (stage 0 document identity and file-type check; proposes, the orchestrator
   verifies); effort high: verifier-a-shadow, one Phase 1 only, findings count

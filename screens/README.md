@@ -265,3 +265,19 @@ than after:
 
 Two names returned zero guidance records, which is itself a finding recorded on
 both cards: **MARINE** and **AVTNPL**.
+
+## How a run is dispatched, from 2026-11-04 (operator ruling)
+
+`/shallow <names>` replaces the single-session runs above. The work is split by
+model to save tokens:
+
+| Piece | Model | Does |
+|---|---|---|
+| `/shallow` session | Sonnet 5.5 | Resolves identities and market caps, dispatches agents, writes the run table and this README's run note, commits |
+| `shallow-corpus` agent | Sonnet 5.5, effort low | One company: screener.in collector, BSE results, rating rationales, page-marked .txt, `MANIFEST.md` |
+| `shallow-card` agent | Opus 5.5, effort high | One company: reads the corpus, writes `cards/<TICKER>.md` per the framework |
+
+Each agent starts in a fresh context, so one company's documents never inflate
+another's cost. Corpus files from these runs sit under
+`corpus/<TICKER>/inputs/<category>/` (the layout `tools/extract_pdfs.py`
+expects); earlier corpora keep their top-level category folders.

@@ -1,12 +1,12 @@
-# Breadth facts sheet: 2026-11-03
+# Breadth facts sheet: 2026-11-04
 
 Computed from the 34 Chartink table exports for this trade date. Numbers only. No conclusion is drawn here.
 
 ## 0. Data check
 
-- Trade date folder: 2026-11-03
+- Trade date folder: 2026-11-04
 - Files present: 34 of 34
-- Latest date stamps seen across files: 2026-11-03
+- Latest date stamps seen across files: 2026-11-04
 
 ## 1. Breadth regime (market-wide, with history)
 
@@ -16,69 +16,69 @@ Percentile is the rank of the latest reading against that series' own history (s
 
 | Metric | Latest | 1d | 5d | 20d | Pctile | 20d range | Last 5 (oldest to newest) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| % above 10 EMA | 45.70 | +4.84 | +21.25 | +21.80 | 62 | 7.07 to 46.65 | 29.79 / 37.55 / 25.77 / 40.86 / 45.70 |
-| % above 20 EMA | 32.91 | +4.95 | +14.72 | +8.65 | 34 | 7.86 to 36.47 | 20.31 / 24.66 / 19.85 / 27.96 / 32.91 |
-| % above 50 EMA | 24.56 | +2.95 | +6.48 | -5.81 | 17 | 11.12 to 35.33 | 18.97 / 21.75 / 17.56 / 21.61 / 24.56 |
-| % above 200 EMA | 30.48 | +1.42 | +2.06 | -8.47 | 27 | 24.68 to 41.53 | 28.57 / 29.93 / 27.19 / 29.06 / 30.48 |
+| % above 10 EMA | 66.96 | +20.84 | +37.23 | +28.52 | 87 | 7.03 to 66.96 | 37.21 / 25.26 / 40.98 / 46.12 / 66.96 |
+| % above 20 EMA | 48.02 | +15.09 | +27.98 | +15.30 | 68 | 7.71 to 48.02 | 24.44 / 19.30 / 27.85 / 32.93 / 48.02 |
+| % above 50 EMA | 30.89 | +6.69 | +12.54 | -3.51 | 29 | 11.12 to 35.00 | 21.45 / 16.93 / 21.16 / 24.20 / 30.89 |
+| % above 200 EMA | 34.22 | +3.99 | +5.62 | -7.34 | 31 | 24.97 to 41.32 | 29.79 / 27.00 / 28.78 / 30.23 / 34.22 |
 
 ### MBM 2.0 (velocity) - basic
 
 | Metric | Latest | 1d | 5d | 20d | Pctile | 20d range | Last 5 (oldest to newest) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| 4% advancers (% of mkt) | 8.40 | -7.02 | -8.94 | +2.13 | 82 | 1.34 to 17.33 | 7.63 / 10.03 / 3.83 / 15.41 / 8.40 |
-| 4% decliners (% of mkt) | 4.24 | +0.04 | +0.74 | -1.79 | 73 | 1.74 to 26.95 | 3.97 / 3.07 / 17.88 / 4.20 / 4.24 |
-| Net breadth (adv minus dec) | 4.16 | -7.06 | -9.68 | +3.92 | 67 | -24.68 to 13.84 | 3.66 / 6.96 / -14.05 / 11.22 / 4.16 |
-| Stocks in <3% daily range (%) | 28.13 | +6.80 | +6.27 | -0.07 | 18 | 8.53 to 42.24 | 31.56 / 33.62 / 23.24 / 21.33 / 28.13 |
-| Stocks in <4% 5-day range (%) | 1.65 | -0.55 | +0.82 | -0.28 | 15 | 0.59 to 6.62 | 1.26 / 1.22 / 2.01 / 2.20 / 1.65 |
-| Volume expansion ratio (hi-vol / lo-vol) | 0.54 | +0.07 | +0.16 | +0.20 | 64 | 0.28 to 1.17 | 0.30 / 0.35 / 0.45 / 0.47 / 0.54 |
-| +15% in 5 days (%) | 1.84 | -1.25 | +1.25 | +0.15 | 47 | 0.59 to 3.10 | 1.10 / 2.01 / 2.96 / 3.10 / 1.84 |
-| -10% in 5 days (%) | 2.43 | +0.04 | -9.12 | -3.20 | 60 | 1.66 to 27.87 | 5.12 / 3.34 / 2.92 / 2.39 / 2.43 |
-| >10% above 10 EMA (%) | 0.94 | +0.20 | +0.39 | -0.56 | 26 | 0.39 to 2.17 | 0.71 / 1.14 / 0.95 / 0.75 / 0.94 |
-| >10% below 10 EMA (%) | 0.71 | -0.55 | -1.81 | -0.36 | 72 | 0.63 to 7.35 | 1.93 / 1.30 / 2.13 / 1.25 / 0.71 |
+| 4% advancers (% of mkt) | 18.10 | +9.80 | +10.72 | +5.76 | 97 | 1.26 to 18.10 | 9.65 / 3.55 / 15.61 / 8.31 / 18.10 |
+| 4% decliners (% of mkt) | 2.53 | -1.35 | -1.05 | +0.72 | 42 | 1.35 to 26.57 | 2.91 / 18.32 / 3.87 / 3.88 / 2.53 |
+| Net breadth (adv minus dec) | 15.57 | +11.14 | +11.77 | +5.04 | 97 | -24.34 to 15.57 | 6.74 / -14.77 / 11.74 / 4.43 / 15.57 |
+| Stocks in <3% daily range (%) | 21.81 | -6.98 | -10.20 | -18.35 | 11 | 8.34 to 43.68 | 34.43 / 23.74 / 21.54 / 28.79 / 21.81 |
+| Stocks in <4% 5-day range (%) | 1.43 | -0.25 | +0.17 | -0.97 | 14 | 0.59 to 6.95 | 1.26 / 2.07 / 2.23 / 1.69 / 1.43 |
+| Volume expansion ratio (hi-vol / lo-vol) | 0.72 | +0.16 | +0.41 | +0.36 | 80 | 0.29 to 1.28 | 0.36 / 0.49 / 0.48 / 0.57 / 0.72 |
+| +15% in 5 days (%) | 2.78 | +0.89 | +1.69 | +0.30 | 74 | 0.59 to 3.20 | 1.85 / 2.88 / 3.20 / 1.90 / 2.78 |
+| -10% in 5 days (%) | 1.81 | -0.67 | -3.08 | -0.59 | 52 | 1.47 to 28.13 | 3.16 / 2.92 / 2.44 / 2.49 / 1.81 |
+| >10% above 10 EMA (%) | 1.48 | +0.55 | +0.76 | -0.17 | 51 | 0.34 to 1.98 | 1.14 / 0.97 / 0.76 / 0.93 / 1.48 |
+| >10% below 10 EMA (%) | 0.55 | -0.13 | -1.31 | -0.34 | 60 | 0.55 to 7.07 | 1.14 / 2.07 / 1.18 / 0.67 / 0.55 |
 
 ### MBM 2.0 (velocity) - advanced
 
 | Metric | Latest | 1d | 5d | 20d | Pctile | 20d range | Last 5 (oldest to newest) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Breakouts (high >= +4% vs prev close, %) | 26.90 | -9.41 | -11.10 | +7.46 | 92 | 7.95 to 37.99 | 19.78 / 22.04 / 11.85 / 36.31 / 26.90 |
-| Breakdowns (low <= -4%, %) | 10.54 | -1.62 | +3.08 | -2.31 | 67 | 5.69 to 68.51 | 12.70 / 9.57 / 34.19 / 12.16 / 10.54 |
-| Up-close share of breakouts (%) | 30.88 | -12.11 | -14.36 | -1.30 | 24 | 14.22 to 47.88 | 37.31 / 43.98 / 30.36 / 42.99 / 30.88 |
-| Down-close share of breakdowns (%) | 36.40 | +4.22 | -5.97 | -7.06 | 63 | 23.70 to 53.59 | 28.24 / 30.40 / 53.59 / 32.18 / 36.40 |
-| New 52wk highs (%) | 1.22 | -0.25 | +0.59 | -0.46 | 29 | 0.25 to 2.40 | 0.76 / 1.26 / 1.48 / 1.47 / 1.22 |
-| New 52wk lows (%) | 1.81 | -1.59 | -1.73 | -1.67 | 62 | 1.01 to 17.77 | 3.54 / 2.61 / 6.26 / 3.41 / 1.81 |
-| Net new highs minus lows | -0.59 | +1.35 | +2.32 | +1.21 | 33 | -17.52 to 0.55 | -2.78 / -1.35 / -4.78 / -1.94 / -0.59 |
-| Within 15% of 52wk high (%) | 12.18 | +0.99 | +1.15 | -7.88 | 14 | 7.37 to 22.28 | 10.67 / 12.09 / 10.16 / 11.19 / 12.18 |
-| Within 15% of 52wk low (%) | 34.27 | -0.98 | -2.96 | +3.63 | 76 | 29.39 to 40.80 | 36.65 / 35.61 / 37.71 / 35.25 / 34.27 |
-| Net 15% H minus L | -22.09 | +1.97 | +4.11 | -11.51 | 19 | -33.43 to -7.71 | -25.98 / -23.51 / -27.55 / -24.06 / -22.09 |
-| Within 30% of 52wk high (%) | 44.52 | +0.93 | +1.47 | -5.40 | 40 | 39.66 to 51.79 | 43.32 / 43.95 / 41.47 / 43.58 / 44.52 |
-| Within 30% of 52wk low (%) | 54.60 | +0.45 | -1.09 | +7.24 | 71 | 46.02 to 57.77 | 56.09 / 54.95 / 56.71 / 54.14 / 54.60 |
-| Net 30% H minus L | -10.08 | +0.48 | +2.56 | -12.64 | 29 | -18.11 to 5.56 | -12.78 / -11.00 / -15.23 / -10.56 / -10.08 |
+| Breakouts (high >= +4% vs prev close, %) | 34.13 | +7.28 | +14.40 | +8.37 | 95 | 7.95 to 37.95 | 22.00 / 11.81 / 36.31 / 26.86 / 34.13 |
+| Breakdowns (low <= -4%, %) | 9.62 | -0.96 | -3.03 | +3.73 | 61 | 5.69 to 68.51 | 9.57 / 34.19 / 12.12 / 10.58 / 9.62 |
+| Up-close share of breakouts (%) | 53.03 | +22.10 | +15.64 | +5.15 | 98 | 14.22 to 53.03 | 43.87 / 30.11 / 42.99 / 30.93 / 53.03 |
+| Down-close share of breakdowns (%) | 26.32 | -10.34 | -2.02 | -4.40 | 14 | 23.70 to 53.59 | 30.40 / 53.59 / 31.94 / 36.65 / 26.32 |
+| New 52wk highs (%) | 1.60 | +0.38 | +0.84 | -0.63 | 46 | 0.25 to 2.40 | 1.26 / 1.48 / 1.47 / 1.22 / 1.60 |
+| New 52wk lows (%) | 1.56 | -0.29 | -1.98 | -0.54 | 59 | 1.01 to 17.77 | 2.61 / 6.26 / 3.41 / 1.85 / 1.56 |
+| Net new highs minus lows | 0.04 | +0.67 | +2.83 | -0.08 | 41 | -17.52 to 0.55 | -1.35 / -4.78 / -1.94 / -0.63 / 0.04 |
+| Within 15% of 52wk high (%) | 14.60 | +2.42 | +3.93 | -7.00 | 25 | 7.37 to 22.28 | 12.09 / 10.16 / 11.19 / 12.18 / 14.60 |
+| Within 15% of 52wk low (%) | 30.38 | -3.90 | -6.31 | +0.91 | 70 | 29.39 to 40.84 | 35.65 / 37.75 / 35.30 / 34.27 / 30.38 |
+| Net 15% H minus L | -15.78 | +6.31 | +10.24 | -7.91 | 26 | -33.47 to -7.71 | -23.56 / -27.59 / -24.11 / -22.09 / -15.78 |
+| Within 30% of 52wk high (%) | 47.34 | +2.82 | +4.03 | -4.24 | 60 | 39.66 to 51.79 | 43.95 / 41.47 / 43.58 / 44.52 / 47.34 |
+| Within 30% of 52wk low (%) | 52.36 | -2.27 | -3.73 | +6.34 | 69 | 46.42 to 57.77 | 54.99 / 56.75 / 54.19 / 54.64 / 52.36 |
+| Net 30% H minus L | -5.02 | +5.10 | +7.76 | -10.58 | 37 | -18.11 to 4.97 | -11.04 / -15.28 / -10.60 / -10.12 / -5.02 |
 
 ### Market Breadth_ Number above 500 indicates trend reversal
 
 | Metric | Latest | 1d | 5d | 20d | Pctile | 20d range | Last 5 (oldest to newest) |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Count up 4.5%+ today | 131.00 | -121.00 | -156.00 | +26.00 | 84 | 22.00 to 287.00 | 110.00 / 151.00 / 51.00 / 252.00 / 131.00 |
-| Count down 4.5%+ today | 56.00 | -12.00 | +14.00 | -18.00 | 76 | 10.00 to 409.00 | 57.00 / 48.00 / 295.00 / 68.00 / 56.00 |
-| Count up 20%+ in 5d | 16.00 | -8.00 | +8.00 | +4.00 | 55 | 7.00 to 30.00 | 13.00 / 17.00 / 27.00 / 24.00 / 16.00 |
-| Count down 20%+ in 5d | 1.00 | -1.00 | -13.00 | -6.00 | 43 | 1.00 to 33.00 | 7.00 / 3.00 / 1.00 / 2.00 / 1.00 |
-| Count above 20 DMA | 897.00 | +163.00 | +461.00 | +369.00 | 45 | 185.00 to 897.00 | 480.00 / 638.00 / 511.00 / 734.00 / 897.00 |
-| Count below 20 DMA | 1,416.00 | -161.00 | -476.00 | -385.00 | 71 | 1,416.00 to 2,144.00 | 1,848.00 / 1,690.00 / 1,797.00 / 1,577.00 / 1,416.00 |
-| Count above 50 DMA | 643.00 | +92.00 | +215.00 | -35.00 | 21 | 264.00 to 799.00 | 442.00 / 525.00 / 418.00 / 551.00 / 643.00 |
-| Count below 50 DMA | 1,669.00 | -91.00 | -231.00 | +18.00 | 90 | 1,529.00 to 2,065.00 | 1,886.00 / 1,804.00 / 1,890.00 / 1,760.00 / 1,669.00 |
-| Count above 200 DMA | 756.00 | +49.00 | +66.00 | -202.00 | 23 | 602.00 to 1,009.00 | 694.00 / 733.00 / 653.00 / 707.00 / 756.00 |
-| Count below 200 DMA | 1,557.00 | -47.00 | -81.00 | +186.00 | 90 | 1,319.00 to 1,727.00 | 1,634.00 / 1,596.00 / 1,655.00 / 1,604.00 / 1,557.00 |
+| Count up 4.5%+ today | 309.00 | +180.00 | +205.00 | +109.00 | 98 | 20.00 to 309.00 | 145.00 / 47.00 / 243.00 / 129.00 / 309.00 |
+| Count down 4.5%+ today | 36.00 | -13.00 | -18.00 | +12.00 | 57 | 10.00 to 389.00 | 45.00 / 287.00 / 60.00 / 49.00 / 36.00 |
+| Count up 20%+ in 5d | 20.00 | +4.00 | +7.00 | -2.00 | 67 | 7.00 to 26.00 | 13.00 / 23.00 / 23.00 / 16.00 / 20.00 |
+| Count down 20%+ in 5d | 2.00 | +1.00 | -4.00 | -4.00 | 59 | 1.00 to 29.00 | 2.00 / 1.00 / 1.00 / 1.00 / 2.00 |
+| Count above 20 DMA | 1,212.00 | +338.00 | +753.00 | +505.00 | 74 | 177.00 to 1,212.00 | 616.00 / 492.00 / 715.00 / 874.00 / 1,212.00 |
+| Count below 20 DMA | 1,037.00 | -340.00 | -770.00 | -522.00 | 37 | 1,037.00 to 2,089.00 | 1,650.00 / 1,754.00 / 1,533.00 / 1,377.00 / 1,037.00 |
+| Count above 50 DMA | 835.00 | +216.00 | +416.00 | +80.00 | 39 | 254.00 to 835.00 | 503.00 / 398.00 / 528.00 / 619.00 / 835.00 |
+| Count below 50 DMA | 1,414.00 | -217.00 | -433.00 | -97.00 | 77 | 1,414.00 to 2,012.00 | 1,764.00 / 1,848.00 / 1,720.00 / 1,631.00 / 1,414.00 |
+| Count above 200 DMA | 872.00 | +145.00 | +204.00 | -107.00 | 35 | 581.00 to 971.00 | 701.00 / 629.00 / 679.00 / 727.00 / 872.00 |
+| Count below 200 DMA | 1,377.00 | -147.00 | -221.00 | +90.00 | 81 | 1,295.00 to 1,685.00 | 1,566.00 / 1,617.00 / 1,569.00 / 1,524.00 / 1,377.00 |
 
 ### Derived from the count table (latest day)
 
 | Line | Above / below | Share above | Ratio |
 |---|---:|---:|---:|
-| 20 DMA | 897 / 1,416 | 38.8% | 0.63 |
-| 50 DMA | 643 / 1,669 | 27.8% | 0.39 |
-| 200 DMA | 756 / 1,557 | 32.7% | 0.49 |
+| 20 DMA | 1,212 / 1,037 | 53.9% | 1.17 |
+| 50 DMA | 835 / 1,414 | 37.1% | 0.59 |
+| 200 DMA | 872 / 1,377 | 38.8% | 0.63 |
 
-- Up 4.5%+ vs down 4.5%+ today: 131 vs 56 (ratio 2.34)
-- Up 20%+ vs down 20%+ in 5d: 16 vs 1
+- Up 4.5%+ vs down 4.5%+ today: 309 vs 36 (ratio 8.58)
+- Up 20%+ vs down 20%+ in 5d: 20 vs 2
 
 ## 2. Indices
 
@@ -86,52 +86,52 @@ Percentile is the rank of the latest reading against that series' own history (s
 
 | Index | LTP | 1d % | 1w % | 3m % | vs 30W EMA % |
 |---|---:|---:|---:|---:|---:|
-| NIFTYFMCG | 45,580.00 | +3.65 | +4.52 | -0.97 | -3.60 |
-| CNXREALTY | 841.40 | +2.33 | +3.38 | -6.94 | +0.06 |
-| NIFTYCONSUMPTION | 11,458.95 | +2.29 | +3.32 | -2.91 | +0.19 |
-| NIFTYPVTBANK | 27,551.10 | +1.98 | +1.84 | -1.62 | +0.91 |
-| NIFTYFINSERVICE | 25,357.90 | +1.84 | +2.61 | -3.56 | -1.42 |
-| NIFTYAUTO | 26,201.95 | +1.71 | +3.07 | -9.15 | -1.67 |
-| NIFTY | 23,810.85 | +1.58 | +3.29 | -1.12 | +0.45 |
-| NIFTY100 | 24,739.50 | +1.47 | +3.20 | -1.96 | +0.21 |
-| NIFTYMIDSELECT | 13,560.90 | +1.45 | +2.85 | -9.77 | -3.07 |
-| INDIAVIX | 15.72 | +1.42 | +2.75 | +40.48 | +11.52 |
-| NIFTY200 | 13,582.10 | +1.39 | +3.02 | -3.36 | -0.37 |
-| NIFTYINDDEFENCE | 8,944.45 | +1.33 | +2.76 | -7.96 | -1.32 |
-| NIFTY500 | 22,520.35 | +1.25 | +2.85 | -3.97 | -0.68 |
-| NIFTYLARGEMID250 | 15,968.05 | +1.24 | +2.74 | -5.28 | -1.23 |
-| NIFTYCHEMICALS | 27,403.95 | +1.21 | +2.94 | -8.74 | -4.45 |
-| NIFTYTOTALMKT | 12,707.10 | +1.21 | +2.80 | -4.14 | -0.66 |
-| NIFTYMIDCAP50 | 16,908.30 | +1.14 | +2.39 | -8.56 | -1.98 |
-| CNXINFRA | 9,225.40 | +1.10 | +4.85 | +0.50 | +1.40 |
-| NIFTYMIDCAP150 | 21,523.35 | +1.00 | +2.26 | -8.55 | -2.81 |
-| BANKNIFTY | 55,540.05 | +0.98 | +1.56 | -4.28 | -1.18 |
-| NIFTYOILANDGAS | 11,008.55 | +0.85 | +6.85 | -0.86 | +0.13 |
-| NIFTYMIDSMALLCAP400 | 19,907.50 | +0.79 | +2.09 | -8.08 | -2.48 |
-| NIFTYHEALTHCARE | 16,580.40 | +0.61 | +0.80 | -2.13 | +4.13 |
-| NIFTYMEDIA | 1,626.85 | +0.49 | -0.27 | +4.46 | +5.59 |
-| NIFTYCOMMODITIES | 9,368.65 | +0.46 | +4.49 | -3.32 | -1.61 |
-| NIFTYSMALLCAP50 | 9,444.55 | +0.44 | +0.87 | -4.96 | +1.08 |
-| CNXPHARMA | 27,218.50 | +0.42 | +0.35 | +0.12 | +6.72 |
-| NIFTYSMALLCAP250 | 17,061.65 | +0.42 | +1.77 | -7.13 | -1.83 |
-| CNXIT | 32,551.60 | +0.34 | -0.17 | +4.36 | +6.31 |
-| CNXSMALLCAP | 18,652.85 | +0.31 | +1.02 | -6.42 | -0.66 |
-| NIFTYMICROCAP250 | 24,308.20 | +0.26 | +1.70 | -8.41 | -1.57 |
-| CNXENERGY | 36,290.70 | -0.11 | +3.81 | -4.37 | -2.80 |
-| NIFTYMETAL | 12,146.15 | -0.14 | +3.07 | -7.94 | -2.01 |
-| NIFTYPSUBANK | 8,241.10 | -1.27 | +0.08 | -4.28 | -1.17 |
+| NIFTYMEDIA | 1,710.65 | +5.15 | +4.87 | +9.84 | +10.64 |
+| CNXREALTY | 865.40 | +2.85 | +6.33 | -4.29 | +2.73 |
+| NIFTYMETAL | 12,485.90 | +2.80 | +5.95 | -5.37 | +0.56 |
+| NIFTYINDDEFENCE | 9,167.15 | +2.49 | +5.32 | -5.67 | +0.98 |
+| NIFTYMICROCAP250 | 24,837.60 | +2.18 | +3.92 | -6.42 | +0.44 |
+| CNXENERGY | 37,078.85 | +2.17 | +6.07 | -2.29 | -0.82 |
+| NIFTYSMALLCAP50 | 9,636.00 | +2.03 | +2.91 | -3.04 | +2.99 |
+| CNXSMALLCAP | 19,026.40 | +2.00 | +3.05 | -4.54 | +1.20 |
+| NIFTYSMALLCAP250 | 17,398.35 | +1.97 | +3.78 | -5.30 | -0.02 |
+| NIFTYMIDSMALLCAP400 | 20,251.70 | +1.73 | +3.85 | -6.49 | -0.91 |
+| NIFTYCOMMODITIES | 9,523.20 | +1.65 | +6.21 | -1.73 | -0.09 |
+| NIFTYMIDCAP150 | 21,867.30 | +1.60 | +3.90 | -7.09 | -1.36 |
+| NIFTYCHEMICALS | 27,833.70 | +1.57 | +4.55 | -7.31 | -3.05 |
+| NIFTYOILANDGAS | 11,178.20 | +1.54 | +8.49 | +0.67 | +1.57 |
+| NIFTYFMCG | 46,264.05 | +1.50 | +6.09 | +0.52 | -2.24 |
+| NIFTYMIDCAP50 | 17,149.10 | +1.42 | +3.85 | -7.26 | -0.68 |
+| NIFTYLARGEMID250 | 16,159.25 | +1.20 | +3.97 | -4.15 | -0.13 |
+| NIFTYAUTO | 26,504.80 | +1.16 | +4.26 | -8.10 | -0.61 |
+| NIFTYTOTALMKT | 12,853.05 | +1.15 | +3.99 | -3.04 | +0.41 |
+| NIFTYMIDSELECT | 13,712.65 | +1.12 | +4.01 | -8.76 | -2.05 |
+| NIFTY500 | 22,769.20 | +1.10 | +3.99 | -2.90 | +0.35 |
+| NIFTYCONSUMPTION | 11,580.75 | +1.06 | +4.42 | -1.88 | +1.18 |
+| CNXINFRA | 9,317.30 | +1.00 | +5.89 | +1.50 | +2.35 |
+| NIFTY200 | 13,712.65 | +0.96 | +4.01 | -2.43 | +0.52 |
+| NIFTYFINSERVICE | 25,580.60 | +0.88 | +3.51 | -2.71 | -0.61 |
+| NIFTY100 | 24,942.35 | +0.82 | +4.05 | -1.16 | +0.98 |
+| NIFTYPSUBANK | 8,302.30 | +0.74 | +0.82 | -3.57 | -0.49 |
+| NIFTYHEALTHCARE | 16,701.55 | +0.73 | +1.53 | -1.42 | +4.84 |
+| BANKNIFTY | 55,913.60 | +0.67 | +2.24 | -3.64 | -0.55 |
+| NIFTY | 23,960.60 | +0.63 | +3.94 | -0.50 | +1.04 |
+| CNXPHARMA | 27,333.45 | +0.42 | +0.77 | +0.54 | +7.14 |
+| NIFTYPVTBANK | 27,632.30 | +0.29 | +2.14 | -1.33 | +1.19 |
+| CNXIT | 32,061.90 | -1.50 | -1.67 | +2.79 | +4.82 |
+| INDIAVIX | 15.19 | -3.37 | -0.72 | +35.75 | +8.02 |
 | NIFTYHOUSING | 11,061.20 | NOT FOUND | NOT FOUND | NOT FOUND | +0.00 |
 
-- Top 5 by 1d: NIFTYFMCG +3.65, CNXREALTY +2.33, NIFTYCONSUMPTION +2.29, NIFTYPVTBANK +1.98, NIFTYFINSERVICE +1.84
-- Bottom 5 by 1d: NIFTYPSUBANK -1.27, NIFTYMETAL -0.14, CNXENERGY -0.11, NIFTYMICROCAP250 +0.26, CNXSMALLCAP +0.31
-- Top 5 by 1w: NIFTYOILANDGAS +6.85, CNXINFRA +4.85, NIFTYFMCG +4.52, NIFTYCOMMODITIES +4.49, CNXENERGY +3.81
-- Bottom 5 by 1w: NIFTYMEDIA -0.27, CNXIT -0.17, NIFTYPSUBANK +0.08, CNXPHARMA +0.35, NIFTYHEALTHCARE +0.80
-- Top 5 by 3m: INDIAVIX +40.48, NIFTYMEDIA +4.46, CNXIT +4.36, CNXINFRA +0.50, CNXPHARMA +0.12
-- Bottom 5 by 3m: NIFTYMIDSELECT -9.77, NIFTYAUTO -9.15, NIFTYCHEMICALS -8.74, NIFTYMIDCAP50 -8.56, NIFTYMIDCAP150 -8.55
-- Furthest above 30W EMA: INDIAVIX +11.52, CNXPHARMA +6.72, CNXIT +6.31, NIFTYMEDIA +5.59, NIFTYHEALTHCARE +4.13
-- Furthest below 30W EMA: NIFTYCHEMICALS -4.45, NIFTYFMCG -3.60, NIFTYMIDSELECT -3.07, NIFTYMIDCAP150 -2.81, CNXENERGY -2.80
-- Indices below their 30W EMA: 21 of 35 (NIFTYFMCG, NIFTYFINSERVICE, NIFTYAUTO, NIFTYMIDSELECT, NIFTY200, NIFTYINDDEFENCE, NIFTY500, NIFTYLARGEMID250, NIFTYCHEMICALS, NIFTYTOTALMKT, NIFTYMIDCAP50, NIFTYMIDCAP150, BANKNIFTY, NIFTYMIDSMALLCAP400, NIFTYCOMMODITIES, NIFTYSMALLCAP250, CNXSMALLCAP, NIFTYMICROCAP250, CNXENERGY, NIFTYMETAL, NIFTYPSUBANK)
-- Indices up on the day: 31 of 35; up on the week: 32 of 34
+- Top 5 by 1d: NIFTYMEDIA +5.15, CNXREALTY +2.85, NIFTYMETAL +2.80, NIFTYINDDEFENCE +2.49, NIFTYMICROCAP250 +2.18
+- Bottom 5 by 1d: INDIAVIX -3.37, CNXIT -1.50, NIFTYPVTBANK +0.29, CNXPHARMA +0.42, NIFTY +0.63
+- Top 5 by 1w: NIFTYOILANDGAS +8.49, CNXREALTY +6.33, NIFTYCOMMODITIES +6.21, NIFTYFMCG +6.09, CNXENERGY +6.07
+- Bottom 5 by 1w: CNXIT -1.67, INDIAVIX -0.72, CNXPHARMA +0.77, NIFTYPSUBANK +0.82, NIFTYHEALTHCARE +1.53
+- Top 5 by 3m: INDIAVIX +35.75, NIFTYMEDIA +9.84, CNXIT +2.79, CNXINFRA +1.50, NIFTYOILANDGAS +0.67
+- Bottom 5 by 3m: NIFTYMIDSELECT -8.76, NIFTYAUTO -8.10, NIFTYCHEMICALS -7.31, NIFTYMIDCAP50 -7.26, NIFTYMIDCAP150 -7.09
+- Furthest above 30W EMA: NIFTYMEDIA +10.64, INDIAVIX +8.02, CNXPHARMA +7.14, NIFTYHEALTHCARE +4.84, CNXIT +4.82
+- Furthest below 30W EMA: NIFTYCHEMICALS -3.05, NIFTYFMCG -2.24, NIFTYMIDSELECT -2.05, NIFTYMIDCAP150 -1.36, NIFTYMIDSMALLCAP400 -0.91
+- Indices below their 30W EMA: 14 of 35 (CNXENERGY, NIFTYSMALLCAP250, NIFTYMIDSMALLCAP400, NIFTYCOMMODITIES, NIFTYMIDCAP150, NIFTYCHEMICALS, NIFTYFMCG, NIFTYMIDCAP50, NIFTYLARGEMID250, NIFTYAUTO, NIFTYMIDSELECT, NIFTYFINSERVICE, NIFTYPSUBANK, BANKNIFTY)
+- Indices up on the day: 32 of 35; up on the week: 32 of 34
 
 ## 3. Sectors above key weekly EMAs (% of sector members)
 
@@ -139,38 +139,38 @@ Percentile is the rank of the latest reading against that series' own history (s
 
 | Sector | 4W | 20W | 30W | 40W | 52W | Pattern |
 |---|---:|---:|---:|---:|---:|---|
-| co-working | 100.0 | 40.0 | 60.0 | 60.0 | 60.0 | strong on all |
-| aerospace & defence | 38.2 | 50.0 | 52.9 | 58.8 | 61.8 |  |
-| healthcare | 49.4 | 43.3 | 47.6 | 48.8 | 52.4 |  |
-| castings, forgings & fasteners | 44.0 | 44.0 | 48.0 | 48.0 | 52.0 |  |
-| energy | 56.4 | 38.5 | 35.9 | 43.6 | 43.6 |  |
-| auto | 58.8 | 33.3 | 36.3 | 41.2 | 44.1 |  |
-| telecom-service | 54.5 | 36.4 | 36.4 | 36.4 | 45.5 |  |
-| nan | 35.6 | 35.2 | 34.7 | 34.3 | 34.7 | weak on all |
-| consumer discretionary | 35.7 | 27.3 | 31.5 | 33.6 | 35.7 | weak on all |
-| transportation | 55.6 | 31.5 | 33.3 | 33.3 | 33.3 |  |
-| textiles | 41.9 | 30.2 | 31.0 | 33.3 | 32.6 |  |
-| metals & mining | 34.1 | 28.7 | 33.3 | 32.6 | 34.1 | weak on all |
-| industrials | 35.4 | 23.9 | 28.7 | 32.1 | 35.9 | weak on all |
-| bank | 34.1 | 22.0 | 29.3 | 31.7 | 39.0 | weak on all |
-| i.t | 40.0 | 28.9 | 31.7 | 31.1 | 29.4 |  |
-| chemicals | 30.2 | 25.8 | 27.0 | 27.7 | 29.6 | weak on all |
-| services | 40.5 | 24.8 | 27.3 | 26.4 | 24.8 |  |
-| fmcg | 44.9 | 25.0 | 25.6 | 25.6 | 25.0 |  |
-| indices | 81.8 | 32.6 | 26.6 | 25.6 | 29.1 | short-term strong, long-term weak |
-| plastic products | 38.7 | 16.1 | 22.6 | 22.6 | 19.4 | weak on all |
-| financials | 45.9 | 20.6 | 20.6 | 22.0 | 24.3 |  |
-| readymade garments/apparels | 57.1 | 42.9 | 28.6 | 21.4 | 21.4 |  |
-| building materials | 40.6 | 18.8 | 19.8 | 20.8 | 21.9 |  |
-| realty | 37.7 | 18.3 | 18.8 | 20.4 | 19.4 | weak on all |
-| telecom | 50.0 | 30.0 | 20.0 | 20.0 | 20.0 |  |
-| power & utilities | 45.2 | 9.7 | 16.1 | 19.4 | 19.4 |  |
-| media | 31.2 | 16.7 | 18.8 | 16.7 | 14.6 | weak on all |
-| miscellaneous | 43.0 | 17.4 | 16.3 | 16.3 | 16.3 |  |
+| co-working | 100.0 | 80.0 | 80.0 | 80.0 | 80.0 | strong on all |
+| aerospace & defence | 70.6 | 52.9 | 52.9 | 64.7 | 64.7 | strong on all |
+| healthcare | 60.4 | 49.4 | 54.3 | 59.8 | 56.7 |  |
+| castings, forgings & fasteners | 56.0 | 52.0 | 52.0 | 56.0 | 56.0 |  |
+| energy | 59.0 | 48.7 | 51.3 | 53.8 | 46.2 |  |
+| auto | 73.5 | 38.2 | 44.1 | 50.0 | 50.0 |  |
+| indices | 84.8 | 51.7 | 49.0 | 48.0 | 55.0 | short-term strong, long-term weak |
+| telecom-service | 63.6 | 36.4 | 36.4 | 45.5 | 45.5 | short-term strong, long-term weak |
+| nan | 36.6 | 35.6 | 37.0 | 38.9 | 39.4 | weak on all |
+| metals & mining | 55.8 | 34.1 | 38.0 | 37.2 | 37.2 |  |
+| transportation | 77.8 | 37.0 | 37.0 | 37.0 | 37.0 | short-term strong, long-term weak |
+| industrials | 57.9 | 31.1 | 35.4 | 36.8 | 40.7 |  |
+| bank | 41.5 | 26.8 | 31.7 | 36.6 | 39.0 |  |
+| textiles | 58.9 | 34.9 | 36.4 | 36.4 | 34.9 |  |
+| i.t | 49.4 | 32.8 | 32.2 | 33.9 | 33.3 |  |
+| consumer discretionary | 47.6 | 31.5 | 32.9 | 33.6 | 35.7 |  |
+| chemicals | 44.0 | 29.6 | 30.8 | 33.3 | 32.1 |  |
+| fmcg | 61.5 | 30.8 | 28.2 | 29.5 | 29.5 | short-term strong, long-term weak |
+| services | 51.2 | 27.3 | 28.9 | 26.4 | 26.4 |  |
+| plastic products | 45.2 | 22.6 | 25.8 | 25.8 | 25.8 |  |
+| realty | 58.6 | 23.6 | 24.1 | 23.6 | 22.0 |  |
+| financials | 55.5 | 24.3 | 23.9 | 22.9 | 25.2 |  |
+| building materials | 58.3 | 24.0 | 21.9 | 22.9 | 24.0 |  |
+| power & utilities | 74.2 | 19.4 | 22.6 | 22.6 | 22.6 | short-term strong, long-term weak |
+| readymade garments/apparels | 85.7 | 50.0 | 35.7 | 21.4 | 28.6 | short-term strong, long-term weak |
+| telecom | 50.0 | 20.0 | 20.0 | 20.0 | 20.0 |  |
+| miscellaneous | 53.5 | 19.8 | 18.6 | 19.8 | 18.6 |  |
+| media | 43.8 | 18.8 | 20.8 | 18.8 | 16.7 |  |
 
-- Mean % above 40W EMA across sectors: 31.6
-- Mean % above 4W EMA across sectors: 46.5
-- Sectors with 4W below 20W (short-term losing the medium term): 1 of 28
+- Mean % above 40W EMA across sectors: 37.0
+- Mean % above 4W EMA across sectors: 59.8
+- Sectors with 4W below 20W (short-term losing the medium term): 0 of 28
 
 ## 4. Screener lists (each is a list of stocks meeting a rule)
 
@@ -178,122 +178,122 @@ Each block: how many names qualify, what sectors and caps dominate, and the lead
 
 ### Minervini Screener (trend template, 8 conditions)
 
-- Names: 103
-- Sector mix: healthcare 10 (10%), industrials 9 (9%), chemicals 9 (9%), metals & mining 8 (8%)
-- Cap mix: smallcap 58 (56%), midcap 28 (27%), largecap 17 (17%)
-- 1 week %: median 2.5, mean 2.8, max 16.4, min -6.4
-- Top by vol > yr avg: GFSTEELS 103.2 (metals & mining), WELSPUNLIV 9.1 (textiles), SHREEPUSHK 9.1 (chemicals), ALIVUS 4.5 (healthcare), RML 4.0 (auto), MENONBE 4.0 (auto), MACPOWER 2.8 (industrials), AVTNPL 2.6 (fmcg), KAMDHENU 2.4 (metals & mining), SIMPLEXINF 2.3 (realty), TFCILTD 2.2 (financials), BODALCHEM 2.2 (chemicals)
+- Names: 124
+- Sector mix: fmcg 12 (10%), metals & mining 11 (9%), industrials 11 (9%), healthcare 10 (8%)
+- Cap mix: smallcap 67 (54%), midcap 40 (32%), largecap 17 (14%)
+- 1 week %: median 5.0, mean 5.3, max 22.3, min -6.7
+- Top by vol > yr avg: GFSTEELS 195.6 (metals & mining), SAREGAMA 14.9 (media), EBGNG 13.9 (services), ICIL 12.7 (textiles), DALMIASUG 11.5 (fmcg), WELSPUNLIV 6.9 (textiles), ROLEXRINGS 5.2 (auto), ALIVUS 4.1 (healthcare), TCPLPACK 3.5 (industrials), SMSPHARMA 3.4 (healthcare), HEG 3.4 (industrials), MENONBE 3.1 (auto)
 
 ### Darvas Screener (2x off 52wk low, near high, above 30W SMA)
 
-- Names: 59
-- Sector mix: industrials 9 (15%), chemicals 6 (10%), metals & mining 6 (10%), textiles 5 (8%)
-- Cap mix: smallcap 30 (51%), midcap 18 (31%), largecap 11 (19%)
-- 1 week %: median 1.2, mean 1.6, max 16.4, min -8.8
-- Top by vol > yr avg: PASHUPATI 14.9 (textiles), WELSPUNLIV 9.1 (textiles), SHREEPUSHK 9.1 (chemicals), AEGISLOG 8.0 (services), MENONBE 4.0 (auto), MACPOWER 2.8 (industrials), NINSYS 2.6 (i.t), KAMDHENU 2.4 (metals & mining), TFCILTD 2.2 (financials), SEJALLTD 2.0 (building materials), MMP 1.9 (metals & mining), LAURUSLABS 1.9 (healthcare)
+- Names: 64
+- Sector mix: industrials 11 (17%), chemicals 7 (11%), metals & mining 7 (11%), healthcare 6 (9%)
+- Cap mix: smallcap 33 (52%), midcap 20 (31%), largecap 11 (17%)
+- 1 week %: median 3.7, mean 4.5, max 20.8, min -6.9
+- Top by vol > yr avg: SAREGAMA 14.9 (media), EBGNG 13.9 (services), ICIL 12.7 (textiles), WELSPUNLIV 6.9 (textiles), AMANTA 4.2 (healthcare), TCPLPACK 3.5 (industrials), MENONBE 3.1 (auto), TFCILTD 3.0 (financials), AEROFLEX 2.5 (metals & mining), UNIMECH 2.3 (aerospace & defence), BIRLACABLE 2.3 (industrials), SYNCOMF 2.3 (healthcare)
 
 ### Breakouts v2 (EMA stack 10>21>50, within 25% of 10yr high)
 
-- Names: 56
-- Sector mix: healthcare 7 (12%), financials 5 (9%), auto 5 (9%), i.t 4 (7%)
-- Cap mix: largecap 27 (48%), smallcap 19 (34%), midcap 10 (18%)
-- 1 week %: median 2.2, mean 3.2, max 23.8, min -3.4
-- Top by 1 week %: NELCAST 23.8 (castings, forgings & fasteners), MENONBE 16.4 (auto), WELSPUNLIV 15.5 (textiles), MCX 9.4 (financials), MANAKSTEEL 8.5 (metals & mining), NRAIL 8.1 (building materials), SEJALLTD 7.1 (building materials), RAYMOND 6.6 (transportation), MAHASTEEL 5.8 (metals & mining), ICIL 5.6 (textiles), BIL 5.5 (consumer discretionary), BOSCHLTD 5.2 (auto)
+- Names: 74
+- Sector mix: healthcare 8 (11%), auto 7 (9%), financials 5 (7%), bank 5 (7%)
+- Cap mix: largecap 33 (45%), smallcap 24 (32%), midcap 17 (23%)
+- 1 week %: median 3.3, mean 5.2, max 27.4, min -3.4
+- Top by 1 week %: VRLLOG 27.4 (transportation), NELCAST 22.8 (castings, forgings & fasteners), HEG 21.3 (industrials), WELSPUNLIV 20.8 (textiles), ICIL 18.8 (textiles), WHEELS 16.6 (auto), SAREGAMA 16.1 (media), MENONBE 15.8 (auto), DIACABS 12.0 (industrials), MANAKSTEEL 11.7 (metals & mining), GAIL 10.9 (energy), PGIL 10.7 (readymade garments/apparels)
 
 ### Potential Breakouts (within 5% of 200d high, vol > 40d avg)
 
-- Names: 45
-- Sector mix: healthcare 8 (18%), metals & mining 5 (11%), chemicals 5 (11%), realty 3 (7%)
-- Cap mix: largecap 21 (47%), midcap 14 (31%), smallcap 10 (22%)
-- 1 week %: median 4.2, mean 4.6, max 16.4, min -1.7
-- Top by vol > yr avg: GFSTEELS 192.5 (metals & mining), PASHUPATI 14.9 (textiles), WELSPUNLIV 9.1 (textiles), SHREEPUSHK 9.1 (chemicals), MARICO 7.8 (fmcg), ASAHIINDIA 6.1 (building materials), ALIVUS 4.5 (healthcare), MENONBE 4.0 (auto), TASTYBITE 3.4 (fmcg), CASTROLIND 3.0 (chemicals), AARTIDRUGS 2.9 (healthcare), NINSYS 2.6 (i.t)
+- Names: 54
+- Sector mix: healthcare 9 (17%), metals & mining 5 (9%), industrials 5 (9%), transportation 4 (7%)
+- Cap mix: largecap 22 (41%), midcap 18 (33%), smallcap 14 (26%)
+- 1 week %: median 6.5, mean 8.0, max 27.4, min -0.5
+- Top by vol > yr avg: GFSTEELS 195.6 (metals & mining), SAREGAMA 14.9 (media), VRLLOG 13.7 (transportation), ICIL 12.7 (textiles), PRINCEPIPE 9.8 (plastic products), WELSPUNLIV 6.9 (textiles), EMCURE 5.2 (healthcare), ALIVUS 4.1 (healthcare), METROPOLIS 3.8 (healthcare), TASTYBITE 3.5 (fmcg), TCPLPACK 3.5 (industrials), SMSPHARMA 3.4 (healthcare)
 
 ### Modified Relative Strength (weekly CCI cross + 75% off low)
 
-- Names: 17
-- Sector mix: chemicals 3 (18%), castings, forgings & fasteners 2 (12%), realty 2 (12%), auto 2 (12%)
-- Cap mix: smallcap 9 (53%), midcap 6 (35%), largecap 2 (12%)
-- 1 week %: median 6.1, mean 7.1, max 23.8, min -0.5
-- Top by vol > yr avg: NELCAST 36.9 (castings, forgings & fasteners), MENONBE 4.0 (auto), MACPOWER 2.8 (industrials), AVTNPL 2.6 (fmcg), BODALCHEM 2.2 (chemicals), NITINSPIN 1.8 (textiles), MCX 1.6 (financials), ENGINERSIN 1.5 (realty), GLAND 1.4 (healthcare), CEIGALL 1.2 (realty), MBAPL 1.1 (chemicals), CONSOFINVT 0.7 (financials)
+- Names: 36
+- Sector mix: chemicals 5 (14%), auto 5 (14%), fmcg 4 (11%), industrials 4 (11%)
+- Cap mix: midcap 16 (44%), smallcap 15 (42%), largecap 5 (14%)
+- 1 week %: median 7.8, mean 9.3, max 22.8, min -0.1
+- Top by vol > yr avg: SAREGAMA 14.9 (media), EBGNG 13.9 (services), ICIL 12.7 (textiles), DALMIASUG 11.5 (fmcg), ROLEXRINGS 5.2 (auto), ALIVUS 4.1 (healthcare), HEG 3.4 (industrials), MENONBE 3.1 (auto), NELCAST 2.7 (castings, forgings & fasteners), IGPL 2.5 (chemicals), UNIMECH 2.3 (aerospace & defence), MCX 2.1 (financials)
 
 ### Momentum Investing (32wk momentum / volatility)
 
 - Names: 1000
-- roc: median 7.7, mean 40.4, max 9,124.7, min -49.2
-- Top by column1: BOSCHLTD 124,220.8, NIFTYMIDSMLHLTH 60,695.1, PTCIL 51,586.0, NIFTYSML250MQ100 48,776.0, CNXNIFTYJUNIOR 47,017.2, NEULANDLAB 45,626.2, SOLARINDS 44,875.8, NIFTYALPHA50 41,831.3, NIFTYMS400MQ100 36,720.8, NIFTY500MOMENTM50 31,639.7, APARINDS 30,481.5, NIFTYMICROCAP250 30,086.2
+- roc: median 9.4, mean 40.7, max 8,941.1, min -50.6
+- Top by column1: BOSCHLTD 132,159.0, NIFTYMIDSMLHLTH 64,374.0, NIFTYSML250MQ100 54,983.7, PTCIL 54,624.9, CNXNIFTYJUNIOR 54,277.3, NIFTYALPHA50 47,687.9, NEULANDLAB 46,568.8, SOLARINDS 43,257.1, NIFTYMS400MQ100 40,670.7, NIFTY500MOMENTM50 37,596.2, CNXMIDCAP 33,537.1, APARINDS 33,427.4
 
 ### Stocks at 52 week high (close within Rs 1 of 52wk high)
 
-- Names: 44
-- Sector mix: services 6 (14%), financials 6 (14%), i.t 6 (14%), textiles 5 (11%)
-- Cap mix: smallcap 25 (57%), largecap 10 (23%), midcap 9 (20%)
-- weekly return: median 3.0, mean 4.5, max 23.8, min -3.9
-- Top by current vol multiple of yearly avg: GFSTEELS 192.5 (metals & mining), NELCAST 36.9 (castings, forgings & fasteners), PASHUPATI 14.9 (textiles), FCSSOFT 9.3 (i.t), WELSPUNLIV 9.1 (textiles), SHREEPUSHK 9.1 (chemicals), SUPREMEENG 7.8 (metals & mining), ALIVUS 4.5 (healthcare), MENONBE 4.0 (auto), NINSYS 2.6 (i.t), PVRINOX 2.5 (media), TFCILTD 2.2 (financials)
+- Names: 57
+- Sector mix: services 7 (12%), metals & mining 6 (11%), textiles 6 (11%), industrials 5 (9%)
+- Cap mix: smallcap 26 (46%), midcap 16 (28%), largecap 15 (26%)
+- weekly return: median 5.5, mean 6.6, max 27.4, min -5.6
+- Top by current vol multiple of yearly avg: GFSTEELS 195.6 (metals & mining), SUPREMEENG 20.2 (metals & mining), SAREGAMA 14.9 (media), VRLLOG 13.7 (transportation), ICIL 12.7 (textiles), WELSPUNLIV 6.9 (textiles), EMCURE 5.2 (healthcare), FCSSOFT 4.2 (i.t), ALIVUS 4.1 (healthcare), TASTYBITE 3.5 (fmcg), TCPLPACK 3.5 (industrials), SMSPHARMA 3.4 (healthcare)
 
 ### Top Gainers Today (whole market, sorted by % change)
 
 - Rows returned: 1000
-- Count up >= 20%: 1
-- Count up >= 10%: 19
-- Count up >= 5%: 110
-- Count up >= 3%: 369
-- Top 15: VHLTD-RE1 38.8, FCSSOFT 19.5, IZMO 16.6, TAALTECH 15.4, SVGLOBAL 15.3, KITEX 15.1, KSHITIJ-RE 14.3, NELCAST 14.2, AIROLAM 14.0, TEMPSENS 13.5, TECHNOCRAF 13.3, DECNGOLD 10.8, TREJHARA 10.7, VPRPL 10.6, KRBL 10.6
+- Count up >= 20%: 2
+- Count up >= 10%: 37
+- Count up >= 5%: 278
+- Count up >= 3%: 784
+- Top 15: VHLTD-RE1 38.8, FAZE3Q 20.0, HEG 19.7, CNL 17.0, PARAGMILK 17.0, DALMIASUG 16.5, SVGLOBAL 15.3, CREATIVEYE 14.3, KSHITIJ-RE 14.3, FRACTAL 14.0, RUSHIL 13.6, HMAAGRO 13.5, SAREGAMA 13.3, APLLTD 12.9, CONFIPET 12.7
 
 ### CCI daily crossed above +100 (fresh daily momentum)
 
-- Names: 68
-- Sector mix: financials 7 (10%), realty 6 (9%), services 5 (7%), industrials 5 (7%)
-- Cap mix: smallcap 35 (51%), largecap 23 (34%), midcap 10 (15%)
-- Largest by market cap: ICICIBANK 1,022,612.4 (bank), ITC 343,210.9 (fmcg), HAL 331,618.8 (aerospace & defence), IOC 195,819.2 (energy), INDIGO 194,300.0 (transportation), BOSCHLTD 146,433.4 (auto), GROWW 129,223.5 (financials), MARICO 114,209.9 (fmcg), HDFCAMC 104,693.9 (financials), INDUSTOWER 102,888.3 (telecom)
-- Biggest movers on the day: FCSSOFT 19.5 (i.t), KITEX 15.1 (readymade garments/apparels), MARICO 10.0 (fmcg), ECOSMOBLTY 9.8 (miscellaneous), MUFTI 8.7 (consumer discretionary), TASTYBITE 8.1 (fmcg), MCX 7.4 (financials), INFOBEAN 7.4 (i.t)
+- Names: 74
+- Sector mix: realty 11 (15%), healthcare 7 (9%), consumer discretionary 6 (8%), fmcg 6 (8%)
+- Cap mix: smallcap 40 (54%), largecap 18 (24%), midcap 16 (22%)
+- Largest by market cap: HDFCBANK 1,118,619.2 (bank), LICI 500,307.3 (financials), HINDUNILVR 461,177.8 (fmcg), ADANIENSOL 167,495.8 (power & utilities), CIPLA 112,851.4 (healthcare), GLENMARK 67,959.7 (healthcare), DABUR 67,703.1 (fmcg), GODREJPROP 50,289.8 (realty), NAVINFLUOR 43,765.8 (chemicals), BALKRISIND 42,346.1 (auto)
+- Biggest movers on the day: FAZE3Q 20.0 (textiles), HEG 19.7 (industrials), FRACTAL 14.0 (i.t), RUSHIL 13.6 (building materials), APLLTD 12.9 (healthcare), INVENTURE 11.1 (financials), ATLANTAA 10.3 (realty), AFFORDABLE 10.0 (industrials)
 
 ### CCI daily crossed above -100 (daily reversal from oversold)
 
-- Names: 324
-- Sector mix: financials 39 (12%), industrials 36 (11%), realty 35 (11%), fmcg 25 (8%)
-- Cap mix: smallcap 221 (68%), midcap 67 (21%), largecap 36 (11%)
-- Largest by market cap: NESTLEIND 240,730.8 (fmcg), SHRIRAMFIN 208,197.4 (financials), BHEL 139,282.5 (industrials), VBL 138,056.5 (fmcg), SIEMENS 120,625.1 (industrials), LODHA 106,014.8 (realty), JSWINFRA 76,028.0 (transportation), SAIL 69,186.3 (metals & mining), NAM-INDIA 62,980.1 (financials), MOTILALOFS 60,900.7 (financials)
-- Biggest movers on the day: FCSSOFT 19.5 (i.t), IZMO 16.6 (i.t), AIROLAM 14.0 (building materials), TEMPSENS 13.5 (industrials), DECNGOLD 10.8 (metals & mining), TREJHARA 10.7 (i.t), VPRPL 10.6 (realty), KRBL 10.6 (fmcg)
+- Names: 276
+- Sector mix: financials 27 (10%), industrials 26 (9%), fmcg 26 (9%), chemicals 23 (8%)
+- Cap mix: smallcap 202 (73%), midcap 49 (18%), largecap 25 (9%)
+- Largest by market cap: CGPOWER 127,612.9 (industrials), POWERINDIA 121,593.4 (industrials), OFSS 86,318.1 (i.t), GODREJCP 84,934.3 (fmcg), NTPCGREEN 69,407.7 (power & utilities), BAJAJHFL 65,150.5 (financials), IDFCFIRSTB 63,119.1 (bank), ICICIPRULI 59,456.9 (financials), IOB 56,460.3 (bank), RBLBANK 54,338.5 (bank)
+- Biggest movers on the day: CREATIVEYE 14.3 (media), COMSYN 12.3 (industrials), IFBAGRO 12.2 (fmcg), EXICOM 10.5 (industrials), CAPACITE 10.4 (realty), CLEDUCATE 10.0 (services), VINCOFE 10.0 (fmcg), SHRADHA 9.8 (realty)
 
 ### CCI weekly crossed above +100 (fresh weekly momentum)
 
-- Names: 45
-- Sector mix: healthcare 8 (18%), fmcg 5 (11%), chemicals 4 (9%), i.t 3 (7%)
-- Cap mix: smallcap 23 (51%), midcap 12 (27%), largecap 10 (22%)
-- Largest by market cap: TCS 904,196.3 (i.t), DLF 175,499.6 (realty), BOSCHLTD 146,433.4 (auto), ZYDUSLIFE 123,750.3 (healthcare), DRREDDY 114,209.3 (healthcare), NYKAA 101,367.4 (i.t), MCX 88,994.7 (financials), GLAND 52,125.3 (healthcare), PETRONET 45,450.0 (energy), ASAHIINDIA 25,274.8 (building materials)
-- Biggest movers on the day: NELCAST 14.2 (castings, forgings & fasteners), MCX 7.4 (financials), ASAHIINDIA 5.4 (building materials), TOTAL 5.0 (transportation), CORONA 4.6 (healthcare), HALDER 4.3 (services), BODALCHEM 3.4 (chemicals), MENONBE 3.3 (auto)
+- Names: 76
+- Sector mix: healthcare 11 (14%), fmcg 9 (12%), chemicals 6 (8%), aerospace & defence 6 (8%)
+- Cap mix: smallcap 36 (47%), midcap 22 (29%), largecap 18 (24%)
+- Largest by market cap: ADANIPORTS 430,126.1 (transportation), HAL 331,618.8 (aerospace & defence), JSWSTEEL 322,799.9 (metals & mining), DLF 175,499.6 (realty), BOSCHLTD 146,433.4 (auto), ZYDUSLIFE 123,750.3 (healthcare), GAIL 119,502.4 (energy), DRREDDY 114,209.3 (healthcare), MCX 88,994.7 (financials), PHOENIXLTD 73,277.5 (realty)
+- Biggest movers on the day: HEG 19.7 (industrials), PARAGMILK 17.0 (fmcg), DALMIASUG 16.5 (fmcg), HMAAGRO 13.5 (fmcg), SAREGAMA 13.3 (media), APLLTD 12.9 (healthcare), ICIL 12.5 (textiles), VRLLOG 12.1 (transportation)
 
 ### CCI weekly crossed above -100 (weekly reversal from oversold)
 
-- Names: 166
-- Sector mix: financials 22 (13%), realty 16 (10%), industrials 14 (8%), fmcg 12 (7%)
-- Cap mix: smallcap 105 (63%), largecap 41 (25%), midcap 20 (12%)
-- Largest by market cap: RELIANCE 1,769,920.7 (energy), HDFCBANK 1,118,619.2 (bank), SBIN 895,615.1 (bank), LICI 500,307.3 (financials), HINDUNILVR 461,177.8 (fmcg), ITC 343,210.9 (fmcg), NTPC 311,796.3 (power & utilities), BAJAJFINSV 275,250.2 (financials), COALINDIA 251,439.3 (metals & mining), POWERGRID 241,397.2 (power & utilities)
-- Biggest movers on the day: FCSSOFT 19.5 (i.t), KITEX 15.1 (readymade garments/apparels), VPRPL 10.6 (realty), LAXMIINDIA 10.1 (financials), SADBHIN 9.8 (realty), ECOSMOBLTY 9.8 (miscellaneous), TTL 9.2 (textiles), BANARISUG 8.7 (fmcg)
+- Names: 228
+- Sector mix: financials 28 (12%), realty 24 (11%), industrials 21 (9%), fmcg 15 (7%)
+- Cap mix: smallcap 151 (66%), largecap 52 (23%), midcap 25 (11%)
+- Largest by market cap: RELIANCE 1,769,920.7 (energy), HDFCBANK 1,118,619.2 (bank), SBIN 895,615.1 (bank), LICI 500,307.3 (financials), HINDUNILVR 461,177.8 (fmcg), ITC 343,210.9 (fmcg), NTPC 311,796.3 (power & utilities), BEL 277,844.7 (aerospace & defence), BAJAJFINSV 275,250.2 (financials), POWERGRID 241,397.2 (power & utilities)
+- Biggest movers on the day: VIRINCHI 12.2 (i.t), INVENTURE 11.1 (financials), AFFORDABLE 10.0 (industrials), SUPREMEINF 10.0 (realty), SADBHIN 9.7 (realty), ADVAIT 8.9 (industrials), MANAKSIA 8.7 (services), LANCER 8.5 (transportation)
 
 ### Stocks above VWAP with 50 EMA > 200 EMA, by cap
 
-- Large cap (>25,000 cr): 46 names. DIVISLAB, SONACOMS, SAILIFE, JPL, ICICIBANK, DRREDDY, JSWSTEEL, ZYDUSLIFE, INDOMIM, KPRMILL, ASAHIINDIA, MARICO, NAVINFLUOR, ANTHEM, INDHOTEL ...
-- Mid cap (5,000 to 25,000 cr): 42 names. LMW, SETL, TANLA, WESTLIFE, METROPOLIS, AMAGI, SAREGAMA, SSWL, LTFOODS, IGIL, APOLLO, GRWRHITECH, CEIGALL, DIACABS, LALITHAA ...
-- Small cap (500 to 5,000 cr): 48 names. TASTYBITE, KPL, CONSOFINVT, SAYAJIHOTL, MAZDA, PRIMESECU, AYMSYNTEX, SIMPLEXINF, ORBTEXP, KANPRPLA, PATELRMART, KAMATHOTEL, KIRANVYPAR, PASHUPATI, ZIMLAB ...
+- Large cap (>25,000 cr): 74 names. BOSCHLTD, BHEL, LENSKART, DLF, INDHOTEL, INDIANB, ANTHEM, MARICO, ASAHIINDIA, BAJFINANCE, LODHA, KPRMILL, INDOMIM, JSWSTEEL, DRREDDY ...
+- Mid cap (5,000 to 25,000 cr): 93 names. LMW, METROPOLIS, APOLLO, MARINE, AGARWALEYE, ICIL, SSWL, SKIPPER, GOODLUCK, AEROFLEX, AMAGI, SUNTV, AKUMS, WESTLIFE, SAREGAMA ...
+- Small cap (500 to 5,000 cr): 119 names. TASTYBITE, PATELRMART, NRL, ROLEXRINGS, KRONOX, RSWM, GREAVESCOT, KIRANVYPAR, KILITCH, JAYKAY, DEEPA, SKMEGGPROD, KAMATHOTEL, JAYAGROGN, KOPRAN ...
 
 ## 5. Return leaders by horizon (close > 20, mcap > 500 cr)
 
-- 1W: 1000 names; #1 PASHUPATI +42.6; #10 +27.4; median of list +6.1
-  - Top 10: PASHUPATI 42.6, NELCAST 37.6, RAMKY 35.1, SUPREMEINF 33.9, SHREEPUSHK 32.5, INNOVISION 32.0, MARSONS 30.1, ATHERENERG 30.1, BOROLTD 29.8, ZFSTEERING 27.4
-- 2W: 1000 names; #1 CCAVENUE +711.7; #10 +23.2; median of list -0.7
-  - Top 10: CCAVENUE 711.7, PASHUPATI 104.0, DCMSRIND 44.2, MAHASTEEL 37.5, IGIL 28.4, SUPREMEINF 27.7, SHREEPUSHK 25.9, SSWL 24.0, TANLA 23.7, RAMKY 23.2
-- 1M: 1000 names; #1 CCAVENUE +675.3; #10 +37.6; median of list -1.9
-  - Top 10: CCAVENUE 675.3, PASHUPATI 85.3, DCMSRIND 53.4, NELCAST 51.4, UYFINCORP 50.8, SHUKRAPHAR 42.8, PRADPME 40.7, NINSYS 38.3, UDAYJEW 38.0, SSWL 37.6
-- 3M: 1000 names; #1 MBECL +8,234.2; #10 +105.9; median of list +3.0
-  - Top 10: MBECL 8,234.2, CCAVENUE 741.4, TBZ 204.9, KABRAEXTRU 178.6, BODALCHEM 168.5, SPECTRUM 136.7, BAFNAPH 132.0, SSWL 119.4, RATNAVEER 108.0, UYFINCORP 105.9
-- 6M: 1000 names; #1 MBECL +6,135.2; #10 +222.4; median of list +12.8
-  - Top 10: MBECL 6,135.2, ARIHANT 1,843.3, CCAVENUE 609.9, STLTECH 431.6, SIGMAADV 376.6, CUPID 301.9, BAFNAPH 253.2, BODALCHEM 246.2, TBZ 243.5, NRL 222.4
-- 1Y: 1000 names; #1 SWANDEF +104,881.1; #10 +490.8; median of list +12.3
-  - Top 10: SWANDEF 104,881.1, UEL 38,020.4, MBECL 9,384.5, WAAREEINDO 4,303.2, ARIHANT 3,507.1, CUPID 1,717.9, SIGMAADV 1,173.2, STLTECH 999.7, CCAVENUE 666.8, ATHERENERG 490.8
+- 1W: 1000 names; #1 INNOVISION +41.6; #10 +29.1; median of list +7.8
+  - Top 10: INNOVISION 41.6, HEG 40.6, SUPREMEINF 36.0, NELCAST 34.4, ICIL 31.6, FAZE3Q 31.2, BOROLTD 31.0, SAREGAMA 30.2, RAMKY 29.2, AGIIL 29.1
+- 2W: 1000 names; #1 CCAVENUE +750.7; #10 +25.4; median of list +0.4
+  - Top 10: CCAVENUE 750.7, PASHUPATI 75.0, DCMSRIND 49.9, SUPREMEINF 38.3, SSWL 32.0, MAHASTEEL 28.1, OSWALAGRO 27.9, IGIL 27.3, FAZE3Q 27.1, ATHERENERG 25.4
+- 1M: 1000 names; #1 CCAVENUE +714.4; #10 +36.5; median of list -0.6
+  - Top 10: CCAVENUE 714.4, PASHUPATI 66.9, DCMSRIND 61.6, NELCAST 51.3, SSWL 48.4, UYFINCORP 45.5, LGHL 43.8, UTTAMSUGAR 43.2, SHRINGARMS 40.1, SBC 36.5
+- 3M: 1000 names; #1 MBECL +7,909.7; #10 +105.1; median of list +5.8
+  - Top 10: MBECL 7,909.7, CCAVENUE 747.9, TBZ 226.7, KABRAEXTRU 186.3, BODALCHEM 156.0, SPECTRUM 138.0, SSWL 133.6, BAFNAPH 125.4, RATNAVEER 110.8, TFCILTD 105.1
+- 6M: 1000 names; #1 MBECL +5,455.6; #10 +229.9; median of list +14.8
+  - Top 10: MBECL 5,455.6, ARIHANT 1,914.0, CCAVENUE 634.8, STLTECH 406.5, SIGMAADV 396.1, CUPID 286.8, TBZ 258.6, BAFNAPH 243.1, BODALCHEM 230.8, SPECTRUM 229.9
+- 1Y: 1000 names; #1 SWANDEF +101,492.7; #10 +483.9; median of list +14.4
+  - Top 10: SWANDEF 101,492.7, UEL 36,117.6, MBECL 9,605.9, WAAREEINDO 4,264.1, ARIHANT 3,795.2, CUPID 1,711.1, SIGMAADV 1,265.2, STLTECH 954.7, CCAVENUE 625.6, ATHERENERG 483.9
 
-- Names in the top 30 of 3 or more horizons (persistent leaders): CCAVENUE (5), ATHERENERG (4), MAHASTEEL (4), BAFNAPH (4), CUPID (4), PASHUPATI (3), NELCAST (3), BODALCHEM (3), ACUTAAS (3), MENONBE (3), SETL (3), UYFINCORP (3), SSWL (3), NINSYS (3), SPECTRUM (3), MBECL (3), DIACABS (3)
-- In 1W top 30 but absent from the 1Y list (new leadership): PASHUPATI, RAMKY, SUPREMEINF, INNOVISION, MARSONS, ZFSTEERING, SHUKRAPHAR, ONEGLOBAL, SANOFI, SMT, JISLJALEQS, OSWALAGRO, VEDPOWER
+- Names in the top 30 of 3 or more horizons (persistent leaders): CCAVENUE (5), MAHASTEEL (4), BAFNAPH (4), CUPID (4), NELCAST (3), FAZE3Q (3), SAREGAMA (3), AEROFLEX (3), BODALCHEM (3), PASHUPATI (3), SSWL (3), ATHERENERG (3), NINSYS (3), KRISHANA (3), SPECTRUM (3), MBECL (3), DIACABS (3), INDSWFTLAB (3)
+- In 1W top 30 but absent from the 1Y list (new leadership): INNOVISION, SUPREMEINF, RAMKY, MARSONS, VEDPOWER, ZFSTEERING, JISLJALEQS, GANESHCP, PASHUPATI
 
 ## 6. Shareholding shifts (quarterly filings, % of equity)
 
@@ -301,21 +301,21 @@ Each list: stocks where that holder class rose. 'Change' is the 3-quarter change
 
 ### FII
 
-- Rows: 1000; with real 3-quarter history: 829
-- Of those, rose over 3 quarters: 782; median rise +0.58 pp
+- Rows: 1000; with real 3-quarter history: 831
+- Of those, rose over 3 quarters: 783; median rise +0.57 pp
 - Largest 3-quarter rises (real history): ASIANHOTNR 51.3, MICEL 23.4, SHRIPISTON 21.0, AURUM 19.6, GAYAPROJ 16.0, ICICIBANK 14.8, ADANIGREEN 13.7, WSI 12.4, ICEMAKE 12.3, VISACHROME 11.8, WELCORP 11.6, COFORGE 11.4, HFCL 9.8, VCL 9.3, AQYLON 9.3
 
 ### DII (4 straight quarters up)
 
-- Rows: 802; with real 3-quarter history: 187
+- Rows: 899; with real 3-quarter history: 187
 - Of those, rose over 3 quarters: 187; median rise +2.22 pp
 - Largest 3-quarter rises (real history): SWIGGY 18.5, POLICYBZR 15.3, RHIM 13.3, BUILDPRO 12.9, 360ONE 12.9, KFINTECH 12.7, VMM 11.0, DELHIVERY 11.0, BANDHANBNK 10.5, MAXHEALTH 9.8, CARTRADE 9.4, MASTEK 9.4, PAYTM 9.2, FIVESTAR 8.8, CRAFTSMAN 8.4
-- Largest 1-quarter rises: RENTOMOJO 14.8, RHIM 11.7, ADROITIND 11.2, KFINTECH 10.2, MANIKA 10.0, CORONA 9.4, SWIGGY 7.1, DEEPA 6.6, CMLL 5.8, DHABRIYA 5.6, ARDEE 5.2, XTRANET 5.0
+- Largest 1-quarter rises: RHIM 11.7, KFINTECH 10.2, CORONA 9.4, SWIGGY 7.1, 360ONE 5.0, PAYTM 4.6, MEESHO 4.5, POLICYBZR 4.4, CARTRADE 3.8, BUILDPRO 3.7, IVALUE 3.7, AYE 3.6
 
 ### Promoter
 
-- Rows: 1000; with real 3-quarter history: 978
-- Of those, rose over 3 quarters: 506; median rise +0.34 pp
+- Rows: 1000; with real 3-quarter history: 970
+- Of those, rose over 3 quarters: 507; median rise +0.34 pp
 - Largest 3-quarter rises (real history): SANGINITA 41.3, RBA 30.5, SADHNANIQ 29.6, BOHRAIND 23.6, SGMART 21.6, GAYAPROJ 19.6, SHREDIGCEM 18.6, BLISSGVS 14.7, ASTERDM 13.4, AKG 13.1, SUPREMEINF 12.6, GABRIEL 11.3, HILTON 10.9, BHANDARI 10.8, TREJHARA 10.8
 
 ### Retail
@@ -325,56 +325,56 @@ Each list: stocks where that holder class rose. 'Change' is the 3-quarter change
 - Largest 3-quarter rises (real history): SHRENIK 71.7, RMDRIP 62.3, DHARAN 27.0, ONELIFECAP 26.1, LCCINFOTEC 25.9, DEVIT 25.6, FILATFASH 23.1, VIJIFIN 23.1, MUTHOOTMF 22.6, GENSOL 22.5, SUMEETINDS 19.4, SEPC 17.9, AHCL 17.5, STYLEBAAZA 17.3, STALLION 16.3
 
 - Names on BOTH the FII and DII lists: 57. AADHARHFC, ABDL, ADANIGREEN, ALKYLAMINE, ANTELOPUS, ASAHISONG, ASKAUTOLTD, ASTRAMICRO, ATGL, AYMSYNTEX, BOROLTD, BOROSCI, BUILDPRO, CARYSIL, COSMOFIRST, DALMIASUG, EDELWEISS, EQUITASBNK, EVEREADY, GMRP&UI, INA, INDNIPPON, INNOVISION, INOXGREEN, IOB, IRB, ITI, JAGSNPHARM, JUBLINGREA, KAYA, KRONOX, MARSONS, PANACEABIO, PGIL, PRABHA, PRECWIRE, PUNJABCHEM, ROHLTD, SCHNEIDER, SENORES
-- Names on BOTH the Promoter and FII lists: 460. 3IINFOLTD, 5PAISA, AAATECH, AAREYDRUGS, AARON, ABBOTINDIA, ABCAPITAL, ABMINTLLTD, ACUTAAS, ADANIGREEN, ADFFOODS, ADROITINFO, ADVENZYMES, AEPL, AEROENTER, AGRITECH, AHLADA, AHLEAST, AJMERA, AJOONI, AKSHARCHEM, AKUMS, ALEMBICLTD, ALGOQUANT, ALKALI, ALKYLAMINE, ALMONDZ, AMBICAAGAR, AMBIKCO, AMNPLST
+- Names on BOTH the Promoter and FII lists: 467. 20MICRONS, 3MINDIA, 3PLAND, 5PAISA, AAATECH, AAREYDRUGS, AARON, AARTECH, ABCAPITAL, ABCOTS, ABREL, ACCURACY, ACEINTEG, ACUTAAS, ADFFOODS, ADVENZYMES, AEGISLOG, AEROENTER, AGRITECH, AHLEAST, AHLWEST, AJMERA, AJOONI, AKG, AKSHAR, AKUMS, ALEMBICLTD, ALGOQUANT, ALKYLAMINE, ALMONDZ
 
 ## 7. Confluence: names on several lists at once
 
 A name on many independent lists is a stronger fact than a name on one. Counts below say how many of the listed screens each name sits on. Flow lists are shown separately.
 
-- Names on 3+ screens: 101
+- Names on 3+ screens: 135
 
 | Symbol | Sector | Screens | Which | Flow |
 |---|---|---:|---|---|
-| MENONBE | auto | 9 | 52wkHigh, BreakoutV2, CCI-W100, Darvas, Minervini, ModRS, Momentum, PotBreakout, Ret3M-top30 |  |
-| MCX | financials | 8 | 52wkHigh, BreakoutV2, CCI-D100, CCI-W100, Minervini, ModRS, Momentum, PotBreakout | FII+ |
-| CONSOFINVT | financials | 7 | 52wkHigh, BreakoutV2, CCI-W100, Darvas, Minervini, ModRS, Momentum | Ret+ |
-| GLAND | healthcare | 7 | 52wkHigh, CCI-D100, CCI-W100, Minervini, ModRS, Momentum, PotBreakout | FII+, Ret+ |
-| MACPOWER | industrials | 7 | CCI-D100, CCI-W100, Darvas, Minervini, ModRS, Momentum, Ret3M-top30 | Prom+ |
-| MAHASTEEL | metals & mining | 7 | BreakoutV2, CCI-D100, Darvas, Minervini, Momentum, Ret1M-top30, Ret3M-top30 | Ret+ |
-| RATNAVEER | metals & mining | 7 | 52wkHigh, Darvas, Minervini, Momentum, PotBreakout, Ret1M-top30, Ret3M-top30 | FII+, Ret+ |
-| SAREGAMA | media | 7 | 52wkHigh, BreakoutV2, CCI-W100, Minervini, ModRS, Momentum, PotBreakout | Prom+ |
-| SPECTRUM | industrials | 7 | 52wkHigh, CCI-D100, Minervini, Momentum, PotBreakout, Ret1M-top30, Ret3M-top30 |  |
-| TFCILTD | financials | 7 | 52wkHigh, BreakoutV2, Darvas, Minervini, Momentum, PotBreakout, Ret3M-top30 | FII+, Prom+ |
-| MANAKSTEEL | metals & mining | 6 | 52wkHigh, BreakoutV2, CCI-D100, Minervini, Momentum, PotBreakout | FII+ |
-| NELCAST | castings, forgings & fasteners | 6 | 52wkHigh, BreakoutV2, CCI-W100, ModRS, Momentum, Ret1M-top30 | Ret+ |
-| SHREEPUSHK | chemicals | 6 | 52wkHigh, BreakoutV2, Darvas, Minervini, Momentum, PotBreakout | Prom+ |
-| SSWL | auto | 6 | BreakoutV2, Darvas, Minervini, Momentum, Ret1M-top30, Ret3M-top30 | FII+, Prom+, Ret+ |
+| SAREGAMA | media | 9 | 52wkHigh, BreakoutV2, CCI-W100, Darvas, Minervini, ModRS, Momentum, PotBreakout, Ret1M-top30 | Prom+ |
+| HEG | industrials | 8 | 52wkHigh, BreakoutV2, CCI-D100, CCI-W100, Minervini, ModRS, Momentum, PotBreakout | Prom+ |
+| ICIL | textiles | 8 | 52wkHigh, BreakoutV2, CCI-W100, Darvas, Minervini, ModRS, Momentum, PotBreakout | FII+ |
+| MENONBE | auto | 8 | BreakoutV2, CCI-W100, Darvas, Minervini, ModRS, Momentum, PotBreakout, Ret3M-top30 |  |
+| CONSOFINVT | financials | 7 | 52wkHigh, BreakoutV2, CCI-W100, Darvas, Minervini, ModRS, Momentum | Prom+, Ret+ |
+| MACPOWER | industrials | 7 | 52wkHigh, CCI-W100, Darvas, Minervini, ModRS, Momentum, Ret3M-top30 | Prom+ |
+| NAVINFLUOR | chemicals | 7 | 52wkHigh, BreakoutV2, CCI-D100, CCI-W100, ModRS, Momentum, PotBreakout |  |
+| NITINSPIN | textiles | 7 | 52wkHigh, BreakoutV2, CCI-W100, Minervini, ModRS, Momentum, PotBreakout | FII+, Prom+ |
+| SSWL | auto | 7 | 52wkHigh, BreakoutV2, Darvas, Minervini, Momentum, Ret1M-top30, Ret3M-top30 | FII+, Prom+, Ret+ |
+| TCPLPACK | industrials | 7 | 52wkHigh, BreakoutV2, CCI-D100, Darvas, Minervini, Momentum, PotBreakout | FII+, DII+ |
+| ALIVUS | healthcare | 6 | 52wkHigh, CCI-W100, Minervini, ModRS, Momentum, PotBreakout |  |
+| BOSCHLTD | auto | 6 | 52wkHigh, BreakoutV2, CCI-W100, ModRS, Momentum, PotBreakout | Prom+ |
+| EBGNG | services | 6 | CCI-D100, CCI-W100, Darvas, Minervini, ModRS, Momentum | FII+, Ret+ |
+| KRISHANA | chemicals | 6 | 52wkHigh, Darvas, Minervini, Momentum, PotBreakout, Ret1M-top30 | FII+, Prom+ |
+| PGIL | readymade garments/apparels | 6 | BreakoutV2, CCI-W100, Minervini, ModRS, Momentum, PotBreakout | FII+, DII+ |
+| RATNAVEER | metals & mining | 6 | 52wkHigh, Darvas, Minervini, Momentum, PotBreakout, Ret3M-top30 | FII+, Ret+ |
+| SETL | industrials | 6 | CCI-W100, Darvas, Minervini, ModRS, Momentum, Ret3M-top30 | Ret+ |
+| SPECTRUM | industrials | 6 | 52wkHigh, Minervini, Momentum, PotBreakout, Ret1M-top30, Ret3M-top30 |  |
+| TFCILTD | financials | 6 | BreakoutV2, Darvas, Minervini, Momentum, PotBreakout, Ret3M-top30 | FII+ |
 | WELSPUNLIV | textiles | 6 | 52wkHigh, BreakoutV2, Darvas, Minervini, Momentum, PotBreakout | FII+, DII+ |
-| ALIVUS | healthcare | 5 | 52wkHigh, CCI-W100, Minervini, Momentum, PotBreakout |  |
+| ADANIPORTS | transportation | 5 | 52wkHigh, BreakoutV2, CCI-W100, Momentum, PotBreakout | FII+ |
 | ATHERENERG | auto | 5 | 52wkHigh, Darvas, Minervini, Momentum, Ret3M-top30 | Prom+, Ret+ |
+| AVADHSUGAR | fmcg | 5 | CCI-W100, Minervini, ModRS, Momentum, Ret3M-top30 | FII+, Ret+ |
+| BEML | aerospace & defence | 5 | BreakoutV2, CCI-D100, CCI-W100, Momentum, PotBreakout | Prom+ |
 | BODALCHEM | chemicals | 5 | CCI-W100, Minervini, ModRS, Momentum, Ret3M-top30 | FII+ |
-| BOSCHLTD | auto | 5 | BreakoutV2, CCI-D100, CCI-W100, Momentum, PotBreakout | Prom+ |
 | CCAVENUE | i.t | 5 | BreakoutV2, Minervini, Momentum, Ret1M-top30, Ret3M-top30 | FII+, Prom+ |
-| CEIGALL | realty | 5 | 52wkHigh, CCI-W100, ModRS, Momentum, PotBreakout | FII+ |
-| CHENNPETRO | energy | 5 | BreakoutV2, CCI-D100, Darvas, Minervini, Momentum | FII+, Prom+ |
+| CEIGALL | realty | 5 | 52wkHigh, CCI-W100, ModRS, Momentum, PotBreakout | FII+, Prom+ |
 | CUPID | fmcg | 5 | BreakoutV2, Minervini, Momentum, Ret1M-top30, Ret3M-top30 | FII+, Prom+ |
-| GCSL | financials | 5 | 52wkHigh, Minervini, Momentum, Ret1M-top30, Ret3M-top30 | FII+, Ret+ |
-| ICIL | textiles | 5 | BreakoutV2, CCI-D100, Minervini, Momentum, PotBreakout | FII+, Prom+ |
-| MBAPL | chemicals | 5 | CCI-W100, Minervini, ModRS, Momentum, PotBreakout | FII+, Ret+ |
-| NINSYS | i.t | 5 | 52wkHigh, Darvas, Momentum, PotBreakout, Ret1M-top30 | Prom+ |
-| NITINSPIN | textiles | 5 | BreakoutV2, CCI-W100, Minervini, ModRS, Momentum | FII+, Prom+ |
-| NRL | services | 5 | 52wkHigh, CCI-D100, Minervini, Momentum, Ret3M-top30 | FII+, Prom+ |
-| OPTIEMUS | telecom | 5 | BreakoutV2, Darvas, Minervini, Momentum, Ret1M-top30 | FII+ |
-| ORIENTHOT | services | 5 | 52wkHigh, BreakoutV2, Darvas, Minervini, Momentum | FII+, Prom+ |
-| PASHUPATI | textiles | 5 | 52wkHigh, Darvas, Momentum, PotBreakout, Ret1M-top30 | Ret+ |
-| SBC | textiles | 5 | 52wkHigh, Darvas, Minervini, Momentum, Ret1M-top30 | FII+, Prom+ |
-| SHREEJISPG | transportation | 5 | Darvas, Minervini, Momentum, PotBreakout, Ret3M-top30 | FII+, Ret+ |
-| ABDL | fmcg | 4 | CCI-W100, Minervini, ModRS, Momentum | FII+, DII+ |
-| ASAHIINDIA | building materials | 4 | CCI-D100, CCI-W100, Momentum, PotBreakout | Prom+, Ret+ |
-| AVTNPL | fmcg | 4 | CCI-W100, Minervini, ModRS, Momentum | Ret+ |
-| BAFNAPH | healthcare | 4 | Minervini, Momentum, Ret1M-top30, Ret3M-top30 | FII+, Prom+ |
-| BHAGERIA | chemicals | 4 | BreakoutV2, Darvas, Minervini, Momentum | Prom+, Ret+ |
-| DIVISLAB | healthcare | 4 | 52wkHigh, BreakoutV2, Momentum, PotBreakout | FII+ |
+| DALMIASUG | fmcg | 5 | CCI-W100, Minervini, ModRS, Momentum, Ret1M-top30 | FII+, DII+, Prom+ |
+| DIACABS | industrials | 5 | BreakoutV2, Minervini, Momentum, PotBreakout, Ret3M-top30 | FII+ |
+| DOLPHIN | energy | 5 | CCI-W100, Minervini, ModRS, Momentum, Ret3M-top30 | FII+, Prom+ |
+| EMCURE | healthcare | 5 | 52wkHigh, CCI-D100, CCI-W100, Momentum, PotBreakout | Ret+ |
+| GAIL | energy | 5 | 52wkHigh, BreakoutV2, CCI-W100, Momentum, PotBreakout | FII+ |
+| GLAND | healthcare | 5 | 52wkHigh, CCI-W100, Minervini, ModRS, Momentum | FII+, Ret+ |
+| IGPL | chemicals | 5 | CCI-W100, Minervini, ModRS, Momentum, PotBreakout |  |
+| LALPATHLAB | healthcare | 5 | 52wkHigh, BreakoutV2, CCI-D100, Momentum, PotBreakout |  |
+| MAHASTEEL | metals & mining | 5 | BreakoutV2, Minervini, Momentum, Ret1M-top30, Ret3M-top30 | Ret+ |
+| MANAKSTEEL | metals & mining | 5 | 52wkHigh, BreakoutV2, Minervini, Momentum, PotBreakout | FII+ |
+| MBAPL | chemicals | 5 | 52wkHigh, CCI-W100, Minervini, ModRS, Momentum | FII+, Ret+ |
+| NAZARA | i.t | 5 | 52wkHigh, CCI-D100, Minervini, Momentum, PotBreakout | FII+, Ret+ |
 
-- Sector share of all names across the momentum screens: healthcare 21 (9%), industrials 17 (7%), i.t 17 (7%), metals & mining 16 (7%), financials 16 (7%), textiles 15 (6%), chemicals 14 (6%), fmcg 14 (6%)
+- Sector share of all names across the momentum screens: healthcare 29 (10%), industrials 21 (8%), metals & mining 20 (7%), realty 20 (7%), fmcg 20 (7%), i.t 18 (6%), auto 17 (6%), textiles 16 (6%)
 

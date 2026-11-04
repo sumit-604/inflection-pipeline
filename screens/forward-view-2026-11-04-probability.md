@@ -2,6 +2,11 @@
 
 Companion to `forward-view-2026-11-04.md`. Adds FY28 and a probability to each year.
 
+**Definition warning.** These probabilities answer "will PAT reach at least the
+base case". The standing definition from 2026-10-30, now in the shallow-card
+agent, is "will PAT land within 15% of the estimate". The two are not directly
+comparable. Cards written from now on use the 2026-10-30 definition.
+
 **Method (same for every name).** FY27E = the card's step-13 base case (midpoint
 of its range). FY28E = management guidance where it exists, else FY27E grown at
 the delivered trend. Probability = chance the company delivers at least the

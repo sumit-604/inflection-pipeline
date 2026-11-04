@@ -34,6 +34,15 @@ Non-negotiables:
   times with no change, or five turns pass with nothing new learned, stop and
   write the card with what you have, marking the blocked steps.
 
+Operator additions to step 13 (requested 2026-10-29 and 2026-10-30; carried by
+every card, see the Eighth and Ninth run notes in screens/README.md), under a
+heading "Operator additions":
+- FY28 expected PAT and FY28 forward PE, on the same tier rules, usually one
+  notch weaker than FY27.
+- Confidence for FY27 and for FY28, each stated as a percentage: the probability
+  that actual PAT lands within 15% of the estimate. Give the one reason behind
+  the number and the one observation that would move it.
+
 Write the card to screens/cards/<TICKER>.md, then return only this fenced YAML
 block as your final response:
 ```yaml
@@ -45,6 +54,11 @@ fy1_pat_cr: <number or NOT FOUND>
 growth_pct: <number or NOT FOUND>
 forward_pe: <number, NOT APPLICABLE or blank>
 basis_tier: A | B | C | D
+fy27_probability_pct: <n>
+fy28_pat_cr: <number or NOT FOUND>
+fy28_growth_pct: <number or NOT FOUND>
+fy28_forward_pe: <number, NOT APPLICABLE or blank>
+fy28_probability_pct: <n>
 words: <n>
 load_bearing_check: <the one fact /step1 must verify first>
 ```

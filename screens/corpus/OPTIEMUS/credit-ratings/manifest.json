@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 29 Jun from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=143896",
+    "file": "01-ICRA.html",
+    "status": 200,
+    "bytes": 171841
+  },
+  {
+    "index": 2,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 20 Apr from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/OptiemusInfracomLimited_April 20_ 2026_RR_390584.html",
+    "file": "02-CRISIL.html",
+    "status": 200,
+    "bytes": 147892
+  },
+  {
+    "index": 3,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 24 Mar 2025 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=133833",
+    "file": "03-ICRA.html",
+    "status": 200,
+    "bytes": 171810
+  },
+  {
+    "index": 4,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 30 Aug 2022 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/30082022082400_Optiemus_Infracom_Limited.pdf",
+    "file": "04-CARE.pdf",
+    "status": 200,
+    "bytes": 96782
+  }
+]

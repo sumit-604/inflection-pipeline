@@ -17,7 +17,11 @@ frontmatter (shallow-corpus on Sonnet, shallow-card on Opus).
    ticker, screener URL, and market capitalisation with its source and date (Bull
    AI company record or Trendlyne). An ambiguous name: pick the listed match the
    operator most plausibly means, and say so in the run table. A company that
-   already has a card dated within 30 days is skipped and listed as such.
+   already has a card dated within 30 days is skipped and listed as such. Check
+   screens/cards/ and screens/cards/archive/ on this branch AND on every other
+   local branch (`git log --all --oneline -- screens/cards/<TICKER>.md`); the
+   2026-11-04 run re-carded four names whose 2026-10-30 cards sat on an
+   unmerged branch.
 2. Corpus. Dispatch one `shallow-corpus` agent per company, up to 4 at a time,
    each with: company name, ticker, screener URL. Keep each returned YAML block;
    do not open the corpora.
@@ -25,9 +29,11 @@ frontmatter (shallow-corpus on Sonnet, shallow-card on Opus).
    one `shallow-card` agent, up to 4 at a time, with: ticker, corpus path, and the
    market cap line from step 1. A blocked corpus gets no card; list it.
 4. Run table. Write screens/forward-view-<YYYY-MM-DD>.md from the returned YAML
-   blocks, in the format of screens/forward-view-2026-09-21.md: ticker, verdict,
-   posture, FY+1 PAT, growth, forward PE, basis tier, load-bearing check.
-   Sort PROCEED first, then by growth against forward PE.
+   blocks, in the format of screens/forward-view-2026-10-30.md: ticker, verdict,
+   posture, FY27 PAT, growth, forward PE, probability; FY28 PAT, growth, forward
+   PE, probability; basis tier, load-bearing check. Probability is the card's
+   "within 15% of the estimate" percentage. Sort PROCEED first, then by growth
+   against forward PE.
 5. Record the run in screens/README.md under a new "## Run, <date>" heading:
    names, verdicts, corpus gaps that recurred, and any reader or collector defect
    the agents reported. Keep it short.

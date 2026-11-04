@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "agency": "Infomerics",
+    "kind": "pdf",
+    "link_text": "Rating update 7 Sep from infomerics",
+    "url": "https://www.infomerics.com/admin/uploads/Pr-Sakuma-Exp07Sep26.pdf",
+    "file": "01-Infomerics.pdf",
+    "status": 200,
+    "bytes": 331181
+  },
+  {
+    "index": 2,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 18 Jun 2025 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=135751",
+    "file": "02-ICRA.html",
+    "status": 200,
+    "bytes": 171807
+  },
+  {
+    "index": 3,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 31 Jan 2023 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=117732",
+    "file": "03-ICRA.html",
+    "status": 200,
+    "bytes": 171830
+  },
+  {
+    "index": 4,
+    "agency": "Acuite",
+    "kind": "pdf",
+    "link_text": "Rating update 5 Nov 2021 from smera",
+    "url": "https://www.acuite.in/documents/ratings/revised/27867-RR-20211105.pdf",
+    "file": "04-Acuite.pdf",
+    "status": 200,
+    "bytes": 144680
+  }
+]

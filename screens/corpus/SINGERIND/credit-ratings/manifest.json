@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 6 Feb from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SingerIndiaLimited_February 06_ 2026_RR_388677.html",
+    "file": "01-CRISIL.html",
+    "status": 200,
+    "bytes": 92954
+  },
+  {
+    "index": 2,
+    "agency": "CRISIL",
+    "kind": "pdf",
+    "link_text": "Rating update 23 Jan from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/Singer India Limited-RU-23-01-2026.pdf",
+    "file": "02-CRISIL.pdf",
+    "status": 200,
+    "bytes": 3216143
+  },
+  {
+    "index": 3,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 11 Nov 2024 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SingerIndiaLimited_November 11_ 2024_RR_355247.html",
+    "file": "03-CRISIL.html",
+    "status": 200,
+    "bytes": 98025
+  },
+  {
+    "index": 4,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 22 Aug 2023 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SingerIndiaLimited_August 22, 2023_RR_325943.html",
+    "file": "04-CRISIL.html",
+    "status": 200,
+    "bytes": 98184
+  },
+  {
+    "index": 5,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 15 May 2023 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SingerIndiaLimited_May 15, 2023_RR_319741.html",
+    "file": "05-CRISIL.html",
+    "status": 200,
+    "bytes": 35705
+  },
+  {
+    "index": 6,
+    "agency": "CRISIL",
+    "kind": "html+txt",
+    "link_text": "Rating update 30 Aug 2022 from crisil",
+    "url": "https://www.crisil.com/mnt/winshare/Ratings/RatingList/RatingDocs/SingerIndiaLimited_August 30, 2022_RR_298400.html",
+    "file": "06-CRISIL.html",
+    "status": 200,
+    "bytes": 88407
+  }
+]

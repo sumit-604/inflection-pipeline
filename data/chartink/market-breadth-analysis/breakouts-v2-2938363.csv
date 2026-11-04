@@ -5283,6 +5283,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-28,00:00,63MOONS,i.t,smallcap,8.4365,1.2028
 2026-10-28,00:00,ADANIPORTS,transportation,largecap,3.4416,1.0066
 2026-10-28,00:00,APLAPOLLO,industrials,largecap,6.471,1.3024
+2026-10-28,00:00,AUROPHARMA,healthcare,largecap,4.651,0.4425
 2026-10-28,00:00,AUSOMENT,consumer discretionary,smallcap,0.9279,0.0815
 2026-10-28,00:00,BAFNAPH,healthcare,smallcap,1.9528,1.1056
 2026-10-28,00:00,BHAGERIA,chemicals,smallcap,-4.8822,2.3249
@@ -5291,7 +5292,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-28,00:00,BOSCHLTD,auto,largecap,8.0299,0.7817
 2026-10-28,00:00,BSE,financials,largecap,7.868,0.686
 2026-10-28,00:00,CANTABIL,textiles,smallcap,6.3249,1.1531
-2026-10-28,00:00,CCAVENUE,i.t,largecap,8.0224,0.0579
+2026-10-28,00:00,CCAVENUE,i.t,largecap,8.0224,0.055
 2026-10-28,00:00,CHENNPETRO,energy,largecap,3.1038,0.6082
 2026-10-28,00:00,COFORGE,i.t,largecap,3.2307,0.7402
 2026-10-28,00:00,CONSOFINVT,financials,smallcap,7.1876,6.0111
@@ -5303,6 +5304,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-28,00:00,GESHIP,transportation,largecap,4.2296,0.5646
 2026-10-28,00:00,HITECHCORP,industrials,smallcap,1.0835,0.9961
 2026-10-28,00:00,ICICIBANK,bank,largecap,-1.1906,0.6922
+2026-10-28,00:00,ICIL,textiles,midcap,8.6135,0.3545
 2026-10-28,00:00,INDHOTEL,services,largecap,2.9997,1.4157
 2026-10-28,00:00,INDIAGLYCO,fmcg,smallcap,15.307,1.1439
 2026-10-28,00:00,INDIANB,bank,largecap,0.3165,0.4014
@@ -5317,8 +5319,11 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-28,00:00,MAHASTEEL,metals & mining,smallcap,4.1127,0.8751
 2026-10-28,00:00,MANAKCOAT,metals & mining,smallcap,9.8359,1.0536
 2026-10-28,00:00,MANAKSTEEL,metals & mining,smallcap,4.0167,0.3294
+2026-10-28,00:00,MCX,financials,largecap,5.3074,0.3328
+2026-10-28,00:00,MENONBE,auto,smallcap,1.8375,0.2431
 2026-10-28,00:00,MOREPENLAB,healthcare,midcap,1.6513,0.5116
 2026-10-28,00:00,NAVINFLUOR,chemicals,largecap,10.8561,1.501
+2026-10-28,00:00,NELCAST,"castings, forgings & fasteners",smallcap,11.279,3.11
 2026-10-28,00:00,NITINSPIN,textiles,smallcap,6.1903,0.574
 2026-10-28,00:00,NRAIL,building materials,smallcap,3.2081,0.9822
 2026-10-28,00:00,OMAXAUTO,auto,smallcap,11.6017,1.2577
@@ -5354,6 +5359,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-29,00:00,63MOONS,i.t,smallcap,8.8784,1.3786
 2026-10-29,00:00,ADANIPORTS,transportation,largecap,9.943,3.1119
 2026-10-29,00:00,APLAPOLLO,industrials,largecap,7.9314,1.7669
+2026-10-29,00:00,AUROPHARMA,healthcare,largecap,5.6118,0.3275
 2026-10-29,00:00,AUSOMENT,consumer discretionary,smallcap,3.5914,0.4458
 2026-10-29,00:00,BAFNAPH,healthcare,smallcap,3.1719,0.8063
 2026-10-29,00:00,BHAGERIA,chemicals,smallcap,4.6282,3.1706
@@ -5362,7 +5368,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-29,00:00,BOSCHLTD,auto,largecap,7.8938,0.8713
 2026-10-29,00:00,BSE,financials,largecap,8.3942,0.6307
 2026-10-29,00:00,CANTABIL,textiles,smallcap,4.7385,0.6056
-2026-10-29,00:00,CCAVENUE,i.t,largecap,6.1479,0.1451
+2026-10-29,00:00,CCAVENUE,i.t,largecap,6.1479,0.1379
 2026-10-29,00:00,CHENNPETRO,energy,largecap,2.4532,0.4446
 2026-10-29,00:00,COFORGE,i.t,largecap,3.236,0.5253
 2026-10-29,00:00,CONSOFINVT,financials,smallcap,11.6661,6.5337
@@ -5374,6 +5380,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-29,00:00,GESHIP,transportation,largecap,8.1652,1.672
 2026-10-29,00:00,HITECHCORP,industrials,smallcap,1.3051,0.4875
 2026-10-29,00:00,ICICIBANK,bank,largecap,-0.5451,0.8382
+2026-10-29,00:00,ICIL,textiles,midcap,13.9921,0.6748
 2026-10-29,00:00,INDHOTEL,services,largecap,3.6137,1.4922
 2026-10-29,00:00,INDIAGLYCO,fmcg,smallcap,14.9069,0.3507
 2026-10-29,00:00,INDIANB,bank,largecap,3.2192,1.0628
@@ -5388,7 +5395,10 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-29,00:00,MAHASTEEL,metals & mining,smallcap,-1.0926,0.2713
 2026-10-29,00:00,MANAKCOAT,metals & mining,smallcap,22.5058,5.8571
 2026-10-29,00:00,MANAKSTEEL,metals & mining,smallcap,8.6754,0.402
+2026-10-29,00:00,MCX,financials,largecap,6.9761,0.4649
+2026-10-29,00:00,MENONBE,auto,smallcap,-4.3948,11.5601
 2026-10-29,00:00,NAVINFLUOR,chemicals,largecap,7.7199,0.7827
+2026-10-29,00:00,NELCAST,"castings, forgings & fasteners",smallcap,10.1796,0.592
 2026-10-29,00:00,NITINSPIN,textiles,smallcap,7.6942,0.3019
 2026-10-29,00:00,NRAIL,building materials,smallcap,4.5569,0.657
 2026-10-29,00:00,OMAXAUTO,auto,smallcap,15.2084,1.6201
@@ -5402,6 +5412,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-29,00:00,RPGLIFE,healthcare,smallcap,14.6664,5.3657
 2026-10-29,00:00,SANGAMIND,textiles,smallcap,2.7442,0.1354
 2026-10-29,00:00,SAREGAMA,media,midcap,10.039,0.448
+2026-10-29,00:00,SEJALLTD,building materials,smallcap,-2.9215,3.5514
 2026-10-29,00:00,SHREEPUSHK,chemicals,smallcap,22.7268,2.1457
 2026-10-29,00:00,SHREERAMA,industrials,smallcap,-5.9183,0.3884
 2026-10-29,00:00,SMSPHARMA,healthcare,smallcap,17.1732,0.9479
@@ -5421,6 +5432,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-30,00:00,63MOONS,i.t,smallcap,10.3378,1.223
 2026-10-30,00:00,ADANIPORTS,transportation,largecap,8.651,2.485
 2026-10-30,00:00,APLAPOLLO,industrials,largecap,6.4611,1.5943
+2026-10-30,00:00,AUROPHARMA,healthcare,largecap,6.9797,0.7593
 2026-10-30,00:00,BAFNAPH,healthcare,smallcap,1.1175,0.7539
 2026-10-30,00:00,BHAGERIA,chemicals,smallcap,2.2859,5.7752
 2026-10-30,00:00,BHARTIARTL,telecom-service,largecap,4.3127,0.9064
@@ -5428,7 +5440,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-30,00:00,BOSCHLTD,auto,largecap,7.0659,0.9573
 2026-10-30,00:00,BSE,financials,largecap,8.6542,0.6287
 2026-10-30,00:00,CANTABIL,textiles,smallcap,3.5202,0.4931
-2026-10-30,00:00,CCAVENUE,i.t,largecap,3.6629,0.0876
+2026-10-30,00:00,CCAVENUE,i.t,largecap,3.6629,0.0832
 2026-10-30,00:00,CHENNPETRO,energy,largecap,2.4329,0.4535
 2026-10-30,00:00,COFORGE,i.t,largecap,7.6033,2.0456
 2026-10-30,00:00,CONSOFINVT,financials,smallcap,14.3015,0.9698
@@ -5439,6 +5451,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-30,00:00,GESHIP,transportation,largecap,6.4814,0.714
 2026-10-30,00:00,HITECHCORP,industrials,smallcap,1.5637,0.2593
 2026-10-30,00:00,ICICIBANK,bank,largecap,0.2726,0.7658
+2026-10-30,00:00,ICIL,textiles,midcap,12.1654,0.2427
 2026-10-30,00:00,INDHOTEL,services,largecap,3.8248,2.0655
 2026-10-30,00:00,INDIAGLYCO,fmcg,smallcap,15.394,2.1831
 2026-10-30,00:00,INDIANB,bank,largecap,3.3865,0.6888
@@ -5453,7 +5466,10 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-30,00:00,MAHASTEEL,metals & mining,smallcap,-6.0333,0.1005
 2026-10-30,00:00,MANAKCOAT,metals & mining,smallcap,16.1833,1.904
 2026-10-30,00:00,MANAKSTEEL,metals & mining,smallcap,5.3394,0.3064
+2026-10-30,00:00,MCX,financials,largecap,5.5789,0.5674
+2026-10-30,00:00,MENONBE,auto,smallcap,4.641,26.024
 2026-10-30,00:00,NAVINFLUOR,chemicals,largecap,13.1903,1.7415
+2026-10-30,00:00,NELCAST,"castings, forgings & fasteners",smallcap,11.1866,0.6441
 2026-10-30,00:00,NITINSPIN,textiles,smallcap,8.2177,0.4168
 2026-10-30,00:00,NRAIL,building materials,smallcap,1.3335,0.8381
 2026-10-30,00:00,OMAXAUTO,auto,smallcap,7.8279,4.9295
@@ -5466,6 +5482,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-10-30,00:00,RAYMOND,transportation,midcap,3.4606,0.5089
 2026-10-30,00:00,SANGAMIND,textiles,smallcap,4.4079,0.3356
 2026-10-30,00:00,SAREGAMA,media,midcap,12.636,0.5935
+2026-10-30,00:00,SEJALLTD,building materials,smallcap,-8.5162,1.8635
 2026-10-30,00:00,SHREEPUSHK,chemicals,smallcap,28.1719,1.6396
 2026-10-30,00:00,SMSPHARMA,healthcare,smallcap,23.3357,7.4976
 2026-10-30,00:00,SOUTHBANK,bank,midcap,5.5545,0.8022
@@ -5484,12 +5501,13 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-02,00:00,63MOONS,i.t,smallcap,1.3332,1.5187
 2026-11-02,00:00,ADANIPORTS,transportation,largecap,0.2162,0.5896
 2026-11-02,00:00,APLAPOLLO,industrials,largecap,-0.0647,0.6383
+2026-11-02,00:00,AUROPHARMA,healthcare,largecap,0.1427,0.5883
 2026-11-02,00:00,BHAGERIA,chemicals,smallcap,4.8007,1.9766
 2026-11-02,00:00,BHARTIARTL,telecom-service,largecap,0.8208,0.8569
 2026-11-02,00:00,BIL,consumer discretionary,smallcap,3.1447,1.7237
 2026-11-02,00:00,BOSCHLTD,auto,largecap,1.9068,0.6246
 2026-11-02,00:00,BSE,financials,largecap,-0.5811,0.4454
-2026-11-02,00:00,CCAVENUE,i.t,largecap,3.0939,0.102
+2026-11-02,00:00,CCAVENUE,i.t,largecap,3.0939,0.0969
 2026-11-02,00:00,CHENNPETRO,energy,largecap,2.2825,0.723
 2026-11-02,00:00,COFORGE,i.t,largecap,2.6406,1.2025
 2026-11-02,00:00,CONSOFINVT,financials,smallcap,-0.0322,0.3118
@@ -5500,10 +5518,12 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-02,00:00,GESHIP,transportation,largecap,0.4267,0.3897
 2026-11-02,00:00,HITECHCORP,industrials,smallcap,-0.4122,0.3209
 2026-11-02,00:00,ICICIBANK,bank,largecap,-0.7582,0.6584
+2026-11-02,00:00,ICIL,textiles,midcap,3.8905,0.4289
 2026-11-02,00:00,INDHOTEL,services,largecap,1.3368,1.901
 2026-11-02,00:00,INDIAGLYCO,fmcg,smallcap,-1.9144,0.4358
 2026-11-02,00:00,INDIANB,bank,largecap,-0.0289,0.3948
 2026-11-02,00:00,IPCALAB,healthcare,largecap,1.1464,0.7241
+2026-11-02,00:00,KINGFA,plastic products,midcap,-1.4153,0.6253
 2026-11-02,00:00,KOLTEPATIL,realty,smallcap,3.1109,0.5714
 2026-11-02,00:00,KOTAKBANK,bank,largecap,-0.7041,1.2315
 2026-11-02,00:00,LAURUSLABS,healthcare,largecap,-2.3904,1.4563
@@ -5511,7 +5531,10 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-02,00:00,MAHASTEEL,metals & mining,smallcap,4.8823,0.919
 2026-11-02,00:00,MANAKCOAT,metals & mining,smallcap,5.6772,1.4801
 2026-11-02,00:00,MANAKSTEEL,metals & mining,smallcap,4.9949,0.387
+2026-11-02,00:00,MCX,financials,largecap,1.8879,0.3831
+2026-11-02,00:00,MENONBE,auto,smallcap,12.6358,24.9693
 2026-11-02,00:00,NAVINFLUOR,chemicals,largecap,-3.1567,1.593
+2026-11-02,00:00,NELCAST,"castings, forgings & fasteners",smallcap,8.4233,9.0816
 2026-11-02,00:00,NITINSPIN,textiles,smallcap,2.0117,2.1757
 2026-11-02,00:00,NRAIL,building materials,smallcap,6.5123,1.1111
 2026-11-02,00:00,OMAXAUTO,auto,smallcap,1.1249,1.0203
@@ -5524,6 +5547,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-02,00:00,RAYMOND,transportation,midcap,2.2541,0.6935
 2026-11-02,00:00,SANGAMIND,textiles,smallcap,1.117,0.2125
 2026-11-02,00:00,SAREGAMA,media,midcap,-0.5012,0.1823
+2026-11-02,00:00,SEJALLTD,building materials,smallcap,0.6594,0.6104
 2026-11-02,00:00,SHREEPUSHK,chemicals,smallcap,-5.4182,2.1325
 2026-11-02,00:00,SMSPHARMA,healthcare,smallcap,-1.408,1.4348
 2026-11-02,00:00,SOUTHBANK,bank,midcap,-1.7661,0.5107
@@ -5538,3 +5562,59 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-02,00:00,VHLTD,services,smallcap,2.1987,0.7086
 2026-11-02,00:00,WELSPUNLIV,textiles,largecap,10.6171,13.1856
 2026-11-02,00:00,ZYDUSLIFE,healthcare,largecap,-0.4014,0.9831
+2026-11-03,00:00,ADANIPORTS,transportation,largecap,0.9135,1.4786
+2026-11-03,00:00,APLAPOLLO,industrials,largecap,-0.5681,0.5683
+2026-11-03,00:00,AUROPHARMA,healthcare,largecap,0.7791,1.0548
+2026-11-03,00:00,BHAGERIA,chemicals,smallcap,0.8277,1.6261
+2026-11-03,00:00,BHARTIARTL,telecom-service,largecap,4.6258,2.3158
+2026-11-03,00:00,BIL,consumer discretionary,smallcap,5.5326,1.2903
+2026-11-03,00:00,BOSCHLTD,auto,largecap,5.1801,2.2137
+2026-11-03,00:00,BSE,financials,largecap,4.424,1.3609
+2026-11-03,00:00,CCAVENUE,i.t,largecap,4.7611,0.1741
+2026-11-03,00:00,CHENNPETRO,energy,largecap,1.9252,0.5678
+2026-11-03,00:00,COFORGE,i.t,largecap,0.7726,0.5005
+2026-11-03,00:00,CONSOFINVT,financials,smallcap,3.2893,0.7478
+2026-11-03,00:00,CUPID,fmcg,largecap,4.2983,0.4282
+2026-11-03,00:00,DIVISLAB,healthcare,largecap,2.9039,1.5027
+2026-11-03,00:00,DRREDDY,healthcare,largecap,1.2056,0.9546
+2026-11-03,00:00,HITECHCORP,industrials,smallcap,-0.4607,0.196
+2026-11-03,00:00,ICICIBANK,bank,largecap,1.8956,1.2716
+2026-11-03,00:00,ICIL,textiles,midcap,5.5983,0.7204
+2026-11-03,00:00,INDHOTEL,services,largecap,3.0062,1.6055
+2026-11-03,00:00,INDIAGLYCO,fmcg,smallcap,-2.3967,0.4644
+2026-11-03,00:00,IPCALAB,healthcare,largecap,1.1568,1.221
+2026-11-03,00:00,KINGFA,plastic products,midcap,-0.6782,0.4627
+2026-11-03,00:00,KOTAKBANK,bank,largecap,0.6607,1.0796
+2026-11-03,00:00,LAURUSLABS,healthcare,largecap,-3.4296,1.9273
+2026-11-03,00:00,LUMAXTECH,auto,midcap,1.236,0.236
+2026-11-03,00:00,MAHASTEEL,metals & mining,smallcap,5.8212,0.3196
+2026-11-03,00:00,MANAKCOAT,metals & mining,smallcap,2.5818,0.4434
+2026-11-03,00:00,MANAKSTEEL,metals & mining,smallcap,8.5126,1.1284
+2026-11-03,00:00,MCX,financials,largecap,9.4487,1.563
+2026-11-03,00:00,MENONBE,auto,smallcap,16.4012,3.9908
+2026-11-03,00:00,NAVINFLUOR,chemicals,largecap,-1.7281,0.7719
+2026-11-03,00:00,NELCAST,"castings, forgings & fasteners",smallcap,23.798,36.8502
+2026-11-03,00:00,NITINSPIN,textiles,smallcap,1.1671,1.7599
+2026-11-03,00:00,NRAIL,building materials,smallcap,8.129,1.6053
+2026-11-03,00:00,ONELIFECAP,financials,smallcap,0.4338,0.4984
+2026-11-03,00:00,OPTIEMUS,telecom,midcap,1.3364,1.7241
+2026-11-03,00:00,ORIENTHOT,services,smallcap,1.7717,0.4318
+2026-11-03,00:00,PERSISTENT,i.t,largecap,0.8102,0.5977
+2026-11-03,00:00,PETRONET,energy,largecap,4.6632,2.0304
+2026-11-03,00:00,PHOENIXLTD,realty,largecap,4.675,0.9163
+2026-11-03,00:00,RAYMOND,transportation,midcap,6.5534,0.7066
+2026-11-03,00:00,SANGAMIND,textiles,smallcap,2.4394,0.9425
+2026-11-03,00:00,SAREGAMA,media,midcap,2.4697,0.5686
+2026-11-03,00:00,SEJALLTD,building materials,smallcap,7.1239,1.9761
+2026-11-03,00:00,SHREEPUSHK,chemicals,smallcap,3.4019,9.098
+2026-11-03,00:00,SMSPHARMA,healthcare,smallcap,0.5476,1.1638
+2026-11-03,00:00,SSWL,auto,midcap,3.8286,1.3674
+2026-11-03,00:00,TECHM,i.t,largecap,-0.0949,0.6664
+2026-11-03,00:00,TFCILTD,financials,midcap,2.5139,2.188
+2026-11-03,00:00,TIPSMUSIC,media,midcap,0.6649,1.006
+2026-11-03,00:00,TVSMOTOR,auto,largecap,2.5744,0.5786
+2026-11-03,00:00,UNIONBANK,bank,largecap,-1.5054,0.9129
+2026-11-03,00:00,VADILALIND,fmcg,midcap,-2.1622,0.3336
+2026-11-03,00:00,VHLTD,services,smallcap,1.4376,0.2502
+2026-11-03,00:00,WELSPUNLIV,textiles,largecap,15.524,9.1018
+2026-11-03,00:00,ZYDUSLIFE,healthcare,largecap,-0.3934,1.5785

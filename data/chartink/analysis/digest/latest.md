@@ -156,7 +156,6 @@ These are weekly or slower series. The date shown is their last reading.
 
 
 <!-- market-read -->
-
 ## Market read
 
 Wednesday was the widest up day since mid June. 309 stocks rose four and a half percent or more, against only 36 that fell that hard. More than half the market now stands above its 20 day line, the first time since 11 August. The count above the 200 day line rose to 872, about four stocks in ten, and passed the lows of the early October floor. The Nifty rose less than one percent, while the small and micro company indices rose about two percent each. Media, realty, metals, defence and energy led. IT was the only stock index that fell. New yearly highs outnumbered new yearly lows for the first time since mid October. Turnover rose to about 530 crore, the most on an up day since 16 October, but still short of the 610 crore of the heavy selling days. The bounce has turned into a broad repair on the short and middle clocks. The long clock and the money behind it have not yet confirmed it.

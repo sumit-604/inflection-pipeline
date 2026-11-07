@@ -1,0 +1,62 @@
+[
+  {
+    "index": 1,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 19 Aug from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=145025",
+    "file": "01-ICRA.html",
+    "status": 200,
+    "bytes": 172663
+  },
+  {
+    "index": 2,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 24 Mar from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=141787",
+    "file": "02-ICRA.html",
+    "status": 200,
+    "bytes": 172623
+  },
+  {
+    "index": 3,
+    "agency": "Brickwork",
+    "kind": "pdf",
+    "link_text": "Rating update 8 Jul 2025 from brickwork",
+    "url": "https://www.brickworkratings.com/Admin/PressRelease/Dhanlaxmi-Bank-8July2025%20(1).pdf",
+    "file": "03-Brickwork.pdf",
+    "status": 200,
+    "bytes": 399652
+  },
+  {
+    "index": 4,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 1 Jul 2025 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202507120702_Dhanlaxmi_Bank_Limited.pdf",
+    "file": "04-CARE.pdf",
+    "status": 200,
+    "bytes": 143776
+  },
+  {
+    "index": 5,
+    "agency": "ICRA",
+    "kind": "html+txt",
+    "link_text": "Rating update 25 Mar 2025 from icra",
+    "url": "https://www.icra.in/Rationale/ShowRationaleReport/?Id=133846",
+    "file": "05-ICRA.html",
+    "status": 200,
+    "bytes": 172661
+  },
+  {
+    "index": 6,
+    "agency": "CARE",
+    "kind": "pdf",
+    "link_text": "Rating update 19 Dec 2024 from care",
+    "url": "https://www.careratings.com/upload/CompanyFiles/PR/202412121229_Dhanlaxmi_Bank_Limited.pdf",
+    "file": "06-CARE.pdf",
+    "status": 200,
+    "bytes": 168618
+  }
+]

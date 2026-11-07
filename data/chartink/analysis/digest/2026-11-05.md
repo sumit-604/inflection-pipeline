@@ -158,3 +158,9 @@ These are weekly or slower series. The date shown is their last reading.
 
 
 <!-- market-read -->
+
+## Market read
+
+Thursday was the second wide up day in a row. 233 stocks rose four and a half percent or more, against 55 that fell that hard. The market last strung two days this wide together in April 2025. Almost two stocks in three now stand above their 20 day line, the most since early August. The count above the 200 day line rose to 977 and passed the mid October repair high. New yearly highs reached 67 against only 17 new lows. This time the large companies led. Autos, finance, banks and realty carried the Nifty up more than two percent, while the small company index rose less than one percent. For the first time in this bounce, heavy volume stocks outnumbered light volume stocks. Turnover rose to about 570 crore, the most on an up day since mid October, but still short of the selling days. Fear did not ease, and late selling trimmed many gains. The repair has become an early uptrend on the short and middle clocks, with the long clock now joining. The money and the fear gauge have not yet confirmed it.
+
+Full brief: briefs/2026-11-05.html

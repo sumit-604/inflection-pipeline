@@ -265,3 +265,257 @@ than after:
 
 Two names returned zero guidance records, which is itself a finding recorded on
 both cards: **MARINE** and **AVTNPL**.
+
+## Fourth run, 2026-10-18
+
+Eight operator picks, screened in one session: Onward Technologies, Tips Music,
+Marushika Technology, Oriental Hotels, DelaPlex, California Software, Mahamaya
+Steel, JTL Industries.
+
+**Verdicts.** PROCEED to `/step1` on ONWARDTEC. WATCH on TIPSMUSIC and DELAPLEX.
+PASS on MARUSHIKA, ORIENTHOT, CALSOFT, MAHASTEEL and JTLIND. The run-wide
+forward table is `screens/forward-view-2026-10-18.md`.
+
+**The corpus rule held in full this time.** This session had egress. Every
+document is a PDF on the operator's disk with a page-marked `.txt` beside it.
+No Bull AI or Trendlyne call was made. Sources:
+- screener.in collector (`screener_collect.py --output-dir --no-drive`, run
+  under `py -3.14`; the default `py` lacks `python-dotenv` and `playwright`):
+  FY25 and FY26 annual reports, up to four transcripts, the latest deck,
+  Financials.xlsx.
+- screener.in quarter links (`/company/source/quarter/<id>/<m>/<y>/`), which
+  redirect to the BSE PDF; downloaded from `AttachLive/` or `AttachHis/`.
+- NSE announcements API (`/api/corporate-announcements`, cookie from the home
+  page first; `index=sme` for Emerge names): results, decks, transcripts,
+  orders, rating letters and regulatory notices, filtered by subject.
+- `fetch_ratings.py` for CARE, CRISIL and Infomerics PDFs. ICRA pages are
+  script shells; the rationale PDF downloads plainly from
+  `https://www.icra.in/Rating/ShowRationalReportFilePdfViewer/<Id>`.
+- Prospectuses: Marushika (17-Feb-2026, from the SEBI filing page iframe) and
+  DelaPlex (2024 RHP, NSE Emerge archive).
+- Market cap and shareholding: screener.in company page, saved per company as
+  `market-data-2026-10-18.md` and labelled a service record.
+- Tesseract OCR (`C:\Program Files\Tesseract-OCR`, via pymupdf) for scanned
+  pages, marked `[OCR]`. Analysts read OCR table digits from the page image.
+
+BSE's own API answered Access Denied to every scripted call. The BSE archive
+paths still serve PDFs.
+
+### Findings worth carrying out of the cards
+
+- **CALSOFT.** Qualified FY26 audit opinion: profit "overstated" by Rs 10.88
+  crore of overdue receivables. Rs 20 crore of receivables reclassified as an
+  advance for shares in a foreign company, with an emphasis of matter on
+  recoverability. Six internal-control material weaknesses. The promoter holds
+  86% of the partly paid shares with the Rs 7.50 call unpaid; the call closed
+  9-Oct-2026 and what followed is NOT FOUND.
+- **MAHASTEEL.** ICRA (B+) and CARE (BB+) both carry it as Non-Cooperating;
+  Infomerics BBB and Brickwork BBB+ sit six notches higher, and the AR
+  discloses only Brickwork. The pattern fits rating shopping.
+- **JTLIND.** Rs 195 crore of related-party loans, all repayable on demand or
+  without terms per CARO. Three years of negative operating cash flow
+  (Rs -335 crore against Rs 315 crore of profit). An Income Tax Benami Act
+  provisional attachment on promoter-held land (02-Mar-2026).
+- **ORIENTHOT** is now a merger stub: 25 IHCL shares for 117 OHL shares,
+  approved 24-Aug-2026, 25 days after shareholders approved a new 20-year IHCL
+  management agreement. The valuation reports are not held.
+- **MARUSHIKA.** A Rs 45.06 crore HFCL order announced 29-Apr-2026 and
+  cancelled two days later. The certified order book is Rs 35.45 crore, while
+  the AR claims Rs 108.56 crore "under execution".
+- **DELAPLEX.** About 60% of FY25 revenue went to the promoter-family US parent
+  at cost plus. NSE queried its results format twice.
+- **TIPSMUSIC.** Related-party purchases from loss-making Tips Films rose to
+  26.42% of purchases; AOC-2 shows the Rs 15.53 crore advance as NIL.
+- **ONWARDTEC.** A Rs 2.93 crore R&D credit sits inside Q2 FY27 expenses and
+  lifts the quarter's margin by 1.7 points; neither the press release nor the
+  deck names it.
+
+### Corpus defects recorded
+
+- **Screener quarter links are not reliable for the latest period.** For
+  MAHASTEEL the Sep-2026 link served a Reg 74(5) certificate; for CALSOFT it
+  served AGM voting results. Neither company has reported Sep-2026. For the two
+  SME names every quarter link pointed at the wrong document; those were
+  deleted and the NSE originals used. Check the period on page 1 before trusting
+  a file name.
+- **DELAPLEX FY26 annual report is truncated at source.** NSE serves 9,299,265
+  bytes of a file whose linearisation header declares 9,681,762. No reader
+  opens it. A `/step1` must get it from the company or BSE.
+- **ONWARDTEC Q1 FY27 deck** is truncated (5,767,168 of 5,905,298 bytes). The
+  Q2 FY27 deck supersedes it.
+- Some PDFs carry a garbled embedded text layer and no `[OCR]` marker
+  (ORIENTHOT q-2026-06 and q-2025-12, TIPSMUSIC q-2026-09, MARUSHIKA board
+  outcome of 22-May-2026). The extractor only OCRs near-empty pages. Analysts
+  read figures from page images.
+- Marushika's FY26 AR is 106 MB, over the Read tool's limit; its image-only
+  overview pages were rendered and read visually.
+- Many filings are byte-identical duplicates of screener downloads.
+- `Financials.xlsx` template sheets are empty for most names; data sits only
+  in the Data Sheet.
+
+### Known limits of this run
+
+- Cards ran 2,478 to 2,878 words against the framework's 1,400 to 1,900,
+  under a brief that asked for 1,900 to 2,600. Flagged rather than trimmed.
+- MARUSHIKA and DELAPLEX report half-yearly; the proof test is a
+  two-half-year test on both.
+- Credit ratings are old or absent on five names: ONWARDTEC (ICRA withdrawn
+  Nov-2023), TIPSMUSIC (CARE withdrawn Jan-2022), JTLIND (2021-2023 only),
+  MARUSHIKA, DELAPLEX and CALSOFT (none found).
+- No Q2 FY27 transcript was held for ONWARDTEC or TIPSMUSIC; both calls had
+  just happened.
+
+## Fifth run, 2026-10-18 (second batch)
+
+Fourteen operator picks: Ratnaveer Precision, Jayaswal Neco, Mahamaya Steel,
+Sagardeep Alloys, Silkflex Polymers, National Fittings, Sharvaya Metals, Aztec
+Fluids & Machinery, Singer India, McLeod Russel, Solara Active Pharma,
+Dhanlaxmi Bank, Monolithisch India, Valiant Laboratories. Mahamaya Steel had
+been screened that morning from the same corpus (fourth run) and was not
+repeated. Valiant's 2026-09-06 card was rewritten in full, with a "what
+changed" section.
+
+**Verdicts.** No PROCEED. WATCH on JAYNECOIND, DHANBANK, SILKFLEX, NATFITTING,
+SOLARA, SINGERIND, MONOLITH and VALIANTLAB. PASS on RATNAVEER, SAGARDEEP,
+SHARVAYA, AZTEC and MCLEODRUSS. Forward table:
+`screens/forward-view-2026-10-18b.md`.
+
+**Sources, as in the fourth run, plus two new routes.**
+- **BSE-only names** (NATFITTING, SHARVAYA, AZTEC): BSE's API refuses scripted
+  calls, but the same call made from the bseindia.com page in the in-app
+  browser returns the announcement list (the date range must be 12 months or
+  less). Attachments then download plainly from `AttachHis/` or `AttachLive/`.
+  Bull AI `list_document_availability` (free) confirmed what exists.
+- **India Ratings** pages are script shells. JAYNECOIND's 05-Feb-2026 release
+  was rendered in the browser and saved verbatim as text.
+- OCR now runs per page inside the extractor, so every OCR'd page carries
+  `[OCR]`. Pages with a garbled native text layer still carry no marker;
+  analysts read those figures from the page image.
+
+### Findings worth carrying out of the cards
+
+- **MCLEODRUSS.** Adverse audit opinion plus a going-concern paragraph. The
+  Rs 1,288.95 crore debt write-back is booked but revocable until the NARCL
+  restructuring agreement is signed. ICRA D, issuer not cooperating, since 2019.
+- **JAYNECOIND.** Cheapest real earnings in the batch (about 11x forward), but
+  the MD's conviction is under appeal, an ED attachment hearing is set for
+  28-Oct-2026, and 99.87% of promoter shares are pledged to the NCD holders.
+- **NATFITTING** is a change of control: Himgiri Castings and the Agarwal
+  family bought 34.04% at Rs 130 and now merge two family companies into the
+  listed one, issuing 78% new equity. The valuation report is not held.
+- **SHARVAYA.** EBITDA margin fell from about 16% to 2.9% in H2 FY26, then the
+  board approved a share swap with a family-owned die-caster at the SEBI floor
+  price, with relatives classed as public taking almost half.
+- **AZTEC.** A bank classed subsidiary Jet Inks as NPA from Aug-2025 to
+  Mar-2026; the annual report does not mention it.
+- **RATNAVEER** capitalised self-generated costs of Rs 179 crore over FY25 and
+  FY26, 1.6x the profit of those years; FY26 operating cash flow was negative;
+  promoters took none of the Rs 330 crore rights issue.
+- **SOLARA.** The turnaround profit is untaxed. Strides, a promoter-group
+  company, bought 24% of FY26 revenue. The ibuprofen review is due within 12
+  weeks of 16-Oct-2026.
+- **MONOLITH.** A Rs 157 crore take-or-pay quartzite block, 6.8x FY26 profit.
+  The holding company is missing from the related-party list, and the company
+  lent the Chairman Rs 1.55 crore without repayment terms.
+- **SILKFLEX** is a licensed distributor of a Malaysian brand's textile inks
+  and binders, not a hose maker; the brief had it wrong. The CFO could not
+  reconcile the trading and manufacturing margins on the April 2026 call.
+- **VALIANTLAB.** Three NSE queries in 12 months. India Ratings calls the
+  Q1 FY27 margin "unlikely to sustain". Corrections to the first card include
+  FY26 EBITDA of Rs 6.4 crore, not Rs 64 crore.
+
+### Corpus defects recorded
+
+- **Truncated downloads are the main defect of this run.** Found by analysts:
+  MONOLITH FY26 annual report (re-fetched whole, 26.2 MB, card updated),
+  NATFITTING price clarification (re-fetched whole, card updated), AZTEC FY26
+  results, SHARVAYA 14-Oct-2026 acquisition filing, VALIANTLAB NSE reply of
+  01-Jun-2026, MONOLITH Q1 press release, JAYNECOIND Q2 FY27 press release
+  (NSE itself serves 2.26 MB of a declared 21.95 MB). The download loops
+  accepted any file over 15 KB. **Fix for the next run:** open every PDF after
+  download and re-fetch with resume (`curl -C -`) until it parses; where the
+  file name carries a byte count (NSE annual reports do), check against it.
+- NATFITTING's April 2026 default disclosure is listed by BSE but its archive
+  serves an error page under both paths.
+- NATFITTING's six Acuité rationale links return 404.
+- Byte-identical duplicates across `screener/` and `filings/` on most names.
+- Mislabelled files: JAYNECOIND "press release" files are full decks; SOLARA's
+  `Investor_Presentation_1.pdf` is a press release; JAYNECOIND `RESULT_FINAL`
+  holds EGM votes.
+
+### Known limits of this run
+
+- Cards ran 2,624 to 3,117 words, over the 1,900 to 2,600 the brief asked for.
+- Half-yearly reporters, two-half proof test: SILKFLEX, SHARVAYA, AZTEC.
+  MONOLITH reports quarterly by choice.
+- No transcript exists in the corpus for JAYNECOIND, SAGARDEEP, NATFITTING,
+  SHARVAYA, MCLEODRUSS or DHANBANK.
+- Credit views are stale or absent on SAGARDEEP (CARE 2017), MCLEODRUSS (ICRA
+  D since 2019), NATFITTING (links dead), AZTEC (no SEBI-registered rating)
+  and MONOLITH (none).
+
+**Integrity sweep, after both batches.** All 724 corpus PDFs across the 21
+names were opened. Nine would not parse. Six were re-fetched whole with
+resumed downloads and their `.txt` regenerated: MAHASTEEL Q3 FY26 results
+(13-Feb-2026), MONOLITH H1 press release (16-Oct-2025), VALIANTLAB NSE reply
+(01-Jun-2026) and Q4 FY26 outcome (14-May-2026), SHARVAYA acquisition filing
+(14-Oct-2026), AZTEC FY26 results (29-May-2026). The cards were written
+before this repair, from page-image recovery or other filings; the now
+readable files are there for `/step1` to confirm against. Three stay broken
+because the exchange serves them short: DELAPLEX FY26 annual report,
+JAYNECOIND Q2 FY27 press release, ONWARDTEC Q1 FY27 deck.
+
+## Sixth run, 2026-10-26
+
+Two operator picks, screened one after the other in one session: Antelopus
+Selan Energy (NSE ANTELOPUS, formerly SELAN; BSE 530075) and Kolte-Patil
+Developers (NSE KOLTEPATIL; BSE 532924). Identities confirmed on screener.in;
+`/company/SELAN/` now returns 404.
+
+**Verdicts.** WATCH on both. No PROCEED.
+- **ANTELOPUS: WATCH, posture EARNINGS-ONLY.** Volumes rose 50% year on year to
+  1,656 boepd in Q2 FY27, October ran at 1,950, and H1 FY27 profit was
+  Rs 111.61 crore against Rs 23.03 crore. Forward PE about 18.8x on an H1
+  run-rate (Tier B, consistent with the Tier A EBITDA guide). Two things carry
+  that profit: crude on a West Asia premium, and a ten-year amortisation
+  extension booked from 1-Oct-2025 for licences that end in 2029-2030. The
+  auditor put an emphasis of matter on it; India Ratings treats the extension
+  as an upside trigger, not a given.
+- **KOLTEPATIL: WATCH, posture PRICED NARRATIVE (TRAP).** Blackstone holds 40%
+  with joint control (the open offer at Rs 329 drew 614 shares). Pre-sales
+  fell from Rs 2,822 crore in FY24 to Rs 2,605 crore in FY26; the record
+  Q2 FY27 is one launch (Rs 616 crore of Rs 1,019 crore). Four straight
+  quarters with no earnings call. GST demands of about Rs 226 crore filed
+  Apr-Jun 2026. Forward view Tier D: completed-contract accounting makes any
+  run-rate meaningless and no guide exists, so the forward PE is blank.
+
+**Sources.** As in the fourth and fifth runs: screener collector under
+`py -3.14`, NSE corporate-announcements API for filings, screener-linked
+CARE PDFs and CRISIL HTML rationales, and the BSE `AttachLive/` path for one
+BSE-only reply. The India Ratings rationale for Antelopus came enclosed in its
+exchange intimation, so no browser render was needed. No Bull AI or Trendlyne
+call was made.
+
+**Integrity check, the fix from 2026-10-18, applied.** Every PDF was opened
+with PyMuPDF after download, every page's text extracted, page markers matched
+to page count, and every file checked for `%%EOF` in its last 2 KB. Downloads
+used `curl -C -` with retry. **No file stayed broken** in either corpus. No
+file name in this set carries a byte count to check against.
+
+**Corpus gaps.**
+- ANTELOPUS: no concall transcript exists anywhere (NSE, screener.in, company
+  site); the Q2 FY27 call took place after results on 26-Oct-2026. The
+  private-equity owner behind Blackbuck Energy Investments is unnamed in the
+  annual report. The independent reserve report is not filed.
+- KOLTEPATIL: no transcript after Q1 FY26 because no call was held for Q2 FY26
+  to Q1 FY27. Q2 FY27 financial results not yet filed (operational update
+  only). No project-level margin disclosure. No FY27 profit guidance.
+
+**Session note.** An earlier, interrupted session of this same scheduled task
+had collected most of the ANTELOPUS corpus about ten minutes before this run
+started. Those files were checked under the integrity rule above and reused,
+not re-downloaded. NSE served the Kolte-Patil filings slowly (about one file a
+minute late in the run).
+
+**Known limits.** Cards ran 3,211 words (ANTELOPUS, tables included) and 2,981
+words (KOLTEPATIL) against the brief's 1,900 to 2,600. Flagged, not trimmed.

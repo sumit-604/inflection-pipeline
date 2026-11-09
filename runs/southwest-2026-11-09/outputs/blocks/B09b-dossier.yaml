@@ -1,0 +1,73 @@
+stage: B09b-dossier
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "Q2 FY27 earnings call transcript (call 11 Nov 2026, 16:00 IST)"
+    expected_source: "BSE"
+    kind: "freshness-pair"
+  - document: "Shareholding pattern, quarter ended 30 Sep 2026 and prior quarters"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Q3 FY26 earnings call transcript (Feb 2026)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "FY24 annual report"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Screener Profit & Loss, Quarters, Balance Sheet, Cash Flow sheets (empty export)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "CRISIL rating rationale as PDF (text capture only)"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Broker or research notes"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Drilling, seismic and aquifer services"
+    archetype: "Order-book business (EPC/defence/capital goods)"
+  - line: "Jharkhand coal block (pre-production)"
+    archetype: "Licence/scarcity business"
+transition:
+  - line: "Drilling, seismic and aquifer services"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R2 COST-ADVANTAGED CONVERTER-like (durable ROCE from long-tenor anchored contracts)"
+    engine: "Fixed-cost absorption from large multi-year anchored contracts (HZL Rs 307 Cr, Reliance extension Rs 166 Cr) plus rig capacity added"
+    proof_gate: "Q3 FY27 consolidated EBITDA margin >=20% with employee cost <18% of revenue; revenue clearly above Rs 62 Cr with rig utilisation disclosed; H2 FY27 CFO/PAT >0.7 with receivable days falling from ~175"
+    recognition_gap: "Open question: does market pricing already reflect the TO state? Stage 11 resolves via the PE gap"
+    ugliness: "STRUCTURAL-FEATURE on cash line (3 years of high working-capital days); margin line provisional ARTIFACT-OF-CLIMB; operator rules at sign-off"
+    transition_falsifier: "Q3 FY27 margin <18% with employee cost >20%; rig delivery slips again or revenue not above Q2; ex-anchor book flat with no new LOAs; H2 receivables rebuild with CFO/PAT <0.5"
+  - line: "Jharkhand coal block (pre-production)"
+    from_tier: "R0 NON-OPERATING"
+    to_tier: "operating mine; no rung established by the evidence (capex, funding, mining plan NOT FOUND)"
+    engine: "Mining plan approval, clearances and a funded Phase 1 (about Rs 200-225 Cr)"
+    proof_gate: "Mining plan approved and Phase 1 funding stated by source and amount"
+    recognition_gap: "Open question for Stage 11; option carries no value until funded"
+    ugliness: "STRUCTURAL-FEATURE (E&E 1,930.58 L, nil revenue, timeline slipped FY28 to FY28-29)"
+    transition_falsifier: "Production slips past FY28-29 or an equity raise funds Phase 1"
+dominant_variables:
+  - "Fixed-cost absorption: quarterly EBITDA margin and employee cost ratio"
+  - "Anchor-contract execution pace: HZL ramp, Reliance share, order-book burn"
+  - "Cash conversion: CFO/PAT and receivable days"
+  - "Rig capacity delivered and used: hand-over dates, fleet count, utilisation"
+business_falsifier: "Evidence that a large part of reported revenue is pass-through of sub-contracted or related-party work (sub-contract fees 33.4% of revenue; SWR books ~99% of revenue from the parent; top-3 customers unnamed), making the firm a contract aggregator not a rig operator"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 8
+  verifiability_ratio: "5 of 8 externally observable"
+  single_point_failure: "HZL Rs 307 Cr order execution (about 40% of order book) within three customers at 72.27% of revenue"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 16
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "9038d855d8c917b3a31cd44e9f9eb7c9c86ffc76"

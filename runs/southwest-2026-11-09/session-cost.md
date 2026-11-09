@@ -19,3 +19,29 @@
 | 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 311670 | 600s | 1 |
 | 12c | verifier-c-framework (phase 1) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 148156 | 662s | 1 |
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 496184 | 1232s | 1 |
+| 13 | stage-13-synthesis (lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 214421 | 548s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 210869 | 543s | 1 |
+
+## SESSION CLOSE-OUT
+
+(a) TOP FIVE BY TOKENS (run total 4059114 over 19 ledger rows)
+- stage-02-notes-pass: 554058 (13.6%)
+- verifier-b-redflags: 496184 (12.2%)
+- stage-06-peers: 331597 (8.2%)
+- stage-03-ardeep: 316305 (7.8%)
+- verifier-a-numerical: 311670 (7.7%)
+
+(b) DOWNSHIFT FAILURES: none. stage-00-intake-check and verifier-a-shadow ran on claude-haiku-5-5; verifier A ran on claude-sonnet-5-5, per frontmatter.
+
+(c) COST SPIKES: none (no prior run for this ticker).
+
+(d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+
+Fresh and cache token splits are n/a: the subagent notification in this app exposes only total tokens, tool uses and wall time.
+
+(e) FRESH VS RE-READ (subagents only)
+Fresh tokens (cache write + output + uncached input): n/a (all 19 rows left out)
+Re-read tokens (cache read): n/a (all 19 rows left out)
+Re-read multiple (re-read / cache write): n/a (all 19 rows left out)

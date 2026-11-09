@@ -18,3 +18,4 @@
 | 12a-s | verifier-a-shadow | claude-haiku-5-5 | high | n/a | n/a | n/a | n/a | 234829 | 476s | 1 |
 | 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 311670 | 600s | 1 |
 | 12c | verifier-c-framework (phase 1) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 148156 | 662s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 496184 | 1232s | 1 |

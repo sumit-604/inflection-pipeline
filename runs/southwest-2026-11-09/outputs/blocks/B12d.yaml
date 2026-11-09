@@ -1,0 +1,19 @@
+stage: B12d
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 10
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Q10 JINDRILL offshore only", issue: "VERIFIED rests on one peer (JINDRILL, four calls of the same company); Rule 4 asks for 2 independent peer anchors. Should be PARTIALLY VERIFIED or marked single-entity factual", severity: MAJOR}
+findings:
+  - {severity: MAJOR, item: "Q10 VERIFIED on a single peer; B06 argues four calls and two speakers meet the two-peer rule, but they are one company, not independent peers", anchor: "B06 Q10; JINDRILL Aug 2026 p.3 line 93"}
+  - {severity: MINOR, item: "Q1 omits JINDRILL Q1 FY27 management expectation that day rates will improve (direction consistent with the contradiction, but a counter-quote left out)", anchor: "JINDRILL-Concall_Aug_2026 lines 361-367"}
+critical_count: 0
+major_count: 1
+minor_count: 1
+acceptance_rate: 100

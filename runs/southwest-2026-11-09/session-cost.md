@@ -13,3 +13,8 @@
 | 8 | stage-08-promoter | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 286608 | 600s | 1 |
 | 7 | stage-07-emoat | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 152167 | 295s | 1 |
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 331597 | 502s | 1 |
+| 9 | stage-09-tam | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 143779 | 354s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 56995 | 67s | 1 |
+| 12a-s | verifier-a-shadow | claude-haiku-5-5 | high | n/a | n/a | n/a | n/a | 234829 | 476s | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 311670 | 600s | 1 |
+| 12c | verifier-c-framework (phase 1) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 148156 | 662s | 1 |

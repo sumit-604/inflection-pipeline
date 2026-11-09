@@ -1,0 +1,24 @@
+stage: confidence
+company: SOUTHWEST
+run_date: '2026-11-09'
+phase: 1
+confidence_delta:
+  numerical_acceptance: 98
+  redflag_coverage: 86.4
+  framework_adherence: 90.3
+  framework_adherence_scope: Gate 0 + Emerging Moat only; valuation adherence pending
+    phase 3
+  peer_utilisation: 83.3
+  overall: 83.3
+  overall_set_by: 'peer_utilisation (B12d: 10 substantive of 12 peer transcripts)'
+  band: 75-89 normal, note specifics
+  not_applicable: []
+verifier_a_identity_check: B12a has no CRITICAL rows; no strike required
+rework:
+  fires: false
+  basis: 'OR-29: no CONFIRMED Verifier A CRITICAL; acceptance rates 98, 86.4, 90.3,
+    100 all >= 60 on denominators >= 4. B12b CRITICAL and B12c CRITICAL are not REWORK
+    triggers.'
+remediation_cycles: 0
+source_fidelity_findings: B12a four MAJOR rows source_fidelity true; corrected values
+  in B12a source_truth govern every downstream use

@@ -11,3 +11,5 @@
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 146113 | 316s | 1 |
 | 5 | stage-05-concall | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 188236 | 434s | 1 |
 | 8 | stage-08-promoter | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 286608 | 600s | 1 |
+| 7 | stage-07-emoat | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 152167 | 295s | 1 |
+| 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 331597 | 502s | 1 |

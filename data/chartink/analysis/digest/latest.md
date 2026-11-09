@@ -1,10 +1,9 @@
-# Market breadth digest: 2026-11-05
+# Market breadth digest: 2026-11-09
 
 Computed from `market_breadth_daily.csv`. Arithmetic only. No view is expressed and nothing is recommended.
 
-- Metrics reporting on 2026-11-05: **69** of 79
-- History available: 2019-07-01 to 2026-11-05, 712 dated rows
-- Metrics with no reading for 2026-11-05: 6 (weekly series and slower tiles; see the end)
+- Metrics reporting on 2026-11-09: **75** of 79
+- History available: 2019-07-01 to 2026-11-09, 715 dated rows
 - Chart guide lines excluded: 4 (constant columns such as the 50/50 marker)
 
 A percentile needs history. Metrics with fewer than 20 readings show `n=<count>` instead of a rank, and are never flagged as extreme.
@@ -15,152 +14,137 @@ Percentile is this reading's rank against that metric's own history. 50 means mi
 
 | Metric | Value | 1d | 5d | 20d | Percentile | History |
 |---|---:|---:|---:|---:|---:|---:|
-| % above 10 EMA | 73.84 | +6.87 | +36.60 | +35.40 | 90 | 416 |
-| % above 20 EMA | 58.72 | +10.68 | +34.25 | +25.16 | 79 | 416 |
-| % above 50 EMA | 38.75 | +7.84 | +17.31 | +3.72 | 47 | 416 |
-| % above 200 EMA | 36.31 | +2.11 | +6.53 | -5.00 | 43 | 416 |
-| Net breadth (4% adv minus dec) | 11.75 | -3.85 | +5.01 | +8.13 | 92 | 416 |
-| 4% advancers | 14.91 | -3.22 | +5.27 | +8.72 | 93 | 416 |
-| 4% decliners | 3.16 | +0.63 | +0.25 | +0.59 | 58 | 416 |
-| Net new highs minus lows | 1.90 | +1.85 | +3.24 | +2.44 | 82 | 416 |
-| Net within 15% of 52wk H/L | -9.65 | +6.13 | +13.90 | -1.94 | 40 | 416 |
-| Volume expansion ratio | 1.52 | +0.80 | +1.16 | +1.17 | 94 | 416 |
-| Overbought count (weekly RSI>70) (as of 2026-11-02) | 77.00 | +15.00 | -72.00 | -127.00 | 27 | 384 |
-| Oversold count (weekly RSI<30) (as of 2026-11-02) | 92.00 | -192.00 | -63.00 | +68.00 | 79 | 384 |
+| % above 10 EMA | 68.32 | +7.70 | +27.53 | +44.14 | 86 | 418 |
+| % above 20 EMA | 59.06 | +9.20 | +31.16 | +35.16 | 79 | 418 |
+| % above 50 EMA | 40.00 | +5.74 | +18.45 | +12.98 | 50 | 418 |
+| % above 200 EMA | 37.30 | +2.30 | +8.31 | +0.89 | 45 | 418 |
+| Net breadth (4% adv minus dec) | 0.71 | -7.41 | -3.79 | -3.35 | 33 | 419 |
+| 4% advancers | 4.61 | -4.39 | -3.77 | -2.80 | 37 | 419 |
+| 4% decliners | 3.90 | +3.02 | +0.03 | +0.55 | 68 | 419 |
+| Net new highs minus lows | 0.92 | +0.33 | +1.55 | +2.18 | 58 | 419 |
+| Net within 15% of 52wk H/L | -8.22 | -0.86 | +13.98 | +4.44 | 44 | 419 |
+| Volume expansion ratio | 0.24 | -1.40 | -0.32 | -0.06 | 4 | 419 |
+| Overbought count (weekly RSI>70) | 81.00 | -3.00 | -53.00 | -105.00 | 29 | 385 |
+| Oversold count (weekly RSI<30) | 79.00 | +0.00 | -128.00 | +48.00 | 76 | 385 |
 
 ## Largest one-day moves
 
 | Metric | Value | 1d change | Percentile |
 |---|---:|---:|---:|
-| `breadth_above_500_trend_reversal__above_20dma` | 1,444.00 | +229.00 | 85 |
-| `breadth_above_500_trend_reversal__below_20dma` | 810.00 | -227.00 | 25 |
-| `breadth_above_500_trend_reversal__above_50dma` | 1,016.00 | +179.00 | 56 |
-| `breadth_above_500_trend_reversal__below_50dma` | 1,238.00 | -177.00 | 59 |
-| `breadth_above_500_trend_reversal__above_200dma` | 977.00 | +104.00 | 55 |
-| `breadth_above_500_trend_reversal__below_200dma` | 1,277.00 | -102.00 | 64 |
-| `4_advance_decline__4_advance` | 381.00 | -79.00 | 96 |
-| `breadth_above_500_trend_reversal__up_4_5_today` | 233.00 | -76.00 | 94 |
-| `4_advance_decline_today__4_advance` | 382.00 | -48.00 | 92 |
-| `current_previous_yr_volumes_crores__current` | 571.67 | +39.81 | 79 |
+| `current_previous_yr_volumes_crores__current` | 390.08 | -259.45 | 1 |
+| `drawdowns_peaks__blw_3` | 230.00 | -187.00 | 76 |
+| `4_advance_decline_today__4_decline` | 114.00 | -115.00 | 68 |
+| `current_previous_yr_volumes_crores__1_yr_back` | 567.85 | +112.09 | 94 |
+| `4_advance_decline__4_advance` | 110.00 | -104.00 | 28 |
+| `breadth_above_500_trend_reversal__below_20dma` | 843.00 | +76.00 | 27 |
+| `breadth_above_500_trend_reversal__above_20dma` | 1,407.00 | -75.00 | 84 |
+| `4_advance_decline__4_decline` | 93.00 | +72.00 | 65 |
+| `breadth_above_500_trend_reversal__down_4_5_today` | 47.00 | +33.00 | 69 |
+| `breadth_above_500_trend_reversal__up_4_5_today` | 68.00 | -32.00 | 42 |
 
 ## At the edge of their own range
 
 Top decile of history:
 
-- `volume__volume` at 1.40 (percentile 100, range 0.24 to 1.40)
-- `5_advance_decline_ratio__advance` at 70.81 (percentile 97, range 13.35 to 77.29)
-- `4_advance_decline__4_advance` at 381.00 (percentile 96, range 34.00 to 479.00)
-- `net_breadth__net_breadth` at 11.35 (percentile 96, range -24.74 to 19.72)
-- `mbm_2_0_velocity_advanced__breakouts` at 40.31 (percentile 96, range 3.51 to 86.12)
-- `mbm_2_0_velocity_basic__volume` at 1.52 (percentile 94, range 0.03 to 5.71)
-- `breadth_above_500_trend_reversal__up_4_5_today` at 233.00 (percentile 94, range 6.00 to 1,125.00)
-- `mbm_2_0_velocity_basic__4_advance` at 14.91 (percentile 93, range 0.91 to 64.63)
-- `4_advance_decline_today__4_advance` at 382.00 (percentile 92, range 33.00 to 430.00)
-- `4_advance_decline_today__net_breadth` at 11.08 (percentile 92, range -24.25 to 15.28)
-- `mbm_2_0_velocity_basic__net_breadth` at 11.75 (percentile 92, range -57.34 to 63.90)
-- `above_10ma__pct` at 75.20 (percentile 91, range 7.00 to 96.49)
+- `gold_etfs_nifty_1_month_chg__nifty` at 8.18 (percentile 100, range -6.93 to 8.18)
+- `current_previous_yr_volumes_crores__1_yr_back` at 567.85 (percentile 94, range 120.18 to 715.72)
 
 Bottom decile of history:
 
-- `52_wk_high_low_today__new_52_wk_low` at 0.73 (percentile 3, range 0.73 to 14.97)
-- `mbm_2_0_velocity_basic__5d_range` at 0.55 (percentile 5, range 0.32 to 19.47)
-- `5_advance_decline_ratio__decline` at 28.18 (percentile 5, range 21.67 to 85.61)
+- `volume__volume` at 0.24 (percentile 1, range 0.24 to 1.64)
+- `current_previous_yr_volumes_crores__current` at 390.08 (percentile 1, range 378.80 to 956.94)
+- `52_wk_high_low_today__new_52_wk_low` at 0.67 (percentile 2, range 0.67 to 14.97)
+- `mbm_2_0_velocity_basic__volume` at 0.24 (percentile 4, range 0.03 to 5.68)
 
 ## Crossed the 50 line today
 
-- `breadth_above_500_trend_reversal__down_4_5_today` crossed up through 50: 37.00 to 55.00
-- `mbm_2_0_magnitude__abv_20ma` crossed up through 50: 48.04 to 58.72
+- `mbm_2_0_magnitude__abv_20ma` crossed up through 50: 49.86 to 59.06
 
 ## All metrics reporting today
 
 | Metric | Value | 1d | 5d | 20d | Percentile |
 |---|---:|---:|---:|---:|---:|
-| `10_from_10dema__10_10ema` | 0.63 | +0.08 | -0.67 | -0.12 | 63 |
-| `15_up_10_down__10_in_5d` | 1.94 | +0.12 | -1.22 | -0.55 | 51 |
-| `15_up_10_down__15_in_5d` | 3.37 | +0.54 | +1.52 | +0.80 | 88 |
-| `3_above_200_ema__pct` | 41.52 | +5.45 | +14.08 | +2.83 | 45 |
-| `4_advance_decline__4_advance` | 381.00 | -79.00 | +127.00 | +198.00 | 96 |
-| `4_advance_decline__4_decline` | 91.00 | +23.00 | +13.00 | +15.00 | 56 |
-| `4_advance_decline_today__4_advance` | 382.00 | -48.00 | +150.00 | +232.00 | 92 |
-| `4_advance_decline_today__4_decline` | 97.00 | +32.00 | +24.00 | +31.00 | 58 |
-| `4_advance_decline_today__net_breadth` | 11.08 | -4.20 | +4.42 | +7.57 | 92 |
-| `52_week_high_low_within_10__high` | 17.99 | +1.96 | +6.88 | -1.22 | 38 |
-| `52_week_high_low_within_10__low` | 19.50 | -5.54 | -13.17 | -7.91 | 51 |
-| `52_wk_high_low__new_52_wk_high` | 2.19 | +0.72 | +1.04 | +0.18 | 47 |
-| `52_wk_high_low__new_52_wk_low` | 0.56 | -0.79 | -1.61 | -2.09 | 17 |
-| `52_wk_high_low_today__new_52_wk_high` | 2.20 | +0.67 | +0.99 | +0.15 | 79 |
-| `52_wk_high_low_today__new_52_wk_low` | 0.73 | -0.86 | -1.64 | -2.03 | 3 |
-| `5_advance_decline_ratio__advance` | 70.81 | -6.48 | +8.57 | +30.44 | 97 |
-| `5_advance_decline_ratio__decline` | 28.18 | +6.50 | -8.54 | -30.42 | 5 |
-| `above_10ma__pct` | 75.20 | +5.78 | +32.48 | +39.77 | 91 |
-| `above_200ma__above_200ma` | 41.64 | +5.16 | +14.00 | +2.67 | 48 |
-| `above_20_ema__pct` | 62.77 | +9.64 | +35.76 | +32.23 | 79 |
-| `above_20ma__pct` | 63.58 | +10.15 | +36.60 | +33.43 | 83 |
-| `above_50_ema__pct` | 44.62 | +7.65 | +23.75 | +13.38 | 45 |
-| `above_50ma__above_50ma` | 41.52 | +5.45 | +14.08 | +2.83 | 47 |
-| `breadth_above_500_trend_reversal__above_200dma` | 977.00 | +104.00 | +275.00 | +5.00 | 55 |
-| `breadth_above_500_trend_reversal__above_20dma` | 1,444.00 | +229.00 | +827.00 | +712.00 | 85 |
-| `breadth_above_500_trend_reversal__above_50dma` | 1,016.00 | +179.00 | +512.00 | +248.00 | 56 |
-| `breadth_above_500_trend_reversal__below_200dma` | 1,277.00 | -102.00 | -291.00 | -20.00 | 64 |
-| `breadth_above_500_trend_reversal__below_20dma` | 810.00 | -227.00 | -842.00 | -727.00 | 25 |
-| `breadth_above_500_trend_reversal__below_50dma` | 1,238.00 | -177.00 | -528.00 | -263.00 | 59 |
-| `breadth_above_500_trend_reversal__down_20_in_5d` | 1.00 | -1.00 | -1.00 | -7.00 | 42 |
-| `breadth_above_500_trend_reversal__down_4_5_today` | 55.00 | +18.00 | +10.00 | +25.00 | 75 |
-| `breadth_above_500_trend_reversal__up_20_in_5d` | 30.00 | +11.00 | +17.00 | +4.00 | 85 |
-| `breadth_above_500_trend_reversal__up_4_5_today` | 233.00 | -76.00 | +89.00 | +133.00 | 94 |
-| `current_previous_yr_volumes_crores__1_yr_back` | 475.59 | -37.77 | +355.41 | +37.72 | 80 |
-| `current_previous_yr_volumes_crores__current` | 571.67 | +39.81 | +130.20 | +159.75 | 79 |
-| `drawdowns_peaks__blw_3` | 128.00 | +21.00 | +3.00 | +2.00 | 50 |
-| `gold_etfs_nifty_1_month_chg__gold` | -5.39 | +1.72 | +0.35 | +3.56 | 35 |
-| `gold_etfs_nifty_1_month_chg__nifty` | 3.97 | +3.30 | +5.16 | +9.46 | 86 |
-| `mbm_2_0_magnitude__abv_10ma` | 73.84 | +6.87 | +36.60 | +35.40 | 90 |
-| `mbm_2_0_magnitude__abv_200ma` | 36.31 | +2.11 | +6.53 | -5.00 | 43 |
-| `mbm_2_0_magnitude__abv_20ma` | 58.72 | +10.68 | +34.25 | +25.16 | 79 |
-| `mbm_2_0_magnitude__abv_50ma` | 38.75 | +7.84 | +17.31 | +3.72 | 47 |
-| `mbm_2_0_velocity_advanced__15_52wh` | 16.13 | +1.54 | +4.04 | -6.14 | 44 |
-| `mbm_2_0_velocity_advanced__15_52wl` | 25.78 | -4.59 | -9.86 | -4.20 | 59 |
-| `mbm_2_0_velocity_advanced__30_52_wl` | 50.76 | -1.58 | -4.25 | +4.32 | 59 |
-| `mbm_2_0_velocity_advanced__30_52wh` | 49.12 | +1.79 | +5.18 | -2.25 | 74 |
-| `mbm_2_0_velocity_advanced__breakdowns` | 8.30 | -1.32 | -1.26 | +0.89 | 48 |
-| `mbm_2_0_velocity_advanced__breakouts` | 40.31 | +6.15 | +18.32 | +25.24 | 96 |
-| `mbm_2_0_velocity_advanced__down_close` | 38.07 | +11.76 | +7.67 | +3.41 | 70 |
-| `mbm_2_0_velocity_advanced__net_15_h_l` | -9.65 | +6.13 | +13.90 | -1.94 | 40 |
-| `mbm_2_0_velocity_advanced__net_30_h_l` | -1.64 | +3.38 | +9.44 | -6.57 | 50 |
-| `mbm_2_0_velocity_advanced__net_nh_nl` | 1.90 | +1.85 | +3.24 | +2.44 | 82 |
-| `mbm_2_0_velocity_advanced__new_52_wk_high` | 2.49 | +0.88 | +1.22 | +0.09 | 81 |
-| `mbm_2_0_velocity_advanced__new_52_wk_low` | 0.59 | -0.97 | -2.02 | -2.36 | 32 |
-| `mbm_2_0_velocity_advanced__up_close` | 36.99 | -16.10 | -6.88 | -4.07 | 48 |
-| `mbm_2_0_velocity_basic__10_10ema` | 0.63 | +0.08 | -0.51 | -0.13 | 65 |
-| `mbm_2_0_velocity_basic__10_in_5d` | 1.94 | +0.12 | -1.22 | -0.55 | 53 |
-| `mbm_2_0_velocity_basic__15_in_5d` | 3.37 | +0.54 | +1.52 | +0.80 | 83 |
-| `mbm_2_0_velocity_basic__3_range` | 25.23 | +3.43 | -9.22 | -18.43 | 17 |
-| `mbm_2_0_velocity_basic__4_advance` | 14.91 | -3.22 | +5.27 | +8.72 | 93 |
-| `mbm_2_0_velocity_basic__4_decline` | 3.16 | +0.63 | +0.25 | +0.59 | 58 |
-| `mbm_2_0_velocity_basic__5d_range` | 0.55 | -0.89 | -0.72 | -2.27 | 5 |
-| `mbm_2_0_velocity_basic__net_breadth` | 11.75 | -3.85 | +5.01 | +8.13 | 92 |
-| `mbm_2_0_velocity_basic__volume` | 1.52 | +0.80 | +1.16 | +1.17 | 94 |
-| `net_breadth__net_breadth` | 11.35 | -4.03 | +4.44 | +7.13 | 96 |
-| `net_nh_nl__net_nh_nl` | 1.76 | +1.72 | +3.02 | +2.27 | 62 |
-| `new_high_low_bearishness_bullishness__high` | 67.00 | +22.00 | +32.00 | +6.00 | 76 |
-| `new_high_low_bearishness_bullishness__low` | 17.00 | -24.00 | -49.00 | -63.00 | 36 |
-| `volume__volume` | 1.40 | +0.73 | +1.05 | +1.05 | 100 |
-
-## No reading for 2026-11-05
-
-These are weekly or slower series. The date shown is their last reading.
-
-- `nifty_500_above_below_200_ema__above_200_ema`: last 2026-11-02, 64.59
-- `nifty_500_above_below_200_ema__below_200_ema`: last 2026-11-02, 35.41
-- `oversold_overbought_rsi__overbought`: last 2026-11-02, 77.00
-- `oversold_overbought_rsi__oversold`: last 2026-11-02, 92.00
-- `weekly_rsi_50_50__above_rsi_50`: last 2026-11-02, 0.39
-- `weekly_rsi_50_50__below_rsi_50`: last 2026-11-02, 0.53
+| `10_from_10dema__10_10ema` | 0.90 | -0.12 | -0.36 | -0.17 | 79 |
+| `15_up_10_down__10_in_5d` | 1.43 | +0.42 | -1.06 | -1.21 | 30 |
+| `15_up_10_down__15_in_5d` | 3.40 | -0.90 | +1.46 | +1.22 | 87 |
+| `3_above_200_ema__pct` | 42.76 | -0.69 | +13.66 | +7.89 | 49 |
+| `4_advance_decline__4_advance` | 110.00 | -104.00 | -89.00 | -67.00 | 28 |
+| `4_advance_decline__4_decline` | 93.00 | +72.00 | +1.00 | +13.00 | 65 |
+| `4_advance_decline_today__4_advance` | 127.00 | +21.00 | -266.00 | -28.00 | 35 |
+| `4_advance_decline_today__4_decline` | 114.00 | -115.00 | +7.00 | +47.00 | 68 |
+| `4_advance_decline_today__net_breadth` | 0.50 | +5.64 | -10.64 | -3.17 | 32 |
+| `52_week_high_low_within_10__high` | 20.08 | +0.06 | +5.52 | +2.77 | 59 |
+| `52_week_high_low_within_10__low` | 18.86 | +0.21 | -13.05 | -12.38 | 49 |
+| `52_wk_high_low__new_52_wk_high` | 1.66 | +0.16 | +0.38 | +0.67 | 31 |
+| `52_wk_high_low__new_52_wk_low` | 0.65 | -0.46 | -2.33 | -4.35 | 25 |
+| `52_wk_high_low_today__new_52_wk_high` | 1.69 | +0.12 | +0.37 | +0.64 | 60 |
+| `52_wk_high_low_today__new_52_wk_low` | 0.67 | -0.70 | -2.28 | -4.41 | 2 |
+| `5_advance_decline_ratio__advance` | 44.60 | +5.60 | -25.70 | -17.57 | 50 |
+| `5_advance_decline_ratio__decline` | 54.36 | -5.56 | +25.75 | +17.58 | 52 |
+| `above_10ma__pct` | 71.51 | +6.96 | +25.70 | +46.62 | 86 |
+| `above_200ma__above_200ma` | 42.76 | -0.69 | +13.66 | +7.89 | 52 |
+| `above_20_ema__pct` | 63.01 | +7.93 | +30.19 | +40.97 | 80 |
+| `above_20ma__pct` | 63.51 | -3.34 | +23.99 | +39.44 | 82 |
+| `above_50_ema__pct` | 46.19 | -1.72 | +19.23 | +20.34 | 48 |
+| `above_50ma__above_50ma` | 42.76 | -0.69 | +13.66 | +7.89 | 52 |
+| `breadth_above_500_trend_reversal__above_200dma` | 1,003.00 | -15.00 | +276.00 | +122.00 | 62 |
+| `breadth_above_500_trend_reversal__above_20dma` | 1,407.00 | -75.00 | +532.00 | +830.00 | 84 |
+| `breadth_above_500_trend_reversal__above_50dma` | 1,036.00 | -31.00 | +414.00 | +391.00 | 58 |
+| `breadth_above_500_trend_reversal__below_200dma` | 1,247.00 | +16.00 | -275.00 | -136.00 | 61 |
+| `breadth_above_500_trend_reversal__below_20dma` | 843.00 | +76.00 | -531.00 | -844.00 | 27 |
+| `breadth_above_500_trend_reversal__below_50dma` | 1,214.00 | +32.00 | -412.00 | -405.00 | 57 |
+| `breadth_above_500_trend_reversal__down_20_in_5d` | 5.00 | +0.00 | +4.00 | -4.00 | 87 |
+| `breadth_above_500_trend_reversal__down_4_5_today` | 47.00 | +33.00 | -3.00 | +5.00 | 69 |
+| `breadth_above_500_trend_reversal__up_20_in_5d` | 25.00 | -6.00 | +10.00 | +5.00 | 78 |
+| `breadth_above_500_trend_reversal__up_4_5_today` | 68.00 | -32.00 | -60.00 | -52.00 | 42 |
+| `current_previous_yr_volumes_crores__1_yr_back` | 567.85 | +112.09 | -83.04 | +118.58 | 94 |
+| `current_previous_yr_volumes_crores__current` | 390.08 | -259.45 | -60.13 | -50.24 | 1 |
+| `drawdowns_peaks__blw_3` | 230.00 | -187.00 | +46.00 | +69.00 | 76 |
+| `gold_etfs_nifty_1_month_chg__gold` | -6.03 | +0.83 | +3.40 | +1.15 | 30 |
+| `gold_etfs_nifty_1_month_chg__nifty` | 8.18 | +2.56 | +8.75 | +13.85 | 100 |
+| `mbm_2_0_magnitude__abv_10ma` | 68.32 | +7.70 | +27.53 | +44.14 | 86 |
+| `mbm_2_0_magnitude__abv_200ma` | 37.30 | +2.30 | +8.31 | +0.89 | 45 |
+| `mbm_2_0_magnitude__abv_20ma` | 59.06 | +9.20 | +31.16 | +35.16 | 79 |
+| `mbm_2_0_magnitude__abv_50ma` | 40.00 | +5.74 | +18.45 | +12.98 | 50 |
+| `mbm_2_0_velocity_advanced__15_52wh` | 16.15 | -0.43 | +4.02 | -2.84 | 44 |
+| `mbm_2_0_velocity_advanced__15_52wl` | 24.37 | +0.42 | -9.96 | -7.27 | 56 |
+| `mbm_2_0_velocity_advanced__30_52_wl` | 49.83 | -0.17 | -4.84 | +1.34 | 57 |
+| `mbm_2_0_velocity_advanced__30_52wh` | 49.12 | -0.88 | +4.68 | -0.08 | 74 |
+| `mbm_2_0_velocity_advanced__breakdowns` | 12.37 | -5.51 | +1.80 | +3.03 | 71 |
+| `mbm_2_0_velocity_advanced__breakouts` | 12.58 | -22.10 | -14.37 | -8.29 | 33 |
+| `mbm_2_0_velocity_advanced__down_close` | 31.53 | +26.58 | -5.13 | -4.35 | 34 |
+| `mbm_2_0_velocity_advanced__net_15_h_l` | -8.22 | -0.86 | +13.98 | +4.44 | 44 |
+| `mbm_2_0_velocity_advanced__net_30_h_l` | -0.71 | -0.71 | +9.52 | -1.43 | 53 |
+| `mbm_2_0_velocity_advanced__net_nh_nl` | 0.92 | +0.33 | +1.55 | +2.18 | 58 |
+| `mbm_2_0_velocity_advanced__new_52_wk_high` | 1.68 | -0.51 | +0.46 | -0.17 | 55 |
+| `mbm_2_0_velocity_advanced__new_52_wk_low` | 0.76 | -0.84 | -1.10 | -2.35 | 38 |
+| `mbm_2_0_velocity_advanced__up_close` | 36.67 | +10.70 | +5.57 | +1.12 | 47 |
+| `mbm_2_0_velocity_basic__10_10ema` | 0.80 | +0.29 | +0.12 | -0.38 | 75 |
+| `mbm_2_0_velocity_basic__10_in_5d` | 1.43 | +0.42 | -1.06 | -1.21 | 39 |
+| `mbm_2_0_velocity_basic__15_in_5d` | 3.40 | -0.90 | +1.46 | +1.22 | 83 |
+| `mbm_2_0_velocity_basic__3_range` | 39.39 | +29.67 | +10.58 | +3.01 | 48 |
+| `mbm_2_0_velocity_basic__4_advance` | 4.61 | -4.39 | -3.77 | -2.80 | 37 |
+| `mbm_2_0_velocity_basic__4_decline` | 3.90 | +3.02 | +0.03 | +0.55 | 68 |
+| `mbm_2_0_velocity_basic__5d_range` | 1.17 | +0.63 | -0.51 | -2.26 | 14 |
+| `mbm_2_0_velocity_basic__net_breadth` | 0.71 | -7.41 | -3.79 | -3.35 | 33 |
+| `mbm_2_0_velocity_basic__volume` | 0.24 | -1.40 | -0.32 | -0.06 | 4 |
+| `net_breadth__net_breadth` | 0.71 | -7.41 | -3.79 | -3.35 | 30 |
+| `net_nh_nl__net_nh_nl` | 0.86 | +0.62 | +2.66 | +5.00 | 42 |
+| `new_high_low_bearishness_bullishness__high` | 51.00 | +5.00 | +12.00 | +21.00 | 58 |
+| `new_high_low_bearishness_bullishness__low` | 20.00 | -14.00 | -71.00 | -131.00 | 39 |
+| `nifty_500_above_below_200_ema__above_200_ema` | 63.58 | -1.81 | +2.62 | -10.46 | 22 |
+| `nifty_500_above_below_200_ema__below_200_ema` | 36.42 | +1.81 | -2.62 | +10.46 | 78 |
+| `oversold_overbought_rsi__overbought` | 81.00 | -3.00 | -53.00 | -105.00 | 29 |
+| `oversold_overbought_rsi__oversold` | 79.00 | +0.00 | -128.00 | +48.00 | 76 |
+| `volume__volume` | 0.24 | -1.40 | -0.32 | -0.06 | 1 |
+| `weekly_rsi_50_50__above_rsi_50` | 0.40 | -0.01 | +0.10 | -0.12 | 30 |
+| `weekly_rsi_50_50__below_rsi_50` | 0.53 | +0.01 | -0.10 | +0.10 | 66 |
 
 
 <!-- market-read -->
 
 ## Market read
 
-Thursday was the second wide up day in a row. 233 stocks rose four and a half percent or more, against 55 that fell that hard. The market last strung two days this wide together in April 2025. Almost two stocks in three now stand above their 20 day line, the most since early August. The count above the 200 day line rose to 977 and passed the mid October repair high. New yearly highs reached 67 against only 17 new lows. This time the large companies led. Autos, finance, banks and realty carried the Nifty up more than two percent, while the small company index rose less than one percent. For the first time in this bounce, heavy volume stocks outnumbered light volume stocks. Turnover rose to about 570 crore, the most on an up day since mid October, but still short of the selling days. Fear did not ease, and late selling trimmed many gains. The repair has become an early uptrend on the short and middle clocks, with the long clock now joining. The money and the fear gauge have not yet confirmed it.
+Monday was a quiet day with one loud corner. The Nifty barely moved and closed just above 25,000. Across the market, 68 stocks rose four and a half percent or more, against 47 that fell that hard. Turnover dropped to about 390 crore, the lowest since mid September. About one stock traded on heavy volume for every four on light volume. The loud corner was pharma and the government banks, each index up more than three percent. Healthcare names traded at many times their normal volume and took the largest share of new yearly highs. The repair still stands. More than six stocks in ten sit above the 20 day line. The count above the 200 day line passed 1,000 and held there on Monday. It last stood there in late September. Friday's pullback did little damage. The market still waits for heavy money on a wide up day. The fear gauge stands near 17, up more than half in three months.
 
-Full brief: briefs/2026-11-05.html
+Full brief: briefs/2026-11-09.html

@@ -1,0 +1,87 @@
+stage: B03-ardeep
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener, ASIANENE, DEEPINDS, JINDRILL Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+  - "HIGH (freshness): inputs/concalls/ has no Q2 FY27 transcript. The call is scheduled for 11 Nov 2026 at 16:00 IST, after this run."
+  - "shareholding/ is empty: COLLECTOR gap, not evidence. FII+DII UA qualifier and pledge trend stay open."
+  - "Screener export: Data_Sheet is populated for main and peers; Profit & Loss, Quarters, Balance Sheet and Cash Flow CSVs are ABSENT. Stages use Data_Sheet and filings."
+  - "results/ and rating/ were cured by /step1: three BSE results filings and the CRISIL rationale of 10 Jul 2026 (text capture; no PDF)."
+  - "Q3 FY26 concall transcript (Feb 2026) is not in the corpus."
+  - "annual-report/ holds FY26 and FY25; FY26 governs; FY25 is prior-year comparison only. FY24 and earlier ARs not held."
+  - "announcements/ cover Nov 2025 to Nov 2026; pre-Nov 2025 filings are not held."
+  - "inputs/announcements/20261107-eaf4e423-6c28-4f7f-b374-694a12c96ee9.txt: newspaper-advert pages garbled; not material."
+  - "inputs/announcements/20260929-ae2f036b-6e7c-4543-a22d-9a2188e91ab7.txt: AGM voting results; 15 of 32 pages carry text."
+  - "research/ is empty: no broker notes supplied."
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT. Standing default taken: proceed with the gaps."
+  - "Stage 3 text extraction gaps: standalone Note 41 (contingent liabilities) body and Note 46 segment table are missing from the .txt; consolidated Notes 42 and 47 used instead; verifier to open the PDF. Median remuneration ratio row in Board's report p.51 is blank in the .txt."
+flags:
+  - {type: FLAG-CASH, reason: "CFO 1,233.87 vs PAT 3,080.05 (0.40; PY 1.76); FCF (3,520.26); net current tax liability +436.07 and statutory liabilities +196.83 defer 632.90 (51% of CFO); customer advances 342.23 to nil; cash 88.81 vs 1,824.50 (INR Lakhs; CF S p.115, BS S p.113, Note 30 S p.136)"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "Promoter holding flat 68.85% through FY26 (CG p.81; FY25 AR Note 18) so no in-year selling; but 28,21,411 warrant shares allotted 10 Jul 2026 (Board p.41) and promoter open-market disposals Jun-Sep 2026 per B00 manifest announcements; pledge NOT FOUND IN DOCUMENT; full verdict from B08"}
+  - {type: FLAG-GOING-CONCERN-SUBSIDIARY, reason: "SWR net worth (264.94), auditor material uncertainty rests on unquantified parent letter (C p.159); parent loan 410.34 interest-free (CARO iii S p.107)"}
+  - {type: FLAG-CONCENTRATION, reason: "Three customers 72.27% of revenue (PY 48.00%), names withheld, credit note rates risk low as PSU while JMD claims two-thirds private order book (Note 46 S p.146; Note 49 S p.150; JMD p.7)"}
+  - {type: FLAG-GUIDANCE-SLIP, reason: "Coal block production start moved FY28 (FY25 AR p.6) to FY28-29 (FY26 Chairman p.5, MD&A p.60); PL cum ML still underway (Note 1 S p.116); no capex or funding stated"}
+  - {type: FLAG-GOVERNANCE-PROCESS, reason: "Executive CMD sits on Audit and NRC (CG p.71-72); two directors at 4 of 7 board meetings (CG p.69); one NRC meeting; promoter pay +86% vs staff +19% (Board p.51)"}
+  - {type: FLAG-RPT-OPACITY, reason: "1,100.00 (PY 950.00) loan to unnamed KMP-influenced enterprise repaid within year, interest 15.62; Board's report says no s.188 contracts (Note 48 S p.148; Board p.49)"}
+  - {type: FLAG-DISCLOSURE-CONFLICT, reason: "MD&A and Note 51 contradict figures; MD&A ratios mix standalone and consolidated bases (MD&A p.62; Note 51 S p.154)"}
+phase_verdicts: {p1: "YELLOW: parent unmodified, SWR going concern paragraph, JV profit 146.90 unaudited, no KAM on E&E or ECL", p2: "YELLOW: 12 of 15 B02 findings verified, notes foot, E&E and ECL policy gaps, accounting 6/10", p3: "RED on cash conversion: CFO/PAT 0.40, FCF (3,520.26), 632.90 of CFO is deferral; balance sheet YELLOW", p4: "RED on narrative credibility, GREEN on FY26 revenue and margin delivery; four commentary contradictions", p5: "YELLOW: no regulatory action, no FY26 promoter selling, exec director on Audit and NRC, 57% attendance for two directors", p6: "YELLOW: P&L claims true, cash and coal timeline claims not", p7_best_fit: "GARP on WATCHLIST"}
+overall_quality: 5.5
+quality_components: {governance: 5, accounting: 6, balance_sheet: 6, earnings: 5}
+kill_switch_notes:
+  - "P1: human would not stop; going concern doubt is confined to SWR (exposure 452.72, 2.2% of S equity)"
+  - "P2: human would not stop; wants borrower of the 1,100.00 loan and SWR letter before sizing"
+  - "P3: human would pause sizing; CFO/PAT 0.40, FCF (3,520.26) funded by debt and FD release"
+  - "P4: human would not stop; treat forward statements as unverified until PL cum ML grant and Q2 FY27 call"
+  - "P5: human would not stop; wants B08 promoter verdict"
+triple_pass_verification:
+  verified: 12
+  discrepancies:
+    - {finding_rank: 9, triple_pass_value: "margin-money cover of guarantees 61.2%", ar_value: "61.8% ((1,042.52+348.05)/2,250.07, derived); FDs also back fund-based lines", note_ref: "Note 14 S p.131; Note 9 S p.130; Note 42 C p.185"}
+    - {finding_rank: 10, triple_pass_value: "related-party financial exposure 855.35", ar_value: "visible components 288.00+39.92+257.86+111.66+0.08 = 697.52; 855.35 not reproducible", note_ref: "Note 7 S p.129; Note 8 S p.130; Note 48 S p.148"}
+    - {finding_rank: 11, triple_pass_value: "depreciation rose 150.50", ar_value: "total depreciation +184.48 (1,144.33 vs 959.85); PPE depreciation +187.32", note_ref: "Note 38 S p.138"}
+missing_risks:
+  - {risk: "Customer concentration 72.27% in three customers", evidence: "Note 46 S p.146; MD&A risk list p.63 omits it"}
+  - {risk: "Receivable build-up and liquidity", evidence: "Note 12 S p.131; CF S p.115; MD&A p.62 calls collections stable"}
+  - {risk: "SWR going concern and unquantified parent support letter", evidence: "C p.159"}
+  - {risk: "Promoter-linked capital: ARL shares 288.00, Al Hadeetha 39.92, Omani loans 257.86", evidence: "Note 7 S p.129; Note 48 S p.147-148"}
+  - {risk: "Coal block capex, funding and clearances not stated; E&E 1,930.58 without policy", evidence: "MD&A p.60; Note 5 S p.129"}
+  - {risk: "Sub-contractor dependence 8,109.98 = 33.4% of revenue", evidence: "Note 35 S p.137"}
+  - {risk: "Credit-line stress: MD&A welcomes ECLGS 5 'for companies like us' amid Middle East conflict; use unknown", evidence: "MD&A p.58"}
+  - {risk: "Middle East exposure of Oman JVs framed as tailwind only", evidence: "MD&A p.56; Note 7 C p.176"}
+  - {risk: "Promoter pay step-up and key-person dependence", evidence: "Notice p.17-18; Board p.51"}
+  - {risk: "Tax payment lag: current tax liability +436.07, interest on taxes 16.87 (PY 8.27)", evidence: "BS S p.113; Note 39 S p.138"}
+guidance_table:
+  - {claim: "Revenue growth 15-20% CAGR next 3 years", number: "15-20%", timeframe: "FY25-FY28", credibility: "FY26 +34.8% headline, +80.1% core (C p.192); H1 FY27 standalone +16.3%, Q2 FY27 -7.9% (Results_Q2FY27); delivered, medium-high"}
+  - {claim: "EBITDA margin 20-22%, later 24-25% core", number: "20-22% then 24-25%", timeframe: "near to medium term", credibility: "FY26 23.99% beat 20-22%; Q2 FY27 14.38% per B00; medium"}
+  - {claim: "Coal block production start", number: "FY28 then FY28-29", timeframe: "slipped about one year", credibility: "low; PL cum ML still underway (Note 1 S p.116)"}
+  - {claim: "Coal block revenue Rs 700-800 crore in first three years at 40-42% EBITDA", number: "700-800 crore; 40-42%", timeframe: "from production start", credibility: "low; unchanged text, no capex, funding or price"}
+  - {claim: "Oman JV1 net margin 5-6%", number: "5-6%", timeframe: "annual", credibility: "cannot test; JV profit 146.90 unaudited (C p.161)"}
+  - {claim: "Order book", number: "332 crore to 761 crore", timeframe: "FY25 to FY26", credibility: "delivered; includes single order over 300 crore"}
+  - {claim: "ROCE 16% to 23%, ROE 10% to 16% (Chairman)", number: "ROCE 22.06 vs 23.00 stated", timeframe: "FY26", credibility: "basis drift between Chairman, MD&A and Note 51"}
+monitorables:
+  - {metric: "Billed receivables and H1 FY27 CFO/PAT", threshold: "billed under 9,218.67; CFO/PAT above 0.7", where: "Q2/Q3 FY27 results and CF statement", why: "separates growth-with-working-capital from cash-generative growth"}
+  - {metric: "Top three customer names and shares", threshold: "disclosed; none above 30%", where: "Q2 FY27 call 11 Nov 2026; investor deck", why: "load-bearing fact 2"}
+  - {metric: "PL cum ML grant and GR submission", threshold: "grant on record; GR filed", where: "exchange filings", why: "FY28-29 production start"}
+  - {metric: "Coal block capex and funding plan", threshold: "a stated figure", where: "call; next AR", why: "NOT FOUND today"}
+  - {metric: "SWR support letter amount and loan 410.34", threshold: "quantified; no top-up", where: "related-party note next filing", why: "hidden obligation"}
+  - {metric: "EBITDA margin", threshold: "20% or above", where: "quarterly results", why: "Q2 FY27 14.38% vs 24.00%"}
+  - {metric: "Promoter holding and pledge", threshold: "no further net disposals; pledge nil", where: "SHP and Reg 29 filings", why: "FLAG-PROMOTER-PRELIM"}
+  - {metric: "Executive director on Audit/NRC", threshold: "none", where: "Reg 27 governance filing", why: "process quality"}
+  - {metric: "Cash tax paid vs charge", threshold: "within 20%", where: "H1 FY27 CF", why: "436.07 gap"}
+ar_new_downstream_entities: []     # Top-3 customer names NOT FOUND IN DOCUMENT. Every named client, JV partner and RPT counterparty in the FY26 AR also appears in the FY25 AR.
+strengths_top3:
+  - "Core drilling revenue +80.1% and EBITDA margin 23.99% beat FY25 guidance of 20-22% (C p.192; MD&A p.61)"
+  - "Order book 761 crore, +129% from 332 crore, including a single order over 300 crore (MD&A p.59; FY25 AR p.31)"
+  - "Parent opinion unmodified, no default, no promoter selling inside FY26 (S p.108; CG p.81)"
+red_flags_top3:
+  - "Cash conversion: CFO 1,233.87 vs PAT 3,080.05, FCF (3,520.26), 632.90 of CFO is deferred payments (derived)"
+  - "72.27% revenue from three undisclosed customers with a PSU low-risk credit note against a claimed two-thirds private order book"
+  - "SWR going concern with unquantified support letter, 1,100.00 round-trip loan, coal block E&E 1,930.58 with no policy and slipped timeline"
+best_fit_strategy: "GARP (WATCHLIST)"
+one_line_verdict: "Growth is real and beat guidance, but cash does not follow profit and the coal block and SWR hold the disclosures a buyer most needs; GARP on a watchlist basis, sized for a concentration and receivable reading FY27 filings will settle."
+analyst_note: "New versus B02: (1) consolidated CARO clause xxi lists SWOFS and SWGS with clause xvii adverse remarks (C p.162); (2) intercompany elimination 975.92 equals the RPT columns 282.92+632.01+60.99, so SWR books about 99% of revenue from the parent and the 66.53 net cost elimination is a 10.5% markup [INFERENCE]; (3) CF receivable line ties to the balance sheet only if the 197.79 write-off and 39.34 FX gain are included (4,297.79+197.79-39.34=4,456.24), so write-off is receivable-type [INFERENCE]; (4) CFO is flattered by 632.90 of tax and statutory deferral; (5) core drilling revenue grew 80.1% since 4,533.92 of low-margin trading ended; (6) MD&A interest cover is on standalone numbers; (7) CMD sits on NRC, Reg 19 reading to confirm. Three B02 numbers did not reproduce (ranks 9, 10, 11). Q2 FY27 data used only as backward check of AR claims."

@@ -1,0 +1,89 @@
+stage: B04-bizmodel
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values): screener, ASIANENE, DEEPINDS, JINDRILL Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization. Open Financials.xlsx once, save it, then run --push-again."
+  - "no results PDFs yet (screener has none) and no rating PDF yet: cured by /step1 with three BSE results filings and the CRISIL rationale text capture of 10 Jul 2026"
+  - "HIGH (freshness): inputs/concalls/ has no Q2 FY27 transcript; the call is 11 Nov 2026 16:00 IST, after this run"
+  - "Q3 FY26 concall transcript (Feb 2026) is not in the corpus"
+  - "annual-report/ holds FY26 and FY25 only; FY26 governs; FY24 and earlier ARs not held"
+  - "announcements/ cover Nov 2025 to Nov 2026; pre-Nov 2025 filings not held"
+  - "inputs/announcements/20261107-eaf4e423-...txt newspaper-advert pages garbled, not material; 20260929-ae2f036b-...txt AGM voting results, 15 of 32 pages carry text"
+  - "research/ is empty: no broker notes supplied"
+  - "EMPTY-FOLDER CONFIRMATION suppressed by /step1 AUTONOMY CONTRACT; standing default taken: proceed with the gaps"
+  - "B04 stage gap: FY26 revenue stream split comes only from the dated May 2026 deck pie chart (p.5), not the AR; label pairing to be confirmed on the PDF"
+  - "B04 stage gap: rig utilisation, annual metres drilled, cost per metre, contract escalation terms, top-three customer names, competitor count and peer service mix are NOT FOUND, check concall"
+  - "B04 stage gap: rig count AR 45 (p.58) vs Nov 2026 deck 47 (p.5); FY26 order book AR 7,613 Mn 'as on date' vs Nov deck 5,812 Mn at FY26 (p.17); not reconciled"
+flags:
+  - {type: FLAG-CONCENTRATION, reason: "Three customers 72.27% of revenue (PY 48.00%) names withheld (AR p.146); one INR 307 Cr Hindustan Zinc subsidiary order is about 40% of the INR 7,671 Mn order book (derived, Deck p.6, p.17)"}
+  - {type: FLAG-CASH-CONVERSION, reason: "CFO 1,233.87 L vs PAT 3,080.05 L standalone; receivables increase 4,456.25 L; PPE purchases 4,254.36 L; about 175 receivable days derived (AR p.115, p.131)"}
+  - {type: FLAG-MARGIN-DELEVERAGE, reason: "Q2 FY27 EBITDA margin 14.38% vs 23.24%; EBITDA fell INR 62 Mn on a revenue fall of INR 47 Mn (Deck p.35); H2 recovery rests on new rigs, amount and funding NOT FOUND (Deck p.33)"}
+  - {type: FLAG-REVENUE-MIX-UNAUDITED, reason: "Stream split sourced from deck chart only; AR segment note is single-segment drilling & exploration (AR p.192)"}
+  - {type: FLAG-CREDIT-NOTE-CONFLICT, reason: "AR rates concentration risk low as major customers are PSUs (AR p.150) against 77% private order book (Deck p.17) and JMD two-thirds private (AR p.7)"}
+  - {type: FLAG-COAL-BLOCK-OPTION, reason: "No capex or funding stated; production FY2028-29 (AR p.60); mining plan pending (Deck p.33); carried as option, not value, in primary valuation"}
+  - {type: FLAG-DATA-CONFLICT-RIGS-ORDERBOOK, reason: "Rig count 45 (AR p.58) vs 47 (Deck p.5); FY26 order book basis differs between AR (p.59) and deck (p.17)"}
+business_type: "services"
+revenue_streams:
+  - {name: "CBM production drilling (Reliance)", type: "contract services, multi-year", pct_of_revenue: 37.19, predictability: "H"}
+  - {name: "Aquifer mapping (government)", type: "government project services", pct_of_revenue: 24.93, predictability: "M"}
+  - {name: "Non-coal mineral exploration drilling", type: "project services, per metre", pct_of_revenue: 17.21, predictability: "M"}
+  - {name: "Seismic exploration (2D/3D and PST)", type: "project services", pct_of_revenue: 16.13, predictability: "L"}
+  - {name: "Other services (coal exploration, geophysical, technical support)", type: "project services", pct_of_revenue: 4.54, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - "Ministry of Coal accredited prospecting agency and NABET accreditation: narrow, term-bound, medium durability (AR p.5, p.40)"
+  - "Safety record and 166+ project reputation: medium durability (AR p.61; Deck p.5)"
+  - "CBM and large-diameter core know-how: medium durability, claim unverified (AR p.58)"
+  - "Jharkhand coal block 84 MT: unproven until mining plan, clearances and capex (AR p.60)"
+valuation_methods:
+  primary: {method: "P/E on normalised consolidated EPS (Section 1B destination PE governs exit multiple)", why: "Interest and depreciation are real costs; earnings are what the exit multiple prices; normalise on four-quarter margin, not FY26 peak 23.99% or Q2 trough 14.38%"}
+  secondary: {method: "EV/EBITDA cross-check", why: "Leverage and rig capex are changing (D/E 0.39 to 0.27); tests P/E result free of capital structure"}
+  tertiary: {method: "SOTP with coal block option", why: "Gated: only when coal block capex, funding, mining plan and grant are stated; currently NOT FOUND, so zero value in the primary case"}
+  not_applicable:
+    - "DCF: contract lumpiness, CFO/PAT 0.40 and unquantified coal capex make long-range cash flows speculative"
+    - "P/B and ROE-based: asset base is rigs and receivables; ROE swings with margin"
+    - "EV/Sales and P/S: margin range 14.38% to 23.99% makes revenue multiples uninformative"
+    - "PEG as primary: 15-20% growth guidance is under test"
+    - "Asset/replacement value: PPE less than half of equity"
+irrelevant_ratios:
+  - "Spot-year ROCE (16% to 23%): moves with timing and a base carrying 1,930.58 L of coal block assets; track across an order cycle"
+  - "Single-quarter EBITDA margin: swung 23.24% to 14.38% on monsoon and fixed cost; use four-quarter margin"
+  - "Current ratio 1.86: current assets are mostly receivables"
+  - "Debt/Equity 0.39 alone: omits working-capital funding; pair with CFO/PAT"
+  - "Inventory turnover: stock is consumables and parts, not a demand signal"
+  - "MD&A interest coverage and ROI: mix standalone and consolidated bases (B03 FLAG-DISCLOSURE-CONFLICT)"
+must_track_metrics:
+  - {metric: "CFO / PAT", healthy: "above 0.7", red_flag: "below 0.5 (FY26 standalone 0.40)"}
+  - {metric: "Four-quarter EBITDA margin", healthy: "20% or above", red_flag: "below 17% for two quarters (Q2 FY27 14.38%)"}
+  - {metric: "Receivable days", healthy: "falling from about 175 (derived)", red_flag: "above 175 and rising"}
+  - {metric: "Order book / trailing revenue and client share", healthy: "above 3x with no client above 30%", red_flag: "single order near 40% of book (derived) or falling book"}
+  - {metric: "Rig utilisation", healthy: "disclosed and rising", red_flag: "NOT FOUND today; not disclosed or falling"}
+unit_economics:
+  unit: "one rig-year of deployed drilling capacity (annual metres drilled NOT FOUND)"
+  revenue_per_unit: "about INR 540 L (Rs 5.4 Cr) per rig, crude, derived: 24,302.17 L / 45 rigs (AR p.192, p.58); includes non-rig revenue"
+  margin_per_unit: "about INR 13.0 Mn EBITDA per rig, derived: 583 Mn / 45 rigs (Deck p.38); segment result 17.3% of revenue (AR p.192)"
+  key_lever: "rig utilisation and cost absorption: FY26 incremental EBITDA margin 39.4%, Q2 FY27 EBITDA fell INR 62 Mn on a revenue fall of INR 47 Mn (derived, Deck p.35, p.38)"
+first_deterioration_signals:
+  - {risk: "customer concentration", first_signal: "quarterly revenue and receivable ageing for the top client"}
+  - {risk: "fixed-cost deleverage and diesel", first_signal: "EBITDA margin and operating expense lines"}
+  - {risk: "cash conversion", first_signal: "operating cash flow and receivable days"}
+  - {risk: "rig capex funding", first_signal: "borrowings and finance cost"}
+  - {risk: "coal block execution", first_signal: "intangible assets under development (230 Mn at H1 FY27) and filing dates"}
+  - {risk: "sub-contractor dependence", first_signal: "Note 35 sub-contract cost as percent of revenue (33.4% FY26, derived)"}
+  - {risk: "tender-based pricing", first_signal: "gross margin and order wins per quarter"}
+mgmt_questions:
+  - "Names and shares of top three customers; how much of the INR 307 Cr Hindustan Zinc subsidiary order remains to be executed?"
+  - "Rig utilisation in Q1 and Q2 FY27 and rig-months lost to monsoon and maintenance?"
+  - "Cost of the new rigs, funding, and when their revenue starts?"
+  - "Why receivables rose INR 4,456.25 L; which clients are over 180 days and when do they convert?"
+  - "What is in the 14.38% Q2 margin; how much diesel is not passed through under contract?"
+  - "Coal block capex, funding plan, and PL cum ML grant date?"
+  - "How does a 77% private order book fit the credit note that major customers are PSUs?"
+one_line_verdict: "Real and growing drilling services business with unproven cash conversion, three undisclosed clients at 72.27% of revenue, and a coal block that carries no stated capex."
+analyst_note: "Stream split is a deck chart (Deck_20260505 p.5), sums to 100.00, label pairing to confirm on PDF. Core drilling revenue +80.1% is partly an artifact: INR 4,533.92 L of coal trading ended (AR p.192). Two readings on margin: Q2 FY27 14.38% is a monsoon/maintenance dip (management, Deck p.33) or FY26 23.99% was a utilisation peak. Separator: Q3 FY27 EBITDA margin and revenue vs Q2 577 Mn, plus a rig utilisation figure from the 11 Nov 2026 call. Pricing power left at weak because the AR itself names tender pricing pressure (AR p.63). Cyclicality set cyclical on project lumpiness; the policy tailwind is stated, not yet visible in cash. Peer table is scale only, services not like-for-like. Order book basis differs between AR (7,613 Mn) and Nov deck (5,812 Mn at FY26). Erratum to report row 4D-4: standalone revenue growth is 6,373.63 L (24,292.95 - 17,919.32), not 6,263."

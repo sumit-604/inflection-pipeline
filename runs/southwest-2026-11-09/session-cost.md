@@ -7,3 +7,5 @@
 | 2a | stage-02-notes-pass (CALL 1) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 209849 | 395s | 1 |
 | 2b | stage-02-notes-pass (CALL 2) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 229186 | 420s | 1 |
 | 2c | stage-02-notes-pass (CALL 3) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 115023 | 188s | 1 |
+| 3 | stage-03-ardeep | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 316305 | 632s | 1 |
+| 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 146113 | 316s | 1 |

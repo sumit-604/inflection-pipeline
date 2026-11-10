@@ -1,5 +1,4 @@
 Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
-2026-11-09 15:29,GFSTEELS,metals & mining,smallcap,6.0828,79.6976
 2026-11-09 15:29,TRANSWORLD,transportation,smallcap,19.997,29.1819
 2026-11-09 15:29,SAILIFE,healthcare,largecap,5.3211,15.5544
 2026-11-09 15:29,IOLCP,healthcare,midcap,10.1253,9.0074
@@ -17,7 +16,7 @@ Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
 2026-11-09 15:29,RPEL,building materials,midcap,6.0025,3.042
 2026-11-09 15:29,SANSERA,auto,largecap,5.4165,2.4496
 2026-11-09 15:29,AKUMS,healthcare,midcap,2.9645,2.3063
-2026-11-09 15:29,QUESS,miscellaneous,smallcap,8.523,2.1753
+2026-11-09 15:29,QUESS,miscellaneous,midcap,8.523,2.1753
 2026-11-09 15:29,BIL,consumer discretionary,smallcap,1.0659,2.0357
 2026-11-09 15:29,LAURUSLABS,healthcare,largecap,3.5443,1.9249
 2026-11-09 15:29,NINSYS,i.t,smallcap,-4.315,1.7793
@@ -54,8 +53,9 @@ Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
 2026-11-09 15:29,MENONBE,auto,smallcap,-0.8098,0.8489
 2026-11-09 15:29,ROLEXRINGS,auto,midcap,-2.0928,0.8331
 2026-11-09 15:29,KRISHANA,chemicals,midcap,-1.7234,0.7974
+2026-11-09 15:29,KMEW,miscellaneous,smallcap,-1.1469,0.775
 2026-11-09 15:29,LOTUSDEV,realty,midcap,-3.8686,0.7677
-2026-11-09 15:29,ONEPOINT,i.t,smallcap,-2.7559,0.7582
+2026-11-09 15:29,ONEPOINT,i.t,midcap,-2.7559,0.7582
 2026-11-09 15:29,AMANTA,healthcare,smallcap,-0.4971,0.74
 2026-11-09 15:29,STEELCAS,"castings, forgings & fasteners",smallcap,1.972,0.7367
 2026-11-09 15:29,KDDL,consumer discretionary,midcap,2.8448,0.7341
@@ -82,7 +82,7 @@ Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
 2026-11-09 15:29,SIGMAADV,aerospace & defence,midcap,-1.5224,0.4765
 2026-11-09 15:29,NRL,services,smallcap,-0.8318,0.4691
 2026-11-09 15:29,SKYGOLD,consumer discretionary,midcap,-2.1381,0.4688
-2026-11-09 15:29,ABDL,fmcg,midcap,1.4174,0.4628
+2026-11-09 15:29,ABDL,fmcg,largecap,1.4174,0.4628
 2026-11-09 15:29,NEOGEN,chemicals,midcap,1.3962,0.4606
 2026-11-09 15:29,PAYTM,i.t,largecap,-0.7218,0.4533
 2026-11-09 15:29,ISFT,i.t,smallcap,3.7906,0.4521
@@ -99,6 +99,7 @@ Date,Symbol,Sector,Market cap,1 week %,Vol > yr avg
 2026-11-09 15:29,COFORGE,i.t,largecap,-1.2066,0.3891
 2026-11-09 15:29,ORIENTHOT,services,smallcap,-0.8855,0.3801
 2026-11-09 15:29,ENGINERSIN,realty,midcap,1.5779,0.3621
+2026-11-09 15:29,MOLDTECH,realty,smallcap,3.4144,0.357
 2026-11-09 15:29,MAHASTEEL,metals & mining,smallcap,2.6721,0.356
 2026-11-09 15:29,UTTAMSUGAR,fmcg,smallcap,-2.1642,0.3555
 2026-11-09 15:29,SPECTRUM,industrials,midcap,-1.0183,0.3271

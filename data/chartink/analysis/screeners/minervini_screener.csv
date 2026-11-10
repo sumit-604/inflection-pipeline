@@ -6886,7 +6886,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-06,15:29,YATHARTH,healthcare,midcap,10.794,0.388
 2026-11-09,15:29,63MOONS,i.t,smallcap,-0.1278,0.3907
 2026-11-09,15:29,AAREYDRUGS,healthcare,smallcap,-0.1557,1.5154
-2026-11-09,15:29,ABDL,fmcg,midcap,1.4174,0.4628
+2026-11-09,15:29,ABDL,fmcg,largecap,1.4174,0.4628
 2026-11-09,15:29,ACUTAAS,healthcare,largecap,-1.1281,0.9925
 2026-11-09,15:29,AKUMS,healthcare,midcap,2.9645,2.3063
 2026-11-09,15:29,ALIVUS,healthcare,midcap,-5.4083,6.3505
@@ -6932,6 +6932,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-09,15:29,KABRAEXTRU,industrials,smallcap,-2.5427,0.2452
 2026-11-09,15:29,KALYANKJIL,consumer discretionary,largecap,3.2095,1.345
 2026-11-09,15:29,KDDL,consumer discretionary,midcap,2.8448,0.7341
+2026-11-09,15:29,KMEW,miscellaneous,smallcap,-1.1469,0.775
 2026-11-09,15:29,KOPRAN,healthcare,smallcap,-1.307,0.395
 2026-11-09,15:29,KOVAI,healthcare,midcap,0.3424,0.5397
 2026-11-09,15:29,KRISHANA,chemicals,midcap,-1.7234,0.7974
@@ -6952,6 +6953,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-09,15:29,MCX,financials,largecap,-0.3374,0.7189
 2026-11-09,15:29,MENONBE,auto,smallcap,-0.8098,0.8489
 2026-11-09,15:29,MMFL,"castings, forgings & fasteners",smallcap,-2.5105,3.5091
+2026-11-09,15:29,MOLDTECH,realty,smallcap,3.4144,0.357
 2026-11-09,15:29,MOTILALOFS,financials,largecap,0.2885,1.1228
 2026-11-09,15:29,NAZARA,i.t,midcap,0.6043,0.4482
 2026-11-09,15:29,NEOGEN,chemicals,midcap,1.3962,0.4606
@@ -6961,7 +6963,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-09,15:29,NRL,services,smallcap,-0.8318,0.4691
 2026-11-09,15:29,OMFREIGHT,transportation,smallcap,-2.4018,0.0906
 2026-11-09,15:29,ONELIFECAP,financials,smallcap,1.7369,0.5898
-2026-11-09,15:29,ONEPOINT,i.t,smallcap,-2.7559,0.7582
+2026-11-09,15:29,ONEPOINT,i.t,midcap,-2.7559,0.7582
 2026-11-09,15:29,OPTIEMUS,telecom,midcap,-2.1124,0.2663
 2026-11-09,15:29,ORIENTHOT,services,smallcap,-0.8855,0.3801
 2026-11-09,15:29,PANACHE,i.t,smallcap,1.9936,0.8525
@@ -6969,7 +6971,7 @@ date,time,group,sector,market cap,1 week %,vol > yr avg
 2026-11-09,15:29,PAYTM,i.t,largecap,-0.7218,0.4533
 2026-11-09,15:29,PGIL,readymade garments/apparels,midcap,1.6723,1.6766
 2026-11-09,15:29,PPLPHARMA,healthcare,largecap,0.069,0.9937
-2026-11-09,15:29,QUESS,miscellaneous,smallcap,8.523,2.1753
+2026-11-09,15:29,QUESS,miscellaneous,midcap,8.523,2.1753
 2026-11-09,15:29,RADICO,fmcg,largecap,1.3691,0.5442
 2026-11-09,15:29,RATNAVEER,metals & mining,smallcap,-2.252,0.573
 2026-11-09,15:29,RAYMOND,transportation,midcap,0.2112,0.4766

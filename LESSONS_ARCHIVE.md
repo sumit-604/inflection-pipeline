@@ -1112,3 +1112,13 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-11 CNL (Creative Newtech, /step1 Phase 1 to Halt 1)
+- Collector: Playwright Chromium fails to launch on this machine (BrowserType.launch: spawn UNKNOWN), sandboxed and unsandboxed; only the BSE announcements fetch ran. Corpus repaired by direct HTTP download of public BSE/NSE/CRISIL filings.
+- Collector: REPO_ROOT in tools/collector/collect_to_repo.py is hard-coded to C:\Users\SUMIT SHARMA\...; this machine's checkout is C:\Users\sumit\...; ran through a wrapper that patched the module attribute (KISSHT precedent).
+- Screener export: only Data_Sheet carries figures again; peer Excel exports blocked by a Chrome save dialog; shareholding not collected (BSE API HTTP 403).
+- Screener ticker for this name is CNL (old NSE symbol CREATIVE returns 404).
+- Stage agents without an edit tool could not fix their own reports after writing: stage 2 pass 1 wrote an errata file, stage 7 corrections were appended by the orchestrator; stage 09b left a stray scratch_edit_placeholder.txt at repo root (removed).
+- Token ledger: the harness exposes only total tokens per subagent, so cache_read/cache_write columns and the fresh vs re-read lines are n/a for all 18 rows.
+- .claude/shadow.yaml reads "armed" on main although HANDOFF records it spent by southwest-2026-11-09 (unmerged branch); shadow not run.
+- Verifier B caught a material miss (CFO debt bridge vs audited borrowings); Verifier C flagged Gate 0 ROCE formula substitution (C-G1) again: operator ruling needed on the ROCE base for M3/Block A.

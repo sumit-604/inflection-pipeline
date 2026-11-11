@@ -1,0 +1,106 @@
+stage: B05-concall
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No transcripts for Q3 FY26 and Q1 FY27; delivery for those quarters tested against results filings only"
+  - "Q2 FY27 call: first two questions lost to an audio fault, so repeated-question tracking may be understated"
+  - "BSNL BharatNet AWO (~Rs 3,194.83 Cr) not in inputs/announcements; appears only in Q1 FY27 presentation and Q2 FY27 call; entity, consortium, guarantees, funding NOT FOUND"
+  - "Shareholding absent; only FY26 AR; peer CSVs absent (per B00)"
+flags:
+  - "Q2 FY27 filing is unaudited, limited-reviewed; media releases say audited; filing governs"
+  - "Brand revenue: management 369.61 Cr vs audited consolidated Brand Business segment 380.86 Cr (11.25 Cr unreconciled)"
+  - "Brand gross margin claim 40-42% vs filing segment result 33.16% FY26, 34.2% H1 FY27, 32.7% Q2 FY27"
+  - "FY26 CFO per Q4 FY26 filing is -273.10 Cr; company memory carried -271.9 Cr"
+  - "H1 FY27 CFO +351.24 Cr: payables +281.90 Cr and other current liabilities +192.83 Cr; receivables -51.60 Cr; not collections"
+  - "HK subsidiary profit untaxed: consolidated tax equals standalone tax (FY26 and Q2 FY27); non-standalone PBT is 38-44% of consolidated PBT; US/China subsidiaries not addressed"
+  - "Own brand named Vertual in Q4 FY26 call, WOZOYO in Q2 FY27 call; Q1 FY27 presentation puts launch in Q1 FY27, call says end-July"
+  - "Zicom SaaS acquisition (Rs 25.5 Cr share swap + Rs 25 Cr cash) filed 4 Nov, not mentioned on 29 Oct call"
+quarters_analysed: ["Q2 FY26", "Q4 FY26", "Q2 FY27"]
+triggers:
+  - {priority: 1, name: "Honeywell licence renewal (brand segment 59% of FY26 segment result)", type: "REGULATORY-POLICY", timeframe: "Mar-Aug 2027", conviction: "M", confirm_signal: "Signed 5-year renewal on current territories", kill_signal: "Non-renewal, shorter term, territory loss or royalty step-up"}
+  - {priority: 2, name: "BSNL BharatNet Odisha execution (~3,194.83 Cr AWO; FY28 billing 500-600 Cr at 6-7% net)", type: "REGULATORY-POLICY/VOLUME", timeframe: "Q4 FY27 to FY30", conviction: "L-M", confirm_signal: "First QC-certified billing of 100-200 Cr in Q4 FY27 plus disclosed funding and guarantees", kill_signal: "No Q4 FY27 billing, guarantee or funding stress, NWC days above 60"}
+  - {priority: 3, name: "Market-entry margin held near 6% (Make-in-India supplier mix)", type: "PRICE-MIX", timeframe: "near", conviction: "M-H", confirm_signal: "Market-entry segment result above 5.5% in Q3-Q4 FY27", kill_signal: "Reverts toward 3% as mix normalises"}
+  - {priority: 4, name: "Infinova India (STQC cameras) acquisition and sales", type: "INORGANIC", timeframe: "Nov 2026 close; sales Jan-Mar 2027", conviction: "M", confirm_signal: "Close before 15 Nov; sales visible Jan-Feb; 75-80 Cr first-year run-rate", kill_signal: "Close slips or STQC certification delayed"}
+  - {priority: 5, name: "WOZOYO own brand scale-up (45-50 Cr FY27)", type: "VOLUME", timeframe: "Q3 FY27", conviction: "M", confirm_signal: "Black Friday/Diwali sell-through; AMS share of sales falling from ~50%", kill_signal: "Returns above 8%, AMS stays high, weak India traction"}
+  - {priority: 6, name: "Cash conversion holds (NWC 52-55 days, CFO positive)", type: "COST", timeframe: "H2 FY27", conviction: "M-L", confirm_signal: "FY27 CFO positive with receivables falling in Rs terms", kill_signal: "Payables normalise and CFO reverses; receivables above 600 Cr"}
+  - {priority: 7, name: "Data centre / AI servers (Super Micro, passive cabling)", type: "SECTORAL", timeframe: "FY28", conviction: "L", confirm_signal: "Disclosed order or revenue", kill_signal: "No revenue disclosure by FY27 results"}
+  - {priority: 8, name: "FY29 plan: 6,000 Cr revenue, brand 40% = 2,400 Cr", type: "VOLUME", timeframe: "FY29", conviction: "L", confirm_signal: "FY27 brand 475-500 Cr and FY28 above 800 Cr", kill_signal: "FY27 brand growth below 30%"}
+guidance:
+  - {item: "Honeywell FY26 revenue", number: "365-370 Cr (390-400 upside)", timeframe: "FY26", stated_in: "Q2 FY26"}
+  - {item: "FY26 PAT", number: "~60 Cr or slightly better", timeframe: "FY26", stated_in: "Q2 FY26"}
+  - {item: "Brand EBITDA margin", number: "15-16% to 21%", timeframe: "1-2 years", stated_in: "Q2 FY26"}
+  - {item: "Consolidated PAT margin", number: "4.5-5%", timeframe: "2-3 years", stated_in: "Q2 FY26"}
+  - {item: "Brand/market-entry mix", number: "50/50", timeframe: "2029", stated_in: "Q2 FY26"}
+  - {item: "Own-brand launch", number: "Q1 CY26 (Feb 2026), India + 1 country", timeframe: "2026", stated_in: "Q2 FY26"}
+  - {item: "Annual revenue growth", number: "at least 25-30%", timeframe: "3-4 years", stated_in: "Q4 FY26"}
+  - {item: "Absolute profit growth", number: "30% a year", timeframe: "5-6 years", stated_in: "Q4 FY26"}
+  - {item: "Brand growth", number: "50-60% a year; Honeywell 40-50%", timeframe: "FY27-28", stated_in: "Q4 FY26"}
+  - {item: "Brand EBITDA / EBIT", number: "13% EBITDA now; EBIT 12-13% to 18-19% beyond 1,000 Cr", timeframe: "medium", stated_in: "Q4 FY26"}
+  - {item: "Mix", number: "50/50", timeframe: "2030", stated_in: "Q4 FY26"}
+  - {item: "Own-brand marketing", number: "10-12 Cr, no other capital", timeframe: "12-14 months", stated_in: "Q4 FY26"}
+  - {item: "Receivables", number: "back to 13-14% of turnover", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Funding", number: "no equity for 15 months unless deal ~30% of size", timeframe: "to Aug 2027", stated_in: "Q4 FY26"}
+  - {item: "FY27 revenue growth", number: "~20%", timeframe: "FY27", stated_in: "Q2 FY27"}
+  - {item: "FY27 Honeywell + WOZOYO revenue", number: "475-500 Cr", timeframe: "FY27", stated_in: "Q2 FY27"}
+  - {item: "WOZOYO revenue", number: "45-50 Cr FY27; 100-150 Cr FY28", timeframe: "FY27-28", stated_in: "Q2 FY27"}
+  - {item: "BSNL billing", number: "FY27 100-200 Cr (speakers differ); FY28 500-600 Cr; net profit 6-7% of billing", timeframe: "FY27-FY28", stated_in: "Q2 FY27"}
+  - {item: "Infinova", number: "close by 15 Nov 2026; 75-80 Cr yr 1; 200 Cr yr 2", timeframe: "FY27-FY28", stated_in: "Q2 FY27"}
+  - {item: "Net working capital days", number: "45 now; normal 52-55", timeframe: "FY27", stated_in: "Q2 FY27"}
+  - {item: "FY29 target", number: "6,000 Cr revenue; brand 40% = 2,400 Cr; brand PAT 10-11% (CFO) or 8% (Chairman)", timeframe: "FY29", stated_in: "Q2 FY27"}
+promise_delivery:
+  delivered: 6
+  partial: 5
+  missed: 8
+  rows:
+    - {promised_in: "Q2 FY26", promise: "Honeywell FY26 365-370 Cr", outcome: "delivered", explanation: "369.61 Cr per Q4 call (segment 380.86 Cr); Chairman misquoted guidance as 359-360"}
+    - {promised_in: "Q2 FY26", promise: "FY26 PAT ~60 Cr", outcome: "delivered", explanation: "PAT 70.29 Cr"}
+    - {promised_in: "Q2 FY26", promise: "Q3 stronger than Q2", outcome: "delivered", explanation: "Q3 total income 920.28 vs Q2 659.59 Cr"}
+    - {promised_in: "Q4 FY26", promise: "Make-in-India mix lifts margin into bottom line", outcome: "delivered", explanation: "H1 FY27 EBITDA margin 5.28% vs 3.95%; market-entry segment 6.66% vs 3.36%"}
+    - {promised_in: "Q4 FY26", promise: "HK profit untaxed", outcome: "delivered", explanation: "Consolidated tax equals standalone tax; US/China subsidiaries not addressed"}
+    - {promised_in: "Q4 FY26", promise: "Profit growth 30% a year", outcome: "delivered", explanation: "H1 FY27 PAT +35.49% (early)"}
+    - {promised_in: "Q2 FY26", promise: "Different market-entry balance sheet in 6-7 months", outcome: "partial", explanation: "Margins up; receivables 565 Cr, FY26 CFO -273.10 Cr"}
+    - {promised_in: "Q2 FY26", promise: "Surveillance and data centre as growth engines", outcome: "partial", explanation: "Tie-ups and BSNL; no revenue split disclosed"}
+    - {promised_in: "Q2 FY26 / Q4 FY26", promise: "Brand acquisition or licence", outcome: "partial", explanation: "Infinova unclosed at 29 Oct; Zicom filed 4 Nov"}
+    - {promised_in: "Q4 FY26", promise: "No fund-raise for 15 months unless ~30% of size deal", outcome: "partial", explanation: "No cash raise; Zicom preferential share swap; 'raise capital for sure' on larger deal; BSNL funding silent"}
+    - {promised_in: "Q4 FY26", promise: "Middle East could halve ME sales", outcome: "partial", explanation: "Later treated as negligible; no quantum disclosed"}
+    - {promised_in: "Q2 FY26", promise: "Own brand launch Feb 2026 (Q1 CY26)", outcome: "missed", explanation: "US launch end-July 2026; no explanation"}
+    - {promised_in: "Q4 FY26", promise: "Own brand live 22-23 May, US and India", outcome: "missed", explanation: "US end-July; India air purifier at Diwali; silence"}
+    - {promised_in: "Q2 FY26", promise: "Brand EBITDA 15-16% rising to 21%", outcome: "missed", explanation: "13% in Q4 call; blamed freight and raw material"}
+    - {promised_in: "Q4 FY26", promise: "Receivables back to 13-14% of turnover", outcome: "missed", explanation: "Receivables 616.71 Cr at Sep-26 = 21.4% of LTM revenue vs 20.9% at Mar-26"}
+    - {promised_in: "Q4 FY26", promise: "Revenue growth 25-30%", outcome: "missed", explanation: "FY27 'roughly 20%'; H1 +16.55%; no reason given"}
+    - {promised_in: "Q4 FY26", promise: "Brand growth 50-60% a year", outcome: "missed", explanation: "FY27 475-500 Cr = +29-35%; Middle East"}
+    - {promised_in: "Q4 FY26", promise: "Own-brand marketing 10-12 Cr", outcome: "missed", explanation: "Budget 20-22 Cr; 'load marketing upfront'"}
+    - {promised_in: "Q2 FY26", promise: "50/50 brand mix by 2029", outcome: "missed", explanation: "2030 in Q4 call; brand 40% by FY29 in Q2 FY27; no reason given"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "Why are receivables high and when do they normalise", quarters_asked: ["Q2 FY26", "Q4 FY26", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Brand business margin levels and trajectory", quarters_asked: ["Q2 FY26", "Q4 FY26", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Will the company need to raise capital", quarters_asked: ["Q4 FY26", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Honeywell licence renewal", quarters_asked: ["Q2 FY26", "Q4 FY26"], classification: "answered by assurance only, no evidence, dropped from Q2 FY27 call"}
+credibility_grade: "C"
+credibility_basis: "Nov 2025 to Oct 2026 across three calls plus filings: 6 delivered, 5 partial, 8 missed of 19 tracked items; PAT and margins beat, but own-brand launch missed twice, growth 25-30% cut to ~20%, receivables not normalised, brand EBITDA reset lower"
+peer_questions:
+  - {question: "Is India surveillance growth 17-18% CAGR and market ~30,000 Cr with one player at 5,000-5,500 Cr; does STQC (no Chinese components/ownership) constrain supply or shift share?", why: "Industry growth claim underpinning Infinova, Matrix, Sparsh (Q2 FY26, Q2 FY27 calls)", check_peers: ["CPPLUS"]}
+  - {question: "Are memory, storage and CPU costs up 30-40% and are distributors passing them on without demand loss?", why: "Raw material trend claim and inventory build rationale (Q4 FY26, Q2 FY27)", check_peers: ["RPTECH", "REDINGTON"]}
+  - {question: "Is distribution/market-entry margin expansion structural (CNL segment result 3.0% to 5.94% in Q2) or one-off mix; what are channel (6-7%) and enterprise (2-2.5%) gross margins?", why: "Tests the 200/350 bp gross margin gain claim (Q2 FY27)", check_peers: ["RPTECH", "REDINGTON", "CPPLUS"]}
+  - {question: "What are NWC, debtor and creditor days, vendor credit stretch and TReDS use?", why: "CNL NWC 75 to 45 days via payables; receivables ~21% of LTM revenue", check_peers: ["RPTECH", "REDINGTON", "CPPLUS"]}
+  - {question: "Receivable terms, billing lag and guarantee needs on government and enterprise project orders", why: "BSNL/FCI timing and funding risk", check_peers: ["CPPLUS", "REDINGTON"]}
+  - {question: "Brand gross margin, A&P and manpower as % of sales at scale; EBIT bridge 12-13% to 18-19%", why: "CNL claims GP 40-42% vs segment result ~33%; marketing 16% falling to 12-13%", check_peers: ["CPPLUS"]}
+  - {question: "Is a brand-led model asset-light (CNL outsources STQC manufacturing) or does scale require plant capex?", why: "CNL capex-cycle claim: no capex needed", check_peers: ["CPPLUS"]}
+  - {question: "Middle East/Red Sea: freight, stock days and volume impact; is ME treated as normalised?", why: "CNL cut ME to negligible after freight $1,500-1,700 to $7,500-8,000", check_peers: ["REDINGTON"]}
+  - {question: "Did Diwali shifting a month move September-quarter sales into the December quarter?", why: "CNL Q2 FY27 growth 14% vs 20% in Q1", check_peers: ["RPTECH", "REDINGTON", "CPPLUS"]}
+  - {question: "Is AI-server/data-centre and cabling demand converting to revenue for distributors?", why: "CNL Super Micro and passive cabling claim, no revenue disclosed", check_peers: ["REDINGTON", "RPTECH"]}
+red_flags:
+  - "HIGH: receivables 21.4% of LTM revenue vs promised 13-14%; H1 FY27 CFO +351.24 Cr driven by payables and other current liabilities (+474.73 Cr combined), not collections"
+  - "HIGH: BSNL AWO ~3,195 Cr with ~1,700 Cr capex; no funding, guarantee or entity disclosure; speakers' FY27 billing differs; not in announcements folder"
+  - "MEDIUM-HIGH: brand GP 40-42% claimed vs filing segment result 32.7-34.2%"
+  - "MEDIUM: guidance cuts (growth, brand, EBITDA) without stated reasons; verbal misstatements (guidance 359-360, 'doubled', 'March 700 Cr')"
+  - "MEDIUM: own-brand launch late twice; name Vertual vs WOZOYO unexplained"
+  - "MEDIUM: untaxed HK-and-other subsidiary profit is 38-44% of consolidated PBT; US/China subsidiaries unaddressed"
+  - "MEDIUM: Zicom SaaS filed 5 days after call; Infinova still not closed; Honeywell renewal (59% of segment result) dropped from Oct call"
+  - "LOW-MEDIUM: CFO changed between Nov 2025 and May 2026, reason not stated"
+dropped_triggers: ["Dahua partnership", "EIZO displays", "Kaspersky/PDRL cybersecurity and drones (not on Oct call)", "Brand demerger", "Consolidated PAT margin 4.5-5% target", "Brand EBITDA 21% target", "Honeywell renewal discussion", "Middle East expansion as growth lever"]
+timeline_slippages: ["Own-brand launch: Feb 2026 to 22-23 May to end-July (US) and Diwali (India)", "Brand/market-entry 50/50: 2029 to 2030 to brand 40% by FY29", "Receivables normalisation to 13-14% not achieved by Sep-26", "Infinova: described as acquisition in Q1 FY27 presentation, still pending at 29 Oct, close promised before 15 Nov", "Brand EBIT 18% threshold moved from 1,000 Cr (Q4 FY26) to 500-600 Cr (Q2 FY27)"]
+analyst_note: "Grade C reflects promise-delivery, not results quality: PAT and margins beat, operational promises and guidance did not. The H1 FY27 CFO turn of +351.24 Cr is mostly payables (+281.90) and other current liabilities (+192.83); management itself called 45 NWC days unsustainable (normal 52-55). Untested hypothesis for forensic stages: the OCL jump and the 154.85 Cr fall in current borrowings may reflect advances or reclassification of the 171 Cr vendor finance. BSNL funding is the largest unasked question. Stage 6: CPPLUS tests brand margins, STQC and project terms; REDINGTON/RPTECH test component costs, working-capital stretch, festive timing."

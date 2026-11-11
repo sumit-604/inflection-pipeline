@@ -1,0 +1,24 @@
+stage: B12c
+company: "CNL"
+run_date: "2026-11-11"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+scope: "phase-1 (gate0 + emoat only); valuation half pending phase 3"
+gate0: {rules_checked: 22, rules_passed: 19, fails: ["C-G1 MAJOR ROCE formula substituted (proxy CE = Eq+Res+Borr) vs fixed EBIT/(TA-CL); recomputed A 18/core 56/M3 5/STRONG (2-yr reading) or A 4/core 42 (strict NOT FOUND); classification AVERAGE unchanged", "C-G2 MINOR B3 ratio not shown, bound garbled (correct <= -1.55); DB2 typo 'Block B 8 < 8'", "C-G3 MINOR M11 inputs unanchored; S&A-as-selling proxy absent from data_notes"]}
+emoat: {rules_checked: 21, rules_passed: 18, fails: ["C-E1 MAJOR C1 scored documented 1.0x on claim-only substance (Zicom recurring benefit; documented item is H1's acquisition action); recomputed C1 0.7, em_score 12.5, MODEST unchanged", "C-E2 MINOR Section 5 table collapses 15 zero rows and miscounts them as 'other 14 + I1, I2' (should be 13 + I1, I2)", "C-E3 MINOR evidence items anchored to upstream stages (B01/B05) not source documents (G2 row 2, G1, F2, H2, 1C)"]}
+valuation: {status: pending, rules_checked: 0, fails: []}  # phase 3, after B10/B11
+expectation_ledger: {status: pending, present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11; not run in phase 1
+business_understanding_narrative: {status: pending, fails: []}  # rule 9; any fail = REWORK stage 13; not run in phase 1
+recomputed_destination_pe: ""  # valuation pending phase 3
+recomputed_decision: ""        # concur: B01 AVERAGE (pinned by DB4), B07 combined AVERAGE
+findings:
+  - {id: C-G1, framework: gate0, severity: MAJOR, rule: "01 L27-31 fixed ROCE formula; L13 no judgments", recomputed: "A 18 core 56 M3 5 moats 4 STRONG grand 71 (FY25-26 reading) | A 4 core 42 DB1 non-binding (strict) | filed A 11 core 49 MODERATE", decision_effect: "none; AVERAGE in all readings (core 40-59, DB4 cap); moat_class may read STRONG"}
+  - {id: C-G2, framework: gate0, severity: MINOR, rule: "01 L14 show every number", recomputed: "cum FCF <= -334.83, B3 <= -1.55, score 0", decision_effect: "none"}
+  - {id: C-G3, framework: gate0, severity: MINOR, rule: "01 L15-18 anchors; L189-190 proxy in data_notes", recomputed: "M11 3 unchanged", decision_effect: "none"}
+  - {id: C-E1, framework: emoat, severity: MAJOR, rule: "07 L172-173 multiplier by tier; verifier rule 3", recomputed: "C1 1 x 0.7 = 0.7; em_score 12.5; MODEST", decision_effect: "none on class; margin to 12.0 floor 0.5; C2 re-grade then gives 11.6 NONE"}
+  - {id: C-E2, framework: emoat, severity: MINOR, rule: "07 L171-174 all 23 rows", recomputed: "15 zero rows (A1 A2 A3 B1 B2 B3 D1 D2 E1 E2 F2 G1 H3 I1 I2); total unchanged", decision_effect: "none"}
+  - {id: C-E3, framework: emoat, severity: MINOR, rule: "07 L35-36 source anchors", recomputed: "n/a", decision_effect: "none"}
+critical_count: 0
+major_count: 2
+minor_count: 4
+acceptance_rate: 86.0             # rules passed / rules checked, % (37 / 43, phase-1 scope)

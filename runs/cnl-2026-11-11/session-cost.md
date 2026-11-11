@@ -20,4 +20,27 @@ Per-stage token ledger. Figures come from the subagent result metadata; n/a wher
 | 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 277776 | 489s | 1 |
 | 12c | verifier-c-framework (phase-1 half) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 125245 | 611s | 1 |
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 387821 | 961s | 1 |
-| 13 | stage-13-synthesis (phase-1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | n/a | n/a | 1 |
+| 13 | stage-13-synthesis (phase-1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 159611 | 576s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 247409 | 642s | 1 |
+
+## Close-out summary
+
+(a) TOP FIVE BY TOKENS (stage total; share of 3224726 ledger tokens)
+- stage-02-notes-pass: 500226 (15.5%)
+- stage-03-ardeep: 414308 (12.8%)
+- verifier-b-redflags: 387821 (12.0%)
+- verifier-a-numerical: 277776 (8.6%)
+- stage-09b-dossier: 247409 (7.7%)
+
+(b) DOWNSHIFT FAILURES: none. stage-00-intake-check ran on claude-haiku-5-5; verifier-a-numerical ran on claude-sonnet-5-5 (its frontmatter model). verifier-a-shadow did not run (switch spent by runs/southwest-2026-11-09 per HANDOFF.md).
+
+(c) COST SPIKES: none (no prior CNL run ledger exists).
+
+(d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+
+(e) FRESH VS RE-READ (subagent rows only)
+Fresh tokens (cache write + output + uncached input): n/a (all 18 rows left out: the harness exposes only total tokens per subagent, not the split)
+Re-read tokens (cache read): n/a (all 18 rows left out)
+Re-read multiple (re-read / cache write): n/a (all 18 rows left out)

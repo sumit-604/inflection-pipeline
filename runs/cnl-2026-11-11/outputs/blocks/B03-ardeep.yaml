@@ -1,0 +1,73 @@
+stage: B03-ardeep
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding pattern absent (B00): promoter pledge and FII/DII trend NOT FOUND"
+  - "only FY2025-26 AR held: no FY24 balance sheet, no prior-year AR, no 3-year trends or tone-drift test"
+  - "screener formula sheets blank (B00)"
+  - "peer CSVs absent (B00)"
+flags:
+  - {type: FLAG-CASH, reason: "CON CFO (27,188.34) lakh (Rs 271.88 Cr) vs PAT 7,029.29; SA CFO (25,738.12); CFO/PAT 0.41x in FY25 then negative; receivable build funded by +25,471.81 short-term bank debt (CON CF AR p.98; SA CF AR p.74)"}
+  - {type: FLAG-LEVERAGE, reason: "CON D/E 0.837 from 0.232; borrowings 32,426.09 all within 12 months; CRISIL-rated facilities Rs 209 Cr vs borrowings Rs 324.26 Cr (SA Note 32 AR p.86; AR p.58; AR p.46)"}
+  - {type: FLAG-OFFSHORE-PROFIT, reason: "HK subsidiaries 3,594.54 = 51.1% of CON PAT at nil tax (AOC-1 AR p.63; CON Note 30 AR p.108: rate-differential 904.84); not audited by group auditor (AR p.93)"}
+  - {type: FLAG-RPT, reason: "SCL purchases 15,539.15 and FY27 approval Rs 750 Cr (AR p.30); Click Retail balance 4,773.50 with CNL WTD Vijay Advani a director of Click Retail (SA Note 36 AR p.89; Notice Annexure I AR p.35-36)"}
+phase_verdicts: {p1: "yellow", p2: "yellow", p3: "red", p4: "yellow", p5: "yellow", p6: "yellow", p7_best_fit: "GARP (WATCHLIST)"}
+overall_quality: 4.5
+quality_components: {governance: 5, accounting: 5, balance_sheet: 4, earnings: 4}
+kill_switch_notes:
+  - "P1: would not stop on audit report alone; unmodified opinion, no CARO adverse remark; but 51.1% of PAT rests on unnamed HK auditors and consolidated annexures carry Indian-subsidiary template errors (AR p.93-96)"
+  - "P2: would not stop; numbers tie; require receivable composition, covenants, HK tax reason before relying on cash story"
+  - "P3: would have reason to stop and seek post-balance-sheet cash evidence: CFO (27,188.34), bank debt +366%, ROE gain leverage-driven (AR p.97-98)"
+  - "P4: would not stop; MD&A is bland not false, but missing-risk list is the thesis risk"
+  - "P5: would not stop; no fraud, qualification or promoter exit; need shareholding pattern for pledge"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "receivable and working-capital funding", evidence: "CFO (27,188.34); receivables +137.7%; borrowings 32,424.88 (CON AR p.97-98, Note 17 AR p.106)"}
+  - {risk: "offshore profit concentration, nil tax, other auditors", evidence: "3,594.54 = 51.1% of PAT; AOC-1 tax Nil (AR p.63); Other Matters (AR p.93)"}
+  - {risk: "transfer pricing and SCL dependence", evidence: "purchases 15,539.15; FY27 limit Rs 750 Cr (AR p.30); brand margin 10.56% SA vs 33.16% CON (Note 39 AR p.90; Note 37 AR p.112)"}
+  - {risk: "Honeywell licence term and royalty", evidence: "royalty 595.73 (CON Note 29 AR p.108); licence term NOT FOUND"}
+  - {risk: "customer concentration", evidence: "no major-customer disclosure in Note 37 (AR p.111-112); Click Retail 4,773.50 (Note 36 AR p.89)"}
+  - {risk: "rated-limit headroom", evidence: "CRISIL Rs 209 Cr (AR p.58) vs borrowings Rs 324.26 Cr (AR p.46)"}
+  - {risk: "promoter-family and counterparty-board dependence", evidence: "pay 236.74 (Note 36 AR p.88); Advani director of Click Retail (AR p.35-36)"}
+  - {risk: "recurring GST disputes", evidence: "GST 514.78 of 600.01, +112.8% (SA Note 35 AR p.87)"}
+  - {risk: "Infinova acquisition funding", evidence: "Directors' Report s.35 (AR p.41); consideration NOT FOUND"}
+guidance_table:
+  - {claim: "Honeywell sales expected to cross 3 million units", number: "3 million units", timeframe: "2026", credibility: "2/5: no base-year units, no revenue link (AR p.9)"}
+  - {claim: "SCL related-party approval ceiling", number: "Rs 750 Cr (75,000 lakh)", timeframe: "FY27", credibility: "2/5: FY26 limit 25,000 lakh, usage 17,747.69 (AR p.30, p.43)"}
+  - {claim: "additional brand rights to lift profitability substantially", number: "none", timeframe: "FY27", credibility: "2/5 (AR p.36)"}
+  - {claim: "Vision 2030 first Indian consumer technology brand with meaningful global presence", number: "none", timeframe: "2030", credibility: "1/5 (AR p.25)"}
+  - {claim: "Infinova India acquisition", number: "none; no definitive agreement", timeframe: "pending", credibility: "2/5 (AR p.41)"}
+monitorables:
+  - {metric: "CON closing receivable days", threshold: "below 65 improving; above 80 red (76.3 at Mar-2026)", where: "half-year balance sheet and ratio table", why: "tests working-capital inflection"}
+  - {metric: "CFO / PAT", threshold: "above 0.7 without customer advances or SCL payable swing as driver", where: "half-year cash flow statement", why: "cash conversion"}
+  - {metric: "Short-term borrowings and CON ND/E", threshold: "ND/E at or below 0.6 (0.83 now); borrowings inside sanctioned limits", where: "results and CRISIL rationale", why: "refinancing and covenant risk"}
+  - {metric: "HK share of PAT and tax", threshold: "standalone vs consolidated tax equal and nil HK tax continuing = flag; any HK dividend or tax disclosure", where: "quarterly results and annual notes", why: "durability of 51.1% of PAT"}
+  - {metric: "SCL RPT run-rate", threshold: "vs 75,000 lakh FY27 ceiling; AGM vote 30-Sep-2026", where: "RPT disclosures and AGM voting results", why: "transfer pricing and related-party scale"}
+  - {metric: "CON brand segment margin and share", threshold: "margin 33.16%, share 14.11% at FY26", where: "segment note", why: "thesis margin claim"}
+  - {metric: "Click Retail balance", threshold: "below 3,000 lakh (4,773.50 now)", where: "related-party note", why: "related-party credit and counterparty-board link"}
+  - {metric: "Allowance / gross receivables and >6 month bucket", threshold: "allowance above 0.5%; >6 months below 3.5% of gross", where: "receivables note", why: "credit-loss adequacy"}
+  - {metric: "Outside-India revenue", threshold: "return to growth from 90,263.93 lakh", where: "geography disclosure (Note 23.2)", why: "global expansion claim"}
+ar_new_downstream_entities:
+  - {name: "Infinova India Private Limited", where_in_ar: "Directors' Report s.35 (AR p.41)", entity_type: "proposed acquisition target; no binding agreement"}
+  - {name: "Lumisynch Private Limited", where_in_ar: "SA Note 36 (AR p.89): purchases 2.52, nil FY25", entity_type: "related-party counterparty (new vs FY25 comparative)"}
+  - {name: "Euphoriya Hospitality Private Limited", where_in_ar: "SA Note 36 (AR p.89): sales 0.06, nil FY25", entity_type: "related-party counterparty (new vs FY25 comparative)"}
+  - {name: "Samriddhi Automations Private Limited (Sparsh)", where_in_ar: "Key Milestones (AR p.8)", entity_type: "new brand partner, STQC surveillance OEM"}
+  - {name: "Matrix", where_in_ar: "Key Milestones (AR p.8)", entity_type: "new brand partner, Pan-India distribution"}
+  - {name: "EIZO Private Limited", where_in_ar: "Key Milestones (AR p.8)", entity_type: "new brand partner, Pan-India distribution"}
+  - {name: "PDRL", where_in_ar: "Key Milestones (AR p.8)", entity_type: "new brand partner, drone technology (full legal name NOT FOUND)"}
+  - {name: "Kaspersky, BRYT, Corsair, Dahua, Colorful, PNY", where_in_ar: "Key Milestones (AR p.8) and vendor list (AR p.45)", entity_type: "new or expanded brand partners"}
+strengths_top3:
+  - "Audited growth: CON revenue +51.7%, owners' EPS +27.5% to 41.04 (AR p.97, p.46)"
+  - "Asset-light, unmodified opinions, no CARO adverse remark, no fraud or whistleblower items, no loans to promoter entities (AR p.69-71)"
+  - "Promoter stake steady at 56.62% and promoter funded 5,00,000 warrants in FY25 (Note 13 AR p.82)"
+red_flags_top3:
+  - "CFO (27,188.34) lakh funded by +25,471.81 short-term bank debt; receivable allowance 0.14% of gross (AR p.98, p.74, Note 8)"
+  - "51.1% of CON PAT earned in HK at nil tax, not audited by group auditor, with a transfer-pricing channel via SCL (FY27 limit Rs 750 Cr) (AR p.63, p.93, p.30)"
+  - "Related-party and promoter dependence: Click Retail 4,773.50 with CNL director on its board; executive pay +35.6% proposed; Rs 209 Cr rated base vs Rs 324 Cr borrowings (AR p.89, p.35-36, p.58)"
+best_fit_strategy: "GARP (WATCHLIST), conditional on proven cash conversion; Turnaround FAIL as a classical label"
+one_line_verdict: "Audited 52% growth at a low AR-date multiple, but proven only as receivable-funded, leverage-driven, offshore-tax-sheltered profit (CFO -Rs 271.88 Cr, 51.1% of PAT in HK); GARP on watchlist pending cash-conversion proof, 4.5/10."
+analyst_note: "All 15 B02 findings re-verified, zero value discrepancies. New this stage: (1) India sales +164.9%, exports -21.5%; domestic receivable days about 112 in both years, so the build is mix shift at unchanged terms, not slower collection (derived; assumes negligible export receivables). (2) CON Note 30 prices the HK nil-tax effect at 904.84 (=25.17% x 3,594.97). (3) Brand margin gap 10.56% SA vs 33.16% CON is the HK layer. (4) Vijay Advani is a director of Click Retail, the 4,773.50 debtor. (5) FY27 SCL ceiling is 4.2x FY26 actual. (6) The 4,493.48 'buyers credit expenses' is a settlement; FX outgo reconciles to 50,207.90. (7) Consolidated annexures cite an Indian subsidiary that does not exist. BSNL and Zicom are absent from the AR."

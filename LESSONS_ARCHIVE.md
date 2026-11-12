@@ -1112,3 +1112,15 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-12 · PVRINOX /step1 Phase 1 (runs/pvrinox-2026-11-12)
+- Collector: REPO_ROOT is hardcoded to a path that does not exist on this machine; run through a scratch wrapper. Chromium would not launch headed ("spawn UNKNOWN"); a PYTHONPATH sitecustomize forcing headless fixed it. tools/ not edited.
+- Collector gaps filled by hand: results PDFs (BSE AttachLive/AttachHis), CRISIL rationale (fetch_ratings.py, text), shareholding (NSE XBRL dumped to text), UFO peer transcripts (collector pass timed out). screener 429 cleared after a 50 second wait.
+- BSE announcement API returns 400 on a window near 420 days; two windows of 200 days work. The 12-month, 25-file fetch missed the 7 Sep 2026 clarification on the alleged kickback news; stage 8 found the matter on the web and the filing was added mid-run. A Reg 30 "clarification" filter would have caught it at collection.
+- Sector cap table has no film exhibition or out-of-home entertainment row; manifest carries NOT FOUND (nearest row Hotels 30x, a hint). Operator ruling needed at the /fttcp pillar gate.
+- Peer set thin: no listed multiplex of scale; CINELINE has no transcripts. Verifier D acceptance 100%, but zero peer claims reached VERIFIED.
+- Subagents ran async through the desktop Agent tool; completion was proven from the report and block files each time. Token split not exposed; session-cost fresh and re-read lines are n/a.
+- Verifier A shadow skipped (claimed by kusumgar); .claude/shadow.yaml untouched.
+- Dossier listed FY2023-24 AR and Q3 FY26 results as findable gaps; both were fetched from BSE after stage 09b and no stage has read them.
+- Stage dependency note from Verifier C: stage 7 and stage 9 need B05 / B04 and B07 at their markers; run-pipeline lists 7 after 1 and 9 after 3 only. Ran 7 after 5 and 9 after 4 and 7.

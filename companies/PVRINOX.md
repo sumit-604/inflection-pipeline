@@ -12,6 +12,9 @@ about 30%.
 
 ## DECISION STATUS AND ENTRY ZONE
 None. Phase 1 ran to Halt 1 on 2026-11-12. No valuation has run.
+Phase 1 gate recommendation: PROCEED WITH CAVEATS. Corpus verdict: CORPUS GAPPED.
+Fragility: FRAGILE. Gate 0: core 37, AVOID of record on the reported basis.
+Promoter check: CAUTION (partial). Phase 1 confidence: 69, set by red-flag coverage.
 
 ## SPEAR
 Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -47,10 +50,20 @@ runs/pvrinox-2026-11-12/step1-business-brief.md
 - 2026-11-12: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.
 
 ## ACTIVE TRIPWIRES
-None set. Set at Halt 1 or /finalize.
+None set by the operator. Candidates from Phase 1 (see gate-recommendation.md):
+- Q3 FY27 print: admissions growth near +4% with ticket price above +10% while industry box office grows above 20%.
+- FY27 gross screen openings below 85, or another guidance cut.
+- Promoter pledge above 2,944,444 shares, or any invocation.
+- Any action on the alleged developer-kickback matter that reaches a director.
+
+## OPEN ITEMS FOR HALT 1
+- Sector cap row NOT FOUND in the Section 1B table (no film exhibition row). Operator ruling needed.
+- Alleged developer-kickback matter; company clarification dated 7 Sep 2026 is in the corpus.
+- B08 and B09 are partial (web searches skipped).
+- Peer CINELINE has no transcripts.
 
 ## OPTIONALITY REGISTER (summary)
-Not yet written. See B07 in the run folder after Phase 1.
+Eight items in runs/pvrinox-2026-11-12/outputs/blocks/B07-emoat.yaml (SMART Cinemas, capital-light model, loyalty, digital ad platform, FY28 screen plan, premium formats, alternate content, solar).
 
 ## RUN FOLDERS
 - runs/pvrinox-2026-11-12/

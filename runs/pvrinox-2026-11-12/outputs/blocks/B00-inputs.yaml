@@ -52,5 +52,8 @@ concall_quarter_map:
   - {file: "inputs/concalls/Concall_Nov_2026_Transcript.pdf", quarter: "Q2 FY27", use: "stage 5 transcript 3"}
 corpus_manifest: "see outputs/blocks/B00-intake.yaml (stage-00-intake-check); mismatches verified by the orchestrator are listed under intake_verification below"
 intake_verification: "stage-00-intake-check (claude-haiku-5-5) read 39 files; block parses; 39 of 39 rows folder_match true, none UNREADABLE, none UNIDENTIFIED, no moves proposed. Its note: inputs/screening/CINELINE-Data_Sheet.csv is a peer screen kept in screening/ by collector convention (prefix names the peer); stage 1 is passed only the main-company sheet. UFO-Concall_Aug_2026 covers Q1 FY27 (call dated 2026-07-29)."
+post_dossier_additions:
+  - "inputs/annual-report/Annual_Report_2024.pdf (FY2023-24 AR, BSE) and inputs/results/20260205-Q3FY26-results-4bb1e0f9.pdf (Q3 FY26 results, BSE) were fetched AFTER stage 09b to close two findable gaps the dossier lists. No stage or verifier read them."
+  - "inputs/announcements/20260907-clarification-news-internal-probe-baf3b6ed.pdf and 20260723-change-in-directors-7d706b04.pdf were added after stage 8 and before stage 7; announcements now hold 19 files."
 flags: []
 analyst_note: ""

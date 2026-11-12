@@ -1,0 +1,71 @@
+stage: B04-bizmodel
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "FY27 capex guide Rs 220-240 Cr is a web item only; NOT FOUND in the AR or presentation"
+  - "Competitor names, market share, utilisation, empty running, FTL and courier payment terms, dropped-contract tonnage: NOT FOUND in AR or presentation (concall may answer)"
+  - "No peer or industry ranges in the corpus; healthy ranges use VRL's own record"
+  - "Presentation figures in INR Cr read from the text layer; AR in INR lakhs; FY26 tonnage is a sum of chart labels (B01 LB2)"
+flags:
+  - "SECTOR-CAP-ROW: no Section 1B row fits. Asset-heavy (89.3% of assets in fleet, buildings, ROU; capex 9.25% of revenue) and low working capital (3.2% of revenue, 11.7 days). Operator rules."
+  - "MARGIN-DEFINITION: 23.3% includes other income on total income. Operating basis 22.97% Q2, 22.14% H1. Management says 21-22% and 23% plus in the same call."
+  - "VOLUME: tonnage H1 FY27 still 3.0% below H1 FY25 despite +10% YoY."
+  - "LEASE: printed D/E, DSCR and ROCE exclude leases; use lease-inclusive forms."
+business_type: services
+revenue_streams:
+  - {name: "LTL parcel", type: "transaction-based service flow", pct_of_revenue: 90.2, predictability: "M"}
+  - {name: "FTL", type: "transaction-based service flow", pct_of_revenue: 8.7, predictability: "L-M"}
+  - {name: "Courier", type: "transaction-based service flow", pct_of_revenue: 0.6, predictability: "M"}
+  - {name: "Scrap sale", type: "other operating revenue", pct_of_revenue: 0.5, predictability: "L"}
+asset_intensity: heavy
+wc_intensity: low
+pricing_power: moderate
+cyclicality: cyclical
+moats_present:
+  - "Network density (1,337 branches, 50 hubs): high while density holds"
+  - "Scale, largest private fleet: medium-high"
+  - "Cost advantage via in-house maintenance, bulk fuel (currently off): medium"
+  - "Brand and claim ratio: medium, management claims"
+valuation_methods:
+  primary: {method: "P/E on forward EPS", why: "Earnings after depreciation and interest capture the cost of owned fleet and leased hubs"}
+  secondary: {method: "EV/EBIT with lease liabilities in EV", why: "Neutralises own-versus-hire and Ind AS 116 distortion"}
+  tertiary: {method: "P/B vs ROE", why: "Fleet and land are real assets; ROE 21.27% FY26"}
+  not_applicable: ["Dividend discount (payout varies, buyback larger)", "SOTP/NAV (single segment)", "EV/Sales (margin is the thesis)", "Plain EV/EBITDA (lease and ownership distortion)"]
+irrelevant_ratios:
+  - "Printed debt/equity 0.40: excludes lease liabilities 69,844"
+  - "Printed ROCE 24.56%: excludes leases, lease-inclusive 17.35%"
+  - "Current ratio 0.49: by design, collect cash at booking; leases and demand loans in current liabilities"
+  - "Net capital turnover (18.05): negative base"
+  - "Inventory turnover: stores only, 1.4% of revenue"
+  - "Return on investment 133.77%: interest on parked cash"
+  - "EBITDA margin vs hired-fleet peers: opex versus depreciation split"
+must_track_metrics:
+  - {metric: "Tonnage YoY (thousand tonnes)", healthy: "+9-10%; Q2 FY27 1,079", red_flag: "under 5% or no new high above 1,104 within 3 quarters"}
+  - {metric: "Realisation per tonne", healthy: "up or flat q/q; Q2 FY27 8,840", red_flag: "q/q fall without fuel fall"}
+  - {metric: "Operating EBITDA margin ex other income", healthy: "21% or more; H1 FY27 22.14%", red_flag: "under 20% two quarters"}
+  - {metric: "Employee cost % of revenue", healthy: "16.5% or less (Q2 16.48%)", red_flag: "above 17.5%"}
+  - {metric: "Net debt incl leases / LTM EBITDA", healthy: "below 2x; Mar-26 1.69x", red_flag: "above 2.5x"}
+unit_economics:
+  unit: "one tonne moved"
+  revenue_per_unit: "Rs 8,054 FY26 goods transport; Rs 8,840 Q2 FY27"
+  margin_per_unit: "EBITDA ex other income Rs 1,644 FY26 (20.19%); Q2 FY27 EBITDA incl other income Rs 2,091"
+  key_lever: "Realisation per tonne and tonnage spread over semi-fixed employee and hub cost; incremental EBITDA margin 41.5% Q2, 34.4% H1"
+first_deterioration_signals:
+  - {risk: "Volume not building on reset base", first_signal: "quarterly tonnage growth"}
+  - {risk: "Price gain one-off", first_signal: "realisation per tonne q/q"}
+  - {risk: "Margin reverts to guide", first_signal: "employee cost % of revenue and administrative expense"}
+  - {risk: "Liquidity after buyback and capex", first_signal: "cash and current investments, net debt incl leases"}
+  - {risk: "Control and tax items", first_signal: "contingent liabilities note and auditor CARO remarks"}
+  - {risk: "Fleet renewal", first_signal: "repairs and maintenance % of revenue"}
+mgmt_questions:
+  - "21-22% or 23% plus: which margin is the plan and which Q2 cost lines do not repeat?"
+  - "Tonnage of exited contracts and share of H1 FY27 growth that is returning old volume"
+  - "Freight given back and bulk fuel edge if diesel falls 5%"
+  - "Funding of buyback 280 Cr, capex 220-240 Cr and lease payments without new debt"
+  - "Related-party travel and rent counterparties; any promoter property leased"
+  - "Utilisation and empty running; why capacity fell 85,261 to 81,700 t"
+  - "Dates for database audit trail and March 2026 stock return"
+one_line_verdict: "Owned-fleet parcel carrier with low working capital and heavy assets; margin gain is price and operating leverage, and the open test is volume above the pre-reset peak."
+analyst_note: "Sector cap: asset-heavy, low WC, no Section 1B row fits; operator rules. Q2 23.3% includes other income; operating basis 22.97%. Per tonne, Rs 761 price gain gave Rs 471 EBITDA gain; fuel per tonne +182, employee per tonne -31. Fuel litres per tonne fell about 4.6% while diesel per litre rose 13.6%. Tonnage H1 FY27 is 3.0% below H1 FY25. Management quotes 21-22% and 23% plus in one call (Concall p.8, p.13). Tonnage FY26 is a chart-label sum. Pres pages are PDF pages."

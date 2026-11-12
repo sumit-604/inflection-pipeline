@@ -8,3 +8,4 @@ input, cache or output split. Split columns read n/a. No figure is estimated.
 |---|-------|-------|--------|--------|------------|-------------|---------|-----------|------|------|
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 121,589 | 3m35s | 1 |
 | 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 120,660 | 4m55s | 1 |
+| 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 168,394 | 7m43s | 1 |

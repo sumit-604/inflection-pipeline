@@ -1,0 +1,57 @@
+stage: B07-emoat
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "annual-report ABSENT: no annual report exists (listed 2026-07-15). The prospectus (dated 2026-07-10) stands in; restated financials cover FY2024-FY2026 only."
+  - "concalls: one transcript only (Q1 FY27); no Q2 FY27 call was held, a written Investor Q&A replaced it. F2 runs on capex-completion evidence."
+  - "peer-concalls: 6 transcripts across 2 of 3 peers; GARFIBRES publishes none on screener."
+  - "shareholding: only a screener page print of the Sep 2026 pattern (SECONDARY)."
+  - "screening: only Data Sheet CSVs are populated."
+flags:
+  - "FLAG-DISCLOSURE-RETREAT: four-segment disclosure in the prospectus (p.190) became 'single segment' after listing (Concall p.7; Q2 Q&A 5, deck p.22). The A&D mix, the key emerging-moat variable, cannot be tracked quarterly; first confirmation path is the FY27 annual report."
+  - "FLAG-PARTNER-IP: the A&D Solutions growth rests on a licence from a US partner that retains the IP (Prospectus p.210; Concall p.13). This is a rented capability, so it is scored as H2 partnership evidence only, never also as A2 or A1."
+  - "FLAG-CAPEX-BASE: capex under execution is small (CWIP 101.04 INR mn at Sep 2026, Q2 results p.11), so capex_embedded_growth_pct is 5.0. Growth must come from filling idle capacity (49.50% FY26 utilisation, Prospectus p.204), not new capex. Certoplast JV capex NOT FOUND."
+  - "FLAG-NO-IP: no registered IP of any kind; one pending trademark assignment (Prospectus p.214). A2 scores 0."
+  - "FLAG-F2-NO-PLAN-BASELINE: capex on time and on budget cannot be tested, because the corpus holds no original commissioning schedule or budget. F2 scored on completion dates and ramp only."
+em_score: 17.5
+em_classification: "MODEST"
+active_categories:
+  - {id: "A1", name: "Rare manufacturing capability", strength: "Moderate", evidence_type: "MIXED (certifications DOCUMENTED; global rarity claims MANAGEMENT CLAIM; scored at 0.7x)", time_to_materialise: "already partly in place; qualification-led, 12-36 months per product"}
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "DOCUMENTED (AS9100D, IATF 16949, rucksack tender 794,674 units, two-year tape qualification); no long-term agreements", time_to_materialise: "in place; repeat-order proof 12-24 months"}
+  - {id: "C2", name: "Customer concentration improving", strength: "Moderate", evidence_type: "DOCUMENTED (top customer 47.26% to 28.90% to 11.13%; top 10 80.18% to 84.69% to 59.52%); partly mechanical", time_to_materialise: "12-24 months to show it holds as A&D Solutions orders return"}
+  - {id: "E2", name: "China+1 beneficiary", strength: "Moderate", evidence_type: "DOCUMENTED (outside India revenue 1,167.43 to 1,788.07 to 2,698.44 INR mn)", time_to_materialise: "12-36 months; US tariff exposure open"}
+  - {id: "H2", name: "Strategic partnerships", strength: "Moderate", evidence_type: "DOCUMENTED (signed agreements incl. four exclusive-for-India rows; Toray Kusumgar JV holding 154.19 INR mn); partner holds the IP", time_to_materialise: "12-36 months to convert to owned revenue"}
+evidence_mix: {documented: 15, claim: 10, inference: 4}
+completionist_recount: "📄 recount performed: 15 documented items across 7 categories (B2, C2, E2, F2, H2, H3, R1); A1 rests mainly on management claims, so it was scored at 0.7x. 10 rows score above zero but only 5 are Moderate and none Strong. The 12-category guard is not hit."
+catalysts_12m:
+  - {catalyst: "Q3 and Q4 FY27 results: revenue holds near the H1 run-rate of about 2,490 INR mn a quarter and execution of the 2,371.96 INR mn A&D order reaches 80% by Mar 2027", window: "Jan-Feb 2027 and May 2027", evidence_type: "DOCUMENTED", anchor: "B05 trigger 1; Prospectus p.340, p.367; Q2 deck p.6"}
+  - {catalyst: "Trade receivable days fall below 90 and CFO above 50% of EBITDA (funds the capacity fill)", window: "Dec 2026 and Mar 2027 balance sheets", evidence_type: "DOCUMENTED", anchor: "B05 trigger 3; Q2 results p.11-12"}
+  - {catalyst: "Certoplast tapes JV definitive agreement with capex, funding and revenue targets (50.1:49.9)", window: "next 6-12 months", evidence_type: "MANAGEMENT CLAIM (non-binding term sheet)", anchor: "Board outcome 2026-11-05, Annexure B"}
+  - {catalyst: "Management states utilisation above 75% in a filing (stated aim: fully utilised 'next quarter' in Aug 2026)", window: "Q3-Q4 FY27", evidence_type: "MANAGEMENT CLAIM", anchor: "Concall p.11; B05 trigger 6"}
+  - {catalyst: "First annual report FY27: segment and customer notes restore A&D, export and customer disclosure", window: "Jul-Aug 2027", evidence_type: "DOCUMENTED when filed", anchor: "B05 trigger 4; Prospectus p.320-321 (Notes 44-45)"}
+  - {catalyst: "Armed-forces and OEM product qualification wins named in a filing", window: "ongoing, 12 months", evidence_type: "MANAGEMENT CLAIM", anchor: "Q2 deck p.5; Concall p.7"}
+capex_embedded_growth_pct: 5.0
+optionality_register:
+  - {optionality: "Finished parachute systems under US-partner licence: repeat or follow-on orders beyond the 2,371.96 INR mn order", converting_evidence: "Signed follow-on order with value, or a stated order book", first_appears: "Reg 30 order announcement; Q3/Q4 FY27 results deck", window: "6-12 months"}
+  - {optionality: "Stealth, camouflage and decoy programmes with a Russian partner", converting_evidence: "First commercial order or revenue line disclosed", first_appears: "Concall or Reg 30 order announcement", window: "24-36 months"}
+  - {optionality: "Carbon prepreg and lightweight composites with a Japanese partner; new subsidiaries Kusumgar Aerospace and Kusumgar Advanced Materials", converting_evidence: "Committed capex or a signed supply contract", first_appears: "Results notes (subsidiaries), Reg 30", window: "24-36 months"}
+  - {optionality: "Certoplast tapes JV (50.1:49.9)", converting_evidence: "Definitive agreement with capex, funding and revenue targets", first_appears: "Reg 30 filing after the 2026-11-05 term sheet", window: "6-12 months"}
+  - {optionality: "Medical tapes for local customers", converting_evidence: "First qualified customer order", first_appears: "Annual report business section, concall", window: "24-36 months"}
+  - {optionality: "Inflatable fabrics: own coating and lamination capability", converting_evidence: "Committed capex and a customer qualification", first_appears: "Annual report capex note, Reg 30", window: "12-36 months"}
+  - {optionality: "Parachute maintenance and lifecycle support (exclusive in India, since Jan 2025)", converting_evidence: "Disclosed service contract value", first_appears: "Reg 30; annual report", window: "12 months"}
+  - {optionality: "Shelter systems with a North American leader (since May 2025)", converting_evidence: "India tender win or signed order", first_appears: "Reg 30 order announcement", window: "12-24 months"}
+  - {optionality: "EV wire-harness polyester yarn (developed 2023)", converting_evidence: "Customer qualification with volumes", first_appears: "Annual report case study or concall", window: "24 months"}
+  - {optionality: "Own-brand parachutes, decoys, shelters sold abroad through distribution partners", converting_evidence: "Signed distribution agreement or export order", first_appears: "Reg 30; concall", window: "24-36 months"}
+  - {optionality: "Indian defence indigenisation preference (R1)", converting_evidence: "Named armed-forces qualification or procurement win tied to Kusumgar", first_appears: "Reg 30 order announcement", window: "12-24 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 core 59 and moat 13/60 (AVOID only after a limited-history downgrade of AVERAGE) meet an emerging moat score of 17.5 (MODEST, five Moderate rows, none Strong): the forward set is real but thin and partly rented, so this is not a transition setup."
+top_moat_risks:
+  - "Partner IP dependence: the licensed parachute systems and exclusive rows leave the IP with the partner (Prospectus p.210)."
+  - "No long-term agreements with customers or suppliers; orders arrive as single tenders (Prospectus p.30-31, p.213)."
+  - "Disclosure retreat: single-segment, no order book, no guidance, no Q2 call, so no moat can be tracked quarterly."
+  - "Cash conversion: FY26 CFO 15.0% of EBITDA and H1 FY27 CFO 16.8% of EBITDA (B05) can starve the capacity fill."
+  - "Specialised talent: employee attrition 12.7% to 22.15% FY24 to FY26 and R&D team of 21 (Prospectus p.55, p.212)."
+  - "US tariffs on the 39.99% export base; concentration in A&D Solutions repeats."
+analyst_note: "Facts checked first. (1) Cash: B01/B03 numbers carried (FY26 CFO 15.0% of EBITDA); G1 and G2 score 0 because the balance sheet moved the wrong way. (2) Segment mix: single segment after listing, so C2 and E2 lean on FY24-FY26 prospectus tables only. (3) Utilisation 49.50% FY26 (Prospectus p.204) and 55-60% per management (Concall p.11); capex_embedded_growth_pct is 5.0 because only CWIP 101.04 INR mn (Q2 results p.11) is under execution; with the 58.33 INR mn commitment it would be 7.83%. Growth must come from filling idle capacity. (4) Concentration improved (top customer 28.90% to 11.13%) but the 100% offer for sale and the loss of the FY25 single orders drive part of it. To avoid crediting one improvement twice, Decathlon and export ramp sit in E2, certifications and approvals in B2, and A&D Solutions licence revenue in H2 only."

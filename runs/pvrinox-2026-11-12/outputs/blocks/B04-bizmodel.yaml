@@ -1,0 +1,85 @@
+stage: B04-bizmodel
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent (empty export)"
+  - "research/ empty"
+  - "peer CINELINE has no concall transcripts"
+  - "sector_cap_row NOT FOUND in Section 1B cap table (no film exhibition row; phase 3 gap)"
+  - "prospectus not held (long-listed, not a gap)"
+  - "what asset-light and FOCO screens book in the P&L (revenue gross or net, fee rate, fit-out funding): NOT FOUND in AR or presentation, check concall"
+  - "competing exhibition chains and market shares: NOT FOUND in documents"
+  - "net-of-discount ATP: NOT FOUND in AR; no FY27 concall transcript in corpus"
+flags:
+  - {type: FLAG-NET-CASH-LABEL, reason: "net cash 1,407 Rs M at 30 Sep 2026 (debt 5,009 less 6,416) vs net debt 1,619 at Mar 2026 ties; excludes leases 58,079; H1 free cash 6,035 has no tax line (Inv. Pres. PDF p.20, p.21, p.30)"}
+  - {type: FLAG-VOLUME-VS-PRICE, reason: "Q2 FY27 admissions +4% vs ATP +14%; company ticket sales +18% vs industry +23%; FY26 admissions 150 Mn vs 151 Mn FY24 (Inv. Pres. PDF p.8, p.11, p.15; AR PDF p.94)"}
+  - {type: FLAG-MODEL-BOOKING-NOT-FOUND, reason: "P&L booking of asset-light and FOCO not in AR or presentation; weighted screens exclude FOCO (Inv. Pres. PDF p.15, p.26)"}
+  - {type: FLAG-SCREEN-COUNT, reason: "1,798/359 = 1,789/358 standalone + 9/1 Colombo (derived); 1,782/355 unexplained; H1 FY27 24 opened and about 25 closed (derived) (AR PDF p.29, p.89, p.94; Inv. Pres. PDF p.24, p.26)"}
+  - {type: FLAG-GUIDANCE-CUT, reason: "FY27 screens 100-110 in AGM Notice (AR PDF p.15) vs 90-100 in Oct 2026 (Inv. Pres. PDF p.24); H2 need 66-76 screens"}
+  - {type: FLAG-EARNINGS-BASIS, reason: "reported vs Ind AS 116 adjusted; Q2 other income 276 mainly provision reversals inside EBITDA 4,752 (Inv. Pres. PDF p.15, p.28)"}
+  - {type: FLAG-SECTOR-CAP, reason: "no film exhibition row in Section 1B cap table"}
+business_type: "services"
+revenue_streams:
+  - {name: "Movie tickets", type: "transactional per-unit, content-driven", pct_of_revenue: 53.1, predictability: "L-M"}
+  - {name: "Food and beverage", type: "transactional, footfall-attached", pct_of_revenue: 31.4, predictability: "M"}
+  - {name: "Advertising", type: "contract, volume-linked", pct_of_revenue: 7.0, predictability: "M"}
+  - {name: "Convenience fees", type: "transactional per ticket", pct_of_revenue: 3.6, predictability: "M"}
+  - {name: "Film production and distribution", type: "project-led transactional", pct_of_revenue: 3.3, predictability: "L"}
+  - {name: "Virtual print fees", type: "fee", pct_of_revenue: 0.9, predictability: "M"}
+  - {name: "Other operating (rent, management fees, others)", type: "fee and rental", pct_of_revenue: 0.6, predictability: "M"}
+asset_intensity: "heavy"
+wc_intensity: "negative"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - "Scale and location (1,797 screens, 114 cities): medium, leases expire after 5-7 firm years"
+  - "Premium format brand (about 16% of screens): medium"
+  - "Cost position (rent and CAM savings 609 FY26): medium"
+  - "Data and CRM: low to medium, no outcome measured"
+valuation_methods:
+  primary: {method: "P/E on continuing, tax-normalised earnings (one basis at entry and exit, ex lease write-backs and provision reversals, mid-cycle occupancy)", why: "cash-generative venue business with little bank debt; Section 1B destination PE sets the exit multiple; sector cap row NOT FOUND"}
+  secondary: {method: "EV/EBITDA after rent (ex Ind AS 116), net debt excluding leases", why: "clean comparison across capital-light and pre-COVID periods; net cash 1,407 Rs M at Sep 2026; never mix with Ind AS 116 EBITDA"}
+  tertiary: {method: "DCF on free cash after rent, interest, tax and capex", why: "fits the 30% surplus-cash payout policy; needs per-admission build and model split"}
+  not_applicable: ["P/B and ROE (goodwill 77.7% of equity)", "EV/Sales", "SOTP", "NAV / replacement cost", "dividend yield", "EV/EBITDA on reported Ind AS 116 basis"]
+irrelevant_ratios:
+  - "Reported EBITDA margin and EV/EBITDA: rent sits in depreciation and interest (H1 FY27 35.9% vs 18.7% adjusted)"
+  - "P/B and ROE: goodwill 57,367 Rs M is 77.7% of equity"
+  - "Debt to equity and reported interest coverage: leases 60,205 Rs M are the debt"
+  - "Headline net debt: excludes leases, supplier finance 1,251, deferred consideration 2,036"
+  - "Current and quick ratio: negative working capital is normal for cash sales"
+  - "CFO to PAT: lease depreciation inflates CFO (6.5x)"
+  - "Total EPS and PAT FY26: includes 1,952 Rs M discontinued gain"
+  - "Total screen count growth: includes FOCO screens that add a fee, not full revenue"
+  - "Schedule III ROCE 47.12%: lease-excluded base"
+must_track_metrics:
+  - {metric: "Admissions (Mn), occupancy, admissions per period-end screen", healthy: "occupancy 26.2% FY26, 30.4% Q2 FY27, pre-COVID 32.0%; admits per screen 83.8k FY26 (derived)", red_flag: "admissions down YoY while ATP rises; per-screen below 80k"}
+  - {metric: "ATP and SPH growth vs admissions growth", healthy: "price growth at or below volume growth plus 5 points", red_flag: "ATP +14% on admissions +4% persists (Q2 FY27)"}
+  - {metric: "EBITDA margin ex Ind AS 116 and incremental margin", healthy: "14.4% FY26 standalone; 22.3% Q2 FY27; incremental 50% FY26", red_flag: "margin under pre-COVID 17-18% band at same occupancy"}
+  - {metric: "Film hire % of ticket sales and rent growth vs revenue growth", healthy: "film hire 44.5% to 45.3%; rent growth below revenue growth", red_flag: "film hire above 46%; rent growth above revenue growth"}
+  - {metric: "Net screens by model and free cash after tax with net debt / EBITDA", healthy: "net adds toward 90-100 plan; net debt/EBITDA within 0.5x", red_flag: "closures above openings; free cash negative after tax"}
+unit_economics:
+  unit: "one admission (standalone, Ind AS 116 adjusted, FY26)"
+  revenue_per_unit: "Rs 432 total income (ticket 233.9, F&B 138.2, ads 30.8, fees 16.0, other 13.2); derived from AR PDF p.94-95"
+  margin_per_unit: "contribution Rs 295.0; fixed cost Rs 232.7; EBITDA Rs 62.3 (14.4% of income)"
+  key_lever: "admissions and occupancy against a fixed cost base: 1% of admissions is about 13.5% of adjusted PBT; PBT break-even about 139 Mn admits vs 150 actual (derived, price and cost held)"
+first_deterioration_signals:
+  - {risk: "content slate weakens", first_signal: "admissions and occupancy, then ticket sales"}
+  - {risk: "price-led growth stalls", first_signal: "admissions per screen; ATP growth minus admissions growth"}
+  - {risk: "film hire share creeps up", first_signal: "movie exhibition cost / ticket sales above 46%"}
+  - {risk: "rent escalation on fixed base", first_signal: "rent and CAM growth vs revenue growth"}
+  - {risk: "profit quality (provision reversals, lease write-back, tax shield)", first_signal: "other income share of EBITDA; tax rate"}
+  - {risk: "lease cash and goodwill", first_signal: "cash after lease payments; impairment line"}
+  - {risk: "screen additions miss; asset-light terms undisclosed", first_signal: "net screens added; weighted-average screens ex FOCO; management fee line"}
+  - {risk: "price cap and OTT", first_signal: "ATP in capped states; admissions in a low-content quarter"}
+mgmt_questions:
+  - "How much of ATP +14% is mix vs price, and what happens to admissions in a quarter with no tentpole?"
+  - "For asset-light and FOCO screens, who funds fit-out, what revenue lines are booked, and what is the fee or share?"
+  - "How many more closures, and is the 90-100 screen plan gross or net (24 opened, about 25 closed in H1)?"
+  - "Occupancy +170 bps on admissions +4%: were shows or seats cut, and what is mid-cycle occupancy?"
+  - "What are the pieces of Q2 other income 276 Rs M, and what is the normal tax rate as the loss shield ends?"
+  - "Why did the FY27 screen guide move from 100-110 (AGM notice) to 90-100 (October)?"
+  - "H1 free cash 6,035 Rs M has no tax line: what cash tax is expected and how does the payout fit the 0.5x cap?"
+one_line_verdict: "A content-driven, fixed-cost cinema chain whose profit rides occupancy; Q2 FY27 growth is price-led, net cash excludes 58,079 Rs M of leases, and the asset-light and FOCO economics are undisclosed."
+analyst_note: "All figures Rs million as printed. Revenue mix is audited FY26 (66,462). Unit economics use standalone Ind AS 116 adjusted lines (AR PDF p.94-95); rent is an operating cost there. Screen count: 1,798/359 is consolidated (1,789/358 India + 9/1 Colombo, derived); 1,782/355 unexplained. FOCO screens appear excluded from weighted-average screens (1,717 vs 1,797 counted, Inv. Pres. PDF p.15, p.26); the AR never says what asset-light or FOCO screens book. H1 FY27: 24 opened (21 asset-light, 3 leased, 0 FOCO), about 25 closed (derived, assumes Colombo unchanged). Occupancy up 170 bps on admits +4% implies capacity down about 2% [INFERENCE]. H1 free cash 6,035 omits tax. Valuation primary P/E must use mid-cycle occupancy and one earnings basis; sector cap row NOT FOUND."

@@ -1,0 +1,19 @@
+company: Walchandnagar Industries Ltd
+ticker: WALCHANNAG
+cmp: 194.0
+market_cap_cr: 1322.0
+run_date: 2026-11-12
+run_type: full
+concalls_available: false   # /step1 2026-11-12: screener holds only Nov 2018, Feb 2019, May 2019 transcripts; BSE shows no transcript or analyst-call filing in 12 months. The three old transcripts sit in inputs/other/.
+sector_cap_row: "Defence / strategic"   # /step1 Step D, section-1b chunk 05, cap 38x; alternative reading "Cables / Industrial products" 25x, see step1-business-brief.md
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "consolidated page had no price, standalone page used: this company files no consolidated statements. Every stage reads standalone."
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, MTARTECH:Profit & Loss, MTARTECH:Quarters, MTARTECH:Balance Sheet, MTARTECH:Cash Flow, MTARTECH:Customization, ISGEC:Profit & Loss, ISGEC:Quarters, ISGEC:Balance Sheet, ISGEC:Cash Flow, ISGEC:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+remediation_cycles: 0
+verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_a_shadow: skipped   # switch armed on main; claimed by runs/kusumgar-2026-11-12 (one-run ruling); not flipped here

@@ -1,0 +1,38 @@
+stage: B13-synthesis-lite
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+mode: "PHASE 1 LITE (no valuation-dependent content)"
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_line: "PROCEED WITH CAVEATS: FLAG-CASH INDETERMINATE caps the gate (rule 3); overall confidence 69, set by redflag_coverage, band 60-74 concurs (rule 4); B08 and B09 partial"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH (INDETERMINATE)", "FLAG-GATE0 (AVERAGE, DB3; class convention-dependent)"]
+flags_not_active: ["FLAG-PROMOTER (B08 verdict CAUTION, status partial)"]
+cash_determination: "INDETERMINATE"
+cash_missing_evidence: ["H1 FY27 Reg 23 related party split of sales, purchases, receivables, payables", "ageing of the 43.87 group payables", "H2 FY27 / FY27 audited cash flow"]
+partial_stages: ["B08-promoter", "B09-tam"]
+confidence_delta: {numerical: 95, redflag: 69, framework: 77.8, peer: 81.8, overall: 69, overall_set_by: "redflag_coverage (Verifier B)"}
+rework_trigger: "NOT FIRED (no CONFIRMED B12a CRITICAL; A 95, B 69, C 77.8, D 100)"
+rework_risks_open: ["Verifier B strict full-catch 37.5% vs counted 69", "Gate 0 M2/M9 CRITICAL if Gate 0 inputs ruled verdict-card inputs"]
+source_fidelity_gate: "held; all B12a source_truth values carried (H1 FY27 PBT 59.67; peer EBITDA median 8.17%; peer gross margin median 39.00%; FY17 EBITDA margin 6.84%; OCF ex government balances 13.71; institutional 0.71%; shares 2,30,81,798). No disagreement arose."
+transition_posture: "NOT CLASSIFIED (Mental Model unsigned; recognition gap is a Stage 11 read)"
+valuation_decision: "NOT RUN (phase 1 lite)"
+entry_range: "NOT RUN (phase 1 lite)"
+headline: "The parent now decides this company's growth"
+falsification_metric: "Q3 FY27 revenue back inside the Rs 175-211 Cr band of recent quarters (Results Q3 FY27, due Jan-Feb 2027)"
+cash_falsification_metric: "FY27 audited cash flow: CFO negative for FY27 or inventories above 255.22 at 31-Mar-2027 reads STRUCTURAL; CFO positive in H2 FY27 with receivable days below 83.9 and inventory days below 120.2 reads GROWTH-INDUCED"
+contradicted_claims_peer_stage: 0
+contradicted_claims_own_filings: 5
+monitorables_count: 8
+open_items: 7
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+  - "outputs/reports/13-synthesis-lite.md"
+  - "outputs/blocks/B13-synthesis-lite.yaml"
+not_produced: ["fttcp-handoff.md", "verifier-disagreement-log.md", "notion-payload.md (phase 1 lite scope: exactly three final files)"]
+notion_save: "not produced in phase 1 lite"

@@ -15,3 +15,4 @@ split is not exposed, so those columns read n/a (never an estimate).
 | 3 | AR backward deep dive | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 459732 | 25m33s | 1 |
 | 5 | concall analysis (3 transcripts) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 137580 | 6m29s | 1 |
 | 8 | promoter background check (web) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 156538 | 8m41s | 1 |
+| 4 | business model decoder | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 205327 | 11m49s | 1 |

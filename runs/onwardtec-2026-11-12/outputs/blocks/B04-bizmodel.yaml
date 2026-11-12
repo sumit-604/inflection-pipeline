@@ -1,0 +1,80 @@
+stage: B04-bizmodel
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Investor presentation present (Q2 FY27, 16 Oct 2026); it is a quarterly deck, so FY26 slides are used only where it restates FY26"
+  - "Realised rate per billed hour or per FTE, split of onshore versus offshore headcount, billing split between price and volume in the Rs 44.5 Cr renewal: NOT FOUND, check concall or ask management"
+  - "Basis of the India 52% / 47% geography line (billing entity or client location) not stated; AR p.10 (70% North America, 30% Europe) and AR p.46 (USA 36%, Europe 12%, India 52%) conflict"
+  - "Name and vertical of the 18.3% customer: NOT FOUND (B03, Note 34 p.93)"
+  - "Peer utilisation, revenue per head and client concentration: NOT FOUND in stage 4 inputs; peer concalls are for later stages"
+  - "Net working capital definition on Inv. Pres. slide 18 (145, 162, 191 Rs Cr): NOT FOUND"
+  - "Sector cap table itself not re-read here; the 25x and 45x figures are carried from B00"
+flags:
+  - {type: FLAG-MARGIN-READING, reason: "Q2 FY27 margin 15.6% reported; 13.87% ex Rs 2.93 Cr R&D credit; H1 FY27 ex credit 13.1% vs H1 FY26 13.6%; offshore share fell 72% to 69% YoY (Inv. Pres. slide 11), so the offshore mix reading is not what the filed mix shows"}
+  - {type: FLAG-FIXED-PRICE-RISING, reason: "fixed price share 11% (Q2 FY26) to 15% (Q2 FY27), T&M 89% to 85% (Inv. Pres. slide 11)"}
+  - {type: FLAG-GEOGRAPHY-CONFLICT, reason: "AR p.10 70/30 North America/Europe vs AR p.46 USA 36%, Europe 12%, India 52% vs Inv. Pres. slide 11 USA 41%, Europe 12%, India 47%; basis not stated"}
+  - {type: FLAG-LOW-OPERATING-LEVERAGE-H1, reason: "H1 FY27 incremental EBITDA margin 16.6% (10.5% ex credit) vs FY26 51.7%; 432 net hires ahead of revenue (Inv. Pres. slide 7, 10)"}
+  - {type: FLAG-SECTOR-ROW, reason: "evidence supports Consulting / Engineering services (25x) over Platform / SaaS / IT services (45x); operator rules at the /fttcp pillar gate"}
+  - {type: FLAG-CONCENTRATION, reason: "carried from B03: one customer 18.3%, top 5 48%, top 25 87%; top 25 share up 84% to 87% (AR26 p.46)"}
+business_type: services
+revenue_streams:
+  - {name: "Engineering and digital services billed on time and material", type: "services, time and material (resource-based)", pct_of_revenue: 88, predictability: "M (FY26, AR26 p.46; 85% in Q2 FY27, Inv. Pres. slide 11)"}
+  - {name: "Fixed time, fixed price engineering projects", type: "services, fixed price project", pct_of_revenue: 12, predictability: "L (FY26, AR26 p.46; 15% in Q2 FY27, Inv. Pres. slide 11)"}
+asset_intensity: light
+wc_intensity: medium
+pricing_power: weak
+cyclicality: cyclical
+moats_present:
+  - "Switching costs / embedded client relationships: moderate durability (engagement 5 to 8 years, some over 20, Inv. Pres. slide 24; offset by one 18.3% customer)"
+  - "Process and domain know-how (SMEs trained from shop floor, no campus hiring): low to moderate durability, leaves with attrition (AR26 p.11 14.85% vs BRSR 37.93%)"
+  - "Cost advantage from offshore delivery: low durability, every peer has the same arbitrage"
+valuation_methods:
+  primary: {method: "P/E on forward earnings (destination multiple from Section 1B, row Consulting / Engineering services)", why: "earnings are cash-backed (CFO 6,507.73 lakhs, AR26 p.66), no debt, asset-light; EPS is the cleanest compounding base; must be built net of R&D credit, other income and tax-rate effects"}
+  secondary: {method: "EV/EBITDA against LTTS, TATATECH, CYIENT with net cash (Rs 127.3 Cr FY26, AR26 p.11) removed from EV", why: "strips tax-rate and other-income noise; peer margins 12.4% to 17.6% FY26 (B01) give a margin-adjusted cross-check"}
+  tertiary: {method: "FCF yield after lease payments and pay-accrual reversal", why: "Ind AS 116 uplift of 22.7 points and 15.3% of CFO from pay accruals (B03 FLAG-CASH) mean headline CFO overstates distributable cash"}
+  not_applicable:
+    - "P/B or ROE-based: asset-light, book value is cash and receivables"
+    - "EV/Sales: margin spread to peers is the whole debate"
+    - "NAV or SOTP: no separable asset"
+    - "Dividend discount: payout is a policy choice"
+    - "PEG on trailing growth: low-base effects in PAT CAGR (B01 note)"
+irrelevant_ratios:
+  - "Inventory turnover: no inventory (AR26 p.47 NA)"
+  - "Debt/Equity: no borrowings (AR26 p.47 NA)"
+  - "Current ratio 3.66: cash and receivables heavy, says nothing about delivery risk"
+  - "Interest coverage 1.68: finance cost is lease interest, ratio not reproducible (B03)"
+  - "Reported ROCE 25.42%: includes other income, not reproducible (B03); rebuild"
+  - "Gross margin: no cost of goods; Data_Sheet 100% is a classification artifact (B01)"
+  - "Debtors turnover on reported basis: excludes unbilled receivables"
+  - "Asset turnover and capex to sales: asset-light, depreciation 2.9% of revenue"
+must_track_metrics:
+  - {metric: "EBITDA margin excluding R&D credits and other one-offs", healthy: "13.8% to 14.3% (FY27 guidance, Inv. Pres. slide 14)", red_flag: "below 13.0% (FY26 ex credit 12.96%, B03)"}
+  - {metric: "Top client and top 5 share of revenue", healthy: "top client at or below 18.3%; top 5 at or below 48%", red_flag: "top client above 20% or top 5 above 50%"}
+  - {metric: "DSO billed plus unbilled", healthy: "65 to 70 days (management target, concall 16 Oct 2026)", red_flag: "above 80 days two quarters running (Sep 2026: 80)"}
+  - {metric: "Revenue per employee (annualised, closing headcount)", healthy: "rising 10% or more YoY from Rs 21.9 lakh FY26 (derived)", red_flag: "flat or falling while headcount rises"}
+  - {metric: "Offshore share of revenue and fixed price share", healthy: "offshore 70% or more; fixed price at or below 12%", red_flag: "offshore below 68% (Q1 FY27) or fixed price above 15%"}
+unit_economics:
+  unit: "one billed engineer for one year (average headcount basis)"
+  revenue_per_unit: "Rs 21.47 lakh FY26 (54,385.24 lakhs / average 2,533 heads, derived, AR26 p.46-47); Rs 23.3 lakh annualised Q2 FY27 on 2,917 closing heads (derived, Inv. Pres. slide 5, 9)"
+  margin_per_unit: "EBITDA Rs 2.84 lakh per head, 13.21% (7,184.59 / 2,533, derived); employee cost Rs 15.63 lakh, other expense Rs 3.01 lakh"
+  key_lever: "billed utilisation and offshore leverage on a mostly fixed pay cost; also INR weakness against USD revenue (reported growth 22.4% vs constant currency 17.7% in Q2 FY27)"
+first_deterioration_signals:
+  - {risk: "customer concentration", first_signal: "top client share of revenue above 20%, then receivable days from that client"}
+  - {risk: "margin reversal after hiring ahead of revenue", first_signal: "employee cost as % of revenue (72.8% FY26, Q2 FY27 69.4%) rising two quarters running"}
+  - {risk: "collection drift", first_signal: "unbilled revenue growing faster than revenue; DSO above 80"}
+  - {risk: "pricing and scope shift to fixed price", first_signal: "fixed price share above 15% with T&M below 85%"}
+  - {risk: "offshore story failing", first_signal: "offshore share below 68% while margin is claimed to come from offshore"}
+  - {risk: "FX", first_signal: "gap between reported and constant currency growth narrowing; other income FX swing"}
+  - {risk: "billing system control", first_signal: "audit trail paragraph repeated in FY27 auditor's report"}
+mgmt_questions:
+  - "Offshore share fell from 72% to 69% YoY while margin rose 130 bps. What drove the margin: utilisation, rate, currency or the Rs 2.93 Cr credit?"
+  - "What share of revenue and receivables sits with the 18.3% customer, and when does its contract renew?"
+  - "In the Rs 44.5 Cr renewal, up 72%, how much is higher rate and how much is more scope?"
+  - "Fixed price rose from 11% to 15% of revenue. Is this deliberate, and what margin does it carry versus time and material?"
+  - "H1 FY27 added 432 heads against Rs 47.5 Cr more revenue. What utilisation and billing lag sit on these hires, and when do they bill?"
+  - "What is the DSO path from 80 to 65-70 days, and is the delay customer approval or invoicing?"
+  - "What share of revenue is data-centre related, and how much of the 15-18% guide depends on it?"
+one_line_verdict: "A people-based engineering services business billed mostly by the hour, whose margin gain is real but not yet shown to come from price or offshore mix; it fits Consulting / Engineering services (25x), not Platform / SaaS."
+analyst_note: "Sector row: the business sells engineer time (88% T&M, AR26 p.46), with no licence, ARR, product IP or per-seat price, so Consulting / Engineering services is the row the evidence supports. The alternative reading survives only for the 50% software-led work (AR26 p.11), which is still billed by time. Margin readings: (1) new base from offshore leverage and utilisation; (2) peak helped by a credit that mostly belongs to FY26, FX and a pre-policy offshore shift. Separating observation: Q3 and Q4 FY27 EBITDA margin ex credit, with offshore share, fixed price share and DSO. Filed so far: offshore share down 72% to 69%, H1 ex credit margin 13.1% vs 13.6%, Q2 ex credit 13.9%. Guide of 15 to 18% growth implies H2 revenue of about 306 to 322 Cr (derived, revenue-from-operations basis assumed), below the Q2 run rate of 340 Cr, so the revenue guide looks prudent. Use revenue per head, not reported ROCE."

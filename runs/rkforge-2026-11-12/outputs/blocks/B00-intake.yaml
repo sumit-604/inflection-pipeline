@@ -1,0 +1,536 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: inputs/announcements/2025_05_Outcome-Board-Meeting-30-May-2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "board outcome (audited FY25 results, modified opinion)"
+    period: "FY2025 (Q4 and year ended 31 Mar 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2025_11_Outcome-Board-Meeting-12-Nov-2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "board outcome (unaudited H1 FY26 results, warrant issue)"
+    period: "Q2 FY26 (quarter and half year ended 30 Sep 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2025_11_Promoter-Reclassification-12-Nov-2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (board approves promoter reclassification request)"
+    period: "event 12 Nov 2025 (no FY or quarter)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2025_12_CRISIL-Credit-Rating-20-Dec-2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (CRISIL rating action, company letter)"
+    period: "event 20 Dec 2025 (rating action date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company letter reporting the CRISIL action; rationale is enclosed, not on this page."
+  - path: inputs/announcements/2025_12_EGM-Proceedings-12-Dec-2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "EGM proceedings summary"
+    period: "event 12 Dec 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_01_Capacity-Addition-20-Jan-2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (capacity addition, aluminium forging 3,000 TPA)"
+    period: "event 20 Jan 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_01_Outcome-Board-Meeting-27-Jan-2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "board outcome (unaudited Q3 and 9M FY26 results)"
+    period: "Q3 FY26 (quarter and nine months ended 31 Dec 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_03_DisclosureReg30Subsidiarycessationonmerger.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (subsidiary cessation on NCLT amalgamation)"
+    period: "event 25 Mar 2026 (scheme effective date)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_03_IntimationunderReg30-Outcome-of-Board-Meeting27Mar26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "board outcome (director appointment, postal ballot)"
+    period: "event 27 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_03_OutcomeofCMCMeeting27Mar2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "CMC outcome (allotment of 6,40,000 shares on warrant conversion)"
+    period: "event 27 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_03_Reg30Intimation06032026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (capacity addition, 40,000 TPA hot forging press line)"
+    period: "event 6 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_03_STExchDisclAmalg28Feb26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (NCLT order approving amalgamation)"
+    period: "event 28 Feb 2026 (order dated 27 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_04_IntimationunderReg30HorizontalCastingLine.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (commercial production, horizontal casting line)"
+    period: "event 31 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename month (Apr) differs from page date (31 Mar 2026); page date used."
+  - path: inputs/announcements/2026_05_StEXCDireCesationDisc20May2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (cessation of two independent directors)"
+    period: "event 20 May 2026 (effective 21 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_06_Outcome-of-CMC-Meeting-9-June-2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "CMC outcome (allotment of 3,35,000 shares on warrant conversion)"
+    period: "event 9 Jun 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_07_Monitoring-Agency-Reports-Q1-2027.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "monitoring agency report (Reg 32, preferential issue), enclosed in company letter"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company cover letter on page 1; monitoring agency report by India Ratings on page 2."
+  - path: inputs/announcements/2026_07_OutcomeofBM24July2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "board outcome (unaudited Q1 FY27 results, re-designation, capex)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_07_Statement-of-Deviation-Q1-2027.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "statement of deviation (Reg 32, preferential issue)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_08_Reclassification-NOC-Intimation-06.08.2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (NOC for promoter reclassification)"
+    period: "event 6 Aug 2026 (NOCs dated 5 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_08_StExcReg169ICDR19Aug26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "statutory auditor certificate (Reg 169(5) ICDR, warrant consideration)"
+    period: "event 19 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_09_STExchCMCOutcome24Sep26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "CMC outcome (allotment of 34,00,000 shares on warrant conversion)"
+    period: "event 24 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/2026_10_Disclosure-under-Regulation-30-and-31A-of-the-SEBI-Listing-Obligations-and-Disclosure2015.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "exchange disclosure (shareholder approval of promoter reclassification)"
+    period: "event 21 Sep 2026 (postal ballot 19 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename month (Oct) differs from page date (21 Sep 2026); page date used."
+  - path: inputs/announcements/2026_10_Outcome-of-Board-Meeting-30-October-2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "board outcome (unaudited Q2 and H1 FY27 results, interim dividend)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/annual-report/Annual_Report_2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "annual report"
+    period: "FY2025 (Financial Year 2024-25, year ended 31 Mar 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/annual-report/Annual_Report_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "annual report"
+    period: "FY2026 (Financial Year 2025-26, year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Opened and rendered as PDF (spot check on page 1)."
+  - path: inputs/concalls/Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "concall transcript"
+    period: "Q3 FY26 and 9M FY26 (call 27 Jan 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company cover letter dated 2 Feb 2026 on page 1."
+  - path: inputs/concalls/Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "concall transcript"
+    period: "Q4 FY26 and FY26 (call 4 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company cover letter dated 11 May 2026 on page 1."
+  - path: inputs/concalls/Concall_Jul_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "concall transcript"
+    period: "Q1 FY27 (call 24 Jul 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company cover letter dated 30 Jul 2026 on page 1."
+  - path: inputs/concalls/Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "concall transcript"
+    period: "Q2 FY27 and H1 FY27 (call 30 Oct 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company cover letter dated 6 Nov 2026 on page 1."
+  - path: inputs/peer-concalls/BHARATFORG-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Bharat Forge Limited"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026; call 10 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/BHARATFORG-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Bharat Forge Limited"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 FY26 and 9M FY26 (call 12 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/BHARATFORG-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Bharat Forge Limited"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY26 and FY26 audited (call 7 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/BHARATFORG-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Bharat Forge Limited"
+    doc_type: "concall transcript (peer)"
+    period: "Q2 FY27 and H1 FY27 (call 5 Nov 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/HAPPYFORGE-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "HAPPYFORGE (symbol on page; company name not printed on page 1; scrip 544057)"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026; call 5 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/HAPPYFORGE-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "HAPPYFORGE (symbol on page; company name not printed on page 1; scrip 544057)"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 FY26 and 9M FY26 (call 10 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/HAPPYFORGE-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "HAPPYFORGE (symbol on page; company name not printed on page 1; scrip 544057)"
+    doc_type: "concall transcript (peer)"
+    period: "Q4 FY26 and FY26 (call 22 May 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/HAPPYFORGE-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "HAPPYFORGE (symbol on page; company name not printed on page 1; scrip 544057)"
+    doc_type: "concall transcript (peer)"
+    period: "Q2 FY26 and H1 FY26 (call 7 Nov 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/MMFL-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "M M Forgings Limited"
+    doc_type: "concall transcript (peer)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026; call 17 Aug 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/MMFL-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "M M Forgings Limited"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 FY26 and 9M FY26 (call 17 Feb 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/peer-concalls/MMFL-Concall_Mar_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "M M Forgings Limited"
+    doc_type: "concall transcript (peer)"
+    period: "Q3 FY26 and 9M FY26 (call 5 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Second call on the same quarter as MMFL-Concall_Feb_2026_Transcript.pdf; both are real and both are kept."
+  - path: inputs/peer-concalls/MMFL-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "M M Forgings Limited"
+    doc_type: "concall transcript (peer)"
+    period: "Q2 FY26 (quarter ended 30 Sep 2025; call 17 Nov 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/presentation/Investor_Presentation_1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "investor presentation"
+    period: "Q2 FY27 and H1 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Company cover letter dated 30 Oct 2026 on page 1; presentation on pages 2 onward."
+  - path: inputs/rating/IndiaRatings_Rationale_22_Jun_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "rating rationale (India Ratings, bank loans affirmed IND AA-/Stable)"
+    period: "FY26 action dated 22 Jun 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/results/Results_Q1_FY27_Jun_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "results (auditor limited review report, standalone)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/results/Results_Q2_FY27_Sep_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "results (auditor limited review report, standalone)"
+    period: "Q2 FY27 and YTD (quarter and period ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/results/Results_Q4_FY26_Mar_2026_BoardOutcome_01May2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited"
+    doc_type: "board outcome (audited Q4 and FY26 results)"
+    period: "Q4 FY26 and FY26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/screening/BHARATFORG-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Bharat Forge Ltd"
+    doc_type: "screen data sheet (peer)"
+    period: "FY2017 to FY2026 annual series (latest 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/screening/HAPPYFORGE-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Happy Forgings Ltd"
+    doc_type: "screen data sheet (peer)"
+    period: "FY2021 to FY2026 annual series (latest 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/screening/MMFL-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "M M Forgings Ltd"
+    doc_type: "screen data sheet (peer)"
+    period: "FY2010 and FY2018 to FY2026 annual series (latest 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/screening/screener-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Ramkrishna Forgings Ltd"
+    doc_type: "screen data sheet (main company)"
+    period: "FY2017 to FY2026 annual series (latest 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/shareholding/NSE_SHP_XBRL_19_Sep_2026.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited (symbol RKFORGE)"
+    doc_type: "shareholding filing (NSE XBRL)"
+    period: "shareholding as at 19 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Single-line XBRL; identity read from NameOfTheCompany and Symbol tags."
+  - path: inputs/shareholding/NSE_SHP_XBRL_30_Sep_2026.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited (symbol RKFORGE)"
+    doc_type: "shareholding filing (NSE XBRL)"
+    period: "shareholding as at 30 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Single-line XBRL; identity read from NameOfTheCompany and Symbol tags."
+  - path: inputs/shareholding/NSE_shareholding_summary_RKFORGE.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Ramkrishna Forgings Limited (symbol RKFORGE)"
+    doc_type: "shareholding summary (NSE API, quarter rows)"
+    period: "quarter-end rows, latest 30 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+unreadable: []
+unidentified: []

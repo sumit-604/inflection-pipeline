@@ -1,0 +1,23 @@
+stage: B02-notes-pass1
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+pass: 1
+input_gaps:
+  - "inputs/prospectus/ empty: long-listed company, not expected"
+  - "inputs/research/ empty"
+  - "screening: only Data_Sheet CSVs populated; screener P&L, Quarters, Balance Sheet, Cash Flow exports EMPTY and absent"
+  - "collector BSE announcements fetch FAILED; announcements hand-filled with 3 quarterly press releases and 3 buyback filings; NOT the full Reg 30 record"
+  - "rating: ICRA withdrew 2023-11-13; last rationale 2023-03-27 stale; no live rating"
+  - "shareholding: only the Sep 2026 pattern held"
+  - "Q1 FY27 results PDF is scanned, no OCR"
+  - "empty-folder question suppressed under /step1 standing default"
+flags:
+  - {type: FLAG-CONCENTRATION, reason: "one customer 18.3% of FY26 revenue (9,965.52 of 54,385.24 lakhs), up from 12.7% FY24; customer receivable share NOT FOUND"}
+  - {type: FLAG-CASH, reason: "unbilled 3,429.35 lakhs grew 13.2% vs revenue 10.7%, no ageing or allowance; operating cash flow includes 1,310.45 lakhs of accrued employee obligations"}
+top_findings_count: 10
+receivables_trend: "stable on billed (billed days 56.9, 58.8, 57.5 for FY24-FY26; past due >6m 12.41 lakhs of 8,588.79 gross), unbilled drifting up (21.1, 22.5, 23.0 days)"
+restatements_found: []
+going_concern_language: "NONE"
+analyst_note: "Notes carry no events-after-balance-sheet note; buyback (Rs 328, up to Rs 18 Cr) announced 2026-05-12, seven days after 2026-05-05 approval, is in inputs/announcements only. Note 12(b) cash tax line does not tie to cash flow taxes paid. Promoter % in notes uses shares net of ESOP Trust treasury shares (39.61% vs 39.07% on issued)."

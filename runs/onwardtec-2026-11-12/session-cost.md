@@ -20,3 +20,4 @@ Token split (input, cache read, cache write, output) is not exposed by the harne
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 68363 | 3m03s | 1 |
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 317832 | 19m58s | 1 |
 | 12c | verifier-c-framework (phase 1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 222276 | 21m52s | 1 |
+| 1 | stage-01-gate0 (remediation cycle 1) | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 153877 | 5m45s | 2 |

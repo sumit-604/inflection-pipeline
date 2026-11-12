@@ -15,4 +15,4 @@ collector_warnings:
   - "no rating PDF yet: add later the same way"
 notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
 remediation_cycles: 1
-verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_runs: {A: 2, B: 1, C: 1, D: 1}   # A run 2 is the re-check inside remediation cycle 1 (no separate approval needed, step 5b)

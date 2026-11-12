@@ -4,48 +4,49 @@ run_date: "2026-11-12"
 model: claude-sonnet-5-5
 status: complete
 input_gaps:
-  - "inputs/prospectus/ empty (long-listed company, not expected)"
-  - "inputs/research/ empty"
-  - "screening: only Data_Sheet CSVs populated; screener Profit & Loss, Quarters, Balance Sheet, Cash Flow sheets exported EMPTY (absent documents)"
+  - "Annual reports before FY2025 are not in the corpus. Current liabilities, purchases of PPE and intangibles, and trade payables for FY2017 to FY2023 are NOT FOUND. ROCE, FCF and WC-day metrics run on FY2024 to FY2026 only (AR 2026 pp.65-66; AR 2025 PDF pp.113-115)."
+  - "Promoter holding at Sep 2023 (3 years before the Sep 2026 pattern) is NOT FOUND. Buyback_Letter_of_Offer_2026-05-20.pdf holds only the 18 May 2026 pattern (39.07%, LoO p.21 and p.31), not a history. E2 scores 0."
+  - "screener Profit and Loss, Quarters, Balance Sheet, Cash Flow sheets exported EMPTY (absent documents). The Data Sheet carries no ROCE row, no capex row and no payables row."
+  - "inputs/prospectus/ empty (long-listed company, not expected); inputs/research/ empty"
   - "collector BSE announcements fetch FAILED; inputs/announcements hand-filled (3 press releases, 3 buyback filings), not the full Reg 30 record"
   - "rating: ICRA withdrew 2023-11-13; last rationale 2023-03-27 stale; no live rating"
-  - "shareholding: only Sep 2026 pattern held (Mar 2024 and Mar 2025 promoter % taken from AR 2025 p.147)"
+  - "shareholding: only the Sep 2026 pattern is held; Mar 2024, Mar 2025 and Mar 2026 promoter % come from AR 2025 PDF p.147 and AR 2026 p.81"
   - "Q1 FY27 results PDF scanned, no OCR; not needed by Gate 0 and not read"
-  - "empty-folder question suppressed under /step1 default proceed-with-the-gaps"
-flags:
-  - {type: FLAG-GATE0, reason: "No classification depressor: classification GOOD+ (not at or below AVERAGE). Watch items only: Block A weak (9/20) from FY17-FY25 ROCE 10.3-22.8% with median 14.8%; B4 and M12 unscored (payables NOT FOUND); M2 scored 0 (FY26 EBITDA margin 13.2% vs peer median 15.5%)."}
+flags: []
 data_years: 10
 fy_range: "FY2017 to FY2026"
-blocks: {A: 9, B: 12, C: 16, D: 19, E: 18}
-core_score: 74
-moat_score: 16
-grand_total: 90
-moats_confirmed: 4
+blocks: {A: 13, B: 18, C: 16, D: 19, E: 13}
+core_score: 79
+moat_score: 21
+grand_total: 100
+moats_confirmed: 5
 moat_class: "STRONG"
 classification: "GOOD+"
 deal_breakers: []
 history_downgrade: false
 data_notes:
-  - "Screener Data_Sheet is consolidated (FY26 equity 22.44+231.06=253.50 Cr matches AR 2026 p.65 total equity 25,350.70 lakhs)."
-  - "ROCE computed (source gives none): (PBT + Interest) / (Total assets - Other Liabilities), year-end; Other Liabilities not split into current vs non-current in the Data Sheet. Median 14.79%, min 10.33% (FY23), FY17 13.87%, FY26 20.43%."
-  - "ROE computed on average net worth; FY17 uses closing (opening unavailable). Median 13.56%."
-  - "FCF is a PROXY = CFO + Cash from Investing (screener cash-flow rows); capex line is not in the Data Sheet. CFI includes investment flows and the FY22 acquisition outflow (rule says exclude acquisitions). Drives B2 (9 of 10 years positive, 90%) and B3 (0.58). FY22 CFO -3.93 and CFI -31.62."
-  - "B4 WC days: trade payables NOT FOUND for the 10-year window (Data Sheet has no payables line; AR holds only FY25 and FY26), scored 0. Receivable days alone: FY17 79.3, FY26 80.5 (+1.2). Mechanical score on receivable days only would have been 3."
-  - "M12 scored 0 NOT FOUND for the same payables reason."
-  - "E2: earliest held promoter figure is Mar 2024 38.12% (AR 2025 p.147; 33.74+0.96+1.67+1.08+0.67). Sep 2026 is 40.20% (SHP p.2-3). Change +2.08pp over about 2.5 years, not a full 3 years; Mar 2023 not held."
-  - "E1 uses 40.20% undiluted (SHP); 39.54% on the fully diluted basis would still score 3."
-  - "E4: contingent liabilities Nil at 31 Mar 2026 (AR 2026 p.87 note 25a); 190.15 lakhs tax demand at Mar 2024 was removed as remote (AR 2025 p.158)."
-  - "D1 net cash: borrowings 39.84 vs cash 110.95 Cr (FY26); borrowings may include lease liabilities, not split in the Data Sheet. D2 EBIT = PBT + interest, includes other income 3.88. D4 current ratio 26,302.17 / 7,180.16 lakhs = 3.66 (AR 2026 p.65)."
-  - "FY26 PBT is after an exceptional item of 315.50 lakhs (3.16 Cr) from employee-benefit past service cost (Q2 FY27 results p.3-4 note 4); FY26 PAT 44.32 Cr is depressed by it."
-  - "Peer EBITDA margins FY26 (computed from peer Data_Sheet rows, sales less operating expense lines): LTTS 17.60%, TATATECH 15.49%, CYIENT 12.37%; median 15.49%. Onward 13.21%."
-  - "M5 scored 0: mcap 841.82 Cr is smallest of the 4 names held (LTTS 45281.89, TATATECH 27753.7, CYIENT 12107.48); segment universe not provided, PEER DATA NEEDED for a wider rank."
-  - "M6 scored 0: R&D/Revenue NOT FOUND in Data Sheet, and EBITDA 13.2% is below the peer median 15.5%, so no M6 tier is reachable either way."
-  - "M7 and M8 scored 0 (unregulated services; no distribution network, no outlet data)."
-  - "M9 scored 0: services business, no material-cost line, so gross margin is not found as filed. Mechanical GM proxy (Revenue less Raw Material) gives Onward 100% vs peer median 89.2% and would score 5, but LTTS also shows 100%, so the gap is a cost-classification artifact. Mechanical alternative flagged: moat_score would be 21, moats_confirmed 5, still STRONG, GOOD+."
-  - "M11: latest 3yr revenue CAGR (FY23 to FY26) 7.2% vs prior 3yr (FY20 to FY23) 17.5%; not accelerating, scored 0."
-  - "No loss-to-profit swing in window. Revenue declined only in FY21 (-11.5%)."
-  - "Load-bearing fact 1 (scope-adjacent): Q2 FY27 operating margin 15.6% = 26.54/170.18 (screener-data quarters); R&D credit 292.60 lakhs (2.93 Cr) sits in current period expenses (Q2 FY27 results p.3). Margin excluding it = (26.54-2.93)/170.18 = 13.87%, inside the 13.8-14.3% guidance."
-  - "Load-bearing fact 3 (scope-adjacent): FY26 year-end receivable days 80.5 (120.00 Cr / 543.85 Cr x 365, screener-data). Sep 2026 DSO, concentration and client counts not in Gate 0 data."
-  - "Load-bearing facts 2 and 4: facts 2 (guidance vs delivery) outside Gate 0 scope. Fact 4 mechanism not in Gate 0 scope; only the Mar 2024 to Sep 2026 direction (+2.08pp) is shown."
-block_b_trend: "stable: CFO/PAT 1.47x in FY26 (65.08/44.32) vs 1.16x in FY25; receivable days 80.5 FY26 vs 81.3 FY25"
-analyst_note: "GOOD+ rests on Block D (19/20, net cash, 3.66 current ratio) and Block C (16/20, PAT CAGR 30.3% off a 4.10 Cr base vs revenue CAGR 10.4%). The PAT CAGR is a low-base effect, so C2 and C4 flatter the growth read. Block A is the weak block: ROCE has ranged 10.3% to 22.8%, median 14.8%, with FY26 at 20.4% the second best year. Block B rests on an FCF proxy including the FY22 acquisition. Moat strength is thin underneath: 4 confirmed moats from M1, M3, M4, M10, all margin or revenue history tests; M2 (below peer median margin) and M5 (smallest of four) show no scale or cost edge. Payables NOT FOUND leaves WC unscored."
+  - "Run 2 (remediation cycle 1). Headline score is by the rules as written, using every corpus input. Run 1 proxies appear only as labelled sensitivities in the report (S1 to S6)."
+  - "Window per metric. 10 years (screener Data Sheet, consolidated) for ROE, B1, C1 to C4, D1 to D4 base data, M1, M2, M4, M5, M10, M11. 3 years FY2024 to FY2026 (audited AR balance sheets and cash flow statements) for ROCE (A1, A2, A4, M3), FCF (B2, B3), WC days (B4, M12). The 7 earlier years of these three series are NOT FOUND and are not filled."
+  - "ROCE = EBIT / (Total assets - Current liabilities), computed because the Data Sheet carries no ROCE row. EBIT = PBT + finance costs (includes other income and the FY26 315.50 lakh exceptional item). FY24 4,649.79 / 23,431.46 = 19.84%; FY25 3,852.23 / 25,727.58 = 14.97%; FY26 5,993.63 / 29,876.66 = 20.06% (Rs lakhs; AR 2025 PDF p.113-114, AR 2026 p.65). Median 19.84%, min 14.97%. The company's own ROCE of 25.42% (AR 2026 p.47) uses another definition and is not used."
+  - "ROE on average net worth from the Data Sheet; FY17 on closing net worth (opening unavailable). Median 13.56%. FY26 cross-check from AR 2026 p.65 and p.67: 4,432.39 / avg(25,350.70, 22,430.10) = 18.55%."
+  - "FCF = CFO - (purchase of PPE + purchase of intangibles), acquisitions excluded. FY24 6,234.87 - 201.70 = 6,033.17; FY25 3,152.30 - 367.01 = 2,785.29; FY26 6,507.73 - 1,911.07 = 4,596.66 (Rs lakhs; AR 2025 PDF p.115, AR 2026 p.66). Cumulative 13,415.12 / PAT 10,531.93 = 1.27. FY2017 to FY2023 capex NOT FOUND."
+  - "B4 WC days = receivable days + inventory days - payable days on a revenue basis. No inventory line in the filed balance sheet (AR 2026 p.65). Receivables billed plus unbilled. FY24 77.93 - 10.02 = 67.91; FY25 81.28 - 6.91 = 74.37; FY26 80.53 - 8.00 = 72.53. FY26 vs FY24 +4.62 days, inside +-5 = 3. M12 days are 67.9, 74.4, 72.5, all above 45 = 0."
+  - "E1 uses 40.20% undiluted (SHP Q2 FY27 p.3). The fully diluted figure on the same row is 39.54%, which sits in the 30-39.9 band and would score 1 (core 77). Run 1 note said 3; corrected."
+  - "E2 NOT FOUND = 0. The 3-year start (Sep 2023) is not held. Held points: Mar 2024 38.12% (AR 2025 PDF p.147, 33.74+0.96+1.67+1.08+0.67), Mar 2025 38.65% (AR 2025 PDF p.147), Mar 2026 39.61% (AR 2026 p.81), Sep 2026 40.20%. Denominators differ across these (all issued shares in AR 2025; net of ESOP-trust shares in AR 2026; post-buyback in the SHP). Sensitivity only: 40.20 - 38.12 = +2.08pp over 2.5 years would score 5."
+  - "E4 corrected. Contingent liabilities are Rs 394.68 lakhs (USD 4.20 lakhs, former-employee suit against Onward Technologies Inc), AR 2026 PDF p.87 Note 26(a)(ii). 26(a)(i) tax notices carry no amount; 26(c) financial guarantees Nil. Net worth 25,350.70 lakhs (AR 2026 p.65). 394.68 / 25,350.70 = 1.56%, under 5% = 5. Score unchanged, input and anchor corrected (run 1 said Nil, note 25a)."
+  - "D1 to D3 borrowings = Data Sheet Borrowings 39.84 Cr, which equals lease liabilities 2,933.81 + 1,050.52 = 3,984.33 lakhs (AR 2026 p.65, p.66). The company has no financial borrowings (AR 2025 PDF p.116 reconciliation). D3 0.157 scores 4; on financial borrowings only it would score 5 (sensitivity S5)."
+  - "M9 proxy applied as written (P01 L123-125): (Revenue - Material cost) / Revenue. Onward 100% (no material-cost line, AR 2026 p.65; Data Sheet Raw Material Cost blank FY23 to FY26) vs peer median 89.18% (LTTS 100%, CYIENT 89.18% after 26.6 inventory change, TATATECH 82.43%) = +10.82pp, revenue CAGR 10.38% = 5. LTTS also shows 100%, so the result is a services-cost-classification effect; the rule text is an operator-ruling item, the score stands."
+  - "M3 year basis stated: FY26 (latest). FAT 543.85 / 88.86 = 6.12x; FY26 ROCE 20.06% (0.06pp above the 20% line) = 5. On the 3-year median ROCE 19.84% it would score 3 and still be present."
+  - "Peer EBITDA margins FY26 from peer Data Sheets: LTTS 17.60%, TATATECH 15.49%, CYIENT 12.37%; median 15.49%. Onward FY26 13.21% (71.85 / 543.85), FY17 5.01% (11.20 / 223.56)."
+  - "M5 scored 0: mcap 841.82 Cr is the smallest of the 4 names held (LTTS 45,281.89; TATATECH 27,753.70; CYIENT 12,107.48); segment universe not provided, PEER DATA NEEDED. M6 scored 0: R&D / revenue NOT FOUND and margin below peer median. M7, M8 scored 0."
+  - "M11: latest 3-year revenue CAGR (FY23 to FY26) 7.2% vs prior 3-year (FY20 to FY23) 17.5%; not accelerating, 0."
+  - "No loss-to-profit swing in the window. Revenue fell only in FY21 (-11.5%). Low-base effect: PAT CAGR 30.3% starts from 4.10 Cr."
+  - "FY26 PBT carries a 3.16 Cr exceptional item (315.50 lakhs, AR 2026 p.65; Q2 FY27 results p.3-4 note 4)."
+  - "History rule. Scorecard history is 10 years. If the 3-year windows of ROCE, FCF and WC were treated as the history, data confidence would read LIMITED and the class would drop one tier to GOOD (sensitivity S4). Not applied to the headline."
+  - "Load-bearing fact 1 (scope-adjacent): Q2 FY27 operating margin 15.6% = 26.54 / 170.18 (screener-data quarters); R&D credit 292.60 lakhs sits in current-period expenses (Q2 FY27 results p.3). Ex-credit (26.54 - 2.93) / 170.18 = 13.87%, inside the 13.8-14.3% guidance."
+  - "Load-bearing fact 3 (scope-adjacent): FY26 receivable days 80.53 (11,999.70 / 54,385.24 x 365; AR 2026 p.65). Sep 2026 DSO, concentration and client counts are outside Gate 0 data."
+  - "Load-bearing facts 2 and 4: outside Gate 0 data. Only the held promoter series above is shown. Mar 2021 61.71% is not in this run's inputs."
+  - "Sensitivities (labelled, not the score). S1 run 1 proxies as filed: core 74, moat 16, GOOD+. S2 headline plus E2 proxy: core 84, EXCELLENT. S3 10-year series demanded for ROCE, FCF, WC, E2: core 55, moat 16, AVERAGE, DB1 and DB2 fire (max GOOD). S4 history downgrade: GOOD. S5 D3 on financial borrowings: core 80, EXCELLENT. S6 EBIT without other income: core 79, moat 19, GOOD+."
+  - "PEER DATA NEEDED: M5 (segment universe beyond the 4 names held)."
+block_b_trend: "improving: CFO/PAT +0.31x, FY26 1.47x (65.08/44.32) vs FY25 1.16x (31.52/27.08), screener-data, latest year vs prior year"
+analyst_note: "GOOD+ at core 79 sits one point under EXCELLENT. Block D (19/20, net cash, 3.66 current ratio) and Block C (16/20) carry the score. PAT CAGR 30.3% is a low-base effect off 4.10 Cr, so C2 and C4 flatter growth. Block B is 18/20 only because the 3-year FCF window (FY24 to FY26) is the sole one with capex on file; FY24 CFO/PAT was 1.84x and FY25 1.16x, so conversion is lumpy. Block A (13/20) rests on 3 years of ROCE: 19.84% and 14.97% and 20.06%. Three inputs decide the class and are not held: pre-FY24 balance sheets and cash flows, and the Sep 2023 shareholding pattern. E2 alone (score 0 now, 5 on the Mar 2024 proxy) moves the class from GOOD+ to EXCELLENT. Several band edges sit within 0.2pp (A1 19.84 vs 20, A2 14.97 vs 15, M3 20.06 vs 20). Moat count is 5 with M9 and M3 both on mechanical edges."

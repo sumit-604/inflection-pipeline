@@ -1,0 +1,17 @@
+stage: B12a
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+numbers_checked: 167
+mandatory_checked: 163
+mandatory_total: 163
+findings:
+  - {severity: "MINOR", location: "Load-bearing facts 2 and 4; data_notes (Mar 2021 promoter 61.71%)", claimed: "61.71% promoter holding Mar 2021, no anchor (report says not in this run's inputs)", source_truth: "61.71 not present anywhere in inputs/ (zero hits)", note: "Not scored and not used in any block; carried unanchored from the Step-1 fact list. Immaterial to Gate 0.", source_fidelity: false}
+critical_count: 0
+major_count: 0
+minor_count: 1
+false_positives_struck: 0
+material_universe: 167
+acceptance_rate: 99
+coverage_note: "Mandatory 163 of 163 checked (all Gate 0 scorecard inputs Blocks A-E, Block F evidence cells, load-bearing facts). Sample tier 4 of 4 checked. E4 prior CRITICAL cleared at source: AR 2026 PDF p.87 Note 26(a)(ii) USD 4.20 lakhs = Rs 394.68 lakhs; 26(c) Nil. Q1 FY27 scanned results PDF not read (not cited by the report)."

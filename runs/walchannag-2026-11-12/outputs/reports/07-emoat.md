@@ -1,3 +1,5 @@
+> ERRATA (stage 7's own corrections from its hand-back, applied by the orchestrator, no new analysis): (1) Section 3 A1 row: "Sole" award is not proven; the VSSC filing says only that the order covers all 3 HS200 segments. (2) Section 0 fact 4c: any "about 18 months tenure" statement has no source; the CFO hire date is NOT FOUND in the corpus.
+
 # STAGE 7: EMERGING MOAT SCAN, 22 CATEGORIES. Walchandnagar Industries Ltd (WALCHANNAG)
 
 Run date 2026-11-12. Mode: NO-CONCALL (no transcripts). Standalone filer, no consolidated statements.
@@ -96,7 +98,7 @@ Exports are the only geographic move: ₹57.80 Cr FY26 revenue, 21.0% of revenue
 | --- | --- | --- |
 | Management states it is 1 of 2/3 qualified in Aerospace, 1 of 4 in Nuclear, 1 of 2/3 in Defence | 🎙️ | Inv. Pres. p.9 |
 | "Pre-qualified to supply Class I nuclear components"; supplies Calandria to 14 reactors, End Shield to 3 | 🎙️ | Inv. Pres. p.20, p.22 |
-| Sole award of all 3 HS200 segments, ₹30.53 Cr, 4 years | 📄 | 20260820-675ad371 p.2 |
+| Award covering all 3 HS200 segments ("sole" not stated in the filing), ₹30.53 Cr, 4 years | 📄 | 20260820-675ad371 p.2 |
 | Aerospace orders ₹42 Cr FY25 and ₹38.13 Cr Q2 FY27 | 📄 | AR 2025 p.30; 20261102-98ab38d3 p.2 |
 | Nuclear Island competitors named as L&T, Godrej, BHEL, plus ISGEC on heat exchangers | 🎙️ | Inv. Pres. p.30 |
 Counter-evidence: the rarity count is the company's own. The HS200 contract gives no tooling money and free-issues raw material, which is the commercial terms of a replaceable fabricator, not a scarce one (20260820 p.2). No pricing-power evidence: FY26 EBITDA margin 7.84% (Acuite p.3).

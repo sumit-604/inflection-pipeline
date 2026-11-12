@@ -1,3 +1,5 @@
+> ERRATA (pass 1's own corrections from its hand-back, applied by the orchestrator, no new analysis): (1) "both auditors' KAMs" reads "the auditor's key audit matters". (2) The exchange fines in the Note 19 bullet (INR 2,12,400 NSE and INR 1,88,800 BSE) are in rupees, not lakhs. Pass 2 corrections to pass 1 are in 02-notes-pass2.md.
+
 # STAGE 2, PASS 1 (CALL 1 of 3): NOTES TO FINANCIAL STATEMENTS, FULL EXTRACTION
 Company: Walchandnagar Industries Ltd (WALCHANNAG) | Run date: 2026-11-12 | Run: runs/walchannag-2026-11-12
 Source: inputs/annual-report/Annual_Report_2026.txt (FY2025-26 standalone, audited, approved 20 May 2026). Company has no subsidiaries, associates or JVs (CARO 3(ix)(e), PDF p.63), so standalone is the only statement.

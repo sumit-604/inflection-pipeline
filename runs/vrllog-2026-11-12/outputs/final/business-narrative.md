@@ -1,4 +1,3 @@
-=== FILE: business-narrative.md ===
 
 # VRL Logistics Ltd (VRLLOG): business narrative, phase 1
 

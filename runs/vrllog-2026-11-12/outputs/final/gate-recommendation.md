@@ -1,4 +1,3 @@
-=== FILE: gate-recommendation.md ===
 PROCEED WITH CAVEATS
 
 # Gate recommendation: VRL Logistics Ltd (VRLLOG), phase 1, run 2026-11-12

@@ -1,4 +1,3 @@
-=== FILE: verifier-summary.md ===
 
 # Verifier summary: VRL Logistics Ltd (VRLLOG), phase 1, run 2026-11-12
 

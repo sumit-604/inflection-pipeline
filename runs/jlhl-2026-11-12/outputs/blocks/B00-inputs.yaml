@@ -36,6 +36,7 @@ input_gaps:
   - "EMPTY-FOLDER CONFIRMATION: suppressed under the /step1 AUTONOMY CONTRACT. Standing answer taken: proceed with the gaps. Empty folders at run start: research, other."
   - "Verifier A shadow: .claude/shadow.yaml reads 'armed'. Ten /step1 sessions ran in parallel on 2026-11-12; the shadow was claimed by the runs/kusumgar-2026-11-12 session. This run did not flip the switch and did not run the shadow."
   - "pre-extracted text: every inputs/ PDF has a page-marked .txt beside it (tools/extract_pdfs.py). Stages and verifiers read the .txt; '[page N]' markers carry the PDF page number."
+  - "results filings: the financial-statement pages of the three results PDFs carry an OCR text layer that is partly garbled and out of order (found by stage 1 on the Q2 FY27 filing). Page images are rendered at work/pages/<results file name>/page-NN.jpg (pdftoppm, 110 dpi). Any stage or verifier taking a figure from a results filing reads the page image, not the .txt, and cites the PDF page."
 inventory:
   prospectus: {count: 1, status: PRESENT, files: [inputs/prospectus/Red_Herring_Prospectus_30Aug2023.pdf]}
   annual-report: {count: 2, status: PRESENT, files: [inputs/annual-report/Annual_Report_2026.pdf, inputs/annual-report/Annual_Report_2025.pdf]}

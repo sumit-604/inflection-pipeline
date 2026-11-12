@@ -1,0 +1,58 @@
+stage: B00-inputs
+company: WALCHANNAG
+company_name: Walchandnagar Industries Ltd
+run_date: 2026-11-12
+model: claude-fable-5-2   # orchestrator session model, inline stage 0
+status: complete
+spear: "Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:   # from step1-business-brief.md; web leads, first verification priority, not anchored
+  - "Order book and book-to-bill: closing order book at 30 Sep 2026 and 31 Mar 2026, order inflow per quarter, strategic (defence, nuclear, aerospace) share. Web figures conflict (Rs 580 Cr, Rs 670 Cr, Rs 374.6 Cr)."
+  - "Guidance against delivery: any FY27 revenue target (Rs 600 Cr appears on web, unconfirmed) against H1 FY27 revenue; prior-year guidance against FY26 revenue."
+  - "Margin source: whether Q2 FY27 EBITDA is operating or carries other income or one-off items; finance cost and debt level after the warrant money."
+  - "Capital and governance: preferential warrant issue (size, allottees, promoter part, conversion, use of funds per monitoring agency), promoter pledge (screener note 49.2% of promoter holding), CFO change of November 2026."
+sector_cap_row: "Defence / strategic"
+sector_cap: "38x"
+sector_cap_evidence: "section-1b chunk 05 sector cap table. Step-1 web read: aerospace, nuclear and defence are the main part of order inflow and backlog; screener KPI labels list Hi-tech Manufacturing, Aerospace and Nuclear shares. Alternative row 'Cables / Industrial products' 25x if the AR segment note shows legacy sugar, gearbox and foundry lines as the larger revenue share. B04 to confirm; operator rules the row at the /fttcp gate."
+reporting_units: {results: "INR Lakhs", annual_report: "INR Lakhs", screener: "INR Cr", rating: "INR Cr (Acuite rationale)"}
+concalls_available: false
+no_concall_mode: true
+inventory:
+  prospectus: 0          # long-listed (incorporated 1908); not expected, not a gap
+  annual-report: 2       # FY2025-26 (147 pp) and FY2024-25 (143 pp)
+  results: 3             # Q2 FY27 (2026-11-02), Q1 FY27 (2026-08-11), Q4/FY26 audited (2026-05-20)
+  rating: 1              # BSE Reg 30 filing 2026-08-07 carrying the Acuite rationale
+  concalls: 0
+  peer-concalls: 12      # MTARTECH 4, ISGEC 4, ELECON 4
+  announcements: 47
+  shareholding: 1        # screener table capture (.txt), not the exchange filing
+  research: 0
+  screening: 4           # Data_Sheet CSV for WALCHANNAG, MTARTECH, ISGEC, ELECON
+  presentation: 1        # investor presentation filed 2025-05-03 (43 pp)
+  other: 3               # concall transcripts Nov 2018, Feb 2019, May 2019; preserved, never consumed
+input_gaps:
+  - "COLLECTOR: consolidated page had no price, standalone page used: this company files no consolidated statements. Every stage reads standalone."
+  - "COLLECTOR: shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "COLLECTOR: screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, MTARTECH:Profit & Loss, MTARTECH:Quarters, MTARTECH:Balance Sheet, MTARTECH:Cash Flow, MTARTECH:Customization, ISGEC:Profit & Loss, ISGEC:Quarters, ISGEC:Balance Sheet, ISGEC:Cash Flow, ISGEC:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "COLLECTOR: no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "COLLECTOR: no rating PDF yet: add later the same way"
+  - "REPAIRED at /step1: results (3 quarters), the rating filing and 36 further Reg 30 filings were fetched from BSE (AttachLive, and AttachHis for older filings). The two collector warnings above on results and rating are closed."
+  - "SCREENING: Data_Sheet CSVs are populated for all four companies (ELECON re-collected after a screener 429). The P&L, Quarters, Balance Sheet and Cash Flow sheets are ABSENT (empty export); Data_Sheet carries the same raw series."
+  - "SHAREHOLDING: the exchange shareholding pattern filing is ABSENT. inputs/shareholding/ holds a text capture of screener's shareholding table (Dec 2023 to Sep 2026). It is a secondary table, not a filing. Promoter pledge detail is not in it beyond screener's machine note (49.2% of promoter holding pledged); the AR and rating rationale are the filed sources for pledge."
+  - "CONCALLS: NO-CONCALL MODE. Screener lists transcripts only for Nov 2018, Feb 2019 and May 2019 (moved to inputs/other/, not consumed). May 2025, Mar 2025 and Oct 2024 show a presentation without a transcript. BSE shows no transcript or analyst-call filing from Nov 2025 to Nov 2026. Quarterly press releases in inputs/announcements/ (2026-11-02, 2026-08-11, 2026-05-21, 2026-01-29, 2025-11-13) carry management commentary."
+  - "PRESENTATION: the only investor presentation is dated 2025-05-03 (Q4 FY25). No FY26 or FY27 presentation was found."
+  - "RESEARCH: empty. No broker notes collected."
+  - "SCANNED: inputs/announcements/20251113-e1a80d9d-0982-4441-9fa7-7bd665f8023a.pdf (Q2 FY26 results) has text on 1 of 7 pages; no OCR tool on this machine. The Q2 FY27 results carry the Sep 2025 comparative."
+  - "OCR TEXT LAYER: the three results PDFs carry an OCR text layer with misread characters. Check load-bearing figures on the PDF page, not only the .txt."
+  - "RATING: the Acuite page for 7 Aug 2026 is blocked (Cloudflare 403) by script and by browser; the BSE Reg 30 filing of 2026-08-07 carries the rationale text and is the corpus copy."
+  - "EMPTY-FOLDER CONFIRMATION suppressed under /step1 (standing answer: proceed with the gaps). Empty folders: concalls (declared, no-concall mode), research, prospectus (not expected)."
+  - "TEXT ROUTE: every inputs/ PDF has a page-marked .txt beside it ([page N] markers), written by tools/extract_pdfs.py. Stages and verifiers read the .txt and open the PDF page where the text is garbled."
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/20261102-013510a4-0648-40a7-9a4e-0869ea46ab81.pdf", mate_expected: "Q2 FY27 concall transcript", status: SKIPPED, missing_doc: "", note: "concalls_available false"}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/20260807-ddc3874d-32a3-41ae-938e-099d9b321ae1.pdf", mate_expected: "full Acuite rating rationale", status: PASS, missing_doc: "", note: "rationale text is inside the filing (Rating Rationale, Key Rating Drivers, Strengths, Weaknesses)"}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "inputs/annual-report/Annual_Report_2026.pdf page 45", mate_expected: "SEBI Adjudicating Officer order of 2015 imposing Rs 21.25 lakh penalties on promoter entities of BCMA (some also promoter entities of the company), on the purchase of BCMA shares by Walchand Kamdhenu Commercials Pvt. Ltd.; matter pending in the Supreme Court", status: FAIL, missing_doc: "SEBI Adjudicating Officer order (2015), BCMA promoter entities / Walchand Kamdhenu Commercials Pvt. Ltd.; expected source sebi.gov.in enforcement orders", note: "one web search on sebi.gov.in did not find it"}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/20260520-114e0a82-65f0-4bf4-80e8-5d9483de0922.pdf (FY26 audited)", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: ""}
+freshness_verdict: CORPUS GAPPED-FRESHNESS
+empty_folder_question: "suppressed by /step1 autonomy contract; defaults taken: run degraded per the DEGRADATION MAP"
+corpus_manifest: []     # filled from B00-intake.yaml after orchestrator verification
+flags: []
+analyst_note: ""

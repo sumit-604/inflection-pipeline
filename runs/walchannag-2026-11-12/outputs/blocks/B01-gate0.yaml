@@ -1,0 +1,55 @@
+stage: B01-gate0
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "COLLECTOR: consolidated page had no price, standalone page used: this company files no consolidated statements. Every stage reads standalone."
+  - "COLLECTOR: screener export sheets (Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization) came out EMPTY for WALCHANNAG, MTARTECH and ISGEC; Data_Sheet CSV carries the same raw series and is the Gate 0 source."
+  - "SHAREHOLDING: exchange shareholding pattern filing ABSENT; inputs/shareholding holds a screener table capture (Dec 2023 to Sep 2026), a secondary table. Promoter pledge beyond screener's machine note (49.2% of promoter holding) is read from AR 2026 p.109 (NCD security, 15.63% of paid-up capital)."
+  - "NO-CONCALL MODE: no transcript after May 2019; quarterly press releases carry management commentary."
+  - "PRESENTATION: only investor presentation is dated 2025-05-03 (Q4 FY25)."
+  - "OCR TEXT LAYER: results PDFs carry misread characters; Q2 FY27 loaded figures (revenue 9,353, finance cost 978, PBT 47 lakhs) agree with screener Data_Sheet Sep 2026 quarter; not re-read on the PDF page."
+  - "GATE0: Data_Sheet has no capex, trade payables or current liabilities line. Capex found only FY24-FY26 (AR 2025 p.69, AR 2026 p.69); trade payables and current liabilities only FY24-FY26 (AR 2025 p.67, AR 2026 p.67). FY17-FY23 capex, payables, current liabilities NOT FOUND."
+  - "GATE0: peer Data_Sheets (MTARTECH, ISGEC, ELECON) were not supplied to this stage; M2, M5, M6 (top tier), M9 marked PEER DATA NEEDED."
+flags:
+  - {type: FLAG-GATE0, reason: "Classification AVOID (core 10 of 100, moat NONE). Depressors by year: PAT negative in 9 of 10 years (FY17-FY22, FY24-FY26; only FY23 profit 19.58 Cr, driven by other income 127.65 Cr); ND/EBITDA 9.75x with interest cover 0.63x in FY26; promoter pledge 49.5% of promoter holding; revenue fell in 5 of 9 YoY steps. Latest two quarters of FY27 are operating-profitable (Q1 FY27 PBT 1.18 Cr, Q2 FY27 PBT 0.47 Cr) but Q2 PBT carries other income 4.62 Cr, so PBT ex other income is -4.15 Cr."}
+  - {type: FLAG-CASH, reason: "Block B 0 of 20 and deteriorating: FY26 CFO -11.08 Cr and FCF -36.19 Cr (CFO less capex 25.11 Cr); cumulative FY17-FY26 CFO 507.74 Cr against cumulative PAT -391.19 Cr."}
+data_years: 10
+fy_range: "FY17 to FY26"
+blocks: {A: 5, B: 0, C: 0, D: 4, E: 1}
+core_score: 10
+moat_score: 0
+grand_total: 10
+moats_confirmed: 0
+moat_class: "NONE"
+classification: "AVOID"
+deal_breakers:
+  - "1 Block A 5 below 8 (max GOOD): drivers FY17-FY26 ROCE series, median 3.98%"
+  - "2 Block B 0 below 8 (max GOOD): driver FY26 and FY25 negative FCF, B1 ratio negative"
+  - "3 Median ROCE 3.98% below 10% (max AVERAGE): FY17-FY26"
+  - "4 Cumulative CFO/PAT below 0.50 (max AVERAGE): ratio -1.30 on negative cumulative PAT, FY17-FY26"
+  - "5 Pledge above 15% (max AVERAGE): 49.5% of promoter holding, FY26 / Sep 2026"
+  - "6 ND/EBITDA above 3x AND IC below 3x (AVOID): FY26 9.75x and 0.63x"
+  - "7 Revenue declined in majority of years (max AVERAGE): FY19, FY20, FY22, FY24, FY25 (5 of 9)"
+  - "8 PAT negative in any of last 3 years (max AVERAGE): FY24 -41.83, FY25 -86.03, FY26 -14.66 Cr"
+history_downgrade: false
+data_notes:
+  - "Source is standalone only; company files no consolidated statements. Units: screener Data_Sheet INR Cr; AR and results INR Lakhs (converted only where shown with both units)."
+  - "ROCE computed, not source-provided: EBIT = PBT + Interest; capital employed proxy = Equity + Reserves + Borrowings (Total less Other Liabilities) because Data_Sheet has no current liabilities. AR cross-check on Total Assets less Current Liabilities for FY24 1.76%, FY25 -8.64%, FY26 5.75% leaves A1, A2, A4 scores unchanged."
+  - "Net worth = share capital + reserves. ROE FY17 uses closing net worth (no opening)."
+  - "PAT: loss in 9 of 10 years; FY23 profit 19.58 Cr includes other income 127.65 Cr. No loss-to-profit swing across the window (FY17 -79.52, FY26 -14.66): C2 N/M (negative endpoint), C4 0."
+  - "EBITDA = PBT + Interest + Depreciation - Other Income. Data_Sheet annual expense lines only reconcile if Change in Inventory is added with reversed sign; FY26 EBITDA 14.75 Cr (annual identity) vs 14.05 Cr (sum of four quarterly Operating Profit); 0.70 Cr gap tied to other income 21.61 vs 20.74 Cr. Annual identity used."
+  - "B1 cumulative CFO 507.74 over cumulative PAT -391.19 = -1.30, negative denominator, scored 0 (below 0.50 band)."
+  - "B2/B3 capex found only FY24 1.72, FY25 34.65, FY26 25.11 Cr (AR 2025 p.69, AR 2026 p.69); FCF window is 3 years, FY17-FY23 NOT FOUND. FCF positive in 1 of 3 (33%); 3-year cumulative FCF -46.18 Cr."
+  - "B4 NOT FOUND for earliest year (FY17 payables). Sensitivity FY24 to FY26 on AR data, total receivables incl. non-current, sales basis: WC days 288.7 to 297.2 (+8.5), which would band 1. Data_Sheet Receivables hold current trade receivables only; non-current receivables were 20.71 Cr FY24, 80.19 Cr FY25, 67.31 Cr FY26 (AR 2025 p.67, AR 2026 p.67), so Data_Sheet receivable days understate FY25-FY26 receivables."
+  - "D1 net debt = Borrowings 218.90 - Cash & Bank 75.10 = 143.80 Cr (ties to AR 2026 p.67: 3,338 + 18,552 lakhs borrowings; 2,009 + 5,501 lakhs cash and bank balances). Q2 FY27 Data_Sheet interest 9.78 Cr, no Sep 2026 balance sheet in corpus."
+  - "D4 current ratio 47,678 / 44,109 lakhs = 1.08 (AR 2026 p.67); excludes asset held for sale 2,648 lakhs."
+  - "E2 window Dec 2023 (34.84%) to Sep 2026 (31.55%) = -3.29pp over about 2.75 years, because the screener table starts Dec 2023; the fall sits in Q4 FY24 (34.84% to 31.55%), flat since. Scored 0 on the table as given."
+  - "E3 pledge: AR 2026 p.109 states NCD security includes pledge of 15.63% of paid-up capital held by promoters/affiliates; against promoter holding 31.55% this is 49.5%; screener note 49.2%. Neither is an exchange pledge disclosure."
+  - "E4 contingent liabilities: claims not acknowledged as debt 2,419.64 lakhs + counter guarantees 18,235 lakhs = 20,654.64 lakhs (206.55 Cr) over net worth 358.79 Cr = 57.6% (AR 2026 pp.137-138). Claims only: 24.20 Cr, 6.7% (would score 3). Open LC 13.01 Cr and capital commitments 4.78 Cr excluded."
+  - "PEER DATA NEEDED: M2, M5, M9; M6 top tier. M6 lower tiers fail on EBITDA 5.36%. M7 listed-player count NOT FOUND, scored 0. M8 no distribution network in data, scored 0."
+  - "Q2 FY27 margin source (load-bearing fact): Data_Sheet Sep 2026 quarter Sales 93.53, Operating Profit 8.80 (9.4%, excludes other income), Other Income 4.62, Depreciation 3.17, Interest 9.78, PBT 0.47. EBITDA including other income is 13.42 Cr; other income is 34% of it. Q1 FY27 Operating Profit 7.34, Other Income 6.97, PBT 1.18."
+  - "Not covered by this stage's data: order book and book-to-bill, FY27 guidance, warrant issue use of funds, CFO change (left to later stages)."
+block_b_trend: "deteriorating: FY26 CFO -11.08 Cr after +15.62 Cr in FY25 and +76.13 Cr in FY23; FCF -36.19 Cr in FY26"
+analyst_note: "Score reflects a ten-year record of losses and a legacy balance sheet, not the FY27 run-rate. Revenue stepped up to 80.95 Cr in Q3 FY26 and 93.53 Cr in Q2 FY27 from 49-52 Cr in the first half of FY26, and operating profit turned positive (Q2 FY27 8.80 Cr). None of this is in the ten-year scores. FY26 ND/EBITDA 9.75x and interest cover 0.63x drive deal-breaker 6 on a trough-year EBITDA of 14.75 Cr. Trailing four quarters to Sep 2026 EBITDA ex other income is 4.15+15.30+7.34+8.80 = 35.59 Cr (Data_Sheet Operating Profit, Quarters block); that is a live fact for later stages, not a Gate 0 input. Pledge 49.5% of promoter holding and the 57.6% contingent-liability ratio are the governance weights."

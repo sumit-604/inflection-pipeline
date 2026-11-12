@@ -1,0 +1,42 @@
+stage: B02-notes-pass2
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No concall, no presentation, Q2 FY27 results not filed (B00). FY24 balance sheet not in this AR, so FY24 stores, receivables and three-year day trends are NOT FOUND."
+  - "Scanned AR, tesseract OCR. Load-bearing numbers checked on page images (PDF pp.69, 79, 87) in this pass, plus pp.51, 62, 65, 69, 73, 74, 87 in Pass 1."
+pass_2_empty: false
+new_findings_count: 15
+queued_items_resolved:
+  - {item: "consolidated FY25 cash flow does not foot", result: "resolved to line level: CFO 1,607.85 foots internally (taxes paid are (553.99), OCR read 653.99); the 96.89 gap is 96.40 in CFO plus 0.50 in financing (dividend 605.46 vs 604.96). CFO gap is the consolidated receivables line (361.41 vs standalone 198.19, +163.22). Standalone FY25 foots to (642.70). Consolidated FY26 foots."}
+  - {item: "Note 48 inventory days 72", result: "not reproducible on closing, average, revenue or RM-only bases (153, 156, 81, 83, 34 days); printed 72 stays unexplained"}
+  - {item: "Note 39B TCI row 50.83", result: "probably IGCL OCI net of its own movements: equity roll leaves residual 50.9 after PAT and an implied dividend; 14.14% of 50.83 = 7.19 equals the extra consolidated OCI; auditor Other Matter prints associate TCI share 362.11 vs PAT share 354.93. FY25 row 75.17 is not reflected in consolidated FY25."}
+  - {item: "interest capitalisation", result: "no capitalisation evident: finance cost paid equals P&L finance cost in both years (101.87; 122.05); no capitalised amount disclosed. Still NOT FOUND as a stated disclosure."}
+  - {item: "sundry balances written off 46.44 vs 3.99", result: "nature NOT FOUND; cash-flow receivables outflow 463.80 exceeds balance-sheet receivables change 418.53 by 45.27, within 1.17 of the write-off, but 45.27 also equals consolidated OCI to the paisa; attribution to receivables is an inference, not secure"}
+flags:
+  - {type: FLAG-CASH, reason: "Consolidated FY25 comparative cash flow does not foot (96.89 lakh); FY25 and FY26 working-capital lines in the consolidated statement carry non-cash reclassification (FY26 receivables line absorbs the 7.19 associate OCI share). Standalone cash flow is the reliable base. Receivables ageing itself is not deteriorating (Pass 1)."}
+  - {type: FLAG-RPT, reason: "Pioneer Jellice lease rent 11.60 lakh is 97.6% of total rent expense 11.89 (Note 33, p.69; Note 37, p.73) while Note 2(xv) says no lease contracts; Directors Report says AOC-2 particulars sit in the Notes, but Note 37 gives no terms or tenure."}
+top_findings:
+  - {rank: 1, finding: "Consolidated FY25 cash flow does not foot: CFO 1,607.85 + investing (2,890.46) + financing 543.01 = (739.60) vs printed (642.71). Gap 96.89 = CFO 96.40 + financing 0.50. CFO gap sits in the receivables line (361.41 vs standalone 198.19, +163.22), which equals the FY25 rise in raw material, FG and WIP (163.22)", note_ref: "Consol cash flow PDF p.87 (image-verified); standalone cash flow PDF p.51; Note 28, 29 PDF pp.68-69", rating: "YELLOW", why: "FY25 consolidated CFO is unreliable; use standalone."}
+  - {rank: 2, finding: "IGCL associate OCI: auditor Other Matter prints share of TCI 362.11 vs PAT 354.93; consolidated OCI (45.27) = standalone (52.46) + 7.19; Note 39B shows OCI nil with a 'TCI' row 50.83; FY25 row 75.17 not reflected in consolidated carrying 4,197.31", note_ref: "Auditor report PDF p.82; consol P&L PDF p.86; Note 39B PDF p.74", rating: "YELLOW", why: "Note 39B is internally wrong; the associate carries unrecorded or unexplained OCI."}
+  - {rank: 3, finding: "Associate carrying exceeds share of IGCL net worth (AOC-1 2,737.02) by 1,378.29 on cost and 1,772.24 on the consolidated carrying (43% of cost), with no impairment test stated", note_ref: "AOC-1 PDF p.21; Note 39 PDF p.74; consol BS PDF p.85", rating: "YELLOW", why: "Embedded premium rests on IGCL earning power and the 11.6x entry multiple."}
+  - {rank: 4, finding: "Pioneer Jellice lease rent 11.60 = 97.6% of rent expense 11.89; FY25 rent 15.86 paid to unnamed lessors; Note 2(xv) denies leases; AOC-2 said to sit in notes but is not", note_ref: "Note 33 PDF p.69; Note 37 PDF p.73; Note 2(xv) PDF p.59; Directors Report PDF p.8", rating: "YELLOW", why: "RPT terms and Ind AS 116 treatment unevidenced."}
+  - {rank: 5, finding: "Note 48 DSCR 7.71 reproduces only on consolidated PBT (incl. associate profit 354.93 non-cash) and cash-flow repayments 195.00+288.13; standalone basis gives 7.19. Variance column prints 100% for debt-equity and DSCR (actual -47% and +132%)", note_ref: "Note 48 PDF p.79 (image-verified)", rating: "YELLOW", why: "Covenant-style ratio overstated by mixing bases."}
+  - {rank: 6, finding: "Sundry balances written off 46.44 (3.99) against ECL allowance 2.81; cash-flow receivables outflow exceeds balance-sheet change by 45.27", note_ref: "Note 33 PDF p.69; cash flow PDF p.51; Note 11 PDF p.62", rating: "YELLOW", why: "Credit losses may run through write-offs, not ECL."}
+  - {rank: 7, finding: "Directors Report volumes and prices: gelatine volume +16.17%, ASP -5.20% implies +10.1% revenue vs Note 26 +8.4%; DCP volume +11.35%, ASP +17.17% implies +30.5% vs +30.3%; report says materials consumed 'increased by 1.29%' where Note 28 shows -1.29%", note_ref: "Directors Report PDF p.12; Note 26, 28 PDF p.68", rating: "YELLOW", why: "Only quantified price and volume split for the margin reset; one direction error."}
+  - {rank: 8, finding: "Gratuity remaining working life non-management 9 to 13 years with nil demographic gain or loss in both years; discount rate 6.71% to 7.67% produced a 31.88 gain", note_ref: "Note 34 PDF pp.70-71", rating: "YELLOW", why: "Assumption change not visible in the OCI split."}
+  - {rank: 9, finding: "New unexplained balance-sheet heads: other payables 68.85 (nil), balances with government authorities 67.11 (1.62), capex payable 53.07 (nil), employees payable 12.11 (nil); statutory dues payable 149.07 (271.20)", note_ref: "Note 16 PDF p.63; Note 23, 24 PDF pp.67-68", rating: "YELLOW", why: "Year-end balance-sheet shaping candidates; no narrative."}
+  - {rank: 10, finding: "R&D expense 20.18 in Note 33 vs Note 41 total 15.29; sitting fees FY25 8.66 vs 8.40; BS-implied tax paid 811.59 vs cash flow 820.90; cash-flow unpaid dividend 1.37 appears in investing and financing", note_ref: "Note 33, 41 PDF pp.69, 74; Note 37; Note 13, cash flow PDF pp.63, 51", rating: "YELLOW", why: "Small tie-out gaps; pattern of loose reconciliation."}
+red_flags: []
+questions_for_mgmt:
+  - "Why does the consolidated FY25 cash flow not foot, and which working-capital lines were restated between standalone and consolidated (receivables 361.41 vs 198.19)?"
+  - "Who is the lessor for FY25 rent of Rs 15.86 lakh, what are the Pioneer Jellice lease terms, and why does AOC-2 point to notes that omit them?"
+  - "What is IGCL's OCI (50.83 lakh) and why does Note 39B show it as total comprehensive income?"
+  - "Which balances were written off as Rs 46.44 lakh sundry balances, and were any trade receivables?"
+  - "How was DSCR 7.71 computed, and on which PBT and repayment base?"
+restatements_found:
+  - "Consolidated FY25 working-capital lines differ from standalone FY25 (receivables 361.41 vs 198.19; other current assets (92.52) vs (93.13)); consolidated FY25 financing dividend 605.46 vs 604.96 in the equity statement."
+  - "Consolidated FY25 operating adjustments omit the OCI deduction (66.19) that standalone FY25 carries."
+going_concern_language: "NONE in the notes"
+analyst_note: "Pass 2 checked the notes against each other and against the Directors Report, AOC-1 and auditor Other Matter. The most useful result is the associate decode: IGCL OCI about 50.83 lakh is real and the Note 39B label is wrong. The consolidated FY25 cash flow is not usable as printed. No going concern language. Rating is YELLOW across the board; nothing reaches RED."

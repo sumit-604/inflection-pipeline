@@ -18,6 +18,8 @@ Load-bearing facts (the run's first verification priority; web leads, not anchor
 ## HALT 1 GATE
 - Mental Model signed: NOT SIGNED (draft in runs/walchannag-2026-11-12/outputs/reports/09b-understanding-dossier.md)
 - Halt 1 decision (KILL/SHALLOW/PROCEED): pending operator
+- Phase 1 result 2026-11-12 (memory, not a ruling): gate recommendation PROCEED WITH CAVEATS; corpus CORPUS GAPPED-FRESHNESS (SEBI AO order of 22 Dec 2015, BCMA matter, text absent); fragility FRAGILE; phase-1 confidence 82.4 set by redflag_coverage.
+- Open for the operator: sector cap row (manifest "Cables / Industrial products"; alternative "Defence / strategic"); credibility grade C (stage 5) against D (Verifier B); order book 871.77 Cr (AR) against 374.56 Cr (Acuite) unreconciled.
 
 ## OPERATOR RULINGS
 - 2026-11-12: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.

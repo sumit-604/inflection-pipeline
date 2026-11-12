@@ -1,0 +1,78 @@
+stage: B05-concall
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "no concalls (declared; no-concall mode, bounded read of B03 anchors, MD letter p.10, results Q4 FY26 to Q2 FY27)"
+  - "no rating"
+  - "no investor presentation"
+  - "shareholding is a screener copy; pledge NOT FOUND"
+  - "announcements Sep-Oct 2026 only (collector limit, not evidence of no filings)"
+  - "three scanned announcement PDFs lack text"
+  - "results PDFs carry no management commentary: no explanation of Q2 FY27 revenue +47.3% is filed"
+  - "H1 FY27 group share of sales, purchases, receivables, payables NOT FOUND (Reg 23 RPT filing not in corpus)"
+  - "segment, volume, capacity, utilisation, customer data NOT FOUND"
+flags:
+  - {type: FLAG-GUIDANCE-QUALITATIVE, reason: "No numeric revenue, margin, capex, capacity or dividend guidance anywhere in the AR (B03 guidance_table; AR FY26 MD letter p.10). Only direction words."}
+  - {type: FLAG-REVENUE-UNEXPLAINED, reason: "Q2 FY27 revenue 269.76 vs 183.14 (+47.3%) and vs Q1 FY27 222.39 (+21.3%); no filed text explains it; group share NOT FOUND (Results Q2 FY27 p.3)"}
+  - {type: FLAG-CASH, reason: "H1 FY27 CFO -24.11 vs -5.65; inventory +99.07, receivables +69.77, payables +111.71 in the cash flow; net trade WC 223.28 vs 169.21 at Mar-26 (derived) (Results Q2 FY27 pp.4-5)"}
+  - {type: FLAG-MINORITY-NEUTRAL, reason: "1-Oct-2026 internal transfer of 15.89% (36,68,036 shares) from Sudarshan Europe B.V. to Sudarshan Chemical Industries at Rs 411 per share, Rs 150.76 Cr; promoter group unchanged at 70.26% (Results Q2 FY27 note 10, p.6). No delisting, merger or scheme text."}
+quarters_analysed: ["FY26 AR guidance vs Q4 FY26", "Q1 FY27", "Q2 FY27 / H1 FY27"]
+triggers:
+  - {priority: 1, name: "FY27 revenue run-rate holds: H1 FY27 492.15 vs 393.86 (+25.0%)", type: "volume / group offtake (split NOT FOUND)", timeframe: "near", conviction: "M", confirm_signal: "H1 FY27 Reg 23 RPT filing shows third-party sales growing, not only group; Q3 FY27 revenue above 222", kill_signal: "Growth sits only in group sales, or Q3 FY27 falls back toward 175-211"}
+  - {priority: 2, name: "Operating margin recovery: operating EBITDA 12.2% H1 FY27 vs 10.7% H1 FY26 and 7.4% FY26 (derived)", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "Q3 FY27 operating EBITDA margin at or above 12% with gross margin at or above 39.3%", kill_signal: "Gross margin below 39% while other expenses keep growing faster than revenue"}
+  - {priority: 3, name: "Working capital unwind: net trade WC 223.28 (derived) and CFO -24.11 in H1 FY27", type: "cash", timeframe: "near to medium", conviction: "L", confirm_signal: "Inventory days and receivable days fall; CFO positive in H2 FY27", kill_signal: "Inventory above 255.22 or CFO still negative at FY27 year end"}
+  - {priority: 4, name: "Domestic coatings and plastics strengthen plus new accounts via ONE Sudarshan", type: "volume", timeframe: "FY27", conviction: "L", confirm_signal: "Segment or customer data, or domestic revenue growth disclosed", kill_signal: "Third-party revenue stays flat"}
+  - {priority: 5, name: "Localise premium HP Azo range for exports from FY2027", type: "volume / price-mix", timeframe: "FY27 onward", conviction: "L", confirm_signal: "Capex, capacity or first export orders named", kill_signal: "No named plant, volume or spend by FY27 AR"}
+guidance:
+  - {item: "Return to growth", number: "NOT FOUND (direction only)", timeframe: "FY2027", stated_in: "AR FY26 MD letter p.10"}
+  - {item: "Destocking largely run its course; domestic coatings and plastics to strengthen", number: "NOT FOUND", timeframe: "through FY2027", stated_in: "AR FY26 MD letter p.10"}
+  - {item: "Printing inks softness to ease as inventory normalises", number: "NOT FOUND", timeframe: "through FY2027", stated_in: "AR FY26 MD letter p.10"}
+  - {item: "Localise premium HP Azo range to unlock export opportunities", number: "NOT FOUND", timeframe: "FY2027 onward", stated_in: "AR FY26 MD letter p.10"}
+  - {item: "Three-year horizon; accept near-term margin pressure", number: "3 years (no number)", timeframe: "FY27 to FY29", stated_in: "AR FY26 MD letter p.10"}
+  - {item: "Grow sustainably above GDP over the next three years", number: "above GDP (no number)", timeframe: "FY26 to FY28", stated_in: "AR FY25 MD letter p.10"}
+  - {item: "Renewable energy usage target at Roha and Cuddalore", number: "over 65%", timeframe: "near-term", stated_in: "AR FY25 MD letter p.10"}
+  - {item: "SAP: four legacy systems into one", number: "4 to 1", timeframe: "coming quarters", stated_in: "AR FY26 (B03 guidance_table, p.6)"}
+  - {item: "Gratuity trust contribution expected", number: "2.50", timeframe: "FY2027", stated_in: "AR FY26 Note 39 pp.91-92 (B03)"}
+  - {item: "Capital commitments not provided for", number: "3.87", timeframe: "FY2027", stated_in: "AR FY26 Note 35 p.90 (B03)"}
+  - {item: "Dividend, debt reduction, capex, capacity, return targets", number: "NOT FOUND (no dividend two years; no borrowings)", timeframe: "n/a", stated_in: "AR FY26 p.21 (B03)"}
+promise_delivery:
+  delivered: 3
+  partial: 4
+  missed: 4
+  rows:
+    - {promised_in: "AR FY26 MD letter p.10", promise: "Return to growth in FY2027", outcome: "Delivered (interim)", explanation: "Q1 FY27 222.39 vs 210.72 (+5.5%); Q2 FY27 269.76 vs 183.14 (+47.3%); H1 492.15 vs 393.86 (+25.0%). Full year not closed; group vs third-party split NOT FOUND."}
+    - {promised_in: "AR FY26 (cost and utilisation, B03 guidance_table)", promise: "Cost reduction and better utilisation drive profitability in FY2027", outcome: "Delivered (interim)", explanation: "Operating EBITDA margin 12.2% H1 FY27 vs 10.7% H1 FY26 (derived); employee cost 33.20 vs 37.13. Gross margin still 39.3% vs 41.7%, other expenses +17.9%."}
+    - {promised_in: "AR FY26 MD letter p.10", promise: "Renewables targets set and delivered: Roha about 50%, Cuddalore 62% to 75%", outcome: "Delivered", explanation: "B03 checked against Annexure A savings 2.52 and 1.19 (p.26)."}
+    - {promised_in: "AR FY25 MD letter p.10", promise: "Over 65% renewable usage at Roha and Cuddalore near-term", outcome: "Partial", explanation: "Cuddalore 75%, Roha about 50% in FY26; no combined figure."}
+    - {promised_in: "AR FY25 MD letter p.10", promise: "Grow above GDP over the next three years", outcome: "Partial", explanation: "FY26 revenue -5.4% (780.63 vs 825.06); H1 FY27 +25.0%. One year of three missed, the next running ahead."}
+    - {promised_in: "AR FY25 MD letter p.10", promise: "Strategic investment in capacity optimisation", outcome: "Partial", explanation: "Capex 25.34 vs depreciation 16.51 in FY26 (B03); no capacity or utilisation figure; H1 FY27 capex 8.78."}
+    - {promised_in: "AR FY26 Note 39 (B03)", promise: "Gratuity contribution 2.50 expected", outcome: "Partial", explanation: "Same 2.50 stated for FY26; actual FY26 contribution 6.82. Funding estimate, low weight."}
+    - {promised_in: "AR FY25 MD letter p.10", promise: "Growth momentum and sustained growth across key segments", outcome: "Missed", explanation: "FY26 revenue -5.4%; operating EBITDA 57.95 vs 81.80; blamed on market softness and destocking while Note 40 shows third-party revenue flat and group sales explain 97.9% of the fall (B03)."}
+    - {promised_in: "AR FY26 MD letter p.10", promise: "Outside the US, markets grew 7%", outcome: "Missed", explanation: "Outside-India revenue -24.0%; ex USA SLO -3.7% (Notes 40, 41; B03)."}
+    - {promised_in: "AR FY26 p.18 strategy (B03)", promise: "Optimise net working capital, avoid cash blockages", outcome: "Missed", explanation: "FY26 net trade WC 169.21 vs 126.05; H1 FY27 inventory 255.22 vs 156.15, receivables 244.95 vs 179.39, CFO -24.11 (Results Q2 FY27 pp.4-5)."}
+    - {promised_in: "AR FY25 MD letter p.10", promise: "Complete integration to unlock synergies and deliver high returns", outcome: "Missed", explanation: "FY26 ROE 8.15% vs 10.33%, ROCE 10.8% vs 14% (B03). H1 FY27 profit up but no return figure filed."}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "No-concall default C held: 3 delivered, 4 partial, 4 missed on AR guidance vs results (FY26 AR and FY25 AR text vs FY26 audited, Q1 and Q2 FY27 results); the one live promise (return to growth) is delivered at H1 FY27 +25.0%, but the guidance is qualitative, so it cannot lift the grade to B."
+peer_questions:
+  - {question: "Do peers report FY27 H1 volume or price-led growth in pigments and colorants, and a destocking end in coatings, plastics and printing inks?", why: "MD letter p.10 says destocking has largely run its course; the company files no volume or price data", check_peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {question: "What global pigment growth rate do peers cite? The company cites about 3% CAGR on an $8.6 bn market (AR p.17, internal study).", why: "Tests the only industry claim in the AR; Q2 FY27 revenue +47% is far above 3%", check_peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {question: "Does the parent (SUDARSCHEM) describe the Indian subsidiary's role, intra-group sourcing, Roha/Cuddalore volumes, or Azo production moved from Frankfurt to Roha?", why: "Group sales were 24.5% of FY26 revenue and 97.9% of its fall; the parent calls Q2 FY26 to Q1 FY27 may explain Q2 FY27 group offtake", check_peers: ["SUDARSCHEM"]}
+  - {question: "What do peers say about the US tariff effect on pigment exports and US destocking?", why: "USA SLO sales fell 77.42 to 20.99 in FY26; the MD blames an uncertain tariff environment; the recovery needs US restocking or not", check_peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {question: "What raw material and input cost trend do peers cite for H1 FY27 (azo intermediates, TiO2, energy, freight)?", why: "Q2 FY27 materials consumed 159.91 vs 74.94 on revenue +47% while gross margin was 39.1% vs 41.0% (derived); tests whether it is cost pass-through or mix", check_peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {question: "Do peers report working capital build and extended inventory in H1 FY27, and payable stretch to group or MSME suppliers?", why: "H1 FY27 CFO -24.11, inventory +99.07, payables +111.71; separates sector-wide stocking from company-specific build", check_peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {question: "Any capacity addition or utilisation figure for Indian pigments (Azo localisation, HP Azo, food-contact, recycling-compatible grades)?", why: "MD letter p.10 names these opportunities; the company gives no capacity or utilisation", check_peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {question: "Does the parent state any intention on the listed subsidiary: merger, delisting, further stake change, or the Rs 411 per share internal transfer rationale?", why: "Minority position under a 70.26% promoter group; 1-Oct-2026 internal transfer at Rs 411 vs open offer Rs 602.03", check_peers: ["SUDARSCHEM"]}
+red_flags:
+  - "Q2 FY27 revenue +47.3% with no filed explanation and group share NOT FOUND (Results Q2 FY27 p.3)"
+  - "H1 FY27 working capital build: net trade WC 223.28 vs 169.21 (derived), CFO -24.11 vs -5.65; liquid assets 206.11 vs 235.37 (derived) (Results Q2 FY27 pp.4-5)"
+  - "Guidance is directional only; two FY26 statements failed their own numbers (outside-US +7%, growth momentum)"
+  - "Excuse pattern: FY26 shortfall credited to markets and destocking while Note 40 puts it in group offtake (B03)"
+  - "Interim CFO since 11-May-2026 still named in Q1 FY27 results note 9; director Velankar resigned 1-Sep-2026 (Results Q1 FY27 p.3; Q2 FY27 p.6)"
+dropped_triggers: []
+timeline_slippages: []
+analyst_note: "No transcripts, so Section 2E, analyst Q&A and tone are NOT FOUND. The AR gives direction, never a number; the grade rests on 11 guidance-vs-results rows. The one live promise, return to growth, is met at H1 FY27 (+25.0%), with Q2 FY27 +47.3%. Two readings: (1) real demand recovery and group restocking; (2) group re-routing volume or channel build. Q2 FY27 materials consumed rose 113% against revenue +47% while stock-in-trade purchases fell 16%, which fits a shift from traded goods to own manufacture [INFERENCE]. The observation that separates them: H1 FY27 group vs third-party sales in the Reg 23 filing, and whether inventory 255.22 and receivables 244.95 unwind in H2. Rs 411 internal transfer is a promoter-to-promoter move, no minority signal."

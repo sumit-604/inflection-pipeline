@@ -1,0 +1,89 @@
+stage: B00-inputs
+company: JLHL
+run_date: 2026-11-12
+model: orchestrator (stage 0 run inline by the orchestrator session, claude-fable-5-2)
+status: complete
+spear_gate: "PASS. companies/JLHL.md carries: Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:   # COMPANY MEMORY from runs/jlhl-2026-11-12/step1-business-brief.md; web-sourced, to be verified against filings
+  - "Dombivli ramp: EBITDA loss Rs 9.5 Cr (Q1 FY27) to Rs 0.2 Cr (Q2 FY27), occupancy mid-30%, opened ahead of Q1 FY27 guidance. Verify against Q1 and Q2 FY27 results, presentations, transcripts."
+  - "Profit squeeze: PAT flat near Rs 194 Cr FY25 and FY26 while revenue grew 15%; depreciation Rs 57 Cr to Rs 88 Cr, interest Rs 11 Cr to Rs 33 Cr. Verify against FY26 AR and results; confirm the mature-hospital margin held."
+  - "Capex funding and debt: borrowings Rs 0 (Mar 2024) to Rs 669 Cr (Sep 2026); pipeline Pune South, Mira Road, BKC (land about Rs 354 Cr). Verify committed capex, phasing, and the internal-accruals claim against the cash flow statement and borrowing note."
+  - "Occupancy and ARPOB: H1 FY27 occupancy 59.5% (64.8% excluding Dombivli); ARPOB Rs 71,800. Verify definitions (census beds, blended vs in-patient ARPOB) and the hospital-wise split against the presentation."
+sector_cap_row: "Hospitals / dialysis / healthcare services"
+sector_cap: "35x"
+sector_cap_evidence: "Company describes itself as a multi-specialty tertiary and quaternary healthcare provider operating hospitals (screener About; RHP cover, inputs/prospectus/Red_Herring_Prospectus_30Aug2023.pdf). Row and cap from .claude/skills/section-1b/references/05-sector-cap.md, sector cap table. The collector guess 'Pharma / CDMO' is wrong and was not used."
+reporting_units:
+  results: "INR million (face of inputs/results/FY27-Q2_Results_BM_Outcome_23Oct2026.pdf: '₹ in million')"
+  annual_report: "INR million (inputs/annual-report/Annual_Report_2026.pdf financial statements)"
+  presentation: "INR Crore ('Rs. Crs' on the investor presentations)"
+  screener: "INR Crore"
+  rating: "INR Crore (ICRA rationale)"
+  note: "Results and AR are in INR million; presentations, rating and screener are in INR Crore. 10 million = 1 Crore. No stage converts silently; every figure carries its source unit."
+listed_date: "2023-09-18 (IPO; RHP dated 30-Aug-2023). Run date is about 3 years 2 months after listing; RECENTLY-LISTED PRIORITY treated as applying and the RHP is present."
+corporate_action_note: "Screener shows face value Rs 2. NSE filings list a stock split approved 15-May-2026 with record date fixed 17-Jul-2026. Per-share figures before and after the split are on different bases; every stage states the basis of any per-share number."
+input_gaps:
+  - "collector warning (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend. REPAIRED at /step1: the NSE XBRL shareholding pattern for 30-Sep-2026 was fetched and converted mechanically to inputs/shareholding/SHP_30Sep2026_NSE_XBRL.txt (percentages are fractions of 1). One quarter only; no pledge trend series."
+  - "collector warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, KIMS:Profit & Loss, KIMS:Quarters, KIMS:Balance Sheet, KIMS:Cash Flow, KIMS:Customization, YATHARTH:Profit & Loss, YATHARTH:Quarters, YATHARTH:Balance Sheet, YATHARTH:Cash Flow, YATHARTH:Customization, MEDANTA:Profit & Loss, MEDANTA:Quarters, MEDANTA:Balance Sheet, MEDANTA:Cash Flow, MEDANTA:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again. STATUS: the four Data_Sheet CSVs are populated with figures (checked for content) and are the only screening source."
+  - "collector warning (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again. REPAIRED at /step1: three results filings fetched from NSE archives (FY26 audited, Q1 FY27, Q2 FY27)."
+  - "collector warning (verbatim): no rating PDF yet: add later the same way. REPAIRED at /step1: ICRA rationale dated 10-Mar-2026 for JLHL fetched from icra.in, plus the ICRA rationale for the material subsidiary Jupiter Hospital Projects Private Limited (same date)."
+  - "research: EMPTY. No broker notes. No effect on anchored evidence."
+  - "other: EMPTY."
+  - "prospectus: PRESENT (RHP 30-Aug-2023, 444 pages, from the company website). The final Prospectus dated 11-Sep-2023 is not in the corpus; the RHP carries the same restated financials and group map without the final price."
+  - "announcements: the collector fetched only the last ~5 weeks from BSE. /step1 added nine material filings from NSE archives for the last 12 months (NCLT amalgamation order, Dombivli commencement, MMRDA BKC tender acceptance, Reg 31(4) disclosure, director and CFO resignations, secretarial compliance report, Reg 30(5), credit rating intimations). The set is a selection, not the complete 12-month record."
+  - "inputs/announcements/20260518-Secretarial_Compliance_Report_FY26.pdf is a scan: 1 of 8 pages carries text. inputs/announcements/20261025-f2c656d1-*.pdf (newspaper publication of Q2 results) is a scan: 1 of 3 pages carries text. No tesseract on this machine, so tools/ocr_repair.py cannot run. Both are low-priority documents; neither is anchored evidence for any figure."
+  - "annual-report: two years held (FY26, 237 pages, primary; FY25, 106 pages, backward baseline). The contract is 0-1; FY26 is the document stages read first."
+  - "concalls: four transcripts held (Q3 FY26, Q4 FY26, Q1 FY27, Q2 FY27). Stage 5 reads the three most recent, oldest first."
+  - "EMPTY-FOLDER CONFIRMATION: suppressed under the /step1 AUTONOMY CONTRACT. Standing answer taken: proceed with the gaps. Empty folders at run start: research, other."
+  - "Verifier A shadow: .claude/shadow.yaml reads 'armed'. Ten /step1 sessions ran in parallel on 2026-11-12; the shadow was claimed by the runs/kusumgar-2026-11-12 session. This run did not flip the switch and did not run the shadow."
+  - "pre-extracted text: every inputs/ PDF has a page-marked .txt beside it (tools/extract_pdfs.py). Stages and verifiers read the .txt; '[page N]' markers carry the PDF page number."
+inventory:
+  prospectus: {count: 1, status: PRESENT, files: [inputs/prospectus/Red_Herring_Prospectus_30Aug2023.pdf]}
+  annual-report: {count: 2, status: PRESENT, files: [inputs/annual-report/Annual_Report_2026.pdf, inputs/annual-report/Annual_Report_2025.pdf]}
+  results:
+    count: 3
+    status: PRESENT
+    files:
+      - inputs/results/FY27-Q2_Results_BM_Outcome_23Oct2026.pdf
+      - inputs/results/FY27-Q1_Results_BM_Outcome_31Jul2026.pdf
+      - inputs/results/FY26_Audited_Results_BM_Outcome_15May2026.pdf
+  rating:
+    count: 2
+    status: PRESENT
+    files:
+      - inputs/rating/ICRA_Rationale_JLHL_10Mar2026.pdf            # primary
+      - inputs/rating/ICRA_Rationale_Subsidiary_JHPPL_10Mar2026.pdf
+  concalls:
+    count: 4
+    status: PRESENT
+    quarter_map:
+      inputs/concalls/Concall_Feb_2026_Transcript.pdf: "Q3 & 9M FY26"
+      inputs/concalls/Concall_May_2026_Transcript.pdf: "Q4 & FY26"
+      inputs/concalls/Concall_Aug_2026_Transcript.pdf: "Q1 FY27"
+      inputs/concalls/Concall_Oct_2026_Transcript.pdf: "Q2 FY27"
+  peer-concalls: {count: 12, status: PRESENT, coverage: {KIMS: 4, YATHARTH: 4, MEDANTA: 4}}
+  announcements: {count: 17, status: PRESENT}
+  shareholding: {count: 1, status: PRESENT, files: [inputs/shareholding/SHP_30Sep2026_NSE_XBRL.txt]}
+  research: {count: 0, status: ABSENT}
+  screening:
+    count: 4
+    status: PRESENT (Data_Sheet only)
+    files: [inputs/screening/screener-Data_Sheet.csv, inputs/screening/KIMS-Data_Sheet.csv, inputs/screening/YATHARTH-Data_Sheet.csv, inputs/screening/MEDANTA-Data_Sheet.csv]
+  presentation:
+    count: 3
+    status: PRESENT
+    files:
+      - inputs/presentation/Investor_Presentation_Q2FY27_23Oct2026.pdf
+      - inputs/presentation/Investor_Presentation_Q1FY27_31Jul2026.pdf
+      - inputs/presentation/Investor_Presentation_Q4FY26_15May2026.pdf
+  other: {count: 0, status: ABSENT}
+pdf_readability: {total_pdfs: 44, unreadable: 0, scanned_low_text: 2, pre_extracted_text: "beside each PDF, .txt"}
+manifest_checks: {cmp: 287.0, market_cap_cr: 9391.0, cmp_zero_halt: false}
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/FY27-Q2_Results_BM_Outcome_23Oct2026.pdf", mate_expected: "Q2 FY27 concall transcript", status: PASS, missing_doc: "", mate: "inputs/concalls/Concall_Oct_2026_Transcript.pdf"}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/ICRA_Rationale_JLHL_10Mar2026.pdf", mate_expected: "full rationale", status: PASS, missing_doc: "", mate: "the document is the full 9-page rationale"}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none identified at stage 0", mate_expected: "order text", status: PASS, missing_doc: "", mate: "no SEBI order referenced in the filing subjects read at stage 0; stage 8 reports any it finds"}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/FY26_Audited_Results_BM_Outcome_15May2026.pdf", mate_expected: "FY26 annual report", status: PASS, missing_doc: "", mate: "inputs/annual-report/Annual_Report_2026.pdf"}
+freshness_verdict: "FRESHNESS PAIRS OK"
+corpus_manifest: "see outputs/blocks/B00-intake.yaml (stage-00-intake-check rows, verified by the orchestrator)"
+flags: []
+analyst_note: ""

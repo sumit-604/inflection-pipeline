@@ -1,0 +1,78 @@
+stage: B03-ardeep
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "annual-report ABSENT: no annual report exists (listed 2026-07-15). The prospectus (dated 2026-07-10) stands in; restated financials cover FY2024-FY2026 only."
+  - "FY2025-26 standalone audited statements are a scanned PDF with no text layer and no OCR tool; not consumed. The statutory CARO report is not in the corpus."
+  - "concalls: one transcript only (Q1 FY27). The Q2 FY27 call transcript was not published at collection."
+  - "shareholding: only a screener page print of the Sep 2026 pattern (SECONDARY)."
+  - "screening: only Data Sheet CSVs are populated."
+flags:
+  - {type: FLAG-CASH, reason: "FY26 CFO 282.58 vs EBITDA 1,878.50 (15.0%) and vs PAT 982.00 (28.8%) (Prospectus p.283, p.346); CFO after interest paid 40.27 and 320.36 of FY26 CFO is a release of loans and deposits (derived; p.283, p.303); 3-year FCF -1,801.21 (derived); receivables 561.10 to 2,332.79 (p.279); H1 FY27 CFO 248.85 vs H1 FY26 393.77 on revenue +90.7% (Q2FY27 results p.12). INR million."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "100% offer for sale: promoters sold 15,521,698 shares for 6,500 INR mn (Prospectus p.118, p.392); ECFPL bought from the same promoters for 1,118.53 (p.234-235); promoter holding 89.79% pre-offer falls to about 75.0% post-offer (derived, p.103). No pledge shown in the shareholding table (p.103). Full promoter verdict comes from B08."}
+phase_verdicts: {p1: "YELLOW", p2: "YELLOW", p3: "RED", p4: "YELLOW", p5: "YELLOW", p6: "YELLOW", p7_best_fit: "GARP - WATCHLIST (Turnaround - WATCHLIST); gate is proof of cash conversion"}
+overall_quality: 5.0
+quality_components: {governance: 5, accounting: 5, balance_sheet: 6, earnings: 4}
+kill_switch_notes:
+  - "P1: A human reviewer would not have reason to stop: opinion unmodified, no going-concern or KAM language (Prospectus p.272-278). Open items: FY25 CARO cash-credit use 657.27 (p.32, p.297) and audit-trail history (p.275-276)."
+  - "P2: A reviewer would not stop on notes alone; accounting quality 5/10 stands. Reason to query: ECL allowance down while receivables rose 4.2x (p.302, p.325)."
+  - "P3: A reviewer would have reason to pause and ask for post-year-end receivable collections: FY26 CFO is 15.0% of EBITDA and 3-year free cash flow is negative 1,801.21 (derived, p.283). Pipeline continues."
+  - "P4: A reviewer would have reason to query management: MD&A says the company hedges a significant portion of FX exposure (p.345) while forwards cover 8.6% of foreign-currency receivables (derived, p.344, p.324)."
+  - "P5: A reviewer would not stop; three independents appointed 2025, attendance not in corpus, 100% promoter sell-down via OFS is a flag for B08."
+  - "P6: Chairman letter NOT IN CORPUS. Three quiet-abandonment items found, one material (hedging)."
+triple_pass_verification:
+  verified: 12
+  discrepancies:
+    - {finding_rank: 4, triple_pass_value: "No customer above 10% in FY26 (Note 45(c): 0.00%)", ar_value: "Customer 1 FY26 revenue 751.27 = 11.13% of contract revenue 6,748.14 (Risk Factor 2) and 10.86% of revenue from operations 6,920.03 (derived)", note_ref: "Prospectus p.28 (Risk Factor 2), p.195 (top six table), Note 45(c) p.321"}
+    - {finding_rank: 8, triple_pass_value: "ECFPL valuer not named (Note 51)", ar_value: "Valuer named in History section: Vivro Financial Services Private Limited, report dated 2024-09-15, 20,300 INR per share x 55,100 shares = 1,118.53 INR mn", note_ref: "Prospectus p.234-235 (History and Corporate Matters); Note 51 p.330"}
+  not_reopened: [15]
+missing_risks:
+  - {risk: "FX hedge cover on foreign-currency receivables is 8.6%, not 'significant portion'", evidence: "Forwards 142.97 vs foreign-currency receivables 1,671.82 INR mn (Prospectus p.344); nil forwards at Mar 2025 vs 307.44 receivables; MD&A claim p.345; Risk Factor 53 p.62-63 is generic"}
+  - {risk: "ECFPL purchase from promoters (1,118.53 at 10.1x net assets) is absent from the related-party risk factor", evidence: "Risk Factor 29 p.49-50 lists loans, rent, machinery, yarn; the acquisition is in p.234-235 and Note 51 p.330"}
+  - {risk: "CRISIL non-cooperation action and rating-mandate dispute not disclosed in the credit-rating risk factor", evidence: "Risk Factor 27 p.47-48 lists CARE only; CARE release (2026-04-02) p.3 notes CRISIL non-cooperation dated 2026-01-21; company letter of 2026-10-23 disowns the CRISIL mandate; CRISIL rationale 2026-10-22 p.1"}
+  - {risk: "Quarter-end loading and cut-off: 1,150.89 of FY26 revenue (CFF bulk 639.57 plus service contract 511.32) booked in Q4; CARE records consolidated turnover 620 INR crore as on 2026-03-28 against 692.0 full-year", evidence: "Prospectus p.41 (Risk Factor 16); CARE release p.1; basis of CARE 'turnover' not stated"}
+  - {risk: "Services revenue routed through the UAE subsidiary, 511.32 of 523.13 in Q4, customer and contract term not disclosed", evidence: "Prospectus p.41, p.320, p.365-368"}
+  - {risk: "CEO holds 2,071,222 of 2,187,782 options (94.7%) at exercise price 1 INR; ESOP concentration not in the key-person risk factor", evidence: "Prospectus p.99-100 (ESOP table); Risk Factor 28 p.48"}
+  - {risk: "FY25 covenant breach was waived but covenant ratio headroom is not disclosed; 842.65 repayable on demand if covenants fail", evidence: "Prospectus p.43 (Risk Factor 20), p.376, Note 23 p.307"}
+guidance_table:
+  - {claim: "Remaining balance of the 2,371.96 order to be executed in FY27 (76.39% unexecuted)", number: "about 1,812 INR mn (derived)", timeframe: "FY27", credibility: "MEDIUM - H1 FY27 revenue 4,981.90 (+90.7%) is consistent, split by order not disclosed; deferral already happened once (Prospectus p.340, p.367; Q2FY27 results p.10)"}
+  - {claim: "Revenue above 2,000 INR crore by FY30 with no major capex for 4 to 5 years", number: "2,000 INR crore", timeframe: "FY30", credibility: "NOT FOUND in the prospectus; sourced only to the Step 1 brief (external video). H1 FY27 consolidated capex 441.24 INR mn (Q2FY27 results p.12). Not assessed."}
+  - {claim: "CARE expected PBILDT margin 20-22% in FY26", number: "20-22%", timeframe: "FY26", credibility: "BEAT on the company definition: EBITDA margin 27.15% (Prospectus p.346); margin partly stock-supported (finished goods +78.37%, p.47)"}
+  - {claim: "CARE: scale to moderate in FY26 from US tariffs and deferred special projects", number: "revenue 781.89 INR crore FY25", timeframe: "FY26", credibility: "HIGH - FY26 revenue 692.00 INR crore, -11.17% (Prospectus p.366; CARE p.1)"}
+  - {claim: "New products and upgrades will make a meaningful contribution", number: "NOT FOUND", timeframe: "future", credibility: "LOW - no new product type launched in FY26 or FY24; FY25 CFF was a single order (Prospectus p.342, p.343)"}
+  - {claim: "Company hedges a significant portion of net FX exposure", number: "forwards 142.97 vs receivables 1,671.82", timeframe: "ongoing", credibility: "LOW - 8.6% cover at Mar 2026, nil at Mar 2025 (Prospectus p.344, p.345)"}
+monitorables:
+  - {metric: "Trade receivable days (annualised, consolidated)", threshold: "below 90 days at Dec 2026 and Mar 2027 (Mar 2026: 123 per company, p.41; Sep 2026: 80.7 derived)", where: "Quarterly consolidated balance sheet and results (BSE/NSE filing); Q3 FY27 results", why: "Central cash-conversion fact; 77.3% of the FY26 rise was foreign-currency receivables"}
+  - {metric: "Operating cash flow / EBITDA, half-year and full year", threshold: "at or above 50% for FY27 (FY26: 15.0%; H1 FY27 CFO 248.85 vs H1 FY26 393.77)", where: "Half-year cash flow statement; FY27 audited annual report (first AR)", why: "Earnings must turn to cash; FY26 CFO also benefited from 320.36 of loan and deposit release"}
+  - {metric: "Foreign-currency receivables and forward cover", threshold: "forward cover above 50% of foreign-currency receivables; FC receivables below 1,000 INR mn", where: "Note 48(a)(ii) in the FY27 annual report; Reg 33 notes if disclosed", why: "10% USD move = 146.46 INR mn of PBT at Mar 2026; implied 123.0 per USD on the receivable is unexplained"}
+  - {metric: "Current and non-current borrowings", threshold: "total borrowings not above 2,556.63 INR mn (Sep 2026) while revenue run-rate holds; current ratio above 1.33", where: "Quarterly consolidated balance sheet", why: "Working capital loans rose 1,031.60 to 1,697.68 by 31 May 2026; FY25 covenant breach at current ratio 1.33"}
+  - {metric: "Execution of the 2,371.96 INR mn A&D Solutions order", threshold: "cumulative revenue from the order reaches at least 80% by Mar 2027", where: "Q3/Q4 FY27 earnings call and presentation; order execution commentary", why: "76.39% was unexecuted at Mar 2026; first deferral already cut FY26 revenue"}
+  - {metric: "Bank guarantee outstanding", threshold: "stay at or below 1,038.77 INR mn; any invocation is a trigger", where: "Financial indebtedness disclosures; FY27 Note 40", why: "20.7% of net worth; beneficiary and tenor NOT FOUND"}
+  - {metric: "Largest customer share and Note 45(c) list", threshold: "no single customer above 25% of revenue", where: "FY27 annual report Note 45(c); Risk Factor 2 refresh", why: "Two FY25 orders were 52.9% of FY25 revenue; FY26 customer 1 is 10.86%"}
+  - {metric: "Inventory days and finished goods", threshold: "inventories below 2,000 INR mn at Mar 2027 (Sep 2026: 2,688.41)", where: "Quarterly balance sheet", why: "Finished goods +78.37% in FY26 and +38.0% in H1 FY27 on strong sales; margin support from stock"}
+  - {metric: "ECL allowance against overdue balances", threshold: "allowance not below 62.45 INR mn while overdue above 6 months and under 1 year stays under 100", where: "Note 15 and Note 48(b) in FY27 AR", why: "Cover fell 10.9% to 2.6%; 648.08 sat in the next ageing bucket"}
+  - {metric: "Rating status", threshold: "CARE A Stable held; CRISIL INC status resolved or withdrawn", where: "CARE annual review (due about Apr 2027); CRISIL press release; BSE announcements", why: "CRISIL BB-/INC action on 2026-10-22; company disowns the mandate; CARE negative trigger is gearing above 1x"}
+  - {metric: "Certoplast JV definitive agreement", threshold: "capex and funding terms disclosed; company stake 50.1%", where: "BSE Regulation 30 filing following the 2026-11-05 term sheet", why: "New capex against the 'no major capex' IPO message; JV funding could add borrowings"}
+ar_new_downstream_entities:
+  - {name: "Decathlon Sports India Private Limited (via contracted fabricators)", where_in_ar: "Prospectus p.28 (Risk Factor 2 note); p.195 (top six table, 699.77 INR mn FY26)", entity_type: "named end customer / platform"}
+  - {name: "Certoplast Holding GmbH", where_in_ar: "Q2 FY27 results Annexure B p.14 (non-binding term sheet, JV 50.1:49.9 for tapes)", entity_type: "prospective JV partner"}
+  - {name: "Toray Kusumgar Advanced Textile Private Limited (Japanese conglomerate partner; Level 3 holding 154.19 INR mn)", where_in_ar: "Prospectus p.242 (director's other boards); Note 46 p.323; partnership table p.196", entity_type: "related-party JV / technical partner"}
+  - {name: "Kusumgar Middle East FZ LLC", where_in_ar: "Prospectus p.365-368 (cost of services); Note 43(h) p.319", entity_type: "UAE subsidiary / intra-group service counterparty"}
+  - {name: "Specialty Fabrics Private Limited and Paraborne Systems LLP", where_in_ar: "Prospectus p.42 (Risk Factor 18, non-compete); p.62 (machinery bought 25.70 INR mn)", entity_type: "promoter-group competing or supplying entities"}
+  - {name: "Kusumgar Aerospace Private Limited and Kusumgar Advanced Materials Private Limited (formerly Kusumgar Composites)", where_in_ar: "Q2 FY27 results p.13 (notes 7), p.8-9 (subsidiary list)", entity_type: "new wholly owned subsidiaries"}
+  - {name: "Collage Design Private Limited", where_in_ar: "Prospectus p.29-30 (NCLT petition, 22.30 INR mn unpaid invoices)", entity_type: "service provider litigant"}
+  - {name: "Vivro Financial Services Private Limited", where_in_ar: "Prospectus p.235 (ECFPL valuation report 2024-09-15)", entity_type: "valuer for the related-party acquisition"}
+  - {name: "WhiteOak-linked buyers (PAM Family Trust, Shradha Family Trust, Elcid Investments Limited, Hanuman Freight and Carriers Private Limited, Nayan Kantilal Gudka, Ajaykiran Kantilal Gudka); Valour Capital Trust I; Motherson Lease Solution Limited; Motilal Oswal Finvest Limited; Edelweiss Discovery Fund Series I; Spark Midas Investment Fund I", where_in_ar: "Prospectus p.238-239 (share purchase agreements); p.103-104 (1% holders)", entity_type: "pre-IPO investors / secondary buyers of promoter shares"}
+strengths_top3:
+  - "Low leverage and no restatement: net debt to EBITDA 0.93, debt to equity 0.44, restatement adjustments nil in all three years (Prospectus p.346, p.335, p.296)."
+  - "Revenue mix has moved away from two single-order dependencies: Industrial/Automotive +46.37% and Outdoor/Lifestyle +120.24% in FY26; A&D share fell from 76.87% to 54.64% (derived, p.340); H1 FY27 revenue +90.7% and PBT 1,106.69 vs 222.98 (Q2FY27 results p.10)."
+  - "Capacity built ahead of demand: installed final-output capacity 46.86 to 127.80 million metres (p.204), from 2,543.67 INR mn of three-year capex (derived, p.283); debt to equity 0.44 after the 1,244.94 CCPS raise (p.283, p.335)."
+red_flags_top3:
+  - "Cash conversion: receivables 561.10 to 2,332.79 on revenue down 11.2%; 123 debtor days; FY26 CFO 282.58 = 15.0% of EBITDA; 3-year free cash flow -1,801.21 (Prospectus p.279, p.283, p.41)."
+  - "Foreign-currency receivables 1,671.82 (226 days, derived) at an implied 123.0 INR per USD against 92.8 and 95.3 elsewhere in the same note; only 8.6% hedged; ECL allowance cut from 68.67 to 62.45 (p.344, p.324, p.302)."
+  - "Promoter-linked flows and weak independent corroboration: 100% OFS of 6,500 INR mn, ECFPL bought from promoters at 10.1x net assets, CRISIL 'issuer not cooperating' BB- action and bank guarantee of 1,038.77 with no beneficiary (p.118, p.235, CRISIL p.1, p.378)."
+best_fit_strategy: "GARP - WATCHLIST (Turnaround - WATCHLIST); no strategy passes outright until receivables convert to cash"
+one_line_verdict: "H1 FY27 earnings rebound is real on paper (revenue +90.7%, PBT 5x) but the FY26 balance sheet, 15.0% cash conversion, 8.6% FX hedge cover and 100% promoter sell-down mean the thesis rests on unproved collections; WATCHLIST until receivable days fall below 90 and CFO/EBITDA clears 50%."
+analyst_note: "Reasoning a later stage cannot rebuild. (1) Capacity: 94.33/42.32/49.50% is final-output factories only (KPI 12, p.124; table p.204); whole-company 87.02/56.36/52.24% is MD&A p.343. MD&A p.343 prints FY24 final output 48.86 but p.204 prints 46.86. (2) Customer 1 FY26 751.27 is 10.86% of revenue from operations, yet Note 45(c) shows 0.00%. (3) ECFPL valuer is named on p.235, which closes stage 2 open item. (4) FY26 CFO includes 320.36 loan and deposit release; CFO after interest paid is 40.27 (derived). (5) CARE: consolidated turnover 620 INR crore as on 2026-03-28 against 692.0 full year; standalone 9M FY26 331.00 implies Q4 about 344.7 (51% of year); basis unstated, treat as a cut-off question, not a finding. (6) Government-owned entities 1,018.16 (15.09%) is the nearest figure for the Indian government customer; its separate share NOT FOUND."

@@ -8,3 +8,5 @@
 - Empty-folder confirmation suppressed per /step1 autonomy contract; standing answer "proceed with the gaps".
 - Subagents are dispatched by the harness as async tasks; each is completion-checked (report file, block file) before any later stage reads it.
 - Verifier A shadow: ten /step1 sessions run in parallel today on an armed switch. This session claimed the single shadow run in the shared notes folder (shadow-claim.txt) before dispatch.
+- Cross-block figure to settle (FLAG-DISAGREEMENT candidate): offer-for-sale share count. B01 carries 15,521,350 (Q2 FY27 results p.7); B03 carries 15,521,698 (Prospectus p.392, p.118). Different documents; left to Verifier A and stage 10.
+- B03 found two discrepancies against B02 (customer above 10% in FY26: 11.13% at Prospectus p.28 against Note 45(c) 0.00%; ECFPL valuer is named at p.235). The B03 reading carries forward.

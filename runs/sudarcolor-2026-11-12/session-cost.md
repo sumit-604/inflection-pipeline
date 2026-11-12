@@ -11,4 +11,5 @@ cells read n/a, never an estimate.
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 136,178 | 302s | 1 |
 | 7 | stage-07-emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 107,305 | 203s | 1 |
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 136,185 | 241s | 2 |
-| 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | PENDINGP3 | PENDINGP3 | 3 |
+| 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 68,940 | 114s | 3 |
+| 3 | stage-03-ardeep | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | PENDING3 | PENDING3 | 1 |

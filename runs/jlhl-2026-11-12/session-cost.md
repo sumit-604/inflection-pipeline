@@ -16,3 +16,4 @@ split is not exposed, so those columns read n/a (never an estimate).
 | 5 | concall analysis (3 transcripts) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 137580 | 6m29s | 1 |
 | 8 | promoter background check (web) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 156538 | 8m41s | 1 |
 | 4 | business model decoder | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 205327 | 11m49s | 1 |
+| 7 | emerging moat scan | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 215954 | 8m52s | 1 |

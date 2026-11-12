@@ -17,3 +17,4 @@ input, cache or output split. Split columns read n/a. No figure is estimated.
 | 8 | stage-08-promoter | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 187,845 | 7m51s | 1 |
 | 7 | stage-07-emoat | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 107,937 | 4m40s | 1 |
 | 9 | stage-09-tam | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 136,048 | 6m19s | 1 |
+| 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 262,500 | 9m36s | 1 |

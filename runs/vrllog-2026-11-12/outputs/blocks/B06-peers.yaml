@@ -1,0 +1,67 @@
+stage: B06-peers
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Delhivery Q1 FY27 and Q2 FY27 .txt are one word per line with no usable page markers; read by keyword windows (PTL, fuel, diesel, yield, minimum wage, labour code, October, unorganised, claims), not end to end; page anchors NOT FOUND for these two"
+  - "Delhivery PTL segment EBITDA margin for Q1 FY27 and Q2 FY27 NOT FOUND in the windows read; Q3 FY26 PTL about 11% is the latest margin anchored"
+  - "No peer gives an October 2026 volume number, an organised-share percentage, a claim ratio, an annual wage increment month, vehicle price inflation or the 15-year vehicle life limit: NOT FOUND in peer calls"
+  - "Delhivery PTL yield unit and QoQ or YoY basis for the 37 paisa rise not stated in the window read; 37/12 about 3% is DERIVED and basis-uncertain"
+flags:
+  - {type: FLAG-REALISATION-ATTRIBUTION, reason: "VRL 9% realisation rise is about twice the 4-4.5% implied by its own Rs 2 = 1% rule on a Rs 8-9 pump rise (DERIVED); peers report 1.5-3% (TCIEXP), 1-3% (TCI) and mostly non-fuel PTL yield gain (Delhivery)"}
+  - {type: FLAG-MARGIN-BASIS, reason: "VRL owns its fleet; TCIEXP and TCI hire vehicles; EBITDA margins are not like for like, so the gap to peers (23.3% vs 12.7%) overstates operating superiority by an unmeasured amount"}
+  - {type: FLAG-DFC-FLEET-OWNERS, reason: "TCI Q2 FY27 p.15: market impact of the Western DFC could be substantial for fleet owners on certain routes; VRL is a fleet owner"}
+  - {type: FLAG-WAGE-NO-CUSHION, reason: "Delhivery Q1 FY27: no contractual pass-through for minimum wages; TCIEXP labour cost +100 bp of total cost (Q4 FY26 p.10)"}
+  - {type: FLAG-PRECEDENT-FUEL-MARGIN, reason: "TCIEXP Q4 FY26 p.11-12: 2021-22 margin jumped about 300 bp on diesel repricing arbitrage; reversal timing not given"}
+peers_provided: 12
+verified:
+  - {claim: "Peers pass diesel on to customers with a lag of days to one month (Claim 2 Part A)", peers: ["TCIEXP", "DELHIVERY", "TCI"], anchor_count: 6}
+  - {claim: "No LTL or PTL peer earns a margin near VRL's 21-23%; VRL is far above the set (Claim 4, level only)", peers: ["TCIEXP", "DELHIVERY", "TCI"], anchor_count: 5}
+  - {claim: "Wage cost inflation is present across peers (Claim 8, existence only)", peers: ["TCIEXP", "DELHIVERY", "TCI"], anchor_count: 4}
+  - {claim: "Industry is moving towards organised operators (Claim 7, direction only)", peers: ["TCIEXP", "DELHIVERY", "TCI"], anchor_count: 4}
+partially_verified:
+  - {claim: "Q1 volume: VRL tonnage +9.5% H1 FY27 is above TCIEXP (+7.5%) and TCI freight, below Delhivery PTL (+14-18%); October +20% not numbered by any peer", peers: ["TCIEXP", "DELHIVERY", "TCI"]}
+  - {claim: "Q2 fuel pass-through: symmetric reversal rule supported by TCI contract formulas only", peers: ["TCI"]}
+  - {claim: "Q3 pricing: no lasting surface volume loss after hikes (TCIEXP surface +9%, TCI no denial); one niche (TCIEXP C2C) fell", peers: ["TCIEXP", "TCI"]}
+  - {claim: "Q5 property: owned sorting-centre direction supported by TCIEXP programme; no payback figure", peers: ["TCIEXP"]}
+  - {claim: "Q6 claim ratio: Delhivery says its claims are a fraction of the industry's; no figure", peers: ["DELHIVERY"]}
+  - {claim: "Q9 DFC and rail: TCI sees some shift and risk to fleet owners; Delhivery sees no incentive; TCIEXP sees a niche", peers: ["TCI", "DELHIVERY", "TCIEXP"]}
+contradicted:                  # priority items for synthesis
+  - {claim: "Sub-claim: the 9% realisation rise is mostly fuel pass-through (Claim 2 Part C)", contradicting_peer: "DELHIVERY", quote_anchor: "DELHIVERY Q1 FY27, Sahil Barua: 'a 37 paisa improvement in yield, of which really only about 6 paisa is coming from the fuel inflation. Most of it is just organic improvements in yield.' DELHIVERY Q2 FY27, Sahil Barua: 'less than 30% of the increase in yield... in PTL has come as a consequence of underlying cost inflation linked price revision.' Adjacent segment (PTL, not LTL); also TCIEXP Q2 FY27 p.8 net price 1.5% and TCI Q1 FY27 p.10 fuel effect 1-3%"}
+unverifiable:
+  - {claim: "October FY27 tonnage +20% (Claim 1 part)", peers_checked: ["TCIEXP", "DELHIVERY", "TCI"]}
+  - {claim: "VRL rates are a premium to unorganised operators and the gap narrowed or not after hikes (Claim 3 part)", peers_checked: ["TCIEXP", "DELHIVERY", "TCI"]}
+  - {claim: "21-22% EBITDA margin is sustainable (Claim 4 part)", peers_checked: ["TCIEXP", "DELHIVERY", "TCI"]}
+  - {claim: "Own fleet is an edge at peak demand; 15-year life limit and vehicle price inflation (Claim 5 part)", peers_checked: ["TCIEXP", "TCI"]}
+  - {claim: "Annual wage increment timing and Karnataka minimum wage (Claim 8 part)", peers_checked: ["TCIEXP", "DELHIVERY", "TCI"]}
+  - {claim: "70% unorganised and 30% organised industry split (Claim 7 part)", peers_checked: ["TCIEXP", "DELHIVERY", "TCI"]}
+peer_coverage_map:
+  - {peer: "TCIEXP", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Outsourced fleet flexibility; utilisation 83%; names Delhivery; margin path"}
+  - {peer: "TCIEXP", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "85% fuel pass-through; 2021-22 300 bp diesel arbitrage; labour +100 bp"}
+  - {peer: "TCIEXP", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Tonnage +7.5%; 90% pass-through; net price about 3%"}
+  - {peer: "TCIEXP", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Margin 12.7%; net price 1.5%; owned centres Rs 100 Cr a year; October great"}
+  - {peer: "DELHIVERY", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "PTL margin about 11%; only two large PTL players, VRL not named"}
+  - {peer: "DELHIVERY", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "PTL diesel indexation; PTL +20%; no rail incentive; wage cost"}
+  - {peer: "DELHIVERY", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "PTL +18%; 6 of 37 paisa from fuel; minimum wage no clause (keyword read)"}
+  - {peer: "DELHIVERY", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "PTL +14.2%; 96-97% indexed; under 30% cost-linked; unorganised PTL; claims (keyword read)"}
+  - {peer: "TCI", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Express players entering LTL; discounting does not work"}
+  - {peer: "TCI", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Formula pass-through both ways; LTL partial pass-through; freight EBIT -14%"}
+  - {peer: "TCI", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Diesel 6-7% means 1-3% on rates; no rail shift; LTL gross margin about 20%"}
+  - {peer: "TCI", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Names VRL; DFC risk to fleet owners; two-thirds of freight growth is price"}
+industry_cross_read:
+  demand: "Peers agree on growth but not pace: TCIEXP surface +9%, Delhivery PTL +14% to +18%, TCI freight +11.5-12% mostly price; October called strong by TCIEXP and Delhivery with no number, TCI reports softer pre-festival stocking"
+  pricing_inputs: "All three pass diesel on with a lag of days to a month; realised price moves are 1.5-3% (TCIEXP, TCI) and mostly non-fuel at Delhivery PTL; wage costs rising everywhere; VRL's 9% rise is outside the peer range"
+  capex_cycle: "Broad but uneven expansion, not a capacity race: TCIEXP Rs 100 Cr a year on owned centres, TCI Rs 500-600 Cr FY27 on ships, trucks and warehouses, Delhivery capital intensity under 5% of revenue; no peer cuts; VRL is not a lone expander but is the only fleet-plus-property LTL expander"
+peer_mentions_of_company:
+  - "TCI Q2 FY27 p.14 (Vineet Agarwal): 'we don't compete with delivery, and I think VRL perhaps is competing a little bit more on the delivery side as well as with the express business. I think they are also taking away some of that little bit of the express side because of the high, because perhaps a little lower pricing that they are offering other than the express companies, which I have been seeing for some time.'"
+risks_peers_raise:
+  - "Partial and lagged LTL fuel pass-through (TCI Q4 FY26 p.6; Delhivery Q1 FY27)"
+  - "Minimum wage rise with no contractual cushion (Delhivery Q1 FY27)"
+  - "Western DFC and rail shift hurting fleet owners (TCI Q2 FY27 p.15)"
+  - "Labour availability and election-linked disruption (TCIEXP Q4 FY26 p.3; TCI Q4 FY26 p.7)"
+  - "Express operators moving into LTL on price (TCI Q3 FY26 p.12)"
+  - "Demand softness from inflation and auto pullback (TCI Q4 FY26 p.2; TCI Q2 FY27 p.3)"
+  - "Peak-load service strain managed by demand control (Delhivery Q2 FY27)"
+net_narrative_effect: "complicates"
+analyst_note: "The headline test is the 9% realisation rise. On VRL's own Rs 2 = 1% rule a Rs 8-9 pump rise explains 4-4.5% (DERIVED), so about half of the rise is not fuel, and peers report smaller realised hikes. VRL margin far above peers is verified as a level but is not like for like because VRL owns its fleet and hired-fleet peers do not. TCIEXP's 2021-22 note (300 bp on diesel repricing) is the one peer precedent for a fuel-linked margin jump. Delhivery Q1 FY27 and Q2 FY27 were read by keyword windows, not end to end, and have no page anchors. Delhivery PTL margins for FY27 quarters were not found. TCI is the only peer that names VRL, and it says VRL is taking express volume on lower price."

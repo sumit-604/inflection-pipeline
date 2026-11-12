@@ -1,0 +1,45 @@
+stage: B12b
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 32
+caught: 23
+partially_caught: 6
+missed:
+  - {severity: "MINOR", item: "Wheel approval sequence contradicts across calls: May 'we don't need to wait for 300 wheels to get approved' vs Jul 'post the trials, we will be able to comment on bulk production'", anchor: "Jan NJ p15; May NJ p6; Jul NJ p8; Oct NJ p18"}
+  - {severity: "MINOR", item: "Wheel capacity and revenue framing drift: 100,000+ (Jan), 230,000 (May), 140,000 plus 140,000 phases (Oct); Jan says wheel sales are not in RKFL projections; May offers Rs 400-450 Cr with no consolidation basis", anchor: "Jan NJ p6, p8, p19; May NJ p11; Oct LK p18"}
+  - {severity: "MINOR", item: "Q3 FY26 gross margin hit of about 1% from higher rejections, volunteered", anchor: "Jan LK p12"}
+pipeline_flags_not_supported:
+  - "NOT SUPPORTED (B05 4D HIGH, 4B, YAML flags): bill discounting 'outside gross debt' and 'hides'. Oct LK p10 nets bill discounting from the Rs 2,173 Cr gross figure, so it sits inside gross. The netting itself is supported"
+  - "OVERSTATED (B05 2D): whole Rs 173 Cr gap labelled bill discounting; analyst frames the net figure as 'net of cash and bill discounting' (Oct Aditya Kumar Q p10); bill discounting amount NOT FOUND on calls"
+  - "NOT SUPPORTED (B06 Q10, YAML flags): receivable days 68.5 to 83.4 with Rs 173 Cr added back; bills inside gross borrowings imply receivables not derecognised, so the add-back double counts"
+  - "NOT SUPPORTED (B05 2B): Oct 'never guided Rs 8,000 Cr from wheel project' called a fair correction of an analyst misreading; the analyst asked about total revenue and NJ interrupted (Oct p18)"
+  - "OVERSTATED (B05 2C, 4D): wheel volume '40,000 -> 80,000' inconsistency; 80,000 is the total confirmed order, 40,000 the FY27 obligation (Jan NJ p15; Jul NJ p7)"
+  - "OVERSTATED (B05 4D MEDIUM): 36-point gross-to-EBITDA gap as a level flag; B06 Q5 shows the level is peer-normal; the QoQ divergence (Jul p13) is the supported signal"
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur C: dropping row 16 (promise not in any corpus call) and moving row 7 to pending keeps delivery at 47-50%; the unscored ECL headroom remark and the Oct retreat on the FY29 target argue against B, not for D"
+findings:
+  - {id: "B-01", severity: "MAJOR", stage: "B05, B06", issue: "Bill discounting sub-claims not supported: 'outside gross debt', 'hides', Rs 173 Cr all bill discounting, receivable add-back", anchor: "Oct LK p10; Oct Aditya Kumar Q p10"}
+  - {id: "B-02", severity: "MAJOR", stage: "B05", issue: "ECL Rs 42 Cr 'headroom... will help us in future' on a receivable called 'totally receivable' filed as neutral prudence; earnings-quality flag not raised", anchor: "May LK p16"}
+  - {id: "B-03", severity: "MAJOR", stage: "B05", issue: "Cold and aluminium forging utilisation target slip (80-85% -> 75-80% -> >70% Q3 -> >50%; 'full in 8-10 months' -> >50%) not identified; 4A priority 1 confirm signal stale", anchor: "Jan NJ p7; May NJ p7; Jul NJ p13; Oct MG p7"}
+  - {id: "B-04", severity: "MAJOR", stage: "B05", issue: "Oct retreat on Rs 8,000 Cr FY29 target read as analyst error; phantom 'May guidance' not flagged; YAML still carries FY29 target and 22-25% CAGR as live", anchor: "Oct NJ p12, Oct p18-19; May NJ p10"}
+  - {id: "B-05", severity: "MAJOR", stage: "B05", issue: "FY27 order-book revenue bucket cut Rs 2,200 Cr to Rs 1,550 Cr rated explained and low; CFO answer non-responsive; forward-basis input", anchor: "May Ayush Goyal Q / LK p9; Jan NJ p11"}
+  - {id: "B-06", severity: "MINOR", stage: "B05", issue: "Four-call margin timeline evasion absent from 4D table and YAML red_flags; Oct casting dilution remark not tied to bear margin", anchor: "Jan NJ p13-15; May NJ p14; Jul NJ p9, p11; Oct NJ p11, p13"}
+  - {id: "B-07", severity: "MINOR", stage: "B05", issue: "Promise row 16 origin wrong; no Rs 8,000 Cr promise in the Jan call", anchor: "Jan NJ p13; Jul Bharat Shah Q p22"}
+  - {id: "B-08", severity: "MINOR", stage: "B05", issue: "Promise row 7 scored DELIVERED on H1 only; full-year outcome not observable", anchor: "Jul LK p5; Oct LK p4"}
+  - {id: "B-09", severity: "MINOR", stage: "B05", issue: "Mixed anchor convention: many May/Jul/Oct anchors cite printed page, one below PDF page (e.g. May ECL p15 is PDF p16; Oct H1 debt p4 is p5); not a source-fidelity finding", anchor: "May p16, p9, p19; Jul p12, p13; Oct p5, p12, p25"}
+  - {id: "B-10", severity: "MINOR", stage: "B05, B06", issue: "Currency pass-on claim marked needs check but never tested against peers or the Jan FX loss remark", anchor: "Jul NJ p27; Jan LK p12; HAPPYFORGE Aug 2026 Garg p7"}
+  - {id: "B-11", severity: "MINOR", stage: "B06", issue: "Q4 verdict VERIFIED for a claim worded 'without customer recovery' while peers show lagged or partial recovery; RKFL part is divergent", anchor: "BHARATFORG Nov 2026 Dixit p3; HAPPYFORGE Aug 2026 Garg p3"}
+  - {id: "B-12", severity: "MINOR", stage: "B05", issue: "Missed wheel approval-sequence contradiction", anchor: "May NJ p6; Jul NJ p8"}
+  - {id: "B-13", severity: "MINOR", stage: "B05", issue: "Missed wheel capacity drift and Jan exclusion of wheel sales from projections; consolidation at 51% asserted from an analyst figure", anchor: "Jan NJ p6, p8, p19; May NJ p11; Oct p17, LK p18"}
+  - {id: "B-14", severity: "MINOR", stage: "B05", issue: "Missed Q3 FY26 rejection-driven gross margin hit", anchor: "Jan LK p12"}
+  - {id: "B-15", severity: "MINOR", stage: "B05", issue: "Wheel '40,000 -> 80,000' inconsistency overstated", anchor: "Jan NJ p15; Jul NJ p7"}
+  - {id: "B-16", severity: "MINOR", stage: "B05", issue: "36-point gross-to-EBITDA gap overstated as a level flag; peer-normal per B06 Q5", anchor: "Jul p13; B06 Q5"}
+critical_count: 0
+major_count: 5
+minor_count: 11
+material_found: 13
+material_caught: 13
+acceptance_rate: 100
+coverage_basis: "13 material of 32 listed (1 CRITICAL, 12 MAJOR); pipeline had all 13 (8 caught, 5 partially caught; strict count without partials 8 of 13 = 62%); 19 minor: 15 caught, 1 partial, 3 missed. Main company 4 of 4 transcripts read in full; peers 3 read in full (BHARATFORG Nov and Aug 2026, HAPPYFORGE Aug 2026), 9 searched by theme, 4 B06 anchors re-read and correct"

@@ -1,0 +1,18 @@
+stage: B12d
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "Q4 verdict VERIFIED rests on a reworded claim. B05 asks whether peers bear the cost 'without customer recovery'; B06 verifies 'cost borne, recovery lagged or partial, not nil'. Cost-borne has 3 peer anchors (BF Aug-26 p3, Happy Aug-26 p8, MMFL Aug-26 p13); no-recovery is contradicted by Happy and BF. PARTIALLY VERIFIED would fit the claim as written. Not an upgrade from silence; B06 states the distinction in its own text."}
+  - {severity: MINOR, item: "Q9 aerospace: BF Aug-26 lines 280-282 and 469-505 discuss defence approvals (ATAGS, FOPM, 2-3 months to start / 2.5 years to run a plant). Not an aerospace forging approval timeline; UNVERIFIABLE stands. Industry-context only."}
+critical_count: 0
+major_count: 0
+minor_count: 2
+acceptance_rate: 100

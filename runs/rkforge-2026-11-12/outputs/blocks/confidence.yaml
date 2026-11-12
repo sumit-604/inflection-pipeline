@@ -1,0 +1,35 @@
+stage: confidence
+company: RKFORGE
+run_date: 2026-11-12
+phase: 1
+confidence_delta:
+  numerical_acceptance: 98        # B12a: 585 numbers checked; mandatory tier 174 of 174
+  redflag_coverage: 100           # B12b: 13 of 13 MATERIAL flags caught (8 caught, 5 partially caught); strict count without partials 8 of 13 = 62%
+  framework_adherence: 77.1       # B12c phase-1 scope: Gate 0 + Emerging Moat, 37 of 48 rules; valuation half PENDING PHASE 3
+  peer_utilisation: 100           # B12d: 12 of 12 peer transcripts used substantively
+  overall: 77.1                   # min of the applicable components
+  overall_set_by: framework_adherence
+  band: "75-89 normal, note specifics"
+  not_applicable: []
+  pending_phase_3: ["framework_adherence valuation component (B10, B11)"]
+verifier_a_identity_check:
+  critical_rows: 0
+  struck: 0
+  note: "B12a holds 0 CRITICAL and 0 MAJOR rows; nothing to test, nothing struck."
+rework_triggers:
+  verifier_a_confirmed_critical: false
+  acceptance_below_60_on_denominator_4_plus: false
+  rework: false
+remediation_cycles_used: 0
+verifier_counts:
+  A: {critical: 0, major: 0, minor: 12, source_fidelity_rows: 1}
+  B: {critical: 0, major: 5, minor: 11}
+  C: {critical: 0, major: 1, minor: 10}
+  D: {critical: 0, major: 0, minor: 2}
+source_fidelity_open:
+  - "B12a finding 4: 08-promoter.md cites AR26 p.8 for Directors' Report disclosure j (14 June 2025 fact-finding report date, 22,052.43 / 5,022.26 INR lakh). Verifier A places it at AR26 p.15. The figure is used downstream only with the p.15 anchor."
+notes_for_synthesis:
+  - "B12b B-01 (MAJOR): the B05 and B06 reading that bill discounting sits outside gross debt, and the Rs 173 Cr receivable add-back, are NOT SUPPORTED by the transcript (Oct call, CFO p.10). The filed figure is non-recourse receivables sold 39,978.46 INR lakh (AR26 Note 8.7, B02/B03)."
+  - "B12c G07 (MAJOR): Gate 0 EBIT excludes other income; on the as-written formula DB3 does not fire and Block A is 6. AVOID stands on DB6."
+  - "B12c N1 (NOTE): prompt 01 Block D does not define 'latest'. On a TTM reading DB6 may not fire and Gate 0 would be AVERAGE. Operator ruling needed; Sep 2026 net debt on the B01 basis NOT FOUND in verifier inputs."
+  - "B12c N8: prompts/12-verifiers-pipeline.md line 379 holds placeholder text where the business_understanding_narrative key belongs. Framework defect; not edited in this run."

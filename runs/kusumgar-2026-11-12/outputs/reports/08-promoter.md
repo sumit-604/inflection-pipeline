@@ -345,7 +345,7 @@ Skipped or not possible:
 ## ERRATA (stage 8's own, stated in its hand-back; applied by the orchestrator 2026-11-12)
 
 - Section 1D, Section 3B and Section 5A anchors corrected in place as the stage stated (CMD term to 2030-01-31; Dividend Policy at Prospectus p.270, printed p.266; KMP attrition at Prospectus p.48 and Note 43).
-- Section 4C, CRISIL history: the garbled date sentence is superseded. The stage's stated reading, as in the B08 block: B (issuer not cooperating) on 2024-11-28 and 2023-09-20, then BB- on 2026-01-21 and BB- Stable / A4+ on 2026-10-22. The block governs.
+- Section 4C, CRISIL history: the garbled date sentence is superseded. The stage's stated reading, as in the B08 block: B/Stable and A4 (issuer not cooperating) on 2023-09-20, 2024-11-28 and 2026-01-21, then revised to BB- Stable / A4+ (issuer not cooperating) on 2026-10-22 (CRISIL rationale 2026-10-22, p.1 and p.2 rating history). The block governs. CORRECTED 2026-11-12 after Verifier A (B12a MAJOR, source fidelity): the first errata wording, and the Section 4C body sentence, gave BB- on 2026-01-21; the source shows B on that date. Any 'BB- on 2026-01-21' in Section 4C above is wrong and is superseded by this line.
 
 ```yaml
 stage: B08-promoter

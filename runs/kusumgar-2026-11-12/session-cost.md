@@ -17,3 +17,7 @@ metadata. n/a where the harness does not expose the figure; never an estimate.
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 159000 | 236s | 1 |
 | 7 | stage-07-emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 198808 | 401s | 1 |
 | 9 | stage-09-tam | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 172204 | 433s | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 442844 | 763s | 1 |
+| 12a-shadow | verifier-a-shadow | claude-haiku-5-5 | high | n/a | n/a | n/a | n/a | 259439 | 642s | 1 |
+| 12c | verifier-c-framework (Gate 0 + EM scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 161273 | 744s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 41110 | 58s | 1 |

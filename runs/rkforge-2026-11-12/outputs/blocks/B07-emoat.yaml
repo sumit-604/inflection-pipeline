@@ -1,0 +1,49 @@
+stage: B07-emoat
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "peer data not in corpus: global manufacturer counts (A1), competitor revenue per employee and pay (I1), peer wheel producers NOT FOUND"
+  - "headcount, R&D staff, patent filings, ESG ratings and customer ESG requirements NOT FOUND"
+  - "Q2 FY26 call and CRISIL rationale not in corpus; announcements are a hand-fetched selection of 23 filings"
+  - "Rs 2,180 Cr wheel JV project cost is an analyst figure on the Oct call; RKCSL 18,000 t press cost NOT FOUND"
+  - "rating-history cells read from a text layer: AA to AA- sequence is an inference"
+  - "report 07-emoat.md anchor errata: ESOP vesting is AR p.9 (not p.10); peer consolidation text is AR p.35 (not p.36); AOC-1/JV not-started is AR p.17 (not p.18); consolidated KPI/PBT slide is Inv. Pres. slide 7 (not 8); Jan call qualification quotes are MG p.5 and NJ p.10"
+flags:
+  - "RDSO CONTRADICTION: AR p.43 says all forged wheels need RDSO certification; Oct call (NJ p.17) says no RDSO approval needed, Railways inspect. Wheel gate unresolved"
+  - "NON-AUTO SHARE FELL 26.3% FY26 to 22.0% H1 FY27 (Inv. Pres. slide 11, computed): diversification claim not visible in the last four quarters"
+  - "FY27 CAPEX GUIDE Rs 350 Cr to about Rs 550 Cr in one quarter; Rs 160 Cr H2 machining plus Rs 50-55 Cr JV equity pending against 4.64x Ind-Ra net adjusted leverage"
+  - "DECK-FILING MISMATCH: Inv. Pres. slide 10 labels 20 Jan 2026 addition as 3,000 MT press; exchange filing says aluminium forging line"
+em_score: 9.0
+em_classification: "NONE"
+active_categories:
+  - {id: "R1", name: "Regulatory / policy tailwind (forged rail wheels, import substitution)", strength: "Moderate", evidence_type: "mixed: JV capital documented, offtake and production claim", time_to_materialise: "Dec 2026 to 2028"}
+evidence_mix: {documented: 14, claim: 10, inference: 3}
+completionist_recount: "📄 recount performed: 14 documented items across 6 categories (R1 1, B2 3, C2 2, E2 3, F2 4, H3 1); 7 categories with any evidence including R1, below the 12 trigger; best case with all claims upgraded to documented scores 12.0"
+catalysts_12m:
+  - {catalyst: "First 300 rail wheels accepted by Railways; partial production from December 2026", window: "Nov-Dec 2026", evidence_type: "claim", anchor: "Q2 FY27 call, NJ p.17"}
+  - {catalyst: "Net debt at or below Rs 1,700 Cr at Dec 2026 on way to Rs 1,500 Cr net by Mar 2027 (H1 cut was Rs 126 Cr of Rs 500 Cr)", window: "Dec 2026 to Mar 2027", evidence_type: "claim", anchor: "Q2 FY27 call, LK p.4, p.10"}
+  - {catalyst: "Mexico machining significant revenue (Rs 6 Cr in Q1 FY27)", window: "Q3 FY27 (Oct-Dec 2026)", evidence_type: "claim", anchor: "Q1 FY27 call, NJ p.8"}
+  - {catalyst: "Export share above 30% toward 35% in H2 FY27 (Q2 FY27 exports Rs 424.52 Cr)", window: "Q3-Q4 FY27", evidence_type: "claim", anchor: "Q1 FY27 call NJ p.8; Inv. Pres. slide 9"}
+  - {catalyst: "North America light-vehicle casting sample validation (Rs 272 Cr order, 6-9 months)", window: "Q4 FY27 to Q1 FY28", evidence_type: "claim", anchor: "Q2 FY27 call, MG p.8"}
+  - {catalyst: "FY28 revenue and margin guidance after FY27 full-year results", window: "May 2027", evidence_type: "claim", anchor: "Q2 FY27 call, NJ p.8"}
+capex_embedded_growth_pct: 15.9   # Rs 550 Cr FY27 capex x 1.22x FY26 fixed asset turnover = Rs 672 Cr on Rs 4,238 Cr (Inv. Pres. slides 14-15; Oct call NJ p.9). At FY24 turnover 1.82x: 23.6%. Unearned FY26 capacity (+29.3% tonnage): Q2 run-rate at 80% utilisation = +48.0%
+optionality_register:
+  - {optionality: "Rail wheels: 80,000-wheel Railways offtake and import substitution", converting_evidence: "Written Railways acceptance of the first 300 wheels; offtake contract with quantities and price; first invoice", first_appears: "Reg 30 filing, Q3 FY27 call, JV note in half-year results", window: "Dec 2026 to Mar 2027"}
+  - {optionality: "Wheel exports beyond Europe and North America", converting_evidence: "Named customer or signed export order for wheels", first_appears: "Exchange order announcement; Q4 FY27 call", window: "12-24 months"}
+  - {optionality: "Aerospace, defence, semiconductor, robotics forgings", converting_evidence: "First signed order with value; customer approval letter", first_appears: "Order announcement; concall order-book line", window: "24-36 months"}
+  - {optionality: "PV and EV at 10% of revenue by CY28/FY29", converting_evidence: "Disclosed PV revenue line and share; bulk-supply start", first_appears: "Investor deck revenue break-up; AR segment note", window: "24-36 months"}
+  - {optionality: "China+1 structural share gain in North America", converting_evidence: "North America revenue holding after Class 8 normalises; Mexico revenue disclosed; new light-vehicle customer samples approved", first_appears: "Deck export geography slide; concalls", window: "Mexico Q3 FY27; NA light vehicle H2 FY27 to H1 FY28"}
+  - {optionality: "Working capital release 15-20 days (G2)", converting_evidence: "Inventory and receivable days disclosed and below March levels; acceptances plus sold receivables flat or down", first_appears: "Half-year results notes; AR Note 8.7; deck balance sheet", window: "12-24 months"}
+  - {optionality: "Railway assemblies as a locked-in franchise (B2)", converting_evidence: "Rail revenue above Rs 65 Cr a quarter and a multi-year Railways rate contract", first_appears: "Deck revenue mix; Reg 30 order filing", window: "12-24 months"}
+  - {optionality: "Customer concentration fall (C2)", converting_evidence: "TML share below 30% of consolidated revenue; customer shares in AR Note 34", first_appears: "AR note; rating rationale update", window: "12-24 months"}
+  - {optionality: "Renewable mix 50% by FY28 (H3)", converting_evidence: "Disclosed renewable share with baseline; ESG rating", first_appears: "AR Annexure D; BRSR", window: "By FY28"}
+combined_assessment: "AVOID"
+combined_reasoning: "Gate 0 AVOID is mechanical (DB6, ND/EBITDA 3.65x, interest cover 1.38x); EM 9.0 is NONE (best case 12.0), so no forward offset; TURNAROUND read is an earnings-and-leverage question for Role 1 and FTTCP, split on net debt at or below Rs 1,700 Cr at Dec 2026."
+top_moat_risks:
+  - "Leverage: Ind-Ra net adjusted leverage 4.64x incl. LC acceptances while Rs 550 Cr capex and Rs 50-55 Cr JV equity are unpaid"
+  - "Wheel JV: three slips, RDSO gate unresolved, start-up loss unquantified, JV liabilities INR 1,27,838.54 lakh"
+  - "Cycle versus structure: export recovery and non-auto share both move with the CV and Class 8 cycle"
+  - "Rail assemblies flat at Rs 64-65 Cr a quarter, railway share down 7.5% to 5.5%"
+analyst_note: "The score is low because the corpus shows capacity, a recovering cycle and one policy option, not durable advantages. The filed P&L turn is real (EBITDA margin 13.5% to 18.2% YoY, revenue +54.9%) and is operating leverage on FY24-26 capex, a Stage 11 question. Two cautions for downstream stages. First, the wheel JV is credited once, under R1; do not credit it again in synthesis through partnership or capability. Second, the AR says wheel certification is by RDSO while the Oct call says it is not needed; the first acceptance letter resolves it. Best case with every claim upgraded to documented is 12.0, so no near-term filing moves this scan above MODEST. The 15.9% capex-embedded growth uses the latest turnover of 1.22x; the larger lever is filling FY26 capacity (+48.0% at 80% utilisation on the Q2 run-rate, constant mix, generous for casting)."

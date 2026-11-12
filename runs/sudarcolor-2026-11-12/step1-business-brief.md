@@ -36,6 +36,6 @@ No other listed high-performance pigment pure-play with regular calls was found.
 
 ## LOAD-BEARING FACTS (first verification priority)
 1. Q2 FY27 revenue Rs 269.76 Cr against Rs 183.14 Cr (up 47%). Verify the print, then find what share of H1 FY27 and FY26 sales and receivables sits with Sudarshan group entities (AR FY26 related-party note, half-year RPT disclosures).
-2. FY26 revenue: the results filing shows revenue from operations of Rs 760.63 Cr; the FY26 annual report chairman's message and screener show about Rs 780.63 Cr. Reconcile the two figures at the AR page.
+2. FY26 revenue is Rs 780.63 Cr in the results filings, the AR and screener. CORRECTED 2026-11-12: this brief first carried Rs 760.63 Cr from a web PDF parse; stage 1 read the filing page and found the parse wrong. No conflict exists between filings. What remains to verify: the group share of that revenue (stage 1 reads 24.5% of FY26 sales and 31.5% of receivables at AR FY26 p.93).
 3. H1 FY27 working capital: inventories Rs 255.22 Cr against Rs 156.15 Cr, receivables Rs 244.95 Cr against Rs 179.39 Cr, payables Rs 276.89 Cr against Rs 166.33 Cr, operating cash flow minus Rs 24.11 Cr. Verify, and identify how much of each balance is with group entities.
 4. Minority position under a 70.26% promoter group: transfer pricing, royalty and service charges with the Sudarshan group, the zero dividend since FY21, and any scheme of merger or delisting. No scheme was found on the web; verify in the announcements and the AR.

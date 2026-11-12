@@ -19,9 +19,9 @@ runs/sudarcolor-2026-11-12/step1-business-brief.md):
 1. Q2 FY27 revenue Rs 269.76 Cr against Rs 183.14 Cr (up 47%). Verify the
    print, then find the share of H1 FY27 and FY26 sales and receivables that
    sits with Sudarshan group entities.
-2. FY26 revenue: results filing Rs 760.63 Cr against about Rs 780.63 Cr in the
-   FY26 annual report chairman's message and on screener. Reconcile at the AR
-   page.
+2. FY26 revenue is Rs 780.63 Cr in the filings (the intake brief first carried
+   760.63 from a web parse; corrected 2026-11-12 after stage 1 read the page).
+   Verify the group share of sales and receivables instead.
 3. H1 FY27 working capital: inventories Rs 255.22 Cr against Rs 156.15 Cr,
    receivables Rs 244.95 Cr against Rs 179.39 Cr, payables Rs 276.89 Cr
    against Rs 166.33 Cr, operating cash flow minus Rs 24.11 Cr. Verify, and

@@ -12,3 +12,4 @@ Token split (input, cache read, cache write, output) is not exposed by the harne
 | 3 | stage-03-ardeep | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 427981 | 22m45s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 124449 | 8m14s | 1 |
 | 5 | stage-05-concall | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 176492 | 9m56s | 1 |
+| 8 | stage-08-promoter | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 197277 | 14m08s | 1 |

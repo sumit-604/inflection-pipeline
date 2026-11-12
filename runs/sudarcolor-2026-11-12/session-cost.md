@@ -15,3 +15,4 @@ cells read n/a, never an estimate.
 | 3 | stage-03-ardeep | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 378,832 | 813s | 1 |
 | 5 | stage-05-concall (no-concall mode) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 106,655 | 196s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 101,398 | 239s | 1 |
+| 8 | stage-08-promoter | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | PENDING8 | PENDING8 | 1 |

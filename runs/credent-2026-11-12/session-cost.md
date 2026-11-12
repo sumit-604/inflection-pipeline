@@ -20,4 +20,33 @@ Per-stage token ledger. Token figures come from subagent result metadata. This h
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 52261 | 1m48s | 1 |
 | 12c | verifier-c-framework (phase 1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 134524 | 12m04s | 1 |
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 408969 | 15m02s | 1 |
-| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | PENDING13 | PENDINGW13 | 1 |
+| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 200956 | 11m28s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 298488 | 13m46s | 1 |
+
+## SUMMARY (close-out, run-pipeline step 6c)
+
+Ledger total: 3,408,284 tokens over 18 subagent runs (16 stages; stage 2 ran as three passes). Orchestrator usage is not in this ledger.
+
+(a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share of run |
+|---|---|---|---|
+| 1 | stage-02-notes-pass (3 passes summed) | 552,105 | 16.2% |
+| 2 | verifier-b-redflags | 408,969 | 12.0% |
+| 3 | verifier-a-numerical | 400,928 | 11.8% |
+| 4 | stage-03-ardeep | 303,242 | 8.9% |
+| 5 | stage-09b-dossier | 298,488 | 8.8% |
+
+(b) DOWNSHIFT FAILURES: none. stage-00-intake-check reported claude-haiku-5-5 and verifier-a-numerical reported claude-sonnet-5-5, each its frontmatter model. verifier-a-shadow did not run (see B00.verifier_a_shadow), so there is nothing to check for it.
+
+(c) COST SPIKES: none. No prior run exists for CREDENT.
+
+(d) OPERATOR SNAPSHOT
+
+SESSION TOTAL (/cost)
+
+
+(e) FRESH VS RE-READ
+The harness exposed only total tokens per subagent. Every one of the 18 ledger rows has n/a in the cache-read, cache-write and output columns, so all 18 rows are left out of the three sums below. No figure is estimated.
+Fresh tokens (cache write + output + uncached input): n/a (18 of 18 rows left out)
+Re-read tokens (cache read): n/a (18 of 18 rows left out)
+Re-read multiple (re-read / cache write): n/a (18 of 18 rows left out)

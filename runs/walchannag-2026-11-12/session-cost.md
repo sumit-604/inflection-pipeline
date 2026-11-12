@@ -14,4 +14,5 @@ Per-stage token ledger. Subagents run async in this app; the result metadata giv
 | 5 | concall (no-call mode) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 128358 | 314s | 1 |
 | 4 | bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 154529 | 343s | 1 |
 | 8 | promoter | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 183503 | 495s | 1 |
-| 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | PENDING6 | PENDING6 | 1 |
+| 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 294826 | 307s | 1 |
+| 9 | tam | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | PENDING9 | PENDING9 | 1 |

@@ -1,0 +1,109 @@
+stage: B09-tam
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "Investor presentation dated 3 May 2025 only; slide claims on qualified-supplier position, per-plant equipment value and market share are company claims, untested."
+  - "NO-CONCALL MODE: no main-company transcript after May 2019; FY26 order book by sector, quarterly inflow (except Q2 FY27) and 30 Sep 2026 closing order book NOT FOUND."
+  - "FY26 DNAM share (about 31%) is an Acuite figure; AR dropped it; H1 FY27 mix NOT FOUND, FY26 mix held."
+  - "Orders on hand 871.77 Cr (AR p.21) and unexecuted 374.56 Cr (Acuite p.3) unreconciled."
+  - "Rupee market size NOT FOUND for defence and missile components, aerospace motor cases, sugar centrifugals, crushing and grinding, process equipment, foundry and instrumentation; gearbox unorganised share and domestic split of Elecon gear revenue NOT FOUND."
+  - "Capacity utilisation NOT FOUND."
+flags:
+  - "FLAG-SAM-UPPER-BOUND: gear product-fit and customer filters have no evidence; SAM is an upper bound."
+  - "FLAG-TAM-SUBSET: five of the business's revenue pools have no sized market; TAM covers nuclear qualified equipment and organised gearboxes only."
+  - "FLAG-FX: USD to INR at 95.80 (25 Sep 2026 close), latest found, 7 weeks old."
+  - "FLAG-CAGR-OVERLAP: 30.2% of the FY26-to-trailing growth is already in the trailing four quarters; read yr3 CAGR with that overlap."
+  - "FLAG-CAPACITY: SOM exceeds capex-supported revenue by about 170 Cr (yr3) and 335 Cr (yr5)."
+  - "FLAG-MGMT-CLAIM-SCOPE: claim ratio scope-mismatched; claim is undefined in time and scope."
+market_definition: "Nuclear-island equipment WIL is qualified for (NPCIL) plus organised heavy-duty industrial gearboxes in India; defence, aerospace, sugar, process and foundry pools unsized."
+tam_cr: {conservative: 5315, realistic: 12538}   # annual average pool FY27 to FY31; sized pools only
+sam_cr: 5315
+sam_pct_of_tam: 42.4                              # of realistic TAM; 100% of conservative TAM
+som_3yr_cr: 522                                   # in-scope SOM FY29; total revenue incl foundry flat 38.5 = 560.7
+som_5yr_cr: 687                                   # in-scope SOM FY31; total revenue 725.7
+som_implied_revenue_cagr: {yr3: 26.8, yr5: 21.4}  # total revenue, FY26 base 275.19 Cr; FORMAL handoff to stage 11
+current_sam_share_pct: 5.8
+revenue_headroom_x: 17.2
+tam_growth_pct: 8
+runway_class: "GOOD"
+mgmt_claim_cr: 100000
+mgmt_claim_ratio: 3.76                            # 100000 / (5315 x 5); scope-mismatched
+mgmt_claim_read: "inflated"
+capacity_check: "gap of ₹170 Cr (yr3) and ₹335 Cr (yr5) of total revenue against about ₹390.5 Cr capex-supported; the SOM is the optimistic side unless new capex is funded; utilisation NOT FOUND"
+methods_used:
+  - "Method 1 top-down (defence ceiling only, not carried)"
+  - "Method 2 bottom-up (nuclear qualified equipment per plant)"
+  - "Method 3 peer revenue aggregation (Elecon gear division, 40% share)"
+  - "Method 4 import substitution (no sized pool)"
+stale_data_flags:
+  - {datapoint: "Defence expenditure chart ₹6,23,700 Cr", source: "Inv. Pres. p.11 citing Statista", year: 2022}
+  - {datapoint: "Ten PHWR manufacturing orders about INR 700 billion", source: "Cabinet approval, web", year: 2017}
+  - {datapoint: "Global nuclear waste management market USD 4.87bn", source: "Inv. Pres. p.31", year: 2023}
+searches_performed:
+  - "India defence budget 2026-27 capital outlay domestic procurement"
+  - "SHANTI Act nuclear 100 GW 2047 Bharat Small Reactors 220 MW fleet mode PHWR order NPCIL"
+  - "Gaganyaan Walchandnagar VSSC motor case order August 2026"
+  - "India nuclear power capex per GW PHWR 700 MW cost crore NPCIL equipment orders 2026"
+  - "India missiles rocket motor casings defence aerospace precision components market size 2030 crore"
+  - "India industrial gearbox market size crore 2030 CAGR"
+  - "India sugar mill machinery capex ethanol distillery sugar industry capacity expansion 2026 centrifugal"
+  - "rupee closes against US dollar this week"
+searches_skipped:
+  - "rupee dollar exchange rate November 2026 RBI reference rate (failed, old pages only)"
+  - "sugar centrifugal market size India (no data found)"
+  - "crushing and grinding, process equipment market size India (not searched, no source reached)"
+  - "defence and missile component pool in rupees (no data found)"
+  - "NPCIL order-placement status for 700 MW units 5 to 10 (no data found)"
+downstream_candidates:
+  - signal: "NPCIL tender and award of calandria and end shield packages"
+    entity_type: "end-customer"
+    demand_link: "Sole buyer of the nuclear equipment WIL is qualified to supply"
+    likely_source: "NPCIL tender portal; DAE/NPCIL annual report"
+    cadence: "event-driven"
+    shared: true
+  - signal: "ISRO/VSSC procurement and Gaganyaan programme milestones"
+    entity_type: "end-customer"
+    demand_link: "Motor case segment orders such as HS200 at 30.53 Cr"
+    likely_source: "ISRO/VSSC tender notices; IN-SPACe"
+    cadence: "event-driven"
+    shared: true
+  - signal: "MoD DAC acceptance of necessity and DRDO missile contracts"
+    entity_type: "end-customer"
+    demand_link: "Missile motor casing and canister orders"
+    likely_source: "MoD and PIB releases; DAC minutes"
+    cadence: "event-driven"
+    shared: true
+  - signal: "SHANTI Act rules notification and private nuclear plant announcements"
+    entity_type: "regulatory"
+    demand_link: "Opens private-sector nuclear orders the Q2 FY27 release expects within 12 months"
+    likely_source: "Gazette of India; DAE"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Competitor nuclear-island awards to L&T, Godrej, BHEL"
+    entity_type: "counterparty"
+    demand_link: "Sets WIL win share in a four-supplier nuclear field"
+    likely_source: "Competitor Reg 30 order filings on BSE/NSE"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Sugar mill capex and ethanol policy"
+    entity_type: "end-customer"
+    demand_link: "Drives centrifugal and gearbox demand in sugar"
+    likely_source: "ISMA; Ministry of Food"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Elecon gear division order book and margin"
+    entity_type: "counterparty"
+    demand_link: "Tests 8% gearbox market growth and price discipline"
+    likely_source: "Elecon quarterly results and concall"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Capital goods output index (cement, steel, power capex)"
+    entity_type: "macro"
+    demand_link: "Drives the industrial gearbox pool"
+    likely_source: "MoSPI IIP capital goods series"
+    cadence: "monthly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "TAM covers two sized pools only (nuclear qualified equipment, organised gearboxes). Defence, aerospace, sugar, process and foundry pools have no rupee source and are NOT FOUND, so TAM and SAM are subset figures. SAM is an upper bound (gear filters unevidenced). SOM uses the +2pp / +3pp share rule on the trailing 5.8% share; yr3 CAGR 26.8% from the FY26 base overlaps 30% already in the trailing four quarters. Foundry and instrumentation held flat at 38.5 Cr. Capacity gap uses trailing sales as full utilisation (NOT FOUND). Mgmt claim ratio is scope-mismatched. FX 95.80 is 7 weeks old."

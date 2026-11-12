@@ -7,7 +7,7 @@ from that run's own inputs, verified against the source PDFs.
 None yet. Step-1 intake only (2026-11-12); no valuation has run.
 
 ## DECISION STATUS AND ENTRY ZONE
-Not set. Phase 1 evidence run 2026-11-12 stops at Halt 1.
+Not set. Phase 1 evidence run 2026-11-12 reached Halt 1: gate recommendation PROCEED WITH CAVEATS (evidence only), corpus verdict CORPUS GAPPED, fragility FRAGILE, phase 1 confidence 67. No valuation has run. Sector cap row NOT FOUND, for operator ruling at the /fttcp pillar gate.
 
 ## SPEAR
 Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)

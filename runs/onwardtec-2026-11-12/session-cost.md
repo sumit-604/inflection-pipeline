@@ -7,3 +7,4 @@ Token split (input, cache read, cache write, output) is not exposed by the harne
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 74587 | 1m55s | 1 |
 | 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 62139 | 2m33s | 1 |
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 183819 | 5m21s | 1 |
+| 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 234359 | 8m04s | 2 |

@@ -1,0 +1,34 @@
+# STEP 1 BUSINESS BRIEF: Credent Connect N Care Ltd (CREDENT)
+
+Run: runs/credent-2026-11-12. Written 2026-11-12 by the /step1 intake. This brief is COMPANY MEMORY. It is never anchored evidence. Every stage takes its numbers from the filings in inputs/.
+
+Identity: Credent Connect N Care Ltd. NSE SME (Emerge) symbol CREDENT, ISIN INE1KPX01025. Listed 2026-08-20. No BSE listing. Screener: https://www.screener.in/company/CREDENT/consolidated/ (check_url OK 200).
+
+1. Price Rs 432, market cap Rs 788 Cr, P/E 30.8, P/B 5.55, promoters 63.75%, FII 2.13%, DII 5.71% (screener, 12 Nov 2026: https://www.screener.in/company/CREDENT/consolidated/).
+2. What it sells: B2B operations for diagnostics and healthcare firms. Phlebotomists collect samples at home or on site. Runners and couriers move samples at 2 to 8 degrees C. It also supplies workforce, warehousing and tracking software. Billing is per collection and per pickup, not per test (H1 FY27 call transcript p.9-10: https://nsearchives.nseindia.com/corporate/CREDENT_04112026130049_Transcript_earnings_call.pdf).
+3. H1 FY27 revenue mix: healthcare services 45.84%, logistics 24.81%, IT and operational supply chain 29.35% (same transcript, p.9).
+4. FY26 consolidated: revenue Rs 214.2 Cr, EBITDA Rs 28.7 Cr (13%), PAT Rs 18.4 Cr. FY25 standalone restated: revenue Rs 81.8 Cr, PAT Rs 5.5 Cr. The 162% growth mixes organic growth with the consolidation of Credent Healthcare and Credent Team, acquired in FY26. The company says the years are not like for like (H1 FY27 presentation p.18, p.21: https://nsearchives.nseindia.com/corporate/CREDENT_28102026210652_Investor_presentation.pdf).
+5. H1 FY27: revenue Rs 138.1 Cr (+53% YoY), EBITDA Rs 18.2 Cr (13%, flat), PAT Rs 14.7 Cr (+95%), which includes a one-time tax credit of Rs 1.78 Cr (presentation p.18).
+6. Where margin comes from: management says healthcare services (collection and wellness) carry the margin and logistics is competitive. Employee cost is the largest line: Rs 53.6 Cr of Rs 138.1 Cr in H1 FY27 (transcript p.8; presentation p.18).
+7. Guidance: about 45% revenue CAGR to FY30, a Rs 1,000 Cr revenue target and main-board migration in FY30, EBITDA margin 15 to 16% in three years, cash flow positive "maybe by next year, H2" (transcript p.8, p.11, p.14, p.15; presentation p.5, p.14).
+8. Cash: CFO was negative Rs 6.6 Cr in FY26 and negative Rs 3.9 Cr in H1 FY27. Trade receivables were Rs 58.8 Cr at Mar 2026 and Rs 78.8 Cr at Sep 2026. Screener shows 100 debtor days for FY26; management says ageing is 60 days and targets under 45 (presentation p.22-23; transcript p.14-15; screener page).
+9. IPO: fresh issue only, Rs 93.9 Cr per management, price band Rs 179 to 189. Cash and bank Rs 74.2 Cr at Sep 2026. Objects: working capital, investment in Credent Healthcare, machinery, debt repayment (transcript p.7, p.13; presentation p.22; RHP: https://c3logistics.co.in/Downloads/Offer%20Document/RHP_CredentConnectNCareLimited.pdf).
+10. Customers: 280+ domestic customers. Named on the call: Dr Lal, Metropolis, Apollo, Thyrocare, Neuberg, Lupin, Torrent, LifeCell (transcript p.5, p.11). RHP risk factor 1 puts the top customer at 15.76% and the top 10 at 81.76% of FY26 revenue (RHP p.25-26).
+11. Exports: none found. All revenue is domestic. International expansion is an FY30 roadmap item (presentation p.14).
+12. THE ENGINE: outsourcing of pre-analytics by diagnostic chains. Each chain that expands into smaller cities can buy collection and sample logistics per unit from Credent and avoid fixed cost. The thesis rests on volume per customer and customer count growing at 45%, with receivables days falling as IPO cash funds the float.
+13. After the IPO: on 2026-11-04 the board approved a Rs 4.50 Cr inter-corporate loan to Kartavya Healtheon Private Limited (NSE filing: https://nsearchives.nseindia.com/corporate/CREDENT_04112026204029_C3_Outcome_BM_merged.pdf).
+
+## PEERS (selected by economic engine; RHP risk factor 14 says no listed company is directly comparable)
+- Thyrocare Technologies (THYROCARE): https://www.screener.in/company/THYROCARE/consolidated/ . Why it fits: a named customer and a B2B diagnostic volume engine. Its calls carry sample volume, franchise collection and logistics cost data that test Credent's demand claims.
+- TCI Express (TCIEXP): https://www.screener.in/company/TCIEXP/consolidated/ . Why it fits: asset-light, time-definite B2B express. It mirrors the logistics slice: per-pickup pricing, network density, and the margin level a competitive express business earns.
+- Krystal Integrated Services (KRYSTAL): https://www.screener.in/company/KRYSTAL/consolidated/ . Why it fits: outsourced workforce with a large healthcare client base. It mirrors the manpower slice: employee cost pass-through, receivable days and negative cash conversion during growth.
+No listed pure-play in diagnostic sample logistics or phlebotomy outsourcing exists. These three are the closest structural comps, one per revenue engine.
+
+## SECTOR CAP ROW
+Chosen row: "Logistics (asset-light)", cap 25x (section-1b chunk 05). Reason: the company bills per pickup and per collection, owns little fixed asset, and describes itself as a healthcare logistics platform. Two other readings exist. "Hospitals / dialysis / healthcare services" (35x) fits if the 46% healthcare services slice is read as patient-facing care. "Logistics (WC-heavy / project cargo)" (20x) fits if receivables near 100 days are read as structural. The observation that separates them: whether collection revenue is priced as healthcare delivery with pricing power, or as outsourced labour at cost plus. The operator rules the row at the /fttcp pillar-approval gate. The collector guess was "Pharma / CDMO", which is wrong.
+
+## LOAD-BEARING FACTS (first verification priority for every stage)
+1. Customer concentration. Management said on the H1 FY27 call that no single customer contributes more than 10%. The RHP shows the top customer at 15.76% and the top 10 at 81.76% of FY26 revenue. Verify both statements at the page and state which period and basis each uses.
+2. Organic growth versus acquired growth. FY26 revenue rose 162% and H1 FY27 rose 53%. Credent Healthcare (acquired 2025-04-02), Credent Team and Alltrak (2026-02-25) carry the promoter group name. Verify the like-for-like growth, the purchase consideration, the sellers, and whether these were related-party deals.
+3. Cash conversion. CFO was negative in FY26 and in H1 FY27 while receivables rose from Rs 17.9 Cr (Mar 2025) to Rs 78.8 Cr (Sep 2026). Verify debtor days and ageing from the AR notes and the RHP, against management's 60-day claim and its "positive by H2 next year" guidance.
+4. Use of IPO money and group lending. Verify the objects of the issue against utilisation to date, and the Rs 4.50 Cr inter-corporate loan to Kartavya Healtheon Private Limited: who owns it, the terms, and whether it is a related party.

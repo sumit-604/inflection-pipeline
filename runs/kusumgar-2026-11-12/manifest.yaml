@@ -16,5 +16,6 @@ collector_warnings:
   - "only 1 concalls -> no-concall mode"
 listed_date: "2026-07-15"
 remediation_cycles: 0
-verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: run
 notes: "Collected from screener.in by collect_to_repo.py v3 (dry-run, /step1 2026-11-12). Hand-added by /step1 after the collector: prospectus (SEBI), Q1 and Q2 FY27 results (company site, BSE), CARE and CRISIL rating rationales, Q1 FY27 presentation, a screener print of the Sep 2026 shareholding (SECONDARY). No annual report exists yet (listed 2026-07-15); the prospectus restated financial information stands in for it. concalls_available is false by the collector rule (fewer than 3 transcripts): the company does hold calls, one transcript (Q1 FY27) is in concalls/, and the Q2 FY27 transcript was not published at collection."

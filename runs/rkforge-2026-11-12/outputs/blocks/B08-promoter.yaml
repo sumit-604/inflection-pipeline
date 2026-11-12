@@ -1,0 +1,59 @@
+stage: B08-promoter
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "screening: only screener-Data_Sheet.csv populated"
+  - "announcements: 23 hand-fetched filings, a selection not the full BSE feed"
+  - "shareholding: NSE summary and two XBRL files (19 and 30 Sep 2026) only; no earlier XBRL, so pledge before Aug 2025 NOT FOUND"
+  - "rating: CRISIL rationale not collected"
+  - "SEBI settlement order texts (Mar 2024 company; 2018 Riddhi) not retrievable; amounts rest on media"
+  - "Maa Chandi Financial Advisory Services ownership NOT FOUND; MCA check PENDING LIVE VERIFICATION"
+  - "pledgee, loan size and purpose of promoter pledge NOT FOUND in any filing read"
+flags:
+  - {type: FLAG-PROMOTER-RECORDED, verdict: "CAUTION", top_findings: ["Deal-breaker recorded (not enforced): FY24 standalone PAT restated 32,606.93 to 27,584.68 INR lakh, -15.4% (AR25 Note 47 p.160)", "Promoter pledge 1,23,00,000 shares = 16.20% of promoter holding, 6.63% of capital (Riddhi 1,10,00,000; Naresh Jalan 13,00,000 = 47.01% of his own holding), new since Aug 2025 (XBRL 19 and 30 Sep 2026)", "Controls under promoter-led management failed once and lender-statement gaps persist (B03); fact-finding closed with no fraud finding per company (AR26 Note 52 p.153)"]}
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 6, red: 1}
+deal_breakers:
+  - "Restatement cutting past profits >10%: FY24 standalone PAT 32,606.93 to 27,584.68 INR lakh (-15.4%), PBT 43,653.35 to 38,631.10 (-11.5%); AR25 Note 47, p.160. Recorded, not enforced."
+adverse_findings:
+  - {finding: "FY24 and FY25 inventory overstated by 5,022.26 and 22,052.43 INR lakh; FY25 qualified opinion; FY24 restated (PAT -15.4%); net worth hit about Rs 202.60 Cr (6.73%)", evidence_tier: "VERIFIED", source: "AR25 Note 47 p.160, CG report p.65; 30 May 2025 board outcome", date: "2025-05-30"}
+  - {finding: "Promoter pledge 1,23,00,000 shares (16.20% of promoter holding; 6.63% of capital); Riddhi 1,10,00,000 (17.38% of its stake), Naresh Jalan 13,00,000 (47.01% of his stake); pledgee and loan terms NOT FOUND; Tata Capital reported by media", evidence_tier: "VERIFIED (counts, NSE XBRL); MEDIA (pledgee, Aug/Sep 2025 dates)", source: "NSE_SHP_XBRL_30_Sep_2026.txt and 19_Sep_2026.txt; FilingReader 2025-08-18 and 2025-09-24", date: "2026-09-30"}
+  - {finding: "Excess managerial remuneration ratified after payment: 693.00 INR lakh FY25 (AR25 Note 48) vs 443.00 in AR26 Note 39.3 (unreconciled); Rs 450 lakh executive commission and Rs 50 lakh independent commission deferred for 'inadequacy of profits'", evidence_tier: "VERIFIED", source: "AR26 pp.60-61, Note 39.3; AR25 Note 48 p.160", date: "2026-03-31"}
+  - {finding: "SEBI settlements without admission: Riddhi Portfolio takeover-code case Rs 99.39 lakh (2018); company non-disclosure case Rs 5.57 lakh (settlement order 19 Mar 2024)", evidence_tier: "MEDIA (amounts); VERIFIED (SEBI order page header, date)", source: "Business Standard/PTI Jan 2018; sebi.gov.in settlement-order-in-respect-of-ramkrishna-forgings-ltd_82353; medial.app/Moneycontrol", date: "2024-03-19"}
+  - {finding: "Disclosure contradictions in AR26: Directors' Report 'no qualifications' vs auditor modification and CARO adverse items; 'no JV' vs RTRWL", evidence_tier: "VERIFIED", source: "AR26 p.6, p.11 via B03", date: "2026-03-31"}
+  - {finding: "Independent-director cluster: three of seven independents left by term completion between Aug 2024 and May 2026; no permanent board chair (AR25)", evidence_tier: "VERIFIED", source: "AR26 Directors' Report p.10; Cessation filing 20 May 2026; AR25 CG item D", date: "2026-05-20"}
+transition_evidence:
+  - "Inventory fact-finding closed, no further discrepancy, no FY26 adjustment, FY26 opinion unmodified (AR26 Note 52 p.153)"
+  - "Promoter cash Rs 404.67 Cr received, no warrant lapse: Riddhi 204.75 Cr (14 Aug 2025, 27 Mar 2026, 9 Jun 2026), Chaitanya Jalan 199.92 Cr (14 Jan 2026, 24 Sep 2026); auditor Reg 169(5) certificate 19 Aug 2026"
+pledge_pct_latest: 16.2
+pledge_trend: "rising then flat: none found at 31 Mar 2025 (AR silent, unverified); Riddhi 45,00,000 pledged 12 Aug 2025 and 65,00,000 on 19 Sep 2025 (media); 1,23,00,000 shares incl. Naresh 13,00,000 identical in 19 Sep and 30 Sep 2026 XBRL; 16.20% of promoter shares, 6.63% of capital"
+searches_performed:
+  - "SEBI order Ramkrishna Forgings Naresh Jalan penalty"
+  - "Ramkrishna Forgings inventory overstatement qualified opinion news"
+  - "Ramkrishna Forgings promoter pledge Riddhi Portfolio encumbrance"
+  - "Ramkrishna Forgings IiAS/InGovern/SES proxy advisor"
+  - "Mahabir Prasad Jalan founder history"
+  - "Ramkrishna Forgings AmbitionBox/Glassdoor"
+  - "Ramkrishna Forgings Jalan income tax/ED/SFIO/CBI/court"
+  - "Ramkrishna Forgings promoters inject capital June 2025 Business Standard"
+  - "Riddhi Portfolio Eastern Credit SEBI takeover settlement"
+  - "Ramkrishna Forgings short seller / governance concerns"
+  - "Maa Chandi Financial Advisory Services / Ramkrishna Rail and Infrastructure"
+  - "Ramkrishna Forgings Q2 FY27 promoter warrants Tata Capital pledge release"
+  - "fetch sebi.gov.in settlement order page (header only)"
+  - "fetch investywise Sep 2025 pledge page"
+searches_skipped:
+  - "FilingReader pledge pages (socket closed)"
+  - "medial.app Moneycontrol settlement article (certificate error)"
+  - "Business Standard 2018 PTI settlement page (403)"
+  - "RKFL SHP 31 Mar 2025 PDF (unreadable)"
+  - "SEBI settlement order full text"
+  - "Glassdoor (no result)"
+  - "CRISIL June 2025 rationale and outcome of rating watch"
+  - "IiAS/SES/InGovern direct sites"
+  - "MCA records for Maa Chandi, Riddhi and Jalan group private companies; education verification"
+  - "44th AGM voting result on MD re-appointment and commission"
+verdict_basis: "Promoters paid Rs 404.67 Cr and did not sell, but FY24 PAT was restated -15.4% (deal-breaker recorded) and 16.2% of promoter shares were pledged from Aug 2025."
+analyst_note: "Pledge settled at the source: stage 1 was right, stage 3 read only the AR, which is silent. XBRL 19 and 30 Sep 2026 shows 1,23,00,000 pledged (Riddhi 1,10,00,000; Naresh 13,00,000). Promoter fall from 43.39% (Jun) to 40.93% (Sep) is the Maa Chandi reclassification: 7,90,44,606 less 65,00,000 = 7,25,44,606 = 39.82% on the 19 Sep base, then +34,00,000 on 24 Sep = 7,59,44,606 = 40.93%. Family count rose; none sold. The 204.75 Cr figure is Riddhi only; with Chaitanya 199.92 Cr the total is 404.67 Cr. Pledge timing overlaps warrant payments, so purpose is an [INFERENCE], not a fact. The report's scorecard row 3 has a garbled cell; the note under the table gives the correct basis. Verdict is CAUTION, not CONCERN, because the weak points are controls, not minority treatment."

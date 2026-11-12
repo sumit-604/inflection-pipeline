@@ -1,0 +1,79 @@
+stage: B04-bizmodel
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Competitors not named in AR26, investor presentation or rating rationale: 2B built on described traits; market share NOT FOUND"
+  - "Tata Motors share only in India Ratings (33.4% of consolidated, 9MFY26); AR26 names no customer; second customer above 10% unnamed"
+  - "No audited segment data: single reporting segment (AR26 consol. Note 34 p.219); end-market split only in IP slide 11, unaudited, standalone, basis for scrap and die design not stated"
+  - "Management guidance net debt Rs 1,500 Cr, ROCE 12-15% FY27 / 20% FY28, FY27 capex about Rs 550 Cr NOT FOUND in AR26 or IP; concall transcript absent"
+  - "IP slide 8 chart labels lost in text layer; domestic vs export split of volume and realisation is [INFERENCE], verify against PDF page 9 image"
+  - "Share of volume on steel price-adjustment contracts, casting raw material and casting/aluminium utilisation NOT FOUND"
+  - "Investor presentation provided (Q2 and H1 FY27, 25 pages)"
+flags:
+  - "CONCENTRATION: Tata Motors 33.4% of consolidated revenue 9MFY26 (IndRa p.2); two customers above 10% (AR26 p.219)"
+  - "WC-FINANCED: Ind-Ra WC cycle 193 days FY26 and adjusted leverage 4.6x vs MD&A net debt/EBITDA 2.89x; H1 FY27 receivables 795 to 1,025 Cr and inventory 1,246 to 1,469 Cr rose faster than revenue (IP slide 16, consolidated)"
+  - "MARGIN-MIX: EBITDA margin 18.1% H1 FY27 vs 13.9% FY25 and 20.9% FY24; export share 31.6-33.1% vs 41-45% earlier (IP slides 11, 15)"
+  - "NA-EXPORT-DEPENDENCE: North America 71% of Q2 FY27 export, 58% in FY26 (IP slide 12, computed)"
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Domestic auto forgings (CV, LV, tractor)", type: "transactional per-unit OEM product sales", pct_of_revenue: 47.0, predictability: "M"}   # IP slide 11, standalone FY26
+  - {name: "Auto exports", type: "transactional per-unit FX", pct_of_revenue: 26.7, predictability: "M-L"}   # IP slide 11
+  - {name: "Railways (bogie frames)", type: "transactional contract", pct_of_revenue: 7.5, predictability: "M"}   # IP slide 11
+  - {name: "Mining, earth moving, farm equipment", type: "transactional per-unit", pct_of_revenue: 5.9, predictability: "M"}   # IP slide 11
+  - {name: "Miscellaneous industrial, steel, cement, power", type: "transactional per-unit", pct_of_revenue: 8.0, predictability: "M"}   # IP slide 11
+  - {name: "Non-auto exports (oil and gas 0.2%)", type: "transactional per-unit FX", pct_of_revenue: 4.9, predictability: "L"}   # IP slide 11
+asset_intensity: "heavy"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "cyclical"
+moats_present:
+  - "Switching costs (spec-in, 10+ year customer retention): moderate, medium durability (AR26 p.44)"
+  - "Efficient scale (large press and forging lines): moderate, medium durability (IP slide 10)"
+  - "Process and technology (cold/warm/hot forging, DIN 3962 machining, aluminium forging): partial, medium durability (AR26 p.5; IndRa p.2)"
+  - "Cost advantage (integration forge to machine): partial, unproven until EBITDA per tonne vs peers is known"
+  - "Regulatory (RDSO for rail wheels): not yet, JV plant not producing (AR26 p.6, p.43)"
+valuation_methods:
+  primary: {method: "EV/EBITDA on normalised through-cycle EBITDA, debt on an adjusted basis", why: "Capital-heavy and levered; PAT distorted by depreciation, interest and FY25-FY26 one-offs; EBITDA per tonne x tonnes is the build"}
+  secondary: {method: "P/E on forward normalised EPS (exit multiple from Section 1B only)", why: "Trailing PAT 72 Cr consolidated FY26 is not a base; use post-ramp EPS"}
+  tertiary: {method: "EV/invested capital vs ROCE path", why: "Tests whether the 3,776 Cr net block earns its cost"}
+  not_applicable: ["P/S and EV/Sales (steel pass-through inflates revenue)", "Dividend yield", "PEG on trailing growth", "SOTP (single reporting segment, JV not producing)"]
+irrelevant_ratios:
+  - "Spot-year ROCE as valuation input: net block mid-ramp, use trajectory"
+  - "Reported net debt alone: acceptances and sold receivables of 1,04,994.72 INR lakh sit outside borrowings"
+  - "Trailing PE: PBT margin 2.67% FY26 consolidated"
+  - "Reported cash conversion cycle: 89.6 days vs 191.6 before financing channels"
+  - "Headline EBITDA margin vs FY22-FY24: export mix was 42-45%, now 32-33%"
+  - "Current ratio: payables include supplier acceptances"
+  - "EV/Sales and P/S: steel pass-through"
+must_track_metrics:
+  - {metric: "EBITDA per tonne (consolidated)", healthy: "0.38-0.40 lakh/t (Q2 FY27 0.40, computed)", red_flag: "below 0.30 lakh/t (Q2 FY26 0.28)"}
+  - {metric: "Ind-Ra adjusted net leverage incl. LC acceptances", healthy: "falling from 4.6x toward 3.5-4x in FY27 (IndRa p.3)", red_flag: "above 4.6x or flat in H2 FY27"}
+  - {metric: "Working capital days before financing channels", healthy: "180-200 days (IndRa p.3)", red_flag: "above 200 days"}
+  - {metric: "Capacity utilisation, total and press", healthy: "total 72% and rising (IP slide 10)", red_flag: "under 60% after capacity adds"}
+  - {metric: "Export revenue and North America share", healthy: "export above Rs 400 Cr a quarter (Q2 FY27 424.52)", red_flag: "two quarters of decline"}
+unit_economics:
+  unit: "one tonne of forged or cast product shipped (consolidated)"
+  revenue_per_unit: "Rs 2.18 lakh per tonne H1 FY27 (2,622 Cr / 1,20,292 t, computed, includes scrap and other lines); forgings realisation about Rs 2.2 lakh/t, castings Rs 1.33 lakh/t Q2 FY27 (IP slide 8)"
+  margin_per_unit: "EBITDA Rs 0.39 lakh per tonne H1 FY27 (475 Cr / 1,20,292 t), 18.1% margin; gross profit Rs 1.16 lakh/t (computed)"
+  key_lever: "Volume on a mostly fixed cost base: incremental EBITDA margin 26.8% Q2 and 29.2% H1 YoY (computed) vs 18% average; export mix lifts realisation"
+first_deterioration_signals:
+  - {risk: "CV cycle and customer concentration", first_signal: "Domestic forging tonnes and Tata Motors share of revenue"}
+  - {risk: "Export and tariff shock", first_signal: "Export revenue and North America share (IP slide 12)"}
+  - {risk: "Under-absorption of new fixed cost", first_signal: "EBITDA per tonne and capacity utilisation"}
+  - {risk: "Steel spike beyond the 3-month lag", first_signal: "Gross margin and inventory build"}
+  - {risk: "Financed working capital", first_signal: "Receivable and inventory days before financing; acceptances plus sold receivables"}
+  - {risk: "Leverage and covenant", first_signal: "Net debt / EBITDA on Ind-Ra basis; interest cover"}
+  - {risk: "Ramp of casting, aluminium, Mexico, JV", first_signal: "Subsidiary EBITDA losses; RTRWL start date"}
+  - {risk: "Inventory control and lender reporting", first_signal: "Stock-statement vs books variance; inventory days"}
+mgmt_questions:
+  - "EBITDA per tonne by domestic, export and casting in H1 FY27?"
+  - "Receivables 795 to 1,025 Cr and inventory 1,246 to 1,469 Cr in H1 FY27: days before bill discounting and acceptances?"
+  - "Net debt Rs 1,500 Cr and ROCE 12-15% by FY27: assumptions on utilisation and capex? (guidance NOT FOUND in AR26 or IP)"
+  - "Share of volume on steel price-adjustment contracts and the lag?"
+  - "RTRWL commercial production date and funding gap?"
+  - "Tata Motors share in H1 FY27 and the identity of the second customer above 10%?"
+  - "Mexico loss drivers and date of profitable operation?"
+one_line_verdict: "A heavy-asset steel pass-through forger whose profit tracks tonnes and export mix, now ramping new capacity on borrowed money with working capital carried by bank channels."
+analyst_note: "Three points a later stage cannot rebuild. First, the IP slide 8 domestic vs export split of volume and realisation is inferred from a garbled text layer; the cross-check (37,048 t x 2.08 + 16,056 t x 2.52 = about 1,175 Cr; export leg 405 vs 424.52 Cr revenue) fits, but read the PDF image before use. Second, EBITDA margin rose 15.2% FY26 to 18.1% H1 FY27 (2.9 pts) inside a gross margin rise of 49.0% to 53.4% (4.4 pts), so the gain sits at the spread level (mix or pricing, cause not stated) and operating cost per sale rose; it is not proven fixed-cost absorption. Third, the 18% margin sits beside H1 FY27 receivables and inventory rising faster than revenue, so margin and cash quality diverge."

@@ -126,7 +126,7 @@ Auto forging in India is mature and cyclical, tied to CV production. FY26 CV pro
 
 | Ratio | Misleading or irrelevant? | Why |
 |---|---|---|
-| Spot-year ROCE as the valuation input | Misleading | Capex of 3,776 Cr net block is mid-ramp; H1 FY27 EBIT 280 Cr on 3,595 + 2,193 Cr debt-equity base is not a steady state. ROCE 6.27% FY26 (Note 46 via B03). Track ROCE trajectory, not the level |
+| Spot-year ROCE as the valuation input | Misleading | Capex of 3,776 Cr net block is mid-ramp; ROCE 6.27% FY26 (Note 46 via B03) is not a steady state. Track ROCE trajectory, not the level |
 | Reported net debt alone | Misleading | MD&A net debt 1,63,878.17 includes recourse bill discounting but acceptances 65,016.26 and sold receivables 39,978.46 INR lakh sit outside borrowings (B03; AR26 Notes 20, 8.7). Ind-Ra adjusted leverage 4.6x vs MD&A 2.89x (IndRa p.2; AR26 p.46) |
 | PE on FY26 trailing EPS | Misleading | PBT margin 2.67% FY26 consolidated; PAT 72 Cr; trailing PE is meaningless (IP slide 15) |
 | Reported cash conversion cycle | Misleading | 89.6 days after financing channels vs 191.6 before (B03) |
@@ -166,7 +166,7 @@ Group 3: Balance sheet and risk
 | Working capital days, before financing channels | Cash trapped | 180-200 days (IndRa p.3) | Annual notes | Over 200 days |
 | Receivables over 6 months, FC receivables | Export collection quality | Under 15% (B03 monitorable); was 21.7% | AR Note 8 | Rises |
 | Interest cover (PBIT/interest, EBITDA/interest) | Debt service | EBITDA/interest 3.1x consolidated FY26 (IndRa p.3); PBIT/interest 1.72x standalone (B03) | P&L | PBIT/interest under 1.5x |
-| Capex vs plan | Capital discipline | FY27 guide Rs 350 Cr moved to about Rs 550 Cr per Step-1 brief; NOT FOUND in AR26 or IP | Concall | Further rise without volume proof |
+| Capex vs plan | Capital discipline | FY27 guide Rs 350 Cr moved to about Rs 550 Cr per Step-1 brief (company memory, not anchored); NOT FOUND in AR26 or IP | Concall | Further rise without volume proof |
 | Contingent liabilities / equity | Hidden claims | 37.2% (B03) | Note 35A | Over 40% |
 
 ### 3C Industry-specific non-financial KPIs
@@ -233,7 +233,7 @@ Notes. (1) Revenue includes scrap, die design, FX gains and other lines, so per-
 | EV/invested capital vs ROCE (or P/B vs ROE) | TERTIARY | Tests whether the 3,776 Cr net block earns its cost; needs ROCE path from low single digits to the guided level (guidance NOT FOUND in AR26 or IP) |
 | DCF | Cross-check only | Terminal margin depends on export mix and capex; wide error bars |
 | Replacement cost / asset value | Floor reference | Asset-heavy; useful for downside only |
-| SOTP | Low use | One reporting segment; the JV RTRWL is not producing; carry at cost 25,850.96 INR lakh investment (AR26 p.~notes, via grep; low weight) |
+| SOTP | Low use | One reporting segment; the JV RTRWL is not producing (AR26 p.6), so no separable earnings |
 | P/S, EV/Sales | Not applicable | Steel pass-through inflates revenue |
 | Dividend yield, PEG on trailing growth | Not applicable | Capex-led; trailing growth base is distorted by the FY25 restatement and FY26 tax effects |
 
@@ -386,5 +386,5 @@ mgmt_questions:
   - "Tata Motors share in H1 FY27 and the identity of the second customer above 10%?"
   - "Mexico loss drivers and date of profitable operation?"
 one_line_verdict: "A heavy-asset steel pass-through forger whose profit tracks tonnes and export mix, now ramping new capacity on borrowed money with working capital carried by bank channels."
-analyst_note: "Three points a later stage cannot rebuild. First, the IP slide 8 domestic vs export split of volume and realisation is an inference from the garbled text layer; the cross-check (37,048 t x 2.08 + 16,056 t x 2.52 = about 1,175 Cr, export leg 405 vs 424.52 Cr revenue) fits but the PDF image should be read before use. Second, EBITDA per tonne rose 0.28 to 0.40 lakh while gross margin moved only 49.0% FY26 to 53.4% H1 FY27, so most of the gain is fixed-cost absorption, which reverses if utilisation (72%) falls. Third, the 18% margin sits on a base where H1 FY27 receivables and inventory rose faster than revenue, so margin and cash quality diverge."
+analyst_note: "Three points a later stage cannot rebuild. First, the IP slide 8 domestic vs export split of volume and realisation is inferred from a garbled text layer; the cross-check (37,048 t x 2.08 + 16,056 t x 2.52 = about 1,175 Cr; export leg 405 vs 424.52 Cr revenue) fits, but read the PDF image before use. Second, EBITDA margin rose 15.2% FY26 to 18.1% H1 FY27 (2.9 pts) inside a gross margin rise of 49.0% to 53.4% (4.4 pts), so the gain sits at the spread level (mix or pricing, cause not stated) and operating cost per sale rose; it is not proven fixed-cost absorption. Third, the 18% margin sits beside H1 FY27 receivables and inventory rising faster than revenue, so margin and cash quality diverge."
 ```

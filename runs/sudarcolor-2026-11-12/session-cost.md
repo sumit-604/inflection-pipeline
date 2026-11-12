@@ -22,4 +22,33 @@ cells read n/a, never an estimate.
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 392,685 | 1334s | 1 |
 | 12c | verifier-c-framework (Gate 0 + EM) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 136,735 | 737s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 51,891 | 58s | 1 |
-| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | PENDING13 | PENDING13 | 1 |
+| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 174,605 | 521s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 170,950 | 312s | 1 |
+
+Subagent total (sum of total_tok over 18 ledger rows): 2,963,579
+
+## CLOSE-OUT SUMMARY
+
+### (a) TOP FIVE BY TOKENS
+- verifier-b-redflags: 392,685 (13.3% of run total)
+- stage-03-ardeep: 378,832 (12.8% of run total)
+- stage-02-notes-pass (3 passes): 341,303 (11.5% of run total)
+- stage-06-peers: 294,845 (9.9% of run total)
+- verifier-a-numerical: 292,664 (9.9% of run total)
+
+### (b) DOWNSHIFT FAILURES
+none. stage-00-intake-check ran on claude-haiku-5-5 and verifier-a-numerical on claude-sonnet-5-5, their frontmatter models. verifier-a-shadow did not run (switch left armed; see run-log.md).
+
+### (c) COST SPIKES
+none. No prior run exists for SUDARCOLOR.
+
+### (d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+(operator: paste the /cost output here)
+
+### (e) FRESH VS RE-READ
+Fresh tokens (cache write + output + uncached input): n/a
+Re-read tokens (cache read): n/a
+Re-read multiple (re-read / cache write): n/a
+All 18 ledger rows were left out of these sums: the harness exposed one total token count per subagent and no input, cache-read, cache-write or output split.

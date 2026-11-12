@@ -16,3 +16,5 @@
 - Verifier A found the results text layer misreads H1 FY27 PBT as 59.87; the PDF image prints 59.67. Stages 4, 5 and 8 copied the text-layer figure.
 - Verifier C: Gate 0 class is AVERAGE as scored, GOOD (core 62) under the fixed EBIT definition with the available-window reading. Three operator questions open (Q1 EBIT and other income, Q2 missing-window scoring, Q3 contradicted management claim score).
 - Verifier B read the scanned announcement pages as images: the 70% figure is the parent's staged plan for direct ownership; 15.89% is the first tranche.
+- Stage 09b mechanical check passed: six section headers in order, one corpus verdict line (CORPUS GAPPED), DRAFT - PENDING OPERATOR SIGN-OFF marker present, annex questions 1 to 10 in order, corpus commit hash 20ac48b6 present.
+- Dossier Section 4e carries 2 second-order chains against the Rule F floor of 5 and says so; the full five are a Role 2 / FTTCP deliverable.

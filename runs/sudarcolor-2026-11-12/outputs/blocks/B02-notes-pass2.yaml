@@ -1,0 +1,8 @@
+stage: B02-notes-pass2
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+pass_2_empty: false
+new_findings: 13
+report: outputs/reports/02-notes-pass2.md

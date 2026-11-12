@@ -1,0 +1,65 @@
+stage: B06-peers
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Only Bharat Forge has a Q2 FY27 call (5 Nov 2026); MMFL and Happy Q2 FY27 calls not in corpus, Sep-2026 quarter figures for them come from Data_Sheet only with no management explanation"
+  - "MMFL second Q3 FY26 call (5 Mar 2026) is an Emkay conference session, not a post-results call"
+  - "Peer Data_Sheet raw material cost excludes inventory change, so Data_Sheet gross margin overstates call-stated gross margin by about 2-4 pts for Happy and MMFL"
+  - "No peer addresses RKFL load-bearing facts 1 and 3 (inventory restatement and controls, promoter warrants and holding); silence not read as evidence"
+flags:
+  - "No claim contradicted; 2 verified, 8 partially verified, 1 unverifiable of 11"
+  - "RKFL Sep-2026 quarter growth +54.9% YoY is a weak-base effect: two-year growth 33.4% vs peers 32.0 to 38.7% (computed from Data_Sheets)"
+  - "2.4x full-capacity net block asset turn is above every peer's own stated ceiling; BF consolidated FY24 2.49x is the only data point near it"
+  - "Peers build capacity ahead of orders and raise capex mid-year; no peer states a 75-80% utilisation gate"
+  - "RKFL inventory days 107.5 (computed) are the longest of the four peers; reported receivable days 68.5 are the shortest and rise to 83.4 with the Rs 173 Cr discounted bills added back"
+  - "MMFL Q3 FY26 5 Mar names Ram Krishna as a direct competitor in CV axle, beam, crankshaft and con rod parts"
+  - "Peer steel pass-through lag is 1 month domestic and 1 quarter export (Happy), so RKFL export carry may reverse; check Q3 FY27"
+peers_provided: 12
+verified:
+  - {claim: "North America Class 8 recovery lasting to Q3 CY27", peers: ["MMFL", "BHARATFORG"], anchor_count: 9}
+  - {claim: "Peers bear the same energy and shipping cost with lagged or partial customer recovery", peers: ["BHARATFORG", "HAPPYFORGE", "MMFL"], anchor_count: 8}
+partially_verified:
+  - {claim: "India CV +28.7%, PV +30.7% in Q2 FY27 and IIP 7.4-8%", peers: ["HAPPYFORGE", "MMFL", "BHARATFORG"]}
+  - {claim: "Steel pass-through with a quarter lag in domestic and none in export", peers: ["HAPPYFORGE", "BHARATFORG"]}
+  - {claim: "Gross margin near 54% vs EBITDA near 18% normal; selective product choice at high utilisation", peers: ["HAPPYFORGE", "MMFL", "BHARATFORG"]}
+  - {claim: "Market share gain in trailer axle and wallet share; did any peer lose share", peers: ["MMFL", "HAPPYFORGE"]}
+  - {claim: "Peers raising FY27 capex into machining and casting and stating 75-80% utilisation first", peers: ["BHARATFORG", "HAPPYFORGE", "MMFL"]}
+  - {claim: "2.5x asset turn on net block plausible", peers: ["BHARATFORG", "HAPPYFORGE", "MMFL"]}
+  - {claim: "Peer working capital days and use of bill discounting or LCs", peers: ["BHARATFORG", "MMFL", "HAPPYFORGE"]}
+  - {claim: "European inquiries tied to EU FTA", peers: ["HAPPYFORGE", "MMFL"]}
+contradicted: []
+unverifiable:
+  - {claim: "Aerospace forging approval 12-24 months non-engine, 4-5 years engine", peers_checked: ["BHARATFORG", "HAPPYFORGE", "MMFL"]}
+peer_coverage_map:
+  - {peer: "BHARATFORG", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Class 8 18-20 month blocking; lagged recovery; Baramati Rs 1,300 Cr"}
+  - {peer: "BHARATFORG", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "160 bps cost hit; Rs 1,800 Cr capex; asset turn above 1.5; 3-5 yr energy approvals"}
+  - {peer: "BHARATFORG", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Class 8 ageing fleet; capex Rs 800-850 Cr baseline; aerospace goal path"}
+  - {peer: "BHARATFORG", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Class 7/8 orders up; standalone margin 27.3%; EU utilisation 60-65%"}
+  - {peer: "MMFL", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Class 8 strong; freight and fuel; capex Rs 150 Cr; inventory push; Europe drift"}
+  - {peer: "MMFL", quarter: "Q3 FY26 (second call)", usage: "SUBSTANTIVE", contribution: "Names Ram Krishna; EPA pre-buy to H2 2027; share loss and recovery"}
+  - {peer: "MMFL", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Domestic pricing brutal; share clawed back; gross margin 56.34%; EU FTA view"}
+  - {peer: "MMFL", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Tractor-trailer shift; turnover to investment at best 1.2; US destock"}
+  - {peer: "HAPPYFORGE", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Price revisions 4.5-5%; container cost; 59% forging utilisation; CV +18% vs industry 10%"}
+  - {peer: "HAPPYFORGE", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Steel pass-through lag; share targets; capex Rs 450-500 Cr; axle beam shift"}
+  - {peer: "HAPPYFORGE", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "85% steel pass-through, scrap excluded; Tata Motors alloy steel settlement"}
+  - {peer: "HAPPYFORGE", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Export steel lag up to 6 months; UK customer volume; US tariff effect on programs"}
+industry_cross_read:
+  demand: "India CV, tractor and PV strong and US Class 8 recovering at three peers; Europe and tractor exports mixed; peer two-year Sep-quarter growth 32-39% vs RKFL 33.4%, so RKFL's 54.9% YoY is mostly base effect"
+  pricing_inputs: "All three peers bore Q1 FY27 energy, fuel and freight shocks; Happy recovered 4.5-5% after three years, BF expects H2 recovery, MMFL reports a price-taker domestic market; steel passes through with 1 month (domestic) to 1 quarter (export) lag at Happy"
+  capex_cycle: "Industry-wide capacity race, not a lone expander: BF about Rs 1,800 Cr plus Rs 1,300 Cr, Happy Rs 450-500 Cr, MMFL about Rs 150 Cr, RKFL about Rs 550 Cr; peers build ahead of orders and raised guidance mid-year; Happy forging utilisation 59%, MMFL about 52% on tonnage"
+peer_mentions_of_company:
+  - "MMFL Q3 FY26 (5 Mar 2026), Vidyashankar Krishnan, [page 11]: 'our competition would be, Bharat, Ram Krishna, and Happy Forge.'"
+risks_peers_raise:
+  - "Labour shortage after Iran war and LPG crisis (BF Q1 FY27 pp4, 15; MMFL Q1 FY27 p6)"
+  - "Fuel and gas supply through Hormuz (MMFL Q3 FY26 5 Mar p3; BF Q1 FY27 p15)"
+  - "50% US tariff on raw aluminium and on genset programs (BF Q1 FY27 p17; Happy Q2 FY26 pp8, 10)"
+  - "Front-axle demand erosion from tractor-trailer shift (MMFL Q2 FY26 pp12-13; Happy Q4 FY26 p15)"
+  - "Customer project delays leaving built capacity idle (MMFL Q3 FY26 5 Mar p14)"
+  - "Euro hedge losses and FX-linked loan swaps (Happy Q2 FY26 p12; MMFL Q3 FY26 17 Feb pp8, 14)"
+  - "Equity fund-raises at peers: BF up to Rs 2,500 Cr; MMFL QIP under consideration (BF Q1 FY27 pp5-6; MMFL Q1 FY27 p17)"
+  - "Environmental and land clearance delays (BF Q1 FY27 p12)"
+  - "Stuck inventory needing a rapid-action push (MMFL Q1 FY27 pp16-17)"
+net_narrative_effect: "complicates"
+analyst_note: "No B05 claim is contradicted, but two checks cut against the headline. Computed from Data_Sheets (INR Cr), RKFL's Sep-2026 quarter sales of 1,405.42 are +54.9% on a base 13.9% below Sep-2024; two-year growth is 33.4% against peers at 32.0 to 38.7%. A 2.4x full-capacity net block turn compares with FY26 closing-block turns of 1.13x (RKFL), 1.40x (Happy), 1.44x (MMFL) and 2.05x (BF consolidated); MMFL management gives a ceiling of 1.2x on gross block. Receivable days of 68.5 for RKFL rise to 83.4 with the Rs 173 Cr discounted bills added back (B05 figure, derived from call numbers). Peers do not describe bill discounting at all. Data_Sheet gross margin overstates call-stated gross margin by 2 to 4 points for Happy and MMFL; use call figures for any gross margin comparison. The cross-peer hypothesis is unproven and meant as a test for Q3 and Q4 FY27 prints."

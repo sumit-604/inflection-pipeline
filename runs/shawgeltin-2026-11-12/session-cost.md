@@ -20,3 +20,4 @@ Per-stage token ledger. Figures come from the subagent result metadata; n/a wher
 | 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 301093 | 613s | 1 |
 | 12b | verifier-b-redflags (no-concall mode) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 252330 | 870s | 1 |
 | 12c | verifier-c-framework (phase-1 half) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 177829 | 1078s | 1 |
+| 13 | stage-13-synthesis (phase-1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 183624 | 558s | 1 |

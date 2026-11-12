@@ -1,0 +1,36 @@
+stage: B01-gate0
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No Excel screener export; HTML tables as text (screening data, figures rounded to whole Rs Cr)"
+  - "No concall transcripts, no investor presentation (stage 0)"
+  - "Peer data not provided: M2, M5, M6, M9 scored 0 PEER DATA NEEDED"
+  - "R&D, distribution reach, listed-player count not in Gate 0 data: M6, M7, M8 scored 0 NOT FOUND"
+flags: []
+data_years: 12
+fy_range: "FY2015 to FY2026"
+blocks: {A: 6, B: 14, C: 5, D: 19, E: 16}
+core_score: 60
+moat_score: 6
+grand_total: 66
+moats_confirmed: 1
+moat_class: "THIN"
+classification: "GOOD"
+deal_breakers:
+  - "DB1 Block A 6 < 8 -> max GOOD (driven by FY16-FY22 ROCE 4-12% pre-reset years: A1 median 11.5%, A2 min 4% FY17, A3 median ROE 9.1%)"
+history_downgrade: false
+data_notes:
+  - "Standalone screener view used for 12-year history; consolidated view exists only FY25-FY26 (associate India Gelatine & Chemicals from Dec-2024)"
+  - "ROCE is screener's own figure (standalone FY15-FY26); ROE computed on average net worth (equity + reserves); FY15 uses closing net worth"
+  - "WC days B4 on formula basis (debtor + inventory - payable days, sales basis, screener ratio rows): 214 days FY15 to 166 days FY26 = decreased 48. Screener's own Working Capital Days row 117 to 97 also decreased 20; same score"
+  - "FCF is screener's Free Cash Flow row; FY21 shown as -0 (rounded), treated as not positive, so B2 = 11/12"
+  - "E2 uses Dec-2023 (77.65%, earliest quarterly point) vs Sep-2026 (75.00%) = -2.65pp, since Sep-2023 is not in the table. Against Mar-2023 (75.00%) the change is 0.00 and E2 would be 3"
+  - "C3 counts 11 YoY changes FY16-FY26 (FY15 base year not in data): 8 up, 3 down (FY16, FY17, FY24)"
+  - "D1 net debt: borrowings Rs 7.89 Cr minus cash and bank balances Rs 4.08 Cr (AR p.46, Rs lakh) = Rs 3.81 Cr; associate investment Rs 41.15 Cr excluded as non-liquid"
+  - "FY23 dividend payout 396% (screener) coincides with reserves 139 to 88 Rs Cr and financing outflow -67 Rs Cr; cause not identifiable from Gate 0 inputs, NOT FOUND"
+  - "PEER DATA NEEDED: M2, M5, M9 (and M6 peer median leg)"
+  - "No loss-to-profit swing in window"
+block_b_trend: "stable: last-3-year cumulative CFO/PAT 0.95 (57/60, FY24-FY26) vs 12-year 0.78; FY26 CFO/EBITDA 79% vs 92% FY25"
+analyst_note: "Score of 60 reflects 12 years of which FY16-FY22 were a low-return period (ROCE 4-12%, margin 3-11%); the latest year is ROCE 28% and OPM 19%, so the 12-year medians understate the current state and overstate nothing. Block A (6/20) and moat count are depressors by history, not by the latest year. Block D is near maximum (19/20). Margin reset FY25 13% to FY26 19% is confirmed in screener and quarterly OPM reached 22.3% in Mar-26 and 20.8% in Jun-26. FY26 CFO is 0.89x PAT (Rs 25 Cr vs Rs 28 Cr), inventory days 156 on sales basis. Moat scores are low mainly because peer, R&D and distribution inputs are absent, not because they were tested and failed."

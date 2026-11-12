@@ -1,0 +1,328 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: inputs/announcements/20251119-reg30-intimation.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "regulation 30 intimation"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Board circular resolution dated 19 Nov 2025 on postal ballot for director continuation. PDF is image only; page 1 read from image; txt sibling agrees."
+  - path: inputs/announcements/20251121-postal-ballot-notice.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "postal ballot notice"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 21 Nov 2025. Remote e-voting 25 Nov to 24 Dec 2025."
+  - path: inputs/announcements/20251225-postal-ballot-outcome.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "voting results and scrutinizer report"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Postal ballot outcome dated 25 Dec 2025."
+  - path: inputs/announcements/20260306-credit-rating.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "credit rating intimation (CARE)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Intimation dated 06 Mar 2026 attaching CARE press release."
+  - path: inputs/announcements/20260513-change-in-rta.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "change of registrar and share transfer agent intimation"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 13 May 2026. RTA merger effective 08 May 2026."
+  - path: inputs/announcements/20260525-dividend.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "dividend record date intimation"
+    period: "FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Final dividend Rs 11 per share for FY ended 31 Mar 2026, record date 12 Aug 2026. Dated 25 May 2026."
+  - path: inputs/announcements/20260526-secretarial-compliance.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "annual secretarial compliance report cover letter"
+    period: "FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Covers FY ended 31 Mar 2026. Report dated 02 Apr 2026 by practicing CS. Cover letter dated 26 May 2026."
+  - path: inputs/announcements/20260721-agm65-notice.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "AGM notice"
+    period: "FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "65th AGM notice dated 21 Jul 2026; AGM on 19 Aug 2026. Notice forms part of AR 2025-26."
+  - path: inputs/announcements/20260819-agm-outcome.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "AGM proceedings outcome"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "65th AGM held 19 Aug 2026. Letter dated 19 Aug 2026."
+  - path: inputs/announcements/20260819-scrutinizer.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "AGM voting results and scrutinizer report"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename date 2026-08-19; page date is 21 Aug 2026 (scrutinizer report dated 20 Aug 2026). Filename date not used."
+  - path: inputs/announcements/20260921-e5642f4b-b171-4696-8627-d031c8e4cf12.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "shareholder communication (KYC)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 21 Sep 2026. Communication to 185 non-KYC compliant holders."
+  - path: inputs/announcements/20260928-6d78a34e-cd27-43ee-abd9-7928af287f4e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "trading window closure intimation"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 28 Sep 2026. Window closes 01 Oct 2026."
+  - path: inputs/announcements/20261009-8084bb55-0ae5-4738-9fa9-7dc9d1d7bfcd.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "RTA certificate under Reg 74(5) (depositories)"
+    period: "Q2 FY27 (quarter ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 09 Oct 2026. RTA certificate dated 03 Oct 2026 enclosed."
+  - path: inputs/announcements/20261102-16bc5a36-b030-4bb7-bf79-ba38d71d93d7.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "board meeting intimation (Reg 29)"
+    period: "Q2 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 02 Nov 2026. Board meeting set for 12 Nov 2026 to approve Q2 and H1 FY27 results."
+  - path: inputs/annual-report/NGL-Annual-Report-FY2025-26.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "annual report"
+    period: "FY2025-26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "PDF page 1 is BSE covering letter dated 21 Jul 2026. Page 2 is AR cover 'Annual Report 2025-26'. Scanned PDF. Derived OCR pages sit in ocrcache (p0002 to p0081, no p0001) with _analysis.json; these are caches, not separate documents."
+  - path: inputs/results/20260212-Q3FY26-results.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "results (board outcome cover letter, unaudited standalone and consolidated)"
+    period: "Q3 FY26 (quarter and nine months ended 31 Dec 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 12 Feb 2026. Results annexure not in page 1 text."
+  - path: inputs/results/20260525-Q4FY26-audited-results.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "results (board outcome cover letter, audited standalone and consolidated)"
+    period: "Q4 FY26 and FY2025-26 (year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 25 May 2026. Unmodified audit report dated 25 May 2026 per page. Results in Annexure-A."
+  - path: inputs/results/20260812-Q1FY27-results.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "results (board outcome cover letter, unaudited standalone and consolidated)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Dated 12 Aug 2026. Results in Annexure-A, limited review report referenced."
+  - path: inputs/other/NGL-Annual-Report-FY2024-25.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "annual report"
+    period: "FY2024-25 (year ended 31 Mar 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "other/ is preserved, not consumed. PDF page 1 is BSE covering letter dated 28 Aug 2025. Page 2 is AR cover 'Annual Report 2024-25'."
+  - path: inputs/other/20251112-Q2FY26-results.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "results (board outcome cover letter, unaudited standalone and consolidated)"
+    period: "Q2 FY26 (quarter and half year ended 30 Sep 2025)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "other/ is preserved, not consumed. Dated 12 Nov 2025."
+  - path: inputs/other/CARE-Narmada-Gelatines-2025-04-14.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "rating (CARE press release, assigned)"
+    period: "FY2025 rating action"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "other/ is preserved, not consumed. Filename date 2025-04-14; page date is 08 Apr 2025. Filename date not used."
+  - path: inputs/peer-concalls/NATCAPSUQ-concall-Q2FY26-2025-11.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Natural Capsules Ltd (NATCAPSUQ, BSE 524654), peer"
+    doc_type: "concall transcript"
+    period: "Q2 and H1 FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Peer document, NON-ANCHORED for the subject. Cover letter dated 19 Nov 2025 on page 1; call title on page 2. Not a misfile per task brief."
+  - path: inputs/peer-concalls/NATCAPSUQ-concall-Q4FY25-2025-06.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Natural Capsules Ltd (NATCAPSUQ, BSE 524654), peer"
+    doc_type: "concall transcript"
+    period: "Q4 and FY25"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Peer document, NON-ANCHORED for the subject. Cover letter dated 11 Jun 2025; call title on page 2."
+  - path: inputs/peer-concalls/NATCAPSUQ-concall-Q4FY26-2026-06.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Natural Capsules Ltd (NATCAPSUQ, BSE 524654), peer"
+    doc_type: "concall transcript"
+    period: "Q4 and FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "Peer document, NON-ANCHORED for the subject. Cover letter dated 03 Jun 2026; call held 02 Jun 2026."
+  - path: inputs/rating/CARE-Narmada-Gelatines-2026-03-13.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "rating (CARE press release, reaffirmed and enhanced)"
+    period: "9MFY26 data cited; action dated 06 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Filename date 2026-03-13; page date is 06 Mar 2026. Filename date not used."
+  - path: inputs/screening/SHAWGELTIN-screener-tables.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "screener data extract (consolidated view)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Screener web extract, fetched 2026-11-12. Multi-period table; no single period on page 1. Not a filing."
+  - path: inputs/screening/SHAWGELTIN-screener-tables-standalone.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Narmada Gelatines Ltd (BSE 526739)"
+    doc_type: "screener data extract (standalone view)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Screener web extract, fetched 2026-11-12. Multi-period table. Not a filing."
+  - path: inputs/screening/peer-531253-screener-tables.txt
+    file_type: txt
+    content_ok: true
+    issuer: "India Gelatine & Chemicals Ltd (BSE 531253), peer"
+    doc_type: "screener data extract (consolidated view)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer screener extract, fetched 2026-11-12. Not a filing. NON-ANCHORED for the subject."
+  - path: inputs/screening/peer-NATCAPSUQ-screener-tables.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Natural Capsules Ltd (NATCAPSUQ, BSE 524654), peer"
+    doc_type: "screener data extract (consolidated view)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer screener extract, fetched 2026-11-12. Not a filing. NON-ANCHORED for the subject."
+  - path: inputs/screening/peer-NITTAGELA-screener-tables.txt
+    file_type: txt
+    content_ok: true
+    issuer: "Nitta Gelatin India Ltd (NITTAGELA, BSE 506532), peer"
+    doc_type: "screener data extract (consolidated view)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Peer screener extract, fetched 2026-11-12. Not a filing. NON-ANCHORED for the subject."
+  - path: inputs/shareholding/screener-shareholding-trend-to-Sep2026.txt
+    file_type: txt
+    content_ok: true
+    issuer: ""
+    doc_type: "shareholding pattern trend (screener extract)"
+    period: "Quarters Dec 2023 to Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "UNIDENTIFIED: no issuer name or scrip code appears anywhere in the file. Filename is not used. Not anchored until identified."
+  - path: inputs/shareholding/BSE-shareholding-summary-Sep2026.html
+    file_type: html
+    content_ok: true
+    issuer: ""
+    doc_type: "shareholding pattern summary (BSE format)"
+    period: "Quarter ending September 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "UNIDENTIFIED: page shows no issuer name or scrip code. Shows 60,49,587 total shares. Not anchored until identified."
+unreadable: []
+unidentified:
+  - inputs/shareholding/screener-shareholding-trend-to-Sep2026.txt
+  - inputs/shareholding/BSE-shareholding-summary-Sep2026.html

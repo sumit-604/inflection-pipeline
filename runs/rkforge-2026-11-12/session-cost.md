@@ -12,4 +12,5 @@ Subagents ran as async agents in the desktop app. The harness exposes one total-
 | 3 | stage-03-ardeep | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 539,172 | 23m13s | 1 |
 | 5 | stage-05-concall | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 154,562 | 6m39s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 136,121 | 8m55s | 1 |
-| 8 | stage-08-promoter | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | PENDING8 | PENDING8 | 1 |
+| 8 | stage-08-promoter | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 174,756 | 9m38s | 1 |
+| 9 | stage-09-tam | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | PENDING9 | PENDING9 | 1 |

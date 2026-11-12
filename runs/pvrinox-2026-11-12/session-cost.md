@@ -8,3 +8,4 @@ split is not exposed, so those columns read n/a. Nothing is estimated.
 |---|-------|-------|--------|--------|------------|-------------|---------|-----------|------|------|
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 96,806 | 2m32s | 1 |
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 185,419 | 5m46s | 1 |
+| 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 124,963 | 6m33s | 1 |

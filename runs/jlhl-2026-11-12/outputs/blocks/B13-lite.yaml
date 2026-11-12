@@ -1,0 +1,51 @@
+stage: B13-synthesis-lite
+company: "JLHL"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+phase: "1-lite"
+verdict: "PROCEED WITH CAVEATS"
+verdict_line: "PROCEED WITH CAVEATS: FLAG-CASH active, determination INDETERMINATE (caps at CAVEATS; missing: Sep-2026 receivables ageing and unbilled split, size of the Q2 FY26 unbilled revenue policy change, receivables by insurer/TPA, rating agency receivables commentary, capital commitments). FLAG-GATE0 active (GOOD, Block B deal-breaker; core 68 on Verifier C recompute, stage 71). FLAG-PROMOTER not active (B08 CAUTION). B08 and B09 status partial (skipped web searches). Freshness OK."
+verdict_rule_applied: 3          # FLAG-CASH active; INDETERMINATE caps rule 3 at PROCEED WITH CAVEATS
+rework_triggered: false
+insufficient_evidence_triggered: false
+flags_active:
+  - "FLAG-CASH (INDETERMINATE)"
+  - "FLAG-GATE0 (GOOD, deal-breaker 2 Block B = 7; depressor CURRENT expansion cycle)"
+flags_not_active:
+  - "FLAG-PROMOTER (B08 verdict CAUTION, not CONCERN or AVOID)"
+transition_posture: "NOT CLASSIFIED (Mental Model not signed; recognition gap resolves at stage 11)"
+confidence_delta: {numerical: 97, redflag: 85, framework: 94.4, peer: 100, overall: 85, overall_set_by: redflag_coverage, framework_valuation: "PENDING PHASE 3"}
+headline: "Mature hospitals fund a costly bed build"
+falsification_metric: "Dombivli EBITDA loss above Rs 9 Cr in Q3 FY27 (Rs 3 Cr a month kill line), Q3 FY27 investor presentation footnote"
+cash_falsifying_metric_provisional: "Receivable days above 25 on the 31-Mar-2027 balance sheet (Sep-2026 about 24.7 derived; Mar-2026 18.4)"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""
+source_fidelity_applied:
+  - "Gate 0 FY26 tax rate 25.7% removed; source 25.44% carried (screener Data_Sheet; AR26 p.192)"
+  - "Capex FY21-FY23 anchor RHP PDF p.77 (printed folio 70); capex FY24 anchor Annual_Report_2025.pdf PDF p.86 (printed folio 166)"
+  - "TAM RHP anchors: MMR PDF p.184-185; Kalyan-Dombivli PDF p.185; global median 29 PDF p.147 and p.176; ARPOB CAGR 10.7% PDF p.181; US$56.6 PDF p.145"
+  - "Promoter pre-offer 40.69% anchor RHP PDF p.260"
+verifier_corrections_applied:
+  - "Gate 0 E2 0, core 68, grand 91 (Verifier C governs; stage 71/94)"
+  - "Capex embedded growth 62% under execution (Verifier C governs; stage 177% announced pipeline)"
+  - "Promise delivery 4/2/0 due-only (Verifier B governs; stage 6/4/0)"
+  - "Dombivli breakeven wording: no slip (Verifier B governs)"
+  - "B05 2A row 8: no source promise (Verifier B governs)"
+  - "Insurer price pressure: KIMS alone (Verifier D governs)"
+open_operator_rulings:
+  - "Emerging Moat evidence multiplier basis: 13.9 MODEST (fact) vs 11.1 NONE (advantage), B12c C-04"
+input_conflicts_noted:
+  - "Payor mix labels: B04 insurance 54.8% / self 44.2% (matched to AR26 p.20) vs B09 insurance about 44% / self about 55%; AR26 anchor governs; B09 report and downstream candidate row 1 need correction. Operating metric, not audited."
+verifier_disagreements: "none"
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+  - "outputs/blocks/B13-lite.yaml"
+  - "outputs/reports/13-synthesis-lite.md"
+omitted_phase1:
+  - "fttcp-handoff.md and notion-payload.md (not produced, per task)"
+  - "verifier-disagreement-log.md as a separate file (disagreement set is 'none', written inside verifier-summary.md per task)"
+  - "valuation paragraph of the narrative; BUY/WATCHLIST/AVOID; entry range; MoS price; destination PE tracks; Hurdle verdict; ZONE REACHABILITY; transition posture; downstream tracker payload"

@@ -1,0 +1,103 @@
+stage: B05-concall
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q2 FY27 results PDF not re-read in this stage; margin pair tested from calls and B03 only, results-face reconciliation left to later stages"
+  - "No transcript gives dropped-contract revenue or tonnage, EBITDA excluding other income, or ton-km: NOT FOUND IN CALLS"
+  - "Promoter stake sale and post-buyback promoter holding never discussed on any call: NOT FOUND IN CALLS"
+  - "H1 FY27 EBITDA margin 22.6% is not stated on any call; derived only"
+flags:
+  - {type: FLAG-GUIDANCE-TRAIL, reason: "FY27 tonnage guide: 10-11% (Q3 FY26), 6-7% (Q4 FY26), 8% (Q1 FY27), 9-10% (Q2 FY27). The web trail omits the 10-11% start; Q2 FY27 call says '8% at the beginning of the year' (p.5), which misquotes both May and Feb."}
+  - {type: FLAG-CAPEX-RECONCILIATION, reason: "Q1 FY27 band Rs 220-240 Cr; H1 Rs 158 Cr plus H2 Rs 150-160 Cr = Rs 308-318 Cr (DERIVED); Q2 FY27 reply 'continue with capex we projected' does not reconcile. Buyback funding arithmetic (Rs 500 Cr less Rs 240 Cr = Rs 260 Cr vs Rs 280 Cr) does not close at the August band."}
+  - {type: FLAG-MARGIN-DEFINITION, reason: "23.3% is on total income including other income (226/967 = 23.37%); B03 ex other income Q2 22.97%. Management gives 21-22%, '23% plus sustainable' and '21% plus' in the same call (Q2 FY27 p.6, p.12, p.14)."}
+  - {type: FLAG-RELATED-PARTY, reason: "Q4 FY26 call p.13: bus business owned by promoter and another company; 'arm's length?' answered 'No, nothing.' No figures; not asked again."}
+  - {type: FLAG-SILENCE, reason: "Director Ashok Shettar resignation (7 Oct 2026, announcement 20261008) and promoter non-tender in buyback not discussed on the 5 Nov call."}
+quarters_analysed: ["Q4 FY26", "Q1 FY27", "Q2 FY27"]
+triggers:
+  - {priority: 1, name: "Freight realisation holds at Rs 8,840 or above (fuel-led 9% hike sticks)", type: "PRICE-MIX", timeframe: "near", conviction: "M", confirm_signal: "Q3 FY27 realisation at or above Rs 8,840 per tonne with tonnage growth near 9%", kill_signal: "Realisation falls more than 3% QoQ without a matching fuel cut"}
+  - {priority: 2, name: "EBITDA margin holds 21-22% or better after wage increment and toll", type: "COST", timeframe: "near-medium", conviction: "M", confirm_signal: "Q3 and Q4 FY27 margin both including and excluding other income at or above 21%", kill_signal: "Margin below 20% with realisation stable"}
+  - {priority: 3, name: "Volume 9-10% from branch expansion and lost-customer return", type: "VOLUME", timeframe: "near-medium", conviction: "M-H", confirm_signal: "H2 FY27 tonnage +9% or better and 100 plus branches added in FY27", kill_signal: "Tonnage growth under 6% for two consecutive quarters"}
+  - {priority: 4, name: "Rs 280 Cr buyback lifts ROE, ROCE and EPS", type: "INORGANIC", timeframe: "near", conviction: "H", confirm_signal: "Q3 FY27 equity reduction, EPS up, net debt not above Rs 440 Cr", kill_signal: "Net debt rising without cash flow cover"}
+  - {priority: 5, name: "Symmetric fuel pass-through keeps margin on a fuel fall", type: "PRICE-MIX", timeframe: "near", conviction: "M", confirm_signal: "A fuel fall followed by about 1 percent price cut per Rs 2 with margin stable", kill_signal: "Price cut above 2.5% per Rs 5 fuel fall"}
+  - {priority: 6, name: "Owned-property pivot cuts rent and lease liability", type: "COST", timeframe: "medium", conviction: "L-M", confirm_signal: "Rental and lease liability fall with lease-inclusive ROCE not falling", kill_signal: "Property capex above Rs 150 Cr a year with lease-inclusive ROCE falling"}
+  - {priority: 7, name: "Fleet renewal tracks tonnage growth", type: "VOLUME", timeframe: "medium", conviction: "L-M", confirm_signal: "Fleet count and capacity rise with tonnage; lorry hire share falls", kill_signal: "Lorry hire cost rising again as share of income"}
+guidance:
+  - {item: "FY27 tonnage growth", number: "10-11%", timeframe: "FY27", stated_in: "Q3 FY26 (Feb 2026)"}
+  - {item: "FY27 tonnage growth", number: "6-7%, at least 2% sequential per quarter", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "FY27 tonnage growth", number: "8%", timeframe: "FY27", stated_in: "Q1 FY27"}
+  - {item: "H2 FY27 and medium-term tonnage growth", number: "9-10%", timeframe: "H2 FY27 and medium term", stated_in: "Q2 FY27"}
+  - {item: "FY27 revenue and EBITDA", number: "Rs 3,600 Cr (+11%), EBITDA Rs 730-740 Cr", timeframe: "FY27", stated_in: "Q3 FY26"}
+  - {item: "Revenue growth with no realisation change", number: "10-12%", timeframe: "next year", stated_in: "Q2 FY27"}
+  - {item: "EBITDA margin", number: "20-21% maintainable for 3-4 years", timeframe: "3-4 years", stated_in: "Q1 FY27"}
+  - {item: "EBITDA margin", number: "21-22% sustainable (also '23% plus' and '21% plus' in same call)", timeframe: "going forward", stated_in: "Q2 FY27"}
+  - {item: "Capex FY27", number: "Rs 350 Cr; Rs 300-350 Cr; Rs 220-240 Cr; H2 Rs 150-160 Cr", timeframe: "FY27", stated_in: "Q3 FY26; Q4 FY26; Q1 FY27; Q2 FY27"}
+  - {item: "Capex per year", number: "Rs 250-300 Cr", timeframe: "ongoing", stated_in: "Q2 FY27"}
+  - {item: "Vehicle additions", number: "500 HCVs by Dec 2026; 100 delivered, 400 more", timeframe: "CY2026", stated_in: "Q3 FY26; Q4 FY26"}
+  - {item: "New branches", number: "100 plus net", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Buyback", number: "Rs 280 Cr at Rs 320, 87.5 lakh shares, about 5% equity, promoters not tendering", timeframe: "Oct-Nov 2026", stated_in: "Q1 FY27; Q2 FY27"}
+  - {item: "Year-end net debt after buyback and capex", number: "flat at current level (Rs 391 Cr at Q1 FY27 call time, Rs 440 Cr at March)", timeframe: "FY27", stated_in: "Q1 FY27"}
+  - {item: "ROCE", number: "30% plus", timeframe: "FY27", stated_in: "Q2 FY27"}
+  - {item: "Fuel pass-through rule", number: "Rs 2 fuel = 1% freight; Rs 5 fall = 2.5% realisation cut", timeframe: "any", stated_in: "Q2 FY27"}
+  - {item: "Wage increment", number: "none before March 2027 (Feb); under examination, no timeline (Nov)", timeframe: "FY27", stated_in: "Q3 FY26; Q2 FY27"}
+promise_delivery:
+  delivered: 11
+  partial: 4
+  missed: 3
+  rows:
+    - {promised_in: "Q3 FY26", promise: "Q4 tonnage +3-4% QoQ", outcome: "Delivered: about +5.5% daily tonnage QoQ, +3% YoY", explanation: "none needed"}
+    - {promised_in: "Q3 FY26", promise: "Realisation held at Q4 exit", outcome: "Delivered: Rs 8,147 vs Rs 8,117", explanation: "none needed"}
+    - {promised_in: "Q3 FY26", promise: "FY27 tonnage 10-11%", outcome: "Missed as guided: cut to 6-7% in May, then H1 actual +9.8%", explanation: "No reason given on the May call (silence)"}
+    - {promised_in: "Q3 FY26", promise: "FY27 EBITDA about 20.5%", outcome: "Delivered: Q1 21.8%, Q2 23.3%", explanation: "none needed"}
+    - {promised_in: "Q3 FY26", promise: "No price change unless substantial cost change", outcome: "Partial: about 9% fuel-led hike in FY27", explanation: "External, fuel spike; cited openly"}
+    - {promised_in: "Q3 FY26", promise: "500 vehicles by Dec 2026", outcome: "Partial: 100 delivered by May, count not updated, fleet 5,941 at Sep", explanation: "Silence on total; says gross adds will exceed scrappage"}
+    - {promised_in: "Q3 FY26", promise: "No wage increment before March 2027", outcome: "Partial: Nov says increment process under examination", explanation: "Not explained"}
+    - {promised_in: "Q4 FY26", promise: "Q1 margin 21% plus with fuel pass-through within a month", outcome: "Delivered: 21.8%", explanation: "none needed"}
+    - {promised_in: "Q4 FY26", promise: "FY27 tonnage 6-7%", outcome: "Delivered: Q1 +9%, Q2 +11%", explanation: "none needed"}
+    - {promised_in: "Q4 FY26", promise: "At least 2% sequential tonnage growth each quarter", outcome: "Missed in Q1 (-1.73% QoQ), met in Q2 (+5.9% DERIVED)", explanation: "Seasonal demand moderation, said in opening"}
+    - {promised_in: "Q4 FY26", promise: "100 plus net branches in FY27", outcome: "Partial: 67 added in H1, net of closures not stated", explanation: "Gross vs net not reconciled"}
+    - {promised_in: "Q4 FY26", promise: "Pass-through lag within a month", outcome: "Delivered: Q1 realisation +5% QoQ, margin up", explanation: "none needed"}
+    - {promised_in: "Q1 FY27", promise: "Q2 tonnage about 9% YoY", outcome: "Delivered: +10.6% DERIVED", explanation: "none needed"}
+    - {promised_in: "Q1 FY27", promise: "FY27 tonnage about 8%", outcome: "Delivered: H1 +9.8%, H2 guided 9-10%", explanation: "none needed"}
+    - {promised_in: "Q1 FY27", promise: "Realisation Rs 8,546 holds or improves", outcome: "Delivered: Rs 8,840", explanation: "none needed"}
+    - {promised_in: "Q1 FY27", promise: "EBITDA 20-21% maintainable", outcome: "Delivered: 23.3% in Q2", explanation: "none needed"}
+    - {promised_in: "Q1 FY27", promise: "FY27 capex Rs 220-240 Cr, year-end debt flat", outcome: "Missed on capex: H1 Rs 158 Cr plus H2 Rs 150-160 Cr = Rs 308-318 Cr (DERIVED); debt claim open", explanation: "Silence; Nov answer does not reconcile"}
+    - {promised_in: "Q1 FY27", promise: "Buyback Rs 280 Cr at Rs 320, promoters not tendering", outcome: "Delivered: tender closed 2 Nov, settlement 9 Nov", explanation: "none needed"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "Ton-km, lead distance and per-kilometre data", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time"}
+  - {question: "FY27 and medium-term volume growth", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Capex size and split", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Wage increment timing and wage inflation", quarters_asked: ["Q3 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "DFC and railway impact", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "Trailing four quarters Q3 FY26 to Q2 FY27: 11 delivered, 4 partial, 3 missed of 18 checkpoints; operating guidance beaten since May 2026, buyback executed as announced; capex path reset three times, Feb volume guide cut with no reason, and margin band stated three ways in the Nov call keep it below A."
+peer_questions:
+  - {question: "What FY27 and H1 FY27 volume growth are TCIEXP, Delhivery and TCI reporting for LTL or surface express, and what did they see in October 2026 festival demand? (VRL says tonnage +9.5% H1, +20% in October.)", why: "Tests whether VRL's 9-10% medium-term volume guide is share gain or market growth, and whether the October spike is industry-wide", check_peers: ["TCIEXP", "DELHIVERY", "TCI"]}
+  - {question: "How did peers pass on the 2026 fuel increase (surcharge, rate card, lag), and what do they say about reversing it as fuel falls?", why: "VRL claims 9% realisation rise is mostly fuel pass-through, with Rs 2 = 1% on the way up and down; margin 23.3% rests on it", check_peers: ["TCIEXP", "DELHIVERY", "TCI"]}
+  - {question: "Do peers report pricing at a premium or discount to unorganised operators, and has the price gap narrowed after fuel hikes? Did peers lose volume after their own price hikes?", why: "VRL says rates are a premium to unorganised (Q4 FY26) and no premium to others (Q2 FY27); the claim that the price reset caused no lasting volume loss rests on this", check_peers: ["TCIEXP", "DELHIVERY"]}
+  - {question: "What EBITDA margin do peers earn in LTL or surface express in H1 FY27, and what do they call sustainable? What margin definition (with or without other income)?", why: "VRL says 21-22% sustainable (23.3% in Q2) and that nobody in the industry matches it; the peer margin range tests the claim and the definition", check_peers: ["TCIEXP", "TCI", "DELHIVERY"]}
+  - {question: "What do peers say about fleet ownership vs hired vehicles, vehicle price inflation, 15-year life limit and property purchase vs rent in FY27?", why: "VRL spends Rs 150-160 Cr a year on property with 10-12 year payback and claims own fleet is its edge at peak demand; capex cycle claim", check_peers: ["TCIEXP", "TCI"]}
+  - {question: "Do peers report claim ratios, and how do they compare to 10-12% for the industry vs near zero for VRL?", why: "VRL's service-quality claim (claim ratio) is unsourced and unscoped", check_peers: ["TCIEXP", "DELHIVERY"]}
+  - {question: "What is the organised vs unorganised share of the industry and the pace of conversion, per peers?", why: "VRL says 70% unorganised and shifting; the claim of market-share gain from unorganised depends on it", check_peers: ["TCIEXP", "DELHIVERY", "TCI"]}
+  - {question: "When do peers give wage increments and what do they say about Karnataka minimum wage and the labour codes?", why: "VRL's margin hold depends on no big wage step; Nov call reopened the increment timing", check_peers: ["TCIEXP", "DELHIVERY", "TCI"]}
+  - {question: "What do peers say about the Western DFC and rail/RO-RO impact on LTL volume and lead distance?", why: "VRL changed from 'no impact' to active railway engagement between May and August", check_peers: ["TCIEXP", "DELHIVERY", "TCI"]}
+red_flags:
+  - "Capex FY27 now about Rs 308-318 Cr (DERIVED) vs Rs 220-240 Cr guided in August; Q2 FY27 reply does not reconcile; buyback funding arithmetic does not close at the August band"
+  - "Margin stated three ways in the Q2 FY27 call (21-22%, 23% plus, 21% plus); headline 23.3% includes other income, B03 ex other income 22.97%"
+  - "Q2 FY27 call misquotes the start-of-year volume guide as 8% (May said 6-7%, Feb said 10-11%)"
+  - "Related-party: promoter-owned bus business, 'arm's length?' answered 'No, nothing' with no figures"
+  - "Director Ashok Shettar resignation and promoter non-participation in buyback not addressed on the 5 Nov call"
+  - "Fuel-led price rise is about 9% of realisation; management accepts partial reversal when fuel falls"
+  - "Property pivot at 10-12 year payback while quoting ROCE 30% plus (lease liabilities excluded)"
+dropped_triggers:
+  - "Agent and franchise expansion (Feb: 120-130 agencies, 9-10% of tonnage, plan to add many; silent since)"
+  - "Captive fuel pumps and bulk refinery purchase (Feb: 8 pumps, +3-4 planned; bulk lost from Q1 FY27; pump count not updated)"
+  - "500-vehicle order count (last updated May 2026)"
+timeline_slippages:
+  - "Capex FY27: Rs 350 Cr (Feb), Rs 300-350 Cr (May), Rs 220-240 Cr (Aug), then H2 Rs 150-160 Cr on top of H1 Rs 158 Cr (Nov)"
+  - "No wage increment before March 2027 (Feb) became 'increment process under examination' (Nov)"
+  - "500 vehicles by December 2026: fleet 5,941 at Sep vs 5,932 at March (B03), net plus 9"
+  - "FY27 tonnage guide cut from 10-11% to 6-7% in May, then raised to 8% and 9-10%"
+analyst_note: "Grade B follows A26.4: mixed history, four quarters of delivery. Operating guidance (tonnage, margin, realisation) has been met or beaten since May 2026, but the May guide was set low after the Feb 10-11% was dropped without a reason. Capex and the buyback funding story do not reconcile on the numbers. The 23.3% margin includes other income; only the 21-22% band is repeated four times. Promoter stake, director resignation and ton-km are the questions the calls never answer. Q2 FY27 results face and presentation were not re-read here."

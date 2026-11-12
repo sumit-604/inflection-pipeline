@@ -1,0 +1,88 @@
+stage: B09-tam
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "one concall, one results filing, RHP only, one annual report; rating/ and research/ empty"
+  - "segment margins, price per collection, outsourced share of chain pre-analytics spend, volumes of collections and pickups: NOT FOUND"
+  - "serviceable-market filter (share of pre-analytics spend bought from third-party vendors) NOT FOUND; SAM carries the 10% implied by management's own 1,000 Cr vs 10,000 Cr, unevidenced"
+  - "no listed comparable (RHP p.134); organic revenue growth NOT FOUND"
+flags:
+  - {type: FLAG-TAM-IS-TARGET, reason: "Management TAM of Rs 1,000 Cr equals its FY30 revenue target (call p.13); its own arithmetic 20% x 50,000 Cr gives 10,000 Cr (call p.13). TAM = SAM = runway"}
+  - {type: FLAG-SAM-FILTER-NOT-FOUND, reason: "Outsourced share of pre-analytics spend not found; SAM 434 Cr is a scenario on the management-implied 10%, sensitivity 20% gives 869 Cr"}
+  - {type: FLAG-STALE-ORGANISED-SHARE, reason: "Organised share 17% from CareEdge Nov 2023 (about 3 years); 15% from Business Standard Jun 2022 (over 4 years, direction only)"}
+  - {type: FLAG-FX, reason: "USD figures converted at RBI reference rate 95.2492 of 2026-11-06; FY26 average rate NOT FOUND"}
+  - {type: FLAG-SOM-BELOW-GUIDANCE, reason: "Central SOM 304 Cr at FY29 is below management FY27 guidance of 320 Cr+ and far below FY30 about 1,000 Cr; on this SAM the target needs over 100% share"}
+market_definition: "Outsourced pre-analytics services (sample collection, cold-chain sample logistics, stationed lab and paramedical staff) bought by organised diagnostic chains in India, FY26 base"
+tam_cr: {conservative: 2770, realistic: 4344}
+sam_cr: 434
+sam_pct_of_tam: 10
+som_3yr_cr: 304
+som_5yr_cr: 404
+som_implied_revenue_cagr: {yr3: 15.0, yr5: 15.1}
+current_sam_share_pct: 46
+revenue_headroom_x: 2.2
+tam_growth_pct: 11.1
+runway_class: "MODERATE"
+mgmt_claim_cr: 1000
+mgmt_claim_ratio: 0.36
+mgmt_claim_read: "conservative"
+capacity_check: "sufficient on capacity: asset-light, capex-embedded growth 0%, growth is hiring-bound (about 12,000 heads at 5-yr SOM vs 6,338). Management FY30 target of 1,000 Cr exceeds FY30 SAM 662 Cr by 338 Cr; the target is the optimistic side, not the capex plan"
+methods_used:
+  - "Method 1 top-down (D&B/MarkNtel/Ken diagnostics size x organised share x pre-analytics cost ratio)"
+  - "Method 2 bottom-up cross-check via home collection market reports (L confidence, scope unclear)"
+  - "Method 3 peer revenue aggregation (listed chains, floor only)"
+  - "Methods 4 and 5 not applicable / NOT FOUND (no import substitution; no per-capita pre-analytics benchmark)"
+stale_data_flags:
+  - {datapoint: "organised share of diagnostics 17% (top 4 about 6%)", source: "CareEdge Indian Diagnostics Industry report", year: 2023}
+  - {datapoint: "organised share about 15%, expected 25% in 3-5 years", source: "Business Standard", year: 2022}
+  - {datapoint: "NATHEALTH-PwC market USD 5-6 bn, largest player under 5% share", source: "NATHEALTH diagnostic report", year: 2019}
+searches_performed:
+  - "India diagnostics market size organised share unorganised pre-analytics outsourcing (WebSearch)"
+  - "Dr Lal PathLabs Metropolis FY26 revenue organised share (WebSearch)"
+  - "India home sample collection market size CAGR (WebSearch)"
+  - "USD INR RBI reference rate November 2026 (WebSearch)"
+  - "diagnostic chains collection cost percent of revenue Dr Lal Thyrocare (WebSearch)"
+searches_skipped:
+  - "WebFetch of Dr Lal PathLabs Q4 FY26 earnings release (financialfilings.com) blocked by access wall; collection-centre fee ratio 14.5% stays search-derived, L confidence"
+  - "No independent market report found for outsourced pre-analytics or phlebotomy services; no CRISIL/ICRA/IBEF page opened in full"
+downstream_candidates:
+  - signal: "Thyrocare, Dr Lal, Metropolis quarterly volumes and collection-cost line"
+    entity_type: "end-customer"
+    demand_link: "Chain test volumes and outsourcing choices drive collections, pickups and stationed-staff orders"
+    likely_source: "Company quarterly results and concall transcripts on NSE/BSE"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Credent top-10 customer share and top-1 customer"
+    entity_type: "counterparty"
+    demand_link: "81.76% top-10 revenue share ties demand to few chains' outsourcing decisions"
+    likely_source: "Credent quarterly shareholding and results filings, press release on NSE"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Wockhardt and Thyrocare prepaid On-Demand wallet onboarding"
+    entity_type: "counterparty"
+    demand_link: "Named clients for the new pay-per-order line; revenue not yet disclosed"
+    likely_source: "Credent concall and quarterly segment disclosure"
+    cadence: "quarterly"
+    shared: false
+  - signal: "NABL accreditation and diagnostic lab regulation"
+    entity_type: "regulatory"
+    demand_link: "Stricter chain-of-custody and temperature rules raise demand for specialised logistics"
+    likely_source: "NABL and CDSCO/Ministry of Health notifications"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Labour code and minimum wage changes"
+    entity_type: "regulatory"
+    demand_link: "Wage and PF/ESIC cost sets margin on deployed staff, 68% of revenue"
+    likely_source: "Ministry of Labour and Employment gazette notifications"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Organised share of diagnostics and diagnostic market growth"
+    entity_type: "macro"
+    demand_link: "Market growth 11.1% and organised share rise set SAM growth"
+    likely_source: "CareEdge, CRISIL, ICRA industry reports"
+    cadence: "event-driven"
+    shared: true
+demand_externally_verifiable: true
+analyst_note: "Central SAM rests on one unevidenced filter: the 10% serviceable share, taken from management's own gap between 10,000 Cr (20% x 50,000) and 1,000 Cr. Two readings: outsourced vendors win about 10% of chain pre-analytics spend (SAM 434 Cr, Credent already 46% share), or 20% (SAM 869 Cr, share 23%, CAGR 18.7%). The observation that separates them: the share of a chain's collection and logistics cost that is bought from third-party vendors, in a chain annual report note or a Credent customer disclosure. The 14.5% cost ratio comes from Dr Lal collection-centre fees (402 vs revenue 2,763 Cr FY26), which are franchise fees and unverified. Management's 1,000 Cr is a target labelled TAM, so the 0.36 ratio reads conservative by the standard scale but not as honest. Stage 11 should treat 15% (to 19% on the 20% filter) as the SOM cross-check against the 45% guide; the 45% needs SAM to reach about 950 Cr by FY30."

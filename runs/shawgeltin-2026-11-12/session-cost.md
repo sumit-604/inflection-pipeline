@@ -13,3 +13,4 @@ Per-stage token ledger. Figures come from the subagent result metadata; n/a wher
 | 5 | stage-05-concall (no-concall mode) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 107375 | 216s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 106498 | 265s | 1 |
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 115375 | 156s | 1 |
+| 7 | stage-07-emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 100988 | 239s | 1 |

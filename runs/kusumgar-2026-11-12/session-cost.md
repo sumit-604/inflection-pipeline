@@ -22,3 +22,32 @@ metadata. n/a where the harness does not expose the figure; never an estimate.
 | 12c | verifier-c-framework (Gate 0 + EM scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 161273 | 744s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 41110 | 58s | 1 |
 | 12b | verifier-b-redflags (no-concall mode) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 341056 | 1185s | 1 |
+| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 175054 | 544s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 286101 | 820s | 1 |
+
+## Close-out summary
+
+Ledger rows: 19. Sum of total_tok over all rows: 3,900,951. The harness exposed only each subagent's total tokens and wall time; input, cache-read, cache-write and output splits are n/a.
+
+### (a) Top five by tokens
+1. stage-02-notes-pass: 467,946 (12.0%)
+2. verifier-a-numerical: 442,844 (11.4%)
+3. stage-03-ardeep: 407,088 (10.4%)
+4. verifier-b-redflags: 341,056 (8.7%)
+5. stage-09b-dossier: 286,101 (7.3%)
+
+### (b) Downshift failures
+none. stage-00-intake-check and verifier-a-shadow ran on claude-haiku-5-5; verifier-a-numerical ran on claude-sonnet-5-5 (frontmatter models; block model fields agree).
+
+### (c) Cost spikes
+none. No prior run exists for KUSUMGAR.
+
+### (d) Operator snapshot
+SESSION TOTAL (/cost)
+
+
+### (e) Fresh vs re-read
+Rows left out of the sums below: 19 of 19 (every row has n/a in the cache columns).
+Fresh tokens (cache write + output + uncached input): n/a
+Re-read tokens (cache read): n/a
+Re-read multiple (re-read / cache write): n/a

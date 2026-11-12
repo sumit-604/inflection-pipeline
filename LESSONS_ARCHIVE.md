@@ -1112,3 +1112,17 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-12 · KUSUMGAR /step1 (Phase 1 to Halt 1), runs/kusumgar-2026-11-12
+- Collector: collect_to_repo.py REPO_ROOT is hardcoded to C:\Users\SUMIT SHARMA\repos\inflection-pipeline, which does not exist on this machine. Run through a scratch wrapper that sets REPO_ROOT; tools/ not edited. Needs a fix on a tools branch.
+- Collector: screener_collect.py launches Chromium headed; from the session shell that fails ("spawn UNKNOWN") and the first run downloaded nothing. A session-local sitecustomize forced headless and the second run worked. Needs a headless option on a tools branch.
+- fetch_bse_announcements worked on the live BSE API on the second run (12 filings; several duplicates of one filing). First use since PR #167.
+- Screener export statement sheets came out EMPTY again (main and three peers); only Data Sheet CSVs are usable.
+- No tesseract on the operator machine: tools/ocr_repair.py cannot run. The scanned FY2025-26 standalone statements stayed unread.
+- Recently listed, no annual report: stages 2 and 3 ran on the prospectus restated financials with a mechanical section index (inputs/prospectus/SECTION_INDEX.md). Stage 2 three passes 467,946 tokens, stage 3 407,088 (Kwick: 474k and 421k).
+- Stage 5 in no-concall mode with one transcript: 129,853 tokens against the 100k target (open action C2 measurement; Kwick 254k).
+- Stage 0 error, corrected in run: freshness pair 1 was set FAIL for a missing Q2 FY27 transcript. No call was held; a written Investor Q&A sits inside the Q2 presentation. Lesson: check the newest presentation for a written Q&A before failing the results-to-concall pair.
+- A stage's self-reported errata, applied by the orchestrator, carried a wrong fact (CRISIL BB- on 2026-01-21; source shows B). Verifier A caught it; corrected at source. Lesson: check a stage's stated errata at the page before applying them.
+- Verifier A shadow (Haiku 5.5) ran here; .claude/shadow.yaml set to spent on this run branch. Ten /step1 sessions ran in parallel on an armed switch, so sibling branches may also carry a flip. Comparison: runs/kusumgar-2026-11-12/shadow/verifier-a-comparison.md (5 Sonnet findings, 8 Haiku findings, no overlap).
+- Subagent result metadata exposed total tokens and wall time only; the fresh versus re-read lines in session-cost.md are n/a.
+- Two-basis figures across stages (H1 FY27 cash from operations standalone against consolidated; offer-for-sale share count) reached Halt 1 as open items. Lesson: name the reporting basis (consolidated or standalone) in every stage task message, beside the units line.

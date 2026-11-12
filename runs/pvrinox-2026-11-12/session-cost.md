@@ -16,3 +16,4 @@ split is not exposed, so those columns read n/a. Nothing is estimated.
 | 8 | stage-08-promoter | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 195,489 | 9m14s | 1 |
 | 5 | stage-05-concall | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 219,423 | 9m59s | 1 |
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 184,507 | 5m19s | 1 |
+| 7 | stage-07-emoat | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 125,016 | 5m55s | 1 |

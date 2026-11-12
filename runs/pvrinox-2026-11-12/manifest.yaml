@@ -14,7 +14,7 @@ collector_warnings:
   - "RESOLVED by /step1 2026-11-12: CRISIL rating rationale 27-Feb-2026 saved as text in inputs/rating/ (CRISIL serves HTML, no PDF)."
 notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
 remediation_cycles: 0
-verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
 verifier_a_shadow: "skipped (claimed by runs/kusumgar-2026-11-12; ten parallel sessions, one shadow run per operator ruling 2026-10-11)"
 peers: [CINELINE, UFO, WONDERLA]
 step1_notes: "Peer CINELINE has no concall transcripts on screener; only its Data_Sheet CSV is in the corpus. UFO transcripts fetched from BSE by hand after the collector's UFO pass timed out. Two ARs held: FY2025-26 (primary) and FY2024-25 (prior year reference). Four main concalls held; stage 5 reads the three most recent, the Feb 2026 call is reference for the screen-guidance fact. Page-marked .txt extracts sit beside every PDF."

@@ -6,7 +6,7 @@ Company memory. Memory to weigh, never anchored evidence.
 Not yet formed. Step-1 intake only; no valuation has run. Working read: a tubular wind tower maker ramping volume on built capacity (612 towers a year against 210 made in FY26) while its contract mix moves to integrated supply.
 
 ## DECISION STATUS AND ENTRY ZONE
-None. Halt 1 pending (run 2026-11-12). No entry zone exists until Role 1 runs.
+None. Halt 1 pending (run 2026-11-12). No entry zone exists until Role 1 runs. Phase 1 gate recommendation (evidence only, not a decision): PROCEED WITH CAVEATS, cash conversion INDETERMINATE (runs/anawil-2026-11-12/outputs/final/gate-recommendation.md).
 
 ## SPEAR
 Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -23,6 +23,12 @@ Load-bearing facts, the run's first verification priority (brief: runs/anawil-20
 
 ## OPERATOR RULINGS
 - 2026-11-12: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.
+
+Open rulings waiting for the operator (none made yet; see the dossier Section 1):
+- Verifier B acceptance reading: 100 as written, 57% on a strict caught-only reading (OR-29 line is 60%).
+- Sector cap row: manifest carries "Cables / Industrial products"; second reading "EV charging / energy transition equipment".
+- Gate 0 Block D date: 31-Mar-2026 or 30-Sep-2026 as "latest".
+- Model 3 integrated supply: converter or not (the steel price clause separates).
 
 ## ACTIVE TRIPWIRES
 None set. Tripwires are set at /finalize.

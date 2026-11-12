@@ -1,0 +1,20 @@
+stage: B12d
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "Page anchor error: Inox Q2 FY26 South India blade and tower plant is on [page 4] (file line 110, page 4 starts line 97), cited as [page 3] in Q3, 2D, flags and risks. Quote and fact confirmed."}
+  - {severity: MINOR, item: "Page anchor error: Suzlon Q1 FY27 ASP Rs 6.3 Cr is on [page 4] (file lines 118-119), cited as [page 3] in Q4 and 2B/coverage map. Fact confirmed."}
+  - {severity: MINOR, item: "Q7 headlined VERIFIED although the claim's first half (who buys the plate) is UNVERIFIABLE; PARTIALLY VERIFIED would match the evidence. Pass-through itself has 3 independent peers, so no downgrade to the discipline rule."}
+  - {severity: MINOR, item: "Q1 VERIFIED while the 80% top of Anawil's 70-80% sits above every peer figure (peer max 75%). B06 states this in the net read and FLAG-H2-RANGE-TOP, so disclosed; the headline verdict does not carry it."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 100

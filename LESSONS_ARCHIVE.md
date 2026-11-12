@@ -1112,3 +1112,16 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-12 · ANAWIL /step1 Phase 1 (runs/anawil-2026-11-12)
+- Collector: REPO_ROOT in tools/collector/collect_to_repo.py is hardcoded to a path absent on this machine, and screener_collect.py launches Chromium headed, which fails here. Ran through a scratch wrapper and a headless shim; tools/ not edited.
+- Ten sibling sessions shared one screener login: first pass throttled on 3 of 4 companies and exited 0 with empty folders. Re-ran with 75-second waits.
+- NSE-only SME name: the collector finds no BSE scrip, so announcements, results, rating, prospectus and shareholding came from the NSE API and the company website by hand.
+- No tesseract on the machine, so tools/ocr_repair.py cannot run. 114 scanned pages (results, FY26 audited statements) were OCRed with rapidocr from a scratch environment; about 25 minutes. Stages 1 and 2 pass 1 started before OCR finished and read a blank file.
+- Stage 1 printed a growth factor as a rate (revenue CAGR 177.1% for 77.1%); Verifiers A and C both caught it. One remediation cycle (stages 1, 4, 5) used the cap.
+- Verifier B block leaves the acceptance rule open: partly-caught items counted as caught give 100, strict reading gives 57% (below OR-29). Operator ruling needed.
+- Stage 5 no-concall run used 204k tokens against the 100k target.
+- Verifier A shadow skipped: ten parallel runs, one armed switch; kusumgar-2026-11-12 claimed it.
+- prompts/12-verifiers-pipeline.md line 379 template defect reported by Verifier C (note N1); needs a prompt PR.
+- session-cost.md fresh and re-read lines are n/a: the desktop harness gives one token total per subagent.

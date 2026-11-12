@@ -5,12 +5,12 @@ market_cap_cr: 977.0
 run_date: 2026-11-12
 run_type: full
 concalls_available: false   # no earnings-call transcript exists yet: the first call (H1 FY27) was held 2026-11-09 and its transcript is not filed
-sector_cap_row: "EV charging / energy transition equipment"   # 28x, section-1b chunk 05. step1 Step D pick: sole product is tubular wind turbine towers sold to WTG OEMs. Second reading "Cables / Industrial products" 25x; operator rules at the /fttcp pillar gate
+sector_cap_row: "Cables / Industrial products"   # 25x, section-1b chunk 05. Resolved at stage 0 from B04 (orchestrator SECTOR CAP ROW RESOLUTION): the business-model evidence supports this row on 4 of 6 tests. step1 Step D first picked "EV charging / energy transition equipment" (28x), which B04 finds supported on end-market only and not refuted. Operator rules at the /fttcp pillar gate
 sector_cap_row_guess: "Pharma / CDMO"   # collector keyword guess only, never consumed (wrong)
 listed_date: "2026-08-10"   # NSE SME (NSE Emerge); H1 FY27 results note 10
 screener_url: "https://www.screener.in/company/ANAWIL/"   # standalone; the /consolidated/ page carries no price or financials
-remediation_cycles: 0
-verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+remediation_cycles: 1
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
 verifier_a_shadow: skipped   # .claude/shadow.yaml is armed, but sibling run kusumgar-2026-11-12 claimed the single shadow run; this run leaves the switch untouched
 collector_warnings:
   - "BSE scrip code not found on the screener page, so announcements/ is empty. This is a collector gap, not evidence that the company files nothing."

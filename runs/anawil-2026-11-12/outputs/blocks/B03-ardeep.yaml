@@ -1,0 +1,95 @@
+stage: B03-ardeep
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "ANNUAL REPORT ABSENT (HIGH, carried from B00): no annual report exists (listed 2026-08-10). Backward history built from the Prospectus (business, MD&A, risk factors, objects, management, restated FY24 to FY26), the Addendum and the audited FY26 statements with FY25 and FY24 bound in. No Board's Report, annual MD&A, Corporate Governance Report, attendance, Section 197(12) table, AGM notice or internal audit report."
+  - "AFS text is OCR (rapidocr, 103 pages); figures that matter were checked against the Prospectus or the H1 comparative. FY24 statements are in INR thousand; others INR lakh. FY25 CARO annexures not bound."
+  - "CONCALL TRANSCRIPT ABSENT (NO-CONCALL MODE): H1 FY27 call held 2026-11-09, transcript not yet filed. Forward statements come from the press release, presentations, orders, the 05 Oct 2026 investor-conference note and the CRISIL rationale."
+  - "NOT FOUND: vendors, order values, ageing and security for the 3003.57 lakh capital-goods advances; amount of borrowing cost capitalised; booking line of the 97.60 lakh Darpan fee; revenue and cost by contract model per half-year; customer-wise receivables; third-party inventory; capital commitments; Kutch completion date; CMD loan date, tenor and security."
+  - "NOT FOUND: board and committee attendance, median employee pay, auditor non-audit fees, FY26 AGM date, outcome of the 226.93 lakh tax demands, basis of the 367.25 lakh demand beyond the Prospectus text, tower count behind the Rs 32.82 lakh EBITDA per tower."
+  - "Screener P&L, Quarters, Balance Sheet, Cash Flow sheets absent (carried from B00); research folder empty (no broker notes)."
+flags:
+  - {type: FLAG-CASH, reason: "FY26 audited CFO 1246.69 lakh is 34.7% of PAT 3595.25; restated 1843.94 is 50.3%; capex-neutral 2814.94 to 3114.75 (78% to 85%). CFO/PAT ran 202% FY24, 70% FY25, 35% FY26, then 197% in H1 FY27 as March stock unwound. Working capital absorbed 5241.70 lakh in FY26. AFS p.15, p.27; H1 p.8; Pros p.29."}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "No pledge (SHP30Sep; Pros p.67). Promoter selling: 7.20 lakh shares at Rs 101 in Sept 2025 (Rs 7.27 Cr) and 13.01 lakh shares in the IPO OFS at Rs 270 (Rs 35.12 Cr); promoter stake 89.35% to 65.26%, of which 18.9 points is fresh-issue dilution and 5.2 points OFS. CMD lent Rs 21.68 Cr at 6% after listing (Pres p.8). Full verdict from B08. Pros p.67-68, p.73."}
+  - {type: FLAG-TAX-REGIME, reason: "Section 115BAB demand 367.25 lakh dated 17 Jul 2026, AY 2025-26, rectification pending (Pros p.240-241); 2.8x the 8.008 point rate gap on AY 2025-26 PBT (130.7 lakh, derived); unprovided and absent from audited notes (AFS p.5); Ann 2026-10-24 p.3 states no ongoing tax litigation."}
+  - {type: FLAG-MARGIN-BASE, reason: "FY26 half-year EBITDA per tower is 16.4 lakh (H1) and 34.5 lakh (H2) on near-equal revenue per tower (66.7 and 68.8 lakh); H1 is 40% below and H2 8% above the band from company unit economics, full year within 1%. Mix does not explain it; timing or cost recognition does [INFERENCE]. H2 FY26 margin 50.1% exceeds the top of the Model 1 band. H1 p.4; Pres p.15, p.18."}
+  - {type: FLAG-DISCLOSURE, reason: "Tower count 107/108/110 for H1 FY27; CFO 12.5 vs 18 Cr; order book mixes GST-inclusive 58.3 Cr and ex-GST values; 516.76 vs 433.89 unsecured loans; Board approval date 13 vs 18 June 2026; Kutch 'commenced' vs trial runs. Pres p.7, p.21, p.25, p.28; Pros p.34, p.237; PR p.3."}
+phase_verdicts: {p1: "YELLOW Watch: unmodified opinions, no KAMs, cross-document conflicts on title deeds and dues", p2: "YELLOW Watch with RED items on 115BAB tax and Darpan trail; accounting quality 5/10", p3: "YELLOW Watch: FLAG-CASH carries; leverage reset real; FY26 half-year margin split not mix", p4: "YELLOW Watch: Prospectus MD&A only; missing risks on tax, Kutch approvals, margin dilution; guidance credibility MEDIUM", p5: "YELLOW Watch: promoter-controlled young board, 24 Oct tax statement conflict, no pledge", p6: "YELLOW Watch: framing drift EBITDA margin to EBITDA per tower; five quiet-abandonment items", p7_best_fit: "Capex-led growth WATCHLIST; GARP WATCHLIST; Turnaround FAIL"}
+overall_quality: 5
+quality_components: {governance: 4, accounting: 5, balance_sheet: 6, earnings: 5}
+kill_switch_notes:
+  - "P1: Based on phases so far, a human reviewer would not have reason to stop, because opinions are unmodified and no fraud, default or going-concern language appears."
+  - "P2: would not have reason to stop; flags are disclosure and classification gaps (tax demand, Darpan fee, no contingent note), not proven misstatement."
+  - "P3: would not have reason to stop; cash flow is explainable by the March stock build and leverage has fallen to 0.15x."
+  - "P4: would not have reason to stop; omissions are of disclosure, numbers reconcile."
+  - "P5: would not have reason to stop; no integrity breach shown, but the 24 Oct 2026 'no tax litigation' statement should be put to management."
+  - "P6: would not have reason to stop; drift is of framing and timing."
+triple_pass_verification:
+  verified: 13
+  discrepancies:
+    - {finding_rank: 10, triple_pass_value: "unsecured recallable loans: directors 433.89 lakh (AFS p.23 per B02)", ar_value: "516.76 lakh (Pros p.34 RF37); with Darpan 87.27 the sum is 521.16", note_ref: "Pros p.34; AFS p.23; difference 82.87 unresolved"}
+    - {finding_rank: 3, triple_pass_value: "FY26 capex funded by debt 7313.88 lakh", ar_value: "7341.12 lakh gross (5973.82 + 1367.30); difference 27.24; FCF (8053.92) unchanged", note_ref: "AFS p.15"}
+    - {finding_rank: 1, triple_pass_value: "extra tax exposure FY24 to FY26 if 115BAB denied: 515.50 lakh", ar_value: "518.3 lakh on 8.008% x restated PBT 6472.59; and the 367.25 demand is 2.8x the 130.7 lakh rate gap on AY 2025-26 PBT", note_ref: "Pros p.240-241, p.231"}
+missing_risks:
+  - {risk: "Loss of Section 115BAB rate as a stand-alone risk with PAT effect", evidence: "Demand 367.25 lakh; rate gap 8.008 points; contingent-liability table shows nil FY26", anchor: "Pros p.28, p.240-241"}
+  - {risk: "Margin dilution from the shift to Model 3", evidence: "Model 3 was 4 towers in FY26 and 64.3% of H1 FY27 revenue; EBITDA margin 42.7% to 23.4%; reframing to EBITDA per tower on listing day", anchor: "Pros p.232; PR p.2; List p.16"}
+  - {risk: "Kutch approvals and ramp-up", evidence: "client approval ongoing, trial runs underway, Gujarat revenue 3.23 Cr in H1 FY27 vs 8.78 Cr for FY26 (all March)", anchor: "Ann 2026-10-05 p.3; PR p.3; Pres p.23"}
+  - {risk: "Rs 30.0 Cr of advances to unnamed capital-goods vendors", evidence: "3003.57 lakh, 98% of short-term advances, 10.3% of assets", anchor: "AFS p.27, p.16"}
+  - {risk: "GST credit accumulation as the mix moves to 5% billed Model 3 [INFERENCE, input rate outside corpus]", evidence: "output billed at 5% (140.68 vs 133.98); balance with revenue authority 827.37 to 1878.59", anchor: "Order 2026-09-10 p.1; AFS p.27"}
+  - {risk: "Tower weight lowers effective capacity", evidence: "installed 207,000 t; 316 t per tower at Koppal; latest order 474 t per tower gives about 437 towers vs 612", anchor: "Pros p.25; Add p.17; Ann 2026-10-29 p.2"}
+  - {risk: "Capex funding after the IPO", evidence: "objects fund only debt; H1 capex 5339.49 vs CFO 2828.40; CMD loan Rs 21.68 Cr at 6%", anchor: "Pros p.73; H1 p.8; Pres p.8"}
+  - {risk: "Order book counts a GST-inclusive order at face (overstated about 2.78 Cr)", evidence: "58.32 Cr incl. GST counted as 58.3 in book", anchor: "Ann 2026-10-29 p.1; Pres p.21"}
+  - {risk: "FY26 AGM and annual report not evidenced", evidence: "no notice or report in corpus or NSE API; due by 30 Sep 2026 (legal rule outside corpus)", anchor: "B00 input_gaps"}
+guidance_table:
+  - {claim: "FY27 revenue", number: "Rs 450 to 500 Cr", timeframe: "FY27", credibility: "MEDIUM: H2 needs 296 to 346 Cr; implied H2/H1 1.9x to 2.2x vs 2.4x FY24, 4.1x FY25, 2.5x FY26; towers needed 206 to 240 vs 148 in H2 FY26 (PR p.2; Pros p.23)"}
+  - {claim: "FY27 PAT", number: "Rs 55 to 60 Cr", timeframe: "FY27", credibility: "MEDIUM: holding the H1 margin of 23.4% gives 55.1 to 64.3 Cr on the revenue range; revenue is the stretch, not margin (PR p.2; H1 p.4)"}
+  - {claim: "Order book execution", number: "Rs 395.58 Cr, 320 towers, plus LOIs Rs 44.05 Cr", timeframe: "by end Q1 FY28", credibility: "MEDIUM: March book was due by 31 Mar 2027; implied inflow at least 189.73 Cr since March (PR p.2; Pros p.114)"}
+  - {claim: "Large order 38 towers", number: "Rs 133.98 Cr ex GST", timeframe: "Q4 FY27", credibility: "MEDIUM: LOI had been Rs 120 Cr (Order 2026-09-10 p.2; List p.8)"}
+  - {claim: "Kutch ramp", number: "192 towers a year, 16 a month", timeframe: "no date; 'nearing completion'", credibility: "LOW to MEDIUM: client approval ongoing at 05 Oct 2026 (Pres p.18; PR p.3; Ann 2026-10-05 p.3)"}
+  - {claim: "EBITDA per tower rises as mix shifts", number: "Rs 32.82 lakh H1 FY27 vs 29.2 FY26", timeframe: "ongoing", credibility: "MEDIUM: mix-implied EBITDA range 30.0 to 42.8 Cr holds; tower base unreconciled (PR p.3; Pres p.15)"}
+  - {claim: "Operating margin about 40% (CRISIL)", number: "40%", timeframe: "medium term", credibility: "LOW: H1 FY27 23.4% (CRISIL p.1; H1 p.4)"}
+  - {claim: "Gearing below 0.05x and cash accrual Rs 80 Cr a year (CRISIL)", number: "0.05x; 80 Cr", timeframe: "Mar 2027", credibility: "LOW to MEDIUM: Sep-26 gearing 0.148x incl. CMD loan, 0.053x excl.; H1 cash PAT 27.3 Cr (CRISIL p.1-2; H1 p.7; Pres p.9)"}
+  - {claim: "IPO money used as per objects", number: "115.00 + 3.69 + 23.87 = 142.56 Cr", timeframe: "by 30 Sep 2026", credibility: "HIGH: delivered in 53 days (H1 p.6; MA p.6-8)"}
+monitorables:
+  - {metric: "H2 FY27 revenue", threshold: "at least Rs 296 Cr (floor) to Rs 346 Cr (top)", where: "FY27 results, about May 2027", why: "decides the Rs 450 Cr guidance floor"}
+  - {metric: "H2 FY27 towers produced", threshold: "at least 206 at H1 realisation of 1.44 Cr; 240 to 280 at order-book realisation of 1.236 Cr", where: "results and presentation", why: "capacity and execution test vs 148 in H2 FY26"}
+  - {metric: "H2 FY27 EBITDA margin", threshold: "about 20% (on Rs 346 Cr, PAT 55) to 25.5% (on Rs 296 Cr, PAT 60); H1 level 23.4%", where: "results", why: "needed for PAT Rs 55 to 60 Cr (derived)"}
+  - {metric: "Revenue and cost by model for each half-year", threshold: "disclosed", where: "presentation or call transcript", why: "separates mix from timing for FY26 and FY27 margin base"}
+  - {metric: "Section 115BAB rectification order", threshold: "granted vs denied", where: "NSE Reg 30 filing", why: "9.7% less PAT per rupee of PBT if denied"}
+  - {metric: "Capital-goods advance and CWIP", threshold: "advance below 3003.57 lakh as CWIP and PPE rise; vendors named", where: "half-year balance sheet and note", why: "10.3% of assets paid before delivery"}
+  - {metric: "Kutch approval and Gujarat revenue", threshold: "Gujarat revenue above 8.78 Cr per half", where: "presentation geography slide", why: "Kutch is 31% of nameplate"}
+  - {metric: "Receivable and inventory days at 31 Mar 2027", threshold: "receivables under 60 days, stock under 90 days of revenue", where: "FY27 balance sheet", why: "tests pre-buy run-off vs structurally higher capital per tower"}
+  - {metric: "CMD loan terms and repayment", threshold: "date, tenor and security disclosed", where: "Reg 30 filing and notes", why: "capex is funded by it after the IPO"}
+  - {metric: "FY26 annual report and AGM", threshold: "published", where: "NSE", why: "Board's Report and governance data are absent"}
+ar_new_downstream_entities:
+  - name: "SANY (WTG OEM; Sany WTG towers)"
+    where_in_ar: "Pros p.114 order book; Pres p.21"
+    entity_type: "customer OEM (named by product description; legal customer letters anonymised)"
+  - name: "Envision (WTG OEM; Envision WTG towers, EN-156 3.3MW and EN-182 5MW)"
+    where_in_ar: "Pros p.114; Pres p.21; Order 2026-09-10 p.2; Order 2026-10-29 p.2"
+    entity_type: "customer OEM / end project (FDRE wind project, Andhra Pradesh)"
+  - name: "Darpan Infrastructure Private Limited"
+    where_in_ar: "Pros p.50-51 RPT; Pros p.30 registered office; Pros p.241-242 criminal case MS STP Ltd"
+    entity_type: "promoter group company: guarantor, lender, contractor, landlord, former holding company"
+  - name: "India-Ahead Venture Fund"
+    where_in_ar: "Pros p.62-63 private placement of 7,00,000 shares at Rs 101"
+    entity_type: "pre-IPO investor"
+  - name: "Mukul Mahavir Agrawal"
+    where_in_ar: "Pros p.62 private placement of 6,80,000 shares at Rs 101"
+    entity_type: "pre-IPO investor"
+  - name: "Bank of Baroda; The Cosmos Co-operative Bank Ltd"
+    where_in_ar: "Pros p.74-76; CRISIL p.4"
+    entity_type: "lenders"
+strengths_top3:
+  - "Volume and revenue growth are filed and audited: 114, 135, 210 towers; revenue Rs 54.1 to 143.3 Cr; H1 FY27 107 towers and Rs 153.97 Cr (Pros p.111; Pres p.18; H1 p.4)"
+  - "Balance sheet reset: Rs 115 Cr of IPO money repaid debt in 53 days; debt to equity 1.43x to 0.15x (H1 p.6-7; MA p.6)"
+  - "Per-model unit economics reconcile: H1 FY27 EBITDA 36.08 Cr sits inside the 30.0 to 42.8 Cr range implied by slide-15 economics and the 64.3/21.2/10.8 mix (Pres p.15; PR p.2)"
+red_flags_top3:
+  - "Section 115BAB demand 367.25 lakh unprovided, outside audited notes, 2.8x the pure rate gap, and denied as tax litigation in the 24 Oct 2026 governance filing (Pros p.241; Ann 2026-10-24 p.3)"
+  - "3003.57 lakh of capital-goods advances to unnamed vendors, 97.60 lakh Darpan fee with no P&L line, and four versions of the Darpan record (AFS p.27; Pros p.50)"
+  - "FY26 margin base and half-year split are not run-rate; FY27 guidance needs 206 to 240 towers in H2 against 148 in H2 FY26 (PR p.2; H1 p.4; derived)"
+best_fit_strategy: "Capex-led growth (WATCHLIST); GARP WATCHLIST; Turnaround FAIL"
+one_line_verdict: "Capex-led volume growth with real order cover, but an unsettled margin base and tax rate; WATCHLIST with position size carrying the caution."
+analyst_note: "No annual report exists, so this stage read the Prospectus MD&A and audited statements. Three results a later stage cannot rebuild from the fields above. One: FY26 revenue per tower was flat across halves (66.7 and 68.8 lakh) while EBITDA per tower went 16.4 to 34.5 lakh, so the 50.1% H2 margin is a timing or cost-recognition plug, not mix; B02's reading B is favoured for FY26, mix is right for H1 FY27. Two: FY26 utilisation of 48.17% is 210/(420+16), measured on year-end capacity. Installed tonnage of 207,000 t supports about 437 towers at the 474 t weight of the latest order, not 612. Three: guidance needs H2 at 66 to 69% of the year, a smaller seasonal lift than any past year, so revenue (towers) is the stretch and margin is not. Conservatism belongs in position size."

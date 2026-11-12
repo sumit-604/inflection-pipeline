@@ -1,0 +1,101 @@
+stage: B09-tam
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "B07 not yet run: capex_embedded_growth_pct unavailable; 3C used heads x revenue per head instead"
+  - "Vertical split of global outsourced ER&D NOT FOUND: SAM filter percentages are analyst assumptions with ranges, SAM level confidence LOW"
+  - "Names of Onward's customers NOT FOUND (18.3% customer, construction and mining leader, power-management leader): downstream candidates are entity classes"
+  - "Data-centre share of Onward revenue and sizing of the data-centre lever NOT FOUND"
+  - "Global vendor revenues, competitor count, top-3 concentration and unorganised share NOT FOUND"
+flags:
+  - "FLAG-SAM-ASSUMED: all four SAM filters are unsourced assumptions; low-to-high SAM spans Rs 63,760 to 2,06,570 Cr (3.2x); SOM does not depend on the level"
+  - "FLAG-MGMT-22PCT: deck's ~22% India engineering offshoring CAGR is unsourced; matches BCG-Nasscom 22% share by FY30 (inference); Nasscom path implies about 12.2%"
+  - "FLAG-FX: Rs 94.68 per USD from a 22 Jun 2026 close seen in a search snippet; no November 2026 rate found"
+  - "FLAG-FY27-TWO-READINGS: guide 15-18% (Rs 625-642 Cr) vs flat Q2 run rate Rs 660 Cr (+21.4%); separator is Q3 FY27 revenue vs Rs 170.18 Cr"
+  - "FLAG-CONCENTRATION: 18.3% single customer, top 25 = 87%; the binding runway limit"
+  - "FLAG-REVENUE-LABEL: deck p.15 Rs 550.9 cr is total income; revenue from operations is Rs 543.85 Cr"
+market_definition: "Outsourced (third-party) ER&D and digital engineering services bought by North American and European OEMs in industrial, transportation and healthcare verticals"
+tam_cr: {conservative: 771640, realistic: 910820}
+sam_cr: 121936
+sam_pct_of_tam: 13.4
+som_3yr_cr: 856
+som_5yr_cr: 1079
+som_implied_revenue_cagr: {yr3: 16.3, yr5: 14.7}
+current_sam_share_pct: 0.446
+revenue_headroom_x: 224
+tam_growth_pct: 8.6
+runway_class: "STRONG"
+mgmt_claim_cr: 23670000
+mgmt_claim_ratio: 30.7
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient: FY31 SOM needs about 4,621 heads at flat Rs 23.3 lakh per head (+1,704, about 400 a year) against 432 net hires in H1 FY27; constraint is utilisation and concentration, not capacity"
+methods_used: ["top-down Nasscom-Everest vendor pool", "spend x outsourcing penetration", "peer revenue aggregation (floor)", "BCG-Nasscom sourcing (divergence, not used)"]
+stale_data_flags:
+  - {datapoint: "Global ER&D outsourcing $81.5 bn", source: "Nasscom-Everest ER&D Report 2025 via AR26 p.45", year: 2024}
+  - {datapoint: "Global ER&D sourcing $210-280 bn; India share 17% to 22%", source: "BCG-Nasscom via autocarpro.in", year: 2023}
+  - {datapoint: "Global ER&D spend $1.8 tn", source: "Nasscom via AR26 p.9", year: 2023}
+searches_performed:
+  - "Nasscom Everest ER&D report 2025 global ER&D outsourcing market"
+  - "Nasscom Strategic Review 2026 India ER&D FY26"
+  - "India engineering R&D services market size Zinnov"
+  - "BCG-Nasscom ER&D sourcing page fetch (autocarpro.in, opened)"
+  - "KPIT and Tata Elxsi FY26 revenue"
+  - "Quest Global revenue FY26"
+  - "USD INR exchange rate November 2026"
+  - "data center capex power cooling OEM demand"
+  - "global ER&D outsourcing by vertical (two searches)"
+searches_skipped:
+  - "yourstory.com Sept 2026 India ER&D article (HTTP 403)"
+  - "letsdatascience.com Nasscom ER&D article (HTTP 403, snippet only)"
+  - "Everest Group ER&D 2026 report page (not opened)"
+  - "USD/INR for November 2026 (not found; 22 Jun 2026 rate used)"
+  - "Global ER&D vertical split (NOT FOUND)"
+  - "Global ER&D vendor revenues: Capgemini Engineering, Akkodis, Alten, Tech Mahindra (not searched)"
+  - "Data-centre engineering services outsourcing market size (no result)"
+downstream_candidates:
+  - signal: "Order backlog of data-centre power and cooling OEMs"
+    entity_type: "end-customer"
+    demand_link: "Onward engineers for OEMs that equip and power data centres; Rs 33 Cr contract and RFQs"
+    likely_source: "OEM quarterly filings, SEC EDGAR"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Hyperscaler data-centre capex guidance"
+    entity_type: "macro"
+    demand_link: "Drives OEM orders behind Onward's data-centre engineering pipeline"
+    likely_source: "Hyperscaler 10-Q and earnings calls; Dell'Oro"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Construction, mining and heavy machinery OEM order books and R&D spend"
+    entity_type: "end-customer"
+    demand_link: "Industrial and heavy machinery is 65% of revenue; Rs 44 Cr renewal"
+    likely_source: "OEM quarterly filings, SEC EDGAR"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Peer ER&D services quarterly revenue and deal wins"
+    entity_type: "counterparty"
+    demand_link: "Peers sell to the same OEM budgets and report before Onward"
+    likely_source: "BSE/NSE filings and concall transcripts"
+    cadence: "quarterly"
+    shared: false
+  - signal: "US PERM and onsite work rules"
+    entity_type: "regulatory"
+    demand_link: "Guidance is stated post new regulation; onsite is 31% of revenue"
+    likely_source: "USCIS, Department of Labor, Federal Register"
+    cadence: "event-driven"
+    shared: false
+  - signal: "USD/INR"
+    entity_type: "macro"
+    demand_link: "Reported growth exceeds constant currency by 4.7 pp in Q2 FY27"
+    likely_source: "RBI reference rate"
+    cadence: "monthly"
+    shared: false
+  - signal: "Nasscom/Everest ER&D market releases"
+    entity_type: "macro"
+    demand_link: "Sets the 8.6% TAM growth input"
+    likely_source: "Nasscom Strategic Review; Everest Group ER&D reports"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "SAM level is assumption-driven (vertical split NOT FOUND), so read headroom (224x) as 'large', not as a number. The handoff CAGR does not depend on SAM: it is the guide's top (18%) fading linearly to SAM growth 8.6% plus Onward's observed 2.8 pp FY26 excess (11.4%) by FY31. Two readings of FY27: guide Rs 625-642 Cr vs run-rate Rs 660 Cr; Q3 FY27 revenue vs Rs 170.18 Cr separates them. Mgmt claim ratio 30.7x compares total ER&D spend (in-house included) to the vendor pool; the vendor-pool claim itself is reasonable. Earnings-growth line: 16.1% EBITDA CAGR vs 19.0x trailing P/E."

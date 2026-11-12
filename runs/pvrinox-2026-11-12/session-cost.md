@@ -15,3 +15,4 @@ split is not exposed, so those columns read n/a. Nothing is estimated.
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 149,957 | 6m46s | 1 |
 | 8 | stage-08-promoter | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 195,489 | 9m14s | 1 |
 | 5 | stage-05-concall | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 219,423 | 9m59s | 1 |
+| 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 184,507 | 5m19s | 1 |

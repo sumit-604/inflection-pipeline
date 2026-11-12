@@ -11,3 +11,4 @@ split is not exposed, so those columns read n/a (never an estimate).
 | 1 | gate 0 scorecard | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 123414 | 6m37s | 1 |
 | 2 | notes triple-pass, pass 1 | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 229238 | 8m32s | 1 |
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 215980 | 8m39s | 2 |
+| 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 85529 | 1m58s | 3 |

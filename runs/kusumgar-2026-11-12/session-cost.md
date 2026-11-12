@@ -9,3 +9,4 @@ metadata. n/a where the harness does not expose the figure; never an estimate.
 | 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 112016 | 286s | 1 |
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 232562 | 556s | 1 |
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 148383 | 362s | 1 |
+| 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 87001 | 173s | 1 |

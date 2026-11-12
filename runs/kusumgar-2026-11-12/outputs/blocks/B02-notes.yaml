@@ -1,0 +1,47 @@
+stage: B02-notes
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "annual-report ABSENT: no annual report exists (listed 2026-07-15). The prospectus restated consolidated financial information (FY2024-FY2026) stands in; three fiscal years only."
+  - "FY2025-26 standalone audited statements are a scanned PDF with no text layer and no OCR tool; not consumed. The statutory CARO report is not in the corpus; CARO remarks are known only as the prospectus reproduces them."
+flags:
+  - {type: FLAG-CASH, reason: "Net receivables 561.10 to 2,332.79 INR mn (Prospectus p.279, Note 15 p.302) while revenue fell 11.2%; debtor days 26.3 to 123.0 (derived); FY26 operating cash flow 282.58 vs EBITDA 1,878.50 (15.0%) (p.283, p.333); ECL allowance down 68.67 to 62.45 with 6.23 reversal to income (Note 48(b) p.325)."}
+accounting_quality: 5
+pass_2_empty: false
+pass_3_empty: false
+top_findings:
+  - {rank: 1, finding: "Net receivables 561.10 to 2,332.79 (4.2x) on revenue down 11.2%; debtor days 26.3 to 123.0 (derived); 1,719.06 (71.8%) not due vs 30-45 day terms; FY26 operating cash flow 282.58 vs EBITDA 1,878.50 (15.0%). INR million.", note_ref: "Note 15 p.302; Note 44(c) p.321; Annexure IV p.283", rating: "RED", why: "Earnings are not converting to cash; central cash-conversion fact."}
+  - {rank: 2, finding: "Build is foreign-currency: 1,364.38 of 1,765.46 gross rise (77.3%); foreign-currency receivable days 226 vs 63 (derived); post-year-end collection NOT FOUND.", note_ref: "Note 48(a)(ii) p.324; Note 45(a) p.321", rating: "RED", why: "Terms or billing timing do not fit stated 30-45 day policy; unhedged export credit risk."}
+  - {rank: 3, finding: "ECL allowance 68.67 to 62.45 as gross receivables rose 629.77 to 2,395.23; cover 10.9% to 2.6% (derived); 6.23 reversal to Other income; no forward-looking adjustment.", note_ref: "Note 48(b) p.325; Note 31 p.310", rating: "RED", why: "Provisioning moved against the exposure."}
+  - {rank: 4, finding: "Customer one 46.00% (FY24), 24.97% (FY25); customer two 27.97% (FY25); none above 10% in FY26; India fabrics and solutions down 44.4%, exports up 47.2% (derived); customers unnamed.", note_ref: "Note 45(c) p.321; Note 44(a) p.320", rating: "RED", why: "Revenue base reset in one year; customers and cause not disclosed."}
+  - {rank: 5, finding: "Bank guarantee contingent liability 1,038.77 (nil prior) = 20.7% of net worth 5,029.54; total contingent 21.7%; margin deposits 78.90 (7.6%); beneficiary NOT FOUND; deposits against guarantees existed in FY24 and FY25 while Note 40 showed nil.", note_ref: "Note 40 p.314; Notes 11, 17, 19 pp.301, 303", rating: "RED", why: "Largest unexplained off-balance-sheet item."}
+  - {rank: 6, finding: "Working-capital borrowings 1,031.60 (Mar 2026) to 1,697.68 (31 May 2026, incl. interest); 842.65 non-current debt repayable on demand if covenants fail, ratios NOT FOUND; lender consent needed for change in promoter shareholding.", note_ref: "Note 23 p.307; pp.335-338", rating: "RED", why: "Liquidity direction and covenant opacity tied to the receivable build."}
+  - {rank: 7, finding: "FY24 customer advance 1,264.61 all recognised as FY25 revenue; ECFPL consideration 1,118.53 paid via FY25 operating cash flow. 3-year operating cash flow 742.46 vs profit 2,945.84 (25.2%); 63.2% if consideration treated as investing (derived).", note_ref: "Note 44(c) p.321; Note 51 p.330; Annexure IV p.283", rating: "RED", why: "Year-wise cash flows not comparable; show the 25% to 63% range."}
+  - {rank: 8, finding: "Selling-shareholder items: ECFPL bought at 10.1x net assets and 35.1x FY25 profit, valuer NOT FOUND; promoter loans 300.00 and 284.17 taken and repaid in-year; IPO costs 81.48 recovered, 17.70 open; promoter-group shares down 64,98,631 (6.40%), buyer NOT FOUND.", note_ref: "Note 51 p.330; Note 43 pp.317-319; Note 21 p.305", rating: "YELLOW", why: "Load-bearing related-party items; arm's-length claim has no benchmark."}
+  - {rank: 9, finding: "USD receivable 13.23m carried at INR 1,627.72 (implied 123.0 per USD) vs 92.8 and 95.3 in same note; 146.46 sensitivity uses it; FX gain 147.91 fully unrealised (74.8% of other income, 11.0% of PBT).", note_ref: "Note 48(a) pp.324-325; Note 31 p.310", rating: "YELLOW", why: "Possible overstated receivable and gain; cause NOT FOUND."}
+  - {rank: 10, finding: "Finished fabric +78.4% and total inventory +42.3% on falling sales; write-downs 117.73 / 39.57 / 180.45; EBITDA margin 27.15% vs 24.18% (derived).", note_ref: "Note 14 p.301; Note 33 p.310", rating: "YELLOW", why: "Second working-capital sink; margin partly stock-supported (inference)."}
+  - {rank: 11, finding: "Payables past due 43.0% to 51.2% to 71.9% of total; over one year past due 33.29 vs 4.40; new disputed payables 33.00; advances to creditors 84.16 to 196.62.", note_ref: "Note 25 pp.308-309; Note 20 p.303; Note 48(c) p.325", rating: "YELLOW", why: "Both sides of working capital worsened."}
+  - {rank: 12, finding: "FY2025 CARO: cash credit 657.27 used for long-term purposes; stock-statement differences up to 121 (9.4% of book); audit trail not at database level until 27 Jul 2025, absent in FY24. Contradicts Notes 53(xii) and 23 note 4.", note_ref: "Annexure VI Part C p.297; p.32; Note 53 p.331", rating: "YELLOW", why: "Control and bank-reporting quality."}
+  - {rank: 13, finding: "Services revenue 523.13 (14.97 prior), undescribed, 312.61 sold to FZ LLC (net assets 70.73 vs 605.26 due to parent); FZ LLC about 8.1% of group PBT at 38.30% tax.", note_ref: "Note 44(a) p.320; Note 43(h) p.319; Note 50 p.328; Note 38 p.312", rating: "YELLOW", why: "Unexplained revenue line tied to an intra-group counterparty."}
+  - {rank: 14, finding: "ESOP charge 204.33 vs 34.57, 97.5% to CEO; per-option fair values inconsistent in Note 49; EPS dilution row mislabelled.", note_ref: "Note 49 pp.326-327; Note 39 p.314", rating: "YELLOW", why: "Large non-cash charge inside EBITDA."}
+  - {rank: 15, finding: "Toray Kusumgar Level 3 holding 154.19: discount rate down 360 bp while value up 3.0%; sensitivities unlabelled; implied risk-free rate 4.75% to 7.34%.", note_ref: "Note 46 p.323; Note 10 p.301", rating: "YELLOW", why: "Related-party valuation on thin disclosed inputs."}
+red_flags:
+  - "Provisioning moved against exposure: ECL allowance down while receivables rose 4.2x, with a 6.23 reversal to income (Note 48(b) p.325; Note 31 p.310)"
+  - "Year-end not-due balance 1,719.06 equals 24.8% of annual revenue (derived) against 30-45 day terms (Note 15 p.302; Note 44(c) p.321)"
+  - "Implied 123.0 INR per USD on unhedged USD receivables vs 92.8 and 95.3 in the same note (Note 48(a)(ii) p.324)"
+  - "Bank guarantee 1,038.77 with no beneficiary or purpose; deposits against guarantees while Note 40 showed nil in FY24 and FY25 (Note 40 p.314; Notes 11, 17, 19)"
+  - "Promoter consideration for ECFPL 1,118.53 classified inside FY25 operating cash flow (Annexure IV p.283; Note 51 p.330)"
+  - "FY2025 CARO adverse items contradict Note 53(xii) and Note 23 note 4 (p.297; p.331; p.307); audit trail gaps"
+  - "Covenant ratios not disclosed on 842.65 of debt repayable on demand if breached (Note 23 p.307)"
+questions_for_mgmt:
+  - "What share of the 2,395.23 gross receivable at 31 March 2026 was collected by 30 June 2026, split USD export vs India, and what credit terms apply to Germany, Sri Lanka, Turkey and Singapore sales?"
+  - "Why is the 13.23 million USD receivable carried at INR 1,627.72 (about 123 per USD) when payables and forwards imply 92.8 and 95.3? Does it include the FZ LLC receivable of 377.27?"
+  - "Who is the beneficiary of the 1,038.77 bank guarantee, what does it back, and what covered the earlier deposit margin when Note 40 showed nil?"
+  - "Which financial covenants apply to the 842.65 of non-current debt, what was the headroom at 31 March 2026, and does a promoter sell-down trigger lender consent?"
+  - "What are the 523.13 services, who are the customers, why were 312.61 sold to Kusumgar Middle East FZ LLC, and who were the two FY25 customers above 10%?"
+receivables_trend: "deteriorating: net receivables 561.10 (Mar 2025) to 2,332.79 (Mar 2026), debtor days 26.3 to 123.0 (derived); gross 629.77 to 2,395.23; not due 453.86 to 1,719.06; overdue under 6 months 130.08 to 648.08; over 6 months 45.83 to 28.10; ECL 68.67 to 62.45 (Note 15 p.302; Note 48(b) p.325). Mar 2024 ageing not comparable (no not-due balance printed). INR million."
+restatements_found: []
+going_concern_language: "NONE adverse. Only: 'no material uncertainty exists that may cast significant doubt on the going concern assumption' (Prospectus p.287, Note 2(f))"
+analyst_note: "Restatement is nil (Annexure VI Part A p.296) but that is not comfort on cash. Two points a later stage cannot rebuild from the fields. First, three-year operating cash flow is 25.2% of profit only because the 1,118.53 ECFPL consideration to the promoters sits in FY25 operating activities; reclassified it is 63.2% (derived). Show the range, not one figure. Second, the 123.0 INR per USD on the largest receivable class may hide an intra-group FZ LLC balance of 377.27 (a near fit of 10.4, not proof). Mar 2024 ageing and FY24 cash flows are special-purpose combined figures and should not anchor trend claims. The CARO 657.27 remark is FY2025 per Prospectus p.32 (outside the notes window); p.297 alone does not fix the year. FY26 revenue fall matching the two FY25 customers is inference only."

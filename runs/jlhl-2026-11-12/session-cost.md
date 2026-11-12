@@ -23,3 +23,4 @@ split is not exposed, so those columns read n/a (never an estimate).
 | 12a | verifier A numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 305006 | 13m17s | 1 |
 | 12c | verifier C framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 169734 | 14m35s | 1 |
 | 12b | verifier B red flags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 273917 | 17m41s | 1 |
+| 13 | synthesis-lite (phase 1, three files) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 192434 | 11m27s | 1 |

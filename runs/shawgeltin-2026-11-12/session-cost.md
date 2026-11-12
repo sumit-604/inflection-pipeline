@@ -9,3 +9,4 @@ Per-stage token ledger. Figures come from the subagent result metadata; n/a wher
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 181145 | 414s | 1 |
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 183423 | 421s | 1 |
 | 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 68060 | 111s | 1 |
+| 3 | stage-03-ardeep | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 339226 | 739s | 1 |

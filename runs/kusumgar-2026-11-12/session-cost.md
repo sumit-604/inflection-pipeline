@@ -14,3 +14,4 @@ metadata. n/a where the harness does not expose the figure; never an estimate.
 | 5 | stage-05-concall (no-concall mode + 1 transcript) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 129853 | 229s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 224870 | 407s | 1 |
 | 8 | stage-08-promoter | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 237511 | 479s | 1 |
+| 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 159000 | 236s | 1 |

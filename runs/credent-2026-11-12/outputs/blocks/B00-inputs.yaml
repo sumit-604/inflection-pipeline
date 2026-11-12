@@ -58,7 +58,7 @@ freshness_pairs:
 freshness_verdict: "FRESHNESS PAIRS OK"
 verifier_a_shadow: "NOT RUN. .claude/shadow.yaml reads armed, but this session is restricted by its task to its own run folder, companies/CREDENT.md and the archive note, and ten sibling /step1 sessions read the same switch at the same time. Flipping the switch here would edit a framework file on a run branch. Left armed; open item for the operator."
 company_memory: "companies/CREDENT.md (created by /step1 today; no prior run) and runs/credent-2026-11-12/step1-business-brief.md. Memory to weigh, never anchored evidence."
-# verified rows from B00-intake.yaml (stage-00-intake-check, claude-haiku-5-5); 37 rows, 0 moves, 0 unreadable
+# verified rows from B00-intake.yaml (stage-00-intake-check, claude-haiku-5-5); 34 rows, 0 moves, 0 unreadable
 corpus_manifest:
 - path: inputs/announcements/CREDENT_01102026195649_Voting_Result_Final.pdf
   file_type: pdf

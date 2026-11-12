@@ -9,6 +9,10 @@ Not set. Phase 1 evidence only; no thesis is formed before Halt 1.
 
 ## DECISION STATUS AND ENTRY ZONE
 Not set. No valuation has run; stages 10 and 11 are phase 3.
+Phase 1 gate recommendation 2026-11-12: PROCEED WITH CAVEATS (FLAG-CASH
+INDETERMINATE; FLAG-GATE0, Gate 0 GOOD, core 68 on Verifier C recompute).
+Phase-1 confidence 85, set by red-flag coverage. Corpus verdict CORPUS GAPPED;
+fragility FRAGILE. Awaiting Halt 1.
 
 ## SPEAR
 Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)

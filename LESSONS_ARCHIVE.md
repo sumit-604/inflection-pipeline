@@ -1112,3 +1112,13 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-12 · JLHL · /step1 phase 1 (runs/jlhl-2026-11-12)
+- collect_to_repo.py REPO_ROOT is hardcoded to a path absent on this machine; run through a scratch wrapper. Headed Chromium fails to launch from the session shell; a scratch sitecustomize forcing headless worked. tools/ untouched.
+- Collector left results, rating, shareholding and prospectus empty and fetched only five weeks of announcements. Filled from NSE archives (corporate-announcements API), icra.in and the company site.
+- Results PDFs carry a garbled OCR text layer on the statement pages; stage 1 found it. Rendered page images to work/pages/ with pdftoppm for stages and verifiers.
+- Subagents ran async; token split not exposed, so the fresh vs re-read lines are n/a.
+- Verifier A shadow not run here: ten parallel /step1 sessions, switch claimed by the kusumgar run.
+- Stage 9 was dispatched before stage 7, so it built capacity from B03 and B05 instead of B07; Verifier C later cut B07's capex-embedded growth from 177 to 62.
+- Verifier B full-catch-only rate 53.8% vs scored 85%: the prompt does not say whether partial catches count. For /compost.
+

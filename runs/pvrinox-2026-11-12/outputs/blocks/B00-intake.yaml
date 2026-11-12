@@ -1,0 +1,396 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: inputs/announcements/20260126-divestment-5f9b6a89.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "Reg 30 disclosure: divestment of entire stake in Zea Maize Pvt Ltd (4700BC)"
+    period: "event date 2026-01-26 (Q4 FY26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260129-divestment-update-ccf82b67.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "Reg 30 update: ZMPL sale completed, ZMPL ceased to be subsidiary"
+    period: "event date 2026-01-29 (Q4 FY26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260511-FY26-press-release-3b76fc96.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "press release: Q4 FY26 and FY26 results"
+    period: "Q4 FY26 and 12 months ended 2026-03-31"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260525-smp-resignation-812c029a.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "Reg 30 disclosure: resignation of senior management personnel (CEO Growth and Investment)"
+    period: "event date 2026-05-24 (Q1 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260831-board-outcome-buyback-adde0a56.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "board outcome: approval of share buyback (tender offer)"
+    period: "board meeting 2026-08-31 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260907-buyback-letter-of-offer-739d7f51.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "letter of offer: buyback"
+    period: "dated 2026-09-07 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20260929-f65a199d-8103-4c98-8b34-99315175946b.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "Reg 30 intimation: institutional investor meeting (Singapore)"
+    period: "event date 2026-09-29 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261005-51260852-2044-4845-a773-ca269b43f01d.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "Reg 24(iv) buyback notice: extinguishment of 20,68,965 equity shares"
+    period: "letter dated 2026-10-05; tendering period 2026-09-10 to 2026-09-17 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261014-4f925604-b34b-4676-86f5-47946437101e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "Reg 74(5) compliance certificate (RTA) under depositories regulations"
+    period: "quarter ended 2026-09-30 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261021-66c22a72-6afd-4336-b619-6873de7000b4.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "Reg 30 intimation: Q2 FY27 earnings conference call"
+    period: "Q2 FY27 (call 2026-10-28)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261021-68b44aed-57a8-4ec1-abb9-9d983e301b49.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "board meeting notice: Q2 and H1 FY27 results; trading window closure"
+    period: "Q2 and H1 FY27 (quarter ended 2026-09-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261028-0e4fce2b-f6aa-4aa5-95f0-748090b31127.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "press release: Q2 and H1 FY27 record results"
+    period: "Q2 and H1 FY27 (quarter ended 2026-09-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261028-19e5be45-9bad-4d19-9f00-6e8fed4f72c4.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "Reg 30 link to audio recording of Q2 FY27 earnings call"
+    period: "Q2 FY27 (call 2026-10-28)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261104-26c8851d-6566-4ae1-8fc4-743ff3597026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "press release: opening of five-screen cinema, Jaipur"
+    period: "event date 2026-11-04 (Q3 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/20261111-604aa564-864a-4c29-946c-be4c1ab873e9.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "Reg 30 intimation: investor conference (29th CITIC CLSA India Forum)"
+    period: "event date 2026-11-17 (Q3 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/announcements/8A020A52_79D7_49E5_A1C8_CA010D96901C_164230.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "SAST Reg 31(2) disclosure: promoter pledge release (signed Ajay Kumar Bijli, Promoter and MD)"
+    period: "dated 2026-11-03 (Q3 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "PDF opened directly (spot check)"
+  - path: inputs/announcements/EAA61B68_19A1_49C6_91DF_6DA2A9785081_101021.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "SAST Reg 29(2) disclosure: promoter shares accepted in buyback (95,907 shares; signed Ajay Kumar Bijli, Promoter)"
+    period: "dated 2026-09-28 (Q2 FY27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/annual-report/Annual_Report_2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "annual report: 30th AGM notice cover letter and annual report (FY2024-25)"
+    period: "FY2024-25 (year ended 2025-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "page 1 is the AGM cover letter dated 2025-08-14; PDF opened directly (spot check); AR body not read"
+  - path: inputs/annual-report/Annual_Report_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "annual report: 31st AGM notice cover letter and annual report"
+    period: "FY2025-26 (year ended 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "page 1 is the AGM cover letter dated 2026-08-19; AR body not read"
+  - path: inputs/results/20260511-Q4FY26-audited-results-d26a61a1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "results: board outcome, audited Q4 and FY26 results"
+    period: "Q4 FY26 and FY26 (year ended 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/results/20260723-Q1FY27-results-acd1dd6e.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "results: board outcome, unaudited Q1 FY27 results"
+    period: "Q1 FY27 (quarter ended 2026-06-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "PDF opened directly (spot check)"
+  - path: inputs/results/20261028-Q2FY27-results-15562952.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "results: board outcome, unaudited Q2 and H1 FY27 results"
+    period: "Q2 and H1 FY27 (quarter ended 2026-09-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/presentation/Investor_Presentation_1.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "investor presentation: Q2 and H1 FY27 investor update"
+    period: "Q2 and H1 FY27 (quarter ended 2026-09-30); cover letter 2026-10-28"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/concalls/Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "concall transcript: Q3 and 9M FY26 earnings call"
+    period: "Q3 and 9M FY26 (quarter ended 2025-12-31); call transcript filed 2026-02-12"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "page 1 is exchange cover letter; quarter read from page 2 and 3"
+  - path: inputs/concalls/Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "concall transcript: Q4 FY26 and FY26 earnings call"
+    period: "Q4 FY26 and FY26 (year ended 2026-03-31); call 2026-05-11"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "page 1 is exchange cover letter dated 2026-05-18"
+  - path: inputs/concalls/Concall_Jul_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "concall transcript: Q1 FY27 earnings call"
+    period: "Q1 FY27 (quarter ended 2026-06-30); call 2026-07-24"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "page 1 is exchange cover letter dated 2026-07-30"
+  - path: inputs/concalls/Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "concall transcript: Q2 FY27 results conference call"
+    period: "Q2 FY27 (quarter ended 2026-09-30); call 2026-10-28"
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "page 1 is exchange cover letter dated 2026-11-03"
+  - path: inputs/peer-concalls/UFO-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "UFO Moviez India Limited (peer)"
+    doc_type: "concall transcript (peer): Q3 and 9M FY26 earnings call"
+    period: "Q3 and 9M FY26 (call 2026-01-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer filing in peer-concalls/, correctly filed"
+  - path: inputs/peer-concalls/UFO-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "UFO Moviez India Limited (peer)"
+    doc_type: "concall transcript (peer): Q4 FY26 and FY26 earnings call"
+    period: "Q4 FY26 and FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer filing in peer-concalls/, correctly filed"
+  - path: inputs/peer-concalls/UFO-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "UFO Moviez India Limited (peer)"
+    doc_type: "concall transcript (peer): Q1 FY27 earnings call"
+    period: "Q1 FY27 (call 2026-07-29)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "file name says Aug; period taken from page; peer filing in peer-concalls/, correctly filed"
+  - path: inputs/peer-concalls/UFO-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "UFO Moviez India Limited (peer)"
+    doc_type: "concall transcript (peer): Q2 and H1 FY27 earnings call"
+    period: "Q2 and H1 FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer filing in peer-concalls/, correctly filed"
+  - path: inputs/peer-concalls/WONDERLA-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Wonderla Holidays Limited (peer)"
+    doc_type: "concall transcript (peer): Q3 and 9M FY26 earnings call"
+    period: "Q3 and 9M FY26 (call 2026-02-05)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer filing in peer-concalls/, correctly filed"
+  - path: inputs/peer-concalls/WONDERLA-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Wonderla Holidays Limited (peer)"
+    doc_type: "concall transcript (peer): Q4 FY26 and FY26 earnings call"
+    period: "Q4 FY26 and FY26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer filing in peer-concalls/, correctly filed"
+  - path: inputs/peer-concalls/WONDERLA-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Wonderla Holidays Limited (peer)"
+    doc_type: "concall transcript (peer): Q1 FY27 earnings call"
+    period: "Q1 FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer filing in peer-concalls/, correctly filed"
+  - path: inputs/peer-concalls/WONDERLA-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Wonderla Holidays Limited (peer)"
+    doc_type: "concall transcript (peer): Q2 and H1 FY27 earnings call"
+    period: "Q2 and H1 FY27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer filing in peer-concalls/, correctly filed"
+  - path: inputs/rating/CRISIL-rating-rationale-2026-02-27.txt
+    file_type: txt
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "rating: CRISIL rating rationale (reaffirmation, AA/Stable, A1+)"
+    period: "rationale dated 2026-02-27; financial data to 9M FY26 (2025-12-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/shareholding/PVRINOX-shareholding-pattern-30Sep2026-NSE-XBRL.txt
+    file_type: txt
+    content_ok: true
+    issuer: "PVR INOX Limited"
+    doc_type: "shareholding pattern (NSE XBRL dump)"
+    period: "quarter ended 2026-09-30; broadcast 2026-10-09"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/screening/screener-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "PVR INOX Ltd"
+    doc_type: "screener data sheet (annual financials, figures beside row labels)"
+    period: "FY2017 to FY2026 (report dates to 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: inputs/screening/CINELINE-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "CINELINE INDIA LTD (peer, not PVR INOX)"
+    doc_type: "screener data sheet (peer annual financials)"
+    period: "FY2010 to FY2025 (report dates to 2025-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer data sheet sits beside the main-company screen in screening/; no peer screening folder exists, so no move proposed; orchestrator to confirm the folder convention"
+unreadable: []
+unidentified: []

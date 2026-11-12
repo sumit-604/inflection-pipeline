@@ -1,0 +1,56 @@
+stage: B00-inputs
+company: PVRINOX
+run_date: 2026-11-12
+model: orchestrator session (claude-fable-5-2)
+status: complete
+spear_gate: "PASS. companies/PVRINOX.md carries 'Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)'."
+load_bearing_facts:
+  - "Net cash Rs 141 Cr at 30 Sep 2026 after a Rs 300 Cr buyback, against net debt about Rs 162 Cr at March 2026; verify on the balance sheet excluding lease liabilities and name what funded the fall."
+  - "Two earnings bases (Ind AS 116 adjusted vs reported). Q2 FY27 EBITDA Rs 475 Cr adjusted vs Rs 803.5 Cr reported; FY26 PAT in the press as Rs 386 Cr and Rs 176 Cr; find the one-time gain."
+  - "Screen guidance vs delivery: about 150 for FY27 (Q3 FY26 call), cut to 90-100; H1 FY27 opened 24, closed 25; FY28 guidance 150-175."
+  - "Volume vs price: Q2 FY27 admissions +4%, ticket price +14%, spend per head +14%; revenue +17% vs industry box office +23%."
+inventory:
+  prospectus: 0          # long-listed company (BSE 532689, listed 2006); not expected, not a gap
+  annual-report: 2       # FY2025-26 (primary), FY2024-25 (prior-year reference)
+  results: 3             # Q4 FY26 audited (11 May 2026), Q1 FY27 (23 Jul 2026), Q2 FY27 (28 Oct 2026)
+  rating: 1              # CRISIL rating rationale 27 Feb 2026, text
+  concalls: 4            # Feb 2026 (Q3 FY26), May 2026 (Q4 FY26), Jul 2026 (Q1 FY27), Nov 2026 (Q2 FY27); stage 5 reads the three most recent
+  peer-concalls: 8       # UFO x4, WONDERLA x4; CINELINE x0
+  announcements: 17
+  shareholding: 1        # NSE XBRL for 30 Sep 2026, dumped to text
+  research: 0
+  screening: 2           # Data_Sheet only (PVRINOX, CINELINE)
+  presentation: 1        # Q2 FY27 investor presentation
+  other: 0
+sector_cap_row: "NOT FOUND"
+sector_cap_row_evidence: "Section 1B cap table (.claude/skills/section-1b/references/05-sector-cap.md) has no film exhibition, media or out-of-home entertainment row. The business is a multiplex cinema operator (tickets, F&B, advertising, convenience fees). Nearest structural row for the operator to weigh: Hotels 30x. HIGH gap. Does not block the evidence stages; blocks stage 11 until the operator rules the row at the /fttcp pillar-approval gate. Collector guess 'Agri processing' rejected."
+reporting_units: {results: "INR million", annual_report: "INR million", screener: "INR Cr", rating: "INR Cr", presentation: "INR million (check each slide)"}
+pre_extracted_text: "Every inputs/ PDF has a page-marked .txt beside it (tools/extract_pdfs.py; tools/check_extraction.py reported clean). The results PDFs are scanned: their text layer carries OCR errors (for example 'exceot oer share datal'), so load-bearing figures are read at the PDF page."
+input_gaps:
+  - "collector_warning (verbatim): RESOLVED by /step1 2026-11-12 (NSE XBRL for 30-Sep-2026 dumped to text in inputs/shareholding/). Original warning: shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "collector_warning (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, CINELINE:Profit & Loss, CINELINE:Quarters, CINELINE:Balance Sheet, CINELINE:Cash Flow, CINELINE:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "collector_warning (verbatim): RESOLVED by /step1 2026-11-12: results PDFs (Q4 FY26, Q1 FY27, Q2 FY27) fetched from BSE into inputs/results/."
+  - "collector_warning (verbatim): RESOLVED by /step1 2026-11-12: CRISIL rating rationale 27-Feb-2026 saved as text in inputs/rating/ (CRISIL serves HTML, no PDF)."
+  - "screening: Profit & Loss, Balance Sheet, Cash Flow and Quarters CSVs ABSENT (empty export). Data_Sheet CSVs are populated (figures present beside row labels, checked)."
+  - "research/: empty. No effect on anchored evidence."
+  - "peer-concalls: CINELINE (Cineline India) has no transcripts on screener; peer coverage runs on UFO and WONDERLA only. Few listed multiplex peers exist."
+  - "sector_cap_row NOT FOUND: HIGH gap for phase 3."
+  - "India Ratings pages for the company need a browser to render and were not captured; the CRISIL rationale is the rating document held."
+  - "Verifier A shadow: .claude/shadow.yaml reads armed. Ten /step1 sessions ran in parallel on 2026-11-12; runs/kusumgar-2026-11-12 claimed the one permitted shadow run. This run skipped the shadow and left the switch untouched."
+  - "Results PDFs are scanned images with an OCR text layer; figures must be read at the page."
+empty_folder_confirmation: "SUPPRESSED under the /step1 autonomy contract. Standing answer: proceed with the gaps. Empty folders: research/. prospectus/ is empty and not expected (long-listed)."
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/20261028-Q2FY27-results-15562952.pdf", mate_expected: "Q2 FY27 concall transcript", status: PASS, missing_doc: ""}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/CRISIL-rating-rationale-2026-02-27.txt", mate_expected: "full rating rationale", status: PASS, missing_doc: ""}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none referenced at stage 0", mate_expected: "order text", status: PASS, missing_doc: ""}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/20260511-Q4FY26-audited-results-d26a61a1.pdf", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: ""}
+freshness_verdict: "FRESHNESS PAIRS OK"
+concall_quarter_map:
+  - {file: "inputs/concalls/Concall_Feb_2026_Transcript.pdf", quarter: "Q3 FY26", use: "reference (screen-guidance fact)"}
+  - {file: "inputs/concalls/Concall_May_2026_Transcript.pdf", quarter: "Q4 FY26", use: "stage 5 transcript 1"}
+  - {file: "inputs/concalls/Concall_Jul_2026_Transcript.pdf", quarter: "Q1 FY27", use: "stage 5 transcript 2"}
+  - {file: "inputs/concalls/Concall_Nov_2026_Transcript.pdf", quarter: "Q2 FY27", use: "stage 5 transcript 3"}
+corpus_manifest: "see outputs/blocks/B00-intake.yaml (stage-00-intake-check); mismatches verified by the orchestrator are listed under intake_verification below"
+intake_verification: "stage-00-intake-check (claude-haiku-5-5) read 39 files; block parses; 39 of 39 rows folder_match true, none UNREADABLE, none UNIDENTIFIED, no moves proposed. Its note: inputs/screening/CINELINE-Data_Sheet.csv is a peer screen kept in screening/ by collector convention (prefix names the peer); stage 1 is passed only the main-company sheet. UFO-Concall_Aug_2026 covers Q1 FY27 (call dated 2026-07-29)."
+flags: []
+analyst_note: ""

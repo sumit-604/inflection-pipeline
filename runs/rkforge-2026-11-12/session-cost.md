@@ -20,4 +20,34 @@ Subagents ran as async agents in the desktop app. The harness exposes one total-
 | 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 319,880 | 18m29s | 1 |
 | 12c | verifier-c-framework (Gate 0 + EM) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 169,698 | 15m30s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 59,842 | 4m39s | 1 |
-| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | PENDING13 | PENDING13 | 1 |
+| 13 | stage-13-synthesis (phase 1 lite) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 207,370 | 13m01s | 1 |
+| 9b | stage-09b-dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 278,841 | 15m46s | 1 |
+
+Ledger total (17 subagent runs): 3,867,499 tokens. Verifier A shadow: not run (see B00-inputs.yaml), so it has no row.
+
+## CLOSE-OUT SUMMARY
+
+### (a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share of run |
+|---|---|---|---|
+| 1 | stage 2 notes triple-pass (3 runs) | 571,175 | 14.8% |
+| 2 | stage 3 AR deep dive | 539,172 | 13.9% |
+| 3 | verifier A numerical | 404,581 | 10.5% |
+| 4 | verifier B red flags | 319,880 | 8.3% |
+| 5 | stage 6 peers | 298,741 | 7.7% |
+
+### (b) DOWNSHIFT FAILURES
+none. stage-00-intake-check reported claude-haiku-5-5 and verifier A reported claude-sonnet-5-5 in their blocks. verifier-a-shadow did not run.
+
+### (c) COST SPIKES
+none. No prior run exists for RKFORGE.
+
+### (d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+
+### (e) FRESH VS RE-READ
+The harness exposed only a total per subagent run. All 17 ledger rows carry n/a in the input, cache-read and cache-write columns, so all 17 rows are left out of the sums.
+Fresh tokens (cache write + output + uncached input): n/a (17 rows left out)
+Re-read tokens (cache read): n/a (17 rows left out)
+Re-read multiple (re-read / cache write): n/a (17 rows left out)

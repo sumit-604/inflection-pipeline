@@ -22,12 +22,13 @@ Brief: runs/rkforge-2026-11-12/step1-business-brief.md
 ## HALT 1 GATE
 - Mental Model signed: NOT SIGNED. The draft is in runs/rkforge-2026-11-12/outputs/reports/09b-understanding-dossier.md, Section 2.
 - Halt 1 decision (KILL/SHALLOW/PROCEED): PENDING.
+- Phase 1 status 2026-11-12: evidence run complete to Halt 1. Gate recommendation PROCEED WITH CAVEATS (evidence gate, not an investment decision). Corpus verdict CORPUS GAPPED. Fragility read FRAGILE. Phase 1 confidence 77.1 (set by framework adherence).
 
 ## OPERATOR RULINGS
 - 2026-11-12: Step-1 intake run; peers auto-selected; empty folders accepted as gaps.
 
 ## ACTIVE TRIPWIRES
-None set. Tripwires are set at /finalize.
+None set. Tripwires are set at /finalize. Phase 1 falsification line to weigh: net debt at 31 Dec 2026 above Rs 1,700 Cr on the company's stated basis.
 
 ## OPTIONALITY REGISTER (summary)
 None recorded yet.

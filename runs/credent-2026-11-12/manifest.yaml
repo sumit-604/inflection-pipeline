@@ -9,7 +9,7 @@ sector_cap_row: "Logistics (asset-light)"   # /step1 Step D, section-1b chunk 05
 sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
 listed_date: 2026-08-20
 remediation_cycles: 0
-verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
 collector_warnings:
   - "collect_to_repo.py --dry-run staged no documents: Playwright Chromium could not launch inside the session sandbox (BrowserType.launch: spawn UNKNOWN). The corpus was built by hand from the public screener page links (NSE and BSE archives) and the screener Excel export taken through the operator's signed-in Chrome."
   - "collector name scrape returned 'Credent'; corrected to 'Credent Connect N Care Ltd' from the screener page title."

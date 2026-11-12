@@ -14,3 +14,4 @@ input, cache or output split. Split columns read n/a. No figure is estimated.
 | 3 | stage-03-ardeep | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 343,587 | 18m08s | 1 |
 | 5 | stage-05-concall | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 157,649 | 5m48s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 130,250 | 6m35s | 1 |
+| 8 | stage-08-promoter | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 187,845 | 7m51s | 1 |

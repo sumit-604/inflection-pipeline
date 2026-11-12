@@ -1,0 +1,25 @@
+stage: B12d
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 2    # UFO (4 calls), WONDERLA (4 calls); CINELINE has no transcripts, not audited
+substantive_confirmed: 7    # 7 of 7 SUBSTANTIVE call rows have findable citations in the transcript
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "WONDERLA", missed_item: "Q3 FY26 call: footfall flat (9.17 lakh Q3; 9M 23.4 vs 23.7 lakh), growth described as ARPU and new parks, FY ARPU +8%; shows Wonderla leaned on price before it leaned on volume, which qualifies B06 'Wonderla chose volume' (Q5)", anchor: "WONDERLA-Concall_Feb_2026 .txt lines 65-66, 108-109, 124 (PDF pp.2-3)"}
+  - {peer: "WONDERLA", missed_item: "Q4 FY26 call: management recalibrated from smaller parks to Tier 1 cities; bears on B06 'Tier 3-4 format ramps slowly' analogue (Q4/2C)", anchor: "WONDERLA-Concall_May_2026 .txt lines 385-393 (PDF p.11)"}
+claims_all_addressed: true
+verdict_discipline_fails:
+  - {claim: "Q3 content mix vs share loss", issue: "verdict PARTIALLY VERIFIED but B06 net read says UFO 'neither backs nor refutes'; label should be UNVERIFIABLE (UFO not silent on content selectivity, so not an upgrade from silence)"}
+  - {claim: "Q2 ad weakness", issue: "verdict CONTRADICTED rests on one peer of a different business; UFO Q1 +33% is credited to Dhurandhar spillover 'to a significant extent' (UFO Q1 PDF p.5) and Q2 UFO ad growth is NOT FOUND; B06 net read says 'half-supported'. Label stronger than evidence"}
+findings:
+  - {severity: MINOR, claim: "Q2", detail: "CONTRADICTED label overstated; see verdict_discipline_fails. Citations are real: +33% at UFO Q1 PDF p.3; 6 crore / 70% at UFO Q2 PDF p.7 (lines 362-366); 30-40% annual at Q1 PDF p.5-6."}
+  - {severity: MINOR, claim: "Q3", detail: "PARTIALLY VERIFIED vs net read 'neither backs nor refutes'; should be UNVERIFIABLE or the net read reworded."}
+  - {severity: MINOR, claim: "Q5", detail: "Wonderla Q2 ATP -3% to Rs 983 is consolidated and includes Chennai at Rs 948, which an analyst says is 20% below the 3-quarter average (Wonderla Q2 PDF p.4, lines 152-155); B06 does not state the mix effect. Existing-park ATP is not split. Wonderla Q3 FY26 ARPU-led, flat-footfall quarter also unused."}
+  - {severity: MINOR, claim: "Q4 / Part 2C", detail: "Wonderla Q4 FY26 PDF p.11: 'we recalibrated and we felt that we will do Tier 1 -- we will focus on Tier 1 more than the Tier 2 cities'. B06 gives land and licences as the reason and calls Bhubaneswar the small-format analogue; the strategy shift away from small parks is unused."}
+  - {severity: INFO, claim: "all", detail: "No VERIFIED verdict in B06 (0 of 9), so the two-anchor rule is not triggered. All 9 peer_questions have a verdict. No upgrade from silence found. CINELINE NOT PROVIDED is correctly shown as not an unused file."}
+critical_count: 0
+major_count: 0
+minor_count: 4
+acceptance_rate: 100    # 2 of 2 peers handled without MAJOR or CRITICAL; 4 MINOR noted

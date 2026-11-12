@@ -1,0 +1,20 @@
+stage: confidence
+company: PVRINOX
+run_date: 2026-11-12
+phase: 1
+confidence_delta:
+  numerical_acceptance: 97        # B12a: 385 numbers checked, mandatory 125 of 125; 0 CRITICAL, 3 MAJOR, 2 MINOR
+  redflag_coverage: 69            # B12b: 9 of 13 MATERIAL verifier-found flags caught upstream (85 counting partial catches)
+  framework_adherence: 87.2       # B12c phase-1 scope: Gate 0 46/52, Emerging Moat 29/34 (75 of 86). Valuation component PENDING PHASE 3
+  peer_utilisation: 87.5          # B12d: 7 of 8 peer transcripts used substantively (1 cited-only). Counted on transcripts; counted on peers it is 2 of 2, a denominator under 4
+  overall: 69
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  pending_phase_3: ["framework_adherence valuation component (B10/B11 audit)"]
+band: "60-74: PROCEED verdicts downgrade one level"
+verifier_a_identity_check: "B12a carries 0 CRITICAL rows; nothing to test, nothing struck."
+rework_triggers: "none. No CONFIRMED Verifier A CRITICAL; lowest acceptance rate 69% on a denominator of 13 (OR-29 line is below 60% on 4 or more)."
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: "not run in this folder (claimed by runs/kusumgar-2026-11-12)"
+source_fidelity_findings: "B12a: 5 findings, all source_fidelity true (3 MAJOR, 2 MINOR). None is a verdict-card or Section 1B pillar input in phase 1. Each must be corrected at source or removed before any downstream computation uses the figure: Gate 0 FY24 capex and lease repayment (standalone lines mixed with consolidated CFO); Gate 0 payables basis FY24 vs FY26 (supplier-finance reclassification unlabelled); 02-notes 'larger than 5x tangible equity' (3.76x); Gate 0 FY17 net worth 964.99 vs 965.01; 09-tam four-stream revenue 63,208 vs 63,231 Rs mn."

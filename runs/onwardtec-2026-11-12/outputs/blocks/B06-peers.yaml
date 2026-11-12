@@ -1,0 +1,61 @@
+stage: B06-peers
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00: screener peer sheets (P&L, Quarters, Balance Sheet, Cash Flow) empty; peer financials come only from transcripts"
+  - "B00: no peer decks; top-5/top-10 client shares and Tata Tech T&M share NOT FOUND in transcripts"
+  - "Tata Tech Q3 FY26 and Q4 FY26 calls keyword-searched, not read in full; Cyient 26 May 2026 semiconductor event call not read in full"
+  - "Utilisation, employee cost ratio, lateral hiring cost: NOT FOUND in any peer transcript"
+  - "B05 carried: Rs 2.93 Cr R&D credit inside or outside FY27 guide basis NOT FOUND; single largest customer share NOT FOUND"
+flags:
+  - {type: FLAG-UNVERIFIABLE-POLICY, reason: "No peer ties offshore share or margin to U.S. work-permit policy (Q3 unverifiable on all 11 calls)"}
+  - {type: FLAG-GROWTH-CLAIM, reason: "Tata Technologies grew +22.1% YoY cc ex ES-Tec in Q2 FY27 vs Onward H1 +17.5%; fastest-organic-growth claim contradicted for the current period (Tata Tech Q2 FY27 p.9)"}
+  - {type: FLAG-WAGE-DRAG, reason: "Peers price increments at 50-80 bps (LTTS Q2 FY27 p.18) to 100+ bps (Tata Tech Q2 FY27 p.10); Onward H2 margin guide basis unstated (B05)"}
+  - {type: FLAG-T&M-MIX, reason: "All three peers shift to fixed price/outcome/turnkey; LTTS admits productivity pass-through on bids (Q1 FY27 p.15); Onward 84-85% T&M"}
+peers_provided: 11
+verified:
+  - {claim: "Peer DSO and unbilled levels during fast ramps (Onward DSO 80 vs 65-70 target): peer range 78-102 days, unbilled rises in ramps", peers: [TATATECH, LTTS], anchor_count: 6}
+  - {claim: "Wage inflation and attrition: increments cost 50-100+ bps, attrition 14.7-15.6%", peers: [TATATECH, LTTS], anchor_count: 5}
+partially_verified:
+  - {claim: "Data-centre, power and energy engineering pull behind FY27 guidance raise", peers: [LTTS, CYIENT]}
+  - {claim: "Industrial and auto R&D budgets growing; European auto OEMs still cutting (Europe cuts verified, broad growth split)", peers: [LTTS, TATATECH, CYIENT]}
+  - {claim: "AI productivity or pricing pressure on T&M contracts", peers: [LTTS, TATATECH, CYIENT]}
+  - {claim: "EBITDA margin of 14% (or high teens) plausible at Rs 650 Cr; utilisation and cost ratio NOT FOUND", peers: [LTTS, TATATECH, CYIENT]}
+  - {claim: "Revenue per employee Rs 35-40 lakh (derived peer levels about Rs 50 lakh at ~56% offshore)", peers: [LTTS, TATATECH]}
+contradicted:
+  - {claim: "Fastest organic growth over 3-4 years (current-period test only; window untestable)", contradicting_peer: "TATATECH", quote_anchor: "Tata Technologies Q2 FY27, Uttam Gujrati, p.9: services +26.2% YoY cc and 22.1% excluding ES-Tec; Warren Harris p.3: revenue from operations +22.2% YoY cc to US$178 million"}
+unverifiable:
+  - {claim: "U.S. work-permit changes raising peers' offshore share and margin", peers_checked: [LTTS, CYIENT, TATATECH]}
+  - {claim: "Peers' top-5 and top-10 client shares; USD 1-10B peers earn 80% from 2-10 clients", peers_checked: [LTTS, TATATECH, CYIENT]}
+  - {claim: "Peers book UK R&D credits inside EBITDA and how they disclose them", peers_checked: [CYIENT, LTTS]}
+peer_coverage_map:
+  - {peer: "LTTS", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Data-centre and energy build-up p.10-11; DSO 112 p.8; offshore 54.6% and T&M 61.4% p.9"}
+  - {peer: "LTTS", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Productivity pass-through on bids p.15; DSO 77 p.10; T&M 64.9%; fixed-price large deals p.13"}
+  - {peer: "LTTS", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Data Center Engineering line p.6, p.18; EBIT 16.3% p.4; wage hike 50-80 bps p.18; DSO 78, offshore 55.9% p.8-9"}
+  - {peer: "TATATECH", quarter: "Q3 FY26", usage: "CITED-ONLY", contribution: "DSO uptick, ES-Tec and anchor context; no decisive additional evidence"}
+  - {peer: "TATATECH", quarter: "Q4 FY26", usage: "CITED-ONLY", contribution: "DSO 95 (billed 59, unbilled 36); attrition up"}
+  - {peer: "TATATECH", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "DSO 97; AI not deflationary p.18-19; peers singing a different tune p.17; aerospace CAGR p.21-22"}
+  - {peer: "TATATECH", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "+22.2% cc growth p.3; EBITDA 16.1% after 100 bps wage hit p.10; DSO 102 p.12; VW/BMW cuts p.20-21"}
+  - {peer: "CYIENT", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "DET EBIT 12.4%, FY26 12.2% p.8; price increases accepted p.6; cc declines p.6"}
+  - {peer: "CYIENT", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "DET -0.9% cc p.6; EBIT 13.2%, 15% goal slipped p.6, p.12; flying hours p.15; normalised reporting p.9"}
+  - {peer: "CYIENT", quarter: "Event 1 Jun 2026 (TAO Digital)", usage: "CITED-ONLY", contribution: "Rev/employee remark p.9; top-10 ~60% p.14; outcome-based models p.5; data-centre energy OEM line p.12"}
+  - {peer: "CYIENT", quarter: "Event 26 May 2026 (semiconductor financing)", usage: "UNUSED", contribution: "Semiconductor funding call; no ER&D demand, margin or working-capital content found"}
+industry_cross_read:
+  demand: "Split: LTTS (+4.8% YoY cc, H2 better than H1) and Tata Tech (+22% cc) grow while Cyient DET shrinks (-0.9% cc); Europe auto still cutting, data-centre/energy and aerospace strong"
+  pricing_inputs: "No raw-material input; wage increments cost 50-100+ bps at peers; LTTS passes productivity on bids; Tata and Cyient report no price erosion, Cyient reports some price increases accepted"
+  capex_cycle: "Not a capacity race; peers invest in AI platforms, centres and M&A while headcount adds are modest; Onward's ODC and labs are a small organic expansion in a mixed set, nearer a lone expander than a race"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "West Asia war, flying hours, discretionary project delays (Cyient Q1 FY27 p.15, p.17)"
+  - "European OEM restructuring, VW/BMW headcount cuts (Tata Tech Q2 FY27 p.20-21; LTTS Q2 FY27 p.11)"
+  - "Anchor-customer transition, fall in USD 50 mn+ client bucket (Tata Tech Q2 FY27 p.22)"
+  - "Revenue recognition change on OEM-hosted SaaS licences (Tata Tech Q2 FY27 p.9-10)"
+  - "Program ramp-down without follow-on (LTTS Q2 FY27 p.12)"
+  - "Contractor cost spike during ramps (Tata Tech Q2 FY27 p.15)"
+  - "Delayed starts on won programs (Cyient Q1 FY27 p.6)"
+  - "Guidance softening: Cyient 15% EBIT slip p.12; LTTS dropped annual guidance (Q1 FY27 p.16)"
+  - "Detroit OEM investment and US tariff dependence (Tata Tech Q2 FY27 p.28)"
+net_narrative_effect: "complicates"
+analyst_note: "Q11 is a weak contradiction: one quarter, Tata Tech includes acquired effects, window unmatched. Q6 revenue per employee is my arithmetic on stated revenue and headcount (LTTS Rs 3,040 Cr / 24,035; Tata Tech Rs 1,699 Cr / 12,895), annualised by 4, not a peer statement. EBIT (LTTS, Cyient DET) and EBITDA (Tata Tech, Onward) are different measures. Cross-peer hypothesis: peers shift toward fixed-price/outcome contracts while Onward is 84-85% T&M; test at Q3/Q4 FY27 Onward calls for rate concessions."

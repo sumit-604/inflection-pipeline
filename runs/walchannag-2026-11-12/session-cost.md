@@ -6,4 +6,5 @@ Per-stage token ledger. Subagents run async in this app; the result metadata giv
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 77142 | 245s | 1 |
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 182902 | 352s | 1 |
-| 2 | notes-pass (pass 1) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | PENDING1 | PENDING1 | 1 |
+| 2 | notes-pass (pass 1) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 178867 | 425s | 1 |
+| 2 | notes-pass (pass 2) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | PENDING2 | PENDING2 | 2 |

@@ -18,3 +18,4 @@ split is not exposed, so those columns read n/a (never an estimate).
 | 4 | business model decoder | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 205327 | 11m49s | 1 |
 | 7 | emerging moat scan | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 215954 | 8m52s | 1 |
 | 6 | peer concall verification | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 285571 | 9m42s | 1 |
+| 9 | TAM SAM SOM market sizing (web) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 208316 | 11m10s | 1 |

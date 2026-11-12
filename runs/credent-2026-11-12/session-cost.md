@@ -8,3 +8,4 @@ Per-stage token ledger. Token figures come from subagent result metadata. This h
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 175796 | 2m41s | 1 |
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 203800 | 7m54s | 1 |
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 254894 | 11m48s | 2 |
+| 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 93411 | 3m13s | 3 |

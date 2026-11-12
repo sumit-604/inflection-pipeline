@@ -21,3 +21,4 @@ split is not exposed, so those columns read n/a (never an estimate).
 | 9 | TAM SAM SOM market sizing (web) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 208316 | 11m10s | 1 |
 | 12d | verifier D peer coverage | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 75943 | 3m10s | 1 |
 | 12a | verifier A numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 305006 | 13m17s | 1 |
+| 12c | verifier C framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 169734 | 14m35s | 1 |

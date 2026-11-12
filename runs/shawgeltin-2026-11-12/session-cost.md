@@ -16,3 +16,4 @@ Per-stage token ledger. Figures come from the subagent result metadata; n/a wher
 | 7 | stage-07-emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 100988 | 239s | 1 |
 | 8 | stage-08-promoter | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 222749 | 576s | 1 |
 | 9 | stage-09-tam | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 83818 | 219s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 38579 | 55s | 1 |

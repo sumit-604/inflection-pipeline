@@ -19,5 +19,6 @@ collector_warnings:
   - "announcements: duplicates of the Q1 FY27 results, the Q4 FY26 results (filed again as board outcome and change in management) and the FY26 AR (second Reg 34 filing) were not copied in."
   - "peer-concalls: Nitta Gelatin and IGCL hold no calls on screener; only Natural Capsules transcripts (Q4 FY25, Q2 FY26, Q4 FY26) collected. No peer ARs or presentations."
 remediation_cycles: 0
-verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: "not run (.claude/shadow.yaml reads armed on main, but HANDOFF and LESSONS_ARCHIVE 2026-11-11 CNL record it spent by runs/southwest-2026-11-09 on an unmerged branch; CNL precedent)"
 notes: "Step-1 intake 2026-11-12. Peers: NITTAGELA, IGCL (531253), NATCAPSUQ (see step1-business-brief.md). Sector cap row is a FLAG for Phase 3 (converter economics vs Specialty chemicals row). Promoter Pioneer Jellice group since June 2023; NGL holds about 14% of IGCL, a group-controlled competitor."

@@ -5,7 +5,7 @@ market_cap_cr: 1322.0
 run_date: 2026-11-12
 run_type: full
 concalls_available: false   # /step1 2026-11-12: screener holds only Nov 2018, Feb 2019, May 2019 transcripts; BSE shows no transcript or analyst-call filing in 12 months. The three old transcripts sit in inputs/other/.
-sector_cap_row: "Defence / strategic"   # /step1 Step D, section-1b chunk 05, cap 38x; alternative reading "Cables / Industrial products" 25x, see step1-business-brief.md
+sector_cap_row: "Cables / Industrial products"   # stage 0 re-resolved after B04 (section-1b chunk 05, cap 25x): FY26 revenue is about 69% product, foundry and instrumentation lines and about 31% defence, nuclear, aerospace (Acuite rating filing p.3; AR Note 29/53). /step1 Step D first chose "Defence / strategic" (38x) on web evidence. Alternative row stays open: order book was 52% strategic at 31 Mar 2025 (AR25 p.30); FY26 share NOT FOUND. Operator rules the row at the /fttcp gate.
 sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
 collector_warnings:
   - "consolidated page had no price, standalone page used: this company files no consolidated statements. Every stage reads standalone."

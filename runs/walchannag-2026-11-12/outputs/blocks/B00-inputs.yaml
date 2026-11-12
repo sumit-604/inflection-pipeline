@@ -10,9 +10,10 @@ load_bearing_facts:   # from step1-business-brief.md; web leads, first verificat
   - "Guidance against delivery: any FY27 revenue target (Rs 600 Cr appears on web, unconfirmed) against H1 FY27 revenue; prior-year guidance against FY26 revenue."
   - "Margin source: whether Q2 FY27 EBITDA is operating or carries other income or one-off items; finance cost and debt level after the warrant money."
   - "Capital and governance: preferential warrant issue (size, allottees, promoter part, conversion, use of funds per monitoring agency), promoter pledge (screener note 49.2% of promoter holding), CFO change of November 2026."
-sector_cap_row: "Defence / strategic"
-sector_cap: "38x"
-sector_cap_evidence: "section-1b chunk 05 sector cap table. Step-1 web read: aerospace, nuclear and defence are the main part of order inflow and backlog; screener KPI labels list Hi-tech Manufacturing, Aerospace and Nuclear shares. Alternative row 'Cables / Industrial products' 25x if the AR segment note shows legacy sugar, gearbox and foundry lines as the larger revenue share. B04 to confirm; operator rules the row at the /fttcp gate."
+sector_cap_row: "Cables / Industrial products"
+sector_cap: "25x"
+sector_cap_row_step1_first_pick: "Defence / strategic (38x), web evidence only"
+sector_cap_evidence: "section-1b chunk 05 sector cap table. Re-resolved after B04: FY26 revenue is about 31% defence, nuclear, aerospace and missiles, 55% product lines, 14% foundry and instrumentation (Acuite rating filing p.3), and the audited self-description is Heavy Engineering and Project execution (AR Note 1). The business sits in the industrial products row on filed revenue. Two readings: (a) industrial products 25x; (b) Defence / strategic 38x, supported by the order book (52% strategic at 31 Mar 2025, AR25 p.30) and stated direction. The observation that separates them: the strategic share of revenue and of the closing order book for FY26 and H1 FY27, which the FY26 AR dropped. Operator rules the row at the /fttcp gate."
 reporting_units: {results: "INR Lakhs", annual_report: "INR Lakhs", screener: "INR Cr", rating: "INR Cr (Acuite rationale)"}
 concalls_available: false
 no_concall_mode: true

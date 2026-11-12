@@ -36,3 +36,5 @@ Chosen row: "Defence / strategic", cap 38x (section-1b chunk 05). Basis: web evi
 2. Guidance against delivery: any FY27 revenue target (a Rs 600 Cr figure appears on web, unconfirmed) against H1 FY27 revenue of about Rs 184 Cr, and prior-year guidance against FY26 revenue of about Rs 296 Cr.
 3. Margin source: whether Q2 FY27 EBITDA of about Rs 13.4 Cr is operating or carries other income or one-off items, and the finance cost and debt level after the warrant money.
 4. Capital and governance: the preferential warrant issue (size, allottees, promoter part, conversion status, use of funds per the monitoring agency), promoter pledge status (screener note: 49.2% of promoter holding pledged), and the CFO change of November 2026.
+
+UPDATE after stage 4 (2026-11-12): the filings show FY26 revenue at about 31% defence, nuclear and aerospace and about 69% product, foundry and instrumentation lines (Acuite rating filing p.3). The manifest row is now "Cables / Industrial products" (25x). "Defence / strategic" (38x) stays the alternative reading. The operator rules the row at the /fttcp gate.

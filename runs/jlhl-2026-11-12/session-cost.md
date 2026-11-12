@@ -12,3 +12,4 @@ split is not exposed, so those columns read n/a (never an estimate).
 | 2 | notes triple-pass, pass 1 | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 229238 | 8m32s | 1 |
 | 2 | notes triple-pass, pass 2 | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 215980 | 8m39s | 2 |
 | 2 | notes triple-pass, pass 3 (consolidated) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 85529 | 1m58s | 3 |
+| 3 | AR backward deep dive | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 459732 | 25m33s | 1 |

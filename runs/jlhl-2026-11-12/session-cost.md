@@ -7,4 +7,4 @@ split is not exposed, so those columns read n/a (never an estimate).
 | # | stage | model | effort | in_tok | cache_read | cache_write | out_tok | total_tok | wall | run# |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 0 | input validation + corpus repair (inline) | claude-fable-5-2 (orchestrator) | n/a | n/a | n/a | n/a | n/a | n/a | n/a | 1 |
-| 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | n/a | n/a | 1 |
+| 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 114647 | 3m00s | 1 |

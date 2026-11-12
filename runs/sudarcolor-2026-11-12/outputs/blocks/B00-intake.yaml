@@ -1,0 +1,314 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  - path: inputs/announcements/20260901-067ca73a-2fd7-4076-b49f-3c943121f56b.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd)"
+    doc_type: "Reg 30 intimation (director resignation)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Event date 2026-09-01. No reporting period on the page."
+
+  - path: inputs/announcements/20261007-516faec1-51bc-4660-9a8f-9bcef2b618f2.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd)"
+    doc_type: "RTA certificate, Reg 74(5) SEBI D&P (MUFG Intime)"
+    period: "Q2 FY27 (1 Jul to 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 2026-10-07."
+
+  - path: inputs/announcements/20261019-b9aed76e-f4c4-47bd-8e34-1f49d5d5aa7a.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd)"
+    doc_type: "Board meeting intimation (Reg 29)"
+    period: "Q2 FY27 and H1 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 2026-10-19. Meeting set for 2026-10-28."
+
+  - path: inputs/announcements/20261028-20ad9abd-8824-40b8-9c04-d00bb3d55796.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd)"
+    doc_type: "Results outcome (Reg 30 and 33)"
+    period: "Q2 FY27 and H1 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Letter dated 2026-10-28. Page 1 text matches results/Results_Q2FY27_Sep2026.pdf page 1, so the two files duplicate each other."
+
+  - path: inputs/announcements/6D1F3240_FAF9_4F46_8984_42D58CB4B987_101009.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Chemical Industries Ltd (acquirer, promoter; corpus peer SUDARSCHEM)"
+    doc_type: "SAST Reg 29(2) disclosure (promoter inter-se share transfer)"
+    period: ""
+    folder_match: false
+    proposed_move: "inputs/shareholding/"
+    page_read: 1
+    note: "Scanned PDF, identity read from page 1 image. Letter dated 2026-10-01. Filed by a peer-group entity about SUDARCOLOR shares, not the company's own announcement. Misfile candidate; orchestrator to choose the folder. Same transaction as A16C6814."
+
+  - path: inputs/announcements/A16C6814_80EE_4E67_B5D8_6349E765A4FC_100750.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Europe B.V. (seller, promoter; wholly owned subsidiary of Sudarshan Chemical Industries Ltd)"
+    doc_type: "SAST Reg 29(2) disclosure (promoter inter-se share transfer)"
+    period: ""
+    folder_match: false
+    proposed_move: "inputs/shareholding/"
+    page_read: 1
+    note: "Scanned PDF, identity read from page 1 image. Letter dated 2026-10-01. Filed by a promoter-group entity (peer-group subsidiary) about SUDARCOLOR shares, not the company's own announcement. Misfile candidate; orchestrator to choose the folder. Same transaction as 6D1F3240."
+
+  - path: inputs/announcements/C1DC7FB5_88B3_4BC8_A403_ACF96A116FA3_101326.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Chemical Industries Ltd (acquirer, promoter; corpus peer SUDARSCHEM)"
+    doc_type: "SAST Reg 10(7) report to SEBI"
+    period: ""
+    folder_match: false
+    proposed_move: "inputs/shareholding/"
+    page_read: 1
+    note: "Identity read from PDF page 1 image (page 1 of 5, letter dated 2026-10-19). Companion .txt has blank pages 1-5 and text from page 6 only, and that text is a different document: Sudarshan Europe B.V. Reg 29(1) letter dated 2025-03-04. The PDF appears to bundle that 2025 letter after the Reg 10(7) report. Not separately identified. Misfile candidate; orchestrator to choose the folder."
+
+  - path: inputs/annual-report/Annual_Report_2025.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Heubach Colorants India Ltd (now Sudarshan Colorants India Ltd, same CIN L24110MH1956PLC010806)"
+    doc_type: "Annual report, with AGM notice cover letter"
+    period: "FY2024-25"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2025-09-05 (68th AGM). Filename year is the filing year; period taken from page."
+
+  - path: inputs/annual-report/Annual_Report_2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd)"
+    doc_type: "Annual report, with AGM notice cover letter"
+    period: "FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2026-07-27 (69th AGM on 2026-08-18)."
+
+  - path: inputs/results/Results_Q1FY27_Jun2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd)"
+    doc_type: "Results (board outcome, unaudited standalone)"
+    period: "Q1 FY27 (quarter ended 30 Jun 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome letter dated 2026-08-05. Results statement follows on page 2."
+
+  - path: inputs/results/Results_Q2FY27_Sep2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd)"
+    doc_type: "Results (board outcome, unaudited standalone, with limited review report)"
+    period: "Q2 FY27 and H1 FY27 (quarter and half year ended 30 Sep 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome letter dated 2026-10-28. Duplicate of announcements/20261028-20ad9abd-8824-40b8-9c04-d00bb3d55796.pdf page 1."
+
+  - path: inputs/results/Results_Q4FY26_Mar2026.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (formerly Heubach Colorants India Ltd)"
+    doc_type: "Results (board outcome, audited, quarter and year)"
+    period: "Q4 FY26 and FY26 (quarter and year ended 31 Mar 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Outcome letter dated 2026-05-11. Audit report with unmodified opinion per letter."
+
+  - path: inputs/peer-concalls/ASAHISONG-Concall_Jun_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Asahi Songwon Colors Ltd (peer)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q4 FY26 (call 2026-06-01)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2026-06-04. Peer transcript."
+
+  - path: inputs/peer-concalls/ASAHISONG-Concall_May_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Asahi Songwon Colors Ltd (peer)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q4 FY25 (call 2025-05-12)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2025-05-15. Peer transcript."
+
+  - path: inputs/peer-concalls/ASAHISONG-Concall_Nov_2024_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Asahi Songwon Colors Ltd (peer)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q2 FY25 (call 2024-11-06)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2024-11-08. Peer transcript."
+
+  - path: inputs/peer-concalls/MOL-Concall_Aug_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Meghmani Organics Ltd (peer)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q1 FY27 (call 2026-07-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2026-08-04. Peer transcript."
+
+  - path: inputs/peer-concalls/MOL-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Meghmani Organics Ltd (peer)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q3 FY26 (call 2026-02-02)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2026-02-07. Peer transcript."
+
+  - path: inputs/peer-concalls/MOL-Concall_May_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Meghmani Organics Ltd (peer)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q4 FY26 (call 2026-05-16)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2026-05-19. Peer transcript."
+
+  - path: inputs/peer-concalls/MOL-Concall_Nov_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Meghmani Organics Ltd (peer)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q2 FY27 (call 2026-11-05)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2026-11-07. Peer transcript."
+
+  - path: inputs/peer-concalls/SUDARSCHEM-Concall_Feb_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Chemical Industries Ltd (peer, SUDARSCHEM)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q3 FY26 (call 2026-02-13; nine months ended 2025-12-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2026-02-19. Peer transcript."
+
+  - path: inputs/peer-concalls/SUDARSCHEM-Concall_Jun_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Chemical Industries Ltd (peer, SUDARSCHEM)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q4 FY26 (call 2026-05-27; FY ended 2026-03-31)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2026-06-04. Peer transcript."
+
+  - path: inputs/peer-concalls/SUDARSCHEM-Concall_Nov_2025_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Chemical Industries Ltd (peer, SUDARSCHEM)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q2 FY26 (call 2025-11-13; quarter and half year ended 2025-09-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2025-11-20. Peer transcript."
+
+  - path: inputs/peer-concalls/SUDARSCHEM-Concall_Sep_2026_Transcript.pdf
+    file_type: pdf
+    content_ok: true
+    issuer: "Sudarshan Chemical Industries Ltd (peer, SUDARSCHEM)"
+    doc_type: "concall (transcript, cover letter)"
+    period: "Q1 FY27 (call 2026-08-14; quarter ended 2026-06-30)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Cover letter dated 2026-08-20. Filename says Sep 2026; the page gives the call date as 2026-08-14. Peer transcript."
+
+  - path: inputs/screening/ASAHISONG-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Asahi Songwon Colors Ltd (peer)"
+    doc_type: "screener data sheet (aggregator export)"
+    period: "FY2019-FY2026 annual; quarters Jun 2024 to Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Not an exchange filing."
+
+  - path: inputs/screening/MOL-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Meghmani Organics Ltd (peer)"
+    doc_type: "screener data sheet (aggregator export)"
+    period: "FY2020-FY2026 annual; quarters Jun 2024 to Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Not an exchange filing."
+
+  - path: inputs/screening/SUDARSCHEM-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Sudarshan Chemical Industries Ltd (peer, SUDARSCHEM)"
+    doc_type: "screener data sheet (aggregator export)"
+    period: "FY2017-FY2026 annual; quarters Jun 2024 to Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Not an exchange filing."
+
+  - path: inputs/screening/screener-Data_Sheet.csv
+    file_type: csv
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (main company)"
+    doc_type: "screener data sheet (aggregator export)"
+    period: "FY2017-FY2026 annual; quarters Jun 2024 to Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Not an exchange filing."
+
+  - path: inputs/shareholding/screener-shareholding-2026-11-12.md
+    file_type: md
+    content_ok: true
+    issuer: "Sudarshan Colorants India Ltd (main company)"
+    doc_type: "shareholding pattern (screener copy of exchange filings)"
+    period: "Dec 2023 to Sep 2026 (quarterly)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "Screener copy, not the exchange filing itself. Pledge data NOT FOUND in this file."
+
+unreadable: []
+unidentified: []

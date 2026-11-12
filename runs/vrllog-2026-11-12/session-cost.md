@@ -21,3 +21,4 @@ input, cache or output split. Split columns read n/a. No figure is estimated.
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 56,336 | 2m27s | 1 |
 | 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 349,963 | 13m27s | 1 |
 | 12c | verifier-c-framework (phase 1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 158,278 | 14m49s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 362,895 | 20m17s | 1 |

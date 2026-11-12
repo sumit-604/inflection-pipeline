@@ -16,4 +16,5 @@ cells read n/a, never an estimate.
 | 5 | stage-05-concall (no-concall mode) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 106,655 | 196s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 101,398 | 239s | 1 |
 | 8 | stage-08-promoter | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 142,449 | 402s | 1 |
-| 9 | stage-09-tam | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | PENDING9 | PENDING9 | 1 |
+| 9 | stage-09-tam | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 100,039 | 293s | 1 |
+| 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | PENDING6 | PENDING6 | 1 |

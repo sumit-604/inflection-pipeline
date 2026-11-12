@@ -21,3 +21,4 @@ metadata. n/a where the harness does not expose the figure; never an estimate.
 | 12a-shadow | verifier-a-shadow | claude-haiku-5-5 | high | n/a | n/a | n/a | n/a | 259439 | 642s | 1 |
 | 12c | verifier-c-framework (Gate 0 + EM scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 161273 | 744s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 41110 | 58s | 1 |
+| 12b | verifier-b-redflags (no-concall mode) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 341056 | 1185s | 1 |

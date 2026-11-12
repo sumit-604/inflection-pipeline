@@ -1,0 +1,28 @@
+stage: confidence-delta
+company: KUSUMGAR
+run_date: 2026-11-12
+phase: 1
+confidence_delta:
+  numerical_acceptance: 99        # B12a: 0 CRITICAL, 1 MAJOR, 4 MINOR; mandatory tier 315 of 315 checked, 0 mismatches; identity check: no CRITICAL rows, nothing struck
+  redflag_coverage: 82            # B12b.acceptance_rate: 9 of 11 MATERIAL flags had by the pipeline (5 caught, 4 partially caught); 2 MAJOR missed (F7, F11)
+  framework_adherence: 84.3       # B12c, Gate 0 + Emerging Moat only: 43 of 51 rules pass; valuation half PENDING PHASE 3
+  peer_utilisation: null          # NOT APPLICABLE, see below
+  overall: 82
+  overall_set_by: redflag_coverage
+  band: "75-89 normal, note specifics"
+  not_applicable:
+    - {component: peer_utilisation, reason: "denominator below 4: 2 peers with transcripts provided (ARVIND, MAYURUNIQ), both confirmed substantive by B12d (2 of 2); GARFIBRES had zero transcripts. Reported as a count, not a percentage."}
+  pending_phase_3:
+    - "framework_adherence valuation component (B10, B11 audit)"
+rework_check:
+  verifier_a_confirmed_critical: 0
+  acceptance_below_60_on_denominator_4_plus: false
+  result: "REWORK not triggered"
+open_items_for_operator:
+  - "B12b strict reading: counting CAUGHT only (not PARTIALLY CAUGHT), red-flag coverage is 5 of 11 = 45%, below the 60% REWORK line. The verifier's reported acceptance_rate (82) follows its schema note and is the figure used. The operator may rule on the reading at Halt 1."
+  - "B12c C-E21: stage 7 combined assessment AVERAGE reads the pre-downgrade Gate 0 class; AVOID expected on the injected class."
+  - "B12c C-E15: em_score carried as the range 15.5 to 17.5 (three evidence items credited in two categories)."
+  - "H1 FY27 cash from operations is carried on two bases across stages: 340.73 INR mn standalone (B01) and 248.85 INR mn consolidated (B03, B04, B05, B07); stage 10 settles the basis."
+  - "Offer-for-sale share count carried as 15,521,350 (Q2 FY27 results p.7) and 15,521,698 (Prospectus p.392)."
+verifier_disagreements:
+  - {date: 2026-11-12, run: kusumgar-2026-11-12, claim: "CRISIL rating on 2026-01-21 given as BB- in report 08 Section 4C and errata", verifier_a: "MISMATCH; source CRISIL rationale 2026-10-22 p.2 shows B/Stable and A4 (INC)", downstream: "stage 8 report body and the errata applied by the orchestrator", disposition: "GATE HELD — figure corrected at source (correct anchor shown)", note: "B08 block was already correct"}

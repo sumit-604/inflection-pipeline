@@ -11,3 +11,4 @@ input, cache or output split. Split columns read n/a. No figure is estimated.
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 168,394 | 7m43s | 1 |
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 143,805 | 5m26s | 2 |
 | 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 75,196 | 2m12s | 3 |
+| 3 | stage-03-ardeep | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 343,587 | 18m08s | 1 |

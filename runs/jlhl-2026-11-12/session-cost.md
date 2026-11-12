@@ -20,3 +20,4 @@ split is not exposed, so those columns read n/a (never an estimate).
 | 6 | peer concall verification | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 285571 | 9m42s | 1 |
 | 9 | TAM SAM SOM market sizing (web) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 208316 | 11m10s | 1 |
 | 12d | verifier D peer coverage | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 75943 | 3m10s | 1 |
+| 12a | verifier A numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 305006 | 13m17s | 1 |

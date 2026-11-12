@@ -1,0 +1,20 @@
+stage: B02-notes-pass1
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+pass: 1
+report_path: "runs/pvrinox-2026-11-12/outputs/reports/02-notes-pass1.md"
+unit: "Rs million (as printed on the face of the document; not converted)"
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent"
+  - "research/ empty"
+  - "CINELINE has no concall transcripts"
+  - "sector_cap_row NOT FOUND"
+  - "standalone notes not read line by line in pass 1 (consolidated notes read in full)"
+flags: []
+top_findings_preview:
+  - {rank: 1, finding: "Two earnings bases: audited PAT 3,328 / continuing 1,761 vs MD&A 3,868 / 2,306 unbridged", note_ref: "Note 41; P&L p.240; MD&A p.35", rating: "RED"}
+  - {rank: 2, finding: "Goodwill 57,367 = 77.7% of equity; single CGU; WACC 10.33% (12.08%); no headroom", note_ref: "Note 4A", rating: "RED"}
+  - {rank: 3, finding: "Liabilities written back 976 (53% of other income) plus 871 in lease cost", note_ref: "Notes 25, 18(d)", rating: "RED"}
+  - {rank: 4, finding: "Borrowings 14,908 to 7,586; net debt 1,619; leases 60,205 and supplier finance 1,251 outside", note_ref: "Notes 17, 18, 22", rating: "YELLOW"}

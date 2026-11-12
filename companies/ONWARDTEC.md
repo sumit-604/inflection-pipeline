@@ -6,7 +6,7 @@ Memory to weigh, never anchored evidence. NSE ONWARDTEC, BSE 517536.
 Not yet formed. Step-1 intake only (2026-11-12); no valuation has run.
 
 ## DECISION STATUS AND ENTRY ZONE
-None. Phase 1 evidence pack shelved at Halt 1 on 2026-11-12. No entry zone exists.
+None. Phase 1 evidence pack shelved at Halt 1 on 2026-11-12. No entry zone exists. Phase 1 gate recommendation: INSUFFICIENT EVIDENCE (confidence band 63.6, set by peer_utilisation; alternative reading PROCEED WITH CAVEATS, operator to rule). Corpus verdict CORPUS GAPPED; fragility FRAGILE; Gate 0 GOOD+ (core 79 of 100, run 2); promoter TRUSTWORTHY (partial).
 
 ## SPEAR
 Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -33,4 +33,4 @@ Brief: runs/onwardtec-2026-11-12/step1-business-brief.md
 - None recorded. Stage 7 output is in the run folder.
 
 ## RUN FOLDERS
-- runs/onwardtec-2026-11-12/
+- runs/onwardtec-2026-11-12/ (Phase 1 to Halt 1; dossier outputs/reports/09b-understanding-dossier.md; branch run/onwardtec-2026-11-12)

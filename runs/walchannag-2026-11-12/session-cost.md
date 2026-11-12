@@ -15,4 +15,8 @@ Per-stage token ledger. Subagents run async in this app; the result metadata giv
 | 4 | bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 154529 | 343s | 1 |
 | 8 | promoter | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 183503 | 495s | 1 |
 | 6 | peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 294826 | 307s | 1 |
-| 9 | tam | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | PENDING9 | PENDING9 | 1 |
+| 9 | tam | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 136757 | 406s | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 348290 | 838s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | PENDINGB | PENDINGB | 1 |
+| 12c | verifier-c-framework (phase 1) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 162793 | 785s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 58477 | 156s | 1 |

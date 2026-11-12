@@ -1,0 +1,18 @@
+company: Onward Technologies Ltd
+ticker: ONWARDTEC
+cmp: 376.0
+market_cap_cr: 842.0
+run_date: 2026-11-12
+run_type: full
+concalls_available: true
+sector_cap_row: "Consulting / Engineering services"   # 25x; resolved in /step1 Step D against section-1b chunk 05 (ER&D services billed on time and material). Alternative reading: "Platform / SaaS / IT services" 45x; operator rules at the /fttcp pillar gate
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+collector_warnings:
+  - "BSE announcements fetch FAILED (Expecting value: line 1 column 1 (char 0)); announcements/ left empty, fill it by hand"
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, LTTS:Profit & Loss, LTTS:Quarters, LTTS:Balance Sheet, LTTS:Cash Flow, LTTS:Customization, TATATECH:Profit & Loss, TATATECH:Quarters, TATATECH:Balance Sheet, TATATECH:Cash Flow, TATATECH:Customization, CYIENT:Profit & Loss, CYIENT:Quarters, CYIENT:Balance Sheet, CYIENT:Cash Flow, CYIENT:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+remediation_cycles: 0
+verifier_runs: {A: 0, B: 0, C: 0, D: 0}

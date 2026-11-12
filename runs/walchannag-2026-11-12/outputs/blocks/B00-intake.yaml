@@ -1,0 +1,764 @@
+stage: B00-intake
+model: claude-haiku-5-5
+status: complete
+corpus_manifest:
+  # ---- announcements/ (47 PDFs, all Walchandnagar Industries Ltd) ----
+  - path: "inputs/announcements/20251113-b0ed7b13-8191-4168-a763-72f871d70d38.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "deviation statement (preferential issue)"
+    period: "quarter ended 30 Sep 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20251113-e1a80d9d-0982-4441-9fa7-7bd665f8023a.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "results (unaudited, reviewed)"
+    period: "quarter and half year ended 30 Sep 2025 (FY2025-26 Q2)"
+    folder_match: false
+    proposed_move: "inputs/results/"
+    page_read: 1
+    note: "results filing sits in announcements/; results/ holds the other results letters"
+  - path: "inputs/announcements/20251113-ff02cd9a-6c0b-43ca-9f4a-e4e3068e8b7f.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "press release (results commentary)"
+    period: "quarter and half year ended 30 Sep 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20251114-9f5a7885-054c-4a32-917b-e76898c0a7f9.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "monitoring agency report (ICRA)"
+    period: "quarter ended 30 Sep 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20251125-c41434ad-ce80-4bc0-a0ff-846b7df54584.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 intimation (Satara plant lock-out called off)"
+    period: "dated 25 Nov 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20251129-27ec3af2-07f3-4755-bc38-9f97a6328b4a.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "ESOP allotment intimation"
+    period: "dated 29 Nov 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20251222-5fb5dbf0-592a-411a-9820-e6c916713e50.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "letter to BSE (clarification on price movement)"
+    period: "dated 22 Dec 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260129-1ec8f4d3-6956-41fd-84ec-306cb78086f6.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "monitoring agency report (ICRA)"
+    period: "quarter ended 31 Dec 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260129-58a8556a-c55a-469e-970f-0311743540b7.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "deviation statement (preferential issue)"
+    period: "quarter ended 31 Dec 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260129-d92a84d8-33b7-4b9a-bc16-38d6f808f0c1.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 board outcome (registered office shift; MD and CEO re-appointment)"
+    period: "board meeting 29 Jan 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260129-e605cd17-a007-4c84-a176-370ccf6ecfc3.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "press release (results commentary)"
+    period: "quarter ended 31 Dec 2025"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260129-ebf31c66-2692-4eda-868b-14f050cfe195.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "results (unaudited, reviewed)"
+    period: "quarter and nine months ended 31 Dec 2025 (FY2025-26 Q3)"
+    folder_match: false
+    proposed_move: "inputs/results/"
+    page_read: 1
+    note: "results filing sits in announcements/"
+  - path: "inputs/announcements/20260130-0e0a0a3e-5e1a-45d4-858f-6d48033845ee.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 disclosure (registered office shift, subject to members)"
+    period: "dated 30 Jan 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "text identical to 20260130-d74b4217; possible duplicate"
+  - path: "inputs/announcements/20260130-8f295a88-6a05-4537-855b-e1735355f672.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 disclosure (MD and CEO re-appointment)"
+    period: "dated 30 Jan 2026; term from 1 Apr 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260130-d74b4217-7192-4bb1-b879-a3d2adcf821c.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 disclosure (registered office shift, subject to members)"
+    period: "dated 30 Jan 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "text identical to 20260130-0e0a0a3e; possible duplicate"
+  - path: "inputs/announcements/20260305-28b0c0db-34da-40bc-a81a-932d253f0c29.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 disclosure (consent terms, Aicitta project dispute)"
+    period: "dated 5 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "BSE scrip code printed as 501430; WIL BSE code is 507410 elsewhere; NSE scrip WALCHANNAG matches"
+  - path: "inputs/announcements/20260310-61ddfbea-b83f-446a-8dd5-a0e1ee6c95df.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "postal ballot results with scrutinizer report"
+    period: "dated 10 Mar 2026 (ballot notice 29 Jan 2026)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "BSE scrip code printed as 501430; no letterhead on page 1; NSE scrip WALCHANNAG matches"
+  - path: "inputs/announcements/20260424-41d3eb3b-0bf7-4aac-b5b7-48b960fe40da.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "letter to BSE (clarification on price movement)"
+    period: "dated 24 Apr 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260430-7043e4cb-7aa1-45e3-9315-27a41ecded07.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation disclosure (large corporate status for debt issuance)"
+    period: "as on 31 Mar 2026; dated 30 Apr 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260514-cfeb9a5f-a785-40c1-a1bb-88ddf385897d.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 intimation (registered office shift; RD and MCA approvals)"
+    period: "dated 14 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260515-d112b63e-378e-4410-8c39-db176cb64515.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "monitoring agency report (ICRA)"
+    period: "quarter ended 31 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260515-ee2686f8-6ad7-4cdc-b20c-cc43adff8990.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "deviation statement (preferential issue)"
+    period: "quarter ended 31 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260520-abc73546-56bb-4b0a-b7ff-05aeb54a4be6.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "ESOP grant intimation (5,000 options)"
+    period: "dated 20 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260520-c0caf0ce-7a1d-4e58-a3af-f7d897e3e33c.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 board outcome (cost auditor appointment FY2026-27)"
+    period: "board meeting 20 May 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260521-ef111d63-2135-4dc1-bbed-b65a1d13a6f9.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "press release (results commentary)"
+    period: "quarter and year ended 31 Mar 2026 (FY2025-26 Q4)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260701-0dcb5fd3-bf6a-4847-a142-53de419570aa.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "ESOP grant intimation (20,000 options)"
+    period: "dated 1 Jul 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260701-7e33cd33-4c13-4520-a571-ecd8fa7245da.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 board outcome (MoA registered office amendment)"
+    period: "board meeting 1 Jul 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260730-069f5287-fb87-4010-8a18-a1bbd6335b76.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 disclosure (CFO and KMP resignation)"
+    period: "letter dated 30 Jul 2026; effective 19 Oct 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260803-3e5f2a27-5a33-476e-85c6-7b2557ee2aae.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "ESOP allotment intimation (62,472 shares)"
+    period: "dated 3 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260811-3023785e-105b-4a36-aeea-310062f734a6.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "monitoring agency report (ICRA)"
+    period: "quarter ended 30 Jun 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260811-a189767f-be59-4872-bd45-c052e39f4fec.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "gist of proceedings of 117th AGM"
+    period: "AGM held 11 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260811-b2cfcafa-40af-4e6d-b53f-8d9b91fc1dd5.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "deviation statement (preferential issue)"
+    period: "quarter ended 30 Jun 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260811-f6be5dd8-ef44-4c89-8931-f00970ae9521.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "press release (results commentary)"
+    period: "quarter ended 30 Jun 2026 (FY2026-27 Q1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260812-5c5387a9-fee9-4d76-83d8-2c139b11d9c4.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 intimation (MoA registered office clause approved at AGM)"
+    period: "dated 12 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260812-dc242d1d-82ea-4596-bcc9-25a32a9825a4.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "AGM voting results with consolidated scrutinizer report"
+    period: "AGM held 11 Aug 2026; dated 12 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260820-675ad371-e1e6-4d0f-8fdf-b9dbf6c17a87.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 disclosure (order from VSSC for Gaganyaan motorcase segments)"
+    period: "order received 19 Aug 2026; dated 20 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20260828-2d3a203b-4794-4112-874c-b4e55a28968f.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 disclosure (update on Aicitta matter)"
+    period: "dated 28 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "BSE scrip code printed as 501430; refers to letter of 5 Mar 2026"
+  - path: "inputs/announcements/20261022-05907c5d-9077-4d47-bb23-78d9f7ec4264.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "ESOP allotment intimation (1,02,000 shares)"
+    period: "dated 22 Oct 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261022-ca285396-2f12-4dbf-a2fc-d288990c691a.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 intimation (CIRP admitted against customer JUD Cements Ltd)"
+    period: "dated 22 Oct 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261023-dabe130e-c1fe-47af-b43c-3b744e51d0da.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "board meeting intimation (regulation 29)"
+    period: "meeting 2 Nov 2026; dated 23 Oct 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261102-33965c6a-9acd-45dc-b4e2-1a79edf0daf2.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "results (unaudited, reviewed)"
+    period: "quarter and half year ended 30 Sep 2026 (FY2026-27 Q2)"
+    folder_match: false
+    proposed_move: "inputs/results/"
+    page_read: 1
+    note: "same letter as inputs/results/20261102-013510a4-0648-40a7-9a4e-0869ea46ab81.pdf; likely duplicate"
+  - path: "inputs/announcements/20261102-8f51d0d9-535f-4a6a-820f-8726ef8768d8.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 disclosure (interim CFO and KMP appointment; insider trading code amendment)"
+    period: "dated 2 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "same text as 20261102-e430f0cc; possible duplicate"
+  - path: "inputs/announcements/20261102-91f6391a-11c2-4159-8b13-b02fa2018f5b.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "deviation statement (preferential issue)"
+    period: "quarter ended 30 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261102-98ab38d3-62d1-410b-813c-9b774de30d12.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "press release (results commentary)"
+    period: "quarter ended 30 Sep 2026 (FY2026-27 Q2)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261102-e430f0cc-a82d-4c77-9d44-fe94ba0f43ea.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "regulation 30 disclosure (interim CFO and KMP appointment; insider trading code amendment)"
+    period: "dated 2 Nov 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "same text as 20261102-8f51d0d9; possible duplicate"
+  - path: "inputs/announcements/20261103-8ad93aa8-93bd-44b4-a7b4-1284e9056c3b.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "monitoring agency report (ICRA)"
+    period: "quarter ended 30 Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/announcements/20261104-e6204577-39a0-4ea6-8c1c-d1cc123455cf.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "results (published copy, Reg 47)"
+    period: "quarter and half year ended 30 Sep 2026 (FY2026-27 Q2)"
+    folder_match: false
+    proposed_move: "inputs/results/"
+    page_read: 1
+    note: "published results advert filed in announcements/"
+
+  # ---- annual-report/ ----
+  - path: "inputs/annual-report/Annual_Report_2025.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "annual report (116th AR)"
+    period: "FY2024-25"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "page 1 is the exchange cover letter dated 21 Jul 2025; page 2 is a multi-year cover collage that lists the 116th AR (2024-25) among older years"
+  - path: "inputs/annual-report/Annual_Report_2026.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "annual report (117th AR)"
+    period: "FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "page 1 is the exchange cover letter dated 15 Jul 2026; page 2 is a multi-year cover collage that lists the 117th AR (2025-26) among older years"
+
+  # ---- other/ (main-company concall transcripts) ----
+  - path: "inputs/other/Concall_Nov_2018_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 16 Nov 2018"
+    folder_match: false
+    proposed_move: "inputs/concalls/"
+    page_read: 1
+    note: "main-company concall filed in other/; no concall folder in this run; OCR of cover is noisy but legible"
+  - path: "inputs/other/Concall_Feb_2019_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 7 Feb 2019"
+    folder_match: false
+    proposed_move: "inputs/concalls/"
+    page_read: 1
+    note: "main-company concall filed in other/; OCR of cover is noisy but legible"
+  - path: "inputs/other/Concall_May_2019_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 20 May 2019"
+    folder_match: false
+    proposed_move: "inputs/concalls/"
+    page_read: 1
+    note: "main-company concall filed in other/; OCR of cover is noisy but legible"
+
+  # ---- peer-concalls/ (peer transcripts; NON-ANCHORED for WIL) ----
+  - path: "inputs/peer-concalls/ELECON-Concall_Apr_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ELECON Engineering Co Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 16 Apr 2026; Q4 FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/ELECON-Concall_Jan_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ELECON Engineering Co Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 9 Jan 2026; Q3 FY2025-26"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/ELECON-Concall_Jul_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ELECON Engineering Co Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 13 Jul 2026; Q1 FY2026-27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/ELECON-Concall_Oct_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ELECON Engineering Co Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 15 Oct 2026; Q2 FY2026-27"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/ISGEC-Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 12 Aug 2026; quarter ended 30 Jun 2026 (Q1 FY2026-27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/ISGEC-Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 10 Feb 2026; quarter and nine months ended 31 Dec 2025 (Q3 FY2025-26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/ISGEC-Concall_Jun_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 29 May 2026; quarter and year ended 31 Mar 2026 (Q4 FY2025-26)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document; filename month (Jun) differs from call date (May 2026)"
+  - path: "inputs/peer-concalls/ISGEC-Concall_Nov_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 5 Nov 2026; quarter and half year ended 30 Sep 2026 (Q2 FY2026-27)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/MTARTECH-Concall_Aug_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "MTAR Technologies Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 30 Jul 2026 (quarter not named on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/MTARTECH-Concall_Feb_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "MTAR Technologies Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 30 Jan 2026 (quarter not named on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/MTARTECH-Concall_May_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "MTAR Technologies Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 13 May 2026 (quarter not named on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+  - path: "inputs/peer-concalls/MTARTECH-Concall_Nov_2026_Transcript.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "MTAR Technologies Ltd (peer)"
+    doc_type: "concall transcript (filed with exchange cover letter)"
+    period: "call 30 Oct 2026 (quarter not named on page 1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document"
+
+  # ---- presentation/ ----
+  - path: "inputs/presentation/Investor_Presentation_1.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "investor presentation (corporate presentation)"
+    period: ""
+    folder_match: true
+    proposed_move: ""
+    page_read: 2
+    note: "cover letter dated 3 May 2025; period NOT FOUND on pages 1-2"
+
+  # ---- rating/ ----
+  - path: "inputs/rating/20260807-ddc3874d-32a3-41ae-938e-099d9b321ae1.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "rating (ACUITE reaffirmation, BB Stable / A4+; disclosed by WIL)"
+    period: "rating dated 7 Aug 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+
+  # ---- results/ ----
+  - path: "inputs/results/20260520-114e0a82-65f0-4bf4-80e8-5d9483de0922.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "results (audited, board outcome with results)"
+    period: "quarter and year ended 31 Mar 2026 (FY2025-26 Q4)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "results figures on pages 2 onward, not read"
+  - path: "inputs/results/20260811-1e778ca8-534d-4836-90a4-6d9ff67b90a6.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "results (unaudited, reviewed)"
+    period: "quarter ended 30 Jun 2026 (FY2026-27 Q1)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: ""
+  - path: "inputs/results/20261102-013510a4-0648-40a7-9a4e-0869ea46ab81.pdf"
+    file_type: pdf
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "results (unaudited, reviewed)"
+    period: "quarter and half year ended 30 Sep 2026 (FY2026-27 Q2)"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "twin of announcements/20261102-33965c6a"
+
+  # ---- screening/ (Screener data sheets; figures beside row labels) ----
+  - path: "inputs/screening/ELECON-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "ELECON Engineering Co Ltd (peer)"
+    doc_type: "screener data sheet"
+    period: "report dates 31 Mar 2017 to 31 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document; unit not printed on sheet"
+  - path: "inputs/screening/ISGEC-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "ISGEC Heavy Engineering Ltd (peer)"
+    doc_type: "screener data sheet"
+    period: "report dates 31 Mar 2017 to 31 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document; unit not printed on sheet"
+  - path: "inputs/screening/MTARTECH-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "MTAR Technologies Ltd (peer)"
+    doc_type: "screener data sheet"
+    period: "report dates 31 Mar 2020 to 31 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "peer document; unit not printed on sheet"
+  - path: "inputs/screening/screener-Data_Sheet.csv"
+    file_type: csv
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "screener data sheet"
+    period: "report dates 31 Mar 2017 to 31 Mar 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "unit not printed on sheet"
+
+  # ---- shareholding/ ----
+  - path: "inputs/shareholding/screener-shareholding-pattern-2026-11-12.txt"
+    file_type: txt
+    content_ok: true
+    issuer: "Walchandnagar Industries Ltd"
+    doc_type: "shareholding pattern (screener.in table; not the exchange filing)"
+    period: "quarters Dec 2023 to Sep 2026"
+    folder_match: true
+    proposed_move: ""
+    page_read: 1
+    note: "screener.in page text, not the BSE/NSE filing; the exchange filing is not in the corpus"
+
+unreadable: []
+unidentified: []

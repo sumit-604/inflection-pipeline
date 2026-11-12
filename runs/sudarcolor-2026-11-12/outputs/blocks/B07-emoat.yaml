@@ -1,0 +1,39 @@
+stage: B07-emoat
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "no concalls (declared, no-concall mode); F2 run on AR FY25 vs AR FY26 timeline statements only"
+  - "no investor presentation, no rating"
+  - "capacity (tonnes), utilisation per site, named capex projects, patent counts, R&D spend, customer top-5/10 share: NOT FOUND in AR FY26 or AR FY25"
+  - "H1 FY27 group share of sales NOT FOUND (results carry no related-party split)"
+  - "announcements Sep-Oct 2026 only; three scanned PDFs without text"
+flags:
+  - {type: FLAG-GROUP-DEPENDENCE, reason: "Sales to group entities 191.40 of 780.63 Cr (24.5%), Singapore SLO alone 137.25 Cr (17.6%) (AR FY26 p.93); any forward revenue is routed through the parent's network, so emerging-moat credit cannot be taken for it without H1/H2 FY27 group split"}
+  - {type: FLAG-EXPORT-DECLINE, reason: "Revenue outside India 263.80 to 200.49 Cr (-24.0%) in FY26 (AR FY26 p.94); E2 China+1 scored 0 on this contrary evidence"}
+  - {type: FLAG-CASH, reason: "H1 FY27 CFO -24.11 Cr, inventories +99.07, receivables +69.77 (Q2 FY27 results p.5); G2 scored 0"}
+em_score: 9.9
+em_classification: "NONE"
+active_categories:
+  - {id: "H2", name: "Strategic partnerships (parent group platform)", strength: "Moderate", evidence_type: "documented acquisition and name change; benefits are management claims", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 9, claim: 6, inference: 3}
+completionist_recount: "📄 recount performed: 9 documented items across 6 categories (A1, A3, G1, H2, H3, R1); 7 categories carry any score; guard threshold of 12 not approached"
+catalysts_12m:
+  - {catalyst: "Q3 FY27 and Q4 FY27 results: does Q2 operating EBITDA margin (12.8%) hold and do inventories 255.22 Cr and receivables 244.95 Cr unwind", window: "Jan-Feb 2027 and Apr-May 2027 (by filing cadence; Q2 filed 2026-10-28)", evidence_type: "documented once filed", anchor: "Q2 FY27 results p.3-5"}
+  - {catalyst: "AR FY27 related-party note: group share of sales and receivables versus 24.5% and 31.5%", window: "Jul 2027 (AR FY26 was circulated 2026-07-27)", evidence_type: "documented once filed", anchor: "AR FY26 p.1, p.93"}
+  - {catalyst: "Commissioning of CWIP 12.84 Cr and any named capex or AZO transfer disclosure from Frankfurt to Roha", window: "FY27", evidence_type: "management claim today", anchor: "AR FY26 p.9; Q2 FY27 results p.4"}
+capex_embedded_growth_pct: 5.6
+optionality_register:
+  - {optionality: "AZO products transferred from Frankfurt to Roha, and localised HP Azo range for export from FY2027", converting_evidence: "named capex or CWIP line for AZO, plant utilisation figure, or product-level export revenue", first_appears: "AR FY27 Directors' report capex section and MD&A; exchange filing", window: "12-24m"}
+  - {optionality: "Recycling-compatible and low-migration food-contact pigments for Indian packaging regulation", converting_evidence: "revenue or order disclosure for these grades, or a notified regulation with a compliance date plus company registration", first_appears: "AR FY27 MD&A or product-launch filing", window: "12-24m"}
+  - {optionality: "Customers returning for specialty grades via ONE Sudarshan portfolio (FY2027 pipeline)", converting_evidence: "named customer wins or a disclosed top-customer count; non-group domestic revenue growth in AR note 41", first_appears: "AR FY27 note on disaggregated revenue", window: "12m"}
+  - {optionality: "Value Capture Plan synergies in procurement and manufacturing", converting_evidence: "rupee quantification of savings or a gross margin step-up not explained by mix", first_appears: "AR FY27 MD&A; quarterly results", window: "12-24m"}
+  - {optionality: "Three NIR-detectable black solutions for plastics recycling", converting_evidence: "disclosed revenue, EPR customer contract, or regulatory mandate for sortable black plastics", first_appears: "AR FY27 product section", window: "24-36m"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 core 60 with zero existing moats and Emerging Moat 9.9 (NONE) give AVERAGE; Q2 FY27 operating leverage is real in the quarter but its source (group-routed volume versus new accounts) cannot be separated from the filings."
+top_moat_risks:
+  - "Revenue depends on group routing: 24.5% of sales, 17.6% to one Singapore affiliate; transfer pricing and allocation sit with the 70.26% promoter group"
+  - "Working capital build (inventory +99.07, receivables +69.77 in H1 FY27) turns Q2 profit into negative CFO"
+  - "Gross margin proxy fell about 190 bps year on year in Q2 FY27 (39.1% vs 41.0%) while revenue rose 47%"
+analyst_note: "Sparse scan by design. The AR names no capex project, no capacity, no utilisation and no patent, so most forward claims rest on the chairman and MD letters. The one forward fact with numbers is the Q2 FY27 pattern: materials consumed 159.91 vs 74.94 Cr while stock-in-trade purchases fell to 25.85 from 30.80 Cr, which reads as manufacturing replacing trading (inference). Two readings: group-routed volume shifted into Roha and Cuddalore (a transfer pricing and allocation gain the minority does not control), or new third-party accounts. The one observation that separates them is the FY27 AR related-party note (group share of sales against 24.5%) and a Q3 results split if the company adds one."

@@ -1,0 +1,68 @@
+stage: B08-promoter
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "Pledge: NOT FOUND in AR or screener copy; only secondary web items (media tier) say nil encumbrance"
+  - "Three scanned SAST announcements (6D1F3240, A16C6814, C1DC7FB5) read only where text existed; C1DC7FB5 is the 4-Mar-2025 Reg 29(1) disclosure (17.80% indirect acquisition)"
+  - "Announcements cover Sep-Oct 2026 only; earlier events rest on web search"
+  - "Current CMP NOT FOUND for 2026-11-12; brief says about Rs 386, one media quote says Rs 455.25 on 29-Oct-2026"
+  - "Open offer price computation (Letter of Offer) not read; why Rs 602.03 NOT FOUND"
+  - "Whistle-blower complaint content, date and target NOT FOUND (AR p.24, p.60, p.72)"
+flags: []
+verdict: CAUTION
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "FY25 statutory audit opinion QUALIFIED on Note 50: Airoli assets (Rs 25.81 Cr) moved to Clariant India Pvt Ltd without board approval; CARO xi(a) exception; FY26 opinion unmodified; Note 50 still states no accounting effect. Transfer dates to the prior Clariant/Heubach regime (2019-21); current management found it and recovered the assets 29-Oct-2025", evidence_tier: VERIFIED, source: "FY25 AR p.58, p.62; FY26 AR Note 50 p.97; 03-ardeep.md Phase 1", date: "2025-10-29 (asset return); AR dispatched 2026-07-27"}
+  - {finding: "Related-party dependence rising under new control: group purchases 159.15 = 32.0% of purchases (FY25 16.6%), HLD1 purchases +119.5%; group sales 191.40 = 24.5%; group receivables 31.5% and payables 26.4%; transfer-price support is the assertion 'normal commercial terms and market rates'; auditor made RPT pricing a NEW key audit matter ('wherever available' comparables); royalty to HLD1 Rs 1.61 Cr; no TP study or margin by party shown", evidence_tier: VERIFIED, source: "FY26 AR Note 40 pp.92-93, KAM 2 p.68, BRSR p.39", date: "FY2025-26"}
+  - {finding: "No dividend two years (FY25, FY26) and none since FY21 per run brief, with net cash Rs 212.39 Cr and 29.2% of assets in cash and bank; no stated capital allocation or payout policy", evidence_tier: VERIFIED, source: "FY26 AR p.21, p.70, balance sheet p.74; 03-ardeep.md Phase 3B", date: "FY2025-26"}
+  - {finding: "Exchange fines on FY25 results filed 16-Jul-2025 instead of 30-May-2025: NSE Rs 2,65,500 and BSE Rs 1,53,400; late Reg 30 disclosure of 29-Oct-2025 Cuddalore tax order (BSE queried, 'inadvertent'). Parent Sudarshan Chemical also fined by BSE/NSE for late Q1 FY26 results (media)", evidence_tier: VERIFIED, source: "FY26 AR pp.30-31, p.60; parent fine: sudarshan.com Reg 30 filings 2025-07-01, 2025-09-16, 2025-10-01 and Moneycontrol/TradingView (MEDIA REPORTED)", date: "2025-07-16 to 2025-10-01"}
+  - {finding: "Management churn: CFO Jugal Sahu left 9-Mar-2026, interim CFO Nilkanth Natu from 11-May-2026 (63-day gap, derived); CS change Jul-Aug 2025; Head of Operations left 11-Aug-2025; VP Legal left 30-Sep-2025; six director entries and four exits in FY26; non-promoter director Mandar Velankar (parent General Counsel) resigned 1-Sep-2026; 5 of 8 directors also sit on the parent board, 1 more is a parent executive; Audit Committee has one non-independent member of four", evidence_tier: VERIFIED, source: "FY26 AR pp.31, 58-59; announcement 20260901-067ca73a; Q2 FY27 results note 9; 03-ardeep.md Phase 5", date: "2025-07 to 2026-09-01"}
+  - {finding: "Minority price gap: open offer at Rs 602.03 (Sep-Oct 2025) drew 36,68,036 shares (15.89%), 61.1% of the 60,01,268 offered (derived). Acquirer Sudarshan Europe BV then sold those shares to parent Sudarshan Chemical on 1-Oct-2026 at Rs 411 (Rs 150.76 Cr; 31.7% below the offer price, derived) as an inter-se restructuring, no change in 70.26% group stake. Minority that did not tender holds 29.74% at a market price below the offer price", evidence_tier: VERIFIED, source: "FY26 AR p.21, p.97 Note 48; Q2 FY27 results note 10 (filed 2026-10-28)", date: "2025-10-03 and 2026-10-01"}
+  - {finding: "Indirect-tax record: Tamil Nadu GST appeal order 11-Sep-2026 upheld a Rs 5.11 Cr demand (tax 2.56, interest 2.32, penalty 0.2291) for FY2018-19; 23-Mar-2026 GST order about Rs 62 lakh; 23-Jun-2026 penalty Rs 3,59,484; Maharashtra GST/VAT search at Colorants premises began 25-Aug-2026, reported concluded, outcome text not read; contingent liabilities Rs 50.76 Cr (50.2% one 25.49 service-tax matter at Bombay High Court). Parent: GST demand Rs 50.58 Cr (FY2021-22, Pune), Maharashtra GST search from 1-Oct-2026 reported concluded 6-Oct-2026 no material impact (media)", evidence_tier: MEDIA REPORTED, source: "NSE filing CLNINDIA_12092026111920 (title seen, body fetch timed out); studycafe.in; whalesbook.com; scanx.trade; sahi.com; AR Note 35 and CARO vii(b) p.71 (VERIFIED for the contingent liability)", date: "2026-03-23 to 2026-10-06"}
+  - {finding: "Governance control remarks: audit trail not enabled at database level and backups on offshore servers (Notes 51-52); one whistle-blower complaint closed as 'frivolous and motivated by malicious intent', auditor took it into planning; AR contains GST/Note 50 related-party disclosure gap (Clariant India Pvt Ltd absent from Note 40)", evidence_tier: VERIFIED, source: "FY26 AR pp.69-70, p.72, p.24, p.60, p.97", date: "FY2025-26"}
+transition_evidence:
+  - {item: "Change of control from insolvent Heubach/SK Capital chain to strategic Indian pigment group (Sudarshan Chemical); acquirer closed Heubach pigment business 3-Mar-2025, indirect 54.36%, then open offer lifted group to 70.26% by 3-Oct-2025", anchor: "FY26 AR Note 48 p.97; BSE/NSE SAST filings; sudarshan.com Letter of Offer (media/aggregator view)", tier: VERIFIED}
+  - {item: "New management found and reversed the Airoli asset transfer: external fact-finding agencies engaged, assets returned 29-Oct-2025", anchor: "FY26 AR Note 50 p.97", tier: VERIFIED}
+  - {item: "Insider MD retained: Sambit Roy re-appointed MD Nov-2025 to Nov-2030 (22 years at Heubach per trade press); no remuneration from holding company; MD pay Rs 4.44 Cr = 10.0% of PAT", anchor: "FY26 AR pp.23, 29; indianchemicalnews.com (MEDIA REPORTED)", tier: VERIFIED}
+  - {item: "Internal auditor upgraded to PricewaterhouseCoopers Services LLP from 31-Oct-2025; non-audit fee to statutory auditor now nil (FY25 0.04)", anchor: "FY26 AR p.16, p.24, Note 30.1 p.88", tier: VERIFIED}
+  - {item: "Promoter stake rose 54.37% to 70.26% through a purchase at Rs 602.03; no pledge disclosed; no promoter selling", anchor: "screener shareholding copy; FY26 AR p.66", tier: VERIFIED}
+  - {item: "H1 FY27 revenue 492.15 vs 393.86 (+25.0%) and PBT 59.87 vs 44.06; group offtake may be recovering (operating, not governance)", anchor: "Q2 FY27 results filed 2026-10-28", tier: VERIFIED}
+pledge_pct_latest: 0
+pledge_trend: "not disclosed in AR or screener (NOT FOUND); media items state nil encumbrance in FY26 for the company and 0.00% Mar-2026 and Jun-2026 for the parent (single-source, MEDIA REPORTED); promoter stake rose 54.37% to 70.26% Dec-2025, flat to Sep-2026"
+searches_performed:
+  - "Sudarshan Colorants open offer Rs 602.03 Heubach SEBI"
+  - "Sudarshan Chemical Industries SEBI order penalty Rathi"
+  - "Sudarshan Chemical Heubach acquisition insolvency Germany pigments"
+  - "Note 50 Airoli assets Clariant India qualified opinion"
+  - "Sudarshan Chemical Rathi family governance IiAS proxy advisor related party pledge"
+  - "Sudarshan Chemical merger Sudarshan Colorants scheme delisting amalgamation"
+  - "SUDARCOLOR share price, 52-week range, market cap"
+  - "Sudarshan Chemical promoter pledge 2026"
+  - "Sudarshan Chemical Glassdoor AmbitionBox reviews"
+  - "Rajesh Rathi background education family"
+  - "Sudarshan Chemical net debt leverage rating CRISIL ICRA 2026"
+  - "Sudarshan Colorants CFO resigns interim CFO"
+  - "SEBI adjudication order Sudarshan entities"
+  - "Sudarshan Colorants GST search conclusion Sep 2026"
+  - "Sudarshan Colorants price movement clarification Jan 2026"
+  - "Sudarshan Colorants GST order Sep 2026"
+  - "Sambit Roy background"
+  - "Open offer price determination Rs 602.03"
+  - "Local reads: 03-ardeep.md, AR pp.97 and governance grep, 7 announcement files, screener shareholding"
+searches_skipped:
+  - "WebFetch NSE PDF CLNINDIA_01092026185540 (GST search conclusion): timeout, body not read"
+  - "WebFetch NSE PDF CLNINDIA_12092026111920 (GST appeal order): timeout, body not read; figures from media"
+  - "WebFetch scanx.trade nil-encumbrance item: HTTP 403"
+  - "WebFetch valueresearchonline Jan-2026 clarification reply: HTTP 403"
+  - "SEBI enforcement database, SAT and court dockets queried directly: not reachable; search-engine only"
+  - "MCA/RoC master data and struck-off checks for promoter entities: not run"
+  - "IiAS, SES, InGovern recommendations on Sudarshan Colorants and Sudarshan Chemical: searched once, nothing found"
+  - "Glassdoor and AmbitionBox for Sudarshan Colorants itself: only parent AmbitionBox rating found"
+  - "SCORES complaints, short-seller reports, political donations, philanthropy beyond CSR: no dedicated search"
+  - "Letter of Offer pricing section (Rs 602.03 basis): not read"
+  - "Heubach insolvency administrator claims against the Indian entity: no dedicated search beyond acquisition news"
+verdict_basis: "Established listed Indian promoter group with a clean SEBI/court record in available search, no pledge disclosed and a corrective Note 50 recovery, offset by rising related-party purchases (32.0%) priced on assertion, zero dividend with 212.39 Cr net cash, repeated late filings, heavy parent cross-board overlap and CFO/board churn; no CONCERN-level evidence"
+analyst_note: "Verdict is CAUTION, not CONCERN, because nothing found is adverse about the Rathi group itself; the adverse items are structural (captive group trade, cross-board control) and inherited (Note 50 under Clariant/Heubach). The decisive minority test is the transfer price on group goods: 159.15 Cr purchases and 191.40 Cr sales with no margin by party. Watch the H1 FY27 Note 40 share and any change to HLD1 purchases. Rs 411 inter-se price vs Rs 602.03 offer price harms no existing minority holder directly, but signals the group does not mark its own stake at the offer price. Merger or delisting text: none found anywhere (AR Note 44(vi), Secretarial Audit p.30; web). Public float 29.74%, headroom 4.74 points over the 25% floor; a future creeping rise or delisting is the tail risk. CMP conflict (386 vs 455.25) unresolved."

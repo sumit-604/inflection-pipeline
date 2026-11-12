@@ -9,3 +9,4 @@
 - Stage 3 self-reported one clerical line (Phase 5A churn count: report says eight and five; block and board table say six and four). Block governs.
 - Subagents ran as async dispatches in this harness. Each stage was treated as done only after its report and block files were confirmed on disk.
 - Verifier A shadow not run; .claude/shadow.yaml left armed (session scoped to its run folder; parallel sessions).
+- Stage 5 no-concall run used 106,655 tokens against the 100k target (LESSONS open action C2). H1 FY27 Reg 23 related-party filing is not in the corpus; three guessed URLs on the company site returned 404.

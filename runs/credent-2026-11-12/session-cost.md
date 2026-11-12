@@ -12,3 +12,4 @@ Per-stage token ledger. Token figures come from subagent result metadata. This h
 | 3 | stage-03-ardeep | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 303242 | 12m11s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 108590 | 4m40s | 1 |
 | 8 | stage-08-promoter | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 156287 | 5m55s | 1 |
+| 5 | stage-05-concall | claude-sonnet-5-5 | high (default) | n/a | n/a | n/a | n/a | 173409 | 7m24s | 1 |

@@ -1,0 +1,399 @@
+stage: B00-inputs
+company: ONWARDTEC
+run_date: 2026-11-12
+model: orchestrator session (claude-fable-5-2)
+status: complete
+spear: "Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:
+  - "Q2 FY27 EBITDA margin 15.6% vs FY27 guidance 13.8-14.3%: verify the Rs 2.9 Cr R&D credit and the margin excluding it"
+  - "Guidance vs delivery: FY27 revenue growth guidance history (raised to 15-18%) vs H1 FY27 delivery; FY26 guidance vs FY26 delivery"
+  - "Client concentration and receivables: top-client / top-10 / top-25 share, clients above USD 1 mn (16 to 18), DSO and unbilled revenue at Sep 2026 (about 80 days) vs the 65-70 day target"
+  - "Promoter holding fall from 61.71% (Mar 2021) to 38.12% (Mar 2024): mechanism, incoming investor, related-party items"
+sector_cap_row: "Consulting / Engineering services"
+sector_cap_row_evidence: "25x. Revenue is outsourced engineering design and R&D services for OEMs, billed on time and material (step1-business-brief.md; to be confirmed against B04). Cite: .claude/skills/section-1b/references/05-sector-cap.md, sector cap table. Collector guess 'Pharma / CDMO' rejected. Alternative reading 'Platform / SaaS / IT services' (45x) left for the operator at the /fttcp pillar gate."
+reporting_units: {results: "INR lakhs", annual_report: "INR lakhs (financial statements); INR Crore in narrative sections", presentation: "INR Crore", screener: "INR Cr"}
+inventory:
+  prospectus: 0
+  annual-report: 2      # FY2025-26 (used as the AR) and FY2024-25 (prior-year reference)
+  results: 3            # Q2 FY27, Q1 FY27 (scanned), Q4 FY26
+  rating: 2             # ICRA withdrawal 2023-11-13 (most recent), ICRA rationale 2023-03-27
+  concalls: 4           # Q3 FY26, Q4 FY26, Q1 FY27, Q2 FY27; stage 5 uses the newest three
+  peer-concalls: 11     # LTTS 3, TATATECH 4, CYIENT 4
+  announcements: 6
+  shareholding: 1
+  research: 0
+  screening: 4          # Data_Sheet only
+  presentation: 1       # Q2 FY27 earnings presentation
+  other: 0
+concall_quarter_map:
+  - {file: inputs/concalls/Concall_Jan_2026_Transcript.pdf, quarter: "Q3 FY26", used_by_stage_5: false}
+  - {file: inputs/concalls/Concall_May_2026_Transcript.pdf, quarter: "Q4 FY26", used_by_stage_5: true}
+  - {file: inputs/concalls/Concall_Jul_2026_Transcript.pdf, quarter: "Q1 FY27", used_by_stage_5: true}
+  - {file: inputs/concalls/Concall_Oct_2026_Transcript.pdf, quarter: "Q2 FY27", used_by_stage_5: true}
+input_gaps:
+  - "prospectus/ empty: long-listed company (incorporated 1991), not expected, not a gap"
+  - "research/ empty: no broker notes; leads only, no effect on anchored evidence"
+  - "COLLECTOR WARNING (verbatim): BSE announcements fetch FAILED (Expecting value: line 1 column 1 (char 0)); announcements/ left empty, fill it by hand"
+  - "announcements/ filled by hand from onwardgroup.com: Q4 FY26, Q1 FY27, Q2 FY27 press releases and three May-June 2026 buyback filings. COLLECTOR GAP: this is not the full Reg 30 record and is never evidence that nothing else was filed"
+  - "COLLECTOR WARNING (verbatim): shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "shareholding/ filled by hand from onwardgroup.com with the Sep 2026 pattern only; earlier quarters not held"
+  - "COLLECTOR WARNING (verbatim): screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, LTTS:Profit & Loss, LTTS:Quarters, LTTS:Balance Sheet, LTTS:Cash Flow, LTTS:Customization, TATATECH:Profit & Loss, TATATECH:Quarters, TATATECH:Balance Sheet, TATATECH:Cash Flow, TATATECH:Customization, CYIENT:Profit & Loss, CYIENT:Quarters, CYIENT:Balance Sheet, CYIENT:Cash Flow, CYIENT:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "screening: Data_Sheet CSVs opened and checked for content: populated (10 years, FY2017 to FY2026). P&L, Quarters, Balance Sheet, Cash Flow sheets are ABSENT documents"
+  - "COLLECTOR WARNING (verbatim): no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "results/ filled by hand from onwardgroup.com: Q2 FY27 and Q1 FY27 board outcomes, Q4 FY26 financial results"
+  - "Q1 FY27 results PDF is a scanned image (text on 1 of 9 pages); tesseract is absent on this machine, so tools/ocr_repair.py cannot run; stages read the PDF pages directly"
+  - "COLLECTOR WARNING (verbatim): no rating PDF yet: add later the same way"
+  - "rating: ICRA withdrew the rating on 2023-11-13 (document held); last full rationale held is 2023-03-27. No live rating exists in the corpus; rating_wc_quote will be stale or unresolved"
+  - "presentation: collector file Investor_Presentation_1.pdf is the Q2 FY27 earnings presentation (byte-identical to the company-site copy, which was removed as a duplicate)"
+  - "Run switched to pre-extracted page-marked .txt beside every PDF (tools/extract_pdfs.py); check_extraction.py flagged only the Q1 FY27 results file"
+  - "EMPTY-FOLDER CONFIRMATION suppressed under the /step1 AUTONOMY CONTRACT; standing default taken: proceed with the gaps (prospectus, research)"
+  - "Collector ran through a scratch wrapper (REPO_ROOT override, Chrome channel for Playwright); tools/ not edited"
+freshness_pairs:
+  - {pair: "RESULTS to CONCALL", trigger_doc: "inputs/results/Results_Q2FY27_BoardOutcome_2026-10-16.pdf", mate_expected: "Q2 FY27 concall transcript", status: PASS, missing_doc: ""}
+  - {pair: "RATING BULLETIN to RATIONALE", trigger_doc: "inputs/rating/ICRA_Withdrawal_2023-11-13.pdf", mate_expected: "full rationale text", status: PASS, missing_doc: "", note: "the withdrawal document is the full ICRA rationale; rating is withdrawn, not live"}
+  - {pair: "SEBI ORDER to ORDER TEXT", trigger_doc: "none identified at stage 0", mate_expected: "order text", status: PASS, missing_doc: "", note: "no SEBI order referenced in documents read at stage 0; stage 8 to report any it finds"}
+  - {pair: "AR to LATEST AUDITED ANNUAL RESULTS", trigger_doc: "inputs/results/Results_Q4FY26_FinancialResults.pdf", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: ""}
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_manifest:   # copied from B00-intake.yaml (stage-00-intake-check, claude-haiku-5-5); 34 rows, no mismatch, no proposed move, none UNIDENTIFIED
+- path: inputs/announcements/Buyback_Board_Outcome_2026-05-12.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: buyback board outcome (Reg 30 letter)
+  period: Q1FY27 (letter dated 12 May 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/Buyback_Extinguishment_2026-06-15.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: buyback extinguishment intimation
+  period: Q1FY27 (letter dated 15 June 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/Buyback_Letter_of_Offer_2026-05-20.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: buyback letter of offer (transmittal letter; LoO dated 19 May 2026)
+  period: Q1FY27 (letter dated 20 May 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/Q1FY27_Press_Release.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: press release, unaudited results (transmittal letter)
+  period: Q1FY27 (quarter ended 30 June 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/Q2FY27_Press_Release.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: press release, unaudited results (transmittal letter)
+  period: Q2FY27 (quarter and half year ended 30 Sep 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/Q4FY26_Press_Release.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: press release, audited results (transmittal letter)
+  period: Q4FY26 and FY26 (year ended 31 Mar 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/annual-report/Annual_Report_2025.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: annual report (transmittal letter; 34th AGM)
+  period: FY25 (year ended 31 Mar 2025)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/annual-report/Annual_Report_2026.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: annual report (transmittal letter; 35th AGM)
+  period: FY26 (year ended 31 Mar 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/concalls/Concall_Jan_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: concall transcript (transmittal letter; call 16 Jan 2026)
+  period: Q3FY26 (quarter ended 31 Dec 2025)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/concalls/Concall_May_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: concall transcript (transmittal letter; call 5 May 2026)
+  period: Q4FY26 (quarter and year ended 31 Mar 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/concalls/Concall_Jul_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: concall transcript (transmittal letter; call 16 Jul 2026)
+  period: Q1FY27 (quarter ended 30 June 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/concalls/Concall_Oct_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: concall transcript (transmittal letter; call 16 Oct 2026)
+  period: Q2FY27 (quarter and half year ended 30 Sep 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/CYIENT-Concall_Apr_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Cyient Ltd
+  doc_type: concall transcript (results call; transmittal letter)
+  period: Q4FY26 (results call after board of 23 Apr 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/CYIENT-Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Cyient Ltd
+  doc_type: concall transcript (results call; transmittal letter dated 30 Jul 2026)
+  period: Q1FY27 (results call after board of 23 Jul 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: filename says Aug; page says 30 July 2026 letter. Period taken from page.
+- path: inputs/peer-concalls/CYIENT-Concall_Jun_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Cyient Ltd
+  doc_type: 'concall transcript (event call: acquisition of TAO Digital; transmittal letter dated 08 Jun 2026)'
+  period: event call held 01 Jun 2026; no FY or quarter on page
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: event call, not a results call
+- path: inputs/peer-concalls/CYIENT-Concall_Jun_2026_Transcript_2.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Cyient Ltd
+  doc_type: 'concall transcript (event call: semiconductor strategic financing; transmittal letter dated 01 Jun 2026)'
+  period: event call held 26 May 2026; no FY or quarter on page
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: event call, not a results call
+- path: inputs/peer-concalls/LTTS-Concall_Jan_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: L&T Technology Services Ltd
+  doc_type: concall transcript (transmittal letter dated 20 Jan 2026)
+  period: Q3FY26 (earnings call held 15 Jan 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/LTTS-Concall_Jul_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: L&T Technology Services Ltd
+  doc_type: concall transcript (transmittal letter dated 20 Jul 2026)
+  period: Q1FY27 (earnings call held 14 Jul 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/LTTS-Concall_Oct_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: L&T Technology Services Ltd
+  doc_type: concall transcript (transmittal letter dated 25 Oct 2026)
+  period: Q2FY27 (earnings call held 19 Oct 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/TATATECH-Concall_Jan_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Tata Technologies Ltd
+  doc_type: concall transcript (transmittal letter dated 19 Jan 2026)
+  period: Q3FY26 (quarter and nine months ended 31 Dec 2025)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/TATATECH-Concall_May_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Tata Technologies Ltd
+  doc_type: concall transcript (transmittal letter dated 8 May 2026)
+  period: Q4FY26 (audited quarter and year ended 31 Mar 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/TATATECH-Concall_Jul_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Tata Technologies Ltd
+  doc_type: concall transcript (transmittal letter dated 21 Jul 2026)
+  period: Q1FY27 (quarter ended 30 June 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/TATATECH-Concall_Oct_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Tata Technologies Ltd
+  doc_type: concall transcript (transmittal letter dated 19 Oct 2026)
+  period: Q2FY27 (quarter ended 30 Sep 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/presentation/Investor_Presentation_1.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: earnings presentation (transmittal letter dated 16 Oct 2026)
+  period: Q2FY27 (quarter and half year ended 30 Sep 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/rating/ICRA_Rating_2023-03-27_company_site.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd (rated entity; rating issued by ICRA)
+  doc_type: rating (ICRA rationale, reaffirmation of long and short term facilities)
+  period: rating action dated 27 Mar 2023; no FY on page
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/rating/ICRA_Withdrawal_2023-11-13.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd (rated entity; rating withdrawn by ICRA)
+  doc_type: rating withdrawal (ICRA rationale)
+  period: rating action dated 13 Nov 2023; no FY on page
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/results/Results_Q1FY27_BoardOutcome_2026-07-16.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: results (board outcome letter; unaudited statement on page 2; scanned)
+  period: Q1FY27 (quarter ended 30 June 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: scanned PDF; page 1 and page 2 read from the PDF itself
+- path: inputs/results/Results_Q2FY27_BoardOutcome_2026-10-16.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: results (board outcome letter)
+  period: Q2FY27 (quarter and half year ended 30 Sep 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/results/Results_Q4FY26_FinancialResults.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: results (board outcome letter; audited Q4 and FY results)
+  period: Q4FY26 and FY26 (year ended 31 Mar 2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/shareholding/SHP_Q2FY27_Sep2026.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: shareholding pattern (Reg 31(1)(b))
+  period: quarter ended 30 Sep 2026 (Q2FY27)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/screening/screener-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: Onward Technologies Ltd
+  doc_type: screener data sheet (annual P&L, figures beside row labels)
+  period: FY26 (last report date 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/screening/LTTS-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: L&T Technology Services Ltd
+  doc_type: screener data sheet (annual P&L, figures beside row labels)
+  period: FY26 (last report date 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: peer file
+- path: inputs/screening/TATATECH-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: Tata Technologies Ltd
+  doc_type: screener data sheet (annual P&L, figures beside row labels)
+  period: FY26 (last report date 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: peer file
+- path: inputs/screening/CYIENT-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: Cyient Ltd
+  doc_type: screener data sheet (annual P&L, figures beside row labels)
+  period: FY26 (last report date 2026-03-31)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: peer file
+flags: []
+analyst_note: ""

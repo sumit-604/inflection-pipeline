@@ -15,4 +15,5 @@ collector_warnings:
   - "no rating PDF yet: add later the same way"
 notes: "Collected from screener.in by collect_to_repo.py v3 (dry-run, /step1). Step F repairs 2026-11-12: results (3), announcements (23), rating rationale and shareholding were fetched by hand after the collector left those folders empty: results and announcements from ramkrishnaforgings.com, the India Ratings rationale of 22 Jun 2026 printed from indiaratings.co.in to PDF, shareholding from the NSE API (summary plus two XBRL filings saved as .txt). The Q4 FY26 results PDF on the company site is an image-only scan; the 1 May 2026 board outcome carries the same audited FY26 results with an OCR text layer and sits in inputs/results/ in its place. Its text layer misreads digits; read load-bearing figures off the page image. Every PDF has a page-marked .txt beside it (tools/extract_pdfs.py)."
 remediation_cycles: 0
-verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: skipped   # switch left armed; shadow claimed by step1-kusumgar (ten parallel sessions, one-run ruling)

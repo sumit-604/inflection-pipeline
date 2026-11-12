@@ -9,4 +9,5 @@ Per-stage token ledger. Subagents run async in this app; the result metadata giv
 | 2 | notes-pass (pass 1) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 178867 | 425s | 1 |
 | 2 | notes-pass (pass 2) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 210016 | 429s | 2 |
 | 7 | emoat | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 234524 | 660s | 1 |
-| 2 | notes-pass (pass 3) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | PENDING3 | PENDING3 | 3 |
+| 2 | notes-pass (pass 3) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 98831 | 177s | 3 |
+| 3 | ardeep | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | PENDINGX | PENDINGX | 1 |

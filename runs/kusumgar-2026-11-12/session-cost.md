@@ -11,3 +11,4 @@ metadata. n/a where the harness does not expose the figure; never an estimate.
 | 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 148383 | 362s | 1 |
 | 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 87001 | 173s | 1 |
 | 3 | stage-03-ardeep | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 407088 | 943s | 1 |
+| 5 | stage-05-concall (no-concall mode + 1 transcript) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 129853 | 229s | 1 |

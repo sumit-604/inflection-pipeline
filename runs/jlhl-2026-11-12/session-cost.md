@@ -24,3 +24,35 @@ split is not exposed, so those columns read n/a (never an estimate).
 | 12c | verifier C framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 169734 | 14m35s | 1 |
 | 12b | verifier B red flags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 273917 | 17m41s | 1 |
 | 13 | synthesis-lite (phase 1, three files) | claude-opus-5-5 | high | n/a | n/a | n/a | n/a | 192434 | 11m27s | 1 |
+| 09b | Halt 1 understanding dossier | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 282789 | 16m44s | 1 |
+
+---
+
+## SESSION CLOSE-OUT — JLHL 2026-11-12, phase 1
+
+Run total over ledger rows with a token figure (18 subagent runs): 3,737,649 tokens.
+
+### (a) TOP FIVE BY TOKENS
+| rank | stage | total_tok | share of run |
+|---|---|---|---|
+| 1 | 2 notes triple-pass (3 runs) | 530,747 | 14.2% |
+| 2 | 3 AR backward deep dive | 459,732 | 12.3% |
+| 3 | 12a verifier A numerical | 305,006 | 8.2% |
+| 4 | 6 peer concall verification | 285,571 | 7.6% |
+| 5 | 09b Halt 1 dossier | 282,789 | 7.6% |
+
+### (b) DOWNSHIFT FAILURES
+none. stage-00-intake-check ran on claude-haiku-5-5 and verifier A on claude-sonnet-5-5, each per its agent frontmatter (model as written in each block). verifier-a-shadow did not run in this session (claimed by runs/kusumgar-2026-11-12; .claude/shadow.yaml left untouched).
+
+### (c) COST SPIKES
+none. No prior run exists for JLHL.
+
+### (d) OPERATOR SNAPSHOT
+SESSION TOTAL (/cost)
+
+
+### (e) FRESH VS RE-READ
+The Agent tool in this session exposed total tokens only. All 18 subagent rows carry n/a in in_tok, cache_read, cache_write and out_tok, so all 18 rows are left out of the sums. No figure is estimated.
+Fresh tokens (cache write + output + uncached input): n/a (18 of 18 rows left out)
+Re-read tokens (cache read): n/a (18 of 18 rows left out)
+Re-read multiple (re-read / cache write): n/a (18 of 18 rows left out)

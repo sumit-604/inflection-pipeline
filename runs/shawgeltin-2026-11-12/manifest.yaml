@@ -1,0 +1,23 @@
+company: Narmada Gelatines Ltd
+ticker: SHAWGELTIN
+cmp: 474.0
+market_cap_cr: 287.0
+run_date: 2026-11-12
+run_type: full
+concalls_available: false   # no transcripts or recordings on screener or BSE; the company holds no earnings calls
+sector_cap_row: "Specialty chemicals"   # /step1 Step D, section-1b chunk 05 (35x); stage 0 confirms. FLAG: converter economics, Agri processing (20x) is the competing reading
+sector_cap_row_guess: "Specialty chemicals"   # collector keyword guess only, never consumed
+listed_date: ""        # long-listed (annual reports on BSE since 2012); prospectus not expected
+collector_warnings:
+  - "collector Playwright Chromium failed to launch on this machine (BrowserType.launch: spawn UNKNOWN) for the main company and all three peers; only the BSE announcements fetch ran (4 filings). /step1 repaired the corpus by direct download of public BSE and CARE filings (2026-11-12)."
+  - "screening: no screener Excel export. Screener HTML tables saved as text instead: consolidated view (two years, FY25-FY26, consolidation began with the IGCL associate) and standalone view (FY15-FY26 plus TTM). Peer screener tables saved the same way. No Data_Sheet CSV."
+  - "annual-report: FY2025-26 AR is a scanned image PDF (6 of 133 pages carry a text layer); page-marked text built by tesseract OCR (tools/ocr_repair.py). Reporting unit Rs lakh."
+  - "FY2024-25 AR placed in other/ (input contract allows one AR); it is also a scanned image with no OCR text."
+  - "results: Q2 FY27 (Sep-2026 quarter) results NOT in corpus. Board meeting for them is on 12-Nov-2026 (run date); not filed on BSE at collection time. results/ holds Q1 FY27, Q4 FY26 (audited, standalone and consolidated) and Q3 FY26; Q2 FY26 is in other/ for the year-ago comparison."
+  - "shareholding: BSE shareholding summary for Sep-2026 saved as HTML (API response), plus screener shareholding trend as text. Public sub-category split (FII/DII names) not collected; screener shows DII 0.01%, FII nil."
+  - "rating: CARE press releases 06-Mar-2026 (rating/) and 14-Apr-2025 (other/). CARE publishes the press release as the full rationale; no separate bulletin."
+  - "announcements: duplicates of the Q1 FY27 results, the Q4 FY26 results (filed again as board outcome and change in management) and the FY26 AR (second Reg 34 filing) were not copied in."
+  - "peer-concalls: Nitta Gelatin and IGCL hold no calls on screener; only Natural Capsules transcripts (Q4 FY25, Q2 FY26, Q4 FY26) collected. No peer ARs or presentations."
+remediation_cycles: 0
+verifier_runs: {A: 0, B: 0, C: 0, D: 0}
+notes: "Step-1 intake 2026-11-12. Peers: NITTAGELA, IGCL (531253), NATCAPSUQ (see step1-business-brief.md). Sector cap row is a FLAG for Phase 3 (converter economics vs Specialty chemicals row). Promoter Pioneer Jellice group since June 2023; NGL holds about 14% of IGCL, a group-controlled competitor."

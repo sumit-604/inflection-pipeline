@@ -14,7 +14,7 @@ Anchor key: "B01 L20" = line 20 of 01-gate0.md. "B01 blk" = B01-gate0.yaml. "B07
 - Gate 0 arithmetic is clean. Every band, block sum, the core score, the moat count, the matrix and the deal-breakers re-derive to B01's values on B01's stated inputs (B01 L13 to L66).
 - All 4 MAJOR findings sit in Gate 0. Three are substitutions of a fixed formula or window (ROCE, FCF, E2). One is a suppression of the rule's own proxy (M9). B01 disclosed each one in data_notes (B01 blk). That disclosure is what lets this audit re-derive them.
 - The as-applied GOOD+ (core 74, B01 L43) holds only on B01's proxies. On the rules as written, with B01's stated inputs, three inputs are NOT FOUND and score 0. The result is core 55, AVERAGE (rc). On a uniform-proxy reading the result is core 77, GOOD+ (rc). The spread comes from corpus gaps, not from company results. Part 1C names the documents that close it. I recommend the orchestrator carry this to Halt 1 as an open item.
-- Emerging Moat mechanics are clean. All 23 rows, the matrix, the multipliers, the recount and the band re-derive to 12.4, MODEST (B07 L266, L270). The class sits 0.4 above the 12.0 line. Six single-step readings each give NONE. B07 disclosed one of them (B07 L272). No single-step reading lifts the class.
+- Emerging Moat mechanics are clean. All 23 rows, the matrix, the multipliers, the recount and the band re-derive to 12.4, MODEST (B07 L266, L270). The class sits 0.4 above the 12.0 line. Six single-step readings each give NONE. B07 disclosed only the joint G1 plus R1 strip (B07 L272). No single-step reading lifts the class.
 - No finding triggers REWORK. Acceptance is above 60% on a denominator of 83.
 
 ---
@@ -60,7 +60,7 @@ Anchor key: "B01 L20" = line 20 of 01-gate0.md. "B01 blk" = B01-gate0.yaml. "B07
 | R33 | E4 contingent liabilities / NW (P01 L94-95) | Nil = 5 (B01 L41) | < 5% = 5 | PASS |
 | R34 | Block E sum | 18 (B01 L37) | 3 + 5 + 5 + 5 = 18 | PASS |
 | R35 | Core score | 74 (B01 L43) | 9 + 12 + 16 + 19 + 18 = 74 | PASS |
-| R36 | M1 pricing power (P01 L102-104) | 5 (B01 L50) | margin 5.01% to 13.21% = +8.20pp; CAGR 10.38% >= 10 | PASS |
+| R36 | M1 pricing power (P01 L102-104) | 5 (B01 L50) | margin 5.01% to 13.21% = +8.20pp (B01 L46); CAGR 10.38% >= 10 | PASS |
 | R37 | M2 cost advantage (P01 L105-106) | 0 (B01 L51) | 13.21 vs median 15.49 = -2.28pp, below | PASS |
 | R38 | M3 capital efficiency (P01 L107-108) | 5 (B01 L52) | FAT 543.85 / 88.86 = 6.12x > 3; ROCE 20.43 > 20 (FY26) | PASS (finding G0-F6 on basis) |
 | R39 | M4 stickiness (P01 L109-111) | 3 (B01 L53) | 1 decline year, recovered | PASS |
@@ -73,7 +73,7 @@ Anchor key: "B01 L20" = line 20 of 01-gate0.md. "B01 blk" = B01-gate0.yaml. "B07
 | R46 | M11 network effects (P01 L129-133) | 0 (B01 L60) | 7.2% < 17.5%; not >= 20; not > 15 | PASS |
 | R47 | M12 negative WC (P01 L134-135) | 0, NOT FOUND (B01 L61) | rule 5; receivables alone 80.5 days > 45 = 0 either way | PASS |
 | R48 | Moat score, count, class (P01 L98-99, L137-138) | 16; 4; STRONG (B01 L63) | 5 + 5 + 3 + 3 = 16; 4 present = STRONG | PASS |
-| R49 | Classification matrix (P01 L146-149) | GOOD+ (B01 L66) | core 60-79 + STRONG = GOOD+ | PASS |
+| R49 | Classification matrix (P01 L146-149) | GOOD+ (B01 L66) | core 60-79 + STRONG = GOOD+ (P01 L148) | PASS |
 | R50 | Grand total | 90 (B01 L66) | 74 + 16 = 90 | PASS |
 | R51 | Deal-breakers 1 to 9 (P01 L151-159) | none (B01 L66) | A 9 >= 8; B 12 >= 8; median ROCE 14.79 >= 10; CFO/PAT 1.51; pledge 0; net cash; 1 of 9 declines; PAT positive; 10 yrs | PASS |
 | R52 | FLAG-GATE0 trigger (P01 L175-177) | raised at GOOD+ (B01 blk flags) | trigger is classification <= AVERAGE | FAIL MINOR (G0-F7) |
@@ -97,7 +97,7 @@ Gate 0: 56 rules, 48 PASS, 8 FAIL.
 | Moats present | M1 M3 M4 M10 = 4 | M1 M4 M9 M10 = 4 (M3 0, ROCE NOT FOUND; M9 5) | M1 M3 M4 M9 M10 = 5 |
 | Moat score | 16 | 16 | 21 |
 | Moat class | STRONG | STRONG | STRONG |
-| Matrix result | GOOD+ | AVERAGE (core 40-59) | GOOD+ |
+| Matrix result | GOOD+ | AVERAGE (core 40-59, P01 L149) | GOOD+ |
 | Deal-breakers | none | DB1 (Block A 2 < 8) and DB2 (Block B 5 < 8): max GOOD | none |
 | Classification | GOOD+ | AVERAGE | GOOD+ |
 | Grand total | 90 | 71 | 98 |
@@ -169,7 +169,7 @@ Read: two edges lie just below a higher band (A1, B3). Four lie just above a low
 - Location: B01 L52.
 - Rule: P01 L107-108 names no year.
 - Claimed: M3 5 on FY26 FAT 6.1x and FY26 ROCE 20.43%. The year is not stated.
-- Recomputed: on the 10-year median ROCE (14.79%), M3 = 1 and is not present. Moats fall to 3, MODERATE, and core 74 + MODERATE = GOOD (P01 L148). With M9 as written (G0-F4), STRONG holds either way.
+- Recomputed: on the 10-year median ROCE (14.79%), M3 = 1 and is not present. Moats fall to 3, MODERATE, and core 74 with MODERATE = GOOD (P01 L149). With M9 as written (G0-F4), STRONG holds either way.
 - Note: the rule passes on B01's reading. The gap is presentational: a basis that decides the class is not stated. An operator ruling on the M3 year basis would close it.
 
 **G0-F7. MINOR. FLAG-GATE0 raised outside its trigger (R52).**
@@ -201,18 +201,18 @@ Read: two edges lie just below a higher band (A1, B3). Four lie just above a low
 | EM-R01 | Six sections plus register present (P07 L28) | Sections 1-6 and register (B07 L12-354) | all present, in order | PASS |
 | EM-R02 | Evidence tag on every evidence item (P07 L29-34) | DOC / CLM / INF tags (B07 L3, Sections 1-4) | tags present on scored-row items | PASS |
 | EM-R03 | Source anchor on every evidence item (P07 L35-36) | anchors present | presence only; fidelity is Verifier A's | PASS |
-| EM-R04 | NO EVIDENCE FOUND, no force-fit (P07 L39-40) | 16 rows at none (B07 L99-185) | as written | PASS |
+| EM-R04 | NO EVIDENCE FOUND, no force-fit (P07 L39-40) | 17 rows at 0 (B07 L99-185) | as written | PASS |
 | EM-R05 | 22 categories plus R1 addressed (P07 L65-153, L161-168) | 22 in Section 3, R1 in Section 4 (B07 L97-233) | 23 of 23 | PASS |
-| EM-R06 | Section 3 summary table, all rows, four columns (P07 L155-157) | 23 rows (B07 L189-213) | complete | PASS |
-| EM-R07 | Strong/Moderate count stated (P07 L157-158) | 0 Strong, 2 Moderate (B07 L215) | B2, C1 Moderate | PASS |
-| EM-R08 | Recount line in prescribed form (P07 L158-159) | "recount performed: 11 documented items across 6 categories" (B07 L217) | 11 items listed; they map to C1, B2, G1, F2, F1, R1 | PASS |
+| EM-R06 | Section 3 summary table, all rows, four columns (P07 L155-156) | 23 rows (B07 L189-213) | complete | PASS |
+| EM-R07 | Strong/Moderate count stated (P07 L156-157) | 0 Strong, 2 Moderate (B07 L215) | B2, C1 Moderate | PASS |
+| EM-R08 | Recount line in prescribed form (P07 L157-159) | "recount performed: 11 documented items across 6 categories" (B07 L217) | 11 items listed; they map to C1, B2, G1, F2, F1, R1 | PASS |
 | EM-R09 | Completionist guard, 12 or more active (P07 L41-46) | 6 active (B07 L215) | below 12; inside the 3-6 base rate | PASS |
 | EM-R10 | Likelihood x impact matrix (P07 L171-172) | B2 MM 2, C1 HM 3, F1 MM 2, F2 MM 2, G1 MM 2, R1 HL 2 (B07 L248-265) | values match the matrix | PASS |
 | EM-R11 | Multipliers match tags (P07 L172-173) | DOC 1.0 on B2, C1, F2, G1, R1; CLM 0.7 on F1 | match | PASS |
 | EM-R12 | No CLM-only row scored as DOC (Verifier C rule 3) | B2 DOC rests on deck-stated signed contracts, disclosed as the weakest DOC (B07 L217) | no CLM-only row at 1.0 | PASS (see EM-F1) |
 | EM-R13 | Adjusted total | 12.4 (B07 L266) | 2.0 + 3.0 + 1.4 + 2.0 + 2.0 + 2.0 = 12.4 | PASS |
 | EM-R14 | Classification band (P07 L175-176) | MODEST (B07 L270) | 12.4 in 12-24 = MODEST | PASS (see EM-F1, EM-F2) |
-| EM-R15 | I1/I2 contribution stated separately (P07 L180-181) | 0.0 (B07 L268) | stated | PASS |
+| EM-R15 | I1/I2 contribution stated separately (P07 L179-181) | 0.0 (B07 L268) | stated | PASS |
 | EM-R16 | Verifier C rule 8: categories 21 and 22 present; I1 > 0 only with both legs and DOC on (b); I2 > 0 only with a named sacrifice | I1 0, I2 0 (B07 L184-185, L263-264) | present; both 0; no gate to test | PASS |
 | EM-R17 | I2 question answered for each moat claimed (P07 L139-141) | answered for C1 and B2 only (B07 L185) | 4 of 6 scored rows unanswered | FAIL MINOR (EM-F3) |
 | EM-R18 | Section 1: 1A statuses, 1B, 1C (P07 L48-55) | B07 L14-47 | present | PASS |
@@ -257,7 +257,7 @@ Read: the class can fall on any one of six single-step readings and cannot rise 
 - Rule: P07 L170-176 (bands); Verifier C rule 3 (scores consistent with stated evidence).
 - Claimed: one sensitivity. Strip G1 and R1 and the total is 8.4, NONE.
 - Recomputed: six single-step readings each give NONE (2C table). No single step lifts the class.
-- Note: the mechanics pass. Three rows graded Weak (F1, F2, G1; B07 L214, L215, L216) carry raw MM 2, the same raw as the Moderate B2. P07 sets no mapping from strength to the matrix, so this is a calibration gap, not a rule fail. B07 L217 calls B2's deck-stated contracts "the weakest" documented item in the set, and B2 at CLM alone drops the class. Carry MODEST as a boundary class and widen the FLAG-EM-THIN reason to name all six readings.
+- Note: the mechanics pass. Three rows graded Weak in the summary table (F1, F2, G1; B07 L204-206) carry raw MM 2, the same raw as the Moderate B2. P07 sets no mapping from strength to the matrix, so this is a calibration gap, not a rule fail. B07 L217 calls B2's deck-stated contracts "the weakest" documented item in the set, and B2 at CLM alone drops the class. Carry MODEST as a boundary class and widen the FLAG-EM-THIN reason to name all six readings.
 
 **EM-F2. MINOR. The named separator does not separate the two readings.**
 - Location: B07 L272; B07 blk analyst_note.
@@ -301,8 +301,8 @@ Not run. B10 and B11 do not exist yet. Deferred to phase 3: Verifier C rules 4 a
 
 ## COVERAGE STATEMENT
 
-- Gate 0: 56 rules. Every scored metric (24), each block sum (5), core, moat sum and class, matrix, grand total, data confidence, deal-breakers (one rule for all nine tests), CAGR formula and edge rules, the four formula definitions (ROCE, ROE, WC days, FCF), the two stated sensitivities B01 relied on (E1, E2 window), and the YAML spec items (block of record, FLAG-GATE0 trigger, block_b_trend, analyst_note cap, report block). 48 PASS, 8 FAIL.
-- Emerging Moat: 27 rules. Section presence, taxonomy and anchors, NO EVIDENCE handling, 23-row coverage, summary table, strength count, recount line, completionist guard, matrix and multipliers on all 6 scored rows, total, band, I1/I2 statement, Verifier C rule 8, I2 coverage, Sections 1, 2 (2C twice: arithmetic and input), 4 and 6, register, YAML and the analyst_note cap. 25 PASS, 2 FAIL.
+- Gate 0: 56 rules. Every scored metric (32: A1-A4, B1-B4, C1-C4, D1-D4, E1-E4, M1-M12), each block sum (5), core, moat sum and class, matrix, grand total (4), opening line and data confidence (2), deal-breakers as one rule for all nine tests (1), CAGR formula and edge rules (2), the four formula definitions ROCE, ROE, WC days, FCF (4), B01's stated E1 sensitivity (1), and five spec items: FLAG-GATE0 trigger, block of record, block_b_trend, analyst_note cap, report block (5). 48 PASS, 8 FAIL.
+- Emerging Moat: 27 rules. Section presence, taxonomy, anchors, NO EVIDENCE handling, 23-row coverage, summary table, strength count, recount line, completionist guard, matrix, multipliers, the CLM-as-DOC test, total, band, I1/I2 statement, Verifier C rule 8, I2 coverage, Section 1, Section 2, 2C twice (arithmetic and input), Section 4, register, Section 6 (two rules), YAML, analyst_note cap. 25 PASS, 2 FAIL.
 - Total: 83 rules checked, 73 passed. Acceptance rate 73 / 83 = 88.0% (rc).
 - Findings (13) and fails (10) differ on purpose. G0-F6, EM-F1 and EM-F2 are graded presentational findings on rules that pass. No rule failed for them.
 - Numbers are taken as B01 and B07 state them. I opened no source document. Source fidelity is Verifier A's.
@@ -385,7 +385,7 @@ findings:
     location: "B01 L52"
     rule: "P01 L107-108 (no year named); rule passes on the stated reading"
     claimed: "M3 5 on FY26 FAT 6.1x and FY26 ROCE 20.43%; year not stated"
-    recomputed: "on the 10-year median ROCE 14.79%, M3 = 1, moats 3, MODERATE, classification GOOD; with M9 as written STRONG holds either way"
+    recomputed: "on the 10-year median ROCE 14.79%, M3 = 1, moats 3, MODERATE, classification GOOD (P01 L149); with M9 as written STRONG holds either way"
     note: "Presentational: a class-deciding basis is not stated. Operator ruling invited on the M3 year basis."
   - id: "G0-F7"
     severity: MINOR
@@ -414,7 +414,7 @@ findings:
     rule: "P07 L170-176 bands; Verifier C rule 3; rule passes"
     claimed: "one sensitivity: strip G1 and R1 = 8.4, NONE"
     recomputed: "12.4 is 0.4 above 12.0; six single-step readings give NONE: B2 at CLM 11.8; F1 one step lower 11.7; F2 or G1 one step lower 11.4; G1 or R1 stripped 10.4; no single step lifts the class (STRENGTHENING needs +12.6)"
-    note: "Weak rows F1, F2, G1 carry raw MM 2, the same raw as the Moderate B2; P07 sets no strength-to-matrix mapping, so calibration gap, not rule fail. Carry MODEST as a boundary class; widen the FLAG-EM-THIN reason."
+    note: "Weak rows F1, F2, G1 (B07 L204-206) carry raw MM 2, the same raw as the Moderate B2; P07 sets no strength-to-matrix mapping, so calibration gap, not rule fail. Carry MODEST as a boundary class; widen the FLAG-EM-THIN reason."
   - id: "EM-F2"
     severity: MINOR
     location: "B07 L272; B07 blk analyst_note"

@@ -1,0 +1,132 @@
+stage: B12c
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+scope: "phase 1: Gate 0 (B01) and Emerging Moat (B07) only; valuation half deferred to phase 3 (B10/B11 not yet produced)"
+gate0:
+  rules_checked: 56
+  rules_passed: 48
+  fails:
+    - "G0-R03 ROCE formula substituted: (PBT + Interest) / (Total assets - Other Liabilities) in place of EBIT / (Total Assets - Current Liabilities); FY26 current liabilities on AR 2026 p.65 not used (MAJOR, G0-F1)"
+    - "G0-R06 FCF formula substituted: CFO + CFI, includes the FY22 acquisition the rule excludes; capex NOT FOUND (MAJOR, G0-F2)"
+    - "G0-R31 E2 window 2.5 years (Mar 2024 to Sep 2026), not 3; Sep 2023 start NOT FOUND (MAJOR, G0-F3)"
+    - "G0-R44 M9: the rule's own GM proxy set aside by qualitative judgment; as written M9 = 5 (MAJOR, G0-F4)"
+    - "G0-R30 E1 sensitivity note: 39.54% scores 1 (30-39.9 band), not 3 (MINOR, G0-F5)"
+    - "G0-R52 FLAG-GATE0 raised at GOOD+; trigger is classification <= AVERAGE (MINOR, G0-F7)"
+    - "G0-R54 block_b_trend label 'stable' disagrees with its cited CFO/PAT 1.16x to 1.47x; spec asks one number (MINOR, G0-F8)"
+    - "G0-R56 report ends with a 13-of-21-field block plus a pointer line, not the full block (MINOR, G0-F9)"
+  as_applied: "core 74 (A 9, B 12, C 16, D 19, E 18); moat 16, 4 present, STRONG; GOOD+; grand total 90; arithmetic concurs"
+  as_written_strict: "core 55 (A 2, B 5, C 16, D 19, E 13); moat 16, 4 present (M1 M4 M9 M10), STRONG; matrix AVERAGE; DB1 and DB2 fire; AVERAGE; grand total 71"
+  uniform_proxy: "core 77 (B4 3); moat 21, 5 present, STRONG; GOOD+; grand total 98"
+  separating_documents: "FY17-FY26 AR balance sheets (current liabilities) or screener's published ROCE row; FY17-FY26 AR cash flow statements (PPE and intangible purchases, FY22 acquisition outflow); Sep 2023 shareholding pattern"
+  halt1_open_item: "Gate 0 classification spans AVERAGE (as written, corpus gaps) to GOOD+ (as applied); with the separating documents the band edges allow GOOD to EXCELLENT"
+emoat:
+  rules_checked: 27
+  rules_passed: 25
+  fails:
+    - "EM-R17 I2 cannibalization question answered for B2 and C1 only; F1, F2, G1, R1 unanswered; score stays 0 (MINOR, EM-F3)"
+    - "EM-R21 2C input is the Rs 25 Cr CLM figure B07's own 2A calls a spoken intent; on the DOC Rs 3.31 Cr committed figure 2C is 6.9%, not 52.3%; block value untagged (MINOR, EM-F4)"
+  em_score_recomputed: 12.4
+  em_class_recomputed: "MODEST (concur); boundary, 0.4 above 12.0; six single-step readings give NONE; no single step lifts the class"
+valuation: {rules_checked: 0, fails: [], status: "pending phase 3: B10/B11 not yet produced"}
+expectation_ledger: {status: "pending phase 3", present: null, downside_row: null, all_rows_confirm_by: null, all_rows_metric_threshold: null, prob_in_range: null, decay_status_valid: null, off_ledger_credit: null, residual_pct_cmp: null, residual_starter_cap_ok: null, fails: []}  # rules 13-14; any fail = REWORK stage 11; not checked in phase 1
+business_understanding_narrative: {status: "pending: stage 13 not yet produced; rule 9 fires at /finalize", fails: []}  # rule 9; any fail = REWORK stage 13; key supplied because template line 379 is malformed
+recomputed_destination_pe: ""  # phase 3
+recomputed_decision: ""        # phase 3
+findings:
+  - id: "G0-F1"
+    severity: MAJOR
+    location: "B01 L6, L10, L13-16, L52; B01 blk data_notes (ROCE computed)"
+    rule: "P01 L27 fixed formulas; P01 L29-31 ROCE = EBIT / (Total Assets - Current Liabilities); P01 L19-22 missing input = NOT FOUND, 0"
+    claimed: "ROCE on (Total assets - Other Liabilities); median 14.79%, min 10.33%, FY26 20.43%; Block A 9; M3 5"
+    recomputed: "as written on B01 stated inputs: current liabilities NOT FOUND FY17-FY24; A1, A2, A4, M3 = 0; Block A 2; DB1 fires (max GOOD); alone core 67, GOOD"
+    note: "Disclosed. FY26 current liabilities 7,180.16 lakhs are on AR 2026 p.65, used by B01 for D4, so FY26 ROCE as written was computable; FY26 drives A4 and M3. Proxy base = 253.50 + 39.84 = 293.34 Cr (rc). A1 sits 0.21pp below the 15.0 edge. M3 stays present while FY26 ROCE exceeds 15%."
+  - id: "G0-F2"
+    severity: MAJOR
+    location: "B01 L20-23; B01 blk data_notes (FCF is a PROXY)"
+    rule: "P01 L27; P01 L39-40 FCF = CFO - Capex, exclude acquisitions; P01 L19-22"
+    claimed: "FCF proxy CFO + CFI; B2 4 (9 of 10), B3 3 (101.36 / 175.01 = 0.58); Block B 12"
+    recomputed: "as written on B01 stated inputs: capex NOT FOUND; B2 = 0, B3 = 0; Block B 5; DB2 fires (max GOOD); alone core 67, GOOD"
+    note: "Disclosed; B01 names the exclusion it breached. Two-sided: B3 sits 0.02 below the 0.60 edge; adding back any FY22 acquisition outflow above 3.65 Cr (rc) lifts B3 to 5. Acquisition amount NOT FOUND in B01."
+  - id: "G0-F3"
+    severity: MAJOR
+    location: "B01 L39, L73; B01 blk data_notes (E2)"
+    rule: "P01 L91-92 change over 3 years; P01 L19-22"
+    claimed: "E2 5: 38.12% Mar 2024 (AR 2025 p.147) to 40.20% Sep 2026, +2.08pp over about 2.5 years"
+    recomputed: "as written: Sep 2023 holding NOT FOUND; E2 = 0; Block E 13; alone core 69, GOOD+ unchanged"
+    note: "Disclosed. B01 L73 records 61.71% at Mar 2021, a 23.59pp fall to Mar 2024 (rc); any part inside Sep 2023 to Mar 2024 lowers the true 3-year change; E2 can land from 0 to 5. Spear load-bearing fact 4 sits on this window."
+  - id: "G0-F4"
+    severity: MAJOR
+    location: "B01 L58; B01 blk data_notes (M9)"
+    rule: "P01 L13 no qualitative judgments; P01 L123-125 GM proxy if needed, state proxy used"
+    claimed: "M9 0: proxy set aside as a cost-classification artifact"
+    recomputed: "as written: proxy 100% vs peer median 89.2% = +10.8pp, revenue CAGR 10.4%; M9 = 5; moat 21, 5 present, grand total 95; STRONG and GOOD+ unchanged"
+    note: "Disclosed with the mechanical result. B01's economic point holds (LTTS also 100%); the defect is in the rule text for services firms, so the fix is an operator ruling. With M9 = 5, STRONG no longer rests on M3."
+  - id: "G0-F5"
+    severity: MINOR
+    location: "B01 blk data_notes (E1)"
+    rule: "P01 L89-90 E1 bands"
+    claimed: "39.54% on the fully diluted basis would still score 3"
+    recomputed: "39.54% is in 30-39.9 = 1; Block E 16, core 72, GOOD+ unchanged"
+    note: "Scored value 40.20% undiluted = 3 stands; E1 sits 0.20pp above the 40.0 edge and the note hides it."
+  - id: "G0-F6"
+    severity: MINOR
+    location: "B01 L52"
+    rule: "P01 L107-108 (no year named); rule passes on the stated reading"
+    claimed: "M3 5 on FY26 FAT 6.1x and FY26 ROCE 20.43%; year not stated"
+    recomputed: "on the 10-year median ROCE 14.79%, M3 = 1, moats 3, MODERATE, classification GOOD (P01 L149); with M9 as written STRONG holds either way"
+    note: "Presentational: a class-deciding basis is not stated. Operator ruling invited on the M3 year basis."
+  - id: "G0-F7"
+    severity: MINOR
+    location: "B01 blk flags"
+    rule: "P01 L175-177 FLAG-GATE0 only if classification <= AVERAGE with historical depressors"
+    claimed: "FLAG-GATE0 with reason 'No classification depressor: classification GOOD+'"
+    recomputed: "trigger not met as applied; watch items belong in data_notes"
+    note: "A consumer keyed on flag type reads a depressor flag that is not one. Under the strict as-written reading (AVERAGE) the flag becomes due, depressor = corpus gaps."
+  - id: "G0-F8"
+    severity: MINOR
+    location: "B01 blk block_b_trend"
+    rule: "P01 L191-192 label plus the one number that shows it"
+    claimed: "stable: CFO/PAT 1.47x FY26 vs 1.16x FY25; receivable days 80.5 vs 81.3"
+    recomputed: "CFO/PAT up 0.31x (rc) reads improving; receivable days read stable; two numbers, label matches one"
+    note: "Feeds FLAG-CASH. If 'stable' discounts the FY26 PAT depressed by the 3.16 Cr exceptional, say so."
+  - id: "G0-F9"
+    severity: MINOR
+    location: "B01 L76-91"
+    rule: "P01 L161-166 end with exactly this fenced YAML block"
+    claimed: "report block carries 13 of 21 fields, then a pointer line"
+    recomputed: "full 21-field block exists only at B01-gate0.yaml"
+    note: "The omitted fields include data_notes, where G0-F1 to G0-F4 are disclosed; a reader of the report alone does not see them."
+  - id: "EM-F1"
+    severity: MINOR
+    location: "B07 L241-272; B07 blk flags FLAG-EM-THIN"
+    rule: "P07 L170-176 bands; Verifier C rule 3; rule passes"
+    claimed: "one sensitivity: strip G1 and R1 = 8.4, NONE"
+    recomputed: "12.4 is 0.4 above 12.0; six single-step readings give NONE: B2 at CLM 11.8; F1 one step lower 11.7; F2 or G1 one step lower 11.4; G1 or R1 stripped 10.4; no single step lifts the class (STRENGTHENING needs +12.6)"
+    note: "Weak rows F1, F2, G1 (B07 L204-206) carry raw MM 2, the same raw as the Moderate B2; P07 sets no strength-to-matrix mapping, so calibration gap, not rule fail. Carry MODEST as a boundary class; widen the FLAG-EM-THIN reason."
+  - id: "EM-F2"
+    severity: MINOR
+    location: "B07 L272; B07 blk analyst_note"
+    rule: "none in P07 (stage chose the two-readings device); graded because the separator enters the monitoring list"
+    claimed: "separator: a second Rs 30 Cr-plus multi-year contract with the top-5 share not rising"
+    recomputed: "that observation moves B2 and C1, not G1 or R1; G1 separator is its own test (P07 L109-111): FY27 year-end net cash against FY27 capex and payouts (FY26 met it at 127.3 Cr; H1 FY27 97.1 Cr did not); R1 needs an operator ruling on whether a shared tailwind scores above 0"
+    note: "Wrong separator would enter the monitoring checklist."
+  - id: "EM-F3"
+    severity: MINOR
+    location: "B07 L185"
+    rule: "P07 L139-141 I2 question for each moat claimed anywhere in the scan"
+    claimed: "I2 0, answered for C1 and B2 only"
+    recomputed: "6 scored rows; F1, F2, G1, R1 unanswered; score stays 0 (R1 shared by every UK operator, B07 L229; no sacrifice named for F1, F2, G1)"
+    note: "No score effect."
+  - id: "EM-F4"
+    severity: MINOR
+    location: "B07 L58, L61, L64, L80-85; B07 blk capex_embedded_growth_pct"
+    rule: "P07 L60-62 capex under execution; P07 L29 taxonomy on every piece of evidence; P07 L37-38 hard evidence over promises"
+    claimed: "52.3% = Rs 25 Cr x 11.37 / 543.85"
+    recomputed: "on the committed DOC figure Rs 3.31 Cr (AR26 p.87 note 26b via B07 L61): 3.31 x 11.37 = 37.6 Cr, 6.9% of FY26 revenue (rc)"
+    note: "B07 L64 calls the Rs 25 Cr a spoken intent. FLAG-CAPEX-METHOD names the method, not the evidence tier; block value untagged. Phase 3: stage 11 must not take 52.3% as a CAPACITY basis."
+critical_count: 0
+major_count: 4
+minor_count: 9
+acceptance_rate: 88.0             # rules passed / rules checked, % (73 / 83)

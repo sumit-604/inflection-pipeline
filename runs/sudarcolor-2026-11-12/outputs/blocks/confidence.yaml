@@ -1,0 +1,23 @@
+stage: confidence-delta
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+phase: 1
+confidence_delta:
+  numerical_acceptance: 95        # B12a.acceptance_rate; 0 CRITICAL, 7 MAJOR, 4 MINOR; mandatory 35 of 35 checked
+  redflag_coverage: 69            # B12b.acceptance_rate; material_found 16, material_caught 11 (6 full, 5 partial)
+  framework_adherence: 77.8       # B12c Gate 0 + Emerging Moat only: 35 of 45 rules pass; valuation half PENDING PHASE 3
+  peer_utilisation: 81.8          # B12d: 9 peer calls SUBSTANTIVE of 11 provided (2 CITED-ONLY, older than 12 months); B12d.acceptance_rate 100
+  overall: 69
+  overall_set_by: "redflag_coverage (Verifier B)"
+  band: "60-74: PROCEED verdicts downgrade one level"
+  not_applicable: []
+  pending: ["framework_adherence valuation component (phase 3)"]
+identity_check: "No CRITICAL rows in B12a; nothing struck by the orchestrator. Verifier A struck 3 rows at its own self-check."
+rework_trigger: "NOT FIRED. No CONFIRMED Verifier A CRITICAL. Acceptance rates A 95, B 69, C 77.8, D 100, all at or above 60 on denominators of 4 or more (OR-29)."
+notes:
+  - "Verifier B strict full-catch rate is 6 of 16 = 37.5%. The verifier counted partial catches as found under its rule 3 and reported 69; the orchestrator uses the verifier's own acceptance_rate. The strict reading would fall below the 60% line. Halt 1 open item."
+  - "Verifier A rated the Gate 0 M2 and M9 mismatches MAJOR under its rule 5 (no verdict card or Section 1B worksheet exists at stages 1-9). If the operator rules Gate 0 scorecard inputs to be verdict-card inputs, they become CRITICAL and OR-29 REWORK fires. Halt 1 open item."
+  - "Source-fidelity gate: every B12a finding with source_fidelity true binds. Synthesis and the dossier carry the source_truth value, never the flagged value."
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: "not run; .claude/shadow.yaml left armed"

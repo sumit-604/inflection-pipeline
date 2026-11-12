@@ -12,3 +12,7 @@
 - Stage 5 no-concall run used 106,655 tokens against the 100k target (LESSONS open action C2). H1 FY27 Reg 23 related-party filing is not in the corpus; three guessed URLs on the company site returned 404.
 - Stage 8 status partial: four WebFetch failures and several registries not reached (searches_skipped in B08). Its report has one stray correction sentence in 6A and a 'p.?' placeholder in 1C; the block file governs.
 - Stage 9 status partial: two WebFetch failures (HTTP 405, 403); peer aggregation and unorganised share NOT FOUND.
+- Verifiers: A 95% (0 CRITICAL), B 69% (strict full-catch 37.5%), C 77.8% (Gate 0 + EM), D 100%. Confidence overall 69, set by Verifier B. No REWORK trigger; no remediation cycle run.
+- Verifier A found the results text layer misreads H1 FY27 PBT as 59.87; the PDF image prints 59.67. Stages 4, 5 and 8 copied the text-layer figure.
+- Verifier C: Gate 0 class is AVERAGE as scored, GOOD (core 62) under the fixed EBIT definition with the available-window reading. Three operator questions open (Q1 EBIT and other income, Q2 missing-window scoring, Q3 contradicted management claim score).
+- Verifier B read the scanned announcement pages as images: the 70% figure is the parent's staged plan for direct ownership; 15.89% is the first tranche.

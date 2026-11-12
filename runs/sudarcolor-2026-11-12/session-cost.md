@@ -17,4 +17,8 @@ cells read n/a, never an estimate.
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 101,398 | 239s | 1 |
 | 8 | stage-08-promoter | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 142,449 | 402s | 1 |
 | 9 | stage-09-tam | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 100,039 | 293s | 1 |
-| 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | PENDING6 | PENDING6 | 1 |
+| 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 294,845 | 485s | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 292,664 | 573s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | PENDINGB | PENDINGB | 1 |
+| 12c | verifier-c-framework (Gate 0 + EM) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 136,735 | 737s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 51,891 | 58s | 1 |

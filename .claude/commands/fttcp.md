@@ -13,11 +13,10 @@ $ARGUMENTS
 You ask the operator NOTHING before the draft is written and printed. Not
 about protocol setup (forward window, business type, workup intent), not
 about data conflicts (a sector cap row that disagrees with B04), not about
-any judgment call inside FTTCP v2.3. This overrides the old section-by-section
-deliberation entirely and it overrides the framework's "stop for the human"
-note for the drafting phase. The operator was frustrated by interactive
-section stops and by jargon-dense drafts (LESSONS_ARCHIVE.md 2026-07-09); the fix is a
-single finished draft in plain words that has already made every call.
+any judgment call inside FTTCP v2.3. This overrides the framework's "stop for
+the human" note for the drafting phase. The operator wants one finished draft
+in plain words that has already made every call, because section stops and
+dense jargon cost the operator time (LESSONS_ARCHIVE.md 2026-07-09).
 
 Pipeline discipline applies here in full: nothing halts on company quality;
 flags propagate; only a mechanical failure halts (missing run folder, missing

@@ -96,9 +96,8 @@ target, 3-5 year holds.
   for nothing, switch .claude/shadow.yaml (operator ruling 2026-10-11). No
   extraction stage (2, 3, 5, 7), verifier of record, synthesis or valuation
   step runs on Haiku.
-- No stage runs on Haiku 4.5 (operator ruling 2026-10-04: stage 10 and
-  verifier A moved to Sonnet 5.5; Verifier A's independence comes from a
-  fresh context and the source page, not the model family)
+- Verifier A's independence comes from a fresh context and the source page,
+  not the model family (operator ruling 2026-10-04).
 Do not upgrade a stage's model without editing its agent file.
 The model and effort in .claude/agents/*.md frontmatter are the operator's
 rulings. A session never overrides them on the belief that the file is stale.
@@ -456,7 +455,8 @@ Every reply to the operator uses Simplified Technical English (ASD-STE100,
 codename STE) plus Zinsser. This governs ordinary chat, diagnosis, and
 status updates, not only synthesis outputs. Full spec:
 Narrative_Writing_Style_v1.md. The load-bearing rules, always on:
-- One idea per sentence. 20 words or fewer. Split a long thought in two.
+- One idea per sentence. Aim for 20 words or fewer. Keep a longer sentence
+  where splitting it would break one connected thought.
 - Active voice. The subject does the action.
 - One meaning per word per reply. Plain word over jargon. Gloss a term the
   first time it must appear.

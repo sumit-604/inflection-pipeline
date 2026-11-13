@@ -702,7 +702,7 @@ Tables where they clarify. Never as decoration.
 
 Applies to the closing narrative section of every company analysis: the plain-English section that tells the story behind the numbers. It does not apply to structured sections, tables, scorecards, Section 1B derivations, verdict tables or Notion payloads.
 
-From ASD-STE100: short sentences, twenty words or fewer; active voice; one meaning per word per document; cut every word that carries no information; no em-dashes or en-dashes as rhetorical punctuation; no hedging filler ("arguably", "somewhat", "relatively", "essentially", "fundamentally", "significantly").
+From ASD-STE100: short sentences, aim for twenty words or fewer, with a longer sentence kept where splitting it would break one connected thought; active voice; one meaning per word per document; cut every word that carries no information; no em-dashes or en-dashes as rhetorical punctuation; no hedging filler ("arguably", "somewhat", "relatively", "essentially", "fundamentally", "significantly").
 
 From Zinsser: simplicity, brevity, clarity, humanity. Warmth comes from specific observations, not decorative language.
 

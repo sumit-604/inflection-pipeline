@@ -153,8 +153,9 @@ section):
 Stages 10, 11, the valuation-adherence half of verifier C (12c), and the
 full synthesis do NOT run here. They run in PHASE 3.
 
-Read prompts/00-orchestrator.md now; it is the authority on sequence, and its SPEAR GATE check runs before the stage 0 inventory below.
-handoff schemas, flag rules, and error handling. Then:
+Read prompts/00-orchestrator.md now; it is the authority on sequence,
+handoff schemas, flag rules, and error handling. Its SPEAR GATE check runs
+before the stage 0 inventory below. Then:
 
 1. VALIDATE (stage 0, do this yourself): inventory the run folder against
    the input contract in the orchestrator. manifest.yaml must exist and

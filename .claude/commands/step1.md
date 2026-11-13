@@ -134,8 +134,8 @@ It downloads the main company and the three peers, classifies the PDFs into
 and writes `manifest.yaml`. Then REPAIR the known collector defects (see
 LESSONS.md) before anything is committed:
 - Correct `manifest.yaml` `sector_cap_row` to the Step D row if it differs.
-- Confirm `inputs/annual-report/` holds the latest year's AR (the regex and
-  two-most-recent rule now capture BSE-hosted reports; if the newest year is
+- Confirm `inputs/annual-report/` holds the latest year's AR (the collector
+  captures BSE-hosted reports and keeps the two most recent; if the newest year is
   still missing, fetch it from the screener documents page / BSE and drop it in).
 - Confirm the screening CSVs are not just Data_Sheet; note any empty
   P&L/BS/CF/Quarters CSV as a gap for B00.
@@ -169,8 +169,8 @@ close-out block. Carry the Step B brief and its load-bearing facts into every
 stage task message as COMPANY MEMORY, alongside companies/<TICKER>.md. Obey the
 orchestrator's rules verbatim: JIT context (paths not pasted PDFs), verifier
 independence, per-stage validate-then-commit, model dispatch from the agent
-frontmatter. The ONLY deviations are the two suppressed pauses from the AUTONOMY
-CONTRACT above. Do NOT run stages 10-11, verifier C's valuation half, or the
+frontmatter. The only deviation is the suppressed EMPTY-FOLDER CONFIRMATION pause
+from the AUTONOMY CONTRACT above. Do NOT run stages 10-11, verifier C's valuation half, or the
 full synthesis; those are Phase 3.
 
 ## I. PUSH AND REPORT (then stop)

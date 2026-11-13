@@ -56,7 +56,7 @@ unavailable; if a PDF is genuinely unreadable, name it in the run log and
 in the confidence delta note.
 
 EXECUTION DISCIPLINE: as in .claude/commands/run-pipeline.md, including the PROVE COMPLETION checks (report file exists and is not empty, block file exists and parses, block came from this invocation) before any later stage reads the output.
-that blocks until the subagent returns. Never use background task
+Invoke every stage as a foreground subagent call that blocks until the subagent returns. Never use background task
 launching with passive waiting. Achieve parallelism only by invoking
 multiple foreground subagents in a single message where the dependency
 table allows. After each stage returns, validate its YAML block, append the

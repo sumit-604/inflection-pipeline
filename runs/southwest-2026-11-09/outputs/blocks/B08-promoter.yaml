@@ -1,0 +1,58 @@
+stage: B08-promoter
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization for screener, ASIANENE, DEEPINDS, JINDRILL). Data_Sheet is populated; stages use Data_Sheet and filings."
+  - "no results PDFs yet (screener has none); results/ and rating/ cured by /step1 (three BSE results filings; CRISIL rationale of 10 Jul 2026 as text capture)."
+  - "HIGH (freshness): inputs/concalls/ has no Q2 FY27 transcript. Call scheduled 11 Nov 2026 16:00 IST, after this run."
+  - "Q3 FY26 concall transcript (Feb 2026) not in the corpus."
+  - "annual-report/ holds FY26 and FY25 only; FY24 and earlier not held, so a 5-year CXO and RPT history is NOT FOUND."
+  - "announcements/ cover Nov 2025 to Nov 2026; pre-Nov 2025 filings not held."
+  - "research/ is empty: no broker notes. No IPO prospectus held (2018 NSE SME IPO, migrated Oct 2023; not expected): group-company map built from AR26 Note 48 and aggregators only."
+  - "Stage 8 specific: RHP, NSE May 2025 penalty PDF, gem.wiki and NDTV Profit coal-capex article returned 403 or were blocked; SEBI, SAT, eCourts, MCA and DIN-disqualification lookups not directly queryable (PENDING LIVE VERIFICATION)."
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 2, caution: 7, red: 1}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Promoters sold 26,63,309 shares (about 8.16% of enlarged equity, about Rs 62.8 Cr) in four open-market tranches 22 Jun to 10 Sep 2026; holding fell from 68.85% to 61.70%. First tranche (Rs 28.95 Cr, 22-23 Jun) preceded the 10 Jul warrant conversion (Rs 22.5 Cr balance paid) [INFERENCE: sales funded the call]", evidence_tier: "VERIFIED (shares, holding %); MEDIA (prices and value, Trendlyne)", source: "Reg 29(2) filings 20260625-9BA85695, 20260710-36543982, 20260813-9C8BA238, 6219323E_43E3 (Annexure-A); Trendlyne insider and bulk-deal pages", date: "2026-06-22 to 2026-09-10"}
+  - {finding: "Rs 1,100.00 lakh loan (PY 950.00) to an unnamed enterprise significantly influenced by KMP or relatives, repaid within the year; interest 15.62 lakh (1.42% of principal); borrower, rate, tenor and security not disclosed; no s.185 special resolution in the last three AGM lists", evidence_tier: "VERIFIED", source: "AR26 Note 48 [page 148], consolidated [page 194]; CG report special resolutions [page 77]", date: "FY26 (year to 2026-03-31)"}
+  - {finding: "Non-answer on promoter dilution on the 22 Jul 2026 call ('we are still thinking... cannot answer right now'); 13,85,838 more shares (4.24%) were sold 18 Aug and 10 Sep", evidence_tier: "VERIFIED", source: "Concall_Jul_2026_Transcript page 19; Reg 29(2) 6219323E_43E3 p.5", date: "2026-07-22 / 2026-09-10"}
+  - {finding: "Promoter pay +75.2% to 425.29 lakh (commission not availed earlier 'due to cash flow constraints'); proposed monthly pay +50% (CMD to Rs 15 lakh) and +60% (JMD to Rs 12 lakh), JMD commission 0.25% to 0.40% [derived]; promoters voted 100% on own re-appointment, supplying 94.7% of votes cast, public turnout 8.3%", evidence_tier: "VERIFIED", source: "AR26 [page 51], [page 74], notice [page 17-18]; 20260929-ae2f036b voting results p.2-7", date: "2026-09-28"}
+  - {finding: "Promoter co-investment with the company in Alara Resources Ltd (group held 10.83% rising to 12.66%); CMD sits on Alara's board; Alara is the Oman JV partner; 6 Jul Reg 30 letter states investment as AUD 59,769.32 against A$601,331 implied by the 28 Aug allotment (about 10x) [INFERENCE: decimal typo]", evidence_tier: "VERIFIED", source: "Reg 30 20260706-83288310 p.2-3; 20260828-db9f3719 p.2", date: "2026-07-06 / 2026-08-28"}
+  - {finding: "Exchange fines FY25: Rs 5,34,000 plus taxes (NSE part-waived, Rs 4,50,000 paid; BSE waived) for late independent-director appointment and committee composition; Rs 1,08,560 for Reg 17(1A) delay. FY26 clean. Reg 29 filing for 29-30 Jun sale and warrant allotment re-filed 12 Aug 2026 after a BSE query", evidence_tier: "VERIFIED", source: "AR25 CG report 'Details of non-compliance'; 20260813-9C8BA238 p.1", date: "FY25; 2026-08-12"}
+  - {finding: "Governance process: executive CMD sits on Audit Committee and NRC; Ritolia and Rajpoot attended 4 of 7 board meetings; two longest-serving IDs have HR/wellness backgrounds; no succession plan found; both brothers re-appointed to 19 Nov 2029", evidence_tier: "VERIFIED", source: "AR26 [page 69], [page 71-72]; Reg 30 20260929-effd2ae2", date: "FY26 / 2026-09-29"}
+transition_evidence: []
+pledge_pct_latest: 0
+pledge_trend: "stable at nil in four Reg 29(2) forms (24 Jun, 10 Jul, 12 Aug, 11 Sep 2026; encumbrance column '-'); 3-year trend NOT FOUND (shareholding/ empty); Trendlyne lists no 2026 pledge entry"
+searches_performed:
+  - "South West Pinnacle Exploration Vikas Jain promoter"
+  - "South West Pinnacle Exploration SEBI order OR penalty OR show cause"
+  - "South West Pinnacle Exploration promoter sells shares stake sale 2026"
+  - "South West Pinnacle Vikas Jain Piyush Jain ED OR CBI OR court OR fraud OR case"
+  - "South West Pinnacle Exploration NSE penalty May 2025"
+  - "Chandra Prabhu International / Thakurji Towers / Ravmo Imports LLP"
+  - "Vikas Jain director Alara Resources ASX"
+  - "South West Pinnacle Doogar and Associates auditor / income tax / GST / NCLT / High Court"
+  - "South West Pinnacle AmbitionBox / Glassdoor reviews"
+  - "Rajendra Prasad Ritolia former CMD Central Coalfields"
+  - "Jogeshwar Khas Jogeshwar coal block auction Ministry of Coal"
+  - "South West Pinnacle IiAS / InGovern / SES / short seller"
+  - "Chandra Prabhu International Gajraj Jain SEBI / BSE action"
+  - "South West Pinnacle share price promoter selling reason"
+  - "Anantnath Skycon Private Limited"
+  - "South West Pinnacle Q2 FY27 results"
+  - "Fetched: Trendlyne insider-trading page, Trendlyne bulk-block page, tijorialerts, whalesbook secretarial report, qorpiq Vikas Jain, tofler Piyush Jain"
+searches_skipped:
+  - "NSE penalty PDF May 2025 (HTTP 403); Value Research mirror (403)"
+  - "SWPEL RHP (HTTP 403): promoter litigation, group companies"
+  - "gem.wiki coal block page (403); NDTV Profit Rs 450 crore coal-capex article (fetch blocked)"
+  - "SEBI enforcement orders, SAT, eCourts, NCLT case status, MCA master data, DIN disqualification list: not directly queryable (PENDING LIVE VERIFICATION)"
+  - "Promoter degree verification: Johnson and Wales, Nottingham Trent, IILM (PENDING LIVE VERIFICATION)"
+  - "Quarterly shareholding patterns and Anantnath Skycon stake: corpus gap"
+  - "Exchange-level Reg 7(2) insider filings (NSE ixbrl): not opened, prices rest on Trendlyne"
+verdict_basis: "No regulator action and no deal-breaker, but both promoters sold 26,63,309 shares (about Rs 62.8 Cr, holding 68.85% to 61.70%) in 12 weeks around a warrant conversion, and a Rs 1,100 lakh KMP-influenced loan stays unnamed two years running."
+analyst_note: "Coal block (load-bearing fact 3): no related-party element found. The block is held by the listed company and was won in the 2021 Ministry of Coal auction at a 24.25% revenue share. Funding is the open item (Rs 200 cr Phase I per call; CRISIL Rs 200-220 cr; a press headline says Rs 450 cr, unverified). Disposal figures: shares are exact from Reg 29(2) Annexure-A and reconcile to the AR holdings; prices come from Trendlyne and tie to share counts, but exchange-level price proof was not opened. FLAG-PROMOTER is not raised because the grade is CAUTION, yet stage 13 should carry the selling and the unnamed loan in the verdict line. Two readings: diversification versus extraction. Separators: H1 FY27 Reg 23 RPT filing naming the borrower; Dec 2026 shareholding pattern (further sales, any pledge, Anantnath Skycon stake); Q3 FY27 CFO/PAT. Anantnath Skycon (10 Sep buyer of 7,00,000 sh) is an unverified lead, surname overlap only."

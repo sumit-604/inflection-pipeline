@@ -1112,3 +1112,16 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-09 · SOUTHWEST (Phase 1, /step1 to Halt 1)
+- Guard stopped the first start: feat/shallow-agents carries framework commits not on main. Extracted six files to local framework/shallow-agents (b84274b4), unpushed.
+- dry_check on that branch failed: check 1 (Windows backslash glob misroutes commands; shallow.md description is not strict YAML), check 2 (three paths only on the feat branch; .env absent in a worktree), check 4 (token-meter flow test fails, tools/mods untouched by the branch). No merge. Run went from main.
+- dry_check needs python3 and claude on PATH under Git Bash on this machine; neither resolves by default.
+- collect_to_repo.py hard-codes C:\Users\SUMIT SHARMA as REPO_ROOT, absent here. Scratchpad wrapper set the root; no tracked file changed.
+- Headed Chromium fails in agent shells; the SCREENER_HEADLESS switch lives only on the unmerged branch. Wrapper ran that source.
+- Collector window for BSE announcements reached only about 10 weeks; results filings, Nov 2025 to Aug 2026 Reg 30s and the rating rationale were fetched by hand. Results API returned 400 on the page past the last.
+- Collector's sector guess was Agri processing; corrected to Mining / mineral exploration.
+- Subagents launch in the background in this app; the foreground rule cannot be met. Completion proved by file checks; subagent token splits are not exposed, so ledger holds totals only.
+- Stages without an Edit tool left known typos in reports (04 row 4D-4, 05 counts line, 07 p.? anchor, 08 "Reg CRISIL"); blocks carry the corrections.
+- Stage 1 ran before stage 8 and scored promoter E1 and pledge without the Reg 29(2) filings. Verifier C raised it CRITICAL; goes to Halt 1 as an open item.
+- Shadow run done (Verifier A on Haiku 5.5); switch spent.

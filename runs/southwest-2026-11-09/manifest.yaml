@@ -1,0 +1,20 @@
+company: South West Pinnacle Exploration Ltd
+ticker: SOUTHWEST
+cmp: 161.0
+market_cap_cr: 524.0
+run_date: 2026-11-09
+run_type: full
+concalls_available: true
+sector_cap_row: "Mining / mineral exploration"   # 20x, section-1b chunk 05; resolved by /step1 Step D and stage 0; collector guess was wrong
+sector_cap_row_guess: "Agri processing"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, ASIANENE:Profit & Loss, ASIANENE:Quarters, ASIANENE:Balance Sheet, ASIANENE:Cash Flow, ASIANENE:Customization, DEEPINDS:Profit & Loss, DEEPINDS:Quarters, DEEPINDS:Balance Sheet, DEEPINDS:Cash Flow, DEEPINDS:Customization, JINDRILL:Profit & Loss, JINDRILL:Quarters, JINDRILL:Balance Sheet, JINDRILL:Cash Flow, JINDRILL:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+listed_date: "2018-02-19"   # NSE SME IPO; migrated to main board Oct 2023; prospectus not within 3 years of run_date
+bse_code: "543986"
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: run
+notes: "Step 1 repairs (2026-11-09): results filings x3, CRISIL rationale and Reg 30 filings fetched from BSE and agency links after the collector; collector REPO_ROOT and headless switch handled by a scratchpad wrapper, no tracked tool file changed. Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

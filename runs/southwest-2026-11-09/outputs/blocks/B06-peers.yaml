@@ -1,0 +1,69 @@
+stage: B06-peers
+company: "SOUTHWEST"
+run_date: "2026-11-09"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00: shareholding/ empty; FII+DII UA qualifier and promoter pledge trend open"
+  - "B00: screener export sheets empty (P&L, Quarters, Balance Sheet, Cash Flow) for main and all three peers; stages use Data_Sheet and filings"
+  - "B00: no results PDFs and no rating PDF beyond CRISIL text capture"
+  - "B00 HIGH freshness: no Q2 FY27 SOUTHWEST transcript (call 11 Nov 2026, after run)"
+  - "B00: Q3 FY26 SOUTHWEST transcript not held; annual-report holds FY25 and FY26 only; announcements Nov 2025 to Nov 2026 only; research/ empty"
+  - "B00: Reg 30 award values and Reg 29(2) promoter disposal quantities NOT FOUND (page 1 only)"
+  - "Peer files: 12 of 12 provided. Only DEEPINDS has a Q2 FY27 call; ASIANENE latest is Q4 FY26 and JINDRILL latest is Q1 FY27"
+  - "Peer files: DEEPINDS Nov 2026 transcript is a garbled, triplicated capture; citations read from clean passages"
+  - "Peer files: ASIANENE standalone FY26 revenue NOT FOUND (consolidated includes Kuiper from 1 Sep 2025); JINDRILL FY26 actual revenue NOT FOUND (guidance used for ratio)"
+  - "Alpha Geo, named by SOUTHWEST as a seismic peer, has no transcript in the corpus"
+flags:
+  - {type: FLAG-RATES-UNCORROBORATED, reason: "No peer shows rate gains from rig scarcity; JINDRILL day rate cut 62,000 bid to about 47,800 (JINDRILL Q1 FY27 p.11); DEEPINDS growth 'more of volume' (Q3 FY26 p.6-7)"}
+  - {type: FLAG-Q2-CAUSE-UNSUPPORTED, reason: "Only DEEPINDS reported Q2 FY27: no monsoon or diesel mention, margin 43.6 to 39.6 on equipment cadence (Q2 FY27 p.8, p.12)"}
+  - {type: FLAG-MONSOON-PROOF-CLAIM, reason: "ASIANENE Q2 FY26 CHP work possible 20 to 25 days in the quarter (p.9) vs SOUTHWEST Q4 FY26 monsoon-proof book; DEEPINDS reports no seasonality; split by work type"}
+  - {type: FLAG-PEER-LIMITS, reason: "No peer is a coal, mineral or CBM exploration driller; DEEPINDS is post-exploration, JINDRILL offshore jack-up, ASIANENE seismic and CHP"}
+peers_provided: 12
+verified:
+  - {claim: "SOUTHWEST order book 2.95x trailing revenue is not out of peer range", peers: ["DEEPINDS", "ASIANENE", "JINDRILL"], anchor_count: 5}
+  - {claim: "JINDRILL is offshore jack-up only, no overlap with SOUTHWEST domains", peers: ["JINDRILL"], anchor_count: 4}
+partially_verified:
+  - {claim: "Rig shortage and utilisation over 100% (utilisation leg only)", peers: ["DEEPINDS"]}
+  - {claim: "Annual margin is the stable lens; quarterly swings occur (size of SOUTHWEST swing not matched)", peers: ["DEEPINDS", "ASIANENE", "JINDRILL"]}
+  - {claim: "Rig schedule slippage (redeployment slips seen; purchased-rig delivery on time at DEEPINDS)", peers: ["JINDRILL", "DEEPINDS"]}
+  - {claim: "Stated 45 to 90 receivable days vs derived 147 to 175 day balances (pattern seen at ASIANENE)", peers: ["ASIANENE"]}
+contradicted:
+  - {claim: "Customer rates rising on rig shortage (adjacent segment, offshore, low weight)", contradicting_peer: "JINDRILL", quote_anchor: "pushed down to $47,800 from a $62,000 bid (JINDRILL Q1 FY27, [page 11], Kaushal Bengani); rates affected due to competition (Q3 FY26, [page 5], Raghav Jindal)"}
+  - {claim: "Monsoon-proof book, continuity of growth across all quarters (outside the ten questions; field-work analogue, medium weight)", contradicting_peer: "ASIANENE", quote_anchor: "entire quarter was washout ... maybe 20, 25 days during the entire quarter (ASIANENE Q2 FY26, [page 9], Sumit Maheshwari)"}
+unverifiable:
+  - {claim: "Monsoon, diesel and direct-cost ratio hit peers in Q2 FY27", peers_checked: ["DEEPINDS", "ASIANENE", "JINDRILL"]}
+  - {claim: "CBM market leader, very few players", peers_checked: ["DEEPINDS", "ASIANENE"]}
+  - {claim: "Seismic about 4% of revenue, seismic pricing, Oil India empanelment value", peers_checked: ["ASIANENE"]}
+  - {claim: "Coal and mineral block auctions and UCG convert into exploration orders", peers_checked: ["ASIANENE", "DEEPINDS", "JINDRILL"]}
+  - {claim: "Employee cost steps up ahead of ramp; private vs PSU payment speed", peers_checked: ["ASIANENE", "DEEPINDS", "JINDRILL"]}
+peer_coverage_map:
+  - {peer: "ASIANENE", quarter: "Q4 FY25", usage: "SUBSTANTIVE", contribution: "seismic Rs 72 Cr and 8% of book; receivables and retention; margin guide"}
+  - {peer: "ASIANENE", quarter: "Sep 2025 merger update", usage: "CITED-ONLY", contribution: "CBM about 2.5 years to production, no test production"}
+  - {peer: "ASIANENE", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "monsoon washout, 8.9% margin, 45-75 day cycle, CBM borehole contractor"}
+  - {peer: "ASIANENE", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "guidance miss, 12.5% FY26 margin, order book Rs 1,750 Cr, critical minerals"}
+  - {peer: "DEEPINDS", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "rigs delivered on time, volume not price, order wins Rs 140 Cr"}
+  - {peer: "DEEPINDS", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "100% utilisation, rig capex Rs 100-120 Cr, no seasonality, client share under 40%"}
+  - {peer: "DEEPINDS", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "100% utilisation, fixed-price L1, cash conversion 75-80%, book conversion"}
+  - {peer: "DEEPINDS", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "only same-quarter peer: no monsoon or diesel, margin 39.6 vs 43.6 on equipment cadence"}
+  - {peer: "JINDRILL", quarter: "Q1 FY26", usage: "CITED-ONLY", contribution: "one-off low rate, revenue guidance base, offshore identity"}
+  - {peer: "JINDRILL", quarter: "Q2 FY26", usage: "SUBSTANTIVE", contribution: "Explorer at 35,606 a day, margin 42 to 39, Pioneer refurbishment timeline"}
+  - {peer: "JINDRILL", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "scarce spec-fit rigs beside falling rates, refurbishment Rs 50-100 Cr"}
+  - {peer: "JINDRILL", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "62,000 bid cut to 47,800, three rigs dehired, Pioneer slip to Oct 2026, ONGC receivable"}
+industry_cross_read:
+  demand: "Policy rhetoric strong in all three peers; conversion slow (Deep book flat near Rs 3,000 Cr, Jindal 3 of 6 rigs dehired, Asian guidance miss); onshore rig utilisation full at Deep"
+  pricing_inputs: "No peer shows rate gains; fixed-price L1 tenders at Deep, day rate cut at Jindal; input cost commentary is logistics and compressors, nobody mentions diesel"
+  capex_cycle: "Contract-gated, cautious peer set, not a capacity race (Deep buys rigs only on award, Jindal conserves cash, Asian no services capex); SOUTHWEST lone-expander status depends on rig-level contract cover, NOT FOUND in peer evidence"
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Well-control and HSE incident with schedule delay (DEEPINDS Q3 FY26 p.4, p.10; Q4 FY26 p.8)"
+  - "Legacy and PSU receivable write-offs and multi-year disputes (DEEPINDS Q4 FY26 p.6-7; JINDRILL Q1 FY27 p.8-9)"
+  - "Rig downtime 4 to 6 months and refurbishment Rs 90-110 Cr per rig (JINDRILL Q1 FY27 p.5, p.8)"
+  - "L1 tender price competition and rupee-denominated contracts (JINDRILL Q1 FY27 p.6, p.11)"
+  - "Bid qualification barrier needing JV partner for higher HP rigs (DEEPINDS Q2 FY27 p.12)"
+  - "Related-party loans to group entities (DEEPINDS Q1 FY27 p.17)"
+  - "Guidance miss base rate, standalone margin guide missed by 1 to 1.5 points (ASIANENE Q4 FY25 p.15; Q4 FY26 p.6, p.7)"
+  - "West Asia supply-chain and Qatar disruption (ASIANENE Q4 FY26 p.6, p.9; DEEPINDS Q2 FY27 p.3-4)"
+net_narrative_effect: "complicates"
+analyst_note: "Only DEEPINDS reported Q2 FY27 (4 Nov 2026): revenue +33.7% YoY, margin 39.6% vs 43.6% in Q1, cause given as equipment cadence and repairs, no monsoon or diesel. No peer shows the revenue decline SOUTHWEST posted, which shifts weight to SOUTHWEST-specific causes, but ASIANENE (CHP, seismic) shows a real Q2 monsoon hit on field work, so sector cause is not excluded for field-heavy lines. Rates are the weakest SOUTHWEST claim in the peer set. The cross-peer hypothesis is an [INFERENCE] with a concrete test: HZL and Reliance contract terms plus Q3 FY27 employee cost ratio. All peer comparisons are partial; none is an exploration driller."
+cross_peer_hypothesis: "[INFERENCE] The three peers move value capture from tender-priced day-rate rig contracting to production-linked or long-tenor integrated contracts; the pure rig line is the weak layer (DEEPINDS volume-only growth with Dolphin ~60% and PEC ~50% EBITDA; JINDRILL 62,000 bid cut to 47,800 despite scarce rigs; ASIANENE Vedanta template with capex reimbursed). Test: SOUTHWEST HZL and Reliance contract escalation and fuel terms, and Q3 FY27 employee cost below 18% of revenue."

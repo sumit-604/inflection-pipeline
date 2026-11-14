@@ -1,0 +1,39 @@
+stage: B01-gate0
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L, Quarters, Balance Sheet, Cash Flow, Customization sheets exported empty for subject and three peers; only Data_Sheet CSVs populated (from B00). Gate 0 used the Data_Sheet P&L, balance sheet and cash flow blocks."
+  - "shareholding: one quarter only (30-Sep-2026 NSE XBRL); no pledge trend or 3-year promoter series. E2 scored on a partial window (Mar-2025 AR to Sep-2026)."
+  - "Scanned or garbled: Q2 FY27 results filing text partly OCR-garbled; Sep-26 balance sheet read from the Q2 FY27 presentation instead. Secretarial compliance report and Q2 newspaper publication are scans (B00)."
+  - "FY20 capex and FY20 trade payables NOT FOUND; FCF and WC-day tests start FY21."
+  - "Peer data incomplete for M5 (full listed hospital segment not provided), M7 (listed player count) and M9 (KIMS FY26 material cost blank)."
+  - "No research notes, no 'other' documents (B00)."
+flags: []
+data_years: 7
+fy_range: "FY20 to FY26"
+blocks: {A: 12, B: 7, C: 20, D: 16, E: 16}
+core_score: 71
+moat_score: 23
+grand_total: 94
+moats_confirmed: 5
+moat_class: "STRONG"
+classification: "GOOD"
+deal_breakers:
+  - "2: Block B = 7 (<8), max GOOD. Years driving it: FY25 and FY26 (FCF -60.85 and -234.14 Cr, capex 327.59 and 501.85 Cr vs CFO 266.74 and 267.71 Cr) and WC days +22.2 FY21 to FY26. Matrix result GOOD+ capped to GOOD."
+history_downgrade: false
+data_notes:
+  - "ROCE computed (screener Data_Sheet has none): EBIT = PBT + interest over (total assets - other liabilities), year-end. FY26 AR cross-check 13.82% vs 13.77%."
+  - "ROE: FY20 uses closing net worth (no opening)."
+  - "No loss-to-profit swing across the window endpoints (FY20 PAT 29.63 Cr to FY26 194.01 Cr). FY21 PAT loss -2.30 Cr is an intermediate year; PAT CAGR 36.77% on a small FY20 base. FY25 to FY26 PAT +0.4%."
+  - "WC days on revenue basis (COGS not explicit). Trade payables from AR 2026 (FY25, FY26), AR 2025 (FY24), RHP (FY21 to FY23); FY25 payables differ across AR 2025 (1,029.13 Mn) and AR 2026 (690.98 Mn)."
+  - "Capex: RHP FY21-23, AR 2025 FY24, AR 2026 FY25-26, all in INR million then converted to Cr. FY20 NOT FOUND."
+  - "D1 net debt uses cash and bank only (1.53x, score 3). Netting 485.8 Cr current investments gives 0.12x (score 4)."
+  - "Screener Sales equals total income (includes 64.2 Cr operational other income FY26 per presentation p.8). Screener total assets FY26 2363.30 Cr vs AR 2383.13 Cr."
+  - "M9 gross-margin proxy: (Sales - raw material cost + change in inventory) / Sales; peer median from Yatharth and Medanta only."
+  - "M5 PEER DATA NEEDED; M7 PEER DATA NEEDED; M6 R&D NOT FOUND."
+  - "M4, M10 and M1 score high on arithmetic; M10 reflects falling receivable days, not evidenced switching costs."
+  - "Load-bearing facts 1-4 confirmed against the Q2 FY27 presentation and screener-data; Sep-26 borrowings Rs 668.6 Cr include lease liabilities (588.8 Cr excluding)."
+block_b_trend: "deteriorating: FCF +29.22 Cr (FY24) to -234.14 Cr (FY26) as capex rose from 85.30 Cr to 501.85 Cr; CFO held at 267.71 Cr"
+analyst_note: "Core 71 with STRONG moat gives GOOD+ on the matrix; the Block B deal-breaker caps it at GOOD. The Block B shortfall is expansion capex, not weak operating cash: cumulative CFO/PAT is 1.62 and CFO is flat at about 267 Cr, but FCF turned negative in FY25 and FY26 as borrowings (incl. leases) went from 0 to 584 Cr, and Sep-26 is 668.6 Cr. Block C is flattered by the small FY20 PAT base; PAT is flat across FY25-FY26 while revenue grew 15%, which is the operating-leverage question for later stages. ROCE fell from 20.49% (FY23) to 13.77% (FY26) as capital employed rose faster than EBIT. Moat score is arithmetic on a hospital operator; M5 and M7 need peer data."

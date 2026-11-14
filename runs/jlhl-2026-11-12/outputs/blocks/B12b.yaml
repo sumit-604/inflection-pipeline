@@ -1,0 +1,42 @@
+stage: B12b
+company: "JLHL"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 28
+caught: 18
+partially_caught: 5
+missed:
+  - {severity: "MAJOR", item: "Pune South land was leased, contradicting May 'we pretty much own all the real estate'; Rs 150 Cr purchase (Rs 100 Cr new cash) announced Oct; landowner not named; B05 grades it 'Strengthening'", anchor: "May26 PDF p.4 Ankit Thakker l.133-136; Oct26 PDF p.3 opening l.108-116; Feb26 PDF p.4 l.156-164"}
+  - {severity: "MAJOR", item: "Q2 FY26 unbilled-revenue accounting policy change gave a one-time revenue bump; size not given; inflates FY26 growth base; absent from B05 and B06", anchor: "Aug26 PDF p.4 Dhvani Shah / Ankit Thakker l.136-147"}
+  - {severity: "MINOR", item: "Aug 'Q1 and Q3, as I said earlier, are relatively weaker' has no antecedent in Feb or May calls; B05 recast it as a delivered May promise", anchor: "Aug26 PDF p.7 Ankit Thakker l.259-261; Feb26 PDF p.8 l.294-303"}
+  - {severity: "MINOR", item: "CGHS stance shift: Feb 'you will not see any impact on that at all' to Aug 'with the revised pricing, we could consider it'; B05 calls it unchanged", anchor: "Feb26 PDF p.9 l.333-336; Aug26 PDF p.9 l.360-361"}
+  - {severity: "MINOR", item: "Peer contrast not drawn: KIMS cites FY26 industry insurer standoff and GIC common-empanelment confusion; MEDANTA 'could have been faster'; JLHL said no unusual payer friction", anchor: "Feb26 PDF p.8 l.306-308; KIMS May26 PDF p.9 l.333-341; MEDANTA Feb26 PDF p.16 l.601-609"}
+pipeline_flags_not_supported:
+  - "B05 timeline_slippages and 1C: 'Dombivli breakeven wording: end of year 2 to 1.5-2 years, hard to predict' (range 'widened'). Aug26 PDF p.6 l.215-219: analyst states guidance as '1.5 to 2 years', CEO 'the guidance still holds'; Oct26 PDF p.7 l.282-289 repeats 1.5-2 years and defers an upward revision. No slip; sign reversed."
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "concur at B, low end: zero hard misses holds, but a due-only recount is 4 delivered / 2 partial / 0 missed (row 8 has no source promise; rows 6, 9, 10 not due), and the Pune leased-land contradiction belongs in the basis"
+findings:
+  - {id: F1, severity: MAJOR, type: MISSED, item: "Pune South leased land vs 'we pretty much own all the real estate'; landowner unnamed", anchor: "May26 p.4 l.133-136; Oct26 p.3 l.108-116"}
+  - {id: F2, severity: MAJOR, type: MISSED, item: "Unbilled-revenue policy change, one-time Q2 FY26 revenue bump, unsized", anchor: "Aug26 p.4 l.136-147"}
+  - {id: F3, severity: MAJOR, type: NOT_SUPPORTED, item: "B05 lists Dombivli breakeven wording as a timeline slippage; guidance held at 1.5-2 years in Aug and Oct", anchor: "Aug26 p.6 l.215-219; Oct26 p.7 l.282-289"}
+  - {id: F4, severity: MAJOR, type: SPOT_CHECK_WRONG, item: "B05 2A row 8 seasonality 'promise' from May does not exist in May or Feb; counted as delivered", anchor: "May26 (no hit); Aug26 p.7 l.259-261"}
+  - {id: F5, severity: MAJOR, type: PARTIALLY_CAUGHT, item: "Dombivli Q2 swing (Rs 9.5 Cr to Rs 0.2 Cr) read as Strengthening; derived contribution about doubles vs 17-40% occupancy rise at lower ARPOB; four analysts pressed; cost-timing reading not named", anchor: "Oct26 p.4-6 l.169-184, l.246-255; p.9-10 l.365-388"}
+  - {id: F6, severity: MINOR, type: INTERNAL_INCONSISTENCY, item: "B05 counts not-yet-due rows 6, 9, 10 against its own due-only rule; recount 4/2/0", anchor: "B05 2A"}
+  - {id: F7, severity: MINOR, type: OVERSTATED, item: "Breakeven-guidance revision listed as a repeated evasion; answers were direct", anchor: "Aug26 p.6 l.219; Oct26 p.7 l.282-289"}
+  - {id: F8, severity: MINOR, type: OVERSTATED, item: "'Q4 FY26 drag Rs 9.4 Cr': call does not say loss or revenue", anchor: "May26 p.7 l.259-261"}
+  - {id: F9, severity: MINOR, type: OVERSTATED, item: "B06 Q8 'KIMS shows the opposite' on Q2 medical-mix ARPOB; KIMS group ARPOB not a clean test", anchor: "B06 Q8"}
+  - {id: F10, severity: MINOR, type: PARTIALLY_CAUGHT, item: "BKC 'back of the envelope' funding with no red-flag row", anchor: "May26 p.6 l.224-230"}
+  - {id: F11, severity: MINOR, type: PARTIALLY_CAUGHT, item: "B06 'contradicted: 0' despite KIMS NABH line contradicting the JLHL CEO; B05 calls empanelment drift Unchanged", anchor: "KIMS Feb26 p.7 l.266-268; Oct26 p.9 l.342-344"}
+  - {id: F12, severity: MINOR, type: PARTIALLY_CAUGHT, item: "Biennial renewal step behind FY26 ARPOB not carried to FY27; defensiveness 2 is light", anchor: "May26 p.7 l.274-277; Feb26 p.8 l.296-299"}
+  - {id: F13, severity: MINOR, type: MISSED, item: "CGHS stance shift", anchor: "Feb26 p.9 l.333-336; Aug26 p.9 l.360-361"}
+  - {id: F14, severity: MINOR, type: MISSED, item: "Peer insurer-standoff contrast not drawn", anchor: "KIMS May26 p.9 l.333-341"}
+  - {id: F15, severity: MINOR, type: OVERSTATED, item: "'exact' debt refused 'every call' / 'Aug and Oct'; only Aug", anchor: "Aug26 p.8 l.318; p.9 l.355"}
+  - {id: F16, severity: MINOR, type: ANCHOR_IMPRECISION, item: "Several B05 May/Aug/Oct cites one page low (printed vs PDF page); route to Verifier A", anchor: "B05 2A, 1B, 1C"}
+critical_count: 0
+major_count: 5
+minor_count: 11
+material_found: 13
+material_caught: 11
+acceptance_rate: 85
+coverage_basis: "13 material (2 CRITICAL, 11 MAJOR) of 28 listed; pipeline had 11 (7 caught in full, 4 partially caught = found but under-weighted or misclassified); 2 MAJOR missed (I5 Pune leased land, I11 unbilled revenue). 11/13 = 84.6%. Full-catch-only rate 7/13 = 53.8%, shown for transparency, not scored. Peer transcripts read by JLHL-relevant sections plus keyword sweeps, not line by line; main-company transcripts read in full."

@@ -1,0 +1,15 @@
+stage: B02-notes-pass1
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+report: outputs/reports/02-notes-pass1.md
+note: "Interim marker for CALL 1 only. The final B02-notes block is emitted after Pass 3."
+input_gaps: []
+top_findings_count: 10
+flags:
+  - {type: FLAG-RESTATE, reason: "FY25 comparatives re-cut in FY26 AR with no restatement note: C revenue +408.57 mn, PBT +29.75 mn, PAT +2.54 mn; cash and bank balances reclassified to current investments"}
+  - {type: FLAG-CASH, reason: "C gross receivables +72.3% vs revenue +15.2%; unbilled 191.07 mn; net receivable days 12.1 to 18.4"}
+  - {type: FLAG-DISCLOSURE, reason: "No capital commitment amount; borrowing-cost capitalisation amount and pre-operative cost NOT FOUND"}
+  - {type: FLAG-CONTROLS, reason: "HMIS audit trail not enabled at database level (Auditor's Report para 20.8, p.132)"}
+going_concern_language: "NONE"

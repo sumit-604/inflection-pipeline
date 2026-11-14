@@ -1,0 +1,19 @@
+stage: B12d
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, where: "B06 2B and yaml industry_cross_read.pricing_inputs", issue: "insurers-push-price-down attributed to KIMS and MEDANTA; MEDANTA Q3 FY26 p.7 does not say it; KIMS Q3 FY26 p.7 alone supports it; erratum appended to report but yaml uncorrected"}
+  - {severity: MINOR, where: "B06 Part 5", issue: "KIMS Q2 FY27 Rs 13.2 Cr call-option gain cited p.14; text is on p.15"}
+  - {severity: MINOR, where: "B06 Q4 and Q7 verdicts", issue: "VERIFIED labels lenient: Q4 peer range 5-23 months with one expectation not outcome; Q7 land vs no-land split NOT FOUND at all peers; gaps disclosed in-row, no upgrade from silence"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

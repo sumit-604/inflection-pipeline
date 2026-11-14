@@ -1,0 +1,18 @@
+company: Jupiter Life Line Hospitals Ltd
+ticker: JLHL
+cmp: 287.0
+market_cap_cr: 9391.0
+run_date: 2026-11-12
+run_type: full
+concalls_available: true
+sector_cap_row: "Hospitals / dialysis / healthcare services"   # 35x; resolved at /step1 Step D and stage 0 against section-1b chunk 05
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+listed_date: "2023-09-18"   # IPO listing (RHP dated 30-Aug-2023 in inputs/prospectus/); stage 0 to confirm at the page
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, KIMS:Profit & Loss, KIMS:Quarters, KIMS:Balance Sheet, KIMS:Cash Flow, KIMS:Customization, YATHARTH:Profit & Loss, YATHARTH:Quarters, YATHARTH:Balance Sheet, YATHARTH:Cash Flow, YATHARTH:Customization, MEDANTA:Profit & Loss, MEDANTA:Quarters, MEDANTA:Balance Sheet, MEDANTA:Cash Flow, MEDANTA:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."

@@ -1,0 +1,69 @@
+stage: B09b-dossier
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Annual report FY2023-24"
+    expected_source: "company IR page / BSE"
+    kind: "findable-missing"
+  - document: "Final Prospectus 11 Sep 2023"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Q3 FY26 results filing and presentation (Feb 2026)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Shareholding patterns for the 11 other quarters since listing (pledge trend)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Reg 30 intimations: Medulla scheme 11 Sep 2025, AGM 17 Jul 2026 outcome, stock split, Sulcus, MMRDA lease agreement"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Secretarial compliance report FY26 pages 2-8 and Q2 newspaper publication pages 2-3 (scans, text copy)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Hospital-wise revenue, occupancy, ARPOB, EBITDA FY26 and H1 FY27; Dombivli revenue; payer split by insurer (dropped from AR26)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Capital commitments, capitalised borrowing cost, BKC lease premium note (not disclosed in AR26 notes)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Broker or third-party research notes"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Hospital network (Thane, Pune, Indore, Dombivli); single reportable segment, in-patient 78.3% and out-patient 17.5% of revenue"
+    archetype: "fits no known archetype (nearest: licence/scarcity business; capacity-constrained, occupancy x ARPOB x margin per bed)"
+transition:
+  - line: "Hospital network"
+    from_tier: "Between R2 and R3 (fits no rung cleanly; ROCE 20.49% FY23 to 13.77% FY26 screener basis, 18.55% AR basis)"
+    to_tier: "R3 (model's reading: return on capital rebuilt on a larger bed base; management states no tier; BKC as R4 step is an unproven option)"
+    engine: "Fill of Dombivli beds against a fixed doctor and facility cost base (Rs 6-7 Cr a month), and dated commissioning of Pune South CY28, Mira Road CY29, BKC CY31 as depreciation and interest land before earnings"
+    proof_gate: "Dombivli EBITDA footnote at or above Rs 0 Cr in both Q3 FY27 and Q4 FY27 decks, with ex-Dombivli occupancy at or above 62%; NOT FIRED today (Q2 FY27 loss Rs 0.2 Cr, partly seasonal)"
+    recognition_gap: "Open question: does the market already reflect a return-recovered R3 state? Not concluded; Stage 11 resolves it through the PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB (provisional; second reading is seasonal and cost-timing flattery of Q2, separated by the Q3 FY27 Dombivli footnote)"
+    transition_falsifier: "Dombivli loss above Rs 3 Cr a month in Q3 or Q4 FY27; no NABH award by H2 FY27; ex-Dombivli occupancy below 62%; Pune South cost above Rs 1.2 Cr per bed ex land or slip past CY28; total debt to EBITDA above 1.8x sustained"
+dominant_variables:
+  - "Dombivli quarterly EBITDA, occupancy and insurer empanelment (loss Rs 9.5 Cr to Rs 0.2 Cr; occupancy mid-30s; NABH applied)"
+  - "Ex-Dombivli occupancy, ARPOB and doctor-fee share (64.8%; Rs 71,800; 24.3% of income)"
+  - "Capex funding and leverage (borrowings Rs 588.8 Cr; Rs 500 Cr HDFC term loan; 1.64x ex leases, 1.86x with leases vs ICRA 1.8x)"
+  - "Conversion of EBITDA into profit and cash (H1 FY27 PAT -7.4%; CFO to EBITDA 78.0%; receivables +56.7% in six months)"
+business_falsifier: "Mature-hospital occupancy below 62% with doctor fees above 25% of income; an adverse Bombay High Court order on the Thane land PILs; or a revenue restatement arising from the HMIS billing audit-trail gap"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 7
+  verifiability_ratio: "4 of 7 externally observable"
+  single_point_failure: "Dombivli EBITDA ramp (company-footnoted only; a Q3 or Q4 FY27 loss toward Rs 2-3 Cr a month breaks the proof gate alone)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 5
+  confirm_by_observations: 4
+research_brief_items: 19
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "eedb0e60cbbc42faa3e9d8faad13f20e4aeb7714"

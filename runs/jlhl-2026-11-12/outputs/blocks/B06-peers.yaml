@@ -1,0 +1,75 @@
+stage: B06-peers
+company: "JLHL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00: shareholding/ one quarter only (30-Sep-2026 NSE XBRL); no promoter pledge trend."
+  - "B00: screener export sheets empty; only four Data_Sheet CSVs populated; none used in this stage."
+  - "B00: results text layers garbled; no results-filing figure used."
+  - "B00: research and other folders empty; no broker notes."
+  - "B00: final Prospectus 11-Sep-2023 not in corpus; announcements are a selection."
+  - "No peer reports hospital-wise metrics on JLHL's basis; JLHL hospital-wise occupancy/ARPOB/EBITDA NOT FOUND (B03, B05)."
+  - "Doctor cost as percent of revenue NOT FOUND in all 12 peer transcripts."
+  - "Pharmacy share of revenue and margin NOT FOUND in all 12 peer transcripts."
+  - "Peer capex per bed split between land and construction NOT FOUND."
+  - "No peer names Jupiter, Dombivli, Pune or Mira Road in any transcript."
+  - "KIMS Q4 FY26 p.10 funding line (equity 40% and debt 65%) is internally inconsistent; not used."
+flags:
+  - {type: FLAG-LEVERAGE-CEILING-ABOVE-PEERS, reason: "JLHL 3x EBITDA ceiling sits above peer comfort bands: KIMS 1-2x (Q4 FY26 p.18-19), YATHARTH about 2x (Q1 FY27 p.18). KIMS debt peaked, PAT fell 41% in FY26, equity raised."}
+  - {type: FLAG-PAT-LAG-PATTERN, reason: "All three peers show PAT growth 20-30 points below EBITDA growth in Q2 FY27 (MEDANTA 60 vs 38, YATHARTH 50 vs 17, KIMS 34 vs about 6). Applies to JLHL H1 PAT -7.4%."}
+  - {type: FLAG-NABH-NOT-GATE, reason: "KIMS says NABH is not a prerequisite for insurer empanelment (Q3 FY26 p.7); B05 confirm signal for Dombivli names NABH award."}
+  - {type: FLAG-MAHARASHTRA-DOCTOR-MODEL, reason: "KIMS: Maharashtra doctors join part-time first; Nagpur took 18-24 months to stabilise (Q1 FY27 p.13-14). Relevant to Dombivli ramp."}
+  - {type: FLAG-PEER-SUPPLY-IN-JLHL-MARKETS, reason: "MEDANTA adds 80 beds and cancer services in Indore (Q1 FY27 p.8, p.17) and a Mumbai greenfield (Q2 FY27 p.10); KIMS Thane operating (Q2 FY27 p.14)."}
+  - {type: FLAG-CAPEX-PER-BED-ESCALATION, reason: "MEDANTA plan average about Rs 1.41 Cr (May) to at least Rs 1.74 Cr (Nov) per bed, derived; YATHARTH per bed doubled in three years. Pune South kill signal Rs 1.2 Cr is live."}
+  - {type: FLAG-CONFIRMED-NO-NAMED-PEER-MENTION, reason: "No peer mentions JLHL by name or description; overlaps by location only."}
+peers_provided: 12
+verified:
+  - {claim: "Q1 greenfield breakeven timing and year-1 loss (40% reset sub-part only partly corroborated)", peers: [KIMS, MEDANTA, YATHARTH], anchor_count: 12}
+  - {claim: "Q2 occupancy on census/operational beds with ex-new-hospital presentation", peers: [KIMS, MEDANTA, YATHARTH], anchor_count: 7}
+  - {claim: "Q4 cashless empanelment takes about one year or longer (payer mix at 6/12 months not found)", peers: [KIMS, MEDANTA, YATHARTH], anchor_count: 9}
+  - {claim: "Q7 capex per bed range and escalation (land split NOT FOUND)", peers: [MEDANTA, YATHARTH, KIMS], anchor_count: 9}
+partially_verified:
+  - {claim: "Q3 mature ARPOB grows at low to mid single digits (price vs mix split runs against JLHL: peers cite mix)", peers: [KIMS, MEDANTA, YATHARTH]}
+  - {claim: "Q5 low senior doctor attrition (doctor cost percent of revenue NOT FOUND)", peers: [MEDANTA, YATHARTH, KIMS]}
+  - {claim: "Q6 accruals plus debt funding mix (3x ceiling not corroborated; peers 1-2x)", peers: [KIMS, YATHARTH, MEDANTA]}
+  - {claim: "Q8 Q1 and Q3 seasonally weaker (Q2 medical mix lowering ARPOB not corroborated)", peers: [KIMS, MEDANTA, YATHARTH]}
+  - {claim: "Q9 onco cap impact small (one peer quantifies 0.3; pharmacy share NOT FOUND)", peers: [YATHARTH, KIMS, MEDANTA]}
+  - {claim: "Q10 demand strong in Tier-2 style markets (bed shortage not shown; peers add supply in Indore and Thane)", peers: [MEDANTA, KIMS]}
+contradicted: []
+unverifiable:
+  - {claim: "Q5 doctor cost as percent of revenue", peers_checked: [KIMS, MEDANTA, YATHARTH]}
+  - {claim: "Q9 pharmacy share of revenue and margin", peers_checked: [KIMS, MEDANTA, YATHARTH]}
+  - {claim: "Q10 Pune high-quality bed supply", peers_checked: [KIMS, MEDANTA]}
+  - {claim: "Q4 payer mix at 6 and 12 months", peers_checked: [KIMS, MEDANTA, YATHARTH]}
+peer_coverage_map:
+  - {peer: "KIMS", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "NABH not a prerequisite; Nashik breakeven month 13; debt peaked statement"}
+  - {peer: "KIMS", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Empanelment delay; QIP debt cut; doctor retention; mature margin 29.5%"}
+  - {peer: "KIMS", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "ARPOB 4-5% guide; census occupancy cuts; Maharashtra part-time doctors"}
+  - {peer: "KIMS", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Onco cap; Electronic City breakeven; net debt 2,150 Cr 1.9x; 70% occupancy in 4-6 years"}
+  - {peer: "MEDANTA", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Noida peak loss Rs 320 million; single-tower build; seasonality of stays"}
+  - {peer: "MEDANTA", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "40-45% occupancy breakeven rule; Rs 4,500 Cr capex plan; net cash; attrition"}
+  - {peer: "MEDANTA", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Noida loss Rs 49 million; Guwahati capex rise; Indore beds; occupancy ex-Noida"}
+  - {peer: "MEDANTA", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Noida breakeven Rs 86 million; Rs 6,000 Cr capex; Ghaziabad Rs 1,000 Cr; tariff restraint"}
+  - {peer: "YATHARTH", quarter: "Q3 FY26", usage: "SUBSTANTIVE", contribution: "Capex per bed Rs 60 lakh and Rs 80-90 lakh; breakeven at 30-35% of full beds"}
+  - {peer: "YATHARTH", quarter: "Q4 FY26", usage: "SUBSTANTIVE", contribution: "Debt Rs 230 Cr; Noida brownfield Rs 75 lakh per bed; breakeven timelines"}
+  - {peer: "YATHARTH", quarter: "Q1 FY27", usage: "SUBSTANTIVE", contribution: "Faridabad 9-month breakeven; debt comfort 2x EBITDA; attrition 7%; census beds"}
+  - {peer: "YATHARTH", quarter: "Q2 FY27", usage: "SUBSTANTIVE", contribution: "Onco cap 0.3; Advent Rs 3,150 Cr; Model Town December breakeven; OCF conversion seasonality"}
+industry_cross_read:
+  demand: "Strong and consistent: inpatient volume +27% KIMS, +30% MEDANTA, +28% YATHARTH existing hospitals in Q2 FY27; no peer reports softness."
+  pricing_inputs: "Tariffs near flat (MEDANTA 5% or less; KIMS ARPOB 4-5%); growth comes from mix; talent cost rising; insurers push price down at empanelment."
+  capex_cycle: "Industry-wide capacity race among listed chains (MEDANTA +3,450 beds, YATHARTH to 5,000 plus Advent, KIMS pausing to 400-500 beds); JLHL is not a lone expander but is the debt-funded one; peers use equity or net cash."
+peer_mentions_of_company: []
+risks_peers_raise:
+  - "Common insurer empanelment initiative delaying new-hospital panels (KIMS Q4 FY26 p.9; Q1 FY27 p.21)"
+  - "Room-rent ceiling recommendation (YATHARTH Q1 FY27 p.11-12)"
+  - "Kerala bill on private hospital charges (KIMS Q2 FY27 p.19)"
+  - "Pollution and monsoon construction halts (MEDANTA Q2 FY27 p.10; YATHARTH Q1 FY27 p.19)"
+  - "Government receivable delays and doubtful debt provisions (KIMS Q2 FY27 p.7-8)"
+  - "Income tax demand notice and appeal (YATHARTH Q2 FY27 p.12-13)"
+  - "Gulf conflict hitting international patients (YATHARTH Q2 FY27 p.11)"
+  - "Part-time doctor practice in Maharashtra slowing ramp (KIMS Q1 FY27 p.13-14)"
+  - "Returns dilution in capex cycle: KIMS FY26 PAT -41%, ROE/ROC down (KIMS Q4 FY26 p.4, p.19)"
+  - "Medicine markup review at Supreme Court, open at all three peers"
+net_narrative_effect: "complicates"
+analyst_note: "Operating claims hold: breakeven in 9-15 months at all three peers, census-bed occupancy standard, seasonality real. Weak points are funding (3x ceiling vs peer 1-2x; peers raise equity or hold net cash) and the PAT lag (peer PAT growth 20-30 points below EBITDA growth in Q2 FY27). KIMS says NABH is not the empanelment gate, which may weaken the Dombivli NABH confirm signal. KIMS Thane is the Maharashtra analogue: flat losses for three quarters before breakeven. Dombivli Q2 is a seasonal best case. No peer names JLHL."

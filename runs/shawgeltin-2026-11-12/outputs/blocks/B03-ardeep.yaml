@@ -1,0 +1,76 @@
+stage: B03-ardeep
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No concalls, no presentation (NO-CONCALL MODE); Q2 FY27 results not yet filed; Q1 FY27 filing carries P&L only, no balance sheet or cash flow (results PDF p.2), so CWIP, term-loan draw and capex progress after 31-Mar-2026 are NOT FOUND"
+  - "AR is a scanned image PDF; OCR faults in printed figures were corrected against page images (PDF pp.12, 20, 50, 51); amounts in Rs LAKH as printed, not converted"
+  - "AR carries FY26 and FY25 only; FY24 and earlier balances come from screener (screening data, whole Rs Cr, standalone); FY23 dividend payout 396% is anchored to AR p.37 (Rs 6,049.59 lakh) and screener"
+  - "NOT FOUND IN AR: Rs 33 Cr capex project, +600 MT gelatine, Jan-2027 commissioning, Rs 25 Cr term loan plan (none appears in Board's Report, MD&A or Annexures; source is CARE 06-Mar-2026 only); tonnage, capacity utilisation, yield %, customer concentration, IGCL market value, name of IGCL's auditor, pledge statement, headcount for FY25"
+  - "No Chairman's letter exists in this AR; Phase 6 uses Board's Report, MD&A and Annexures as the opening sections"
+flags:
+  - {type: FLAG-CASH, reason: "CFO/PAT fell 99.0% to 86.4%; CFO/operating profit after tax 69.3% to 59.5%; working-capital outflow 846.85 vs 126.62 lakh (cash flow PDF p.51). Adjusted for customer advances up 135.18 and unpaid capex payable 53.07 sitting in the WC line (computed, arithmetic inference) CFO is about 2,267 lakh = 79.7% of PAT. Mild, not below 0.7, driven by payables normalisation (MSME 951.86 to 477.18) and receivables +16.9%. Carries B02 FLAG-WC."}
+  - {type: FLAG-ASSOCIATE, reason: "Carried from B02. IGCL stake at cost 4,115.31 lakh (29.1% of equity), 1,378.29 lakh above share of net worth 2,737.02, no impairment test, no market value; audit committee chair B Vijayadurai is also an independent director of IGCL (AR PDF p.24); dividend 50.15 lakh = 1.2% cash yield on cost (PDF p.51, p.68)."}
+  - {type: FLAG-DISCLOSURE-CONSISTENCY, reason: "AR front sections contradict the audited notes: MD&A says material consumed 'increased by 1.29%' but Note 28 shows a 1.29% fall (PDF p.12 vs p.68); EBITDA printed 40.88 Cr vs 42.08 Cr computed incl other income, with growth printed as 55.81% (PDF p.5) and 59.58% (PDF p.12); Annexure IV prints MD remuneration +10.41% and total KMP +4.52% while Note 37 gives 66.26 to 99.16 lakh (+49.7%) and KMP total 87.12 to 125.35 lakh (+43.9%) (PDF pp.20, 73); other expenses printed 8.94% of revenue vs 7.64% computed."}
+  - {type: FLAG-CAPEX-UNDISCLOSED, reason: "No capex plan, size, funding or commissioning date in Board's Report or MD&A although CWIP 528.97, capital commitments 1,205.00 and a term-loan draw of about 125.57 lakh sit in the notes (PDF pp.61, 65, 72); capex guidance exists only in CARE press release 06-Mar-2026."}
+phase_verdicts: {p1: "GREEN: unmodified opinion, no KAM, clean CARO; watch that no KAM is reported with a 29% associate stake", p2: "YELLOW: clean policies, weak disclosure, token ECL, untested associate premium", p3: "YELLOW: ROCE 28% and near-nil net debt, but CFO/PAT 86.4% and a 846.85 lakh working-capital outflow", p4: "YELLOW: no outlook, no capex disclosure, MD&A contradicts Note 28, margin drivers named but not quantified", p5: "YELLOW: promoter 75.00%, no pledge shown; promoter-group cross-boards, audit chair sits on IGCL board, MD aged 78, remote board", p6: "YELLOW: three silent drops and one hedged retreat, none breaks the thesis alone", p7_best_fit: "Turnaround (margin reset), GARP as the exit lens, WATCHLIST until Q2 FY27 and capex delivery"}
+overall_quality: 6.8
+quality_components: {governance: 6, accounting: 6.5, balance_sheet: 8, earnings: 6.5}
+kill_switch_notes:
+  - "P1: a human reviewer would not have reason to stop; unmodified opinion, no KAM, no CARO adverse remark, no fraud or default."
+  - "P2: would not stop; would ask for the IGCL valuation basis and Pioneer Jellice pricing evidence before sizing."
+  - "P3: would not stop; would want H1 FY27 cash flow to show CFO/PAT back above 90% before trusting the reset as cash-backed."
+  - "P4: would not stop; would stop to ask management for the margin decomposition and the capex timetable because the AR gives neither."
+  - "P5: would not stop; would note the audit chair sits on the IGCL board and the 78-year-old MD has a two-year term."
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - {finding_rank: 3, triple_pass_value: "price, yield, mix NOT FOUND; only stated driver is coal price (cited to Directors Report PDF p.12)", ar_value: "MD&A (PDF p.12) states gelatine volume +16.17%, ASP -5.20%; DCP volume +11.35%, ASP +17.17%; power and fuel -4.98% on coal price and consumption; 'better yield' and 'lower cost of raw material' unquantified. Page is MD&A, not Directors Report.", note_ref: "MD&A PDF p.12; Note 26, 28"}
+    - {finding_rank: 4, triple_pass_value: "Labour Code amount NOT FOUND", ar_value: "Not quantified in the AR (Note 47 PDF p.78). Quantified in Q3 FY26 results note 4: Rs 82.56 lakh incremental liability in employee expense for nine months to 31-Dec-2025 (results PDF p.4). This is 21% of the 390 lakh employee-cost rise; the rest is run-rate (quarterly employee cost 443, 496, 594 incl 82.56, 475, then 511 in Q1 FY27).", note_ref: "Note 30, 34, 47"}
+    - {finding_rank: 6, triple_pass_value: "Inventory 156 days on cost", ar_value: "155.9 days holds only on materials cost (RM consumed plus inventory change 11,423.41); 82.7 days on sales; 102 days on total operating cost 17,410.52. Note 48 prints 72 days; Note 48's own formula (material and stores consumed 11,374.20 over average inventory 4,768.43) gives about 153 days.", note_ref: "Note 10, 28, 29, 48"}
+missing_risks:
+  - {risk: "Raw-material (crushed bone) price and sourcing; margin moved 511 bp on materials alone", evidence: "Note 28, 43(V) PDF pp.68, 77; MD&A PDF p.11 covers only vegan substitution"}
+  - {risk: "Single plant at Jabalpur, one site for gelatine, DCP and ossein", evidence: "Note 1 PDF p.53; Plant location PDF p.39; no site-concentration risk in MD&A"}
+  - {risk: "Capex execution, funding and commissioning date not disclosed", evidence: "CWIP 528.97, commitments 1,205.00, term loan 728.65 (Notes 4, 35, 18 PDFs pp.61, 72, 65); MD&A silent"}
+  - {risk: "Pioneer Jellice dependency 12.7% of purchases, 7.04% of revenue, no pricing evidence", evidence: "Note 37 PDF p.73; Note 28 PDF p.68"}
+  - {risk: "IGCL capital at 29.1% of equity, no impairment test, promoter-group conflict", evidence: "Note 6, 39 PDFs pp.62, 74; AOC-1 PDF p.21"}
+  - {risk: "Customer concentration: AR says 'low' and gives no customer percentage; CARE reports top-10 at about 42% of FY25 sales", evidence: "Note 43 PDF p.76 vs CARE press release 06-Mar-2026 p.3 (announcements file)"}
+  - {risk: "DCP price reversal: DCP ASP +17.17% on 29% of revenue, about 918 lakh price effect (computed), while gelatine ASP fell 5.20% (about 834 lakh)", evidence: "MD&A PDF p.12; Note 26 PDF p.68"}
+  - {risk: "Key-person and succession: MD aged 78, two-year term, 55 years in industry; Chairman and one director are brothers; one independent aged 75", evidence: "AGM notice PDF p.128, p.130; Board's Report PDF p.7"}
+  - {risk: "ERP (SAP) implementation in progress during a margin and capex ramp", evidence: "Annexure III PDF p.19"}
+  - {risk: "Effluent and pollution-control exposure of a bone-processing plant, expensed 35.39 lakh, no regulatory risk text", evidence: "Note 33 PDF p.69; Secretarial Audit PDF p.17 lists Pollution Control Act"}
+guidance_table:
+  - {claim: "Global gelatine market USD 3.60 bn (2026) to USD 6.58 bn (2034), CAGR 7.83%", number: "7.83%", timeframe: "2026 to 2034", credibility: "Arithmetic ties; source unnamed; industry figure, not company guidance"}
+  - {claim: "Indian gelatine market CAGR about 7.5%", number: "7.5%", timeframe: "'next few years'", credibility: "Low: no base, no source; company 10-year sales CAGR is 5% (screener), 5-year 10%"}
+  - {claim: "Raw material imports at competitive price now being used", number: "NOT FOUND", timeframe: "H2 FY26 onward", credibility: "Not tested: Annexure III foreign-exchange outgo shows only spares 31.88, travel 3.34, subscriptions 7.87 lakh, no raw-material import line"}
+  - {claim: "SAP implementation progressing as planned", number: "NOT FOUND", timeframe: "ongoing", credibility: "No go-live date; low specificity"}
+  - {claim: "Better yield and optimum capacity utilisation drove profit", number: "NOT FOUND (no yield % or utilisation %)", timeframe: "FY26", credibility: "Low: repeated in MD&A and Note 48 with no metric"}
+  - {claim: "Company-level revenue, margin, capex or dividend guidance", number: "NOT FOUND IN DOCUMENT", timeframe: "n/a", credibility: "None given; AR has no forward-looking company numbers"}
+monitorables:
+  - {metric: "Operating margin before other income (standalone)", threshold: "Q2 FY27 at or above 18%; below 16.4% (Q1 FY26 level) means the reset is reversing", where: "Q2 FY27 results filed 12-Nov-2026 (BSE)", why: "Persistence of the 13% to 19% reset; Q1 FY27 was 20.79%"}
+  - {metric: "Materials plus inventory change as % of revenue", threshold: "52% or lower; Q1 FY27 was 50.6%, FY26 53.0%, FY25 58.1%", where: "Quarterly P&L lines", why: "Largest reset line (511 bp); IGCL moved by 727 bp, so an industry cost effect can reverse"}
+  - {metric: "Power and fuel as % of revenue", threshold: "11% or lower; Q1 FY27 was 11.9%, Q4 FY26 8.9%", where: "Quarterly P&L lines", why: "Company-specific lever (solar, coal); IGCL ratio rose 87 bp"}
+  - {metric: "Employee cost per quarter", threshold: "520 lakh or lower excluding one-offs; Q1 FY27 was 511", where: "Quarterly P&L", why: "Run-rate rose from about 400 to about 500 lakh a quarter; one-off was only 82.56 lakh"}
+  - {metric: "CWIP, term-loan draw and capital commitments", threshold: "Term loan drawn rising toward the Rs 25 Cr plan (125.57 lakh drawn at Mar-26); commissioning notice by Jan-2027", where: "H1 FY27 balance sheet (Sep-2026 results) and any Reg 30 notice", why: "Only 17.2 Cr of the 33 Cr plan is spent or contracted at Mar-26 (computed); delivery date untested"}
+  - {metric: "CFO/PAT and receivables", threshold: "H1 FY27 CFO/PAT at or above 90%; receivables over 6 months below 30 lakh; overdue share at or below 15%", where: "H1 FY27 cash flow and AR Note 11/43 next year", why: "FY26 CFO/PAT 86.4%, 6-12 month bucket 28.63 vs 2.03"}
+  - {metric: "Related-party flows and IGCL", threshold: "Pioneer Jellice purchases at or below 13% of purchases; any new IGCL purchase or loan to group flagged", where: "AOC-2 and RPT note, Reg 23 half-year filing", why: "7.04% of revenue with no pricing evidence; IGCL already 29% of equity"}
+  - {metric: "Payout and cash use", threshold: "Payout at or below 30% unless net debt stays under 0.1x EBITDA", where: "Dividend declarations", why: "FY23 payout was 396% before the ownership change; FY26 is 21% paid, 23% proposed"}
+ar_new_downstream_entities:
+  - name: "Pioneer Jellice India Private Limited (new consultancy 24.00 and lease rent 11.60 lines; promoter 40.06%)"
+    where_in_ar: "Note 37 related-party table, PDF p.73; Note 17a PDF p.64"
+    entity_type: "related-party counterparty; first-time status vs FY25 AR NOT VERIFIABLE (prior AR is not consumed); two new transaction types this year"
+  - name: "India Gelatine and Chemicals Limited (associate, 14.14%, shared directors)"
+    where_in_ar: "Note 6, 39 PDFs pp.62, 74; AOC-1 PDF p.21; Corporate Governance PDF p.24"
+    entity_type: "associate and listed competitor; first-time status NOT VERIFIABLE; no customer above 10% of revenue is disclosed anywhere in the AR"
+strengths_top3:
+  - "Margin reset is real in audited numbers and persists: operating margin 13.01% to 19.18% (FY26), 22.3% Q4 FY26 and 20.79% Q1 FY27 (P&L PDF p.50; Q1 FY27 results p.2); ROCE 27.9% FY26 vs 4-12% FY16-FY22"
+  - "Balance sheet near debt-free: gross debt 789.08, net debt 380.60 lakh, current ratio 3.59, interest cover 38.5x, 25.17% statutory tax rate with no exceptional items (Note 44, 48 PDFs pp.78-79)"
+  - "Clean statutory record: unmodified opinion, no KAM, no CARO adverse remark, no fraud, no default, no whistle-blower complaint, CSR over-spent 40.81 vs 40.48 (PDFs pp.43, 46, 47, 14)"
+red_flags_top3:
+  - "Reset not decomposed by management and the AR front sections contradict the notes; the largest line (materials, 511 bp) moved even more at IGCL (727 bp), which points to an industry cost effect that can reverse; net price effect is only about +84 lakh (MD&A PDF p.12; Note 39 PDF p.74)"
+  - "Capital allocation toward the promoter group: IGCL 4,115.31 lakh (29.1% of equity, 1.50x IGCL book, 1.2% cash yield, no test, audit chair on IGCL board); Pioneer Jellice 7.04% of revenue with no pricing evidence; FY23 payout 396% by the prior owner"
+  - "Capex and cash: Rs 33 Cr expansion absent from the AR, 52% spent or contracted at Mar-26, CFO/PAT 86.4% falling to about 80% after adjustments"
+best_fit_strategy: "Turnaround (margin reset) with GARP as the exit lens; WATCHLIST"
+one_line_verdict: "A clean, cheap (8-9x trailing) margin reset whose cause the company does not explain; the largest line looks industry-wide, the fuel line looks company-specific, and capex, IGCL and related-party pricing are untested."
+analyst_note: "Most evidenced path: the reset is cost-led, not price-led. Net price effect is about +84 lakh of the 1,540 lakh PBT rise (DCP +918, gelatine -834, computed from MD&A rates). Two readings: (A) structural, from group know-how, solar and yield; (B) cyclical, from bone and global gelatine price deflation. Evidence splits by line: materials ratio fell 511 bp at NGL and 727 bp at IGCL (favours B for that line); power and fuel fell 217 bp at NGL while IGCL rose 87 bp (favours A for that line). One separating observation: Q2 FY27 materials-plus-inventory ratio at or under 52% while IGCL's does not rebound. Labour Code one-off is only 82.56 lakh (Q3 FY26 results); the employee-cost rise is run-rate. Stage 5 should note the AR gives no outlook; MD&A is PDF pp.11-12, Annexure III (solar 8.89 Cr, SAP) is PDF p.19."

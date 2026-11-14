@@ -1,0 +1,61 @@
+stage: B05-concall
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+no_concall_mode: true
+input_gaps:
+  - "No concalls, no presentation (NO-CONCALL MODE): Section 2E repeated-question tracker, analyst Q&A tone and 2C tone ratings have no source and are not built"
+  - "Q2 FY27 results not yet filed (board meeting 12-Nov-2026, Reg 29 notice of 02-Nov-2026); Q1 FY27 filing is P&L only, so capex progress after 31-Mar-2026 is NOT FOUND"
+  - "AR carries no company numeric guidance (revenue, margin, capex, capacity, debt, dividend): NOT FOUND IN DOCUMENT (AR PDF pp.11-12, p.19). The only forward numbers are CARE's (06-Mar-2026), which are the rater's view, not management guidance"
+  - "No Reg 30 announcement in inputs/announcements names the Rs 33 Cr capex, an order, a commissioning date or a guidance change (14 files: postal ballot, RTA, dividend, AGM, KYC, trading window, board-meeting intimation, credit rating)"
+flags:
+  - {type: FLAG-NO-FORWARD-GUIDANCE, reason: "AR section titled Outlook gives no company outlook or number (PDF p.11); the capex plan (Rs 33 Cr, +600 MT gelatine, +1,500 MT DCP, Jan-2027) exists only in CARE press release 06-Mar-2026 (CARE p.2)"}
+  - {type: FLAG-AR-MISSTATEMENT, reason: "MD&A says material consumed 'increased by 1.29%' (AR PDF p.12 image) but Note 28 shows a 1.29% fall; EBITDA printed 40.88 Cr vs 42.08 Cr computed (B03); other expenses 8.94% printed vs 7.64% computed. Reporting accuracy, not a missed promise"}
+quarters_analysed: ["FY26 (AR)", "Q3 FY26", "Q4 FY26", "Q1 FY27"]
+triggers:
+  - {priority: 1, name: "Capacity expansion: +600 MT gelatine (from 2,400 MT) and +1,500 MT DCP (from 10,600 MT), Rs 33 Cr, Rs 25 Cr term loan, commercial production from Jan-2027 (CARE view, not management)", type: "VOLUME", timeframe: "near (Jan-2027 to FY28)", conviction: "M", confirm_signal: "Reg 30 commissioning notice by Jan-2027; H1 FY27 balance sheet shows CWIP and term loan draw rising from 5.3 Cr expansion CWIP and 125.57 lakh draw at Mar-2026; no cost overrun", kill_signal: "No commissioning notice by Mar-2027, or Note 4 CWIP ageing past one year, or cost above Rs 33 Cr funded by debt taking gearing above 0.5x (CARE negative trigger)"}
+  - {priority: 2, name: "Margin persistence at 18-20% PBILDT (CARE expects this near term; actual FY26 19.18%, Q1 FY27 20.79%)", type: "MARGIN", timeframe: "near (Q2 FY27 results 12-Nov-2026)", conviction: "M", confirm_signal: "Q2 FY27 operating margin at or above 18% with materials plus inventory change at or below 52% of revenue", kill_signal: "Operating margin below 16.4% (Q1 FY26 level) or materials ratio back above 53%"}
+  - {priority: 3, name: "Raw material cost: global gelatine price deflation and imported crushed bone cheaper than domestic (MD&A and CARE)", type: "COST", timeframe: "near", conviction: "L", confirm_signal: "Materials ratio stays near 50.6% (Q1 FY27) while IGCL ratio does not rebound; an import line appears in foreign-exchange outgo in the FY27 AR", kill_signal: "Bone or global gelatine price rebound lifts materials ratio; IGCL ratio rises with it (industry cycle, not structure)"}
+  - {priority: 4, name: "Power and fuel savings: 2.15 MW solar (Rs 8.89 Cr), UF plant replacing evaporator, lower coal price", type: "COST", timeframe: "near", conviction: "M", confirm_signal: "Power and fuel at or below 11% of revenue (Q4 FY26 8.9%, Q1 FY27 11.9%)", kill_signal: "Ratio back above 12.7% (Q1 FY26) with coal flat"}
+  - {priority: 5, name: "DCP price and volume: DCP price +17.17%, volume +11.35% in FY26; the by-product price reversal risk", type: "PRICE-MIX", timeframe: "near", conviction: "L", confirm_signal: "DCP revenue share stays near 29% with price held in Q2-Q3 FY27", kill_signal: "DCP price falls back; gelatine price already -5.20% so net price turns negative"}
+  - {priority: 6, name: "Gelatine volume growth +16.17% and export access via Pioneer Jellice group (FOB exports 214.93 lakh, about 1.0% of revenue)", type: "VOLUME", timeframe: "medium", conviction: "L", confirm_signal: "Export FOB above 214.93 lakh in the FY27 AR; gelatine volume growth above 10%", kill_signal: "Volume growth fades with the capacity at 2,400 MT already full; exports stay about 1% of revenue"}
+guidance:
+  - {item: "Company revenue, margin, capex, capacity, debt or dividend guidance", number: "NOT FOUND IN DOCUMENT", timeframe: "n/a", stated_in: "AR FY2025-26 PDF pp.11-12, p.19"}
+  - {item: "Indian gelatine market CAGR (industry claim, no source, no base)", number: "about 7.5%", timeframe: "next few years", stated_in: "AR MD&A PDF p.11"}
+  - {item: "Global gelatine market (industry claim)", number: "USD 3.60 bn (2026) to USD 6.58 bn (2034), CAGR 7.83%", timeframe: "2026 to 2034", stated_in: "AR MD&A PDF p.11"}
+  - {item: "Raw material import and purchase at competitive price", number: "NOT FOUND (no quantity or price)", timeframe: "H2 FY26 onward", stated_in: "AR MD&A PDF p.11"}
+  - {item: "SAP implementation progressing as planned", number: "NOT FOUND (no go-live date)", timeframe: "ongoing", stated_in: "AR Annexure III PDF p.19"}
+  - {item: "PBILDT margin sustained (rater view, not management)", number: "18-20% near term", timeframe: "near term", stated_in: "CARE press release 06-Mar-2026 p.1"}
+  - {item: "FY26 total operating income growth (rater view, not management)", number: "over 15% over FY25", timeframe: "FY26", stated_in: "CARE press release 06-Mar-2026 p.2"}
+  - {item: "Capex: capacity and machinery upgrade (rater view of the company plan; attribution to management NOT stated by CARE)", number: "Rs 33.00 Cr over two years; Rs 25 Cr term loan; +600 MT gelatine; +1,500 MT DCP", timeframe: "commercial production from Jan-2027", stated_in: "CARE press release 06-Mar-2026 p.2"}
+  - {item: "FY26 gross cash accruals (rater view)", number: "Rs 29-30 Cr", timeframe: "FY26", stated_in: "CARE press release 06-Mar-2026 p.2"}
+promise_delivery:
+  delivered: 1
+  partial: 2
+  missed: 0
+  rows:
+    - {promised_in: "AR FY26 Annexure III (PDF p.19) and MD&A (PDF p.12)", promise: "Solar plant commissioned (Rs 8.89 Cr) and UF plant installed; power and fuel cost reduced (one mechanism, credited once)", outcome: "delivered", explanation: "Power and fuel -4.98% (2,333.26 vs 2,455.65 lakh); depreciation +29%; ratio 10.83% vs 13.00% (B03, AR p.50). Q1 FY27 11.9% vs Q1 FY26 12.7%. MD&A credits coal price, not solar"}
+    - {promised_in: "AR FY26 MD&A (PDF p.12)", promise: "Growth led by better yield and optimum capacity utilisation", outcome: "partial", explanation: "Volume +16.17% gelatine, +11.35% DCP is documented; yield % and utilisation % NOT FOUND anywhere in the AR. Net price effect about +84 lakh, so cost-led (B03)"}
+    - {promised_in: "AR FY26 MD&A (PDF p.11)", promise: "Raw material imported or purchased at competitive price", outcome: "partial", explanation: "Raw material stock +47.8% (1,265.65 vs 856.24 lakh, B03 Note 10) and Q1 FY27 materials ratio 50.6% fit the claim; foreign-exchange outgo has no raw-material import line (AR p.19), so import is unverified"}
+    - {promised_in: "CARE 06-Mar-2026 p.1 (rater view)", promise: "PBILDT margin 18-20% near term", outcome: "not counted: delivered, rater view", explanation: "FY26 operating margin 19.18% (AR p.50, B03); Q1 FY27 20.79% (B03 table from results). Q4 FY26 22.3% was above band; fuel low point not repeated. Not management guidance, so it does not move the grade"}
+    - {promised_in: "CARE 06-Mar-2026 p.2 (rater view)", promise: "FY26 TOI growth over 15%", outcome: "not counted: rater view, near miss", explanation: "Actual revenue +14.02% (AR p.12 image). Gap about one point"}
+    - {promised_in: "CARE 06-Mar-2026 p.2 (rater view)", promise: "Capex Rs 33 Cr, commercial production Jan-2027", outcome: "not counted: pending, untestable", explanation: "Net CWIP plus commitments 1,723.03 lakh = 52% of Rs 33 Cr (B03 Notes 4, 35); Q1 FY27 filing has no balance sheet; Q2 FY27 not filed"}
+    - {promised_in: "AR FY26 Annexure III (PDF p.19)", promise: "SAP implementation progressing as planned", outcome: "not counted: no date, untestable", explanation: "No go-live date or cost"}
+excuse_pattern: "balanced"
+repeated_evasions: []
+credibility_grade: "C"
+credibility_basis: "Default C in no-concall mode. Delivery evidence is narrow: solar and power-and-fuel saving verified (AR p.12, p.19, p.50), margin held above CARE's 18-20% band for four quarters (Q2 FY26 to Q1 FY27), but management gave no forward number to test, the capex plan is absent from the AR, and the MD&A contradicts Note 28 on materials, EBITDA and other expenses. Evidence does not support B."
+peer_questions:
+  - {question: "Is global and Indian gelatine pricing falling or stabilising in FY26 H2 and FY27 H1, and did capsule makers buy at lower gelatine prices (NGL gelatine average selling price -5.20% in FY26)?", why: "Gelatine is 70.8% of revenue; a continued price fall offsets the volume growth, and DCP price +17.17% carried the net price", check_peers: ["Natural Capsules"]}
+  - {question: "What is hard-capsule and softgel demand growth, and is gelatine procurement shifting to imports or to domestic makers (NGL gelatine volume +16.17%)?", why: "Capsule demand drives gelatine volume; CARE says customers include Geltec, ACG Associated Capsules, Fortcaps (top 10 customers about 42% of FY25 sales)", check_peers: ["Natural Capsules"]}
+  - {question: "How have crushed-bone and imported raw-material prices and availability moved since H2 FY26, and are users also importing or buying gelatine instead of making it?", why: "Materials ratio fell 511 bp in FY26 and 200 bp more year on year in Q1 FY27; the structural-versus-cyclical reading depends on whether bone prices stay low (MD&A p.11: raw material price 'reduced significantly during the second half')", check_peers: ["Natural Capsules"]}
+  - {question: "Do peers cite plant-based or HPMC capsule substitution as a volume risk, and at what share?", why: "AR names vegan substitutes as the primary market barrier (MD&A p.11); no share is given", check_peers: ["Natural Capsules"]}
+  - {question: "Is any gelatine or DCP capacity being added in India that would add supply (NGL plans +600 MT gelatine, +1,500 MT DCP from Jan-2027)?", why: "Capacity additions across the industry decide whether the expansion lands in a tight or loose market; IGCL (promoter-group controlled) is a related player", check_peers: ["Natural Capsules"]}
+red_flags:
+  - "AR MD&A states material consumed increased 1.29% 'due to lower cost of raw material'; Note 28 shows a 1.29% fall (AR PDF p.12 image vs p.68). Direction error in the narrative of the largest reset line"
+  - "No company forward guidance and no Outlook content in the AR; the Rs 33 Cr capex is announced by CARE only (CARE p.2), with no AR or Reg 30 disclosure"
+  - "Yield and capacity utilisation credited for profit with no metric (AR p.12; Note 48); the structural reading rests on them"
+dropped_triggers: []
+timeline_slippages: []
+analyst_note: "No transcripts exist, so this grade rests on the AR claims checked against audited notes and results. The company made no testable forward promise; the clean delivery items are CARE's expectations, which the company never adopted in a filing. Grade C is a default, not a finding of weakness. The AR contradictions (materials direction, EBITDA 40.88 vs 42.08 Cr, other expenses 8.94% vs 7.64%) are reporting slips, not missed promises, and are held as red flags. Swing item: the Jan-2027 commissioning. A Reg 30 notice by Jan-2027 or H1 FY27 CWIP and loan draw rising would be the first company-side delivery evidence. Q2 FY27 results (12-Nov-2026) test margin persistence."

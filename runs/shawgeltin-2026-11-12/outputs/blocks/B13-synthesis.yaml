@@ -1,0 +1,32 @@
+stage: B13-synthesis
+company: "SHAWGELTIN"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+mode: "PHASE 1 LITE (three files: business-narrative.md, gate-recommendation.md, verifier-summary.md)"
+verdict: "PROCEED WITH FLAGS"
+verdict_rule_applied: 3
+flags_active: ["FLAG-CASH (GROWTH-INDUCED)", "FLAG-GATE0 (records only, DB1, core 60 at GOOD floor)"]
+flags_not_active: ["FLAG-PROMOTER (B08 CAUTION, below CONCERN)"]
+freshness_verdict: "FRESHNESS PAIRS OK"
+confidence_delta: {numerical: 99.0, redflag: 80, framework: 85.3, peer: null, overall: 80}
+transition_posture: "NOT CLASSIFIED (Mental Model unsigned; recognition gap resolves at stage 11)"
+valuation_decision: ""         # phase 1 lite: not produced, pending phase 3
+entry_range: {low: null, high: null}   # phase 1 lite: not produced
+headline: "Gelatine margin reset, cause not yet proven"
+falsification_metric: "Sep-2026 quarter (filed 12-Nov-2026) standalone operating margin before other income below 16.4% with materials plus inventory change above 53% of revenue"
+cash_flag_falsifier: "H1 FY27 standalone CFO/PAT below 80% (FY26 86.4%), half-year cash flow filed with the Sep-2026 quarter"
+monitorables_count: 8
+open_items_count: 14
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - runs/shawgeltin-2026-11-12/outputs/final/business-narrative.md
+  - runs/shawgeltin-2026-11-12/outputs/final/gate-recommendation.md
+  - runs/shawgeltin-2026-11-12/outputs/final/verifier-summary.md
+verifier_a_disagreements: "none"
+notion_save:
+  page_title: ""               # phase 1 lite: no Notion payload
+  summary: ""
+  drive_link: "NONE"
+  mode: append-never-overwrite-status

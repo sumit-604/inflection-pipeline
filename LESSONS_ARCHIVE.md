@@ -1112,3 +1112,14 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-12 SHAWGELTIN (Narmada Gelatines, /step1 Phase 1 to Halt 1)
+- Collector: Playwright Chromium failed again (BrowserType.launch: spawn UNKNOWN) for main and all peers; only the BSE announcements fetch ran. Corpus repaired by direct HTTP download of public BSE and CARE filings. REPO_ROOT wrapper used again (hard-coded C:\Users\SUMIT SHARMA path).
+- BSE announcements API returned non-JSON for an 18-month window; 12-month windows work. Fetch older filings in two windows.
+- Sparse checkout excluded the new run folder: the first corpus commit took only 2 of 71 files. /step1 should run tools/sparse_session.sh with the new run folder before the first git add.
+- FY2025-26 AR is a scanned image (6 of 133 pages with text). Tesseract is installed at C:\Program Files\Tesseract-OCR but not on PATH; tools/ocr_repair.py ran with PATH prefixed. AR reports in Rs lakh.
+- IGCL (BSE 531253) consolidated screener page carries labels only; the price-based standalone fallback does not catch a peer with a price but no consolidated tables. Stage 6 read the empty file before the orchestrator replaced it.
+- Q2 FY27 results were due on the run date (board meeting 12-Nov-2026) and are not in the corpus.
+- Verifier B found the capex plan reset in the CARE Apr-2025 release sitting in inputs/other/ (never consumed), so stage 5 missed it: an older rating release belongs in rating/ history or the stage 5 dispatch.
+- Stage agents without an edit tool could not fix their reports: errata appended by the orchestrator to 02-notes-pass2, 03-ardeep, 04-bizmodel, 06-peers.
+- Token ledger: harness exposes only total tokens per subagent; cache columns and fresh vs re-read lines n/a. Stage 5 no-concall dispatch 107k vs 100k target.

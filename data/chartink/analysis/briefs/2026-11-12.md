@@ -1,11 +1,11 @@
 ---
 title: "Market Breadth Brief"
-subtitle: "Thursday, 2026-11-12 trade date · written 2026-11-12 · for Sumit Sharma"
+subtitle: "Thursday, 2026-11-12 trade date · written 2026-11-14 · for Sumit Sharma"
 ---
 
 # Market read, 12 November 2026
 
-Tonight's download ran at 21:00 and brought all 34 of 34 table files from the two public Chartink dashboards. Every file carries Thursday 12 November as its latest date. The previous brief covered Wednesday 11 November, so this one compares Thursday with Wednesday. The full figures sit in the data appendix, `2026-11-12-appendix.html`.
+Same trade date as the previous brief: 2026-11-12. The facts sheet has not moved since Thursday night, and the record holds no download for Friday 13 November. All 34 of 34 Chartink table files are present, each dated Thursday 12 November. The read below repeats Thursday's brief. "The previous brief" in the text means Wednesday's. The full figures sit in the data appendix, `2026-11-12-appendix.html`.
 
 The record counts a market of 2,346 stocks tonight. Claude Code has no web access. This brief checks no news and gives no reason for any move. It describes what the market did. It is not advice to buy or sell anything. The operator decides.
 

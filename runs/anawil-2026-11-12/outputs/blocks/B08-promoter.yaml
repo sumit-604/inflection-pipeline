@@ -1,0 +1,63 @@
+stage: B08-promoter
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial                # SEBI, eCourts, MCA21, NCLT, proxy-advisor databases not reachable; see searches_skipped
+input_gaps:
+  - "ANNUAL REPORT ABSENT (HIGH, carried from B00): no annual report; Prospectus is the only filing-anchored promoter source. No board report, governance report, committee attendance or RPT approvals."
+  - "NOT FOUND: Darpan Infrastructure financials (Prospectus points to company website; not retrievable), outcome of case 4161/2015, CMD Rs 21.68 Cr loan date/tenor/security/approval, reasons for the 19 Jun 2025 independent director exits, booking line of the Rs 97.60 lakh Darpan fee."
+  - "NOT FOUND: pre-IPO pledge history, lock-in on non-20% promoter shares, names of AIF/DII holders beyond Prospectus top 10, relationship of Darshini Vipul Vashi and Darpan Vipul Vashi to the promoters."
+  - "Addendum to DRHP cover prints a different CIN (U72300UP2015PLC070649) from all other filings (carried from B00)."
+flags:
+  - {type: FLAG-PROMOTER, verdict: "CAUTION", top_findings: ["Darpan (promoter group) is guarantor, lender, contractor, landlord, Rs 97.60 lakh fee recipient and former 51% holder; records do not reconcile across statements (B02 FLAG-RPT-DARPAN; Pros p.50-51, p.196)", "24 Oct 2026 governance filing says no ongoing tax disputes while a Rs 367.25 lakh s.115BAB demand with pending rectification stands (Ann 2026-10-24 p.3; Pros p.240-241)", "Deal-breaker recorded: FY25 PAT restated -12.0% (depreciation recompute); verdict could read CONCERN on a heavier weighting", "CMD lent Rs 21.68 Cr at 6% after listing, terms and approvals NOT FOUND; CMD also sold Rs 7.27 Cr privately and Rs 35.12 Cr in the OFS (promoter stake 89.35% to 65.26%)", "CS resigned after 17 months with three differing reasons; both original independents left 19 Jun 2025, reasons NOT FOUND; Darpan case 4161/2015 (IPC 420/406) unallocated"]}
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 6, red: 1}
+deal_breakers:
+  - "TRIGGERED (recorded, not enforced): restatement cutting past profits >10%: FY25 PAT 1398.41 audited to 1230.58 restated (-167.83, -12.0%); depreciation recomputed on Schedule II WDV (B02; AFS p.46, p.15; Pros p.187). FY24 and FY26 restated profits rose."
+  - "POSSIBLE, UNVERIFIED: multiple mid-term independent exits within 3 years: two independent directors ceased 19 Jun 2025 (Pros p.50); mid-term or term-end NOT FOUND."
+adverse_findings:
+  - {finding: "Darpan Infrastructure RPT records do not reconcile: Rs 97.60 lakh FY26 guarantee commission not in any audited P&L line; Rs 87.27 lakh balance labelled loan and trade payable; FY24 Rs 1748.64 lakh flow shown as granted and as taken; 'arm's length' asserted, no fee for five personal guarantors", evidence_tier: VERIFIED, source: "Prospectus p.35, p.50-51, p.195-196; B02 (AFS p.29, p.31-33, p.64-65, p.99-100)", date: "2026-08-06"}
+  - {finding: "Governance filing states no ongoing tax litigation or dispute while s.115BAB demand Rs 367.25 lakh (17 Jul 2026, AY 2025-26) is pending rectification", evidence_tier: VERIFIED, source: "Ann 2026-10-24 p.3; Prospectus p.240-241", date: "2026-10-24"}
+  - {finding: "Group company Darpan is respondent in IPC s.420/406 complaint (MS STP Ltd, case 4161/2015, Calcutta); not allocated to a court, no papers received; Prospectus also says no economic-offence proceedings initiated against group company", evidence_tier: VERIFIED, source: "Prospectus p.241-242, p.254", date: "2026-08-06"}
+  - {finding: "CMD loan of Rs 21.68 Cr at 6% after listing; date, tenor, security, approval NOT FOUND; promoter loans were interest free in FY26", evidence_tier: VERIFIED, source: "H1 FY27 presentation p.8; Prospectus p.196", date: "2026-11-08"}
+  - {finding: "CMD sold 7,20,000 shares at Rs 101 (Rs 7.27 Cr) in Sept 2025 and 13,00,800 shares in the OFS at Rs 270 (Rs 35.12 Cr); promoter group 89.35% to 65.26%. Sales were not timed to a peak (buyers gained 2.7x by IPO)", evidence_tier: VERIFIED, source: "Prospectus p.67-69", date: "2026-08-06"}
+  - {finding: "CARE monitoring report: deviation from objects Yes, utilisation as per offer document No; Rs 0.04 Cr of proceeds sat with the selling shareholder (CMD) by excess transfer, returned 4 Nov 2026; Rs 0.89 Cr comingled in cash credit account", evidence_tier: VERIFIED, source: "Ann 2026-11-07 p.3-4, p.6-8", date: "2026-11-06"}
+  - {finding: "CS Sakshi Vijay resigned (letter 1 Oct, effective 31 Oct 2026) about 17 months after joining; reason stated as personal reasons, pre-occupation and career opportunities; both original independent directors left 19 Jun 2025, reasons NOT FOUND", evidence_tier: VERIFIED, source: "Ann 2026-10-31 letter and intimation; Prospectus p.50", date: "2026-10-31"}
+  - {finding: "Board is promoter-led: 4 of 6 directors are promoters; two independents (aged 30 and 45) appointed 20 Jun 2025 with no listed-company or wind-sector background; Pardi/Valsad addresses as promoters", evidence_tier: VERIFIED, source: "Prospectus p.145-148", date: "2026-08-06"}
+  - {finding: "Darpan has open bank charges (about Rs 189 Cr secured across 6 open) per aggregator; Darpan financials not in corpus; Darpan guarantees ANAWIL debt", evidence_tier: UNVERIFIED, source: "qorpiq.com Darpan page; Prospectus p.195, p.254", date: "2026-11-12"}
+  - {finding: "New promoter-group fabricated-metal vehicle Ayush Rebar Coating Pvt Ltd incorporated 17 Dec 2025 (directors Bijal Vashi and Vipul Vashi); outside the Prospectus group-company disclosure", evidence_tier: UNVERIFIED, source: "qorpiq.com; Prospectus p.165", date: "2026-11-12"}
+transition_evidence:
+  - "Darpan sold its 51% stake to the CMD on 30 Nov 2023 and Darpan loan fell from Rs 494.90 lakh (Mar 2025) to nil (Mar 2026); Darpan remains guarantor and fee payee (Pros p.163, p.196)"
+  - "Rs 115.00 Cr of IPO money repaid bank debt by 30 Sep 2026 (Ann 2026-11-07 p.6-7); release of promoter guarantees NOT FOUND"
+  - "Institutional entry at 30 Sep 2026: AIF 10.01%, DII 10.23%, FPI 1.73% (SHP30Sep); holders named only for India-Ahead Venture Fund 2.80% (Pros p.68-69)"
+  - "Board refresh Jun 2025 and new CS 1 Nov 2026; credentials thin, weak evidence"
+pledge_pct_latest: 0
+pledge_trend: "stable at nil: no pledge at 6 Aug 2026 (Pros p.66) and none at 30 Sep 2026 (SHP30Sep); promoter group 65.26% at both dates; pre-IPO history NOT FOUND"
+searches_performed:
+  - "WebSearch: Anawil Wire and Engineering Nimish Vashi promoter"
+  - "WebSearch: Darpan Infrastructure Vapi Valsad MCA company"
+  - "WebSearch: SEBI order Anawil Wire OR Nimish Vashi OR Darpan Infrastructure"
+  - "WebSearch: MS STP Limited Darpan Infrastructure Kolkata 420 406"
+  - "WebSearch: Anawil IPO review concerns promoter Hem Securities"
+  - "WebFetch: qorpiq.com director page DIN 00166128"
+  - "WebFetch: qorpiq.com Darpan Infrastructure company page"
+  - "WebSearch: Anawil share price promoter loan tax demand 115BAB news Nov 2026"
+  - "WebSearch: Anawil AmbitionBox OR Glassdoor reviews Vapi"
+  - "WebFetch: chittorgarh.com Anawil IPO review"
+  - "WebFetch: anawilvapi.in (no Darpan content)"
+  - "WebSearch: Ayush Rebar Coating Private Limited Vapi"
+  - "WebSearch: Bhavin Navinchandra Desai OR Bijal Nimesh Vashi director Vapi"
+  - "WebSearch: Darpan Infrastructure NCLT OR insolvency OR default"
+  - "WebSearch: Anawil listing coverage Moneycontrol OR ET OR Mint"
+searches_skipped:
+  - "SEBI orders database and SCORES (not reachable; web search only)"
+  - "eCourts / Calcutta court status for case 4161/2015"
+  - "MCA21 official master data, charges and director history for Darpan, Ayush Rebar Coating and the four promoters"
+  - "NCLT, SAT, NGT, CCI database searches"
+  - "SFIO and ED press releases by name"
+  - "IiAS, SES, InGovern proxy advisor coverage"
+  - "Direct Mint, ET, Business Standard archive searches by promoter name"
+  - "Darpan audited financials (company website file not retrievable)"
+  - "Glassdoor (no Anawil page found)"
+verdict_basis: "No regulator action, conviction or pledge, but Darpan RPT records do not reconcile, a 24 Oct 2026 no-tax-dispute statement sits beside a pending Rs 367.25 lakh demand, and the FY25 restatement deal-breaker (-12.0%) is recorded (Pros p.50-51, p.240-241; Ann 2026-10-24 p.3)."
+analyst_note: "CAUTION could read CONCERN. The separating observations are a reconciled Darpan ledger (booking line of the Rs 97.60 lakh fee, board approval, market benchmark) and the NSE filing on the s.115BAB rectification order. The restatement deal-breaker is a depreciation recompute, not a revenue change. Sept 2025 sales at Rs 101 were not timed to a peak. Named tripwires for Role 2 Pillar 3: Darpan ledger reconciliation; s.115BAB order; CMD Rs 21.68 Cr loan terms and approvals; reasons for the 19 Jun 2025 independent exits and the CS exit; Darpan financials and case 4161/2015; Ayush Rebar Coating scope; any promoter sale or pledge after lock-in. Success catalogue pending (Rule I). Conservatism belongs in position size."

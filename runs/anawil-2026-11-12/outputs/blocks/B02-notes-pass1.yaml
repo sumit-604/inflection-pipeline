@@ -1,0 +1,21 @@
+stage: B02-notes-pass1
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+note: "Pass 1 only. Final B02-notes block is written by pass 3."
+report: runs/anawil-2026-11-12/outputs/reports/02-notes-pass1.md
+notes_source: "Prospectus_2026-08-06 restated financial information (Annexure IV notes, Annexures A-ZR, PDF pp.167-227), INR lakh; no annual report exists"
+second_source: "Audited_Financial_Statements_FY2025-26 (OCR): text on pp.1-2, 36-38, 71-73 only; pp.3-35, 39-70, 74-103 blank (OCR pending) at read time"
+input_gaps:
+  - "ANNUAL REPORT ABSENT (HIGH): notes read from Prospectus restated statements"
+  - "AFS OCR incomplete: 85 of 103 pages blank at read time; only EPS note 37 and ratio note 38 usable as cross-check"
+  - "Screener P&L/BS/CF sheets absent (B00)"
+  - "Concall transcript absent (B00)"
+  - "NOT FOUND in notes: customer-supplied steel accounting, three-model revenue policy, vendor advance counterparties, covenants, 5-year repayment schedule, warranty provision, customer concentration, Rs 12.5 Cr CFO figure"
+flags:
+  - {type: FLAG-CASH, reason: "FY26 CFO 1843.94 lakh = 50.3% of PAT 3662.83; capex creditors +832.88 in operating and retention money 297.44 in investing; adjusted CFO 713.62-1011.06 lakh (derived); WC absorbed 3919 lakh"}
+cfo_fy26_lakh: 1843.94
+pat_fy26_lakh: 3662.83
+st_loans_advances_fy26_lakh: 5001.52
+top_findings_count: 10

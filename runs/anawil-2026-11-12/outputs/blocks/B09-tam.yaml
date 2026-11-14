@@ -1,0 +1,124 @@
+stage: B09-tam
+company: "ANAWIL"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial                # tower-specific independent market data NOT FOUND; 3 fetches returned HTTP 403; global-benchmark method skipped
+input_gaps:
+  - "No annual report, no concall transcript (H1 FY27 call 2026-11-09, transcript not filed) (B00)."
+  - "NOT FOUND independently: Indian tower market size in towers or Rs, count and capacity of tower makers, OEM in-house vs outsourced tower share, hybrid-lattice vs tubular share, fleet-average turbine rating and hub height."
+  - "NOT FOUND: customer-site geography (B04), FY26 tower split by model (B04), Sany tower MW rating, capex plan for Kutch and internals (B07)."
+  - "Chinese-OEM share of FY26 installations (33%) is second-hand (GreentechLead quoting Deven Choksey Research; original not found). It sets the SAM, so SAM is LOW confidence."
+flags:
+  - "BASIS: rupee TAM is stated on the order-book blended billing basis (Rs 1.236 Cr per tower = Rs 395.58 Cr / 320 towers). Full-tower-value basis (Model 3 price, about Rs 1.09 Cr per MW) is 3.0x higher; conversion-only basis (Rs 58.7 lakh per tower) is 0.47x. Towers per year is the unit that avoids the distortion."
+  - "MGMT_CLAIM: '42.56 GW incremental, ~12,500+ future tower market' (listing deck p.3) = 100 GW minus the 57.44 GW of June 2026. On a GW test it is 1.88x the flat-6.05-GW floor and 1.13x the MNRE/IWTMA roadmap. The tower count rides on 3.4 MW per tower (42,560 / 12,500), which is the claim's own implied rating, not a measured fleet average."
+  - "ROADMAP_MISSES_100GW: the FY27 to FY31 roadmap (8, 9, 10, 12, 13.2 GW) reaches 95.1 GW at March 2030, 4.9 GW short of the 100 GW 2030 target the company cites."
+  - "UNDER_IMPLEMENTATION: company says 28 GW (April 2026). Independent Oct 2026 sources say over 40 GW (Suzlon call p.3) and 43 GW (IWTMA). JMK counts 17.36 GW (auctions completed, Mar 2026). Definitions differ; the company figure is neither the widest nor the narrowest."
+  - "GUIDANCE_VS_SOM: FY27 guidance midpoint Rs 475 Cr is 49.5% of the FY27 SAM (Rs 960 Cr) against 35.8% FY26 tower share. Share rules allow about Rs 477 Cr only by FY29. Guidance runs about two years ahead of the share-rule SOM unless the SAM is wider than the Chinese-OEM channel."
+  - "CAGR_IS_HALF_MIX: yr3 49.3% = tower volume 22.5% x price and mix 21.9%. Yr5 35.1% = volume 20.0% x mix 12.6%. Model 3 carries 14 to 16% margin, so profit CAGR will trail revenue CAGR."
+  - "CAPACITY: SOM FY31 Rs 646 Cr needs 522 towers: 85% of 612 nameplate (best half so far 148 towers, 48% of a 306-tower half), and above the 437-tower tonnage limit if every tower is 474 t. Gap Rs 106 Cr on the heavy-tower reading."
+  - "SUPPLY_SIDE_ADDITIONS: KP Green is entering onshore tubular towers (May 2026 call), Inox Wind is building a South India tower plant (Nov 2025 call), DEE Fabricom holds 32,400 tpa and Rs 55 to 90 Cr tower orders. The prospectus claim of a 'limited number of qualified suppliers' (p.114) is not independently supported."
+  - "SUBSTITUTION: Suzlon uses hybrid lattice-tubular towers (MNRE approved-models list) and a 140 m hybrid concrete tower; hybrid share NOT FOUND."
+  - "STALE_COMPANY_DATA: state-wise installed table is 31 Dec 2024 in the Prospectus and listing deck (23 months old, superseded by Sep 2026 MNRE data); 18 GW manufacturing capacity (Prospectus p.100, p.104) superseded by 24 GW (IWTMA Oct 2026)."
+  - "RUNWAY_MATRIX: the repo defines no numeric thresholds for MASSIVE/STRONG/GOOD/MODERATE/LIMITED (Master v3.6 line 993 lists the labels only); class assigned on stated reasoning."
+market_definition: "Outsourced, steel tubular onshore wind turbine towers (plus internals) sold to wind turbine makers and developers in India, measured in towers per year; SAM limited to the Chinese-OEM channel (Envision, Sany) that Anawil's book serves"
+tam_cr: {conservative: 1870, realistic: 2909}      # annual market, billing basis Rs 1.236 Cr per tower; conservative = FY26 6.05 GW flat at 4.0 MW (1,512 towers); realistic = FY27 8.0 GW at 3.4 MW (2,353 towers)
+sam_cr: 960                      # FY27, 33% of realistic TAM (776 towers) x Rs 1.236 Cr
+sam_pct_of_tam: 33
+som_3yr_cr: 477                  # FY29, 386 towers, share 39.8% of SAM (35.8% + 4pp)
+som_5yr_cr: 646                  # FY31, 522 towers, share 40.8% of SAM (35.8% + 5pp cap)
+som_implied_revenue_cagr: {yr3: 49.3, yr5: 35.1}   # from FY26 revenue Rs 143.27 Cr; FY29 and FY31 SOM. Volume 22.5% / 20.0%, mix 21.9% / 12.6%. From the FY27 guidance midpoint Rs 475 Cr the SOM CAGR is 0.2% to FY29 and 8.0% to FY31.
+current_sam_share_pct: 35.8      # 210 FY26 towers / 587 SAM towers; low-confidence (SAM is second-hand)
+revenue_headroom_x: 6.7          # FY27 SAM Rs 960 Cr / FY26 revenue Rs 143.27 Cr; 2.0x against FY27 guidance midpoint Rs 475 Cr
+tam_growth_pct: 16.9             # FY26 6.05 GW to FY31 13.2 GW roadmap, 5-year CAGR; floor case 0% (flat 6.05 GW)
+runway_class: "GOOD"
+mgmt_claim_cr: "NOT FOUND"       # management gives no rupee TAM; claim is 12,500+ towers / 42.56 GW incremental to 100 GW (listing deck p.3)
+mgmt_claim_ratio: 1.88           # GW basis: 42.56 GW claim / 22.69 GW flat-6.05 floor for Jul 2026 to Mar 2030; 1.13x vs roadmap (37.7 GW)
+mgmt_claim_read: "between reasonable and inflated (1.88x floor, 1.13x roadmap); 100 GW by 2030 itself is missed by 4.9 GW in the roadmap"
+capacity_check: "sufficient on tower count at nameplate for SOM FY29 (386 of 612) and FY31 (522 of 612, 85% utilisation vs best half 48%); on the 474 t heavy-tower reading (437 towers) FY31 SOM has a gap of Rs 106 Cr (Rs 646 Cr vs Rs 540 Cr). Committed CWIP adds only Rs 32 Cr (22.5% of FY26 revenue, B07), so it does not close the gap. The SOM is the optimistic side on weight mix; the capex plan is NOT FOUND."
+methods_used:
+  - "Method 1 top-down: MNRE/IWTMA GW installed x towers per GW x blended billing per tower"
+  - "Method 2 bottom-up: towers per year from GW at 3.4 MW (claim-implied) and 4.0 MW (sensitivity), times Rs 1.236 Cr; cross-check on tonnes (about 94 t per MW)"
+  - "Method 3 peer capacity aggregation: Anawil 207,000 t + DEE Fabricom 32,400 t named; rest NOT FOUND (LOW)"
+  - "Method 6 revealed demand: Anawil order book by OEM (Envision 49 towers Rs 192.9 Cr; Sany 111 towers Rs 66.9 Cr)"
+  - "Method 4 import substitution: not applicable (heavy product, domestic)"
+  - "Method 5 global benchmark: skipped"
+stale_data_flags:
+  - {datapoint: "State-wise installed wind capacity table (48,163 MW)", source: "Prospectus p.101 and listing deck p.3 citing MNRE", year: 2024}
+  - {datapoint: "Annual wind manufacturing capacity over 18 GW", source: "Prospectus p.100 and p.104 citing IBEF/IWTMA", year: 2025}
+  - {datapoint: "CRISIL wind capex and capacity addition outlook (25 GW FY25 to FY28)", source: "renewablewatch.in 2024-05-22 (search snippet)", year: 2024}
+  - {datapoint: "Windar Vadodara tower plant", source: "oemupdate.com 2012 (search snippet)", year: 2012}
+  - {datapoint: "Wind potential at 150 m, 1,163.9 GW", source: "Prospectus p.101 citing NIWE/MNRE, undated", year: "undated"}
+searches_performed:
+  - "India wind capacity addition FY26 6.05 GW MNRE cumulative"
+  - "India wind tower manufacturers capacity tubular OEM in-house"
+  - "ICRA CRISIL India wind capacity addition outlook FY27 FY28"
+  - "wind turbine tower steel tonnes per MW 140 m India"
+  - "WebFetch devdiscourse IWTMA roadmap FY27 to FY31 (ok)"
+  - "WebFetch solarquarter MNRE Sep 2026 cumulative 59,201 MW (ok)"
+  - "WebFetch industrialinfo 7.5 to 8 GW FY27 target (ok)"
+  - "wind tower supply order price DEE Fabricom capacity tonnes"
+  - "India wind tower manufacturing capacity IWTMA outsourced share (extended)"
+  - "Suzlon tower suppliers outsourced HLT"
+  - "WebFetch tribuneindia IWTMA 8 GW FY27 (ok)"
+  - "India wind OEM market share FY26"
+  - "WebFetch windpower.industry-report.net 24 GW (ok, no tower data)"
+  - "WebFetch jmkresearch FY26 report card (ok, FY27 6.9 GW, 56.09 GW Mar 2026)"
+  - "Deven Choksey FY26 OEM share (second-hand only)"
+searches_skipped:
+  - "WebFetch renewablewatch.in 2026-09-24 (HTTP 403)"
+  - "WebFetch renewablewatch.in 2026-09-03 IWTMA interview (HTTP 403)"
+  - "WebFetch renewablewatch.in 2026-09-10 localisation (HTTP 403)"
+  - "Global per-capita wind benchmark (Method 5), not run"
+  - "Direct MNRE and CEA monthly tables, not fetched; MNRE figures taken through press reports"
+  - "Tower-specific market report (CRISIL/ICRA/Mordor/Ken): none surfaced"
+downstream_candidates:
+  - signal: "Envision India wind installations and tower sourcing (EN-156 3.3 MW, EN-182 5 MW)"
+    entity_type: "counterparty"
+    demand_link: "Envision towers are 49 of 320 book towers and Rs 192.9 Cr of Rs 395.6 Cr; its installation pace sets tower pull."
+    likely_source: "Type 3/2: parent and Indian unit disclosures, rating rationales (CRISIL/ICRA/CARE), trade press"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Sany Renewable Energy India installations and tower sourcing"
+    entity_type: "counterparty"
+    demand_link: "Sany towers are 111 of 320 book towers (Rs 66.9 Cr); Model 1 conversion fee Rs 58.7 lakh flat."
+    likely_source: "Type 2: rating rationales, MCA filings, trade press"
+    cadence: "event-driven"
+    shared: true
+  - signal: "MNRE monthly installed wind capacity, state-wise (Gujarat and Karnataka)"
+    entity_type: "regulatory"
+    demand_link: "GW installed sets towers needed; Gujarat plus Karnataka are 43.95% of the Sep 2026 base."
+    likely_source: "Type 5/7: MNRE physical progress page, CEA installed capacity report, PIB"
+    cadence: "monthly"
+    shared: true
+  - signal: "Suzlon and Inox Wind quarterly deliveries, order books, tower make-or-buy and new tower plants"
+    entity_type: "counterparty"
+    demand_link: "In-house OEM towers cap outsourced demand; Inox is adding a South India tower plant."
+    likely_source: "Type 1: NSE/BSE announcements, concall transcripts, investor presentations"
+    cadence: "quarterly"
+    shared: true
+  - signal: "Wind and RTC/FDRE tender awards (SECI, NTPC, NHPC, state agencies)"
+    entity_type: "regulatory"
+    demand_link: "Awards today become tower orders in 12 to 18 months; 8 to 9 GW awarded in H1 FY27 (Suzlon call p.3)."
+    likely_source: "Type 5/4: SECI, NTPC, NHPC tender award pages, PIB, Lok Sabha Q&A"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Hot-rolled steel plate price (Model 3 steel input)"
+    entity_type: "macro"
+    demand_link: "Model 3 is 51.3% of book and puts steel on Anawil's books; price clause not disclosed."
+    likely_source: "Type 7: MCX/industry steel price series, ICRA/CRISIL steel notes"
+    cadence: "monthly"
+    shared: false
+  - signal: "ALMM or localisation rules extended to wind towers; tower vendor approvals"
+    entity_type: "regulatory"
+    demand_link: "Approved-list rules decide which fabricators OEMs may use; Kutch approval still pending."
+    likely_source: "Type 5: MNRE ALMM/RLMM wind lists and orders page"
+    cadence: "event-driven"
+    shared: false
+  - signal: "Anawil order intimations and H1 FY27 call transcript (Customer A 36.6% of book)"
+    entity_type: "end-customer"
+    demand_link: "New Reg 30 order filings and the filed call show real tower demand and customer mix."
+    likely_source: "Type 1: NSE announcements page for ANAWIL, concall transcript (target's own claim, rank 6)"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "TAM is a towers-per-year market, not a rupee market. Rupee figures use Rs 1.236 Cr per tower (order book blend); Model 3 full-value basis is 3.0x higher and conversion-only is 0.47x. SAM = 33% (second-hand Chinese-OEM share of FY26 installations) because only that channel is evidenced as buying Anawil towers; it omits unnamed customers D to H and ignores product, geography and capability filters (NOT FOUND, so no subtraction). Read SAM share (35.8%) as LOW confidence. Of the 49.3% yr3 CAGR, 22.5% is tower volume and 21.9% is price and mix to Model 3; use the tower CAGR for profit pools since Model 3 earns 14 to 16%. Rating assumption 3.4 MW comes from the company's own 42.56 GW / 12,500 arithmetic; at 4.0 MW towers fall 15%. Anawil's FY26 210 towers are 11.8% of 1,779 implied national towers, which looks high and hints at lower average ratings or lead time between tower build and commissioning. Separators to watch: Q3 FY27 towers delivered and Gujarat revenue; OEM tower-sourcing disclosure."

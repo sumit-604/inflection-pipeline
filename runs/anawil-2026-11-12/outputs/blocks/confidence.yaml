@@ -1,0 +1,27 @@
+stage: confidence
+company: "ANAWIL"
+run_date: "2026-11-12"
+phase: 1
+computed_by: orchestrator (prompts/00-orchestrator.md Section 5), from the verifier block files as written
+confidence_delta:
+  numerical_acceptance: 97          # B12a.acceptance_rate; numbers_checked 418; mandatory tier 183 of 183
+  redflag_coverage: 100             # B12b.acceptance_rate; material_found 7, material_caught 7
+  framework_adherence: 88.6         # B12c phase-1 scope only: 70 of 79 rules (Gate 0 47 of 52, Emerging Moat 23 of 27)
+  peer_utilisation: 100             # B12d: 12 of 12 peers confirmed SUBSTANTIVE
+  overall: 88.6                     # min of the applicable components
+  overall_set_by: "framework_adherence (B12c, Gate 0 + Emerging Moat portion)"
+  not_applicable: []                # every component has a denominator of 4 or more
+band: "75-89: normal, note specifics"
+pending_phase_3:
+  - "framework_adherence valuation component (B10/B11 audit) is PENDING PHASE 3; the 88.6 covers Gate 0 and Emerging Moat only."
+verifier_a_identity_check: "No CRITICAL rows in B12a, so no row was tested or struck by the orchestrator. Verifier A struck 3 rows itself under its rule 5b."
+rework_test:
+  verifier_a_confirmed_critical: 0
+  any_acceptance_below_60_on_denominator_4_or_more: false
+  result: "REWORK not triggered on the block values as written"
+open_ruling:
+  - "REDFLAG COVERAGE READING (operator ruling needed, carried to Halt 1): Verifier B wrote acceptance_rate 100, counting 3 PARTIALLY CAUGHT material items as caught (4 caught + 3 partly caught of 7). It states that a strict caught-only reading is 4 of 7 = 57%, which is below the OR-29 line of 60% on a denominator of 4 or more and would set overall to 57 and force REWORK. The orchestrator used the block value and did not substitute a number. The 3 partly-caught items (Kutch promise scoring, IPO proceeds scoring, order-book slippage) went into the one remediation cycle on stage 5."
+remediation:
+  cycles_used: 1
+  stages_rerun: ["stage 1 (Verifier A C1, C4, E1; Verifier C F1-F5)", "stage 4 (Verifier A unit-economics cell; Verifier B EBITDA per tower tie)", "stage 5 (Verifier B F1, F2, F3 and minors)"]
+  note: "Acceptance rates above are the verifiers' run-1 figures. They are not recomputed after the cycle; each verifier ran once (manifest verifier_runs)."

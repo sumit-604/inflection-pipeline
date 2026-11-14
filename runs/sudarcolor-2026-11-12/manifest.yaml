@@ -1,0 +1,18 @@
+company: Sudarshan Colorants India Ltd
+ticker: SUDARCOLOR
+cmp: 386.0
+market_cap_cr: 885.0
+run_date: 2026-11-12
+run_type: full
+concalls_available: false
+sector_cap_row: "Specialty chemicals"   # resolved at /step1 Step D against section-1b chunk 05 (35x)
+sector_cap_row_guess: "Specialty chemicals"   # keyword guess only, never consumed
+collector_warnings:
+  - "shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: screener:Profit & Loss, screener:Quarters, screener:Balance Sheet, screener:Cash Flow, screener:Customization, SUDARSCHEM:Profit & Loss, SUDARSCHEM:Quarters, SUDARSCHEM:Balance Sheet, SUDARSCHEM:Cash Flow, SUDARSCHEM:Customization, MOL:Profit & Loss, MOL:Quarters, MOL:Balance Sheet, MOL:Cash Flow, MOL:Customization, ASAHISONG:Profit & Loss, ASAHISONG:Quarters, ASAHISONG:Balance Sheet, ASAHISONG:Cash Flow, ASAHISONG:Customization. Open Financials.xlsx once in Excel or LibreOffice, save it, then run --push-again."
+  - "no results PDFs yet (screener has none): add later on github or locally + --push-again"
+  - "no rating PDF yet: add later the same way"
+notes: "Collected from screener.in by collect_to_repo.py v3. sector_cap_row is deliberately empty: resolve it at stage 0 against the Section 1B cap table."
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+verifier_a_shadow: not_run   # .claude/shadow.yaml left armed; see run-log.md

@@ -1,0 +1,76 @@
+stage: B04-bizmodel
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "no investor presentation (NOT PROVIDED); AR is the sole business source"
+  - "no concalls (declared; no-concall mode); no rating"
+  - "volume, realisation per kg, capacity, utilisation, segment margin, product-line and end-market revenue split NOT FOUND (single segment 'Pigments', Note 41 p.94)"
+  - "customer concentration NOT FOUND (no major-customer disclosure); only 'over 100 domestic customers' (MD&A p.17)"
+  - "named third-party competitors and market share NOT FOUND in AR; peers are from B01 (screener-derived margins)"
+  - "pricing basis of group trades NOT FOUND (Note 40 p.93 'normal commercial terms and at market rates', no TP study)"
+  - "shareholding is a screener copy; pledge NOT FOUND; screener CSVs absent; announcements Sep-Oct 2026 only; three scanned PDFs lack text"
+flags:
+  - {type: FLAG-RPT, reason: "Group goods sales 191.40 = 24.5% of revenue; group purchases 159.15 = 32.0%; revenue stream 2 is a captive export line (Singapore SLO 137.25, Shanghai 19.30, USA SLO 20.99). Third-party revenue 589.23 vs 590.15 (Note 40 pp.92-93; derived)"}
+  - {type: FLAG-CASH, reason: "Business is working-capital heavy: net trade WC 169.21 (21.7% of revenue), receivable days 83.9, inventory days 120.2 (B02 derived); H1 FY27 OCF -24.11 (B01)"}
+  - {type: FLAG-MODEL-IDENTITY, reason: "Company calls itself 'an integrated node' of ONE Sudarshan (Chairman letter p.9); own R&D spend nil (B03); decisions on volume, product transfer (Frankfurt to Roha) and sourcing sit with the group, not the Indian board"}
+  - {type: FLAG-MOAT, reason: "No moat confirmed (B01 moat score 0, class NONE); gross margin 39.3% vs peer proxy median 42.7%; operating EBITDA margin 7.42% vs peer median 9.63% (B01)"}
+business_type: "manufacturing"
+revenue_streams:
+  - {name: "Third-party goods (domestic and non-group export)", type: "Product sales, B2B, spec-driven repeat orders", pct_of_revenue: 71.6, predictability: "M. Derived: sale of products 750.11 less group goods 191.40 = 558.71 of 780.63 (Notes 23, 40 pp.87, 93)"}
+  - {name: "Sales of goods to promoter-group entities", type: "Captive related-party product sales", pct_of_revenue: 24.5, predictability: "L. 191.40 of 780.63 (Note 40 pp.92-93); USA SLO 77.42 to 20.99 in one year"}
+  - {name: "Sale of services", type: "Services (job work and technical, composition not disclosed)", pct_of_revenue: 3.2, predictability: "M. 24.83 of 780.63 (Note 23 p.87)"}
+  - {name: "Other operating revenue (export incentives, commission, scrap)", type: "Incidental", pct_of_revenue: 0.7, predictability: "L. 3.78+0.47+1.44 = 5.69 (Note 23 p.87)"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "weak"
+cyclicality: "cyclical"
+moats_present:
+  - "None confirmed (B01 moat class NONE)"
+  - "Candidate, unevidenced: spec-in approvals in automotive coatings and EPA-registered products (AR pp.11, 17); durability unknown"
+  - "Candidate, unevidenced: group procurement leverage and 500+ product portfolio access (AR pp.9, 10); durable only while the parent keeps loading the plants; asserted, not measured"
+valuation_methods:
+  primary: {method: "Normalised earnings multiple (P/E on core profit, with cash of 235.37 valued separately)", why: "Debt-free, profitable every year; but other income is 42.9% of pre-exceptional PBT and cash is 29.2% of assets, so headline P/E mixes a pigment business with a treasury. Exit multiple stays with Section 1B"}
+  secondary: {method: "EV/EBITDA on operating EBITDA (EV net of cash)", why: "Strips the cash pile and the other-income prop; operating EBITDA 57.95 vs 81.80 shows the swing. Cross-checks the P/E"}
+  tertiary: {method: "P/B with ROE (book 570.08, RoNW 8%)", why: "Floor reference only: surplus cash depresses ROE and the book is mostly cash and working capital"}
+  not_applicable:
+    - "DCF on a long fade: no guidance and no forward evidence in the AR (MD letter p.10 gives no numbers)"
+    - "SOTP: single segment (Note 41 p.94)"
+    - "P/S or EV/Sales: margin swings 7.4% to 12%, sales alone mislead"
+    - "Dividend yield: no dividend FY25 or FY26"
+    - "NAV/asset floor as primary: assets are working capital and cash, not replacement-value plant"
+irrelevant_ratios:
+  - {ratio: "Headline ROE and ROCE", why: "Cash 235.37 sits in net worth 570.08; B01 shows convention moves median ROCE 7.98% to 10.2%"}
+  - {ratio: "Headline P/E", why: "Other income 26.84 is 42.9% of pre-exceptional PBT"}
+  - {ratio: "Current ratio 2.89", why: "Cash and group receivables inflate it; says nothing on supplier stretch (overdue payables 62.32)"}
+  - {ratio: "Debt/equity, interest cover, DSCR", why: "No borrowings; finance cost 2.52 is lease interest only"}
+  - {ratio: "Consolidated peer margin comparison", why: "SUDARSCHEM FY26 consolidates Heubach; not like-for-like (B01)"}
+  - {ratio: "Domestic growth read alone", why: "Domestic +3.6% hides a 63.31 fall in outside-India sales that is group-controlled"}
+must_track_metrics:
+  - {metric: "Group share of sales and purchases, and third-party revenue", healthy: "Third-party revenue growing; group sales stable or rising at stated terms", red_flag: "Group sales above 24.5% or purchases above 32.0% of totals; third-party revenue below 589.23"}
+  - {metric: "Gross margin (revenue less materials, traded goods, inventory change)", healthy: "At or above 42.2% (FY25), narrowing the gap to peers at 42.7%", red_flag: "Below 39.3% (FY26)"}
+  - {metric: "Net trade working capital days and OCF/operating EBITDA", healthy: "Receivable days near 68 and inventory days near 100 (FY25); OCF/EBITDA above 0.8", red_flag: "Receivable days above 83.9, inventory days above 120.2, OCF negative"}
+  - {metric: "Operating EBITDA margin (ex other income)", healthy: "Above 9.6% peer median", red_flag: "Below 7.4%"}
+  - {metric: "Overdue trade payables and group payable ageing", healthy: "Overdue under 5% of payables", red_flag: "Overdue above 62.32 or 37.5% of payables"}
+unit_economics:
+  unit: "Rs 100 of revenue (kg volume and realisation NOT FOUND; no unit disclosure in AR)"
+  revenue_per_unit: "Rs 100 (FY26 revenue 780.63; products 750.11, services 24.83, other 5.69; Note 23 p.87)"
+  margin_per_unit: "Materials and traded goods net of inventory change Rs 60.7; gross Rs 39.3; employees Rs 9.1; power Rs 6.0; jobwork Rs 3.1; other overheads Rs 13.6; operating EBITDA Rs 7.4 (derived from P&L p.74, Notes 25-30 p.88)"
+  key_lever: "Gross margin and group volume loading over a mostly fixed 71.10 employee and 177.44 other-expense base. FY26 decremental: revenue -44.43, gross profit -41.32, EBITDA -23.85 (derived). H1 FY27 operating EBITDA margin 12.2% vs 10.7% on 25% more revenue while gross margin was 39.3% vs 41.7% (Q2 FY27 results p.3, derived)"
+first_deterioration_signals:
+  - {risk: "Group offtake shifts to group plants (revenue model)", first_signal: "Sales of goods to group in half-year RPT filing; third-party revenue growth"}
+  - {risk: "Gross margin compression from input cost or transfer pricing (margin)", first_signal: "Gross margin below 39.3%; purchases from HLD1 and Gujarat MFG rising faster than sales"}
+  - {risk: "Working capital and group credit (balance sheet)", first_signal: "Receivable days above 83.9 and inventory days above 120.2; group payable ageing beyond 90 days"}
+  - {risk: "Execution of plant transfers and SAP integration (execution)", first_signal: "Inventory change line (H1 FY27 build 44.66) not converting to sales; permanent CFO still unfilled"}
+  - {risk: "Dependence on a parent that sets volumes, prices and sourcing (structural)", first_signal: "Services-received and royalty lines (Germany Horizons 9.49, royalty 1.61) rising; other expenses ex power growing faster than revenue"}
+mgmt_questions:
+  - "What share of H1 FY27 revenue of 492.15 came from group entities, and at what price basis versus third-party grades?"
+  - "How much of the 99.62 bought from Sudarshan Switzerland HLD1 is traded goods resold, and what margin does the company keep?"
+  - "What are capacity and utilisation by site (Roha, Cuddalore, Nagda), and how much of the Frankfurt Azo transfer is loaded?"
+  - "What explains the H1 FY27 inventory build of 99.07 and receivables build of 69.77 against revenue growth?"
+  - "How much of the 43.87 owed to group entities is overdue, versus the 62.32 overdue to third parties?"
+  - "What are the cost-recovery terms for group R&D and the IT services line (19.18 vs 12.89)?"
+  - "What is the plan for the 235.37 of cash given no dividend since FY21?"
+one_line_verdict: "A three-plant pigment maker run as a node of its parent group, with 24.5% captive sales, 39% gross margin, high working capital and no moat yet; value it on core earnings with cash taken out, and watch whether third-party revenue grows."
+analyst_note: "Two readings of the business exist. Reading one: a specialty pigment maker with spec-in customers, now gaining group portfolio and low-cost Roha volume; H1 FY27 operating EBITDA margin of 12.2% shows operating leverage on a fixed cost base. Reading two: a group-controlled node whose volume, pricing and sourcing sit with the parent; third-party revenue was flat at 589.23 vs 590.15 and the FY26 fall was all group sales. H1 FY27 gross margin fell to 39.3% from 41.7% while EBITDA margin rose, so the gain is cost leverage, not price. One observation separates the readings: third-party revenue growth in H1 FY27 and the group share of the 492.15. Rs 100 unit used because volume is NOT FOUND."

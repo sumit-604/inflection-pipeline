@@ -1,0 +1,69 @@
+stage: B06-peers
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "no main-company concalls (declared); peer evidence is adjacent, not a read of the main company's own claims"
+  - "11 of a possible 12 peer transcripts; ASAHISONG has 3, and two (Q2 FY25, Q4 FY25) are older than 12 months"
+  - "SUDARSCHEM Q2 FY27 call (due about Nov 2026) is not in the corpus; latest parent call is Q1 FY27 (14-Aug-2026), so the parent's view of the Q2 FY27 jump is NOT FOUND"
+  - "no peer gives the group share of SUDARCOLOR sales, Roha or Cuddalore volumes, or the H1 FY27 third-party split"
+  - "no rating; no investor presentation"
+flags:
+  - {type: FLAG-PARENT-INTERESTED, reason: "All evidence on the subsidiary's role and the Rs 411 transfer comes from the parent (SUDARSCHEM), the controlling shareholder. Interested-party evidence, not independent."}
+  - {type: FLAG-REVENUE-BASE-AND-ROUTING, reason: "Parent says Q2 FY26 to Q3 FY26 was the destocking trough in the acquired group and that Frankfurt products moved to the Indian Heubach site in Roha with some intercompany business gained (SUDARSCHEM Q1 FY27 p.12; Q3 FY26 p.8). Low base plus group routing explain part of +47.3%; group share NOT FOUND."}
+  - {type: FLAG-GROSS-MARGIN-DIVERGENCE, reason: "MOL, ASAHISONG and the parent's acquired group show pigment margins holding or rising under input inflation (pass-through). SUDARCOLOR gross margin fell (39.3% vs 41.7% H1 FY27 per B05). Peers do not explain the fall; it is company-specific."}
+  - {type: FLAG-WC-GROUP-DIRECTION, reason: "Parent targets group NWC release in FY27 (SUDARSCHEM Q1 FY27 p.5) while saying it raised inventory in subsidiaries for longer logistics (p.4). SUDARCOLOR inventory +99.07 in H1 FY27 sits against that direction. MOL separately stretched receivables to 125+ days (Q2 FY27 p.4)."}
+  - {type: FLAG-STAKE-QUANTUM-MISMATCH, reason: "Analyst on parent's Q1 FY27 call (14-Aug-2026) refers to acquiring a 70% stake in Sudarshan Colorants; B05 note 10 records 15.89% moved on 1-Oct-2026. Quantum and staging unresolved; needs the exchange filing."}
+peers_provided: 11
+verified: []
+partially_verified:
+  - {claim: "Destocking has largely run its course; H1 FY27 growth is volume or price led", peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {claim: "Global pigment growth is about 3% CAGR", peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {claim: "Parent describes the Indian subsidiary role, intra-group sourcing and Frankfurt to Roha moves (sub-claim: parent calls explain group offtake)", peers: ["SUDARSCHEM"]}
+  - {claim: "US tariff hurt pigment exports and US demand recovers after tariff relief", peers: ["MOL", "ASAHISONG", "SUDARSCHEM"]}
+  - {claim: "Input costs rose sharply in H1 FY27 and pigment makers could pass them on", peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {claim: "Working capital build is not only company specific (sub-claim: sector inventory and receivable build)", peers: ["SUDARSCHEM", "MOL"]}
+  - {claim: "Indian pigment capacity has headroom (sub-claim: capacity and utilisation context)", peers: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {claim: "Parent has no stated intent to merge, delist or further change stake in the listed subsidiary; Rs 411 transfer is holding-structure rationalisation", peers: ["SUDARSCHEM"]}
+contradicted: []
+unverifiable:
+  - {claim: "Payable stretch to group or MSME suppliers in H1 FY27", peers_checked: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {claim: "Localisation of premium HP Azo, food-contact or recycling-compatible grades in India", peers_checked: ["SUDARSCHEM", "MOL", "ASAHISONG"]}
+  - {claim: "Group share of SUDARCOLOR Q2 FY27 revenue, and Roha or Cuddalore volumes", peers_checked: ["SUDARSCHEM"]}
+peer_coverage_map:
+  - {peer: "SUDARSCHEM", quarter: "Q2 FY26 (call 2025-11-13)", usage: "SUBSTANTIVE", contribution: "Destocking trough in acquired group (Q2 FY26 base); Roha product synergies; plan to move Germany lines to India; NWC 26.2% to 24% target"}
+  - {peer: "SUDARSCHEM", quarter: "Q3 FY26 (call 2026-02-13)", usage: "SUBSTANTIVE", contribution: "Q3 trough; Frankfurt production already transferred into India; transfer went to the Clariant legacy plant, not legacy Sudarshan; tariff effect on US customers"}
+  - {peer: "SUDARSCHEM", quarter: "Q4 FY26 (call 2026-05-27)", usage: "SUBSTANTIVE", contribution: "Destocking over; Q4 growth was volume and share win-back, not industry growth; industry 3-4%; commodity products moved to Indian Heubach site in Roha; capacity headroom"}
+  - {peer: "SUDARSCHEM", quarter: "Q1 FY27 (call 2026-08-14)", usage: "SUBSTANTIVE", contribution: "Intercompany business gained in India; inventory raised in subsidiaries for longer logistics; Colorants 70% stake rationale; no capex for volume; price rises are pass-through only"}
+  - {peer: "MOL", quarter: "Q3 FY26 (call 2026-02-02)", usage: "SUBSTANTIVE", contribution: "Tariff hit to US exports; Azo project not sensible in current market; only small blue/green pigment closures; pigment util 38%"}
+  - {peer: "MOL", quarter: "Q4 FY26 (call 2026-05-16)", usage: "SUBSTANTIVE", contribution: "Customer inventory in US and LatAm gone; pigment price rises as cost passes through; pigment util 40%, revenue 500-600 guide"}
+  - {peer: "MOL", quarter: "Q1 FY27 (call 2026-07-30)", usage: "SUBSTANTIVE", contribution: "Pigment util 39%, overcapacity, no distributor inventory; tariff hangover over from 1 April; pigment margin 12.1% with 5-6 pts from realisation"}
+  - {peer: "MOL", quarter: "Q2 FY27 (call 2026-11-05)", usage: "SUBSTANTIVE", contribution: "Pigment util 51%, revenue 161 vs 131 prior quarter (derived +22.9%); receivables to 125+ days; pigment pass-through works; Europe weak, US demand good"}
+  - {peer: "ASAHISONG", quarter: "Q2 FY25 (call 2024-11-06)", usage: "CITED-ONLY", contribution: "Older than 12 months. Blue growth 3-5%; Azo util about 66%; analyst refers to an Indian pigment company buying a global major (parent)"}
+  - {peer: "ASAHISONG", quarter: "Q4 FY25 (call 2025-05-12)", usage: "CITED-ONLY", contribution: "Older than 12 months. Names Sudarshan as best placed Indian Azo player; anti-dumping duty 20-30% on China Azo; Azo exports only 10%"}
+  - {peer: "ASAHISONG", quarter: "Q4 FY26 (call 2026-06-01)", usage: "SUBSTANTIVE", contribution: "Blue prices up about 20%; Chinese prices up 30-40%; US tariff ripple and revival; Azo util 65%, small capex trigger; inventory gain partial; Europe structural slowdown"}
+industry_cross_read:
+  demand: "No peer reports a demand boom: parent says US/Europe coatings subdued and plastics hand to mouth, MOL says reasonably healthy but pigment utilisation 39-51%, ASAHISONG says demand not back; recovery is destocking end, restock and price, industry growth 3-4%."
+  pricing_inputs: "All three cite a war-driven jump in petrochemical, energy, sulphur and freight costs from Mar 2026; pigment makers passed it through (ASAHISONG Blue +about 20%, MOL pigment margin 3.3% to 12.1%/10%), so peer gross margins held or rose while SUDARCOLOR's fell."
+  capex_cycle: "Capacity hold, not a race: parent needs no volume capex, MOL runs pigment at 39-51% with no capex, ASAHISONG plans Rs 10-15 Cr Azo capex only above 75-85% utilisation; SUDARCOLOR is not a lone expander (capex 25.34 vs depreciation 16.51 in FY26 per B05)."
+peer_mentions_of_company:
+  - "SUDARSCHEM Q4 FY26 (Rathi, p.10): 'We've already moved some of the commodity products to the Indian Heubach site in Roha and Frankfurt family remains towards speciality coverage.' Unmistakable description of the subsidiary's Roha site."
+  - "SUDARSCHEM Q1 FY27 (Nitesh Dhoot, p.9; Mukhopadhyay reply): analyst names 'acquiring the 70% stake in Sudarshan Colorants from the overseas subsidiaries'; reply 'It is only within the group holding structure rationalization, which was planned earlier itself. There is nothing further to that.'"
+  - "SUDARSCHEM Q1 FY27 (Rathi, p.12): 'There is some business which are intercompany businesses do, which we have gained from that perspective, so partially that is correct. Either we have been producing here and selling in and vice versa, so it does have that impact.' Reply to a question on India growing faster from Germany to India transfers."
+  - "SUDARSCHEM Q3 FY26 (Rathi, p.12): 'Frankfurt products were not transferred to Sudarshan legacy, but to the Clariant legacy plant.' The plant is not named; match to Roha is [INFERENCE] from the Q4 FY26 quote."
+  - "ASAHISONG Q4 FY25 (Arjun, file p.6): 'the largest pigment as a player from India, Sudarshan is very well positioned' on Azo (parent, not the subsidiary)."
+risks_peers_raise:
+  - "War-driven input shock (crude, sulphur, energy, freight) and Hormuz supply risk: all three peers (SUDARSCHEM Q4 FY26 p.5; MOL Q2 FY27 p.6; ASAHISONG Q4 FY26 p.22)"
+  - "Customers refuse to hold high-cost inventory, buy hand to mouth, so restock is thin (SUDARSCHEM Q1 FY27 p.10; MOL Q4 FY26 p.13)"
+  - "Receivable stretch to hold growth: days 100-110 to 125+ (MOL Q2 FY27 p.4)"
+  - "Group reporting weakness: four SAPs, 130 applications, financial information hard to get (SUDARSCHEM Q1 FY27 p.3)"
+  - "Parent acquisition debt with ballooning repayment from FY27 and cash sitting in the Indian entity (SUDARSCHEM Q4 FY26 p.7)"
+  - "Chinese competition in Azo and the 20-30% anti-dumping duty not yet shifting volumes (ASAHISONG Q4 FY25 file p.15; Q4 FY26 p.16)"
+  - "Pigment overcapacity and a stagnant industry with no consolidation (MOL Q1 FY27 p.7, p.11)"
+  - "Europe demand and cost viability (SUDARSCHEM Q4 FY26 p.14; MOL Q2 FY27 p.8; ASAHISONG Q4 FY26 p.16)"
+  - "Parent has no controlling promoter: promoter holding 8.19%, family de-promoterised (SUDARSCHEM Q3 FY26 p.8; Q4 FY26 p.14)"
+  - "Pending restructuring charge at a European subsidiary of the parent (SUDARSCHEM Q1 FY27 p.10)"
+net_narrative_effect: "complicates"
+analyst_note: "No peer contradicts a SUDARCOLOR claim, but none confirms the size of the Q2 FY27 jump. The parent explains three parts: a low Q2 FY26 base (destocking trough), volume recovery from Q4 FY26, and Frankfurt-to-Roha transfers with some intercompany business. Group share is NOT FOUND, so the two readings stay open: (1) demand recovery plus base effect, (2) production re-routed from Europe into the Indian site. The separating observation is the H1 FY27 Reg 23 split of group vs third-party sales. Independent peers show 3-4% industry growth, low utilisation and price-led growth, which makes +47.3% hard to read as open-market demand. Derived: MOL pigment revenue rose 22.9% quarter on quarter in Q2 FY27 (161 vs 131), close to SUDARCOLOR's 21.3% sequential step (269.76 vs 222.39), so the sequential step is ordinary and the year-on-year size is mostly base. Gross margin is the open item: peers passed costs through, SUDARCOLOR did not [INFERENCE: group-routed sales at transfer prices]. Parent's Q2 FY27 call is missing; read it when filed."
+cross_peer_hypothesis: "In the 2026 cycle, Indian pigment volume is splitting into open-market demand (industry 3-4%, plants at 39-51% utilisation, price-led margin recovery at MOL and ASAHISONG) and production re-allocated inside integrated groups from high-cost foreign sites to Indian plants (parent moves Frankfurt lines to the Indian Heubach site at Roha). No peer states this split. Test: the H1 FY27 Reg 23 filing should show SUDARCOLOR group sales rising faster than third-party sales while third-party sales stay near flat. [INFERENCE]"

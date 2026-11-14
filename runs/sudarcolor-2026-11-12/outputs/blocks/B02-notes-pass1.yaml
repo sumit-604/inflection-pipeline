@@ -1,0 +1,12 @@
+```yaml
+stage: B02-notes-pass1
+company: "SUDARCOLOR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+report: outputs/reports/02-notes-pass1.md
+input_gaps: ["no concalls", "no rating document", "no investor presentation", "shareholding is a screener copy", "screener P&L/BS/CF/Quarters CSVs absent", "two scanned announcements without text layer"]
+notes_read: "Note 1 to Note 54, pp.76-97"
+top_findings_count: 10
+open_items: ["760.63 vs 780.63 revenue: AR shows 780.63 only; reconcile to results filing", "overdue payables counterparties", "related-party purchase split"]
+```

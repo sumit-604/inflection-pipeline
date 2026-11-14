@@ -1112,3 +1112,14 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-12 · VRLLOG /step1 (Phase 1 to Halt 1, runs/vrllog-2026-11-12)
+- Collector: REPO_ROOT is hardcoded to a path absent on this machine; run through a scratch wrapper. Chromium would not launch headed; a scratch sitecustomize shim forced headless. tools/ was not edited.
+- Screener throttling (ten sessions on one login): the first pass returned a logged-out page for two peers (TCIEXP, DELHIVERY) and the collector reported "no transcripts found" with exit 0. A spaced re-run fetched both. The collector should fail loud on a logged-out page.
+- Collector left results/, rating/ and shareholding/ empty. Filled by hand: BSE results through the screener quarter link, ICRA rationale from the earlier screens corpus, NSE shareholding XBRL through the NSE API.
+- The /consolidated/ screener page loads with no price for a standalone filer; tools/check_url.py still prints OK. Step A picked the standalone page by reading the ratios.
+- Q2 FY27 results PDF is a scan with a poor OCR layer and no tesseract is installed; stages read the PDF pages. Stage 6 read two Delhivery transcripts by keyword window because their .txt is one word per line.
+- sector_cap_row: no Section 1B row fits an owned-fleet LTL carrier (asset-heavy, low working capital). Written NOT FOUND for an operator ruling.
+- Subagents ran async; two block files arrived wrapped in code fences (B06, B13-lite) and were stripped mechanically. Five stages reported small anchor or wording defects they could not fix without an edit tool.
+- Verifier A shadow not run: .claude/shadow.yaml left armed, shadow claimed by runs/kusumgar-2026-11-12.
+- Token split per stage is not exposed in the desktop app; session-cost.md carries totals only.

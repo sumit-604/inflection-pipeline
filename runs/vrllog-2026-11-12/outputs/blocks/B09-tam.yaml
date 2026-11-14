@@ -1,0 +1,87 @@
+stage: B09-tam
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "No LTL-specific market size in INR, no organised share, no named-player shares in any corpus document (AR p.77 says validated industry data is absent)"
+  - "Delhivery FY26 PTL revenue, Gati/Allcargo and Safexpress FY26 revenue, V-Trans revenue: NOT FOUND (Delhivery uses Q4 FY26 x4, DERIVED upper bound)"
+  - "B07 capex_embedded_growth_pct not on disk; vehicle cost per tonne of capacity NOT FOUND, so capex gap in Rs Cr NOT FOUND"
+  - "Per-capita logistics benchmark vs China/SE Asia not searched (Method 5 partial)"
+flags:
+  - "METHOD-DIVERGENCE: vendor LTL TAM Rs 3,11,610 Cr vs peer-implied Rs 23,150 Cr, 13.5x apart; definitions differ (all sub-truckload freight vs branded network LTL)"
+  - "CIRCULAR: conservative TAM is peer revenue divided by management's unverified 30% organised share; not an independent check"
+  - "SAM-IS-A-FLOOR: SAM equals three named organised players' revenue; unlisted organised players (Safexpress, Gati, V-Trans) NOT FOUND"
+  - "SHARE-AT-46%: VRL already holds 46.4% of the floor SAM; share-gain rules read against this base are weak"
+  - "FX: USD figures converted at Rs 94.40 per USD (RBI reference rate 5 Nov 2026, MSEI archive); 6 Nov archive rate and market close disagree; vendor USD base year differs"
+  - "RUNWAY-MATRIX: the five-class matrix is not in the stage file; thresholds applied are stage-set and stated in the report"
+market_definition: "Domestic road less-than-truckload and part-load general parcel freight moved over owned-fleet hub-and-spoke networks in India; excludes FTL, air/rail, B2C express, exports"
+tam_cr: {conservative: 23150, realistic: 311610}
+sam_cr: 6945
+sam_pct_of_tam: 30.0   # of conservative TAM; 2.2% of realistic TAM
+som_3yr_cr: 4411
+som_5yr_cr: 5438
+som_implied_revenue_cagr: {yr3: 11.1, yr5: 11.0}   # on FY26 base Rs 3,221.11 Cr
+current_sam_share_pct: 46.4
+revenue_headroom_x: 2.16
+tam_growth_pct: 9.88
+runway_class: "MODERATE"
+mgmt_claim_cr: 2265600
+mgmt_claim_ratio: 97.9
+mgmt_claim_read: "inflated"
+capacity_check: "gap of Rs 793 Cr revenue at FY25 turns of 50.1 tonnes moved per tonne of fleet capacity (Rs 597 Cr at Q2 FY27 turns of 52.8); owned-fleet capex plan is the thin side, hire fills the gap; capex gap in Rs Cr NOT FOUND"
+methods_used: ["top-down (vendor LTL USD)", "peer revenue aggregation with 30% organised claim", "bottom-up (partial, NOT FOUND on market tonnage)", "global benchmark (partial, logistics cost % of GDP from AR only)"]
+stale_data_flags:
+  - {datapoint: "India road freight Rs 12.13 trn (2023) to Rs 18.89 trn (2029)", source: "ResearchAndMarkets via BusinessWire, 2024-12-31", year: 2023}
+  - {datapoint: "Safexpress revenue over Rs 500 Cr", source: "Tofler aggregator", year: 2023}
+  - {datapoint: "Management 70% unorganised / 30% organised, undated and unsourced", source: "Q1 FY27 call p.14; Q4 FY26 call p.8", year: 2026}
+searches_performed:
+  - "India LTL market size organised share (Mordor page https://www.mordorintelligence.com/industry-reports/india-less-than-truck-load-market, updated 2026-01-14, fetched 2026-11-12)"
+  - "India road freight market size (Mordor/Credence/Nexdigm USD 153.9 bn 2025; https://www.nexdigm.com/market-research/insights/blog/road-freight-market-opportunity-analysis/, 2026-11-12)"
+  - "TCI Express FY26 revenue (Whalesbook, Rs 1,236-1,237 Cr, 2026-11-12)"
+  - "Delhivery Q4 FY26 PTL revenue (Inc42, Rs 622 Cr Q4, 549k t, +20%; https://inc42.com/buzz/delhivery-q4-profit-flat-at-%e2%82%b972-4-cr-despite-30-you-revenue-growth/, 2026-11-12)"
+  - "Express logistics USD 9-10 bn (Aviral Consulting via ITLN, 2026-05-14; https://www.itln.in/road-transportation/surface-networks-reshape-indias-express-logistics-growth-story-1359139)"
+  - "USD/INR RBI reference rate 94.3996 on 5 Nov 2026 (MSEI archive, https://www.msei.in/markets/Currency/Historical-Data/RBIReferenceRateArchives.aspx)"
+searches_skipped:
+  - "Safexpress, Gati, V-Trans FY26 revenue: no usable result"
+  - "CRISIL/ICRA/CARE LTL sector note with INR size and organised share: no usable result"
+  - "Per-capita freight/logistics benchmark vs China and SE Asia: not run"
+downstream_candidates:
+  - signal: "GST collections and e-way bill generation (monthly)"
+    entity_type: "macro"
+    demand_link: "Formalisation shifts parcel volume to compliant organised carriers; e-way volume tracks goods movement"
+    likely_source: "GSTN / Ministry of Finance PIB releases"
+    cadence: "monthly"
+    shared: true
+  - signal: "Diesel retail price (pump price)"
+    entity_type: "macro"
+    demand_link: "Fuel is about 25% of cost; Rs 2 per litre moves freight rate 1% per management"
+    likely_source: "PPAC price series"
+    cadence: "monthly"
+    shared: true
+  - signal: "TCI Express quarterly tonnage and revenue"
+    entity_type: "counterparty"
+    demand_link: "Named organised peer; tonnage growth read-across for surface parcel demand and pricing"
+    likely_source: "NSE/BSE announcements and concall transcripts (Type 1)"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Delhivery PTL tonnage and revenue"
+    entity_type: "counterparty"
+    demand_link: "Fastest-growing organised PTL player; share-gain signal against VRL"
+    likely_source: "NSE/BSE announcements, investor presentation (Type 1)"
+    cadence: "quarterly"
+    shared: false
+  - signal: "End-customer sector output: textiles, FMCG, agri inputs, pharma, autos"
+    entity_type: "end-customer"
+    demand_link: "Textiles 17-18% and agri inputs 10-11% of VRL volume (Q4 FY26 call p.11, Q1 FY27 call p.15)"
+    likely_source: "ICRA/CRISIL industry notes, IBEF sector notes (Type 7)"
+    cadence: "monthly"
+    shared: false
+  - signal: "MoRTH vehicle scrappage and 15-year vehicle rule notifications"
+    entity_type: "regulatory"
+    demand_link: "Forces fleet replacement and capacity exits among small operators; sets VRL renewal capex"
+    likely_source: "MoRTH notifications / PIB (Type 5)"
+    cadence: "event-driven"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "TAM spans 13.5x between vendor (Rs 3,11,610 Cr, all sub-truckload freight) and peer-implied (Rs 23,150 Cr). I carry the peer-implied number for SAM because it rests on filings; the vendor number is a ceiling with an unknown definition. The 30% organised claim is management's, unsourced, and drives the conservative TAM, so the chain is circular. Separating observation: a filed or rated organised-LTL revenue pool covering Safexpress, Gati and V-Trans. If that pool is large, SAM rises and runway moves from MODERATE toward STRONG. SOM CAGR 11.1% runs off FY26 and excludes the FY27 price step (+9% realisation), so year one is understated."

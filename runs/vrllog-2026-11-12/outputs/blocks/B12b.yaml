@@ -1,0 +1,34 @@
+stage: B12b
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"
+status: complete
+independent_flags_found: 22
+caught: 15
+partially_caught: 5
+missed:
+  - {severity: "MINOR", item: "Net debt rose Rs 272 Cr (Dec 2025) to Rs 440 Cr (Mar 2026), +Rs 168 Cr in one quarter, stated without explanation on the May call; B05 net-debt series starts at March", anchor: "Q3 FY26 call [page 4]; Q4 FY26 call [page 5]"}
+  - {severity: "MINOR", item: "Data-hygiene slips: Q4 customer flows 17-14+1=4 vs 'around 3%'; '6,000 owned vehicles' vs 'around 5,900' in one call; states/UTs 24/5, 24/4, 23/5; Q3 property Rs 50 Cr vs Rs 57-58 Cr; FY27 property Rs 160-170 Cr vs Rs 150-160 Cr", anchor: "Q4 FY26 [page 15], [page 3], [page 10]; Q3 FY26 [page 4], [page 14], [page 8], [page 15]; Q1 FY27 [page 3]"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 5, wrong: 0}
+credibility_grade_concur: "concur: B holds on delivery since May 2026 (tonnage, realisation, margin met or beaten; buyback executed); the silent Feb-to-May guide cut, three dates for the price hikes, May-to-Aug scrappage reversal and capex reset three times keep it from A; B05 Consistency 3 should read 2, letter unchanged"
+findings:
+  - {id: F1, severity: "MAJOR", stage: "B05, B06", issue: "Own-fleet erosion only partly caught: May 'scrappage will not be there' vs Aug 'scrapped... in this quarter' walkback, Feb claim that further demand runs on own vehicles vs rising lorry hire and stated capacity shortage, and vehicle-size reversal all missed; not in B05 4D; B06 never links VRL lorry hire to the own-fleet edge that trigger T6 rests on", anchor: "Q3 FY26 [page 11], [page 14]; Q4 FY26 [page 4], [page 10]; Q1 FY27 [page 9], [page 11]; Q2 FY27 [page 10]-[page 11], [page 15]"}
+  - {id: F2, severity: "MINOR", stage: "B06", issue: "Express and fast-PTL encroachment listed as a peer risk but not set against VRL's 'not directly competitor' claim; Delhivery slow-to-fast PTL migration with no big cost gap not cited", anchor: "VRL Q4 FY26 [page 13]; DELHIVERY Q2 FY27 PDF p.29; TCI Q3 FY26 [page 12]"}
+  - {id: F3, severity: "MINOR", stage: "B05", issue: "Customer leakage of 14-18% of tonnage a year recorded as flows but not weighed; Feb 'will continue, 5-6% sequential' not cited against Nov 'no pressure of the freight rate on the customers'", anchor: "Q3 FY26 [page 9]; Q4 FY26 [page 15]; Q1 FY27 [page 8]; Q2 FY27 [page 6]"}
+  - {id: F4, severity: "MINOR", stage: "B05", issue: "Missed Q4 FY26 net debt jump Rs 272 Cr to Rs 440 Cr, unexplained", anchor: "Q3 FY26 [page 4]; Q4 FY26 [page 5]"}
+  - {id: F5, severity: "MINOR", stage: "B05", issue: "Missed cross-call data-hygiene slips (see missed list)", anchor: "see missed list"}
+  - {id: F6, severity: "MINOR", stage: "B05", issue: "Fuel-cut answer called a consistent rule though the Nov call holds both full pass-through and price retention where competition is thin, and keeps bulk savings", anchor: "Q2 FY27 [page 12], [page 15]"}
+  - {id: F7, severity: "MINOR", stage: "B05, B06", issue: "Railway Surat textile facility not tied to VRL's largest commodity lane (textiles 16-18% of tonnage)", anchor: "Q1 FY27 [page 12]; Q3 FY26 [page 10]; Q4 FY26 [page 12]"}
+  - {id: F8, severity: "MINOR", stage: "B05", issue: "2A row 1 outcome '+5.5%' compares per-day thresholds across quarters of 92 and 90 days; quarterly tonnage about +3.2% (DERIVED); Delivered at the low end of 3-4%, below 'around 4%'", anchor: "Q3 FY26 [page 3], [page 5]; Q4 FY26 [page 4]"}
+  - {id: F9, severity: "MINOR", stage: "B05", issue: "Ton-km row 'deflected every time, no figure' overstated: lead distance answered 270-280 km and capacity 15-18 tonnes; only ton-km withheld", anchor: "Q4 FY26 [page 11]"}
+  - {id: F10, severity: "MINOR", stage: "B06", issue: "Realisation attribution overstated in size: VRL cost per litre rose Rs 11-12, so on its own Rs 2 = 1% rule fuel explains about 5.5-6% of the 9% (DERIVED), non-fuel about a third not half; 'contradicted' rests on Delhivery's own-book attribution; TCI 1-3% and mid-May peer timing are the stronger evidence; direction holds", anchor: "Q1 FY27 [page 4]; Q2 FY27 [page 4]; TCI Q1 FY27 [page 10]; TCIEXP Q1 FY27 [page 6]; DELHIVERY Q1 FY27 PDF p.7"}
+  - {id: F11, severity: "MINOR", stage: "B06", issue: "TCIEXP 2021-22 300 bp precedent described as a jump that 'did not hold' and 'later reversed'; TCIEXP does not say so and blames its later margin fall on revenue and new-service investment", anchor: "TCIEXP Q4 FY26 [page 11]; TCIEXP Q3 FY26 [page 16]"}
+  - {id: F12, severity: "MINOR", stage: "B05", issue: "Anchor key promises [page N] markers but several anchors use printed page numbers (Q1 FY27 -1.73% at [page 5] not p.4; chargeable weight Q4 FY26 [page 14] not p.13; Bangalore payback Q2 FY27 [page 10] not p.9; Q4 customer flows Q4 FY26 [page 15] not p.14); 'new normal 20%, 21%' is the analyst's phrase, CFO said 'around 20%'", anchor: "Q3 FY26 [page 8]; as listed"}
+critical_count: 0
+major_count: 1
+minor_count: 11
+material_found: 9
+material_caught: 6
+acceptance_rate: 67
+coverage_basis: "9 material (0 CRITICAL, 9 MAJOR) of 22 listed; 6 fully caught, 3 partially caught (R2 fleet, R8 express competition, R9 customer leakage) scored as not caught, 0 missed; 6/9 = 67% (9/9 if partials count; neither reading crosses the 60% REWORK line)"

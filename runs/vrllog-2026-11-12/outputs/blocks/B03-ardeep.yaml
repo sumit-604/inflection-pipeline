@@ -1,0 +1,71 @@
+stage: B03-ardeep
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "B00: shareholding PDF empty at collection, repaired with NSE Sep 2026 XBRL (AR p.146 used for FY26 pattern)"
+  - "B00: screener P&L, Quarters, Balance Sheet, Cash Flow sheets empty; only Data_Sheet used (quarterly block as cross-check outside the AR)"
+  - "B00: Q2 FY27 results PDF weak text layer, ICRA rationale 12 months old (not used by this stage)"
+  - "B00: sector_cap_row NOT FOUND (HIGH), operator rules at /fttcp"
+  - "AR ends 31 Mar 2026: buyback Rs 280 Cr at Rs 320, H1 FY27 margin and tonnage, FY27 capex plan are NOT FOUND IN DOCUMENT"
+  - "Absolute FY26 tonnage, dropped-contract revenue, earlier promoter 5.4% stake sale date, and FY26 branch closures are NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-MARGIN-QUALITY, reason: "FY26 EBITDA ex other income 20.19% vs 18.17% (INR lakhs 65,022 vs 57,419, DERIVED). Fuel price Rs 85.03 to Rs 85.07 flat, fuel quantity -7.3% (MD&A p.85), tonnage -7% (p.86), so fuel per tonne flat. 2,246 of 6,081 net revenue growth from lower credit notes and discounts (Note 20(c), p.210). MD&A p.84 and Note 36(A) p.226 credit cost control."}
+  - {type: FLAG-LEASE-ADJ, reason: "Disclosed ROCE 24.56% excludes lease liabilities 69,844; lease-inclusive ROCE 17.35% (DERIVED; FY25 AR printed 14.42%). FY25 D/E 1.13 and DSCR 0.40 re-based to 0.41 and 1.47 (Note 36, p.225)."}
+  - {type: FLAG-CONTROLS, reason: "Audit trail not enabled at database level (Note 40, p.226-227; auditor 18(h)(vi) p.162); March 2026 quarterly stock return to banks unfiled, auditor unable to comment (CARO ii(b), p.163; Note 13(D), p.201); first-year auditor; Directors' Report p.40 says no qualifications while auditor 18(b) reads except for."}
+phase_verdicts: {p1: "YELLOW Watch", p2: "YELLOW Watch", p3: "YELLOW Watch (leaning GREEN)", p4: "YELLOW Watch", p5: "YELLOW Watch", p6: "YELLOW Watch", p7_best_fit: "GARP (conditional on tonnage recovery)"}
+overall_quality: 6.75
+quality_components: {governance: 6.5, accounting: 7.0, balance_sheet: 6.5, earnings: 7.0}
+kill_switch_notes:
+  - "P1: reviewer would not stop; unmodified opinion, no fraud or default; control exceptions only (audit trail, unfiled March 2026 stock return)."
+  - "P2: reviewer would not stop; items are judgement and disclosure, small against net worth 114,244."
+  - "P3: reviewer would not stop; CFO 65,437 is 97% of EBITDA, no default or covenant breach disclosed."
+  - "P4: reviewer would not stop; four internal MD&A contradictions are framing and omission, not misstatement."
+  - "P5: reviewer would not stop; no pledge, no promoter selling, no regulatory action; watch pay step-up and committee control."
+  - "P6: reviewer would not stop; three quiet abandonments (scrappage unit, clean fuels, volume softening) with medium or low materiality."
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - {finding_rank: 3, triple_pass_value: "payout 74% of PAT funded by drawing liquidity; dividend INR 10 per post-bonus share (4x prior year)", ar_value: "cash paid 17,491 = FY25 final Rs 10 x 87.47m pre-bonus shares (8,747) + FY26 interim Rs 5 x 174.94m shares (8,747); declared for FY26 8,747 = 36.9% of PAT, no final proposed; FY25 declared 13,120 = 71.7% of PAT", note_ref: "Note 34B p.223; Directors' Report p.35; SOCIE p.172"}
+missing_risks:
+  - {risk: "Customer and volume loss from the price reset", evidence: "tonnage -7%, Q1 -13% (MD&A p.86); fleet capacity 85,261 to 81,700 t (p.87); FY25 AR said pruning would not compromise tonnage"}
+  - {risk: "Margin dependence on realisation and lower credit notes", evidence: "2,246 of 6,081 revenue growth from lower credit notes (Note 20(c) p.210); fuel quantity -7.3%, price flat (p.85)"}
+  - {risk: "Wage inflation", evidence: "median remuneration +25% (Annexure F p.70); cost per head +11.4% DERIVED; driver salary growth assumption 3.00% from 0.05% (Note 15 p.202)"}
+  - {risk: "Capital intensity and return dilution from property pivot", evidence: "land gross 51,883 (Note 2A p.189); lease-inclusive ROCE 17.35% DERIVED; MD&A p.80 concedes ratio effect"}
+  - {risk: "Tax and control items absent from MD&A", evidence: "CPC demand 5,186 (Note 29(k) p.214); audit trail (p.162); March 2026 stock statement unfiled (CARO ii(b) p.163)"}
+  - {risk: "Road safety", evidence: "19 employee fatalities, 54 recordable injuries (BRSR p.107)"}
+  - {risk: "Liquidity", evidence: "current ratio 0.49, cash 1,548 (p.225, p.170) vs Chairman 'exceptionally strong balance sheet' (p.7)"}
+  - {risk: "Succession and key-man", evidence: "CMD aged 76 re-appointed five years from 1 Jan 2027 (p.8); MD aged 51 (p.71)"}
+  - {risk: "Scrappage replacement burden", evidence: "814 vehicles over 15 years, 13.7% of count (MD&A p.81); MD&A calls it a blessing in disguise"}
+guidance_table:
+  - {claim: "Gradual uptick in volumes", number: "none", timeframe: "FY27", credibility: "Low, unquantified (MD&A p.86)"}
+  - {claim: "Add 25-30 branches every quarter (FY25 AR)", number: "100-120 a year", timeframe: "FY26", credibility: "Partly delivered, 97 added (p.82)"}
+  - {claim: "ICRA: profitability above historical levels near to medium term", number: "none", timeframe: "near to medium term", credibility: "Delivered in FY26, EBIT margin 12.72% vs 10.82% (p.36, p.84)"}
+  - {claim: "Scrappage policy raises freight rates, no hit to profit", number: "814 vehicles over 15 years", timeframe: "undated", credibility: "Untested (p.81)"}
+  - {claim: "Pruning will not compromise tonnage (FY25 AR)", number: "volume stable", timeframe: "FY26", credibility: "Failed, tonnage -7% (p.86)"}
+monitorables:
+  - {metric: "Quarterly revenue per tonne and tonnage", threshold: "tonnage growth at or above 8-10% with realisation not falling quarter on quarter", where: "results, concall, presentation", why: "separates lasting margin from one-off"}
+  - {metric: "EBITDA margin ex other income", threshold: "at or above 20.19% (FY26)", where: "results face", why: "margin durability"}
+  - {metric: "Credit notes plus discounts", threshold: "near 1,184; a move back toward 3,430 means discipline loosened", where: "next AR Note 20(c)", why: "non-repeatable gain"}
+  - {metric: "Net debt, demand facilities, undrawn limit", threshold: "net debt vs 44,021; demand facility vs 2,834; undrawn 12,700", where: "results, AR Notes 13 and 34", why: "buyback and capex funding"}
+  - {metric: "CPC demand 5,186", threshold: "section 154 order passed, no cash tax paid", where: "notes, announcements", why: "largest tax item outside contingent table"}
+  - {metric: "Audit trail and quarterly stock returns", threshold: "database-level trail enabled; March 2026 and later returns filed", where: "next CARO ii(b), Note 40", why: "control closure"}
+  - {metric: "Fleet count and capacity", threshold: "5,932 vehicles and 81,700 t should rise with tonnage", where: "investor presentation", why: "volume needs capacity"}
+  - {metric: "Employee cost per head", threshold: "growth no faster than revenue per head; FY26 +11.4%", where: "results", why: "wage inflation vs realisation"}
+  - {metric: "Lease-inclusive ROCE", threshold: "at or above 17.35%", where: "derived each period", why: "property pivot return"}
+ar_new_downstream_entities:
+  - name: "Karnataka Cancer Therapy and Research Institute"
+    where_in_ar: "Note 35(A) related party list, p.223 (not in FY25 AR list)"
+    entity_type: "related party, KMP-linked institution; no FY26 transaction shown"
+strengths_top3:
+  - "Cash conversion: CFO 65,437 (55,479), 97% of EBITDA; receivables 9.7 days, 0.6% over six months (p.173, p.195)"
+  - "Operational ROE gain 18.02% to 21.27%, margin-led with leverage slightly lower (DuPont, DERIVED)"
+  - "Promoter 60.24% unchanged across three year-ends and no pledge (p.146, p.150)"
+red_flags_top3:
+  - "Margin gain is realisation-led: fuel per tonne flat, tonnage -7%, 2,246 of 6,081 revenue growth from lower credit notes, yet MD&A and Note 36(A) credit cost control"
+  - "Control gaps under an unmodified opinion: no database audit trail, March 2026 stock return unfiled, books clause 'except for' while Directors' Report says no qualifications"
+  - "Capital pattern: 53% of capex into land, lease-inclusive ROCE 17.35%, cash 1,548 and current ratio 0.49 ahead of web-reported buyback and capex plan"
+best_fit_strategy: "GARP (conditional on tonnage recovery with margin held)"
+one_line_verdict: "Clean cash conversion and operational ROE gain, with a price-led margin and a control exception set; GARP fit if tonnage recovers."
+analyst_note: "All AR figures INR lakhs; screener figures INR Cr and marked. The web margin 23.3% and 22.6% include other income on total income; screener ex-OI Q2 FY27 is 22.97%, H1 22.14% (DERIVED). New vs B02: unfiled March 2026 stock return, High Court wins explaining contingent tax fall, declared payout 36.9% not 74%, five more re-based FY25 ratios, MD&A own-vehicle kms contradiction. Post-buyback promoter share 63.41% is derived from web buyback terms (87.5 lakh shares, promoters not tendering) and is not an AR fact. Pages are PDF pages."

@@ -1,0 +1,19 @@
+stage: B12d
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 12
+substantive_confirmed: 12
+substantive_unsupported: []
+unused_but_relevant: []
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "B06 Part 3 Delhivery Q3 FY26 row says Express stable range 22-25%; transcript says 'stably operated up to 22-23% margins' (DELHIVERY Q3 FY26 txt line 326). Claim 4 in Part 1 states 22-23% correctly. Internal inconsistency in the map."}
+  - {severity: MINOR, item: "Claim 4 'nobody matches it' is labelled VERIFIED, but Delhivery says its Express network has run 22-23% stably and 30%+ at points (Q3 FY26 txt lines 326, 452). B06 body scopes the read to LTL/PTL and flags the fleet-model gap, so the verdict stands, but the label is broader than the evidence. Delhivery Express is a different product."}
+  - {severity: MINOR, item: "Delhivery Q1 and Q2 FY27 citations are findable by multi-line text search (8 phrase hits across the two files) but carry no page anchor; page-level confirmation not possible. TCI Q3 FY26 is marked SUBSTANTIVE with one Part 1-2 citation (p.12, confirmed); 'discounting doesn't work' (txt line 289) appears only in the map. TCI Q4 FY26 'reduce the rates' reversal quote is a Seaways bunker statement, used as support for an LTL claim; B06 labels it Seaways."}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

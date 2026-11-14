@@ -1,0 +1,71 @@
+stage: B09b-dossier
+company: "VRLLOG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Screener Profit & Loss, Quarters, Balance Sheet, Cash Flow exports (empty)"
+    expected_source: "screener.in export, operator re-save and push again"
+    kind: "findable-missing"
+  - document: "Annual reports FY2023-24 and earlier"
+    expected_source: "company IR page / BSE"
+    kind: "findable-missing"
+  - document: "Q3 FY26 results filing (quarter to 31 Dec 2025)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Newer ICRA rationale after 19 Nov 2025 (existence unconfirmed)"
+    expected_source: "rating agency site"
+    kind: "findable-missing"
+  - document: "Bus division sale 2022: board outcome, valuation report, non-promoter vote result"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Independent director exit reasons (Nov 2023, Mar 2024) and FY26 AGM voting result on CMD pay"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Revenue of unlisted organised carriers Safexpress, Gati, V-Trans"
+    expected_source: "company filings via MCA / rating agency notes"
+    kind: "findable-missing"
+  - document: "Broker or research notes (research/ empty)"
+    expected_source: "none published by the company"
+    kind: "plausibly-nonexistent"
+  - document: "Prospectus (listed 2015, not expected)"
+    expected_source: "none"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "LTL parcel (90.2% of revenue)"
+    archetype: "Platform/network"
+  - line: "FTL (8.7% of revenue)"
+    archetype: "fits no known archetype"
+transition:
+  - line: "LTL parcel"
+    from_tier: "R2 COST-ADVANTAGED CONVERTER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER"
+    engine: "Realisation per tonne Rs 8,079 to Rs 8,840 (rate hikes, dropped low-margin contracts, smaller credit notes) with about 62% of the gain reaching EBITDA per tonne; tonnage recovery (+10.6% Q2 FY27) spread over semi-fixed employee and hub cost (employee cost 18.30% to 16.48% of revenue)"
+    proof_gate: "Q3 FY27 and Q4 FY27 each show tonnage growth of 9% or more YoY (and a print above 1,104 thousand tonnes within three quarters), realisation per tonne at or above Rs 8,840, and operating EBITDA margin ex other income at or above 21%"
+    recognition_gap: "Open question for Stage 11: whether the R3 state already appears in market pricing, resolved through the PE gap; no number or conclusion here"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Tonnage growth under 6% for two consecutive quarters; or realisation per tonne down more than 3% QoQ without a matching diesel cut; or operating margin below 20% with realisation at or above Rs 8,840"
+dominant_variables:
+  - "Tonnage YoY on the reset base (Q2 FY27 1,079 thousand tonnes, +10.6%)"
+  - "Realisation per tonne against the diesel pass-through (Rs 8,840, +9% YoY)"
+  - "Operating EBITDA margin ex other income with employee cost share (Q2 22.97%, H1 22.14%)"
+  - "Net debt including leases after the buyback and capex (ex-lease Rs 337 Cr at Sep 2026, about Rs 617 Cr after settlement)"
+business_falsifier: "Lorry hire rising as a share of income while the fleet count stays flat, or net branch additions turning negative, or LTL share of revenue falling away from about 90%: the owned fleet and hub network would no longer be the engine"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "4 of 6 externally observable"
+  single_point_failure: "Tonnage growth on the reset base (under 6% for two quarters breaks the transition alone); realisation per tonne is a second one-variable break for the margin leg"
+  fragility_verdict: "FRAGILE"
+candidate_count: 6
+second_order:
+  chains_drafted: 2
+  pending_live_links: 4
+  confirm_by_observations: 2
+research_brief_items: 18
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "e35c4a6931979bde84300b532fbad9bc061eeaff"

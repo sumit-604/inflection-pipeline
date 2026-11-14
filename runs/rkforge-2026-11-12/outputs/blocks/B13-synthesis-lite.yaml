@@ -1,0 +1,36 @@
+stage: B13-synthesis
+mode: phase-1-lite
+company: "RKFORGE"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+files_written:
+  - outputs/final/business-narrative.md
+  - outputs/final/gate-recommendation.md
+  - outputs/final/verifier-summary.md
+verifier_disagreement_log: "none (stated in verifier-summary.md; no log file written)"
+verdict: "PROCEED WITH CAVEATS"   # the five-verdict set only; evidence gate, not an investment decision
+verdict_rule_applied: 3           # rule 3 with the INDETERMINATE cash cap; rule 4 (verifier MAJORs) lands at the same verdict
+flags_active: ["FLAG-CASH (INDETERMINATE)", "FLAG-GATE0"]
+flags_not_active: ["FLAG-PROMOTER (B08 verdict CAUTION; fires on CONCERN or AVOID only)"]
+flags_carried: ["FLAG-LENDER-RECON", "FLAG-OFFBALANCE", "FLAG-EARNINGS-QUALITY", "FLAG-DISCLOSURE-CONTRADICTION", "CONCENTRATION", "NA-EXPORT-DEPENDENCE", "RDSO CONTRADICTION"]
+cash_determination: "INDETERMINATE"
+cash_missing_evidence: ["customer split of past due export receivables and collections since 31 Mar 2026", "H1 FY27 receivable ageing", "size, tenor and bank limits of acceptance and receivable sale programmes", "unit behind bank stock statement gaps"]
+partial_stages: ["B08-promoter", "B09-tam"]
+freshness_verdict: "FRESHNESS PAIRS OK"   # freshness cap not applied
+transition_posture: "NOT CLASSIFIED (Mental Model unsigned; recognition gap resolves at stage 11)"
+confidence_delta: {numerical: 98, redflag: 100, framework: 77.1, peer: 100, overall: 77.1}
+valuation_decision: ""            # not in phase 1 lite scope; formed in phase 3
+entry_range: {low: null, high: null}   # not in phase 1 lite scope
+headline: "Forging capacity built, cash and controls lag"
+falsification_metric: "Net debt at 31 Dec 2026 above Rs 1,700 Cr on the company's stated basis (Q3 FY27 results); cash flag falsifier: Q4 FY27 consolidated receivables plus inventory growing faster than H2 FY27 revenue"
+monitorables_count: 8
+open_items_halt1_count: 12
+source_fidelity_open: ["B12a finding 4: AR26 p.8 cited, correct anchor AR26 p.15; used only at p.15"]
+publish_candidate: false
+publish_candidate_summary: ""
+notion_save:
+  page_title: ""                  # no Notion payload in phase 1 lite
+  summary: ""
+  drive_link: "none"
+  mode: append-never-overwrite-status

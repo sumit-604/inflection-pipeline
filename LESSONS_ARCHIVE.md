@@ -1112,3 +1112,16 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-12 · RKFORGE /step1 Phase 1 (runs/rkforge-2026-11-12)
+- Collector: REPO_ROOT is hardcoded to a path that does not exist on this machine, and the headed Chromium launch fails ("spawn UNKNOWN"). Ran it through a scratch wrapper and a headless shim; tools/ not edited.
+- Collector left results/, rating/, announcements/ and shareholding/ empty (BSE API read failed). Filled by hand from the company site, India Ratings and the NSE API. Screener P&L, Quarters, Balance Sheet and Cash Flow sheets exported empty again.
+- The Q4 FY26 results PDF on the company site is an image-only scan and no tesseract is installed. The 1 May 2026 board outcome (OCR text layer) stands in for it.
+- Subagents ran async, not foreground. Completion was proven from the files each time. The harness gave one total per run, so session-cost.md has no fresh / re-read split.
+- Stage order: stage 9 started before B07 existed and took capex from the filings.
+- Verifier A shadow not run: .claude/shadow.yaml is armed, ten /step1 sessions ran at once, and another session claimed the one run. The switch was left untouched.
+- Verifier B overturned a stage 5 and stage 6 reading (bill discounting "outside gross debt", Rs 173 Cr add-back). One run of evidence toward the stage 5 model item in LESSONS.md.
+- Verifier C N8: prompts/12-verifiers-pipeline.md line 379 holds placeholder text where the business_understanding_narrative key belongs. Not edited in this run; needs a framework PR.
+- Verifier C N1: prompt 01 Block D does not define "latest" (FY or trailing twelve months). The Gate 0 label turns on it for this name. Operator ruling needed.
+

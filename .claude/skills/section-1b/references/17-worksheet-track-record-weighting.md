@@ -1,7 +1,7 @@
 # Chunk 17. The Section 2 worksheet line and Rule E track-record weighting
 
 Loaded by: Role 1 Section 2C-w and Section 4D. Pipeline: stage 11 (emits the 2C-w line in full); stage 10 (assembles `B10.credibility_grade`); stage 05 (produces the Role 5 grade in pipeline runs); stage 15 (Rule H precondition 1); Verifier C (12c).
-Sources in force: Section 1B v3.10 Amendment 26 worksheet line and Amendment 26.4; Master v3.7 §2C-w, §4D, pipeline position; Master Role 3 Rule H; quarterly-review skill (grade source).
+Sources in force: Section 1B v3.10 Amendment 26 worksheet line and Amendment 26.4; Master v3.7 §2C-w, §4D, pipeline position; Master Role 3 Rule H; the Role 5 trailing-four-quarter credibility grade per frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md (pipeline: B10.credibility_grade) (grade source).
 
 ## The 2C-w worksheet line (state in full, every run)
 
@@ -28,7 +28,7 @@ Rule H: Role 3 does not run unless this line declares a forward basis and the ma
 
 This skill carries no grading logic.
 
-- Once a quarterly history exists, the credibility grade comes from the `quarterly-review` skill's Role 5 trailing-four-quarter credibility grade.
+- Once a quarterly history exists, the credibility grade comes from the Role 5 trailing-four-quarter credibility grade per frameworks/Quarterly_Concall_Analysis_Protocol_v1_1.md (pipeline: B10.credibility_grade).
 - In pipeline runs the grade arrives as `B10.credibility_grade` (produced by stage 05, assembled by stage 10). Role 1 reads it; it never re-grades.
 - Mapping: A = Excellent, B = Good, C = Mixed, D = Poor.
 - If no grade exists, the weighting input is NOT FOUND: state it, and do not infer a grade.

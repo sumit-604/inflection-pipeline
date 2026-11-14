@@ -1,0 +1,58 @@
+stage: B08-promoter
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "shareholding pattern absent (B00): pledge trend rests on third-party aggregators (Trendlyne snippet, tier media/aggregator), not exchange filings"
+  - "no primary filing retrieved for the Secure Connection Ltd (HK) 22.5% holder; identity rests on an undated social-media thread plus arithmetic consistency (tier FORUM/SOCIAL + derived)"
+  - "MCA master data / shareholder register for Onyx SaaS, Zicom SaaS, Click Retail not retrievable (paid or blocked); only aggregator pages"
+flags: []
+verdict: "CAUTION"
+scorecard: {clean: 3, caution: 7, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "Related-party web is wide: 27 entities named in Note 36 (incl. 2 HK subsidiaries, 1 associate, 11 PG-named promoter-family entities); FY26 purchases from SCL (HK) Rs 155.39 Cr and a FY27 ceiling Rs 750 Cr; 22.5% of SCL sits outside CNL with a non-promoter CEO, so about 22.5% of the profit pool on the largest RPT leaks to him (NCI profit 842.15 lakh = 23.4% of HK PAT 3,594.54 lakh, derived)", evidence_tier: "VERIFIED (AR) + derived; holder identity FORUM/SOCIAL", source: "CNL AR FY26 Note 36 (AR p.88-89), Notice Item 4 (AR p.31, 77.50%), Annexure I (AR p.35-36); X/Rattibha thread https://en.rattibha.com/thread/1676211269496451072 (undated, c.mid-2023, search snippet only)", date: "2026-08 (AR); thread undated"}
+  - {finding: "Disclosure inconsistency on SCL ownership: Q2 FY27 call says 'wholly owned Hong Kong subsidiary, Secure Connection Limited'; AR Notice and consolidation note say 77.50%. SCL is also listed under 'entities where KMP have significant influence'", evidence_tier: "VERIFIED (company documents contradict each other)", source: "CNL_Q2FY27_transcript_2026-10 lines 97-98; AR p.31 and subsidiary note (77.50%); AR Note 36 list", date: "2026-10-29 call; 2026-08 AR"}
+  - {finding: "Click Retail Pvt Ltd, debtor Rs 47.74 Cr (4,773.50 lakh vs 222.83 lakh), FY26 sales to it Rs 26.78 Cr; WTD Vijay Advani is a director per AR and Zauba lists Mrs Purvi Patel (promoter, spouse of CMD) as a co-director; shareholders NOT FOUND", evidence_tier: "VERIFIED (balance, Advani) + MEDIA/aggregator (Purvi Patel as director)", source: "AR Note 36 (p.89), Annexure I (p.35-36); https://www.zaubacorp.com/company/U74900MH2012PTC238371", date: "2026-07-13 (Zauba page date)"}
+  - {finding: "World EMS Pvt Ltd (incorporated 4 May 2023, CIN U26400GJ2023PTC140815, aggregator data) is an RPT counterparty with sales Rs 26.70 Cr FY26 and Rs 49.91 Cr FY25 and receivable Rs 7.33 Cr; promoter linkage not established beyond AR classification", evidence_tier: "VERIFIED (AR) + aggregator", source: "AR Note 36 (p.89); https://qorpiq.com/company/world-ems-private-limited/U26400GJ2023PTC140815", date: "2026-08"}
+  - {finding: "CFO Abhijit Kanvinde resigned 14-Apr-2026 (personal reasons; ScanX adds age and health), one month before FY26 results where CFO/PAT was negative; successor Ajit Thakur (CA, joined 4-Dec-2025 as VP Finance, CFO 14-May-2026). Pay: CMD gross 114.07 to 158.23 lakh proposed (+38.7%), total executive pay 360.85 to 455.75 lakh (+26.3%)", evidence_tier: "VERIFIED (AR p.39-44; exchange outcome) + MEDIA (ScanX)", source: "AR Directors' Report s.11; https://scanx.trade/stock-market-news/companies/creative-newtech-cfo-abhijit-kanvinde-resigns-citing-health-and-age-concerns/37697459; NSE outcome 14-May-2026", date: "2026-04-14"}
+  - {finding: "Family on payroll and as counterparties: CMD, spouse (WTD to CSO, pay 81.68 lakh), Nidhi Patel (relative, Head Strategy, salary 40.99 lakh, +33%); promoter personal guarantees on bank debt and Shilpa Global (promoter-linked) property mortgaged to SBI; Ketan Patel lends to company at 12% (interest 4.49 lakh)", evidence_tier: "VERIFIED", source: "AR Note 36 (p.88-89); Note 15/17 security notes (AR p.82-83)", date: "2026-08"}
+  - {finding: "Zicom SaaS deal documents inconsistent: BSE release of 04-Nov-2026 says 100% acquired 'from its holding company Onyx SaaS' but the EGM resolution says Onyx holds 1,64,88,926 shares = 82.44%; balance 17.56% holder(s) unnamed. Seller Onyx is a Surat-based Khemani family vehicle (directors Vijaykumar and Amitkumar Khemani per aggregator) while CNL names UBOs Savita Agarwal and Vikas Khemani; no link to CNL promoters found; Zicom SaaS revenue/profit not disclosed in EGM notice", evidence_tier: "VERIFIED (notice) + aggregator", source: "EGM notice 06-Nov-2026 p.3, p.12, p.16; BSE release 04-Nov-2026; https://qorpiq.com/company/onyx-saas-private-limited/U74999GJ2022PTC129128; https://www.tofler.in/zicom-saas-private-limited/company/U74120MH2011PTC213916", date: "2026-11-06"}
+  - {finding: "Secretarial auditor lists minor compliance lapses FY26: CHG-1 filing errors, late newspaper ads and one late call-intimation, missing Reg 74(5) certificates on exchange portals", evidence_tier: "VERIFIED", source: "AR Annexure C (AR p.49-50)", date: "2026-05"}
+transition_evidence:
+  - {item: "Outside-family professional CFO: Ajit Thakur, CA, ex-M&M/Mahyco/Time Technoplast, CFO from 14-May-2026 (weak: promoter-run CMD/WTD/CSO structure unchanged)", anchor: "AR p.39-44; Q2 FY27 presentation p.7", date: "2026-05-14"}
+  - {item: "Purvi Patel stepped down as WTD 11-Aug-2025, but stayed as Chief Strategy Officer from 26-Aug-2025 (not an exit; family involvement continues, pay rose)", anchor: "AR Directors' Report s.11", date: "2025-08-11"}
+pledge_pct_latest: 0
+pledge_trend: "stable at 0.0% per Trendlyne quarterly summary Dec-2023 to Mar-2026 (aggregator search snippet, not exchange filing); promoters 56.62% flat, 85,02,220 shares, all individuals, per EGM notice BENPOS 30-Oct-2026 (VERIFIED)"
+searches_performed:
+  - "SCL HK 22.5% holder / Mohit Anand / Honeywell licence"
+  - "Onyx SaaS / Savita Agarwal / Vikas Khemani / Zicom SaaS"
+  - "Ketan Patel Creative Newtech SEBI order / penalty / adjudication"
+  - "Creative Newtech promoter pledge / shareholding"
+  - "Sapri Trading / SCL preferential allotment 69.5% (follow-up)"
+  - "Creative Newtech governance / related party / auditor controversy"
+  - "Ketan Patel / Creative ED, CBI, DRI, income tax, fraud, court"
+  - "IiAS / InGovern / SES / AGM voting results"
+  - "AmbitionBox / Glassdoor"
+  - "CFO Kanvinde resignation / Thakur appointment"
+  - "Gupta Raj & Co NFRA / ICAI action"
+  - "Valuepickr / forum promoter concerns"
+  - "Purvi Patel WTD resignation reason"
+  - "Ketan Patel IIM Bangalore / founder history"
+  - "Click Retail Pvt Ltd directors"
+  - "World EMS Pvt Ltd directors"
+  - "BSAS Infotech / Khemani / Zicom link"
+  - "WebFetch: Onyx SaaS (qorpiq), Zicom SaaS (tofler), Multibagg Zicom article"
+searches_skipped:
+  - "SEBI orders database direct query (sebi.gov.in search not available through tool; generic search only)"
+  - "NSE/BSE shareholding-pattern XBRL pledge columns (not retrievable; Trendlyne fetch returned 405)"
+  - "MCA21 master data and shareholder lists for Onyx SaaS, Zicom SaaS, Click Retail, World EMS, SCL HK (HK Companies Registry) (paid or blocked)"
+  - "FY23/FY24 AR SCL shareholding note (NSE AR PDF exceeded fetch size limit 10 MB)"
+  - "primary NSE filings of 2023/2024 SCL share swaps (financialfilings.com blocked automated fetch)"
+  - "Rattibha thread direct fetch (HTTP 403)"
+  - "IiAS/InGovern/SES own sites; SCORES complaint database; eCourts/NCLT case search by name; MCA disqualified-director list; CRISIL/ICRA rating-history archive"
+  - "independent-director background searches (Kurian Chandy, Suresh Bhagavatula, Mihir Shah, Prachi Jain)"
+  - "Honeywell International licence term/ownership confirmation"
+verdict_basis: "No SEBI/criminal/tax/regulatory adverse record found and pledge 0.0% (aggregator), but a 27-entity related-party web, a non-promoter 22.5% holder in the sub carrying the Honeywell RPT (Rs 750 Cr FY27 ceiling), a CFO exit before weak FY26 cash flow, and conflicting company statements on SCL ownership and Onyx's stake put it at CAUTION, not CONCERN."
+analyst_note: "22.5% of SCL: the only identification is an undated X thread (c.2023) saying CNL 69.5%, Mohit Anand 22.5%, Sapri Trading 8%. Check: Sapri swapped 2,267 SCL shares into CNL stock in Aug-2023 (25% to 8%, so about 13,335 total shares) and 1,066 in 2024 (8%, about 13,325 total); 69.5%+8%=77.5%, exactly the AR's 77.50%. NCI profit 842.15 lakh is 23.4% of HK PAT 3,594.54 lakh. So the holder is almost certainly Mohit Anand, SCL's CEO and Honeywell-licence operator, but this is derived, not filed. Ask management who holds the Honeywell licence and whether Anand has put/call or profit-share terms. Onyx: no promoter link found; the 100% vs 82.44% mismatch needs an answer before the 28-Nov-2026 EGM. Click Retail: ask for ageing of Rs 47.74 Cr and its shareholders."

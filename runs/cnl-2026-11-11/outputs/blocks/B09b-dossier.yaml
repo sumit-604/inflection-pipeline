@@ -1,0 +1,76 @@
+stage: B09b-dossier
+company: "CNL"
+run_date: "2026-11-11"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Shareholding pattern, Sep-2026 quarter and prior eleven (pledge, FII/DII trend)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "FY2023-24 and FY2024-25 annual reports"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Q3 FY26 and Q1 FY27 concall transcripts"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Screener P&L, Balance Sheet, Cash Flow, Quarters sheets and peer CSVs (blank or absent exports)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "BSNL BharatNet Odisha work order Reg 30 filing"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Infinova India acquisition filing (not yet filed at 29 Oct 2026)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Honeywell licence agreement, term and royalty rate"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+  - document: "Broker or research notes (research/ empty)"
+    expected_source: "company IR page"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Market Entry Specialist (distribution, 85.89% of FY26 product revenue)"
+    archetype: "fits no known archetype (nearest: Outsourcing partner)"
+  - line: "Brand Business (Honeywell licence, CyberPowerPC, WOZOYO; 14.11%)"
+    archetype: "Licence/scarcity business"
+transition:
+  - line: "Brand Business"
+    from_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (assembler mapping, operator to confirm)"
+    to_tier: "R5 BRAND / SCARCITY OWNER (claimed: brand 40% of revenue by FY29)"
+    engine: "Brand share of group revenue rising (14.11% FY26, 17.37% H1 FY27, 19.03% Q2 FY27) at 33.16% segment result versus 3.76% market entry; Make-in-India supplier mix lifting market-entry result (6.66% H1 FY27)"
+    proof_gate: "Brand share held at or above 19.03% with brand segment result at or above 33% in Q3 and Q4 FY27; consolidated closing receivable days below 65 at 31-Mar-2027 with FY27 CFO/PAT above 0.7 ex payables swing; signed Honeywell renewal (about 5 years, current territories) by Aug 2027"
+    recognition_gap: "Open question for Stage 11 via the PE gap: does the brand-led TO state already look reflected in market pricing? No PE in inputs; no conclusion drawn here"
+    ugliness: "STRUCTURAL-FEATURE (provisional; B13 cash determination INDETERMINATE; operator to classify)"
+    transition_falsifier: "Honeywell non-renewal, shorter term, territory loss or royalty step-up; brand segment result below 30% or share below 14%; NWC days above 60 with receivables above Rs 616.71 Cr at Q3 FY27; closing receivable days above 80 at 31-Mar-2027"
+  - line: "Market Entry Specialist"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R1 held (no tier migration claimed; margin lift from Make-in-India supplier mix only)"
+    engine: "Supplier mix shift lifting segment result from 3.36% to 6.66% (H1 FY26 to H1 FY27)"
+    proof_gate: "Market-entry segment result above 5.5% in Q3 and Q4 FY27"
+    recognition_gap: "Open question for Stage 11 via the PE gap; no tier claim to test; no conclusion drawn here"
+    ugliness: "STRUCTURAL-FEATURE (provisional; funds the climb but carries the cash drain, CFO negative 7 of 8 years)"
+    transition_falsifier: "Segment result reverts toward 3% as mix normalises (B05 trigger 3)"
+dominant_variables:
+  - "Honeywell licence renewal and brand segment share and result"
+  - "Cash conversion and funding (receivable days, NWC days, CFO/PAT, short-term borrowings vs rated limits)"
+  - "Offshore profit and related-party perimeter (HK 51.1% of PAT at nil tax; SCL ceiling Rs 750 Cr)"
+  - "New-line disclosure (BSNL, Infinova, WOZOYO, Zicom) and market-entry segment margin"
+business_falsifier: "Hong Kong subsidiary statements (51.1% of consolidated PAT, not audited by group auditor) fail audit, draw tax or remittance charge, or prove a related-party transfer-pricing conduit; the 22.5% SCL holder shown to operate the Honeywell licence outside group control; refinancing event on on-demand short-term lines"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 8
+  verifiability_ratio: "5 of 8 externally observable"
+  single_point_failure: "Honeywell licence renewal (brand segment 59% of FY26 segment result; expiry March 2027)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 8
+second_order:
+  chains_drafted: 2
+  pending_live_links: 4
+  confirm_by_observations: 2
+research_brief_items: 20
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "850779b628964e3843fbd3b4cb8bff15c136d131"

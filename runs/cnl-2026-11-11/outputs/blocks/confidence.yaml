@@ -1,0 +1,17 @@
+stage: confidence
+company: CNL
+run_date: 2026-11-11
+phase: 1
+confidence_delta:
+  numerical_acceptance: 99        # B12a acceptance_rate; 517 numbers checked, mandatory 180/180; 0 CRITICAL (identity check: no CRITICAL rows to test)
+  redflag_coverage: 92.3          # B12b material_caught 12 / material_found 13 (caught + partially caught); strict full-catch 61.5%
+  framework_adherence: 86.0       # B12c phase-1 portion only (Gate 0 22 + EM 21 rules = 43; 37 passed); valuation half pending phase 3
+  peer_utilisation: 100           # B12d substantive_confirmed 12 / peers_audited 12
+  overall: 86.0
+  overall_set_by: framework_adherence
+  not_applicable: []
+  band: "75-89 normal, note specifics"
+rework: false
+rework_basis: "No CONFIRMED Verifier A CRITICAL; no acceptance rate below 60% on a denominator of 4 or more (OR-29)."
+remediation_cycle_run: false
+verifier_disagreements: "none (no downstream step relied on or cleared a Verifier A source-fidelity row; the one source_fidelity row, B07 F1 anchor p.43-44 vs p.41, is corrected by the appended stage-reported correction and confirmed by Verifier A)"

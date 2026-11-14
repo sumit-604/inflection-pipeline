@@ -1,0 +1,60 @@
+stage: B00-inputs
+company: KUSUMGAR
+run_date: 2026-11-12
+model: orchestrator session (claude-fable-5-2); document identity by stage-00-intake-check (claude-haiku-5-5)
+status: complete
+spear: "Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:
+  - "Cash conversion: debtor days about 26 (FY25) to 123 (FY26); CFO negative FY25, small FY26; fall in other liabilities Mar 2024 to Mar 2025"
+  - "Segment mix (A&D about 55%) and lumpiness: FY26 revenue down about 11%, H1 FY27 up about 91%; single Indian government customer share"
+  - "Capacity utilisation 94.3% / 42.3% / 49.5% (FY24/25/26) against IPO statement of INR 2,000 Cr revenue by FY30 with no major capex"
+  - "Concentration and governance: top 6 customers 49.35%, exports 40%; IPO 100% offer for sale; borrowings about INR 300 Cr left in place"
+listed_date: 2026-07-15
+recently_listed: true
+concalls_available: false   # collector rule (fewer than 3 transcripts). The company holds calls; one transcript is in concalls/.
+sector_cap_row: "Defence / strategic"
+sector_cap_row_evidence: "About 55% of FY26 revenue is aerospace and defence fabrics and solutions (web brief, to be verified by B04 against the prospectus). Cap 38x, .claude/skills/section-1b/references/05-sector-cap.md. Second reading: Cables / Industrial products 25x for the other 45%; no technical-textiles row exists; a blended cap is an operator ruling at the /fttcp pillar gate. Collector guess 'Pharma / CDMO' rejected."
+reporting_units: {results: "INR million", prospectus: "INR million", presentation: "INR million", screener: "INR Cr", rating: "INR Cr"}
+inventory:
+  prospectus: 1        # Prospectus dated 2026-07-10, 495 pages, text OK; SECTION_INDEX.md beside it
+  annual-report: 0
+  results: 2           # Q1 FY27, Q2 and H1 FY27
+  rating: 2            # CARE Apr 2026; CRISIL 22 Oct 2026 (issuer not cooperating)
+  concalls: 1          # Q1 FY27 (call 14 Aug 2026)
+  peer-concalls: 6     # ARVIND 2, MAYURUNIQ 4, GARFIBRES 0
+  announcements: 12
+  shareholding: 1      # screener page print, SECONDARY
+  research: 0
+  screening: 4         # Data Sheet CSVs only (main + 3 peers)
+  presentation: 2
+  other: 1             # scanned FY2025-26 standalone statements, not consumed
+input_gaps:
+  - "annual-report ABSENT: no annual report exists (listed 2026-07-15; none on screener or the company site). The prospectus restated consolidated financial information (FY2024-FY2026, PDF pages 271-332) stands in for stages 2, 3, 4 and 7. Departure from the DEGRADATION MAP line that skips stages 2 and 3; precedent Kwick 2026-10-04 and AMAGI 2026-07-12."
+  - "inputs/other/Kusumgar_Standalone_Financial_Statements_FY2025-26_scanned_no_text.pdf: scanned, no text layer; tesseract not installed so tools/ocr_repair.py cannot run. UNIDENTIFIED from content, never anchored evidence, not consumed. The statutory auditor's CARO report is therefore not in the corpus."
+  - "concalls: one transcript (Q1 FY27, call 14 Aug 2026). No Q2 FY27 call was held: the company filed a written Investor Q&A with the Q2 results instead (Q2 FY27 presentation p.22-25). Stage 5 ran in no-concall mode and also read the one transcript. Earlier blocks (B01-B05) carry the withdrawn wording 'transcript not published'; this entry governs."
+  - "peer-concalls: GARFIBRES has no transcripts on screener (presentations only, back to 2023). ARVIND Aug and Oct 2026 transcripts carry no link on screener; ARVIND Nov 2025 and Jul 2025 links returned 404. Peer coverage is 6 transcripts across 2 of 3 peers."
+  - "screening: Data Sheet CSVs are populated (checked for content). The Profit & Loss, Quarters, Balance Sheet and Cash Flow export sheets came out EMPTY for the main company and all peers: ABSENT documents."
+  - "shareholding: only a screener page print of the Sep 2026 pattern (page 4 of the print), SECONDARY tier, not the exchange filing; BSE refused automated access. Collector gap, not evidence about the company. The FII+DII UA qualifier is unevidenced at filing tier."
+  - "research: empty. No effect on anchored evidence."
+  - "results: no audited FY2026 annual results filing exists (pre-listing); FY2026 comes from the prospectus."
+  - "rating: the newest document is a CRISIL 'issuer not cooperating' rationale (22 Oct 2026). The company's 23 Oct 2026 exchange filing (announcements/20261023-d614aaae) addresses it. The CARE rationale (Apr 2026) is the cooperating one. Both are passed to stages."
+  - "announcements: 12 filings, several duplicates of the same filing (5 Nov board outcome x3 plus results/; 18 Sep e-voting x2). Kept as collected."
+  - "collector_warning: shareholding/ is empty: no source is automated yet. Push the latest quarterly shareholding pattern by hand; it closes the FII+DII UA qualifier and the promoter pledge trend."
+  - "collector_warning: screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them (main and all peers: Profit & Loss, Quarters, Balance Sheet, Cash Flow, Customization)."
+  - "collector_warning: no AR found on screener: AR stages will be skipped"
+  - "collector_warning: no results PDFs yet (screener has none): add later on github or locally + --push-again [repaired by /step1: two results filings hand-collected]"
+  - "collector_warning: no rating PDF yet: add later the same way [repaired by /step1: two rationales hand-collected]"
+  - "collector_warning: only 1 concalls -> no-concall mode"
+  - "empty-folder confirmation: SUPPRESSED by the /step1 autonomy contract; standing answer 'proceed with the gaps'. Empty folders: annual-report, research."
+freshness_pairs:
+  - {pair: "results to concall", trigger_doc: "inputs/results/Kusumgar_Results_Q2FY27_2026-11-05.pdf", mate_expected: "Q2 FY27 earnings call transcript", status: PASS, missing_doc: "", note: "CORRECTED after stage 5 (2026-11-12): no Q2 FY27 earnings call was held. The company filed a written Investor Q&A with the results in place of a call (Investor_Presentation_Q2FY27_2026-11-05.pdf p.22-25, Q&A item 21). That Q&A is in the corpus, so no mate is missing. The first stage 0 reading (FAIL, transcript not published) was wrong and is withdrawn."}
+  - {pair: "rating bulletin to rationale", trigger_doc: "inputs/rating/Kusumgar_Rating_CRISIL_Rationale_2026-10-22.pdf", mate_expected: "full rationale", status: PASS, missing_doc: ""}
+  - {pair: "SEBI order to order text", trigger_doc: "none found by grep in results and announcements", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: "AR to latest audited annual results", trigger_doc: "none: no AR and no annual results filing exist", mate_expected: "n/a", status: "NOT APPLICABLE", missing_doc: ""}
+freshness_verdict: FRESHNESS PAIRS OK
+corpus_manifest_ref: outputs/blocks/B00-intake.yaml   # 33 rows; orchestrator verified the two non-matching rows at the page
+intake_verification:
+  - "inputs/shareholding/Kusumgar_Shareholding_Screener_Sep2026_SECONDARY.pdf: intake said folder_match false (page 1 is the screener summary). Orchestrator read the print: the shareholding table is on page 4. Stays in shareholding/, SECONDARY."
+  - "inputs/other/...scanned_no_text.pdf: UNIDENTIFIED, stays in other/."
+flags: []
+analyst_note: ""

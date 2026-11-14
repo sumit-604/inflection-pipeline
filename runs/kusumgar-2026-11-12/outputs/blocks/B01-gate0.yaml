@@ -1,0 +1,50 @@
+stage: B01-gate0
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "annual-report ABSENT: no annual report exists yet (listed 2026-07-15). The prospectus restated consolidated financial information (FY2024-FY2026) stands in."
+  - "FY2025-26 standalone audited financial statements are a scanned PDF with no text layer and no OCR tool on this machine; held in inputs/other/, not consumed."
+  - "concalls: one transcript only (Q1 FY27, Aug 2026). The Q2 FY27 call transcript was not published at collection."
+  - "peer-concalls: 6 transcripts (ARVIND 2, MAYURUNIQ 4); GARFIBRES publishes none on screener."
+  - "screening: only the Data Sheet CSVs are populated; the Profit & Loss, Quarters, Balance Sheet and Cash Flow export sheets came out EMPTY and count as absent."
+  - "shareholding: only a screener page print of the Sep 2026 pattern (SECONDARY)."
+  - "research: empty."
+  - "results: two filings (Q1, Q2 FY27); no audited FY2026 annual results filing exists (pre-listing)."
+  - "history: 4 years of annual data at most (FY2023-FY2026)."
+flags:
+  - {type: FLAG-GATE0, reason: "Pre-downgrade class AVERAGE (core 59, MODERATE moat), one tier down to AVOID by the 4-year LIMITED data rule. Depressors: Block B = 0 (cum CFO/PAT 0.28 FY23-26; cum FCF negative FY24-26 as capex of 2,543.67 INR m outran CFO; WC days 104.3 FY24 -> 190.6 FY26, debtor days 33 -> 123), ROCE 55.9% -> 24.8% (FY24 capital employed depressed by a 2,645 INR m spike in other current liabilities that reversed in FY25), FY26 revenue -11%, capacity utilisation 94.33% -> 42.32% -> 49.50% (prospectus p.192). Deal-breaker 4 (CFO/PAT <0.50) is driven by FY25 (CFO -154.98 Cr) and FY26 (28.26 Cr). Post-IPO rebase and a young listing history; downstream sizing may override."}
+data_years: 4
+fy_range: "FY2023 to FY2026"
+blocks: {A: 15, B: 0, C: 16, D: 17, E: 11}
+core_score: 59
+moat_score: 13
+grand_total: 72
+moats_confirmed: 3
+moat_class: "MODERATE"
+classification: "AVOID"
+deal_breakers:
+  - "DB4 cumulative CFO/PAT 0.277 (<0.50) -> max AVERAGE; driven by FY25 CFO -154.98 Cr and FY26 CFO 28.26 Cr against PAT 111.99 and 98.2 Cr (screener-data)"
+  - "DB2 Block B 0 (<8) -> max GOOD (not binding)"
+history_downgrade: true
+data_notes:
+  - "Units: screener-data in INR Cr; prospectus and results in INR million. No silent conversion; 100 INR million = 10 INR Cr."
+  - "Pre-downgrade classification AVERAGE (core 59 in 40-59 band). History 4 years = LIMITED, one-tier downgrade gives AVOID."
+  - "ROCE computed by the company on the same formula as the pipeline (EBIT = PBT + finance cost; capital employed = total assets - current liabilities, year end): 55.87% FY24, 42.89% FY25, 24.76% FY26 (prospectus p.191). Re-derived from p.75 and p.77: matches. FY23 ROCE NOT FOUND (no current-liability split in screener-data). Screener page shows ROCE 23.8% latest (secondary, cross-check only)."
+  - "ROE (prospectus p.191, average total equity): 86.13% FY24, 56.26% FY25, 25.82% FY26. FY23 ROE NOT FOUND (no FY22 equity)."
+  - "FY23 capex, trade payables, current liabilities NOT FOUND (screener-data has only totals). B2, B3, B4 therefore run on FY24-FY26 only; B1, C run on FY23-FY26."
+  - "Capex = PPE purchase net of subsidy + intangibles (prospectus p.78): FY24 780.42, FY25 1,067.38, FY26 695.87 INR m. FCF = CFO - capex: +1,229.22, -2,617.14, -413.29 INR m. FCF-positive 1 of 3 years."
+  - "Working capital days built on year-end balances and revenue basis (prospectus p.75, p.77): 104.3 FY24, 68.3 FY25, 190.6 FY26. Company-reported working capital cycle (average net working capital basis) is (10), 14, 90 days (prospectus p.191); different formula, same direction."
+  - "Net debt / EBITDA uses borrowings only (lease liabilities 648.76 INR m excluded): 0.93x (prospectus p.191, p.333). Including leases the ratio is 1.28x (computed), band 3 not 4."
+  - "E2 promoter change: no 3-year series exists (listed 2026-07-15). Pre-offer promoter and group 89.44% (prospectus p.59) to 75.01% Sep 2026 (shareholding print, SECONDARY) = -14.43pp, caused by the IPO offer for sale (Q2 FY27 results p.7, all 15,521,350 shares sold by selling shareholders). Scored 0 as a decrease above 3pp; the cause is mechanical."
+  - "E3 pledge 0%: prospectus p.110 (July 2026). The Sep 2026 pledge column is NOT FOUND on the secondary print; the prospectus statement is the latest evidence."
+  - "E4 contingent liabilities 1,089.70 INR m (bank guarantee 1,038.77 + tax demand 10.14 + letter of credit 40.79; capital commitments 58.33 excluded) over equity 5,029.54 INR m = 21.7% (prospectus p.80, p.75). Bank guarantees are non-fund facility lines (sublimit of fund based, prospectus p.336)."
+  - "M3 uses company fixed asset turnover 3.40x on average PPE (prospectus p.191). On closing PPE only: 6,920.03/2,356.68 = 2.94x, which scores 3 not 5. Moat count unchanged either way."
+  - "M11 mechanical artifact: only 3 years, two-window test impossible; scored on overall trend (revenue CAGR 31.9% >= 20%, selling and admin share of sales 5.07% FY23 -> 4.54% FY26). A fabric maker has no network effect; the 3 is a rule artifact. At 0 the moat count is 2, class still MODERATE."
+  - "M4 scored 0: one revenue decline year (FY26), not recovered on a full-year basis, and receivable days moved 33 -> 123. H1 FY27 revenue 498.19 Cr vs 261.25 Cr H1 FY26 (+90.7%, screener-data quarters) is not a full-year recovery."
+  - "PEER DATA NEEDED: M2 (peer median EBITDA margin), M5 (segment market cap ranks), M9 (peer gross margin; own proxy (Revenue - material cost)/Revenue = 62.97% FY26 from screener-data). M6 R&D/revenue 0.32% FY26 (prospectus p.35), scored 0 on the first test. M7, M8 NOT FOUND in the Gate 0 pages, scored 0."
+  - "FY23 screener-data basis may differ from the restated FY24-FY26 basis (the company had no subsidiaries in FY24; prospectus p.76 note, Note 51 common-control combination). Revenue CAGR 31.9% and PAT CAGR 38.2% (FY23-FY26) mix the two bases. Restated FY24-FY26 only: revenue CAGR 21.61%, PAT CAGR 7.87% (prospectus p.191 text)."
+  - "No loss-to-profit swing in the window."
+block_b_trend: "deteriorating: working capital days 68.3 (FY25) -> 190.6 (FY26), debtor days 26 -> 123 (screener-data ratios); cumulative CFO/PAT 0.28 FY23-26"
+analyst_note: "Block B scores 0 on every line, and it carries the call. FY24 CFO of 200.96 Cr was fed by a 1,265.54 INR m rise in other liabilities; FY25 reversed it (other financial liabilities -1,260.89 INR m, other liabilities -1,211.02 INR m, prospectus p.78). So FY24 ROCE of 55.87% and its CFO are the odd year, and the A4 zero (ROCE down 31pp) compares FY26 against that odd year. FY26 receivables rose 1,616.28 INR m on a revenue fall of 11%, so FY26 CFO of 282.58 INR m is after a receivable build, not a weak operating profit (operating profit before working capital 2,077.50 INR m). H1 FY27 CFO 340.73 INR m with receivables down 194.29 INR m (Q2 FY27 results p.6) is the first evidence of collection. The AVOID label stacks a LIMITED-history downgrade on an AVERAGE; the pre-downgrade AVERAGE is the cleaner reading. Capacity utilisation is 42-50% after capacity doubled, the operating-leverage observation for later stages."

@@ -1,0 +1,83 @@
+stage: B04-bizmodel
+company: "KUSUMGAR"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "annual-report ABSENT: no annual report exists (listed 2026-07-15). The prospectus (dated 2026-07-10) stands in; restated financials cover FY2024-FY2026 only."
+  - "concalls: one transcript only (Q1 FY27). The Q2 FY27 call transcript was not published at collection."
+  - "peer-concalls: 6 transcripts (ARVIND 2, MAYURUNIQ 4); GARFIBRES publishes none on screener."
+  - "screening: only Data Sheet CSVs are populated."
+  - "segment split for H1 FY27 and for any quarter: NOT FOUND (single reportable segment; company publishes no quarterly product-line split) (Q2 Pres p.22 Q5; Q2 Res p.13 note 4)."
+  - "order book, tender win rate, segment margin, government-customer share separate from other government-owned entities: NOT FOUND (Q2 Pres p.23 Q10; Prospectus p.190)."
+  - "Rs 2,000 Cr FY30 revenue target: NOT FOUND in any filed document in this corpus; Step 1 brief only."
+flags:
+  - {type: FLAG-LUMPY-MIX, reason: "Two single orders drove FY25: CFF 2,225.88 (28.90%) and a fabrics order 2,045.75; fabrics order fell to 286.16 in FY26 'not re-ordered'; A&D share 68.98/76.87/54.64% FY24-26 (Prospectus p.340, p.342, p.190). H1 FY27 growth is attributed to A&D solutions contracts but the split is NOT FOUND."}
+  - {type: FLAG-CASH, reason: "Three-year CFO 742.46 vs EBITDA 5,080.86 = 14.6% (derived, Prospectus p.375, p.345); H1 FY27 CFO 248.85 vs EBITDA ex other income 1,425 = 17.5% (derived, Q2 Res p.12, Q2 Pres p.6); inventories +739.83 in H1 FY27 (Q2 Res p.12). Mar 2024 liabilities were customer advance 1,264.61 plus ECFPL consideration 1,118.53, both unwound in FY25 (Prospectus p.321, p.373-375)."}
+  - {type: FLAG-MARGIN-DEFINITION, reason: "Q2 Q&A labels 29.6/25.6/30/29.7% as EBITDA excluding other income, but they match EBITDA including other income (FY26 2,076 = 1,878.50 + 197.75). Prospectus basis is 28.18/24.18/27.15%. Own H1 FY27 ex-other-income margin 28.6% (derived) (Q2 Pres p.6, p.23; Prospectus p.345)."}
+  - {type: FLAG-SECTOR-CAP-EVIDENCE, reason: "A&D end-use majority all three years but government-owned buyers only 3.34/34.65/15.09%; non-A&D lines 45.36% of FY26 contract revenue (derived, Prospectus p.190); no segment margin; operator to rule row at the pillar gate."}
+  - {type: FLAG-PARTNER-IP, reason: "FY26 parachute systems run under a licence with a technology partner who keeps the IP; no registered IP in the company's name (Call p.13; Prospectus p.210, p.214)."}
+business_type: "hybrid"
+revenue_streams:
+  - {name: "A&D Fabrics (FY26; 68.79% FY24, 48.06% FY25; Prospectus p.190)", type: "Product sales, spec-in, order-driven", pct_of_revenue: 31.67, predictability: "M-L"}
+  - {name: "A&D Solutions (FY26; 0.19% FY24, 28.81% FY25; includes service contract revenue; Prospectus p.190, p.320)", type: "Project/order-book plus services", pct_of_revenue: 22.97, predictability: "L"}
+  - {name: "Industrial and Automotive Fabrics (FY26; 24.44% FY24, 14.63% FY25; Prospectus p.190)", type: "Product sales, qualified repeat", pct_of_revenue: 24.43, predictability: "M-H"}
+  - {name: "Outdoor and Lifestyle Fabrics (FY26; 6.40% FY24, 7.39% FY25; Prospectus p.190)", type: "Product sales, brand-nominated, seasonal", pct_of_revenue: 18.57, predictability: "M"}
+  - {name: "Other sales (FY26; Prospectus p.190)", type: "Trading and job work", pct_of_revenue: 2.36, predictability: "L"}
+asset_intensity: "medium"
+wc_intensity: "high"
+pricing_power: "moderate"
+cyclicality: "secular-growth (order-lumpy, tender-timed; not macro-cyclical)"
+moats_present:
+  - "Switching costs from multi-year qualification: high where qualified; a large FY25 fabrics order did not repeat (Prospectus p.192, p.340)"
+  - "Process know-how and certifications (AS9100D, IATF 16949): medium to high; no registered IP (Prospectus p.205, p.208, p.214)"
+  - "Cost position from vertical integration: medium (Prospectus p.198)"
+  - "Licensed partner designs, India-exclusive parachute rights: medium; partner holds IP (Prospectus p.195-196, p.210)"
+  - "Government qualification barrier: medium (Prospectus p.164, p.193)"
+valuation_methods:
+  primary: {method: "P/E on normalised through-cycle EPS, with Section 1B destination PE for the exit", why: "Profit in every year FY24-FY26; earnings lumpy by order so single-year EPS misleads; Prospectus p.345-347, p.366"}
+  secondary: {method: "EV/EBITDA on Prospectus-basis EBITDA ex other income", why: "Capital structure changed (CCPS raise, 2,556.63 borrowings, leases); cross-checks P/E against GARFIBRES, ARVIND, SRF (Prospectus p.123, p.127-128; Q2 Res p.11)"}
+  tertiary: {method: "Reverse DCF / FCF test, low weight", why: "Three-year free cash flow is negative; forward DCF unreliable until receivables convert (B03; Prospectus p.375)"}
+  not_applicable:
+    - "EV/Sales: margins differ widely by line and quarter"
+    - "P/B and ROE-linked: ROE fell 86.13% to 25.82% on equity raises (Prospectus p.346)"
+    - "SOTP: no segment profit disclosed (Q2 Res p.13)"
+    - "DDM: dividend history NOT FOUND in pages read"
+    - "NAV or replacement cost: capacity 49.50% utilised (Prospectus p.204)"
+irrelevant_ratios:
+  - "Spot ROE and ROCE: denominators moved with CCPS raise and pre-built capacity (Prospectus p.346-347)"
+  - "Prospectus working capital cycle 90/14/(10) days: nets cash and borrowings, FY24 flattered by 1,264.61 advances (Prospectus p.347, p.321)"
+  - "Single capacity-utilisation number: metres not comparable across production runs (Call p.11)"
+  - "Quarterly growth and margin read alone: management says read annual trends (Q2 Pres p.22)"
+  - "Book-to-bill and order-book coverage: not disclosed (Q2 Pres p.23)"
+  - "Deck EBITDA margin series: includes other income despite label (Q2 Pres p.6, p.23)"
+must_track_metrics:
+  - {metric: "CFO / EBITDA (half-year and full-year)", healthy: "50% or more; three-year FY24-26 is 14.6%", red_flag: "Under 30%"}
+  - {metric: "Trade receivable days, split government vs export", healthy: "Under 90 days (Sep 2026 80.7 derived)", red_flag: "Above 120 days (Mar 2026 123)"}
+  - {metric: "Execution of the 2,371.96 mn A&D Solutions order", healthy: "80% executed by Mar 2027", red_flag: "A second deferral"}
+  - {metric: "EBITDA margin excluding other income, own calculation", healthy: "27% to 29% (FY26 27.15%, H1 FY27 28.6% derived)", red_flag: "Under 24% (FY25 level)"}
+  - {metric: "Final-output capacity utilisation and fixed-asset turnover", healthy: "Utilisation above 70%, turnover 4.0 or more", red_flag: "Utilisation under 55% for four quarters, turnover under 3.0"}
+unit_economics:
+  unit: "One metre of finished fabric produced in the five final-output factories (weak unit: systems and services are not per metre)"
+  revenue_per_unit: "Sale of products per metre produced: 102.8 (FY24), 165.5 (FY25), 98.4 (FY26) INR, derived (Prospectus p.204, p.207)"
+  margin_per_unit: "EBITDA per metre produced: 29.8 (FY24), 40.6 (FY25), 29.7 (FY26) INR, derived (Prospectus p.345); incremental EBITDA margin 18.2% FY25, FY26 flat on lower revenue, 38.2% H1 FY27 (derived)"
+  key_lever: "Mix between fabric and finished systems, and filling 127.80 million metres of final-output capacity (49.50% used in FY26)"
+first_deterioration_signals:
+  - {risk: "Order lumpiness", first_signal: "Quarterly revenue falling below the Q2 FY27 run-rate of 250.9 Cr"}
+  - {risk: "Large fabrics order not repeated", first_signal: "A&D Fabrics revenue excluding the large order"}
+  - {risk: "Margin mix reversion", first_signal: "EBITDA excluding other income below 27%"}
+  - {risk: "Stock build flatters margin", first_signal: "Inventories above 2,688.41 mn and finished goods rising"}
+  - {risk: "Cash conversion", first_signal: "Trade receivables above 2,332.79 mn or half-year CFO/EBITDA under 30%"}
+  - {risk: "FX and hedge gap", first_signal: "Net FX gain or loss in other income; forwards 142.97 vs foreign receivables 1,671.82"}
+  - {risk: "Partner-held IP and licence", first_signal: "Royalty expense (88.61 mn FY26) and any change in the licence terms"}
+  - {risk: "Government payment timing", first_signal: "New ECL provisions on government receivables"}
+mgmt_questions:
+  - "What share of H1 FY27 revenue came from the 2,371.96 mn order and what from new orders?"
+  - "What are receivables by customer type and ageing at Sep 2026, and how much is government?"
+  - "Why did inventories rise 739.83 mn in H1 FY27 while sales rose 91%?"
+  - "What are the parachute licence terms and can the partner recall them?"
+  - "Which named approvals take utilisation from 55-60% to 80%?"
+  - "Why does the Q2 Q&A label an other-income-inclusive margin series as excluding other income?"
+  - "Is a follow-on to the FY25 large fabrics order of 2,045.75 mn expected, and when?"
+one_line_verdict: "A spec-driven fabric maker moving into order-lumpy defence systems with a half-empty new plant, strong H1 FY27 earnings, and unproven cash conversion; revenue split by year supports a defence reading in FY24-FY25 and a mixed reading in FY26."
+analyst_note: "Three points a later stage cannot rebuild. (1) Mar 2024 liabilities: customer advance 1,264.61 plus ECFPL consideration 1,118.53 unwound in FY25; they inflate FY24 CFO and depress FY25 CFO, so 3-year CFO/EBITDA is the fair read (14.6%). (2) Deck EBITDA includes other income: FY26 2,076 = 1,878.50 + 197.75; use ex-other-income 28.6% for H1 FY27. (3) The whole unexecuted balance of the 2,371.96 order (about 1,812, derived) is 36.4% of H1 FY27 revenue, so at least 63.6% came from other work. A&D share is end-use, not buyer: government-owned buyers were 15.09% of FY26. H1 FY27 segment mix is NOT FOUND, so the sector-cap row cannot be tested on current data."

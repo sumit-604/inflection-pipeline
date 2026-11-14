@@ -1,0 +1,74 @@
+stage: B09-tam
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent (empty export)"
+  - "research/ empty"
+  - "peer CINELINE has no concall transcripts"
+  - "sector_cap_row NOT FOUND (phase 3 gap)"
+  - "prospectus not held (long-listed, not a gap)"
+  - "multiplex share of industry GBOC NOT FOUND (separates SAM 16,456 from a lower reading)"
+  - "industry FY26 admissions NOT FOUND (CY25 832 Mn used as proxy)"
+  - "MovieMax and Carnival screen counts NOT FOUND; Cinepolis, Miraj, Mukta A2 counts undated web figures"
+  - "what asset-light and FOCO screens book in the P&L NOT FOUND (carried from B04)"
+  - "SMART unit economics NOT FOUND (carried from B07)"
+  - "current P/E NOT FOUND (no market data in corpus)"
+flags:
+  - {type: FLAG-MGMT-CLAIM-INFLATED, reason: "AR claim of about 45,000 screens at half China density x industry Rs 1.35 Cr per screen = Rs 60,817 Cr implied (derived) = 3.41x conservative TAM 17,841 Cr; screens are not demand (0.57 visits per head, 83k admissions per screen)"}
+  - {type: FLAG-GROWTH-CLAIM-VS-CHART, reason: "AR says box office compounded 7-8% over the last decade; AR's own chart gives CY15-CY25 4.9%, CY19-CY25 3.4%, CY22-CY25 8.0% (rebound base). Two readings carried; 4.9% is central for FY28+"}
+  - {type: FLAG-PRICE-LED-INDUSTRY, reason: "CY25 gross Rs 13,395 Cr +13% but admissions 832 Mn, down (press-reported 6%); industry ATP Rs 161 vs PVR gross ATP about Rs 280"}
+  - {type: FLAG-SHARE-SLIP-H1, reason: "PVR four-stream revenue H1 FY27 +16.4% vs industry GBOC +22% (derived); ticket sales +17.1% vs +22%; implied SAM share about 36.6% vs 38.4% FY26 (crude, derived)"}
+  - {type: FLAG-SAM-NEAR-TAM, reason: "SAM is 89.4% of TAM because the TAM is defined as exhibition revenue and multiplexes carry 83% of ticket pool (derived under equal-ATP assumption); the narrowing happens at SOM"}
+  - {type: FLAG-SAM-CIRCULAR, reason: "Methods 1-3 share the PVR GBOC share and PVR per-screen inputs; they converge by construction, not by independent evidence"}
+  - {type: FLAG-ADS-POOL-SPREAD, reason: "in-cinema ad pool Rs 877 Cr (PMAR CY25) vs Rs 306 Cr (dentsu-e4m CY24); PVR's own ad income Rs 465 Cr is 53% of PMAR figure"}
+  - {type: FLAG-SCREEN-GUIDANCE, reason: "FY27 screen guide cut 150 to 90-100; FY28 150-175 a year unproven (B05); SOM central uses delivered run-rate"}
+market_definition: "Indian film exhibition revenue pool (tickets net of tax, cinema F&B, in-cinema advertising, convenience fees), FY26, company-revenue-equivalent basis; excludes distribution, VPF, other"
+tam_cr: {conservative: 17841, realistic: 18412}
+sam_cr: 16456
+sam_pct_of_tam: 89.4
+som_3yr_cr: 7664
+som_5yr_cr: 8434
+som_implied_revenue_cagr: {yr3: 6.6, yr5: 5.9}
+current_sam_share_pct: 38.4
+revenue_headroom_x: 2.6
+tam_growth_pct: 4.9
+runway_class: "MODERATE"
+mgmt_claim_cr: 60817
+mgmt_claim_ratio: 3.41
+mgmt_claim_read: "inflated"
+capacity_check: "sufficient for central SOM (Rs 7,664 Cr vs 3-year capex-embedded capacity Rs 7,743-8,621 Cr at 7.0% to 10.9%); share-gain reading Rs 8,263-8,757 Cr exceeds growth-only 8.4% capacity Rs 8,051 Cr by Rs 212-706 Cr, so the share-gain reading is the optimistic side"
+methods_used:
+  - "M1 top-down: industry GBOC to net ticket pool plus multiplex ancillary plus ad pool"
+  - "M2 bottom-up: screens x revenue per screen (circular, flagged)"
+  - "M3 peer aggregation: PVR revenue divided by PVR GBOC share, named-peer screen counts"
+  - "M5 global benchmark: screen density vs China, UK, France, US"
+stale_data_flags:
+  - {datapoint: "Box office CY15-CY19 history (pre-COVID CAGR 7.1%), direction only", source: "Ormax via AR FY26 MD&A chart", year: 2019}
+  - {datapoint: "In-cinema AdEx Rs 306 Cr (approaching 2-year limit)", source: "dentsu-e4m report", year: 2024}
+  - {datapoint: "Cinepolis 496 screens, Miraj 172, Mukta A2 73 (undated web pages)", source: "exchange4media, startuptalky", year: "UNDATED"}
+searches_performed:
+  - "Ormax Box Office Report 2025 India gross box office admissions"
+  - "FICCI-EY Media and Entertainment report 2026 filmed entertainment screens"
+  - "Cinepolis India screens 2026 Miraj MovieMax Mukta A2"
+  - "India in-cinema advertising market size 2025"
+  - "Miraj Cinemas MovieMax Mukta A2 screen counts"
+  - "Ormax India box office H1 2026"
+searches_skipped:
+  - "FICCI-EY 2026 full report text (only press coverage reached; screens 10,003 taken from AR citation)"
+  - "MovieMax and Carnival screen counts (no result)"
+  - "multiplex share of GBOC (not searched to ground; NOT FOUND)"
+  - "China and US admissions per screen (not searched)"
+  - "IBEF, CRISIL, ICRA exhibition reports (not searched)"
+downstream_candidates:
+  - {signal: "Ormax monthly India gross box office and admissions", entity_type: "macro", demand_link: "Sets the ticket pool and footfall behind tickets, F&B, ads and fees", likely_source: "Ormax Media monthly box office report; Sacnilk", cadence: "monthly", shared: true}
+  - {signal: "Film release count and slate (UFO Moviez network release data)", entity_type: "counterparty", demand_link: "Releases fell 386 vs 462 in Q2 FY27; fewer films cut screen fill", likely_source: "UFO Moviez quarterly concall and presentation (Type 1 listed company)", cadence: "quarterly", shared: true}
+  - {signal: "Cinema AdEx and UFO in-cinema ad revenue", entity_type: "end-customer", demand_link: "Advertisers fund 7.0% of revenue; PVR H1 +1.3% vs UFO Q1 +33%", likely_source: "Pitch Madison PMAR; UFO Moviez concall", cadence: "quarterly", shared: false}
+  - {signal: "CINELINE (only other listed exhibitor) results", entity_type: "counterparty", demand_link: "Only listed exhibitor peer for share and admissions test", likely_source: "BSE/NSE results and annual report of Cinelinx India", cadence: "quarterly", shared: false}
+  - {signal: "Developer and mall pipeline (Brigade, DLF and other signed asset-light partners)", entity_type: "counterparty", demand_link: "Signed asset-light and FOCO pipeline of 138 screens sets FY27-FY28 openings", likely_source: "Developer concalls and BSE announcements (Type 1); PVR Reg 30 opening filings", cadence: "event-driven", shared: false}
+  - {signal: "Competitor screen additions (Cinepolis India, Miraj, Mukta A2)", entity_type: "counterparty", demand_link: "Multiplex screen share drift decides SOM share", likely_source: "Credit rating rationales and trade press (Type 2 unlisted)", cadence: "event-driven", shared: false}
+  - {signal: "State ticket price caps, licence timelines and CCI VPF probe", entity_type: "regulatory", demand_link: "Caps hit ATP-led growth; licence delay held Q1 FY27 openings to zero", likely_source: "State gazettes, CCI orders, GST Council (Type 5 regulator)", cadence: "event-driven", shared: true}
+  - {signal: "Hollywood and pan-India tentpole release calendar", entity_type: "counterparty", demand_link: "English +87% in Q2 FY27; H2 slate (Ramayana P1, King, Avengers Doomsday) drives admissions", likely_source: "Studio earnings and release calendars (Type 3); Ormax", cadence: "event-driven", shared: true}
+demand_externally_verifiable: true
+analyst_note: "Central SOM holds PVR share flat at 38.4% of SAM, so SOM growth equals SAM growth: FY27 10.2% (H1 +22% actual, H2 held flat to FY26, arithmetic not forecast) then 4.9% a year. Reading B: 8.0% (CY22-25 rebound base) lifts yr3/yr5 to 8.7/8.4 at flat share. Share-gain reading (+3pp yr3, +5pp yr5, needs the 150-175 screens a year) gives 9.3/8.6 at 4.9% and 11.5/11.1 at 8.0%. Separating observation: PVR Q3 FY27 ticket growth vs industry, and FY27 gross openings at or above 90. H1 FY27 shows share slip of about 1.8pp (derived), so flat share is not shaded down. SOM is four-stream revenue (95.1% of company revenue). EBITDA-level growth at margin 14.4% to 17.5%: 13.8% central, 16.7% share-gain reading; PAT growth and P/E NOT FOUND."

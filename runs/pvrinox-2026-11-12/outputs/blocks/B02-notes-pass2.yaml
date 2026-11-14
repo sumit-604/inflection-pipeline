@@ -1,0 +1,45 @@
+stage: B02-notes-pass2
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+pass: 2
+pass_2_empty: false
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent (empty export)"
+  - "research/ empty"
+  - "peer CINELINE has no concall transcripts"
+  - "sector_cap_row NOT FOUND (phase 3 gap)"
+  - "standalone accounting-policy pages (PDF pp.183-187) not re-read in pass 2"
+  - "consolidated Ind AS 116 bridge for 3,868 / 2,306: NOT FOUND IN DOCUMENT (only standalone bridge, PDF p.94)"
+unit: "Rs million, as printed"
+pass1_items_closed:
+  - {item: "receivables ageing not footing", result: "missing less-than-6-months column; standalone p.196 prints it (1,744); consolidated implied 1,883"}
+  - {item: "Note 15 vs SOCIE 90", result: "no difference; Note 15 retained earnings = SOCIE RE + remeasurement + exchange reserve; 1 rounding"}
+  - {item: "MSME standalone 569 vs consolidated 443", result: "443 trade payable + 127 MSME PPE payables = 570"}
+  - {item: "Note 24 headings", result: "extract layout artefact; 45,154 + 20,884 + 424 = 66,462"}
+  - {item: "597 unbilled vs nil contract asset", result: "partly explained; likely reclass of contract asset (131 FY25) into receivables; like-for-like receivables +4.3%"}
+  - {item: "MD&A 3,868 and 2,306", result: "Ind AS 116-adjusted unaudited; 3,328+540 and 1,761+545; consolidated rupee bridge not printed"}
+  - {item: "standalone notes", result: "read PDF pp.188-231; five Pass 1 statements corrected"}
+pass1_corrections:
+  - "No covenant waiver disclosed: WRONG; standalone Note 45(d) p.228 states waivers obtained during previous year"
+  - "871 lease write-back is additional to 976: WRONG; 871 is inside 976"
+  - "Gratuity discount rate not found: standalone p.209 gives 6.50% (FY25 6.40%)"
+  - "CSR required not found: nil both years (standalone p.220)"
+  - "Note 15 vs SOCIE difference of 90: withdrawn"
+flags:
+  - {type: FLAG-CASH, reason: "none on receivables (like-for-like +4.3% vs revenue +16.6%); watch lease cash 12,904 next year vs 11,847 paid, unpaid Labour Code balance about 244 in employee payables [INFERENCE], credit cost 139 vs 76"}
+  - {type: FLAG-EARNINGS-BASIS, reason: "headline PAT 3,868 and revenue 67,426 are Ind AS 116-adjusted, unaudited; 871 lease write-back is 31.6% of pre-exceptional PBT 2,752"}
+new_findings_count: 20
+new_red: ["impairment-test description inconsistent (adds to goodwill F-3)"]
+proposed_rating_changes: ["F-5 RED->YELLOW", "F-2 RED->YELLOW", "F-16 GREEN->YELLOW"]
+receivables_trend: "stable to improving: net 2,672 vs 2,430; like-for-like with FY25 contract asset 2,672 vs 2,561 (+4.3%) vs revenue +16.6%; >6m 469 (15.5%) vs 538 (18.9%)"
+restatements_found:
+  - "FY25 comparatives re-presented for Zea Maize discontinued operations (Note 41)"
+  - "Supplier finance 1,251 (FY25 1,635) moved out of trade payables (Note 2A(ii))"
+going_concern_language: "NONE"
+questions_for_mgmt:
+  - "Which banks gave covenant waivers in FY25, which covenants, and what are the FY27 test levels?"
+  - "Where in the balance sheet does the unsplit part of the 405 Labour Codes charge sit, and when is it paid?"
+  - "What is the consolidated Ind AS 116 bridge from audited 3,328 to 3,868?"
+analyst_note: "Pass 1 over-read two items as red: the 871 is lease reversal inside the 976 (not additional) and the 3,868 is a stated Ind AS 116 basis. Neither lowers the audited numbers; both limit which figures a model may use. Net debt 1,619 leans on 1,454 of subsidiary cash. Lease cash next year is contractually 12,904. Tax should be modelled near 25%."

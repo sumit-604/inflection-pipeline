@@ -1,0 +1,121 @@
+stage: B05-concall
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent (empty export)"
+  - "research/ empty"
+  - "peer CINELINE has no concall transcripts"
+  - "sector_cap_row NOT FOUND (phase 3 gap)"
+  - "Q1 FY27 investor presentation not held; Q1 split derived as H1 less Q2"
+  - "size of 4700BC gain inside FY26 PAT NOT FOUND on any call"
+  - "merger-time screen count conflicts (1,450 / 1,650 / 1,890 across speakers); NOT RESOLVED"
+flags:
+  - {type: FLAG-SCREEN-GUIDANCE, reason: "FY27 gross screens ~150 (Q3 FY26 call p.7) -> 120-odd (Q4 FY26 p.5) -> ~100 (Q1 FY27 p.4) -> 90-100 (Q2 FY27 p.5); H1 opened 24, exited 25; cut never acknowledged; FY28 now guided 150-175 (Q2 FY27 p.8)"}
+  - {type: FLAG-NET-ADDS-ARITHMETIC, reason: "Q1 FY27 call p.8 said net adds nearly 80; PR 28 Oct p.4 shows 25 exits in H1; 100 gross less 25 = 75 maximum"}
+  - {type: FLAG-SMART-PROMISE, reason: "Q4 FY26 call p.8: 2 pilots by 15 Jul and 28-30 screens; delivered 1 cinema of 4 screens on 4 Sep (Pres p.24), 2-3 more cinemas planned; units changed from screens to cinemas"}
+  - {type: FLAG-EARNINGS-BASIS, reason: "calls quote Ind AS 116 adjusted; FY26 PAT 3,868 adjusted vs 3,328 reported (Rs Mn, PR 11 May p.2) includes 4700BC gain not sized on any call; prior year restated ex Zea Maize"}
+  - {type: FLAG-DEPRECIATION-CHANGE, reason: "useful-life revision cut Q2 depreciation by Rs 211 Mn = 5.8% of Q2 PBT 3,645 (Pres p.28, derived); Q2 FY27 call p.10 quotes Rs 35-40 Cr a year; figures do not reconcile"}
+  - {type: FLAG-VOLUME-VS-PRICE, reason: "Q2 FY27 admissions +4%, ATP +14%, SPH +14%, income +17.3% vs industry GBOC +23% (Pres p.8, p.11, p.15); Rs 99/149/79 value offers introduced"}
+  - {type: FLAG-NET-CASH-LABEL, reason: "net cash Rs 141 Cr (1,407 Rs Mn) is borrowings-only; lease liability 58,079 Rs Mn outside (Pres p.30); Gaurav says debt-free (Q1 FY27 call p.12)"}
+  - {type: FLAG-DISCLOSURE-SILENCE, reason: "CEO Growth and Investment resigned (letter 4 May, call 11 May, disclosed 25 May); audit chair resigned 24 Jul (B03); neither raised on any call; promoters intend to tender in buyback (20260831 filing p.1) after analysts asked twice for non-participation"}
+quarters_analysed: ["Q4 FY26", "Q1 FY27", "Q2 FY27", "Q3 FY26 (reference only)"]
+triggers:
+  - {priority: 1, name: "H2 FY27 content slate: admissions and ATP", type: "volume, price-mix", timeframe: "near", conviction: "M", confirm_signal: "Q3 FY27 admissions growth above the Q2 pace of +4% on the Q3 FY26 base of 40.5 Mn, ATP above the Q3 FY26 base of Rs 293", kill_signal: "admissions growth near +4% while industry grows 20%+; ATP growth fades"}
+  - {priority: 2, name: "Rent and cost operating leverage", type: "cost", timeframe: "near", conviction: "M", confirm_signal: "rent below 17.1% of revenue; FHC and COGS flat to down", kill_signal: "variable rent outgrows income (Q2: +11.6% vs +17.3%)"}
+  - {priority: 3, name: "F&B spend per head and attach rate", type: "price-mix", timeframe: "near", conviction: "M-H", confirm_signal: "SPH growth above 10% with attach near 85%", kill_signal: "SPH growth below ATP growth; discounting dilutes mix"}
+  - {priority: 4, name: "Capital-light screen additions (FY27 90-100 gross)", type: "inorganic", timeframe: "medium", conviction: "L-M", confirm_signal: "90+ gross openings by Mar 2027 (66-76 in H2), single-digit exits", kill_signal: "FY27 gross below 85 or another guidance cut"}
+  - {priority: 5, name: "Capital allocation policy (30% of surplus cash flow)", type: "per-share", timeframe: "near", conviction: "M-H", confirm_signal: "second distribution; net debt/EBITDA inside 0.5x", kill_signal: "surplus absorbed by leases or capex; no further distribution"}
+  - {priority: 6, name: "Advertising recovery and digital pay-per-eyeball", type: "price-mix", timeframe: "near-medium", conviction: "L-M", confirm_signal: "H2 ad income growth well above H1 +1.3%", kill_signal: "FY27 ad growth low single digit again"}
+  - {priority: 7, name: "Convenience fee and online penetration (72.0%)", type: "price-mix", timeframe: "near", conviction: "M", confirm_signal: "fee grows with admits and ATP", kill_signal: "online share plateau or fee pushback"}
+  - {priority: 8, name: "SMART Cinema Tier 3-4 rollout", type: "inorganic", timeframe: "medium", conviction: "L", confirm_signal: "2-3 more cinemas by Mar 2027, ATP about Rs 190, stated payback 3-4 years", kill_signal: "third cinema slips to FY28; no unit economics"}
+  - {priority: 9, name: "Alternate content and live sport", type: "volume", timeframe: "near", conviction: "L", confirm_signal: "disclosed revenue and margin", kill_signal: "no number by FY27 close"}
+guidance:
+  - {item: "FY27 gross screens", number: "~150-odd", timeframe: "FY27", stated_in: "Q3 FY26 call p.7"}
+  - {item: "FY27 screens", number: "120-odd visibility, over 100", timeframe: "FY27", stated_in: "Q4 FY26 call p.5, p.15"}
+  - {item: "FY27 gross screens", number: "around 100; 90-100 gross; net nearly 80", timeframe: "FY27", stated_in: "Q1 FY27 call p.4, p.8"}
+  - {item: "FY27 gross screens", number: "90-100, bulk in H2; slide ~100", timeframe: "FY27", stated_in: "Q2 FY27 call p.5; Pres p.24"}
+  - {item: "FY28 screens", number: "150-175 a year, could be more; 500 in 3 years", timeframe: "FY28 onward", stated_in: "Q2 FY27 call p.8"}
+  - {item: "Capital-light share of FY27 openings", number: "55-60%", timeframe: "FY27", stated_in: "Q4 FY26 call p.5"}
+  - {item: "Signed capital-light pipeline", number: "138 screens (52 FOCO, 86 asset-light) over 18 months; 149 in Q3 FY26", timeframe: "to about Nov 2027", stated_in: "Q4 FY26 call p.9; Q3 FY26 call p.4"}
+  - {item: "SMART pilots", number: "2 by 15 Jul; 28-30 screens in FY27", timeframe: "FY27", stated_in: "Q4 FY26 call p.8"}
+  - {item: "SMART update", number: "first opened 4 Sep (4 screens); 2-3 more cinemas; capex 25-30% lower; payback 3-4 years max", timeframe: "FY27", stated_in: "Q2 FY27 call p.5-6"}
+  - {item: "FY27 capex (Rs Cr)", number: "350-400, then 375-400, then ~350, then 300-320; FY28 more than 350", timeframe: "FY27, FY28", stated_in: "Q3 FY26 p.7; Q4 FY26 p.8; Q1 FY27 p.8; Q2 FY27 p.10"}
+  - {item: "Gross debt (Rs Cr)", number: "760 -> about 500", timeframe: "1H FY27", stated_in: "Q4 FY26 call p.16"}
+  - {item: "Net debt", number: "zero 'on the horizon'", timeframe: "1H FY27", stated_in: "Q4 FY26 call p.16"}
+  - {item: "Shareholder returns", number: "about 30% of annual surplus cash flow; net debt/LTM EBITDA within 0.5x", timeframe: "ongoing", stated_in: "Q2 FY27 call p.4-5"}
+  - {item: "ATP growth base case", number: "3.5-4% a year", timeframe: "ongoing", stated_in: "Q3 FY26 call p.8"}
+  - {item: "EBITDA margin at occupancy", number: "pre-COVID margin at 27-28% occupancy", timeframe: "FY27", stated_in: "Q4 FY26 call p.13"}
+  - {item: "FHC full year", number: "45% to 45.5%", timeframe: "FY27", stated_in: "Q1 FY27 call p.15"}
+  - {item: "Depreciation lower from useful-life change (Rs Cr)", number: "35-40 a year", timeframe: "ongoing", stated_in: "Q2 FY27 call p.10"}
+  - {item: "Digital pay-per-eyeball ad platform", number: "8-10 months away", timeframe: "about mid FY28", stated_in: "Q2 FY27 call p.9"}
+  - {item: "FY27 revenue, margin, PAT", number: "NOT GUIDED", timeframe: "FY27", stated_in: "none"}
+promise_delivery:
+  delivered: 11
+  partial: 3
+  missed: 5
+  rows:
+    - {promised_in: "Q3 FY26", promise: "about 96 gross screens in FY26", outcome: "Partial", explanation: "93 gross, 18 exits (Q4 FY26 call p.4); AR range 100-110 missed; no reason given"}
+    - {promised_in: "Q3 FY26", promise: "about 150 screens in FY27", outcome: "Missed", explanation: "cut to 120 -> 100 -> 90-100; Q1 zero openings blamed on licences; cut never named"}
+    - {promised_in: "Q3 FY26", promise: "exits negligible, gross about equal to net", outcome: "Missed", explanation: "18 exits FY26, 25 in H1 FY27; reframed as clean-up"}
+    - {promised_in: "Q3 FY26", promise: "FY27 capex Rs 350-400 Cr", outcome: "Partial", explanation: "now Rs 300-320 Cr; lower with fewer openings"}
+    - {promised_in: "Q3 FY26", promise: "net debt to negligible level by FY26-end", outcome: "Delivered", explanation: "Rs 161.9 Cr at Mar 2026; net cash Rs 80.7 Cr at Jun"}
+    - {promised_in: "Q3 FY26", promise: "advertising marginal growth", outcome: "Delivered", explanation: "FY26 ad income +4%, Q4 +15% (PR 11 May p.2)"}
+    - {promised_in: "Q3 FY26", promise: "ATP +3.5-4% a year", outcome: "Delivered", explanation: "FY26 +8%, Q2 FY27 +14%; base case was low"}
+    - {promised_in: "Q3 FY26", promise: "ROCE double digits very soon", outcome: "Delivered", explanation: "10.2% FY26, 16.5% TTM (adjusted basis, ex merger goodwill)"}
+    - {promised_in: "Q3 FY26", promise: "employee cost growth 7-8%", outcome: "Delivered", explanation: "H1 +6.8%, Q2 +5.1%"}
+    - {promised_in: "Q3 FY26", promise: "electricity cost falling, solar to accelerate", outcome: "Partial", explanation: "Q2 +7.0%; tariffs, hours and heat given (external)"}
+    - {promised_in: "Q4 FY26", promise: "gross debt Rs 760 Cr to about Rs 500 Cr", outcome: "Delivered", explanation: "Rs 501 Cr at 30 Sep 2026"}
+    - {promised_in: "Q4 FY26", promise: "net debt zero on the horizon, 1H FY27", outcome: "Delivered", explanation: "net cash at 30 Jun, one quarter early"}
+    - {promised_in: "Q4 FY26", promise: "55-60% of FY27 openings capital-light", outcome: "Delivered", explanation: "H1 77% (64% asset-light + 13% FOCO)"}
+    - {promised_in: "Q4 FY26", promise: "2 SMART pilots by 15 Jul, 28-30 screens in FY27", outcome: "Missed", explanation: "first opened 4 Sep, 4 screens; 2-3 more cinemas; never explained"}
+    - {promised_in: "Q4 FY26", promise: "advertising on projected path, no deviation", outcome: "Missed", explanation: "H1 +1.3%, Q1 about -2.1% derived; blamed on no blockbusters"}
+    - {promised_in: "Q4 FY26", promise: "occupancy only goes up, 27%+ in FY27", outcome: "Delivered", explanation: "H1 27.9%, Q2 30.4%"}
+    - {promised_in: "Q4 FY26", promise: "pre-COVID margin at 27-28% occupancy", outcome: "Delivered", explanation: "H1 18.7% at 27.9%; Q2 22.3% at 30.4%"}
+    - {promised_in: "Q4 FY26", promise: "Toxic and Jana Nayagan release in FY27", outcome: "Delivered", explanation: "both released in Q2 FY27"}
+    - {promised_in: "Q1 FY27", promise: "net adds nearly 80 in FY27, closures mostly done in Q1", outcome: "Missed", explanation: "H1 exits 25, net -1; 100 gross less 25 = 75 maximum; not addressed"}
+excuse_pattern: "external-blame-heavy"
+repeated_evasions:
+  - {question: "When will advertising recover?", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters (recovery date keeps moving)"}
+  - {question: "Capital return: buyback, dividend", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "answered eventually (buyback Sep 2026, policy Oct 2026); promoter non-participation request not met"}
+  - {question: "Why footfall is flat despite more screens; is occupancy structural", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27"], classification: "deflected every time on frequency and unique visitor data"}
+  - {question: "ATP: price increase or mix", quarters_asked: ["Q1 FY27", "Q2 FY27"], classification: "deflected every time; SPH split changed 70:30 to 60:40"}
+  - {question: "Real estate monetisation", quarters_asked: ["Q3 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed; plan dropped without saying so"}
+  - {question: "Unit economics of asset-light and FOCO screens", quarters_asked: ["Q4 FY26", "Q1 FY27"], classification: "deflected every time; no number"}
+  - {question: "Screen count gross vs net and closures", quarters_asked: ["Q3 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+credibility_grade: "B"
+credibility_basis: "Trailing four quarters (Q3 FY26 to Q2 FY27 calls): 11 of 19 scored promises delivered (debt, gross debt, margin at lower occupancy, ROCE, capital-light mix, price), 3 partial, 5 missed, 5 of the 8 non-deliveries in the screen-expansion chain; per Amendment 26.4 mixed history plus four quarters of financial delivery grades Good; not A because expansion guidance missed two years running and misses were not named"
+peer_questions:
+  - {question: "Does UFO confirm industry box office growth of +20% Q1 and +23% Q2 FY27, English +87%, Hindi +12%?", why: "PVR INOX volume view rests on Ormax figures it repeats", check_peers: ["UFO"]}
+  - {question: "Does UFO in-cinema advertising growth match PVR INOX H1 +1.3% (Q2 +4.3%), or do advertisers buy film by film?", why: "ad income is the weakest line and the excuse is no blockbusters", check_peers: ["UFO"]}
+  - {question: "Does UFO see single-screen, Tier 2-4 and regional strength that supports the mix explanation for 18% vs 23%?", why: "the gap is explained as content mix, not share loss", check_peers: ["UFO"]}
+  - {question: "Does UFO see small-format or Tier 3-4 cinema deployments and a screen-capex cycle that fits 150-175 a year from FY28?", why: "screen guidance is the most-missed chain", check_peers: ["UFO"]}
+  - {question: "Do Wonderla footfall and ARPU in Q1 and Q2 FY27 show a volume vs price split like PVR INOX (admissions +4%, ATP +14%, SPH +14%)?", why: "tests whether double-digit price rises are sector-wide and sustainable", check_peers: ["Wonderla"]}
+  - {question: "Did demand weaken from West Asia, fuel price or austerity messages between May and Nov 2026?", why: "Bijli said cinema is insulated; not followed up", check_peers: ["Wonderla", "UFO"]}
+  - {question: "Does Wonderla report F&B spend per head growth near +14% and attach near 85%?", why: "tests the F&B SPH claim", check_peers: ["Wonderla"]}
+  - {question: "Does UFO commentary on Hollywood and premium formats support a PVR INOX Hollywood share near 50% on big films?", why: "slide data shows 45% for Spider-Man vs a 60% overall claim", check_peers: ["UFO"]}
+  - {question: "Do peers comment on ticket-price caps (Karnataka) or the CCI VPF probe?", why: "raised in Feb, dropped after", check_peers: ["UFO"]}
+red_flags:
+  - {severity: "HIGH", flag: "FY27 screen guidance cut from about 150 to 90-100; FY26 93 vs 100-110; FY28 150-175 on an unproven format"}
+  - {severity: "MEDIUM-HIGH", flag: "net adds nearly 80 cannot hold given 25 H1 exits (max 75)"}
+  - {severity: "MEDIUM", flag: "depreciation useful-life change lifts Q2 PBT by 5.8% and the Rs 35-40 Cr a year quote does not reconcile with Rs 21.1 Cr in one quarter"}
+  - {severity: "MEDIUM", flag: "admissions +4% vs industry +23% with ATP +14% and new value offers"}
+  - {severity: "MEDIUM", flag: "advertising H1 +1.3% against admissions +6%; same excuse four calls running"}
+  - {severity: "MEDIUM", flag: "SMART Cinema delivered about half the promised count and late; units switched"}
+  - {severity: "MEDIUM", flag: "resignations (growth head, audit chair) not raised on calls; promoters tender in buyback with pledge outstanding"}
+  - {severity: "MEDIUM", flag: "net cash and debt-free language is borrowings-only; lease liability Rs 58,079 Mn"}
+  - {severity: "LOW", flag: "transcript and filing conflicts: industry GBOC 4,433 vs 4,443; merger-time screens 1,450/1,650/1,890; South share of openings 44%/35-40%/58%; Hollywood share 60% vs 49%"}
+dropped_triggers:
+  - "signed capital-light pipeline count (149 -> 138, not updated after May)"
+  - "SMART 28-30 screen target (replaced by '2-3 more cinemas')"
+  - "real estate sale for debt reduction (Q3 FY26 analyst figure about Rs 300 Cr; dropped by Q2 FY27)"
+  - "management fee run-rate Rs 13-14 Cr (no update)"
+  - "unique visitor growth (refused as business-sensitive)"
+  - "rooftop solar acceleration (not mentioned after Q3 FY26; utilities +7%)"
+timeline_slippages:
+  - "FY27 gross screens: about 150 (Feb) to 90-100 (Oct)"
+  - "SMART first cinema: 15 Jul promised, opened 4 Sep"
+  - "Q1 FY27 zero openings (licence delay), openings bunched into Q2-Q3"
+  - "Advertising recovery: 'next financial year' (Feb) to 'another year' (Jul) to digital platform in 8-10 months (Oct)"
+analyst_note: "Calls mix Rs Cr (speech) and Rs Mn (slides); the Ind AS 116 adjusted basis is the company default and net debt excludes lease liability Rs 58,079 Mn. Load-bearing facts 1, 2, 4 confirmed; fact 3 is the weakest chain (150 to 90-100, SMART about half, net adds arithmetic broken). Financial promises were kept, expansion promises were not. Q1 FY27 split is derived (no Q1 deck). Valuation should treat the 150-175 FY28 screen claim as aspirational and the depreciation change as non-operating."

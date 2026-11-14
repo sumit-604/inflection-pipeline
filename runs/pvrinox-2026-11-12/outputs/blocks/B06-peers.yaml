@@ -1,0 +1,61 @@
+stage: B06-peers
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent (empty export)"
+  - "research/ empty"
+  - "peer CINELINE has no concall transcripts (only other listed pure exhibitor; no exhibitor benchmark in this run)"
+  - "sector_cap_row NOT FOUND (phase 3 gap)"
+  - "UFO Q2 FY27 advertising revenue growth NOT FOUND on call; UFO Q1 FY26 ad base NOT FOUND"
+  - "industry GBOC growth figures, English and Hindi splits, Hollywood share NOT FOUND in any peer transcript"
+flags:
+  - {type: FLAG-AD-DIVERGENCE, reason: "UFO Q1 FY27 ad revenue +33% (UFO Q1 call, PDF p.3) vs PVR Q1 about -2.1% derived (B05); same Dhurandhar tail; UFO base not found"}
+  - {type: FLAG-PRICE-NOT-SECTOR-WIDE, reason: "Wonderla ATP +2% Q1 and -3% Q2 FY27 with footfall +6% to +7% (Wonderla Q1 p.4, Q2 p.3) vs PVR ATP +14%, admissions +4%; opposite sides of volume-price axis"}
+  - {type: FLAG-FILM-SUPPLY-DECLINE, reason: "UFO releases 386 vs 462 Q2 FY27 and 399 vs 456 Q1 FY27 (UFO Q2 p.3; Q1 p.3); not raised on PVR calls"}
+  - {type: FLAG-PEER-SET-NO-EXHIBITOR, reason: "UFO is an ad and digital-cinema vendor, Wonderla an amusement-park operator, CINELINE no transcripts; share, admissions, Hollywood share and screen build cannot be tested by any peer"}
+  - {type: FLAG-UFO-SERVICE-REVENUE-FLAT, reason: "UFO Q2 FY27 total revenue +16.7% derived but sale of product Rs 254 Mn to Rs 422 Mn (UFO Q2 p.5); revenue ex product +2.1% derived (Rs 877 Mn vs Rs 859 Mn)"}
+peers_provided: 2
+verified: []
+partially_verified:
+  - {claim: "Industry box office +20% Q1 / +23% Q2 FY27, English +87%, Hindi +12% (direction only via UFO; no figure confirmed)", peers: ["UFO"]}
+  - {claim: "Content mix, not share loss, explains admissions +4% / income +17.3% vs industry +23% (hits-driven selectivity supported; Tier 2-4 and single-screen strength not evidenced)", peers: ["UFO"]}
+  - {claim: "Demand not weakened by West Asia, fuel or austerity May to Nov 2026 (no weakening seen; fuel and austerity never discussed)", peers: ["WONDERLA", "UFO"]}
+  - {claim: "F&B spend per head near +14% (Wonderla non-ticket spend per guest Q1 +20%, Q2 +11%, H1 +16%; attach near 85% not disclosed)", peers: ["WONDERLA"]}
+contradicted:
+  - {claim: "Cinema advertising is weak (PVR H1 +1.3%, Q1 about -2.1% derived) because there were no blockbusters", contradicting_peer: "UFO", quote_anchor: "UFO Q1 FY27 call, Rajesh Mishra, PDF p.3: 'supported improved advertiser participation, contributing to a 33% year-on-year growth in our advertisement revenues'; mechanism (tactical ad follows tentpoles) supported at UFO Q1 p.5 and Q2 p.7"}
+  - {claim: "Double-digit price rises (ATP +14%) are sector-wide and sustainable", contradicting_peer: "WONDERLA", quote_anchor: "Wonderla Q2 FY27 call, Saji Louiz, PDF p.3: 'average ticket price declined by 3% Y-o-Y to INR983'; Q1 FY27 p.4 ATP +2%; Dheeran Choudhary Q2 p.9: 'sometimes we have to take a bit of a dip in ARPU to drive more volume'"}
+unverifiable:
+  - {claim: "Small-format or Tier 3-4 cinema deployments and a screen-capex cycle that fits 150-175 screens a year from FY28", peers_checked: ["UFO"]}
+  - {claim: "PVR INOX Hollywood share near 50% on big films (45% Spider-Man slide vs 60% overall claim)", peers_checked: ["UFO"]}
+  - {claim: "Ticket-price caps (Karnataka) or the CCI VPF probe", peers_checked: ["UFO", "WONDERLA"]}
+peer_coverage_map:
+  - {peer: "UFO", quarter: "Q3 FY26 (call 30 Jan 2026)", usage: "SUBSTANTIVE", contribution: "ad share 59-67%, 70-75% flow-through, govt ad vertical Rs 100 Cr to Rs 30 Cr, Mirage network, Rs 40-45 Cr capex"}
+  - {peer: "UFO", quarter: "Q4 FY26 (call 22 May 2026)", usage: "SUBSTANTIVE", contribution: "Dhurandhar ad share 30% vs footfall 38%, ad share 59.5%, network 4,049 screens"}
+  - {peer: "UFO", quarter: "Q1 FY27 (call 29 Jul 2026)", usage: "SUBSTANTIVE", contribution: "ad revenue +33% YoY, tactical vs annual 30-40%, Dubai war hit to product sales"}
+  - {peer: "UFO", quarter: "Q2 FY27 (call 4 Nov 2026)", usage: "SUBSTANTIVE", contribution: "releases 386 vs 462, Toxic miss, film-by-film to bundle buying, product sales +66%"}
+  - {peer: "WONDERLA", quarter: "Q3 FY26 (call 5 Feb 2026)", usage: "CITED-ONLY", contribution: "Bhubaneswar small-format experiment and Chennai launch baseline"}
+  - {peer: "WONDERLA", quarter: "Q4 FY26 (call 8 May 2026)", usage: "SUBSTANTIVE", contribution: "West Asia and discretionary-spend caution, 50-60 licences a year"}
+  - {peer: "WONDERLA", quarter: "Q1 FY27 (call 5 Aug 2026)", usage: "SUBSTANTIVE", contribution: "ATP +2%, non-ticket +20%, existing-park footfall +7%, F&B inflation, small-park payback"}
+  - {peer: "WONDERLA", quarter: "Q2 FY27 (call 3 Nov 2026)", usage: "SUBSTANTIVE", contribution: "ATP -3%, non-ticket +11%, footfall +6%, ARPU +2%, ARPU dip for volume"}
+  - {peer: "CINELINE", quarter: "none", usage: "NOT PROVIDED", contribution: "no concall transcripts on screener; only other listed pure exhibitor; not an unused file"}
+industry_cross_read:
+  demand: "Healthy but hit-dependent at both peers through Q2 FY27 (UFO: selective audiences, releases down 12-16%; Wonderla existing parks footfall +6% to +7%); no weakening from West Asia seen"
+  pricing_inputs: "Wonderla ticket price flat to down (+2%, -3%) with non-ticket spend +11% to +20% and F&B cost inflation; UFO exhibitor ad share rose from 30-35% to about 59.5% of ad revenue; ad income flows through at 70-75%"
+  capex_cycle: "No exhibitor in set so lone-expander vs capacity-race cannot be called; Wonderla expands slowly (2-3 locations FY28 not yet decided, land and licence delay), UFO holds at maintenance capex Rs 40-45 Cr and grows by ad-rights aggregation"
+peer_mentions_of_company:
+  - "No management mention of PVR INOX. Analyst Shailesh Naik, UFO Q4 FY26 call PDF p.8: ad-business goal 'closer to, let's say, what PVR runs' (analyst comment, weak)"
+risks_peers_raise:
+  - "Lower film release count 386 vs 462 (UFO Q2 FY27 p.3)"
+  - "Hit concentration and tactical ad dependence, 30-40% annual (UFO Q1 FY27 p.5)"
+  - "Government ad vertical collapse Rs 100 Cr+ to about Rs 30 Cr (UFO Q3 FY26 p.5)"
+  - "West Asia war: input inflation on F&B and discretionary spend (Wonderla Q4 p.5, Q1 FY27 p.11)"
+  - "Weather shock per region, Bhubaneswar footfall -20% (Wonderla Q2 FY27 p.4, p.6)"
+  - "Licence and land delay, 50-60 state licences a year (Wonderla Q4 FY26 p.12)"
+  - "Exhibitor share of ad revenue rising with scale (UFO Q3 FY26 p.10-11)"
+  - "Ad receivable cycle 110-160 days (UFO Q4 FY26 p.5)"
+  - "Depreciation step-up after large capex compresses PAT (Wonderla Q2 FY27 p.8)"
+net_narrative_effect: "complicates"
+analyst_note: "Peer set is thin. UFO is an ad and digital-cinema vendor, Wonderla runs parks, and CINELINE (the only other listed exhibitor) has no transcripts, so nothing tests PVR share, admissions or screen build. Zero claims reach VERIFIED. Two matter most. UFO ad revenue +33% in Q1 FY27 against PVR about -2.1% (derived) means PVR's ad weakness is partly its own, though UFO's low base is NOT FOUND. Wonderla cut or held ticket price (ATP -3% Q2) and grew footfall 6%, the opposite of PVR (ATP +14%, admissions +4%). Wonderla non-ticket spend per guest (+11% Q2, +16% H1) does support the PVR SPH direction. Derived: UFO Q2 revenue ex equipment sales about +2.1%. Cross-peer hypothesis is testable on PVR Q3 FY27 admissions vs ATP. UFO calls were held 30 Jan, 22 May, 29 Jul and 4 Nov 2026, not Feb and Aug as filenames say."
+cross_peer_hypothesis: "H1 FY27 growth across exhibition, ad and park businesses came from new capacity, per-visit spend and tentpole concentration, not more visits per existing asset; Wonderla trades ticket price for visits while PVR trades visits for price. Test: PVR Q3 FY27 admissions growth near +4% to +8% with ATP above +10% against industry above +20% means price-led share loss; admissions near +15% with falling ATP growth supports the content-mix reading."

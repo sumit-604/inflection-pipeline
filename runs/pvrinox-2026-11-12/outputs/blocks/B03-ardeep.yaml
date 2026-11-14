@@ -1,0 +1,82 @@
+stage: B03-ardeep
+company: "PVRINOX"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener P&L / Balance Sheet / Cash Flow / Quarters CSVs absent (empty export)"
+  - "research/ empty"
+  - "peer CINELINE has no concall transcripts"
+  - "sector_cap_row NOT FOUND (phase 3 gap)"
+  - "prospectus not held (long-listed, not a gap)"
+  - "consolidated Ind AS 116 rupee bridge for 3,868 / 2,306 (Rs million): NOT FOUND IN DOCUMENT"
+  - "net cash Rs 141 Cr at 30 Sep 2026: NOT FOUND IN AR (AR ends 31 Mar 2026)"
+  - "promoter pledge: NOT FOUND IN AR; found only in NSE Sep 2026 filing"
+flags:
+  - {type: FLAG-EARNINGS-BASIS, reason: "audited PAT 3,328 / continuing 1,761 / revenue 66,462 (Rs million) vs company unaudited Ind AS 116 adjusted 3,868 / 2,306 / 67,426; lease write-back 871 = 31.6% of pre-exceptional PBT 2,752 (Note 18 PDF p.272; P&L PDF p.240)"}
+  - {type: FLAG-GOODWILL, reason: "goodwill 57,367 = 77.7% of equity 73,787; single-CGU test, WACC 10.33% (12.08%), no headroom disclosed; only KAM (Note 4A PDF p.261; auditor PDF p.232)"}
+  - {type: FLAG-LEASE-CASH, reason: "lease cash due FY27 12,904 vs 11,847 paid; lease liability 60,205 outside net debt 1,619 (Rs million) (Note 18 PDF p.272)"}
+  - {type: FLAG-SCREEN-COUNT, reason: "1,798 screens / 359 properties (CFO letter PDF p.26) vs 1,789 / 358 standalone (MD&A PDF p.94) vs 1,782 / 355 (MD&A PDF p.89); 16-screen gap unexplained"}
+  - {type: FLAG-PROMOTER-PRELIM, reason: "AR has no pledge disclosure; NSE 30 Sep 2026 filing shows 2,944,444 pledged shares (11.1% of promoter group holding) and promoters intend to tender up to 569,584 shares in the Rs 300 Cr buyback (letter of offer 7 Sep 2026); promoter holding 27.53% flat through FY26; full verdict from B08"}
+phase_verdicts: {p1: "YELLOW: unmodified opinion; one KAM (goodwill 57,367); audit-trail gaps in SAP Hana and Showbizz POS; CARO xix current liabilities exceed current assets by 14,138 with no material uncertainty", p2: "YELLOW: 15 of 15 B02 findings verified; thin goodwill and estimate disclosure; agrees with B02 6/10", p3: "YELLOW: cash is real (CFO 21,597; organic free cash 5,707 after leases, interest, capex) but ROE 2.4% continuing and ROCE 7.1% on audited basis; lease 60,205 and goodwill 57,367 dominate", p4: "YELLOW: narrative runs ahead of evidence; net cash label, Hindi growth contradiction, three screen counts; key risks missing from the risk section", p5: "YELLOW: clean regulatory record; watch audit committee attendance (1 of 5), chair resignation 24 Jul 2026, 561x pay ratio, brand fee 190, pledge outside AR", p6: "YELLOW: claims mostly true on stated basis; four hedged retreats and one silent drop; three contradictions", p7_best_fit: "Turnaround (operating) PASS; GARP WATCHLIST"}
+overall_quality: 6.3
+quality_components: {governance: 7, accounting: 6, balance_sheet: 6.5, earnings: 5.5}
+kill_switch_notes:
+  - "P1: no reason to stop; opinion unmodified, no default or fraud; flag the single goodwill KAM and audit-trail gap"
+  - "P2: no reason to stop; no accounting breach; thin goodwill and covenant disclosure flagged"
+  - "P3: no reason to stop; cash conversion real and debt fell; thin return on 156,123 assets flagged"
+  - "P4: no reason to stop; no disclosure shown untrue; narrative ahead of evidence on net cash, Hindi growth, screen count"
+  - "P5: no reason to stop; no SEBI action, fraud or insider selling; pay, attendance, pledge flagged"
+  - "P6: no reason to stop; claims mostly true on stated basis; contradictions flagged"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []
+missing_risks:
+  - {risk: "Goodwill impairment", evidence: "57,367 = 77.7% of equity; WACC 12.08% to 10.33%; no headroom (Note 4A PDF p.261)"}
+  - {risk: "Fixed lease cost and operating leverage on the downside", evidence: "lease cash due FY27 12,904; paid 11,847; liability 60,205 (Note 18 PDF p.272); FY25 loss when admissions fell 10% (FY25 AR PDF p.28)"}
+  - {risk: "Developer and lessor disputes", evidence: "claims 964 (+34%); CWIP impairment 78 (Notes 31, 37 PDF p.278, p.292)"}
+  - {risk: "Content concentration in a record year", evidence: "Dhurandhar Rs 947 Cr, Dhurandhar The Revenge Rs 922 Cr, Kantara Chapter 1 Rs 724 Cr (MD&A PDF p.85-86); risk section lists mitigants only (PDF p.98)"}
+  - {risk: "Discount-led footfall and ATP quoted gross", evidence: "Blockbuster Tuesdays 22 Mn tickets = 15% of tickets (MD&A PDF p.89); GST cut on tickets of Rs 100 and below passed on (PDF p.26)"}
+  - {risk: "Deferred tax asset realisation", evidence: "DTA 5,184 incl 3,252 on losses after one profitable year (Note 6A PDF p.264); Note 2.1(c) denies estimation risk (PDF p.245)"}
+  - {risk: "Senior leadership attrition", evidence: "CEO Growth and Investment resigned 24 May 2026 (CG PDF p.111); Audit Chair independent director resigned 24 Jul 2026 (Board PDF p.53)"}
+  - {risk: "Control weakness in accounting software", evidence: "audit trail not enabled for privileged changes in SAP Hana and Showbizz POS; MD&A says no significant weaknesses (Note 50 PDF p.304; MD&A PDF p.98)"}
+guidance_table:
+  - {claim: "Add 100-110 screens in FY27, emphasis on capital-light", number: "100-110", timeframe: "FY27", credibility: "Medium: same range was set for FY26 (FY25 AR PDF p.15) and 93 were delivered (7% to 15% below); FY27 figure appears only in the AGM Notice (PDF p.15); 138 capital-light screens signed (KSP PDF p.29)"}
+  - {claim: "Over 50% of FY26 additions capital-light", number: ">50%; delivered 55% (51 of 93)", timeframe: "FY26", credibility: "High: met (MD&A PDF p.91)"}
+  - {claim: "Admissions rebound in FY26", number: "136.9 to 150.1 Mn (+10%)", timeframe: "FY26", credibility: "High: met, but FY24 was 151.4 Mn (FY25 AR PDF p.28; PDF p.27)"}
+  - {claim: "Reduce net debt", number: "9,522 to 1,619 (Rs million)", timeframe: "FY26", credibility: "High: met; 2,221 came from the 4700BC sale (Note 41 PDF p.294)"}
+  - {claim: "Premium screens to 20% of network over the next few years", number: "15% (268 of 1,747) to 16% (285 of 1,782)", timeframe: "multi-year (stated FY25); not restated in FY26", credibility: "Low: target not restated; progress 1 point in a year"}
+  - {claim: "JV to open 7-9 food courts in FY26", number: "7-9; delivered 3 (Kota, Prayagraj, Leh)", timeframe: "FY26", credibility: "Low: missed by 4 to 6; shortfall not acknowledged (MD&A PDF p.91)"}
+  - {claim: "Rooftop solar in another 47 cinemas in FY26", number: "47; commissioned at 3", timeframe: "FY26", credibility: "Low, immaterial (FY25 AR PDF p.97; PDF p.91)"}
+  - {claim: "About 18% EBITDA margin at about 28% occupancy for two quarters; pre-COVID needed 350 to 400 bps higher occupancy", number: "18% at 28%", timeframe: "two quarters of FY26", credibility: "Medium: full year was 14.4% at 26.2% (adjusted); quarterly bridge NOT FOUND IN DOCUMENT (CFO letter PDF p.26)"}
+  - {claim: "Rent and CAM renegotiation savings continue", number: "609 in FY26 (567 in FY25)", timeframe: "FY26; FY27 amount NOT FOUND", credibility: "Medium: delivered; FY27 target not stated (PDF p.91)"}
+  - {claim: "ROCE improvement is structural", number: "10.2% (FY25 6.1%), adjusted, ex-goodwill", timeframe: "FY26; no target", credibility: "Medium-Low: untested outside a record content year; audited-basis ROCE derived 7.1% (CFO letter PDF p.26)"}
+  - {claim: "FY27 revenue, margin, capex guidance", number: "NOT FOUND IN DOCUMENT", timeframe: "FY27", credibility: "n/a: no numeric financial guidance in the AR"}
+monitorables:
+  - {metric: "Admissions growth YoY (Mn) and occupancy", threshold: "Admissions at or above the prior-year quarter; full-year occupancy at or above 26.2%; flag if admissions fall while ATP rises", where: "Quarterly investor update and results", why: "FY26 admissions (150 Mn) equal FY24 (151 Mn); all two-year growth is price"}
+  - {metric: "Net-of-discount ATP and SPH growth vs admissions", threshold: "ATP growth at or below 5% with admissions growth positive; Tuesday and Rs 100-ticket share of tickets under 15%", where: "Investor update, earnings call", why: "ATP 280 is gross; 15% of tickets booked in discount programmes"}
+  - {metric: "Lease cash paid and liabilities written back", threshold: "Lease cash at or below 12,904; write-back at or below 871 (Rs million)", where: "Cash flow statement, Notes 18 and 25 each half-year", why: "Lease credit is 31.6% of PBT before exceptional; lease cash is the first call on CFO"}
+  - {metric: "Goodwill headroom, WACC, terminal growth", threshold: "WACC at or above 10.33%; headroom stated; CGU split shown", where: "FY27 annual report Note 4A and KAM", why: "Goodwill 57,367 = 77.7% of equity with no headroom shown"}
+  - {metric: "Screen count and net additions", threshold: "Net additions toward the 100-110 plan; reconcile 1,798 to 1,782", where: "Quarterly investor update; AR MD&A", why: "FY26 93 added vs 100-110; 16-screen gap unexplained"}
+  - {metric: "Borrowings less cash (Rs million) after the Rs 300 Cr buyback", threshold: "Stay below 1,619 on a borrowings-only basis at each quarter end; report a lease-inclusive figure", where: "Balance sheet and investor update", why: "Net debt fell on a one-off 2,221 sale; the buyback uses cash"}
+  - {metric: "Promoter pledged shares", threshold: "No rise above 2,944,444 shares; promoter holding at or above 27.0%", where: "NSE shareholding pattern quarterly", why: "Pledge seen at 30 Sep 2026, not in the AR"}
+  - {metric: "Capex vs ex-ROU depreciation", threshold: "Capex at or above 50% of ex-ROU D&A (4,507 in FY26); flag a catch-up above 100%", where: "Cash flow and Notes 3 and 29", why: "Capex was 57% of ex-ROU depreciation in FY26 and 71% in FY25"}
+  - {metric: "Normal tax rate and loss-DTA use", threshold: "Continuing tax at or near 25%; loss DTA 3,252 usage per year", where: "Note 45 and Note 6A", why: "Cash tax was 1 in FY26; DTA 5,184 rests on projected profit"}
+  - {metric: "Developer and lessor claims", threshold: "Claims at or below 964; any new CWIP impairment", where: "Note 37 and Note 31", why: "Largest contingent item, +34% YoY"}
+  - {metric: "Manpower cost per screen and headcount per screen", threshold: "Manpower cost per screen at or below 5.2 Mn; headcount per screen at or below 12.1", where: "CFO letter or investor update", why: "FY25 AR printed 5.0 Mn; the FY26 claim of reduction is against FY20"}
+ar_new_downstream_entities:
+  - {name: "Marico Limited", where_in_ar: "Zea Maize (4700BC) divestment, MD&A PDF p.92; Zea Maize page PDF p.35; Board's Report PDF p.53", entity_type: "divestment counterparty (consideration 2,268 gross, 2,221 net, Rs million)"}
+  - {name: "EazyDiner", where_in_ar: "MD&A PDF p.90", entity_type: "F&B discount partner (partner-funded discount up to 25%; average transaction value Rs 675)"}
+  - {name: "BookMyShow and District", where_in_ar: "MD&A PDF p.90", entity_type: "third-party ticketing platforms named as ticket-booking market-share comparators"}
+  - {name: "HDFC Bank, Axis Bank, ICICI Bank, Kotak Mahindra Bank (22 financial institutions)", where_in_ar: "MD&A PDF p.90", entity_type: "card and bank offer partners on tickets and F&B"}
+strengths_top3:
+  - "Cash is real: CFO 21,597; organic free cash after leases, interest and capex 5,707 vs 3,511; net debt 9,522 to 1,619 (Rs million) (cash flow PDF p.241; BS PDF p.239)"
+  - "Operating leverage proven in one year: PBT before exceptional (3,582) to 2,752 on revenue +9,463; incremental EBITDA margin 56.9% (P&L PDF p.240, derived)"
+  - "Debt and capex discipline: borrowings 14,908 to 7,586; capex 3,335 to 2,542; CRISIL AA Stable (MD&A PDF p.92)"
+red_flags_top3:
+  - "Goodwill 57,367 = 77.7% of equity on a single-CGU test with no headroom disclosed; WACC cut 175 bps; only KAM (Note 4A PDF p.261)"
+  - "Profit basis: lease credit 871 = 31.6% of PBT before exceptional; two earnings bases; net cash label with 60,205 of leases outside; contradictions on Hindi growth and screen count"
+  - "Volume not above FY24 (150 vs 151 Mn admissions); growth is price; promoter pledge and buyback tender appear in post-AR filings"
+best_fit_strategy: "Turnaround (operating proof); GARP on watchlist"
+one_line_verdict: "Real cash turnaround on a lease-heavy balance sheet, with one record content year, an 871 lease credit and a thin goodwill test under the profit; best fit Turnaround, GARP on watch until FY27 shows margins hold."
+analyst_note: "All figures Rs million as printed. Use audited lines (3,328 / 1,761 / revenue 66,462). Net debt 1,619 is borrowings-only; at 31 Mar 2026 it is net DEBT, and leases 60,205, supplier finance 1,251 and deferred consideration 2,036 sit outside. Admissions 150 Mn are flat to FY24 (151); two-year growth is price (ATP +8.5%, SPH +11.4%). Screens: 93 added vs 100-110 plan; 1,798 / 1,789 / 1,782 counts conflict. CARO vii(b) table: read the PDF page, text extract garbled (service tax 56, not 564). Pledge and promoter buyback tender come from post-AR NSE filings, not the AR."

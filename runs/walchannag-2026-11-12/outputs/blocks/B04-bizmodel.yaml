@@ -1,0 +1,77 @@
+stage: B04-bizmodel
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Investor presentation is dated 3 May 2025 (FY24 revenue pie, Q4 FY25 vintage); no FY26 or FY27 presentation exists. Slide claims (qualified-supplier positions, 50% centrifugal share, 25-40% EBITDA, per-plant equipment value) are company claims, untested."
+  - "NO-CONCALL MODE: no transcript after May 2019 for the main company. FY26 order book split by sector, quarterly order inflow (except Q2 FY27), closing order book at 30 Sep 2026, order count and average order size: NOT FOUND."
+  - "AR drops the FY25 DNA share of revenue and order book (39% / 52%). FY26 DNAM share is available only from the Acuite rationale (about 31%, Rating p.3)."
+  - "Two filed FY24 DNA shares conflict: 26.5% (Inv. Pres. slide 3 pie) and 30% (AR25 p.30). Not reconciled."
+  - "Orders on hand 871.77 Cr at 31 Mar 2026 (AR p.21) and unexecuted 374.56 Cr at 30 Jun 2026 (Rating p.3) are not defined or reconciled in the corpus."
+  - "Note 1 PDF page not marked in the text extract (text line 4774); cited as AR p.~100 pending a page check."
+flags:
+  - "FLAG-SECTOR-ROW: revenue evidence (69% legacy, 31% DNAM) and audited self-description fit the Industrial / heavy-engineering row; order book (52% strategic at Mar 2025) and stated direction fit the Defence / strategic row. Row not chosen; operator rules at /fttcp."
+  - "FLAG-DNA-SHARE-FALLING: 39% (FY25 AR) to about 31% (Acuite FY26); FY26 AR dropped the metric; FY26 growth came from products and exports."
+  - "FLAG-OTHER-INCOME: other income 59.4% of FY26 EBITDA; Q2 FY27 34.4%."
+  - "FLAG-ORDER-BOOK-DEFINITION: 871.77 Cr against 374.56 Cr unreconciled."
+business_type: manufacturing
+revenue_streams:
+  - {name: "DNAM (defence, nuclear, aerospace, missiles)", type: "project / order-book, one-off contract sales", pct_of_revenue: 31, predictability: "M"}
+  - {name: "Product lines (gearboxes, centrifugal, crushing and grinding, process equipment)", type: "transactional product sales with spares tail", pct_of_revenue: 55, predictability: "L-M"}
+  - {name: "Foundry and instrumentation", type: "transactional product sales", pct_of_revenue: 14, predictability: "L"}
+asset_intensity: heavy
+wc_intensity: high
+pricing_power: moderate
+cyclicality: cyclical
+moats_present:
+  - "Programme pre-qualification and approvals in DNAM (MEDIUM durability, programme-level, re-bid each tender)"
+  - "Regulatory protection through indigenisation and security clearance (MEDIUM to HIGH for DNAM, NONE for products)"
+  - "Niche efficient scale: 2-3 makers per missile programme, 1 of 4 in nuclear island (company claim) (MEDIUM)"
+  - "Brand and 50-year ISRO/DAE record (LOW to MEDIUM)"
+  - "No cost advantage, no network effect"
+valuation_methods:
+  primary: {method: "EV/EBITDA on EBITDA before other income, built from order book and H1 FY27 operating leverage, converted to normalised earnings for the Section 1B exit PE", why: "Reported earnings are negative; the operating engine is visible only after stripping other income"}
+  secondary: {method: "Price to book with land and asset-sale NAV floor", why: "Net worth 35,879 Lakhs; land and investment property fair value exceed carrying value"}
+  tertiary: {method: "EV/Sales against MTARTECH, ISGEC, ELECON", why: "Blunt cross-check; margins differ"}
+  not_applicable:
+    - "PE on trailing earnings (PAT negative, eight loss years in nine)"
+    - "Dividend yield (no dividend)"
+    - "P/CF and PEG (CFO negative, no earnings base)"
+    - "Asset replacement value (old, depreciated plant)"
+irrelevant_ratios:
+  - "Trailing PE: PAT negative both years"
+  - "Printed EBITDA margin 12.9%: 59.4% is other income"
+  - "ROE and spot ROCE: negative or 0.6% without other income; swing on one order"
+  - "Current ratio: 1.13 printed, 1.08 recomputed, 1.01 Acuite"
+  - "Debt to equity 0.61: hides 17.5% cost, 84.7% current, unplaced related-party loans"
+  - "Revenue growth +6.2%: India revenue fell 13.5%, export up"
+must_track_metrics:
+  - {metric: "Order inflow and book-to-bill on one stated order-book definition", healthy: "Above 1.0 over four quarters (Q2 FY27 1.06 derived)", red_flag: "Below 0.9 for two quarters, or not disclosed"}
+  - {metric: "Strategic (DNAM) share of revenue and order inflow", healthy: "Rising above 39%", red_flag: "Metric dropped or below 30%"}
+  - {metric: "EBITDA before other income, % of revenue", healthy: "Above 8% (H1 FY27 8.8%)", red_flag: "Below 5% (FY26 5.2%)"}
+  - {metric: "Other income as share of EBITDA", healthy: "Under 20-30%", red_flag: "Above 40% (FY26 59.4%)"}
+  - {metric: "Share of debt due within 12 months and NCD instalments paid on time", healthy: "Below 50%, paid without new bridge debt", red_flag: "Above 75% (FY26 84.7%) or a delayed instalment"}
+unit_economics:
+  unit: "One rupee of revenue from operations (no unit volume in the AR; order count and size NOT FOUND)"
+  revenue_per_unit: "Rs 100 of revenue; Q2 FY27 inflow 99.46 Cr in the quarter (PR 2 Nov 2026)"
+  margin_per_unit: "FY26: Rs 5.2 EBITDA before other income per Rs 100; H1 FY27 8.8 per Rs 100 (derived)"
+  key_lever: "Operating leverage on a fixed plant: incremental EBITDA margin before other income 25.5% (H1 FY27 vs H1 FY26, derived), partly base effect from the FY26 Foundry lockout"
+first_deterioration_signals:
+  - {risk: "Order book burns faster than it refills", first_signal: "Quarterly order inflow and book-to-bill"}
+  - {risk: "DNA mix not rising", first_signal: "Strategic share of quarterly inflow"}
+  - {risk: "Margin rests on other income", first_signal: "Other income as share of EBITDA"}
+  - {risk: "Refinancing and 17.5% NCD", first_signal: "Cash ex-warrant money and NCD instalment dates"}
+  - {risk: "Old receivables", first_signal: "Over-3-year bucket against allowance"}
+  - {risk: "Foundry labour disruption", first_signal: "Foundry and Machine Shop segment revenue"}
+  - {risk: "Promoter pledge and related-party funding", first_signal: "Pledge percentage and RPT loan notes"}
+mgmt_questions:
+  - "Closing order book at 30 Sep 2026 by line; why 871.77 Cr (AR) against 374.56 Cr (Acuite)?"
+  - "Order inflow for the last four quarters and the strategic share of each?"
+  - "Why did the FY26 AR drop the DNA share, and what is it for FY26 and H1 FY27?"
+  - "Nuclear End Shield tender: timeline, bid margin, probability?"
+  - "How are the 1,900 Lakhs of FY27 NCD instalments being met and has the Dharwad sale closed?"
+  - "What explains over-3-year receivables falling 2,044 Lakhs while allowance fell 83 Lakhs?"
+  - "Where are the 1,050 Lakhs of trust loans in the balance sheet, and is Rs 600 Cr FY27 revenue a company target?"
+one_line_verdict: "A heavy-engineering order book business whose revenue is 69% legacy and about 31% defence, nuclear and aerospace; operating leverage is real but the mix shift, order refill and balance sheet are unproven."
+analyst_note: "Sector row: revenue and the audited self-description fit industrial heavy engineering (DNAM about 31% FY26, falling from 39%), while the March 2025 order book (52% strategic) and stated direction fit defence. No multiple chosen. The DNAM share is an Acuite figure; the AR dropped it. H1 FY27 operating leverage (EBITDA before other income -503 to 1,614 Lakhs on +8,314 Lakhs revenue) is partly a base effect from the FY26 Foundry lockout. Rating p.3 gives FY26 revenue 278.11 Cr against the AR 275.19 Cr; percentages were applied to the AR base for scale only. Orders on hand and unexecuted order book are different, undefined measures. Note 1 PDF page was not marked in the extract."

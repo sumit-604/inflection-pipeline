@@ -1,0 +1,59 @@
+stage: B13-synthesis
+mode: phase-1-lite   # three files only; no valuation content
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+verdict: "PROCEED WITH CAVEATS"   # the five-verdict set only
+verdict_rule_applied: 3           # rule 3 fired (FLAG-CASH, FLAG-PROMOTER at CAUTION); freshness cap then set the verdict
+freshness_cap_applied: true       # B00 freshness_verdict CORPUS GAPPED-FRESHNESS caps at PROCEED WITH CAVEATS
+missing_mate_document: "SEBI Adjudicating Officer order dated 22 Dec 2015, Bombay Cycle and Motor Agency Ltd (9 entities, Rs 21.25 lakh), referenced AR 2026 PDF p.45; expected source sebi.gov.in enforcement orders"
+flags_active:
+  - "FLAG-CASH (STRUCTURAL)"
+  - "FLAG-PROMOTER (CAUTION, prominence only)"
+  - "FLAG-GATE0 (AVOID, grand 10/160)"
+  - FLAG-LIQUIDITY
+  - FLAG-OTHER-INCOME
+  - FLAG-MARGIN-SOURCE
+  - FLAG-RPT
+  - FLAG-ORDERBOOK
+  - FLAG-DNA-SHARE-FALLING
+  - FLAG-SECTOR-ROW
+  - FLAG-EM
+  - FLAG-GUIDANCE-THIN
+  - FLAG-PR-ACCURACY
+  - FLAG-MARGIN-GAP
+  - FLAG-INCUMBENT
+  - FLAG-CAPEX-SLIP
+  - FLAG-GOVERNANCE
+  - FLAG-TAM-SUBSET
+  - FLAG-SAM-UPPER-BOUND
+  - FLAG-CAPACITY
+cash_determination: STRUCTURAL
+cash_falsifier: "FY27 audited CFO above zero with over-3-year receivables below 9,000 INR Lakhs (FY27 results and AR receivables ageing)"
+transition_posture: "NOT CLASSIFIED (Mental Model unsigned; recognition gap needs stage 11; proof gate not fired on the filed record)"
+stage_status_partial: ["stage 8 promoter (web fetch failures)", "stage 9 tam (web fetch failures, five pools unsized)"]
+no_concall_mode: true
+confidence_delta: {numerical: 97, redflag: 82.4, framework: 91.7, peer: 100, overall: 82.4}
+framework_scope_note: "framework 91.7 covers Gate 0 + Emerging Moat only; valuation component pending phase 3"
+valuation_decision: "NOT RUN (phase 1)"   # BUY | WATCHLIST | AVOID set only after stage 11
+entry_range: {low: null, high: null}      # NOT COMPUTED in phase 1
+headline: "Defence hopes, legacy revenue, stretched balance sheet"
+falsification_metric: "Q3 FY27 results (quarter to 31 Dec 2026): EBITDA before other income below 500 INR Lakhs"
+monitorables_count: 8
+contradicted_claims_count: 1   # per Verifier B; peer stage logged 0 by rule
+source_fidelity_corrections_applied: ["ROCE cross-check 1.71% / -8.68% / 5.40%", "ESOP outstanding 4,98,388 = 0.73%", "other income 17% to 68% of quarterly EBITDA", "DNA 39% and FY25 inflow 248.50 Cr anchored AR 2025 PDF p.29", "plant list AR 2026 text line 205"]
+verifier_disagreements: none
+open_items_halt1:
+  - "Sector cap row: Cables / Industrial products 25x (manifest) vs Defence / strategic 38x; operator rules at /fttcp"
+  - "Credibility grade: stage 5 C, Verifier B D"
+  - "Verifier A shadow not run (slot claimed by runs/kusumgar-2026-11-12)"
+  - "Stage 8 and stage 9 status partial"
+  - "B00 corpus gaps (SEBI order text, exchange shareholding filing, empty screener export sheets, no concalls since May 2019, May 2025 presentation only, no research, scanned Q2 FY26 results, OCR text layer, FY17-FY24 balance gaps)"
+publish_candidate: false
+publish_candidate_summary: ""
+files:
+  - runs/walchannag-2026-11-12/outputs/final/business-narrative.md
+  - runs/walchannag-2026-11-12/outputs/final/gate-recommendation.md
+  - runs/walchannag-2026-11-12/outputs/final/verifier-summary.md
+notion_save: "not emitted in phase 1 lite"

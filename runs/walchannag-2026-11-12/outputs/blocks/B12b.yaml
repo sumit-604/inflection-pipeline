@@ -1,0 +1,45 @@
+stage: B12b
+company: "WALCHANNAG"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+independent_flags_found: 32
+caught: 15
+partially_caught: 7
+missed:
+  - {severity: "MAJOR", item: "R10 planned preferential allotment by FY2027 disclosed only to Acuite; absent from every WIL PR, MD&A and Reg 30 filing", anchor: "Acuite rating 7 Aug 2026 p.3"}
+  - {severity: "MAJOR", item: "R11 Rs 21 Cr moved from capex object (105 to 84 Cr) to working capital (50 to 67 Cr) and loan repayment (41 to 45 Cr) by Board resolution 17 Oct 2024, filed as 'No deviation' for five quarters; ICRA says utilisation differs from offer document", anchor: "Reg 32 statement 2 Nov 2026 p.2-3; ICRA MA report 3 Nov 2026 p.3, p.5"}
+  - {severity: "MAJOR", item: "R16 NAL wind tunnel '~Rs 400 crores in next 6-7 months' (May 2025) unfulfilled, never updated", anchor: "Presentation 3 May 2025 p.39; no order filing Nov 2025 to Nov 2026"}
+  - {severity: "MINOR", item: "R15 FY24 DNA share 26.5% (presentation) vs 30% (AR2025)", anchor: "Presentation p.4; AR2025 MD&A line 3439"}
+  - {severity: "MINOR", item: "R21 Aicitta project exit unexplained; 'No financial impact' vs 68 Lakhs exceptional gain; ICD arranged for Aicitta", anchor: "Reg 30 5 Mar 2026; Reg 30 28 Aug 2026; results 20 May 2026 Note 6"}
+  - {severity: "MINOR", item: "R23 headline EBITDA basis moved from before-FX (AR2025) to incl. 390 Lakhs FX gain (FY26)", anchor: "AR2025 MD&A lines 3511-3516; AR2026 Directors' Report s.1 PDF p.21"}
+  - {severity: "MINOR", item: "R25 two exchange price-surveillance queries answered with SHANTI Bill narrative", anchor: "BSE clarifications 22 Dec 2025, 24 Apr 2026"}
+  - {severity: "MINOR", item: "R26 'long term Debt Free' aim vs 2,579 Lakhs new LT borrowings H1 FY27", anchor: "Reg 30 29-30 Jan 2026 p.2; results 2 Nov 2026 p.4-5"}
+  - {severity: "MINOR", item: "R27 VSSC order: free-issue material, no tooling cost paid", anchor: "Reg 30 20 Aug 2026 p.2"}
+  - {severity: "MINOR", item: "R32 NSE/BSE fines for ICDR Reg 162 breach on May 2025 warrant conversion", anchor: "AR2026 Corporate Governance Report lines 3172-3175"}
+pipeline_flags_not_supported: []
+promise_delivery_spot_checks: {checked: 5, confirmed: 4, wrong: 1}
+credibility_grade_concur: "lower: D, not C. Re-scored trailing window gives delivered 2, partial 3, missed 6 (row 3 to partial; NAL Rs 400 Cr added as missed); kept P&L promises lean on a 334 Lakhs asset-sale gain (Q1 FY27) and a 76% FY25-provision base effect (FY26)"
+findings:
+  - {severity: "MAJOR", location: "B05 2D/4D (absent)", finding: "Planned preferential allotment by FY2027 missed; disclosed only via Acuite", anchor: "Acuite 7 Aug 2026 p.3"}
+  - {severity: "MAJOR", location: "B05 (absent)", finding: "Issue-proceeds reallocation of Rs 21 Cr filed as 'No deviation' for five quarters", anchor: "Reg 32 statement 2 Nov 2026 p.2-3; ICRA MA 3 Nov 2026 p.3, p.5"}
+  - {severity: "MAJOR", location: "B05 1B/2A (absent)", finding: "NAL Rs 400 Cr in 6-7 months opportunity (May 2025) unfulfilled; belongs in guidance table and promise tally as MISSED", anchor: "Presentation p.39"}
+  - {severity: "MAJOR", location: "B05 2A row 3; 4D", finding: "Q1 FY27 'structural' PAT 118 includes 334 profit on sale of asset held for sale; ex-gain PBT -216 (derived); row 3 should be PARTIAL", anchor: "Results 11 Aug 2026 p.3; results 2 Nov 2026 p.4-5"}
+  - {severity: "MAJOR", location: "B05 2B/4D", finding: "FY26 turnaround about 76% base effect from FY25 TNEB provision 5,431 of 7,110; 1,545 FY26 TNEB cost absorbed by provision; raise to red flag with bull reading (ex-provision operating swing about +3,137) beside it", anchor: "AR2026 Note 26 PDF p.112; Acuite p.3"}
+  - {severity: "MAJOR", location: "B05 3A", finding: "States no competitor is named in the presentation; presentation p.9, p.17, p.30 name competitors and claim 'Nuclear: 1 of 4'; credibility check was possible and fails on MTAR", anchor: "Presentation p.9, p.17, p.30; MTAR 13 May 2026 call lines 743-746"}
+  - {severity: "MAJOR", location: "B06 Q2 net read; FLAG-INCUMBENT; Part 4 contradicted: 0", finding: "OVERSTATED: MTAR is a first-time End Shield/Calandria bidder, not the incumbent; correct read is a peer contradiction of WIL's scarcity claim (count 1 contradiction)", anchor: "MTAR 13 May 2026 lines 743-746; MTAR 30 Jul 2026 line 679; Presentation p.9, p.20"}
+  - {severity: "MAJOR", location: "B05 4C credibility_grade", finding: "Would grade D not C; Role 1 4D weights shift 35/45/20 to 45/40/15", anchor: "B12b Parts 3-4"}
+  - {severity: "MINOR", location: "B05 4D MEDIUM / 2D JUD Cements", finding: "OVERSTATED: exposure is sized in the filing (1,657 value, 1,565 impaired, 92 carrying)", anchor: "Reg 30 22 Oct 2026 p.1-2"}
+  - {severity: "MINOR", location: "B05 conventions; input_gaps", finding: "H1 FY27 CFO left NOT READ; text layer reconciles to CFO (592), cash 859, other financial assets +4,408", anchor: "Results 2 Nov 2026 p.4-5"}
+  - {severity: "MINOR", location: "B05 FLAG-OTHER-INCOME", finding: "'34% to 68% each quarter' misses Q3 FY26 at 17%; range 17% to 68%", anchor: "Q3 FY26 PR p.2"}
+  - {severity: "MINOR", location: "B05 2A row 8", finding: "Past-tense claim scored as a promise; inflates missed tally by one", anchor: "Q2 FY26 PR p.2"}
+  - {severity: "MINOR", location: "B05 2A accuracy bullets", finding: "68 Aicitta link is filed fact not inference; 'PAT after exceptional' bullet overstated for Q3; Q3 FY26 PR YTD EBITDA 2,250 vs 2,114 from its own quarters unlisted", anchor: "Results 20 May 2026 Note 6; Q3 FY26 PR p.2"}
+  - {severity: "MINOR", location: "B05 (absent)", finding: "Minor items missed: R15, R21, R23, R25, R26, R27, R32", anchor: "B12b Part 1"}
+  - {severity: "MINOR", location: "B05 2D/4D", finding: "Minor items under-weighted: R6 MD&A self-contradiction, R19 lockout omitted from MD&A, R24 no call since May 2019 in corpus, R28 Q1-Q2 FY27 tone shift", anchor: "B12b Part 1"}
+critical_count: 0
+major_count: 8
+minor_count: 7
+material_found: 17              # your CRITICAL + MAJOR independent items
+material_caught: 14             # 11 caught + 3 partially caught
+acceptance_rate: 82.4           # 14 / 17
+coverage_basis: "17 material of 32 listed; 11 caught, 3 partially caught (counted as had), 3 missed; strict caught-only 11/17 = 64.7%. No-concall mode: management voice read from PRs, results, Reg 30/32 filings, AR MD&A and Directors' Report sections, presentation and rating; peers by targeted search."

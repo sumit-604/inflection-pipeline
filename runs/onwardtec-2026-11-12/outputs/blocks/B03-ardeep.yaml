@@ -1,0 +1,79 @@
+stage: B03-ardeep
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "shareholding/ holds only the Sep 2026 pattern: FII/DII and pledge trend beyond one quarter NOT FOUND; AR gives promoter and 5% holders at Mar 2024, Mar 2025, Mar 2026 only"
+  - "screener P&L, Quarters, Balance Sheet, Cash Flow exports empty; only Data_Sheet used"
+  - "ICRA rating withdrawn 2023-11-13; no live rating"
+  - "announcements folder is hand-filled, not the full Reg 30 record (buyback filings read from it)"
+  - "FY21 to FY23 annual reports not in corpus: path of promoter holding from 61.71% (Mar 2021) to 38.12% (Mar 2024) NOT FOUND"
+  - "AR does not give: customer share of receivables, names of the 4 unaudited subsidiaries and their auditors, Reg 24 independent director on the US material subsidiary, Ind AS 116 discount rate, definition of management DSO 75 and interest coverage 1.68, nominator of Harsha Raghavan, remediation date for audit trail"
+flags:
+  - {type: FLAG-CASH, reason: "carried from B02 as a quality flag: headline CFO 6,507.73 lakhs (146.8% of PAT) shows no deterioration, but subsidiary billed days 70.1 to 81.3, unbilled +13.2%, 15.3% of CFO from pay accruals, Ind AS 116 uplift of 22.7 points (AR26 p.66, Notes 6, 15)"}
+  - {type: FLAG-CONCENTRATION, reason: "one customer 18.3% (9,965.52 lakhs), top 5 48%, top 25 87%; absent from risk table (AR26 Note 34 p.93, p.46, p.48)"}
+  - {type: FLAG-CONTROLS, reason: "auditor unable to comment on audit trail tampering in GL and revenue billing system, second year, no remediation date (AR26 p.63, AR25 p.108-109)"}
+  - {type: FLAG-COSTMIX, reason: "sub-contracting 3,407.42 lakhs +36.6% vs revenue +10.7% (Note 24 p.86)"}
+  - {type: FLAG-FX, reason: "forward sell book 2,673.14 vs parent net exposure 891.69, undesignated, MTM liability 129.78 through P&L (Notes 29, 38; standalone p.128)"}
+  - {type: FLAG-DISCLOSURE-CONFLICT, reason: "attrition 14.85% (p.11) vs BRSR turnover 37.93% (p.27); India 54.8% of revenue (Note 34 p.93) vs 'no direct dependence on India-based demand' (p.10); Europe 12% (p.46) vs 3.5% (Note 34); Annexure IV promoter pay +0% (p.24) vs Note 27 +19.7% for MD (p.88)"}
+  - {type: FLAG-INDEPENDENCE, reason: "Desai & Diwanji, entity controlled by KMP, billed 9.76 lakhs (+190.5%) (Note 27 p.88) while Governance Report states no pecuniary relationship (p.54); Dhanpal Jhaveri attendance 50% on board and Audit Committee, proposed for second term (p.50-51, p.16)"}
+phase_verdicts: {p1: "YELLOW Watch: unmodified opinion, audit trail carve-out second year", p2: "YELLOW Watch: 15 of 15 verified, lease table short 387.45, CARO disputed dues outside Note 26", p3: "YELLOW Watch: cash and balance sheet green, earnings step one year old", p4: "YELLOW Watch: risk table omits concentration, controls, collections; four contradictions", p5: "YELLOW Watch: no pledge, promoters buying; attendance, independence and Audit Chair term items", p6: "YELLOW Watch: five of eight narrative claims fail in whole or part; 5 quiet abandonments or contradictions", p7_best_fit: "Turnaround (PASS, completed phase); GARP WATCHLIST"}
+overall_quality: 7.0
+quality_components: {governance: 6.0, accounting: 7.0, balance_sheet: 8.5, earnings: 6.5}
+kill_switch_notes:
+  - "P1: human reviewer would not stop; asks for SOC report timeline on billing system"
+  - "P2: would not stop; asks one question each on lease table (387.45 short) and CARO 277.30 vs Note 26"
+  - "P3: would not stop; wants margin proven net of tax and R&D credit"
+  - "P4: would not stop; wants attrition and geography contradictions answered"
+  - "P5: would not stop; wants Infinity block rights and Audit Chair succession checked at B08"
+triple_pass_verification:
+  verified: 15
+  discrepancies:
+    - {finding_rank: 3, triple_pass_value: "RPT receivables exceed standalone Note 8 by 345.60", ar_value: "335.00 on subsidiary-only basis (607.40 includes JNTL 10.60 that sits in billed); FY25 gap 61.04", note_ref: "standalone Note 8 p.115; Note 26 p.125"}
+    - {finding_rank: 15, triple_pass_value: "Note 31 at p.93", ar_value: "Note 31 at p.92", note_ref: "Note 31 p.92"}
+    - {finding_rank: 13, triple_pass_value: "Infinity Direct 195.00 dividend, two readings", ar_value: "closed: 39,00,000 shares at Mar 2024 split 19,80,000 + 19,20,000 at Mar 2025; 195.00 = 39 lakh x Rs 5 in both years", note_ref: "AR25 Note 13 p.147; AR26 Note 13 p.81, Note 27 p.88"}
+missing_risks:
+  - {risk: "single-customer dependence", evidence: "18.3% (Note 34 p.93), top 5 48% (p.46); risk table p.47-48 silent"}
+  - {risk: "control over revenue billing system", evidence: "audit trail carve-out (p.63)"}
+  - {risk: "credit and collection drift", evidence: "subsidiary billed days 70.1 to 81.3, unbilled 3,429.35 unaged (Notes 6, 30 p.78, p.90)"}
+  - {risk: "cost-mix shift to sub-contractors", evidence: "+36.6% (Note 24 p.86)"}
+  - {risk: "pay accruals, gratuity underfunding, labour code", evidence: "employee benefit payable 3,220.22, deficit 1,062.86, 315.50 on draft rules (Notes 15, 17 p.82-84)"}
+  - {risk: "US legal and cash-freeze exposure", evidence: "1,130.64 frozen ex parte (Note 26 p.87); Directors' Report item 23 p.19"}
+  - {risk: "Europe shrinkage", evidence: "1,920.10 vs 3,359.11 (Note 34 p.93) vs MD&A 'resilient' p.47"}
+  - {risk: "disputed tax dues outside contingent liabilities", evidence: "277.30 (CARO vii p.99) vs Note 26 p.87"}
+guidance_table:
+  - {claim: "double-digit growth in both revenue and EBITDA", number: "double-digit", timeframe: "three years from FY26 (AR25 p.16)", credibility: "met in FY26: revenue +10.7% (at the floor), EBITDA +60.7%"}
+  - {claim: "sustained double-digit revenue and EBITDA growth reiterated", number: "double-digit", timeframe: "FY27 (AR26 p.11)", credibility: "forward; FY27 outside AR"}
+  - {claim: "capex budget Rs 12 crore", number: "12 Cr", timeframe: "FY26 (AR25 p.16)", credibility: "exceeded: cash capex 1,911.07 lakhs (p.66)"}
+  - {claim: "client count to consolidate", number: "about 80", timeframe: "FY26 (AR25 p.16)", credibility: "met: 72 active clients"}
+  - {claim: "expand international workforce", number: "none", timeframe: "next few years (AR26 p.46)", credibility: "unproven: headcount -3.7%, split NOT FOUND"}
+monitorables:
+  - {metric: "top customer share of revenue", threshold: "above 18.3% flag, above 20% red", where: "earnings deck, AR27 Note 34", why: "one name is the largest thesis risk"}
+  - {metric: "DSO billed + unbilled", threshold: "above 80.5 days; target 65-70 per B00", where: "quarterly KPI page", why: "subsidiary days rose 11.2"}
+  - {metric: "unbilled growth vs revenue growth", threshold: "unbilled faster two quarters running", where: "balance sheet Note 6", why: "unaged and unprovided"}
+  - {metric: "sub-contracting % of revenue", threshold: "above 7.0% (FY26 6.27%)", where: "other expenses note", why: "mix shift behind margin gain"}
+  - {metric: "EBITDA margin ex R&D credit", threshold: "below 13.0% (FY26 12.96%)", where: "results filing, concall", why: "durability of turnaround; check Rs 2.9 Cr Q2 FY27 credit"}
+  - {metric: "revenue per employee growth", threshold: "below 10%", where: "presentation, headcount", why: "productivity not one-off"}
+  - {metric: "audit trail paragraph in FY27 auditor's report", threshold: "repeated", where: "AR27 auditor's report", why: "closure or third year"}
+  - {metric: "promoter holding and pledge", threshold: "below 39.5% or any pledge", where: "quarterly SHP", why: "insider signal"}
+  - {metric: "gratuity employer contribution", threshold: "below 1,000 lakhs of 1,339.10 expected", where: "AR27 Note 17", why: "plan assets fell to 137.84"}
+  - {metric: "clients above USD 1 mn", threshold: "below 16", where: "presentation", why: "account depth"}
+ar_new_downstream_entities:
+  - name: "JNTL Consumer Health (India) Private Limited"
+    where_in_ar: "Note 27 related party (common director from 8 May 2025), revenue 160.63 lakhs, receivable 10.60 (AR26 p.87-88)"
+    entity_type: "customer and related party"
+  - name: "Onward Technologies Employees Welfare Trust (trustee Qapita Equitytech Limited)"
+    where_in_ar: "Note 27 (effective 2 April 2025, p.87); Annexure III-A (loan 1,007.77 lakhs, p.23); Secretarial Audit (p.25)"
+    entity_type: "employee benefit trust and ESOP counterparty"
+strengths_top3:
+  - "no borrowings, liquid assets 12,849.24 lakhs (derived), CFO 6,507.73 lakhs"
+  - "EBITDA margin 9.10% to 13.21% with revenue per head +15.0%, ROE 18.55%"
+  - "promoter share count up at every date, no pledge, dividend Rs 8 vs Rs 5"
+red_flags_top3:
+  - "one customer 18.3% (up from 12.7%), top 5 48%, top 25 87%, absent from risk table"
+  - "audit trail carve-out on GL and revenue billing system (second year) plus subsidiary billed days 70.1 to 81.3 and unaged unbilled"
+  - "narrative contradicts notes (attrition, India share, Europe share, promoter pay) and an independent director's firm paid 9.76 against a no-pecuniary-relationship statement"
+best_fit_strategy: "Turnaround (PASS, completed phase); GARP on WATCHLIST"
+one_line_verdict: "A completed margin turnaround on a clean balance sheet, held back by one 18.3% customer, a second year of audit-trail limits on the billing system and a front section that does not match the notes."
+analyst_note: "AR-side checks on the load-bearing facts. (1) The UK R&D credit (135.94 lakhs FY26) sits inside EBITDA by lowering employee cost; margin ex-credit 12.96% vs 13.21% reported. The Rs 2.9 Cr Q2 FY27 credit is outside this AR. (2) Promoter 38.12% at Mar 2024 ties to AR25 p.147; since then promoter share count rose at each date (85.84 lakh, 87.70, 88.90, 89.45 lakh shares). Infinity block (17.37%) is one 39 lakh share holding split in Sep 2024, not two buyers. Path from 61.71% is outside corpus. (3) Closing-vs-average FX gap of 6.3 to 7.3% explains up to about 5 of the 11.2-day rise in subsidiary billed days. (4) Buyback of Rs 18.00 Cr completed 15 Jun 2026 is absent from the AR published 22 Jun 2026 (statements approved 5 May). Use revenue/head, margin ex-credit and tax-adjusted PAT, not reported ROCE 25.42% or interest cover 1.68, which are not reproducible."

@@ -1,0 +1,21 @@
+stage: B13-synthesis
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+verdict: "INSUFFICIENT EVIDENCE"                    # the five-verdict set only
+verdict_rule_applied: 2        # path: rule 2 carve-out and rule 3 INDETERMINATE cash both cap at PROCEED WITH CAVEATS; the 60-74 band (set by peer_utilisation) downgrades one level to rule 2's verdict. Reading B (band acts only inside the PROCEED family) gives PROCEED WITH CAVEATS; operator ruling item
+flags_active: ["FLAG-CASH (INDETERMINATE)"]
+confidence_delta: {numerical: 97.3, redflag: 72.7, framework: 88.0, peer: 63.6, overall: 63.6}
+valuation_decision: "NOT APPLICABLE: phase 1 lite, no valuation ran"         # BUY | WATCHLIST | AVOID
+entry_range: {low: null, high: null}   # phase 1 lite: no entry range
+headline: "Margin turnaround done, cash and growth unproven"                   # the 6-7 word line
+falsification_metric: "Q3 FY27 EBITDA margin excluding any R&D credit at or below 13.0% (FY26 ex-credit 12.96%); FLAG-CASH separator: Q3 FY27 DSO (deck slide 9) under 75 days supports GROWTH-INDUCED, above 80 days or unbilled outgrowing revenue moves the read toward STRUCTURAL"
+monitorables_count: 8
+publish_candidate: false
+publish_candidate_summary: ""  # empty if false
+notion_save:
+  page_title: ""
+  summary: "NOT PRODUCED: phase 1 lite mode (no Notion payload)"
+  drive_link: "none"
+  mode: append-never-overwrite-status

@@ -1,0 +1,66 @@
+stage: B09b-dossier
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED"
+corpus_gaps:
+  - document: "Annual reports FY2021 to FY2024"
+    expected_source: "BSE | company IR page"
+    kind: "findable-missing"
+  - document: "Shareholding patterns before Sep 2026 (Sep 2023 and the 12-quarter history)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Full Reg 30 announcement record, 2021 EGM notice, Investment Agreement 2021-05-27, Reg 29 and bulk-deal records Jun 2023 to Mar 2024"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Q2 FY27 Corporate Governance Report"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Screener Profit and Loss, Quarters, Balance Sheet, Cash Flow exports (Onward and three peers)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Arihant Capital March 2026 conference notes"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Broker research notes"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Live credit rating (ICRA withdrew 2023-11-13)"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Engineering and digital services (single reporting segment)"
+    archetype: "Outsourcing partner (CDMO/EMS/IT services)"
+transition:
+  - line: "Engineering and digital services"
+    from_tier: "R2"
+    to_tier: "R3"
+    engine: "Offshore leverage and utilisation on a mostly fixed pay cost; wallet share through large multi-year programmes (Rs 33 Cr ODC, Rs 44.5 Cr renewal)"
+    proof_gate: "EBITDA margin ex R&D credit at or above 14.0% in each of Q3 FY27 and Q4 FY27 with offshore share at or above 72%; supporting: employee cost ratio ex-credit under 71%, DSO under 75 days by Q3 FY27"
+    recognition_gap: "Open question: does the R3 neighbourhood already look reflected in market pricing; Stage 11 resolves via the PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Q3 FY27 EBITDA margin ex-credit at or below 13.0% with offshore share under 72%; top-5 share above 50% or single-customer share above 20%"
+dominant_variables:
+  - "Ex-credit EBITDA margin with offshore share and employee cost ratio"
+  - "Revenue conversion of the hiring ramp and large programmes"
+  - "Cash conversion: DSO and unbilled against revenue"
+  - "Client concentration and wallet share"
+business_falsifier: "The 18.3% customer lapsing or driving a majority of growth (captive-vendor re-declaration), or a third audit-trail carve-out or qualified opinion on the revenue billing system"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "4 of 6 externally observable"
+  single_point_failure: "The 18.3% customer (retention and renewal)"
+  fragility_verdict: "FRAGILE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 15
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "93429c143b6f4094e66b8ae2226885930d7b8f2e"

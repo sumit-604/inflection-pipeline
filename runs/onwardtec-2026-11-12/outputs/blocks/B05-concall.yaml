@@ -1,0 +1,97 @@
+stage: B05-concall
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Q3 FY26 call used for promise tracing only; quarters_analysed excludes it"
+  - "Arihant Capital March 2026 conference notes not in corpus: selective-disclosure allegation (K4 p.15) cannot be tested"
+  - "Whether FY27 guidance 13.8-14.3% includes the Rs 2.93 Cr UK R&D credit: NOT FOUND in any call"
+  - "Single largest customer share NOT FOUND in calls or deck (B03 carries 18.3% from the AR)"
+  - "Announcements folder is hand-filled, not the full Reg 30 record: Analyst Day not evidenced is NOT FOUND, not proven absent"
+  - "Q1 FY27 scanned results PDF not read at this stage; Q1 numbers from deck and call"
+  - "Promoter holding fall 61.71% to 38.12%: not discussed on any of the three calls; mechanism NOT FOUND in concalls"
+flags:
+  - {type: FLAG-MARGIN-QUALITY, reason: "Q2 FY27 EBITDA margin 15.6% reported, 13.9% ex Rs 2.93 Cr R&D credit (my arithmetic, PRES p.9, R2 note) vs 14.3% in Q2 FY26; offshore share 69% vs 72% (PRES p.11) contradicts the offshore-leverage explanation (K2 p.6)"}
+  - {type: FLAG-GUIDANCE-BASIS, reason: "Revenue guide 15-18% and margin guide 13.8-14.3% basis unstated; H2 margin needed 13.5-14.6% if credit inside, 14.5-15.5% if outside (my arithmetic); H2 revenue implied flat to 4% below H1"}
+  - {type: FLAG-CASH, reason: "H1 FY27 CFO 1,844.79 lakhs vs 3,502.46 lakhs; CFO/EBITDA about 41%; receivables and unbilled +2,867.01 lakhs; DSO 80 vs 70 in Dec 2025 (R2 cash flow; PRES p.9; K3 p.5)"}
+  - {type: FLAG-DISCLOSURE-CONFLICT, reason: "Calls say zero India clients and 70/30 North America/Europe (K4 p.8, p.19); deck geography shows India 47%, USA 41%, Europe 12% in Q2 FY27 (PRES p.11); AI position reversed between Q4 FY26 and Q2 FY27"}
+  - {type: FLAG-CONCENTRATION, reason: "Top 5 clients 47%, top 25 87% (PRES p.12); single largest customer share never disclosed or asked on three calls"}
+quarters_analysed: ["Q4 FY26", "Q1 FY27", "Q2 FY27"]
+triggers:
+  - {priority: 1, name: "Hiring ramp and large-programme conversion into revenue", type: "revenue", timeframe: "near", conviction: "M", confirm_signal: "Q3 FY27 revenue from operations at or above Rs 170 Cr; Q4 above Q3", kill_signal: "Q3 revenue below Rs 160 Cr; utilisation or attrition leakage"}
+  - {priority: 2, name: "Margin ex-credit holds near 14% on offshore leverage", type: "margin", timeframe: "near-medium", conviction: "M", confirm_signal: "ex-credit margin 14%+, employee cost ratio ex-credit under 71%, offshore share above 72%", kill_signal: "ex-credit margin near 13%; offshore share stays under 72%"}
+  - {priority: 3, name: "Receivables normalise so profit converts to cash", type: "both", timeframe: "near", conviction: "M", confirm_signal: "DSO under 75 by Q3 FY27; CFO/EBITDA above 70%", kill_signal: "DSO above 80 or unbilled grows faster than revenue"}
+  - {priority: 4, name: "Wallet share expansion in existing clients", type: "revenue", timeframe: "medium", conviction: "M", confirm_signal: "USD 1M clients 19-20; top-5 share under 48%", kill_signal: "top-5 share over 50% or single-customer share above 20%"}
+  - {priority: 5, name: "Data centre, power, cooling engineering demand", type: "revenue", timeframe: "medium", conviction: "M-L", confirm_signal: "second ODC-size win; named RFPs won", kill_signal: "no RFP win within two quarters"}
+  - {priority: 6, name: "Guidance basis disclosure (R&D credit inside or outside the band)", type: "margin", timeframe: "near", conviction: "H", confirm_signal: "company states the basis; Q3 note on credit", kill_signal: "H2 margin below 13.5% reported"}
+  - {priority: 7, name: "Transport and healthcare recovery", type: "revenue", timeframe: "medium", conviction: "L", confirm_signal: "transport growth above company growth two quarters; first HCLS client above USD 1M", kill_signal: "transport share keeps falling"}
+  - {priority: 8, name: "Annual UK R&D credit recurs", type: "margin", timeframe: "near", conviction: "M", confirm_signal: "repeat credit with a note in FY28", kill_signal: "no credit in FY28"}
+  - {priority: 9, name: "AI productivity pass-through to clients", type: "both", timeframe: "long", conviction: "L", confirm_signal: "revenue per employee rises with T&M share held", kill_signal: "rate or hours pressure at renewals"}
+guidance:
+  - {item: "Revenue growth", number: "double digit (10%+)", timeframe: "annual, FY27 onward", stated_in: "Q4 FY26"}
+  - {item: "FY27 revenue growth", number: "15% to 18%", timeframe: "FY27", stated_in: "Q2 FY27"}
+  - {item: "FY27 EBITDA margin", number: "13.8% to 14.3%", timeframe: "FY27", stated_in: "Q2 FY27"}
+  - {item: "FY27 revenue from existing clients", number: "95% to 98%", timeframe: "FY27", stated_in: "Q4 FY26"}
+  - {item: "Capex for labs for existing clients", number: "about Rs 25 Cr", timeframe: "two years from May 2026", stated_in: "Q4 FY26"}
+  - {item: "Rs 33 Cr ODC", number: "Rs 33 Cr; about 40 engineers to start; billing from Q2, full revenue Q3", timeframe: "FY27", stated_in: "Q1 FY27"}
+  - {item: "Digital services renewal", number: "Rs 44.5 Cr over 3 years", timeframe: "Aug 2026 to Aug 2029", stated_in: "Q2 FY27"}
+  - {item: "T&M share", number: "80% to 90% (90% in Q3 FY26)", timeframe: "FY27", stated_in: "Q1 FY27"}
+  - {item: "Client count", number: "down to 50", timeframe: "next couple of quarters from May 2026", stated_in: "Q4 FY26"}
+  - {item: "DSO", number: "65 to 70 days", timeframe: "normalise in 2 quarters", stated_in: "Q2 FY27"}
+  - {item: "Revenue per employee", number: "Rs 30-40 lakh (aspiration, no date)", timeframe: "long", stated_in: "Q4 FY26"}
+  - {item: "Buyback", number: "up to 5,48,780 shares at Rs 328, up to Rs 18 Cr", timeframe: "May-Jun 2026", stated_in: "Q4 FY26 / board 12 May 2026"}
+  - {item: "Dividend", number: "Rs 8 per share", timeframe: "FY26", stated_in: "Q4 FY26"}
+promise_delivery:
+  delivered: 7
+  partial: 3
+  missed: 4
+  rows:
+    - {promised_in: "Q3 FY26", promise: "double-digit revenue and EBITDA growth, annual", outcome: "Delivered", explanation: "FY26 revenue +10.5% (floor), EBITDA +60.9%; H1 FY27 revenue +17.5%, EBITDA +21.4%"}
+    - {promised_in: "Q3 FY26", promise: "EBITDA 11-12% for FY26, 12% sustainable", outcome: "Delivered", explanation: "FY26 13.2%; Q4 FY26 alone 11.2%"}
+    - {promised_in: "Q3 FY26", promise: "DSO continues to improve (70 days)", outcome: "Missed", explanation: "75 in Q1 FY27, 80 in Q2 FY27; blamed on fast ramp and customer approvals"}
+    - {promised_in: "Q3 FY26", promise: "buyback under consideration", outcome: "Delivered", explanation: "board 12 May 2026, tender closed 29 May, Rs 18.63 Cr outflow, promoters did not tender"}
+    - {promised_in: "Q3 FY26", promise: "Chennai adds a few hundred seats; majority of new offshore adds in Chennai", outcome: "Delivered", explanation: "Chennai centre operational with a few hundred people; share of adds NOT FOUND"}
+    - {promised_in: "Q3 FY26", promise: "headcount near 2,500; 3,000 at Rs 1,000 Cr revenue", outcome: "Partial", explanation: "2,917 at Sep 2026 with annualised revenue near Rs 640-680 Cr"}
+    - {promised_in: "Q4 FY26", promise: "Chennai digital AI lab in the next couple of months", outcome: "Missed", explanation: "Q2 FY27: up and running by Q4 FY27 or early 2027; no reason given"}
+    - {promised_in: "Q4 FY26", promise: "client count to 50 in the next couple of quarters", outcome: "Missed", explanation: "73 in Q1, 70-plus in Q2, 72 per deck"}
+    - {promised_in: "Q4 FY26", promise: "strong visibility for better top and bottom line than FY26", outcome: "Delivered", explanation: "H1 FY27 revenue +17.5%, PAT +13.4%, EBITDA +21.4%"}
+    - {promised_in: "Q4 FY26", promise: "transport vertical returns to growth (Q1: positive growth this year)", outcome: "Delivered", explanation: "Q2 FY27 transport about +15% on rounded shares; Q1 base not in deck"}
+    - {promised_in: "Q1 FY27", promise: "offshore improvement year on year across customers", outcome: "Missed", explanation: "offshore 69% vs 72% a year ago; management said timing"}
+    - {promised_in: "Q1 FY27", promise: "T&M 80-90% for FY27 (90% in Q3 FY26)", outcome: "Partial", explanation: "85% in Q2 FY27, 84% in Q1; below 90%"}
+    - {promised_in: "Q1 FY27", promise: "fourth Pune centre in August", outcome: "Partial", explanation: "opened early October; full by Nov-Dec"}
+    - {promised_in: "Q1 FY27", promise: "EBITDA to improve QoQ and YoY", outcome: "Delivered", explanation: "Q2 EBITDA Rs 26.6 Cr, +33.7% YoY, margin 12.3% to 15.6%; ex-credit margin 13.9% vs 14.3% a year ago"}
+excuse_pattern: "balanced"
+repeated_evasions:
+  - {question: "What lifts margin to high teens / what will margin be", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters; numeric only after four asks; high-teens never answered"}
+  - {question: "AI impact on hours and T&M repricing", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "answer changed between quarters"}
+  - {question: "Revenue per employee Rs 30-40 lakh timeline", quarters_asked: ["Q4 FY26", "Q1 FY27", "Q2 FY27"], classification: "deflected every time"}
+  - {question: "Constant currency growth", quarters_asked: ["Q3 FY26", "Q4 FY26", "Q2 FY27"], classification: "answered eventually (company level only; segment level still referred to IR)"}
+credibility_grade: "B"
+credibility_basis: "Trailing four quarters (Q3 FY26 to Q2 FY27 calls): 7 delivered, 3 partial, 4 missed of 14 tested; headline revenue and margin guides met and raised, misses are operating timelines and ratios (DSO, AI lab, client count, offshore mix); narrative inconsistencies hold it below A"
+peer_questions:
+  - {question: "Does peer ER&D demand show the data-centre, power and energy engineering pull management cites?", why: "basis of the FY27 guidance raise (K1 p.10, K2 p.4)", check_peers: ["LTTS", "TATATECH", "CYIENT"]}
+  - {question: "Are industrial and auto R&D outsourcing budgets growing and are European auto OEMs still cutting?", why: "management says customers at record results and capex tailwinds", check_peers: ["LTTS", "TATATECH", "CYIENT"]}
+  - {question: "Are U.S. work-permit changes raising peers' offshore share and margin?", why: "management ties offshore ramp and margin to the policy", check_peers: ["LTTS", "CYIENT", "TATATECH"]}
+  - {question: "What AI productivity or pricing pressure do peers report on T&M contracts?", why: "Onward is 84-85% T&M and its stance moved from none to some", check_peers: ["LTTS", "TATATECH", "CYIENT"]}
+  - {question: "What EBITDA margin, utilisation and employee cost ratio do peers run; is 14% or high teens plausible at Rs 650 Cr?", why: "margin guide 13.8-14.3% and high-teens hope", check_peers: ["LTTS", "TATATECH", "CYIENT"]}
+  - {question: "What are peer revenue per employee levels and onsite/offshore mix behind Rs 35-40 lakh?", why: "management calls it platinum standard", check_peers: ["LTTS", "TATATECH", "CYIENT"]}
+  - {question: "What are peer DSO and unbilled levels during fast ramps?", why: "Onward DSO 80 vs 65-70 target", check_peers: ["LTTS", "TATATECH", "CYIENT"]}
+  - {question: "What are peers' top-5 and top-10 client shares and single-customer limits?", why: "management claims USD 1-10B peers earn 80% of revenue from 2-10 clients", check_peers: ["LTTS", "TATATECH", "CYIENT"]}
+  - {question: "Do peers book UK R&D credits inside EBITDA and how do they disclose them?", why: "Rs 2.93 Cr credit lifted Q2 reported margin by about 170 bps", check_peers: ["CYIENT", "LTTS"]}
+  - {question: "What wage inflation, lateral hiring cost and attrition do peers report?", why: "432 net adds in H1; October increments", check_peers: ["LTTS", "TATATECH", "CYIENT"]}
+  - {question: "Is the fastest organic growth over 3-4 years claim true against peers?", why: "unsourced consultant claim in Jan 2026", check_peers: ["LTTS", "TATATECH", "CYIENT"]}
+red_flags:
+  - {flag: "Ex-credit Q2 margin 13.9% vs 14.3% a year ago; offshore share down; explanation does not match deck", severity: "High"}
+  - {flag: "H1 CFO -47%, CFO/EBITDA about 41%, DSO 80, not addressed on the call", severity: "High"}
+  - {flag: "Guidance basis (credit inside or outside) unknown, about 100 bps of H2 margin", severity: "Medium-High"}
+  - {flag: "Zero India clients and 70/30 geography vs India 47% of revenue; unreconciled", severity: "Medium-High"}
+  - {flag: "Single largest customer share never disclosed or asked; top 5 at 47%", severity: "Medium"}
+  - {flag: "AI position reversed in six months; T&M 84-85% of revenue", severity: "Medium"}
+  - {flag: "R&D credit explanation garbled (10-15% of revenue)", severity: "Medium"}
+  - {flag: "Alleged selective guidance at a third-party conference; denied; evidence NOT FOUND", severity: "Low-Medium"}
+  - {flag: "Q1 call quoted total income as revenue", severity: "Low"}
+  - {flag: "Single management voice on all calls; GLT never on a call", severity: "Low"}
+dropped_triggers: ["Analyst Day and leader introductions (promised Jan 2026)", "Order book / ACV number (Q1 FY27 only)", "Acquisitions (open in Jan 2026, absent since)", "Rs 33 Cr ODC status after Q1 FY27"]
+timeline_slippages: ["Chennai AI lab: 'next couple of months' (May 2026) to Q4 FY27 or early 2027 (Oct 2026)", "Fourth Pune centre: August to early October 2026", "Client count 50: 'next couple of quarters' (May 2026), still 72", "DSO: 70 days Dec 2025 to 80 Sep 2026, target 65-70 pushed two more quarters"]
+analyst_note: "Three things a downstream stage cannot rebuild from the fields. (1) Q2 margin: 15.6% reported, 13.9% ex the Rs 2.93 Cr credit (R2 note, PRES p.9), against 14.3% in Q2 FY26. Sequential gain ex-credit is real (12.3% to 13.9%, employee cost ratio 73.2% to 71.1%). Year-on-year gain is the credit. Offshore share fell to 69% from 72%, so the offshore explanation is unsupported. (2) Guidance basis is unstated. Revenue guide implies H2 flat to 4% below H1; margin guide needs H2 at 13.5-14.6% if the credit counts, 14.5-15.5% if not. Separator: Q3 FY27 note and Jigar's answer. (3) Cash: H1 CFO 1,844.79 vs 3,502.46 lakhs, DSO 80, unbilled up, and neither call raised CFO. B grade rests on headline delivery; misses are operating timelines."

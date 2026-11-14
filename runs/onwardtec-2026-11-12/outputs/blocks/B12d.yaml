@@ -1,0 +1,21 @@
+stage: B12d
+company: "ONWARDTEC"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+peers_audited: 11
+substantive_confirmed: 7
+substantive_unsupported: []
+unused_but_relevant:
+  - {peer: "CYIENT", missed_item: "Semiconductor event call (26 May 2026): data-centre power as the biggest bottleneck, share of data-centre power 2% to 8% by 2030, HVDC patents for AI data centres. B06 says no ER&D demand content. Industry-context only, semiconductor products not engineering services.", anchor: "CYIENT-Concall_Jun_2026_Transcript_2, PDF p.3-4"}
+  - {peer: "TATATECH", missed_item: "Q3 FY26 call (Jan 2026): DSO 111 vs 109 in Q2 and Q4 FY26 recovery from 111 to 95. B06 net read quotes a 78-102 day peer DSO range, which omits these 111-112 day readings.", anchor: "TATATECH-Concall_Jan_2026_Transcript, .txt lines 459-464 (page not cited by B06)"}
+claims_all_addressed: true
+verdict_discipline_fails: []
+findings:
+  - {severity: MINOR, item: "Cyient 26 May semiconductor call marked UNUSED with 'no ER&D demand content found'; it carries data-centre power demand statements at PDF p.3-4 (industry context for Q1)"}
+  - {severity: MINOR, item: "Q7 net read states peer DSO range 78-102 days, but B06 evidence itself lists LTTS 112 (Q3 FY26) and Tata Tech 111 (Dec 2025); range understated, verdict VERIFIED unaffected"}
+  - {severity: MINOR, item: "Tata Tech Q3 FY26 and Q4 FY26 anchors cited by call, not PDF page (B06 stage notes admit this); not findable by page"}
+critical_count: 0
+major_count: 0
+minor_count: 3
+acceptance_rate: 100

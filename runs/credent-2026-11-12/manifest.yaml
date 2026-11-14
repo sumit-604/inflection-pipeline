@@ -1,0 +1,24 @@
+company: Credent Connect N Care Ltd
+ticker: CREDENT
+cmp: 432.0
+market_cap_cr: 788.0
+run_date: 2026-11-12
+run_type: full
+concalls_available: true   # the company holds calls; one exists (H1 FY27, 2026-10-29), its first as a listed company
+sector_cap_row: "Logistics (asset-light)"   # /step1 Step D, section-1b chunk 05, cap 25x; alternates and reason in step1-business-brief.md; operator rules at /fttcp
+sector_cap_row_guess: "Pharma / CDMO"   # keyword guess only, never consumed
+listed_date: 2026-08-20
+remediation_cycles: 0
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+collector_warnings:
+  - "collect_to_repo.py --dry-run staged no documents: Playwright Chromium could not launch inside the session sandbox (BrowserType.launch: spawn UNKNOWN). The corpus was built by hand from the public screener page links (NSE and BSE archives) and the screener Excel export taken through the operator's signed-in Chrome."
+  - "collector name scrape returned 'Credent'; corrected to 'Credent Connect N Care Ltd' from the screener page title."
+  - "screener export sheets came out EMPTY (formulas with no cached values), so no CSV was written for them: Profit & Loss, Quarters, Balance Sheet, Cash Flow for CREDENT, THYROCARE, TCIEXP and KRYSTAL. Only the Data_Sheet CSVs carry figures. The CREDENT Data Sheet holds one annual period (FY26)."
+  - "BSE scrip code not found: the company is listed on NSE Emerge only. announcements/ was filled from the NSE corporate-announcements API (9 of 22 filings since listing; routine notices left out: audio link, call intimations of 22 and 24 Oct, Reg 74(5) certificate, trading window, newspaper advertisement, e-voting intimation, duplicate 18 Sep outcome)."
+  - "shareholding/ holds the NSE XBRL filings for 19-AUG-2026 and 30-SEP-2026 saved as .txt (XML content); no PDF version was found."
+  - "no rating PDF: no credit rating document was found for the company."
+  - "results/ holds one filing (H1 FY27, board outcome of 2026-10-28). SME companies report half-yearly; no earlier post-listing result exists."
+  - "prospectus/ holds the RHP (company website copy, same file as inside the NSE RHP zip). The final prospectus was not collected."
+  - "peer-concalls/ holds 4 transcripts each for THYROCARE, TCIEXP and KRYSTAL (BSE). Peer annual reports and presentations were not collected, as the collector never collects them."
+  - "concalls/ transcript is a scanned image PDF; the text layer is OCR and carries OCR errors."
+notes: "Collected 2026-11-12 by the /step1 intake. Corpus hand-built after the collector browser failed; see collector_warnings. sector_cap_row set at Step D and is a classification for the operator to rule at /fttcp."

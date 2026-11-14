@@ -1112,3 +1112,28 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+## 2026-11-12 · CREDENT /step1 Phase 1 (runs/credent-2026-11-12)
+- collect_to_repo.py: REPO_ROOT is hardcoded to a path that does not exist on
+  this machine, and Playwright Chromium would not launch inside the session
+  sandbox (spawn UNKNOWN). The collector staged nothing. Corpus hand-built
+  from the public screener page links, the NSE announcements and shareholding
+  APIs and BSE archives; Excel exports through the operator's Chrome.
+- NSE-only SME name: no BSE scrip, so fetch_bse_announcements cannot work.
+  The NSE corporate-announcements API did. Collector has no NSE route.
+- Screener P&L, Quarters, Balance Sheet, Cash Flow sheets exported empty
+  again (formula sheets); Data_Sheet only.
+- Verifier A shadow NOT RUN: .claude/shadow.yaml is still armed. Ten parallel
+  /step1 sessions read the switch at once and this session could not edit a
+  framework file on a run branch. Operator to pick the run that spends it.
+- Verifier B counting basis is undefined in prompts/12: partially caught
+  counted gives 80%, fully caught only gives 50% (below the REWORK line).
+  Needs a ruling.
+- Stages 2 pass 1, 5, 7, 8 and 09b had no edit tool: three wrote errata into
+  the hand-back instead of the report, stage 5 left a truncated block file
+  (restored from its reply), stage 7 omitted the fenced block (Verifier C E27).
+- Stage 5 and stage 8 cite call pages by printed folio, one page off the .txt
+  markers (Verifier A MINOR, Verifier B MINOR).
+- Token ledger: the harness exposed only total tokens per subagent, so the
+  fresh versus re-read lines read n/a. Top stage: stage 2, 552k over 3 passes.
+- Stages 8 and 9 partial (blocked registry and filing fetches).

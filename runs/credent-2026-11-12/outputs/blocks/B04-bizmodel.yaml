@@ -1,0 +1,83 @@
+stage: B04-bizmodel
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "rating/ and research/ folders empty"
+  - "one results filing (H1 FY27), one concall (transcript not read in this stage; call claims in memory only)"
+  - "RHP only, final prospectus absent; one annual report; screener history one annual period"
+  - "FY24 and FY25 standalone restated, FY26 consolidated, not like for like per the company"
+  - "AR strategy and Vision 2030 pages are images"
+  - "price per collection or pickup, segment margins, customer names, credit terms, competitor names and market share: NOT FOUND IN DOCUMENT"
+flags:
+  - {type: FLAG-CONCENTRATION, reason: "AR p.14: top customer 15.76%, top 10 81.76% of FY26 revenue; RHP p.26 top 5 59.05%; call claim of none above 10% not verified here"}
+  - {type: FLAG-ORGANIC-VS-ACQUIRED, reason: "AR p.14 says growth largely from consolidating three subsidiaries; Healthcare consolidation date conflicts (AR p.11 2025-10-08 vs cash flow note 2025-04-02 per B03)"}
+  - {type: FLAG-CASH, reason: "CFO (662.34) FY26 consolidated (LP slide 25), Rs (39) Mn H1 FY27 (H1P slide 23); receivable days 100.3 consolidated (B03)"}
+  - {type: FLAG-DECK-INCONSISTENCY, reason: "H1P shows FY25 revenue 818 Mn, PAT 55 Mn labelled restated; LP shows restated FY25 revenue 7,794.26, PAT 224.67 Lakhs. H1P figures equal the unrestated AR figures"}
+  - {type: FLAG-MODEL-FIT, reason: "About 68% of FY26 revenue is deployed people (healthcare services + OSCM); logistics is 25.26%. Cap row Logistics (asset-light) fits asset side only"}
+business_type: services
+revenue_streams:
+  - {name: "Healthcare Services (phlebotomy, paramedical, mostly Credent Healthcare)", type: "services, volume-linked", pct_of_revenue: 43.04, predictability: "M"}
+  - {name: "Logistics Services (cold-chain sample movement)", type: "services, transactional per pickup/route", pct_of_revenue: 25.26, predictability: "M"}
+  - {name: "Operations and Supply Chain Management (stationed lab staff)", type: "services, contract manpower", pct_of_revenue: 24.93, predictability: "M"}
+  - {name: "IT Services", type: "services, project", pct_of_revenue: 2.81, predictability: "L"}
+  - {name: "Marketing Services", type: "services, project", pct_of_revenue: 2.75, predictability: "L"}
+  - {name: "Sale of IT software product, professional fees, wellness camps", type: "one-time product and project", pct_of_revenue: 1.20, predictability: "L"}
+asset_intensity: light
+wc_intensity: high
+pricing_power: weak
+cyclicality: secular-growth
+moats_present:
+  - "Efficient scale and network density (2,530 labs, 19,000+ pincodes): Moderate, unproven"
+  - "Customer relationships (no top-10 loss in three fiscals, RHP p.26): Moderate, concentrated"
+  - "Switching costs (embedded staff, but terminable on notice): Low-Moderate"
+  - "ISO certifications: Low, table stakes"
+  - "Technology (Alltrak): Low until adoption shown"
+  - "Network effects, cost advantage, brand: not evidenced"
+valuation_methods:
+  primary: {method: "P/E on normalised PAT", why: "Profitable, asset-light; normalise for the Rs 17.8 Mn one-time tax credit and the CFO shortfall; use restated FY25 base; Section 1B governs the exit multiple"}
+  secondary: {method: "EV/EBITDA with CFO/EBITDA test", why: "Cross-check; EBITDA ignores the float cost that is this model's main drain"}
+  tertiary: {method: "SOTP by line", why: "Lines have different economics but segment margins are NOT FOUND"}
+  not_applicable:
+    - "DCF: FCF negative and history too short"
+    - "P/B and ROE: not a lender"
+    - "EV/Sales: mix changed by M&A"
+    - "Asset-based/NAV: PP&E 11.5% of assets"
+    - "Dividend yield: no dividend"
+irrelevant_ratios:
+  - "Headline FY24-FY26 revenue growth: standalone vs consolidated, largely acquired"
+  - "ROE 61.81% and ROCE 40.00%: small equity base, mixed bases in MD&A"
+  - "FY25 to FY26 PAT growth: two decks show different FY25 base"
+  - "Debt to equity 0.50: hides working-capital debt and IPO cash"
+  - "Current ratio: inflated by receivables of uncertain quality"
+  - "Inventory turns and fixed asset turnover: no inventory, small PP&E"
+must_track_metrics:
+  - {metric: "CFO/PAT and CFO positive", healthy: "at least 0.7", red_flag: "negative (FY26 662.34 outflow; H1 FY27 Rs 39 Mn outflow)"}
+  - {metric: "Receivable days incl unbilled", healthy: "at or below 80", red_flag: "above 100 (FY26 100.3 consolidated)"}
+  - {metric: "Organic (standalone) revenue growth", healthy: "at or above 20% with subsidiary split", red_flag: "growth only from consolidation"}
+  - {metric: "Top customer and top 10 share", healthy: "top 10 below 81.76%, top customer below 15.76%", red_flag: "any top 10 loss or share rising"}
+  - {metric: "EBITDA margin", healthy: "13.3% or higher", red_flag: "below 12%"}
+unit_economics:
+  unit: "One deployed field head (payroll or contract); per-collection and per-pickup price NOT FOUND"
+  revenue_per_unit: "3.38 Lakh per year-end head (21,416.18 / 6,338, derived)"
+  margin_per_unit: "13.29% EBITDA on revenue (AR p.14); 26.32% after direct people and services cost (derived, LP slide 24)"
+  key_lever: "Utilisation of field heads and collection days; wage inflation is the main cost lever"
+first_deterioration_signals:
+  - {risk: "Top customer loss or insourcing", first_signal: "top-10 revenue share and receivables from that customer"}
+  - {risk: "Acquired revenue fades", first_signal: "Alltrak and Healthcare revenue per half"}
+  - {risk: "Wage inflation", first_signal: "employee expense ratio above 39.5%"}
+  - {risk: "Client price cuts", first_signal: "EBITDA margin below 13%"}
+  - {risk: "Receivable build without provision", first_signal: "CFO/PAT and 1-2 year ageing bucket"}
+  - {risk: "Costly debt funds the float", first_signal: "finance cost and flat debt after IPO"}
+  - {risk: "Group lending", first_signal: "loans and advances; IPO utilisation vs objects"}
+mgmt_questions:
+  - "Who is the FY26 top customer at 15.76%, is it related, and how does none above 10% on the call tie to the filing?"
+  - "What is the price per collection and per pickup by line and how did it move at last renewals?"
+  - "What explains other expenses falling from 23.12% to 12.87% of revenue?"
+  - "When do receivable days fall from 100.3 to 60, and who owes the 240.23 aged 1-2 years?"
+  - "What is organic growth in Healthcare, Team and Alltrak, and the 12-month revenue of each?"
+  - "Why does the H1 deck show FY25 PAT 55 Mn when the listing deck restates it to 224.67 Lakhs?"
+  - "Terms, security and purpose of the Rs 450.00 Lakhs Kartavya Healtheon loan?"
+one_line_verdict: "A labour-led pre-analytics outsourcer with light assets, weak pricing power, 81.76% top-10 customer share and profit not yet turning into cash."
+analyst_note: "Fit to the stage 0 row Logistics (asset-light): partial. The asset side fits (PP&E plus intangibles 11.5% of assets, LP slide 23). The revenue side does not: healthcare services (43.04%) and OSCM (24.93%) are deployed staff, 68% of FY26 revenue; logistics is 25.26% (LP slide 6). Working capital is heavy (100.3 days, B03), which is the trait of the Logistics (WC-heavy / project cargo) row. Nearest alternative on the economics is Hospitals / dialysis / healthcare services, only if collections are priced as care delivery; evidence of that pricing power is absent (RHP p.27: terminable, price cuts). Two readings: healthcare logistics platform with pricing power, or outsourced labour at cost plus. Separator: price per collection and margin by line, NOT FOUND. Operator rules the row at the pillar gate. New: the H1 deck FY25 equals the unrestated AR figures despite its restated label; use the listing deck base. Unit price, segment margin and the call claim of none above 10% are unverified."

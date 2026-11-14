@@ -1,0 +1,407 @@
+stage: B00-inputs
+company: CREDENT
+run_date: 2026-11-12
+model: orchestrator session (claude-fable-5-2), inline per run-pipeline step 1
+status: complete
+spear_gate: "PASS. companies/CREDENT.md carries: Spear: OVERRIDE 2026-11-12 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)"
+load_bearing_facts:   # from the Step 1 brief; first verification priority for every stage
+  - "Customer concentration: H1 FY27 call says no customer above 10%; RHP risk factor 1 shows top customer 15.76% and top 10 at 81.76% of FY26 revenue."
+  - "Organic versus acquired growth: FY26 revenue +162% and H1 FY27 +53% include Credent Healthcare, Credent Team and Alltrak, acquired in FY26; like-for-like growth, consideration, sellers, related-party status."
+  - "Cash conversion: CFO negative FY26 and H1 FY27; receivables Rs 17.9 Cr (Mar 2025) to Rs 78.8 Cr (Sep 2026); management claims 60-day ageing and positive cash flow by H2 next year."
+  - "IPO money and group lending: objects of the issue against utilisation; Rs 4.50 Cr inter-corporate loan to Kartavya Healtheon Private Limited approved 2026-11-04."
+listed_date: 2026-08-20
+recently_listed: true          # within ~3 years of run_date; prospectus present (RHP)
+concalls_available: true
+concall_note: "One transcript exists (H1 FY27 call of 2026-10-29), the first call as a listed company. Stage 5 runs in normal mode on one transcript (prompt 05: with fewer than four quarters, use what exists). The collector rule (fewer than 3 concalls means no-concall mode) was not applied because the company does hold calls."
+sector_cap_row: "Logistics (asset-light)"
+sector_cap_row_evidence: "Company bills per pickup and per collection, holds little fixed asset (PPE Rs 7.8 Cr at Sep 2026, H1 FY27 presentation p.22) and describes itself as an integrated healthcare logistics platform (presentation p.7). Cap 25x, section-1b chunk 05 sector cap table. Alternates named in step1-business-brief.md: Hospitals / dialysis / healthcare services (35x); Logistics (WC-heavy / project cargo) (20x). Classification is flagged for the operator to rule at the /fttcp pillar-approval gate. Collector guess Pharma / CDMO rejected."
+reporting_units: {results: "INR Lakhs", annual_report: "INR Lakhs", prospectus: "INR Lakhs", presentation: "INR Mn", screener: "INR Cr"}
+text_extraction: "Every inputs/ PDF has a page-marked .txt beside it (tools/extract_pdfs.py, one [page N] marker per page). Stages and verifiers read the .txt first and open the PDF when a table or figure needs the page image. tools/check_extraction.py flagged one blank file: announcements/CREDENT_08112026013152_Intimation_for_Investor_Call (1 page, image only; a call-schedule notice)."
+inventory:
+  prospectus: 1        # CREDENT-RHP-Aug-2026.pdf, 324 pp
+  annual-report: 1     # CREDENT-Annual_Report_FY2025-26.pdf, 121 pp
+  results: 1           # H1 FY27 board outcome 2026-10-28, 27 pp
+  rating: 0
+  concalls: 1          # H1 FY27 call 2026-10-29, 19 pp, scanned (OCR text)
+  peer-concalls: 12    # THYROCARE 4, TCIEXP 4, KRYSTAL 4
+  announcements: 9
+  shareholding: 2      # NSE XBRL as .txt: 19-AUG-2026, 30-SEP-2026
+  research: 0
+  screening: 5         # 4 Data_Sheet CSVs + CREDENT Financials xlsx
+  presentation: 2      # H1 FY27; listing-day 2026-08-20
+empty_folders: [rating, research]
+empty_folder_confirmation: "SUPPRESSED under the /step1 AUTONOMY CONTRACT. Standing answer: proceed with the gaps. No question was asked."
+input_gaps:
+  - "rating/ EMPTY: no credit rating document found. Stage 10 will mark rating_wc_quote unresolved (phase 3)."
+  - "research/ EMPTY: no broker notes. No effect on anchored evidence."
+  - "results/ holds ONE filing (H1 FY27). SME issuer reports half-yearly; listed 2026-08-20. No earlier post-listing result exists."
+  - "concalls/ holds ONE transcript (H1 FY27). Promise-versus-delivery history across calls cannot be built; the RHP and AR supply the only earlier stated intent. The transcript is a scanned PDF with OCR text."
+  - "screening: Profit & Loss, Quarters, Balance Sheet and Cash Flow sheets exported EMPTY for CREDENT and all three peers (formula sheets, no cached values). Only Data_Sheet CSVs carry figures. CREDENT Data Sheet has ONE annual period (FY26). Multi-year history must come from the RHP restated financials and the AR."
+  - "prospectus: RHP only; the final prospectus (with issue price and final objects amounts) was not collected."
+  - "announcements: 9 of 22 NSE filings since listing collected. Left out as routine: audio-recording link, call intimations (22 and 24 Oct), Reg 74(5) certificate, trading window notice, newspaper advertisement, e-voting intimation, duplicate 18 Sep board outcome."
+  - "shareholding: NSE XBRL (XML saved as .txt) for 19-AUG-2026 and 30-SEP-2026; no PDF. Only two data points exist since listing."
+  - "peer-concalls: transcripts only. No peer annual reports or presentations."
+  - "COLLECTOR (verbatim from manifest.collector_warnings): collect_to_repo.py --dry-run staged no documents: Playwright Chromium could not launch inside the session sandbox (BrowserType.launch: spawn UNKNOWN). The corpus was built by hand from the public screener page links (NSE and BSE archives) and the screener Excel export taken through the operator's signed-in Chrome."
+  - "COLLECTOR: collector name scrape returned 'Credent'; corrected to 'Credent Connect N Care Ltd' from the screener page title."
+  - "COLLECTOR: BSE scrip code not found: the company is listed on NSE Emerge only. announcements/ was filled from the NSE corporate-announcements API."
+  - "History depth: company listed 2026-08-20. FY24 and FY25 are standalone restated, FY26 onward consolidated; the company states the years are not like for like (H1 FY27 presentation p.21 note)."
+collector_defect_gate:
+  collector_warnings_copied: true
+  screening_csv_content: "Data_Sheet CSVs populated for CREDENT, THYROCARE, TCIEXP, KRYSTAL. P&L, Quarters, Balance Sheet, Cash Flow sheets ABSENT (empty export)."
+  announcements_shareholding: "Both populated by hand from NSE; neither is empty."
+  cmp_market_cap: "cmp 432.0, market_cap_cr 788.0. Non-zero. PASS."
+freshness_pairs:
+  - {pair: "results to concall", trigger_doc: "inputs/results/CREDENT-H1FY27-results-outcome-BM-2026-10-28.pdf", mate_expected: "H1 FY27 concall transcript", status: PASS, missing_doc: ""}
+  - {pair: "rating bulletin to rationale", trigger_doc: "none (rating/ empty)", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: "SEBI order to order text", trigger_doc: "none identified at stage 0; stages 3 and 8 to name any order they find", mate_expected: "n/a", status: PASS, missing_doc: ""}
+  - {pair: "AR to latest audited annual results", trigger_doc: "FY2025-26 audited results (in AR and RHP)", mate_expected: "FY2025-26 annual report", status: PASS, missing_doc: ""}
+freshness_verdict: "FRESHNESS PAIRS OK"
+verifier_a_shadow: "NOT RUN. .claude/shadow.yaml reads armed, but this session is restricted by its task to its own run folder, companies/CREDENT.md and the archive note, and ten sibling /step1 sessions read the same switch at the same time. Flipping the switch here would edit a framework file on a run branch. Left armed; open item for the operator."
+company_memory: "companies/CREDENT.md (created by /step1 today; no prior run) and runs/credent-2026-11-12/step1-business-brief.md. Memory to weigh, never anchored evidence."
+# verified rows from B00-intake.yaml (stage-00-intake-check, claude-haiku-5-5); 34 rows, 0 moves, 0 unreadable
+corpus_manifest:
+- path: inputs/announcements/CREDENT_01102026195649_Voting_Result_Final.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: voting results (AGM)
+  period: AGM 29-Sep-2026; no fiscal period on page 1
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/CREDENT_01102026222229_Appointment_of__Auditor.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: Reg 30 disclosure (statutory auditor appointment)
+  period: AGM 29-Sep-2026; no fiscal period on page 1
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Subject line says 17th AGM; body says 11th AGM. Issuer and type unaffected.
+- path: inputs/announcements/CREDENT_04112026204029_C3_Outcome_BM_merged.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: board outcome (inter-corporate loan approval)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 04-Nov-2026. No fiscal period on page 1.
+- path: inputs/announcements/CREDENT_04112026205344_C3_Disclosure_merged__1_.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: Reg 30 disclosure (inter-corporate loan agreement)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 04-Nov-2026. No fiscal period on page 1.
+- path: inputs/announcements/CREDENT_05092026191800_Outcome_of_Board_Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: board outcome (Director report, AGM notice, auditor appointment)
+  period: FY2025-26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/CREDENT_08112026013152_Intimation_for_Investor_Call.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: analyst and investor meeting intimation
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Text file page 1 blank; identity read from PDF page 1. Meeting dated 12-Nov-2026. Dated 08-Nov-2026.
+- path: inputs/announcements/CREDENT_18092026195351_Outcome_Of_Board_Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: board outcome (CFO resignation and appointment)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 18-Sep-2026. No fiscal period on page 1.
+- path: inputs/announcements/CREDENT_28102026191521_PressFinal.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: press release (results)
+  period: H1FY27 (half year ended 30-Sep-2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/announcements/CREDENT_29092026221521_C3_11th_Annual_General_Meeting.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: AGM proceedings summary
+  period: AGM 29-Sep-2026; no fiscal period on page 1
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/annual-report/CREDENT-Annual_Report_FY2025-26.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: annual report
+  period: FY2025-26
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Text file page 1 blank; PDF page 1 is the filing letter dated 05-Sep-2026 for the AR. AR pages follow.
+- path: inputs/concalls/CREDENT-Concall_H1FY27_2026-10-29_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: concall transcript
+  period: H1FY27 (call held 29-Oct-2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 is the filing cover letter dated 03-Nov-2026. Transcript starts page 2.
+- path: inputs/presentation/CREDENT-Investor_Presentation_H1FY27.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: investor presentation (earnings presentation)
+  period: H1FY27 (half year ended 30-Sep-2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Text file page 1 blank; identity read from PDF page 1 (filing letter dated 28-Oct-2026).
+- path: inputs/presentation/CREDENT-Investor_Presentation_listing_2026-08-20.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: investor presentation (listing submission)
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Page 1 is transmittal dated 20-Aug-2026. No fiscal period on page 1 or page 2.
+- path: inputs/prospectus/CREDENT-RHP-Aug-2026.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: red herring prospectus
+  period: ''
+  folder_match: true
+  proposed_move: ''
+  page_read: 2
+  note: Dated 08-Aug-2026. Cover on page 1 gives issuer and date but no fiscal period; page 2 read, still no fiscal period.
+- path: inputs/results/CREDENT-H1FY27-results-outcome-BM-2026-10-28.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: results (board outcome)
+  period: H1FY27 (half year ended 30-Sep-2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Dated 28-Oct-2026.
+- path: inputs/peer-concalls/KRYSTAL-Concall_May_2025_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Krystal Integrated Services Ltd
+  doc_type: concall transcript (peer)
+  period: Q4 FY25 (year ended 31-Mar-2025); call held 05-May-2025
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/KRYSTAL-Concall_May_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Krystal Integrated Services Ltd
+  doc_type: concall transcript (peer)
+  period: Q4 FY2025-26 (audited results)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 12-May-2026.
+- path: inputs/peer-concalls/KRYSTAL-Concall_Nov_2025_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Krystal Integrated Services Ltd
+  doc_type: concall transcript (peer)
+  period: Q2 FY2025-26 (half year ended 30-Sep-2025); call held 11-Nov-2025
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/peer-concalls/KRYSTAL-Concall_Nov_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Krystal Integrated Services Ltd
+  doc_type: concall transcript (peer)
+  period: Q2 FY2026-27 (un-audited results)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 06-Nov-2026.
+- path: inputs/peer-concalls/TCIEXP-Concall_Aug_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: TCI Express Ltd
+  doc_type: concall transcript (peer)
+  period: quarter ended 30-Jun-2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 12-Aug-2026. Name taken from scrip symbol TCIEXP and website tciexpress.in on page 1.
+- path: inputs/peer-concalls/TCIEXP-Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: TCI Express Ltd
+  doc_type: concall transcript (peer)
+  period: Q3 FY2025-26 (nine months ended 31-Dec-2025)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 09-Feb-2026. Name from scrip symbol TCIEXP and website on page 1.
+- path: inputs/peer-concalls/TCIEXP-Concall_Jun_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: TCI Express Ltd
+  doc_type: concall transcript (peer)
+  period: Q4 FY2025-26 (year ended 31-Mar-2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 04-Jun-2026. Name from scrip symbol TCIEXP and website on page 1.
+- path: inputs/peer-concalls/TCIEXP-Concall_Nov_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: TCI Express Ltd
+  doc_type: concall transcript (peer)
+  period: quarter ended 30-Sep-2026
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 10-Nov-2026. Name from scrip symbol TCIEXP and website on page 1.
+- path: inputs/peer-concalls/THYROCARE-Concall_Feb_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Thyrocare Technologies Ltd
+  doc_type: concall transcript (peer)
+  period: call held 28-Jan-2026 (quarter not stated on page 1)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 02-Feb-2026.
+- path: inputs/peer-concalls/THYROCARE-Concall_May_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Thyrocare Technologies Ltd
+  doc_type: concall transcript (peer)
+  period: call held 12-May-2026 (quarter not stated on page 1)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 14-May-2026. Name from scrip symbol THYROCARE and scrip 539871 on page 1.
+- path: inputs/peer-concalls/THYROCARE-Concall_Jul_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Thyrocare Technologies Ltd
+  doc_type: concall transcript (peer)
+  period: call held 23-Jul-2026 (quarter not stated on page 1)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 27-Jul-2026. Name from scrip symbol THYROCARE and scrip 539871 on page 1.
+- path: inputs/peer-concalls/THYROCARE-Concall_Nov_2026_Transcript.pdf
+  file_type: pdf
+  content_ok: true
+  issuer: Thyrocare Technologies Ltd
+  doc_type: concall transcript (peer)
+  period: call held 29-Oct-2026 (quarter not stated on page 1)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: Filing letter dated 02-Nov-2026. Name from scrip symbol THYROCARE and scrip 539871 on page 1.
+- path: inputs/screening/KRYSTAL-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: Krystal Integrated Services Ltd
+  doc_type: screener data sheet (peer)
+  period: latest Report Date 2026-03-31
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: 'Intake proposed a move to peer-concalls/. Orchestrator checked the file: a peer screener Data Sheet. NOT MOVED: the collector convention places peer screening CSVs in screening/ with the peer ticker
+    prefix. The proposal came from the orchestrator''s own task wording, not from a misfile.'
+- path: inputs/screening/TCIEXP-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: TCI Express Ltd
+  doc_type: screener data sheet (peer)
+  period: latest Report Date 2026-03-31
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: 'Intake proposed a move to peer-concalls/. Orchestrator checked the file: a peer screener Data Sheet. NOT MOVED: the collector convention places peer screening CSVs in screening/ with the peer ticker
+    prefix. The proposal came from the orchestrator''s own task wording, not from a misfile.'
+- path: inputs/screening/THYROCARE-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: Thyrocare Technologies Ltd
+  doc_type: screener data sheet (peer)
+  period: latest Report Date 2026-03-31
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: 'Intake proposed a move to peer-concalls/. Orchestrator checked the file: a peer screener Data Sheet. NOT MOVED: the collector convention places peer screening CSVs in screening/ with the peer ticker
+    prefix. The proposal came from the orchestrator''s own task wording, not from a misfile.'
+- path: inputs/screening/screener-Data_Sheet.csv
+  file_type: csv
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: screener data sheet
+  period: latest Report Date 2026-03-31
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: ''
+- path: inputs/screening/screener-Financials-CREDENT.xlsx
+  file_type: xlsx
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: screener Excel export (source workbook of screener-Data_Sheet.csv)
+  period: latest Report Date 2026-03-31
+  folder_match: true
+  proposed_move: ''
+  page_read: 0
+  note: 'Intake left it UNIDENTIFIED (not opened by instruction). Orchestrator opened it with openpyxl: Data Sheet cell B1 reads CREDENT CONNECT N CARE LTD. Identity confirmed.'
+- path: inputs/shareholding/CREDENT-shareholding-pattern-19-AUG-2026-NSE-XBRL.txt
+  file_type: txt
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: shareholding pattern (NSE XBRL)
+  period: DateOfReport 2026-08-19
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: XBRL is one long line, so the first-40-line read returned the whole file. Identity fields pulled by grep on the same file.
+- path: inputs/shareholding/CREDENT-shareholding-pattern-30-SEP-2026-NSE-XBRL.txt
+  file_type: txt
+  content_ok: true
+  issuer: Credent Connect N Care Ltd
+  doc_type: shareholding pattern (NSE XBRL)
+  period: DateOfReport 2026-09-30 (context period 01-Jul-2026 to 30-Sep-2026)
+  folder_match: true
+  proposed_move: ''
+  page_read: 1
+  note: XBRL is one long line, so the first-40-line read returned the whole file. Identity fields pulled by grep on the same file.
+flags: []
+analyst_note: ""

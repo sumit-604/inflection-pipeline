@@ -1,0 +1,24 @@
+stage: confidence-delta
+company: CREDENT
+run_date: 2026-11-12
+phase: 1
+computed_by: orchestrator (prompts/00-orchestrator.md Section 5)
+verifier_a_identity_check: "B12a carries 0 CRITICAL rows; nothing to test and nothing struck."
+confidence_delta:
+  numerical_acceptance: 97        # B12a.acceptance_rate; 300 numbers checked; mandatory 56 of 56; 0 CRITICAL, 3 MAJOR, 6 MINOR
+  redflag_coverage: 80            # B12b.acceptance_rate; material_caught 8 of material_found 10 (denominator 10, at or above the floor of 4)
+  framework_adherence: 88         # B12c phase-1 scope only: Gate 0 45 of 47 rules, Emerging Moat 21 of 28; 66 of 75; valuation half PENDING PHASE 3
+  peer_utilisation: 75            # B12d: 9 peers confirmed substantive of 12 provided (3 cited-only)
+  overall: 75
+  overall_set_by: peer_utilisation
+  not_applicable: []
+band: "75-89 normal, note specifics"
+rework_triggers:
+  verifier_a_confirmed_critical: false
+  any_acceptance_below_60_on_denominator_4_plus: false
+notes:
+  - "REDFLAG COVERAGE BASIS (open item for the operator). Verifier B counted 5 caught plus 3 partially caught as material_caught = 8 of 10 (80%), on the block's own field definition 'ones the pipeline already had'. Verifier B states that a fully-caught-only basis gives 5 of 10 (50%), which is below the 60% REWORK line. prompts/12-verifiers-pipeline.md does not say which basis applies. The orchestrator used the block of record (80) and did not choose between the two readings."
+  - "Verifier B MAJOR findings carried to synthesis: R06 selective disclosure to one analyst (call PDF p.15), missed by B05, which recorded the reverse; R23 Thyrocare lab densification against the long-haul sample logistics premise, missed by B06; R22 Thyrocare misclassified as a customer only; B06 Q9 'launch losses CONTRADICTED' overstated, relabel PARTIALLY VERIFIED."
+  - "Verifier A source-fidelity findings bind downstream: H1 FY27 balance-sheet cash and bank is 7,419.72 INR Lakhs (6,919.72 is cash and cash equivalents on the cash flow); H1 FY27 purchase of fixed assets is (443.12) and FD investment (656.67) INR Lakhs, the figure 636.67 is removed; RHP promoter-holding table sits at text marker p.80 (printed folio 76)."
+  - "Framework adherence valuation component: pending phase 3."
+  - "Verifier A shadow: not run (see B00.verifier_a_shadow)."

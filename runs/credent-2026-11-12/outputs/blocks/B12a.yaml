@@ -1,0 +1,25 @@
+stage: B12a
+company: "CREDENT"
+run_date: "2026-11-12"
+model: claude-sonnet-5-5
+status: complete
+numbers_checked: 300
+mandatory_checked: 56
+mandatory_total: 56
+findings:
+  - {severity: "MAJOR", location: "01-gate0.md Block E E2 (mandatory input)", claimed: "100% promoter holding at 7 Aug 2024, Ashok Kumar Sharma 50% and Karan Sharma 50%, anchored RHP p.76 (report states .txt page markers)", source_truth: "RHP marker p.76 does not hold the table. It is on marker p.80 (txt lines 5531-5540): 10,00,000 each, 50.00%, total 20,00,000 100.00%, footnote 7 Aug 2024. Printed folio of that page is 76", note: "Number correct; anchor wrong under the report's own stated convention. Score unaffected", source_fidelity: true}
+  - {severity: "MAJOR", location: "03-ardeep.md Phase 3A bullet on H1 FY27 half", claimed: "purchase of fixed assets and FD placement 636.67 (H1 cash flow, OCR-read)", source_truth: "H1 results PDF p.6 image: Purchase of Fixed Assets incl CWIP (443.12); Investment in FD / Redeem (656.67); net investing (1,091.67)", note: "OCR read 63667; image shows 656.67. 636.67 matches neither line", source_fidelity: true}
+  - {severity: "MAJOR", location: "03-ardeep.md LB4 bullet 3, Phase 3A cash pile, Phase 8 strength 3; carried to 04-bizmodel.md 4A", claimed: "H1 balance sheet cash 6,919.72 at 30 Sep 2026", source_truth: "H1 results PDF p.4 image: Cash and Bank Balances 7,419.72. 6,919.72 is cash and cash equivalents at end of period on the cash flow (p.6); gap 500.00 is fixed deposits. H1 deck p.22 cash and bank 742 Mn", note: "Number exists on the cash flow, not the balance sheet where placed; basis unlabelled at three uses; net cash understated by 500.00", source_fidelity: true}
+  - {severity: "MINOR", location: "02-notes-pass1.md sections 0, 2.1, 3 (Note 1 p.79)", claimed: "standalone Note 1 basis and going concern text on AR p.79", source_truth: "AR marker p.78 (txt lines 2929-2937); consolidated p.106 correct. Stage 3 D1 already notes the slip", note: "Page off by one", source_fidelity: true}
+  - {severity: "MINOR", location: "05-concall.md LB2 first bullet; 2B", claimed: "Prashant Sharma exchange on call p.14; 'wrong question' p.15; 'beautiful question' p.12", source_truth: "Marker p.15 (lines 640-646); marker p.16 (line 678); marker p.13 (line 534)", note: "Quotes exact; pages are printed folios while the report says PDF pages", source_fidelity: true}
+  - {severity: "MINOR", location: "04-bizmodel.md 1B", claimed: "RHP p.27: no credit period is punched in the system (RHP line 13510)", source_truth: "RHP p.27 holds 'working capital intensive' and terminable-contract text. 'No credit period punched' is at txt line 13510 and AR Note 15 note 4 (marker p.84)", note: "Line anchor right, page label wrong", source_fidelity: true}
+  - {severity: "MINOR", location: "08-promoter.md 3E, 6A row 7, 6C", claimed: "auditor change table on RHP p.68 (lines 4741-4775)", source_truth: "Marker p.72 (lines 4741-4775); printed folio 68. Dates and wording match", note: "Report mixes printed folios and markers without saying so; line numbers resolve", source_fidelity: true}
+  - {severity: "MINOR", location: "09-tam.md 5E", claimed: "30.8x P/E (screener, 2026-11-12; step1 brief)", source_truth: "screener-Data_Sheet.csv has price 432.3 and market cap 787.78 Cr, no P/E field. 787.78 / 25.49 TTM PAT = 30.9x", note: "Close but not printed in the file; step1 brief is memory", source_fidelity: true}
+  - {severity: "MINOR", location: "07-emoat.md G2", claimed: "receivable days 81.55 FY25 to 98.58 FY26 (B01)", source_truth: "B01 receivable days 83.85 and 100.26; 81.55 and 98.58 are working-capital days net of payables", note: "Unlabelled basis difference, not material; direction unchanged", source_fidelity: false}
+critical_count: 0
+major_count: 3
+minor_count: 6
+false_positives_struck: 7
+material_universe: 476
+acceptance_rate: 97
+coverage_note: "Mandatory tier = Gate 0 scorecard inputs (no verdict card or Section 1B pillar exists in the reports): 56 of 56 checked (48 base-table values, E1 to E4, net block 1,457.08, three M8 reach figures); none unchecked. Sample tier: 420 material numbers counted (those feeding a flag, score, ratio, guidance or promise row, or a load-bearing fact), about 244 checked. material_universe 476 = 56 + 420. Not checked: web-sourced numbers in stages 8 and 9 (open web, not in my inputs), peer Data_Sheet CSVs (no report cites them), most peer transcript content beyond 24 sampled quotes, the image-only investor-call intimation, and stage 2 line items below the Top 15 that feed no flag. H1 FY27 results pages 4, 6 and 19 were read from the page image."

@@ -17,3 +17,4 @@ Token figures come from subagent result metadata. The harness exposes one total 
 | 5 | stage-05-concall | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 285278 | 12m13s | 1 |
 | 7 | stage-07-emoat (stalled, resumed from transcript; wall includes the stall) | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 115601 | 378m17s | 1 |
 | 6 | stage-06-peers (stalled, resumed from transcript; wall includes the stall) | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 278702 | 380m40s | 1 |
+| 9 | stage-09-tam | claude-sonnet-5-5 | default (high) | n/a | n/a | n/a | n/a | 192611 | 10m44s | 1 |

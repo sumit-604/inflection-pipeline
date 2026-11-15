@@ -1,0 +1,41 @@
+stage: B13-synthesis
+mode: phase-1-lite
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: "claude-opus-5-5"  # must equal .claude/agents frontmatter; the orchestrator compares it
+status: complete
+verdict: "PROCEED WITH CAVEATS"
+verdict_rule_applied: 3          # flags active (FLAG-PROMOTER, FLAG-CASH); capped by INDETERMINATE cash, CORPUS GAPPED-FRESHNESS and the 60-74 band
+verdict_caps: ["FLAG-CASH INDETERMINATE", "B00 freshness CORPUS GAPPED-FRESHNESS", "confidence band 60-74 (overall 73, set by redflag_coverage)"]
+missing_mate_document: "Q2 FY27 concall transcript of Premier Explosives Ltd (call held 13 Nov 2026); expected from the BSE/NSE transcript filing or screener Documents"
+flags_active: ["FLAG-PROMOTER (CONCERN)", "FLAG-CASH (INDETERMINATE)", "FLAG-GATE0 (AVERAGE, core 53)", "FLAG-EARNINGS-QUALITY (carried)", "FLAG-ICFR-QUALIFIED (carried)"]
+cash_determination: "INDETERMINATE"
+cash_separating_metric: "H1 FY27 operating cash flow in the Q2 FY27 results filing: positive with CFO/EBITDA above 0.7 supports GROWTH-INDUCED; negative with receivables past six months above 25% of gross supports STRUCTURAL"
+promoter_verdict: "CONCERN"
+transition_posture: "NOT CLASSIFIED (phase 1: Mental Model unsigned; proof gate, ugliness class and recognition gap inputs absent)"
+partial_stages: ["B08 (searches skipped named)", "B09 (searches skipped named)"]
+confidence_delta: {numerical: 96, redflag: 73, framework: 90.1, peer: null, overall: 73}
+overall_set_by: "redflag_coverage"
+source_fidelity_open: 1           # B12a MAJOR, FY26 receivables over one year; GATE HELD, corrected at source to 1,186.73 L
+verifier_disagreements_logged: 1
+valuation_decision: "NOT APPLICABLE (phase 1 lite; stage 11 not run)"
+entry_range: {low: null, high: null}
+headline: "Defence order book waits on execution proof"
+falsification_metric: "Q3 FY27 (quarter to 31 Dec 2026) revenue below Rs 130 Cr in the results filing"
+monitorables_count: 8
+contradicted_claims_formal: 0
+contradiction_tensions_listed: 7
+open_items_count: 15
+publish_candidate: false
+publish_candidate_summary: ""
+files_written:
+  - "outputs/final/business-narrative.md"
+  - "outputs/final/gate-recommendation.md"
+  - "outputs/final/verifier-summary.md"
+  - "outputs/final/verifier-disagreement-log.md"
+not_produced: ["fttcp-handoff.md", "notion-payload.md", "phase 3 deliverables"]
+notion_save:
+  page_title: ""
+  summary: ""
+  drive_link: "NOT FOUND"
+  mode: "not produced in phase 1 lite"

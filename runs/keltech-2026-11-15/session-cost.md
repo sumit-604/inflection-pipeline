@@ -10,3 +10,4 @@ cache-read, cache-write and output splits are not exposed and are written n/a, n
 | 0 | stage-00-intake-check | claude-haiku-5-5 | medium | n/a | n/a | n/a | n/a | 91806 | 3m10s | 1 |
 | 1 | stage-01-gate0 | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 104114 | 4m48s | 1 |
 | 2 | stage-02-notes-pass (pass 1) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 158208 | 6m34s | 1 |
+| 2 | stage-02-notes-pass (pass 2) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 179403 | 6m22s | 2 |

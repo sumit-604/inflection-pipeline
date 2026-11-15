@@ -1,0 +1,24 @@
+stage: B02-notes-pass2
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+pass_2_empty: false
+new_findings_count: 19
+input_gaps:
+  - "shareholding/ PARTIAL, COLLECTOR GAP: no filed pattern, no pledge data (B00)"
+  - "concalls ABSENT, DECLARED (no-concall mode); presentation ABSENT (B00)"
+  - "peer-sheet tabs empty for PREMEXPLN and APOLLO (B00)"
+corrections_to_pass_1:
+  - "Chowgule & Co receivable 84.51 is in the above 1,095 days column at 20% (Note 26, p.135), not 731-1,095"
+  - "Contingent item 30(b) composition rebuilt: FY25 1,647.95 = 1,375.43 + 151.50 + 121.02; FY26 121.02 = CST case (CARO vii(b) p.85 118.01 + Note 30(i) 3.00)"
+flags:
+  - {type: FLAG-CASH, reason: "Payables fall 1,478.47 vs CFS movement 1,189.37 (gap 289.10, unexplained); Note 10 Others 1,378.92 to 77.26 drives CFS inflow; cash credit about 94% drawn (derived 2,365.00 limit)"}
+top_new_findings:
+  - {id: B6, finding: "Note 13(e) says monthly bank statements agree to books; table shows inventory 19-30% above books; CARO ii(b) calls it not material; CARO xiv(a) says internal audit needs improvement", note_ref: "Note 13 p.118; CARO p.84-85", rating: "red"}
+  - {id: B3, finding: "Gross borrowing cost +32.9% (595.03 vs 447.82) vs reported finance cost -3.0%; 177.15 capitalised", note_ref: "Notes 3, 23 pp.106, 130", rating: "yellow"}
+  - {id: B5, finding: "Cash credit about 93.9% drawn on derived 2,365.00 limit; undrawn long-term loans nil", note_ref: "Notes 13(b), 26 pp.118, 136", rating: "yellow"}
+  - {id: B2, finding: "Opex ex-repairs +17.5% vs revenue +8.7%; repairs -52.5%", note_ref: "Note 22 p.128", rating: "yellow"}
+  - {id: B15, finding: "Exceptional income 317.76 recognised under a 'reasonably confident' test vs policy 'virtually certain'; segment Misc income gap 182.37", note_ref: "Notes 2.11, 40, 28", rating: "yellow"}
+  - {id: B10, finding: "Gratuity P&L figures 76.87 / 82.46 / 8.51 do not reconcile", note_ref: "Notes 14, 20 pp.122-127", rating: "yellow"}
+analyst_note: "Pass 1 was thorough; pass 2 value is in cross-document ties (CARO vs Note 13 and Note 30) and derived comparisons (borrowing cost, opex ex-repairs, ROE base). Segment margin inference (B15) and CC limit (B5) are derived, labelled as such."

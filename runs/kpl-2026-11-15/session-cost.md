@@ -13,3 +13,4 @@ Token columns: the harness exposes one total per subagent run (subagent_tokens),
 | 2 | stage-02-notes-pass (pass 3) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 79260 | 115s | 3 |
 | 3 | stage-03-ardeep | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 355490 | 965s | 1 |
 | 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 129960 | 317s | 1 |
+| 8 | stage-08-promoter | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 191139 | 449s | 1 |

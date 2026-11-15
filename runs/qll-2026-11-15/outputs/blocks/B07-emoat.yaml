@@ -1,0 +1,51 @@
+stage: B07-emoat
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "No concall transcripts (declared); F2 uses AR25/AR26/prospectus/deck/announcement capex timeline statements"
+  - "Utilisation by lab, capacity by project, customer concentration, segment margin, IAC revenue, CWIP split by project: NOT FOUND"
+  - "Hyderabad acquisition and Bengaluru USFDA lab completion status NOT FOUND; Nellore and Karnal labs NOT FOUND in FY26 documents"
+  - "H1 FY27 consolidated cash-flow capex line garbled in extraction; H1 gross capex derived from balance-sheet movement"
+  - "Barwala land and building Rs 1813.01 Lakh is a 31 Mar 2026 figure; 30 Sep 2026 split of CWIP NOT FOUND"
+flags:
+  - "FLAG-EXECUTION: 3 of 9 scored capex-completion rows delivered (33%); CWIP capitalisation ratio fell from 31.5% FY25 to 11.5% FY26; Rs 151.81 Lakh CWIP over 3 years with none cleared"
+  - "FLAG-FUNDING: CWIP Rs 6977.28 Lakh at 30 Sep 2026 (+2449.03 in H1) funded by debt; borrowings 9297.55 to 11466.88 Lakh in six months"
+  - "FLAG-DISCLOSURE-CONFLICT: AR26 p.11 calls NABCB accreditation a FY2026 milestone; p.23 and press release date it June 2026; Bengaluru USFDA lab is acquired in AR26 but underway in May 2026 deck; AR25 said western region"
+  - "FLAG-DRIFT: Rs 2200 Lakh of preferential issue for unidentified Food, Pharma and Cybersecurity acquisitions; objects-clause EGM 5 Dec 2026"
+em_score: 11.0
+em_classification: "NONE"
+active_categories:
+  - {id: "B2", name: "Qualification lock-in", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "12-24m"}
+  - {id: "R1", name: "Regulatory and government work", strength: "Moderate", evidence_type: "DOC", time_to_materialise: "12-24m"}
+evidence_mix: {documented: 10, claim: 10, inference: 4}
+completionist_recount: "DOC recount performed: 10 documented items across 5 categories (B2 1, R1 3, H1 3, E2 1, F2 2); 9 categories show any evidence, 2 reach Moderate, 0 Strong; I1/I2 contribute 0.0"
+catalysts_12m:
+  - {catalyst: "H1 FY27 earnings call: margin gap, Hyderabad and Bengaluru status, CWIP split", window: "24 Nov 2026", evidence_type: "CLAIM", anchor: "Announcement 20261114-ffae6832 (call intimation)"}
+  - {catalyst: "EGM objects-clause alteration (cybersecurity added)", window: "5 Dec 2026", evidence_type: "DOC", anchor: "Announcement 20261113-c4dee558 and 20261113-05e9700a"}
+  - {catalyst: "Hyderabad and Bengaluru lab completion filings", window: "Dec 2026 to Jun 2027", evidence_type: "CLAIM", anchor: "Deck May 2026 p.23; AR26 p.22, p.70"}
+  - {catalyst: "First inspection revenue after NABCB ISO/IEC 17020 accreditation", window: "H2 FY27", evidence_type: "DOC", anchor: "Announcement 20260625-fe69b871 p.2; AR26 p.11, p.23"}
+  - {catalyst: "Allotment and use of Rs 4698.06 Lakh preferential issue (Rs 600.00 Lakh auto expansion)", window: "Dec 2026 to 2027", evidence_type: "DOC", anchor: "EGM notice 20260924-fd526286 p.12; EGM result 20261018-d0ca2f7e"}
+  - {catalyst: "H2 FY27 results: EBITDA margin vs 27% and CWIP at 31 Mar 2027", window: "May 2027", evidence_type: "INFER", anchor: "B05 monitorable; AR26 C-Note 11c p.124"}
+  - {catalyst: "FY27 AR: CWIP ageing and capitalisation ratio", window: "Aug 2027", evidence_type: "INFER", anchor: "AR26 p.142 (ageing schedule format)"}
+capex_embedded_growth_pct: 72   # case B: (CWIP 6977.28 - land and building 1813.01) x FY26 FAT 1.743 = 8999.3 Lakh on FY26 revenue 12451.81 Lakh; range 49% to 98%
+optionality_register:
+  - {optionality: "Asset-light IAC business scales", converting_evidence: "Disclosed IAC revenue line or named inspection contract with value", first_appears: "H2 FY27 results MD&A; Reg 30 order filing", window: "6-12 months"}
+  - {optionality: "LPO / lab operation for government and PSU labs", converting_evidence: "Repeat orders with disclosed value; LabOps revenue in AOC-1", first_appears: "FY27 AR AOC-1 and notes; Reg 30", window: "12-18 months"}
+  - {optionality: "USFDA / regulated-market pharma lab (Bengaluru)", converting_evidence: "Completion filing with price; accreditation certificate in the lab's name", first_appears: "BSE Reg 30 filing", window: "3-9 months"}
+  - {optionality: "Hyderabad food lab acquisition", converting_evidence: "Completion filing and valuation report", first_appears: "BSE Reg 30 filing", window: "3-9 months"}
+  - {optionality: "EMI/EMC Pune and Noida analytical lab", converting_evidence: "Capex commitment with amount; NABL scope extension", first_appears: "AR27 CWIP note; Reg 30", window: "12-24 months"}
+  - {optionality: "South India automotive lab (Rs 600.00 Lakh earmark)", converting_evidence: "Fund receipt then lease or equipment order", first_appears: "Preferential-issue monitoring report; AR27", window: "12-24 months"}
+  - {optionality: "Cross-sell / KAM wallet share", converting_evidence: "Customer-wise or repeat-revenue disclosure", first_appears: "24 Nov 2026 call; AR27", window: "6-12 months"}
+  - {optionality: "Overseas share toward dropped 30% target", converting_evidence: "Geography revenue split above 2.7% FY26 base", first_appears: "AR27 segment and exports note", window: "24-36 months"}
+  - {optionality: "Dedicated R&D division", converting_evidence: "R&D spend line; patent filing", first_appears: "AR27", window: "12-24 months"}
+  - {optionality: "Karnal, Gandhidham, Nellore labs", converting_evidence: "Commissioning filing or PPP agreement", first_appears: "BSE Reg 30; AR27", window: "12-24 months"}
+combined_assessment: "AVERAGE"
+combined_reasoning: "Gate 0 AVERAGE (core 45) with emerging score 11.0 (NONE): large debt-funded CWIP, no copy-proof advantage yet, execution record 3 of 9 delivered; not a HIGH POTENTIAL or TURNAROUND setup."
+top_moat_risks:
+  - "Debt-funded CWIP does not commission: capitalisation ratio 11.5% FY26, over-3-year bucket Rs 151.81 Lakh uncleared, borrowings +23% in six months"
+  - "Accreditation is not scarce; MNCs dominate inspection; IAC revenue unproven"
+  - "Government and PSU work is small (about 1.5% of FY26 revenue per year from filed orders) and collection-heavy (receivables over 6 months 22.4%)"
+  - "Rs 2200 Lakh of new funds for unidentified acquisitions incl. cybersecurity: strategy drift"
+analyst_note: "Score 11.0 sits 1.0 below the MODEST band. Raising R1 impact to High gives 12.0 to 13.0, I did not, because filed orders are small (Rs 376.90 Lakh incl GST over 24 months across two IOC orders; BRDC value undisclosed) and accreditation is not scarce. F2 replaces the concall record: 3 delivered (Mumbai lab early, LabOps, Bhubaneswar II), 3 late (IPO capex over two years, Noida at least 12 months, IAC scope), 3 open (Hyderabad, western USFDA lab now Bengaluru, Gandhidham/Nellore/Karnal). Pattern: fast on deals, slow on commissioning. Capex headline 72% assumes the 31 Mar 2026 land item of 1813.01 Lakh is still in CWIP; range 49% to 98%. Separating observation for the two readings of CWIP: capitalisation ratio and CWIP at 31 Mar 2027 with H2 FY27 EBITDA margin (27% or more vs below 24%)."

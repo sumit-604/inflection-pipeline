@@ -10,6 +10,12 @@ Not set. Step-1 intake only; no thesis is formed before Halt 1.
 
 ## DECISION STATUS AND ENTRY ZONE
 Not set. No valuation has run; stages 10 and 11 are phase 3.
+Phase 1 gate recommendation 2026-11-15: PROCEED WITH CAVEATS. Caps: corpus
+freshness (no Q2 FY27 call transcript; the call is on 16 Nov 2026) and an
+INDETERMINATE cash-conversion flag. Phase 1 confidence delta 83.3, set by
+peer utilisation. Gate 0: core 33 of 100, AVOID on a ten-year window
+(FLAG-GATE0; it caps nothing). Promoter stage: CAUTION, a STRUCTURE concern.
+File: runs/gvpil-2026-11-15/outputs/final/gate-recommendation.md
 
 ## SPEAR
 Spear: OVERRIDE 2026-11-15 (operator standing ruling 2026-09-05: Step-1 intake replaces the web spear)
@@ -43,7 +49,27 @@ not anchored evidence.
 DRAFT - NOT SIGNED. Stage 09b drafts it at Halt 1 in
 runs/gvpil-2026-11-15/outputs/reports/09b-understanding-dossier.md Section 2.
 The operator signs it in claude.ai. Nothing after Halt 1 runs on an unsigned
-model.
+model. The draft, for the operator to accept or reject:
+  - FROM rung -> TO rung: R1 COMMODITY PRICE-TAKER -> R3 VALUE-ADDED / SPEC'D
+    SUPPLIER (claimed). This is a two-rung leap, a red flag under the ladder
+    rules; the operator rules R2 or R3.
+  - Archetype: Order-book business, short-cycle services form
+  - Engine: loss-making FGD, new-build and Durgapur cost run off while core
+    services order intake grows
+  - Proof gate: continuing EBITDA margin excluding other income and reversals
+    at or above 11% in Q3 FY27 and Q4 FY27, with FY27 core intake above
+    Rs 734 Cr and services backlog above Rs 1,218 Cr at 31 Mar 2027. NOT FIRED.
+  - Ugliness verdict (draft): ARTIFACT-OF-CLIMB
+  - Transition falsifier: a second quarter under 10% margin excluding other
+    income with no named mix reason; core intake below the prior-year quarter
+  - Business falsifier: group-sourced income becoming the main source of
+    profit, or withdrawal of the parent licence, mandate or guarantees
+  - Fragility (draft): MODERATE; single point of failure is the parent
+    guarantee and bank-line dependence
+Step-1 leads the stages corrected: the 11% is the FY26 normalised margin, not
+an FY27 guide; Q2 FY27 other income was 59.0% of PBT, not 48%; group royalty
+in the related-party note is INR M 435.7 for FY26; net cash is INR M 8,473.1
+with the INR M 4,500.0 group deposit and INR M 3,973.1 without it.
 
 ## HALT 1 GATE
 - Mental Model signed: NOT SIGNED.

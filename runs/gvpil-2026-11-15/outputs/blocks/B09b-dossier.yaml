@@ -1,0 +1,71 @@
+stage: B09b-dossier
+company: "GVPIL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+corpus_verdict: "CORPUS GAPPED-FRESHNESS"
+corpus_gaps:
+  - document: "Q2 FY27 earnings-call transcript (call 16 Nov 2026)"
+    expected_source: "BSE"
+    kind: "freshness-pair"
+  - document: "Filed BSE shareholding pattern with promoter pledge detail"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "AGM 14 Aug 2026 voting results, Items 8, 9, 10"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Durgapur scheme document (consideration, liability allocation)"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Q2 FY27 investor presentation"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Screener Profit and Loss, Quarters, Balance Sheet, Cash Flow sheets (exported empty)"
+    expected_source: "company IR page"
+    kind: "findable-missing"
+  - document: "Current BHEL concall (none on BSE in last 12 months)"
+    expected_source: "BSE"
+    kind: "plausibly-nonexistent"
+  - document: "Jaypee Bina and Nigrie FGD termination filing"
+    expected_source: "BSE"
+    kind: "findable-missing"
+  - document: "Broker or research notes"
+    expected_source: "rating agency site"
+    kind: "plausibly-nonexistent"
+archetypes:
+  - line: "Legacy project lines (FGD equipment, new build)"
+    archetype: "Order-book business (EPC/defence/capital goods)"
+  - line: "Core services (spares, repairs, upgrades)"
+    archetype: "Order-book business (EPC/defence/capital goods), short-cycle form; nearest library fit"
+transition:
+  - line: "Entity mix shift to core services"
+    from_tier: "R1 COMMODITY PRICE-TAKER"
+    to_tier: "R3 VALUE-ADDED / SPEC'D SUPPLIER (claimed; two-rung leap, operator rules R2 or R3)"
+    engine: "Loss-making FGD and new-build revenue and Durgapur cost run off while core services intake grows; materials 67.3% to 60.2% and employee cost 18.5% to 14.5% of revenue"
+    proof_gate: "Continuing EBITDA margin ex other income and ex reversals at or above 11% in Q3 FY27 and Q4 FY27, plus FY27 core intake above Rs 734 Cr and services backlog above Rs 1,218 Cr at 31 Mar 2027"
+    recognition_gap: "Open question: does the TO state already appear reflected in market pricing? Resolved at Stage 11 via the PE gap"
+    ugliness: "ARTIFACT-OF-CLIMB"
+    transition_falsifier: "Second quarter under 10% margin ex other income with no named mix reason; core intake below prior-year quarter or services backlog under Rs 1,124 Cr; cost of materials above 67% of revenue after Durgapur supply terms start"
+dominant_variables:
+  - "Core services order intake and services backlog"
+  - "Continuing EBITDA margin ex other income and ex reversals"
+  - "Durgapur demerger effectiveness and post-demerger supply terms"
+  - "Cash quality and group deposit exposure (CFO ex deposit vs PAT, ICD balance and guarantee cover)"
+business_falsifier: "Group-sourced income becoming the main source of profit (INR M 851.9 is 25.1% of FY26 profit before exceptional items), withdrawal of the parent IP licence, India mandate or guarantees behind INR M 16,000 of bank capacity, or a filed line split showing core services well under the 55% stated for Q2 FY26"
+mental_model_status: "DRAFT - PENDING OPERATOR SIGN-OFF"
+fragility:
+  variable_count: 6
+  verifiability_ratio: "4 of 6 externally observable"
+  single_point_failure: "Parent guarantee and bank-line dependence (INR M 16,000 needed; banks require GE Vernova majority ownership)"
+  fragility_verdict: "MODERATE"
+candidate_count: 7
+second_order:
+  chains_drafted: 2
+  pending_live_links: 2
+  confirm_by_observations: 2
+research_brief_items: 17
+plain_summary_points: 15
+annex:
+  present: true
+  questions_answered: 10
+  corpus_commit_hash: "e80effccab4dc0301c83118e758949579cc0c351"

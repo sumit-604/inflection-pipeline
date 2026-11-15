@@ -1112,3 +1112,16 @@ WITH CAVEATS (FLAG-CASH INDETERMINATE). Confidence overall 70 (redflag_coverage)
   operator hand-off) CLOSED by operator ruling 2026-10-11: one cycle per
   Phase 1, enforced from the manifest (PR #212). Removed from LESSONS.md
   OPEN ACTIONS.
+
+
+## 2026-11-15 · GVPIL /step1 intake to Halt 1 (runs/gvpil-2026-11-15)
+- Stages 4, 5 and 8 stalled together on first dispatch ("no progress for 600s", stream watchdog); nothing was on disk. One mechanical re-run each cleared it. Cost: about five hours of wall time overnight.
+- The harness exposes only total tokens per subagent. session-cost.md has n/a in every in_tok, cache and out_tok cell, so the fresh vs re-read lines cannot be computed.
+- Collector first pass returned a non-company screener page for GVPIL and BHEL under HTTP 429 (nine sessions on one IP); a full re-run worked. Results, rating and announcements came by direct BSE and ICRA download. No file needed the Chrome download route; the shareholding table was read from screener through Chrome and is not the filed pattern.
+- Two misfiles in announcements/ (Q3 FY26 results, Q3 FY26 call deck) found by the Haiku intake check and moved after page-1 verification.
+- Orchestrator task messages carried one Step F mislabel (8 Sep 2026 filing called an order receipt; it is a GST order). Stage 7 caught it. Check hand-back labels against page 1 before they enter a task message.
+- Step-1 web brief carried four leads the filings corrected (11% margin guide, 48% other-income share, Rs 13.21 cr royalty, Rs 880 cr net cash without the group-deposit caveat). Brief stayed COMPANY MEMORY, so no stage anchored to them.
+- Freshness pair failed by one day: the Q2 FY27 call is on 16 Nov 2026. Gate capped at PROCEED WITH CAVEATS.
+- Verifier A shadow not run here by batch instruction (TD Power session owns it).
+- No DOWNSHIFT FAILURE and no COST SPIKE. Top stage by tokens: stage 2 notes triple-pass, 584,787.
+

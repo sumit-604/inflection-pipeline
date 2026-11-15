@@ -1,0 +1,57 @@
+stage: B08-promoter
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "Web search thin on individuals; SEBI orders portal, SAT, eCourts, MCA21 (status of 23 promoter-group entities, TIC financials), IiAS/SES/InGovern, BSE shareholding filing (403) not reachable"
+  - "Shareholding is a screener extract; Sep 2026 pledge not filing-anchored; the FY26 Reg 31(4) no-encumbrance declaration (6 Apr 2026) is filing-anchored"
+  - "TIC Services financials and source of the Rs 6.74 Cr upfront and Rs 20.22 Cr balance warrant payment: NOT FOUND"
+  - "Valuation reports for ITCPL swap, QTIPL, LabOps; SKM Realcon rent basis for Rs 153.60 lakh; interest-waived amount; which KMP controls AAL Biosciences and AAL Research: NOT FOUND"
+  - "Company secretary successor after 30 Jul 2026, ITC Ltd v ITCPL (CS/159/2022) status, auditor peer review: NOT FOUND"
+  - "Page anchors for a few AR items (SCORES section, SME Reg 17 exemption wording, AR25 preferential-issue page) are approximate; line content was read, page not re-verified"
+flags:
+  - {type: FLAG-PROMOTER-STRUCTURE, verdict: "CAUTION (informational; below CONCERN line)", top_findings: ["Three company-secretary exits in 16 months (Apr 2025, Feb 2026, Jul 2026; seat open since 30 Jul 2026) plus independent director Ajay Agarwal resigned 29 Oct 2026; FY24 AR filed 342 days late, penalty Rs 6,65,520", "Insider-priced related-party terms without benchmark: SKM Realcon rent 21.60 to 153.60 lakh, AAL Research advance 11.48 to 151.06 lakh with interest waived, ITCPL swap 5,199.73 lakh unvalued", "Promoter warrants: 5,20,000 at Rs 518.55 to TIC only, 25% upfront (Rs 6.74 Cr), 75% (Rs 20.22 Cr) in 18 months, TIC funding source NOT FOUND, filed as promoter 'not interested', not yet allotted", "Narrative-vs-note conflicts and ITC Ltd Rs 50 Cr suit absent from AR; pay cap rise 28% to 35% tabled then withdrawn 7 Sep 2026"]}
+verdict: "CAUTION"
+scorecard: {clean: 4, caution: 6, red: 0}
+deal_breakers: []
+adverse_findings:
+  - {finding: "FY2023-24 annual report filed 342 days late under LODR Reg 34(1); exchange penalty Rs 6,65,520 paid 2 Jul 2025", evidence_tier: VERIFIED, source: "AR25 secretarial audit report pp.91-92 (Annual_Report_2025.txt lines 3750-3775, 3914-3925)", date: "2025-07-02"}
+  - {finding: "Company secretary exits: Ashima Bhatnagar (to 10 Apr 2025), Mayank Garg (resigned 21 Nov 2025, accepted 7 Feb 2026), Mohit Kumar (resigned 30 Jul 2026 after about 3.5 months); seat open from 30 Jul 2026", evidence_tier: VERIFIED, source: "AR p.83 and note 26 p.131; announcements 20260209-7b6ff1b4, 20260730-44102f7e pp.1-3", date: "2026-07-30"}
+  - {finding: "Independent director Ajay Agarwal resigned for personal reasons after about 19 months, 100% attendance, no committee seat", evidence_tier: VERIFIED, source: "announcement 20261029-5e7edc16 pp.1-4", date: "2026-10-29"}
+  - {finding: "SKM Realcon (promoter-group lessor, guarantor, mortgagor) lease rent Rs 153.60 lakh vs 21.60 lakh a year earlier (7.1x); AOC-2 states arm's length with no benchmark", evidence_tier: VERIFIED, source: "AR note 26 p.133; AOC-2 p.80; AR25 note 26", date: "2026-03-31"}
+  - {finding: "AAL Research and Solution unsecured advance outstanding 151.06 lakh (FY25 11.48); AAL Biosciences receivable 77.82 lakh (33.80); group waived interest on related-party loans for FY26 by board resolutions of 20 May 2026, amount NOT FOUND", evidence_tier: VERIFIED, source: "AR note 26 pp.133-134", date: "2026-05-20"}
+  - {finding: "Share swap of 11,70,881 shares (3,640.15 lakh) to promoter TIC for ITCPL stake; no valuation report; CARO (xv) says no non-cash director transactions", evidence_tier: VERIFIED, source: "AR note 26 pp.131, 134; B03 flags", date: "2026-03-31"}
+  - {finding: "Managerial remuneration +73.13% vs other staff +12.08% in FY26; Nayak 27.00 lakh in Board report vs 143.12 lakh in note 26; AGM Item 4 to lift pay cap 28% to 35% of net profit was withdrawn 7 Sep 2026 without stated reason", evidence_tier: VERIFIED, source: "AR p.68, p.132, p.36; announcement 20260907-d2d6e19d p.1", date: "2026-09-07"}
+  - {finding: "Warrant resolution to promoter TIC filed as 'promoter/promoter group interested: No'; promoter group cast 65,78,375 of 68,05,975 votes (96.7%); public non-institution turnout 1.8%", evidence_tier: VERIFIED, source: "voting result 20261018-d0ca2f7e pp.5-8", date: "2026-10-16"}
+  - {finding: "Non-promoter allottee Jagattaraini Tieup Pvt Ltd (16,000 shares) has owners Ruchi More and Bikash More; Ruchi More is a TIC director and Bikas More held 10.62% of TIC in the prospectus; name match inferred", evidence_tier: UNVERIFIED, source: "EGM notice 20260924-fd526286 p.17; Prospectus pp.189-190", date: "2026-09-24"}
+  - {finding: "ITC Ltd suit CS/159/2022 against subsidiary Interstellar Testing Centre claims Rs 50 Cr punitive damages; absent from AR contingent liabilities; status not found online", evidence_tier: VERIFIED, source: "Prospectus p.289; B03 missing_risks", date: "2024-01-12"}
+  - {finding: "Alok Agarwal attended 4 of 8 board meetings yet sits on Audit, NRC, Stakeholders' Relationship and CSR committees; attendance conflicts with committee records; AR lists him as Whole-Time Director in the NRC table", evidence_tier: VERIFIED, source: "AR pp.54-55", date: "2026-03-31"}
+transition_evidence:
+  - {item: "Marquee investor Ashish Kacholia, 5,06,400 shares (4.35%) rising to 5.65% in Sep 2026 issue", source: "EGM notice 20260924-fd526286 p.15; 5.07% at Mar 2025 per media"}
+  - {item: "Non-family professional executives: Mangesh Bhosale WTD from 29 Mar 2025 (27 years in TIC); CFO Navneet Gupta", source: "AR pp.19, 52"}
+  - {item: "Promoter co-investment at SEBI floor: 5,20,000 warrants TIC and 1,200 shares Kamal Grover at Rs 518.55 (conditional; funding source NOT FOUND)", source: "EGM notice pp.13-15"}
+  - {item: "Five promoter-side parties guarantee QLL bank debt at near-zero fee (TIC, ASC Consulting, SKM Realcon corporate; Nayak, Grover, Alok and Anju Agarwal personal)", source: "AR note 26 pp.133-134"}
+pledge_pct_latest: 0
+pledge_trend: "stable at nil; Reg 31(4) declaration 6 Apr 2026 covers Nayak, Alok Agarwal, Grover, TIC, Anju Agarwal for FY26 (announcement 20260406-e7da577b p.1); Sep 2026 screener extract shows promoter 56.46%, pledge not filing-anchored; promoter % fell 73.35 to 54.19 (Mar 2025) by dilution, then 56.46 (Mar 2026) by share swap, no promoter sale found"
+searches_performed:
+  - "Qualitek Labs SEBI order OR penalty OR show cause promoter: no enforcement"
+  - "Alok Kumar Agarwal insolvency professional IBBI disciplinary order: none against him"
+  - "ITC Limited v Interstellar Testing Centre ITC Labs trademark Calcutta High Court: not found online"
+  - "Qualitek Labs Antaryami Nayak Kamal Grover TIC Services Alok Agarwal: unrelated results"
+  - "Qualitek Labs AmbitionBox or Glassdoor reviews: 3.8/5, 17 reviews, Nov 2024, entity match unconfirmed"
+  - "Qualitek Labs share price news Ashish Kacholia stake 2026: 5.07% Mar 2025, no 2026 change"
+  - "Antaryami Nayak Bureau Veritas CPS background: nothing on individual"
+  - "Alok Kumar Agarwal Kansal Building Solutions Alstrong NCLT IBBI: entries consistent with prospectus"
+  - "Corpus reads: prospectus promoter, group, litigation sections; AR 2026 board, committees, secretarial audit, remuneration, note 26, AOC-2; AR 2025 secretarial audit; announcements 20260730, 20261029, 20260907, 20260922, 20260924, 20261018, 20261113, 20260406"
+searches_skipped:
+  - "SEBI orders portal and SAT"
+  - "eCourts and High Court status for CS/159/2022"
+  - "MCA21 master data for TIC Services, ASC group, SKM Realcon, AAL entities"
+  - "IiAS, SES, InGovern proxy reports"
+  - "BSE shareholding pattern filing (403 bot wall)"
+  - "Exchange penalty and SOP circulars"
+  - "Glassdoor India page for Qualitek Labs"
+  - "Individual press interviews and LinkedIn for Nayak, Grover"
+verdict_basis: "No integrity, legal or regulatory finding against any promoter and no pledge; but three CS exits in 16 months, a 342-day late AR, insider-priced related-party terms without benchmarks and repeated narrative-vs-note conflicts make this a structure CAUTION."
+analyst_note: "Promoter list: the run brief omitted Antaryami Nayak, the Chairman and MD (31.87% of TIC in the prospectus); promoters hold QLL through TIC (65,78,375 shares, 56.46%). Warrant facts match B03: 5,20,000 at Rs 518.55, TIC only, Rs 26.96 Cr, 25% upfront; passed 16 Oct 2026 with the promoter label 'not interested'; not yet allotted at run date. The 5 Dec 2026 EGM is only an objects-clause change, unrelated to the warrants. Competing readings: market-floor co-investment vs a free 18-month option with Rs 6.74 Cr at risk; separator is exercise of the Rs 20.22 Cr balance and the source of TIC's money. Verdict is CAUTION, not CONCERN, because nothing shows deceit. A second independent exit, an unfunded warrant lapse, or any pledge moves it to CONCERN. Alok Agarwal is a registered insolvency professional; his IBBI matters are professional roles, no misconduct found."

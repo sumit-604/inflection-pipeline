@@ -14,3 +14,13 @@ conflicts:
   - figure: "Q2 FY27 consolidated revenue"
     values: [{block: B01-gate0, value: "Rs 190.94 Cr (results and screener)"}, {block: B01-gate0 note, value: "concall states Rs 187.8 Cr"}]
     disposition: "Basis gap (total income vs revenue from operations, or standalone vs consolidated) to be settled by stages 4 and 5 at the results page."
+updates:   # appended 2026-11-15 after stage 4
+  - figure: "Q2 FY27 consolidated revenue"
+    disposition: "CLOSED by B04 at the results page: Rs 187.8 Cr (Q2) and Rs 358.3 Cr (H1) are STANDALONE revenue from operations (1,878.03 and 3,583.22 Rs Mn, Q2 FY27 results [page 3]); Rs 190.94 Cr and Rs 363.53 Cr are CONSOLIDATED revenue from operations (1,909.35 and 3,635.34 Rs Mn, [page 9]). No source is wrong."
+  - figure: "Working-capital days, basis of the July tripwire 344"
+    disposition: "B04 found the basis: 344 days is CARE's working capital cycle at 31 March 2026 (287 a year earlier; inventory 262, collection 163, creditor 80 days), CARE rationale 2026-06-22 [page 3]. B03's 'no stated basis in the AR' is correct for the AR and incomplete for the corpus. Three bases stand side by side: CARE 344 (FY26), company 244 vs 202 (AR26 [page 7]), stage 1 calculation 336 (FY26) and 369 (H1 FY27 annualised). No H1 FY27 figure on the CARE basis exists in the corpus."
+  - figure: "Consolidated net debt at 30 Sep 2026"
+    values: [{block: B04-bizmodel, value: "4,740.69 Rs Mn (calc: borrowings 5,616.25 less cash and bank 875.56, Q2 FY27 results [page 10])"}, {source: "Q2 FY27 concall [page 7]", value: "Rs 423.8 Cr (management)"}]
+    disposition: "UNRESOLVED: about 502 Rs Mn gap; management's definition not stated. Question for management."
+  - figure: "Aero engines business head (B03 listed as an exit)"
+    disposition: "CORRECTED by B08: ceased 2026-02-14 on his death (Annual_Report_2026.pdf [page 69])."

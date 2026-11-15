@@ -20,3 +20,5 @@ cache-read, cache-write and output splits are not exposed and are written n/a, n
 | 7 | stage-07-emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 123869 | 4m58s | 1 |
 | 6 | stage-06-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 202805 | 6m36s | 1 |
 | 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 81575 | 2m19s | 1 |
+| 12a | verifier-a-numerical (stalled, no output) | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | n/a | stalled >10m | 1 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 329096 | 8m29s | 2 |

@@ -38,3 +38,4 @@ Gaps:
 - Stage 5 no-call cost: 174,554 total tokens against the 100k target (LESSONS open action C2).
 - Stages 8 and 9 returned status partial (searches skipped or failed; lists in their blocks).
 - B06 block file ended with a stray markdown fence line and failed to parse. The orchestrator removed that one line; no content changed. No stage retry was needed.
+- Verifiers A, B and C stalled on first dispatch (harness stream watchdog: no progress for 600s) and left no report or block. Mechanical failure: each is re-invoked once in the foreground path; this does not count against verifier_runs. Verifier D completed on first dispatch.

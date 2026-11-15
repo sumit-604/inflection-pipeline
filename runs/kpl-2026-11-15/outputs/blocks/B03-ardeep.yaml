@@ -1,0 +1,78 @@
+stage: B03-ardeep
+company: "KPL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "KPL Q2 FY27 concall transcript ABSENT: call held 13 Nov 2026; freshness pair 1 FAILS. Re-collect after about 20 Nov 2026 (B00)."
+  - "KPL Q3 FY26 (Feb 2026) concall transcript ABSENT (B00)."
+  - "research/ empty (non-anchored; leads only) (B00)."
+  - "shareholding/: BSE summary only, no FII/DII category breakdown beyond the AR year-end pair (B00)."
+  - "screening/: screener export sheets Profit & Loss, Quarters, Balance Sheet, Cash Flow absent for KPL and peers (B00)."
+  - "peer-concalls 10 of 12 (B00)."
+  - "AR FY2026: customer, partner, country and product split; revenue by registration holder (own vs partner); customers above 10% of revenue; Middle East debtor amount and age; ECL model; interest rates and covenants; 5-year repayment table; tax reconciliation; leave encashment; CWIP ageing; capital commitments; Ind AS 10 events note; ownership and director link of Iair Infocom and Kaler Biopharmachem; Unit 6 cost and completion date; promoter pledge: NOT FOUND IN DOCUMENT."
+  - "FY27 EBITDA (Rs 189-196 Cr) and PAT (Rs 122 Cr+) guidance and the Rs 720 Cr revenue figure are in the web brief only; the AR states revenue over Rs 700 crore and no profit number. Q2 FY27 PAT and tax rate are outside the AR."
+  - "12 Nov 2026 statutory auditor resignation post-dates the AR (audit report 19 May 2026; Board report 8 Aug 2026); read the BSE filing outside this stage."
+flags:
+  - {type: FLAG-CASH, reason: "CFO 1,658.62 vs PAT 6,734.60 = 24.6% (INR lakhs); CFO/EBITDA 14.0%; FCF -3,235.42 after capex 4,894.04; two-year CFO/PAT 47.2% on a consistent basis (FY25 CFO includes 1,876.75 of short-term borrowing, exact tie 177.52 + 1,876.75 = 2,054.27); CFO would be -2,930.69 without the payables increase of 4,589.31; receivables +81.5% to 28,005.24 at 203.2 days (derived) with nil provision (CFS p.190-191; Note 9 p.211-212; Note 20 p.219)"}
+phase_verdicts: {p1: "yellow: unmodified opinions, no going-concern doubt; no KAM section in either report; CARO (vii)(a) late GST/TDS deposits; GST disputes 3,697.75; subsidiary unaudited", p2: "yellow with red on provisioning: nil ECL on 28,005.24; matches stage 2 score 5/10; 15 of 15 triple-pass findings verified", p3: "red: CFO/PAT 24.6%, FCF -3,235.42, supplier-funded working capital, FY25 CFO inflated by borrowing", p4: "yellow: risk table omits credit risk, GST and liquidity; natural-hedge claim contradicted by 1.1% payable cover; guidance specific on revenue, silent on FY27 profit", p5: "yellow: five-member family executive bloc; six of eight FY26 independents under 75% attendance; independent bench rebuilt; Audit chair joined 28 Jan 2026; no pledge, no promoter selling; Board report vs Note 40 conflict", p6: "yellow: growth claims hold; cash-conversion, payables, richer-mix and no-conflict claims do not; EPO stage regressed vs FY25 AR", p7_best_fit: "GARP WATCHLIST"}
+overall_quality: 4.5
+quality_components: {governance: 4, accounting: 5, balance_sheet: 5, earnings: 4}
+kill_switch_notes:
+  - "P1: no reason to stop; thin audit narrative (no KAM on 28,005.24 of receivables) warrants close reading of Phase 2-3"
+  - "P2: no reason to stop; reviewer needs receivable ageing by customer and country before relying on reported profit"
+  - "P3: reason to pause; CFO 14.0% of EBITDA, FCF -3,235.42, funding from supplier credit and bank lines; do not treat PAT as cash earnings"
+  - "P4: no reason to stop; treat the cash-conversion narrative as unproven until H1 FY27 data"
+  - "P5: no reason to stop; read the 12 Nov 2026 auditor-resignation filing before sizing; independent bench replaced in 11 months and Audit chair two months in role at signing"
+  - "P6: no reason to stop; discount the narrative on cash conversion and biologics timing"
+triple_pass_verification:
+  verified: 15
+  discrepancies: []   # none material; four wording refinements recorded in report section 2.0 (ranks 4, 5, 6, 7)
+missing_risks:
+  - {risk: "Credit and collection risk absent from the MD&A risk table", evidence: "Receivables 28,005.24 (+81.5%), 203.2 days, nil provision, 3,030.29 over six months (Note 9 p.211-212); MD letter cites payment delays (p.4); risk table p.94 has no credit row"}
+  - {risk: "Working-capital funding and liquidity", evidence: "CFO 1,658.62; cash 73.64; limits 67.4% drawn of 12,685 (standalone Note 17 p.147-148); payables +82.3% (Note 20 p.219)"}
+  - {risk: "GST demands 3,697.75 (11.2% of net worth) not in risk section", evidence: "Note 34 p.226-227; CARO (vii)(b) p.106-107; Board report para 43 p.44 says no order could impact going concern"}
+  - {risk: "Promoter-family control and key-person", evidence: "All five executive directors are one family (Corporate Governance p.62); MD on board since 04/05/1983 (p.85)"}
+  - {risk: "Independent director turnover and low attendance", evidence: "Board report p.33-34; attendance table p.61-62 (Kapur 1 of 12, Vellanki 1 of 12, Singh 1 of 9 eligible, derived)"}
+  - {risk: "Related-party conduct with director-interested parties", evidence: "Note 40 p.238-239: Kaler sale 121.48, return 262.75; Iair 26.65; Board report para 30 p.41-42 asserts no conflict"}
+  - {risk: "Customer, partner and geography concentration not disclosed", evidence: "No concentration table in AR; out-licensing and supply 90% label only (MD&A p.91); NOT FOUND IN DOCUMENT"}
+  - {risk: "Biologics and Unit 6 execution and funding", evidence: "EPO described at earlier stage than AR FY25 and launch moved to CY2027 (Annexure A p.48; AR FY25 p.105); CWIP 1,700.62 with no ageing (BS p.184); Unit 6 cost NOT FOUND"}
+  - {risk: "Unhedged FX receivables with natural-hedge claim", evidence: "USD receivables 164.28 lakh vs payables 1.81 lakh (Note 37 p.229, derived 1.1% cover); MD&A p.94 claims natural hedging"}
+guidance_table:
+  - {claim: "FY27 revenue over Rs 700 crore, raised from Rs 650 crore", number: "700 crore (70,000 lakh); needs +39.1% on FY26 50,308.34", timeframe: "FY27", credibility: "moderate: FY26 target Rs 500 crore delivered at 503.08; cash funding of growth unproven"}
+  - {claim: "Revenue Rs 1,000 crore plus", number: "1,000 crore; implied CAGR 25.7% from 503.08", timeframe: "FY29", credibility: "moderate: FY24 to FY26 CAGR 28.0%"}
+  - {claim: "Profitability to scale in tandem", number: "no number in AR; brief's EBITDA 189-196 and PAT 122 NOT FOUND IN DOCUMENT", timeframe: "FY27", credibility: "low specificity; FY26 22-25% EBITDA range met at 23.50%, but no FY27 range given"}
+  - {claim: "EPO (Kwalipoietin) launch", number: "CY2027, subject to approvals", timeframe: "CY2027", credibility: "low: AR FY25 said commercialise within FY26 and described clinical trials; AR FY26 describes pre-clinical study submitted to RCGM"}
+  - {claim: "Three monoclonal antibody biosimilars", number: "NOT FOUND (no date)", timeframe: "on patent expiry", credibility: "not testable"}
+  - {claim: "BE programme over 40 molecules; 16 BE studies nearing completion", number: "433.89 capitalised in FY26", timeframe: "no date", credibility: "spend verified; filing timeline NOT FOUND"}
+  - {claim: "Hormone unit (Unit 6) under construction", number: "cost NOT FOUND; CWIP 1,700.62", timeframe: "no date", credibility: "not testable"}
+  - {claim: "Cash conversion cycle 208 to 170 days, improved further in Q1 FY27", number: "reproduced 210.5 to 167.1 (derived)", timeframe: "FY26, Q1 FY27", credibility: "FY26 reproducible but supplier-funded (payable days +38.0, inventory days -56.5, receivable days +51.1); Q1 FY27 outside AR"}
+monitorables:
+  - {metric: "Receivable days, year-end and half-year", threshold: "below 203.2; red above 215 (analyst threshold)", where: "H1 FY27 balance sheet and ageing note", why: "Core of FLAG-CASH"}
+  - {metric: "CFO / PAT, half-year", threshold: "at or above 60% to clear; red below 35% (analyst threshold)", where: "H1 FY27 cash flow statement", why: "Tests the Q1 FY27 improvement claim"}
+  - {metric: "First ECL or doubtful provision; over-one-year receivable bucket", threshold: "any provision line; bucket above 1,566.38 is adverse", where: "H1 FY27 notes; next AR Note 9", why: "Provisioning is the weakest area"}
+  - {metric: "Working-capital limit utilisation", threshold: "above 85% of 12,685 sanctioned (now 67.4%) or a limit enhancement", where: "Rating rationale; bank disclosures", why: "Funding of the Rs 700 crore guidance"}
+  - {metric: "Kaler and Iair flows, ownership and director link", threshold: "any repeat return; any ownership disclosure", where: "Half-yearly RPT filing; AGM notice; AOC-2", why: "Director-interested counterparties"}
+  - {metric: "Auditor change reasons; CARO, emphasis or KAM changes; independent director exits", threshold: "any qualification, emphasis or further independent exit", where: "BSE announcements; next AR", why: "12 Nov 2026 resignation; bench churn"}
+  - {metric: "GST writs CWP-12033-2026 and CWP-34165-2024", threshold: "any pre-deposit, provision or adverse order", where: "Court records; next AR Note 34", why: "3,697.75 exposure"}
+  - {metric: "Gross margin and distribution cost ratio", threshold: "gross margin below 48.6% with distribution above 2.8% of revenue", where: "Quarterly results", why: "Whether the FY26 EBITDA gain repeats"}
+  - {metric: "EPO regulatory step", threshold: "a named RCGM, DBT or DCGI step by mid-2027", where: "Company announcements", why: "CY2027 launch claim"}
+  - {metric: "FX share of receivables and hedging", threshold: "above 55.7% of receivables, or hedging policy stated", where: "Next AR Note 37", why: "Unhedged 15,599.05"}
+ar_new_downstream_entities:
+  - name: "Kaler Biopharmachem Private Limited"
+    where_in_ar: "Note 40 consolidated p.238-239 and standalone Note 41 p.170-171: sale of goods 121.48 and sale return 262.75 (INR lakhs), prior year nil; labelled Director Interested"
+    entity_type: "RPT counterparty (director interested); owner and director NOT FOUND IN DOCUMENT"
+  - name: "Iair Infocom Private Limited"
+    where_in_ar: "Note 40 consolidated p.238-239 and standalone Note 41 p.170-171: purchase of services 20.25 and sale of machine and spares 6.40 (INR lakhs), prior year nil; labelled Director Interested"
+    entity_type: "RPT counterparty (director interested); owner and director NOT FOUND IN DOCUMENT"
+strengths_top3:
+  - "Growth and operating leverage evidenced in the accounts: revenue +35.9%, EBITDA +47.1%, PAT +69.2%, EPS 64.90 vs 38.36 (P&L p.187-189)"
+  - "Moderate leverage and no defaults: D/E 0.39, interest cover 9.15, CARO (ix) clean (MD&A p.96; CARO p.107)"
+  - "Promoters at 54.87% (+4,097 shares), no promoter selling, promoter-owned property mortgaged for company loans (Corporate Governance p.82; standalone Note 17 p.149)"
+red_flags_top3:
+  - "CFO/PAT 24.6% (two-year 47.2%), FCF -3,235.42, with nil loss allowance on 28,005.24 of receivables at 203 days (CFS p.191; Note 9 p.211-212)"
+  - "At least 1,166.32 of aged receivables left the ledger with no disclosed route; 15,599.05 of FX receivables unhedged with no country or customer split (Note 9 p.212; Note 37 p.229)"
+  - "Board report asserts no conflict RPT while Note 40 shows two director-interested parties and a sale return (262.75) above the sale (121.48); independents' attendance low and bench turned over (Board report p.41-42; Note 40 p.239; Corporate Governance p.61-62)"
+best_fit_strategy: "GARP (WATCHLIST)"
+one_line_verdict: "Growth is real but not yet cash: GARP WATCHLIST until H1 FY27 cash conversion, receivable ageing by customer and country, and the auditor-resignation filing are read."
+analyst_note: "All AR figures are INR lakhs; stage 10 converts once. Page anchors are .txt [page N] markers (printed page = N minus 3). Derived items: receivable days (year-end basis), export vs domestic days (assumes FX balances = export), attendance ratios (eligible meetings counted from the 12 meeting dates and appointment dates), CCC reproduction, ROCE (AR Note 39 capital base 45,787.97 not rebuilt). The 12 Nov 2026 auditor event, FY27 EBITDA and PAT guidance and the Rs 60-70 Cr Middle East debtors come from the web brief and are not anchored. SA 701 KAM duty and the 15-year Schedule II plant life are external-law recollections flagged for the verifier. Commission +131.5% as a sign of partner-led sales and the freight-terms reading of the distribution cost fall are [INFERENCE]; each has a named separating observation."

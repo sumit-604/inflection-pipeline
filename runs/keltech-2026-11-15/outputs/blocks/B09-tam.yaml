@@ -1,0 +1,106 @@
+stage: B09-tam
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: partial
+input_gaps:
+  - "Carried from B04/B00: no concalls (NO-CONCALL MODE), no investor presentation; TNT product, capacity, licence, offtake, buyer NOT FOUND; explosives sub-mix, plant-wise capacity, licence validity, export markets, market share, industry size NOT FOUND in filings; Q2 FY27 tables are OCR reads."
+  - "B07 had not run: capex-embedded growth figure NOT AVAILABLE; 3C uses B03 and CRISIL capex evidence only."
+  - "Indian TNT demand, imports, supplier list with tonnage, TNT price: NOT FOUND on the open web (no primary source reached)."
+  - "Peer revenue aggregation (Method 3): peer domestic-explosives revenue not in corpus; unorganised share NOT FOUND (no estimate made)."
+  - "Keltech export markets and export product split NOT FOUND; Board +7% vs notes +11.0% export growth conflict unresolved."
+  - "No management TAM claim exists in the filings; mgmt_claim fields are 0 as a placeholder, not a measurement."
+flags:
+  - "TAM_SOURCES_THIN: India market value rests on one commercial research page (Ken Research, Sep 2026) and one unsourced blog (Univest, 27 Aug 2026); no PESO or CRISIL primary figure was reached."
+  - "TAM_DIVERGENCE: 8,000 vs 13,525 vs 16,161 Rs Cr (2.0x spread); separator named in report 2B."
+  - "SAM_IS_A_CEILING: only the export carve-out is quantified; product, geography, customer and capability filters have no data and take no deduction, so SAM and headroom are overstated."
+  - "TNT_OPTION_UNSIZED: TNT / defence energetics is a separate option slice, NOT FOUND in rupees, not in core SAM or SOM."
+  - "H1_FY27_PRICE_VS_VOLUME: H1 FY27 sales +31.9% (screener) with volume NOT FOUND; Solar management says 18-20% of its FY27 growth is price; SOM does not extrapolate H1."
+  - "CAPACITY_UNTESTABLE: installed capacity NOT FOUND; implied Year-3 volume about 78,500 MT (+24%) cannot be checked."
+  - "FX_VINTAGE: USD market value converted at 95.2492 (6 Nov 2026), Ken's own FX year not stated."
+market_definition: "India industrial explosives (cartridge, bulk emulsion, MMAN, accessories) for mining, quarry, cement and infrastructure users; domestic consumption plus an export pool; perlite and TNT excluded"
+tam_cr: {conservative: 8000, realistic: 13525}
+sam_cr: 10507
+sam_pct_of_tam: 78
+som_3yr_cr: 624
+som_5yr_cr: 768
+som_implied_revenue_cagr: {yr3: 9.5, yr5: 9.6}   # company level; perlite and unallocated held flat; central = FY26 explosives growth 11.7% held. High reading (+1pp share by Yr3) gives 13.1 and 13.0.
+current_sam_share_pct: 3.6
+revenue_headroom_x: 28
+tam_growth_pct: 7.4
+runway_class: "GOOD"
+mgmt_claim_cr: 0
+mgmt_claim_ratio: 0
+mgmt_claim_read: "no numeric claim in filings (MD&A p.55 is directional only); read as broad"
+capacity_check: "untestable: installed capacity NOT FOUND; Year-3 explosives SOM needs about 78,500 MT vs 63,154 MT in FY26, gap in Rs Cr not computable"
+methods_used:
+  - "M1 top-down: Ken Research USD 1,420M x 95.2492 = 13,525 Rs Cr; Univest 8,000 Rs Cr read as the low case"
+  - "M2 bottom-up: 2.23 Mt (Ken, PESO-benchmarked) x Keltech realisation Rs 72,470/MT = 16,161 Rs Cr (upper bound, mix caveat)"
+  - "M3 peer aggregation: attempted, NOT FOUND"
+  - "M4 import substitution: not applicable to core explosives; TNT only, no figure"
+  - "M5 global per-capita benchmark: not run, no data fetched"
+stale_data_flags:
+  - {datapoint: "SBL Energy 3,000 tpa TNT plant, export-only, second private TNT plant", source: "ThePrint/PTI 3 Sep 2024", year: 2024}
+  - {datapoint: "about 70% of explosives supplied to Coal India (direction only, over 4 years old)", source: "web search summary of 2016-17 figure, not opened", year: 2017}
+  - {datapoint: "Indian civil explosives about 0.7 Mt (direction only, over 4 years old)", source: "NIIR article via web search summary, not opened", year: 2017}
+searches_performed:
+  - "India industrial explosives market size, tonnes, Coal India share (web search; Ken, Univest fetched)"
+  - "India TNT demand, imports, Solar TNT capacity (web search; ThePrint fetched)"
+  - "India explosives exports markets (web search)"
+  - "PESO production and exports 2024-25 (web search)"
+  - "Solar Industries FY26 industry size (web search)"
+  - "RBI reference rate Nov 2026 (web search; MSEI table)"
+  - "India TNT annual demand, MIL capacity, IDL 500 t (web search)"
+  - "Peer transcripts grep (SOLARINDS, PREMEXPLN, APOLLO .txt)"
+searches_skipped:
+  - "PESO Annual Report 2024-25 PDF fetch: certificate rejected"
+  - "ICRA rationale PDF (id=137449) fetch: HTTP 404"
+  - "idrw.org TNT price article fetch: HTTP 404 (snippet only)"
+  - "National TNT consumption and import tonnage: no source returned"
+  - "Global per-capita benchmark (China, SE Asia): not run"
+  - "Peer revenue aggregation data: not in corpus"
+downstream_candidates:
+  - signal: "Coal India and Singareni overburden removal and coal output"
+    entity_type: "end-customer"
+    demand_link: "Largest bulk explosives buyers; volume follows overburden removal; peers call CIL prices low."
+    likely_source: "Coal India monthly production release; Ministry of Coal"
+    cadence: "monthly"
+    shared: false
+  - signal: "PESO licence validity, new licences and explosives export approvals"
+    entity_type: "regulatory"
+    demand_link: "Licences gate every plant, the TNT unit and export shipments; one approval touches all streams."
+    likely_source: "PESO annual report and licence portal; DGFT"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Ammonium nitrate price and anti-dumping or import duty actions"
+    entity_type: "macro"
+    demand_link: "Materials are 66.6% of revenue; spread to PSU price formula sets segment margin."
+    likely_source: "DGTR notifications; Ministry of Finance; fertiliser and chemicals price trackers"
+    cadence: "event-driven"
+    shared: true
+  - signal: "Cement, limestone quarry, metal ore and infrastructure output"
+    entity_type: "macro"
+    demand_link: "CRISIL names cement, quarry and road construction as the cyclical end-users for Keltech."
+    likely_source: "Ministry of Mines IBM mineral production; IIP mining and cement indices"
+    cadence: "monthly"
+    shared: false
+  - signal: "Defence ammunition filling demand and any named TNT buyer (Munitions India, DPSUs, private shell makers)"
+    entity_type: "end-customer"
+    demand_link: "Only route to external TNT revenue; no buyer is documented for the Garamsur plant."
+    likely_source: "Ministry of Defence press releases; GeM and DPSU tenders; Keltech Reg 30 filings"
+    cadence: "event-driven"
+    shared: false
+  - signal: "MOIL and other PSU mining customer results and deduction notices"
+    entity_type: "end-customer"
+    demand_link: "PSU orders carry risk-purchase and powder-factor deductions that cut realised price."
+    likely_source: "MOIL quarterly results and production releases"
+    cadence: "quarterly"
+    shared: false
+  - signal: "Peer commentary on domestic volume, pricing and TNT supply (Solar, Premier, Apollo-IDL)"
+    entity_type: "counterparty"
+    demand_link: "Competitor capacity adds and CIL tender prices set the share and price ceiling."
+    likely_source: "Peer quarterly earnings call transcripts on BSE/NSE"
+    cadence: "quarterly"
+    shared: false
+demand_externally_verifiable: true
+analyst_note: "Central SOM holds the FY26 explosives revenue growth of 11.7% (volume +8.4%, realisation +3.1%, derived from AR p.28 and p.137) against a SAM growing 7.4%. That adds only 0.4 to 0.8 points of share, below the 1-2pp rule, because the base share (3.6%) is small. The high reading (+1pp by Year 3) gives about 13% company CAGR. The one observation that separates them is H1 FY27 volume in MT, which no filing gives; H1 FY27 sales rose 31.9% but peers say much of FY27 growth is price. SAM is a ceiling: 10,507 is TAM less exports only. TNT is not in any number here. Reading B of B04 (own-use accessories) would add no external SAM at all."

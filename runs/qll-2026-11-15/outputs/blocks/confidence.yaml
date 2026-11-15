@@ -1,0 +1,29 @@
+stage: confidence-delta
+company: QLL
+run_date: 2026-11-15
+phase: 1
+confidence_delta:
+  numerical_acceptance: 98.8      # B12a: 332 numbers checked; mandatory 143 of 143; 0 CRITICAL, 4 MAJOR (all source_fidelity: true)
+  redflag_coverage: 64            # B12b: material_found 14, material_caught 9 (caught 4 + partially caught 5); 5 MAJOR missed
+  framework_adherence: 88.7       # B12c phase-1 scope: 63 of 71 rules (Gate 0 38/41, Emerging Moat 25/30); valuation component PENDING PHASE 3
+  peer_utilisation: 100           # B12d: 12 of 12 peer transcripts SUBSTANTIVE (3 peers), acceptance 100
+  overall: 64
+  overall_set_by: redflag_coverage
+  not_applicable: []
+  band: "60-74: PROCEED verdicts downgrade one level"
+rework_check:
+  verifier_a_critical_confirmed: 0
+  acceptance_below_60: []
+  rework: false
+verifier_a_identity_check: "no CRITICAL rows in B12a; nothing struck"
+verifier_runs: {A: 1, B: 1, C: 1, D: 1}
+remediation_cycles: 0
+verifier_a_shadow: "not run in this session (belongs to the TD Power session of the 2026-11-15 batch)"
+source_fidelity_corrections:   # B12a findings, each corrected at source by orchestrator erratum; disposition GATE HELD - figure corrected at source
+  - {report: "01-gate0.md", claimed: "H1 FY26 revenue 5,421.38 Lakh, +33.3%", corrected: "5,424.38 Lakh, +33.2%", anchor: "H1 FY27 results p.11; FY26 results p.5"}
+  - {report: "03-ardeep.md", claimed: "net cash change (400.55)", corrected: "(400.51)", anchor: "H1 FY27 results p.15"}
+  - {report: "07-emoat.md", claimed: "intangibles under development 44.23; capex 3,578.77", corrected: "44.21; 3,578.79", anchor: "AR26 p.102; H1 FY27 results p.12"}
+  - {report: "02-notes.md", claimed: "ITCPL net assets 752.02; QTIPL -61.41 (as own net assets)", corrected: "share in consolidated net assets; own net worth ITCPL 1,905.65, QTIPL -11.25, LabOps -15.71", anchor: "C-Note 34 p.140; AOC-1 AR26 p.66"}
+verifier_c_major:
+  - "E08: capex_embedded_growth_pct 98 on the rule as written vs B07 72; carry 98 as headline, 72 as sensitivity"
+verifier_b_note: "Verifier B does not concur with B05 credibility grade C; it reads D (disclosure-integrity pattern). 5 MAJOR items missed by B05/B06; 2 B05/B06 conclusions called OVERSTATED (standalone +47% as organic; margin guide 'settled as not delivered' at H1)."

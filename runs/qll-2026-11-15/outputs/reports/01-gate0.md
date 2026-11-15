@@ -182,3 +182,8 @@ data_notes:
 block_b_trend: "deteriorating: consolidated H1 FY27 CFO 359.17 Lakh vs PAT 660.01 Lakh = 0.54x, against 1.02x in FY26 (1,387.16 / 1,362.22)"
 analyst_note: "Core 45 sits in AVERAGE. Growth (20 of 20) is inflated by acquisitions and a tiny FY21 base, and the ROCE and ROE medians are lifted by FY22 on a near-zero capital base. The real depressors are post-IPO: ROCE 22.4% (FY23) to 10.8% (FY26) as capital employed grew about 10x, FCF negative every year, receivable days 123.5, current ratio 1.04 (0.78 at Sep 2026). E3 and E4 are scored on NOT FOUND and an intra-group guarantee reading; both favourable would lift core to 55, still AVERAGE. Position sizing may override AVERAGE for a post-IPO rebase case."
 ```
+
+---
+ORCHESTRATOR ERRATUM (2026-11-15, appended after Verifier A; the stage cannot edit its own report). Source-fidelity gate: the figure below is corrected at the source, and the corrected value governs everywhere downstream.
+- Section 0, load-bearing fact 1: H1 FY26 consolidated revenue is Rs 5,424.38 Lakh, not Rs 5,421.38 Lakh; H1 FY27 growth is +33.2%, not +33.3% (H1 FY27 results PDF image p.11; FY26 results 20260520-dc0311a3 p.5; MD&A filing "Rs 54.24 Crore"). OCR text-layer misread. No Gate 0 score effect (B12a finding 1).
+- Verifier C (phase-1) findings G06, G34, G36 (MINOR) recompute core 44 to 45 and moat 14 to 17; classification AVERAGE and moat class STRONG are unchanged in every recomputation (outputs/reports/12c-verifier-framework.md).

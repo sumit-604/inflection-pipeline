@@ -19,3 +19,7 @@ Token figures come from subagent result metadata. This harness exposes only tota
 | 7 | stage-07-emoat | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 216316 | 8m11s | 1 |
 | 9 | stage-09-tam (stalled 600s, no output; mechanical re-invoke) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | n/a | n/a | 1 |
 | 9 | stage-09-tam | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 81174 | 4m00s | 2 |
+| 12a | verifier-a-numerical | claude-sonnet-5-5 | high | n/a | n/a | n/a | n/a | 329966 | 6m48s | 1 |
+| 12b | verifier-b-redflags | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | PENDING_B | PENDING_B | 1 |
+| 12c | verifier-c-framework (phase-1 scope) | claude-opus-5-5 | xhigh | n/a | n/a | n/a | n/a | 185539 | 15m56s | 1 |
+| 12d | verifier-d-peers | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 40533 | 0m42s | 1 |

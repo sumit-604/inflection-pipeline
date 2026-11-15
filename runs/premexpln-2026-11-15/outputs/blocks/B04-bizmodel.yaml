@@ -1,0 +1,77 @@
+stage: B04-bizmodel
+company: "PREMEXPLN"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "SEGMENT RESULT: NOT FOUND. One reportable segment (Ind AS 108); no segment profit or margin in AR FY26, Q2 FY27 results filing or Q2 FY27 presentation. This is the observation B00 named to separate Defence/strategic 38x from Specialty chemicals 35x."
+  - "Q2 FY27 concall transcript ABSENT (B00 freshness FAIL); segment margin, export share, licence status may sit there"
+  - "Export share of order book, O&M fee basis, commercial-explosives input and customer detail: NOT FOUND in AR or presentation"
+  - "Named competitors and market share: NOT FOUND in AR or presentation"
+  - "SPA terms, non-compete, board changes and post-close related-party terms with Apollo: NOT FOUND in AR (B03)"
+  - "Carried from B00: screener sheets empty (Data_Sheet only); BDL peer transcripts absent; research folder empty; results are OCR scans (figures cited from the .txt layer here, not the PDF page); 9 open-offer zips unopened; one Reg 29(1) acquirer name illegible"
+  - "Investor presentation provided (Q2 FY27, 12 Nov 2026)"
+flags:
+  - "SECTOR-CAP EVIDENCE: revenue Defence & Space 81% FY26 (AR p.25), 86% Q2 FY27 (Inv. Pres. p.12); order book Defence 95% May 2026 (AR p.25), 96% Oct 2026 (Inv. Pres. p.8); Commercial Explosives 19% FY26, 14% Q2 FY27; Services/O&M sale of services 9.3% FY26 (AR p.133); exports 13.3% FY26 (AR p.133). Revenue and order book lean Defence; segment result NOT FOUND, so earnings source is not shown. FY26 PAT 64.8% one-off other income (B03)."
+  - "Commercial Explosives order cover about 0.45x annual revenue (2% of Rs 16,420 mn vs Rs 729 mn FY26; derived from rounded percentages); Defence cover about 4.7x"
+  - "Q2 FY27 material cost 65.1% of revenue (946.1/1452.8, derived, Inv. Pres. p.6) vs 57.65% FY26 (B03); EBITDA margin 11.9% Q2, 9.3% H1"
+  - "Open offer price Rs 705.65/share paid 4 Nov 2026 (Inv. Pres. p.10) vs Rs 698 in AR DR p.29 (B03); difference unexplained in documents"
+  - "Carried from B03: IFC qualified (procurement), whistle-blower per CARO but not in governance report, receivables 29.61% past 180 days, CFO negative"
+business_type: hybrid
+revenue_streams:
+  - {name: "Defence products (propellants, igniters, rocket motors, countermeasures)", type: "milestone-based project, build-to-order", pct_of_revenue: 72, predictability: "M"}
+  - {name: "Defence O&M services (ISRO SHAR, ASL Jagdalpur)", type: "contract services", pct_of_revenue: 9, predictability: "H"}
+  - {name: "Commercial explosives", type: "tender and repeat product sales", pct_of_revenue: 19, predictability: "L"}
+# pct anchors: Defence & Space 81% total (AR p.25); sale of services Rs 3,593.78 L = 9.3% (AR p.133, derived, includes services outside O&M if any); defence products 72% = 81 less 9, derived; Commercial 19% (AR p.25). Exports 13.3% cut across streams (AR p.133).
+asset_intensity: medium
+wc_intensity: high
+pricing_power: moderate
+cyclicality: secular-growth
+moats_present:
+  - "switching costs: spec-in on Akash, MRSAM, LRSAM, Astra, Agni (Inv. Pres. p.20); durability medium to high, programme-linked"
+  - "licence/regulatory (PESO, DPIIT; Inv. Pres. p.12); durability medium, also a burden after accidents"
+  - "technology qualification (DSIR/NABL labs, AR p.26); durability medium to high"
+valuation_methods:
+  primary: {method: "P/E on normalised earnings excluding other income", why: "profitable, order-backed; FY26 PAT is 64.8% one-off other income so reported EPS misleads; Section 1B governs exit multiple"}
+  secondary: {method: "EV/EBITDA on EBITDA before other income", why: "plants and net cash make EV a cleaner cross-check"}
+  tertiary: {method: "order-book conversion DCF / reverse DCF", why: "revenue visible through Rs 16,420 mn book; margin and WC are unknowns"}
+  not_applicable:
+    - "EV/Sales (segment margin gap unknown)"
+    - "Sum of parts (no segment profit filed)"
+    - "Dividend yield (Rs 0.50 per share)"
+    - "NAV / asset value"
+    - "P/B and ROE (land in book, customer-advance cash, one-off income)"
+irrelevant_ratios:
+  - "Reported PAT margin, EPS, ROE, EBIT margin 17.8%: include Rs 4,214.49 L other income"
+  - "Spot-quarter revenue and margin: milestone-based, lumpy"
+  - "Current ratio and cash balance: partly customer advances Rs 6,622.26 L"
+  - "Order book alone: FY25 book did not convert to FY26 revenue growth"
+  - "Debt/equity: 0.13x, borrowing is not the risk"
+  - "P/B: land is 39.2% of PPE"
+must_track_metrics:
+  - {metric: "Revenue delivered vs path (H1 FY27 Rs 2,478 mn)", healthy: "tracks order book conversion", red_flag: "H2 run rate below path; book up while revenue flat"}
+  - {metric: "EBITDA margin before other income", healthy: "above 12% (FY26 10.0%, Q2 FY27 11.9%)", red_flag: "below 10%"}
+  - {metric: "Material cost / revenue", healthy: "below 60% (FY26 57.65%)", red_flag: "above 65% (Q2 FY27 65.1%)"}
+  - {metric: "CFO / EBITDA", healthy: "above 70% over two years", red_flag: "negative (FY26 CFO Rs -144 L)"}
+  - {metric: "Receivables past 180 days", healthy: "under 25%", red_flag: "above 30% (FY26 29.61%)"}
+unit_economics:
+  unit: "one rupee of delivered defence order book (per-tonne or per-piece data NOT FOUND)"
+  revenue_per_unit: "Rs 1.00 delivered; FY26 revenue Rs 3,883 mn = 24.7% of the Rs 15,690 mn May 2026 book (derived)"
+  margin_per_unit: "EBITDA 10.0 paise before other income FY26 (AR p.25); 11.9 paise Q2 FY27 (Inv. Pres. p.6)"
+  key_lever: "plant availability and inspection clearance to convert the book, with material cost held near 58%; Q2 FY27 incremental EBITDA margin 15.2% (derived)"
+first_deterioration_signals:
+  - {risk: "Order conversion / milestone slippage", first_signal: "Revenue vs prior quarter and order book / revenue"}
+  - {risk: "Input cost and FX", first_signal: "Material cost / revenue (65.1% in Q2 FY27)"}
+  - {risk: "Working capital absorption", first_signal: "Receivables past 180 days and CFO"}
+  - {risk: "Plant accident or licence suspension", first_signal: "Production volume and PESO/TGPCB status"}
+  - {risk: "Control change and procurement weakness", first_signal: "Related-party notes and auditor IFC remark"}
+mgmt_questions:
+  - "Segment margins for Defence & Space, O&M, Commercial Explosives?"
+  - "Dated H2 delivery plan against the Rs 16,420 mn book?"
+  - "Live licences at Katepally and Peddakandukur; Peddakandukuru consent renewal date?"
+  - "Nature of the Rs 3,417.80 L supplier settlement; subject of the whistle-blower complaint?"
+  - "Export share of the book and licences still pending?"
+  - "Apollo plans on related-party sales, non-compete, board after close?"
+  - "Why receivables past 180 days rose to 29.61%?"
+one_line_verdict: "State-linked energetics maker with a 4x defence order book it has not yet converted, thin operating margin, and a segment result that is not filed."
+analyst_note: "Sector-cap evidence for stage 0: revenue and order book both lean Defence (81% to 86% revenue, 95% to 96% book), but the separating observation, segment result, is NOT FOUND in the AR, Q2 results filing or presentation (single Ind AS 108 segment). Do not infer segment margin from mix. Commercial Explosives book cover is about 0.45x revenue (derived from rounded percentages), so it is book-and-ship; Defence cover about 4.7x. The O&M services line (9.3% of FY26 revenue) sits inside Defence & Space, so 'Defence' includes a fee business. The 72% defence-products figure is 81% minus 9.3% rounded, derived. Q2 FY27 profit recovered on revenue but material cost rose to 65.1% of revenue, which needs the concall."

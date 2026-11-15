@@ -17,3 +17,4 @@ splits are n/a (never estimated).
 | 8 | stage-08-promoter | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | 110,066 | 4m 03s | 1 |
 | 4 | stage-04-bizmodel (stalled, stream watchdog 600s; no output) | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | n/a | n/a | 1 |
 | 5 | stage-05-concall (stalled, stream watchdog 600s; no output) | claude-sonnet-5-5 | default | n/a | n/a | n/a | n/a | n/a | n/a | 1 |
+| 4 | stage-04-bizmodel | claude-sonnet-5-5 | medium | n/a | n/a | n/a | n/a | 82,388 | 3m 05s | 2 |

@@ -1,0 +1,39 @@
+stage: B01-gate0
+company: "QLL"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "screener sheet FY23 and FY24 missing; filled from Prospectus p.73-75 (FY23 standalone) and AR25 p.118-120 (FY24 standalone); basis break flagged"
+  - "screener Quarters block empty"
+  - "shareholding is a screener extract; promoter pledge % NOT FOUND (E3 scored 0)"
+  - "R&D spend NOT FOUND (M6); listed regulated player count NOT FOUND (M7)"
+  - "peer data: KRSNAA raw material blank, VIMTALABS latest FY24; full segment list absent (M5, M9)"
+  - "no concall transcript, no rating (carried from B00)"
+flags:
+  - {type: FLAG-GATE0, reason: "AVERAGE with historical depressors: ROCE 22.4% FY23 to 10.8% FY26 on goodwill and CWIP build; FCF negative all 6 years; receivable days +54 FY21 to FY26"}
+data_years: 6
+fy_range: "FY21 to FY26"
+blocks: {A: 9, B: 5, C: 20, D: 7, E: 4}
+core_score: 45
+moat_score: 15
+grand_total: 60
+moats_confirmed: 4
+moat_class: "STRONG"
+classification: "AVERAGE"
+deal_breakers:
+  - "DB2 Block B 5 < 8: max GOOD (not binding at AVERAGE); drivers FCF negative every year FY21-FY26, WC days +172.8"
+history_downgrade: false
+data_notes:
+  - "basis break: FY21-22 consolidated, FY23-24 standalone, FY25-26 consolidated; FY25-26 include acquisitions (ITCPL from 10 Sep 2025, LabOps 74%, Navi Mumbai lab)"
+  - "FY24 PBT, PAT, CFO, total assets, current liabilities computed from listed lines (totals lost in text extraction); cash flow ties to net change within Rs 0.02 Lakh"
+  - "ROCE computed (screener gives none): FY21 N/M negative capital employed; FY22 70.1, FY23 22.4, FY24 15.4, FY25 10.0, FY26 10.8; median 15.4"
+  - "ROE FY22 246.2% on near-zero base lifts median to 20.4; excluding FY22 median 15.9 and A3 = 4"
+  - "WC days on revenue basis (COGS absent); inventory NOT FOUND FY21-FY24"
+  - "E4 uses disclosed note total 7,140.69 Lakh incl. Rs 2,133 + 4,911 Lakh intra-group bank guarantees (AR26 p.137); tax claims alone 96.69 Lakh = 0.63% of net worth would score 5"
+  - "E3 sensitivity: promoter declaration 6 Apr 2026 says no encumbrance created in FY26; latest pledge % NOT FOUND"
+  - "D inputs use FY26 audited; at 30 Sep 2026 current ratio 0.78 (D4 would be 0)"
+  - "PEER DATA NEEDED: M5 full segment list; M9 KRSNAA material cost; M7 and M6 inputs NOT FOUND"
+  - "load-bearing facts: standalone H1 FY27 CFO 248.20 vs PBT 635.50 Lakh, ST borrowings 3,174.91 vs 1,623.61 Lakh CONFIRMED; FY26 PAT owners 1,362.22 vs total 1,460.15 Lakh, EPS 12.49 (web Rs 6.30 owners = FY25 figure 630.08); guidance numbers and warrant terms NOT reached at Gate 0; 22 Sep 2026 preferential issue described as 3,86,000 shares vs memory 520,000 warrants, unresolved"
+block_b_trend: "deteriorating: consolidated H1 FY27 CFO 359.17 Lakh vs PAT 660.01 Lakh = 0.54x, against 1.02x in FY26 (1,387.16 / 1,362.22)"
+analyst_note: "Core 45 sits in AVERAGE. Growth (20 of 20) is inflated by acquisitions and a tiny FY21 base, and the ROCE and ROE medians are lifted by FY22 on a near-zero capital base. The real depressors are post-IPO: ROCE 22.4% (FY23) to 10.8% (FY26) as capital employed grew about 10x, FCF negative every year, receivable days 123.5, current ratio 1.04 (0.78 at Sep 2026). E3 and E4 are scored on NOT FOUND and an intra-group guarantee reading; both favourable would lift core to 55, still AVERAGE. Position sizing may override AVERAGE for a post-IPO rebase case."

@@ -1,0 +1,72 @@
+stage: B04-bizmodel
+company: "KELTECH"
+run_date: "2026-11-15"
+model: claude-sonnet-5-5
+status: complete
+input_gaps:
+  - "Investor presentation: NOT PROVIDED (company issues none; AR p.68). No concalls (B00 no_concall_mode)."
+  - "TNT plant product, capacity, licence, offtake, buyer: NOT FOUND in AR, CRISIL, Q2 (CRISIL gives only cost ~Rs 190 Cr, debt Rs 135 Cr, April 2027)."
+  - "Explosives sub-mix (bulk vs cartridge vs accessories), plant-wise capacity, licence validity, export markets and margins, market share, industry size: NOT FOUND."
+  - "Q2 FY27 segment and P&L tables are OCR reads (Q2 pp.5-7); digits need cross-check."
+  - "Carried from B00: shareholding pattern (no pledge, no FII line) is a screener capture only; peer P&L, Quarters, Balance Sheet, Cash Flow tabs produced no CSV; peer concalls not read in this stage."
+flags:
+  - "TNT_DEFENCE_UNPROVEN: no document names a defence buyer; Garamsur project is called 'Accessories Project' in MD&A (AR p.55); two readings stated in the analyst note"
+  - "CHANNEL_DISCLOSURE_CONFLICT: Note 34 says all sales 'directly to consumers' (AR p.143) vs Board 'dealers segment' (AR p.28) and sales commission 271.24 lakh (AR p.128)"
+  - "EXPORT_GROWTH_CONFLICT: Board +7% (AR p.28) vs notes +11.0% (AR p.138, derived)"
+  - "BRIEF_ERRORS: other operating line is Rs 18.55 Cr not 16.55 Cr (AR p.138); trailing P/E 54.1x derived vs 58.7x in brief"
+  - "OPERATING_LEVERAGE_FORK: reported incremental EBITDA margin 6.8% vs like-for-like 22.8%; separating observation is where the FY25 884.72 item sat in FY25 segment result"
+  - "FIXED_CHARGES_RISING: H1 FY27 depreciation +28.7% and finance cost +76.3% (OCR read) against PAT +13.4%"
+  - "CONVERTER_CLASSIFICATION_FOR_STAGE_11: converter traits present; Amendment 17 applicability not decided here"
+business_type: manufacturing
+revenue_streams:
+  - {name: "Explosives (cartridge, bulk emulsion, MMAN, accessories); AR p.137 external revenue 45,766.62 lakh", type: "recurring consumable, volume x price", pct_of_revenue: 86.0, predictability: "M-H volume, M margin"}
+  - {name: "Perlite and perlite products; AR p.137 external revenue 5,584.15 lakh", type: "consumable plus project", pct_of_revenue: 10.5, predictability: "M"}
+  - {name: "Unallocated: freight billed 1,573.31 plus other operating revenue 281.94 lakh; AR p.137, p.125", type: "pass-through and incidental", pct_of_revenue: 3.5, predictability: "M"}
+asset_intensity: medium
+wc_intensity: medium
+pricing_power: weak
+cyclicality: cyclical
+moats_present:
+  - "Regulatory licence (Explosives Act, AN Rules; AR p.39; CRISIL p.1): durability medium, validity dates NOT FOUND"
+  - "Location and plant footprint, 12 plants (AR p.72): durability medium, [INFERENCE] on why it matters"
+  - "Switching cost on product fit for strata conditions (AR p.29): durability low-medium"
+valuation_methods:
+  primary: {method: "P/E on normalised earnings (Section 1B exit PE governs the multiple)", why: "Profitable, consistent; normalise exceptional 317.76 lakh, FX 274.29 lakh and other one-offs (729.78 lakh total, S3)"}
+  secondary: {method: "EV/EBITDA cross-check with CWIP-funded debt excluded from EV", why: "EBITDA does not yet carry the TNT project spend"}
+  tertiary: {method: "SOTP for TNT slice only after commissioning with booked revenue", why: "No TNT buyer, capacity or revenue documented; option until then"}
+  not_applicable: ["EV/Sales", "DDM (payout 0.52%)", "NAV or replacement cost", "P/B as primary", "DCF as primary (CFO -1,757.03 to 4,850.02 lakh swing, FCF -3,749.14 lakh)"]
+irrelevant_ratios:
+  - "Spot-year ROCE 19.95%: CWIP 3,800.82 lakh not earning, FY25 base holds one-offs"
+  - "Headline EBITDA growth +7.7%: FY25 base holds 884.72 lakh non-recurring item"
+  - "Trailing P/E on FY26 EPS: 729.78 lakh of non-repeating items in PBT"
+  - "Current ratio 1.12: term debt moved long, cash credit about 94% drawn"
+  - "Revenue per MT as a price: segment revenue mixes accessories and services"
+  - "Dividend payout 0.52%: retention policy, no signal"
+must_track_metrics:
+  - {metric: "Explosives segment result / external revenue", healthy: "6.67% FY26, 7.64% FY25 (AR p.137); H1 FY27 6.48% OCR read", red_flag: "below 6% [proposed trigger]"}
+  - {metric: "Gross margin proxy (revenue less materials, stock-in-trade, inventory change)", healthy: "30.4% FY26, 30.9% FY25 (AR p.99, S3)", red_flag: "below 29% [proposed]"}
+  - {metric: "Cash conversion cycle days", healthy: "+15.2 FY26, -9.3 FY25 (S3)", red_flag: "payables under 60 days with receivables above 45"}
+  - {metric: "CFO / EBITDA", healthy: "1.19x FY26 (S3)", red_flag: "below 0.6x two years running; H1 FY27 CFO 6.38 vs PAT 16.33 Cr already weak"}
+  - {metric: "CWIP vs commissioning and fixed charges (depreciation plus finance cost)", healthy: "CWIP 3,800.82 lakh at Mar-26 falling as units commission", red_flag: "CWIP rising with no commissioning date; fixed charges growing twice as fast as EBITDA"}
+unit_economics:
+  unit: "1 metric ton of explosives sold"
+  revenue_per_unit: "72,470 rupees FY26 (70,274 FY25); segment external revenue / MT, mix indicator not a price (AR p.137, p.28, S3)"
+  margin_per_unit: "4,832 rupees segment result per MT FY26 (5,370 FY25); 6.67% (7.64%) (AR p.137, derived)"
+  key_lever: "Spread between explosives price and ammonium nitrate cost, then volume to absorb new fixed charges"
+first_deterioration_signals:
+  - {risk: "PSU deductions and unconfirmed balances", first_signal: "receivables over 6 months (441.11 lakh, 7.08% of gross) and powder-factor line (394.40 lakh)"}
+  - {risk: "Ammonium nitrate spike", first_signal: "gross margin proxy below 30.4%"}
+  - {risk: "New depreciation and interest before volume", first_signal: "depreciation and finance cost growth vs EBITDA growth (H1 FY27 +28.7%, +76.3%)"}
+  - {risk: "Bank borrowing base on stock statements", first_signal: "cash credit utilisation near 94% and Note 13 inventory gap"}
+  - {risk: "TNT execution and funding", first_signal: "CWIP growth without commissioning; commitments 3,996.21 lakh"}
+  - {risk: "Working capital funding of growth", first_signal: "payable days falling from 76"}
+mgmt_questions:
+  - "What does the TNT plant make, what capacity, who signs to buy it, which licence covers it?"
+  - "Are the Rs 190 Cr cost and Rs 135 Cr debt unchanged, and how much is spent?"
+  - "Why did explosives margin fall from 7.64% to 6.67% on 8.4% volume growth?"
+  - "How do PSU prices follow ammonium nitrate and with what lag?"
+  - "What explains the 19-30% gap between book and bank stock statements?"
+  - "Which export markets and products drive 8,284.21 lakh and at what margin vs domestic?"
+  - "What drove the Perlite result swing from -286.25 to +290.42 lakh?"
+one_line_verdict: "A thin-margin explosives converter with a licence-and-footprint moat; its worth hangs on an undocumented TNT plant; fits Cables / Industrial products (25x) today."
+analyst_note: "TNT has two readings. A: defence or merchant energetics bet (brief). B [INFERENCE]: partly backward integration into own accessories (cast boosters, PETN; AR p.29, p.55 'Accessories Project'), supported by CRISIL's 'established clientele' wording (CRISIL p.2). Separator: a licence or offtake naming a defence buyer, or first booked revenue outside the explosives and perlite segments. Operating leverage forks too: reported incremental EBITDA margin 6.8% vs like-for-like 22.8% (FY25 884.72 lakh item); H1 FY27 leans to the weaker reading. Converter traits are present; Amendment 17 applicability is for stage 11. Sector cap row fits 96.5% of revenue today; a TNT slice on the Defence row needs a documented buyer first."
